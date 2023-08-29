@@ -4,6 +4,9 @@
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/redstone/circuit/components/CircuitComponentList.h"
 
+// auto generated inclusion list
+#include "mc/enums/CircuitComponentType.h"
+
 class CircuitSceneGraph {
 public:
     // CircuitSceneGraph inner types declare

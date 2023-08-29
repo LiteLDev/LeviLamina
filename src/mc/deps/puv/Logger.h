@@ -4,11 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/SerializerContext.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace cereal::internal { enum class ResultCode; }
-// clang-format on
+#include "mc/deps/cereal/internal/ResultCode.h"
 
 namespace Puv {
 

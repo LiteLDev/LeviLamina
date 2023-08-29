@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/ApiId.h"
+#include "mc/enums/XTaskQueueDispatchMode.h"
+#include "mc/enums/XTaskQueuePort.h"
+
 class TaskQueueImpl {
 
 public:

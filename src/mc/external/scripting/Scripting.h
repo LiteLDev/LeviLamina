@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { enum class LogLevel; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/external/scripting/LogLevel.h"
 
 namespace Scripting {
 // NOLINTBEGIN

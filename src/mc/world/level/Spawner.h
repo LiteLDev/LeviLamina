@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/MaterialType.h"
+#include "mc/world/level/block/utils/SpawnBlockRequirements.h"
 #include "mc/world/level/chunk/LevelChunk.h"
 
 class Spawner {

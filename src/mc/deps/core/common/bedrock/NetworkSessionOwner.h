@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/enums/TransportLayer.h"
 
 class NetworkSessionOwner : public ::Bedrock::EnableNonOwnerReferences {
 

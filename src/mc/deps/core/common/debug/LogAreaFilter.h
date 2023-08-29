@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-enum class LogAreaID;
-// clang-format on
+// auto generated inclusion list
+#include "mc/enums/LogAreaID.h"
 
 namespace BedrockLog {
 

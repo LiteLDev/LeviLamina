@@ -4,6 +4,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/containers/ContainerEnumName.h"
 
+// auto generated inclusion list
+#include "mc/world/containers/ContainerEnumName.h"
+
 struct ItemStackResponseContainerInfo {
 
 public:

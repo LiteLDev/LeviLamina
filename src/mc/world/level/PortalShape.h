@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/PortalAxis.h"
 #include "mc/world/Facing.h"
 
 class PortalShape {

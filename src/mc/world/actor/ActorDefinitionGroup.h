@@ -4,6 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/entity/utilities/ActorDefinitionParseStatus.h"
+#include "mc/enums/CurrentCmdVersion.h"
+#include "mc/enums/LogArea.h"
 
 // auto generated forward declare list
 // clang-format off

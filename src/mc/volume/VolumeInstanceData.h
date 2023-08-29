@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace VolumeInstanceData { struct VolumeStorageDefinition; }
+// clang-format on
+
 namespace VolumeInstanceData {
 // NOLINTBEGIN
 /**

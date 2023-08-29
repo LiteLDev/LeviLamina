@@ -4,8 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/network/TypedServerNetId.h"
+#include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/inventory/network/crafting/CraftHandlerBase.h"
+#include "mc/world/item/components/ItemStackNetResult.h"
 #include "mc/world/item/components/ItemStackRequestActionCraft.h"
+#include "mc/world/item/components/ItemStackRequestActionType.h"
 
 class CraftHandlerEnchant : public ::CraftHandlerBase {
 

@@ -7,13 +7,13 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/CommandSelectorResults.h"
+#include "mc/server/commands/FacingResult.h"
 #include "mc/world/AutomaticID.h"
 #include "mc/world/level/Command.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace RotationCommandUtils { class RotationData; }
-namespace RotationCommandUtils { enum class FacingResult; }
 // clang-format on
 
 class TeleportCommand : public ::Command {

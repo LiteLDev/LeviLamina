@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Core { template<typename T0> class PathBuffer; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/PathBuffer.h"
 
 namespace ResourcePackPaths {
 // NOLINTBEGIN

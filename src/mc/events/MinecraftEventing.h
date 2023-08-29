@@ -3,10 +3,49 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/network/realms/RealmsPurchaseFailureReason.h"
+#include "mc/client/network/realms/RealmsPurchaseIntent.h"
+#include "mc/client/social/MultiplayerServiceIdentifier.h"
+#include "mc/client/social/SignInResult.h"
+#include "mc/client/social/TelemetrySystemType.h"
+#include "mc/deps/core/LevelStorageState.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/common/bedrock/StorageMigrationType.h"
+#include "mc/deps/core/utility/ValidationStatus.h"
 #include "mc/deps/core/utility/buffer_span.h"
+#include "mc/entity/utilities/ActorDamageCause.h"
+#include "mc/enums/ActiveDirectoryAction.h"
+#include "mc/enums/ClassroomSetting.h"
+#include "mc/enums/Difficulty.h"
+#include "mc/enums/DiskStatus.h"
+#include "mc/enums/EduControlPanelUpdateType.h"
+#include "mc/enums/EduShareMethodType.h"
+#include "mc/enums/EduShareUriType.h"
+#include "mc/enums/GameType.h"
+#include "mc/enums/InputMode.h"
+#include "mc/enums/LastClickedSource.h"
+#include "mc/enums/LoadingState.h"
+#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/enums/OpenCodeMethod.h"
+#include "mc/enums/PurchasePath.h"
+#include "mc/enums/RawInputType.h"
+#include "mc/enums/SettingsScreenMode.h"
+#include "mc/enums/SubClientId.h"
+#include "mc/enums/TransactionStatus.h"
+#include "mc/enums/TransportLayer.h"
+#include "mc/enums/UserGeneratedUriSource.h"
+#include "mc/enums/connection/DisconnectFailReason.h"
+#include "mc/enums/edu/Role.h"
 #include "mc/events/IConnectionEventing.h"
 #include "mc/events/IMinecraftEventing.h"
+#include "mc/external/scripting/WatchdogEventType.h"
+#include "mc/resources/PacketViolationResponse.h"
+#include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/world/actor/player/PlayerPermissionLevel.h"
+#include "mc/world/events/ConnectedStorageEventType.h"
+#include "mc/world/events/TextProcessingEventOrigin.h"
+#include "mc/world/item/components/ItemAcquisitionMethod.h"
+#include "mc/world/item/components/ItemUseMethod.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,33 +55,24 @@ namespace Bedrock { struct CrashUploadStatus; }
 namespace Bedrock { struct DeviceIdContext; }
 namespace Bedrock { struct DirectoryEntry; }
 namespace Bedrock { struct WorldRecoveryTelemetryEvent; }
-namespace Bedrock::Http { class Status; }// NOLINT
-namespace Bedrock::StorageMigration { enum class StorageMigrationType; }
-namespace Connection { enum class DisconnectFailReason; }
+namespace Bedrock::Http { class Status; }
 namespace Core { class Path; }
-namespace Core { enum class LevelStorageState; }
 namespace Core::Profile { struct FileCounters; }
 namespace Json { class Value; }
 namespace Legacy { struct WorldConversionReport; }
 namespace Realms { struct RealmId; }
-namespace Scripting { enum class WatchdogEventType; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Social { class IUserManager; }
-namespace Social { enum class MultiplayerServiceIdentifier; }
-namespace Social { enum class SignInResult; }
 namespace Social { struct PlayerIDs; }
 namespace Social::Events { class AchievementEventing; }
 namespace Social::Events { class EventManager; }
 namespace Social::Events { class IEventListener; }
 namespace Social::Events { class PlayerTelemetry; }
 namespace Social::Events { class Property; }
-namespace Social::Events { enum class TelemetrySystemType; }
-namespace Util::ResourceUri { enum class ValidationStatus; }
 namespace Webview { struct TelemetryCommonProperties; }
-namespace edu { enum class Role; }
-namespace librarySearch { struct TelemetryData; }// NOLINT
+namespace librarySearch { struct TelemetryData; }
 namespace mce { class UUID; }
-namespace storeSearch { struct TelemetryData; }// NOLINT
+namespace storeSearch { struct TelemetryData; }
 // clang-format on
 
 class MinecraftEventing {
@@ -618,14 +648,14 @@ public:
     MCVAPI void fireEventGameRulesUpdated(float, float, std::string const&);
     /**
      * @symbol
-     * ?fireEventGameRulesUpdated\@MinecraftEventing\@\@UEAAX_N0AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCVAPI void fireEventGameRulesUpdated(bool, bool, std::string const&);
-    /**
-     * @symbol
      * ?fireEventGameRulesUpdated\@MinecraftEventing\@\@UEAAXHHAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCVAPI void fireEventGameRulesUpdated(int, int, std::string const&);
+    /**
+     * @symbol
+     * ?fireEventGameRulesUpdated\@MinecraftEventing\@\@UEAAX_N0AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCVAPI void fireEventGameRulesUpdated(bool, bool, std::string const&);
     /**
      * @symbol ?fireEventGoogleAccountHoldWarning\@MinecraftEventing\@\@UEAAX_N\@Z
      */
@@ -1982,9 +2012,8 @@ private:
      * @symbol
      * ?mAcquisitionMethodMap\@MinecraftEventing\@\@0V?$unordered_map\@W4ItemAcquisitionMethod\@\@W4AcquisitionMethod\@MinecraftEventing\@\@U?$hash\@W4ItemAcquisitionMethod\@\@\@std\@\@U?$equal_to\@W4ItemAcquisitionMethod\@\@\@5\@V?$allocator\@U?$pair\@$$CBW4ItemAcquisitionMethod\@\@W4AcquisitionMethod\@MinecraftEventing\@\@\@std\@\@\@5\@\@std\@\@B
      */
-    MCAPI static std::unordered_map<
-        enum class ItemAcquisitionMethod,
-        enum class MinecraftEventing::AcquisitionMethod> const mAcquisitionMethodMap;
+    MCAPI static std::unordered_map<::ItemAcquisitionMethod, ::MinecraftEventing::AcquisitionMethod> const
+        mAcquisitionMethodMap;
     /**
      * @symbol
      * ?mPlayerTelemetry\@MinecraftEventing\@\@0V?$unordered_map\@IVPlayerTelemetry\@Events\@Social\@\@U?$hash\@I\@std\@\@U?$equal_to\@I\@5\@V?$allocator\@U?$pair\@$$CBIVPlayerTelemetry\@Events\@Social\@\@\@std\@\@\@5\@\@std\@\@A
@@ -1994,8 +2023,7 @@ private:
      * @symbol
      * ?mUseMethodMap\@MinecraftEventing\@\@0V?$unordered_map\@W4ItemUseMethod\@\@W4UseMethod\@MinecraftEventing\@\@U?$hash\@W4ItemUseMethod\@\@\@std\@\@U?$equal_to\@W4ItemUseMethod\@\@\@5\@V?$allocator\@U?$pair\@$$CBW4ItemUseMethod\@\@W4UseMethod\@MinecraftEventing\@\@\@std\@\@\@5\@\@std\@\@B
      */
-    MCAPI static std::unordered_map<enum class ItemUseMethod, enum class MinecraftEventing::UseMethod> const
-        mUseMethodMap;
+    MCAPI static std::unordered_map<::ItemUseMethod, ::MinecraftEventing::UseMethod> const mUseMethodMap;
     /**
      * @symbol ?sHeartbeatMutex\@MinecraftEventing\@\@0Vmutex\@std\@\@A
      */

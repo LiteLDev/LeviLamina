@@ -2,9 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/raknet/RNS2BindResult.h"
+
 // auto generated forward declare list
 // clang-format off
-namespace RakNet { enum class RNS2BindResult; }
 namespace RakNet { struct RNS2_BerkleyBindParameters; }
 namespace RakNet { struct RNS2_SendParameters; }
 // clang-format on

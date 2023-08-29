@@ -2,9 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { template<typename T0> class NonOwnerPointer; }
+class IAdvancedGraphicsOptions;
+class PackCapabilityRegistry;
 // clang-format on
 
 namespace PackCapabilities::Detail {

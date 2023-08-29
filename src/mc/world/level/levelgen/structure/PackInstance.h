@@ -7,6 +7,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/resources/PackCategory.h"
+#include "mc/resources/PackOrigin.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/resources/PackError.h"
+#include "mc/resources/PackParseErrorType.h"
 
 class PackDiscoveryError : public ::PackError {
 

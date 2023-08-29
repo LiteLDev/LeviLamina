@@ -3,12 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/server/commands/FacingResult.h"
 #include "mc/server/commands/ServerCommand.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace RotationCommandUtils { enum class FacingResult; }
-// clang-format on
 
 class SummonCommand : public ::ServerCommand {
 

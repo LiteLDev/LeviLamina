@@ -6,6 +6,7 @@
 #include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
+#include "mc/enums/CircuitComponentType.h"
 #include "mc/world/redstone/circuit/components/CircuitComponentList.h"
 
 class BaseCircuitComponent {

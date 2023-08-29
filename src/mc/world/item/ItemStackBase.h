@@ -5,6 +5,8 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/WeakPtr.h"
+#include "mc/enums/ArmorSlot.h"
+#include "mc/enums/UseAnimation.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -3,12 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/entity/utilities/ActorDamageCause.h"
 #include "mc/external/scripting/EnumBindingBuilder.h"
-
-// auto generated forward declare list
-// clang-format off
-enum class ActorDamageCause;
-// clang-format on
 
 namespace ScriptModuleMinecraft {
 

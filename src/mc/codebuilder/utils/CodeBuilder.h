@@ -4,6 +4,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class Block;
+class CommandOutput;
+class ItemDescriptor;
+class ItemStack;
+class ItemStackBase;
+class Player;
 namespace Json { class Value; }
 // clang-format on
 

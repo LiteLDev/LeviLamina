@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/CounterFlags.h"
+#include "mc/deps/core/CounterFormat.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Core::Profile { class CounterTokenMarker; }
-namespace Core::Profile { enum class CounterFlags; }
-namespace Core::Profile { enum class CounterFormat; }
 // clang-format on
 
 namespace Core::Profile {

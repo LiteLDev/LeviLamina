@@ -1,16 +1,23 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/packet/GameRulesChangedPacketData.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/network/packet/GameRulesChangedPacketData.h"
+#include "mc/enums/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 
 class GameRulesChangedPacket : public ::Packet {
 
 public:
     GameRulesChangedPacketData mRuleData; // this+0x30
+
+    // prevent constructor by default
+    GameRulesChangedPacket& operator=(GameRulesChangedPacket const&) = delete;
+    GameRulesChangedPacket(GameRulesChangedPacket const&)            = delete;
+    GameRulesChangedPacket()                                         = delete;
+
 public:
     // NOLINTBEGIN
     /**

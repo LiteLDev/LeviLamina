@@ -3,12 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/social/GamePublishSetting.h"
+#include "mc/enums/ChatRestrictionLevel.h"
+#include "mc/enums/DaylightCycle.h"
+#include "mc/enums/Difficulty.h"
+#include "mc/enums/EducationEditionOffer.h"
+#include "mc/enums/GameType.h"
+#include "mc/enums/WorldVersion.h"
+#include "mc/network/NetherWorldType.h"
 #include "mc/world/AutomaticID.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Social { enum class GamePublishSetting; }
-// clang-format on
+#include "mc/world/actor/player/PlayerPermissionLevel.h"
+#include "mc/world/level/levelgen/GeneratorType.h"
 
 class LevelSettings {
 

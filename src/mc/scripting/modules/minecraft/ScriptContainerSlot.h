@@ -6,11 +6,11 @@
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
+#include "mc/world/item/components/ItemLockMode.h"
 
 // auto generated forward declare list
 // clang-format off
 class ItemContext;
-enum class ItemLockMode;
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace Scripting { class WeakLifetimeScope; }

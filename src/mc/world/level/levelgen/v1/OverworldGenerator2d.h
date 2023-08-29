@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/data/OperationNode.h"
 #include "mc/deps/core/utility/MultidimensionalArray.h"
+#include "mc/world/level/levelgen/GeneratorType.h"
 #include "mc/world/level/levelgen/v1/OverworldGenerator.h"
 
 class OverworldGenerator2d : public ::OverworldGenerator {

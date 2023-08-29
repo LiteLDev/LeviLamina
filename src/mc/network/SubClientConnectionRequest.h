@@ -2,10 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/services/persona/PieceType.h"
+#include "mc/enums/BuildPlatform.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace mce { class Color; }
-namespace persona { enum class PieceType; }
 // clang-format on
 
 class SubClientConnectionRequest {

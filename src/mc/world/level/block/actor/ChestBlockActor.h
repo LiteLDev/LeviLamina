@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/actor/RandomizableBlockActorFillingContainer.h"
+#include "mc/world/level/block/utils/BlockActorRendererId.h"
+#include "mc/world/level/block/utils/BlockActorType.h"
 
 class ChestBlockActor : public ::RandomizableBlockActorFillingContainer {
 

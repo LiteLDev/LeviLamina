@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/CurrentCmdVersion.h"
+#include "mc/enums/FunctionQueueOrder.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }

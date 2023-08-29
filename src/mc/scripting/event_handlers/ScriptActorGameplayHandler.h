@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/CoordinatorResult.h"
 #include "mc/common/wrapper/GameplayHandlerResult.h"
+#include "mc/common/wrapper/HandlerResult.h"
 #include "mc/events/ActorGameplayEvent.h"
 #include "mc/events/MutableActorGameplayEvent.h"
 #include "mc/external/scripting/TypedObjectHandle.h"

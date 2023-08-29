@@ -5,11 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/BaseGameTestHelper.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/enums/ArmorSlot.h"
+#include "mc/enums/GameType.h"
+#include "mc/scripting/modules/minecraft/ScriptFacing.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleGameTest { class ScriptGameTestConnectivity; }
-namespace ScriptModuleMinecraft { enum class ScriptFacing; }
 namespace gametest { struct GameTestError; }
 // clang-format on
 

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/TaskGroupState.h"
+
 class BackgroundTaskBase {
 public:
     // BackgroundTaskBase inner types declare

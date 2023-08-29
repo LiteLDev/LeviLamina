@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/DirectoryIterationFlags.h"
+#include "mc/deps/core/FileBufferingMode.h"
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 
@@ -12,8 +14,6 @@ namespace Core { class FileOpenMode; }
 namespace Core { class IFile; }
 namespace Core { class Path; }
 namespace Core { class Result; }
-namespace Core { enum class DirectoryIterationFlags; }
-namespace Core { enum class FileBufferingMode; }
 namespace Core { struct DirectoryIterationItem; }
 // clang-format on
 

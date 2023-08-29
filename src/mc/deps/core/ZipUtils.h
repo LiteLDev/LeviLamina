@@ -2,16 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/PathBuffer.h"
+#include "mc/deps/core/StackString.h"
+#include "mc/deps/core/UnzipResult.h"
+#include "mc/deps/core/ZipResult.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
-namespace Core { template<typename T0, int T1> class StackString; }
-namespace Core { template<typename T0> class PathBuffer; }
 namespace Core::ZipUtils { class UnzipSettings; }
 namespace Core::ZipUtils { class ZipProgress; }
 namespace Core::ZipUtils { class ZipSettings; }
-namespace Core::ZipUtils { enum class UnzipResult; }
-namespace Core::ZipUtils { enum class ZipResult; }
 // clang-format on
 
 namespace Core::ZipUtils {

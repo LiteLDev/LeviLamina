@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace GameEventConfig { enum class GameEventCategory; }
-namespace GameEventConfig { enum class GameEventType; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/events/GameEventCategory.h"
+#include "mc/world/events/GameEventType.h"
 
 class GameEvent {
 

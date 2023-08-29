@@ -6,6 +6,8 @@
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/resources/PackOrigin.h"
+#include "mc/resources/PackType.h"
 
 class Pack : public ::Bedrock::EnableNonOwnerReferences {
 

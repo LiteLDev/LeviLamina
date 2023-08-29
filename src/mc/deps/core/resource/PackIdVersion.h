@@ -5,6 +5,9 @@
 #include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/resources/PackType.h"
 
+// auto generated inclusion list
+#include "mc/resources/PackType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace mce { class UUID; }

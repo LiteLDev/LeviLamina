@@ -1,10 +1,11 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/NetworkBlockPosition.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/network/NetworkBlockPosition.h"
+#include "mc/enums/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 
 class UpdateBlockPacket : public ::Packet {

@@ -5,11 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/common/bedrock/IAsyncResult.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace DBHelpers { enum class Category; }
-// clang-format on
+#include "mc/enums/CompactionStatus.h"
+#include "mc/enums/StorageVersion.h"
+#include "mc/enums/d_b_helpers/Category.h"
 
 class LevelStorage {
 

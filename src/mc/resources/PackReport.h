@@ -6,6 +6,9 @@
 #include "mc/deps/core/resource/ResourceLocation.h"
 #include "mc/deps/core/resource/PackIdVersion.h"
 
+// auto generated inclusion list
+#include "mc/resources/PackType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }

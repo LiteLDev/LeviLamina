@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/inventory/network/ScreenHandlerBase.h"
+#include "mc/world/item/components/ItemStackNetResult.h"
 
 class ScreenHandlerHUD : public ::ScreenHandlerBase {
 

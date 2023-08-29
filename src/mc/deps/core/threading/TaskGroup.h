@@ -6,6 +6,7 @@
 #include "mc/deps/core/common/bedrock/IAsyncResult.h"
 #include "mc/deps/core/common/bedrock/UniqueLock.h"
 #include "mc/deps/core/threading/TaskStartInfoEx.h"
+#include "mc/enums/TaskGroupState.h"
 
 class TaskGroup {
 

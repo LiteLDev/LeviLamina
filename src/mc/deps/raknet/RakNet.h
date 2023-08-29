@@ -2,14 +2,44 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/raknet/ConnectionAttemptResult.h"
+#include "mc/deps/raknet/ConnectionState.h"
+#include "mc/deps/raknet/RNS2BindResult.h"
+#include "mc/deps/raknet/RakPeer.h"
+#include "mc/deps/raknet/RakString.h"
+#include "mc/deps/raknet/ReliabilityLayer.h"
+#include "mc/deps/raknet/StartupResult.h"
+#include "mc/deps/raknet/data_structures/LinkedList.h"
+#include "mc/deps/raknet/data_structures/List.h"
+#include "mc/resources/PacketPriority.h"
+#include "mc/resources/PacketReliability.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace RakNet { class BitStream; }
+namespace RakNet { class PluginInterface2; }
+namespace RakNet { class RakNetRandom; }
 namespace RakNet { class RakNetSocket2; }
 namespace RakNet { class RakPeer; }
+namespace RakNet { class RakPeerInterface; }
+namespace RakNet { class RakString; }
+namespace RakNet { class StringCompressor; }
+namespace RakNet { class StringTable; }
+namespace RakNet { struct AddressOrGUID; }
+namespace RakNet { struct InternalPacket; }
+namespace RakNet { struct NetworkAdapter; }
+namespace RakNet { struct Packet; }
+namespace RakNet { struct PublicKey; }
+namespace RakNet { struct RNS2RecvStruct; }
+namespace RakNet { struct RNS2_BerkleyBindParameters; }
+namespace RakNet { struct RNS2_SendParameters; }
 namespace RakNet { struct RakNetGUID; }
+namespace RakNet { struct RakNetStatistics; }
+namespace RakNet { struct SocketDescriptor; }
 namespace RakNet { struct SplitPacketChannel; }
 namespace RakNet { struct SystemAddress; }
+namespace RakNet { struct uint24_t; }
 // clang-format on
 
 namespace RakNet {

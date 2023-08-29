@@ -2,9 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/components/agent/Direction.h"
+
 // auto generated forward declare list
 // clang-format off
-namespace AgentComponents { enum class Direction; }
+class BlockSource;
+class EntityContext;
+class Vec3;
 namespace AgentComponents { struct BlockQueryResult; }
 namespace Util::Agent { struct SimulatedMoveResult; }
 // clang-format on

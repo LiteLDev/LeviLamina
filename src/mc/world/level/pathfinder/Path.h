@@ -5,6 +5,10 @@
 #include "mc/enums/PathCompletionType.h"
 #include "mc/world/level/BlockPos.h"
 
+// auto generated inclusion list
+#include "mc/enums/NodeType.h"
+#include "mc/enums/PathCompletionType.h"
+
 class Path {
 public:
     // Path inner types declare

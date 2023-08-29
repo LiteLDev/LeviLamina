@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/components/ItemColor.h"
+#include "mc/world/level/block/utils/BlockColor.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace mce { class Color; }
@@ -12,7 +16,7 @@ namespace BlockColorUtil {
 /**
  * @symbol ?RAINBOW\@BlockColorUtil\@\@3V?$array\@W4BlockColor\@\@$0BA\@\@std\@\@A
  */
-MCAPI extern std::array<enum class BlockColor, 16> RAINBOW;
+MCAPI extern std::array<::BlockColor, 16> RAINBOW;
 /**
  * @symbol ?fromInt\@BlockColorUtil\@\@YA?AW4BlockColor\@\@H\@Z
  */

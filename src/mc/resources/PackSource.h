@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/resources/PackOrigin.h"
+#include "mc/resources/PackType.h"
 
 class PackSource {
 

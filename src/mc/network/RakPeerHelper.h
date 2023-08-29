@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/raknet/StartupResult.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace RakNet { class RakPeerInterface; }
-namespace RakNet { enum class StartupResult; }
 namespace RakNet { struct SocketDescriptor; }
 namespace Social { class GameConnectionInfo; }
 // clang-format on

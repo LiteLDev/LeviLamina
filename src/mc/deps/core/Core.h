@@ -2,13 +2,57 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/CounterFlags.h"
+#include "mc/deps/core/CounterFormat.h"
+#include "mc/deps/core/CrossStorageCopyMode.h"
+#include "mc/deps/core/DirectoryIterationFlags.h"
+#include "mc/deps/core/FileAccessType.h"
+#include "mc/deps/core/FileBufferingMode.h"
+#include "mc/deps/core/FileStorageArea.h"
+#include "mc/deps/core/FileType.h"
+#include "mc/deps/core/LevelStorageState.h"
+#include "mc/deps/core/PathBuffer.h"
+#include "mc/deps/core/StackString.h"
+#include "mc/deps/core/StorageAreasTree.h"
+#include "mc/deps/core/TransactionFlags.h"
+#include "mc/deps/core/UnzipResult.h"
+#include "mc/deps/core/WriteOperation.h"
+#include "mc/deps/core/ZipResult.h"
+#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/deps/core/common/bedrock/ThreadLocalObject.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace Core { class DiskAccessTracker; }
+namespace Core { class File; }
+namespace Core { class FileImpl; }
+namespace Core { class FileOpenMode; }
+namespace Core { class FileStats; }
 namespace Core { class FileStorageArea; }
 namespace Core { class FileSystemImpl; }
+namespace Core { class FileSystem_windows; }
+namespace Core { class FlatFileManifest; }
+namespace Core { class FlatFileManifestInfo; }
+namespace Core { class FlatFileManifestTracker; }
+namespace Core { class FlatFileSearchResult; }
+namespace Core { class IFile; }
 namespace Core { class Path; }
+namespace Core { class PathPart; }
+namespace Core { class Random; }
 namespace Core { class Result; }
-namespace Core { enum class DirectoryIterationFlags; }
+namespace Core { class StorageAreaStateListener; }
+namespace Core { class StorageAreasTree; }
+namespace Core { class TransactionFrame; }
+namespace Core { class TransactionFrameSourceTarget; }
+namespace Core { struct DirectoryIterationItem; }
+namespace Core { struct ExcludedPath; }
+namespace Core { struct PendingWrite; }
+namespace Core::Profile { class CounterTokenMarker; }
+namespace Core::ZipUtils { class UnzipSettings; }
+namespace Core::ZipUtils { class ZipProgress; }
+namespace Core::ZipUtils { class ZipSettings; }
 // clang-format on
 
 namespace Core {

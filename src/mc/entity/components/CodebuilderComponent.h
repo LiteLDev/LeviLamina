@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace CodeBuilderExecutionState { enum class CodeStatus; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/codebuilder/CodeStatus.h"
 
 class CodebuilderComponent {
 

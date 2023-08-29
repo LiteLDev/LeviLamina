@@ -295,23 +295,23 @@ public:
      * @symbol
      * ?mEnchantNameToType\@Enchant\@\@2V?$unordered_map\@VHashedString\@\@W4Type\@Enchant\@\@U?$hash\@VHashedString\@\@\@std\@\@U?$equal_to\@VHashedString\@\@\@5\@V?$allocator\@U?$pair\@$$CBVHashedString\@\@W4Type\@Enchant\@\@\@std\@\@\@5\@\@std\@\@A
      */
-    MCAPI static std::unordered_map<class HashedString, enum class Enchant::Type> mEnchantNameToType;
+    MCAPI static std::unordered_map<class HashedString, ::Enchant::Type> mEnchantNameToType;
     /**
      * @symbol
      * ?mEnchantSlotTypeEnumToStringMap\@Enchant\@\@2V?$unordered_map\@W4Slot\@Enchant\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UEnchantSlotEnumHasher\@\@U?$equal_to\@W4Slot\@Enchant\@\@\@4\@V?$allocator\@U?$pair\@$$CBW4Slot\@Enchant\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@4\@\@std\@\@A
      */
     MCAPI static std::unordered_map<
-        enum class Enchant::Slot,
+        ::Enchant::Slot,
         std::string,
         struct EnchantSlotEnumHasher,
-        std::equal_to<enum class Enchant::Slot>,
-        std::allocator<std::pair<enum class Enchant::Slot const, std::string>>>
+        std::equal_to<::Enchant::Slot>,
+        std::allocator<std::pair<::Enchant::Slot const, std::string>>>
         mEnchantSlotTypeEnumToStringMap;
     /**
      * @symbol
      * ?mEnchantSlotTypeNameToEnumMap\@Enchant\@\@2V?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4Slot\@Enchant\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4Slot\@Enchant\@\@\@std\@\@\@2\@\@std\@\@A
      */
-    MCAPI static std::unordered_map<std::string, enum class Enchant::Slot> mEnchantSlotTypeNameToEnumMap;
+    MCAPI static std::unordered_map<std::string, ::Enchant::Slot> mEnchantSlotTypeNameToEnumMap;
     /**
      * @symbol
      * ?mEnchants\@Enchant\@\@2V?$vector\@V?$unique_ptr\@VEnchant\@\@U?$default_delete\@VEnchant\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VEnchant\@\@U?$default_delete\@VEnchant\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@A

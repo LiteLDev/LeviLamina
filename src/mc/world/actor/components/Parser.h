@@ -4,6 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/common/WeightedChoices.h"
+#include "mc/entity/utilities/ActorType.h"
+#include "mc/enums/Difficulty.h"
+#include "mc/enums/FilterSubject.h"
+#include "mc/enums/ParticleType.h"
+#include "mc/events/LevelSoundEvent.h"
 
 // auto generated forward declare list
 // clang-format off

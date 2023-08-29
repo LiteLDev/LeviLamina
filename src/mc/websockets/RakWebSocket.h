@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/wrapper/WSConnectionResult.h"
+#include "mc/enums/CloseStatusCode.h"
+#include "mc/enums/OpCode.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace RakNet { class BitStream; }

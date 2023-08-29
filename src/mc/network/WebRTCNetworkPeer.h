@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/enums/Compressibility.h"
 #include "mc/network/NetworkPeer.h"
 
 class WebRTCNetworkPeer : public ::NetworkPeer {

@@ -4,6 +4,10 @@
 #include "mc/util/Bounds.h"
 #include "mc/world/level/chunk/IRequestAction.h"
 
+// auto generated inclusion list
+#include "mc/world/level/chunk/ChunkRequestListType.h"
+#include "mc/world/level/chunk/ChunksLoadedStatus.h"
+
 class ChunkLoadedRequest {
 
 public:

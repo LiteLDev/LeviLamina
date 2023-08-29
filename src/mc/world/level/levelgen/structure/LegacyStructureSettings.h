@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/Mirror.h"
+#include "mc/enums/Projection.h"
+#include "mc/enums/Rotation.h"
+
 class LegacyStructureSettings {
 
 public:

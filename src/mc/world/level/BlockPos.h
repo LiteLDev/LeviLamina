@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/Mirror.h"
+#include "mc/enums/Rotation.h"
+
 class AABB;
 class BoundingBox;
 class Vec3;
@@ -17,6 +21,7 @@ public:
     LLNDAPI class Vec3 bottomCenter() const;
     LLNDAPI class Vec3 center() const;
 
+public:
     // NOLINTBEGIN
     /**
      * @symbol ??0BlockPos\@\@QEAA\@AEBVVec3\@\@\@Z

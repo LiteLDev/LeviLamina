@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/events/EventResult.h"
 #include "mc/world/events/ScoreboardEventListener.h"
 
 class PlayerScoreboardEventListener : public ::ScoreboardEventListener {

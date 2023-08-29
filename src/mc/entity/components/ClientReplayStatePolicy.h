@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/AdvanceFrameResult.h"
 #include "mc/entity/components/IReplayStatePolicy.h"
 
 class ClientReplayStatePolicy : public ::IReplayStatePolicy {

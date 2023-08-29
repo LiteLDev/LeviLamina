@@ -39,14 +39,14 @@ public:
      */
     MCAPI CommandOutputParameter(class CommandOutputParameter&&);
     /**
+     * @symbol ??0CommandOutputParameter\@\@QEAA\@M\@Z
+     */
+    MCAPI CommandOutputParameter(float);
+    /**
      * @symbol
      * ??0CommandOutputParameter\@\@QEAA\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
      */
     MCAPI CommandOutputParameter(std::vector<std::string> const&);
-    /**
-     * @symbol ??0CommandOutputParameter\@\@QEAA\@M\@Z
-     */
-    MCAPI CommandOutputParameter(float);
     /**
      * @symbol ??0CommandOutputParameter\@\@QEAA\@AEBV?$CommandSelectorResults\@VActor\@\@\@\@\@Z
      */

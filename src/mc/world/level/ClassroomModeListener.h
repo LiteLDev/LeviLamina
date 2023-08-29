@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/events/LevelEvent.h"
 #include "mc/world/level/LevelListener.h"
+#include "mc/world/level/block/utils/BlockChangedEventTarget.h"
 
 class ClassroomModeListener : public ::LevelListener {
 

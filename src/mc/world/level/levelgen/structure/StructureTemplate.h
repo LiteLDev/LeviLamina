@@ -9,6 +9,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/enums/Mirror.h"
+#include "mc/enums/Rotation.h"
 
 class BlockSource;
 class BlockPos;

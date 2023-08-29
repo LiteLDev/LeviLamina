@@ -4,11 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/ErrorBindingBuilder.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace gametest { enum class GameTestErrorType; }
-// clang-format on
+#include "mc/gametest/framework/GameTestErrorType.h"
 
 namespace gametest {
 

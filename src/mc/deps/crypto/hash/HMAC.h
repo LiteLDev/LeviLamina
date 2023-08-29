@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Crypto::Hash { enum class HashType; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/crypto/hash/HashType.h"
 
 namespace Crypto::Hash {
 

@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/network/proxy_type.h"
 #include "mc/common/wrapper/Result.h"
+#include "mc/network/HCWebSocketCloseStatus.h"
 #include "mc/network/http_stl_allocator.h"
 
 // auto generated forward declare list
 // clang-format off
-enum class HCWebSocketCloseStatus;
 namespace xbox::httpclient { class Uri; }
-namespace xbox::httpclient { enum class proxy_type; }
 namespace xbox::httpclient { struct WinHttpWebSocketExports; }
 struct HC_CALL;
 struct HC_PERFORM_ENV;

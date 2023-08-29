@@ -2,12 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/data/BidirectionalUnorderedMap.h"
+#include "mc/deps/core/utility/NumberConversionResult.h"
+#include "mc/entity/components/agent/Direction.h"
+#include "mc/enums/EquipmentSlot.h"
+#include "mc/enums/LogArea.h"
+#include "mc/world/AutomaticID.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace AgentComponents { struct BlockQueryResult; }
 namespace Json { class Value; }
-namespace Util { enum class NumberConversionResult; }
+namespace Util { struct ActorReplacementParams; }
+namespace Util { struct ContainerReplacementParams; }
 namespace Util { struct FormattedString; }
-template<typename T0, typename T1> class BidirectionalUnorderedMap;
+namespace Util { struct ReplacementResults; }
+namespace Util::Agent { struct SimulatedMoveResult; }
+namespace Util::ResourceUri { struct ValidationResult; }
+namespace Util::Url { struct Components; }
+namespace Util::Url { struct ComponentsView; }
 // clang-format on
 
 namespace Util {

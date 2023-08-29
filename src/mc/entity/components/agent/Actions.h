@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/CurrentCmdVersion.h"
+
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
 namespace AgentComponents::Actions { struct Attack; }
 namespace AgentComponents::Actions { struct Collect; }
 namespace AgentComponents::Actions { struct Destroy; }
@@ -16,6 +20,7 @@ namespace AgentComponents::Actions { struct InspectItemDetail; }
 namespace AgentComponents::Actions { struct InspectItemSpace; }
 namespace AgentComponents::Actions { struct Interact; }
 namespace AgentComponents::Actions { struct PlaceBlock; }
+namespace AgentComponents::Actions { struct QueueItem; }
 namespace AgentComponents::Actions { struct Till; }
 namespace AgentComponents::Actions { struct TransferItemTo; }
 namespace AgentComponents::Actions { struct Turn; }

@@ -2,9 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/ChatRestrictionLevel.h"
+
 // auto generated forward declare list
 // clang-format off
-enum class ChatRestrictionLevel;
 struct GameRuleId;
 // clang-format on
 class Level;

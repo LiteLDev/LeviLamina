@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/EquipmentFilter.h"
 #include "mc/world/item/enchanting/Enchant.h"
 
 class EnchantUtils {

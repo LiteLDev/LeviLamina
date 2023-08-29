@@ -1,13 +1,14 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/BossBarColor.h"
+#include "mc/enums/BossBarOverlay.h"
+#include "mc/world/ActorUniqueID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/BossBarColor.h"
-#include "mc/enums/BossBarOverlay.h"
+#include "mc/enums/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
-#include "mc/world/ActorUniqueID.h"
 #include "mc/world/events/BossEventUpdateType.h"
 
 class BossEventPacket : public ::Packet {
@@ -24,6 +25,10 @@ public:
     enum class BossBarOverlay      mOverlay;        // this+0x78
     unsigned char                  mDarkenScreen;   // this+0x7C
     unsigned char                  mCreateWorldFog; // this+0x7D
+
+    // prevent constructor by default
+    BossEventPacket& operator=(BossEventPacket const&) = delete;
+    BossEventPacket(BossEventPacket const&)            = delete;
 
 public:
     // NOLINTBEGIN

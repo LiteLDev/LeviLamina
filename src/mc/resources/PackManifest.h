@@ -2,6 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/ManifestOrigin.h"
+#include "mc/enums/ManifestType.h"
+#include "mc/resources/PackCategory.h"
+#include "mc/resources/PackManifestFormat.h"
+#include "mc/resources/PackOrigin.h"
+#include "mc/resources/PackScope.h"
+#include "mc/resources/PackType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
@@ -246,6 +255,6 @@ private:
      * @symbol
      * ?STRING_TO_PACK_SCOPE\@PackManifest\@\@0V?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PackScope\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PackScope\@\@\@std\@\@\@2\@\@std\@\@B
      */
-    MCAPI static std::unordered_map<std::string, enum class PackScope> const STRING_TO_PACK_SCOPE;
+    MCAPI static std::unordered_map<std::string, ::PackScope> const STRING_TO_PACK_SCOPE;
     // NOLINTEND
 };

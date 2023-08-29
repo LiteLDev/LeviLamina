@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/POIType.h"
 #include "mc/world/AutomaticID.h"
 #include "mc/world/actor/ai/goal/WorkGoal.h"
 

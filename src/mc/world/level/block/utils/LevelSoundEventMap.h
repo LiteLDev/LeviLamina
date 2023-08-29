@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/data/BidirectionalUnorderedMap.h"
+#include "mc/events/LevelSoundEvent.h"
 
 class LevelSoundEventMap {
 
@@ -29,7 +30,7 @@ public:
      * @symbol
      * ?initializerData\@LevelSoundEventMap\@\@2V?$initializer_list\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4LevelSoundEvent\@\@\@std\@\@\@std\@\@B
      */
-    MCAPI static std::initializer_list<std::pair<std::string, enum class LevelSoundEvent>> const initializerData;
+    MCAPI static std::initializer_list<std::pair<std::string, ::LevelSoundEvent>> const initializerData;
     // NOLINTEND
 
 private:
@@ -38,6 +39,6 @@ private:
      * @symbol
      * ?map\@LevelSoundEventMap\@\@0V?$BidirectionalUnorderedMap\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4LevelSoundEvent\@\@\@\@B
      */
-    MCAPI static class BidirectionalUnorderedMap<std::string, enum class LevelSoundEvent> const map;
+    MCAPI static class BidirectionalUnorderedMap<std::string, ::LevelSoundEvent> const map;
     // NOLINTEND
 };

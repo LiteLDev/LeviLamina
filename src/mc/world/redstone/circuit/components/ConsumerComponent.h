@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/CircuitComponentType.h"
 #include "mc/world/redstone/circuit/components/BaseCircuitComponent.h"
 
 class ConsumerComponent : public ::BaseCircuitComponent {

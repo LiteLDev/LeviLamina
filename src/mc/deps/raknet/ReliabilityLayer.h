@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/levelgen/structure/List.h"
+#include "mc/deps/raknet/data_structures/List.h"
+#include "mc/resources/PacketPriority.h"
+#include "mc/resources/PacketReliability.h"
 
 // auto generated forward declare list
 // clang-format off
-enum class PacketPriority;
-enum class PacketReliability;
 namespace RakNet { class BitStream; }
 namespace RakNet { class PluginInterface2; }
 namespace RakNet { class RakNetRandom; }

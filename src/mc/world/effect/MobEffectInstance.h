@@ -3,6 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/effect/MobEffect.h"
 
+// auto generated inclusion list
+#include "mc/enums/Difficulty.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace mce { class Color; }

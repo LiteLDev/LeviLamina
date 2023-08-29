@@ -2,20 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-template<typename T0, typename T1, typename T2, typename T3, typename T4, typename T5, typename T6> class StrictExecutionContext;
-template<typename T0, typename T1, typename... T2> class EntityModifierT;
-template<typename T0> class FlagComponent;
-template<typename T0> class Optional;
-template<typename... T0> struct AddRemove;
-template<typename... T0> struct EntityFactoryT;
-template<typename... T0> struct Filter;
-template<typename... T0> struct GlobalRead;
-template<typename... T0> struct GlobalWrite;
-template<typename... T0> struct Read;
-template<typename... T0> struct Write;
-// clang-format on
+// auto generated inclusion list
+#include "mc/common/GlobalRead.h"
+#include "mc/common/GlobalWrite.h"
+#include "mc/common/StrictExecutionContext.h"
+#include "mc/common/wrapper/AddRemove.h"
+#include "mc/common/wrapper/Optional.h"
+#include "mc/deps/core/data/Filter.h"
+#include "mc/deps/core/data/Read.h"
+#include "mc/deps/core/data/Write.h"
+#include "mc/entity/EntityFactoryT.h"
+#include "mc/entity/EntityModifierT.h"
+#include "mc/world/components/FlagComponent.h"
 
 namespace MobJumpFromGroundSystemImpl {
 // NOLINTBEGIN

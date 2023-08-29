@@ -3,7 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/containers/ContainerID.h"
+#include "mc/world/containers/ContainerType.h"
 #include "mc/world/containers/managers/models/LevelContainerManagerModel.h"
+#include "mc/world/level/block/utils/BlockActorType.h"
 
 class ChestContainerManagerModel : public ::LevelContainerManagerModel {
 

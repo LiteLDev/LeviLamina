@@ -5,6 +5,10 @@
 #include "mc/world/actor/player/PlayerPermissionLevel.h"
 
 
+// auto generated inclusion list
+#include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/world/actor/player/PlayerPermissionLevel.h"
+
 class PermissionsHandler {
 
 public:

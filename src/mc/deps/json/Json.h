@@ -2,6 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/json/CommentPlacement.h"
+#include "mc/deps/json/Reader.h"
+#include "mc/deps/json/Value.h"
+#include "mc/deps/json/ValueType.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Features; }
+namespace Json { class Value; }
+namespace Json { class ValueConstIterator; }
+namespace Json { class ValueIterator; }
+namespace Json { class ValueIteratorBase; }
+// clang-format on
+
 namespace Json {
 // NOLINTBEGIN
 /**

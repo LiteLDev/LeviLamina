@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/CallStack.h"
+#include "mc/deps/core/common/bedrock/ErrorInfoBuilder.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Detail { template<typename T0> struct ErrorInfoBuilder; }
 namespace Core { class Path; }
 // clang-format on
 

@@ -3,6 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/CommonDirection.h"
+#include "mc/enums/Mirror.h"
+#include "mc/enums/Rotation.h"
 #include "mc/world/Facing.h"
 
 class VanillaBlockStateTransformUtils {

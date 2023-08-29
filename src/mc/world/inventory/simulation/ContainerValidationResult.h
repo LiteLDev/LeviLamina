@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/containers/ContainerValidationOperationType.h"
+#include "mc/world/containers/ContainerValidationOutcome.h"
+
 struct ContainerValidationResult {
 
 public:

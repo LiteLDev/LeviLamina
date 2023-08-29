@@ -3,12 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/newbiome/Terrain.h"
 #include "mc/world/level/newbiome/WorkingData.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace OperationNodeValues { enum class Terrain; }
-// clang-format on
 
 class IslandOperationNode {
 

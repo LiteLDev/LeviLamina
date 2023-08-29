@@ -9,7 +9,10 @@
 #include "mc/common/wrapper/SharePtrRefTraits.h"
 #include "mc/common/wrapper/WeakRefT.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/enums/CurrentCmdVersion.h"
+#include "mc/enums/SubClientId.h"
 #include "mc/world/level/Level.h"
+#include "mc/world/systems/CommandOriginSystem.h"
 
 // auto generated forward declare list
 // clang-format off

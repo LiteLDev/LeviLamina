@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/data/LocklessQueue.h"
+#include "mc/enums/ApiId.h"
+#include "mc/enums/XTaskQueueDispatchMode.h"
 
 // auto generated forward declare list
 // clang-format off

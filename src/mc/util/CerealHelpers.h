@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/glm/vec.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace CerealHelpers { struct IdentifierString; }
-namespace glm { template<int T0, typename T1, int T2> struct vec; }
 namespace mce { class Color; }
 // clang-format on
 

@@ -2,10 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-template<typename T0> class SubChunkStorage;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/level/chunk/SubChunkFormat.h"
+#include "mc/world/level/chunk/SubChunkStorage.h"
 
 namespace SubChunkBlockStorageUtil {
 // NOLINTBEGIN

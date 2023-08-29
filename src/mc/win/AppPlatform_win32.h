@@ -4,6 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
+#include "mc/enums/BuildPlatform.h"
+#include "mc/enums/FullscreenMode.h"
+#include "mc/enums/OsVersion.h"
+#include "mc/enums/PlatformType.h"
+#include "mc/enums/UIScalingRules.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -5,6 +5,10 @@
 #include "mc/enums/AttributeModifierOperation.h"
 #include "mc/enums/AttributeOperands.h"
 
+// auto generated inclusion list
+#include "mc/enums/AttributeModifierOperation.h"
+#include "mc/enums/AttributeOperands.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace mce { class UUID; }

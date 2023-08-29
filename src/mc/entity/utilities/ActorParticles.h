@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/PaletteColor.h"
+#include "mc/enums/ParticleType.h"
+
 namespace ActorParticles {
 // NOLINTBEGIN
 /**

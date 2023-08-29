@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/GeneratorType.h"
+
 // auto generated forward declare list
 // clang-format off
 class Biome;
 class BiomeRegistry;
-enum class GeneratorType;
 // clang-format on
 
 namespace OperationNodeFilters {

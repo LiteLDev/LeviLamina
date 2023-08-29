@@ -3,7 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/AdjustmentEffect.h"
+#include "mc/world/level/biome/VanillaBiomeTypes.h"
 #include "mc/world/level/levelgen/structure/PoolElementStructurePiece.h"
+#include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
 class VillagePiece : public ::PoolElementStructurePiece {
 

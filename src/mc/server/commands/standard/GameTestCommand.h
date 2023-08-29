@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/Rotation.h"
 #include "mc/server/commands/ServerCommand.h"
 
 // auto generated forward declare list

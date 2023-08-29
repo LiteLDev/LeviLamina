@@ -5,7 +5,10 @@
 #include "mc/world/actor/Hopper.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
-class HopperBlockActor : public BlockActor, Container, Hopper {
+// auto generated inclusion list
+#include "mc/world/containers/ContainerType.h"
+
+class HopperBlockActor : public BlockActor, public Container, public Hopper {
 
 public:
     // prevent constructor by default

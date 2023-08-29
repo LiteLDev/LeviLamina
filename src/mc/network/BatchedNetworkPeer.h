@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/Compressibility.h"
 #include "mc/network/NetworkPeer.h"
 
 class BatchedNetworkPeer : public ::NetworkPeer {

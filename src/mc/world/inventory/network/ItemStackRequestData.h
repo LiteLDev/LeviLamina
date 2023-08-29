@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/world/item/components/ItemStackRequestActionType.h"
 
 class ItemStackRequestData {
 

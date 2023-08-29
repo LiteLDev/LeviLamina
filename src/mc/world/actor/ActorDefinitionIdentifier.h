@@ -3,6 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/string/HashedString.h"
 
+// auto generated inclusion list
+#include "mc/entity/utilities/ActorType.h"
+
 struct ActorDefinitionIdentifier {
 
 public:

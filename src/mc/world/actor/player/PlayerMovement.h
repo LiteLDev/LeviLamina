@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/entity/components/PlayerPositionModeComponent.h"
+#include "mc/enums/InputMode.h"
 
 namespace PlayerMovement {
 // NOLINTBEGIN

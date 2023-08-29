@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/DoublePlantType.h"
 #include "mc/world/level/levelgen/feature/Feature.h"
 
 class DoublePlantFeature : public ::Feature {

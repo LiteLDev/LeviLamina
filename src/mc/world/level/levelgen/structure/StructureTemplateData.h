@@ -4,6 +4,9 @@
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/structure/StructureBlockPalette.h"
 
+// auto generated inclusion list
+#include "mc/common/wrapper/StructureLoadResult.h"
+
 class StructureTemplateData {
 
 public:

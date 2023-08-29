@@ -3,7 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/AbilitiesIndex.h"
+#include "mc/enums/SubClientId.h"
 #include "mc/server/commands/BlockCommandOrigin.h"
+#include "mc/server/commands/CommandOriginType.h"
+#include "mc/server/commands/CommandPermissionLevel.h"
 
 // auto generated forward declare list
 // clang-format off

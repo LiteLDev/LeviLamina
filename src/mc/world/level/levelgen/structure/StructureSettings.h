@@ -8,6 +8,11 @@
 #include "mc/world/ActorUniqueID.h"
 #include "mc/world/level/BlockPos.h"
 
+// auto generated inclusion list
+#include "mc/enums/AnimationMode.h"
+#include "mc/enums/Mirror.h"
+#include "mc/enums/Rotation.h"
+
 class StructureSettings {
 
 public:

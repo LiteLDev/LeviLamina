@@ -6,6 +6,18 @@
 // auto generated inclusion list
 #include "mc/common/wrapper/WeakPtr.h"
 #include "mc/common/wrapper/optional_ref.h"
+#include "mc/enums/BurnOdds.h"
+#include "mc/enums/CreativeItemCategory.h"
+#include "mc/enums/FertilizerType.h"
+#include "mc/enums/FlameOdds.h"
+#include "mc/enums/Flip.h"
+#include "mc/enums/LavaFlammable.h"
+#include "mc/world/level/block/utils/BlockActorType.h"
+#include "mc/world/level/block/utils/BlockProperty.h"
+#include "mc/world/level/block/utils/BlockRenderLayer.h"
+#include "mc/world/level/block/utils/BlockShape.h"
+#include "mc/world/level/block/utils/BlockSupportType.h"
+#include "mc/world/level/block/utils/BlockTintType.h"
 
 // auto generated forward declare list
 // clang-format off

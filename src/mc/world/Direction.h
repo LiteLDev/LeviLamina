@@ -26,11 +26,11 @@ public:
     /**
      * @symbol ?DIRECTION_CLOCKWISE\@Direction\@\@2QBW4Type\@1\@B
      */
-    MCAPI static enum class Direction::Type const DIRECTION_CLOCKWISE[];
+    MCAPI static ::Direction::Type const DIRECTION_CLOCKWISE[];
     /**
      * @symbol ?DIRECTION_COUNTER_CLOCKWISE\@Direction\@\@2QBW4Type\@1\@B
      */
-    MCAPI static enum class Direction::Type const DIRECTION_COUNTER_CLOCKWISE[];
+    MCAPI static ::Direction::Type const DIRECTION_COUNTER_CLOCKWISE[];
     /**
      * @symbol ?DIRECTION_FACING\@Direction\@\@2QBEB
      */
@@ -38,16 +38,16 @@ public:
     /**
      * @symbol ?DIRECTION_OPPOSITE\@Direction\@\@2QBW4Type\@1\@B
      */
-    MCAPI static enum class Direction::Type const DIRECTION_OPPOSITE[];
+    MCAPI static ::Direction::Type const DIRECTION_OPPOSITE[];
     /**
      * @symbol ?FACING_DIRECTION\@Direction\@\@2QBW4Type\@1\@B
      */
-    MCAPI static enum class Direction::Type const FACING_DIRECTION[];
+    MCAPI static ::Direction::Type const FACING_DIRECTION[];
     /**
      * @symbol
      * ?FROM_STRING_MAP\@Direction\@\@2V?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4Type\@Direction\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4Type\@Direction\@\@\@std\@\@\@2\@\@std\@\@B
      */
-    MCAPI static std::unordered_map<std::string, enum class Direction::Type> const FROM_STRING_MAP;
+    MCAPI static std::unordered_map<std::string, ::Direction::Type> const FROM_STRING_MAP;
     /**
      * @symbol ?STEP_X\@Direction\@\@2QBHB
      */

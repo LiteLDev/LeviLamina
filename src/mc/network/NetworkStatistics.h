@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/enums/TrackerType.h"
 #include "mc/network/PacketObserver.h"
 
 // auto generated forward declare list

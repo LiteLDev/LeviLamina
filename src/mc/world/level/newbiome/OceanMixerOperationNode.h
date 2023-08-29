@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/wrapper/OperationGraphResult.h"
 #include "mc/deps/core/data/OperationNode.h"
+#include "mc/world/level/biome/BiomeTemperatureCategory.h"
 #include "mc/world/level/newbiome/WorkingData.h"
 
 class OceanMixerOperationNode {

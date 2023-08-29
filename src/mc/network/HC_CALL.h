@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/Result.h"
+#include "mc/network/XAsyncOp.h"
 #include "mc/network/http_alloc_deleter.h"
 
 struct HC_CALL {

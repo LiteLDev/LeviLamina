@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/TypedObjectHandle.h"
+#include "mc/world/events/EventResult.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-enum class EventResult;
 namespace ScriptModuleMinecraft { class IScriptAfterEvents; }
 namespace Scripting { class WeakLifetimeScope; }
 struct ActorAddEffectEvent;

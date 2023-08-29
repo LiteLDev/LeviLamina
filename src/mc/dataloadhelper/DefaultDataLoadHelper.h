@@ -3,6 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/DataLoadHelperType.h"
+#include "mc/enums/Mirror.h"
+#include "mc/enums/Rotation.h"
 #include "mc/world/Direction.h"
 #include "mc/world/actor/InternalComponentRegistry.h"
 #include "mc/world/level/levelgen/structure/DataLoadHelper.h"

@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/CurrentCmdVersion.h"
+#include "mc/server/commands/CommandOutputType.h"
+
 class MinecraftCommands {
 
 public:

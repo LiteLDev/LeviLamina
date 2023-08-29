@@ -3,10 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/QueueRequestResult.h"
+#include "mc/common/wrapper/StructureDeleteResult.h"
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/StackString.h"
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/world/level/chunk/ChunksLoadedStatus.h"
+#include "mc/world/level/levelgen/structure/StructureTemplateResponseType.h"
 
 class StructureManager : public ::Bedrock::EnableNonOwnerReferences {
 

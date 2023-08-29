@@ -5,6 +5,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/entity/utilities/ActorType.h"
+#include "mc/enums/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 
 class SetLastHurtByPacket : public ::Packet {

@@ -5,6 +5,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/data/BidirectionalUnorderedMap.h"
+#include "mc/world/item/components/ItemStackNetResult.h"
 
 class ItemStackNetResultMap {
 
@@ -33,6 +34,6 @@ private:
      * @symbol
      * ?mMap\@ItemStackNetResultMap\@\@0V?$BidirectionalUnorderedMap\@W4ItemStackNetResult\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@\@B
      */
-    MCAPI static class BidirectionalUnorderedMap<enum class ItemStackNetResult, std::string> const mMap;
+    MCAPI static class BidirectionalUnorderedMap<::ItemStackNetResult, std::string> const mMap;
     // NOLINTEND
 };

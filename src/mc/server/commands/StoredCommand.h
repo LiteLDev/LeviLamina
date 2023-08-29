@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-enum class CurrentCmdVersion;
-// clang-format on
+// auto generated inclusion list
+#include "mc/enums/CurrentCmdVersion.h"
 
 namespace npc {
 

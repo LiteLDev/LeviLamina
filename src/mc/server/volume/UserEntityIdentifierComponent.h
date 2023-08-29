@@ -5,6 +5,9 @@
 #include "mc/enums/SubClientId.h"
 #include "mc/deps/core/mce/UUID.h"
 
+// auto generated inclusion list
+#include "mc/enums/SubClientId.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace mce { class UUID; }

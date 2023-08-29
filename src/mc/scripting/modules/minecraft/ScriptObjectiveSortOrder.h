@@ -4,11 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/EnumBindingBuilder.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace ScriptModuleMinecraft { enum class ScriptObjectiveSortOrderType; }
-// clang-format on
+#include "mc/scripting/modules/minecraft/ScriptObjectiveSortOrderType.h"
 
 namespace ScriptModuleMinecraft {
 

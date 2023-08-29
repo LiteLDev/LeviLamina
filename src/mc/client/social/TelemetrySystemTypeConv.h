@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Social::Events { enum class TelemetrySystemType; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/client/social/TelemetrySystemType.h"
 
 namespace Social::Events::TelemetrySystemTypeConv {
 // NOLINTBEGIN

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/data/BidirectionalUnorderedMap.h"
 #include "mc/world/TypedRuntimeId.h"
+#include "mc/world/containers/ContainerType.h"
 
 class Container {
 
@@ -299,6 +300,6 @@ protected:
      * @symbol
      * ?containerTypeMap\@Container\@\@1V?$BidirectionalUnorderedMap\@W4ContainerType\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@\@B
      */
-    MCAPI static class BidirectionalUnorderedMap<enum class ContainerType, std::string> const containerTypeMap;
+    MCAPI static class BidirectionalUnorderedMap<::ContainerType, std::string> const containerTypeMap;
     // NOLINTEND
 };

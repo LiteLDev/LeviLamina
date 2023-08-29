@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/pubsub/ConnectPosition.h"
 #include "mc/deps/core/common/bedrock/pubsub/PublisherDisconnector.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::PubSub { enum class ConnectPosition; }
 namespace Bedrock::PubSub::Detail { class SubscriptionBodyBase; }
 // clang-format on
 

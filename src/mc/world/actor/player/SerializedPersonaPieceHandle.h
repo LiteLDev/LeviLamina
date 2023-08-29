@@ -4,6 +4,9 @@
 #include "mc/client/services/persona/PieceType.h"
 #include "mc/deps/core/mce/UUID.h"
 
+// auto generated inclusion list
+#include "mc/client/services/persona/PieceType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace mce { class UUID; }

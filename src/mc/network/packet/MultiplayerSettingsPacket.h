@@ -5,6 +5,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/enums/MultiplayerSettingsPacketType.h"
 #include "mc/network/packet/Packet.h"
 
 class MultiplayerSettingsPacket : public ::Packet {

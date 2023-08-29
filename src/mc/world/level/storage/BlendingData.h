@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/ScalarOptional.h"
+#include "mc/world/level/block/utils/BlendingBlockType.h"
 
 class BlendingData {
 

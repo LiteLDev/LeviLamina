@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock { template<typename T0, typename T1> class Result; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/Result.h"
 
 namespace DictionaryCompressionUtil {
 // NOLINTBEGIN

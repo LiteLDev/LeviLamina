@@ -3,7 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/entity/utilities/ActorType.h"
+#include "mc/enums/MovePredictionType.h"
 #include "mc/events/MinecraftEventing.h"
+#include "mc/world/events/EventResult.h"
 
 class ActorEventListener {
 

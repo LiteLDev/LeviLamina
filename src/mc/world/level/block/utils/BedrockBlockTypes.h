@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-template<typename T0> class WeakPtr;
-// clang-format on
+// auto generated inclusion list
+#include "mc/common/wrapper/WeakPtr.h"
 
 namespace BedrockBlockTypes {
 // NOLINTBEGIN

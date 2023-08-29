@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/Compressibility.h"
+
 class NetworkPeer {
 public:
     // NetworkPeer inner types declare

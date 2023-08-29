@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-template<typename T0> struct InsideBlockWithPosComponent;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/components/InsideBlockWithPosComponent.h"
 
 namespace InsideWaterlilyBlockSystemImpl {
 // NOLINTBEGIN

@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/EquipmentSlot.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class ItemStack;
-enum class EquipmentSlot;
 namespace Util { struct ActorReplacementParams; }
 namespace Util { struct ContainerReplacementParams; }
 namespace Util { struct ReplacementResults; }

@@ -3,12 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/social/GamePublishSetting.h"
 #include "mc/deps/core/PathBuffer.h"
+#include "mc/enums/Difficulty.h"
+#include "mc/enums/EducationEditionOffer.h"
+#include "mc/enums/GameType.h"
+#include "mc/enums/StorageVersion.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
-namespace Social { enum class GamePublishSetting; }
 // clang-format on
 
 struct LevelSummary {

@@ -3,17 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/GameType.h"
 #include "mc/external/scripting/Closure.h"
 #include "mc/external/scripting/Promise.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
 #include "mc/external/scripting/TypedObjectHandle.h"
 #include "mc/external/scripting/WeakTypedObjectHandle.h"
+#include "mc/scripting/modules/minecraft/ScriptFacing.h"
+#include "mc/scripting/modules/minecraft/ScriptFluidType.h"
 
 // auto generated forward declare list
 // clang-format off
 class Vec3;
-enum class GameType;
 namespace ScriptModuleGameTest { class ScriptGameTestConnectivity; }
 namespace ScriptModuleGameTest { class ScriptGameTestSequence; }
 namespace ScriptModuleGameTest { class ScriptSculkSpreader; }
@@ -25,8 +27,6 @@ namespace ScriptModuleMinecraft { class ScriptBlockType; }
 namespace ScriptModuleMinecraft { class ScriptDimension; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
-namespace ScriptModuleMinecraft { enum class ScriptFacing; }
-namespace ScriptModuleMinecraft { enum class ScriptFluidType; }
 namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct Error; }

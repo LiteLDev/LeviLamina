@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/WeirdoDirection.h"
 #include "mc/external/glm/mat.h"
 #include "mc/world/Direction.h"
 
@@ -194,11 +195,11 @@ public:
     /**
      * @symbol ?BY2DDATA\@Facing\@\@2QBW4Name\@1\@B
      */
-    MCAPI static enum class Facing::Name const BY2DDATA[];
+    MCAPI static ::Facing::Name const BY2DDATA[];
     /**
      * @symbol ?DIRECTIONS\@Facing\@\@2QBW4Name\@1\@B
      */
-    MCAPI static enum class Facing::Name const DIRECTIONS[];
+    MCAPI static ::Facing::Name const DIRECTIONS[];
     /**
      * @symbol ?DIRECTION\@Facing\@\@2QBVBlockPos\@\@B
      */

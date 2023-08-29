@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/AddTickingAreaStatus.h"
+#include "mc/enums/TickingAreaLoadMode.h"
 #include "mc/world/AutomaticID.h"
 
 class TickingAreasManager {
@@ -35,15 +37,15 @@ public:
     addArea(class AutomaticID<class Dimension, int>, std::string const&, class BlockPos const&, int, enum class TickingAreasManager::AreaLimitCheck, bool, enum class TickingAreaLoadMode, class LevelStorage&);
     /**
      * @symbol
-     * ?addEntityArea\@TickingAreasManager\@\@QEAAXV?$AutomaticID\@VDimension\@\@H\@\@AEBVActor\@\@AEAVLevelStorage\@\@\@Z
-     */
-    MCAPI void addEntityArea(class AutomaticID<class Dimension, int>, class Actor const&, class LevelStorage&);
-    /**
-     * @symbol
      * ?addEntityArea\@TickingAreasManager\@\@QEAAXV?$AutomaticID\@VDimension\@\@H\@\@AEBUActorUniqueID\@\@AEBUBounds\@\@_NMAEAVLevelStorage\@\@\@Z
      */
     MCAPI void
     addEntityArea(class AutomaticID<class Dimension, int>, struct ActorUniqueID const&, struct Bounds const&, bool, float, class LevelStorage&);
+    /**
+     * @symbol
+     * ?addEntityArea\@TickingAreasManager\@\@QEAAXV?$AutomaticID\@VDimension\@\@H\@\@AEBVActor\@\@AEAVLevelStorage\@\@\@Z
+     */
+    MCAPI void addEntityArea(class AutomaticID<class Dimension, int>, class Actor const&, class LevelStorage&);
     /**
      * @symbol
      * ?addTickingAreaListForDimension\@TickingAreasManager\@\@QEAAXV?$AutomaticID\@VDimension\@\@H\@\@AEBV?$shared_ptr\@VTickingAreaList\@\@\@std\@\@\@Z

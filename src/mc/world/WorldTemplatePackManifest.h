@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/GameType.h"
 #include "mc/resources/PackManifest.h"
 
 class WorldTemplatePackManifest : public ::PackManifest {

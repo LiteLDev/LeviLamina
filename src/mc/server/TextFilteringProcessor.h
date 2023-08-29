@@ -4,11 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Safety { enum class TextFilteringEvent; }
-// clang-format on
+#include "mc/events/TextFilteringEvent.h"
+#include "mc/world/events/TextProcessingEventOrigin.h"
 
 class TextFilteringProcessor : public ::Bedrock::EnableNonOwnerReferences {
 

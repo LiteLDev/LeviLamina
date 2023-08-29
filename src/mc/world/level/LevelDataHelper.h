@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/Difficulty.h"
+#include "mc/enums/GameType.h"
+
 namespace LevelDataHelper {
 // NOLINTBEGIN
 /**

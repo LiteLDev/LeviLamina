@@ -3,12 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/SignTextSide.h"
 #include "mc/external/scripting/EnumBindingBuilder.h"
-
-// auto generated forward declare list
-// clang-format off
-enum class SignTextSide;
-// clang-format on
 
 namespace ScriptModuleMinecraft {
 

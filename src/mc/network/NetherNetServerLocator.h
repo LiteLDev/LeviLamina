@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/enums/GameType.h"
 #include "mc/network/StubServerLocator.h"
 
 class NetherNetServerLocator : public ::StubServerLocator {

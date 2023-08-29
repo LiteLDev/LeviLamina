@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace edu { enum class Role; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/enums/edu/Role.h"
 
 class RoleChecker {
 

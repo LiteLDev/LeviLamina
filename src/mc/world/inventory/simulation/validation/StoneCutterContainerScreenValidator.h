@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/network/TypedServerNetId.h"
+#include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/inventory/simulation/ContainerScreenValidatorBase.h"
 
 class StoneCutterContainerScreenValidator : public ::ContainerScreenValidatorBase {

@@ -3,7 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/entity/utilities/ActorLocation.h"
+#include "mc/entity/utilities/ActorType.h"
+#include "mc/enums/BucketFillType.h"
+#include "mc/enums/InHandUpdateType.h"
+#include "mc/enums/UseAnimation.h"
+#include "mc/events/LevelSoundEvent.h"
 #include "mc/world/item/Item.h"
+#include "mc/world/item/components/ItemColor.h"
+#include "mc/world/item/components/ItemUseMethod.h"
+#include "mc/world/level/block/utils/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -260,6 +269,6 @@ private:
      * @symbol
      * ?mFillTypeToEntityType\@BucketItem\@\@0V?$vector\@U?$pair\@W4BucketFillType\@\@W4ActorType\@\@\@std\@\@V?$allocator\@U?$pair\@W4BucketFillType\@\@W4ActorType\@\@\@std\@\@\@2\@\@std\@\@B
      */
-    MCAPI static std::vector<std::pair<enum class BucketFillType, enum class ActorType>> const mFillTypeToEntityType;
+    MCAPI static std::vector<std::pair<::BucketFillType, ::ActorType>> const mFillTypeToEntityType;
     // NOLINTEND
 };

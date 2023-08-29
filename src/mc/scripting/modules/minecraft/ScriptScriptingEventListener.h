@@ -2,9 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/events/EventResult.h"
+
 // auto generated forward declare list
 // clang-format off
-enum class EventResult;
 struct ScriptCommandMessageEvent;
 struct ScriptingNotificationEvent;
 // clang-format on

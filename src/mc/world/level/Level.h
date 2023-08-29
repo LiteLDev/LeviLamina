@@ -7,6 +7,7 @@
 #include "mc/world/level/storage/LevelData.h"
 
 // auto generated inclusion list
+#include "mc/client/social/GamePublishSetting.h"
 #include "mc/common/TagRegistry.h"
 #include "mc/common/wrapper/IDType.h"
 #include "mc/common/wrapper/OwnerPtrFactory.h"
@@ -17,14 +18,26 @@
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/deps/core/data/Factory.h"
+#include "mc/enums/CanJumpIntoNode.h"
+#include "mc/enums/CrashDumpLogStringID.h"
+#include "mc/enums/CurrentCmdVersion.h"
+#include "mc/enums/Difficulty.h"
+#include "mc/enums/GameType.h"
+#include "mc/enums/NodeType.h"
+#include "mc/enums/ParticleType.h"
+#include "mc/enums/StorageVersion.h"
+#include "mc/enums/SubClientId.h"
+#include "mc/events/ActorEvent.h"
+#include "mc/events/LevelEvent.h"
+#include "mc/events/LevelSoundEvent.h"
 #include "mc/world/AutomaticID.h"
+#include "mc/world/systems/CommandOriginSystem.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace PlayerCapabilities { struct ISharedController; }
 namespace PositionTrackingDB { class PositionTrackingDBClient; }
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
-namespace Social { enum class GamePublishSetting; }
 namespace cg { class ImageBuffer; }
 namespace mce { class Color; }
 namespace mce { class UUID; }

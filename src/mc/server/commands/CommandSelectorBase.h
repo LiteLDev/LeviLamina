@@ -9,6 +9,9 @@
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/level/BlockPos.h"
 
+// auto generated inclusion list
+#include "mc/server/commands/CommandSelectionType.h"
+
 class CommandSelectorBase {
 
 public:

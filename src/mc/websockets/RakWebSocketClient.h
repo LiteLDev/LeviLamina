@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/WSConnectionResult.h"
+#include "mc/enums/CloseStatusCode.h"
 #include "mc/websockets/RakWebSocket.h"
 
 class RakWebSocketClient : public ::RakWebSocket {

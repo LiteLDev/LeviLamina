@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/wrapper/SharePtrRefTraits.h"
 #include "mc/common/wrapper/StackRefResultT.h"
+#include "mc/enums/SimulationType.h"
 
 class PauseManager {
 
@@ -25,6 +26,6 @@ public:
     /**
      * @symbol ?DEFAULT_SIMULATION_TYPE\@PauseManager\@\@2W4SimulationType\@\@B
      */
-    MCAPI static enum class SimulationType const DEFAULT_SIMULATION_TYPE;
+    MCAPI static ::SimulationType const DEFAULT_SIMULATION_TYPE;
     // NOLINTEND
 };

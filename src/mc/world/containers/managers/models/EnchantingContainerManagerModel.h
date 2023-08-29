@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/containers/ContainerID.h"
+#include "mc/world/containers/ContainerType.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
 
 class EnchantingContainerManagerModel : public ::ContainerManagerModel {

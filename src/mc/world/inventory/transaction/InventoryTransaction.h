@@ -1,22 +1,23 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/inventory/transaction/InventoryAction.h"
+#include "mc/world/inventory/transaction/InventoryTransactionItemGroup.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/deps/core/data/BidirectionalUnorderedMap.h"
-#include "mc/world/inventory/transaction/InventoryAction.h"
-#include "mc/world/inventory/transaction/InventoryTransactionItemGroup.h"
+#include "mc/enums/InventoryTransactionError.h"
 
 class InventoryTransaction {
 
 public:
+    std::unordered_map<class InventorySource, std::vector<class InventoryAction>> actions; // 0x0
+    std::vector<class InventoryTransactionItemGroup>                              items;   // 0x40
+
     // prevent constructor by default
     InventoryTransaction& operator=(InventoryTransaction const&) = delete;
     InventoryTransaction()                                       = delete;
-
-    std::unordered_map<class InventorySource, std::vector<class InventoryAction>> actions; // 0x0
-    std::vector<class InventoryTransactionItemGroup>                              items;   // 0x40
 
 public:
     // NOLINTBEGIN
@@ -98,7 +99,7 @@ private:
      * @symbol
      * ?inventoryTransactionErrorMap\@InventoryTransaction\@\@0V?$BidirectionalUnorderedMap\@W4InventoryTransactionError\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@\@B
      */
-    MCAPI static class BidirectionalUnorderedMap<enum class InventoryTransactionError, std::string> const
+    MCAPI static class BidirectionalUnorderedMap<::InventoryTransactionError, std::string> const
         inventoryTransactionErrorMap;
     // NOLINTEND
 };

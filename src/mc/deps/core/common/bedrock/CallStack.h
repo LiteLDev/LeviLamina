@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock { enum class LogLevel; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/LogLevel.h"
 
 namespace Bedrock {
 

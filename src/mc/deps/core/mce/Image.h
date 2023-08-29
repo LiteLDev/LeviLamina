@@ -1,9 +1,11 @@
 #pragma once
 
 #include "Blob.h"
-#include "ImageFormat.h"
-#include "ImageUsage.h"
 #include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/deps/core/mce/ImageFormat.h"
+#include "mc/deps/core/mce/ImageUsage.h"
 
 namespace mce {
 

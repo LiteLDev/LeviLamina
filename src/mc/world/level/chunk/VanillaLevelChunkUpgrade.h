@@ -2,10 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace VanillaLevelChunkUpgrade { enum class Axis; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/enums/LimboEntitiesVersion.h"
+#include "mc/world/level/chunk/Axis.h"
 
 namespace VanillaLevelChunkUpgrade {
 // NOLINTBEGIN

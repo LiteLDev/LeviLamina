@@ -3,12 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/EquipmentSlot.h"
 #include "mc/external/scripting/EnumBindingBuilder.h"
-
-// auto generated forward declare list
-// clang-format off
-enum class EquipmentSlot;
-// clang-format on
 
 namespace ScriptModuleMinecraft {
 

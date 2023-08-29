@@ -5,13 +5,14 @@
 // auto generated inclusion list
 #include "mc/common/wrapper/OwnerPtrT.h"
 #include "mc/common/wrapper/SharePtrRefTraits.h"
+#include "mc/deps/core/LevelStorageState.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/network/ForceBlockNetworkIdsAreHashes.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Core { class FilePathManager; }
 namespace Core { class FileStorageArea; }
-namespace Core { enum class LevelStorageState; }
 namespace Editor { class IEditorManager; }
 namespace Scripting { class ScriptEngine; }
 namespace mce { class UUID; }

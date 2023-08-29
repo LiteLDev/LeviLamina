@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/network/HCWebSocketCloseStatus.h"
 #include "mc/network/http_alloc_deleter.h"
 
 // auto generated forward declare list

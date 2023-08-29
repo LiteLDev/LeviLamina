@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/enums/EducationEditionOffer.h"
 
 class AppConfigs : public ::Bedrock::EnableNonOwnerReferences {
 public:

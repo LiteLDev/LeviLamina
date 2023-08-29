@@ -4,6 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/common/ITaskQueuePortContext.h"
+#include "mc/enums/ApiId.h"
+#include "mc/enums/TaskQueuePortStatus.h"
+#include "mc/enums/XTaskQueuePort.h"
 
 class TaskQueuePortContextImpl : public ::ITaskQueuePortContext {
 

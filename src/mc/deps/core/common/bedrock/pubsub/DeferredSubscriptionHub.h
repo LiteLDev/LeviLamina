@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/pubsub/ConnectPosition.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::PubSub { class DeferredSubscription; }
 namespace Bedrock::PubSub { class RawSubscription; }
-namespace Bedrock::PubSub { enum class ConnectPosition; }
 // clang-format on
 
 namespace Bedrock::PubSub {

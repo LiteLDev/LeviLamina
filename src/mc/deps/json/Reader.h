@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/json/Features.h"
 
+// auto generated inclusion list
+#include "mc/deps/json/CommentPlacement.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Features; }
 namespace Json { class Value; }
-namespace Json { enum class CommentPlacement; }
 // clang-format on
 
 namespace Json {

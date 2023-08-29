@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/CoordinatorResult.h"
 #include "mc/events/MinecraftEventing.h"
 #include "mc/events/PlayerGameplayEvent.h"
 #include "mc/world/events/EventRef.h"

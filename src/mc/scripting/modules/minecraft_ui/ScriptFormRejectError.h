@@ -4,11 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/ErrorBindingBuilder.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace ScriptModuleMinecraftServerUI { enum class ScriptFormRejectReason; }
-// clang-format on
+#include "mc/scripting/modules/minecraft_ui/ScriptFormRejectReason.h"
 
 namespace ScriptModuleMinecraftServerUI {
 

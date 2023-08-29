@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/data/BidirectionalUnorderedMap.h"
+#include "mc/enums/ParticleType.h"
 
 class ParticleTypeMap {
 
@@ -33,6 +34,6 @@ private:
      * @symbol
      * ?map\@ParticleTypeMap\@\@0V?$BidirectionalUnorderedMap\@W4ParticleType\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@\@B
      */
-    MCAPI static class BidirectionalUnorderedMap<enum class ParticleType, std::string> const map;
+    MCAPI static class BidirectionalUnorderedMap<::ParticleType, std::string> const map;
     // NOLINTEND
 };

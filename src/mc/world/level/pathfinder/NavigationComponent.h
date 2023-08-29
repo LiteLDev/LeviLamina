@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/CanJumpIntoNode.h"
+#include "mc/enums/NodeType.h"
+
 class NavigationComponent {
 
 public:
@@ -11,13 +15,13 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0NavigationComponent\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI NavigationComponent(class NavigationComponent const&);
-    /**
      * @symbol ??0NavigationComponent\@\@QEAA\@XZ
      */
     MCAPI NavigationComponent();
+    /**
+     * @symbol ??0NavigationComponent\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI NavigationComponent(class NavigationComponent const&);
     /**
      * @symbol
      * ?createPath\@NavigationComponent\@\@QEAA?AV?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@AEAVMob\@\@AEAVActor\@\@\@Z

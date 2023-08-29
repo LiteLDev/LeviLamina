@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/events/BossEventSubscriptionManager.h"
+#include "mc/world/events/BossEventUpdateType.h"
 
 // auto generated forward declare list
 // clang-format off

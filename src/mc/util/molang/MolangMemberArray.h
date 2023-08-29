@@ -2,6 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/molang/MolangStruct_BaseAndPattern.h"
+#include "mc/util/molang/MolangStruct_MinAndMax.h"
+#include "mc/util/molang/MolangStruct_PoseIndexAndHurtTime.h"
+#include "mc/util/molang/MolangStruct_RGB.h"
+#include "mc/util/molang/MolangStruct_RGBA.h"
+#include "mc/util/molang/MolangStruct_RotYAndPosY.h"
+#include "mc/util/molang/MolangStruct_SpeedAndDirection.h"
+#include "mc/util/molang/MolangStruct_TRS.h"
+#include "mc/util/molang/MolangStruct_TentacleAngleAndSwimRotation.h"
+#include "mc/util/molang/MolangStruct_UV.h"
+#include "mc/util/molang/MolangStruct_XY.h"
+#include "mc/util/molang/MolangStruct_XYZ.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace mce { class Color; }

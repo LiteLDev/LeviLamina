@@ -4,6 +4,7 @@
 #include "mc/nbt/CompoundTag.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/StructureBlockPaletteLoadResult.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
 class StructureBlockPalette {

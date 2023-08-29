@@ -5,6 +5,8 @@
 // auto generated inclusion list
 #include "mc/events/MinecraftEventing.h"
 #include "mc/world/AutomaticID.h"
+#include "mc/world/actor/player/PlayerActionType.h"
+#include "mc/world/events/EventResult.h"
 
 class PlayerEventListener {
 

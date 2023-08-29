@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/item/components/ItemStackNetResult.h"
+#include "mc/world/item/components/ItemStackRequestActionType.h"
+
 class CraftHandlerBase {
 
 public:

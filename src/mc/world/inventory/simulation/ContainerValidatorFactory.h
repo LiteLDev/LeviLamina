@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/containers/ContainerValidationCaller.h"
+
 class ContainerValidatorFactory {
 
 public:

@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/FileAccessType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Core { class FileStorageArea; }
 namespace Core { class Path; }
-namespace Core { enum class FileAccessType; }
 // clang-format on
 
 namespace Core::StorageAreaFactory {
