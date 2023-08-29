@@ -36,7 +36,7 @@ add_requires("sqlitecpp 3.2.1")
 add_requires("fifo_map v1.0.0")
 add_requires("pcg_cpp v1.0.0")
 add_requires("nbt_cpp v1.0.1")
-add_requires("preloader v1.0.3")
+add_requires("preloader v1.1.0")
 add_requires("symbolprovider v1.0.1")
 
 if has_config("localbdslibrary") then
