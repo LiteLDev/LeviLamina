@@ -28,15 +28,15 @@ public:
     pointer_type mBlob; // this+0x0
     size_type    mSize; // this+0x10
 
-    [[nodiscard]] unsigned char const* data() const { return mBlob.get(); }
+    [[nodiscard]] inline unsigned char const* data() const { return mBlob.get(); }
 
-    [[nodiscard]] size_type size() const { return mSize; }
+    [[nodiscard]] inline size_type size() const { return mSize; }
 
-    [[nodiscard]] auto getSpan() const { return gsl::make_span(data(), size()); }
+    [[nodiscard]] inline auto getSpan() const { return gsl::make_span(data(), size()); }
 
-    [[nodiscard]] Blob clone() const { return {data(), size()}; }
+    [[nodiscard]] inline Blob clone() const { return {data(), size()}; }
 
-    Blob(unsigned char const* srcData, size_type dataSize) : mSize(dataSize) {
+    inline Blob(unsigned char const* srcData, size_type dataSize) : mSize(dataSize) {
         mBlob = pointer_type(new value_type[dataSize], Deleter());
         std::copy(srcData, srcData + dataSize, mBlob.get());
     }

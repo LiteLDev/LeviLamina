@@ -17,11 +17,11 @@ public:
     ImageUsage  mUsage{};            // 0xC
     Blob        mImageBytes;         // 0x10
 
-    explicit Image(Blob&& data) : mImageBytes(std::move(data)) {}
+    explicit inline Image(Blob&& data) : mImageBytes(std::move(data)) {}
 
     Image() = default;
 
-    void copyRawImage(Blob const& blob) { mImageBytes = blob.clone(); }
+    inline void copyRawImage(Blob const& blob) { mImageBytes = blob.clone(); }
 
     constexpr void setImageDescription(unsigned width, unsigned height, ImageFormat format, ImageUsage usage) {
         this->mWidth      = width;
