@@ -56,13 +56,13 @@ public:
      * ?_applyImplForComplexAliasBlock\@SetItemDataFunction\@\@AEAA?AW4ApplyForComplexAliasBlockResult\@1\@AEAPEBVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVRandom\@\@AEAH\@Z
      */
     MCAPI enum class SetItemDataFunction::ApplyForComplexAliasBlockResult
-    _applyImplForComplexAliasBlock(class Item const*&, std::string const&, class Random&, int&);
+    _applyImplForComplexAliasBlock(class Item const*&, std::string const&, class Random&, int32_t&);
     /**
      * @symbol
      * ?_applyImplForItem\@SetItemDataFunction\@\@AEAA?AW4ApplyForItemResult\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0AEAVRandom\@\@AEAHAEAV?$WeakPtr\@VItem\@\@\@\@\@Z
      */
     MCAPI enum class SetItemDataFunction::ApplyForItemResult
-    _applyImplForItem(std::string const&, std::string const&, class Random&, int&, class WeakPtr<class Item>&);
+    _applyImplForItem(std::string const&, std::string const&, class Random&, int32_t&, class WeakPtr<class Item>&);
     /**
      * @symbol ?_applyImplForNormalBlock\@SetItemDataFunction\@\@AEAAXAEAPEBVBlock\@\@AEAVRandom\@\@\@Z
      */

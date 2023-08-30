@@ -246,6 +246,6 @@ public:
      * @symbol
      * ??0StainedGlassPaneBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@_N22\@Z
      */
-    MCAPI StainedGlassPaneBlock(std::string const&, int, class Material const&, bool, bool, bool);
+    MCAPI StainedGlassPaneBlock(std::string const&, int32_t, class Material const&, bool, bool, bool);
     // NOLINTEND
 };

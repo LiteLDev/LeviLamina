@@ -26,19 +26,19 @@ public:
         /**
          * @symbol ??0EndSpike\@SpikeFeature\@\@QEAA\@HHHH_N\@Z
          */
-        MCAPI EndSpike(int, int, int, int, bool);
+        MCAPI EndSpike(int32_t, int32_t, int32_t, int32_t, bool);
         /**
          * @symbol ?getCenterX\@EndSpike\@SpikeFeature\@\@QEBAHXZ
          */
-        MCAPI int getCenterX() const;
+        MCAPI int32_t getCenterX() const;
         /**
          * @symbol ?getCenterZ\@EndSpike\@SpikeFeature\@\@QEBAHXZ
          */
-        MCAPI int getCenterZ() const;
+        MCAPI int32_t getCenterZ() const;
         /**
          * @symbol ?getHeight\@EndSpike\@SpikeFeature\@\@QEBAHXZ
          */
-        MCAPI int getHeight() const;
+        MCAPI int32_t getHeight() const;
         /**
          * @symbol ?getTopBoundingBox\@EndSpike\@SpikeFeature\@\@QEBA?AVAABB\@\@XZ
          */

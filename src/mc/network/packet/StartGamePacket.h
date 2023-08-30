@@ -79,7 +79,7 @@ public:
         std::string const&,
         class mce::UUID const&,
         uint64_t,
-        int,
+        int32_t,
         uint64_t
     );
     /**

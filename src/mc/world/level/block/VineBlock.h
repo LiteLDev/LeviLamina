@@ -168,7 +168,7 @@ public:
      * @vftbl 93
      * @symbol ?mayPlace\@VineBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
+    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 101
      * @symbol ?neighborChanged\@VineBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
@@ -184,7 +184,7 @@ public:
      * @symbol ?getPlacementBlock\@VineBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -214,12 +214,12 @@ public:
      * @vftbl 135
      * @symbol ?getColor\@VineBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getColor(class Block const&) const;
+    virtual int32_t getColor(class Block const&) const;
     /**
      * @vftbl 136
      * @symbol ?getColor\@VineBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual int32_t getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -289,7 +289,7 @@ public:
      * @vftbl 186
      * @symbol ?getResourceCount\@VineBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VINEBLOCK
     /**
      * @symbol ?canBeSilkTouched\@VineBlock\@\@UEBA_NXZ
@@ -303,23 +303,23 @@ public:
     /**
      * @symbol ??0VineBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI VineBlock(std::string const&, int);
+    MCAPI VineBlock(std::string const&, int32_t);
     /**
      * @symbol ?growDown\@VineBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    MCAPI void growDown(class BlockSource&, class BlockPos const&, int) const;
+    MCAPI void growDown(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @symbol ?growSideways\@VineBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    MCAPI void growSideways(class BlockSource&, class BlockPos const&, int) const;
+    MCAPI void growSideways(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @symbol ?growUp\@VineBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    MCAPI void growUp(class BlockSource&, class BlockPos const&, int) const;
+    MCAPI void growUp(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @symbol ?getBlockForFace\@VineBlock\@\@SAAEBVBlock\@\@E\@Z
      */
-    MCAPI static class Block const& getBlockForFace(unsigned char);
+    MCAPI static class Block const& getBlockForFace(uint8_t);
     /**
      * @symbol ?isAcceptableNeighbour\@VineBlock\@\@SA_NAEBVBlock\@\@\@Z
      */
@@ -327,23 +327,23 @@ public:
     /**
      * @symbol ?VINE_ALL\@VineBlock\@\@2HB
      */
-    MCAPI static int const VINE_ALL;
+    MCAPI static int32_t const VINE_ALL;
     /**
      * @symbol ?VINE_EAST\@VineBlock\@\@2HB
      */
-    MCAPI static int const VINE_EAST;
+    MCAPI static int32_t const VINE_EAST;
     /**
      * @symbol ?VINE_NORTH\@VineBlock\@\@2HB
      */
-    MCAPI static int const VINE_NORTH;
+    MCAPI static int32_t const VINE_NORTH;
     /**
      * @symbol ?VINE_SOUTH\@VineBlock\@\@2HB
      */
-    MCAPI static int const VINE_SOUTH;
+    MCAPI static int32_t const VINE_SOUTH;
     /**
      * @symbol ?VINE_WEST\@VineBlock\@\@2HB
      */
-    MCAPI static int const VINE_WEST;
+    MCAPI static int32_t const VINE_WEST;
     // NOLINTEND
 
     // private:
@@ -363,6 +363,6 @@ public:
     /**
      * @symbol ?_nextVineDirections\@VineBlock\@\@AEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI int _nextVineDirections(class BlockSource&, class BlockPos const&) const;
+    MCAPI int32_t _nextVineDirections(class BlockSource&, class BlockPos const&) const;
     // NOLINTEND
 };

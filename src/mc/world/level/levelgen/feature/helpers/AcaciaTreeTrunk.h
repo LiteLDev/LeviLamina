@@ -28,13 +28,13 @@ public:
      * ?placeTrunk\@AcaciaTreeTrunk\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@HAEAVRenderParams\@\@AEBUTreeParams\@TreeHelper\@\@PEBVITreeCanopy\@\@\@Z
      */
     virtual std::optional<class BlockPos>
-    placeTrunk(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, int, class RenderParams&, struct TreeHelper::TreeParams const&, class ITreeCanopy const*)
+    placeTrunk(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, int32_t, class RenderParams&, struct TreeHelper::TreeParams const&, class ITreeCanopy const*)
         const;
     /**
      * @vftbl 2
      * @symbol ?getTreeHeight\@AcaciaTreeTrunk\@\@UEBAHAEAVRandom\@\@\@Z
      */
-    virtual int getTreeHeight(class Random&) const;
+    virtual int32_t getTreeHeight(class Random&) const;
     // NOLINTEND
 
     // private:
@@ -44,7 +44,7 @@ public:
      * ?_placeLeaningBranches\@AcaciaTreeTrunk\@\@AEBAXAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@1AEAVRandom\@\@AEAVRenderParams\@\@HHHAEBUTreeParams\@TreeHelper\@\@\@Z
      */
     MCAPI void
-    _placeLeaningBranches(class IBlockWorldGenAPI&, class BlockPos const&, class BlockPos const&, class Random&, class RenderParams&, int, int, int, struct TreeHelper::TreeParams const&)
+    _placeLeaningBranches(class IBlockWorldGenAPI&, class BlockPos const&, class BlockPos const&, class Random&, class RenderParams&, int32_t, int32_t, int32_t, struct TreeHelper::TreeParams const&)
         const;
     /**
      * @symbol

@@ -4,7 +4,7 @@
 
 namespace Core {
 
-template <typename T0, int T1>
+template <typename T0, int32_t T1>
 class StackString {
 
 public:

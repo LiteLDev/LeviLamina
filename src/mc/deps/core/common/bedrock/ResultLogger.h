@@ -27,7 +27,7 @@ public:
      * ?_logger\@ResultLogger\@Bedrock\@\@CAAEAV?$function\@$$A6AXV?$optional\@W4LogLevel\@Bedrock\@\@\@std\@\@V?$optional\@I\@2\@AEBVerror_code\@2\@AEBUCallStack\@Bedrock\@\@\@Z\@std\@\@XZ
      */
     MCAPI static std::function<
-        void(std::optional<enum class Bedrock::LogLevel>, std::optional<unsigned int>, std::error_code const&, struct Bedrock::CallStack const&)>&
+        void(std::optional<enum class Bedrock::LogLevel>, std::optional<uint32_t>, std::error_code const&, struct Bedrock::CallStack const&)>&
     _logger();
     /**
      * @symbol
@@ -35,7 +35,7 @@ public:
      */
     MCAPI static void
     log(std::optional<enum class Bedrock::LogLevel>,
-        std::optional<unsigned int>,
+        std::optional<uint32_t>,
         std::error_code const&,
         struct Bedrock::CallStack const&);
     // NOLINTEND

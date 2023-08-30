@@ -22,7 +22,7 @@ public:
     /**
      * @symbol ?getBool\@BlockStateMeta\@\@QEBA?B_NH\@Z
      */
-    MCAPI bool const getBool(int) const;
+    MCAPI bool const getBool(int32_t) const;
     /**
      * @symbol ?getID\@BlockStateMeta\@\@QEBA_KXZ
      */
@@ -30,7 +30,7 @@ public:
     /**
      * @symbol ?getInt\@BlockStateMeta\@\@QEBA?BHH\@Z
      */
-    MCAPI int const getInt(int) const;
+    MCAPI int32_t const getInt(int32_t) const;
     /**
      * @symbol
      * ?getName\@BlockStateMeta\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -44,7 +44,7 @@ public:
      * @symbol
      * ?getString\@BlockStateMeta\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI std::string const& getString(int) const;
+    MCAPI std::string const& getString(int32_t) const;
     /**
      * @symbol ?getType\@BlockStateMeta\@\@QEBA?BW4Type\@Tag\@\@XZ
      */
@@ -52,6 +52,6 @@ public:
     /**
      * @symbol ?indexOf\@BlockStateMeta\@\@QEBAHAEB_K\@Z
      */
-    MCAPI int indexOf(uint64_t const&) const;
+    MCAPI int32_t indexOf(uint64_t const&) const;
     // NOLINTEND
 };

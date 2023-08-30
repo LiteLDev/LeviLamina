@@ -2,6 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+class Vec3;
+
 class VehicleUtils {
 public:
     // VehicleUtils inner types declare
@@ -26,8 +28,7 @@ public:
     VehicleUtils()                               = delete;
 
     using PatternStrategyPtr = std::optional<
-        class
-        Vec3> (*)(struct VehicleUtils::VehicleDirections const&, std::function<bool(class Vec3 const&, class Vec3 const&)>);
+        Vec3> (*)(struct VehicleUtils::VehicleDirections const&, std::function<bool(Vec3 const&, Vec3 const&)>);
 
 public:
     // NOLINTBEGIN

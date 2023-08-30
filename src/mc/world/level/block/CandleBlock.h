@@ -45,7 +45,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@CandleBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -230,7 +230,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@CandleBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -245,24 +245,24 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@CandleBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 186
      * @symbol ?getResourceCount\@CandleBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 192
      * @symbol ?_getNumCandles\@CandleBlock\@\@MEBAHAEBVBlock\@\@\@Z
      */
-    virtual int _getNumCandles(class Block const&) const;
+    virtual int32_t _getNumCandles(class Block const&) const;
     /**
      * @vftbl 193
      * @symbol
      * ?_iterateCandles\@CandleBlock\@\@MEBAXAEBVBlock\@\@AEBVBlockPos\@\@V?$function\@$$A6AXAEBVVec3\@\@H\@Z\@std\@\@\@Z
      */
     virtual void
-    _iterateCandles(class Block const&, class BlockPos const&, std::function<void(class Vec3 const&, int)>) const;
+    _iterateCandles(class Block const&, class BlockPos const&, std::function<void(class Vec3 const&, int32_t)>) const;
     /**
      * @vftbl 194
      * @symbol ?_tryLightOnFire\@CandleBlock\@\@MEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@\@Z
@@ -281,7 +281,7 @@ public:
     /**
      * @symbol ??0CandleBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI CandleBlock(std::string const&, int);
+    MCAPI CandleBlock(std::string const&, int32_t);
     /**
      * @symbol ?tryLightFire\@CandleBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@\@Z
      */
@@ -295,6 +295,6 @@ public:
      * ?_forEachCandle\@CandleBlock\@\@CAXAEBVBlock\@\@AEBVBlockPos\@\@V?$function\@$$A6AXAEBVVec3\@\@H\@Z\@std\@\@\@Z
      */
     MCAPI static void
-    _forEachCandle(class Block const&, class BlockPos const&, std::function<void(class Vec3 const&, int)>);
+    _forEachCandle(class Block const&, class BlockPos const&, std::function<void(class Vec3 const&, int32_t)>);
     // NOLINTEND
 };

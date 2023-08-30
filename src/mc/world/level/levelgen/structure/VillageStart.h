@@ -30,6 +30,6 @@ public:
      * ??0VillageStart\@\@QEAA\@AEAVDimension\@\@AEBVBiomeSource\@\@AEAVRandom\@\@HHAEBVIPreliminarySurfaceProvider\@\@\@Z
      */
     MCAPI
-    VillageStart(class Dimension&, class BiomeSource const&, class Random&, int, int, class IPreliminarySurfaceProvider const&);
+    VillageStart(class Dimension&, class BiomeSource const&, class Random&, int32_t, int32_t, class IPreliminarySurfaceProvider const&);
     // NOLINTEND
 };

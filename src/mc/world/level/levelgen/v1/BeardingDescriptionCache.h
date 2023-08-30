@@ -15,6 +15,6 @@ public:
     /**
      * @symbol ??0BeardingDescriptionCache\@\@QEAA\@AEBVBoundingBox\@\@H\@Z
      */
-    MCAPI BeardingDescriptionCache(class BoundingBox const&, int);
+    MCAPI BeardingDescriptionCache(class BoundingBox const&, int32_t);
     // NOLINTEND
 };

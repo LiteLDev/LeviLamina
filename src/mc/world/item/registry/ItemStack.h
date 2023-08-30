@@ -21,17 +21,17 @@ public:
      * @vftbl 1
      * @symbol ?reinit\@ItemStack\@\@UEAAXAEBVItem\@\@HH\@Z
      */
-    virtual void reinit(class Item const&, int, int);
+    virtual void reinit(class Item const&, int32_t, int32_t);
     /**
      * @vftbl 2
      * @symbol ?reinit\@ItemStack\@\@UEAAXAEBVBlockLegacy\@\@H\@Z
      */
-    virtual void reinit(class BlockLegacy const&, int);
+    virtual void reinit(class BlockLegacy const&, int32_t);
     /**
      * @vftbl 3
      * @symbol ?reinit\@ItemStack\@\@UEAAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HH\@Z
      */
-    virtual void reinit(std::string_view, int, int);
+    virtual void reinit(std::string_view, int32_t, int32_t);
     /**
      * @vftbl 4
      * @symbol
@@ -70,7 +70,7 @@ public:
     /**
      * @symbol ??0ItemStack\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HHPEBVCompoundTag\@\@\@Z
      */
-    MCAPI ItemStack(std::string_view, int, int, class CompoundTag const*);
+    MCAPI ItemStack(std::string_view, int32_t, int32_t, class CompoundTag const*);
     /**
      * @symbol ??0ItemStack\@\@QEAA\@AEBV0\@\@Z
      */
@@ -78,15 +78,15 @@ public:
     /**
      * @symbol ??0ItemStack\@\@QEAA\@AEBVBlock\@\@HPEBVCompoundTag\@\@\@Z
      */
-    MCAPI ItemStack(class Block const&, int, class CompoundTag const*);
+    MCAPI ItemStack(class Block const&, int32_t, class CompoundTag const*);
     /**
      * @symbol ??0ItemStack\@\@QEAA\@AEBVBlockLegacy\@\@H\@Z
      */
-    MCAPI ItemStack(class BlockLegacy const&, int);
+    MCAPI ItemStack(class BlockLegacy const&, int32_t);
     /**
      * @symbol ??0ItemStack\@\@QEAA\@AEBVItem\@\@HHPEBVCompoundTag\@\@\@Z
      */
-    MCAPI ItemStack(class Item const&, int, int, class CompoundTag const*);
+    MCAPI ItemStack(class Item const&, int32_t, int32_t, class CompoundTag const*);
     /**
      * @symbol ?_assignNetIdVariant\@ItemStack\@\@QEBAXAEBV1\@\@Z
      */
@@ -95,7 +95,7 @@ public:
      * @symbol
      * ?clientInitLegacyRequestId\@ItemStack\@\@QEAAXAEBV?$TypedClientNetId\@UItemStackLegacyRequestIdTag\@\@H$0A\@\@\@\@Z
      */
-    MCAPI void clientInitLegacyRequestId(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const&);
+    MCAPI void clientInitLegacyRequestId(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int32_t, 0> const&);
     /**
      * @symbol ?clone\@ItemStack\@\@QEBA?AV1\@XZ
      */
@@ -111,7 +111,7 @@ public:
     /**
      * @symbol ?getMaxUseDuration\@ItemStack\@\@QEBAHXZ
      */
-    MCAPI int getMaxUseDuration() const;
+    MCAPI int32_t getMaxUseDuration() const;
     /**
      * @symbol ?getStrippedNetworkItem\@ItemStack\@\@QEBA?AV1\@XZ
      */
@@ -123,7 +123,7 @@ public:
     /**
      * @symbol ?inventoryTick\@ItemStack\@\@QEAA_NAEAVLevel\@\@AEAVActor\@\@H_N\@Z
      */
-    MCAPI bool inventoryTick(class Level&, class Actor&, int, bool);
+    MCAPI bool inventoryTick(class Level&, class Actor&, int32_t, bool);
     /**
      * @symbol ?matchesAndNetIdVariantMatches\@ItemStack\@\@QEBA_NAEBV1\@\@Z
      */
@@ -135,7 +135,7 @@ public:
     /**
      * @symbol ?mineBlock\@ItemStack\@\@QEAAXAEBVBlock\@\@HHHPEAVMob\@\@\@Z
      */
-    MCAPI void mineBlock(class Block const&, int, int, int, class Mob*);
+    MCAPI void mineBlock(class Block const&, int32_t, int32_t, int32_t, class Mob*);
     /**
      * @symbol ??4ItemStack\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
@@ -147,7 +147,7 @@ public:
     /**
      * @symbol ?releaseUsing\@ItemStack\@\@QEAAXPEAVPlayer\@\@H\@Z
      */
-    MCAPI void releaseUsing(class Player*, int);
+    MCAPI void releaseUsing(class Player*, int32_t);
     /**
      * @symbol ?sameItemAndAuxAndBlockData\@ItemStack\@\@QEBA_NAEBV1\@\@Z
      */
@@ -159,7 +159,7 @@ public:
     /**
      * @symbol ?tryGetItemStackNetId\@ItemStack\@\@QEBAPEBV?$TypedServerNetId\@UItemStackNetIdTag\@\@H$0A\@\@\@XZ
      */
-    MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const* tryGetItemStackNetId() const;
+    MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int32_t, 0> const* tryGetItemStackNetId() const;
     /**
      * @symbol ?use\@ItemStack\@\@QEAAAEAV1\@AEAVPlayer\@\@\@Z
      */
@@ -171,7 +171,7 @@ public:
     /**
      * @symbol ?useOn\@ItemStack\@\@QEAA?AVInteractionResult\@\@AEAVActor\@\@HHHEAEBVVec3\@\@\@Z
      */
-    MCAPI class InteractionResult useOn(class Actor&, int, int, int, unsigned char, class Vec3 const&);
+    MCAPI class InteractionResult useOn(class Actor&, int32_t, int32_t, int32_t, uint8_t, class Vec3 const&);
     /**
      * @symbol ?useTimeDepleted\@ItemStack\@\@QEAA?AW4ItemUseMethod\@\@PEAVLevel\@\@PEAVPlayer\@\@\@Z
      */

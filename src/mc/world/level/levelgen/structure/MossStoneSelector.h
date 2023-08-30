@@ -24,7 +24,7 @@ public:
      * @vftbl 1
      * @symbol ?next\@MossStoneSelector\@\@UEBAAEBVBlock\@\@AEAVRandom\@\@HHH_N\@Z
      */
-    virtual class Block const& next(class Random&, int, int, int, bool) const;
+    virtual class Block const& next(class Random&, int32_t, int32_t, int32_t, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOSSSTONESELECTOR
     /**
      * @symbol __unk_destructor_-1

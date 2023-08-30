@@ -54,7 +54,7 @@ public:
      * @symbol
      * ?onBlockDestructionStarted\@BlockEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual enum class EventResult onBlockDestructionStarted(class Player&, class BlockPos const&, unsigned char);
+    virtual enum class EventResult onBlockDestructionStarted(class Player&, class BlockPos const&, uint8_t);
     /**
      * @vftbl 7
      * @symbol __unk_vfn_7
@@ -87,7 +87,7 @@ public:
      * @symbol
      * ?onBlockDestructionStopped\@BlockEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@AEBVBlockPos\@\@H\@Z
      */
-    MCVAPI enum class EventResult onBlockDestructionStopped(class Player&, class BlockPos const&, int);
+    MCVAPI enum class EventResult onBlockDestructionStopped(class Player&, class BlockPos const&, int32_t);
     /**
      * @symbol
      * ?onBlockInPosWillBeDestroyedByPlayer\@BlockEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
@@ -109,7 +109,7 @@ public:
     /**
      * @symbol ?onUnknownBlockReceived\@BlockEventListener\@\@UEAA?AW4EventResult\@\@AEAVLevel\@\@AEBUNewBlockID\@\@G\@Z
      */
-    MCVAPI enum class EventResult onUnknownBlockReceived(class Level&, struct NewBlockID const&, unsigned short);
+    MCVAPI enum class EventResult onUnknownBlockReceived(class Level&, struct NewBlockID const&, uint16_t);
 #endif
     // NOLINTEND
 };

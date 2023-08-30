@@ -23,7 +23,7 @@ public:
     /**
      * @symbol ?_calculateLookDelta\@ClientInputUpdateSystem\@\@SA?AVVec2\@\@EM\@Z
      */
-    MCAPI static class Vec2 _calculateLookDelta(unsigned char, float);
+    MCAPI static class Vec2 _calculateLookDelta(uint8_t, float);
     /**
      * @symbol ?create\@ClientInputUpdateSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */

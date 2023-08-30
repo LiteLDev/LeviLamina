@@ -13,11 +13,11 @@ class ObjectNode {
 public:
     // ObjectNode inner types declare
     // clang-format off
-    template<int T0> class iterator_base;
+    template<int32_t T0> class iterator_base;
     // clang-format on
 
     // ObjectNode inner types define
-    template <int T0>
+    template <int32_t T0>
     class iterator_base {
 
     public:

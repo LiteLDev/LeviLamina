@@ -140,7 +140,7 @@ public:
      * @vftbl 57
      * @symbol ?isValidAuxValue\@ObserverBlock\@\@UEBA_NH\@Z
      */
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
@@ -155,12 +155,12 @@ public:
      * @vftbl 66
      * @symbol ?shouldConnectToRedstone\@ObserverBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 75
      * @symbol ?onRedstoneUpdate\@ObserverBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
-    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int32_t, bool) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -228,7 +228,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@ObserverBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 145
      * @symbol ?getRenderBlock\@ObserverBlock\@\@UEBAAEBVBlock\@\@XZ
@@ -238,12 +238,12 @@ public:
      * @vftbl 146
      * @symbol ?getMappedFace\@ObserverBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
-    virtual unsigned char getMappedFace(unsigned char, class Block const&) const;
+    virtual uint8_t getMappedFace(uint8_t, class Block const&) const;
     /**
      * @vftbl 147
      * @symbol ?getFaceFlip\@ObserverBlock\@\@UEBA?AW4Flip\@\@EAEBVBlock\@\@\@Z
      */
-    virtual enum class Flip getFaceFlip(unsigned char, class Block const&) const;
+    virtual enum class Flip getFaceFlip(uint8_t, class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -309,7 +309,7 @@ public:
      * @symbol
      * ??0ObserverBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI ObserverBlock(std::string const&, int);
+    MCAPI ObserverBlock(std::string const&, int32_t);
     /**
      * @symbol ?MAX_TICK_DELAY\@ObserverBlock\@\@2UTick\@\@B
      */

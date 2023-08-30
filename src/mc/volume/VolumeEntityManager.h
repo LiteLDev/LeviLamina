@@ -37,8 +37,7 @@ public:
      * @symbol
      * ?getVolumeInstances\@VolumeEntityManager\@\@QEBAAEBV?$vector\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@V?$allocator\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@\@std\@\@\@std\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const&
-          getVolumeInstances(class AutomaticID<class Dimension, int>) const;
+    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const& getVolumeInstances(DimensionType) const;
     /**
      * @symbol ?registerComponentNetRelevancy\@VolumeEntityManager\@\@SAXAEAVComponentNetRelevancyRegistry\@\@\@Z
      */

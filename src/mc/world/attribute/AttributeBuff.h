@@ -53,7 +53,7 @@ public:
     /**
      * @symbol ?getOperand\@AttributeBuff\@\@QEBAHXZ
      */
-    MCAPI int getOperand() const;
+    MCAPI int32_t getOperand() const;
     /**
      * @symbol ?getType\@AttributeBuff\@\@QEBA?AW4AttributeBuffType\@\@XZ
      */
@@ -65,7 +65,7 @@ public:
     /**
      * @symbol ?setAmplificationAmount\@AttributeBuff\@\@QEAAXHM\@Z
      */
-    MCAPI void setAmplificationAmount(int, float);
+    MCAPI void setAmplificationAmount(int32_t, float);
     /**
      * @symbol ?setId\@AttributeBuff\@\@QEAAX_K\@Z
      */
@@ -73,7 +73,7 @@ public:
     /**
      * @symbol ?setOperand\@AttributeBuff\@\@QEAAXH\@Z
      */
-    MCAPI void setOperand(int);
+    MCAPI void setOperand(int32_t);
     /**
      * @symbol ?setSource\@AttributeBuff\@\@QEAAXPEAVActor\@\@\@Z
      */
@@ -93,10 +93,10 @@ public:
     /**
      * @symbol ??0AttributeBuff\@\@IEAA\@MHW4AttributeBuffType\@\@\@Z
      */
-    MCAPI AttributeBuff(float, int, enum class AttributeBuffType);
+    MCAPI AttributeBuff(float, int32_t, enum class AttributeBuffType);
     /**
      * @symbol ??0AttributeBuff\@\@IEAA\@MHAEBVActorDamageSource\@\@W4AttributeBuffType\@\@\@Z
      */
-    MCAPI AttributeBuff(float, int, class ActorDamageSource const&, enum class AttributeBuffType);
+    MCAPI AttributeBuff(float, int32_t, class ActorDamageSource const&, enum class AttributeBuffType);
     // NOLINTEND
 };

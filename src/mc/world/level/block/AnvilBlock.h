@@ -52,7 +52,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@AnvilBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -193,7 +193,7 @@ public:
      * @symbol ?getPlacementBlock\@AnvilBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -234,7 +234,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@AnvilBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 148
      * @symbol ?animateTick\@AnvilBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
@@ -274,7 +274,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@AnvilBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -289,7 +289,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@AnvilBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@AnvilBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -337,6 +337,6 @@ public:
     /**
      * @symbol ??0AnvilBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI AnvilBlock(std::string const&, int);
+    MCAPI AnvilBlock(std::string const&, int32_t);
     // NOLINTEND
 };

@@ -70,7 +70,7 @@ public:
     /**
      * @symbol ?translate\@CompoundBlockVolume\@\@QEAAXHHH\@Z
      */
-    MCAPI void translate(int, int, int);
+    MCAPI void translate(int32_t, int32_t, int32_t);
     /**
      * @symbol ?volumeCount\@CompoundBlockVolume\@\@QEBA_KXZ
      */

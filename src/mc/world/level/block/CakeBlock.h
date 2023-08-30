@@ -165,7 +165,7 @@ public:
      * @vftbl 93
      * @symbol ?mayPlace\@CakeBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
+    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 101
      * @symbol ?neighborChanged\@CakeBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
@@ -200,7 +200,7 @@ public:
      * @vftbl 126
      * @symbol ?getComparatorSignal\@CakeBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, unsigned char) const;
+    virtual int32_t getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uint8_t) const;
     /**
      * @vftbl 128
      * @symbol __unk_vfn_128
@@ -215,7 +215,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@CakeBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -255,7 +255,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@CakeBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -284,7 +284,7 @@ public:
     /**
      * @symbol ??0CakeBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI CakeBlock(std::string const&, int);
+    MCAPI CakeBlock(std::string const&, int32_t);
     /**
      * @symbol ?removeCakeSlice\@CakeBlock\@\@SAXAEAVPlayer\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@PEBVBlock\@\@\@Z
      */

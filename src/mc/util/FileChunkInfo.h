@@ -15,7 +15,7 @@ public:
     /**
      * @symbol ??0FileChunkInfo\@\@QEAA\@H_K0\@Z
      */
-    MCAPI FileChunkInfo(int, uint64_t, uint64_t);
+    MCAPI FileChunkInfo(int32_t, uint64_t, uint64_t);
     /**
      * @symbol ?isValid\@FileChunkInfo\@\@QEBA_NXZ
      */
@@ -23,6 +23,6 @@ public:
     /**
      * @symbol ?size\@FileChunkInfo\@\@QEBAHXZ
      */
-    MCAPI int size() const;
+    MCAPI int32_t size() const;
     // NOLINTEND
 };

@@ -114,11 +114,11 @@ public:
      * ?_useOn\@ScaffoldingBlockItem\@\@EEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _useOn(class ItemStack&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
     /**
      * @symbol
      * ??0ScaffoldingBlockItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI ScaffoldingBlockItem(std::string const&, int);
+    MCAPI ScaffoldingBlockItem(std::string const&, int32_t);
     // NOLINTEND
 };

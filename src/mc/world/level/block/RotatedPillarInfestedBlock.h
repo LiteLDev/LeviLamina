@@ -233,7 +233,7 @@ public:
      * @vftbl 186
      * @symbol ?getResourceCount\@RotatedPillarInfestedBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@RotatedPillarInfestedBlock\@\@MEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -243,6 +243,6 @@ public:
      * @symbol
      * ??0RotatedPillarInfestedBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI RotatedPillarInfestedBlock(std::string const&, int, class Material const&);
+    MCAPI RotatedPillarInfestedBlock(std::string const&, int32_t, class Material const&);
     // NOLINTEND
 };

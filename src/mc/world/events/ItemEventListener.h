@@ -117,7 +117,7 @@ public:
     /**
      * @symbol ?onInventoryLayoutSelected\@ItemEventListener\@\@UEAA?AW4EventResult\@\@HH\@Z
      */
-    MCVAPI enum class EventResult onInventoryLayoutSelected(int, int);
+    MCVAPI enum class EventResult onInventoryLayoutSelected(int32_t, int32_t);
     /**
      * @symbol
      * ?onItemDefinitionEventTriggered\@ItemEventListener\@\@UEAA?AW4EventResult\@\@AEBVItemStackBase\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -134,7 +134,7 @@ public:
     /**
      * @symbol ?onItemSelectedSlot\@ItemEventListener\@\@UEAA?AW4EventResult\@\@H\@Z
      */
-    MCVAPI enum class EventResult onItemSelectedSlot(int);
+    MCVAPI enum class EventResult onItemSelectedSlot(int32_t);
     /**
      * @symbol ?onItemSmelted\@ItemEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@AEBVItemDescriptor\@\@1\@Z
      */

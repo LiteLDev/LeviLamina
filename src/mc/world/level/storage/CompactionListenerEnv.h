@@ -128,7 +128,7 @@ public:
      * @vftbl 19
      * @symbol ?SleepForMicroseconds\@EnvWrapper\@leveldb\@\@UEAAXH\@Z
      */
-    virtual void SleepForMicroseconds(int);
+    virtual void SleepForMicroseconds(int32_t);
     /**
      * @symbol
      * ?setCompactionCallback\@CompactionListenerEnv\@\@QEAAXV?$function\@$$A6AXW4CompactionStatus\@\@\@Z\@std\@\@\@Z

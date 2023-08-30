@@ -52,7 +52,7 @@ public:
     /**
      * @symbol ??0CompletedUsingItemPacket\@\@QEAA\@FH\@Z
      */
-    MCAPI CompletedUsingItemPacket(short, int);
+    MCAPI CompletedUsingItemPacket(int16_t, int32_t);
     /**
      * @symbol ??0CompletedUsingItemPacket\@\@QEAA\@XZ
      */

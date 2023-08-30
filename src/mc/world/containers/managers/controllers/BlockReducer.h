@@ -35,10 +35,10 @@ public:
      * @symbol
      * ?getReductionMap\@BlockReducer\@\@QEBAAEBV?$unordered_map\@HV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@U?$hash\@H\@2\@U?$equal_to\@H\@2\@V?$allocator\@U?$pair\@$$CBHV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@XZ
      */
-    MCAPI std::unordered_map<int, std::vector<class ItemStack>> const& getReductionMap() const;
+    MCAPI std::unordered_map<int32_t, std::vector<class ItemStack>> const& getReductionMap() const;
     /**
      * @symbol ?tryGetItemDescriptorFromKey\@BlockReducer\@\@QEBA?AVItemDescriptor\@\@H\@Z
      */
-    MCAPI class ItemDescriptor tryGetItemDescriptorFromKey(int) const;
+    MCAPI class ItemDescriptor tryGetItemDescriptorFromKey(int32_t) const;
     // NOLINTEND
 };

@@ -34,11 +34,11 @@ public:
     /**
      * @symbol ?canPushInItem\@ShulkerBoxBlockActor\@\@UEBA_NHHAEBVItemStack\@\@\@Z
      */
-    MCVAPI bool canPushInItem(int, int, class ItemStack const&) const;
+    MCVAPI bool canPushInItem(int32_t, int32_t, class ItemStack const&) const;
     /**
      * @symbol ?getMaxStackSize\@ShulkerBoxBlockActor\@\@UEBAHXZ
      */
-    MCVAPI int getMaxStackSize() const;
+    MCVAPI int32_t getMaxStackSize() const;
     /**
      * @symbol
      * ?getName\@ShulkerBoxBlockActor\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -82,11 +82,11 @@ public:
     /**
      * @symbol ?setFacingDir\@ShulkerBoxBlockActor\@\@QEAAXE\@Z
      */
-    MCAPI void setFacingDir(unsigned char);
+    MCAPI void setFacingDir(uint8_t);
     /**
      * @symbol ?itemAllowedInSlot\@ShulkerBoxBlockActor\@\@SA_NHAEBVItemStackBase\@\@H\@Z
      */
-    MCAPI static bool itemAllowedInSlot(int, class ItemStackBase const&, int);
+    MCAPI static bool itemAllowedInSlot(int32_t, class ItemStackBase const&, int32_t);
     // NOLINTEND
 
     // private:
@@ -107,6 +107,6 @@ private:
     /**
      * @symbol ?ITEMS_SIZE\@ShulkerBoxBlockActor\@\@0HB
      */
-    MCAPI static int const ITEMS_SIZE;
+    MCAPI static int32_t const ITEMS_SIZE;
     // NOLINTEND
 };

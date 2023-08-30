@@ -53,7 +53,7 @@ public:
     /**
      * @symbol ??0ActorEventPacket\@\@QEAA\@VActorRuntimeID\@\@W4ActorEvent\@\@H\@Z
      */
-    MCAPI ActorEventPacket(class ActorRuntimeID, enum class ActorEvent, int);
+    MCAPI ActorEventPacket(class ActorRuntimeID, enum class ActorEvent, int32_t);
     /**
      * @symbol ??0ActorEventPacket\@\@QEAA\@XZ
      */

@@ -49,14 +49,14 @@ public:
         class Actor&,
         class gsl::span<class ItemStack const>,
         enum class EquipmentSlot,
-        int
+        int32_t
     );
     /**
      * @symbol
      * ?_slotBoundsValid\@ItemReplacementCommandUtil\@Util\@\@CA_NAEAUReplacementResults\@2\@HHV?$optional\@H\@std\@\@1\@Z
      */
     MCAPI static bool
-    _slotBoundsValid(struct Util::ReplacementResults&, int, int, std::optional<int>, std::optional<int>);
+    _slotBoundsValid(struct Util::ReplacementResults&, int32_t, int32_t, std::optional<int32_t>, std::optional<int32_t>);
     // NOLINTEND
 };
 

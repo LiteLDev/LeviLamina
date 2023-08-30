@@ -25,13 +25,14 @@ public:
      * @symbol
      * ?isValidSlotForContainer\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
      */
-    virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
+    virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int32_t) const;
     /**
      * @vftbl 2
      * @symbol
      * ?isItemAllowedInSlot\@EnchantingInputContainerValidation\@\@UEBA_NAEBVContainerScreenContext\@\@HAEBVItemStackBase\@\@H\@Z
      */
-    virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    virtual bool
+    isItemAllowedInSlot(class ContainerScreenContext const&, int32_t, class ItemStackBase const&, int32_t) const;
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
@@ -62,12 +63,12 @@ public:
      * @vftbl 8
      * @symbol ?getContainerOffset\@EnchantingInputContainerValidation\@\@UEBAHAEBVContainerScreenContext\@\@\@Z
      */
-    virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    virtual int32_t getContainerOffset(class ContainerScreenContext const&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTINGINPUTCONTAINERVALIDATION
     /**
      * @symbol ?getAvailableSetCount\@EnchantingInputContainerValidation\@\@UEBAHHAEBVItemStackBase\@\@\@Z
      */
-    MCVAPI int getAvailableSetCount(int, class ItemStackBase const&) const;
+    MCVAPI int32_t getAvailableSetCount(int32_t, class ItemStackBase const&) const;
 #endif
     // NOLINTEND
 };

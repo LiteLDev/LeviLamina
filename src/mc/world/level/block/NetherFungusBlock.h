@@ -178,7 +178,7 @@ public:
      * @vftbl 93
      * @symbol ?mayPlace\@NetherFungusBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
+    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 95
      * @symbol ?mayPlaceOn\@NetherFungusBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
@@ -279,6 +279,6 @@ public:
      * @symbol
      * ??0NetherFungusBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI NetherFungusBlock(std::string const&, int);
+    MCAPI NetherFungusBlock(std::string const&, int32_t);
     // NOLINTEND
 };

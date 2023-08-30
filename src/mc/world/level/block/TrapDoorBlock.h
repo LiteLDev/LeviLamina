@@ -52,12 +52,12 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@TrapDoorBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 28
      * @symbol ?canConnect\@TrapDoorBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
-    virtual bool canConnect(class Block const&, unsigned char, class Block const&) const;
+    virtual bool canConnect(class Block const&, uint8_t, class Block const&) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -172,7 +172,7 @@ public:
      * @vftbl 75
      * @symbol ?onRedstoneUpdate\@TrapDoorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
-    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int32_t, bool) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -208,7 +208,7 @@ public:
      * @symbol ?getPlacementBlock\@TrapDoorBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -273,7 +273,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@TrapDoorBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -298,7 +298,7 @@ public:
      * @symbol
      * ??0TrapDoorBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI TrapDoorBlock(std::string const&, int, class Material const&);
+    MCAPI TrapDoorBlock(std::string const&, int32_t, class Material const&);
     // NOLINTEND
 
     // private:

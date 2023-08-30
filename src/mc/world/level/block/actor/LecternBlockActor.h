@@ -33,15 +33,15 @@ public:
     /**
      * @symbol ?getContainerSize\@LecternBlockActor\@\@UEBAHXZ
      */
-    MCVAPI int getContainerSize() const;
+    MCVAPI int32_t getContainerSize() const;
     /**
      * @symbol ?getItem\@LecternBlockActor\@\@UEBAAEBVItemStack\@\@H\@Z
      */
-    MCVAPI class ItemStack const& getItem(int) const;
+    MCVAPI class ItemStack const& getItem(int32_t) const;
     /**
      * @symbol ?getMaxStackSize\@LecternBlockActor\@\@UEBAHXZ
      */
-    MCVAPI int getMaxStackSize() const;
+    MCVAPI int32_t getMaxStackSize() const;
     /**
      * @symbol ?load\@LecternBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
@@ -57,11 +57,11 @@ public:
     /**
      * @symbol ?serverInitItemStackIds\@LecternBlockActor\@\@UEAAXHHV?$function\@$$A6AXHAEBVItemStack\@\@\@Z\@std\@\@\@Z
      */
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
+    MCVAPI void serverInitItemStackIds(int32_t, int32_t, std::function<void(int32_t, class ItemStack const&)>);
     /**
      * @symbol ?setItem\@LecternBlockActor\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
-    MCVAPI void setItem(int, class ItemStack const&);
+    MCVAPI void setItem(int32_t, class ItemStack const&);
     /**
      * @symbol ?startOpen\@LecternBlockActor\@\@UEAAXAEAVPlayer\@\@\@Z
      */
@@ -82,11 +82,11 @@ public:
     /**
      * @symbol ?getPage\@LecternBlockActor\@\@QEBAHXZ
      */
-    MCAPI int getPage() const;
+    MCAPI int32_t getPage() const;
     /**
      * @symbol ?getTotalPages\@LecternBlockActor\@\@QEBAHXZ
      */
-    MCAPI int getTotalPages() const;
+    MCAPI int32_t getTotalPages() const;
     /**
      * @symbol ?hasBook\@LecternBlockActor\@\@QEBA_NXZ
      */
@@ -94,14 +94,14 @@ public:
     /**
      * @symbol ?setItemFromBlock\@LecternBlockActor\@\@QEAAXHAEBVItemStack\@\@\@Z
      */
-    MCAPI void setItemFromBlock(int, class ItemStack const&);
+    MCAPI void setItemFromBlock(int32_t, class ItemStack const&);
     /**
      * @symbol ?setPageOnServer\@LecternBlockActor\@\@QEAAXHAEAVBlockSource\@\@\@Z
      */
-    MCAPI void setPageOnServer(int, class BlockSource&);
+    MCAPI void setPageOnServer(int32_t, class BlockSource&);
     /**
      * @symbol ?setTotalPages\@LecternBlockActor\@\@QEAAXH\@Z
      */
-    MCAPI void setTotalPages(int);
+    MCAPI void setTotalPages(int32_t);
     // NOLINTEND
 };

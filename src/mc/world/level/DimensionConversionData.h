@@ -15,7 +15,7 @@ public:
     /**
      * @symbol ?getNetherScale\@DimensionConversionData\@\@QEBAHXZ
      */
-    MCAPI int getNetherScale() const;
+    MCAPI int32_t getNetherScale() const;
     /**
      * @symbol ?getOverworldSpawnPoint\@DimensionConversionData\@\@QEBAAEBVVec3\@\@XZ
      */

@@ -248,17 +248,17 @@ public:
      * @vftbl 142
      * @symbol ?telemetryVariant\@BedBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual int telemetryVariant(class BlockSource&, class BlockPos const&) const;
+    virtual int32_t telemetryVariant(class BlockSource&, class BlockPos const&) const;
     /**
      * @vftbl 143
      * @symbol ?getVariant\@BedBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 146
      * @symbol ?getMappedFace\@BedBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
-    virtual unsigned char getMappedFace(unsigned char, class Block const&) const;
+    virtual uint8_t getMappedFace(uint8_t, class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -303,7 +303,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@BedBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -336,7 +336,7 @@ public:
     /**
      * @symbol ??0BedBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI BedBlock(std::string const&, int);
+    MCAPI BedBlock(std::string const&, int32_t);
     /**
      * @symbol
      * ?findWakeupPosition\@BedBlock\@\@SA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBV?$optional\@VVec3\@\@\@3\@\@Z
@@ -354,11 +354,11 @@ public:
     /**
      * @symbol ?HEAD_PIECE_DATA\@BedBlock\@\@2GB
      */
-    MCAPI static unsigned short const HEAD_PIECE_DATA;
+    MCAPI static uint16_t const HEAD_PIECE_DATA;
     /**
      * @symbol ?OCCUPIED_DATA\@BedBlock\@\@2GB
      */
-    MCAPI static unsigned short const OCCUPIED_DATA;
+    MCAPI static uint16_t const OCCUPIED_DATA;
     // NOLINTEND
 
     // private:

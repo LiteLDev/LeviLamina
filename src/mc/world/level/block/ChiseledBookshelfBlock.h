@@ -181,7 +181,7 @@ public:
      * @vftbl 126
      * @symbol ?getComparatorSignal\@ChiseledBookshelfBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, unsigned char) const;
+    virtual int32_t getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uint8_t) const;
     /**
      * @vftbl 128
      * @symbol __unk_vfn_128
@@ -231,7 +231,7 @@ public:
      * @vftbl 172
      * @symbol ?use\@ChiseledBookshelfBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@EV?$optional\@VVec3\@\@\@std\@\@\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char, std::optional<class Vec3>) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t, std::optional<class Vec3>) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -246,12 +246,12 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@ChiseledBookshelfBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 186
      * @symbol ?getResourceCount\@ChiseledBookshelfBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@ChiseledBookshelfBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -275,7 +275,7 @@ public:
      * @symbol
      * ??0ChiseledBookshelfBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI ChiseledBookshelfBlock(std::string const&, int);
+    MCAPI ChiseledBookshelfBlock(std::string const&, int32_t);
     // NOLINTEND
 
     // private:

@@ -98,7 +98,7 @@ public:
      * @symbol
      * ?_allPositions\@OceanRuinPieces\@\@CA?AV?$vector\@VBlockPos\@\@V?$allocator\@VBlockPos\@\@\@std\@\@\@std\@\@AEAVRandom\@\@HHH\@Z
      */
-    MCAPI static std::vector<class BlockPos> _allPositions(class Random&, int, int, int);
+    MCAPI static std::vector<class BlockPos> _allPositions(class Random&, int32_t, int32_t, int32_t);
     // NOLINTEND
 
 private:

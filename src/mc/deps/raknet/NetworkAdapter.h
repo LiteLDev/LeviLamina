@@ -17,7 +17,7 @@ public:
     /**
      * @symbol ?GetNumberOfAddresses\@NetworkAdapter\@RakNet\@\@QEAAIXZ
      */
-    MCAPI unsigned int GetNumberOfAddresses();
+    MCAPI uint32_t GetNumberOfAddresses();
     // NOLINTEND
 };
 

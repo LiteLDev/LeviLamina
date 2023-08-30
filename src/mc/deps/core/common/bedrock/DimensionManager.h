@@ -50,8 +50,7 @@ public:
      * @symbol
      * ?getDimension\@DimensionManager\@\@QEBA?AV?$WeakRefT\@U?$SharePtrRefTraits\@VDimension\@\@\@\@\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>>
-        getDimension(class AutomaticID<class Dimension, int>) const;
+    MCAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>> getDimension(DimensionType) const;
     /**
      * @symbol
      * ?getDimensionDefinition\@DimensionManager\@\@QEBA?AV?$optional\@UDimensionDefinition\@DimensionDefinitionGroup\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
@@ -67,8 +66,7 @@ public:
      * @symbol
      * ?getOrCreateDimension\@DimensionManager\@\@QEAA?AV?$WeakRefT\@U?$SharePtrRefTraits\@VDimension\@\@\@\@\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>>
-        getOrCreateDimension(class AutomaticID<class Dimension, int>);
+    MCAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>> getOrCreateDimension(DimensionType);
     /**
      * @symbol
      * ?getRandomDimension\@DimensionManager\@\@QEAA?AV?$WeakRefT\@U?$SharePtrRefTraits\@VDimension\@\@\@\@\@\@AEAVRandom\@\@\@Z

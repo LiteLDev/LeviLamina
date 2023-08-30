@@ -155,7 +155,7 @@ public:
      * @vftbl 66
      * @symbol ?shouldConnectToRedstone\@TargetBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -254,7 +254,7 @@ public:
     /**
      * @symbol ??0TargetBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI TargetBlock(std::string const&, int);
+    MCAPI TargetBlock(std::string const&, int32_t);
     // NOLINTEND
 
     // private:

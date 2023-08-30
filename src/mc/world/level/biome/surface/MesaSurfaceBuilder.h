@@ -38,7 +38,7 @@ public:
      * @vftbl 1
      * @symbol ?init\@MesaSurfaceBuilder\@VanillaSurfaceBuilders\@\@UEAAXAEAVEntityContext\@\@I\@Z
      */
-    virtual void init(class EntityContext&, unsigned int);
+    virtual void init(class EntityContext&, uint32_t);
     /**
      * @vftbl 2
      * @symbol
@@ -58,8 +58,8 @@ public:
         float,
         class Random&,
         class BlockVolume&,
-        int,
-        short,
+        int32_t,
+        int16_t,
         struct MesaSurfaceBlocks const&,
         struct SurfaceMaterialBlocks const&,
         float
@@ -67,7 +67,7 @@ public:
     /**
      * @symbol ?_init\@MesaSurfaceBuilder\@VanillaSurfaceBuilders\@\@AEAAXI\@Z
      */
-    MCAPI void _init(unsigned int);
+    MCAPI void _init(uint32_t);
     /**
      * @symbol ?generateBands\@MesaSurfaceBuilder\@VanillaSurfaceBuilders\@\@AEAAXAEAVRandom\@\@\@Z
      */
@@ -75,11 +75,11 @@ public:
     /**
      * @symbol ?getBand\@MesaSurfaceBuilder\@VanillaSurfaceBuilders\@\@AEBA?AW4BlockColor\@\@HHH\@Z
      */
-    MCAPI enum class BlockColor getBand(int, int, int) const;
+    MCAPI enum class BlockColor getBand(int32_t, int32_t, int32_t) const;
     /**
      * @symbol ?makeBands\@MesaSurfaceBuilder\@VanillaSurfaceBuilders\@\@AEAAXAEAVRandom\@\@HW4BlockColor\@\@\@Z
      */
-    MCAPI void makeBands(class Random&, int, enum class BlockColor);
+    MCAPI void makeBands(class Random&, int32_t, enum class BlockColor);
     // NOLINTEND
 };
 

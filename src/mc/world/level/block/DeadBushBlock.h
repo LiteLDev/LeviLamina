@@ -235,12 +235,12 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@DeadBushBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 186
      * @symbol ?getResourceCount\@DeadBushBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEADBUSHBLOCK
     /**
      * @symbol ?canBeSilkTouched\@DeadBushBlock\@\@UEBA_NXZ
@@ -251,6 +251,6 @@ public:
      * @symbol
      * ??0DeadBushBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI DeadBushBlock(std::string const&, int);
+    MCAPI DeadBushBlock(std::string const&, int32_t);
     // NOLINTEND
 };

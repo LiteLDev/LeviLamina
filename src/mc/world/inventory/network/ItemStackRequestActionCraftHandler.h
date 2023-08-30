@@ -24,7 +24,7 @@ public:
      * @symbol
      * ?_initCraftResults\@ItemStackRequestActionCraftHandler\@\@QEAA?AW4ItemStackNetResult\@\@AEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@E\@Z
      */
-    MCAPI enum class ItemStackNetResult _initCraftResults(std::vector<class ItemInstance> const&, unsigned char);
+    MCAPI enum class ItemStackNetResult _initCraftResults(std::vector<class ItemInstance> const&, uint8_t);
     /**
      * @symbol ?_initSingleCraftResult\@ItemStackRequestActionCraftHandler\@\@QEAAPEAVItemInstance\@\@AEBV2\@\@Z
      */
@@ -88,6 +88,6 @@ public:
     /**
      * @symbol ?_setCreatedItemOutputSlot\@ItemStackRequestActionCraftHandler\@\@AEAA?AW4ItemStackNetResult\@\@E\@Z
      */
-    MCAPI enum class ItemStackNetResult _setCreatedItemOutputSlot(unsigned char);
+    MCAPI enum class ItemStackNetResult _setCreatedItemOutputSlot(uint8_t);
     // NOLINTEND
 };

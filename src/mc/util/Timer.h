@@ -39,7 +39,7 @@ public:
     /**
      * @symbol ?stepTick\@Timer\@\@QEAAXH\@Z
      */
-    MCAPI void stepTick(int);
+    MCAPI void stepTick(int32_t);
     /**
      * @symbol ?stepping\@Timer\@\@QEBA_NXZ
      */

@@ -115,7 +115,7 @@ public:
      * @vftbl 101
      * @symbol ?inventoryTick\@MapItem\@\@UEBA_NAEAVItemStack\@\@AEAVLevel\@\@AEAVActor\@\@H_N\@Z
      */
-    virtual bool inventoryTick(class ItemStack&, class Level&, class Actor&, int, bool) const;
+    virtual bool inventoryTick(class ItemStack&, class Level&, class Actor&, int32_t, bool) const;
     /**
      * @vftbl 102
      * @symbol ?refreshedInContainer\@MapItem\@\@UEBAXAEBVItemStackBase\@\@AEAVLevel\@\@\@Z
@@ -146,12 +146,12 @@ public:
      * @symbol
      * ?setIconInfo\@MapItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    virtual class Item& setIconInfo(std::string const&, int);
+    virtual class Item& setIconInfo(std::string const&, int32_t);
     /**
      * @vftbl 120
      * @symbol ?getIconInfo\@MapItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int32_t, bool) const;
     /**
      * @vftbl 136
      * @symbol
@@ -161,7 +161,7 @@ public:
     /**
      * @symbol ??0MapItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@F\@Z
      */
-    MCAPI MapItem(std::string const&, short);
+    MCAPI MapItem(std::string const&, int16_t);
     /**
      * @symbol ?blockTick\@MapItem\@\@QEBAXAEAVItemStack\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -191,7 +191,7 @@ public:
      * ?sampleMapData\@MapItem\@\@SA_NAEAVBlockSource\@\@HAEBVBlockPos\@\@1HHPEAV?$vector\@UMapSample\@\@V?$allocator\@UMapSample\@\@\@std\@\@\@std\@\@PEAVMapItemSavedData\@\@PEAV?$vector\@UClientTerrainPixel\@\@V?$allocator\@UClientTerrainPixel\@\@\@std\@\@\@5\@\@Z
      */
     MCAPI static bool
-    sampleMapData(class BlockSource&, int, class BlockPos const&, class BlockPos const&, int, int, std::vector<struct MapSample>*, class MapItemSavedData*, std::vector<struct ClientTerrainPixel>*);
+    sampleMapData(class BlockSource&, int32_t, class BlockPos const&, class BlockPos const&, int32_t, int32_t, std::vector<struct MapSample>*, class MapItemSavedData*, std::vector<struct ClientTerrainPixel>*);
     /**
      * @symbol
      * ?serializeMapData\@MapItem\@\@SAXAEBV?$vector\@UMapSample\@\@V?$allocator\@UMapSample\@\@\@std\@\@\@std\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
@@ -208,7 +208,7 @@ public:
     /**
      * @symbol ?setMapNameIndex\@MapItem\@\@SAXAEAVItemStack\@\@H\@Z
      */
-    MCAPI static void setMapNameIndex(class ItemStack&, int);
+    MCAPI static void setMapNameIndex(class ItemStack&, int32_t);
     /**
      * @symbol ?TAG_MAP_INIT\@MapItem\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */

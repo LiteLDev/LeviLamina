@@ -28,7 +28,7 @@ public:
     /**
      * @symbol ?setContainerChanged\@RandomizableBlockActorContainer\@\@UEAAXH\@Z
      */
-    MCVAPI void setContainerChanged(int);
+    MCVAPI void setContainerChanged(int32_t);
     /**
      * @symbol ?startOpen\@RandomizableBlockActorContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */

@@ -73,6 +73,6 @@ private:
     /**
      * @symbol ?THROTTLE_COOLDOWN\@DrinkPotionGoal\@\@0HB
      */
-    MCAPI static int const THROTTLE_COOLDOWN;
+    MCAPI static int32_t const THROTTLE_COOLDOWN;
     // NOLINTEND
 };

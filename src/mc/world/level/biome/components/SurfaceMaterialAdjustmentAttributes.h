@@ -20,8 +20,8 @@ public:
         class RenderParams&,
         class gsl::not_null<class PerlinSimplexNoise*>,
         class BlockPos const&,
-        int,
-        int
+        int32_t,
+        int32_t
     ) const;
     /**
      * @symbol ??4SurfaceMaterialAdjustmentAttributes\@\@QEAAAEAU0\@$$QEAU0\@\@Z

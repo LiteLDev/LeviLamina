@@ -182,7 +182,7 @@ public:
      * @vftbl 311
      * @symbol ?getAttackTime\@PigZombie\@\@UEAAHXZ
      */
-    virtual int getAttackTime();
+    virtual int32_t getAttackTime();
     /**
      * @vftbl 323
      * @symbol __unk_vfn_323

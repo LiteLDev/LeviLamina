@@ -30,11 +30,11 @@ public:
     /**
      * @symbol ?getMoveToMouthDuration\@PlayerItemInUse\@\@QEBAHXZ
      */
-    MCAPI int getMoveToMouthDuration() const;
+    MCAPI int32_t getMoveToMouthDuration() const;
     /**
      * @symbol ?getUsedDuration\@PlayerItemInUse\@\@QEBAHXZ
      */
-    MCAPI int getUsedDuration() const;
+    MCAPI int32_t getUsedDuration() const;
     /**
      * @symbol ?isInSlot\@PlayerItemInUse\@\@QEBA_NUSlotData\@PlayerInventory\@\@\@Z
      */
@@ -47,7 +47,7 @@ public:
      * @symbol
      * ?setItemInUse\@PlayerItemInUse\@\@QEAAXAEBVItemStack\@\@AEAVEntityContext\@\@HUSlotData\@PlayerInventory\@\@\@Z
      */
-    MCAPI void setItemInUse(class ItemStack const&, class EntityContext&, int, struct PlayerInventory::SlotData);
+    MCAPI void setItemInUse(class ItemStack const&, class EntityContext&, int32_t, struct PlayerInventory::SlotData);
     /**
      * @symbol ??1PlayerItemInUse\@\@QEAA\@XZ
      */

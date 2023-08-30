@@ -136,7 +136,7 @@ public:
      * @vftbl 57
      * @symbol ?isValidAuxValue\@StoneSlabBlock\@\@UEBA_NH\@Z
      */
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
@@ -207,7 +207,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@StoneSlabBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -257,7 +257,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@StoneSlabBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@StoneSlabBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -267,7 +267,7 @@ public:
      * @symbol
      * ??0StoneSlabBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_NV?$WeakPtr\@VBlockLegacy\@\@\@\@\@Z
      */
-    MCAPI StoneSlabBlock(std::string const&, int, bool, class WeakPtr<class BlockLegacy>);
+    MCAPI StoneSlabBlock(std::string const&, int32_t, bool, class WeakPtr<class BlockLegacy>);
     /**
      * @symbol
      * ?SLAB_NAMES\@StoneSlabBlock\@\@2V?$array\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$07\@std\@\@B

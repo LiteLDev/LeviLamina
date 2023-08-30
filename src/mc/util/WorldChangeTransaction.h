@@ -27,7 +27,7 @@ public:
     /**
      * @symbol ?setBlock\@WorldChangeTransaction\@\@QEAAXAEBVBlockPos\@\@AEBVBlock\@\@H\@Z
      */
-    MCAPI void setBlock(class BlockPos const&, class Block const&, int);
+    MCAPI void setBlock(class BlockPos const&, class Block const&, int32_t);
     /**
      * @symbol ??1WorldChangeTransaction\@\@QEAA\@XZ
      */

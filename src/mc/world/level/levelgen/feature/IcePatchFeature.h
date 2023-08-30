@@ -28,6 +28,6 @@ public:
     /**
      * @symbol ??0IcePatchFeature\@\@QEAA\@H\@Z
      */
-    MCAPI IcePatchFeature(int);
+    MCAPI IcePatchFeature(int32_t);
     // NOLINTEND
 };

@@ -186,7 +186,7 @@ public:
      * @vftbl 75
      * @symbol ?onRedstoneUpdate\@BigDripleafBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
-    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int32_t, bool) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -233,7 +233,7 @@ public:
      * @symbol ?getPlacementBlock\@BigDripleafBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -338,15 +338,15 @@ public:
      * @symbol
      * ??0BigDripleafBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI BigDripleafBlock(std::string const&, int);
+    MCAPI BigDripleafBlock(std::string const&, int32_t);
     /**
      * @symbol ?placeWithRandomHeight\@BigDripleafBlock\@\@SAXAEAVBlockSource\@\@AEAVRandom\@\@VBlockPos\@\@H\@Z
      */
-    MCAPI static void placeWithRandomHeight(class BlockSource&, class Random&, class BlockPos, int);
+    MCAPI static void placeWithRandomHeight(class BlockSource&, class Random&, class BlockPos, int32_t);
     /**
      * @symbol ?MAX_DRIPLEAF_GROWTH_HEIGHT\@BigDripleafBlock\@\@2HB
      */
-    MCAPI static int const MAX_DRIPLEAF_GROWTH_HEIGHT;
+    MCAPI static int32_t const MAX_DRIPLEAF_GROWTH_HEIGHT;
     // NOLINTEND
 
     // private:

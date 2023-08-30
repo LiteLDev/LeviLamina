@@ -133,7 +133,7 @@ public:
     /**
      * @symbol ??0EmptyMapItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@F\@Z
      */
-    MCAPI EmptyMapItem(std::string const&, short);
+    MCAPI EmptyMapItem(std::string const&, int16_t);
     /**
      * @symbol ?addPlayerMarker\@EmptyMapItem\@\@SAXAEAVItemStack\@\@\@Z
      */

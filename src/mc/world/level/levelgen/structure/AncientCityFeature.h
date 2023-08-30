@@ -39,7 +39,7 @@ public:
      * ?isFeatureChunk\@AncientCityFeature\@\@UEAA_NAEBVBiomeSource\@\@AEAVRandom\@\@AEBVChunkPos\@\@IAEBVIPreliminarySurfaceProvider\@\@AEBVDimension\@\@\@Z
      */
     virtual bool
-    isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&, class Dimension const&);
+    isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, uint32_t, class IPreliminarySurfaceProvider const&, class Dimension const&);
     /**
      * @vftbl 6
      * @symbol
@@ -50,6 +50,6 @@ public:
     /**
      * @symbol ??0AncientCityFeature\@\@QEAA\@IAEBVBaseGameVersion\@\@\@Z
      */
-    MCAPI AncientCityFeature(unsigned int, class BaseGameVersion const&);
+    MCAPI AncientCityFeature(uint32_t, class BaseGameVersion const&);
     // NOLINTEND
 };

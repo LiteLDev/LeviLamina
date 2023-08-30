@@ -94,12 +94,12 @@ public:
          * @vftbl 0
          * @symbol ?getState\@RearrangedStateCollection\@BlockLegacy\@\@UEBA?AV?$optional\@H\@std\@\@AEBV2\@H\@Z
          */
-        virtual std::optional<int> getState(class BlockLegacy const&, int) const;
+        virtual std::optional<int32_t> getState(class BlockLegacy const&, int32_t) const;
         /**
          * @vftbl 1
          * @symbol ?setState\@RearrangedStateCollection\@BlockLegacy\@\@UEBAPEBVBlock\@\@AEBV2\@HH\@Z
          */
-        virtual class Block const* setState(class BlockLegacy const&, int, int) const;
+        virtual class Block const* setState(class BlockLegacy const&, int32_t, int32_t) const;
         /**
          * @symbol
          * ?add\@RearrangedStateCollection\@BlockLegacy\@\@SAXAEAV2\@AEBVBlockState\@\@V?$function\@$$A6A?AV?$optional\@H\@std\@\@AEBVBlockLegacy\@\@H\@Z\@std\@\@V?$function\@$$A6APEBVBlock\@\@AEBVBlockLegacy\@\@HH\@Z\@5\@AEBVSemVersion\@\@\@Z
@@ -107,8 +107,8 @@ public:
         MCAPI static void
         add(class BlockLegacy&,
             class BlockState const&,
-            std::function<std::optional<int>(class BlockLegacy const&, int)>,
-            std::function<class Block const*(class BlockLegacy const&, int, int)>,
+            std::function<std::optional<int32_t>(class BlockLegacy const&, int32_t)>,
+            std::function<class Block const*(class BlockLegacy const&, int32_t, int32_t)>,
             class SemVersion const&);
         // NOLINTEND
     };
@@ -134,7 +134,7 @@ public:
             /**
              * @symbol ??0SplitBlock\@RemovedStateCollection\@BlockLegacy\@\@QEAA\@HAEAV2\@\@Z
              */
-            MCAPI SplitBlock(int, class BlockLegacy&);
+            MCAPI SplitBlock(int32_t, class BlockLegacy&);
             // NOLINTEND
         };
 
@@ -150,12 +150,12 @@ public:
          * @vftbl 0
          * @symbol ?getState\@RemovedStateCollection\@BlockLegacy\@\@UEBA?AV?$optional\@H\@std\@\@AEBV2\@H\@Z
          */
-        virtual std::optional<int> getState(class BlockLegacy const&, int) const;
+        virtual std::optional<int32_t> getState(class BlockLegacy const&, int32_t) const;
         /**
          * @vftbl 1
          * @symbol ?setState\@RemovedStateCollection\@BlockLegacy\@\@UEBAPEBVBlock\@\@AEBV2\@HH\@Z
          */
-        virtual class Block const* setState(class BlockLegacy const&, int, int) const;
+        virtual class Block const* setState(class BlockLegacy const&, int32_t, int32_t) const;
         /**
          * @symbol
          * ?add\@RemovedStateCollection\@BlockLegacy\@\@SAXAEBVBlockState\@\@$$QEAV?$vector\@USplitBlock\@RemovedStateCollection\@BlockLegacy\@\@V?$allocator\@USplitBlock\@RemovedStateCollection\@BlockLegacy\@\@\@std\@\@\@std\@\@AEBVSemVersion\@\@\@Z
@@ -184,7 +184,7 @@ public:
      * @vftbl 1
      * @symbol ?getStateFromLegacyData\@BlockLegacy\@\@UEBAAEBVBlock\@\@G\@Z
      */
-    virtual class Block const& getStateFromLegacyData(unsigned short) const;
+    virtual class Block const& getStateFromLegacyData(uint16_t) const;
     /**
      * @vftbl 2
      * @symbol
@@ -275,7 +275,7 @@ public:
      * @vftbl 16
      * @symbol ?randomlyModifyPosition\@BlockLegacy\@\@UEBA?AVVec3\@\@AEBVBlockPos\@\@AEAH\@Z
      */
-    virtual class Vec3 randomlyModifyPosition(class BlockPos const&, int&) const;
+    virtual class Vec3 randomlyModifyPosition(class BlockPos const&, int32_t&) const;
     /**
      * @vftbl 17
      * @symbol ?randomlyModifyPosition\@BlockLegacy\@\@UEBA?AVVec3\@\@AEBVBlockPos\@\@\@Z
@@ -297,7 +297,7 @@ public:
      * ?liquidCanFlowIntoFromDirection\@BlockLegacy\@\@UEBA_NEAEBV?$function\@$$A6AAEBVBlock\@\@AEBVBlockPos\@\@\@Z\@std\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool
-    liquidCanFlowIntoFromDirection(unsigned char, std::function<class Block const&(class BlockPos const&)> const&, class BlockPos const&)
+    liquidCanFlowIntoFromDirection(uint8_t, std::function<class Block const&(class BlockPos const&)> const&, class BlockPos const&)
         const;
     /**
      * @vftbl 21
@@ -323,22 +323,22 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@BlockLegacy\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 26
      * @symbol ?canProvideFullSupport\@BlockLegacy\@\@UEBA_NAEBVBlock\@\@E\@Z
      */
-    virtual bool canProvideFullSupport(class Block const&, unsigned char) const;
+    virtual bool canProvideFullSupport(class Block const&, uint8_t) const;
     /**
      * @vftbl 27
      * @symbol ?canProvideMultifaceSupport\@BlockLegacy\@\@UEBA_NAEBVBlock\@\@E\@Z
      */
-    virtual bool canProvideMultifaceSupport(class Block const&, unsigned char) const;
+    virtual bool canProvideMultifaceSupport(class Block const&, uint8_t) const;
     /**
      * @vftbl 28
      * @symbol ?canConnect\@BlockLegacy\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
-    virtual bool canConnect(class Block const&, unsigned char, class Block const&) const;
+    virtual bool canConnect(class Block const&, uint8_t, class Block const&) const;
     /**
      * @vftbl 29
      * @symbol ?isAir\@BlockLegacy\@\@UEBA_NXZ
@@ -483,7 +483,7 @@ public:
      * @vftbl 57
      * @symbol ?isValidAuxValue\@BlockLegacy\@\@UEBA_NH\@Z
      */
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
     /**
      * @vftbl 58
      * @symbol ?canFillAtPos\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
@@ -503,7 +503,7 @@ public:
      * @vftbl 61
      * @symbol ?getDirectSignal\@BlockLegacy\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual int getDirectSignal(class BlockSource&, class BlockPos const&, int) const;
+    virtual int32_t getDirectSignal(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
@@ -528,7 +528,7 @@ public:
      * @vftbl 66
      * @symbol ?shouldConnectToRedstone\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 67
      * @symbol ?handlePrecipitation\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@MM\@Z
@@ -563,7 +563,7 @@ public:
      * @vftbl 73
      * @symbol ?dispense\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
+    virtual bool dispense(class BlockSource&, class Container&, int32_t, class Vec3 const&, uint8_t) const;
     /**
      * @vftbl 74
      * @symbol ?transformOnFall\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@M\@Z
@@ -573,7 +573,7 @@ public:
      * @vftbl 75
      * @symbol ?onRedstoneUpdate\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
-    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int32_t, bool) const;
     /**
      * @vftbl 76
      * @symbol ?onMove\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
@@ -664,7 +664,7 @@ public:
      * @vftbl 93
      * @symbol ?mayPlace\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
+    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 94
      * @symbol ?mayPlace\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
@@ -749,12 +749,12 @@ public:
      * @symbol ?getPlacementBlock\@BlockLegacy\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 109
      * @symbol ?calcVariant\@BlockLegacy\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVColor\@mce\@\@\@Z
      */
-    virtual int calcVariant(class BlockSource&, class BlockPos const&, class mce::Color const&) const;
+    virtual int32_t calcVariant(class BlockSource&, class BlockPos const&, class mce::Color const&) const;
     /**
      * @vftbl 110
      * @symbol ?isAttachedTo\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAV3\@\@Z
@@ -789,7 +789,7 @@ public:
      * @vftbl 116
      * @symbol ?triggerEvent\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@HH\@Z
      */
-    virtual void triggerEvent(class BlockSource&, class BlockPos const&, int, int) const;
+    virtual void triggerEvent(class BlockSource&, class BlockPos const&, int32_t, int32_t) const;
     /**
      * @vftbl 117
      * @symbol
@@ -842,7 +842,7 @@ public:
      * @vftbl 126
      * @symbol ?getComparatorSignal\@BlockLegacy\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, unsigned char) const;
+    virtual int32_t getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uint8_t) const;
     /**
      * @vftbl 127
      * @symbol ?canSlide\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
@@ -872,7 +872,7 @@ public:
      * @vftbl 132
      * @symbol ?getIconYOffset\@BlockLegacy\@\@UEBAHXZ
      */
-    virtual int getIconYOffset() const;
+    virtual int32_t getIconYOffset() const;
     /**
      * @vftbl 133
      * @symbol
@@ -888,22 +888,22 @@ public:
      * @vftbl 135
      * @symbol ?getColor\@BlockLegacy\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getColor(class Block const&) const;
+    virtual int32_t getColor(class Block const&) const;
     /**
      * @vftbl 136
      * @symbol ?getColor\@BlockLegacy\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual int32_t getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
     /**
      * @vftbl 137
      * @symbol ?getColorAtPos\@BlockLegacy\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual int getColorAtPos(class BlockSource&, class BlockPos const&) const;
+    virtual int32_t getColorAtPos(class BlockSource&, class BlockPos const&) const;
     /**
      * @vftbl 138
      * @symbol ?getColorForParticle\@BlockLegacy\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    virtual int getColorForParticle(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual int32_t getColorForParticle(class BlockSource&, class BlockPos const&, class Block const&) const;
     /**
      * @vftbl 139
      * @symbol ?isSeasonTinted\@BlockLegacy\@\@UEBA_NAEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
@@ -923,12 +923,12 @@ public:
      * @vftbl 142
      * @symbol ?telemetryVariant\@BlockLegacy\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual int telemetryVariant(class BlockSource&, class BlockPos const&) const;
+    virtual int32_t telemetryVariant(class BlockSource&, class BlockPos const&) const;
     /**
      * @vftbl 143
      * @symbol ?getVariant\@BlockLegacy\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 144
      * @symbol ?canSpawnOn\@BlockLegacy\@\@UEBA_NPEAVActor\@\@\@Z
@@ -943,12 +943,12 @@ public:
      * @vftbl 146
      * @symbol ?getMappedFace\@BlockLegacy\@\@UEBAEEAEBVBlock\@\@\@Z
      */
-    virtual unsigned char getMappedFace(unsigned char, class Block const&) const;
+    virtual uint8_t getMappedFace(uint8_t, class Block const&) const;
     /**
      * @vftbl 147
      * @symbol ?getFaceFlip\@BlockLegacy\@\@UEBA?AW4Flip\@\@EAEBVBlock\@\@\@Z
      */
-    virtual enum class Flip getFaceFlip(unsigned char, class Block const&) const;
+    virtual enum class Flip getFaceFlip(uint8_t, class Block const&) const;
     /**
      * @vftbl 148
      * @symbol ?animateTick\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
@@ -983,7 +983,7 @@ public:
      * @vftbl 154
      * @symbol ?tryLegacyUpgrade\@BlockLegacy\@\@UEBAPEBVBlock\@\@G\@Z
      */
-    virtual class Block const* tryLegacyUpgrade(unsigned short) const;
+    virtual class Block const* tryLegacyUpgrade(uint16_t) const;
     /**
      * @vftbl 155
      * @symbol ?dealsContactDamage\@BlockLegacy\@\@UEBA_NAEBVActor\@\@AEBVBlock\@\@_N\@Z
@@ -1073,12 +1073,12 @@ public:
      * @vftbl 172
      * @symbol ?use\@BlockLegacy\@\@MEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@EV?$optional\@VVec3\@\@\@std\@\@\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char, std::optional<class Vec3>) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t, std::optional<class Vec3>) const;
     /**
      * @vftbl 173
      * @symbol ?use\@BlockLegacy\@\@MEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -1105,7 +1105,7 @@ public:
      * @vftbl 178
      * @symbol ?getExtraRenderLayers\@BlockLegacy\@\@MEBAHXZ
      */
-    virtual int getExtraRenderLayers() const;
+    virtual int32_t getExtraRenderLayers() const;
     /**
      * @vftbl 179
      * @symbol ?getExplosionResistance\@BlockLegacy\@\@MEBAMXZ
@@ -1140,12 +1140,12 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@BlockLegacy\@\@MEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 186
      * @symbol ?getResourceCount\@BlockLegacy\@\@MEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@BlockLegacy\@\@MEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -1308,7 +1308,7 @@ public:
     /**
      * @symbol ?onPlayerPlacing\@BlockLegacy\@\@MEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@E\@Z
      */
-    MCVAPI void onPlayerPlacing(class BlockSource&, class BlockPos const&, class Actor&, unsigned char) const;
+    MCVAPI void onPlayerPlacing(class BlockSource&, class BlockPos const&, class Actor&, uint8_t) const;
     /**
      * @symbol ?onStepOff\@BlockLegacy\@\@MEBAXAEAVActor\@\@AEBVBlockPos\@\@\@Z
      */
@@ -1342,7 +1342,7 @@ public:
      * @symbol
      * ??0BlockLegacy\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI BlockLegacy(std::string const&, int, class Material const&);
+    MCAPI BlockLegacy(std::string const&, int32_t, class Material const&);
     /**
      * @symbol ?_isDataDrivingVanillaBlocksAndItems\@BlockLegacy\@\@QEBA_NXZ
      */
@@ -1392,7 +1392,7 @@ public:
     /**
      * @symbol ?createBlockPermutations\@BlockLegacy\@\@QEAAXI\@Z
      */
-    MCAPI void createBlockPermutations(unsigned int);
+    MCAPI void createBlockPermutations(uint32_t);
     /**
      * @symbol ?createWeakPtr\@BlockLegacy\@\@QEBA?AV?$WeakPtr\@VBlockLegacy\@\@\@\@XZ
      */
@@ -1417,7 +1417,7 @@ public:
     /**
      * @symbol ?getBlockItemId\@BlockLegacy\@\@QEBAFXZ
      */
-    MCAPI short getBlockItemId() const;
+    MCAPI int16_t getBlockItemId() const;
     /**
      * @symbol ?getBlockState\@BlockLegacy\@\@QEBAPEBVBlockState\@\@AEBVHashedString\@\@\@Z
      */
@@ -1664,7 +1664,7 @@ public:
     /**
      * @symbol ?tryGetStateFromLegacyData\@BlockLegacy\@\@QEBAPEBVBlock\@\@G_N\@Z
      */
-    MCAPI class Block const* tryGetStateFromLegacyData(unsigned short, bool) const;
+    MCAPI class Block const* tryGetStateFromLegacyData(uint16_t, bool) const;
     /**
      * @symbol
      * ?updateTallestCollisionShape\@BlockLegacy\@\@QEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVAABB\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@AEAV5\@AEBVVec3\@\@AEAM\@Z
@@ -1691,11 +1691,11 @@ public:
     /**
      * @symbol ?getPlacementFacingAll\@BlockLegacy\@\@SAEAEBVActor\@\@AEBVBlockPos\@\@M\@Z
      */
-    MCAPI static unsigned char getPlacementFacingAll(class Actor const&, class BlockPos const&, float);
+    MCAPI static uint8_t getPlacementFacingAll(class Actor const&, class BlockPos const&, float);
     /**
      * @symbol ?getPlacementFacingAllExceptAxisY\@BlockLegacy\@\@SAEAEBVActor\@\@AEBVBlockPos\@\@M\@Z
      */
-    MCAPI static unsigned char getPlacementFacingAllExceptAxisY(class Actor const&, class BlockPos const&, float);
+    MCAPI static uint8_t getPlacementFacingAllExceptAxisY(class Actor const&, class BlockPos const&, float);
     /**
      * @symbol ?popResource\@BlockLegacy\@\@SAPEAVItemActor\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVItemStack\@\@\@Z
      */
@@ -1741,11 +1741,11 @@ public:
     /**
      * @symbol ?_tryLookupAlteredStateCollection\@BlockLegacy\@\@AEBA?AV?$optional\@H\@std\@\@_KG\@Z
      */
-    MCAPI std::optional<int> _tryLookupAlteredStateCollection(uint64_t, unsigned short) const;
+    MCAPI std::optional<int32_t> _tryLookupAlteredStateCollection(uint64_t, uint16_t) const;
     /**
      * @symbol ?_trySetStateFromAlteredStateCollection\@BlockLegacy\@\@AEBAPEBVBlock\@\@_KHG\@Z
      */
-    MCAPI class Block const* _trySetStateFromAlteredStateCollection(uint64_t, int, unsigned short) const;
+    MCAPI class Block const* _trySetStateFromAlteredStateCollection(uint64_t, int32_t, uint16_t) const;
     /**
      * @symbol ?initParams\@BlockLegacy\@\@AEBAXAEAVRenderParams\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@\@Z
      */

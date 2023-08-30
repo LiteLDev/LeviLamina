@@ -18,10 +18,10 @@ public:
     /**
      * @symbol ??0CommandIntegerRange\@\@QEAA\@HH_N\@Z
      */
-    MCAPI CommandIntegerRange(int, int, bool);
+    MCAPI CommandIntegerRange(int32_t, int32_t, bool);
     /**
      * @symbol ?isWithinRange\@CommandIntegerRange\@\@QEBA_NH\@Z
      */
-    MCAPI bool isWithinRange(int) const;
+    MCAPI bool isWithinRange(int32_t) const;
     // NOLINTEND
 };

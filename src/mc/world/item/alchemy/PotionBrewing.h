@@ -32,11 +32,11 @@ public:
         /**
          * @symbol ?getData\@Ingredient\@PotionBrewing\@\@QEBAHXZ
          */
-        MCAPI int getData() const;
+        MCAPI int32_t getData() const;
         /**
          * @symbol ?getItemId\@Ingredient\@PotionBrewing\@\@QEBAHXZ
          */
-        MCAPI int getItemId() const;
+        MCAPI int32_t getItemId() const;
         // NOLINTEND
     };
 
@@ -70,7 +70,7 @@ public:
     /**
      * @symbol ?getFuelValue\@PotionBrewing\@\@SAHAEBVItemDescriptor\@\@\@Z
      */
-    MCAPI static int getFuelValue(class ItemDescriptor const&);
+    MCAPI static int32_t getFuelValue(class ItemDescriptor const&);
     /**
      * @symbol ?hasMix\@PotionBrewing\@\@SA_NAEBVItemInstance\@\@AEBVItemDescriptor\@\@\@Z
      */

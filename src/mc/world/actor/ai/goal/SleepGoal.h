@@ -61,7 +61,7 @@ public:
     /**
      * @symbol ??0SleepGoal\@\@QEAA\@AEAVMob\@\@MMM_NMHM\@Z
      */
-    MCAPI SleepGoal(class Mob&, float, float, float, bool, float, int, float);
+    MCAPI SleepGoal(class Mob&, float, float, float, bool, float, int32_t, float);
     // NOLINTEND
 
     // private:

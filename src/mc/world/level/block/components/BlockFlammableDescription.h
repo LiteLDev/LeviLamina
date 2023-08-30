@@ -44,11 +44,11 @@ public:
     /**
      * @symbol ?CATCH_CHANCE_DEFAULT\@BlockFlammableDescription\@\@2HB
      */
-    MCAPI static int const CATCH_CHANCE_DEFAULT;
+    MCAPI static int32_t const CATCH_CHANCE_DEFAULT;
     /**
      * @symbol ?DESTROY_CHANCE_DEFAULT\@BlockFlammableDescription\@\@2HB
      */
-    MCAPI static int const DESTROY_CHANCE_DEFAULT;
+    MCAPI static int32_t const DESTROY_CHANCE_DEFAULT;
     /**
      * @symbol
      * ?NameID\@BlockFlammableDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B

@@ -53,7 +53,7 @@ public:
     /**
      * @symbol ?onEquipItemPickedUp\@EquipItemComponent\@\@QEAAXVItemStack\@\@H\@Z
      */
-    MCAPI void onEquipItemPickedUp(class ItemStack, int);
+    MCAPI void onEquipItemPickedUp(class ItemStack, int32_t);
     /**
      * @symbol ??1EquipItemComponent\@\@QEAA\@XZ
      */

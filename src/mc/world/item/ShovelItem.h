@@ -79,7 +79,7 @@ public:
      * @vftbl 62
      * @symbol ?getEnchantSlot\@ShovelItem\@\@UEBAHXZ
      */
-    virtual int getEnchantSlot() const;
+    virtual int32_t getEnchantSlot() const;
     /**
      * @vftbl 66
      * @symbol __unk_vfn_66
@@ -131,11 +131,11 @@ public:
      * ?_useOn\@ShovelItem\@\@MEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _useOn(class ItemStack&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
     /**
      * @symbol
      * ??0ShovelItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVTier\@Item\@\@\@Z
      */
-    MCAPI ShovelItem(std::string const&, int, class Item::Tier const&);
+    MCAPI ShovelItem(std::string const&, int32_t, class Item::Tier const&);
     // NOLINTEND
 };

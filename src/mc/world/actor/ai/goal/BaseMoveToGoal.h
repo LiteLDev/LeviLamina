@@ -60,7 +60,7 @@ public:
      * @vftbl 12
      * @symbol ?_nextStartTick\@BaseMoveToGoal\@\@MEAAHXZ
      */
-    virtual int _nextStartTick();
+    virtual int32_t _nextStartTick();
     /**
      * @vftbl 13
      * @symbol ?_canReach\@BaseMoveToGoal\@\@MEAA_NAEBVBlockPos\@\@\@Z
@@ -90,7 +90,7 @@ public:
     /**
      * @symbol ??0BaseMoveToGoal\@\@QEAA\@AEAVMob\@\@MMMHH\@Z
      */
-    MCAPI BaseMoveToGoal(class Mob&, float, float, float, int, int);
+    MCAPI BaseMoveToGoal(class Mob&, float, float, float, int32_t, int32_t);
     /**
      * @symbol ?setTargetPositionOffset\@BaseMoveToGoal\@\@QEAAXAEBVVec3\@\@\@Z
      */
@@ -114,6 +114,6 @@ public:
     /**
      * @symbol ?setInterval\@BaseMoveToGoal\@\@IEAAXH\@Z
      */
-    MCAPI void setInterval(int);
+    MCAPI void setInterval(int32_t);
     // NOLINTEND
 };

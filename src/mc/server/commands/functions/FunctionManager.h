@@ -54,7 +54,7 @@ public:
     /**
      * @symbol ?execute\@FunctionManager\@\@QEAAHAEAVFunctionEntry\@\@AEBVCommandOrigin\@\@W4FunctionQueueOrder\@\@\@Z
      */
-    MCAPI int execute(class FunctionEntry&, class CommandOrigin const&, enum class FunctionQueueOrder);
+    MCAPI int32_t execute(class FunctionEntry&, class CommandOrigin const&, enum class FunctionQueueOrder);
     /**
      * @symbol
      * ?getFunction\@FunctionManager\@\@QEAAPEAVFunctionEntry\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -99,7 +99,7 @@ public:
     /**
      * @symbol ?_addOriginReference\@FunctionManager\@\@AEAAAEBVCommandOrigin\@\@AEBV2\@I\@Z
      */
-    MCAPI class CommandOrigin const& _addOriginReference(class CommandOrigin const&, unsigned int);
+    MCAPI class CommandOrigin const& _addOriginReference(class CommandOrigin const&, uint32_t);
     /**
      * @symbol
      * ?_queueCommandsAfterCaller\@FunctionManager\@\@AEAAXAEBV?$vector\@V?$unique_ptr\@VIFunctionEntry\@\@U?$default_delete\@VIFunctionEntry\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VIFunctionEntry\@\@U?$default_delete\@VIFunctionEntry\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEBVCommandOrigin\@\@\@Z
@@ -109,6 +109,6 @@ public:
     /**
      * @symbol ?_removeOriginReference\@FunctionManager\@\@AEAAXAEBVCommandOrigin\@\@I\@Z
      */
-    MCAPI void _removeOriginReference(class CommandOrigin const&, unsigned int);
+    MCAPI void _removeOriginReference(class CommandOrigin const&, uint32_t);
     // NOLINTEND
 };

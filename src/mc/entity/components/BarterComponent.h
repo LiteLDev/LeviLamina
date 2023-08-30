@@ -15,7 +15,7 @@ public:
     /**
      * @symbol ?onBarterItemPickedUp\@BarterComponent\@\@QEAAXAEBVActor\@\@UActorUniqueID\@\@F\@Z
      */
-    MCAPI void onBarterItemPickedUp(class Actor const&, struct ActorUniqueID, short);
+    MCAPI void onBarterItemPickedUp(class Actor const&, struct ActorUniqueID, int16_t);
     /**
      * @symbol ?stopBarter\@BarterComponent\@\@QEAAXXZ
      */

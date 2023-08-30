@@ -40,7 +40,7 @@ public:
     /**
      * @symbol ??0NetherFortressPiece\@\@QEAA\@H\@Z
      */
-    MCAPI NetherFortressPiece(int);
+    MCAPI NetherFortressPiece(int32_t);
     /**
      * @symbol
      * ?findAndCreateBridgePieceFactory\@NetherFortressPiece\@\@QEAA?AV?$unique_ptr\@VNetherFortressPiece\@\@U?$default_delete\@VNetherFortressPiece\@\@\@std\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@3\@AEAVRandom\@\@HHHHH\@Z
@@ -49,11 +49,11 @@ public:
         std::string const&,
         std::vector<std::unique_ptr<class StructurePiece>>&,
         class Random&,
-        int,
-        int,
-        int,
-        int,
-        int
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t
     );
     /**
      * @symbol
@@ -63,11 +63,11 @@ public:
         class NBStartPiece&,
         std::vector<std::unique_ptr<class StructurePiece>>&,
         class Random&,
-        int,
-        int,
-        int,
-        int,
-        int,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
         bool
     );
     /**
@@ -78,8 +78,8 @@ public:
         class NBStartPiece&,
         std::vector<std::unique_ptr<class StructurePiece>>&,
         class Random&,
-        int,
-        int,
+        int32_t,
+        int32_t,
         bool
     );
     /**
@@ -90,8 +90,8 @@ public:
         class NBStartPiece&,
         std::vector<std::unique_ptr<class StructurePiece>>&,
         class Random&,
-        int,
-        int,
+        int32_t,
+        int32_t,
         bool
     );
     /**
@@ -102,8 +102,8 @@ public:
         class NBStartPiece&,
         std::vector<std::unique_ptr<class StructurePiece>>&,
         class Random&,
-        int,
-        int,
+        int32_t,
+        int32_t,
         bool
     );
     /**
@@ -115,11 +115,11 @@ public:
         std::vector<class PieceWeight>&,
         std::vector<std::unique_ptr<class StructurePiece>>&,
         class Random&,
-        int,
-        int,
-        int,
-        int,
-        int
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t
     );
     // NOLINTEND
 };

@@ -24,27 +24,27 @@ public:
      * @vftbl 2
      * @symbol ?getMinCost\@ProtectionEnchant\@\@UEBAHH\@Z
      */
-    virtual int getMinCost(int) const;
+    virtual int32_t getMinCost(int32_t) const;
     /**
      * @vftbl 3
      * @symbol ?getMaxCost\@ProtectionEnchant\@\@UEBAHH\@Z
      */
-    virtual int getMaxCost(int) const;
+    virtual int32_t getMaxCost(int32_t) const;
     /**
      * @vftbl 5
      * @symbol ?getMaxLevel\@ProtectionEnchant\@\@UEBAHXZ
      */
-    virtual int getMaxLevel() const;
+    virtual int32_t getMaxLevel() const;
     /**
      * @vftbl 6
      * @symbol ?getDamageProtection\@ProtectionEnchant\@\@UEBAHHAEBVActorDamageSource\@\@\@Z
      */
-    virtual int getDamageProtection(int, class ActorDamageSource const&) const;
+    virtual int32_t getDamageProtection(int32_t, class ActorDamageSource const&) const;
     /**
      * @vftbl 9
      * @symbol ?doPostHurt\@ProtectionEnchant\@\@UEBAXAEAVItemInstance\@\@AEAVActor\@\@1H\@Z
      */
-    virtual void doPostHurt(class ItemInstance&, class Actor&, class Actor&, int) const;
+    virtual void doPostHurt(class ItemInstance&, class Actor&, class Actor&, int32_t) const;
     /**
      * @vftbl 10
      * @symbol __unk_vfn_10
@@ -85,8 +85,8 @@ public:
         enum class Enchant::Frequency,
         std::string_view,
         std::string_view,
-        int,
-        int
+        int32_t,
+        int32_t
     );
     // NOLINTEND
 

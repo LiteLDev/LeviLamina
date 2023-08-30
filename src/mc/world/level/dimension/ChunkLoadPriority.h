@@ -15,10 +15,11 @@ public:
     /**
      * @symbol ?getPlayerChunkPriority\@ChunkLoadPriority\@\@SAHAEBVChunkPos\@\@0AEBVVec3\@\@\@Z
      */
-    MCAPI static int getPlayerChunkPriority(class ChunkPos const&, class ChunkPos const&, class Vec3 const&);
+    MCAPI static int32_t getPlayerChunkPriority(class ChunkPos const&, class ChunkPos const&, class Vec3 const&);
     /**
      * @symbol ?getTickingAreaChunkPriority\@ChunkLoadPriority\@\@SAHAEBVChunkPos\@\@0AEBVVec3\@\@_N\@Z
      */
-    MCAPI static int getTickingAreaChunkPriority(class ChunkPos const&, class ChunkPos const&, class Vec3 const&, bool);
+    MCAPI static int32_t
+    getTickingAreaChunkPriority(class ChunkPos const&, class ChunkPos const&, class Vec3 const&, bool);
     // NOLINTEND
 };

@@ -67,12 +67,12 @@ public:
      * @vftbl 56
      * @symbol ?isDestructive\@FlintAndSteelItem\@\@UEBA_NH\@Z
      */
-    virtual bool isDestructive(int) const;
+    virtual bool isDestructive(int32_t) const;
     /**
      * @vftbl 62
      * @symbol ?getEnchantSlot\@FlintAndSteelItem\@\@UEBAHXZ
      */
-    virtual int getEnchantSlot() const;
+    virtual int32_t getEnchantSlot() const;
     /**
      * @vftbl 66
      * @symbol __unk_vfn_66
@@ -112,7 +112,7 @@ public:
      * @vftbl 85
      * @symbol ?dispense\@FlintAndSteelItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
+    virtual bool dispense(class BlockSource&, class Container&, int32_t, class Vec3 const&, uint8_t) const;
     /**
      * @vftbl 89
      * @symbol ?hurtActor\@FlintAndSteelItem\@\@UEBAXAEAVItemStack\@\@AEAVActor\@\@AEAVMob\@\@\@Z
@@ -132,18 +132,18 @@ public:
      * @vftbl 133
      * @symbol ?_calculatePlacePos\@FlintAndSteelItem\@\@MEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
-    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
+    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, uint8_t&, class BlockPos&) const;
     /**
      * @vftbl 135
      * @symbol
      * ?_useOn\@FlintAndSteelItem\@\@MEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _useOn(class ItemStack&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
     /**
      * @symbol
      * ??0FlintAndSteelItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI FlintAndSteelItem(std::string const&, int);
+    MCAPI FlintAndSteelItem(std::string const&, int32_t);
     // NOLINTEND
 };

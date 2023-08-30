@@ -43,7 +43,7 @@ public:
     /**
      * @symbol ?getBiomeArea\@VoidGenerator\@\@UEBA?AVBiomeArea\@\@AEBVBoundingBox\@\@I\@Z
      */
-    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const&, unsigned int) const;
+    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const&, uint32_t) const;
     /**
      * @symbol ?getBiomeSource\@VoidGenerator\@\@UEBAAEBVBiomeSource\@\@XZ
      */
@@ -64,7 +64,8 @@ public:
      * @symbol
      * ?prepareAndComputeHeights\@VoidGenerator\@\@UEAAXAEAVBlockVolume\@\@AEBVChunkPos\@\@AEAV?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@_NH\@Z
      */
-    MCVAPI void prepareAndComputeHeights(class BlockVolume&, class ChunkPos const&, std::vector<short>&, bool, int);
+    MCVAPI void
+    prepareAndComputeHeights(class BlockVolume&, class ChunkPos const&, std::vector<int16_t>&, bool, int32_t);
     /**
      * @symbol ?prepareHeights\@VoidGenerator\@\@UEAAXAEAVBlockVolume\@\@AEBVChunkPos\@\@_N\@Z
      */

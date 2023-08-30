@@ -54,7 +54,7 @@ public:
      * ?isFeatureChunk\@StrongholdFeature\@\@UEAA_NAEBVBiomeSource\@\@AEAVRandom\@\@AEBVChunkPos\@\@IAEBVIPreliminarySurfaceProvider\@\@AEBVDimension\@\@\@Z
      */
     virtual bool
-    isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&, class Dimension const&);
+    isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, uint32_t, class IPreliminarySurfaceProvider const&, class Dimension const&);
     /**
      * @vftbl 6
      * @symbol
@@ -65,7 +65,7 @@ public:
     /**
      * @symbol ??0StrongholdFeature\@\@QEAA\@PEAVVillageFeature\@\@I\@Z
      */
-    MCAPI StrongholdFeature(class VillageFeature*, unsigned int);
+    MCAPI StrongholdFeature(class VillageFeature*, uint32_t);
     /**
      * @symbol ?START_OFFSET\@StrongholdFeature\@\@2VBlockPos\@\@B
      */
@@ -79,7 +79,7 @@ public:
      * ?generatePositions\@StrongholdFeature\@\@IEAAXAEAVRandom\@\@AEBVBiomeSource\@\@IAEBVIPreliminarySurfaceProvider\@\@AEBVDimension\@\@\@Z
      */
     MCAPI void
-    generatePositions(class Random&, class BiomeSource const&, unsigned int, class IPreliminarySurfaceProvider const&, class Dimension const&);
+    generatePositions(class Random&, class BiomeSource const&, uint32_t, class IPreliminarySurfaceProvider const&, class Dimension const&);
     // NOLINTEND
 
     // private:
@@ -87,11 +87,10 @@ public:
     /**
      * @symbol ?_generateStronghold\@StrongholdFeature\@\@AEAA?BUStrongholdResult\@1\@IAEBVChunkPos\@\@\@Z
      */
-    MCAPI struct StrongholdFeature::StrongholdResult const _generateStronghold(unsigned int, class ChunkPos const&);
+    MCAPI struct StrongholdFeature::StrongholdResult const _generateStronghold(uint32_t, class ChunkPos const&);
     /**
      * @symbol ?_getNearestStronghold\@StrongholdFeature\@\@AEAA_NAEBVDimension\@\@IAEBVBlockPos\@\@AEAV3\@_N\@Z
      */
-    MCAPI bool
-    _getNearestStronghold(class Dimension const&, unsigned int, class BlockPos const&, class BlockPos&, bool);
+    MCAPI bool _getNearestStronghold(class Dimension const&, uint32_t, class BlockPos const&, class BlockPos&, bool);
     // NOLINTEND
 };

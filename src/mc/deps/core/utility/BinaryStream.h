@@ -51,7 +51,7 @@ public:
     /**
      * @symbol ?writeByte\@BinaryStream\@\@QEAAXE\@Z
      */
-    MCAPI void writeByte(unsigned char);
+    MCAPI void writeByte(uint8_t);
     /**
      * @symbol ?writeDouble\@BinaryStream\@\@QEAAXN\@Z
      */
@@ -63,11 +63,11 @@ public:
     /**
      * @symbol ?writeSignedBigEndianInt\@BinaryStream\@\@QEAAXH\@Z
      */
-    MCAPI void writeSignedBigEndianInt(int);
+    MCAPI void writeSignedBigEndianInt(int32_t);
     /**
      * @symbol ?writeSignedInt\@BinaryStream\@\@QEAAXH\@Z
      */
-    MCAPI void writeSignedInt(int);
+    MCAPI void writeSignedInt(int32_t);
     /**
      * @symbol ?writeSignedInt64\@BinaryStream\@\@QEAAX_J\@Z
      */
@@ -75,7 +75,7 @@ public:
     /**
      * @symbol ?writeSignedShort\@BinaryStream\@\@QEAAXF\@Z
      */
-    MCAPI void writeSignedShort(short);
+    MCAPI void writeSignedShort(int16_t);
     /**
      * @symbol ?writeString\@BinaryStream\@\@QEAAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
@@ -83,11 +83,11 @@ public:
     /**
      * @symbol ?writeUnsignedChar\@BinaryStream\@\@QEAAXE\@Z
      */
-    MCAPI void writeUnsignedChar(unsigned char);
+    MCAPI void writeUnsignedChar(uint8_t);
     /**
      * @symbol ?writeUnsignedInt\@BinaryStream\@\@QEAAXI\@Z
      */
-    MCAPI void writeUnsignedInt(unsigned int);
+    MCAPI void writeUnsignedInt(uint32_t);
     /**
      * @symbol ?writeUnsignedInt64\@BinaryStream\@\@QEAAX_K\@Z
      */
@@ -95,11 +95,11 @@ public:
     /**
      * @symbol ?writeUnsignedShort\@BinaryStream\@\@QEAAXG\@Z
      */
-    MCAPI void writeUnsignedShort(unsigned short);
+    MCAPI void writeUnsignedShort(uint16_t);
     /**
      * @symbol ?writeUnsignedVarInt\@BinaryStream\@\@QEAAXI\@Z
      */
-    MCAPI void writeUnsignedVarInt(unsigned int);
+    MCAPI void writeUnsignedVarInt(uint32_t);
     /**
      * @symbol ?writeUnsignedVarInt64\@BinaryStream\@\@QEAAX_K\@Z
      */
@@ -107,7 +107,7 @@ public:
     /**
      * @symbol ?writeVarInt\@BinaryStream\@\@QEAAXH\@Z
      */
-    MCAPI void writeVarInt(int);
+    MCAPI void writeVarInt(int32_t);
     /**
      * @symbol ?writeVarInt64\@BinaryStream\@\@QEAAX_J\@Z
      */

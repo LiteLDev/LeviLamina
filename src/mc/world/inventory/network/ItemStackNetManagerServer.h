@@ -33,7 +33,7 @@ public:
      * @symbol
      * ?getRequestId\@ItemStackNetManagerServer\@\@UEBA?AV?$TypedClientNetId\@UItemStackRequestIdTag\@\@H$0A\@\@\@XZ
      */
-    virtual class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> getRequestId() const;
+    virtual class TypedClientNetId<struct ItemStackRequestIdTag, int32_t, 0> getRequestId() const;
     /**
      * @vftbl 3
      * @symbol ?retainSetItemStackNetIdVariant\@ItemStackNetManagerServer\@\@UEBA_NXZ
@@ -63,7 +63,7 @@ public:
      * ?_handleLegacyTransactionRequest\@ItemStackNetManagerServer\@\@QEAAXAEBV?$TypedClientNetId\@UItemStackLegacyRequestIdTag\@\@H$0A\@\@\@AEBV?$vector\@U?$pair\@W4ContainerEnumName\@\@V?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@\@std\@\@V?$allocator\@U?$pair\@W4ContainerEnumName\@\@V?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@\@Z
      */
     MCAPI void
-    _handleLegacyTransactionRequest(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const&, std::vector<std::pair<enum class ContainerEnumName, std::vector<unsigned char, std::allocator<unsigned char>>>> const&);
+    _handleLegacyTransactionRequest(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int32_t, 0> const&, std::vector<std::pair<enum class ContainerEnumName, std::vector<uint8_t, std::allocator<uint8_t>>>> const&);
     /**
      * @symbol
      * ?_retainSetItemStackNetIdVariantScope\@ItemStackNetManagerServer\@\@QEAA?AV?$final_action\@V?$function\@$$A6AXXZ\@std\@\@\@gsl\@\@XZ
@@ -107,7 +107,7 @@ public:
      * ?_filterStrings\@ItemStackNetManagerServer\@\@AEAAXV?$TypedClientNetId\@UItemStackRequestIdTag\@\@H$0A\@\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEBW4TextProcessingEventOrigin\@\@\@Z
      */
     MCAPI void
-    _filterStrings(class TypedClientNetId<struct ItemStackRequestIdTag, int, 0>, std::vector<std::string> const&, enum class TextProcessingEventOrigin const&);
+    _filterStrings(class TypedClientNetId<struct ItemStackRequestIdTag, int32_t, 0>, std::vector<std::string> const&, enum class TextProcessingEventOrigin const&);
     /**
      * @symbol
      * ?_handleRequestData\@ItemStackNetManagerServer\@\@AEAAXAEAV?$vector\@UItemStackResponseInfo\@\@V?$allocator\@UItemStackResponseInfo\@\@\@std\@\@\@std\@\@PEBVItemStackRequestData\@\@\@Z

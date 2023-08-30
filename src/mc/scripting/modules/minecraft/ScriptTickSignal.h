@@ -72,21 +72,21 @@ public:
      * @symbol
      * ?scheduleInterval\@ScriptTickSignal\@ScriptModuleMinecraft\@\@QEAAI$$QEAV?$Closure\@$$A6AXXZ$$V\@Scripting\@\@II\@Z
      */
-    MCAPI unsigned int scheduleInterval(class Scripting::Closure<void(void)>&&, unsigned int, unsigned int);
+    MCAPI uint32_t scheduleInterval(class Scripting::Closure<void(void)>&&, uint32_t, uint32_t);
     /**
      * @symbol
      * ?scheduleTimeout\@ScriptTickSignal\@ScriptModuleMinecraft\@\@QEAAI$$QEAV?$Closure\@$$A6AXXZ$$V\@Scripting\@\@II\@Z
      */
-    MCAPI unsigned int scheduleTimeout(class Scripting::Closure<void(void)>&&, unsigned int, unsigned int);
+    MCAPI uint32_t scheduleTimeout(class Scripting::Closure<void(void)>&&, uint32_t, uint32_t);
     /**
      * @symbol
      * ?scheduleTimeoutSafe\@ScriptTickSignal\@ScriptModuleMinecraft\@\@QEAAI$$QEAV?$Closure\@$$A6AXXZ$$V\@Scripting\@\@I\@Z
      */
-    MCAPI unsigned int scheduleTimeoutSafe(class Scripting::Closure<void(void)>&&, unsigned int);
+    MCAPI uint32_t scheduleTimeoutSafe(class Scripting::Closure<void(void)>&&, uint32_t);
     /**
      * @symbol ?unschedule\@ScriptTickSignal\@ScriptModuleMinecraft\@\@QEAAXI\@Z
      */
-    MCAPI void unschedule(unsigned int);
+    MCAPI void unschedule(uint32_t);
     /**
      * @symbol ??1ScriptTickSignal\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
@@ -99,7 +99,7 @@ public:
      * @symbol
      * ?_processActive\@ScriptTickSignal\@ScriptModuleMinecraft\@\@AEAA_NAEAV?$vector\@USlot\@ScriptTickSignal\@ScriptModuleMinecraft\@\@V?$allocator\@USlot\@ScriptTickSignal\@ScriptModuleMinecraft\@\@\@std\@\@\@std\@\@I\@Z
      */
-    MCAPI bool _processActive(std::vector<struct ScriptModuleMinecraft::ScriptTickSignal::Slot>&, unsigned int);
+    MCAPI bool _processActive(std::vector<struct ScriptModuleMinecraft::ScriptTickSignal::Slot>&, uint32_t);
     /**
      * @symbol
      * ?_processPending\@ScriptTickSignal\@ScriptModuleMinecraft\@\@AEAAXAEAV?$vector\@V?$variant\@UPendingSubscribe\@ScriptTickSignal\@ScriptModuleMinecraft\@\@UPendingUnsubscribe\@23\@\@std\@\@V?$allocator\@V?$variant\@UPendingSubscribe\@ScriptTickSignal\@ScriptModuleMinecraft\@\@UPendingUnsubscribe\@23\@\@std\@\@\@2\@\@std\@\@AEAV?$vector\@USlot\@ScriptTickSignal\@ScriptModuleMinecraft\@\@V?$allocator\@USlot\@ScriptTickSignal\@ScriptModuleMinecraft\@\@\@std\@\@\@4\@\@Z

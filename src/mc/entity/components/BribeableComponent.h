@@ -26,11 +26,11 @@ public:
     /**
      * @symbol ?getBribeCooldown\@BribeableComponent\@\@QEAAAEAHXZ
      */
-    MCAPI int& getBribeCooldown();
+    MCAPI int32_t& getBribeCooldown();
     /**
      * @symbol ?getBribeTimer\@BribeableComponent\@\@QEAAAEAHXZ
      */
-    MCAPI int& getBribeTimer();
+    MCAPI int32_t& getBribeTimer();
     /**
      * @symbol ?getInteraction\@BribeableComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */

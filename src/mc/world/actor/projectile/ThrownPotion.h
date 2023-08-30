@@ -129,7 +129,7 @@ public:
      * @vftbl 211
      * @symbol ?setAuxValue\@ThrownPotion\@\@UEAAXH\@Z
      */
-    virtual void setAuxValue(int);
+    virtual void setAuxValue(int32_t);
     /**
      * @vftbl 219
      * @symbol __unk_vfn_219
@@ -178,7 +178,7 @@ public:
     /**
      * @symbol ?getPotionId\@ThrownPotion\@\@QEBAFXZ
      */
-    MCAPI short getPotionId() const;
+    MCAPI int16_t getPotionId() const;
     /**
      * @symbol ?setLinger\@ThrownPotion\@\@QEAAX_N\@Z
      */

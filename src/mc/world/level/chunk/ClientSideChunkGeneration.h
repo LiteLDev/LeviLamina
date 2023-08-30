@@ -7,7 +7,7 @@ namespace ClientSideChunkGeneration {
 /**
  * @symbol ?LowTierRadiusThreshold\@ClientSideChunkGeneration\@\@3EB
  */
-MCAPI extern unsigned char const LowTierRadiusThreshold;
+MCAPI extern uint8_t const LowTierRadiusThreshold;
 /**
  * @symbol ?ServerBuildRatioOverride\@ClientSideChunkGeneration\@\@3V?$optional\@M\@std\@\@A
  */
@@ -15,11 +15,11 @@ MCAPI extern std::optional<float> ServerBuildRatioOverride;
 /**
  * @symbol ?getMaxChunkBuildRadius\@ClientSideChunkGeneration\@\@YAEAEBVPlayer\@\@\@Z
  */
-MCAPI unsigned char getMaxChunkBuildRadius(class Player const&);
+MCAPI uint8_t getMaxChunkBuildRadius(class Player const&);
 /**
  * @symbol ?getOptimalServerChunkBuildRadiusRatio\@ClientSideChunkGeneration\@\@YAMEE\@Z
  */
-MCAPI float getOptimalServerChunkBuildRadiusRatio(unsigned char, unsigned char);
+MCAPI float getOptimalServerChunkBuildRadiusRatio(uint8_t, uint8_t);
 // NOLINTEND
 
 }; // namespace ClientSideChunkGeneration

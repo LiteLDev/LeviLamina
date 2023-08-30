@@ -55,6 +55,6 @@ public:
     /**
      * @symbol ??0InspectBookshelfGoal\@\@QEAA\@AEAVMob\@\@MHHHM\@Z
      */
-    MCAPI InspectBookshelfGoal(class Mob&, float, int, int, int, float);
+    MCAPI InspectBookshelfGoal(class Mob&, float, int32_t, int32_t, int32_t, float);
     // NOLINTEND
 };

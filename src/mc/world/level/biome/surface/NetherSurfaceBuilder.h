@@ -31,7 +31,7 @@ public:
      * @vftbl 1
      * @symbol ?init\@NetherSurfaceBuilder\@VanillaSurfaceBuilders\@\@UEAAXAEAVEntityContext\@\@I\@Z
      */
-    virtual void init(class EntityContext&, unsigned int);
+    virtual void init(class EntityContext&, uint32_t);
     /**
      * @vftbl 2
      * @symbol

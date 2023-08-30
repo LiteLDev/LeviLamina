@@ -24,7 +24,7 @@ MCAPI enum class ItemColor fromColor(class mce::Color const&);
 /**
  * @symbol ?fromInt\@ItemColorUtil\@\@YA?AW4ItemColor\@\@H\@Z
  */
-MCAPI enum class ItemColor fromInt(int);
+MCAPI enum class ItemColor fromInt(int32_t);
 /**
  * @symbol ?getColor\@ItemColorUtil\@\@YA?AVColor\@mce\@\@W4ItemColor\@\@\@Z
  */
@@ -42,7 +42,7 @@ MCAPI std::string const& getNameMixedCase(enum class ItemColor);
 /**
  * @symbol ?getRGBColor\@ItemColorUtil\@\@YAHW4ItemColor\@\@\@Z
  */
-MCAPI int getRGBColor(enum class ItemColor);
+MCAPI int32_t getRGBColor(enum class ItemColor);
 // NOLINTEND
 
 }; // namespace ItemColorUtil

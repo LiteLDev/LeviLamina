@@ -150,7 +150,7 @@ public:
      * @vftbl 75
      * @symbol ?onRedstoneUpdate\@StructureBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
-    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int32_t, bool) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -235,7 +235,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@StructureBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -250,7 +250,7 @@ public:
      * @vftbl 186
      * @symbol ?getResourceCount\@StructureBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREBLOCK
     /**
      * @symbol ?isInteractiveBlock\@StructureBlock\@\@UEBA_NXZ
@@ -261,6 +261,6 @@ public:
      * @symbol
      * ??0StructureBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI StructureBlock(std::string const&, int);
+    MCAPI StructureBlock(std::string const&, int32_t);
     // NOLINTEND
 };

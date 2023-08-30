@@ -31,7 +31,7 @@ public:
     /**
      * @symbol ?readInt\@BytesDataInput\@\@UEAAHXZ
      */
-    MCVAPI int readInt();
+    MCVAPI int32_t readInt();
     /**
      * @symbol ?readLongLong\@BytesDataInput\@\@UEAA_JXZ
      */
@@ -44,7 +44,7 @@ public:
     /**
      * @symbol ?readShort\@BytesDataInput\@\@UEAAFXZ
      */
-    MCVAPI short readShort();
+    MCVAPI int16_t readShort();
     /**
      * @symbol
      * ?readString\@BytesDataInput\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ

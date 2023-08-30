@@ -120,7 +120,7 @@ public:
      * @symbol
      * ?_readFileData\@FileSystemImpl\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@AEAV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@\@Z
      */
-    virtual class Core::Result _readFileData(class Core::Path const&, std::vector<unsigned char>&);
+    virtual class Core::Result _readFileData(class Core::Path const&, std::vector<uint8_t>&);
     /**
      * @vftbl 16
      * @symbol ?_createOneDirectory\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@\@Z

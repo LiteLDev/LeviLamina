@@ -55,7 +55,7 @@ public:
     /**
      * @symbol ?addChangedInventorySlot\@UnlockedRecipesServerComponent\@\@QEAAXH\@Z
      */
-    MCAPI void addChangedInventorySlot(int);
+    MCAPI void addChangedInventorySlot(int32_t);
     /**
      * @symbol
      * ?addUnlockedRecipe\@UnlockedRecipesServerComponent\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -77,7 +77,7 @@ public:
      * @symbol
      * ?getChangedInventorySlots\@UnlockedRecipesServerComponent\@\@QEBAAEBV?$unordered_set\@HU?$hash\@H\@std\@\@U?$equal_to\@H\@2\@V?$allocator\@H\@2\@\@std\@\@XZ
      */
-    MCAPI std::unordered_set<int> const& getChangedInventorySlots() const;
+    MCAPI std::unordered_set<int32_t> const& getChangedInventorySlots() const;
     /**
      * @symbol
      * ?getUnlockedRecipes\@UnlockedRecipesServerComponent\@\@QEBAAEBV?$unordered_set\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template <int T0>
+template <int32_t T0>
 class DividedPos2d {
 
 public:

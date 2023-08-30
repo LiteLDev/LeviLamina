@@ -64,7 +64,7 @@ public:
      * ??0ClientboundMapItemDataPacket\@\@QEAA\@UActorUniqueID\@\@CAEBV?$vector\@U?$pair\@UUniqueId\@MapItemTrackedActor\@\@V?$shared_ptr\@VMapDecoration\@\@\@std\@\@\@std\@\@V?$allocator\@U?$pair\@UUniqueId\@MapItemTrackedActor\@\@V?$shared_ptr\@VMapDecoration\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@V?$buffer_span\@I\@\@HHHHV?$AutomaticID\@VDimension\@\@H\@\@_NAEBVBlockPos\@\@\@Z
      */
     MCAPI
-    ClientboundMapItemDataPacket(struct ActorUniqueID, signed char, std::vector<std::pair<struct MapItemTrackedActor::UniqueId, std::shared_ptr<class MapDecoration>>> const&, class buffer_span<unsigned int>, int, int, int, int, class AutomaticID<class Dimension, int>, bool, class BlockPos const&);
+    ClientboundMapItemDataPacket(struct ActorUniqueID, int8_t, std::vector<std::pair<struct MapItemTrackedActor::UniqueId, std::shared_ptr<class MapDecoration>>> const&, class buffer_span<uint32_t>, int32_t, int32_t, int32_t, int32_t, DimensionType, bool, class BlockPos const&);
     /**
      * @symbol ??0ClientboundMapItemDataPacket\@\@QEAA\@XZ
      */

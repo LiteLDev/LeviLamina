@@ -19,8 +19,7 @@ public:
      * @symbol
      * ??0Raid\@\@QEAA\@HHHHW4Difficulty\@\@E$$QEAV?$function\@$$A6A_N_KAEAVVec3\@\@\@Z\@std\@\@$$QEAV?$function\@$$A6A_N_KVVec3\@\@EAEAV?$unordered_set\@UActorUniqueID\@\@U?$hash\@UActorUniqueID\@\@\@std\@\@U?$equal_to\@UActorUniqueID\@\@\@3\@V?$allocator\@UActorUniqueID\@\@\@3\@\@std\@\@\@Z\@3\@$$QEAV?$function\@$$A6A_NAEBUActorUniqueID\@\@\@Z\@3\@$$QEAV?$function\@$$A6A_NXZ\@3\@\@Z
      */
-    MCAPI
-    Raid(int, int, int, int, enum class Difficulty, unsigned char, std::function<bool(uint64_t, class Vec3&)>&&, std::function<bool(uint64_t, class Vec3, unsigned char, std::unordered_set<struct ActorUniqueID>&)>&&, std::function<bool(struct ActorUniqueID const&)>&&, std::function<bool(void)>&&);
+    MCAPI Raid(int32_t, int32_t, int32_t, int32_t, enum class Difficulty, uint8_t, std::function<bool(uint64_t, class Vec3&)>&&, std::function<bool(uint64_t, class Vec3, uint8_t, std::unordered_set<struct ActorUniqueID>&)>&&, std::function<bool(struct ActorUniqueID const&)>&&, std::function<bool(void)>&&);
     /**
      * @symbol ?addAdditionalSaveData\@Raid\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -81,14 +80,14 @@ private:
     /**
      * @symbol ?NUM_GROUPS_ON_EASY\@Raid\@\@0EB
      */
-    MCAPI static unsigned char const NUM_GROUPS_ON_EASY;
+    MCAPI static uint8_t const NUM_GROUPS_ON_EASY;
     /**
      * @symbol ?NUM_GROUPS_ON_HARD\@Raid\@\@0EB
      */
-    MCAPI static unsigned char const NUM_GROUPS_ON_HARD;
+    MCAPI static uint8_t const NUM_GROUPS_ON_HARD;
     /**
      * @symbol ?NUM_GROUPS_ON_NORMAL\@Raid\@\@0EB
      */
-    MCAPI static unsigned char const NUM_GROUPS_ON_NORMAL;
+    MCAPI static uint8_t const NUM_GROUPS_ON_NORMAL;
     // NOLINTEND
 };

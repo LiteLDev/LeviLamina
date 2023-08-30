@@ -26,7 +26,7 @@ public:
      * @symbol
      * ?getPreliminarySurfaceLevel\@SurfaceLevelCache\@\@UEBA?AV?$optional\@F\@std\@\@V?$DividedPos2d\@$03\@\@\@Z
      */
-    virtual std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
+    virtual std::optional<int16_t> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SURFACELEVELCACHE
     /**
      * @symbol __unk_destructor_-1

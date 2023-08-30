@@ -78,7 +78,7 @@ public:
      * @vftbl 67
      * @symbol ?isValidAuxValue\@ArrowItem\@\@UEBA_NH\@Z
      */
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
     /**
      * @vftbl 70
      * @symbol __unk_vfn_70
@@ -113,7 +113,7 @@ public:
      * @vftbl 85
      * @symbol ?dispense\@ArrowItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
+    virtual bool dispense(class BlockSource&, class Container&, int32_t, class Vec3 const&, uint8_t) const;
     /**
      * @vftbl 95
      * @symbol
@@ -141,16 +141,16 @@ public:
      * @symbol
      * ?setIconInfo\@ArrowItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    virtual class Item& setIconInfo(std::string const&, int);
+    virtual class Item& setIconInfo(std::string const&, int32_t);
     /**
      * @vftbl 120
      * @symbol ?getIconInfo\@ArrowItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int32_t, bool) const;
     /**
      * @symbol ??0ArrowItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI ArrowItem(std::string const&, int);
+    MCAPI ArrowItem(std::string const&, int32_t);
     /**
      * @symbol ?applyEffect\@ArrowItem\@\@QEBAXPEAVArrow\@\@AEBVItemInstance\@\@\@Z
      */
@@ -163,7 +163,7 @@ public:
      * @symbol
      * ?getMobEffects\@ArrowItem\@\@IEBA?AV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@std\@\@H\@Z
      */
-    MCAPI std::vector<class MobEffectInstance> getMobEffects(int) const;
+    MCAPI std::vector<class MobEffectInstance> getMobEffects(int32_t) const;
     // NOLINTEND
 
     // private:
@@ -171,6 +171,6 @@ public:
     /**
      * @symbol ?_potionExistsOrContentError\@ArrowItem\@\@AEBA?AV?$shared_ptr\@$$CBVPotion\@\@\@std\@\@H\@Z
      */
-    MCAPI std::shared_ptr<class Potion const> _potionExistsOrContentError(int) const;
+    MCAPI std::shared_ptr<class Potion const> _potionExistsOrContentError(int32_t) const;
     // NOLINTEND
 };

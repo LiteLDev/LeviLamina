@@ -58,7 +58,7 @@ public:
     /**
      * @symbol ?trySpawnParticles\@POIInstance\@\@QEBAXAEAVBlockSource\@\@AEAVRandom\@\@H\@Z
      */
-    MCAPI void trySpawnParticles(class BlockSource&, class Random&, int) const;
+    MCAPI void trySpawnParticles(class BlockSource&, class Random&, int32_t) const;
     /**
      * @symbol ?useBoundingBox\@POIInstance\@\@QEBA_NXZ
      */

@@ -25,7 +25,7 @@ public:
      * @symbol
      * ?isValidSlotForContainer\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
      */
-    virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
+    virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int32_t) const;
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
@@ -35,7 +35,7 @@ public:
      * @vftbl 3
      * @symbol ?getAvailableSetCount\@ContainerValidationBase\@\@UEBAHHAEBVItemStackBase\@\@\@Z
      */
-    virtual int getAvailableSetCount(int, class ItemStackBase const&) const;
+    virtual int32_t getAvailableSetCount(int32_t, class ItemStackBase const&) const;
     /**
      * @vftbl 4
      * @symbol __unk_vfn_4
@@ -60,12 +60,12 @@ public:
      * @vftbl 8
      * @symbol ?getContainerOffset\@CreatedOutputContainerValidation\@\@UEBAHAEBVContainerScreenContext\@\@\@Z
      */
-    virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    virtual int32_t getContainerOffset(class ContainerScreenContext const&) const;
     /**
      * @vftbl 9
      * @symbol ?getContainerSize\@ContainerValidationBase\@\@UEBAHAEBVContainerScreenContext\@\@AEBVContainer\@\@\@Z
      */
-    virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
+    virtual int32_t getContainerSize(class ContainerScreenContext const&, class Container const&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATEDOUTPUTCONTAINERVALIDATION
     /**
      * @symbol ?canItemMoveToContainer\@CreatedOutputContainerValidation\@\@UEBA_NAEBVItemStackBase\@\@\@Z
@@ -75,7 +75,8 @@ public:
      * @symbol
      * ?isItemAllowedInSlot\@CreatedOutputContainerValidation\@\@UEBA_NAEBVContainerScreenContext\@\@HAEBVItemStackBase\@\@H\@Z
      */
-    MCVAPI bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    MCVAPI bool
+    isItemAllowedInSlot(class ContainerScreenContext const&, int32_t, class ItemStackBase const&, int32_t) const;
     /**
      * @symbol ?isItemAllowedToAdd\@CreatedOutputContainerValidation\@\@UEBA_NAEBVItemStack\@\@\@Z
      */

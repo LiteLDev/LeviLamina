@@ -12,7 +12,7 @@ def format_file(file):
     with open(file, "rb") as f:
         content = f.read()
     with open(file, "wb") as f:
-        f.write(content.replace(b"\n", b"\r\n"))
+        f.write(content.replace(b"\n", b"\r\n").replace(b"\r\r", b"\r"))
 
 
 def format_all():

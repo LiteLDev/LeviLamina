@@ -38,7 +38,7 @@ public:
     /**
      * @symbol ?getBodyAsBytes\@Response\@Http\@Bedrock\@\@QEBA?AV?$span\@$$CBE$0?0\@gsl\@\@XZ
      */
-    MCAPI class gsl::span<unsigned char const> getBodyAsBytes() const;
+    MCAPI class gsl::span<uint8_t const> getBodyAsBytes() const;
     /**
      * @symbol
      * ?getBodyAsUtf8String\@Response\@Http\@Bedrock\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ

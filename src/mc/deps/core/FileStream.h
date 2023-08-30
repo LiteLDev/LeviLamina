@@ -21,7 +21,7 @@ public:
     /**
      * @symbol ??0FileStream\@Core\@\@QEAA\@AEBVPath\@1\@H\@Z
      */
-    MCAPI FileStream(class Core::Path const&, int);
+    MCAPI FileStream(class Core::Path const&, int32_t);
     /**
      * @symbol ??0FileStream\@Core\@\@QEAA\@XZ
      */
@@ -29,7 +29,7 @@ public:
     /**
      * @symbol ?open\@FileStream\@Core\@\@QEAAXAEBVPath\@2\@H\@Z
      */
-    MCAPI void open(class Core::Path const&, int);
+    MCAPI void open(class Core::Path const&, int32_t);
     /**
      * @symbol ?setLoggingEnabled\@FileStream\@Core\@\@QEAAX_N\@Z
      */

@@ -135,7 +135,7 @@ public:
      * @vftbl 57
      * @symbol ?isValidAuxValue\@SpongeBlock\@\@UEBA_NH\@Z
      */
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
@@ -266,7 +266,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@SpongeBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@SpongeBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -276,7 +276,7 @@ public:
      * @symbol
      * ??0SpongeBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI SpongeBlock(std::string const&, int, class Material const&);
+    MCAPI SpongeBlock(std::string const&, int32_t, class Material const&);
     // NOLINTEND
 
     // private:

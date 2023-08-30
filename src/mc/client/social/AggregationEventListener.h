@@ -82,7 +82,7 @@ public:
     /**
      * @symbol ??0AggregationEventListener\@Events\@Social\@\@IEAA\@IIIAEBVPath\@Core\@\@\@Z
      */
-    MCAPI AggregationEventListener(unsigned int, unsigned int, unsigned int, class Core::Path const&);
+    MCAPI AggregationEventListener(uint32_t, uint32_t, uint32_t, class Core::Path const&);
     /**
      * @symbol ??0AggregationEventListener\@Events\@Social\@\@IEAA\@AEBVPath\@Core\@\@\@Z
      */

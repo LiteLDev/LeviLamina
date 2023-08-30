@@ -47,7 +47,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@FrogSpawnBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -289,7 +289,7 @@ public:
      * @symbol
      * ??0FrogSpawnBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI FrogSpawnBlock(std::string const&, int);
+    MCAPI FrogSpawnBlock(std::string const&, int32_t);
     // NOLINTEND
 
     // private:

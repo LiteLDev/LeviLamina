@@ -23,7 +23,7 @@ public:
     /**
      * @symbol ?fromByte\@Palette\@\@SA?AW4PaletteColor\@\@E\@Z
      */
-    MCAPI static enum class PaletteColor fromByte(unsigned char);
+    MCAPI static enum class PaletteColor fromByte(uint8_t);
     /**
      * @symbol ?getColor\@Palette\@\@SAAEBVColor\@mce\@\@W4PaletteColor\@\@\@Z
      */

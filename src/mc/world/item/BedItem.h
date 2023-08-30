@@ -72,7 +72,7 @@ public:
      * @vftbl 67
      * @symbol ?isValidAuxValue\@BedItem\@\@UEBA_NH\@Z
      */
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
     /**
      * @vftbl 70
      * @symbol __unk_vfn_70
@@ -123,20 +123,20 @@ public:
      * @vftbl 120
      * @symbol ?getIconInfo\@BedItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int32_t, bool) const;
     /**
      * @vftbl 132
      * @symbol ?_checkUseOnPermissions\@BedItem\@\@EEBA_NAEAVActor\@\@AEAVItemStackBase\@\@AEBEAEBVBlockPos\@\@\@Z
      */
     virtual bool
-    _checkUseOnPermissions(class Actor&, class ItemStackBase&, unsigned char const&, class BlockPos const&) const;
+    _checkUseOnPermissions(class Actor&, class ItemStackBase&, uint8_t const&, class BlockPos const&) const;
     /**
      * @vftbl 135
      * @symbol
      * ?_useOn\@BedItem\@\@EEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _useOn(class ItemStack&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
     // NOLINTEND
 
     // private:
@@ -146,6 +146,6 @@ public:
      * ?_tryUseOn\@BedItem\@\@AEBA?AVInteractionResult\@\@AEAVItemStackBase\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     MCAPI class InteractionResult
-    _tryUseOn(class ItemStackBase&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _tryUseOn(class ItemStackBase&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
     // NOLINTEND
 };

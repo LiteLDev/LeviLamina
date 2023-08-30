@@ -51,7 +51,7 @@ public:
      * @vftbl 7
      * @symbol ?getRuntimeTypeId\@IDefinitionInstance\@\@UEBAGXZ
      */
-    virtual unsigned short getRuntimeTypeId() const;
+    virtual uint16_t getRuntimeTypeId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDEFINITIONINSTANCE
     /**
      * @symbol __unk_destructor_-1

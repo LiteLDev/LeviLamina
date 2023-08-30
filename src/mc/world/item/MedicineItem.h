@@ -72,7 +72,7 @@ public:
      * @vftbl 67
      * @symbol ?isValidAuxValue\@MedicineItem\@\@UEBA_NH\@Z
      */
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
     /**
      * @vftbl 70
      * @symbol __unk_vfn_70
@@ -135,16 +135,16 @@ public:
      * @symbol
      * ?setIconInfo\@MedicineItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    virtual class Item& setIconInfo(std::string const&, int);
+    virtual class Item& setIconInfo(std::string const&, int32_t);
     /**
      * @vftbl 120
      * @symbol ?getIconInfo\@MedicineItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int32_t, bool) const;
     /**
      * @symbol ??0MedicineItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI MedicineItem(std::string const&, int);
+    MCAPI MedicineItem(std::string const&, int32_t);
     /**
      * @symbol ?getMobEffect\@MedicineItem\@\@SAPEBVMobEffect\@\@AEBVItemStack\@\@\@Z
      */

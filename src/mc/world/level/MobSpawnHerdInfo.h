@@ -16,8 +16,7 @@ public:
      * @symbol
      * ??0MobSpawnHerdInfo\@\@QEAA\@IIAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@I0I\@Z
      */
-    MCAPI
-    MobSpawnHerdInfo(unsigned int, unsigned int, std::string const&, unsigned int, std::string const&, unsigned int);
+    MCAPI MobSpawnHerdInfo(uint32_t, uint32_t, std::string const&, uint32_t, std::string const&, uint32_t);
     /**
      * @symbol ??1MobSpawnHerdInfo\@\@QEAA\@XZ
      */

@@ -107,7 +107,7 @@ public:
      * @vftbl 127
      * @symbol ?handleEntityEvent\@Goat\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
-    virtual void handleEntityEvent(enum class ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int32_t);
     /**
      * @vftbl 164
      * @symbol __unk_vfn_164
@@ -200,7 +200,7 @@ public:
     /**
      * @symbol ?getHornCount\@Goat\@\@QEBAHXZ
      */
-    MCAPI int getHornCount() const;
+    MCAPI int32_t getHornCount() const;
     /**
      * @symbol ?isScreaming\@Goat\@\@QEAA_NXZ
      */
@@ -216,10 +216,10 @@ private:
     /**
      * @symbol ?DEFAULT_HORN_COUNT\@Goat\@\@0HA
      */
-    MCAPI static int DEFAULT_HORN_COUNT;
+    MCAPI static int32_t DEFAULT_HORN_COUNT;
     /**
      * @symbol ?SCREAMING_GOAT_VARIANT\@Goat\@\@0HA
      */
-    MCAPI static int SCREAMING_GOAT_VARIANT;
+    MCAPI static int32_t SCREAMING_GOAT_VARIANT;
     // NOLINTEND
 };

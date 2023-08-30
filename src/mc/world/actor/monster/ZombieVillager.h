@@ -102,7 +102,7 @@ public:
      * @vftbl 127
      * @symbol ?handleEntityEvent\@ZombieVillager\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
-    virtual void handleEntityEvent(enum class ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int32_t);
     /**
      * @vftbl 164
      * @symbol __unk_vfn_164

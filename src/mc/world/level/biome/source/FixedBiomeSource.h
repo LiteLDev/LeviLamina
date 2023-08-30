@@ -29,17 +29,17 @@ public:
      * @vftbl 2
      * @symbol ?getBiomeArea\@FixedBiomeSource\@\@UEBA?AVBiomeArea\@\@AEBVBoundingBox\@\@I\@Z
      */
-    virtual class BiomeArea getBiomeArea(class BoundingBox const&, unsigned int) const;
+    virtual class BiomeArea getBiomeArea(class BoundingBox const&, uint32_t) const;
     /**
      * @vftbl 3
      * @symbol ?getBiomeArea\@FixedBiomeSource\@\@UEBA?AVBiomeArea\@\@AEBVBoundingBox\@\@IAEBUGetBiomeOptions\@\@\@Z
      */
-    virtual class BiomeArea getBiomeArea(class BoundingBox const&, unsigned int, struct GetBiomeOptions const&) const;
+    virtual class BiomeArea getBiomeArea(class BoundingBox const&, uint32_t, struct GetBiomeOptions const&) const;
     /**
      * @vftbl 4
      * @symbol ?containsOnly\@FixedBiomeSource\@\@UEBA_NHHHHV?$span\@$$CB_K$0?0\@gsl\@\@\@Z
      */
-    virtual bool containsOnly(int, int, int, int, class gsl::span<uint64_t const>) const;
+    virtual bool containsOnly(int32_t, int32_t, int32_t, int32_t, class gsl::span<uint64_t const>) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIXEDBIOMESOURCE
     /**
      * @symbol ?getBiome\@FixedBiomeSource\@\@UEBAPEBVBiome\@\@AEBVBlockPos\@\@\@Z
@@ -52,7 +52,7 @@ public:
     /**
      * @symbol ?getBiome\@FixedBiomeSource\@\@UEBAPEBVBiome\@\@HHH\@Z
      */
-    MCVAPI class Biome const* getBiome(int, int, int) const;
+    MCVAPI class Biome const* getBiome(int32_t, int32_t, int32_t) const;
 #endif
     /**
      * @symbol ??0FixedBiomeSource\@\@QEAA\@AEBVBiome\@\@\@Z

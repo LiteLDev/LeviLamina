@@ -35,11 +35,11 @@ public:
     /**
      * @symbol ?ReadRequestBody\@HC_CALL\@\@SAJPEAU1\@_K1PEAXPEAEPEA_K\@Z
      */
-    MCAPI static long ReadRequestBody(struct HC_CALL*, uint64_t, uint64_t, void*, unsigned char*, uint64_t*);
+    MCAPI static long ReadRequestBody(struct HC_CALL*, uint64_t, uint64_t, void*, uint8_t*, uint64_t*);
     /**
      * @symbol ?ResponseBodyWrite\@HC_CALL\@\@SAJPEAU1\@PEBE_KPEAX\@Z
      */
-    MCAPI static long ResponseBodyWrite(struct HC_CALL*, unsigned char const*, uint64_t, void*);
+    MCAPI static long ResponseBodyWrite(struct HC_CALL*, uint8_t const*, uint64_t, void*);
     // NOLINTEND
 
     // protected:
@@ -60,11 +60,11 @@ public:
     /**
      * @symbol ?ShouldFailFast\@HC_CALL\@\@AEAA?AV?$Result\@_N\@\@AEAI\@Z
      */
-    MCAPI class Result<bool> ShouldFailFast(unsigned int&);
+    MCAPI class Result<bool> ShouldFailFast(uint32_t&);
     /**
      * @symbol ?ShouldRetry\@HC_CALL\@\@AEAA_NAEAI\@Z
      */
-    MCAPI bool ShouldRetry(unsigned int&);
+    MCAPI bool ShouldRetry(uint32_t&);
     /**
      * @symbol ?PerfomAsyncProvider\@HC_CALL\@\@CAJW4XAsyncOp\@\@PEBUXAsyncProviderData\@\@\@Z
      */

@@ -206,7 +206,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@BrushableBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 149
      * @symbol ?init\@BrushableBlock\@\@UEAAAEAVBlockLegacy\@\@XZ
@@ -261,7 +261,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@BrushableBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@BrushableBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -292,7 +292,7 @@ public:
      * @symbol
      * ??0BrushableBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI BrushableBlock(std::string const&, int);
+    MCAPI BrushableBlock(std::string const&, int32_t);
     /**
      * @symbol ?EmptyBrushedBlock\@BrushableBlock\@\@2VHashedString\@\@B
      */

@@ -72,7 +72,7 @@ public:
      * @vftbl 1
      * @symbol ?fetchClosestVillage\@VillageManager\@\@UEBA?AV?$weak_ptr\@VVillage\@\@\@std\@\@AEBVBlockPos\@\@HI\@Z
      */
-    virtual std::weak_ptr<class Village> fetchClosestVillage(class BlockPos const&, int, unsigned int) const;
+    virtual std::weak_ptr<class Village> fetchClosestVillage(class BlockPos const&, int32_t, uint32_t) const;
     /**
      * @vftbl 2
      * @symbol ?getVillageByID\@VillageManager\@\@UEBA?AV?$weak_ptr\@VVillage\@\@\@std\@\@AEBVUUID\@mce\@\@\@Z
@@ -87,7 +87,7 @@ public:
      * ?fetchClosestVillageMostSuitableForDweller\@VillageManager\@\@QEBA?AV?$weak_ptr\@VVillage\@\@\@std\@\@AEBVBlockPos\@\@HI\@Z
      */
     MCAPI std::weak_ptr<class Village>
-          fetchClosestVillageMostSuitableForDweller(class BlockPos const&, int, unsigned int) const;
+          fetchClosestVillageMostSuitableForDweller(class BlockPos const&, int32_t, uint32_t) const;
     /**
      * @symbol ?getClosestVillageWithRaid\@VillageManager\@\@QEAA?AV?$weak_ptr\@VVillage\@\@\@std\@\@AEBVBlockPos\@\@\@Z
      */
@@ -144,7 +144,7 @@ public:
     /**
      * @symbol ?MAX_POI_TOLERANCE_DIST\@VillageManager\@\@2HB
      */
-    MCAPI static int const MAX_POI_TOLERANCE_DIST;
+    MCAPI static int32_t const MAX_POI_TOLERANCE_DIST;
     // NOLINTEND
 
     // private:
@@ -204,10 +204,10 @@ private:
     /**
      * @symbol ?MAX_QUERY_SCAN_ITERATIONS\@VillageManager\@\@0HB
      */
-    MCAPI static int const MAX_QUERY_SCAN_ITERATIONS;
+    MCAPI static int32_t const MAX_QUERY_SCAN_ITERATIONS;
     /**
      * @symbol ?VILLAGE_HERO_EFFECT_DURATION\@VillageManager\@\@0HB
      */
-    MCAPI static int const VILLAGE_HERO_EFFECT_DURATION;
+    MCAPI static int32_t const VILLAGE_HERO_EFFECT_DURATION;
     // NOLINTEND
 };

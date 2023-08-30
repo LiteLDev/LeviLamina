@@ -18,7 +18,7 @@ public:
     /**
      * @symbol ??0ChunkKey\@\@QEAA\@AEBVChunkPos\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI ChunkKey(class ChunkPos const&, class AutomaticID<class Dimension, int>);
+    MCAPI ChunkKey(class ChunkPos const&, DimensionType);
     /**
      * @symbol ??0ChunkKey\@\@QEAA\@AEBVLevelChunk\@\@\@Z
      */

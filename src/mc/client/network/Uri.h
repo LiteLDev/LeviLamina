@@ -32,7 +32,7 @@ public:
     /**
      * @symbol ?Port\@Uri\@httpclient\@xbox\@\@QEBAGXZ
      */
-    MCAPI unsigned short Port() const;
+    MCAPI uint16_t Port() const;
     /**
      * @symbol
      * ?Resource\@Uri\@httpclient\@xbox\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@XZ

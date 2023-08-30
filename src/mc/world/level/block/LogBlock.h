@@ -221,7 +221,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@LogBlock\@\@MEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -241,7 +241,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@LogBlock\@\@MEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@LogBlock\@\@MEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -257,6 +257,7 @@ public:
      * @symbol
      * ??0LogBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HV?$WeakPtr\@VBlockLegacy\@\@\@\@V?$optional\@ULogBlockMapColors\@\@\@2\@\@Z
      */
-    MCAPI LogBlock(std::string const&, int, class WeakPtr<class BlockLegacy>, std::optional<struct LogBlockMapColors>);
+    MCAPI
+    LogBlock(std::string const&, int32_t, class WeakPtr<class BlockLegacy>, std::optional<struct LogBlockMapColors>);
     // NOLINTEND
 };

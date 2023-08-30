@@ -63,7 +63,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@PistonArmBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -301,7 +301,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@PistonArmBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PISTONARMBLOCK
     /**
      * @symbol ?canBeSilkTouched\@PistonArmBlock\@\@UEBA_NXZ
@@ -312,7 +312,7 @@ public:
      * @symbol
      * ??0PistonArmBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4Type\@PistonBlock\@\@\@Z
      */
-    MCAPI PistonArmBlock(std::string const&, int, enum class PistonBlock::Type);
+    MCAPI PistonArmBlock(std::string const&, int32_t, enum class PistonBlock::Type);
     // NOLINTEND
 
     // private:
@@ -320,7 +320,7 @@ public:
     /**
      * @symbol ?_getCollisions\@PistonArmBlock\@\@AEBAXAEAVAABB\@\@00E\@Z
      */
-    MCAPI void _getCollisions(class AABB&, class AABB&, class AABB&, unsigned char) const;
+    MCAPI void _getCollisions(class AABB&, class AABB&, class AABB&, uint8_t) const;
     /**
      * @symbol ?_getResourceItem\@PistonArmBlock\@\@AEBA?AVItemInstance\@\@XZ
      */

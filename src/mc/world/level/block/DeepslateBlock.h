@@ -235,7 +235,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@DeepslateBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@DeepslateBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -245,6 +245,6 @@ public:
      * @symbol
      * ??0DeepslateBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI DeepslateBlock(std::string const&, int);
+    MCAPI DeepslateBlock(std::string const&, int32_t);
     // NOLINTEND
 };

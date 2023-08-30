@@ -54,7 +54,7 @@ public:
      * @symbol
      * ??0LessonProgressPacket\@\@QEAA\@W4LessonAction\@\@HAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI LessonProgressPacket(enum class LessonAction, int, std::string const&);
+    MCAPI LessonProgressPacket(enum class LessonAction, int32_t, std::string const&);
     /**
      * @symbol ??0LessonProgressPacket\@\@QEAA\@XZ
      */

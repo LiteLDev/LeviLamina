@@ -35,12 +35,12 @@ public:
      * @vftbl 2
      * @symbol ?getCraftingSize\@ShapedRecipe\@\@UEBAHXZ
      */
-    virtual int getCraftingSize() const;
+    virtual int32_t getCraftingSize() const;
     /**
      * @vftbl 3
      * @symbol ?getIngredient\@ShapedRecipe\@\@UEBAAEBVRecipeIngredient\@\@HH\@Z
      */
-    virtual class RecipeIngredient const& getIngredient(int, int) const;
+    virtual class RecipeIngredient const& getIngredient(int32_t, int32_t) const;
     /**
      * @vftbl 4
      * @symbol
@@ -61,7 +61,7 @@ public:
      * @vftbl 7
      * @symbol ?size\@ShapedRecipe\@\@UEBAHXZ
      */
-    virtual int size() const;
+    virtual int32_t size() const;
     /**
      * @vftbl 15
      * @symbol ?loadResultList\@ShapedRecipe\@\@UEBAXAEBVBlockPalette\@\@\@Z
@@ -82,11 +82,11 @@ public:
      * ??0ShapedRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HHAEBV?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@2\@AEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@2\@VHashedString\@\@HPEBVUUID\@mce\@\@V?$optional\@VRecipeUnlockingRequirement\@\@\@2\@AEBVSemVersion\@\@\@Z
      */
     MCAPI
-    ShapedRecipe(std::string_view, int, int, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, int, class mce::UUID const*, std::optional<class RecipeUnlockingRequirement>, class SemVersion const&);
+    ShapedRecipe(std::string_view, int32_t, int32_t, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, int32_t, class mce::UUID const*, std::optional<class RecipeUnlockingRequirement>, class SemVersion const&);
     /**
      * @symbol ?getIngredientsHashOffset\@ShapedRecipe\@\@QEBA_KHHHH\@Z
      */
-    MCAPI uint64_t getIngredientsHashOffset(int, int, int, int) const;
+    MCAPI uint64_t getIngredientsHashOffset(int32_t, int32_t, int32_t, int32_t) const;
     // NOLINTEND
 
     // private:
@@ -94,6 +94,6 @@ public:
     /**
      * @symbol ?matches\@ShapedRecipe\@\@AEBA_NAEBVCraftingContainer\@\@HH_N\@Z
      */
-    MCAPI bool matches(class CraftingContainer const&, int, int, bool) const;
+    MCAPI bool matches(class CraftingContainer const&, int32_t, int32_t, bool) const;
     // NOLINTEND
 };

@@ -278,16 +278,17 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@WeepingVinesBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @symbol
      * ??0WeepingVinesBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI WeepingVinesBlock(std::string const&, int);
+    MCAPI WeepingVinesBlock(std::string const&, int32_t);
     /**
      * @symbol ?placeVineString\@WeepingVinesBlock\@\@SAXAEAVBlockSource\@\@AEAVRandom\@\@AEBVBlockPos\@\@HHH\@Z
      */
-    MCAPI static void placeVineString(class BlockSource&, class Random&, class BlockPos const&, int, int, int);
+    MCAPI static void
+    placeVineString(class BlockSource&, class Random&, class BlockPos const&, int32_t, int32_t, int32_t);
     // NOLINTEND
 
     // private:
@@ -299,6 +300,6 @@ public:
     /**
      * @symbol ?_tryGrow\@WeepingVinesBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    MCAPI void _tryGrow(class BlockSource&, class BlockPos const&, int) const;
+    MCAPI void _tryGrow(class BlockSource&, class BlockPos const&, int32_t) const;
     // NOLINTEND
 };

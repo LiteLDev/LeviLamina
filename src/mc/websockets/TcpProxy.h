@@ -27,18 +27,18 @@ public:
      * @vftbl 1
      * @symbol ?start\@RakTcpProxy\@\@UEAA_NGGG\@Z
      */
-    virtual bool start(unsigned short, unsigned short, unsigned short) = 0;
+    virtual bool start(uint16_t, uint16_t, uint16_t) = 0;
     /**
      * @vftbl 2
      * @symbol
      * ?connect\@RakTcpProxy\@\@UEAA?AUSystemAddress\@RakNet\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@G\@Z
      */
-    virtual struct RakNet::SystemAddress connect(std::string const&, unsigned short) = 0;
+    virtual struct RakNet::SystemAddress connect(std::string const&, uint16_t) = 0;
     /**
      * @vftbl 3
      * @symbol ?send\@RakTcpProxy\@\@UEAAXPEBDIUSystemAddress\@RakNet\@\@\@Z
      */
-    virtual void send(char const*, unsigned int, struct RakNet::SystemAddress) = 0;
+    virtual void send(char const*, uint32_t, struct RakNet::SystemAddress) = 0;
     /**
      * @vftbl 4
      * @symbol ?close\@RakTcpProxy\@\@UEAAXUSystemAddress\@RakNet\@\@\@Z

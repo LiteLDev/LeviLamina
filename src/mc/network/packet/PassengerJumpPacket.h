@@ -50,6 +50,6 @@ public:
     /**
      * @symbol ??0PassengerJumpPacket\@\@QEAA\@H\@Z
      */
-    MCAPI PassengerJumpPacket(int);
+    MCAPI PassengerJumpPacket(int32_t);
     // NOLINTEND
 };

@@ -21,7 +21,7 @@ public:
      * @vftbl 0
      * @symbol ?containerContentChanged\@InventoryContainerModel\@\@UEAAXH\@Z
      */
-    virtual void containerContentChanged(int);
+    virtual void containerContentChanged(int32_t);
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
@@ -81,16 +81,16 @@ public:
      * @vftbl 21
      * @symbol ?_getContainerOffset\@InventoryContainerModel\@\@MEBAHXZ
      */
-    virtual int _getContainerOffset() const;
+    virtual int32_t _getContainerOffset() const;
     /**
      * @vftbl 22
      * @symbol ?_onItemChanged\@InventoryContainerModel\@\@EEAAXHAEBVItemStack\@\@0\@Z
      */
-    virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
+    virtual void _onItemChanged(int32_t, class ItemStack const&, class ItemStack const&);
     /**
      * @symbol ??0InventoryContainerModel\@\@QEAA\@W4ContainerEnumName\@\@HAEAVPlayer\@\@\@Z
      */
-    MCAPI InventoryContainerModel(enum class ContainerEnumName, int, class Player&);
+    MCAPI InventoryContainerModel(enum class ContainerEnumName, int32_t, class Player&);
     // NOLINTEND
 
     // private:
@@ -98,6 +98,6 @@ public:
     /**
      * @symbol ?_refreshSlot\@InventoryContainerModel\@\@AEAAXH\@Z
      */
-    MCAPI void _refreshSlot(int);
+    MCAPI void _refreshSlot(int32_t);
     // NOLINTEND
 };

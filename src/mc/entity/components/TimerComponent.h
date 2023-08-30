@@ -54,6 +54,6 @@ public:
     /**
      * @symbol ?getRandomTime\@TimerComponent\@\@AEAAHAEAVActor\@\@\@Z
      */
-    MCAPI int getRandomTime(class Actor&);
+    MCAPI int32_t getRandomTime(class Actor&);
     // NOLINTEND
 };

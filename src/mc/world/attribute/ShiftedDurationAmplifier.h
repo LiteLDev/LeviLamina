@@ -24,15 +24,15 @@ public:
      * @vftbl 2
      * @symbol ?shouldBuff\@ShiftedDurationAmplifier\@\@UEBA_NHH\@Z
      */
-    virtual bool shouldBuff(int, int) const;
+    virtual bool shouldBuff(int32_t, int32_t) const;
     /**
      * @vftbl 3
      * @symbol ?getTickInterval\@ShiftedDurationAmplifier\@\@UEBAHH\@Z
      */
-    virtual int getTickInterval(int) const;
+    virtual int32_t getTickInterval(int32_t) const;
     /**
      * @symbol ??0ShiftedDurationAmplifier\@\@QEAA\@H\@Z
      */
-    MCAPI ShiftedDurationAmplifier(int);
+    MCAPI ShiftedDurationAmplifier(int32_t);
     // NOLINTEND
 };

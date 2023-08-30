@@ -53,7 +53,7 @@ public:
      * @vftbl 28
      * @symbol ?canConnect\@FenceGateBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
-    virtual bool canConnect(class Block const&, unsigned char, class Block const&) const;
+    virtual bool canConnect(class Block const&, uint8_t, class Block const&) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -168,7 +168,7 @@ public:
      * @vftbl 75
      * @symbol ?onRedstoneUpdate\@FenceGateBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
-    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int32_t, bool) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -204,7 +204,7 @@ public:
      * @symbol ?getPlacementBlock\@FenceGateBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -274,7 +274,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@FenceGateBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -299,7 +299,7 @@ public:
      * @symbol
      * ??0FenceGateBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4WoodType\@\@\@Z
      */
-    MCAPI FenceGateBlock(std::string const&, int, enum class WoodType);
+    MCAPI FenceGateBlock(std::string const&, int32_t, enum class WoodType);
     /**
      * @symbol ?resolveIsInWall\@FenceGateBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */

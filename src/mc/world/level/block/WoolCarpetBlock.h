@@ -146,7 +146,7 @@ public:
      * @vftbl 73
      * @symbol ?dispense\@WoolCarpetBlock\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
+    virtual bool dispense(class BlockSource&, class Container&, int32_t, class Vec3 const&, uint8_t) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -237,6 +237,6 @@ public:
      * @symbol
      * ??0WoolCarpetBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4BlockColor\@\@\@Z
      */
-    MCAPI WoolCarpetBlock(std::string const&, int, enum class BlockColor);
+    MCAPI WoolCarpetBlock(std::string const&, int32_t, enum class BlockColor);
     // NOLINTEND
 };

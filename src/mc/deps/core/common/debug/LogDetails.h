@@ -58,7 +58,7 @@ public:
      * ?_appendLogEntryMetadata\@LogDetails\@BedrockLog\@\@AEAAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V34\@W4LogAreaID\@\@I1HH\@Z
      */
     MCAPI void
-    _appendLogEntryMetadata(std::string&, std::string, enum class LogAreaID, unsigned int, std::string, int, int);
+    _appendLogEntryMetadata(std::string&, std::string, enum class LogAreaID, uint32_t, std::string, int32_t, int32_t);
     /**
      * @symbol
      * ?_getCurrentTimestamp\@LogDetails\@BedrockLog\@\@AEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -72,13 +72,13 @@ public:
     /**
      * @symbol ?_log_va\@LogDetails\@BedrockLog\@\@AEAAXW4LogAreaID\@\@IPEBDHH1PEAD\@Z
      */
-    MCAPI void _log_va(enum class LogAreaID, unsigned int, char const*, int, int, char const*, char*);
+    MCAPI void _log_va(enum class LogAreaID, uint32_t, char const*, int32_t, int32_t, char const*, char*);
     /**
      * @symbol
      * ?_makeLogString\@LogDetails\@BedrockLog\@\@AEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V34\@W4LogAreaID\@\@I0HHAEBV34\@\@Z
      */
     MCAPI std::string
-          _makeLogString(std::string, enum class LogAreaID, unsigned int, std::string, int, int, std::string const&);
+    _makeLogString(std::string, enum class LogAreaID, uint32_t, std::string, int32_t, int32_t, std::string const&);
     /**
      * @symbol ?_openLogFile\@LogDetails\@BedrockLog\@\@AEAAXXZ
      */

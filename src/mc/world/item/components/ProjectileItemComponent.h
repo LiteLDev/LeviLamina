@@ -60,12 +60,12 @@ public:
      * @vftbl 8
      * @symbol ?_canUseOn\@ItemComponent\@\@MEBA_NAEBVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, unsigned char) const;
+    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 9
      * @symbol ?_useOn\@ItemComponent\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
      */
-    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&) const;
+    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uint8_t, class Vec3 const&) const;
     /**
      * @symbol ??0ProjectileItemComponent\@\@QEAA\@PEAVComponentItem\@\@W4ActorType\@\@M\@Z
      */
@@ -73,7 +73,7 @@ public:
     /**
      * @symbol ?dispense\@ProjectileItemComponent\@\@QEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
-    MCAPI bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
+    MCAPI bool dispense(class BlockSource&, class Container&, int32_t, class Vec3 const&, uint8_t) const;
     /**
      * @symbol ?getShootDir\@ProjectileItemComponent\@\@QEBA?AVVec3\@\@AEBVPlayer\@\@M\@Z
      */

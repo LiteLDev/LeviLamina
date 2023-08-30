@@ -55,7 +55,7 @@ public:
     /**
      * @symbol ??0PetSleepWithOwnerGoal\@\@QEAA\@AEAVMob\@\@MHHM\@Z
      */
-    MCAPI PetSleepWithOwnerGoal(class Mob&, float, int, int, float);
+    MCAPI PetSleepWithOwnerGoal(class Mob&, float, int32_t, int32_t, float);
     /**
      * @symbol
      * ?setState\@PetSleepWithOwnerGoal\@\@QEAAXV?$unique_ptr\@VPetSleepWithOwnerState\@\@U?$default_delete\@VPetSleepWithOwnerState\@\@\@std\@\@\@std\@\@\@Z

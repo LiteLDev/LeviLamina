@@ -40,18 +40,27 @@ public:
     /**
      * @symbol ?_getDripstoneHeight\@DripstoneClusterFeature\@\@CAHAEAVRandom\@\@HHMH\@Z
      */
-    MCAPI static int _getDripstoneHeight(class Random&, int, int, float, int);
+    MCAPI static int32_t _getDripstoneHeight(class Random&, int32_t, int32_t, float, int32_t);
     /**
      * @symbol
      * ?_placeColumn\@DripstoneClusterFeature\@\@CA_NAEAVIBlockWorldGenAPI\@\@AEAVRandom\@\@AEBVBlockPos\@\@HHMNHM\@Z
      */
-    MCAPI static bool
-    _placeColumn(class IBlockWorldGenAPI&, class Random&, class BlockPos const&, int, int, float, double, int, float);
+    MCAPI static bool _placeColumn(
+        class IBlockWorldGenAPI&,
+        class Random&,
+        class BlockPos const&,
+        int32_t,
+        int32_t,
+        float,
+        double,
+        int32_t,
+        float
+    );
     /**
      * @symbol
      * ?_replaceBlocksWithDripstoneBlocks\@DripstoneClusterFeature\@\@CAXAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@HE\@Z
      */
     MCAPI static void
-    _replaceBlocksWithDripstoneBlocks(class IBlockWorldGenAPI&, class BlockPos const&, int, unsigned char);
+    _replaceBlocksWithDripstoneBlocks(class IBlockWorldGenAPI&, class BlockPos const&, int32_t, uint8_t);
     // NOLINTEND
 };

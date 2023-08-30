@@ -137,7 +137,7 @@ public:
      * @vftbl 211
      * @symbol ?setAuxValue\@Arrow\@\@UEAAXH\@Z
      */
-    virtual void setAuxValue(int);
+    virtual void setAuxValue(int32_t);
     /**
      * @vftbl 219
      * @symbol __unk_vfn_219
@@ -210,7 +210,7 @@ public:
     /**
      * @symbol ?getAuxValue\@Arrow\@\@QEBAHXZ
      */
-    MCAPI int getAuxValue() const;
+    MCAPI int32_t getAuxValue() const;
     /**
      * @symbol ?setCritical\@Arrow\@\@QEAAX_N\@Z
      */
@@ -218,18 +218,18 @@ public:
     /**
      * @symbol ?setEnchantFlame\@Arrow\@\@QEAAXH\@Z
      */
-    MCAPI void setEnchantFlame(int);
+    MCAPI void setEnchantFlame(int32_t);
     /**
      * @symbol ?setEnchantInfinity\@Arrow\@\@QEAAXH\@Z
      */
-    MCAPI void setEnchantInfinity(int);
+    MCAPI void setEnchantInfinity(int32_t);
     /**
      * @symbol ?setEnchantPower\@Arrow\@\@QEAAXH\@Z
      */
-    MCAPI void setEnchantPower(int);
+    MCAPI void setEnchantPower(int32_t);
     /**
      * @symbol ?setEnchantPunch\@Arrow\@\@QEAAXH\@Z
      */
-    MCAPI void setEnchantPunch(int);
+    MCAPI void setEnchantPunch(int32_t);
     // NOLINTEND
 };

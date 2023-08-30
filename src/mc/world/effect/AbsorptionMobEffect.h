@@ -24,7 +24,7 @@ public:
      * @vftbl 1
      * @symbol ?applyEffects\@AbsorptionMobEffect\@\@UEBAXPEAVActor\@\@HH\@Z
      */
-    virtual void applyEffects(class Actor*, int, int) const;
+    virtual void applyEffects(class Actor*, int32_t, int32_t) const;
     /**
      * @vftbl 2
      * @symbol ?removeEffects\@AbsorptionMobEffect\@\@UEAAXPEAVActor\@\@\@Z

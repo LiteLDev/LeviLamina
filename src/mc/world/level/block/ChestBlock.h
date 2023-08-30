@@ -44,7 +44,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@ChestBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -159,12 +159,12 @@ public:
      * @vftbl 66
      * @symbol ?shouldConnectToRedstone\@ChestBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 73
      * @symbol ?dispense\@ChestBlock\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
+    virtual bool dispense(class BlockSource&, class Container&, int32_t, class Vec3 const&, uint8_t) const;
     /**
      * @vftbl 76
      * @symbol ?onMove\@ChestBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
@@ -205,7 +205,7 @@ public:
      * @symbol ?getPlacementBlock\@ChestBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -225,7 +225,7 @@ public:
      * @vftbl 126
      * @symbol ?getComparatorSignal\@ChestBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, unsigned char) const;
+    virtual int32_t getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uint8_t) const;
     /**
      * @vftbl 128
      * @symbol __unk_vfn_128
@@ -240,7 +240,7 @@ public:
      * @vftbl 146
      * @symbol ?getMappedFace\@ChestBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
-    virtual unsigned char getMappedFace(unsigned char, class Block const&) const;
+    virtual uint8_t getMappedFace(uint8_t, class Block const&) const;
     /**
      * @vftbl 149
      * @symbol ?init\@ChestBlock\@\@UEAAAEAVBlockLegacy\@\@XZ
@@ -290,7 +290,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@ChestBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -327,10 +327,10 @@ public:
      * @symbol
      * ??0ChestBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4ChestType\@0\@W4MaterialType\@\@\@Z
      */
-    MCAPI ChestBlock(std::string const&, int, enum class ChestBlock::ChestType, enum class MaterialType);
+    MCAPI ChestBlock(std::string const&, int32_t, enum class ChestBlock::ChestType, enum class MaterialType);
     /**
      * @symbol ?updateSignalStrength\@ChestBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    MCAPI void updateSignalStrength(class BlockSource&, class BlockPos const&, int) const;
+    MCAPI void updateSignalStrength(class BlockSource&, class BlockPos const&, int32_t) const;
     // NOLINTEND
 };

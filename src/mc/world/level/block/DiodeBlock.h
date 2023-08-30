@@ -140,7 +140,7 @@ public:
      * @vftbl 61
      * @symbol ?getDirectSignal\@DiodeBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual int getDirectSignal(class BlockSource&, class BlockPos const&, int) const;
+    virtual int32_t getDirectSignal(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
@@ -155,7 +155,7 @@ public:
      * @vftbl 75
      * @symbol ?onRedstoneUpdate\@DiodeBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
-    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int32_t, bool) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -181,7 +181,7 @@ public:
      * @symbol ?getPlacementBlock\@DiodeBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -211,7 +211,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@DiodeBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 144
      * @symbol ?canSpawnOn\@DiodeBlock\@\@UEBA_NPEAVActor\@\@\@Z
@@ -266,7 +266,7 @@ public:
      * @vftbl 192
      * @symbol ?getSignal\@DiodeBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual int getSignal(class BlockSource&, class BlockPos const&, int) const;
+    virtual int32_t getSignal(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 193
      * @symbol ?isLocked\@DiodeBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
@@ -296,7 +296,7 @@ public:
      * @vftbl 198
      * @symbol ?getInputSignal\@DiodeBlock\@\@MEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual int getInputSignal(class BlockSource&, class BlockPos const&) const;
+    virtual int32_t getInputSignal(class BlockSource&, class BlockPos const&) const;
     /**
      * @vftbl 199
      * @symbol ?isAlternateInput\@DiodeBlock\@\@MEBA_NAEBVBlock\@\@\@Z
@@ -306,22 +306,22 @@ public:
      * @vftbl 200
      * @symbol ?getAlternateSignal\@DiodeBlock\@\@MEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual int getAlternateSignal(class BlockSource&, class BlockPos const&) const;
+    virtual int32_t getAlternateSignal(class BlockSource&, class BlockPos const&) const;
     /**
      * @vftbl 201
      * @symbol ?getOutputSignal\@DiodeBlock\@\@MEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getOutputSignal(class Block const&) const;
+    virtual int32_t getOutputSignal(class Block const&) const;
     /**
      * @vftbl 202
      * @symbol ?getTurnOffDelay\@DiodeBlock\@\@MEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getTurnOffDelay(class Block const&) const;
+    virtual int32_t getTurnOffDelay(class Block const&) const;
     /**
      * @vftbl 203
      * @symbol ?getTurnOnDelay\@RepeaterBlock\@\@MEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getTurnOnDelay(class Block const&) const = 0;
+    virtual int32_t getTurnOnDelay(class Block const&) const = 0;
     /**
      * @vftbl 204
      * @symbol ?getOnBlock\@RepeaterBlock\@\@MEBAPEBVBlock\@\@PEBV2\@\@Z
@@ -341,7 +341,7 @@ public:
     /**
      * @symbol ??0DiodeBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
-    MCAPI DiodeBlock(std::string const&, int, bool);
+    MCAPI DiodeBlock(std::string const&, int32_t, bool);
     /**
      * @symbol ?isDiode\@DiodeBlock\@\@SA_NAEBVBlock\@\@\@Z
      */
@@ -353,6 +353,6 @@ public:
     /**
      * @symbol ?getAlternateSignalAt\@DiodeBlock\@\@IEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    MCAPI int getAlternateSignalAt(class BlockSource&, class BlockPos const&, int) const;
+    MCAPI int32_t getAlternateSignalAt(class BlockSource&, class BlockPos const&, int32_t) const;
     // NOLINTEND
 };

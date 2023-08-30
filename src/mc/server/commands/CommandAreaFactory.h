@@ -27,11 +27,11 @@ public:
      * ?findAreaWithBuffer\@CommandAreaFactory\@\@QEBA?AV?$unique_ptr\@VCommandArea\@\@U?$default_delete\@VCommandArea\@\@\@std\@\@\@std\@\@AEBVBlockPos\@\@0H_N1\@Z
      */
     MCAPI std::unique_ptr<class CommandArea>
-          findAreaWithBuffer(class BlockPos const&, class BlockPos const&, int, bool, bool) const;
+          findAreaWithBuffer(class BlockPos const&, class BlockPos const&, int32_t, bool, bool) const;
     /**
      * @symbol ?shouldAllowNonTickingPlayerAndTickingAreaChunks\@CommandAreaFactory\@\@SA_NH\@Z
      */
-    MCAPI static bool shouldAllowNonTickingPlayerAndTickingAreaChunks(int);
+    MCAPI static bool shouldAllowNonTickingPlayerAndTickingAreaChunks(int32_t);
     // NOLINTEND
 
     // private:

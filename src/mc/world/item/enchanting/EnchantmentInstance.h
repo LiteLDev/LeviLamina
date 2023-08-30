@@ -21,11 +21,11 @@ public:
     /**
      * @symbol ??0EnchantmentInstance\@\@QEAA\@W4Type\@Enchant\@\@H\@Z
      */
-    MCAPI EnchantmentInstance(enum class Enchant::Type, int);
+    MCAPI EnchantmentInstance(enum class Enchant::Type, int32_t);
     /**
      * @symbol ?getEnchantLevel\@EnchantmentInstance\@\@QEBAHXZ
      */
-    MCAPI int getEnchantLevel() const;
+    MCAPI int32_t getEnchantLevel() const;
     /**
      * @symbol ?getEnchantType\@EnchantmentInstance\@\@QEBA?AW4Type\@Enchant\@\@XZ
      */
@@ -37,7 +37,7 @@ public:
     /**
      * @symbol ?setEnchantLevel\@EnchantmentInstance\@\@QEAAXH\@Z
      */
-    MCAPI void setEnchantLevel(int);
+    MCAPI void setEnchantLevel(int32_t);
     /**
      * @symbol ?setEnchantType\@EnchantmentInstance\@\@QEAAXW4Type\@Enchant\@\@\@Z
      */

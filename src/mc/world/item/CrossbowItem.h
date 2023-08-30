@@ -37,7 +37,7 @@ public:
      * @vftbl 6
      * @symbol ?getMaxUseDuration\@CrossbowItem\@\@UEBAHPEBVItemStack\@\@\@Z
      */
-    virtual int getMaxUseDuration(class ItemStack const*) const;
+    virtual int32_t getMaxUseDuration(class ItemStack const*) const;
     /**
      * @vftbl 11
      * @symbol __unk_vfn_11
@@ -72,7 +72,7 @@ public:
      * @vftbl 62
      * @symbol ?getEnchantSlot\@CrossbowItem\@\@UEBAHXZ
      */
-    virtual int getEnchantSlot() const;
+    virtual int32_t getEnchantSlot() const;
     /**
      * @vftbl 66
      * @symbol __unk_vfn_66
@@ -123,7 +123,7 @@ public:
      * @vftbl 87
      * @symbol ?releaseUsing\@CrossbowItem\@\@UEBAXAEAVItemStack\@\@PEAVPlayer\@\@H\@Z
      */
-    virtual void releaseUsing(class ItemStack&, class Player*, int) const;
+    virtual void releaseUsing(class ItemStack&, class Player*, int32_t) const;
     /**
      * @vftbl 112
      * @symbol ?enchantProjectile\@CrossbowItem\@\@UEBAXAEBVItemStackBase\@\@AEAVActor\@\@\@Z
@@ -144,17 +144,17 @@ public:
      * @symbol
      * ?setIconInfo\@CrossbowItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    virtual class Item& setIconInfo(std::string const&, int);
+    virtual class Item& setIconInfo(std::string const&, int32_t);
     /**
      * @vftbl 120
      * @symbol ?getIconInfo\@CrossbowItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int32_t, bool) const;
     /**
      * @vftbl 122
      * @symbol ?getAnimationFrameFor\@CrossbowItem\@\@UEBAHPEAVMob\@\@_NPEBVItemStack\@\@_N\@Z
      */
-    virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
+    virtual int32_t getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
     /**
      * @vftbl 126
      * @symbol ?canBeCharged\@CrossbowItem\@\@UEBA_NXZ
@@ -168,7 +168,7 @@ public:
     /**
      * @symbol ??0CrossbowItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI CrossbowItem(std::string const&, int);
+    MCAPI CrossbowItem(std::string const&, int32_t);
     // NOLINTEND
 
     // private:
@@ -176,7 +176,7 @@ public:
     /**
      * @symbol ?_getMaxUseDuration\@CrossbowItem\@\@AEBA?BHAEBVItemStack\@\@\@Z
      */
-    MCAPI int const _getMaxUseDuration(class ItemStack const&) const;
+    MCAPI int32_t const _getMaxUseDuration(class ItemStack const&) const;
     /**
      * @symbol ?_getShootDir\@CrossbowItem\@\@AEBA?AVVec3\@\@AEBVPlayer\@\@M\@Z
      */
@@ -196,6 +196,6 @@ private:
     /**
      * @symbol ?DEFAULT_USE_DURATION\@CrossbowItem\@\@0HB
      */
-    MCAPI static int const DEFAULT_USE_DURATION;
+    MCAPI static int32_t const DEFAULT_USE_DURATION;
     // NOLINTEND
 };

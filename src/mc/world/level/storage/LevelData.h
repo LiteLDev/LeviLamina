@@ -200,15 +200,15 @@ public:
     /**
      * @symbol ?getLightningTime\@LevelData\@\@QEBAHXZ
      */
-    MCAPI int getLightningTime() const;
+    MCAPI int32_t getLightningTime() const;
     /**
      * @symbol ?getLimitedWorldDepth\@LevelData\@\@QEBAHXZ
      */
-    MCAPI int getLimitedWorldDepth() const;
+    MCAPI int32_t getLimitedWorldDepth() const;
     /**
      * @symbol ?getLimitedWorldWidth\@LevelData\@\@QEBAHXZ
      */
-    MCAPI int getLimitedWorldWidth() const;
+    MCAPI int32_t getLimitedWorldWidth() const;
     /**
      * @symbol ?getMultiplayerGameIntent\@LevelData\@\@QEBA_NXZ
      */
@@ -216,7 +216,7 @@ public:
     /**
      * @symbol ?getNetherScale\@LevelData\@\@QEBAHXZ
      */
-    MCAPI int getNetherScale() const;
+    MCAPI int32_t getNetherScale() const;
     /**
      * @symbol ?getNetherType\@LevelData\@\@QEBA?AW4NetherWorldType\@\@XZ
      */
@@ -248,7 +248,7 @@ public:
     /**
      * @symbol ?getRainTime\@LevelData\@\@QEBAHXZ
      */
-    MCAPI int getRainTime() const;
+    MCAPI int32_t getRainTime() const;
     /**
      * @symbol ?getSeed\@LevelData\@\@QEBA?AVLevelSeed64\@\@XZ
      */
@@ -256,7 +256,7 @@ public:
     /**
      * @symbol ?getServerChunkTickRange\@LevelData\@\@QEBAIXZ
      */
-    MCAPI unsigned int getServerChunkTickRange() const;
+    MCAPI uint32_t getServerChunkTickRange() const;
     /**
      * @symbol ?getSpawnPos\@LevelData\@\@QEBAAEBVBlockPos\@\@XZ
      */
@@ -280,7 +280,7 @@ public:
     /**
      * @symbol ?getTime\@LevelData\@\@QEBAHXZ
      */
-    MCAPI int getTime() const;
+    MCAPI int32_t getTime() const;
     /**
      * @symbol ?getUseMsaGamertagsOnly\@LevelData\@\@QEBA_NXZ
      */
@@ -292,7 +292,7 @@ public:
     /**
      * @symbol ?getWorldStartCount\@LevelData\@\@QEBAIXZ
      */
-    MCAPI unsigned int getWorldStartCount() const;
+    MCAPI uint32_t getWorldStartCount() const;
     /**
      * @symbol ?getWorldTemplateIdentity\@LevelData\@\@QEBAAEBUPackIdVersion\@\@XZ
      */
@@ -502,7 +502,7 @@ public:
     /**
      * @symbol ?setLightningTime\@LevelData\@\@QEAAXH\@Z
      */
-    MCAPI void setLightningTime(int);
+    MCAPI void setLightningTime(int32_t);
     /**
      * @symbol ?setMultiplayerGame\@LevelData\@\@QEAAX_N\@Z
      */
@@ -538,7 +538,7 @@ public:
     /**
      * @symbol ?setRainTime\@LevelData\@\@QEAAXH\@Z
      */
-    MCAPI void setRainTime(int);
+    MCAPI void setRainTime(int32_t);
     /**
      * @symbol ?setSeed\@LevelData\@\@QEAAXVLevelSeed64\@\@\@Z
      */
@@ -546,7 +546,7 @@ public:
     /**
      * @symbol ?setServerChunkTickRange\@LevelData\@\@QEAAXI\@Z
      */
-    MCAPI void setServerChunkTickRange(unsigned int);
+    MCAPI void setServerChunkTickRange(uint32_t);
     /**
      * @symbol ?setSpawnPos\@LevelData\@\@QEAAXAEBVBlockPos\@\@\@Z
      */
@@ -566,7 +566,7 @@ public:
     /**
      * @symbol ?setTime\@LevelData\@\@QEAAXH\@Z
      */
-    MCAPI void setTime(int);
+    MCAPI void setTime(int32_t);
     /**
      * @symbol ?setUseMsaGamertagsOnly\@LevelData\@\@QEAAX_N\@Z
      */

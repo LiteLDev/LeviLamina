@@ -43,7 +43,7 @@ public:
         class OperationNodeDetails::WorkingData<class Biome*, class Biome*>&,
         class Pos2d const&,
         class Pos2d const&,
-        int
+        int32_t
     ) const;
     /**
      * @vftbl 4
@@ -55,6 +55,6 @@ public:
      * ??0RegionHillsOperationNode\@\@QEAA\@IAEAV?$shared_ptr\@V?$OperationNode\@PEAVBiome\@\@VPos2d\@\@\@\@\@std\@\@AEAV?$shared_ptr\@V?$OperationNode\@HVPos2d\@\@\@\@\@2\@AEBVBiomeRegistry\@\@\@Z
      */
     MCAPI
-    RegionHillsOperationNode(unsigned int, std::shared_ptr<class OperationNode<class Biome*, class Pos2d>>&, std::shared_ptr<class OperationNode<int, class Pos2d>>&, class BiomeRegistry const&);
+    RegionHillsOperationNode(uint32_t, std::shared_ptr<class OperationNode<class Biome*, class Pos2d>>&, std::shared_ptr<class OperationNode<int32_t, class Pos2d>>&, class BiomeRegistry const&);
     // NOLINTEND
 };

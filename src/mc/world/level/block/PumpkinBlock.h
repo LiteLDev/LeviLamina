@@ -40,7 +40,7 @@ public:
      * @vftbl 28
      * @symbol ?canConnect\@PumpkinBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
-    virtual bool canConnect(class Block const&, unsigned char, class Block const&) const;
+    virtual bool canConnect(class Block const&, uint8_t, class Block const&) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -150,7 +150,7 @@ public:
      * @vftbl 73
      * @symbol ?dispense\@PumpkinBlock\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
+    virtual bool dispense(class BlockSource&, class Container&, int32_t, class Vec3 const&, uint8_t) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -205,12 +205,12 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@PumpkinBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 146
      * @symbol ?getMappedFace\@PumpkinBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
-    virtual unsigned char getMappedFace(unsigned char, class Block const&) const;
+    virtual uint8_t getMappedFace(uint8_t, class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -266,7 +266,7 @@ public:
      * @symbol
      * ??0PumpkinBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N1\@Z
      */
-    MCAPI PumpkinBlock(std::string const&, int, bool, bool);
+    MCAPI PumpkinBlock(std::string const&, int32_t, bool, bool);
     // NOLINTEND
 
     // private:
@@ -274,7 +274,7 @@ public:
     /**
      * @symbol ?_canDispense\@PumpkinBlock\@\@AEBA_NAEAVBlockSource\@\@AEBVVec3\@\@E\@Z
      */
-    MCAPI bool _canDispense(class BlockSource&, class Vec3 const&, unsigned char) const;
+    MCAPI bool _canDispense(class BlockSource&, class Vec3 const&, uint8_t) const;
     /**
      * @symbol ?_canSpawnGolem\@PumpkinBlock\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */

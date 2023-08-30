@@ -65,7 +65,7 @@ public:
          * @symbol
          * ?sort\@Node\@RTree\@\@SAXAEAV?$vector\@VNode\@RTree\@\@V?$allocator\@VNode\@RTree\@\@\@std\@\@\@std\@\@H_N\@Z
          */
-        MCAPI static void sort(std::vector<class RTree::Node>&, int, bool);
+        MCAPI static void sort(std::vector<class RTree::Node>&, int32_t, bool);
         // NOLINTEND
     };
 

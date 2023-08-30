@@ -243,7 +243,7 @@ public:
      * @vftbl 178
      * @symbol ?getExtraRenderLayers\@HoneyBlock\@\@UEBAHXZ
      */
-    virtual int getExtraRenderLayers() const;
+    virtual int32_t getExtraRenderLayers() const;
     /**
      * @vftbl 183
      * @symbol __unk_vfn_183
@@ -253,7 +253,7 @@ public:
      * @symbol
      * ??0HoneyBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI HoneyBlock(std::string const&, int, class Material const&);
+    MCAPI HoneyBlock(std::string const&, int32_t, class Material const&);
     /**
      * @symbol ?triggerSlidingDownEffects\@HoneyBlock\@\@SAXAEAVActor\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */

@@ -74,7 +74,7 @@ public:
      * @vftbl 1
      * @symbol ?init\@CappedSurfaceBuilder\@VanillaSurfaceBuilders\@\@UEAAXAEAVEntityContext\@\@I\@Z
      */
-    virtual void init(class EntityContext&, unsigned int);
+    virtual void init(class EntityContext&, uint32_t);
     /**
      * @vftbl 2
      * @symbol
@@ -94,7 +94,7 @@ public:
      * ?addSurfaceMaterial\@CappedSurfaceBuilder\@VanillaSurfaceBuilders\@\@AEBAXAEAVBlockVolume\@\@VPos\@\@HAEBV?$function\@$$A6APEBVBlock\@\@H\@Z\@std\@\@\@Z
      */
     MCAPI void
-    addSurfaceMaterial(class BlockVolume&, class Pos, int, std::function<class Block const*(int)> const&) const;
+    addSurfaceMaterial(class BlockVolume&, class Pos, int32_t, std::function<class Block const*(int32_t)> const&) const;
     // NOLINTEND
 };
 

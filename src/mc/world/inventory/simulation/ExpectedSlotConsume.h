@@ -18,6 +18,6 @@ public:
     /**
      * @symbol ??0ExpectedSlotConsume\@\@QEAA\@W4ContainerEnumName\@\@EAEBVItemStack\@\@E\@Z
      */
-    MCAPI ExpectedSlotConsume(enum class ContainerEnumName, unsigned char, class ItemStack const&, unsigned char);
+    MCAPI ExpectedSlotConsume(enum class ContainerEnumName, uint8_t, class ItemStack const&, uint8_t);
     // NOLINTEND
 };

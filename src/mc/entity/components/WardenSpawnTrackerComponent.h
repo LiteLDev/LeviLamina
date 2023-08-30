@@ -42,12 +42,12 @@ public:
     /**
      * @symbol ?tryIncreaseThreatLevel\@WardenSpawnTrackerComponent\@\@QEAAHXZ
      */
-    MCAPI int tryIncreaseThreatLevel();
+    MCAPI int32_t tryIncreaseThreatLevel();
     /**
      * @symbol
      * ?getSoundEventForThreatLevel\@WardenSpawnTrackerComponent\@\@SA?AV?$optional\@W4LevelSoundEvent\@\@\@std\@\@H\@Z
      */
-    MCAPI static std::optional<enum class LevelSoundEvent> getSoundEventForThreatLevel(int);
+    MCAPI static std::optional<enum class LevelSoundEvent> getSoundEventForThreatLevel(int32_t);
     /**
      * @symbol ?hasNearbyWarden\@WardenSpawnTrackerComponent\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -55,6 +55,6 @@ public:
     /**
      * @symbol ?MAX_THREAT_LEVEL\@WardenSpawnTrackerComponent\@\@2HB
      */
-    MCAPI static int const MAX_THREAT_LEVEL;
+    MCAPI static int32_t const MAX_THREAT_LEVEL;
     // NOLINTEND
 };

@@ -26,7 +26,7 @@ public:
     /**
      * @symbol ?consumeCount\@DelegatingRandom\@NoiseUtils\@\@UEAAXI\@Z
      */
-    MCVAPI void consumeCount(unsigned int);
+    MCVAPI void consumeCount(uint32_t);
     /**
      * @symbol
      * ?fork\@DelegatingRandom\@NoiseUtils\@\@UEAA?AV?$unique_ptr\@VIRandom\@\@U?$default_delete\@VIRandom\@\@\@std\@\@\@std\@\@XZ
@@ -47,11 +47,11 @@ public:
     /**
      * @symbol ?nextInt\@DelegatingRandom\@NoiseUtils\@\@UEAAHH\@Z
      */
-    MCVAPI int nextInt(int);
+    MCVAPI int32_t nextInt(int32_t);
     /**
      * @symbol ?nextInt\@DelegatingRandom\@NoiseUtils\@\@UEAAHXZ
      */
-    MCVAPI int nextInt();
+    MCVAPI int32_t nextInt();
     /**
      * @symbol ?nextLong\@DelegatingRandom\@NoiseUtils\@\@UEAA_JXZ
      */

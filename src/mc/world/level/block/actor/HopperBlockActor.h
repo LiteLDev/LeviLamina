@@ -36,15 +36,15 @@ public:
     /**
      * @symbol ?getContainerSize\@HopperBlockActor\@\@UEBAHXZ
      */
-    MCVAPI int getContainerSize() const;
+    MCVAPI int32_t getContainerSize() const;
     /**
      * @symbol ?getItem\@HopperBlockActor\@\@UEBAAEBVItemStack\@\@H\@Z
      */
-    MCVAPI class ItemStack const& getItem(int) const;
+    MCVAPI class ItemStack const& getItem(int32_t) const;
     /**
      * @symbol ?getMaxStackSize\@HopperBlockActor\@\@UEBAHXZ
      */
-    MCVAPI int getMaxStackSize() const;
+    MCVAPI int32_t getMaxStackSize() const;
     /**
      * @symbol
      * ?getName\@HopperBlockActor\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -69,15 +69,15 @@ public:
     /**
      * @symbol ?serverInitItemStackIds\@HopperBlockActor\@\@UEAAXHHV?$function\@$$A6AXHAEBVItemStack\@\@\@Z\@std\@\@\@Z
      */
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
+    MCVAPI void serverInitItemStackIds(int32_t, int32_t, std::function<void(int32_t, class ItemStack const&)>);
     /**
      * @symbol ?setContainerChanged\@HopperBlockActor\@\@UEAAXH\@Z
      */
-    MCVAPI void setContainerChanged(int);
+    MCVAPI void setContainerChanged(int32_t);
     /**
      * @symbol ?setItem\@HopperBlockActor\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
-    MCVAPI void setItem(int, class ItemStack const&);
+    MCVAPI void setItem(int32_t, class ItemStack const&);
     /**
      * @symbol ?startOpen\@HopperBlockActor\@\@UEAAXAEAVPlayer\@\@\@Z
      */
@@ -110,7 +110,7 @@ public:
     /**
      * @symbol ?updateCooldownAfterMove\@HopperBlockActor\@\@QEAAXAEBUTick\@\@H\@Z
      */
-    MCAPI void updateCooldownAfterMove(struct Tick const&, int);
+    MCAPI void updateCooldownAfterMove(struct Tick const&, int32_t);
     // NOLINTEND
 
     // private:
@@ -118,11 +118,11 @@ public:
     /**
      * @symbol ?_ensureTickingOrder\@HopperBlockActor\@\@AEAAXAEAVBlockSource\@\@H\@Z
      */
-    MCAPI void _ensureTickingOrder(class BlockSource&, int);
+    MCAPI void _ensureTickingOrder(class BlockSource&, int32_t);
     /**
      * @symbol ?_tick\@HopperBlockActor\@\@AEAAXAEAVBlockSource\@\@H\@Z
      */
-    MCAPI void _tick(class BlockSource&, int);
+    MCAPI void _tick(class BlockSource&, int32_t);
     /**
      * @symbol ?isAttachedToContainerType\@HopperBlockActor\@\@AEAA_NAEAVBlockSource\@\@W4ContainerType\@\@\@Z
      */

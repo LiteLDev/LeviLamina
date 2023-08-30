@@ -68,7 +68,7 @@ public:
      * @vftbl 56
      * @symbol ?isDestructive\@MinecartItem\@\@UEBA_NH\@Z
      */
-    virtual bool isDestructive(int) const;
+    virtual bool isDestructive(int32_t) const;
     /**
      * @vftbl 66
      * @symbol __unk_vfn_66
@@ -108,7 +108,7 @@ public:
      * @vftbl 85
      * @symbol ?dispense\@MinecartItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
+    virtual bool dispense(class BlockSource&, class Container&, int32_t, class Vec3 const&, uint8_t) const;
     /**
      * @vftbl 115
      * @symbol __unk_vfn_115
@@ -125,11 +125,11 @@ public:
      * ?_useOn\@MinecartItem\@\@EEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _useOn(class ItemStack&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
     /**
      * @symbol
      * ??0MinecartItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4MinecartType\@\@\@Z
      */
-    MCAPI MinecartItem(std::string const&, int, enum class MinecartType);
+    MCAPI MinecartItem(std::string const&, int32_t, enum class MinecartType);
     // NOLINTEND
 };

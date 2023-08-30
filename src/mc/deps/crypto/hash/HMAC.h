@@ -21,7 +21,7 @@ public:
      * @symbol
      * ??0HMAC\@Hash\@Crypto\@\@QEAA\@W4HashType\@12\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI HMAC(enum class Crypto::Hash::HashType, std::string const&, int);
+    MCAPI HMAC(enum class Crypto::Hash::HashType, std::string const&, int32_t);
     /**
      * @symbol ?resultSize\@HMAC\@Hash\@Crypto\@\@QEBA_KXZ
      */

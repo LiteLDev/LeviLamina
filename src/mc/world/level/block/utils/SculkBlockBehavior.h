@@ -19,12 +19,12 @@ public:
      * @vftbl 0
      * @symbol ?updateDecayDelay\@SculkBlockBehavior\@\@UEBAHH\@Z
      */
-    virtual int updateDecayDelay(int) const;
+    virtual int32_t updateDecayDelay(int32_t) const;
     /**
      * @vftbl 1
      * @symbol ?updateFacingData\@SculkBlockBehavior\@\@UEBAHHAEBVBlock\@\@\@Z
      */
-    virtual int updateFacingData(int, class Block const&) const;
+    virtual int32_t updateFacingData(int32_t, class Block const&) const;
     /**
      * @vftbl 2
      * @symbol ?canChangeBlockOnSpread\@SculkBlockBehavior\@\@UEBA_NXZ
@@ -36,20 +36,20 @@ public:
      * ?attemptSpreadVeins\@SculkBlockBehavior\@\@UEBA_NAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEBVBlock\@\@HAEAVSculkSpreader\@\@\@Z
      */
     virtual bool
-    attemptSpreadVeins(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&, int, class SculkSpreader&)
+    attemptSpreadVeins(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&, int32_t, class SculkSpreader&)
         const;
     /**
      * @vftbl 4
      * @symbol
      * ?attemptUseCharge\@SculkBlockBehavior\@\@UEBAHAEAVIBlockWorldGenAPI\@\@PEAVBlockSource\@\@AEBVBlockPos\@\@2HHAEAVRandom\@\@AEAVSculkSpreader\@\@_N\@Z
      */
-    virtual int attemptUseCharge(
+    virtual int32_t attemptUseCharge(
         class IBlockWorldGenAPI&,
         class BlockSource*,
         class BlockPos const&,
         class BlockPos const&,
-        int,
-        int,
+        int32_t,
+        int32_t,
         class Random&,
         class SculkSpreader&,
         bool

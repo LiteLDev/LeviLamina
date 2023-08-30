@@ -15,7 +15,7 @@ public:
     /**
      * @symbol ??0ExpiringTick\@\@QEAA\@UTick\@\@G\@Z
      */
-    MCAPI ExpiringTick(struct Tick, unsigned short);
+    MCAPI ExpiringTick(struct Tick, uint16_t);
     /**
      * @symbol ?getExpireAtTick\@ExpiringTick\@\@QEBA?AUTick\@\@XZ
      */

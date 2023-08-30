@@ -35,11 +35,11 @@ public:
     /**
      * @symbol ?sendBlockDestructionStarted\@BlockEventCoordinator\@\@QEAAXAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    MCAPI void sendBlockDestructionStarted(class Player&, class BlockPos const&, unsigned char);
+    MCAPI void sendBlockDestructionStarted(class Player&, class BlockPos const&, uint8_t);
     /**
      * @symbol ?sendBlockDestructionStopped\@BlockEventCoordinator\@\@QEAAXAEAVPlayer\@\@AEBVBlockPos\@\@H\@Z
      */
-    MCAPI void sendBlockDestructionStopped(class Player&, class BlockPos const&, int);
+    MCAPI void sendBlockDestructionStopped(class Player&, class BlockPos const&, int32_t);
     /**
      * @symbol
      * ?sendBlockExploded\@BlockEventCoordinator\@\@QEAAXAEAVDimension\@\@AEBVBlockPos\@\@AEBVBlock\@\@PEAVActor\@\@\@Z
@@ -80,6 +80,6 @@ public:
     /**
      * @symbol ?sendUnknownBlockReceived\@BlockEventCoordinator\@\@QEAAXAEAVLevel\@\@AEBUNewBlockID\@\@G\@Z
      */
-    MCAPI void sendUnknownBlockReceived(class Level&, struct NewBlockID const&, unsigned short);
+    MCAPI void sendUnknownBlockReceived(class Level&, struct NewBlockID const&, uint16_t);
     // NOLINTEND
 };

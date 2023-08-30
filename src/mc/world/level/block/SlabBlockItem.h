@@ -112,19 +112,19 @@ public:
      * @vftbl 133
      * @symbol ?_calculatePlacePos\@SlabBlockItem\@\@UEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
-    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
+    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, uint8_t&, class BlockPos&) const;
     /**
      * @vftbl 135
      * @symbol
      * ?_useOn\@SlabBlockItem\@\@UEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _useOn(class ItemStack&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
     /**
      * @symbol
      * ??0SlabBlockItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI SlabBlockItem(std::string const&, int);
+    MCAPI SlabBlockItem(std::string const&, int32_t);
     // NOLINTEND
 
     // private:
@@ -132,6 +132,6 @@ public:
     /**
      * @symbol ?_canConvertToDoubleBlock\@SlabBlockItem\@\@AEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEBVBlock\@\@\@Z
      */
-    MCAPI bool _canConvertToDoubleBlock(class ItemStackBase&, class Actor&, unsigned char&, class Block const&) const;
+    MCAPI bool _canConvertToDoubleBlock(class ItemStackBase&, class Actor&, uint8_t&, class Block const&) const;
     // NOLINTEND
 };

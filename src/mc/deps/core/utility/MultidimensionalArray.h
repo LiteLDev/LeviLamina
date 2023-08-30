@@ -4,7 +4,7 @@
 
 namespace Util {
 
-template <typename T0, int T1, int T2, int T3>
+template <typename T0, int32_t T1, int32_t T2, int32_t T3>
 class MultidimensionalArray {
 
 public:

@@ -56,7 +56,7 @@ public:
     /**
      * @symbol ?onNetworkMaxPlayersChanged\@DedicatedServer\@\@EEAAXI\@Z
      */
-    MCVAPI void onNetworkMaxPlayersChanged(unsigned int);
+    MCVAPI void onNetworkMaxPlayersChanged(uint32_t);
     /**
      * @symbol
      * ?requestServerShutdown\@DedicatedServer\@\@EEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z

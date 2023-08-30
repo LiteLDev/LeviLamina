@@ -24,14 +24,13 @@ public:
      * @vftbl 1
      * @symbol ?_canSpreadFrom\@SculkVeinMultifaceSpreader\@\@UEBA_NAEBVBlock\@\@E\@Z
      */
-    virtual bool _canSpreadFrom(class Block const&, unsigned char) const;
+    virtual bool _canSpreadFrom(class Block const&, uint8_t) const;
     /**
      * @vftbl 2
      * @symbol
      * ?_canSpreadInto\@SculkVeinMultifaceSpreader\@\@UEBA_NAEAVIBlockWorldGenAPI\@\@AEBVBlock\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool
-    _canSpreadInto(class IBlockWorldGenAPI&, class Block const&, class BlockPos const&, unsigned char) const;
+    virtual bool _canSpreadInto(class IBlockWorldGenAPI&, class Block const&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 3
      * @symbol ?_isOtherBlockValidAsSource\@SculkVeinMultifaceSpreader\@\@UEBA_NAEBVBlock\@\@\@Z

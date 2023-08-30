@@ -30,7 +30,7 @@ MCAPI void sendSoundRequest(
     struct ActorDefinitionIdentifierComponent const&,
     std::optional<class Vec3>,
     class OptionalComponentWrapper<class StrictEntityContext, struct SoundEventRequestQueueComponent>,
-    int
+    int32_t
 );
 // NOLINTEND
 

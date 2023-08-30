@@ -111,7 +111,7 @@ public:
      * @vftbl 127
      * @symbol ?handleEntityEvent\@FishingHook\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
-    virtual void handleEntityEvent(enum class ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int32_t);
     /**
      * @vftbl 149
      * @symbol ?save\@FishingHook\@\@UEBA_NAEAVCompoundTag\@\@\@Z
@@ -192,7 +192,7 @@ public:
     /**
      * @symbol ?retrieve\@FishingHook\@\@QEAAHXZ
      */
-    MCAPI int retrieve();
+    MCAPI int32_t retrieve();
     /**
      * @symbol ?BOBBER_SIZE\@FishingHook\@\@2MB
      */

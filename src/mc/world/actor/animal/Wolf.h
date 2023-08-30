@@ -112,7 +112,7 @@ public:
      * @vftbl 127
      * @symbol ?handleEntityEvent\@Wolf\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
-    virtual void handleEntityEvent(enum class ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int32_t);
     /**
      * @vftbl 151
      * @symbol ?load\@Wolf\@\@UEAA_NAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
@@ -127,7 +127,7 @@ public:
      * @vftbl 173
      * @symbol ?onSynchedDataUpdate\@Wolf\@\@UEAAXH\@Z
      */
-    virtual void onSynchedDataUpdate(int);
+    virtual void onSynchedDataUpdate(int32_t);
     /**
      * @vftbl 178
      * @symbol __unk_vfn_178

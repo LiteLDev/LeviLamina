@@ -31,7 +31,7 @@ public:
          * @symbol
          * ??0Context\@CallStack\@Bedrock\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$optional\@W4LogLevel\@Bedrock\@\@\@4\@V?$optional\@I\@4\@\@Z
          */
-        MCAPI Context(std::string, std::optional<enum class Bedrock::LogLevel>, std::optional<unsigned int>);
+        MCAPI Context(std::string, std::optional<enum class Bedrock::LogLevel>, std::optional<uint32_t>);
         /**
          * @symbol ??1Context\@CallStack\@Bedrock\@\@QEAA\@XZ
          */

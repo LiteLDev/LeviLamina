@@ -11,7 +11,7 @@ MCAPI void createPoweredBlockComponentAtPos(class BlockSource&, class BlockPos c
 /**
  * @symbol ?sendTargetBlockHitTelemetryEvent\@TargetBlock_Internal\@\@YAXAEAVBlockSource\@\@AEBVActor\@\@H\@Z
  */
-MCAPI void sendTargetBlockHitTelemetryEvent(class BlockSource&, class Actor const&, int);
+MCAPI void sendTargetBlockHitTelemetryEvent(class BlockSource&, class Actor const&, int32_t);
 // NOLINTEND
 
 }; // namespace TargetBlock_Internal

@@ -11,3 +11,7 @@ public:
     AutomaticID(AutomaticID const&)            = delete;
     AutomaticID()                              = delete;
 };
+
+class Dimension;
+
+using DimensionType = AutomaticID<Dimension, int32_t>;

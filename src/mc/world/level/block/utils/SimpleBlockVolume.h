@@ -47,7 +47,7 @@ public:
     /**
      * @symbol ?getCapacity\@SimpleBlockVolume\@\@QEBAHXZ
      */
-    MCAPI int getCapacity() const;
+    MCAPI int32_t getCapacity() const;
     /**
      * @symbol ?getFrom\@SimpleBlockVolume\@\@QEBA?AVBlockPos\@\@XZ
      */
@@ -63,7 +63,7 @@ public:
     /**
      * @symbol ?getSpan\@SimpleBlockVolume\@\@QEBA?AU?$vec\@$02H$0A\@\@glm\@\@XZ
      */
-    MCAPI struct glm::vec<3, int, 0> getSpan() const;
+    MCAPI struct glm::vec<3, int32_t, 0> getSpan() const;
     /**
      * @symbol ?getTo\@SimpleBlockVolume\@\@QEBA?AVBlockPos\@\@XZ
      */
@@ -91,11 +91,11 @@ public:
     /**
      * @symbol ?translate\@SimpleBlockVolume\@\@QEAAAEAV1\@AEBU?$vec\@$02H$0A\@\@glm\@\@\@Z
      */
-    MCAPI class SimpleBlockVolume& translate(struct glm::vec<3, int, 0> const&);
+    MCAPI class SimpleBlockVolume& translate(struct glm::vec<3, int32_t, 0> const&);
     /**
      * @symbol ?translated\@SimpleBlockVolume\@\@QEBA?AV1\@AEBU?$vec\@$02H$0A\@\@glm\@\@\@Z
      */
-    MCAPI class SimpleBlockVolume translated(struct glm::vec<3, int, 0> const&) const;
+    MCAPI class SimpleBlockVolume translated(struct glm::vec<3, int32_t, 0> const&) const;
     /**
      * @symbol ?cerealBindTypes\@SimpleBlockVolume\@\@SAXXZ
      */

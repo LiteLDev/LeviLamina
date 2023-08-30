@@ -24,7 +24,7 @@ public:
      * @vftbl 3
      * @symbol ?setStrength\@ProducerComponent\@\@UEAAXH\@Z
      */
-    virtual void setStrength(int);
+    virtual void setStrength(int32_t);
     /**
      * @vftbl 8
      * @symbol ?canStopPower\@ProducerComponent\@\@UEBA_NXZ

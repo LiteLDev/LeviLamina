@@ -55,7 +55,7 @@ public:
         /**
          * @symbol ??RBlockComplexAliasContent\@BlockTypeRegistry\@\@QEBAPEBVBlock\@\@H\@Z
          */
-        MCAPI class Block const* operator()(int) const;
+        MCAPI class Block const* operator()(int32_t) const;
         /**
          * @symbol ??1BlockComplexAliasContent\@BlockTypeRegistry\@\@QEAA\@XZ
          */
@@ -85,7 +85,7 @@ public:
         /**
          * @symbol ??0LookupByNameImplReturnType\@BlockTypeRegistry\@\@QEAA\@V?$WeakPtr\@VBlockLegacy\@\@\@\@H_N\@Z
          */
-        MCAPI LookupByNameImplReturnType(class WeakPtr<class BlockLegacy>, int, bool);
+        MCAPI LookupByNameImplReturnType(class WeakPtr<class BlockLegacy>, int32_t, bool);
         // NOLINTEND
     };
 
@@ -154,7 +154,7 @@ public:
     /**
      * @symbol ?lookupByName\@BlockTypeRegistry\@\@SAPEBVBlock\@\@AEBVHashedString\@\@H_N\@Z
      */
-    MCAPI static class Block const* lookupByName(class HashedString const&, int, bool);
+    MCAPI static class Block const* lookupByName(class HashedString const&, int32_t, bool);
     /**
      * @symbol
      * ?lookupByName\@BlockTypeRegistry\@\@SAPEBVBlock\@\@AEBVHashedString\@\@AEBV?$vector\@UBlockComplexAliasBlockState\@BlockTypeRegistry\@\@V?$allocator\@UBlockComplexAliasBlockState\@BlockTypeRegistry\@\@\@std\@\@\@std\@\@_N\@Z
@@ -167,7 +167,7 @@ public:
     /**
      * @symbol ?prepareBlocks\@BlockTypeRegistry\@\@SAXI\@Z
      */
-    MCAPI static void prepareBlocks(unsigned int);
+    MCAPI static void prepareBlocks(uint32_t);
     /**
      * @symbol ?registerAlias\@BlockTypeRegistry\@\@SAXAEBVHashedString\@\@0\@Z
      */
@@ -177,7 +177,7 @@ public:
      * ?registerComplexAlias\@BlockTypeRegistry\@\@SAXAEBVHashedString\@\@V?$function\@$$A6APEBVBlock\@\@H\@Z\@std\@\@AEBV?$vector\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@\@2\@\@4\@AEBVBaseGameVersion\@\@\@Z
      */
     MCAPI static void
-    registerComplexAlias(class HashedString const&, std::function<class Block const*(int)>, std::vector<std::reference_wrapper<class HashedString const>> const&, class BaseGameVersion const&);
+    registerComplexAlias(class HashedString const&, std::function<class Block const*(int32_t)>, std::vector<std::reference_wrapper<class HashedString const>> const&, class BaseGameVersion const&);
     /**
      * @symbol ?unregisterBlock\@BlockTypeRegistry\@\@SAXAEBVHashedString\@\@\@Z
      */
@@ -195,7 +195,7 @@ public:
      * ?_lookupByNameImpl\@BlockTypeRegistry\@\@CA?AULookupByNameImplReturnType\@1\@AEBVHashedString\@\@HW4LookupByNameImplResolve\@1\@_N\@Z
      */
     MCAPI static struct BlockTypeRegistry::LookupByNameImplReturnType
-    _lookupByNameImpl(class HashedString const&, int, enum class BlockTypeRegistry::LookupByNameImplResolve, bool);
+    _lookupByNameImpl(class HashedString const&, int32_t, enum class BlockTypeRegistry::LookupByNameImplResolve, bool);
     // NOLINTEND
 
 private:

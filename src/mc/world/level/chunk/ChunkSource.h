@@ -97,7 +97,7 @@ public:
      * @vftbl 12
      * @symbol ?postProcessMobsAt\@ChunkSource\@\@UEAAXAEAVBlockSource\@\@HHAEAVRandom\@\@\@Z
      */
-    virtual void postProcessMobsAt(class BlockSource&, int, int, class Random&);
+    virtual void postProcessMobsAt(class BlockSource&, int32_t, int32_t, class Random&);
     /**
      * @vftbl 13
      * @symbol ?saveLiveChunk\@ChunkSource\@\@UEAA_NAEAVLevelChunk\@\@\@Z
@@ -209,7 +209,7 @@ public:
     /**
      * @symbol ??0ChunkSource\@\@QEAA\@PEAVDimension\@\@H\@Z
      */
-    MCAPI ChunkSource(class Dimension*, int);
+    MCAPI ChunkSource(class Dimension*, int32_t);
     /**
      * @symbol
      * ??0ChunkSource\@\@QEAA\@V?$unique_ptr\@VChunkSource\@\@U?$default_delete\@VChunkSource\@\@\@std\@\@\@std\@\@\@Z
@@ -224,7 +224,7 @@ public:
      * ?createEmptyView\@ChunkSource\@\@QEAA?AV?$GridArea\@V?$shared_ptr\@VLevelChunk\@\@\@std\@\@\@\@W4LoadMode\@1\@_NV?$function\@$$A6AXV?$buffer_span_mut\@V?$shared_ptr\@VLevelChunk\@\@\@std\@\@\@\@V?$buffer_span\@I\@\@\@Z\@std\@\@W4ChunkSourceViewGenerateMode\@\@PEBM\@Z
      */
     MCAPI class GridArea<std::shared_ptr<class LevelChunk>>
-    createEmptyView(enum class ChunkSource::LoadMode, bool, std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>, enum class ChunkSourceViewGenerateMode, float const*);
+    createEmptyView(enum class ChunkSource::LoadMode, bool, std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint32_t>)>, enum class ChunkSourceViewGenerateMode, float const*);
     /**
      * @symbol ?getAvailableChunk\@ChunkSource\@\@QEAA?AV?$shared_ptr\@VLevelChunk\@\@\@std\@\@AEBVChunkPos\@\@\@Z
      */
@@ -236,7 +236,7 @@ public:
     /**
      * @symbol ?getChunkSide\@ChunkSource\@\@QEBAHXZ
      */
-    MCAPI int getChunkSide() const;
+    MCAPI int32_t getChunkSide() const;
     /**
      * @symbol ?getDimension\@ChunkSource\@\@QEBAAEAVDimension\@\@XZ
      */
@@ -260,7 +260,7 @@ public:
     /**
      * @symbol ?shouldServerGeneratePos\@ChunkSource\@\@QEAA_NAEBVChunkPos\@\@MH\@Z
      */
-    MCAPI bool shouldServerGeneratePos(class ChunkPos const&, float, int);
+    MCAPI bool shouldServerGeneratePos(class ChunkPos const&, float, int32_t);
     /**
      * @symbol ?gPerfIsClientSide\@ChunkSource\@\@2_NA
      */
@@ -352,7 +352,7 @@ public:
     /**
      * @symbol ?_spawnChunkGenerationTasks\@ChunkSource\@\@IEAAXH_N\@Z
      */
-    MCAPI void _spawnChunkGenerationTasks(int, bool);
+    MCAPI void _spawnChunkGenerationTasks(int32_t, bool);
     // NOLINTEND
 
     // private:

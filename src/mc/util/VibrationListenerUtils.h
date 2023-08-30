@@ -7,11 +7,11 @@ namespace VibrationListenerUtils {
 /**
  * @symbol ?getGameEventFrequency\@VibrationListenerUtils\@\@YAHAEBVGameEvent\@\@\@Z
  */
-MCAPI int getGameEventFrequency(class GameEvent const&);
+MCAPI int32_t getGameEventFrequency(class GameEvent const&);
 /**
  * @symbol ?getResonateEventByFrequency\@VibrationListenerUtils\@\@YAAEBVGameEvent\@\@H\@Z
  */
-MCAPI class GameEvent const& getResonateEventByFrequency(int);
+MCAPI class GameEvent const& getResonateEventByFrequency(int32_t);
 /**
  * @symbol
  * ?ignoreVibrationIfSneaking\@VibrationListenerUtils\@\@YA_NAEAVBlockSource\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@\@Z

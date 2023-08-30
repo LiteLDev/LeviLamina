@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template <int T0, typename T1>
+template <int32_t T0, typename T1>
 class NormalNoiseImpl {
 
 public:

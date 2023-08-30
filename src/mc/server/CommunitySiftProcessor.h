@@ -91,11 +91,11 @@ public:
         class IMinecraftEventing*,
         std::string const&,
         enum class TextProcessingEventOrigin,
-        std::shared_ptr<std::vector<std::pair<int, std::string>>>,
+        std::shared_ptr<std::vector<std::pair<int32_t, std::string>>>,
         std::shared_ptr<std::vector<class Json::Value>>,
         bool,
         std::string const&,
-        int
+        int32_t
     );
     /**
      * @symbol

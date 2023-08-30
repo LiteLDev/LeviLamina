@@ -53,7 +53,7 @@ public:
      * @symbol
      * ??0GuiDataPickItemPacket\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0AEBH\@Z
      */
-    MCAPI GuiDataPickItemPacket(std::string const&, std::string const&, int const&);
+    MCAPI GuiDataPickItemPacket(std::string const&, std::string const&, int32_t const&);
     /**
      * @symbol ??0GuiDataPickItemPacket\@\@QEAA\@XZ
      */

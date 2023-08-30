@@ -91,12 +91,12 @@ public:
      * @vftbl 2
      * @symbol ?fclose\@FileSystemFileAccess\@\@UEAAHPEAX\@Z
      */
-    virtual int fclose(void*);
+    virtual int32_t fclose(void*);
     /**
      * @vftbl 3
      * @symbol ?fseek\@FileSystemFileAccess\@\@UEAAHPEAX_JH\@Z
      */
-    virtual int fseek(void*, int64_t, int);
+    virtual int32_t fseek(void*, int64_t, int32_t);
     /**
      * @vftbl 4
      * @symbol ?ftell\@FileSystemFileAccess\@\@UEAA_JPEAX\@Z

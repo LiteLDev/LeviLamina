@@ -112,7 +112,7 @@ public:
      * @vftbl 85
      * @symbol ?dispense\@IceBombItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
+    virtual bool dispense(class BlockSource&, class Container&, int32_t, class Vec3 const&, uint8_t) const;
     /**
      * @vftbl 103
      * @symbol ?getCooldownType\@IceBombItem\@\@UEBAAEBVHashedString\@\@XZ
@@ -122,7 +122,7 @@ public:
      * @vftbl 104
      * @symbol ?getCooldownTime\@IceBombItem\@\@UEBAHXZ
      */
-    virtual int getCooldownTime() const;
+    virtual int32_t getCooldownTime() const;
     /**
      * @vftbl 115
      * @symbol __unk_vfn_115
@@ -136,7 +136,7 @@ public:
     /**
      * @symbol ??0IceBombItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI IceBombItem(std::string const&, int);
+    MCAPI IceBombItem(std::string const&, int32_t);
     /**
      * @symbol ?ICE_BOMB_COOLDOWN\@IceBombItem\@\@2VHashedString\@\@B
      */

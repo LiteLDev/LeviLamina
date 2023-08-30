@@ -15,10 +15,10 @@ public:
     /**
      * @symbol ?initState\@BlockStateInstance\@\@QEAAXAEAIIIAEBVBlockState\@\@\@Z
      */
-    MCAPI void initState(unsigned int&, unsigned int, unsigned int, class BlockState const&);
+    MCAPI void initState(uint32_t&, uint32_t, uint32_t, class BlockState const&);
     /**
      * @symbol ?isValidData\@BlockStateInstance\@\@QEBA_NI\@Z
      */
-    MCAPI bool isValidData(unsigned int) const;
+    MCAPI bool isValidData(uint32_t) const;
     // NOLINTEND
 };

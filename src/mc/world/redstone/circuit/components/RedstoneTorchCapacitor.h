@@ -24,7 +24,7 @@ public:
      * @vftbl 1
      * @symbol ?getStrength\@RedstoneTorchCapacitor\@\@UEBAHXZ
      */
-    virtual int getStrength() const;
+    virtual int32_t getStrength() const;
     /**
      * @vftbl 10
      * @symbol ?removeSource\@RedstoneTorchCapacitor\@\@UEAAXAEBVBlockPos\@\@PEBVBaseCircuitComponent\@\@\@Z
@@ -35,7 +35,7 @@ public:
      * @symbol
      * ?addSource\@RedstoneTorchCapacitor\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEAHAEA_N\@Z
      */
-    virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
+    virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int32_t&, bool&);
     /**
      * @vftbl 12
      * @symbol
@@ -81,7 +81,7 @@ public:
      * @vftbl 25
      * @symbol ?getPoweroutDirection\@RedstoneTorchCapacitor\@\@UEBAEXZ
      */
-    virtual unsigned char getPoweroutDirection() const;
+    virtual uint8_t getPoweroutDirection() const;
     /**
      * @symbol ??0RedstoneTorchCapacitor\@\@QEAA\@XZ
      */
@@ -101,6 +101,6 @@ public:
     /**
      * @symbol ?FindStrongestStrength\@RedstoneTorchCapacitor\@\@AEAAHAEBVBlockPos\@\@AEAVCircuitSystem\@\@AEA_N\@Z
      */
-    MCAPI int FindStrongestStrength(class BlockPos const&, class CircuitSystem&, bool&);
+    MCAPI int32_t FindStrongestStrength(class BlockPos const&, class CircuitSystem&, bool&);
     // NOLINTEND
 };

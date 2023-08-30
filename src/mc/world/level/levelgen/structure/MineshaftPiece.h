@@ -30,7 +30,7 @@ public:
      * @vftbl 10
      * @symbol ?canBeReplaced\@MineshaftPiece\@\@UEAA_NAEAVBlockSource\@\@HHHAEBVBoundingBox\@\@\@Z
      */
-    virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
+    virtual bool canBeReplaced(class BlockSource&, int32_t, int32_t, int32_t, class BoundingBox const&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINESHAFTPIECE
     /**
      * @symbol __unk_destructor_-1
@@ -45,11 +45,11 @@ public:
         struct MineshaftData&,
         std::vector<std::unique_ptr<class StructurePiece>>&,
         class Random&,
-        int,
-        int,
-        int,
-        int,
-        int
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t
     );
     /**
      * @symbol
@@ -59,15 +59,15 @@ public:
         class StructurePiece&,
         std::vector<std::unique_ptr<class StructurePiece>>&,
         class Random&,
-        int,
-        int,
-        int,
-        int,
-        int
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t
     );
     /**
      * @symbol ?setPlanksBlock\@MineshaftPiece\@\@QEAAXAEAVBlockSource\@\@AEBVBlock\@\@HHH\@Z
      */
-    MCAPI void setPlanksBlock(class BlockSource&, class Block const&, int, int, int);
+    MCAPI void setPlanksBlock(class BlockSource&, class Block const&, int32_t, int32_t, int32_t);
     // NOLINTEND
 };

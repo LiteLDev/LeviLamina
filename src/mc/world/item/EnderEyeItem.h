@@ -121,6 +121,6 @@ public:
     /**
      * @symbol ??0EnderEyeItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI EnderEyeItem(std::string const&, int);
+    MCAPI EnderEyeItem(std::string const&, int32_t);
     // NOLINTEND
 };

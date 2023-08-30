@@ -31,11 +31,11 @@ public:
     /**
      * @symbol ?OnBroadcastDiscoveryRequestReceivedGetResponse\@NetherNetConnector\@\@EEAA_NPEAXPEAH\@Z
      */
-    MCVAPI bool OnBroadcastDiscoveryRequestReceivedGetResponse(void*, int*);
+    MCVAPI bool OnBroadcastDiscoveryRequestReceivedGetResponse(void*, int32_t*);
     /**
      * @symbol ?OnBroadcastResponseReceived\@NetherNetConnector\@\@EEAAXUNetworkID\@NetherNet\@\@PEBXH\@Z
      */
-    MCVAPI void OnBroadcastResponseReceived(struct NetherNet::NetworkID, void const*, int);
+    MCVAPI void OnBroadcastResponseReceived(struct NetherNet::NetworkID, void const*, int32_t);
     /**
      * @symbol ?OnSessionConnectFailure\@NetherNetConnector\@\@EEAAXUNetworkID\@NetherNet\@\@W4ESessionError\@3\@\@Z
      */
@@ -43,7 +43,7 @@ public:
     /**
      * @symbol ?OnSessionGetConnectionFlags\@NetherNetConnector\@\@EEAAXUNetworkID\@NetherNet\@\@PEAI\@Z
      */
-    MCVAPI void OnSessionGetConnectionFlags(struct NetherNet::NetworkID, unsigned int*);
+    MCVAPI void OnSessionGetConnectionFlags(struct NetherNet::NetworkID, uint32_t*);
     /**
      * @symbol ?OnSessionRequested\@NetherNetConnector\@\@EEAAXUNetworkID\@NetherNet\@\@\@Z
      */
@@ -136,11 +136,11 @@ public:
     /**
      * @symbol ?isPacketAvailable\@NetherNetConnector\@\@QEBA_NUNetworkID\@NetherNet\@\@PEAI\@Z
      */
-    MCAPI bool isPacketAvailable(struct NetherNet::NetworkID, unsigned int*) const;
+    MCAPI bool isPacketAvailable(struct NetherNet::NetworkID, uint32_t*) const;
     /**
      * @symbol ?readPacket\@NetherNetConnector\@\@QEBA_NUNetworkID\@NetherNet\@\@PEAXIPEAI\@Z
      */
-    MCAPI bool readPacket(struct NetherNet::NetworkID, void*, unsigned int, unsigned int*) const;
+    MCAPI bool readPacket(struct NetherNet::NetworkID, void*, uint32_t, uint32_t*) const;
     /**
      * @symbol
      * ?registerRelayServerCredentialsReadyCallback\@NetherNetConnector\@\@QEBAX$$QEAV?$function\@$$A6AXW4ERelayServerConfigurationResult\@NetherNet\@\@\@Z\@std\@\@\@Z
@@ -151,24 +151,23 @@ public:
     /**
      * @symbol ?sendPacket\@NetherNetConnector\@\@QEBA_NUNetworkID\@NetherNet\@\@PEBDIW4ESendType\@3\@\@Z
      */
-    MCAPI bool
-    sendPacket(struct NetherNet::NetworkID, char const*, unsigned int, enum class NetherNet::ESendType) const;
+    MCAPI bool sendPacket(struct NetherNet::NetworkID, char const*, uint32_t, enum class NetherNet::ESendType) const;
     /**
      * @symbol ?setBroadcastRequestCallback\@NetherNetConnector\@\@QEAAX$$QEAV?$function\@$$A6A_NPEAXPEAH\@Z\@std\@\@\@Z
      */
-    MCAPI void setBroadcastRequestCallback(std::function<bool(void*, int*)>&&);
+    MCAPI void setBroadcastRequestCallback(std::function<bool(void*, int32_t*)>&&);
     /**
      * @symbol
      * ?setBroadcastResponseCallback\@NetherNetConnector\@\@QEAAX$$QEAV?$function\@$$A6AXAEBUNetworkID\@NetherNet\@\@PEBXH\@Z\@std\@\@\@Z
      */
     MCAPI void
-    setBroadcastResponseCallback(std::function<void(struct NetherNet::NetworkID const&, void const*, int)>&&);
+    setBroadcastResponseCallback(std::function<void(struct NetherNet::NetworkID const&, void const*, int32_t)>&&);
     /**
      * @symbol
      * ?signIntoSignalingService\@NetherNetConnector\@\@QEBAX$$QEAV?$function\@$$A6AXVerror_code\@std\@\@\@Z\@std\@\@$$QEAV?$function\@$$A6AXW4SignalingHostConnectionStatus\@NetherNet\@\@I\@Z\@3\@$$QEAUSignalingConfiguration\@IWebRTCSignalingInterface\@NetherNet\@\@\@Z
      */
     MCAPI void
-    signIntoSignalingService(std::function<void(std::error_code)>&&, std::function<void(enum class NetherNet::SignalingHostConnectionStatus, unsigned int)>&&, struct NetherNet::IWebRTCSignalingInterface::SignalingConfiguration&&)
+    signIntoSignalingService(std::function<void(std::error_code)>&&, std::function<void(enum class NetherNet::SignalingHostConnectionStatus, uint32_t)>&&, struct NetherNet::IWebRTCSignalingInterface::SignalingConfiguration&&)
         const;
     /**
      * @symbol ?signOutFromSignalingService\@NetherNetConnector\@\@QEBAXXZ

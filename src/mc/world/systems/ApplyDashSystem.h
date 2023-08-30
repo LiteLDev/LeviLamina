@@ -23,7 +23,8 @@ public:
      * @symbol
      * ?doDash\@ApplyDashSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUJumpPreventionResult\@\@AEBVBaseAttributeMap\@\@AEBV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@std\@\@MMMIAEAVVec3\@\@AEAMAEAVSynchedActorData\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UDashCooldownTimerComponent\@\@\@\@\@Z
      */
-    MCAPI static void doDash(class StrictEntityContext const&, struct JumpPreventionResult const&, class BaseAttributeMap const&, std::vector<class MobEffectInstance> const&, float, float, float, unsigned int, class Vec3&, float&, class SynchedActorData&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct DashCooldownTimerComponent>&);
+    MCAPI static void
+    doDash(class StrictEntityContext const&, struct JumpPreventionResult const&, class BaseAttributeMap const&, std::vector<class MobEffectInstance> const&, float, float, float, uint32_t, class Vec3&, float&, class SynchedActorData&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct DashCooldownTimerComponent>&);
     /**
      * @symbol
      * ?tickApplyDashModifierSystem\@ApplyDashSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUTriggerJumpRequestComponent\@\@AEBVDashComponent\@\@AEBUAttributesComponent\@\@AEBUActorRotationComponent\@\@AEBUMobEffectsComponent\@\@AEAUStateVectorComponent\@\@AEAUJumpPendingScaleComponent\@\@AEAUSynchedActorDataComponent\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UDashCooldownTimerComponent\@\@\@\@\@Z

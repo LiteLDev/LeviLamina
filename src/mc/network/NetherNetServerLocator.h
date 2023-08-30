@@ -60,8 +60,8 @@ public:
         std::string const&,
         class Bedrock::NonOwnerPointer<class AppPlatform>,
         enum class GameType,
-        int,
-        int,
+        int32_t,
+        int32_t,
         bool,
         bool
     );

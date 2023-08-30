@@ -32,12 +32,12 @@ public:
      * @vftbl 7
      * @symbol ?setSlot\@TradeContainerManagerModel\@\@UEAAXHAEBVItemStack\@\@_N\@Z
      */
-    virtual void setSlot(int, class ItemStack const&, bool);
+    virtual void setSlot(int32_t, class ItemStack const&, bool);
     /**
      * @vftbl 8
      * @symbol ?getSlot\@TradeContainerManagerModel\@\@UEBAAEBVItemStack\@\@H\@Z
      */
-    virtual class ItemStack const& getSlot(int) const;
+    virtual class ItemStack const& getSlot(int32_t) const;
     /**
      * @vftbl 10
      * @symbol ?broadcastChanges\@TradeContainerManagerModel\@\@UEAAXXZ

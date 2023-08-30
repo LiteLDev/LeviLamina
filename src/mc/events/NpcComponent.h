@@ -53,7 +53,7 @@ public:
      * @symbol
      * ?executeCommandAction\@NpcComponent\@\@QEAAXAEAVActor\@\@AEAVPlayer\@\@HAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void executeCommandAction(class Actor&, class Player&, int, std::string const&);
+    MCAPI void executeCommandAction(class Actor&, class Player&, int32_t, std::string const&);
     /**
      * @symbol
      * ?executeOpeningCommands\@NpcComponent\@\@QEAAXAEAVActor\@\@AEAVPlayer\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -66,7 +66,7 @@ public:
     /**
      * @symbol ?getCommandCounts\@NpcComponent\@\@QEBA?AV?$vector\@HV?$allocator\@H\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<int> getCommandCounts() const;
+    MCAPI std::vector<int32_t> getCommandCounts() const;
     /**
      * @symbol ?getInteraction\@NpcComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
@@ -89,11 +89,11 @@ public:
     /**
      * @symbol ?getSkinIndex\@NpcComponent\@\@QEBAHXZ
      */
-    MCAPI int getSkinIndex() const;
+    MCAPI int32_t getSkinIndex() const;
     /**
      * @symbol ?getUrlCount\@NpcComponent\@\@QEBAHXZ
      */
-    MCAPI int getUrlCount() const;
+    MCAPI int32_t getUrlCount() const;
     /**
      * @symbol ?initClientOnlyData\@NpcComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
@@ -154,7 +154,7 @@ public:
     /**
      * @symbol ?setSkinIndex\@NpcComponent\@\@QEAAXAEAVActor\@\@H_N\@Z
      */
-    MCAPI void setSkinIndex(class Actor&, int, bool);
+    MCAPI void setSkinIndex(class Actor&, int32_t, bool);
     // NOLINTEND
 
     // private:

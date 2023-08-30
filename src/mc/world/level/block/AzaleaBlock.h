@@ -47,7 +47,7 @@ public:
      * @vftbl 27
      * @symbol ?canProvideMultifaceSupport\@AzaleaBlock\@\@UEBA_NAEBVBlock\@\@E\@Z
      */
-    virtual bool canProvideMultifaceSupport(class Block const&, unsigned char) const;
+    virtual bool canProvideMultifaceSupport(class Block const&, uint8_t) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -257,7 +257,7 @@ public:
     /**
      * @symbol ??0AzaleaBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI AzaleaBlock(std::string const&, int);
+    MCAPI AzaleaBlock(std::string const&, int32_t);
     // NOLINTEND
 
     // private:

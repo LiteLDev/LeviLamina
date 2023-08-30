@@ -62,7 +62,7 @@ public:
      * @vftbl 25
      * @symbol ?getPoweroutDirection\@SidePoweredComponent\@\@UEBAEXZ
      */
-    virtual unsigned char getPoweroutDirection() const;
+    virtual uint8_t getPoweroutDirection() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEPOWEREDCOMPONENT
     /**
      * @symbol __unk_destructor_-1

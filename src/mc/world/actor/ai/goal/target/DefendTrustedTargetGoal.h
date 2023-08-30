@@ -43,7 +43,7 @@ public:
      * ??0DefendTrustedTargetGoal\@\@QEAA\@AEAVMob\@\@AEBV?$vector\@UMobDescriptor\@\@V?$allocator\@UMobDescriptor\@\@\@std\@\@\@std\@\@MH_NHW4LevelSoundEvent\@\@AEBVActorDefinitionTrigger\@\@\@Z
      */
     MCAPI
-    DefendTrustedTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&, float, int, bool, int, enum class LevelSoundEvent, class ActorDefinitionTrigger const&);
+    DefendTrustedTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&, float, int32_t, bool, int32_t, enum class LevelSoundEvent, class ActorDefinitionTrigger const&);
     // NOLINTEND
 
     // private:

@@ -76,7 +76,7 @@ public:
      * @vftbl 9
      * @symbol ?_genMaskingKey\@RakWebSocketClient\@\@MEBAIXZ
      */
-    virtual unsigned int _genMaskingKey() const = 0;
+    virtual uint32_t _genMaskingKey() const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKET
     /**
      * @symbol __unk_destructor_-1
@@ -96,7 +96,7 @@ public:
     /**
      * @symbol ?sendBinary\@RakWebSocket\@\@QEAA_NPEBE_K\@Z
      */
-    MCAPI bool sendBinary(unsigned char const*, uint64_t);
+    MCAPI bool sendBinary(uint8_t const*, uint64_t);
     // NOLINTEND
 
     // protected:
@@ -142,15 +142,15 @@ public:
     /**
      * @symbol ?_sendControlFrame\@RakWebSocket\@\@IEAA_NPEBE_KW4OpCode\@\@\@Z
      */
-    MCAPI bool _sendControlFrame(unsigned char const*, uint64_t, enum class OpCode);
+    MCAPI bool _sendControlFrame(uint8_t const*, uint64_t, enum class OpCode);
     /**
      * @symbol ?_sendDataFrame\@RakWebSocket\@\@IEAA_NPEBEIW4OpCode\@\@_N\@Z
      */
-    MCAPI bool _sendDataFrame(unsigned char const*, unsigned int, enum class OpCode, bool);
+    MCAPI bool _sendDataFrame(uint8_t const*, uint32_t, enum class OpCode, bool);
     /**
      * @symbol ?_sendNonControlFrame\@RakWebSocket\@\@IEAA_NPEBE_KW4OpCode\@\@\@Z
      */
-    MCAPI bool _sendNonControlFrame(unsigned char const*, uint64_t, enum class OpCode);
+    MCAPI bool _sendNonControlFrame(uint8_t const*, uint64_t, enum class OpCode);
     /**
      * @symbol
      * ?_splitWebSocketURI\@RakWebSocket\@\@IEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV23\@11\@Z

@@ -16,7 +16,7 @@ namespace BlockSerializationUtils {
  * @symbol
  * ?BLOCK_REPLACE_DATA_MAP\@BlockSerializationUtils\@\@3V?$unordered_map\@VHashedString\@\@V?$function\@$$A6AXHAEAVCompoundTag\@\@\@Z\@std\@\@U?$hash\@VHashedString\@\@\@3\@U?$equal_to\@VHashedString\@\@\@3\@V?$allocator\@U?$pair\@$$CBVHashedString\@\@V?$function\@$$A6AXHAEAVCompoundTag\@\@\@Z\@std\@\@\@std\@\@\@3\@\@std\@\@A
  */
-MCAPI extern std::unordered_map<class HashedString, std::function<void(int, class CompoundTag&)>>
+MCAPI extern std::unordered_map<class HashedString, std::function<void(int32_t, class CompoundTag&)>>
     BLOCK_REPLACE_DATA_MAP;
 /**
  * @symbol ?clearBlockReplaceDataMap\@BlockSerializationUtils\@\@YAXXZ

@@ -46,7 +46,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@FarmBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -211,7 +211,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@FarmBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -276,7 +276,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@FarmBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FARMBLOCK
     /**
      * @symbol ?canBeSilkTouched\@FarmBlock\@\@MEBA_NXZ
@@ -286,7 +286,7 @@ public:
     /**
      * @symbol ??0FarmBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI FarmBlock(std::string const&, int);
+    MCAPI FarmBlock(std::string const&, int32_t);
     /**
      * @symbol ?BLOCK_AABB\@FarmBlock\@\@2VAABB\@\@A
      */

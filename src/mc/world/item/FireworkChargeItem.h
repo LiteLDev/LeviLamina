@@ -86,7 +86,7 @@ public:
      * @vftbl 67
      * @symbol ?isValidAuxValue\@FireworkChargeItem\@\@UEBA_NH\@Z
      */
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
     /**
      * @vftbl 70
      * @symbol __unk_vfn_70
@@ -141,7 +141,7 @@ public:
      * @symbol
      * ??0FireworkChargeItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI FireworkChargeItem(std::string const&, int);
+    MCAPI FireworkChargeItem(std::string const&, int32_t);
     /**
      * @symbol
      * ?getFormattedHoverText\@FireworkChargeItem\@\@SAXAEBVCompoundTag\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV34\@\@Z
@@ -154,8 +154,8 @@ public:
     MCAPI static class ItemInstance const& initFireworkChargeItem(
         class ItemInstance&,
         enum class FireworkChargeItem::Shape,
-        std::vector<unsigned char>,
-        std::vector<unsigned char>,
+        std::vector<uint8_t>,
+        std::vector<uint8_t>,
         bool,
         bool
     );
@@ -166,8 +166,8 @@ public:
     MCAPI static class ItemStack const& initFireworkChargeItem(
         class ItemStack&,
         enum class FireworkChargeItem::Shape,
-        std::vector<unsigned char>,
-        std::vector<unsigned char>,
+        std::vector<uint8_t>,
+        std::vector<uint8_t>,
         bool,
         bool
     );
@@ -216,8 +216,8 @@ public:
     MCAPI static void _initFireworkChargeItem(
         class ItemStackBase&,
         enum class FireworkChargeItem::Shape,
-        std::vector<unsigned char>,
-        std::vector<unsigned char>,
+        std::vector<uint8_t>,
+        std::vector<uint8_t>,
         bool,
         bool
     );
@@ -225,6 +225,6 @@ public:
      * @symbol
      * ?appendColors\@FireworkChargeItem\@\@CAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$vector\@EV?$allocator\@E\@std\@\@\@3\@\@Z
      */
-    MCAPI static void appendColors(std::string&, std::vector<unsigned char>);
+    MCAPI static void appendColors(std::string&, std::vector<uint8_t>);
     // NOLINTEND
 };

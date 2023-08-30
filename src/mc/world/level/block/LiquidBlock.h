@@ -212,12 +212,12 @@ public:
      * @vftbl 135
      * @symbol ?getColor\@LiquidBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getColor(class Block const&) const;
+    virtual int32_t getColor(class Block const&) const;
     /**
      * @vftbl 137
      * @symbol ?getColorAtPos\@LiquidBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual int getColorAtPos(class BlockSource&, class BlockPos const&) const;
+    virtual int32_t getColorAtPos(class BlockSource&, class BlockPos const&) const;
     /**
      * @vftbl 140
      * @symbol ?onGraphicsModeChanged\@LiquidBlock\@\@UEAAXAEBUBlockGraphicsModeChangeContext\@\@\@Z
@@ -282,7 +282,7 @@ public:
      * @vftbl 186
      * @symbol ?getResourceCount\@LiquidBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIQUIDBLOCK
     /**
      * @symbol ?canBeSilkTouched\@LiquidBlock\@\@UEBA_NXZ
@@ -297,15 +297,15 @@ public:
      * @symbol
      * ??0LiquidBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI LiquidBlock(std::string const&, int, class Material const&);
+    MCAPI LiquidBlock(std::string const&, int32_t, class Material const&);
     /**
      * @symbol ?getTickDelay\@LiquidBlock\@\@QEBAHAEAVBlockSource\@\@\@Z
      */
-    MCAPI int getTickDelay(class BlockSource&) const;
+    MCAPI int32_t getTickDelay(class BlockSource&) const;
     /**
      * @symbol ?getHeightFromDepth\@LiquidBlock\@\@SAMH\@Z
      */
-    MCAPI static float getHeightFromDepth(int);
+    MCAPI static float getHeightFromDepth(int32_t);
     /**
      * @symbol
      * ?handleEntityInside\@LiquidBlock\@\@SAXAEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEAVVec3\@\@AEBVMaterial\@\@\@Z
@@ -331,11 +331,11 @@ public:
     /**
      * @symbol ?getDepth\@LiquidBlock\@\@KAHAEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVMaterial\@\@\@Z
      */
-    MCAPI static int getDepth(class IConstBlockSource const&, class BlockPos const&, class Material const&);
+    MCAPI static int32_t getDepth(class IConstBlockSource const&, class BlockPos const&, class Material const&);
     /**
      * @symbol ?getRenderedDepth\@LiquidBlock\@\@KAHAEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVMaterial\@\@\@Z
      */
-    MCAPI static int getRenderedDepth(class IConstBlockSource const&, class BlockPos const&, class Material const&);
+    MCAPI static int32_t getRenderedDepth(class IConstBlockSource const&, class BlockPos const&, class Material const&);
     // NOLINTEND
 
     // private:

@@ -22,6 +22,6 @@ public:
     /**
      * @symbol ?DEFAULT_LEVEL\@ActorSelectorArgs\@\@2U?$pair\@HH\@std\@\@B
      */
-    MCAPI static std::pair<int, int> const DEFAULT_LEVEL;
+    MCAPI static std::pair<int32_t, int32_t> const DEFAULT_LEVEL;
     // NOLINTEND
 };

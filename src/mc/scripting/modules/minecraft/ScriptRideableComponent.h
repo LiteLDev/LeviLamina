@@ -67,7 +67,7 @@ public:
      * @symbol
      * ?getControllingSeat\@ScriptRideableComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getControllingSeat() const;
+    MCAPI class Scripting::Result<int32_t> getControllingSeat() const;
     /**
      * @symbol
      * ?getCrouchingSkipInteract\@ScriptRideableComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@XZ
@@ -103,7 +103,7 @@ public:
     /**
      * @symbol ?getSeatCount\@ScriptRideableComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getSeatCount() const;
+    MCAPI class Scripting::Result<int32_t> getSeatCount() const;
     /**
      * @symbol
      * ?getSeats\@ScriptRideableComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$vector\@USeatDescription\@\@V?$allocator\@USeatDescription\@\@\@std\@\@\@std\@\@\@Scripting\@\@XZ

@@ -21,16 +21,16 @@ public:
      * @vftbl 1
      * @symbol ?getAmount\@Amplifier\@\@UEBAMHM\@Z
      */
-    virtual float getAmount(int, float) const;
+    virtual float getAmount(int32_t, float) const;
     /**
      * @vftbl 2
      * @symbol ?shouldBuff\@Amplifier\@\@UEBA_NHH\@Z
      */
-    virtual bool shouldBuff(int, int) const;
+    virtual bool shouldBuff(int32_t, int32_t) const;
     /**
      * @vftbl 3
      * @symbol ?getTickInterval\@Amplifier\@\@UEBAHH\@Z
      */
-    virtual int getTickInterval(int) const;
+    virtual int32_t getTickInterval(int32_t) const;
     // NOLINTEND
 };

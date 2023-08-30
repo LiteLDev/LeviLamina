@@ -25,22 +25,22 @@ public:
      * @vftbl 1
      * @symbol ?startDestroyBlock\@SurvivalMode\@\@UEAA_NAEBVBlockPos\@\@EAEA_N\@Z
      */
-    virtual bool startDestroyBlock(class BlockPos const&, unsigned char, bool&);
+    virtual bool startDestroyBlock(class BlockPos const&, uint8_t, bool&);
     /**
      * @vftbl 2
      * @symbol ?destroyBlock\@SurvivalMode\@\@UEAA_NAEBVBlockPos\@\@E\@Z
      */
-    virtual bool destroyBlock(class BlockPos const&, unsigned char);
+    virtual bool destroyBlock(class BlockPos const&, uint8_t);
     /**
      * @vftbl 5
      * @symbol ?startBuildBlock\@SurvivalMode\@\@UEAAXAEBVBlockPos\@\@E\@Z
      */
-    virtual void startBuildBlock(class BlockPos const&, unsigned char);
+    virtual void startBuildBlock(class BlockPos const&, uint8_t);
     /**
      * @vftbl 6
      * @symbol ?buildBlock\@SurvivalMode\@\@UEAA_NAEBVBlockPos\@\@E_N\@Z
      */
-    virtual bool buildBlock(class BlockPos const&, unsigned char, bool);
+    virtual bool buildBlock(class BlockPos const&, uint8_t, bool);
     /**
      * @vftbl 9
      * @symbol ?tick\@SurvivalMode\@\@UEAAXXZ
@@ -57,7 +57,7 @@ public:
      * ?useItemOn\@SurvivalMode\@\@UEAA?AVInteractionResult\@\@AEAVItemStack\@\@AEBVBlockPos\@\@EAEBVVec3\@\@PEBVBlock\@\@\@Z
      */
     virtual class InteractionResult
-    useItemOn(class ItemStack&, class BlockPos const&, unsigned char, class Vec3 const&, class Block const*);
+    useItemOn(class ItemStack&, class BlockPos const&, uint8_t, class Vec3 const&, class Block const*);
     /**
      * @vftbl 13
      * @symbol ?interact\@SurvivalMode\@\@UEAA_NAEAVActor\@\@AEBVVec3\@\@\@Z

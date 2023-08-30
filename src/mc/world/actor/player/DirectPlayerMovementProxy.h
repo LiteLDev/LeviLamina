@@ -41,7 +41,7 @@ public:
     /**
      * @symbol ?_setPositionMode\@DirectPlayerMovementProxy\@\@UEAAXH\@Z
      */
-    MCVAPI void _setPositionMode(int);
+    MCVAPI void _setPositionMode(int32_t);
     /**
      * @symbol ?areHandsBusy\@DirectPlayerMovementProxy\@\@UEBA_NXZ
      */
@@ -85,7 +85,7 @@ public:
     /**
      * @symbol ?getGlidingTicks\@DirectPlayerMovementProxy\@\@UEBAHXZ
      */
-    MCVAPI int getGlidingTicks() const;
+    MCVAPI int32_t getGlidingTicks() const;
     /**
      * @symbol ?getItemUseMovementModifier\@DirectPlayerMovementProxy\@\@UEBAMXZ
      */

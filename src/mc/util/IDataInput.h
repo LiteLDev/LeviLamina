@@ -48,12 +48,12 @@ public:
      * @vftbl 6
      * @symbol ?readShort\@BigEndianStringByteInput\@\@UEAAFXZ
      */
-    virtual short readShort() = 0;
+    virtual int16_t readShort() = 0;
     /**
      * @vftbl 7
      * @symbol ?readInt\@BigEndianStringByteInput\@\@UEAAHXZ
      */
-    virtual int readInt() = 0;
+    virtual int32_t readInt() = 0;
     /**
      * @vftbl 8
      * @symbol ?readLongLong\@BigEndianStringByteInput\@\@UEAA_JXZ

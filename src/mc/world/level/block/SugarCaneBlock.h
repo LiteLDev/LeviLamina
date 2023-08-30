@@ -223,17 +223,17 @@ public:
      * @vftbl 135
      * @symbol ?getColor\@SugarCaneBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getColor(class Block const&) const;
+    virtual int32_t getColor(class Block const&) const;
     /**
      * @vftbl 136
      * @symbol ?getColor\@SugarCaneBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual int32_t getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
     /**
      * @vftbl 137
      * @symbol ?getColorAtPos\@SugarCaneBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual int getColorAtPos(class BlockSource&, class BlockPos const&) const;
+    virtual int32_t getColorAtPos(class BlockSource&, class BlockPos const&) const;
     /**
      * @vftbl 140
      * @symbol ?onGraphicsModeChanged\@SugarCaneBlock\@\@UEAAXAEBUBlockGraphicsModeChangeContext\@\@\@Z
@@ -298,7 +298,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@SugarCaneBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUGARCANEBLOCK
     /**
      * @symbol ?canBeSilkTouched\@SugarCaneBlock\@\@MEBA_NXZ
@@ -313,7 +313,7 @@ public:
      * @symbol
      * ??0SugarCaneBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI SugarCaneBlock(std::string const&, int);
+    MCAPI SugarCaneBlock(std::string const&, int32_t);
     // NOLINTEND
 
     // private:

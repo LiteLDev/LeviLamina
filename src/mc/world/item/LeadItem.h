@@ -114,15 +114,15 @@ public:
      * ?_useOn\@LeadItem\@\@EEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _useOn(class ItemStack&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
     /**
      * @symbol ??0LeadItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI LeadItem(std::string const&, int);
+    MCAPI LeadItem(std::string const&, int32_t);
     /**
      * @symbol ?bindPlayerMobs\@LeadItem\@\@SA_NAEAVActor\@\@HHHPEAVItemInstance\@\@\@Z
      */
-    MCAPI static bool bindPlayerMobs(class Actor&, int, int, int, class ItemInstance*);
+    MCAPI static bool bindPlayerMobs(class Actor&, int32_t, int32_t, int32_t, class ItemInstance*);
     /**
      * @symbol ?canBindPlayerMobs\@LeadItem\@\@SA_NAEBVActor\@\@AEBVBlockPos\@\@\@Z
      */

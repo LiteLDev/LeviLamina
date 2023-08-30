@@ -53,7 +53,7 @@ public:
      * @symbol
      * ??0ModalFormRequestPacket\@\@QEAA\@IAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI ModalFormRequestPacket(unsigned int, std::string const&);
+    MCAPI ModalFormRequestPacket(uint32_t, std::string const&);
     /**
      * @symbol ??0ModalFormRequestPacket\@\@QEAA\@XZ
      */

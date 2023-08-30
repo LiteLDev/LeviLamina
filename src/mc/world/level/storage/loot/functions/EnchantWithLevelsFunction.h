@@ -30,7 +30,7 @@ public:
      * @symbol
      * ?apply\@EnchantWithLevelsFunction\@\@UEAAHAEAVItemStack\@\@AEAVRandom\@\@AEBUTrade\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual int apply(class ItemStack&, class Random&, struct Trade const&, class LootTableContext&);
+    virtual int32_t apply(class ItemStack&, class Random&, struct Trade const&, class LootTableContext&);
     /**
      * @vftbl 3
      * @symbol ?apply\@EnchantWithLevelsFunction\@\@UEAAXAEAVItemInstance\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
@@ -41,6 +41,6 @@ public:
      * @symbol
      * ?apply\@EnchantWithLevelsFunction\@\@UEAAHAEAVItemInstance\@\@AEAVRandom\@\@AEBUTrade\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual int apply(class ItemInstance&, class Random&, struct Trade const&, class LootTableContext&);
+    virtual int32_t apply(class ItemInstance&, class Random&, struct Trade const&, class LootTableContext&);
     // NOLINTEND
 };

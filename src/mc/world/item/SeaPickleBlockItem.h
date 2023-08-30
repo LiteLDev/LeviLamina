@@ -57,7 +57,7 @@ public:
      * @vftbl 45
      * @symbol ?getLevelDataForAuxValue\@SeaPickleBlockItem\@\@UEBAHH\@Z
      */
-    virtual int getLevelDataForAuxValue(int) const;
+    virtual int32_t getLevelDataForAuxValue(int32_t) const;
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -119,11 +119,11 @@ public:
      * ?_useOn\@SeaPickleBlockItem\@\@UEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _useOn(class ItemStack&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
     /**
      * @symbol
      * ??0SeaPickleBlockItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI SeaPickleBlockItem(std::string const&, int);
+    MCAPI SeaPickleBlockItem(std::string const&, int32_t);
     // NOLINTEND
 };

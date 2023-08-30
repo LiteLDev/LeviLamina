@@ -35,17 +35,17 @@ public:
          * @vftbl 2
          * @symbol ?getChunkTickRange\@WorldAccessor\@DespawnComponent\@\@UEBAIXZ
          */
-        virtual unsigned int getChunkTickRange() const = 0;
+        virtual uint32_t getChunkTickRange() const = 0;
         /**
          * @vftbl 3
          * @symbol ?areChunksFullyLoaded\@WorldAccessor\@DespawnComponent\@\@UEBA_NAEBVBlockPos\@\@H\@Z
          */
-        virtual bool areChunksFullyLoaded(class BlockPos const&, int) const = 0;
+        virtual bool areChunksFullyLoaded(class BlockPos const&, int32_t) const = 0;
         /**
          * @vftbl 4
          * @symbol ?hasUntickedNeighborChunk\@WorldAccessor\@DespawnComponent\@\@UEBA_NAEBVChunkPos\@\@H\@Z
          */
-        virtual bool hasUntickedNeighborChunk(class ChunkPos const&, int) const = 0;
+        virtual bool hasUntickedNeighborChunk(class ChunkPos const&, int32_t) const = 0;
         /**
          * @vftbl 5
          * @symbol ?getChanceRandomize\@WorldAccessor\@DespawnComponent\@\@UEAAAEAVRandomize\@\@XZ
@@ -56,7 +56,7 @@ public:
          * @symbol
          * ?getActorNoActionTime\@WorldAccessor\@DespawnComponent\@\@UEBA?AV?$optional\@H\@std\@\@AEBVActor\@\@\@Z
          */
-        virtual std::optional<int> getActorNoActionTime(class Actor const&) const = 0;
+        virtual std::optional<int32_t> getActorNoActionTime(class Actor const&) const = 0;
         /**
          * @vftbl 7
          * @symbol ?resetActorNoActionTime\@WorldAccessor\@DespawnComponent\@\@UEAAXAEAVActor\@\@\@Z
@@ -95,17 +95,17 @@ public:
          * @vftbl 2
          * @symbol ?getChunkTickRange\@WorldAccessor\@DespawnComponent\@\@UEBAIXZ
          */
-        virtual unsigned int getChunkTickRange() const;
+        virtual uint32_t getChunkTickRange() const;
         /**
          * @vftbl 3
          * @symbol ?areChunksFullyLoaded\@WorldAccessor\@DespawnComponent\@\@UEBA_NAEBVBlockPos\@\@H\@Z
          */
-        virtual bool areChunksFullyLoaded(class BlockPos const&, int) const;
+        virtual bool areChunksFullyLoaded(class BlockPos const&, int32_t) const;
         /**
          * @vftbl 4
          * @symbol ?hasUntickedNeighborChunk\@WorldAccessor\@DespawnComponent\@\@UEBA_NAEBVChunkPos\@\@H\@Z
          */
-        virtual bool hasUntickedNeighborChunk(class ChunkPos const&, int) const;
+        virtual bool hasUntickedNeighborChunk(class ChunkPos const&, int32_t) const;
         /**
          * @vftbl 5
          * @symbol ?getChanceRandomize\@WorldAccessor\@DespawnComponent\@\@UEAAAEAVRandomize\@\@XZ
@@ -116,7 +116,7 @@ public:
          * @symbol
          * ?getActorNoActionTime\@WorldAccessor\@DespawnComponent\@\@UEBA?AV?$optional\@H\@std\@\@AEBVActor\@\@\@Z
          */
-        virtual std::optional<int> getActorNoActionTime(class Actor const&) const;
+        virtual std::optional<int32_t> getActorNoActionTime(class Actor const&) const;
         /**
          * @vftbl 7
          * @symbol ?resetActorNoActionTime\@WorldAccessor\@DespawnComponent\@\@UEAAXAEAVActor\@\@\@Z

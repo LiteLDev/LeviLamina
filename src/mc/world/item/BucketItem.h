@@ -69,12 +69,12 @@ public:
      * @vftbl 56
      * @symbol ?isDestructive\@BucketItem\@\@UEBA_NH\@Z
      */
-    virtual bool isDestructive(int) const;
+    virtual bool isDestructive(int32_t) const;
     /**
      * @vftbl 57
      * @symbol ?isLiquidClipItem\@BucketItem\@\@UEBA_NH\@Z
      */
-    virtual bool isLiquidClipItem(int) const;
+    virtual bool isLiquidClipItem(int32_t) const;
     /**
      * @vftbl 66
      * @symbol __unk_vfn_66
@@ -84,7 +84,7 @@ public:
      * @vftbl 67
      * @symbol ?isValidAuxValue\@BucketItem\@\@UEBA_NH\@Z
      */
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
     /**
      * @vftbl 70
      * @symbol __unk_vfn_70
@@ -129,7 +129,7 @@ public:
      * @vftbl 85
      * @symbol ?dispense\@BucketItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
+    virtual bool dispense(class BlockSource&, class Container&, int32_t, class Vec3 const&, uint8_t) const;
     /**
      * @vftbl 86
      * @symbol ?useTimeDepleted\@BucketItem\@\@UEBA?AW4ItemUseMethod\@\@AEAVItemStack\@\@PEAVLevel\@\@PEAVPlayer\@\@\@Z
@@ -139,7 +139,7 @@ public:
      * @vftbl 87
      * @symbol ?releaseUsing\@BucketItem\@\@UEBAXAEAVItemStack\@\@PEAVPlayer\@\@H\@Z
      */
-    virtual void releaseUsing(class ItemStack&, class Player*, int) const;
+    virtual void releaseUsing(class ItemStack&, class Player*, int32_t) const;
     /**
      * @vftbl 95
      * @symbol
@@ -150,12 +150,12 @@ public:
      * @vftbl 100
      * @symbol ?getMaxStackSize\@BucketItem\@\@UEBAEAEBVItemDescriptor\@\@\@Z
      */
-    virtual unsigned char getMaxStackSize(class ItemDescriptor const&) const;
+    virtual uint8_t getMaxStackSize(class ItemDescriptor const&) const;
     /**
      * @vftbl 111
      * @symbol ?validFishInteraction\@BucketItem\@\@UEBA_NH\@Z
      */
-    virtual bool validFishInteraction(int) const;
+    virtual bool validFishInteraction(int32_t) const;
     /**
      * @vftbl 115
      * @symbol __unk_vfn_115
@@ -171,12 +171,12 @@ public:
      * @symbol
      * ?setIconInfo\@BucketItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    virtual class Item& setIconInfo(std::string const&, int);
+    virtual class Item& setIconInfo(std::string const&, int32_t);
     /**
      * @vftbl 124
      * @symbol ?getLightEmission\@BucketItem\@\@UEBA?AUBrightness\@\@H\@Z
      */
-    virtual struct Brightness getLightEmission(int) const;
+    virtual struct Brightness getLightEmission(int32_t) const;
     /**
      * @vftbl 131
      * @symbol
@@ -189,7 +189,7 @@ public:
      * ?_useOn\@BucketItem\@\@EEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _useOn(class ItemStack&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUCKETITEM
     /**
      * @symbol ?isBucket\@BucketItem\@\@UEBA_NXZ
@@ -204,11 +204,11 @@ public:
      * @symbol
      * ??0BucketItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4BucketFillType\@\@\@Z
      */
-    MCAPI BucketItem(std::string const&, int, enum class BucketFillType);
+    MCAPI BucketItem(std::string const&, int32_t, enum class BucketFillType);
     /**
      * @symbol ?DRINK_DURATION\@BucketItem\@\@2HB
      */
-    MCAPI static int const DRINK_DURATION;
+    MCAPI static int32_t const DRINK_DURATION;
     // NOLINTEND
 
     // protected:
@@ -222,7 +222,7 @@ public:
      * ?readBucketEntitySaveData\@BucketItem\@\@IEBA_NAEAVBlockSource\@\@PEAVActor\@\@EVBlockPos\@\@AEBVItemInstance\@\@\@Z
      */
     MCAPI bool
-    readBucketEntitySaveData(class BlockSource&, class Actor*, unsigned char, class BlockPos, class ItemInstance const&)
+    readBucketEntitySaveData(class BlockSource&, class Actor*, uint8_t, class BlockPos, class ItemInstance const&)
         const;
     // NOLINTEND
 
@@ -243,7 +243,7 @@ public:
         class BlockPos const&,
         class Actor*,
         class ItemStack const&,
-        unsigned char
+        uint8_t
     ) const;
     /**
      * @symbol ?_removeBubbleColumn\@BucketItem\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z

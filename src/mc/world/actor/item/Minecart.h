@@ -232,7 +232,7 @@ public:
      * @vftbl 258
      * @symbol ?getDefaultDisplayOffset\@Minecart\@\@UEBAHXZ
      */
-    virtual int getDefaultDisplayOffset() const;
+    virtual int32_t getDefaultDisplayOffset() const;
     /**
      * @vftbl 259
      * @symbol ?applyNaturalSlowdown\@Minecart\@\@MEAAXAEAVBlockSource\@\@\@Z
@@ -251,7 +251,7 @@ public:
     /**
      * @symbol ?getDefaultDisplayData\@Minecart\@\@UEBAHXZ
      */
-    MCVAPI int getDefaultDisplayData() const;
+    MCVAPI int32_t getDefaultDisplayData() const;
     /**
      * @symbol __unk_destructor_-1
      */

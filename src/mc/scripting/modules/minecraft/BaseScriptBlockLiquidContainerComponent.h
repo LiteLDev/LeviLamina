@@ -44,7 +44,7 @@ public:
      * @symbol
      * ?setFillLevel\@BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@UEAA?AV?$Result\@X\@Scripting\@\@H\@Z
      */
-    virtual class Scripting::Result<void> setFillLevel(int);
+    virtual class Scripting::Result<void> setFillLevel(int32_t);
     /**
      * @symbol
      * ??0BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@QEAA\@AEAVBlockSource\@\@VBlockPos\@\@AEBVWeakLifetimeScope\@Scripting\@\@W4CauldronLiquidType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ScriptFluidType\@1\@\@Z
@@ -61,7 +61,7 @@ public:
      * @symbol
      * ?getFillLevel\@BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getFillLevel();
+    MCAPI class Scripting::Result<int32_t> getFillLevel();
     /**
      * @symbol ??4BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
      */

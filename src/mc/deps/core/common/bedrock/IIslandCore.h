@@ -23,7 +23,7 @@ public:
      * @vftbl 1
      * @symbol ?getId\@AppIsland\@Bedrock\@\@UEAAGXZ
      */
-    virtual unsigned short getId() = 0;
+    virtual uint16_t getId() = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_IISLANDCORE
     /**
      * @symbol __unk_destructor_-1

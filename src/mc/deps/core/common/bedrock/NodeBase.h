@@ -33,7 +33,7 @@ public:
      * @symbol ?_getBase\@NodeBase\@JSONObject\@Bedrock\@\@IEBAAEBV123\@VOffset\@123\@E\@Z
      */
     MCAPI class Bedrock::JSONObject::NodeBase const&
-    _getBase(class Bedrock::JSONObject::NodeBase::Offset, unsigned char) const;
+        _getBase(class Bedrock::JSONObject::NodeBase::Offset, uint8_t) const;
     // NOLINTEND
 
     // private:

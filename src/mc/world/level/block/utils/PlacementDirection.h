@@ -73,9 +73,9 @@ public:
             class gsl::not_null<class Block const*>,
             class Actor const&,
             class BlockPos const&,
-            unsigned char,
+            uint8_t,
             class Vec3 const&,
-            int
+            int32_t
         ) const;
         // NOLINTEND
     };
@@ -104,9 +104,9 @@ public:
             class gsl::not_null<class Block const*>,
             class Actor const&,
             class BlockPos const&,
-            unsigned char,
+            uint8_t,
             class Vec3 const&,
-            int
+            int32_t
         ) const;
         // NOLINTEND
     };

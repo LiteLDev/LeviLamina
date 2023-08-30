@@ -17,7 +17,7 @@ getErrorForRejectedRequest(class ServerPlayer&, class ItemStackRequestActionMine
 /**
  * @symbol ?onAbortDestroyBlock\@ServerPlayerBlockUseHandler\@\@YAXAEAVServerPlayer\@\@AEBVBlockPos\@\@H\@Z
  */
-MCAPI void onAbortDestroyBlock(class ServerPlayer&, class BlockPos const&, int);
+MCAPI void onAbortDestroyBlock(class ServerPlayer&, class BlockPos const&, int32_t);
 /**
  * @symbol
  * ?onBeforeMovementSimulation\@ServerPlayerBlockUseHandler\@\@YAXAEAVServerPlayer\@\@AEBVPlayerBlockActions\@\@V?$unique_ptr\@VItemStackRequestData\@\@U?$default_delete\@VItemStackRequestData\@\@\@std\@\@\@std\@\@V?$NonOwnerPointer\@VTextFilteringProcessor\@\@\@Bedrock\@\@\@Z
@@ -27,11 +27,11 @@ onBeforeMovementSimulation(class ServerPlayer&, class PlayerBlockActions const&,
 /**
  * @symbol ?onCrackBlock\@ServerPlayerBlockUseHandler\@\@YAXAEAVServerPlayer\@\@AEBVBlockPos\@\@H\@Z
  */
-MCAPI void onCrackBlock(class ServerPlayer&, class BlockPos const&, int);
+MCAPI void onCrackBlock(class ServerPlayer&, class BlockPos const&, int32_t);
 /**
  * @symbol ?onStartDestroyBlock\@ServerPlayerBlockUseHandler\@\@YAXAEAVServerPlayer\@\@AEBVBlockPos\@\@H\@Z
  */
-MCAPI void onStartDestroyBlock(class ServerPlayer&, class BlockPos const&, int);
+MCAPI void onStartDestroyBlock(class ServerPlayer&, class BlockPos const&, int32_t);
 /**
  * @symbol ?onStopDestroyBlock\@ServerPlayerBlockUseHandler\@\@YAXAEAVServerPlayer\@\@\@Z
  */
@@ -39,7 +39,7 @@ MCAPI void onStopDestroyBlock(class ServerPlayer&);
 /**
  * @symbol ?serverTickBlockBreaking\@ServerPlayerBlockUseHandler\@\@YAXAEAVServerPlayer\@\@AEBVBlockPos\@\@H\@Z
  */
-MCAPI void serverTickBlockBreaking(class ServerPlayer&, class BlockPos const&, int);
+MCAPI void serverTickBlockBreaking(class ServerPlayer&, class BlockPos const&, int32_t);
 /**
  * @symbol
  * ?validateClientBlockBreakPrediction\@ServerPlayerBlockUseHandler\@\@YA?AW4PredictionValidationError\@1\@AEAVServerPlayer\@\@PEBVItemStackRequestActionMineBlock\@\@AEBVBlockPos\@\@AEBVItemStack\@\@3PEBUPlayerBlockActionData\@\@\@Z

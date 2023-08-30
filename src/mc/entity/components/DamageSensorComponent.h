@@ -43,17 +43,18 @@ public:
      * ?recordDamage\@DamageSensorComponent\@\@QEAA_NAEAVActor\@\@PEAV2\@W4ActorDamageCause\@\@H_NVVariantParameterList\@\@\@Z
      */
     MCAPI bool
-    recordDamage(class Actor&, class Actor*, enum class ActorDamageCause, int, bool, class VariantParameterList);
+    recordDamage(class Actor&, class Actor*, enum class ActorDamageCause, int32_t, bool, class VariantParameterList);
     /**
      * @symbol
      * ?recordDamage\@DamageSensorComponent\@\@QEAA_NAEAVActor\@\@AEBVActorDamageSource\@\@H_NVVariantParameterList\@\@2\@Z
      */
-    MCAPI bool recordDamage(class Actor&, class ActorDamageSource const&, int, bool, class VariantParameterList, bool);
+    MCAPI bool
+    recordDamage(class Actor&, class ActorDamageSource const&, int32_t, bool, class VariantParameterList, bool);
     /**
      * @symbol
      * ?recordDamage\@DamageSensorComponent\@\@QEAA_NAEAVActor\@\@PEAV2\@W4ActorDamageCause\@\@H_NVBlockPos\@\@\@Z
      */
-    MCAPI bool recordDamage(class Actor&, class Actor*, enum class ActorDamageCause, int, bool, class BlockPos);
+    MCAPI bool recordDamage(class Actor&, class Actor*, enum class ActorDamageCause, int32_t, bool, class BlockPos);
     // NOLINTEND
 
     // private:
@@ -67,7 +68,7 @@ public:
         class Actor*,
         enum class ActorDamageCause const&,
         class Actor*,
-        int,
+        int32_t,
         bool,
         class VariantParameterList,
         bool

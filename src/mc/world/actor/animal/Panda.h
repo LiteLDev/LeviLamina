@@ -188,11 +188,11 @@ public:
     /**
      * @symbol ?getSneezeCounter\@Panda\@\@QEBAHXZ
      */
-    MCAPI int getSneezeCounter() const;
+    MCAPI int32_t getSneezeCounter() const;
     /**
      * @symbol ?getUnhappyCounter\@Panda\@\@QEBAHXZ
      */
-    MCAPI int getUnhappyCounter() const;
+    MCAPI int32_t getUnhappyCounter() const;
     /**
      * @symbol ?postNormalTick\@Panda\@\@QEAAXXZ
      */

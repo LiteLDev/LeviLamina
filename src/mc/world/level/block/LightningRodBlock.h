@@ -55,12 +55,12 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@LightningRodBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 28
      * @symbol ?canConnect\@LightningRodBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
-    virtual bool canConnect(class Block const&, unsigned char, class Block const&) const;
+    virtual bool canConnect(class Block const&, uint8_t, class Block const&) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -180,7 +180,7 @@ public:
      * @vftbl 66
      * @symbol ?shouldConnectToRedstone\@LightningRodBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -211,7 +211,7 @@ public:
      * @symbol ?getPlacementBlock\@LightningRodBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -296,6 +296,6 @@ public:
      * @symbol
      * ??0LightningRodBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI LightningRodBlock(std::string const&, int, class Material const&);
+    MCAPI LightningRodBlock(std::string const&, int32_t, class Material const&);
     // NOLINTEND
 };

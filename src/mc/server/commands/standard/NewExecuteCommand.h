@@ -205,7 +205,7 @@ public:
     /**
      * @symbol ?setup\@NewExecuteCommand\@\@SAXAEAVCommandRegistry\@\@H\@Z
      */
-    MCAPI static void setup(class CommandRegistry&, int);
+    MCAPI static void setup(class CommandRegistry&, int32_t);
     // NOLINTEND
 
     // private:
@@ -213,16 +213,17 @@ public:
     /**
      * @symbol ?_commandOutputFail\@NewExecuteCommand\@\@AEBAXAEAVCommandOutput\@\@AEBV?$optional\@H\@std\@\@\@Z
      */
-    MCAPI void _commandOutputFail(class CommandOutput&, std::optional<int> const&) const;
+    MCAPI void _commandOutputFail(class CommandOutput&, std::optional<int32_t> const&) const;
     /**
      * @symbol ?_commandOutputSuccess\@NewExecuteCommand\@\@AEBAXAEAVCommandOutput\@\@AEBV?$optional\@H\@std\@\@\@Z
      */
-    MCAPI void _commandOutputSuccess(class CommandOutput&, std::optional<int> const&) const;
+    MCAPI void _commandOutputSuccess(class CommandOutput&, std::optional<int32_t> const&) const;
     /**
      * @symbol
      * ?_detectConditionSubcommand\@NewExecuteCommand\@\@AEBA_NAEBVCommandOrigin\@\@AEAVCommandOutput\@\@AEAV?$optional\@H\@std\@\@\@Z
      */
-    MCAPI bool _detectConditionSubcommand(class CommandOrigin const&, class CommandOutput&, std::optional<int>&) const;
+    MCAPI bool
+    _detectConditionSubcommand(class CommandOrigin const&, class CommandOutput&, std::optional<int32_t>&) const;
     /**
      * @symbol
      * ?_getScoreFromSelectorOnObjective\@NewExecuteCommand\@\@AEBA?AV?$optional\@UScoreInfo\@\@\@std\@\@AEBVScoreboard\@\@AEBV?$CommandSelector\@VActor\@\@\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z

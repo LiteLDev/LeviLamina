@@ -80,7 +80,7 @@ public:
     /**
      * @symbol ?onTick\@ServerInstance\@\@UEAAXHH\@Z
      */
-    MCVAPI void onTick(int, int);
+    MCVAPI void onTick(int32_t, int32_t);
     /**
      * @symbol ?updateScreens\@ServerInstance\@\@UEAAXXZ
      */
@@ -125,8 +125,7 @@ public:
      * @symbol
      * ?initializeServer\@ServerInstance\@\@QEAA_NAEAVIMinecraftApp\@\@AEAVAllowList\@\@PEAVPermissionsFile\@\@AEBV?$not_null\@V?$NonOwnerPointer\@VFilePathManager\@Core\@\@\@Bedrock\@\@\@gsl\@\@V?$duration\@_JU?$ratio\@$00$00\@std\@\@\@chrono\@std\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@9\@55VLevelSettings\@\@H_NUConnectionDefinition\@\@7AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@9\@5AEBVUUID\@mce\@\@AEAVIMinecraftEventing\@\@AEAVIResourcePackRepository\@\@AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentTierManager\@\@\@Bedrock\@\@\@6\@AEAVResourcePackManager\@\@V?$function\@$$A6A?AV?$OwnerPtrT\@U?$SharePtrRefTraits\@VLevelStorage\@\@\@\@\@\@AEAVScheduler\@\@\@Z\@9\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@9\@PEAVLevelData\@\@55V?$unique_ptr\@VEducationOptions\@\@U?$default_delete\@VEducationOptions\@\@\@std\@\@\@9\@PEAVResourcePackManager\@\@V?$function\@$$A6AXXZ\@9\@V?$function\@$$A6AXXZ\@9\@PEAVServerMetrics\@\@PEAVDebugEndPoint\@\@7V?$shared_ptr\@VFileStorageArea\@Core\@\@\@9\@AEBUNetworkSettingOptions\@\@777V?$optional\@UPlayerMovementSettings\@\@\@9\@V?$optional\@UScriptSettings\@\@\@9\@AEBVExperiments\@\@7MV?$optional\@_N\@9\@W4ForceBlockNetworkIdsAreHashes\@\@AEBUNetworkPermissions\@\@V?$not_null\@V?$NonOwnerPointer\@VNetworkSessionOwner\@\@\@Bedrock\@\@\@6\@\@Z
      */
-    MCAPI bool
-    initializeServer(class IMinecraftApp&, class AllowList&, class PermissionsFile*, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const&, std::chrono::seconds, std::string, std::string, std::string, class LevelSettings, int, bool, struct ConnectionDefinition, bool, std::vector<std::string> const&, std::string, class mce::UUID const&, class IMinecraftEventing&, class IResourcePackRepository&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentTierManager const>> const&, class ResourcePackManager&, std::function<class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>(class Scheduler&)>, std::string const&, class LevelData*, std::string, std::string, std::unique_ptr<class EducationOptions>, class ResourcePackManager*, std::function<void(void)>, std::function<void(void)>, class ServerMetrics*, class DebugEndPoint*, bool, std::shared_ptr<class Core::FileStorageArea>, struct NetworkSettingOptions const&, bool, bool, bool, std::optional<struct PlayerMovementSettings>, std::optional<struct ScriptSettings>, class Experiments const&, bool, float, std::optional<bool>, enum class ForceBlockNetworkIdsAreHashes, struct NetworkPermissions const&, class gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkSessionOwner>>);
+    MCAPI bool initializeServer(class IMinecraftApp&, class AllowList&, class PermissionsFile*, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const&, std::chrono::seconds, std::string, std::string, std::string, class LevelSettings, int32_t, bool, struct ConnectionDefinition, bool, std::vector<std::string> const&, std::string, class mce::UUID const&, class IMinecraftEventing&, class IResourcePackRepository&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentTierManager const>> const&, class ResourcePackManager&, std::function<class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>(class Scheduler&)>, std::string const&, class LevelData*, std::string, std::string, std::unique_ptr<class EducationOptions>, class ResourcePackManager*, std::function<void(void)>, std::function<void(void)>, class ServerMetrics*, class DebugEndPoint*, bool, std::shared_ptr<class Core::FileStorageArea>, struct NetworkSettingOptions const&, bool, bool, bool, std::optional<struct PlayerMovementSettings>, std::optional<struct ScriptSettings>, class Experiments const&, bool, float, std::optional<bool>, enum class ForceBlockNetworkIdsAreHashes, struct NetworkPermissions const&, class gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkSessionOwner>>);
     /**
      * @symbol ?isRealmsStoriesEnabled\@ServerInstance\@\@QEBA_NXZ
      */
@@ -146,7 +145,7 @@ public:
     /**
      * @symbol ?setWakeupFrequency\@ServerInstance\@\@QEAAXH\@Z
      */
-    MCAPI void setWakeupFrequency(int);
+    MCAPI void setWakeupFrequency(int32_t);
     /**
      * @symbol
      * ?shutDownWithMessage\@ServerInstance\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z

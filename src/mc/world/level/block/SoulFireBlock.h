@@ -287,7 +287,7 @@ public:
      * @symbol
      * ??0SoulFireBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI SoulFireBlock(std::string const&, int);
+    MCAPI SoulFireBlock(std::string const&, int32_t);
     /**
      * @symbol ?isValidSoulFireFuel\@SoulFireBlock\@\@SA_NAEBVBlockLegacy\@\@\@Z
      */

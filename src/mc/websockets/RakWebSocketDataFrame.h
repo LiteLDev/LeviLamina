@@ -23,13 +23,7 @@ public:
     /**
      * @symbol ?writeFrameToStream\@RakWebSocketDataFrame\@\@SAXAEAVBitStream\@RakNet\@\@PEBEIW4OpCode\@\@_NI\@Z
      */
-    MCAPI static void writeFrameToStream(
-        class RakNet::BitStream&,
-        unsigned char const*,
-        unsigned int,
-        enum class OpCode,
-        bool,
-        unsigned int
-    );
+    MCAPI static void
+    writeFrameToStream(class RakNet::BitStream&, uint8_t const*, uint32_t, enum class OpCode, bool, uint32_t);
     // NOLINTEND
 };

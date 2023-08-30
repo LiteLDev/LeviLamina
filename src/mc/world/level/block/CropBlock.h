@@ -242,7 +242,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@CropBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -307,12 +307,12 @@ public:
      * @vftbl 196
      * @symbol ?getSeedNum\@CropBlock\@\@MEBAHAEAVRandomize\@\@HH\@Z
      */
-    virtual int getSeedNum(class Randomize&, int, int) const;
+    virtual int32_t getSeedNum(class Randomize&, int32_t, int32_t) const;
     /**
      * @vftbl 197
      * @symbol ?getCropNum\@CropBlock\@\@MEBAHAEAVRandomize\@\@HH\@Z
      */
-    virtual int getCropNum(class Randomize&, int, int) const;
+    virtual int32_t getCropNum(class Randomize&, int32_t, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CROPBLOCK
     /**
      * @symbol ?canBeSilkTouched\@CropBlock\@\@MEBA_NXZ
@@ -326,6 +326,6 @@ public:
     /**
      * @symbol ??0CropBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI CropBlock(std::string const&, int);
+    MCAPI CropBlock(std::string const&, int32_t);
     // NOLINTEND
 };

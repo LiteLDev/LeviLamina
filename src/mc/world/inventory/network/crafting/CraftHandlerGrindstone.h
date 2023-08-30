@@ -47,13 +47,12 @@ public:
     /**
      * @symbol ?_getExperienceFromItem\@CraftHandlerGrindstone\@\@AEBAHAEBVItemStack\@\@\@Z
      */
-    MCAPI int _getExperienceFromItem(class ItemStack const&) const;
+    MCAPI int32_t _getExperienceFromItem(class ItemStack const&) const;
     /**
      * @symbol
      * ?_resolveNetIdAndValidate\@CraftHandlerGrindstone\@\@AEAA_NW4ContainerEnumName\@\@EAEBUItemStackNetIdVariant\@\@\@Z
      */
-    MCAPI bool
-    _resolveNetIdAndValidate(enum class ContainerEnumName, unsigned char, struct ItemStackNetIdVariant const&);
+    MCAPI bool _resolveNetIdAndValidate(enum class ContainerEnumName, uint8_t, struct ItemStackNetIdVariant const&);
     /**
      * @symbol
      * ?_getResultItemWithNoEnchants\@CraftHandlerGrindstone\@\@CA?AVItemStack\@\@AEAV2\@AEBV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEA_N\@Z

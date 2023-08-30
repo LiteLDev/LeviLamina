@@ -7,7 +7,7 @@ namespace OfferFlowerTickUtility {
 /**
  * @symbol ?offerFlower\@OfferFlowerTickUtility\@\@YAX_NAEAVActor\@\@H\@Z
  */
-MCAPI void offerFlower(bool, class Actor&, int);
+MCAPI void offerFlower(bool, class Actor&, int32_t);
 // NOLINTEND
 
 }; // namespace OfferFlowerTickUtility

@@ -13,7 +13,7 @@ public:
     /**
      * @symbol ??0MolangScriptArg\@\@QEAA\@H\@Z
      */
-    MCAPI MolangScriptArg(int);
+    MCAPI MolangScriptArg(int32_t);
     /**
      * @symbol ??0MolangScriptArg\@\@QEAA\@AEBU0\@\@Z
      */

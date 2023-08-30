@@ -31,11 +31,11 @@ public:
      * ?createInitialPositions\@SpreadPlayersCommand\@\@SA?AV?$vector\@VVec2\@\@V?$allocator\@VVec2\@\@\@std\@\@\@std\@\@AEAVRandom\@\@HAEBVVec2\@\@1\@Z
      */
     MCAPI static std::vector<class Vec2>
-    createInitialPositions(class Random&, int, class Vec2 const&, class Vec2 const&);
+    createInitialPositions(class Random&, int32_t, class Vec2 const&, class Vec2 const&);
     /**
      * @symbol ?isDangerousSpawn\@SpreadPlayersCommand\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@FH\@Z
      */
-    MCAPI static bool isDangerousSpawn(class BlockSource&, class BlockPos const&, short, int);
+    MCAPI static bool isDangerousSpawn(class BlockSource&, class BlockPos const&, int16_t, int32_t);
     /**
      * @symbol ?setup\@SpreadPlayersCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
@@ -54,7 +54,7 @@ public:
         class Vec2 const&,
         std::vector<class Vec2>&,
         std::map<class ChunkPos, std::unique_ptr<class CommandArea>>&,
-        int
+        int32_t
     );
     // NOLINTEND
 
@@ -68,12 +68,12 @@ public:
         class CommandOrigin const&,
         class BlockPos const&,
         std::map<class ChunkPos, std::unique_ptr<class CommandArea>>&,
-        int
+        int32_t
     );
     /**
      * @symbol ?_getTeleportHeight\@SpreadPlayersCommand\@\@CAFAEAVBlockSource\@\@HH\@Z
      */
-    MCAPI static short _getTeleportHeight(class BlockSource&, int, int);
+    MCAPI static int16_t _getTeleportHeight(class BlockSource&, int32_t, int32_t);
     /**
      * @symbol
      * ?_setPlayerPositions\@SpreadPlayersCommand\@\@CAMAEAV?$CommandSelectorResults\@VActor\@\@\@\@AEAV?$vector\@VVec2\@\@V?$allocator\@VVec2\@\@\@std\@\@\@std\@\@AEAV?$map\@VChunkPos\@\@V?$unique_ptr\@VCommandArea\@\@U?$default_delete\@VCommandArea\@\@\@std\@\@\@std\@\@U?$less\@VChunkPos\@\@\@3\@V?$allocator\@U?$pair\@$$CBVChunkPos\@\@V?$unique_ptr\@VCommandArea\@\@U?$default_delete\@VCommandArea\@\@\@std\@\@\@std\@\@\@std\@\@\@3\@\@4\@\@Z
@@ -91,7 +91,7 @@ public:
         class Vec2 const&,
         float,
         float,
-        int
+        int32_t
     );
     // NOLINTEND
 };

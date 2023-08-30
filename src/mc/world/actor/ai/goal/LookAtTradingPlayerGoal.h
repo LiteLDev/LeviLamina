@@ -40,6 +40,6 @@ public:
     /**
      * @symbol ??0LookAtTradingPlayerGoal\@\@QEAA\@AEAVMob\@\@MMHHHH\@Z
      */
-    MCAPI LookAtTradingPlayerGoal(class Mob&, float, float, int, int, int, int);
+    MCAPI LookAtTradingPlayerGoal(class Mob&, float, float, int32_t, int32_t, int32_t, int32_t);
     // NOLINTEND
 };

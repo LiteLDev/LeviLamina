@@ -142,7 +142,7 @@ public:
      * @vftbl 25
      * @symbol ?levelEvent\@LevelListener\@\@UEAAXW4LevelEvent\@\@AEBVVec3\@\@H\@Z
      */
-    virtual void levelEvent(enum class LevelEvent, class Vec3 const&, int);
+    virtual void levelEvent(enum class LevelEvent, class Vec3 const&, int32_t);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELLISTENER
     /**
      * @symbol
@@ -189,7 +189,7 @@ public:
     /**
      * @symbol ?onSubChunkLoaded\@LevelListener\@\@UEAAXAEAVChunkSource\@\@AEAVLevelChunk\@\@F_N\@Z
      */
-    MCVAPI void onSubChunkLoaded(class ChunkSource&, class LevelChunk&, short, bool);
+    MCVAPI void onSubChunkLoaded(class ChunkSource&, class LevelChunk&, int16_t, bool);
     /**
      * @symbol
      * ?playMusic\@LevelListener\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVVec3\@\@MM\@Z
@@ -199,7 +199,7 @@ public:
      * @symbol
      * ?playStreamingMusic\@LevelListener\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HHH\@Z
      */
-    MCVAPI void playStreamingMusic(std::string const&, int, int, int);
+    MCVAPI void playStreamingMusic(std::string const&, int32_t, int32_t, int32_t);
     /**
      * @symbol ?playerListChanged\@LevelListener\@\@UEAAXXZ
      */
@@ -207,7 +207,7 @@ public:
     /**
      * @symbol ?sendServerLegacyParticle\@LevelListener\@\@UEAAXW4ParticleType\@\@AEBVVec3\@\@1H\@Z
      */
-    MCVAPI void sendServerLegacyParticle(enum class ParticleType, class Vec3 const&, class Vec3 const&, int);
+    MCVAPI void sendServerLegacyParticle(enum class ParticleType, class Vec3 const&, class Vec3 const&, int32_t);
     /**
      * @symbol ?takePicture\@LevelListener\@\@UEAAXAEAVImageBuffer\@cg\@\@PEAVActor\@\@1AEAUScreenshotOptions\@\@\@Z
      */

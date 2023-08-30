@@ -35,11 +35,11 @@ public:
         /**
          * @symbol ?HEIGHT_COLUMN_ABOVE_SUBCHUNK\@HeightmapData\@SubChunkPacket\@\@2CB
          */
-        MCAPI static signed char const HEIGHT_COLUMN_ABOVE_SUBCHUNK;
+        MCAPI static int8_t const HEIGHT_COLUMN_ABOVE_SUBCHUNK;
         /**
          * @symbol ?HEIGHT_COLUMN_BELOW_SUBCHUNK\@HeightmapData\@SubChunkPacket\@\@2CB
          */
-        MCAPI static signed char const HEIGHT_COLUMN_BELOW_SUBCHUNK;
+        MCAPI static int8_t const HEIGHT_COLUMN_BELOW_SUBCHUNK;
         // NOLINTEND
     };
 
@@ -128,6 +128,6 @@ public:
     /**
      * @symbol ??0SubChunkPacket\@\@QEAA\@AEBV?$AutomaticID\@VDimension\@\@H\@\@AEBVSubChunkPos\@\@_N\@Z
      */
-    MCAPI SubChunkPacket(class AutomaticID<class Dimension, int> const&, class SubChunkPos const&, bool);
+    MCAPI SubChunkPacket(DimensionType const&, class SubChunkPos const&, bool);
     // NOLINTEND
 };

@@ -18,7 +18,7 @@ public:
     /**
      * @symbol ?getChunkInfo\@FileChunkManager\@\@QEBA?AUFileChunkInfo\@\@H\@Z
      */
-    MCAPI struct FileChunkInfo getChunkInfo(int) const;
+    MCAPI struct FileChunkInfo getChunkInfo(int32_t) const;
     /**
      * @symbol
      * ?getChunks\@FileChunkManager\@\@QEBAAEBV?$vector\@UFileChunkInfo\@\@V?$allocator\@UFileChunkInfo\@\@\@std\@\@\@std\@\@XZ
@@ -27,7 +27,7 @@ public:
     /**
      * @symbol ?getTotalNumberOfChunks\@FileChunkManager\@\@QEAAHXZ
      */
-    MCAPI int getTotalNumberOfChunks();
+    MCAPI int32_t getTotalNumberOfChunks();
     /**
      * @symbol ?reset\@FileChunkManager\@\@QEAAXXZ
      */
@@ -35,7 +35,7 @@ public:
     /**
      * @symbol ?reset\@FileChunkManager\@\@QEAAX_KI\@Z
      */
-    MCAPI void reset(uint64_t, unsigned int);
+    MCAPI void reset(uint64_t, uint32_t);
     /**
      * @symbol ??1FileChunkManager\@\@QEAA\@XZ
      */

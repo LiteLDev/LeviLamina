@@ -28,7 +28,7 @@ public:
      * ?handleConsumedItem\@CraftHandlerBase\@\@UEAA?AW4ItemStackNetResult\@\@W4ContainerEnumName\@\@EAEBVItemStack\@\@\@Z
      */
     virtual enum class ItemStackNetResult
-    handleConsumedItem(enum class ContainerEnumName, unsigned char, class ItemStack const&);
+    handleConsumedItem(enum class ContainerEnumName, uint8_t, class ItemStack const&);
     /**
      * @vftbl 2
      * @symbol ?preHandleAction\@CraftHandlerBase\@\@UEAA?AW4ItemStackNetResult\@\@W4ItemStackRequestActionType\@\@\@Z

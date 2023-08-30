@@ -54,7 +54,7 @@ public:
      * @symbol
      * ??0TemporalAttributeBuff\@\@QEAA\@MHW4AttributeBuffType\@\@_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI TemporalAttributeBuff(float, int, enum class AttributeBuffType, bool, std::string const&);
+    MCAPI TemporalAttributeBuff(float, int32_t, enum class AttributeBuffType, bool, std::string const&);
     /**
      * @symbol ??0TemporalAttributeBuff\@\@QEAA\@AEBV0\@\@Z
      */
@@ -66,11 +66,11 @@ public:
     /**
      * @symbol ?getDuration\@TemporalAttributeBuff\@\@QEBAHXZ
      */
-    MCAPI int getDuration() const;
+    MCAPI int32_t getDuration() const;
     /**
      * @symbol ?getLifeTimer\@TemporalAttributeBuff\@\@QEBAHXZ
      */
-    MCAPI int getLifeTimer() const;
+    MCAPI int32_t getLifeTimer() const;
     /**
      * @symbol ??4TemporalAttributeBuff\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
@@ -78,6 +78,6 @@ public:
     /**
      * @symbol ?serializationSetLifeTime\@TemporalAttributeBuff\@\@QEAAXH\@Z
      */
-    MCAPI void serializationSetLifeTime(int);
+    MCAPI void serializationSetLifeTime(int32_t);
     // NOLINTEND
 };

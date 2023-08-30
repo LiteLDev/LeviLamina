@@ -28,11 +28,11 @@ public:
     /**
      * @symbol ?cbegin\@Blob\@mce\@\@QEBAPEBEXZ
      */
-    MCAPI unsigned char const* cbegin() const;
+    MCAPI uint8_t const* cbegin() const;
     /**
      * @symbol ?cend\@Blob\@mce\@\@QEBAPEBEXZ
      */
-    MCAPI unsigned char const* cend() const;
+    MCAPI uint8_t const* cend() const;
     /**
      * @symbol ?empty\@Blob\@mce\@\@QEBA_NXZ
      */
@@ -52,7 +52,7 @@ public:
     /**
      * @symbol ?defaultDeleter\@Blob\@mce\@\@CAXPEAE\@Z
      */
-    MCAPI static void defaultDeleter(unsigned char*);
+    MCAPI static void defaultDeleter(uint8_t*);
     // NOLINTEND
 };
 

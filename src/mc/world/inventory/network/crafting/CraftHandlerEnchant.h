@@ -54,7 +54,7 @@ public:
      * ?_handleEnchant\@CraftHandlerEnchant\@\@AEAA?AW4ItemStackNetResult\@\@AEBV?$ItemStackRequestActionCraft\@V?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@$0M\@\@\@\@Z
      */
     MCAPI enum class ItemStackNetResult _handleEnchant(class ItemStackRequestActionCraft<
-                                                       class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>,
+                                                       class TypedServerNetId<struct RecipeNetIdTag, uint32_t, 0>,
                                                        12> const&);
     // NOLINTEND
 };

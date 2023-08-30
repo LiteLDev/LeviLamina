@@ -145,7 +145,7 @@ public:
      * @vftbl 75
      * @symbol ?onRedstoneUpdate\@NoteBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
-    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int32_t, bool) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -175,7 +175,7 @@ public:
      * @vftbl 116
      * @symbol ?triggerEvent\@NoteBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@HH\@Z
      */
-    virtual void triggerEvent(class BlockSource&, class BlockPos const&, int, int) const;
+    virtual void triggerEvent(class BlockSource&, class BlockPos const&, int32_t, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -240,7 +240,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@NoteBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -260,7 +260,7 @@ public:
     /**
      * @symbol ??0NoteBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI NoteBlock(std::string const&, int);
+    MCAPI NoteBlock(std::string const&, int32_t);
     /**
      * @symbol ?enableSkullPlacement\@NoteBlock\@\@QEAAAEAV1\@_N\@Z
      */
@@ -272,6 +272,6 @@ public:
     /**
      * @symbol ?_triggerNoteParticle\@NoteBlock\@\@AEBAXAEAVLevel\@\@AEBVVec3\@\@H\@Z
      */
-    MCAPI void _triggerNoteParticle(class Level&, class Vec3 const&, int) const;
+    MCAPI void _triggerNoteParticle(class Level&, class Vec3 const&, int32_t) const;
     // NOLINTEND
 };

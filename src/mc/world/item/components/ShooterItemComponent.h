@@ -111,16 +111,16 @@ public:
      * @vftbl 8
      * @symbol ?_canUseOn\@ItemComponent\@\@MEBA_NAEBVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, unsigned char) const;
+    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 9
      * @symbol ?_useOn\@ItemComponent\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
      */
-    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&) const;
+    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uint8_t, class Vec3 const&) const;
     /**
      * @symbol ?releaseUsing\@ShooterItemComponent\@\@QEBA_NAEAVItemStack\@\@PEAVPlayer\@\@H\@Z
      */
-    MCAPI bool releaseUsing(class ItemStack&, class Player*, int) const;
+    MCAPI bool releaseUsing(class ItemStack&, class Player*, int32_t) const;
     /**
      * @symbol ?use\@ShooterItemComponent\@\@QEBA_NAEAVItemStack\@\@AEAVPlayer\@\@\@Z
      */
@@ -144,14 +144,14 @@ public:
     /**
      * @symbol ?_consumeAmmunition\@ShooterItemComponent\@\@AEBAXPEAVPlayer\@\@AEBVItemStack\@\@H_N2\@Z
      */
-    MCAPI void _consumeAmmunition(class Player*, class ItemStack const&, int, bool, bool) const;
+    MCAPI void _consumeAmmunition(class Player*, class ItemStack const&, int32_t, bool, bool) const;
     /**
      * @symbol ?_getAmmunition\@ShooterItemComponent\@\@AEBAHPEBVPlayer\@\@_NAEAVItemStack\@\@AEA_N\@Z
      */
-    MCAPI int _getAmmunition(class Player const*, bool, class ItemStack&, bool&) const;
+    MCAPI int32_t _getAmmunition(class Player const*, bool, class ItemStack&, bool&) const;
     /**
      * @symbol ?_shootProjectiles\@ShooterItemComponent\@\@AEBAXAEAVItemStack\@\@PEAVPlayer\@\@H\@Z
      */
-    MCAPI void _shootProjectiles(class ItemStack&, class Player*, int) const;
+    MCAPI void _shootProjectiles(class ItemStack&, class Player*, int32_t) const;
     // NOLINTEND
 };

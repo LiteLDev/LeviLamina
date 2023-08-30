@@ -45,7 +45,7 @@ public:
     /**
      * @symbol ?setIntValue\@PropertyContainer\@\@QEAAX_KH\@Z
      */
-    MCAPI void setIntValue(uint64_t, int);
+    MCAPI void setIntValue(uint64_t, int32_t);
     /**
      * @symbol ??1PropertyContainer\@\@QEAA\@XZ
      */

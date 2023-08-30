@@ -47,9 +47,13 @@ public:
      * @symbol
      * ?_getItemsFromSource\@LootCommand\@\@AEBA?AV?$optional\@V?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@\@std\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@AEBVItemStack\@\@AEAVLevel\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI std::optional<std::vector<class ItemStack>>
-    _getItemsFromSource(class CommandOrigin const&, class CommandOutput&, class ItemStack const&, class Level&, class AutomaticID<class Dimension, int>)
-        const;
+    MCAPI std::optional<std::vector<class ItemStack>> _getItemsFromSource(
+        class CommandOrigin const&,
+        class CommandOutput&,
+        class ItemStack const&,
+        class Level&,
+        DimensionType
+    ) const;
     /**
      * @symbol ?_outputError\@LootCommand\@\@AEBAXAEAVCommandOutput\@\@UReplacementResults\@Util\@\@PEBVActor\@\@\@Z
      */
@@ -57,7 +61,7 @@ public:
     /**
      * @symbol ?_outputSuccess\@LootCommand\@\@AEBAXAEAVCommandOutput\@\@H\@Z
      */
-    MCAPI void _outputSuccess(class CommandOutput&, int) const;
+    MCAPI void _outputSuccess(class CommandOutput&, int32_t) const;
     /**
      * @symbol
      * ?_placeItemsInTarget\@LootCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@AEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@\@Z

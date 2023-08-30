@@ -87,10 +87,10 @@ private:
     /**
      * @symbol ?RAIN_CHECK_MAX_COOLDOWN\@WorkGoal\@\@0HB
      */
-    MCAPI static int const RAIN_CHECK_MAX_COOLDOWN;
+    MCAPI static int32_t const RAIN_CHECK_MAX_COOLDOWN;
     /**
      * @symbol ?WORK_TIMESTAMP_UPDATE_INVERVAL\@WorkGoal\@\@0HB
      */
-    MCAPI static int const WORK_TIMESTAMP_UPDATE_INVERVAL;
+    MCAPI static int32_t const WORK_TIMESTAMP_UPDATE_INVERVAL;
     // NOLINTEND
 };

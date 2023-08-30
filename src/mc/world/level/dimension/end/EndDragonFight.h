@@ -142,7 +142,7 @@ public:
      * @symbol
      * ?_tickRespawnAnimation\@EndDragonFight\@\@AEAAXAEBV?$vector\@UActorUniqueID\@\@V?$allocator\@UActorUniqueID\@\@\@std\@\@\@std\@\@H\@Z
      */
-    MCAPI void _tickRespawnAnimation(std::vector<struct ActorUniqueID> const&, int);
+    MCAPI void _tickRespawnAnimation(std::vector<struct ActorUniqueID> const&, int32_t);
     /**
      * @symbol ?_updateCrystalCount\@EndDragonFight\@\@AEAAXXZ
      */
@@ -162,7 +162,7 @@ private:
     /**
      * @symbol ?ARENA_SIZE_CHUNKS\@EndDragonFight\@\@0HB
      */
-    MCAPI static int const ARENA_SIZE_CHUNKS;
+    MCAPI static int32_t const ARENA_SIZE_CHUNKS;
     /**
      * @symbol ?DEFAULT_PORTAL_LOCATION\@EndDragonFight\@\@0VBlockPos\@\@B
      */
@@ -170,30 +170,30 @@ private:
     /**
      * @symbol ?GATEWAY_CHUNK_RADIUS\@EndDragonFight\@\@0HB
      */
-    MCAPI static int const GATEWAY_CHUNK_RADIUS;
+    MCAPI static int32_t const GATEWAY_CHUNK_RADIUS;
     /**
      * @symbol ?GATEWAY_COUNT\@EndDragonFight\@\@0HB
      */
-    MCAPI static int const GATEWAY_COUNT;
+    MCAPI static int32_t const GATEWAY_COUNT;
     /**
      * @symbol ?GATEWAY_DISTANCE\@EndDragonFight\@\@0HB
      */
-    MCAPI static int const GATEWAY_DISTANCE;
+    MCAPI static int32_t const GATEWAY_DISTANCE;
     /**
      * @symbol ?GATEWAY_HEIGHT\@EndDragonFight\@\@0HB
      */
-    MCAPI static int const GATEWAY_HEIGHT;
+    MCAPI static int32_t const GATEWAY_HEIGHT;
     /**
      * @symbol ?TIME_BETWEEN_CRYSTAL_SCANS\@EndDragonFight\@\@0HB
      */
-    MCAPI static int const TIME_BETWEEN_CRYSTAL_SCANS;
+    MCAPI static int32_t const TIME_BETWEEN_CRYSTAL_SCANS;
     /**
      * @symbol ?TIME_BETWEEN_PLAYER_SCANS\@EndDragonFight\@\@0HB
      */
-    MCAPI static int const TIME_BETWEEN_PLAYER_SCANS;
+    MCAPI static int32_t const TIME_BETWEEN_PLAYER_SCANS;
     /**
      * @symbol ?TIME_BETWEEN_PORTAL_SCANS\@EndDragonFight\@\@0HB
      */
-    MCAPI static int const TIME_BETWEEN_PORTAL_SCANS;
+    MCAPI static int32_t const TIME_BETWEEN_PORTAL_SCANS;
     // NOLINTEND
 };

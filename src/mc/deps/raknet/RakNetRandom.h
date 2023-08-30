@@ -20,7 +20,7 @@ public:
     /**
      * @symbol ?SeedMT\@RakNetRandom\@RakNet\@\@QEAAXI\@Z
      */
-    MCAPI void SeedMT(unsigned int);
+    MCAPI void SeedMT(uint32_t);
     /**
      * @symbol ??1RakNetRandom\@RakNet\@\@QEAA\@XZ
      */

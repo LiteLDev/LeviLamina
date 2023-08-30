@@ -27,12 +27,12 @@ public:
      * @vftbl 2
      * @symbol ?update\@md5\@Hash\@Crypto\@\@UEAAXPEBXI\@Z
      */
-    virtual void update(void const*, unsigned int);
+    virtual void update(void const*, uint32_t);
     /**
      * @vftbl 3
      * @symbol ?final\@md5\@Hash\@Crypto\@\@UEAAXPEAE\@Z
      */
-    virtual void final(unsigned char*);
+    virtual void final(uint8_t*);
     /**
      * @vftbl 4
      * @symbol ?resultSize\@md5\@Hash\@Crypto\@\@UEBA_KXZ
@@ -49,7 +49,7 @@ public:
     /**
      * @symbol ?_body\@md5\@Hash\@Crypto\@\@AEAAPEBXPEBXI\@Z
      */
-    MCAPI void const* _body(void const*, unsigned int);
+    MCAPI void const* _body(void const*, uint32_t);
     // NOLINTEND
 };
 

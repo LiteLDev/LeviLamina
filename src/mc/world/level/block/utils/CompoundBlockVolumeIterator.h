@@ -29,7 +29,7 @@ public:
      * @vftbl 2
      * @symbol ??ECompoundBlockVolumeIterator\@\@UEAA?AVBaseBlockLocationIterator\@\@H\@Z
      */
-    virtual class BaseBlockLocationIterator operator++(int);
+    virtual class BaseBlockLocationIterator operator++(int32_t);
     /**
      * @vftbl 3
      * @symbol ?_begin\@CompoundBlockVolumeIterator\@\@MEAAXXZ

@@ -40,7 +40,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@DecoratedPotBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -267,12 +267,12 @@ public:
      * @symbol
      * ?getEntityResourceItem\@DecoratedPotBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlockActor\@\@H\@Z
      */
-    virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int) const;
+    virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int32_t) const;
     /**
      * @symbol
      * ??0DecoratedPotBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI DecoratedPotBlock(std::string const&, int);
+    MCAPI DecoratedPotBlock(std::string const&, int32_t);
     // NOLINTEND
 
     // private:

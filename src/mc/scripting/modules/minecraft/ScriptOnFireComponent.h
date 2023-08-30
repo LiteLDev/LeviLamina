@@ -37,7 +37,7 @@ public:
     /**
      * @symbol ?getOnFireTicksRemaining\@ScriptOnFireComponent\@ScriptModuleMinecraft\@\@QEBAHXZ
      */
-    MCAPI int getOnFireTicksRemaining() const;
+    MCAPI int32_t getOnFireTicksRemaining() const;
     /**
      * @symbol
      * ?bind\@ScriptOnFireComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptOnFireComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ

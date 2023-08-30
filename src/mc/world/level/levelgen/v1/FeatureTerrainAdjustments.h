@@ -55,11 +55,11 @@ public:
      * @symbol
      * ?setBeardAndShaver\@FeatureTerrainAdjustments\@\@QEAA?AV?$shared_ptr\@_N\@std\@\@AEBVBoundingBox\@\@HMM\@Z
      */
-    MCAPI std::shared_ptr<bool> setBeardAndShaver(class BoundingBox const&, int, float, float);
+    MCAPI std::shared_ptr<bool> setBeardAndShaver(class BoundingBox const&, int32_t, float, float);
     /**
      * @symbol ?setBeardifier\@FeatureTerrainAdjustments\@\@QEAA?AV?$shared_ptr\@_N\@std\@\@AEBVBoundingBox\@\@H\@Z
      */
-    MCAPI std::shared_ptr<bool> setBeardifier(class BoundingBox const&, int);
+    MCAPI std::shared_ptr<bool> setBeardifier(class BoundingBox const&, int32_t);
     /**
      * @symbol ?setBury\@FeatureTerrainAdjustments\@\@QEAA?AV?$shared_ptr\@_N\@std\@\@AEBVBoundingBox\@\@\@Z
      */

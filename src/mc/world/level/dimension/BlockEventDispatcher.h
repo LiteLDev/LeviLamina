@@ -15,16 +15,16 @@ public:
     /**
      * @symbol ?dispatchEvent\@BlockEventDispatcher\@\@QEAAXAEBVBlockPos\@\@IAEBVBlock\@\@1PEAVActor\@\@\@Z
      */
-    MCAPI void dispatchEvent(class BlockPos const&, unsigned int, class Block const&, class Block const&, class Actor*);
+    MCAPI void dispatchEvent(class BlockPos const&, uint32_t, class Block const&, class Block const&, class Actor*);
     /**
      * @symbol
      * ?registerListener\@BlockEventDispatcher\@\@QEAA?AVBlockEventDispatcherToken\@\@AEBVVec3\@\@MV?$function\@$$A6AXAEBVBlockPos\@\@IAEBVBlock\@\@PEAVActor\@\@\@Z\@std\@\@\@Z
      */
     MCAPI class BlockEventDispatcherToken
-    registerListener(class Vec3 const&, float, std::function<void(class BlockPos const&, unsigned int, class Block const&, class Actor*)>);
+    registerListener(class Vec3 const&, float, std::function<void(class BlockPos const&, uint32_t, class Block const&, class Actor*)>);
     /**
      * @symbol ?updatePosition\@BlockEventDispatcher\@\@QEAAXHAEBVVec3\@\@\@Z
      */
-    MCAPI void updatePosition(int, class Vec3 const&);
+    MCAPI void updatePosition(int32_t, class Vec3 const&);
     // NOLINTEND
 };

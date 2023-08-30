@@ -15,7 +15,7 @@ public:
     /**
      * @symbol ?getPriority\@PrioritizedGoal\@\@QEBAHXZ
      */
-    MCAPI int getPriority() const;
+    MCAPI int32_t getPriority() const;
     /**
      * @symbol ?getToStart\@PrioritizedGoal\@\@QEBA_NXZ
      */

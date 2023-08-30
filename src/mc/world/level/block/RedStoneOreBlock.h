@@ -245,7 +245,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@RedStoneOreBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -260,12 +260,12 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@RedStoneOreBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 186
      * @symbol ?getResourceCount\@RedStoneOreBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@RedStoneOreBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -280,7 +280,7 @@ public:
      * @symbol
      * ??0RedStoneOreBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
-    MCAPI RedStoneOreBlock(std::string const&, int, bool);
+    MCAPI RedStoneOreBlock(std::string const&, int32_t, bool);
     // NOLINTEND
 
     // private:

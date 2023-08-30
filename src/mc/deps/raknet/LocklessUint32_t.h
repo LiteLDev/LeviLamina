@@ -16,11 +16,11 @@ public:
     /**
      * @symbol ?Decrement\@LocklessUint32_t\@RakNet\@\@QEAAIXZ
      */
-    MCAPI unsigned int Decrement();
+    MCAPI uint32_t Decrement();
     /**
      * @symbol ?Increment\@LocklessUint32_t\@RakNet\@\@QEAAIXZ
      */
-    MCAPI unsigned int Increment();
+    MCAPI uint32_t Increment();
     /**
      * @symbol ??0LocklessUint32_t\@RakNet\@\@QEAA\@XZ
      */

@@ -81,7 +81,7 @@ public:
     /**
      * @symbol ?getUpdateIntervalVariant\@DwellerComponent\@\@QEBAHXZ
      */
-    MCAPI int getUpdateIntervalVariant() const;
+    MCAPI int32_t getUpdateIntervalVariant() const;
     /**
      * @symbol ?getVillage\@DwellerComponent\@\@QEBA?BV?$weak_ptr\@VVillage\@\@\@std\@\@AEBVActor\@\@\@Z
      */

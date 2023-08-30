@@ -19,7 +19,7 @@ public:
     /**
      * @symbol ?makeAdjustments\@SurfaceMaterialAdjustmentEvaluated\@\@QEBAXAEAUSurfaceMaterialBlocks\@\@H\@Z
      */
-    MCAPI void makeAdjustments(struct SurfaceMaterialBlocks&, int) const;
+    MCAPI void makeAdjustments(struct SurfaceMaterialBlocks&, int32_t) const;
     /**
      * @symbol ??1SurfaceMaterialAdjustmentEvaluated\@\@QEAA\@XZ
      */

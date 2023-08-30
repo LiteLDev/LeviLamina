@@ -43,7 +43,7 @@ public:
      * @vftbl 3
      * @symbol ?getRange\@VibrationListener\@\@UEBAIXZ
      */
-    virtual unsigned int getRange() const;
+    virtual uint32_t getRange() const;
     /**
      * @vftbl 4
      * @symbol ?getDeliveryMode\@GameEventListener\@\@UEBA?AW4DeliveryMode\@1\@XZ
@@ -56,7 +56,7 @@ public:
     MCAPI VibrationListener(
         std::unique_ptr<class VibrationListenerConfig>&&,
         class GameEvents::PositionSource,
-        unsigned int,
+        uint32_t,
         enum class VibrationListener::OwnerType
     );
     /**

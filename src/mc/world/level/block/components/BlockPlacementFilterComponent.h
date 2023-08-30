@@ -18,7 +18,7 @@ public:
     /**
      * @symbol ?mayPlace\@BlockPlacementFilterComponent\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    MCAPI bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
+    MCAPI bool mayPlace(class BlockSource&, class BlockPos const&, uint8_t) const;
     /**
      * @symbol ?mayPlace\@BlockPlacementFilterComponent\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */

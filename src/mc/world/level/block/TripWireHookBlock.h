@@ -157,7 +157,7 @@ public:
      * @vftbl 66
      * @symbol ?shouldConnectToRedstone\@TripWireHookBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -177,7 +177,7 @@ public:
      * @vftbl 93
      * @symbol ?mayPlace\@TripWireHookBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
+    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 94
      * @symbol ?mayPlace\@TripWireHookBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
@@ -198,7 +198,7 @@ public:
      * @symbol ?getPlacementBlock\@TripWireHookBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -293,11 +293,11 @@ public:
      * @symbol
      * ??0TripWireHookBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI TripWireHookBlock(std::string const&, int);
+    MCAPI TripWireHookBlock(std::string const&, int32_t);
     /**
      * @symbol ?calculateState\@TripWireHookBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@_N2HAEBVBlock\@\@\@Z
      */
-    MCAPI void calculateState(class BlockSource&, class BlockPos const&, bool, bool, int, class Block const&) const;
+    MCAPI void calculateState(class BlockSource&, class BlockPos const&, bool, bool, int32_t, class Block const&) const;
     // NOLINTEND
 
     // private:
@@ -309,6 +309,6 @@ public:
     /**
      * @symbol ?_getShape\@TripWireHookBlock\@\@AEBAXHAEAVAABB\@\@\@Z
      */
-    MCAPI void _getShape(int, class AABB&) const;
+    MCAPI void _getShape(int32_t, class AABB&) const;
     // NOLINTEND
 };

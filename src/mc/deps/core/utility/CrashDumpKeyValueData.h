@@ -18,7 +18,7 @@ public:
     /**
      * @symbol ??0CrashDumpKeyValueData\@\@QEAA\@W4CrashDumpLogStringID\@\@0H_K\@Z
      */
-    MCAPI CrashDumpKeyValueData(enum class CrashDumpLogStringID, enum class CrashDumpLogStringID, int, uint64_t);
+    MCAPI CrashDumpKeyValueData(enum class CrashDumpLogStringID, enum class CrashDumpLogStringID, int32_t, uint64_t);
     /**
      * @symbol ?kFormat\@CrashDumpKeyValueData\@\@2QBUCrashDumpFormatEntryImpl\@\@B
      */

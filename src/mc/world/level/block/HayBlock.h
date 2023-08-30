@@ -190,7 +190,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@HayBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -239,6 +239,6 @@ public:
     /**
      * @symbol ??0HayBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI HayBlock(std::string const&, int);
+    MCAPI HayBlock(std::string const&, int32_t);
     // NOLINTEND
 };

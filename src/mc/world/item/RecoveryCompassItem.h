@@ -112,6 +112,6 @@ public:
      * @symbol
      * ??0RecoveryCompassItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI RecoveryCompassItem(std::string const&, int);
+    MCAPI RecoveryCompassItem(std::string const&, int32_t);
     // NOLINTEND
 };

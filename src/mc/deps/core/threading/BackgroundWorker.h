@@ -53,7 +53,7 @@ public:
         bool,
         class Bedrock::Threading::OSThreadPriority const&,
         std::optional<uint64_t>,
-        std::optional<int>,
+        std::optional<int32_t>,
         class WorkerPool&,
         bool
     );

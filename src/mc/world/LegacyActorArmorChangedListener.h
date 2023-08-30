@@ -19,7 +19,7 @@ public:
      * @vftbl 0
      * @symbol ?containerContentChanged\@LegacyActorArmorChangedListener\@\@UEAAXH\@Z
      */
-    virtual void containerContentChanged(int);
+    virtual void containerContentChanged(int32_t);
     /**
      * @symbol ?containerContentChanged\@LegacyActorArmorChangedListener\@\@QEAAXAEAVActor\@\@\@Z
      */

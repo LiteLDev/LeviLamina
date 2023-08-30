@@ -27,7 +27,7 @@ MCAPI enum class BlendingBlockType _processBlockTypeFromCellEntry(std::vector<en
  * ?calculateHeight\@BlendingDataFactoryUtil\@\@YA?AVChunkLocalHeight\@\@AEAVBlendingData\@\@AEAV?$vector\@UBorderCellEntry\@BlendingDataFactoryUtil\@\@V?$allocator\@UBorderCellEntry\@BlendingDataFactoryUtil\@\@\@std\@\@\@std\@\@V2\@V?$function\@$$A6AAEAUSubChunk\@\@H\@Z\@5\@\@Z
  */
 MCAPI class ChunkLocalHeight
-calculateHeight(class BlendingData&, std::vector<struct BlendingDataFactoryUtil::BorderCellEntry>&, class ChunkLocalHeight, std::function<struct SubChunk&(int)>);
+calculateHeight(class BlendingData&, std::vector<struct BlendingDataFactoryUtil::BorderCellEntry>&, class ChunkLocalHeight, std::function<struct SubChunk&(int32_t)>);
 /**
  * @symbol ?calculateSurfaceDensity\@BlendingDataFactoryUtil\@\@YAXAEAVBlendingData\@\@_K\@Z
  */
@@ -37,20 +37,20 @@ MCAPI void calculateSurfaceDensity(class BlendingData&, uint64_t);
  * ?iterateDownCellColumnUntil\@BlendingDataFactoryUtil\@\@YAXVChunkLocalHeight\@\@AEAV?$vector\@UBorderCellEntry\@BlendingDataFactoryUtil\@\@V?$allocator\@UBorderCellEntry\@BlendingDataFactoryUtil\@\@\@std\@\@\@std\@\@HV?$function\@$$A6AAEAUSubChunk\@\@H\@Z\@4\@V?$function\@$$A6A_NAEBUSubChunk\@\@AEAUBorderCellEntry\@BlendingDataFactoryUtil\@\@VChunkLocalHeight\@\@GH\@Z\@4\@\@Z
  */
 MCAPI void
-iterateDownCellColumnUntil(class ChunkLocalHeight, std::vector<struct BlendingDataFactoryUtil::BorderCellEntry>&, int, std::function<struct SubChunk&(int)>, std::function<bool(struct SubChunk const&, struct BlendingDataFactoryUtil::BorderCellEntry&, class ChunkLocalHeight, unsigned short, int)>);
+iterateDownCellColumnUntil(class ChunkLocalHeight, std::vector<struct BlendingDataFactoryUtil::BorderCellEntry>&, int32_t, std::function<struct SubChunk&(int32_t)>, std::function<bool(struct SubChunk const&, struct BlendingDataFactoryUtil::BorderCellEntry&, class ChunkLocalHeight, uint16_t, int32_t)>);
 /**
  * @symbol
  * ?processBorderCells\@BlendingDataFactoryUtil\@\@YAXVNeighbors\@LevelChunk\@\@V?$function\@$$A6AX_KHH0\@Z\@std\@\@\@Z
  */
-MCAPI void processBorderCells(class LevelChunk::Neighbors, std::function<void(uint64_t, int, int, uint64_t)>);
+MCAPI void processBorderCells(class LevelChunk::Neighbors, std::function<void(uint64_t, int32_t, int32_t, uint64_t)>);
 /**
  * @symbol ?setBiome\@BlendingDataFactoryUtil\@\@YAXAEAVBlendingData\@\@_KHE\@Z
  */
-MCAPI void setBiome(class BlendingData&, uint64_t, int, unsigned char);
+MCAPI void setBiome(class BlendingData&, uint64_t, int32_t, uint8_t);
 /**
  * @symbol ?setDensity\@BlendingDataFactoryUtil\@\@YAXAEAVBlendingData\@\@_KHM\@Z
  */
-MCAPI void setDensity(class BlendingData&, uint64_t, int, float);
+MCAPI void setDensity(class BlendingData&, uint64_t, int32_t, float);
 // NOLINTEND
 
 }; // namespace BlendingDataFactoryUtil

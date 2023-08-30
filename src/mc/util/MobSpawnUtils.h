@@ -22,9 +22,9 @@ MCAPI class Mob* trySpawnMob(
     class BlockSource&,
     struct ActorDefinitionIdentifier const&,
     class BlockPos,
-    int,
-    int,
-    int,
+    int32_t,
+    int32_t,
+    int32_t,
     std::function<bool(class BlockPos)> const&,
     enum class MobSpawnUtils::SurfaceDetectionType
 );

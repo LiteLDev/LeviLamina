@@ -25,7 +25,7 @@ public:
      * @vftbl 1
      * @symbol ?moveBoundingBox\@TemplateStructurePiece\@\@UEAAXHHH\@Z
      */
-    virtual void moveBoundingBox(int, int, int);
+    virtual void moveBoundingBox(int32_t, int32_t, int32_t);
     /**
      * @vftbl 2
      * @symbol ?getType\@SHLeftTurn\@\@UEBA?AW4StructurePieceType\@\@XZ
@@ -56,22 +56,23 @@ public:
      * @vftbl 7
      * @symbol ?getWorldX\@OceanMonumentPiece\@\@UEAAHHH\@Z
      */
-    virtual int getWorldX(int, int);
+    virtual int32_t getWorldX(int32_t, int32_t);
     /**
      * @vftbl 8
      * @symbol ?getWorldZ\@OceanMonumentPiece\@\@UEAAHHH\@Z
      */
-    virtual int getWorldZ(int, int);
+    virtual int32_t getWorldZ(int32_t, int32_t);
     /**
      * @vftbl 9
      * @symbol ?placeBlock\@StructurePiece\@\@UEAAXAEAVBlockSource\@\@AEBVBlock\@\@HHHAEBVBoundingBox\@\@\@Z
      */
-    virtual void placeBlock(class BlockSource&, class Block const&, int, int, int, class BoundingBox const&);
+    virtual void
+    placeBlock(class BlockSource&, class Block const&, int32_t, int32_t, int32_t, class BoundingBox const&);
     /**
      * @vftbl 10
      * @symbol ?canBeReplaced\@StructurePiece\@\@UEAA_NAEAVBlockSource\@\@HHHAEBVBoundingBox\@\@\@Z
      */
-    virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
+    virtual bool canBeReplaced(class BlockSource&, int32_t, int32_t, int32_t, class BoundingBox const&);
     /**
      * @vftbl 11
      * @symbol ?generateBox\@StructurePiece\@\@UEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@HHHHHHAEBVBlock\@\@2_N\@Z
@@ -79,12 +80,12 @@ public:
     virtual void generateBox(
         class BlockSource&,
         class BoundingBox const&,
-        int,
-        int,
-        int,
-        int,
-        int,
-        int,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
         class Block const&,
         class Block const&,
         bool

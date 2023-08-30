@@ -64,7 +64,7 @@ public:
      * @vftbl 8
      * @symbol ?loadFacingID\@StructureDataLoadHelper\@\@UEAAEE\@Z
      */
-    virtual unsigned char loadFacingID(unsigned char);
+    virtual uint8_t loadFacingID(uint8_t);
     /**
      * @vftbl 9
      * @symbol ?loadDirection\@StructureDataLoadHelper\@\@UEAA?AVVec3\@\@AEBV2\@\@Z

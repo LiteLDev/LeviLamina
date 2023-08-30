@@ -28,6 +28,6 @@ public:
     /**
      * @symbol ??0ClayFeature\@\@QEAA\@H\@Z
      */
-    MCAPI ClayFeature(int);
+    MCAPI ClayFeature(int32_t);
     // NOLINTEND
 };

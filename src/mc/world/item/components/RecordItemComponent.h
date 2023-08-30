@@ -60,16 +60,16 @@ public:
      * @vftbl 8
      * @symbol ?_canUseOn\@ItemComponent\@\@MEBA_NAEBVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, unsigned char) const;
+    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 9
      * @symbol ?_useOn\@ItemComponent\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
      */
-    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&) const;
+    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uint8_t, class Vec3 const&) const;
     /**
      * @symbol ??0RecordItemComponent\@\@QEAA\@PEAVComponentItem\@\@W4LevelSoundEvent\@\@MH\@Z
      */
-    MCAPI RecordItemComponent(class ComponentItem*, enum class LevelSoundEvent, float, int);
+    MCAPI RecordItemComponent(class ComponentItem*, enum class LevelSoundEvent, float, int32_t);
     /**
      * @symbol
      * ?appendFormattedHovertext\@RecordItemComponent\@\@QEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -78,7 +78,7 @@ public:
     /**
      * @symbol ?getComparatorSignal\@RecordItemComponent\@\@QEBAHXZ
      */
-    MCAPI int getComparatorSignal() const;
+    MCAPI int32_t getComparatorSignal() const;
     /**
      * @symbol ?getDuration\@RecordItemComponent\@\@QEBAMXZ
      */

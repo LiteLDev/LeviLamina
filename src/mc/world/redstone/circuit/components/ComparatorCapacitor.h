@@ -27,7 +27,7 @@ public:
      * @vftbl 11
      * @symbol ?addSource\@ComparatorCapacitor\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEAHAEA_N\@Z
      */
-    virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
+    virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int32_t&, bool&);
     /**
      * @vftbl 14
      * @symbol ?evaluate\@ComparatorCapacitor\@\@UEAA_NAEAVCircuitSystem\@\@AEBVBlockPos\@\@\@Z
@@ -65,11 +65,11 @@ public:
     /**
      * @symbol ?clearAnalogStrength\@ComparatorCapacitor\@\@QEAAXE\@Z
      */
-    MCAPI void clearAnalogStrength(unsigned char);
+    MCAPI void clearAnalogStrength(uint8_t);
     /**
      * @symbol ?getOldStrength\@ComparatorCapacitor\@\@QEAAHXZ
      */
-    MCAPI int getOldStrength();
+    MCAPI int32_t getOldStrength();
     /**
      * @symbol ?isSubtractMode\@ComparatorCapacitor\@\@QEAA_NXZ
      */
@@ -77,7 +77,7 @@ public:
     /**
      * @symbol ?setAnalogStrength\@ComparatorCapacitor\@\@QEAAXHE\@Z
      */
-    MCAPI void setAnalogStrength(int, unsigned char);
+    MCAPI void setAnalogStrength(int32_t, uint8_t);
     /**
      * @symbol ?setMode\@ComparatorCapacitor\@\@QEAAXW4Mode\@1\@\@Z
      */

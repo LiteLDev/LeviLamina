@@ -241,7 +241,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@WebBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBBLOCK
     /**
      * @symbol ?waterSpreadCausesSpawn\@WebBlock\@\@UEBA_NXZ
@@ -251,6 +251,6 @@ public:
     /**
      * @symbol ??0WebBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI WebBlock(std::string const&, int);
+    MCAPI WebBlock(std::string const&, int32_t);
     // NOLINTEND
 };

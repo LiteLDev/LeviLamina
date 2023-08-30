@@ -52,7 +52,7 @@ public:
      * @vftbl 1
      * @symbol ?getNutrition\@FoodItemComponentLegacy\@\@UEBAHXZ
      */
-    virtual int getNutrition() const;
+    virtual int32_t getNutrition() const;
     /**
      * @vftbl 2
      * @symbol ?getSaturationModifier\@FoodItemComponentLegacy\@\@UEBAMXZ

@@ -235,12 +235,12 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@SculkVeinBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 186
      * @symbol ?getResourceCount\@SculkVeinBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@SculkVeinBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -260,6 +260,6 @@ public:
      * @symbol
      * ??0SculkVeinBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI SculkVeinBlock(std::string const&, int, class Material const&);
+    MCAPI SculkVeinBlock(std::string const&, int32_t, class Material const&);
     // NOLINTEND
 };

@@ -79,7 +79,7 @@ public:
         enum class CompoundType,
         enum class LabTableReactionType,
         enum class CompoundContainerType,
-        int
+        int32_t
     );
     /**
      * @symbol

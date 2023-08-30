@@ -84,7 +84,7 @@ public:
      * @vftbl 62
      * @symbol ?getEnchantSlot\@ShieldItem\@\@UEBAHXZ
      */
-    virtual int getEnchantSlot() const;
+    virtual int32_t getEnchantSlot() const;
     /**
      * @vftbl 66
      * @symbol __unk_vfn_66
@@ -129,7 +129,7 @@ public:
      * @vftbl 85
      * @symbol ?dispense\@ShieldItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
+    virtual bool dispense(class BlockSource&, class Container&, int32_t, class Vec3 const&, uint8_t) const;
     /**
      * @vftbl 89
      * @symbol ?hurtActor\@ShieldItem\@\@UEBAXAEAVItemStack\@\@AEAVActor\@\@AEAVMob\@\@\@Z
@@ -155,7 +155,7 @@ public:
      * @vftbl 101
      * @symbol ?inventoryTick\@ShieldItem\@\@UEBA_NAEAVItemStack\@\@AEAVLevel\@\@AEAVActor\@\@H_N\@Z
      */
-    virtual bool inventoryTick(class ItemStack&, class Level&, class Actor&, int, bool) const;
+    virtual bool inventoryTick(class ItemStack&, class Level&, class Actor&, int32_t, bool) const;
     /**
      * @vftbl 103
      * @symbol ?getCooldownType\@ShieldItem\@\@UEBAAEBVHashedString\@\@XZ
@@ -165,7 +165,7 @@ public:
      * @vftbl 104
      * @symbol ?getCooldownTime\@ShieldItem\@\@UEBAHXZ
      */
-    virtual int getCooldownTime() const;
+    virtual int32_t getCooldownTime() const;
     /**
      * @vftbl 109
      * @symbol ?getInHandUpdateType\@ShieldItem\@\@UEBA?AW4InHandUpdateType\@\@AEBVPlayer\@\@AEBVItemInstance\@\@1_N2\@Z
@@ -191,7 +191,7 @@ public:
     /**
      * @symbol ??0ShieldItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI ShieldItem(std::string const&, int);
+    MCAPI ShieldItem(std::string const&, int32_t);
     /**
      * @symbol ?playBlockSound\@ShieldItem\@\@QEBAXPEAVPlayer\@\@\@Z
      */
@@ -203,15 +203,15 @@ public:
     /**
      * @symbol ?EFFECTIVE_BLOCK_DELAY\@ShieldItem\@\@2HB
      */
-    MCAPI static int const EFFECTIVE_BLOCK_DELAY;
+    MCAPI static int32_t const EFFECTIVE_BLOCK_DELAY;
     /**
      * @symbol ?IN_HAND_BLOCK_DURATION\@ShieldItem\@\@2HB
      */
-    MCAPI static int const IN_HAND_BLOCK_DURATION;
+    MCAPI static int32_t const IN_HAND_BLOCK_DURATION;
     /**
      * @symbol ?NO_SHIELD_PATTERN\@ShieldItem\@\@2HB
      */
-    MCAPI static int const NO_SHIELD_PATTERN;
+    MCAPI static int32_t const NO_SHIELD_PATTERN;
     /**
      * @symbol ?TIMESTAMP_TAG\@ShieldItem\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */

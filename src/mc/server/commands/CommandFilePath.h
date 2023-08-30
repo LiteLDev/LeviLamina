@@ -18,7 +18,7 @@ public:
     /**
      * @symbol ?findInvalidCharacter\@CommandFilePath\@\@QEBAHXZ
      */
-    MCAPI int findInvalidCharacter() const;
+    MCAPI int32_t findInvalidCharacter() const;
     /**
      * @symbol
      * ?getText\@CommandFilePath\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ

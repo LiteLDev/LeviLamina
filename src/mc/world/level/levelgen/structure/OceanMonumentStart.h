@@ -28,6 +28,6 @@ public:
     /**
      * @symbol ?createMonument\@OceanMonumentStart\@\@QEAAXAEAVDimension\@\@AEAVRandom\@\@HH\@Z
      */
-    MCAPI void createMonument(class Dimension&, class Random&, int, int);
+    MCAPI void createMonument(class Dimension&, class Random&, int32_t, int32_t);
     // NOLINTEND
 };

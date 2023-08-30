@@ -185,7 +185,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@StrippedLogBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -241,6 +241,6 @@ public:
      * @symbol
      * ??0StrippedLogBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HV?$optional\@ULogBlockMapColors\@\@\@2\@\@Z
      */
-    MCAPI StrippedLogBlock(std::string const&, int, std::optional<struct LogBlockMapColors>);
+    MCAPI StrippedLogBlock(std::string const&, int32_t, std::optional<struct LogBlockMapColors>);
     // NOLINTEND
 };

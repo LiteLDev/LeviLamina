@@ -40,7 +40,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@LecternBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -160,7 +160,7 @@ public:
      * @vftbl 66
      * @symbol ?shouldConnectToRedstone\@LecternBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 71
      * @symbol ?checkIsPathable\@LecternBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
@@ -196,7 +196,7 @@ public:
      * @symbol ?getPlacementBlock\@LecternBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 111
      * @symbol ?attack\@LecternBlock\@\@UEBA_NPEAVPlayer\@\@AEBVBlockPos\@\@\@Z
@@ -221,7 +221,7 @@ public:
      * @vftbl 126
      * @symbol ?getComparatorSignal\@LecternBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, unsigned char) const;
+    virtual int32_t getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uint8_t) const;
     /**
      * @vftbl 128
      * @symbol __unk_vfn_128
@@ -276,7 +276,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@LecternBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -300,7 +300,7 @@ public:
     /**
      * @symbol ??0LecternBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI LecternBlock(std::string const&, int);
+    MCAPI LecternBlock(std::string const&, int32_t);
     /**
      * @symbol ?emitRedstonePulse\@LecternBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */

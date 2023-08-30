@@ -26,8 +26,8 @@ public:
     MCAPI MemoryPage(
         class gsl::not_null<class Bedrock::JSONObject::Document*>,
         class Bedrock::JSONObject::MemoryPage*,
-        unsigned int,
-        unsigned int
+        uint32_t,
+        uint32_t
     );
     /**
      * @symbol ?allocateBack\@MemoryPage\@JSONObject\@Bedrock\@\@QEAAPEAX_K0\@Z

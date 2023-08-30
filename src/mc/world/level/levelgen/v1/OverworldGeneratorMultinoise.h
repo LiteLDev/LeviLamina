@@ -64,10 +64,10 @@ public:
         class ChunkPos const&,
         class WorldGenCache const&,
         class Aquifer*,
-        std::function<void(class BlockPos const&, class Block const&, int)>&&,
+        std::function<void(class BlockPos const&, class Block const&, int32_t)>&&,
         bool,
-        std::vector<short>*,
-        int
+        std::vector<int16_t>*,
+        int32_t
     );
     /**
      * @symbol ?chunkPosNeedsBlending\@OverworldGeneratorMultinoise\@\@UEAA_NAEBVChunkPos\@\@\@Z
@@ -98,7 +98,7 @@ public:
     /**
      * @symbol ?getLevelGenHeight\@OverworldGeneratorMultinoise\@\@UEBAHXZ
      */
-    MCVAPI int getLevelGenHeight() const;
+    MCVAPI int32_t getLevelGenHeight() const;
     /**
      * @symbol
      * ?getMaterialAdjNoise\@OverworldGeneratorMultinoise\@\@MEBAAEBV?$unique_ptr\@VPerlinSimplexNoise\@\@U?$default_delete\@VPerlinSimplexNoise\@\@\@std\@\@\@std\@\@XZ
@@ -108,7 +108,7 @@ public:
      * @symbol
      * ?getPreliminarySurfaceLevel\@OverworldGeneratorMultinoise\@\@UEBA?AV?$optional\@F\@std\@\@V?$DividedPos2d\@$03\@\@\@Z
      */
-    MCVAPI std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
+    MCVAPI std::optional<int16_t> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
     /**
      * @symbol ?getSurfaceNoise\@OverworldGeneratorMultinoise\@\@MEAAAEBVPerlinSimplexNoise\@\@XZ
      */
@@ -123,7 +123,7 @@ public:
      * ?tryMakeAquifer\@OverworldGeneratorMultinoise\@\@EEBA?AV?$unique_ptr\@VAquifer\@\@U?$default_delete\@VAquifer\@\@\@std\@\@\@std\@\@AEBVChunkPos\@\@AEBVSurfaceLevelCache\@\@FFF\@Z
      */
     MCVAPI std::unique_ptr<class Aquifer>
-           tryMakeAquifer(class ChunkPos const&, class SurfaceLevelCache const&, short, short, short) const;
+           tryMakeAquifer(class ChunkPos const&, class SurfaceLevelCache const&, int16_t, int16_t, int16_t) const;
     /**
      * @symbol __unk_destructor_-1
      */
@@ -138,7 +138,7 @@ public:
     /**
      * @symbol ?_applySlides\@OverworldGeneratorMultinoise\@\@SAMAEBVDimensionHeightRange\@\@ME\@Z
      */
-    MCAPI static float _applySlides(class DimensionHeightRange const&, float, unsigned char);
+    MCAPI static float _applySlides(class DimensionHeightRange const&, float, uint8_t);
     // NOLINTEND
 
     // private:

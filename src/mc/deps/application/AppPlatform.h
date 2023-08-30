@@ -35,20 +35,21 @@ namespace mce { class UUID; }
 
 class AppPlatform {
 public:
+
     // AppPlatform inner types declare
     // clang-format off
     struct AndroidScopedStorageInfo;
     // clang-format on
-
+    
     // AppPlatform inner types define
     struct AndroidScopedStorageInfo {
-
+    
     public:
         // prevent constructor by default
-        AndroidScopedStorageInfo& operator=(AndroidScopedStorageInfo const&) = delete;
-        AndroidScopedStorageInfo(AndroidScopedStorageInfo const&)            = delete;
-        AndroidScopedStorageInfo()                                           = delete;
-
+        AndroidScopedStorageInfo& operator=(AndroidScopedStorageInfo const &) = delete;
+        AndroidScopedStorageInfo(AndroidScopedStorageInfo const &) = delete;
+        AndroidScopedStorageInfo() = delete;
+    
     public:
         // NOLINTBEGIN
         /**
@@ -56,13 +57,14 @@ public:
          */
         MCAPI ~AndroidScopedStorageInfo();
         // NOLINTEND
+    
     };
-
+    
 public:
     // prevent constructor by default
-    AppPlatform& operator=(AppPlatform const&) = delete;
-    AppPlatform(AppPlatform const&)            = delete;
-    AppPlatform()                              = delete;
+    AppPlatform& operator=(AppPlatform const &) = delete;
+    AppPlatform(AppPlatform const &) = delete;
+    AppPlatform() = delete;
 
 public:
     // NOLINTBEGIN
@@ -94,7 +96,7 @@ public:
     /**
      * @symbol ?addListener\@AppPlatform\@\@UEAAXPEAVAppPlatformListener\@\@M\@Z
      */
-    MCVAPI void addListener(class AppPlatformListener*, float);
+    MCVAPI void addListener(class AppPlatformListener *, float);
     /**
      * @symbol ?allowBetaXblSignIn\@AppPlatform\@\@UEBA_NXZ
      */
@@ -124,10 +126,9 @@ public:
      */
     MCVAPI void calculateIfLowMemoryDevice();
     /**
-     * @symbol
-     * ?canLaunchUri\@AppPlatform\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?canLaunchUri\@AppPlatform\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI bool canLaunchUri(std::string const&);
+    MCVAPI bool canLaunchUri(std::string const &);
     /**
      * @symbol ?canManageLegacyData\@AppPlatform\@\@UEBA_NXZ
      */
@@ -139,44 +140,39 @@ public:
     /**
      * @symbol ?checkLicense\@AppPlatform\@\@UEAAHXZ
      */
-    MCVAPI int checkLicense();
+    MCVAPI int32_t checkLicense();
     /**
      * @symbol ?collectGraphicsHardwareDetails\@AppPlatform\@\@UEAAXXZ
      */
     MCVAPI void collectGraphicsHardwareDetails();
     /**
-     * @symbol
-     * ?compareAppReceiptToLocalReceipt\@AppPlatform\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?compareAppReceiptToLocalReceipt\@AppPlatform\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI bool compareAppReceiptToLocalReceipt(std::string const&);
+    MCVAPI bool compareAppReceiptToLocalReceipt(std::string const &);
     /**
      * @symbol ?copyAssetFile\@AppPlatform\@\@UEAA_NAEBVPath\@Core\@\@0\@Z
      */
-    MCVAPI bool copyAssetFile(class Core::Path const&, class Core::Path const&);
+    MCVAPI bool copyAssetFile(class Core::Path const &, class Core::Path const &);
     /**
-     * @symbol
-     * ?copyImportFileToTempFolder\@AppPlatform\@\@UEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@AEBVPath\@3\@\@Z
+     * @symbol ?copyImportFileToTempFolder\@AppPlatform\@\@UEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@AEBVPath\@3\@\@Z
      */
-    MCVAPI class Core::PathBuffer<std::string> copyImportFileToTempFolder(class Core::Path const&);
+    MCVAPI class Core::PathBuffer<std::string> copyImportFileToTempFolder(class Core::Path const &);
     /**
-     * @symbol
-     * ?createLoggingStorageArea\@AppPlatform\@\@UEAA?AV?$shared_ptr\@VFileStorageArea\@Core\@\@\@std\@\@W4FileAccessType\@Core\@\@AEBVPath\@5\@\@Z
+     * @symbol ?createLoggingStorageArea\@AppPlatform\@\@UEAA?AV?$shared_ptr\@VFileStorageArea\@Core\@\@\@std\@\@W4FileAccessType\@Core\@\@AEBVPath\@5\@\@Z
      */
-    MCVAPI std::shared_ptr<class Core::FileStorageArea>
-           createLoggingStorageArea(enum class Core::FileAccessType, class Core::Path const&);
+    MCVAPI std::shared_ptr<class Core::FileStorageArea> createLoggingStorageArea(enum class Core::FileAccessType, class Core::Path const &);
     /**
      * @symbol ?createUserInput\@AppPlatform\@\@UEAAXH\@Z
      */
-    MCVAPI void createUserInput(int);
+    MCVAPI void createUserInput(int32_t);
     /**
      * @symbol ?createUserInput\@AppPlatform\@\@UEAAXXZ
      */
     MCVAPI void createUserInput();
     /**
-     * @symbol
-     * ?createWebview\@AppPlatform\@\@UEBA?AV?$shared_ptr\@VWebviewInterface\@\@\@std\@\@$$QEAVPlatformArguments\@Webview\@\@\@Z
+     * @symbol ?createWebview\@AppPlatform\@\@UEBA?AV?$shared_ptr\@VWebviewInterface\@\@\@std\@\@$$QEAVPlatformArguments\@Webview\@\@\@Z
      */
-    MCVAPI std::shared_ptr<class WebviewInterface> createWebview(class Webview::PlatformArguments&&) const;
+    MCVAPI std::shared_ptr<class WebviewInterface> createWebview(class Webview::PlatformArguments &&) const;
     /**
      * @symbol ?doesLANRequireMultiplayerRestrictions\@AppPlatform\@\@UEBA_NXZ
      */
@@ -184,7 +180,7 @@ public:
     /**
      * @symbol ?exitVRMode\@AppPlatform\@\@UEAAXV?$function\@$$A6AXXZ\@std\@\@\@Z
      */
-    MCVAPI void exitVRMode(std::function<void(void)>);
+    MCVAPI void exitVRMode(std::function<void (void)>);
     /**
      * @symbol ?finish\@AppPlatform\@\@UEAAXXZ
      */
@@ -196,44 +192,37 @@ public:
     /**
      * @symbol ?getAndroidScopedStorageInfo\@AppPlatform\@\@UEBAAEBUAndroidScopedStorageInfo\@1\@XZ
      */
-    MCVAPI struct AppPlatform::AndroidScopedStorageInfo const& getAndroidScopedStorageInfo() const;
+    MCVAPI struct AppPlatform::AndroidScopedStorageInfo const & getAndroidScopedStorageInfo() const;
     /**
      * @symbol ?getAppLifecycleContext\@AppPlatform\@\@UEAAAEAVAppLifecycleContext\@\@XZ
      */
-    MCVAPI class AppLifecycleContext& getAppLifecycleContext();
+    MCVAPI class AppLifecycleContext & getAppLifecycleContext();
     /**
-     * @symbol
-     * ?getAssetFileFullPath\@AppPlatform\@\@UEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@AEBVPath\@3\@\@Z
+     * @symbol ?getAssetFileFullPath\@AppPlatform\@\@UEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@AEBVPath\@3\@\@Z
      */
-    MCVAPI class Core::PathBuffer<std::string> getAssetFileFullPath(class Core::Path const&);
+    MCVAPI class Core::PathBuffer<std::string> getAssetFileFullPath(class Core::Path const &);
     /**
-     * @symbol
-     * ?getBroadcastAddresses\@AppPlatform\@\@UEAA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
+     * @symbol ?getBroadcastAddresses\@AppPlatform\@\@UEAA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
      */
     MCVAPI std::vector<std::string> getBroadcastAddresses();
     /**
-     * @symbol
-     * ?getBroadcastingMultiplayerServiceIds\@AppPlatform\@\@UEBA?AV?$vector\@W4MultiplayerServiceIdentifier\@Social\@\@V?$allocator\@W4MultiplayerServiceIdentifier\@Social\@\@\@std\@\@\@std\@\@_N0\@Z
+     * @symbol ?getBroadcastingMultiplayerServiceIds\@AppPlatform\@\@UEBA?AV?$vector\@W4MultiplayerServiceIdentifier\@Social\@\@V?$allocator\@W4MultiplayerServiceIdentifier\@Social\@\@\@std\@\@\@std\@\@_N0\@Z
      */
-    MCVAPI std::vector<enum class Social::MultiplayerServiceIdentifier>
-           getBroadcastingMultiplayerServiceIds(bool, bool) const;
+    MCVAPI std::vector<enum class Social::MultiplayerServiceIdentifier> getBroadcastingMultiplayerServiceIds(bool, bool) const;
     /**
      * @symbol ?getBuildPlatform\@AppPlatform\@\@UEBA?AW4BuildPlatform\@\@XZ
      */
     MCVAPI enum class BuildPlatform getBuildPlatform() const;
     /**
-     * @symbol
-     * ?getCacheStoragePath\@AppPlatform\@\@UEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getCacheStoragePath\@AppPlatform\@\@UEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     MCVAPI class Core::PathBuffer<std::string> getCacheStoragePath();
     /**
-     * @symbol
-     * ?getCatalogSearchScratchPath\@AppPlatform\@\@UEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getCatalogSearchScratchPath\@AppPlatform\@\@UEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     MCVAPI class Core::PathBuffer<std::string> getCatalogSearchScratchPath();
     /**
-     * @symbol
-     * ?getClientUpdateUrl\@AppPlatform\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getClientUpdateUrl\@AppPlatform\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCVAPI std::string getClientUpdateUrl() const;
     /**
@@ -243,7 +232,7 @@ public:
     /**
      * @symbol ?getDefaultNetworkMaxPlayers\@AppPlatform\@\@UEBAHXZ
      */
-    MCVAPI int getDefaultNetworkMaxPlayers() const;
+    MCVAPI int32_t getDefaultNetworkMaxPlayers() const;
     /**
      * @symbol ?getDefaultSafeZoneScaleAll\@AppPlatform\@\@UEBAMXZ
      */
@@ -271,41 +260,35 @@ public:
     /**
      * @symbol ?getDisplayHeight\@AppPlatform\@\@UEAAHXZ
      */
-    MCVAPI int getDisplayHeight();
+    MCVAPI int32_t getDisplayHeight();
     /**
      * @symbol ?getDisplayWidth\@AppPlatform\@\@UEAAHXZ
      */
-    MCVAPI int getDisplayWidth();
+    MCVAPI int32_t getDisplayWidth();
     /**
      * @symbol ?getDpi\@AppPlatform\@\@UEBAHXZ
      */
-    MCVAPI int getDpi() const;
+    MCVAPI int32_t getDpi() const;
     /**
-     * @symbol
-     * ?getEdition\@AppPlatform\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getEdition\@AppPlatform\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCVAPI std::string getEdition() const;
     /**
-     * @symbol
-     * ?getExtraLevelSaveDataIconParams\@AppPlatform\@\@UEBA?AV?$optional\@UScreenshotOptions\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
+     * @symbol ?getExtraLevelSaveDataIconParams\@AppPlatform\@\@UEBA?AV?$optional\@UScreenshotOptions\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
-    MCVAPI std::optional<struct ScreenshotOptions> getExtraLevelSaveDataIconParams(std::string const&) const;
+    MCVAPI std::optional<struct ScreenshotOptions> getExtraLevelSaveDataIconParams(std::string const &) const;
     /**
-     * @symbol
-     * ?getFeedbackBugsLink\@AppPlatform\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getFeedbackBugsLink\@AppPlatform\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCVAPI std::string getFeedbackBugsLink() const;
     /**
-     * @symbol
-     * ?getFeedbackHelpLink\@AppPlatform\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getFeedbackHelpLink\@AppPlatform\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCVAPI std::string getFeedbackHelpLink() const;
     /**
-     * @symbol
-     * ?getFileAccess\@AppPlatform\@\@UEAA?AV?$not_null\@V?$NonOwnerPointer\@VIFileAccess\@\@\@Bedrock\@\@\@gsl\@\@W4ResourceFileSystem\@\@\@Z
+     * @symbol ?getFileAccess\@AppPlatform\@\@UEAA?AV?$not_null\@V?$NonOwnerPointer\@VIFileAccess\@\@\@Bedrock\@\@\@gsl\@\@W4ResourceFileSystem\@\@\@Z
      */
-    MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>>
-        getFileAccess(enum class ResourceFileSystem);
+    MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> getFileAccess(enum class ResourceFileSystem);
     /**
      * @symbol ?getFocusState\@AppPlatform\@\@UEAA?AW4AppFocusState\@\@XZ
      */
@@ -315,13 +298,11 @@ public:
      */
     MCVAPI uint64_t getHighPerformanceThreadsCount() const;
     /**
-     * @symbol
-     * ?getIPAddresses\@AppPlatform\@\@UEAA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
+     * @symbol ?getIPAddresses\@AppPlatform\@\@UEAA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
      */
     MCVAPI std::vector<std::string> getIPAddresses();
     /**
-     * @symbol
-     * ?getInternalPackStoragePath\@AppPlatform\@\@UEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getInternalPackStoragePath\@AppPlatform\@\@UEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     MCVAPI class Core::PathBuffer<std::string> getInternalPackStoragePath() const;
     /**
@@ -329,18 +310,15 @@ public:
      */
     MCVAPI bool getIsRunningInAppCenter() const;
     /**
-     * @symbol
-     * ?getLevelInfoCachePath\@AppPlatform\@\@UEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getLevelInfoCachePath\@AppPlatform\@\@UEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     MCVAPI class Core::PathBuffer<std::string> getLevelInfoCachePath() const;
     /**
-     * @symbol
-     * ?getLevelSaveInterval\@AppPlatform\@\@UEBA?AV?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@chrono\@std\@\@XZ
+     * @symbol ?getLevelSaveInterval\@AppPlatform\@\@UEBA?AV?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@chrono\@std\@\@XZ
      */
     MCVAPI std::chrono::nanoseconds getLevelSaveInterval() const;
     /**
-     * @symbol
-     * ?getLoggingPath\@AppPlatform\@\@UEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getLoggingPath\@AppPlatform\@\@UEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     MCVAPI class Core::PathBuffer<std::string> getLoggingPath() const;
     /**
@@ -350,36 +328,33 @@ public:
     /**
      * @symbol ?getMaxLDBFilesOpen\@AppPlatform\@\@UEBAHXZ
      */
-    MCVAPI int getMaxLDBFilesOpen() const;
+    MCVAPI int32_t getMaxLDBFilesOpen() const;
     /**
      * @symbol ?getMaxSimRadiusInChunks\@AppPlatform\@\@UEBAHXZ
      */
-    MCVAPI int getMaxSimRadiusInChunks() const;
+    MCVAPI int32_t getMaxSimRadiusInChunks() const;
     /**
      * @symbol ?getMaxSimultaneousDownloads\@AppPlatform\@\@UEBAHXZ
      */
-    MCVAPI int getMaxSimultaneousDownloads() const;
+    MCVAPI int32_t getMaxSimultaneousDownloads() const;
     /**
      * @symbol ?getMaxSimultaneousServiceRequests\@AppPlatform\@\@UEBAIXZ
      */
-    MCVAPI unsigned int getMaxSimultaneousServiceRequests() const;
+    MCVAPI uint32_t getMaxSimultaneousServiceRequests() const;
     /**
      * @symbol ?getMaximumUsedMemory\@AppPlatform\@\@UEAA_KXZ
      */
     MCVAPI uint64_t getMaximumUsedMemory();
     /**
-     * @symbol
-     * ?getModalErrorMessageProc\@AppPlatform\@\@UEAAP6A?AW4AssertDialogResponse\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@ZXZ
+     * @symbol ?getModalErrorMessageProc\@AppPlatform\@\@UEAAP6A?AW4AssertDialogResponse\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@ZXZ
      */
-    MCVAPI enum class AssertDialogResponse(__cdecl*)(std::string const&, std::string const&) getModalErrorMessageProc();
+    MCVAPI enum class AssertDialogResponse (__cdecl *)(std::string const &, std::string const &) getModalErrorMessageProc();
     /**
-     * @symbol
-     * ?getModelName\@AppPlatform\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getModelName\@AppPlatform\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCVAPI std::string getModelName();
     /**
-     * @symbol
-     * ?getMultiplayerServiceListToRegister\@AppPlatform\@\@UEBA?AV?$vector\@V?$shared_ptr\@VMultiplayerService\@Social\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VMultiplayerService\@Social\@\@\@std\@\@\@2\@\@std\@\@XZ
+     * @symbol ?getMultiplayerServiceListToRegister\@AppPlatform\@\@UEBA?AV?$vector\@V?$shared_ptr\@VMultiplayerService\@Social\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VMultiplayerService\@Social\@\@\@std\@\@\@2\@\@std\@\@XZ
      */
     MCVAPI std::vector<std::shared_ptr<class Social::MultiplayerService>> getMultiplayerServiceListToRegister() const;
     /**
@@ -389,19 +364,17 @@ public:
     /**
      * @symbol ?getNumberOfParticleFramesToInterpolate\@AppPlatform\@\@UEBAHXZ
      */
-    MCVAPI int getNumberOfParticleFramesToInterpolate() const;
+    MCVAPI int32_t getNumberOfParticleFramesToInterpolate() const;
     /**
      * @symbol ?getOSVersion\@AppPlatform\@\@UEBA?AW4OsVersion\@\@XZ
      */
     MCVAPI enum class OsVersion getOSVersion() const;
     /**
-     * @symbol
-     * ?getOnDiskPackScratchPath\@AppPlatform\@\@UEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getOnDiskPackScratchPath\@AppPlatform\@\@UEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     MCVAPI class Core::PathBuffer<std::string> getOnDiskPackScratchPath();
     /**
-     * @symbol
-     * ?getOnDiskScratchPath\@AppPlatform\@\@UEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getOnDiskScratchPath\@AppPlatform\@\@UEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     MCVAPI class Core::PathBuffer<std::string> getOnDiskScratchPath();
     /**
@@ -413,18 +386,15 @@ public:
      */
     MCVAPI uint64_t getOptimalLDBSize();
     /**
-     * @symbol
-     * ?getOptionsSaveInterval\@AppPlatform\@\@UEBA?AV?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@chrono\@std\@\@XZ
+     * @symbol ?getOptionsSaveInterval\@AppPlatform\@\@UEBA?AV?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@chrono\@std\@\@XZ
      */
     MCVAPI std::chrono::nanoseconds getOptionsSaveInterval() const;
     /**
-     * @symbol
-     * ?getPackageFamilyName\@AppPlatform\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getPackageFamilyName\@AppPlatform\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCVAPI std::string getPackageFamilyName() const;
     /**
-     * @symbol
-     * ?getPackagedShaderCachePath\@AppPlatform\@\@UEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getPackagedShaderCachePath\@AppPlatform\@\@UEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     MCVAPI class Core::PathBuffer<std::string> getPackagedShaderCachePath();
     /**
@@ -434,12 +404,11 @@ public:
     /**
      * @symbol ?getPlatformDpi\@AppPlatform\@\@EEBAHXZ
      */
-    MCVAPI int getPlatformDpi() const;
+    MCVAPI int32_t getPlatformDpi() const;
     /**
-     * @symbol
-     * ?getPlatformStringVar\@AppPlatform\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
+     * @symbol ?getPlatformStringVar\@AppPlatform\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCVAPI std::string getPlatformStringVar(int);
+    MCVAPI std::string getPlatformStringVar(int32_t);
     /**
      * @symbol ?getPlatformTTSEnabled\@AppPlatform\@\@UEBA_NXZ
      */
@@ -457,36 +426,31 @@ public:
      */
     MCVAPI enum class UIScalingRules getPlatformUIScalingRules() const;
     /**
-     * @symbol
-     * ?getRenderSurfaceParameters\@AppPlatform\@\@UEBA?AV?$variant\@PEAUHWND__\@\@Umonostate\@std\@\@\@std\@\@XZ
+     * @symbol ?getRenderSurfaceParameters\@AppPlatform\@\@UEBA?AV?$variant\@PEAUHWND__\@\@Umonostate\@std\@\@\@std\@\@XZ
      */
     MCVAPI std::variant<struct HWND__*, std::monostate> getRenderSurfaceParameters() const;
     /**
      * @symbol ?getScreenHeight\@AppPlatform\@\@UEBAHXZ
      */
-    MCVAPI int getScreenHeight() const;
+    MCVAPI int32_t getScreenHeight() const;
     /**
      * @symbol ?getScreenWidth\@AppPlatform\@\@UEBAHXZ
      */
-    MCVAPI int getScreenWidth() const;
+    MCVAPI int32_t getScreenWidth() const;
     /**
-     * @symbol
-     * ?getSecureStorage\@AppPlatform\@\@UEAA?AV?$unique_ptr\@VSecureStorage\@\@U?$default_delete\@VSecureStorage\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?getSecureStorage\@AppPlatform\@\@UEAA?AV?$unique_ptr\@VSecureStorage\@\@U?$default_delete\@VSecureStorage\@\@\@std\@\@\@std\@\@XZ
      */
     MCVAPI std::unique_ptr<class SecureStorage> getSecureStorage();
     /**
-     * @symbol
-     * ?getSecureStorageKey\@AppPlatform\@\@UEAA?AVSecureStorageKey\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?getSecureStorageKey\@AppPlatform\@\@UEAA?AVSecureStorageKey\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI class SecureStorageKey getSecureStorageKey(std::string const&);
+    MCVAPI class SecureStorageKey getSecureStorageKey(std::string const &);
     /**
-     * @symbol
-     * ?getSettingsPath\@AppPlatform\@\@UEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getSettingsPath\@AppPlatform\@\@UEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     MCVAPI class Core::PathBuffer<std::string> getSettingsPath();
     /**
-     * @symbol
-     * ?getShaderCachePath\@AppPlatform\@\@UEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getShaderCachePath\@AppPlatform\@\@UEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     MCVAPI class Core::PathBuffer<std::string> getShaderCachePath();
     /**
@@ -496,7 +460,7 @@ public:
     /**
      * @symbol ?getThirdPartyPackUUID\@AppPlatform\@\@UEBAAEBVUUID\@mce\@\@XZ
      */
-    MCVAPI class mce::UUID const& getThirdPartyPackUUID() const;
+    MCVAPI class mce::UUID const & getThirdPartyPackUUID() const;
     /**
      * @symbol ?getTotalHardwareThreadsCount\@AppPlatform\@\@UEBA_KXZ
      */
@@ -506,22 +470,19 @@ public:
      */
     MCVAPI enum class UIScalingRules getUIScalingRules() const;
     /**
-     * @symbol
-     * ?getUserInput\@AppPlatform\@\@UEAA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
+     * @symbol ?getUserInput\@AppPlatform\@\@UEAA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
      */
     MCVAPI std::vector<std::string> getUserInput();
     /**
      * @symbol ?getUserInputStatus\@AppPlatform\@\@UEAAHXZ
      */
-    MCVAPI int getUserInputStatus();
+    MCVAPI int32_t getUserInputStatus();
     /**
-     * @symbol
-     * ?getUserStorageRootPath\@AppPlatform\@\@UEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getUserStorageRootPath\@AppPlatform\@\@UEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     MCVAPI class Core::PathBuffer<std::string> getUserStorageRootPath() const;
     /**
-     * @symbol
-     * ?getUserdataPathForLevels\@AppPlatform\@\@UEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getUserdataPathForLevels\@AppPlatform\@\@UEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     MCVAPI class Core::PathBuffer<std::string> getUserdataPathForLevels() const;
     /**
@@ -535,11 +496,11 @@ public:
     /**
      * @symbol ?handlePlatformSpecificCommerceError\@AppPlatform\@\@UEAAXI\@Z
      */
-    MCVAPI void handlePlatformSpecificCommerceError(unsigned int);
+    MCVAPI void handlePlatformSpecificCommerceError(uint32_t);
     /**
      * @symbol ?hasAssetFile\@AppPlatform\@\@UEAA_NAEBVPath\@Core\@\@\@Z
      */
-    MCVAPI bool hasAssetFile(class Core::Path const&);
+    MCVAPI bool hasAssetFile(class Core::Path const &);
     /**
      * @symbol ?hasBuyButtonWhenInvalidLicense\@AppPlatform\@\@UEAA_NXZ
      */
@@ -709,20 +670,17 @@ public:
      */
     MCVAPI void launchSettings();
     /**
-     * @symbol
-     * ?launchUri\@AppPlatform\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?launchUri\@AppPlatform\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI void launchUri(std::string const&);
+    MCVAPI void launchUri(std::string const &);
     /**
-     * @symbol
-     * ?listAssetFilesIn\@AppPlatform\@\@UEBA?AV?$set\@V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@U?$less\@V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@\@std\@\@V?$allocator\@V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@\@4\@\@std\@\@AEBVPath\@Core\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
+     * @symbol ?listAssetFilesIn\@AppPlatform\@\@UEBA?AV?$set\@V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@U?$less\@V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@\@std\@\@V?$allocator\@V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@\@4\@\@std\@\@AEBVPath\@Core\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
-    MCVAPI std::set<class Core::PathBuffer<std::string>>
-           listAssetFilesIn(class Core::Path const&, std::string const&) const;
+    MCVAPI std::set<class Core::PathBuffer<std::string>> listAssetFilesIn(class Core::Path const &, std::string const &) const;
     /**
      * @symbol ?maxFileDataRequestConcurrency\@AppPlatform\@\@UEBAIXZ
      */
-    MCVAPI unsigned int maxFileDataRequestConcurrency() const;
+    MCVAPI uint32_t maxFileDataRequestConcurrency() const;
     /**
      * @symbol ?minimizeBackgroundDownloads\@AppPlatform\@\@UEBA_NXZ
      */
@@ -756,19 +714,17 @@ public:
      */
     MCVAPI bool platformRequiresControllerApplet() const;
     /**
-     * @symbol
-     * ?readAssetFile\@AppPlatform\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPath\@Core\@\@\@Z
+     * @symbol ?readAssetFile\@AppPlatform\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPath\@Core\@\@\@Z
      */
-    MCVAPI std::string readAssetFile(class Core::Path const&);
+    MCVAPI std::string readAssetFile(class Core::Path const &);
     /**
-     * @symbol
-     * ?registerExperimentsActiveCrashDump\@AppPlatform\@\@UEBAXAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
+     * @symbol ?registerExperimentsActiveCrashDump\@AppPlatform\@\@UEBAXAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
      */
-    MCVAPI void registerExperimentsActiveCrashDump(std::vector<std::string> const&) const;
+    MCVAPI void registerExperimentsActiveCrashDump(std::vector<std::string> const &) const;
     /**
      * @symbol ?registerFileForCollectionWithCrashDump\@AppPlatform\@\@UEAAXAEBVPath\@Core\@\@\@Z
      */
-    MCVAPI void registerFileForCollectionWithCrashDump(class Core::Path const&);
+    MCVAPI void registerFileForCollectionWithCrashDump(class Core::Path const &);
     /**
      * @symbol ?releaseMulticastReceivePermission\@AppPlatform\@\@UEBAXXZ
      */
@@ -780,7 +736,7 @@ public:
     /**
      * @symbol ?removeListener\@AppPlatform\@\@UEAAXPEAVAppPlatformListener\@\@\@Z
      */
-    MCVAPI void removeListener(class AppPlatformListener*);
+    MCVAPI void removeListener(class AppPlatformListener *);
     /**
      * @symbol ?requestMulticastReceivePermission\@AppPlatform\@\@UEAAXXZ
      */
@@ -812,7 +768,7 @@ public:
     /**
      * @symbol ?sendIntegrityCheckTelemetry\@AppPlatform\@\@UEAAXAEAVIMinecraftEventing\@\@\@Z
      */
-    MCVAPI void sendIntegrityCheckTelemetry(class IMinecraftEventing&);
+    MCVAPI void sendIntegrityCheckTelemetry(class IMinecraftEventing &);
     /**
      * @symbol ?setARVRPlatform\@AppPlatform\@\@UEAAXW4ARVRPlatform\@\@\@Z
      */
@@ -820,7 +776,7 @@ public:
     /**
      * @symbol ?setDpi\@AppPlatform\@\@UEAAXH\@Z
      */
-    MCVAPI void setDpi(int);
+    MCVAPI void setDpi(int32_t);
     /**
      * @symbol ?setFullscreenMode\@AppPlatform\@\@UEAAXW4FullscreenMode\@\@\@Z
      */
@@ -840,12 +796,11 @@ public:
     /**
      * @symbol ?setScreenSize\@AppPlatform\@\@UEAAXHH\@Z
      */
-    MCVAPI void setScreenSize(int, int);
+    MCVAPI void setScreenSize(int32_t, int32_t);
     /**
-     * @symbol
-     * ?setSecureStorageKey\@AppPlatform\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSecureStorageKey\@\@\@Z
+     * @symbol ?setSecureStorageKey\@AppPlatform\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSecureStorageKey\@\@\@Z
      */
-    MCVAPI void setSecureStorageKey(std::string const&, class SecureStorageKey const&);
+    MCVAPI void setSecureStorageKey(std::string const &, class SecureStorageKey const &);
     /**
      * @symbol ?setSleepEnabled\@AppPlatform\@\@UEAAX_N\@Z
      */
@@ -865,12 +820,11 @@ public:
     /**
      * @symbol ?setWindowSize\@AppPlatform\@\@UEAAXHH\@Z
      */
-    MCVAPI void setWindowSize(int, int);
+    MCVAPI void setWindowSize(int32_t, int32_t);
     /**
-     * @symbol
-     * ?setWindowText\@AppPlatform\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?setWindowText\@AppPlatform\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI void setWindowText(std::string const&);
+    MCVAPI void setWindowText(std::string const &);
     /**
      * @symbol ?shouldPauseDownloadsWhenEnterGame\@AppPlatform\@\@UEBA_NXZ
      */
@@ -886,11 +840,11 @@ public:
     /**
      * @symbol ?showDialog\@AppPlatform\@\@UEAAXH\@Z
      */
-    MCVAPI void showDialog(int);
+    MCVAPI void showDialog(int32_t);
     /**
      * @symbol ?showPlatformEmptyStoreDialog\@AppPlatform\@\@UEAAX$$QEAV?$function\@$$A6AX_N\@Z\@std\@\@\@Z
      */
-    MCVAPI void showPlatformEmptyStoreDialog(std::function<void(bool)>&&);
+    MCVAPI void showPlatformEmptyStoreDialog(std::function<void (bool)> &&);
     /**
      * @symbol ?showPlatformStoreIcon\@AppPlatform\@\@UEAAX_N\@Z
      */
@@ -944,25 +898,21 @@ public:
      */
     MCVAPI void teardown();
     /**
-     * @symbol
-     * ?trackPurchaseEvent\@AppPlatform\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0000000\@Z
+     * @symbol ?trackPurchaseEvent\@AppPlatform\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0000000\@Z
      */
-    MCVAPI void
-    trackPurchaseEvent(std::string const&, std::string const&, std::string const&, std::string const&, std::string const&, std::string const&, std::string const&, std::string const&);
+    MCVAPI void trackPurchaseEvent(std::string const &, std::string const &, std::string const &, std::string const &, std::string const &, std::string const &, std::string const &, std::string const &);
     /**
      * @symbol ?tryEnterVRMode\@AppPlatform\@\@UEAAX_NV?$function\@$$A6AX_N\@Z\@std\@\@\@Z
      */
-    MCVAPI void tryEnterVRMode(bool, std::function<void(bool)>);
+    MCVAPI void tryEnterVRMode(bool, std::function<void (bool)>);
     /**
-     * @symbol
-     * ?updateLocalization\@AppPlatform\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?updateLocalization\@AppPlatform\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI void updateLocalization(std::string const&);
+    MCVAPI void updateLocalization(std::string const &);
     /**
-     * @symbol
-     * ?updateTextBoxText\@AppPlatform\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?updateTextBoxText\@AppPlatform\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI void updateTextBoxText(std::string const&);
+    MCVAPI void updateTextBoxText(std::string const &);
     /**
      * @symbol ?useAppPlatformForTelemetryIPAddress\@AppPlatform\@\@UEAA_NXZ
      */
@@ -990,7 +940,7 @@ public:
     /**
      * @symbol ?vibrate\@AppPlatform\@\@UEAAXH\@Z
      */
-    MCVAPI void vibrate(int);
+    MCVAPI void vibrate(int32_t);
     /**
      * @symbol __unk_destructor_-1
      */
@@ -1005,33 +955,27 @@ public:
      */
     MCAPI void _fireAppTerminated();
     /**
-     * @symbol
-     * ?accessPlatformRuntimeInformation_Shim\@AppPlatform\@\@QEAAAEAV?$unique_ptr\@UPlatformRuntimeInfo\@Bedrock\@\@U?$default_delete\@UPlatformRuntimeInfo\@Bedrock\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?accessPlatformRuntimeInformation_Shim\@AppPlatform\@\@QEAAAEAV?$unique_ptr\@UPlatformRuntimeInfo\@Bedrock\@\@U?$default_delete\@UPlatformRuntimeInfo\@Bedrock\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::unique_ptr<struct Bedrock::PlatformRuntimeInfo>& accessPlatformRuntimeInformation_Shim();
+    MCAPI std::unique_ptr<struct Bedrock::PlatformRuntimeInfo> & accessPlatformRuntimeInformation_Shim();
     /**
-     * @symbol
-     * ?getCurrentStoragePath\@AppPlatform\@\@QEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getCurrentStoragePath\@AppPlatform\@\@QEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     MCAPI class Core::PathBuffer<std::string> getCurrentStoragePath() const;
     /**
-     * @symbol
-     * ?getInternalStoragePath\@AppPlatform\@\@QEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getInternalStoragePath\@AppPlatform\@\@QEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     MCAPI class Core::PathBuffer<std::string> getInternalStoragePath() const;
     /**
-     * @symbol
-     * ?getPlatformRuntimeInformation\@AppPlatform\@\@QEBAAEBV?$unique_ptr\@UPlatformRuntimeInfo\@Bedrock\@\@U?$default_delete\@UPlatformRuntimeInfo\@Bedrock\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?getPlatformRuntimeInformation\@AppPlatform\@\@QEBAAEBV?$unique_ptr\@UPlatformRuntimeInfo\@Bedrock\@\@U?$default_delete\@UPlatformRuntimeInfo\@Bedrock\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::unique_ptr<struct Bedrock::PlatformRuntimeInfo> const& getPlatformRuntimeInformation() const;
+    MCAPI std::unique_ptr<struct Bedrock::PlatformRuntimeInfo> const & getPlatformRuntimeInformation() const;
     /**
-     * @symbol
-     * ?getScratchPath\@AppPlatform\@\@QEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getScratchPath\@AppPlatform\@\@QEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     MCAPI class Core::PathBuffer<std::string> getScratchPath();
     /**
-     * @symbol
-     * ?getUserdataPath\@AppPlatform\@\@QEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getUserdataPath\@AppPlatform\@\@QEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     MCAPI class Core::PathBuffer<std::string> getUserdataPath() const;
     /**
@@ -1079,4 +1023,6 @@ private:
      */
     MCAPI static bool mIsInitialized;
     // NOLINTEND
+
 };
+

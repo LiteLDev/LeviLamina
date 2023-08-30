@@ -65,7 +65,7 @@ public:
     /**
      * @symbol ??0MoveToVillageGoal\@\@QEAA\@AEAVMob\@\@MMMH\@Z
      */
-    MCAPI MoveToVillageGoal(class Mob&, float, float, float, int);
+    MCAPI MoveToVillageGoal(class Mob&, float, float, float, int32_t);
     // NOLINTEND
 
     // protected:

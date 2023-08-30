@@ -162,7 +162,7 @@ public:
      * @vftbl 66
      * @symbol ?shouldConnectToRedstone\@BasePressurePlateBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 71
      * @symbol ?checkIsPathable\@BasePressurePlateBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
@@ -238,7 +238,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@BasePressurePlateBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 144
      * @symbol ?canSpawnOn\@BasePressurePlateBlock\@\@UEBA_NPEAVActor\@\@\@Z
@@ -313,22 +313,22 @@ public:
      * @vftbl 192
      * @symbol ?getTickDelay\@BasePressurePlateBlock\@\@UEBAHXZ
      */
-    virtual int getTickDelay() const;
+    virtual int32_t getTickDelay() const;
     /**
      * @vftbl 193
      * @symbol ?getSignalStrength\@PressurePlateBlock\@\@MEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual int getSignalStrength(class BlockSource&, class BlockPos const&) const = 0;
+    virtual int32_t getSignalStrength(class BlockSource&, class BlockPos const&) const = 0;
     /**
      * @vftbl 194
      * @symbol ?getSignalForData\@PressurePlateBlock\@\@MEBAHH\@Z
      */
-    virtual int getSignalForData(int) const = 0;
+    virtual int32_t getSignalForData(int32_t) const = 0;
     /**
      * @vftbl 195
      * @symbol ?getRedstoneSignal\@PressurePlateBlock\@\@MEBAHH\@Z
      */
-    virtual int getRedstoneSignal(int) const = 0;
+    virtual int32_t getRedstoneSignal(int32_t) const = 0;
     /**
      * @vftbl 196
      * @symbol ?getSensitiveAABB\@BasePressurePlateBlock\@\@MEBA?BVAABB\@\@AEBVBlockPos\@\@\@Z
@@ -348,11 +348,11 @@ public:
      * @symbol
      * ??0BasePressurePlateBlock\@\@IEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI BasePressurePlateBlock(std::string const&, int, class Material const&);
+    MCAPI BasePressurePlateBlock(std::string const&, int32_t, class Material const&);
     /**
      * @symbol ?checkPressed\@BasePressurePlateBlock\@\@IEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@HH\@Z
      */
-    MCAPI void checkPressed(class BlockSource&, class BlockPos const&, class Actor*, int, int) const;
+    MCAPI void checkPressed(class BlockSource&, class BlockPos const&, class Actor*, int32_t, int32_t) const;
     // NOLINTEND
 
     // private:

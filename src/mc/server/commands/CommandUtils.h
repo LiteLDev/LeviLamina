@@ -56,12 +56,12 @@ MCAPI void convertBlockEntityTag(class CompoundTag&, class BlockActor const&, cl
  * @symbol
  * ?createItemStack\@CommandUtils\@\@YA?AVItemStack\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HH\@Z
  */
-MCAPI class ItemStack createItemStack(std::string const&, int, int);
+MCAPI class ItemStack createItemStack(std::string const&, int32_t, int32_t);
 /**
  * @symbol
  * ?createItemStacks\@CommandUtils\@\@YA?AV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEBVItemInstance\@\@HAEAH\@Z
  */
-MCAPI std::vector<class ItemStack> createItemStacks(class ItemInstance const&, int, int&);
+MCAPI std::vector<class ItemStack> createItemStacks(class ItemInstance const&, int32_t, int32_t&);
 /**
  * @symbol ?createMapData\@CommandUtils\@\@YA_NAEAVActor\@\@AEAVItemInstance\@\@AEAVCommandOutput\@\@\@Z
  */

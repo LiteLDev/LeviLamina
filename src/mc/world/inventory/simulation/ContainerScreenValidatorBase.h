@@ -25,7 +25,7 @@ public:
      * ?postCommitItemRemoved\@ContainerScreenValidatorBase\@\@UEAA?AV?$shared_ptr\@VContainerValidationCommitObject\@\@\@std\@\@W4ContainerEnumName\@\@HAEBVItemStack\@\@\@Z
      */
     virtual std::shared_ptr<class ContainerValidationCommitObject>
-    postCommitItemRemoved(enum class ContainerEnumName, int, class ItemStack const&);
+    postCommitItemRemoved(enum class ContainerEnumName, int32_t, class ItemStack const&);
     /**
      * @vftbl 2
      * @symbol ?isCraftingImplemented\@ContainerScreenValidatorBase\@\@UEAA_NXZ

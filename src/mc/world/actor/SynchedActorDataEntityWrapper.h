@@ -22,31 +22,31 @@ public:
     /**
      * @symbol ?getCompoundTag\@SynchedActorDataEntityWrapper\@\@QEBAAEBVCompoundTag\@\@G\@Z
      */
-    MCAPI class CompoundTag const& getCompoundTag(unsigned short) const;
+    MCAPI class CompoundTag const& getCompoundTag(uint16_t) const;
     /**
      * @symbol ?getFloat\@SynchedActorDataEntityWrapper\@\@QEBAMG\@Z
      */
-    MCAPI float getFloat(unsigned short) const;
+    MCAPI float getFloat(uint16_t) const;
     /**
      * @symbol ?getInt\@SynchedActorDataEntityWrapper\@\@QEBAHG\@Z
      */
-    MCAPI int getInt(unsigned short) const;
+    MCAPI int32_t getInt(uint16_t) const;
     /**
      * @symbol ?getInt64\@SynchedActorDataEntityWrapper\@\@QEBA_JG\@Z
      */
-    MCAPI int64_t getInt64(unsigned short) const;
+    MCAPI int64_t getInt64(uint16_t) const;
     /**
      * @symbol ?getInt8\@SynchedActorDataEntityWrapper\@\@QEBACG\@Z
      */
-    MCAPI signed char getInt8(unsigned short) const;
+    MCAPI int8_t getInt8(uint16_t) const;
     /**
      * @symbol ?getPosition\@SynchedActorDataEntityWrapper\@\@QEBA?AVBlockPos\@\@G\@Z
      */
-    MCAPI class BlockPos getPosition(unsigned short) const;
+    MCAPI class BlockPos getPosition(uint16_t) const;
     /**
      * @symbol ?getShort\@SynchedActorDataEntityWrapper\@\@QEBAFG\@Z
      */
-    MCAPI short getShort(unsigned short) const;
+    MCAPI int16_t getShort(uint16_t) const;
     /**
      * @symbol ?getStatusFlag\@SynchedActorDataEntityWrapper\@\@QEBA_NW4ActorFlags\@\@\@Z
      */
@@ -55,15 +55,15 @@ public:
      * @symbol
      * ?getString\@SynchedActorDataEntityWrapper\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@G\@Z
      */
-    MCAPI std::string const& getString(unsigned short) const;
+    MCAPI std::string const& getString(uint16_t) const;
     /**
      * @symbol ?getVec3\@SynchedActorDataEntityWrapper\@\@QEBA?AVVec3\@\@G\@Z
      */
-    MCAPI class Vec3 getVec3(unsigned short) const;
+    MCAPI class Vec3 getVec3(uint16_t) const;
     /**
      * @symbol ?hasData\@SynchedActorDataEntityWrapper\@\@QEBA_NG\@Z
      */
-    MCAPI bool hasData(unsigned short) const;
+    MCAPI bool hasData(uint16_t) const;
     /**
      * @symbol ?isDirty\@SynchedActorDataEntityWrapper\@\@QEBA_NXZ
      */
@@ -71,7 +71,7 @@ public:
     /**
      * @symbol ?markDirty\@SynchedActorDataEntityWrapper\@\@QEAAXG\@Z
      */
-    MCAPI void markDirty(unsigned short);
+    MCAPI void markDirty(uint16_t);
     /**
      * @symbol
      * ?packAll\@SynchedActorDataEntityWrapper\@\@QEBA?AV?$vector\@V?$unique_ptr\@VDataItem\@\@U?$default_delete\@VDataItem\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VDataItem\@\@U?$default_delete\@VDataItem\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@XZ

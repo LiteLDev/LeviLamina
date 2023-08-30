@@ -39,7 +39,7 @@ public:
     /**
      * @symbol ??0MonumentBuilding\@\@QEAA\@AEAVRandom\@\@FHHAEAH\@Z
      */
-    MCAPI MonumentBuilding(class Random&, short, int, int, int&);
+    MCAPI MonumentBuilding(class Random&, int16_t, int32_t, int32_t, int32_t&);
     // NOLINTEND
 
     // private:
@@ -76,6 +76,6 @@ public:
     /**
      * @symbol ?generateWing\@MonumentBuilding\@\@AEAAX_NHAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
-    MCAPI void generateWing(bool, int, class BlockSource&, class Random&, class BoundingBox const&);
+    MCAPI void generateWing(bool, int32_t, class BlockSource&, class Random&, class BoundingBox const&);
     // NOLINTEND
 };

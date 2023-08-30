@@ -58,7 +58,7 @@ public:
     /**
      * @symbol ?getPreliminarySurfaceLevel\@WorldGenerator\@\@UEBA?AV?$optional\@F\@std\@\@V?$DividedPos2d\@$03\@\@\@Z
      */
-    MCVAPI std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
+    MCVAPI std::optional<int16_t> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
     /**
      * @symbol ?isStructureFeatureTypeAt\@WorldGenerator\@\@UEBA_NAEBVBlockPos\@\@W4StructureFeatureType\@\@\@Z
      */
@@ -66,7 +66,7 @@ public:
     /**
      * @symbol ?postProcessMobsAt\@WorldGenerator\@\@UEAAXAEAVBlockSource\@\@HHAEAVRandom\@\@\@Z
      */
-    MCVAPI void postProcessMobsAt(class BlockSource&, int, int, class Random&);
+    MCVAPI void postProcessMobsAt(class BlockSource&, int32_t, int32_t, class Random&);
     /**
      * @symbol __unk_destructor_-1
      */
@@ -85,7 +85,7 @@ public:
      * @symbol
      * ?computeChunkHeightMap\@WorldGenerator\@\@QEAA?AV?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@AEBVChunkPos\@\@\@Z
      */
-    MCAPI std::vector<short> computeChunkHeightMap(class ChunkPos const&);
+    MCAPI std::vector<int16_t> computeChunkHeightMap(class ChunkPos const&);
     /**
      * @symbol ?getStructureFeatureRegistry\@WorldGenerator\@\@QEBAAEAVStructureFeatureRegistry\@\@XZ
      */
@@ -97,7 +97,7 @@ public:
     /**
      * @symbol ?postProcessStructureFeatures\@WorldGenerator\@\@IEAAXAEAVBlockSource\@\@AEAVRandom\@\@HH\@Z
      */
-    MCAPI void postProcessStructureFeatures(class BlockSource&, class Random&, int, int);
+    MCAPI void postProcessStructureFeatures(class BlockSource&, class Random&, int32_t, int32_t);
     /**
      * @symbol
      * ?prepareStructureFeatureBlueprints\@WorldGenerator\@\@IEAAXAEAVDimension\@\@AEBVChunkPos\@\@AEBVBiomeSource\@\@AEBVIPreliminarySurfaceProvider\@\@\@Z

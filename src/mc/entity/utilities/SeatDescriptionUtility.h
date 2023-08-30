@@ -17,7 +17,7 @@ public:
      * ?getSeatDescriptionOfPassenger\@SeatDescriptionUtility\@\@SAAEBUSeatDescription\@\@AEBV?$vector\@USeatDescription\@\@V?$allocator\@USeatDescription\@\@\@std\@\@\@std\@\@HH\@Z
      */
     MCAPI static struct SeatDescription const&
-    getSeatDescriptionOfPassenger(std::vector<struct SeatDescription> const&, int, int);
+    getSeatDescriptionOfPassenger(std::vector<struct SeatDescription> const&, int32_t, int32_t);
     /**
      * @symbol
      * ?getSeatDescriptionOfPassenger\@SeatDescriptionUtility\@\@SAAEBUSeatDescription\@\@AEBV?$vector\@USeatDescription\@\@V?$allocator\@USeatDescription\@\@\@std\@\@\@std\@\@AEBUVehicleComponent\@\@AEBVStrictEntityContext\@\@\@Z

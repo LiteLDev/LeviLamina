@@ -62,12 +62,12 @@ public:
      * @vftbl 47
      * @symbol ?getMaxDamage\@TridentItem\@\@UEBAFXZ
      */
-    virtual short getMaxDamage() const;
+    virtual int16_t getMaxDamage() const;
     /**
      * @vftbl 48
      * @symbol ?getAttackDamage\@TridentItem\@\@UEBAHXZ
      */
-    virtual int getAttackDamage() const;
+    virtual int32_t getAttackDamage() const;
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -93,12 +93,12 @@ public:
      * @vftbl 62
      * @symbol ?getEnchantSlot\@TridentItem\@\@UEBAHXZ
      */
-    virtual int getEnchantSlot() const;
+    virtual int32_t getEnchantSlot() const;
     /**
      * @vftbl 63
      * @symbol ?getEnchantValue\@TridentItem\@\@UEBAHXZ
      */
-    virtual int getEnchantValue() const;
+    virtual int32_t getEnchantValue() const;
     /**
      * @vftbl 66
      * @symbol __unk_vfn_66
@@ -143,12 +143,12 @@ public:
      * @vftbl 85
      * @symbol ?dispense\@TridentItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
+    virtual bool dispense(class BlockSource&, class Container&, int32_t, class Vec3 const&, uint8_t) const;
     /**
      * @vftbl 87
      * @symbol ?releaseUsing\@TridentItem\@\@UEBAXAEAVItemStack\@\@PEAVPlayer\@\@H\@Z
      */
-    virtual void releaseUsing(class ItemStack&, class Player*, int) const;
+    virtual void releaseUsing(class ItemStack&, class Player*, int32_t) const;
     /**
      * @vftbl 89
      * @symbol ?hurtActor\@TridentItem\@\@UEBAXAEAVItemStack\@\@AEAVActor\@\@AEAVMob\@\@\@Z
@@ -167,11 +167,11 @@ public:
     /**
      * @symbol ?CHARGE_THRESHOLD_TIME\@TridentItem\@\@2HB
      */
-    MCAPI static int const CHARGE_THRESHOLD_TIME;
+    MCAPI static int32_t const CHARGE_THRESHOLD_TIME;
     /**
      * @symbol ?THROW_THRESHOLD_TIME\@TridentItem\@\@2HB
      */
-    MCAPI static int const THROW_THRESHOLD_TIME;
+    MCAPI static int32_t const THROW_THRESHOLD_TIME;
     // NOLINTEND
 
     // private:

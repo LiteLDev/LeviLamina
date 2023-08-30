@@ -135,7 +135,7 @@ public:
      * @vftbl 57
      * @symbol ?isValidAuxValue\@FlowerPotBlock\@\@UEBA_NH\@Z
      */
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
@@ -165,7 +165,7 @@ public:
      * @vftbl 93
      * @symbol ?mayPlace\@FlowerPotBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
+    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 94
      * @symbol ?mayPlace\@FlowerPotBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
@@ -260,7 +260,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@FlowerPotBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -280,7 +280,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@FlowerPotBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOWERPOTBLOCK
     /**
      * @symbol ?isInteractiveBlock\@FlowerPotBlock\@\@UEBA_NXZ
@@ -295,7 +295,7 @@ public:
      * @symbol
      * ??0FlowerPotBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI FlowerPotBlock(std::string const&, int);
+    MCAPI FlowerPotBlock(std::string const&, int32_t);
     /**
      * @symbol ?isSupportedBlock\@FlowerPotBlock\@\@SA_NAEBVBlock\@\@\@Z
      */

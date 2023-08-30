@@ -58,6 +58,6 @@ public:
      * @symbol
      * ?_DERToBinary\@WebToken\@\@CA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@H\@Z
      */
-    MCAPI static std::string _DERToBinary(std::string const&, int);
+    MCAPI static std::string _DERToBinary(std::string const&, int32_t);
     // NOLINTEND
 };

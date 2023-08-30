@@ -38,7 +38,7 @@ public:
      * ?liquidCanFlowIntoFromDirection\@SculkSensorBlock\@\@UEBA_NEAEBV?$function\@$$A6AAEBVBlock\@\@AEBVBlockPos\@\@\@Z\@std\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool
-    liquidCanFlowIntoFromDirection(unsigned char, std::function<class Block const&(class BlockPos const&)> const&, class BlockPos const&)
+    liquidCanFlowIntoFromDirection(uint8_t, std::function<class Block const&(class BlockPos const&)> const&, class BlockPos const&)
         const;
     /**
      * @vftbl 22
@@ -49,7 +49,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@SculkSensorBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -164,7 +164,7 @@ public:
      * @vftbl 66
      * @symbol ?shouldConnectToRedstone\@SculkSensorBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -204,7 +204,7 @@ public:
      * @vftbl 126
      * @symbol ?getComparatorSignal\@SculkSensorBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, unsigned char) const;
+    virtual int32_t getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uint8_t) const;
     /**
      * @vftbl 128
      * @symbol __unk_vfn_128
@@ -289,12 +289,12 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@SculkSensorBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 186
      * @symbol ?getResourceCount\@SculkSensorBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@SculkSensorBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -314,12 +314,12 @@ public:
      * @symbol
      * ??0SculkSensorBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI SculkSensorBlock(std::string const&, int);
+    MCAPI SculkSensorBlock(std::string const&, int32_t);
     /**
      * @symbol
      * ??0SculkSensorBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4BlockActorType\@\@H\@Z
      */
-    MCAPI SculkSensorBlock(std::string const&, int, enum class BlockActorType, int);
+    MCAPI SculkSensorBlock(std::string const&, int32_t, enum class BlockActorType, int32_t);
     /**
      * @symbol ?isActive\@SculkSensorBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -331,6 +331,6 @@ public:
     /**
      * @symbol ?setActivePhase\@SculkSensorBlock\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@HH\@Z
      */
-    MCAPI static void setActivePhase(class BlockSource&, class BlockPos const&, class Actor*, int, int);
+    MCAPI static void setActivePhase(class BlockSource&, class BlockPos const&, class Actor*, int32_t, int32_t);
     // NOLINTEND
 };

@@ -24,27 +24,27 @@ public:
      * @vftbl 2
      * @symbol ?serverInitItemStackIds\@CraftingContainer\@\@UEAAXHHV?$function\@$$A6AXHAEBVItemStack\@\@\@Z\@std\@\@\@Z
      */
-    virtual void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
+    virtual void serverInitItemStackIds(int32_t, int32_t, std::function<void(int32_t, class ItemStack const&)>);
     /**
      * @vftbl 5
      * @symbol ?getItem\@CraftingContainer\@\@UEBAAEBVItemStack\@\@H\@Z
      */
-    virtual class ItemStack const& getItem(int) const;
+    virtual class ItemStack const& getItem(int32_t) const;
     /**
      * @vftbl 10
      * @symbol ?setItem\@CraftingContainer\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
-    virtual void setItem(int, class ItemStack const&);
+    virtual void setItem(int32_t, class ItemStack const&);
     /**
      * @vftbl 16
      * @symbol ?getContainerSize\@CraftingContainer\@\@UEBAHXZ
      */
-    virtual int getContainerSize() const;
+    virtual int32_t getContainerSize() const;
     /**
      * @vftbl 17
      * @symbol ?getMaxStackSize\@CraftingContainer\@\@UEBAHXZ
      */
-    virtual int getMaxStackSize() const;
+    virtual int32_t getMaxStackSize() const;
     /**
      * @vftbl 18
      * @symbol ?startOpen\@CraftingContainer\@\@UEAAXAEAVPlayer\@\@\@Z
@@ -69,7 +69,7 @@ public:
      * @vftbl 27
      * @symbol ?setContainerChanged\@CraftingContainer\@\@UEAAXH\@Z
      */
-    virtual void setContainerChanged(int);
+    virtual void setContainerChanged(int32_t);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTINGCONTAINER
     /**
      * @symbol __unk_destructor_-1
@@ -79,10 +79,10 @@ public:
     /**
      * @symbol ??0CraftingContainer\@\@QEAA\@HH\@Z
      */
-    MCAPI CraftingContainer(int, int);
+    MCAPI CraftingContainer(int32_t, int32_t);
     /**
      * @symbol ?getItem\@CraftingContainer\@\@QEBAAEBVItemStack\@\@HH\@Z
      */
-    MCAPI class ItemStack const& getItem(int, int) const;
+    MCAPI class ItemStack const& getItem(int32_t, int32_t) const;
     // NOLINTEND
 };

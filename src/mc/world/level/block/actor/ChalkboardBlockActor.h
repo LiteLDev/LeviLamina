@@ -197,7 +197,7 @@ public:
     /**
      * @symbol ?getRotation\@ChalkboardBlockActor\@\@QEBAHAEAVBlockSource\@\@\@Z
      */
-    MCAPI int getRotation(class BlockSource&) const;
+    MCAPI int32_t getRotation(class BlockSource&) const;
     /**
      * @symbol
      * ?getText\@ChalkboardBlockActor\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -206,7 +206,7 @@ public:
     /**
      * @symbol ?getTextCharCount\@ChalkboardBlockActor\@\@QEBAHXZ
      */
-    MCAPI int getTextCharCount() const;
+    MCAPI int32_t getTextCharCount() const;
     /**
      * @symbol
      * ?setText\@ChalkboardBlockActor\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -220,7 +220,8 @@ public:
      * @symbol
      * ?calculateAllBlocks\@ChalkboardBlockActor\@\@SA?AV?$vector\@VBlockPos\@\@V?$allocator\@VBlockPos\@\@\@std\@\@\@std\@\@AEBVBlockPos\@\@W4ChalkboardSize\@\@H\@Z
      */
-    MCAPI static std::vector<class BlockPos> calculateAllBlocks(class BlockPos const&, enum class ChalkboardSize, int);
+    MCAPI static std::vector<class BlockPos>
+    calculateAllBlocks(class BlockPos const&, enum class ChalkboardSize, int32_t);
     /**
      * @symbol
      * ?canCreateChalkboard\@ChalkboardBlockActor\@\@SA_NPEAVActor\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@W4ChalkboardSize\@\@EHAEAV?$vector\@VBlockPos\@\@V?$allocator\@VBlockPos\@\@\@std\@\@\@std\@\@AEBVItemStack\@\@_N\@Z
@@ -230,8 +231,8 @@ public:
         class BlockSource&,
         class BlockPos const&,
         enum class ChalkboardSize,
-        unsigned char,
-        int,
+        uint8_t,
+        int32_t,
         std::vector<class BlockPos>&,
         class ItemStack const&,
         bool
@@ -249,8 +250,8 @@ public:
         class BlockSource&,
         class BlockPos const&,
         enum class ChalkboardSize,
-        unsigned char,
-        int,
+        uint8_t,
+        int32_t,
         bool,
         class ItemStack const&,
         std::string

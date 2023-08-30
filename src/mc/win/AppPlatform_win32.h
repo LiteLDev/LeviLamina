@@ -59,11 +59,11 @@ public:
     /**
      * @symbol ?getDisplayHeight\@AppPlatform_win32\@\@UEAAHXZ
      */
-    MCVAPI int getDisplayHeight();
+    MCVAPI int32_t getDisplayHeight();
     /**
      * @symbol ?getDisplayWidth\@AppPlatform_win32\@\@UEAAHXZ
      */
-    MCVAPI int getDisplayWidth();
+    MCVAPI int32_t getDisplayWidth();
     /**
      * @symbol
      * ?getEdition\@AppPlatform_win32\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -130,11 +130,11 @@ public:
     /**
      * @symbol ?getScreenHeight\@AppPlatform_win32\@\@UEBAHXZ
      */
-    MCVAPI int getScreenHeight() const;
+    MCVAPI int32_t getScreenHeight() const;
     /**
      * @symbol ?getScreenWidth\@AppPlatform_win32\@\@UEBAHXZ
      */
-    MCVAPI int getScreenWidth() const;
+    MCVAPI int32_t getScreenWidth() const;
     /**
      * @symbol
      * ?getSecureStorage\@AppPlatform_win32\@\@UEAA?AV?$unique_ptr\@VSecureStorage\@\@U?$default_delete\@VSecureStorage\@\@\@std\@\@\@std\@\@XZ
@@ -205,7 +205,7 @@ public:
     /**
      * @symbol ?setScreenSize\@AppPlatform_win32\@\@UEAAXHH\@Z
      */
-    MCVAPI void setScreenSize(int, int);
+    MCVAPI void setScreenSize(int32_t, int32_t);
     /**
      * @symbol
      * ?setSecureStorageKey\@AppPlatform_win32\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSecureStorageKey\@\@\@Z
@@ -214,7 +214,7 @@ public:
     /**
      * @symbol ?setWindowSize\@AppPlatform_win32\@\@UEAAXHH\@Z
      */
-    MCVAPI void setWindowSize(int, int);
+    MCVAPI void setWindowSize(int32_t, int32_t);
     /**
      * @symbol
      * ?setWindowText\@AppPlatform_win32\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -248,8 +248,8 @@ public:
         std::string const&,
         std::string_view,
         std::shared_ptr<class HIDController>,
-        int,
-        int
+        int32_t,
+        int32_t
     );
     /**
      * @symbol ?setupWorkingDirectory\@AppPlatform_win32\@\@SAXXZ

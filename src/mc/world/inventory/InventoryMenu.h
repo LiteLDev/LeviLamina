@@ -28,11 +28,11 @@ public:
     /**
      * @symbol ?getSlot\@InventoryMenu\@\@UEBAAEBVItemStack\@\@H\@Z
      */
-    MCVAPI class ItemStack const& getSlot(int) const;
+    MCVAPI class ItemStack const& getSlot(int32_t) const;
     /**
      * @symbol ?removeSlot\@InventoryMenu\@\@UEAAXHH\@Z
      */
-    MCVAPI void removeSlot(int, int);
+    MCVAPI void removeSlot(int32_t, int32_t);
     /**
      * @symbol ?serverInitItemStackIds\@InventoryMenu\@\@UEAAXXZ
      */
@@ -40,7 +40,7 @@ public:
     /**
      * @symbol ?setSlot\@InventoryMenu\@\@UEAAXHAEBVItemStack\@\@_N\@Z
      */
-    MCVAPI void setSlot(int, class ItemStack const&, bool);
+    MCVAPI void setSlot(int32_t, class ItemStack const&, bool);
     /**
      * @symbol __unk_destructor_-1
      */

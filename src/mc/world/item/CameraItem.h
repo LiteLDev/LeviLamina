@@ -111,6 +111,6 @@ public:
     /**
      * @symbol ??0CameraItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI CameraItem(std::string const&, int);
+    MCAPI CameraItem(std::string const&, int32_t);
     // NOLINTEND
 };

@@ -18,7 +18,7 @@ public:
     /**
      * @symbol ?consumeCount\@Random\@\@UEAAXI\@Z
      */
-    MCVAPI void consumeCount(unsigned int);
+    MCVAPI void consumeCount(uint32_t);
     /**
      * @symbol ?fork\@Random\@\@UEAA?AV?$unique_ptr\@VIRandom\@\@U?$default_delete\@VIRandom\@\@\@std\@\@\@std\@\@XZ
      */
@@ -42,11 +42,11 @@ public:
     /**
      * @symbol ?nextInt\@Random\@\@UEAAHH\@Z
      */
-    MCVAPI int nextInt(int);
+    MCVAPI int32_t nextInt(int32_t);
     /**
      * @symbol ?nextInt\@Random\@\@UEAAHXZ
      */
-    MCVAPI int nextInt();
+    MCVAPI int32_t nextInt();
     /**
      * @symbol ?nextLong\@Random\@\@UEAA_JXZ
      */
@@ -71,15 +71,15 @@ public:
     /**
      * @symbol ?nextGaussianInt\@Random\@\@QEAAHH\@Z
      */
-    MCAPI int nextGaussianInt(int);
+    MCAPI int32_t nextGaussianInt(int32_t);
     /**
      * @symbol ?nextInt\@Random\@\@QEAAHHH\@Z
      */
-    MCAPI int nextInt(int, int);
+    MCAPI int32_t nextInt(int32_t, int32_t);
     /**
      * @symbol ?nextIntInclusive\@Random\@\@QEAAHHH\@Z
      */
-    MCAPI int nextIntInclusive(int, int);
+    MCAPI int32_t nextIntInclusive(int32_t, int32_t);
     /**
      * @symbol ?getThreadLocal\@Random\@\@SAAEAV1\@XZ
      */

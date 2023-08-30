@@ -42,6 +42,6 @@ public:
     /**
      * @symbol ?VULNERABLE_MOB_FREEZE_DAMAGE\@FreezingSystem\@\@2HB
      */
-    MCAPI static int const VULNERABLE_MOB_FREEZE_DAMAGE;
+    MCAPI static int32_t const VULNERABLE_MOB_FREEZE_DAMAGE;
     // NOLINTEND
 };

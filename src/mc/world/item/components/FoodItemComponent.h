@@ -23,7 +23,7 @@ public:
     /**
      * @symbol ?getNutrition\@FoodItemComponent\@\@UEBAHXZ
      */
-    MCVAPI int getNutrition() const;
+    MCVAPI int32_t getNutrition() const;
     /**
      * @symbol ?getSaturationModifier\@FoodItemComponent\@\@UEBAMXZ
      */

@@ -64,11 +64,11 @@ MCAPI void bindVec3();
 /**
  * @symbol ?blockPosAsArray\@CerealHelpers\@\@YA?AV?$array\@H$02\@std\@\@AEBVBlockPos\@\@\@Z
  */
-MCAPI std::array<int, 3> blockPosAsArray(class BlockPos const&);
+MCAPI std::array<int32_t, 3> blockPosAsArray(class BlockPos const&);
 /**
  * @symbol ?blockPosFromArray\@CerealHelpers\@\@YAXAEAVBlockPos\@\@AEBV?$array\@H$02\@std\@\@\@Z
  */
-MCAPI void blockPosFromArray(class BlockPos&, std::array<int, 3> const&);
+MCAPI void blockPosFromArray(class BlockPos&, std::array<int32_t, 3> const&);
 /**
  * @symbol ?colorFromFloatArray3\@CerealHelpers\@\@YAXAEAVColor\@mce\@\@AEBV?$array\@M$02\@std\@\@\@Z
  */
@@ -85,11 +85,11 @@ MCAPI void colorFromHexString(class mce::Color&, std::string const&);
 /**
  * @symbol ?colorFromIntArray3\@CerealHelpers\@\@YAXAEAVColor\@mce\@\@AEBV?$array\@H$02\@std\@\@\@Z
  */
-MCAPI void colorFromIntArray3(class mce::Color&, std::array<int, 3> const&);
+MCAPI void colorFromIntArray3(class mce::Color&, std::array<int32_t, 3> const&);
 /**
  * @symbol ?colorFromIntArray4\@CerealHelpers\@\@YAXAEAVColor\@mce\@\@AEBV?$array\@H$03\@std\@\@\@Z
  */
-MCAPI void colorFromIntArray4(class mce::Color&, std::array<int, 4> const&);
+MCAPI void colorFromIntArray4(class mce::Color&, std::array<int32_t, 4> const&);
 /**
  * @symbol ?colorToFloatArray3\@CerealHelpers\@\@YA?AV?$array\@M$02\@std\@\@AEBVColor\@mce\@\@\@Z
  */
@@ -101,11 +101,11 @@ MCAPI std::array<float, 4> colorToFloatArray4(class mce::Color const&);
 /**
  * @symbol ?colorToIntArray3\@CerealHelpers\@\@YA?AV?$array\@H$02\@std\@\@AEBVColor\@mce\@\@\@Z
  */
-MCAPI std::array<int, 3> colorToIntArray3(class mce::Color const&);
+MCAPI std::array<int32_t, 3> colorToIntArray3(class mce::Color const&);
 /**
  * @symbol ?colorToIntArray4\@CerealHelpers\@\@YA?AV?$array\@H$03\@std\@\@AEBVColor\@mce\@\@\@Z
  */
-MCAPI std::array<int, 4> colorToIntArray4(class mce::Color const&);
+MCAPI std::array<int32_t, 4> colorToIntArray4(class mce::Color const&);
 /**
  * @symbol ?glmVec2FromArray\@CerealHelpers\@\@YAXAEAU?$vec\@$01M$0A\@\@glm\@\@V?$array\@M$01\@std\@\@\@Z
  */

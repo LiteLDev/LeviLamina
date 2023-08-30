@@ -66,7 +66,7 @@ public:
         float,
         class MobEffect*,
         class HitResult&,
-        int
+        int32_t
     );
     // NOLINTEND
 };

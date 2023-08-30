@@ -90,8 +90,9 @@ public:
      * @symbol
      * ?RegisterEventCallbacks\@WebSocket\@httpclient\@xbox\@\@QEAAIP6AXPEAUHC_WEBSOCKET_OBSERVER\@\@PEBDPEAX\@ZP6AX0PEBEI2\@ZP6AX04I_N2\@ZP6AX0W4HCWebSocketCloseStatus\@\@2\@Z2\@Z
      */
-    MCAPI unsigned int
-    RegisterEventCallbacks(void(__cdecl*)(struct HC_WEBSOCKET_OBSERVER*, char const*, void*), void(__cdecl*)(struct HC_WEBSOCKET_OBSERVER*, unsigned char const*, unsigned int, void*), void(__cdecl*)(struct HC_WEBSOCKET_OBSERVER*, unsigned char const*, unsigned int, bool, void*), void(__cdecl*)(struct HC_WEBSOCKET_OBSERVER*, enum class HCWebSocketCloseStatus, void*), void*);
+    MCAPI
+        uint32_t
+        RegisterEventCallbacks(void(__cdecl*)(struct HC_WEBSOCKET_OBSERVER*, char const*, void*), void(__cdecl*)(struct HC_WEBSOCKET_OBSERVER*, uint8_t const*, uint32_t, void*), void(__cdecl*)(struct HC_WEBSOCKET_OBSERVER*, uint8_t const*, uint32_t, bool, void*), void(__cdecl*)(struct HC_WEBSOCKET_OBSERVER*, enum class HCWebSocketCloseStatus, void*), void*);
     /**
      * @symbol ?SendAsync\@WebSocket\@httpclient\@xbox\@\@QEAAJPEBDPEAUXAsyncBlock\@\@\@Z
      */
@@ -99,12 +100,11 @@ public:
     /**
      * @symbol ?BinaryMessageFragmentFunc\@WebSocket\@httpclient\@xbox\@\@SAXPEAUHC_WEBSOCKET_OBSERVER\@\@PEBEI_NPEAX\@Z
      */
-    MCAPI static void
-    BinaryMessageFragmentFunc(struct HC_WEBSOCKET_OBSERVER*, unsigned char const*, unsigned int, bool, void*);
+    MCAPI static void BinaryMessageFragmentFunc(struct HC_WEBSOCKET_OBSERVER*, uint8_t const*, uint32_t, bool, void*);
     /**
      * @symbol ?BinaryMessageFunc\@WebSocket\@httpclient\@xbox\@\@SAXPEAUHC_WEBSOCKET_OBSERVER\@\@PEBEIPEAX\@Z
      */
-    MCAPI static void BinaryMessageFunc(struct HC_WEBSOCKET_OBSERVER*, unsigned char const*, unsigned int, void*);
+    MCAPI static void BinaryMessageFunc(struct HC_WEBSOCKET_OBSERVER*, uint8_t const*, uint32_t, void*);
     /**
      * @symbol
      * ?CloseFunc\@WebSocket\@httpclient\@xbox\@\@SAXPEAUHC_WEBSOCKET_OBSERVER\@\@W4HCWebSocketCloseStatus\@\@PEAX\@Z
@@ -131,7 +131,7 @@ public:
      * ?NotifyWebSocketRoutedHandlers\@WebSocket\@httpclient\@xbox\@\@CAXPEAUHC_WEBSOCKET_OBSERVER\@\@_NPEBDPEBE_K\@Z
      */
     MCAPI static void
-    NotifyWebSocketRoutedHandlers(struct HC_WEBSOCKET_OBSERVER*, bool, char const*, unsigned char const*, uint64_t);
+    NotifyWebSocketRoutedHandlers(struct HC_WEBSOCKET_OBSERVER*, bool, char const*, uint8_t const*, uint64_t);
     // NOLINTEND
 };
 

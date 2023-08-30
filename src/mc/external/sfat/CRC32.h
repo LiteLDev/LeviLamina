@@ -17,7 +17,7 @@ private:
     /**
      * @symbol ?table\@CRC32\@SFAT\@\@0QBIB
      */
-    MCAPI static unsigned int const table[];
+    MCAPI static uint32_t const table[];
     // NOLINTEND
 };
 

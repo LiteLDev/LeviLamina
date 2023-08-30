@@ -30,7 +30,7 @@ public:
     /**
      * @symbol ?addSwapAuxValue\@LegacyStructureSettings\@\@QEAAXHH\@Z
      */
-    MCAPI void addSwapAuxValue(int, int);
+    MCAPI void addSwapAuxValue(int32_t, int32_t);
     /**
      * @symbol ?getBoundingBox\@LegacyStructureSettings\@\@QEAAAEBVBoundingBox\@\@XZ
      */
@@ -96,7 +96,7 @@ public:
     /**
      * @symbol ?setSeed\@LegacyStructureSettings\@\@QEAAXI\@Z
      */
-    MCAPI void setSeed(unsigned int);
+    MCAPI void setSeed(uint32_t);
     /**
      * @symbol ?updateBoundingBoxFromChunkPos\@LegacyStructureSettings\@\@QEAAXXZ
      */
@@ -116,6 +116,6 @@ public:
     /**
      * @symbol ?MAX_STRUCTURE_SIZE\@LegacyStructureSettings\@\@2HB
      */
-    MCAPI static int const MAX_STRUCTURE_SIZE;
+    MCAPI static int32_t const MAX_STRUCTURE_SIZE;
     // NOLINTEND
 };

@@ -32,7 +32,7 @@ public:
      * @vftbl 1
      * @symbol ?addRuleToClear\@GameTestRuleHelper\@gametest\@\@UEAAXH\@Z
      */
-    virtual void addRuleToClear(int);
+    virtual void addRuleToClear(int32_t);
     /**
      * @vftbl 2
      * @symbol ?clearRules\@GameTestRuleHelper\@gametest\@\@UEAAXXZ

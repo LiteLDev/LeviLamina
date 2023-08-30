@@ -25,7 +25,7 @@ public:
      * @vftbl 1
      * @symbol ?getStrength\@PoweredBlockComponent\@\@UEBAHXZ
      */
-    virtual int getStrength() const;
+    virtual int32_t getStrength() const;
     /**
      * @vftbl 7
      * @symbol ?canConsumerPower\@PoweredBlockComponent\@\@UEBA_NXZ
@@ -36,7 +36,7 @@ public:
      * @symbol
      * ?addSource\@PoweredBlockComponent\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEAHAEA_N\@Z
      */
-    virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
+    virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int32_t&, bool&);
     /**
      * @vftbl 12
      * @symbol
@@ -72,6 +72,6 @@ public:
     /**
      * @symbol ??0PoweredBlockComponent\@\@QEAA\@E\@Z
      */
-    MCAPI PoweredBlockComponent(unsigned char);
+    MCAPI PoweredBlockComponent(uint8_t);
     // NOLINTEND
 };

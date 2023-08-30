@@ -28,7 +28,7 @@ public:
      * ?placeRoots\@MangroveTreeRoots\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@HAEAVRenderParams\@\@AEBUTreeParams\@TreeHelper\@\@\@Z
      */
     virtual std::optional<class BlockPos>
-    placeRoots(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, int, class RenderParams&, struct TreeHelper::TreeParams const&)
+    placeRoots(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, int32_t, class RenderParams&, struct TreeHelper::TreeParams const&)
         const;
     // NOLINTEND
 
@@ -47,13 +47,13 @@ public:
      * ?_potentialRootPositions\@MangroveTreeRoots\@\@AEBA?AV?$vector\@VBlockPos\@\@V?$allocator\@VBlockPos\@\@\@std\@\@\@std\@\@AEBVBlockPos\@\@EAEAVRandom\@\@0\@Z
      */
     MCAPI std::vector<class BlockPos>
-          _potentialRootPositions(class BlockPos const&, unsigned char, class Random&, class BlockPos const&) const;
+          _potentialRootPositions(class BlockPos const&, uint8_t, class Random&, class BlockPos const&) const;
     /**
      * @symbol
      * ?_simulateRoots\@MangroveTreeRoots\@\@AEBA_NAEAVIBlockWorldGenAPI\@\@AEAVRandom\@\@AEBVBlockPos\@\@2EPEAV?$vector\@VBlockPos\@\@V?$allocator\@VBlockPos\@\@\@std\@\@\@std\@\@HAEBUTreeParams\@TreeHelper\@\@\@Z
      */
     MCAPI bool
-    _simulateRoots(class IBlockWorldGenAPI&, class Random&, class BlockPos const&, class BlockPos const&, unsigned char, std::vector<class BlockPos>*, int, struct TreeHelper::TreeParams const&)
+    _simulateRoots(class IBlockWorldGenAPI&, class Random&, class BlockPos const&, class BlockPos const&, uint8_t, std::vector<class BlockPos>*, int32_t, struct TreeHelper::TreeParams const&)
         const;
     // NOLINTEND
 

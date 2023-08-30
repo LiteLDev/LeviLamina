@@ -167,7 +167,7 @@ public:
      * ?getPlacementBlock\@CalibratedSculkSensorBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -197,17 +197,17 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@CalibratedSculkSensorBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 146
      * @symbol ?getMappedFace\@CalibratedSculkSensorBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
-    virtual unsigned char getMappedFace(unsigned char, class Block const&) const;
+    virtual uint8_t getMappedFace(uint8_t, class Block const&) const;
     /**
      * @vftbl 147
      * @symbol ?getFaceFlip\@CalibratedSculkSensorBlock\@\@UEBA?AW4Flip\@\@EAEBVBlock\@\@\@Z
      */
-    virtual enum class Flip getFaceFlip(unsigned char, class Block const&) const;
+    virtual enum class Flip getFaceFlip(uint8_t, class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -252,10 +252,10 @@ public:
      * @symbol
      * ??0CalibratedSculkSensorBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI CalibratedSculkSensorBlock(std::string const&, int);
+    MCAPI CalibratedSculkSensorBlock(std::string const&, int32_t);
     /**
      * @symbol ?getInputStrength\@CalibratedSculkSensorBlock\@\@SAHAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI static int getInputStrength(class BlockSource const&, class BlockPos const&);
+    MCAPI static int32_t getInputStrength(class BlockSource const&, class BlockPos const&);
     // NOLINTEND
 };

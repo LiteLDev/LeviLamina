@@ -16,7 +16,7 @@ namespace DripstoneUtils {
 /**
  * @symbol ?buildBaseToTipColumn\@DripstoneUtils\@\@YAXAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@EH_N\@Z
  */
-MCAPI void buildBaseToTipColumn(class IBlockWorldGenAPI&, class BlockPos const&, unsigned char, int, bool);
+MCAPI void buildBaseToTipColumn(class IBlockWorldGenAPI&, class BlockPos const&, uint8_t, int32_t, bool);
 /**
  * @symbol ?canBeAdjacentToWater\@DripstoneUtils\@\@YA_NAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
  */
@@ -32,7 +32,7 @@ MCAPI float getDripstoneHeight(float, float, float, float);
 /**
  * @symbol ?getPlacementBlock\@DripstoneUtils\@\@YAAEBVBlock\@\@EAEBW4DripstoneThickness\@\@\@Z
  */
-MCAPI class Block const& getPlacementBlock(unsigned char, enum class DripstoneThickness const&);
+MCAPI class Block const& getPlacementBlock(uint8_t, enum class DripstoneThickness const&);
 /**
  * @symbol
  * ?getPointedDripstoneBasePos\@DripstoneUtils\@\@YA?AV?$optional\@UPointedDripstoneBasePos\@DripstoneUtils\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
@@ -42,7 +42,7 @@ MCAPI std::optional<struct DripstoneUtils::PointedDripstoneBasePos>
 /**
  * @symbol ?isCircleMostlyEmbeddedInStone\@DripstoneUtils\@\@YA_NAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@H\@Z
  */
-MCAPI bool isCircleMostlyEmbeddedInStone(class IBlockWorldGenAPI&, class BlockPos const&, int);
+MCAPI bool isCircleMostlyEmbeddedInStone(class IBlockWorldGenAPI&, class BlockPos const&, int32_t);
 /**
  * @symbol ?isDripstoneBaseOrLava\@DripstoneUtils\@\@YA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
  */

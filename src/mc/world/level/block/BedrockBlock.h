@@ -239,6 +239,6 @@ public:
     /**
      * @symbol ??0BedrockBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI BedrockBlock(std::string const&, int);
+    MCAPI BedrockBlock(std::string const&, int32_t);
     // NOLINTEND
 };

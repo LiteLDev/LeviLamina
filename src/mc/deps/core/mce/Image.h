@@ -21,7 +21,7 @@ public:
     /**
      * @symbol ??0Image\@mce\@\@QEAA\@IIW4ImageFormat\@1\@W4ImageUsage\@1\@\@Z
      */
-    MCAPI Image(unsigned int, unsigned int, enum class mce::ImageFormat, enum class mce::ImageUsage);
+    MCAPI Image(uint32_t, uint32_t, enum class mce::ImageFormat, enum class mce::ImageUsage);
     /**
      * @symbol ?clone\@Image\@mce\@\@QEBA?AU12\@XZ
      */

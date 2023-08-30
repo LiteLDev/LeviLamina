@@ -103,7 +103,7 @@ public:
      * @symbol
      * ?handleCommandOutputCallback\@ScriptCommandOrigin\@\@UEBAXH$$QEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAVValue\@Json\@\@\@Z
      */
-    virtual void handleCommandOutputCallback(int, std::string&&, class Json::Value&&) const;
+    virtual void handleCommandOutputCallback(int32_t, std::string&&, class Json::Value&&) const;
     /**
      * @vftbl 30
      * @symbol ?isValid\@ScriptCommandOrigin\@\@UEBA_NXZ
@@ -120,6 +120,6 @@ public:
      * ??0ScriptCommandOrigin\@\@QEAA\@AEAVServerLevel\@\@PEAVDimension\@\@V?$function\@$$A6AXH$$QEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAVValue\@Json\@\@\@Z\@std\@\@V?$optional\@W4CommandPermissionLevel\@\@\@4\@\@Z
      */
     MCAPI
-    ScriptCommandOrigin(class ServerLevel&, class Dimension*, std::function<void(int, std::string&&, class Json::Value&&)>, std::optional<enum class CommandPermissionLevel>);
+    ScriptCommandOrigin(class ServerLevel&, class Dimension*, std::function<void(int32_t, std::string&&, class Json::Value&&)>, std::optional<enum class CommandPermissionLevel>);
     // NOLINTEND
 };

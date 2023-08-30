@@ -28,7 +28,7 @@ public:
     /**
      * @symbol ?setContainerChanged\@RandomizableBlockActorFillingContainer\@\@UEAAXH\@Z
      */
-    MCVAPI void setContainerChanged(int);
+    MCVAPI void setContainerChanged(int32_t);
     /**
      * @symbol ?startOpen\@RandomizableBlockActorFillingContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
@@ -46,7 +46,7 @@ public:
         enum class BlockActorType,
         std::string const&,
         class BlockPos const&,
-        int,
+        int32_t,
         enum class ContainerType
     );
     // NOLINTEND

@@ -105,7 +105,7 @@ public:
     /**
      * @symbol ?getBaseColorInt\@BannerBlockActor\@\@QEBAEXZ
      */
-    MCAPI unsigned char getBaseColorInt() const;
+    MCAPI uint8_t getBaseColorInt() const;
     /**
      * @symbol ?setItemValues\@BannerBlockActor\@\@QEAAXAEBVItemStackBase\@\@\@Z
      */
@@ -117,11 +117,11 @@ public:
     /**
      * @symbol ?getBaseColor\@BannerBlockActor\@\@SAHAEBVItemStack\@\@\@Z
      */
-    MCAPI static int getBaseColor(class ItemStack const&);
+    MCAPI static int32_t getBaseColor(class ItemStack const&);
     /**
      * @symbol ?getPatternCount\@BannerBlockActor\@\@SAHPEBVCompoundTag\@\@\@Z
      */
-    MCAPI static int getPatternCount(class CompoundTag const*);
+    MCAPI static int32_t getPatternCount(class CompoundTag const*);
     /**
      * @symbol ?isDefaultBanner\@BannerBlockActor\@\@SA_NAEBVItemStackBase\@\@\@Z
      */
@@ -133,7 +133,7 @@ public:
     /**
      * @symbol ?MAX_PATTERNS\@BannerBlockActor\@\@2HB
      */
-    MCAPI static int const MAX_PATTERNS;
+    MCAPI static int32_t const MAX_PATTERNS;
     /**
      * @symbol
      * ?TAG_BASE_COLOR\@BannerBlockActor\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B

@@ -22,7 +22,7 @@ public:
     /**
      * @symbol ??0RareBiomeSpot\@OperationNodeFilters\@\@QEAA\@IAEAVBiome\@\@0\@Z
      */
-    MCAPI RareBiomeSpot(unsigned int, class Biome&, class Biome&);
+    MCAPI RareBiomeSpot(uint32_t, class Biome&, class Biome&);
     // NOLINTEND
 };
 

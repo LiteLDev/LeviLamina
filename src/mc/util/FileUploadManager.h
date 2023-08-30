@@ -59,7 +59,7 @@ public:
      * @symbol
      * ?uploadFileToRealmStorage\@ResourcePackFileUploadManager\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPath\@Core\@\@H0\@Z
      */
-    virtual void uploadFileToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&) = 0;
+    virtual void uploadFileToRealmStorage(std::string const&, class Core::Path const&, int32_t, std::string const&) = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILEUPLOADMANAGER
     /**
      * @symbol __unk_destructor_-1
@@ -89,7 +89,7 @@ public:
     /**
      * @symbol ?uploadChunk\@FileUploadManager\@\@QEAAXH\@Z
      */
-    MCAPI void uploadChunk(int);
+    MCAPI void uploadChunk(int32_t);
     /**
      * @symbol
      * ?uploadFile\@FileUploadManager\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPath\@Core\@\@_NAEBVValue\@Json\@\@\@Z
@@ -122,7 +122,7 @@ protected:
     /**
      * @symbol ?CHUNK_UPLOAD_SIZE\@FileUploadManager\@\@1HB
      */
-    MCAPI static int const CHUNK_UPLOAD_SIZE;
+    MCAPI static int32_t const CHUNK_UPLOAD_SIZE;
     // NOLINTEND
 
 private:

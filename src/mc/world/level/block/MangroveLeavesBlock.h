@@ -237,7 +237,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@MangroveLeavesBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@MangroveLeavesBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -247,6 +247,6 @@ public:
      * @symbol
      * ??0MangroveLeavesBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HV?$WeakPtr\@VBlockLegacy\@\@\@\@\@Z
      */
-    MCAPI MangroveLeavesBlock(std::string const&, int, class WeakPtr<class BlockLegacy>);
+    MCAPI MangroveLeavesBlock(std::string const&, int32_t, class WeakPtr<class BlockLegacy>);
     // NOLINTEND
 };

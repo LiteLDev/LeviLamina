@@ -35,7 +35,7 @@ public:
      * @symbol
      * ?findPath\@PathFinder\@\@QEAA?AV?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@AEAVActor\@\@HHHM\@Z
      */
-    MCAPI std::unique_ptr<class Path> findPath(class Actor&, int, int, int, float);
+    MCAPI std::unique_ptr<class Path> findPath(class Actor&, int32_t, int32_t, int32_t, float);
     /**
      * @symbol
      * ?isFree\@PathFinder\@\@QEAA?AW4NodeType\@\@AEBUActorPathingData\@\@AEBVBlockPos\@\@11W4CanJumpIntoNode\@\@W4CanClimbIntoNode\@\@\@Z
@@ -86,13 +86,13 @@ public:
      * ?_checkBlockAndNeighborsProperty\@PathFinder\@\@AEAA_NAEBUActorPathingData\@\@AEBVBlockPos\@\@AEBVBlock\@\@W4BlockProperty\@\@HPEBVBreakBlocksComponent\@\@V?$function\@$$A6A_NAEBVBlock\@\@AEBVBlockPos\@\@\@Z\@std\@\@\@Z
      */
     MCAPI bool
-    _checkBlockAndNeighborsProperty(struct ActorPathingData const&, class BlockPos const&, class Block const&, enum class BlockProperty, int, class BreakBlocksComponent const*, std::function<bool(class Block const&, class BlockPos const&)>);
+    _checkBlockAndNeighborsProperty(struct ActorPathingData const&, class BlockPos const&, class Block const&, enum class BlockProperty, int32_t, class BreakBlocksComponent const*, std::function<bool(class Block const&, class BlockPos const&)>);
     /**
      * @symbol
      * ?_checkForDamagingBlock\@PathFinder\@\@AEAA_NAEBUActorPathingData\@\@AEBVBlockPos\@\@AEBVBlock\@\@HPEBVBreakBlocksComponent\@\@\@Z
      */
     MCAPI bool
-    _checkForDamagingBlock(struct ActorPathingData const&, class BlockPos const&, class Block const&, int, class BreakBlocksComponent const*);
+    _checkForDamagingBlock(struct ActorPathingData const&, class BlockPos const&, class Block const&, int32_t, class BreakBlocksComponent const*);
     /**
      * @symbol
      * ?_classifyDoorNode\@PathFinder\@\@AEAA?AW4NodeType\@\@AEBUActorPathingData\@\@AEBVBlock\@\@AEBVBlockPos\@\@2\@Z
@@ -156,12 +156,12 @@ public:
     /**
      * @symbol ?_getNeighbors\@PathFinder\@\@AEAAHAEBUActorPathingData\@\@AEAVPathfinderNode\@\@AEBV3\@2I\@Z
      */
-    MCAPI int _getNeighbors(
+    MCAPI int32_t _getNeighbors(
         struct ActorPathingData const&,
         class PathfinderNode&,
         class PathfinderNode const&,
         class PathfinderNode const&,
-        unsigned int
+        uint32_t
     );
     /**
      * @symbol

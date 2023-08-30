@@ -180,7 +180,7 @@ public:
      * @vftbl 126
      * @symbol ?getComparatorSignal\@BarrelBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, unsigned char) const;
+    virtual int32_t getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uint8_t) const;
     /**
      * @vftbl 128
      * @symbol __unk_vfn_128
@@ -195,12 +195,12 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@BarrelBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 147
      * @symbol ?getFaceFlip\@BarrelBlock\@\@UEBA?AW4Flip\@\@EAEBVBlock\@\@\@Z
      */
-    virtual enum class Flip getFaceFlip(unsigned char, class Block const&) const;
+    virtual enum class Flip getFaceFlip(uint8_t, class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -240,7 +240,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@BarrelBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -269,7 +269,7 @@ public:
      * @symbol
      * ??0BarrelBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI BarrelBlock(std::string const&, int, class Material const&);
+    MCAPI BarrelBlock(std::string const&, int32_t, class Material const&);
     /**
      * @symbol ?setOpen\@BarrelBlock\@\@SAX_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */

@@ -105,11 +105,11 @@ public:
     /**
      * @symbol ?incrementPacketReceivedInfo\@PerfContextTracker\@\@QEAAXI\@Z
      */
-    MCAPI void incrementPacketReceivedInfo(unsigned int);
+    MCAPI void incrementPacketReceivedInfo(uint32_t);
     /**
      * @symbol ?incrementPacketSentInfo\@PerfContextTracker\@\@QEAAXI\@Z
      */
-    MCAPI void incrementPacketSentInfo(unsigned int);
+    MCAPI void incrementPacketSentInfo(uint32_t);
     /**
      * @symbol ?getInstance\@PerfContextTracker\@\@SAAEAV1\@XZ
      */

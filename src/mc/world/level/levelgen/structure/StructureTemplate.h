@@ -142,7 +142,7 @@ public:
         enum class Rotation,
         enum class Mirror,
         float,
-        unsigned int,
+        uint32_t,
         class StructureTelemetryServerData*,
         bool,
         bool

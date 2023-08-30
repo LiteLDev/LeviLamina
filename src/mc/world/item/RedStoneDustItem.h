@@ -112,13 +112,13 @@ public:
      * @vftbl 133
      * @symbol ?_calculatePlacePos\@RedStoneDustItem\@\@EEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
-    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
+    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, uint8_t&, class BlockPos&) const;
     /**
      * @vftbl 135
      * @symbol
      * ?_useOn\@RedStoneDustItem\@\@EEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _useOn(class ItemStack&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
     // NOLINTEND
 };

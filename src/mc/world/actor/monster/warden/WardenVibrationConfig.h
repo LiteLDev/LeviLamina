@@ -26,7 +26,7 @@ public:
      * ?onSignalReceive\@WardenVibrationConfig\@\@UEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVGameEvent\@\@PEAVActor\@\@MI3\@Z
      */
     virtual void
-    onSignalReceive(class BlockSource&, class BlockPos const&, class GameEvent const&, class Actor*, float, unsigned int, class Actor*);
+    onSignalReceive(class BlockSource&, class BlockPos const&, class GameEvent const&, class Actor*, float, uint32_t, class Actor*);
     /**
      * @vftbl 2
      * @symbol ?isValidVibration\@WardenVibrationConfig\@\@UEAA_NAEBVGameEvent\@\@\@Z
@@ -46,6 +46,6 @@ public:
     /**
      * @symbol ??0WardenVibrationConfig\@\@QEAA\@AEAVActor\@\@G\@Z
      */
-    MCAPI WardenVibrationConfig(class Actor&, unsigned short);
+    MCAPI WardenVibrationConfig(class Actor&, uint16_t);
     // NOLINTEND
 };

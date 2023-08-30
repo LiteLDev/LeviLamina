@@ -32,7 +32,7 @@ public:
     /**
      * @symbol ?WaitOnEvent\@SignaledEvent\@RakNet\@\@QEAAXH\@Z
      */
-    MCAPI void WaitOnEvent(int);
+    MCAPI void WaitOnEvent(int32_t);
     /**
      * @symbol ??1SignaledEvent\@RakNet\@\@QEAA\@XZ
      */

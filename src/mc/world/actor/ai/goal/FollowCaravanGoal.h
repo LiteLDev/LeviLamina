@@ -56,7 +56,7 @@ public:
      * @symbol
      * ??0FollowCaravanGoal\@\@QEAA\@AEAVMob\@\@MHAEBV?$vector\@UMobDescriptor\@\@V?$allocator\@UMobDescriptor\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI FollowCaravanGoal(class Mob&, float, int, std::vector<struct MobDescriptor> const&);
+    MCAPI FollowCaravanGoal(class Mob&, float, int32_t, std::vector<struct MobDescriptor> const&);
     // NOLINTEND
 
     // private:
@@ -68,6 +68,6 @@ public:
     /**
      * @symbol ?firstIsLeashed\@FollowCaravanGoal\@\@AEAA_NPEAVMob\@\@H\@Z
      */
-    MCAPI bool firstIsLeashed(class Mob*, int);
+    MCAPI bool firstIsLeashed(class Mob*, int32_t);
     // NOLINTEND
 };

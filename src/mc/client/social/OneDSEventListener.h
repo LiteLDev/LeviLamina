@@ -44,7 +44,7 @@ public:
      * @vftbl 4
      * @symbol ?getEventTagsFilter\@OneDSEventListener\@Events\@Social\@\@UEBAHXZ
      */
-    virtual int getEventTagsFilter() const;
+    virtual int32_t getEventTagsFilter() const;
     /**
      * @vftbl 6
      * @symbol ?sendEvent\@OneDSEventListener\@Events\@Social\@\@UEAAXAEBVEvent\@23\@\@Z

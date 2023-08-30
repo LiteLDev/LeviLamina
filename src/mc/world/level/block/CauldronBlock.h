@@ -66,7 +66,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@CauldronBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -231,7 +231,7 @@ public:
      * @vftbl 126
      * @symbol ?getComparatorSignal\@CauldronBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, unsigned char) const;
+    virtual int32_t getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uint8_t) const;
     /**
      * @vftbl 128
      * @symbol __unk_vfn_128
@@ -296,7 +296,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@CauldronBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -306,7 +306,7 @@ public:
      * @vftbl 178
      * @symbol ?getExtraRenderLayers\@CauldronBlock\@\@UEBAHXZ
      */
-    virtual int getExtraRenderLayers() const;
+    virtual int32_t getExtraRenderLayers() const;
     /**
      * @vftbl 180
      * @symbol ?getLight\@CauldronBlock\@\@UEBA?AUBrightness\@\@AEBVBlock\@\@\@Z
@@ -321,7 +321,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@CauldronBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@CauldronBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -341,11 +341,11 @@ public:
      * @symbol
      * ??0CauldronBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI CauldronBlock(std::string const&, int);
+    MCAPI CauldronBlock(std::string const&, int32_t);
     /**
      * @symbol ?setLiquidLevel\@CauldronBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@HW4CauldronLiquidType\@\@\@Z
      */
-    MCAPI void setLiquidLevel(class BlockSource&, class BlockPos const&, int, enum class CauldronLiquidType) const;
+    MCAPI void setLiquidLevel(class BlockSource&, class BlockPos const&, int32_t, enum class CauldronLiquidType) const;
     /**
      * @symbol ?canReceiveStalactiteDrip\@CauldronBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@W4MaterialType\@\@\@Z
      */
@@ -353,15 +353,15 @@ public:
     /**
      * @symbol ?clampLiquidLevel\@CauldronBlock\@\@SAHH\@Z
      */
-    MCAPI static int clampLiquidLevel(int);
+    MCAPI static int32_t clampLiquidLevel(int32_t);
     /**
      * @symbol ?spawnPotionParticles\@CauldronBlock\@\@SAXAEAVLevel\@\@AEBVVec3\@\@AEAVRandom\@\@HH\@Z
      */
-    MCAPI static void spawnPotionParticles(class Level&, class Vec3 const&, class Random&, int, int);
+    MCAPI static void spawnPotionParticles(class Level&, class Vec3 const&, class Random&, int32_t, int32_t);
     /**
      * @symbol ?FILL_LEVEL_PER_DRIP\@CauldronBlock\@\@2HB
      */
-    MCAPI static int const FILL_LEVEL_PER_DRIP;
+    MCAPI static int32_t const FILL_LEVEL_PER_DRIP;
     // NOLINTEND
 
     // private:
@@ -373,7 +373,7 @@ public:
     /**
      * @symbol ?_explodeCauldronContents\@CauldronBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@G\@Z
      */
-    MCAPI void _explodeCauldronContents(class BlockSource&, class BlockPos const&, unsigned short) const;
+    MCAPI void _explodeCauldronContents(class BlockSource&, class BlockPos const&, uint16_t) const;
     /**
      * @symbol ?_mayUpdateLiquidLevel\@CauldronBlock\@\@AEBA?B_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -383,7 +383,7 @@ public:
      * ?_sendCauldronUsedEventToClient\@CauldronBlock\@\@AEBAXAEBVPlayer\@\@FW4POIBlockInteractionType\@MinecraftEventing\@\@\@Z
      */
     MCAPI void
-    _sendCauldronUsedEventToClient(class Player const&, short, enum class MinecraftEventing::POIBlockInteractionType)
+    _sendCauldronUsedEventToClient(class Player const&, int16_t, enum class MinecraftEventing::POIBlockInteractionType)
         const;
     /**
      * @symbol ?_spawnCauldronEvent\@CauldronBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@W4LevelEvent\@\@\@Z
@@ -399,7 +399,7 @@ public:
         class BlockPos const&,
         class CauldronBlockActor&,
         class BlockSource&,
-        int,
+        int32_t,
         bool,
         bool,
         bool
@@ -407,7 +407,7 @@ public:
     /**
      * @symbol ?_useInventory\@CauldronBlock\@\@AEBAXAEAVPlayer\@\@AEAVItemStack\@\@1H\@Z
      */
-    MCAPI void _useInventory(class Player&, class ItemStack&, class ItemStack&, int) const;
+    MCAPI void _useInventory(class Player&, class ItemStack&, class ItemStack&, int32_t) const;
     // NOLINTEND
 
 private:
@@ -415,7 +415,7 @@ private:
     /**
      * @symbol ?BASE_WATER_PIXEL\@CauldronBlock\@\@0HB
      */
-    MCAPI static int const BASE_WATER_PIXEL;
+    MCAPI static int32_t const BASE_WATER_PIXEL;
     /**
      * @symbol ?CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION\@CauldronBlock\@\@0VBaseGameVersion\@\@B
      */
@@ -423,6 +423,6 @@ private:
     /**
      * @symbol ?PIXEL_PER_LEVEL\@CauldronBlock\@\@0HB
      */
-    MCAPI static int const PIXEL_PER_LEVEL;
+    MCAPI static int32_t const PIXEL_PER_LEVEL;
     // NOLINTEND
 };

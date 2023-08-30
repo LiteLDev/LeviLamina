@@ -72,7 +72,7 @@ public:
      * @vftbl 62
      * @symbol ?getEnchantSlot\@ShearsItem\@\@UEBAHXZ
      */
-    virtual int getEnchantSlot() const;
+    virtual int32_t getEnchantSlot() const;
     /**
      * @vftbl 66
      * @symbol __unk_vfn_66
@@ -112,7 +112,7 @@ public:
      * @vftbl 85
      * @symbol ?dispense\@ShearsItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
+    virtual bool dispense(class BlockSource&, class Container&, int32_t, class Vec3 const&, uint8_t) const;
     /**
      * @vftbl 88
      * @symbol ?getDestroySpeed\@ShearsItem\@\@UEBAMAEBVItemStackBase\@\@AEBVBlock\@\@\@Z
@@ -127,7 +127,7 @@ public:
      * @vftbl 93
      * @symbol ?mineBlock\@ShearsItem\@\@UEBA_NAEAVItemStack\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
      */
-    virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
+    virtual bool mineBlock(class ItemStack&, class Block const&, int32_t, int32_t, int32_t, class Actor*) const;
     /**
      * @vftbl 115
      * @symbol __unk_vfn_115
@@ -144,11 +144,11 @@ public:
      * ?_useOn\@ShearsItem\@\@UEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _useOn(class ItemStack&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
     /**
      * @symbol ??0ShearsItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI ShearsItem(std::string const&, int);
+    MCAPI ShearsItem(std::string const&, int32_t);
     // NOLINTEND
 
     // private:

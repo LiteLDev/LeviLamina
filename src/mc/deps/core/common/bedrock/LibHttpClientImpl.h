@@ -107,11 +107,11 @@ public:
     /**
      * @symbol ?_requestBodyRead\@LibHttpClientImpl\@Http\@Bedrock\@\@CAJPEAUHC_CALL\@\@_K1PEAXPEAEPEA_K\@Z
      */
-    MCAPI static long _requestBodyRead(struct HC_CALL*, uint64_t, uint64_t, void*, unsigned char*, uint64_t*);
+    MCAPI static long _requestBodyRead(struct HC_CALL*, uint64_t, uint64_t, void*, uint8_t*, uint64_t*);
     /**
      * @symbol ?_responseBodyWrite\@LibHttpClientImpl\@Http\@Bedrock\@\@CAJPEAUHC_CALL\@\@PEBE_KPEAX\@Z
      */
-    MCAPI static long _responseBodyWrite(struct HC_CALL*, unsigned char const*, uint64_t, void*);
+    MCAPI static long _responseBodyWrite(struct HC_CALL*, uint8_t const*, uint64_t, void*);
     // NOLINTEND
 
 private:

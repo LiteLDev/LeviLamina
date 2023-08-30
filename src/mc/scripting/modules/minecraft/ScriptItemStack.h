@@ -112,7 +112,7 @@ public:
     /**
      * @symbol ?setAmount\@ScriptItemStack\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@H\@Z
      */
-    MCAPI class Scripting::Result<void> setAmount(int);
+    MCAPI class Scripting::Result<void> setAmount(int32_t);
     /**
      * @symbol
      * ?setCanDestroy\@ScriptItemStack\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEBV?$optional\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@std\@\@\@Z

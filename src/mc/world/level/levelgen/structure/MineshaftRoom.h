@@ -25,7 +25,7 @@ public:
      * @vftbl 1
      * @symbol ?moveBoundingBox\@MineshaftRoom\@\@UEAAXHHH\@Z
      */
-    virtual void moveBoundingBox(int, int, int);
+    virtual void moveBoundingBox(int32_t, int32_t, int32_t);
     /**
      * @vftbl 2
      * @symbol ?getType\@MineshaftRoom\@\@UEBA?AW4StructurePieceType\@\@XZ

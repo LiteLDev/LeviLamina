@@ -283,6 +283,6 @@ public:
      * @symbol
      * ??0CarpetBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI CarpetBlock(std::string const&, int, class Material const&);
+    MCAPI CarpetBlock(std::string const&, int32_t, class Material const&);
     // NOLINTEND
 };

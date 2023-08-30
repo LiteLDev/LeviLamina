@@ -178,7 +178,7 @@ public:
      * @vftbl 116
      * @symbol ?triggerEvent\@ActorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@HH\@Z
      */
-    virtual void triggerEvent(class BlockSource&, class BlockPos const&, int, int) const;
+    virtual void triggerEvent(class BlockSource&, class BlockPos const&, int32_t, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -248,7 +248,7 @@ public:
      * @vftbl 192
      * @symbol ?getEntityResourceItem\@ActorBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlockActor\@\@H\@Z
      */
-    virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int) const;
+    virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORBLOCK
     /**
      * @symbol ?canBeSilkTouched\@ActorBlock\@\@MEBA_NXZ
@@ -267,6 +267,6 @@ public:
      * @symbol
      * ??0ActorBlock\@\@IEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI ActorBlock(std::string const&, int, class Material const&);
+    MCAPI ActorBlock(std::string const&, int32_t, class Material const&);
     // NOLINTEND
 };

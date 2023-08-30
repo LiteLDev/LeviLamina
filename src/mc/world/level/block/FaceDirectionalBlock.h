@@ -135,7 +135,7 @@ public:
      * @vftbl 57
      * @symbol ?isValidAuxValue\@FaceDirectionalBlock\@\@UEBA_NH\@Z
      */
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
@@ -167,7 +167,7 @@ public:
      * ?getPlacementBlock\@FaceDirectionalBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -202,12 +202,12 @@ public:
      * @vftbl 146
      * @symbol ?getMappedFace\@FaceDirectionalBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
-    virtual unsigned char getMappedFace(unsigned char, class Block const&) const;
+    virtual uint8_t getMappedFace(uint8_t, class Block const&) const;
     /**
      * @vftbl 147
      * @symbol ?getFaceFlip\@FaceDirectionalBlock\@\@UEBA?AW4Flip\@\@EAEBVBlock\@\@\@Z
      */
-    virtual enum class Flip getFaceFlip(unsigned char, class Block const&) const;
+    virtual enum class Flip getFaceFlip(uint8_t, class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -258,18 +258,18 @@ public:
      * @symbol
      * ??0FaceDirectionalBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@_NM\@Z
      */
-    MCAPI FaceDirectionalBlock(std::string const&, int, class Material const&, bool, float);
+    MCAPI FaceDirectionalBlock(std::string const&, int32_t, class Material const&, bool, float);
     /**
      * @symbol ?getFaceFlipStatic\@FaceDirectionalBlock\@\@SA?AW4Flip\@\@EAEBVBlock\@\@_N\@Z
      */
-    MCAPI static enum class Flip getFaceFlipStatic(unsigned char, class Block const&, bool);
+    MCAPI static enum class Flip getFaceFlipStatic(uint8_t, class Block const&, bool);
     /**
      * @symbol ?getFacingDirection\@FaceDirectionalBlock\@\@SAEAEBVBlock\@\@_N\@Z
      */
-    MCAPI static unsigned char getFacingDirection(class Block const&, bool);
+    MCAPI static uint8_t getFacingDirection(class Block const&, bool);
     /**
      * @symbol ?getMappedFaceStatic\@FaceDirectionalBlock\@\@SAEEAEBVBlock\@\@_N\@Z
      */
-    MCAPI static unsigned char getMappedFaceStatic(unsigned char, class Block const&, bool);
+    MCAPI static uint8_t getMappedFaceStatic(uint8_t, class Block const&, bool);
     // NOLINTEND
 };

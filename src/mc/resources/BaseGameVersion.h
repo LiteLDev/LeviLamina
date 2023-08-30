@@ -24,7 +24,7 @@ public:
     /**
      * @symbol ??0BaseGameVersion\@\@QEAA\@GII\@Z
      */
-    MCAPI BaseGameVersion(unsigned short, unsigned int, unsigned int);
+    MCAPI BaseGameVersion(uint16_t, uint32_t, uint32_t);
     /**
      * @symbol ?asSemVersion\@BaseGameVersion\@\@QEBAAEBVSemVersion\@\@XZ
      */
@@ -37,15 +37,15 @@ public:
     /**
      * @symbol ?getMajor\@BaseGameVersion\@\@QEBAGXZ
      */
-    MCAPI unsigned short getMajor() const;
+    MCAPI uint16_t getMajor() const;
     /**
      * @symbol ?getMinor\@BaseGameVersion\@\@QEBAGXZ
      */
-    MCAPI unsigned short getMinor() const;
+    MCAPI uint16_t getMinor() const;
     /**
      * @symbol ?getPatch\@BaseGameVersion\@\@QEBAGXZ
      */
-    MCAPI unsigned short getPatch() const;
+    MCAPI uint16_t getPatch() const;
     /**
      * @symbol ?isAnyVersion\@BaseGameVersion\@\@QEBA_NXZ
      */

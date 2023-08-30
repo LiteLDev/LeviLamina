@@ -61,7 +61,7 @@ public:
      * @symbol
      * ?tryGetServerNetId\@NetworkItemStackDescriptor\@\@QEBAPEBV?$TypedServerNetId\@UItemStackNetIdTag\@\@H$0A\@\@\@XZ
      */
-    MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const* tryGetServerNetId() const;
+    MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int32_t, 0> const* tryGetServerNetId() const;
     /**
      * @symbol ?write\@NetworkItemStackDescriptor\@\@QEBAXAEAVBinaryStream\@\@\@Z
      */

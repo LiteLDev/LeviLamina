@@ -11,7 +11,7 @@ MCAPI class Vec3 getJumpStartPosition(class EntityContext const&);
 /**
  * @symbol ?getNoJumpDelay\@MobJump\@\@YAHAEBVEntityContext\@\@\@Z
  */
-MCAPI int getNoJumpDelay(class EntityContext const&);
+MCAPI int32_t getNoJumpDelay(class EntityContext const&);
 /**
  * @symbol ?initializeMob\@MobJump\@\@YAXAEAVEntityContext\@\@\@Z
  */
@@ -39,7 +39,7 @@ MCAPI void setJumpVelRedux(class EntityContext&, bool);
 /**
  * @symbol ?setNoJumpDelay\@MobJump\@\@YAXAEAVEntityContext\@\@H\@Z
  */
-MCAPI void setNoJumpDelay(class EntityContext&, int);
+MCAPI void setNoJumpDelay(class EntityContext&, int32_t);
 // NOLINTEND
 
 }; // namespace MobJump

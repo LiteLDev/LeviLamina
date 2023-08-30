@@ -66,7 +66,7 @@ public:
      * ?setTimeout\@ScriptNetRequest\@ScriptModuleMinecraftNet\@\@QEAA?AV?$StrongTypedObjectHandle\@UScriptNetRequest\@ScriptModuleMinecraftNet\@\@\@Scripting\@\@I\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetRequest>
-    setTimeout(unsigned int);
+        setTimeout(uint32_t);
     /**
      * @symbol ??1ScriptNetRequest\@ScriptModuleMinecraftNet\@\@QEAA\@XZ
      */

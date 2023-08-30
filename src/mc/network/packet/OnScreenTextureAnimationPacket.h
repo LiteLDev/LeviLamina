@@ -52,7 +52,7 @@ public:
     /**
      * @symbol ??0OnScreenTextureAnimationPacket\@\@QEAA\@I\@Z
      */
-    MCAPI OnScreenTextureAnimationPacket(unsigned int);
+    MCAPI OnScreenTextureAnimationPacket(uint32_t);
     /**
      * @symbol ??0OnScreenTextureAnimationPacket\@\@QEAA\@XZ
      */

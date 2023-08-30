@@ -20,7 +20,7 @@ public:
     /**
      * @symbol ?GetAbsoluteTime\@WaitTimer\@OS\@\@QEAA_KI\@Z
      */
-    MCAPI uint64_t GetAbsoluteTime(unsigned int);
+    MCAPI uint64_t GetAbsoluteTime(uint32_t);
     /**
      * @symbol ?Initialize\@WaitTimer\@OS\@\@QEAAJPEAXP6AX0\@Z\@Z
      */

@@ -60,12 +60,12 @@ public:
     /**
      * @symbol ?getAngerForAnimations\@AngerLevelComponent\@\@QEBAHAEAVActor\@\@\@Z
      */
-    MCAPI int getAngerForAnimations(class Actor&) const;
+    MCAPI int32_t getAngerForAnimations(class Actor&) const;
     /**
      * @symbol
      * ?getTopActiveNuisance\@AngerLevelComponent\@\@QEBA?AV?$optional\@U?$pair\@PEAVActor\@\@H\@std\@\@\@std\@\@PEAVActor\@\@AEBVILevel\@\@\@Z
      */
-    MCAPI std::optional<std::pair<class Actor*, int>> getTopActiveNuisance(class Actor*, class ILevel const&) const;
+    MCAPI std::optional<std::pair<class Actor*, int32_t>> getTopActiveNuisance(class Actor*, class ILevel const&) const;
     /**
      * @symbol ?isAngry\@AngerLevelComponent\@\@QEBA_NXZ
      */
@@ -86,7 +86,7 @@ public:
     /**
      * @symbol ?tryIncreaseAngerAt\@AngerLevelComponent\@\@QEAAXAEAVActor\@\@0H_N\@Z
      */
-    MCAPI void tryIncreaseAngerAt(class Actor&, class Actor&, int, bool);
+    MCAPI void tryIncreaseAngerAt(class Actor&, class Actor&, int32_t, bool);
     /**
      * @symbol ??1AngerLevelComponent\@\@QEAA\@XZ
      */
@@ -98,15 +98,15 @@ public:
     /**
      * @symbol ?DEFAULT_ANGRY_BOOST\@AngerLevelComponent\@\@2HB
      */
-    MCAPI static int const DEFAULT_ANGRY_BOOST;
+    MCAPI static int32_t const DEFAULT_ANGRY_BOOST;
     /**
      * @symbol ?DEFAULT_ANGRY_THRESHOLD\@AngerLevelComponent\@\@2HB
      */
-    MCAPI static int const DEFAULT_ANGRY_THRESHOLD;
+    MCAPI static int32_t const DEFAULT_ANGRY_THRESHOLD;
     /**
      * @symbol ?DEFAULT_MAX_ANGER_LEVEL\@AngerLevelComponent\@\@2HB
      */
-    MCAPI static int const DEFAULT_MAX_ANGER_LEVEL;
+    MCAPI static int32_t const DEFAULT_MAX_ANGER_LEVEL;
     /**
      * @symbol ?DEFAULT_SHOULD_REMOVE_TARGET\@AngerLevelComponent\@\@2_NB
      */
@@ -119,7 +119,7 @@ public:
      * @symbol
      * ?_createOrModifyAngerLevel\@AngerLevelComponent\@\@AEAAXAEBVActor\@\@AEBV?$function\@$$A6AHH\@Z\@std\@\@\@Z
      */
-    MCAPI void _createOrModifyAngerLevel(class Actor const&, std::function<int(int)> const&);
+    MCAPI void _createOrModifyAngerLevel(class Actor const&, std::function<int32_t(int32_t)> const&);
     /**
      * @symbol
      * ?_getListeningSoundEvent\@AngerLevelComponent\@\@AEBA?AV?$optional\@W4LevelSoundEvent\@\@\@std\@\@AEAVActor\@\@\@Z

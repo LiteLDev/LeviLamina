@@ -30,7 +30,7 @@ public:
         enum class GameType,
         enum class Difficulty,
         class LevelSeed64,
-        int,
+        int32_t,
         uint64_t,
         bool,
         bool,

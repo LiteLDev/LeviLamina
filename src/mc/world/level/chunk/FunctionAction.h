@@ -60,6 +60,6 @@ public:
     /**
      * @symbol ?_printOutput\@FunctionAction\@\@AEAAXAEAVServerLevel\@\@H\@Z
      */
-    MCAPI void _printOutput(class ServerLevel&, int);
+    MCAPI void _printOutput(class ServerLevel&, int32_t);
     // NOLINTEND
 };

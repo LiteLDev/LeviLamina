@@ -13,7 +13,7 @@ namespace VanillaComplexAliasBlockUtils::LavaCauldron {
  * @symbol
  * ?getComplexAliasCallback\@LavaCauldron\@VanillaComplexAliasBlockUtils\@\@YA?AV?$function\@$$A6APEBVBlock\@\@H\@Z\@std\@\@XZ
  */
-MCAPI std::function<class Block const*(int)> getComplexAliasCallback();
+MCAPI std::function<class Block const*(int32_t)> getComplexAliasCallback();
 // NOLINTEND
 
 }; // namespace VanillaComplexAliasBlockUtils::LavaCauldron

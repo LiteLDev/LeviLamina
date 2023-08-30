@@ -25,7 +25,7 @@ public:
      * @vftbl 1
      * @symbol ?Release\@?$Api\@$01UITaskQueue\@\@\@\@UEAAIXZ
      */
-    virtual unsigned int Release();
+    virtual uint32_t Release();
     /**
      * @vftbl 2
      * @symbol ?QueryApi\@?$Api\@$01UITaskQueue\@\@\@\@UEAAJW4ApiId\@\@PEAPEAX\@Z

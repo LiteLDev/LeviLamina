@@ -36,7 +36,7 @@ public:
     /**
      * @symbol ?useOn\@SeedItemComponentLegacy\@\@QEAA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
      */
-    MCAPI bool useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&);
+    MCAPI bool useOn(class ItemStack&, class Actor&, class BlockPos const&, uint8_t, class Vec3 const&);
     // NOLINTEND
 
     // private:

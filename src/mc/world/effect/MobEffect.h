@@ -61,7 +61,7 @@ public:
      * @vftbl 1
      * @symbol ?applyEffects\@MobEffect\@\@UEBAXPEAVActor\@\@HH\@Z
      */
-    virtual void applyEffects(class Actor*, int, int) const;
+    virtual void applyEffects(class Actor*, int32_t, int32_t) const;
     /**
      * @vftbl 2
      * @symbol ?removeEffects\@MobEffect\@\@UEAAXPEAVActor\@\@\@Z
@@ -71,12 +71,12 @@ public:
      * @vftbl 3
      * @symbol ?updateEffects\@MobEffect\@\@UEAAXPEAVActor\@\@HH\@Z
      */
-    virtual void updateEffects(class Actor*, int, int);
+    virtual void updateEffects(class Actor*, int32_t, int32_t);
     /**
      * @vftbl 4
      * @symbol ?applyInstantaneousEffect\@MobEffect\@\@UEBAXPEAVActor\@\@00HM\@Z
      */
-    virtual void applyInstantaneousEffect(class Actor*, class Actor*, class Actor*, int, float) const;
+    virtual void applyInstantaneousEffect(class Actor*, class Actor*, class Actor*, int32_t, float) const;
     /**
      * @vftbl 5
      * @symbol ?isInstantaneous\@MobEffect\@\@UEBA_NXZ
@@ -86,7 +86,7 @@ public:
      * @vftbl 6
      * @symbol ?getAttributeModifierValue\@MobEffect\@\@UEBAMHAEBVAttributeModifier\@\@\@Z
      */
-    virtual float getAttributeModifierValue(int, class AttributeModifier const&) const;
+    virtual float getAttributeModifierValue(int32_t, class AttributeModifier const&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECT
     /**
      * @symbol __unk_destructor_-1
@@ -98,7 +98,7 @@ public:
      * ??0MobEffect\@\@QEAA\@IAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0_NHH01AEBUFactorCalculationData\@0\@\@Z
      */
     MCAPI
-    MobEffect(unsigned int, std::string const&, std::string const&, bool, int, int, std::string const&, bool, struct MobEffect::FactorCalculationData const&);
+    MobEffect(uint32_t, std::string const&, std::string const&, bool, int32_t, int32_t, std::string const&, bool, struct MobEffect::FactorCalculationData const&);
     /**
      * @symbol ?addAttributeBuff\@MobEffect\@\@QEAAXAEBVAttribute\@\@V?$shared_ptr\@VAttributeBuff\@\@\@std\@\@\@Z
      */
@@ -120,7 +120,7 @@ public:
     /**
      * @symbol ?getId\@MobEffect\@\@QEBAIXZ
      */
-    MCAPI unsigned int getId() const;
+    MCAPI uint32_t getId() const;
     /**
      * @symbol
      * ?getResourceName\@MobEffect\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -151,7 +151,7 @@ public:
     /**
      * @symbol ?getById\@MobEffect\@\@SAPEAV1\@I\@Z
      */
-    MCAPI static class MobEffect* getById(unsigned int);
+    MCAPI static class MobEffect* getById(uint32_t);
     /**
      * @symbol
      * ?getByName\@MobEffect\@\@SAPEAV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -161,7 +161,7 @@ public:
      * @symbol
      * ?getNameById\@MobEffect\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@I\@Z
      */
-    MCAPI static std::string getNameById(unsigned int);
+    MCAPI static std::string getNameById(uint32_t);
     /**
      * @symbol ?initEffects\@MobEffect\@\@SAXPEAVResourcePackManager\@\@AEBVBaseGameVersion\@\@AEBVExperiments\@\@\@Z
      */
@@ -310,15 +310,15 @@ public:
     /**
      * @symbol ?_createAttributeModifer\@MobEffect\@\@IEBA?AVAttributeModifier\@\@AEBV2\@H\@Z
      */
-    MCAPI class AttributeModifier _createAttributeModifer(class AttributeModifier const&, int) const;
+    MCAPI class AttributeModifier _createAttributeModifer(class AttributeModifier const&, int32_t) const;
     /**
      * @symbol ?_createInstantBuff\@MobEffect\@\@IEBA?AVInstantaneousAttributeBuff\@\@AEBVAttributeBuff\@\@HM\@Z
      */
-    MCAPI class InstantaneousAttributeBuff _createInstantBuff(class AttributeBuff const&, int, float) const;
+    MCAPI class InstantaneousAttributeBuff _createInstantBuff(class AttributeBuff const&, int32_t, float) const;
     /**
      * @symbol ?_createTemporalBuff\@MobEffect\@\@IEBA?AVTemporalAttributeBuff\@\@AEBVAttributeBuff\@\@HH\@Z
      */
-    MCAPI class TemporalAttributeBuff _createTemporalBuff(class AttributeBuff const&, int, int) const;
+    MCAPI class TemporalAttributeBuff _createTemporalBuff(class AttributeBuff const&, int32_t, int32_t) const;
     // NOLINTEND
 
     // private:
@@ -326,6 +326,6 @@ public:
     /**
      * @symbol ?darknessEffectFactorUpdate\@MobEffect\@\@CAXAEAUFactorCalculationData\@1\@H\@Z
      */
-    MCAPI static void darknessEffectFactorUpdate(struct MobEffect::FactorCalculationData&, int);
+    MCAPI static void darknessEffectFactorUpdate(struct MobEffect::FactorCalculationData&, int32_t);
     // NOLINTEND
 };

@@ -30,13 +30,13 @@ public:
      * ?thenExecuteAfter\@GameTestSequence\@gametest\@\@QEAAAEAV12\@HV?$function\@$$A6A?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@XZ\@std\@\@\@Z
      */
     MCAPI class gametest::GameTestSequence&
-    thenExecuteAfter(int, std::function<std::optional<struct gametest::GameTestError>(void)>);
+        thenExecuteAfter(int32_t, std::function<std::optional<struct gametest::GameTestError>(void)>);
     /**
      * @symbol
      * ?thenExecuteFor\@GameTestSequence\@gametest\@\@QEAAAEAV12\@HV?$function\@$$A6A?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@XZ\@std\@\@\@Z
      */
     MCAPI class gametest::GameTestSequence&
-    thenExecuteFor(int, std::function<std::optional<struct gametest::GameTestError>(void)>);
+        thenExecuteFor(int32_t, std::function<std::optional<struct gametest::GameTestError>(void)>);
     /**
      * @symbol ?thenFail\@GameTestSequence\@gametest\@\@QEAAXUGameTestError\@2\@\@Z
      */
@@ -44,7 +44,7 @@ public:
     /**
      * @symbol ?thenIdle\@GameTestSequence\@gametest\@\@QEAAAEAV12\@H\@Z
      */
-    MCAPI class gametest::GameTestSequence& thenIdle(int);
+    MCAPI class gametest::GameTestSequence& thenIdle(int32_t);
     /**
      * @symbol ?thenSucceed\@GameTestSequence\@gametest\@\@QEAAXXZ
      */
@@ -60,7 +60,7 @@ public:
      * ?thenWaitAfter\@GameTestSequence\@gametest\@\@QEAAAEAV12\@HV?$function\@$$A6A?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@XZ\@std\@\@\@Z
      */
     MCAPI class gametest::GameTestSequence&
-    thenWaitAfter(int, std::function<std::optional<struct gametest::GameTestError>(void)>);
+        thenWaitAfter(int32_t, std::function<std::optional<struct gametest::GameTestError>(void)>);
     // NOLINTEND
 
     // private:
@@ -74,7 +74,7 @@ public:
     /**
      * @symbol ?_tick\@GameTestSequence\@gametest\@\@AEAA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@H\@Z
      */
-    MCAPI std::optional<struct gametest::GameTestError> _tick(int);
+    MCAPI std::optional<struct gametest::GameTestError> _tick(int32_t);
     // NOLINTEND
 };
 

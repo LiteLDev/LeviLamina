@@ -49,7 +49,7 @@ public:
      * @symbol
      * ?_getItemContext\@ScriptPlayerInventoryComponentContainer\@ScriptModuleMinecraft\@\@MEBA?AVItemContext\@\@H\@Z
      */
-    virtual class ItemContext _getItemContext(int) const;
+    virtual class ItemContext _getItemContext(int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTPLAYERINVENTORYCOMPONENTCONTAINER
     /**
      * @symbol __unk_destructor_-1

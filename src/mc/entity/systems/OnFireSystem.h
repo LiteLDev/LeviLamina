@@ -26,11 +26,11 @@ public:
     /**
      * @symbol ?setOnFire\@OnFireSystem\@\@SAXAEAVActor\@\@H\@Z
      */
-    MCAPI static void setOnFire(class Actor&, int);
+    MCAPI static void setOnFire(class Actor&, int32_t);
     /**
      * @symbol ?setOnFireNoEffects\@OnFireSystem\@\@SAXAEAVActor\@\@H\@Z
      */
-    MCAPI static void setOnFireNoEffects(class Actor&, int);
+    MCAPI static void setOnFireNoEffects(class Actor&, int32_t);
     /**
      * @symbol ?stopFire\@OnFireSystem\@\@SAXAEAVActor\@\@\@Z
      */

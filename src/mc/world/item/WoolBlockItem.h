@@ -118,6 +118,6 @@ public:
      * @symbol
      * ??0WoolBlockItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
-    MCAPI WoolBlockItem(std::string const&, int, bool);
+    MCAPI WoolBlockItem(std::string const&, int32_t, bool);
     // NOLINTEND
 };

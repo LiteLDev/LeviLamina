@@ -34,7 +34,7 @@ public:
     /**
      * @symbol ?getAnimationTicks\@StructureSettings\@\@QEBAIXZ
      */
-    MCAPI unsigned int getAnimationTicks() const;
+    MCAPI uint32_t getAnimationTicks() const;
     /**
      * @symbol ?getIgnoreBlocks\@StructureSettings\@\@QEBA_NXZ
      */
@@ -46,7 +46,7 @@ public:
     /**
      * @symbol ?getIntegritySeed\@StructureSettings\@\@QEBAIXZ
      */
-    MCAPI unsigned int getIntegritySeed() const;
+    MCAPI uint32_t getIntegritySeed() const;
     /**
      * @symbol ?getIntegrityValue\@StructureSettings\@\@QEBAMXZ
      */
@@ -119,7 +119,7 @@ public:
     /**
      * @symbol ?setIntegritySeed\@StructureSettings\@\@QEAAXI\@Z
      */
-    MCAPI void setIntegritySeed(unsigned int);
+    MCAPI void setIntegritySeed(uint32_t);
     /**
      * @symbol ?setIntegrityValue\@StructureSettings\@\@QEAAXM\@Z
      */

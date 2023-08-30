@@ -225,10 +225,10 @@ public:
      * @vftbl 186
      * @symbol ?getResourceCount\@BlueIceBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
     /**
      * @symbol ??0BlueIceBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI BlueIceBlock(std::string const&, int);
+    MCAPI BlueIceBlock(std::string const&, int32_t);
     // NOLINTEND
 };

@@ -64,7 +64,7 @@ MCAPI void fillNegativeSubChunksWithGenerationOrAir(class LevelChunk&, class Lev
 MCAPI void fixBlockStatesOnChunkBorderAxis(
     class BlockSource&,
     class LevelChunk const&,
-    unsigned char,
+    uint8_t,
     class BlockPos,
     enum class VanillaLevelChunkUpgrade::Axis
 );

@@ -38,7 +38,7 @@ public:
     /**
      * @symbol ?sample\@OverworldNoises3d\@\@QEBA?AUTargetPoint\@\@HAEBUCacheEntry\@ChunkLocalNoiseCache\@\@\@Z
      */
-    MCAPI struct TargetPoint sample(int, struct ChunkLocalNoiseCache::CacheEntry const&) const;
+    MCAPI struct TargetPoint sample(int32_t, struct ChunkLocalNoiseCache::CacheEntry const&) const;
     /**
      * @symbol ??1OverworldNoises3d\@\@QEAA\@XZ
      */
@@ -46,7 +46,7 @@ public:
     /**
      * @symbol ?computeInitialDensity\@OverworldNoises3d\@\@SAMHMMM\@Z
      */
-    MCAPI static float computeInitialDensity(int, float, float, float);
+    MCAPI static float computeInitialDensity(int32_t, float, float, float);
     /**
      * @symbol ?make\@OverworldNoises3d\@\@SA?AU1\@AEBVXoroshiroPositionalRandomFactory\@\@\@Z
      */

@@ -150,7 +150,7 @@ public:
      * @vftbl 66
      * @symbol ?shouldConnectToRedstone\@JukeboxBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -190,7 +190,7 @@ public:
      * @vftbl 126
      * @symbol ?getComparatorSignal\@JukeboxBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, unsigned char) const;
+    virtual int32_t getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uint8_t) const;
     /**
      * @vftbl 128
      * @symbol __unk_vfn_128
@@ -245,7 +245,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@JukeboxBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -265,7 +265,7 @@ public:
     /**
      * @symbol ??0JukeboxBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI JukeboxBlock(std::string const&, int);
+    MCAPI JukeboxBlock(std::string const&, int32_t);
     // NOLINTEND
 
     // private:

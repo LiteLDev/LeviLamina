@@ -65,7 +65,7 @@ public:
      * @vftbl 1
      * @symbol ?Release\@?$Api\@$00UITaskQueuePort\@\@\@\@UEAAIXZ
      */
-    virtual unsigned int Release();
+    virtual uint32_t Release();
     /**
      * @vftbl 2
      * @symbol ?QueryApi\@?$Api\@$00UITaskQueuePort\@\@\@\@UEAAJW4ApiId\@\@PEAPEAX\@Z
@@ -80,7 +80,7 @@ public:
      * @vftbl 4
      * @symbol ?QueueItem\@TaskQueuePortImpl\@\@UEAAJPEAUITaskQueuePortContext\@\@IPEAXP6AX1_N\@Z\@Z
      */
-    virtual long QueueItem(struct ITaskQueuePortContext*, unsigned int, void*, void(__cdecl*)(void*, bool));
+    virtual long QueueItem(struct ITaskQueuePortContext*, uint32_t, void*, void(__cdecl*)(void*, bool));
     /**
      * @vftbl 5
      * @symbol
@@ -122,7 +122,7 @@ public:
      * @vftbl 12
      * @symbol ?Dispatch\@TaskQueuePortImpl\@\@UEAA_NPEAUITaskQueuePortContext\@\@I\@Z
      */
-    virtual bool Dispatch(struct ITaskQueuePortContext*, unsigned int);
+    virtual bool Dispatch(struct ITaskQueuePortContext*, uint32_t);
     /**
      * @vftbl 13
      * @symbol ?IsEmpty\@TaskQueuePortImpl\@\@UEAA_NXZ
@@ -215,7 +215,7 @@ public:
     /**
      * @symbol ?Wait\@TaskQueuePortImpl\@\@AEAA_NPEAUITaskQueuePortContext\@\@I\@Z
      */
-    MCAPI bool Wait(struct ITaskQueuePortContext*, unsigned int);
+    MCAPI bool Wait(struct ITaskQueuePortContext*, uint32_t);
     /**
      * @symbol ?EraseQueue\@TaskQueuePortImpl\@\@CAXPEAV?$LocklessQueue\@UQueueEntry\@TaskQueuePortImpl\@\@\@\@\@Z
      */

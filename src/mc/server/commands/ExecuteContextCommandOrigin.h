@@ -99,7 +99,7 @@ public:
      * @vftbl 28
      * @symbol ?getExecutePosition\@ExecuteContextCommandOrigin\@\@UEBA?BVVec3\@\@HAEBVCommandPositionFloat\@\@\@Z
      */
-    virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const&) const;
+    virtual class Vec3 const getExecutePosition(int32_t, class CommandPositionFloat const&) const;
     /**
      * @vftbl 29
      * @symbol ?serialize\@ExecuteContextCommandOrigin\@\@UEBA?AVCompoundTag\@\@XZ
@@ -121,9 +121,9 @@ public:
         struct ActorUniqueID,
         struct ActorUniqueID,
         enum class ActorLocation,
-        class AutomaticID<class Dimension, int>,
+        DimensionType,
         class Level&,
-        int
+        int32_t
     );
     /**
      * @symbol ?getPositionEntity\@ExecuteContextCommandOrigin\@\@QEAAPEBVActor\@\@XZ
@@ -132,7 +132,7 @@ public:
     /**
      * @symbol ?setDimension\@ExecuteContextCommandOrigin\@\@QEAAXAEBV?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI void setDimension(class AutomaticID<class Dimension, int> const&);
+    MCAPI void setDimension(DimensionType const&);
     /**
      * @symbol ?setDimension\@ExecuteContextCommandOrigin\@\@QEAAXAEBVDimension\@\@\@Z
      */

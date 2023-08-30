@@ -45,7 +45,7 @@ public:
     /**
      * @symbol ?getCloudHeight\@TheEndDimension\@\@UEBAFXZ
      */
-    MCVAPI short getCloudHeight() const;
+    MCVAPI int16_t getCloudHeight() const;
     /**
      * @symbol ?getDefaultBiome\@TheEndDimension\@\@UEBA?AVHashedString\@\@XZ
      */
@@ -57,7 +57,7 @@ public:
     /**
      * @symbol ?getSpawnYPosition\@TheEndDimension\@\@UEBAHXZ
      */
-    MCVAPI int getSpawnYPosition() const;
+    MCVAPI int32_t getSpawnYPosition() const;
     /**
      * @symbol ?getSunIntensity\@TheEndDimension\@\@UEBAMMAEBVVec3\@\@M\@Z
      */
@@ -65,7 +65,7 @@ public:
     /**
      * @symbol ?getTimeOfDay\@TheEndDimension\@\@UEBAMHM\@Z
      */
-    MCVAPI float getTimeOfDay(int, float) const;
+    MCVAPI float getTimeOfDay(int32_t, float) const;
     /**
      * @symbol ?hasGround\@TheEndDimension\@\@UEBA_NXZ
      */
@@ -81,7 +81,7 @@ public:
     /**
      * @symbol ?isFoggyAt\@TheEndDimension\@\@UEBA_NHH\@Z
      */
-    MCVAPI bool isFoggyAt(int, int) const;
+    MCVAPI bool isFoggyAt(int32_t, int32_t) const;
     /**
      * @symbol ?isNaturalDimension\@TheEndDimension\@\@UEBA_NXZ
      */
@@ -89,7 +89,7 @@ public:
     /**
      * @symbol ?isValidSpawn\@TheEndDimension\@\@UEBA_NHH\@Z
      */
-    MCVAPI bool isValidSpawn(int, int) const;
+    MCVAPI bool isValidSpawn(int32_t, int32_t) const;
     /**
      * @symbol ?levelChunkNeedsUpgrade\@TheEndDimension\@\@UEBA_NAEBVLevelChunk\@\@\@Z
      */
@@ -114,7 +114,7 @@ public:
      * @symbol
      * ?translatePosAcrossDimension\@TheEndDimension\@\@UEBA?AVVec3\@\@AEBV2\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const&, class AutomaticID<class Dimension, int>) const;
+    MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const&, DimensionType) const;
     /**
      * @symbol ?upgradeLevelChunk\@TheEndDimension\@\@UEAAXAEAVChunkSource\@\@AEAVLevelChunk\@\@1\@Z
      */
@@ -132,6 +132,6 @@ public:
      * @symbol
      * ?makeStructureFeatures\@TheEndDimension\@\@CA?AV?$unique_ptr\@VStructureFeatureRegistry\@\@U?$default_delete\@VStructureFeatureRegistry\@\@\@std\@\@\@std\@\@AEAVDimension\@\@I\@Z
      */
-    MCAPI static std::unique_ptr<class StructureFeatureRegistry> makeStructureFeatures(class Dimension&, unsigned int);
+    MCAPI static std::unique_ptr<class StructureFeatureRegistry> makeStructureFeatures(class Dimension&, uint32_t);
     // NOLINTEND
 };

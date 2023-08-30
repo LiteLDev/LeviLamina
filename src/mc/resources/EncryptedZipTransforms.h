@@ -25,12 +25,12 @@ public:
      * @vftbl 1
      * @symbol ?readTransform\@EncryptedZipTransforms\@\@UEBA_NAEAV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@\@Z
      */
-    virtual bool readTransform(std::vector<unsigned char>&) const;
+    virtual bool readTransform(std::vector<uint8_t>&) const;
     /**
      * @vftbl 2
      * @symbol ?writeTransform\@EncryptedZipTransforms\@\@UEBA_NAEAV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@\@Z
      */
-    virtual bool writeTransform(std::vector<unsigned char>&) const;
+    virtual bool writeTransform(std::vector<uint8_t>&) const;
     /**
      * @symbol
      * ??0EncryptedZipTransforms\@\@QEAA\@AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentKeyProvider\@\@\@Bedrock\@\@\@gsl\@\@\@Z

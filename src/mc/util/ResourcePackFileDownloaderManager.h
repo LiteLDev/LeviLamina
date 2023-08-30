@@ -27,6 +27,6 @@ private:
     /**
      * @symbol ?MAX_CHUNK_ATTEMPTS\@ResourcePackFileDownloaderManager\@\@0HB
      */
-    MCAPI static int const MAX_CHUNK_ATTEMPTS;
+    MCAPI static int32_t const MAX_CHUNK_ATTEMPTS;
     // NOLINTEND
 };

@@ -25,7 +25,7 @@ public:
     /**
      * @symbol ?applyGravity\@LegacyBlockPlacementProcessor\@\@QEBAAEAVBlockPos\@\@AEAVBlockSource\@\@HAEAV2\@\@Z
      */
-    MCAPI class BlockPos& applyGravity(class BlockSource&, int, class BlockPos&) const;
+    MCAPI class BlockPos& applyGravity(class BlockSource&, int32_t, class BlockPos&) const;
     /**
      * @symbol ??1LegacyBlockPlacementProcessor\@\@QEAA\@XZ
      */

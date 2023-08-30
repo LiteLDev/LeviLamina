@@ -41,7 +41,7 @@ public:
         /**
          * @symbol ?place\@Rail\@BaseRailBlock\@\@QEAAXH_N\@Z
          */
-        MCAPI void place(int, bool);
+        MCAPI void place(int32_t, bool);
         /**
          * @symbol ??1Rail\@BaseRailBlock\@\@QEAA\@XZ
          */
@@ -74,7 +74,7 @@ public:
         /**
          * @symbol ?updateConnections\@Rail\@BaseRailBlock\@\@IEAAXH\@Z
          */
-        MCAPI void updateConnections(int);
+        MCAPI void updateConnections(int32_t);
         // NOLINTEND
     };
 
@@ -227,7 +227,7 @@ public:
      * @vftbl 75
      * @symbol ?onRedstoneUpdate\@BaseRailBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
-    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int32_t, bool) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -369,7 +369,7 @@ public:
      * @symbol
      * ??0BaseRailBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
-    MCAPI BaseRailBlock(std::string const&, int, bool);
+    MCAPI BaseRailBlock(std::string const&, int32_t, bool);
     /**
      * @symbol ?isCorner\@BaseRailBlock\@\@SA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -393,7 +393,7 @@ public:
     /**
      * @symbol ?isSlope\@BaseRailBlock\@\@SA_NH\@Z
      */
-    MCAPI static bool isSlope(int);
+    MCAPI static bool isSlope(int32_t);
     // NOLINTEND
 
     // private:

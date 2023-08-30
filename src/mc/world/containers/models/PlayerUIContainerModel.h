@@ -51,7 +51,7 @@ public:
      * @vftbl 21
      * @symbol ?_getContainerOffset\@PlayerUIContainerModel\@\@MEBAHXZ
      */
-    virtual int _getContainerOffset() const;
+    virtual int32_t _getContainerOffset() const;
     /**
      * @symbol ??0PlayerUIContainerModel\@\@QEAA\@W4ContainerEnumName\@\@AEAVPlayer\@\@\@Z
      */

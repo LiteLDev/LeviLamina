@@ -40,7 +40,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@SculkShriekerBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -195,7 +195,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@SculkShriekerBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 149
      * @symbol ?init\@SculkShriekerBlock\@\@UEAAAEAVBlockLegacy\@\@XZ
@@ -265,12 +265,12 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@SculkShriekerBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 186
      * @symbol ?getResourceCount\@SculkShriekerBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@SculkShriekerBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -286,6 +286,6 @@ public:
      * @symbol
      * ??0SculkShriekerBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI SculkShriekerBlock(std::string const&, int, class Material const&);
+    MCAPI SculkShriekerBlock(std::string const&, int32_t, class Material const&);
     // NOLINTEND
 };

@@ -97,7 +97,7 @@ public:
      * @vftbl 127
      * @symbol ?handleEntityEvent\@Sheep\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
-    virtual void handleEntityEvent(enum class ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int32_t);
     /**
      * @vftbl 164
      * @symbol __unk_vfn_164
@@ -177,6 +177,6 @@ private:
     /**
      * @symbol ?EAT_ANIMATION_TICKS\@Sheep\@\@0HB
      */
-    MCAPI static int const EAT_ANIMATION_TICKS;
+    MCAPI static int32_t const EAT_ANIMATION_TICKS;
     // NOLINTEND
 };

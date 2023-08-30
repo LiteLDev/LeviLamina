@@ -15,7 +15,7 @@ public:
     /**
      * @symbol ??0TickNextTickData\@\@QEAA\@AEBVBlockPos\@\@AEBVBlock\@\@AEBUTick\@\@H\@Z
      */
-    MCAPI TickNextTickData(class BlockPos const&, class Block const&, struct Tick const&, int);
+    MCAPI TickNextTickData(class BlockPos const&, class Block const&, struct Tick const&, int32_t);
     /**
      * @symbol ??8TickNextTickData\@\@QEBA_NAEBV0\@\@Z
      */

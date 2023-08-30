@@ -31,14 +31,15 @@
 
 class Actor : public ::ActorStatusProvider {
 public:
+
     // Actor inner types define
     enum class InitializationMethod {};
-
+    
 public:
     // prevent constructor by default
-    Actor& operator=(Actor const&) = delete;
-    Actor(Actor const&)            = delete;
-    Actor()                        = delete;
+    Actor& operator=(Actor const &) = delete;
+    Actor(Actor const &) = delete;
+    Actor() = delete;
 
 public:
     // NOLINTBEGIN
@@ -56,37 +57,37 @@ public:
      * @vftbl 2
      * @symbol ?hasComponent\@Actor\@\@UEBA_NAEBVHashedString\@\@\@Z
      */
-    virtual bool hasComponent(class HashedString const&) const;
+    virtual bool hasComponent(class HashedString const &) const;
     /**
      * @vftbl 3
      * @symbol ?getLastHurtByMob\@Actor\@\@UEAAPEAVMob\@\@XZ
      */
-    virtual class Mob* getLastHurtByMob();
+    virtual class Mob * getLastHurtByMob();
     /**
      * @vftbl 4
      * @symbol ?setLastHurtByMob\@Actor\@\@UEAAXPEAVMob\@\@\@Z
      */
-    virtual void setLastHurtByMob(class Mob*);
+    virtual void setLastHurtByMob(class Mob *);
     /**
      * @vftbl 5
      * @symbol ?getLastHurtByPlayer\@Actor\@\@UEAAPEAVPlayer\@\@XZ
      */
-    virtual class Player* getLastHurtByPlayer();
+    virtual class Player * getLastHurtByPlayer();
     /**
      * @vftbl 6
      * @symbol ?setLastHurtByPlayer\@Actor\@\@UEAAXPEAVPlayer\@\@\@Z
      */
-    virtual void setLastHurtByPlayer(class Player*);
+    virtual void setLastHurtByPlayer(class Player *);
     /**
      * @vftbl 7
      * @symbol ?getLastHurtMob\@Actor\@\@UEAAPEAVMob\@\@XZ
      */
-    virtual class Mob* getLastHurtMob();
+    virtual class Mob * getLastHurtMob();
     /**
      * @vftbl 8
      * @symbol ?setLastHurtMob\@Actor\@\@UEAAXPEAV1\@\@Z
      */
-    virtual void setLastHurtMob(class Actor*);
+    virtual void setLastHurtMob(class Actor *);
     /**
      * @vftbl 9
      * @symbol ?outOfWorld\@Actor\@\@UEAAXXZ
@@ -96,22 +97,22 @@ public:
      * @vftbl 10
      * @symbol ?reloadHardcoded\@Actor\@\@MEAAXW4InitializationMethod\@1\@AEBVVariantParameterList\@\@\@Z
      */
-    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl 11
      * @symbol ?reloadHardcodedClient\@Actor\@\@MEAAXW4InitializationMethod\@1\@AEBVVariantParameterList\@\@\@Z
      */
-    virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl 12
      * @symbol ?initializeComponents\@Actor\@\@MEAAXW4InitializationMethod\@1\@AEBVVariantParameterList\@\@\@Z
      */
-    virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const&);
+    virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl 13
      * @symbol ?reloadComponents\@Actor\@\@MEAAXW4InitializationMethod\@1\@AEBVVariantParameterList\@\@\@Z
      */
-    virtual void reloadComponents(enum class Actor::InitializationMethod, class VariantParameterList const&);
+    virtual void reloadComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl 14
      * @symbol ?_serverInitItemStackIds\@Actor\@\@MEAAXXZ
@@ -151,17 +152,17 @@ public:
      * @vftbl 21
      * @symbol ?getPredictedMovementValues\@Actor\@\@UEBAAEBUPredictedMovementValues\@\@XZ
      */
-    virtual struct PredictedMovementValues const& getPredictedMovementValues() const;
+    virtual struct PredictedMovementValues const & getPredictedMovementValues() const;
     /**
      * @vftbl 22
      * @symbol ?getPosition\@Actor\@\@UEBAAEBVVec3\@\@XZ
      */
-    virtual class Vec3 const& getPosition() const;
+    virtual class Vec3 const & getPosition() const;
     /**
      * @vftbl 23
      * @symbol ?getPosPrev\@Actor\@\@UEBAAEBVVec3\@\@XZ
      */
-    virtual class Vec3 const& getPosPrev() const;
+    virtual class Vec3 const & getPosPrev() const;
     /**
      * @vftbl 24
      * @symbol ?getPosExtrapolated\@Actor\@\@UEBA?BVVec3\@\@M\@Z
@@ -206,7 +207,7 @@ public:
      * @vftbl 32
      * @symbol ?getInterpolatedRidingOffset\@Actor\@\@UEBA?AVVec3\@\@MH\@Z
      */
-    virtual class Vec3 getInterpolatedRidingOffset(float, int) const;
+    virtual class Vec3 getInterpolatedRidingOffset(float, int32_t) const;
     /**
      * @vftbl 33
      * @symbol ?resetInterpolated\@Actor\@\@UEAAXXZ
@@ -226,7 +227,7 @@ public:
      * @vftbl 36
      * @symbol ?blockedByShield\@Actor\@\@UEAAXAEBVActorDamageSource\@\@AEAV1\@\@Z
      */
-    virtual void blockedByShield(class ActorDamageSource const&, class Actor&);
+    virtual void blockedByShield(class ActorDamageSource const &, class Actor &);
     /**
      * @vftbl 37
      * @symbol ?canDisableShield\@Actor\@\@UEAA_NXZ
@@ -236,26 +237,25 @@ public:
      * @vftbl 38
      * @symbol ?teleportTo\@Actor\@\@UEAAXAEBVVec3\@\@_NHH1\@Z
      */
-    virtual void teleportTo(class Vec3 const&, bool, int, int, bool);
+    virtual void teleportTo(class Vec3 const &, bool, int32_t, int32_t, bool);
     /**
      * @vftbl 39
      * @symbol ?tryTeleportTo\@Actor\@\@UEAA_NAEBVVec3\@\@_N1HH\@Z
      */
-    virtual bool tryTeleportTo(class Vec3 const&, bool, bool, int, int);
+    virtual bool tryTeleportTo(class Vec3 const &, bool, bool, int32_t, int32_t);
     /**
      * @vftbl 40
      * @symbol ?chorusFruitTeleport\@Actor\@\@UEAAXAEBVVec3\@\@\@Z
      */
-    virtual void chorusFruitTeleport(class Vec3 const&);
+    virtual void chorusFruitTeleport(class Vec3 const &);
     /**
      * @vftbl 41
      * @symbol ?lerpMotion\@Actor\@\@UEAAXAEBVVec3\@\@\@Z
      */
-    virtual void lerpMotion(class Vec3 const&);
+    virtual void lerpMotion(class Vec3 const &);
     /**
      * @vftbl 42
-     * @symbol
-     * ?tryCreateAddActorPacket\@Actor\@\@UEAA?AV?$unique_ptr\@VAddActorBasePacket\@\@U?$default_delete\@VAddActorBasePacket\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?tryCreateAddActorPacket\@Actor\@\@UEAA?AV?$unique_ptr\@VAddActorBasePacket\@\@U?$default_delete\@VAddActorBasePacket\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
     /**
@@ -277,34 +277,32 @@ public:
      * @vftbl 46
      * @symbol ?positionPassenger\@Actor\@\@UEAAXAEAV1\@M\@Z
      */
-    virtual void positionPassenger(class Actor&, float);
+    virtual void positionPassenger(class Actor &, float);
     /**
      * @vftbl 47
      * @symbol ?startRiding\@Actor\@\@UEAA_NAEAV1\@\@Z
      */
-    virtual bool startRiding(class Actor&);
+    virtual bool startRiding(class Actor &);
     /**
      * @vftbl 48
      * @symbol ?addPassenger\@Actor\@\@UEAAXAEAV1\@\@Z
      */
-    virtual void addPassenger(class Actor&);
+    virtual void addPassenger(class Actor &);
     /**
      * @vftbl 49
-     * @symbol
-     * ?getExitTip\@Actor\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@W4InputMode\@\@W4NewInteractionModel\@\@\@Z
+     * @symbol ?getExitTip\@Actor\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@W4InputMode\@\@W4NewInteractionModel\@\@\@Z
      */
-    virtual std::string getExitTip(std::string const&, enum class InputMode, enum class NewInteractionModel) const;
+    virtual std::string getExitTip(std::string const &, enum class InputMode, enum class NewInteractionModel) const;
     /**
      * @vftbl 50
-     * @symbol
-     * ?getEntityLocNameString\@Actor\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getEntityLocNameString\@Actor\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getEntityLocNameString() const;
     /**
      * @vftbl 51
      * @symbol ?intersects\@Actor\@\@UEBA_NAEBVVec3\@\@0\@Z
      */
-    virtual bool intersects(class Vec3 const&, class Vec3 const&) const;
+    virtual bool intersects(class Vec3 const &, class Vec3 const &) const;
     /**
      * @vftbl 52
      * @symbol ?isInWall\@Actor\@\@UEBA_NXZ
@@ -334,7 +332,7 @@ public:
      * @vftbl 57
      * @symbol ?getNameTag\@Actor\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string const& getNameTag() const;
+    virtual std::string const & getNameTag() const;
     /**
      * @vftbl 58
      * @symbol ?getNameTagAsHash\@Actor\@\@UEBA_KXZ
@@ -342,21 +340,19 @@ public:
     virtual uint64_t getNameTagAsHash() const;
     /**
      * @vftbl 59
-     * @symbol
-     * ?getFormattedNameTag\@Actor\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getFormattedNameTag\@Actor\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getFormattedNameTag() const;
     /**
      * @vftbl 60
      * @symbol ?filterFormattedNameTag\@Actor\@\@UEAAXAEBVUIProfanityContext\@\@\@Z
      */
-    virtual void filterFormattedNameTag(class UIProfanityContext const&);
+    virtual void filterFormattedNameTag(class UIProfanityContext const &);
     /**
      * @vftbl 61
-     * @symbol
-     * ?setNameTag\@Actor\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?setNameTag\@Actor\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void setNameTag(std::string const&);
+    virtual void setNameTag(std::string const &);
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
@@ -364,15 +360,14 @@ public:
     virtual void __unk_vfn_62();
     /**
      * @vftbl 63
-     * @symbol
-     * ?setScoreTag\@Actor\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?setScoreTag\@Actor\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void setScoreTag(std::string const&);
+    virtual void setScoreTag(std::string const &);
     /**
      * @vftbl 64
      * @symbol ?getScoreTag\@Actor\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string const& getScoreTag() const;
+    virtual std::string const & getScoreTag() const;
     /**
      * @vftbl 65
      * @symbol ?isInWater\@Actor\@\@UEBA_NXZ
@@ -412,12 +407,12 @@ public:
      * @vftbl 72
      * @symbol ?canSee\@Actor\@\@UEBA_NAEBV1\@\@Z
      */
-    virtual bool canSee(class Actor const&) const;
+    virtual bool canSee(class Actor const &) const;
     /**
      * @vftbl 73
      * @symbol ?canSee\@Actor\@\@UEBA_NAEBVVec3\@\@\@Z
      */
-    virtual bool canSee(class Vec3 const&) const;
+    virtual bool canSee(class Vec3 const &) const;
     /**
      * @vftbl 74
      * @symbol ?canInteractWithOtherEntitiesInGame\@Actor\@\@UEBA_NXZ
@@ -432,7 +427,7 @@ public:
      * @vftbl 76
      * @symbol ?getBrightness\@Actor\@\@UEBAMMAEBVIConstBlockSource\@\@\@Z
      */
-    virtual float getBrightness(float, class IConstBlockSource const&) const;
+    virtual float getBrightness(float, class IConstBlockSource const &) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -442,7 +437,7 @@ public:
      * @vftbl 78
      * @symbol ?playerTouch\@Actor\@\@UEAAXAEAVPlayer\@\@\@Z
      */
-    virtual void playerTouch(class Player&);
+    virtual void playerTouch(class Player &);
     /**
      * @vftbl 79
      * @symbol ?isImmobile\@Actor\@\@UEBA_NXZ
@@ -497,7 +492,7 @@ public:
      * @vftbl 89
      * @symbol ?isDamageBlocked\@Actor\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
      */
-    virtual bool isDamageBlocked(class ActorDamageSource const&) const;
+    virtual bool isDamageBlocked(class ActorDamageSource const &) const;
     /**
      * @vftbl 90
      * @symbol ?isAlive\@Actor\@\@UEBA_NXZ
@@ -552,32 +547,32 @@ public:
      * @vftbl 100
      * @symbol ?canAttack\@Actor\@\@UEBA_NPEAV1\@_N\@Z
      */
-    virtual bool canAttack(class Actor*, bool) const;
+    virtual bool canAttack(class Actor *, bool) const;
     /**
      * @vftbl 101
      * @symbol ?setTarget\@Actor\@\@UEAAXPEAV1\@\@Z
      */
-    virtual void setTarget(class Actor*);
+    virtual void setTarget(class Actor *);
     /**
      * @vftbl 102
      * @symbol ?isValidTarget\@Actor\@\@UEBA_NPEAV1\@\@Z
      */
-    virtual bool isValidTarget(class Actor*) const;
+    virtual bool isValidTarget(class Actor *) const;
     /**
      * @vftbl 103
      * @symbol ?attack\@Actor\@\@UEAA_NAEAV1\@AEBW4ActorDamageCause\@\@\@Z
      */
-    virtual bool attack(class Actor&, enum class ActorDamageCause const&);
+    virtual bool attack(class Actor &, enum class ActorDamageCause const &);
     /**
      * @vftbl 104
      * @symbol ?performRangedAttack\@Actor\@\@UEAAXAEAV1\@M\@Z
      */
-    virtual void performRangedAttack(class Actor&, float);
+    virtual void performRangedAttack(class Actor &, float);
     /**
      * @vftbl 105
      * @symbol ?getEquipmentCount\@Actor\@\@UEBAHXZ
      */
-    virtual int getEquipmentCount() const;
+    virtual int32_t getEquipmentCount() const;
     /**
      * @vftbl 106
      * @symbol ?setOwner\@Actor\@\@UEAAXUActorUniqueID\@\@\@Z
@@ -602,17 +597,17 @@ public:
      * @vftbl 110
      * @symbol ?getInventorySize\@Actor\@\@UEBAHXZ
      */
-    virtual int getInventorySize() const;
+    virtual int32_t getInventorySize() const;
     /**
      * @vftbl 111
      * @symbol ?getEquipSlots\@Actor\@\@UEBAHXZ
      */
-    virtual int getEquipSlots() const;
+    virtual int32_t getEquipSlots() const;
     /**
      * @vftbl 112
      * @symbol ?getChestSlots\@Actor\@\@UEBAHXZ
      */
-    virtual int getChestSlots() const;
+    virtual int32_t getChestSlots() const;
     /**
      * @vftbl 113
      * @symbol ?setStanding\@Actor\@\@UEAAX_N\@Z
@@ -652,12 +647,12 @@ public:
      * @vftbl 120
      * @symbol ?isInvulnerableTo\@Actor\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
      */
-    virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
+    virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
      * @vftbl 121
      * @symbol ?getBlockDamageCause\@Actor\@\@UEBA?AW4ActorDamageCause\@\@AEBVBlock\@\@\@Z
      */
-    virtual enum class ActorDamageCause getBlockDamageCause(class Block const&) const;
+    virtual enum class ActorDamageCause getBlockDamageCause(class Block const &) const;
     /**
      * @vftbl 122
      * @symbol ?animateHurt\@Actor\@\@UEAAXXZ
@@ -667,7 +662,7 @@ public:
      * @vftbl 123
      * @symbol ?doFireHurt\@Actor\@\@UEAA_NH\@Z
      */
-    virtual bool doFireHurt(int);
+    virtual bool doFireHurt(int32_t);
     /**
      * @vftbl 124
      * @symbol ?onLightningHit\@Actor\@\@UEAAXXZ
@@ -677,17 +672,17 @@ public:
      * @vftbl 125
      * @symbol ?onBounceStarted\@Actor\@\@UEAAXAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    virtual void onBounceStarted(class BlockPos const&, class Block const&);
+    virtual void onBounceStarted(class BlockPos const &, class Block const &);
     /**
      * @vftbl 126
      * @symbol ?feed\@Actor\@\@UEAAXH\@Z
      */
-    virtual void feed(int);
+    virtual void feed(int32_t);
     /**
      * @vftbl 127
      * @symbol ?handleEntityEvent\@Actor\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
-    virtual void handleEntityEvent(enum class ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int32_t);
     /**
      * @vftbl 128
      * @symbol ?getPickRadius\@Actor\@\@UEAAMXZ
@@ -697,22 +692,22 @@ public:
      * @vftbl 129
      * @symbol ?getActorRendererId\@Actor\@\@UEBAAEBVHashedString\@\@XZ
      */
-    virtual class HashedString const& getActorRendererId() const;
+    virtual class HashedString const & getActorRendererId() const;
     /**
      * @vftbl 130
      * @symbol ?spawnAtLocation\@Actor\@\@UEAAPEAVItemActor\@\@HH\@Z
      */
-    virtual class ItemActor* spawnAtLocation(int, int);
+    virtual class ItemActor * spawnAtLocation(int32_t, int32_t);
     /**
      * @vftbl 131
      * @symbol ?spawnAtLocation\@Actor\@\@UEAAPEAVItemActor\@\@HHM\@Z
      */
-    virtual class ItemActor* spawnAtLocation(int, int, float);
+    virtual class ItemActor * spawnAtLocation(int32_t, int32_t, float);
     /**
      * @vftbl 132
      * @symbol ?spawnAtLocation\@Actor\@\@UEAAPEAVItemActor\@\@AEBVItemStack\@\@M\@Z
      */
-    virtual class ItemActor* spawnAtLocation(class ItemStack const&, float);
+    virtual class ItemActor * spawnAtLocation(class ItemStack const &, float);
     /**
      * @vftbl 133
      * @symbol ?despawn\@Actor\@\@UEAAXXZ
@@ -722,28 +717,27 @@ public:
      * @vftbl 134
      * @symbol ?killed\@Actor\@\@UEAAXAEAV1\@\@Z
      */
-    virtual void killed(class Actor&);
+    virtual void killed(class Actor &);
     /**
      * @vftbl 135
      * @symbol ?awardKillScore\@Actor\@\@UEAAXAEAV1\@H\@Z
      */
-    virtual void awardKillScore(class Actor&, int);
+    virtual void awardKillScore(class Actor &, int32_t);
     /**
      * @vftbl 136
      * @symbol ?setArmor\@Actor\@\@UEAAXW4ArmorSlot\@\@AEBVItemStack\@\@\@Z
      */
-    virtual void setArmor(enum class ArmorSlot, class ItemStack const&);
+    virtual void setArmor(enum class ArmorSlot, class ItemStack const &);
     /**
      * @vftbl 137
      * @symbol ?getArmor\@Actor\@\@UEBAAEBVItemStack\@\@W4ArmorSlot\@\@\@Z
      */
-    virtual class ItemStack const& getArmor(enum class ArmorSlot) const;
+    virtual class ItemStack const & getArmor(enum class ArmorSlot) const;
     /**
      * @vftbl 138
-     * @symbol
-     * ?getAllArmor\@Actor\@\@UEBA?AV?$vector\@PEBVItemStack\@\@V?$allocator\@PEBVItemStack\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?getAllArmor\@Actor\@\@UEBA?AV?$vector\@PEBVItemStack\@\@V?$allocator\@PEBVItemStack\@\@\@std\@\@\@std\@\@XZ
      */
-    virtual std::vector<class ItemStack const*> getAllArmor() const;
+    virtual std::vector<class ItemStack const *> getAllArmor() const;
     /**
      * @vftbl 139
      * @symbol ?getArmorMaterialTypeInSlot\@Actor\@\@UEBA?AW4ArmorMaterialType\@\@W4ArmorSlot\@\@\@Z
@@ -758,37 +752,37 @@ public:
      * @vftbl 141
      * @symbol ?getArmorColorInSlot\@Actor\@\@UEBAMW4ArmorSlot\@\@H\@Z
      */
-    virtual float getArmorColorInSlot(enum class ArmorSlot, int) const;
+    virtual float getArmorColorInSlot(enum class ArmorSlot, int32_t) const;
     /**
      * @vftbl 142
      * @symbol ?getEquippedSlot\@Actor\@\@UEBAAEBVItemStack\@\@W4EquipmentSlot\@\@\@Z
      */
-    virtual class ItemStack const& getEquippedSlot(enum class EquipmentSlot) const;
+    virtual class ItemStack const & getEquippedSlot(enum class EquipmentSlot) const;
     /**
      * @vftbl 143
      * @symbol ?setEquippedSlot\@Actor\@\@UEAAXW4EquipmentSlot\@\@AEBVItemStack\@\@\@Z
      */
-    virtual void setEquippedSlot(enum class EquipmentSlot, class ItemStack const&);
+    virtual void setEquippedSlot(enum class EquipmentSlot, class ItemStack const &);
     /**
      * @vftbl 144
      * @symbol ?setCarriedItem\@Actor\@\@UEAAXAEBVItemStack\@\@\@Z
      */
-    virtual void setCarriedItem(class ItemStack const&);
+    virtual void setCarriedItem(class ItemStack const &);
     /**
      * @vftbl 145
      * @symbol ?getCarriedItem\@Actor\@\@UEBAAEBVItemStack\@\@XZ
      */
-    virtual class ItemStack const& getCarriedItem() const;
+    virtual class ItemStack const & getCarriedItem() const;
     /**
      * @vftbl 146
      * @symbol ?setOffhandSlot\@Actor\@\@UEAAXAEBVItemStack\@\@\@Z
      */
-    virtual void setOffhandSlot(class ItemStack const&);
+    virtual void setOffhandSlot(class ItemStack const &);
     /**
      * @vftbl 147
      * @symbol ?getEquippedTotem\@Actor\@\@UEBAAEBVItemStack\@\@XZ
      */
-    virtual class ItemStack const& getEquippedTotem() const;
+    virtual class ItemStack const & getEquippedTotem() const;
     /**
      * @vftbl 148
      * @symbol ?consumeTotem\@Actor\@\@UEAA_NXZ
@@ -798,23 +792,22 @@ public:
      * @vftbl 149
      * @symbol ?save\@Actor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
      */
-    virtual bool save(class CompoundTag&) const;
+    virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl 150
      * @symbol ?saveWithoutId\@Actor\@\@UEBAXAEAVCompoundTag\@\@\@Z
      */
-    virtual void saveWithoutId(class CompoundTag&) const;
+    virtual void saveWithoutId(class CompoundTag &) const;
     /**
      * @vftbl 151
      * @symbol ?load\@Actor\@\@UEAA_NAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    virtual bool load(class CompoundTag const&, class DataLoadHelper&);
+    virtual bool load(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl 152
-     * @symbol
-     * ?loadLinks\@Actor\@\@UEAAXAEBVCompoundTag\@\@AEAV?$vector\@UActorLink\@\@V?$allocator\@UActorLink\@\@\@std\@\@\@std\@\@AEAVDataLoadHelper\@\@\@Z
+     * @symbol ?loadLinks\@Actor\@\@UEAAXAEBVCompoundTag\@\@AEAV?$vector\@UActorLink\@\@V?$allocator\@UActorLink\@\@\@std\@\@\@std\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    virtual void loadLinks(class CompoundTag const&, std::vector<struct ActorLink>&, class DataLoadHelper&);
+    virtual void loadLinks(class CompoundTag const &, std::vector<struct ActorLink> &, class DataLoadHelper &);
     /**
      * @vftbl 153
      * @symbol ?getEntityTypeId\@Actor\@\@UEBA?AW4ActorType\@\@XZ
@@ -824,7 +817,7 @@ public:
      * @vftbl 154
      * @symbol ?queryEntityRenderer\@Actor\@\@UEBAAEBVHashedString\@\@XZ
      */
-    virtual class HashedString const& queryEntityRenderer() const;
+    virtual class HashedString const & queryEntityRenderer() const;
     /**
      * @vftbl 155
      * @symbol ?getSourceUniqueID\@Actor\@\@UEBA?AUActorUniqueID\@\@XZ
@@ -854,17 +847,17 @@ public:
      * @vftbl 160
      * @symbol ?handleInsidePortal\@Actor\@\@UEAAXAEBVBlockPos\@\@\@Z
      */
-    virtual void handleInsidePortal(class BlockPos const&);
+    virtual void handleInsidePortal(class BlockPos const &);
     /**
      * @vftbl 161
      * @symbol ?getPortalCooldown\@Actor\@\@UEBAHXZ
      */
-    virtual int getPortalCooldown() const;
+    virtual int32_t getPortalCooldown() const;
     /**
      * @vftbl 162
      * @symbol ?getPortalWaitTime\@Actor\@\@UEBAHXZ
      */
-    virtual int getPortalWaitTime() const;
+    virtual int32_t getPortalWaitTime() const;
     /**
      * @vftbl 163
      * @symbol ?canChangeDimensionsUsingPortal\@Actor\@\@UEBA_NXZ
@@ -879,7 +872,7 @@ public:
      * @vftbl 165
      * @symbol ?changeDimension\@Actor\@\@UEAAXV?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    virtual void changeDimension(class AutomaticID<class Dimension, int>);
+    virtual void changeDimension(DimensionType);
     /**
      * @vftbl 166
      * @symbol ?getControllingPlayer\@Actor\@\@UEBA?AUActorUniqueID\@\@XZ
@@ -904,32 +897,32 @@ public:
      * @vftbl 170
      * @symbol ?playSynchronizedSound\@Actor\@\@UEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@AEBVBlock\@\@_N\@Z
      */
-    virtual void playSynchronizedSound(enum class LevelSoundEvent, class Vec3 const&, class Block const&, bool);
+    virtual void playSynchronizedSound(enum class LevelSoundEvent, class Vec3 const &, class Block const &, bool);
     /**
      * @vftbl 171
      * @symbol ?playSynchronizedSound\@Actor\@\@UEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@H_N\@Z
      */
-    virtual void playSynchronizedSound(enum class LevelSoundEvent, class Vec3 const&, int, bool);
+    virtual void playSynchronizedSound(enum class LevelSoundEvent, class Vec3 const &, int32_t, bool);
     /**
      * @vftbl 172
      * @symbol ?onSynchedFlagUpdate\@Actor\@\@UEAAXH_J0\@Z
      */
-    virtual void onSynchedFlagUpdate(int, int64_t, int64_t);
+    virtual void onSynchedFlagUpdate(int32_t, int64_t, int64_t);
     /**
      * @vftbl 173
      * @symbol ?onSynchedDataUpdate\@Actor\@\@UEAAXH\@Z
      */
-    virtual void onSynchedDataUpdate(int);
+    virtual void onSynchedDataUpdate(int32_t);
     /**
      * @vftbl 174
      * @symbol ?canAddPassenger\@Actor\@\@UEBA_NAEAV1\@\@Z
      */
-    virtual bool canAddPassenger(class Actor&) const;
+    virtual bool canAddPassenger(class Actor &) const;
     /**
      * @vftbl 175
      * @symbol ?canPickupItem\@Actor\@\@UEBA_NAEBVItemStack\@\@\@Z
      */
-    virtual bool canPickupItem(class ItemStack const&) const;
+    virtual bool canPickupItem(class ItemStack const &) const;
     /**
      * @vftbl 176
      * @symbol ?canBePulledIntoVehicle\@Actor\@\@UEBA_NXZ
@@ -972,10 +965,9 @@ public:
     virtual void stopSwimming();
     /**
      * @vftbl 184
-     * @symbol
-     * ?buildDebugInfo\@Actor\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?buildDebugInfo\@Actor\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void buildDebugInfo(std::string&) const;
+    virtual void buildDebugInfo(std::string &) const;
     /**
      * @vftbl 185
      * @symbol ?getCommandPermissionLevel\@Actor\@\@UEBA?AW4CommandPermissionLevel\@\@XZ
@@ -990,22 +982,22 @@ public:
      * @vftbl 187
      * @symbol ?getMutableAttribute\@Actor\@\@UEAAPEAVAttributeInstance\@\@AEBVAttribute\@\@\@Z
      */
-    virtual class AttributeInstance* getMutableAttribute(class Attribute const&);
+    virtual class AttributeInstance * getMutableAttribute(class Attribute const &);
     /**
      * @vftbl 188
      * @symbol ?getAttribute\@Actor\@\@UEBAAEBVAttributeInstance\@\@AEBVAttribute\@\@\@Z
      */
-    virtual class AttributeInstance const& getAttribute(class Attribute const&) const;
+    virtual class AttributeInstance const & getAttribute(class Attribute const &) const;
     /**
      * @vftbl 189
      * @symbol ?getDeathTime\@Actor\@\@UEBAHXZ
      */
-    virtual int getDeathTime() const;
+    virtual int32_t getDeathTime() const;
     /**
      * @vftbl 190
      * @symbol ?heal\@Actor\@\@UEAAXH\@Z
      */
-    virtual void heal(int);
+    virtual void heal(int32_t);
     /**
      * @vftbl 191
      * @symbol ?isInvertedHealAndHarm\@Actor\@\@UEBA_NXZ
@@ -1015,27 +1007,27 @@ public:
      * @vftbl 192
      * @symbol ?canBeAffected\@Actor\@\@UEBA_NI\@Z
      */
-    virtual bool canBeAffected(unsigned int) const;
+    virtual bool canBeAffected(uint32_t) const;
     /**
      * @vftbl 193
      * @symbol ?canBeAffectedByArrow\@Actor\@\@UEBA_NAEBVMobEffectInstance\@\@\@Z
      */
-    virtual bool canBeAffectedByArrow(class MobEffectInstance const&) const;
+    virtual bool canBeAffectedByArrow(class MobEffectInstance const &) const;
     /**
      * @vftbl 194
      * @symbol ?onEffectAdded\@Actor\@\@UEAAXAEAVMobEffectInstance\@\@\@Z
      */
-    virtual void onEffectAdded(class MobEffectInstance&);
+    virtual void onEffectAdded(class MobEffectInstance &);
     /**
      * @vftbl 195
      * @symbol ?onEffectUpdated\@Actor\@\@UEAAXAEAVMobEffectInstance\@\@\@Z
      */
-    virtual void onEffectUpdated(class MobEffectInstance&);
+    virtual void onEffectUpdated(class MobEffectInstance &);
     /**
      * @vftbl 196
      * @symbol ?onEffectRemoved\@Actor\@\@UEAAXAEAVMobEffectInstance\@\@\@Z
      */
-    virtual void onEffectRemoved(class MobEffectInstance&);
+    virtual void onEffectRemoved(class MobEffectInstance &);
     /**
      * @vftbl 197
      * @symbol ?canObstructSpawningAndBlockPlacement\@Actor\@\@UEBA_NXZ
@@ -1045,12 +1037,12 @@ public:
      * @vftbl 198
      * @symbol ?getAnimationComponent\@Actor\@\@UEAAAEAVAnimationComponent\@\@XZ
      */
-    virtual class AnimationComponent& getAnimationComponent();
+    virtual class AnimationComponent & getAnimationComponent();
     /**
      * @vftbl 199
      * @symbol ?openContainerComponent\@Actor\@\@UEAAXAEAVPlayer\@\@\@Z
      */
-    virtual void openContainerComponent(class Player&);
+    virtual void openContainerComponent(class Player &);
     /**
      * @vftbl 200
      * @symbol ?swing\@Actor\@\@UEAAXXZ
@@ -1060,7 +1052,7 @@ public:
      * @vftbl 201
      * @symbol ?useItem\@Actor\@\@UEAAXAEAVItemStackBase\@\@W4ItemUseMethod\@\@_N\@Z
      */
-    virtual void useItem(class ItemStackBase&, enum class ItemUseMethod, bool);
+    virtual void useItem(class ItemStackBase &, enum class ItemUseMethod, bool);
     /**
      * @vftbl 202
      * @symbol __unk_vfn_202
@@ -1073,10 +1065,9 @@ public:
     virtual void __unk_vfn_203();
     /**
      * @vftbl 204
-     * @symbol
-     * ?getDebugText\@Actor\@\@UEAAXAEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
+     * @symbol ?getDebugText\@Actor\@\@UEAAXAEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
      */
-    virtual void getDebugText(std::vector<std::string>&);
+    virtual void getDebugText(std::vector<std::string> &);
     /**
      * @vftbl 205
      * @symbol ?getMapDecorationRotation\@Actor\@\@UEBAMXZ
@@ -1086,32 +1077,32 @@ public:
      * @vftbl 206
      * @symbol ?getPassengerYRotation\@Actor\@\@UEBAMAEBV1\@\@Z
      */
-    virtual float getPassengerYRotation(class Actor const&) const;
+    virtual float getPassengerYRotation(class Actor const &) const;
     /**
      * @vftbl 207
      * @symbol ?add\@Actor\@\@UEAA_NAEAVItemStack\@\@\@Z
      */
-    virtual bool add(class ItemStack&);
+    virtual bool add(class ItemStack &);
     /**
      * @vftbl 208
      * @symbol ?drop\@Actor\@\@UEAA_NAEBVItemStack\@\@_N\@Z
      */
-    virtual bool drop(class ItemStack const&, bool);
+    virtual bool drop(class ItemStack const &, bool);
     /**
      * @vftbl 209
      * @symbol ?getInteraction\@Actor\@\@UEAA_NAEAVPlayer\@\@AEAVActorInteraction\@\@AEBVVec3\@\@\@Z
      */
-    virtual bool getInteraction(class Player&, class ActorInteraction&, class Vec3 const&);
+    virtual bool getInteraction(class Player &, class ActorInteraction &, class Vec3 const &);
     /**
      * @vftbl 210
      * @symbol ?canDestroyBlock\@Actor\@\@UEBA_NAEBVBlock\@\@\@Z
      */
-    virtual bool canDestroyBlock(class Block const&) const;
+    virtual bool canDestroyBlock(class Block const &) const;
     /**
      * @vftbl 211
      * @symbol ?setAuxValue\@Actor\@\@UEAAXH\@Z
      */
-    virtual void setAuxValue(int);
+    virtual void setAuxValue(int32_t);
     /**
      * @vftbl 212
      * @symbol ?setSize\@Actor\@\@UEAAXMM\@Z
@@ -1161,7 +1152,7 @@ public:
      * @vftbl 221
      * @symbol ?reloadLootTable\@Actor\@\@UEAAXAEBUEquipmentTableDefinition\@\@\@Z
      */
-    virtual void reloadLootTable(struct EquipmentTableDefinition const&);
+    virtual void reloadLootTable(struct EquipmentTableDefinition const &);
     /**
      * @vftbl 222
      * @symbol __unk_vfn_222
@@ -1176,7 +1167,7 @@ public:
      * @vftbl 224
      * @symbol ?die\@Actor\@\@UEAAXAEBVActorDamageSource\@\@\@Z
      */
-    virtual void die(class ActorDamageSource const&);
+    virtual void die(class ActorDamageSource const &);
     /**
      * @vftbl 225
      * @symbol ?shouldDropDeathLoot\@Actor\@\@UEBA_NXZ
@@ -1191,7 +1182,7 @@ public:
      * @vftbl 227
      * @symbol ?applySnapshot\@Actor\@\@UEAAXAEBVEntityContext\@\@0\@Z
      */
-    virtual void applySnapshot(class EntityContext const&, class EntityContext const&);
+    virtual void applySnapshot(class EntityContext const &, class EntityContext const &);
     /**
      * @vftbl 228
      * @symbol ?getNextStep\@Actor\@\@UEAAMM\@Z
@@ -1201,12 +1192,12 @@ public:
      * @vftbl 229
      * @symbol ?getLootTable\@Actor\@\@UEAAPEAVLootTable\@\@XZ
      */
-    virtual class LootTable* getLootTable();
+    virtual class LootTable * getLootTable();
     /**
      * @vftbl 230
      * @symbol ?onPush\@Actor\@\@UEAAXAEAV1\@\@Z
      */
-    virtual void onPush(class Actor&);
+    virtual void onPush(class Actor &);
     /**
      * @vftbl 231
      * @symbol ?getLastDeathPos\@Actor\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@XZ
@@ -1216,7 +1207,7 @@ public:
      * @vftbl 232
      * @symbol ?getLastDeathDimension\@Actor\@\@UEBA?AV?$optional\@V?$AutomaticID\@VDimension\@\@H\@\@\@std\@\@XZ
      */
-    virtual std::optional<class AutomaticID<class Dimension, int>> getLastDeathDimension() const;
+    virtual std::optional<DimensionType> getLastDeathDimension() const;
     /**
      * @vftbl 233
      * @symbol ?hasDiedBefore\@Actor\@\@UEBA_NXZ
@@ -1231,17 +1222,17 @@ public:
      * @vftbl 235
      * @symbol ?_shouldProvideFeedbackOnHandContainerItemSet\@Actor\@\@MEBA_NW4HandSlot\@\@AEBVItemStack\@\@\@Z
      */
-    virtual bool _shouldProvideFeedbackOnHandContainerItemSet(enum class HandSlot, class ItemStack const&) const;
+    virtual bool _shouldProvideFeedbackOnHandContainerItemSet(enum class HandSlot, class ItemStack const &) const;
     /**
      * @vftbl 236
      * @symbol ?_shouldProvideFeedbackOnArmorSet\@Actor\@\@MEBA_NW4ArmorSlot\@\@AEBVItemStack\@\@\@Z
      */
-    virtual bool _shouldProvideFeedbackOnArmorSet(enum class ArmorSlot, class ItemStack const&) const;
+    virtual bool _shouldProvideFeedbackOnArmorSet(enum class ArmorSlot, class ItemStack const &) const;
     /**
      * @vftbl 237
      * @symbol ?updateEntitySpecificMolangVariables\@Actor\@\@MEAAXAEAVRenderParams\@\@\@Z
      */
-    virtual void updateEntitySpecificMolangVariables(class RenderParams&);
+    virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
      * @vftbl 238
      * @symbol ?shouldTryMakeStepSound\@Actor\@\@MEAA_NXZ
@@ -1256,7 +1247,7 @@ public:
      * @vftbl 240
      * @symbol ?_hurt\@Actor\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
+    virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl 241
      * @symbol ?markHurt\@Actor\@\@MEAAXXZ
@@ -1264,31 +1255,29 @@ public:
     virtual void markHurt();
     /**
      * @vftbl 242
-     * @symbol
-     * ?_getAnimationComponent\@Actor\@\@MEAAAEAVAnimationComponent\@\@AEAV?$shared_ptr\@VAnimationComponent\@\@\@std\@\@W4AnimationComponentGroupType\@\@\@Z
+     * @symbol ?_getAnimationComponent\@Actor\@\@MEAAAEAVAnimationComponent\@\@AEAV?$shared_ptr\@VAnimationComponent\@\@\@std\@\@W4AnimationComponentGroupType\@\@\@Z
      */
-    virtual class AnimationComponent&
-    _getAnimationComponent(std::shared_ptr<class AnimationComponent>&, enum class AnimationComponentGroupType);
+    virtual class AnimationComponent & _getAnimationComponent(std::shared_ptr<class AnimationComponent> &, enum class AnimationComponentGroupType);
     /**
      * @vftbl 243
      * @symbol ?readAdditionalSaveData\@Actor\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl 244
      * @symbol ?addAdditionalSaveData\@Actor\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @vftbl 245
      * @symbol ?_playStepSound\@Actor\@\@MEAAXAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    virtual void _playStepSound(class BlockPos const&, class Block const&);
+    virtual void _playStepSound(class BlockPos const &, class Block const &);
     /**
      * @vftbl 246
      * @symbol ?_playFlySound\@Actor\@\@MEAAXAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    virtual void _playFlySound(class BlockPos const&, class Block const&);
+    virtual void _playFlySound(class BlockPos const &, class Block const &);
     /**
      * @vftbl 247
      * @symbol __unk_vfn_247
@@ -1298,7 +1287,7 @@ public:
      * @vftbl 248
      * @symbol ?pushOutOfBlocks\@Actor\@\@MEAAXAEBVVec3\@\@\@Z
      */
-    virtual void pushOutOfBlocks(class Vec3 const&);
+    virtual void pushOutOfBlocks(class Vec3 const &);
     /**
      * @vftbl 249
      * @symbol ?spawnTrailBubbles\@Actor\@\@MEAAXXZ
@@ -1313,7 +1302,7 @@ public:
      * @vftbl 251
      * @symbol ?_removePassenger\@Actor\@\@MEAAXAEBUActorUniqueID\@\@_N11\@Z
      */
-    virtual void _removePassenger(struct ActorUniqueID const&, bool, bool, bool);
+    virtual void _removePassenger(struct ActorUniqueID const &, bool, bool, bool);
     /**
      * @vftbl 252
      * @symbol ?_onSizeUpdated\@Actor\@\@EEAAXXZ
@@ -1323,7 +1312,7 @@ public:
     /**
      * @symbol ?_doAutoAttackOnTouch\@Actor\@\@EEAAXAEAV1\@\@Z
      */
-    MCVAPI void _doAutoAttackOnTouch(class Actor&);
+    MCVAPI void _doAutoAttackOnTouch(class Actor &);
     /**
      * @symbol ?_makeFlySound\@Actor\@\@MEBA_NXZ
      */
@@ -1347,7 +1336,7 @@ public:
     /**
      * @symbol ?changeDimension\@Actor\@\@UEAAXAEBVChangeDimensionPacket\@\@\@Z
      */
-    MCVAPI void changeDimension(class ChangeDimensionPacket const&);
+    MCVAPI void changeDimension(class ChangeDimensionPacket const &);
     /**
      * @symbol ?getAlwaysShowNameTag\@Actor\@\@UEBA_NXZ
      */
@@ -1359,11 +1348,11 @@ public:
     /**
      * @symbol ?getOutputSignal\@Actor\@\@UEBAHXZ
      */
-    MCVAPI int getOutputSignal() const;
+    MCVAPI int32_t getOutputSignal() const;
     /**
      * @symbol ?hasOutputSignal\@Actor\@\@UEBA_NE\@Z
      */
-    MCVAPI bool hasOutputSignal(unsigned char) const;
+    MCVAPI bool hasOutputSignal(uint8_t) const;
     /**
      * @symbol ?interactPreventDefault\@Actor\@\@UEAA_NXZ
      */
@@ -1399,7 +1388,7 @@ public:
     /**
      * @symbol ?renderDebugServerState\@Actor\@\@UEAAXAEBVOptions\@\@\@Z
      */
-    MCVAPI void renderDebugServerState(class Options const&);
+    MCVAPI void renderDebugServerState(class Options const &);
     /**
      * @symbol __unk_destructor_-1
      */
@@ -1408,11 +1397,11 @@ public:
     /**
      * @symbol ??0Actor\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
-    MCAPI Actor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Actor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ??0Actor\@\@QEAA\@AEAVILevel\@\@AEAVEntityContext\@\@\@Z
      */
-    MCAPI Actor(class ILevel&, class EntityContext&);
+    MCAPI Actor(class ILevel &, class EntityContext &);
     /**
      * @symbol ?_sendDirtyActorData\@Actor\@\@QEAAXXZ
      */
@@ -1424,33 +1413,31 @@ public:
     /**
      * @symbol ?_setLevelPtr\@Actor\@\@QEAAXPEAVILevel\@\@\@Z
      */
-    MCAPI void _setLevelPtr(class ILevel*);
+    MCAPI void _setLevelPtr(class ILevel *);
     /**
      * @symbol ?addCategory\@Actor\@\@QEAAXAEBW4ActorCategory\@\@\@Z
      */
-    MCAPI void addCategory(enum class ActorCategory const&);
+    MCAPI void addCategory(enum class ActorCategory const &);
     /**
-     * @symbol
-     * ?addDefinitionGroup\@Actor\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?addDefinitionGroup\@Actor\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void addDefinitionGroup(std::string const&);
+    MCAPI void addDefinitionGroup(std::string const &);
     /**
      * @symbol ?addEffect\@Actor\@\@QEAAXAEBVMobEffectInstance\@\@\@Z
      */
-    MCAPI void addEffect(class MobEffectInstance const&);
+    MCAPI void addEffect(class MobEffectInstance const &);
     /**
      * @symbol ?addTag\@Actor\@\@QEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI bool addTag(std::string const&);
+    MCAPI bool addTag(std::string const &);
     /**
      * @symbol ?applyImpulse\@Actor\@\@QEAAXAEBVVec3\@\@\@Z
      */
-    MCAPI void applyImpulse(class Vec3 const&);
+    MCAPI void applyImpulse(class Vec3 const &);
     /**
-     * @symbol
-     * ?buildDebugGroupInfo\@Actor\@\@QEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?buildDebugGroupInfo\@Actor\@\@QEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void buildDebugGroupInfo(std::string&) const;
+    MCAPI void buildDebugGroupInfo(std::string &) const;
     /**
      * @symbol ?buildForward\@Actor\@\@QEBA?AVVec3\@\@XZ
      */
@@ -1458,7 +1445,7 @@ public:
     /**
      * @symbol ?burn\@Actor\@\@QEAAXH_N\@Z
      */
-    MCAPI void burn(int, bool);
+    MCAPI void burn(int32_t, bool);
     /**
      * @symbol ?calcCenterPos\@Actor\@\@QEBA?AVVec3\@\@XZ
      */
@@ -1466,7 +1453,7 @@ public:
     /**
      * @symbol ?calculateAttackDamage\@Actor\@\@QEAAMAEAV1\@\@Z
      */
-    MCAPI float calculateAttackDamage(class Actor&);
+    MCAPI float calculateAttackDamage(class Actor &);
     /**
      * @symbol ?canAscendCurrentBlockByJumping\@Actor\@\@QEBA_NXZ
      */
@@ -1490,7 +1477,7 @@ public:
     /**
      * @symbol ?canMate\@Actor\@\@QEBA_NAEBV1\@\@Z
      */
-    MCAPI bool canMate(class Actor const&) const;
+    MCAPI bool canMate(class Actor const &) const;
     /**
      * @symbol ?canReceiveMobEffectsFromGameplay\@Actor\@\@QEBA_NXZ
      */
@@ -1502,7 +1489,7 @@ public:
     /**
      * @symbol ?celebrateHunt\@Actor\@\@QEAAXH_N\@Z
      */
-    MCAPI void celebrateHunt(int, bool);
+    MCAPI void celebrateHunt(int32_t, bool);
     /**
      * @symbol ?clearFishingHookID\@Actor\@\@QEAAXXZ
      */
@@ -1510,27 +1497,27 @@ public:
     /**
      * @symbol ?closerThan\@Actor\@\@QEBA_NAEBV1\@MM\@Z
      */
-    MCAPI bool closerThan(class Actor const&, float, float) const;
+    MCAPI bool closerThan(class Actor const &, float, float) const;
     /**
      * @symbol ?closerThan\@Actor\@\@QEBA_NAEBV1\@M\@Z
      */
-    MCAPI bool closerThan(class Actor const&, float) const;
+    MCAPI bool closerThan(class Actor const &, float) const;
     /**
      * @symbol ?consumeItem\@Actor\@\@QEAAXAEAVItemActor\@\@H\@Z
      */
-    MCAPI void consumeItem(class ItemActor&, int);
+    MCAPI void consumeItem(class ItemActor &, int32_t);
     /**
      * @symbol ?createUpdateEquipPacket\@Actor\@\@QEAA?AVUpdateEquipPacket\@\@H\@Z
      */
-    MCAPI class UpdateEquipPacket createUpdateEquipPacket(int);
+    MCAPI class UpdateEquipPacket createUpdateEquipPacket(int32_t);
     /**
      * @symbol ?createUpdateTradePacket\@Actor\@\@QEAA?AVUpdateTradePacket\@\@H\@Z
      */
-    MCAPI class UpdateTradePacket createUpdateTradePacket(int);
+    MCAPI class UpdateTradePacket createUpdateTradePacket(int32_t);
     /**
      * @symbol ?damageSensorComponentHurt\@Actor\@\@QEAA_NAEAMAEBVActorDamageSource\@\@_N\@Z
      */
-    MCAPI bool damageSensorComponentHurt(float&, class ActorDamageSource const&, bool);
+    MCAPI bool damageSensorComponentHurt(float &, class ActorDamageSource const &, bool);
     /**
      * @symbol ?deregisterTagsFromLevelCache\@Actor\@\@QEAAXXZ
      */
@@ -1538,23 +1525,23 @@ public:
     /**
      * @symbol ?distanceSqrToBlockPosCenter\@Actor\@\@QEBAMAEBVBlockPos\@\@\@Z
      */
-    MCAPI float distanceSqrToBlockPosCenter(class BlockPos const&) const;
+    MCAPI float distanceSqrToBlockPosCenter(class BlockPos const &) const;
     /**
      * @symbol ?distanceTo\@Actor\@\@QEBAMAEBV1\@\@Z
      */
-    MCAPI float distanceTo(class Actor const&) const;
+    MCAPI float distanceTo(class Actor const &) const;
     /**
      * @symbol ?distanceTo\@Actor\@\@QEBAMAEBVVec3\@\@\@Z
      */
-    MCAPI float distanceTo(class Vec3 const&) const;
+    MCAPI float distanceTo(class Vec3 const &) const;
     /**
      * @symbol ?distanceToSqr\@Actor\@\@QEBAMAEBVVec3\@\@\@Z
      */
-    MCAPI float distanceToSqr(class Vec3 const&) const;
+    MCAPI float distanceToSqr(class Vec3 const &) const;
     /**
      * @symbol ?distanceToSqr\@Actor\@\@QEBAMAEBV1\@\@Z
      */
-    MCAPI float distanceToSqr(class Actor const&) const;
+    MCAPI float distanceToSqr(class Actor const &) const;
     /**
      * @symbol ?dropLeash\@Actor\@\@QEAAX_N0\@Z
      */
@@ -1562,16 +1549,15 @@ public:
     /**
      * @symbol ?dropTowards\@Actor\@\@QEAAXAEBVItemStack\@\@VVec3\@\@\@Z
      */
-    MCAPI void dropTowards(class ItemStack const&, class Vec3);
+    MCAPI void dropTowards(class ItemStack const &, class Vec3);
     /**
      * @symbol ?evaluateSeatRotation\@Actor\@\@QEAAMAEBVRideableComponent\@\@_N\@Z
      */
-    MCAPI float evaluateSeatRotation(class RideableComponent const&, bool);
+    MCAPI float evaluateSeatRotation(class RideableComponent const &, bool);
     /**
-     * @symbol
-     * ?executeEvent\@Actor\@\@QEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVVariantParameterList\@\@\@Z
+     * @symbol ?executeEvent\@Actor\@\@QEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVVariantParameterList\@\@\@Z
      */
-    MCAPI bool executeEvent(std::string const&, class VariantParameterList const&);
+    MCAPI bool executeEvent(std::string const &, class VariantParameterList const &);
     /**
      * @symbol ?exitVehicle\@Actor\@\@QEAAX_N00\@Z
      */
@@ -1579,45 +1565,43 @@ public:
     /**
      * @symbol ?fetchFishingHook\@Actor\@\@QEAAPEAVFishingHook\@\@XZ
      */
-    MCAPI class FishingHook* fetchFishingHook();
+    MCAPI class FishingHook * fetchFishingHook();
     /**
-     * @symbol
-     * ?fetchNearbyActorsSorted\@Actor\@\@QEAA?AV?$vector\@UDistanceSortedActor\@\@V?$allocator\@UDistanceSortedActor\@\@\@std\@\@\@std\@\@AEBVVec3\@\@W4ActorType\@\@\@Z
+     * @symbol ?fetchNearbyActorsSorted\@Actor\@\@QEAA?AV?$vector\@UDistanceSortedActor\@\@V?$allocator\@UDistanceSortedActor\@\@\@std\@\@\@std\@\@AEBVVec3\@\@W4ActorType\@\@\@Z
      */
-    MCAPI std::vector<struct DistanceSortedActor> fetchNearbyActorsSorted(class Vec3 const&, enum class ActorType);
+    MCAPI std::vector<struct DistanceSortedActor> fetchNearbyActorsSorted(class Vec3 const &, enum class ActorType);
     /**
      * @symbol ?forEachLeashedActor\@Actor\@\@QEAAXV?$function\@$$A6AXV?$not_null\@PEAVActor\@\@\@gsl\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI void forEachLeashedActor(std::function<void(class gsl::not_null<class Actor*>)>);
+    MCAPI void forEachLeashedActor(std::function<void (class gsl::not_null<class Actor *>)>);
     /**
      * @symbol ?getAABB\@Actor\@\@QEBAAEBVAABB\@\@XZ
      */
-    MCAPI class AABB const& getAABB() const;
+    MCAPI class AABB const & getAABB() const;
     /**
      * @symbol ?getAABBDim\@Actor\@\@QEBAAEBVVec2\@\@XZ
      */
-    MCAPI class Vec2 const& getAABBDim() const;
+    MCAPI class Vec2 const & getAABBDim() const;
     /**
      * @symbol ?getActiveEffectCount\@Actor\@\@QEBAHXZ
      */
-    MCAPI int getActiveEffectCount() const;
+    MCAPI int32_t getActiveEffectCount() const;
     /**
      * @symbol ?getActorIdentifier\@Actor\@\@QEBAAEBUActorDefinitionIdentifier\@\@XZ
      */
-    MCAPI struct ActorDefinitionIdentifier const& getActorIdentifier() const;
+    MCAPI struct ActorDefinitionIdentifier const & getActorIdentifier() const;
     /**
-     * @symbol
-     * ?getAllEffects\@Actor\@\@QEBAAEBV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?getAllEffects\@Actor\@\@QEBAAEBV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<class MobEffectInstance> const& getAllEffects() const;
+    MCAPI std::vector<class MobEffectInstance> const & getAllEffects() const;
     /**
      * @symbol ?getArmorContainer\@Actor\@\@QEAAAEAVSimpleContainer\@\@XZ
      */
-    MCAPI class SimpleContainer& getArmorContainer();
+    MCAPI class SimpleContainer & getArmorContainer();
     /**
      * @symbol ?getArmorContainer\@Actor\@\@QEBAAEBVSimpleContainer\@\@XZ
      */
-    MCAPI class SimpleContainer const& getArmorContainer() const;
+    MCAPI class SimpleContainer const & getArmorContainer() const;
     /**
      * @symbol ?getAttachPos\@Actor\@\@QEBA?AVVec3\@\@W4ActorLocation\@\@M\@Z
      */
@@ -1625,15 +1609,15 @@ public:
     /**
      * @symbol ?getAttributes\@Actor\@\@QEBA?AV?$not_null\@PEBVBaseAttributeMap\@\@\@gsl\@\@XZ
      */
-    MCAPI class gsl::not_null<class BaseAttributeMap const*> getAttributes() const;
+    MCAPI class gsl::not_null<class BaseAttributeMap const *> getAttributes() const;
     /**
      * @symbol ?getAttributes\@Actor\@\@QEAA?AV?$not_null\@PEAVBaseAttributeMap\@\@\@gsl\@\@XZ
      */
-    MCAPI class gsl::not_null<class BaseAttributeMap*> getAttributes();
+    MCAPI class gsl::not_null<class BaseAttributeMap *> getAttributes();
     /**
      * @symbol ?getBlockPosCurrentlyStandingOn\@Actor\@\@QEBA?AVBlockPos\@\@PEBV1\@\@Z
      */
-    MCAPI class BlockPos getBlockPosCurrentlyStandingOn(class Actor const*) const;
+    MCAPI class BlockPos getBlockPosCurrentlyStandingOn(class Actor const *) const;
     /**
      * @symbol ?getBlockTarget\@Actor\@\@QEBA?AVBlockPos\@\@XZ
      */
@@ -1649,7 +1633,7 @@ public:
     /**
      * @symbol ?getCarriedItemInSlotPreferredBy\@Actor\@\@QEBAAEBVItemStack\@\@AEBV2\@\@Z
      */
-    MCAPI class ItemStack const& getCarriedItemInSlotPreferredBy(class ItemStack const&) const;
+    MCAPI class ItemStack const & getCarriedItemInSlotPreferredBy(class ItemStack const &) const;
     /**
      * @symbol ?getChainedDamageEffects\@Actor\@\@QEBA_NXZ
      */
@@ -1669,7 +1653,7 @@ public:
     /**
      * @symbol ?getControllingSeat\@Actor\@\@QEBAHXZ
      */
-    MCAPI int getControllingSeat() const;
+    MCAPI int32_t getControllingSeat() const;
     /**
      * @symbol ?getCurrentSwimAmount\@Actor\@\@QEBAMXZ
      */
@@ -1681,47 +1665,47 @@ public:
     /**
      * @symbol ?getDiffList\@Actor\@\@QEBAPEBVActorDefinitionDiffList\@\@XZ
      */
-    MCAPI class ActorDefinitionDiffList const* getDiffList() const;
+    MCAPI class ActorDefinitionDiffList const * getDiffList() const;
     /**
      * @symbol ?getDiffListNonConst\@Actor\@\@QEAAPEAVActorDefinitionDiffList\@\@XZ
      */
-    MCAPI class ActorDefinitionDiffList* getDiffListNonConst();
+    MCAPI class ActorDefinitionDiffList * getDiffListNonConst();
     /**
      * @symbol ?getDimension\@Actor\@\@QEBAAEAVDimension\@\@XZ
      */
-    MCAPI class Dimension& getDimension() const;
+    MCAPI class Dimension & getDimension() const;
     /**
      * @symbol ?getDimensionBlockSource\@Actor\@\@QEBAAEAVBlockSource\@\@XZ
      */
-    MCAPI class BlockSource& getDimensionBlockSource() const;
+    MCAPI class BlockSource & getDimensionBlockSource() const;
     /**
      * @symbol ?getDimensionBlockSourceConst\@Actor\@\@QEBAAEBVBlockSource\@\@XZ
      */
-    MCAPI class BlockSource const& getDimensionBlockSourceConst() const;
+    MCAPI class BlockSource const & getDimensionBlockSourceConst() const;
     /**
      * @symbol ?getDimensionConst\@Actor\@\@QEBAAEBVDimension\@\@XZ
      */
-    MCAPI class Dimension const& getDimensionConst() const;
+    MCAPI class Dimension const & getDimensionConst() const;
     /**
      * @symbol ?getDimensionId\@Actor\@\@QEBA?AV?$AutomaticID\@VDimension\@\@H\@\@XZ
      */
-    MCAPI class AutomaticID<class Dimension, int> getDimensionId() const;
+    MCAPI DimensionType getDimensionId() const;
     /**
      * @symbol ?getEffect\@Actor\@\@QEBAPEBVMobEffectInstance\@\@AEBVMobEffect\@\@\@Z
      */
-    MCAPI class MobEffectInstance const* getEffect(class MobEffect const&) const;
+    MCAPI class MobEffectInstance const * getEffect(class MobEffect const &) const;
     /**
      * @symbol ?getEffect\@Actor\@\@QEBAPEBVMobEffectInstance\@\@I\@Z
      */
-    MCAPI class MobEffectInstance const* getEffect(unsigned int) const;
+    MCAPI class MobEffectInstance const * getEffect(uint32_t) const;
     /**
      * @symbol ?getEntityData\@Actor\@\@QEBAAEBVSynchedActorDataEntityWrapper\@\@XZ
      */
-    MCAPI class SynchedActorDataEntityWrapper const& getEntityData() const;
+    MCAPI class SynchedActorDataEntityWrapper const & getEntityData() const;
     /**
      * @symbol ?getEntityData\@Actor\@\@QEAAAEAVSynchedActorDataEntityWrapper\@\@XZ
      */
-    MCAPI class SynchedActorDataEntityWrapper& getEntityData();
+    MCAPI class SynchedActorDataEntityWrapper & getEntityData();
     /**
      * @symbol ?getEntityRegistry\@Actor\@\@QEAA?AV?$StackRefResultT\@UEntityRegistryRefTraits\@\@\@\@XZ
      */
@@ -1729,11 +1713,11 @@ public:
     /**
      * @symbol ?getEntityTerrainInterlockData\@Actor\@\@QEAAAEAVActorTerrainInterlockData\@\@XZ
      */
-    MCAPI class ActorTerrainInterlockData& getEntityTerrainInterlockData();
+    MCAPI class ActorTerrainInterlockData & getEntityTerrainInterlockData();
     /**
      * @symbol ?getEquipmentSlotForItem\@Actor\@\@QEBA?AW4EquipmentSlot\@\@AEBVItemStack\@\@\@Z
      */
-    MCAPI enum class EquipmentSlot getEquipmentSlotForItem(class ItemStack const&) const;
+    MCAPI enum class EquipmentSlot getEquipmentSlotForItem(class ItemStack const &) const;
     /**
      * @symbol ?getFallDistance\@Actor\@\@QEBAMXZ
      */
@@ -1741,31 +1725,31 @@ public:
     /**
      * @symbol ?getFirstAvailableSeatPos\@Actor\@\@QEBA_NAEAV1\@AEAVVec3\@\@\@Z
      */
-    MCAPI bool getFirstAvailableSeatPos(class Actor&, class Vec3&) const;
+    MCAPI bool getFirstAvailableSeatPos(class Actor &, class Vec3 &) const;
     /**
      * @symbol ?getFirstPassenger\@Actor\@\@QEBAPEAV1\@XZ
      */
-    MCAPI class Actor* getFirstPassenger() const;
+    MCAPI class Actor * getFirstPassenger() const;
     /**
      * @symbol ?getHandContainer\@Actor\@\@QEBAAEBVSimpleContainer\@\@XZ
      */
-    MCAPI class SimpleContainer const& getHandContainer() const;
+    MCAPI class SimpleContainer const & getHandContainer() const;
     /**
      * @symbol ?getHandContainer\@Actor\@\@QEAAAEAVSimpleContainer\@\@XZ
      */
-    MCAPI class SimpleContainer& getHandContainer();
+    MCAPI class SimpleContainer & getHandContainer();
     /**
      * @symbol ?getHealth\@Actor\@\@QEBAHXZ
      */
-    MCAPI int getHealth() const;
+    MCAPI int32_t getHealth() const;
     /**
      * @symbol ?getHurtDir\@Actor\@\@QEBAHXZ
      */
-    MCAPI int getHurtDir() const;
+    MCAPI int32_t getHurtDir() const;
     /**
      * @symbol ?getHurtTime\@Actor\@\@QEBAHXZ
      */
-    MCAPI int getHurtTime() const;
+    MCAPI int32_t getHurtTime() const;
     /**
      * @symbol ?getInitializationMethod\@Actor\@\@QEAA?AW4InitializationMethod\@1\@XZ
      */
@@ -1785,15 +1769,15 @@ public:
     /**
      * @symbol ?getJumpDuration\@Actor\@\@QEBAHXZ
      */
-    MCAPI int getJumpDuration() const;
+    MCAPI int32_t getJumpDuration() const;
     /**
      * @symbol ?getLastHurtByMobTime\@Actor\@\@QEAAHXZ
      */
-    MCAPI int getLastHurtByMobTime();
+    MCAPI int32_t getLastHurtByMobTime();
     /**
      * @symbol ?getLastHurtByMobTimestamp\@Actor\@\@QEAAHXZ
      */
-    MCAPI int getLastHurtByMobTimestamp();
+    MCAPI int32_t getLastHurtByMobTimestamp();
     /**
      * @symbol ?getLastHurtCause\@Actor\@\@QEBA?AW4ActorDamageCause\@\@XZ
      */
@@ -1805,7 +1789,7 @@ public:
     /**
      * @symbol ?getLastHurtMobTimestamp\@Actor\@\@QEAAHXZ
      */
-    MCAPI int getLastHurtMobTimestamp();
+    MCAPI int32_t getLastHurtMobTimestamp();
     /**
      * @symbol ?getLastHurtTimestamp\@Actor\@\@QEBA_KXZ
      */
@@ -1817,11 +1801,11 @@ public:
     /**
      * @symbol ?getLevel\@Actor\@\@QEBAAEBVLevel\@\@XZ
      */
-    MCAPI class Level const& getLevel() const;
+    MCAPI class Level const & getLevel() const;
     /**
      * @symbol ?getLevel\@Actor\@\@QEAAAEAVLevel\@\@XZ
      */
-    MCAPI class Level& getLevel();
+    MCAPI class Level & getLevel();
     /**
      * @symbol ?getLevelTimeStamp\@Actor\@\@QEBA_KXZ
      */
@@ -1829,7 +1813,7 @@ public:
     /**
      * @symbol ?getLimitedLifetimeTicks\@Actor\@\@QEBAHXZ
      */
-    MCAPI int getLimitedLifetimeTicks() const;
+    MCAPI int32_t getLimitedLifetimeTicks() const;
     /**
      * @symbol ?getLinks\@Actor\@\@QEBA?AV?$vector\@UActorLink\@\@V?$allocator\@UActorLink\@\@\@std\@\@\@std\@\@XZ
      */
@@ -1837,7 +1821,7 @@ public:
     /**
      * @symbol ?getMarkVariant\@Actor\@\@QEBAHXZ
      */
-    MCAPI int getMarkVariant() const;
+    MCAPI int32_t getMarkVariant() const;
     /**
      * @symbol ?getMaxAutoStep\@Actor\@\@QEBAMXZ
      */
@@ -1845,41 +1829,39 @@ public:
     /**
      * @symbol ?getMaxHealth\@Actor\@\@QEBAHXZ
      */
-    MCAPI int getMaxHealth() const;
+    MCAPI int32_t getMaxHealth() const;
     /**
      * @symbol ?getMolangVariables\@Actor\@\@QEAAAEAVMolangVariableMap\@\@XZ
      */
-    MCAPI class MolangVariableMap& getMolangVariables();
+    MCAPI class MolangVariableMap & getMolangVariables();
     /**
-     * @symbol
-     * ?getMovementProxy\@Actor\@\@QEBA?AV?$not_null\@V?$shared_ptr\@$$CBUIActorMovementProxy\@\@\@std\@\@\@gsl\@\@XZ
+     * @symbol ?getMovementProxy\@Actor\@\@QEBA?AV?$not_null\@V?$shared_ptr\@$$CBUIActorMovementProxy\@\@\@std\@\@\@gsl\@\@XZ
      */
     MCAPI class gsl::not_null<std::shared_ptr<struct IActorMovementProxy const>> getMovementProxy() const;
     /**
-     * @symbol
-     * ?getMovementProxy\@Actor\@\@QEAA?AV?$not_null\@V?$shared_ptr\@UIActorMovementProxy\@\@\@std\@\@\@gsl\@\@XZ
+     * @symbol ?getMovementProxy\@Actor\@\@QEAA?AV?$not_null\@V?$shared_ptr\@UIActorMovementProxy\@\@\@std\@\@\@gsl\@\@XZ
      */
     MCAPI class gsl::not_null<std::shared_ptr<struct IActorMovementProxy>> getMovementProxy();
     /**
      * @symbol ?getOffhandSlot\@Actor\@\@QEBAAEBVItemStack\@\@XZ
      */
-    MCAPI class ItemStack const& getOffhandSlot() const;
+    MCAPI class ItemStack const & getOffhandSlot() const;
     /**
      * @symbol ?getOnDeathExperience\@Actor\@\@QEAAHXZ
      */
-    MCAPI int getOnDeathExperience();
+    MCAPI int32_t getOnDeathExperience();
     /**
      * @symbol ?getOrAddDynamicProperties\@Actor\@\@QEAAAEAVDynamicProperties\@\@XZ
      */
-    MCAPI class DynamicProperties& getOrAddDynamicProperties();
+    MCAPI class DynamicProperties & getOrAddDynamicProperties();
     /**
      * @symbol ?getOrCreateUniqueID\@Actor\@\@QEBAAEBUActorUniqueID\@\@XZ
      */
-    MCAPI struct ActorUniqueID const& getOrCreateUniqueID() const;
+    MCAPI struct ActorUniqueID const & getOrCreateUniqueID() const;
     /**
      * @symbol ?getOwner\@Actor\@\@QEBAPEAVMob\@\@XZ
      */
-    MCAPI class Mob* getOwner() const;
+    MCAPI class Mob * getOwner() const;
     /**
      * @symbol ?getOwnerId\@Actor\@\@QEBA?BUActorUniqueID\@\@XZ
      */
@@ -1887,28 +1869,27 @@ public:
     /**
      * @symbol ?getPassengerIndex\@Actor\@\@QEBAHAEBV1\@\@Z
      */
-    MCAPI int getPassengerIndex(class Actor const&) const;
+    MCAPI int32_t getPassengerIndex(class Actor const &) const;
     /**
-     * @symbol
-     * ?getPersistingTradeOffers\@Actor\@\@QEAA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?getPersistingTradeOffers\@Actor\@\@QEAA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::unique_ptr<class CompoundTag> getPersistingTradeOffers();
     /**
      * @symbol ?getPersistingTradeRiches\@Actor\@\@QEAAHXZ
      */
-    MCAPI int getPersistingTradeRiches();
+    MCAPI int32_t getPersistingTradeRiches();
     /**
      * @symbol ?getPlayerOwner\@Actor\@\@QEBAPEAVPlayer\@\@XZ
      */
-    MCAPI class Player* getPlayerOwner() const;
+    MCAPI class Player * getPlayerOwner() const;
     /**
      * @symbol ?getPosDelta\@Actor\@\@QEBAAEBVVec3\@\@XZ
      */
-    MCAPI class Vec3 const& getPosDelta() const;
+    MCAPI class Vec3 const & getPosDelta() const;
     /**
      * @symbol ?getPosDeltaNonConst\@Actor\@\@QEAAAEAVVec3\@\@XZ
      */
-    MCAPI class Vec3& getPosDeltaNonConst();
+    MCAPI class Vec3 & getPosDeltaNonConst();
     /**
      * @symbol ?getRadius\@Actor\@\@QEBAMXZ
      */
@@ -1916,11 +1897,11 @@ public:
     /**
      * @symbol ?getRandom\@Actor\@\@QEBAAEAVRandom\@\@XZ
      */
-    MCAPI class Random& getRandom() const;
+    MCAPI class Random & getRandom() const;
     /**
      * @symbol ?getRenderParams\@Actor\@\@QEAAAEAVRenderParams\@\@XZ
      */
-    MCAPI class RenderParams& getRenderParams();
+    MCAPI class RenderParams & getRenderParams();
     /**
      * @symbol ?getRidingHeight\@Actor\@\@QEBAMXZ
      */
@@ -1928,11 +1909,11 @@ public:
     /**
      * @symbol ?getRotation\@Actor\@\@QEBAAEBVVec2\@\@XZ
      */
-    MCAPI class Vec2 const& getRotation() const;
+    MCAPI class Vec2 const & getRotation() const;
     /**
      * @symbol ?getRotationPrev\@Actor\@\@QEBAAEBVVec2\@\@XZ
      */
-    MCAPI class Vec2 const& getRotationPrev() const;
+    MCAPI class Vec2 const & getRotationPrev() const;
     /**
      * @symbol ?getRuntimeID\@Actor\@\@QEBA?AVActorRuntimeID\@\@XZ
      */
@@ -1940,11 +1921,11 @@ public:
     /**
      * @symbol ?getShakeTime\@Actor\@\@QEBAHXZ
      */
-    MCAPI int getShakeTime() const;
+    MCAPI int32_t getShakeTime() const;
     /**
      * @symbol ?getSkinID\@Actor\@\@QEBAHXZ
      */
-    MCAPI int getSkinID() const;
+    MCAPI int32_t getSkinID() const;
     /**
      * @symbol ?getSlideOffset\@Actor\@\@QEBA?AVVec2\@\@XZ
      */
@@ -1952,11 +1933,11 @@ public:
     /**
      * @symbol ?getSpatialNetworkData\@Actor\@\@QEBAAEBVSpatialActorNetworkData\@\@XZ
      */
-    MCAPI class SpatialActorNetworkData const& getSpatialNetworkData() const;
+    MCAPI class SpatialActorNetworkData const & getSpatialNetworkData() const;
     /**
      * @symbol ?getSpatialNetworkData\@Actor\@\@QEAAAEAVSpatialActorNetworkData\@\@XZ
      */
-    MCAPI class SpatialActorNetworkData& getSpatialNetworkData();
+    MCAPI class SpatialActorNetworkData & getSpatialNetworkData();
     /**
      * @symbol ?getSpeedInMetersPerSecond\@Actor\@\@QEBAMXZ
      */
@@ -1964,28 +1945,27 @@ public:
     /**
      * @symbol ?getStrength\@Actor\@\@QEBAHXZ
      */
-    MCAPI int getStrength() const;
+    MCAPI int32_t getStrength() const;
     /**
      * @symbol ?getStrengthMax\@Actor\@\@QEBAHXZ
      */
-    MCAPI int getStrengthMax() const;
+    MCAPI int32_t getStrengthMax() const;
     /**
      * @symbol ?getStructuralIntegrity\@Actor\@\@QEBAHXZ
      */
-    MCAPI int getStructuralIntegrity() const;
+    MCAPI int32_t getStructuralIntegrity() const;
     /**
      * @symbol ?getSwimAmount\@Actor\@\@QEBAMM\@Z
      */
     MCAPI float getSwimAmount(float) const;
     /**
-     * @symbol
-     * ?getTags\@Actor\@\@QEBA?BV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
+     * @symbol ?getTags\@Actor\@\@QEBA?BV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
      */
     MCAPI std::vector<std::string> const getTags() const;
     /**
      * @symbol ?getTarget\@Actor\@\@QEBAPEAV1\@XZ
      */
-    MCAPI class Actor* getTarget() const;
+    MCAPI class Actor * getTarget() const;
     /**
      * @symbol ?getTargetId\@Actor\@\@QEBA?AUActorUniqueID\@\@XZ
      */
@@ -1997,23 +1977,23 @@ public:
     /**
      * @symbol ?getTradeOffers\@Actor\@\@QEAAPEAVMerchantRecipeList\@\@XZ
      */
-    MCAPI class MerchantRecipeList* getTradeOffers();
+    MCAPI class MerchantRecipeList * getTradeOffers();
     /**
      * @symbol ?getTradingPlayer\@Actor\@\@QEBAPEAVPlayer\@\@XZ
      */
-    MCAPI class Player* getTradingPlayer() const;
+    MCAPI class Player * getTradingPlayer() const;
     /**
      * @symbol ?getVariant\@Actor\@\@QEBAHXZ
      */
-    MCAPI int getVariant() const;
+    MCAPI int32_t getVariant() const;
     /**
      * @symbol ?getVehicle\@Actor\@\@QEBAPEAV1\@XZ
      */
-    MCAPI class Actor* getVehicle() const;
+    MCAPI class Actor * getVehicle() const;
     /**
      * @symbol ?getVehicleRoot\@Actor\@\@QEBAPEAV1\@XZ
      */
-    MCAPI class Actor* getVehicleRoot() const;
+    MCAPI class Actor * getVehicleRoot() const;
     /**
      * @symbol ?getVehicleRuntimeID\@Actor\@\@QEBA?AVActorRuntimeID\@\@XZ
      */
@@ -2049,16 +2029,15 @@ public:
     /**
      * @symbol ?hasBeenHurtByMobInLastTicks\@Actor\@\@QEBA_NH\@Z
      */
-    MCAPI bool hasBeenHurtByMobInLastTicks(int) const;
+    MCAPI bool hasBeenHurtByMobInLastTicks(int32_t) const;
     /**
      * @symbol ?hasCategory\@Actor\@\@QEBA_NW4ActorCategory\@\@\@Z
      */
     MCAPI bool hasCategory(enum class ActorCategory) const;
     /**
-     * @symbol
-     * ?hasDefinitionGroup\@Actor\@\@QEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?hasDefinitionGroup\@Actor\@\@QEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI bool hasDefinitionGroup(std::string const&) const;
+    MCAPI bool hasDefinitionGroup(std::string const &) const;
     /**
      * @symbol ?hasDimension\@Actor\@\@QEBA_NXZ
      */
@@ -2066,11 +2045,11 @@ public:
     /**
      * @symbol ?hasEffect\@Actor\@\@QEBA_NAEBVMobEffect\@\@\@Z
      */
-    MCAPI bool hasEffect(class MobEffect const&) const;
+    MCAPI bool hasEffect(class MobEffect const &) const;
     /**
      * @symbol ?hasFamily\@Actor\@\@QEBA_NAEBVHashedString\@\@\@Z
      */
-    MCAPI bool hasFamily(class HashedString const&) const;
+    MCAPI bool hasFamily(class HashedString const &) const;
     /**
      * @symbol ?hasFishingHook\@Actor\@\@QEBA_NXZ
      */
@@ -2106,7 +2085,7 @@ public:
     /**
      * @symbol ?hasTag\@Actor\@\@QEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI bool hasTag(std::string const&) const;
+    MCAPI bool hasTag(std::string const &) const;
     /**
      * @symbol ?hasTags\@Actor\@\@QEBA_NXZ
      */
@@ -2130,11 +2109,11 @@ public:
     /**
      * @symbol ?healEffects\@Actor\@\@QEAAXH\@Z
      */
-    MCAPI void healEffects(int);
+    MCAPI void healEffects(int32_t);
     /**
      * @symbol ?hurt\@Actor\@\@QEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
-    MCAPI bool hurt(class ActorDamageSource const&, float, bool, bool);
+    MCAPI bool hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @symbol ?inDownwardFlowingLiquid\@Actor\@\@QEBA_NXZ
      */
@@ -2146,11 +2125,11 @@ public:
     /**
      * @symbol ?initParams\@Actor\@\@QEAAXAEAVVariantParameterList\@\@\@Z
      */
-    MCAPI void initParams(class VariantParameterList&);
+    MCAPI void initParams(class VariantParameterList &);
     /**
      * @symbol ?initParams\@Actor\@\@QEAAXAEAVRenderParams\@\@\@Z
      */
-    MCAPI void initParams(class RenderParams&);
+    MCAPI void initParams(class RenderParams &);
     /**
      * @symbol ?isActorLocationInMaterial\@Actor\@\@QEBA_NW4ActorLocation\@\@W4MaterialType\@\@\@Z
      */
@@ -2322,7 +2301,7 @@ public:
     /**
      * @symbol ?isPassenger\@Actor\@\@QEBA_NAEBV1\@\@Z
      */
-    MCAPI bool isPassenger(class Actor const&) const;
+    MCAPI bool isPassenger(class Actor const &) const;
     /**
      * @symbol ?isPersistent\@Actor\@\@QEBA_NXZ
      */
@@ -2350,7 +2329,7 @@ public:
     /**
      * @symbol ?isRiding\@Actor\@\@QEBA_NPEAV1\@\@Z
      */
-    MCAPI bool isRiding(class Actor*) const;
+    MCAPI bool isRiding(class Actor *) const;
     /**
      * @symbol ?isSheared\@Actor\@\@QEBA_NXZ
      */
@@ -2430,19 +2409,19 @@ public:
     /**
      * @symbol ?lerpTo\@Actor\@\@QEAAXAEBVVec3\@\@AEBVVec2\@\@MH\@Z
      */
-    MCAPI void lerpTo(class Vec3 const&, class Vec2 const&, float, int);
+    MCAPI void lerpTo(class Vec3 const &, class Vec2 const &, float, int32_t);
     /**
      * @symbol ?lerpTo\@Actor\@\@QEAAXAEBVVec3\@\@AEBVVec2\@\@H\@Z
      */
-    MCAPI void lerpTo(class Vec3 const&, class Vec2 const&, int);
+    MCAPI void lerpTo(class Vec3 const &, class Vec2 const &, int32_t);
     /**
      * @symbol ?loadEntityFlags\@Actor\@\@QEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void loadEntityFlags(class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void loadEntityFlags(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?lovePartnerId\@Actor\@\@QEBAAEBUActorUniqueID\@\@XZ
      */
-    MCAPI struct ActorUniqueID const& lovePartnerId() const;
+    MCAPI struct ActorUniqueID const & lovePartnerId() const;
     /**
      * @symbol ?migrateUniqueID\@Actor\@\@QEAAXUActorUniqueID\@\@\@Z
      */
@@ -2450,7 +2429,7 @@ public:
     /**
      * @symbol ?move\@Actor\@\@QEAAXAEBVVec3\@\@\@Z
      */
-    MCAPI void move(class Vec3 const&);
+    MCAPI void move(class Vec3 const &);
     /**
      * @symbol ?moveRelative\@Actor\@\@QEAAXMMMM\@Z
      */
@@ -2458,7 +2437,7 @@ public:
     /**
      * @symbol ?moveTo\@Actor\@\@QEAAXAEBVVec3\@\@AEBVVec2\@\@\@Z
      */
-    MCAPI void moveTo(class Vec3 const&, class Vec2 const&);
+    MCAPI void moveTo(class Vec3 const &, class Vec2 const &);
     /**
      * @symbol ?onAffectedByWaterBottle\@Actor\@\@QEAAXXZ
      */
@@ -2470,19 +2449,19 @@ public:
     /**
      * @symbol ?onOnewayCollision\@Actor\@\@QEAAXAEBVAABB\@\@\@Z
      */
-    MCAPI void onOnewayCollision(class AABB const&);
+    MCAPI void onOnewayCollision(class AABB const &);
     /**
      * @symbol ??9Actor\@\@QEBA_NAEBV0\@\@Z
      */
-    MCAPI bool operator!=(class Actor const&) const;
+    MCAPI bool operator!=(class Actor const &) const;
     /**
      * @symbol ??8Actor\@\@QEBA_NAEBV0\@\@Z
      */
-    MCAPI bool operator==(class Actor const&) const;
+    MCAPI bool operator==(class Actor const &) const;
     /**
      * @symbol ?pickUpItem\@Actor\@\@QEAAXAEAVItemActor\@\@H\@Z
      */
-    MCAPI void pickUpItem(class ItemActor&, int);
+    MCAPI void pickUpItem(class ItemActor &, int32_t);
     /**
      * @symbol ?playMovementSound\@Actor\@\@QEAAXXZ
      */
@@ -2490,15 +2469,15 @@ public:
     /**
      * @symbol ?playSound\@Actor\@\@QEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@AEBVBlock\@\@\@Z
      */
-    MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const&, class Block const&);
+    MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const &, class Block const &);
     /**
      * @symbol ?playSound\@Actor\@\@QEAAXAEBVIConstBlockSource\@\@W4LevelSoundEvent\@\@AEBVVec3\@\@H\@Z
      */
-    MCAPI void playSound(class IConstBlockSource const&, enum class LevelSoundEvent, class Vec3 const&, int);
+    MCAPI void playSound(class IConstBlockSource const &, enum class LevelSoundEvent, class Vec3 const &, int32_t);
     /**
      * @symbol ?playSound\@Actor\@\@QEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@H\@Z
      */
-    MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const&, int);
+    MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const &, int32_t);
     /**
      * @symbol ?positionAllPassengers\@Actor\@\@QEAAXXZ
      */
@@ -2510,7 +2489,7 @@ public:
     /**
      * @symbol ?pullInEntity\@Actor\@\@QEAA_NAEAV1\@\@Z
      */
-    MCAPI bool pullInEntity(class Actor&);
+    MCAPI bool pullInEntity(class Actor &);
     /**
      * @symbol ?pushBackActionEventToActionQueue\@Actor\@\@QEAAXVActionEvent\@\@\@Z
      */
@@ -2522,7 +2501,7 @@ public:
     /**
      * @symbol ?queueBBUpdateFromValue\@Actor\@\@QEAAXAEBVVec2\@\@\@Z
      */
-    MCAPI void queueBBUpdateFromValue(class Vec2 const&);
+    MCAPI void queueBBUpdateFromValue(class Vec2 const &);
     /**
      * @symbol ?refreshComponents\@Actor\@\@QEAAXXZ
      */
@@ -2540,23 +2519,21 @@ public:
      */
     MCAPI void removeAllPassengers(bool, bool);
     /**
-     * @symbol
-     * ?removeDefinitionGroup\@Actor\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?removeDefinitionGroup\@Actor\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void removeDefinitionGroup(std::string const&);
+    MCAPI void removeDefinitionGroup(std::string const &);
     /**
      * @symbol ?removeEffect\@Actor\@\@QEAAXH\@Z
      */
-    MCAPI void removeEffect(int);
+    MCAPI void removeEffect(int32_t);
     /**
      * @symbol ?removePersistingTrade\@Actor\@\@QEAAXXZ
      */
     MCAPI void removePersistingTrade();
     /**
-     * @symbol
-     * ?removeTag\@Actor\@\@QEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?removeTag\@Actor\@\@QEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI bool removeTag(std::string const&);
+    MCAPI bool removeTag(std::string const &);
     /**
      * @symbol ?resetSlideYOffset\@Actor\@\@QEAAXXZ
      */
@@ -2564,21 +2541,19 @@ public:
     /**
      * @symbol ?saveEntityFlags\@Actor\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void saveEntityFlags(class CompoundTag&) const;
+    MCAPI void saveEntityFlags(class CompoundTag &) const;
     /**
      * @symbol ?saveLinks\@Actor\@\@QEBA?AV?$unique_ptr\@VListTag\@\@U?$default_delete\@VListTag\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::unique_ptr<class ListTag> saveLinks() const;
     /**
-     * @symbol
-     * ?savePersistingTrade\@Actor\@\@QEAAXV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@H\@Z
+     * @symbol ?savePersistingTrade\@Actor\@\@QEAAXV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@H\@Z
      */
-    MCAPI void savePersistingTrade(std::unique_ptr<class CompoundTag>, int);
+    MCAPI void savePersistingTrade(std::unique_ptr<class CompoundTag>, int32_t);
     /**
-     * @symbol
-     * ?sendActorDefinitionEventTriggered\@Actor\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?sendActorDefinitionEventTriggered\@Actor\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void sendActorDefinitionEventTriggered(std::string const&);
+    MCAPI void sendActorDefinitionEventTriggered(std::string const &);
     /**
      * @symbol ?sendMotionToServer\@Actor\@\@QEAAXXZ
      */
@@ -2586,15 +2561,15 @@ public:
     /**
      * @symbol ?serializationSetHealth\@Actor\@\@QEAAXH\@Z
      */
-    MCAPI void serializationSetHealth(int);
+    MCAPI void serializationSetHealth(int32_t);
     /**
      * @symbol ?setAABB\@Actor\@\@QEAAXAEBVAABB\@\@\@Z
      */
-    MCAPI void setAABB(class AABB const&);
+    MCAPI void setAABB(class AABB const &);
     /**
      * @symbol ?setAABBDim\@Actor\@\@QEAAXAEBVVec2\@\@\@Z
      */
-    MCAPI void setAABBDim(class Vec2 const&);
+    MCAPI void setAABBDim(class Vec2 const &);
     /**
      * @symbol ?setActorRendererId\@Actor\@\@QEAAXVHashedString\@\@\@Z
      */
@@ -2606,11 +2581,11 @@ public:
     /**
      * @symbol ?setBaseDefinition\@Actor\@\@QEAAXAEBUActorDefinitionIdentifier\@\@_N1\@Z
      */
-    MCAPI void setBaseDefinition(struct ActorDefinitionIdentifier const&, bool, bool);
+    MCAPI void setBaseDefinition(struct ActorDefinitionIdentifier const &, bool, bool);
     /**
      * @symbol ?setBlockTarget\@Actor\@\@QEAAXAEBVBlockPos\@\@\@Z
      */
-    MCAPI void setBlockTarget(class BlockPos const&);
+    MCAPI void setBlockTarget(class BlockPos const &);
     /**
      * @symbol ?setBreakingObstruction\@Actor\@\@QEAAX_N\@Z
      */
@@ -2646,7 +2621,7 @@ public:
     /**
      * @symbol ?setControllingSeat\@Actor\@\@QEAAXH\@Z
      */
-    MCAPI void setControllingSeat(int);
+    MCAPI void setControllingSeat(int32_t);
     /**
      * @symbol ?setDancing\@Actor\@\@QEAAX_N\@Z
      */
@@ -2686,15 +2661,15 @@ public:
     /**
      * @symbol ?setHurtDir\@Actor\@\@QEAAXH\@Z
      */
-    MCAPI void setHurtDir(int);
+    MCAPI void setHurtDir(int32_t);
     /**
      * @symbol ?setHurtTime\@Actor\@\@QEAAXH\@Z
      */
-    MCAPI void setHurtTime(int);
+    MCAPI void setHurtTime(int32_t);
     /**
      * @symbol ?setInLove\@Actor\@\@QEAAXPEAV1\@\@Z
      */
-    MCAPI void setInLove(class Actor*);
+    MCAPI void setInLove(class Actor *);
     /**
      * @symbol ?setInterpolation\@Actor\@\@QEAAX_N\@Z
      */
@@ -2710,7 +2685,7 @@ public:
     /**
      * @symbol ?setJumpDuration\@Actor\@\@QEAAXH\@Z
      */
-    MCAPI void setJumpDuration(int);
+    MCAPI void setJumpDuration(int32_t);
     /**
      * @symbol ?setJumping\@Actor\@\@QEAAX_N\@Z
      */
@@ -2718,7 +2693,7 @@ public:
     /**
      * @symbol ?setLastHitBB\@Actor\@\@QEAAXAEBVVec3\@\@0\@Z
      */
-    MCAPI void setLastHitBB(class Vec3 const&, class Vec3 const&);
+    MCAPI void setLastHitBB(class Vec3 const &, class Vec3 const &);
     /**
      * @symbol ?setLayingDown\@Actor\@\@QEAAX_N\@Z
      */
@@ -2730,11 +2705,11 @@ public:
     /**
      * @symbol ?setLimitedLifetimeTicks\@Actor\@\@QEAAXH\@Z
      */
-    MCAPI void setLimitedLifetimeTicks(int);
+    MCAPI void setLimitedLifetimeTicks(int32_t);
     /**
      * @symbol ?setMarkVariant\@Actor\@\@QEAAXH\@Z
      */
-    MCAPI void setMarkVariant(int);
+    MCAPI void setMarkVariant(int32_t);
     /**
      * @symbol ?setMovedToLimbo\@Actor\@\@QEAAX_N\@Z
      */
@@ -2754,15 +2729,15 @@ public:
     /**
      * @symbol ?setPos\@Actor\@\@QEAAXAEBVVec3\@\@\@Z
      */
-    MCAPI void setPos(class Vec3 const&);
+    MCAPI void setPos(class Vec3 const &);
     /**
      * @symbol ?setPosDirectLegacy\@Actor\@\@QEAAXAEBVVec3\@\@\@Z
      */
-    MCAPI void setPosDirectLegacy(class Vec3 const&);
+    MCAPI void setPosDirectLegacy(class Vec3 const &);
     /**
      * @symbol ?setPosPrev\@Actor\@\@QEAAXAEBVVec3\@\@\@Z
      */
-    MCAPI void setPosPrev(class Vec3 const&);
+    MCAPI void setPosPrev(class Vec3 const &);
     /**
      * @symbol ?setPrevPosRotSetThisTick\@Actor\@\@QEAAX_N\@Z
      */
@@ -2778,11 +2753,11 @@ public:
     /**
      * @symbol ?setRotationDirectly\@Actor\@\@QEAAXAEBVVec2\@\@\@Z
      */
-    MCAPI void setRotationDirectly(class Vec2 const&);
+    MCAPI void setRotationDirectly(class Vec2 const &);
     /**
      * @symbol ?setRotationPrev\@Actor\@\@QEAAXAEBVVec2\@\@\@Z
      */
-    MCAPI void setRotationPrev(class Vec2 const&);
+    MCAPI void setRotationPrev(class Vec2 const &);
     /**
      * @symbol ?setRotationPrevY\@Actor\@\@QEAAXM\@Z
      */
@@ -2790,7 +2765,7 @@ public:
     /**
      * @symbol ?setRotationWrapped\@Actor\@\@QEAAXAEBVVec2\@\@\@Z
      */
-    MCAPI void setRotationWrapped(class Vec2 const&);
+    MCAPI void setRotationWrapped(class Vec2 const &);
     /**
      * @symbol ?setRotationX\@Actor\@\@QEAAXM\@Z
      */
@@ -2814,23 +2789,23 @@ public:
     /**
      * @symbol ?setShakeTime\@Actor\@\@QEAAXH\@Z
      */
-    MCAPI void setShakeTime(int);
+    MCAPI void setShakeTime(int32_t);
     /**
      * @symbol ?setSkinID\@Actor\@\@QEAAXH\@Z
      */
-    MCAPI void setSkinID(int);
+    MCAPI void setSkinID(int32_t);
     /**
      * @symbol ?setStrength\@Actor\@\@QEAAXH\@Z
      */
-    MCAPI void setStrength(int);
+    MCAPI void setStrength(int32_t);
     /**
      * @symbol ?setStrengthMax\@Actor\@\@QEAAXH\@Z
      */
-    MCAPI void setStrengthMax(int);
+    MCAPI void setStrengthMax(int32_t);
     /**
      * @symbol ?setStructuralIntegrity\@Actor\@\@QEAAXH\@Z
      */
-    MCAPI void setStructuralIntegrity(int);
+    MCAPI void setStructuralIntegrity(int32_t);
     /**
      * @symbol ?setStunned\@Actor\@\@QEAAX_N\@Z
      */
@@ -2850,7 +2825,7 @@ public:
     /**
      * @symbol ?setTradingPlayer\@Actor\@\@QEAAXPEAVPlayer\@\@\@Z
      */
-    MCAPI void setTradingPlayer(class Player*);
+    MCAPI void setTradingPlayer(class Player *);
     /**
      * @symbol ?setUniqueID\@Actor\@\@QEAAXUActorUniqueID\@\@\@Z
      */
@@ -2858,11 +2833,11 @@ public:
     /**
      * @symbol ?setVariant\@Actor\@\@QEAAXH\@Z
      */
-    MCAPI void setVariant(int);
+    MCAPI void setVariant(int32_t);
     /**
      * @symbol ?setVelocity\@Actor\@\@QEAAXAEBVVec3\@\@\@Z
      */
-    MCAPI void setVelocity(class Vec3 const&);
+    MCAPI void setVelocity(class Vec3 const &);
     /**
      * @symbol ?setWASDControlled\@Actor\@\@QEAAX_N\@Z
      */
@@ -2886,7 +2861,7 @@ public:
     /**
      * @symbol ?shouldOrphan\@Actor\@\@QEAA_NAEAVBlockSource\@\@\@Z
      */
-    MCAPI bool shouldOrphan(class BlockSource&);
+    MCAPI bool shouldOrphan(class BlockSource &);
     /**
      * @symbol ?shouldUpdateEffects\@Actor\@\@QEBA_NXZ
      */
@@ -2894,7 +2869,7 @@ public:
     /**
      * @symbol ?spawnEatParticles\@Actor\@\@QEAAXAEBVItemStack\@\@H\@Z
      */
-    MCAPI void spawnEatParticles(class ItemStack const&, int);
+    MCAPI void spawnEatParticles(class ItemStack const &, int32_t);
     /**
      * @symbol ?spinAttack\@Actor\@\@QEAAXXZ
      */
@@ -2906,24 +2881,23 @@ public:
     /**
      * @symbol ?teleportPassengersTo\@Actor\@\@QEAAXAEBVVec3\@\@HH\@Z
      */
-    MCAPI void teleportPassengersTo(class Vec3 const&, int, int);
+    MCAPI void teleportPassengersTo(class Vec3 const &, int32_t, int32_t);
     /**
      * @symbol ?tick\@Actor\@\@QEAA_NAEAVBlockSource\@\@\@Z
      */
-    MCAPI bool tick(class BlockSource&);
+    MCAPI bool tick(class BlockSource &);
     /**
      * @symbol ?transferTickingArea\@Actor\@\@QEAAXAEAVDimension\@\@\@Z
      */
-    MCAPI void transferTickingArea(class Dimension&);
+    MCAPI void transferTickingArea(class Dimension &);
     /**
-     * @symbol
-     * ?tryGetEquippableSlotAllowedItems\@Actor\@\@QEBAPEBV?$vector\@VItemDescriptor\@\@V?$allocator\@VItemDescriptor\@\@\@std\@\@\@std\@\@H\@Z
+     * @symbol ?tryGetEquippableSlotAllowedItems\@Actor\@\@QEBAPEBV?$vector\@VItemDescriptor\@\@V?$allocator\@VItemDescriptor\@\@\@std\@\@\@std\@\@H\@Z
      */
-    MCAPI std::vector<class ItemDescriptor> const* tryGetEquippableSlotAllowedItems(int) const;
+    MCAPI std::vector<class ItemDescriptor> const * tryGetEquippableSlotAllowedItems(int32_t) const;
     /**
      * @symbol ?tryGetEquippableSlotForItem\@Actor\@\@QEBA?AV?$optional\@H\@std\@\@VItemDescriptor\@\@\@Z
      */
-    MCAPI std::optional<int> tryGetEquippableSlotForItem(class ItemDescriptor) const;
+    MCAPI std::optional<int32_t> tryGetEquippableSlotForItem(class ItemDescriptor) const;
     /**
      * @symbol ?updateAnimationComponentOnServer\@Actor\@\@QEAAXXZ
      */
@@ -2943,7 +2917,7 @@ public:
     /**
      * @symbol ?updateMolangVariables\@Actor\@\@QEAAXAEAVRenderParams\@\@\@Z
      */
-    MCAPI void updateMolangVariables(class RenderParams&);
+    MCAPI void updateMolangVariables(class RenderParams &);
     /**
      * @symbol ?updateTickingData\@Actor\@\@QEAAXXZ
      */
@@ -2951,7 +2925,7 @@ public:
     /**
      * @symbol ?useSaddle\@Actor\@\@QEAA_NAEAVItemStackBase\@\@PEAVPlayer\@\@\@Z
      */
-    MCAPI bool useSaddle(class ItemStackBase&, class Player*);
+    MCAPI bool useSaddle(class ItemStackBase &, class Player *);
     /**
      * @symbol ?wasLastHitByPlayer\@Actor\@\@QEAA_NXZ
      */
@@ -2963,47 +2937,39 @@ public:
     /**
      * @symbol ?_moveRelative\@Actor\@\@SAXAEAVVec3\@\@MMMMM\@Z
      */
-    MCAPI static void _moveRelative(class Vec3&, float, float, float, float, float);
+    MCAPI static void _moveRelative(class Vec3 &, float, float, float, float, float);
     /**
      * @symbol ?buildForward\@Actor\@\@SA?AVVec3\@\@AEBUIActorMovementProxy\@\@\@Z
      */
-    MCAPI static class Vec3 buildForward(struct IActorMovementProxy const&);
+    MCAPI static class Vec3 buildForward(struct IActorMovementProxy const &);
     /**
      * @symbol ?canBeginOrContinueClimbingLadder\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@AEBVIConstBlockSource\@\@\@Z
      */
-    MCAPI static bool
-    canBeginOrContinueClimbingLadder(struct IActorMovementProxy const&, class IConstBlockSource const&);
+    MCAPI static bool canBeginOrContinueClimbingLadder(struct IActorMovementProxy const &, class IConstBlockSource const &);
     /**
-     * @symbol
-     * ?getBlockPosCurrentlyStandingOn\@Actor\@\@SA?AVBlockPos\@\@AEBVVec3\@\@VAABB\@\@AEBVIConstBlockSource\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
+     * @symbol ?getBlockPosCurrentlyStandingOn\@Actor\@\@SA?AVBlockPos\@\@AEBVVec3\@\@VAABB\@\@AEBVIConstBlockSource\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
-    MCAPI static class BlockPos
-    getBlockPosCurrentlyStandingOn(class Vec3 const&, class AABB, class IConstBlockSource const&, class optional_ref<class GetCollisionShapeInterface const>);
+    MCAPI static class BlockPos getBlockPosCurrentlyStandingOn(class Vec3 const &, class AABB, class IConstBlockSource const &, class optional_ref<class GetCollisionShapeInterface const>);
     /**
-     * @symbol
-     * ?getBlockPosCurrentlyStandingOn\@Actor\@\@SA?AVBlockPos\@\@AEBUIActorMovementProxy\@\@PEBU3\@AEBVIConstBlockSource\@\@\@Z
+     * @symbol ?getBlockPosCurrentlyStandingOn\@Actor\@\@SA?AVBlockPos\@\@AEBUIActorMovementProxy\@\@PEBU3\@AEBVIConstBlockSource\@\@\@Z
      */
-    MCAPI static class BlockPos
-    getBlockPosCurrentlyStandingOn(struct IActorMovementProxy const&, struct IActorMovementProxy const*, class IConstBlockSource const&);
+    MCAPI static class BlockPos getBlockPosCurrentlyStandingOn(struct IActorMovementProxy const &, struct IActorMovementProxy const *, class IConstBlockSource const &);
     /**
      * @symbol ?getCenter\@Actor\@\@SA?AVVec3\@\@MAEBUAABBShapeComponent\@\@AEBUStateVectorComponent\@\@M\@Z
      */
-    MCAPI static class Vec3
-    getCenter(float, struct AABBShapeComponent const&, struct StateVectorComponent const&, float);
+    MCAPI static class Vec3 getCenter(float, struct AABBShapeComponent const &, struct StateVectorComponent const &, float);
     /**
-     * @symbol
-     * ?getEffect\@Actor\@\@SAPEBVMobEffectInstance\@\@AEBV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@std\@\@AEBVMobEffect\@\@\@Z
+     * @symbol ?getEffect\@Actor\@\@SAPEBVMobEffectInstance\@\@AEBV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@std\@\@AEBVMobEffect\@\@\@Z
      */
-    MCAPI static class MobEffectInstance const*
-    getEffect(std::vector<class MobEffectInstance> const&, class MobEffect const&);
+    MCAPI static class MobEffectInstance const * getEffect(std::vector<class MobEffectInstance> const &, class MobEffect const &);
     /**
      * @symbol ?getInterpolatedRotation\@Actor\@\@SA?AVVec2\@\@AEBV2\@0M\@Z
      */
-    MCAPI static class Vec2 getInterpolatedRotation(class Vec2 const&, class Vec2 const&, float);
+    MCAPI static class Vec2 getInterpolatedRotation(class Vec2 const &, class Vec2 const &, float);
     /**
      * @symbol ?getLiquidAABB\@Actor\@\@SA?AVAABB\@\@AEBV2\@W4MaterialType\@\@\@Z
      */
-    MCAPI static class AABB getLiquidAABB(class AABB const&, enum class MaterialType);
+    MCAPI static class AABB getLiquidAABB(class AABB const &, enum class MaterialType);
     /**
      * @symbol ?getLiquidFlowStrength\@Actor\@\@SAMW4MaterialType\@\@\@Z
      */
@@ -3011,85 +2977,83 @@ public:
     /**
      * @symbol ?getStatusFlag\@Actor\@\@SA_NAEBVSynchedActorData\@\@W4ActorFlags\@\@\@Z
      */
-    MCAPI static bool getStatusFlag(class SynchedActorData const&, enum class ActorFlags);
+    MCAPI static bool getStatusFlag(class SynchedActorData const &, enum class ActorFlags);
     /**
      * @symbol ?getViewVector\@Actor\@\@SA?AVVec3\@\@AEBUIActorMovementProxy\@\@M\@Z
      */
-    MCAPI static class Vec3 getViewVector(struct IActorMovementProxy const&, float);
+    MCAPI static class Vec3 getViewVector(struct IActorMovementProxy const &, float);
     /**
      * @symbol ?getViewVector\@Actor\@\@SA?AVVec3\@\@AEBVVec2\@\@0M\@Z
      */
-    MCAPI static class Vec3 getViewVector(class Vec2 const&, class Vec2 const&, float);
+    MCAPI static class Vec3 getViewVector(class Vec2 const &, class Vec2 const &, float);
     /**
      * @symbol ?isImmersedInWater\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
      */
-    MCAPI static bool isImmersedInWater(struct IActorMovementProxy const&);
+    MCAPI static bool isImmersedInWater(struct IActorMovementProxy const &);
     /**
      * @symbol ?isImmobile\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
      */
-    MCAPI static bool isImmobile(struct IActorMovementProxy const&);
+    MCAPI static bool isImmobile(struct IActorMovementProxy const &);
     /**
      * @symbol ?isInScaffolding\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
      */
-    MCAPI static bool isInScaffolding(struct IActorMovementProxy const&);
+    MCAPI static bool isInScaffolding(struct IActorMovementProxy const &);
     /**
      * @symbol ?isSitting\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
      */
-    MCAPI static bool isSitting(struct IActorMovementProxy const&);
+    MCAPI static bool isSitting(struct IActorMovementProxy const &);
     /**
      * @symbol ?isStanding\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
      */
-    MCAPI static bool isStanding(struct IActorMovementProxy const&);
+    MCAPI static bool isStanding(struct IActorMovementProxy const &);
     /**
      * @symbol ?onClimbableBlock\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
      */
-    MCAPI static bool onClimbableBlock(struct IActorMovementProxy const&);
+    MCAPI static bool onClimbableBlock(struct IActorMovementProxy const &);
     /**
      * @symbol ?onClimbableBlock\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@AEBVIConstBlockSource\@\@\@Z
      */
-    MCAPI static bool onClimbableBlock(struct IActorMovementProxy const&, class IConstBlockSource const&);
+    MCAPI static bool onClimbableBlock(struct IActorMovementProxy const &, class IConstBlockSource const &);
     /**
      * @symbol ?tryGetFromComponent\@Actor\@\@SAPEAV1\@AEAVActorOwnerComponent\@\@_N\@Z
      */
-    MCAPI static class Actor* tryGetFromComponent(class ActorOwnerComponent&, bool);
+    MCAPI static class Actor * tryGetFromComponent(class ActorOwnerComponent &, bool);
     /**
      * @symbol ?tryGetFromComponent\@Actor\@\@SAPEBV1\@AEBVActorOwnerComponent\@\@_N\@Z
      */
-    MCAPI static class Actor const* tryGetFromComponent(class ActorOwnerComponent const&, bool);
+    MCAPI static class Actor const * tryGetFromComponent(class ActorOwnerComponent const &, bool);
     /**
      * @symbol ?tryGetFromEntity\@Actor\@\@SAPEAV1\@AEAVEntityContext\@\@_N\@Z
      */
-    MCAPI static class Actor* tryGetFromEntity(class EntityContext&, bool);
+    MCAPI static class Actor * tryGetFromEntity(class EntityContext &, bool);
     /**
      * @symbol ?tryGetFromEntity\@Actor\@\@SAPEBV1\@AEBVEntityContext\@\@_N\@Z
      */
-    MCAPI static class Actor const* tryGetFromEntity(class EntityContext const&, bool);
+    MCAPI static class Actor const * tryGetFromEntity(class EntityContext const &, bool);
     /**
      * @symbol ?tryGetFromEntity\@Actor\@\@SAPEAV1\@V?$StackRefResultT\@UEntityRefTraits\@\@\@\@_N\@Z
      */
-    MCAPI static class Actor* tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
+    MCAPI static class Actor * tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
     /**
      * @symbol ?tryGetFromEntity\@Actor\@\@SAPEAV1\@AEBVStrictEntityContext\@\@AEAVEntityRegistry\@\@_N\@Z
      */
-    MCAPI static class Actor* tryGetFromEntity(class StrictEntityContext const&, class EntityRegistry&, bool);
+    MCAPI static class Actor * tryGetFromEntity(class StrictEntityContext const &, class EntityRegistry &, bool);
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     /**
-     * @symbol
-     * ?_assignActorMovementProxy\@Actor\@\@IEAAXV?$not_null\@V?$shared_ptr\@UIActorMovementProxy\@\@\@std\@\@\@gsl\@\@\@Z
+     * @symbol ?_assignActorMovementProxy\@Actor\@\@IEAAXV?$not_null\@V?$shared_ptr\@UIActorMovementProxy\@\@\@std\@\@\@gsl\@\@\@Z
      */
     MCAPI void _assignActorMovementProxy(class gsl::not_null<std::shared_ptr<struct IActorMovementProxy>>);
     /**
      * @symbol ?_drop\@Actor\@\@IEAAPEBVItemActor\@\@AEBVItemStack\@\@_N\@Z
      */
-    MCAPI class ItemActor const* _drop(class ItemStack const&, bool);
+    MCAPI class ItemActor const * _drop(class ItemStack const &, bool);
     /**
-     * @symbol
-     * ?_getAllEffectsNonConst\@Actor\@\@IEAAAEAV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?_getAllEffectsNonConst\@Actor\@\@IEAAAEAV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<class MobEffectInstance>& _getAllEffectsNonConst();
+    MCAPI std::vector<class MobEffectInstance> & _getAllEffectsNonConst();
     /**
      * @symbol ?_initializeMaxAutoStep\@Actor\@\@IEAAXM\@Z
      */
@@ -3103,27 +3067,21 @@ public:
      */
     MCAPI bool _isHeadInWater() const;
     /**
-     * @symbol
-     * ?_setArmorContainer\@Actor\@\@IEAAXV?$unique_ptr\@VSimpleContainer\@\@U?$default_delete\@VSimpleContainer\@\@\@std\@\@\@std\@\@\@Z
+     * @symbol ?_setArmorContainer\@Actor\@\@IEAAXV?$unique_ptr\@VSimpleContainer\@\@U?$default_delete\@VSimpleContainer\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI void _setArmorContainer(std::unique_ptr<class SimpleContainer>);
     /**
      * @symbol ?_setDimensionTransitionComponent\@Actor\@\@IEAAXV?$AutomaticID\@VDimension\@\@H\@\@0H\@Z
      */
-    MCAPI void _setDimensionTransitionComponent(
-        class AutomaticID<class Dimension, int>,
-        class AutomaticID<class Dimension, int>,
-        int
-    );
+    MCAPI void _setDimensionTransitionComponent(DimensionType, DimensionType, int32_t);
     /**
-     * @symbol
-     * ?_setHandContainer\@Actor\@\@IEAAXV?$unique_ptr\@VSimpleContainer\@\@U?$default_delete\@VSimpleContainer\@\@\@std\@\@\@std\@\@\@Z
+     * @symbol ?_setHandContainer\@Actor\@\@IEAAXV?$unique_ptr\@VSimpleContainer\@\@U?$default_delete\@VSimpleContainer\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI void _setHandContainer(std::unique_ptr<class SimpleContainer>);
     /**
      * @symbol ?_setHandContainerItem\@Actor\@\@IEAAXAEBVItemStack\@\@W4HandSlot\@\@\@Z
      */
-    MCAPI void _setHandContainerItem(class ItemStack const&, enum class HandSlot);
+    MCAPI void _setHandContainerItem(class ItemStack const &, enum class HandSlot);
     /**
      * @symbol ?_setHeightOffset\@Actor\@\@IEAAXM\@Z
      */
@@ -3131,11 +3089,11 @@ public:
     /**
      * @symbol ?_setPos\@Actor\@\@IEAAXAEBVVec3\@\@\@Z
      */
-    MCAPI void _setPos(class Vec3 const&);
+    MCAPI void _setPos(class Vec3 const &);
     /**
      * @symbol ?_setPosPrev\@Actor\@\@IEAAXAEBVVec3\@\@\@Z
      */
-    MCAPI void _setPosPrev(class Vec3 const&);
+    MCAPI void _setPosPrev(class Vec3 const &);
     /**
      * @symbol ?enableAutoSendPosRot\@Actor\@\@IEAAX_N\@Z
      */
@@ -3147,7 +3105,7 @@ public:
     /**
      * @symbol ?getBlockWhenClimbing\@Actor\@\@KAAEBVBlock\@\@AEBUIActorMovementProxy\@\@\@Z
      */
-    MCAPI static class Block const& getBlockWhenClimbing(struct IActorMovementProxy const&);
+    MCAPI static class Block const & getBlockWhenClimbing(struct IActorMovementProxy const &);
     // NOLINTEND
 
     // private:
@@ -3175,7 +3133,7 @@ public:
     /**
      * @symbol ?_initializeLeashRopeSystem\@Actor\@\@AEAAXPEAV1\@\@Z
      */
-    MCAPI void _initializeLeashRopeSystem(class Actor*);
+    MCAPI void _initializeLeashRopeSystem(class Actor *);
     /**
      * @symbol ?_isItemStackNetManagerEnabled\@Actor\@\@AEBA_NXZ
      */
@@ -3183,11 +3141,11 @@ public:
     /**
      * @symbol ?_moveHitboxTo\@Actor\@\@AEAAXAEBVVec3\@\@\@Z
      */
-    MCAPI void _moveHitboxTo(class Vec3 const&);
+    MCAPI void _moveHitboxTo(class Vec3 const &);
     /**
      * @symbol ?_serializeComponents\@Actor\@\@AEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void _serializeComponents(class CompoundTag&) const;
+    MCAPI void _serializeComponents(class CompoundTag &) const;
     /**
      * @symbol ?_setupServerAnimationComponent\@Actor\@\@AEAAXXZ
      */
@@ -3207,7 +3165,7 @@ private:
     /**
      * @symbol ?DAMAGE_NEARBY_MOBS_DURATION\@Actor\@\@0HB
      */
-    MCAPI static int const DAMAGE_NEARBY_MOBS_DURATION;
+    MCAPI static int32_t const DAMAGE_NEARBY_MOBS_DURATION;
     /**
      * @symbol ?DEFAULT_MAX_DISTANCE_OPTIMIZATION\@Actor\@\@0MB
      */
@@ -3217,4 +3175,6 @@ private:
      */
     MCAPI static uint64_t const DEFAULT_MAX_TICK_DELAY_OPTIMIZATION;
     // NOLINTEND
+
 };
+

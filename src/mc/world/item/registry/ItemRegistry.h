@@ -154,7 +154,7 @@ public:
     /**
      * @symbol ?getItem\@ItemRegistry\@\@AEAA?AV?$WeakPtr\@VItem\@\@\@\@F\@Z
      */
-    MCAPI class WeakPtr<class Item> getItem(short);
+    MCAPI class WeakPtr<class Item> getItem(int16_t);
     /**
      * @symbol ?getItem\@ItemRegistry\@\@AEAA?AV?$WeakPtr\@VItem\@\@\@\@AEBVHashedString\@\@\@Z
      */
@@ -162,7 +162,7 @@ public:
     /**
      * @symbol ?getNameFromAlias\@ItemRegistry\@\@AEBA?AU?$pair\@VHashedString\@\@H\@std\@\@AEBVHashedString\@\@H\@Z
      */
-    MCAPI std::pair<class HashedString, int> getNameFromAlias(class HashedString const&, int) const;
+    MCAPI std::pair<class HashedString, int32_t> getNameFromAlias(class HashedString const&, int32_t) const;
     /**
      * @symbol ?getRef\@ItemRegistry\@\@AEAA?AVItemRegistryRef\@\@XZ
      */
@@ -193,7 +193,7 @@ public:
      * @symbol
      * ?lookupByName\@ItemRegistry\@\@AEBA?AV?$WeakPtr\@VItem\@\@\@\@AEAHV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI class WeakPtr<class Item> lookupByName(int&, std::string_view) const;
+    MCAPI class WeakPtr<class Item> lookupByName(int32_t&, std::string_view) const;
     /**
      * @symbol
      * ?lookupByNameNoAlias\@ItemRegistry\@\@AEBA?AV?$WeakPtr\@VItem\@\@\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
@@ -202,7 +202,7 @@ public:
     /**
      * @symbol ?lookupByNameNoParsing\@ItemRegistry\@\@AEBA?AV?$WeakPtr\@VItem\@\@\@\@AEAHAEBVHashedString\@\@\@Z
      */
-    MCAPI class WeakPtr<class Item> lookupByNameNoParsing(int&, class HashedString const&) const;
+    MCAPI class WeakPtr<class Item> lookupByNameNoParsing(int32_t&, class HashedString const&) const;
     /**
      * @symbol ?registerAlias\@ItemRegistry\@\@AEAAXAEBVHashedString\@\@0AEBVBaseGameVersion\@\@\@Z
      */
@@ -220,7 +220,7 @@ public:
     /**
      * @symbol ?registerLegacyID\@ItemRegistry\@\@AEAAXAEBVHashedString\@\@F\@Z
      */
-    MCAPI void registerLegacyID(class HashedString const&, short);
+    MCAPI void registerLegacyID(class HashedString const&, int16_t);
     /**
      * @symbol ?registerLegacyMapping\@ItemRegistry\@\@AEAAXAEBVHashedString\@\@0AEBVBaseGameVersion\@\@\@Z
      */

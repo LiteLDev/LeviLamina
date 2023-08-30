@@ -23,27 +23,27 @@ public:
      * @vftbl 1
      * @symbol ?getChunkRebuildPriority\@ChunkBuildOrderPolicy\@\@UEBAHAEBVChunkPos\@\@\@Z
      */
-    virtual int getChunkRebuildPriority(class ChunkPos const&) const;
+    virtual int32_t getChunkRebuildPriority(class ChunkPos const&) const;
     /**
      * @vftbl 2
      * @symbol ?registerForUpdates\@ChunkBuildOrderPolicy\@\@UEAAIXZ
      */
-    virtual unsigned int registerForUpdates();
+    virtual uint32_t registerForUpdates();
     /**
      * @vftbl 3
      * @symbol ?unregisterForUpdates\@ChunkBuildOrderPolicy\@\@UEAAXI\@Z
      */
-    virtual void unregisterForUpdates(unsigned int);
+    virtual void unregisterForUpdates(uint32_t);
     /**
      * @vftbl 4
      * @symbol ?setPlayerInfluence\@ChunkBuildOrderPolicy\@\@UEAAXIAEBVChunkPos\@\@AEBVVec3\@\@\@Z
      */
-    virtual void setPlayerInfluence(unsigned int, class ChunkPos const&, class Vec3 const&);
+    virtual void setPlayerInfluence(uint32_t, class ChunkPos const&, class Vec3 const&);
     /**
      * @vftbl 5
      * @symbol ?setTickingAreaInfluence\@ChunkBuildOrderPolicy\@\@UEAAXIAEBVChunkPos\@\@HH_N1\@Z
      */
-    virtual void setTickingAreaInfluence(unsigned int, class ChunkPos const&, int, int, bool, bool);
+    virtual void setTickingAreaInfluence(uint32_t, class ChunkPos const&, int32_t, int32_t, bool, bool);
     /**
      * @vftbl 6
      * @symbol ?updateInfluences\@ChunkBuildOrderPolicy\@\@UEAAXXZ

@@ -29,7 +29,7 @@ public:
      * @vftbl 11
      * @symbol ?addSource\@PistonConsumer\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEAHAEA_N\@Z
      */
-    virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
+    virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int32_t&, bool&);
     /**
      * @vftbl 12
      * @symbol ?allowConnection\@PistonConsumer\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEA_N\@Z
@@ -57,6 +57,6 @@ public:
     /**
      * @symbol ?setBlockPowerFace\@PistonConsumer\@\@QEAAXE\@Z
      */
-    MCAPI void setBlockPowerFace(unsigned char);
+    MCAPI void setBlockPowerFace(uint8_t);
     // NOLINTEND
 };

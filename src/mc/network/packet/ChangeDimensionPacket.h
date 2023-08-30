@@ -57,6 +57,6 @@ public:
     /**
      * @symbol ??0ChangeDimensionPacket\@\@QEAA\@V?$AutomaticID\@VDimension\@\@H\@\@VVec3\@\@_N\@Z
      */
-    MCAPI ChangeDimensionPacket(class AutomaticID<class Dimension, int>, class Vec3, bool);
+    MCAPI ChangeDimensionPacket(DimensionType, class Vec3, bool);
     // NOLINTEND
 };

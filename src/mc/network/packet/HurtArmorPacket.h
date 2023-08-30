@@ -53,7 +53,7 @@ public:
     /**
      * @symbol ??0HurtArmorPacket\@\@QEAA\@W4ActorDamageCause\@\@HV?$bitset\@$03\@std\@\@\@Z
      */
-    MCAPI HurtArmorPacket(enum class ActorDamageCause, int, std::bitset<4>);
+    MCAPI HurtArmorPacket(enum class ActorDamageCause, int32_t, std::bitset<4>);
     /**
      * @symbol ??0HurtArmorPacket\@\@QEAA\@XZ
      */

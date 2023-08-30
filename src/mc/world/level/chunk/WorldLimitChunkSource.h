@@ -53,6 +53,6 @@ public:
      * @symbol
      * ??0WorldLimitChunkSource\@\@QEAA\@V?$unique_ptr\@VChunkSource\@\@U?$default_delete\@VChunkSource\@\@\@std\@\@\@std\@\@AEBVBlockPos\@\@HH\@Z
      */
-    MCAPI WorldLimitChunkSource(std::unique_ptr<class ChunkSource>, class BlockPos const&, int, int);
+    MCAPI WorldLimitChunkSource(std::unique_ptr<class ChunkSource>, class BlockPos const&, int32_t, int32_t);
     // NOLINTEND
 };

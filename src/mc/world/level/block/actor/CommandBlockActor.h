@@ -160,7 +160,7 @@ public:
     /**
      * @symbol ?getDelayOnActivation\@CommandBlockActor\@\@QEBAHXZ
      */
-    MCAPI int getDelayOnActivation() const;
+    MCAPI int32_t getDelayOnActivation() const;
     /**
      * @symbol ?getMode\@CommandBlockActor\@\@QEBA?AW4CommandBlockMode\@\@AEAVBlockSource\@\@\@Z
      */
@@ -172,11 +172,11 @@ public:
     /**
      * @symbol ?getSuccessCount\@CommandBlockActor\@\@QEBAHXZ
      */
-    MCAPI int getSuccessCount() const;
+    MCAPI int32_t getSuccessCount() const;
     /**
      * @symbol ?getTickDelay\@CommandBlockActor\@\@QEBAHXZ
      */
-    MCAPI int getTickDelay() const;
+    MCAPI int32_t getTickDelay() const;
     /**
      * @symbol ?isAutomatic\@CommandBlockActor\@\@QEBA_NXZ
      */
@@ -192,7 +192,7 @@ public:
     /**
      * @symbol ?markForSaving\@CommandBlockActor\@\@QEAAXAEAVBlockSource\@\@H_N\@Z
      */
-    MCAPI void markForSaving(class BlockSource&, int, bool);
+    MCAPI void markForSaving(class BlockSource&, int32_t, bool);
     /**
      * @symbol ?performCommand\@CommandBlockActor\@\@QEAA_NAEAVBlockSource\@\@\@Z
      */
@@ -204,7 +204,7 @@ public:
     /**
      * @symbol ?setSuccessCount\@CommandBlockActor\@\@QEAAXH\@Z
      */
-    MCAPI void setSuccessCount(int);
+    MCAPI void setSuccessCount(int32_t);
     /**
      * @symbol
      * ?updateBlock\@CommandBlockActor\@\@QEAAXAEAVBlockSource\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1W4CommandBlockMode\@\@_N33H3\@Z
@@ -217,7 +217,7 @@ public:
         bool,
         bool,
         bool,
-        int,
+        int32_t,
         bool
     );
     /**

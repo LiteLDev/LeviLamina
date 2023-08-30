@@ -222,7 +222,7 @@ public:
     /**
      * @symbol ?setFavoredSlot\@AbstractArrow\@\@QEAAXH\@Z
      */
-    MCAPI void setFavoredSlot(int);
+    MCAPI void setFavoredSlot(int32_t);
     /**
      * @symbol ?setIsCreative\@AbstractArrow\@\@QEAAX_N\@Z
      */

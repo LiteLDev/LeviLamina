@@ -36,6 +36,6 @@ protected:
     /**
      * @symbol ?mRegistryCount\@EntityRegistryBase\@\@1U?$atomic\@I\@std\@\@A
      */
-    MCAPI static std::atomic<unsigned int> mRegistryCount;
+    MCAPI static std::atomic<uint32_t> mRegistryCount;
     // NOLINTEND
 };

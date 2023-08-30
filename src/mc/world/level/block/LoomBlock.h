@@ -215,7 +215,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@LoomBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -239,6 +239,6 @@ public:
     /**
      * @symbol ??0LoomBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI LoomBlock(std::string const&, int);
+    MCAPI LoomBlock(std::string const&, int32_t);
     // NOLINTEND
 };

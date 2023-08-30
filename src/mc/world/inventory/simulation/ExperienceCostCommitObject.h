@@ -38,6 +38,6 @@ public:
     /**
      * @symbol ??0ExperienceCostCommitObject\@\@QEAA\@H\@Z
      */
-    MCAPI ExperienceCostCommitObject(int);
+    MCAPI ExperienceCostCommitObject(int32_t);
     // NOLINTEND
 };

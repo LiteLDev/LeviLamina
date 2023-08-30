@@ -34,7 +34,7 @@ public:
          * ?add\@BlocksChangedInfo\@UpdateSubChunkBlocksPacket\@\@QEAAXAEBVBlockPos\@\@IAEBVBlock\@\@HPEBUActorBlockSyncMessage\@\@\@Z
          */
         MCAPI void
-        add(class BlockPos const&, unsigned int, class Block const&, int, struct ActorBlockSyncMessage const*);
+        add(class BlockPos const&, uint32_t, class Block const&, int32_t, struct ActorBlockSyncMessage const*);
         /**
          * @symbol ??1BlocksChangedInfo\@UpdateSubChunkBlocksPacket\@\@QEAA\@XZ
          */

@@ -28,10 +28,10 @@ public:
         class ChunkPos const&,
         class WorldGenCache const&,
         class Aquifer*,
-        std::function<void(class BlockPos const&, class Block const&, int)>&&,
+        std::function<void(class BlockPos const&, class Block const&, int32_t)>&&,
         bool,
-        std::vector<short>*,
-        int
+        std::vector<int16_t>*,
+        int32_t
     );
     /**
      * @symbol
@@ -54,7 +54,7 @@ public:
     /**
      * @symbol ?getLevelGenHeight\@OverworldGenerator2d\@\@UEBAHXZ
      */
-    MCVAPI int getLevelGenHeight() const;
+    MCVAPI int32_t getLevelGenHeight() const;
     /**
      * @symbol
      * ?getMaterialAdjNoise\@OverworldGenerator2d\@\@MEBAAEBV?$unique_ptr\@VPerlinSimplexNoise\@\@U?$default_delete\@VPerlinSimplexNoise\@\@\@std\@\@\@std\@\@XZ
@@ -75,7 +75,7 @@ public:
      * ??0OverworldGenerator2d\@\@QEAA\@AEAVDimension\@\@I_NPEBVBiome\@\@V?$unique_ptr\@VStructureFeatureRegistry\@\@U?$default_delete\@VStructureFeatureRegistry\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI
-    OverworldGenerator2d(class Dimension&, unsigned int, bool, class Biome const*, std::unique_ptr<class StructureFeatureRegistry>);
+    OverworldGenerator2d(class Dimension&, uint32_t, bool, class Biome const*, std::unique_ptr<class StructureFeatureRegistry>);
     // NOLINTEND
 
     // private:
@@ -89,7 +89,7 @@ public:
      * @symbol
      * ?_makeBiomeSource\@OverworldGenerator2d\@\@CA?AV?$unique_ptr\@VBiomeSource\@\@U?$default_delete\@VBiomeSource\@\@\@std\@\@\@std\@\@IAEBVDimension\@\@\@Z
      */
-    MCAPI static std::unique_ptr<class BiomeSource> _makeBiomeSource(unsigned int, class Dimension const&);
+    MCAPI static std::unique_ptr<class BiomeSource> _makeBiomeSource(uint32_t, class Dimension const&);
     /**
      * @symbol
      * ?_makeCommonNodeGraph\@OverworldGenerator2d\@\@CA?AV?$shared_ptr\@V?$OperationNode\@PEAVBiome\@\@VPos2d\@\@\@\@\@std\@\@W4GeneratorType\@\@AEBVBiomeRegistry\@\@\@Z

@@ -53,7 +53,7 @@ public:
      * @symbol
      * ??0TransferPacket\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI TransferPacket(std::string const&, int);
+    MCAPI TransferPacket(std::string const&, int32_t);
     /**
      * @symbol ??0TransferPacket\@\@QEAA\@XZ
      */

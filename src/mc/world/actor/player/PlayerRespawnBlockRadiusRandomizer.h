@@ -19,6 +19,6 @@ public:
     /**
      * @symbol ?init\@PlayerRespawnBlockRadiusRandomizer\@\@QEAAXIAEAVRandom\@\@\@Z
      */
-    MCAPI void init(unsigned int, class Random&);
+    MCAPI void init(uint32_t, class Random&);
     // NOLINTEND
 };

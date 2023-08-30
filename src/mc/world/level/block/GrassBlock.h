@@ -181,7 +181,7 @@ public:
      * @vftbl 109
      * @symbol ?calcVariant\@GrassBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVColor\@mce\@\@\@Z
      */
-    virtual int calcVariant(class BlockSource&, class BlockPos const&, class mce::Color const&) const;
+    virtual int32_t calcVariant(class BlockSource&, class BlockPos const&, class mce::Color const&) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -211,12 +211,12 @@ public:
      * @vftbl 135
      * @symbol ?getColor\@GrassBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getColor(class Block const&) const;
+    virtual int32_t getColor(class Block const&) const;
     /**
      * @vftbl 136
      * @symbol ?getColor\@GrassBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual int32_t getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -256,7 +256,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@GrassBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -276,7 +276,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@GrassBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GRASSBLOCK
     /**
      * @symbol ?waterSpreadCausesSpawn\@GrassBlock\@\@UEBA_NXZ
@@ -286,7 +286,7 @@ public:
     /**
      * @symbol ??0GrassBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI GrassBlock(std::string const&, int);
+    MCAPI GrassBlock(std::string const&, int32_t);
     /**
      * @symbol ?fertilize\@GrassBlock\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandomize\@\@\@Z
      */

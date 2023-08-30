@@ -48,6 +48,6 @@ public:
     /**
      * @symbol ?placeCauldron\@SwamplandHut\@\@IEAAXAEAVBlockSource\@\@AEAVRandom\@\@HHHAEBVBoundingBox\@\@\@Z
      */
-    MCAPI void placeCauldron(class BlockSource&, class Random&, int, int, int, class BoundingBox const&);
+    MCAPI void placeCauldron(class BlockSource&, class Random&, int32_t, int32_t, int32_t, class BoundingBox const&);
     // NOLINTEND
 };

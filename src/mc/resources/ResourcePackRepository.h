@@ -19,73 +19,73 @@ namespace mce { class UUID; }
 
 class ResourcePackRepository : public ::IResourcePackRepository {
 public:
+
     // ResourcePackRepository inner types declare
     // clang-format off
     struct KnownPackInfo;
     struct KnownPackContainer;
     // clang-format on
-
+    
     // ResourcePackRepository inner types define
     struct KnownPackInfo {
-
+    
     public:
         // prevent constructor by default
         KnownPackInfo() = delete;
-
+    
     public:
         // NOLINTBEGIN
         /**
          * @symbol ??0KnownPackInfo\@ResourcePackRepository\@\@QEAA\@AEBU01\@\@Z
          */
-        MCAPI KnownPackInfo(struct ResourcePackRepository::KnownPackInfo const&);
+        MCAPI KnownPackInfo(struct ResourcePackRepository::KnownPackInfo const &);
         /**
          * @symbol ??4KnownPackInfo\@ResourcePackRepository\@\@QEAAAEAU01\@AEBU01\@\@Z
          */
-        MCAPI struct ResourcePackRepository::KnownPackInfo&
-        operator=(struct ResourcePackRepository::KnownPackInfo const&);
+        MCAPI struct ResourcePackRepository::KnownPackInfo & operator=(struct ResourcePackRepository::KnownPackInfo const &);
         /**
          * @symbol ??8KnownPackInfo\@ResourcePackRepository\@\@QEBA_NAEBU01\@\@Z
          */
-        MCAPI bool operator==(struct ResourcePackRepository::KnownPackInfo const&) const;
+        MCAPI bool operator==(struct ResourcePackRepository::KnownPackInfo const &) const;
         /**
          * @symbol ??1KnownPackInfo\@ResourcePackRepository\@\@QEAA\@XZ
          */
         MCAPI ~KnownPackInfo();
         // NOLINTEND
+    
     };
-
+    
     struct KnownPackContainer {
-
+    
     public:
         // prevent constructor by default
-        KnownPackContainer& operator=(KnownPackContainer const&) = delete;
-        KnownPackContainer(KnownPackContainer const&)            = delete;
-        KnownPackContainer()                                     = delete;
-
+        KnownPackContainer& operator=(KnownPackContainer const &) = delete;
+        KnownPackContainer(KnownPackContainer const &) = delete;
+        KnownPackContainer() = delete;
+    
     public:
         // NOLINTBEGIN
         /**
-         * @symbol
-         * ?getPack\@KnownPackContainer\@ResourcePackRepository\@\@QEAAPEAUKnownPackInfo\@2\@AEBVResourceLocation\@\@\@Z
+         * @symbol ?getPack\@KnownPackContainer\@ResourcePackRepository\@\@QEAAPEAUKnownPackInfo\@2\@AEBVResourceLocation\@\@\@Z
          */
-        MCAPI struct ResourcePackRepository::KnownPackInfo* getPack(class ResourceLocation const&);
+        MCAPI struct ResourcePackRepository::KnownPackInfo * getPack(class ResourceLocation const &);
         /**
-         * @symbol
-         * ?getPack\@KnownPackContainer\@ResourcePackRepository\@\@QEBAPEBUKnownPackInfo\@2\@AEBVResourceLocation\@\@\@Z
+         * @symbol ?getPack\@KnownPackContainer\@ResourcePackRepository\@\@QEBAPEBUKnownPackInfo\@2\@AEBVResourceLocation\@\@\@Z
          */
-        MCAPI struct ResourcePackRepository::KnownPackInfo const* getPack(class ResourceLocation const&) const;
+        MCAPI struct ResourcePackRepository::KnownPackInfo const * getPack(class ResourceLocation const &) const;
         /**
          * @symbol ??1KnownPackContainer\@ResourcePackRepository\@\@QEAA\@XZ
          */
         MCAPI ~KnownPackContainer();
         // NOLINTEND
+    
     };
-
+    
 public:
     // prevent constructor by default
-    ResourcePackRepository& operator=(ResourcePackRepository const&) = delete;
-    ResourcePackRepository(ResourcePackRepository const&)            = delete;
-    ResourcePackRepository()                                         = delete;
+    ResourcePackRepository& operator=(ResourcePackRepository const &) = delete;
+    ResourcePackRepository(ResourcePackRepository const &) = delete;
+    ResourcePackRepository() = delete;
 
 public:
     // NOLINTBEGIN
@@ -96,102 +96,94 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol
-     * ?getResourcePacksByPackId\@ResourcePackRepository\@\@UEBAXAEBV?$vector\@UPackInstanceId\@\@V?$allocator\@UPackInstanceId\@\@\@std\@\@\@std\@\@AEAV?$vector\@VPackInstance\@\@V?$allocator\@VPackInstance\@\@\@std\@\@\@3\@\@Z
+     * @symbol ?getResourcePacksByPackId\@ResourcePackRepository\@\@UEBAXAEBV?$vector\@UPackInstanceId\@\@V?$allocator\@UPackInstanceId\@\@\@std\@\@\@std\@\@AEAV?$vector\@VPackInstance\@\@V?$allocator\@VPackInstance\@\@\@std\@\@\@3\@\@Z
      */
-    virtual void
-    getResourcePacksByPackId(std::vector<struct PackInstanceId> const&, std::vector<class PackInstance>&) const;
+    virtual void getResourcePacksByPackId(std::vector<struct PackInstanceId> const &, std::vector<class PackInstance> &) const;
     /**
      * @vftbl 2
      * @symbol ?getResourcePackForPackId\@ResourcePackRepository\@\@UEBAPEAVResourcePack\@\@AEBUPackIdVersion\@\@\@Z
      */
-    virtual class ResourcePack* getResourcePackForPackId(struct PackIdVersion const&) const;
+    virtual class ResourcePack * getResourcePackForPackId(struct PackIdVersion const &) const;
     /**
      * @vftbl 3
      * @symbol ?getResourcePackByUUID\@ResourcePackRepository\@\@UEBAPEAVResourcePack\@\@AEBVUUID\@mce\@\@\@Z
      */
-    virtual class ResourcePack* getResourcePackByUUID(class mce::UUID const&) const;
+    virtual class ResourcePack * getResourcePackByUUID(class mce::UUID const &) const;
     /**
      * @vftbl 4
-     * @symbol
-     * ?getResourcePackForPackIdOwned\@ResourcePackRepository\@\@UEBAPEAVResourcePack\@\@AEBUPackIdVersion\@\@\@Z
+     * @symbol ?getResourcePackForPackIdOwned\@ResourcePackRepository\@\@UEBAPEAVResourcePack\@\@AEBUPackIdVersion\@\@\@Z
      */
-    virtual class ResourcePack* getResourcePackForPackIdOwned(struct PackIdVersion const&) const;
+    virtual class ResourcePack * getResourcePackForPackIdOwned(struct PackIdVersion const &) const;
     /**
      * @vftbl 5
-     * @symbol
-     * ?getResourcePackSatisfiesPackId\@ResourcePackRepository\@\@UEBAPEAVResourcePack\@\@AEBUPackIdVersion\@\@_N\@Z
+     * @symbol ?getResourcePackSatisfiesPackId\@ResourcePackRepository\@\@UEBAPEAVResourcePack\@\@AEBUPackIdVersion\@\@_N\@Z
      */
-    virtual class ResourcePack* getResourcePackSatisfiesPackId(struct PackIdVersion const&, bool) const;
+    virtual class ResourcePack * getResourcePackSatisfiesPackId(struct PackIdVersion const &, bool) const;
     /**
      * @vftbl 6
-     * @symbol
-     * ?getResourcePackContainingModule\@ResourcePackRepository\@\@UEBAPEAVResourcePack\@\@AEBUPackIdVersion\@\@\@Z
+     * @symbol ?getResourcePackContainingModule\@ResourcePackRepository\@\@UEBAPEAVResourcePack\@\@AEBUPackIdVersion\@\@\@Z
      */
-    virtual class ResourcePack* getResourcePackContainingModule(struct PackIdVersion const&) const;
+    virtual class ResourcePack * getResourcePackContainingModule(struct PackIdVersion const &) const;
     /**
      * @vftbl 7
      * @symbol ?getResourcePackInPath\@ResourcePackRepository\@\@UEBAPEAVResourcePack\@\@AEBVPath\@Core\@\@\@Z
      */
-    virtual class ResourcePack* getResourcePackInPath(class Core::Path const&) const;
+    virtual class ResourcePack * getResourcePackInPath(class Core::Path const &) const;
     /**
      * @vftbl 8
      * @symbol ?isResourcePackLoaded\@ResourcePackRepository\@\@UEAA_NAEBUPackIdVersion\@\@AEBW4PackOrigin\@\@\@Z
      */
-    virtual bool isResourcePackLoaded(struct PackIdVersion const&, enum class PackOrigin const&);
+    virtual bool isResourcePackLoaded(struct PackIdVersion const &, enum class PackOrigin const &);
     /**
      * @vftbl 9
      * @symbol ?getPackLoadingReport\@ResourcePackRepository\@\@UEBAPEBVPackSourceReport\@\@XZ
      */
-    virtual class PackSourceReport const* getPackLoadingReport() const;
+    virtual class PackSourceReport const * getPackLoadingReport() const;
     /**
      * @vftbl 10
      * @symbol ?getEditorPack\@ResourcePackRepository\@\@UEBAPEAVResourcePack\@\@XZ
      */
-    virtual class ResourcePack* getEditorPack() const;
+    virtual class ResourcePack * getEditorPack() const;
     /**
      * @vftbl 11
      * @symbol ?getVanillaPack\@ResourcePackRepository\@\@UEBAPEAVResourcePack\@\@XZ
      */
-    virtual class ResourcePack* getVanillaPack() const;
+    virtual class ResourcePack * getVanillaPack() const;
     /**
      * @vftbl 12
      * @symbol ?getChemistryPack\@ResourcePackRepository\@\@UEBAPEAVResourcePack\@\@XZ
      */
-    virtual class ResourcePack* getChemistryPack() const;
+    virtual class ResourcePack * getChemistryPack() const;
     /**
      * @vftbl 13
      * @symbol ?getChemistryServerPack\@ResourcePackRepository\@\@UEBAPEAVResourcePack\@\@XZ
      */
-    virtual class ResourcePack* getChemistryServerPack() const;
+    virtual class ResourcePack * getChemistryServerPack() const;
     /**
      * @vftbl 14
-     * @symbol
-     * ?setServicePacks\@ResourcePackRepository\@\@UEAA_NV?$vector\@UPackIdVersion\@\@V?$allocator\@UPackIdVersion\@\@\@std\@\@\@std\@\@\@Z
+     * @symbol ?setServicePacks\@ResourcePackRepository\@\@UEAA_NV?$vector\@UPackIdVersion\@\@V?$allocator\@UPackIdVersion\@\@\@std\@\@\@std\@\@\@Z
      */
     virtual bool setServicePacks(std::vector<struct PackIdVersion>);
     /**
      * @vftbl 15
      * @symbol ?addServicePacksToStack\@ResourcePackRepository\@\@UEBAXAEAVResourcePackStack\@\@\@Z
      */
-    virtual void addServicePacksToStack(class ResourcePackStack&) const;
+    virtual void addServicePacksToStack(class ResourcePackStack &) const;
     /**
      * @vftbl 16
-     * @symbol
-     * ?addCachedResourcePacks\@ResourcePackRepository\@\@UEAAXPEBV?$unordered_map\@VContentIdentity\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@U?$hash\@VContentIdentity\@\@\@3\@U?$equal_to\@VContentIdentity\@\@\@3\@V?$allocator\@U?$pair\@$$CBVContentIdentity\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@3\@\@std\@\@\@Z
+     * @symbol ?addCachedResourcePacks\@ResourcePackRepository\@\@UEAAXPEBV?$unordered_map\@VContentIdentity\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@U?$hash\@VContentIdentity\@\@\@3\@U?$equal_to\@VContentIdentity\@\@\@3\@V?$allocator\@U?$pair\@$$CBVContentIdentity\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@3\@\@std\@\@\@Z
      */
-    virtual void addCachedResourcePacks(std::unordered_map<class ContentIdentity, std::string> const*);
+    virtual void addCachedResourcePacks(std::unordered_map<class ContentIdentity,std::string> const *);
     /**
      * @vftbl 17
      * @symbol ?addWorldResourcePacks\@ResourcePackRepository\@\@UEAAXAEBVPath\@Core\@\@\@Z
      */
-    virtual void addWorldResourcePacks(class Core::Path const&);
+    virtual void addWorldResourcePacks(class Core::Path const &);
     /**
      * @vftbl 18
-     * @symbol
-     * ?addPremiumWorldTemplateResourcePacks\@ResourcePackRepository\@\@UEAAXAEBVPath\@Core\@\@AEBVContentIdentity\@\@\@Z
+     * @symbol ?addPremiumWorldTemplateResourcePacks\@ResourcePackRepository\@\@UEAAXAEBVPath\@Core\@\@AEBVContentIdentity\@\@\@Z
      */
-    virtual void addPremiumWorldTemplateResourcePacks(class Core::Path const&, class ContentIdentity const&);
+    virtual void addPremiumWorldTemplateResourcePacks(class Core::Path const &, class ContentIdentity const &);
     /**
      * @vftbl 19
      * @symbol ?removePacksLoadedFromCache\@ResourcePackRepository\@\@UEAAXXZ
@@ -204,62 +196,52 @@ public:
     virtual void removePacksLoadedFromWorld();
     /**
      * @vftbl 21
-     * @symbol
-     * ?getResourcePacksPath\@ResourcePackRepository\@\@UEBA?BV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getResourcePacksPath\@ResourcePackRepository\@\@UEBA?BV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     virtual class Core::PathBuffer<std::string> const getResourcePacksPath() const;
     /**
      * @vftbl 22
-     * @symbol
-     * ?getBehaviorPacksPath\@ResourcePackRepository\@\@UEBA?BV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getBehaviorPacksPath\@ResourcePackRepository\@\@UEBA?BV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     virtual class Core::PathBuffer<std::string> const getBehaviorPacksPath() const;
     /**
      * @vftbl 23
-     * @symbol
-     * ?getSkinPacksPath\@ResourcePackRepository\@\@UEBA?BV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getSkinPacksPath\@ResourcePackRepository\@\@UEBA?BV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     virtual class Core::PathBuffer<std::string> const getSkinPacksPath() const;
     /**
      * @vftbl 24
-     * @symbol
-     * ?getDevelopmentResourcePacksPath\@ResourcePackRepository\@\@UEBA?BV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getDevelopmentResourcePacksPath\@ResourcePackRepository\@\@UEBA?BV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     virtual class Core::PathBuffer<std::string> const getDevelopmentResourcePacksPath() const;
     /**
      * @vftbl 25
-     * @symbol
-     * ?getDevelopmentBehaviorPacksPath\@ResourcePackRepository\@\@UEBA?BV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getDevelopmentBehaviorPacksPath\@ResourcePackRepository\@\@UEBA?BV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     virtual class Core::PathBuffer<std::string> const getDevelopmentBehaviorPacksPath() const;
     /**
      * @vftbl 26
-     * @symbol
-     * ?getDevelopmentSkinPacksPath\@ResourcePackRepository\@\@UEBA?BV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getDevelopmentSkinPacksPath\@ResourcePackRepository\@\@UEBA?BV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     virtual class Core::PathBuffer<std::string> const getDevelopmentSkinPacksPath() const;
     /**
      * @vftbl 27
-     * @symbol
-     * ?getTreatmentPacksPath\@ResourcePackRepository\@\@UEBA?BV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getTreatmentPacksPath\@ResourcePackRepository\@\@UEBA?BV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     virtual class Core::PathBuffer<std::string> const getTreatmentPacksPath() const;
     /**
      * @vftbl 28
-     * @symbol
-     * ?getKnownPacksPath\@ResourcePackRepository\@\@UEBA?BV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@W4KnownPackType\@\@\@Z
+     * @symbol ?getKnownPacksPath\@ResourcePackRepository\@\@UEBA?BV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@W4KnownPackType\@\@\@Z
      */
     virtual class Core::PathBuffer<std::string> const getKnownPacksPath(enum class KnownPackType) const;
     /**
      * @vftbl 29
-     * @symbol
-     * ?getKnownValidPacksPath\@ResourcePackRepository\@\@UEBA?BV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getKnownValidPacksPath\@ResourcePackRepository\@\@UEBA?BV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     virtual class Core::PathBuffer<std::string> const getKnownValidPacksPath() const;
     /**
      * @vftbl 30
-     * @symbol
-     * ?getKnownInvalidPacksPath\@ResourcePackRepository\@\@UEBA?BV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
+     * @symbol ?getKnownInvalidPacksPath\@ResourcePackRepository\@\@UEBA?BV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     virtual class Core::PathBuffer<std::string> const getKnownInvalidPacksPath() const;
     /**
@@ -279,95 +261,89 @@ public:
     virtual void requestReloadDynamicPackagePacks();
     /**
      * @vftbl 34
-     * @symbol
-     * ?getKeyProvider\@ResourcePackRepository\@\@UEBA?AV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentKeyProvider\@\@\@Bedrock\@\@\@gsl\@\@XZ
+     * @symbol ?getKeyProvider\@ResourcePackRepository\@\@UEBA?AV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentKeyProvider\@\@\@Bedrock\@\@\@gsl\@\@XZ
      */
     virtual class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> getKeyProvider() const;
     /**
      * @vftbl 35
      * @symbol ?getPackManifestFactory\@ResourcePackRepository\@\@UEAAAEAVPackManifestFactory\@\@XZ
      */
-    virtual class PackManifestFactory& getPackManifestFactory();
+    virtual class PackManifestFactory & getPackManifestFactory();
     /**
      * @vftbl 36
      * @symbol ?getPackSettingsFactory\@ResourcePackRepository\@\@UEBAAEAVPackSettingsFactory\@\@XZ
      */
-    virtual class PackSettingsFactory& getPackSettingsFactory() const;
+    virtual class PackSettingsFactory & getPackSettingsFactory() const;
     /**
      * @vftbl 37
      * @symbol ?getPackSourceFactory\@ResourcePackRepository\@\@UEAAAEAVPackSourceFactory\@\@XZ
      */
-    virtual class PackSourceFactory& getPackSourceFactory();
+    virtual class PackSourceFactory & getPackSourceFactory();
     /**
      * @vftbl 38
      * @symbol ?getWorldPackSource\@ResourcePackRepository\@\@UEBAPEBVCompositePackSource\@\@XZ
      */
-    virtual class CompositePackSource const* getWorldPackSource() const;
+    virtual class CompositePackSource const * getWorldPackSource() const;
     /**
      * @vftbl 39
-     * @symbol
-     * ?getPacksByResourceLocation\@ResourcePackRepository\@\@UEBA?AV?$vector\@PEAVResourcePack\@\@V?$allocator\@PEAVResourcePack\@\@\@std\@\@\@std\@\@W4PackOrigin\@\@\@Z
+     * @symbol ?getPacksByResourceLocation\@ResourcePackRepository\@\@UEBA?AV?$vector\@PEAVResourcePack\@\@V?$allocator\@PEAVResourcePack\@\@\@std\@\@\@std\@\@W4PackOrigin\@\@\@Z
      */
-    virtual std::vector<class ResourcePack*> getPacksByResourceLocation(enum class PackOrigin) const;
+    virtual std::vector<class ResourcePack *> getPacksByResourceLocation(enum class PackOrigin) const;
     /**
      * @vftbl 40
-     * @symbol
-     * ?getPacksByType\@ResourcePackRepository\@\@UEBA?AV?$vector\@PEAVResourcePack\@\@V?$allocator\@PEAVResourcePack\@\@\@std\@\@\@std\@\@W4PackType\@\@\@Z
+     * @symbol ?getPacksByType\@ResourcePackRepository\@\@UEBA?AV?$vector\@PEAVResourcePack\@\@V?$allocator\@PEAVResourcePack\@\@\@std\@\@\@std\@\@W4PackType\@\@\@Z
      */
-    virtual std::vector<class ResourcePack*> getPacksByType(enum class PackType) const;
+    virtual std::vector<class ResourcePack *> getPacksByType(enum class PackType) const;
     /**
      * @vftbl 41
      * @symbol ?addKnownPackFromImport\@ResourcePackRepository\@\@UEAAXAEBVPackManifest\@\@\@Z
      */
-    virtual void addKnownPackFromImport(class PackManifest const&);
+    virtual void addKnownPackFromImport(class PackManifest const &);
     /**
      * @vftbl 42
      * @symbol ?addInvalidPack\@ResourcePackRepository\@\@UEAAXAEBVResourceLocation\@\@W4PackType\@\@\@Z
      */
-    virtual void addInvalidPack(class ResourceLocation const&, enum class PackType);
+    virtual void addInvalidPack(class ResourceLocation const &, enum class PackType);
     /**
      * @vftbl 43
-     * @symbol
-     * ?getInvalidPacks\@ResourcePackRepository\@\@UEBAAEBV?$vector\@VResourceLocation\@\@V?$allocator\@VResourceLocation\@\@\@std\@\@\@std\@\@W4PackType\@\@\@Z
+     * @symbol ?getInvalidPacks\@ResourcePackRepository\@\@UEBAAEBV?$vector\@VResourceLocation\@\@V?$allocator\@VResourceLocation\@\@\@std\@\@\@std\@\@W4PackType\@\@\@Z
      */
-    virtual std::vector<class ResourceLocation> const& getInvalidPacks(enum class PackType) const;
+    virtual std::vector<class ResourceLocation> const & getInvalidPacks(enum class PackType) const;
     /**
      * @vftbl 44
-     * @symbol
-     * ?getInvalidPacks\@ResourcePackRepository\@\@UEBA?AV?$vector\@VResourceLocation\@\@V?$allocator\@VResourceLocation\@\@\@std\@\@\@std\@\@AEBUInvalidPacksFilterGroup\@\@\@Z
+     * @symbol ?getInvalidPacks\@ResourcePackRepository\@\@UEBA?AV?$vector\@VResourceLocation\@\@V?$allocator\@VResourceLocation\@\@\@std\@\@\@std\@\@AEBUInvalidPacksFilterGroup\@\@\@Z
      */
-    virtual std::vector<class ResourceLocation> getInvalidPacks(struct InvalidPacksFilterGroup const&) const;
+    virtual std::vector<class ResourceLocation> getInvalidPacks(struct InvalidPacksFilterGroup const &) const;
     /**
      * @vftbl 45
      * @symbol ?deletePack\@ResourcePackRepository\@\@UEAAXAEBVResourceLocation\@\@\@Z
      */
-    virtual void deletePack(class ResourceLocation const&);
+    virtual void deletePack(class ResourceLocation const &);
     /**
      * @vftbl 46
      * @symbol ?deletePackFiles\@ResourcePackRepository\@\@UEAAXAEBVResourceLocation\@\@\@Z
      */
-    virtual void deletePackFiles(class ResourceLocation const&);
+    virtual void deletePackFiles(class ResourceLocation const &);
     /**
      * @vftbl 47
      * @symbol ?postDeletePack\@ResourcePackRepository\@\@UEAAXAEBVResourceLocation\@\@\@Z
      */
-    virtual void postDeletePack(class ResourceLocation const&);
+    virtual void postDeletePack(class ResourceLocation const &);
     /**
      * @vftbl 48
      * @symbol ?untrackInvalidPack\@ResourcePackRepository\@\@UEAAXAEBVResourceLocation\@\@\@Z
      */
-    virtual void untrackInvalidPack(class ResourceLocation const&);
+    virtual void untrackInvalidPack(class ResourceLocation const &);
     /**
      * @vftbl 49
-     * @symbol
-     * ?registerResourcePackRemovedCallback\@ResourcePackRepository\@\@UEAAXPEAXV?$function\@$$A6AXPEAVResourcePack\@\@\@Z\@std\@\@\@Z
+     * @symbol ?registerResourcePackRemovedCallback\@ResourcePackRepository\@\@UEAAXPEAXV?$function\@$$A6AXPEAVResourcePack\@\@\@Z\@std\@\@\@Z
      */
-    virtual void registerResourcePackRemovedCallback(void*, std::function<void(class ResourcePack*)>);
+    virtual void registerResourcePackRemovedCallback(void *, std::function<void (class ResourcePack *)>);
     /**
      * @vftbl 50
      * @symbol ?unregisterResourcePackRemovedCallback\@ResourcePackRepository\@\@UEAAXPEAX\@Z
      */
-    virtual void unregisterResourcePackRemovedCallback(void*);
+    virtual void unregisterResourcePackRemovedCallback(void *);
     /**
      * @vftbl 51
      * @symbol ?isInitialized\@ResourcePackRepository\@\@UEAA_NXZ
@@ -380,17 +356,9 @@ public:
     MCVAPI ~ResourcePackRepository();
 #endif
     /**
-     * @symbol
-     * ??0ResourcePackRepository\@\@QEAA\@AEAVIMinecraftEventing\@\@AEAVPackManifestFactory\@\@AEBV?$not_null\@V?$NonOwnerPointer\@VIContentAccessibilityProvider\@\@\@Bedrock\@\@\@gsl\@\@AEBV?$not_null\@V?$NonOwnerPointer\@VFilePathManager\@Core\@\@\@Bedrock\@\@\@4\@AEAVPackSourceFactory\@\@_N\@Z
+     * @symbol ??0ResourcePackRepository\@\@QEAA\@AEAVIMinecraftEventing\@\@AEAVPackManifestFactory\@\@AEBV?$not_null\@V?$NonOwnerPointer\@VIContentAccessibilityProvider\@\@\@Bedrock\@\@\@gsl\@\@AEBV?$not_null\@V?$NonOwnerPointer\@VFilePathManager\@Core\@\@\@Bedrock\@\@\@4\@AEAVPackSourceFactory\@\@_N\@Z
      */
-    MCAPI ResourcePackRepository(
-        class IMinecraftEventing&,
-        class PackManifestFactory&,
-        class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentAccessibilityProvider>> const&,
-        class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const&,
-        class PackSourceFactory&,
-        bool
-    );
+    MCAPI ResourcePackRepository(class IMinecraftEventing &, class PackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentAccessibilityProvider>> const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, class PackSourceFactory &, bool);
     /**
      * @symbol ?CHEMISTRY_PACK_UUID\@ResourcePackRepository\@\@2VUUID\@mce\@\@B
      */
@@ -404,14 +372,9 @@ public:
     // private:
     // NOLINTBEGIN
     /**
-     * @symbol
-     * ?_detectKnownPacksChange\@ResourcePackRepository\@\@AEAAXAEAUKnownPackContainer\@1\@AEBU21\@W4KnownPackType\@\@\@Z
+     * @symbol ?_detectKnownPacksChange\@ResourcePackRepository\@\@AEAAXAEAUKnownPackContainer\@1\@AEBU21\@W4KnownPackType\@\@\@Z
      */
-    MCAPI void _detectKnownPacksChange(
-        struct ResourcePackRepository::KnownPackContainer&,
-        struct ResourcePackRepository::KnownPackContainer const&,
-        enum class KnownPackType
-    );
+    MCAPI void _detectKnownPacksChange(struct ResourcePackRepository::KnownPackContainer &, struct ResourcePackRepository::KnownPackContainer const &, enum class KnownPackType);
     /**
      * @symbol ?_findVanillaPacks\@ResourcePackRepository\@\@AEAAXXZ
      */
@@ -433,10 +396,9 @@ public:
      */
     MCAPI void _initializeWorldPackSource();
     /**
-     * @symbol
-     * ?_loadLastKnownUserPacks\@ResourcePackRepository\@\@AEAAXAEAUKnownPackContainer\@1\@W4KnownPackType\@\@\@Z
+     * @symbol ?_loadLastKnownUserPacks\@ResourcePackRepository\@\@AEAAXAEAUKnownPackContainer\@1\@W4KnownPackType\@\@\@Z
      */
-    MCAPI void _loadLastKnownUserPacks(struct ResourcePackRepository::KnownPackContainer&, enum class KnownPackType);
+    MCAPI void _loadLastKnownUserPacks(struct ResourcePackRepository::KnownPackContainer &, enum class KnownPackType);
     /**
      * @symbol ?_loadPacks\@ResourcePackRepository\@\@AEAAX_N\@Z
      */
@@ -444,7 +406,7 @@ public:
     /**
      * @symbol ?_packExists\@ResourcePackRepository\@\@AEBA_NAEBVUUID\@mce\@\@AEBVSemVersion\@\@W4PackOrigin\@\@\@Z
      */
-    MCAPI bool _packExists(class mce::UUID const&, class SemVersion const&, enum class PackOrigin) const;
+    MCAPI bool _packExists(class mce::UUID const &, class SemVersion const &, enum class PackOrigin) const;
     /**
      * @symbol ?_reloadUserPacks\@ResourcePackRepository\@\@AEAAXXZ
      */
@@ -452,14 +414,16 @@ public:
     /**
      * @symbol ?_removePack\@ResourcePackRepository\@\@AEAA_NAEBVResourceLocation\@\@_N\@Z
      */
-    MCAPI bool _removePack(class ResourceLocation const&, bool);
+    MCAPI bool _removePack(class ResourceLocation const &, bool);
     /**
      * @symbol ?_saveKnownUserPacks\@ResourcePackRepository\@\@AEAAXAEAUKnownPackContainer\@1\@W4KnownPackType\@\@\@Z
      */
-    MCAPI void _saveKnownUserPacks(struct ResourcePackRepository::KnownPackContainer&, enum class KnownPackType);
+    MCAPI void _saveKnownUserPacks(struct ResourcePackRepository::KnownPackContainer &, enum class KnownPackType);
     /**
      * @symbol ?_triggerRemoveResourcePackCallback\@ResourcePackRepository\@\@AEAAXPEAVResourcePack\@\@\@Z
      */
-    MCAPI void _triggerRemoveResourcePackCallback(class ResourcePack*);
+    MCAPI void _triggerRemoveResourcePackCallback(class ResourcePack *);
     // NOLINTEND
+
 };
+

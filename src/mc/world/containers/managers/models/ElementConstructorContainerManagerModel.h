@@ -32,17 +32,17 @@ public:
      * @vftbl 7
      * @symbol ?setSlot\@ElementConstructorContainerManagerModel\@\@UEAAXHAEBVItemStack\@\@_N\@Z
      */
-    virtual void setSlot(int, class ItemStack const&, bool);
+    virtual void setSlot(int32_t, class ItemStack const&, bool);
     /**
      * @vftbl 8
      * @symbol ?getSlot\@ElementConstructorContainerManagerModel\@\@UEBAAEBVItemStack\@\@H\@Z
      */
-    virtual class ItemStack const& getSlot(int) const;
+    virtual class ItemStack const& getSlot(int32_t) const;
     /**
      * @vftbl 9
      * @symbol ?setData\@ElementConstructorContainerManagerModel\@\@UEAAXHH\@Z
      */
-    virtual void setData(int, int);
+    virtual void setData(int32_t, int32_t);
     /**
      * @vftbl 10
      * @symbol ?broadcastChanges\@ElementConstructorContainerManagerModel\@\@UEAAXXZ

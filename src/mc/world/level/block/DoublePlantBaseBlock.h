@@ -52,7 +52,7 @@ public:
      * @vftbl 16
      * @symbol ?randomlyModifyPosition\@DoublePlantBaseBlock\@\@UEBA?AVVec3\@\@AEBVBlockPos\@\@AEAH\@Z
      */
-    virtual class Vec3 randomlyModifyPosition(class BlockPos const&, int&) const;
+    virtual class Vec3 randomlyModifyPosition(class BlockPos const&, int32_t&) const;
     /**
      * @vftbl 17
      * @symbol ?randomlyModifyPosition\@DoublePlantBaseBlock\@\@UEBA?AVVec3\@\@AEBVBlockPos\@\@\@Z
@@ -198,7 +198,7 @@ public:
      * @vftbl 93
      * @symbol ?mayPlace\@DoublePlantBaseBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
+    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 94
      * @symbol ?mayPlace\@DoublePlantBaseBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
@@ -311,7 +311,7 @@ public:
      * @vftbl 186
      * @symbol ?getResourceCount\@DoublePlantBaseBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 192
      * @symbol ?checkAlive\@DoublePlantBaseBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
@@ -332,6 +332,6 @@ public:
      * @symbol
      * ??0DoublePlantBaseBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI DoublePlantBaseBlock(std::string const&, int);
+    MCAPI DoublePlantBaseBlock(std::string const&, int32_t);
     // NOLINTEND
 };

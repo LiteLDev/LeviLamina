@@ -72,7 +72,7 @@ public:
      * ?WebSocketSendBinaryAsyncHandler\@WinHttpProvider\@httpclient\@xbox\@\@SAJPEAUHC_WEBSOCKET_OBSERVER\@\@PEBEIPEAUXAsyncBlock\@\@PEAX\@Z
      */
     MCAPI static long
-    WebSocketSendBinaryAsyncHandler(struct HC_WEBSOCKET_OBSERVER*, unsigned char const*, unsigned int, struct XAsyncBlock*, void*);
+    WebSocketSendBinaryAsyncHandler(struct HC_WEBSOCKET_OBSERVER*, uint8_t const*, uint32_t, struct XAsyncBlock*, void*);
     // NOLINTEND
 
     // private:
@@ -84,7 +84,7 @@ public:
     /**
      * @symbol ?GetHSession\@WinHttpProvider\@httpclient\@xbox\@\@AEAA?AV?$Result\@PEAX\@\@I\@Z
      */
-    MCAPI class Result<void*> GetHSession(unsigned int);
+    MCAPI class Result<void*> GetHSession(uint32_t);
     /**
      * @symbol ?HttpCallPerformAsync\@WinHttpProvider\@httpclient\@xbox\@\@AEAAJPEAUHC_CALL\@\@PEAUXAsyncBlock\@\@\@Z
      */

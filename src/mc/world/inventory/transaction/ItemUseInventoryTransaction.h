@@ -67,7 +67,7 @@ public:
     /**
      * @symbol ?resendBlocksAroundArea\@ItemUseInventoryTransaction\@\@QEBAXAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    MCAPI void resendBlocksAroundArea(class Player&, class BlockPos const&, unsigned char) const;
+    MCAPI void resendBlocksAroundArea(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @symbol ?resendPlayerState\@ItemUseInventoryTransaction\@\@QEBAXAEAVPlayer\@\@\@Z
      */

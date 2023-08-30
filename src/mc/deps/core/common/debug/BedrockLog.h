@@ -48,7 +48,7 @@ MCAPI void _initPriorityFilterMap();
  * @symbol
  * ?_messageIdString\@BedrockLog\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
  */
-MCAPI std::string _messageIdString(int);
+MCAPI std::string _messageIdString(int32_t);
 /**
  * @symbol
  * ?_openChannel\@BedrockLog\@\@YAXAEBVPath\@Core\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1W4LogCategory\@1\@W4LogChannel\@1\@_NPEAVLogSettingsUpdater\@\@N\@Z
@@ -66,7 +66,7 @@ MCAPI void _openChannel(
 /**
  * @symbol ?_priorityFilterString\@BedrockLog\@\@YAPEBDI\@Z
  */
-MCAPI char const* _priorityFilterString(unsigned int);
+MCAPI char const* _priorityFilterString(uint32_t);
 /**
  * @symbol
  * ?_processIdString\@BedrockLog\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -106,9 +106,9 @@ log(enum class BedrockLog::LogCategory,
     std::bitset<3>,
     enum class BedrockLog::LogRule,
     enum class LogAreaID,
-    unsigned int,
+    uint32_t,
     char const*,
-    int,
+    int32_t,
     char const*,
     ...);
 /**
@@ -116,11 +116,11 @@ log(enum class BedrockLog::LogCategory,
  * ?log_va\@BedrockLog\@\@YAXW4LogCategory\@1\@V?$bitset\@$02\@std\@\@W4LogRule\@1\@W4LogAreaID\@\@IPEBDH4PEAD\@Z
  */
 MCAPI void
-log_va(enum class BedrockLog::LogCategory, std::bitset<3>, enum class BedrockLog::LogRule, enum class LogAreaID, unsigned int, char const*, int, char const*, char*);
+log_va(enum class BedrockLog::LogCategory, std::bitset<3>, enum class BedrockLog::LogRule, enum class LogAreaID, uint32_t, char const*, int32_t, char const*, char*);
 /**
  * @symbol ?rakDebugLog\@BedrockLog\@\@YAHPEBDZZ
  */
-MCAPI int rakDebugLog(char const*, ...);
+MCAPI int32_t rakDebugLog(char const*, ...);
 /**
  * @symbol ?update\@BedrockLog\@\@YAXXZ
  */

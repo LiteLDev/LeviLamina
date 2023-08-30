@@ -41,7 +41,7 @@ public:
     /**
      * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBVBlockLegacy\@\@G\@Z
      */
-    MCAPI ItemDescriptorCount(class BlockLegacy const&, unsigned short);
+    MCAPI ItemDescriptorCount(class BlockLegacy const&, uint16_t);
     /**
      * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBV0\@\@Z
      */
@@ -49,15 +49,15 @@ public:
     /**
      * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBVBlock\@\@G\@Z
      */
-    MCAPI ItemDescriptorCount(class Block const&, unsigned short);
+    MCAPI ItemDescriptorCount(class Block const&, uint16_t);
     /**
      * @symbol ??0ItemDescriptorCount\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HG\@Z
      */
-    MCAPI ItemDescriptorCount(std::string_view, int, unsigned short);
+    MCAPI ItemDescriptorCount(std::string_view, int32_t, uint16_t);
     /**
      * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBUItemTag\@\@G\@Z
      */
-    MCAPI ItemDescriptorCount(struct ItemTag const&, unsigned short);
+    MCAPI ItemDescriptorCount(struct ItemTag const&, uint16_t);
     /**
      * @symbol ??0ItemDescriptorCount\@\@QEAA\@XZ
      */
@@ -65,18 +65,18 @@ public:
     /**
      * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBVItem\@\@HG\@Z
      */
-    MCAPI ItemDescriptorCount(class Item const&, int, unsigned short);
+    MCAPI ItemDescriptorCount(class Item const&, int32_t, uint16_t);
     /**
      * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBVItemDescriptor\@\@G\@Z
      */
-    MCAPI ItemDescriptorCount(class ItemDescriptor const&, unsigned short);
+    MCAPI ItemDescriptorCount(class ItemDescriptor const&, uint16_t);
     /**
      * @symbol ?getStackSize\@ItemDescriptorCount\@\@QEBAFXZ
      */
-    MCAPI short getStackSize() const;
+    MCAPI int16_t getStackSize() const;
     /**
      * @symbol ?setStackSize\@ItemDescriptorCount\@\@QEAAXF\@Z
      */
-    MCAPI void setStackSize(short);
+    MCAPI void setStackSize(int16_t);
     // NOLINTEND
 };

@@ -29,7 +29,7 @@ public:
      * ??0ScriptBlockRaycastHit\@ScriptModuleMinecraft\@\@QEAA\@AEAVBlockSource\@\@AEBVBlockPos\@\@EAEBVVec3\@\@AEBVWeakLifetimeScope\@Scripting\@\@\@Z
      */
     MCAPI
-    ScriptBlockRaycastHit(class BlockSource&, class BlockPos const&, unsigned char, class Vec3 const&, class Scripting::WeakLifetimeScope const&);
+    ScriptBlockRaycastHit(class BlockSource&, class BlockPos const&, uint8_t, class Vec3 const&, class Scripting::WeakLifetimeScope const&);
     /**
      * @symbol ??4ScriptBlockRaycastHit\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
      */

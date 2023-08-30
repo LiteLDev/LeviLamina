@@ -29,6 +29,6 @@ public:
     /**
      * @symbol ?readChunk\@RegionFile\@\@QEAA_NHHPEAPEAVBitStream\@RakNet\@\@\@Z
      */
-    MCAPI bool readChunk(int, int, class RakNet::BitStream**);
+    MCAPI bool readChunk(int32_t, int32_t, class RakNet::BitStream**);
     // NOLINTEND
 };

@@ -30,7 +30,8 @@ _checkAndQueueFloatValue(class PropertyGroup const&, uint64_t, uint64_t, class A
  * @symbol
  * ?_checkAndQueueIntValue\@ActorPropertyUtils\@\@YA_NAEBVPropertyGroup\@\@_K1PEAVActorDefinitionDiffList\@\@H\@Z
  */
-MCAPI bool _checkAndQueueIntValue(class PropertyGroup const&, uint64_t, uint64_t, class ActorDefinitionDiffList*, int);
+MCAPI bool
+_checkAndQueueIntValue(class PropertyGroup const&, uint64_t, uint64_t, class ActorDefinitionDiffList*, int32_t);
 /**
  * @symbol
  * ?addPendingEventResponseChange\@ActorPropertyUtils\@\@YAXAEBVPropertyComponent\@\@AEAVActor\@\@AEBVHashedString\@\@AEBUMolangScriptArg\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z

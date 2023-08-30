@@ -117,7 +117,7 @@ public:
      * @vftbl 104
      * @symbol ?getCooldownTime\@EnderpearlItem\@\@UEBAHXZ
      */
-    virtual int getCooldownTime() const;
+    virtual int32_t getCooldownTime() const;
     /**
      * @vftbl 115
      * @symbol __unk_vfn_115
@@ -132,7 +132,7 @@ public:
      * @symbol
      * ??0EnderpearlItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI EnderpearlItem(std::string const&, int);
+    MCAPI EnderpearlItem(std::string const&, int32_t);
     /**
      * @symbol ?ENDER_PEARL_COOLDOWN\@EnderpearlItem\@\@2VHashedString\@\@B
      */

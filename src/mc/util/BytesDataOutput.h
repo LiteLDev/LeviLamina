@@ -31,7 +31,7 @@ public:
     /**
      * @symbol ?writeInt\@BytesDataOutput\@\@UEAAXH\@Z
      */
-    MCVAPI void writeInt(int);
+    MCVAPI void writeInt(int32_t);
     /**
      * @symbol ?writeLongLong\@BytesDataOutput\@\@UEAAX_J\@Z
      */
@@ -43,7 +43,7 @@ public:
     /**
      * @symbol ?writeShort\@BytesDataOutput\@\@UEAAXF\@Z
      */
-    MCVAPI void writeShort(short);
+    MCVAPI void writeShort(int16_t);
     /**
      * @symbol ?writeString\@BytesDataOutput\@\@UEAAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */

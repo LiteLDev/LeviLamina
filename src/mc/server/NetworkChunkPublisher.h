@@ -36,7 +36,7 @@ public:
     /**
      * @symbol ?getChunksSentSinceStart\@NetworkChunkPublisher\@\@QEBAHXZ
      */
-    MCAPI int getChunksSentSinceStart() const;
+    MCAPI int32_t getChunksSentSinceStart() const;
     /**
      * @symbol ?is2DPositionRelevant\@NetworkChunkPublisher\@\@QEBA_NAEBVBlockPos\@\@\@Z
      */
@@ -44,7 +44,7 @@ public:
     /**
      * @symbol ?moveRegion\@NetworkChunkPublisher\@\@QEAAXAEBVBlockPos\@\@IAEBVVec3\@\@M\@Z
      */
-    MCAPI void moveRegion(class BlockPos const&, unsigned int, class Vec3 const&, float);
+    MCAPI void moveRegion(class BlockPos const&, uint32_t, class Vec3 const&, float);
     /**
      * @symbol ?prepareRegion\@NetworkChunkPublisher\@\@QEAAXAEAVChunkSource\@\@AEBVChunkPos\@\@\@Z
      */

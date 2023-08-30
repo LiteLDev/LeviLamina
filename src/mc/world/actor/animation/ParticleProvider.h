@@ -20,7 +20,7 @@ public:
      * ?addParticle\@ParticleProvider\@\@QEAAPEAVParticle\@\@W4ParticleType\@\@AEBVVec3\@\@1HPEBVCompoundTag\@\@_N\@Z
      */
     MCAPI class Particle*
-    addParticle(enum class ParticleType, class Vec3 const&, class Vec3 const&, int, class CompoundTag const*, bool);
+    addParticle(enum class ParticleType, class Vec3 const&, class Vec3 const&, int32_t, class CompoundTag const*, bool);
     /**
      * @symbol ?addParticleEffect\@ParticleProvider\@\@QEAAXAEBVHashedString\@\@AEBVVec3\@\@AEBVMolangVariableMap\@\@\@Z
      */

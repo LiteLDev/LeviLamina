@@ -27,7 +27,7 @@ public:
     /**
      * @symbol ??0WindOffsetter\@DripstoneUtils\@\@QEAA\@HAEAVRandom\@\@AEBUUniformFloat\@ValueProviders\@\@\@Z
      */
-    MCAPI WindOffsetter(int, class Random&, struct ValueProviders::UniformFloat const&);
+    MCAPI WindOffsetter(int32_t, class Random&, struct ValueProviders::UniformFloat const&);
     /**
      * @symbol ?offset\@WindOffsetter\@DripstoneUtils\@\@QEBA?AVBlockPos\@\@V3\@\@Z
      */

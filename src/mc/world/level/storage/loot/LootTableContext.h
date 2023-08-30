@@ -27,7 +27,7 @@ public:
         /**
          * @symbol ??0Builder\@LootTableContext\@\@QEAA\@PEAVILevel\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
          */
-        MCAPI Builder(class ILevel*, class AutomaticID<class Dimension, int>);
+        MCAPI Builder(class ILevel*, DimensionType);
         /**
          * @symbol ?create\@Builder\@LootTableContext\@\@QEBA?AV2\@XZ
          */
@@ -80,11 +80,11 @@ public:
      * ??0LootTableContext\@\@QEAA\@MPEAVILevel\@\@UActorUniqueID\@\@PEAVPlayer\@\@PEAVActor\@\@PEBVActorDamageSource\@\@MV?$AutomaticID\@VDimension\@\@H\@\@PEBVItemStack\@\@\@Z
      */
     MCAPI
-    LootTableContext(float, class ILevel*, struct ActorUniqueID, class Player*, class Actor*, class ActorDamageSource const*, float, class AutomaticID<class Dimension, int>, class ItemStack const*);
+    LootTableContext(float, class ILevel*, struct ActorUniqueID, class Player*, class Actor*, class ActorDamageSource const*, float, DimensionType, class ItemStack const*);
     /**
      * @symbol ?getDimensionId\@LootTableContext\@\@QEBA?AV?$AutomaticID\@VDimension\@\@H\@\@XZ
      */
-    MCAPI class AutomaticID<class Dimension, int> getDimensionId() const;
+    MCAPI DimensionType getDimensionId() const;
     /**
      * @symbol ?getEntity\@LootTableContext\@\@QEBAPEAVActor\@\@W4ActorTarget\@\@\@Z
      */

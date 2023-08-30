@@ -27,15 +27,15 @@ public:
      */
     MCAPI CommandParameterData(
         class Bedrock::typeid_t<class CommandRegistry>,
-        bool (__cdecl CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
+        bool (__cdecl CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int32_t, std::string&, std::vector<std::string>&)
             const,
         char const*,
         enum class CommandParameterDataType,
         char const*,
         char const*,
-        int,
+        int32_t,
         bool,
-        int
+        int32_t
     );
     /**
      * @symbol ?addOptions\@CommandParameterData\@\@QEAAAEAV1\@W4CommandParameterOption\@\@\@Z

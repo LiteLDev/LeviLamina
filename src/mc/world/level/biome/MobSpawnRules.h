@@ -29,11 +29,11 @@ public:
      * @symbol
      * ?addHerd\@MobSpawnRules\@\@QEAAAEAV1\@HHAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI class MobSpawnRules& addHerd(int, int, std::string const&);
+    MCAPI class MobSpawnRules& addHerd(int32_t, int32_t, std::string const&);
     /**
      * @symbol ?addPermutation\@MobSpawnRules\@\@QEAAAEAV1\@HHAEBUActorDefinitionIdentifier\@\@\@Z
      */
-    MCAPI class MobSpawnRules& addPermutation(int, int, struct ActorDefinitionIdentifier const&);
+    MCAPI class MobSpawnRules& addPermutation(int32_t, int32_t, struct ActorDefinitionIdentifier const&);
     /**
      * @symbol ?canSpawnInConditions\@MobSpawnRules\@\@QEBA_NAEBVSpawnConditions\@\@AEAVBlockSource\@\@\@Z
      */
@@ -41,15 +41,15 @@ public:
     /**
      * @symbol ?getAboveBlockDistance\@MobSpawnRules\@\@QEBAHXZ
      */
-    MCAPI int getAboveBlockDistance() const;
+    MCAPI int32_t getAboveBlockDistance() const;
     /**
      * @symbol ?getDelayRange\@MobSpawnRules\@\@QEBA?BU?$pair\@HH\@std\@\@XZ
      */
-    MCAPI std::pair<int, int> const getDelayRange() const;
+    MCAPI std::pair<int32_t, int32_t> const getDelayRange() const;
     /**
      * @symbol ?getDelaySpawnChance\@MobSpawnRules\@\@QEBAHXZ
      */
-    MCAPI int getDelaySpawnChance() const;
+    MCAPI int32_t getDelaySpawnChance() const;
     /**
      * @symbol
      * ?getGuaranteedPermutations\@MobSpawnRules\@\@QEBAAEBV?$vector\@VMobSpawnerPermutation\@\@V?$allocator\@VMobSpawnerPermutation\@\@\@std\@\@\@std\@\@XZ
@@ -77,7 +77,7 @@ public:
     /**
      * @symbol ?getPopulationCap\@MobSpawnRules\@\@QEBAHAEBVSpawnConditions\@\@\@Z
      */
-    MCAPI int getPopulationCap(class SpawnConditions const&) const;
+    MCAPI int32_t getPopulationCap(class SpawnConditions const&) const;
     /**
      * @symbol
      * ?getSpawnAboveBlockList\@MobSpawnRules\@\@QEBAAEBV?$unordered_set\@PEBVBlockLegacy\@\@U?$hash\@PEBVBlockLegacy\@\@\@std\@\@U?$equal_to\@PEBVBlockLegacy\@\@\@3\@V?$allocator\@PEBVBlockLegacy\@\@\@3\@\@std\@\@XZ
@@ -92,7 +92,7 @@ public:
      * @symbol
      * ?getSpawnCount\@MobSpawnRules\@\@QEBAHAEBVSpawnConditions\@\@AEAVBlockSource\@\@AEAVRandom\@\@AEBUMobSpawnHerdInfo\@\@\@Z
      */
-    MCAPI int
+    MCAPI int32_t
     getSpawnCount(class SpawnConditions const&, class BlockSource&, class Random&, struct MobSpawnHerdInfo const&)
         const;
     /**
@@ -130,11 +130,11 @@ public:
     /**
      * @symbol ?setAboveBlockDistance\@MobSpawnRules\@\@QEAAAEAV1\@H\@Z
      */
-    MCAPI class MobSpawnRules& setAboveBlockDistance(int);
+    MCAPI class MobSpawnRules& setAboveBlockDistance(int32_t);
     /**
      * @symbol ?setBrightnessRange\@MobSpawnRules\@\@QEAAAEAV1\@HH_N\@Z
      */
-    MCAPI class MobSpawnRules& setBrightnessRange(int, int, bool);
+    MCAPI class MobSpawnRules& setBrightnessRange(int32_t, int32_t, bool);
     /**
      * @symbol ?setBubbleSpawner\@MobSpawnRules\@\@QEAAAEAV1\@_N\@Z
      */
@@ -143,11 +143,11 @@ public:
      * @symbol
      * ?setDelayRange\@MobSpawnRules\@\@QEAAAEAV1\@HHAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI class MobSpawnRules& setDelayRange(int, int, std::string const&);
+    MCAPI class MobSpawnRules& setDelayRange(int32_t, int32_t, std::string const&);
     /**
      * @symbol ?setDelaySpawnChance\@MobSpawnRules\@\@QEAAAEAV1\@H\@Z
      */
-    MCAPI class MobSpawnRules& setDelaySpawnChance(int);
+    MCAPI class MobSpawnRules& setDelaySpawnChance(int32_t);
     /**
      * @symbol ?setDifficultyRange\@MobSpawnRules\@\@QEAAAEAV1\@W4Difficulty\@\@0\@Z
      */
@@ -165,7 +165,7 @@ public:
     /**
      * @symbol ?setHeightRange\@MobSpawnRules\@\@QEAAAEAV1\@HH\@Z
      */
-    MCAPI class MobSpawnRules& setHeightRange(int, int);
+    MCAPI class MobSpawnRules& setHeightRange(int32_t, int32_t);
     /**
      * @symbol ?setLavaSpawner\@MobSpawnRules\@\@QEAAAEAV1\@XZ
      */
@@ -182,27 +182,27 @@ public:
     /**
      * @symbol ?setPlayerInVillageBorderTolerance\@MobSpawnRules\@\@QEAAAEAV1\@I\@Z
      */
-    MCAPI class MobSpawnRules& setPlayerInVillageBorderTolerance(unsigned int);
+    MCAPI class MobSpawnRules& setPlayerInVillageBorderTolerance(uint32_t);
     /**
      * @symbol ?setPlayerInVillageDistance\@MobSpawnRules\@\@QEAAAEAV1\@I\@Z
      */
-    MCAPI class MobSpawnRules& setPlayerInVillageDistance(unsigned int);
+    MCAPI class MobSpawnRules& setPlayerInVillageDistance(uint32_t);
     /**
      * @symbol ?setPopulationCap\@MobSpawnRules\@\@QEAAAEAV1\@HH\@Z
      */
-    MCAPI class MobSpawnRules& setPopulationCap(int, int);
+    MCAPI class MobSpawnRules& setPopulationCap(int32_t, int32_t);
     /**
      * @symbol ?setRarity\@MobSpawnRules\@\@QEAAAEAV1\@H\@Z
      */
-    MCAPI class MobSpawnRules& setRarity(int);
+    MCAPI class MobSpawnRules& setRarity(int32_t);
     /**
      * @symbol ?setSpawnDistanceCap\@MobSpawnRules\@\@QEAAAEAV1\@H\@Z
      */
-    MCAPI class MobSpawnRules& setSpawnDistanceCap(int);
+    MCAPI class MobSpawnRules& setSpawnDistanceCap(int32_t);
     /**
      * @symbol ?setSpawnDistances\@MobSpawnRules\@\@QEAAAEAV1\@HH\@Z
      */
-    MCAPI class MobSpawnRules& setSpawnDistances(int, int);
+    MCAPI class MobSpawnRules& setSpawnDistances(int32_t, int32_t);
     /**
      * @symbol ?setSurfaceSpawner\@MobSpawnRules\@\@QEAAAEAV1\@XZ
      */
@@ -226,11 +226,11 @@ public:
     /**
      * @symbol ?LOW_END_MAX_SPAWN_DISTANCE\@MobSpawnRules\@\@2HB
      */
-    MCAPI static int const LOW_END_MAX_SPAWN_DISTANCE;
+    MCAPI static int32_t const LOW_END_MAX_SPAWN_DISTANCE;
     /**
      * @symbol ?MAX_DEFAULT_SPAWN_DISTANCE\@MobSpawnRules\@\@2HB
      */
-    MCAPI static int const MAX_DEFAULT_SPAWN_DISTANCE;
+    MCAPI static int32_t const MAX_DEFAULT_SPAWN_DISTANCE;
     /**
      * @symbol ?MAX_WORLD_AGE\@MobSpawnRules\@\@2_KB
      */
@@ -238,6 +238,6 @@ public:
     /**
      * @symbol ?MIN_DEFAULT_SPAWN_DISTANCE\@MobSpawnRules\@\@2HB
      */
-    MCAPI static int const MIN_DEFAULT_SPAWN_DISTANCE;
+    MCAPI static int32_t const MIN_DEFAULT_SPAWN_DISTANCE;
     // NOLINTEND
 };

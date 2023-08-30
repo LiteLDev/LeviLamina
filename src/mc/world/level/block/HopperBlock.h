@@ -62,7 +62,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@HopperBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -172,7 +172,7 @@ public:
      * @vftbl 75
      * @symbol ?onRedstoneUpdate\@HopperBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
-    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int32_t, bool) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -213,7 +213,7 @@ public:
      * @symbol ?getPlacementBlock\@HopperBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -233,7 +233,7 @@ public:
      * @vftbl 126
      * @symbol ?getComparatorSignal\@HopperBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, unsigned char) const;
+    virtual int32_t getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uint8_t) const;
     /**
      * @vftbl 128
      * @symbol __unk_vfn_128
@@ -288,7 +288,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@HopperBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -303,7 +303,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@HopperBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPPERBLOCK
     /**
      * @symbol ?hasComparatorSignal\@HopperBlock\@\@UEBA_NXZ
@@ -321,11 +321,11 @@ public:
     /**
      * @symbol ??0HopperBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI HopperBlock(std::string const&, int);
+    MCAPI HopperBlock(std::string const&, int32_t);
     /**
      * @symbol ?getAttachedOffset\@HopperBlock\@\@SA?AVBlockPos\@\@E\@Z
      */
-    MCAPI static class BlockPos getAttachedOffset(unsigned char);
+    MCAPI static class BlockPos getAttachedOffset(uint8_t);
     // NOLINTEND
 
     // private:

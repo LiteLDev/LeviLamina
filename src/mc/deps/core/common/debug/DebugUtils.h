@@ -59,7 +59,7 @@ MCAPI extern class ServiceOverrider<bool(__cdecl*)(struct AssertHandlerContext c
 /**
  * @symbol ?handleAssert\@DebugUtils\@\@YA_NPEBD0AEA_NH00ZZ
  */
-MCAPI bool handleAssert(char const*, char const*, bool&, int, char const*, char const*, ...);
+MCAPI bool handleAssert(char const*, char const*, bool&, int32_t, char const*, char const*, ...);
 /**
  * @symbol ?isDebuggerAttached\@DebugUtils\@\@YA_NXZ
  */

@@ -29,7 +29,7 @@ public:
     /**
      * @symbol ??0HitResult\@\@QEAA\@AEBVVec3\@\@0AEBVBlockPos\@\@E0\@Z
      */
-    MCAPI HitResult(class Vec3 const&, class Vec3 const&, class BlockPos const&, unsigned char, class Vec3 const&);
+    MCAPI HitResult(class Vec3 const&, class Vec3 const&, class BlockPos const&, uint8_t, class Vec3 const&);
     /**
      * @symbol ??0HitResult\@\@QEAA\@$$QEAV0\@\@Z
      */

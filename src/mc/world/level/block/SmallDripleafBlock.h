@@ -204,7 +204,7 @@ public:
      * @symbol ?getPlacementBlock\@SmallDripleafBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -299,7 +299,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@SmallDripleafBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMALLDRIPLEAFBLOCK
     /**
      * @symbol ?canBeSilkTouched\@SmallDripleafBlock\@\@UEBA_NXZ
@@ -314,11 +314,11 @@ public:
      * @symbol
      * ??0SmallDripleafBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI SmallDripleafBlock(std::string const&, int);
+    MCAPI SmallDripleafBlock(std::string const&, int32_t);
     /**
      * @symbol ?tryPlaceSmallDripleaf\@SmallDripleafBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@HH\@Z
      */
-    MCAPI static bool tryPlaceSmallDripleaf(class BlockSource&, class BlockPos const&, int, int);
+    MCAPI static bool tryPlaceSmallDripleaf(class BlockSource&, class BlockPos const&, int32_t, int32_t);
     // NOLINTEND
 
     // private:
@@ -330,6 +330,6 @@ public:
     /**
      * @symbol ?placeUpperBlock\@SmallDripleafBlock\@\@CAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    MCAPI static void placeUpperBlock(class BlockSource&, class BlockPos const&, int);
+    MCAPI static void placeUpperBlock(class BlockSource&, class BlockPos const&, int32_t);
     // NOLINTEND
 };

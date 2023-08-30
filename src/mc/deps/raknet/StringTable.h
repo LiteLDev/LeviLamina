@@ -33,7 +33,7 @@ protected:
     /**
      * @symbol ?referenceCount\@StringTable\@RakNet\@\@1HA
      */
-    MCAPI static int referenceCount;
+    MCAPI static int32_t referenceCount;
     // NOLINTEND
 };
 

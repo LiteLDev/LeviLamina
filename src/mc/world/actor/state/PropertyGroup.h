@@ -40,7 +40,7 @@ public:
     /**
      * @symbol ?getDefaultIntValue\@PropertyGroup\@\@QEBAH_KAEAVRenderParams\@\@\@Z
      */
-    MCAPI int getDefaultIntValue(uint64_t, class RenderParams&) const;
+    MCAPI int32_t getDefaultIntValue(uint64_t, class RenderParams&) const;
     /**
      * @symbol ?getNetworkSyncPropertyDescriptionsAsListTag\@PropertyGroup\@\@QEBA?AVListTag\@\@XZ
      */
@@ -99,7 +99,7 @@ public:
      * @symbol
      * ?_addIntProperty\@PropertyGroup\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_NHHH\@Z
      */
-    MCAPI void _addIntProperty(std::string const&, bool, int, int, int);
+    MCAPI void _addIntProperty(std::string const&, bool, int32_t, int32_t, int32_t);
     /**
      * @symbol
      * ?_addPropertyMetadata\@PropertyGroup\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_NW4ContainedType\@PropertyMetadata\@\@\@Z

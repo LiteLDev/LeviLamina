@@ -40,7 +40,7 @@ public:
      * @vftbl 28
      * @symbol ?canConnect\@GlassBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
-    virtual bool canConnect(class Block const&, unsigned char, class Block const&) const;
+    virtual bool canConnect(class Block const&, uint8_t, class Block const&) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -240,11 +240,11 @@ public:
      * @vftbl 186
      * @symbol ?getResourceCount\@GlassBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
     /**
      * @symbol
      * ??0GlassBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@_N2\@Z
      */
-    MCAPI GlassBlock(std::string const&, int, class Material const&, bool, bool);
+    MCAPI GlassBlock(std::string const&, int32_t, class Material const&, bool, bool);
     // NOLINTEND
 };

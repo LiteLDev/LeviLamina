@@ -17,7 +17,7 @@ public:
     /**
      * @symbol ??0SocketDescriptor\@RakNet\@\@QEAA\@GPEBD\@Z
      */
-    MCAPI SocketDescriptor(unsigned short, char const*);
+    MCAPI SocketDescriptor(uint16_t, char const*);
     // NOLINTEND
 };
 

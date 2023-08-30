@@ -40,7 +40,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@DaylightDetectorBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -155,7 +155,7 @@ public:
      * @vftbl 66
      * @symbol ?shouldConnectToRedstone\@DaylightDetectorBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 71
      * @symbol ?checkIsPathable\@DaylightDetectorBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
@@ -215,7 +215,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@DaylightDetectorBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -260,7 +260,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@DaylightDetectorBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -275,7 +275,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@DaylightDetectorBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@DaylightDetectorBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -301,6 +301,6 @@ public:
      * @symbol
      * ??0DaylightDetectorBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
-    MCAPI DaylightDetectorBlock(std::string const&, int, bool);
+    MCAPI DaylightDetectorBlock(std::string const&, int32_t, bool);
     // NOLINTEND
 };

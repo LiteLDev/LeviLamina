@@ -92,7 +92,7 @@ public:
      * @symbol
      * ?getPackStackIndexOfResource\@ResourceLoader\@\@UEBA?AU?$pair\@HAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@AEBVResourceLocation\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z
      */
-    virtual std::pair<int, std::string const&>
+    virtual std::pair<int32_t, std::string const&>
     getPackStackIndexOfResource(class ResourceLocation const&, std::vector<std::string> const&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCELOADER
     /**

@@ -34,7 +34,7 @@ public:
     /**
      * @symbol ??0LevelSettings\@\@QEAA\@AEBVLevelData\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI LevelSettings(class LevelData const&, class AutomaticID<class Dimension, int>);
+    MCAPI LevelSettings(class LevelData const&, DimensionType);
     /**
      * @symbol ??0LevelSettings\@\@QEAA\@AEBV0\@\@Z
      */
@@ -128,11 +128,11 @@ public:
     /**
      * @symbol ?getLimitedWorldDepth\@LevelSettings\@\@QEBAHXZ
      */
-    MCAPI int getLimitedWorldDepth() const;
+    MCAPI int32_t getLimitedWorldDepth() const;
     /**
      * @symbol ?getLimitedWorldWidth\@LevelSettings\@\@QEBAHXZ
      */
-    MCAPI int getLimitedWorldWidth() const;
+    MCAPI int32_t getLimitedWorldWidth() const;
     /**
      * @symbol ?getMultiplayerGameIntent\@LevelSettings\@\@QEBA_NXZ
      */
@@ -160,7 +160,7 @@ public:
     /**
      * @symbol ?getServerChunkTickRange\@LevelSettings\@\@QEBAIXZ
      */
-    MCAPI unsigned int getServerChunkTickRange() const;
+    MCAPI uint32_t getServerChunkTickRange() const;
     /**
      * @symbol ?getSpawnSettings\@LevelSettings\@\@QEBA?AUSpawnSettings\@\@XZ
      */
@@ -168,7 +168,7 @@ public:
     /**
      * @symbol ?getTime\@LevelSettings\@\@QEBAHXZ
      */
-    MCAPI int getTime() const;
+    MCAPI int32_t getTime() const;
     /**
      * @symbol ?getWorldVersion\@LevelSettings\@\@QEBA?AW4WorldVersion\@\@XZ
      */
@@ -333,7 +333,7 @@ public:
     /**
      * @symbol ?setServerChunkTickRange\@LevelSettings\@\@QEAAAEAV1\@I\@Z
      */
-    MCAPI class LevelSettings& setServerChunkTickRange(unsigned int);
+    MCAPI class LevelSettings& setServerChunkTickRange(uint32_t);
     /**
      * @symbol ?setSpawnSettings\@LevelSettings\@\@QEAAAEAV1\@USpawnSettings\@\@\@Z
      */

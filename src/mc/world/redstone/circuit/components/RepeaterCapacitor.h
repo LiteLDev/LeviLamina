@@ -24,17 +24,17 @@ public:
      * @vftbl 1
      * @symbol ?getStrength\@RepeaterCapacitor\@\@UEBAHXZ
      */
-    virtual int getStrength() const;
+    virtual int32_t getStrength() const;
     /**
      * @vftbl 3
      * @symbol ?setStrength\@RepeaterCapacitor\@\@UEAAXH\@Z
      */
-    virtual void setStrength(int);
+    virtual void setStrength(int32_t);
     /**
      * @vftbl 11
      * @symbol ?addSource\@RepeaterCapacitor\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEAHAEA_N\@Z
      */
-    virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
+    virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int32_t&, bool&);
     /**
      * @vftbl 13
      * @symbol ?checkLock\@RepeaterCapacitor\@\@UEAAXAEAVCircuitSystem\@\@AEBVBlockPos\@\@\@Z
@@ -77,6 +77,6 @@ public:
     /**
      * @symbol ?setDelay\@RepeaterCapacitor\@\@QEAAXH\@Z
      */
-    MCAPI void setDelay(int);
+    MCAPI void setDelay(int32_t);
     // NOLINTEND
 };

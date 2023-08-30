@@ -157,7 +157,7 @@ public:
      * @vftbl 271
      * @symbol ?getItemUseDuration\@HumanoidMonster\@\@UEBAHXZ
      */
-    virtual int getItemUseDuration() const;
+    virtual int32_t getItemUseDuration() const;
     /**
      * @vftbl 276
      * @symbol __unk_vfn_276

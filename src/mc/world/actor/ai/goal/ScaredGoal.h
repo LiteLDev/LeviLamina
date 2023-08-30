@@ -55,6 +55,6 @@ public:
     /**
      * @symbol ??0ScaredGoal\@\@QEAA\@AEAVMob\@\@H\@Z
      */
-    MCAPI ScaredGoal(class Mob&, int);
+    MCAPI ScaredGoal(class Mob&, int32_t);
     // NOLINTEND
 };

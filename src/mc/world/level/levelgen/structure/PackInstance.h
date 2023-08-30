@@ -32,7 +32,7 @@ public:
      * ??0PackInstance\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VResourcePack\@\@\@Bedrock\@\@\@gsl\@\@H_NPEAVPackSettings\@\@\@Z
      */
     MCAPI
-    PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, int, bool, class PackSettings*);
+    PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, int32_t, bool, class PackSettings*);
     /**
      * @symbol ??0PackInstance\@\@QEAA\@AEBV0\@\@Z
      */

@@ -28,12 +28,12 @@ public:
      * @vftbl 1
      * @symbol ?Send\@TCPInterface\@RakNet\@\@UEAAXPEBDIAEBUSystemAddress\@2\@_N\@Z
      */
-    virtual void Send(char const*, unsigned int, struct RakNet::SystemAddress const&, bool);
+    virtual void Send(char const*, uint32_t, struct RakNet::SystemAddress const&, bool);
     /**
      * @vftbl 2
      * @symbol ?SendList\@TCPInterface\@RakNet\@\@UEAA_NPEAPEBDPEBIHAEBUSystemAddress\@2\@_N\@Z
      */
-    virtual bool SendList(char const**, unsigned int const*, int, struct RakNet::SystemAddress const&, bool);
+    virtual bool SendList(char const**, uint32_t const*, int32_t, struct RakNet::SystemAddress const&, bool);
     /**
      * @vftbl 3
      * @symbol ?ReceiveHasPackets\@TCPInterface\@RakNet\@\@UEAA_NXZ
@@ -62,7 +62,7 @@ public:
     /**
      * @symbol ?Connect\@TCPInterface\@RakNet\@\@QEAA?AUSystemAddress\@2\@PEBDG_NG0\@Z
      */
-    MCAPI struct RakNet::SystemAddress Connect(char const*, unsigned short, bool, unsigned short, char const*);
+    MCAPI struct RakNet::SystemAddress Connect(char const*, uint16_t, bool, uint16_t, char const*);
     /**
      * @symbol ?DeallocatePacket\@TCPInterface\@RakNet\@\@QEAAXPEAUPacket\@2\@\@Z
      */
@@ -70,15 +70,15 @@ public:
     /**
      * @symbol ?GetConnectionCount\@TCPInterface\@RakNet\@\@QEBAGXZ
      */
-    MCAPI unsigned short GetConnectionCount() const;
+    MCAPI uint16_t GetConnectionCount() const;
     /**
      * @symbol ?GetConnectionList\@TCPInterface\@RakNet\@\@QEBAXPEAUSystemAddress\@2\@PEAG\@Z
      */
-    MCAPI void GetConnectionList(struct RakNet::SystemAddress*, unsigned short*) const;
+    MCAPI void GetConnectionList(struct RakNet::SystemAddress*, uint16_t*) const;
     /**
      * @symbol ?GetOutgoingDataBufferSize\@TCPInterface\@RakNet\@\@QEBAIUSystemAddress\@2\@\@Z
      */
-    MCAPI unsigned int GetOutgoingDataBufferSize(struct RakNet::SystemAddress) const;
+    MCAPI uint32_t GetOutgoingDataBufferSize(struct RakNet::SystemAddress) const;
     /**
      * @symbol ?HasCompletedConnectionAttempt\@TCPInterface\@RakNet\@\@QEAA?AUSystemAddress\@2\@XZ
      */
@@ -94,7 +94,7 @@ public:
     /**
      * @symbol ?Start\@TCPInterface\@RakNet\@\@QEAA_NGGGHGPEBD\@Z
      */
-    MCAPI bool Start(unsigned short, unsigned short, unsigned short, int, unsigned short, char const*);
+    MCAPI bool Start(uint16_t, uint16_t, uint16_t, int32_t, uint16_t, char const*);
     /**
      * @symbol ?Stop\@TCPInterface\@RakNet\@\@QEAAXXZ
      */
@@ -114,11 +114,11 @@ public:
     /**
      * @symbol ?CreateListenSocket\@TCPInterface\@RakNet\@\@IEAA_NGGGPEBD\@Z
      */
-    MCAPI bool CreateListenSocket(unsigned short, unsigned short, unsigned short, char const*);
+    MCAPI bool CreateListenSocket(uint16_t, uint16_t, uint16_t, char const*);
     /**
      * @symbol ?SocketConnect\@TCPInterface\@RakNet\@\@IEAA_KPEBDGG0\@Z
      */
-    MCAPI uint64_t SocketConnect(char const*, unsigned short, unsigned short, char const*);
+    MCAPI uint64_t SocketConnect(char const*, uint16_t, uint16_t, char const*);
     /**
      * @symbol ?_removeFromBlockingSocketList\@TCPInterface\@RakNet\@\@IEAA_NAEB_K\@Z
      */

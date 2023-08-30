@@ -22,15 +22,15 @@ public:
     /**
      * @symbol ?addAbortDestroyBlock\@PlayerActionComponent\@\@QEAAXAEBVBlockPos\@\@H\@Z
      */
-    MCAPI void addAbortDestroyBlock(class BlockPos const&, int);
+    MCAPI void addAbortDestroyBlock(class BlockPos const&, int32_t);
     /**
      * @symbol ?addContinueDestroyBlock\@PlayerActionComponent\@\@QEAAXAEBVBlockPos\@\@H\@Z
      */
-    MCAPI void addContinueDestroyBlock(class BlockPos const&, int);
+    MCAPI void addContinueDestroyBlock(class BlockPos const&, int32_t);
     /**
      * @symbol ?addStartDestroyBlock\@PlayerActionComponent\@\@QEAAXAEBVBlockPos\@\@H\@Z
      */
-    MCAPI void addStartDestroyBlock(class BlockPos const&, int);
+    MCAPI void addStartDestroyBlock(class BlockPos const&, int32_t);
     /**
      * @symbol ?addStopDestroyBlock\@PlayerActionComponent\@\@QEAAXXZ
      */

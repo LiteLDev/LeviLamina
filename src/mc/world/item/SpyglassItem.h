@@ -118,7 +118,7 @@ public:
      * @vftbl 87
      * @symbol ?releaseUsing\@SpyglassItem\@\@UEBAXAEAVItemStack\@\@PEAVPlayer\@\@H\@Z
      */
-    virtual void releaseUsing(class ItemStack&, class Player*, int) const;
+    virtual void releaseUsing(class ItemStack&, class Player*, int32_t) const;
     /**
      * @vftbl 115
      * @symbol __unk_vfn_115

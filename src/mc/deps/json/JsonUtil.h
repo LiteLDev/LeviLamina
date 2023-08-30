@@ -58,7 +58,7 @@ MCAPI bool parseBannerBlockType(enum class BannerBlockType&, class Json::Value c
  * @symbol
  * ?parseItem\@JsonUtil\@\@YA_NAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0AEAHV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@3\@\@Z
  */
-MCAPI bool parseItem(std::string&, std::string&, int&, std::string_view);
+MCAPI bool parseItem(std::string&, std::string&, int32_t&, std::string_view);
 /**
  * @symbol ?parseItemColor\@JsonUtil\@\@YA_NAEAW4ItemColor\@\@AEBVValue\@Json\@\@\@Z
  */
@@ -66,7 +66,7 @@ MCAPI bool parseItemColor(enum class ItemColor&, class Json::Value const&);
 /**
  * @symbol ?parseRange\@JsonUtil\@\@YA_NAEBVValue\@Json\@\@AEAH1\@Z
  */
-MCAPI bool parseRange(class Json::Value const&, int&, int&);
+MCAPI bool parseRange(class Json::Value const&, int32_t&, int32_t&);
 /**
  * @symbol ?parseVec3\@JsonUtil\@\@YA_NAEAVVec3\@\@AEBVValue\@Json\@\@\@Z
  */

@@ -60,6 +60,6 @@ public:
     /**
      * @symbol ??0RandomBreachingGoal\@\@QEAA\@AEAVMob\@\@MHHHM\@Z
      */
-    MCAPI RandomBreachingGoal(class Mob&, float, int, int, int, float);
+    MCAPI RandomBreachingGoal(class Mob&, float, int32_t, int32_t, int32_t, float);
     // NOLINTEND
 };

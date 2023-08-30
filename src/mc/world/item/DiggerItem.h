@@ -57,7 +57,7 @@ public:
      * @vftbl 48
      * @symbol ?getAttackDamage\@DiggerItem\@\@UEBAHXZ
      */
-    virtual int getAttackDamage() const;
+    virtual int32_t getAttackDamage() const;
     /**
      * @vftbl 49
      * @symbol ?isHandEquipped\@DiggerItem\@\@UEBA_NXZ
@@ -89,7 +89,7 @@ public:
      * @vftbl 63
      * @symbol ?getEnchantValue\@DiggerItem\@\@UEBAHXZ
      */
-    virtual int getEnchantValue() const;
+    virtual int32_t getEnchantValue() const;
     /**
      * @vftbl 66
      * @symbol __unk_vfn_66
@@ -134,7 +134,7 @@ public:
      * @vftbl 93
      * @symbol ?mineBlock\@DiggerItem\@\@UEBA_NAEAVItemStack\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
      */
-    virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
+    virtual bool mineBlock(class ItemStack&, class Block const&, int32_t, int32_t, int32_t, class Actor*) const;
     /**
      * @vftbl 115
      * @symbol __unk_vfn_115
@@ -164,6 +164,7 @@ public:
      * @symbol
      * ??0DiggerItem\@\@IEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HHAEBVTier\@Item\@\@AEBV?$vector\@PEBVBlock\@\@V?$allocator\@PEBVBlock\@\@\@std\@\@\@2\@\@Z
      */
-    MCAPI DiggerItem(std::string const&, int, int, class Item::Tier const&, std::vector<class Block const*> const&);
+    MCAPI
+    DiggerItem(std::string const&, int32_t, int32_t, class Item::Tier const&, std::vector<class Block const*> const&);
     // NOLINTEND
 };

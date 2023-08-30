@@ -21,11 +21,11 @@ public:
     /**
      * @symbol ?canPullOutItem\@EnderChestBlockActor\@\@UEBA_NHHAEBVItemStack\@\@\@Z
      */
-    MCVAPI bool canPullOutItem(int, int, class ItemStack const&) const;
+    MCVAPI bool canPullOutItem(int32_t, int32_t, class ItemStack const&) const;
     /**
      * @symbol ?canPushInItem\@EnderChestBlockActor\@\@UEBA_NHHAEBVItemStack\@\@\@Z
      */
-    MCVAPI bool canPushInItem(int, int, class ItemStack const&) const;
+    MCVAPI bool canPushInItem(int32_t, int32_t, class ItemStack const&) const;
     /**
      * @symbol
      * ?getName\@EnderChestBlockActor\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -53,6 +53,6 @@ private:
     /**
      * @symbol ?ITEMS_SIZE\@EnderChestBlockActor\@\@0HB
      */
-    MCAPI static int const ITEMS_SIZE;
+    MCAPI static int32_t const ITEMS_SIZE;
     // NOLINTEND
 };

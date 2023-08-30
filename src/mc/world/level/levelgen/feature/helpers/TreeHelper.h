@@ -39,13 +39,13 @@ placeDecoratedBlock(class IBlockWorldGenAPI&, class BlockPos const&, class Rando
  * ?placeRadialBlockGroup\@TreeHelper\@\@YA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEBVBlock\@\@HH_NAEBV?$vector\@VBlockDescriptor\@\@V?$allocator\@VBlockDescriptor\@\@\@std\@\@\@3\@\@Z
  */
 MCAPI std::optional<class BlockPos>
-placeRadialBlockGroup(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class Block const&, int, int, bool, std::vector<class BlockDescriptor> const&);
+placeRadialBlockGroup(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class Block const&, int32_t, int32_t, bool, std::vector<class BlockDescriptor> const&);
 /**
  * @symbol
  * ?prepareSpawn\@TreeHelper\@\@YA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@HAEBV?$vector\@VBlockDescriptor\@\@V?$allocator\@VBlockDescriptor\@\@\@std\@\@\@std\@\@2\@Z
  */
 MCAPI bool
-prepareSpawn(class IBlockWorldGenAPI const&, class BlockPos const&, int, std::vector<class BlockDescriptor> const&, std::vector<class BlockDescriptor> const&);
+prepareSpawn(class IBlockWorldGenAPI const&, class BlockPos const&, int32_t, std::vector<class BlockDescriptor> const&, std::vector<class BlockDescriptor> const&);
 // NOLINTEND
 
 }; // namespace TreeHelper

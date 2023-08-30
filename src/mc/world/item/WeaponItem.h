@@ -62,7 +62,7 @@ public:
      * @vftbl 48
      * @symbol ?getAttackDamage\@WeaponItem\@\@UEBAHXZ
      */
-    virtual int getAttackDamage() const;
+    virtual int32_t getAttackDamage() const;
     /**
      * @vftbl 49
      * @symbol ?isHandEquipped\@WeaponItem\@\@UEBA_NXZ
@@ -99,12 +99,12 @@ public:
      * @vftbl 62
      * @symbol ?getEnchantSlot\@WeaponItem\@\@UEBAHXZ
      */
-    virtual int getEnchantSlot() const;
+    virtual int32_t getEnchantSlot() const;
     /**
      * @vftbl 63
      * @symbol ?getEnchantValue\@WeaponItem\@\@UEBAHXZ
      */
-    virtual int getEnchantValue() const;
+    virtual int32_t getEnchantValue() const;
     /**
      * @vftbl 66
      * @symbol __unk_vfn_66

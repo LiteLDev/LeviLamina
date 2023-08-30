@@ -24,12 +24,12 @@ public:
      * @vftbl 2
      * @symbol ?getMinCost\@CurseBindingEnchant\@\@UEBAHH\@Z
      */
-    virtual int getMinCost(int) const;
+    virtual int32_t getMinCost(int32_t) const;
     /**
      * @vftbl 3
      * @symbol ?getMaxCost\@CurseBindingEnchant\@\@UEBAHH\@Z
      */
-    virtual int getMaxCost(int) const;
+    virtual int32_t getMaxCost(int32_t) const;
     /**
      * @vftbl 10
      * @symbol __unk_vfn_10

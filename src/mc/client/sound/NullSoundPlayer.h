@@ -190,7 +190,7 @@ public:
      * @symbol
      * ?playMusic\@NullSoundPlayer\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@MAEAI\@Z
      */
-    MCVAPI void playMusic(std::string const&, float, unsigned int&);
+    MCVAPI void playMusic(std::string const&, float, uint32_t&);
     /**
      * @symbol
      * ?playMusic\@NullSoundPlayer\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@M\@Z

@@ -32,11 +32,11 @@ MCAPI void _buildSurface(
     class Random&,
     class BlockVolume&,
     class BlockPos const&,
-    short,
-    int,
+    int16_t,
+    int32_t,
     bool,
     enum class ISurfaceBuilder::WaterLevelStrategy,
-    int,
+    int32_t,
     class HeightmapWrapper const&,
     bool
 );
@@ -51,7 +51,7 @@ MCAPI void ensureValidSurfaceMaterials(struct SurfaceMaterialAttributes&);
 /**
  * @symbol ?findGroundHeight\@Utils\@VanillaSurfaceBuilders\@\@YAFAEBVBlockVolume\@\@VPos\@\@AEBVHeightmapWrapper\@\@\@Z
  */
-MCAPI short findGroundHeight(class BlockVolume const&, class Pos, class HeightmapWrapper const&);
+MCAPI int16_t findGroundHeight(class BlockVolume const&, class Pos, class HeightmapWrapper const&);
 /**
  * @symbol
  * ?isSteepTerrain\@Utils\@VanillaSurfaceBuilders\@\@YA_NAEBVBlockVolume\@\@AEBVBlockPos\@\@AEBUSteepMaterial\@MountainAttributes\@\@AEBVHeightmapWrapper\@\@\@Z

@@ -56,7 +56,7 @@ public:
      * @vftbl 10
      * @symbol ?getRandomEatingEnd\@SnackGoal\@\@MEBAHXZ
      */
-    virtual int getRandomEatingEnd() const;
+    virtual int32_t getRandomEatingEnd() const;
     /**
      * @symbol
      * ??0SnackGoal\@\@QEAA\@AEAVMob\@\@AEBV?$vector\@VItemDescriptor\@\@V?$allocator\@VItemDescriptor\@\@\@std\@\@\@std\@\@MMM\@Z
@@ -85,11 +85,11 @@ private:
     /**
      * @symbol ?CHEW_CHANCE\@SnackGoal\@\@0HB
      */
-    MCAPI static int const CHEW_CHANCE;
+    MCAPI static int32_t const CHEW_CHANCE;
     /**
      * @symbol ?EATING_TIME\@SnackGoal\@\@0HB
      */
-    MCAPI static int const EATING_TIME;
+    MCAPI static int32_t const EATING_TIME;
     /**
      * @symbol ?PATH_RANGE\@SnackGoal\@\@0MB
      */
@@ -97,11 +97,11 @@ private:
     /**
      * @symbol ?RANDOM_EATING_END\@SnackGoal\@\@0HB
      */
-    MCAPI static int const RANDOM_EATING_END;
+    MCAPI static int32_t const RANDOM_EATING_END;
     /**
      * @symbol ?RANDOM_EATING_START\@SnackGoal\@\@0HB
      */
-    MCAPI static int const RANDOM_EATING_START;
+    MCAPI static int32_t const RANDOM_EATING_START;
     /**
      * @symbol ?SEARCH_SIZE\@SnackGoal\@\@0MB
      */

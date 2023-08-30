@@ -31,7 +31,7 @@ namespace Social::Events {
 /**
  * @symbol ?eventSequenceNumber\@Events\@Social\@\@3HA
  */
-MCAPI extern int eventSequenceNumber;
+MCAPI extern int32_t eventSequenceNumber;
 // NOLINTEND
 
 }; // namespace Social::Events

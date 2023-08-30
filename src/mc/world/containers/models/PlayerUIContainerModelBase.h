@@ -22,7 +22,7 @@ public:
      * @vftbl 0
      * @symbol ?containerContentChanged\@PlayerUIContainerModelBase\@\@UEAAXH\@Z
      */
-    virtual void containerContentChanged(int);
+    virtual void containerContentChanged(int32_t);
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
@@ -82,16 +82,17 @@ public:
      * @vftbl 21
      * @symbol ?_getContainerOffset\@PlayerUIContainerModelBase\@\@MEBAHXZ
      */
-    virtual int _getContainerOffset() const;
+    virtual int32_t _getContainerOffset() const;
     /**
      * @vftbl 22
      * @symbol ?_onItemChanged\@PlayerUIContainerModelBase\@\@MEAAXHAEBVItemStack\@\@0\@Z
      */
-    virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
+    virtual void _onItemChanged(int32_t, class ItemStack const&, class ItemStack const&);
     /**
      * @symbol ??0PlayerUIContainerModelBase\@\@QEAA\@W4ContainerEnumName\@\@AEAVPlayer\@\@HW4ContainerCategory\@\@\@Z
      */
-    MCAPI PlayerUIContainerModelBase(enum class ContainerEnumName, class Player&, int, enum class ContainerCategory);
+    MCAPI
+    PlayerUIContainerModelBase(enum class ContainerEnumName, class Player&, int32_t, enum class ContainerCategory);
     // NOLINTEND
 
     // protected:

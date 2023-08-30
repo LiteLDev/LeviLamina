@@ -34,10 +34,10 @@ public:
     /**
      * @symbol ??0ScatteredFeaturePiece\@\@IEAA\@HHHHHH\@Z
      */
-    MCAPI ScatteredFeaturePiece(int, int, int, int, int, int);
+    MCAPI ScatteredFeaturePiece(int32_t, int32_t, int32_t, int32_t, int32_t, int32_t);
     /**
      * @symbol ?updateAverageGroundHeight\@ScatteredFeaturePiece\@\@IEAA_NAEAVBlockSource\@\@AEBVBoundingBox\@\@H\@Z
      */
-    MCAPI bool updateAverageGroundHeight(class BlockSource&, class BoundingBox const&, int);
+    MCAPI bool updateAverageGroundHeight(class BlockSource&, class BoundingBox const&, int32_t);
     // NOLINTEND
 };

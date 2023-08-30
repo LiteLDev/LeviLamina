@@ -24,17 +24,17 @@ public:
      * @vftbl 2
      * @symbol ?getMinCost\@DiggingEnchant\@\@UEBAHH\@Z
      */
-    virtual int getMinCost(int) const;
+    virtual int32_t getMinCost(int32_t) const;
     /**
      * @vftbl 3
      * @symbol ?getMaxCost\@DiggingEnchant\@\@UEBAHH\@Z
      */
-    virtual int getMaxCost(int) const;
+    virtual int32_t getMaxCost(int32_t) const;
     /**
      * @vftbl 5
      * @symbol ?getMaxLevel\@DiggingEnchant\@\@UEBAHXZ
      */
-    virtual int getMaxLevel() const;
+    virtual int32_t getMaxLevel() const;
     /**
      * @vftbl 10
      * @symbol __unk_vfn_10

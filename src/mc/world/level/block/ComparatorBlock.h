@@ -140,7 +140,7 @@ public:
      * @vftbl 61
      * @symbol ?getDirectSignal\@ComparatorBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual int getDirectSignal(class BlockSource&, class BlockPos const&, int) const;
+    virtual int32_t getDirectSignal(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
@@ -155,12 +155,12 @@ public:
      * @vftbl 66
      * @symbol ?shouldConnectToRedstone\@ComparatorBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 75
      * @symbol ?onRedstoneUpdate\@ComparatorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
-    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int32_t, bool) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -201,12 +201,12 @@ public:
      * @symbol ?getPlacementBlock\@ComparatorBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 116
      * @symbol ?triggerEvent\@ComparatorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@HH\@Z
      */
-    virtual void triggerEvent(class BlockSource&, class BlockPos const&, int, int) const;
+    virtual void triggerEvent(class BlockSource&, class BlockPos const&, int32_t, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -236,7 +236,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@ComparatorBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 144
      * @symbol ?canSpawnOn\@ComparatorBlock\@\@UEBA_NPEAVActor\@\@\@Z
@@ -286,7 +286,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@ComparatorBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -306,7 +306,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@ComparatorBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPARATORBLOCK
     /**
      * @symbol ?isInteractiveBlock\@ComparatorBlock\@\@UEBA_NXZ
@@ -317,7 +317,7 @@ public:
      * @symbol
      * ??0ComparatorBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
-    MCAPI ComparatorBlock(std::string const&, int, bool);
+    MCAPI ComparatorBlock(std::string const&, int32_t, bool);
     // NOLINTEND
 
     // private:
@@ -329,6 +329,6 @@ public:
     /**
      * @symbol ?_refreshOutputState\@ComparatorBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    MCAPI void _refreshOutputState(class BlockSource&, class BlockPos const&, int) const;
+    MCAPI void _refreshOutputState(class BlockSource&, class BlockPos const&, int32_t) const;
     // NOLINTEND
 };

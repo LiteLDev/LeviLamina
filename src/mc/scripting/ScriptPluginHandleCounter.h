@@ -55,7 +55,7 @@ public:
         class Scripting::LifetimeRegistry&,
         struct Scripting::ObjectHandle,
         class entt::meta_type const&,
-        unsigned int
+        uint32_t
     );
     /**
      * @vftbl 2
@@ -66,7 +66,7 @@ public:
         class Scripting::LifetimeRegistry&,
         struct Scripting::ObjectHandle,
         class entt::meta_type const&,
-        unsigned int
+        uint32_t
     );
     /**
      * @vftbl 3
@@ -77,7 +77,7 @@ public:
         class Scripting::LifetimeRegistry&,
         struct Scripting::ObjectHandle,
         class entt::meta_type const&,
-        unsigned int
+        uint32_t
     );
     /**
      * @vftbl 4
@@ -88,7 +88,7 @@ public:
         class Scripting::LifetimeRegistry&,
         struct Scripting::ObjectHandle,
         class entt::meta_type const&,
-        unsigned int
+        uint32_t
     );
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINHANDLECOUNTER
     /**

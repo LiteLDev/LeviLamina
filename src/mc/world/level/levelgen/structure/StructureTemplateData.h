@@ -50,11 +50,11 @@ public:
     /**
      * @symbol ?setBlockIndices\@StructureTemplateData\@\@QEAAXV?$vector\@HV?$allocator\@H\@std\@\@\@std\@\@\@Z
      */
-    MCAPI void setBlockIndices(std::vector<int>);
+    MCAPI void setBlockIndices(std::vector<int32_t>);
     /**
      * @symbol ?setExtraBlockIndices\@StructureTemplateData\@\@QEAAXV?$vector\@HV?$allocator\@H\@std\@\@\@std\@\@\@Z
      */
-    MCAPI void setExtraBlockIndices(std::vector<int>);
+    MCAPI void setExtraBlockIndices(std::vector<int32_t>);
     /**
      * @symbol
      * ?DEFAULT_PALETTE_NAME\@StructureTemplateData\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B

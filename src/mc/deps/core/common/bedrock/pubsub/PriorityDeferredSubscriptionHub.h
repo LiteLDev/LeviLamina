@@ -87,7 +87,8 @@ public:
      * @symbol
      * ?_enqueue\@PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@EEAAXV?$function\@$$A6AXXZ\@std\@\@W4ConnectPosition\@23\@V?$optional\@H\@5\@\@Z
      */
-    virtual void _enqueue(std::function<void(void)>, enum class Bedrock::PubSub::ConnectPosition, std::optional<int>);
+    virtual void
+        _enqueue(std::function<void(void)>, enum class Bedrock::PubSub::ConnectPosition, std::optional<int32_t>);
     /**
      * @vftbl 11
      * @symbol ?_runOneEvent\@PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@EEAA_NXZ

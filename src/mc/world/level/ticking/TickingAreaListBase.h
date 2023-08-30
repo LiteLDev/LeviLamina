@@ -38,7 +38,7 @@ public:
     /**
      * @symbol ?countEntityTickingAreas\@TickingAreaListBase\@\@QEBAIXZ
      */
-    MCAPI unsigned int countEntityTickingAreas() const;
+    MCAPI uint32_t countEntityTickingAreas() const;
     /**
      * @symbol ?destroyAreas\@TickingAreaListBase\@\@QEAAXXZ
      */

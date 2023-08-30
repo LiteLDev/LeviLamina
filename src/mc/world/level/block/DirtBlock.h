@@ -140,7 +140,7 @@ public:
      * @vftbl 57
      * @symbol ?isValidAuxValue\@DirtBlock\@\@UEBA_NH\@Z
      */
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
@@ -231,7 +231,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@DirtBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -271,7 +271,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@DirtBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -291,7 +291,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@DirtBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@DirtBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -300,6 +300,6 @@ public:
     /**
      * @symbol ??0DirtBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI DirtBlock(std::string const&, int);
+    MCAPI DirtBlock(std::string const&, int32_t);
     // NOLINTEND
 };

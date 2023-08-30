@@ -229,7 +229,7 @@ public:
      */
     MCAPI OldLogBlock(
         std::string const&,
-        int,
+        int32_t,
         class WeakPtr<class BlockLegacy>,
         std::optional<struct LogBlockMapColors>,
         enum class OldLogType

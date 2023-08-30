@@ -175,7 +175,7 @@ public:
     /**
      * @symbol ?getSwellDir\@Creeper\@\@QEAAHXZ
      */
-    MCAPI int getSwellDir();
+    MCAPI int32_t getSwellDir();
     /**
      * @symbol ?getSwelling\@Creeper\@\@QEBAMM\@Z
      */
@@ -191,6 +191,6 @@ public:
     /**
      * @symbol ?_setSwellDir\@Creeper\@\@AEAAXH\@Z
      */
-    MCAPI void _setSwellDir(int);
+    MCAPI void _setSwellDir(int32_t);
     // NOLINTEND
 };

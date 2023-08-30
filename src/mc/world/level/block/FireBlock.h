@@ -285,11 +285,11 @@ public:
     /**
      * @symbol ??0FireBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI FireBlock(std::string const&, int);
+    MCAPI FireBlock(std::string const&, int32_t);
     /**
      * @symbol ?checkBurn\@FireBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@HAEAVRandomize\@\@H\@Z
      */
-    MCAPI void checkBurn(class BlockSource&, class BlockPos const&, int, class Randomize&, int) const;
+    MCAPI void checkBurn(class BlockSource&, class BlockPos const&, int32_t, class Randomize&, int32_t) const;
     /**
      * @symbol ?isSolidToppedBlock\@FireBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */

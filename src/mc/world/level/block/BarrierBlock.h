@@ -40,7 +40,7 @@ public:
      * @vftbl 28
      * @symbol ?canConnect\@BarrierBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
-    virtual bool canConnect(class Block const&, unsigned char, class Block const&) const;
+    virtual bool canConnect(class Block const&, uint8_t, class Block const&) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -239,6 +239,6 @@ public:
     /**
      * @symbol ??0BarrierBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI BarrierBlock(std::string const&, int);
+    MCAPI BarrierBlock(std::string const&, int32_t);
     // NOLINTEND
 };

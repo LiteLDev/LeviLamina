@@ -63,7 +63,7 @@ public:
     /**
      * @symbol ??0ByteTag\@\@QEAA\@E\@Z
      */
-    MCAPI ByteTag(unsigned char);
+    MCAPI ByteTag(uint8_t);
     /**
      * @symbol ??0ByteTag\@\@QEAA\@XZ
      */

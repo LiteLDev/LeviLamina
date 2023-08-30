@@ -217,7 +217,7 @@ public:
      * @symbol ?getPlacementBlock\@ScaffoldingBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -329,11 +329,11 @@ public:
      * @symbol
      * ??0ScaffoldingBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI ScaffoldingBlock(std::string const&, int);
+    MCAPI ScaffoldingBlock(std::string const&, int32_t);
     /**
      * @symbol ?MAX_STABILITY\@ScaffoldingBlock\@\@2HB
      */
-    MCAPI static int const MAX_STABILITY;
+    MCAPI static int32_t const MAX_STABILITY;
     // NOLINTEND
 
     // protected:
@@ -341,7 +341,7 @@ public:
     /**
      * @symbol ?calculateStability\@ScaffoldingBlock\@\@IEBAHAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI int calculateStability(class BlockSource const&, class BlockPos const&) const;
+    MCAPI int32_t calculateStability(class BlockSource const&, class BlockPos const&) const;
     // NOLINTEND
 
     // private:

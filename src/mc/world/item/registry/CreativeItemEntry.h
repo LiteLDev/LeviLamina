@@ -28,7 +28,7 @@ public:
     /**
      * @symbol ?getCreativeNetId\@CreativeItemEntry\@\@QEBAAEBV?$TypedServerNetId\@UCreativeItemNetIdTag\@\@I$0A\@\@\@XZ
      */
-    MCAPI class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const& getCreativeNetId() const;
+    MCAPI class TypedServerNetId<struct CreativeItemNetIdTag, uint32_t, 0> const& getCreativeNetId() const;
     /**
      * @symbol ?getGroup\@CreativeItemEntry\@\@QEBAPEAVCreativeGroupInfo\@\@XZ
      */
@@ -36,7 +36,7 @@ public:
     /**
      * @symbol ?getIndex\@CreativeItemEntry\@\@QEBAIXZ
      */
-    MCAPI unsigned int getIndex() const;
+    MCAPI uint32_t getIndex() const;
     /**
      * @symbol ?getItemInstance\@CreativeItemEntry\@\@QEBAAEBVItemInstance\@\@XZ
      */

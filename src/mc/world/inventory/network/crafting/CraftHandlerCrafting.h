@@ -31,7 +31,7 @@ public:
      * ?handleConsumedItem\@CraftHandlerCrafting\@\@UEAA?AW4ItemStackNetResult\@\@W4ContainerEnumName\@\@EAEBVItemStack\@\@\@Z
      */
     virtual enum class ItemStackNetResult
-    handleConsumedItem(enum class ContainerEnumName, unsigned char, class ItemStack const&);
+    handleConsumedItem(enum class ContainerEnumName, uint8_t, class ItemStack const&);
     /**
      * @vftbl 2
      * @symbol
@@ -66,9 +66,8 @@ public:
      * @symbol
      * ?_handleCraftOutput\@CraftHandlerCrafting\@\@AEAA?AW4ItemStackNetResult\@\@AEBV?$ItemStackRequestActionCraft\@V?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@$0M\@\@\@\@Z
      */
-    MCAPI enum class ItemStackNetResult
-    _handleCraftOutput(class ItemStackRequestActionCraft<
-                       class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>,
-                       12> const&);
+    MCAPI enum class ItemStackNetResult _handleCraftOutput(class ItemStackRequestActionCraft<
+                                                           class TypedServerNetId<struct RecipeNetIdTag, uint32_t, 0>,
+                                                           12> const&);
     // NOLINTEND
 };

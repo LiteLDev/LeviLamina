@@ -119,7 +119,6 @@ public:
      * @symbol
      * ??0ServerCommandOrigin\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVServerLevel\@\@W4CommandPermissionLevel\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI
-    ServerCommandOrigin(std::string const&, class ServerLevel&, enum class CommandPermissionLevel, class AutomaticID<class Dimension, int>);
+    MCAPI ServerCommandOrigin(std::string const&, class ServerLevel&, enum class CommandPermissionLevel, DimensionType);
     // NOLINTEND
 };

@@ -30,7 +30,7 @@ public:
      * @vftbl 2
      * @symbol ?serverInitItemStackIds\@CraftingContainer\@\@UEAAXHHV?$function\@$$A6AXHAEBVItemStack\@\@\@Z\@std\@\@\@Z
      */
-    virtual void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>) = 0;
+    virtual void serverInitItemStackIds(int32_t, int32_t, std::function<void(int32_t, class ItemStack const&)>) = 0;
     /**
      * @vftbl 3
      * @symbol ?addContentChangeListener\@Container\@\@UEAAXPEAVContainerContentChangeListener\@\@\@Z
@@ -45,7 +45,7 @@ public:
      * @vftbl 5
      * @symbol ?getItem\@FillingContainer\@\@UEBAAEBVItemStack\@\@H\@Z
      */
-    virtual class ItemStack const& getItem(int) const = 0;
+    virtual class ItemStack const& getItem(int32_t) const = 0;
     /**
      * @vftbl 6
      * @symbol ?hasRoomForItem\@Container\@\@UEAA_NAEBVItemStack\@\@\@Z
@@ -70,17 +70,17 @@ public:
      * @vftbl 10
      * @symbol ?setItem\@Inventory\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
-    virtual void setItem(int, class ItemStack const&) = 0;
+    virtual void setItem(int32_t, class ItemStack const&) = 0;
     /**
      * @vftbl 11
      * @symbol ?setItemWithForceBalance\@Container\@\@UEAAXHAEBVItemStack\@\@_N\@Z
      */
-    virtual void setItemWithForceBalance(int, class ItemStack const&, bool);
+    virtual void setItemWithForceBalance(int32_t, class ItemStack const&, bool);
     /**
      * @vftbl 12
      * @symbol ?removeItem\@Container\@\@UEAAXHH\@Z
      */
-    virtual void removeItem(int, int);
+    virtual void removeItem(int32_t, int32_t);
     /**
      * @vftbl 13
      * @symbol ?removeAllItems\@Container\@\@UEAAXXZ
@@ -100,12 +100,12 @@ public:
      * @vftbl 16
      * @symbol ?getContainerSize\@FillingContainer\@\@UEBAHXZ
      */
-    virtual int getContainerSize() const = 0;
+    virtual int32_t getContainerSize() const = 0;
     /**
      * @vftbl 17
      * @symbol ?getMaxStackSize\@SimpleContainer\@\@UEBAHXZ
      */
-    virtual int getMaxStackSize() const = 0;
+    virtual int32_t getMaxStackSize() const = 0;
     /**
      * @vftbl 18
      * @symbol ?startOpen\@FillingContainer\@\@UEAAXAEAVPlayer\@\@\@Z
@@ -132,17 +132,17 @@ public:
      * @vftbl 22
      * @symbol ?getEmptySlotsCount\@Container\@\@UEBAHXZ
      */
-    virtual int getEmptySlotsCount() const;
+    virtual int32_t getEmptySlotsCount() const;
     /**
      * @vftbl 23
      * @symbol ?getItemCount\@Container\@\@UEBAHAEBVItemStack\@\@\@Z
      */
-    virtual int getItemCount(class ItemStack const&) const;
+    virtual int32_t getItemCount(class ItemStack const&) const;
     /**
      * @vftbl 24
      * @symbol ?findFirstSlotForItem\@Container\@\@UEBAHAEBVItemStack\@\@\@Z
      */
-    virtual int findFirstSlotForItem(class ItemStack const&) const;
+    virtual int32_t findFirstSlotForItem(class ItemStack const&) const;
     /**
      * @vftbl 25
      * @symbol __unk_vfn_25
@@ -157,7 +157,7 @@ public:
      * @vftbl 27
      * @symbol ?setContainerChanged\@Container\@\@UEAAXH\@Z
      */
-    virtual void setContainerChanged(int);
+    virtual void setContainerChanged(int32_t);
     /**
      * @vftbl 28
      * @symbol ?setContainerMoved\@Container\@\@UEAAXXZ
@@ -190,7 +190,7 @@ public:
      * ?createTransactionContext\@Container\@\@UEAAXV?$function\@$$A6AXAEAVContainer\@\@HAEBVItemStack\@\@1\@Z\@std\@\@V?$function\@$$A6AXXZ\@3\@\@Z
      */
     virtual void
-        createTransactionContext(std::function<void(class Container&, int, class ItemStack const&, class ItemStack const&)>, std::function<void(void)>);
+        createTransactionContext(std::function<void(class Container&, int32_t, class ItemStack const&, class ItemStack const&)>, std::function<void(void)>);
     /**
      * @vftbl 34
      * @symbol ?initializeContainerContents\@Container\@\@UEAAXAEAVBlockSource\@\@\@Z
@@ -205,11 +205,11 @@ public:
     /**
      * @symbol ?canPullOutItem\@Container\@\@UEBA_NHHAEBVItemStack\@\@\@Z
      */
-    MCVAPI bool canPullOutItem(int, int, class ItemStack const&) const;
+    MCVAPI bool canPullOutItem(int32_t, int32_t, class ItemStack const&) const;
     /**
      * @symbol ?canPushInItem\@Container\@\@UEBA_NHHAEBVItemStack\@\@\@Z
      */
-    MCVAPI bool canPushInItem(int, int, class ItemStack const&) const;
+    MCVAPI bool canPushInItem(int32_t, int32_t, class ItemStack const&) const;
     /**
      * @symbol __unk_destructor_-1
      */
@@ -239,15 +239,15 @@ public:
     /**
      * @symbol ?getItemCount\@Container\@\@QEAAHV?$function\@$$A6A_NAEBVItemStack\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI int getItemCount(std::function<bool(class ItemStack const&)>);
+    MCAPI int32_t getItemCount(std::function<bool(class ItemStack const&)>);
     /**
      * @symbol ?getRedstoneSignalFromContainer\@Container\@\@QEAAHAEAVBlockSource\@\@\@Z
      */
-    MCAPI int getRedstoneSignalFromContainer(class BlockSource&);
+    MCAPI int32_t getRedstoneSignalFromContainer(class BlockSource&);
     /**
      * @symbol ?getRuntimeId\@Container\@\@QEBAAEBV?$TypedRuntimeId\@UContainerRuntimeIdTag\@\@I$0A\@\@\@XZ
      */
-    MCAPI class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const& getRuntimeId() const;
+    MCAPI class TypedRuntimeId<struct ContainerRuntimeIdTag, uint32_t, 0> const& getRuntimeId() const;
     /**
      * @symbol ?initRuntimeId\@Container\@\@QEAAXXZ
      */
@@ -255,7 +255,7 @@ public:
     /**
      * @symbol ?serverInitItemStackIdsAll\@Container\@\@QEAAXV?$function\@$$A6AXHAEBVItemStack\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI void serverInitItemStackIdsAll(std::function<void(int, class ItemStack const&)>);
+    MCAPI void serverInitItemStackIdsAll(std::function<void(int32_t, class ItemStack const&)>);
     /**
      * @symbol ?setGameplayContainerType\@Container\@\@QEAAXW4ContainerType\@\@\@Z
      */
@@ -263,7 +263,7 @@ public:
     /**
      * @symbol ?triggerTransactionChange\@Container\@\@QEAAXHAEBVItemStack\@\@0\@Z
      */
-    MCAPI void triggerTransactionChange(int, class ItemStack const&, class ItemStack const&);
+    MCAPI void triggerTransactionChange(int32_t, class ItemStack const&, class ItemStack const&);
     /**
      * @symbol
      * ?getContainerTypeId\@Container\@\@SA?AW4ContainerType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -281,15 +281,15 @@ public:
     /**
      * @symbol ?_getEmptySlotsCount\@Container\@\@IEBAHHH\@Z
      */
-    MCAPI int _getEmptySlotsCount(int, int) const;
+    MCAPI int32_t _getEmptySlotsCount(int32_t, int32_t) const;
     /**
      * @symbol ?_initRuntimeId\@Container\@\@IEAAXAEBV?$TypedRuntimeId\@UContainerRuntimeIdTag\@\@I$0A\@\@\@\@Z
      */
-    MCAPI void _initRuntimeId(class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const&);
+    MCAPI void _initRuntimeId(class TypedRuntimeId<struct ContainerRuntimeIdTag, uint32_t, 0> const&);
     /**
      * @symbol ?_serverInitId\@Container\@\@IEAAXHAEAVItemStack\@\@V?$function\@$$A6AXHAEBVItemStack\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI void _serverInitId(int, class ItemStack&, std::function<void(int, class ItemStack const&)>);
+    MCAPI void _serverInitId(int32_t, class ItemStack&, std::function<void(int32_t, class ItemStack const&)>);
     // NOLINTEND
 
 protected:

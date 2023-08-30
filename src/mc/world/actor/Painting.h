@@ -173,12 +173,12 @@ public:
      * @vftbl 255
      * @symbol ?getWidth\@Painting\@\@UEBAHXZ
      */
-    virtual int getWidth() const;
+    virtual int32_t getWidth() const;
     /**
      * @vftbl 256
      * @symbol ?getHeight\@Painting\@\@UEBAHXZ
      */
-    virtual int getHeight() const;
+    virtual int32_t getHeight() const;
     /**
      * @vftbl 257
      * @symbol ?dropItem\@Painting\@\@UEAAXXZ
@@ -188,7 +188,7 @@ public:
      * @vftbl 258
      * @symbol ?placeHangingEntity\@Painting\@\@UEAA_NAEAVBlockSource\@\@H\@Z
      */
-    virtual bool placeHangingEntity(class BlockSource&, int);
+    virtual bool placeHangingEntity(class BlockSource&, int32_t);
     /**
      * @symbol
      * ??0Painting\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z

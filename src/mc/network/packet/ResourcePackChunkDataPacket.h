@@ -53,7 +53,7 @@ public:
      * @symbol
      * ??0ResourcePackChunkDataPacket\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_KAEBV?$vector\@EV?$allocator\@E\@std\@\@\@2\@\@Z
      */
-    MCAPI ResourcePackChunkDataPacket(std::string const&, int, uint64_t, std::vector<unsigned char> const&);
+    MCAPI ResourcePackChunkDataPacket(std::string const&, int32_t, uint64_t, std::vector<uint8_t> const&);
     /**
      * @symbol ??0ResourcePackChunkDataPacket\@\@QEAA\@XZ
      */

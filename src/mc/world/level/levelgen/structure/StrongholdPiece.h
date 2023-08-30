@@ -32,11 +32,11 @@ public:
         std::string const&,
         std::vector<std::unique_ptr<class StructurePiece>>&,
         class Random&,
-        int,
-        int,
-        int,
-        int,
-        int
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t
     );
     /**
      * @symbol
@@ -46,11 +46,11 @@ public:
         class SHStartPiece&,
         std::vector<std::unique_ptr<class StructurePiece>>&,
         class Random&,
-        int,
-        int,
-        int,
-        int,
-        int
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t
     );
     /**
      * @symbol
@@ -60,11 +60,11 @@ public:
         class SHStartPiece&,
         std::vector<std::unique_ptr<class StructurePiece>>&,
         class Random const&,
-        int,
-        int,
-        int,
-        int,
-        int
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t
     );
     /**
      * @symbol
@@ -75,9 +75,9 @@ public:
         class Random&,
         class BoundingBox const&,
         enum class StrongholdPiece::SmallDoorType,
-        int,
-        int,
-        int
+        int32_t,
+        int32_t,
+        int32_t
     );
     /**
      * @symbol
@@ -87,8 +87,8 @@ public:
         class SHStartPiece&,
         std::vector<std::unique_ptr<class StructurePiece>>&,
         class Random&,
-        int,
-        int
+        int32_t,
+        int32_t
     );
     /**
      * @symbol
@@ -98,8 +98,8 @@ public:
         class SHStartPiece&,
         std::vector<std::unique_ptr<class StructurePiece>>&,
         class Random&,
-        int,
-        int
+        int32_t,
+        int32_t
     );
     /**
      * @symbol
@@ -109,8 +109,8 @@ public:
         class SHStartPiece&,
         std::vector<std::unique_ptr<class StructurePiece>>&,
         class Random&,
-        int,
-        int
+        int32_t,
+        int32_t
     );
     // NOLINTEND
 };

@@ -15,10 +15,10 @@ public:
     /**
      * @symbol ?getBedRotation\@BedHelper\@\@QEBAMH\@Z
      */
-    MCAPI float getBedRotation(int) const;
+    MCAPI float getBedRotation(int32_t) const;
     /**
      * @symbol ?setBedPositionOffsets\@BedHelper\@\@QEAAXHAEAM0AEAVVec3\@\@\@Z
      */
-    MCAPI void setBedPositionOffsets(int, float&, float&, class Vec3&);
+    MCAPI void setBedPositionOffsets(int32_t, float&, float&, class Vec3&);
     // NOLINTEND
 };

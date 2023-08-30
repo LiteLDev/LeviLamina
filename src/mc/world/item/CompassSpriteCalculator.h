@@ -25,15 +25,15 @@ public:
     /**
      * @symbol ?getFrame\@CompassSpriteCalculator\@\@QEBAHXZ
      */
-    MCAPI int getFrame() const;
+    MCAPI int32_t getFrame() const;
     /**
      * @symbol ?update\@CompassSpriteCalculator\@\@QEAAHAEAVActor\@\@_N\@Z
      */
-    MCAPI int update(class Actor&, bool);
+    MCAPI int32_t update(class Actor&, bool);
     /**
      * @symbol ?updateFromPosition\@CompassSpriteCalculator\@\@QEAAHPEBVBlockSource\@\@PEAVActor\@\@MMM_N2\@Z
      */
-    MCAPI int updateFromPosition(class BlockSource const*, class Actor*, float, float, float, bool, bool);
+    MCAPI int32_t updateFromPosition(class BlockSource const*, class Actor*, float, float, float, bool, bool);
     /**
      * @symbol ??1CompassSpriteCalculator\@\@QEAA\@XZ
      */

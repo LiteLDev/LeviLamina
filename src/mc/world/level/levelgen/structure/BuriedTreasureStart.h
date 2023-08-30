@@ -23,6 +23,6 @@ public:
     /**
      * @symbol ??0BuriedTreasureStart\@\@QEAA\@AEAVDimension\@\@AEAVRandom\@\@HH\@Z
      */
-    MCAPI BuriedTreasureStart(class Dimension&, class Random&, int, int);
+    MCAPI BuriedTreasureStart(class Dimension&, class Random&, int32_t, int32_t);
     // NOLINTEND
 };

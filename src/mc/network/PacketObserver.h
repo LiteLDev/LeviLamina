@@ -26,7 +26,7 @@ public:
         /**
          * @symbol ??0PacketStats\@PacketObserver\@\@QEAA\@I\@Z
          */
-        MCAPI PacketStats(unsigned int);
+        MCAPI PacketStats(uint32_t);
         // NOLINTEND
     };
 
@@ -47,12 +47,12 @@ public:
      * @vftbl 1
      * @symbol ?packetSentTo\@PacketObserver\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVPacket\@\@I\@Z
      */
-    virtual void packetSentTo(class NetworkIdentifier const&, class Packet const&, unsigned int);
+    virtual void packetSentTo(class NetworkIdentifier const&, class Packet const&, uint32_t);
     /**
      * @vftbl 2
      * @symbol ?packetReceivedFrom\@PacketObserver\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVPacket\@\@I\@Z
      */
-    virtual void packetReceivedFrom(class NetworkIdentifier const&, class Packet const&, unsigned int);
+    virtual void packetReceivedFrom(class NetworkIdentifier const&, class Packet const&, uint32_t);
     /**
      * @vftbl 3
      * @symbol

@@ -35,7 +35,7 @@ public:
     /**
      * @symbol ?use\@CopperBehavior\@\@QEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    MCAPI bool use(class Player&, class BlockPos const&, unsigned char) const;
+    MCAPI bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @symbol ??1CopperBehavior\@\@QEAA\@XZ
      */

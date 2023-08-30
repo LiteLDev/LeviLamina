@@ -38,7 +38,7 @@ public:
     /**
      * @symbol ?getSeatCount\@RideableComponent\@\@QEBAHXZ
      */
-    MCAPI int getSeatCount() const;
+    MCAPI int32_t getSeatCount() const;
     /**
      * @symbol
      * ?getSeats\@RideableComponent\@\@QEBAAEBV?$vector\@USeatDescription\@\@V?$allocator\@USeatDescription\@\@\@std\@\@\@std\@\@XZ

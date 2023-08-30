@@ -58,7 +58,7 @@ public:
      * @symbol
      * ?getCameraPresetIndex\@CameraPresets\@\@QEBA?AV?$optional\@I\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
-    MCAPI std::optional<unsigned int> getCameraPresetIndex(std::string const&) const;
+    MCAPI std::optional<uint32_t> getCameraPresetIndex(std::string const&) const;
     /**
      * @symbol ?isEmpty\@CameraPresets\@\@QEBA_NXZ
      */

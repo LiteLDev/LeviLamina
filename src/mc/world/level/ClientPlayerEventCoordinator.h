@@ -26,6 +26,6 @@ public:
     /**
      * @symbol ?sendStartDestroyBlock\@ClientPlayerEventCoordinator\@\@QEAAXAEAVPlayer\@\@AEBVBlockPos\@\@AEAE\@Z
      */
-    MCAPI void sendStartDestroyBlock(class Player&, class BlockPos const&, unsigned char&);
+    MCAPI void sendStartDestroyBlock(class Player&, class BlockPos const&, uint8_t&);
     // NOLINTEND
 };

@@ -95,7 +95,7 @@ public:
     /**
      * @symbol ?get\@ListTag\@\@QEBAPEAVTag\@\@H\@Z
      */
-    MCAPI class Tag* get(int) const;
+    MCAPI class Tag* get(int32_t) const;
     /**
      * @symbol ?getCompound\@ListTag\@\@QEAAPEAVCompoundTag\@\@_K\@Z
      */
@@ -107,20 +107,20 @@ public:
     /**
      * @symbol ?getDouble\@ListTag\@\@QEBANH\@Z
      */
-    MCAPI double getDouble(int) const;
+    MCAPI double getDouble(int32_t) const;
     /**
      * @symbol ?getFloat\@ListTag\@\@QEBAMH\@Z
      */
-    MCAPI float getFloat(int) const;
+    MCAPI float getFloat(int32_t) const;
     /**
      * @symbol ?getInt\@ListTag\@\@QEBAHH\@Z
      */
-    MCAPI int getInt(int) const;
+    MCAPI int32_t getInt(int32_t) const;
     /**
      * @symbol
      * ?getString\@ListTag\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI std::string const& getString(int) const;
+    MCAPI std::string const& getString(int32_t) const;
     /**
      * @symbol ?popBack\@ListTag\@\@QEAAXXZ
      */
@@ -128,6 +128,6 @@ public:
     /**
      * @symbol ?size\@ListTag\@\@QEBAHXZ
      */
-    MCAPI int size() const;
+    MCAPI int32_t size() const;
     // NOLINTEND
 };

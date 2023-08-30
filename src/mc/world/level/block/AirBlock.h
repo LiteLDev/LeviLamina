@@ -217,7 +217,7 @@ public:
      * @vftbl 93
      * @symbol ?mayPlace\@AirBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
+    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 94
      * @symbol ?mayPlace\@AirBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
@@ -343,6 +343,6 @@ public:
      * @symbol
      * ??0AirBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI AirBlock(std::string const&, int, class Material const&);
+    MCAPI AirBlock(std::string const&, int32_t, class Material const&);
     // NOLINTEND
 };

@@ -33,42 +33,42 @@ public:
      * @vftbl 2
      * @symbol ?getMinCost\@Enchant\@\@UEBAHH\@Z
      */
-    virtual int getMinCost(int) const;
+    virtual int32_t getMinCost(int32_t) const;
     /**
      * @vftbl 3
      * @symbol ?getMaxCost\@Enchant\@\@UEBAHH\@Z
      */
-    virtual int getMaxCost(int) const;
+    virtual int32_t getMaxCost(int32_t) const;
     /**
      * @vftbl 4
      * @symbol ?getMinLevel\@Enchant\@\@UEBAHXZ
      */
-    virtual int getMinLevel() const;
+    virtual int32_t getMinLevel() const;
     /**
      * @vftbl 5
      * @symbol ?getMaxLevel\@Enchant\@\@UEBAHXZ
      */
-    virtual int getMaxLevel() const;
+    virtual int32_t getMaxLevel() const;
     /**
      * @vftbl 6
      * @symbol ?getDamageProtection\@Enchant\@\@UEBAHHAEBVActorDamageSource\@\@\@Z
      */
-    virtual int getDamageProtection(int, class ActorDamageSource const&) const;
+    virtual int32_t getDamageProtection(int32_t, class ActorDamageSource const&) const;
     /**
      * @vftbl 7
      * @symbol ?getDamageBonus\@Enchant\@\@UEBAMHAEBVActor\@\@\@Z
      */
-    virtual float getDamageBonus(int, class Actor const&) const;
+    virtual float getDamageBonus(int32_t, class Actor const&) const;
     /**
      * @vftbl 8
      * @symbol ?doPostAttack\@Enchant\@\@UEBAXAEAVActor\@\@0H\@Z
      */
-    virtual void doPostAttack(class Actor&, class Actor&, int) const;
+    virtual void doPostAttack(class Actor&, class Actor&, int32_t) const;
     /**
      * @vftbl 9
      * @symbol ?doPostHurt\@Enchant\@\@UEBAXAEAVItemInstance\@\@AEAVActor\@\@1H\@Z
      */
-    virtual void doPostHurt(class ItemInstance&, class Actor&, class Actor&, int) const;
+    virtual void doPostHurt(class ItemInstance&, class Actor&, class Actor&, int32_t) const;
     /**
      * @vftbl 10
      * @symbol __unk_vfn_10
@@ -120,8 +120,14 @@ public:
      * @symbol
      * ??0Enchant\@\@QEAA\@W4Type\@0\@W4Frequency\@0\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@2HH\@Z
      */
-    MCAPI
-    Enchant(enum class Enchant::Type, enum class Enchant::Frequency, std::string_view, std::string_view, int, int);
+    MCAPI Enchant(
+        enum class Enchant::Type,
+        enum class Enchant::Frequency,
+        std::string_view,
+        std::string_view,
+        int32_t,
+        int32_t
+    );
     /**
      * @symbol
      * ??0Enchant\@\@QEAA\@W4Type\@0\@W4Frequency\@0\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@2HH_N\@Z
@@ -131,14 +137,14 @@ public:
         enum class Enchant::Frequency,
         std::string_view,
         std::string_view,
-        int,
-        int,
+        int32_t,
+        int32_t,
         bool
     );
     /**
      * @symbol ?canEnchant\@Enchant\@\@QEBA_NH_N\@Z
      */
-    MCAPI bool canEnchant(int, bool) const;
+    MCAPI bool canEnchant(int32_t, bool) const;
     /**
      * @symbol
      * ?getDescription\@Enchant\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ

@@ -86,7 +86,7 @@ public:
     /**
      * @symbol ?load\@StructureBlockPalette\@\@QEAA_NAEBVCompoundTag\@\@H\@Z
      */
-    MCAPI bool load(class CompoundTag const&, int);
+    MCAPI bool load(class CompoundTag const&, int32_t);
     /**
      * @symbol
      * ?save\@StructureBlockPalette\@\@QEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
@@ -109,7 +109,7 @@ public:
      * @symbol
      * ?_parseBlockPositionData\@StructureBlockPalette\@\@IEAA?AW4StructureBlockPaletteLoadResult\@\@AEBVCompoundTag\@\@H\@Z
      */
-    MCAPI enum class StructureBlockPaletteLoadResult _parseBlockPositionData(class CompoundTag const&, int);
+    MCAPI enum class StructureBlockPaletteLoadResult _parseBlockPositionData(class CompoundTag const&, int32_t);
     /**
      * @symbol
      * ?_parseBlockPositionDataList\@StructureBlockPalette\@\@IEAA?AW4StructureBlockPaletteLoadResult\@\@AEBVCompoundTag\@\@\@Z

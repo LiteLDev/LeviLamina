@@ -17,7 +17,7 @@ public:
     /**
      * @symbol ??0Brightness\@\@QEAA\@AEBE\@Z
      */
-    MCAPI Brightness(unsigned char const&);
+    MCAPI Brightness(uint8_t const&);
     /**
      * @symbol ??4Brightness\@\@QEAAAEAU0\@AEBU0\@\@Z
      */

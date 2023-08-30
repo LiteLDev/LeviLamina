@@ -56,8 +56,7 @@ public:
      * @vftbl 9
      * @symbol ?onPlayerDimensionChanged\@FollowOwnerGoal\@\@UEAAXPEAVPlayer\@\@V?$AutomaticID\@VDimension\@\@H\@\@1\@Z
      */
-    virtual void
-    onPlayerDimensionChanged(class Player*, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
+    virtual void onPlayerDimensionChanged(class Player*, DimensionType, DimensionType);
     /**
      * @symbol ??0FollowOwnerGoal\@\@QEAA\@AEAVMob\@\@MMM_N1M\@Z
      */

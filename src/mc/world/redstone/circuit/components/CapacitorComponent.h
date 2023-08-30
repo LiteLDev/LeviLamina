@@ -39,7 +39,7 @@ public:
      * @vftbl 25
      * @symbol ?getPoweroutDirection\@CapacitorComponent\@\@UEBAEXZ
      */
-    virtual unsigned char getPoweroutDirection() const;
+    virtual uint8_t getPoweroutDirection() const;
     /**
      * @symbol ??0CapacitorComponent\@\@QEAA\@XZ
      */

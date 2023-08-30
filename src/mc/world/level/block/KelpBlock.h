@@ -226,7 +226,7 @@ public:
      * @vftbl 135
      * @symbol ?getColor\@KelpBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getColor(class Block const&) const;
+    virtual int32_t getColor(class Block const&) const;
     /**
      * @vftbl 140
      * @symbol ?onGraphicsModeChanged\@KelpBlock\@\@UEAAXAEBUBlockGraphicsModeChangeContext\@\@\@Z
@@ -291,7 +291,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@KelpBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_KELPBLOCK
     /**
      * @symbol ?canBeSilkTouched\@KelpBlock\@\@MEBA_NXZ
@@ -305,7 +305,7 @@ public:
     /**
      * @symbol ??0KelpBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI KelpBlock(std::string const&, int);
+    MCAPI KelpBlock(std::string const&, int32_t);
     /**
      * @symbol ?shouldGrow\@KelpBlock\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -317,6 +317,6 @@ public:
     /**
      * @symbol ?_tryGrow\@KelpBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    MCAPI void _tryGrow(class BlockSource&, class BlockPos const&, int) const;
+    MCAPI void _tryGrow(class BlockSource&, class BlockPos const&, int32_t) const;
     // NOLINTEND
 };

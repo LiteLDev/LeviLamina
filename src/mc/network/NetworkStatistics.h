@@ -31,12 +31,12 @@ public:
      * @vftbl 1
      * @symbol ?packetSentTo\@NetworkStatistics\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVPacket\@\@I\@Z
      */
-    virtual void packetSentTo(class NetworkIdentifier const&, class Packet const&, unsigned int);
+    virtual void packetSentTo(class NetworkIdentifier const&, class Packet const&, uint32_t);
     /**
      * @vftbl 2
      * @symbol ?packetReceivedFrom\@NetworkStatistics\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVPacket\@\@I\@Z
      */
-    virtual void packetReceivedFrom(class NetworkIdentifier const&, class Packet const&, unsigned int);
+    virtual void packetReceivedFrom(class NetworkIdentifier const&, class Packet const&, uint32_t);
     /**
      * @vftbl 3
      * @symbol

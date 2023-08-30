@@ -33,12 +33,12 @@ public:
      * @vftbl 1
      * @symbol ?nextInt\@DelegatingRandom\@NoiseUtils\@\@UEAAHXZ
      */
-    virtual int nextInt();
+    virtual int32_t nextInt();
     /**
      * @vftbl 2
      * @symbol ?nextInt\@DelegatingRandom\@NoiseUtils\@\@UEAAHH\@Z
      */
-    virtual int nextInt(int);
+    virtual int32_t nextInt(int32_t);
     /**
      * @vftbl 3
      * @symbol ?nextLong\@DelegatingRandom\@NoiseUtils\@\@UEAA_JXZ
@@ -68,7 +68,7 @@ public:
      * @vftbl 8
      * @symbol ?consumeCount\@DelegatingRandom\@NoiseUtils\@\@UEAAXI\@Z
      */
-    virtual void consumeCount(unsigned int);
+    virtual void consumeCount(uint32_t);
     /**
      * @vftbl 9
      * @symbol

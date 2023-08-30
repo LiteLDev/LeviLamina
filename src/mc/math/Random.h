@@ -33,12 +33,12 @@ public:
      * @vftbl 1
      * @symbol ?nextInt\@Random\@Core\@\@UEAAHXZ
      */
-    virtual int nextInt();
+    virtual int32_t nextInt();
     /**
      * @vftbl 2
      * @symbol ?nextInt\@Random\@Core\@\@UEAAHH\@Z
      */
-    virtual int nextInt(int);
+    virtual int32_t nextInt(int32_t);
     /**
      * @vftbl 3
      * @symbol ?nextLong\@Random\@Core\@\@UEAA_JXZ
@@ -68,7 +68,7 @@ public:
      * @vftbl 8
      * @symbol ?consumeCount\@Random\@Core\@\@UEAAXI\@Z
      */
-    virtual void consumeCount(unsigned int);
+    virtual void consumeCount(uint32_t);
     /**
      * @vftbl 9
      * @symbol
@@ -84,7 +84,7 @@ public:
     /**
      * @symbol ??0Random\@Core\@\@QEAA\@I_N\@Z
      */
-    MCAPI Random(unsigned int, bool);
+    MCAPI Random(uint32_t, bool);
     /**
      * @symbol ?nextGaussian\@Random\@Core\@\@QEAAMXZ
      */
@@ -96,15 +96,15 @@ public:
     /**
      * @symbol ?_genRandInt32\@Random\@Core\@\@AEAAIXZ
      */
-    MCAPI unsigned int _genRandInt32();
+    MCAPI uint32_t _genRandInt32();
     /**
      * @symbol ?_genUniformRandomInt\@Random\@Core\@\@AEAAIXZ
      */
-    MCAPI unsigned int _genUniformRandomInt();
+    MCAPI uint32_t _genUniformRandomInt();
     /**
      * @symbol ?_setSeed\@Random\@Core\@\@AEAAXI\@Z
      */
-    MCAPI void _setSeed(unsigned int);
+    MCAPI void _setSeed(uint32_t);
     // NOLINTEND
 
 private:
@@ -112,7 +112,7 @@ private:
     /**
      * @symbol ?mFixed\@Random\@Core\@\@0U?$atomic\@I\@std\@\@A
      */
-    MCAPI static std::atomic<unsigned int> mFixed;
+    MCAPI static std::atomic<uint32_t> mFixed;
     /**
      * @symbol ?mFixedGaussian\@Random\@Core\@\@0U?$atomic\@M\@std\@\@A
      */
@@ -120,7 +120,7 @@ private:
     /**
      * @symbol ?mFixedUInt32\@Random\@Core\@\@0U?$atomic\@I\@std\@\@A
      */
-    MCAPI static std::atomic<unsigned int> mFixedUInt32;
+    MCAPI static std::atomic<uint32_t> mFixedUInt32;
     /**
      * @symbol ?mRandomDevice\@Random\@Core\@\@0Vrandom_device\@std\@\@A
      */
@@ -134,7 +134,7 @@ private:
     /**
      * @symbol ?mUnfixed\@Random\@Core\@\@0U?$atomic\@I\@std\@\@A
      */
-    MCAPI static std::atomic<unsigned int> mUnfixed;
+    MCAPI static std::atomic<uint32_t> mUnfixed;
     // NOLINTEND
 };
 

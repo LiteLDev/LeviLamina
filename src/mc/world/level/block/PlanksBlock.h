@@ -251,7 +251,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@PlanksBlock\@\@MEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@PlanksBlock\@\@MEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -260,11 +260,11 @@ public:
     /**
      * @symbol ??0PlanksBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI PlanksBlock(std::string const&, int);
+    MCAPI PlanksBlock(std::string const&, int32_t);
     /**
      * @symbol ?isValidWoodMaterial\@PlanksBlock\@\@SA_NH\@Z
      */
-    MCAPI static bool isValidWoodMaterial(int);
+    MCAPI static bool isValidWoodMaterial(int32_t);
     /**
      * @symbol
      * ?WOOD_NAMES\@PlanksBlock\@\@2V?$array\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$08\@std\@\@B

@@ -24,11 +24,11 @@ public:
     /**
      * @symbol ?getBoostTime\@BoostableComponent\@\@QEBAHXZ
      */
-    MCAPI int getBoostTime() const;
+    MCAPI int32_t getBoostTime() const;
     /**
      * @symbol ?getBoostTimeTotal\@BoostableComponent\@\@QEBAHXZ
      */
-    MCAPI int getBoostTimeTotal() const;
+    MCAPI int32_t getBoostTimeTotal() const;
     /**
      * @symbol ?getIsBoosting\@BoostableComponent\@\@QEBA_NXZ
      */
@@ -45,7 +45,7 @@ public:
     /**
      * @symbol ?setBoostTime\@BoostableComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setBoostTime(int);
+    MCAPI void setBoostTime(int32_t);
     /**
      * @symbol ?setIsBoosting\@BoostableComponent\@\@QEAAX_N\@Z
      */

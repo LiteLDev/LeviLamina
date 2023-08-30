@@ -28,18 +28,18 @@ public:
      * ??0Event\@Events\@Social\@\@QEAA\@IAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VProperty\@Events\@Social\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VProperty\@Events\@Social\@\@\@std\@\@\@2\@\@4\@AEBV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@H\@Z
      */
     MCAPI Event(
-        unsigned int,
+        uint32_t,
         std::string const&,
         std::unordered_map<std::string, class Social::Events::Property>&&,
         class Bedrock::NonOwnerPointer<class AppPlatform> const&,
-        int
+        int32_t
     );
     /**
      * @symbol
      * ??0Event\@Events\@Social\@\@QEAA\@IAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VProperty\@Events\@Social\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VProperty\@Events\@Social\@\@\@std\@\@\@2\@\@4\@H\@Z
      */
     MCAPI
-    Event(unsigned int, std::string const&, std::unordered_map<std::string, class Social::Events::Property>&&, int);
+    Event(uint32_t, std::string const&, std::unordered_map<std::string, class Social::Events::Property>&&, int32_t);
     /**
      * @symbol ??0Event\@Events\@Social\@\@QEAA\@AEBV012\@\@Z
      */
@@ -51,7 +51,7 @@ public:
     /**
      * @symbol ?hasEventTags\@Event\@Events\@Social\@\@QEBA_NH\@Z
      */
-    MCAPI bool hasEventTags(int) const;
+    MCAPI bool hasEventTags(int32_t) const;
     /**
      * @symbol ?hasMeasurements\@Event\@Events\@Social\@\@QEBA_NXZ
      */
@@ -67,7 +67,7 @@ public:
     /**
      * @symbol ?passesFilter\@Event\@Events\@Social\@\@QEBA_NH\@Z
      */
-    MCAPI bool passesFilter(int) const;
+    MCAPI bool passesFilter(int32_t) const;
     /**
      * @symbol ?propertiesAsJsonValue\@Event\@Events\@Social\@\@QEBA?AVValue\@Json\@\@XZ
      */

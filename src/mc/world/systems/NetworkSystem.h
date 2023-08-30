@@ -67,11 +67,11 @@ public:
     /**
      * @symbol ?getDefaultGamePort\@NetworkSystem\@\@UEBAGXZ
      */
-    MCVAPI unsigned short getDefaultGamePort() const;
+    MCVAPI uint16_t getDefaultGamePort() const;
     /**
      * @symbol ?getDefaultGamePortv6\@NetworkSystem\@\@UEBAGXZ
      */
-    MCVAPI unsigned short getDefaultGamePortv6() const;
+    MCVAPI uint16_t getDefaultGamePortv6() const;
     /**
      * @symbol
      * ?onAllConnectionsClosed\@NetworkSystem\@\@EEAAXW4DisconnectFailReason\@Connection\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
@@ -223,7 +223,7 @@ public:
     /**
      * @symbol ?setClientUpdateAndRenderThrottle\@NetworkSystem\@\@QEAAX_NHM\@Z
      */
-    MCAPI void setClientUpdateAndRenderThrottle(bool, int, float);
+    MCAPI void setClientUpdateAndRenderThrottle(bool, int32_t, float);
     /**
      * @symbol ?setCloseConnection\@NetworkSystem\@\@QEAAXAEBVNetworkIdentifier\@\@\@Z
      */

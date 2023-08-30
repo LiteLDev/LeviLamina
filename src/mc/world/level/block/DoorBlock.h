@@ -187,7 +187,7 @@ public:
      * @vftbl 75
      * @symbol ?onRedstoneUpdate\@DoorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
-    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int32_t, bool) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -257,7 +257,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@DoorBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -302,7 +302,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@DoorBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -322,12 +322,12 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@DoorBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 186
      * @symbol ?getResourceCount\@DoorBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@DoorBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -356,7 +356,7 @@ public:
      * @symbol
      * ??0DoorBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@W4DoorType\@0\@\@Z
      */
-    MCAPI DoorBlock(std::string const&, int, class Material const&, enum class DoorBlock::DoorType);
+    MCAPI DoorBlock(std::string const&, int32_t, class Material const&, enum class DoorBlock::DoorType);
     /**
      * @symbol
      * ?getBlockedDirection\@DoorBlock\@\@QEBA?AW4Type\@Direction\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@\@Z
@@ -383,6 +383,6 @@ public:
     /**
      * @symbol ?getDoorFacing\@DoorBlock\@\@SAEH\@Z
      */
-    MCAPI static unsigned char getDoorFacing(int);
+    MCAPI static uint8_t getDoorFacing(int32_t);
     // NOLINTEND
 };

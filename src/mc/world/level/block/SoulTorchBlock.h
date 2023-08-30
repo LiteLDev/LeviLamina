@@ -235,6 +235,6 @@ public:
      * @symbol
      * ??0SoulTorchBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI SoulTorchBlock(std::string const&, int);
+    MCAPI SoulTorchBlock(std::string const&, int32_t);
     // NOLINTEND
 };

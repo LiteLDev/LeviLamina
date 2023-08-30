@@ -89,11 +89,11 @@ public:
      * @vftbl 43
      * @symbol ?getOutputSignal\@ComparatorBlockActor\@\@UEAAHXZ
      */
-    virtual int getOutputSignal();
+    virtual int32_t getOutputSignal();
     /**
      * @vftbl 44
      * @symbol ?setOutputSignal\@ComparatorBlockActor\@\@UEAAXH\@Z
      */
-    virtual void setOutputSignal(int);
+    virtual void setOutputSignal(int32_t);
     // NOLINTEND
 };

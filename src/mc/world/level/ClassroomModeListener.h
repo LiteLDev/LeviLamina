@@ -137,7 +137,7 @@ public:
      * ?onBlockChanged\@ClassroomModeListener\@\@UEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@IAEBVBlock\@\@2HPEBUActorBlockSyncMessage\@\@W4BlockChangedEventTarget\@\@PEAVActor\@\@\@Z
      */
     MCVAPI void
-    onBlockChanged(class BlockSource&, class BlockPos const&, unsigned int, class Block const&, class Block const&, int, struct ActorBlockSyncMessage const*, enum class BlockChangedEventTarget, class Actor*);
+    onBlockChanged(class BlockSource&, class BlockPos const&, uint32_t, class Block const&, class Block const&, int32_t, struct ActorBlockSyncMessage const*, enum class BlockChangedEventTarget, class Actor*);
     /**
      * @symbol ?onEntityAdded\@ClassroomModeListener\@\@UEAAXAEAVActor\@\@\@Z
      */

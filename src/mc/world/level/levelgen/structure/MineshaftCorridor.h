@@ -45,11 +45,13 @@ public:
     /**
      * @symbol ?_placeCobWeb\@MineshaftCorridor\@\@QEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@AEAVRandom\@\@MHHH\@Z
      */
-    MCAPI void _placeCobWeb(class BlockSource&, class BoundingBox const&, class Random&, float, int, int, int);
+    MCAPI void
+    _placeCobWeb(class BlockSource&, class BoundingBox const&, class Random&, float, int32_t, int32_t, int32_t);
     /**
      * @symbol ?_placeSupport\@MineshaftCorridor\@\@QEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@HHHHHAEAVRandom\@\@\@Z
      */
-    MCAPI void _placeSupport(class BlockSource&, class BoundingBox const&, int, int, int, int, int, class Random&);
+    MCAPI void
+    _placeSupport(class BlockSource&, class BoundingBox const&, int32_t, int32_t, int32_t, int32_t, int32_t, class Random&);
     // NOLINTEND
 
     // private:
@@ -57,10 +59,10 @@ public:
     /**
      * @symbol ?_fillPillarDownOrChainUp\@MineshaftCorridor\@\@AEAAXAEAVBlockSource\@\@HHHAEBVBoundingBox\@\@\@Z
      */
-    MCAPI void _fillPillarDownOrChainUp(class BlockSource&, int, int, int, class BoundingBox const&);
+    MCAPI void _fillPillarDownOrChainUp(class BlockSource&, int32_t, int32_t, int32_t, class BoundingBox const&);
     /**
      * @symbol ?_placeDoubleLowerOrUpperSupport\@MineshaftCorridor\@\@AEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@HHH\@Z
      */
-    MCAPI void _placeDoubleLowerOrUpperSupport(class BlockSource&, class BoundingBox const&, int, int, int);
+    MCAPI void _placeDoubleLowerOrUpperSupport(class BlockSource&, class BoundingBox const&, int32_t, int32_t, int32_t);
     // NOLINTEND
 };

@@ -96,11 +96,11 @@ namespace Bedrock {
 /**
  * @symbol ?strtoint32\@Bedrock\@\@YAHPEBDPEAPEADH\@Z
  */
-MCAPI int strtoint32(char const*, char**, int);
+MCAPI int32_t strtoint32(char const*, char**, int32_t);
 /**
  * @symbol ?strtouint32\@Bedrock\@\@YAIPEBDPEAPEADH\@Z
  */
-MCAPI unsigned int strtouint32(char const*, char**, int);
+MCAPI uint32_t strtouint32(char const*, char**, int32_t);
 /**
  * @symbol ?throw_system_error\@Bedrock\@\@YAXW4errc\@std\@\@\@Z
  */

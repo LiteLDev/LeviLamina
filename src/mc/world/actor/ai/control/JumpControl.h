@@ -40,7 +40,7 @@ public:
      * @vftbl 4
      * @symbol ?getJumpDelay\@JumpControl\@\@MEBAHAEBVJumpControlComponent\@\@\@Z
      */
-    virtual int getJumpDelay(class JumpControlComponent const&) const;
+    virtual int32_t getJumpDelay(class JumpControlComponent const&) const;
     /**
      * @vftbl 5
      * @symbol ?getJumpPower\@JumpControl\@\@MEBAMAEBVJumpControlComponent\@\@\@Z

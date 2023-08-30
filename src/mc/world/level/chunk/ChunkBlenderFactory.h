@@ -69,8 +69,8 @@ public:
         std::vector<std::array<struct ChunkBlenderFactory::IntermediateAttenuationData, 4>>&,
         class BlendingData const&,
         float,
-        std::pair<int, int>,
-        std::pair<int, int>,
+        std::pair<int32_t, int32_t>,
+        std::pair<int32_t, int32_t>,
         bool
     ) const;
     /**

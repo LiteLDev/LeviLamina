@@ -52,7 +52,7 @@ public:
     /**
      * @symbol ??0NetworkChunkPublisherUpdatePacket\@\@QEAA\@AEBVBlockPos\@\@I\@Z
      */
-    MCAPI NetworkChunkPublisherUpdatePacket(class BlockPos const&, unsigned int);
+    MCAPI NetworkChunkPublisherUpdatePacket(class BlockPos const&, uint32_t);
     /**
      * @symbol ??0NetworkChunkPublisherUpdatePacket\@\@QEAA\@XZ
      */

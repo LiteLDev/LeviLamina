@@ -81,7 +81,7 @@ public:
      * @vftbl 64
      * @symbol ?getArmorValue\@HorseArmorItem\@\@UEBAHXZ
      */
-    virtual int getArmorValue() const;
+    virtual int32_t getArmorValue() const;
     /**
      * @vftbl 66
      * @symbol __unk_vfn_66
@@ -141,7 +141,7 @@ public:
      * @vftbl 85
      * @symbol ?dispense\@HorseArmorItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
+    virtual bool dispense(class BlockSource&, class Container&, int32_t, class Vec3 const&, uint8_t) const;
     /**
      * @vftbl 115
      * @symbol __unk_vfn_115
@@ -156,7 +156,7 @@ public:
      * @symbol
      * ??0HorseArmorItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HHW4Tier\@0\@\@Z
      */
-    MCAPI HorseArmorItem(std::string const&, int, int, enum class HorseArmorItem::Tier);
+    MCAPI HorseArmorItem(std::string const&, int32_t, int32_t, enum class HorseArmorItem::Tier);
     /**
      * @symbol ?getTier\@HorseArmorItem\@\@QEBA?AW4Tier\@1\@XZ
      */
@@ -164,7 +164,7 @@ public:
     /**
      * @symbol ?mHealthPerTier\@HorseArmorItem\@\@2QBHB
      */
-    MCAPI static int const mHealthPerTier[];
+    MCAPI static int32_t const mHealthPerTier[];
     // NOLINTEND
 
     // private:

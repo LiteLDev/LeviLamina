@@ -56,6 +56,6 @@ public:
     /**
      * @symbol ??0SetHealthPacket\@\@QEAA\@H\@Z
      */
-    MCAPI SetHealthPacket(int);
+    MCAPI SetHealthPacket(int32_t);
     // NOLINTEND
 };

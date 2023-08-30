@@ -26,7 +26,7 @@ public:
      * ?shootProjectileFromDefinition\@ProjectileFactory\@\@QEAAPEAVActor\@\@AEBUActorDefinitionIdentifier\@\@PEAVMob\@\@VVec3\@\@HM\@Z
      */
     MCAPI class Actor*
-    shootProjectileFromDefinition(struct ActorDefinitionIdentifier const&, class Mob*, class Vec3, int, float);
+    shootProjectileFromDefinition(struct ActorDefinitionIdentifier const&, class Mob*, class Vec3, int32_t, float);
     /**
      * @symbol
      * ?createSubcomponent\@ProjectileFactory\@\@SA?AV?$unique_ptr\@VOnHitSubcomponent\@\@U?$default_delete\@VOnHitSubcomponent\@\@\@std\@\@\@std\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z

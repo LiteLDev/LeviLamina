@@ -257,7 +257,7 @@ public:
      * @symbol ?setGrowth\@BushBlock\@\@MEBAAEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBV2\@GH\@Z
      */
     virtual class Block const&
-    setGrowth(class BlockSource&, class BlockPos const&, class Block const&, unsigned short, int) const;
+    setGrowth(class BlockSource&, class BlockPos const&, class Block const&, uint16_t, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUSHBLOCK
     /**
      * @symbol ?waterSpreadCausesSpawn\@BushBlock\@\@UEBA_NXZ
@@ -272,7 +272,7 @@ public:
      * @symbol
      * ??0BushBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI BushBlock(std::string const&, int, class Material const&);
+    MCAPI BushBlock(std::string const&, int32_t, class Material const&);
     /**
      * @symbol ?growCrops\@BushBlock\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@W4FertilizerType\@\@\@Z
      */

@@ -20,7 +20,7 @@ public:
     /**
      * @symbol ?addPendingPropertyChange\@ActorDefinitionDiffList\@\@QEAAX_KV?$variant\@HM_N_K\@std\@\@\@Z
      */
-    MCAPI void addPendingPropertyChange(uint64_t, std::variant<int, float, bool, uint64_t>);
+    MCAPI void addPendingPropertyChange(uint64_t, std::variant<int32_t, float, bool, uint64_t>);
     /**
      * @symbol ?buildAdditiveDescriptionFrom\@ActorDefinitionDiffList\@\@QEBA?AVActorDefinitionDescriptor\@\@_K0\@Z
      */

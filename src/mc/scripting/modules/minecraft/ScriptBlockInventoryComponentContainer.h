@@ -39,7 +39,7 @@ public:
      * @symbol
      * ?getEmptySlotsCount\@ScriptBlockInventoryComponentContainer\@ScriptModuleMinecraft\@\@UEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    virtual class Scripting::Result<int> getEmptySlotsCount() const;
+    virtual class Scripting::Result<int32_t> getEmptySlotsCount() const;
     /**
      * @vftbl 13
      * @symbol
@@ -51,7 +51,7 @@ public:
      * @symbol
      * ?_getItemContext\@ScriptBlockInventoryComponentContainer\@ScriptModuleMinecraft\@\@MEBA?AVItemContext\@\@H\@Z
      */
-    virtual class ItemContext _getItemContext(int) const;
+    virtual class ItemContext _getItemContext(int32_t) const;
     // NOLINTEND
 };
 

@@ -20,7 +20,7 @@ MCAPI extern std::array<::BlockColor, 16> RAINBOW;
 /**
  * @symbol ?fromInt\@BlockColorUtil\@\@YA?AW4BlockColor\@\@H\@Z
  */
-MCAPI enum class BlockColor fromInt(int);
+MCAPI enum class BlockColor fromInt(int32_t);
 /**
  * @symbol ?fromItemColor\@BlockColorUtil\@\@YA?AW4BlockColor\@\@W4ItemColor\@\@\@Z
  */
@@ -47,7 +47,7 @@ MCAPI std::string const& getNameSnakeCase(enum class BlockColor);
 /**
  * @symbol ?getRGBColor\@BlockColorUtil\@\@YAHW4BlockColor\@\@\@Z
  */
-MCAPI int getRGBColor(enum class BlockColor);
+MCAPI int32_t getRGBColor(enum class BlockColor);
 // NOLINTEND
 
 }; // namespace BlockColorUtil

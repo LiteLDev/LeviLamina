@@ -42,7 +42,7 @@ public:
      * @symbol
      * ??0SemVersion\@\@QEAA\@GGGAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
-    MCAPI SemVersion(unsigned short, unsigned short, unsigned short, std::string const&, std::string const&);
+    MCAPI SemVersion(uint16_t, uint16_t, uint16_t, std::string const&, std::string const&);
     /**
      * @symbol ??0SemVersion\@\@QEAA\@XZ
      */
@@ -55,15 +55,15 @@ public:
     /**
      * @symbol ?getMajor\@SemVersion\@\@QEBAGXZ
      */
-    MCAPI unsigned short getMajor() const;
+    MCAPI uint16_t getMajor() const;
     /**
      * @symbol ?getMinor\@SemVersion\@\@QEBAGXZ
      */
-    MCAPI unsigned short getMinor() const;
+    MCAPI uint16_t getMinor() const;
     /**
      * @symbol ?getPatch\@SemVersion\@\@QEBAGXZ
      */
-    MCAPI unsigned short getPatch() const;
+    MCAPI uint16_t getPatch() const;
     /**
      * @symbol
      * ?getPreRelease\@SemVersion\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ

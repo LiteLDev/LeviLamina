@@ -44,7 +44,7 @@ public:
      * ?broadcastSoundEvent\@LevelSoundManager\@\@QEAAXAEAVIDimension\@\@W4LevelSoundEvent\@\@AEBVVec3\@\@HAEBUActorDefinitionIdentifier\@\@_N4PEAVPlayer\@\@\@Z
      */
     MCAPI void
-    broadcastSoundEvent(class IDimension&, enum class LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool, class Player*);
+    broadcastSoundEvent(class IDimension&, enum class LevelSoundEvent, class Vec3 const&, int32_t, struct ActorDefinitionIdentifier const&, bool, bool, class Player*);
     /**
      * @symbol
      * ?getSoundPlayer\@LevelSoundManager\@\@QEBA?AV?$not_null\@V?$NonOwnerPointer\@VSoundPlayerInterface\@\@\@Bedrock\@\@\@gsl\@\@XZ
@@ -59,7 +59,7 @@ public:
         enum class LevelSoundEvent,
         class Vec3 const&,
         class Player*,
-        int,
+        int32_t,
         struct ActorDefinitionIdentifier const&,
         bool,
         bool
@@ -68,8 +68,14 @@ public:
      * @symbol
      * ?playSound\@LevelSoundManager\@\@QEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@HAEBUActorDefinitionIdentifier\@\@_N3\@Z
      */
-    MCAPI void
-    playSound(enum class LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
+    MCAPI void playSound(
+        enum class LevelSoundEvent,
+        class Vec3 const&,
+        int32_t,
+        struct ActorDefinitionIdentifier const&,
+        bool,
+        bool
+    );
     /**
      * @symbol ?playSound\@LevelSoundManager\@\@QEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@MM\@Z
      */
@@ -84,7 +90,7 @@ public:
      * ?playSoundForPlayerInDimension\@LevelSoundManager\@\@QEAAXV?$AutomaticID\@VDimension\@\@H\@\@W4LevelSoundEvent\@\@AEBVVec3\@\@HAEBUActorDefinitionIdentifier\@\@_N4PEAVPlayer\@\@\@Z
      */
     MCAPI void
-    playSoundForPlayerInDimension(class AutomaticID<class Dimension, int>, enum class LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool, class Player*);
+    playSoundForPlayerInDimension(DimensionType, enum class LevelSoundEvent, class Vec3 const&, int32_t, struct ActorDefinitionIdentifier const&, bool, bool, class Player*);
     /**
      * @symbol
      * ?playSynchronizedSound\@LevelSoundManager\@\@QEAAXAEAVIDimension\@\@W4LevelSoundEvent\@\@AEBVVec3\@\@PEAVPlayer\@\@HAEBUActorDefinitionIdentifier\@\@_N5\@Z
@@ -94,7 +100,7 @@ public:
         enum class LevelSoundEvent,
         class Vec3 const&,
         class Player*,
-        int,
+        int32_t,
         struct ActorDefinitionIdentifier const&,
         bool,
         bool
@@ -107,7 +113,7 @@ public:
         registerOnLevelSoundEventCallback(std::function<void(
                                               enum class LevelSoundEvent,
                                               class Vec3 const&,
-                                              int,
+                                              int32_t,
                                               struct ActorDefinitionIdentifier const&,
                                               bool,
                                               bool

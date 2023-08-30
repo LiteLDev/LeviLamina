@@ -35,7 +35,7 @@ public:
     MCAPI static std::vector<class gametest::GameTestBatch> groupTestsIntoBatches(
         class gametest::GameTestRegistry&,
         std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>> const&,
-        int
+        int32_t
     );
     /**
      * @symbol
@@ -59,6 +59,6 @@ public:
     MCAPI static std::vector<std::vector<
         std::shared_ptr<class gametest::BaseGameTestFunction>,
         std::allocator<std::shared_ptr<class gametest::BaseGameTestFunction>>>>
-    _subdivideBatch(std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>>&, int);
+    _subdivideBatch(std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>>&, int32_t);
     // NOLINTEND
 };

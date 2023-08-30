@@ -151,11 +151,11 @@ public:
     /**
      * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NIAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI bool write(unsigned int, struct cereal::SerializerTraits const&);
+    MCVAPI bool write(uint32_t, struct cereal::SerializerTraits const&);
     /**
      * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NHAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI bool write(int, struct cereal::SerializerTraits const&);
+    MCVAPI bool write(int32_t, struct cereal::SerializerTraits const&);
     /**
      * @symbol ?write\@NBTSchemaWriter\@\@UEAA_N_NAEBUSerializerTraits\@cereal\@\@\@Z
      */
@@ -163,19 +163,19 @@ public:
     /**
      * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NCAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI bool write(signed char, struct cereal::SerializerTraits const&);
+    MCVAPI bool write(int8_t, struct cereal::SerializerTraits const&);
     /**
      * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NEAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI bool write(unsigned char, struct cereal::SerializerTraits const&);
+    MCVAPI bool write(uint8_t, struct cereal::SerializerTraits const&);
     /**
      * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NGAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI bool write(unsigned short, struct cereal::SerializerTraits const&);
+    MCVAPI bool write(uint16_t, struct cereal::SerializerTraits const&);
     /**
      * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NFAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI bool write(short, struct cereal::SerializerTraits const&);
+    MCVAPI bool write(int16_t, struct cereal::SerializerTraits const&);
     /**
      * @symbol __unk_destructor_-1
      */

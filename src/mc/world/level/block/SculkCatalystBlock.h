@@ -185,7 +185,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@SculkCatalystBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -235,12 +235,12 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@SculkCatalystBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 186
      * @symbol ?getResourceCount\@SculkCatalystBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@SculkCatalystBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -256,7 +256,7 @@ public:
      * @symbol
      * ??0SculkCatalystBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI SculkCatalystBlock(std::string const&, int, class Material const&);
+    MCAPI SculkCatalystBlock(std::string const&, int32_t, class Material const&);
     /**
      * @symbol ?bloom\@SculkCatalystBlock\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAVRandom\@\@\@Z
      */

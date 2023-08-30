@@ -44,7 +44,7 @@ public:
      * ?isFeatureChunk\@VillageFeature\@\@UEAA_NAEBVBiomeSource\@\@AEAVRandom\@\@AEBVChunkPos\@\@IAEBVIPreliminarySurfaceProvider\@\@AEBVDimension\@\@\@Z
      */
     virtual bool
-    isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&, class Dimension const&);
+    isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, uint32_t, class IPreliminarySurfaceProvider const&, class Dimension const&);
     /**
      * @vftbl 6
      * @symbol
@@ -55,6 +55,6 @@ public:
     /**
      * @symbol ??0VillageFeature\@\@QEAA\@IHH\@Z
      */
-    MCAPI VillageFeature(unsigned int, int, int);
+    MCAPI VillageFeature(uint32_t, int32_t, int32_t);
     // NOLINTEND
 };

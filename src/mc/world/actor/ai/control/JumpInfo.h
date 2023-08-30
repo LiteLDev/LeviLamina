@@ -15,11 +15,11 @@ public:
     /**
      * @symbol ??0JumpInfo\@\@QEAA\@MMHH\@Z
      */
-    MCAPI JumpInfo(float, float, int, int);
+    MCAPI JumpInfo(float, float, int32_t, int32_t);
     /**
      * @symbol ?getAnimDuration\@JumpInfo\@\@QEBAHXZ
      */
-    MCAPI int getAnimDuration() const;
+    MCAPI int32_t getAnimDuration() const;
     /**
      * @symbol ?getDistanceScale\@JumpInfo\@\@QEBAMXZ
      */
@@ -31,6 +31,6 @@ public:
     /**
      * @symbol ?getJumpDelay\@JumpInfo\@\@QEBAHXZ
      */
-    MCAPI int getJumpDelay() const;
+    MCAPI int32_t getJumpDelay() const;
     // NOLINTEND
 };

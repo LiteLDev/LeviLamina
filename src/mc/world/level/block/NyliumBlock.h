@@ -241,11 +241,11 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@NyliumBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @symbol ??0NyliumBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI NyliumBlock(std::string const&, int);
+    MCAPI NyliumBlock(std::string const&, int32_t);
     /**
      * @symbol ?canBeNylium\@NyliumBlock\@\@QEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */

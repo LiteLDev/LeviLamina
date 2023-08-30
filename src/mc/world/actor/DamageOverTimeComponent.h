@@ -19,15 +19,15 @@ public:
     /**
      * @symbol ?getDamageTime\@DamageOverTimeComponent\@\@QEBAHXZ
      */
-    MCAPI int getDamageTime() const;
+    MCAPI int32_t getDamageTime() const;
     /**
      * @symbol ?getDamageTimeInterval\@DamageOverTimeComponent\@\@QEBAHXZ
      */
-    MCAPI int getDamageTimeInterval() const;
+    MCAPI int32_t getDamageTimeInterval() const;
     /**
      * @symbol ?getHurtValue\@DamageOverTimeComponent\@\@QEBAHXZ
      */
-    MCAPI int getHurtValue() const;
+    MCAPI int32_t getHurtValue() const;
     /**
      * @symbol
      * ?readAdditionalSaveData\@DamageOverTimeComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
@@ -36,6 +36,6 @@ public:
     /**
      * @symbol ?setDamageTime\@DamageOverTimeComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setDamageTime(int);
+    MCAPI void setDamageTime(int32_t);
     // NOLINTEND
 };

@@ -220,7 +220,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@BlastFurnaceBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -235,7 +235,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@BlastFurnaceBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@BlastFurnaceBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -245,6 +245,6 @@ public:
      * @symbol
      * ??0BlastFurnaceBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
-    MCAPI BlastFurnaceBlock(std::string const&, int, bool);
+    MCAPI BlastFurnaceBlock(std::string const&, int32_t, bool);
     // NOLINTEND
 };

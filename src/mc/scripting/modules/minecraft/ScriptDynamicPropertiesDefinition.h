@@ -51,7 +51,7 @@ public:
      */
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>>
-    defineString(std::string const&, unsigned int, std::optional<std::string>);
+    defineString(std::string const&, uint32_t, std::optional<std::string>);
     /**
      * @symbol
      * ?getDefinition\@ScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@QEBAAEBVDynamicPropertiesDefinition\@\@XZ

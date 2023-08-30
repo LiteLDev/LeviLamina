@@ -55,7 +55,7 @@ public:
     /**
      * @symbol ??0MobEffectPacket\@\@QEAA\@VActorRuntimeID\@\@W4Event\@0\@HHH_N\@Z
      */
-    MCAPI MobEffectPacket(class ActorRuntimeID, enum class MobEffectPacket::Event, int, int, int, bool);
+    MCAPI MobEffectPacket(class ActorRuntimeID, enum class MobEffectPacket::Event, int32_t, int32_t, int32_t, bool);
     /**
      * @symbol ??0MobEffectPacket\@\@QEAA\@XZ
      */

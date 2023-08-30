@@ -125,6 +125,6 @@ public:
      * @vftbl 19
      * @symbol ?SleepForMicroseconds\@EnvWrapper\@leveldb\@\@UEAAXH\@Z
      */
-    virtual void SleepForMicroseconds(int);
+    virtual void SleepForMicroseconds(int32_t);
     // NOLINTEND
 };

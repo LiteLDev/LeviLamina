@@ -80,7 +80,7 @@ public:
      */
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>
-    getItemStack(int, bool) const;
+    getItemStack(int32_t, bool) const;
     /**
      * @symbol ?getLocation\@ScriptBlock\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@VVec3\@\@\@Scripting\@\@XZ
      */
@@ -107,7 +107,7 @@ public:
      * @symbol
      * ?getRedstonePower\@ScriptBlock\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$optional\@H\@std\@\@\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<std::optional<int>> getRedstonePower() const;
+    MCAPI class Scripting::Result<std::optional<int32_t>> getRedstonePower() const;
     /**
      * @symbol
      * ?getTags\@ScriptBlock\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Scripting\@\@XZ

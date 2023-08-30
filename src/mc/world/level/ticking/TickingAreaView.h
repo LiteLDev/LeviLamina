@@ -40,7 +40,7 @@ public:
      * @vftbl 4
      * @symbol ?getDimensionId\@TickingAreaView\@\@UEBA?AV?$AutomaticID\@VDimension\@\@H\@\@XZ
      */
-    virtual class AutomaticID<class Dimension, int> getDimensionId() const;
+    virtual DimensionType getDimensionId() const;
     /**
      * @vftbl 5
      * @symbol ?getBounds\@TickingAreaView\@\@UEBAAEBUBounds\@\@XZ

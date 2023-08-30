@@ -26,7 +26,7 @@ public:
         /**
          * @symbol ??0Occupant\@BeehiveBlockActor\@\@QEAA\@UActorDefinitionIdentifier\@\@VCompoundTag\@\@I\@Z
          */
-        MCAPI Occupant(struct ActorDefinitionIdentifier, class CompoundTag, unsigned int);
+        MCAPI Occupant(struct ActorDefinitionIdentifier, class CompoundTag, uint32_t);
         // NOLINTEND
     };
 
@@ -127,7 +127,7 @@ public:
     /**
      * @symbol ?MAX_OCCUPANCY\@BeehiveBlockActor\@\@2IB
      */
-    MCAPI static unsigned int const MAX_OCCUPANCY;
+    MCAPI static uint32_t const MAX_OCCUPANCY;
     // NOLINTEND
 
     // private:
@@ -135,7 +135,7 @@ public:
     /**
      * @symbol ?_revive\@BeehiveBlockActor\@\@AEAAPEAVActor\@\@AEAVBlockSource\@\@AEBUOccupant\@1\@E\@Z
      */
-    MCAPI class Actor* _revive(class BlockSource&, struct BeehiveBlockActor::Occupant const&, unsigned char);
+    MCAPI class Actor* _revive(class BlockSource&, struct BeehiveBlockActor::Occupant const&, uint8_t);
     /**
      * @symbol ?_tickOccupant\@BeehiveBlockActor\@\@AEAA_NAEAVBlockSource\@\@AEAUOccupant\@1\@\@Z
      */

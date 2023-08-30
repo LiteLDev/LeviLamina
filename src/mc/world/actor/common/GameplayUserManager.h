@@ -160,7 +160,7 @@ public:
     /**
      * @symbol ?_getNewPlayerId\@GameplayUserManager\@\@AEBAHXZ
      */
-    MCAPI int _getNewPlayerId() const;
+    MCAPI int32_t _getNewPlayerId() const;
     /**
      * @symbol ?_saveAllPlayers\@GameplayUserManager\@\@AEAAXAEAVLevelStorage\@\@\@Z
      */

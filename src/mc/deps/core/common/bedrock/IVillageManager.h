@@ -30,7 +30,7 @@ public:
      * @vftbl 1
      * @symbol ?fetchClosestVillage\@VillageManager\@\@UEBA?AV?$weak_ptr\@VVillage\@\@\@std\@\@AEBVBlockPos\@\@HI\@Z
      */
-    virtual std::weak_ptr<class Village> fetchClosestVillage(class BlockPos const&, int, unsigned int) const = 0;
+    virtual std::weak_ptr<class Village> fetchClosestVillage(class BlockPos const&, int32_t, uint32_t) const = 0;
     /**
      * @vftbl 2
      * @symbol ?getVillageByID\@VillageManager\@\@UEBA?AV?$weak_ptr\@VVillage\@\@\@std\@\@AEBVUUID\@mce\@\@\@Z

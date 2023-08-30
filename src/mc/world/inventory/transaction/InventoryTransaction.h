@@ -85,7 +85,7 @@ public:
     /**
      * @symbol ?addItemToContent\@InventoryTransaction\@\@AEAAXAEBVItemStack\@\@H\@Z
      */
-    MCAPI void addItemToContent(class ItemStack const&, int);
+    MCAPI void addItemToContent(class ItemStack const&, int32_t);
     // NOLINTEND
 
 private:

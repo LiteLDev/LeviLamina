@@ -168,6 +168,6 @@ public:
      * ?_unpackIdentityDefToScorePacket\@ServerScoreboard\@\@AEAA?AUScorePacketInfo\@\@AEBVScoreboardIdentityRef\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI struct ScorePacketInfo
-    _unpackIdentityDefToScorePacket(class ScoreboardIdentityRef const&, std::string const&, int);
+    _unpackIdentityDefToScorePacket(class ScoreboardIdentityRef const&, std::string const&, int32_t);
     // NOLINTEND
 };

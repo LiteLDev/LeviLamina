@@ -41,15 +41,15 @@ public:
         class Mob&,
         std::vector<struct MobDescriptor> const&,
         float,
-        int,
+        int32_t,
         bool,
-        int,
+        int32_t,
         bool,
         bool,
-        int,
+        int32_t,
         float,
         bool,
-        int,
+        int32_t,
         bool
     );
     // NOLINTEND

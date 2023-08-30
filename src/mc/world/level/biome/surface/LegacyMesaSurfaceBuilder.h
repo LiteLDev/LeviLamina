@@ -35,7 +35,7 @@ public:
      * @vftbl 1
      * @symbol ?init\@LegacyMesaSurfaceBuilder\@VanillaSurfaceBuilders\@\@UEAAXAEAVEntityContext\@\@I\@Z
      */
-    virtual void init(class EntityContext&, unsigned int);
+    virtual void init(class EntityContext&, uint32_t);
     /**
      * @vftbl 2
      * @symbol
@@ -54,7 +54,7 @@ public:
      * @symbol
      * ?getBand\@LegacyMesaSurfaceBuilder\@VanillaSurfaceBuilders\@\@AEBA?AW4BlockColor\@\@HHHAEBVPerlinSimplexNoise\@\@\@Z
      */
-    MCAPI enum class BlockColor getBand(int, int, int, class PerlinSimplexNoise const&) const;
+    MCAPI enum class BlockColor getBand(int32_t, int32_t, int32_t, class PerlinSimplexNoise const&) const;
     // NOLINTEND
 };
 

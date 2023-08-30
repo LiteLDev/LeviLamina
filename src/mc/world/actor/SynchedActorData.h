@@ -39,19 +39,19 @@ public:
     /**
      * @symbol ?getFloat\@SynchedActorData\@\@QEBAMG\@Z
      */
-    MCAPI float getFloat(unsigned short) const;
+    MCAPI float getFloat(uint16_t) const;
     /**
      * @symbol ?getInt\@SynchedActorData\@\@QEBAHG\@Z
      */
-    MCAPI int getInt(unsigned short) const;
+    MCAPI int32_t getInt(uint16_t) const;
     /**
      * @symbol ?getInt64\@SynchedActorData\@\@QEBA_JG\@Z
      */
-    MCAPI int64_t getInt64(unsigned short) const;
+    MCAPI int64_t getInt64(uint16_t) const;
     /**
      * @symbol ?getInt8\@SynchedActorData\@\@QEBACG\@Z
      */
-    MCAPI signed char getInt8(unsigned short) const;
+    MCAPI int8_t getInt8(uint16_t) const;
     /**
      * @symbol ?getStatusFlag\@SynchedActorData\@\@QEBA_NW4ActorFlags\@\@\@Z
      */
@@ -63,11 +63,11 @@ public:
     /**
      * @symbol ?getVec3\@SynchedActorData\@\@QEBA?AVVec3\@\@G\@Z
      */
-    MCAPI class Vec3 getVec3(unsigned short) const;
+    MCAPI class Vec3 getVec3(uint16_t) const;
     /**
      * @symbol ?markDirty\@SynchedActorData\@\@QEAAXG\@Z
      */
-    MCAPI void markDirty(unsigned short);
+    MCAPI void markDirty(uint16_t);
     /**
      * @symbol ??4SynchedActorData\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
@@ -102,14 +102,14 @@ public:
     /**
      * @symbol ?_find\@SynchedActorData\@\@AEBAPEAVDataItem\@\@G\@Z
      */
-    MCAPI class DataItem* _find(unsigned short) const;
+    MCAPI class DataItem* _find(uint16_t) const;
     /**
      * @symbol ?_get\@SynchedActorData\@\@AEAAAEAVDataItem\@\@G\@Z
      */
-    MCAPI class DataItem& _get(unsigned short);
+    MCAPI class DataItem& _get(uint16_t);
     /**
      * @symbol ?_resizeToContain\@SynchedActorData\@\@AEAAXG\@Z
      */
-    MCAPI void _resizeToContain(unsigned short);
+    MCAPI void _resizeToContain(uint16_t);
     // NOLINTEND
 };

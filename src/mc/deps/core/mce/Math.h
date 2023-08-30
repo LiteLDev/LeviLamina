@@ -43,7 +43,7 @@ public:
     /**
      * @symbol ?ceil\@Math\@mce\@\@SAHM\@Z
      */
-    MCAPI static int ceil(float);
+    MCAPI static int32_t ceil(float);
     /**
      * @symbol ?clamp\@Math\@mce\@\@SAMMMM\@Z
      */
@@ -51,7 +51,7 @@ public:
     /**
      * @symbol ?clamp\@Math\@mce\@\@SAHHHH\@Z
      */
-    MCAPI static int clamp(int, int, int);
+    MCAPI static int32_t clamp(int32_t, int32_t, int32_t);
     /**
      * @symbol ?clampRotate\@Math\@mce\@\@SAMMMM\@Z
      */
@@ -87,7 +87,7 @@ public:
     /**
      * @symbol ?fastRandom\@Math\@mce\@\@SAIXZ
      */
-    MCAPI static unsigned int fastRandom();
+    MCAPI static uint32_t fastRandom();
     /**
      * @symbol ?floatEqualsEpsilon\@Math\@mce\@\@SA_NMMM\@Z
      */
@@ -95,7 +95,7 @@ public:
     /**
      * @symbol ?floor\@Math\@mce\@\@SAHM\@Z
      */
-    MCAPI static int floor(float);
+    MCAPI static int32_t floor(float);
     /**
      * @symbol ?hermiteBlend\@Math\@mce\@\@SAMM\@Z
      */
@@ -127,7 +127,7 @@ public:
     /**
      * @symbol ?safeIncrement\@Math\@mce\@\@SAXAEAH\@Z
      */
-    MCAPI static void safeIncrement(int&);
+    MCAPI static void safeIncrement(int32_t&);
     /**
      * @symbol ?signum\@Math\@mce\@\@SAMM\@Z
      */
