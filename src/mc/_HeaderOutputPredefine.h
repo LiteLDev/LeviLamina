@@ -1,5 +1,7 @@
 #pragma once
 
+#pragma warning(disable : 4099)
+
 #define MCAPI  __declspec(dllimport)
 #define MCVAPI __declspec(dllimport)
 
