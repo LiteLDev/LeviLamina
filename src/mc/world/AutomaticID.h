@@ -16,3 +16,7 @@ public:
 
     constexpr operator T() const { return id; } // NOLINT
 };
+
+class Dimension;
+
+using DimensionType = AutomaticID<Dimension, int>;

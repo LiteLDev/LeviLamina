@@ -41,7 +41,7 @@ public:
     LLAPI optional_ref<Actor> cloneActor(
         Actor const&                                     origin,
         Vec3 const&                                      pos,
-        std::optional<AutomaticID<class Dimension, int>> dimID = std::nullopt
+        std::optional<DimensionType> dimID = std::nullopt
     ) const;
 
     LLAPI bool destroyBlock(

@@ -2,6 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/network/NetworkPeer.h"
+#include "mc/server/volume/UserEntityIdentifierComponent.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/BedSleepingResult.h"
@@ -48,6 +49,7 @@ namespace mce { class UUID; }
 
 class NetworkIdentifier;
 class Certificate;
+class UserEntityIdentifierComponent;
 
 class Player : public ::Mob {
 public:
@@ -87,17 +89,20 @@ public:
     };
 
 public:
-    LLNDAPI optional_ref<NetworkIdentifier> getNetworkIdentifier() const;
-    LLNDAPI optional_ref<Certificate> getCertificate() const;
+    LLNDAPI UserEntityIdentifierComponent& getUserEntityIdentifier() const;
+    // clang-format off
+    [[nodiscard]] inline NetworkIdentifier& getNetworkIdentifier() const { return getUserEntityIdentifier().mNetworkId; }
+    [[nodiscard]] inline optional_ref<Certificate> getCertificate() const { return getUserEntityIdentifier().mCertificate.get(); }
+    [[nodiscard]] inline mce::UUID& getUuid() const { return getUserEntityIdentifier().mClientUUID; }
+    [[nodiscard]] inline SubClientId& getClientSubId() const { return getUserEntityIdentifier().mClientSubId; }
+    [[nodiscard]] inline std::string getIPAndPort() const {return getNetworkIdentifier().getIPAndPort(); }
+    // clang-format on
 
-    LLNDAPI std::string getRealName() const;
-    LLNDAPI std::string getUuid() const;
-
-    LLNDAPI std::optional<std::string> getIPAndPort() const;
-    LLNDAPI std::optional<std::string> getDeviceId() const;
-    LLNDAPI std::optional<SubClientId> getClientSubId() const;
+    LLNDAPI std::string getDeviceId() const;
 
     LLNDAPI std::optional<NetworkPeer::NetworkStatus> getNetworkStatus() const;
+
+    LLNDAPI std::string getRealName() const;
 
     // prevent constructor by default
     Player& operator=(Player const&) = delete;
