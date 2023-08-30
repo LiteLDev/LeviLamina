@@ -3,7 +3,7 @@
 
 template <typename T, typename... Components>
     requires AllSame<bool, Components...>
-class BoolN : public CommutativeGroup<T, Components...>, BoolNTag {
+class LL_EBO BoolN : public CommutativeGroup<T, Components...>, BoolNTag {
 public:
     using first_type = bool;
     constexpr bool any() const noexcept {

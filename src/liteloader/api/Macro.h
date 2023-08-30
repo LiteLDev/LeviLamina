@@ -19,3 +19,5 @@
 #ifndef LL_UNUSED
 #define LL_UNUSED [[maybe_unused]]
 #endif
+
+#define LL_EBO __declspec(empty_bases)

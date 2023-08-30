@@ -3,7 +3,7 @@
 
 template <typename T, typename... Components>
     requires AllSame<Components...>
-class FloatN : public Field<T, Components...>, FloatNTag {
+class LL_EBO FloatN : public Field<T, Components...>, FloatNTag {
 public:
     using first_type = Field<T, Components...>::first_type;
 

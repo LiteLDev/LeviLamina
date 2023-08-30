@@ -7,7 +7,7 @@ template <typename T>
 concept IsCommutativeGroup = std::is_base_of_v<CommutativeGroupTag, T>;
 
 template <typename T, typename... Components>
-class CommutativeGroup : public VectorBase<T, Components...>, CommutativeGroupTag {
+class LL_EBO CommutativeGroup : public VectorBase<T, Components...>, CommutativeGroupTag {
 public:
     using first_type = typename VectorBase<T, Components...>::first_type;
 

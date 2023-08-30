@@ -6,7 +6,7 @@ class doubleN;
 
 template <typename T, typename... Components>
     requires AllSame<Components...>
-class IntN : public Field<T, Components...>, IntNTag {
+class LL_EBO IntN : public Field<T, Components...>, IntNTag {
 public:
     using first_type = Field<T, Components...>::first_type;
 

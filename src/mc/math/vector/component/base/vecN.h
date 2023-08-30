@@ -20,7 +20,7 @@
 // NOLINTBEGIN
 
 #define VEC2_IMPL_(NAME, BNAME, TYPE, BASE)                                                                            \
-    class NAME : public BASE<BNAME, TYPE, TYPE> {                                                                      \
+    class LL_EBO NAME : public BASE<BNAME, TYPE, TYPE> {                                                               \
     public:                                                                                                            \
         VEC_X_MEMBER_(TYPE);                                                                                           \
         union {                                                                                                        \
@@ -66,7 +66,7 @@
     }
 
 #define VEC3_IMPL_(NAME, BNAME, TYPE, BASE)                                                                            \
-    class NAME : public BASE<BNAME, TYPE, TYPE, TYPE> {                                                                \
+    class LL_EBO NAME : public BASE<BNAME, TYPE, TYPE, TYPE> {                                                         \
     public:                                                                                                            \
         VEC_X_MEMBER_(TYPE);                                                                                           \
         VEC_Y_MEMBER_(TYPE);                                                                                           \
@@ -122,7 +122,7 @@
     }
 
 #define VEC4_IMPL_(NAME, BNAME, TYPE, BASE)                                                                            \
-    class NAME : public BASE<BNAME, TYPE, TYPE, TYPE, TYPE> {                                                          \
+    class LL_EBO NAME : public BASE<BNAME, TYPE, TYPE, TYPE, TYPE> {                                                   \
     public:                                                                                                            \
         VEC_X_MEMBER_(TYPE);                                                                                           \
         VEC_Y_MEMBER_(TYPE);                                                                                           \

@@ -6,6 +6,8 @@
 #include <type_traits>
 #include <utility>
 
+#include "liteloader/api/Macro.h"
+
 template <typename T>
 constexpr void hashCombine(T const& v, std::size_t& seed) {
     seed ^= v + 2654435769LL + (seed << 6LL) + (seed >> 2LL);

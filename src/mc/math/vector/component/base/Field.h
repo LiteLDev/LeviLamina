@@ -9,7 +9,7 @@ template <typename T>
 concept IsField = std::is_base_of_v<FieldTag, T>;
 
 template <typename T, typename... Components>
-class Field : public CommutativeGroup<T, Components...>, FieldTag {
+class LL_EBO Field : public CommutativeGroup<T, Components...>, FieldTag {
 public:
     using first_type = typename CommutativeGroup<T, Components...>::first_type;
 
