@@ -11,6 +11,9 @@
 class AgentAnimationPacket : public ::Packet {
 
 public:
+    AgentAnimation mAnimation;
+    ActorRuntimeID mEntityRuntimeID;
+
     // prevent constructor by default
     AgentAnimationPacket& operator=(AgentAnimationPacket const&) = delete;
     AgentAnimationPacket(AgentAnimationPacket const&)            = delete;

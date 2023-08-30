@@ -5,6 +5,9 @@
 struct EduSharedUriResource {
 
 public:
+    std::string mLinkUri;
+    std::string mButtonName;
+
     // prevent constructor by default
     EduSharedUriResource& operator=(EduSharedUriResource const&) = delete;
     EduSharedUriResource(EduSharedUriResource const&)            = delete;

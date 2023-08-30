@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/levelgen/structure/StructureSettings.h"
 
 // auto generated inclusion list
 #include "mc/enums/AnimationMode.h"
@@ -12,6 +13,15 @@
 class StructureEditorData {
 
 public:
+    std::string               mStructureName;
+    std::string               mDataField;
+    bool                      mIncludePlayers;
+    bool                      mShowBoundingBox;
+    StructureRedstoneSaveMode mRedstoneSaveMode;
+    StructureBlockType        mType;
+    StructureSettings         mSettings;
+
+
     // prevent constructor by default
     StructureEditorData& operator=(StructureEditorData const&) = delete;
 

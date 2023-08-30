@@ -1,10 +1,14 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/resource/PackIdVersion.h"
 
 struct PackInstanceId {
 
 public:
+    PackIdVersion mPackId;
+    std::string   mSubpackName;
+
     // prevent constructor by default
     PackInstanceId& operator=(PackInstanceId const&) = delete;
     PackInstanceId(PackInstanceId const&)            = delete;

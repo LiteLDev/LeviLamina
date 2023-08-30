@@ -19,32 +19,32 @@
 #include "mc/enums/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 
-
 class StartGamePacket : public ::Packet {
 
 public:
-    LevelSettings                                    mSettings;                          // this+0x30
-    ActorUniqueID                                    mEntityId;                          // this+0x3D0
-    ActorRuntimeID                                   mRuntimeId;                         // this+0x3D8
-    GameType                                         mEntityGameType;                    // this+0x3E0
-    Vec3                                             mPos;                               // this+0x3E4
-    Vec2                                             mRot;                               // this+0x3F0
-    std::string                                      mLevelId;                           // this+0x3F8
-    std::string                                      mLevelName;                         // this+0x418
-    ContentIdentity                                  mTemplateContentIdentity;           // this+0x438
-    mce::UUID                                        mWorldTemplateId;                   // this+0x450
-    bool                                             mIsTrial;                           // this+0x460
-    SyncedPlayerMovementSettings                     mMovementSettings;                  // this+0x464
-    unsigned long long                               mLevelCurrentTime;                  // this+0x470
-    int                                              mEnchantmentSeed;                   // this+0x478
-    std::string                                      mMultiplayerCorrelationId;          // this+0x480
-    std::vector<ItemData>                            mItemData;                          // this+0x4A0
-    bool                                             mEnableItemStackNetManager;         // this+0x4B8
-    std::string                                      mServerVersion;                     // this+0x4C0
-    CompoundTag                                      mPlayerPropertyData;                // this+0x4E0
-    unsigned long long                               mServerBlockTypeRegistryChecksum;   // this+0x4F8
-    bool                                             mServerEnabledClientSideGeneration; // this+0x500
-    std::vector<std::pair<std::string, CompoundTag>> mBlockProperties;                   // this+0x508
+    LevelSettings                                    mSettings;
+    ActorUniqueID                                    mEntityId;
+    ActorRuntimeID                                   mRuntimeId;
+    GameType                                         mEntityGameType;
+    Vec3                                             mPos;
+    Vec2                                             mRot;
+    std::string                                      mLevelId;
+    std::string                                      mLevelName;
+    ContentIdentity                                  mTemplateContentIdentity;
+    mce::UUID                                        mWorldTemplateId;
+    bool                                             mIsTrial;
+    SyncedPlayerMovementSettings                     mMovementSettings;
+    uint64_t                                         mLevelCurrentTime;
+    int                                              mEnchantmentSeed;
+    std::string                                      mMultiplayerCorrelationId;
+    std::vector<ItemData>                            mItemData;
+    bool                                             mEnableItemStackNetManager;
+    std::string                                      mServerVersion;
+    CompoundTag                                      mPlayerPropertyData;
+    uint64_t                                         mServerBlockTypeRegistryChecksum;
+    bool                                             mServerEnabledClientSideGeneration;
+    bool                                             mBlockNetworkIdsAreHashes;
+    std::vector<std::pair<std::string, CompoundTag>> mBlockProperties;
 
 
     // prevent constructor by default

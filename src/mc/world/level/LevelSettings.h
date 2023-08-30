@@ -1,6 +1,11 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/LevelSeed64.h"
+#include "mc/world/level/SpawnSettings.h"
+#include "mc/options/EducationEditionOfferValue.h"
+#include "mc/world/level/storage/GameRules.h"
+#include "mc/network/ForceBlockNetworkIdsAreHashes.h"
 
 // auto generated inclusion list
 #include "mc/client/social/GamePublishSetting.h"
@@ -15,9 +20,73 @@
 #include "mc/world/actor/player/PlayerPermissionLevel.h"
 #include "mc/world/level/levelgen/GeneratorType.h"
 
+
 class LevelSettings {
 
 public:
+    LevelSeed64                           mSeed;
+    GameType                              mGameType;
+    Difficulty                            mGameDifficulty;
+    bool                                  mForceGameType;
+    GeneratorType                         mGenerator;
+    WorldVersion                          mWorldVersion;
+    NetherWorldType                       mNetherType;
+    SpawnSettings                         mSpawnSettings;
+    bool                                  mAchievementsDisabled;
+    bool                                  mIsEditorWorld;
+    bool                                  mIsCreatedInEditor;
+    bool                                  mIsExportedFromEditor;
+    int                                   mTime;
+    EducationEditionOfferValue            mEducationEditionOffer;
+    bool                                  mEducationFeaturesEnabled;
+    bool                                  mImmutableWorld;
+    float                                 mRainLevel;
+    float                                 mLightningLevel;
+    bool                                  mConfirmedPlatformLockedContent;
+    bool                                  mMultiplayerGameIntent;
+    bool                                  mLANBroadcastIntent;
+    Social::GamePublishSetting            mXBLBroadcastIntent;
+    Social::GamePublishSetting            mPlatformBroadcastIntent;
+    DaylightCycle                         mDaylightCycle;
+    bool                                  mDisablePlayerInteractions;
+    bool                                  mCheatsEnabled;
+    bool                                  mAdventureModeOverridesEnabled;
+    bool                                  mCommandsEnabled;
+    bool                                  mTexturePacksRequired;
+    bool                                  mHasLockedBehaviorPack;
+    bool                                  mHasLockedResourcePack;
+    bool                                  mIsFromLockedTemplate;
+    bool                                  mIsRandomSeedAllowed;
+    bool                                  mUseMsaGamertagsOnly;
+    bool                                  mOverrideSettings;
+    bool                                  mBonusChestEnabled;
+    bool                                  mStartWithMapEnabled;
+    int                                   mServerChunkTickRange;
+    bool                                  mIsFromWorldTemplate;
+    bool                                  mIsWorldTemplateOptionLocked;
+    bool                                  mSpawnV1Villagers;
+    bool                                  mPersonaDisabled;
+    bool                                  mCustomSkinsDisabled;
+    bool                                  mEmoteChatMuted;
+    int                                   mLimitedWorldWidth;
+    int                                   mLimitedWorldDepth;
+    PermissionsHandler                    mDefaultPermissions;
+    BlockPos                              mDefaultSpawn;
+    std::vector<PackInstanceId>           mNewWorldBehaviorPackIdentities;
+    std::vector<PackInstanceId>           mNewWorldResourcePackIdentities;
+    GameRules                             mGameRules;
+    ExperimentStorage                     mExperiments;
+    BaseGameVersion                       mBaseGameVersion;
+    std::string                           mEducationProductID;
+    std::string                           mBiomeOverride;
+    EduSharedUriResource                  mEduSharedUriResource;
+    ChatRestrictionLevel                  mChatRestrictionLevel;
+    std::optional<EducationLevelSettings> mEducationLevelSettings;
+    std::optional<bool>                   mOverrideForceExperimentalGameplayFlag;
+    bool                                  mAddExperiments;
+    bool                                  mOverrideBaseGameVersion;
+    ForceBlockNetworkIdsAreHashes         mForceBlockNetworkIdsAreHashes;
+
     // prevent constructor by default
     LevelSettings& operator=(LevelSettings const&) = delete;
 

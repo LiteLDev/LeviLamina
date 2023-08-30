@@ -12,6 +12,14 @@ public:
         bool          mForceMoveLocalEntity; // this(bf)+0x0:0x2 len(0x1)
     };
 
+    ActorRuntimeID                mRuntimeId;
+    MoveActorAbsoluteData::Header mHeader;
+    Vec3                          mPos;
+    int8_t                        mRotX;
+    int8_t                        mRotY;
+    int8_t                        mRotYHead;
+    int8_t                        mRotYBody;
+
     // prevent constructor by default
     MoveActorAbsoluteData& operator=(MoveActorAbsoluteData const&) = delete;
     MoveActorAbsoluteData(MoveActorAbsoluteData const&)            = delete;

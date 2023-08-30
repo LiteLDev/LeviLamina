@@ -13,11 +13,11 @@
 class ResourcePackStackPacket : public ::Packet {
 
 public:
-    std::vector<PackInstanceId> mAddOnIdsAndVersions;       // this+0x30
-    std::vector<PackInstanceId> mTexturePackIdsAndVersions; // this+0x48
-    BaseGameVersion             mBaseGameVersion;           // this+0x60
-    bool                        mTexturePackRequired;       // this+0xD8
-    ExperimentStorage           mExperiments;               // this+0xE0
+    std::vector<PackInstanceId> mAddOnIdsAndVersions;
+    std::vector<PackInstanceId> mTexturePackIdsAndVersions;
+    BaseGameVersion             mBaseGameVersion;
+    bool                        mTexturePackRequired;
+    ExperimentStorage           mExperiments;
 
     // prevent constructor by default
     ResourcePackStackPacket& operator=(ResourcePackStackPacket const&) = delete;

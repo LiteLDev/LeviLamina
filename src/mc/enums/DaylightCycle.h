@@ -2,4 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class DaylightCycle {};
+enum class DaylightCycle : __int8 {
+    Normal  = 0x0,
+    AlwaysDay = 0x1,
+    LockTime  = 0x2,
+};

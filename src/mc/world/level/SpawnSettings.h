@@ -1,10 +1,15 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/biome/SpawnBiomeType.h"
 
 struct SpawnSettings {
 
 public:
+    SpawnBiomeType type;
+    std::string    userDefinedBiomeName;
+    AutomaticID<Dimension, int> dimension;
+
     // prevent constructor by default
     SpawnSettings& operator=(SpawnSettings const&) = delete;
     SpawnSettings()                                = delete;

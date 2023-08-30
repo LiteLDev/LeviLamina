@@ -8,6 +8,8 @@
 class EducationEditionOfferValue {
 
 public:
+    EducationEditionOffer mValue;
+
     // prevent constructor by default
     EducationEditionOfferValue& operator=(EducationEditionOfferValue const&) = delete;
     EducationEditionOfferValue(EducationEditionOfferValue const&)            = delete;

@@ -18,6 +18,16 @@ public:
         bool           mForceMoveLocalEntity;  // this(bf)+0x1:0x0 len(0x1)
     };
 
+    ActorRuntimeID             mRuntimeId;
+    MoveActorDeltaData::Header mHeader;
+    float                      mNewPositionX;
+    float                      mNewPositionY;
+    float                      mNewPositionZ;
+    int8_t                     mRotX;
+    int8_t                     mRotY;
+    int8_t                     mRotYHead;
+    MoveActorAbsoluteData      mPreviousData;
+
     // prevent constructor by default
     MoveActorDeltaData& operator=(MoveActorDeltaData const&) = delete;
     MoveActorDeltaData(MoveActorDeltaData const&)            = delete;

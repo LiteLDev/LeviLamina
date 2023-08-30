@@ -30,7 +30,7 @@ public:
         this->mUsage      = usage;
     }
 
-    constexpr void setRawImage(Blob&& buffer) { mImageBytes = std::move(buffer); }
+    inline void setRawImage(Blob&& buffer) { mImageBytes = std::move(buffer); }
 
     Image(const Image& a1) {
         imageFormat = a1.imageFormat;

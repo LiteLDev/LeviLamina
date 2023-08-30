@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/util/molang/MolangVariable.h"
 
 // auto generated inclusion list
 #include "mc/util/molang/MolangVariableIndex.h"
@@ -8,6 +9,10 @@
 class MolangVariableMap {
 
 public:
+    std::vector<short>                           mMapFromVariableIndexToVariableArrayOffset;
+    std::vector<std::unique_ptr<MolangVariable>> mVariables;
+    bool                                         mHasPublicVariables;
+
     // prevent constructor by default
     MolangVariableMap() = delete;
 

@@ -5,6 +5,9 @@
 struct ExternalLinkSettings {
 
 public:
+    std::string mUrl;
+    std::string mDisplayName;
+
     // prevent constructor by default
     ExternalLinkSettings& operator=(ExternalLinkSettings const&) = delete;
     ExternalLinkSettings(ExternalLinkSettings const&)            = delete;

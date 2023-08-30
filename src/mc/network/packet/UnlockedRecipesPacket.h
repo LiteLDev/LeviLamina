@@ -20,6 +20,7 @@ public:
 
 public:
     PacketType mPacketType; // this+0x30
+    std::vector<std::string> mUnlockedRecipes; // this+0x38
 
     // prevent constructor by default
     UnlockedRecipesPacket& operator=(UnlockedRecipesPacket const&) = delete;

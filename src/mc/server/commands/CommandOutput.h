@@ -9,6 +9,12 @@
 class CommandOutput {
 
 public:
+    CommandOutputType                         mType;
+    std::unique_ptr<class CommandPropertyBag> mBag;
+    std::vector<class CommandOutputMessage>   mMessages;
+    int                                       mSuccessCount;
+    bool                                      mHasPlayerText;
+
     // prevent constructor by default
     CommandOutput& operator=(CommandOutput const&) = delete;
     CommandOutput()                                = delete;

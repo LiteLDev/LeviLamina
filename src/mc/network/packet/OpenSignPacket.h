@@ -11,8 +11,8 @@
 class OpenSignPacket : public ::Packet {
 
 public:
-    NetworkBlockPosition mPos;         // this+0x30
-    bool                 mIsFrontSide; // this+0x3C
+    NetworkBlockPosition mPos;
+    bool                 mIsFrontSide;
 
     // prevent constructor by default
     OpenSignPacket& operator=(OpenSignPacket const&) = delete;

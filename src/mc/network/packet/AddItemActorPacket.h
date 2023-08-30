@@ -15,14 +15,14 @@
 class AddItemActorPacket : public ::AddActorBasePacket {
 
 public:
-    std::vector<std::unique_ptr<DataItem>> mData;          // this+0x30
-    SynchedActorDataEntityWrapper          mEntityData;    // this+0x48
-    ActorUniqueID                          mId;            // this+0x50
-    ActorRuntimeID                         mRuntimeId;     // this+0x58
-    NetworkItemStackDescriptor             mItem;          // this+0x60
-    Vec3                                   mPos;           // this+0xb8
-    Vec3                                   mVelocity;      // this+0xc4
-    bool                                   mIsFromFishing; // this+0xd0
+    std::vector<std::unique_ptr<DataItem>> mData;
+    SynchedActorDataEntityWrapper*         mEntityData;
+    ActorUniqueID                          mId;
+    ActorRuntimeID                         mRuntimeId;
+    NetworkItemStackDescriptor             mItem;
+    Vec3                                   mPos;
+    Vec3                                   mVelocity;
+    bool                                   mIsFromFishing;
 
     // prevent constructor by default
     AddItemActorPacket& operator=(AddItemActorPacket const&) = delete;

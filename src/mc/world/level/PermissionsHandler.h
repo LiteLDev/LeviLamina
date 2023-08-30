@@ -12,8 +12,8 @@
 class PermissionsHandler {
 
 public:
-    enum class CommandPermissionLevel mCommandPermissions; // this+0x0
-    enum class PlayerPermissionLevel  mPlayerPermissions;  // this+0x1
+    CommandPermissionLevel mCommandPermissions;
+    PlayerPermissionLevel  mPlayerPermissions;
 
 public:
     // NOLINTBEGIN

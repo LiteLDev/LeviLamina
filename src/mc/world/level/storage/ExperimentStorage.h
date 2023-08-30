@@ -5,6 +5,10 @@
 class ExperimentStorage {
 
 public:
+    std::vector<bool> mExperimentData;
+    std::vector<bool> mDeprecatedData;
+    bool              mExperimentsEverToggled;
+
     // prevent constructor by default
     ExperimentStorage(ExperimentStorage const&) = delete;
     ExperimentStorage()                         = delete;

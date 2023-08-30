@@ -21,21 +21,20 @@
 class AddActorPacket : public ::AddActorBasePacket {
 
 public:
-    std::vector<ActorLink> mLinks;         // this+0x30
-    Vec3                   mPos;           // this+0x48
-    Vec3                   mVelocity;      // this+0x54
-    Vec2                   mRot;           // this+0x60
-    float                  mYHeadRotation; // this+0x68
-    float                  mYBodyRotation; // this+0x6C
-
-    ActorUniqueID                          mEntityId;          // this+0x70
-    ActorRuntimeID                         mRuntimeId;         // this+0x78
-    SynchedActorDataEntityWrapper*         mEntityData;        // this+0x80
-    std::vector<std::unique_ptr<DataItem>> mData;              // this+0x88
-    ActorDefinitionIdentifier              mType;              // this+0xA0
-    PropertySyncData                       mSynchedProperties; // this+0x150
-    std::vector<AttributeInstanceHandle>   mAttributeHandles;  // this+0x180
-    std::vector<SyncedAttribute>           mAttributes;        // this+0x198
+    std::vector<ActorLink>                 mLinks;
+    Vec3                                   mPos;
+    Vec3                                   mVelocity;
+    Vec2                                   mRot;
+    float                                  mYHeadRotation;
+    float                                  mYBodyRotation;
+    ActorUniqueID                          mEntityId;
+    ActorRuntimeID                         mRuntimeId;
+    SynchedActorDataEntityWrapper*         mEntityData;
+    std::vector<std::unique_ptr<DataItem>> mData;
+    ActorDefinitionIdentifier              mType;
+    PropertySyncData                       mSynchedProperties;
+    std::vector<AttributeInstanceHandle>   mAttributeHandles;
+    std::vector<SyncedAttribute>           mAttributes;
 
     // prevent constructor by default
     AddActorPacket& operator=(AddActorPacket const&) = delete;

@@ -24,25 +24,24 @@
 class AddPlayerPacket : public ::AddActorBasePacket {
 
 public:
-    std::vector<ActorLink>                 mLinks;            // this+0x30
-    std::string                            mName;             // this+0x48
-    mce::UUID                              mUuid;             // this+0x68
-    ActorUniqueID                          mEntityId;         // this+0x78
-    ActorRuntimeID                         mRuntimeId;        // this+0x80
-    std::string                            mPlatformOnlineId; // this+0x88
-    Vec3                                   mPos;              // this+0xa8
-    Vec3                                   mVelocity;         // this+0xb4
-    Vec2                                   mRot;              // this+0xc0
-    float                                  mYHeadRot;         // this+0xc8
-    std::vector<std::unique_ptr<DataItem>> mUnpack;           // this+0xd0
-    LayeredAbilities                       mAbilities;        // this+0xe8
-    std::string                            mDeviceId;         // this+0x560
-    BuildPlatform                          mBuildPlatform;    // this+0x580
-    GameType                               mPlayerGameType;   // this+0x584
-
-    NetworkItemStackDescriptor          mCarriedItem;       // this+0x588
-    const SynchedActorDataEntityWrapper mEntityData;        // this+0x5e0
-    PropertySyncData                    mSynchedProperties; // this+0x5e8
+    std::vector<ActorLink>                mLinks;
+    std::string                            mName;
+    mce::UUID                              mUuid;
+    ActorUniqueID                          mEntityId;
+    ActorRuntimeID                         mRuntimeId;
+    std::string                            mPlatformOnlineId;
+    Vec3                                   mPos;
+    Vec3                                   mVelocity;
+    Vec2                                   mRot;
+    float                                  mYHeadRot;
+    std::vector<std::unique_ptr<DataItem>> mUnpack;
+    LayeredAbilities                       mAbilities;
+    std::string                            mDeviceId;
+    BuildPlatform                          mBuildPlatform;
+    GameType                               mPlayerGameType;
+    NetworkItemStackDescriptor             mCarriedItem;
+    const SynchedActorDataEntityWrapper*   mEntityData;
+    PropertySyncData                      mSynchedProperties;
 
     // prevent constructor by default
     AddPlayerPacket& operator=(AddPlayerPacket const&) = delete;

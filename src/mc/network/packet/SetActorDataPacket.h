@@ -13,11 +13,10 @@
 class SetActorDataPacket : public ::Packet {
 
 public:
-    ActorRuntimeID     mId;   // this+0x30
-    unsigned long long mTick; // this+0x38
-
-    std::vector<std::unique_ptr<DataItem>> mPackedItems;       // this+0x40
-    PropertySyncData                       mSynchedProperties; // this+0x58
+    ActorRuntimeID                         mId;
+    std::vector<std::unique_ptr<DataItem>> mPackedItems;
+    PropertySyncData                       mSynchedProperties;
+    uint64_t                               mTick;
 
     // prevent constructor by default
     SetActorDataPacket& operator=(SetActorDataPacket const&) = delete;

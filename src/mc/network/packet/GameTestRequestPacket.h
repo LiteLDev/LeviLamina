@@ -22,7 +22,7 @@ public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_vfn_0S
      */
     virtual void __unk_vfn_0();
     /**
