@@ -161,7 +161,7 @@ void checkRunningBDS() {
                     logger.error(tr("ll.main.checkRunningBDS.ask", pid));
                     char input;
                     rewind(stdin);
-                    input = getchar();
+                    input = static_cast<char>(getchar());
                     rewind(stdin);
                     if (input == 'n' || input == 'N') {
                         break;
@@ -411,4 +411,4 @@ LL_AUTO_STATIC_HOOK(LiteLoaderMain, HookPriority::Normal, "main", int, int argc,
     return origin(argc, argv);
 }
 
-LL_UNUSED BOOL WINAPI DllMain(HMODULE, DWORD ul_reason_for_call, LPVOID) { return TRUE; }
+LL_UNUSED BOOL WINAPI DllMain(HMODULE, DWORD /*ul_reason_for_call*/, LPVOID) { return TRUE; }

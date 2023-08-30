@@ -163,9 +163,9 @@ public:
     LLAPI bool setFile(const std::string& logFile, bool appendMode = true);
     LLAPI bool setFile(nullptr_t);
 
-    LLAPI bool tryLock();
-    LLAPI bool lock();
-    LLAPI bool unlock();
+    LLAPI bool tryLock() const;
+    LLAPI bool lock() const;
+    LLAPI bool unlock() const;
 
     OutputStream debug;
     OutputStream info;
@@ -179,12 +179,5 @@ public:
     LLAPI explicit Logger(const std::string& title);
 
 private:
-    LLAPI CsLock& getLocker();
-
-
-    // For compatibility
-private:
-    LLAPI static void initLockImpl(HMODULE hPlugin);
-    LLAPI static void lockImpl(HMODULE hPlugin);
-    LLAPI static void unlockImpl(HMODULE hPlugin);
+    LLAPI CsLock& getLocker() const;
 };

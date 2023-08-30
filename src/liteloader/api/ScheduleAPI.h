@@ -31,7 +31,7 @@ public:
      *
      * @return True if canceled; otherwise false.
      */
-    LLAPI bool cancel();
+    LLAPI bool cancel() const;
 
     LLAPI ScheduleTask() = default;
     LLAPI ScheduleTask(unsigned int taskId);

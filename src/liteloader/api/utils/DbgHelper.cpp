@@ -39,7 +39,7 @@ void FindSymbols(wstring& collection, const std::string& nowPath, bool recursion
             wstring          dirPath = dir.remove_filename().native();
 
             if (loadedSymbolDir.find(dirPath) == loadedSymbolDir.end()) {
-                collection = collection + L";" + dirPath.substr(0, dirPath.size() - 1);
+                collection += L";" + dirPath.substr(0, dirPath.size() - 1);
                 loadedSymbolDir.insert(dirPath);
             }
         }
@@ -83,12 +83,12 @@ PSYMBOL_INFOW GetSymbolInfo(HANDLE hProcess, void* address) {
     if (SymFromAddrW(hProcess, (DWORD64)address, &displacement, pSymbol))
         return pSymbol;
     else
-        return NULL;
+        return nullptr;
 }
 
 void CleanSymbolInfo(PSYMBOL_INFOW pSymbol) { delete[] ((char*)pSymbol); }
 
-BOOL CALLBACK EnumerateModuleCallBack(PCTSTR ModuleName, DWORD64 ModuleBase, ULONG ModuleSize, PVOID UserContext) {
+BOOL CALLBACK EnumerateModuleCallBack(PCTSTR ModuleName, DWORD64 ModuleBase, ULONG /*ModuleSize*/, PVOID UserContext) {
     std::map<DWORD, std::wstring>* pModuleMap = (std::map<DWORD, std::wstring>*)UserContext;
     LPCWSTR                        name       = wcsrchr(ModuleName, TEXT('\\')) + 1;
     (*pModuleMap)[(DWORD)ModuleBase]          = name;
@@ -136,13 +136,13 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
         if (e)
             pContext = e->ContextRecord;
         else {
-            HANDLE hThread = OpenThread(THREAD_ALL_ACCESS, TRUE, threadId);
-            if (hThread == NULL) {
+            HANDLE ohThread = OpenThread(THREAD_ALL_ACCESS, TRUE, threadId);
+            if (ohThread == nullptr) {
                 logger.error("Fail to Open Thread! Error Code: {}", GetLastError());
                 return;
             }
             context.ContextFlags = CONTEXT_FULL;
-            if (!GetThreadContext(hThread, &context)) {
+            if (!GetThreadContext(ohThread, &context)) {
                 logger.error("Fail to Get Context! Error Code: {}", GetLastError());
                 return;
             }
@@ -165,17 +165,18 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
             hThread,
             &stackFrame,
             pContext,
-            NULL,
+            nullptr,
             SymFunctionTableAccess64,
             SymGetModuleBase64,
-            NULL
+            nullptr
         )) {
             DWORD64 address = stackFrame.AddrPC.Offset;
 
             // Function
             PSYMBOL_INFOW info;
             auto          moduleName = wstr2str(MapModuleFromAddr(hProcess, (void*)address).c_str());
-            if (info = GetSymbolInfo(hProcess, (void*)address)) {
+            info                     = GetSymbolInfo(hProcess, (void*)address);
+            if (info) {
                 if (skipingPrintFunctionsStack) {
                     if (wcscmp(info->Name, L"PrintCurrentStackTraceback") == 0) // Skiping these print functions' stack
                         skipingPrintFunctionsStack = false;
@@ -211,7 +212,7 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
 HMODULE GetCallerModule(unsigned long FramesToSkip) {
     static const int maxFrameCount = 1;
     void*            frames[maxFrameCount];
-    int              frameCount = CaptureStackBackTrace(FramesToSkip + 2, maxFrameCount, frames, NULL);
+    int              frameCount = CaptureStackBackTrace(FramesToSkip + 2, maxFrameCount, frames, nullptr);
 
     std::string name;
     if (0 < frameCount) {
@@ -279,7 +280,7 @@ inline std::string VersionToString(
     unsigned short build_ver,
     unsigned int   flag = 0
 ) {
-    std::string flagStr = "";
+    std::string flagStr;
     if (flag & VS_FF_DEBUG)
         flagStr += " DEBUG";
     if (flag & VS_FF_PRERELEASE)

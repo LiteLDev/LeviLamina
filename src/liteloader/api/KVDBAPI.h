@@ -34,7 +34,7 @@ public:
     LLAPI bool del(std::string_view key);
     LLAPI void iter(std::function<bool(std::string_view key, std::string_view val)> const& fn);
     LLAPI void iter(std::function<bool(std::string_view key)> const&);
-    LLAPI std::string error(leveldb::Status status);
+    LLAPI std::string error();
     LLAPI std::vector<std::string> getAllKeys();
     LLAPI bool isValid();
     LLAPI operator bool();

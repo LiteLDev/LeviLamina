@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/deps/core/common/bedrock/ThreadOwner.h"
-#include "mc/deps/core/math/Random.h"
-#include "mc/math/IRandom.h"
+#include "mc/math/Random.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/ThreadLocalObject.h"

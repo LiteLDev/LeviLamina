@@ -37,7 +37,7 @@ namespace ll::perm {
         std::string displayName; ///< Display name of the role.
         int priority = 0;        ///< Priority of the role.
 
-        static constexpr std::string_view roleNameInvalidChars = "@#[]{}<>()/|\\$%^&*!~`\"\'+=?\n\t\r\f\v "; ///< Invalid characters for the role name.
+        static constexpr std::string_view roleNameInvalidChars = "@#[]{}<>()/|\\$%^&*!~`\"\'+=?\n\t\r\f\v "; ///< Invalid characters for the role pname.
 
         /**
          * @brief Destructor.
@@ -48,38 +48,38 @@ namespace ll::perm {
         /**
          * @brief Check whether the role has the permission.
          * 
-         * @param  name  The permission name to check.
+         * @param  pname  The permission name to check.
          * @return bool  True if the role has the permission, false otherwise.
          */
-        virtual bool hasPermission(const std::string& name) const {
-            return this->permissions.contains(name) && this->permissions.at(name).enabled;
+        virtual bool hasPermission(const std::string& pname) const {
+            return this->permissions.contains(pname) && this->permissions.at(pname).enabled;
         }
         /**
          * @brief Set the permission of the role.
          * 
-         * @param name     The name of the permission to set.
+         * @param pname     The name of the permission to set.
          * @param enabled  Whether the permission is enabled.
          * @param extra    Extra data for the permission.
          */
-        virtual void setPermission(const std::string& name, bool enabled = true, const nlohmann::json& extra = nlohmann::json());
+        virtual void setPermission(const std::string& pname, bool enabled = true, const nlohmann::json& extra = nlohmann::json());
 
         /**
          * @brief Remove the permission of the role.
          * 
-         * @param name  The name of the permission to remove.
+         * @param pname  The name of the permission to remove.
          */
-        virtual void removePermission(const std::string& name) {
-            this->permissions.remove(name);
+        virtual void removePermission(const std::string& pname) {
+            this->permissions.remove(pname);
         }
 
         /**
          * @brief Check whether the permission exists in the role.
          * 
-         * @param  name  The name of the permission to check.
+         * @param  pname  The name of the permission to check.
          * @return bool  True if the permission exists in the role, false otherwise.
          */
-        virtual bool permissionExists(const std::string& name) {
-            return this->permissions.contains(name);
+        virtual bool permissionExists(const std::string& pname) {
+            return this->permissions.contains(pname);
         }
 
         /**
@@ -165,11 +165,11 @@ namespace ll::perm {
         /**
          * @brief Check whether the role name is valid.
          * 
-         * @param  name  The name to check.
+         * @param  pname  The name to check.
          * @return bool  True if the role name is valid, false otherwise.
          */
-        static bool isValidRoleName(const std::string& name) {
-            return name.find_first_of(Role::roleNameInvalidChars.data()) == std::string::npos;
+        static bool isValidRoleName(const std::string& pname) {
+            return pname.find_first_of(Role::roleNameInvalidChars.data()) == std::string::npos;
         }
     };
 
@@ -218,13 +218,13 @@ namespace ll::perm {
         EveryoneRole& operator=(const EveryoneRole& other) = default;
         EveryoneRole& operator=(EveryoneRole&& other) = default;
 
-        virtual bool hasMember(const std::string& xuid) const {
+        virtual bool hasMember(const std::string&) const {
             return true;
         }
-        virtual void addMember(const std::string& xuid) {
+        virtual void addMember(const std::string&) {
             throw std::runtime_error("You cannot add a member to a everyone permission role");
         }
-        virtual void removeMember(const std::string& xuid) {
+        virtual void removeMember(const std::string&) {
             throw std::runtime_error("You cannot remove a member from a everyone permission role");
         }
 
@@ -248,11 +248,11 @@ namespace ll::perm {
         AdminRole& operator=(const AdminRole& other) = default;
         AdminRole& operator=(AdminRole&& other) = default;
 
-        virtual bool hasPermission(const std::string& name) const {
-            if (!this->permissions.contains(name)) {
+        virtual bool hasPermission(const std::string& pname) const {
+            if (!this->permissions.contains(pname)) {
                 return true;
             } else {
-                return this->permissions.at(name).enabled;
+                return this->permissions.at(pname).enabled;
             }
         }
 
@@ -307,17 +307,17 @@ namespace ll::perm {
             return result;
         }
 
-        std::shared_ptr<Role>& operator[](const std::string& name) {
+        std::shared_ptr<Role>& operator[](const std::string& pname) {
             Role* ptr = nullptr;
-            if (name == "everyone")
+            if (pname == "everyone")
                 ptr = new EveryoneRole;
-            else if (name == "admin")
+            else if (pname == "admin")
                 ptr = new AdminRole;
             else
                 ptr = new GeneralRole;
             auto def = std::shared_ptr<Role>(ptr);
-            def->name = name;
-            return this->getOrCreate(name, def);
+            def->name = pname;
+            return this->getOrCreate(pname, def);
         }
 
         Roles& operator=(const Roles& other) = default;

@@ -1,21 +1,18 @@
-#include <string>
 #include "liteloader/api/Global.h"
 #include "liteloader/api/LoggerAPI.h"
 #include "liteloader/api/ScheduleAPI.h"
 #include "liteloader/core/LiteLoader.h"
+#include <string>
+#include <utility>
 
 using ll::logger;
 
-LLAPI void OutputEventError(const std::string& errorMsg, const std::string& eventName, const std::string& pluginName) {
-    logger.error("Please upgrade the plugin <{}>, or it will not work properly!!!", pluginName);
-}
-
 namespace Schedule {
 LLAPI ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay) {
-    return delay(task, tickDelay, nullptr);
+    return delay(std::move(task), tickDelay, nullptr);
 }
 LLAPI ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickInterval, int maxCount = -1) {
-    return repeat(task, tickInterval, maxCount, nullptr);
+    return repeat(std::move(task), tickInterval, maxCount, nullptr);
 }
 LLAPI ScheduleTask delayRepeat(
     std::function<void(void)> task,
@@ -23,9 +20,9 @@ LLAPI ScheduleTask delayRepeat(
     unsigned long long        tickInterval,
     int                       maxCount = -1
 ) {
-    return delayRepeat(task, tickDelay, tickInterval, maxCount, nullptr);
+    return delayRepeat(std::move(task), tickDelay, tickInterval, maxCount, nullptr);
 }
-LLAPI ScheduleTask nextTick(std::function<void(void)> task) { return nextTick(task, nullptr); }
+LLAPI ScheduleTask nextTick(std::function<void(void)> task) { return nextTick(std::move(task), nullptr); }
 } // namespace Schedule
 
 LLAPI std::wstring ANSI2Unicode(const std::string& str) {

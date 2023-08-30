@@ -1,4 +1,5 @@
 #pragma once
+#pragma warning(disable : 4245)
 #pragma warning(disable : 4250)
 #pragma warning(disable : 4949)
 

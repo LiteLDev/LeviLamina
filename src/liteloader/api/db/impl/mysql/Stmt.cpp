@@ -273,15 +273,15 @@ MySQLStmt::MySQLStmt(MYSQL_STMT* stmt, const std::weak_ptr<Session>& parent, boo
 }
 
 int MySQLStmt::getNextParamIndex() {
-    int result = -1;
+    int idxResult = -1;
     // Find the first unbound parameter
     for (int i = 0; i < boundIndexes.size() && i < totalParamsCount; i++) {
-        if (boundIndexes[i] == result + 1) {
-            result++;
+        if (boundIndexes[i] == idxResult + 1) {
+            idxResult++;
         }
     }
-    IF_ENDBG dbLogger.debug("MySQLStmt::getNextParamIndex: The next param index is {}", result + 1);
-    return result + 1;
+    IF_ENDBG dbLogger.debug("MySQLStmt::getNextParamIndex: The next param index is {}", idxResult + 1);
+    return idxResult + 1;
 }
 
 void MySQLStmt::bindResult() {

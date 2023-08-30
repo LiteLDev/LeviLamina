@@ -17,18 +17,24 @@ namespace Core {
 class Random : public ::IRandom {
 
 public:
-    // prevent constructor by default
-    Random& operator=(Random const&) = delete;
-    Random(Random const&)            = delete;
-    Random()                         = delete;
+    unsigned int mSeed;                           // this+0x8
+    unsigned int _mt[624];                        // this+0xC
+    int          _mti;                            // this+0x9CC
+    bool         mHaveNextNextGaussian;           // this+0x9D0
+    float        mNextNextGaussian;               // this+0x9D4
+    bool         mHaveNextNextGaussianDouble;     // this+0x9D8
+    double       mNextNextGaussianDouble;         // this+0x9E0
+    int          mInitedIdx;                      // this+0x9E8
+    unsigned int mFakeUniformRandomInt;           // this+0x9EC
+    bool         mTest_OnlyUsedDeterministically; // this+0x9F0
 
 public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~Random();
     /**
      * @vftbl 1
      * @symbol ?nextInt\@Random\@Core\@\@UEAAHXZ
@@ -75,12 +81,6 @@ public:
      * ?fork\@Random\@Core\@\@UEAA?AV?$unique_ptr\@VIRandom\@\@U?$default_delete\@VIRandom\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class IRandom> fork();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORE_RANDOM
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~Random();
-#endif
     /**
      * @symbol ??0Random\@Core\@\@QEAA\@I_N\@Z
      */

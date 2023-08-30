@@ -3,7 +3,7 @@
 
 class StringReader {
     std::string str;
-    size_t len = 0;
+    size_t length = 0;
     std::string::const_iterator begin;
     std::string::const_iterator end;
     std::string::const_iterator it;

@@ -84,7 +84,7 @@ bool HttpPost(
     const std::function<void(int, std::string)>& callback,
     int                                     timeout
 ) {
-    return HttpPost(url, {}, data, type, callback);
+    return HttpPost(url, {}, data, type, callback, timeout);
 }
 
 bool HttpPost(
