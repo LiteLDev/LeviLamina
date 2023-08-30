@@ -70,22 +70,22 @@ struct has_hash : std::false_type {};
 template <typename T>
 struct has_hash<T, std::void_t<decltype(std::declval<T>().hash())>> : std::true_type {};
 
-struct VectorBaseTag {};
+struct LL_EBO VectorBaseTag {};
 
 template <typename T>
 concept IsVectorBase = std::is_base_of_v<VectorBaseTag, T>;
 
-struct BoolNTag {};
+struct LL_EBO BoolNTag {};
 
 template <typename T>
 concept IsBoolN = std::is_base_of_v<BoolNTag, T>;
 
-struct IntNTag {};
+struct LL_EBO IntNTag {};
 
 template <typename T>
 concept IsIntN = std::is_base_of_v<IntNTag, T>;
 
-struct FloatNTag {};
+struct LL_EBO FloatNTag {};
 
 template <typename T>
 concept IsFloatN = std::is_base_of_v<FloatNTag, T>;
@@ -94,7 +94,7 @@ template <size_t N>
 class boolN;
 
 template <typename T, typename... Components>
-class VectorBase : VectorBaseTag {
+class LL_EBO VectorBase : VectorBaseTag {
 public:
     using first_type = max_type<Components...>::type;
 
