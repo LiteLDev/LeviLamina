@@ -409,16 +409,3 @@ LLAPI bool RegisterPlugin(
     others["PluginFilePath"] = handle ? GetModulePath(handle) : name;
     return ll::PluginManager::registerPlugin(handle, name, desc, version, others);
 }
-
-// for abi compatibility
-LLAPI bool RegisterPlugin(
-    HMODULE                            handle,
-    std::string                        name,
-    std::string                        desc,
-    LL::Version                        version,
-    std::map<std::string, std::string> others
-) {
-    others["PluginType"]     = "DLL Plugin";
-    others["PluginFilePath"] = handle ? GetModulePath(handle) : name;
-    return ll::PluginManager::registerPlugin(handle, name, desc, version.toNewVersion(), others);
-}

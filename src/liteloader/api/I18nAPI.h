@@ -386,45 +386,6 @@ inline std::string tr(const char* formatStr, Args&&... args) {
 }
 
 /**
- * @brief Translate a str(c-style str).
- *
- * @tparam S            The string type
- * @tparam Args         ...
- * @param  formatStr    The str to translate and format
- * @param  args         The format arguments
- * @return const char*  The translated str(c-style str)
- * @see    fmt::format
- * @see    https://fmt.dev/latest/index.html
- * @par Example
- * @code
- * trc(std::string("There are {0} days before {1} to come back"), 3, "alex");
- * @endcode
- */
-template <typename S, typename... Args, Translation::enable_if_t<(fmt::v9::detail::is_string<S>::value), int32_t> = 0>
-inline const char* trc(const S& formatStr, Args&&... args) {
-    return Translation::trcImpl(GetCurrentModule(), formatStr, std::forward<Args>(args)...);
-}
-
-/**
- * @brief Translate a str(c-style str).
- *
- * @tparam Args         ...
- * @param  formatStr    The str to translate and format
- * @param  args         The format arguments
- * @return const char*  The translated str(c-style str)
- * @see    fmt::format
- * @see    https://fmt.dev/latest/index.html
- * @par Example
- * @code
- * trc("There are {0} days before {1} to come back", 3, "alex");
- * @endcode
- */
-template <typename... Args>
-inline const char* trc(const char* formatStr, Args&&... args) {
-    return trc(std::string(formatStr), std::forward<Args>(args)...);
-}
-
-/**
  * @brief Translate a str to the specified language.
  *
  * @tparam S            The string type

@@ -79,62 +79,6 @@ inline bool operator>=(ll::Version a, ll::Version b) {
 LLAPI bool RegisterPlugin(HMODULE hPlugin, std::string name, std::string desc, ll::Version version,
                           std::map<std::string, std::string> others);
 
-// for abi compatibility
-namespace LL {
-
-struct Version {
-    enum Status {
-        Dev,
-        Beta,
-        Release
-    };
-
-    int32_t major;
-    int32_t minor;
-    int32_t revision;
-    Status status;
-
-    LLAPI explicit Version(int32_t major = 0, int32_t minor = 0, int32_t revision = 0, Status status = Status::Release);
-
-    LLAPI bool operator<(Version b);
-    LLAPI bool operator==(Version b);
-
-    LLAPI std::string toString(bool needStatus = false);
-    LLAPI static Version parse(const std::string& str);
-
-    inline ll::Version toNewVersion() {
-        return ll::Version(major, minor, revision, static_cast<ll::Version::Status>(status));
-    }
-};
-
-struct Plugin {
-    std::string name;
-    std::string desc; // `introduction` before
-    Version version;
-    std::map<std::string, std::string> others; // `otherInformation` before
-
-    std::string filePath;
-    HMODULE handle;
-
-    enum class PluginType {
-        DllPlugin,
-        ScriptPlugin
-    };
-
-    PluginType type;
-
-    // Call a Function by Symbol String
-    template <typename ReturnType = void, typename... Args>
-    inline ReturnType callFunction(const char* functionName, Args... args) {
-        void* address = reinterpret_cast<void*>(GetProcAddress(handle, functionName));
-        if (!address)
-            return ReturnType();
-        return reinterpret_cast<ReturnType (*)(Args...)>(address)(std::forward<Args>(args)...);
-    }
-};
-
-} // namespace LL
-
 // Loader APIs
 namespace ll {
 
