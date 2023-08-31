@@ -4,7 +4,7 @@
 
 namespace OperationNodeDetails {
 
-template <typename T0, int T1, int T2>
+template <typename T0, int32_t T1, int32_t T2>
 struct NeighborhoodReader {
 
 public:

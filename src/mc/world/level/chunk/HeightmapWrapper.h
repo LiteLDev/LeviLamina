@@ -19,6 +19,6 @@ public:
     /**
      * @symbol ?getHeightAt\@HeightmapWrapper\@\@QEBAFAEBVPos\@\@\@Z
      */
-    MCAPI short getHeightAt(class Pos const&) const;
+    MCAPI int16_t getHeightAt(class Pos const&) const;
     // NOLINTEND
 };

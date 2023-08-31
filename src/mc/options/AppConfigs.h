@@ -7,6 +7,11 @@
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/enums/EducationEditionOffer.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
 class AppConfigs : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // AppConfigs inner types define

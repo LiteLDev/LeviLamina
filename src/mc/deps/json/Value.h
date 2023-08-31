@@ -143,11 +143,11 @@ public:
     /**
      * @symbol ??0Value\@Json\@\@QEAA\@H\@Z
      */
-    MCAPI Value(int);
+    MCAPI Value(int32_t);
     /**
      * @symbol ??0Value\@Json\@\@QEAA\@I\@Z
      */
-    MCAPI Value(unsigned int);
+    MCAPI Value(uint32_t);
     /**
      * @symbol ??0Value\@Json\@\@QEAA\@N\@Z
      */
@@ -187,7 +187,7 @@ public:
     /**
      * @symbol ?asInt\@Value\@Json\@\@QEBAHH\@Z
      */
-    MCAPI int asInt(int) const;
+    MCAPI int32_t asInt(int32_t) const;
     /**
      * @symbol ?asInt64\@Value\@Json\@\@QEBA_J_J\@Z
      */
@@ -208,7 +208,7 @@ public:
     /**
      * @symbol ?asUInt\@Value\@Json\@\@QEBAII\@Z
      */
-    MCAPI unsigned int asUInt(unsigned int) const;
+    MCAPI uint32_t asUInt(uint32_t) const;
     /**
      * @symbol ?asUInt64\@Value\@Json\@\@QEBA_K_K\@Z
      */
@@ -228,7 +228,7 @@ public:
     /**
      * @symbol ?compare\@Value\@Json\@\@QEBAHAEBV12\@\@Z
      */
-    MCAPI int compare(class Json::Value const&) const;
+    MCAPI int32_t compare(class Json::Value const&) const;
     /**
      * @symbol ?empty\@Value\@Json\@\@QEBA_NXZ
      */
@@ -332,7 +332,7 @@ public:
     /**
      * @symbol ??AValue\@Json\@\@QEAAAEAV01\@I\@Z
      */
-    MCAPI class Json::Value& operator[](unsigned int);
+    MCAPI class Json::Value& operator[](uint32_t);
     /**
      * @symbol
      * ??AValue\@Json\@\@QEAAAEAV01\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -341,7 +341,7 @@ public:
     /**
      * @symbol ??AValue\@Json\@\@QEBAAEBV01\@H\@Z
      */
-    MCAPI class Json::Value const& operator[](int) const;
+    MCAPI class Json::Value const& operator[](int32_t) const;
     /**
      * @symbol
      * ??AValue\@Json\@\@QEBAAEBV01\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -350,11 +350,11 @@ public:
     /**
      * @symbol ??AValue\@Json\@\@QEBAAEBV01\@I\@Z
      */
-    MCAPI class Json::Value const& operator[](unsigned int) const;
+    MCAPI class Json::Value const& operator[](uint32_t) const;
     /**
      * @symbol ??AValue\@Json\@\@QEAAAEAV01\@H\@Z
      */
-    MCAPI class Json::Value& operator[](int);
+    MCAPI class Json::Value& operator[](int32_t);
     /**
      * @symbol ??AValue\@Json\@\@QEBAAEBV01\@PEBD\@Z
      */
@@ -375,7 +375,7 @@ public:
     /**
      * @symbol ?resize\@Value\@Json\@\@QEAAXI\@Z
      */
-    MCAPI void resize(unsigned int);
+    MCAPI void resize(uint32_t);
     /**
      * @symbol
      * ?setComment\@Value\@Json\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4CommentPlacement\@2\@\@Z
@@ -384,7 +384,7 @@ public:
     /**
      * @symbol ?size\@Value\@Json\@\@QEBAIXZ
      */
-    MCAPI unsigned int size() const;
+    MCAPI uint32_t size() const;
     /**
      * @symbol
      * ?toStyledString\@Value\@Json\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -401,7 +401,7 @@ public:
     /**
      * @symbol ?maxInt\@Value\@Json\@\@2HB
      */
-    MCAPI static int const maxInt;
+    MCAPI static int32_t const maxInt;
     /**
      * @symbol ?maxInt64\@Value\@Json\@\@2_JB
      */
@@ -417,7 +417,7 @@ public:
     /**
      * @symbol ?maxUInt\@Value\@Json\@\@2IB
      */
-    MCAPI static unsigned int const maxUInt;
+    MCAPI static uint32_t const maxUInt;
     /**
      * @symbol ?maxUInt64\@Value\@Json\@\@2_KB
      */
@@ -425,7 +425,7 @@ public:
     /**
      * @symbol ?minInt\@Value\@Json\@\@2HB
      */
-    MCAPI static int const minInt;
+    MCAPI static int32_t const minInt;
     /**
      * @symbol ?minInt64\@Value\@Json\@\@2_JB
      */

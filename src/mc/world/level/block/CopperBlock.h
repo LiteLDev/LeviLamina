@@ -231,7 +231,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@CopperBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -247,11 +247,11 @@ public:
      * ??0CopperBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4CopperType\@\@AEBVHashedString\@\@22\@Z
      */
     MCAPI
-    CopperBlock(std::string const&, int, enum class CopperType, class HashedString const&, class HashedString const&, class HashedString const&);
+    CopperBlock(std::string const&, int32_t, enum class CopperType, class HashedString const&, class HashedString const&, class HashedString const&);
     /**
      * @symbol
      * ??0CopperBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4CopperType\@\@AEBVHashedString\@\@\@Z
      */
-    MCAPI CopperBlock(std::string const&, int, enum class CopperType, class HashedString const&);
+    MCAPI CopperBlock(std::string const&, int32_t, enum class CopperType, class HashedString const&);
     // NOLINTEND
 };

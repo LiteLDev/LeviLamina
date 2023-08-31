@@ -52,7 +52,7 @@ public:
      * @symbol
      * ?modifyScoreInObjective\@ScoreboardIdentityRef\@\@QEAA_NAEAHAEAVObjective\@\@HW4PlayerScoreSetFunction\@\@\@Z
      */
-    MCAPI bool modifyScoreInObjective(int&, class Objective&, int, enum class PlayerScoreSetFunction);
+    MCAPI bool modifyScoreInObjective(int32_t&, class Objective&, int32_t, enum class PlayerScoreSetFunction);
     /**
      * @symbol ?removeFromObjective\@ScoreboardIdentityRef\@\@QEAA_NAEAVScoreboard\@\@AEAVObjective\@\@\@Z
      */

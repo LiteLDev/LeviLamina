@@ -13,6 +13,7 @@ class Actor;
 class Mob;
 class WeakEntityRef;
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { class ScriptComponent; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct Error; }
 // clang-format on

@@ -19,22 +19,22 @@ public:
     /**
      * @symbol ?getBiome\@BlendingData\@\@QEBA?AV?$ScalarOptional\@E\@\@HHH\@Z
      */
-    MCAPI class ScalarOptional<unsigned char> getBiome(int, int, int) const;
+    MCAPI class ScalarOptional<uint8_t> getBiome(int32_t, int32_t, int32_t) const;
     /**
      * @symbol ?getBlockType\@BlendingData\@\@QEBA?AW4BlendingBlockType\@\@HHH\@Z
      */
-    MCAPI enum class BlendingBlockType getBlockType(int, int, int) const;
+    MCAPI enum class BlendingBlockType getBlockType(int32_t, int32_t, int32_t) const;
     /**
      * @symbol ?getDensity\@BlendingData\@\@QEBA?AV?$ScalarOptional\@M\@\@HHH\@Z
      */
-    MCAPI class ScalarOptional<float> getDensity(int, int, int) const;
+    MCAPI class ScalarOptional<float> getDensity(int32_t, int32_t, int32_t) const;
     /**
      * @symbol ?getHeight\@BlendingData\@\@QEBA?AV?$ScalarOptional\@F\@\@HH\@Z
      */
-    MCAPI class ScalarOptional<short> getHeight(int, int) const;
+    MCAPI class ScalarOptional<int16_t> getHeight(int32_t, int32_t) const;
     /**
      * @symbol ?hasBlendDataAt\@BlendingData\@\@QEBA_NHH\@Z
      */
-    MCAPI bool hasBlendDataAt(int, int) const;
+    MCAPI bool hasBlendDataAt(int32_t, int32_t) const;
     // NOLINTEND
 };

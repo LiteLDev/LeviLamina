@@ -23,7 +23,7 @@ public:
     /**
      * @symbol ?attenuateDensity\@ChunkBlender\@\@QEBAMAEBV?$DividedPos2d\@$03\@\@HM\@Z
      */
-    MCAPI float attenuateDensity(class DividedPos2d<4> const&, int, float) const;
+    MCAPI float attenuateDensity(class DividedPos2d<4> const&, int32_t, float) const;
     /**
      * @symbol ?attenuateTerrainInfo\@ChunkBlender\@\@QEBA?AUTerrainInfo\@\@AEBV?$DividedPos2d\@$03\@\@AEBU2\@\@Z
      */

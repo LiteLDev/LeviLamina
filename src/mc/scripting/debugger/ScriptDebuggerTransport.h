@@ -21,13 +21,13 @@ public:
      * @vftbl 1
      * @symbol ?listen\@ScriptDebuggerTransport\@\@UEAA_NG\@Z
      */
-    virtual bool listen(unsigned short);
+    virtual bool listen(uint16_t);
     /**
      * @vftbl 2
      * @symbol
      * ?connect\@ScriptDebuggerTransport\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@G\@Z
      */
-    virtual bool connect(std::string const&, unsigned short);
+    virtual bool connect(std::string const&, uint16_t);
     /**
      * @vftbl 3
      * @symbol ?selectClient\@ScriptDebuggerTransport\@\@UEAA_NXZ

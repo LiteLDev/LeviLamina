@@ -18,6 +18,11 @@ public:
         BlockState::StateListNode* mPrev;
         BlockState*                mState;
 
+        // prevent constructor by default
+        StateListNode& operator=(StateListNode const&) = delete;
+        StateListNode(StateListNode const&)            = delete;
+        StateListNode()                                = delete;
+
     public:
         // NOLINTBEGIN
         /**
@@ -36,15 +41,15 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    BlockState& operator=(BlockState const&) = delete;
-    BlockState(BlockState const&)            = delete;
-    BlockState()                             = delete;
-
     size_t const             mID;
     size_t const             mVariationCount;
     class HashedString const mName;
     StateListNode            mNode;
+
+    // prevent constructor by default
+    BlockState& operator=(BlockState const&) = delete;
+    BlockState(BlockState const&)            = delete;
+    BlockState()                             = delete;
 
 public:
     // NOLINTBEGIN
@@ -57,12 +62,12 @@ public:
      * @vftbl 1
      * @symbol ?toNBT\@?$BlockStateVariant\@_N\@\@UEBAXAEAVCompoundTag\@\@H\@Z
      */
-    virtual void toNBT(class CompoundTag&, int) const = 0;
+    virtual void toNBT(class CompoundTag&, int32_t) const = 0;
     /**
      * @vftbl 2
      * @symbol ?fromNBT\@?$BlockStateVariant\@_N\@\@UEBA_NAEBVCompoundTag\@\@AEAH\@Z
      */
-    virtual bool fromNBT(class CompoundTag const&, int&) const = 0;
+    virtual bool fromNBT(class CompoundTag const&, int32_t&) const = 0;
     /**
      * @symbol ?forEachState\@BlockState\@\@SAXV?$function\@$$A6A_NAEBVBlockState\@\@\@Z\@std\@\@\@Z
      */

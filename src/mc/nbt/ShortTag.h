@@ -62,6 +62,6 @@ public:
     /**
      * @symbol ??0ShortTag\@\@QEAA\@F\@Z
      */
-    MCAPI ShortTag(short);
+    MCAPI ShortTag(int16_t);
     // NOLINTEND
 };

@@ -19,7 +19,7 @@ public:
      * @symbol
      * ?addGoal\@GoalSelectorComponent\@\@QEAAXHV?$unique_ptr\@VGoal\@\@U?$default_delete\@VGoal\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI void addGoal(int, std::unique_ptr<class Goal>);
+    MCAPI void addGoal(int32_t, std::unique_ptr<class Goal>);
     /**
      * @symbol
      * ?buildDebugInfo\@GoalSelectorComponent\@\@QEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -41,17 +41,16 @@ public:
      * @symbol
      * ?getGoalMap\@GoalSelectorComponent\@\@QEAAAEAV?$vector\@U?$pair\@GVPrioritizedGoal\@\@\@std\@\@V?$allocator\@U?$pair\@GVPrioritizedGoal\@\@\@std\@\@\@2\@\@std\@\@XZ
      */
-    MCAPI std::vector<std::pair<unsigned short, class PrioritizedGoal>>& getGoalMap();
+    MCAPI std::vector<std::pair<uint16_t, class PrioritizedGoal>>& getGoalMap();
     /**
      * @symbol
      * ?onPlayerDimensionChanged\@GoalSelectorComponent\@\@QEAAXPEAVPlayer\@\@V?$AutomaticID\@VDimension\@\@H\@\@1\@Z
      */
-    MCAPI void
-    onPlayerDimensionChanged(class Player*, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
+    MCAPI void onPlayerDimensionChanged(class Player*, DimensionType, DimensionType);
     /**
      * @symbol ?removeGoal\@GoalSelectorComponent\@\@QEAA_NG\@Z
      */
-    MCAPI bool removeGoal(unsigned short);
+    MCAPI bool removeGoal(uint16_t);
     /**
      * @symbol ?stopAllGoals\@GoalSelectorComponent\@\@QEAAXXZ
      */
@@ -67,13 +66,12 @@ public:
     /**
      * @symbol ?_eraseGoals\@GoalSelectorComponent\@\@AEAAXP6A_NAEAU?$pair\@GVPrioritizedGoal\@\@\@std\@\@\@Z\@Z
      */
-    MCAPI void _eraseGoals(bool(__cdecl*)(std::pair<unsigned short, class PrioritizedGoal>&));
+    MCAPI void _eraseGoals(bool(__cdecl*)(std::pair<uint16_t, class PrioritizedGoal>&));
     /**
      * @symbol
      * ?_findGoalByKey\@GoalSelectorComponent\@\@AEBA?AV?$_Vector_const_iterator\@V?$_Vector_val\@U?$_Simple_types\@U?$pair\@GVPrioritizedGoal\@\@\@std\@\@\@std\@\@\@std\@\@\@std\@\@G\@Z
      */
-    MCAPI std::_Vector_const_iterator<
-        std::_Vector_val<std::_Simple_types<std::pair<unsigned short, class PrioritizedGoal>>>>
-    _findGoalByKey(unsigned short) const;
+    MCAPI std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<std::pair<uint16_t, class PrioritizedGoal>>>>
+          _findGoalByKey(uint16_t) const;
     // NOLINTEND
 };

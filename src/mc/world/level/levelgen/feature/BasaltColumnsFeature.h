@@ -33,10 +33,10 @@ public:
      * @symbol
      * ?_findSurface\@BasaltColumnsFeature\@\@AEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVBlockSource\@\@VBlockPos\@\@HH\@Z
      */
-    MCAPI std::optional<class BlockPos> _findSurface(class BlockSource&, class BlockPos, int, int) const;
+    MCAPI std::optional<class BlockPos> _findSurface(class BlockSource&, class BlockPos, int32_t, int32_t) const;
     /**
      * @symbol ?_placeColumnCluster\@BasaltColumnsFeature\@\@AEBA_NAEAVBlockSource\@\@VBlockPos\@\@HH\@Z
      */
-    MCAPI bool _placeColumnCluster(class BlockSource&, class BlockPos, int, int) const;
+    MCAPI bool _placeColumnCluster(class BlockSource&, class BlockPos, int32_t, int32_t) const;
     // NOLINTEND
 };

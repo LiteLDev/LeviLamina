@@ -77,12 +77,12 @@ public:
      * @vftbl 62
      * @symbol ?getEnchantSlot\@FishingRodItem\@\@UEBAHXZ
      */
-    virtual int getEnchantSlot() const;
+    virtual int32_t getEnchantSlot() const;
     /**
      * @vftbl 63
      * @symbol ?getEnchantValue\@FishingRodItem\@\@UEBAHXZ
      */
-    virtual int getEnchantValue() const;
+    virtual int32_t getEnchantValue() const;
     /**
      * @vftbl 66
      * @symbol __unk_vfn_66
@@ -132,7 +132,7 @@ public:
      * @vftbl 93
      * @symbol ?mineBlock\@FishingRodItem\@\@UEBA_NAEAVItemStack\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
      */
-    virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
+    virtual bool mineBlock(class ItemStack&, class Block const&, int32_t, int32_t, int32_t, class Actor*) const;
     /**
      * @vftbl 115
      * @symbol __unk_vfn_115
@@ -147,7 +147,7 @@ public:
      * @vftbl 120
      * @symbol ?getIconInfo\@FishingRodItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int32_t, bool) const;
     /**
      * @vftbl 121
      * @symbol
@@ -158,7 +158,7 @@ public:
      * @vftbl 122
      * @symbol ?getAnimationFrameFor\@FishingRodItem\@\@UEBAHPEAVMob\@\@_NPEBVItemStack\@\@_N\@Z
      */
-    virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
+    virtual int32_t getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FISHINGRODITEM
     /**
      * @symbol ?shouldSendInteractionGameEvents\@FishingRodItem\@\@UEBA_NXZ
@@ -169,6 +169,6 @@ public:
      * @symbol
      * ??0FishingRodItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI FishingRodItem(std::string const&, int);
+    MCAPI FishingRodItem(std::string const&, int32_t);
     // NOLINTEND
 };

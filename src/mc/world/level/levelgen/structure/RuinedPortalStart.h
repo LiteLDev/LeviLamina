@@ -25,6 +25,6 @@ public:
      * ??0RuinedPortalStart\@\@QEAA\@AEAVBiomeRegistry\@\@AEBVBiomeSource\@\@HHAEBVIPreliminarySurfaceProvider\@\@\@Z
      */
     MCAPI
-    RuinedPortalStart(class BiomeRegistry&, class BiomeSource const&, int, int, class IPreliminarySurfaceProvider const&);
+    RuinedPortalStart(class BiomeRegistry&, class BiomeSource const&, int32_t, int32_t, class IPreliminarySurfaceProvider const&);
     // NOLINTEND
 };

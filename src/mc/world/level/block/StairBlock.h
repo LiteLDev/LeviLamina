@@ -69,7 +69,7 @@ public:
      * ?liquidCanFlowIntoFromDirection\@StairBlock\@\@UEBA_NEAEBV?$function\@$$A6AAEBVBlock\@\@AEBVBlockPos\@\@\@Z\@std\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool
-    liquidCanFlowIntoFromDirection(unsigned char, std::function<class Block const&(class BlockPos const&)> const&, class BlockPos const&)
+    liquidCanFlowIntoFromDirection(uint8_t, std::function<class Block const&(class BlockPos const&)> const&, class BlockPos const&)
         const;
     /**
      * @vftbl 22
@@ -80,12 +80,12 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@StairBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 28
      * @symbol ?canConnect\@StairBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
-    virtual bool canConnect(class Block const&, unsigned char, class Block const&) const;
+    virtual bool canConnect(class Block const&, uint8_t, class Block const&) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -220,7 +220,7 @@ public:
      * @vftbl 93
      * @symbol ?mayPlace\@StairBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
+    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 98
      * @symbol ?breaksFallingBlocks\@StairBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
@@ -241,7 +241,7 @@ public:
      * @symbol ?getPlacementBlock\@StairBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 111
      * @symbol ?attack\@StairBlock\@\@UEBA_NPEAVPlayer\@\@AEBVBlockPos\@\@\@Z
@@ -276,7 +276,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@StairBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 148
      * @symbol ?animateTick\@StairBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
@@ -341,7 +341,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@StairBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -370,7 +370,7 @@ public:
      * @symbol
      * ??0StairBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVBlockLegacy\@\@H\@Z
      */
-    MCAPI StairBlock(std::string const&, int, class BlockLegacy const&, int);
+    MCAPI StairBlock(std::string const&, int32_t, class BlockLegacy const&, int32_t);
     /**
      * @symbol
      * ?setInnerPieceShape\@StairBlock\@\@QEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEAVAABB\@\@_N\@Z
@@ -385,7 +385,7 @@ public:
     /**
      * @symbol ?stairDirectionToFacing\@StairBlock\@\@SAEH\@Z
      */
-    MCAPI static unsigned char stairDirectionToFacing(int);
+    MCAPI static uint8_t stairDirectionToFacing(int32_t);
     // NOLINTEND
 
     // protected:

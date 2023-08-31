@@ -60,6 +60,6 @@ public:
      * @symbol ??0UpdateBlockSyncedPacket\@\@QEAA\@AEBVBlockPos\@\@IIEAEBUActorBlockSyncMessage\@\@\@Z
      */
     MCAPI
-    UpdateBlockSyncedPacket(class BlockPos const&, unsigned int, unsigned int, unsigned char, struct ActorBlockSyncMessage const&);
+    UpdateBlockSyncedPacket(class BlockPos const&, uint32_t, uint32_t, uint8_t, struct ActorBlockSyncMessage const&);
     // NOLINTEND
 };

@@ -89,7 +89,7 @@ public:
     /**
      * @symbol ?getSkin\@NpcRequestPacket\@\@QEBAHXZ
      */
-    MCAPI int getSkin() const;
+    MCAPI int32_t getSkin() const;
     /**
      * @symbol
      * ?requestSetInteractText\@NpcRequestPacket\@\@SA?AV1\@VActorRuntimeID\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -103,7 +103,7 @@ public:
     /**
      * @symbol ?requestSetSkin\@NpcRequestPacket\@\@SA?AV1\@VActorRuntimeID\@\@H\@Z
      */
-    MCAPI static class NpcRequestPacket requestSetSkin(class ActorRuntimeID, int);
+    MCAPI static class NpcRequestPacket requestSetSkin(class ActorRuntimeID, int32_t);
     // NOLINTEND
 
     // private:
@@ -112,6 +112,6 @@ public:
      * @symbol
      * ??0NpcRequestPacket\@\@AEAA\@VActorRuntimeID\@\@W4RequestType\@0\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@E\@Z
      */
-    MCAPI NpcRequestPacket(class ActorRuntimeID, enum class NpcRequestPacket::RequestType, std::string, unsigned char);
+    MCAPI NpcRequestPacket(class ActorRuntimeID, enum class NpcRequestPacket::RequestType, std::string, uint8_t);
     // NOLINTEND
 };

@@ -16,7 +16,7 @@ MCAPI void fromFloat(class ExpressionNode&, float);
 /**
  * @symbol ?fromInt\@ExpressionNodeSerializer\@\@YAXAEAVExpressionNode\@\@H\@Z
  */
-MCAPI void fromInt(class ExpressionNode&, int);
+MCAPI void fromInt(class ExpressionNode&, int32_t);
 /**
  * @symbol ?fromProxy\@ExpressionNodeSerializer\@\@YAXAEAVExpressionNode\@\@UExpressionNodeProxy\@1\@\@Z
  */

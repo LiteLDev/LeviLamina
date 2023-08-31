@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
 class BannerPattern : public ::Bedrock::EnableNonOwnerReferences {
 
 public:
@@ -19,7 +24,7 @@ public:
      * @symbol
      * ??0BannerPattern\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0VItemStack\@\@F_N\@Z
      */
-    MCAPI BannerPattern(std::string const&, std::string const&, class ItemStack, short, bool);
+    MCAPI BannerPattern(std::string const&, std::string const&, class ItemStack, int16_t, bool);
     /**
      * @symbol ?getIgnoreAux\@BannerPattern\@\@QEBA_NXZ
      */
@@ -63,17 +68,17 @@ public:
      * @symbol
      * ?findPatternIndexByNameID\@BannerPattern\@\@SA?AV?$optional\@E\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
-    MCAPI static std::optional<unsigned char> findPatternIndexByNameID(std::string const&);
+    MCAPI static std::optional<uint8_t> findPatternIndexByNameID(std::string const&);
     /**
      * @symbol
      * ?getPatternIndexFromName\@BannerPattern\@\@SA?AV?$optional\@E\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
-    MCAPI static std::optional<unsigned char> getPatternIndexFromName(std::string const&);
+    MCAPI static std::optional<uint8_t> getPatternIndexFromName(std::string const&);
     /**
      * @symbol
      * ?getPatternIndexFromNameID\@BannerPattern\@\@SAEAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI static unsigned char getPatternIndexFromNameID(std::string const&);
+    MCAPI static uint8_t getPatternIndexFromNameID(std::string const&);
     /**
      * @symbol ?initPatterns\@BannerPattern\@\@SAXXZ
      */

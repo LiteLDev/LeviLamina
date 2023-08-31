@@ -48,7 +48,7 @@ public:
      * ?liquidCanFlowIntoFromDirection\@SlabBlock\@\@UEBA_NEAEBV?$function\@$$A6AAEBVBlock\@\@AEBVBlockPos\@\@\@Z\@std\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool
-    liquidCanFlowIntoFromDirection(unsigned char, std::function<class Block const&(class BlockPos const&)> const&, class BlockPos const&)
+    liquidCanFlowIntoFromDirection(uint8_t, std::function<class Block const&(class BlockPos const&)> const&, class BlockPos const&)
         const;
     /**
      * @vftbl 22
@@ -205,7 +205,7 @@ public:
      * @symbol ?getPlacementBlock\@SlabBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 121
      * @symbol ?getMobToSpawn\@SlabBlock\@\@UEBAPEBVMobSpawnerData\@\@AEBVSpawnConditions\@\@AEAVBlockSource\@\@\@Z
@@ -280,12 +280,12 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@SlabBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 186
      * @symbol ?getResourceCount\@SlabBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLABBLOCK
     /**
      * @symbol ?canBeSilkTouched\@SlabBlock\@\@MEBA_NXZ
@@ -304,7 +304,7 @@ public:
      * @symbol
      * ??0SlabBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_NAEBVMaterial\@\@V?$WeakPtr\@VBlockLegacy\@\@\@\@\@Z
      */
-    MCAPI SlabBlock(std::string const&, int, bool, class Material const&, class WeakPtr<class BlockLegacy>);
+    MCAPI SlabBlock(std::string const&, int32_t, bool, class Material const&, class WeakPtr<class BlockLegacy>);
     // NOLINTEND
 
     // protected:

@@ -40,7 +40,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@EnchantingTableBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -225,7 +225,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@EnchantingTableBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -250,6 +250,6 @@ public:
      * @symbol
      * ??0EnchantingTableBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI EnchantingTableBlock(std::string const&, int);
+    MCAPI EnchantingTableBlock(std::string const&, int32_t);
     // NOLINTEND
 };

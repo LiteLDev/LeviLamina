@@ -66,6 +66,6 @@ public:
     /**
      * @symbol ??0RandomStrollGoal\@\@QEAA\@AEAVMob\@\@MHHH\@Z
      */
-    MCAPI RandomStrollGoal(class Mob&, float, int, int, int);
+    MCAPI RandomStrollGoal(class Mob&, float, int32_t, int32_t, int32_t);
     // NOLINTEND
 };

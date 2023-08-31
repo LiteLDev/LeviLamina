@@ -124,6 +124,6 @@ public:
      * @symbol
      * ??0DiscFragmentItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI DiscFragmentItem(std::string const&, int);
+    MCAPI DiscFragmentItem(std::string const&, int32_t);
     // NOLINTEND
 };

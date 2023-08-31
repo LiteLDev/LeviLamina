@@ -59,7 +59,7 @@ public:
     /**
      * @symbol ??0InventorySlotPacket\@\@QEAA\@W4ContainerID\@\@IAEBVItemStack\@\@\@Z
      */
-    MCAPI InventorySlotPacket(enum class ContainerID, unsigned int, class ItemStack const&);
+    MCAPI InventorySlotPacket(enum class ContainerID, uint32_t, class ItemStack const&);
     /**
      * @symbol ??0InventorySlotPacket\@\@QEAA\@XZ
      */

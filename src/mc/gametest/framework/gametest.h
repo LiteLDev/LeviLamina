@@ -16,6 +16,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
 namespace ScriptModuleGameTest { class ScriptGameTestConnectivity; }
 namespace gametest { class BaseGameTestBatchRunner; }
 namespace gametest { class BaseGameTestFunction; }

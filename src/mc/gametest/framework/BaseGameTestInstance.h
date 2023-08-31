@@ -82,12 +82,12 @@ public:
      * @vftbl 9
      * @symbol ?getStructureDimension\@MinecraftGameTestInstance\@\@UEBA?AV?$AutomaticID\@VDimension\@\@H\@\@XZ
      */
-    virtual class AutomaticID<class Dimension, int> getStructureDimension() const = 0;
+    virtual DimensionType getStructureDimension() const = 0;
     /**
      * @vftbl 10
      * @symbol ?_getLevelTick\@MinecraftGameTestInstance\@\@MEBAHXZ
      */
-    virtual int _getLevelTick() const = 0;
+    virtual int32_t _getLevelTick() const = 0;
     /**
      * @vftbl 11
      * @symbol ?_isTestReady\@MinecraftGameTestInstance\@\@MEAA_NXZ
@@ -156,7 +156,7 @@ public:
     /**
      * @symbol ?getTick\@BaseGameTestInstance\@gametest\@\@QEBAHXZ
      */
-    MCAPI int getTick() const;
+    MCAPI int32_t getTick() const;
     /**
      * @symbol ?hasRetryAttempts\@BaseGameTestInstance\@gametest\@\@QEBA_NXZ
      */
@@ -169,7 +169,7 @@ public:
     /**
      * @symbol ?setMaxRunCount\@BaseGameTestInstance\@gametest\@\@QEAAXH\@Z
      */
-    MCAPI void setMaxRunCount(int);
+    MCAPI void setMaxRunCount(int32_t);
     /**
      * @symbol ?setRotation\@BaseGameTestInstance\@gametest\@\@QEAAXW4Rotation\@\@\@Z
      */

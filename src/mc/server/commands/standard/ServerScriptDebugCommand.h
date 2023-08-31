@@ -38,7 +38,7 @@ private:
     /**
      * @symbol ?sForcedPort\@ServerScriptDebugCommand\@\@0V?$optional\@G\@std\@\@A
      */
-    MCAPI static std::optional<unsigned short> sForcedPort;
+    MCAPI static std::optional<uint16_t> sForcedPort;
     /**
      * @symbol ?sServerScriptDebugger\@ServerScriptDebugCommand\@\@0PEAVIScriptDebugger\@\@EA
      */

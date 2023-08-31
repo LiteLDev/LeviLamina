@@ -118,7 +118,7 @@ public:
      * @symbol
      * ?_readFileData\@FileSystemImpl\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@AEAV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@\@Z
      */
-    virtual class Core::Result _readFileData(class Core::Path const&, std::vector<unsigned char>&);
+    virtual class Core::Result _readFileData(class Core::Path const&, std::vector<uint8_t>&);
     /**
      * @vftbl 16
      * @symbol __unk_vfn_16
@@ -324,7 +324,7 @@ public:
      * ??0FileSystemImpl\@Core\@\@QEAA\@W4FileAccessType\@1\@V?$shared_ptr\@VFileStorageArea\@Core\@\@\@std\@\@W4TransactionFlags\@1\@V?$shared_ptr\@VFlatFileManifestTracker\@Core\@\@\@4\@\@Z
      */
     MCAPI
-        FileSystemImpl(enum class Core::FileAccessType, std::shared_ptr<class Core::FileStorageArea>, enum class Core::TransactionFlags, std::shared_ptr<class Core::FlatFileManifestTracker>);
+    FileSystemImpl(enum class Core::FileAccessType, std::shared_ptr<class Core::FileStorageArea>, enum class Core::TransactionFlags, std::shared_ptr<class Core::FlatFileManifestTracker>);
     /**
      * @symbol ?commit\@FileSystemImpl\@Core\@\@QEAA?AVResult\@2\@XZ
      */

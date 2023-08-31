@@ -68,7 +68,7 @@ public:
      * @vftbl 9
      * @symbol ?setBlock\@BlockVolumeTarget\@\@UEAA_NAEBVBlockPos\@\@AEBVBlock\@\@H\@Z
      */
-    virtual bool setBlock(class BlockPos const&, class Block const&, int);
+    virtual bool setBlock(class BlockPos const&, class Block const&, int32_t);
     /**
      * @vftbl 10
      * @symbol ?setBlockSimple\@BlockVolumeTarget\@\@UEAA_NAEBVBlockPos\@\@AEBVBlock\@\@\@Z
@@ -103,7 +103,7 @@ public:
      * @vftbl 16
      * @symbol ?getMaxHeight\@BlockVolumeTarget\@\@UEBAFXZ
      */
-    virtual short getMaxHeight() const;
+    virtual int16_t getMaxHeight() const;
     /**
      * @vftbl 17
      * @symbol __unk_vfn_17
@@ -118,7 +118,7 @@ public:
      * @vftbl 19
      * @symbol ?getHeightmap\@BlockVolumeTarget\@\@UEAAFHH\@Z
      */
-    virtual short getHeightmap(int, int);
+    virtual int16_t getHeightmap(int32_t, int32_t);
     /**
      * @vftbl 20
      * @symbol ?isLegacyLevel\@BlockVolumeTarget\@\@UEAA_NXZ
@@ -138,7 +138,7 @@ public:
      * @vftbl 23
      * @symbol ?getLocalWaterLevel\@BlockVolumeTarget\@\@UEBAFAEBVBlockPos\@\@\@Z
      */
-    virtual short getLocalWaterLevel(class BlockPos const&) const;
+    virtual int16_t getLocalWaterLevel(class BlockPos const&) const;
     /**
      * @vftbl 24
      * @symbol ?getLevelData\@BlockVolumeTarget\@\@UEBAAEBVLevelData\@\@XZ
@@ -178,7 +178,7 @@ public:
     /**
      * @symbol ?getMinHeight\@BlockVolumeTarget\@\@UEBAFXZ
      */
-    MCVAPI short getMinHeight() const;
+    MCVAPI int16_t getMinHeight() const;
     /**
      * @symbol ?mayPlace\@BlockVolumeTarget\@\@UEBA_NAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -202,6 +202,6 @@ public:
      * ??0BlockVolumeTarget\@\@QEAA\@AEAVBlockVolume\@\@AEAVLevel\@\@AEBVBiomeSource\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEBUWorldGenContext\@\@\@Z
      */
     MCAPI
-    BlockVolumeTarget(class BlockVolume&, class Level&, class BiomeSource const&, class AutomaticID<class Dimension, int>, struct WorldGenContext const&);
+    BlockVolumeTarget(class BlockVolume&, class Level&, class BiomeSource const&, DimensionType, struct WorldGenContext const&);
     // NOLINTEND
 };

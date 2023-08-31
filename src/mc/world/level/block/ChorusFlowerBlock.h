@@ -40,7 +40,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@ChorusFlowerBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -210,7 +210,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@ChorusFlowerBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -275,7 +275,7 @@ public:
      * @vftbl 186
      * @symbol ?getResourceCount\@ChorusFlowerBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHORUSFLOWERBLOCK
     /**
      * @symbol ?waterSpreadCausesSpawn\@ChorusFlowerBlock\@\@UEBA_NXZ
@@ -286,23 +286,23 @@ public:
      * @symbol
      * ??0ChorusFlowerBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI ChorusFlowerBlock(std::string const&, int);
+    MCAPI ChorusFlowerBlock(std::string const&, int32_t);
     /**
      * @symbol ?generatePlant\@ChorusFlowerBlock\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@H\@Z
      */
-    MCAPI static void generatePlant(class BlockSource&, class BlockPos const&, class Random&, int);
+    MCAPI static void generatePlant(class BlockSource&, class BlockPos const&, class Random&, int32_t);
     /**
      * @symbol ?BRANCH_DIRECTIONS\@ChorusFlowerBlock\@\@2HB
      */
-    MCAPI static int const BRANCH_DIRECTIONS;
+    MCAPI static int32_t const BRANCH_DIRECTIONS;
     /**
      * @symbol ?DEAD_AGE\@ChorusFlowerBlock\@\@2GB
      */
-    MCAPI static unsigned short const DEAD_AGE;
+    MCAPI static uint16_t const DEAD_AGE;
     /**
      * @symbol ?GROW_RATE\@ChorusFlowerBlock\@\@2HB
      */
-    MCAPI static int const GROW_RATE;
+    MCAPI static int32_t const GROW_RATE;
     // NOLINTEND
 
     // private:
@@ -314,11 +314,17 @@ public:
     /**
      * @symbol ?_placeGrownFlower\@ChorusFlowerBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    MCAPI void _placeGrownFlower(class BlockSource&, class BlockPos const&, int) const;
+    MCAPI void _placeGrownFlower(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @symbol ?_growTreeRecursive\@ChorusFlowerBlock\@\@CAXAEAVBlockSource\@\@AEBVBlockPos\@\@1AEAVRandom\@\@HH\@Z
      */
-    MCAPI static void
-    _growTreeRecursive(class BlockSource&, class BlockPos const&, class BlockPos const&, class Random&, int, int);
+    MCAPI static void _growTreeRecursive(
+        class BlockSource&,
+        class BlockPos const&,
+        class BlockPos const&,
+        class Random&,
+        int32_t,
+        int32_t
+    );
     // NOLINTEND
 };

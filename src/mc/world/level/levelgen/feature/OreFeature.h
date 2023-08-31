@@ -64,6 +64,6 @@ public:
      * @symbol
      * ??0OreFeature\@\@QEAA\@H$$QEAV?$vector\@UReplaceRule\@\@V?$allocator\@UReplaceRule\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI OreFeature(int, std::vector<struct ReplaceRule>&&);
+    MCAPI OreFeature(int32_t, std::vector<struct ReplaceRule>&&);
     // NOLINTEND
 };

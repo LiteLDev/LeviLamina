@@ -40,7 +40,7 @@ public:
     /**
      * @symbol ?getTicksAsBaby\@AgeableDefinition\@\@QEBAHXZ
      */
-    MCAPI int getTicksAsBaby() const;
+    MCAPI int32_t getTicksAsBaby() const;
     /**
      * @symbol ?initialize\@AgeableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVAgeableComponent\@\@\@Z
      */

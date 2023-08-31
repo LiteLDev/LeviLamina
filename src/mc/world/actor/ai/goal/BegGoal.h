@@ -56,7 +56,7 @@ public:
      * @symbol
      * ??0BegGoal\@\@QEAA\@AEAVMob\@\@AEBV?$vector\@VItemDescriptor\@\@V?$allocator\@VItemDescriptor\@\@\@std\@\@\@std\@\@MHH\@Z
      */
-    MCAPI BegGoal(class Mob&, std::vector<class ItemDescriptor> const&, float, int, int);
+    MCAPI BegGoal(class Mob&, std::vector<class ItemDescriptor> const&, float, int32_t, int32_t);
     // NOLINTEND
 
     // private:

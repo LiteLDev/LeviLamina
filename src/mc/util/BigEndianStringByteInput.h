@@ -28,12 +28,12 @@ public:
      * @vftbl 6
      * @symbol ?readShort\@BigEndianStringByteInput\@\@UEAAFXZ
      */
-    virtual short readShort();
+    virtual int16_t readShort();
     /**
      * @vftbl 7
      * @symbol ?readInt\@BigEndianStringByteInput\@\@UEAAHXZ
      */
-    virtual int readInt();
+    virtual int32_t readInt();
     /**
      * @vftbl 8
      * @symbol ?readLongLong\@BigEndianStringByteInput\@\@UEAA_JXZ

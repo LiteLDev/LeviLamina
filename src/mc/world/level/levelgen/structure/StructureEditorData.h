@@ -63,7 +63,7 @@ public:
     /**
      * @symbol ?getIntegritySeed\@StructureEditorData\@\@QEBAIXZ
      */
-    MCAPI unsigned int getIntegritySeed() const;
+    MCAPI uint32_t getIntegritySeed() const;
     /**
      * @symbol ?getIntegrityValue\@StructureEditorData\@\@QEBAMXZ
      */
@@ -136,7 +136,7 @@ public:
     /**
      * @symbol ?setAnimationTicks\@StructureEditorData\@\@QEAAXI\@Z
      */
-    MCAPI void setAnimationTicks(unsigned int);
+    MCAPI void setAnimationTicks(uint32_t);
     /**
      * @symbol ?setIgnoreBlocks\@StructureEditorData\@\@QEAAX_N\@Z
      */
@@ -148,7 +148,7 @@ public:
     /**
      * @symbol ?setIntegritySeed\@StructureEditorData\@\@QEAAXI\@Z
      */
-    MCAPI void setIntegritySeed(unsigned int);
+    MCAPI void setIntegritySeed(uint32_t);
     /**
      * @symbol ?setIntegrityValue\@StructureEditorData\@\@QEAAXM\@Z
      */

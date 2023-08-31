@@ -58,7 +58,7 @@ public:
      * @symbol
      * ??0LevelSoundEventPacket\@\@QEAA\@W4LevelSoundEvent\@\@AEBVVec3\@\@HAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N3\@Z
      */
-    MCAPI LevelSoundEventPacket(enum class LevelSoundEvent, class Vec3 const&, int, std::string const&, bool, bool);
+    MCAPI LevelSoundEventPacket(enum class LevelSoundEvent, class Vec3 const&, int32_t, std::string const&, bool, bool);
     /**
      * @symbol ??0LevelSoundEventPacket\@\@QEAA\@XZ
      */

@@ -58,6 +58,6 @@ public:
     /**
      * @symbol ??0SetTimePacket\@\@QEAA\@H\@Z
      */
-    MCAPI SetTimePacket(int);
+    MCAPI SetTimePacket(int32_t);
     // NOLINTEND
 };

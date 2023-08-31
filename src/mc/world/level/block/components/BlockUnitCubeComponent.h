@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/block/utils/BlockComponentBase.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace ClientBlockPipeline { struct BlockSchematic; }
 // clang-format on
 
-struct BlockUnitCubeComponent {
+struct BlockUnitCubeComponent : public ::BlockComponentBase {
 
 public:
     // prevent constructor by default

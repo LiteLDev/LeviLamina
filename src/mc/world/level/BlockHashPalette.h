@@ -34,7 +34,7 @@ public:
      * @vftbl 3
      * @symbol ?getBlock\@BlockHashPalette\@\@UEBAAEBVBlock\@\@AEBI\@Z
      */
-    virtual class Block const& getBlock(unsigned int const&) const;
+    virtual class Block const& getBlock(uint32_t const&) const;
     /**
      * @vftbl 4
      * @symbol ?assignBlockNetworkId\@BlockHashPalette\@\@MEBAXAEBVBlock\@\@_K\@Z

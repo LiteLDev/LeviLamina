@@ -6,4 +6,10 @@
 #include "mc/world/level/block/utils/PlacementDirection.h"
 #include "mc/world/level/block/utils/PlacementPosition.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace BlockTrait { class IGetPlacementBlockCallback; }
+namespace BlockTrait { class ITrait; }
+// clang-format on
+
 namespace BlockTrait {};

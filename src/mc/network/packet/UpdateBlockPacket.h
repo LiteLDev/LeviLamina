@@ -70,7 +70,7 @@ public:
     /**
      * @symbol ??0UpdateBlockPacket\@\@QEAA\@AEBVBlockPos\@\@IIE\@Z
      */
-    MCAPI UpdateBlockPacket(class BlockPos const&, unsigned int, unsigned int, unsigned char);
+    MCAPI UpdateBlockPacket(class BlockPos const&, uint32_t, uint32_t, uint8_t);
     /**
      * @symbol ??0UpdateBlockPacket\@\@QEAA\@XZ
      */

@@ -216,7 +216,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@BorderBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 148
      * @symbol ?animateTick\@BorderBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
@@ -276,10 +276,10 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@BorderBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @symbol ??0BorderBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI BorderBlock(std::string const&, int);
+    MCAPI BorderBlock(std::string const&, int32_t);
     // NOLINTEND
 };

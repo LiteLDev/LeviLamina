@@ -66,13 +66,18 @@ public:
     /**
      * @symbol ??0MobEquipmentPacket\@\@QEAA\@VActorRuntimeID\@\@AEBVItemStack\@\@HHW4ContainerID\@\@\@Z
      */
-    MCAPI MobEquipmentPacket(class ActorRuntimeID, class ItemStack const&, int, int, enum class ContainerID);
+    MCAPI MobEquipmentPacket(class ActorRuntimeID, class ItemStack const&, int32_t, int32_t, enum class ContainerID);
     /**
      * @symbol
      * ??0MobEquipmentPacket\@\@QEAA\@VActorRuntimeID\@\@AEBVNetworkItemStackDescriptor\@\@HHW4ContainerID\@\@\@Z
      */
-    MCAPI
-    MobEquipmentPacket(class ActorRuntimeID, class NetworkItemStackDescriptor const&, int, int, enum class ContainerID);
+    MCAPI MobEquipmentPacket(
+        class ActorRuntimeID,
+        class NetworkItemStackDescriptor const&,
+        int32_t,
+        int32_t,
+        enum class ContainerID
+    );
     /**
      * @symbol ??0MobEquipmentPacket\@\@QEAA\@XZ
      */

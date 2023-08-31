@@ -70,6 +70,6 @@ public:
      * ??0UpdateEquipPacket\@\@QEAA\@W4ContainerID\@\@W4ContainerType\@\@H$$QEAVCompoundTag\@\@AEBUActorUniqueID\@\@\@Z
      */
     MCAPI
-    UpdateEquipPacket(enum class ContainerID, enum class ContainerType, int, class CompoundTag&&, struct ActorUniqueID const&);
+    UpdateEquipPacket(enum class ContainerID, enum class ContainerType, int32_t, class CompoundTag&&, struct ActorUniqueID const&);
     // NOLINTEND
 };

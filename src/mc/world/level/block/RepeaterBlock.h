@@ -145,7 +145,7 @@ public:
      * @vftbl 66
      * @symbol ?shouldConnectToRedstone\@RepeaterBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -260,7 +260,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@RepeaterBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -280,7 +280,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@RepeaterBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 193
      * @symbol ?isLocked\@RepeaterBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
@@ -295,7 +295,7 @@ public:
      * @vftbl 203
      * @symbol ?getTurnOnDelay\@RepeaterBlock\@\@MEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getTurnOnDelay(class Block const&) const;
+    virtual int32_t getTurnOnDelay(class Block const&) const;
     /**
      * @vftbl 204
      * @symbol ?getOnBlock\@RepeaterBlock\@\@MEBAPEBVBlock\@\@PEBV2\@\@Z
@@ -320,7 +320,7 @@ public:
      * @symbol
      * ??0RepeaterBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
-    MCAPI RepeaterBlock(std::string const&, int, bool);
+    MCAPI RepeaterBlock(std::string const&, int32_t, bool);
     /**
      * @symbol ?updateDelay\@RepeaterBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@_N\@Z
      */
@@ -336,6 +336,6 @@ private:
     /**
      * @symbol ?DELAYS\@RepeaterBlock\@\@0QBHB
      */
-    MCAPI static int const DELAYS[];
+    MCAPI static int32_t const DELAYS[];
     // NOLINTEND
 };

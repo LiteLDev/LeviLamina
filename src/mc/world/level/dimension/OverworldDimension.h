@@ -50,7 +50,7 @@ public:
     /**
      * @symbol ?getCloudHeight\@OverworldDimension\@\@UEBAFXZ
      */
-    MCVAPI short getCloudHeight() const;
+    MCVAPI int16_t getCloudHeight() const;
     /**
      * @symbol ?hasPrecipitationFog\@OverworldDimension\@\@UEBA_NXZ
      */
@@ -63,7 +63,7 @@ public:
      * @symbol
      * ?translatePosAcrossDimension\@OverworldDimension\@\@UEBA?AVVec3\@\@AEBV2\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const&, class AutomaticID<class Dimension, int>) const;
+    MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const&, DimensionType) const;
     /**
      * @symbol ?upgradeLevelChunk\@OverworldDimension\@\@UEAAXAEAVChunkSource\@\@AEAVLevelChunk\@\@1\@Z
      */
@@ -78,6 +78,6 @@ public:
      * ?makeStructureFeatures\@OverworldDimension\@\@CA?AV?$unique_ptr\@VStructureFeatureRegistry\@\@U?$default_delete\@VStructureFeatureRegistry\@\@\@std\@\@\@std\@\@I_NAEBVBaseGameVersion\@\@AEBVExperiments\@\@\@Z
      */
     MCAPI static std::unique_ptr<class StructureFeatureRegistry>
-    makeStructureFeatures(unsigned int, bool, class BaseGameVersion const&, class Experiments const&);
+    makeStructureFeatures(uint32_t, bool, class BaseGameVersion const&, class Experiments const&);
     // NOLINTEND
 };

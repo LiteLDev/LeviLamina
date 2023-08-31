@@ -304,7 +304,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@FlowerBlock\@\@MEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@FlowerBlock\@\@MEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -314,6 +314,6 @@ public:
      * @symbol
      * ??0FlowerBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4Type\@0\@AEBVMaterial\@\@\@Z
      */
-    MCAPI FlowerBlock(std::string const&, int, enum class FlowerBlock::Type, class Material const&);
+    MCAPI FlowerBlock(std::string const&, int32_t, enum class FlowerBlock::Type, class Material const&);
     // NOLINTEND
 };

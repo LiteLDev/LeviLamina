@@ -6,6 +6,11 @@
 #include "mc/gametest/framework/BaseGameTestInstance.h"
 #include "mc/world/AutomaticID.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace gametest { class BaseGameTestInstance; }
+// clang-format on
+
 class MinecraftGameTestInstance : public ::gametest::BaseGameTestInstance {
 
 public:
@@ -65,12 +70,12 @@ public:
      * @vftbl 9
      * @symbol ?getStructureDimension\@MinecraftGameTestInstance\@\@UEBA?AV?$AutomaticID\@VDimension\@\@H\@\@XZ
      */
-    virtual class AutomaticID<class Dimension, int> getStructureDimension() const;
+    virtual DimensionType getStructureDimension() const;
     /**
      * @vftbl 10
      * @symbol ?_getLevelTick\@MinecraftGameTestInstance\@\@MEBAHXZ
      */
-    virtual int _getLevelTick() const;
+    virtual int32_t _getLevelTick() const;
     /**
      * @vftbl 11
      * @symbol ?_isTestReady\@MinecraftGameTestInstance\@\@MEAA_NXZ

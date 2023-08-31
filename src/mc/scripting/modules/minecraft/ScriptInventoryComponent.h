@@ -11,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptActorComponent; }
 namespace ScriptModuleMinecraft { class ScriptContainerWrapper; }
 namespace ScriptModuleMinecraft { class ScriptInventoryComponentContainer; }
 // clang-format on
@@ -42,7 +43,7 @@ public:
      * @symbol
      * ?getAdditionalSlotsPerStrength\@ScriptInventoryComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getAdditionalSlotsPerStrength() const;
+    MCAPI class Scripting::Result<int32_t> getAdditionalSlotsPerStrength() const;
     /**
      * @symbol
      * ?getCanBeSiphonedFrom\@ScriptInventoryComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@XZ
@@ -56,7 +57,7 @@ public:
     /**
      * @symbol ?getInventorySize\@ScriptInventoryComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getInventorySize() const;
+    MCAPI class Scripting::Result<int32_t> getInventorySize() const;
     /**
      * @symbol
      * ?getOrCreateContainer\@ScriptInventoryComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@V?$StrongTypedObjectHandle\@VScriptContainerWrapper\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@XZ

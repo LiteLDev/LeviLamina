@@ -173,7 +173,7 @@ public:
      * @vftbl 285
      * @symbol ?getArmorValue\@EvocationIllager\@\@MEBAHXZ
      */
-    virtual int getArmorValue() const;
+    virtual int32_t getArmorValue() const;
     /**
      * @vftbl 323
      * @symbol __unk_vfn_323

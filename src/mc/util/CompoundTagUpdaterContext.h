@@ -21,7 +21,7 @@ public:
     /**
      * @symbol ?addUpdater\@CompoundTagUpdaterContext\@\@QEAA?AVCompoundTagUpdaterBuilder\@\@EEE\@Z
      */
-    MCAPI class CompoundTagUpdaterBuilder addUpdater(unsigned char, unsigned char, unsigned char);
+    MCAPI class CompoundTagUpdaterBuilder addUpdater(uint8_t, uint8_t, uint8_t);
     /**
      * @symbol ?sortUpdaters\@CompoundTagUpdaterContext\@\@QEAAXXZ
      */
@@ -29,7 +29,7 @@ public:
     /**
      * @symbol ?update\@CompoundTagUpdaterContext\@\@QEAA?AW4CompoundTagUpdaterResult\@\@AEAVCompoundTag\@\@I\@Z
      */
-    MCAPI enum class CompoundTagUpdaterResult update(class CompoundTag&, unsigned int);
+    MCAPI enum class CompoundTagUpdaterResult update(class CompoundTag&, uint32_t);
     // NOLINTEND
 
     // private:

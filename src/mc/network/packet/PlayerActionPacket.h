@@ -67,7 +67,7 @@ public:
         enum class PlayerActionType,
         class BlockPos const&,
         class BlockPos const&,
-        int,
+        int32_t,
         class ActorRuntimeID
     );
     /**
@@ -77,7 +77,7 @@ public:
     /**
      * @symbol ??0PlayerActionPacket\@\@QEAA\@W4PlayerActionType\@\@AEBVBlockPos\@\@EVActorRuntimeID\@\@\@Z
      */
-    MCAPI PlayerActionPacket(enum class PlayerActionType, class BlockPos const&, unsigned char, class ActorRuntimeID);
+    MCAPI PlayerActionPacket(enum class PlayerActionType, class BlockPos const&, uint8_t, class ActorRuntimeID);
     /**
      * @symbol ??0PlayerActionPacket\@\@QEAA\@XZ
      */
@@ -85,7 +85,7 @@ public:
     /**
      * @symbol ??0PlayerActionPacket\@\@QEAA\@W4PlayerActionType\@\@AEBVBlockPos\@\@HVActorRuntimeID\@\@\@Z
      */
-    MCAPI PlayerActionPacket(enum class PlayerActionType, class BlockPos const&, int, class ActorRuntimeID);
+    MCAPI PlayerActionPacket(enum class PlayerActionType, class BlockPos const&, int32_t, class ActorRuntimeID);
     /**
      * @symbol ??0PlayerActionPacket\@\@QEAA\@W4PlayerActionType\@\@VActorRuntimeID\@\@\@Z
      */

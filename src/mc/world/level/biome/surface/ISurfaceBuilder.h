@@ -32,10 +32,10 @@ public:
             class BlockVolume&,
             class BlockPos const&,
             float,
-            short,
+            int16_t,
             std::unique_ptr<class PerlinSimplexNoise> const&,
             enum class ISurfaceBuilder::WaterLevelStrategy,
-            int,
+            int32_t,
             class HeightmapWrapper const&,
             bool
         );

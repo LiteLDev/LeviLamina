@@ -119,7 +119,7 @@ public:
     /**
      * @symbol ?setSkullType\@SkullBlockActor\@\@QEAAXH\@Z
      */
-    MCAPI void setSkullType(int);
+    MCAPI void setSkullType(int32_t);
     /**
      * @symbol
      * ?getSkullType\@SkullBlockActor\@\@SA?AV?$optional\@W4SkullType\@SkullBlockActor\@\@\@std\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z

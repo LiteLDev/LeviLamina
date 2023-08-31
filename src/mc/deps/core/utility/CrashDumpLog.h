@@ -27,7 +27,7 @@ public:
     /**
      * @symbol ?setAssertMessage\@CrashDumpLog\@\@SAXPEBDH00\@Z
      */
-    MCAPI static void setAssertMessage(char const*, int, char const*, char const*);
+    MCAPI static void setAssertMessage(char const*, int32_t, char const*, char const*);
     /**
      * @symbol
      * ?setDeviceSessionID\@CrashDumpLog\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z

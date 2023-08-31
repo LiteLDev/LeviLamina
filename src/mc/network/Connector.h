@@ -102,11 +102,11 @@ public:
     /**
      * @symbol ?getIPv4Port\@Connector\@\@UEBAGXZ
      */
-    MCVAPI unsigned short getIPv4Port() const;
+    MCVAPI uint16_t getIPv4Port() const;
     /**
      * @symbol ?getIPv6Port\@Connector\@\@UEBAGXZ
      */
-    MCVAPI unsigned short getIPv6Port() const;
+    MCVAPI uint16_t getIPv6Port() const;
     /**
      * @symbol
      * ?getLocalIps\@Connector\@\@UEBA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
@@ -115,7 +115,7 @@ public:
     /**
      * @symbol ?getPort\@Connector\@\@UEBAGXZ
      */
-    MCVAPI unsigned short getPort() const;
+    MCVAPI uint16_t getPort() const;
     /**
      * @symbol
      * ?getRefinedLocalIps\@Connector\@\@UEBA?AV?$vector\@USystemAddress\@RakNet\@\@V?$allocator\@USystemAddress\@RakNet\@\@\@std\@\@\@std\@\@XZ
@@ -141,7 +141,7 @@ public:
      * @symbol
      * ?startNatPunchingClient\@Connector\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@G\@Z
      */
-    MCVAPI void startNatPunchingClient(std::string const&, unsigned short);
+    MCVAPI void startNatPunchingClient(std::string const&, uint16_t);
     /**
      * @symbol __unk_destructor_-1
      */

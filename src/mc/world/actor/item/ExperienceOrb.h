@@ -188,7 +188,7 @@ public:
     /**
      * @symbol ?getIconIndex\@ExperienceOrb\@\@QEBAHXZ
      */
-    MCAPI int getIconIndex() const;
+    MCAPI int32_t getIconIndex() const;
     /**
      * @symbol ?postNormalTick\@ExperienceOrb\@\@QEAAXXZ
      */
@@ -197,12 +197,12 @@ public:
      * @symbol ?spawnOrbs\@ExperienceOrb\@\@SAXAEAVBlockSource\@\@AEBVVec3\@\@HHW4DropType\@1\@PEAVPlayer\@\@\@Z
      */
     MCAPI static void
-    spawnOrbs(class BlockSource&, class Vec3 const&, int, int, enum class ExperienceOrb::DropType, class Player*);
+    spawnOrbs(class BlockSource&, class Vec3 const&, int32_t, int32_t, enum class ExperienceOrb::DropType, class Player*);
     /**
      * @symbol ?spawnOrbs\@ExperienceOrb\@\@SAXAEAVBlockSource\@\@AEBVVec3\@\@HW4DropType\@1\@PEAVPlayer\@\@\@Z
      */
     MCAPI static void
-    spawnOrbs(class BlockSource&, class Vec3 const&, int, enum class ExperienceOrb::DropType, class Player*);
+    spawnOrbs(class BlockSource&, class Vec3 const&, int32_t, enum class ExperienceOrb::DropType, class Player*);
     // NOLINTEND
 
     // private:
@@ -214,10 +214,10 @@ public:
     /**
      * @symbol ?_spawnOrb\@ExperienceOrb\@\@CAXAEAVBlockSource\@\@AEAVLevel\@\@AEBVVec3\@\@H\@Z
      */
-    MCAPI static void _spawnOrb(class BlockSource&, class Level&, class Vec3 const&, int);
+    MCAPI static void _spawnOrb(class BlockSource&, class Level&, class Vec3 const&, int32_t);
     /**
      * @symbol ?_tryMergeIntoExistingOrbs\@ExperienceOrb\@\@CA_NAEAVBlockSource\@\@AEBVVec3\@\@H\@Z
      */
-    MCAPI static bool _tryMergeIntoExistingOrbs(class BlockSource&, class Vec3 const&, int);
+    MCAPI static bool _tryMergeIntoExistingOrbs(class BlockSource&, class Vec3 const&, int32_t);
     // NOLINTEND
 };

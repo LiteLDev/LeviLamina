@@ -35,12 +35,12 @@ public:
      * @vftbl 2
      * @symbol ?getCraftingSize\@DecoratedPotRecipe\@\@UEBAHXZ
      */
-    virtual int getCraftingSize() const;
+    virtual int32_t getCraftingSize() const;
     /**
      * @vftbl 3
      * @symbol ?getIngredient\@DecoratedPotRecipe\@\@UEBAAEBVRecipeIngredient\@\@HH\@Z
      */
-    virtual class RecipeIngredient const& getIngredient(int, int) const;
+    virtual class RecipeIngredient const& getIngredient(int32_t, int32_t) const;
     /**
      * @vftbl 4
      * @symbol
@@ -61,7 +61,7 @@ public:
      * @vftbl 7
      * @symbol ?size\@DecoratedPotRecipe\@\@UEBAHXZ
      */
-    virtual int size() const;
+    virtual int32_t size() const;
     /**
      * @symbol ??0DecoratedPotRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */

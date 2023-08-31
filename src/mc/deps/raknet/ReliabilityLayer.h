@@ -71,13 +71,13 @@ public:
     /**
      * @symbol ?GetTimeoutTime\@ReliabilityLayer\@RakNet\@\@QEAAIXZ
      */
-    MCAPI unsigned int GetTimeoutTime();
+    MCAPI uint32_t GetTimeoutTime();
     /**
      * @symbol
      * ?HandleSocketReceiveFromConnectedPlayer\@ReliabilityLayer\@RakNet\@\@QEAA_NPEBDIAEAUSystemAddress\@2\@AEAV?$List\@PEAVPluginInterface2\@RakNet\@\@\@DataStructures\@\@HPEAVRakNetSocket2\@2\@PEAVRakNetRandom\@2\@_KAEAVBitStream\@2\@\@Z
      */
     MCAPI bool
-    HandleSocketReceiveFromConnectedPlayer(char const*, unsigned int, struct RakNet::SystemAddress&, class DataStructures::List<class RakNet::PluginInterface2*>&, int, class RakNet::RakNetSocket2*, class RakNet::RakNetRandom*, uint64_t, class RakNet::BitStream&);
+    HandleSocketReceiveFromConnectedPlayer(char const*, uint32_t, struct RakNet::SystemAddress&, class DataStructures::List<class RakNet::PluginInterface2*>&, int32_t, class RakNet::RakNetSocket2*, class RakNet::RakNetRandom*, uint64_t, class RakNet::BitStream&);
     /**
      * @symbol ?IsDeadConnection\@ReliabilityLayer\@RakNet\@\@QEBA_NXZ
      */
@@ -89,7 +89,7 @@ public:
     /**
      * @symbol ?Receive\@ReliabilityLayer\@RakNet\@\@QEAAIPEAPEAE\@Z
      */
-    MCAPI unsigned int Receive(unsigned char**);
+    MCAPI uint32_t Receive(uint8_t**);
     /**
      * @symbol ??0ReliabilityLayer\@RakNet\@\@QEAA\@XZ
      */
@@ -97,39 +97,39 @@ public:
     /**
      * @symbol ?Reset\@ReliabilityLayer\@RakNet\@\@QEAAX_NH0\@Z
      */
-    MCAPI void Reset(bool, int, bool);
+    MCAPI void Reset(bool, int32_t, bool);
     /**
      * @symbol ?Send\@ReliabilityLayer\@RakNet\@\@QEAA_NPEADIW4PacketPriority\@\@W4PacketReliability\@\@E_NH_KI\@Z
      */
     MCAPI bool Send(
         char*,
-        unsigned int,
+        uint32_t,
         enum class PacketPriority,
         enum class PacketReliability,
-        unsigned char,
+        uint8_t,
         bool,
-        int,
+        int32_t,
         uint64_t,
-        unsigned int
+        uint32_t
     );
     /**
      * @symbol ?SetSplitMessageProgressInterval\@ReliabilityLayer\@RakNet\@\@QEAAXH\@Z
      */
-    MCAPI void SetSplitMessageProgressInterval(int);
+    MCAPI void SetSplitMessageProgressInterval(int32_t);
     /**
      * @symbol ?SetTimeoutTime\@ReliabilityLayer\@RakNet\@\@QEAAXI\@Z
      */
-    MCAPI void SetTimeoutTime(unsigned int);
+    MCAPI void SetTimeoutTime(uint32_t);
     /**
      * @symbol ?SetUnreliableTimeout\@ReliabilityLayer\@RakNet\@\@QEAAXI\@Z
      */
-    MCAPI void SetUnreliableTimeout(unsigned int);
+    MCAPI void SetUnreliableTimeout(uint32_t);
     /**
      * @symbol
      * ?Update\@ReliabilityLayer\@RakNet\@\@QEAAXPEAVRakNetSocket2\@2\@AEAUSystemAddress\@2\@H_KIAEAV?$List\@PEAVPluginInterface2\@RakNet\@\@\@DataStructures\@\@PEAVRakNetRandom\@2\@AEAVBitStream\@2\@\@Z
      */
     MCAPI void
-    Update(class RakNet::RakNetSocket2*, struct RakNet::SystemAddress&, int, uint64_t, unsigned int, class DataStructures::List<class RakNet::PluginInterface2*>&, class RakNet::RakNetRandom*, class RakNet::BitStream&);
+    Update(class RakNet::RakNetSocket2*, struct RakNet::SystemAddress&, int32_t, uint64_t, uint32_t, class DataStructures::List<class RakNet::PluginInterface2*>&, class RakNet::RakNetRandom*, class RakNet::BitStream&);
     /**
      * @symbol ??1ReliabilityLayer\@RakNet\@\@QEAA\@XZ
      */
@@ -152,7 +152,7 @@ public:
      * ?BuildPacketFromSplitPacketList\@ReliabilityLayer\@RakNet\@\@AEAAPEAUInternalPacket\@2\@G_KPEAVRakNetSocket2\@2\@AEAUSystemAddress\@2\@PEAVRakNetRandom\@2\@AEAVBitStream\@2\@\@Z
      */
     MCAPI struct RakNet::InternalPacket*
-    BuildPacketFromSplitPacketList(unsigned short, uint64_t, class RakNet::RakNetSocket2*, struct RakNet::SystemAddress&, class RakNet::RakNetRandom*, class RakNet::BitStream&);
+    BuildPacketFromSplitPacketList(uint16_t, uint64_t, class RakNet::RakNetSocket2*, struct RakNet::SystemAddress&, class RakNet::RakNetRandom*, class RakNet::BitStream&);
     /**
      * @symbol ?ClearPacketsAndDatagrams\@ReliabilityLayer\@RakNet\@\@AEAAXXZ
      */
@@ -165,7 +165,7 @@ public:
     /**
      * @symbol ?FreeInternalPacketData\@ReliabilityLayer\@RakNet\@\@AEAAXPEAUInternalPacket\@2\@PEBDI\@Z
      */
-    MCAPI void FreeInternalPacketData(struct RakNet::InternalPacket*, char const*, unsigned int);
+    MCAPI void FreeInternalPacketData(struct RakNet::InternalPacket*, char const*, uint32_t);
     /**
      * @symbol ?FreeThreadSafeMemory\@ReliabilityLayer\@RakNet\@\@AEAAXXZ
      */
@@ -179,7 +179,7 @@ public:
     /**
      * @symbol ?GetNextWeight\@ReliabilityLayer\@RakNet\@\@AEAA_KH\@Z
      */
-    MCAPI uint64_t GetNextWeight(int);
+    MCAPI uint64_t GetNextWeight(int32_t);
     /**
      * @symbol ?InitializeVariables\@ReliabilityLayer\@RakNet\@\@AEAAXXZ
      */
@@ -204,7 +204,7 @@ public:
      * @symbol
      * ?RemovePacketFromResendListAndDeleteOlderReliableSequenced\@ReliabilityLayer\@RakNet\@\@AEAAIUuint24_t\@2\@_KAEAV?$List\@PEAVPluginInterface2\@RakNet\@\@\@DataStructures\@\@AEBUSystemAddress\@2\@\@Z
      */
-    MCAPI unsigned int
+    MCAPI uint32_t
     RemovePacketFromResendListAndDeleteOlderReliableSequenced(struct RakNet::uint24_t, uint64_t, class DataStructures::List<class RakNet::PluginInterface2*>&, struct RakNet::SystemAddress const&);
     /**
      * @symbol
@@ -231,7 +231,7 @@ public:
      * @symbol
      * ?WriteToBitStreamFromInternalPacket\@ReliabilityLayer\@RakNet\@\@AEAAIPEAVBitStream\@2\@QEBUInternalPacket\@2\@_K\@Z
      */
-    MCAPI unsigned int
+    MCAPI uint32_t
     WriteToBitStreamFromInternalPacket(class RakNet::BitStream*, struct RakNet::InternalPacket const* const, uint64_t);
     // NOLINTEND
 };

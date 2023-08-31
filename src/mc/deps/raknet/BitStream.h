@@ -16,7 +16,7 @@ public:
     /**
      * @symbol ?AddBitsAndReallocate\@BitStream\@RakNet\@\@QEAAXI\@Z
      */
-    MCAPI void AddBitsAndReallocate(unsigned int);
+    MCAPI void AddBitsAndReallocate(uint32_t);
     /**
      * @symbol ??0BitStream\@RakNet\@\@QEAA\@XZ
      */
@@ -24,31 +24,31 @@ public:
     /**
      * @symbol ??0BitStream\@RakNet\@\@QEAA\@PEAEI_N\@Z
      */
-    MCAPI BitStream(unsigned char*, unsigned int, bool);
+    MCAPI BitStream(uint8_t*, uint32_t, bool);
     /**
      * @symbol ??0BitStream\@RakNet\@\@QEAA\@I\@Z
      */
-    MCAPI BitStream(unsigned int);
+    MCAPI BitStream(uint32_t);
     /**
      * @symbol ?IgnoreBits\@BitStream\@RakNet\@\@QEAAXI\@Z
      */
-    MCAPI void IgnoreBits(unsigned int);
+    MCAPI void IgnoreBits(uint32_t);
     /**
      * @symbol ?IgnoreBytes\@BitStream\@RakNet\@\@QEAAXI\@Z
      */
-    MCAPI void IgnoreBytes(unsigned int);
+    MCAPI void IgnoreBytes(uint32_t);
     /**
      * @symbol ?PadWithZeroToByteLength\@BitStream\@RakNet\@\@QEAAXI\@Z
      */
-    MCAPI void PadWithZeroToByteLength(unsigned int);
+    MCAPI void PadWithZeroToByteLength(uint32_t);
     /**
      * @symbol ?Read\@BitStream\@RakNet\@\@QEAA_NPEADI\@Z
      */
-    MCAPI bool Read(char*, unsigned int);
+    MCAPI bool Read(char*, uint32_t);
     /**
      * @symbol ?ReadAlignedBytes\@BitStream\@RakNet\@\@QEAA_NPEAEI\@Z
      */
-    MCAPI bool ReadAlignedBytes(unsigned char*, unsigned int);
+    MCAPI bool ReadAlignedBytes(uint8_t*, uint32_t);
     /**
      * @symbol ?ReadAlignedVar16\@BitStream\@RakNet\@\@QEAA_NPEAD\@Z
      */
@@ -64,7 +64,7 @@ public:
     /**
      * @symbol ?ReadBits\@BitStream\@RakNet\@\@QEAA_NPEAEI_N\@Z
      */
-    MCAPI bool ReadBits(unsigned char*, unsigned int, bool);
+    MCAPI bool ReadBits(uint8_t*, uint32_t, bool);
     /**
      * @symbol ?Reset\@BitStream\@RakNet\@\@QEAAXXZ
      */
@@ -80,19 +80,19 @@ public:
     /**
      * @symbol ?SetWriteOffset\@BitStream\@RakNet\@\@QEAAXI\@Z
      */
-    MCAPI void SetWriteOffset(unsigned int);
+    MCAPI void SetWriteOffset(uint32_t);
     /**
      * @symbol ?Write\@BitStream\@RakNet\@\@QEAAXPEAV12\@I\@Z
      */
-    MCAPI void Write(class RakNet::BitStream*, unsigned int);
+    MCAPI void Write(class RakNet::BitStream*, uint32_t);
     /**
      * @symbol ?Write\@BitStream\@RakNet\@\@QEAAXPEBDI\@Z
      */
-    MCAPI void Write(char const*, unsigned int);
+    MCAPI void Write(char const*, uint32_t);
     /**
      * @symbol ?Write\@BitStream\@RakNet\@\@QEAAXAEAV12\@I\@Z
      */
-    MCAPI void Write(class RakNet::BitStream&, unsigned int);
+    MCAPI void Write(class RakNet::BitStream&, uint32_t);
     /**
      * @symbol ?Write0\@BitStream\@RakNet\@\@QEAAXXZ
      */
@@ -104,7 +104,7 @@ public:
     /**
      * @symbol ?WriteAlignedBytes\@BitStream\@RakNet\@\@QEAAXPEBEI\@Z
      */
-    MCAPI void WriteAlignedBytes(unsigned char const*, unsigned int);
+    MCAPI void WriteAlignedBytes(uint8_t const*, uint32_t);
     /**
      * @symbol ?WriteAlignedVar16\@BitStream\@RakNet\@\@QEAAXPEBD\@Z
      */
@@ -120,7 +120,7 @@ public:
     /**
      * @symbol ?WriteBits\@BitStream\@RakNet\@\@QEAAXPEBEI_N\@Z
      */
-    MCAPI void WriteBits(unsigned char const*, unsigned int, bool);
+    MCAPI void WriteBits(uint8_t const*, uint32_t, bool);
     /**
      * @symbol ??1BitStream\@RakNet\@\@QEAA\@XZ
      */
@@ -136,7 +136,7 @@ public:
     /**
      * @symbol ?ReverseBytes\@BitStream\@RakNet\@\@SAXPEAE0I\@Z
      */
-    MCAPI static void ReverseBytes(unsigned char*, unsigned char*, unsigned int);
+    MCAPI static void ReverseBytes(uint8_t*, uint8_t*, uint32_t);
     // NOLINTEND
 };
 

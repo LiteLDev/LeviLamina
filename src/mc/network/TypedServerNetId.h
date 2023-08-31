@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template <typename T0, typename T1, int T2>
+template <typename T0, typename T1, int32_t T2>
 class TypedServerNetId {
 
 public:

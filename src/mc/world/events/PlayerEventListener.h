@@ -50,7 +50,7 @@ public:
      * ?onPlayerAction\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@W4PlayerActionType\@\@AEBVBlockPos\@\@H\@Z
      */
     MCVAPI enum class EventResult
-    onPlayerAction(class Player&, enum class PlayerActionType, class BlockPos const&, int);
+    onPlayerAction(class Player&, enum class PlayerActionType, class BlockPos const&, int32_t);
     /**
      * @symbol ?onPlayerAttackedActor\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@AEAVActor\@\@\@Z
      */
@@ -71,13 +71,13 @@ public:
     /**
      * @symbol ?onPlayerCaravanChanged\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEBVActor\@\@H\@Z
      */
-    MCVAPI enum class EventResult onPlayerCaravanChanged(class Actor const&, int);
+    MCVAPI enum class EventResult onPlayerCaravanChanged(class Actor const&, int32_t);
     /**
      * @symbol
      * ?onPlayerCraftedItem\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@AEBVItemInstance\@\@_N22HHH22AEBV?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@\@Z
      */
     MCVAPI enum class EventResult
-    onPlayerCraftedItem(class Player&, class ItemInstance const&, bool, bool, bool, int, int, int, bool, bool, std::vector<short> const&);
+    onPlayerCraftedItem(class Player&, class ItemInstance const&, bool, bool, bool, int32_t, int32_t, int32_t, bool, bool, std::vector<int16_t> const&);
     /**
      * @symbol
      * ?onPlayerCreated\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVLocalPlayer\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1_N\@Z
@@ -86,7 +86,7 @@ public:
     /**
      * @symbol ?onPlayerDestroyedBlock\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@HHH\@Z
      */
-    MCVAPI enum class EventResult onPlayerDestroyedBlock(class Player&, int, int, int);
+    MCVAPI enum class EventResult onPlayerDestroyedBlock(class Player&, int32_t, int32_t, int32_t);
     /**
      * @symbol ?onPlayerDestroyedBlock\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@AEBVBlock\@\@\@Z
      */
@@ -110,7 +110,7 @@ public:
      * @symbol
      * ?onPlayerItemEquipped\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@AEBVItemInstance\@\@H\@Z
      */
-    MCVAPI enum class EventResult onPlayerItemEquipped(class Player&, class ItemInstance const&, int);
+    MCVAPI enum class EventResult onPlayerItemEquipped(class Player&, class ItemInstance const&, int32_t);
     /**
      * @symbol
      * ?onPlayerItemPlaceInteraction\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@AEBVItemInstance\@\@\@Z
@@ -154,13 +154,12 @@ public:
      * @symbol
      * ?onPlayerPortalBuilt\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCVAPI enum class EventResult onPlayerPortalBuilt(class Player&, class AutomaticID<class Dimension, int>);
+    MCVAPI enum class EventResult onPlayerPortalBuilt(class Player&, DimensionType);
     /**
      * @symbol
      * ?onPlayerPortalUsed\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@V?$AutomaticID\@VDimension\@\@H\@\@1\@Z
      */
-    MCVAPI enum class EventResult
-    onPlayerPortalUsed(class Player&, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
+    MCVAPI enum class EventResult onPlayerPortalUsed(class Player&, DimensionType, DimensionType);
     /**
      * @symbol ?onPlayerSaved\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@\@Z
      */
@@ -185,7 +184,7 @@ public:
     /**
      * @symbol ?onPlayerTargetBlockHit\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@H\@Z
      */
-    MCVAPI enum class EventResult onPlayerTargetBlockHit(class Player&, int);
+    MCVAPI enum class EventResult onPlayerTargetBlockHit(class Player&, int32_t);
     /**
      * @symbol ?onPlayerTeleported\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@\@Z
      */
@@ -201,11 +200,11 @@ public:
     /**
      * @symbol ?onPlayerWaxOnWaxOff\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@H\@Z
      */
-    MCVAPI enum class EventResult onPlayerWaxOnWaxOff(class Player&, int);
+    MCVAPI enum class EventResult onPlayerWaxOnWaxOff(class Player&, int32_t);
     /**
      * @symbol ?onStartDestroyBlock\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@AEBVBlockPos\@\@AEAE\@Z
      */
-    MCVAPI enum class EventResult onStartDestroyBlock(class Player&, class BlockPos const&, unsigned char&);
+    MCVAPI enum class EventResult onStartDestroyBlock(class Player&, class BlockPos const&, uint8_t&);
 #endif
     // NOLINTEND
 };

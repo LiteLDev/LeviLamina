@@ -26,7 +26,7 @@ public:
      * ?onSignalReceive\@AllayVibrationConfig\@\@UEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVGameEvent\@\@PEAVActor\@\@MI3\@Z
      */
     virtual void
-    onSignalReceive(class BlockSource&, class BlockPos const&, class GameEvent const&, class Actor*, float, unsigned int, class Actor*);
+    onSignalReceive(class BlockSource&, class BlockPos const&, class GameEvent const&, class Actor*, float, uint32_t, class Actor*);
     /**
      * @vftbl 2
      * @symbol ?isValidVibration\@AllayVibrationConfig\@\@UEAA_NAEBVGameEvent\@\@\@Z
@@ -46,6 +46,6 @@ public:
     /**
      * @symbol ??0AllayVibrationConfig\@\@QEAA\@AEAVActor\@\@G\@Z
      */
-    MCAPI AllayVibrationConfig(class Actor&, unsigned short);
+    MCAPI AllayVibrationConfig(class Actor&, uint16_t);
     // NOLINTEND
 };

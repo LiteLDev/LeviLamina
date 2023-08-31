@@ -15,7 +15,7 @@ public:
     /**
      * @symbol ??0NoiseCellInterpolator\@\@QEAA\@V?$span\@$$CBM$0?0\@gsl\@\@HH\@Z
      */
-    MCAPI NoiseCellInterpolator(class gsl::span<float const>, int, int);
+    MCAPI NoiseCellInterpolator(class gsl::span<float const>, int32_t, int32_t);
     /**
      * @symbol ??0NoiseCellInterpolator\@\@QEAA\@V?$span\@$$CBM$0?0\@gsl\@\@\@Z
      */
@@ -27,14 +27,14 @@ public:
     /**
      * @symbol ?selectCellXZ\@NoiseCellInterpolator\@\@QEAAXHHHH\@Z
      */
-    MCAPI void selectCellXZ(int, int, int, int);
+    MCAPI void selectCellXZ(int32_t, int32_t, int32_t, int32_t);
     /**
      * @symbol ?updateForX\@NoiseCellInterpolator\@\@QEAAXE\@Z
      */
-    MCAPI void updateForX(unsigned char);
+    MCAPI void updateForX(uint8_t);
     /**
      * @symbol ?updateForZ\@NoiseCellInterpolator\@\@QEAAXE\@Z
      */
-    MCAPI void updateForZ(unsigned char);
+    MCAPI void updateForZ(uint8_t);
     // NOLINTEND
 };

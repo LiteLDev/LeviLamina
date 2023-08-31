@@ -15,7 +15,7 @@ public:
     /**
      * @symbol ?aisle\@BlockPatternBuilder\@\@QEAAAEAV1\@HZZ
      */
-    MCAPI class BlockPatternBuilder& aisle(int, ...);
+    MCAPI class BlockPatternBuilder& aisle(int32_t, ...);
     /**
      * @symbol ?build\@BlockPatternBuilder\@\@QEAAAEAV1\@XZ
      */
@@ -41,11 +41,11 @@ public:
     /**
      * @symbol ?match\@BlockPatternBuilder\@\@QEAA?AUBuildMatch\@\@AEBVBlockPos\@\@HH\@Z
      */
-    MCAPI struct BuildMatch match(class BlockPos const&, int, int);
+    MCAPI struct BuildMatch match(class BlockPos const&, int32_t, int32_t);
     /**
      * @symbol ?match\@BlockPatternBuilder\@\@QEAA?AUBuildMatch\@\@AEBVBlockPos\@\@HHEE\@Z
      */
-    MCAPI struct BuildMatch match(class BlockPos const&, int, int, unsigned char, unsigned char);
+    MCAPI struct BuildMatch match(class BlockPos const&, int32_t, int32_t, uint8_t, uint8_t);
     /**
      * @symbol ?replaceBlocks\@BlockPatternBuilder\@\@QEAAXDUBuildMatch\@\@AEBVBlock\@\@\@Z
      */
@@ -62,6 +62,6 @@ public:
     /**
      * @symbol ?_fitsBlockPatternEntry\@BlockPatternBuilder\@\@AEAA_NHHAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    MCAPI bool _fitsBlockPatternEntry(int, int, class BlockPos const&, class Block const&);
+    MCAPI bool _fitsBlockPatternEntry(int32_t, int32_t, class BlockPos const&, class Block const&);
     // NOLINTEND
 };

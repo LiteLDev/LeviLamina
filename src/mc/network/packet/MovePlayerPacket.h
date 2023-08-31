@@ -75,7 +75,7 @@ public:
     /**
      * @symbol ??0MovePlayerPacket\@\@QEAA\@AEBVPlayer\@\@W4PositionMode\@PlayerPositionModeComponent\@\@HH\@Z
      */
-    MCAPI MovePlayerPacket(class Player const&, enum class PlayerPositionModeComponent::PositionMode, int, int);
+    MCAPI MovePlayerPacket(class Player const&, enum class PlayerPositionModeComponent::PositionMode, int32_t, int32_t);
     /**
      * @symbol ??0MovePlayerPacket\@\@QEAA\@XZ
      */

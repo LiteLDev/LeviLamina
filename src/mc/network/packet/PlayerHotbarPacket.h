@@ -62,6 +62,6 @@ public:
     /**
      * @symbol ??0PlayerHotbarPacket\@\@QEAA\@IW4ContainerID\@\@_N\@Z
      */
-    MCAPI PlayerHotbarPacket(unsigned int, enum class ContainerID, bool);
+    MCAPI PlayerHotbarPacket(uint32_t, enum class ContainerID, bool);
     // NOLINTEND
 };

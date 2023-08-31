@@ -62,12 +62,12 @@ public:
      * ?tryPlaySound\@SoundEventRequest\@\@SA?AV?$optional\@USoundEventRequest\@\@\@std\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEBVSynchedActorData\@\@AEBUActorDefinitionIdentifier\@\@W4LevelSoundEvent\@\@AEBVVec3\@\@H\@Z
      */
     MCAPI static std::optional<struct SoundEventRequest> tryPlaySound(
-        class AutomaticID<class Dimension, int>,
+        DimensionType,
         class SynchedActorData const&,
         struct ActorDefinitionIdentifier const&,
         enum class LevelSoundEvent,
         class Vec3 const&,
-        int
+        int32_t
     );
     // NOLINTEND
 };

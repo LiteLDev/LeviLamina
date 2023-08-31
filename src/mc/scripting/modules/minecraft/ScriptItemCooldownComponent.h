@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptItemComponent; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
 // clang-format on
 
@@ -46,7 +47,7 @@ public:
      * @symbol
      * ?getCooldownTicks\@ScriptItemCooldownComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getCooldownTicks();
+    MCAPI class Scripting::Result<int32_t> getCooldownTicks();
     /**
      * @symbol ??4ScriptItemCooldownComponent\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
      */

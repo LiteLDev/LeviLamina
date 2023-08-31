@@ -166,7 +166,7 @@ public:
      * @symbol ?getPlacementBlock\@RotatedPillarBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -196,7 +196,7 @@ public:
      * @vftbl 146
      * @symbol ?getMappedFace\@RotatedPillarBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
-    virtual unsigned char getMappedFace(unsigned char, class Block const&) const;
+    virtual uint8_t getMappedFace(uint8_t, class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -241,7 +241,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@RotatedPillarBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROTATEDPILLARBLOCK
     /**
      * @symbol __unk_destructor_-1
@@ -252,7 +252,7 @@ public:
      * @symbol
      * ??0RotatedPillarBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI RotatedPillarBlock(std::string const&, int, class Material const&);
+    MCAPI RotatedPillarBlock(std::string const&, int32_t, class Material const&);
     // NOLINTEND
 
 private:
@@ -260,10 +260,10 @@ private:
     /**
      * @symbol ?mRotatedX\@RotatedPillarBlock\@\@0QBHB
      */
-    MCAPI static int const mRotatedX[];
+    MCAPI static int32_t const mRotatedX[];
     /**
      * @symbol ?mRotatedZ\@RotatedPillarBlock\@\@0QBHB
      */
-    MCAPI static int const mRotatedZ[];
+    MCAPI static int32_t const mRotatedZ[];
     // NOLINTEND
 };

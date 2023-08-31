@@ -18,7 +18,7 @@ public:
     /**
      * @symbol ?getBlock\@LegacyStructureBlockPalette\@\@QEAAAEBVBlock\@\@H\@Z
      */
-    MCAPI class Block const& getBlock(int);
+    MCAPI class Block const& getBlock(int32_t);
     /**
      * @symbol ??1LegacyStructureBlockPalette\@\@QEAA\@XZ
      */

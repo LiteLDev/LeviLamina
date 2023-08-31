@@ -94,15 +94,15 @@ public:
      * @symbol
      * ?getSuffocateTime\@ScriptBreathableComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getSuffocateTime() const;
+    MCAPI class Scripting::Result<int32_t> getSuffocateTime() const;
     /**
      * @symbol ?getTotalSupply\@ScriptBreathableComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getTotalSupply() const;
+    MCAPI class Scripting::Result<int32_t> getTotalSupply() const;
     /**
      * @symbol ?setAirSupply\@ScriptBreathableComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@X\@Scripting\@\@F\@Z
      */
-    MCAPI class Scripting::Result<void> setAirSupply(short) const;
+    MCAPI class Scripting::Result<void> setAirSupply(int16_t) const;
     /**
      * @symbol
      * ?bind\@ScriptBreathableComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBreathableComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ

@@ -125,7 +125,7 @@ public:
      * @symbol
      * ?applyPlayerOperation\@Scoreboard\@\@QEAAHAEA_NAEAV?$vector\@UScoreboardId\@\@V?$allocator\@UScoreboardId\@\@\@std\@\@\@std\@\@AEBUScoreboardId\@\@AEAVObjective\@\@13W4CommandOperator\@\@\@Z
      */
-    MCAPI int applyPlayerOperation(
+    MCAPI int32_t applyPlayerOperation(
         bool&,
         std::vector<struct ScoreboardId>&,
         struct ScoreboardId const&,
@@ -238,14 +238,19 @@ public:
      * @symbol
      * ?modifyPlayerScore\@Scoreboard\@\@QEAAHAEA_NAEBUScoreboardId\@\@AEAVObjective\@\@HW4PlayerScoreSetFunction\@\@\@Z
      */
-    MCAPI int
-    modifyPlayerScore(bool&, struct ScoreboardId const&, class Objective&, int, enum class PlayerScoreSetFunction);
+    MCAPI int32_t
+    modifyPlayerScore(bool&, struct ScoreboardId const&, class Objective&, int32_t, enum class PlayerScoreSetFunction);
     /**
      * @symbol
      * ?modifyPlayerScore\@Scoreboard\@\@QEAAHAEA_NPEAVScoreboardIdentityRef\@\@AEAVObjective\@\@HW4PlayerScoreSetFunction\@\@\@Z
      */
-    MCAPI int
-    modifyPlayerScore(bool&, class ScoreboardIdentityRef*, class Objective&, int, enum class PlayerScoreSetFunction);
+    MCAPI int32_t modifyPlayerScore(
+        bool&,
+        class ScoreboardIdentityRef*,
+        class Objective&,
+        int32_t,
+        enum class PlayerScoreSetFunction
+    );
     /**
      * @symbol
      * ?registerScoreboardIdentity\@Scoreboard\@\@QEAAAEBVScoreboardIdentityRef\@\@AEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z

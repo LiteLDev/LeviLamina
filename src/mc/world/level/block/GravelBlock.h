@@ -246,7 +246,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@GravelBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 192
      * @symbol ?getDustColor\@GravelBlock\@\@UEBA?AVColor\@mce\@\@AEBVBlock\@\@\@Z
@@ -266,6 +266,6 @@ public:
     /**
      * @symbol ??0GravelBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI GravelBlock(std::string const&, int);
+    MCAPI GravelBlock(std::string const&, int32_t);
     // NOLINTEND
 };

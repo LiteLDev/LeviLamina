@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
 namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
@@ -159,7 +160,7 @@ public:
     /**
      * @symbol ?_getNewPlayerId\@GameplayUserManager\@\@AEBAHXZ
      */
-    MCAPI int _getNewPlayerId() const;
+    MCAPI int32_t _getNewPlayerId() const;
     /**
      * @symbol ?_saveAllPlayers\@GameplayUserManager\@\@AEAAXAEAVLevelStorage\@\@\@Z
      */

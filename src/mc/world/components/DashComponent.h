@@ -15,7 +15,7 @@ public:
     /**
      * @symbol ?getCooldownTime\@DashComponent\@\@QEBA?BIXZ
      */
-    MCAPI unsigned int const getCooldownTime() const;
+    MCAPI uint32_t const getCooldownTime() const;
     /**
      * @symbol ?getHorizontalMomentum\@DashComponent\@\@QEBA?BMXZ
      */

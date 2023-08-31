@@ -220,7 +220,7 @@ public:
     /**
      * @symbol ?getWoodID\@Boat\@\@QEBAEXZ
      */
-    MCAPI unsigned char getWoodID() const;
+    MCAPI uint8_t getWoodID() const;
     /**
      * @symbol ?postNormalTick\@Boat\@\@QEAAXXZ
      */

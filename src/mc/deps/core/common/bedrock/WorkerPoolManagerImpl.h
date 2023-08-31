@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock { class WorkerPoolManager; }
 namespace Bedrock::Threading { class OSThreadPriority; }
 // clang-format on
 
@@ -50,7 +51,7 @@ public:
      * ?createWorkerPool\@WorkerPoolManagerImpl\@Bedrock\@\@UEAA?AV?$shared_ptr\@VPoolHandleInterface\@WorkerPoolManager\@Bedrock\@\@\@std\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@4\@_KAEBVOSThreadPriority\@Threading\@2\@V?$optional\@_K\@4\@_NV?$optional\@H\@4\@\@Z
      */
     MCVAPI std::shared_ptr<class Bedrock::WorkerPoolManager::PoolHandleInterface>
-    createWorkerPool(std::string, uint64_t, class Bedrock::Threading::OSThreadPriority const&, std::optional<uint64_t>, bool, std::optional<int>);
+    createWorkerPool(std::string, uint64_t, class Bedrock::Threading::OSThreadPriority const&, std::optional<uint64_t>, bool, std::optional<int32_t>);
     /**
      * @symbol ?init\@WorkerPoolManagerImpl\@Bedrock\@\@UEAAXXZ
      */

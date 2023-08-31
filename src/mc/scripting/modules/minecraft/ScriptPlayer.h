@@ -14,6 +14,7 @@
 class Actor;
 class Player;
 class Vec3;
+namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { struct ScriptDimensionLocation; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerSoundOptions; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
@@ -75,20 +76,20 @@ public:
     /**
      * @symbol ?addExperience\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@I\@Scripting\@\@H\@Z
      */
-    MCAPI class Scripting::Result<unsigned int> addExperience(int) const;
+    MCAPI class Scripting::Result<uint32_t> addExperience(int32_t) const;
     /**
      * @symbol ?addLevels\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@H\@Z
      */
-    MCAPI class Scripting::Result<int> addLevels(int) const;
+    MCAPI class Scripting::Result<int32_t> addLevels(int32_t) const;
     /**
      * @symbol ?calculateTotalXp\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@I\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<unsigned int> calculateTotalXp() const;
+    MCAPI class Scripting::Result<uint32_t> calculateTotalXp() const;
     /**
      * @symbol
      * ?getItemCooldownLeft\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI class Scripting::Result<int> getItemCooldownLeft(std::string const&) const;
+    MCAPI class Scripting::Result<int32_t> getItemCooldownLeft(std::string const&) const;
     /**
      * @symbol
      * ?getName\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@XZ
@@ -104,11 +105,11 @@ public:
     /**
      * @symbol ?getPlayerLevel\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getPlayerLevel() const;
+    MCAPI class Scripting::Result<int32_t> getPlayerLevel() const;
     /**
      * @symbol ?getSelectedSlot\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getSelectedSlot() const;
+    MCAPI class Scripting::Result<int32_t> getSelectedSlot() const;
     /**
      * @symbol
      * ?getSpawnPoint\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$optional\@UScriptDimensionLocation\@ScriptModuleMinecraft\@\@\@std\@\@\@Scripting\@\@XZ
@@ -118,11 +119,11 @@ public:
     /**
      * @symbol ?getTotalXpNeededForNextLevel\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getTotalXpNeededForNextLevel() const;
+    MCAPI class Scripting::Result<int32_t> getTotalXpNeededForNextLevel() const;
     /**
      * @symbol ?getXpEarnedAtCurrentLevel\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getXpEarnedAtCurrentLevel() const;
+    MCAPI class Scripting::Result<int32_t> getXpEarnedAtCurrentLevel() const;
     /**
      * @symbol ?isFlying\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@XZ
      */
@@ -174,7 +175,7 @@ public:
     /**
      * @symbol ?setSelectedSlot\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@X\@Scripting\@\@H\@Z
      */
-    MCAPI class Scripting::Result<void> setSelectedSlot(int) const;
+    MCAPI class Scripting::Result<void> setSelectedSlot(int32_t) const;
     /**
      * @symbol
      * ?setSpawnPoint\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@X\@Scripting\@\@AEBV?$optional\@UScriptDimensionLocation\@ScriptModuleMinecraft\@\@\@std\@\@\@Z
@@ -185,7 +186,7 @@ public:
      * @symbol
      * ?startItemCooldown\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI class Scripting::Result<void> startItemCooldown(std::string const&, int);
+    MCAPI class Scripting::Result<void> startItemCooldown(std::string const&, int32_t);
     /**
      * @symbol ?tryGetPlayer\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBAPEAVPlayer\@\@XZ
      */

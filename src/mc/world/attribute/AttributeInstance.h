@@ -64,7 +64,7 @@ public:
     /**
      * @symbol ?getDefaultValue\@AttributeInstance\@\@QEBAMH\@Z
      */
-    MCAPI float getDefaultValue(int) const;
+    MCAPI float getDefaultValue(int32_t) const;
     /**
      * @symbol ?getHandle\@AttributeInstance\@\@QEBA?AVAttributeInstanceHandle\@\@XZ
      */
@@ -90,7 +90,7 @@ public:
      * @symbol
      * ?getModifiers\@AttributeInstance\@\@QEBA?AV?$vector\@VAttributeModifier\@\@V?$allocator\@VAttributeModifier\@\@\@std\@\@\@std\@\@H\@Z
      */
-    MCAPI std::vector<class AttributeModifier> getModifiers(int) const;
+    MCAPI std::vector<class AttributeModifier> getModifiers(int32_t) const;
     /**
      * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NAEBVUUID\@mce\@\@\@Z
      */
@@ -174,7 +174,7 @@ public:
     /**
      * @symbol ?serializationSetValue\@AttributeInstance\@\@QEAAXMHM\@Z
      */
-    MCAPI void serializationSetValue(float, int, float);
+    MCAPI void serializationSetValue(float, int32_t, float);
     /**
      * @symbol ?setCurrentValue\@AttributeInstance\@\@QEAAXM\@Z
      */
@@ -182,7 +182,7 @@ public:
     /**
      * @symbol ?setDefaultValue\@AttributeInstance\@\@QEAAXMH\@Z
      */
-    MCAPI void setDefaultValue(float, int);
+    MCAPI void setDefaultValue(float, int32_t);
     /**
      * @symbol ?setDefaultValueOnly\@AttributeInstance\@\@QEAAXM\@Z
      */

@@ -22,7 +22,7 @@ public:
     /**
      * @symbol ?GetHash\@CSHA1\@\@QEBAPEAEXZ
      */
-    MCAPI unsigned char* GetHash() const;
+    MCAPI uint8_t* GetHash() const;
     /**
      * @symbol ?Reset\@CSHA1\@\@QEAAXXZ
      */
@@ -30,7 +30,7 @@ public:
     /**
      * @symbol ?Update\@CSHA1\@\@QEAAXPEBEI\@Z
      */
-    MCAPI void Update(unsigned char const*, unsigned int);
+    MCAPI void Update(uint8_t const*, uint32_t);
     /**
      * @symbol ??1CSHA1\@\@QEAA\@XZ
      */
@@ -42,6 +42,6 @@ public:
     /**
      * @symbol ?Transform\@CSHA1\@\@AEAAXPEAIPEBE\@Z
      */
-    MCAPI void Transform(unsigned int*, unsigned char const*);
+    MCAPI void Transform(uint32_t*, uint8_t const*);
     // NOLINTEND
 };

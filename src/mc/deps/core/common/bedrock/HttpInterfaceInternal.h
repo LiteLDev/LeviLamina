@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::Http { class HttpInterface; }
 struct HC_CALL;
 struct HC_PERFORM_ENV;
 struct XAsyncBlock;

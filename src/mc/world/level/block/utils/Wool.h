@@ -16,7 +16,7 @@ namespace VanillaComplexAliasBlockUtils::Wool {
  * @symbol
  * ?getComplexAliasCallback\@Wool\@VanillaComplexAliasBlockUtils\@\@YA?AV?$function\@$$A6APEBVBlock\@\@H\@Z\@std\@\@XZ
  */
-MCAPI std::function<class Block const*(int)> getComplexAliasCallback();
+MCAPI std::function<class Block const*(int32_t)> getComplexAliasCallback();
 /**
  * @symbol
  * ?getSplitStates\@Wool\@VanillaComplexAliasBlockUtils\@\@YA?AV?$vector\@USplitBlock\@RemovedStateCollection\@BlockLegacy\@\@V?$allocator\@USplitBlock\@RemovedStateCollection\@BlockLegacy\@\@\@std\@\@\@std\@\@XZ

@@ -267,7 +267,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@TripWireBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@TripWireBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -282,7 +282,7 @@ public:
      * @symbol
      * ??0TripWireBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI TripWireBlock(std::string const&, int);
+    MCAPI TripWireBlock(std::string const&, int32_t);
     // NOLINTEND
 
     // private:

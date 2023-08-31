@@ -124,6 +124,6 @@ public:
      * @symbol
      * ??0ChestBoatItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HH\@Z
      */
-    MCAPI ChestBoatItem(std::string const&, int, int);
+    MCAPI ChestBoatItem(std::string const&, int32_t, int32_t);
     // NOLINTEND
 };

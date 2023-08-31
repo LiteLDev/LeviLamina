@@ -58,17 +58,17 @@ public:
      * @vftbl 1
      * @symbol ?reinit\@ItemStackBase\@\@UEAAXAEBVItem\@\@HH\@Z
      */
-    virtual void reinit(class Item const&, int, int);
+    virtual void reinit(class Item const&, int32_t, int32_t);
     /**
      * @vftbl 2
      * @symbol ?reinit\@ItemStackBase\@\@UEAAXAEBVBlockLegacy\@\@H\@Z
      */
-    virtual void reinit(class BlockLegacy const&, int);
+    virtual void reinit(class BlockLegacy const&, int32_t);
     /**
      * @vftbl 3
      * @symbol ?reinit\@ItemStackBase\@\@UEAAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HH\@Z
      */
-    virtual void reinit(std::string_view, int, int);
+    virtual void reinit(std::string_view, int32_t, int32_t);
     /**
      * @vftbl 4
      * @symbol
@@ -96,7 +96,7 @@ public:
     /**
      * @symbol ?add\@ItemStackBase\@\@QEAAXH\@Z
      */
-    MCAPI void add(int);
+    MCAPI void add(int32_t);
     /**
      * @symbol
      * ?addComponents\@ItemStackBase\@\@QEAA_NAEBVValue\@Json\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -154,15 +154,15 @@ public:
     /**
      * @symbol ?getAttackDamage\@ItemStackBase\@\@QEBAHXZ
      */
-    MCAPI int getAttackDamage() const;
+    MCAPI int32_t getAttackDamage() const;
     /**
      * @symbol ?getAuxValue\@ItemStackBase\@\@QEBAFXZ
      */
-    MCAPI short getAuxValue() const;
+    MCAPI int16_t getAuxValue() const;
     /**
      * @symbol ?getBaseRepairCost\@ItemStackBase\@\@QEBAHXZ
      */
-    MCAPI int getBaseRepairCost() const;
+    MCAPI int32_t getBaseRepairCost() const;
     /**
      * @symbol ?getBlock\@ItemStackBase\@\@QEBAPEBVBlock\@\@XZ
      */
@@ -200,7 +200,7 @@ public:
     /**
      * @symbol ?getDamageValue\@ItemStackBase\@\@QEBAFXZ
      */
-    MCAPI short getDamageValue() const;
+    MCAPI int16_t getDamageValue() const;
     /**
      * @symbol
      * ?getDescriptionId\@ItemStackBase\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -218,11 +218,11 @@ public:
     /**
      * @symbol ?getEnchantSlot\@ItemStackBase\@\@QEBAHXZ
      */
-    MCAPI int getEnchantSlot() const;
+    MCAPI int32_t getEnchantSlot() const;
     /**
      * @symbol ?getEnchantValue\@ItemStackBase\@\@QEBAHXZ
      */
-    MCAPI int getEnchantValue() const;
+    MCAPI int32_t getEnchantValue() const;
     /**
      * @symbol ?getFullNameHash\@ItemStackBase\@\@QEBAAEBVHashedString\@\@XZ
      */
@@ -235,11 +235,11 @@ public:
     /**
      * @symbol ?getId\@ItemStackBase\@\@QEBAFXZ
      */
-    MCAPI short getId() const;
+    MCAPI int16_t getId() const;
     /**
      * @symbol ?getIdAux\@ItemStackBase\@\@QEBAHXZ
      */
-    MCAPI int getIdAux() const;
+    MCAPI int32_t getIdAux() const;
     /**
      * @symbol ?getItem\@ItemStackBase\@\@QEBAPEBVItem\@\@XZ
      */
@@ -251,11 +251,11 @@ public:
     /**
      * @symbol ?getMaxDamage\@ItemStackBase\@\@QEBAFXZ
      */
-    MCAPI short getMaxDamage() const;
+    MCAPI int16_t getMaxDamage() const;
     /**
      * @symbol ?getMaxStackSize\@ItemStackBase\@\@QEBAEXZ
      */
-    MCAPI unsigned char getMaxStackSize() const;
+    MCAPI uint8_t getMaxStackSize() const;
     /**
      * @symbol
      * ?getName\@ItemStackBase\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -334,7 +334,7 @@ public:
     /**
      * @symbol ?hurtAndBreak\@ItemStackBase\@\@QEAA_NHPEAVActor\@\@\@Z
      */
-    MCAPI bool hurtAndBreak(int, class Actor*);
+    MCAPI bool hurtAndBreak(int32_t, class Actor*);
     /**
      * @symbol ?initParams\@ItemStackBase\@\@QEAAXAEAVRenderParams\@\@PEAVActor\@\@\@Z
      */
@@ -443,7 +443,7 @@ public:
     /**
      * @symbol ?isValidAuxValue\@ItemStackBase\@\@QEBA_NH\@Z
      */
-    MCAPI bool isValidAuxValue(int) const;
+    MCAPI bool isValidAuxValue(int32_t) const;
     /**
      * @symbol ?isWearableItem\@ItemStackBase\@\@QEBA_NXZ
      */
@@ -487,7 +487,7 @@ public:
     /**
      * @symbol ?remove\@ItemStackBase\@\@QEAAXH\@Z
      */
-    MCAPI void remove(int);
+    MCAPI void remove(int32_t);
     /**
      * @symbol ?removeDamageValue\@ItemStackBase\@\@QEAAXXZ
      */
@@ -503,7 +503,7 @@ public:
     /**
      * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NHH\@Z
      */
-    MCAPI bool sameItem(int, int) const;
+    MCAPI bool sameItem(int32_t, int32_t) const;
     /**
      * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NAEBV1\@AEBUComparisonOptions\@1\@\@Z
      */
@@ -529,11 +529,11 @@ public:
     /**
      * @symbol ?set\@ItemStackBase\@\@QEAAXH\@Z
      */
-    MCAPI void set(int);
+    MCAPI void set(int32_t);
     /**
      * @symbol ?setAuxValue\@ItemStackBase\@\@QEAAXF\@Z
      */
-    MCAPI void setAuxValue(short);
+    MCAPI void setAuxValue(int16_t);
     /**
      * @symbol ?setBlock\@ItemStackBase\@\@QEAAXPEBVBlock\@\@\@Z
      */
@@ -569,7 +569,7 @@ public:
     /**
      * @symbol ?setDamageValue\@ItemStackBase\@\@QEAAXF\@Z
      */
-    MCAPI void setDamageValue(short);
+    MCAPI void setDamageValue(int16_t);
     /**
      * @symbol ?setJustBrewed\@ItemStackBase\@\@QEAAX_N\@Z
      */
@@ -581,7 +581,7 @@ public:
     /**
      * @symbol ?setRepairCost\@ItemStackBase\@\@QEAAXH\@Z
      */
-    MCAPI void setRepairCost(int);
+    MCAPI void setRepairCost(int32_t);
     /**
      * @symbol ?setShowPickUp\@ItemStackBase\@\@QEAAX_N\@Z
      */
@@ -589,7 +589,7 @@ public:
     /**
      * @symbol ?setStackSize\@ItemStackBase\@\@QEAAXE\@Z
      */
-    MCAPI void setStackSize(unsigned char);
+    MCAPI void setStackSize(uint8_t);
     /**
      * @symbol
      * ?setUserData\@ItemStackBase\@\@QEAAXV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@\@Z
@@ -668,12 +668,12 @@ public:
      * ??0ItemStackBase\@\@IEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HHPEBVCompoundTag\@\@\@Z
      */
     MCAPI
-    ItemStackBase(std::string_view name, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
+    ItemStackBase(std::string_view name, int32_t count = 1, int32_t auxValue = 0, class CompoundTag const* userData = nullptr);
     /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVItem\@\@HHPEBVCompoundTag\@\@\@Z
      */
     MCAPI
-    ItemStackBase(class Item const& item, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
+    ItemStackBase(class Item const& item, int32_t count = 1, int32_t auxValue = 0, class CompoundTag const* userData = nullptr);
     /**
      * @symbol ??0ItemStackBase\@\@IEAA\@XZ
      */
@@ -681,11 +681,11 @@ public:
     /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlock\@\@HPEBVCompoundTag\@\@\@Z
      */
-    MCAPI ItemStackBase(class Block const& block, int count = 1, class CompoundTag const* userData = nullptr);
+    MCAPI ItemStackBase(class Block const& block, int32_t count = 1, class CompoundTag const* userData = nullptr);
     /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlockLegacy\@\@H\@Z
      */
-    MCAPI ItemStackBase(class BlockLegacy const& blockLegacy, int count = 1);
+    MCAPI ItemStackBase(class BlockLegacy const& blockLegacy, int32_t count = 1);
     /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBV0\@\@Z
      */
@@ -702,19 +702,19 @@ public:
     /**
      * @symbol ?_setItem\@ItemStackBase\@\@IEAA_NH_N\@Z
      */
-    MCAPI bool _setItem(int, bool);
+    MCAPI bool _setItem(int32_t, bool);
     /**
      * @symbol ?init\@ItemStackBase\@\@IEAAXHHH_N\@Z
      */
-    MCAPI void init(int, int, int, bool);
+    MCAPI void init(int32_t, int32_t, int32_t, bool);
     /**
      * @symbol ?init\@ItemStackBase\@\@IEAAXAEBVBlockLegacy\@\@H\@Z
      */
-    MCAPI void init(class BlockLegacy const&, int);
+    MCAPI void init(class BlockLegacy const&, int32_t);
     /**
      * @symbol ?init\@ItemStackBase\@\@IEAAXAEBVItem\@\@HHPEBVCompoundTag\@\@_N\@Z
      */
-    MCAPI void init(class Item const&, int, int, class CompoundTag const*, bool);
+    MCAPI void init(class Item const&, int32_t, int32_t, class CompoundTag const*, bool);
     /**
      * @symbol ??4ItemStackBase\@\@IEAAAEAV0\@AEBV0\@\@Z
      */
@@ -788,6 +788,6 @@ private:
     /**
      * @symbol ?MAX_STACK_SIZE\@ItemStackBase\@\@0HB
      */
-    MCAPI static int const MAX_STACK_SIZE;
+    MCAPI static int32_t const MAX_STACK_SIZE;
     // NOLINTEND
 };

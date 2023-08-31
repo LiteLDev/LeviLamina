@@ -47,7 +47,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@UndyedShulkerBoxBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -157,7 +157,7 @@ public:
      * @vftbl 73
      * @symbol ?dispense\@UndyedShulkerBoxBlock\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
+    virtual bool dispense(class BlockSource&, class Container&, int32_t, class Vec3 const&, uint8_t) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -207,7 +207,7 @@ public:
      * ?getPlacementBlock\@UndyedShulkerBoxBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -237,7 +237,7 @@ public:
      * @vftbl 135
      * @symbol ?getColor\@UndyedShulkerBoxBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getColor(class Block const&) const;
+    virtual int32_t getColor(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -282,12 +282,12 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@UndyedShulkerBoxBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @symbol
      * ??0UndyedShulkerBoxBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI UndyedShulkerBoxBlock(std::string const&, int);
+    MCAPI UndyedShulkerBoxBlock(std::string const&, int32_t);
     // NOLINTEND
 
     // protected:
@@ -303,7 +303,7 @@ public:
         class Block const&,
         std::string const&,
         std::unique_ptr<class CompoundTag>,
-        int
+        int32_t
     ) const;
     // NOLINTEND
 
@@ -312,7 +312,7 @@ public:
     /**
      * @symbol ?_isValidAttach\@UndyedShulkerBoxBlock\@\@AEBA_NAEAVBlockSource\@\@VBlockPos\@\@E\@Z
      */
-    MCAPI bool _isValidAttach(class BlockSource&, class BlockPos, unsigned char) const;
+    MCAPI bool _isValidAttach(class BlockSource&, class BlockPos, uint8_t) const;
     // NOLINTEND
 
 protected:

@@ -192,17 +192,17 @@ public:
      * @vftbl 254
      * @symbol ?setDir\@HangingActor\@\@UEAAXH\@Z
      */
-    virtual void setDir(int);
+    virtual void setDir(int32_t);
     /**
      * @vftbl 255
      * @symbol ?getWidth\@Painting\@\@UEBAHXZ
      */
-    virtual int getWidth() const = 0;
+    virtual int32_t getWidth() const = 0;
     /**
      * @vftbl 256
      * @symbol ?getHeight\@Painting\@\@UEBAHXZ
      */
-    virtual int getHeight() const = 0;
+    virtual int32_t getHeight() const = 0;
     /**
      * @vftbl 257
      * @symbol ?dropItem\@Painting\@\@UEAAXXZ
@@ -212,7 +212,7 @@ public:
      * @vftbl 258
      * @symbol ?placeHangingEntity\@HangingActor\@\@UEAA_NAEAVBlockSource\@\@H\@Z
      */
-    virtual bool placeHangingEntity(class BlockSource&, int);
+    virtual bool placeHangingEntity(class BlockSource&, int32_t);
     /**
      * @vftbl 259
      * @symbol ?wouldSurvive\@HangingActor\@\@UEAA_NAEAVBlockSource\@\@\@Z
@@ -232,7 +232,7 @@ public:
     /**
      * @symbol ?getDirection\@HangingActor\@\@QEBAHXZ
      */
-    MCAPI int getDirection() const;
+    MCAPI int32_t getDirection() const;
     // NOLINTEND
 
     // protected:

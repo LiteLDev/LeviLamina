@@ -109,15 +109,15 @@ public:
     /**
      * @symbol ?incrementFlightTime\@ProjectileComponent\@\@QEAAHXZ
      */
-    MCAPI int incrementFlightTime();
+    MCAPI int32_t incrementFlightTime();
     /**
      * @symbol ?incrementLife\@ProjectileComponent\@\@QEAAHXZ
      */
-    MCAPI int incrementLife();
+    MCAPI int32_t incrementLife();
     /**
      * @symbol ?incrementOnGroundTime\@ProjectileComponent\@\@QEAAHXZ
      */
-    MCAPI int incrementOnGroundTime();
+    MCAPI int32_t incrementOnGroundTime();
     /**
      * @symbol ?initFromDefinition\@ProjectileComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
@@ -150,7 +150,7 @@ public:
     /**
      * @symbol ?setEnchantImpaler\@ProjectileComponent\@\@QEAAXAEBH\@Z
      */
-    MCAPI void setEnchantImpaler(int const&);
+    MCAPI void setEnchantImpaler(int32_t const&);
     /**
      * @symbol ?setKnockbackForce\@ProjectileComponent\@\@QEAAXM\@Z
      */
@@ -166,7 +166,7 @@ public:
     /**
      * @symbol ?setPotionEffect\@ProjectileComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setPotionEffect(int);
+    MCAPI void setPotionEffect(int32_t);
     /**
      * @symbol ?setSplashRange\@ProjectileComponent\@\@QEAAXM\@Z
      */
@@ -186,7 +186,7 @@ public:
     /**
      * @symbol ?DELAY_ON_HIT\@ProjectileComponent\@\@2IB
      */
-    MCAPI static unsigned int const DELAY_ON_HIT;
+    MCAPI static uint32_t const DELAY_ON_HIT;
     // NOLINTEND
 
     // private:

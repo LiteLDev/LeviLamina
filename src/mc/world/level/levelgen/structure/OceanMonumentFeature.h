@@ -54,7 +54,7 @@ public:
      * ?isFeatureChunk\@OceanMonumentFeature\@\@UEAA_NAEBVBiomeSource\@\@AEAVRandom\@\@AEBVChunkPos\@\@IAEBVIPreliminarySurfaceProvider\@\@AEBVDimension\@\@\@Z
      */
     virtual bool
-    isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&, class Dimension const&);
+    isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, uint32_t, class IPreliminarySurfaceProvider const&, class Dimension const&);
     /**
      * @vftbl 6
      * @symbol
@@ -65,6 +65,6 @@ public:
     /**
      * @symbol ??0OceanMonumentFeature\@\@QEAA\@I\@Z
      */
-    MCAPI OceanMonumentFeature(unsigned int);
+    MCAPI OceanMonumentFeature(uint32_t);
     // NOLINTEND
 };

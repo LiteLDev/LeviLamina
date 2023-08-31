@@ -24,12 +24,12 @@ public:
      * @vftbl 1
      * @symbol ?getStrength\@PulseCapacitor\@\@UEBAHXZ
      */
-    virtual int getStrength() const;
+    virtual int32_t getStrength() const;
     /**
      * @vftbl 3
      * @symbol ?setStrength\@PulseCapacitor\@\@UEAAXH\@Z
      */
-    virtual void setStrength(int);
+    virtual void setStrength(int32_t);
     /**
      * @vftbl 6
      * @symbol ?canConsumePowerAnyDirection\@PulseCapacitor\@\@UEBA_NXZ
@@ -69,7 +69,7 @@ public:
      * @vftbl 25
      * @symbol ?getPoweroutDirection\@PulseCapacitor\@\@UEBAEXZ
      */
-    virtual unsigned char getPoweroutDirection() const;
+    virtual uint8_t getPoweroutDirection() const;
     /**
      * @symbol ??0PulseCapacitor\@\@QEAA\@XZ
      */

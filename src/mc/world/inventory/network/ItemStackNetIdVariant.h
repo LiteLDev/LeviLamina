@@ -58,11 +58,11 @@ public:
      * ??4ItemStackNetIdVariant\@\@QEAAAEAU0\@AEBV?$TypedClientNetId\@UItemStackLegacyRequestIdTag\@\@H$0A\@\@\@\@Z
      */
     MCAPI struct ItemStackNetIdVariant&
-    operator=(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const&);
+    operator=(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int32_t, 0> const&);
     /**
      * @symbol ??4ItemStackNetIdVariant\@\@QEAAAEAU0\@AEBV?$TypedServerNetId\@UItemStackNetIdTag\@\@H$0A\@\@\@\@Z
      */
-    MCAPI struct ItemStackNetIdVariant& operator=(class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const&);
+    MCAPI struct ItemStackNetIdVariant& operator=(class TypedServerNetId<struct ItemStackNetIdTag, int32_t, 0> const&);
     /**
      * @symbol ??8ItemStackNetIdVariant\@\@QEBA_NAEBU0\@\@Z
      */
@@ -80,7 +80,7 @@ public:
      * @symbol
      * ?tryGetServerNetId\@ItemStackNetIdVariant\@\@QEBAPEBV?$TypedServerNetId\@UItemStackNetIdTag\@\@H$0A\@\@\@XZ
      */
-    MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const* tryGetServerNetId() const;
+    MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int32_t, 0> const* tryGetServerNetId() const;
     /**
      * @symbol ??1ItemStackNetIdVariant\@\@QEAA\@XZ
      */

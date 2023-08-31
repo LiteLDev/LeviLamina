@@ -12,6 +12,6 @@ public:
     /**
      * @symbol ??0GameRuleId\@\@QEAA\@H\@Z
      */
-    MCAPI GameRuleId(int);
+    MCAPI GameRuleId(int32_t);
     // NOLINTEND
 };

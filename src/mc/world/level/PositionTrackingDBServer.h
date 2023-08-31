@@ -37,7 +37,7 @@ public:
      * @symbol
      * ?createTracker\@PositionTrackingDBServer\@PositionTrackingDB\@\@QEAA?AVPositionTrackingId\@\@AEBVBlockPos\@\@AEBV?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI class PositionTrackingId createTracker(class BlockPos const&, class AutomaticID<class Dimension, int> const&);
+    MCAPI class PositionTrackingId createTracker(class BlockPos const&, DimensionType const&);
     /**
      * @symbol
      * ?destroyTracker\@PositionTrackingDBServer\@PositionTrackingDB\@\@QEAA?AW4ResultCode\@2\@AEBVPositionTrackingId\@\@_N\@Z

@@ -54,7 +54,7 @@ public:
     /**
      * @symbol ??0Block\@\@QEAA\@GV?$not_null\@PEAVBlockLegacy\@\@\@gsl\@\@VCompoundTag\@\@AEBI\@Z
      */
-    MCAPI Block(unsigned short, class gsl::not_null<class BlockLegacy*>, class CompoundTag, unsigned int const&);
+    MCAPI Block(uint16_t, class gsl::not_null<class BlockLegacy*>, class CompoundTag, uint32_t const&);
     /**
      * @symbol
      * ?addAABBs\@Block\@\@QEBAXAEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@\@Z
@@ -138,7 +138,7 @@ public:
     /**
      * @symbol ?canConnect\@Block\@\@QEBA_NAEBV1\@E0\@Z
      */
-    MCAPI bool canConnect(class Block const&, unsigned char, class Block const&) const;
+    MCAPI bool canConnect(class Block const&, uint8_t, class Block const&) const;
     /**
      * @symbol ?canDamperVibrations\@Block\@\@QEBA_NXZ
      */
@@ -162,15 +162,15 @@ public:
     /**
      * @symbol ?canProvideFullSupport\@Block\@\@QEBA_NE\@Z
      */
-    MCAPI bool canProvideFullSupport(unsigned char) const;
+    MCAPI bool canProvideFullSupport(uint8_t) const;
     /**
      * @symbol ?canProvideMultifaceSupport\@Block\@\@QEBA_NE\@Z
      */
-    MCAPI bool canProvideMultifaceSupport(unsigned char) const;
+    MCAPI bool canProvideMultifaceSupport(uint8_t) const;
     /**
      * @symbol ?canProvideSupport\@Block\@\@QEBA_NEW4BlockSupportType\@\@\@Z
      */
-    MCAPI bool canProvideSupport(unsigned char, enum class BlockSupportType) const;
+    MCAPI bool canProvideSupport(uint8_t, enum class BlockSupportType) const;
     /**
      * @symbol ?canReactToNeighborsDuringInstatick\@Block\@\@QEBA_NXZ
      */
@@ -205,7 +205,7 @@ public:
     /**
      * @symbol ?computeRawSerializationIdHashForNetwork\@Block\@\@QEBAIXZ
      */
-    MCAPI unsigned int computeRawSerializationIdHashForNetwork() const;
+    MCAPI uint32_t computeRawSerializationIdHashForNetwork() const;
     /**
      * @symbol ?copyState\@Block\@\@QEBAAEBV1\@AEBV1\@AEBVBlockState\@\@\@Z
      */
@@ -249,7 +249,7 @@ public:
     /**
      * @symbol ?getBurnOdds\@Block\@\@QEBAHXZ
      */
-    MCAPI int getBurnOdds() const;
+    MCAPI int32_t getBurnOdds() const;
     /**
      * @symbol
      * ?getCollisionShape\@Block\@\@QEBA_NAEAVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
@@ -260,15 +260,15 @@ public:
     /**
      * @symbol ?getColor\@Block\@\@QEBAHXZ
      */
-    MCAPI int getColor() const;
+    MCAPI int32_t getColor() const;
     /**
      * @symbol ?getColor\@Block\@\@QEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI int getColor(class BlockSource&, class BlockPos const&) const;
+    MCAPI int32_t getColor(class BlockSource&, class BlockPos const&) const;
     /**
      * @symbol ?getComparatorSignal\@Block\@\@QEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    MCAPI int getComparatorSignal(class BlockSource&, class BlockPos const&, unsigned char) const;
+    MCAPI int32_t getComparatorSignal(class BlockSource&, class BlockPos const&, uint8_t) const;
     /**
      * @symbol
      * ?getConnectedDirections\@Block\@\@QEBA?AUHorizontalDirectionBits\@BlockLegacy\@\@AEBVBlockPos\@\@AEAVBlockSource\@\@\@Z
@@ -296,7 +296,7 @@ public:
     /**
      * @symbol ?getDirectSignal\@Block\@\@QEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    MCAPI int getDirectSignal(class BlockSource&, class BlockPos const&, int) const;
+    MCAPI int32_t getDirectSignal(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @symbol ?getEntityForModification\@Block\@\@QEBAAEAVEntityContext\@\@XZ
      */
@@ -308,7 +308,7 @@ public:
     /**
      * @symbol ?getFlameOdds\@Block\@\@QEBAHXZ
      */
-    MCAPI int getFlameOdds() const;
+    MCAPI int32_t getFlameOdds() const;
     /**
      * @symbol ?getFriction\@Block\@\@QEBAMXZ
      */
@@ -349,11 +349,11 @@ public:
      * @symbol ?getPlacementBlock\@Block\@\@QEBAAEBV1\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     MCAPI class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @symbol ?getRuntimeId\@Block\@\@QEBAAEBIXZ
      */
-    MCAPI unsigned int const& getRuntimeId() const;
+    MCAPI uint32_t const& getRuntimeId() const;
     /**
      * @symbol ?getSecondPart\@Block\@\@QEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@AEAV3\@\@Z
      */
@@ -373,7 +373,7 @@ public:
     /**
      * @symbol ?getVariant\@Block\@\@QEBAHXZ
      */
-    MCAPI int getVariant() const;
+    MCAPI int32_t getVariant() const;
     /**
      * @symbol ?getVisualShape\@Block\@\@QEBAAEBVAABB\@\@AEAV2\@\@Z
      */
@@ -573,7 +573,7 @@ public:
     /**
      * @symbol ?mayPlace\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    MCAPI bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
+    MCAPI bool mayPlace(class BlockSource&, class BlockPos const&, uint8_t) const;
     /**
      * @symbol ?mayPlace\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -613,7 +613,7 @@ public:
     /**
      * @symbol ?onPlayerPlacing\@Block\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@E\@Z
      */
-    MCAPI void onPlayerPlacing(class BlockSource&, class BlockPos const&, class Actor&, unsigned char) const;
+    MCAPI void onPlayerPlacing(class BlockSource&, class BlockPos const&, class Actor&, uint8_t) const;
     /**
      * @symbol ?onProjectileHit\@Block\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVActor\@\@\@Z
      */
@@ -698,7 +698,7 @@ public:
     /**
      * @symbol ?telemetryVariant\@Block\@\@QEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI int telemetryVariant(class BlockSource&, class BlockPos const&) const;
+    MCAPI int32_t telemetryVariant(class BlockSource&, class BlockPos const&) const;
     /**
      * @symbol
      * ?toDebugString\@Block\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -711,7 +711,7 @@ public:
     /**
      * @symbol ?triggerEvent\@Block\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@HH\@Z
      */
-    MCAPI void triggerEvent(class BlockSource&, class BlockPos const&, int, int) const;
+    MCAPI void triggerEvent(class BlockSource&, class BlockPos const&, int32_t, int32_t) const;
     /**
      * @symbol ?tryGetCopperBehavior\@Block\@\@QEBAPEBVCopperBehavior\@\@XZ
      */
@@ -750,7 +750,7 @@ public:
     /**
      * @symbol ?use\@Block\@\@QEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@EV?$optional\@VVec3\@\@\@std\@\@\@Z
      */
-    MCAPI bool use(class Player&, class BlockPos const&, unsigned char, std::optional<class Vec3>) const;
+    MCAPI bool use(class Player&, class BlockPos const&, uint8_t, std::optional<class Vec3>) const;
     /**
      * @symbol ?waterSpreadCausesSpawn\@Block\@\@QEBA_NXZ
      */
@@ -771,11 +771,11 @@ public:
     /**
      * @symbol ?buildSerializationId\@Block\@\@IEAAXI\@Z
      */
-    MCAPI void buildSerializationId(unsigned int);
+    MCAPI void buildSerializationId(uint32_t);
     /**
      * @symbol ?setRuntimeId\@Block\@\@IEBAXAEBI\@Z
      */
-    MCAPI void setRuntimeId(unsigned int const&) const;
+    MCAPI void setRuntimeId(uint32_t const&) const;
     // NOLINTEND
 
     // private:

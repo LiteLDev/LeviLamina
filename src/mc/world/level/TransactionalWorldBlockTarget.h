@@ -67,7 +67,7 @@ public:
      * @vftbl 9
      * @symbol ?setBlock\@TransactionalWorldBlockTarget\@\@UEAA_NAEBVBlockPos\@\@AEBVBlock\@\@H\@Z
      */
-    virtual bool setBlock(class BlockPos const&, class Block const&, int);
+    virtual bool setBlock(class BlockPos const&, class Block const&, int32_t);
     /**
      * @vftbl 10
      * @symbol ?setBlockSimple\@TransactionalWorldBlockTarget\@\@UEAA_NAEBVBlockPos\@\@AEBVBlock\@\@\@Z
@@ -103,12 +103,12 @@ public:
      * @vftbl 16
      * @symbol ?getMaxHeight\@TransactionalWorldBlockTarget\@\@UEBAFXZ
      */
-    virtual short getMaxHeight() const;
+    virtual int16_t getMaxHeight() const;
     /**
      * @vftbl 17
      * @symbol ?getMinHeight\@TransactionalWorldBlockTarget\@\@UEBAFXZ
      */
-    virtual short getMinHeight() const;
+    virtual int16_t getMinHeight() const;
     /**
      * @vftbl 18
      * @symbol __unk_vfn_18
@@ -118,7 +118,7 @@ public:
      * @vftbl 19
      * @symbol ?getHeightmap\@TransactionalWorldBlockTarget\@\@UEAAFHH\@Z
      */
-    virtual short getHeightmap(int, int);
+    virtual int16_t getHeightmap(int32_t, int32_t);
     /**
      * @vftbl 20
      * @symbol ?isLegacyLevel\@TransactionalWorldBlockTarget\@\@UEAA_NXZ
@@ -138,7 +138,7 @@ public:
      * @vftbl 23
      * @symbol ?getLocalWaterLevel\@TransactionalWorldBlockTarget\@\@UEBAFAEBVBlockPos\@\@\@Z
      */
-    virtual short getLocalWaterLevel(class BlockPos const&) const;
+    virtual int16_t getLocalWaterLevel(class BlockPos const&) const;
     /**
      * @vftbl 24
      * @symbol ?getLevelData\@TransactionalWorldBlockTarget\@\@UEBAAEBVLevelData\@\@XZ

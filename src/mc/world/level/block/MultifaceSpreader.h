@@ -24,13 +24,12 @@ public:
      * @vftbl 1
      * @symbol ?_canSpreadFrom\@MultifaceSpreader\@\@MEBA_NAEBVBlock\@\@E\@Z
      */
-    virtual bool _canSpreadFrom(class Block const&, unsigned char) const;
+    virtual bool _canSpreadFrom(class Block const&, uint8_t) const;
     /**
      * @vftbl 2
      * @symbol ?_canSpreadInto\@MultifaceSpreader\@\@MEBA_NAEAVIBlockWorldGenAPI\@\@AEBVBlock\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool
-    _canSpreadInto(class IBlockWorldGenAPI&, class Block const&, class BlockPos const&, unsigned char) const;
+    virtual bool _canSpreadInto(class IBlockWorldGenAPI&, class Block const&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 3
      * @symbol ?_isOtherBlockValidAsSource\@MultifaceSpreader\@\@MEBA_NAEBVBlock\@\@\@Z
@@ -45,19 +44,19 @@ public:
      * @symbol
      * ?getSpreadFromFaceTowardDirection\@MultifaceSpreader\@\@QEBA?AV?$optional\@U?$pair\@$$CBVBlockPos\@\@$$CBE\@std\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlock\@\@1AEBVBlockPos\@\@EE\@Z
      */
-    MCAPI std::optional<std::pair<class BlockPos const, unsigned char const>> getSpreadFromFaceTowardDirection(
+    MCAPI std::optional<std::pair<class BlockPos const, uint8_t const>> getSpreadFromFaceTowardDirection(
         class IBlockWorldGenAPI&,
         class Block const&,
         class Block const&,
         class BlockPos const&,
-        unsigned char,
-        unsigned char
+        uint8_t,
+        uint8_t
     ) const;
     /**
      * @symbol
      * ?spreadFromAllFacesTowardAllDirections\@MultifaceSpreader\@\@QEBAHAEAVIBlockWorldGenAPI\@\@AEBVBlock\@\@1AEBVBlockPos\@\@\@Z
      */
-    MCAPI int
+    MCAPI int32_t
     spreadFromAllFacesTowardAllDirections(class IBlockWorldGenAPI&, class Block const&, class Block const&, class BlockPos const&)
         const;
     /**
@@ -69,8 +68,8 @@ public:
         class Block const&,
         class Block const&,
         class BlockPos const&,
-        unsigned char,
-        unsigned char
+        uint8_t,
+        uint8_t
     ) const;
     /**
      * @symbol
@@ -81,8 +80,8 @@ public:
         class Block const&,
         class Block const&,
         class BlockPos const&,
-        unsigned char,
-        unsigned char
+        uint8_t,
+        uint8_t
     ) const;
     /**
      * @symbol
@@ -93,7 +92,7 @@ public:
         class Block const&,
         class Block const&,
         class BlockPos const&,
-        unsigned char
+        uint8_t
     ) const;
     /**
      * @symbol
@@ -119,7 +118,6 @@ public:
     /**
      * @symbol ?_canSpreadToFace\@MultifaceSpreader\@\@IEBA_NAEAVIBlockWorldGenAPI\@\@AEBVBlock\@\@AEBVBlockPos\@\@E\@Z
      */
-    MCAPI bool
-    _canSpreadToFace(class IBlockWorldGenAPI&, class Block const&, class BlockPos const&, unsigned char) const;
+    MCAPI bool _canSpreadToFace(class IBlockWorldGenAPI&, class Block const&, class BlockPos const&, uint8_t) const;
     // NOLINTEND
 };

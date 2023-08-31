@@ -22,7 +22,7 @@ public:
     /**
      * @symbol ?getChunkRadius\@TickWorldComponent\@\@QEBAIXZ
      */
-    MCAPI unsigned int getChunkRadius() const;
+    MCAPI uint32_t getChunkRadius() const;
     /**
      * @symbol ?getMaxDistToPlayers\@TickWorldComponent\@\@QEBAMXZ
      */

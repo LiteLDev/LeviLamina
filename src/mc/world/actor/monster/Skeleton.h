@@ -127,7 +127,7 @@ public:
      * @vftbl 192
      * @symbol ?canBeAffected\@Skeleton\@\@UEBA_NI\@Z
      */
-    virtual bool canBeAffected(unsigned int) const;
+    virtual bool canBeAffected(uint32_t) const;
     /**
      * @vftbl 202
      * @symbol __unk_vfn_202

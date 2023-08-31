@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
+class IResourceDropsStrategy;
 class ItemStack;
 class Randomize;
 struct ResourceDropsContext;

@@ -202,7 +202,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@SnifferEggBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -257,7 +257,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@SnifferEggBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNIFFEREGGBLOCK
     /**
      * @symbol ?canBeSilkTouched\@SnifferEggBlock\@\@UEBA_NXZ
@@ -272,7 +272,7 @@ public:
      * @symbol
      * ??0SnifferEggBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI SnifferEggBlock(std::string const&, int);
+    MCAPI SnifferEggBlock(std::string const&, int32_t);
     // NOLINTEND
 
     // private:

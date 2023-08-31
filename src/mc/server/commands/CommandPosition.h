@@ -29,7 +29,7 @@ public:
     /**
      * @symbol ?getBlockPos\@CommandPosition\@\@QEBA?AVBlockPos\@\@HAEBVCommandOrigin\@\@AEBVVec3\@\@\@Z
      */
-    MCAPI class BlockPos getBlockPos(int, class CommandOrigin const&, class Vec3 const&) const;
+    MCAPI class BlockPos getBlockPos(int32_t, class CommandOrigin const&, class Vec3 const&) const;
     /**
      * @symbol ?getPosition\@CommandPosition\@\@QEBA?AVVec3\@\@AEBV2\@0\@Z
      */
@@ -37,7 +37,7 @@ public:
     /**
      * @symbol ?getPosition\@CommandPosition\@\@QEBA?AVVec3\@\@HAEBVCommandOrigin\@\@AEBV2\@\@Z
      */
-    MCAPI class Vec3 getPosition(int, class CommandOrigin const&, class Vec3 const&) const;
+    MCAPI class Vec3 getPosition(int32_t, class CommandOrigin const&, class Vec3 const&) const;
     /**
      * @symbol ?serialize\@CommandPosition\@\@QEBA?AVCompoundTag\@\@XZ
      */

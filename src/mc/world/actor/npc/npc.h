@@ -139,7 +139,7 @@ public:
      * @vftbl 192
      * @symbol ?canBeAffected\@Npc\@\@UEBA_NI\@Z
      */
-    virtual bool canBeAffected(unsigned int) const;
+    virtual bool canBeAffected(uint32_t) const;
     /**
      * @vftbl 202
      * @symbol __unk_vfn_202
@@ -194,7 +194,7 @@ public:
      * @vftbl 254
      * @symbol ?knockback\@Npc\@\@UEAAXPEAVActor\@\@HMMMMM\@Z
      */
-    virtual void knockback(class Actor*, int, float, float, float, float, float);
+    virtual void knockback(class Actor*, int32_t, float, float, float, float, float);
     /**
      * @vftbl 276
      * @symbol __unk_vfn_276

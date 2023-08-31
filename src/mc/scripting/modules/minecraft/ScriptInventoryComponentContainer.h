@@ -40,7 +40,7 @@ public:
      * @symbol
      * ?getEmptySlotsCount\@ScriptInventoryComponentContainer\@ScriptModuleMinecraft\@\@UEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    virtual class Scripting::Result<int> getEmptySlotsCount() const;
+    virtual class Scripting::Result<int32_t> getEmptySlotsCount() const;
     /**
      * @vftbl 13
      * @symbol ?_tryGetContainer\@ScriptInventoryComponentContainer\@ScriptModuleMinecraft\@\@MEBAPEAVContainer\@\@XZ
@@ -50,7 +50,7 @@ public:
      * @vftbl 14
      * @symbol ?_getItemContext\@ScriptInventoryComponentContainer\@ScriptModuleMinecraft\@\@MEBA?AVItemContext\@\@H\@Z
      */
-    virtual class ItemContext _getItemContext(int) const;
+    virtual class ItemContext _getItemContext(int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTINVENTORYCOMPONENTCONTAINER
     /**
      * @symbol __unk_destructor_-1

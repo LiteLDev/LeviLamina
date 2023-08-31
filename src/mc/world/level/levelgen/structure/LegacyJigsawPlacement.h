@@ -21,7 +21,7 @@ public:
      * ??0LegacyJigsawPlacement\@\@QEAA\@HV?$function\@$$A6A?AV?$unique_ptr\@VPoolElementStructurePiece\@\@U?$default_delete\@VPoolElementStructurePiece\@\@\@std\@\@\@std\@\@AEBVStructurePoolElement\@\@AEBVBlockPos\@\@AEBW4Rotation\@\@HAEAUJigsawJunction\@\@AEBVBoundingBox\@\@1\@Z\@std\@\@\@Z
      */
     MCAPI
-    LegacyJigsawPlacement(int, std::function<std::unique_ptr<class PoolElementStructurePiece>(class StructurePoolElement const&, class BlockPos const&, enum class Rotation const&, int, struct JigsawJunction&, class BoundingBox const&, class BlockPos const&)>);
+    LegacyJigsawPlacement(int32_t, std::function<std::unique_ptr<class PoolElementStructurePiece>(class StructurePoolElement const&, class BlockPos const&, enum class Rotation const&, int32_t, struct JigsawJunction&, class BoundingBox const&, class BlockPos const&)>);
     /**
      * @symbol
      * ?addPieces\@LegacyJigsawPlacement\@\@QEAAXAEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEBVStructurePoolElement\@\@AEAVRandom\@\@AEBVBlockPos\@\@AEBW4Rotation\@\@AEBVJigsawStructureRegistry\@\@AEAVDimension\@\@\@Z

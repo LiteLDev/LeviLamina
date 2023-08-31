@@ -58,7 +58,7 @@ public:
      * @vftbl 38
      * @symbol ?teleportTo\@LeashFenceKnotActor\@\@UEAAXAEBVVec3\@\@_NHH1\@Z
      */
-    virtual void teleportTo(class Vec3 const&, bool, int, int, bool);
+    virtual void teleportTo(class Vec3 const&, bool, int32_t, int32_t, bool);
     /**
      * @vftbl 55
      * @symbol __unk_vfn_55
@@ -188,17 +188,17 @@ public:
      * @vftbl 254
      * @symbol ?setDir\@LeashFenceKnotActor\@\@UEAAXH\@Z
      */
-    virtual void setDir(int);
+    virtual void setDir(int32_t);
     /**
      * @vftbl 255
      * @symbol ?getWidth\@LeashFenceKnotActor\@\@UEBAHXZ
      */
-    virtual int getWidth() const;
+    virtual int32_t getWidth() const;
     /**
      * @vftbl 256
      * @symbol ?getHeight\@LeashFenceKnotActor\@\@UEBAHXZ
      */
-    virtual int getHeight() const;
+    virtual int32_t getHeight() const;
     /**
      * @vftbl 257
      * @symbol ?dropItem\@LeashFenceKnotActor\@\@UEAAXXZ
@@ -218,7 +218,7 @@ public:
     /**
      * @symbol ?numberofAnimalsAttached\@LeashFenceKnotActor\@\@QEAAHXZ
      */
-    MCAPI int numberofAnimalsAttached();
+    MCAPI int32_t numberofAnimalsAttached();
     /**
      * @symbol ?removeAnimals\@LeashFenceKnotActor\@\@QEAAXXZ
      */

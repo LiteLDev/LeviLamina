@@ -60,7 +60,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@HangingSignBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -185,7 +185,7 @@ public:
      * @vftbl 93
      * @symbol ?mayPlace\@HangingSignBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
+    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 107
      * @symbol __unk_vfn_107
@@ -275,12 +275,12 @@ public:
      * @vftbl 196
      * @symbol ?_getShape\@HangingSignBlock\@\@MEBAXHAEAVAABB\@\@\@Z
      */
-    virtual void _getShape(int, class AABB&) const;
+    virtual void _getShape(int32_t, class AABB&) const;
     /**
      * @symbol
      * ??0HangingSignBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_NW4SignType\@SignBlock\@\@\@Z
      */
-    MCAPI HangingSignBlock(std::string const&, int, bool, enum class SignBlock::SignType);
+    MCAPI HangingSignBlock(std::string const&, int32_t, bool, enum class SignBlock::SignType);
     /**
      * @symbol ?isDoubleChainHangingSign\@HangingSignBlock\@\@SA_NAEBVBlock\@\@\@Z
      */
@@ -300,7 +300,7 @@ public:
     /**
      * @symbol ?_canAttachTo\@HangingSignBlock\@\@IEBA_NAEAVBlockSource\@\@VBlockPos\@\@EE\@Z
      */
-    MCAPI bool _canAttachTo(class BlockSource&, class BlockPos, unsigned char, unsigned char) const;
+    MCAPI bool _canAttachTo(class BlockSource&, class BlockPos, uint8_t, uint8_t) const;
     // NOLINTEND
 
     // private:

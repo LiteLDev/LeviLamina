@@ -77,12 +77,12 @@ public:
     MCAPI UpdateTradePacket(
         enum class ContainerID,
         enum class ContainerType,
-        int,
+        int32_t,
         std::string const&,
         class CompoundTag&&,
         struct ActorUniqueID const&,
         struct ActorUniqueID const&,
-        int,
+        int32_t,
         bool,
         bool
     );

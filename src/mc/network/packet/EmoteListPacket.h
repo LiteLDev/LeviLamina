@@ -65,6 +65,6 @@ public:
     /**
      * @symbol ?MAX_EMOTE_PIECE_IDS\@EmoteListPacket\@\@2HB
      */
-    MCAPI static int const MAX_EMOTE_PIECE_IDS;
+    MCAPI static int32_t const MAX_EMOTE_PIECE_IDS;
     // NOLINTEND
 };

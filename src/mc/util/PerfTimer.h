@@ -40,7 +40,7 @@ protected:
     /**
      * @symbol ?MultiplyDeBruijnBitPosition\@PerfTimer\@\@1QBHB
      */
-    MCAPI static int const MultiplyDeBruijnBitPosition[];
+    MCAPI static int32_t const MultiplyDeBruijnBitPosition[];
     /**
      * @symbol
      * ?mPath\@PerfTimer\@\@1V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@A

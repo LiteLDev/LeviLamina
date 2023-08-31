@@ -21,28 +21,28 @@ public:
     /**
      * @symbol ?containerContentChanged\@SimpleSparseContainer\@\@EEAAXH\@Z
      */
-    MCVAPI void containerContentChanged(int);
+    MCVAPI void containerContentChanged(int32_t);
     /**
      * @symbol ?getContainerSize\@SimpleSparseContainer\@\@UEBAHXZ
      */
-    MCVAPI int getContainerSize() const;
+    MCVAPI int32_t getContainerSize() const;
     /**
      * @symbol ?getItem\@SimpleSparseContainer\@\@UEBAAEBVItemStack\@\@H\@Z
      */
-    MCVAPI class ItemStack const& getItem(int) const;
+    MCVAPI class ItemStack const& getItem(int32_t) const;
     /**
      * @symbol ?getMaxStackSize\@SimpleSparseContainer\@\@UEBAHXZ
      */
-    MCVAPI int getMaxStackSize() const;
+    MCVAPI int32_t getMaxStackSize() const;
     /**
      * @symbol
      * ?serverInitItemStackIds\@SimpleSparseContainer\@\@EEAAXHHV?$function\@$$A6AXHAEBVItemStack\@\@\@Z\@std\@\@\@Z
      */
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
+    MCVAPI void serverInitItemStackIds(int32_t, int32_t, std::function<void(int32_t, class ItemStack const&)>);
     /**
      * @symbol ?setItem\@SimpleSparseContainer\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
-    MCVAPI void setItem(int, class ItemStack const&);
+    MCVAPI void setItem(int32_t, class ItemStack const&);
     /**
      * @symbol ?startOpen\@SimpleSparseContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
@@ -61,7 +61,7 @@ public:
     /**
      * @symbol ?clearItem\@SimpleSparseContainer\@\@QEAAXH\@Z
      */
-    MCAPI void clearItem(int);
+    MCAPI void clearItem(int32_t);
     /**
      * @symbol ?pushAllToBackingContainer\@SimpleSparseContainer\@\@QEAAXXZ
      */
@@ -73,6 +73,6 @@ public:
     /**
      * @symbol ?_setBackingContainerSlot\@SimpleSparseContainer\@\@AEAAXHAEBVItemStack\@\@\@Z
      */
-    MCAPI void _setBackingContainerSlot(int, class ItemStack const&);
+    MCAPI void _setBackingContainerSlot(int32_t, class ItemStack const&);
     // NOLINTEND
 };

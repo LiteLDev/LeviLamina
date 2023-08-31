@@ -13,8 +13,10 @@
 // auto generated forward declare list
 // clang-format off
 namespace Automation { class AutomationClient; }
+namespace Bedrock { class EnableNonOwnerReferences; }
 namespace CodeBuilder { class GameContext; }
 namespace CodeBuilder { class IClient; }
+namespace CodeBuilder { class IManager; }
 namespace CodeBuilder { class IMessenger; }
 namespace CodeBuilder { class IRequestHandler; }
 namespace CodeBuilder { struct AgentMessage; }

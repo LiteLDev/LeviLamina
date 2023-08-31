@@ -281,7 +281,7 @@ public:
      * @vftbl 186
      * @symbol ?getResourceCount\@EndPortalBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 188
      * @symbol ?entityInside\@EndPortalBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
@@ -291,7 +291,7 @@ public:
      * @vftbl 192
      * @symbol ?getEntityResourceItem\@EndPortalBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlockActor\@\@H\@Z
      */
-    virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int) const;
+    virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDPORTALBLOCK
     /**
      * @symbol ?waterSpreadCausesSpawn\@EndPortalBlock\@\@UEBA_NXZ
@@ -302,6 +302,6 @@ public:
      * @symbol
      * ??0EndPortalBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI EndPortalBlock(std::string const&, int);
+    MCAPI EndPortalBlock(std::string const&, int32_t);
     // NOLINTEND
 };

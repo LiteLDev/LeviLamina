@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::PubSub::Detail { class PublisherDisconnector; }
 namespace Bedrock::PubSub::Detail { class SubscriptionBodyBase; }
 // clang-format on
 
@@ -43,7 +44,7 @@ public:
      * ?_insertConnection\@PublisherBase\@Detail\@PubSub\@Bedrock\@\@IEAAXAEBV?$shared_ptr\@VSubscriptionBodyBase\@Detail\@PubSub\@Bedrock\@\@\@std\@\@W4ConnectPosition\@34\@V?$optional\@H\@6\@\@Z
      */
     MCAPI void
-    _insertConnection(std::shared_ptr<class Bedrock::PubSub::Detail::SubscriptionBodyBase> const&, enum class Bedrock::PubSub::ConnectPosition, std::optional<int>);
+    _insertConnection(std::shared_ptr<class Bedrock::PubSub::Detail::SubscriptionBodyBase> const&, enum class Bedrock::PubSub::ConnectPosition, std::optional<int32_t>);
     // NOLINTEND
 };
 

@@ -45,7 +45,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@AmethystClusterBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -170,7 +170,7 @@ public:
      * @vftbl 93
      * @symbol ?mayPlace\@AmethystClusterBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
+    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 94
      * @symbol ?mayPlace\@AmethystClusterBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
@@ -200,7 +200,7 @@ public:
      * ?getPlacementBlock\@AmethystClusterBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -290,7 +290,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@AmethystClusterBlock\@\@EEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@AmethystClusterBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -300,7 +300,7 @@ public:
      * @symbol
      * ??0AmethystClusterBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HHH\@Z
      */
-    MCAPI AmethystClusterBlock(std::string const&, int, int, int);
+    MCAPI AmethystClusterBlock(std::string const&, int32_t, int32_t, int32_t);
     // NOLINTEND
 
     // private:
@@ -308,6 +308,6 @@ public:
     /**
      * @symbol ?_shapeFromDirection\@AmethystClusterBlock\@\@AEBA?AVAABB\@\@H\@Z
      */
-    MCAPI class AABB _shapeFromDirection(int) const;
+    MCAPI class AABB _shapeFromDirection(int32_t) const;
     // NOLINTEND
 };

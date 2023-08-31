@@ -43,7 +43,7 @@ public:
     /**
      * @symbol ?calculateDemandPrices\@MerchantRecipe\@\@QEAAXHHH_N\@Z
      */
-    MCAPI void calculateDemandPrices(int, int, int, bool);
+    MCAPI void calculateDemandPrices(int32_t, int32_t, int32_t, bool);
     /**
      * @symbol
      * ?createTag\@MerchantRecipe\@\@QEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@_N\@Z
@@ -52,11 +52,11 @@ public:
     /**
      * @symbol ?getBaseCountA\@MerchantRecipe\@\@QEBAHXZ
      */
-    MCAPI int getBaseCountA() const;
+    MCAPI int32_t getBaseCountA() const;
     /**
      * @symbol ?getBaseCountB\@MerchantRecipe\@\@QEBAHXZ
      */
-    MCAPI int getBaseCountB() const;
+    MCAPI int32_t getBaseCountB() const;
     /**
      * @symbol ?getBuyAItem\@MerchantRecipe\@\@QEBAAEBVItemInstance\@\@XZ
      */
@@ -68,11 +68,11 @@ public:
     /**
      * @symbol ?getDemand\@MerchantRecipe\@\@QEBAHXZ
      */
-    MCAPI int getDemand() const;
+    MCAPI int32_t getDemand() const;
     /**
      * @symbol ?getMaxUses\@MerchantRecipe\@\@QEBAHXZ
      */
-    MCAPI int getMaxUses() const;
+    MCAPI int32_t getMaxUses() const;
     /**
      * @symbol ?getSellItem\@MerchantRecipe\@\@QEBAAEBVItemInstance\@\@XZ
      */
@@ -80,15 +80,15 @@ public:
     /**
      * @symbol ?getTier\@MerchantRecipe\@\@QEBAHXZ
      */
-    MCAPI int getTier() const;
+    MCAPI int32_t getTier() const;
     /**
      * @symbol ?getTraderExp\@MerchantRecipe\@\@QEBAIXZ
      */
-    MCAPI unsigned int getTraderExp() const;
+    MCAPI uint32_t getTraderExp() const;
     /**
      * @symbol ?getUses\@MerchantRecipe\@\@QEBAHXZ
      */
-    MCAPI int getUses() const;
+    MCAPI int32_t getUses() const;
     /**
      * @symbol ?hasSecondaryBuyItem\@MerchantRecipe\@\@QEBA_NXZ
      */
@@ -96,7 +96,7 @@ public:
     /**
      * @symbol ?increaseMaxUses\@MerchantRecipe\@\@QEAAXH\@Z
      */
-    MCAPI void increaseMaxUses(int);
+    MCAPI void increaseMaxUses(int32_t);
     /**
      * @symbol ?increaseUses\@MerchantRecipe\@\@QEAAXXZ
      */
@@ -116,7 +116,7 @@ public:
     /**
      * @symbol ?legacyCalculateDemandPrices\@MerchantRecipe\@\@QEAAXHH\@Z
      */
-    MCAPI void legacyCalculateDemandPrices(int, int);
+    MCAPI void legacyCalculateDemandPrices(int32_t, int32_t);
     /**
      * @symbol ?load\@MerchantRecipe\@\@QEAAXPEBVCompoundTag\@\@\@Z
      */
@@ -128,11 +128,11 @@ public:
     /**
      * @symbol ?setDemand\@MerchantRecipe\@\@QEAAXH\@Z
      */
-    MCAPI void setDemand(int);
+    MCAPI void setDemand(int32_t);
     /**
      * @symbol ?setMaxUses\@MerchantRecipe\@\@QEAAXH\@Z
      */
-    MCAPI void setMaxUses(int);
+    MCAPI void setMaxUses(int32_t);
     /**
      * @symbol ?setPriceMultiplierA\@MerchantRecipe\@\@QEAAXM\@Z
      */
@@ -148,15 +148,15 @@ public:
     /**
      * @symbol ?setTier\@MerchantRecipe\@\@QEAAXH\@Z
      */
-    MCAPI void setTier(int);
+    MCAPI void setTier(int32_t);
     /**
      * @symbol ?setTraderExp\@MerchantRecipe\@\@QEAAXI\@Z
      */
-    MCAPI void setTraderExp(unsigned int);
+    MCAPI void setTraderExp(uint32_t);
     /**
      * @symbol ?setUses\@MerchantRecipe\@\@QEAAXH\@Z
      */
-    MCAPI void setUses(int);
+    MCAPI void setUses(int32_t);
     /**
      * @symbol ?shouldRewardExp\@MerchantRecipe\@\@QEBA_NXZ
      */

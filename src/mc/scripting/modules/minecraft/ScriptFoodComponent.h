@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptItemComponent; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
@@ -52,7 +53,7 @@ public:
     /**
      * @symbol ?getNutrition\@ScriptFoodComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getNutrition();
+    MCAPI class Scripting::Result<int32_t> getNutrition();
     /**
      * @symbol ?getSaturationModifier\@ScriptFoodComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@M\@Scripting\@\@XZ
      */

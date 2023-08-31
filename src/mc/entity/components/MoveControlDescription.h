@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MoveControlDescription {
+// auto generated inclusion list
+#include "mc/world/actor/ActorComponentDescription.h"
+
+struct MoveControlDescription : public ::ActorComponentDescription {
 
 public:
     // prevent constructor by default

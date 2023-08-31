@@ -22,38 +22,11 @@ class ResourcePackRepository : public ::IResourcePackRepository {
 public:
     // ResourcePackRepository inner types declare
     // clang-format off
-    struct KnownPackContainer;
     struct KnownPackInfo;
+    struct KnownPackContainer;
     // clang-format on
 
     // ResourcePackRepository inner types define
-    struct KnownPackContainer {
-
-    public:
-        // prevent constructor by default
-        KnownPackContainer& operator=(KnownPackContainer const&) = delete;
-        KnownPackContainer(KnownPackContainer const&)            = delete;
-        KnownPackContainer()                                     = delete;
-
-    public:
-        // NOLINTBEGIN
-        /**
-         * @symbol
-         * ?getPack\@KnownPackContainer\@ResourcePackRepository\@\@QEAAPEAUKnownPackInfo\@2\@AEBVResourceLocation\@\@\@Z
-         */
-        MCAPI struct ResourcePackRepository::KnownPackInfo* getPack(class ResourceLocation const&);
-        /**
-         * @symbol
-         * ?getPack\@KnownPackContainer\@ResourcePackRepository\@\@QEBAPEBUKnownPackInfo\@2\@AEBVResourceLocation\@\@\@Z
-         */
-        MCAPI struct ResourcePackRepository::KnownPackInfo const* getPack(class ResourceLocation const&) const;
-        /**
-         * @symbol ??1KnownPackContainer\@ResourcePackRepository\@\@QEAA\@XZ
-         */
-        MCAPI ~KnownPackContainer();
-        // NOLINTEND
-    };
-
     struct KnownPackInfo {
 
     public:
@@ -79,6 +52,33 @@ public:
          * @symbol ??1KnownPackInfo\@ResourcePackRepository\@\@QEAA\@XZ
          */
         MCAPI ~KnownPackInfo();
+        // NOLINTEND
+    };
+
+    struct KnownPackContainer {
+
+    public:
+        // prevent constructor by default
+        KnownPackContainer& operator=(KnownPackContainer const&) = delete;
+        KnownPackContainer(KnownPackContainer const&)            = delete;
+        KnownPackContainer()                                     = delete;
+
+    public:
+        // NOLINTBEGIN
+        /**
+         * @symbol
+         * ?getPack\@KnownPackContainer\@ResourcePackRepository\@\@QEAAPEAUKnownPackInfo\@2\@AEBVResourceLocation\@\@\@Z
+         */
+        MCAPI struct ResourcePackRepository::KnownPackInfo* getPack(class ResourceLocation const&);
+        /**
+         * @symbol
+         * ?getPack\@KnownPackContainer\@ResourcePackRepository\@\@QEBAPEBUKnownPackInfo\@2\@AEBVResourceLocation\@\@\@Z
+         */
+        MCAPI struct ResourcePackRepository::KnownPackInfo const* getPack(class ResourceLocation const&) const;
+        /**
+         * @symbol ??1KnownPackContainer\@ResourcePackRepository\@\@QEAA\@XZ
+         */
+        MCAPI ~KnownPackContainer();
         // NOLINTEND
     };
 

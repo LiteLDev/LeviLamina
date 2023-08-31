@@ -44,14 +44,14 @@ public:
     /**
      * @symbol ?moveBoundingBoxes\@StructureStart\@\@IEAAXH\@Z
      */
-    MCAPI void moveBoundingBoxes(int);
+    MCAPI void moveBoundingBoxes(int32_t);
     /**
      * @symbol ?moveInsideHeights\@StructureStart\@\@IEAAXAEAVRandom\@\@FF\@Z
      */
-    MCAPI void moveInsideHeights(class Random&, short, short);
+    MCAPI void moveInsideHeights(class Random&, int16_t, int16_t);
     /**
      * @symbol ?moveToBelowSeaLevel\@StructureStart\@\@IEAAXFFAEAVRandom\@\@H\@Z
      */
-    MCAPI void moveToBelowSeaLevel(short, short, class Random&, int);
+    MCAPI void moveToBelowSeaLevel(int16_t, int16_t, class Random&, int32_t);
     // NOLINTEND
 };

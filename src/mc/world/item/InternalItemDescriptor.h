@@ -11,7 +11,7 @@
 namespace Json { class Value; }
 // clang-format on
 
-struct InternalItemDescriptor {
+struct InternalItemDescriptor : public ::ItemDescriptor::BaseDescriptor {
 
 public:
     // prevent constructor by default

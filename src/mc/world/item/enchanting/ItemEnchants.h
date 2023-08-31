@@ -19,11 +19,11 @@ public:
     /**
      * @symbol ??0ItemEnchants\@\@QEAA\@H\@Z
      */
-    MCAPI ItemEnchants(int);
+    MCAPI ItemEnchants(int32_t);
     /**
      * @symbol ??0ItemEnchants\@\@QEAA\@HAEBVListTag\@\@\@Z
      */
-    MCAPI ItemEnchants(int, class ListTag const&);
+    MCAPI ItemEnchants(int32_t, class ListTag const&);
     /**
      * @symbol ?addEnchant\@ItemEnchants\@\@QEAA_NVEnchantmentInstance\@\@_N\@Z
      */
@@ -50,19 +50,19 @@ public:
      * @symbol
      * ?getEnchants\@ItemEnchants\@\@QEBAAEBV?$vector\@VEnchantmentInstance\@\@V?$allocator\@VEnchantmentInstance\@\@\@std\@\@\@std\@\@H\@Z
      */
-    MCAPI std::vector<class EnchantmentInstance> const& getEnchants(int) const;
+    MCAPI std::vector<class EnchantmentInstance> const& getEnchants(int32_t) const;
     /**
      * @symbol ?getSlot\@ItemEnchants\@\@QEBAHXZ
      */
-    MCAPI int getSlot() const;
+    MCAPI int32_t getSlot() const;
     /**
      * @symbol ?getTotalValue\@ItemEnchants\@\@QEBAH_N\@Z
      */
-    MCAPI int getTotalValue(bool) const;
+    MCAPI int32_t getTotalValue(bool) const;
     /**
      * @symbol ?hasEnchant\@ItemEnchants\@\@QEBAHW4Type\@Enchant\@\@\@Z
      */
-    MCAPI int hasEnchant(enum class Enchant::Type) const;
+    MCAPI int32_t hasEnchant(enum class Enchant::Type) const;
     /**
      * @symbol ?isEmpty\@ItemEnchants\@\@QEBA_NXZ
      */

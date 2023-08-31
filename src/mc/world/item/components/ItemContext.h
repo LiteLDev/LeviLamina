@@ -19,7 +19,7 @@ public:
     /**
      * @symbol ??0ItemContext\@\@QEAA\@AEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    MCAPI ItemContext(class BlockSource&, class BlockPos const&, int);
+    MCAPI ItemContext(class BlockSource&, class BlockPos const&, int32_t);
     /**
      * @symbol ??0ItemContext\@\@QEAA\@AEBVWeakEntityRef\@\@W4EquipmentSlot\@\@\@Z
      */
@@ -27,11 +27,11 @@ public:
     /**
      * @symbol ??0ItemContext\@\@QEAA\@AEBVWeakEntityRef\@\@H\@Z
      */
-    MCAPI ItemContext(class WeakEntityRef const&, int);
+    MCAPI ItemContext(class WeakEntityRef const&, int32_t);
     /**
      * @symbol ?getAmount\@ItemContext\@\@QEBA?AV?$optional\@H\@std\@\@XZ
      */
-    MCAPI std::optional<int> getAmount() const;
+    MCAPI std::optional<int32_t> getAmount() const;
     /**
      * @symbol
      * ?getId\@ItemContext\@\@QEBA?AV?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@XZ
@@ -57,7 +57,7 @@ public:
     /**
      * @symbol ?getMaxAmount\@ItemContext\@\@QEBA?AV?$optional\@H\@std\@\@XZ
      */
-    MCAPI std::optional<int> getMaxAmount() const;
+    MCAPI std::optional<int32_t> getMaxAmount() const;
     /**
      * @symbol
      * ?getNameTag\@ItemContext\@\@QEBA?AV?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@XZ
@@ -87,7 +87,7 @@ public:
     /**
      * @symbol ?setAmount\@ItemContext\@\@QEAA_NH\@Z
      */
-    MCAPI bool setAmount(int);
+    MCAPI bool setAmount(int32_t);
     /**
      * @symbol
      * ?setCanDestroy\@ItemContext\@\@QEAA?AV?$optional\@_N\@std\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z

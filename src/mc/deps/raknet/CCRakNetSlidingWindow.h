@@ -33,7 +33,7 @@ public:
     /**
      * @symbol ?GetMTU\@CCRakNetSlidingWindow\@RakNet\@\@QEBAIXZ
      */
-    MCAPI unsigned int GetMTU() const;
+    MCAPI uint32_t GetMTU() const;
     /**
      * @symbol ?GetNextDatagramSequenceNumber\@CCRakNetSlidingWindow\@RakNet\@\@QEAA?AUuint24_t\@2\@XZ
      */
@@ -41,19 +41,19 @@ public:
     /**
      * @symbol ?GetRTOForRetransmission\@CCRakNetSlidingWindow\@RakNet\@\@QEBA_KE\@Z
      */
-    MCAPI uint64_t GetRTOForRetransmission(unsigned char) const;
+    MCAPI uint64_t GetRTOForRetransmission(uint8_t) const;
     /**
      * @symbol ?GetRetransmissionBandwidth\@CCRakNetSlidingWindow\@RakNet\@\@QEAAH_K0I_N\@Z
      */
-    MCAPI int GetRetransmissionBandwidth(uint64_t, uint64_t, unsigned int, bool);
+    MCAPI int32_t GetRetransmissionBandwidth(uint64_t, uint64_t, uint32_t, bool);
     /**
      * @symbol ?GetTransmissionBandwidth\@CCRakNetSlidingWindow\@RakNet\@\@QEAAH_K0I_N\@Z
      */
-    MCAPI int GetTransmissionBandwidth(uint64_t, uint64_t, unsigned int, bool);
+    MCAPI int32_t GetTransmissionBandwidth(uint64_t, uint64_t, uint32_t, bool);
     /**
      * @symbol ?Init\@CCRakNetSlidingWindow\@RakNet\@\@QEAAX_KI\@Z
      */
-    MCAPI void Init(uint64_t, unsigned int);
+    MCAPI void Init(uint64_t, uint32_t);
     /**
      * @symbol ?OnAck\@CCRakNetSlidingWindow\@RakNet\@\@QEAAX_K0_NNNN1Uuint24_t\@2\@\@Z
      */
@@ -61,11 +61,11 @@ public:
     /**
      * @symbol ?OnGotPacket\@CCRakNetSlidingWindow\@RakNet\@\@QEAA_NUuint24_t\@2\@_N_KIPEAI\@Z
      */
-    MCAPI bool OnGotPacket(struct RakNet::uint24_t, bool, uint64_t, unsigned int, unsigned int*);
+    MCAPI bool OnGotPacket(struct RakNet::uint24_t, bool, uint64_t, uint32_t, uint32_t*);
     /**
      * @symbol ?OnGotPacketPair\@CCRakNetSlidingWindow\@RakNet\@\@QEAAXUuint24_t\@2\@I_K\@Z
      */
-    MCAPI void OnGotPacketPair(struct RakNet::uint24_t, unsigned int, uint64_t);
+    MCAPI void OnGotPacketPair(struct RakNet::uint24_t, uint32_t, uint64_t);
     /**
      * @symbol ?OnNAK\@CCRakNetSlidingWindow\@RakNet\@\@QEAAX_KUuint24_t\@2\@\@Z
      */
@@ -77,7 +77,7 @@ public:
     /**
      * @symbol ?OnSendAck\@CCRakNetSlidingWindow\@RakNet\@\@QEAAX_KI\@Z
      */
-    MCAPI void OnSendAck(uint64_t, unsigned int);
+    MCAPI void OnSendAck(uint64_t, uint32_t);
     /**
      * @symbol ?OnSendAckGetBAndAS\@CCRakNetSlidingWindow\@RakNet\@\@QEAAX_KPEA_NPEAN2\@Z
      */
@@ -85,7 +85,7 @@ public:
     /**
      * @symbol ?OnSendBytes\@CCRakNetSlidingWindow\@RakNet\@\@QEAAX_KI\@Z
      */
-    MCAPI void OnSendBytes(uint64_t, unsigned int);
+    MCAPI void OnSendBytes(uint64_t, uint32_t);
     /**
      * @symbol ?ShouldSendACKs\@CCRakNetSlidingWindow\@RakNet\@\@QEAA_N_K0\@Z
      */

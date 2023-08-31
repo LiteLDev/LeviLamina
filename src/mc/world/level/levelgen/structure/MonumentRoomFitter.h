@@ -28,6 +28,6 @@ public:
      * ?create\@FitDoubleXYRoom\@\@UEAA?AV?$unique_ptr\@VOceanMonumentPiece\@\@U?$default_delete\@VOceanMonumentPiece\@\@\@std\@\@\@std\@\@AEAHV?$shared_ptr\@VRoomDefinition\@\@\@3\@AEAVRandom\@\@\@Z
      */
     virtual std::unique_ptr<class OceanMonumentPiece>
-    create(int&, std::shared_ptr<class RoomDefinition>, class Random&) = 0;
+    create(int32_t&, std::shared_ptr<class RoomDefinition>, class Random&) = 0;
     // NOLINTEND
 };

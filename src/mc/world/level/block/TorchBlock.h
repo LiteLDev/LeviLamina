@@ -190,7 +190,7 @@ public:
      * @symbol ?getPlacementBlock\@TorchBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -220,7 +220,7 @@ public:
      * @vftbl 132
      * @symbol ?getIconYOffset\@TorchBlock\@\@UEBAHXZ
      */
-    virtual int getIconYOffset() const;
+    virtual int32_t getIconYOffset() const;
     /**
      * @vftbl 148
      * @symbol ?animateTick\@TorchBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
@@ -307,7 +307,7 @@ public:
      * @symbol
      * ??0TorchBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4MaterialType\@\@\@Z
      */
-    MCAPI TorchBlock(std::string const&, int, enum class MaterialType);
+    MCAPI TorchBlock(std::string const&, int32_t, enum class MaterialType);
     // NOLINTEND
 
     // protected:
@@ -319,7 +319,7 @@ public:
     /**
      * @symbol ?canBePlacedOn\@TorchBlock\@\@IEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    MCAPI bool canBePlacedOn(class BlockSource&, class BlockPos const&, unsigned char) const;
+    MCAPI bool canBePlacedOn(class BlockSource&, class BlockPos const&, uint8_t) const;
     // NOLINTEND
 
 private:
@@ -331,6 +331,6 @@ private:
     /**
      * @symbol ?FACING_FROM_DATA\@TorchBlock\@\@0QBGB
      */
-    MCAPI static unsigned short const FACING_FROM_DATA[];
+    MCAPI static uint16_t const FACING_FROM_DATA[];
     // NOLINTEND
 };

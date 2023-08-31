@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { struct SchemaReader; }
 namespace cereal { struct SerializerTraits; }
 // clang-format on
 
@@ -52,32 +53,32 @@ public:
      * @vftbl 5
      * @symbol ?asInt8\@RapidJSONSchemaReader\@cereal\@\@UEAA?AV?$optional\@C\@std\@\@AEBUSerializerTraits\@2\@\@Z
      */
-    virtual std::optional<signed char> asInt8(struct cereal::SerializerTraits const&);
+    virtual std::optional<int8_t> asInt8(struct cereal::SerializerTraits const&);
     /**
      * @vftbl 6
      * @symbol ?asUInt8\@RapidJSONSchemaReader\@cereal\@\@UEAA?AV?$optional\@E\@std\@\@AEBUSerializerTraits\@2\@\@Z
      */
-    virtual std::optional<unsigned char> asUInt8(struct cereal::SerializerTraits const&);
+    virtual std::optional<uint8_t> asUInt8(struct cereal::SerializerTraits const&);
     /**
      * @vftbl 7
      * @symbol ?asInt16\@RapidJSONSchemaReader\@cereal\@\@UEAA?AV?$optional\@F\@std\@\@AEBUSerializerTraits\@2\@\@Z
      */
-    virtual std::optional<short> asInt16(struct cereal::SerializerTraits const&);
+    virtual std::optional<int16_t> asInt16(struct cereal::SerializerTraits const&);
     /**
      * @vftbl 8
      * @symbol ?asUInt16\@RapidJSONSchemaReader\@cereal\@\@UEAA?AV?$optional\@G\@std\@\@AEBUSerializerTraits\@2\@\@Z
      */
-    virtual std::optional<unsigned short> asUInt16(struct cereal::SerializerTraits const&);
+    virtual std::optional<uint16_t> asUInt16(struct cereal::SerializerTraits const&);
     /**
      * @vftbl 9
      * @symbol ?asInt32\@RapidJSONSchemaReader\@cereal\@\@UEAA?AV?$optional\@H\@std\@\@AEBUSerializerTraits\@2\@\@Z
      */
-    virtual std::optional<int> asInt32(struct cereal::SerializerTraits const&);
+    virtual std::optional<int32_t> asInt32(struct cereal::SerializerTraits const&);
     /**
      * @vftbl 10
      * @symbol ?asUInt32\@RapidJSONSchemaReader\@cereal\@\@UEAA?AV?$optional\@I\@std\@\@AEBUSerializerTraits\@2\@\@Z
      */
-    virtual std::optional<unsigned int> asUInt32(struct cereal::SerializerTraits const&);
+    virtual std::optional<uint32_t> asUInt32(struct cereal::SerializerTraits const&);
     /**
      * @vftbl 11
      * @symbol ?asInt64\@RapidJSONSchemaReader\@cereal\@\@UEAA?AV?$optional\@_J\@std\@\@AEBUSerializerTraits\@2\@\@Z

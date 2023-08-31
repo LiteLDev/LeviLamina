@@ -113,19 +113,19 @@ public:
      * @vftbl 133
      * @symbol ?_calculatePlacePos\@SignItem\@\@EEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
-    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
+    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, uint8_t&, class BlockPos&) const;
     /**
      * @vftbl 135
      * @symbol
      * ?_useOn\@SignItem\@\@EEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _useOn(class ItemStack&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
     /**
      * @vftbl 136
      * @symbol ?getBlockToPlace\@SignItem\@\@UEBAPEBVBlock\@\@EAEBVActor\@\@VBlockPos\@\@\@Z
      */
-    virtual class Block const* getBlockToPlace(unsigned char, class Actor const&, class BlockPos) const;
+    virtual class Block const* getBlockToPlace(uint8_t, class Actor const&, class BlockPos) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIGNITEM
     /**
      * @symbol __unk_destructor_-1
@@ -136,6 +136,6 @@ public:
      * @symbol
      * ??0SignItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4SignType\@SignBlock\@\@\@Z
      */
-    MCAPI SignItem(std::string const&, int, enum class SignBlock::SignType);
+    MCAPI SignItem(std::string const&, int32_t, enum class SignBlock::SignType);
     // NOLINTEND
 };

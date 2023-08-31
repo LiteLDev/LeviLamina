@@ -13,7 +13,7 @@ public:
     /**
      * @symbol ??RListTagIntAdder\@\@QEAAAEAV0\@H\@Z
      */
-    MCAPI class ListTagIntAdder& operator()(int);
+    MCAPI class ListTagIntAdder& operator()(int32_t);
     /**
      * @symbol ??1ListTagIntAdder\@\@QEAA\@XZ
      */

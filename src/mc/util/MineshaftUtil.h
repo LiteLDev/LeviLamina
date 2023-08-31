@@ -11,7 +11,7 @@ MCAPI bool _isLava(class BlockLegacy const&);
 /**
  * @symbol ?fillColumnBetween\@MineshaftUtil\@\@YAXAEAVBlockSource\@\@AEBVBlock\@\@AEBVBlockPos\@\@HH\@Z
  */
-MCAPI void fillColumnBetween(class BlockSource&, class Block const&, class BlockPos const&, int, int);
+MCAPI void fillColumnBetween(class BlockSource&, class Block const&, class BlockPos const&, int32_t, int32_t);
 // NOLINTEND
 
 }; // namespace MineshaftUtil

@@ -259,7 +259,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@SweetBerryBushBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -304,7 +304,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@SweetBerryBushBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -336,7 +336,7 @@ public:
      * @vftbl 186
      * @symbol ?getResourceCount\@SweetBerryBushBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 188
      * @symbol ?entityInside\@SweetBerryBushBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
@@ -356,7 +356,7 @@ public:
      * @symbol
      * ??0SweetBerryBushBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI SweetBerryBushBlock(std::string const&, int);
+    MCAPI SweetBerryBushBlock(std::string const&, int32_t);
     /**
      * @symbol ?SLOWDOWN_MULTIPLIER\@SweetBerryBushBlock\@\@2VVec3\@\@B
      */
@@ -377,6 +377,6 @@ public:
     /**
      * @symbol ?_popBerries\@SweetBerryBushBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBH\@Z
      */
-    MCAPI void _popBerries(class BlockSource&, class BlockPos const&, int const&) const;
+    MCAPI void _popBerries(class BlockSource&, class BlockPos const&, int32_t const&) const;
     // NOLINTEND
 };

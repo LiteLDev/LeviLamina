@@ -29,17 +29,17 @@ public:
      * @vftbl 10
      * @symbol ?setItem\@Inventory\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
-    virtual void setItem(int, class ItemStack const&);
+    virtual void setItem(int32_t, class ItemStack const&);
     /**
      * @vftbl 11
      * @symbol ?setItemWithForceBalance\@Inventory\@\@UEAAXHAEBVItemStack\@\@_N\@Z
      */
-    virtual void setItemWithForceBalance(int, class ItemStack const&, bool);
+    virtual void setItemWithForceBalance(int32_t, class ItemStack const&, bool);
     /**
      * @vftbl 22
      * @symbol ?getEmptySlotsCount\@Inventory\@\@UEBAHXZ
      */
-    virtual int getEmptySlotsCount() const;
+    virtual int32_t getEmptySlotsCount() const;
     /**
      * @vftbl 25
      * @symbol __unk_vfn_25
@@ -64,16 +64,16 @@ public:
      * @vftbl 41
      * @symbol ?getFirstEmptySlot\@Inventory\@\@UEBAHXZ
      */
-    virtual int getFirstEmptySlot() const;
+    virtual int32_t getFirstEmptySlot() const;
     /**
      * @vftbl 42
      * @symbol ?setContainerSize\@Inventory\@\@UEAAXH\@Z
      */
-    virtual void setContainerSize(int);
+    virtual void setContainerSize(int32_t);
     /**
      * @symbol ?dropSlot\@Inventory\@\@QEAAXH_N00\@Z
      */
-    MCAPI void dropSlot(int, bool, bool, bool);
+    MCAPI void dropSlot(int32_t, bool, bool, bool);
     /**
      * @symbol ?setupDefault\@Inventory\@\@QEAAXXZ
      */
@@ -81,6 +81,6 @@ public:
     /**
      * @symbol ?tick\@Inventory\@\@QEAAXH\@Z
      */
-    MCAPI void tick(int);
+    MCAPI void tick(int32_t);
     // NOLINTEND
 };

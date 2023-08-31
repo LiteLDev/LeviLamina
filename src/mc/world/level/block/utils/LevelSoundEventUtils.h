@@ -15,7 +15,7 @@ public:
     /**
      * @symbol ?serializePercentageToData\@LevelSoundEventUtils\@\@SAHM\@Z
      */
-    MCAPI static int serializePercentageToData(float);
+    MCAPI static int32_t serializePercentageToData(float);
     // NOLINTEND
 
 private:
@@ -23,6 +23,6 @@ private:
     /**
      * @symbol ?MAX_INT_REPRESENTABLE_AS_FLOAT\@LevelSoundEventUtils\@\@0HB
      */
-    MCAPI static int const MAX_INT_REPRESENTABLE_AS_FLOAT;
+    MCAPI static int32_t const MAX_INT_REPRESENTABLE_AS_FLOAT;
     // NOLINTEND
 };

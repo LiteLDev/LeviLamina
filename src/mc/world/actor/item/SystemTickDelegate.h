@@ -11,6 +11,7 @@ class BlockPos;
 class FallingBlock;
 class FallingBlockActor;
 class IBlockSource;
+class ITickDelegate;
 // clang-format on
 
 namespace FallingBlockSystemOnLand {

@@ -32,7 +32,7 @@ public:
      * @symbol
      * ?getRequestId\@ItemStackNetManagerServer\@\@UEBA?AV?$TypedClientNetId\@UItemStackRequestIdTag\@\@H$0A\@\@\@XZ
      */
-    virtual class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> getRequestId() const = 0;
+    virtual class TypedClientNetId<struct ItemStackRequestIdTag, int32_t, 0> getRequestId() const = 0;
     /**
      * @vftbl 3
      * @symbol ?retainSetItemStackNetIdVariant\@ItemStackNetManagerBase\@\@UEBA_NXZ
@@ -72,7 +72,7 @@ public:
      * ?_addLegacyTransactionRequestSetItemSlot\@ItemStackNetManagerBase\@\@MEAAXAEAVItemStackNetManagerScreen\@\@W4ContainerType\@\@H\@Z
      */
     virtual void
-    _addLegacyTransactionRequestSetItemSlot(class ItemStackNetManagerScreen&, enum class ContainerType, int);
+    _addLegacyTransactionRequestSetItemSlot(class ItemStackNetManagerScreen&, enum class ContainerType, int32_t);
     /**
      * @vftbl 10
      * @symbol ?_initScreen\@ItemStackNetManagerBase\@\@MEAAXAEAVItemStackNetManagerScreen\@\@\@Z
@@ -111,7 +111,7 @@ public:
      * ?setPlayerContainer\@ItemStackNetManagerBase\@\@SA_NAEAVPlayer\@\@W4ContainerType\@\@HAEBVItemStack\@\@AEAV4\@AEBV?$function\@$$A6AXAEBVItemStack\@\@\@Z\@std\@\@\@Z
      */
     MCAPI static bool
-    setPlayerContainer(class Player&, enum class ContainerType, int, class ItemStack const&, class ItemStack&, std::function<void(class ItemStack const&)> const&);
+    setPlayerContainer(class Player&, enum class ContainerType, int32_t, class ItemStack const&, class ItemStack&, std::function<void(class ItemStack const&)> const&);
     // NOLINTEND
 
     // protected:

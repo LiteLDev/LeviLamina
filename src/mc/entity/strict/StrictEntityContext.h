@@ -51,6 +51,6 @@ public:
     /**
      * @symbol ?_getRegistryId\@StrictEntityContext\@\@IEBAIXZ
      */
-    MCAPI unsigned int _getRegistryId() const;
+    MCAPI uint32_t _getRegistryId() const;
     // NOLINTEND
 };

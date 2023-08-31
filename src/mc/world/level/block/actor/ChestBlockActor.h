@@ -42,11 +42,11 @@ public:
     /**
      * @symbol ?canPullOutItem\@ChestBlockActor\@\@UEBA_NHHAEBVItemStack\@\@\@Z
      */
-    MCVAPI bool canPullOutItem(int, int, class ItemStack const&) const;
+    MCVAPI bool canPullOutItem(int32_t, int32_t, class ItemStack const&) const;
     /**
      * @symbol ?canPushInItem\@ChestBlockActor\@\@UEBA_NHHAEBVItemStack\@\@\@Z
      */
-    MCVAPI bool canPushInItem(int, int, class ItemStack const&) const;
+    MCVAPI bool canPushInItem(int32_t, int32_t, class ItemStack const&) const;
     /**
      * @symbol ?clearCache\@ChestBlockActor\@\@UEAAXXZ
      */
@@ -54,7 +54,7 @@ public:
     /**
      * @symbol ?clearInventory\@ChestBlockActor\@\@UEAAHH\@Z
      */
-    MCVAPI int clearInventory(int);
+    MCVAPI int32_t clearInventory(int32_t);
     /**
      * @symbol ?eraseLootTable\@ChestBlockActor\@\@UEAAXXZ
      */
@@ -70,7 +70,7 @@ public:
     /**
      * @symbol ?getContainerSize\@ChestBlockActor\@\@UEBAHXZ
      */
-    MCVAPI int getContainerSize() const;
+    MCVAPI int32_t getContainerSize() const;
     /**
      * @symbol ?getCrackEntity\@ChestBlockActor\@\@UEAAPEAVBlockActor\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -83,11 +83,11 @@ public:
     /**
      * @symbol ?getItem\@ChestBlockActor\@\@UEBAAEBVItemStack\@\@H\@Z
      */
-    MCVAPI class ItemStack const& getItem(int) const;
+    MCVAPI class ItemStack const& getItem(int32_t) const;
     /**
      * @symbol ?getMaxStackSize\@ChestBlockActor\@\@UEBAHXZ
      */
-    MCVAPI int getMaxStackSize() const;
+    MCVAPI int32_t getMaxStackSize() const;
     /**
      * @symbol
      * ?getName\@ChestBlockActor\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -156,19 +156,19 @@ public:
     /**
      * @symbol ?serverInitItemStackIds\@ChestBlockActor\@\@UEAAXHHV?$function\@$$A6AXHAEBVItemStack\@\@\@Z\@std\@\@\@Z
      */
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
+    MCVAPI void serverInitItemStackIds(int32_t, int32_t, std::function<void(int32_t, class ItemStack const&)>);
     /**
      * @symbol ?setContainerChanged\@ChestBlockActor\@\@UEAAXH\@Z
      */
-    MCVAPI void setContainerChanged(int);
+    MCVAPI void setContainerChanged(int32_t);
     /**
      * @symbol ?setItem\@ChestBlockActor\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
-    MCVAPI void setItem(int, class ItemStack const&);
+    MCVAPI void setItem(int32_t, class ItemStack const&);
     /**
      * @symbol ?setItemWithForceBalance\@ChestBlockActor\@\@UEAAXHAEBVItemStack\@\@_N\@Z
      */
-    MCVAPI void setItemWithForceBalance(int, class ItemStack const&, bool);
+    MCVAPI void setItemWithForceBalance(int32_t, class ItemStack const&, bool);
     /**
      * @symbol ?startOpen\@ChestBlockActor\@\@UEAAXAEAVPlayer\@\@\@Z
      */
@@ -184,7 +184,7 @@ public:
     /**
      * @symbol ?triggerEvent\@ChestBlockActor\@\@UEAAXHH\@Z
      */
-    MCVAPI void triggerEvent(int, int);
+    MCVAPI void triggerEvent(int32_t, int32_t);
     /**
      * @symbol __unk_destructor_-1
      */
@@ -216,7 +216,7 @@ public:
     /**
      * @symbol ?getOpenCount\@ChestBlockActor\@\@QEBAHXZ
      */
-    MCAPI int getOpenCount() const;
+    MCAPI int32_t getOpenCount() const;
     /**
      * @symbol ?getOpenness\@ChestBlockActor\@\@QEBAMXZ
      */

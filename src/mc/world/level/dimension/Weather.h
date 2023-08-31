@@ -120,7 +120,7 @@ public:
      * @vftbl 25
      * @symbol ?levelEvent\@Weather\@\@UEAAXW4LevelEvent\@\@AEBVVec3\@\@H\@Z
      */
-    virtual void levelEvent(enum class LevelEvent, class Vec3 const&, int);
+    virtual void levelEvent(enum class LevelEvent, class Vec3 const&, int32_t);
     /**
      * @symbol ??0Weather\@\@QEAA\@AEAVDimension\@\@AEAVIRandom\@\@\@Z
      */
@@ -128,11 +128,11 @@ public:
     /**
      * @symbol ?calcSnowBlockDepth\@Weather\@\@QEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    MCAPI int calcSnowBlockDepth(class BlockSource&, class BlockPos const&, int) const;
+    MCAPI int32_t calcSnowBlockDepth(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @symbol ?canPlaceTopSnow\@Weather\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@_N2PEAH\@Z
      */
-    MCAPI bool canPlaceTopSnow(class BlockSource&, class BlockPos const&, bool, bool, int*) const;
+    MCAPI bool canPlaceTopSnow(class BlockSource&, class BlockPos const&, bool, bool, int32_t*) const;
     /**
      * @symbol ?getFogLevel\@Weather\@\@QEBAMXZ
      */
@@ -172,7 +172,7 @@ public:
     /**
      * @symbol ?setSkyFlashTime\@Weather\@\@QEAAXH\@Z
      */
-    MCAPI void setSkyFlashTime(int);
+    MCAPI void setSkyFlashTime(int32_t);
     /**
      * @symbol ?setTargetLightningLevel\@Weather\@\@QEAAXM\@Z
      */
@@ -196,18 +196,18 @@ public:
     /**
      * @symbol ?calcLightningCycleTime\@Weather\@\@SAHAEAVIRandom\@\@\@Z
      */
-    MCAPI static int calcLightningCycleTime(class IRandom&);
+    MCAPI static int32_t calcLightningCycleTime(class IRandom&);
     /**
      * @symbol ?calcRainCycleTime\@Weather\@\@SAHAEAVIRandom\@\@\@Z
      */
-    MCAPI static int calcRainCycleTime(class IRandom&);
+    MCAPI static int32_t calcRainCycleTime(class IRandom&);
     /**
      * @symbol ?calcRainDuration\@Weather\@\@SAHAEAVIRandom\@\@\@Z
      */
-    MCAPI static int calcRainDuration(class IRandom&);
+    MCAPI static int32_t calcRainDuration(class IRandom&);
     /**
      * @symbol ?rebuildTopSnowToDepth\@Weather\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    MCAPI static void rebuildTopSnowToDepth(class BlockSource&, class BlockPos const&, int);
+    MCAPI static void rebuildTopSnowToDepth(class BlockSource&, class BlockPos const&, int32_t);
     // NOLINTEND
 };

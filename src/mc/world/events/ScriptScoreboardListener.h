@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ScoreboardEventListener;
 namespace ScriptModuleMinecraft { class ScriptScoreboard; }
 struct ScoreboardId;
 // clang-format on
@@ -47,7 +48,7 @@ public:
      * ??0ScriptScoreboardListener\@ScriptModuleMinecraft\@\@QEAA\@V?$WeakTypedObjectHandle\@VScriptScoreboard\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
      */
     MCAPI
-        ScriptScoreboardListener(class Scripting::WeakTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboard>);
+    ScriptScoreboardListener(class Scripting::WeakTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboard>);
     // NOLINTEND
 };
 

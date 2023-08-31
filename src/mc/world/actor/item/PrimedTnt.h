@@ -68,7 +68,7 @@ public:
      * @vftbl 38
      * @symbol ?teleportTo\@PrimedTnt\@\@UEAAXAEBVVec3\@\@_NHH1\@Z
      */
-    virtual void teleportTo(class Vec3 const&, bool, int, int, bool);
+    virtual void teleportTo(class Vec3 const&, bool, int32_t, int32_t, bool);
     /**
      * @vftbl 43
      * @symbol ?normalTick\@PrimedTnt\@\@UEAAXXZ

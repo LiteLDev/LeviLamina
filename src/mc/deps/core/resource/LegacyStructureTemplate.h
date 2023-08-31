@@ -89,7 +89,7 @@ public:
      * ?getZeroPositionWithTransform\@LegacyStructureTemplate\@\@SA?AVBlockPos\@\@AEBV2\@W4Mirror\@\@W4Rotation\@\@HH\@Z
      */
     MCAPI static class BlockPos
-    getZeroPositionWithTransform(class BlockPos const&, enum class Mirror, enum class Rotation, int, int);
+    getZeroPositionWithTransform(class BlockPos const&, enum class Mirror, enum class Rotation, int32_t, int32_t);
     /**
      * @symbol ?transform\@LegacyStructureTemplate\@\@SA?AVBlockPos\@\@V2\@W4Mirror\@\@W4Rotation\@\@\@Z
      */
@@ -122,7 +122,7 @@ public:
     /**
      * @symbol ?CHUNK_SIZE\@LegacyStructureTemplate\@\@2HB
      */
-    MCAPI static int const CHUNK_SIZE;
+    MCAPI static int32_t const CHUNK_SIZE;
     /**
      * @symbol
      * ?ENTITIES_TAG\@LegacyStructureTemplate\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
@@ -161,7 +161,7 @@ public:
     /**
      * @symbol ?STRUCTURE_VERSION\@LegacyStructureTemplate\@\@2HB
      */
-    MCAPI static int const STRUCTURE_VERSION;
+    MCAPI static int32_t const STRUCTURE_VERSION;
     /**
      * @symbol
      * ?VERSION_TAG\@LegacyStructureTemplate\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B

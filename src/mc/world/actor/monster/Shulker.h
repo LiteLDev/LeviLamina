@@ -232,7 +232,7 @@ public:
      * @vftbl 285
      * @symbol ?getArmorValue\@Shulker\@\@UEBAHXZ
      */
-    virtual int getArmorValue() const;
+    virtual int32_t getArmorValue() const;
     /**
      * @vftbl 317
      * @symbol
@@ -285,11 +285,11 @@ public:
     /**
      * @symbol ?_canOpenLidAt\@Shulker\@\@IEBA_NVBlockPos\@\@E\@Z
      */
-    MCAPI bool _canOpenLidAt(class BlockPos, unsigned char) const;
+    MCAPI bool _canOpenLidAt(class BlockPos, uint8_t) const;
     /**
      * @symbol ?_setPeekAmount\@Shulker\@\@KAXVSynchedActorDataWriter\@\@H\@Z
      */
-    MCAPI static void _setPeekAmount(class SynchedActorDataWriter, int);
+    MCAPI static void _setPeekAmount(class SynchedActorDataWriter, int32_t);
     // NOLINTEND
 
     // private:
@@ -305,7 +305,7 @@ public:
     /**
      * @symbol ?_isValidAttach\@Shulker\@\@AEAA_NVBlockPos\@\@E\@Z
      */
-    MCAPI bool _isValidAttach(class BlockPos, unsigned char);
+    MCAPI bool _isValidAttach(class BlockPos, uint8_t);
     /**
      * @symbol ?_peekAmountTick\@Shulker\@\@AEAAXXZ
      */

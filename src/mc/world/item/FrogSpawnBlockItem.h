@@ -67,7 +67,7 @@ public:
      * @vftbl 57
      * @symbol ?isLiquidClipItem\@FrogSpawnBlockItem\@\@UEBA_NH\@Z
      */
-    virtual bool isLiquidClipItem(int) const;
+    virtual bool isLiquidClipItem(int32_t) const;
     /**
      * @vftbl 66
      * @symbol __unk_vfn_66
@@ -118,18 +118,18 @@ public:
      * @symbol
      * ?_calculatePlacePos\@FrogSpawnBlockItem\@\@UEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
-    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
+    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, uint8_t&, class BlockPos&) const;
     /**
      * @vftbl 135
      * @symbol
      * ?_useOn\@FrogSpawnBlockItem\@\@UEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _useOn(class ItemStack&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
     /**
      * @symbol
      * ??0FrogSpawnBlockItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI FrogSpawnBlockItem(std::string const&, int);
+    MCAPI FrogSpawnBlockItem(std::string const&, int32_t);
     // NOLINTEND
 };

@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class WeakEntityRef;
+namespace ScriptModuleMinecraft { class IComponentFactory; }
 namespace ScriptModuleMinecraft { class ScriptActorComponent; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on

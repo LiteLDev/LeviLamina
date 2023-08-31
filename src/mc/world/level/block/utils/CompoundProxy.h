@@ -17,7 +17,7 @@ public:
     /**
      * @symbol ?fromInt\@CompoundProxy\@BlockDescriptorSerializer\@\@QEAAXH\@Z
      */
-    MCAPI void fromInt(int);
+    MCAPI void fromInt(int32_t);
     /**
      * @symbol
      * ?fromString\@CompoundProxy\@BlockDescriptorSerializer\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z

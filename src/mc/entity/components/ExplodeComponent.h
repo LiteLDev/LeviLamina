@@ -26,11 +26,11 @@ public:
     /**
      * @symbol ?getFuseLength\@ExplodeComponent\@\@QEBAHXZ
      */
-    MCAPI int getFuseLength() const;
+    MCAPI int32_t getFuseLength() const;
     /**
      * @symbol ?getInitialFuseLength\@ExplodeComponent\@\@QEBAHXZ
      */
-    MCAPI int getInitialFuseLength() const;
+    MCAPI int32_t getInitialFuseLength() const;
     /**
      * @symbol ?getIsFuseLit\@ExplodeComponent\@\@QEBA_NXZ
      */
@@ -55,7 +55,7 @@ public:
     /**
      * @symbol ?setFuseLength\@ExplodeComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setFuseLength(int);
+    MCAPI void setFuseLength(int32_t);
     /**
      * @symbol ?setTntExpodeGameRuleRequired\@ExplodeComponent\@\@QEAAXXZ
      */

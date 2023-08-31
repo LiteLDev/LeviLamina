@@ -27,7 +27,7 @@ public:
      * @vftbl 1
      * @symbol ?moveBoundingBox\@PoolElementStructurePiece\@\@UEAAXHHH\@Z
      */
-    virtual void moveBoundingBox(int, int, int);
+    virtual void moveBoundingBox(int32_t, int32_t, int32_t);
     /**
      * @vftbl 4
      * @symbol ?postProcess\@PoolElementStructurePiece\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
@@ -44,8 +44,8 @@ public:
      * @symbol
      * ?generateHeightAtPosition\@VillagePiece\@\@UEBAHAEBVBlockPos\@\@AEAVDimension\@\@AEAVBlockVolume\@\@AEAV?$unordered_map\@VChunkPos\@\@V?$unique_ptr\@V?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@U?$default_delete\@V?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@\@2\@\@std\@\@U?$hash\@VChunkPos\@\@\@3\@U?$equal_to\@VChunkPos\@\@\@3\@V?$allocator\@U?$pair\@$$CBVChunkPos\@\@V?$unique_ptr\@V?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@U?$default_delete\@V?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@\@2\@\@std\@\@\@std\@\@\@3\@\@std\@\@\@Z
      */
-    virtual int
-    generateHeightAtPosition(class BlockPos const&, class Dimension&, class BlockVolume&, std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>>&)
+    virtual int32_t
+    generateHeightAtPosition(class BlockPos const&, class Dimension&, class BlockVolume&, std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<int16_t>>>&)
         const = 0;
     /**
      * @vftbl 14
@@ -81,7 +81,7 @@ public:
         class StructurePoolElement const&,
         class BlockPos,
         enum class Rotation,
-        int,
+        int32_t,
         struct JigsawJunction&,
         class BoundingBox const&,
         class BlockPos

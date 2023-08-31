@@ -46,6 +46,6 @@ public:
     /**
      * @symbol ?ITEMS_SIZE\@EnderChestContainer\@\@2HB
      */
-    MCAPI static int const ITEMS_SIZE;
+    MCAPI static int32_t const ITEMS_SIZE;
     // NOLINTEND
 };

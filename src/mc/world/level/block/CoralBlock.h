@@ -135,7 +135,7 @@ public:
      * @vftbl 57
      * @symbol ?isValidAuxValue\@CoralBlock\@\@UEBA_NH\@Z
      */
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
@@ -216,7 +216,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@CoralBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -276,18 +276,18 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@CoralBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @symbol ??0CoralBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI CoralBlock(std::string const&, int);
+    MCAPI CoralBlock(std::string const&, int32_t);
     /**
      * @symbol ?DEAD_CORAL_BIT\@CoralBlock\@\@2HB
      */
-    MCAPI static int const DEAD_CORAL_BIT;
+    MCAPI static int32_t const DEAD_CORAL_BIT;
     /**
      * @symbol ?DEAD_CORAL_OFFSET\@CoralBlock\@\@2HB
      */
-    MCAPI static int const DEAD_CORAL_OFFSET;
+    MCAPI static int32_t const DEAD_CORAL_OFFSET;
     // NOLINTEND
 };

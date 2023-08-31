@@ -45,7 +45,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@SkullBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -191,7 +191,7 @@ public:
      * @symbol ?getPlacementBlock\@SkullBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -272,7 +272,7 @@ public:
      * @vftbl 192
      * @symbol ?getEntityResourceItem\@SkullBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlockActor\@\@H\@Z
      */
-    virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int) const;
+    virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKULLBLOCK
     /**
      * @symbol ?waterSpreadCausesSpawn\@SkullBlock\@\@UEBA_NXZ
@@ -282,7 +282,7 @@ public:
     /**
      * @symbol ??0SkullBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI SkullBlock(std::string const&, int);
+    MCAPI SkullBlock(std::string const&, int32_t);
     /**
      * @symbol
      * ?checkMobSpawn\@SkullBlock\@\@QEBA_NAEAVLevel\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEAVSkullBlockActor\@\@\@Z
@@ -292,7 +292,7 @@ public:
      * @symbol
      * ?getTypeDescriptionId\@SkullBlock\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI static std::string getTypeDescriptionId(int);
+    MCAPI static std::string getTypeDescriptionId(int32_t);
     // NOLINTEND
 
     // private:

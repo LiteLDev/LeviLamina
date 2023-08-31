@@ -50,6 +50,6 @@ public:
     /**
      * @symbol ??0BaseMoveToBlockGoal\@\@QEAA\@AEAVMob\@\@MHHHMM\@Z
      */
-    MCAPI BaseMoveToBlockGoal(class Mob&, float, int, int, int, float, float);
+    MCAPI BaseMoveToBlockGoal(class Mob&, float, int32_t, int32_t, int32_t, float, float);
     // NOLINTEND
 };

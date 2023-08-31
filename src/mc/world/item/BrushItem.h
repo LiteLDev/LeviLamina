@@ -67,7 +67,7 @@ public:
      * @vftbl 62
      * @symbol ?getEnchantSlot\@BrushItem\@\@UEBAHXZ
      */
-    virtual int getEnchantSlot() const;
+    virtual int32_t getEnchantSlot() const;
     /**
      * @vftbl 66
      * @symbol __unk_vfn_66
@@ -112,12 +112,12 @@ public:
      * @vftbl 92
      * @symbol ?mineBlock\@BrushItem\@\@UEBA_NAEAVItemInstance\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
      */
-    virtual bool mineBlock(class ItemInstance&, class Block const&, int, int, int, class Actor*) const;
+    virtual bool mineBlock(class ItemInstance&, class Block const&, int32_t, int32_t, int32_t, class Actor*) const;
     /**
      * @vftbl 93
      * @symbol ?mineBlock\@BrushItem\@\@UEBA_NAEAVItemStack\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
      */
-    virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
+    virtual bool mineBlock(class ItemStack&, class Block const&, int32_t, int32_t, int32_t, class Actor*) const;
     /**
      * @vftbl 115
      * @symbol __unk_vfn_115
@@ -134,7 +134,7 @@ public:
      * ?_useOn\@BrushItem\@\@MEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _useOn(class ItemStack&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BRUSHITEM
     /**
      * @symbol ?useInterruptedByAttacking\@BrushItem\@\@UEBA_NXZ

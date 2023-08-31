@@ -64,8 +64,7 @@ public:
      * @vftbl 9
      * @symbol ?onPlayerDimensionChanged\@Goal\@\@UEAAXPEAVPlayer\@\@V?$AutomaticID\@VDimension\@\@H\@\@1\@Z
      */
-    virtual void
-    onPlayerDimensionChanged(class Player*, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
+    virtual void onPlayerDimensionChanged(class Player*, DimensionType, DimensionType);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOAL
     /**
      * @symbol __unk_destructor_-1
@@ -79,18 +78,18 @@ public:
     /**
      * @symbol ?getRequiredControlFlags\@Goal\@\@QEBAHXZ
      */
-    MCAPI int getRequiredControlFlags() const;
+    MCAPI int32_t getRequiredControlFlags() const;
     /**
      * @symbol ?getTypeId\@Goal\@\@QEBAGXZ
      */
-    MCAPI unsigned short getTypeId() const;
+    MCAPI uint16_t getTypeId() const;
     /**
      * @symbol ?setRequiredControlFlags\@Goal\@\@QEAAXH\@Z
      */
-    MCAPI void setRequiredControlFlags(int);
+    MCAPI void setRequiredControlFlags(int32_t);
     /**
      * @symbol ?setTypeId\@Goal\@\@QEAAXG\@Z
      */
-    MCAPI void setTypeId(unsigned short);
+    MCAPI void setTypeId(uint16_t);
     // NOLINTEND
 };

@@ -181,7 +181,7 @@ public:
     /**
      * @symbol ?getDuration\@AreaEffectCloud\@\@QEBAHXZ
      */
-    MCAPI int getDuration() const;
+    MCAPI int32_t getDuration() const;
     /**
      * @symbol ?getEffectiveRadius\@AreaEffectCloud\@\@QEBAMXZ
      */
@@ -201,7 +201,7 @@ public:
     /**
      * @symbol ?setDuration\@AreaEffectCloud\@\@QEAAXH\@Z
      */
-    MCAPI void setDuration(int);
+    MCAPI void setDuration(int32_t);
     /**
      * @symbol ?setInitialRadius\@AreaEffectCloud\@\@QEAAXM\@Z
      */
@@ -217,7 +217,7 @@ public:
     /**
      * @symbol ?setPotion\@AreaEffectCloud\@\@QEAAXF\@Z
      */
-    MCAPI void setPotion(short);
+    MCAPI void setPotion(int16_t);
     /**
      * @symbol ?setRadiusChangeOnPickup\@AreaEffectCloud\@\@QEAAXM\@Z
      */
@@ -233,7 +233,7 @@ public:
     /**
      * @symbol ?setReapplicationDelay\@AreaEffectCloud\@\@QEAAXH\@Z
      */
-    MCAPI void setReapplicationDelay(int);
+    MCAPI void setReapplicationDelay(int32_t);
     // NOLINTEND
 
     // private:
@@ -245,6 +245,6 @@ public:
     /**
      * @symbol ?_spawnParticles\@AreaEffectCloud\@\@AEAAXAEAVRandom\@\@IM\@Z
      */
-    MCAPI void _spawnParticles(class Random&, unsigned int, float);
+    MCAPI void _spawnParticles(class Random&, uint32_t, float);
     // NOLINTEND
 };

@@ -42,7 +42,7 @@ public:
      * @vftbl 32
      * @symbol ?getInterpolatedRidingOffset\@Camel\@\@UEBA?AVVec3\@\@MH\@Z
      */
-    virtual class Vec3 getInterpolatedRidingOffset(float, int) const;
+    virtual class Vec3 getInterpolatedRidingOffset(float, int32_t) const;
     /**
      * @vftbl 35
      * @symbol __unk_vfn_35

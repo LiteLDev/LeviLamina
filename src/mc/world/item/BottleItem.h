@@ -67,7 +67,7 @@ public:
      * @vftbl 57
      * @symbol ?isLiquidClipItem\@BottleItem\@\@UEBA_NH\@Z
      */
-    virtual bool isLiquidClipItem(int) const;
+    virtual bool isLiquidClipItem(int32_t) const;
     /**
      * @vftbl 66
      * @symbol __unk_vfn_66
@@ -107,7 +107,7 @@ public:
      * @vftbl 85
      * @symbol ?dispense\@BottleItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
+    virtual bool dispense(class BlockSource&, class Container&, int32_t, class Vec3 const&, uint8_t) const;
     /**
      * @vftbl 115
      * @symbol __unk_vfn_115
@@ -124,11 +124,11 @@ public:
      * ?_useOn\@BottleItem\@\@EEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _useOn(class ItemStack&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
     /**
      * @symbol ??0BottleItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI BottleItem(std::string const&, int);
+    MCAPI BottleItem(std::string const&, int32_t);
     // NOLINTEND
 
     // private:
@@ -142,13 +142,8 @@ public:
      * @symbol
      * ?_fillBottleViaDispenser\@BottleItem\@\@AEBAXAEAVBlockSource\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
-    MCAPI void _fillBottleViaDispenser(
-        class BlockSource&,
-        std::string_view,
-        class Container&,
-        int,
-        class Vec3 const&,
-        unsigned char
-    ) const;
+    MCAPI void
+    _fillBottleViaDispenser(class BlockSource&, std::string_view, class Container&, int32_t, class Vec3 const&, uint8_t)
+        const;
     // NOLINTEND
 };

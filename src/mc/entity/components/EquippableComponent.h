@@ -31,11 +31,11 @@ public:
     /**
      * @symbol ?getSlotCount\@EquippableComponent\@\@QEBAHXZ
      */
-    MCAPI int getSlotCount() const;
+    MCAPI int32_t getSlotCount() const;
     /**
      * @symbol ?hasSlotAllowedItems\@EquippableComponent\@\@QEBA_NH\@Z
      */
-    MCAPI bool hasSlotAllowedItems(int) const;
+    MCAPI bool hasSlotAllowedItems(int32_t) const;
     /**
      * @symbol ?onItemChanged\@EquippableComponent\@\@QEBA_NAEAVActor\@\@_KAEBVItemStack\@\@\@Z
      */
@@ -48,7 +48,7 @@ public:
      * @symbol
      * ?tryGetSlotAllowedItems\@EquippableComponent\@\@QEBAPEBV?$vector\@VItemDescriptor\@\@V?$allocator\@VItemDescriptor\@\@\@std\@\@\@std\@\@H\@Z
      */
-    MCAPI std::vector<class ItemDescriptor> const* tryGetSlotAllowedItems(int) const;
+    MCAPI std::vector<class ItemDescriptor> const* tryGetSlotAllowedItems(int32_t) const;
     /**
      * @symbol ??1EquippableComponent\@\@QEAA\@XZ
      */

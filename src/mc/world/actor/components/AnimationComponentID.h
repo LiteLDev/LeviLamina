@@ -18,6 +18,6 @@ public:
     /**
      * @symbol ??0AnimationComponentID\@\@QEAA\@AEBUActorUniqueID\@\@GW4AttachableSlotIndex\@\@\@Z
      */
-    MCAPI AnimationComponentID(struct ActorUniqueID const&, unsigned short, enum class AttachableSlotIndex);
+    MCAPI AnimationComponentID(struct ActorUniqueID const&, uint16_t, enum class AttachableSlotIndex);
     // NOLINTEND
 };

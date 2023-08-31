@@ -22,7 +22,7 @@ public:
     /**
      * @symbol ?generateNext\@UniformInt\@ValueProviders\@\@QEBAHAEAVRandom\@\@\@Z
      */
-    MCAPI int generateNext(class Random&) const;
+    MCAPI int32_t generateNext(class Random&) const;
     // NOLINTEND
 };
 

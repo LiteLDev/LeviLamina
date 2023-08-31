@@ -37,6 +37,6 @@ public:
      * @symbol
      * ?_tryPlaceAzaleaTree\@AzaleaTreeAndRootsFeature\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@I\@Z
      */
-    MCAPI bool _tryPlaceAzaleaTree(class BlockSource&, class BlockPos const&, class Random&, unsigned int) const;
+    MCAPI bool _tryPlaceAzaleaTree(class BlockSource&, class BlockPos const&, class Random&, uint32_t) const;
     // NOLINTEND
 };

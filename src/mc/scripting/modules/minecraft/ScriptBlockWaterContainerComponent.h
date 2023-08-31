@@ -12,6 +12,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+namespace ScriptModuleMinecraft { class BaseScriptBlockLiquidContainerComponent; }
 namespace ScriptModuleMinecraft { class ScriptColor; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace Scripting { class WeakLifetimeScope; }

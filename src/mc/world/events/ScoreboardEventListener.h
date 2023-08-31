@@ -42,7 +42,7 @@ public:
      * @symbol
      * ?onScoreChanged\@ScoreboardEventListener\@\@UEAA?AW4EventResult\@\@AEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    virtual enum class EventResult onScoreChanged(struct ScoreboardId const&, std::string const&, int);
+    virtual enum class EventResult onScoreChanged(struct ScoreboardId const&, std::string const&, int32_t);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDEVENTLISTENER
     /**
      * @symbol __unk_destructor_-1

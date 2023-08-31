@@ -132,7 +132,7 @@ public:
     /**
      * @symbol ?loadFacingID\@NewUniqueIdsDataLoadHelper\@\@UEAAEE\@Z
      */
-    MCVAPI unsigned char loadFacingID(unsigned char);
+    MCVAPI uint8_t loadFacingID(uint8_t);
     /**
      * @symbol ?loadMirror\@NewUniqueIdsDataLoadHelper\@\@UEAA?AW4Mirror\@\@W42\@\@Z
      */

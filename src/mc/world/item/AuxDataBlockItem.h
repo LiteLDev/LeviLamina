@@ -57,7 +57,7 @@ public:
      * @vftbl 45
      * @symbol ?getLevelDataForAuxValue\@AuxDataBlockItem\@\@UEBAHH\@Z
      */
-    virtual int getLevelDataForAuxValue(int) const;
+    virtual int32_t getLevelDataForAuxValue(int32_t) const;
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -123,6 +123,6 @@ public:
      * @symbol
      * ??0AuxDataBlockItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HPEBVBlock\@\@\@Z
      */
-    MCAPI AuxDataBlockItem(std::string const&, int, class Block const*);
+    MCAPI AuxDataBlockItem(std::string const&, int32_t, class Block const*);
     // NOLINTEND
 };

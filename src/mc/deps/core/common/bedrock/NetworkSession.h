@@ -6,6 +6,11 @@
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/enums/TransportLayer.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
 class NetworkSession : public ::Bedrock::EnableNonOwnerReferences {
 
 public:

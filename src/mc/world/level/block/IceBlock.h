@@ -245,11 +245,11 @@ public:
      * @vftbl 186
      * @symbol ?getResourceCount\@IceBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
     /**
      * @symbol ??0IceBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
-    MCAPI IceBlock(std::string const&, int, bool);
+    MCAPI IceBlock(std::string const&, int32_t, bool);
     /**
      * @symbol ?melt\@IceBlock\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */

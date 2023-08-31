@@ -35,7 +35,14 @@ public:
      * @symbol
      * ?createPiece\@NBBridgeEndFiller\@\@SA?AV?$unique_ptr\@VNetherFortressPiece\@\@U?$default_delete\@VNetherFortressPiece\@\@\@std\@\@\@std\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@3\@AEAVRandom\@\@HHHHH\@Z
      */
-    MCAPI static std::unique_ptr<class NetherFortressPiece>
-    createPiece(std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, int, int, int);
+    MCAPI static std::unique_ptr<class NetherFortressPiece> createPiece(
+        std::vector<std::unique_ptr<class StructurePiece>>&,
+        class Random&,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t
+    );
     // NOLINTEND
 };

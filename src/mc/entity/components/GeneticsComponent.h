@@ -61,7 +61,7 @@ public:
     /**
      * @symbol ?INVALID_ALLELE_VALUE\@GeneticsComponent\@\@2HB
      */
-    MCAPI static int const INVALID_ALLELE_VALUE;
+    MCAPI static int32_t const INVALID_ALLELE_VALUE;
     // NOLINTEND
 
     // private:

@@ -20,11 +20,11 @@ MCAPI std::string gameTypeToString(enum class GameType);
 /**
  * @symbol ?intToGameType\@GameTypeConv\@\@YA?AW4GameType\@\@H\@Z
  */
-MCAPI enum class GameType intToGameType(int);
+MCAPI enum class GameType intToGameType(int32_t);
 /**
  * @symbol ?intToGameTypeForCommands\@GameTypeConv\@\@YA?AW4GameType\@\@H\@Z
  */
-MCAPI enum class GameType intToGameTypeForCommands(int);
+MCAPI enum class GameType intToGameTypeForCommands(int32_t);
 /**
  * @symbol
  * ?stringToGameType\@GameTypeConv\@\@YA?AW4GameType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z

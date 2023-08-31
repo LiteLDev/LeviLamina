@@ -22,7 +22,7 @@ public:
     /**
      * @symbol ?_getAbsorption\@SubChunkRelighter\@\@QEBAPEAUSubChunk\@\@USubChunkLightIndex\@\@AEAE\@Z
      */
-    MCAPI struct SubChunk* _getAbsorption(struct SubChunkLightIndex, unsigned char&) const;
+    MCAPI struct SubChunk* _getAbsorption(struct SubChunkLightIndex, uint8_t&) const;
     /**
      * @symbol ?_propagateBlockLight\@SubChunkRelighter\@\@QEAAXXZ
      */
@@ -30,7 +30,7 @@ public:
     /**
      * @symbol ?_propagateBlockLight\@SubChunkRelighter\@\@QEAAXUSubChunkLightIndex\@\@E\@Z
      */
-    MCAPI void _propagateBlockLight(struct SubChunkLightIndex, unsigned char);
+    MCAPI void _propagateBlockLight(struct SubChunkLightIndex, uint8_t);
     /**
      * @symbol ?_propagateSkyLight\@SubChunkRelighter\@\@QEAAXXZ
      */
@@ -38,11 +38,11 @@ public:
     /**
      * @symbol ?_propagateSkyLight\@SubChunkRelighter\@\@QEAAXUSubChunkLightIndex\@\@E\@Z
      */
-    MCAPI void _propagateSkyLight(struct SubChunkLightIndex, unsigned char);
+    MCAPI void _propagateSkyLight(struct SubChunkLightIndex, uint8_t);
     /**
      * @symbol ?_propagateSubtractiveBlockLight\@SubChunkRelighter\@\@QEAAXUSubChunkLightIndex\@\@E\@Z
      */
-    MCAPI void _propagateSubtractiveBlockLight(struct SubChunkLightIndex, unsigned char);
+    MCAPI void _propagateSubtractiveBlockLight(struct SubChunkLightIndex, uint8_t);
     /**
      * @symbol ?_propagateSubtractiveBlockLight\@SubChunkRelighter\@\@QEAAXXZ
      */
@@ -54,7 +54,7 @@ public:
     /**
      * @symbol ?_propagateSubtractiveSkyLight\@SubChunkRelighter\@\@QEAAXUSubChunkLightIndex\@\@E\@Z
      */
-    MCAPI void _propagateSubtractiveSkyLight(struct SubChunkLightIndex, unsigned char);
+    MCAPI void _propagateSubtractiveSkyLight(struct SubChunkLightIndex, uint8_t);
     /**
      * @symbol ?_setLightHelper\@SubChunkRelighter\@\@QEAAXUSubChunkLightIndex\@\@UBrightness\@\@111II\@Z
      */
@@ -64,17 +64,17 @@ public:
         struct Brightness,
         struct Brightness,
         struct Brightness,
-        unsigned int,
-        unsigned int
+        uint32_t,
+        uint32_t
     );
     /**
      * @symbol ?_setPropagatedBlockLightValue\@SubChunkRelighter\@\@QEAAXUSubChunkLightIndex\@\@E\@Z
      */
-    MCAPI void _setPropagatedBlockLightValue(struct SubChunkLightIndex, unsigned char);
+    MCAPI void _setPropagatedBlockLightValue(struct SubChunkLightIndex, uint8_t);
     /**
      * @symbol ?_setPropagatedSkyLightValue\@SubChunkRelighter\@\@QEAAXUSubChunkLightIndex\@\@E\@Z
      */
-    MCAPI void _setPropagatedSkyLightValue(struct SubChunkLightIndex, unsigned char);
+    MCAPI void _setPropagatedSkyLightValue(struct SubChunkLightIndex, uint8_t);
     /**
      * @symbol ?_setSkyLight\@SubChunkRelighter\@\@QEAAXUSubChunkLightIndex\@\@UBrightness\@\@111\@Z
      */
@@ -150,7 +150,7 @@ public:
     /**
      * @symbol ?_dirtySubChunk\@SubChunkRelighter\@\@AEAAPEAUSubChunk\@\@USubChunkLightIndex\@\@AEAI\@Z
      */
-    MCAPI struct SubChunk* _dirtySubChunk(struct SubChunkLightIndex, unsigned int&);
+    MCAPI struct SubChunk* _dirtySubChunk(struct SubChunkLightIndex, uint32_t&);
     /**
      * @symbol ?_getBlock\@SubChunkRelighter\@\@AEBAPEAUSubChunk\@\@USubChunkLightIndex\@\@AEAPEBVBlock\@\@1\@Z
      */
@@ -158,7 +158,7 @@ public:
     /**
      * @symbol ?_getLight\@SubChunkRelighter\@\@AEAAEUSubChunkLightIndex\@\@\@Z
      */
-    MCAPI unsigned char _getLight(struct SubChunkLightIndex);
+    MCAPI uint8_t _getLight(struct SubChunkLightIndex);
     /**
      * @symbol
      * ?_getLightPair\@SubChunkRelighter\@\@AEBA?AULightPair\@SubChunkBrightnessStorage\@\@USubChunkLightIndex\@\@\@Z

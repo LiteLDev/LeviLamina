@@ -109,7 +109,7 @@ public:
      * @vftbl 85
      * @symbol ?dispense\@FertilizerItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
+    virtual bool dispense(class BlockSource&, class Container&, int32_t, class Vec3 const&, uint8_t) const;
     /**
      * @vftbl 115
      * @symbol __unk_vfn_115
@@ -126,7 +126,7 @@ public:
      * ?_useOn\@FertilizerItem\@\@MEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _useOn(class ItemStack&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FERTILIZERITEM
     /**
      * @symbol ?isFertilizer\@FertilizerItem\@\@UEBA_NXZ
@@ -141,7 +141,7 @@ public:
      * @symbol
      * ??0FertilizerItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4FertilizerType\@\@\@Z
      */
-    MCAPI FertilizerItem(std::string const&, int, enum class FertilizerType);
+    MCAPI FertilizerItem(std::string const&, int32_t, enum class FertilizerType);
     /**
      * @symbol ?getFertilizerType\@FertilizerItem\@\@QEBA?AW4FertilizerType\@\@XZ
      */

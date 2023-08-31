@@ -40,7 +40,7 @@ forEachItemOnActorInventory(class Actor const&, class CommandIntegerRange const&
 /**
  * @symbol ?getItem\@ActorInventoryUtils\@\@YAPEBVItemStack\@\@AEBVActor\@\@W4EquipmentSlot\@\@H\@Z
  */
-MCAPI class ItemStack const* getItem(class Actor const&, enum class EquipmentSlot, int);
+MCAPI class ItemStack const* getItem(class Actor const&, enum class EquipmentSlot, int32_t);
 /**
  * @symbol
  * ?queryActorEquipmentSlotForItem\@ActorInventoryUtils\@\@YA_NAEBVActor\@\@AEBVItemInstance\@\@W4EquipmentSlot\@\@AEBVCommandIntegerRange\@\@3AEBUComparisonOptions\@ItemStackBase\@\@\@Z

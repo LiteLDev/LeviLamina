@@ -42,6 +42,6 @@ public:
      * @symbol
      * ?convertDirectionStringToKeyPress\@MoveNode\@\@AEAAEV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI unsigned char convertDirectionStringToKeyPress(std::string);
+    MCAPI uint8_t convertDirectionStringToKeyPress(std::string);
     // NOLINTEND
 };

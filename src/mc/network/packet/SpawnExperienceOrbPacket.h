@@ -56,7 +56,7 @@ public:
     /**
      * @symbol ??0SpawnExperienceOrbPacket\@\@QEAA\@AEBVVec3\@\@H\@Z
      */
-    MCAPI SpawnExperienceOrbPacket(class Vec3 const&, int);
+    MCAPI SpawnExperienceOrbPacket(class Vec3 const&, int32_t);
     /**
      * @symbol ??0SpawnExperienceOrbPacket\@\@QEAA\@XZ
      */

@@ -45,7 +45,7 @@ public:
      * ?_handleDebuggerAttach\@ScriptDebugCommand\@\@IEBAXPEAVIScriptDebugger\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4DebuggerAction\@1\@1GAEAVCommandOutput\@\@\@Z
      */
     MCAPI void
-    _handleDebuggerAttach(class IScriptDebugger*, std::string const&, enum class ScriptDebugCommand::DebuggerAction, std::string const&, unsigned short, class CommandOutput&)
+    _handleDebuggerAttach(class IScriptDebugger*, std::string const&, enum class ScriptDebugCommand::DebuggerAction, std::string const&, uint16_t, class CommandOutput&)
         const;
     /**
      * @symbol

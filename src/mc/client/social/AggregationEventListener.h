@@ -11,6 +11,7 @@
 class AppPlatform;
 namespace Core { class Path; }
 namespace Social::Events { class Event; }
+namespace Social::Events { class IEventListener; }
 namespace Social::Events { class SummaryEvent; }
 // clang-format on
 
@@ -81,7 +82,7 @@ public:
     /**
      * @symbol ??0AggregationEventListener\@Events\@Social\@\@IEAA\@IIIAEBVPath\@Core\@\@\@Z
      */
-    MCAPI AggregationEventListener(unsigned int, unsigned int, unsigned int, class Core::Path const&);
+    MCAPI AggregationEventListener(uint32_t, uint32_t, uint32_t, class Core::Path const&);
     /**
      * @symbol ??0AggregationEventListener\@Events\@Social\@\@IEAA\@AEBVPath\@Core\@\@\@Z
      */

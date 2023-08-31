@@ -17,7 +17,7 @@ public:
     /**
      * @symbol ??0GameVersion\@\@QEAA\@IIIII\@Z
      */
-    MCAPI GameVersion(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int);
+    MCAPI GameVersion(uint32_t, uint32_t, uint32_t, uint32_t, uint32_t);
     /**
      * @symbol ??0GameVersion\@\@QEAA\@AEBVListTag\@\@\@Z
      */

@@ -21,7 +21,7 @@ public:
      * ??0JigsawPlacement\@\@QEAA\@_K0AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@V?$function\@$$A6A?AV?$unique_ptr\@VPoolElementStructurePiece\@\@U?$default_delete\@VPoolElementStructurePiece\@\@\@std\@\@\@std\@\@AEBVStructurePoolElement\@\@AEBVBlockPos\@\@AEBW4Rotation\@\@HAEAUJigsawJunction\@\@AEBVBoundingBox\@\@1\@Z\@2\@AEAVRandom\@\@AEBVJigsawStructureRegistry\@\@AEAVDimension\@\@\@Z
      */
     MCAPI
-    JigsawPlacement(uint64_t, uint64_t, std::vector<std::unique_ptr<class StructurePiece>>&, std::function<std::unique_ptr<class PoolElementStructurePiece>(class StructurePoolElement const&, class BlockPos const&, enum class Rotation const&, int, struct JigsawJunction&, class BoundingBox const&, class BlockPos const&)>, class Random&, class JigsawStructureRegistry const&, class Dimension&);
+    JigsawPlacement(uint64_t, uint64_t, std::vector<std::unique_ptr<class StructurePiece>>&, std::function<std::unique_ptr<class PoolElementStructurePiece>(class StructurePoolElement const&, class BlockPos const&, enum class Rotation const&, int32_t, struct JigsawJunction&, class BoundingBox const&, class BlockPos const&)>, class Random&, class JigsawStructureRegistry const&, class Dimension&);
     /**
      * @symbol
      * ?addPieces\@JigsawPlacement\@\@QEAAXAEBVStructurePoolElement\@\@AEBVBlockPos\@\@AEBW4Rotation\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z

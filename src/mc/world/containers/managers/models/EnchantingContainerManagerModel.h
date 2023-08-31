@@ -32,17 +32,17 @@ public:
      * @vftbl 7
      * @symbol ?setSlot\@EnchantingContainerManagerModel\@\@UEAAXHAEBVItemStack\@\@_N\@Z
      */
-    virtual void setSlot(int, class ItemStack const&, bool);
+    virtual void setSlot(int32_t, class ItemStack const&, bool);
     /**
      * @vftbl 8
      * @symbol ?getSlot\@EnchantingContainerManagerModel\@\@UEBAAEBVItemStack\@\@H\@Z
      */
-    virtual class ItemStack const& getSlot(int) const;
+    virtual class ItemStack const& getSlot(int32_t) const;
     /**
      * @vftbl 9
      * @symbol ?setData\@EnchantingContainerManagerModel\@\@UEAAXHH\@Z
      */
-    virtual void setData(int, int);
+    virtual void setData(int32_t, int32_t);
     /**
      * @vftbl 10
      * @symbol ?broadcastChanges\@EnchantingContainerManagerModel\@\@UEAAXXZ
@@ -74,6 +74,6 @@ public:
     /**
      * @symbol ?NUM_OPTIONS\@EnchantingContainerManagerModel\@\@2HB
      */
-    MCAPI static int const NUM_OPTIONS;
+    MCAPI static int32_t const NUM_OPTIONS;
     // NOLINTEND
 };

@@ -43,7 +43,7 @@ public:
     /**
      * @symbol ?_clearOfObstacles\@DolphinMoveControl\@\@AEBA_NAEBVMob\@\@MMH\@Z
      */
-    MCAPI bool _clearOfObstacles(class Mob const&, float, float, int) const;
+    MCAPI bool _clearOfObstacles(class Mob const&, float, float, int32_t) const;
     /**
      * @symbol ?_isInWater\@DolphinMoveControl\@\@AEBA_NAEBVMob\@\@\@Z
      */

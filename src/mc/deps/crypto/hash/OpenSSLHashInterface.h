@@ -28,12 +28,12 @@ public:
      * @vftbl 2
      * @symbol ?update\@OpenSSLHashInterface\@Hash\@Crypto\@\@UEAAXPEBXI\@Z
      */
-    virtual void update(void const*, unsigned int);
+    virtual void update(void const*, uint32_t);
     /**
      * @vftbl 3
      * @symbol ?final\@OpenSSLHashInterface\@Hash\@Crypto\@\@UEAAXPEAE\@Z
      */
-    virtual void final(unsigned char*);
+    virtual void final(uint8_t*);
     /**
      * @vftbl 4
      * @symbol ?resultSize\@OpenSSLHashInterface\@Hash\@Crypto\@\@UEBA_KXZ

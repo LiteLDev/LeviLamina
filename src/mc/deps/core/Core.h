@@ -25,12 +25,14 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
 namespace Core { class DiskAccessTracker; }
 namespace Core { class File; }
 namespace Core { class FileImpl; }
 namespace Core { class FileOpenMode; }
 namespace Core { class FileStats; }
 namespace Core { class FileStorageArea; }
+namespace Core { class FileStream; }
 namespace Core { class FileSystemImpl; }
 namespace Core { class FileSystem_windows; }
 namespace Core { class FlatFileManifest; }
@@ -38,6 +40,8 @@ namespace Core { class FlatFileManifestInfo; }
 namespace Core { class FlatFileManifestTracker; }
 namespace Core { class FlatFileSearchResult; }
 namespace Core { class IFile; }
+namespace Core { class IFileStorageAreaFetcher; }
+namespace Core { class IFileSystem; }
 namespace Core { class Path; }
 namespace Core { class PathPart; }
 namespace Core { class Random; }

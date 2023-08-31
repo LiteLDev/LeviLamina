@@ -27,7 +27,7 @@ MCAPI void startStandCounter(class EntityContext&);
 /**
  * @symbol ?tickStandCounter\@HorseMovement\@\@YA_NAEAVEntityContext\@\@H\@Z
  */
-MCAPI bool tickStandCounter(class EntityContext&, int);
+MCAPI bool tickStandCounter(class EntityContext&, int32_t);
 // NOLINTEND
 
 }; // namespace HorseMovement

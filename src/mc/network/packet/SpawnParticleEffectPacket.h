@@ -63,7 +63,7 @@ public:
      * ??0SpawnParticleEffectPacket\@\@QEAA\@AEBVVec3\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@EV?$optional\@VMolangVariableMap\@\@\@3\@\@Z
      */
     MCAPI
-    SpawnParticleEffectPacket(class Vec3 const&, std::string const&, unsigned char, std::optional<class MolangVariableMap>);
+    SpawnParticleEffectPacket(class Vec3 const&, std::string const&, uint8_t, std::optional<class MolangVariableMap>);
     /**
      * @symbol ??0SpawnParticleEffectPacket\@\@QEAA\@XZ
      */

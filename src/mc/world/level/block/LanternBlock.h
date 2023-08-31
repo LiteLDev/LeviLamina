@@ -191,7 +191,7 @@ public:
      * @symbol ?getPlacementBlock\@LanternBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -276,7 +276,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@LanternBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@LanternBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -291,7 +291,7 @@ public:
     /**
      * @symbol ??0LanternBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI LanternBlock(std::string const&, int);
+    MCAPI LanternBlock(std::string const&, int32_t);
     // NOLINTEND
 
     // private:

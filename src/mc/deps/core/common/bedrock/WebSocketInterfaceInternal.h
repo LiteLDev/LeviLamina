@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::Http { class WebSocketInterface; }
 struct HC_PERFORM_ENV;
 struct HC_WEBSOCKET_OBSERVER;
 struct XAsyncBlock;
@@ -42,7 +43,7 @@ public:
      * ?sendBinaryMessage\@WebSocketInterfaceInternal\@Http\@Bedrock\@\@UEAAJV?$not_null\@PEAUHC_WEBSOCKET_OBSERVER\@\@\@gsl\@\@V?$span\@$$CBE$0?0\@5\@V?$not_null\@PEAUXAsyncBlock\@\@\@5\@\@Z
      */
     MCVAPI long
-        sendBinaryMessage(class gsl::not_null<struct HC_WEBSOCKET_OBSERVER*>, class gsl::span<unsigned char const>, class gsl::not_null<struct XAsyncBlock*>);
+        sendBinaryMessage(class gsl::not_null<struct HC_WEBSOCKET_OBSERVER*>, class gsl::span<uint8_t const>, class gsl::not_null<struct XAsyncBlock*>);
     /**
      * @symbol
      * ?sendMessage\@WebSocketInterfaceInternal\@Http\@Bedrock\@\@UEAAJV?$not_null\@PEAUHC_WEBSOCKET_OBSERVER\@\@\@gsl\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@V?$not_null\@PEAUXAsyncBlock\@\@\@5\@\@Z

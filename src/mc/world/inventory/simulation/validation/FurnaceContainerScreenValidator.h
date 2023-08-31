@@ -26,7 +26,7 @@ public:
      * ?postCommitItemRemoved\@FurnaceContainerScreenValidator\@\@UEAA?AV?$shared_ptr\@VContainerValidationCommitObject\@\@\@std\@\@W4ContainerEnumName\@\@HAEBVItemStack\@\@\@Z
      */
     virtual std::shared_ptr<class ContainerValidationCommitObject>
-    postCommitItemRemoved(enum class ContainerEnumName, int, class ItemStack const&);
+    postCommitItemRemoved(enum class ContainerEnumName, int32_t, class ItemStack const&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACECONTAINERSCREENVALIDATOR
     /**
      * @symbol __unk_destructor_-1

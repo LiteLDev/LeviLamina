@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { struct SchemaReader; }
 namespace cereal { struct SerializerTraits; }
 // clang-format on
 
@@ -143,11 +144,11 @@ public:
     /**
      * @symbol ?asInt16\@NBTSchemaReader\@\@UEAA?AV?$optional\@F\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI std::optional<short> asInt16(struct cereal::SerializerTraits const&);
+    MCVAPI std::optional<int16_t> asInt16(struct cereal::SerializerTraits const&);
     /**
      * @symbol ?asInt32\@NBTSchemaReader\@\@UEAA?AV?$optional\@H\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI std::optional<int> asInt32(struct cereal::SerializerTraits const&);
+    MCVAPI std::optional<int32_t> asInt32(struct cereal::SerializerTraits const&);
     /**
      * @symbol ?asInt64\@NBTSchemaReader\@\@UEAA?AV?$optional\@_J\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
@@ -155,15 +156,15 @@ public:
     /**
      * @symbol ?asInt8\@NBTSchemaReader\@\@UEAA?AV?$optional\@C\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI std::optional<signed char> asInt8(struct cereal::SerializerTraits const&);
+    MCVAPI std::optional<int8_t> asInt8(struct cereal::SerializerTraits const&);
     /**
      * @symbol ?asUInt16\@NBTSchemaReader\@\@UEAA?AV?$optional\@G\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI std::optional<unsigned short> asUInt16(struct cereal::SerializerTraits const&);
+    MCVAPI std::optional<uint16_t> asUInt16(struct cereal::SerializerTraits const&);
     /**
      * @symbol ?asUInt32\@NBTSchemaReader\@\@UEAA?AV?$optional\@I\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI std::optional<unsigned int> asUInt32(struct cereal::SerializerTraits const&);
+    MCVAPI std::optional<uint32_t> asUInt32(struct cereal::SerializerTraits const&);
     /**
      * @symbol ?asUInt64\@NBTSchemaReader\@\@UEAA?AV?$optional\@_K\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
@@ -171,7 +172,7 @@ public:
     /**
      * @symbol ?asUInt8\@NBTSchemaReader\@\@UEAA?AV?$optional\@E\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI std::optional<unsigned char> asUInt8(struct cereal::SerializerTraits const&);
+    MCVAPI std::optional<uint8_t> asUInt8(struct cereal::SerializerTraits const&);
     /**
      * @symbol __unk_destructor_-1
      */

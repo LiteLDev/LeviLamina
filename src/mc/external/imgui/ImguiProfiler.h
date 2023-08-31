@@ -2,51 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ImguiProfiler {
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
+struct ImguiProfiler : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // ImguiProfiler inner types declare
     // clang-format off
-    class ManualTimer;
     struct Record;
     struct RecordGroup;
-    class ScopedTimer;
     class Timer;
+    class ManualTimer;
+    class ScopedTimer;
     // clang-format on
 
     // ImguiProfiler inner types define
-
-    class Timer {
-
-    public:
-        // prevent constructor by default
-        Timer& operator=(Timer const&) = delete;
-        Timer(Timer const&)            = delete;
-        Timer()                        = delete;
-    };
-
-    class ManualTimer : public ::ImguiProfiler::Timer {
-
-    public:
-        // prevent constructor by default
-        ManualTimer& operator=(ManualTimer const&) = delete;
-        ManualTimer(ManualTimer const&)            = delete;
-        ManualTimer()                              = delete;
-
-    public:
-        // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMGUIPROFILER_MANUALTIMER
-        /**
-         * @symbol __unk_destructor_-1
-         */
-        MCVAPI ~ManualTimer();
-#endif
-        /**
-         * @symbol ?mark\@ManualTimer\@ImguiProfiler\@\@QEAAXXZ
-         */
-        MCAPI void mark();
-        // NOLINTEND
-    };
-
     struct Record {
 
     public:
@@ -132,6 +107,38 @@ public:
          */
         MCAPI bool
         isGreaterThan(struct ImguiProfiler::RecordGroup::FullStackRecord const&, struct ImguiProfiler::RecordGroup::FullStackRecord const&);
+        // NOLINTEND
+    };
+
+    class Timer {
+
+    public:
+        // prevent constructor by default
+        Timer& operator=(Timer const&) = delete;
+        Timer(Timer const&)            = delete;
+        Timer()                        = delete;
+    };
+
+    class ManualTimer : public ::ImguiProfiler::Timer {
+
+    public:
+        // prevent constructor by default
+        ManualTimer& operator=(ManualTimer const&) = delete;
+        ManualTimer(ManualTimer const&)            = delete;
+        ManualTimer()                              = delete;
+
+    public:
+        // NOLINTBEGIN
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMGUIPROFILER_MANUALTIMER
+        /**
+         * @symbol __unk_destructor_-1
+         */
+        MCVAPI ~ManualTimer();
+#endif
+        /**
+         * @symbol ?mark\@ManualTimer\@ImguiProfiler\@\@QEAAXXZ
+         */
+        MCAPI void mark();
         // NOLINTEND
     };
 

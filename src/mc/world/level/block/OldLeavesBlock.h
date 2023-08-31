@@ -202,12 +202,12 @@ public:
      * @vftbl 136
      * @symbol ?getColor\@OldLeavesBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual int32_t getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
     /**
      * @vftbl 143
      * @symbol ?getVariant\@OldLeavesBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -264,7 +264,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@OldLeavesBlock\@\@MEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@OldLeavesBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -279,6 +279,6 @@ public:
      * @symbol
      * ??0OldLeavesBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HV?$WeakPtr\@VBlockLegacy\@\@\@\@\@Z
      */
-    MCAPI OldLeavesBlock(std::string const&, int, class WeakPtr<class BlockLegacy>);
+    MCAPI OldLeavesBlock(std::string const&, int32_t, class WeakPtr<class BlockLegacy>);
     // NOLINTEND
 };

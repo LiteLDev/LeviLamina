@@ -173,7 +173,7 @@ public:
      * @vftbl 285
      * @symbol ?getArmorValue\@LavaSlime\@\@UEBAHXZ
      */
-    virtual int getArmorValue() const;
+    virtual int32_t getArmorValue() const;
     /**
      * @vftbl 323
      * @symbol __unk_vfn_323
@@ -198,7 +198,7 @@ public:
      * @vftbl 333
      * @symbol ?createChild\@LavaSlime\@\@MEAA?AV?$OwnerPtrT\@UEntityRefTraits\@\@\@\@H\@Z
      */
-    virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
+    virtual class OwnerPtrT<struct EntityRefTraits> createChild(int32_t);
     /**
      * @symbol
      * ??0LavaSlime\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z

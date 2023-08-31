@@ -223,7 +223,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@SaplingBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -285,7 +285,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@SaplingBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@SaplingBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -300,7 +300,7 @@ public:
     /**
      * @symbol ??0SaplingBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI SaplingBlock(std::string const&, int);
+    MCAPI SaplingBlock(std::string const&, int32_t);
     // NOLINTEND
 
     // protected:
@@ -318,7 +318,7 @@ public:
      * ?_generateJungleTree\@SaplingBlock\@\@AEBA?AV?$WeakRefT\@UFeatureRefTraits\@\@\@\@AEAH0AEA_NAEBVBlockPos\@\@AEAVBlockSource\@\@AEBVFeatureRegistry\@\@\@Z
      */
     MCAPI class WeakRefT<struct FeatureRefTraits>
-    _generateJungleTree(int&, int&, bool&, class BlockPos const&, class BlockSource&, class FeatureRegistry const&)
+    _generateJungleTree(int32_t&, int32_t&, bool&, class BlockPos const&, class BlockSource&, class FeatureRegistry const&)
         const;
     /**
      * @symbol
@@ -332,14 +332,15 @@ public:
      * ?_generateRedwoodTree\@SaplingBlock\@\@AEBA?AV?$WeakRefT\@UFeatureRefTraits\@\@\@\@AEAH0AEA_NAEBVBlockPos\@\@AEAVBlockSource\@\@AEBVFeatureRegistry\@\@\@Z
      */
     MCAPI class WeakRefT<struct FeatureRefTraits>
-    _generateRedwoodTree(int&, int&, bool&, class BlockPos const&, class BlockSource&, class FeatureRegistry const&)
+    _generateRedwoodTree(int32_t&, int32_t&, bool&, class BlockPos const&, class BlockSource&, class FeatureRegistry const&)
         const;
     /**
      * @symbol
      * ?_generateRoofTree\@SaplingBlock\@\@AEBA?AV?$WeakRefT\@UFeatureRefTraits\@\@\@\@AEAH0AEA_NAEBVBlockPos\@\@AEAVBlockSource\@\@AEBVFeatureRegistry\@\@\@Z
      */
     MCAPI class WeakRefT<struct FeatureRefTraits>
-    _generateRoofTree(int&, int&, bool&, class BlockPos const&, class BlockSource&, class FeatureRegistry const&) const;
+    _generateRoofTree(int32_t&, int32_t&, bool&, class BlockPos const&, class BlockSource&, class FeatureRegistry const&)
+        const;
     /**
      * @symbol ?_growTree\@SaplingBlock\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@_N\@Z
      */

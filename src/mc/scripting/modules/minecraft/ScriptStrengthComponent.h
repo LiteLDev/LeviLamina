@@ -7,6 +7,11 @@
 #include "mc/external/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/ScriptActorComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { class ScriptActorComponent; }
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptStrengthComponent : public ::ScriptModuleMinecraft::ScriptActorComponent {
@@ -33,11 +38,11 @@ public:
     /**
      * @symbol ?getMax\@ScriptStrengthComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getMax() const;
+    MCAPI class Scripting::Result<int32_t> getMax() const;
     /**
      * @symbol ?getValue\@ScriptStrengthComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getValue() const;
+    MCAPI class Scripting::Result<int32_t> getValue() const;
     /**
      * @symbol
      * ?bind\@ScriptStrengthComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptStrengthComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ

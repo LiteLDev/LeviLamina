@@ -40,7 +40,7 @@ public:
     /**
      * @symbol ??0RandomFlyingGoal\@\@QEAA\@AEAVMob\@\@MHH_N\@Z
      */
-    MCAPI RandomFlyingGoal(class Mob&, float, int, int, bool);
+    MCAPI RandomFlyingGoal(class Mob&, float, int32_t, int32_t, bool);
     // NOLINTEND
 
     // private:

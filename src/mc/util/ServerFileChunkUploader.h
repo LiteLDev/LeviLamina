@@ -37,7 +37,7 @@ public:
      * ?initFileUploader\@ServerFileChunkUploader\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUFileInfo\@\@HAEBVValue\@Json\@\@V?$function\@$$A6AX_N\@Z\@3\@\@Z
      */
     virtual void
-    initFileUploader(std::string const&, struct FileInfo const&, int, class Json::Value const&, std::function<void(bool)>);
+    initFileUploader(std::string const&, struct FileInfo const&, int32_t, class Json::Value const&, std::function<void(bool)>);
     /**
      * @vftbl 3
      * @symbol
@@ -56,7 +56,7 @@ public:
      * ?uploadChunk\@ServerFileChunkUploader\@\@UEAAXAEBUFileInfo\@\@AEBUFileChunkInfo\@\@AEBV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@V?$function\@$$A6AX_N\@Z\@5\@\@Z
      */
     virtual void
-    uploadChunk(struct FileInfo const&, struct FileChunkInfo const&, std::vector<unsigned char> const&, std::function<void(bool)>);
+    uploadChunk(struct FileInfo const&, struct FileChunkInfo const&, std::vector<uint8_t> const&, std::function<void(bool)>);
     /**
      * @vftbl 6
      * @symbol
@@ -88,7 +88,7 @@ public:
      * @vftbl 11
      * @symbol ?getChunkInfo\@ServerFileChunkUploader\@\@UEBA?AUFileChunkInfo\@\@AEBUFileInfo\@\@H\@Z
      */
-    virtual struct FileChunkInfo getChunkInfo(struct FileInfo const&, int) const;
+    virtual struct FileChunkInfo getChunkInfo(struct FileInfo const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERFILECHUNKUPLOADER
     /**
      * @symbol ?cancelUpload\@ServerFileChunkUploader\@\@UEAAXAEBUFileInfo\@\@\@Z

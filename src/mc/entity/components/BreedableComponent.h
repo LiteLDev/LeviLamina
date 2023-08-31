@@ -57,7 +57,7 @@ public:
     /**
      * @symbol ?getBreedCooldown\@BreedableComponent\@\@QEBAHXZ
      */
-    MCAPI int getBreedCooldown() const;
+    MCAPI int32_t getBreedCooldown() const;
     /**
      * @symbol ?getInteraction\@BreedableComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
@@ -69,7 +69,7 @@ public:
     /**
      * @symbol ?getLoveTimer\@BreedableComponent\@\@QEBAHXZ
      */
-    MCAPI int getLoveTimer() const;
+    MCAPI int32_t getLoveTimer() const;
     /**
      * @symbol ?mate\@BreedableComponent\@\@QEAA?AUMatingResult\@1\@AEAVActor\@\@0\@Z
      */
@@ -94,7 +94,7 @@ public:
     /**
      * @symbol ?setLoveTimer\@BreedableComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setLoveTimer(int);
+    MCAPI void setLoveTimer(int32_t);
     /**
      * @symbol
      * ?setOffspringAttributesWithParentCentricBlending\@BreedableComponent\@\@SAXAEAVAttributeInstance\@\@AEBV2\@1AEAVIRandom\@\@MM\@Z

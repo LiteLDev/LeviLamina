@@ -21,7 +21,7 @@ public:
      * @symbol
      * ??0FileInfo\@\@QEAA\@VPath\@Core\@\@HV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI FileInfo(class Core::Path, int, std::string);
+    MCAPI FileInfo(class Core::Path, int32_t, std::string);
     /**
      * @symbol ??1FileInfo\@\@QEAA\@XZ
      */

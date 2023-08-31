@@ -87,7 +87,7 @@ public:
     /**
      * @symbol ?getBirchFoliageColor\@Biome\@\@QEBAHAEBVBlockPos\@\@\@Z
      */
-    MCAPI int getBirchFoliageColor(class BlockPos const&) const;
+    MCAPI int32_t getBirchFoliageColor(class BlockPos const&) const;
     /**
      * @symbol ?getDefaultBiomeTemperature\@Biome\@\@QEBAMXZ
      */
@@ -99,27 +99,27 @@ public:
     /**
      * @symbol ?getEvergreenFoliageColor\@Biome\@\@QEBAHAEBVBlockPos\@\@\@Z
      */
-    MCAPI int getEvergreenFoliageColor(class BlockPos const&) const;
+    MCAPI int32_t getEvergreenFoliageColor(class BlockPos const&) const;
     /**
      * @symbol ?getFoliageColor\@Biome\@\@QEBAHAEBVBlockPos\@\@\@Z
      */
-    MCAPI int getFoliageColor(class BlockPos const&) const;
+    MCAPI int32_t getFoliageColor(class BlockPos const&) const;
     /**
      * @symbol ?getMapBirchFoliageColor\@Biome\@\@QEBAHAEBVBlockPos\@\@\@Z
      */
-    MCAPI int getMapBirchFoliageColor(class BlockPos const&) const;
+    MCAPI int32_t getMapBirchFoliageColor(class BlockPos const&) const;
     /**
      * @symbol ?getMapEvergreenFoliageColor\@Biome\@\@QEBAHAEBVBlockPos\@\@\@Z
      */
-    MCAPI int getMapEvergreenFoliageColor(class BlockPos const&) const;
+    MCAPI int32_t getMapEvergreenFoliageColor(class BlockPos const&) const;
     /**
      * @symbol ?getMapFoliageColor\@Biome\@\@QEBAHAEBVBlockPos\@\@\@Z
      */
-    MCAPI int getMapFoliageColor(class BlockPos const&) const;
+    MCAPI int32_t getMapFoliageColor(class BlockPos const&) const;
     /**
      * @symbol ?getMapGrassColor\@Biome\@\@QEBAHAEBVBlockPos\@\@\@Z
      */
-    MCAPI int getMapGrassColor(class BlockPos const&) const;
+    MCAPI int32_t getMapGrassColor(class BlockPos const&) const;
     /**
      * @symbol
      * ?getMobs\@Biome\@\@QEBAAEBV?$vector\@VMobSpawnerData\@\@V?$allocator\@VMobSpawnerData\@\@\@std\@\@\@std\@\@XZ
@@ -133,7 +133,7 @@ public:
     /**
      * @symbol ?getSnowAccumulationLayers\@Biome\@\@QEBAHXZ
      */
-    MCAPI int getSnowAccumulationLayers() const;
+    MCAPI int32_t getSnowAccumulationLayers() const;
     /**
      * @symbol ?getTemperature\@Biome\@\@QEBAMAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -145,7 +145,7 @@ public:
     /**
      * @symbol ?getTemperatureWorldGen\@Biome\@\@QEBAMAEBVBlockPos\@\@F\@Z
      */
-    MCAPI float getTemperatureWorldGen(class BlockPos const&, short) const;
+    MCAPI float getTemperatureWorldGen(class BlockPos const&, int16_t) const;
     /**
      * @symbol
      * ?hasTag\@Biome\@\@QEBA_N_KAEBV?$TagRegistry\@U?$IDType\@UBiomeTagIDType\@\@\@\@U?$IDType\@UBiomeTagSetIDType\@\@\@\@\@\@\@Z
@@ -175,15 +175,15 @@ public:
     /**
      * @symbol ?setColor\@Biome\@\@QEAAAEAV1\@H_N\@Z
      */
-    MCAPI class Biome& setColor(int, bool);
+    MCAPI class Biome& setColor(int32_t, bool);
     /**
      * @symbol ?setColor\@Biome\@\@QEAAAEAV1\@H\@Z
      */
-    MCAPI class Biome& setColor(int);
+    MCAPI class Biome& setColor(int32_t);
     /**
      * @symbol ?setMapWaterColor\@Biome\@\@QEAAAEAV1\@H\@Z
      */
-    MCAPI class Biome& setMapWaterColor(int);
+    MCAPI class Biome& setMapWaterColor(int32_t);
     /**
      * @symbol ?setNoRain\@Biome\@\@QEAAAEAV1\@XZ
      */
@@ -195,7 +195,7 @@ public:
     /**
      * @symbol ?setOddColor\@Biome\@\@QEAAAEAV1\@H\@Z
      */
-    MCAPI class Biome& setOddColor(int);
+    MCAPI class Biome& setOddColor(int32_t);
     /**
      * @symbol
      * ?writePacketData\@Biome\@\@QEAAXAEAVCompoundTag\@\@AEAV?$TagRegistry\@U?$IDType\@UBiomeTagIDType\@\@\@\@U?$IDType\@UBiomeTagSetIDType\@\@\@\@\@\@\@Z

@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockState;
+namespace ScriptModuleMinecraft { class IScriptBlockProperty; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 // clang-format on
 
@@ -37,7 +38,7 @@ public:
      * ??0ScriptIntBlockProperty\@ScriptModuleMinecraft\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlockState\@\@V?$vector\@HV?$allocator\@H\@std\@\@\@3\@V?$StrongTypedObjectHandle\@VScriptBlockPermutation\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
      */
     MCAPI
-    ScriptIntBlockProperty(std::string, class BlockState const&, std::vector<int>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>);
+    ScriptIntBlockProperty(std::string, class BlockState const&, std::vector<int32_t>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>);
     /**
      * @symbol ??0ScriptIntBlockProperty\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
      */
@@ -45,7 +46,7 @@ public:
     /**
      * @symbol ?getState\@ScriptIntBlockProperty\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getState() const;
+    MCAPI class Scripting::Result<int32_t> getState() const;
     /**
      * @symbol ??4ScriptIntBlockProperty\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
@@ -54,7 +55,7 @@ public:
     /**
      * @symbol ?setState\@ScriptIntBlockProperty\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@H\@Z
      */
-    MCAPI class Scripting::Result<void> setState(int);
+    MCAPI class Scripting::Result<void> setState(int32_t);
     /**
      * @symbol
      * ?bind\@ScriptIntBlockProperty\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptIntBlockProperty\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ

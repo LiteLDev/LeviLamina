@@ -62,7 +62,7 @@ public:
     /**
      * @symbol ??0IntTag\@\@QEAA\@H\@Z
      */
-    MCAPI IntTag(int);
+    MCAPI IntTag(int32_t);
     /**
      * @symbol ??0IntTag\@\@QEAA\@XZ
      */

@@ -67,7 +67,7 @@ public:
     /**
      * @symbol ?getAbsoluteTime\@ScriptWorld\@ScriptModuleMinecraft\@\@QEBAHXZ
      */
-    MCAPI int getAbsoluteTime() const;
+    MCAPI int32_t getAbsoluteTime() const;
     /**
      * @symbol
      * ?getAfterEvents\@ScriptWorld\@ScriptModuleMinecraft\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptWorldAfterEvents\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
@@ -90,7 +90,7 @@ public:
     /**
      * @symbol ?getDay\@ScriptWorld\@ScriptModuleMinecraft\@\@QEBAHXZ
      */
-    MCAPI int getDay() const;
+    MCAPI int32_t getDay() const;
     /**
      * @symbol
      * ?getDimension\@ScriptWorld\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$StrongTypedObjectHandle\@VScriptDimension\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -133,7 +133,7 @@ public:
     /**
      * @symbol ?getTimeOfDay\@ScriptWorld\@ScriptModuleMinecraft\@\@QEBAHXZ
      */
-    MCAPI int getTimeOfDay() const;
+    MCAPI int32_t getTimeOfDay() const;
     /**
      * @symbol ??4ScriptWorld\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
@@ -190,7 +190,7 @@ public:
      * ?setTimeOfDay\@ScriptWorld\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@V?$variant\@HW4ScriptTimeOfDay\@ScriptModuleMinecraft\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<void>
-        setTimeOfDay(std::variant<int, enum class ScriptModuleMinecraft::ScriptTimeOfDay>);
+        setTimeOfDay(std::variant<int32_t, enum class ScriptModuleMinecraft::ScriptTimeOfDay>);
     /**
      * @symbol ?stopMusic\@ScriptWorld\@ScriptModuleMinecraft\@\@QEAAXXZ
      */

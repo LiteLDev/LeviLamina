@@ -37,15 +37,15 @@ public:
     /**
      * @symbol ?BlockBroken\@AchievementEventing\@Events\@Social\@\@QEAAXAEBVPlayer\@\@AEBVBlock\@\@HHG\@Z
      */
-    MCAPI void BlockBroken(class Player const&, class Block const&, int, int, unsigned short);
+    MCAPI void BlockBroken(class Player const&, class Block const&, int32_t, int32_t, uint16_t);
     /**
      * @symbol ?CaravanChanged\@AchievementEventing\@Events\@Social\@\@QEAAXAEAVMob\@\@H\@Z
      */
-    MCAPI void CaravanChanged(class Mob&, int);
+    MCAPI void CaravanChanged(class Mob&, int32_t);
     /**
      * @symbol ?ItemUsed\@AchievementEventing\@Events\@Social\@\@QEAAXAEBVPlayer\@\@AEBVItemDescriptor\@\@I\@Z
      */
-    MCAPI void ItemUsed(class Player const&, class ItemDescriptor const&, unsigned int);
+    MCAPI void ItemUsed(class Player const&, class ItemDescriptor const&, uint32_t);
     /**
      * @symbol ?JukeboxUsed\@AchievementEventing\@Events\@Social\@\@QEAAXAEBVPlayer\@\@AEBVItemDescriptor\@\@\@Z
      */
@@ -54,19 +54,19 @@ public:
      * @symbol
      * ?MobEffectChanged\@AchievementEventing\@Events\@Social\@\@QEAAXAEBVPlayer\@\@AEBVMobEffectInstance\@\@H\@Z
      */
-    MCAPI void MobEffectChanged(class Player const&, class MobEffectInstance const&, int);
+    MCAPI void MobEffectChanged(class Player const&, class MobEffectInstance const&, int32_t);
     /**
      * @symbol ?PlayerBounced\@AchievementEventing\@Events\@Social\@\@QEAAXAEBVPlayer\@\@AEBVBlock\@\@HH\@Z
      */
-    MCAPI void PlayerBounced(class Player const&, class Block const&, int, int);
+    MCAPI void PlayerBounced(class Player const&, class Block const&, int32_t, int32_t);
     /**
      * @symbol ?PlayerTeleported\@AchievementEventing\@Events\@Social\@\@QEAAXAEBVPlayer\@\@MHH\@Z
      */
-    MCAPI void PlayerTeleported(class Player const&, float, int, int);
+    MCAPI void PlayerTeleported(class Player const&, float, int32_t, int32_t);
     /**
      * @symbol ?PlayerTravelled\@AchievementEventing\@Events\@Social\@\@QEAAXAEBVPlayer\@\@MHH\@Z
      */
-    MCAPI void PlayerTravelled(class Player const&, float, int, int);
+    MCAPI void PlayerTravelled(class Player const&, float, int32_t, int32_t);
     /**
      * @symbol ??1AchievementEventing\@Events\@Social\@\@QEAA\@XZ
      */

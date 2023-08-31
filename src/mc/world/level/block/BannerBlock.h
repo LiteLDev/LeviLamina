@@ -217,7 +217,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@BannerBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -277,12 +277,12 @@ public:
      * @vftbl 192
      * @symbol ?getEntityResourceItem\@BannerBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlockActor\@\@H\@Z
      */
-    virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int) const;
+    virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int32_t) const;
     /**
      * @symbol
      * ??0BannerBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
-    MCAPI BannerBlock(std::string const&, int, bool);
+    MCAPI BannerBlock(std::string const&, int32_t, bool);
     /**
      * @symbol ?EAST_AABB\@BannerBlock\@\@2VAABB\@\@A
      */

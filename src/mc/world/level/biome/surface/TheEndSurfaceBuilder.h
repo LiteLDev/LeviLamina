@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
+class ISurfaceBuilder;
 // clang-format on
 
 namespace VanillaSurfaceBuilders {
@@ -31,7 +32,7 @@ public:
      * @vftbl 1
      * @symbol ?init\@TheEndSurfaceBuilder\@VanillaSurfaceBuilders\@\@UEAAXAEAVEntityContext\@\@I\@Z
      */
-    virtual void init(class EntityContext&, unsigned int);
+    virtual void init(class EntityContext&, uint32_t);
     /**
      * @vftbl 2
      * @symbol

@@ -43,7 +43,7 @@ public:
     /**
      * @symbol ?getCapeData\@ConnectionRequest\@\@QEBA?AV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<unsigned char> getCapeData() const;
+    MCAPI std::vector<uint8_t> getCapeData() const;
     /**
      * @symbol
      * ?getCapeId\@ConnectionRequest\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -52,11 +52,11 @@ public:
     /**
      * @symbol ?getCapeImageHeight\@ConnectionRequest\@\@QEBAGXZ
      */
-    MCAPI unsigned short getCapeImageHeight() const;
+    MCAPI uint16_t getCapeImageHeight() const;
     /**
      * @symbol ?getCapeImageWidth\@ConnectionRequest\@\@QEBAGXZ
      */
-    MCAPI unsigned short getCapeImageWidth() const;
+    MCAPI uint16_t getCapeImageWidth() const;
     /**
      * @symbol ?getCertificate\@ConnectionRequest\@\@QEBAPEBVCertificate\@\@XZ
      */
@@ -130,7 +130,7 @@ public:
     /**
      * @symbol ?getSkinData\@ConnectionRequest\@\@QEBA?AV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<unsigned char> getSkinData() const;
+    MCAPI std::vector<uint8_t> getSkinData() const;
     /**
      * @symbol
      * ?getSkinGeometry\@ConnectionRequest\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -148,11 +148,11 @@ public:
     /**
      * @symbol ?getSkinImageHeight\@ConnectionRequest\@\@QEBAGXZ
      */
-    MCAPI unsigned short getSkinImageHeight() const;
+    MCAPI uint16_t getSkinImageHeight() const;
     /**
      * @symbol ?getSkinImageWidth\@ConnectionRequest\@\@QEBAGXZ
      */
-    MCAPI unsigned short getSkinImageWidth() const;
+    MCAPI uint16_t getSkinImageWidth() const;
     /**
      * @symbol
      * ?getSkinResourcePatch\@ConnectionRequest\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ

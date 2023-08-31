@@ -76,7 +76,7 @@ public:
      * @symbol
      * ?onBlockDestructionStarted\@ScriptBlockEventListener\@ScriptModuleMinecraft\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual enum class EventResult onBlockDestructionStarted(class Player&, class BlockPos const&, unsigned char);
+    virtual enum class EventResult onBlockDestructionStarted(class Player&, class BlockPos const&, uint8_t);
     /**
      * @vftbl 7
      * @symbol __unk_vfn_7

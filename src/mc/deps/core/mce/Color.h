@@ -146,11 +146,11 @@ public:
     /**
      * @symbol ?toABGR\@Color\@mce\@\@QEBAHXZ
      */
-    MCAPI int toABGR() const;
+    MCAPI int32_t toABGR() const;
     /**
      * @symbol ?toARGB\@Color\@mce\@\@QEBAHXZ
      */
-    MCAPI int toARGB() const;
+    MCAPI int32_t toARGB() const;
     /**
      * @symbol
      * ?toHexString\@Color\@mce\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ

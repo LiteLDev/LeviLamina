@@ -90,7 +90,7 @@ public:
      * @vftbl 38
      * @symbol ?teleportTo\@SimulatedPlayer\@\@UEAAXAEBVVec3\@\@_NHH1\@Z
      */
-    virtual void teleportTo(class Vec3 const&, bool, int, int, bool);
+    virtual void teleportTo(class Vec3 const&, bool, int32_t, int32_t, bool);
     /**
      * @vftbl 55
      * @symbol __unk_vfn_55
@@ -307,7 +307,7 @@ public:
      * @vftbl 412
      * @symbol ?_getSpawnChunkLimit\@SimulatedPlayer\@\@MEBAHXZ
      */
-    virtual int _getSpawnChunkLimit() const;
+    virtual int32_t _getSpawnChunkLimit() const;
     /**
      * @vftbl 413
      * @symbol ?_updateChunkPublisherView\@SimulatedPlayer\@\@MEAAXAEBVVec3\@\@M\@Z
@@ -324,7 +324,7 @@ public:
      * ??0SimulatedPlayer\@\@QEAA\@AEAVLevel\@\@AEAVPacketSender\@\@AEAVNetworkSystem\@\@AEAVActiveTransfersManager\@Server\@ClientBlobCache\@\@W4GameType\@\@AEBVNetworkIdentifier\@\@W4SubClientId\@\@V?$function\@$$A6AXAEAVServerPlayer\@\@\@Z\@std\@\@VUUID\@mce\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VCertificate\@\@U?$default_delete\@VCertificate\@\@\@std\@\@\@std\@\@H_NAEAVEntityContext\@\@\@Z
      */
     MCAPI
-    SimulatedPlayer(class Level&, class PacketSender&, class NetworkSystem&, class ClientBlobCache::Server::ActiveTransfersManager&, enum class GameType, class NetworkIdentifier const&, enum class SubClientId, std::function<void(class ServerPlayer&)>, class mce::UUID, std::string const&, std::unique_ptr<class Certificate>, int, bool, class EntityContext&);
+    SimulatedPlayer(class Level&, class PacketSender&, class NetworkSystem&, class ClientBlobCache::Server::ActiveTransfersManager&, enum class GameType, class NetworkIdentifier const&, enum class SubClientId, std::function<void(class ServerPlayer&)>, class mce::UUID, std::string const&, std::unique_ptr<class Certificate>, int32_t, bool, class EntityContext&);
     /**
      * @symbol
      * ?getGameTestHelper\@SimulatedPlayer\@\@QEBA?AV?$NonOwnerPointer\@VBaseGameTestHelper\@gametest\@\@\@Bedrock\@\@XZ
@@ -435,7 +435,7 @@ public:
     /**
      * @symbol ?simulateSetItem\@SimulatedPlayer\@\@QEAA_NAEAVItemStack\@\@_NH\@Z
      */
-    MCAPI bool simulateSetItem(class ItemStack&, bool, int);
+    MCAPI bool simulateSetItem(class ItemStack&, bool, int32_t);
     /**
      * @symbol ?simulateStopDestroyingBlock\@SimulatedPlayer\@\@QEAAXXZ
      */
@@ -463,13 +463,13 @@ public:
     /**
      * @symbol ?simulateUseItemInSlot\@SimulatedPlayer\@\@QEAA_NH\@Z
      */
-    MCAPI bool simulateUseItemInSlot(int);
+    MCAPI bool simulateUseItemInSlot(int32_t);
     /**
      * @symbol
      * ?simulateUseItemInSlotOnBlock\@SimulatedPlayer\@\@QEAA_NHAEBVBlockPos\@\@W4ScriptFacing\@ScriptModuleMinecraft\@\@AEBVVec3\@\@\@Z
      */
     MCAPI bool
-    simulateUseItemInSlotOnBlock(int, class BlockPos const&, enum class ScriptModuleMinecraft::ScriptFacing, class Vec3 const&);
+    simulateUseItemInSlotOnBlock(int32_t, class BlockPos const&, enum class ScriptModuleMinecraft::ScriptFacing, class Vec3 const&);
     /**
      * @symbol
      * ?simulateUseItemOnBlock\@SimulatedPlayer\@\@QEAA_NAEAVItemStack\@\@AEBVBlockPos\@\@W4ScriptFacing\@ScriptModuleMinecraft\@\@AEBVVec3\@\@\@Z
@@ -485,7 +485,7 @@ public:
      * ?create\@SimulatedPlayer\@\@SAPEAV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlockPos\@\@V?$AutomaticID\@VDimension\@\@H\@\@V?$not_null\@V?$NonOwnerPointer\@VServerNetworkHandler\@\@\@Bedrock\@\@\@gsl\@\@0\@Z
      */
     MCAPI static class SimulatedPlayer*
-    create(std::string const&, class BlockPos const&, class AutomaticID<class Dimension, int>, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>, std::string const&);
+    create(std::string const&, class BlockPos const&, DimensionType, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>, std::string const&);
     /**
      * @symbol ?tryGetFromEntity\@SimulatedPlayer\@\@SAPEAV1\@AEAVEntityContext\@\@_N\@Z
      */

@@ -43,7 +43,7 @@ public:
     /**
      * @symbol ?getAmount\@ScriptContainerSlot\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getAmount() const;
+    MCAPI class Scripting::Result<int32_t> getAmount() const;
     /**
      * @symbol
      * ?getItem\@ScriptContainerSlot\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$optional\@V?$StrongTypedObjectHandle\@VScriptItemStack\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@\@Scripting\@\@XZ
@@ -68,7 +68,7 @@ public:
     /**
      * @symbol ?getMaxAmount\@ScriptContainerSlot\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getMaxAmount() const;
+    MCAPI class Scripting::Result<int32_t> getMaxAmount() const;
     /**
      * @symbol
      * ?getNameTag\@ScriptContainerSlot\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@Scripting\@\@XZ
@@ -112,7 +112,7 @@ public:
     /**
      * @symbol ?setAmount\@ScriptContainerSlot\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@H\@Z
      */
-    MCAPI class Scripting::Result<void> setAmount(int);
+    MCAPI class Scripting::Result<void> setAmount(int32_t);
     /**
      * @symbol
      * ?setCanDestroy\@ScriptContainerSlot\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEBV?$optional\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@std\@\@\@Z

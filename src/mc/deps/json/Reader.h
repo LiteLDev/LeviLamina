@@ -144,11 +144,11 @@ public:
     /**
      * @symbol ?decodeUnicodeCodePoint\@Reader\@Json\@\@AEAA_NAEAVToken\@12\@AEAPEBDPEBDAEAI\@Z
      */
-    MCAPI bool decodeUnicodeCodePoint(class Json::Reader::Token&, char const*&, char const*, unsigned int&);
+    MCAPI bool decodeUnicodeCodePoint(class Json::Reader::Token&, char const*&, char const*, uint32_t&);
     /**
      * @symbol ?decodeUnicodeEscapeSequence\@Reader\@Json\@\@AEAA_NAEAVToken\@12\@AEAPEBDPEBDAEAI\@Z
      */
-    MCAPI bool decodeUnicodeEscapeSequence(class Json::Reader::Token&, char const*&, char const*, unsigned int&);
+    MCAPI bool decodeUnicodeEscapeSequence(class Json::Reader::Token&, char const*&, char const*, uint32_t&);
     /**
      * @symbol
      * ?getLocationLineAndColumn\@Reader\@Json\@\@AEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEBD\@Z

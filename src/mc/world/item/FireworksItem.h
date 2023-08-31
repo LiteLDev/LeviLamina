@@ -67,7 +67,7 @@ public:
      * @vftbl 56
      * @symbol ?isDestructive\@FireworksItem\@\@UEBA_NH\@Z
      */
-    virtual bool isDestructive(int) const;
+    virtual bool isDestructive(int32_t) const;
     /**
      * @vftbl 60
      * @symbol
@@ -118,7 +118,7 @@ public:
      * @vftbl 85
      * @symbol ?dispense\@FireworksItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
+    virtual bool dispense(class BlockSource&, class Container&, int32_t, class Vec3 const&, uint8_t) const;
     /**
      * @vftbl 115
      * @symbol __unk_vfn_115
@@ -135,24 +135,24 @@ public:
      * ?_useOn\@FireworksItem\@\@UEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _useOn(class ItemStack&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
     /**
      * @symbol
      * ??0FireworksItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI FireworksItem(std::string const&, int);
+    MCAPI FireworksItem(std::string const&, int32_t);
     /**
      * @symbol
      * ?initFireworksRocketItem\@FireworksItem\@\@SAAEBVItemInstance\@\@AEAV2\@AEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@H\@Z
      */
     MCAPI static class ItemInstance const&
-    initFireworksRocketItem(class ItemInstance&, std::vector<class ItemInstance> const&, int);
+    initFireworksRocketItem(class ItemInstance&, std::vector<class ItemInstance> const&, int32_t);
     /**
      * @symbol
      * ?initFireworksRocketItem\@FireworksItem\@\@SAAEBVItemStack\@\@AEAV2\@AEBV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@H\@Z
      */
     MCAPI static class ItemStack const&
-    initFireworksRocketItem(class ItemStack&, std::vector<class ItemStack> const&, int);
+    initFireworksRocketItem(class ItemStack&, std::vector<class ItemStack> const&, int32_t);
     /**
      * @symbol
      * ?TAG_EXPLOSIONS\@FireworksItem\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B

@@ -38,7 +38,7 @@ public:
     /**
      * @symbol ?initializeNoise\@CappedSurfaceAttributes\@\@QEAAXI\@Z
      */
-    MCAPI void initializeNoise(unsigned int);
+    MCAPI void initializeNoise(uint32_t);
     /**
      * @symbol ??4CappedSurfaceAttributes\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */

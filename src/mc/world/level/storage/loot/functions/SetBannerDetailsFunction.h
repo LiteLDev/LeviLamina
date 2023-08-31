@@ -55,6 +55,6 @@ public:
      * ?_parseBannerPattern\@SetBannerDetailsFunction\@\@CAXAEAV?$vector\@U?$pair\@EW4ItemColor\@\@\@std\@\@V?$allocator\@U?$pair\@EW4ItemColor\@\@\@std\@\@\@2\@\@std\@\@AEBVValue\@Json\@\@\@Z
      */
     MCAPI static void
-    _parseBannerPattern(std::vector<std::pair<unsigned char, enum class ItemColor>>&, class Json::Value const&);
+    _parseBannerPattern(std::vector<std::pair<uint8_t, enum class ItemColor>>&, class Json::Value const&);
     // NOLINTEND
 };

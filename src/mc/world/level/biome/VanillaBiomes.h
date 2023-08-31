@@ -65,7 +65,7 @@ public:
     /**
      * @symbol ?mPlayerValidSpawns\@VanillaBiomes\@\@2V?$set\@HU?$less\@H\@std\@\@V?$allocator\@H\@2\@\@std\@\@A
      */
-    MCAPI static std::set<int> mPlayerValidSpawns;
+    MCAPI static std::set<int32_t> mPlayerValidSpawns;
     // NOLINTEND
 
     // private:
@@ -75,6 +75,6 @@ public:
      * ?addBiomeDimensionAttributeComponentHelper\@VanillaBiomes\@\@CAXAEAVBiomeRegistry\@\@AEBVHashedString\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
     MCAPI static void
-    addBiomeDimensionAttributeComponentHelper(class BiomeRegistry&, class HashedString const&, class AutomaticID<class Dimension, int>);
+    addBiomeDimensionAttributeComponentHelper(class BiomeRegistry&, class HashedString const&, DimensionType);
     // NOLINTEND
 };

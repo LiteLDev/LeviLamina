@@ -39,6 +39,6 @@ public:
     /**
      * @symbol ??0StructurePoolBlockPredicateAxisAlignedPosition\@\@QEAA\@MMHHE\@Z
      */
-    MCAPI StructurePoolBlockPredicateAxisAlignedPosition(float, float, int, int, unsigned char);
+    MCAPI StructurePoolBlockPredicateAxisAlignedPosition(float, float, int32_t, int32_t, uint8_t);
     // NOLINTEND
 };

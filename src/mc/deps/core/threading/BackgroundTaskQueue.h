@@ -34,7 +34,7 @@ public:
     /**
      * @symbol ?tryPop\@BackgroundTaskQueue\@\@QEAA?AV?$shared_ptr\@VBackgroundTaskBase\@\@\@std\@\@H\@Z
      */
-    MCAPI std::shared_ptr<class BackgroundTaskBase> tryPop(int);
+    MCAPI std::shared_ptr<class BackgroundTaskBase> tryPop(int32_t);
     /**
      * @symbol ??1BackgroundTaskQueue\@\@QEAA\@XZ
      */

@@ -35,7 +35,7 @@ public:
     /**
      * @symbol ?clearRun\@ScriptSystem\@ScriptModuleMinecraft\@\@QEAAXI\@Z
      */
-    MCAPI void clearRun(unsigned int);
+    MCAPI void clearRun(uint32_t);
     /**
      * @symbol
      * ?getSystemAfterEvents\@ScriptSystem\@ScriptModuleMinecraft\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
@@ -52,16 +52,16 @@ public:
      * @symbol
      * ?runInterval\@ScriptSystem\@ScriptModuleMinecraft\@\@QEAAIV?$Closure\@$$A6AXXZ$$V\@Scripting\@\@V?$optional\@I\@std\@\@\@Z
      */
-    MCAPI unsigned int runInterval(class Scripting::Closure<void(void)>, std::optional<unsigned int>);
+    MCAPI uint32_t runInterval(class Scripting::Closure<void(void)>, std::optional<uint32_t>);
     /**
      * @symbol ?runSafe\@ScriptSystem\@ScriptModuleMinecraft\@\@QEAAIV?$Closure\@$$A6AXXZ$$V\@Scripting\@\@\@Z
      */
-    MCAPI unsigned int runSafe(class Scripting::Closure<void(void)>);
+    MCAPI uint32_t runSafe(class Scripting::Closure<void(void)>);
     /**
      * @symbol
      * ?runTimeout\@ScriptSystem\@ScriptModuleMinecraft\@\@QEAAIV?$Closure\@$$A6AXXZ$$V\@Scripting\@\@V?$optional\@I\@std\@\@\@Z
      */
-    MCAPI unsigned int runTimeout(class Scripting::Closure<void(void)>, std::optional<unsigned int>);
+    MCAPI uint32_t runTimeout(class Scripting::Closure<void(void)>, std::optional<uint32_t>);
     /**
      * @symbol ??1ScriptSystem\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */

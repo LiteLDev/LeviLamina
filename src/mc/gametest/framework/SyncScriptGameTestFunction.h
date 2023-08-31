@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleGameTest { class BaseScriptGameTestFunction; }
 namespace ScriptModuleGameTest { class ScriptGameTestHelper; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace gametest { class BaseGameTestHelper; }

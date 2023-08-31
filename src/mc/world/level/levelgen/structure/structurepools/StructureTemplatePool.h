@@ -17,7 +17,7 @@ public:
      * ??0StructureTemplatePool\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0AEAV?$vector\@U?$pair\@PEBVStructurePoolElement\@\@H\@std\@\@V?$allocator\@U?$pair\@PEBVStructurePoolElement\@\@H\@std\@\@\@2\@\@2\@\@Z
      */
     MCAPI
-    StructureTemplatePool(std::string, std::string, std::vector<std::pair<class StructurePoolElement const*, int>>&);
+    StructureTemplatePool(std::string, std::string, std::vector<std::pair<class StructurePoolElement const*, int32_t>>&);
     /**
      * @symbol
      * ?getFallback\@StructureTemplatePool\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ

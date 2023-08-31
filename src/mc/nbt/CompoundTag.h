@@ -139,7 +139,7 @@ public:
     /**
      * @symbol ?getByte\@CompoundTag\@\@QEBAEV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI unsigned char getByte(std::string_view) const;
+    MCAPI uint8_t getByte(std::string_view) const;
     /**
      * @symbol
      * ?getByteArray\@CompoundTag\@\@QEBAAEBUTagMemoryChunk\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
@@ -165,7 +165,7 @@ public:
     /**
      * @symbol ?getInt\@CompoundTag\@\@QEBAHV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI int getInt(std::string_view) const;
+    MCAPI int32_t getInt(std::string_view) const;
     /**
      * @symbol ?getInt64\@CompoundTag\@\@QEBA_JV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
@@ -201,7 +201,7 @@ public:
     /**
      * @symbol ?getShort\@CompoundTag\@\@QEBAFV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI short getShort(std::string_view) const;
+    MCAPI int16_t getShort(std::string_view) const;
     /**
      * @symbol
      * ?getShortTag\@CompoundTag\@\@QEBAPEBVShortTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
@@ -244,7 +244,7 @@ public:
      * @symbol
      * ?putByte\@CompoundTag\@\@QEAAAEAEV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@E\@Z
      */
-    MCAPI unsigned char& putByte(std::string, unsigned char);
+    MCAPI uint8_t& putByte(std::string, uint8_t);
     /**
      * @symbol
      * ?putByteArray\@CompoundTag\@\@QEAAAEAUTagMemoryChunk\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@U2\@\@Z
@@ -269,7 +269,7 @@ public:
      * @symbol
      * ?putInt\@CompoundTag\@\@QEAAAEAHV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI int& putInt(std::string, int);
+    MCAPI int32_t& putInt(std::string, int32_t);
     /**
      * @symbol
      * ?putInt64\@CompoundTag\@\@QEAAAEA_JV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_J\@Z
@@ -279,7 +279,7 @@ public:
      * @symbol
      * ?putShort\@CompoundTag\@\@QEAAAEAFV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@F\@Z
      */
-    MCAPI short& putShort(std::string, short);
+    MCAPI int16_t& putShort(std::string, int16_t);
     /**
      * @symbol
      * ?putString\@CompoundTag\@\@QEAAAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V23\@0\@Z

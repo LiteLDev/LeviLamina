@@ -43,7 +43,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@PistonBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -143,7 +143,7 @@ public:
      * @vftbl 57
      * @symbol ?isValidAuxValue\@PistonBlock\@\@UEBA_NH\@Z
      */
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
@@ -163,12 +163,12 @@ public:
      * @vftbl 66
      * @symbol ?shouldConnectToRedstone\@PistonBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 75
      * @symbol ?onRedstoneUpdate\@PistonBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
-    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int32_t, bool) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -209,7 +209,7 @@ public:
      * @symbol ?getPlacementBlock\@PistonBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -239,12 +239,12 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@PistonBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 146
      * @symbol ?getMappedFace\@PistonBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
-    virtual unsigned char getMappedFace(unsigned char, class Block const&) const;
+    virtual uint8_t getMappedFace(uint8_t, class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -304,7 +304,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@PistonBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PISTONBLOCK
     /**
      * @symbol ?pushesUpFallingBlocks\@PistonBlock\@\@UEBA_NXZ
@@ -315,11 +315,11 @@ public:
      * @symbol
      * ??0PistonBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4Type\@0\@\@Z
      */
-    MCAPI PistonBlock(std::string const&, int, enum class PistonBlock::Type);
+    MCAPI PistonBlock(std::string const&, int32_t, enum class PistonBlock::Type);
     /**
      * @symbol ?getFacingDir\@PistonBlock\@\@SAAEBVBlockPos\@\@E\@Z
      */
-    MCAPI static class BlockPos const& getFacingDir(unsigned char);
+    MCAPI static class BlockPos const& getFacingDir(uint8_t);
     // NOLINTEND
 
 private:

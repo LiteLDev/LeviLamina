@@ -139,7 +139,7 @@ public:
     /**
      * @symbol ?checkLicense\@AppPlatform\@\@UEAAHXZ
      */
-    MCVAPI int checkLicense();
+    MCVAPI int32_t checkLicense();
     /**
      * @symbol ?collectGraphicsHardwareDetails\@AppPlatform\@\@UEAAXXZ
      */
@@ -167,7 +167,7 @@ public:
     /**
      * @symbol ?createUserInput\@AppPlatform\@\@UEAAXH\@Z
      */
-    MCVAPI void createUserInput(int);
+    MCVAPI void createUserInput(int32_t);
     /**
      * @symbol ?createUserInput\@AppPlatform\@\@UEAAXXZ
      */
@@ -243,7 +243,7 @@ public:
     /**
      * @symbol ?getDefaultNetworkMaxPlayers\@AppPlatform\@\@UEBAHXZ
      */
-    MCVAPI int getDefaultNetworkMaxPlayers() const;
+    MCVAPI int32_t getDefaultNetworkMaxPlayers() const;
     /**
      * @symbol ?getDefaultSafeZoneScaleAll\@AppPlatform\@\@UEBAMXZ
      */
@@ -271,15 +271,15 @@ public:
     /**
      * @symbol ?getDisplayHeight\@AppPlatform\@\@UEAAHXZ
      */
-    MCVAPI int getDisplayHeight();
+    MCVAPI int32_t getDisplayHeight();
     /**
      * @symbol ?getDisplayWidth\@AppPlatform\@\@UEAAHXZ
      */
-    MCVAPI int getDisplayWidth();
+    MCVAPI int32_t getDisplayWidth();
     /**
      * @symbol ?getDpi\@AppPlatform\@\@UEBAHXZ
      */
-    MCVAPI int getDpi() const;
+    MCVAPI int32_t getDpi() const;
     /**
      * @symbol
      * ?getEdition\@AppPlatform\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -350,19 +350,19 @@ public:
     /**
      * @symbol ?getMaxLDBFilesOpen\@AppPlatform\@\@UEBAHXZ
      */
-    MCVAPI int getMaxLDBFilesOpen() const;
+    MCVAPI int32_t getMaxLDBFilesOpen() const;
     /**
      * @symbol ?getMaxSimRadiusInChunks\@AppPlatform\@\@UEBAHXZ
      */
-    MCVAPI int getMaxSimRadiusInChunks() const;
+    MCVAPI int32_t getMaxSimRadiusInChunks() const;
     /**
      * @symbol ?getMaxSimultaneousDownloads\@AppPlatform\@\@UEBAHXZ
      */
-    MCVAPI int getMaxSimultaneousDownloads() const;
+    MCVAPI int32_t getMaxSimultaneousDownloads() const;
     /**
      * @symbol ?getMaxSimultaneousServiceRequests\@AppPlatform\@\@UEBAIXZ
      */
-    MCVAPI unsigned int getMaxSimultaneousServiceRequests() const;
+    MCVAPI uint32_t getMaxSimultaneousServiceRequests() const;
     /**
      * @symbol ?getMaximumUsedMemory\@AppPlatform\@\@UEAA_KXZ
      */
@@ -389,7 +389,7 @@ public:
     /**
      * @symbol ?getNumberOfParticleFramesToInterpolate\@AppPlatform\@\@UEBAHXZ
      */
-    MCVAPI int getNumberOfParticleFramesToInterpolate() const;
+    MCVAPI int32_t getNumberOfParticleFramesToInterpolate() const;
     /**
      * @symbol ?getOSVersion\@AppPlatform\@\@UEBA?AW4OsVersion\@\@XZ
      */
@@ -434,12 +434,12 @@ public:
     /**
      * @symbol ?getPlatformDpi\@AppPlatform\@\@EEBAHXZ
      */
-    MCVAPI int getPlatformDpi() const;
+    MCVAPI int32_t getPlatformDpi() const;
     /**
      * @symbol
      * ?getPlatformStringVar\@AppPlatform\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCVAPI std::string getPlatformStringVar(int);
+    MCVAPI std::string getPlatformStringVar(int32_t);
     /**
      * @symbol ?getPlatformTTSEnabled\@AppPlatform\@\@UEBA_NXZ
      */
@@ -464,11 +464,11 @@ public:
     /**
      * @symbol ?getScreenHeight\@AppPlatform\@\@UEBAHXZ
      */
-    MCVAPI int getScreenHeight() const;
+    MCVAPI int32_t getScreenHeight() const;
     /**
      * @symbol ?getScreenWidth\@AppPlatform\@\@UEBAHXZ
      */
-    MCVAPI int getScreenWidth() const;
+    MCVAPI int32_t getScreenWidth() const;
     /**
      * @symbol
      * ?getSecureStorage\@AppPlatform\@\@UEAA?AV?$unique_ptr\@VSecureStorage\@\@U?$default_delete\@VSecureStorage\@\@\@std\@\@\@std\@\@XZ
@@ -513,7 +513,7 @@ public:
     /**
      * @symbol ?getUserInputStatus\@AppPlatform\@\@UEAAHXZ
      */
-    MCVAPI int getUserInputStatus();
+    MCVAPI int32_t getUserInputStatus();
     /**
      * @symbol
      * ?getUserStorageRootPath\@AppPlatform\@\@UEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
@@ -535,7 +535,7 @@ public:
     /**
      * @symbol ?handlePlatformSpecificCommerceError\@AppPlatform\@\@UEAAXI\@Z
      */
-    MCVAPI void handlePlatformSpecificCommerceError(unsigned int);
+    MCVAPI void handlePlatformSpecificCommerceError(uint32_t);
     /**
      * @symbol ?hasAssetFile\@AppPlatform\@\@UEAA_NAEBVPath\@Core\@\@\@Z
      */
@@ -722,7 +722,7 @@ public:
     /**
      * @symbol ?maxFileDataRequestConcurrency\@AppPlatform\@\@UEBAIXZ
      */
-    MCVAPI unsigned int maxFileDataRequestConcurrency() const;
+    MCVAPI uint32_t maxFileDataRequestConcurrency() const;
     /**
      * @symbol ?minimizeBackgroundDownloads\@AppPlatform\@\@UEBA_NXZ
      */
@@ -820,7 +820,7 @@ public:
     /**
      * @symbol ?setDpi\@AppPlatform\@\@UEAAXH\@Z
      */
-    MCVAPI void setDpi(int);
+    MCVAPI void setDpi(int32_t);
     /**
      * @symbol ?setFullscreenMode\@AppPlatform\@\@UEAAXW4FullscreenMode\@\@\@Z
      */
@@ -840,7 +840,7 @@ public:
     /**
      * @symbol ?setScreenSize\@AppPlatform\@\@UEAAXHH\@Z
      */
-    MCVAPI void setScreenSize(int, int);
+    MCVAPI void setScreenSize(int32_t, int32_t);
     /**
      * @symbol
      * ?setSecureStorageKey\@AppPlatform\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSecureStorageKey\@\@\@Z
@@ -865,7 +865,7 @@ public:
     /**
      * @symbol ?setWindowSize\@AppPlatform\@\@UEAAXHH\@Z
      */
-    MCVAPI void setWindowSize(int, int);
+    MCVAPI void setWindowSize(int32_t, int32_t);
     /**
      * @symbol
      * ?setWindowText\@AppPlatform\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -886,7 +886,7 @@ public:
     /**
      * @symbol ?showDialog\@AppPlatform\@\@UEAAXH\@Z
      */
-    MCVAPI void showDialog(int);
+    MCVAPI void showDialog(int32_t);
     /**
      * @symbol ?showPlatformEmptyStoreDialog\@AppPlatform\@\@UEAAX$$QEAV?$function\@$$A6AX_N\@Z\@std\@\@\@Z
      */
@@ -990,7 +990,7 @@ public:
     /**
      * @symbol ?vibrate\@AppPlatform\@\@UEAAXH\@Z
      */
-    MCVAPI void vibrate(int);
+    MCVAPI void vibrate(int32_t);
     /**
      * @symbol __unk_destructor_-1
      */

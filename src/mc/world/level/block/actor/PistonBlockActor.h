@@ -167,7 +167,7 @@ public:
     /**
      * @symbol ?_attachedBlockWalker\@PistonBlockActor\@\@AEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@EE\@Z
      */
-    MCAPI bool _attachedBlockWalker(class BlockSource&, class BlockPos const&, unsigned char, unsigned char);
+    MCAPI bool _attachedBlockWalker(class BlockSource&, class BlockPos const&, uint8_t, uint8_t);
     /**
      * @symbol ?_checkAttachedBlocks\@PistonBlockActor\@\@AEAA_NAEAVBlockSource\@\@\@Z
      */
@@ -180,7 +180,7 @@ public:
     /**
      * @symbol ?_handleSlimeConnections\@PistonBlockActor\@\@AEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@EE\@Z
      */
-    MCAPI bool _handleSlimeConnections(class BlockSource&, class BlockPos const&, unsigned char, unsigned char);
+    MCAPI bool _handleSlimeConnections(class BlockSource&, class BlockPos const&, uint8_t, uint8_t);
     /**
      * @symbol ?_hasBlockAttached\@PistonBlockActor\@\@AEAA_NAEBVBlockPos\@\@\@Z
      */
@@ -193,13 +193,8 @@ public:
      * @symbol
      * ?_moveCollidedEntitiesHelper\@PistonBlockActor\@\@AEAAXAEAVBlockSource\@\@AEBVAABB\@\@AEBVBlockPos\@\@PEAVActor\@\@I\@Z
      */
-    MCAPI void _moveCollidedEntitiesHelper(
-        class BlockSource&,
-        class AABB const&,
-        class BlockPos const&,
-        class Actor*,
-        unsigned int
-    );
+    MCAPI void
+    _moveCollidedEntitiesHelper(class BlockSource&, class AABB const&, class BlockPos const&, class Actor*, uint32_t);
     /**
      * @symbol ?_sortAttachedBlocks\@PistonBlockActor\@\@AEAAXAEAVBlockSource\@\@\@Z
      */

@@ -189,7 +189,7 @@ public:
      * @symbol ?getPlacementBlock\@PinkPetalsBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -219,7 +219,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@PinkPetalsBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -259,7 +259,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@PinkPetalsBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -279,7 +279,7 @@ public:
      * @vftbl 186
      * @symbol ?getResourceCount\@PinkPetalsBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PINKPETALSBLOCK
     /**
      * @symbol ?canBeDestroyedByWaterSpread\@PinkPetalsBlock\@\@UEBA_NXZ
@@ -298,7 +298,7 @@ public:
      * @symbol
      * ??0PinkPetalsBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI PinkPetalsBlock(std::string const&, int);
+    MCAPI PinkPetalsBlock(std::string const&, int32_t);
     /**
      * @symbol ?tryGrow\@PinkPetalsBlock\@\@SA_NAEAVBlockSource\@\@VBlockPos\@\@\@Z
      */

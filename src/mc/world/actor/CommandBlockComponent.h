@@ -26,7 +26,7 @@ public:
     /**
      * @symbol ?decrementTickCount\@CommandBlockComponent\@\@QEAAHXZ
      */
-    MCAPI int decrementTickCount();
+    MCAPI int32_t decrementTickCount();
     /**
      * @symbol ?getBaseCommandBlock\@CommandBlockComponent\@\@QEAAAEAVBaseCommandBlock\@\@XZ
      */
@@ -34,7 +34,7 @@ public:
     /**
      * @symbol ?getCurrentTickCount\@CommandBlockComponent\@\@QEBAHXZ
      */
-    MCAPI int getCurrentTickCount() const;
+    MCAPI int32_t getCurrentTickCount() const;
     /**
      * @symbol ?getTicking\@CommandBlockComponent\@\@QEBA_NXZ
      */
@@ -47,7 +47,7 @@ public:
      * @symbol
      * ?onCommandBlockUpdate\@CommandBlockComponent\@\@QEAAXAEAVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_NV34\@H2\@Z
      */
-    MCAPI void onCommandBlockUpdate(class Actor&, std::string const&, bool, std::string, int, bool);
+    MCAPI void onCommandBlockUpdate(class Actor&, std::string const&, bool, std::string, int32_t, bool);
     /**
      * @symbol ??4CommandBlockComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */

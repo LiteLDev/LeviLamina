@@ -59,7 +59,7 @@ public:
     /**
      * @symbol ?getEnchantSlot\@ScriptItemEnchantments\@ScriptModuleMinecraft\@\@QEBAHXZ
      */
-    MCAPI int getEnchantSlot() const;
+    MCAPI int32_t getEnchantSlot() const;
     /**
      * @symbol
      * ?getEnchantment\@ScriptItemEnchantments\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@V?$optional\@V?$StrongTypedObjectHandle\@UScriptItemEnchantmentInstance\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@\@Scripting\@\@V?$variant\@UScriptItemEnchantmentType\@ScriptModuleMinecraft\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@Z
@@ -75,7 +75,7 @@ public:
      * @symbol
      * ?hasEnchantment\@ScriptItemEnchantments\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@V?$variant\@UScriptItemEnchantmentType\@ScriptModuleMinecraft\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI class Scripting::Result<int>
+    MCAPI class Scripting::Result<int32_t>
         hasEnchantment(std::variant<struct ScriptModuleMinecraft::ScriptItemEnchantmentType, std::string>) const;
     /**
      * @symbol ??4ScriptItemEnchantments\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z

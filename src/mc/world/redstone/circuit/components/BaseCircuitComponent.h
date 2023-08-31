@@ -39,22 +39,22 @@ public:
      * @vftbl 1
      * @symbol ?getStrength\@BaseCircuitComponent\@\@UEBAHXZ
      */
-    virtual int getStrength() const;
+    virtual int32_t getStrength() const;
     /**
      * @vftbl 2
      * @symbol ?getDirection\@BaseCircuitComponent\@\@UEBAHXZ
      */
-    virtual int getDirection() const;
+    virtual int32_t getDirection() const;
     /**
      * @vftbl 3
      * @symbol ?setStrength\@BaseCircuitComponent\@\@UEAAXH\@Z
      */
-    virtual void setStrength(int);
+    virtual void setStrength(int32_t);
     /**
      * @vftbl 4
      * @symbol ?setDirection\@BaseCircuitComponent\@\@UEAAXE\@Z
      */
-    virtual void setDirection(unsigned char);
+    virtual void setDirection(uint8_t);
     /**
      * @vftbl 5
      * @symbol ?setConsumePowerAnyDirection\@BaseCircuitComponent\@\@UEAAX_N\@Z
@@ -90,7 +90,7 @@ public:
      * @symbol
      * ?addSource\@BaseCircuitComponent\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEAHAEA_N\@Z
      */
-    virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
+    virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int32_t&, bool&);
     /**
      * @vftbl 12
      * @symbol
@@ -190,6 +190,6 @@ public:
     /**
      * @symbol ?trackPowerSource\@BaseCircuitComponent\@\@IEAA_NAEBVCircuitTrackingInfo\@\@H_NH1\@Z
      */
-    MCAPI bool trackPowerSource(class CircuitTrackingInfo const&, int, bool, int, bool);
+    MCAPI bool trackPowerSource(class CircuitTrackingInfo const&, int32_t, bool, int32_t, bool);
     // NOLINTEND
 };

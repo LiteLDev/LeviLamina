@@ -53,6 +53,6 @@ public:
      * @symbol ?_radialSearch\@SpawnClimateFinder\@\@AEBA?AUResultDetails\@1\@U21\@HH\@Z
      */
     MCAPI struct SpawnClimateFinder::ResultDetails
-    _radialSearch(struct SpawnClimateFinder::ResultDetails, int, int) const;
+        _radialSearch(struct SpawnClimateFinder::ResultDetails, int32_t, int32_t) const;
     // NOLINTEND
 };

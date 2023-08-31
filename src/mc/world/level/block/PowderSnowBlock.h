@@ -78,12 +78,12 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@PowderSnowBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 28
      * @symbol ?canConnect\@PowderSnowBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
-    virtual bool canConnect(class Block const&, unsigned char, class Block const&) const;
+    virtual bool canConnect(class Block const&, uint8_t, class Block const&) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -322,7 +322,7 @@ public:
      * @symbol
      * ??0PowderSnowBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI PowderSnowBlock(std::string const&, int, class Material const&);
+    MCAPI PowderSnowBlock(std::string const&, int32_t, class Material const&);
     /**
      * @symbol ?canWalkOnTop\@PowderSnowBlock\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
      */

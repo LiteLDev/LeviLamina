@@ -34,7 +34,7 @@ public:
      * @vftbl 3
      * @symbol ?getAvailableSetCount\@ContainerValidationBase\@\@UEBAHHAEBVItemStackBase\@\@\@Z
      */
-    virtual int getAvailableSetCount(int, class ItemStackBase const&) const;
+    virtual int32_t getAvailableSetCount(int32_t, class ItemStackBase const&) const;
     /**
      * @vftbl 4
      * @symbol __unk_vfn_4
@@ -60,7 +60,8 @@ public:
      * @symbol
      * ?isItemAllowedInSlot\@PreviewContainerValidation\@\@UEBA_NAEBVContainerScreenContext\@\@HAEBVItemStackBase\@\@H\@Z
      */
-    MCVAPI bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    MCVAPI bool
+    isItemAllowedInSlot(class ContainerScreenContext const&, int32_t, class ItemStackBase const&, int32_t) const;
     /**
      * @symbol ?isItemAllowedToAdd\@PreviewContainerValidation\@\@UEBA_NAEBVItemStack\@\@\@Z
      */
@@ -69,7 +70,7 @@ public:
      * @symbol
      * ?isValidSlotForContainer\@PreviewContainerValidation\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
      */
-    MCVAPI bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
+    MCVAPI bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int32_t) const;
 #endif
     // NOLINTEND
 };

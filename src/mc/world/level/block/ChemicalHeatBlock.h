@@ -235,7 +235,7 @@ public:
      * @vftbl 178
      * @symbol ?getExtraRenderLayers\@ChemicalHeatBlock\@\@UEBAHXZ
      */
-    virtual int getExtraRenderLayers() const;
+    virtual int32_t getExtraRenderLayers() const;
     /**
      * @vftbl 183
      * @symbol __unk_vfn_183
@@ -245,7 +245,7 @@ public:
      * @symbol
      * ??0ChemicalHeatBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI ChemicalHeatBlock(std::string const&, int);
+    MCAPI ChemicalHeatBlock(std::string const&, int32_t);
     // NOLINTEND
 
     // private:

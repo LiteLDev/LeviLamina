@@ -95,7 +95,7 @@ public:
     /**
      * @symbol ?getInstrumentIndex\@MusicBlockActor\@\@SA?AV?$optional\@H\@std\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI static std::optional<int> getInstrumentIndex(class BlockSource&, class BlockPos const&);
+    MCAPI static std::optional<int32_t> getInstrumentIndex(class BlockSource&, class BlockPos const&);
     // NOLINTEND
 
     // private:
@@ -103,6 +103,6 @@ public:
     /**
      * @symbol ?_getInstrumentIndexForBlock\@MusicBlockActor\@\@CAHAEBVBlockLegacy\@\@\@Z
      */
-    MCAPI static int _getInstrumentIndexForBlock(class BlockLegacy const&);
+    MCAPI static int32_t _getInstrumentIndexForBlock(class BlockLegacy const&);
     // NOLINTEND
 };

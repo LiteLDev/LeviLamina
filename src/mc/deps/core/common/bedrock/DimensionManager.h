@@ -12,6 +12,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
 namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
@@ -36,7 +37,7 @@ public:
      * ??0DimensionManager\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VIDimensionFactory\@\@\@Bedrock\@\@\@gsl\@\@V?$optional\@VDimensionDefinitionGroup\@\@\@std\@\@\@Z
      */
     MCAPI
-        DimensionManager(class gsl::not_null<class Bedrock::NonOwnerPointer<class IDimensionFactory>>, std::optional<class DimensionDefinitionGroup>);
+    DimensionManager(class gsl::not_null<class Bedrock::NonOwnerPointer<class IDimensionFactory>>, std::optional<class DimensionDefinitionGroup>);
     /**
      * @symbol ?forEachDimension\@DimensionManager\@\@QEAAXV?$function\@$$A6A_NAEAVDimension\@\@\@Z\@std\@\@\@Z
      */
@@ -49,8 +50,7 @@ public:
      * @symbol
      * ?getDimension\@DimensionManager\@\@QEBA?AV?$WeakRefT\@U?$SharePtrRefTraits\@VDimension\@\@\@\@\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>>
-        getDimension(class AutomaticID<class Dimension, int>) const;
+    MCAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>> getDimension(DimensionType) const;
     /**
      * @symbol
      * ?getDimensionDefinition\@DimensionManager\@\@QEBA?AV?$optional\@UDimensionDefinition\@DimensionDefinitionGroup\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
@@ -66,8 +66,7 @@ public:
      * @symbol
      * ?getOrCreateDimension\@DimensionManager\@\@QEAA?AV?$WeakRefT\@U?$SharePtrRefTraits\@VDimension\@\@\@\@\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>>
-        getOrCreateDimension(class AutomaticID<class Dimension, int>);
+    MCAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>> getOrCreateDimension(DimensionType);
     /**
      * @symbol
      * ?getRandomDimension\@DimensionManager\@\@QEAA?AV?$WeakRefT\@U?$SharePtrRefTraits\@VDimension\@\@\@\@\@\@AEAVRandom\@\@\@Z

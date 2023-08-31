@@ -31,7 +31,7 @@ public:
      * @vftbl 9
      * @symbol ?_genMaskingKey\@RakWebSocketClient\@\@MEBAIXZ
      */
-    virtual unsigned int _genMaskingKey() const;
+    virtual uint32_t _genMaskingKey() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKETCLIENT
     /**
      * @symbol __unk_destructor_-1

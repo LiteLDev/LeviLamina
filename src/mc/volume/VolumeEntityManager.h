@@ -8,6 +8,11 @@
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/world/AutomaticID.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
 class VolumeEntityManager : public ::Bedrock::EnableNonOwnerReferences {
 
 public:
@@ -32,8 +37,7 @@ public:
      * @symbol
      * ?getVolumeInstances\@VolumeEntityManager\@\@QEBAAEBV?$vector\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@V?$allocator\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@\@std\@\@\@std\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const&
-          getVolumeInstances(class AutomaticID<class Dimension, int>) const;
+    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const& getVolumeInstances(DimensionType) const;
     /**
      * @symbol ?registerComponentNetRelevancy\@VolumeEntityManager\@\@SAXAEAVComponentNetRelevancyRegistry\@\@\@Z
      */

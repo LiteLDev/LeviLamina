@@ -11,6 +11,7 @@
 // clang-format off
 class Attribute;
 class WeakEntityRef;
+namespace ScriptModuleMinecraft { class ScriptActorComponent; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 

@@ -71,6 +71,6 @@ private:
     /**
      * @symbol ?SITTING_SCANNING_IDLE_TICKS\@DragonScanningGoal\@\@0HA
      */
-    MCAPI static int SITTING_SCANNING_IDLE_TICKS;
+    MCAPI static int32_t SITTING_SCANNING_IDLE_TICKS;
     // NOLINTEND
 };

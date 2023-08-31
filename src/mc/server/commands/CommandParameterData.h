@@ -45,9 +45,9 @@ public:
         enum class CommandParameterDataType            paramType,
         char const*                                    enumName,
         char const*                                    postFix,
-        int                                            offset,
+        int32_t                                            offset,
         bool                                           optional,
-        int                                            flagOffset
+        int32_t                                            flagOffset
     );
     /**
      * @symbol ?addOptions\@CommandParameterData\@\@QEAAAEAV1\@W4CommandParameterOption\@\@\@Z

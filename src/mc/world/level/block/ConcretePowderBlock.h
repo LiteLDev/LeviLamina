@@ -136,7 +136,7 @@ public:
      * @vftbl 57
      * @symbol ?isValidAuxValue\@ConcretePowderBlock\@\@UEBA_NH\@Z
      */
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
@@ -268,7 +268,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@ConcretePowderBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@ConcretePowderBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -294,7 +294,7 @@ public:
      * @symbol
      * ??0ConcretePowderBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI ConcretePowderBlock(std::string const&, int);
+    MCAPI ConcretePowderBlock(std::string const&, int32_t);
     // NOLINTEND
 
     // private:

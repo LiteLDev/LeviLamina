@@ -113,17 +113,17 @@ public:
      * @vftbl 133
      * @symbol ?_calculatePlacePos\@HangingSignItem\@\@EEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
-    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
+    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, uint8_t&, class BlockPos&) const;
     /**
      * @vftbl 136
      * @symbol ?getBlockToPlace\@HangingSignItem\@\@MEBAPEBVBlock\@\@EAEBVActor\@\@VBlockPos\@\@\@Z
      */
-    virtual class Block const* getBlockToPlace(unsigned char, class Actor const&, class BlockPos) const;
+    virtual class Block const* getBlockToPlace(uint8_t, class Actor const&, class BlockPos) const;
     /**
      * @symbol
      * ??0HangingSignItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4SignType\@SignBlock\@\@\@Z
      */
-    MCAPI HangingSignItem(std::string const&, int, enum class SignBlock::SignType);
+    MCAPI HangingSignItem(std::string const&, int32_t, enum class SignBlock::SignType);
     // NOLINTEND
 
     // private:
@@ -132,11 +132,10 @@ public:
      * @symbol ?_getCeilingHangingSignBlock\@HangingSignItem\@\@AEBAPEBVBlock\@\@AEBVActor\@\@AEBEAEBVBlockPos\@\@\@Z
      */
     MCAPI class Block const*
-    _getCeilingHangingSignBlock(class Actor const&, unsigned char const&, class BlockPos const&) const;
+    _getCeilingHangingSignBlock(class Actor const&, uint8_t const&, class BlockPos const&) const;
     /**
      * @symbol ?_getWallHangingSignBlock\@HangingSignItem\@\@AEBAPEBVBlock\@\@AEBVActor\@\@AEBEAEBVBlockPos\@\@\@Z
      */
-    MCAPI class Block const*
-    _getWallHangingSignBlock(class Actor const&, unsigned char const&, class BlockPos const&) const;
+    MCAPI class Block const* _getWallHangingSignBlock(class Actor const&, uint8_t const&, class BlockPos const&) const;
     // NOLINTEND
 };

@@ -39,7 +39,7 @@ public:
      * ?_fillArea\@OceanMixerOperationNode\@\@MEBAXAEAV?$WorkingData\@PEAVBiome\@\@PEAV1\@\@OperationNodeDetails\@\@AEBVPos2d\@\@1HV?$OperationGraphResult\@W4BiomeTemperatureCategory\@\@\@\@\@Z
      */
     virtual void
-    _fillArea(class OperationNodeDetails::WorkingData<class Biome*, class Biome*>&, class Pos2d const&, class Pos2d const&, int, class OperationGraphResult<enum class BiomeTemperatureCategory>)
+    _fillArea(class OperationNodeDetails::WorkingData<class Biome*, class Biome*>&, class Pos2d const&, class Pos2d const&, int32_t, class OperationGraphResult<enum class BiomeTemperatureCategory>)
         const;
     /**
      * @vftbl 4
@@ -51,6 +51,6 @@ public:
      * ??0OceanMixerOperationNode\@\@QEAA\@IAEAV?$shared_ptr\@V?$OperationNode\@PEAVBiome\@\@VPos2d\@\@\@\@\@std\@\@AEAV?$shared_ptr\@V?$OperationNode\@W4BiomeTemperatureCategory\@\@VPos2d\@\@\@\@\@2\@AEBVBiomeRegistry\@\@AEAVBiome\@\@3\@Z
      */
     MCAPI
-    OceanMixerOperationNode(unsigned int, std::shared_ptr<class OperationNode<class Biome*, class Pos2d>>&, std::shared_ptr<class OperationNode<enum class BiomeTemperatureCategory, class Pos2d>>&, class BiomeRegistry const&, class Biome&, class Biome&);
+    OceanMixerOperationNode(uint32_t, std::shared_ptr<class OperationNode<class Biome*, class Pos2d>>&, std::shared_ptr<class OperationNode<enum class BiomeTemperatureCategory, class Pos2d>>&, class BiomeRegistry const&, class Biome&, class Biome&);
     // NOLINTEND
 };

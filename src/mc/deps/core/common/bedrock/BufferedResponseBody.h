@@ -6,6 +6,11 @@
 #include "mc/deps/core/common/bedrock/IResponseBody.h"
 #include "mc/deps/core/common/bedrock/ResponseBodyType.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Http::Internal { class IResponseBody; }
+// clang-format on
+
 namespace Bedrock::Http {
 
 class BufferedResponseBody : public ::Bedrock::Http::Internal::IResponseBody {
@@ -30,7 +35,7 @@ public:
     /**
      * @symbol ?getLoggableData\@BufferedResponseBody\@Http\@Bedrock\@\@MEBA?AV?$span\@$$CBE$0?0\@gsl\@\@XZ
      */
-    MCVAPI class gsl::span<unsigned char const> getLoggableData() const;
+    MCVAPI class gsl::span<uint8_t const> getLoggableData() const;
     /**
      * @symbol
      * ?getLoggableDestination\@BufferedResponseBody\@Http\@Bedrock\@\@MEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -47,12 +52,12 @@ public:
     /**
      * @symbol ?write\@BufferedResponseBody\@Http\@Bedrock\@\@MEAA?AVerror_code\@std\@\@V?$span\@$$CBE$0?0\@gsl\@\@\@Z
      */
-    MCVAPI std::error_code write(class gsl::span<unsigned char const>);
+    MCVAPI std::error_code write(class gsl::span<uint8_t const>);
 #endif
     /**
      * @symbol ?get\@BufferedResponseBody\@Http\@Bedrock\@\@QEBA?AV?$span\@$$CBE$0?0\@gsl\@\@XZ
      */
-    MCAPI class gsl::span<unsigned char const> get() const;
+    MCAPI class gsl::span<uint8_t const> get() const;
     /**
      * @symbol
      * ?create\@BufferedResponseBody\@Http\@Bedrock\@\@SA?AV?$shared_ptr\@VBufferedResponseBody\@Http\@Bedrock\@\@\@std\@\@XZ

@@ -11,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace NetherNet { class INetherNetTransportInterface; }
 namespace NetherNet { class IWebRTCSignalingInterface; }
 namespace NetherNet { struct NetherNetTransportServerConfiguration; }
 namespace NetherNet { struct NetworkID; }
@@ -67,7 +68,7 @@ public:
     /**
      * @symbol ?IsPacketAvailable\@NetherNetTransportStub\@\@UEAA_NUNetworkID\@NetherNet\@\@PEAI\@Z
      */
-    MCVAPI bool IsPacketAvailable(struct NetherNet::NetworkID, unsigned int*);
+    MCVAPI bool IsPacketAvailable(struct NetherNet::NetworkID, uint32_t*);
     /**
      * @symbol ?IsSignedIntoSignalingService\@NetherNetTransportStub\@\@UEBA_NXZ
      */
@@ -79,7 +80,7 @@ public:
     /**
      * @symbol ?ReadPacket\@NetherNetTransportStub\@\@UEAA_NUNetworkID\@NetherNet\@\@PEAXIPEAI\@Z
      */
-    MCVAPI bool ReadPacket(struct NetherNet::NetworkID, void*, unsigned int, unsigned int*);
+    MCVAPI bool ReadPacket(struct NetherNet::NetworkID, void*, uint32_t, uint32_t*);
     /**
      * @symbol
      * ?RegisterRelayServerCredentialsReadyCallback\@NetherNetTransportStub\@\@UEAAXAEBV?$function\@$$A6AXW4ERelayServerConfigurationResult\@NetherNet\@\@\@Z\@std\@\@\@Z
@@ -90,7 +91,7 @@ public:
     /**
      * @symbol ?SendPacket\@NetherNetTransportStub\@\@UEAA_NUNetworkID\@NetherNet\@\@PEBDIW4ESendType\@3\@\@Z
      */
-    MCVAPI bool SendPacket(struct NetherNet::NetworkID, char const*, unsigned int, enum class NetherNet::ESendType);
+    MCVAPI bool SendPacket(struct NetherNet::NetworkID, char const*, uint32_t, enum class NetherNet::ESendType);
     /**
      * @symbol
      * ?SetServerConfiguration\@NetherNetTransportStub\@\@UEAAXPEBUNetherNetTransportServerConfiguration\@NetherNet\@\@\@Z
@@ -106,7 +107,7 @@ public:
      * ?SignIntoSignalingService\@NetherNetTransportStub\@\@UEAAXAEBV?$function\@$$A6AXVerror_code\@std\@\@\@Z\@std\@\@AEBV?$function\@$$A6AXW4SignalingHostConnectionStatus\@NetherNet\@\@I\@Z\@3\@AEBUSignalingConfiguration\@IWebRTCSignalingInterface\@NetherNet\@\@\@Z
      */
     MCVAPI void
-    SignIntoSignalingService(std::function<void(std::error_code)> const&, std::function<void(enum class NetherNet::SignalingHostConnectionStatus, unsigned int)> const&, struct NetherNet::IWebRTCSignalingInterface::SignalingConfiguration const&);
+    SignIntoSignalingService(std::function<void(std::error_code)> const&, std::function<void(enum class NetherNet::SignalingHostConnectionStatus, uint32_t)> const&, struct NetherNet::IWebRTCSignalingInterface::SignalingConfiguration const&);
     /**
      * @symbol ?SignOutFromSignalingService\@NetherNetTransportStub\@\@UEAAXXZ
      */

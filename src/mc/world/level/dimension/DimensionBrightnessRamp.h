@@ -30,6 +30,6 @@ public:
     /**
      * @symbol ?getBrightnessRampValue\@DimensionBrightnessRamp\@\@QEBAMH\@Z
      */
-    MCAPI float getBrightnessRampValue(int) const;
+    MCAPI float getBrightnessRampValue(int32_t) const;
     // NOLINTEND
 };

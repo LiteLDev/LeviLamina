@@ -139,7 +139,7 @@ public:
      * @vftbl 30
      * @symbol ?setMaxDamage\@ComponentItem\@\@UEAAAEAVItem\@\@H\@Z
      */
-    virtual class Item& setMaxDamage(int);
+    virtual class Item& setMaxDamage(int32_t);
     /**
      * @vftbl 39
      * @symbol
@@ -176,17 +176,17 @@ public:
      * @vftbl 45
      * @symbol ?getLevelDataForAuxValue\@ComponentItem\@\@UEBAHH\@Z
      */
-    virtual int getLevelDataForAuxValue(int) const;
+    virtual int32_t getLevelDataForAuxValue(int32_t) const;
     /**
      * @vftbl 47
      * @symbol ?getMaxDamage\@ComponentItem\@\@UEBAFXZ
      */
-    virtual short getMaxDamage() const;
+    virtual int16_t getMaxDamage() const;
     /**
      * @vftbl 48
      * @symbol ?getAttackDamage\@ComponentItem\@\@UEBAHXZ
      */
-    virtual int getAttackDamage() const;
+    virtual int32_t getAttackDamage() const;
     /**
      * @vftbl 50
      * @symbol ?isGlint\@ComponentItem\@\@UEBA_NAEBVItemStackBase\@\@\@Z
@@ -211,12 +211,12 @@ public:
      * @vftbl 56
      * @symbol ?isDestructive\@ComponentItem\@\@UEBA_NH\@Z
      */
-    virtual bool isDestructive(int) const;
+    virtual bool isDestructive(int32_t) const;
     /**
      * @vftbl 57
      * @symbol ?isLiquidClipItem\@ComponentItem\@\@UEBA_NH\@Z
      */
-    virtual bool isLiquidClipItem(int) const;
+    virtual bool isLiquidClipItem(int32_t) const;
     /**
      * @vftbl 59
      * @symbol ?requiresInteract\@ComponentItem\@\@UEBA_NXZ
@@ -238,17 +238,17 @@ public:
      * @vftbl 62
      * @symbol ?getEnchantSlot\@ComponentItem\@\@UEBAHXZ
      */
-    virtual int getEnchantSlot() const;
+    virtual int32_t getEnchantSlot() const;
     /**
      * @vftbl 63
      * @symbol ?getEnchantValue\@ComponentItem\@\@UEBAHXZ
      */
-    virtual int getEnchantValue() const;
+    virtual int32_t getEnchantValue() const;
     /**
      * @vftbl 64
      * @symbol ?getArmorValue\@ComponentItem\@\@UEBAHXZ
      */
-    virtual int getArmorValue() const;
+    virtual int32_t getArmorValue() const;
     /**
      * @vftbl 66
      * @symbol __unk_vfn_66
@@ -258,7 +258,7 @@ public:
      * @vftbl 68
      * @symbol ?getDamageChance\@ComponentItem\@\@UEBAHH\@Z
      */
-    virtual int getDamageChance(int) const;
+    virtual int32_t getDamageChance(int32_t) const;
     /**
      * @vftbl 70
      * @symbol __unk_vfn_70
@@ -313,7 +313,7 @@ public:
      * @vftbl 85
      * @symbol ?dispense\@ComponentItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
+    virtual bool dispense(class BlockSource&, class Container&, int32_t, class Vec3 const&, uint8_t) const;
     /**
      * @vftbl 86
      * @symbol
@@ -324,7 +324,7 @@ public:
      * @vftbl 87
      * @symbol ?releaseUsing\@ComponentItem\@\@UEBAXAEAVItemStack\@\@PEAVPlayer\@\@H\@Z
      */
-    virtual void releaseUsing(class ItemStack&, class Player*, int) const;
+    virtual void releaseUsing(class ItemStack&, class Player*, int32_t) const;
     /**
      * @vftbl 88
      * @symbol ?getDestroySpeed\@ComponentItem\@\@UEBAMAEBVItemStackBase\@\@AEBVBlock\@\@\@Z
@@ -349,12 +349,12 @@ public:
      * @vftbl 92
      * @symbol ?mineBlock\@ComponentItem\@\@UEBA_NAEAVItemInstance\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
      */
-    virtual bool mineBlock(class ItemInstance&, class Block const&, int, int, int, class Actor*) const;
+    virtual bool mineBlock(class ItemInstance&, class Block const&, int32_t, int32_t, int32_t, class Actor*) const;
     /**
      * @vftbl 93
      * @symbol ?mineBlock\@ComponentItem\@\@UEBA_NAEAVItemStack\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
      */
-    virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
+    virtual bool mineBlock(class ItemStack&, class Block const&, int32_t, int32_t, int32_t, class Actor*) const;
     /**
      * @vftbl 94
      * @symbol
@@ -377,7 +377,7 @@ public:
      * @vftbl 100
      * @symbol ?getMaxStackSize\@ComponentItem\@\@UEBAEAEBVItemDescriptor\@\@\@Z
      */
-    virtual unsigned char getMaxStackSize(class ItemDescriptor const&) const;
+    virtual uint8_t getMaxStackSize(class ItemDescriptor const&) const;
     /**
      * @vftbl 103
      * @symbol ?getCooldownType\@ComponentItem\@\@UEBAAEBVHashedString\@\@XZ
@@ -387,7 +387,7 @@ public:
      * @vftbl 104
      * @symbol ?getCooldownTime\@ComponentItem\@\@UEBAHXZ
      */
-    virtual int getCooldownTime() const;
+    virtual int32_t getCooldownTime() const;
     /**
      * @vftbl 115
      * @symbol __unk_vfn_115
@@ -408,12 +408,12 @@ public:
      * @symbol
      * ?setIconInfo\@ComponentItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    virtual class Item& setIconInfo(std::string const&, int);
+    virtual class Item& setIconInfo(std::string const&, int32_t);
     /**
      * @vftbl 120
      * @symbol ?getIconInfo\@ComponentItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int32_t, bool) const;
     /**
      * @vftbl 121
      * @symbol
@@ -424,12 +424,12 @@ public:
      * @vftbl 122
      * @symbol ?getAnimationFrameFor\@ComponentItem\@\@UEBAHPEAVMob\@\@_NPEBVItemStack\@\@_N\@Z
      */
-    virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
+    virtual int32_t getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
     /**
      * @vftbl 123
      * @symbol ?isEmissive\@ComponentItem\@\@UEBA_NH\@Z
      */
-    virtual bool isEmissive(int) const;
+    virtual bool isEmissive(int32_t) const;
     /**
      * @vftbl 126
      * @symbol ?canBeCharged\@ComponentItem\@\@UEBA_NXZ
@@ -446,12 +446,12 @@ public:
      * @symbol ?_checkUseOnPermissions\@ComponentItem\@\@EEBA_NAEAVActor\@\@AEAVItemStackBase\@\@AEBEAEBVBlockPos\@\@\@Z
      */
     virtual bool
-    _checkUseOnPermissions(class Actor&, class ItemStackBase&, unsigned char const&, class BlockPos const&) const;
+    _checkUseOnPermissions(class Actor&, class ItemStackBase&, uint8_t const&, class BlockPos const&) const;
     /**
      * @vftbl 133
      * @symbol ?_calculatePlacePos\@ComponentItem\@\@EEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
-    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
+    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, uint8_t&, class BlockPos&) const;
     /**
      * @vftbl 134
      * @symbol ?_shouldAutoCalculatePlacePos\@ComponentItem\@\@EEBA_NXZ
@@ -463,12 +463,12 @@ public:
      * ?_useOn\@ComponentItem\@\@EEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _useOn(class ItemStack&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPONENTITEM
     /**
      * @symbol ?getVariant\@ComponentItem\@\@UEBAHHH_N\@Z
      */
-    MCVAPI int getVariant(int, int, bool) const;
+    MCVAPI int32_t getVariant(int32_t, int32_t, bool) const;
     /**
      * @symbol ?hasCustomColor\@ComponentItem\@\@UEBA_NAEBVItemStackBase\@\@\@Z
      */
@@ -480,7 +480,7 @@ public:
     /**
      * @symbol ?useVariant\@ComponentItem\@\@UEBA_NHH_N\@Z
      */
-    MCVAPI bool useVariant(int, int, bool) const;
+    MCVAPI bool useVariant(int32_t, int32_t, bool) const;
     /**
      * @symbol __unk_destructor_-1
      */
@@ -490,7 +490,7 @@ public:
      * @symbol
      * ??0ComponentItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@F\@Z
      */
-    MCAPI ComponentItem(std::string const&, short);
+    MCAPI ComponentItem(std::string const&, int16_t);
     /**
      * @symbol ?_addCerealItemsToMap\@ComponentItem\@\@QEAAXXZ
      */

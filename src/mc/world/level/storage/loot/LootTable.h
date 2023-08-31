@@ -38,11 +38,11 @@ public:
      * @symbol
      * ?getAvailableSlots\@LootTable\@\@AEAA?AV?$vector\@HV?$allocator\@H\@std\@\@\@std\@\@AEAVContainer\@\@AEAVRandom\@\@\@Z
      */
-    MCAPI std::vector<int> getAvailableSlots(class Container&, class Random&);
+    MCAPI std::vector<int32_t> getAvailableSlots(class Container&, class Random&);
     /**
      * @symbol
      * ?shuffleAndSplitItems\@LootTable\@\@AEAAXAEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@HAEAVRandom\@\@\@Z
      */
-    MCAPI void shuffleAndSplitItems(std::vector<class ItemStack>&, int, class Random&);
+    MCAPI void shuffleAndSplitItems(std::vector<class ItemStack>&, int32_t, class Random&);
     // NOLINTEND
 };

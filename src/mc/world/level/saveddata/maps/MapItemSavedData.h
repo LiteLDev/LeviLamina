@@ -98,7 +98,7 @@ public:
     /**
      * @symbol ?getPixels\@MapItemSavedData\@\@QEBA?AV?$buffer_span\@I\@\@XZ
      */
-    MCAPI class buffer_span<unsigned int> getPixels() const;
+    MCAPI class buffer_span<uint32_t> getPixels() const;
     /**
      * @symbol
      * ?getTrackedMapEntity\@MapItemSavedData\@\@QEAA?AV?$shared_ptr\@VMapItemTrackedActor\@\@\@std\@\@AEAVActor\@\@\@Z
@@ -121,7 +121,7 @@ public:
     /**
      * @symbol ?isAdjacent\@MapItemSavedData\@\@QEBA_NAEBV1\@H\@Z
      */
-    MCAPI bool isAdjacent(class MapItemSavedData const&, int) const;
+    MCAPI bool isAdjacent(class MapItemSavedData const&, int32_t) const;
     /**
      * @symbol ?isChunkAllEmpty\@MapItemSavedData\@\@QEBA_NUChunkBounds\@1\@\@Z
      */
@@ -165,27 +165,27 @@ public:
     /**
      * @symbol ?setMapSection\@MapItemSavedData\@\@QEAAXV?$buffer_span\@I\@\@UChunkBounds\@1\@\@Z
      */
-    MCAPI void setMapSection(class buffer_span<unsigned int>, struct MapItemSavedData::ChunkBounds);
+    MCAPI void setMapSection(class buffer_span<uint32_t>, struct MapItemSavedData::ChunkBounds);
     /**
      * @symbol ?setOrigin\@MapItemSavedData\@\@QEAAXVVec3\@\@HV?$AutomaticID\@VDimension\@\@H\@\@_N2AEBVBlockPos\@\@\@Z
      */
-    MCAPI void setOrigin(class Vec3, int, class AutomaticID<class Dimension, int>, bool, bool, class BlockPos const&);
+    MCAPI void setOrigin(class Vec3, int32_t, DimensionType, bool, bool, class BlockPos const&);
     /**
      * @symbol ?setPixel\@MapItemSavedData\@\@QEAA_NIII\@Z
      */
-    MCAPI bool setPixel(unsigned int, unsigned int, unsigned int);
+    MCAPI bool setPixel(uint32_t, uint32_t, uint32_t);
     /**
      * @symbol ?setPixelDirty\@MapItemSavedData\@\@QEAAXII\@Z
      */
-    MCAPI void setPixelDirty(unsigned int, unsigned int);
+    MCAPI void setPixelDirty(uint32_t, uint32_t);
     /**
      * @symbol ?setScale\@MapItemSavedData\@\@QEAAXH\@Z
      */
-    MCAPI void setScale(int);
+    MCAPI void setScale(int32_t);
     /**
      * @symbol ?setScaleAndParentMapId\@MapItemSavedData\@\@QEAAXHUActorUniqueID\@\@\@Z
      */
-    MCAPI void setScaleAndParentMapId(int, struct ActorUniqueID);
+    MCAPI void setScaleAndParentMapId(int32_t, struct ActorUniqueID);
     /**
      * @symbol ?tickByBlock\@MapItemSavedData\@\@QEAAXAEBVBlockPos\@\@AEAVBlockSource\@\@\@Z
      */
@@ -252,6 +252,6 @@ public:
      * ?_updateTrackedPlayerDecorations\@MapItemSavedData\@\@AEAAXAEAVBlockSource\@\@AEAVPlayer\@\@AEAVVec3\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVColor\@mce\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEAW4Type\@MapDecoration\@\@\@Z
      */
     MCAPI void
-    _updateTrackedPlayerDecorations(class BlockSource&, class Player&, class Vec3&, std::string&, class mce::Color&, class AutomaticID<class Dimension, int>, enum class MapDecoration::Type&);
+    _updateTrackedPlayerDecorations(class BlockSource&, class Player&, class Vec3&, std::string&, class mce::Color&, DimensionType, enum class MapDecoration::Type&);
     // NOLINTEND
 };

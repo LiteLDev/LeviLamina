@@ -20,7 +20,7 @@ public:
      * @vftbl 0
      * @symbol ?containerContentChanged\@HudContainerModel\@\@UEAAXH\@Z
      */
-    virtual void containerContentChanged(int);
+    virtual void containerContentChanged(int32_t);
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1

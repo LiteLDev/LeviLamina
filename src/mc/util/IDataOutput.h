@@ -41,12 +41,12 @@ public:
      * @vftbl 6
      * @symbol ?writeShort\@BigEndianStringByteOutput\@\@UEAAXF\@Z
      */
-    virtual void writeShort(short) = 0;
+    virtual void writeShort(int16_t) = 0;
     /**
      * @vftbl 7
      * @symbol ?writeInt\@BigEndianStringByteOutput\@\@UEAAXH\@Z
      */
-    virtual void writeInt(int) = 0;
+    virtual void writeInt(int32_t) = 0;
     /**
      * @vftbl 8
      * @symbol ?writeLongLong\@BigEndianStringByteOutput\@\@UEAAX_J\@Z

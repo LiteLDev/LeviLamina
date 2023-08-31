@@ -35,12 +35,12 @@ public:
      * @vftbl 2
      * @symbol ?getCraftingSize\@ShapelessRecipe\@\@UEBAHXZ
      */
-    virtual int getCraftingSize() const;
+    virtual int32_t getCraftingSize() const;
     /**
      * @vftbl 3
      * @symbol ?getIngredient\@ShapelessRecipe\@\@UEBAAEBVRecipeIngredient\@\@HH\@Z
      */
-    virtual class RecipeIngredient const& getIngredient(int, int) const;
+    virtual class RecipeIngredient const& getIngredient(int32_t, int32_t) const;
     /**
      * @vftbl 4
      * @symbol
@@ -61,7 +61,7 @@ public:
      * @vftbl 7
      * @symbol ?size\@ShapelessRecipe\@\@UEBAHXZ
      */
-    virtual int size() const;
+    virtual int32_t size() const;
     /**
      * @vftbl 15
      * @symbol ?loadResultList\@ShapelessRecipe\@\@UEBAXAEBVBlockPalette\@\@\@Z
@@ -82,6 +82,6 @@ public:
      * ??0ShapelessRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@AEBV?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@2\@AEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@2\@VHashedString\@\@HPEBVUUID\@mce\@\@V?$optional\@VRecipeUnlockingRequirement\@\@\@2\@AEBVSemVersion\@\@\@Z
      */
     MCAPI
-    ShapelessRecipe(std::string_view, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, int, class mce::UUID const*, std::optional<class RecipeUnlockingRequirement>, class SemVersion const&);
+    ShapelessRecipe(std::string_view, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, int32_t, class mce::UUID const*, std::optional<class RecipeUnlockingRequirement>, class SemVersion const&);
     // NOLINTEND
 };

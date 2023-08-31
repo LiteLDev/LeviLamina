@@ -19,7 +19,7 @@ public:
     /**
      * @symbol ?fillNoiseAtPos\@OreVeinifier\@\@QEAAXAEBVVec3\@\@HM\@Z
      */
-    MCAPI void fillNoiseAtPos(class Vec3 const&, int, float);
+    MCAPI void fillNoiseAtPos(class Vec3 const&, int32_t, float);
     /**
      * @symbol ?getVeinBlockOrFallback\@OreVeinifier\@\@QEBAPEBVBlock\@\@VVec3\@\@PEBV2\@\@Z
      */

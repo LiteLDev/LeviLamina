@@ -96,7 +96,7 @@ public:
         class gsl::not_null<class Mob const*>,
         enum class ActorDamageCause,
         std::string,
-        int,
+        int32_t,
         enum class ActorType
     );
     /**
@@ -107,11 +107,11 @@ public:
      * @symbol
      * ??0LegacyTelemetryEventPacket\@\@QEAA\@AEBVPlayer\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI LegacyTelemetryEventPacket(class Player const&, std::string const&, int);
+    MCAPI LegacyTelemetryEventPacket(class Player const&, std::string const&, int32_t);
     /**
      * @symbol ??0LegacyTelemetryEventPacket\@\@QEAA\@PEBVPlayer\@\@FIF\@Z
      */
-    MCAPI LegacyTelemetryEventPacket(class Player const*, short, unsigned int, short);
+    MCAPI LegacyTelemetryEventPacket(class Player const*, int16_t, uint32_t, int16_t);
     /**
      * @symbol ??0LegacyTelemetryEventPacket\@\@QEAA\@AEBVPlayer\@\@W4MovementEventType\@\@MMMMM\@Z
      */
@@ -121,7 +121,7 @@ public:
      * @symbol
      * ??0LegacyTelemetryEventPacket\@\@QEAA\@PEBVPlayer\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HH1\@Z
      */
-    MCAPI LegacyTelemetryEventPacket(class Player const*, std::string const&, int, int, std::string const&);
+    MCAPI LegacyTelemetryEventPacket(class Player const*, std::string const&, int32_t, int32_t, std::string const&);
     /**
      * @symbol ??0LegacyTelemetryEventPacket\@\@QEAA\@PEBVPlayer\@\@AEBUData\@0\@\@Z
      */
@@ -133,7 +133,7 @@ public:
     /**
      * @symbol ??0LegacyTelemetryEventPacket\@\@QEAA\@PEBVPlayer\@\@HV?$not_null\@PEBVActor\@\@\@gsl\@\@\@Z
      */
-    MCAPI LegacyTelemetryEventPacket(class Player const*, int, class gsl::not_null<class Actor const*>);
+    MCAPI LegacyTelemetryEventPacket(class Player const*, int32_t, class gsl::not_null<class Actor const*>);
     /**
      * @symbol
      * ??0LegacyTelemetryEventPacket\@\@QEAA\@AEBVPlayer\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -155,16 +155,15 @@ public:
     /**
      * @symbol ??0LegacyTelemetryEventPacket\@\@QEAA\@PEBVPlayer\@\@V?$AutomaticID\@VDimension\@\@H\@\@1\@Z
      */
-    MCAPI
-    LegacyTelemetryEventPacket(class Player const*, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
+    MCAPI LegacyTelemetryEventPacket(class Player const*, DimensionType, DimensionType);
     /**
      * @symbol ??0LegacyTelemetryEventPacket\@\@QEAA\@PEBVPlayer\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI LegacyTelemetryEventPacket(class Player const*, class AutomaticID<class Dimension, int>);
+    MCAPI LegacyTelemetryEventPacket(class Player const*, DimensionType);
     /**
      * @symbol ??0LegacyTelemetryEventPacket\@\@QEAA\@PEBVPlayer\@\@HHW4ActorDamageCause\@\@_N\@Z
      */
-    MCAPI LegacyTelemetryEventPacket(class Player const*, int, int, enum class ActorDamageCause, bool);
+    MCAPI LegacyTelemetryEventPacket(class Player const*, int32_t, int32_t, enum class ActorDamageCause, bool);
     /**
      * @symbol
      * ??0LegacyTelemetryEventPacket\@\@QEAA\@PEBVPlayer\@\@PEBVActor\@\@V?$not_null\@PEBVMob\@\@\@gsl\@\@W4ActorDamageCause\@\@W4ActorType\@\@\@Z

@@ -19,11 +19,11 @@ public:
     /**
      * @symbol ?lerpTo\@MovementInterpolatorComponent\@\@QEAAXAEBVVec3\@\@AEBVVec2\@\@H\@Z
      */
-    MCAPI void lerpTo(class Vec3 const&, class Vec2 const&, int);
+    MCAPI void lerpTo(class Vec3 const&, class Vec2 const&, int32_t);
     /**
      * @symbol ?lerpToRotation\@MovementInterpolatorComponent\@\@QEAAXAEBVVec2\@\@H\@Z
      */
-    MCAPI void lerpToRotation(class Vec2 const&, int);
+    MCAPI void lerpToRotation(class Vec2 const&, int32_t);
     /**
      * @symbol ?reset\@MovementInterpolatorComponent\@\@QEAAXXZ
      */
@@ -31,7 +31,7 @@ public:
     /**
      * @symbol ?setHeadYawLerpTarget\@MovementInterpolatorComponent\@\@QEAAXMH\@Z
      */
-    MCAPI void setHeadYawLerpTarget(float, int);
+    MCAPI void setHeadYawLerpTarget(float, int32_t);
     /**
      * @symbol ?start\@MovementInterpolatorComponent\@\@QEAAXXZ
      */

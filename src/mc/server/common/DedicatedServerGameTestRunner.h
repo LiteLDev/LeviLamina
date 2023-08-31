@@ -37,7 +37,7 @@ public:
      * @symbol
      * ?_ensureDimension\@DedicatedServerGameTestRunner\@\@AEAAPEAVDimension\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI class Dimension* _ensureDimension(class AutomaticID<class Dimension, int>);
+    MCAPI class Dimension* _ensureDimension(DimensionType);
     /**
      * @symbol
      * ?_runTestGroup\@DedicatedServerGameTestRunner\@\@AEAAXAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z

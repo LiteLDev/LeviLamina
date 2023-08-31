@@ -78,7 +78,7 @@ public:
     /**
      * @symbol ?getByte\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@EVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI class Bedrock::Result<unsigned char, std::error_code> getByte();
+    MCAPI class Bedrock::Result<uint8_t, std::error_code> getByte();
     /**
      * @symbol ?getDouble\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@NVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
@@ -90,11 +90,11 @@ public:
     /**
      * @symbol ?getSignedBigEndianInt\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@HVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI class Bedrock::Result<int, std::error_code> getSignedBigEndianInt();
+    MCAPI class Bedrock::Result<int32_t, std::error_code> getSignedBigEndianInt();
     /**
      * @symbol ?getSignedInt\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@HVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI class Bedrock::Result<int, std::error_code> getSignedInt();
+    MCAPI class Bedrock::Result<int32_t, std::error_code> getSignedInt();
     /**
      * @symbol ?getSignedInt64\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@_JVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
@@ -102,7 +102,7 @@ public:
     /**
      * @symbol ?getSignedShort\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@FVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI class Bedrock::Result<short, std::error_code> getSignedShort();
+    MCAPI class Bedrock::Result<int16_t, std::error_code> getSignedShort();
     /**
      * @symbol
      * ?getString\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -116,11 +116,11 @@ public:
     /**
      * @symbol ?getUnsignedChar\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@EVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI class Bedrock::Result<unsigned char, std::error_code> getUnsignedChar();
+    MCAPI class Bedrock::Result<uint8_t, std::error_code> getUnsignedChar();
     /**
      * @symbol ?getUnsignedInt\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@IVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI class Bedrock::Result<unsigned int, std::error_code> getUnsignedInt();
+    MCAPI class Bedrock::Result<uint32_t, std::error_code> getUnsignedInt();
     /**
      * @symbol ?getUnsignedInt64\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@_KVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
@@ -128,11 +128,11 @@ public:
     /**
      * @symbol ?getUnsignedShort\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@GVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI class Bedrock::Result<unsigned short, std::error_code> getUnsignedShort();
+    MCAPI class Bedrock::Result<uint16_t, std::error_code> getUnsignedShort();
     /**
      * @symbol ?getUnsignedVarInt\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@IVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI class Bedrock::Result<unsigned int, std::error_code> getUnsignedVarInt();
+    MCAPI class Bedrock::Result<uint32_t, std::error_code> getUnsignedVarInt();
     /**
      * @symbol ?getUnsignedVarInt64\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@_KVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
@@ -140,7 +140,7 @@ public:
     /**
      * @symbol ?getVarInt\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@HVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI class Bedrock::Result<int, std::error_code> getVarInt();
+    MCAPI class Bedrock::Result<int32_t, std::error_code> getVarInt();
     /**
      * @symbol ?getVarInt64\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@_JVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
@@ -153,6 +153,6 @@ public:
      * @symbol
      * ?readVectorList\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAV?$vector\@IV?$allocator\@I\@std\@\@\@std\@\@\@Z
      */
-    MCAPI class Bedrock::Result<void, std::error_code> readVectorList(std::vector<unsigned int>&);
+    MCAPI class Bedrock::Result<void, std::error_code> readVectorList(std::vector<uint32_t>&);
     // NOLINTEND
 };

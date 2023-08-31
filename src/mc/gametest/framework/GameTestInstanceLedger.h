@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace gametest { class BaseGameTestInstance; }
+namespace gametest { class IGameTestListener; }
 // clang-format on
 
 class GameTestInstanceLedger : public ::gametest::IGameTestListener {
@@ -38,12 +39,12 @@ public:
     /**
      * @symbol ?clear\@GameTestInstanceLedger\@\@QEAAXV?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI void clear(class AutomaticID<class Dimension, int>);
+    MCAPI void clear(DimensionType);
     /**
      * @symbol
      * ?getBoundingBoxes\@GameTestInstanceLedger\@\@QEBA?AV?$vector\@VBoundingBox\@\@V?$allocator\@VBoundingBox\@\@\@std\@\@\@std\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI std::vector<class BoundingBox> getBoundingBoxes(class AutomaticID<class Dimension, int>) const;
+    MCAPI std::vector<class BoundingBox> getBoundingBoxes(DimensionType) const;
     // NOLINTEND
 
 private:

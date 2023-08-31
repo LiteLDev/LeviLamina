@@ -73,7 +73,7 @@ public:
      * @vftbl 67
      * @symbol ?isValidAuxValue\@CompoundItem\@\@UEBA_NH\@Z
      */
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
     /**
      * @vftbl 70
      * @symbol __unk_vfn_70
@@ -125,17 +125,17 @@ public:
      * @symbol
      * ?setIconInfo\@CompoundItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    virtual class Item& setIconInfo(std::string const&, int);
+    virtual class Item& setIconInfo(std::string const&, int32_t);
     /**
      * @vftbl 120
      * @symbol ?getIconInfo\@CompoundItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int32_t, bool) const;
     /**
      * @symbol
      * ??0CompoundItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVExperiments\@\@\@Z
      */
-    MCAPI CompoundItem(std::string const&, int, class Experiments const&);
+    MCAPI CompoundItem(std::string const&, int32_t, class Experiments const&);
     /**
      * @symbol ?getCompoundType\@CompoundItem\@\@SA?AW4CompoundType\@\@AEBVItemDescriptor\@\@\@Z
      */
@@ -147,7 +147,7 @@ public:
     /**
      * @symbol ?getItemForCompound\@CompoundItem\@\@SA?AVItemInstance\@\@W4CompoundType\@\@H\@Z
      */
-    MCAPI static class ItemInstance getItemForCompound(enum class CompoundType, int);
+    MCAPI static class ItemInstance getItemForCompound(enum class CompoundType, int32_t);
     /**
      * @symbol ?isCompoundItem\@CompoundItem\@\@SA_NAEBVItemStackBase\@\@\@Z
      */
@@ -177,11 +177,11 @@ private:
      * @symbol
      * ?mIdToSpecialCompound\@CompoundItem\@\@0V?$unordered_map\@HHU?$hash\@H\@std\@\@U?$equal_to\@H\@2\@V?$allocator\@U?$pair\@$$CBHH\@std\@\@\@2\@\@std\@\@A
      */
-    MCAPI static std::unordered_map<int, int> mIdToSpecialCompound;
+    MCAPI static std::unordered_map<int32_t, int32_t> mIdToSpecialCompound;
     /**
      * @symbol
      * ?mTypeToSpecialCompound\@CompoundItem\@\@0V?$unordered_map\@HVItemInstance\@\@U?$hash\@H\@std\@\@U?$equal_to\@H\@3\@V?$allocator\@U?$pair\@$$CBHVItemInstance\@\@\@std\@\@\@3\@\@std\@\@A
      */
-    MCAPI static std::unordered_map<int, class ItemInstance> mTypeToSpecialCompound;
+    MCAPI static std::unordered_map<int32_t, class ItemInstance> mTypeToSpecialCompound;
     // NOLINTEND
 };

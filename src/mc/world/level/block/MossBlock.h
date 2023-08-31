@@ -234,6 +234,6 @@ public:
     /**
      * @symbol ??0MossBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI MossBlock(std::string const&, int);
+    MCAPI MossBlock(std::string const&, int32_t);
     // NOLINTEND
 };

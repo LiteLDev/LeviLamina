@@ -29,17 +29,17 @@ public:
      * @vftbl 2
      * @symbol ?getBiomeArea\@BiomeSource3d\@\@UEBA?AVBiomeArea\@\@AEBVBoundingBox\@\@I\@Z
      */
-    virtual class BiomeArea getBiomeArea(class BoundingBox const&, unsigned int) const;
+    virtual class BiomeArea getBiomeArea(class BoundingBox const&, uint32_t) const;
     /**
      * @vftbl 3
      * @symbol ?getBiomeArea\@BiomeSource3d\@\@UEBA?AVBiomeArea\@\@AEBVBoundingBox\@\@IAEBUGetBiomeOptions\@\@\@Z
      */
-    virtual class BiomeArea getBiomeArea(class BoundingBox const&, unsigned int, struct GetBiomeOptions const&) const;
+    virtual class BiomeArea getBiomeArea(class BoundingBox const&, uint32_t, struct GetBiomeOptions const&) const;
     /**
      * @vftbl 4
      * @symbol ?containsOnly\@BiomeSource3d\@\@UEBA_NHHHHV?$span\@$$CB_K$0?0\@gsl\@\@\@Z
      */
-    virtual bool containsOnly(int, int, int, int, class gsl::span<uint64_t const>) const;
+    virtual bool containsOnly(int32_t, int32_t, int32_t, int32_t, class gsl::span<uint64_t const>) const;
     /**
      * @vftbl 5
      * @symbol ?getBiome\@BiomeSource3d\@\@UEBAPEBVBiome\@\@AEBVBlockPos\@\@\@Z
@@ -54,6 +54,6 @@ public:
      * @vftbl 7
      * @symbol ?getBiome\@BiomeSource3d\@\@UEBAPEBVBiome\@\@HHH\@Z
      */
-    virtual class Biome const* getBiome(int, int, int) const;
+    virtual class Biome const* getBiome(int32_t, int32_t, int32_t) const;
     // NOLINTEND
 };

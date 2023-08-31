@@ -64,10 +64,10 @@ public:
     /**
      * @symbol ?_createSpellEntity\@SummonActorGoal\@\@AEBAXMMMMMHUActorDefinitionIdentifier\@\@\@Z
      */
-    MCAPI void _createSpellEntity(float, float, float, float, float, int, struct ActorDefinitionIdentifier) const;
+    MCAPI void _createSpellEntity(float, float, float, float, float, int32_t, struct ActorDefinitionIdentifier) const;
     /**
      * @symbol ?_selectBestSpell\@SummonActorGoal\@\@AEBAHAEAVActor\@\@\@Z
      */
-    MCAPI int _selectBestSpell(class Actor&) const;
+    MCAPI int32_t _selectBestSpell(class Actor&) const;
     // NOLINTEND
 };

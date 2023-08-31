@@ -4,16 +4,18 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/ClassBindingBuilder.h"
+#include "mc/scripting/modules/minecraft/ScriptItemUseOnAfterEvent.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { struct ScriptItemUseOnAfterEvent; }
 namespace Scripting { class WeakLifetimeScope; }
 struct ItemUseOnEvent;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptItemUseOnBeforeEvent {
+struct ScriptItemUseOnBeforeEvent : public ::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent {
 
 public:
     // prevent constructor by default

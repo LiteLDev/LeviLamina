@@ -23,7 +23,7 @@ public:
      * @vftbl 0
      * @symbol ?containerContentChanged\@LevelContainerModel\@\@UEAAXH\@Z
      */
-    virtual void containerContentChanged(int);
+    virtual void containerContentChanged(int32_t);
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
@@ -83,19 +83,19 @@ public:
      * @vftbl 21
      * @symbol ?_getContainerOffset\@LevelContainerModel\@\@MEBAHXZ
      */
-    virtual int _getContainerOffset() const;
+    virtual int32_t _getContainerOffset() const;
     /**
      * @vftbl 22
      * @symbol ?_onItemChanged\@LevelContainerModel\@\@MEAAXHAEBVItemStack\@\@0\@Z
      */
-    virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
+    virtual void _onItemChanged(int32_t, class ItemStack const&, class ItemStack const&);
     /**
      * @symbol
      * ??0LevelContainerModel\@\@QEAA\@W4ContainerEnumName\@\@HAEAVPlayer\@\@W4BlockActorType\@\@AEBVBlockPos\@\@W4ContainerCategory\@\@\@Z
      */
     MCAPI LevelContainerModel(
         enum class ContainerEnumName,
-        int,
+        int32_t,
         class Player&,
         enum class BlockActorType,
         class BlockPos const&,
@@ -107,7 +107,7 @@ public:
      */
     MCAPI LevelContainerModel(
         enum class ContainerEnumName,
-        int,
+        int32_t,
         class Player&,
         struct ActorUniqueID,
         enum class ContainerCategory
@@ -128,6 +128,6 @@ public:
     /**
      * @symbol ?_refreshSlot\@LevelContainerModel\@\@AEAAXH\@Z
      */
-    MCAPI void _refreshSlot(int);
+    MCAPI void _refreshSlot(int32_t);
     // NOLINTEND
 };

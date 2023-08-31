@@ -35,12 +35,12 @@ public:
      * @vftbl 2
      * @symbol ?getCraftingSize\@FireworksRecipe\@\@UEBAHXZ
      */
-    virtual int getCraftingSize() const;
+    virtual int32_t getCraftingSize() const;
     /**
      * @vftbl 3
      * @symbol ?getIngredient\@FireworksRecipe\@\@UEBAAEBVRecipeIngredient\@\@HH\@Z
      */
-    virtual class RecipeIngredient const& getIngredient(int, int) const;
+    virtual class RecipeIngredient const& getIngredient(int32_t, int32_t) const;
     /**
      * @vftbl 4
      * @symbol
@@ -61,7 +61,7 @@ public:
      * @vftbl 7
      * @symbol ?size\@FireworksRecipe\@\@UEBAHXZ
      */
-    virtual int size() const;
+    virtual int32_t size() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREWORKSRECIPE
     /**
      * @symbol ?isShapeless\@FireworksRecipe\@\@UEBA_NXZ

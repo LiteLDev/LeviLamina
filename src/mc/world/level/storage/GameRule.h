@@ -91,7 +91,7 @@ public:
     /**
      * @symbol ?getInt\@GameRule\@\@QEBAHXZ
      */
-    MCAPI int getInt() const;
+    MCAPI int32_t getInt() const;
     /**
      * @symbol ?getName\@GameRule\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
@@ -131,7 +131,7 @@ public:
     /**
      * @symbol ?setInt\@GameRule\@\@QEAA_NHPEA_NPEAVValidationError\@1\@\@Z
      */
-    MCAPI bool setInt(int, bool*, class GameRule::ValidationError*);
+    MCAPI bool setInt(int32_t, bool*, class GameRule::ValidationError*);
     /**
      * @symbol ?setTagDataNotFoundCallback\@GameRule\@\@QEAAAEAV1\@V?$function\@$$A6AXAEAVGameRule\@\@\@Z\@std\@\@\@Z
      */
@@ -152,7 +152,7 @@ public:
     /**
      * @symbol ?_setDefaultValue\@GameRule\@\@IEAAAEAV1\@H\@Z
      */
-    MCAPI class GameRule& _setDefaultValue(int);
+    MCAPI class GameRule& _setDefaultValue(int32_t);
     /**
      * @symbol ?_setDefaultValue\@GameRule\@\@IEAAAEAV1\@_N\@Z
      */

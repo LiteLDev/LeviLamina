@@ -28,6 +28,6 @@ public:
     /**
      * @symbol ??0SandFeature\@\@QEAA\@AEBVBlock\@\@H\@Z
      */
-    MCAPI SandFeature(class Block const&, int);
+    MCAPI SandFeature(class Block const&, int32_t);
     // NOLINTEND
 };

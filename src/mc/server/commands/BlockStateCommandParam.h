@@ -22,7 +22,7 @@ public:
      * @symbol
      * ?getNameAndValue\@BlockStateCommandParam\@\@QEBA?AV?$optional\@U?$pair\@VHashedString\@\@H\@std\@\@\@std\@\@AEAVCommandOutput\@\@AEBVBlock\@\@\@Z
      */
-    MCAPI std::optional<std::pair<class HashedString, int>>
+    MCAPI std::optional<std::pair<class HashedString, int32_t>>
           getNameAndValue(class CommandOutput&, class Block const&) const;
     /**
      * @symbol ?setBlockState\@BlockStateCommandParam\@\@QEBA_NPEAPEBVBlock\@\@AEAVCommandOutput\@\@\@Z

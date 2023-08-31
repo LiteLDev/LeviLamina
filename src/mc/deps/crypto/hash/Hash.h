@@ -36,12 +36,12 @@ public:
      * @vftbl 2
      * @symbol ?update\@Hash\@1Crypto\@\@UEAAXPEBXI\@Z
      */
-    virtual void update(void const*, unsigned int);
+    virtual void update(void const*, uint32_t);
     /**
      * @vftbl 3
      * @symbol ?final\@Hash\@1Crypto\@\@UEAAXPEAE\@Z
      */
-    virtual void final(unsigned char*);
+    virtual void final(uint8_t*);
     /**
      * @vftbl 4
      * @symbol ?resultSize\@Hash\@1Crypto\@\@UEBA_KXZ

@@ -17,7 +17,7 @@ public:
     /**
      * @symbol ?getFullCode\@MCRESULT\@\@QEBAHXZ
      */
-    MCAPI int getFullCode() const;
+    MCAPI int32_t getFullCode() const;
     /**
      * @symbol ?isSuccess\@MCRESULT\@\@QEBA_NXZ
      */

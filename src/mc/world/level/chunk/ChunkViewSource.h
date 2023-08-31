@@ -104,25 +104,25 @@ public:
      * ?move\@ChunkViewSource\@\@QEAAXAEBVBlockPos\@\@H_NW4ChunkSourceViewGenerateMode\@\@V?$function\@$$A6AXV?$buffer_span_mut\@V?$shared_ptr\@VLevelChunk\@\@\@std\@\@\@\@V?$buffer_span\@I\@\@\@Z\@std\@\@PEBM\@Z
      */
     MCAPI void
-    move(class BlockPos const&, int, bool, enum class ChunkSourceViewGenerateMode, std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>, float const*);
+    move(class BlockPos const&, int32_t, bool, enum class ChunkSourceViewGenerateMode, std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint32_t>)>, float const*);
     /**
      * @symbol
      * ?move\@ChunkViewSource\@\@QEAAXAEBVBlockPos\@\@0_NW4ChunkSourceViewGenerateMode\@\@V?$function\@$$A6AXV?$buffer_span_mut\@V?$shared_ptr\@VLevelChunk\@\@\@std\@\@\@\@V?$buffer_span\@I\@\@\@Z\@std\@\@PEBM\@Z
      */
     MCAPI void
-    move(class BlockPos const&, class BlockPos const&, bool, enum class ChunkSourceViewGenerateMode, std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>, float const*);
+    move(class BlockPos const&, class BlockPos const&, bool, enum class ChunkSourceViewGenerateMode, std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint32_t>)>, float const*);
     /**
      * @symbol
      * ?move\@ChunkViewSource\@\@QEAAXAEBUBounds\@\@_NW4ChunkSourceViewGenerateMode\@\@V?$function\@$$A6AXV?$buffer_span_mut\@V?$shared_ptr\@VLevelChunk\@\@\@std\@\@\@\@V?$buffer_span\@I\@\@\@Z\@std\@\@PEBM\@Z
      */
     MCAPI void
-    move(struct Bounds const&, bool, enum class ChunkSourceViewGenerateMode, std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>, float const*);
+    move(struct Bounds const&, bool, enum class ChunkSourceViewGenerateMode, std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint32_t>)>, float const*);
     /**
      * @symbol
      * ?rebuildSpecificArea\@ChunkViewSource\@\@QEAAXAEBUBounds\@\@_NV?$function\@$$A6AXV?$buffer_span_mut\@V?$shared_ptr\@VLevelChunk\@\@\@std\@\@\@\@V?$buffer_span\@I\@\@\@Z\@std\@\@\@Z
      */
     MCAPI void
-    rebuildSpecificArea(struct Bounds const&, bool, std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>);
+    rebuildSpecificArea(struct Bounds const&, bool, std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint32_t>)>);
     /**
      * @symbol ?getGenerateMode\@ChunkViewSource\@\@SA?AW4ChunkSourceViewGenerateMode\@\@_N0\@Z
      */

@@ -32,7 +32,7 @@ public:
      * @symbol
      * ?applyPendingChanges\@PropertyComponent\@\@QEAAXAEBV?$unordered_map\@_KV?$variant\@HM_N_K\@std\@\@U?$hash\@_K\@2\@U?$equal_to\@_K\@2\@V?$allocator\@U?$pair\@$$CB_KV?$variant\@HM_N_K\@std\@\@\@std\@\@\@2\@\@std\@\@\@Z
      */
-    MCAPI void applyPendingChanges(std::unordered_map<uint64_t, std::variant<int, float, bool, uint64_t>> const&);
+    MCAPI void applyPendingChanges(std::unordered_map<uint64_t, std::variant<int32_t, float, bool, uint64_t>> const&);
     /**
      * @symbol ?getMolangValue\@PropertyComponent\@\@QEBA_N_KAEAUMolangScriptArg\@\@\@Z
      */
@@ -74,7 +74,7 @@ public:
     /**
      * @symbol ?tryGetInt\@PropertyComponent\@\@QEBA?AV?$optional\@H\@std\@\@_K\@Z
      */
-    MCAPI std::optional<int> tryGetInt(uint64_t) const;
+    MCAPI std::optional<int32_t> tryGetInt(uint64_t) const;
     /**
      * @symbol ?tryGetString\@PropertyComponent\@\@QEBAPEBVHashedString\@\@_K\@Z
      */

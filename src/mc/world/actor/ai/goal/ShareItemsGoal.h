@@ -56,7 +56,7 @@ public:
      * @symbol
      * ??0ShareItemsGoal\@\@QEAA\@AEAVMob\@\@AEBV?$vector\@UMobDescriptor\@\@V?$allocator\@UMobDescriptor\@\@\@std\@\@\@std\@\@MHM\@Z
      */
-    MCAPI ShareItemsGoal(class Mob&, std::vector<struct MobDescriptor> const&, float, int, float);
+    MCAPI ShareItemsGoal(class Mob&, std::vector<struct MobDescriptor> const&, float, int32_t, float);
     // NOLINTEND
 
     // protected:
@@ -65,6 +65,7 @@ public:
      * @symbol
      * ?selectEntityToShareWith\@ShareItemsGoal\@\@IEAA?AU?$pair\@HVItemStack\@\@\@std\@\@AEBV?$vector\@U?$pair\@HVItemStack\@\@\@std\@\@V?$allocator\@U?$pair\@HVItemStack\@\@\@std\@\@\@2\@\@3\@\@Z
      */
-    MCAPI std::pair<int, class ItemStack> selectEntityToShareWith(std::vector<std::pair<int, class ItemStack>> const&);
+    MCAPI std::pair<int32_t, class ItemStack>
+          selectEntityToShareWith(std::vector<std::pair<int32_t, class ItemStack>> const&);
     // NOLINTEND
 };

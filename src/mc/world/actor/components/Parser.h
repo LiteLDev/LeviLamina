@@ -28,7 +28,7 @@ public:
     /**
      * @symbol ?parse\@Parser\@\@SAXAEBVValue\@Json\@\@AEBVSemVersion\@\@AEAEE\@Z
      */
-    MCAPI static void parse(class Json::Value const&, class SemVersion const&, unsigned char&, unsigned char);
+    MCAPI static void parse(class Json::Value const&, class SemVersion const&, uint8_t&, uint8_t);
     /**
      * @symbol ?parse\@Parser\@\@SAXAEBVValue\@Json\@\@AEBVSemVersion\@\@AEAVMobEffectInstance\@\@PEBD\@Z
      */
@@ -86,8 +86,7 @@ public:
     /**
      * @symbol ?parse\@Parser\@\@SAXAEBVValue\@Json\@\@AEBVSemVersion\@\@AEAIPEBDI\@Z
      */
-    MCAPI static void
-    parse(class Json::Value const&, class SemVersion const&, unsigned int&, char const*, unsigned int);
+    MCAPI static void parse(class Json::Value const&, class SemVersion const&, uint32_t&, char const*, uint32_t);
     /**
      * @symbol ?parse\@Parser\@\@SA_NAEBVValue\@Json\@\@AEBVSemVersion\@\@AEAVDefinitionTrigger\@\@_N\@Z
      */
@@ -95,7 +94,7 @@ public:
     /**
      * @symbol ?parse\@Parser\@\@SAXAEBVValue\@Json\@\@AEBVSemVersion\@\@AEAHPEBDH\@Z
      */
-    MCAPI static void parse(class Json::Value const&, class SemVersion const&, int&, char const*, int);
+    MCAPI static void parse(class Json::Value const&, class SemVersion const&, int32_t&, char const*, int32_t);
     /**
      * @symbol
      * ?parse\@Parser\@\@SAXAEBVValue\@Json\@\@AEBVSemVersion\@\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@PEBD\@Z

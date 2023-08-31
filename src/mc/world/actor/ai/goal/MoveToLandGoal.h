@@ -50,6 +50,6 @@ public:
     /**
      * @symbol ??0MoveToLandGoal\@\@QEAA\@AEAVMob\@\@MHHHM\@Z
      */
-    MCAPI MoveToLandGoal(class Mob&, float, int, int, int, float);
+    MCAPI MoveToLandGoal(class Mob&, float, int32_t, int32_t, int32_t, float);
     // NOLINTEND
 };

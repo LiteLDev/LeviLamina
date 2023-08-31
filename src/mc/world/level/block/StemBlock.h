@@ -220,17 +220,17 @@ public:
      * @vftbl 135
      * @symbol ?getColor\@StemBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getColor(class Block const&) const;
+    virtual int32_t getColor(class Block const&) const;
     /**
      * @vftbl 136
      * @symbol ?getColor\@StemBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual int32_t getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
     /**
      * @vftbl 137
      * @symbol ?getColorAtPos\@StemBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual int getColorAtPos(class BlockSource&, class BlockPos const&) const;
+    virtual int32_t getColorAtPos(class BlockSource&, class BlockPos const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -280,12 +280,12 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@StemBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 186
      * @symbol ?getResourceCount\@StemBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STEMBLOCK
     /**
      * @symbol ?canBeSilkTouched\@StemBlock\@\@MEBA_NXZ
@@ -300,7 +300,7 @@ public:
      * @symbol
      * ??0StemBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVBlockLegacy\@\@\@Z
      */
-    MCAPI StemBlock(std::string const&, int, class BlockLegacy const&);
+    MCAPI StemBlock(std::string const&, int32_t, class BlockLegacy const&);
     /**
      * @symbol ?getFruitBlock\@StemBlock\@\@QEBAAEBVBlockLegacy\@\@XZ
      */

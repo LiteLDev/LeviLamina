@@ -19,15 +19,15 @@ public:
     /**
      * @symbol ?getInsomniaTimerTicks\@InsomniaComponent\@\@QEBAHXZ
      */
-    MCAPI int getInsomniaTimerTicks() const;
+    MCAPI int32_t getInsomniaTimerTicks() const;
     /**
      * @symbol ?getTicksUntilInsomnia\@InsomniaComponent\@\@QEBAHXZ
      */
-    MCAPI int getTicksUntilInsomnia() const;
+    MCAPI int32_t getTicksUntilInsomnia() const;
     /**
      * @symbol ?incrementTimeSinceRest\@InsomniaComponent\@\@QEAAHXZ
      */
-    MCAPI int incrementTimeSinceRest();
+    MCAPI int32_t incrementTimeSinceRest();
     /**
      * @symbol
      * ?readAdditionalSaveData\@InsomniaComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z

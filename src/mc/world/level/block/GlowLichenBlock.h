@@ -246,7 +246,7 @@ public:
      * @vftbl 186
      * @symbol ?getResourceCount\@GlowLichenBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 192
      * @symbol ?getMultifaceBlock\@GlowLichenBlock\@\@UEBAAEBVBlock\@\@XZ
@@ -267,6 +267,6 @@ public:
      * @symbol
      * ??0GlowLichenBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI GlowLichenBlock(std::string const&, int, class Material const&);
+    MCAPI GlowLichenBlock(std::string const&, int32_t, class Material const&);
     // NOLINTEND
 };

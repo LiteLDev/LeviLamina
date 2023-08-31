@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Command;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;

@@ -128,7 +128,7 @@ public:
      * @vftbl 20
      * @symbol ?findOwner\@TickingArea\@\@UEAAPEAVActor\@\@AEAE\@Z
      */
-    virtual class Actor* findOwner(unsigned char&);
+    virtual class Actor* findOwner(uint8_t&);
     /**
      * @vftbl 21
      * @symbol ?entityHasBeenFound\@TickingArea\@\@UEBA_NXZ
@@ -153,7 +153,7 @@ public:
      * @vftbl 25
      * @symbol ?onComponentChanged\@TickingArea\@\@UEAAXIM_NAEAVLevelStorage\@\@\@Z
      */
-    virtual void onComponentChanged(unsigned int, float, bool, class LevelStorage&);
+    virtual void onComponentChanged(uint32_t, float, bool, class LevelStorage&);
     /**
      * @vftbl 26
      * @symbol ?updateBlockSourceCurrentTick\@TickingArea\@\@UEAAXAEBUTick\@\@\@Z

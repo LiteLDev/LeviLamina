@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class BaseScriptBlockLiquidContainerComponent; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 // clang-format on
 

@@ -228,22 +228,22 @@ public:
      * @vftbl 193
      * @symbol ?getSignalStrength\@PressurePlateBlock\@\@MEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual int getSignalStrength(class BlockSource&, class BlockPos const&) const;
+    virtual int32_t getSignalStrength(class BlockSource&, class BlockPos const&) const;
     /**
      * @vftbl 194
      * @symbol ?getSignalForData\@PressurePlateBlock\@\@MEBAHH\@Z
      */
-    virtual int getSignalForData(int) const;
+    virtual int32_t getSignalForData(int32_t) const;
     /**
      * @vftbl 195
      * @symbol ?getRedstoneSignal\@PressurePlateBlock\@\@MEBAHH\@Z
      */
-    virtual int getRedstoneSignal(int) const;
+    virtual int32_t getRedstoneSignal(int32_t) const;
     /**
      * @symbol
      * ??0PressurePlateBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@W4Sensitivity\@0\@\@Z
      */
     MCAPI
-    PressurePlateBlock(std::string const&, int, class Material const&, enum class PressurePlateBlock::Sensitivity);
+    PressurePlateBlock(std::string const&, int32_t, class Material const&, enum class PressurePlateBlock::Sensitivity);
     // NOLINTEND
 };

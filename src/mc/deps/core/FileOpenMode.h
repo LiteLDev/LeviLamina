@@ -21,7 +21,7 @@ public:
     /**
      * @symbol ??0FileOpenMode\@Core\@\@QEAA\@H\@Z
      */
-    MCAPI FileOpenMode(int);
+    MCAPI FileOpenMode(int32_t);
     /**
      * @symbol ?cModeWide\@FileOpenMode\@Core\@\@QEAAPEB_WXZ
      */

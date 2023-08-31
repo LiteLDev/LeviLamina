@@ -104,7 +104,7 @@ public:
     /**
      * @symbol ?_getHomeDimension\@GoHomeGoal\@\@AEBA?AV?$AutomaticID\@VDimension\@\@H\@\@XZ
      */
-    MCAPI class AutomaticID<class Dimension, int> _getHomeDimension() const;
+    MCAPI DimensionType _getHomeDimension() const;
     /**
      * @symbol ?_getHomePos\@GoHomeGoal\@\@AEBA?AVBlockPos\@\@XZ
      */

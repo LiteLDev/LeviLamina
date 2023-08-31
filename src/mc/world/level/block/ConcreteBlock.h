@@ -225,6 +225,6 @@ public:
      * @symbol
      * ??0ConcreteBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI ConcreteBlock(std::string const&, int);
+    MCAPI ConcreteBlock(std::string const&, int32_t);
     // NOLINTEND
 };

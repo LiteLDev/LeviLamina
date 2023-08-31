@@ -15,8 +15,8 @@ class ItemDescriptor {
 public:
     // ItemDescriptor inner types declare
     // clang-format off
-    struct BaseDescriptor;
     struct ItemEntry;
+    struct BaseDescriptor;
     // clang-format on
 
     // ItemDescriptor inner types define
@@ -27,6 +27,21 @@ public:
         ItemTag      = 0x3,
         Deferred     = 0x4,
         ComplexAlias = 0x5,
+    };
+
+    struct ItemEntry {
+
+    public:
+        const class Item* mItem;     // this+0x0
+        short             mAuxValue; // this+0x8
+
+    public:
+        // NOLINTBEGIN
+        /**
+         * @symbol ?getBlock\@ItemEntry\@ItemDescriptor\@\@QEBAPEBVBlock\@\@XZ
+         */
+        MCAPI class Block const* getBlock() const;
+        // NOLINTEND
     };
 
     struct BaseDescriptor {
@@ -70,7 +85,7 @@ public:
          * @symbol
          * ?forEachItemUntil\@BaseDescriptor\@ItemDescriptor\@\@UEBA_NV?$function\@$$A6A_NAEBVItem\@\@F\@Z\@std\@\@\@Z
          */
-        virtual bool forEachItemUntil(std::function<bool(class Item const&, short)>) const;
+        virtual bool forEachItemUntil(std::function<bool(class Item const&, int16_t)>) const;
         /**
          * @vftbl 6
          * @symbol
@@ -127,20 +142,6 @@ public:
         // NOLINTEND
     };
 
-    struct ItemEntry {
-
-    public:
-        const class Item* mItem;     // this+0x0
-        short             mAuxValue; // this+0x8
-    public:
-        // NOLINTBEGIN
-        /**
-         * @symbol ?getBlock\@ItemEntry\@ItemDescriptor\@\@QEBAPEBVBlock\@\@XZ
-         */
-        MCAPI class Block const* getBlock() const;
-        // NOLINTEND
-    };
-
     std::unique_ptr<ItemDescriptor::BaseDescriptor> mImpl;
 
 public:
@@ -169,7 +170,7 @@ public:
     /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@H\@Z
      */
-    MCAPI ItemDescriptor(std::string_view, int);
+    MCAPI ItemDescriptor(std::string_view, int32_t);
     /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@XZ
      */
@@ -185,7 +186,7 @@ public:
     /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVItem\@\@H\@Z
      */
-    MCAPI ItemDescriptor(class Item const&, int);
+    MCAPI ItemDescriptor(class Item const&, int32_t);
     /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVBlockLegacy\@\@\@Z
      */
@@ -209,11 +210,11 @@ public:
     /**
      * @symbol ?forEachItemUntil\@ItemDescriptor\@\@QEBA_NV?$function\@$$A6A_NAEBVItem\@\@F\@Z\@std\@\@\@Z
      */
-    MCAPI bool forEachItemUntil(std::function<bool(class Item const&, short)>) const;
+    MCAPI bool forEachItemUntil(std::function<bool(class Item const&, int16_t)>) const;
     /**
      * @symbol ?getAuxValue\@ItemDescriptor\@\@QEBAFXZ
      */
-    MCAPI short getAuxValue() const;
+    MCAPI int16_t getAuxValue() const;
     /**
      * @symbol ?getBlock\@ItemDescriptor\@\@QEBAPEBVBlock\@\@XZ
      */
@@ -230,11 +231,11 @@ public:
     /**
      * @symbol ?getId\@ItemDescriptor\@\@QEBAFXZ
      */
-    MCAPI short getId() const;
+    MCAPI int16_t getId() const;
     /**
      * @symbol ?getIdAux\@ItemDescriptor\@\@QEBAHXZ
      */
-    MCAPI int getIdAux() const;
+    MCAPI int32_t getIdAux() const;
     /**
      * @symbol ?getItem\@ItemDescriptor\@\@QEBAPEBVItem\@\@XZ
      */

@@ -107,7 +107,7 @@ public:
      * @vftbl 127
      * @symbol ?handleEntityEvent\@FireworksRocketActor\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
-    virtual void handleEntityEvent(enum class ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int32_t);
     /**
      * @vftbl 164
      * @symbol __unk_vfn_164
@@ -117,7 +117,7 @@ public:
      * @vftbl 173
      * @symbol ?onSynchedDataUpdate\@FireworksRocketActor\@\@UEAAXH\@Z
      */
-    virtual void onSynchedDataUpdate(int);
+    virtual void onSynchedDataUpdate(int32_t);
     /**
      * @vftbl 178
      * @symbol __unk_vfn_178

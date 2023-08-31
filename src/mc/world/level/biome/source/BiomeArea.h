@@ -15,7 +15,7 @@ public:
     /**
      * @symbol ??0BiomeArea\@\@QEAA\@AEBVBoundingBox\@\@I\@Z
      */
-    MCAPI BiomeArea(class BoundingBox const&, unsigned int);
+    MCAPI BiomeArea(class BoundingBox const&, uint32_t);
     /**
      * @symbol ??1BiomeArea\@\@QEAA\@XZ
      */

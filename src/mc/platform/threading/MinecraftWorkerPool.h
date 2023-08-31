@@ -38,7 +38,7 @@ public:
     /**
      * @symbol ?loadWorkerConfigurations\@MinecraftWorkerPool\@\@SAXII\@Z
      */
-    MCAPI static void loadWorkerConfigurations(unsigned int, unsigned int);
+    MCAPI static void loadWorkerConfigurations(uint32_t, uint32_t);
     /**
      * @symbol ?ASYNC\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */

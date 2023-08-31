@@ -61,6 +61,6 @@ public:
     /**
      * @symbol ??0BlockEventPacket\@\@QEAA\@VBlockPos\@\@HH\@Z
      */
-    MCAPI BlockEventPacket(class BlockPos, int, int);
+    MCAPI BlockEventPacket(class BlockPos, int32_t, int32_t);
     // NOLINTEND
 };

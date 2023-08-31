@@ -235,12 +235,12 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@MyceliumBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @symbol
      * ??0MyceliumBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI MyceliumBlock(std::string const&, int);
+    MCAPI MyceliumBlock(std::string const&, int32_t);
     /**
      * @symbol ?MIN_BRIGHTNESS_TO_PERSIST\@MyceliumBlock\@\@2UBrightness\@\@B
      */

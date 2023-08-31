@@ -49,7 +49,7 @@ public:
     /**
      * @symbol ?getBroadcastRange\@AngryComponent\@\@QEBAHXZ
      */
-    MCAPI int getBroadcastRange() const;
+    MCAPI int32_t getBroadcastRange() const;
     /**
      * @symbol ?getHasTicked\@AngryComponent\@\@QEBA_NXZ
      */

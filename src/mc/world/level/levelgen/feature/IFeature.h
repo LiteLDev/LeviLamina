@@ -22,6 +22,6 @@ public:
     /**
      * @symbol ?setBlockSafe\@IFeature\@\@QEBA_NAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEBVBlock\@\@H\@Z
      */
-    MCAPI bool setBlockSafe(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&, int) const;
+    MCAPI bool setBlockSafe(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&, int32_t) const;
     // NOLINTEND
 };

@@ -15,18 +15,18 @@ public:
     /**
      * @symbol ?getMirrorEditCount\@StructureTelemetryClientData\@\@QEBAIXZ
      */
-    MCAPI unsigned int getMirrorEditCount() const;
+    MCAPI uint32_t getMirrorEditCount() const;
     /**
      * @symbol ?getOffsetEditCount\@StructureTelemetryClientData\@\@QEBAIXZ
      */
-    MCAPI unsigned int getOffsetEditCount() const;
+    MCAPI uint32_t getOffsetEditCount() const;
     /**
      * @symbol ?getRotationEditCount\@StructureTelemetryClientData\@\@QEBAIXZ
      */
-    MCAPI unsigned int getRotationEditCount() const;
+    MCAPI uint32_t getRotationEditCount() const;
     /**
      * @symbol ?getSizeEditCount\@StructureTelemetryClientData\@\@QEBAIXZ
      */
-    MCAPI unsigned int getSizeEditCount() const;
+    MCAPI uint32_t getSizeEditCount() const;
     // NOLINTEND
 };

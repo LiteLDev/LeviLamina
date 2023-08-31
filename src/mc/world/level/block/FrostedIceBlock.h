@@ -261,7 +261,7 @@ public:
      * @symbol
      * ??0FrostedIceBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
-    MCAPI FrostedIceBlock(std::string const&, int, bool);
+    MCAPI FrostedIceBlock(std::string const&, int32_t, bool);
     /**
      * @symbol ?_slightlyMelt\@FrostedIceBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@_N\@Z
      */
@@ -273,10 +273,10 @@ private:
     /**
      * @symbol ?MAX_AGE\@FrostedIceBlock\@\@0HB
      */
-    MCAPI static int const MAX_AGE;
+    MCAPI static int32_t const MAX_AGE;
     /**
      * @symbol ?MIN_NEIGHBORS\@FrostedIceBlock\@\@0HB
      */
-    MCAPI static int const MIN_NEIGHBORS;
+    MCAPI static int32_t const MIN_NEIGHBORS;
     // NOLINTEND
 };

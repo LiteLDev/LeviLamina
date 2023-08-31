@@ -10,36 +10,12 @@ class NetherNetSignalServiceSigninJob {
 public:
     // NetherNetSignalServiceSigninJob inner types declare
     // clang-format off
-    class ConfigListener;
     struct Token;
     struct Url;
+    class ConfigListener;
     // clang-format on
 
     // NetherNetSignalServiceSigninJob inner types define
-    class ConfigListener {
-
-    public:
-        // prevent constructor by default
-        ConfigListener& operator=(ConfigListener const&) = delete;
-        ConfigListener(ConfigListener const&)            = delete;
-        ConfigListener()                                 = delete;
-
-    public:
-        // NOLINTBEGIN
-        /**
-         * @symbol
-         * ?getConfigAsync\@ConfigListener\@NetherNetSignalServiceSigninJob\@\@QEAA?AV?$shared_ptr\@V?$IAsyncResult\@V?$tuple\@UUrl\@NetherNetSignalServiceSigninJob\@\@UToken\@2\@\@std\@\@\@Threading\@Bedrock\@\@\@std\@\@XZ
-         */
-        MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<
-            std::tuple<struct NetherNetSignalServiceSigninJob::Url, struct NetherNetSignalServiceSigninJob::Token>>>
-              getConfigAsync();
-        /**
-         * @symbol ??1ConfigListener\@NetherNetSignalServiceSigninJob\@\@QEAA\@XZ
-         */
-        MCAPI ~ConfigListener();
-        // NOLINTEND
-    };
-
     struct Token {
 
     public:
@@ -71,6 +47,30 @@ public:
          * @symbol ??1Url\@NetherNetSignalServiceSigninJob\@\@QEAA\@XZ
          */
         MCAPI ~Url();
+        // NOLINTEND
+    };
+
+    class ConfigListener {
+
+    public:
+        // prevent constructor by default
+        ConfigListener& operator=(ConfigListener const&) = delete;
+        ConfigListener(ConfigListener const&)            = delete;
+        ConfigListener()                                 = delete;
+
+    public:
+        // NOLINTBEGIN
+        /**
+         * @symbol
+         * ?getConfigAsync\@ConfigListener\@NetherNetSignalServiceSigninJob\@\@QEAA?AV?$shared_ptr\@V?$IAsyncResult\@V?$tuple\@UUrl\@NetherNetSignalServiceSigninJob\@\@UToken\@2\@\@std\@\@\@Threading\@Bedrock\@\@\@std\@\@XZ
+         */
+        MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<
+            std::tuple<struct NetherNetSignalServiceSigninJob::Url, struct NetherNetSignalServiceSigninJob::Token>>>
+              getConfigAsync();
+        /**
+         * @symbol ??1ConfigListener\@NetherNetSignalServiceSigninJob\@\@QEAA\@XZ
+         */
+        MCAPI ~ConfigListener();
         // NOLINTEND
     };
 

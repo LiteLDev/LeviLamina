@@ -42,8 +42,8 @@ public:
         std::string const&,
         class Bedrock::NonOwnerPointer<class AppPlatform>,
         enum class GameType,
-        int,
-        int,
+        int32_t,
+        int32_t,
         bool,
         bool
     ) = 0;
@@ -67,13 +67,13 @@ public:
      * @vftbl 7
      * @symbol ?addCustomServer\@StubServerLocator\@\@UEAAXAEBVAsynchronousIPResolver\@\@H\@Z
      */
-    virtual void addCustomServer(class AsynchronousIPResolver const&, int) = 0;
+    virtual void addCustomServer(class AsynchronousIPResolver const&, int32_t) = 0;
     /**
      * @vftbl 8
      * @symbol
      * ?addCustomServer\@StubServerLocator\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    virtual void addCustomServer(std::string const&, int) = 0;
+    virtual void addCustomServer(std::string const&, int32_t) = 0;
     /**
      * @vftbl 9
      * @symbol
@@ -111,7 +111,7 @@ public:
      * @symbol
      * ?checkCanConnectToCustomServerAsync\@StubServerLocator\@\@UEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HV?$function\@$$A6AX_N\@Z\@3\@\@Z
      */
-    virtual void checkCanConnectToCustomServerAsync(std::string, int, std::function<void(bool)>) = 0;
+    virtual void checkCanConnectToCustomServerAsync(std::string, int32_t, std::function<void(bool)>) = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERLOCATOR
     /**
      * @symbol __unk_destructor_-1

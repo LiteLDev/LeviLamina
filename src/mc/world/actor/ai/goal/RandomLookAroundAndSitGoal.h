@@ -55,6 +55,7 @@ public:
     /**
      * @symbol ??0RandomLookAroundAndSitGoal\@\@QEAA\@AEAVMob\@\@_NHHMMHHMH\@Z
      */
-    MCAPI RandomLookAroundAndSitGoal(class Mob&, bool, int, int, float, float, int, int, float, int);
+    MCAPI
+    RandomLookAroundAndSitGoal(class Mob&, bool, int32_t, int32_t, float, float, int32_t, int32_t, float, int32_t);
     // NOLINTEND
 };

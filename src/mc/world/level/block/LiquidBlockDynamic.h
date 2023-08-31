@@ -240,7 +240,7 @@ public:
      * @symbol
      * ??0LiquidBlockDynamic\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI LiquidBlockDynamic(std::string const&, int, class Material const&);
+    MCAPI LiquidBlockDynamic(std::string const&, int32_t, class Material const&);
     /**
      * @symbol ?getSpread\@LiquidBlockDynamic\@\@QEBA?AV?$array\@_N$03\@std\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -256,15 +256,15 @@ public:
     /**
      * @symbol ?_canSpreadTo\@LiquidBlockDynamic\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@1E\@Z
      */
-    MCAPI bool _canSpreadTo(class BlockSource&, class BlockPos const&, class BlockPos const&, unsigned char) const;
+    MCAPI bool _canSpreadTo(class BlockSource&, class BlockPos const&, class BlockPos const&, uint8_t) const;
     /**
      * @symbol ?_getSlopeDistance\@LiquidBlockDynamic\@\@AEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@HH\@Z
      */
-    MCAPI int _getSlopeDistance(class BlockSource&, class BlockPos const&, int, int) const;
+    MCAPI int32_t _getSlopeDistance(class BlockSource&, class BlockPos const&, int32_t, int32_t) const;
     /**
      * @symbol ?_isWaterBlocking\@LiquidBlockDynamic\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@1E\@Z
      */
-    MCAPI bool _isWaterBlocking(class BlockSource&, class BlockPos const&, class BlockPos const&, unsigned char) const;
+    MCAPI bool _isWaterBlocking(class BlockSource&, class BlockPos const&, class BlockPos const&, uint8_t) const;
     /**
      * @symbol ?_setStatic\@LiquidBlockDynamic\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@_N\@Z
      */
@@ -276,6 +276,6 @@ public:
     /**
      * @symbol ?_trySpreadTo\@LiquidBlockDynamic\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H1E\@Z
      */
-    MCAPI void _trySpreadTo(class BlockSource&, class BlockPos const&, int, class BlockPos const&, unsigned char) const;
+    MCAPI void _trySpreadTo(class BlockSource&, class BlockPos const&, int32_t, class BlockPos const&, uint8_t) const;
     // NOLINTEND
 };

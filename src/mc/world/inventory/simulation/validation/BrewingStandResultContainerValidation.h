@@ -25,18 +25,19 @@ public:
      * @symbol
      * ?isValidSlotForContainer\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
      */
-    virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
+    virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int32_t) const;
     /**
      * @vftbl 2
      * @symbol
      * ?isItemAllowedInSlot\@BrewingStandResultContainerValidation\@\@UEBA_NAEBVContainerScreenContext\@\@HAEBVItemStackBase\@\@H\@Z
      */
-    virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    virtual bool
+    isItemAllowedInSlot(class ContainerScreenContext const&, int32_t, class ItemStackBase const&, int32_t) const;
     /**
      * @vftbl 3
      * @symbol ?getAvailableSetCount\@BrewingStandResultContainerValidation\@\@UEBAHHAEBVItemStackBase\@\@\@Z
      */
-    virtual int getAvailableSetCount(int, class ItemStackBase const&) const;
+    virtual int32_t getAvailableSetCount(int32_t, class ItemStackBase const&) const;
     /**
      * @vftbl 4
      * @symbol ?isItemAllowedToAdd\@BrewingStandResultContainerValidation\@\@UEBA_NAEBVItemStack\@\@\@Z
@@ -62,12 +63,12 @@ public:
      * @vftbl 8
      * @symbol ?getContainerOffset\@BrewingStandResultContainerValidation\@\@UEBAHAEBVContainerScreenContext\@\@\@Z
      */
-    virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    virtual int32_t getContainerOffset(class ContainerScreenContext const&) const;
     /**
      * @vftbl 9
      * @symbol
      * ?getContainerSize\@BrewingStandResultContainerValidation\@\@UEBAHAEBVContainerScreenContext\@\@AEBVContainer\@\@\@Z
      */
-    virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
+    virtual int32_t getContainerSize(class ContainerScreenContext const&, class Container const&) const;
     // NOLINTEND
 };

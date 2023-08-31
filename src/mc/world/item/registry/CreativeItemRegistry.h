@@ -7,6 +7,11 @@
 #include "mc/enums/CreativeItemCategory.h"
 #include "mc/network/TypedServerNetId.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
 class CreativeItemRegistry : public ::Bedrock::EnableNonOwnerReferences {
 
 public:
@@ -31,7 +36,7 @@ public:
      * ?findCreativeItemEntry\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemEntry\@\@AEBV?$TypedServerNetId\@UCreativeItemNetIdTag\@\@I$0A\@\@\@\@Z
      */
     MCAPI class CreativeItemEntry*
-    findCreativeItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const&);
+    findCreativeItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, uint32_t, 0> const&);
     /**
      * @symbol ?findCreativeItemEntry\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemEntry\@\@AEBVItemInstance\@\@\@Z
      */
@@ -49,7 +54,7 @@ public:
     /**
      * @symbol ?getItemEntry\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemEntry\@\@I\@Z
      */
-    MCAPI class CreativeItemEntry* getItemEntry(unsigned int);
+    MCAPI class CreativeItemEntry* getItemEntry(uint32_t);
     /**
      * @symbol
      * ?newCreativeCategory\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemGroupCategory\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4CreativeItemCategory\@\@\@Z
@@ -66,7 +71,7 @@ public:
      * ?newItemEntry\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemEntry\@\@AEBV?$TypedServerNetId\@UCreativeItemNetIdTag\@\@I$0A\@\@\@AEBVItemInstance\@\@\@Z
      */
     MCAPI class CreativeItemEntry*
-    newItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const&, class ItemInstance const&);
+    newItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, uint32_t, 0> const&, class ItemInstance const&);
     /**
      * @symbol ?resetGroups\@CreativeItemRegistry\@\@QEAAXXZ
      */
@@ -74,7 +79,7 @@ public:
     /**
      * @symbol ?updateItemEntry\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemEntry\@\@IAEBVItemInstance\@\@\@Z
      */
-    MCAPI class CreativeItemEntry* updateItemEntry(unsigned int, class ItemInstance const&);
+    MCAPI class CreativeItemEntry* updateItemEntry(uint32_t, class ItemInstance const&);
     /**
      * @symbol ?updateNetIdMap\@CreativeItemRegistry\@\@QEAAXXZ
      */

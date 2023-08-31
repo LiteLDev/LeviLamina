@@ -69,8 +69,8 @@ public:
      */
     MCAPI ResourcePackDataInfoPacket(
         std::string const&,
-        unsigned int,
-        int,
+        uint32_t,
+        int32_t,
         uint64_t,
         std::string const&,
         bool,

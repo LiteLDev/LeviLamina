@@ -31,7 +31,7 @@ public:
      * @vftbl 2
      * @symbol ?apply\@LootItemFunction\@\@UEAAHAEAVItemStack\@\@AEAVRandom\@\@AEBUTrade\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual int apply(class ItemStack&, class Random&, struct Trade const&, class LootTableContext&);
+    virtual int32_t apply(class ItemStack&, class Random&, struct Trade const&, class LootTableContext&);
     /**
      * @vftbl 3
      * @symbol ?apply\@SetItemDamageFunction\@\@UEAAXAEAVItemInstance\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
@@ -42,7 +42,7 @@ public:
      * @symbol
      * ?apply\@LootItemFunction\@\@UEAAHAEAVItemInstance\@\@AEAVRandom\@\@AEBUTrade\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual int apply(class ItemInstance&, class Random&, struct Trade const&, class LootTableContext&);
+    virtual int32_t apply(class ItemInstance&, class Random&, struct Trade const&, class LootTableContext&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMFUNCTION
     /**
      * @symbol __unk_destructor_-1

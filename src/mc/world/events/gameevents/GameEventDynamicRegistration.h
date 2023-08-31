@@ -23,14 +23,12 @@ public:
      * @symbol
      * ?onActorLoadedIntoChunk\@GameEventDynamicRegistration\@\@QEAAXAEBVBlockSource\@\@VChunkPos\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI void
-    onActorLoadedIntoChunk(class BlockSource const&, class ChunkPos, class AutomaticID<class Dimension, int>);
+    MCAPI void onActorLoadedIntoChunk(class BlockSource const&, class ChunkPos, DimensionType);
     /**
      * @symbol
      * ?onActorMovedBetweenChunks\@GameEventDynamicRegistration\@\@QEAAXAEBVBlockSource\@\@VChunkPos\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI void
-    onActorMovedBetweenChunks(class BlockSource const&, class ChunkPos, class AutomaticID<class Dimension, int>);
+    MCAPI void onActorMovedBetweenChunks(class BlockSource const&, class ChunkPos, DimensionType);
     /**
      * @symbol ?onActorRemoved\@GameEventDynamicRegistration\@\@QEAAXXZ
      */
@@ -43,6 +41,6 @@ public:
      * @symbol
      * ?_onActorChangedChunk\@GameEventDynamicRegistration\@\@AEAAXAEBVBlockSource\@\@VChunkPos\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI void _onActorChangedChunk(class BlockSource const&, class ChunkPos, class AutomaticID<class Dimension, int>);
+    MCAPI void _onActorChangedChunk(class BlockSource const&, class ChunkPos, DimensionType);
     // NOLINTEND
 };

@@ -55,7 +55,7 @@ public:
      * @vftbl 38
      * @symbol ?teleportTo\@Agent\@\@UEAAXAEBVVec3\@\@_NHH1\@Z
      */
-    virtual void teleportTo(class Vec3 const&, bool, int, int, bool);
+    virtual void teleportTo(class Vec3 const&, bool, int32_t, int32_t, bool);
     /**
      * @vftbl 43
      * @symbol ?normalTick\@Agent\@\@UEAAXXZ
@@ -141,7 +141,7 @@ public:
      * @vftbl 127
      * @symbol ?handleEntityEvent\@Agent\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
-    virtual void handleEntityEvent(enum class ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int32_t);
     /**
      * @vftbl 144
      * @symbol ?setCarriedItem\@Agent\@\@UEAAXAEBVItemStack\@\@\@Z
@@ -166,7 +166,7 @@ public:
      * @vftbl 192
      * @symbol ?canBeAffected\@Agent\@\@UEBA_NI\@Z
      */
-    virtual bool canBeAffected(unsigned int) const;
+    virtual bool canBeAffected(uint32_t) const;
     /**
      * @vftbl 202
      * @symbol __unk_vfn_202
@@ -221,7 +221,7 @@ public:
      * @vftbl 254
      * @symbol ?knockback\@Agent\@\@UEAAXPEAVActor\@\@HMMMMM\@Z
      */
-    virtual void knockback(class Actor*, int, float, float, float, float, float);
+    virtual void knockback(class Actor*, int32_t, float, float, float, float, float);
     /**
      * @vftbl 276
      * @symbol __unk_vfn_276
@@ -294,7 +294,7 @@ public:
     /**
      * @symbol ?getSelectedSlot\@Agent\@\@QEBAHXZ
      */
-    MCAPI int getSelectedSlot() const;
+    MCAPI int32_t getSelectedSlot() const;
     /**
      * @symbol ?handleAnimationEvent\@Agent\@\@QEAAXW4AgentAnimation\@\@\@Z
      */
@@ -306,7 +306,7 @@ public:
     /**
      * @symbol ?isValidSlotNum\@Agent\@\@QEAA_NH\@Z
      */
-    MCAPI bool isValidSlotNum(int);
+    MCAPI bool isValidSlotNum(int32_t);
     /**
      * @symbol ?setGameType\@Agent\@\@QEAAXW4GameType\@\@\@Z
      */

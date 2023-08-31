@@ -12,7 +12,7 @@
 namespace Json { class Value; }
 // clang-format on
 
-struct MolangDescriptor {
+struct MolangDescriptor : public ::ItemDescriptor::BaseDescriptor {
 
 public:
     // prevent constructor by default

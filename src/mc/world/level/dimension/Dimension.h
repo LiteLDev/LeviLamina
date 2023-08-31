@@ -88,7 +88,7 @@ public:
     /**
      * @symbol ?getCloudHeight\@Dimension\@\@UEBAFXZ
      */
-    MCVAPI short getCloudHeight() const;
+    MCVAPI int16_t getCloudHeight() const;
     /**
      * @symbol ?getDefaultBiome\@Dimension\@\@UEBA?AVHashedString\@\@XZ
      */
@@ -96,7 +96,7 @@ public:
     /**
      * @symbol ?getDimensionId\@Dimension\@\@UEBA?AV?$AutomaticID\@VDimension\@\@H\@\@XZ
      */
-    MCVAPI class AutomaticID<class Dimension, int> getDimensionId() const;
+    MCVAPI DimensionType getDimensionId() const;
     /**
      * @symbol ?getLightTextureImageBuilder\@Dimension\@\@UEBAPEAVBaseLightTextureImageBuilder\@\@XZ
      */
@@ -108,7 +108,7 @@ public:
     /**
      * @symbol ?getSpawnYPosition\@Dimension\@\@UEBAHXZ
      */
-    MCVAPI int getSpawnYPosition() const;
+    MCVAPI int32_t getSpawnYPosition() const;
     /**
      * @symbol ?getSunIntensity\@Dimension\@\@UEBAMMAEBVVec3\@\@M\@Z
      */
@@ -116,7 +116,7 @@ public:
     /**
      * @symbol ?getTimeOfDay\@Dimension\@\@MEBAMHM\@Z
      */
-    MCVAPI float getTimeOfDay(int, float) const;
+    MCVAPI float getTimeOfDay(int32_t, float) const;
     /**
      * @symbol ?hasBedrockFog\@Dimension\@\@UEAA_NXZ
      */
@@ -152,7 +152,7 @@ public:
     /**
      * @symbol ?isFoggyAt\@Dimension\@\@UEBA_NHH\@Z
      */
-    MCVAPI bool isFoggyAt(int, int) const;
+    MCVAPI bool isFoggyAt(int32_t, int32_t) const;
     /**
      * @symbol ?isNaturalDimension\@Dimension\@\@UEBA_NXZ
      */
@@ -160,7 +160,7 @@ public:
     /**
      * @symbol ?isValidSpawn\@Dimension\@\@UEBA_NHH\@Z
      */
-    MCVAPI bool isValidSpawn(int, int) const;
+    MCVAPI bool isValidSpawn(int32_t, int32_t) const;
     /**
      * @symbol ?mayRespawnViaBed\@Dimension\@\@UEBA_NXZ
      */
@@ -170,11 +170,11 @@ public:
      * ?onBlockChanged\@Dimension\@\@UEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@IAEBVBlock\@\@2HPEBUActorBlockSyncMessage\@\@W4BlockChangedEventTarget\@\@PEAVActor\@\@\@Z
      */
     MCVAPI void
-    onBlockChanged(class BlockSource&, class BlockPos const&, unsigned int, class Block const&, class Block const&, int, struct ActorBlockSyncMessage const*, enum class BlockChangedEventTarget, class Actor*);
+    onBlockChanged(class BlockSource&, class BlockPos const&, uint32_t, class Block const&, class Block const&, int32_t, struct ActorBlockSyncMessage const*, enum class BlockChangedEventTarget, class Actor*);
     /**
      * @symbol ?onBlockEvent\@Dimension\@\@UEAAXAEAVBlockSource\@\@HHHHH\@Z
      */
-    MCVAPI void onBlockEvent(class BlockSource&, int, int, int, int, int);
+    MCVAPI void onBlockEvent(class BlockSource&, int32_t, int32_t, int32_t, int32_t, int32_t);
     /**
      * @symbol ?onChunkLoaded\@Dimension\@\@UEAAXAEAVChunkSource\@\@AEAVLevelChunk\@\@\@Z
      */
@@ -221,19 +221,13 @@ public:
      * @symbol
      * ??0Dimension\@\@QEAA\@AEAVILevel\@\@V?$AutomaticID\@VDimension\@\@H\@\@VDimensionHeightRange\@\@AEAVScheduler\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI Dimension(
-        class ILevel&,
-        class AutomaticID<class Dimension, int>,
-        class DimensionHeightRange,
-        class Scheduler&,
-        std::string
-    );
+    MCAPI Dimension(class ILevel&, DimensionType, class DimensionHeightRange, class Scheduler&, std::string);
     /**
      * @symbol
      * ?addActorUnloadedChunkTransferToQueue\@Dimension\@\@QEAAXAEBVChunkPos\@\@0V?$AutomaticID\@VDimension\@\@H\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@5\@\@Z
      */
     MCAPI void
-    addActorUnloadedChunkTransferToQueue(class ChunkPos const&, class ChunkPos const&, class AutomaticID<class Dimension, int>, std::string&, std::unique_ptr<class CompoundTag>);
+    addActorUnloadedChunkTransferToQueue(class ChunkPos const&, class ChunkPos const&, DimensionType, std::string&, std::unique_ptr<class CompoundTag>);
     /**
      * @symbol ?addPlayerToReplication\@Dimension\@\@QEAAXAEBVWeakEntityRef\@\@\@Z
      */
@@ -345,11 +339,11 @@ public:
     /**
      * @symbol ?getHeight\@Dimension\@\@QEBAFXZ
      */
-    MCAPI short getHeight() const;
+    MCAPI int16_t getHeight() const;
     /**
      * @symbol ?getHeightInSubchunks\@Dimension\@\@QEBAGXZ
      */
-    MCAPI unsigned short getHeightInSubchunks() const;
+    MCAPI uint16_t getHeightInSubchunks() const;
     /**
      * @symbol ?getHeightRange\@Dimension\@\@QEBAAEBVDimensionHeightRange\@\@XZ
      */
@@ -365,7 +359,7 @@ public:
     /**
      * @symbol ?getMinHeight\@Dimension\@\@QEBAFXZ
      */
-    MCAPI short getMinHeight() const;
+    MCAPI int16_t getMinHeight() const;
     /**
      * @symbol ?getMoonBrightness\@Dimension\@\@QEBAMXZ
      */
@@ -373,11 +367,11 @@ public:
     /**
      * @symbol ?getMoonPhase\@Dimension\@\@QEBAHXZ
      */
-    MCAPI int getMoonPhase() const;
+    MCAPI int32_t getMoonPhase() const;
     /**
      * @symbol ?getPopCap\@Dimension\@\@QEBAMH_N\@Z
      */
-    MCAPI float getPopCap(int, bool) const;
+    MCAPI float getPopCap(int32_t, bool) const;
     /**
      * @symbol ?getSeasons\@Dimension\@\@QEAAAEAVSeasons\@\@XZ
      */
@@ -438,7 +432,7 @@ public:
     /**
      * @symbol ?isHeightWithinRange\@Dimension\@\@QEBA_NAEBF\@Z
      */
-    MCAPI bool isHeightWithinRange(short const&) const;
+    MCAPI bool isHeightWithinRange(int16_t const&) const;
     /**
      * @symbol ?isLeaveGameDone\@Dimension\@\@QEAA_NXZ
      */
@@ -450,7 +444,7 @@ public:
     /**
      * @symbol ?isSubChunkHeightWithinRange\@Dimension\@\@QEBA_NAEBF\@Z
      */
-    MCAPI bool isSubChunkHeightWithinRange(short const&) const;
+    MCAPI bool isSubChunkHeightWithinRange(int16_t const&) const;
     /**
      * @symbol ?isUltraWarm\@Dimension\@\@QEBA_NXZ
      */
@@ -515,7 +509,7 @@ public:
      * ?transferEntityToUnloadedChunk\@Dimension\@\@QEAAXAEBVChunkPos\@\@0V?$AutomaticID\@VDimension\@\@H\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@5\@\@Z
      */
     MCAPI void
-    transferEntityToUnloadedChunk(class ChunkPos const&, class ChunkPos const&, class AutomaticID<class Dimension, int>, std::string&, std::unique_ptr<class CompoundTag>);
+    transferEntityToUnloadedChunk(class ChunkPos const&, class ChunkPos const&, DimensionType, std::string&, std::unique_ptr<class CompoundTag>);
     /**
      * @symbol ?tryGarbageCollectStructures\@Dimension\@\@QEAAXXZ
      */
@@ -554,7 +548,7 @@ public:
     /**
      * @symbol ?LOW_CPU_PACKET_BLOCK_LIMIT\@Dimension\@\@2IB
      */
-    MCAPI static unsigned int const LOW_CPU_PACKET_BLOCK_LIMIT;
+    MCAPI static uint32_t const LOW_CPU_PACKET_BLOCK_LIMIT;
     /**
      * @symbol ?MOON_BRIGHTNESS_PER_PHASE\@Dimension\@\@2QBMB
      */

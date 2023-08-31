@@ -136,7 +136,7 @@ public:
     /**
      * @symbol ?getTickTimeout\@NavigationComponent\@\@QEBAHXZ
      */
-    MCAPI int getTickTimeout() const;
+    MCAPI int32_t getTickTimeout() const;
     /**
      * @symbol ?incrementTick\@NavigationComponent\@\@QEAAXXZ
      */
@@ -162,7 +162,7 @@ public:
     /**
      * @symbol ?isStuck\@NavigationComponent\@\@QEBA_NH\@Z
      */
-    MCAPI bool isStuck(int) const;
+    MCAPI bool isStuck(int32_t) const;
     /**
      * @symbol ?moveTo\@NavigationComponent\@\@QEAA_NAEAVMob\@\@AEAVActor\@\@M\@Z
      */
@@ -265,7 +265,7 @@ public:
     /**
      * @symbol ?setTickTimeout\@NavigationComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setTickTimeout(int);
+    MCAPI void setTickTimeout(int32_t);
     /**
      * @symbol ?stop\@NavigationComponent\@\@QEAAXAEAVMob\@\@\@Z
      */

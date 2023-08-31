@@ -40,7 +40,7 @@ public:
      * @symbol
      * ??0PlayerUIContainer\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_NH\@Z
      */
-    MCAPI PlayerUIContainer(std::string const&, bool, int);
+    MCAPI PlayerUIContainer(std::string const&, bool, int32_t);
     /**
      * @symbol ?load\@PlayerUIContainer\@\@QEAAXAEBVListTag\@\@AEBVSemVersion\@\@\@Z
      */

@@ -23,6 +23,6 @@ public:
     /**
      * @symbol ?createRuin\@OceanRuinStart\@\@QEAAXAEAVDimension\@\@AEAVRandom\@\@HH\@Z
      */
-    MCAPI void createRuin(class Dimension&, class Random&, int, int);
+    MCAPI void createRuin(class Dimension&, class Random&, int32_t, int32_t);
     // NOLINTEND
 };

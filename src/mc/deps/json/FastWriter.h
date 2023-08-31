@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
+namespace Json { class Writer; }
 // clang-format on
 
 namespace Json {

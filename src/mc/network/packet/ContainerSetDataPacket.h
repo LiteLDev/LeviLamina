@@ -62,6 +62,6 @@ public:
     /**
      * @symbol ??0ContainerSetDataPacket\@\@QEAA\@W4ContainerID\@\@HH\@Z
      */
-    MCAPI ContainerSetDataPacket(enum class ContainerID, int, int);
+    MCAPI ContainerSetDataPacket(enum class ContainerID, int32_t, int32_t);
     // NOLINTEND
 };

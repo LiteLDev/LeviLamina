@@ -133,7 +133,7 @@ public:
      * @vftbl 127
      * @symbol ?handleEntityEvent\@ServerPlayer\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
-    virtual void handleEntityEvent(enum class ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int32_t);
     /**
      * @vftbl 136
      * @symbol ?setArmor\@ServerPlayer\@\@UEAAXW4ArmorSlot\@\@AEBVItemStack\@\@\@Z
@@ -163,7 +163,7 @@ public:
      * @vftbl 165
      * @symbol ?changeDimension\@ServerPlayer\@\@UEAAXV?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    virtual void changeDimension(class AutomaticID<class Dimension, int>);
+    virtual void changeDimension(DimensionType);
     /**
      * @vftbl 166
      * @symbol ?getControllingPlayer\@ServerPlayer\@\@UEBA?AUActorUniqueID\@\@XZ
@@ -243,7 +243,7 @@ public:
      * @vftbl 254
      * @symbol ?knockback\@ServerPlayer\@\@UEAAXPEAVActor\@\@HMMMMM\@Z
      */
-    virtual void knockback(class Actor*, int, float, float, float, float, float);
+    virtual void knockback(class Actor*, int32_t, float, float, float, float, float);
     /**
      * @vftbl 264
      * @symbol ?aiStep\@ServerPlayer\@\@UEAAXXZ
@@ -263,7 +263,7 @@ public:
      * @vftbl 288
      * @symbol ?hurtArmorSlots\@ServerPlayer\@\@UEAAXAEBVActorDamageSource\@\@HV?$bitset\@$03\@std\@\@\@Z
      */
-    virtual void hurtArmorSlots(class ActorDamageSource const&, int, std::bitset<4>);
+    virtual void hurtArmorSlots(class ActorDamageSource const&, int32_t, std::bitset<4>);
     /**
      * @vftbl 289
      * @symbol ?setDamagedArmor\@ServerPlayer\@\@UEAAXW4ArmorSlot\@\@AEBVItemStack\@\@\@Z
@@ -308,7 +308,7 @@ public:
      * @vftbl 331
      * @symbol ?changeDimensionWithCredits\@ServerPlayer\@\@UEAAXV?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    virtual void changeDimensionWithCredits(class AutomaticID<class Dimension, int>);
+    virtual void changeDimensionWithCredits(DimensionType);
     /**
      * @vftbl 332
      * @symbol ?tickWorld\@ServerPlayer\@\@UEAAXAEBUTick\@\@\@Z
@@ -328,7 +328,7 @@ public:
      * @vftbl 336
      * @symbol ?moveSpawnView\@ServerPlayer\@\@UEAAXAEBVVec3\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    virtual void moveSpawnView(class Vec3 const&, class AutomaticID<class Dimension, int>);
+    virtual void moveSpawnView(class Vec3 const&, DimensionType);
     /**
      * @vftbl 339
      * @symbol ?checkMovementStats\@ServerPlayer\@\@UEAAXAEBVVec3\@\@\@Z
@@ -473,13 +473,19 @@ public:
      * @vftbl 383
      * @symbol ?setContainerData\@ServerPlayer\@\@UEAAXAEAVIContainerManager\@\@HH\@Z
      */
-    virtual void setContainerData(class IContainerManager&, int, int);
+    virtual void setContainerData(class IContainerManager&, int32_t, int32_t);
     /**
      * @vftbl 384
      * @symbol ?slotChanged\@ServerPlayer\@\@UEAAXAEAVIContainerManager\@\@AEAVContainer\@\@HAEBVItemStack\@\@2_N\@Z
      */
-    virtual void
-    slotChanged(class IContainerManager&, class Container&, int, class ItemStack const&, class ItemStack const&, bool);
+    virtual void slotChanged(
+        class IContainerManager&,
+        class Container&,
+        int32_t,
+        class ItemStack const&,
+        class ItemStack const&,
+        bool
+    );
     /**
      * @vftbl 386
      * @symbol ?refreshContainer\@ServerPlayer\@\@UEAAXAEAVIContainerManager\@\@\@Z
@@ -545,7 +551,7 @@ public:
      * @vftbl 406
      * @symbol ?getMaxChunkBuildRadius\@ServerPlayer\@\@UEBAEXZ
      */
-    virtual unsigned char getMaxChunkBuildRadius() const;
+    virtual uint8_t getMaxChunkBuildRadius() const;
     /**
      * @vftbl 410
      * @symbol ?getEditorPlayer\@ServerPlayer\@\@UEBA?AV?$NonOwnerPointer\@VIEditorPlayer\@Editor\@\@\@Bedrock\@\@XZ
@@ -560,7 +566,7 @@ public:
      * @vftbl 412
      * @symbol ?_getSpawnChunkLimit\@ServerPlayer\@\@MEBAHXZ
      */
-    virtual int _getSpawnChunkLimit() const;
+    virtual int32_t _getSpawnChunkLimit() const;
     /**
      * @vftbl 413
      * @symbol ?_updateChunkPublisherView\@ServerPlayer\@\@MEAAXAEBVVec3\@\@M\@Z
@@ -584,7 +590,8 @@ public:
      * @symbol
      * ??0ServerPlayer\@\@QEAA\@AEAVLevel\@\@AEAVPacketSender\@\@AEAVNetworkSystem\@\@AEAVActiveTransfersManager\@Server\@ClientBlobCache\@\@W4GameType\@\@AEBVNetworkIdentifier\@\@W4SubClientId\@\@V?$function\@$$A6AXAEAVServerPlayer\@\@\@Z\@std\@\@VUUID\@mce\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@9V?$unique_ptr\@VCertificate\@\@U?$default_delete\@VCertificate\@\@\@std\@\@\@std\@\@H_NAEAVEntityContext\@\@\@Z
      */
-    MCAPI ServerPlayer(class Level&, class PacketSender&, class NetworkSystem&, class ClientBlobCache::Server::ActiveTransfersManager&, enum class GameType, class NetworkIdentifier const&, enum class SubClientId, std::function<void(class ServerPlayer&)>, class mce::UUID, std::string const&, std::string const&, std::unique_ptr<class Certificate>, int, bool, class EntityContext&);
+    MCAPI
+    ServerPlayer(class Level&, class PacketSender&, class NetworkSystem&, class ClientBlobCache::Server::ActiveTransfersManager&, enum class GameType, class NetworkIdentifier const&, enum class SubClientId, std::function<void(class ServerPlayer&)>, class mce::UUID, std::string const&, std::string const&, std::unique_ptr<class Certificate>, int32_t, bool, class EntityContext&);
     /**
      * @symbol ?acceptClientPosition\@ServerPlayer\@\@QEAAXAEBVVec3\@\@\@Z
      */
@@ -660,7 +667,7 @@ public:
     /**
      * @symbol ?setClientChunkRadius\@ServerPlayer\@\@QEAAXIE\@Z
      */
-    MCAPI void setClientChunkRadius(unsigned int, unsigned char);
+    MCAPI void setClientChunkRadius(uint32_t, uint8_t);
     /**
      * @symbol ?setIsCompatibleWithClientSideChunkGen\@ServerPlayer\@\@QEAAX_N\@Z
      */

@@ -55,7 +55,7 @@ public:
     /**
      * @symbol ??0FollowMobGoal\@\@QEAA\@AEAVMob\@\@MMH\@Z
      */
-    MCAPI FollowMobGoal(class Mob&, float, float, int);
+    MCAPI FollowMobGoal(class Mob&, float, float, int32_t);
     // NOLINTEND
 
     // private:

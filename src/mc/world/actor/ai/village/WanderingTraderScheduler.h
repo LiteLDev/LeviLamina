@@ -49,7 +49,8 @@ public:
      * @symbol
      * ?_getRandomHeightmapPosAroundOrigin\@WanderingTraderScheduler\@\@AEAA?AVBlockPos\@\@AEBVBlockSource\@\@AEBV2\@H_N\@Z
      */
-    MCAPI class BlockPos _getRandomHeightmapPosAroundOrigin(class BlockSource const&, class BlockPos const&, int, bool);
+    MCAPI class BlockPos
+    _getRandomHeightmapPosAroundOrigin(class BlockSource const&, class BlockPos const&, int32_t, bool);
     /**
      * @symbol ?_getRandomPlayerInOverworld\@WanderingTraderScheduler\@\@AEBAPEAVActor\@\@XZ
      */
@@ -79,18 +80,18 @@ private:
     /**
      * @symbol ?DISTANCE_IN_BLOCKS_FROM_MEETING_AREA\@WanderingTraderScheduler\@\@0HB
      */
-    MCAPI static int const DISTANCE_IN_BLOCKS_FROM_MEETING_AREA;
+    MCAPI static int32_t const DISTANCE_IN_BLOCKS_FROM_MEETING_AREA;
     /**
      * @symbol ?DISTANCE_IN_BLOCKS_FROM_PLAYER\@WanderingTraderScheduler\@\@0HB
      */
-    MCAPI static int const DISTANCE_IN_BLOCKS_FROM_PLAYER;
+    MCAPI static int32_t const DISTANCE_IN_BLOCKS_FROM_PLAYER;
     /**
      * @symbol ?DISTANCE_IN_BLOCKS_FROM_PLAYER_SQUARE\@WanderingTraderScheduler\@\@0HB
      */
-    MCAPI static int const DISTANCE_IN_BLOCKS_FROM_PLAYER_SQUARE;
+    MCAPI static int32_t const DISTANCE_IN_BLOCKS_FROM_PLAYER_SQUARE;
     /**
      * @symbol ?LENGTH_OF_DAY_IN_TICKS\@WanderingTraderScheduler\@\@0HB
      */
-    MCAPI static int const LENGTH_OF_DAY_IN_TICKS;
+    MCAPI static int32_t const LENGTH_OF_DAY_IN_TICKS;
     // NOLINTEND
 };

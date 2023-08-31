@@ -14,6 +14,7 @@ class Scheduler;
 class WorkerPool;
 namespace Bedrock::Threading { class AssignedThread; }
 namespace Bedrock::Threading { class OSThreadPriority; }
+namespace Bedrock::Threading { class SharedRecursiveMutexBase; }
 namespace Bedrock::Threading::AsyncResult { class ToXAsyncBlock; }
 namespace Bedrock::Threading::CustomTLS { class TLSManager; }
 struct XAsyncBlock;

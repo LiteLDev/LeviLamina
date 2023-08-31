@@ -4,7 +4,7 @@
 
 namespace glm {
 
-template <int T0, typename T1, int T2>
+template <int32_t T0, typename T1, int32_t T2>
 struct vec {
 
 public:

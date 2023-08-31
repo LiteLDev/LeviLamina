@@ -32,13 +32,13 @@ public:
      * @symbol
      * ?readBytes\@SystemFilePicker\@\@UEAA_KAEBUFileInfo\@\@_K1AEAV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@\@Z
      */
-    virtual uint64_t readBytes(struct FileInfo const&, uint64_t, uint64_t, std::vector<unsigned char>&);
+    virtual uint64_t readBytes(struct FileInfo const&, uint64_t, uint64_t, std::vector<uint8_t>&);
     /**
      * @vftbl 3
      * @symbol
      * ?writeBytes\@SystemFilePicker\@\@UEAA_NAEBUFileInfo\@\@_K1AEBV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@\@Z
      */
-    virtual bool writeBytes(struct FileInfo const&, uint64_t, uint64_t, std::vector<unsigned char> const&);
+    virtual bool writeBytes(struct FileInfo const&, uint64_t, uint64_t, std::vector<uint8_t> const&);
     /**
      * @symbol ??0SystemFilePicker\@\@QEAA\@XZ
      */

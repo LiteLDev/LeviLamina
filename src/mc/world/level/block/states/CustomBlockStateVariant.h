@@ -24,11 +24,11 @@ public:
      * @vftbl 1
      * @symbol ?toNBT\@CustomBlockStateVariant\@\@UEBAXAEAVCompoundTag\@\@H\@Z
      */
-    virtual void toNBT(class CompoundTag&, int) const;
+    virtual void toNBT(class CompoundTag&, int32_t) const;
     /**
      * @vftbl 2
      * @symbol ?fromNBT\@CustomBlockStateVariant\@\@UEBA_NAEBVCompoundTag\@\@AEAH\@Z
      */
-    virtual bool fromNBT(class CompoundTag const&, int&) const;
+    virtual bool fromNBT(class CompoundTag const&, int32_t&) const;
     // NOLINTEND
 };

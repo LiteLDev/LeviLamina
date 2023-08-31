@@ -50,6 +50,6 @@ public:
     /**
      * @symbol ?MAX_ENUM_SIZE\@BlockStateGroup\@\@2HB
      */
-    MCAPI static int const MAX_ENUM_SIZE;
+    MCAPI static int32_t const MAX_ENUM_SIZE;
     // NOLINTEND
 };

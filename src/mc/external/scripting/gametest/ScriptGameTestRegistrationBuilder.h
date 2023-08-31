@@ -43,13 +43,13 @@ public:
      * ?maxAttempts\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@H\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    maxAttempts(int);
+        maxAttempts(int32_t);
     /**
      * @symbol
      * ?maxTicks\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@H\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    maxTicks(int);
+        maxTicks(int32_t);
     /**
      * @symbol ??4ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
@@ -60,7 +60,7 @@ public:
      * ?padding\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@H\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    padding(int);
+        padding(int32_t);
     /**
      * @symbol
      * ?required\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@_N\@Z
@@ -72,7 +72,7 @@ public:
      * ?requiredSuccessfulAttempts\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@H\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    requiredSuccessfulAttempts(int);
+        requiredSuccessfulAttempts(int32_t);
     /**
      * @symbol
      * ?rotate\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@_N\@Z
@@ -90,7 +90,7 @@ public:
      * ?setupTicks\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@H\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    setupTicks(int);
+        setupTicks(int32_t);
     /**
      * @symbol
      * ?structureName\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z

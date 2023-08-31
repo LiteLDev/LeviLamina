@@ -77,11 +77,11 @@ public:
     /**
      * @symbol ?add\@BlockTickingQueue\@\@QEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@HH\@Z
      */
-    MCAPI void add(class BlockSource&, class BlockPos const&, class Block const&, int, int);
+    MCAPI void add(class BlockSource&, class BlockPos const&, class Block const&, int32_t, int32_t);
     /**
      * @symbol ?addTickToLevelChunk\@BlockTickingQueue\@\@QEAAXAEAVLevelChunk\@\@AEBVBlockPos\@\@AEBVBlock\@\@HH\@Z
      */
-    MCAPI void addTickToLevelChunk(class LevelChunk&, class BlockPos const&, class Block const&, int, int);
+    MCAPI void addTickToLevelChunk(class LevelChunk&, class BlockPos const&, class Block const&, int32_t, int32_t);
     /**
      * @symbol ?eliminateAllTicksZeroAndAbove\@BlockTickingQueue\@\@QEAAXXZ
      */
@@ -145,11 +145,11 @@ public:
     /**
      * @symbol ?tickPendingTicks\@BlockTickingQueue\@\@QEAA_NAEAVBlockSource\@\@AEBUTick\@\@H_N\@Z
      */
-    MCAPI bool tickPendingTicks(class BlockSource&, struct Tick const&, int, bool);
+    MCAPI bool tickPendingTicks(class BlockSource&, struct Tick const&, int32_t, bool);
     /**
      * @symbol ?ticksFromNow\@BlockTickingQueue\@\@QEBAHH\@Z
      */
-    MCAPI int ticksFromNow(int) const;
+    MCAPI int32_t ticksFromNow(int32_t) const;
     /**
      * @symbol ??1BlockTickingQueue\@\@QEAA\@XZ
      */
@@ -173,7 +173,7 @@ public:
     /**
      * @symbol ?_addToNextTickQueue\@BlockTickingQueue\@\@AEAAXAEBVBlockPos\@\@AEBVBlock\@\@HH\@Z
      */
-    MCAPI void _addToNextTickQueue(class BlockPos const&, class Block const&, int, int);
+    MCAPI void _addToNextTickQueue(class BlockPos const&, class Block const&, int32_t, int32_t);
     /**
      * @symbol ?_eliminateTicksForZeroAndAbove\@BlockTickingQueue\@\@AEAAXAEAVTickDataSet\@1\@\@Z
      */

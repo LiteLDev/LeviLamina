@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class WeakLifetimeScope; }
+namespace gametest { class BaseGameTestFunction; }
 namespace gametest { class BaseGameTestHelper; }
 namespace gametest { class IGameTestFunctionContext; }
 namespace gametest { class IGameTestFunctionRunResult; }
@@ -61,15 +62,15 @@ public:
     /**
      * @symbol ?setMaxAttempts\@BaseScriptGameTestFunction\@ScriptModuleGameTest\@\@QEAAXH\@Z
      */
-    MCAPI void setMaxAttempts(int);
+    MCAPI void setMaxAttempts(int32_t);
     /**
      * @symbol ?setMaxTicks\@BaseScriptGameTestFunction\@ScriptModuleGameTest\@\@QEAAXH\@Z
      */
-    MCAPI void setMaxTicks(int);
+    MCAPI void setMaxTicks(int32_t);
     /**
      * @symbol ?setPadding\@BaseScriptGameTestFunction\@ScriptModuleGameTest\@\@QEAAXH\@Z
      */
-    MCAPI void setPadding(int);
+    MCAPI void setPadding(int32_t);
     /**
      * @symbol ?setRequired\@BaseScriptGameTestFunction\@ScriptModuleGameTest\@\@QEAAX_N\@Z
      */
@@ -77,7 +78,7 @@ public:
     /**
      * @symbol ?setRequiredSuccesses\@BaseScriptGameTestFunction\@ScriptModuleGameTest\@\@QEAAXH\@Z
      */
-    MCAPI void setRequiredSuccesses(int);
+    MCAPI void setRequiredSuccesses(int32_t);
     /**
      * @symbol ?setRotate\@BaseScriptGameTestFunction\@ScriptModuleGameTest\@\@QEAAX_N\@Z
      */
@@ -85,7 +86,7 @@ public:
     /**
      * @symbol ?setSetupTicks\@BaseScriptGameTestFunction\@ScriptModuleGameTest\@\@QEAAXH\@Z
      */
-    MCAPI void setSetupTicks(int);
+    MCAPI void setSetupTicks(int32_t);
     /**
      * @symbol
      * ?setStructureName\@BaseScriptGameTestFunction\@ScriptModuleGameTest\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z

@@ -29,11 +29,11 @@ public:
     struct ParseRule;
     struct ParseTable;
     struct ParseToken;
+    struct Signature;
+    class Symbol;
     class Parser;
     struct RegistryState;
-    struct Signature;
     struct SoftEnum;
-    class Symbol;
     struct SymbolHasher;
     // clang-format on
 
@@ -174,6 +174,48 @@ public:
         // NOLINTEND
     };
 
+    struct Signature {
+
+    public:
+        // prevent constructor by default
+        Signature& operator=(Signature const&) = delete;
+        Signature(Signature const&)            = delete;
+        Signature()                            = delete;
+
+    public:
+        // NOLINTBEGIN
+        /**
+         * @symbol ??0Signature\@CommandRegistry\@\@QEAA\@$$QEAU01\@\@Z
+         */
+        MCAPI Signature(struct CommandRegistry::Signature&&);
+        /**
+         * @symbol ??1Signature\@CommandRegistry\@\@QEAA\@XZ
+         */
+        MCAPI ~Signature();
+        // NOLINTEND
+    };
+
+    class Symbol {
+
+    public:
+        // prevent constructor by default
+        Symbol& operator=(Symbol const&) = delete;
+        Symbol(Symbol const&)            = delete;
+        Symbol()                         = delete;
+
+    public:
+        // NOLINTBEGIN
+        /**
+         * @symbol ?toIndex\@Symbol\@CommandRegistry\@\@QEBA_KXZ
+         */
+        MCAPI uint64_t toIndex() const;
+        /**
+         * @symbol ?value\@Symbol\@CommandRegistry\@\@QEBAHXZ
+         */
+        MCAPI int32_t value() const;
+        // NOLINTEND
+    };
+
     class Parser {
 
     public:
@@ -187,7 +229,7 @@ public:
         /**
          * @symbol ??0Parser\@CommandRegistry\@\@QEAA\@AEBV1\@H\@Z
          */
-        MCAPI Parser(class CommandRegistry const&, int);
+        MCAPI Parser(class CommandRegistry const&, int32_t);
         /**
          * @symbol
          * ?createCommand\@Parser\@CommandRegistry\@\@QEAA?AV?$unique_ptr\@VCommand\@\@U?$default_delete\@VCommand\@\@\@std\@\@\@std\@\@AEBVCommandOrigin\@\@\@Z
@@ -233,7 +275,7 @@ public:
          */
         MCAPI class entt::internal::dense_map_iterator<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<
             struct entt::internal::
-                dense_map_node<std::pair<class CommandRegistry::Symbol, class CommandRegistry::Symbol>, int>>>>>
+                dense_map_node<std::pair<class CommandRegistry::Symbol, class CommandRegistry::Symbol>, int32_t>>>>>
         _findParsePrediction(struct CommandRegistry::LexicalToken const&, class CommandRegistry::Symbol const&) const;
         /**
          * @symbol
@@ -260,27 +302,6 @@ public:
         // NOLINTEND
     };
 
-    struct Signature {
-
-    public:
-        // prevent constructor by default
-        Signature& operator=(Signature const&) = delete;
-        Signature(Signature const&)            = delete;
-        Signature()                            = delete;
-
-    public:
-        // NOLINTBEGIN
-        /**
-         * @symbol ??0Signature\@CommandRegistry\@\@QEAA\@$$QEAU01\@\@Z
-         */
-        MCAPI Signature(struct CommandRegistry::Signature&&);
-        /**
-         * @symbol ??1Signature\@CommandRegistry\@\@QEAA\@XZ
-         */
-        MCAPI ~Signature();
-        // NOLINTEND
-    };
-
     struct SoftEnum {
 
     public:
@@ -296,27 +317,6 @@ public:
          * ??0SoftEnum\@CommandRegistry\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z
          */
         MCAPI SoftEnum(std::string const&, std::vector<std::string>);
-        // NOLINTEND
-    };
-
-    class Symbol {
-
-    public:
-        // prevent constructor by default
-        Symbol& operator=(Symbol const&) = delete;
-        Symbol(Symbol const&)            = delete;
-        Symbol()                         = delete;
-
-    public:
-        // NOLINTBEGIN
-        /**
-         * @symbol ?toIndex\@Symbol\@CommandRegistry\@\@QEBA_KXZ
-         */
-        MCAPI uint64_t toIndex() const;
-        /**
-         * @symbol ?value\@Symbol\@CommandRegistry\@\@QEBAHXZ
-         */
-        MCAPI int value() const;
         // NOLINTEND
     };
 
@@ -350,12 +350,12 @@ public:
      * @symbol
      * ?addEnumValues\@CommandRegistry\@\@QEAAHAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z
      */
-    MCAPI int addEnumValues(std::string const&, std::vector<std::string> const&);
+    MCAPI int32_t addEnumValues(std::string const&, std::vector<std::string> const&);
     /**
      * @symbol
      * ?addSoftEnum\@CommandRegistry\@\@QEAAHAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z
      */
-    MCAPI int addSoftEnum(std::string const&, std::vector<std::string>);
+    MCAPI int32_t addSoftEnum(std::string const&, std::vector<std::string>);
     /**
      * @symbol
      * ?addSoftEnumValues\@CommandRegistry\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z
@@ -457,7 +457,7 @@ public:
      * @symbol
      * ?setScoreCallback\@CommandRegistry\@\@QEAAXV?$function\@$$A6AHAEA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVActor\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI void setScoreCallback(std::function<int(bool&, std::string const&, class Actor const&)>);
+    MCAPI void setScoreCallback(std::function<int32_t(bool&, std::string const&, class Actor const&)>);
     /**
      * @symbol
      * ?setSoftEnumValues\@CommandRegistry\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z
@@ -526,7 +526,7 @@ public:
     MCAPI class
         CommandRegistry::
             Symbol
-            _addChainedSubcommandValuesInternal(std::string const&, std::vector<std::pair<std::string, unsigned int>> const&, class Bedrock::typeid_t<class CommandRegistry>, bool (__cdecl CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&) const, struct CommandRegistry::Signature*);
+            _addChainedSubcommandValuesInternal(std::string const&, std::vector<std::pair<std::string, uint32_t>> const&, class Bedrock::typeid_t<class CommandRegistry>, bool (__cdecl CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int32_t, std::string&, std::vector<std::string>&) const, struct CommandRegistry::Signature*);
     /**
      * @symbol
      * ?_addChainedSubcommandValuesInternal\@CommandRegistry\@\@AEAA?AVSymbol\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@U?$pair\@_KI\@std\@\@V?$allocator\@U?$pair\@_KI\@std\@\@\@2\@\@4\@V?$typeid_t\@VCommandRegistry\@\@\@Bedrock\@\@P81\@EBA_NPEAXAEBUParseToken\@1\@AEBVCommandOrigin\@\@HAEAV34\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@4\@\@ZPEAUSignature\@1\@\@Z
@@ -534,7 +534,7 @@ public:
     MCAPI class
         CommandRegistry::
             Symbol
-            _addChainedSubcommandValuesInternal(std::string const&, std::vector<std::pair<uint64_t, unsigned int>> const&, class Bedrock::typeid_t<class CommandRegistry>, bool (__cdecl CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&) const, struct CommandRegistry::Signature*);
+            _addChainedSubcommandValuesInternal(std::string const&, std::vector<std::pair<uint64_t, uint32_t>> const&, class Bedrock::typeid_t<class CommandRegistry>, bool (__cdecl CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int32_t, std::string&, std::vector<std::string>&) const, struct CommandRegistry::Signature*);
     /**
      * @symbol
      * ?_addEnumValuesInternal\@CommandRegistry\@\@AEAA?AVSymbol\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_K\@std\@\@V?$allocator\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_K\@std\@\@\@2\@\@4\@V?$typeid_t\@VCommandRegistry\@\@\@Bedrock\@\@P81\@EBA_NPEAXAEBUParseToken\@1\@AEBVCommandOrigin\@\@HAEAV34\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@4\@\@Z\@Z
@@ -543,7 +543,7 @@ public:
         std::string const&,
         std::vector<std::pair<std::string, uint64_t>> const&,
         class Bedrock::typeid_t<class CommandRegistry>,
-        bool (__cdecl CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
+        bool (__cdecl CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int32_t, std::string&, std::vector<std::string>&)
             const
     );
     /**
@@ -554,7 +554,7 @@ public:
         std::string const&,
         std::vector<std::pair<uint64_t, uint64_t>> const&,
         class Bedrock::typeid_t<class CommandRegistry>,
-        bool (__cdecl CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
+        bool (__cdecl CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int32_t, std::string&, std::vector<std::string>&)
             const
     );
     /**
@@ -584,13 +584,12 @@ public:
      * @symbol
      * ?addChainedSubcommandValuesToExisting\@CommandRegistry\@\@AEAAXIAEBV?$vector\@U?$pair\@_KI\@std\@\@V?$allocator\@U?$pair\@_KI\@std\@\@\@2\@\@std\@\@\@Z
      */
-    MCAPI void
-    addChainedSubcommandValuesToExisting(unsigned int, std::vector<std::pair<uint64_t, unsigned int>> const&);
+    MCAPI void addChainedSubcommandValuesToExisting(uint32_t, std::vector<std::pair<uint64_t, uint32_t>> const&);
     /**
      * @symbol
      * ?addEnumValuesToExisting\@CommandRegistry\@\@AEAAXIAEBV?$vector\@U?$pair\@_K_K\@std\@\@V?$allocator\@U?$pair\@_K_K\@std\@\@\@2\@\@std\@\@\@Z
      */
-    MCAPI void addEnumValuesToExisting(unsigned int, std::vector<std::pair<uint64_t, uint64_t>> const&);
+    MCAPI void addEnumValuesToExisting(uint32_t, std::vector<std::pair<uint64_t, uint64_t>> const&);
     /**
      * @symbol
      * ?addPostfix\@CommandRegistry\@\@AEAA?AVSymbol\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -619,13 +618,13 @@ public:
     /**
      * @symbol ?buildFirstSet\@CommandRegistry\@\@AEBAXAEAUParseTable\@1\@VSymbol\@1\@I\@Z
      */
-    MCAPI void buildFirstSet(struct CommandRegistry::ParseTable&, class CommandRegistry::Symbol, unsigned int) const;
+    MCAPI void buildFirstSet(struct CommandRegistry::ParseTable&, class CommandRegistry::Symbol, uint32_t) const;
     /**
      * @symbol
      * ?buildFollowSet\@CommandRegistry\@\@AEBAXAEAUParseTable\@1\@VSymbol\@1\@IAEAV?$set\@VSymbol\@CommandRegistry\@\@U?$less\@VSymbol\@CommandRegistry\@\@\@std\@\@V?$allocator\@VSymbol\@CommandRegistry\@\@\@4\@\@std\@\@\@Z
      */
     MCAPI void
-    buildFollowSet(struct CommandRegistry::ParseTable&, class CommandRegistry::Symbol, unsigned int, std::set<class CommandRegistry::Symbol>&)
+    buildFollowSet(struct CommandRegistry::ParseTable&, class CommandRegistry::Symbol, uint32_t, std::set<class CommandRegistry::Symbol>&)
         const;
     /**
      * @symbol
@@ -646,11 +645,11 @@ public:
     /**
      * @symbol ?buildParseTable\@CommandRegistry\@\@AEBAXI\@Z
      */
-    MCAPI void buildParseTable(unsigned int) const;
+    MCAPI void buildParseTable(uint32_t) const;
     /**
      * @symbol ?buildPredictTable\@CommandRegistry\@\@AEBAXAEAUParseTable\@1\@I\@Z
      */
-    MCAPI void buildPredictTable(struct CommandRegistry::ParseTable&, unsigned int) const;
+    MCAPI void buildPredictTable(struct CommandRegistry::ParseTable&, uint32_t) const;
     /**
      * @symbol
      * ?buildRules\@CommandRegistry\@\@AEAA?AVSymbol\@1\@AEAUSignature\@1\@AEBV?$vector\@V?$not_null\@PEAUOverload\@CommandRegistry\@\@\@gsl\@\@V?$allocator\@V?$not_null\@PEAUOverload\@CommandRegistry\@\@\@gsl\@\@\@std\@\@\@std\@\@_K\@Z
@@ -671,14 +670,14 @@ public:
      * ?createCommand\@CommandRegistry\@\@AEBA?AV?$unique_ptr\@VCommand\@\@U?$default_delete\@VCommand\@\@\@std\@\@\@std\@\@AEBUParseToken\@1\@AEBVCommandOrigin\@\@HAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z
      */
     MCAPI std::unique_ptr<class Command>
-    createCommand(struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
+    createCommand(struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int32_t, std::string&, std::vector<std::string>&)
         const;
     /**
      * @symbol
      * ?describe\@CommandRegistry\@\@AEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUSignature\@1\@AEBV23\@AEBUOverload\@1\@IPEAI3\@Z
      */
     MCAPI std::string
-    describe(struct CommandRegistry::Signature const&, std::string const&, struct CommandRegistry::Overload const&, unsigned int, unsigned int*, unsigned int*)
+    describe(struct CommandRegistry::Signature const&, std::string const&, struct CommandRegistry::Overload const&, uint32_t, uint32_t*, uint32_t*)
         const;
     /**
      * @symbol
@@ -746,7 +745,7 @@ public:
      * ?parseSelector\@CommandRegistry\@\@AEBA_NAEAUActorSelectorArgs\@\@AEBUParseToken\@1\@AEBVCommandOrigin\@\@HAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@6\@\@Z
      */
     MCAPI bool
-    parseSelector(struct ActorSelectorArgs&, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
+    parseSelector(struct ActorSelectorArgs&, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int32_t, std::string&, std::vector<std::string>&)
         const;
     /**
      * @symbol
@@ -756,7 +755,7 @@ public:
         class CommandSelectorBase*,
         struct CommandRegistry::ParseToken const&,
         class CommandOrigin const&,
-        int,
+        int32_t,
         std::string&,
         std::vector<std::string>&,
         bool
@@ -833,7 +832,8 @@ public:
      * @symbol
      * ?readInt\@CommandRegistry\@\@CA_NAEAHAEBUParseToken\@1\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@4\@\@Z
      */
-    MCAPI static bool readInt(int&, struct CommandRegistry::ParseToken const&, std::string&, std::vector<std::string>&);
+    MCAPI static bool
+    readInt(int32_t&, struct CommandRegistry::ParseToken const&, std::string&, std::vector<std::string>&);
     /**
      * @symbol
      * ?readRelativeCoordinate\@CommandRegistry\@\@CA_NAEA_NAEAMAEBUParseToken\@1\@_NAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@4\@\@Z
@@ -849,7 +849,7 @@ private:
      * ?ParseRuleSymbols\@CommandRegistry\@\@0QBU?$pair\@P8CommandRegistry\@\@EBA_NPEAXAEBUParseToken\@1\@AEBVCommandOrigin\@\@HAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@5\@\@ZVSymbol\@1\@\@std\@\@B
      */
     MCAPI static std::pair<
-        bool (__cdecl CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
+        bool (__cdecl CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int32_t, std::string&, std::vector<std::string>&)
             const,
         class CommandRegistry::Symbol> const ParseRuleSymbols[];
     // NOLINTEND

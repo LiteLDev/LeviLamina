@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
 namespace Core { class Path; }
 // clang-format on
 
@@ -34,12 +35,12 @@ public:
      * @vftbl 2
      * @symbol ?fclose\@MemoryMappedFileAccess\@\@UEAAHPEAX\@Z
      */
-    virtual int fclose(void*) = 0;
+    virtual int32_t fclose(void*) = 0;
     /**
      * @vftbl 3
      * @symbol ?fseek\@MemoryMappedFileAccess\@\@UEAAHPEAX_JH\@Z
      */
-    virtual int fseek(void*, int64_t, int) = 0;
+    virtual int32_t fseek(void*, int64_t, int32_t) = 0;
     /**
      * @vftbl 4
      * @symbol ?ftell\@MemoryMappedFileAccess\@\@UEAA_JPEAX\@Z

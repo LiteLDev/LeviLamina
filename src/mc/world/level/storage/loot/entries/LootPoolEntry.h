@@ -42,7 +42,7 @@ public:
     /**
      * @symbol ?getWeight\@LootPoolEntry\@\@QEBAHM\@Z
      */
-    MCAPI int getWeight(float) const;
+    MCAPI int32_t getWeight(float) const;
     /**
      * @symbol
      * ?deserialize\@LootPoolEntry\@\@SA?AV?$unique_ptr\@VLootPoolEntry\@\@U?$default_delete\@VLootPoolEntry\@\@\@std\@\@\@std\@\@AEBVValue\@Json\@\@\@Z

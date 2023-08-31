@@ -34,16 +34,16 @@ public:
     /**
      * @symbol ?addPortalRecord\@PortalForcer\@\@QEAAAEBVPortalRecord\@\@V?$AutomaticID\@VDimension\@\@H\@\@V2\@\@Z
      */
-    MCAPI class PortalRecord const& addPortalRecord(class AutomaticID<class Dimension, int>, class PortalRecord);
+    MCAPI class PortalRecord const& addPortalRecord(DimensionType, class PortalRecord);
     /**
      * @symbol
      * ?addPortalRecord\@PortalForcer\@\@QEAAAEBVPortalRecord\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEBVPortalShape\@\@\@Z
      */
-    MCAPI class PortalRecord const& addPortalRecord(class AutomaticID<class Dimension, int>, class PortalShape const&);
+    MCAPI class PortalRecord const& addPortalRecord(DimensionType, class PortalShape const&);
     /**
      * @symbol ?createPortal\@PortalForcer\@\@QEAAAEBVPortalRecord\@\@AEBVActor\@\@H\@Z
      */
-    MCAPI class PortalRecord const& createPortal(class Actor const&, int);
+    MCAPI class PortalRecord const& createPortal(class Actor const&, int32_t);
     /**
      * @symbol ?force\@PortalForcer\@\@QEAAXAEAVActor\@\@AEBUDimensionTransitionComponent\@\@\@Z
      */
@@ -51,7 +51,7 @@ public:
     /**
      * @symbol ?portalRecordExists\@PortalForcer\@\@QEBA_NV?$AutomaticID\@VDimension\@\@H\@\@AEBVPortalRecord\@\@\@Z
      */
-    MCAPI bool portalRecordExists(class AutomaticID<class Dimension, int>, class PortalRecord const&) const;
+    MCAPI bool portalRecordExists(DimensionType, class PortalRecord const&) const;
     /**
      * @symbol
      * ?removeMisalignedPortalRecords\@PortalForcer\@\@QEAAXAEAVBlockSource\@\@AEBVPortalShape\@\@AEBVPortalRecord\@\@\@Z
@@ -83,6 +83,6 @@ public:
      * ?_findPortal\@PortalForcer\@\@AEBA?AV?$optional\@VPortalRecord\@\@\@std\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEBVBlockPos\@\@HAEAV5\@\@Z
      */
     MCAPI std::optional<class PortalRecord>
-          _findPortal(class AutomaticID<class Dimension, int>, class BlockPos const&, int, class BlockPos&) const;
+          _findPortal(DimensionType, class BlockPos const&, int32_t, class BlockPos&) const;
     // NOLINTEND
 };

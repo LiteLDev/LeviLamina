@@ -28,7 +28,7 @@ public:
      * @vftbl 2
      * @symbol ?SetMulticastInterface\@RakNetSocket2\@RakNet\@\@UEAAXH\@Z
      */
-    virtual void SetMulticastInterface(int);
+    virtual void SetMulticastInterface(int32_t);
     // NOLINTEND
 };
 

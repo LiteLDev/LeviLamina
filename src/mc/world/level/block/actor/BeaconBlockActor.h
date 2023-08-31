@@ -33,15 +33,15 @@ public:
     /**
      * @symbol ?getContainerSize\@BeaconBlockActor\@\@UEBAHXZ
      */
-    MCVAPI int getContainerSize() const;
+    MCVAPI int32_t getContainerSize() const;
     /**
      * @symbol ?getItem\@BeaconBlockActor\@\@UEBAAEBVItemStack\@\@H\@Z
      */
-    MCVAPI class ItemStack const& getItem(int) const;
+    MCVAPI class ItemStack const& getItem(int32_t) const;
     /**
      * @symbol ?getMaxStackSize\@BeaconBlockActor\@\@UEBAHXZ
      */
-    MCVAPI int getMaxStackSize() const;
+    MCVAPI int32_t getMaxStackSize() const;
     /**
      * @symbol
      * ?getName\@BeaconBlockActor\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -58,7 +58,7 @@ public:
     /**
      * @symbol ?removeItem\@BeaconBlockActor\@\@UEAAXHH\@Z
      */
-    MCVAPI void removeItem(int, int);
+    MCVAPI void removeItem(int32_t, int32_t);
     /**
      * @symbol ?save\@BeaconBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
      */
@@ -66,11 +66,11 @@ public:
     /**
      * @symbol ?serverInitItemStackIds\@BeaconBlockActor\@\@UEAAXHHV?$function\@$$A6AXHAEBVItemStack\@\@\@Z\@std\@\@\@Z
      */
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
+    MCVAPI void serverInitItemStackIds(int32_t, int32_t, std::function<void(int32_t, class ItemStack const&)>);
     /**
      * @symbol ?setItem\@BeaconBlockActor\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
-    MCVAPI void setItem(int, class ItemStack const&);
+    MCVAPI void setItem(int32_t, class ItemStack const&);
     /**
      * @symbol ?startOpen\@BeaconBlockActor\@\@UEAAXAEAVPlayer\@\@\@Z
      */
@@ -99,7 +99,7 @@ public:
     /**
      * @symbol ?isEffectAvailable\@BeaconBlockActor\@\@QEBA_NH\@Z
      */
-    MCAPI bool isEffectAvailable(int) const;
+    MCAPI bool isEffectAvailable(int32_t) const;
     /**
      * @symbol ?isSecondaryAvailable\@BeaconBlockActor\@\@QEBA_NXZ
      */
@@ -107,11 +107,11 @@ public:
     /**
      * @symbol ?setPrimaryEffect\@BeaconBlockActor\@\@QEAA_NH\@Z
      */
-    MCAPI bool setPrimaryEffect(int);
+    MCAPI bool setPrimaryEffect(int32_t);
     /**
      * @symbol ?setSecondaryEffect\@BeaconBlockActor\@\@QEAA_NH\@Z
      */
-    MCAPI bool setSecondaryEffect(int);
+    MCAPI bool setSecondaryEffect(int32_t);
     /**
      * @symbol ?isPaymentItem\@BeaconBlockActor\@\@SA_NAEBVItemDescriptor\@\@\@Z
      */
@@ -127,15 +127,15 @@ public:
     /**
      * @symbol ?_getEffectTier\@BeaconBlockActor\@\@AEBAHH\@Z
      */
-    MCAPI int _getEffectTier(int) const;
+    MCAPI int32_t _getEffectTier(int32_t) const;
     /**
      * @symbol ?_isEffectValid\@BeaconBlockActor\@\@AEBA_NH\@Z
      */
-    MCAPI bool _isEffectValid(int) const;
+    MCAPI bool _isEffectValid(int32_t) const;
     /**
      * @symbol ?_isSecondaryEffectValid\@BeaconBlockActor\@\@AEBA_NH\@Z
      */
-    MCAPI bool _isSecondaryEffectValid(int) const;
+    MCAPI bool _isSecondaryEffectValid(int32_t) const;
     /**
      * @symbol ?_saveClientSideState\@BeaconBlockActor\@\@AEBA_NAEAVCompoundTag\@\@\@Z
      */

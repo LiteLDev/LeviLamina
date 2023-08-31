@@ -74,7 +74,7 @@ public:
      * @vftbl 62
      * @symbol ?getEnchantSlot\@HatchetItem\@\@UEBAHXZ
      */
-    virtual int getEnchantSlot() const;
+    virtual int32_t getEnchantSlot() const;
     /**
      * @vftbl 66
      * @symbol __unk_vfn_66
@@ -129,6 +129,6 @@ public:
      * @symbol
      * ??0HatchetItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVTier\@Item\@\@\@Z
      */
-    MCAPI HatchetItem(std::string const&, int, class Item::Tier const&);
+    MCAPI HatchetItem(std::string const&, int32_t, class Item::Tier const&);
     // NOLINTEND
 };

@@ -12,7 +12,7 @@
 namespace Json { class Value; }
 // clang-format on
 
-struct DeferredDescriptor {
+struct DeferredDescriptor : public ::ItemDescriptor::BaseDescriptor {
 
 public:
     // prevent constructor by default
@@ -97,6 +97,6 @@ public:
      * ?_initFromItem\@DeferredDescriptor\@\@AEBA?AV?$unique_ptr\@UBaseDescriptor\@ItemDescriptor\@\@U?$default_delete\@UBaseDescriptor\@ItemDescriptor\@\@\@std\@\@\@std\@\@$$QEAV?$WeakPtr\@VItem\@\@\@\@F\@Z
      */
     MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor>
-          _initFromItem(class WeakPtr<class Item>&&, short) const;
+          _initFromItem(class WeakPtr<class Item>&&, int16_t) const;
     // NOLINTEND
 };

@@ -189,7 +189,7 @@ public:
      * @vftbl 93
      * @symbol ?mayPlace\@SignBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
+    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 101
      * @symbol ?neighborChanged\@SignBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
@@ -269,7 +269,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@SignBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -289,12 +289,12 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@SignBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 192
      * @symbol ?getEntityResourceItem\@SignBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlockActor\@\@H\@Z
      */
-    virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int) const;
+    virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int32_t) const;
     /**
      * @vftbl 193
      * @symbol ?getYRotationInDegrees\@SignBlock\@\@UEBAMAEBVBlock\@\@\@Z
@@ -304,7 +304,7 @@ public:
      * @vftbl 194
      * @symbol ?_canSurvive\@SignBlock\@\@MEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool _canSurvive(class BlockSource&, class BlockPos const&, unsigned char) const;
+    virtual bool _canSurvive(class BlockSource&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 195
      * @symbol ?_getItemInstance\@SignBlock\@\@MEBA?AVItemInstance\@\@XZ
@@ -314,7 +314,7 @@ public:
      * @vftbl 196
      * @symbol ?_getShape\@SignBlock\@\@MEBAXHAEAVAABB\@\@\@Z
      */
-    virtual void _getShape(int, class AABB&) const;
+    virtual void _getShape(int32_t, class AABB&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIGNBLOCK
     /**
      * @symbol ?isInteractiveBlock\@SignBlock\@\@UEBA_NXZ
@@ -325,7 +325,7 @@ public:
      * @symbol
      * ??0SignBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_NW4SignType\@0\@\@Z
      */
-    MCAPI SignBlock(std::string const&, int, bool, enum class SignBlock::SignType);
+    MCAPI SignBlock(std::string const&, int32_t, bool, enum class SignBlock::SignType);
     /**
      * @symbol ?getSignTextColorFromDyeItem\@SignBlock\@\@SA?AVColor\@mce\@\@AEBVItem\@\@\@Z
      */
@@ -348,7 +348,7 @@ public:
         class ItemStack&,
         class Player&,
         class BlockPos const&,
-        unsigned char
+        uint8_t
     );
     // NOLINTEND
 };

@@ -186,7 +186,7 @@ public:
      * @vftbl 136
      * @symbol ?getColor\@AzaleaLeavesBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual int32_t getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
     /**
      * @vftbl 140
      * @symbol ?onGraphicsModeChanged\@AzaleaLeavesBlock\@\@UEAAXAEBUBlockGraphicsModeChangeContext\@\@\@Z
@@ -196,7 +196,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@AzaleaLeavesBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -254,7 +254,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@AzaleaLeavesBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@AzaleaLeavesBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -264,6 +264,6 @@ public:
      * @symbol
      * ??0AzaleaLeavesBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HV?$WeakPtr\@VBlockLegacy\@\@\@\@\@Z
      */
-    MCAPI AzaleaLeavesBlock(std::string const&, int, class WeakPtr<class BlockLegacy>);
+    MCAPI AzaleaLeavesBlock(std::string const&, int32_t, class WeakPtr<class BlockLegacy>);
     // NOLINTEND
 };

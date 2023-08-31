@@ -29,17 +29,17 @@ public:
      * @vftbl 2
      * @symbol ?getMinCost\@SoulSpeedEnchant\@\@UEBAHH\@Z
      */
-    virtual int getMinCost(int) const;
+    virtual int32_t getMinCost(int32_t) const;
     /**
      * @vftbl 3
      * @symbol ?getMaxCost\@SoulSpeedEnchant\@\@UEBAHH\@Z
      */
-    virtual int getMaxCost(int) const;
+    virtual int32_t getMaxCost(int32_t) const;
     /**
      * @vftbl 5
      * @symbol ?getMaxLevel\@SoulSpeedEnchant\@\@UEBAHXZ
      */
-    virtual int getMaxLevel() const;
+    virtual int32_t getMaxLevel() const;
     /**
      * @vftbl 10
      * @symbol __unk_vfn_10
@@ -79,17 +79,17 @@ public:
         enum class Enchant::Frequency,
         std::string_view,
         std::string_view,
-        int,
-        int
+        int32_t,
+        int32_t
     );
     /**
      * @symbol ?getLevel\@SoulSpeedEnchant\@\@SAHAEBVActor\@\@\@Z
      */
-    MCAPI static int getLevel(class Actor const&);
+    MCAPI static int32_t getLevel(class Actor const&);
     /**
      * @symbol ?getSpeedBoost\@SoulSpeedEnchant\@\@SAMH\@Z
      */
-    MCAPI static float getSpeedBoost(int);
+    MCAPI static float getSpeedBoost(int32_t);
     /**
      * @symbol ?shouldSpawnParticles\@SoulSpeedEnchant\@\@SA_NAEBVActor\@\@\@Z
      */

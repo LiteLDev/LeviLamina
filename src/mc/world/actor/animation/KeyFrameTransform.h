@@ -27,7 +27,7 @@ public:
     /**
      * @symbol ?set\@KeyFrameTransform\@\@QEAAXAEBVExpressionNode\@\@H\@Z
      */
-    MCAPI void set(class ExpressionNode const&, int);
+    MCAPI void set(class ExpressionNode const&, int32_t);
     /**
      * @symbol ?set\@KeyFrameTransform\@\@QEAAXAEBVExpressionNode\@\@\@Z
      */

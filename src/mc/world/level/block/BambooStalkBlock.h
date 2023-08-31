@@ -159,7 +159,7 @@ public:
      * @vftbl 57
      * @symbol ?isValidAuxValue\@BambooStalkBlock\@\@UEBA_NH\@Z
      */
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
@@ -221,7 +221,7 @@ public:
      * @symbol ?getPlacementBlock\@BambooStalkBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -322,11 +322,11 @@ public:
      * @symbol
      * ??0BambooStalkBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI BambooStalkBlock(std::string const&, int);
+    MCAPI BambooStalkBlock(std::string const&, int32_t);
     /**
      * @symbol ?getMaxHeight\@BambooStalkBlock\@\@SAHAEBVBlockPos\@\@\@Z
      */
-    MCAPI static int getMaxHeight(class BlockPos const&);
+    MCAPI static int32_t getMaxHeight(class BlockPos const&);
     // NOLINTEND
 
     // private:

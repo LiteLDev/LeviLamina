@@ -53,18 +53,18 @@ public:
      * ?_remapComplexAliasBlock\@RandomBlockStateFunction\@\@AEAA?AW4RemapComplexAliasBlockResult\@1\@HAEAPEBVBlock\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI enum class RandomBlockStateFunction::RemapComplexAliasBlockResult
-    _remapComplexAliasBlock(int, class Block const*&, std::string const&);
+    _remapComplexAliasBlock(int32_t, class Block const*&, std::string const&);
     /**
      * @symbol
      * ?_tryRemapComplexAliasBlock\@RandomBlockStateFunction\@\@AEAA?AW4RemapComplexAliasBlockResult\@1\@AEAVItemStack\@\@HAEAPEBVBlock\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI enum class RandomBlockStateFunction::RemapComplexAliasBlockResult
-    _tryRemapComplexAliasBlock(class ItemStack&, int, class Block const*&, std::string const&);
+    _tryRemapComplexAliasBlock(class ItemStack&, int32_t, class Block const*&, std::string const&);
     /**
      * @symbol
      * ?_tryRemapComplexAliasBlock\@RandomBlockStateFunction\@\@AEAA?AW4RemapComplexAliasBlockResult\@1\@AEAVItemInstance\@\@HAEAPEBVBlock\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI enum class RandomBlockStateFunction::RemapComplexAliasBlockResult
-    _tryRemapComplexAliasBlock(class ItemInstance&, int, class Block const*&, std::string const&);
+    _tryRemapComplexAliasBlock(class ItemInstance&, int32_t, class Block const*&, std::string const&);
     // NOLINTEND
 };

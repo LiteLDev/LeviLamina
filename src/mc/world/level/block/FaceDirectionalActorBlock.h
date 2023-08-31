@@ -162,7 +162,7 @@ public:
      * ?getPlacementBlock\@FaceDirectionalActorBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -197,12 +197,12 @@ public:
      * @vftbl 146
      * @symbol ?getMappedFace\@FaceDirectionalActorBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
-    virtual unsigned char getMappedFace(unsigned char, class Block const&) const;
+    virtual uint8_t getMappedFace(uint8_t, class Block const&) const;
     /**
      * @vftbl 147
      * @symbol ?getFaceFlip\@FaceDirectionalActorBlock\@\@UEBA?AW4Flip\@\@EAEBVBlock\@\@\@Z
      */
-    virtual enum class Flip getFaceFlip(unsigned char, class Block const&) const;
+    virtual enum class Flip getFaceFlip(uint8_t, class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -253,6 +253,6 @@ public:
      * @symbol
      * ??0FaceDirectionalActorBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@_NM\@Z
      */
-    MCAPI FaceDirectionalActorBlock(std::string const&, int, class Material const&, bool, float);
+    MCAPI FaceDirectionalActorBlock(std::string const&, int32_t, class Material const&, bool, float);
     // NOLINTEND
 };

@@ -7,6 +7,11 @@
 #include "mc/enums/FeatureOptionID.h"
 #include "mc/enums/FeatureOptionTabID.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
 class FeatureToggles : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // FeatureToggles inner types declare

@@ -157,12 +157,12 @@ public:
      * @vftbl 66
      * @symbol ?shouldConnectToRedstone\@RedStoneWireBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 75
      * @symbol ?onRedstoneUpdate\@RedStoneWireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
-    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int32_t, bool) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -227,12 +227,12 @@ public:
      * @vftbl 135
      * @symbol ?getColor\@RedStoneWireBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getColor(class Block const&) const;
+    virtual int32_t getColor(class Block const&) const;
     /**
      * @vftbl 136
      * @symbol ?getColor\@RedStoneWireBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual int32_t getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
     /**
      * @vftbl 144
      * @symbol ?canSpawnOn\@RedStoneWireBlock\@\@UEBA_NPEAVActor\@\@\@Z
@@ -302,7 +302,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@RedStoneWireBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@RedStoneWireBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -318,6 +318,6 @@ public:
      * @symbol
      * ??0RedStoneWireBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI RedStoneWireBlock(std::string const&, int);
+    MCAPI RedStoneWireBlock(std::string const&, int32_t);
     // NOLINTEND
 };

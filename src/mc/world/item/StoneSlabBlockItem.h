@@ -57,7 +57,7 @@ public:
      * @vftbl 45
      * @symbol ?getLevelDataForAuxValue\@StoneSlabBlockItem\@\@UEBAHH\@Z
      */
-    virtual int getLevelDataForAuxValue(int) const;
+    virtual int32_t getLevelDataForAuxValue(int32_t) const;
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51

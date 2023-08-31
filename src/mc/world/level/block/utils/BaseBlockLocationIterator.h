@@ -24,7 +24,7 @@ public:
      * @vftbl 2
      * @symbol ??EBaseBlockLocationIterator\@\@UEAA?AV0\@H\@Z
      */
-    virtual class BaseBlockLocationIterator operator++(int);
+    virtual class BaseBlockLocationIterator operator++(int32_t);
     /**
      * @vftbl 3
      * @symbol ?_begin\@BaseBlockLocationIterator\@\@MEAAXXZ

@@ -22,23 +22,23 @@ public:
     /**
      * @symbol ?FromString\@SystemAddress\@RakNet\@\@QEAA_NPEBDDH\@Z
      */
-    MCAPI bool FromString(char const*, char, int);
+    MCAPI bool FromString(char const*, char, int32_t);
     /**
      * @symbol ?FromStringExplicitPort\@SystemAddress\@RakNet\@\@QEAA_NPEBDGH\@Z
      */
-    MCAPI bool FromStringExplicitPort(char const*, unsigned short, int);
+    MCAPI bool FromStringExplicitPort(char const*, uint16_t, int32_t);
     /**
      * @symbol ?GetIPVersion\@SystemAddress\@RakNet\@\@QEBAEXZ
      */
-    MCAPI unsigned char GetIPVersion() const;
+    MCAPI uint8_t GetIPVersion() const;
     /**
      * @symbol ?GetPort\@SystemAddress\@RakNet\@\@QEBAGXZ
      */
-    MCAPI unsigned short GetPort() const;
+    MCAPI uint16_t GetPort() const;
     /**
      * @symbol ?GetPortNetworkOrder\@SystemAddress\@RakNet\@\@QEBAGXZ
      */
-    MCAPI unsigned short GetPortNetworkOrder() const;
+    MCAPI uint16_t GetPortNetworkOrder() const;
     /**
      * @symbol ?IsLinkLocalAddress\@SystemAddress\@RakNet\@\@QEAA_NXZ
      */
@@ -50,7 +50,7 @@ public:
     /**
      * @symbol ?SetPortHostOrder\@SystemAddress\@RakNet\@\@QEAAXG\@Z
      */
-    MCAPI void SetPortHostOrder(unsigned short);
+    MCAPI void SetPortHostOrder(uint16_t);
     /**
      * @symbol ??0SystemAddress\@RakNet\@\@QEAA\@XZ
      */
@@ -58,7 +58,7 @@ public:
     /**
      * @symbol ??0SystemAddress\@RakNet\@\@QEAA\@PEBDG\@Z
      */
-    MCAPI SystemAddress(char const*, unsigned short);
+    MCAPI SystemAddress(char const*, uint16_t);
     /**
      * @symbol ?ToString\@SystemAddress\@RakNet\@\@QEBAX_NPEADD\@Z
      */

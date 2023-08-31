@@ -32,7 +32,7 @@ public:
     /**
      * @symbol ?postProcessSpawnMobs\@Spawner\@\@QEAAXAEAVBlockSource\@\@HHAEAVRandom\@\@\@Z
      */
-    MCAPI void postProcessSpawnMobs(class BlockSource&, int, int, class Random&);
+    MCAPI void postProcessSpawnMobs(class BlockSource&, int32_t, int32_t, class Random&);
     /**
      * @symbol ?setSpawnSettings\@Spawner\@\@QEAAXAEBUSpawnSettings\@\@\@Z
      */
@@ -46,7 +46,7 @@ public:
         class ItemStack const&,
         class Actor*      spawner,
         class Vec3 const& pos,
-        int               throwTime = 0
+        int32_t           throwTime = 0
     );
     /**
      * @symbol
@@ -100,7 +100,7 @@ public:
      * ?_postProcessSpawnMobs\@Spawner\@\@IEAAXAEAVBlockSource\@\@HHAEAVRandomize\@\@_NAEBV?$function\@$$A6AXAEBVBlockPos\@\@AEAVSpawnConditions\@\@\@Z\@std\@\@AEBV?$function\@$$A6A_NAEBVBlockSource\@\@VBlockPos\@\@\@Z\@5\@\@Z
      */
     MCAPI void
-    _postProcessSpawnMobs(class BlockSource&, int, int, class Randomize&, bool, std::function<void(class BlockPos const&, class SpawnConditions&)> const&, std::function<bool(class BlockSource const&, class BlockPos)> const&);
+    _postProcessSpawnMobs(class BlockSource&, int32_t, int32_t, class Randomize&, bool, std::function<void(class BlockPos const&, class SpawnConditions&)> const&, std::function<bool(class BlockSource const&, class BlockPos)> const&);
     /**
      * @symbol
      * ?_spawnStructureMob\@Spawner\@\@IEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBUHardcodedSpawningArea\@LevelChunk\@\@AEBVSpawnConditions\@\@\@Z
@@ -129,7 +129,7 @@ public:
     /**
      * @symbol ?_handlePopulationCap\@Spawner\@\@AEAAHPEBVMobSpawnerData\@\@AEBVSpawnConditions\@\@H\@Z
      */
-    MCAPI int _handlePopulationCap(class MobSpawnerData const*, class SpawnConditions const&, int);
+    MCAPI int32_t _handlePopulationCap(class MobSpawnerData const*, class SpawnConditions const&, int32_t);
     /**
      * @symbol ?_permuteId\@Spawner\@\@AEBAXAEAUActorDefinitionIdentifier\@\@AEBVMobSpawnRules\@\@AEAVRandom\@\@\@Z
      */

@@ -29,6 +29,6 @@ public:
     /**
      * @symbol ??0NBStartPiece\@\@QEAA\@AEAVRandom\@\@HH\@Z
      */
-    MCAPI NBStartPiece(class Random&, int, int);
+    MCAPI NBStartPiece(class Random&, int32_t, int32_t);
     // NOLINTEND
 };

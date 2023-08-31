@@ -39,7 +39,7 @@ public:
      * ?isFeatureChunk\@ShipwreckFeature\@\@MEAA_NAEBVBiomeSource\@\@AEAVRandom\@\@AEBVChunkPos\@\@IAEBVIPreliminarySurfaceProvider\@\@AEBVDimension\@\@\@Z
      */
     virtual bool
-    isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&, class Dimension const&);
+    isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, uint32_t, class IPreliminarySurfaceProvider const&, class Dimension const&);
     /**
      * @vftbl 6
      * @symbol
@@ -50,7 +50,7 @@ public:
     /**
      * @symbol ??0ShipwreckFeature\@\@QEAA\@AEAVOceanMonumentFeature\@\@IAEBVBaseGameVersion\@\@\@Z
      */
-    MCAPI ShipwreckFeature(class OceanMonumentFeature&, unsigned int, class BaseGameVersion const&);
+    MCAPI ShipwreckFeature(class OceanMonumentFeature&, uint32_t, class BaseGameVersion const&);
     /**
      * @symbol ?isShipwreckBeached\@ShipwreckFeature\@\@SA_NPEBVBiome\@\@\@Z
      */

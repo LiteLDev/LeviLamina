@@ -52,7 +52,7 @@ public:
         // NOLINTEND
     };
 
-    struct ConnectionCallbacks {
+    struct ConnectionCallbacks : public ::Connector::ConnectionCallbacks {
 
     public:
         // prevent constructor by default
@@ -197,11 +197,11 @@ public:
     /**
      * @symbol ?getIPv4Port\@RakNetConnector\@\@UEBAGXZ
      */
-    MCVAPI unsigned short getIPv4Port() const;
+    MCVAPI uint16_t getIPv4Port() const;
     /**
      * @symbol ?getIPv6Port\@RakNetConnector\@\@UEBAGXZ
      */
-    MCVAPI unsigned short getIPv6Port() const;
+    MCVAPI uint16_t getIPv6Port() const;
     /**
      * @symbol
      * ?getLocalIp\@RakNetConnector\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -231,7 +231,7 @@ public:
     /**
      * @symbol ?getPort\@RakNetConnector\@\@UEBAGXZ
      */
-    MCVAPI unsigned short getPort() const;
+    MCVAPI uint16_t getPort() const;
     /**
      * @symbol
      * ?getRefinedLocalIps\@RakNetConnector\@\@UEBA?AV?$vector\@USystemAddress\@RakNet\@\@V?$allocator\@USystemAddress\@RakNet\@\@\@std\@\@\@std\@\@XZ
@@ -273,7 +273,7 @@ public:
      * @symbol
      * ?startNatPunchingClient\@RakNetConnector\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@G\@Z
      */
-    MCVAPI void startNatPunchingClient(std::string const&, unsigned short);
+    MCVAPI void startNatPunchingClient(std::string const&, uint16_t);
     /**
      * @symbol ?tick\@RakNetConnector\@\@UEAAXXZ
      */
@@ -301,7 +301,7 @@ public:
      * @symbol
      * ?_changeNatState\@RakNetConnector\@\@AEAAXW4NATState\@1\@HAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void _changeNatState(enum class RakNetConnector::NATState, int, std::string const&);
+    MCAPI void _changeNatState(enum class RakNetConnector::NATState, int32_t, std::string const&);
     /**
      * @symbol
      * ?_createPeer\@RakNetConnector\@\@AEAA?AV?$shared_ptr\@VRakNetNetworkPeer\@RakNetConnector\@\@\@std\@\@AEBVNetworkIdentifier\@\@\@Z

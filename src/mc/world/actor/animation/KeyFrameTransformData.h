@@ -18,7 +18,7 @@ public:
     /**
      * @symbol ?addChannelTransform\@KeyFrameTransformData\@\@QEAAXAEBVExpressionNode\@\@H\@Z
      */
-    MCAPI void addChannelTransform(class ExpressionNode const&, int);
+    MCAPI void addChannelTransform(class ExpressionNode const&, int32_t);
     /**
      * @symbol ?addChannelTransform\@KeyFrameTransformData\@\@QEAAXAEBVExpressionNode\@\@AEBVVec3\@\@\@Z
      */

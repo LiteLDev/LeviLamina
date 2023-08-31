@@ -49,7 +49,7 @@ public:
      * @vftbl 32
      * @symbol ?getInterpolatedRidingOffset\@Horse\@\@UEBA?AVVec3\@\@MH\@Z
      */
-    virtual class Vec3 getInterpolatedRidingOffset(float, int) const;
+    virtual class Vec3 getInterpolatedRidingOffset(float, int32_t) const;
     /**
      * @vftbl 35
      * @symbol __unk_vfn_35
@@ -129,12 +129,12 @@ public:
      * @vftbl 126
      * @symbol ?feed\@Horse\@\@UEAAXH\@Z
      */
-    virtual void feed(int);
+    virtual void feed(int32_t);
     /**
      * @vftbl 127
      * @symbol ?handleEntityEvent\@Horse\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
-    virtual void handleEntityEvent(enum class ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int32_t);
     /**
      * @vftbl 157
      * @symbol ?canFreeze\@Horse\@\@UEBA_NXZ
@@ -164,7 +164,7 @@ public:
      * @vftbl 173
      * @symbol ?onSynchedDataUpdate\@Horse\@\@UEAAXH\@Z
      */
-    virtual void onSynchedDataUpdate(int);
+    virtual void onSynchedDataUpdate(int32_t);
     /**
      * @vftbl 178
      * @symbol __unk_vfn_178
@@ -244,7 +244,7 @@ public:
      * @vftbl 285
      * @symbol ?getArmorValue\@Horse\@\@UEBAHXZ
      */
-    virtual int getArmorValue() const;
+    virtual int32_t getArmorValue() const;
     /**
      * @vftbl 323
      * @symbol __unk_vfn_323
@@ -254,12 +254,12 @@ public:
      * @vftbl 325
      * @symbol ?setType\@Horse\@\@UEAAXH\@Z
      */
-    virtual void setType(int);
+    virtual void setType(int32_t);
     /**
      * @vftbl 326
      * @symbol ?getType\@Horse\@\@UEBAHXZ
      */
-    virtual int getType() const;
+    virtual int32_t getType() const;
     /**
      * @vftbl 327
      * @symbol ?setHorseEating\@Horse\@\@UEAAX_N\@Z

@@ -14,7 +14,7 @@ public:
     /**
      * @symbol ??0SculkSpreader\@\@QEAA\@_NHHHH\@Z
      */
-    MCAPI SculkSpreader(bool, int, int, int, int);
+    MCAPI SculkSpreader(bool, int32_t, int32_t, int32_t, int32_t);
     /**
      * @symbol ??0SculkSpreader\@\@QEAA\@XZ
      */
@@ -22,7 +22,7 @@ public:
     /**
      * @symbol ?addCursors\@SculkSpreader\@\@QEAAXAEBVBlockPos\@\@H\@Z
      */
-    MCAPI void addCursors(class BlockPos const&, int);
+    MCAPI void addCursors(class BlockPos const&, int32_t);
     /**
      * @symbol ?clearCursors\@SculkSpreader\@\@QEAAXXZ
      */
@@ -30,19 +30,19 @@ public:
     /**
      * @symbol ?getCursorPosition\@SculkSpreader\@\@QEBA?AVBlockPos\@\@H\@Z
      */
-    MCAPI class BlockPos getCursorPosition(int) const;
+    MCAPI class BlockPos getCursorPosition(int32_t) const;
     /**
      * @symbol ?getMaxCharge\@SculkSpreader\@\@QEBAHXZ
      */
-    MCAPI int getMaxCharge() const;
+    MCAPI int32_t getMaxCharge() const;
     /**
      * @symbol ?getNumberOfCursors\@SculkSpreader\@\@QEBAHXZ
      */
-    MCAPI int getNumberOfCursors() const;
+    MCAPI int32_t getNumberOfCursors() const;
     /**
      * @symbol ?getTotalCharge\@SculkSpreader\@\@QEBAHXZ
      */
-    MCAPI int getTotalCharge() const;
+    MCAPI int32_t getTotalCharge() const;
     /**
      * @symbol ?load\@SculkSpreader\@\@QEAAXAEBVCompoundTag\@\@\@Z
      */

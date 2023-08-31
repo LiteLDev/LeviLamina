@@ -125,16 +125,16 @@ public:
      * @symbol
      * ?setIconInfo\@RecordItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    virtual class Item& setIconInfo(std::string const&, int);
+    virtual class Item& setIconInfo(std::string const&, int32_t);
     /**
      * @vftbl 120
      * @symbol ?getIconInfo\@RecordItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int32_t, bool) const;
     /**
      * @symbol
      * ??0RecordItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4LevelSoundEvent\@\@\@Z
      */
-    MCAPI RecordItem(std::string const&, int, enum class LevelSoundEvent);
+    MCAPI RecordItem(std::string const&, int32_t, enum class LevelSoundEvent);
     // NOLINTEND
 };

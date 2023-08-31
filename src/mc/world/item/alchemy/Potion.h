@@ -59,7 +59,7 @@ public:
     /**
      * @symbol ?getMobEffectId\@Potion\@\@QEBAHXZ
      */
-    MCAPI int getMobEffectId() const;
+    MCAPI int32_t getMobEffectId() const;
     /**
      * @symbol
      * ?getMobEffects\@Potion\@\@QEBAAEBV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@std\@\@XZ
@@ -80,7 +80,7 @@ public:
     /**
      * @symbol ?getPotionId\@Potion\@\@QEBAHXZ
      */
-    MCAPI int getPotionId() const;
+    MCAPI int32_t getPotionId() const;
     /**
      * @symbol ?getPotionVariant\@Potion\@\@QEBA?AW4PotionVariant\@1\@XZ
      */
@@ -106,11 +106,11 @@ public:
     /**
      * @symbol ?getPotion\@Potion\@\@SA?AV?$shared_ptr\@$$CBVPotion\@\@\@std\@\@H\@Z
      */
-    MCAPI static std::shared_ptr<class Potion const> getPotion(int);
+    MCAPI static std::shared_ptr<class Potion const> getPotion(int32_t);
     /**
      * @symbol ?getPotionCount\@Potion\@\@SAHXZ
      */
-    MCAPI static int getPotionCount();
+    MCAPI static int32_t getPotionCount();
     /**
      * @symbol ?initPotions\@Potion\@\@SAXXZ
      */
@@ -331,7 +331,7 @@ private:
     /**
      * @symbol ?mLastId\@Potion\@\@0HA
      */
-    MCAPI static int mLastId;
+    MCAPI static int32_t mLastId;
     /**
      * @symbol ?mPotionsById\@Potion\@\@0PAV?$shared_ptr\@$$CBVPotion\@\@\@std\@\@A
      */
@@ -340,6 +340,6 @@ private:
      * @symbol
      * ?mPotionsByName\@Potion\@\@0V?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HU?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@std\@\@\@2\@\@std\@\@A
      */
-    MCAPI static std::unordered_map<std::string, int> mPotionsByName;
+    MCAPI static std::unordered_map<std::string, int32_t> mPotionsByName;
     // NOLINTEND
 };

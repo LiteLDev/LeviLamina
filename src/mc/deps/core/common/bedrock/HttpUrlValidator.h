@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::Http { class DispatcherProcess; }
 namespace Bedrock::Http { class Request; }
 namespace Bedrock::Http { class Response; }
 // clang-format on

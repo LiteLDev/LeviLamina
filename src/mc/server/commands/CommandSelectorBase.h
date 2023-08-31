@@ -79,7 +79,7 @@ public:
     /**
      * @symbol ?setVersion\@CommandSelectorBase\@\@QEAAXH\@Z
      */
-    MCAPI void setVersion(int);
+    MCAPI void setVersion(int32_t);
     /**
      * @symbol ??1CommandSelectorBase\@\@QEAA\@XZ
      */

@@ -30,7 +30,7 @@ public:
      * @symbol
      * ?apply\@EnchantBookForTradingFunction\@\@UEAAHAEAVItemStack\@\@AEAVRandom\@\@AEBUTrade\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual int apply(class ItemStack&, class Random&, struct Trade const&, class LootTableContext&);
+    virtual int32_t apply(class ItemStack&, class Random&, struct Trade const&, class LootTableContext&);
     /**
      * @vftbl 3
      * @symbol
@@ -42,7 +42,7 @@ public:
      * @symbol
      * ?apply\@EnchantBookForTradingFunction\@\@UEAAHAEAVItemInstance\@\@AEAVRandom\@\@AEBUTrade\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual int apply(class ItemInstance&, class Random&, struct Trade const&, class LootTableContext&);
+    virtual int32_t apply(class ItemInstance&, class Random&, struct Trade const&, class LootTableContext&);
     // NOLINTEND
 
     // private:
@@ -51,6 +51,7 @@ public:
      * @symbol
      * ?_getRandomEnchantAndCalculateCost\@EnchantBookForTradingFunction\@\@AEBA?AVEnchantmentInstance\@\@AEAVItemStackBase\@\@AEAVRandom\@\@AEAH\@Z
      */
-    MCAPI class EnchantmentInstance _getRandomEnchantAndCalculateCost(class ItemStackBase&, class Random&, int&) const;
+    MCAPI class EnchantmentInstance
+    _getRandomEnchantAndCalculateCost(class ItemStackBase&, class Random&, int32_t&) const;
     // NOLINTEND
 };

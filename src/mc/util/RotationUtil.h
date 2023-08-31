@@ -23,7 +23,7 @@ MCAPI std::vector<enum class Rotation> getShuffledRotations(class Random&);
 /**
  * @symbol ?rotate\@RotationUtil\@\@YAEW4Rotation\@\@E\@Z
  */
-MCAPI unsigned char rotate(enum class Rotation, unsigned char);
+MCAPI uint8_t rotate(enum class Rotation, uint8_t);
 /**
  * @symbol ?rotate\@RotationUtil\@\@YA?AVBlockPos\@\@AEBV2\@W4Rotation\@\@\@Z
  */

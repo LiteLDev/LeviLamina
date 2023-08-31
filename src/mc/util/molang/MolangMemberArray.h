@@ -38,7 +38,7 @@ public:
     /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_BaseAndPattern\@\@HH\@Z
      */
-    MCAPI MolangMemberArray(enum class MolangStruct_BaseAndPattern, int, int);
+    MCAPI MolangMemberArray(enum class MolangStruct_BaseAndPattern, int32_t, int32_t);
     /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_RGB\@\@AEBVColor\@mce\@\@\@Z
      */
@@ -75,7 +75,7 @@ public:
     /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_PoseIndexAndHurtTime\@\@HH\@Z
      */
-    MCAPI MolangMemberArray(enum class MolangStruct_PoseIndexAndHurtTime, int, int);
+    MCAPI MolangMemberArray(enum class MolangStruct_PoseIndexAndHurtTime, int32_t, int32_t);
     /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_UV\@\@MM\@Z
      */

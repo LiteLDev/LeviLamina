@@ -24,7 +24,7 @@ public:
      * @vftbl 1
      * @symbol ?moveBoundingBox\@StructurePiece\@\@UEAAXHHH\@Z
      */
-    virtual void moveBoundingBox(int, int, int);
+    virtual void moveBoundingBox(int32_t, int32_t, int32_t);
     /**
      * @vftbl 2
      * @symbol ?getType\@StructurePiece\@\@UEBA?AW4StructurePieceType\@\@XZ
@@ -56,22 +56,23 @@ public:
      * @vftbl 7
      * @symbol ?getWorldX\@StructurePiece\@\@UEAAHHH\@Z
      */
-    virtual int getWorldX(int, int);
+    virtual int32_t getWorldX(int32_t, int32_t);
     /**
      * @vftbl 8
      * @symbol ?getWorldZ\@StructurePiece\@\@UEAAHHH\@Z
      */
-    virtual int getWorldZ(int, int);
+    virtual int32_t getWorldZ(int32_t, int32_t);
     /**
      * @vftbl 9
      * @symbol ?placeBlock\@StructurePiece\@\@UEAAXAEAVBlockSource\@\@AEBVBlock\@\@HHHAEBVBoundingBox\@\@\@Z
      */
-    virtual void placeBlock(class BlockSource&, class Block const&, int, int, int, class BoundingBox const&);
+    virtual void
+    placeBlock(class BlockSource&, class Block const&, int32_t, int32_t, int32_t, class BoundingBox const&);
     /**
      * @vftbl 10
      * @symbol ?canBeReplaced\@StructurePiece\@\@UEAA_NAEAVBlockSource\@\@HHHAEBVBoundingBox\@\@\@Z
      */
-    virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
+    virtual bool canBeReplaced(class BlockSource&, int32_t, int32_t, int32_t, class BoundingBox const&);
     /**
      * @vftbl 11
      * @symbol ?generateBox\@StructurePiece\@\@UEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@HHHHHHAEBVBlock\@\@2_N\@Z
@@ -79,12 +80,12 @@ public:
     virtual void generateBox(
         class BlockSource&,
         class BoundingBox const&,
-        int,
-        int,
-        int,
-        int,
-        int,
-        int,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
         class Block const&,
         class Block const&,
         bool
@@ -103,7 +104,7 @@ public:
     /**
      * @symbol ?_getWorldPos\@StructurePiece\@\@QEAA?AVBlockPos\@\@HHH\@Z
      */
-    MCAPI class BlockPos _getWorldPos(int, int, int);
+    MCAPI class BlockPos _getWorldPos(int32_t, int32_t, int32_t);
     /**
      * @symbol ?addTerrainAdjustmentToken\@StructurePiece\@\@QEAAXV?$shared_ptr\@_N\@std\@\@\@Z
      */
@@ -111,13 +112,14 @@ public:
     /**
      * @symbol ?generateAirBox\@StructurePiece\@\@QEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@HHHHHH\@Z
      */
-    MCAPI void generateAirBox(class BlockSource&, class BoundingBox const&, int, int, int, int, int, int);
+    MCAPI void
+    generateAirBox(class BlockSource&, class BoundingBox const&, int32_t, int32_t, int32_t, int32_t, int32_t, int32_t);
     /**
      * @symbol
      * ?generateBox\@StructurePiece\@\@QEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@HHHHHH_NAEAVRandom\@\@AEBVBlockSelector\@\@\@Z
      */
     MCAPI void
-    generateBox(class BlockSource&, class BoundingBox const&, int, int, int, int, int, int, bool, class Random&, class BlockSelector const&);
+    generateBox(class BlockSource&, class BoundingBox const&, int32_t, int32_t, int32_t, int32_t, int32_t, int32_t, bool, class Random&, class BlockSelector const&);
     /**
      * @symbol
      * ?generateMaybeBox\@StructurePiece\@\@QEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@AEAVRandom\@\@MHHHHHHAEBVBlock\@\@3_N4\@Z
@@ -127,12 +129,12 @@ public:
         class BoundingBox const&,
         class Random&,
         float,
-        int,
-        int,
-        int,
-        int,
-        int,
-        int,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
         class Block const&,
         class Block const&,
         bool,
@@ -145,35 +147,35 @@ public:
     MCAPI void generateUpperHalfSphere(
         class BlockSource&,
         class BoundingBox const&,
-        int,
-        int,
-        int,
-        int,
-        int,
-        int,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
+        int32_t,
         class Block const&,
         bool
     );
     /**
      * @symbol ?getBlock\@StructurePiece\@\@QEAAAEBVBlock\@\@AEAVBlockSource\@\@HHHAEBVBoundingBox\@\@\@Z
      */
-    MCAPI class Block const& getBlock(class BlockSource&, int, int, int, class BoundingBox const&);
+    MCAPI class Block const& getBlock(class BlockSource&, int32_t, int32_t, int32_t, class BoundingBox const&);
     /**
      * @symbol ?getOrientationData\@StructurePiece\@\@QEAAGPEBVBlock\@\@G\@Z
      */
-    MCAPI unsigned short getOrientationData(class Block const*, unsigned short);
+    MCAPI uint16_t getOrientationData(class Block const*, uint16_t);
     /**
      * @symbol ?getWorldY\@StructurePiece\@\@QEAAHH\@Z
      */
-    MCAPI int getWorldY(int);
+    MCAPI int32_t getWorldY(int32_t);
     /**
      * @symbol ?isAboveGround\@StructurePiece\@\@QEAA_NHHHAEAVBlockSource\@\@\@Z
      */
-    MCAPI bool isAboveGround(int, int, int, class BlockSource&);
+    MCAPI bool isAboveGround(int32_t, int32_t, int32_t, class BlockSource&);
     /**
      * @symbol ?isAir\@StructurePiece\@\@QEAA_NAEAVBlockSource\@\@HHHAEBVBoundingBox\@\@\@Z
      */
-    MCAPI bool isAir(class BlockSource&, int, int, int, class BoundingBox const&);
+    MCAPI bool isAir(class BlockSource&, int32_t, int32_t, int32_t, class BoundingBox const&);
     /**
      * @symbol ?isReplaceableBlock\@StructurePiece\@\@QEAA_NAEBVBlock\@\@\@Z
      */
@@ -183,13 +185,13 @@ public:
      * ?maybeGenerateBlock\@StructurePiece\@\@QEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@AEAVRandom\@\@MHHHAEBVBlock\@\@\@Z
      */
     MCAPI void
-    maybeGenerateBlock(class BlockSource&, class BoundingBox const&, class Random&, float, int, int, int, class Block const&);
+    maybeGenerateBlock(class BlockSource&, class BoundingBox const&, class Random&, float, int32_t, int32_t, int32_t, class Block const&);
     /**
      * @symbol
      * ?maybeGenerateBlockIfNotFloating\@StructurePiece\@\@QEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@AEAVRandom\@\@MHHHAEBVBlock\@\@\@Z
      */
     MCAPI void
-    maybeGenerateBlockIfNotFloating(class BlockSource&, class BoundingBox const&, class Random&, float, int, int, int, class Block const&);
+    maybeGenerateBlockIfNotFloating(class BlockSource&, class BoundingBox const&, class Random&, float, int32_t, int32_t, int32_t, class Block const&);
     /**
      * @symbol
      * ?findCollisionPiece\@StructurePiece\@\@SAPEAV1\@AEBV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEBVBoundingBox\@\@\@Z
@@ -200,6 +202,6 @@ public:
      * @symbol
      * ?getTotalWeight\@StructurePiece\@\@SAHAEBV?$vector\@VPieceWeight\@\@V?$allocator\@VPieceWeight\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI static int getTotalWeight(std::vector<class PieceWeight> const&);
+    MCAPI static int32_t getTotalWeight(std::vector<class PieceWeight> const&);
     // NOLINTEND
 };

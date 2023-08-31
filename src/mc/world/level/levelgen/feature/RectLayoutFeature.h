@@ -57,6 +57,6 @@ public:
      * ?_tryPlaceFeature\@RectLayoutFeature\@\@AEBA?AV?$optional\@UFeatureArea\@RectLayoutFeature\@\@\@std\@\@AEBVVec2\@\@HAEBV?$array\@V?$array\@E$0BA\@\@std\@\@$0BA\@\@3\@\@Z
      */
     MCAPI std::optional<struct RectLayoutFeature::FeatureArea>
-          _tryPlaceFeature(class Vec2 const&, int, std::array<std::array<unsigned char, 16>, 16> const&) const;
+          _tryPlaceFeature(class Vec2 const&, int32_t, std::array<std::array<uint8_t, 16>, 16> const&) const;
     // NOLINTEND
 };

@@ -45,12 +45,12 @@ public:
      * @vftbl 6
      * @symbol ?readShort\@BytesDataInput\@\@UEAAFXZ
      */
-    virtual short readShort();
+    virtual int16_t readShort();
     /**
      * @vftbl 7
      * @symbol ?readInt\@BytesDataInput\@\@UEAAHXZ
      */
-    virtual int readInt();
+    virtual int32_t readInt();
     /**
      * @vftbl 8
      * @symbol ?readLongLong\@BytesDataInput\@\@UEAA_JXZ

@@ -24,10 +24,10 @@ public:
      * @vftbl 1
      * @symbol ?getAmount\@ShiftedValueAmplifier\@\@UEBAMHM\@Z
      */
-    virtual float getAmount(int, float) const;
+    virtual float getAmount(int32_t, float) const;
     /**
      * @symbol ??0ShiftedValueAmplifier\@\@QEAA\@HM\@Z
      */
-    MCAPI ShiftedValueAmplifier(int, float);
+    MCAPI ShiftedValueAmplifier(int32_t, float);
     // NOLINTEND
 };

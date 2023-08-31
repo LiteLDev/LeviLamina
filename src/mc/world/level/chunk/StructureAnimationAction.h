@@ -40,14 +40,13 @@ public:
      * @symbol
      * ??0StructureAnimationAction\@\@QEAA\@V?$unique_ptr\@VStructureAnimationData\@\@U?$default_delete\@VStructureAnimationData\@\@\@std\@\@\@std\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI
-        StructureAnimationAction(std::unique_ptr<class StructureAnimationData>, class AutomaticID<class Dimension, int>);
+    MCAPI StructureAnimationAction(std::unique_ptr<class StructureAnimationData>, DimensionType);
     /**
      * @symbol
      * ??0StructureAnimationAction\@\@QEAA\@AEBVStructureSettings\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEBVBlockPos\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI
-    StructureAnimationAction(class StructureSettings const&, class AutomaticID<class Dimension, int>, class BlockPos const&, std::string const&);
+    StructureAnimationAction(class StructureSettings const&, DimensionType, class BlockPos const&, std::string const&);
     /**
      * @symbol
      * ?load\@StructureAnimationAction\@\@SA?AV?$unique_ptr\@VStructureAnimationAction\@\@U?$default_delete\@VStructureAnimationAction\@\@\@std\@\@\@std\@\@AEBVCompoundTag\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z

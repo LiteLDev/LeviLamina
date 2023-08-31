@@ -33,7 +33,7 @@ public:
     /**
      * @symbol ?getRange\@SculkCatalystBlockActor\@\@UEBAIXZ
      */
-    MCVAPI unsigned int getRange() const;
+    MCVAPI uint32_t getRange() const;
     /**
      * @symbol
      * ?handleGameEvent\@SculkCatalystBlockActor\@\@UEAAXAEBVGameEvent\@\@AEBUGameEventContext\@\@AEAVBlockSource\@\@\@Z

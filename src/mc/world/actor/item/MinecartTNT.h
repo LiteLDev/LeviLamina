@@ -103,7 +103,7 @@ public:
      * @vftbl 127
      * @symbol ?handleEntityEvent\@MinecartTNT\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
-    virtual void handleEntityEvent(enum class ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int32_t);
     /**
      * @vftbl 164
      * @symbol __unk_vfn_164
@@ -195,6 +195,6 @@ private:
     /**
      * @symbol ?DEFAULT_FUSE_LENGTH\@MinecartTNT\@\@0HB
      */
-    MCAPI static int const DEFAULT_FUSE_LENGTH;
+    MCAPI static int32_t const DEFAULT_FUSE_LENGTH;
     // NOLINTEND
 };

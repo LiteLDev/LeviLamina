@@ -27,6 +27,6 @@ protected:
     /**
      * @symbol ?refCount\@WSAStartupSingleton\@\@1HA
      */
-    MCAPI static int refCount;
+    MCAPI static int32_t refCount;
     // NOLINTEND
 };

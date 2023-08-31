@@ -57,7 +57,7 @@ public:
      * @vftbl 45
      * @symbol ?getLevelDataForAuxValue\@CandleBlockItem\@\@UEBAHH\@Z
      */
-    virtual int getLevelDataForAuxValue(int) const;
+    virtual int32_t getLevelDataForAuxValue(int32_t) const;
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -119,7 +119,7 @@ public:
      * ?_useOn\@CandleBlockItem\@\@UEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _useOn(class ItemStack&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CANDLEBLOCKITEM
     /**
      * @symbol ?isCandle\@CandleBlockItem\@\@UEBA_NXZ
@@ -130,6 +130,6 @@ public:
      * @symbol
      * ??0CandleBlockItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI CandleBlockItem(std::string const&, int);
+    MCAPI CandleBlockItem(std::string const&, int32_t);
     // NOLINTEND
 };

@@ -53,7 +53,7 @@ public:
      * @vftbl 38
      * @symbol ?teleportTo\@FallingBlockActor\@\@UEAAXAEBVVec3\@\@_NHH1\@Z
      */
-    virtual void teleportTo(class Vec3 const&, bool, int, int, bool);
+    virtual void teleportTo(class Vec3 const&, bool, int32_t, int32_t, bool);
     /**
      * @vftbl 43
      * @symbol ?normalTick\@FallingBlockActor\@\@UEAAXXZ
@@ -143,7 +143,7 @@ public:
      * @vftbl 173
      * @symbol ?onSynchedDataUpdate\@FallingBlockActor\@\@UEAAXH\@Z
      */
-    virtual void onSynchedDataUpdate(int);
+    virtual void onSynchedDataUpdate(int32_t);
     /**
      * @vftbl 178
      * @symbol __unk_vfn_178

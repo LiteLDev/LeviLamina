@@ -65,7 +65,7 @@ public:
      * @vftbl 52
      * @symbol ?getPatternIndex\@BannerPatternItem\@\@UEBAHXZ
      */
-    virtual int getPatternIndex() const;
+    virtual int32_t getPatternIndex() const;
     /**
      * @vftbl 53
      * @symbol __unk_vfn_53
@@ -138,6 +138,6 @@ public:
      * @symbol
      * ??0BannerPatternItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4Type\@0\@\@Z
      */
-    MCAPI BannerPatternItem(std::string const&, int, enum class BannerPatternItem::Type);
+    MCAPI BannerPatternItem(std::string const&, int32_t, enum class BannerPatternItem::Type);
     // NOLINTEND
 };

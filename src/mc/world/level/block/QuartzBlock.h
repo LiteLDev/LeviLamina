@@ -166,7 +166,7 @@ public:
      * @symbol ?getPlacementBlock\@QuartzBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -207,12 +207,12 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@QuartzBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 146
      * @symbol ?getMappedFace\@QuartzBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
-    virtual unsigned char getMappedFace(unsigned char, class Block const&) const;
+    virtual uint8_t getMappedFace(uint8_t, class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -257,7 +257,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@QuartzBlock\@\@MEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@QuartzBlock\@\@MEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -266,6 +266,6 @@ public:
     /**
      * @symbol ??0QuartzBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI QuartzBlock(std::string const&, int);
+    MCAPI QuartzBlock(std::string const&, int32_t);
     // NOLINTEND
 };

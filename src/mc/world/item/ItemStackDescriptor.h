@@ -38,7 +38,7 @@ public:
     /**
      * @symbol ??0ItemStackDescriptor\@\@QEAA\@AEBVItem\@\@HGPEBVCompoundTag\@\@\@Z
      */
-    MCAPI ItemStackDescriptor(class Item const&, int, unsigned short, class CompoundTag const*);
+    MCAPI ItemStackDescriptor(class Item const&, int32_t, uint16_t, class CompoundTag const*);
     /**
      * @symbol ??4ItemStackDescriptor\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */

@@ -20,7 +20,7 @@ public:
      * @vftbl 0
      * @symbol ?containerContentChanged\@ContainerComponent\@\@UEAAXH\@Z
      */
-    virtual void containerContentChanged(int);
+    virtual void containerContentChanged(int32_t);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERCOMPONENT
     /**
      * @symbol __unk_destructor_-1
@@ -50,7 +50,7 @@ public:
     /**
      * @symbol ?addItem\@ContainerComponent\@\@QEAA_NAEAVItemStack\@\@HH\@Z
      */
-    MCAPI bool addItem(class ItemStack&, int, int);
+    MCAPI bool addItem(class ItemStack&, int32_t, int32_t);
     /**
      * @symbol ?addItem\@ContainerComponent\@\@QEAA_NAEAVItemStack\@\@\@Z
      */
@@ -66,7 +66,7 @@ public:
     /**
      * @symbol ?countItemsOfType\@ContainerComponent\@\@QEBAHAEBVItemStack\@\@\@Z
      */
-    MCAPI int countItemsOfType(class ItemStack const&) const;
+    MCAPI int32_t countItemsOfType(class ItemStack const&) const;
     /**
      * @symbol ?dropContents\@ContainerComponent\@\@QEAAXAEAVBlockSource\@\@AEBVVec3\@\@_N\@Z
      */
@@ -74,19 +74,19 @@ public:
     /**
      * @symbol ?findFirstSlotForItem\@ContainerComponent\@\@QEBAHAEBVItemStack\@\@\@Z
      */
-    MCAPI int findFirstSlotForItem(class ItemStack const&) const;
+    MCAPI int32_t findFirstSlotForItem(class ItemStack const&) const;
     /**
      * @symbol ?getContainerSize\@ContainerComponent\@\@QEBAHXZ
      */
-    MCAPI int getContainerSize() const;
+    MCAPI int32_t getContainerSize() const;
     /**
      * @symbol ?getEmptySlotsCount\@ContainerComponent\@\@QEBAHXZ
      */
-    MCAPI int getEmptySlotsCount() const;
+    MCAPI int32_t getEmptySlotsCount() const;
     /**
      * @symbol ?getItem\@ContainerComponent\@\@QEBAAEBVItemStack\@\@H\@Z
      */
-    MCAPI class ItemStack const& getItem(int) const;
+    MCAPI class ItemStack const& getItem(int32_t) const;
     /**
      * @symbol
      * ?getSlots\@ContainerComponent\@\@QEBA?BV?$vector\@PEBVItemStack\@\@V?$allocator\@PEBVItemStack\@\@\@std\@\@\@std\@\@XZ
@@ -128,20 +128,20 @@ public:
     /**
      * @symbol ?rebuildContainer\@ContainerComponent\@\@QEAAXAEAVActor\@\@W4ContainerType\@\@H_NH2\@Z
      */
-    MCAPI void rebuildContainer(class Actor&, enum class ContainerType, int, bool, int, bool);
+    MCAPI void rebuildContainer(class Actor&, enum class ContainerType, int32_t, bool, int32_t, bool);
     /**
      * @symbol ?removeItem\@ContainerComponent\@\@QEAAXHH\@Z
      */
-    MCAPI void removeItem(int, int);
+    MCAPI void removeItem(int32_t, int32_t);
     /**
      * @symbol ?removeItemsOfType\@ContainerComponent\@\@QEAAXAEBVItemStack\@\@H\@Z
      */
-    MCAPI void removeItemsOfType(class ItemStack const&, int);
+    MCAPI void removeItemsOfType(class ItemStack const&, int32_t);
     /**
      * @symbol
      * ?serverInitItemStackIds\@ContainerComponent\@\@QEAAXHHV?$function\@$$A6AXHAEBVItemStack\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
+    MCAPI void serverInitItemStackIds(int32_t, int32_t, std::function<void(int32_t, class ItemStack const&)>);
     /**
      * @symbol
      * ?setCustomName\@ContainerComponent\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -150,15 +150,15 @@ public:
     /**
      * @symbol ?setItem\@ContainerComponent\@\@QEAA_NHAEBVItemStack\@\@\@Z
      */
-    MCAPI bool setItem(int, class ItemStack const&);
+    MCAPI bool setItem(int32_t, class ItemStack const&);
     /**
      * @symbol
      * ?setLootTable\@ContainerComponent\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI void setLootTable(std::string const&, int);
+    MCAPI void setLootTable(std::string const&, int32_t);
     /**
      * @symbol ?unpackLootTable\@ContainerComponent\@\@QEAAXAEAVLevel\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI void unpackLootTable(class Level&, class AutomaticID<class Dimension, int>);
+    MCAPI void unpackLootTable(class Level&, DimensionType);
     // NOLINTEND
 };

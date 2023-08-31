@@ -40,7 +40,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@TurtleEggBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -175,7 +175,7 @@ public:
      * @vftbl 93
      * @symbol ?mayPlace\@TurtleEggBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
+    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 103
      * @symbol ?playerWillDestroy\@TurtleEggBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
@@ -261,7 +261,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@TurtleEggBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -276,12 +276,12 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@TurtleEggBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 186
      * @symbol ?getResourceCount\@TurtleEggBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@TurtleEggBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -302,7 +302,7 @@ public:
      * @symbol
      * ??0TurtleEggBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI TurtleEggBlock(std::string const&, int);
+    MCAPI TurtleEggBlock(std::string const&, int32_t);
     // NOLINTEND
 
     // private:
@@ -310,10 +310,10 @@ public:
     /**
      * @symbol ?_decreaseEggs\@TurtleEggBlock\@\@CAXAEAVBlockSource\@\@AEBVBlockPos\@\@I_N\@Z
      */
-    MCAPI static void _decreaseEggs(class BlockSource&, class BlockPos const&, unsigned int, bool);
+    MCAPI static void _decreaseEggs(class BlockSource&, class BlockPos const&, uint32_t, bool);
     /**
      * @symbol ?_destroyEgg\@TurtleEggBlock\@\@CAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@H_N\@Z
      */
-    MCAPI static void _destroyEgg(class BlockSource&, class BlockPos const&, class Actor&, int, bool);
+    MCAPI static void _destroyEgg(class BlockSource&, class BlockPos const&, class Actor&, int32_t, bool);
     // NOLINTEND
 };

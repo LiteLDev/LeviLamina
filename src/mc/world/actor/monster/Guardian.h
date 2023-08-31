@@ -217,7 +217,7 @@ public:
     /**
      * @symbol ?getAttackDuration\@Guardian\@\@QEAAHXZ
      */
-    MCAPI int getAttackDuration();
+    MCAPI int32_t getAttackDuration();
     /**
      * @symbol ?getMoveEyeVector\@Guardian\@\@QEAA?AVVec3\@\@XZ
      */
@@ -241,7 +241,7 @@ public:
     /**
      * @symbol ?setAttackTime\@Guardian\@\@QEAAXH\@Z
      */
-    MCAPI void setAttackTime(int);
+    MCAPI void setAttackTime(int32_t);
     /**
      * @symbol ?setElder\@Guardian\@\@QEAAX_N\@Z
      */
@@ -261,10 +261,10 @@ private:
     /**
      * @symbol ?ATTACK_TIME\@Guardian\@\@0HB
      */
-    MCAPI static int const ATTACK_TIME;
+    MCAPI static int32_t const ATTACK_TIME;
     /**
      * @symbol ?FIRST_DAMAGE_TIME\@Guardian\@\@0HB
      */
-    MCAPI static int const FIRST_DAMAGE_TIME;
+    MCAPI static int32_t const FIRST_DAMAGE_TIME;
     // NOLINTEND
 };

@@ -177,7 +177,7 @@ public:
      * @vftbl 93
      * @symbol ?mayPlace\@ItemFrameBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
+    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 100
      * @symbol ?getIgnoresDestroyPermissions\@ItemFrameBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@\@Z
@@ -216,7 +216,7 @@ public:
      * @symbol ?getPlacementBlock\@ItemFrameBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 111
      * @symbol ?attack\@ItemFrameBlock\@\@UEBA_NPEAVPlayer\@\@AEBVBlockPos\@\@\@Z
@@ -241,7 +241,7 @@ public:
      * @vftbl 126
      * @symbol ?getComparatorSignal\@ItemFrameBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, unsigned char) const;
+    virtual int32_t getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uint8_t) const;
     /**
      * @vftbl 128
      * @symbol __unk_vfn_128
@@ -301,7 +301,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@ItemFrameBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -321,12 +321,12 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@ItemFrameBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 192
      * @symbol ?getEntityResourceItem\@ItemFrameBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlockActor\@\@H\@Z
      */
-    virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int) const;
+    virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int32_t) const;
     /**
      * @vftbl 193
      * @symbol ?getSpawnedItemName\@ItemFrameBlock\@\@UEBA?AVHashedString\@\@XZ
@@ -350,7 +350,7 @@ public:
      * @symbol
      * ??0ItemFrameBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI ItemFrameBlock(std::string const&, int);
+    MCAPI ItemFrameBlock(std::string const&, int32_t);
     // NOLINTEND
 
     // private:
@@ -362,6 +362,6 @@ public:
     /**
      * @symbol ?getShape\@ItemFrameBlock\@\@AEBAXHAEAVAABB\@\@_N\@Z
      */
-    MCAPI void getShape(int, class AABB&, bool) const;
+    MCAPI void getShape(int32_t, class AABB&, bool) const;
     // NOLINTEND
 };

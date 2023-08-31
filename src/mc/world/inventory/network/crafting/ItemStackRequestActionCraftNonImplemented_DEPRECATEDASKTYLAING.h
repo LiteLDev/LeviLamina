@@ -31,7 +31,7 @@ public:
      * @vftbl 2
      * @symbol ?getFilteredStringIndex\@ItemStackRequestAction\@\@UEBAHXZ
      */
-    virtual int getFilteredStringIndex() const;
+    virtual int32_t getFilteredStringIndex() const;
     /**
      * @vftbl 3
      * @symbol ?postLoadItems_DEPRECATEDASKTYLAING\@ItemStackRequestActionCraftBase\@\@UEAAXAEAVBlockPalette\@\@_N\@Z

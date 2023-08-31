@@ -19,11 +19,11 @@ public:
     /**
      * @symbol ?chance\@Randomize\@\@QEBA_NHH\@Z
      */
-    MCAPI bool chance(int, int) const;
+    MCAPI bool chance(int32_t, int32_t) const;
     /**
      * @symbol ?chanceAllButOneIn\@Randomize\@\@QEBA_NH\@Z
      */
-    MCAPI bool chanceAllButOneIn(int) const;
+    MCAPI bool chanceAllButOneIn(int32_t) const;
     /**
      * @symbol ?chanceFloatGreaterThan\@Randomize\@\@QEBA_NM\@Z
      */
@@ -39,7 +39,7 @@ public:
     /**
      * @symbol ?chanceOneIn\@Randomize\@\@QEBA_NH\@Z
      */
-    MCAPI bool chanceOneIn(int) const;
+    MCAPI bool chanceOneIn(int32_t) const;
     /**
      * @symbol ?nextFloat\@Randomize\@\@QEBAMXZ
      */
@@ -47,7 +47,7 @@ public:
     /**
      * @symbol ?nextIntInclusive\@Randomize\@\@QEBAHHH\@Z
      */
-    MCAPI int nextIntInclusive(int, int) const;
+    MCAPI int32_t nextIntInclusive(int32_t, int32_t) const;
     /**
      * @symbol ??1Randomize\@\@QEAA\@XZ
      */

@@ -12,7 +12,7 @@ namespace BuiltInBlockStates {
 /**
  * @symbol ?BlockFace\@BuiltInBlockStates\@\@3V?$BuiltInBlockStateVariant\@E\@\@B
  */
-MCAPI extern class BuiltInBlockStateVariant<unsigned char> const BlockFace;
+MCAPI extern class BuiltInBlockStateVariant<uint8_t> const BlockFace;
 /**
  * @symbol ?CardinalDirection\@BuiltInBlockStates\@\@3V?$BuiltInBlockStateVariant\@W4Type\@Direction\@\@\@\@B
  */
@@ -20,7 +20,7 @@ MCAPI extern class BuiltInBlockStateVariant<::Direction::Type> const CardinalDir
 /**
  * @symbol ?FacingDirection\@BuiltInBlockStates\@\@3V?$BuiltInBlockStateVariant\@E\@\@B
  */
-MCAPI extern class BuiltInBlockStateVariant<unsigned char> const FacingDirection;
+MCAPI extern class BuiltInBlockStateVariant<uint8_t> const FacingDirection;
 /**
  * @symbol ?VerticalHalf\@BuiltInBlockStates\@\@3V?$BuiltInBlockStateVariant\@W4VerticalHalfEnum\@\@\@\@B
  */

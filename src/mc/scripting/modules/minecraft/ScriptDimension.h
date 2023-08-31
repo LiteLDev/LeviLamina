@@ -85,7 +85,7 @@ public:
      * @symbol
      * ?fillBlocks\@ScriptDimension\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@I\@Scripting\@\@AEBVVec3\@\@0AEBV?$variant\@V?$StrongTypedObjectHandle\@VScriptBlockType\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$StrongTypedObjectHandle\@VScriptBlockPermutation\@ScriptModuleMinecraft\@\@\@2\@\@std\@\@AEBV?$optional\@UScriptBlockFillOptions\@ScriptModuleMinecraft\@\@\@7\@\@Z
      */
-    MCAPI class Scripting::Result<unsigned int>
+    MCAPI class Scripting::Result<uint32_t>
     fillBlocks(class Vec3 const&, class Vec3 const&, std::variant<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockType>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>> const&, std::optional<struct ScriptModuleMinecraft::ScriptBlockFillOptions> const&);
     /**
      * @symbol
@@ -266,7 +266,7 @@ public:
      * ?getOrCreateHandle\@ScriptDimension\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptDimension\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEAVLevel\@\@AEBVWeakLifetimeScope\@4\@\@Z
      */
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDimension>
-    getOrCreateHandle(class AutomaticID<class Dimension, int>, class Level&, class Scripting::WeakLifetimeScope const&);
+    getOrCreateHandle(DimensionType, class Level&, class Scripting::WeakLifetimeScope const&);
     /**
      * @symbol
      * ?getOrCreateHandle\@ScriptDimension\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptDimension\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEAVDimension\@\@AEBVWeakLifetimeScope\@4\@\@Z

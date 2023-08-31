@@ -55,17 +55,17 @@ public:
      * @vftbl 1
      * @symbol ?startDestroyBlock\@GameMode\@\@UEAA_NAEBVBlockPos\@\@EAEA_N\@Z
      */
-    virtual bool startDestroyBlock(class BlockPos const&, unsigned char, bool&);
+    virtual bool startDestroyBlock(class BlockPos const&, uint8_t, bool&);
     /**
      * @vftbl 2
      * @symbol ?destroyBlock\@GameMode\@\@UEAA_NAEBVBlockPos\@\@E\@Z
      */
-    virtual bool destroyBlock(class BlockPos const&, unsigned char);
+    virtual bool destroyBlock(class BlockPos const&, uint8_t);
     /**
      * @vftbl 3
      * @symbol ?continueDestroyBlock\@GameMode\@\@UEAA_NAEBVBlockPos\@\@EAEBVVec3\@\@AEA_N\@Z
      */
-    virtual bool continueDestroyBlock(class BlockPos const&, unsigned char, class Vec3 const&, bool&);
+    virtual bool continueDestroyBlock(class BlockPos const&, uint8_t, class Vec3 const&, bool&);
     /**
      * @vftbl 4
      * @symbol ?stopDestroyBlock\@GameMode\@\@UEAAXAEBVBlockPos\@\@\@Z
@@ -75,17 +75,17 @@ public:
      * @vftbl 5
      * @symbol ?startBuildBlock\@GameMode\@\@UEAAXAEBVBlockPos\@\@E\@Z
      */
-    virtual void startBuildBlock(class BlockPos const&, unsigned char);
+    virtual void startBuildBlock(class BlockPos const&, uint8_t);
     /**
      * @vftbl 6
      * @symbol ?buildBlock\@GameMode\@\@UEAA_NAEBVBlockPos\@\@E_N\@Z
      */
-    virtual bool buildBlock(class BlockPos const&, unsigned char, bool);
+    virtual bool buildBlock(class BlockPos const&, uint8_t, bool);
     /**
      * @vftbl 7
      * @symbol ?continueBuildBlock\@GameMode\@\@UEAAXAEBVBlockPos\@\@E\@Z
      */
-    virtual void continueBuildBlock(class BlockPos const&, unsigned char);
+    virtual void continueBuildBlock(class BlockPos const&, uint8_t);
     /**
      * @vftbl 8
      * @symbol ?stopBuildBlock\@GameMode\@\@UEAAXXZ
@@ -112,7 +112,7 @@ public:
      * ?useItemOn\@GameMode\@\@UEAA?AVInteractionResult\@\@AEAVItemStack\@\@AEBVBlockPos\@\@EAEBVVec3\@\@PEBVBlock\@\@\@Z
      */
     virtual class InteractionResult
-    useItemOn(class ItemStack&, class BlockPos const&, unsigned char, class Vec3 const&, class Block const*);
+    useItemOn(class ItemStack&, class BlockPos const&, uint8_t, class Vec3 const&, class Block const*);
     /**
      * @vftbl 13
      * @symbol ?interact\@GameMode\@\@UEAA_NAEAVActor\@\@AEBVVec3\@\@\@Z
@@ -151,13 +151,13 @@ public:
     /**
      * @symbol ?_startDestroyBlock\@GameMode\@\@QEAA_NAEBVBlockPos\@\@AEBVVec3\@\@EAEA_N\@Z
      */
-    MCAPI bool _startDestroyBlock(class BlockPos const&, class Vec3 const&, unsigned char, bool&);
+    MCAPI bool _startDestroyBlock(class BlockPos const&, class Vec3 const&, uint8_t, bool&);
     /**
      * @symbol
      * ?_tickContinueDestroyBlock\@GameMode\@\@QEAA_NAEBVBlockPos\@\@AEBVVec3\@\@EAEA_NAEBV?$function\@$$A6AXXZ\@std\@\@\@Z
      */
     MCAPI bool
-    _tickContinueDestroyBlock(class BlockPos const&, class Vec3 const&, unsigned char, bool&, std::function<void(void)> const&);
+    _tickContinueDestroyBlock(class BlockPos const&, class Vec3 const&, uint8_t, bool&, std::function<void(void)> const&);
     /**
      * @symbol ?baseUseItem\@GameMode\@\@QEAA_NAEAVItemStack\@\@\@Z
      */
@@ -172,7 +172,7 @@ public:
     /**
      * @symbol ?getDestroyBlockFace\@GameMode\@\@QEBAEXZ
      */
-    MCAPI unsigned char getDestroyBlockFace() const;
+    MCAPI uint8_t getDestroyBlockFace() const;
     /**
      * @symbol ?getDestroyBlockPos\@GameMode\@\@QEBAAEBVBlockPos\@\@XZ
      */
@@ -240,7 +240,7 @@ public:
     /**
      * @symbol ?_canDestroy\@GameMode\@\@AEAA_NAEBVBlockPos\@\@E\@Z
      */
-    MCAPI bool _canDestroy(class BlockPos const&, unsigned char);
+    MCAPI bool _canDestroy(class BlockPos const&, uint8_t);
     /**
      * @symbol ?_canUseBlock\@GameMode\@\@AEAA_NAEBVBlock\@\@\@Z
      */
@@ -248,7 +248,7 @@ public:
     /**
      * @symbol ?_creativeDestroyBlock\@GameMode\@\@AEAA_NAEBVBlockPos\@\@E\@Z
      */
-    MCAPI bool _creativeDestroyBlock(class BlockPos const&, unsigned char);
+    MCAPI bool _creativeDestroyBlock(class BlockPos const&, uint8_t);
     /**
      * @symbol ?_enableBlockBreakDelay\@GameMode\@\@AEBA_NXZ
      */

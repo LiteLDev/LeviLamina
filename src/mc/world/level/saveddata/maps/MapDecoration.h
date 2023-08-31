@@ -55,7 +55,7 @@ public:
      * ??0MapDecoration\@\@QEAA\@W4Type\@0\@CCCAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVColor\@mce\@\@\@Z
      */
     MCAPI
-    MapDecoration(enum class MapDecoration::Type, signed char, signed char, signed char, std::string const&, class mce::Color const&);
+    MapDecoration(enum class MapDecoration::Type, int8_t, int8_t, int8_t, std::string const&, class mce::Color const&);
     /**
      * @symbol ?getColor\@MapDecoration\@\@QEBAAEBVColor\@mce\@\@XZ
      */
@@ -72,15 +72,15 @@ public:
     /**
      * @symbol ?getRot\@MapDecoration\@\@QEBACXZ
      */
-    MCAPI signed char getRot() const;
+    MCAPI int8_t getRot() const;
     /**
      * @symbol ?getX\@MapDecoration\@\@QEBACXZ
      */
-    MCAPI signed char getX() const;
+    MCAPI int8_t getX() const;
     /**
      * @symbol ?getY\@MapDecoration\@\@QEBACXZ
      */
-    MCAPI signed char getY() const;
+    MCAPI int8_t getY() const;
     /**
      * @symbol ??1MapDecoration\@\@QEAA\@XZ
      */

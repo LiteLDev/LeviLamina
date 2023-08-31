@@ -127,13 +127,13 @@ public:
      * ?addEffect\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@AEBV?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$StrongTypedObjectHandle\@VScriptEffectType\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@HAEBV?$optional\@UScriptEntityEffectOptions\@ScriptModuleMinecraft\@\@\@7\@\@Z
      */
     MCAPI class Scripting::Result<void>
-    addEffect(class Actor&, std::variant<std::string, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptEffectType>> const&, int, std::optional<struct ScriptModuleMinecraft::ScriptEntityEffectOptions> const&);
+    addEffect(class Actor&, std::variant<std::string, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptEffectType>> const&, int32_t, std::optional<struct ScriptModuleMinecraft::ScriptEntityEffectOptions> const&);
     /**
      * @symbol
      * ?addEffect_V010\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@AEBVScriptEffectType\@2\@HH_N\@Z
      */
     MCAPI class Scripting::Result<void>
-    addEffect_V010(class Actor&, class ScriptModuleMinecraft::ScriptEffectType const&, int, int, bool);
+    addEffect_V010(class Actor&, class ScriptModuleMinecraft::ScriptEffectType const&, int32_t, int32_t, bool);
     /**
      * @symbol
      * ?addTag\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@_N\@Scripting\@\@AEAVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -426,7 +426,7 @@ public:
      * @symbol
      * ?setOnFire\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@_N\@Scripting\@\@AEAVActor\@\@HV?$optional\@_N\@std\@\@\@Z
      */
-    MCAPI class Scripting::Result<bool> setOnFire(class Actor&, int, std::optional<bool>);
+    MCAPI class Scripting::Result<bool> setOnFire(class Actor&, int32_t, std::optional<bool>);
     /**
      * @symbol ?setRemoved\@ScriptActor\@ScriptModuleMinecraft\@\@QEAAXXZ
      */

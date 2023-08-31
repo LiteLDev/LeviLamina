@@ -20,14 +20,14 @@ public:
      * ?begin\@BaseAttributeMap\@\@QEBA?AV?$_List_const_iterator\@V?$_List_val\@U?$_List_simple_types\@U?$pair\@$$CBIVAttributeInstance\@\@\@std\@\@\@std\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::_List_const_iterator<
-        std::_List_val<std::_List_simple_types<std::pair<unsigned int const, class AttributeInstance>>>>
+        std::_List_val<std::_List_simple_types<std::pair<uint32_t const, class AttributeInstance>>>>
     begin() const;
     /**
      * @symbol
      * ?begin\@BaseAttributeMap\@\@QEAA?AV?$_List_iterator\@V?$_List_val\@U?$_List_simple_types\@U?$pair\@$$CBIVAttributeInstance\@\@\@std\@\@\@std\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::_List_iterator<
-        std::_List_val<std::_List_simple_types<std::pair<unsigned int const, class AttributeInstance>>>>
+    MCAPI
+    std::_List_iterator<std::_List_val<std::_List_simple_types<std::pair<uint32_t const, class AttributeInstance>>>>
     begin();
     /**
      * @symbol ?clearDirtyAttributes\@BaseAttributeMap\@\@QEAAXXZ
@@ -38,14 +38,14 @@ public:
      * ?end\@BaseAttributeMap\@\@QEBA?AV?$_List_const_iterator\@V?$_List_val\@U?$_List_simple_types\@U?$pair\@$$CBIVAttributeInstance\@\@\@std\@\@\@std\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::_List_const_iterator<
-        std::_List_val<std::_List_simple_types<std::pair<unsigned int const, class AttributeInstance>>>>
+        std::_List_val<std::_List_simple_types<std::pair<uint32_t const, class AttributeInstance>>>>
     end() const;
     /**
      * @symbol
      * ?end\@BaseAttributeMap\@\@QEAA?AV?$_List_iterator\@V?$_List_val\@U?$_List_simple_types\@U?$pair\@$$CBIVAttributeInstance\@\@\@std\@\@\@std\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::_List_iterator<
-        std::_List_val<std::_List_simple_types<std::pair<unsigned int const, class AttributeInstance>>>>
+    MCAPI
+    std::_List_iterator<std::_List_val<std::_List_simple_types<std::pair<uint32_t const, class AttributeInstance>>>>
     end();
     /**
      * @symbol
@@ -59,11 +59,11 @@ public:
     /**
      * @symbol ?getInstance\@BaseAttributeMap\@\@QEBAAEBVAttributeInstance\@\@I\@Z
      */
-    MCAPI class AttributeInstance const& getInstance(unsigned int) const;
+    MCAPI class AttributeInstance const& getInstance(uint32_t) const;
     /**
      * @symbol ?getMutableInstance\@BaseAttributeMap\@\@QEAAPEAVAttributeInstance\@\@I\@Z
      */
-    MCAPI class AttributeInstance* getMutableInstance(unsigned int);
+    MCAPI class AttributeInstance* getMutableInstance(uint32_t);
     /**
      * @symbol ?getMutableInstance\@BaseAttributeMap\@\@QEAAPEAVAttributeInstance\@\@AEBVAttribute\@\@\@Z
      */

@@ -14,7 +14,7 @@ public:
     /**
      * @symbol ??0FilterInput\@\@QEAA\@H\@Z
      */
-    MCAPI FilterInput(int);
+    MCAPI FilterInput(int32_t);
     /**
      * @symbol ??4FilterInput\@\@QEAAAEAV0\@AEBV0\@\@Z
      */

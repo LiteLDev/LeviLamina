@@ -46,7 +46,7 @@ public:
      * @symbol
      * ?getScores\@Objective\@\@QEBAAEBV?$unordered_map\@UScoreboardId\@\@HU?$hash\@UScoreboardId\@\@\@std\@\@U?$equal_to\@UScoreboardId\@\@\@3\@V?$allocator\@U?$pair\@$$CBUScoreboardId\@\@H\@std\@\@\@3\@\@std\@\@XZ
      */
-    MCAPI std::unordered_map<struct ScoreboardId, int> const& getScores() const;
+    MCAPI std::unordered_map<struct ScoreboardId, int32_t> const& getScores() const;
     /**
      * @symbol ?hasScore\@Objective\@\@QEBA_NAEBUScoreboardId\@\@\@Z
      */
@@ -76,7 +76,7 @@ public:
     /**
      * @symbol ?_modifyPlayerScore\@Objective\@\@AEAA_NAEAHAEBUScoreboardId\@\@HW4PlayerScoreSetFunction\@\@\@Z
      */
-    MCAPI bool _modifyPlayerScore(int&, struct ScoreboardId const&, int, enum class PlayerScoreSetFunction);
+    MCAPI bool _modifyPlayerScore(int32_t&, struct ScoreboardId const&, int32_t, enum class PlayerScoreSetFunction);
     /**
      * @symbol ?_resetPlayer\@Objective\@\@AEAAXAEBUScoreboardId\@\@\@Z
      */

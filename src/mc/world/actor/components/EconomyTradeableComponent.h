@@ -38,11 +38,11 @@ public:
     /**
      * @symbol ?getCurrentNearbyCuredDiscount\@EconomyTradeableComponent\@\@QEBAHXZ
      */
-    MCAPI int getCurrentNearbyCuredDiscount() const;
+    MCAPI int32_t getCurrentNearbyCuredDiscount() const;
     /**
      * @symbol ?getCurrentTradeExp\@EconomyTradeableComponent\@\@QEBAIXZ
      */
-    MCAPI unsigned int getCurrentTradeExp() const;
+    MCAPI uint32_t getCurrentTradeExp() const;
     /**
      * @symbol
      * ?getDisplayName\@EconomyTradeableComponent\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -59,11 +59,11 @@ public:
     /**
      * @symbol ?getRiches\@EconomyTradeableComponent\@\@QEBAHXZ
      */
-    MCAPI int getRiches() const;
+    MCAPI int32_t getRiches() const;
     /**
      * @symbol ?getTradeTier\@EconomyTradeableComponent\@\@QEBAIXZ
      */
-    MCAPI unsigned int getTradeTier() const;
+    MCAPI uint32_t getTradeTier() const;
     /**
      * @symbol ?hasSupplyRemaining\@EconomyTradeableComponent\@\@QEBA_NXZ
      */
@@ -92,7 +92,7 @@ public:
     /**
      * @symbol ?notifyTrade\@EconomyTradeableComponent\@\@QEAAXH\@Z
      */
-    MCAPI void notifyTrade(int);
+    MCAPI void notifyTrade(int32_t);
     /**
      * @symbol ?readAdditionalSaveData\@EconomyTradeableComponent\@\@QEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
@@ -108,7 +108,7 @@ public:
     /**
      * @symbol ?setNearbyCuredDiscount\@EconomyTradeableComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setNearbyCuredDiscount(int);
+    MCAPI void setNearbyCuredDiscount(int32_t);
     /**
      * @symbol ?setOffers\@EconomyTradeableComponent\@\@QEAAXAEAVMerchantRecipeList\@\@\@Z
      */
@@ -116,7 +116,7 @@ public:
     /**
      * @symbol ?setRiches\@EconomyTradeableComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setRiches(int);
+    MCAPI void setRiches(int32_t);
     /**
      * @symbol ?shouldConvertTrades\@EconomyTradeableComponent\@\@QEBA_NXZ
      */
@@ -164,7 +164,7 @@ public:
     /**
      * @symbol ?_getTradeTierFromCurrentExp\@EconomyTradeableComponent\@\@AEBAIXZ
      */
-    MCAPI unsigned int _getTradeTierFromCurrentExp() const;
+    MCAPI uint32_t _getTradeTierFromCurrentExp() const;
     /**
      * @symbol
      * ?_rearrangeTradeList\@EconomyTradeableComponent\@\@AEAAXAEAV?$vector\@UTrade\@\@V?$allocator\@UTrade\@\@\@std\@\@\@std\@\@_K\@Z
@@ -173,10 +173,10 @@ public:
     /**
      * @symbol ?_setMaxTradeTier\@EconomyTradeableComponent\@\@AEAAXH\@Z
      */
-    MCAPI void _setMaxTradeTier(int);
+    MCAPI void _setMaxTradeTier(int32_t);
     /**
      * @symbol ?_setTradeTier\@EconomyTradeableComponent\@\@AEAAXH\@Z
      */
-    MCAPI void _setTradeTier(int);
+    MCAPI void _setTradeTier(int32_t);
     // NOLINTEND
 };

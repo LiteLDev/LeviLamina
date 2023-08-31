@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Player;
+namespace PlayerCapabilities { struct IPlayerData; }
 // clang-format on
 
 namespace PlayerCapabilities {

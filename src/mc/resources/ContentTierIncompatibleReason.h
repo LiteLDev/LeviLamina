@@ -15,7 +15,7 @@ public:
     /**
      * @symbol ??0ContentTierIncompatibleReason\@\@QEAA\@I\@Z
      */
-    MCAPI ContentTierIncompatibleReason(unsigned int);
+    MCAPI ContentTierIncompatibleReason(uint32_t);
     /**
      * @symbol
      * ?getExpandedI18nErrorList\@ContentTierIncompatibleReason\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z
@@ -25,8 +25,7 @@ public:
      * @symbol
      * ?getExpandedI18nErrorList\@ContentTierIncompatibleReason\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@IAEBV23\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z
      */
-    MCAPI static std::string
-    getExpandedI18nErrorList(unsigned int, std::string const&, std::vector<std::string> const&);
+    MCAPI static std::string getExpandedI18nErrorList(uint32_t, std::string const&, std::vector<std::string> const&);
     /**
      * @symbol ?NoError\@ContentTierIncompatibleReason\@\@2V1\@A
      */

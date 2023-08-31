@@ -133,7 +133,7 @@ public:
      * @vftbl 127
      * @symbol ?handleEntityEvent\@EnderDragon\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
-    virtual void handleEntityEvent(enum class ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int32_t);
     /**
      * @vftbl 163
      * @symbol ?canChangeDimensionsUsingPortal\@EnderDragon\@\@UEBA_NXZ
@@ -158,7 +158,7 @@ public:
      * @vftbl 192
      * @symbol ?canBeAffected\@EnderDragon\@\@UEBA_NI\@Z
      */
-    virtual bool canBeAffected(unsigned int) const;
+    virtual bool canBeAffected(uint32_t) const;
     /**
      * @vftbl 202
      * @symbol __unk_vfn_202
@@ -256,20 +256,20 @@ public:
     /**
      * @symbol ?findClosestNode\@EnderDragon\@\@QEAAHAEBVVec3\@\@\@Z
      */
-    MCAPI int findClosestNode(class Vec3 const&);
+    MCAPI int32_t findClosestNode(class Vec3 const&);
     /**
      * @symbol ?findClosestNode\@EnderDragon\@\@QEAAHXZ
      */
-    MCAPI int findClosestNode();
+    MCAPI int32_t findClosestNode();
     /**
      * @symbol
      * ?findPath\@EnderDragon\@\@QEAA?AV?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@HHPEAVPathfinderNode\@\@\@Z
      */
-    MCAPI std::unique_ptr<class Path> findPath(int, int, class PathfinderNode*);
+    MCAPI std::unique_ptr<class Path> findPath(int32_t, int32_t, class PathfinderNode*);
     /**
      * @symbol ?getFlameCount\@EnderDragon\@\@QEBAHXZ
      */
-    MCAPI int getFlameCount() const;
+    MCAPI int32_t getFlameCount() const;
     /**
      * @symbol ?getFlapTime\@EnderDragon\@\@QEBAMXZ
      */
@@ -281,11 +281,11 @@ public:
     /**
      * @symbol ?getLatencyPos\@EnderDragon\@\@QEBA?BV?$vector\@MV?$allocator\@M\@std\@\@\@std\@\@HM\@Z
      */
-    MCAPI std::vector<float> const getLatencyPos(int, float) const;
+    MCAPI std::vector<float> const getLatencyPos(int32_t, float) const;
     /**
      * @symbol ?getNumCrystalsAlive\@EnderDragon\@\@QEAAHXZ
      */
-    MCAPI int getNumCrystalsAlive();
+    MCAPI int32_t getNumCrystalsAlive();
     /**
      * @symbol ?getTargetPos\@EnderDragon\@\@QEBA?AVVec3\@\@XZ
      */
@@ -317,7 +317,7 @@ public:
     /**
      * @symbol ?setNumCrystalsAlive\@EnderDragon\@\@QEAAXH\@Z
      */
-    MCAPI void setNumCrystalsAlive(int);
+    MCAPI void setNumCrystalsAlive(int32_t);
     /**
      * @symbol ?setTargetPos\@EnderDragon\@\@QEAAXVVec3\@\@\@Z
      */
@@ -371,15 +371,15 @@ private:
     /**
      * @symbol ?GROWL_INTERVAL_MAX\@EnderDragon\@\@0HA
      */
-    MCAPI static int GROWL_INTERVAL_MAX;
+    MCAPI static int32_t GROWL_INTERVAL_MAX;
     /**
      * @symbol ?GROWL_INTERVAL_MIN\@EnderDragon\@\@0HA
      */
-    MCAPI static int GROWL_INTERVAL_MIN;
+    MCAPI static int32_t GROWL_INTERVAL_MIN;
     /**
      * @symbol ?MAX_PATH_RADIUS\@EnderDragon\@\@0HA
      */
-    MCAPI static int MAX_PATH_RADIUS;
+    MCAPI static int32_t MAX_PATH_RADIUS;
     /**
      * @symbol ?SITTING_ALLOWED_DAMAGE_PERCENTAGE\@EnderDragon\@\@0MA
      */

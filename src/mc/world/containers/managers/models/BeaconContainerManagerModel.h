@@ -32,12 +32,12 @@ public:
      * @vftbl 7
      * @symbol ?setSlot\@BeaconContainerManagerModel\@\@UEAAXHAEBVItemStack\@\@_N\@Z
      */
-    virtual void setSlot(int, class ItemStack const&, bool);
+    virtual void setSlot(int32_t, class ItemStack const&, bool);
     /**
      * @vftbl 8
      * @symbol ?getSlot\@BeaconContainerManagerModel\@\@UEBAAEBVItemStack\@\@H\@Z
      */
-    virtual class ItemStack const& getSlot(int) const;
+    virtual class ItemStack const& getSlot(int32_t) const;
     /**
      * @vftbl 17
      * @symbol ?_postInit\@BeaconContainerManagerModel\@\@MEAA?AVContainerScreenContext\@\@XZ
@@ -50,7 +50,7 @@ public:
     /**
      * @symbol ?PAYMENT_SLOT\@BeaconContainerManagerModel\@\@2HB
      */
-    MCAPI static int const PAYMENT_SLOT;
+    MCAPI static int32_t const PAYMENT_SLOT;
     // NOLINTEND
 
     // private:

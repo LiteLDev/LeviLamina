@@ -105,11 +105,13 @@ namespace ScriptModuleMinecraft { class ScriptIntBlockProperty; }
 namespace ScriptModuleMinecraft { class ScriptInventoryComponent; }
 namespace ScriptModuleMinecraft { class ScriptInventoryComponentContainer; }
 namespace ScriptModuleMinecraft { class ScriptItemActorComponent; }
+namespace ScriptModuleMinecraft { class ScriptItemChargeAfterEvent; }
 namespace ScriptModuleMinecraft { class ScriptItemComponent; }
 namespace ScriptModuleMinecraft { class ScriptItemCooldownComponent; }
 namespace ScriptModuleMinecraft { class ScriptItemDurabilityComponent; }
 namespace ScriptModuleMinecraft { class ScriptItemEnchantmentComponent; }
 namespace ScriptModuleMinecraft { class ScriptItemEnchantments; }
+namespace ScriptModuleMinecraft { class ScriptItemEvent; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace ScriptModuleMinecraft { class ScriptItemTypeIterator; }

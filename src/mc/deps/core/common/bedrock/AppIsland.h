@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { class ActivationArguments; }
+namespace Bedrock { class IIslandCore; }
 // clang-format on
 
 namespace Bedrock {
@@ -30,7 +31,7 @@ public:
      * @vftbl 1
      * @symbol ?getId\@AppIsland\@Bedrock\@\@UEAAGXZ
      */
-    virtual unsigned short getId();
+    virtual uint16_t getId();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_APPISLAND
     /**
      * @symbol ?mainUpdate\@AppIsland\@Bedrock\@\@UEAAXXZ

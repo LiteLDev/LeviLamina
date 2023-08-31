@@ -15,7 +15,7 @@ public:
     /**
      * @symbol ??0CommandVersion\@\@QEAA\@HH\@Z
      */
-    MCAPI CommandVersion(int, int);
+    MCAPI CommandVersion(int32_t, int32_t);
     /**
      * @symbol ?covers\@CommandVersion\@\@QEBA_NAEBV1\@\@Z
      */
@@ -23,7 +23,7 @@ public:
     /**
      * @symbol ?isCompatible\@CommandVersion\@\@QEBA_NH\@Z
      */
-    MCAPI bool isCompatible(int) const;
+    MCAPI bool isCompatible(int32_t) const;
     /**
      * @symbol ??9CommandVersion\@\@QEBA_NAEBV0\@\@Z
      */
@@ -31,7 +31,7 @@ public:
     /**
      * @symbol ?getLatestCompatibleSemVersion\@CommandVersion\@\@SA?AVSemVersion\@\@H\@Z
      */
-    MCAPI static class SemVersion getLatestCompatibleSemVersion(int);
+    MCAPI static class SemVersion getLatestCompatibleSemVersion(int32_t);
     /**
      * @symbol ?getVersionMapping\@CommandVersion\@\@SA?BW4CurrentCmdVersion\@\@AEBVSemVersion\@\@\@Z
      */
@@ -39,6 +39,6 @@ public:
     /**
      * @symbol ?CurrentVersion\@CommandVersion\@\@2HB
      */
-    MCAPI static int const CurrentVersion;
+    MCAPI static int32_t const CurrentVersion;
     // NOLINTEND
 };

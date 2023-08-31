@@ -63,15 +63,15 @@ public:
     /**
      * @symbol ?getRiches\@LegacyTradeableComponent\@\@QEBAHXZ
      */
-    MCAPI int getRiches() const;
+    MCAPI int32_t getRiches() const;
     /**
      * @symbol ?getTradeTier\@LegacyTradeableComponent\@\@QEBAHXZ
      */
-    MCAPI int getTradeTier() const;
+    MCAPI int32_t getTradeTier() const;
     /**
      * @symbol ?getUpdateMerchantTimer\@LegacyTradeableComponent\@\@QEBAHXZ
      */
-    MCAPI int getUpdateMerchantTimer() const;
+    MCAPI int32_t getUpdateMerchantTimer() const;
     /**
      * @symbol
      * ?loadDisplayName\@LegacyTradeableComponent\@\@QEAAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVActor\@\@\@Z
@@ -84,7 +84,7 @@ public:
     /**
      * @symbol ?notifyTrade\@LegacyTradeableComponent\@\@QEAAXAEAVActor\@\@H\@Z
      */
-    MCAPI void notifyTrade(class Actor&, int);
+    MCAPI void notifyTrade(class Actor&, int32_t);
     /**
      * @symbol ??4LegacyTradeableComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
@@ -117,11 +117,11 @@ public:
     /**
      * @symbol ?setRiches\@LegacyTradeableComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setRiches(int);
+    MCAPI void setRiches(int32_t);
     /**
      * @symbol ?setTradeTier\@LegacyTradeableComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setTradeTier(int);
+    MCAPI void setTradeTier(int32_t);
     /**
      * @symbol ?shouldConvertTrades\@LegacyTradeableComponent\@\@QEBA_NAEAVActor\@\@\@Z
      */

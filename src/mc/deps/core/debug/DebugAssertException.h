@@ -34,7 +34,7 @@ public:
     /**
      * @symbol ??0DebugAssertException\@\@QEAA\@PEBD0H00\@Z
      */
-    MCAPI DebugAssertException(char const*, char const*, int, char const*, char const*);
+    MCAPI DebugAssertException(char const*, char const*, int32_t, char const*, char const*);
     // NOLINTEND
 
 private:

@@ -27,7 +27,7 @@ MCAPI class Json::Value createObject(class ItemDescriptor const&);
 /**
  * @symbol ?createObject\@CodeBuilder\@Util\@\@YA?AVValue\@Json\@\@AEBVBlock\@\@H\@Z
  */
-MCAPI class Json::Value createObject(class Block const&, int);
+MCAPI class Json::Value createObject(class Block const&, int32_t);
 /**
  * @symbol ?createObject\@CodeBuilder\@Util\@\@YA?AVValue\@Json\@\@AEBVItemStack\@\@\@Z
  */

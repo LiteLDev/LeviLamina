@@ -138,7 +138,7 @@ public:
     /**
      * @symbol ?moveConstantChildToValueIfFloatOrHashType\@ExpressionNode\@\@QEAAXH\@Z
      */
-    MCAPI void moveConstantChildToValueIfFloatOrHashType(int);
+    MCAPI void moveConstantChildToValueIfFloatOrHashType(int32_t);
     /**
      * @symbol ??4ExpressionNode\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
@@ -197,7 +197,7 @@ public:
      * ?registerQueryFunction\@ExpressionNode\@\@SAAEAUMolangQueryFunction\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$function\@$$A6AAEBUMolangScriptArg\@\@AEAVRenderParams\@\@AEBV?$vector\@VExpressionNode\@\@V?$allocator\@VExpressionNode\@\@\@std\@\@\@std\@\@\@Z\@4\@0W4MolangQueryFunctionReturnType\@\@VHashedString\@\@_K4AEBV?$initializer_list\@H\@4\@\@Z
      */
     MCAPI static struct MolangQueryFunction&
-    registerQueryFunction(std::string const&, std::function<struct MolangScriptArg const&(class RenderParams&, std::vector<class ExpressionNode> const&)>, std::string const&, enum class MolangQueryFunctionReturnType, class HashedString, uint64_t, uint64_t, std::initializer_list<int> const&);
+    registerQueryFunction(std::string const&, std::function<struct MolangScriptArg const&(class RenderParams&, std::vector<class ExpressionNode> const&)>, std::string const&, enum class MolangQueryFunctionReturnType, class HashedString, uint64_t, uint64_t, std::initializer_list<int32_t> const&);
     /**
      * @symbol ?setExperiments\@ExpressionNode\@\@SAXAEBVExperiments\@\@\@Z
      */
@@ -241,7 +241,7 @@ public:
     /**
      * @symbol ?_optimize\@ExpressionNode\@\@AEAA_NW4MolangVersion\@\@AEAVRenderParams\@\@H\@Z
      */
-    MCAPI bool _optimize(enum class MolangVersion, class RenderParams&, int);
+    MCAPI bool _optimize(enum class MolangVersion, class RenderParams&, int32_t);
     /**
      * @symbol ?_processBinaryExpressions\@ExpressionNode\@\@AEAA_NV?$function\@$$A6A_NW4ExpressionOp\@\@\@Z\@std\@\@\@Z
      */
@@ -273,7 +273,7 @@ public:
     /**
      * @symbol ?_validate\@ExpressionNode\@\@AEBA_NW4MolangVersion\@\@_NH\@Z
      */
-    MCAPI bool _validate(enum class MolangVersion, bool, int) const;
+    MCAPI bool _validate(enum class MolangVersion, bool, int32_t) const;
     /**
      * @symbol ?_validateChildrenAreNumerical\@ExpressionNode\@\@AEBA_NW4MolangVersion\@\@\@Z
      */

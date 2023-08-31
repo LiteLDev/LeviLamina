@@ -62,12 +62,12 @@ public:
      * ?writeCreateOrAppendFileData\@File\@Core\@\@SA?AVResult\@2\@AEBVPath\@2\@_K1AEBV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@\@Z
      */
     MCAPI static class Core::Result
-    writeCreateOrAppendFileData(class Core::Path const&, uint64_t, uint64_t, std::vector<unsigned char> const&);
+    writeCreateOrAppendFileData(class Core::Path const&, uint64_t, uint64_t, std::vector<uint8_t> const&);
     /**
      * @symbol ?writeCreateOrAppendFileData\@File\@Core\@\@SA?AVResult\@2\@AEBVPath\@2\@_K1PEBE\@Z
      */
     MCAPI static class Core::Result
-    writeCreateOrAppendFileData(class Core::Path const&, uint64_t, uint64_t, unsigned char const*);
+    writeCreateOrAppendFileData(class Core::Path const&, uint64_t, uint64_t, uint8_t const*);
     // NOLINTEND
 };
 

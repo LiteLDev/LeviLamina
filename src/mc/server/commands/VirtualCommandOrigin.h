@@ -137,7 +137,7 @@ public:
      * @vftbl 28
      * @symbol ?getExecutePosition\@VirtualCommandOrigin\@\@UEBA?BVVec3\@\@HAEBVCommandPositionFloat\@\@\@Z
      */
-    virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const&) const;
+    virtual class Vec3 const getExecutePosition(int32_t, class CommandPositionFloat const&) const;
     /**
      * @vftbl 29
      * @symbol ?serialize\@VirtualCommandOrigin\@\@UEBA?AVCompoundTag\@\@XZ
@@ -155,7 +155,7 @@ public:
         class CommandOrigin const&,
         class CommandOrigin const&,
         class CommandPositionFloat const&,
-        int
+        int32_t
     );
     /**
      * @symbol
@@ -165,12 +165,12 @@ public:
         std::unique_ptr<class CommandOrigin>,
         std::unique_ptr<class CommandOrigin>,
         class CommandPositionFloat const&,
-        int
+        int32_t
     );
     /**
      * @symbol ??0VirtualCommandOrigin\@\@QEAA\@AEBVCommandOrigin\@\@AEAVActor\@\@AEBVCommandPositionFloat\@\@H\@Z
      */
-    MCAPI VirtualCommandOrigin(class CommandOrigin const&, class Actor&, class CommandPositionFloat const&, int);
+    MCAPI VirtualCommandOrigin(class CommandOrigin const&, class Actor&, class CommandPositionFloat const&, int32_t);
     /**
      * @symbol ?getOrigin\@VirtualCommandOrigin\@\@QEBAPEAVCommandOrigin\@\@XZ
      */

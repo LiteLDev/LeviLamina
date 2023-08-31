@@ -24,27 +24,27 @@ public:
         /**
          * @symbol ?DEFAULT_DROP_PACKET_CHANCE\@DebugSendRateModifiers\@SpatialActorNetworkData\@\@2HA
          */
-        MCAPI static int DEFAULT_DROP_PACKET_CHANCE;
+        MCAPI static int32_t DEFAULT_DROP_PACKET_CHANCE;
         /**
          * @symbol ?DEFAULT_SEND_EVERY_N_PACKETS\@DebugSendRateModifiers\@SpatialActorNetworkData\@\@2HA
          */
-        MCAPI static int DEFAULT_SEND_EVERY_N_PACKETS;
+        MCAPI static int32_t DEFAULT_SEND_EVERY_N_PACKETS;
         /**
          * @symbol ?MAX_DROP_PACKET_CHANCE\@DebugSendRateModifiers\@SpatialActorNetworkData\@\@2HA
          */
-        MCAPI static int MAX_DROP_PACKET_CHANCE;
+        MCAPI static int32_t MAX_DROP_PACKET_CHANCE;
         /**
          * @symbol ?MAX_SEND_EVERY_N_PACKETS\@DebugSendRateModifiers\@SpatialActorNetworkData\@\@2HA
          */
-        MCAPI static int MAX_SEND_EVERY_N_PACKETS;
+        MCAPI static int32_t MAX_SEND_EVERY_N_PACKETS;
         /**
          * @symbol ?MIN_DROP_PACKET_CHANCE\@DebugSendRateModifiers\@SpatialActorNetworkData\@\@2HA
          */
-        MCAPI static int MIN_DROP_PACKET_CHANCE;
+        MCAPI static int32_t MIN_DROP_PACKET_CHANCE;
         /**
          * @symbol ?MIN_SEND_EVERY_N_PACKETS\@DebugSendRateModifiers\@SpatialActorNetworkData\@\@2HA
          */
-        MCAPI static int MIN_SEND_EVERY_N_PACKETS;
+        MCAPI static int32_t MIN_SEND_EVERY_N_PACKETS;
         // NOLINTEND
     };
 

@@ -15,22 +15,22 @@ public:
     /**
      * @symbol ??0ChunkTickRangeManager\@\@QEAA\@II\@Z
      */
-    MCAPI ChunkTickRangeManager(unsigned int, unsigned int);
+    MCAPI ChunkTickRangeManager(uint32_t, uint32_t);
     /**
      * @symbol ?getAdjustedChunkTickRange\@ChunkTickRangeManager\@\@QEAAIAEBVLevelSettings\@\@\@Z
      */
-    MCAPI unsigned int getAdjustedChunkTickRange(class LevelSettings const&);
+    MCAPI uint32_t getAdjustedChunkTickRange(class LevelSettings const&);
     /**
      * @symbol ?isChunkInTickRange\@ChunkTickRangeManager\@\@QEBA_NAEBVChunkPos\@\@AEBVDimension\@\@_NMHH\@Z
      */
-    MCAPI bool isChunkInTickRange(class ChunkPos const&, class Dimension const&, bool, float, int, int) const;
+    MCAPI bool isChunkInTickRange(class ChunkPos const&, class Dimension const&, bool, float, int32_t, int32_t) const;
     /**
      * @symbol ?isChunkInTickRange\@ChunkTickRangeManager\@\@QEBA_NAEBVLevelChunk\@\@V?$optional\@H\@std\@\@\@Z
      */
-    MCAPI bool isChunkInTickRange(class LevelChunk const&, std::optional<int>) const;
+    MCAPI bool isChunkInTickRange(class LevelChunk const&, std::optional<int32_t>) const;
     /**
      * @symbol ?setChunkTickRange\@ChunkTickRangeManager\@\@QEAAXI\@Z
      */
-    MCAPI void setChunkTickRange(unsigned int);
+    MCAPI void setChunkTickRange(uint32_t);
     // NOLINTEND
 };

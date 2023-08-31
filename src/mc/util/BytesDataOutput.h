@@ -43,12 +43,12 @@ public:
      * @vftbl 6
      * @symbol ?writeShort\@BytesDataOutput\@\@UEAAXF\@Z
      */
-    virtual void writeShort(short);
+    virtual void writeShort(int16_t);
     /**
      * @vftbl 7
      * @symbol ?writeInt\@BytesDataOutput\@\@UEAAXH\@Z
      */
-    virtual void writeInt(int);
+    virtual void writeInt(int32_t);
     /**
      * @vftbl 8
      * @symbol ?writeLongLong\@BytesDataOutput\@\@UEAAX_J\@Z

@@ -54,7 +54,7 @@ public:
     /**
      * @symbol ??0ChunkRadiusUpdatedPacket\@\@QEAA\@H\@Z
      */
-    MCAPI ChunkRadiusUpdatedPacket(int);
+    MCAPI ChunkRadiusUpdatedPacket(int32_t);
     /**
      * @symbol ??0ChunkRadiusUpdatedPacket\@\@QEAA\@XZ
      */

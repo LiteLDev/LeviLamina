@@ -26,7 +26,7 @@ public:
     /**
      * @symbol ?getCounter\@MountTamingComponent\@\@QEAAAEAHXZ
      */
-    MCAPI int& getCounter();
+    MCAPI int32_t& getCounter();
     /**
      * @symbol ?getInteraction\@MountTamingComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
@@ -34,15 +34,15 @@ public:
     /**
      * @symbol ?getTemper\@MountTamingComponent\@\@QEAAAEAHXZ
      */
-    MCAPI int& getTemper();
+    MCAPI int32_t& getTemper();
     /**
      * @symbol ?getTemperMod\@MountTamingComponent\@\@QEBAHXZ
      */
-    MCAPI int getTemperMod() const;
+    MCAPI int32_t getTemperMod() const;
     /**
      * @symbol ?getWaitCount\@MountTamingComponent\@\@QEBAHXZ
      */
-    MCAPI int getWaitCount() const;
+    MCAPI int32_t getWaitCount() const;
     /**
      * @symbol
      * ?readAdditionalSaveData\@MountTamingComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
@@ -59,7 +59,7 @@ public:
     /**
      * @symbol ?_feedItem\@MountTamingComponent\@\@AEAAXAEAVActor\@\@AEAVPlayer\@\@H\@Z
      */
-    MCAPI void _feedItem(class Actor&, class Player&, int);
+    MCAPI void _feedItem(class Actor&, class Player&, int32_t);
     /**
      * @symbol ?_autoReject\@MountTamingComponent\@\@CA_NAEBVItemStack\@\@PEBVMountTameableDefinition\@\@\@Z
      */

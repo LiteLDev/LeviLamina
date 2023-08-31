@@ -52,7 +52,7 @@ public:
      * @vftbl 4
      * @symbol ?getEventTagsFilter\@MaelstromEventLogger\@Events\@Social\@\@UEBAHXZ
      */
-    virtual int getEventTagsFilter() const = 0;
+    virtual int32_t getEventTagsFilter() const = 0;
     /**
      * @vftbl 5
      * @symbol ?stopDebugEventLogging\@AggregationEventListener\@Events\@Social\@\@UEAAXXZ

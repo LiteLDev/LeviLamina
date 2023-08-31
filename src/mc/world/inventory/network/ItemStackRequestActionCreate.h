@@ -35,6 +35,6 @@ public:
     /**
      * @symbol ?getResultsIndex\@ItemStackRequestActionCreate\@\@QEBAEXZ
      */
-    MCAPI unsigned char getResultsIndex() const;
+    MCAPI uint8_t getResultsIndex() const;
     // NOLINTEND
 };

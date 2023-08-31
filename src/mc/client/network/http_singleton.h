@@ -32,11 +32,11 @@ public:
     /**
      * @symbol ?clear_retry_state\@http_singleton\@httpclient\@xbox\@\@QEAAXI\@Z
      */
-    MCAPI void clear_retry_state(unsigned int);
+    MCAPI void clear_retry_state(uint32_t);
     /**
      * @symbol ?get_retry_state\@http_singleton\@httpclient\@xbox\@\@QEAA?AUhttp_retry_after_api_state\@23\@I\@Z
      */
-    MCAPI struct xbox::httpclient::http_retry_after_api_state get_retry_state(unsigned int);
+    MCAPI struct xbox::httpclient::http_retry_after_api_state get_retry_state(uint32_t);
     /**
      * @symbol
      * ??0http_singleton\@httpclient\@xbox\@\@QEAA\@AEBUHttpPerformInfo\@\@AEBUWebSocketPerformInfo\@\@$$QEAV?$unique_ptr\@UHC_PERFORM_ENV\@\@U?$http_alloc_deleter\@UHC_PERFORM_ENV\@\@\@\@\@std\@\@\@Z
@@ -46,7 +46,7 @@ public:
     /**
      * @symbol ?set_retry_state\@http_singleton\@httpclient\@xbox\@\@QEAAXIAEBUhttp_retry_after_api_state\@23\@\@Z
      */
-    MCAPI void set_retry_state(unsigned int, struct xbox::httpclient::http_retry_after_api_state const&);
+    MCAPI void set_retry_state(uint32_t, struct xbox::httpclient::http_retry_after_api_state const&);
     /**
      * @symbol ??1http_singleton\@httpclient\@xbox\@\@QEAA\@XZ
      */

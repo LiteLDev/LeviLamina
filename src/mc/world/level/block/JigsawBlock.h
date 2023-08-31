@@ -166,7 +166,7 @@ public:
      * @symbol ?getPlacementBlock\@JigsawBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -201,12 +201,12 @@ public:
      * @vftbl 146
      * @symbol ?getMappedFace\@JigsawBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
-    virtual unsigned char getMappedFace(unsigned char, class Block const&) const;
+    virtual uint8_t getMappedFace(uint8_t, class Block const&) const;
     /**
      * @vftbl 147
      * @symbol ?getFaceFlip\@JigsawBlock\@\@UEBA?AW4Flip\@\@EAEBVBlock\@\@\@Z
      */
-    virtual enum class Flip getFaceFlip(unsigned char, class Block const&) const;
+    virtual enum class Flip getFaceFlip(uint8_t, class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -241,7 +241,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@JigsawBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -256,7 +256,7 @@ public:
      * @vftbl 186
      * @symbol ?getResourceCount\@JigsawBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWBLOCK
     /**
      * @symbol ?isInteractiveBlock\@JigsawBlock\@\@UEBA_NXZ
@@ -266,7 +266,7 @@ public:
     /**
      * @symbol ??0JigsawBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI JigsawBlock(std::string const&, int);
+    MCAPI JigsawBlock(std::string const&, int32_t);
     /**
      * @symbol ?canAttach\@JigsawBlock\@\@SA_NAEBVJigsawBlockInfo\@\@0\@Z
      */

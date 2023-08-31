@@ -192,7 +192,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@CarrotBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -249,7 +249,7 @@ public:
      * @vftbl 186
      * @symbol ?getResourceCount\@CarrotBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 194
      * @symbol ?getBaseSeed\@CarrotBlock\@\@UEBA?BVItemInstance\@\@XZ
@@ -264,10 +264,10 @@ public:
      * @vftbl 197
      * @symbol ?getCropNum\@CarrotBlock\@\@UEBAHAEAVRandomize\@\@HH\@Z
      */
-    virtual int getCropNum(class Randomize&, int, int) const;
+    virtual int32_t getCropNum(class Randomize&, int32_t, int32_t) const;
     /**
      * @symbol ??0CarrotBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI CarrotBlock(std::string const&, int);
+    MCAPI CarrotBlock(std::string const&, int32_t);
     // NOLINTEND
 };

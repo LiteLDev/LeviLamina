@@ -30,12 +30,12 @@ public:
      * @vftbl 7
      * @symbol ?getWorldX\@OceanMonumentPiece\@\@UEAAHHH\@Z
      */
-    virtual int getWorldX(int, int);
+    virtual int32_t getWorldX(int32_t, int32_t);
     /**
      * @vftbl 8
      * @symbol ?getWorldZ\@OceanMonumentPiece\@\@UEAAHHH\@Z
      */
-    virtual int getWorldZ(int, int);
+    virtual int32_t getWorldZ(int32_t, int32_t);
     /**
      * @vftbl 12
      * @symbol ?addHardcodedSpawnAreas\@OceanMonumentPiece\@\@UEBAXAEAVLevelChunk\@\@\@Z
@@ -50,7 +50,7 @@ public:
     /**
      * @symbol ??0OceanMonumentPiece\@\@QEAA\@AEAHAEAVBoundingBox\@\@\@Z
      */
-    MCAPI OceanMonumentPiece(int&, class BoundingBox&);
+    MCAPI OceanMonumentPiece(int32_t&, class BoundingBox&);
     // NOLINTEND
 
     // protected:
@@ -58,19 +58,19 @@ public:
     /**
      * @symbol ??0OceanMonumentPiece\@\@IEAA\@HAEAHV?$shared_ptr\@VRoomDefinition\@\@\@std\@\@HHH\@Z
      */
-    MCAPI OceanMonumentPiece(int, int&, std::shared_ptr<class RoomDefinition>, int, int, int);
+    MCAPI OceanMonumentPiece(int32_t, int32_t&, std::shared_ptr<class RoomDefinition>, int32_t, int32_t, int32_t);
     /**
      * @symbol ?chunkIntersects\@OceanMonumentPiece\@\@IEAA_NAEBVBoundingBox\@\@HHHH\@Z
      */
-    MCAPI bool chunkIntersects(class BoundingBox const&, int, int, int, int);
+    MCAPI bool chunkIntersects(class BoundingBox const&, int32_t, int32_t, int32_t, int32_t);
     /**
      * @symbol ?generateDefaultFloor\@OceanMonumentPiece\@\@IEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@HH_N\@Z
      */
-    MCAPI void generateDefaultFloor(class BlockSource&, class BoundingBox const&, int, int, bool);
+    MCAPI void generateDefaultFloor(class BlockSource&, class BoundingBox const&, int32_t, int32_t, bool);
     /**
      * @symbol ?spawnElder\@OceanMonumentPiece\@\@IEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@HHH\@Z
      */
-    MCAPI void spawnElder(class BlockSource&, class BoundingBox const&, int, int, int);
+    MCAPI void spawnElder(class BlockSource&, class BoundingBox const&, int32_t, int32_t, int32_t);
     // NOLINTEND
 
 protected:
@@ -78,30 +78,30 @@ protected:
     /**
      * @symbol ?mGridroomLeftWingConnectIndex\@OceanMonumentPiece\@\@1HA
      */
-    MCAPI static int mGridroomLeftWingConnectIndex;
+    MCAPI static int32_t mGridroomLeftWingConnectIndex;
     /**
      * @symbol ?mGridroomRightWingConnectIndex\@OceanMonumentPiece\@\@1HA
      */
-    MCAPI static int mGridroomRightWingConnectIndex;
+    MCAPI static int32_t mGridroomRightWingConnectIndex;
     /**
      * @symbol ?mGridroomSourceIndex\@OceanMonumentPiece\@\@1HA
      */
-    MCAPI static int mGridroomSourceIndex;
+    MCAPI static int32_t mGridroomSourceIndex;
     /**
      * @symbol ?mGridroomTopConnectIndex\@OceanMonumentPiece\@\@1HA
      */
-    MCAPI static int mGridroomTopConnectIndex;
+    MCAPI static int32_t mGridroomTopConnectIndex;
     /**
      * @symbol ?mLeftWingIndex\@OceanMonumentPiece\@\@1HB
      */
-    MCAPI static int const mLeftWingIndex;
+    MCAPI static int32_t const mLeftWingIndex;
     /**
      * @symbol ?mPenthouseIndex\@OceanMonumentPiece\@\@1HB
      */
-    MCAPI static int const mPenthouseIndex;
+    MCAPI static int32_t const mPenthouseIndex;
     /**
      * @symbol ?mRightWingIndex\@OceanMonumentPiece\@\@1HB
      */
-    MCAPI static int const mRightWingIndex;
+    MCAPI static int32_t const mRightWingIndex;
     // NOLINTEND
 };

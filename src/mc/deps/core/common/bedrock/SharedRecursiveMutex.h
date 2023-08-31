@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/SharedRecursiveMutexBase.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Threading { class SharedRecursiveMutexBase; }
+// clang-format on
+
 namespace Bedrock::Threading {
 
 class SharedRecursiveMutex : public ::Bedrock::Threading::SharedRecursiveMutexBase {

@@ -24,7 +24,7 @@ public:
     /**
      * @symbol ?containerContentChanged\@BaseContainerMenu\@\@UEAAXH\@Z
      */
-    MCVAPI void containerContentChanged(int);
+    MCVAPI void containerContentChanged(int32_t);
     /**
      * @symbol ?getContainerId\@BaseContainerMenu\@\@UEBA?AW4ContainerID\@\@XZ
      */
@@ -36,11 +36,11 @@ public:
     /**
      * @symbol ?isResultSlot\@BaseContainerMenu\@\@UEAA_NH\@Z
      */
-    MCVAPI bool isResultSlot(int);
+    MCVAPI bool isResultSlot(int32_t);
     /**
      * @symbol ?isSlotDirty\@BaseContainerMenu\@\@UEAA_NH\@Z
      */
-    MCVAPI bool isSlotDirty(int);
+    MCVAPI bool isSlotDirty(int32_t);
     /**
      * @symbol ?setContainerId\@BaseContainerMenu\@\@UEAAXW4ContainerID\@\@\@Z
      */
@@ -52,7 +52,7 @@ public:
     /**
      * @symbol ?setData\@BaseContainerMenu\@\@UEAAXHH\@Z
      */
-    MCVAPI void setData(int, int);
+    MCVAPI void setData(int32_t, int32_t);
     /**
      * @symbol __unk_destructor_-1
      */

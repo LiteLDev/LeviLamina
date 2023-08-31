@@ -168,7 +168,7 @@ public:
      * @vftbl 66
      * @symbol ?shouldConnectToRedstone\@ButtonBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 71
      * @symbol ?checkIsPathable\@ButtonBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
@@ -178,7 +178,7 @@ public:
      * @vftbl 75
      * @symbol ?onRedstoneUpdate\@ButtonBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
-    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int32_t, bool) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -198,7 +198,7 @@ public:
      * @vftbl 93
      * @symbol ?mayPlace\@ButtonBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
+    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 94
      * @symbol ?mayPlace\@ButtonBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
@@ -219,7 +219,7 @@ public:
      * @symbol ?getPlacementBlock\@ButtonBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 110
      * @symbol ?isAttachedTo\@ButtonBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAV3\@\@Z
@@ -254,7 +254,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@ButtonBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 144
      * @symbol ?canSpawnOn\@ButtonBlock\@\@UEBA_NPEAVActor\@\@\@Z
@@ -304,7 +304,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@ButtonBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -342,7 +342,7 @@ public:
     /**
      * @symbol ?canAttachTo\@ButtonBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    MCAPI static bool canAttachTo(class BlockSource&, class BlockPos const&, unsigned char);
+    MCAPI static bool canAttachTo(class BlockSource&, class BlockPos const&, uint8_t);
     // NOLINTEND
 
     // protected:
@@ -351,7 +351,7 @@ public:
      * @symbol
      * ??0ButtonBlock\@\@IEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@_N\@Z
      */
-    MCAPI ButtonBlock(std::string const&, int, class Material const&, bool);
+    MCAPI ButtonBlock(std::string const&, int32_t, class Material const&, bool);
     // NOLINTEND
 
     // private:
@@ -367,6 +367,6 @@ public:
     /**
      * @symbol ?_getShape\@ButtonBlock\@\@AEBAXAEAVAABB\@\@_NE1\@Z
      */
-    MCAPI void _getShape(class AABB&, bool, unsigned char, bool) const;
+    MCAPI void _getShape(class AABB&, bool, uint8_t, bool) const;
     // NOLINTEND
 };

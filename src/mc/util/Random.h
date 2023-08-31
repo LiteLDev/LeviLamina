@@ -33,7 +33,7 @@ public:
      * @vftbl 2
      * @symbol ?nextInt\@Random\@\@UEAAHH\@Z
      */
-    virtual int nextInt(int);
+    virtual int32_t nextInt(int32_t);
     /**
      * @vftbl 3
      * @symbol ?nextLong\@Random\@\@UEAA_JXZ
@@ -63,7 +63,7 @@ public:
      * @vftbl 8
      * @symbol ?consumeCount\@Random\@\@UEAAXI\@Z
      */
-    virtual void consumeCount(unsigned int);
+    virtual void consumeCount(uint32_t);
     /**
      * @vftbl 9
      * @symbol ?fork\@Random\@\@UEAA?AV?$unique_ptr\@VIRandom\@\@U?$default_delete\@VIRandom\@\@\@std\@\@\@std\@\@XZ
@@ -84,15 +84,15 @@ public:
     /**
      * @symbol ?nextGaussianInt\@Random\@\@QEAAHH\@Z
      */
-    MCAPI int nextGaussianInt(int);
+    MCAPI int32_t nextGaussianInt(int32_t);
     /**
      * @symbol ?nextInt\@Random\@\@QEAAHHH\@Z
      */
-    MCAPI int nextInt(int, int);
+    MCAPI int32_t nextInt(int32_t, int32_t);
     /**
      * @symbol ?nextIntInclusive\@Random\@\@QEAAHHH\@Z
      */
-    MCAPI int nextIntInclusive(int, int);
+    MCAPI int32_t nextIntInclusive(int32_t, int32_t);
     /**
      * @symbol ?getThreadLocal\@Random\@\@SAAEAV1\@XZ
      */

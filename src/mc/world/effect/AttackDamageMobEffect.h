@@ -24,19 +24,19 @@ public:
      * @vftbl 6
      * @symbol ?getAttributeModifierValue\@AttackDamageMobEffect\@\@UEBAMHAEBVAttributeModifier\@\@\@Z
      */
-    virtual float getAttributeModifierValue(int, class AttributeModifier const&) const;
+    virtual float getAttributeModifierValue(int32_t, class AttributeModifier const&) const;
     /**
      * @symbol
      * ??0AttackDamageMobEffect\@\@QEAA\@HAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0_NHH\@Z
      */
-    MCAPI AttackDamageMobEffect(int, std::string const&, std::string const&, bool, int, int);
+    MCAPI AttackDamageMobEffect(int32_t, std::string const&, std::string const&, bool, int32_t, int32_t);
     /**
      * @symbol ?getDamageAfterDamageBoost\@AttackDamageMobEffect\@\@SAMMH\@Z
      */
-    MCAPI static float getDamageAfterDamageBoost(float, int);
+    MCAPI static float getDamageAfterDamageBoost(float, int32_t);
     /**
      * @symbol ?getDamageAfterWeakness\@AttackDamageMobEffect\@\@SAMMH\@Z
      */
-    MCAPI static float getDamageAfterWeakness(float, int);
+    MCAPI static float getDamageAfterWeakness(float, int32_t);
     // NOLINTEND
 };

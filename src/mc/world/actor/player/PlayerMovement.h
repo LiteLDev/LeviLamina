@@ -30,7 +30,8 @@ MCAPI void clearInputState(struct MoveInputComponent&);
  * @symbol
  * ?getControllingPassengerID\@PlayerMovement\@\@YA?AUActorUniqueID\@\@AEBV?$vector\@UStrictActorIDEntityContextPair\@\@V?$allocator\@UStrictActorIDEntityContextPair\@\@\@std\@\@\@std\@\@H\@Z
  */
-MCAPI struct ActorUniqueID getControllingPassengerID(std::vector<struct StrictActorIDEntityContextPair> const&, int);
+MCAPI struct ActorUniqueID
+getControllingPassengerID(std::vector<struct StrictActorIDEntityContextPair> const&, int32_t);
 /**
  * @symbol ?getInputMode\@PlayerMovement\@\@YA?AW4InputMode\@\@AEBVEntityContext\@\@\@Z
  */

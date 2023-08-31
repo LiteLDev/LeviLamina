@@ -31,7 +31,7 @@ public:
     /**
      * @symbol ?serialize\@ClientInputLockComponent\@\@QEBAIXZ
      */
-    MCAPI unsigned int serialize() const;
+    MCAPI uint32_t serialize() const;
     /**
      * @symbol ?setLockCategory\@ClientInputLockComponent\@\@QEAAXW4ClientInputLockCategory\@\@_N\@Z
      */

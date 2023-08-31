@@ -68,9 +68,9 @@ public:
         class Actor&,
         class Vec3,
         class Vec3*,
-        class AutomaticID<class Dimension, int>,
+        DimensionType,
         std::optional<class RotationCommandUtils::RotationData> const&,
-        int
+        int32_t
     );
     /**
      * @symbol ?setup\@TeleportCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
@@ -94,7 +94,7 @@ public:
         class CommandOrigin const&,
         class CommandSelectorResults<class Actor> const&,
         class Vec3,
-        int,
+        int32_t,
         bool
     );
     // NOLINTEND

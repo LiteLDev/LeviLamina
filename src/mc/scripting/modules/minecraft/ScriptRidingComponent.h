@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { class ScriptActorComponent; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {

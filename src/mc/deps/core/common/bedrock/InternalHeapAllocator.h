@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/IMemoryAllocator.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Memory { class IMemoryAllocator; }
+// clang-format on
+
 namespace Bedrock::Memory {
 
 class InternalHeapAllocator : public ::Bedrock::Memory::IMemoryAllocator {

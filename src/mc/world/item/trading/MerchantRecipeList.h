@@ -23,7 +23,7 @@ public:
      * @vftbl 1
      * @symbol ?getRecipeFor\@MerchantRecipeList\@\@UEAAPEAVMerchantRecipe\@\@AEBVItemInstance\@\@0H\@Z
      */
-    virtual class MerchantRecipe* getRecipeFor(class ItemInstance const&, class ItemInstance const&, int);
+    virtual class MerchantRecipe* getRecipeFor(class ItemInstance const&, class ItemInstance const&, int32_t);
     /**
      * @vftbl 2
      * @symbol ?addIfNewOrBetter\@MerchantRecipeList\@\@UEAAXPEAVMerchantRecipe\@\@\@Z
@@ -64,13 +64,13 @@ public:
      * ?getRecipeByNetId\@MerchantRecipeList\@\@QEBAPEBVMerchantRecipe\@\@AEBV?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@\@Z
      */
     MCAPI class MerchantRecipe const*
-    getRecipeByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&) const;
+    getRecipeByNetId(class TypedServerNetId<struct RecipeNetIdTag, uint32_t, 0> const&) const;
     /**
      * @symbol
      * ?getRecipeIndexByNetId\@MerchantRecipeList\@\@QEBA?AV?$optional\@_K\@std\@\@AEBV?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@\@Z
      */
     MCAPI std::optional<uint64_t>
-          getRecipeIndexByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&) const;
+          getRecipeIndexByNetId(class TypedServerNetId<struct RecipeNetIdTag, uint32_t, 0> const&) const;
     /**
      * @symbol ?isRequiredItem\@MerchantRecipeList\@\@QEAA_NAEBVItemInstance\@\@0\@Z
      */

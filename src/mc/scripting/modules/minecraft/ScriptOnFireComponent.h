@@ -6,6 +6,11 @@
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/ScriptActorComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { class ScriptActorComponent; }
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptOnFireComponent : public ::ScriptModuleMinecraft::ScriptActorComponent {
@@ -32,7 +37,7 @@ public:
     /**
      * @symbol ?getOnFireTicksRemaining\@ScriptOnFireComponent\@ScriptModuleMinecraft\@\@QEBAHXZ
      */
-    MCAPI int getOnFireTicksRemaining() const;
+    MCAPI int32_t getOnFireTicksRemaining() const;
     /**
      * @symbol
      * ?bind\@ScriptOnFireComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptOnFireComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ

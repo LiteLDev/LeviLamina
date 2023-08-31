@@ -406,7 +406,7 @@ public:
      * @symbol
      * ?onTransferRequest\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCVAPI void onTransferRequest(class NetworkIdentifier const&, std::string const&, int);
+    MCVAPI void onTransferRequest(class NetworkIdentifier const&, std::string const&, int32_t);
     /**
      * @symbol
      * ?onWebsocketRequest\@ServerNetworkHandler\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0V?$function\@$$A6AXXZ\@3\@\@Z
@@ -425,7 +425,7 @@ public:
     /**
      * @symbol ?sendServerLegacyParticle\@ServerNetworkHandler\@\@UEAAXW4ParticleType\@\@AEBVVec3\@\@1H\@Z
      */
-    MCVAPI void sendServerLegacyParticle(enum class ParticleType, class Vec3 const&, class Vec3 const&, int);
+    MCVAPI void sendServerLegacyParticle(enum class ParticleType, class Vec3 const&, class Vec3 const&, int32_t);
     /**
      * @symbol __unk_destructor_-1
      */
@@ -435,7 +435,7 @@ public:
      * @symbol
      * ??0ServerNetworkHandler\@\@QEAA\@AEAVGameCallbacks\@\@AEBV?$NonOwnerPointer\@VILevel\@\@\@Bedrock\@\@AEAVNetworkSystem\@\@AEAVPrivateKeyManager\@\@AEAVServerLocator\@\@AEAVPacketSender\@\@AEAVAllowList\@\@PEAVPermissionsFile\@\@AEBVUUID\@mce\@\@H_NAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEAVMinecraftCommands\@\@AEAVIMinecraftApp\@\@AEBV?$unordered_map\@UPackIdVersion\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@U?$hash\@UPackIdVersion\@\@\@3\@U?$equal_to\@UPackIdVersion\@\@\@3\@V?$allocator\@U?$pair\@$$CBUPackIdVersion\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@3\@\@std\@\@AEAVScheduler\@\@V?$NonOwnerPointer\@VTextFilteringProcessor\@\@\@3\@V?$optional_ref\@VMinecraftGameTest\@\@\@\@V?$ServiceReference\@VAppConfigs\@\@\@\@V?$ServiceReference\@VMultiplayerServiceManager\@Social\@\@\@\@9AEBUNetworkPermissions\@\@\@Z
      */
-    MCAPI ServerNetworkHandler(class GameCallbacks&, class Bedrock::NonOwnerPointer<class ILevel> const&, class NetworkSystem&, class PrivateKeyManager&, class ServerLocator&, class PacketSender&, class AllowList&, class PermissionsFile*, class mce::UUID const&, int, bool, std::vector<std::string> const&, std::string, int, class MinecraftCommands&, class IMinecraftApp&, std::unordered_map<struct PackIdVersion, std::string> const&, class Scheduler&, class Bedrock::NonOwnerPointer<class TextFilteringProcessor>, class optional_ref<class MinecraftGameTest>, class ServiceReference<class AppConfigs>, class ServiceReference<class Social::MultiplayerServiceManager>, bool, struct NetworkPermissions const&);
+    MCAPI ServerNetworkHandler(class GameCallbacks&, class Bedrock::NonOwnerPointer<class ILevel> const&, class NetworkSystem&, class PrivateKeyManager&, class ServerLocator&, class PacketSender&, class AllowList&, class PermissionsFile*, class mce::UUID const&, int32_t, bool, std::vector<std::string> const&, std::string, int32_t, class MinecraftCommands&, class IMinecraftApp&, std::unordered_map<struct PackIdVersion, std::string> const&, class Scheduler&, class Bedrock::NonOwnerPointer<class TextFilteringProcessor>, class optional_ref<class MinecraftGameTest>, class ServiceReference<class AppConfigs>, class ServiceReference<class Social::MultiplayerServiceManager>, bool, struct NetworkPermissions const&);
     /**
      * @symbol ?activateAllowList\@ServerNetworkHandler\@\@QEAAXXZ
      */
@@ -545,7 +545,7 @@ public:
     /**
      * @symbol ?setMaxNumPlayers\@ServerNetworkHandler\@\@QEAAHH\@Z
      */
-    MCAPI int setMaxNumPlayers(int);
+    MCAPI int32_t setMaxNumPlayers(int32_t);
     /**
      * @symbol ?setNewPlayerPermissions\@ServerNetworkHandler\@\@QEAAXAEAVServerPlayer\@\@\@Z
      */
@@ -571,7 +571,7 @@ public:
         class ServerPlayer const*,
         class SubChunkRequestPacket const&,
         class SubChunkPacket&,
-        unsigned int,
+        uint32_t,
         bool
     );
     /**
@@ -587,7 +587,7 @@ public:
     /**
      * @symbol ?_getActiveAndInProgressPlayerCount\@ServerNetworkHandler\@\@AEBAHVUUID\@mce\@\@\@Z
      */
-    MCAPI int _getActiveAndInProgressPlayerCount(class mce::UUID) const;
+    MCAPI int32_t _getActiveAndInProgressPlayerCount(class mce::UUID) const;
     /**
      * @symbol
      * ?_getDisplayName\@ServerNetworkHandler\@\@AEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVCertificate\@\@_NAEBV23\@\@Z

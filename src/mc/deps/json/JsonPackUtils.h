@@ -29,8 +29,14 @@ MCAPI bool readBoolAndReport(
  * @symbol
  * ?readIntAndReport\@JsonPackUtils\@\@YAHAEBVValue\@Json\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@5\@AEAVPackReport\@\@_NH\@Z
  */
-MCAPI int
-readIntAndReport(class Json::Value const&, std::string const&, std::vector<std::string>&, class PackReport&, bool, int);
+MCAPI int32_t readIntAndReport(
+    class Json::Value const&,
+    std::string const&,
+    std::vector<std::string>&,
+    class PackReport&,
+    bool,
+    int32_t
+);
 /**
  * @symbol
  * ?readRequiredValue\@JsonPackUtils\@\@YA?AU?$pair\@$$CBVValue\@Json\@\@W4PackParseErrorType\@\@\@std\@\@AEBVValue\@Json\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@W4ValueType\@5\@\@Z

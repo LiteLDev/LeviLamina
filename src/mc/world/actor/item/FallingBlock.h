@@ -286,7 +286,7 @@ public:
      * @symbol
      * ??0FallingBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI FallingBlock(std::string const&, int, class Material const&);
+    MCAPI FallingBlock(std::string const&, int32_t, class Material const&);
     /**
      * @symbol ?triggerFallCheck\@FallingBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */

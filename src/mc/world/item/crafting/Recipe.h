@@ -35,12 +35,12 @@ public:
      * @vftbl 2
      * @symbol ?getCraftingSize\@BannerAddPatternRecipe\@\@UEBAHXZ
      */
-    virtual int getCraftingSize() const = 0;
+    virtual int32_t getCraftingSize() const = 0;
     /**
      * @vftbl 3
      * @symbol ?getIngredient\@ShapelessRecipe\@\@UEBAAEBVRecipeIngredient\@\@HH\@Z
      */
-    virtual class RecipeIngredient const& getIngredient(int, int) const = 0;
+    virtual class RecipeIngredient const& getIngredient(int32_t, int32_t) const = 0;
     /**
      * @vftbl 4
      * @symbol
@@ -61,7 +61,7 @@ public:
      * @vftbl 7
      * @symbol ?size\@BannerAddPatternRecipe\@\@UEBAHXZ
      */
-    virtual int size() const = 0;
+    virtual int32_t size() const = 0;
     /**
      * @vftbl 8
      * @symbol ?getId\@Recipe\@\@UEBAAEBVUUID\@mce\@\@XZ
@@ -111,11 +111,11 @@ public:
     /**
      * @symbol ?countQuantityOfIngredient\@Recipe\@\@QEBAHAEBVItemInstance\@\@\@Z
      */
-    MCAPI int countQuantityOfIngredient(class ItemInstance const&) const;
+    MCAPI int32_t countQuantityOfIngredient(class ItemInstance const&) const;
     /**
      * @symbol ?getHeight\@Recipe\@\@QEBAHXZ
      */
-    MCAPI int getHeight() const;
+    MCAPI int32_t getHeight() const;
     /**
      * @symbol
      * ?getIngredients\@Recipe\@\@QEBAAEBV?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@std\@\@XZ
@@ -124,11 +124,11 @@ public:
     /**
      * @symbol ?getNetId\@Recipe\@\@QEBAAEBV?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@XZ
      */
-    MCAPI class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const& getNetId() const;
+    MCAPI class TypedServerNetId<struct RecipeNetIdTag, uint32_t, 0> const& getNetId() const;
     /**
      * @symbol ?getPriority\@Recipe\@\@QEBAHXZ
      */
-    MCAPI int getPriority() const;
+    MCAPI int32_t getPriority() const;
     /**
      * @symbol ?getRecipeId\@Recipe\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
@@ -144,11 +144,11 @@ public:
     /**
      * @symbol ?getWidth\@Recipe\@\@QEBAHXZ
      */
-    MCAPI int getWidth() const;
+    MCAPI int32_t getWidth() const;
     /**
      * @symbol ?setNetId\@Recipe\@\@QEAAXAEBV?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@\@Z
      */
-    MCAPI void setNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&);
+    MCAPI void setNetId(class TypedServerNetId<struct RecipeNetIdTag, uint32_t, 0> const&);
     /**
      * @symbol ?isAnyAuxValue\@Recipe\@\@SA_NAEBVItemDescriptor\@\@\@Z
      */

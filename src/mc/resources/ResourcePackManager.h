@@ -94,7 +94,7 @@ public:
      * @symbol
      * ?getPackStackIndexOfResource\@ResourcePackManager\@\@UEBA?AU?$pair\@HAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@AEBVResourceLocation\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z
      */
-    virtual std::pair<int, std::string const&>
+    virtual std::pair<int32_t, std::string const&>
     getPackStackIndexOfResource(class ResourceLocation const&, std::vector<std::string> const&) const;
     /**
      * @vftbl 12
@@ -124,7 +124,7 @@ public:
     /**
      * @symbol ?composeFullStack\@ResourcePackManager\@\@QEBAHAEAVResourcePackStack\@\@AEBV2\@11\@Z
      */
-    MCAPI int
+    MCAPI int32_t
     composeFullStack(class ResourcePackStack&, class ResourcePackStack const&, class ResourcePackStack const&, class ResourcePackStack const&)
         const;
     /**

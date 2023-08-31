@@ -19,7 +19,7 @@ public:
     /**
      * @symbol ?cavify\@Cavifier\@\@QEBAMVVec3\@\@HM\@Z
      */
-    MCAPI float cavify(class Vec3, int, float) const;
+    MCAPI float cavify(class Vec3, int32_t, float) const;
     // NOLINTEND
 
     // private:

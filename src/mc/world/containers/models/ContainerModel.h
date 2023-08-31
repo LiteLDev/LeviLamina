@@ -22,7 +22,7 @@ public:
      * @vftbl 0
      * @symbol ?containerContentChanged\@ContainerModel\@\@UEAAXH\@Z
      */
-    virtual void containerContentChanged(int);
+    virtual void containerContentChanged(int32_t);
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
@@ -42,12 +42,12 @@ public:
      * @vftbl 4
      * @symbol ?getContainerSize\@ContainerModel\@\@UEBAHXZ
      */
-    virtual int getContainerSize() const;
+    virtual int32_t getContainerSize() const;
     /**
      * @vftbl 5
      * @symbol ?getFilteredContainerSize\@ContainerModel\@\@UEBAHXZ
      */
-    virtual int getFilteredContainerSize() const;
+    virtual int32_t getFilteredContainerSize() const;
     /**
      * @vftbl 6
      * @symbol __unk_vfn_6
@@ -62,7 +62,7 @@ public:
      * @vftbl 8
      * @symbol ?getItemStack\@ContainerModel\@\@UEBAAEBVItemStack\@\@H\@Z
      */
-    virtual class ItemStack const& getItemStack(int) const;
+    virtual class ItemStack const& getItemStack(int32_t) const;
     /**
      * @vftbl 9
      * @symbol
@@ -73,12 +73,12 @@ public:
      * @vftbl 10
      * @symbol ?getItemInstance\@ContainerModel\@\@UEBAAEBVItemInstance\@\@H\@Z
      */
-    virtual class ItemInstance const& getItemInstance(int) const;
+    virtual class ItemInstance const& getItemInstance(int32_t) const;
     /**
      * @vftbl 11
      * @symbol ?getItemStackBase\@ContainerModel\@\@UEBAAEBVItemStackBase\@\@H\@Z
      */
-    virtual class ItemStackBase const& getItemStackBase(int) const;
+    virtual class ItemStackBase const& getItemStackBase(int32_t) const;
     /**
      * @vftbl 12
      * @symbol __unk_vfn_12
@@ -88,7 +88,7 @@ public:
      * @vftbl 13
      * @symbol ?setItem\@ContainerModel\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
-    virtual void setItem(int, class ItemStack const&);
+    virtual void setItem(int32_t, class ItemStack const&);
     /**
      * @vftbl 14
      * @symbol ?isValid\@ContainerModel\@\@UEAA_NXZ
@@ -108,13 +108,13 @@ public:
      * @vftbl 17
      * @symbol ?getItemExpandStatus\@ContainerModel\@\@UEBA?AW4ContainerExpandStatus\@\@H\@Z
      */
-    virtual enum class ContainerExpandStatus getItemExpandStatus(int) const;
+    virtual enum class ContainerExpandStatus getItemExpandStatus(int32_t) const;
     /**
      * @vftbl 18
      * @symbol
      * ?getItemGroupName\@ContainerModel\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    virtual std::string const& getItemGroupName(int) const;
+    virtual std::string const& getItemGroupName(int32_t) const;
     /**
      * @vftbl 19
      * @symbol __unk_vfn_19
@@ -129,17 +129,17 @@ public:
      * @vftbl 21
      * @symbol ?_getContainerOffset\@ContainerModel\@\@MEBAHXZ
      */
-    virtual int _getContainerOffset() const;
+    virtual int32_t _getContainerOffset() const;
     /**
      * @vftbl 22
      * @symbol ?_onItemChanged\@ContainerModel\@\@MEAAXHAEBVItemStack\@\@0\@Z
      */
-    virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
+    virtual void _onItemChanged(int32_t, class ItemStack const&, class ItemStack const&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERMODEL
     /**
      * @symbol ?isExpanableItemFiltered\@ContainerModel\@\@UEBA_NH\@Z
      */
-    MCVAPI bool isExpanableItemFiltered(int) const;
+    MCVAPI bool isExpanableItemFiltered(int32_t) const;
     /**
      * @symbol ?isItemFiltered\@ContainerModel\@\@UEBA_NAEBVItemStackBase\@\@\@Z
      */
@@ -151,11 +151,11 @@ public:
     /**
      * @symbol ?switchItemExpando\@ContainerModel\@\@UEAAXH\@Z
      */
-    MCVAPI void switchItemExpando(int);
+    MCVAPI void switchItemExpando(int32_t);
     /**
      * @symbol ?tick\@ContainerModel\@\@UEAAXH\@Z
      */
-    MCVAPI void tick(int);
+    MCVAPI void tick(int32_t);
     /**
      * @symbol __unk_destructor_-1
      */
@@ -164,21 +164,21 @@ public:
     /**
      * @symbol ??0ContainerModel\@\@QEAA\@W4ContainerEnumName\@\@HW4ContainerCategory\@\@_N\@Z
      */
-    MCAPI ContainerModel(enum class ContainerEnumName, int, enum class ContainerCategory, bool);
+    MCAPI ContainerModel(enum class ContainerEnumName, int32_t, enum class ContainerCategory, bool);
     /**
      * @symbol ?isContainerSlotInRange\@ContainerModel\@\@QEBA_NH\@Z
      */
-    MCAPI bool isContainerSlotInRange(int) const;
+    MCAPI bool isContainerSlotInRange(int32_t) const;
     /**
      * @symbol ?networkUpdateItem\@ContainerModel\@\@QEAAXHAEBVItemStack\@\@0\@Z
      */
-    MCAPI void networkUpdateItem(int, class ItemStack const&, class ItemStack const&);
+    MCAPI void networkUpdateItem(int32_t, class ItemStack const&, class ItemStack const&);
     /**
      * @symbol
      * ?registerPlayerNotificationCallback\@ContainerModel\@\@QEAAXV?$function\@$$A6AXHAEBVItemStack\@\@0\@Z\@std\@\@\@Z
      */
-    MCAPI void
-        registerPlayerNotificationCallback(std::function<void(int, class ItemStack const&, class ItemStack const&)>);
+    MCAPI void registerPlayerNotificationCallback(std::function<
+                                                  void(int32_t, class ItemStack const&, class ItemStack const&)>);
     // NOLINTEND
 
     // protected:
@@ -194,6 +194,6 @@ public:
     /**
      * @symbol ?_onClientUIItemNetworkChanged\@ContainerModel\@\@AEAAXHAEBVItemStack\@\@0\@Z
      */
-    MCAPI void _onClientUIItemNetworkChanged(int, class ItemStack const&, class ItemStack const&);
+    MCAPI void _onClientUIItemNetworkChanged(int32_t, class ItemStack const&, class ItemStack const&);
     // NOLINTEND
 };

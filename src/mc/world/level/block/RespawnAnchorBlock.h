@@ -175,7 +175,7 @@ public:
      * @vftbl 126
      * @symbol ?getComparatorSignal\@RespawnAnchorBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, unsigned char) const;
+    virtual int32_t getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uint8_t) const;
     /**
      * @vftbl 128
      * @symbol __unk_vfn_128
@@ -200,7 +200,7 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@RespawnAnchorBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 148
      * @symbol ?animateTick\@RespawnAnchorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
@@ -250,7 +250,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@RespawnAnchorBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -270,7 +270,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@RespawnAnchorBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESPAWNANCHORBLOCK
     /**
      * @symbol ?canBeSilkTouched\@RespawnAnchorBlock\@\@UEBA_NXZ
@@ -289,13 +289,13 @@ public:
      * @symbol
      * ??0RespawnAnchorBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI RespawnAnchorBlock(std::string const&, int);
+    MCAPI RespawnAnchorBlock(std::string const&, int32_t);
     /**
      * @symbol
      * ?addItem\@RespawnAnchorBlock\@\@SA_NAEAVContainer\@\@HAEAVItemStack\@\@AEAVBlockSource\@\@AEBVBlock\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static bool
-    addItem(class Container&, int, class ItemStack&, class BlockSource&, class Block const&, class BlockPos const&);
+    addItem(class Container&, int32_t, class ItemStack&, class BlockSource&, class Block const&, class BlockPos const&);
     // NOLINTEND
 
     // private:
@@ -303,7 +303,7 @@ public:
     /**
      * @symbol ?_bumpCharge\@RespawnAnchorBlock\@\@CAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVPlayer\@\@F\@Z
      */
-    MCAPI static void _bumpCharge(class BlockSource&, class BlockPos const&, class Player*, short);
+    MCAPI static void _bumpCharge(class BlockSource&, class BlockPos const&, class Player*, int16_t);
     /**
      * @symbol ?_explode\@RespawnAnchorBlock\@\@CAXAEAVPlayer\@\@AEBVBlockPos\@\@AEAVBlockSource\@\@AEAVLevel\@\@\@Z
      */

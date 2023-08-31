@@ -31,7 +31,7 @@ public:
      * ?handleConsumedItem\@CraftHandlerTrade\@\@EEAA?AW4ItemStackNetResult\@\@W4ContainerEnumName\@\@EAEBVItemStack\@\@\@Z
      */
     virtual enum class ItemStackNetResult
-    handleConsumedItem(enum class ContainerEnumName, unsigned char, class ItemStack const&);
+    handleConsumedItem(enum class ContainerEnumName, uint8_t, class ItemStack const&);
     /**
      * @vftbl 4
      * @symbol
@@ -52,20 +52,20 @@ public:
      * ?_getMerchantRecipeFromNetId\@CraftHandlerTrade\@\@AEAA?AV?$tuple\@W4ItemStackNetResult\@\@PEBVMerchantRecipe\@\@\@std\@\@AEBV?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@\@Z
      */
     MCAPI std::tuple<enum class ItemStackNetResult, class MerchantRecipe const*>
-          _getMerchantRecipeFromNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&);
+          _getMerchantRecipeFromNetId(class TypedServerNetId<struct RecipeNetIdTag, uint32_t, 0> const&);
     /**
      * @symbol
      * ?_handleTrade1\@CraftHandlerTrade\@\@AEAA?AW4ItemStackNetResult\@\@AEBV?$ItemStackRequestActionCraft\@V?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@$0M\@\@\@\@Z
      */
     MCAPI enum class ItemStackNetResult _handleTrade1(class ItemStackRequestActionCraft<
-                                                      class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>,
+                                                      class TypedServerNetId<struct RecipeNetIdTag, uint32_t, 0>,
                                                       12> const&);
     /**
      * @symbol
      * ?_initResultItem\@CraftHandlerTrade\@\@AEAA?AW4ItemStackNetResult\@\@AEBV?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@\@Z
      */
     MCAPI enum class ItemStackNetResult
-    _initResultItem(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&);
+    _initResultItem(class TypedServerNetId<struct RecipeNetIdTag, uint32_t, 0> const&);
     /**
      * @symbol ?_initTrade2Consumes\@CraftHandlerTrade\@\@AEAA?AW4ItemStackNetResult\@\@XZ
      */

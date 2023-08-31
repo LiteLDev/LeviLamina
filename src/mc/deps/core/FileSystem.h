@@ -123,12 +123,12 @@ public:
      * ?readFileData\@FileSystem\@Core\@\@SA?AVResult\@2\@AEBVPath\@2\@_K1AEAV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@AEA_K\@Z
      */
     MCAPI static class Core::Result
-    readFileData(class Core::Path const&, uint64_t, uint64_t, std::vector<unsigned char>&, uint64_t&);
+    readFileData(class Core::Path const&, uint64_t, uint64_t, std::vector<uint8_t>&, uint64_t&);
     /**
      * @symbol
      * ?readFileData\@FileSystem\@Core\@\@SA?AVResult\@2\@AEBVPath\@2\@AEAV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@\@Z
      */
-    MCAPI static class Core::Result readFileData(class Core::Path const&, std::vector<unsigned char>&);
+    MCAPI static class Core::Result readFileData(class Core::Path const&, std::vector<uint8_t>&);
     /**
      * @symbol ?removeIgnoredThrottlePath\@FileSystem\@Core\@\@SA?AVResult\@2\@AEBVPath\@2\@\@Z
      */

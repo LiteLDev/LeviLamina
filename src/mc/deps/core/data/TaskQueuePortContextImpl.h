@@ -22,12 +22,12 @@ public:
      * @vftbl 0
      * @symbol ?AddRef\@TaskQueuePortContextImpl\@\@UEAAIXZ
      */
-    virtual unsigned int AddRef();
+    virtual uint32_t AddRef();
     /**
      * @vftbl 1
      * @symbol ?Release\@TaskQueuePortContextImpl\@\@UEAAIXZ
      */
-    virtual unsigned int Release();
+    virtual uint32_t Release();
     /**
      * @vftbl 2
      * @symbol ?QueryApi\@TaskQueuePortContextImpl\@\@UEAAJW4ApiId\@\@PEAPEAX\@Z

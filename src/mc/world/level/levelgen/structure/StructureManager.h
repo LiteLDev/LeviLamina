@@ -12,6 +12,11 @@
 #include "mc/world/level/chunk/ChunksLoadedStatus.h"
 #include "mc/world/level/levelgen/structure/StructureTemplateResponseType.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
 class StructureManager : public ::Bedrock::EnableNonOwnerReferences {
 
 public:

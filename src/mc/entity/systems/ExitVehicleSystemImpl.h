@@ -104,45 +104,41 @@ public:
      * @symbol
      * ?createViews\@ExitVehicleSystemImpl\@\@SA\@AEAV?$StrictExecutionContext\@U?$Filter\@V?$FlagComponent\@UCanStandOnSnowFlag\@\@\@\@V?$FlagComponent\@UHasLightweightFamilyFlag\@\@\@\@V?$FlagComponent\@UHorseFlag\@\@\@\@V?$FlagComponent\@UMobFlag\@\@\@\@V?$FlagComponent\@UParrotFlag\@\@\@\@UVehicleComponent\@\@V?$FlagComponent\@UCamelFlag\@\@\@\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@V?$FlagComponent\@UStopRidingRequestFlag\@\@\@\@\@\@U?$Read\@UAbilitiesComponent\@\@UActorTypeComponent\@\@UFallDistanceComponent\@\@UActorGameTypeComponent\@\@UMobBodyRotationComponent\@\@URenderRotationComponent\@\@UStandAnimationComponent\@\@UStateVectorComponent\@\@USynchedActorDataComponent\@\@UAABBShapeComponent\@\@UActorRotationComponent\@\@V?$Optional\@UVanillaOffsetComponent\@\@\@\@V?$Optional\@UPassengerRenderingRidingOffsetComponent\@\@\@\@UDimensionTypeComponent\@\@UPassengerComponent\@\@UVehicleComponent\@\@UOffsetsComponent\@\@V?$FlagComponent\@UEjectedByActivatorRailFlag\@\@\@\@\@\@U?$Write\@UAABBShapeComponent\@\@UActorRotationComponent\@\@UStateVectorComponent\@\@\@\@U?$AddRemove\@UActorSetPositionRequestComponent\@\@\@\@U?$GlobalRead\@UExternalDataComponent\@\@ULocalConstBlockSourceFactoryComponent\@\@\@\@U?$GlobalWrite\@$$V\@\@U?$EntityFactoryT\@$$V\@\@\@\@\@Z
      */
-    MCAPI static createViews(class StrictExecutionContext<
-                             struct Filter<
-                                 class FlagComponent<struct CanStandOnSnowFlag>,
-                                 class FlagComponent<struct HasLightweightFamilyFlag>,
-                                 class FlagComponent<struct HorseFlag>,
-                                 class FlagComponent<struct MobFlag>,
-                                 class FlagComponent<struct ParrotFlag>,
-                                 struct VehicleComponent,
-                                 class FlagComponent<struct CamelFlag>,
-                                 class FlagComponent<struct PlayerComponentFlag>,
-                                 class FlagComponent<struct StopRidingRequestFlag>>,
-                             struct Read<
-                                 struct AbilitiesComponent,
-                                 struct ActorTypeComponent,
-                                 struct FallDistanceComponent,
-                                 struct ActorGameTypeComponent,
-                                 struct MobBodyRotationComponent,
-                                 struct RenderRotationComponent,
-                                 struct StandAnimationComponent,
-                                 struct StateVectorComponent,
-                                 struct SynchedActorDataComponent,
-                                 struct AABBShapeComponent,
-                                 struct ActorRotationComponent,
-                                 class Optional<struct VanillaOffsetComponent>,
-                                 class Optional<struct PassengerRenderingRidingOffsetComponent>,
-                                 struct DimensionTypeComponent,
-                                 struct PassengerComponent,
-                                 struct VehicleComponent,
-                                 struct OffsetsComponent,
-                                 class FlagComponent<struct EjectedByActivatorRailFlag>>,
-                             struct Write<
-                                 struct AABBShapeComponent,
-                                 struct ActorRotationComponent,
-                                 struct StateVectorComponent>,
-                             struct AddRemove<struct ActorSetPositionRequestComponent>,
-                             struct GlobalRead<
-                                 struct ExternalDataComponent,
-                                 struct LocalConstBlockSourceFactoryComponent>,
-                             struct GlobalWrite<>,
-                             struct EntityFactoryT<>>&);
+    MCAPI static auto
+    createViews(class StrictExecutionContext<
+                struct Filter<
+                    class FlagComponent<struct CanStandOnSnowFlag>,
+                    class FlagComponent<struct HasLightweightFamilyFlag>,
+                    class FlagComponent<struct HorseFlag>,
+                    class FlagComponent<struct MobFlag>,
+                    class FlagComponent<struct ParrotFlag>,
+                    struct VehicleComponent,
+                    class FlagComponent<struct CamelFlag>,
+                    class FlagComponent<struct PlayerComponentFlag>,
+                    class FlagComponent<struct StopRidingRequestFlag>>,
+                struct Read<
+                    struct AbilitiesComponent,
+                    struct ActorTypeComponent,
+                    struct FallDistanceComponent,
+                    struct ActorGameTypeComponent,
+                    struct MobBodyRotationComponent,
+                    struct RenderRotationComponent,
+                    struct StandAnimationComponent,
+                    struct StateVectorComponent,
+                    struct SynchedActorDataComponent,
+                    struct AABBShapeComponent,
+                    struct ActorRotationComponent,
+                    class Optional<struct VanillaOffsetComponent>,
+                    class Optional<struct PassengerRenderingRidingOffsetComponent>,
+                    struct DimensionTypeComponent,
+                    struct PassengerComponent,
+                    struct VehicleComponent,
+                    struct OffsetsComponent,
+                    class FlagComponent<struct EjectedByActivatorRailFlag>>,
+                struct Write<struct AABBShapeComponent, struct ActorRotationComponent, struct StateVectorComponent>,
+                struct AddRemove<struct ActorSetPositionRequestComponent>,
+                struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
+                struct GlobalWrite<>,
+                struct EntityFactoryT<>>&);
     // NOLINTEND
 };

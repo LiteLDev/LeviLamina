@@ -65,7 +65,7 @@ public:
     /**
      * @symbol ?getSuccessCount\@CommandOutput\@\@QEBAHXZ
      */
-    MCAPI int getSuccessCount() const;
+    MCAPI int32_t getSuccessCount() const;
     /**
      * @symbol ?getType\@CommandOutput\@\@QEBA?AW4CommandOutputType\@\@XZ
      */
@@ -79,7 +79,7 @@ public:
      * ?load\@CommandOutput\@\@QEAAXW4CommandOutputType\@\@H$$QEAV?$vector\@VCommandOutputMessage\@\@V?$allocator\@VCommandOutputMessage\@\@\@std\@\@\@std\@\@$$QEAV?$unique_ptr\@VCommandPropertyBag\@\@U?$default_delete\@VCommandPropertyBag\@\@\@std\@\@\@4\@\@Z
      */
     MCAPI void
-    load(enum class CommandOutputType, int, std::vector<class CommandOutputMessage>&&, std::unique_ptr<class CommandPropertyBag>&&);
+    load(enum class CommandOutputType, int32_t, std::vector<class CommandOutputMessage>&&, std::unique_ptr<class CommandPropertyBag>&&);
     /**
      * @symbol ?setHasPlayerText\@CommandOutput\@\@QEAAXXZ
      */

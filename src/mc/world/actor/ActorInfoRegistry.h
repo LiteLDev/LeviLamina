@@ -18,16 +18,16 @@ public:
     /**
      * @symbol ?getActorInfo\@ActorInfoRegistry\@\@QEBAAEBUActorInfo\@\@I\@Z
      */
-    MCAPI struct ActorInfo const& getActorInfo(unsigned int) const;
+    MCAPI struct ActorInfo const& getActorInfo(uint32_t) const;
     /**
      * @symbol ?getActorInfoId\@ActorInfoRegistry\@\@QEBAIAEB_K\@Z
      */
-    MCAPI unsigned int getActorInfoId(uint64_t const&) const;
+    MCAPI uint32_t getActorInfoId(uint64_t const&) const;
     /**
      * @symbol
      * ?getActorInfoId\@ActorInfoRegistry\@\@QEBAIAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI unsigned int getActorInfoId(std::string const&) const;
+    MCAPI uint32_t getActorInfoId(std::string const&) const;
     /**
      * @symbol
      * ?getActorInfoList\@ActorInfoRegistry\@\@QEBA?AV?$vector\@UActorInfo\@\@V?$allocator\@UActorInfo\@\@\@std\@\@\@std\@\@XZ

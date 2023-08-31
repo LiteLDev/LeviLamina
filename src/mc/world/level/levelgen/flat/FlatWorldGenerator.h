@@ -56,7 +56,7 @@ public:
     /**
      * @symbol ?getBiomeArea\@FlatWorldGenerator\@\@UEBA?AVBiomeArea\@\@AEBVBoundingBox\@\@I\@Z
      */
-    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const&, unsigned int) const;
+    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const&, uint32_t) const;
     /**
      * @symbol ?getBiomeSource\@FlatWorldGenerator\@\@UEBAAEBVBiomeSource\@\@XZ
      */
@@ -81,7 +81,8 @@ public:
      * @symbol
      * ?prepareAndComputeHeights\@FlatWorldGenerator\@\@UEAAXAEAVBlockVolume\@\@AEBVChunkPos\@\@AEAV?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@_NH\@Z
      */
-    MCVAPI void prepareAndComputeHeights(class BlockVolume&, class ChunkPos const&, std::vector<short>&, bool, int);
+    MCVAPI void
+    prepareAndComputeHeights(class BlockVolume&, class ChunkPos const&, std::vector<int16_t>&, bool, int32_t);
     /**
      * @symbol ?prepareHeights\@FlatWorldGenerator\@\@UEAAXAEAVBlockVolume\@\@AEBVChunkPos\@\@_N\@Z
      */
@@ -90,7 +91,7 @@ public:
     /**
      * @symbol ??0FlatWorldGenerator\@\@QEAA\@AEAVDimension\@\@IAEBVValue\@Json\@\@\@Z
      */
-    MCAPI FlatWorldGenerator(class Dimension&, unsigned int, class Json::Value const&);
+    MCAPI FlatWorldGenerator(class Dimension&, uint32_t, class Json::Value const&);
     // NOLINTEND
 
     // private:
@@ -98,6 +99,6 @@ public:
     /**
      * @symbol ?_generatePrototypeBlockValues\@FlatWorldGenerator\@\@AEAAXAEBVFlatWorldGeneratorOptions\@\@F\@Z
      */
-    MCAPI void _generatePrototypeBlockValues(class FlatWorldGeneratorOptions const&, short);
+    MCAPI void _generatePrototypeBlockValues(class FlatWorldGeneratorOptions const&, int16_t);
     // NOLINTEND
 };

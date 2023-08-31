@@ -47,7 +47,7 @@ public:
      * @vftbl 25
      * @symbol ?canProvideSupport\@SeaPickleBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
-    virtual bool canProvideSupport(class Block const&, unsigned char, enum class BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uint8_t, enum class BlockSupportType) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -234,12 +234,12 @@ public:
      * @vftbl 135
      * @symbol ?getColor\@SeaPickleBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getColor(class Block const&) const;
+    virtual int32_t getColor(class Block const&) const;
     /**
      * @vftbl 136
      * @symbol ?getColor\@SeaPickleBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual int32_t getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
     /**
      * @vftbl 150
      * @symbol ?getLightEmission\@SeaPickleBlock\@\@UEBA?AUBrightness\@\@AEBVBlock\@\@\@Z
@@ -314,7 +314,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@SeaPickleBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 192
      * @symbol ?checkAlive\@SeaPickleBlock\@\@MEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
@@ -338,6 +338,6 @@ public:
      * @symbol
      * ??0SeaPickleBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI SeaPickleBlock(std::string const&, int);
+    MCAPI SeaPickleBlock(std::string const&, int32_t);
     // NOLINTEND
 };

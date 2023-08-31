@@ -118,7 +118,7 @@ public:
      * @vftbl 38
      * @symbol ?teleportTo\@Mob\@\@UEAAXAEBVVec3\@\@_NHH1\@Z
      */
-    virtual void teleportTo(class Vec3 const&, bool, int, int, bool);
+    virtual void teleportTo(class Vec3 const&, bool, int32_t, int32_t, bool);
     /**
      * @vftbl 43
      * @symbol ?normalTick\@Mob\@\@UEAAXXZ
@@ -253,12 +253,12 @@ public:
      * @vftbl 123
      * @symbol ?doFireHurt\@Mob\@\@UEAA_NH\@Z
      */
-    virtual bool doFireHurt(int);
+    virtual bool doFireHurt(int32_t);
     /**
      * @vftbl 127
      * @symbol ?handleEntityEvent\@Mob\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
-    virtual void handleEntityEvent(enum class ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int32_t);
     /**
      * @vftbl 139
      * @symbol ?getArmorMaterialTypeInSlot\@Mob\@\@UEBA?AW4ArmorMaterialType\@\@W4ArmorSlot\@\@\@Z
@@ -273,7 +273,7 @@ public:
      * @vftbl 141
      * @symbol ?getArmorColorInSlot\@Mob\@\@UEBAMW4ArmorSlot\@\@H\@Z
      */
-    virtual float getArmorColorInSlot(enum class ArmorSlot, int) const;
+    virtual float getArmorColorInSlot(enum class ArmorSlot, int32_t) const;
     /**
      * @vftbl 143
      * @symbol ?setEquippedSlot\@Mob\@\@UEAAXW4EquipmentSlot\@\@AEBVItemStack\@\@\@Z
@@ -324,7 +324,7 @@ public:
      * @vftbl 189
      * @symbol ?getDeathTime\@Mob\@\@UEBAHXZ
      */
-    virtual int getDeathTime() const;
+    virtual int32_t getDeathTime() const;
     /**
      * @vftbl 200
      * @symbol ?swing\@Mob\@\@UEAAXXZ
@@ -419,7 +419,7 @@ public:
      * @vftbl 254
      * @symbol ?knockback\@Mob\@\@UEAAXPEAVActor\@\@HMMMMM\@Z
      */
-    virtual void knockback(class Actor*, int, float, float, float, float, float);
+    virtual void knockback(class Actor*, int32_t, float, float, float, float, float);
     /**
      * @vftbl 255
      * @symbol ?spawnAnim\@Mob\@\@UEAAXXZ
@@ -464,7 +464,7 @@ public:
      * @vftbl 263
      * @symbol ?getMeleeKnockbackBonus\@Mob\@\@UEAAHXZ
      */
-    virtual int getMeleeKnockbackBonus();
+    virtual int32_t getMeleeKnockbackBonus();
     /**
      * @vftbl 264
      * @symbol ?aiStep\@Mob\@\@UEAAXXZ
@@ -504,7 +504,7 @@ public:
      * @vftbl 271
      * @symbol ?getItemUseDuration\@Mob\@\@UEBAHXZ
      */
-    virtual int getItemUseDuration() const;
+    virtual int32_t getItemUseDuration() const;
     /**
      * @vftbl 272
      * @symbol ?getItemUseStartupProgress\@Mob\@\@UEBAMXZ
@@ -519,12 +519,12 @@ public:
      * @vftbl 274
      * @symbol ?getItemUseIntervalAxis\@Mob\@\@UEBAHXZ
      */
-    virtual int getItemUseIntervalAxis() const;
+    virtual int32_t getItemUseIntervalAxis() const;
     /**
      * @vftbl 275
      * @symbol ?getTimeAlongSwing\@Mob\@\@UEBAHXZ
      */
-    virtual int getTimeAlongSwing() const;
+    virtual int32_t getTimeAlongSwing() const;
     /**
      * @vftbl 276
      * @symbol __unk_vfn_276
@@ -574,7 +574,7 @@ public:
      * @vftbl 285
      * @symbol ?getArmorValue\@Mob\@\@UEBAHXZ
      */
-    virtual int getArmorValue() const;
+    virtual int32_t getArmorValue() const;
     /**
      * @vftbl 286
      * @symbol ?getArmorCoverPercentage\@Mob\@\@UEBAMXZ
@@ -584,12 +584,12 @@ public:
      * @vftbl 287
      * @symbol ?getToughnessValue\@Mob\@\@UEBAHXZ
      */
-    virtual int getToughnessValue() const;
+    virtual int32_t getToughnessValue() const;
     /**
      * @vftbl 288
      * @symbol ?hurtArmorSlots\@Mob\@\@UEAAXAEBVActorDamageSource\@\@HV?$bitset\@$03\@std\@\@\@Z
      */
-    virtual void hurtArmorSlots(class ActorDamageSource const&, int, std::bitset<4>);
+    virtual void hurtArmorSlots(class ActorDamageSource const&, int32_t, std::bitset<4>);
     /**
      * @vftbl 289
      * @symbol ?setDamagedArmor\@Mob\@\@UEAAXW4ArmorSlot\@\@AEBVItemStack\@\@\@Z
@@ -609,7 +609,7 @@ public:
      * @vftbl 292
      * @symbol ?containerChanged\@Mob\@\@UEAAXH\@Z
      */
-    virtual void containerChanged(int);
+    virtual void containerChanged(int32_t);
     /**
      * @vftbl 293
      * @symbol ?updateEquipment\@Mob\@\@UEAAXXZ
@@ -619,12 +619,12 @@ public:
      * @vftbl 294
      * @symbol ?clearEquipment\@Mob\@\@UEAAHXZ
      */
-    virtual int clearEquipment();
+    virtual int32_t clearEquipment();
     /**
      * @vftbl 295
      * @symbol ?getAllArmorID\@Mob\@\@UEBA?AV?$vector\@HV?$allocator\@H\@std\@\@\@std\@\@XZ
      */
-    virtual std::vector<int> getAllArmorID() const;
+    virtual std::vector<int32_t> getAllArmorID() const;
     /**
      * @vftbl 296
      * @symbol ?getAllHand\@Mob\@\@UEBA?AV?$vector\@PEBVItemStack\@\@V?$allocator\@PEBVItemStack\@\@\@std\@\@\@std\@\@XZ
@@ -640,12 +640,12 @@ public:
      * @vftbl 298
      * @symbol ?getArmorTypeHash\@Mob\@\@UEAAHXZ
      */
-    virtual int getArmorTypeHash();
+    virtual int32_t getArmorTypeHash();
     /**
      * @vftbl 299
      * @symbol ?dropEquipmentOnDeath\@Mob\@\@UEAAXAEBVActorDamageSource\@\@H\@Z
      */
-    virtual void dropEquipmentOnDeath(class ActorDamageSource const&, int);
+    virtual void dropEquipmentOnDeath(class ActorDamageSource const&, int32_t);
     /**
      * @vftbl 300
      * @symbol ?dropEquipmentOnDeath\@Mob\@\@UEAAXXZ
@@ -705,7 +705,7 @@ public:
      * @vftbl 311
      * @symbol ?getAttackTime\@Mob\@\@UEAAHXZ
      */
-    virtual int getAttackTime();
+    virtual int32_t getAttackTime();
     /**
      * @vftbl 312
      * @symbol ?_getWalkTargetValue\@Mob\@\@UEAAMAEBVBlockPos\@\@\@Z
@@ -847,11 +847,11 @@ public:
     /**
      * @symbol ?getCaravanSize\@Mob\@\@QEBAHXZ
      */
-    MCAPI int getCaravanSize() const;
+    MCAPI int32_t getCaravanSize() const;
     /**
      * @symbol ?getEatCounter\@Mob\@\@QEBAHXZ
      */
-    MCAPI int getEatCounter() const;
+    MCAPI int32_t getEatCounter() const;
     /**
      * @symbol ?getExpectedFallDamage\@Mob\@\@QEBAMMM\@Z
      */
@@ -863,7 +863,7 @@ public:
     /**
      * @symbol ?getGlidingTicks\@Mob\@\@QEBAHXZ
      */
-    MCAPI int getGlidingTicks() const;
+    MCAPI int32_t getGlidingTicks() const;
     /**
      * @symbol ?getItemSlot\@Mob\@\@QEBAAEBVItemStack\@\@W4EquipmentSlot\@\@\@Z
      */
@@ -887,7 +887,7 @@ public:
     /**
      * @symbol ?getJumpTicks\@Mob\@\@QEBAHXZ
      */
-    MCAPI int getJumpTicks() const;
+    MCAPI int32_t getJumpTicks() const;
     /**
      * @symbol ?getMovementComponentCurrentSpeed\@Mob\@\@QEBAMXZ
      */
@@ -895,11 +895,11 @@ public:
     /**
      * @symbol ?getNoActionTime\@Mob\@\@QEBAHXZ
      */
-    MCAPI int getNoActionTime() const;
+    MCAPI int32_t getNoActionTime() const;
     /**
      * @symbol ?getRollCounter\@Mob\@\@QEBAHXZ
      */
-    MCAPI int getRollCounter() const;
+    MCAPI int32_t getRollCounter() const;
     /**
      * @symbol ?getSwimSpeedMultiplier\@Mob\@\@QEBAMXZ
      */
@@ -923,7 +923,7 @@ public:
     /**
      * @symbol ?hurtArmor\@Mob\@\@QEAAXAEBVActorDamageSource\@\@H\@Z
      */
-    MCAPI void hurtArmor(class ActorDamageSource const&, int);
+    MCAPI void hurtArmor(class ActorDamageSource const&, int32_t);
     /**
      * @symbol ?isAbleToMove\@Mob\@\@QEBA_NXZ
      */
@@ -963,12 +963,11 @@ public:
     /**
      * @symbol ?onPlayerDimensionChanged\@Mob\@\@QEAAXPEAVPlayer\@\@V?$AutomaticID\@VDimension\@\@H\@\@1\@Z
      */
-    MCAPI void
-    onPlayerDimensionChanged(class Player*, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
+    MCAPI void onPlayerDimensionChanged(class Player*, DimensionType, DimensionType);
     /**
      * @symbol ?onPlayerJump\@Mob\@\@QEAAXH\@Z
      */
-    MCAPI void onPlayerJump(int);
+    MCAPI void onPlayerJump(int32_t);
     /**
      * @symbol ?removeSpeedModifier\@Mob\@\@QEAAXAEBVUUID\@mce\@\@\@Z
      */
@@ -992,7 +991,7 @@ public:
     /**
      * @symbol ?setEatCounter\@Mob\@\@QEAAXH\@Z
      */
-    MCAPI void setEatCounter(int);
+    MCAPI void setEatCounter(int32_t);
     /**
      * @symbol ?setEating\@Mob\@\@QEAAX_N\@Z
      */
@@ -1008,7 +1007,7 @@ public:
     /**
      * @symbol ?setJumpTicks\@Mob\@\@QEAAXH\@Z
      */
-    MCAPI void setJumpTicks(int);
+    MCAPI void setJumpTicks(int32_t);
     /**
      * @symbol ?setMovementComponentCurrentSpeed\@Mob\@\@QEAAXM\@Z
      */
@@ -1103,7 +1102,7 @@ public:
     /**
      * @symbol ?ARMOR_DAMAGE_DIVISOR\@Mob\@\@2HB
      */
-    MCAPI static int const ARMOR_DAMAGE_DIVISOR;
+    MCAPI static int32_t const ARMOR_DAMAGE_DIVISOR;
     /**
      * @symbol ?ARMOR_PROTECTION_DIVIDER\@Mob\@\@2MB
      */
@@ -1159,7 +1158,7 @@ public:
     /**
      * @symbol ?REMOVE_PASSENGERS_DELAY\@Mob\@\@2HB
      */
-    MCAPI static int const REMOVE_PASSENGERS_DELAY;
+    MCAPI static int32_t const REMOVE_PASSENGERS_DELAY;
     /**
      * @symbol ?SLOW_FALL_GRAVITY\@Mob\@\@2MB
      */
@@ -1167,11 +1166,11 @@ public:
     /**
      * @symbol ?SPAWN_XP_DELAY\@Mob\@\@2HB
      */
-    MCAPI static int const SPAWN_XP_DELAY;
+    MCAPI static int32_t const SPAWN_XP_DELAY;
     /**
      * @symbol ?TOTAL_ROLL_STEPS\@Mob\@\@2HB
      */
-    MCAPI static int const TOTAL_ROLL_STEPS;
+    MCAPI static int32_t const TOTAL_ROLL_STEPS;
     // NOLINTEND
 
     // protected:
@@ -1195,7 +1194,7 @@ public:
     /**
      * @symbol ?getCurrentSwingDuration\@Mob\@\@IEAAHXZ
      */
-    MCAPI int getCurrentSwingDuration();
+    MCAPI int32_t getCurrentSwingDuration();
     /**
      * @symbol ?jumpFromGround\@Mob\@\@IEAAXAEBVIConstBlockSource\@\@\@Z
      */
@@ -1207,7 +1206,7 @@ public:
     /**
      * @symbol ?setNoActionTime\@Mob\@\@IEAAXH\@Z
      */
-    MCAPI void setNoActionTime(int);
+    MCAPI void setNoActionTime(int32_t);
     /**
      * @symbol ?tickEffects\@Mob\@\@IEAAXXZ
      */
@@ -1251,6 +1250,6 @@ protected:
     /**
      * @symbol ?MAX_INACTIVITY_TIMER\@Mob\@\@1HB
      */
-    MCAPI static int const MAX_INACTIVITY_TIMER;
+    MCAPI static int32_t const MAX_INACTIVITY_TIMER;
     // NOLINTEND
 };

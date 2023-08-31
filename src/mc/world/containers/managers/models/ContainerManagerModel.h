@@ -57,7 +57,7 @@ public:
      * @vftbl 12
      * @symbol ?debitPlayerLevels\@ContainerManagerModel\@\@UEAAXH\@Z
      */
-    virtual void debitPlayerLevels(int);
+    virtual void debitPlayerLevels(int32_t);
     /**
      * @vftbl 13
      * @symbol ?isCreativeMode\@ContainerManagerModel\@\@UEBA_NXZ

@@ -163,7 +163,7 @@ public:
      * @symbol
      * ?_getChunkNeighbors\@DBChunkStorage\@\@AEAA?AVNeighbors\@LevelChunk\@\@VChunkPos\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI class LevelChunk::Neighbors _getChunkNeighbors(class ChunkPos, class AutomaticID<class Dimension, int>);
+    MCAPI class LevelChunk::Neighbors _getChunkNeighbors(class ChunkPos, DimensionType);
     /**
      * @symbol
      * ?_getLevelChunkFormat\@DBChunkStorage\@\@AEAA?AV?$optional\@W4LevelChunkFormat\@\@\@std\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@3\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z

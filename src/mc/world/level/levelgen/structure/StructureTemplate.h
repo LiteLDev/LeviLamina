@@ -176,8 +176,8 @@ public:
         class Vec3 const&,
         enum class Rotation,
         enum class Mirror,
-        float        integrityValue,
-        unsigned int integritySeed,
+        float    integrityValue,
+        uint32_t integritySeed,
         class StructureTelemetryServerData*,
         bool updateItemData,
         bool ignoreJigsawBlocks

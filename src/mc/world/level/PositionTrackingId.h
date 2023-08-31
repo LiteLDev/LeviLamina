@@ -51,6 +51,6 @@ protected:
     /**
      * @symbol ?sNextId\@PositionTrackingId\@\@1IA
      */
-    MCAPI static unsigned int sNextId;
+    MCAPI static uint32_t sNextId;
     // NOLINTEND
 };

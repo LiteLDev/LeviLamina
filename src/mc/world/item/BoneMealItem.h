@@ -82,7 +82,7 @@ public:
      * @vftbl 67
      * @symbol ?isValidAuxValue\@BoneMealItem\@\@UEBA_NH\@Z
      */
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
     /**
      * @vftbl 70
      * @symbol __unk_vfn_70
@@ -134,11 +134,11 @@ public:
      * @symbol
      * ?setIconInfo\@BoneMealItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    virtual class Item& setIconInfo(std::string const&, int);
+    virtual class Item& setIconInfo(std::string const&, int32_t);
     /**
      * @symbol
      * ??0BoneMealItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
-    MCAPI BoneMealItem(std::string const&, int, bool);
+    MCAPI BoneMealItem(std::string const&, int32_t, bool);
     // NOLINTEND
 };

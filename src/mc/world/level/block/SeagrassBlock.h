@@ -147,7 +147,7 @@ public:
      * @vftbl 57
      * @symbol ?isValidAuxValue\@SeagrassBlock\@\@UEBA_NH\@Z
      */
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
@@ -234,12 +234,12 @@ public:
      * @vftbl 135
      * @symbol ?getColor\@SeagrassBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getColor(class Block const&) const;
+    virtual int32_t getColor(class Block const&) const;
     /**
      * @vftbl 136
      * @symbol ?getColor\@SeagrassBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual int32_t getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -304,7 +304,7 @@ public:
      * @vftbl 186
      * @symbol ?getResourceCount\@SeagrassBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEAGRASSBLOCK
     /**
      * @symbol ?canBeSilkTouched\@SeagrassBlock\@\@MEBA_NXZ
@@ -319,7 +319,7 @@ public:
      * @symbol
      * ??0SeagrassBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI SeagrassBlock(std::string const&, int);
+    MCAPI SeagrassBlock(std::string const&, int32_t);
     /**
      * @symbol ?trySpawnSeaGrass\@SeagrassBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */

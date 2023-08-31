@@ -15,23 +15,23 @@ public:
     /**
      * @symbol ?getCountToPickUp\@ShareableComponent\@\@QEBAHAEBVActor\@\@AEBVItemStack\@\@\@Z
      */
-    MCAPI int getCountToPickUp(class Actor const&, class ItemStack const&) const;
+    MCAPI int32_t getCountToPickUp(class Actor const&, class ItemStack const&) const;
     /**
      * @symbol ?getCountToPickUp\@ShareableComponent\@\@QEBAHAEBVActor\@\@AEBVItemActor\@\@\@Z
      */
-    MCAPI int getCountToPickUp(class Actor const&, class ItemActor const&) const;
+    MCAPI int32_t getCountToPickUp(class Actor const&, class ItemActor const&) const;
     /**
      * @symbol ?getSlotToSwap\@ShareableComponent\@\@QEBAHAEAVActor\@\@AEBVItemActor\@\@\@Z
      */
-    MCAPI int getSlotToSwap(class Actor&, class ItemActor const&) const;
+    MCAPI int32_t getSlotToSwap(class Actor&, class ItemActor const&) const;
     /**
      * @symbol ?hasSurplus\@ShareableComponent\@\@QEBAHAEAVActor\@\@AEBVItemStack\@\@AEAV3\@_N\@Z
      */
-    MCAPI int hasSurplus(class Actor&, class ItemStack const&, class ItemStack&, bool) const;
+    MCAPI int32_t hasSurplus(class Actor&, class ItemStack const&, class ItemStack&, bool) const;
     /**
      * @symbol ?hasSurplus\@ShareableComponent\@\@QEBAHAEAVActor\@\@AEBVItemStack\@\@_N\@Z
      */
-    MCAPI int hasSurplus(class Actor&, class ItemStack const&, bool) const;
+    MCAPI int32_t hasSurplus(class Actor&, class ItemStack const&, bool) const;
     /**
      * @symbol ?itemBelongsInInventory\@ShareableComponent\@\@QEBA_NAEAVActor\@\@AEBVItemStack\@\@_N\@Z
      */
@@ -39,7 +39,7 @@ public:
     /**
      * @symbol ?wantsMore\@ShareableComponent\@\@QEBAHAEBVActor\@\@AEBVItemStack\@\@\@Z
      */
-    MCAPI int wantsMore(class Actor const&, class ItemStack const&) const;
+    MCAPI int32_t wantsMore(class Actor const&, class ItemStack const&) const;
     /**
      * @symbol ?willPickup\@ShareableComponent\@\@QEBA_NAEAVActor\@\@AEBVItemStack\@\@_N2\@Z
      */
@@ -51,7 +51,7 @@ public:
     /**
      * @symbol ?_getItemPriority\@ShareableComponent\@\@AEBAHAEBVShareableDefinition\@\@AEBVItemStack\@\@\@Z
      */
-    MCAPI int _getItemPriority(class ShareableDefinition const&, class ItemStack const&) const;
+    MCAPI int32_t _getItemPriority(class ShareableDefinition const&, class ItemStack const&) const;
     /**
      * @symbol ?_shouldReplaceItem\@ShareableComponent\@\@AEBA_NAEBVItemStack\@\@0AEBVShareableDefinition\@\@_N\@Z
      */

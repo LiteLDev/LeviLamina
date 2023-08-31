@@ -93,7 +93,7 @@ public:
     /**
      * @symbol ?SleepForMicroseconds\@LevelDbEnv\@\@UEAAXH\@Z
      */
-    MCVAPI void SleepForMicroseconds(int);
+    MCVAPI void SleepForMicroseconds(int32_t);
     /**
      * @symbol ?StartThread\@LevelDbEnv\@\@UEAAXP6AXPEAX\@Z0\@Z
      */

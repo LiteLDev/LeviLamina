@@ -28,7 +28,7 @@ public:
     /**
      * @symbol ?getAmplifier\@ScriptMobEffectInstance\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getAmplifier() const;
+    MCAPI class Scripting::Result<int32_t> getAmplifier() const;
     /**
      * @symbol
      * ?getDisplayName\@ScriptMobEffectInstance\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@XZ
@@ -42,7 +42,7 @@ public:
     /**
      * @symbol ?getDuration\@ScriptMobEffectInstance\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getDuration() const;
+    MCAPI class Scripting::Result<int32_t> getDuration() const;
     /**
      * @symbol
      * ?getTypeId\@ScriptMobEffectInstance\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@XZ
@@ -63,7 +63,7 @@ public:
      * ?getHandle\@ScriptMobEffectInstance\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptMobEffectInstance\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBVActor\@\@IAEBVWeakLifetimeScope\@4\@\@Z
      */
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMobEffectInstance>
-    getHandle(class Actor const&, unsigned int, class Scripting::WeakLifetimeScope const&);
+    getHandle(class Actor const&, uint32_t, class Scripting::WeakLifetimeScope const&);
     // NOLINTEND
 };
 

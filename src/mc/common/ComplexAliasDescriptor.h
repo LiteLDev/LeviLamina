@@ -11,7 +11,7 @@
 namespace Json { class Value; }
 // clang-format on
 
-struct ComplexAliasDescriptor {
+struct ComplexAliasDescriptor : public ::ItemDescriptor::BaseDescriptor {
 
 public:
     // prevent constructor by default
@@ -52,7 +52,7 @@ public:
      * @vftbl 5
      * @symbol ?forEachItemUntil\@ComplexAliasDescriptor\@\@UEBA_NV?$function\@$$A6A_NAEBVItem\@\@F\@Z\@std\@\@\@Z
      */
-    virtual bool forEachItemUntil(std::function<bool(class Item const&, short)>) const;
+    virtual bool forEachItemUntil(std::function<bool(class Item const&, int16_t)>) const;
     /**
      * @vftbl 6
      * @symbol

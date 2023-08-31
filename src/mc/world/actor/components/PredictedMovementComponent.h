@@ -52,7 +52,7 @@ public:
         /**
          * @symbol ?mSequenceIdGenerator\@HistoryTimestampData\@PredictedMovementComponent\@\@0IA
          */
-        MCAPI static unsigned int mSequenceIdGenerator;
+        MCAPI static uint32_t mSequenceIdGenerator;
         // NOLINTEND
     };
 
@@ -99,7 +99,7 @@ public:
             /**
              * @symbol ?mMaxTicks\@LerpedInterval\@RuntimePredictionData\@PredictedMovementComponent\@\@0IB
              */
-            MCAPI static unsigned int const mMaxTicks;
+            MCAPI static uint32_t const mMaxTicks;
             // NOLINTEND
         };
 
@@ -179,7 +179,7 @@ private:
     /**
      * @symbol ?LERP_STEP_SIZE\@PredictedMovementComponent\@\@0IB
      */
-    MCAPI static unsigned int const LERP_STEP_SIZE;
+    MCAPI static uint32_t const LERP_STEP_SIZE;
     /**
      * @symbol
      * ?mGlobalRuntimePredictionData\@PredictedMovementComponent\@\@0V?$unique_ptr\@URuntimePredictionData\@PredictedMovementComponent\@\@U?$default_delete\@URuntimePredictionData\@PredictedMovementComponent\@\@\@std\@\@\@std\@\@A

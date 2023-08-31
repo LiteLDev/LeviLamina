@@ -13,6 +13,7 @@ class BlockActor;
 class BlockPos;
 class BlockSource;
 namespace ScriptModuleMinecraft { class ScriptBlock; }
+namespace ScriptModuleMinecraft { class ScriptComponent; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 

@@ -28,6 +28,6 @@ public:
     /**
      * @symbol ??0DiscFeature\@\@QEAA\@AEBVBlock\@\@H\@Z
      */
-    MCAPI DiscFeature(class Block const&, int);
+    MCAPI DiscFeature(class Block const&, int32_t);
     // NOLINTEND
 };

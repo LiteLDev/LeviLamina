@@ -258,7 +258,7 @@ public:
     /**
      * @symbol ??0MudBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI MudBlock(std::string const&, int);
+    MCAPI MudBlock(std::string const&, int32_t);
     /**
      * @symbol ?BLOCK_AABB\@MudBlock\@\@2VAABB\@\@A
      */

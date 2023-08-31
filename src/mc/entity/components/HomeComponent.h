@@ -25,7 +25,7 @@ public:
     /**
      * @symbol ?getHomeDimension\@HomeComponent\@\@QEBA?AV?$AutomaticID\@VDimension\@\@H\@\@XZ
      */
-    MCAPI class AutomaticID<class Dimension, int> getHomeDimension() const;
+    MCAPI DimensionType getHomeDimension() const;
     /**
      * @symbol ?getHomePos\@HomeComponent\@\@QEBA?AVBlockPos\@\@XZ
      */
@@ -33,7 +33,7 @@ public:
     /**
      * @symbol ?getRestrictionRadius\@HomeComponent\@\@QEBAHXZ
      */
-    MCAPI int getRestrictionRadius() const;
+    MCAPI int32_t getRestrictionRadius() const;
     /**
      * @symbol ?hasRestriction\@HomeComponent\@\@QEBA_NXZ
      */
@@ -57,7 +57,7 @@ public:
     /**
      * @symbol ?setHome\@HomeComponent\@\@QEAAXAEBVBlockPos\@\@AEBV?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI void setHome(class BlockPos const&, class AutomaticID<class Dimension, int> const&);
+    MCAPI void setHome(class BlockPos const&, DimensionType const&);
     /**
      * @symbol ?tick\@HomeComponent\@\@QEAAXAEAVActor\@\@\@Z
      */

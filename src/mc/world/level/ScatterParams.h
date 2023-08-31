@@ -52,7 +52,7 @@ public:
         /**
          * @symbol ?_eval\@CoordinateRange\@ScatterParams\@\@QEBAHHHAEAIAEAVRandom\@\@\@Z
          */
-        MCAPI int _eval(int, int, unsigned int&, class Random&) const;
+        MCAPI int32_t _eval(int32_t, int32_t, uint32_t&, class Random&) const;
         /**
          * @symbol ??1CoordinateRange\@ScatterParams\@\@QEAA\@XZ
          */
@@ -118,7 +118,7 @@ public:
     /**
      * @symbol ?_getPos\@ScatterParams\@\@AEBA?AVBlockPos\@\@IAEBV2\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */
-    MCAPI class BlockPos _getPos(unsigned int, class BlockPos const&, class Random&, class RenderParams&) const;
+    MCAPI class BlockPos _getPos(uint32_t, class BlockPos const&, class Random&, class RenderParams&) const;
     /**
      * @symbol
      * ?_parseExpressionNodeFloat\@ScatterParams\@\@AEAAXAEBVCompoundTag\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1AEAVExpressionNode\@\@M\@Z

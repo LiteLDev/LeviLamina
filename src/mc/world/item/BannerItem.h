@@ -83,7 +83,7 @@ public:
      * @vftbl 67
      * @symbol ?isValidAuxValue\@BannerItem\@\@UEBA_NH\@Z
      */
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
     /**
      * @vftbl 70
      * @symbol __unk_vfn_70
@@ -136,11 +136,11 @@ public:
      * ?_useOn\@BannerItem\@\@UEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _useOn(class ItemStack&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
     /**
      * @symbol ??0BannerItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI BannerItem(std::string const&, int);
+    MCAPI BannerItem(std::string const&, int32_t);
     /**
      * @symbol
      * ?getPatternAndColorPairsFromItemStack\@BannerItem\@\@SA?AV?$vector\@U?$pair\@V?$not_null\@PEBVBannerPattern\@\@\@gsl\@\@W4ItemColor\@\@\@std\@\@V?$allocator\@U?$pair\@V?$not_null\@PEBVBannerPattern\@\@\@gsl\@\@W4ItemColor\@\@\@std\@\@\@2\@\@std\@\@AEBVItemStackBase\@\@\@Z

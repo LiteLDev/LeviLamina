@@ -145,12 +145,12 @@ public:
      * @vftbl 66
      * @symbol ?shouldConnectToRedstone\@RedstoneLampBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 75
      * @symbol ?onRedstoneUpdate\@RedstoneLampBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
-    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int32_t, bool) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -255,7 +255,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@RedstoneLampBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@RedstoneLampBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -265,6 +265,6 @@ public:
      * @symbol
      * ??0RedstoneLampBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
-    MCAPI RedstoneLampBlock(std::string const&, int, bool);
+    MCAPI RedstoneLampBlock(std::string const&, int32_t, bool);
     // NOLINTEND
 };

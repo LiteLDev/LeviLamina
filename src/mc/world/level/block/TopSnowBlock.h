@@ -229,7 +229,7 @@ public:
      * @symbol ?getPlacementBlock\@TopSnowBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 114
      * @symbol ?canBeBuiltOver\@TopSnowBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlockItem\@\@\@Z
@@ -339,12 +339,12 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@TopSnowBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 186
      * @symbol ?getResourceCount\@TopSnowBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 192
      * @symbol ?getDustColor\@TopSnowBlock\@\@UEBA?AVColor\@mce\@\@AEBVBlock\@\@\@Z
@@ -392,7 +392,7 @@ public:
     /**
      * @symbol ??0TopSnowBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI TopSnowBlock(std::string const&, int);
+    MCAPI TopSnowBlock(std::string const&, int32_t);
     /**
      * @symbol ?getResourceItemFromFalling\@TopSnowBlock\@\@QEBA?AVItemInstance\@\@XZ
      */
@@ -400,7 +400,7 @@ public:
     /**
      * @symbol ?melt\@TopSnowBlock\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    MCAPI bool melt(class BlockSource&, class BlockPos const&, int) const;
+    MCAPI bool melt(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @symbol ?startFallingIfLostSupport\@TopSnowBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -408,7 +408,7 @@ public:
     /**
      * @symbol ?buildSnowBlock\@TopSnowBlock\@\@SAAEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
-    MCAPI static class Block const& buildSnowBlock(class BlockSource&, class BlockPos const&, int, bool);
+    MCAPI static class Block const& buildSnowBlock(class BlockSource&, class BlockPos const&, int32_t, bool);
     /**
      * @symbol ?getCoveredBlock\@TopSnowBlock\@\@SAAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -416,7 +416,7 @@ public:
     /**
      * @symbol ?getSnowBlockToBuild\@TopSnowBlock\@\@SAAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
-    MCAPI static class Block const& getSnowBlockToBuild(class BlockSource const&, class BlockPos const&, int, bool);
+    MCAPI static class Block const& getSnowBlockToBuild(class BlockSource const&, class BlockPos const&, int32_t, bool);
     // NOLINTEND
 
     // private:

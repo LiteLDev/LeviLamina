@@ -12,6 +12,7 @@
 // clang-format off
 namespace Core { class FileOpenMode; }
 namespace Core { class IFile; }
+namespace Core { class IFileSystem; }
 namespace Core { class Path; }
 namespace Core { class Result; }
 namespace Core { struct DirectoryIterationItem; }

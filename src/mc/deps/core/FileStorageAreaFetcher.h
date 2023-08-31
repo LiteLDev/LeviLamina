@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Core { class FileStorageArea; }
+namespace Core { class IFileStorageAreaFetcher; }
 namespace Core { class Path; }
 namespace Core { class Result; }
 // clang-format on

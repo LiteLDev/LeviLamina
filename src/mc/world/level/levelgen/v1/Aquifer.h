@@ -36,9 +36,9 @@ public:
         class AquiferNoises const&,
         struct OverworldNoises3d const&,
         class SurfaceLevelCache const&,
-        int,
-        int,
-        int
+        int32_t,
+        int32_t,
+        int32_t
     );
     /**
      * @symbol ?computeAt\@Aquifer\@\@QEAAXAEBVBlockPos\@\@\@Z
@@ -55,7 +55,7 @@ public:
     /**
      * @symbol ?getLastFluidLevel\@Aquifer\@\@QEBAHXZ
      */
-    MCAPI int getLastFluidLevel() const;
+    MCAPI int32_t getLastFluidLevel() const;
     /**
      * @symbol ?shouldScheduleFluidUpdate\@Aquifer\@\@QEBA_NXZ
      */
@@ -75,6 +75,6 @@ private:
     /**
      * @symbol ?chunkOffset\@Aquifer\@\@0V?$array\@U?$pair\@HH\@std\@\@$0N\@\@std\@\@B
      */
-    MCAPI static std::array<std::pair<int, int>, 13> const chunkOffset;
+    MCAPI static std::array<std::pair<int32_t, int32_t>, 13> const chunkOffset;
     // NOLINTEND
 };

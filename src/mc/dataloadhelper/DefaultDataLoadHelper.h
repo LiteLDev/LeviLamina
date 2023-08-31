@@ -61,7 +61,7 @@ public:
      * @vftbl 8
      * @symbol ?loadFacingID\@DefaultDataLoadHelper\@\@UEAAEE\@Z
      */
-    virtual unsigned char loadFacingID(unsigned char);
+    virtual unsigned char loadFacingID(uint8_t);
     /**
      * @vftbl 9
      * @symbol ?loadDirection\@DefaultDataLoadHelper\@\@UEAA?AVVec3\@\@AEBV2\@\@Z

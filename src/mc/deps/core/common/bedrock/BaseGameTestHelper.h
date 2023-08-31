@@ -22,6 +22,7 @@ class ItemStack;
 class Mob;
 class SimulatedPlayer;
 class Vec3;
+namespace Bedrock { class EnableNonOwnerReferences; }
 namespace ScriptModuleGameTest { class ScriptGameTestConnectivity; }
 namespace gametest { class BaseGameTestInstance; }
 namespace gametest { class GameTestSequence; }
@@ -50,7 +51,7 @@ public:
      * @vftbl 1
      * @symbol ?succeedWhenEntityPresent\@MinecraftGameTestHelper\@\@UEAAXAEBUActorDefinitionIdentifier\@\@HHH_N\@Z
      */
-    virtual void succeedWhenEntityPresent(struct ActorDefinitionIdentifier const&, int, int, int, bool) = 0;
+    virtual void succeedWhenEntityPresent(struct ActorDefinitionIdentifier const&, int32_t, int32_t, int32_t, bool) = 0;
     /**
      * @vftbl 2
      * @symbol
@@ -79,7 +80,7 @@ public:
      * @vftbl 5
      * @symbol ?succeedWhenBlockPresent\@MinecraftGameTestHelper\@\@UEAAXAEBVBlock\@\@HHH_N\@Z
      */
-    virtual void succeedWhenBlockPresent(class Block const&, int, int, int, bool) = 0;
+    virtual void succeedWhenBlockPresent(class Block const&, int32_t, int32_t, int32_t, bool) = 0;
     /**
      * @vftbl 6
      * @symbol ?succeedWhenBlockPresent\@MinecraftGameTestHelper\@\@UEAAXAEBVBlock\@\@AEBVBlockPos\@\@_N\@Z
@@ -99,19 +100,21 @@ public:
      * @vftbl 9
      * @symbol ?setDayTime\@MinecraftGameTestHelper\@\@UEAAXH\@Z
      */
-    virtual void setDayTime(int) = 0;
+    virtual void setDayTime(int32_t) = 0;
     /**
      * @vftbl 10
      * @symbol
      * ?setBlock\@MinecraftGameTestHelper\@\@UEAA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@HHHAEBVBlock\@\@H\@Z
      */
-    virtual std::optional<struct gametest::GameTestError> setBlock(int, int, int, class Block const&, int) = 0;
+    virtual std::optional<struct gametest::GameTestError>
+    setBlock(int32_t, int32_t, int32_t, class Block const&, int32_t) = 0;
     /**
      * @vftbl 11
      * @symbol
      * ?setBlock\@MinecraftGameTestHelper\@\@UEAA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@AEBVBlockPos\@\@AEBVBlock\@\@H\@Z
      */
-    virtual std::optional<struct gametest::GameTestError> setBlock(class BlockPos const&, class Block const&, int) = 0;
+    virtual std::optional<struct gametest::GameTestError>
+    setBlock(class BlockPos const&, class Block const&, int32_t) = 0;
     /**
      * @vftbl 12
      * @symbol
@@ -122,7 +125,7 @@ public:
      * @vftbl 13
      * @symbol ?pressButton\@MinecraftGameTestHelper\@\@UEAA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@HHH\@Z
      */
-    virtual std::optional<struct gametest::GameTestError> pressButton(int, int, int) = 0;
+    virtual std::optional<struct gametest::GameTestError> pressButton(int32_t, int32_t, int32_t) = 0;
     /**
      * @vftbl 14
      * @symbol
@@ -133,7 +136,7 @@ public:
      * @vftbl 15
      * @symbol ?pullLever\@MinecraftGameTestHelper\@\@UEAA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@HHH\@Z
      */
-    virtual std::optional<struct gametest::GameTestError> pullLever(int, int, int) = 0;
+    virtual std::optional<struct gametest::GameTestError> pullLever(int32_t, int32_t, int32_t) = 0;
     /**
      * @vftbl 16
      * @symbol
@@ -151,7 +154,7 @@ public:
      * ?spawn\@MinecraftGameTestHelper\@\@UEAA?AV?$variant\@UGameTestError\@gametest\@\@PEAVActor\@\@\@std\@\@AEBUActorDefinitionIdentifier\@\@HHH\@Z
      */
     virtual std::variant<struct gametest::GameTestError, class Actor*>
-    spawn(struct ActorDefinitionIdentifier const&, int, int, int) = 0;
+    spawn(struct ActorDefinitionIdentifier const&, int32_t, int32_t, int32_t) = 0;
     /**
      * @vftbl 19
      * @symbol
@@ -204,7 +207,7 @@ public:
      * @symbol
      * ?setTntFuse\@MinecraftGameTestHelper\@\@UEAA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@AEAVActor\@\@H\@Z
      */
-    virtual std::optional<struct gametest::GameTestError> setTntFuse(class Actor&, int) = 0;
+    virtual std::optional<struct gametest::GameTestError> setTntFuse(class Actor&, int32_t) = 0;
     /**
      * @vftbl 27
      * @symbol
@@ -218,7 +221,7 @@ public:
      * ?assertEntityPresent\@MinecraftGameTestHelper\@\@UEAA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@AEBUActorDefinitionIdentifier\@\@HHH_N\@Z
      */
     virtual std::optional<struct gametest::GameTestError>
-    assertEntityPresent(struct ActorDefinitionIdentifier const&, int, int, int, bool) = 0;
+    assertEntityPresent(struct ActorDefinitionIdentifier const&, int32_t, int32_t, int32_t, bool) = 0;
     /**
      * @vftbl 29
      * @symbol
@@ -267,7 +270,7 @@ public:
      * ?assertBlockPresent\@MinecraftGameTestHelper\@\@UEAA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@AEBVBlockLegacy\@\@HHH_N\@Z
      */
     virtual std::optional<struct gametest::GameTestError>
-    assertBlockPresent(class BlockLegacy const&, int, int, int, bool) = 0;
+    assertBlockPresent(class BlockLegacy const&, int32_t, int32_t, int32_t, bool) = 0;
     /**
      * @vftbl 36
      * @symbol
@@ -288,7 +291,7 @@ public:
      * ?assertItemEntityPresent\@MinecraftGameTestHelper\@\@UEAA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@AEBVItem\@\@HHHM_N\@Z
      */
     virtual std::optional<struct gametest::GameTestError>
-    assertItemEntityPresent(class Item const&, int, int, int, float, bool) = 0;
+    assertItemEntityPresent(class Item const&, int32_t, int32_t, int32_t, float, bool) = 0;
     /**
      * @vftbl 39
      * @symbol
@@ -302,7 +305,7 @@ public:
      * ?assertItemEntityCountIs\@MinecraftGameTestHelper\@\@UEAA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@AEBVItem\@\@AEBVBlockPos\@\@MH\@Z
      */
     virtual std::optional<struct gametest::GameTestError>
-    assertItemEntityCountIs(class Item const&, class BlockPos const&, float, int) = 0;
+    assertItemEntityCountIs(class Item const&, class BlockPos const&, float, int32_t) = 0;
     /**
      * @vftbl 41
      * @symbol
@@ -336,7 +339,7 @@ public:
         struct ActorDefinitionIdentifier const&,
         enum class ArmorSlot,
         std::string const&,
-        int,
+        int32_t,
         class BlockPos const&,
         bool
     ) = 0;
@@ -351,7 +354,7 @@ public:
      * @symbol
      * ?assertRedstonePower\@MinecraftGameTestHelper\@\@UEAA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual std::optional<struct gametest::GameTestError> assertRedstonePower(class BlockPos const&, int) = 0;
+    virtual std::optional<struct gametest::GameTestError> assertRedstonePower(class BlockPos const&, int32_t) = 0;
     /**
      * @vftbl 47
      * @symbol
@@ -363,7 +366,7 @@ public:
      * @symbol
      * ?pulseRedstone\@MinecraftGameTestHelper\@\@UEAA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual std::optional<struct gametest::GameTestError> pulseRedstone(class BlockPos const&, int) = 0;
+    virtual std::optional<struct gametest::GameTestError> pulseRedstone(class BlockPos const&, int32_t) = 0;
     /**
      * @vftbl 49
      * @symbol
@@ -401,7 +404,7 @@ public:
      * @symbol
      * ?setFluidContainer\@MinecraftGameTestHelper\@\@UEAA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual std::optional<struct gametest::GameTestError> setFluidContainer(class BlockPos const&, int) = 0;
+    virtual std::optional<struct gametest::GameTestError> setFluidContainer(class BlockPos const&, int32_t) = 0;
     /**
      * @vftbl 55
      * @symbol
@@ -455,7 +458,7 @@ public:
      * @symbol
      * ?onPlayerJump\@MinecraftGameTestHelper\@\@UEAA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@AEAVMob\@\@H\@Z
      */
-    virtual std::optional<struct gametest::GameTestError> onPlayerJump(class Mob&, int) = 0;
+    virtual std::optional<struct gametest::GameTestError> onPlayerJump(class Mob&, int32_t) = 0;
     /**
      * @symbol ??0BaseGameTestHelper\@gametest\@\@QEAA\@AEAVBaseGameTestInstance\@1\@\@Z
      */
@@ -490,7 +493,7 @@ public:
     /**
      * @symbol ?getTestDirection\@BaseGameTestHelper\@gametest\@\@QEBAEXZ
      */
-    MCAPI unsigned char getTestDirection() const;
+    MCAPI uint8_t getTestDirection() const;
     /**
      * @symbol ?getTestRotationAngle\@BaseGameTestHelper\@gametest\@\@QEBAMXZ
      */
@@ -499,7 +502,7 @@ public:
      * @symbol
      * ?rotateDirection\@BaseGameTestHelper\@gametest\@\@QEBA?AV?$variant\@UGameTestError\@gametest\@\@E\@std\@\@E\@Z
      */
-    MCAPI std::variant<struct gametest::GameTestError, unsigned char> rotateDirection(unsigned char) const;
+    MCAPI std::variant<struct gametest::GameTestError, uint8_t> rotateDirection(uint8_t) const;
     /**
      * @symbol
      * ?rotateVector\@BaseGameTestHelper\@gametest\@\@QEBA?AV?$variant\@UGameTestError\@gametest\@\@VVec3\@\@\@std\@\@AEBVVec3\@\@\@Z
@@ -509,12 +512,12 @@ public:
      * @symbol
      * ?runAfterDelay\@BaseGameTestHelper\@gametest\@\@QEAAXHV?$function\@$$A6A?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@XZ\@std\@\@\@Z
      */
-    MCAPI void runAfterDelay(int, std::function<std::optional<struct gametest::GameTestError>(void)>);
+    MCAPI void runAfterDelay(int32_t, std::function<std::optional<struct gametest::GameTestError>(void)>);
     /**
      * @symbol
      * ?runAtTickTime\@BaseGameTestHelper\@gametest\@\@QEAAXHV?$function\@$$A6A?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@XZ\@std\@\@\@Z
      */
-    MCAPI void runAtTickTime(int, std::function<std::optional<struct gametest::GameTestError>(void)>);
+    MCAPI void runAtTickTime(int32_t, std::function<std::optional<struct gametest::GameTestError>(void)>);
     /**
      * @symbol ?startSequence\@BaseGameTestHelper\@gametest\@\@QEAAAEAVGameTestSequence\@2\@XZ
      */
@@ -531,12 +534,12 @@ public:
     /**
      * @symbol ?succeedOnTick\@BaseGameTestHelper\@gametest\@\@QEAAXH\@Z
      */
-    MCAPI void succeedOnTick(int);
+    MCAPI void succeedOnTick(int32_t);
     /**
      * @symbol
      * ?succeedOnTickWhen\@BaseGameTestHelper\@gametest\@\@QEAAXHV?$function\@$$A6A?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@XZ\@std\@\@\@Z
      */
-    MCAPI void succeedOnTickWhen(int, std::function<std::optional<struct gametest::GameTestError>(void)>);
+    MCAPI void succeedOnTickWhen(int32_t, std::function<std::optional<struct gametest::GameTestError>(void)>);
     /**
      * @symbol
      * ?succeedWhen\@BaseGameTestHelper\@gametest\@\@QEAAXV?$function\@$$A6A?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@XZ\@std\@\@\@Z

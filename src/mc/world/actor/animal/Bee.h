@@ -107,7 +107,7 @@ public:
      * @vftbl 173
      * @symbol ?onSynchedDataUpdate\@Bee\@\@UEAAXH\@Z
      */
-    virtual void onSynchedDataUpdate(int);
+    virtual void onSynchedDataUpdate(int32_t);
     /**
      * @vftbl 178
      * @symbol __unk_vfn_178

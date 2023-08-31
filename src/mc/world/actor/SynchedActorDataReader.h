@@ -18,11 +18,11 @@ public:
     /**
      * @symbol ?getInt\@SynchedActorDataReader\@\@QEBAHG\@Z
      */
-    MCAPI int getInt(unsigned short) const;
+    MCAPI int32_t getInt(uint16_t) const;
     /**
      * @symbol ?getPosition\@SynchedActorDataReader\@\@QEBA?AVBlockPos\@\@G\@Z
      */
-    MCAPI class BlockPos getPosition(unsigned short) const;
+    MCAPI class BlockPos getPosition(uint16_t) const;
     /**
      * @symbol ?getStatusFlag\@SynchedActorDataReader\@\@QEBA_NW4ActorFlags\@\@\@Z
      */
@@ -30,6 +30,6 @@ public:
     /**
      * @symbol ?getVec3\@SynchedActorDataReader\@\@QEBA?AVVec3\@\@G\@Z
      */
-    MCAPI class Vec3 getVec3(unsigned short) const;
+    MCAPI class Vec3 getVec3(uint16_t) const;
     // NOLINTEND
 };

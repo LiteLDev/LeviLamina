@@ -34,21 +34,21 @@ public:
     /**
      * @symbol ??0MobEffectInstance\@\@QEAA\@IHH\@Z
      */
-    MCAPI MobEffectInstance(unsigned int type, int duration, int amplifier);
+    MCAPI MobEffectInstance(uint32_t type, int32_t duration, int32_t amplifier);
     /**
      * @symbol ??0MobEffectInstance\@\@QEAA\@IHHHHH_N00\@Z
      */
-    MCAPI MobEffectInstance(unsigned int, int, int, int, int, int, bool, bool, bool);
+    MCAPI MobEffectInstance(uint32_t, int32_t, int32_t, int32_t, int32_t, int32_t, bool, bool, bool);
     /**
      * @symbol ??0MobEffectInstance\@\@QEAA\@IHH_N00\@Z
      */
     MCAPI MobEffectInstance(
-        unsigned int type,
-        int          duration,
-        int          amplifier,
-        bool         ambient,
-        bool         showParticles,
-        bool         showAnimation
+        uint32_t type,
+        int32_t  duration,
+        int32_t  amplifier,
+        bool     ambient,
+        bool     showParticles,
+        bool     showAnimation
     );
     /**
      * @symbol ??0MobEffectInstance\@\@QEAA\@AEBV0\@\@Z
@@ -57,11 +57,11 @@ public:
     /**
      * @symbol ??0MobEffectInstance\@\@QEAA\@IH\@Z
      */
-    MCAPI MobEffectInstance(unsigned int type, int duration);
+    MCAPI MobEffectInstance(uint32_t type, int32_t duration);
     /**
      * @symbol ??0MobEffectInstance\@\@QEAA\@I\@Z
      */
-    MCAPI MobEffectInstance(unsigned int type);
+    MCAPI MobEffectInstance(uint32_t type);
     /**
      * @symbol ??0MobEffectInstance\@\@QEAA\@$$QEAV0\@\@Z
      */
@@ -77,7 +77,7 @@ public:
     /**
      * @symbol ?getAmplifier\@MobEffectInstance\@\@QEBAHXZ
      */
-    MCAPI int getAmplifier() const;
+    MCAPI int32_t getAmplifier() const;
     /**
      * @symbol ?getComponentName\@MobEffectInstance\@\@QEBAAEBVHashedString\@\@XZ
      */
@@ -90,7 +90,7 @@ public:
     /**
      * @symbol ?getDifficulityDuration\@MobEffectInstance\@\@QEBAHW4Difficulty\@\@\@Z
      */
-    MCAPI int getDifficulityDuration(enum class Difficulty) const;
+    MCAPI int32_t getDifficulityDuration(enum class Difficulty) const;
     /**
      * @symbol
      * ?getDisplayName\@MobEffectInstance\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -99,19 +99,19 @@ public:
     /**
      * @symbol ?getDuration\@MobEffectInstance\@\@QEBAHXZ
      */
-    MCAPI int getDuration() const;
+    MCAPI int32_t getDuration() const;
     /**
      * @symbol ?getId\@MobEffectInstance\@\@QEBAIXZ
      */
-    MCAPI unsigned int getId() const;
+    MCAPI uint32_t getId() const;
     /**
      * @symbol ?getLingerDuration\@MobEffectInstance\@\@QEBAHXZ
      */
-    MCAPI int getLingerDuration() const;
+    MCAPI int32_t getLingerDuration() const;
     /**
      * @symbol ?getSplashDuration\@MobEffectInstance\@\@QEBAHXZ
      */
-    MCAPI int getSplashDuration() const;
+    MCAPI int32_t getSplashDuration() const;
     /**
      * @symbol ?getSplashEffect\@MobEffectInstance\@\@QEBA?AV1\@XZ
      */
@@ -152,11 +152,11 @@ public:
     /**
      * @symbol ?setDifficulityDuration\@MobEffectInstance\@\@QEAAXW4Difficulty\@\@H\@Z
      */
-    MCAPI void setDifficulityDuration(enum class Difficulty, int);
+    MCAPI void setDifficulityDuration(enum class Difficulty, int32_t);
     /**
      * @symbol ?setDuration\@MobEffectInstance\@\@QEAAXH\@Z
      */
-    MCAPI void setDuration(int);
+    MCAPI void setDuration(int32_t);
     /**
      * @symbol ?tick\@MobEffectInstance\@\@QEAA_NPEAVActor\@\@\@Z
      */
@@ -194,7 +194,7 @@ public:
     /**
      * @symbol ?MAX_AMPLIFIER_COUNT\@MobEffectInstance\@\@2HB
      */
-    MCAPI static int const MAX_AMPLIFIER_COUNT;
+    MCAPI static int32_t const MAX_AMPLIFIER_COUNT;
     /**
      * @symbol ?NO_EFFECT\@MobEffectInstance\@\@2V1\@B
      */

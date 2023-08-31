@@ -19,6 +19,7 @@ class Vec2;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace ScriptModuleMinecraft { struct ScriptNavigationResult; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace gametest { class BaseGameTestHelper; }
@@ -207,7 +208,8 @@ public:
      * @symbol
      * ?setItem\@ScriptSimulatedPlayer\@ScriptModuleGameTest\@\@QEBA?AV?$Result\@_N\@Scripting\@\@AEBVScriptItemStack\@ScriptModuleMinecraft\@\@H_N\@Z
      */
-    MCAPI class Scripting::Result<bool> setItem(class ScriptModuleMinecraft::ScriptItemStack const&, int, bool) const;
+    MCAPI class Scripting::Result<bool>
+    setItem(class ScriptModuleMinecraft::ScriptItemStack const&, int32_t, bool) const;
     /**
      * @symbol ?setSprinting\@ScriptSimulatedPlayer\@ScriptModuleGameTest\@\@QEBA?AV?$Result\@X\@Scripting\@\@_N\@Z
      */
@@ -256,13 +258,13 @@ public:
     /**
      * @symbol ?useItemInSlot\@ScriptSimulatedPlayer\@ScriptModuleGameTest\@\@QEBA?AV?$Result\@_N\@Scripting\@\@H\@Z
      */
-    MCAPI class Scripting::Result<bool> useItemInSlot(int) const;
+    MCAPI class Scripting::Result<bool> useItemInSlot(int32_t) const;
     /**
      * @symbol
      * ?useItemInSlotOnBlock\@ScriptSimulatedPlayer\@ScriptModuleGameTest\@\@QEBA?AV?$Result\@_N\@Scripting\@\@HAEBVVec3\@\@W4ScriptFacing\@ScriptModuleMinecraft\@\@V?$optional\@VVec3\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<bool>
-    useItemInSlotOnBlock(int, class Vec3 const&, enum class ScriptModuleMinecraft::ScriptFacing, std::optional<class Vec3>)
+    useItemInSlotOnBlock(int32_t, class Vec3 const&, enum class ScriptModuleMinecraft::ScriptFacing, std::optional<class Vec3>)
         const;
     /**
      * @symbol
@@ -290,7 +292,7 @@ public:
      * ?_toWorld\@ScriptSimulatedPlayer\@ScriptModuleGameTest\@\@CA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@AEAVSimulatedPlayer\@\@PEAVBlockPos\@\@PEAEPEAVVec3\@\@\@Z
      */
     MCAPI static std::optional<struct gametest::GameTestError>
-    _toWorld(class SimulatedPlayer&, class BlockPos*, unsigned char*, class Vec3*);
+    _toWorld(class SimulatedPlayer&, class BlockPos*, uint8_t*, class Vec3*);
     /**
      * @symbol
      * ?_worldToLocalNavigationResult\@ScriptSimulatedPlayer\@ScriptModuleGameTest\@\@CA?AUScriptNavigationResult\@ScriptModuleMinecraft\@\@AEAVSimulatedPlayer\@\@U34\@\@Z

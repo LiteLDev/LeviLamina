@@ -39,6 +39,6 @@ public:
     /**
      * @symbol ?_shootProjectile\@ShooterComponent\@\@AEAAXAEAVActor\@\@AEBUActorDefinitionIdentifier\@\@H\@Z
      */
-    MCAPI void _shootProjectile(class Actor&, struct ActorDefinitionIdentifier const&, int);
+    MCAPI void _shootProjectile(class Actor&, struct ActorDefinitionIdentifier const&, int32_t);
     // NOLINTEND
 };

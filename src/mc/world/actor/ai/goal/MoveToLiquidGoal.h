@@ -51,6 +51,6 @@ public:
     /**
      * @symbol ??0MoveToLiquidGoal\@\@QEAA\@AEAVMob\@\@MHHHW4MaterialType\@\@M\@Z
      */
-    MCAPI MoveToLiquidGoal(class Mob&, float, int, int, int, enum class MaterialType, float);
+    MCAPI MoveToLiquidGoal(class Mob&, float, int32_t, int32_t, int32_t, enum class MaterialType, float);
     // NOLINTEND
 };

@@ -42,14 +42,14 @@ public:
      * ?_placeLayerOfLeaves\@CherryTreeCanopy\@\@AEBAXAEAVIBlockWorldGenAPI\@\@AEAVRandom\@\@AEBVBlockPos\@\@HAEBVBlock\@\@HAEBUTreeParams\@TreeHelper\@\@\@Z
      */
     MCAPI void
-    _placeLayerOfLeaves(class IBlockWorldGenAPI&, class Random&, class BlockPos const&, int, class Block const&, int, struct TreeHelper::TreeParams const&)
+    _placeLayerOfLeaves(class IBlockWorldGenAPI&, class Random&, class BlockPos const&, int32_t, class Block const&, int32_t, struct TreeHelper::TreeParams const&)
         const;
     /**
      * @symbol
      * ?_placeLayerOfLeavesWithHangingLeavesBelow\@CherryTreeCanopy\@\@AEBAXAEAVIBlockWorldGenAPI\@\@AEAVRandom\@\@AEBVBlockPos\@\@HAEBVBlock\@\@HAEBUTreeParams\@TreeHelper\@\@\@Z
      */
     MCAPI void
-    _placeLayerOfLeavesWithHangingLeavesBelow(class IBlockWorldGenAPI&, class Random&, class BlockPos const&, int, class Block const&, int, struct TreeHelper::TreeParams const&)
+    _placeLayerOfLeavesWithHangingLeavesBelow(class IBlockWorldGenAPI&, class Random&, class BlockPos const&, int32_t, class Block const&, int32_t, struct TreeHelper::TreeParams const&)
         const;
     // NOLINTEND
 };

@@ -207,12 +207,12 @@ public:
      * @vftbl 135
      * @symbol ?getColor\@WaterlilyBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getColor(class Block const&) const;
+    virtual int32_t getColor(class Block const&) const;
     /**
      * @vftbl 137
      * @symbol ?getColorAtPos\@WaterlilyBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual int getColorAtPos(class BlockSource&, class BlockPos const&) const;
+    virtual int32_t getColorAtPos(class BlockSource&, class BlockPos const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -262,6 +262,6 @@ public:
      * @symbol
      * ??0WaterlilyBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI WaterlilyBlock(std::string const&, int);
+    MCAPI WaterlilyBlock(std::string const&, int32_t);
     // NOLINTEND
 };

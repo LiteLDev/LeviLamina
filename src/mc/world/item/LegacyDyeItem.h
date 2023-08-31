@@ -117,6 +117,6 @@ public:
      * @symbol
      * ??0LegacyDyeItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4ItemColor\@\@_N\@Z
      */
-    MCAPI LegacyDyeItem(std::string const&, int, enum class ItemColor, bool);
+    MCAPI LegacyDyeItem(std::string const&, int32_t, enum class ItemColor, bool);
     // NOLINTEND
 };

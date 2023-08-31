@@ -49,7 +49,7 @@ public:
     /**
      * @symbol ?getStrength\@CircuitSystem\@\@QEAAHAEBVBlockPos\@\@\@Z
      */
-    MCAPI int getStrength(class BlockPos const&);
+    MCAPI int32_t getStrength(class BlockPos const&);
     /**
      * @symbol ?invalidatePos\@CircuitSystem\@\@QEAAXAEBVBlockPos\@\@\@Z
      */
@@ -61,7 +61,7 @@ public:
     /**
      * @symbol ?isConnectionAllowed\@CircuitSystem\@\@QEAA_NAEAVBaseCircuitComponent\@\@AEBVBlockPos\@\@E_N\@Z
      */
-    MCAPI bool isConnectionAllowed(class BaseCircuitComponent&, class BlockPos const&, unsigned char, bool);
+    MCAPI bool isConnectionAllowed(class BaseCircuitComponent&, class BlockPos const&, uint8_t, bool);
     /**
      * @symbol ?preSetupPoweredBlocks\@CircuitSystem\@\@QEAAXAEBVChunkPos\@\@\@Z
      */
@@ -73,7 +73,7 @@ public:
     /**
      * @symbol ?setStrength\@CircuitSystem\@\@QEAAXAEBVBlockPos\@\@H\@Z
      */
-    MCAPI void setStrength(class BlockPos const&, int);
+    MCAPI void setStrength(class BlockPos const&, int32_t);
     /**
      * @symbol ?updateBlocks\@CircuitSystem\@\@QEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -91,7 +91,7 @@ public:
      * ?createComponent\@CircuitSystem\@\@AEAAPEAVBaseCircuitComponent\@\@AEBVBlockPos\@\@EV?$unique_ptr\@VBaseCircuitComponent\@\@U?$default_delete\@VBaseCircuitComponent\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI class BaseCircuitComponent*
-    createComponent(class BlockPos const&, unsigned char, std::unique_ptr<class BaseCircuitComponent>);
+    createComponent(class BlockPos const&, uint8_t, std::unique_ptr<class BaseCircuitComponent>);
     /**
      * @symbol ?evaluateComponents\@CircuitSystem\@\@AEAAX_N\@Z
      */

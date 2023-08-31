@@ -24,17 +24,17 @@ public:
      * @vftbl 2
      * @symbol ?getMinCost\@SwimEnchant\@\@UEBAHH\@Z
      */
-    virtual int getMinCost(int) const;
+    virtual int32_t getMinCost(int32_t) const;
     /**
      * @vftbl 3
      * @symbol ?getMaxCost\@SwimEnchant\@\@UEBAHH\@Z
      */
-    virtual int getMaxCost(int) const;
+    virtual int32_t getMaxCost(int32_t) const;
     /**
      * @vftbl 5
      * @symbol ?getMaxLevel\@SwimEnchant\@\@UEBAHXZ
      */
-    virtual int getMaxLevel() const;
+    virtual int32_t getMaxLevel() const;
     /**
      * @vftbl 10
      * @symbol __unk_vfn_10
@@ -64,8 +64,14 @@ public:
      * @symbol
      * ??0SwimEnchant\@\@QEAA\@W4Type\@Enchant\@\@W4Frequency\@2\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@2HH\@Z
      */
-    MCAPI
-    SwimEnchant(enum class Enchant::Type, enum class Enchant::Frequency, std::string_view, std::string_view, int, int);
+    MCAPI SwimEnchant(
+        enum class Enchant::Type,
+        enum class Enchant::Frequency,
+        std::string_view,
+        std::string_view,
+        int32_t,
+        int32_t
+    );
     // NOLINTEND
 
 private:

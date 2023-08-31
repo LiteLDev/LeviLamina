@@ -110,7 +110,7 @@ public:
      * @vftbl 16
      * @symbol ?triggerEvent\@BlockActor\@\@UEAAXHH\@Z
      */
-    virtual void triggerEvent(int, int);
+    virtual void triggerEvent(int32_t, int32_t);
     /**
      * @vftbl 17
      * @symbol ?clearCache\@BlockActor\@\@UEAAXXZ
@@ -180,7 +180,7 @@ public:
      * @vftbl 29
      * @symbol ?getRepairCost\@BlockActor\@\@UEBAHXZ
      */
-    virtual int getRepairCost() const;
+    virtual int32_t getRepairCost() const;
     /**
      * @vftbl 30
      * @symbol __unk_vfn_30

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PushableDescription {
+// auto generated inclusion list
+#include "mc/world/actor/ActorComponentDescription.h"
+
+struct PushableDescription : public ::ActorComponentDescription {
 
 public:
     // prevent constructor by default

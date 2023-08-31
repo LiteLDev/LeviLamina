@@ -33,7 +33,7 @@ private:
     /**
      * @symbol ?referenceCount\@StringCompressor\@RakNet\@\@0HA
      */
-    MCAPI static int referenceCount;
+    MCAPI static int32_t referenceCount;
     // NOLINTEND
 };
 

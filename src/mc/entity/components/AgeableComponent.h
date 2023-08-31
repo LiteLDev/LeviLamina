@@ -19,7 +19,7 @@ public:
     /**
      * @symbol ?getAge\@AgeableComponent\@\@QEBAHXZ
      */
-    MCAPI int getAge() const;
+    MCAPI int32_t getAge() const;
     /**
      * @symbol ?getInteraction\@AgeableComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
@@ -32,6 +32,6 @@ public:
     /**
      * @symbol ?setAge\@AgeableComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setAge(int);
+    MCAPI void setAge(int32_t);
     // NOLINTEND
 };

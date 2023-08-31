@@ -202,7 +202,7 @@ public:
      * @vftbl 154
      * @symbol ?tryLegacyUpgrade\@ElementBlock\@\@UEBAPEBVBlock\@\@G\@Z
      */
-    virtual class Block const* tryLegacyUpgrade(unsigned short) const;
+    virtual class Block const* tryLegacyUpgrade(uint16_t) const;
     /**
      * @vftbl 162
      * @symbol __unk_vfn_162
@@ -247,7 +247,7 @@ public:
      * @symbol
      * ??0ElementBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4ElementType\@\@\@Z
      */
-    MCAPI ElementBlock(std::string const&, int, enum class ElementType);
+    MCAPI ElementBlock(std::string const&, int32_t, enum class ElementType);
     /**
      * @symbol ?getElementInfo\@ElementBlock\@\@SA?AUElementInfo\@\@W4ElementType\@\@\@Z
      */
@@ -255,11 +255,11 @@ public:
     /**
      * @symbol ?getIngredientForElement\@ElementBlock\@\@SA?AVRecipeIngredient\@\@W4ElementType\@\@H\@Z
      */
-    MCAPI static class RecipeIngredient getIngredientForElement(enum class ElementType, int);
+    MCAPI static class RecipeIngredient getIngredientForElement(enum class ElementType, int32_t);
     /**
      * @symbol ?getItemForElement\@ElementBlock\@\@SA?AVItemInstance\@\@W4ElementType\@\@H\@Z
      */
-    MCAPI static class ItemInstance getItemForElement(enum class ElementType, int);
+    MCAPI static class ItemInstance getItemForElement(enum class ElementType, int32_t);
     /**
      * @symbol ?initElements\@ElementBlock\@\@SAXXZ
      */

@@ -168,7 +168,7 @@ public:
      * @vftbl 66
      * @symbol ?shouldConnectToRedstone\@LeverBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int32_t) const;
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
@@ -188,7 +188,7 @@ public:
      * @vftbl 93
      * @symbol ?mayPlace\@LeverBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
+    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 94
      * @symbol ?mayPlace\@LeverBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
@@ -209,7 +209,7 @@ public:
      * @symbol ?getPlacementBlock\@LeverBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 110
      * @symbol ?isAttachedTo\@LeverBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAV3\@\@Z
@@ -294,7 +294,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@LeverBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -328,7 +328,7 @@ public:
     /**
      * @symbol ??0LeverBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI LeverBlock(std::string const&, int);
+    MCAPI LeverBlock(std::string const&, int32_t);
     /**
      * @symbol ?toggle\@LeverBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVPlayer\@\@\@Z
      */
@@ -336,7 +336,7 @@ public:
     /**
      * @symbol ?getLeverFacing\@LeverBlock\@\@SA?AW4LeverDirection\@\@H\@Z
      */
-    MCAPI static enum class LeverDirection getLeverFacing(int);
+    MCAPI static enum class LeverDirection getLeverFacing(int32_t);
     // NOLINTEND
 
     // private:

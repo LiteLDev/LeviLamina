@@ -47,7 +47,7 @@ public:
      * ?uploadChunk\@IFileChunkUploader\@\@UEAAXAEBUFileInfo\@\@AEBUFileChunkInfo\@\@AEBV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@V?$function\@$$A6AX_N\@Z\@5\@\@Z
      */
     virtual void
-    uploadChunk(struct FileInfo const&, struct FileChunkInfo const&, std::vector<unsigned char> const&, std::function<void(bool)>);
+    uploadChunk(struct FileInfo const&, struct FileChunkInfo const&, std::vector<uint8_t> const&, std::function<void(bool)>);
     /**
      * @vftbl 6
      * @symbol
@@ -79,7 +79,7 @@ public:
      * @vftbl 11
      * @symbol ?getChunkInfo\@IFileChunkUploader\@\@UEBA?AUFileChunkInfo\@\@AEBUFileInfo\@\@H\@Z
      */
-    virtual struct FileChunkInfo getChunkInfo(struct FileInfo const&, int) const;
+    virtual struct FileChunkInfo getChunkInfo(struct FileInfo const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFILECHUNKUPLOADER
     /**
      * @symbol ?confirmChunkReceived\@IFileChunkUploader\@\@UEAAXAEBUFileInfo\@\@AEBUFileChunkInfo\@\@\@Z

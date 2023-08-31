@@ -30,7 +30,7 @@ public:
     /**
      * @symbol ?Int\@ParseHandler\@JSONObject\@Bedrock\@\@QEAA_NH\@Z
      */
-    MCAPI bool Int(int);
+    MCAPI bool Int(int32_t);
     /**
      * @symbol ?Int64\@ParseHandler\@JSONObject\@Bedrock\@\@QEAA_N_J\@Z
      */
@@ -38,7 +38,7 @@ public:
     /**
      * @symbol ?Key\@ParseHandler\@JSONObject\@Bedrock\@\@QEAA_NPEBDI_N\@Z
      */
-    MCAPI bool Key(char const*, unsigned int, bool);
+    MCAPI bool Key(char const*, uint32_t, bool);
     /**
      * @symbol ?Null\@ParseHandler\@JSONObject\@Bedrock\@\@QEAA_NXZ
      */
@@ -54,11 +54,11 @@ public:
     /**
      * @symbol ?String\@ParseHandler\@JSONObject\@Bedrock\@\@QEAA_NPEBDI_N\@Z
      */
-    MCAPI bool String(char const*, unsigned int, bool);
+    MCAPI bool String(char const*, uint32_t, bool);
     /**
      * @symbol ?Uint\@ParseHandler\@JSONObject\@Bedrock\@\@QEAA_NI\@Z
      */
-    MCAPI bool Uint(unsigned int);
+    MCAPI bool Uint(uint32_t);
     /**
      * @symbol ?Uint64\@ParseHandler\@JSONObject\@Bedrock\@\@QEAA_N_K\@Z
      */

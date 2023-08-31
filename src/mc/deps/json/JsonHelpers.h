@@ -28,7 +28,7 @@ MCAPI void addStringField(class Json::Value&, std::string const&, std::string co
  * @symbol
  * ?addUint32Field\@JsonHelpers\@\@YAXAEAVValue\@Json\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBI\@Z
  */
-MCAPI void addUint32Field(class Json::Value&, std::string const&, unsigned int const&);
+MCAPI void addUint32Field(class Json::Value&, std::string const&, uint32_t const&);
 /**
  * @symbol
  * ?parseJson\@JsonHelpers\@\@YA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVValue\@Json\@\@\@Z

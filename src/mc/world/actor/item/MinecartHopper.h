@@ -163,7 +163,7 @@ public:
      * @vftbl 258
      * @symbol ?getDefaultDisplayOffset\@MinecartHopper\@\@UEBAHXZ
      */
-    virtual int getDefaultDisplayOffset() const;
+    virtual int32_t getDefaultDisplayOffset() const;
     /**
      * @vftbl 259
      * @symbol ?applyNaturalSlowdown\@MinecartHopper\@\@UEAAXAEAVBlockSource\@\@\@Z

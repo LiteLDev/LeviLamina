@@ -30,11 +30,11 @@ MCAPI bool exists(class Core::Path const&, class Core::Path const&);
 /**
  * @symbol ?getTranslatedUnzipResult\@ZipUtils\@Core\@\@YA?AW4UnzipResult\@12\@H\@Z
  */
-MCAPI enum class Core::ZipUtils::UnzipResult getTranslatedUnzipResult(int);
+MCAPI enum class Core::ZipUtils::UnzipResult getTranslatedUnzipResult(int32_t);
 /**
  * @symbol ?getTranslatedZipResult\@ZipUtils\@Core\@\@YA?AW4ZipResult\@12\@H\@Z
  */
-MCAPI enum class Core::ZipUtils::ZipResult getTranslatedZipResult(int);
+MCAPI enum class Core::ZipUtils::ZipResult getTranslatedZipResult(int32_t);
 /**
  * @symbol
  * ?unzipInTransaction\@ZipUtils\@Core\@\@YA?AW4UnzipResult\@12\@AEBVPath\@2\@0AEAVZipProgress\@12\@_NAEBVUnzipSettings\@12\@\@Z

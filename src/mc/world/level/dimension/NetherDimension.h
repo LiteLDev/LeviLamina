@@ -49,7 +49,7 @@ public:
     /**
      * @symbol ?getTimeOfDay\@NetherDimension\@\@UEBAMHM\@Z
      */
-    MCVAPI float getTimeOfDay(int, float) const;
+    MCVAPI float getTimeOfDay(int32_t, float) const;
     /**
      * @symbol ?init\@NetherDimension\@\@UEAAXXZ
      */
@@ -57,7 +57,7 @@ public:
     /**
      * @symbol ?isFoggyAt\@NetherDimension\@\@UEBA_NHH\@Z
      */
-    MCVAPI bool isFoggyAt(int, int) const;
+    MCVAPI bool isFoggyAt(int32_t, int32_t) const;
     /**
      * @symbol ?isNaturalDimension\@NetherDimension\@\@UEBA_NXZ
      */
@@ -65,7 +65,7 @@ public:
     /**
      * @symbol ?isValidSpawn\@NetherDimension\@\@UEBA_NHH\@Z
      */
-    MCVAPI bool isValidSpawn(int, int) const;
+    MCVAPI bool isValidSpawn(int32_t, int32_t) const;
     /**
      * @symbol ?levelChunkNeedsUpgrade\@NetherDimension\@\@UEBA_NAEBVLevelChunk\@\@\@Z
      */
@@ -82,7 +82,7 @@ public:
      * @symbol
      * ?translatePosAcrossDimension\@NetherDimension\@\@UEBA?AVVec3\@\@AEBV2\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const&, class AutomaticID<class Dimension, int>) const;
+    MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const&, DimensionType) const;
     /**
      * @symbol ?upgradeLevelChunk\@NetherDimension\@\@UEAAXAEAVChunkSource\@\@AEAVLevelChunk\@\@1\@Z
      */
@@ -101,6 +101,6 @@ public:
      * ?makeStructureFeatures\@NetherDimension\@\@CA?AV?$unique_ptr\@VStructureFeatureRegistry\@\@U?$default_delete\@VStructureFeatureRegistry\@\@\@std\@\@\@std\@\@IAEBVBaseGameVersion\@\@\@Z
      */
     MCAPI static std::unique_ptr<class StructureFeatureRegistry>
-    makeStructureFeatures(unsigned int, class BaseGameVersion const&);
+    makeStructureFeatures(uint32_t, class BaseGameVersion const&);
     // NOLINTEND
 };

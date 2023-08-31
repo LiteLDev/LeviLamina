@@ -24,12 +24,12 @@ public:
      * @vftbl 1
      * @symbol ?nextInt\@XoroshiroRandom\@\@UEAAHXZ
      */
-    virtual int nextInt();
+    virtual int32_t nextInt();
     /**
      * @vftbl 2
      * @symbol ?nextInt\@XoroshiroRandom\@\@UEAAHH\@Z
      */
-    virtual int nextInt(int);
+    virtual int32_t nextInt(int32_t);
     /**
      * @vftbl 3
      * @symbol ?nextLong\@XoroshiroRandom\@\@UEAA_JXZ
@@ -59,7 +59,7 @@ public:
      * @vftbl 8
      * @symbol ?consumeCount\@XoroshiroRandom\@\@UEAAXI\@Z
      */
-    virtual void consumeCount(unsigned int);
+    virtual void consumeCount(uint32_t);
     /**
      * @vftbl 9
      * @symbol

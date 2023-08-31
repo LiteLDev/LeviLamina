@@ -54,7 +54,7 @@ MCAPI long RunAsync(std::function<void(void)>&&, struct XTaskQueueObject*, uint6
 /**
  * @symbol ?StringToUint4\@httpclient\@xbox\@\@YA_NPEBD0AEA_KH\@Z
  */
-MCAPI bool StringToUint4(char const*, char const*, uint64_t&, int);
+MCAPI bool StringToUint4(char const*, char const*, uint64_t&, int32_t);
 /**
  * @symbol
  * ?WebSocketppConnectAsync\@httpclient\@xbox\@\@YAJPEBD0PEAUHC_WEBSOCKET_OBSERVER\@\@PEAUXAsyncBlock\@\@PEAXPEAUHC_PERFORM_ENV\@\@\@Z
@@ -71,7 +71,7 @@ MCAPI long WebSocketppDisconnect(struct HC_WEBSOCKET_OBSERVER*, enum class HCWeb
  * ?WebSocketppSendBinaryMessageAsync\@httpclient\@xbox\@\@YAJPEAUHC_WEBSOCKET_OBSERVER\@\@PEBEIPEAUXAsyncBlock\@\@PEAX\@Z
  */
 MCAPI long
-WebSocketppSendBinaryMessageAsync(struct HC_WEBSOCKET_OBSERVER*, unsigned char const*, unsigned int, struct XAsyncBlock*, void*);
+WebSocketppSendBinaryMessageAsync(struct HC_WEBSOCKET_OBSERVER*, uint8_t const*, uint32_t, struct XAsyncBlock*, void*);
 /**
  * @symbol
  * ?WebSocketppSendMessageAsync\@httpclient\@xbox\@\@YAJPEAUHC_WEBSOCKET_OBSERVER\@\@PEBDPEAUXAsyncBlock\@\@PEAX\@Z

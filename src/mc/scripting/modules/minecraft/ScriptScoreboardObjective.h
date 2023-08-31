@@ -48,7 +48,7 @@ public:
      * @symbol
      * ?getScore\@ScriptScoreboardObjective\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$optional\@H\@std\@\@\@Scripting\@\@AEBV?$variant\@V?$StrongTypedObjectHandle\@VScriptScoreboardIdentity\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@2\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI class Scripting::Result<std::optional<int>>
+    MCAPI class Scripting::Result<std::optional<int32_t>>
     getScore(std::variant<
              class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>,
              class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
@@ -91,7 +91,7 @@ public:
             class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>,
             class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
             std::string>&,
-        int
+        int32_t
     );
     /**
      * @symbol ?tryGetObjective\@ScriptScoreboardObjective\@ScriptModuleMinecraft\@\@QEBAPEAVObjective\@\@XZ

@@ -8,6 +8,11 @@
 #include "mc/enums/connection/DisconnectFailReason.h"
 #include "mc/resources/PacketViolationResponse.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
 class NetEventCallback : public ::Bedrock::EnableNonOwnerReferences {
 
 public:
@@ -924,7 +929,7 @@ public:
      * @symbol
      * ?onTransferRequest\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCVAPI void onTransferRequest(class NetworkIdentifier const&, std::string const&, int);
+    MCVAPI void onTransferRequest(class NetworkIdentifier const&, std::string const&, int32_t);
     /**
      * @symbol ?onUnableToConnect\@NetEventCallback\@\@UEAAXXZ
      */

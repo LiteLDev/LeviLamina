@@ -19,4 +19,4 @@ public:
 
 class Dimension;
 
-using DimensionType = AutomaticID<Dimension, int>;
+using DimensionType = AutomaticID<Dimension, int32_t>;

@@ -104,7 +104,7 @@ public:
     /**
      * @symbol ?AddToBanList\@RakPeer\@RakNet\@\@UEAAXPEBDI\@Z
      */
-    MCVAPI void AddToBanList(char const*, unsigned int);
+    MCVAPI void AddToBanList(char const*, uint32_t);
     /**
      * @symbol ?AddToSecurityExceptionList\@RakPeer\@RakNet\@\@UEAAXPEBD\@Z
      */
@@ -112,15 +112,15 @@ public:
     /**
      * @symbol ?AdvertiseSystem\@RakPeer\@RakNet\@\@UEAA_NPEBDG0HI\@Z
      */
-    MCVAPI bool AdvertiseSystem(char const*, unsigned short, char const*, int, unsigned int);
+    MCVAPI bool AdvertiseSystem(char const*, uint16_t, char const*, int32_t, uint32_t);
     /**
      * @symbol ?AllocRNS2RecvStruct\@RakPeer\@RakNet\@\@MEAAPEAURNS2RecvStruct\@2\@PEBDI\@Z
      */
-    MCVAPI struct RakNet::RNS2RecvStruct* AllocRNS2RecvStruct(char const*, unsigned int);
+    MCVAPI struct RakNet::RNS2RecvStruct* AllocRNS2RecvStruct(char const*, uint32_t);
     /**
      * @symbol ?AllocatePacket\@RakPeer\@RakNet\@\@UEAAPEAUPacket\@2\@I\@Z
      */
-    MCVAPI struct RakNet::Packet* AllocatePacket(unsigned int);
+    MCVAPI struct RakNet::Packet* AllocatePacket(uint32_t);
     /**
      * @symbol ?AllowConnectionResponseIPMigration\@RakPeer\@RakNet\@\@UEAAX_N\@Z
      */
@@ -128,7 +128,7 @@ public:
     /**
      * @symbol ?ApplyNetworkSimulator\@RakPeer\@RakNet\@\@UEAAXMGG\@Z
      */
-    MCVAPI void ApplyNetworkSimulator(float, unsigned short, unsigned short);
+    MCVAPI void ApplyNetworkSimulator(float, uint16_t, uint16_t);
     /**
      * @symbol ?AttachPlugin\@RakPeer\@RakNet\@\@UEAAXPEAVPluginInterface2\@2\@\@Z
      */
@@ -148,20 +148,20 @@ public:
     /**
      * @symbol ?CloseConnection\@RakPeer\@RakNet\@\@UEAAXUAddressOrGUID\@2\@_NEW4PacketPriority\@\@\@Z
      */
-    MCVAPI void CloseConnection(struct RakNet::AddressOrGUID, bool, unsigned char, enum class PacketPriority);
+    MCVAPI void CloseConnection(struct RakNet::AddressOrGUID, bool, uint8_t, enum class PacketPriority);
     /**
      * @symbol ?Connect\@RakPeer\@RakNet\@\@UEAA?AW4ConnectionAttemptResult\@2\@PEBDG0HPEAUPublicKey\@2\@IIII\@Z
      */
     MCVAPI enum class RakNet::ConnectionAttemptResult Connect(
         char const*,
-        unsigned short,
+        uint16_t,
         char const*,
-        int,
+        int32_t,
         struct RakNet::PublicKey*,
-        unsigned int,
-        unsigned int,
-        unsigned int,
-        unsigned int
+        uint32_t,
+        uint32_t,
+        uint32_t,
+        uint32_t
     );
     /**
      * @symbol
@@ -169,19 +169,19 @@ public:
      */
     MCVAPI enum class RakNet::ConnectionAttemptResult ConnectWithSocket(
         char const*,
-        unsigned short,
+        uint16_t,
         char const*,
-        int,
+        int32_t,
         class RakNet::RakNetSocket2*,
         struct RakNet::PublicKey*,
-        unsigned int,
-        unsigned int,
-        unsigned int
+        uint32_t,
+        uint32_t,
+        uint32_t
     );
     /**
      * @symbol ?DeallocRNS2RecvStruct\@RakPeer\@RakNet\@\@MEAAXPEAURNS2RecvStruct\@2\@PEBDI\@Z
      */
-    MCVAPI void DeallocRNS2RecvStruct(struct RakNet::RNS2RecvStruct*, char const*, unsigned int);
+    MCVAPI void DeallocRNS2RecvStruct(struct RakNet::RNS2RecvStruct*, char const*, uint32_t);
     /**
      * @symbol ?DeallocatePacket\@RakPeer\@RakNet\@\@UEAAXPEAUPacket\@2\@\@Z
      */
@@ -197,7 +197,7 @@ public:
     /**
      * @symbol ?GetAveragePing\@RakPeer\@RakNet\@\@UEAAHUAddressOrGUID\@2\@\@Z
      */
-    MCVAPI int GetAveragePing(struct RakNet::AddressOrGUID);
+    MCVAPI int32_t GetAveragePing(struct RakNet::AddressOrGUID);
     /**
      * @symbol ?GetClientPublicKeyFromSystemAddress\@RakPeer\@RakNet\@\@UEBA_NUSystemAddress\@2\@PEAD\@Z
      */
@@ -209,7 +209,7 @@ public:
     /**
      * @symbol ?GetConnectionList\@RakPeer\@RakNet\@\@UEBA_NPEAUSystemAddress\@2\@PEAG\@Z
      */
-    MCVAPI bool GetConnectionList(struct RakNet::SystemAddress*, unsigned short*) const;
+    MCVAPI bool GetConnectionList(struct RakNet::SystemAddress*, uint16_t*) const;
     /**
      * @symbol ?GetConnectionState\@RakPeer\@RakNet\@\@UEAA?AW4ConnectionState\@2\@UAddressOrGUID\@2\@\@Z
      */
@@ -221,7 +221,7 @@ public:
     /**
      * @symbol ?GetGUIDFromIndex\@RakPeer\@RakNet\@\@UEAA?AURakNetGUID\@2\@I\@Z
      */
-    MCVAPI struct RakNet::RakNetGUID GetGUIDFromIndex(unsigned int);
+    MCVAPI struct RakNet::RakNetGUID GetGUIDFromIndex(uint32_t);
     /**
      * @symbol ?GetGuidFromSystemAddress\@RakPeer\@RakNet\@\@UEBAAEBURakNetGUID\@2\@USystemAddress\@2\@\@Z
      */
@@ -229,47 +229,47 @@ public:
     /**
      * @symbol ?GetIncomingPassword\@RakPeer\@RakNet\@\@UEAAXPEADPEAH\@Z
      */
-    MCVAPI void GetIncomingPassword(char*, int*);
+    MCVAPI void GetIncomingPassword(char*, int32_t*);
     /**
      * @symbol ?GetIndexFromSystemAddress\@RakPeer\@RakNet\@\@UEBAHUSystemAddress\@2\@\@Z
      */
-    MCVAPI int GetIndexFromSystemAddress(struct RakNet::SystemAddress) const;
+    MCVAPI int32_t GetIndexFromSystemAddress(struct RakNet::SystemAddress) const;
     /**
      * @symbol ?GetInternalID\@RakPeer\@RakNet\@\@UEBA?AUSystemAddress\@2\@U32\@H\@Z
      */
-    MCVAPI struct RakNet::SystemAddress GetInternalID(struct RakNet::SystemAddress, int) const;
+    MCVAPI struct RakNet::SystemAddress GetInternalID(struct RakNet::SystemAddress, int32_t) const;
     /**
      * @symbol ?GetLastPing\@RakPeer\@RakNet\@\@UEBAHUAddressOrGUID\@2\@\@Z
      */
-    MCVAPI int GetLastPing(struct RakNet::AddressOrGUID) const;
+    MCVAPI int32_t GetLastPing(struct RakNet::AddressOrGUID) const;
     /**
      * @symbol ?GetLocalAdapter\@RakPeer\@RakNet\@\@UEAAAEAUNetworkAdapter\@2\@I\@Z
      */
-    MCVAPI struct RakNet::NetworkAdapter& GetLocalAdapter(unsigned int);
+    MCVAPI struct RakNet::NetworkAdapter& GetLocalAdapter(uint32_t);
     /**
      * @symbol ?GetLocalIP\@RakPeer\@RakNet\@\@UEAAPEBDI\@Z
      */
-    MCVAPI char const* GetLocalIP(unsigned int);
+    MCVAPI char const* GetLocalIP(uint32_t);
     /**
      * @symbol ?GetLowestPing\@RakPeer\@RakNet\@\@UEBAHUAddressOrGUID\@2\@\@Z
      */
-    MCVAPI int GetLowestPing(struct RakNet::AddressOrGUID) const;
+    MCVAPI int32_t GetLowestPing(struct RakNet::AddressOrGUID) const;
     /**
      * @symbol ?GetMTUSize\@RakPeer\@RakNet\@\@UEBAHUSystemAddress\@2\@\@Z
      */
-    MCVAPI int GetMTUSize(struct RakNet::SystemAddress) const;
+    MCVAPI int32_t GetMTUSize(struct RakNet::SystemAddress) const;
     /**
      * @symbol ?GetMaximumIncomingConnections\@RakPeer\@RakNet\@\@UEBAIXZ
      */
-    MCVAPI unsigned int GetMaximumIncomingConnections() const;
+    MCVAPI uint32_t GetMaximumIncomingConnections() const;
     /**
      * @symbol ?GetMaximumNumberOfPeers\@RakPeer\@RakNet\@\@UEBAIXZ
      */
-    MCVAPI unsigned int GetMaximumNumberOfPeers() const;
+    MCVAPI uint32_t GetMaximumNumberOfPeers() const;
     /**
      * @symbol ?GetMyBoundAddress\@RakPeer\@RakNet\@\@UEAA?AUSystemAddress\@2\@H\@Z
      */
-    MCVAPI struct RakNet::SystemAddress GetMyBoundAddress(int);
+    MCVAPI struct RakNet::SystemAddress GetMyBoundAddress(int32_t);
     /**
      * @symbol ?GetMyGUID\@RakPeer\@RakNet\@\@UEBA?BURakNetGUID\@2\@XZ
      */
@@ -277,23 +277,23 @@ public:
     /**
      * @symbol ?GetNextSendReceipt\@RakPeer\@RakNet\@\@UEAAIXZ
      */
-    MCVAPI unsigned int GetNextSendReceipt();
+    MCVAPI uint32_t GetNextSendReceipt();
     /**
      * @symbol ?GetNumberOfAdapters\@RakPeer\@RakNet\@\@UEAAIXZ
      */
-    MCVAPI unsigned int GetNumberOfAdapters();
+    MCVAPI uint32_t GetNumberOfAdapters();
     /**
      * @symbol ?GetNumberOfAddresses\@RakPeer\@RakNet\@\@UEAAIXZ
      */
-    MCVAPI unsigned int GetNumberOfAddresses();
+    MCVAPI uint32_t GetNumberOfAddresses();
     /**
      * @symbol ?GetOfflinePingResponse\@RakPeer\@RakNet\@\@UEAAXPEAPEADPEAI\@Z
      */
-    MCVAPI void GetOfflinePingResponse(char**, unsigned int*);
+    MCVAPI void GetOfflinePingResponse(char**, uint32_t*);
     /**
      * @symbol ?GetReceiveBufferSize\@RakPeer\@RakNet\@\@UEAAIXZ
      */
-    MCVAPI unsigned int GetReceiveBufferSize();
+    MCVAPI uint32_t GetReceiveBufferSize();
     /**
      * @symbol ?GetSocket\@RakPeer\@RakNet\@\@UEAAPEAVRakNetSocket2\@2\@USystemAddress\@2\@\@Z
      */
@@ -305,11 +305,11 @@ public:
     /**
      * @symbol ?GetSplitMessageProgressInterval\@RakPeer\@RakNet\@\@UEBAHXZ
      */
-    MCVAPI int GetSplitMessageProgressInterval() const;
+    MCVAPI int32_t GetSplitMessageProgressInterval() const;
     /**
      * @symbol ?GetStatistics\@RakPeer\@RakNet\@\@UEAA_NIPEAURakNetStatistics\@2\@\@Z
      */
-    MCVAPI bool GetStatistics(unsigned int, struct RakNet::RakNetStatistics*);
+    MCVAPI bool GetStatistics(uint32_t, struct RakNet::RakNetStatistics*);
     /**
      * @symbol ?GetStatistics\@RakPeer\@RakNet\@\@UEAAPEAURakNetStatistics\@2\@USystemAddress\@2\@PEAU32\@\@Z
      */
@@ -328,7 +328,7 @@ public:
     /**
      * @symbol ?GetSystemAddressFromIndex\@RakPeer\@RakNet\@\@UEAA?AUSystemAddress\@2\@I\@Z
      */
-    MCVAPI struct RakNet::SystemAddress GetSystemAddressFromIndex(unsigned int);
+    MCVAPI struct RakNet::SystemAddress GetSystemAddressFromIndex(uint32_t);
     /**
      * @symbol
      * ?GetSystemList\@RakPeer\@RakNet\@\@UEBAXAEAV?$List\@USystemAddress\@RakNet\@\@\@DataStructures\@\@AEAV?$List\@URakNetGUID\@RakNet\@\@\@4\@\@Z
@@ -339,11 +339,11 @@ public:
     /**
      * @symbol ?GetTimeoutTime\@RakPeer\@RakNet\@\@UEAAIUSystemAddress\@2\@\@Z
      */
-    MCVAPI unsigned int GetTimeoutTime(struct RakNet::SystemAddress);
+    MCVAPI uint32_t GetTimeoutTime(struct RakNet::SystemAddress);
     /**
      * @symbol ?IncrementNextSendReceipt\@RakPeer\@RakNet\@\@UEAAIXZ
      */
-    MCVAPI unsigned int IncrementNextSendReceipt();
+    MCVAPI uint32_t IncrementNextSendReceipt();
     /**
      * @symbol ?InitializeSecurity\@RakPeer\@RakNet\@\@UEAA_NPEBD0_N\@Z
      */
@@ -371,7 +371,7 @@ public:
     /**
      * @symbol ?NumberOfConnections\@RakPeer\@RakNet\@\@UEBAGXZ
      */
-    MCVAPI unsigned short NumberOfConnections() const;
+    MCVAPI uint16_t NumberOfConnections() const;
     /**
      * @symbol ?OnRNS2Recv\@RakPeer\@RakNet\@\@MEAAXPEAURNS2RecvStruct\@2\@\@Z
      */
@@ -379,7 +379,7 @@ public:
     /**
      * @symbol ?Ping\@RakPeer\@RakNet\@\@UEAA_NPEBDG_NI\@Z
      */
-    MCVAPI bool Ping(char const*, unsigned short, bool, unsigned int);
+    MCVAPI bool Ping(char const*, uint16_t, bool, uint32_t);
     /**
      * @symbol ?Ping\@RakPeer\@RakNet\@\@UEAAXUSystemAddress\@2\@\@Z
      */
@@ -411,48 +411,48 @@ public:
     /**
      * @symbol ?Send\@RakPeer\@RakNet\@\@UEAAIPEBDHW4PacketPriority\@\@W4PacketReliability\@\@DUAddressOrGUID\@2\@_NI\@Z
      */
-    MCVAPI unsigned int Send(
+    MCVAPI uint32_t Send(
         char const*,
-        int,
+        int32_t,
         enum class PacketPriority,
         enum class PacketReliability,
         char,
         struct RakNet::AddressOrGUID,
         bool,
-        unsigned int
+        uint32_t
     );
     /**
      * @symbol
      * ?Send\@RakPeer\@RakNet\@\@UEAAIPEBVBitStream\@2\@W4PacketPriority\@\@W4PacketReliability\@\@DUAddressOrGUID\@2\@_NI\@Z
      */
-    MCVAPI unsigned int Send(
+    MCVAPI uint32_t Send(
         class RakNet::BitStream const*,
         enum class PacketPriority,
         enum class PacketReliability,
         char,
         struct RakNet::AddressOrGUID,
         bool,
-        unsigned int
+        uint32_t
     );
     /**
      * @symbol
      * ?SendList\@RakPeer\@RakNet\@\@UEAAIPEAPEBDPEBHHW4PacketPriority\@\@W4PacketReliability\@\@DUAddressOrGUID\@2\@_NI\@Z
      */
-    MCVAPI unsigned int SendList(
+    MCVAPI uint32_t SendList(
         char const**,
-        int const*,
-        int,
+        int32_t const*,
+        int32_t,
         enum class PacketPriority,
         enum class PacketReliability,
         char,
         struct RakNet::AddressOrGUID,
         bool,
-        unsigned int
+        uint32_t
     );
     /**
      * @symbol ?SendLoopback\@RakPeer\@RakNet\@\@UEAAXPEBDH\@Z
      */
-    MCVAPI void SendLoopback(char const*, int);
+    MCVAPI void SendLoopback(char const*, int32_t);
     /**
      * @symbol ?SendNatTraversalMessage\@RakPeer\@RakNet\@\@UEAAXUSystemAddress\@2\@\@Z
      */
@@ -460,11 +460,11 @@ public:
     /**
      * @symbol ?SendOutOfBand\@RakPeer\@RakNet\@\@UEAA_NPEBDG0II\@Z
      */
-    MCVAPI bool SendOutOfBand(char const*, unsigned short, char const*, unsigned int, unsigned int);
+    MCVAPI bool SendOutOfBand(char const*, uint16_t, char const*, uint32_t, uint32_t);
     /**
      * @symbol ?SendTTL\@RakPeer\@RakNet\@\@UEAAXPEBDGHI\@Z
      */
-    MCVAPI void SendTTL(char const*, unsigned short, int, unsigned int);
+    MCVAPI void SendTTL(char const*, uint16_t, int32_t, uint32_t);
     /**
      * @symbol ?SetIncomingDatagramEventHandler\@RakPeer\@RakNet\@\@UEAAXP6A_NPEAURNS2RecvStruct\@2\@\@Z\@Z
      */
@@ -472,11 +472,11 @@ public:
     /**
      * @symbol ?SetIncomingPassword\@RakPeer\@RakNet\@\@UEAAXPEBDH\@Z
      */
-    MCVAPI void SetIncomingPassword(char const*, int);
+    MCVAPI void SetIncomingPassword(char const*, int32_t);
     /**
      * @symbol ?SetInternalID\@RakPeer\@RakNet\@\@UEAAXUSystemAddress\@2\@H\@Z
      */
-    MCVAPI void SetInternalID(struct RakNet::SystemAddress, int);
+    MCVAPI void SetInternalID(struct RakNet::SystemAddress, int32_t);
     /**
      * @symbol ?SetLimitIPConnectionFrequency\@RakPeer\@RakNet\@\@UEAAX_N\@Z
      */
@@ -484,7 +484,7 @@ public:
     /**
      * @symbol ?SetMaximumIncomingConnections\@RakPeer\@RakNet\@\@UEAAXG\@Z
      */
-    MCVAPI void SetMaximumIncomingConnections(unsigned short);
+    MCVAPI void SetMaximumIncomingConnections(uint16_t);
     /**
      * @symbol ?SetOccasionalPing\@RakPeer\@RakNet\@\@UEAAX_N\@Z
      */
@@ -492,23 +492,23 @@ public:
     /**
      * @symbol ?SetOfflinePingResponse\@RakPeer\@RakNet\@\@UEAAXPEBDI\@Z
      */
-    MCVAPI void SetOfflinePingResponse(char const*, unsigned int);
+    MCVAPI void SetOfflinePingResponse(char const*, uint32_t);
     /**
      * @symbol ?SetPerConnectionOutgoingBandwidthLimit\@RakPeer\@RakNet\@\@UEAAXI\@Z
      */
-    MCVAPI void SetPerConnectionOutgoingBandwidthLimit(unsigned int);
+    MCVAPI void SetPerConnectionOutgoingBandwidthLimit(uint32_t);
     /**
      * @symbol ?SetSplitMessageProgressInterval\@RakPeer\@RakNet\@\@UEAAXH\@Z
      */
-    MCVAPI void SetSplitMessageProgressInterval(int);
+    MCVAPI void SetSplitMessageProgressInterval(int32_t);
     /**
      * @symbol ?SetTimeoutTime\@RakPeer\@RakNet\@\@UEAAXIUSystemAddress\@2\@\@Z
      */
-    MCVAPI void SetTimeoutTime(unsigned int, struct RakNet::SystemAddress);
+    MCVAPI void SetTimeoutTime(uint32_t, struct RakNet::SystemAddress);
     /**
      * @symbol ?SetUnreliableTimeout\@RakPeer\@RakNet\@\@UEAAXI\@Z
      */
-    MCVAPI void SetUnreliableTimeout(unsigned int);
+    MCVAPI void SetUnreliableTimeout(uint32_t);
     /**
      * @symbol ?SetUserUpdateThread\@RakPeer\@RakNet\@\@UEAAXP6AXPEAVRakPeerInterface\@2\@PEAX\@Z1\@Z
      */
@@ -516,11 +516,11 @@ public:
     /**
      * @symbol ?Shutdown\@RakPeer\@RakNet\@\@UEAAXIEW4PacketPriority\@\@\@Z
      */
-    MCVAPI void Shutdown(unsigned int, unsigned char, enum class PacketPriority);
+    MCVAPI void Shutdown(uint32_t, uint8_t, enum class PacketPriority);
     /**
      * @symbol ?Startup\@RakPeer\@RakNet\@\@UEAA?AW4StartupResult\@2\@IPEAUSocketDescriptor\@2\@IH\@Z
      */
-    MCVAPI enum class RakNet::StartupResult Startup(unsigned int, struct RakNet::SocketDescriptor*, unsigned int, int);
+    MCVAPI enum class RakNet::StartupResult Startup(uint32_t, struct RakNet::SocketDescriptor*, uint32_t, int32_t);
     /**
      * @symbol ?WriteOutOfBandHeader\@RakPeer\@RakNet\@\@UEAAXPEAVBitStream\@2\@\@Z
      */
@@ -548,11 +548,11 @@ public:
     /**
      * @symbol ?AllocPacket\@RakPeer\@RakNet\@\@IEAAPEAUPacket\@2\@IPEAEPEBDI\@Z
      */
-    MCAPI struct RakNet::Packet* AllocPacket(unsigned int, unsigned char*, char const*, unsigned int);
+    MCAPI struct RakNet::Packet* AllocPacket(uint32_t, uint8_t*, char const*, uint32_t);
     /**
      * @symbol ?AllocPacket\@RakPeer\@RakNet\@\@IEAAPEAUPacket\@2\@IPEBDI\@Z
      */
-    MCAPI struct RakNet::Packet* AllocPacket(unsigned int, char const*, unsigned int);
+    MCAPI struct RakNet::Packet* AllocPacket(uint32_t, char const*, uint32_t);
     /**
      * @symbol ?AllowIncomingConnections\@RakPeer\@RakNet\@\@IEBA_NXZ
      */
@@ -567,7 +567,7 @@ public:
         class RakNet::RakNetSocket2*,
         bool*,
         struct RakNet::SystemAddress,
-        int,
+        int32_t,
         struct RakNet::RakNetGUID,
         bool
     );
@@ -597,7 +597,7 @@ public:
      * @symbol ?CloseConnectionInternal\@RakPeer\@RakNet\@\@IEAAXAEBUAddressOrGUID\@2\@_N1EW4PacketPriority\@\@\@Z
      */
     MCAPI void
-    CloseConnectionInternal(struct RakNet::AddressOrGUID const&, bool, bool, unsigned char, enum class PacketPriority);
+    CloseConnectionInternal(struct RakNet::AddressOrGUID const&, bool, bool, uint8_t, enum class PacketPriority);
     /**
      * @symbol ?DerefAllSockets\@RakPeer\@RakNet\@\@IEAAXXZ
      */
@@ -617,11 +617,11 @@ public:
     /**
      * @symbol ?GetIndexFromSystemAddress\@RakPeer\@RakNet\@\@IEBAHUSystemAddress\@2\@_N\@Z
      */
-    MCAPI int GetIndexFromSystemAddress(struct RakNet::SystemAddress, bool) const;
+    MCAPI int32_t GetIndexFromSystemAddress(struct RakNet::SystemAddress, bool) const;
     /**
      * @symbol ?GetRakNetSocketFromUserConnectionSocketIndex\@RakPeer\@RakNet\@\@IEBAII\@Z
      */
-    MCAPI unsigned int GetRakNetSocketFromUserConnectionSocketIndex(unsigned int) const;
+    MCAPI uint32_t GetRakNetSocketFromUserConnectionSocketIndex(uint32_t) const;
     /**
      * @symbol ?GetRemoteSystem\@RakPeer\@RakNet\@\@IEBAPEAURemoteSystemStruct\@12\@UAddressOrGUID\@2\@_N1\@Z
      */
@@ -635,7 +635,7 @@ public:
     /**
      * @symbol ?GetRemoteSystemIndex\@RakPeer\@RakNet\@\@IEBAIAEBUSystemAddress\@2\@\@Z
      */
-    MCAPI unsigned int GetRemoteSystemIndex(struct RakNet::SystemAddress const&) const;
+    MCAPI uint32_t GetRemoteSystemIndex(struct RakNet::SystemAddress const&) const;
     /**
      * @symbol ?IsLoopbackAddress\@RakPeer\@RakNet\@\@IEBA_NAEBUAddressOrGUID\@2\@_N\@Z
      */
@@ -643,7 +643,7 @@ public:
     /**
      * @symbol ?NotifyAndFlagForShutdown\@RakPeer\@RakNet\@\@IEAAXUSystemAddress\@2\@_NEW4PacketPriority\@\@\@Z
      */
-    MCAPI void NotifyAndFlagForShutdown(struct RakNet::SystemAddress, bool, unsigned char, enum class PacketPriority);
+    MCAPI void NotifyAndFlagForShutdown(struct RakNet::SystemAddress, bool, uint8_t, enum class PacketPriority);
     /**
      * @symbol ?OnConnectedPong\@RakPeer\@RakNet\@\@IEAAX_K0PEAURemoteSystemStruct\@12\@\@Z
      */
@@ -660,7 +660,7 @@ public:
         struct RakNet::RakPeer::RemoteSystemStruct*,
         struct RakNet::SystemAddress const&,
         char const*,
-        int
+        int32_t
     );
     /**
      * @symbol ?PingInternal\@RakPeer\@RakNet\@\@IEAAXUSystemAddress\@2\@_NW4PacketReliability\@\@\@Z
@@ -669,21 +669,21 @@ public:
     /**
      * @symbol ?ReferenceRemoteSystem\@RakPeer\@RakNet\@\@IEAAXAEBUSystemAddress\@2\@I\@Z
      */
-    MCAPI void ReferenceRemoteSystem(struct RakNet::SystemAddress const&, unsigned int);
+    MCAPI void ReferenceRemoteSystem(struct RakNet::SystemAddress const&, uint32_t);
     /**
      * @symbol
      * ?SendBuffered\@RakPeer\@RakNet\@\@IEAAXPEBDIW4PacketPriority\@\@W4PacketReliability\@\@DUAddressOrGUID\@2\@_NW4ConnectMode\@RemoteSystemStruct\@12\@I\@Z
      */
     MCAPI void SendBuffered(
         char const*,
-        unsigned int,
+        uint32_t,
         enum class PacketPriority,
         enum class PacketReliability,
         char,
         struct RakNet::AddressOrGUID,
         bool,
         enum class RakNet::RakPeer::RemoteSystemStruct::ConnectMode,
-        unsigned int
+        uint32_t
     );
     /**
      * @symbol
@@ -691,15 +691,15 @@ public:
      */
     MCAPI void SendBufferedList(
         char const**,
-        int const*,
-        int,
+        int32_t const*,
+        int32_t,
         enum class PacketPriority,
         enum class PacketReliability,
         char,
         struct RakNet::AddressOrGUID,
         bool,
         enum class RakNet::RakPeer::RemoteSystemStruct::ConnectMode,
-        unsigned int
+        uint32_t
     );
     /**
      * @symbol
@@ -707,29 +707,29 @@ public:
      */
     MCAPI enum class RakNet::ConnectionAttemptResult SendConnectionRequest(
         char const*,
-        unsigned short,
+        uint16_t,
         char const*,
-        int,
+        int32_t,
         struct RakNet::PublicKey*,
-        unsigned int,
-        unsigned int,
-        unsigned int,
-        unsigned int,
-        unsigned int
+        uint32_t,
+        uint32_t,
+        uint32_t,
+        uint32_t,
+        uint32_t
     );
     /**
      * @symbol
      * ?SendConnectionRequest\@RakPeer\@RakNet\@\@IEAA?AW4ConnectionAttemptResult\@2\@PEBDG0HPEAUPublicKey\@2\@IIIIIPEAVRakNetSocket2\@2\@\@Z
      */
     MCAPI enum class RakNet::ConnectionAttemptResult
-    SendConnectionRequest(char const*, unsigned short, char const*, int, struct RakNet::PublicKey*, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, class RakNet::RakNetSocket2*);
+    SendConnectionRequest(char const*, uint16_t, char const*, int32_t, struct RakNet::PublicKey*, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, class RakNet::RakNetSocket2*);
     /**
      * @symbol
      * ?SendImmediate\@RakPeer\@RakNet\@\@IEAA_NPEADIW4PacketPriority\@\@W4PacketReliability\@\@DUAddressOrGUID\@2\@_N4_KI\@Z
      */
     MCAPI bool SendImmediate(
         char*,
-        unsigned int,
+        uint32_t,
         enum class PacketPriority,
         enum class PacketReliability,
         char,
@@ -737,12 +737,12 @@ public:
         bool,
         bool,
         uint64_t,
-        unsigned int
+        uint32_t
     );
     /**
      * @symbol ?ShiftIncomingTimestamp\@RakPeer\@RakNet\@\@IEBAXPEAEAEBUSystemAddress\@2\@\@Z
      */
-    MCAPI void ShiftIncomingTimestamp(unsigned char*, struct RakNet::SystemAddress const&) const;
+    MCAPI void ShiftIncomingTimestamp(uint8_t*, struct RakNet::SystemAddress const&) const;
     // NOLINTEND
 };
 

@@ -192,7 +192,7 @@ public:
      * @vftbl 126
      * @symbol ?getComparatorSignal\@BeehiveBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, unsigned char) const;
+    virtual int32_t getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uint8_t) const;
     /**
      * @vftbl 128
      * @symbol __unk_vfn_128
@@ -207,12 +207,12 @@ public:
      * @vftbl 143
      * @symbol ?getVariant\@BeehiveBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 146
      * @symbol ?getMappedFace\@BeehiveBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
-    virtual unsigned char getMappedFace(unsigned char, class Block const&) const;
+    virtual uint8_t getMappedFace(uint8_t, class Block const&) const;
     /**
      * @vftbl 148
      * @symbol ?animateTick\@BeehiveBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
@@ -252,7 +252,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@BeehiveBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -267,7 +267,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@BeehiveBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEEHIVEBLOCK
     /**
      * @symbol ?canBeSilkTouched\@BeehiveBlock\@\@UEBA_NXZ
@@ -281,7 +281,7 @@ public:
     /**
      * @symbol ??0BeehiveBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI BeehiveBlock(std::string const&, int);
+    MCAPI BeehiveBlock(std::string const&, int32_t);
     /**
      * @symbol ?emitHoneyComb\@BeehiveBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */

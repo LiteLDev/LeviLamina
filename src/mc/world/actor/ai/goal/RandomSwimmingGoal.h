@@ -45,7 +45,7 @@ public:
     /**
      * @symbol ??0RandomSwimmingGoal\@\@QEAA\@AEAVMob\@\@MHHH_N\@Z
      */
-    MCAPI RandomSwimmingGoal(class Mob&, float, int, int, int, bool);
+    MCAPI RandomSwimmingGoal(class Mob&, float, int32_t, int32_t, int32_t, bool);
     // NOLINTEND
 
     // protected:
@@ -53,6 +53,6 @@ public:
     /**
      * @symbol ?_getWaterHeights\@RandomSwimmingGoal\@\@IEAAXVBlockPos\@\@AEAFAEAM22\@Z
      */
-    MCAPI void _getWaterHeights(class BlockPos, short&, float&, float&, float&);
+    MCAPI void _getWaterHeights(class BlockPos, int16_t&, float&, float&, float&);
     // NOLINTEND
 };

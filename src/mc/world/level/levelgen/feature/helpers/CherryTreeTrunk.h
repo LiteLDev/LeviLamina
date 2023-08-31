@@ -28,13 +28,13 @@ public:
      * ?placeTrunk\@CherryTreeTrunk\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@HAEAVRenderParams\@\@AEBUTreeParams\@TreeHelper\@\@PEBVITreeCanopy\@\@\@Z
      */
     virtual std::optional<class BlockPos>
-    placeTrunk(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, int, class RenderParams&, struct TreeHelper::TreeParams const&, class ITreeCanopy const*)
+    placeTrunk(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, int32_t, class RenderParams&, struct TreeHelper::TreeParams const&, class ITreeCanopy const*)
         const;
     /**
      * @vftbl 2
      * @symbol ?getTreeHeight\@CherryTreeTrunk\@\@UEBAHAEAVRandom\@\@\@Z
      */
-    virtual int getTreeHeight(class Random&) const;
+    virtual int32_t getTreeHeight(class Random&) const;
     // NOLINTEND
 
     // private:
@@ -48,11 +48,11 @@ public:
         class Block const&,
         class Block const&,
         class Random&,
-        int,
+        int32_t,
         class BlockPos,
         struct TreeHelper::TreeParams const&,
         class BlockPos,
-        int,
+        int32_t,
         bool
     ) const;
     // NOLINTEND

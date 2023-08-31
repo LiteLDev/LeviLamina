@@ -16,7 +16,7 @@ public:
      * @vftbl 0
      * @symbol ?containerContentChanged\@InventoryContainerModel\@\@UEAAXH\@Z
      */
-    virtual void containerContentChanged(int) = 0;
+    virtual void containerContentChanged(int32_t) = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERCONTENTCHANGELISTENER
     /**
      * @symbol __unk_destructor_-1

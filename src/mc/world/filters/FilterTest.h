@@ -96,7 +96,7 @@ public:
     /**
      * @symbol ?_testValuesWithOperator\@FilterTest\@\@IEBA_NHH\@Z
      */
-    MCAPI bool _testValuesWithOperator(int, int) const;
+    MCAPI bool _testValuesWithOperator(int32_t, int32_t) const;
     /**
      * @symbol ?_testValuesWithOperator\@FilterTest\@\@IEBA_NMM\@Z
      */

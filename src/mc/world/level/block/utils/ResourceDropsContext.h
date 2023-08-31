@@ -18,7 +18,7 @@ public:
     /**
      * @symbol ??0ResourceDropsContext\@\@QEAA\@MAEBVItemStack\@\@AEAVILevel\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI ResourceDropsContext(float, class ItemStack const&, class ILevel&, class AutomaticID<class Dimension, int>);
+    MCAPI ResourceDropsContext(float, class ItemStack const&, class ILevel&, DimensionType);
     /**
      * @symbol ??0ResourceDropsContext\@\@QEAA\@MAEBVItemStack\@\@AEBVBlockSource\@\@\@Z
      */

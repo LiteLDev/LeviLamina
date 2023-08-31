@@ -18,7 +18,7 @@ public:
     /**
      * @symbol ?getCoolingTime\@LookAtComponent\@\@QEAAAEAHXZ
      */
-    MCAPI int& getCoolingTime();
+    MCAPI int32_t& getCoolingTime();
     /**
      * @symbol ?getSearchRadius\@LookAtComponent\@\@QEBAMXZ
      */

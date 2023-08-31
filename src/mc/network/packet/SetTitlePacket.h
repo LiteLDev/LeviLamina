@@ -88,7 +88,7 @@ public:
     /**
      * @symbol ??0SetTitlePacket\@\@QEAA\@HHH\@Z
      */
-    MCAPI SetTitlePacket(int, int, int);
+    MCAPI SetTitlePacket(int32_t, int32_t, int32_t);
     /**
      * @symbol
      * ??0SetTitlePacket\@\@QEAA\@W4TitleType\@0\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z

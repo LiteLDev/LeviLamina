@@ -40,13 +40,13 @@ public:
      * ?thenExecuteAfter\@ScriptGameTestSequence\@ScriptModuleGameTest\@\@QEAA?AV?$WeakTypedObjectHandle\@VScriptGameTestSequence\@ScriptModuleGameTest\@\@\@Scripting\@\@HV?$Closure\@$$A6AXXZ$$V\@4\@\@Z
      */
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence>
-    thenExecuteAfter(int, class Scripting::Closure<void(void)>);
+        thenExecuteAfter(int32_t, class Scripting::Closure<void(void)>);
     /**
      * @symbol
      * ?thenExecuteFor\@ScriptGameTestSequence\@ScriptModuleGameTest\@\@QEAA?AV?$WeakTypedObjectHandle\@VScriptGameTestSequence\@ScriptModuleGameTest\@\@\@Scripting\@\@HV?$Closure\@$$A6AXXZ$$V\@4\@\@Z
      */
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence>
-    thenExecuteFor(int, class Scripting::Closure<void(void)>);
+        thenExecuteFor(int32_t, class Scripting::Closure<void(void)>);
     /**
      * @symbol
      * ?thenFail\@ScriptGameTestSequence\@ScriptModuleGameTest\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -56,7 +56,7 @@ public:
      * @symbol
      * ?thenIdle\@ScriptGameTestSequence\@ScriptModuleGameTest\@\@QEAA?AV?$WeakTypedObjectHandle\@VScriptGameTestSequence\@ScriptModuleGameTest\@\@\@Scripting\@\@H\@Z
      */
-    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence> thenIdle(int);
+    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence> thenIdle(int32_t);
     /**
      * @symbol ?thenSucceed\@ScriptGameTestSequence\@ScriptModuleGameTest\@\@QEAAXXZ
      */
@@ -72,7 +72,7 @@ public:
      * ?thenWaitAfter\@ScriptGameTestSequence\@ScriptModuleGameTest\@\@QEAA?AV?$WeakTypedObjectHandle\@VScriptGameTestSequence\@ScriptModuleGameTest\@\@\@Scripting\@\@HV?$Closure\@$$A6AXXZ$$V\@4\@\@Z
      */
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence>
-    thenWaitAfter(int, class Scripting::Closure<void(void)>);
+        thenWaitAfter(int32_t, class Scripting::Closure<void(void)>);
     /**
      * @symbol ??1ScriptGameTestSequence\@ScriptModuleGameTest\@\@QEAA\@XZ
      */

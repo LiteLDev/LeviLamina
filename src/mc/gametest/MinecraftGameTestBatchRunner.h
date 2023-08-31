@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace gametest { class BaseGameTestBatchRunner; }
 namespace gametest { class BaseGameTestFunction; }
 namespace gametest { class BaseGameTestInstance; }
 namespace gametest { class GameTestTicker; }

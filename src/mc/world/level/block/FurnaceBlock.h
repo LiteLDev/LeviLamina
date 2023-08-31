@@ -167,7 +167,7 @@ public:
      * @symbol ?getPlacementBlock\@FurnaceBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uint8_t, class Vec3 const&, int32_t) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -187,7 +187,7 @@ public:
      * @vftbl 126
      * @symbol ?getComparatorSignal\@FurnaceBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, unsigned char) const;
+    virtual int32_t getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uint8_t) const;
     /**
      * @vftbl 128
      * @symbol __unk_vfn_128
@@ -202,7 +202,7 @@ public:
      * @vftbl 146
      * @symbol ?getMappedFace\@FurnaceBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
-    virtual unsigned char getMappedFace(unsigned char, class Block const&) const;
+    virtual uint8_t getMappedFace(uint8_t, class Block const&) const;
     /**
      * @vftbl 148
      * @symbol ?animateTick\@FurnaceBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
@@ -252,7 +252,7 @@ public:
      * @vftbl 173
      * @symbol ?use\@FurnaceBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
+    virtual bool use(class Player&, class BlockPos const&, uint8_t) const;
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
@@ -267,7 +267,7 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@FurnaceBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@FurnaceBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -295,7 +295,7 @@ public:
      * @symbol
      * ??0FurnaceBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
-    MCAPI FurnaceBlock(std::string const&, int, bool);
+    MCAPI FurnaceBlock(std::string const&, int32_t, bool);
     /**
      * @symbol ?setLit\@FurnaceBlock\@\@SAX_NAEAVBlockSource\@\@AEBVBlockPos\@\@W4BlockActorType\@\@AEBVBlock\@\@4\@Z
      */

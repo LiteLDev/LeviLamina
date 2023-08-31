@@ -34,7 +34,7 @@ public:
     MCAPI void _onLevelSoundEvent(
         enum class LevelSoundEvent,
         class Vec3 const&,
-        int,
+        int32_t,
         struct ActorDefinitionIdentifier const&,
         bool,
         bool

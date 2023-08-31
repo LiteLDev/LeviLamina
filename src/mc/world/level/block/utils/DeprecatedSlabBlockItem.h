@@ -113,14 +113,14 @@ public:
      * @symbol
      * ?_calculatePlacePos\@DeprecatedSlabBlockItem\@\@UEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
-    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
+    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, uint8_t&, class BlockPos&) const;
     /**
      * @vftbl 135
      * @symbol
      * ?_useOn\@DeprecatedSlabBlockItem\@\@UEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
+    _useOn(class ItemStack&, class Actor&, class BlockPos, uint8_t, class Vec3 const&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEPRECATEDSLABBLOCKITEM
     /**
      * @symbol __unk_destructor_-1
@@ -135,11 +135,11 @@ public:
      * @symbol
      * ?_canConvertToDoubleSlab\@DeprecatedSlabBlockItem\@\@AEBA?AV?$optional\@H\@std\@\@AEAVItemStackBase\@\@AEBVActor\@\@AEBEAEBVBlock\@\@\@Z
      */
-    MCAPI std::optional<int>
-    _canConvertToDoubleSlab(class ItemStackBase&, class Actor const&, unsigned char const&, class Block const&) const;
+    MCAPI std::optional<int32_t>
+          _canConvertToDoubleSlab(class ItemStackBase&, class Actor const&, uint8_t const&, class Block const&) const;
     /**
      * @symbol ?_findSlabType\@DeprecatedSlabBlockItem\@\@AEBAHAEBVBlock\@\@\@Z
      */
-    MCAPI int _findSlabType(class Block const&) const;
+    MCAPI int32_t _findSlabType(class Block const&) const;
     // NOLINTEND
 };

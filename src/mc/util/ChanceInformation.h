@@ -23,7 +23,7 @@ public:
     /**
      * @symbol ?set\@ChanceInformation\@\@QEAAXII\@Z
      */
-    MCAPI void set(unsigned int, unsigned int);
+    MCAPI void set(uint32_t, uint32_t);
     /**
      * @symbol ?set\@ChanceInformation\@\@QEAAXM\@Z
      */

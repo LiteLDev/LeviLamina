@@ -151,7 +151,7 @@ public:
      * @vftbl 57
      * @symbol ?isValidAuxValue\@CoralFan\@\@UEBA_NH\@Z
      */
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
@@ -255,17 +255,17 @@ public:
      * @vftbl 135
      * @symbol ?getColor\@CoralFan\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getColor(class Block const&) const;
+    virtual int32_t getColor(class Block const&) const;
     /**
      * @vftbl 136
      * @symbol ?getColor\@CoralFan\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual int32_t getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
     /**
      * @vftbl 143
      * @symbol ?getVariant\@CoralFan\@\@UEBAHAEBVBlock\@\@\@Z
      */
-    virtual int getVariant(class Block const&) const;
+    virtual int32_t getVariant(class Block const&) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -325,12 +325,12 @@ public:
      * @vftbl 185
      * @symbol ?getResourceItem\@CoralFan\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 186
      * @symbol ?getResourceCount\@CoralFan\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int32_t getResourceCount(class Randomize&, class Block const&, int32_t) const;
     /**
      * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@CoralFan\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
@@ -350,7 +350,7 @@ public:
     /**
      * @symbol ??0CoralFan\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI CoralFan(std::string const&, int);
+    MCAPI CoralFan(std::string const&, int32_t);
     /**
      * @symbol
      * ?CORAL_FAN_NAMES\@CoralFan\@\@2QBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
@@ -359,6 +359,6 @@ public:
     /**
      * @symbol ?CORAL_FAN_NAMES_COUNT\@CoralFan\@\@2HB
      */
-    MCAPI static int const CORAL_FAN_NAMES_COUNT;
+    MCAPI static int32_t const CORAL_FAN_NAMES_COUNT;
     // NOLINTEND
 };

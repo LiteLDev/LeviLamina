@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct DispatcherUpdateSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+struct DispatcherUpdateSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

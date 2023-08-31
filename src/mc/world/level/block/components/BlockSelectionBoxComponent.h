@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockSelectionBoxComponent {
+// auto generated inclusion list
+#include "mc/world/level/block/components/BlockAABBComponentData.h"
+
+struct BlockSelectionBoxComponent : public ::BlockAABBComponentData {
 
 public:
     // prevent constructor by default
