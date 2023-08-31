@@ -11,7 +11,7 @@
 class UpdateClientInputLocksPacket : public ::Packet {
 
 public:
-    int  mInputLockComponentData; // this+0x30
+    int32_t  mInputLockComponentData; // this+0x30
     Vec3 mServerPos;              // this+0x34
 
     // prevent constructor by default

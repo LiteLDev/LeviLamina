@@ -12,8 +12,8 @@
 class ContainerSetDataPacket : public ::Packet {
 
 public:
-    int         mId;          // this+0x30
-    int         mValue;       // this+0x34
+    int32_t         mId;          // this+0x30
+    int32_t         mValue;       // this+0x34
     ContainerID mContainerId; // this+0x38
 
     // prevent constructor by default

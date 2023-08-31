@@ -13,7 +13,7 @@
 class SpawnParticleEffectPacket : public ::Packet {
 
 public:
-    unsigned char                    mVanillaDimensionId; // this+0x30
+    uint8_t                    mVanillaDimensionId; // this+0x30
     ActorUniqueID                    mActorId;            // this+0x38
     Vec3                             mPos;                // this+0x40
     std::string                      mEffectName;         // this+0x50

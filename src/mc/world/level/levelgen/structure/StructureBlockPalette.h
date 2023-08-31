@@ -18,7 +18,7 @@ public:
 
     struct TickingQueueData {
     public:
-        int mTickDelay;
+        int32_t mTickDelay;
     };
 
     // StructureBlockPalette inner types define

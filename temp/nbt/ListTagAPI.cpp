@@ -23,7 +23,7 @@ std::unique_ptr<ListTag> ListTag::create() {
 
 std::vector<Tag*>& ListTag::value() { return dAccess<std::vector<Tag*>, 8>(this); }
 
-Tag const* ListTag::operator[](int index) const {
+Tag const* ListTag::operator[](int32_t index) const {
     if (index < size())
         return get(index);
     return nullptr;
@@ -41,20 +41,20 @@ vector<Tag*> ListTag::get() { return value(); }
 
 
 // get value
-unsigned char  ListTag::getByte(int index) const { return get(index)->asByteTag()->value(); };
-short          ListTag::getShort(int index) const { return get(index)->asShortTag()->value(); };
-int64_t        ListTag::getInt64(int index) const { return get(index)->asInt64Tag()->value(); };
-TagMemoryChunk ListTag::getByteArray(int index) const { return get(index)->asByteArrayTag()->value(); };
+uint8_t  ListTag::getByte(int32_t index) const { return get(index)->asByteTag()->value(); };
+short          ListTag::getShort(int32_t index) const { return get(index)->asShortTag()->value(); };
+int64_t        ListTag::getInt64(int32_t index) const { return get(index)->asInt64Tag()->value(); };
+TagMemoryChunk ListTag::getByteArray(int32_t index) const { return get(index)->asByteArrayTag()->value(); };
 
 void ListTag::addEnd() { add(EndTag::create()); }
 
-void ListTag::addByte(unsigned char v) { add(ByteTag::create(v)); }
+void ListTag::addByte(uint8_t v) { add(ByteTag::create(v)); }
 
 void ListTag::addShort(short v) { add(ShortTag::create(v)); }
 
-void ListTag::addInt(int v) { add(IntTag::create(v)); }
+void ListTag::addInt(int32_t v) { add(IntTag::create(v)); }
 
-void ListTag::addInt64(__int64 v) { add(Int64Tag::create(v)); }
+void ListTag::addInt64(int64_t v) { add(Int64Tag::create(v)); }
 
 void ListTag::addFloat(float v) { add(FloatTag::create(v)); }
 
@@ -64,7 +64,7 @@ void ListTag::addString(const string& v) { add(StringTag::create(v)); }
 
 void ListTag::addByteArray(char data[], size_t size) { add(ByteArrayTag::create(data, size)); }
 
-void ListTag::addIntArray(int data[], size_t size) { add(Tag::asTag(IntArrayTag::create(data, size))); }
+void ListTag::addIntArray(int32_t data[], size_t size) { add(Tag::asTag(IntArrayTag::create(data, size))); }
 
 void ListTag::addByteArray(TagMemoryChunk tmc) { add(ByteArrayTag::create(tmc)); }
 

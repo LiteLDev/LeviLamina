@@ -16,7 +16,7 @@
 class ClientboundMapItemDataPacket : public ::Packet {
 public:
     // ClientboundMapItemDataPacket inner types define
-    enum class Type : int {
+    enum class Type : int32_t {
         Invalid          = 0,
         TextureUpdate    = 1 << 1,
         DecorationUpdate = 1 << 2,
@@ -24,17 +24,17 @@ public:
     };
 
     std::vector<ActorUniqueID>                  mMapIds;      // this+0x30
-    signed char                                 mScale;       // this+0x48
+    int8_t                                 mScale;       // this+0x48
     std::vector<std::shared_ptr<MapDecoration>> mDecorations; // this+0x50
     std::vector<MapItemTrackedActor::UniqueId>  mUniqueIds;   // this+0x68
-    int                                         mStartX;      // this+0x80
-    int                                         mStartY;      // this+0x84
+    int32_t                                         mStartX;      // this+0x80
+    int32_t                                         mStartY;      // this+0x84
     class BlockPos                              mMapOrigin;   // this+0x88
-    unsigned char                               mDimension;   // this+0x94
-    int                                         mWidth;       // this+0x98
-    int                                         mHeight;      // this+0x9C
+    uint8_t                               mDimension;   // this+0x94
+    int32_t                                         mWidth;       // this+0x98
+    int32_t                                         mHeight;      // this+0x9C
     Type                                        mType;        // this+0xA0
-    std::vector<unsigned int>                   mMapPixels;   // this+0xA8
+    std::vector<uint32_t>                   mMapPixels;   // this+0xA8
     bool                                        mLocked;      // this+0xC0
 
 public:

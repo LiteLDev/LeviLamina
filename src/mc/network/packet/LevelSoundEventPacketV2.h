@@ -14,7 +14,7 @@ class LevelSoundEventPacketV2 : public ::Packet {
 public:
     LevelSoundEvent mEventId;          // this+0x30
     Vec3            mPos;              // this+0x34
-    int             mData;             // this+0x40
+    int32_t             mData;             // this+0x40
     std::string     mEntityIdentifier; // this+0x48
     bool            mIsBabyMob;        // this+0x68
     bool            mIsGlobal;         // this+0x69

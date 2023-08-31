@@ -107,7 +107,7 @@ public:
     inline T get(const std::vector<std::string>& keys, bool ignoreCase = true, T defaultValue = T())
     {
         Any value;
-        int w = INT_MAX;
+        int32_t w = INT_MAX;
         for (auto& [k, v] : *this)
         {
             std::string lowerKey = k;
@@ -115,7 +115,7 @@ public:
             {
                 std::transform(lowerKey.begin(), lowerKey.end(), lowerKey.begin(), ::tolower);
             }
-            int i = 0;
+            int32_t i = 0;
             for (auto& key : keys)
             {
                 if (lowerKey == key && i < w)

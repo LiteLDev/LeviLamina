@@ -5,14 +5,14 @@
 #include "liteloader/api/event/LegacyEvents.h"
 #include "mc/Player.hpp"
 
-std::unordered_map<std::string, std::pair<Vec3, int>> deathPositions = {};
+std::unordered_map<std::string, std::pair<Vec3, int32_t>> deathPositions = {};
 
-std::unordered_map<std::string, std::pair<Vec3, int>> PlayerDeathPositions::getDeathPositions() {
+std::unordered_map<std::string, std::pair<Vec3, int32_t>> PlayerDeathPositions::getDeathPositions() {
     return deathPositions;
 }
 
-std::pair<Vec3, int> PlayerDeathPositions::makeDeathPos(Vec3 vec3, int dim) {
-    std::pair<Vec3, int> pos(vec3, dim);
+std::pair<Vec3, int32_t> PlayerDeathPositions::makeDeathPos(Vec3 vec3, int32_t dim) {
+    std::pair<Vec3, int32_t> pos(vec3, dim);
     return pos;
 }
 

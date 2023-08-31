@@ -70,7 +70,7 @@ public:
     LLNDAPI bool isItemActor() const;
     LLNDAPI bool isOnGround() const;
 
-    LLAPI void setOnFire(int time, bool isEffect = true);
+    LLAPI void setOnFire(int32_t time, bool isEffect = true);
     LLAPI void stopFire();
 
     LLNDAPI float getPosDeltaPerSecLength() const;
@@ -89,8 +89,8 @@ public:
             ClipDefaults::CHECK_ALL_PICKABLE_BLOCKS
     ) const;
 
-    LLAPI void teleport(class Vec3 const& pos, int dimID, class Vec2 const& rotation);
-    LLAPI void teleport(class Vec3 const& pos, int dimID);
+    LLAPI void teleport(class Vec3 const& pos, int32_t dimID, class Vec2 const& rotation);
+    LLAPI void teleport(class Vec3 const& pos, int32_t dimID);
 
     LLAPI void setName(std::string const& name);
 

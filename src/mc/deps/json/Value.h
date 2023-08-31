@@ -31,7 +31,7 @@ public:
     using UInt64      = uint64_t;
     using LargestInt  = Int64;
     using LargestUInt = UInt64;
-    using ArrayIndex  = unsigned;
+    using ArrayIndex  = uint32_t;
 
     using iterator       = ValueIterator;
     using const_iterator = ValueConstIterator;
@@ -41,7 +41,7 @@ public:
     class CZString {
 
     public:
-        enum class DuplicationPolicy : unsigned {
+        enum class DuplicationPolicy : uint32_t {
             noDuplication   = 0,
             duplicate       = 1,
             duplicateOnCopy = 2,
@@ -49,7 +49,7 @@ public:
         };
         struct StringStorage {
             DuplicationPolicy policy_ : 2;
-            unsigned          length_ : 30; // 1GB max
+            uint32_t          length_ : 30; // 1GB max
         };
 
         char const* cstr_;
@@ -58,7 +58,7 @@ public:
             StringStorage storage_;
         };
 
-        CZString(char const* str, unsigned length, DuplicationPolicy allocate) : cstr_(str) {
+        CZString(char const* str, uint32_t length, DuplicationPolicy allocate) : cstr_(str) {
             storage_.policy_ = allocate;
             storage_.length_ = length & 0x3FFFFFFF;
         }
@@ -74,10 +74,10 @@ public:
         [[nodiscard]] constexpr std::strong_ordering operator<=>(CZString const& other) const {
             if (!cstr_)
                 return index_ <=> other.index_;
-            unsigned this_len  = this->storage_.length_;
-            unsigned other_len = other.storage_.length_;
-            unsigned min_len   = std::min<unsigned>(this_len, other_len);
-            int      comp      = memcmp(this->cstr_, other.cstr_, min_len);
+            uint32_t this_len  = this->storage_.length_;
+            uint32_t other_len = other.storage_.length_;
+            uint32_t min_len   = std::min<uint32_t>(this_len, other_len);
+            int32_t      comp      = memcmp(this->cstr_, other.cstr_, min_len);
 
             if (comp == 0)
                 return this_len <=> other_len;

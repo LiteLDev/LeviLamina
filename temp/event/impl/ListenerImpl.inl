@@ -13,13 +13,13 @@
 namespace ll::event {
 namespace detail {
 
-inline int globalListenerId = 0;
+inline int32_t globalListenerId = 0;
 
 /**
  * @brief Get global listener id and +1.
  * @return Current global listener id.
  */
-inline int getCurrentListenerId() noexcept { return globalListenerId++; }
+inline int32_t getCurrentListenerId() noexcept { return globalListenerId++; }
 /**
  * @brief Log event error.
  * @param msg Error message.
@@ -32,7 +32,7 @@ inline void logEventError(
     const std::string& msg,
     const std::string& detail,
     const std::string& event,
-    int                listenerId,
+    int32_t                listenerId,
     HMODULE            plugin
 ) {
     std::string pluginName = "[Unknown]";
@@ -57,7 +57,7 @@ inline void logEventError(
 } // namespace detail
 
 template <typename EventType>
-LL_GETTER_IMPL(Listener<EventType>, int, id, getId);
+LL_GETTER_IMPL(Listener<EventType>, int32_t, id, getId);
 
 template <typename EventType>
 LL_GETTER_IMPL(Listener<EventType>, EventPriority, priority, getPriority);

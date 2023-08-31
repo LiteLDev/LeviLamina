@@ -20,14 +20,14 @@ public:
     // clang-format on
 
     // SubChunkPacket inner types define
-    enum class HeightMapDataType : char {
+    enum class HeightMapDataType : int8_t {
         NoData     = 0x0,
         HasData    = 0x1,
         AllTooHigh = 0x2,
         AllTooLow  = 0x3,
     };
 
-    enum class SubChunkRequestResult : char {
+    enum class SubChunkRequestResult : int8_t {
         Undefined             = 0x0,
         Success               = 0x1,
         LevelChunkDoesntExist = 0x2,
@@ -40,8 +40,8 @@ public:
     class HeightmapData {
 
     public:
-        HeightMapDataType                               mHeightMapType;
-        std::array<std::array<signed char, 16UL>, 16UL> mSubchunkHeightMap;
+        HeightMapDataType                          mHeightMapType;
+        std::array<std::array<int8_t, 16UL>, 16UL> mSubchunkHeightMap;
         // prevent constructor by default
         HeightmapData& operator=(HeightmapData const&) = delete;
         HeightmapData(HeightmapData const&)            = delete;
@@ -105,7 +105,7 @@ public:
 
 public:
     bool                            mCacheEnabled;  // this+0x30
-    AutomaticID<Dimension, int>     mDimensionType; // this+0x34
+    DimensionType                   mDimensionType; // this+0x34
     std::vector<SubChunkPacketData> mSubChunkData;  // this+0x38
     SubChunkPos                     mCenterPos;     // this+0x50
 

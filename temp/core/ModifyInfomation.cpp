@@ -45,7 +45,7 @@ LL_AUTO_STATIC_HOOK(
     HookPriority::Normal,
     "?BedrockLogOut@@YAXIPEBDZZ",
     void,
-    int   a1,
+    int32_t   a1,
     char* a2,
     ...
 ) {
@@ -89,7 +89,7 @@ LL_AUTO_STATIC_HOOK(
     HookPriority::Normal,
     "?PlatformBedrockLogOut@@YAXIPEBD@Z",
     void,
-    int         a1,
+    int32_t         a1,
     const char* ts
 ) {
     string input = ts;
@@ -123,17 +123,17 @@ LL_AUTO_STATIC_HOOK(
     void*        a1,
     void*        a2,
     void**       a3,
-    int          a4,
-    unsigned int a5,
-    __int64      a6,
-    unsigned int a7,
-    unsigned int a8
+    int32_t          a4,
+    uint32_t a5,
+    int64_t      a6,
+    uint32_t a7,
+    uint32_t a8
 ) {}
 
 #include "liteloader/core/LiteLoader.h"
 #include "mc/BedrockLog.hpp"
 namespace ModifyInfomation {
-int telemetryText = 0;
+int32_t telemetryText = 0;
 }
 LL_AUTO_STATIC_HOOK(
     MI_HOOK_NAME(5),
@@ -144,9 +144,9 @@ LL_AUTO_STATIC_HOOK(
     class std::bitset<3>         a2,
     enum BedrockLog::LogRule     a3,
     enum LogAreaID               a4,
-    unsigned int                 a5,
+    uint32_t                 a5,
     char const*                  a6,
-    int                          a7,
+    int32_t                          a7,
     char const*                  a8,
     ...
 ) {

@@ -259,7 +259,7 @@ BOOL WINAPI ConsoleExitHandler(DWORD CEvent) {
     return FALSE;
 }
 
-void unixSignalHandler(int signum) {
+void unixSignalHandler(int32_t signum) {
     switch (signum) {
     case SIGINT:
     case SIGTERM: {
@@ -399,9 +399,9 @@ void liteloaderMain() {
 
 using namespace ll::memory;
 
-LL_AUTO_STATIC_HOOK(LiteLoaderMain, HookPriority::Normal, "main", int, int argc, char** argv) {
+LL_AUTO_STATIC_HOOK(LiteLoaderMain, HookPriority::Normal, "main", int32_t, int32_t argc, char** argv) {
     startTime = clock();
-    for (int i = 0; i < argc; ++i) {
+    for (int32_t i = 0; i < argc; ++i) {
         if (strcmp(argv[i], "--noColor") == 0) {
             ll::commandLineOption.noColorOption = true;
             break;

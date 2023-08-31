@@ -6,12 +6,12 @@ struct PropertySyncData {
 
 public:
     struct PropertySyncIntEntry {
-        unsigned int mPropertyIndex;
-        int          mData;
+        uint32_t mPropertyIndex;
+        int32_t          mData;
     };
 
     struct PropertySyncFloatEntry {
-        unsigned int mPropertyIndex;
+        uint32_t mPropertyIndex;
         float        mData;
     };
 

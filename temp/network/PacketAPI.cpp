@@ -444,7 +444,7 @@ void __initPacketSize() {
         PACKET_SIZE<type> = size - 16;                     \
         continue;                                          \
     }
-    int packetId = -1;
+    int32_t packetId = -1;
     while (packetId < 200) {
         auto packet = MinecraftPackets::createPacket(++packetId);
         if (packet) {
@@ -468,7 +468,7 @@ std::string getClassName(Packet* packet) {
 }
 
 inline void forEachPacket(std::function<void(Packet const& packet, std::string className, size_t size)> callback) {
-    int packetId = 0;
+    int32_t packetId = 0;
     while (packetId < 200) {
         auto packet = MinecraftPackets::createPacket(packetId);
         if (packet) {

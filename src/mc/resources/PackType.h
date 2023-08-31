@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class PackType : char {
+enum class PackType : int8_t {
     Invalid       = 0x0,
     Addon         = 0x1,
     Cached        = 0x2,

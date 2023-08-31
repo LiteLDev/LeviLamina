@@ -18,7 +18,7 @@ ContainerChangeEvent::ContainerChangeEvent(
     Container*           container,
     ItemStack*           previousItemStack,
     ItemStack*           newItemStack,
-    int                  slot
+    int32_t                  slot
 )
 : player(player), actor(actor), blockInstance(blockInstance), container(container), slot(slot),
   previousItemStack(previousItemStack), newItemStack(newItemStack) {}
@@ -27,7 +27,7 @@ LL_GETTER_IMPL(ContainerChangeEvent, Player*, player, getPlayer)
 LL_GETTER_IMPL(ContainerChangeEvent, Actor*, player, getActor)
 LL_GETTER_IMPL(ContainerChangeEvent, BlockInstance, blockInstance, getBlockInstance)
 LL_GETTER_IMPL(ContainerChangeEvent, Container*, container, getContainer)
-LL_GETTER_IMPL(ContainerChangeEvent, int, slot, getSlot)
+LL_GETTER_IMPL(ContainerChangeEvent, int32_t, slot, getSlot)
 LL_GETTER_IMPL(ContainerChangeEvent, ItemStack*, previousItemStack, getPreviousItemStack)
 LL_GETTER_IMPL(ContainerChangeEvent, ItemStack*, newItemStack, getNewItemStack)
 
@@ -37,7 +37,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     HookPriority::Normal,
     "?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0@Z",
     void,
-    int        slotNumber,
+    int32_t        slotNumber,
     ItemStack* oldItem,
     ItemStack* newItem
 ) {

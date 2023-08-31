@@ -344,12 +344,12 @@ bool ll::PluginManager::reloadPlugin(string pluginName, bool outputResult) {
     }
 }
 
-int ll::PluginManager::reloadAllPlugins(bool outputResult) {
+int32_t ll::PluginManager::reloadAllPlugins(bool outputResult) {
     // if (!ll::isDebugMode())
     //     return false;
     try {
         auto allPlugins = getAllPlugins(true);
-        int  cnt        = 0;
+        int32_t  cnt        = 0;
         for (auto& [name, plugin] : allPlugins) {
             if (plugin->type == Plugin::PluginType::ScriptPlugin) {
                 ll::event::legacy::ScriptPluginManagerEvent ev;

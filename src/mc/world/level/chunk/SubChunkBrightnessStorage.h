@@ -13,8 +13,8 @@ public:
     struct LightPair {
 
     public:
-        unsigned char blockLight : 4;
-        unsigned char skyLight : 4;
+        uint8_t blockLight : 4;
+        uint8_t skyLight : 4;
     };
 
 public:

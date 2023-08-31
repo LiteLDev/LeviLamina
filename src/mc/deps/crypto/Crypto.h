@@ -25,7 +25,7 @@ union EncryptedFileHeader {
 };
 
 union SignatureValue {
-    unsigned int  _value;             // this+0x0
+    uint32_t  _value;             // this+0x0
     uint8_t _signatureBytes[4]; // this+0x0
 };
 }; // namespace Crypto

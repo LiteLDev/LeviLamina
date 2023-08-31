@@ -15,14 +15,14 @@ public:
     // clang-format on
 
     // Facing inner types define
-    enum class Axis : int {
+    enum class Axis : int32_t {
         X     = 0x0,
         Y     = 0x1,
         Z     = 0x2,
         Count = 0x3,
     };
 
-    enum class Name : char {
+    enum class Name : int8_t {
         Down          = 0x0,
         Up            = 0x1,
         North         = 0x2,
@@ -34,7 +34,7 @@ public:
         NumCullingIds = 0x7,
     };
 
-    enum class Rotation : int {
+    enum class Rotation : int32_t {
         None  = 0x0,
         CCW   = 0x1, // Counter-clockwise
         OPP   = 0x2, // Opposite

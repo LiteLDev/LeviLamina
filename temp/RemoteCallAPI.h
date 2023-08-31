@@ -1,14 +1,14 @@
 #pragma once
 #include "liteloader/api/Global.h"
 #include "liteloader/api/utils/WinHelper.h"
+#include "mc/Block.hpp"
+#include "mc/BlockActor.hpp"
+#include "mc/BlockInstance.hpp"
 #include "mc/CompoundTag.hpp"
 #include "mc/Container.hpp"
 #include "mc/ItemStack.hpp"
-#include "mc/BlockInstance.hpp"
-#include "mc/VanillaDimensions.hpp"
 #include "mc/Player.hpp"
-#include "mc/Block.hpp"
-#include "mc/BlockActor.hpp"
+#include "mc/VanillaDimensions.hpp"
 #define TEST_NEW_VALUE_TYPE
 
 ///////////////////////////////////////////////////////
@@ -18,10 +18,10 @@
 // make sure the callback parameter type can be converted to json
 //
 // [Usage]
-// RemoteCall::exportAs("TestNameSpace", "strSize", [](std::string const& arg) -> int { return arg.size(); });
+// RemoteCall::exportAs("TestNameSpace", "strSize", [](std::string const& arg) -> int32_t { return arg.size(); });
 //
 // // in other plugin
-// auto strSize = RemoteCall::importAs<int(std::string const& arg)>("TestNameSpace", "strSize");
+// auto strSize = RemoteCall::importAs<int32_t(std::string const& arg)>("TestNameSpace", "strSize");
 // logger.info("Size of str: {}", strSize("12345678"));
 //
 // // in js plugin
@@ -34,19 +34,15 @@ namespace RemoteCall {
 // .....
 struct NbtType {
     CompoundTag const* ptr = nullptr;
-    bool own = false;
-    NbtType(std::unique_ptr<CompoundTag> tag)
-    : ptr(tag.release())
-    , own(true){};
-    NbtType(CompoundTag const* ptr)
-    : ptr(ptr)
-    , own(false){};
+    bool               own = false;
+    NbtType(std::unique_ptr<CompoundTag> tag) : ptr(tag.release()), own(true){};
+    NbtType(CompoundTag const* ptr) : ptr(ptr), own(false){};
     inline std::unique_ptr<CompoundTag> tryGetUniquePtr() {
         if (!own)
             return {};
-        own = false;
+        own       = false;
         auto uptr = std::unique_ptr<CompoundTag>(const_cast<CompoundTag*>(ptr));
-        ptr = nullptr;
+        ptr       = nullptr;
         return std::move(uptr);
     }
     template <typename RTN>
@@ -67,19 +63,15 @@ struct NbtType {
 
 struct ItemType {
     ItemStack const* ptr = nullptr;
-    bool own = false;
-    ItemType(std::unique_ptr<ItemStack> tag)
-    : ptr(tag.release())
-    , own(true){};
-    ItemType(ItemStack const* ptr)
-    : ptr(ptr)
-    , own(false){};
+    bool             own = false;
+    ItemType(std::unique_ptr<ItemStack> tag) : ptr(tag.release()), own(true){};
+    ItemType(ItemStack const* ptr) : ptr(ptr), own(false){};
     inline std::unique_ptr<ItemStack> tryGetUniquePtr() {
         if (!own)
             return {};
-        own = false;
+        own       = false;
         auto uptr = std::unique_ptr<ItemStack>(const_cast<ItemStack*>(ptr));
-        ptr = nullptr;
+        ptr       = nullptr;
         return std::move(uptr);
     }
     template <typename RTN>
@@ -100,8 +92,7 @@ struct ItemType {
 
 struct BlockType {
     BlockInstance instance;
-    BlockType(BlockInstance instance)
-    : instance(instance){};
+    BlockType(BlockInstance instance) : instance(instance){};
     BlockType(Block const* ptr)
     : instance(BlockInstance::createBlockInstance(const_cast<Block*>(ptr), BlockPos::ZERO, -1)){};
     template <typename RTN>
@@ -117,46 +108,24 @@ struct BlockType {
 };
 
 struct NumberType {
-    __int64 i = 0;
-    double f = 0;
-    NumberType(__int64 i, double f)
-    : i(i)
-    , f(f){};
+    int64_t i = 0;
+    double  f = 0;
+    NumberType(int64_t i, double f) : i(i), f(f){};
     template <typename T>
     std::enable_if_t<std::is_integral_v<T> || std::is_floating_point_v<T>, NumberType&> operator=(T v) {
-        i = static_cast<__int64>(v);
+        i = static_cast<int64_t>(v);
         f = static_cast<double>(v);
     }
-    NumberType(double v)
-    : i(static_cast<__int64>(v))
-    , f(static_cast<double>(v)){};
-    NumberType(float v)
-    : i(static_cast<__int64>(v))
-    , f(static_cast<double>(v)){};
-    NumberType(__int64 v)
-    : i(static_cast<__int64>(v))
-    , f(static_cast<double>(v)){};
-    NumberType(int v)
-    : i(static_cast<__int64>(v))
-    , f(static_cast<double>(v)){};
-    NumberType(short v)
-    : i(static_cast<__int64>(v))
-    , f(static_cast<double>(v)){};
-    NumberType(char v)
-    : i(static_cast<__int64>(v))
-    , f(static_cast<double>(v)){};
-    NumberType(unsigned __int64 v)
-    : i(static_cast<__int64>(v))
-    , f(static_cast<double>(v)){};
-    NumberType(unsigned int v)
-    : i(static_cast<__int64>(v))
-    , f(static_cast<double>(v)){};
-    NumberType(unsigned short v)
-    : i(static_cast<__int64>(v))
-    , f(static_cast<double>(v)){};
-    NumberType(unsigned char v)
-    : i(static_cast<__int64>(v))
-    , f(static_cast<double>(v)){};
+    NumberType(double v) : i(static_cast<int64_t>(v)), f(static_cast<double>(v)){};
+    NumberType(float v) : i(static_cast<int64_t>(v)), f(static_cast<double>(v)){};
+    NumberType(int64_t v) : i(static_cast<int64_t>(v)), f(static_cast<double>(v)){};
+    NumberType(int32_t v) : i(static_cast<int64_t>(v)), f(static_cast<double>(v)){};
+    NumberType(short v) : i(static_cast<int64_t>(v)), f(static_cast<double>(v)){};
+    NumberType(char v) : i(static_cast<int64_t>(v)), f(static_cast<double>(v)){};
+    NumberType(uint64_t v) : i(static_cast<int64_t>(v)), f(static_cast<double>(v)){};
+    NumberType(uint32_t v) : i(static_cast<int64_t>(v)), f(static_cast<double>(v)){};
+    NumberType(uint16_t v) : i(static_cast<int64_t>(v)), f(static_cast<double>(v)){};
+    NumberType(uint8_t v) : i(static_cast<int64_t>(v)), f(static_cast<double>(v)){};
     template <typename RTN>
     inline std::enable_if_t<std::is_integral_v<RTN>, RTN> get() {
         return static_cast<RTN>(i);
@@ -168,14 +137,10 @@ struct NumberType {
 };
 
 struct WorldPosType {
-    Vec3 pos = Vec3::ZERO;
-    int dimID = 3; // VanillaDimensions::Undefined;
-    WorldPosType(Vec3 const& pos, int dimID = 3)
-    : pos(pos)
-    , dimID(dimID){};
-    WorldPosType(std::pair<Vec3, int> const& pos)
-    : pos(pos.first)
-    , dimID(pos.second){};
+    Vec3    pos   = Vec3::ZERO;
+    int32_t dimID = 3; // VanillaDimensions::Undefined;
+    WorldPosType(Vec3 const& pos, int32_t dimID = 3) : pos(pos), dimID(dimID){};
+    WorldPosType(std::pair<Vec3, int32_t> const& pos) : pos(pos.first), dimID(pos.second){};
     template <typename RTN>
     inline RTN get() = delete;
     template <>
@@ -187,24 +152,20 @@ struct WorldPosType {
         return BlockPos(pos);
     };
     template <>
-    inline std::pair<Vec3, int> get() {
+    inline std::pair<Vec3, int32_t> get() {
         return std::make_pair(pos, dimID);
     };
     template <>
-    inline std::pair<BlockPos, int> get() {
+    inline std::pair<BlockPos, int32_t> get() {
         return std::make_pair(BlockPos(pos), dimID);
     };
 };
 
 struct BlockPosType {
-    BlockPos pos = BlockPos::ZERO;
-    int dimID = 0;
-    BlockPosType(BlockPos const& pos, int dimID = 0)
-    : pos(pos)
-    , dimID(dimID){};
-    BlockPosType(std::pair<BlockPos, int> const& pos)
-    : pos(pos.first)
-    , dimID(pos.second){};
+    BlockPos pos   = BlockPos::ZERO;
+    int32_t  dimID = 0;
+    BlockPosType(BlockPos const& pos, int32_t dimID = 0) : pos(pos), dimID(dimID){};
+    BlockPosType(std::pair<BlockPos, int32_t> const& pos) : pos(pos.first), dimID(pos.second){};
     template <typename RTN>
     inline RTN get() = delete;
     template <>
@@ -212,7 +173,7 @@ struct BlockPosType {
         return pos;
     };
     template <>
-    inline std::pair<BlockPos, int> get() {
+    inline std::pair<BlockPos, int32_t> get() {
         return std::make_pair(pos, dimID);
     };
     template <>
@@ -220,7 +181,7 @@ struct BlockPosType {
         return pos.toVec3();
     };
     template <>
-    inline std::pair<Vec3, int> get() {
+    inline std::pair<Vec3, int32_t> get() {
         return std::make_pair(pos.toVec3(), dimID);
     };
 };
@@ -228,10 +189,13 @@ struct BlockPosType {
 
 // std::string  -> json
 // std::string* -> bytes
-#define ExtraType std::nullptr_t, NumberType, Player*, Actor*, BlockActor*, Container*, WorldPosType, BlockPosType, ItemType, BlockType, NbtType
+#define ExtraType                                                                                                      \
+    std::nullptr_t, NumberType, Player*, Actor*, BlockActor*, Container*, WorldPosType, BlockPosType, ItemType,        \
+        BlockType, NbtType
 #define ElementType bool, std::string, ExtraType
 template <typename _Ty, class... _Types>
-static constexpr bool is_one_of_v = std::_Meta_find_unique_index<std::variant<_Types...>, _Ty>::value < sizeof...(_Types);
+static constexpr bool is_one_of_v =
+    std::_Meta_find_unique_index<std::variant<_Types...>, _Ty>::value < sizeof...(_Types);
 template <typename _Ty>
 static constexpr bool is_extra_type_v = std::_Is_any_of_v<_Ty, ExtraType>;
 
@@ -247,13 +211,13 @@ template <class _Kty, class _Ty, class _Pr, class _Alloc>
 constexpr bool is_map_v<std::map<_Kty, _Ty, _Pr, _Alloc>> = true;
 template <class _Kty, class _Ty, class _Hasher, class _Keyeq, class _Alloc>
 constexpr bool is_map_v<std::unordered_map<_Kty, _Ty, _Hasher, _Keyeq, _Alloc>> = true;
-using Value = std::variant<ElementType>;
+using Value                                                                     = std::variant<ElementType>;
 // struct Value
 //{
 //     std::variant<ElementType> value;
 //     Value(bool v)
 //         : value(v){};
-//     Value(__int64 v)
+//     Value(int64_t v)
 //         : value(v){};
 //     Value(double v)
 //         : value(v){};
@@ -285,40 +249,29 @@ using Value = std::variant<ElementType>;
 //     }
 // };
 struct ValueType {
-    using ArrayType = std::vector<ValueType>;
+    using ArrayType  = std::vector<ValueType>;
     using ObjectType = std::unordered_map<std::string, ValueType>;
-    using Type = std::variant<Value, ArrayType, ObjectType>;
+    using Type       = std::variant<Value, ArrayType, ObjectType>;
     Type value;
-    ValueType()
-    : value({}){};
+    ValueType() : value({}){};
     // ValueType(ValueType const& v) = delete;
     // ValueType(Value const& v) = delete;
-    ValueType(Value&& v)
-    : value(std::move(v)){};
-    ValueType(Value v)
-    : value(std::move(v)){};
+    ValueType(Value&& v) : value(std::move(v)){};
+    ValueType(Value v) : value(std::move(v)){};
     // ValueType(ValueType&& v) noexcept
     //     : value(std::move(v.value)){};
-    ValueType(std::vector<ValueType>&& v)
-    : value(std::move(v)){};
-    ValueType(std::unordered_map<std::string, ValueType>&& v)
-    : value(std::move(v)){};
+    ValueType(std::vector<ValueType>&& v) : value(std::move(v)){};
+    ValueType(std::unordered_map<std::string, ValueType>&& v) : value(std::move(v)){};
     template <typename T>
-    ValueType(T const& v)
-    : value(Value(v)){};
+    ValueType(T const& v) : value(Value(v)){};
 };
 
 template <typename _Ty>
-static constexpr bool is_supported_type_v = std::is_void_v<_Ty> ||
-                                            is_one_of_v<_Ty, ElementType> ||
-                                            std::is_assignable_v<NumberType, _Ty> ||
-                                            std::is_assignable_v<NbtType, _Ty> ||
-                                            std::is_assignable_v<BlockType, _Ty> ||
-                                            std::is_assignable_v<ItemType, _Ty> ||
-                                            std::is_assignable_v<WorldPosType, _Ty> ||
-                                            std::is_assignable_v<BlockPosType, _Ty> ||
-                                            std::is_base_of_v<Player, std::remove_pointer_t<_Ty>> ||
-                                            std::is_base_of_v<Actor, std::remove_pointer_t<_Ty>>;
+static constexpr bool is_supported_type_v =
+    std::is_void_v<_Ty> || is_one_of_v<_Ty, ElementType> || std::is_assignable_v<NumberType, _Ty> ||
+    std::is_assignable_v<NbtType, _Ty> || std::is_assignable_v<BlockType, _Ty> || std::is_assignable_v<ItemType, _Ty> ||
+    std::is_assignable_v<WorldPosType, _Ty> || std::is_assignable_v<BlockPosType, _Ty> ||
+    std::is_base_of_v<Player, std::remove_pointer_t<_Ty>> || std::is_base_of_v<Actor, std::remove_pointer_t<_Ty>>;
 
 template <typename RTN>
 RTN extract(ValueType&& val);
@@ -461,25 +414,29 @@ ValueType pack(T const& val) {
 using CallbackFn = std::function<ValueType(std::vector<ValueType>)>;
 
 struct ExportedFuncData {
-    HMODULE handle;
+    HMODULE    handle;
     CallbackFn callback;
 };
 
 LLAPI extern CallbackFn const EMPTY_FUNC;
-LLAPI bool exportFunc(std::string const& nameSpace, std::string const& funcName, CallbackFn&& callback, HMODULE handle = GetCurrentModule());
+LLAPI bool                    exportFunc(
+                       std::string const& nameSpace,
+                       std::string const& funcName,
+                       CallbackFn&&       callback,
+                       HMODULE            handle = GetCurrentModule()
+                   );
 LLAPI CallbackFn const& importFunc(std::string const& nameSpace, std::string const& funcName);
 
 
-inline ValueType _expandArg(std::vector<ValueType>& args, int& index) {
-    return std::move(args[--index]);
-}
+inline ValueType _expandArg(std::vector<ValueType>& args, int32_t& index) { return std::move(args[--index]); }
 
 template <typename RTN, typename... Args>
-inline bool _exportAs(std::string const& nameSpace, std::string const& funcName, std::function<RTN(Args...)>&& callback) {
+inline bool
+_exportAs(std::string const& nameSpace, std::string const& funcName, std::function<RTN(Args...)>&& callback) {
     CallbackFn cb = [callback = std::move(callback)](std::vector<ValueType> args) -> ValueType {
         if (sizeof...(Args) != args.size())
             return std::move(ValueType());
-        int index = sizeof...(Args);
+        int32_t index = sizeof...(Args);
         if constexpr (std::is_void_v<RTN>) {
             callback(extract<Args>(_expandArg(args, index))...);
             return std::move(ValueType());
@@ -490,11 +447,11 @@ inline bool _exportAs(std::string const& nameSpace, std::string const& funcName,
     return exportFunc(nameSpace, funcName, std::move(cb), GetCurrentModule());
 }
 
-LLAPI bool hasFunc(std::string const& nameSpace, std::string const& funcName);
-LLAPI bool removeFunc(std::string const& nameSpace, std::string const& funcName);
-LLAPI int removeNameSpace(std::string const& nameSpace);
-LLAPI int removeFuncs(std::vector<std::pair<std::string, std::string>> funcs);
-LLAPI void _onCallError(std::string const& msg, HMODULE handle = GetCurrentModule());
+LLAPI bool    hasFunc(std::string const& nameSpace, std::string const& funcName);
+LLAPI bool    removeFunc(std::string const& nameSpace, std::string const& funcName);
+LLAPI int32_t removeNameSpace(std::string const& nameSpace);
+LLAPI int32_t removeFuncs(std::vector<std::pair<std::string, std::string>> funcs);
+LLAPI void    _onCallError(std::string const& msg, HMODULE handle = GetCurrentModule());
 
 template <typename RTN, typename... Args>
 inline bool _importAs(std::string const& nameSpace, std::string const& funcName, std::function<RTN(Args...)>& func) {
@@ -505,7 +462,7 @@ inline bool _importAs(std::string const& nameSpace, std::string const& funcName,
             return RTN();
         }
         std::vector<ValueType> params = {pack(std::forward<Args>(args))...};
-        ValueType&& res = rawFunc(std::move(params));
+        ValueType&&            res    = rawFunc(std::move(params));
         return extract<RTN>(std::move(res));
     };
     return true;

@@ -13,7 +13,7 @@ class HurtArmorPacket : public ::Packet {
 
 public:
     ActorDamageCause mCause;      // this+0x30
-    int              mDmg;        // this+0x34
+    int32_t              mDmg;        // this+0x34
     std::bitset<4>   mArmorSlots; // this+0x38
 
     // prevent constructor by default

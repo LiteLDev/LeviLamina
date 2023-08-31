@@ -171,7 +171,7 @@ public:
     LLNDAPI std::string const& getTypeName() const;
 
     LLNDAPI static optional_ref<BlockLegacy> tryGetFromRegistry(std::string const& name);
-    LLNDAPI static optional_ref<BlockLegacy> tryGetFromRegistry(unsigned int legacyBlockID);
+    LLNDAPI static optional_ref<BlockLegacy> tryGetFromRegistry(uint32_t legacyBlockID);
 
     // prevent constructor by default
     BlockLegacy& operator=(BlockLegacy const&) = delete;

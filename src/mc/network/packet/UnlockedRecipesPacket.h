@@ -10,7 +10,7 @@
 class UnlockedRecipesPacket : public ::Packet {
 public:
     // UnlockedRecipesPacket inner types define
-    enum class PacketType : int {
+    enum class PacketType : int32_t {
         Empty                    = 0x0,
         InitiallyUnlockedRecipes = 0x1,
         NewlyUnlockedRecipes     = 0x2,

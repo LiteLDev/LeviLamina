@@ -9,7 +9,7 @@ public:
         struct {
             short mVersion;     // this+0x0
             bool  mOverrideAux; // this+0x2
-            int   mId;          // this+0x4
+            int32_t   mId;          // this+0x4
         };
         uint64_t mVersionId; // this+0x0
     };

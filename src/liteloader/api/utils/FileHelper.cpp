@@ -96,7 +96,7 @@ bool CreateDirs(const std::string& path) {
     return ret;
 }
 
-std::pair<int, std::string> UncompressFile(const std::string& filePath, const std::string& toDir, int processTimeout)
+std::pair<int32_t, std::string> UncompressFile(const std::string& filePath, const std::string& toDir, int32_t processTimeout)
 {
     error_code ec;
     std::filesystem::create_directories(toDir, ec);

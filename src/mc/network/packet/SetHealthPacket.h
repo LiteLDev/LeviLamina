@@ -10,7 +10,7 @@
 class SetHealthPacket : public ::Packet {
 
 public:
-    int mHealth; // this+0x30
+    int32_t mHealth; // this+0x30
 
     // prevent constructor by default
     SetHealthPacket& operator=(SetHealthPacket const&) = delete;

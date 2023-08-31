@@ -14,8 +14,8 @@
 class BossEventPacket : public ::Packet {
 
 public:
-    int                            FLAG_DARKEN;     // this+0x30
-    int                            FLAG_FOG;        // this+0x34
+    int32_t                            FLAG_DARKEN;     // this+0x30
+    int32_t                            FLAG_FOG;        // this+0x34
     struct ActorUniqueID           mBossID;         // this+0x38
     struct ActorUniqueID           mPlayerID;       // this+0x40
     enum class BossEventUpdateType mEventType;      // this+0x48
@@ -23,8 +23,8 @@ public:
     float                          mHealthPercent;  // this+0x70
     enum class BossBarColor        mColor;          // this+0x74
     enum class BossBarOverlay      mOverlay;        // this+0x78
-    unsigned char                  mDarkenScreen;   // this+0x7C
-    unsigned char                  mCreateWorldFog; // this+0x7D
+    uint8_t                  mDarkenScreen;   // this+0x7C
+    uint8_t                  mCreateWorldFog; // this+0x7D
 
     // prevent constructor by default
     BossEventPacket& operator=(BossEventPacket const&) = delete;

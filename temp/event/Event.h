@@ -60,7 +60,7 @@ public:
      * @brief Unsubscribe the event by id.
      * @param id The listener id.
      */
-    LLAPI static void unsubscribe(int listenerId) noexcept;
+    LLAPI static void unsubscribe(int32_t listenerId) noexcept;
 };
 
 } // namespace ll::event

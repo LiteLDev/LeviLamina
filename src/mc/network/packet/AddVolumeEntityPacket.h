@@ -15,13 +15,13 @@
 class AddVolumeEntityPacket : public ::AddEntityPacket {
 
 public:
-    CompoundTag                 mComponents;     // this+0x30
-    std::string                 mJsonIdentifier; // this+0x68
-    std::string                 mInstanceName;   // this+0x88
-    NetworkBlockPosition        mMinBounds;      // this+0xa8
-    NetworkBlockPosition        mMaxBounds;      // this+0xb4
-    AutomaticID<Dimension, int> mDimensionType;  // this+0xc0
-    SemVersion                  mEngineVersion;  // this+0xc8
+    CompoundTag          mComponents;     // this+0x30
+    std::string          mJsonIdentifier; // this+0x68
+    std::string          mInstanceName;   // this+0x88
+    NetworkBlockPosition mMinBounds;      // this+0xa8
+    NetworkBlockPosition mMaxBounds;      // this+0xb4
+    DimensionType        mDimensionType;  // this+0xc0
+    SemVersion           mEngineVersion;  // this+0xc8
 
     // prevent constructor by default
     AddVolumeEntityPacket& operator=(AddVolumeEntityPacket const&) = delete;

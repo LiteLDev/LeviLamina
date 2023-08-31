@@ -120,7 +120,7 @@ bool RemoveAddonFromList(Addon& addon) {
         return false;
     }
     auto addonJson = fifo_json::parse(*addonJsonContent, nullptr, true, true);
-    int  id        = 0;
+    int32_t  id        = 0;
     for (auto item : addonJson) {
         if (item["pack_id"] == addon.uuid) {
             addonJson.erase(id);
@@ -466,7 +466,7 @@ class AddonsCommand : public Command {
 
     Operation   operation = static_cast<Operation>(-1);
     std::string target;
-    int         index        = -1;
+    int32_t         index        = -1;
     bool        target_isSet = false;
     bool        index_isSet  = false;
 
@@ -480,7 +480,7 @@ class AddonsCommand : public Command {
             }
         } else {
             auto allAddons = AddonsManager::getAllAddons();
-            if (index - 1 >= 0 && index - 1 < static_cast<int>(allAddons.size()))
+            if (index - 1 >= 0 && index - 1 < static_cast<int32_t>(allAddons.size()))
                 return allAddons[index - 1];
             else
                 output.trError("ll.addonsHelper.error.outOfRange", index);
@@ -698,7 +698,7 @@ bool AutoInstallAddons(string path) {
         return false;
 
     addonLogger.info(tr("ll.addonsHelper.autoInstall.working", toInstallList.size()));
-    int cnt = 0;
+    int32_t cnt = 0;
     for (auto& addonPath : toInstallList) {
         addonLogger.debug("Installing \"{}\"...", addonPath);
         if (!AddonsManager::install(addonPath)) {

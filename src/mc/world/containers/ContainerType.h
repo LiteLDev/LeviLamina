@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-enum class ContainerType : char {
+enum class ContainerType : int8_t {
     None               = -9,
     Inventory          = -1,
     Container          = 0x0,

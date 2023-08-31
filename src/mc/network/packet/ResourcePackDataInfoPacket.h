@@ -13,9 +13,9 @@ class ResourcePackDataInfoPacket : public ::Packet {
 
 public:
     std::string        mResourceName; // this+0x30
-    unsigned int       mChunkSize;    // this+0x50
-    int                mNbChunks;     // this+0x54
-    unsigned long long mFileSize;     // this+0x58
+    uint32_t       mChunkSize;    // this+0x50
+    int32_t                mNbChunks;     // this+0x54
+    uint64_t mFileSize;     // this+0x58
     std::string        mFileHash;     // this+0x60
     PackType           mPackType;     // this+0x80
     bool               mIsPremium;    // this+0x81

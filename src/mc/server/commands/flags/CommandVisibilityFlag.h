@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class CommandVisibilityFlag : unsigned short {
+enum class CommandVisibilityFlag : uint16_t {
     Visible                      = 0,
     HiddenFromCommandBlockOrigin = 1 << 1,
     HiddenFromPlayerOrigin       = 1 << 2,

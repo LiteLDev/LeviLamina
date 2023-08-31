@@ -14,7 +14,7 @@ public:
     // clang-format on
 
     // BlockPalette inner types define
-    enum class PaletteType : int {
+    enum class PaletteType : int32_t {
         Sequential = 0x0,
         Hashed     = 0x1,
     };
@@ -23,7 +23,7 @@ public:
     };
 
     std::mutex                                      mLegacyBlockStatesConversionWarningMutex;
-    std::set<std::pair<int, int>>                   mLegacyBlockStatesConversionWarningSet;
+    std::set<std::pair<int32_t, int32_t>>                   mLegacyBlockStatesConversionWarningSet;
     std::map<std::string, class BlockLegacy const*> mNameLookup;
     std::vector<class Block const*>                 mBlockFromNetworkId;
     class Level*                                    mLevel;

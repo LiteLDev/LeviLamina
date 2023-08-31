@@ -11,7 +11,7 @@
 class MobEffectPacket : public ::Packet {
 public:
     // MobEffectPacket inner types define
-    enum class Event : char {
+    enum class Event : int8_t {
         Invalid = 0x0,
         Add     = 0x1,
         Update  = 0x2,
@@ -20,10 +20,10 @@ public:
 
 public:
     ActorRuntimeID   mRuntimeId;           // this+0x30
-    int              mEffectDurationTicks; // this+0x38
+    int32_t              mEffectDurationTicks; // this+0x38
     enum class Event mEventId;             // this+0x3C
-    int              mEffectId;            // this+0x40
-    int              mEffectAmplifier;     // this+0x44
+    int32_t              mEffectId;            // this+0x40
+    int32_t              mEffectAmplifier;     // this+0x44
     bool             mShowParticles;       // this+0x48
 
     // prevent constructor by default

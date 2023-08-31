@@ -50,7 +50,7 @@ Any::Any(char v) {
     type = Type::Integer;
     value.integer = v;
 }
-Any::Any(unsigned char v) {
+Any::Any(uint8_t v) {
     type = Type::UInteger;
     value.uinteger = v;
 }
@@ -58,15 +58,15 @@ Any::Any(short v) {
     type = Type::Integer;
     value.integer = v;
 }
-Any::Any(unsigned short v) {
+Any::Any(uint16_t v) {
     type = Type::UInteger;
     value.uinteger = v;
 }
-Any::Any(int v) {
+Any::Any(int32_t v) {
     type = Type::Integer;
     value.integer = v;
 }
-Any::Any(unsigned int v) {
+Any::Any(uint32_t v) {
     type = Type::UInteger;
     value.uinteger = v;
 }

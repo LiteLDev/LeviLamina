@@ -6,7 +6,7 @@ class MoveActorDeltaData {
 
 public:
     union Header {
-        unsigned short mRaw;                   // this+0x0
+        uint16_t mRaw;                   // this+0x0
         bool           mContainsPositionX;     // this(bf)+0x0:0x0 len(0x1)
         bool           mContainsPositionY;     // this(bf)+0x0:0x1 len(0x1)
         bool           mContainsPositionZ;     // this(bf)+0x0:0x2 len(0x1)

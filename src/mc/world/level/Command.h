@@ -12,9 +12,9 @@ public:
     Command& operator=(Command const&) = delete;
     Command(Command const&)            = delete;
 
-    int                               mVersion;         // this+0x8
+    int32_t                               mVersion;         // this+0x8
     class CommandRegistry const*      mRegistry;        // this+0x10
-    int                               mCommandSymbol;   // this+0x18
+    int32_t                               mCommandSymbol;   // this+0x18
     enum class CommandPermissionLevel mPermissionLevel; // this+0x1C
     struct CommandFlag                mFlags;           // this+0x1E
 public:

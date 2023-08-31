@@ -11,7 +11,7 @@ public:
     // clang-format on
 
     // GameRule inner types define
-    enum class Type : char {
+    enum class Type : int8_t {
         Invalid = 0,
         Bool    = 1,
         Int     = 2,
@@ -36,7 +36,7 @@ public:
 
     union Value {
         bool  boolVal;  // this+0x0
-        int   intVal;   // this+0x0
+        int32_t   intVal;   // this+0x0
         float floatVal; // this+0x0
     };
 

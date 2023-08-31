@@ -10,8 +10,8 @@ class CraftingDataEntry {
 
 public:
     std::unique_ptr<Recipe>       mRecipe;     // this+0x0
-    int                           mItemData;   // this+0x8
-    int                           mItemAux;    // this+0xC
+    int32_t                           mItemData;   // this+0x8
+    int32_t                           mItemAux;    // this+0xC
     HashedString                  mTag;        // this+0x10
     NetworkItemInstanceDescriptor mItemResult; // this+0x40
     CraftingDataEntryType         mEntryType;  // this+0x80

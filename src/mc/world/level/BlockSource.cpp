@@ -22,8 +22,8 @@ BlockSource::getEntities(class AABB const& range, float extendDistance, ActorTyp
     ChunkPos minChunk{range.min.x - extendDistance, range.min.z - extendDistance};
     ChunkPos maxChunk{range.max.x + extendDistance, range.max.z + extendDistance};
 
-    for (int x = minChunk.x; x <= maxChunk.x; x++)
-        for (int z = minChunk.z; z <= maxChunk.z; z++) {
+    for (int32_t x = minChunk.x; x <= maxChunk.x; x++)
+        for (int32_t z = minChunk.z; z <= maxChunk.z; z++) {
             LevelChunk* chunk = getChunk({x, z});
             if (chunk == nullptr) {
                 continue;
@@ -46,8 +46,7 @@ optional_ref<Container> BlockSource::tryGetContainer(class BlockPos const& pos) 
 }
 
 optional_ref<Actor>
-BlockSource::cloneActor(Actor const& origin, Vec3 const& pos, std::optional<AutomaticID<class Dimension, int>> dimID)
-    const {
+BlockSource::cloneActor(Actor const& origin, Vec3 const& pos, std::optional<DimensionType> dimID) const {
 
     auto nbt = origin.saveToNBT();
 

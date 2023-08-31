@@ -19,7 +19,7 @@
 class PlayerAuthInputPacket : public ::Packet {
 public:
     // PlayerAuthInputPacket inner types define
-    enum class InputData : int {
+    enum class InputData : int32_t {
         Ascend                  = 0x0,
         Descend                 = 0x1,
         NorthJump               = 0x2,
@@ -76,7 +76,7 @@ public:
     InputMode                                                mInputMode;
     ClientPlayMode                                           mPlayMode; 
     NewInteractionModel                                      mNewInteractionModel;
-    unsigned __int64                                         mClientTick;
+    uint64_t                                         mClientTick;
     std::unique_ptr<PackedItemUseLegacyInventoryTransaction> mItemUseTransaction;
     std::unique_ptr<ItemStackRequestData>                    mItemStackRequest;
     PlayerBlockActions                                       mPlayerBlockActions;

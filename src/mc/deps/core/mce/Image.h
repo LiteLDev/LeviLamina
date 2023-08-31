@@ -23,7 +23,7 @@ public:
 
     inline void copyRawImage(Blob const& blob) { mImageBytes = blob.clone(); }
 
-    constexpr void setImageDescription(unsigned width, unsigned height, ImageFormat format, ImageUsage usage) {
+    constexpr void setImageDescription(uint32_t width, uint32_t height, ImageFormat format, ImageUsage usage) {
         this->mWidth      = width;
         this->mHeight     = height;
         this->imageFormat = format;

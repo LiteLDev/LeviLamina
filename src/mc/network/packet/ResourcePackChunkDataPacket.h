@@ -11,9 +11,9 @@ class ResourcePackChunkDataPacket : public ::Packet {
 
 public:
     std::string                mResourceName; // this+0x30
-    int                        mChunkID;      // this+0x50
-    unsigned long long         mByteOffset;   // this+0x58
-    std::vector<unsigned char> mData;         // this+0x60
+    int32_t                        mChunkID;      // this+0x50
+    uint64_t         mByteOffset;   // this+0x58
+    std::vector<uint8_t> mData;         // this+0x60
 
     // prevent constructor by default
     ResourcePackChunkDataPacket& operator=(ResourcePackChunkDataPacket const&) = delete;

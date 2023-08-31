@@ -27,15 +27,15 @@ void SplitHttpUrl(const std::string& url, std::string& host, std::string& path) 
     }
 }
 
-bool HttpGet(const std::string& url, const function<void(int, std::string)>& callback, int timeout) {
+bool HttpGet(const std::string& url, const function<void(int32_t, std::string)>& callback, int32_t timeout) {
     return HttpGet(url, {}, callback, timeout);
 }
 
 bool HttpGet(
     const std::string&                      url,
     const httplib::Headers&            headers,
-    const function<void(int, std::string)>& callback,
-    int                                timeout
+    const function<void(int32_t, std::string)>& callback,
+    int32_t                                timeout
 ) {
     std::string host, path;
     SplitHttpUrl(url, host, path);
@@ -81,8 +81,8 @@ bool HttpPost(
     const std::string&                           url,
     const std::string&                           data,
     const std::string&                           type,
-    const std::function<void(int, std::string)>& callback,
-    int                                     timeout
+    const std::function<void(int32_t, std::string)>& callback,
+    int32_t                                     timeout
 ) {
     return HttpPost(url, {}, data, type, callback, timeout);
 }
@@ -92,8 +92,8 @@ bool HttpPost(
     const httplib::Headers&                 headers,
     const std::string&                           data,
     const std::string&                           type,
-    const std::function<void(int, std::string)>& callback,
-    int                                     timeout
+    const std::function<void(int32_t, std::string)>& callback,
+    int32_t                                     timeout
 ) {
     std::string host, path;
     SplitHttpUrl(url, host, path);
@@ -132,7 +132,7 @@ bool HttpPost(
     return true;
 }
 
-bool HttpGetSync(const std::string& url, int* statusRtn, std::string* dataRtn, int timeout) {
+bool HttpGetSync(const std::string& url, int32_t* statusRtn, std::string* dataRtn, int32_t timeout) {
     std::string host, path;
     SplitHttpUrl(url, host, path);
 

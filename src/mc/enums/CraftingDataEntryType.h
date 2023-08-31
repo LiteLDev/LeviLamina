@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class CraftingDataEntryType : int {
+enum class CraftingDataEntryType : int32_t {
     ShapelessRecipe          = 0x0,
     ShapedRecipe             = 0x1,
     FurnaceRecipe            = 0x2,

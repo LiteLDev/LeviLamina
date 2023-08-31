@@ -12,7 +12,7 @@ namespace ll::memory {
  * @brief Hook priority enum.
  * @details The lower priority, the hook will be executed earlier
  */
-enum class HookPriority : int {
+enum class HookPriority : int32_t {
     Lowest  = 0,
     Low     = 100,
     Normal  = 200,
@@ -20,7 +20,7 @@ enum class HookPriority : int {
     Highest = 400,
 };
 
-LLAPI int hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority priority);
+LLAPI int32_t hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority priority);
 
 LLAPI bool unhook(FuncPtr target, FuncPtr detour);
 
@@ -46,7 +46,7 @@ template <typename T>
 struct HookAutoRegister {
     HookAutoRegister() { T::hook(); }
     ~HookAutoRegister() { T::unhook(); }
-    static int  hook() { return T::hook(); }
+    static int32_t  hook() { return T::hook(); }
     static bool unhook() { return T::unhook(); }
 };
 
@@ -70,7 +70,7 @@ struct HookAutoRegister {
                                                                                                                        \
         StaticDescriptor Ret detour(__VA_ARGS__);                                                                      \
                                                                                                                        \
-        static int hook() {                                                                                            \
+        static int32_t hook() {                                                                                            \
             target = ll::memory::resolveIdentifier(identifier);                                                        \
                                                                                                                        \
             if (target == nullptr) {                                                                                   \

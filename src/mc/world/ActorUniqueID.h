@@ -5,14 +5,15 @@
 struct ActorUniqueID {
 
 public:
-    long long id;
+    int64_t id;
     ActorUniqueID() { id = -1; }
 
-    explicit ActorUniqueID(long long i) { id = i; }
+    explicit ActorUniqueID(int64_t i) { id = i; }
 
-    [[nodiscard]] constexpr long long get() const { return id; }
+    [[nodiscard]] constexpr int64_t get() const { return id; }
 
-    constexpr explicit operator long long() const { return id; }
+    constexpr explicit operator int64_t() const { return id; }
+
 public:
     // NOLINTBEGIN
     /**

@@ -14,9 +14,9 @@ struct ItemStackNetIdVariant {
 
 public:
     std::variant<
-        TypedServerNetId<struct ItemStackNetIdTag, int, 0>,
-        TypedClientNetId<struct ItemStackRequestIdTag, int, 0>,
-        TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0>>
+        TypedServerNetId<struct ItemStackNetIdTag, int32_t, 0>,
+        TypedClientNetId<struct ItemStackRequestIdTag, int32_t, 0>,
+        TypedClientNetId<struct ItemStackLegacyRequestIdTag, int32_t, 0>>
         id;
 
     // NOLINTBEGIN

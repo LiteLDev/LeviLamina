@@ -14,7 +14,7 @@ public:
     bool                                          mDisableLegacyTitleBar;
     std::string                                   mPostProcessFilter;
     std::string                                   mScreenshotBorderResourcePath;
-    std::unordered_map<std::string, unsigned int> mHiddenCommands;
+    std::unordered_map<std::string, uint32_t> mHiddenCommands;
     EducationLocalLevelSettings                   mLocalSettings;
     std::optional<AgentCapabilities>              mAgentCapabilities;
     std::optional<ExternalLinkSettings>           mExternalLinkSettings;

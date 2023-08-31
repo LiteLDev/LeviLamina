@@ -15,7 +15,7 @@ public:
     std::string    mPieceId;    // this+0x38
     std::string    mXuid;       // this+0x58
     std::string    mPlatformId; // this+0x78
-    unsigned char  mFlags;      // this+0x98
+    uint8_t  mFlags;      // this+0x98
 
     // prevent constructor by default
     EmotePacket& operator=(EmotePacket const&) = delete;

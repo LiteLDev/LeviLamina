@@ -17,7 +17,7 @@ public:
     PackError() = delete;
 
     std::vector<std::string> mErrorParameters;
-    int                      mErrorValue;
+    int32_t                      mErrorValue;
     PackErrorType            mPackErrorType;
 
 public:

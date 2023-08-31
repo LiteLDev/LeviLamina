@@ -27,7 +27,7 @@ public:
             if (!mSceneGraph.getComponent(pos, type))
                 return (Component*)mSceneGraph.getFromPendingAdd(pos, type);
         }
-        auto* pComponent = createComponent(pos, (unsigned char)direction, std::unique_ptr<BaseCircuitComponent>());
+        auto* pComponent = createComponent(pos, (uint8_t)direction, std::unique_ptr<BaseCircuitComponent>());
 
         if (pComponent) {
             pComponent->mChunkPosition.x = pos.x >> 4;

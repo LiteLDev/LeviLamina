@@ -55,8 +55,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 // "??0ServerNetworkHandler@@QEAA@AEAVGameCallbacks@@AEBV?$NonOwnerPointer@VILevel@@@Bedrock@@AEAVNetworkHandler@@AEAVPrivateKeyManager@@AEAVServerLocator@@AEAVPacketSender@@AEAVAllowList@@PEAVPermissionsFile@@AEBVUUID@mce@@H_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEAVMinecraftCommands@@AEAVIMinecraftApp@@AEBV?$unordered_map@UPackIdVersion@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@UPackIdVersion@@@3@U?$equal_to@UPackIdVersion@@@3@V?$allocator@U?$pair@$$CBUPackIdVersion@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@std@@AEAVScheduler@@V?$NonOwnerPointer@VTextFilteringProcessor@@@3@@Z",
 //               ServerNetworkHandler, class GameCallbacks& a1, class Bedrock::NonOwnerPointer<class ILevel> const& a2,
 //               class NetworkHandler& a3, class PrivateKeyManager& a4, class ServerLocator& a5, class PacketSender& a6,
-//               class AllowList& a7, class PermissionsFile* a8, class mce::UUID const& a9, int a10, bool a11,
-//               std::vector<std::string> const& a12, std::string a13, int a14, class MinecraftCommands& a15, class
+//               class AllowList& a7, class PermissionsFile* a8, class mce::UUID const& a9, int32_t a10, bool a11,
+//               std::vector<std::string> const& a12, std::string a13, int32_t a14, class MinecraftCommands& a15, class
 //               IMinecraftApp& a16, class std::unordered_map<struct PackIdVersion, std::string> const& a17, class
 //               Scheduler& a18, class Bedrock::NonOwnerPointer<class TextFilteringProcessor> a19)
 //{
@@ -76,8 +76,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     "@AEBVExperiments@@AEBVBaseGameVersion@@@Z",
     void,
     void*   a2,
-    __int64 a3,
-    __int64 a4,
+    int64_t a3,
+    int64_t a4,
     void*   a5,
     void*   a6
 ) {
@@ -144,7 +144,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     AllowListFile,
     HookPriority::Normal,
     "?reload@AllowListFile@@QEAA?AW4FileReadResult@@XZ",
-    int
+    int32_t
 ) {
     static bool set = false;
     if (!set) {

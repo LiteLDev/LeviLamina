@@ -5,7 +5,7 @@
 struct ActorBlockSyncMessage {
 public:
     // ActorBlockSyncMessage inner types define
-    enum class MessageId : int {
+    enum class MessageId : int32_t {
         CREATE  = 0x1,
         DESTROY = 0x2,
     };

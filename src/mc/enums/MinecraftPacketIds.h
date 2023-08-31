@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class MinecraftPacketIds : int {
+enum class MinecraftPacketIds : int32_t {
     KeepAlive                           = 0x0,
     Login                               = 0x1,
     PlayStatus                          = 0x2,

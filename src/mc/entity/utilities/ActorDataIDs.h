@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-enum class ActorDataIDs : unsigned short {
+enum class ActorDataIDs : uint16_t {
     Flags                            = 0x0,
     StructuralIntegrity              = 0x1,
     Variant                          = 0x2,

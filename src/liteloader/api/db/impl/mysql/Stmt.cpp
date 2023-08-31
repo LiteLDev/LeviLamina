@@ -57,16 +57,16 @@ namespace DB {
  * @brief Parse the query with named parameters
  *
  * @param query  Query with named parameters
- * @return std::unordered_map<std::string, int>  Indexes of parameters
+ * @return std::unordered_map<std::string, int32_t>  Indexes of parameters
  */
-std::unordered_map<std::string, int> ParseStmtParams(std::string& query) {
+std::unordered_map<std::string, int32_t> ParseStmtParams(std::string& query) {
     StringReader reader(query);
-    std::unordered_map<std::string, int> result;
+    std::unordered_map<std::string, int32_t> result;
     bool inSingleQuote = false;
     bool inDoubleQuote = false;
     bool inString = false;
-    int delta = 0;
-    int cur = 0;
+    int32_t delta = 0;
+    int32_t cur = 0;
     while (reader.isValid()) {
         char c = reader.read();
         if (c == '\'') {
@@ -124,11 +124,11 @@ std::pair<std::shared_ptr<char[]>, std::size_t> AllocateBuffer(const MYSQL_FIELD
             break;
         case MYSQL_TYPE_INT24:
         case MYSQL_TYPE_LONG:
-            len = sizeof(int);
+            len = sizeof(int32_t);
             break;
         case MYSQL_TYPE_BIT:
         case MYSQL_TYPE_LONGLONG:
-            len = sizeof(long long);
+            len = sizeof(int64_t);
             break;
         case MYSQL_TYPE_FLOAT:
             len = sizeof(float);
@@ -176,10 +176,10 @@ std::pair<std::shared_ptr<char[]>, std::size_t> AllocateBuffer(const MYSQL_FIELD
 }
 
 /**
- * @brief Judge if the field is unsigned type
+ * @brief Judge if the field is uint32_t type
  *
  * @param  field  Field to judge
- * @return bool   True if the field is unsigned
+ * @return bool   True if the field is uint32_t
  */
 bool IsUnsigned(const MYSQL_FIELD& field) {
     return field.flags & UNSIGNED_FLAG;
@@ -200,29 +200,29 @@ Any ReceiverToAny(const Receiver& rec) {
             return Any();
         case MYSQL_TYPE_TINY:
             if (IsUnsigned(rec.field))
-                return *reinterpret_cast<unsigned char*>(rec.buffer.get());
+                return *reinterpret_cast<uint8_t*>(rec.buffer.get());
             return *reinterpret_cast<char*>(rec.buffer.get());
         case MYSQL_TYPE_SHORT:
             if (IsUnsigned(rec.field))
-                return *reinterpret_cast<unsigned short*>(rec.buffer.get());
+                return *reinterpret_cast<uint16_t*>(rec.buffer.get());
             return *reinterpret_cast<short*>(rec.buffer.get());
         case MYSQL_TYPE_INT24:
         case MYSQL_TYPE_LONG:
             if (IsUnsigned(rec.field))
-                return *reinterpret_cast<unsigned int*>(rec.buffer.get());
-            return *reinterpret_cast<int*>(rec.buffer.get());
+                return *reinterpret_cast<uint32_t*>(rec.buffer.get());
+            return *reinterpret_cast<int32_t*>(rec.buffer.get());
         case MYSQL_TYPE_BIT:
-            return *reinterpret_cast<unsigned long long*>(rec.buffer.get());
+            return *reinterpret_cast<uint64_t*>(rec.buffer.get());
         case MYSQL_TYPE_LONGLONG:
             if (IsUnsigned(rec.field))
-                return *reinterpret_cast<unsigned long long*>(rec.buffer.get());
-            return *reinterpret_cast<long long*>(rec.buffer.get());
+                return *reinterpret_cast<uint64_t*>(rec.buffer.get());
+            return *reinterpret_cast<int64_t*>(rec.buffer.get());
         case MYSQL_TYPE_FLOAT:
             return *reinterpret_cast<float*>(rec.buffer.get());
         case MYSQL_TYPE_DOUBLE:
             return *reinterpret_cast<double*>(rec.buffer.get());
         case MYSQL_TYPE_YEAR:
-            return *reinterpret_cast<unsigned short*>(rec.buffer.get());
+            return *reinterpret_cast<uint16_t*>(rec.buffer.get());
         case MYSQL_TYPE_TIME:
         case MYSQL_TYPE_DATE:
         case MYSQL_TYPE_DATETIME:
@@ -272,10 +272,10 @@ MySQLStmt::MySQLStmt(MYSQL_STMT* stmt, const std::weak_ptr<Session>& parent, boo
     }
 }
 
-int MySQLStmt::getNextParamIndex() {
-    int idxResult = -1;
+int32_t MySQLStmt::getNextParamIndex() {
+    int32_t idxResult = -1;
     // Find the first unbound parameter
-    for (int i = 0; i < boundIndexes.size() && i < totalParamsCount; i++) {
+    for (int32_t i = 0; i < boundIndexes.size() && i < totalParamsCount; i++) {
         if (boundIndexes[i] == idxResult + 1) {
             idxResult++;
         }
@@ -323,7 +323,7 @@ void MySQLStmt::bindResult() {
 
         rec.field = field;             // Save the field
         resultHeader->add(field.name); // Add the field name to the header
-        IF_ENDBG dbLogger.debug("MySQLStmt::bindResult: Bind result {} (type {}) at index {}", field.name, (int)field.type, i);
+        IF_ENDBG dbLogger.debug("MySQLStmt::bindResult: Bind result {} (type {}) at index {}", field.name, (int32_t)field.type, i);
     }
     auto res = mysql_stmt_bind_result(stmt, result.get());
     if (res) {
@@ -335,7 +335,7 @@ MySQLStmt::~MySQLStmt() {
     close();
 }
 
-Stmt& MySQLStmt::bind(const Any& value, int index) {
+Stmt& MySQLStmt::bind(const Any& value, int32_t index) {
     if (index < 0 || index > totalParamsCount) {
         throw std::invalid_argument("MySQLStmt::bind: Invalid argument `index`");
     }
@@ -497,7 +497,7 @@ Row MySQLStmt::_Fetch() {
     IF_ENDBG dbLogger.debug("MySQLStmt::_Fetch: Fetching row...");
     Row row(resultHeader);
     IF_ENDBG dbLogger.debug("MySQLStmt::_Fetch: RowHeader size {}", row.header->size());
-    int i = 0;
+    int32_t i = 0;
     for (auto& col : resultValues) {
         // Because of the inexplicable problems of MySQL C API,
         //  we must set the length of the field manually.
@@ -573,15 +573,15 @@ uint64_t MySQLStmt::getInsertId() const {
     return mysql_stmt_insert_id(stmt);
 }
 
-int MySQLStmt::getUnboundParams() const {
+int32_t MySQLStmt::getUnboundParams() const {
     return totalParamsCount - boundParamsCount;
 }
 
-int MySQLStmt::getBoundParams() const {
+int32_t MySQLStmt::getBoundParams() const {
     return boundParamsCount;
 }
 
-int MySQLStmt::getParamsCount() const {
+int32_t MySQLStmt::getParamsCount() const {
     return totalParamsCount;
 }
 

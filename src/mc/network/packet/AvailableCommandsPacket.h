@@ -25,8 +25,8 @@ public:
     // AvailableCommandsPacket inner types define
 
     struct ChainedSubcommandDataValue {
-        unsigned int index;
-        unsigned int value;
+        uint32_t index;
+        uint32_t value;
     };
 
     struct ChainedSubcommandData {
@@ -44,8 +44,8 @@ public:
         struct CommandFlag                flag;           // 64
         enum class CommandPermissionLevel perm;           // 66
         std::vector<OverloadData>         overloads;      // 72
-        std::vector<int>                  chainedOffsets; // 96
-        int                               aliasEnumIndex; // 120
+        std::vector<int32_t>                  chainedOffsets; // 96
+        int32_t                               aliasEnumIndex; // 120
 
     public:
         // NOLINTBEGIN
@@ -63,9 +63,9 @@ public:
     struct ConstrainedValueData {
 
     public:
-        int                        enumValueIndex;
-        int                        enumNameIndex;
-        std::vector<unsigned char> indices;
+        int32_t                        enumValueIndex;
+        int32_t                        enumNameIndex;
+        std::vector<uint8_t> indices;
 
     public:
         // NOLINTBEGIN
@@ -80,7 +80,7 @@ public:
 
     public:
         std::string               name;
-        std::vector<unsigned int> valueIndices;
+        std::vector<uint32_t> valueIndices;
 
     public:
         // NOLINTBEGIN
@@ -110,9 +110,9 @@ public:
 
     public:
         std::string   desc;
-        unsigned int  sym;
+        uint32_t  sym;
         bool          optional;
-        unsigned char paramOptions;
+        uint8_t paramOptions;
 
     public:
         // NOLINTBEGIN

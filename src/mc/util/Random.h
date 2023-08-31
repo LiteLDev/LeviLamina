@@ -28,7 +28,7 @@ public:
      * @vftbl 1
      * @symbol ?nextInt\@Random\@\@UEAAHXZ
      */
-    virtual int nextInt();
+    virtual int32_t nextInt();
     /**
      * @vftbl 2
      * @symbol ?nextInt\@Random\@\@UEAAHH\@Z

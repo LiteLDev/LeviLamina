@@ -28,7 +28,7 @@ public:
     pointer_type mBlob; // this+0x0
     size_type    mSize; // this+0x10
 
-    [[nodiscard]] inline unsigned char const* data() const { return mBlob.get(); }
+    [[nodiscard]] inline uint8_t const* data() const { return mBlob.get(); }
 
     [[nodiscard]] inline size_type size() const { return mSize; }
 
@@ -36,7 +36,7 @@ public:
 
     [[nodiscard]] inline Blob clone() const { return {data(), size()}; }
 
-    inline Blob(unsigned char const* srcData, size_type dataSize) : mSize(dataSize) {
+    inline Blob(uint8_t const* srcData, size_type dataSize) : mSize(dataSize) {
         mBlob = pointer_type(new value_type[dataSize], Deleter());
         std::copy(srcData, srcData + dataSize, mBlob.get());
     }

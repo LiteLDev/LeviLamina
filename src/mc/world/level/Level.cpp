@@ -6,7 +6,7 @@ optional_ref<Player> Level::getPlayerByNameOrXUID(std::string const& info) const
 
     std::transform(target.begin(), target.end(), target.begin(), ::tolower); // lower case the string
 
-    size_t  delta = UINT64_MAX; // c++ int max
+    size_t  delta = UINT64_MAX; // c++ int32_t max
     Player* found = nullptr;
     const_cast<Level*>(this)->forEachPlayer([&](Player& player) -> bool {
         if (player.getXuid() == target || player.getRealName() == info) {

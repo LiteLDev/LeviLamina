@@ -29,7 +29,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z",
     bool,
     BlockPos        a3,
-    unsigned __int8 a4
+    uint8_t a4
 ) {
     using ll::memory::dAccess;
     Player* player = this->getPlayer();

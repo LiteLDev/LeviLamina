@@ -2,10 +2,10 @@
 #include <string_view>
 
 
-typedef unsigned long long CHash;
+typedef uint64_t CHash;
 
 constexpr uint64_t do_hash(const char* x);
-constexpr uint64_t do_hash(const char* x, int len);
+constexpr uint64_t do_hash(const char* x, int32_t len);
 constexpr uint64_t do_hash2(std::string_view x);
 
 constexpr uint64_t do_hash(const char* x) {
@@ -20,7 +20,7 @@ constexpr uint64_t do_hash(const char* x) {
     }
     return rval;
 }
-constexpr uint64_t do_hash(const char* x, int len) {
+constexpr uint64_t do_hash(const char* x, int32_t len) {
     // ap hash
     uint64_t rval = 0;
     for (size_t i = 0; i < len; ++i) {

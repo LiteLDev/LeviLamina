@@ -65,9 +65,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
             "<{}> {}({}) -> {}({})",
             getRealName(),
             magic_enum::enum_name(getCommandPermissionLevel()),
-            (int)getCommandPermissionLevel(),
+            (int32_t)getCommandPermissionLevel(),
             magic_enum::enum_name(perm),
-            (int)perm
+            (int32_t)perm
         );
     }
     return origin(perm);

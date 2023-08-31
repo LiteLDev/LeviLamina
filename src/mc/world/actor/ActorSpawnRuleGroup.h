@@ -13,7 +13,7 @@ namespace Json { class Value; }
 class ActorSpawnRuleGroup : public ::ActorSpawnRuleBase {
 
 public:
-    std::unordered_map<std::string, int> mCategoryLookup; // this+0x48
+    std::unordered_map<std::string, int32_t> mCategoryLookup; // this+0x48
 
 public:
     // NOLINTBEGIN

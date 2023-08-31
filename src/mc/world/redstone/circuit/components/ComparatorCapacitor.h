@@ -15,13 +15,13 @@ public:
     };
 
 
-    int                        mRearAnalogStrength;
-    int                        mSideAnalogStrengthRight;
-    int                        mSideAnalogStrengthLeft;
-    int                        mOldStrength;
+    int32_t                        mRearAnalogStrength;
+    int32_t                        mSideAnalogStrengthRight;
+    int32_t                        mSideAnalogStrengthLeft;
+    int32_t                        mOldStrength;
     Mode                       mMode;
-    int                        mRearStrength;
-    int                        mSideStrengths;
+    int32_t                        mRearStrength;
+    int32_t                        mSideStrengths;
     bool                       mHasAnalogBeenSet;
     const CircuitComponentType mCircuitComponentType = CircuitComponentType::ComparatorCapacitor;
 public:

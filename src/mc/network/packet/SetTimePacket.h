@@ -10,7 +10,7 @@
 class SetTimePacket : public ::Packet {
 
 public:
-    int mTime; // this+0x30
+    int32_t mTime; // this+0x30
 
     // prevent constructor by default
     SetTimePacket& operator=(SetTimePacket const&) = delete;

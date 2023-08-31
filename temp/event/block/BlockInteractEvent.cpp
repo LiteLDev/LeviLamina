@@ -20,7 +20,7 @@ LL_AUTO_INSTANCE_HOOK(
     BlockInteractEventHook,
     HookPriority::Normal,
     "?onBlockInteractedWith@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z",
-    unsigned short,
+    uint16_t,
     Player*   player,
     BlockPos* blockPos
 ) {

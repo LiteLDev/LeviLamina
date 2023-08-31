@@ -14,10 +14,10 @@
 class SubChunkRequestPacket : public ::Packet {
 
 public:
-    AutomaticID<Dimension, int>                    mDimensionType;      // this+0x30
+    DimensionType                                  mDimensionType;      // this+0x30
     std::vector<SubChunkPos>                       mSubChunkPos;        // this+0x38
     std::vector<SubChunkPacket::SubChunkPosOffset> mSubChunkPosOffsets; // this+0x50
-    unsigned int                                   mRequestCount;       // this+0x68
+    uint32_t                                       mRequestCount;       // this+0x68
     SubChunkPos                                    mCenterPos;          // this+0x6C
 
     bool mArePositionsAbsolute; // this+0x78

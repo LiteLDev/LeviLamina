@@ -11,9 +11,9 @@ public:
     BlockPos                   mTestPos;  //this+0x0
     bool                       mStopOnFailure; //this+0xC
     bool                       mStopOtherTestsOnFailure; //this+0x10
-    int                        mRepeatCount; //this+0x14
-    int                        mTestsPerRow; //this+0x18
-    int                        mMaxTestsPerBatch; //this+0x1C
+    int32_t                        mRepeatCount; //this+0x14
+    int32_t                        mTestsPerRow; //this+0x18
+    int32_t                        mMaxTestsPerBatch; //this+0x1C
     std::vector<std::shared_ptr<gametest::BaseGameTestFunction>> mtestFunctions; //this+0x20
     Rotation                   mRotation; //this+0x38
 

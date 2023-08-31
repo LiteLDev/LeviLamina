@@ -21,7 +21,7 @@ std::unique_ptr<IntArrayTag> IntArrayTag::create(TagMemoryChunk const& val) {
     return std::unique_ptr<IntArrayTag>((IntArrayTag*)tag.release());
 }
 
-std::unique_ptr<IntArrayTag> IntArrayTag::create(int data[], size_t size) {
+std::unique_ptr<IntArrayTag> IntArrayTag::create(int32_t data[], size_t size) {
     TagMemoryChunk tmc((char*)data, size * 4);
     return create(tmc);
 }

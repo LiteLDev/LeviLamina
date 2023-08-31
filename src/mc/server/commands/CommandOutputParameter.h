@@ -8,13 +8,13 @@
 class CommandOutputParameter {
 public:
     // CommandOutputParameter inner types define
-    enum class NoCountType : int {
+    enum class NoCountType : int32_t {
         NoCount = 0x0,
     };
 
 public:
     std::string str;
-    int         type;
+    int32_t         type;
 
 public:
     // NOLINTBEGIN

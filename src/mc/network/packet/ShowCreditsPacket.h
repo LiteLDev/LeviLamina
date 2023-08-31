@@ -11,7 +11,7 @@
 class ShowCreditsPacket : public ::Packet {
 public:
     // ShowCreditsPacket inner types define
-    enum class CreditsState : int {
+    enum class CreditsState : int32_t {
         Start    = 0x0,
         Finished = 0x1,
     };

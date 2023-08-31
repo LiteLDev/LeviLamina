@@ -25,7 +25,7 @@ namespace ll::perm {
          * @brief The type of role.
          * 
          */
-        enum class Type : char {
+        enum class Type : int8_t {
             None = 0,
             General = 1,
             Everyone = 2,
@@ -35,7 +35,7 @@ namespace ll::perm {
 
         std::string name;        ///< Name of the role.
         std::string displayName; ///< Display name of the role.
-        int priority = 0;        ///< Priority of the role.
+        int32_t priority = 0;        ///< Priority of the role.
 
         static constexpr std::string_view roleNameInvalidChars = "@#[]{}<>()/|\\$%^&*!~`\"\'+=?\n\t\r\f\v "; ///< Invalid characters for the role pname.
 

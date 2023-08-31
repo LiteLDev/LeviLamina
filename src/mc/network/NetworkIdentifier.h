@@ -11,7 +11,7 @@ namespace RakNet { struct RakNetGUID; }
 class NetworkIdentifier {
 
 public:
-    enum class Type : int {
+    enum class Type : int32_t {
         RakNet    = 0x0,
         Address   = 0x1,
         Address6  = 0x2,

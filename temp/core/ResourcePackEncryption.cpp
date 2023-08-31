@@ -16,7 +16,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     bool                              a5
 ) {
     try {
-        for (int i = 0; i < a4.size(); ++i) {
+        for (int32_t i = 0; i < a4.size(); ++i) {
             auto uuid = a4[i].mPackIdVersion.mUUID.asString();
             transform(uuid.begin(), uuid.end(), uuid.begin(), ::toupper);
             a4[i].mContentKey = ll::globalConfig.resourcePackEncryptionMap[uuid];

@@ -78,7 +78,7 @@ namespace storeSearch { struct TelemetryData; }
 class MinecraftEventing {
 public:
     // MinecraftEventing inner types define
-    enum class AchievementIds : int {
+    enum class AchievementIds : int32_t {
         ChestFullOfCobblestone          = 0x7,
         DiamondForYou                   = 0xA,
         IronBelly                       = 0x14,
@@ -144,7 +144,7 @@ public:
         WithOurPowersCombined           = 0x6A,
     };
 
-    enum class AcquisitionMethod : int {
+    enum class AcquisitionMethod : int32_t {
         Unknown             = -1,
         None                = 0x0,
         PickedUp            = 0x1,
@@ -160,19 +160,19 @@ public:
         Fishing             = 0xB,
     };
 
-    enum class BlockPlacementMethod : int {
+    enum class BlockPlacementMethod : int32_t {
         Entity  = 0x0,
         Command = 0x1,
     };
 
-    enum class ChangeType : int {
+    enum class ChangeType : int32_t {
         Unknown = 0x0,
         Added   = 0x1,
         Removed = 0x2,
         Updated = 0x3,
     };
 
-    enum class InteractionType : int {
+    enum class InteractionType : int32_t {
         Breeding   = 0x1,
         Taming     = 0x2,
         Curing     = 0x3,
@@ -191,7 +191,7 @@ public:
         Commanding = 0x10,
     };
 
-    enum class POIBlockInteractionType : int {
+    enum class POIBlockInteractionType : int32_t {
         None                = 0x0,
         Extend              = 0x1,
         Clone               = 0x2,
@@ -220,7 +220,7 @@ public:
         DisenchantAndRepair = 0x19,
     };
 
-    enum class TeleportationCause : int {
+    enum class TeleportationCause : int32_t {
         Unknown     = 0x0,
         Projectile  = 0x1,
         ChorusFruit = 0x2,
@@ -229,7 +229,7 @@ public:
         Count       = 0x5,
     };
 
-    enum class UseMethod : int {
+    enum class UseMethod : int32_t {
         Unknown    = -1,
         EquipArmor = 0x0,
         Eat        = 0x1,
@@ -244,7 +244,7 @@ public:
         UseTool    = 0xA,
     };
 
-    enum class PoiEventBlockType : int {
+    enum class PoiEventBlockType : int32_t {
         BlastFurnace     = 0x0,
         BrewingStand     = 0x1,
         CartographyTable = 0x2,
@@ -260,12 +260,12 @@ public:
         Lectern          = 0xC,
     };
 
-    enum class ItemInteractMethod : int {
+    enum class ItemInteractMethod : int32_t {
         Use   = 0x0,
         Place = 0x1,
     };
 
-    enum class AccountType : int {
+    enum class AccountType : int32_t {
         Xbl   = 0x1,
         Guest = 0x2,
         Other = 0x3,

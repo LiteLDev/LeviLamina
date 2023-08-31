@@ -25,7 +25,7 @@ public:
     bool                                      mOnGround;         // this+0x51
     ActorRuntimeID                            mRidingID;         // this+0x58
     MinecraftEventing::TeleportationCause     mCause;            // this+0x60
-    int                                       mSourceEntityType; // this+0x64 // maybe enum class ActorType ?
+    int32_t                                       mSourceEntityType; // this+0x64 // maybe enum class ActorType ?
     Tick                                      mTick;             // this+0x68
 
     // prevent constructor by default

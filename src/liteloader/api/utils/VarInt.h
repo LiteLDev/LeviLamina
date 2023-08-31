@@ -13,22 +13,22 @@ struct VarInts {
     }
     template <typename _TP>
     void pack(WBStreamImpl<_TP>& ws) const {
-        unsigned char buf[16];
-        int ptr = 0;
+        uint8_t buf[16];
+        int32_t ptr = 0;
         T enc = v;
         do {
             buf[ptr++] = enc & 0x7f;
             enc >>= 7;
         } while (enc);
-        for (int i = 0; i < ptr - 1; ++i) {
+        for (int32_t i = 0; i < ptr - 1; ++i) {
             buf[i] |= 0x80;
         }
         ws.write(buf, ptr);
     }
     void unpack(RBStream& rs) {
-        unsigned char buf[16];
+        uint8_t buf[16];
         v = 0;
-        int ptr = 0;
+        int32_t ptr = 0;
         for (; ptr < 16; ++ptr) {
             rs.apply(buf[ptr]);
             if (!(buf[ptr] & 0x80)) {
@@ -43,9 +43,9 @@ struct VarInts {
         }
     }
 };
-using VarUInt = VarInts<unsigned int>;
-using VarULong = VarInts<unsigned long long>;
-using VarUShort = VarInts<unsigned short>;
+using VarUInt = VarInts<uint32_t>;
+using VarULong = VarInts<uint64_t>;
+using VarUShort = VarInts<uint16_t>;
 
 struct MCString {
     std::string_view view;
@@ -56,7 +56,7 @@ struct MCString {
     }
     template <typename T>
     void pack(T& ws) const {
-        ws.apply(VarUInt((unsigned int)view.size()));
+        ws.apply(VarUInt((uint32_t)view.size()));
         ws.write(view.data(), view.size());
     }
     void unpack(RBStream& rs) {

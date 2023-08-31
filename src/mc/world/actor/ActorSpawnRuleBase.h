@@ -10,7 +10,7 @@ namespace Json { class Value; }
 class ActorSpawnRuleBase {
 
 public:
-    std::unordered_map<std::string, int> mSpawnDelayStartMap; // this+0x8
+    std::unordered_map<std::string, int32_t> mSpawnDelayStartMap; // this+0x8
 
 public:
     // NOLINTBEGIN

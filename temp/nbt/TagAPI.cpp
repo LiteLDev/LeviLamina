@@ -207,7 +207,7 @@ void TagToJson_Compound_Helper(fifo_json& res, CompoundTag* nbt) {
     }
 }
 
-string Tag::toJson(int formatIndent) {
+string Tag::toJson(int32_t formatIndent) {
     string result;
     auto   nbt = this;
     switch (nbt->getTagType()) {

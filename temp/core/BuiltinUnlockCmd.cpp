@@ -103,7 +103,7 @@ LL_AUTO_INSTANCE_HOOK(
 // }
 //  bool unlockNewExecute = true;
 //  TClasslessInstanceHook(bool, "?isEnabled@FeatureToggles@@QEBA_NW4FeatureOptionID@@@Z",
-//                         int feature)
+//                         int32_t feature)
 //  {
 //      if (feature == 54 && unlockNewExecute)
 //          return true;

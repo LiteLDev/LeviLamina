@@ -12,19 +12,19 @@ class CommandParameterData {
 
 public:
     using ParseFn =
-        bool (CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
+        bool (CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int32_t, std::string&, std::vector<std::string>&)
             const;
 
     Bedrock::typeid_t<CommandRegistry> mTypeIndex;     // this+0x0
     ParseFn                            mParse;         // this+0x8
     std::string                        mName;          // this+0x10
     const char*                        mEnumName;      // this+0x30
-    int                                mEnumSymbol;    // this+0x38
+    int32_t                                mEnumSymbol;    // this+0x38
     const char*                        mPostfix;       // this+0x40
-    int                                mPostfixSymbol; // this+0x48
+    int32_t                                mPostfixSymbol; // this+0x48
     CommandParameterDataType           mParamType;     // this+0x4c
-    int                                mOffset;        // this+0x50
-    int                                mSetOffset;     // this+0x54
+    int32_t                                mOffset;        // this+0x50
+    int32_t                                mSetOffset;     // this+0x54
     bool                               mIsOptional;    // this+0x58
     CommandParameterOption             mOptions;       // this+0x59
 

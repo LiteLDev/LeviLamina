@@ -5,7 +5,7 @@
 namespace DB
 {
 
-enum class DBType : char
+enum class DBType : int8_t
 {
     None,
     SQLite,
@@ -14,17 +14,17 @@ enum class DBType : char
 
 struct Date
 {
-    int year;
-    int month;
-    int day;
+    int32_t year;
+    int32_t month;
+    int32_t day;
 };
 
 struct Time
 {
-    int hour;
-    int minute;
-    int second;
-    int timezone = -1;
+    int32_t hour;
+    int32_t minute;
+    int32_t second;
+    int32_t timezone = -1;
 };
 
 struct DateTime
@@ -36,9 +36,9 @@ struct DateTime
 struct Decimal
 {
     int64_t value;
-    int scale;
+    int32_t scale;
 };
 
-using ByteArray = std::vector<unsigned char>;
+using ByteArray = std::vector<uint8_t>;
 
 } // namespace DB

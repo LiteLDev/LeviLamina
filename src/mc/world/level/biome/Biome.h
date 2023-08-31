@@ -17,7 +17,7 @@ namespace mce { class Color; }
 class Biome {
 public:
     // Biome inner types define
-    enum class BiomeTempCategory : int {
+    enum class BiomeTempCategory : int32_t {
         Ocean  = 0x0,
         Cold   = 0x1,
         Medium = 0x2,
@@ -27,8 +27,8 @@ public:
 public:
     // clang-format off
     [[nodiscard]] constexpr HashedString const& getHash()     const { return ll::memory::dAccess<HashedString>(this, 0x8); }
-    [[nodiscard]] constexpr int   getDebugMapColor()          const { return ll::memory::dAccess<int>(this, 0x38); }
-    [[nodiscard]] constexpr int   getDebugMapOddColor()       const { return ll::memory::dAccess<int>(this, 0x3C); }
+    [[nodiscard]] constexpr int32_t   getDebugMapColor()          const { return ll::memory::dAccess<int32_t>(this, 0x38); }
+    [[nodiscard]] constexpr int32_t   getDebugMapOddColor()       const { return ll::memory::dAccess<int32_t>(this, 0x3C); }
     [[nodiscard]] constexpr float getTemperature()            const { return ll::memory::dAccess<float>(this, 0x40); }
     //[[nodiscard]]constexpr float getDownfall()              const { return ll::memory::dAccess<float>(this, 0x44); }
     [[nodiscard]] constexpr float getRedSporeDensity()        const { return ll::memory::dAccess<float>(this, 0x48); }
@@ -44,7 +44,7 @@ public:
     [[nodiscard]] constexpr mce::Color const& getWaterColor() const { return ll::memory::dAccess<mce::Color>(this, 0x70); }
     [[nodiscard]] constexpr float getWaterTransparency()      const { return ll::memory::dAccess<float>(this, 0x80); }
     [[nodiscard]] constexpr bool  getRain()                   const { return ll::memory::dAccess<bool>(this, 0x84); }
-    [[nodiscard]] constexpr int   getId()                     const { return ll::memory::dAccess<int>(this, 0x88); }
+    [[nodiscard]] constexpr int32_t   getId()                     const { return ll::memory::dAccess<int32_t>(this, 0x88); }
     // clang-format on
 
     // WeakRefT<SharePtrRefTraits<FogDefinition const>> mFogDefinition;   // this+0x90

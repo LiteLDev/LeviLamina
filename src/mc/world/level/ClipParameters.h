@@ -12,7 +12,7 @@ public:
     bool              mFullOnly;           // this+0x19
     bool              mSolidOnly;          // this+0x1A
     bool              mIgnoreBorderBlocks; // this+0x1B
-    int               mMaxDistance;        // this+0x1C
+    int32_t               mMaxDistance;        // this+0x1C
 
     std::function<bool(class BlockSource const&, class Block const&, bool)> mShouldCheckBlock; // this+0x20
 

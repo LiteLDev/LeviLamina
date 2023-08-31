@@ -21,8 +21,8 @@ public:
     ChildValues  childValues_;
     std::string  document_;
     std::string  indentString_;
-    unsigned int rightMargin_;
-    unsigned int indentSize_;
+    uint32_t rightMargin_;
+    uint32_t indentSize_;
     bool         addChildValues_;
 
     ~StyledWriter() override = default;

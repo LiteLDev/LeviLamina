@@ -5,7 +5,7 @@
 struct GameRuleId {
 
 public:
-    int value;
+    int32_t value;
 
 public:
     // NOLINTBEGIN

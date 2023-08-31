@@ -18,11 +18,11 @@ public:
     MobEffectInstance() = delete;
 
     MobEffect::EffectType            mId;                              // this+0x0
-    int                              mDuration;                        // this+0x4
-    int                              mDurationEasy;                    // this+0x8
-    int                              mDurationNormal;                  // this+0xC
-    int                              mDurationHard;                    // this+0x10
-    int                              mAmplifier;                       // this+0x14
+    int32_t                              mDuration;                        // this+0x4
+    int32_t                              mDurationEasy;                    // this+0x8
+    int32_t                              mDurationNormal;                  // this+0xC
+    int32_t                              mDurationHard;                    // this+0x10
+    int32_t                              mAmplifier;                       // this+0x14
     bool                             mDisplayOnScreenTextureAnimation; // this+0x18
     bool                             mAmbient;                         // this+0x19
     bool                             mNoCounter;                       // this+0x1A

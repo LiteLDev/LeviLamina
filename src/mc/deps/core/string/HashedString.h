@@ -9,8 +9,8 @@ public:
     std::string         str;
     class HashedString* lastMatch;
 
-    constexpr static unsigned long long computeHash(std::string_view str) {
-        unsigned long long hash = 0xCBF29CE484222325ULL;
+    constexpr static uint64_t computeHash(std::string_view str) {
+        uint64_t hash = 0xCBF29CE484222325ULL;
         for (char s : str) {
             hash = s ^ (0x100000001B3ULL * hash);
         }

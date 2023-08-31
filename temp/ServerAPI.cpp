@@ -10,7 +10,7 @@ class UserEntityIdentifierComponent;
 namespace ll {
 std::string getBdsVersion() { return Common::getGameVersionString(); }
 
-int getServerProtocolVersion() { return SharedConstants::NetworkProtocolVersion; }
+int32_t getServerProtocolVersion() { return SharedConstants::NetworkProtocolVersion; }
 
 bool setServerMotd(const std::string& motd) {
     if (!Global<ServerNetworkHandler>)

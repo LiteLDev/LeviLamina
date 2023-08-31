@@ -13,7 +13,7 @@ class LessonProgressPacket : public ::Packet {
 
 public:
     LessonAction mAction;     // this+0x30
-    int          mScore;      // this+0x34
+    int32_t          mScore;      // this+0x34
     std::string  mActivityId; // this+0x38
 
     // prevent constructor by default

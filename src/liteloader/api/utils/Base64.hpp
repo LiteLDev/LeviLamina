@@ -38,7 +38,7 @@ inline size_t getEncodeLength(const std::string& str) {
 }
 
 inline size_t getDecodeLength(const std::string& in) {
-    unsigned char count      = 0;
+    uint8_t count      = 0;
     size_t        input_size = in.size();
     for (auto it = in.rbegin(); *it == '='; ++it) {
         ++count;
@@ -52,7 +52,7 @@ inline size_t getDecodeLength(const std::string& in) {
     return ((6 * input_size) / 8) - count;
 }
 
-inline unsigned char decodeLookup(unsigned char c) {
+inline uint8_t decodeLookup(uint8_t c) {
     if (c >= 'A' && c <= 'Z')
         return c - 'A';
     if (c >= 'a' && c <= 'z')
@@ -70,8 +70,8 @@ inline std::string Encode(const std::string& text_input) {
     std::string result;
     result.reserve(getEncodeLength(text_input));
 
-    int i = 0;
-    int j = -6;
+    int32_t i = 0;
+    int32_t j = -6;
 
     for (auto c : text_input) {
         i = (i << 8) + static_cast<uint8_t>(c);

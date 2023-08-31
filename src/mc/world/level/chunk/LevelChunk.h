@@ -29,7 +29,7 @@ public:
     // clang-format on
 
     // LevelChunk inner types define
-    enum class Finalization : int {
+    enum class Finalization : int32_t {
         NeedsInstaticking = 0x0,
         NeedsPopulation   = 0x1,
         Done              = 0x2,
@@ -45,8 +45,8 @@ public:
     class Neighbors {
 
     public:
-        static const int COUNT = 0x8; // constant
-        unsigned char    mNeighbors;  // this+0x0
+        static const int32_t COUNT = 0x8; // constant
+        uint8_t    mNeighbors;  // this+0x0
     public:
         // NOLINTBEGIN
         /**

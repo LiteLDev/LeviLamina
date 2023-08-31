@@ -11,8 +11,8 @@ public:
     BlockEventDispatcher(BlockEventDispatcher const&)            = delete;
     BlockEventDispatcher()                                       = delete;
 
-    std::unordered_map<int, std::unique_ptr<class ListenerInfo>> mRegisteredListeners;
-    int                                                          mHandleCounter;
+    std::unordered_map<int32_t, std::unique_ptr<class ListenerInfo>> mRegisteredListeners;
+    int32_t                                                          mHandleCounter;
 
 public:
     // NOLINTBEGIN

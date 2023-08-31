@@ -14,8 +14,8 @@
 class InventoryTransactionPacket : public ::Packet {
 
 public:
-    TypedClientNetId<ItemStackLegacyRequestIdTag, int, 0>                 mLegacyRequestId;    // this+0x30
-    std::vector<std::pair<ContainerEnumName, std::vector<unsigned char>>> mLegacySetItemSlots; // this+0x40
+    TypedClientNetId<ItemStackLegacyRequestIdTag, int32_t, 0>                 mLegacyRequestId;    // this+0x30
+    std::vector<std::pair<ContainerEnumName, std::vector<uint8_t>>> mLegacySetItemSlots; // this+0x40
     std::unique_ptr<ComplexInventoryTransaction>                          mTransaction;        // this+0x58
     bool                                                                  mIsClientSide;       // this+0x60
 

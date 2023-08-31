@@ -16,15 +16,15 @@ public:
 
     public:
         class BaseCircuitComponent* mComponent = nullptr;
-        int                         mDampening{};
+        int32_t                         mDampening{};
         class BlockPos              mPos;
         enum class FacingID           mDirection = FacingID::Unknown;
         bool                        mDirectlyPowered{};
-        int                         mData{};
+        int32_t                         mData{};
 
         constexpr Item() = delete;
 
-        constexpr Item(BaseCircuitComponent* component, int dampening, const BlockPos& pos)
+        constexpr Item(BaseCircuitComponent* component, int32_t dampening, const BlockPos& pos)
         : mComponent(component), mDampening(dampening), mPos(pos) {}
     };
 

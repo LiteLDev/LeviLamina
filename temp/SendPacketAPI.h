@@ -2,7 +2,7 @@
 #include "mc/BinaryStream.hpp"
 #include "mc/Packet.hpp"
 
-template <int pid, bool batching = true, bool compress = true>
+template <int32_t pid, bool batching = true, bool compress = true>
 class NetworkPacket : public Packet {
 public:
     std::string_view view;

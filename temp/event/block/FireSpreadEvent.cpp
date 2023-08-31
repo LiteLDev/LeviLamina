@@ -10,10 +10,10 @@
 
 namespace ll::event::block {
 
-FireSpreadEvent::FireSpreadEvent(BlockPos const& target, int dimensionId) : target(target), dimensionId(dimensionId) {}
+FireSpreadEvent::FireSpreadEvent(BlockPos const& target, int32_t dimensionId) : target(target), dimensionId(dimensionId) {}
 
 LL_GETTER_IMPL(FireSpreadEvent, BlockPos, target, getTarget)
-LL_GETTER_IMPL(FireSpreadEvent, int, dimensionId, getDimensionId)
+LL_GETTER_IMPL(FireSpreadEvent, int32_t, dimensionId, getDimensionId)
 
 bool onFireSpread_OnPlace = false;
 

@@ -12,7 +12,7 @@ public:
     ListenerInfo()                               = delete;
 
 
-    std::function<void(class BlockPos const&, unsigned int, class Block const&, class Actor*)> mCallback;  // this+0x0
+    std::function<void(class BlockPos const&, uint32_t, class Block const&, class Actor*)> mCallback;  // this+0x0
     class Vec3                                                                                 mPosition;  // this+0x40
     float                                                                                      mRadiusSqr; // this+0x4C
 

@@ -193,27 +193,6 @@ inline bool SaveConfig(nlohmann::json& config) {
     }
 }
 
-/* deprecated
-
-void ChooseLanguage() {
-    std::unordered_map<std::string, std::string> languageList = {{"en", "English"}, {"zh_CN", "简体中文"}, {"zh_TW",
-"繁体中文"}, {"ja", "日本語"}, {"ru", "Русский"}, {"id", "Indonesian"}, {"th", "ไทย"}, {"it", "Italiano"}, {"vi", "tiếng
-việt"}}; ll::logger.info("Please select your language first"); std::unordered_map<unsigned short, std::string>
-languages; unsigned short languageCode = 0; ll::logger.info("0. Default(System)"); for (std::filesystem::directory_entry
-i : std::filesystem::directory_iterator("plugins/LiteLoader/LangPack")) { languageCode++; std::string langFile =
-i.path().filename().string(); std::string lang = langFile.replace(langFile.find(".json"), 5,""); languages[languageCode]
-= lang; ll::logger.info("{}. {}", languageCode, languageList[lang]);
-    }
-    unsigned short selected = 0;
-    std::cout << "(Number)> ";
-    std::cin >> selected;
-    std::cin.ignore();
-    if (!languages[selected].empty()) {
-        ll::globalConfig.language = languages[selected];
-    }
-}
-*/
-
 bool ll::LoadLLConfig() {
     try {
         auto content = ReadAllFile(LITELOADER_CONFIG_FILE);

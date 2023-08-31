@@ -140,7 +140,7 @@ void UpdatePlayerDatabase() {
     auto    query = db->query(R"(SELECT count(*) FROM sqlite_master WHERE type="table" AND name = "player")");
     DB::Any res   = query.data()->front();
     if (res.is_number()) {
-        if (res.get_number<unsigned short>() > 0) {
+        if (res.get_number<uint16_t>() > 0) {
             ll::logger.warn("Converting old PlayerInfo to new one, please wait.");
             db->execute(SQL_UPDATE_PLAYER_TABLE);
         }

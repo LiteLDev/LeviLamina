@@ -17,8 +17,8 @@ public:
 
     public:
         NetworkBlockPosition  mPos;         // this+0x0
-        unsigned int          mRuntimeId;   // this+0xC
-        unsigned char         mUpdateFlags; // this+0x10
+        uint32_t          mRuntimeId;   // this+0xC
+        uint8_t         mUpdateFlags; // this+0x10
         ActorBlockSyncMessage mSyncMessage; // this+0x18
 
         // prevent constructor by default

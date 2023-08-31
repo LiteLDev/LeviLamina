@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class LogLevel : int {
+enum class LogLevel : int32_t {
     Verbose = 0x0,
     Info    = 0x1,
     Warning = 0x2,

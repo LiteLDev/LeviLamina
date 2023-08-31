@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class PackCategory : int {
+enum class PackCategory : int32_t {
     Unknown       = 0x0,
     RealmsUnknown = 0x1,
     Standard      = 0x2,

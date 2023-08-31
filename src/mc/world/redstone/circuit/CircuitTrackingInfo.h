@@ -28,9 +28,9 @@ public:
     Entry mPower;
     Entry mNearest;
     Entry m2ndNearest;
-    int   mDampening;
+    int32_t   mDampening;
     bool  mDirectlyPowered;
-    int   mData;
+    int32_t   mData;
 
 public:
     // NOLINTBEGIN

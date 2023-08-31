@@ -6,20 +6,20 @@
 
 Logger levelDBLogger("LevelDB");
 
-std::unique_ptr<KVDB> KVDB::create(const std::string& path, bool read_cache, int cache_sz, int Bfilter_bit) {
+std::unique_ptr<KVDB> KVDB::create(const std::string& path, bool read_cache, int32_t cache_sz, int32_t Bfilter_bit) {
     CreateDirs(path);
     auto db = std::make_unique<KVDB>();
     db->_init(path.c_str(), true, read_cache, cache_sz, Bfilter_bit);
     return db;
 }
-std::unique_ptr<KVDB> KVDB::open(const std::string& path, bool create, bool read_cache, int cache_sz, int Bfilter_bit) {
+std::unique_ptr<KVDB> KVDB::open(const std::string& path, bool create, bool read_cache, int32_t cache_sz, int32_t Bfilter_bit) {
     CreateDirs(path);
     auto db = std::make_unique<KVDB>();
     db->_init(path.c_str(), create, read_cache, cache_sz, Bfilter_bit);
     return db;
 }
 
-void KVDB::_init(const char* path, bool create, bool read_cache, int cache_sz, int Bfilter_bit) {
+void KVDB::_init(const char* path, bool create, bool read_cache, int32_t cache_sz, int32_t Bfilter_bit) {
     rdopt                  = leveldb::ReadOptions();
     wropt                  = leveldb::WriteOptions();
     options                = leveldb::Options();

@@ -13,7 +13,7 @@
 class ClientboundDebugRendererPacket : public ::Packet {
 public:
     // ClientboundDebugRendererPacket inner types define
-    enum class Type : unsigned int {
+    enum class Type : uint32_t {
         Invalid            = 0x0,
         ClearDebugMarkers  = 0x1,
         AddDebugMarkerCube = 0x2,

@@ -49,7 +49,7 @@ public:
 public:
     ActorRuntimeID             mRuntimeId;     // this+0x30
     std::vector<AttributeData> mAttributeData; // this+0x38
-    unsigned long long         mTick;          // this+0x50
+    uint64_t         mTick;          // this+0x50
 
     // prevent constructor by default
     UpdateAttributesPacket& operator=(UpdateAttributesPacket const&) = delete;

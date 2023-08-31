@@ -26,16 +26,16 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     "?_blockChanged@BlockSource@@IEAAXAEBVBlockPos@@IAEBVBlock@@1HPEBUActorBlockSyncMessage@@PEAVActor@@@Z",
     void,
     BlockPos* blockPos,
-    int       a3,
+    int32_t       a3,
     Block*    afterBlock,
     Block*    beforeBlock,
-    int       a6,
+    int32_t       a6,
     void*     a7,
     Actor*    actor
 ) {
     using EventManager = EventManager<BlockChangedEvent>;
 
-    int  dimID                 = this->getDimensionId();
+    int32_t  dimID                 = this->getDimensionId();
     auto previousBlockInstance = BlockInstance::createBlockInstance(beforeBlock, *blockPos, dimID);
     auto newBlockInstance      = BlockInstance::createBlockInstance(afterBlock, *blockPos, dimID);
 

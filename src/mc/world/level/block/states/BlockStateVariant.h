@@ -15,8 +15,8 @@ public:
     // NOLINTBEGIN
     virtual ~BlockStateVariant();
 
-    virtual void toNBT(class CompoundTag&, int) const;
+    virtual void toNBT(class CompoundTag&, int32_t) const;
 
-    virtual bool fromNBT(class CompoundTag const&, int&) const;
+    virtual bool fromNBT(class CompoundTag const&, int32_t&) const;
     // NOLINTEND
 };

@@ -2,7 +2,7 @@
 
 #include <string_view>
 
-template <unsigned N>
+template <uint32_t N>
 struct FixedString {
     char buf[N + 1]{};
     constexpr FixedString(char const* s) { std::copy_n(s, N, buf); }
@@ -10,5 +10,5 @@ struct FixedString {
     constexpr operator std::string_view() const { return buf; }
 };
 
-template <unsigned N>
+template <uint32_t N>
 FixedString(char const (&)[N]) -> FixedString<N - 1>;

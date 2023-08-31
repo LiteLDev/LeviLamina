@@ -47,7 +47,7 @@ class Player;
 
 
 #define AllResultType                                                                                                  \
-    bool const*, int const*, float const*, std::string const*, CommandSelector<Actor> const*,                          \
+    bool const*, int32_t const*, float const*, std::string const*, CommandSelector<Actor> const*,                          \
         CommandSelector<Player> const*, CommandPosition const*, CommandPositionFloat const*, CommandRawText const*,    \
         CommandMessage const*, Json::Value const*, CommandItem const*, CommandBlockName const*,                        \
         MobEffect const* const*, ActorDefinitionIdentifier const* const*, std::unique_ptr<Command> const*
@@ -107,13 +107,13 @@ class Player;
  *     {
  *       case do_hash("add"):
  *         if (results["testInt"].isSet)
- *           output.success(fmt::format("add {}", results["testInt"].getRaw<int>()));
+ *           output.success(fmt::format("add {}", results["testInt"].getRaw<int32_t>()));
  *         else
  *           output.success("add nothing");
  *         break;
  *       case do_hash("remove"):
  *         if (results["testInt"].isSet)
- *           output.success(fmt::format("remove {}", results["testInt"].getRaw<int>()));
+ *           output.success(fmt::format("remove {}", results["testInt"].getRaw<int32_t>()));
  *         else
  *           output.success("remove nothing");
  *         break;
@@ -151,7 +151,7 @@ public:
         Bool,
 
         /**
-         * @brief The integer type ( `int` )
+         * @brief The integer type ( `int32_t` )
          *
          */
         Int,
@@ -226,7 +226,7 @@ public:
         WildcardSelector, // WildcardCommandSelector<Actor>
 
 #ifdef ENABLE_PARAMETER_TYPE_POSTFIX
-        Postfix, // int?
+        Postfix, // int32_t?
 #endif           // ENABLE_PARAMETER_TYPE_POSTFIX
     };
     struct ParameterPtr;
@@ -268,8 +268,8 @@ public:
         inline enable_if_supported_t<T, T const&> getRaw() const {
 #ifdef USE_PARSE_ENUM_STRING
             if (type == ParameterType::Enum) {
-                auto& val = dAccess<std::pair<std::string, int>>(command, offset);
-                if constexpr (std::is_same_v<std::remove_cv_t<T>, int> || std::is_enum_v<T>) {
+                auto& val = dAccess<std::pair<std::string, int32_t>>(command, offset);
+                if constexpr (std::is_same_v<std::remove_cv_t<T>, int32_t> || std::is_enum_v<T>) {
                     return static_cast<T const&>(val.second);
                 } else if constexpr (std::is_same_v<std::remove_cv_t<T>, std::string>) {
                     return static_cast<T const&>(val.first);
@@ -437,9 +437,9 @@ public:
                 name,
                 getCommandParameterDataType<type>(),
                 description == "" ? nullptr : description.data(),
-                (int)offset,
+                (int32_t)offset,
                 optional,
-                (int)offset + std::max(8, (int)sizeof(T))};
+                (int32_t)offset + std::max(8, (int32_t)sizeof(T))};
             param.addOptions(option);
             return param;
         }
@@ -478,7 +478,7 @@ private:
         case ParameterType::Bool:
             return std::is_same_v<bool, std::remove_cv_t<_Ty>>;
         case ParameterType::Int:
-            return std::is_same_v<int, std::remove_cv_t<_Ty>>;
+            return std::is_same_v<int32_t, std::remove_cv_t<_Ty>>;
         case ParameterType::Float:
             return std::is_same_v<float, std::remove_cv_t<_Ty>>;
         case ParameterType::String:
@@ -508,7 +508,7 @@ private:
         //     return std::is_same_v<ParameterDataType::Position, std::remove_cv_t<_Ty>> || std::is_same_v<BlockPos,
         //     std::remove_cv_t<_Ty>> || std::is_same_v<Vec3, std::remove_cv_t<_Ty>>;
         case ParameterType::Enum:
-            return std::is_same_v<int, std::remove_cv_t<_Ty>> || std::is_same_v<std::string, std::remove_cv_t<_Ty>> ||
+            return std::is_same_v<int32_t, std::remove_cv_t<_Ty>> || std::is_same_v<std::string, std::remove_cv_t<_Ty>> ||
                    std::is_enum_v<_Ty>;
         case ParameterType::SoftEnum:
             return std::is_same_v<std::string, std::remove_cv_t<_Ty>>;
@@ -685,7 +685,7 @@ public:
         HMODULE                handle = GetCurrentModule()
     );
     LLAPI std::string const& setEnum(std::string const& description, std::vector<std::string> const& values);
-    LLAPI std::string const& getEnumValue(int index) const;
+    LLAPI std::string const& getEnumValue(int32_t index) const;
     LLAPI ParameterIndex     newParameter(DynamicCommand::ParameterData&& data);
     LLAPI ParameterIndex     newParameter(
             std::string const&            name,

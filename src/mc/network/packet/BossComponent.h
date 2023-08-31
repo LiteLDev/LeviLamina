@@ -22,11 +22,11 @@ public:
     bool                                  mCreateWorldFog;    // this+0x29
     BossBarColor                          mColor;             // this+0x2c
     BossBarOverlay                        mOverlay;           // this+0x30
-    int                                   mPlayersRegistered; // this+0x34
-    int                                   mLastHealth;        // this+0x38
-    int                                   mHudRangeSquared;   // this+0x3c
+    int32_t                                   mPlayersRegistered; // this+0x34
+    int32_t                                   mLastHealth;        // this+0x38
+    int32_t                                   mHudRangeSquared;   // this+0x3c
     std::chrono::steady_clock::time_point mLastPlayerUpdate;  // this+0x40
-    std::unordered_map<mce::UUID, int>    mPlayerParty;       // this+0x48
+    std::unordered_map<mce::UUID, int32_t>    mPlayerParty;       // this+0x48
 
     // prevent constructor by default
     BossComponent& operator=(BossComponent const&) = delete;

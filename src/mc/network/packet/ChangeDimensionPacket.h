@@ -13,9 +13,9 @@
 class ChangeDimensionPacket : public ::Packet {
 
 public:
-    AutomaticID<Dimension, int> mDimensionId; // this+0x30
-    Vec3                        mPos;         // this+0x34
-    bool                        mRespawn;     // this+0x40
+    DimensionType mDimensionId; // this+0x30
+    Vec3          mPos;         // this+0x34
+    bool          mRespawn;     // this+0x40
 
     // prevent constructor by default
     ChangeDimensionPacket& operator=(ChangeDimensionPacket const&) = delete;

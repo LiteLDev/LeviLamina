@@ -12,7 +12,7 @@ class GameMode {
 public:
     // Player&                               mPlayer;                       // this+0x8
     // BlockPos                              mDestroyBlockPos;              // this+0x10
-    // unsigned char                         mDestroyBlockFace;             // this+0x1C
+    // uint8_t                         mDestroyBlockFace;             // this+0x1C
     // float                                 mOldDestroyProgress;           // this+0x20
     // float                                 mDestroyProgress;              // this+0x24
     // double                                mLastDestroyTime;              // this+0x28
@@ -22,7 +22,7 @@ public:
     // bool                                  mLastBuildBlockWasInteractive; // this+0x4C
     // bool                                  mLastBuildBlockWasSnappable;   // this+0x4D
     // float                                 mMinPlayerSpeed;               // this+0x50
-    // int                                   mContinueBreakBlockCount;      // this+0x54
+    // int32_t                                   mContinueBreakBlockCount;      // this+0x54
     // std::chrono::steady_clock::time_point mLastBuildTime;                // this+0x58
     // std::chrono::steady_clock::time_point mNoDestroyUntil;               // this+0x60
     // std::chrono::steady_clock::time_point mNoDestroySoundUntil;          // this+0x68
@@ -31,7 +31,7 @@ public:
     // std::chrono::milliseconds             destroySoundDelay;             // this+0x80
     // bool                                  mHasBuildDirection;            // this+0x88
     // bool                                  mHasLastBuiltPosition;         // this+0x89
-    // unsigned char                         mContinueFacing;               // this+0x8A
+    // uint8_t                         mContinueFacing;               // this+0x8A
     // BlockPos                              mBuildDirection;               // this+0x8C
     // BlockPos                              mNextBuildPos;                 // this+0x98
     // std::unique_ptr<IGameModeTimer>       mTimer;                        // this+0xA8

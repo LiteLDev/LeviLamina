@@ -63,7 +63,7 @@ wchar_t* str2cwstr(const std::string& str) {
 
 #define READ_BUFFER_SIZE 4096
 
-bool NewProcess(const std::string& process, std::function<void(int, std::string)> callback, int timeLimit) {
+bool NewProcess(const std::string& process, std::function<void(int32_t, std::string)> callback, int32_t timeLimit) {
     SECURITY_ATTRIBUTES sa;
     HANDLE              hRead, hWrite;
     sa.nLength              = sizeof(SECURITY_ATTRIBUTES);
@@ -115,7 +115,7 @@ bool NewProcess(const std::string& process, std::function<void(int, std::string)
 
         try {
             if (callback)
-                callback((int)exitCode, strOutput);
+                callback((int32_t)exitCode, strOutput);
         } catch (const seh_exception& e) {
             ll::logger.error("SEH Uncaught Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
             ll::logger.error("In NewProcess callback");
@@ -130,7 +130,7 @@ bool NewProcess(const std::string& process, std::function<void(int, std::string)
     return true;
 }
 
-std::pair<int, std::string> NewProcessSync(const std::string& process, int timeLimit, bool noReadOutput) {
+std::pair<int32_t, std::string> NewProcessSync(const std::string& process, int32_t timeLimit, bool noReadOutput) {
     SECURITY_ATTRIBUTES sa;
     HANDLE              hRead, hWrite;
     sa.nLength              = sizeof(SECURITY_ATTRIBUTES);

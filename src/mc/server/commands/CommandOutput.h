@@ -12,7 +12,7 @@ public:
     CommandOutputType                         mType;
     std::unique_ptr<class CommandPropertyBag> mBag;
     std::vector<class CommandOutputMessage>   mMessages;
-    int                                       mSuccessCount;
+    int32_t                                       mSuccessCount;
     bool                                      mHasPlayerText;
 
     // prevent constructor by default

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class Difficulty : int {
+enum class Difficulty : int32_t {
     Peaceful = 0x0,
     Easy     = 0x1,
     Normal   = 0x2,

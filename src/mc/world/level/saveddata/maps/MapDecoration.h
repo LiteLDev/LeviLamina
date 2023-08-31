@@ -11,7 +11,7 @@ namespace mce { class Color; }
 class MapDecoration {
 public:
     // MapDecoration inner types define
-    enum class Type : int {
+    enum class Type : int32_t {
         MarkerWhite      = 0x0,
         MarkerGreen      = 0x1,
         MarkerRed        = 0x2,

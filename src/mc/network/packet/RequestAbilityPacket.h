@@ -12,7 +12,7 @@
 class RequestAbilityPacket : public ::Packet {
 public:
     // RequestAbilityPacket inner types define
-    enum class Type : unsigned char {
+    enum class Type : uint8_t {
         Unset = 0x0,
         Bool  = 0x1,
         Float = 0x2,

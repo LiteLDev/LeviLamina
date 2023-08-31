@@ -210,9 +210,9 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
 /////////////////////////////////// Debug Helper ///////////////////////////////////
 
 HMODULE GetCallerModule(unsigned long FramesToSkip) {
-    static const int maxFrameCount = 1;
+    static const int32_t maxFrameCount = 1;
     void*            frames[maxFrameCount];
-    int              frameCount = CaptureStackBackTrace(FramesToSkip + 2, maxFrameCount, frames, nullptr);
+    int32_t              frameCount = CaptureStackBackTrace(FramesToSkip + 2, maxFrameCount, frames, nullptr);
 
     std::string name;
     if (0 < frameCount) {
@@ -231,11 +231,11 @@ std::string GetCallerModuleFileName(unsigned long FramesToSkip) { return GetModu
 
 bool GetFileVersion(
     const wchar_t*  filePath,
-    unsigned short* ver1,
-    unsigned short* ver2,
-    unsigned short* ver3,
-    unsigned short* ver4,
-    unsigned int*   flag
+    uint16_t* ver1,
+    uint16_t* ver2,
+    uint16_t* ver3,
+    uint16_t* ver4,
+    uint32_t*   flag
 ) {
 
     DWORD dwLen = GetFileVersionInfoSizeW(filePath, nullptr);
@@ -252,7 +252,7 @@ bool GetFileVersion(
     }
 
     VS_FIXEDFILEINFO* lpBuffer = nullptr;
-    unsigned int      uLen     = 0;
+    uint32_t      uLen     = 0;
     if (!VerQueryValueW(pBlock, L"\\", (void**)&lpBuffer, &uLen)) {
         delete[] pBlock;
         return false;
@@ -274,11 +274,11 @@ bool GetFileVersion(
 }
 
 inline std::string VersionToString(
-    unsigned short major_ver,
-    unsigned short minor_ver,
-    unsigned short revision_ver,
-    unsigned short build_ver,
-    unsigned int   flag = 0
+    uint16_t major_ver,
+    uint16_t minor_ver,
+    uint16_t revision_ver,
+    uint16_t build_ver,
+    uint32_t   flag = 0
 ) {
     std::string flagStr;
     if (flag & VS_FF_DEBUG)
@@ -297,8 +297,8 @@ inline std::string VersionToString(
 }
 
 std::string GetFileVersionString(HMODULE hModule, bool includeFlag) {
-    unsigned short major_ver, minor_ver, revision_ver, build_ver;
-    unsigned int   flag;
+    uint16_t major_ver, minor_ver, revision_ver, build_ver;
+    uint32_t   flag;
     wchar_t        filePath[MAX_PATH] = {0};
     GetModuleFileNameEx(GetCurrentProcess(), hModule, filePath, MAX_PATH);
     if (GetFileVersion(filePath, &major_ver, &minor_ver, &revision_ver, &build_ver, &flag)) {
@@ -308,8 +308,8 @@ std::string GetFileVersionString(HMODULE hModule, bool includeFlag) {
 }
 
 std::string GetFileVersionString(std::string const& filePath, bool includeFlag) {
-    unsigned short major_ver, minor_ver, revision_ver, build_ver;
-    unsigned int   flag;
+    uint16_t major_ver, minor_ver, revision_ver, build_ver;
+    uint32_t   flag;
     std::wstring   wFilePath = str2wstr(filePath);
     if (GetFileVersion(wFilePath.c_str(), &major_ver, &minor_ver, &revision_ver, &build_ver, &flag)) {
         return VersionToString(major_ver, minor_ver, revision_ver, build_ver, includeFlag ? flag : 0);

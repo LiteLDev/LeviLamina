@@ -10,7 +10,7 @@
 class PassengerJumpPacket : public ::Packet {
 
 public:
-    int mJumpScale; // this+0x30
+    int32_t mJumpScale; // this+0x30
 
     // prevent constructor by default
     PassengerJumpPacket& operator=(PassengerJumpPacket const&) = delete;

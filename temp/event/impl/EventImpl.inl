@@ -38,7 +38,7 @@ void Event<EventType>::unsubscribe(std::weak_ptr<ListenerType> listener) {
 }
 
 template <typename EventType>
-void Event<EventType>::unsubscribe(int listenerId) noexcept {
+void Event<EventType>::unsubscribe(int32_t listenerId) noexcept {
     auto listener = EventManager<EventType>::getListener(listenerId);
     if (listener) {
         unsubscribe(*listener);

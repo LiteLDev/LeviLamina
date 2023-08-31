@@ -27,8 +27,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     "?take@Player@@QEAA_NAEAVActor@@HH@Z",
     bool,
     Actor* actor,
-    int    a2,
-    int    a3
+    int32_t    a2,
+    int32_t    a3
 ) {
     using ll::memory::dAccess;
 

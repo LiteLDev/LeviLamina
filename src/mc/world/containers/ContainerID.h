@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ContainerID : char {
+enum class ContainerID : int8_t {
     None           = -1,
     Inventory      = 0,
     First          = 1,

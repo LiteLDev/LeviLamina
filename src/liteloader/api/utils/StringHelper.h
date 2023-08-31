@@ -56,7 +56,7 @@ std::string IntToHexStr(const T& value, bool upper = true, bool no0x = true,
         result += "0x";
     auto hexStr = upper ? "0123456789ABCDEF" : "0123456789abcdef";
     bool leadingZero = true;
-    for (int i = sizeof(T) * 2; i > 0; --i) {
+    for (int32_t i = sizeof(T) * 2; i > 0; --i) {
         auto hex = (value >> (i - 1) * 4) & 0xF;
         if (noLeadingZero && leadingZero && hex == 0)
             continue;

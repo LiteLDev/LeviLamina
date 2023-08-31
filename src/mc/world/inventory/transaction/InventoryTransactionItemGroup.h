@@ -8,10 +8,10 @@ public:
     InventoryTransactionItemGroup() = delete;
 
 
-    int                                mItemId;   // this+0x0
-    int                                mItemAux;  // this+0x4
+    int32_t                                mItemId;   // this+0x0
+    int32_t                                mItemAux;  // this+0x4
     std::unique_ptr<class CompoundTag> mTag;      // this+0x8
-    int                                mCount;    // this+0x10
+    int32_t                                mCount;    // this+0x10
     bool                               mOverflow; // this+0x14
 
 public:

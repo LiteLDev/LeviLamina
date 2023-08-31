@@ -50,8 +50,6 @@ bool ll::CrashLogger::startCrashLoggerProcess() {
 
 void ll::CrashLogger::initCrashLogger(bool enableCrashLogger) {
     // constexpr auto DEPRECATED_CRASH_LOGGER_PATH = "plugins/LiteLoader/CrashLogger.dll";
-    // Remove deprecated CrashLogger
-    // std::filesystem::remove(DEPRECATED_CRASH_LOGGER_PATH);
 
     if (!enableCrashLogger) {
         crashLogger.warn(tr("ll.crashLogger.warning.crashLoggerDisabled.1"));

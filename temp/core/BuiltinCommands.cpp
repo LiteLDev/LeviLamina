@@ -36,7 +36,7 @@ class TeleportDimensionCommand : public Command {
             return CommandPos.getPosition(0, ori, {0, 0, 0});
         auto pos              = actor->getPosition();
         Vec3 result           = pos;
-        int  actorDimensionId = actor->getDimensionId();
+        int32_t  actorDimensionId = actor->getDimensionId();
         switch (DimensionId) {
         case TeleportDimensionCommand::DimensionType::OverWorld:
             if (actorDimensionId == 1)
@@ -57,15 +57,15 @@ class TeleportDimensionCommand : public Command {
     }
 
     bool teleportTarget(CommandOrigin const& ori, CommandOutput& output, Actor* actor) const {
-        auto dim = VanillaDimensions::toString((int)DimensionId);
+        auto dim = VanillaDimensions::toString((int32_t)DimensionId);
         auto pos = getTargetPos(ori, actor);
-        actor->teleport(pos, (int)DimensionId);
+        actor->teleport(pos, (int32_t)DimensionId);
         output.trSuccess("ll.cmd.tpdim.success", actor->getNameTag(), dim, pos.x, pos.y, pos.z);
         return true;
     }
 
     bool teleportTargets(CommandOrigin const& ori, CommandOutput& output, CommandSelectorResults<Actor>& actors) const {
-        auto        dim = VanillaDimensions::toString((int)DimensionId);
+        auto        dim = VanillaDimensions::toString((int32_t)DimensionId);
         std::string names;
         for (auto& actor : actors) {
             std::string actorName = actor->getNameTag();
@@ -73,7 +73,7 @@ class TeleportDimensionCommand : public Command {
                 actorName = actor->getTypeName();
             }
             names.append(", ").append(actorName);
-            if (actor->teleport(getTargetPos(ori, actor), (int)DimensionId)) {
+            if (actor->teleport(getTargetPos(ori, actor), (int32_t)DimensionId)) {
                 output.success();
             }
         }
@@ -94,8 +94,8 @@ class TeleportDimensionCommand : public Command {
 public:
     void execute(CommandOrigin const& ori, CommandOutput& output) const override {
         output.setLanguageCode(ori);
-        if ((int)DimensionId < 0 || (int)DimensionId > 2) {
-            output.trError("ll.cmd.tpdim.invalidDimid", (int)DimensionId);
+        if ((int32_t)DimensionId < 0 || (int32_t)DimensionId > 2) {
+            output.trError("ll.cmd.tpdim.invalidDimid", (int32_t)DimensionId);
             return;
         }
         if (Victim_isSet) {
@@ -138,7 +138,7 @@ public:
             &TeleportDimensionCommand::DimensionId, "Dimension", "DimensionType"
         );
         auto dimensionIdParam =
-            makeMandatory((int TeleportDimensionCommand::*)&TeleportDimensionCommand::DimensionId, "DimensionId");
+            makeMandatory((int32_t TeleportDimensionCommand::*)&TeleportDimensionCommand::DimensionId, "DimensionId");
         auto victimParam =
             makeMandatory(&TeleportDimensionCommand::Victim, "victim", &TeleportDimensionCommand::Victim_isSet);
         auto positionParam = makeOptional(
@@ -242,7 +242,7 @@ void LLReloadPluginCommand(CommandOutput& output, const string& pluginName, bool
             output.trError("ll.cmd.reloadPlugin.fail", pluginName);
         }
     } else {
-        int cnt = PluginManager::reloadAllPlugins(true);
+        int32_t cnt = PluginManager::reloadAllPlugins(true);
         if (cnt > 0) {
             output.trSuccess("ll.cmd.reloadAllPlugins.success", cnt);
         } else {

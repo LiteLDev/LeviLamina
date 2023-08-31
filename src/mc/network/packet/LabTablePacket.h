@@ -13,7 +13,7 @@
 class LabTablePacket : public ::Packet {
 public:
     // LabTablePacket inner types define
-    enum class Type : unsigned char {
+    enum class Type : uint8_t {
         StartCombine  = 0x0,
         StartReaction = 0x1,
         Reset         = 0x2,

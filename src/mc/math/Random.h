@@ -17,15 +17,15 @@ namespace Core {
 class Random : public ::IRandom {
 
 public:
-    unsigned int mSeed;                           // this+0x8
-    unsigned int _mt[624];                        // this+0xC
-    int          _mti;                            // this+0x9CC
+    uint32_t mSeed;                           // this+0x8
+    uint32_t _mt[624];                        // this+0xC
+    int32_t          _mti;                            // this+0x9CC
     bool         mHaveNextNextGaussian;           // this+0x9D0
     float        mNextNextGaussian;               // this+0x9D4
     bool         mHaveNextNextGaussianDouble;     // this+0x9D8
     double       mNextNextGaussianDouble;         // this+0x9E0
-    int          mInitedIdx;                      // this+0x9E8
-    unsigned int mFakeUniformRandomInt;           // this+0x9EC
+    int32_t          mInitedIdx;                      // this+0x9E8
+    uint32_t mFakeUniformRandomInt;           // this+0x9EC
     bool         mTest_OnlyUsedDeterministically; // this+0x9F0
 
 public:

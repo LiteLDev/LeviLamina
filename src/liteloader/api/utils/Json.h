@@ -30,10 +30,10 @@ private:
 
 class ValueConstIterator;
 class ValueIterator;
-enum ValueType : char {
+enum ValueType : int8_t {
     nullValue = 0, ///< 'null' value
     intValue,      ///< signed integer value
-    uintValue,     ///< unsigned integer value
+    uintValue,     ///< uint32_t integer value
     realValue,     ///< double value
     stringValue,   ///< UTF-8 string value
     booleanValue,  ///< bool value
@@ -41,13 +41,13 @@ enum ValueType : char {
     objectValue    ///< object value (collection of name/value pairs).
 };
 
-using UInt = unsigned;
-using UInt64 = unsigned long long;
-using Int = int;
-using Int64 = long long;
+using UInt = uint32_t;
+using UInt64 = uint64_t;
+using Int = int32_t;
+using Int64 = int64_t;
 using LargestInt = Int64;
 using LargestUInt = UInt64;
-using ArrayIndex = unsigned;
+using ArrayIndex = uint32_t;
 
 enum CommentPlacement {
     commentBefore = 0,      ///< a comment placed on the line before a value
@@ -72,7 +72,7 @@ public:
         : cstr_(nullptr)
         , index_(index) {
         }
-        CZString(char const* str, unsigned length, DuplicationPolicy allocate)
+        CZString(char const* str, uint32_t length, DuplicationPolicy allocate)
         : cstr_(str) {
             storage_.policy_ = allocate & 0x3;
             storage_.length_ = length & 0x3FFFFFFF;
@@ -87,10 +87,10 @@ public:
         bool operator<(CZString const& other) const {
             if (!cstr_)
                 return index_ < other.index_;
-            unsigned this_len = this->storage_.length_;
-            unsigned other_len = other.storage_.length_;
-            unsigned min_len = std::min<unsigned>(this_len, other_len);
-            int comp = memcmp(this->cstr_, other.cstr_, min_len);
+            uint32_t this_len = this->storage_.length_;
+            uint32_t other_len = other.storage_.length_;
+            uint32_t min_len = std::min<uint32_t>(this_len, other_len);
+            int32_t comp = memcmp(this->cstr_, other.cstr_, min_len);
             if (comp < 0)
                 return true;
             if (comp > 0)
@@ -100,11 +100,11 @@ public:
         bool operator==(CZString const& other) const {
             if (!cstr_)
                 return index_ == other.index_;
-            unsigned this_len = this->storage_.length_;
-            unsigned other_len = other.storage_.length_;
+            uint32_t this_len = this->storage_.length_;
+            uint32_t other_len = other.storage_.length_;
             if (this_len != other_len)
                 return false;
-            int comp = memcmp(this->cstr_, other.cstr_, this_len);
+            int32_t comp = memcmp(this->cstr_, other.cstr_, this_len);
             return comp == 0;
         }
         ArrayIndex index() const {
@@ -119,8 +119,8 @@ public:
 
     private:
         struct StringStorage {
-            unsigned policy_ : 2;
-            unsigned length_ : 30; // 1GB max
+            uint32_t policy_ : 2;
+            uint32_t length_ : 30; // 1GB max
         };
         char const* cstr_;
         union {
@@ -219,9 +219,9 @@ public:
     }
     MCAPI void resize(ArrayIndex newSize);
     MCAPI Value& operator[](ArrayIndex index);
-    MCAPI Value& operator[](int index);
+    MCAPI Value& operator[](int32_t index);
     MCAPI const Value& operator[](ArrayIndex index) const;
-    MCAPI const Value& operator[](int index) const;
+    MCAPI const Value& operator[](int32_t index) const;
     MCAPI Value& append(const Value& value);
 
     MCAPI Value& operator[](const char* key);
@@ -250,7 +250,7 @@ public:
         LargestUInt uint_;
         double real_;
         bool bool_;
-        char* string_; // actually ptr to unsigned, followed by str, unless
+        char* string_; // actually ptr to uint32_t, followed by str, unless
                        // !allocated_
         ObjectValues* map_;
     } value_;
@@ -266,8 +266,8 @@ private:
 class ValueIteratorBase {
 public:
     typedef std::bidirectional_iterator_tag iterator_category;
-    typedef unsigned int size_t;
-    typedef int difference_type;
+    typedef uint32_t size_t;
+    typedef int32_t difference_type;
     typedef ValueIteratorBase SelfType;
 
     bool operator==(const SelfType& other) const {
@@ -302,8 +302,8 @@ class ValueConstIterator : public ValueIteratorBase {
 
 public:
     typedef const Value value_type;
-    // typedef unsigned int size_t;
-    // typedef int difference_type;
+    // typedef uint32_t size_t;
+    // typedef int32_t difference_type;
     typedef const Value& reference;
     typedef const Value* pointer;
     typedef ValueConstIterator SelfType;
@@ -324,8 +324,8 @@ class ValueIterator : public ValueIteratorBase {
 
 public:
     typedef Value value_type;
-    typedef unsigned int size_t;
-    typedef int difference_type;
+    typedef uint32_t size_t;
+    typedef int32_t difference_type;
     typedef Value& reference;
     typedef Value* pointer;
     typedef ValueIterator SelfType;
@@ -371,7 +371,7 @@ public:
 
     MCAPI bool parse(const std::string& document, Value& root, bool collectComments = true);
     MCAPI bool parse(const char* beginDoc, const char* endDoc, Value& root, bool collectComments = true);
-    MCAPI bool parse(const char* beginDoc, unsigned long long length, Value& root, bool collectComments = true);
+    MCAPI bool parse(const char* beginDoc, uint64_t length, Value& root, bool collectComments = true);
     MCAPI bool parse(std::istream& is, Value& root, bool collectComments = true);
 
     MCAPI std::string getFormattedErrorMessages() const;
@@ -463,8 +463,8 @@ private:
     ChildValues childValues_;
     std::string document_;
     std::string indentString_;
-    unsigned int rightMargin_;
-    unsigned int indentSize_;
+    uint32_t rightMargin_;
+    uint32_t indentSize_;
     bool addChildValues_;
 };
 

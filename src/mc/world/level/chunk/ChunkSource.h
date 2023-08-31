@@ -19,13 +19,13 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class ChunkSource : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // ChunkSource inner types define
-    enum class LoadMode : int {
+    enum class LoadMode : int32_t {
         None    = 0x0,
         Deferred = 0x1,
     };
 
 
-    // int                          mChunkSide;             // this+0x18
+    // int32_t                          mChunkSide;             // this+0x18
     // Level*                       mLevel;                 // this+0x20
     // Dimension*                   mDimension;             // this+0x28
     // ChunkSource*                 mParent;                // this+0x30

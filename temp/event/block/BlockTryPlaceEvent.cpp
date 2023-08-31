@@ -26,7 +26,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     char,
     Actor*          ac,
     BlockPos*       bp,
-    unsigned __int8 facing,
+    uint8_t facing,
     ItemStackBase*  item,
     bool            a6
 ) {

@@ -12,7 +12,7 @@ class MapInfoRequestPacket : public ::Packet {
 
 public:
     ActorUniqueID                                        mMapId;        // this+0x30
-    std::vector<std::pair<unsigned int, unsigned short>> mClientPixels; // this+0x38
+    std::vector<std::pair<uint32_t, uint16_t>> mClientPixels; // this+0x38
 
     // prevent constructor by default
     MapInfoRequestPacket& operator=(MapInfoRequestPacket const&) = delete;

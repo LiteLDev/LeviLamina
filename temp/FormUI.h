@@ -133,9 +133,7 @@ public:
     }
     inline virtual Type getType() = 0;
     LLAPI std::string getString();
-    [[deprecated("Please use getInt")]]
-    LLAPI int getNumber();
-    LLAPI int getInt();
+    LLAPI int32_t getInt();
     LLAPI float getFloat();
     LLAPI double getDouble();
     LLAPI bool getBool();
@@ -220,10 +218,10 @@ protected:
 public:
     string title;
     vector<string> options;
-    int def;
+    int32_t def;
 
 public:
-    inline Dropdown(const string& name, string title, const vector<string>& options, int defId = 0)
+    inline Dropdown(const string& name, string title, const vector<string>& options, int32_t defId = 0)
     : title(std::move(title))
     , options(options)
     , def(defId) {
@@ -241,7 +239,7 @@ public:
     inline void addOption(const string& option) {
         options.push_back(option);
     }
-    inline void setDefault(int defId) {
+    inline void setDefault(int32_t defId) {
         this->def = defId;
     }
 };
@@ -290,10 +288,10 @@ protected:
 public:
     string title;
     vector<string> options;
-    int def;
+    int32_t def;
 
 public:
-    inline StepSlider(const string& name, string title, const vector<string>& options, int defId = 0)
+    inline StepSlider(const string& name, string title, const vector<string>& options, int32_t defId = 0)
     : title(std::move(title))
     , options(options)
     , def(defId) {
@@ -311,7 +309,7 @@ public:
     inline void addOption(const string& option) {
         options.push_back(option);
     }
-    inline void setDefault(int defId) {
+    inline void setDefault(int32_t defId) {
         this->def = defId;
     }
 };
@@ -328,7 +326,7 @@ protected:
     LLAPI string serialize() override;
 
 public:
-    using Callback = std::function<void(Player*, int)>;
+    using Callback = std::function<void(Player*, int32_t)>;
     string title, content;
     vector<std::shared_ptr<SimpleFormElement>> elements;
     Callback callback;
@@ -402,9 +400,9 @@ public:
     LLAPI CustomForm& addLabel(const string& name, string text);
     LLAPI CustomForm& addInput(const string& name, string title, string placeholder = "", string def = "");
     LLAPI CustomForm& addToggle(const string& name, string title, bool def = false);
-    LLAPI CustomForm& addDropdown(const string& name, string title, const vector<string>& options, int defId = 0);
+    LLAPI CustomForm& addDropdown(const string& name, string title, const vector<string>& options, int32_t defId = 0);
     LLAPI CustomForm& addSlider(const string& name, string title, double min, double max, double step = 1, double def = 0);
-    LLAPI CustomForm& addStepSlider(const string& name, string title, const vector<string>& options, int defId = 0);
+    LLAPI CustomForm& addStepSlider(const string& name, string title, const vector<string>& options, int32_t defId = 0);
 
     LLAPI CustomForm& append(const Label& element);
     LLAPI CustomForm& append(const Input& element);
@@ -416,30 +414,26 @@ public:
     LLAPI bool sendTo(Player* player, Callback callback);
     LLAPI bool sendToForRawJson(Player* player, Callback2 callback);
     LLAPI CustomFormElement* getElement(const string& name);
-    LLAPI CustomFormElement* getElement(int index);
-    LLAPI CustomFormElement::Type getType(int index);
+    LLAPI CustomFormElement* getElement(int32_t index);
+    LLAPI CustomFormElement::Type getType(int32_t index);
 
     LLAPI string getString(const string& name);
-    [[deprecated("Please use getInt")]]
-    LLAPI int getNumber(const string& name);
-    LLAPI int getInt(const string& name);
+    LLAPI int32_t getInt(const string& name);
     LLAPI float getFloat(const string& name);
     LLAPI double getDouble(const string& name);
     LLAPI bool getBool(const string& name);
-    LLAPI string getString(int index);
-    [[deprecated("Please use getInt")]]
-    LLAPI int getNumber(int index);
-    LLAPI int getInt(int index);
-    LLAPI float getFloat(int index);
-    LLAPI double getDouble(int index);
-    LLAPI bool getBool(int index);
+    LLAPI string getString(int32_t index);
+    LLAPI int32_t getInt(int32_t index);
+    LLAPI float getFloat(int32_t index);
+    LLAPI double getDouble(int32_t index);
+    LLAPI bool getBool(int32_t index);
 
     // Tool Functions
     template <typename T>
-    inline void setValue(int index, T value) {
+    inline void setValue(int32_t index, T value) {
         elements[index].second->value = std::to_string(value);
     }
-    inline void setValue(int index, string value) {
+    inline void setValue(int32_t index, string value) {
         elements[index].second->value = value;
     }
 };

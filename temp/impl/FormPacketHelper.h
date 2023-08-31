@@ -5,18 +5,18 @@
 #include "liteloader/api/FormUI.h"
 #include "mc/world/actor/player/Player.h"
 
-LLAPI unsigned NewFormId();
+LLAPI uint32_t NewFormId();
 
-LLAPI void SetSimpleFormPacketCallback(unsigned formId, std::function<void(Player*, int)> callback);
+LLAPI void SetSimpleFormPacketCallback(uint32_t formId, std::function<void(Player*, int32_t)> callback);
 
-LLAPI void SetModalFormPacketCallback(unsigned formId, std::function<void(Player*, bool)> callback);
+LLAPI void SetModalFormPacketCallback(uint32_t formId, std::function<void(Player*, bool)> callback);
 
-LLAPI void SetCustomFormPacketCallback(unsigned formId, std::function<void(Player*, string)> callback);
+LLAPI void SetCustomFormPacketCallback(uint32_t formId, std::function<void(Player*, string)> callback);
 
-LLAPI void SetSimpleFormBuilderData(unsigned formId, std::shared_ptr<Form::SimpleForm> data);
+LLAPI void SetSimpleFormBuilderData(uint32_t formId, std::shared_ptr<Form::SimpleForm> data);
 
-LLAPI void SetModalFormBuilderData(unsigned formId, std::shared_ptr<Form::ModalForm> data);
+LLAPI void SetModalFormBuilderData(uint32_t formId, std::shared_ptr<Form::ModalForm> data);
 
-LLAPI void SetCustomFormBuilderData(unsigned formId, std::shared_ptr<Form::CustomForm> data);
+LLAPI void SetCustomFormBuilderData(uint32_t formId, std::shared_ptr<Form::CustomForm> data);
 
-LLAPI void HandleFormPacket(Player* player, unsigned formId, const string& data);
+LLAPI void HandleFormPacket(Player* player, uint32_t formId, const string& data);

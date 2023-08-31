@@ -56,14 +56,15 @@ public:
     [[nodiscard]] inline std::string const& getLevelName() const { return getLevelData().getLevelName(); }
     [[nodiscard]] inline std::string        getLevelPath() const { return "./worlds/" + getLevelName(); }
 
-    [[nodiscard]] inline optional_ref<Dimension> getDimensionOptRef(AutomaticID<class Dimension, int> dimID) const {
+    [[nodiscard]] inline optional_ref<Dimension> getDimensionOptRef(DimensionType dimID) const {
         return getDimension(dimID).get();
     }
 
     LLNDAPI optional_ref<Player> getPlayerByNameOrXUID(std::string const& info) const;
 
     // LLAPI void broadcastText(const std::string& text, TextType type) const;
-    // LLAPI void broadcastTitle(const std::string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) const;
+    // LLAPI void broadcastTitle(const std::string& text, TitleType Type, int32_t FadeInDuration, int32_t
+    // RemainDuration, int32_t FadeOutDuration) const;
 
     // LLAPI void sendPacketForAllPlayers(Packet& pkt) const;
 

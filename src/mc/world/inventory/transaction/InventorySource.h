@@ -7,7 +7,7 @@
 class InventorySource {
 public:
     // InventorySource inner types define
-    enum class InventorySourceFlags : unsigned int {
+    enum class InventorySourceFlags : uint32_t {
         NoFlag                  = 0x0,
         WorldInteraction_Random = 0x1,
     };

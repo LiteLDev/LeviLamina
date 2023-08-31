@@ -5,7 +5,7 @@
 class InteractionResult {
 
 public:
-    enum class Result : int {
+    enum class Result : int32_t {
         Success = 0x1,
         Fail    = 0x2,
     };

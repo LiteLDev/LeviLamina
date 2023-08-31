@@ -10,7 +10,7 @@
 
 namespace ll::event::player {
 
-PlayerInventoryChangeEvent::PlayerInventoryChangeEvent(Player* player, int slot, ItemStack* oldItem, ItemStack* newItem)
+PlayerInventoryChangeEvent::PlayerInventoryChangeEvent(Player* player, int32_t slot, ItemStack* oldItem, ItemStack* newItem)
 : player(player), slot(slot), previousItemStack(oldItem), newItemStack(newItem) {}
 
 using EventManager = EventManager<PlayerInventoryChangeEvent>;
@@ -22,7 +22,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     "?inventoryChanged@Player@@UEAAXAEAVContainer@@HAEBVItemStack@@1_N@Z",
     void,
     void*      container,
-    int        slotNumber,
+    int32_t        slotNumber,
     ItemStack* oldItem,
     ItemStack* newItem,
     bool       is

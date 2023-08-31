@@ -43,7 +43,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     PlayerInteractEntityEvent event(
         sp,
         dAccess<ActorRuntimeID, 104>(this),
-        static_cast<PlayerInteractEntityEvent::InteractiveMode>(dAccess<int, 112>(this))
+        static_cast<PlayerInteractEntityEvent::InteractiveMode>(dAccess<int32_t, 112>(this))
     );
     if (event.isCancelled()) {
         return;

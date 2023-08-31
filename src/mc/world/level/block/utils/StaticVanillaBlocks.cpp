@@ -763,7 +763,7 @@ class Block const* mYellowWool;
 
 void assignBlocks() {
 
-    for (int i = 0; i < 119; ++i) {
+    for (int32_t i = 0; i < 119; ++i) {
         INIT_BLOCK(Elements[i]);
     }
 

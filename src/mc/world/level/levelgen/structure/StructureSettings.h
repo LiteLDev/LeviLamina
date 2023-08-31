@@ -32,7 +32,7 @@ public:
     AnimationMode mAnimationMode;                             // this+0x5A
     float         mAnimationSeconds;                          // this+0x5C
     float         mIntegrityValue;                            // this+0x60
-    unsigned int  mIntegritySeed;                             // this+0x64
+    uint32_t  mIntegritySeed;                             // this+0x64
 
     inline StructureSettings(BlockPos const& size, bool ignoreBlocks, bool ignoreEntities) : StructureSettings() {
         setIgnoreBlocks(ignoreBlocks);

@@ -8,13 +8,13 @@
 class SynchedActorDataEntityWrapper {
 
 public:
-    int (**_vptr_SynchedActorDataEntityWrapper)(void);
+    int32_t (**_vptr_SynchedActorDataEntityWrapper)(void);
     gsl::not_null<class SynchedActorDataComponent*> mData;
 
     template <typename T>
-    MCAPI void define(unsigned short, T const&);
+    MCAPI void define(uint16_t, T const&);
     template <typename T>
-    MCAPI void set(unsigned short, T const&);
+    MCAPI void set(uint16_t, T const&);
 
 public:
     // NOLINTBEGIN

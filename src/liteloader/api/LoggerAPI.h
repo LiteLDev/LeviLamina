@@ -67,7 +67,7 @@ public:
 
     public:
         Logger* logger{};
-        int level{};
+        int32_t level{};
         std::string consoleFormat;
         std::string fileFormat;
         std::string playerFormat;
@@ -76,7 +76,7 @@ public:
         std::ostringstream os;
         bool locked = false; // Deprecated
 
-        LLAPI explicit OutputStream(Logger* logger, int level, std::string&& consoleFormat, std::string&& fileFormat, std::string&& playerFormat, fmt::text_style&& style, std::string&& mode);
+        LLAPI explicit OutputStream(Logger* logger, int32_t level, std::string&& consoleFormat, std::string&& fileFormat, std::string&& playerFormat, fmt::text_style&& style, std::string&& mode);
 
         template <typename T>
         OutputStream& operator<<(T t) {
@@ -107,7 +107,7 @@ public:
             return *this;
         }
 
-        template <typename S, typename... Args, enable_if_type<(fmt::v9::detail::is_string<S>::value), int> = 0>
+        template <typename S, typename... Args, enable_if_type<(fmt::v9::detail::is_string<S>::value), int32_t> = 0>
         void operator()(const S& formatStr, const Args&... args) {
             if constexpr (0 == sizeof...(args)) {
                 // Avoid fmt if only one argument
@@ -140,9 +140,9 @@ public:
     std::string title;
     std::ofstream ofs;
     Player* player = nullptr;
-    int consoleLevel = -1;
-    int fileLevel = -1;
-    int playerLevel = -1;
+    int32_t consoleLevel = -1;
+    int32_t fileLevel = -1;
+    int32_t playerLevel = -1;
 
     ~Logger() {
         setFile(nullptr);

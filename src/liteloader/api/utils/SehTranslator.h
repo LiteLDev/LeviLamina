@@ -26,20 +26,20 @@ __declspec(dllimport) unsigned long __stdcall FormatMessageA(unsigned long dwFla
 __declspec(dllimport) void* __stdcall LocalFree(void* hMem);
 }
 namespace FormatMessageFlags {
-constexpr int FROM_HMODULE = 0x00000800;
-constexpr int FROM_SYSTEM = 0x00001000;
-constexpr int ALLOCATE_BUFFER = 0x00000100;
+constexpr int32_t FROM_HMODULE = 0x00000800;
+constexpr int32_t FROM_SYSTEM = 0x00001000;
+constexpr int32_t ALLOCATE_BUFFER = 0x00000100;
 }; // namespace FormatMessageFlags
 }; // namespace WinAPI
 }; // namespace
 
 class seh_exception : std::exception {
 public:
-    const unsigned int _expCode = 0;
+    const uint32_t _expCode = 0;
     const char* _expMsg = nullptr;
     const SEH_EXP_INFO_POINTER _expInfo = nullptr;
 
-    seh_exception(unsigned int ExpCode, SEH_EXP_INFO_POINTER ExpInfo)
+    seh_exception(uint32_t ExpCode, SEH_EXP_INFO_POINTER ExpInfo)
     : _expCode(ExpCode), _expInfo(ExpInfo) {
     }
 
@@ -72,14 +72,14 @@ public:
         return _expInfo;
     }
 
-    [[nodiscard]] unsigned int code() const {
+    [[nodiscard]] uint32_t code() const {
         return _expCode;
     }
 
     /*
      * @brief Translate SEH Exception to C++ Exception, enable /EHa(Enable SEH Exception) and call _set_se_translator(seh_exception::TranslateSEHtoCE) in new thread
      */
-    static void __cdecl TranslateSEHtoCE(unsigned int ExpCode, struct _EXCEPTION_POINTERS* ExpInfo) {
+    static void __cdecl TranslateSEHtoCE(uint32_t ExpCode, struct _EXCEPTION_POINTERS* ExpInfo) {
         throw seh_exception(ExpCode, ExpInfo);
     }
 };

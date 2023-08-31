@@ -93,9 +93,9 @@ constexpr bool Cancel = false;
 template <typename EVENT>
 class EventManager {
 public:
-    LLAPI static int  addEventListener(std::string name, std::function<bool(EVENT)> callback);
-    LLAPI static int  addEventListenerRef(std::string name, std::function<bool(EVENT&)> callback);
-    LLAPI static bool removeEventListener(int id);
+    LLAPI static int32_t  addEventListener(std::string name, std::function<bool(EVENT)> callback);
+    LLAPI static int32_t  addEventListenerRef(std::string name, std::function<bool(EVENT&)> callback);
+    LLAPI static bool removeEventListener(int32_t id);
     LLAPI static bool hasListener();
     LLAPI static bool call(EVENT& ev);
     LLAPI static bool callToPlugin(std::string pluginName, EVENT& ev);
@@ -109,11 +109,11 @@ public:
 template <typename EVENT>
 class EventListener {
 private:
-    int  listenerId;
+    int32_t  listenerId;
     bool deleted = false;
 
 public:
-    explicit EventListener(int id) : listenerId(id) {}
+    explicit EventListener(int32_t id) : listenerId(id) {}
 
     /**
      * @brief Stop listening to the event and remove the event listener.
@@ -190,7 +190,7 @@ public:
     Player*       mPlayer    = nullptr;
     ItemStack*    mItemStack = nullptr;
     BlockInstance mBlockInstance;
-    unsigned char mFace = 0;
+    uint8_t mFace = 0;
     Vec3          mClickPos;
 };
 
@@ -211,7 +211,7 @@ public:
     BlockInstance mBlockInstance;
     Actor*        mTargetActor = nullptr;
     EventType     mEventType   = EventType::None;
-    unsigned char mFace        = 0;
+    uint8_t mFace        = 0;
     Vec3          mTargetPos;
 };
 
@@ -277,7 +277,7 @@ public:
 class PlayerScoreChangedEvent : public EventTemplate<PlayerScoreChangedEvent> {
 public:
     Player*       mPlayer       = nullptr;
-    int           mScore        = -1;
+    int32_t           mScore        = -1;
     Objective*    mObjective    = nullptr;
     ScoreboardId* mScoreboardId = nullptr;
 };
@@ -388,7 +388,7 @@ class ArmorStandChangeEvent : public EventTemplate<ArmorStandChangeEvent> {
 public:
     ArmorStand* mArmorStand = nullptr;
     Player*     mPlayer     = nullptr;
-    int         mSlot       = -1;
+    int32_t         mSlot       = -1;
 };
 
 class EntityTransformEvent : public EventTemplate<EntityTransformEvent> {
@@ -397,25 +397,18 @@ public:
     Actor*         mAfterEntity          = nullptr;
 };
 
-class MobSpawnEvent : public EventTemplate<MobSpawnEvent> {
-public:
-    [[deprecated("MobSpawnEvent is outdated, please use MobTrySpawnEvent instead")]] string mTypeName;
-    Vec3                                                                                    mPos;
-    int                                                                                     mDimensionId = -1;
-};
-
 class MobTrySpawnEvent : public EventTemplate<MobTrySpawnEvent> {
 public:
     string mTypeName;
     Vec3   mPos;
-    int    mDimensionId = -1;
+    int32_t    mDimensionId = -1;
 };
 
 class MobSpawnedEvent : public EventTemplate<MobSpawnedEvent> {
 public:
     Mob* mMob;
     Vec3 mPos;
-    int  mDimensionId = -1;
+    int32_t  mDimensionId = -1;
 };
 
 /* endregion */
@@ -456,7 +449,7 @@ public:
 class FormResponsePacketEvent : public EventTemplate<FormResponsePacketEvent> {
 public:
     ServerPlayer* mServerPlayer = nullptr;
-    unsigned      mFormId       = 0;
+    uint32_t      mFormId       = 0;
     string        mJsonData;
 };
 

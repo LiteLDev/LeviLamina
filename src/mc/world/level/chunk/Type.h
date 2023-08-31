@@ -4,7 +4,7 @@
 
 namespace SubChunkStorageUnit {
 
-enum class Type : char {
+enum class Type : int8_t {
     Paletted0  = 0x0,
     Paletted1  = 0x1,
     Paletted2  = 0x2,

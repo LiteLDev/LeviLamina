@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class StructureFeatureType : char {
+enum class StructureFeatureType : int8_t {
     Unknown         = 0x0,
     EndCity         = 0x1,
     Fortress        = 0x2,

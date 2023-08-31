@@ -8,8 +8,8 @@ LLAPI std::string GetLastErrorMessage();
 LLAPI std::string GetLastErrorMessage(DWORD error_message_id);
 
 // Create a new process and get its output when exited
-LLAPI bool NewProcess(const std::string& process, std::function<void(int, std::string)> callback = nullptr, int timeLimit = -1);
-LLAPI std::pair<int, std::string> NewProcessSync(const std::string& process, int timeLimit = -1, bool noReadOutput = true);
+LLAPI bool NewProcess(const std::string& process, std::function<void(int32_t, std::string)> callback = nullptr, int32_t timeLimit = -1);
+LLAPI std::pair<int32_t, std::string> NewProcessSync(const std::string& process, int32_t timeLimit = -1, bool noReadOutput = true);
 
 /**
  * @brief Get Current DLL's module handle

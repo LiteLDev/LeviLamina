@@ -20,7 +20,7 @@ public:
 
     bool                  mIncludeNetIds;  // this+0x18
     ItemStackNetIdVariant mNetIdVariant;   // this+0x20
-    unsigned int          mBlockRuntimeId; // this+0x38
+    uint32_t          mBlockRuntimeId; // this+0x38
     std::string           mUserDataBuffer; // this+0x40
 public:
     // NOLINTBEGIN

@@ -12,7 +12,7 @@
 class InteractPacket : public ::Packet {
 public:
     // InteractPacket inner types define
-    enum class Action : unsigned char {
+    enum class Action : uint8_t {
         Invalid        = 0x0,
         StopRiding     = 0x3,
         InteractUpdate = 0x4,

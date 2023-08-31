@@ -13,9 +13,9 @@ SQLiteStmt::SQLiteStmt(sqlite3_stmt* stmt, const std::weak_ptr<Session> parent, 
         execute(); // Execute without params
 }
 
-int SQLiteStmt::getNextParamIndex() {
-    int result = -1;
-    for (int i = 0; i < boundIndexes.size() && i < totalParamsCount; i++) {
+int32_t SQLiteStmt::getNextParamIndex() {
+    int32_t result = -1;
+    for (int32_t i = 0; i < boundIndexes.size() && i < totalParamsCount; i++) {
         if (boundIndexes[i] == result + 1) {
             result++;
         }
@@ -27,8 +27,8 @@ int SQLiteStmt::getNextParamIndex() {
 void SQLiteStmt::fetchResultHeader() {
     if (!resultHeader)
         resultHeader.reset(new RowHeader);
-    int colCnt = sqlite3_column_count(stmt);
-    for (int i = 0; i < colCnt; i++) {
+    int32_t colCnt = sqlite3_column_count(stmt);
+    for (int32_t i = 0; i < colCnt; i++) {
         auto     name = sqlite3_column_name(stmt, i);
         IF_ENDBG dbLogger.debug("SQLiteStmt::fetchResultHeader: Column Name[{}]: {}", i, name);
         resultHeader->add(name);
@@ -40,7 +40,7 @@ SQLiteStmt::~SQLiteStmt() {
     close();
 }
 
-Stmt& SQLiteStmt::bind(const Any& value, int index) {
+Stmt& SQLiteStmt::bind(const Any& value, int32_t index) {
     ++index; // Index starts at 1, but we need to start at 0
     if (index <= 0 || index > totalParamsCount) {
         throw std::invalid_argument("SQLiteStmt::bind: Invalid argument `index`");
@@ -48,7 +48,7 @@ Stmt& SQLiteStmt::bind(const Any& value, int index) {
     if (getUnboundParams() == 0) {
         throw std::runtime_error("SQLiteStmt::bind: All the parameters are already bound");
     }
-    int  res  = SQLITE_OK;
+    int32_t  res  = SQLITE_OK;
     auto type = value.type;
     switch (type) {
     case Any::Type::Null:
@@ -79,7 +79,7 @@ Stmt& SQLiteStmt::bind(const Any& value, int index) {
         break;
     case Any::Type::Blob:
         res = sqlite3_bind_blob(
-            stmt, index, value.get<ByteArray>().data(), (int)value.get<ByteArray>().size(), SQLITE_TRANSIENT
+            stmt, index, value.get<ByteArray>().data(), (int32_t)value.get<ByteArray>().size(), SQLITE_TRANSIENT
         );
         break;
     default:
@@ -104,7 +104,7 @@ Stmt& SQLiteStmt::bind(const Any& value, const std::string& name) {
         throw std::runtime_error("SQLiteStmt::bind: The name is empty");
     }
     std::vector<char> start{'?', ':', '@', '$'};
-    int               index = 0;
+    int32_t               index = 0;
     for (auto& s : start) {
         auto i = sqlite3_bind_parameter_index(stmt, (s + name).c_str());
         if (i != 0) {
@@ -129,7 +129,7 @@ Stmt& SQLiteStmt::execute() {
 }
 
 bool SQLiteStmt::step() {
-    int res = sqlite3_step(stmt);
+    int32_t res = sqlite3_step(stmt);
     if (res == SQLITE_ROW || res == SQLITE_DONE) {
         if (!parent.expired() && !executed) {
             auto s           = parent.lock();
@@ -170,7 +170,7 @@ Row SQLiteStmt::_Fetch() {
         fetchResultHeader();
     }
     Row row(resultHeader);
-    for (int i = 0; i < resultHeader->size(); i++) {
+    for (int32_t i = 0; i < resultHeader->size(); i++) {
         switch (sqlite3_column_type(stmt, i)) {
         case SQLITE_INTEGER:
             row.push_back(sqlite3_column_int64(stmt, i));
@@ -274,11 +274,11 @@ uint64_t SQLiteStmt::getAffectedRows() const { return affectedRowCount; }
 
 uint64_t SQLiteStmt::getInsertId() const { return insertRowId; }
 
-int SQLiteStmt::getUnboundParams() const { return totalParamsCount - boundParamsCount; }
+int32_t SQLiteStmt::getUnboundParams() const { return totalParamsCount - boundParamsCount; }
 
-int SQLiteStmt::getBoundParams() const { return boundParamsCount; }
+int32_t SQLiteStmt::getBoundParams() const { return boundParamsCount; }
 
-int SQLiteStmt::getParamsCount() const { return totalParamsCount; }
+int32_t SQLiteStmt::getParamsCount() const { return totalParamsCount; }
 
 DBType SQLiteStmt::getType() const { return DBType::SQLite; }
 
@@ -290,7 +290,7 @@ SQLiteStmt::create(const std::weak_ptr<Session>& session, const std::string& sql
     }
     sqlite3_stmt* stmt = nullptr;
     auto          raw  = (SQLiteSession*)s.get();
-    int           res  = sqlite3_prepare_v2(raw->conn, sql.c_str(), -1, &stmt, nullptr);
+    int32_t           res  = sqlite3_prepare_v2(raw->conn, sql.c_str(), -1, &stmt, nullptr);
     if (res != SQLITE_OK) {
         throw std::runtime_error("SQLiteStmt::create: " + s->getLastError());
     }

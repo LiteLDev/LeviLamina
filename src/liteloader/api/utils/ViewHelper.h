@@ -1,13 +1,13 @@
 ﻿#pragma once
 #include <string_view>
-template <typename T, typename std::enable_if_t<!std::is_pointer_v<T>, int> = 0>
+template <typename T, typename std::enable_if_t<!std::is_pointer_v<T>, int32_t> = 0>
 inline static constexpr std::string_view to_view(T& x) {
     return std::string_view((const char*)&x, sizeof(T));
 }
-template <typename T = int>
+template <typename T = int32_t>
 static constexpr T atoi(std::string_view sv) {
     T res = 0;
-    int fg = 0;
+    int32_t fg = 0;
     const char* c = sv.data();
     auto sz = sv.size();
     for (decltype(sz) i = 0; i < sz; ++i) {

@@ -36,7 +36,7 @@ public:
     bool                                  mIsEditorWorld;
     bool                                  mIsCreatedInEditor;
     bool                                  mIsExportedFromEditor;
-    int                                   mTime;
+    int32_t                                   mTime;
     EducationEditionOfferValue            mEducationEditionOffer;
     bool                                  mEducationFeaturesEnabled;
     bool                                  mImmutableWorld;
@@ -61,15 +61,15 @@ public:
     bool                                  mOverrideSettings;
     bool                                  mBonusChestEnabled;
     bool                                  mStartWithMapEnabled;
-    int                                   mServerChunkTickRange;
+    int32_t                                   mServerChunkTickRange;
     bool                                  mIsFromWorldTemplate;
     bool                                  mIsWorldTemplateOptionLocked;
     bool                                  mSpawnV1Villagers;
     bool                                  mPersonaDisabled;
     bool                                  mCustomSkinsDisabled;
     bool                                  mEmoteChatMuted;
-    int                                   mLimitedWorldWidth;
-    int                                   mLimitedWorldDepth;
+    int32_t                                   mLimitedWorldWidth;
+    int32_t                                   mLimitedWorldDepth;
     PermissionsHandler                    mDefaultPermissions;
     BlockPos                              mDefaultSpawn;
     std::vector<PackInstanceId>           mNewWorldBehaviorPackIdentities;

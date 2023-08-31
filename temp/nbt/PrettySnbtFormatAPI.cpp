@@ -177,7 +177,7 @@ inline bool PrettySnbtFormat::setSeparatorColor(mce::Color const& color) {
     return setStringColor(mSeparator, color);
 }
 
-inline bool PrettySnbtFormat::setIndent(int indent) {
+inline bool PrettySnbtFormat::setIndent(int32_t indent) {
     mIndent.clear();
     mIndent.resize(indent, ' ');
     return true;

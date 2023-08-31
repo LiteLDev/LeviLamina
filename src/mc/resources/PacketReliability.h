@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class PacketReliability : int {
+enum class PacketReliability : int32_t {
     Unreliable                    = 0x0,
     UnreliableSequenced           = 0x1,
     Reliable                      = 0x2,

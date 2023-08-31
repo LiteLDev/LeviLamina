@@ -10,8 +10,8 @@
 class TickSyncPacket : public ::Packet {
 
 public:
-    long long mClientRequestTimestamp;           // this+0x30
-    long long mServerReceptionResponseTimestamp; // this+0x38
+    int64_t mClientRequestTimestamp;           // this+0x30
+    int64_t mServerReceptionResponseTimestamp; // this+0x38
 
     // prevent constructor by default
     TickSyncPacket& operator=(TickSyncPacket const&) = delete;

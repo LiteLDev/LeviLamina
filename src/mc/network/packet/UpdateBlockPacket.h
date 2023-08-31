@@ -11,12 +11,12 @@
 class UpdateBlockPacket : public ::Packet {
 
 public:
-    enum class Layer : unsigned int {
+    enum class Layer : uint32_t {
         Standard = 0,
         Extra    = 1,
         Count    = 2,
     };
-    enum class Flags : unsigned char {
+    enum class Flags : uint8_t {
         None        = 0,
         Neighbors   = 1 << 0,
         Network     = 1 << 1,
@@ -30,7 +30,7 @@ public:
     class NetworkBlockPosition mPos;                      // this+0x30
     enum class Layer           mLayer;                    // this+0x3C
     enum class Flags           mUpdateFlags;              // this+0x40
-    unsigned int               mRuntimeId;                // this+0x44
+    uint32_t               mRuntimeId;                // this+0x44
 
 public:
     // NOLINTBEGIN

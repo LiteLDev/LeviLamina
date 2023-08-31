@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class GameType : int {
+enum class GameType : int32_t {
     Undefined    = -1,
     Survival     = 0,
     Creative     = 1,

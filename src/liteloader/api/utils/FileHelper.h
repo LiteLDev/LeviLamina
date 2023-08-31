@@ -12,4 +12,4 @@ LLAPI std::vector<std::string> GetFileNameList(const std::string& dir);
 LLAPI bool CreateDirs(const std::string& path);
 LLAPI std::optional<std::string> ReadAllFile(const std::string& filePath, bool isBinary = false);
 LLAPI bool WriteAllFile(const std::string& filePath, const std::string& content, bool isBinary = false);
-LLAPI std::pair<int, std::string> UncompressFile(const std::string& filePath, const std::string& toDir, int processTimeout);
+LLAPI std::pair<int32_t, std::string> UncompressFile(const std::string& filePath, const std::string& toDir, int32_t processTimeout);

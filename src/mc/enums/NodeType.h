@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class NodeType : int {
+enum class NodeType : int32_t {
     Stairs        = -7,
     Honeyblock    = -6,
     Unwalkable    = -5,

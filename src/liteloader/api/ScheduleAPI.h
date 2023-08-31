@@ -34,9 +34,9 @@ public:
     LLAPI bool cancel() const;
 
     LLAPI ScheduleTask() = default;
-    LLAPI ScheduleTask(unsigned int taskId);
+    LLAPI ScheduleTask(uint32_t taskId);
 
-    inline unsigned int getTaskId() {
+    inline uint32_t getTaskId() {
         return taskId;
     }
 
@@ -48,7 +48,7 @@ public:
     LLAPI bool isFinished() const;
 
 private:
-    unsigned int taskId;
+    uint32_t taskId;
 };
 
 /**
@@ -79,7 +79,7 @@ namespace Schedule {
  * @param tickDelay The delayed ticks
  * @return The scheduled task
  */
-LLAPI ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay, HMODULE handle = GetCurrentModule());
+LLAPI ScheduleTask delay(std::function<void(void)> task, uint64_t tickDelay, HMODULE handle = GetCurrentModule());
 
 /**
  * @brief Execute the function every `tickInterval` ticks.
@@ -89,7 +89,7 @@ LLAPI ScheduleTask delay(std::function<void(void)> task, unsigned long long tick
  * @param maxCount The maximum number of executions, -1 means the function will always execute
  * @return The scheduled task
  */
-LLAPI ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickInterval, int maxCount = -1, HMODULE handle = GetCurrentModule());
+LLAPI ScheduleTask repeat(std::function<void(void)> task, uint64_t tickInterval, int32_t maxCount = -1, HMODULE handle = GetCurrentModule());
 
 /**
  * @brief After `tickDelay` ticks, execute the function every `tickInterval` ticks.
@@ -100,7 +100,7 @@ LLAPI ScheduleTask repeat(std::function<void(void)> task, unsigned long long tic
  * @param maxCount The maximum number of executions, -1 means the function will always execute
  * @return The scheduled task
  */
-LLAPI ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay, unsigned long long tickInterval, int maxCount = -1, HMODULE handle = GetCurrentModule());
+LLAPI ScheduleTask delayRepeat(std::function<void(void)> task, uint64_t tickDelay, uint64_t tickInterval, int32_t maxCount = -1, HMODULE handle = GetCurrentModule());
 
 /**
  * @brief Execute the function the next tick.

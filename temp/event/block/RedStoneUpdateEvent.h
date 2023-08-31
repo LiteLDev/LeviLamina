@@ -10,10 +10,10 @@ namespace ll::event::block {
  */
 class RedStoneUpdateEvent : public Event<RedStoneUpdateEvent>, public Cancellable {
     LL_RO_MEMBER(BlockInstance, blockInstance, getBlockInstance);
-    LL_RW_MEMBER(int, redStonePower, getRedStonePower, setRedStonePower);
+    LL_RW_MEMBER(int32_t, redStonePower, getRedStonePower, setRedStonePower);
     LL_RO_MEMBER(bool, activated, isActivated);
 
-    RedStoneUpdateEvent(BlockInstance const& blockInstance, bool isActivated, int redStonePower = -1);
+    RedStoneUpdateEvent(BlockInstance const& blockInstance, bool isActivated, int32_t redStonePower = -1);
 
     LL_DELETE_COPY(RedStoneUpdateEvent);
     LL_DELETE_MOVE(RedStoneUpdateEvent);

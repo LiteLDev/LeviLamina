@@ -37,7 +37,7 @@ public:
      * @brief Add a column to the header.
      *
      * @param  name  The name of the column
-     * @return int   The index of the column
+     * @return int32_t   The index of the column
      */
     LLAPI size_t add(const std::string& name);
     /**
@@ -57,7 +57,7 @@ public:
     /**
      * @brief Get the size of the header.
      *
-     * @return int  The size of the header
+     * @return int32_t  The size of the header
      */
     LLAPI size_t size() const;
     /**
@@ -70,7 +70,7 @@ public:
      * @brief Get the index of a column.
      *
      * @param  name  The name of the column
-     * @return int   The index of the column
+     * @return int32_t   The index of the column
      * @throws std::out_of_range  If the column does not exist
      */
     LLAPI size_t at(const std::string& name);
@@ -85,13 +85,13 @@ public:
     /**
      * @brief Get the iterator to the first element
      *
-     * @return std::unordered_map<std::string, int>::iterator  The iterator
+     * @return std::unordered_map<std::string, int32_t>::iterator  The iterator
      */
     LLAPI std::vector<std::string>::iterator begin();
     /**
      * @brief Get the iterator to the last element.
      *
-     * @return std::unordered_map<std::string, int>::iterator  The iterator
+     * @return std::unordered_map<std::string, int32_t>::iterator  The iterator
      */
     LLAPI std::vector<std::string>::iterator end();
     /**
@@ -106,7 +106,7 @@ public:
      * @brief Get the index of a column.
      *
      * @param  name  The name of the column
-     * @return int   The index of the column
+     * @return int32_t   The index of the column
      * @note   It will create the column(=add) if it does not exist
      */
     LLAPI size_t operator[](const std::string& name);

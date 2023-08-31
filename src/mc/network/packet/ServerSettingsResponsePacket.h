@@ -10,7 +10,7 @@
 class ServerSettingsResponsePacket : public ::Packet {
 
 public:
-    unsigned int mFormId;   // this+0x30
+    uint32_t mFormId;   // this+0x30
     std::string  mFormJSON; // this+0x38
 
     // prevent constructor by default

@@ -17,7 +17,7 @@ class ContainerChangeEvent : public Event<ContainerChangeEvent> {
     LL_RO_MEMBER(Actor*, actor, getActor);
     LL_RO_MEMBER(BlockInstance, blockInstance, getBlockInstance);
     LL_RO_MEMBER(Container*, container, getContainer);
-    LL_RO_MEMBER(int, slot, getSlot);
+    LL_RO_MEMBER(int32_t, slot, getSlot);
     LL_RO_MEMBER(ItemStack*, previousItemStack, getPreviousItemStack);
     LL_RO_MEMBER(ItemStack*, newItemStack, getNewItemStack);
 
@@ -28,7 +28,7 @@ class ContainerChangeEvent : public Event<ContainerChangeEvent> {
         Container*           container,
         ItemStack*           previousItemStack,
         ItemStack*           newItemStack,
-        int                  slot = -1
+        int32_t                  slot = -1
     );
 
     LL_DELETE_COPY(ContainerChangeEvent);

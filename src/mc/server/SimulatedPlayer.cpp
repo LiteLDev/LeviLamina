@@ -7,10 +7,10 @@
 #include "mc/world/level/Level.h"
 
 optional_ref<SimulatedPlayer> SimulatedPlayer::create(
-    std::string const&                      name,
-    class Vec3 const&                       pos,
-    class AutomaticID<class Dimension, int> dimID,
-    class Vec2 const&                       rotation
+    std::string const& name,
+    class Vec3 const&  pos,
+    DimensionType      dimID,
+    class Vec2 const&  rotation
 ) {
     OwnerPtrT<EntityRefTraits> ownerPtr =
         Global<ServerNetworkHandler>->createSimulatedPlayer(name, '-' + std::to_string(RNG::rand<uint64_t>()));

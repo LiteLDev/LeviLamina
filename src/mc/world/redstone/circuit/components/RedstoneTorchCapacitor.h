@@ -15,7 +15,7 @@ public:
         bool mChanged;
     };
     RedstoneTorchCapacitor*    mNextOrder;
-    int                        mSelfPowerCount;
+    int32_t                        mSelfPowerCount;
     State                      mState[2];
     bool                       mCanReigniteFromBurnout;
     const CircuitComponentType mCircuitComponentType = CircuitComponentType::RedstoneTorchCapacitor;

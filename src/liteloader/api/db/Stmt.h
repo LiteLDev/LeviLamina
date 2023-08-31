@@ -18,7 +18,7 @@ struct BindType
 {
     Any value;
     std::string name;
-    int idx = -1;
+    int32_t idx = -1;
 };
 
 
@@ -78,7 +78,7 @@ public:
      * @par Implementation
      * @see SQLiteStmt::bind
      */
-    virtual Stmt& bind(const Any& value, int index) = 0;
+    virtual Stmt& bind(const Any& value, int32_t index) = 0;
 
     /**
      * @brief Bind a value to a statement parameter.
@@ -316,7 +316,7 @@ public:
     /**
      * @brief Get the number of rows affected by the statement.
      *
-     * @return int  The number of rows affected
+     * @return int32_t  The number of rows affected
      * @note   It will return -1(ULLONG_MAX - 1) if the row count is not available
      *
      * @par Impletementation
@@ -339,32 +339,32 @@ public:
     /**
      * @brief Get the number of the unbound parameters.
      *
-     * @return int  The number of the unbound parameters
+     * @return int32_t  The number of the unbound parameters
      *
      * @par Impletementation
      * @see SQLiteStmt::getUnboundParams
      */
-    virtual int getUnboundParams() const = 0;
+    virtual int32_t getUnboundParams() const = 0;
 
     /**
      * @brief Get the number of the bound parameters.
      *
-     * @return int  The number of the bound parameters
+     * @return int32_t  The number of the bound parameters
      *
      * @par Impletementation
      * @see SQLiteStmt::getBoundParams
      */
-    virtual int getBoundParams() const = 0;
+    virtual int32_t getBoundParams() const = 0;
 
     /**
      * @brief Get the number of parameters.
      *
-     * @return int  The number of parameters
+     * @return int32_t  The number of parameters
      *
      * @par Impletementation
      * @see SQLiteStmt::getParamsCount
      */
-    virtual int getParamsCount() const = 0;
+    virtual int32_t getParamsCount() const = 0;
 
     /**
      * @brief Get the session.
@@ -559,7 +559,7 @@ public:
     }
 };
 
-inline BindType use(const Any& value, int idx = -1)
+inline BindType use(const Any& value, int32_t idx = -1)
 {
     return BindType{value, std::string(), idx};
 }

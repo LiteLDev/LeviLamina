@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class CommandOperator : char {
+enum class CommandOperator : int8_t {
     Invalid      = 0x0,
     Equals       = 0x1,
     PlusEquals   = 0x2,

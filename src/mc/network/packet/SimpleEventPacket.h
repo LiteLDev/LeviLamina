@@ -10,7 +10,7 @@
 class SimpleEventPacket : public ::Packet {
 public:
     // SimpleEventPacket inner types define
-    enum class Subtype : int {
+    enum class Subtype : int32_t {
         UninitializedSubtype        = 0x0,
         EnableCommands              = 0x1,
         DisableCommands             = 0x2,

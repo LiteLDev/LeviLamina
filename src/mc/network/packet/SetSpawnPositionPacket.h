@@ -15,10 +15,10 @@
 class SetSpawnPositionPacket : public ::Packet {
 
 public:
-    NetworkBlockPosition        mPos;           // this+0x30
-    SpawnPositionType           mSpawnPosType;  // this+0x3C
-    AutomaticID<Dimension, int> mDimensionType; // this+0x40
-    NetworkBlockPosition        mSpawnBlockPos; // this+0x44
+    NetworkBlockPosition mPos;           // this+0x30
+    SpawnPositionType    mSpawnPosType;  // this+0x3C
+    DimensionType        mDimensionType; // this+0x40
+    NetworkBlockPosition mSpawnBlockPos; // this+0x44
 
     // prevent constructor by default
     SetSpawnPositionPacket& operator=(SetSpawnPositionPacket const&) = delete;

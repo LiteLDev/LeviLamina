@@ -9,7 +9,7 @@
 class TransporterComponent : public ::BaseCircuitComponent {
 
 public:
-    int                        mNextStrength;
+    int32_t                        mNextStrength;
     const CircuitComponentType mCircuitComponentType = CircuitComponentType::TransporterComponent;
 
 public:

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ItemStackRequestActionType : unsigned char {
+enum class ItemStackRequestActionType : uint8_t {
     Take                                     = 0x0,
     Place                                    = 0x1,
     Swap                                     = 0x2,

@@ -70,7 +70,7 @@ Logger::OutputStream::OutputStream() = default;
 
 Logger::OutputStream::OutputStream(
     Logger*           logger,
-    int               level,
+    int32_t               level,
     std::string&&     consoleFormat,
     std::string&&     fileFormat,
     std::string&&     playerFormat,
@@ -86,7 +86,7 @@ Logger::OutputStream::OutputStream(
     this->levelPrefix   = levelPrefix;
 }
 
-bool checkLogLevel(int level, int outLevel) {
+bool checkLogLevel(int32_t level, int32_t outLevel) {
     if (level >= outLevel)
         return true;
     if (level == -1 && ll::globalConfig.logLevel >= outLevel)

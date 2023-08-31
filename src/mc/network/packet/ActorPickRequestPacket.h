@@ -10,9 +10,9 @@
 class ActorPickRequestPacket : public ::Packet {
 
 public:
-    long long     mID;       // this+0x30
+    int64_t     mID;       // this+0x30
     bool          mWithData; // this+0x38
-    unsigned char mMaxSlots; // this+0x39
+    uint8_t mMaxSlots; // this+0x39
 
     // prevent constructor by default
     ActorPickRequestPacket& operator=(ActorPickRequestPacket const&) = delete;

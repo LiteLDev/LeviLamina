@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class TextPacketType : unsigned char {
+enum class TextPacketType : uint8_t {
     Raw                    = 0x0,
     Chat                   = 0x1,
     Translate              = 0x2,

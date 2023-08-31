@@ -103,7 +103,7 @@ std::string generateUuidV4() {
     static std::uniform_int_distribution<> dis2(8, 11);
 
     std::stringstream ss;
-    int               i;
+    int32_t               i;
     ss << std::hex;
     for (i = 0; i < 8; i++) {
         ss << dis(gen);
@@ -203,8 +203,8 @@ void reloadJson(const std::string& fileName) {
 namespace bstats {
 
 static bool                       isOnlineAuth;
-static int                        playerAmount;
-static unordered_map<string, int> playerPlatList; // NOLINT(cert-err58-cpp)
+static int32_t                        playerAmount;
+static unordered_map<string, int32_t> playerPlatList; // NOLINT(cert-err58-cpp)
 
 DWORD getCpuCoreCount() {
     SYSTEM_INFO systemInfo;
@@ -231,7 +231,7 @@ nlohmann::json addSimplePie(const string& key, const string& val) {
     return json;
 }
 
-nlohmann::json addAdvancedPie(const string& key, const unordered_map<string, int>& val) {
+nlohmann::json addAdvancedPie(const string& key, const unordered_map<string, int32_t>& val) {
     nlohmann::json json;
     json["chartId"] = key;
     nlohmann::json json2;
@@ -292,7 +292,7 @@ void submitTask() {
             {"User-Agent",      "Metrics-Service/1"        }
         };
         HttpPost(
-            "https://bstats.org/api/v2/data/bukkit", headers, json, "", [](int a1, const string& a2) {}, 10
+            "https://bstats.org/api/v2/data/bukkit", headers, json, "", [](int32_t a1, const string& a2) {}, 10
         );
     });
 
@@ -335,12 +335,12 @@ float randomFloat() {
     return dis(gen);
 }
 
-const unsigned long long period = 1000 * 60 * 30;
+const uint64_t period = 1000 * 60 * 30;
 
 void scheduleThread() {
     std::thread schedule([]() {
-        auto initialDelay = (unsigned long long)(1000 * 60 * (3 + randomFloat() * 3));
-        auto secondDelay  = (unsigned long long)(1000 * 60 * (randomFloat() * 30));
+        auto initialDelay = (uint64_t)(1000 * 60 * (3 + randomFloat() * 3));
+        auto secondDelay  = (uint64_t)(1000 * 60 * (randomFloat() * 30));
 
         std::this_thread::sleep_for(std::chrono::milliseconds(initialDelay));
         Schedule::nextTick(submitTask);

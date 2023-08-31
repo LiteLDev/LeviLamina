@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class AttributeOperands : int {
+enum class AttributeOperands : int32_t {
     Min            = 0x0,
     Max            = 0x1,
     OperandCurrent = 0x2,

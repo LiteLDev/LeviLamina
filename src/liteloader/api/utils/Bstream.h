@@ -18,7 +18,7 @@ template <class T>
 struct is_safe_obj
     : std::integral_constant<bool, !std::is_class<std::remove_reference_t<T>>::value> {};
 
-typedef unsigned int bsize_t;
+typedef uint32_t bsize_t;
 class RBStream {
   public:
     uintptr_t data;
@@ -159,16 +159,16 @@ class WBStreamImpl {
 };
 using WBStream = WBStreamImpl<std::string>;
 struct BinVariant {
-    /*long long or string*/
+    /*int64_t or string*/
     union VType
     {
-        long long x;
+        int64_t x;
         std::string y;
         VType() {}
         ~VType() {}
     } v;
-    unsigned char type;
-    BinVariant(long long x) {
+    uint8_t type;
+    BinVariant(int64_t x) {
         type = 1;
         v.x  = x;
     }
@@ -214,6 +214,6 @@ struct BinVariant {
         }
     }
 };
-static inline unsigned long long ZigZag(long long x) {
+static inline uint64_t ZigZag(int64_t x) {
     return (x << 1) ^ (x >> 63);
 }

@@ -9,7 +9,7 @@
 #include "mc/world/level/block/utils/BlockSerializationUtils.h"
 #include "mc/world/level/block/utils/VanillaBlockConversion.h"
 
-optional_ref<Block const> Block::tryGetFromRegistry(unsigned int runtimeID) {
+optional_ref<Block const> Block::tryGetFromRegistry(uint32_t runtimeID) {
     auto& res = Global<Level>->getBlockPalette().getBlock(runtimeID);
     if (res.getRuntimeId() != runtimeID) {
         return nullptr;
@@ -23,14 +23,14 @@ optional_ref<Block const> Block::tryGetFromRegistry(std::string const& name) {
     }
     return blockLegacyPtr->getDefaultState();
 }
-optional_ref<Block const> Block::tryGetFromRegistry(std::string const& name, unsigned short legacyData) {
+optional_ref<Block const> Block::tryGetFromRegistry(std::string const& name, uint16_t legacyData) {
     auto blockLegacyPtr = BlockTypeRegistry::lookupByName(HashedString{name});
     if (!blockLegacyPtr) {
         return nullptr;
     }
     return blockLegacyPtr->tryGetStateFromLegacyData(legacyData);
 }
-optional_ref<Block const> Block::tryGetFromRegistry(unsigned int legacyBlockID, unsigned short legacyData) {
+optional_ref<Block const> Block::tryGetFromRegistry(uint32_t legacyBlockID, uint16_t legacyData) {
     auto blockLegacyPtr = VanillaBlockConversion::getBlockTypeFromLegacyId(legacyBlockID);
     if (!blockLegacyPtr) {
         return nullptr;
@@ -54,7 +54,7 @@ optional_ref<Block const> Block::tryGetFromRegistry(std::string const& name, Blo
         if (stateBase == nullptr) {
             continue;
         }
-        int         value = 0;
+        int32_t         value = 0;
         CompoundTag stateNBT{};
         switch (state.second.index()) {
         case 0:

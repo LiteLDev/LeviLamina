@@ -153,7 +153,7 @@ Row& Row::operator=(const Row& row) {
 
 Any& Row::operator[](const std::string& name) {
     auto idx = (*header)[name];
-    if (idx < (int)size())
+    if (idx < (int32_t)size())
         return std::vector<Any>::at(idx);
     resize((size_t)idx + 1, Any());
     return std::vector<Any>::at(idx);
@@ -181,7 +181,7 @@ void Row::forEach_ref(std::function<bool(const std::string&, Any&)> cb) {
 void Row::forEach(std::function<bool(const std::string&, const Any&)> cb) const {
     if (!this->header)
         return;
-    int i = 0;
+    int32_t i = 0;
     for (auto& col : *this->header) {
         if (!cb(col, this->data()[i]))
             break;

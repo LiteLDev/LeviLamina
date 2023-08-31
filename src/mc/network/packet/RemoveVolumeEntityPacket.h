@@ -12,7 +12,7 @@
 class RemoveVolumeEntityPacket : public ::RemoveEntityPacket {
 
 public:
-    AutomaticID<Dimension, int> mDimensionType; // this+0x38
+    DimensionType mDimensionType; // this+0x38
 
     // prevent constructor by default
     RemoveVolumeEntityPacket& operator=(RemoveVolumeEntityPacket const&) = delete;

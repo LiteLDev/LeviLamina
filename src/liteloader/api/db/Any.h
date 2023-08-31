@@ -43,28 +43,28 @@ class Any {
 
 public:
     union Value {
-        bool boolean;
-        int64_t integer;
-        uint64_t uinteger;
-        double floating;
+        bool         boolean;
+        int64_t      integer;
+        uint64_t     uinteger;
+        double       floating;
         std::string* string;
-        Date* date;
-        Time* time;
-        DateTime* datetime;
-        ByteArray* blob;
+        Date*        date;
+        Time*        time;
+        DateTime*    datetime;
+        ByteArray*   blob;
     } value; ///< Value
 
-    enum class Type : char {
-        Null = 0,
-        Boolean = 1,
-        Integer = 2,
+    enum class Type : int8_t {
+        Null     = 0,
+        Boolean  = 1,
+        Integer  = 2,
         UInteger = 3,
         Floating = 4,
-        String = 5,
-        Date = 6,
-        Time = 7,
+        String   = 5,
+        Date     = 6,
+        Time     = 7,
         DateTime = 8,
-        Blob = 9
+        Blob     = 9
     } type = Type::Null; ///< Type of the value
 
     /**
@@ -87,7 +87,7 @@ public:
     /**
      * @brief Construct a new Any object with uint64 value.
      *
-     * @param v The unsigned integer value
+     * @param v The uint32_t integer value
      */
     LLAPI Any(uint64_t v);
     /**
@@ -140,11 +140,11 @@ public:
      */
     LLAPI Any(char v);
     /**
-     * @brief Construct a new Any object with uint8(unsigned char) value.
+     * @brief Construct a new Any object with uint8(uint8_t) value.
      *
-     * @param v The unsigned char value
+     * @param v The uint8_t value
      */
-    LLAPI Any(unsigned char v);
+    LLAPI Any(uint8_t v);
     /**
      * @brief Construct a new Any object with int16(short) value.
      *
@@ -152,23 +152,23 @@ public:
      */
     LLAPI Any(short v);
     /**
-     * @brief Construct a new Any object with uint16(unsigned short) value.
+     * @brief Construct a new Any object with uint16(uint16_t) value.
      *
-     * @param v The unsigned short value
+     * @param v The uint16_t value
      */
-    LLAPI Any(unsigned short v);
+    LLAPI Any(uint16_t v);
     /**
-     * @brief Construct a new Any object with int32(int) value.
+     * @brief Construct a new Any object with int32(int32_t) value.
      *
-     * @param v The int value
+     * @param v The int32_t value
      */
-    LLAPI Any(int v);
+    LLAPI Any(int32_t v);
     /**
-     * @brief Construct a new Any object with uint32(unsigned int) value.
+     * @brief Construct a new Any object with uint32(uint32_t) value.
      *
-     * @param v The unsigned int value
+     * @param v The uint32_t value
      */
-    LLAPI Any(unsigned int v);
+    LLAPI Any(uint32_t v);
     /**
      * @brief Construct a new Any object with long value.
      *
@@ -212,12 +212,12 @@ public:
      */
     LLAPI bool is_boolean() const;
     /**
-     * @brief Get if the value is (unsigned) integer.
+     * @brief Get if the value is (uint32_t) integer.
      *
      */
     LLAPI bool is_integer() const;
     /**
-     * @brief Get if the value is unsigned integer.
+     * @brief Get if the value is uint32_t integer.
      *
      */
     LLAPI bool is_uinteger() const;
@@ -252,7 +252,7 @@ public:
      */
     LLAPI bool is_blob() const;
     /**
-     * @brief Get if the value is floating or (unsigned) integer.
+     * @brief Get if the value is floating or (uint32_t) integer.
      *
      */
     LLAPI bool is_number() const;
@@ -260,7 +260,7 @@ public:
     /**
      * @brief Get the number value as T
      *
-     * @tparam T             The C++ basic number type to convert to, such as int, long, double, etc.
+     * @tparam T             The C++ basic number type to convert to, such as int32_t, long, double, etc.
      * @return T             The value
      * @throws std::bad_cast If the value cannot be converted to T or the value is not a number
      * @note   You can use Any::is_number() to check if the value is a number before calling this function.
@@ -270,23 +270,23 @@ public:
     inline T get_number() const {
         switch (type) {
 #if !defined(DBANY_NO_NULL_CONVERSION)
-            case Type::Null:
-                return 0;
+        case Type::Null:
+            return 0;
 #endif
-            case Type::Boolean:
-                return static_cast<T>(value.boolean);
-            case Type::Integer:
-            case Type::UInteger:
-                return static_cast<T>(value.integer);
-            case Type::Floating:
-                return static_cast<T>(value.floating);
-            case Type::String:
-            case Type::Date:
-            case Type::Time:
-            case Type::DateTime:
-            case Type::Blob:
-            default:
-                throw std::bad_cast();
+        case Type::Boolean:
+            return static_cast<T>(value.boolean);
+        case Type::Integer:
+        case Type::UInteger:
+            return static_cast<T>(value.integer);
+        case Type::Floating:
+            return static_cast<T>(value.floating);
+        case Type::String:
+        case Type::Date:
+        case Type::Time:
+        case Type::DateTime:
+        case Type::Blob:
+        default:
+            throw std::bad_cast();
         }
     }
 
@@ -330,22 +330,22 @@ public:
     inline bool get() const {
         switch (type) {
 #if !defined(DBANY_NO_NULL_CONVERSION)
-            case Type::Null:
-                return false;
+        case Type::Null:
+            return false;
 #endif
-            case Type::Boolean:
-                return value.boolean;
-            case Type::Integer:
-            case Type::UInteger:
-            case Type::Floating:
-                return (bool)value.integer;
-            case Type::String:
-            case Type::Date:
-            case Type::Time:
-            case Type::DateTime:
-            case Type::Blob:
-            default:
-                throw std::bad_cast();
+        case Type::Boolean:
+            return value.boolean;
+        case Type::Integer:
+        case Type::UInteger:
+        case Type::Floating:
+            return (bool)value.integer;
+        case Type::String:
+        case Type::Date:
+        case Type::Time:
+        case Type::DateTime:
+        case Type::Blob:
+        default:
+            throw std::bad_cast();
         }
     }
     /**
@@ -360,15 +360,15 @@ public:
         return get_number<char>();
     }
     /**
-     * @brief Get the value as unsigned char
+     * @brief Get the value as uint8_t
      *
-     * @tparam T              = unsigned char
-     * @return unsigned char  The value
-     * @throws std::bad_cast  If the value cannot be converted to unsigned char
+     * @tparam T              = uint8_t
+     * @return uint8_t  The value
+     * @throws std::bad_cast  If the value cannot be converted to uint8_t
      */
     template <>
-    inline unsigned char get() const {
-        return get_number<unsigned char>();
+    inline uint8_t get() const {
+        return get_number<uint8_t>();
     }
     /**
      * @brief Get the value as short
@@ -382,37 +382,37 @@ public:
         return get_number<short>();
     }
     /**
-     * @brief Get the value as unsigned short
+     * @brief Get the value as uint16_t
      *
-     * @tparam T               = unsigned short
-     * @return unsigned short  The value
-     * @throws std::bad_cast   If the value cannot be converted to unsigned short
+     * @tparam T               = uint16_t
+     * @return uint16_t  The value
+     * @throws std::bad_cast   If the value cannot be converted to uint16_t
      */
     template <>
-    inline unsigned short get() const {
-        return get_number<unsigned short>();
+    inline uint16_t get() const {
+        return get_number<uint16_t>();
     }
     /**
-     * @brief Get the value as int
+     * @brief Get the value as int32_t
      *
-     * @tparam T    = int
-     * @return int  The value
-     * @throws std::bad_cast  If the value cannot be converted to int
+     * @tparam T    = int32_t
+     * @return int32_t  The value
+     * @throws std::bad_cast  If the value cannot be converted to int32_t
      */
     template <>
-    inline int get() const {
-        return get_number<int>();
+    inline int32_t get() const {
+        return get_number<int32_t>();
     }
     /**
-     * @brief Get the value as unsigned int
+     * @brief Get the value as uint32_t
      *
-     * @tparam T              = unsigned int
-     * @return unsigned int   The value
-     * @throws std::bad_cast  If the value cannot be converted to unsigned int
+     * @tparam T              = uint32_t
+     * @return uint32_t   The value
+     * @throws std::bad_cast  If the value cannot be converted to uint32_t
      */
     template <>
-    inline unsigned int get() const {
-        return get_number<unsigned int>();
+    inline uint32_t get() const {
+        return get_number<uint32_t>();
     }
     /**
      * @brief Get the value as long
@@ -437,26 +437,26 @@ public:
         return get_number<unsigned long>();
     }
     /**
-     * @brief Get the value as long long
+     * @brief Get the value as int64_t
      *
-     * @tparam T              = long long
-     * @return long long      The value
-     * @throws std::bad_cast  If the value cannot be converted to long long
+     * @tparam T              = int64_t
+     * @return int64_t      The value
+     * @throws std::bad_cast  If the value cannot be converted to int64_t
      */
     template <>
-    inline long long get() const {
-        return get_number<long long>();
+    inline int64_t get() const {
+        return get_number<int64_t>();
     }
     /**
-     * @brief Get the value as unsigned long long
+     * @brief Get the value as uint64_t
      *
-     * @tparam T                   = unsigned long long
-     * @return unsigned long long  The value
-     * @throws std::bad_cast       If the value cannot be converted to unsigned long long
+     * @tparam T                   = uint64_t
+     * @return uint64_t  The value
+     * @throws std::bad_cast       If the value cannot be converted to uint64_t
      */
     template <>
-    inline unsigned long long get() const {
-        return get_number<unsigned long long>();
+    inline uint64_t get() const {
+        return get_number<uint64_t>();
     }
     /**
      * @brief Get the value as double.
@@ -491,39 +491,34 @@ public:
     std::string get() const {
         switch (type) {
 #if !defined(DBANY_NO_NULL_CONVERSION)
-            case Type::Null:
-                return "";
+        case Type::Null:
+            return "";
 #endif
-            case Type::Boolean:
-                return value.boolean ? "true" : "false";
-            case Type::Integer:
-                return std::to_string(value.integer);
-            case Type::UInteger:
-                return std::to_string(value.uinteger);
-            case Type::Floating:
-                return std::to_string(value.floating);
-            case Type::String:
-                return *value.string;
-            case Type::Date:
-                return std::to_string(value.date->year) + "-" +
-                       std::to_string(value.date->month) + "-" +
-                       std::to_string(value.date->day);
-                break;
-            case Type::Time:
-                return std::to_string(value.time->hour) + ":" +
-                       std::to_string(value.time->minute) + ":" +
-                       std::to_string(value.time->second);
-            case Type::DateTime:
-                return std::to_string(value.datetime->date.year) + "-" +
-                       std::to_string(value.datetime->date.month) + "-" +
-                       std::to_string(value.datetime->date.day) + " " +
-                       std::to_string(value.datetime->time.hour) + ":" +
-                       std::to_string(value.datetime->time.minute) + ":" +
-                       std::to_string(value.datetime->time.second);
-            case Type::Blob:
-                return std::string(value.blob->begin(), value.blob->end());
-            default:
-                throw std::bad_cast();
+        case Type::Boolean:
+            return value.boolean ? "true" : "false";
+        case Type::Integer:
+            return std::to_string(value.integer);
+        case Type::UInteger:
+            return std::to_string(value.uinteger);
+        case Type::Floating:
+            return std::to_string(value.floating);
+        case Type::String:
+            return *value.string;
+        case Type::Date:
+            return std::to_string(value.date->year) + "-" + std::to_string(value.date->month) + "-" +
+                   std::to_string(value.date->day);
+            break;
+        case Type::Time:
+            return std::to_string(value.time->hour) + ":" + std::to_string(value.time->minute) + ":" +
+                   std::to_string(value.time->second);
+        case Type::DateTime:
+            return std::to_string(value.datetime->date.year) + "-" + std::to_string(value.datetime->date.month) + "-" +
+                   std::to_string(value.datetime->date.day) + " " + std::to_string(value.datetime->time.hour) + ":" +
+                   std::to_string(value.datetime->time.minute) + ":" + std::to_string(value.datetime->time.second);
+        case Type::Blob:
+            return std::string(value.blob->begin(), value.blob->end());
+        default:
+            throw std::bad_cast();
         }
     }
     /**
@@ -536,18 +531,18 @@ public:
     template <>
     Date get() const {
         switch (type) {
-            case Type::Date:
-                return *value.date;
-            case Type::DateTime:
-                return value.datetime->date;
-            case Type::String:
-            case Type::Integer:
-            case Type::UInteger:
-            case Type::Floating:
-            case Type::Time:
-            case Type::Blob:
-            default:
-                throw std::bad_cast();
+        case Type::Date:
+            return *value.date;
+        case Type::DateTime:
+            return value.datetime->date;
+        case Type::String:
+        case Type::Integer:
+        case Type::UInteger:
+        case Type::Floating:
+        case Type::Time:
+        case Type::Blob:
+        default:
+            throw std::bad_cast();
         }
     }
     /**
@@ -560,18 +555,18 @@ public:
     template <>
     Time get() const {
         switch (type) {
-            case Type::Time:
-                return *value.time;
-            case Type::DateTime:
-                return value.datetime->time;
-            case Type::String:
-            case Type::Integer:
-            case Type::UInteger:
-            case Type::Floating:
-            case Type::Date:
-            case Type::Blob:
-            default:
-                throw std::bad_cast();
+        case Type::Time:
+            return *value.time;
+        case Type::DateTime:
+            return value.datetime->time;
+        case Type::String:
+        case Type::Integer:
+        case Type::UInteger:
+        case Type::Floating:
+        case Type::Date:
+        case Type::Blob:
+        default:
+            throw std::bad_cast();
         }
     }
     /**
@@ -584,17 +579,17 @@ public:
     template <>
     DateTime get() const {
         switch (type) {
-            case Type::DateTime:
-                return *value.datetime;
-            case Type::String:
-            case Type::Integer:
-            case Type::UInteger:
-            case Type::Floating:
-            case Type::Date:
-            case Type::Time:
-            case Type::Blob:
-            default:
-                throw std::bad_cast();
+        case Type::DateTime:
+            return *value.datetime;
+        case Type::String:
+        case Type::Integer:
+        case Type::UInteger:
+        case Type::Floating:
+        case Type::Date:
+        case Type::Time:
+        case Type::Blob:
+        default:
+            throw std::bad_cast();
         }
     }
     /**
@@ -607,19 +602,18 @@ public:
     template <>
     ByteArray get() const {
         switch (type) {
-            case Type::Blob:
-                return *value.blob;
-            case Type::String:
-                return ByteArray((unsigned char*)value.string->data(),
-                                 (unsigned char*)value.string->data() + value.string->size());
-            case Type::Integer:
-            case Type::UInteger:
-            case Type::Floating:
-            case Type::Date:
-            case Type::Time:
-            case Type::DateTime:
-            default:
-                throw std::bad_cast();
+        case Type::Blob:
+            return *value.blob;
+        case Type::String:
+            return ByteArray((uint8_t*)value.string->data(), (uint8_t*)value.string->data() + value.string->size());
+        case Type::Integer:
+        case Type::UInteger:
+        case Type::Floating:
+        case Type::Date:
+        case Type::Time:
+        case Type::DateTime:
+        default:
+            throw std::bad_cast();
         }
     }
 

@@ -35,7 +35,7 @@ public:
     bool                                             mIsTrial;
     SyncedPlayerMovementSettings                     mMovementSettings;
     uint64_t                                         mLevelCurrentTime;
-    int                                              mEnchantmentSeed;
+    int32_t                                              mEnchantmentSeed;
     std::string                                      mMultiplayerCorrelationId;
     std::vector<ItemData>                            mItemData;
     bool                                             mEnableItemStackNetManager;

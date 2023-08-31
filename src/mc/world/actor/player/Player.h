@@ -82,7 +82,7 @@ public:
     };
 
     union LevelSleepStatus {
-        int data; // this+0x0
+        int32_t data; // this+0x0
         struct {
             char unknown;
         } object; // this+0x0

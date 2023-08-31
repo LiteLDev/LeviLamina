@@ -113,7 +113,7 @@ void ll::LoadMain() {
     cleanOldScriptEngine();
 
     // Load plugins
-    int                 pluginCount = 0;
+    int32_t                 pluginCount = 0;
     vector<std::string> preloadList = getPreloadList();
 
     filesystem::directory_iterator ent("plugins");

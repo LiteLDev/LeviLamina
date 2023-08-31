@@ -49,7 +49,7 @@ public:
      * @vftbl 8
 
      */
-    virtual unsigned char loadFacingID(unsigned char) = 0;
+    virtual uint8_t loadFacingID(uint8_t) = 0;
     /**
      * @vftbl 9
 

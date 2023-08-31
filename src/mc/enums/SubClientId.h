@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class SubClientId : char {
+enum class SubClientId : int8_t {
     PrimaryClient    = 0x0,
     Client2          = 0x1,
     Client3          = 0x2,

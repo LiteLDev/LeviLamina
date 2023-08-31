@@ -11,7 +11,7 @@
 class ComplexInventoryTransaction {
 public:
     // ComplexInventoryTransaction inner types define
-    enum class Type : int {
+    enum class Type : int32_t {
         NormalTransaction          = 0x0,
         InventoryMismatch          = 0x1,
         ItemUseTransaction         = 0x2,

@@ -16,7 +16,7 @@
 class SerializedSkin {
 
 public:
-    enum class TrustedSkinFlag : char {
+    enum class TrustedSkinFlag : int8_t {
         Unset = 0x0,
         False = 0x1,
         True  = 0x2,

@@ -11,7 +11,7 @@
 class LevelChunkPacket : public ::Packet {
 public:
     struct SubChunkMetadata {
-        unsigned long long blobId; // this+0x0
+        uint64_t blobId; // this+0x0
     };
 
 public:
@@ -19,10 +19,10 @@ public:
     bool               mCacheEnabled;                  // this+0x38
     bool               mIsChunkInTickRange;            // this+0x39
     std::string        mSerializedChunk;               // this+0x40
-    unsigned long long mSubChunksCount;                // this+0x60
+    uint64_t mSubChunksCount;                // this+0x60
     bool               isClientPacket;                 // this+0x68
     bool               mClientNeedsToRequestSubchunks; // this+0x69
-    int                mClientRequestSubChunkLimit;    // this+0x6c
+    int32_t                mClientRequestSubChunkLimit;    // this+0x6c
 
     std::vector<SubChunkMetadata> mCacheMetadata; // this+0x70
 

@@ -6,14 +6,14 @@
 class RecipeUnlockingRequirement {
 public:
     // RecipeUnlockingRequirement inner types define
-    enum class UnlockingContext : int {
+    enum class UnlockingContext : int32_t {
         None               = 0x0,
         AlwaysUnlocked     = 0x1,
         PlayerInWater      = 0x2,
         PlayerHasManyItems = 0x3,
     };
 
-    enum class UnlockingRule : int {
+    enum class UnlockingRule : int32_t {
         Invalid       = 0x0,
         ByIngredients = 0x1,
         ByContext     = 0x2,

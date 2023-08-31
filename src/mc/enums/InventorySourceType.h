@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class InventorySourceType : int {
+enum class InventorySourceType : int32_t {
     InvalidInventory          = -1,
     ContainerInventory        = 0,
     GlobalInventory           = 1,

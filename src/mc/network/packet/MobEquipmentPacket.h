@@ -16,13 +16,13 @@ class MobEquipmentPacket : public ::Packet {
 public:
     ActorRuntimeID             mRuntimeId;    // this+0x30
     NetworkItemStackDescriptor mItem;         // this+0x38
-    int                        mSlot;         // this+0x98
-    int                        mSelectedSlot; // this+0x9C
+    int32_t                        mSlot;         // this+0x98
+    int32_t                        mSelectedSlot; // this+0x9C
     ContainerID                mContainerId;  // this+0xA0
 
-    unsigned char mSlotByte;         // this+0xA1
-    unsigned char mSelectedSlotByte; // this+0xA2
-    unsigned char mContainerIdByte;  // this+0xA3
+    uint8_t mSlotByte;         // this+0xA1
+    uint8_t mSelectedSlotByte; // this+0xA2
+    uint8_t mContainerIdByte;  // this+0xA3
 
     // prevent constructor by default
     MobEquipmentPacket& operator=(MobEquipmentPacket const&) = delete;

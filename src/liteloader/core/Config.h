@@ -18,8 +18,8 @@ enum class LLServerStatus { Starting, Running, Stopping };
 struct LLConfig {
     bool        debugMode = false;
     bool        colorLog  = true;
-    int         version   = 1;
-    int         logLevel  = 4;
+    int32_t         version   = 1;
+    int32_t         logLevel  = 4;
     std::string language  = "system";
 
     bool enableScriptEngine       = true;

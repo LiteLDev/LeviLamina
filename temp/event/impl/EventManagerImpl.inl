@@ -37,7 +37,7 @@ void EventManager<EventType>::removeListener(std::weak_ptr<ListenerType> listene
 }
 
 template <typename EventType>
-std::optional<std::weak_ptr<Listener<EventType>>> EventManager<EventType>::getListener(int id) noexcept {
+std::optional<std::weak_ptr<Listener<EventType>>> EventManager<EventType>::getListener(int32_t id) noexcept {
     auto res = std::find_if(
         listenerList.begin(),
         listenerList.end(),

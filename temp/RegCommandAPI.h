@@ -13,17 +13,17 @@
 
 namespace RegisterCommandHelper {
 template <typename Command, typename Type>
-static int getOffset(Type Command::*src) {
+static int32_t getOffset(Type Command::*src) {
     union {
         Type Command::*src;
-        int value;
+        int32_t value;
     } u;
     u.src = src;
     return u.value;
 }
 
 using ParseFn = bool (CommandRegistry::*)(
-    void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&,
+    void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int32_t, std::string&,
     std::vector<std::string>&) const;
 
 template <typename Command, typename Type>

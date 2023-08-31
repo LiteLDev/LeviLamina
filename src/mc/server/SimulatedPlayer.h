@@ -45,10 +45,10 @@ class SimulatedPlayer : public ::ServerPlayer {
 
 public:
     LLAPI static optional_ref<SimulatedPlayer> create(
-        std::string const&                      name,
-        class Vec3 const&                       pos      = Vec3::MIN,
-        class AutomaticID<class Dimension, int> dimID    = 0,
-        class Vec2 const&                       rotation = Vec2::ZERO
+        std::string const& name,
+        class Vec3 const&  pos      = Vec3::MIN,
+        DimensionType      dimID    = 0,
+        class Vec2 const&  rotation = Vec2::ZERO
     );
 
     [[nodiscard]] inline bool simulateSneaking() {

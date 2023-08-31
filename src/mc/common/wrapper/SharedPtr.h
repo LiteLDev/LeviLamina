@@ -13,7 +13,7 @@ public:
 
     explicit SharedPtr(T* p) : counter(new SharedCounter<T>(p)) {}
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
+    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int32_t> = 0>
     explicit SharedPtr(const SharedPtr<Y>& other) {
         counter = other.counter;
         if (counter) {
@@ -21,13 +21,13 @@ public:
         }
     }
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
+    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int32_t> = 0>
     explicit SharedPtr(SharedPtr<Y>&& other) {
         counter       = other.counter;
         other.counter = nullptr;
     }
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
+    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int32_t> = 0>
     explicit SharedPtr(const WeakPtr<Y>& other) {
         counter = other.counter;
         if (other) {
@@ -41,7 +41,7 @@ public:
         }
     }
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
+    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int32_t> = 0>
     SharedPtr<T>& operator=(const SharedPtr<Y>& other) {
         if (counter != other.counter) {
             counter = other.counter;
@@ -52,7 +52,7 @@ public:
         return *this;
     }
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
+    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int32_t> = 0>
     SharedPtr<T>& operator=(SharedPtr<Y>&& other) {
         if (counter != other.counter) {
             counter       = other.counter;
@@ -61,7 +61,7 @@ public:
         return *this;
     }
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
+    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int32_t> = 0>
     SharedPtr<T>& operator=(const WeakPtr<Y>& other) {
         counter = other.counter;
         if (other) {
@@ -77,7 +77,7 @@ public:
 
     explicit operator bool() const { return counter != nullptr; }
 
-    [[nodiscard]] int use_count() const { return counter ? counter->getShareCount() : 0; }
+    [[nodiscard]] int32_t use_count() const { return counter ? counter->getShareCount() : 0; }
 
     void reset() {
         counter->release();

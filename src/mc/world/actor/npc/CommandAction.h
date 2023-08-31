@@ -7,7 +7,7 @@
 
 namespace npc {
 
-enum class ActionMode : char {
+enum class ActionMode : int8_t {
     Button = 0x0,
     Close  = 0x1,
     Open  = 0x2,

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class AttributeModifierOperation : int {
+enum class AttributeModifierOperation : int32_t {
     addition      = 0x0,
     MultiplyBase  = 0x1,
     MultiplyTotal = 0x2,

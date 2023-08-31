@@ -4,7 +4,7 @@
 
 namespace persona {
 
-enum class PieceType : int {
+enum class PieceType : int32_t {
     Unknown       = 0x0,
     Skeleton      = 0x1,
     Body          = 0x2,

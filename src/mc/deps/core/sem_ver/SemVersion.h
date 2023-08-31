@@ -15,13 +15,13 @@ public:
     // clang-format on
 
     // SemVersion inner types define
-    enum class MatchType : int {
+    enum class MatchType : int32_t {
         Full    = 0x0,
         Partial = 0x1,
         None    = 0x2,
     };
 
-    enum class ParseOption : int {
+    enum class ParseOption : int32_t {
         AllowWildcards = 0x0,
         NoWildcards    = 0x1,
     };

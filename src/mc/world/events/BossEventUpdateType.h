@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class BossEventUpdateType : int {
+enum class BossEventUpdateType : int32_t {
     Add              = 0x0,
     PlayerAdded      = 0x1,
     Remove           = 0x2,

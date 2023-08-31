@@ -11,7 +11,7 @@ class TransferPacket : public ::Packet {
 
 public:
     std::string mServerAddress; // this+0x30
-    int         mServerPort;    // this+0x50
+    int32_t         mServerPort;    // this+0x50
 
     // prevent constructor by default
     TransferPacket& operator=(TransferPacket const&) = delete;

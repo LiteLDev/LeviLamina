@@ -20,7 +20,7 @@ public:
     class BlockPos                  mPos;
     class BlockPos                  mChunkPosition;
     bool                            mShouldEvaluate;
-    int                             mStrength;
+    int32_t                             mStrength;
     enum class FacingID               mDirection;
     bool                            mAllowPowerUp;
     bool                            mAllowPowerDown;

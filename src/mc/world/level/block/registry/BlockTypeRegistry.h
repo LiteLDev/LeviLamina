@@ -19,10 +19,10 @@ public:
     struct LookupByNameImplReturnType;
     // clang-format on
 
-    using BlockComplexAliasCallback = std::function<class Block const*(int)>;
+    using BlockComplexAliasCallback = std::function<class Block const*(int32_t)>;
 
     // BlockTypeRegistry inner types define
-    enum class LookupByNameImplResolve : int {
+    enum class LookupByNameImplResolve : int32_t {
         BlockLegacy = 0x0,
         Block       = 0x1,
     };
@@ -31,8 +31,8 @@ public:
 
     public:
         class HashedString stateName;
-        int                value;
-        BlockComplexAliasBlockState(HashedString const& stateName, int value) noexcept
+        int32_t                value;
+        BlockComplexAliasBlockState(HashedString const& stateName, int32_t value) noexcept
         : stateName(stateName), value(value) {}
 
     public:

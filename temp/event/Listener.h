@@ -24,7 +24,7 @@ enum class EventPriority : uint8_t { Lowest = 0, Low = 1, Normal = 2, High = 3, 
  */
 template <typename EventType>
 class Listener {
-    LL_RO_MEMBER(int, id, getId);
+    LL_RO_MEMBER(int32_t, id, getId);
     LL_RO_MEMBER(EventPriority, priority, getPriority);
     LL_RO_MEMBER(HMODULE, plugin, getPlugin);
     LL_RO_MEMBER(std::function<void(EventType&)>, callback, getCallback);

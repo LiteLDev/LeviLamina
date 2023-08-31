@@ -21,7 +21,7 @@ public:
     std::string          mCommand;            // this+0x48
     std::string          mLastOutput;         // this+0x68
     std::string          mName;               // this+0x88
-    int                  mTickDelay;          // this+0xA8
+    int32_t                  mTickDelay;          // this+0xA8
     bool                 mTrackOutput;        // this+0xAC
     bool                 mExecuteOnFirstTick; // this+0xAD
     bool                 mIsBlock;            // this+0xAE

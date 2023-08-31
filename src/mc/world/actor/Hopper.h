@@ -5,10 +5,10 @@
 class Hopper {
 
 public:
-    int  mCooldownTime;                // this+0x0
+    int32_t  mCooldownTime;                // this+0x0
     bool mTransferedFromChestMinecart; // this+0x4
     bool mIsEntity;                    // this+0x5
-    int  mMoveItemSpeed;               // this+0x8
+    int32_t  mMoveItemSpeed;               // this+0x8
 public:
     // NOLINTBEGIN
     /**

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class PlayStatus : int {
+enum class PlayStatus : int32_t {
     LoginSuccess                              = 0x0,
     LoginFailed_ClientOld                     = 0x1,
     LoginFailed_ServerOld                     = 0x2,

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ResourceFileSystem : int {
+enum class ResourceFileSystem : int32_t {
     UserPackage    = 0x0,
     AppPackage     = 0x1,
     Raw            = 0x2,

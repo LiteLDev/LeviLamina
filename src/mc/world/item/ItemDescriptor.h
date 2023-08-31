@@ -20,7 +20,7 @@ public:
     // clang-format on
 
     // ItemDescriptor inner types define
-    enum class InternalType : char {
+    enum class InternalType : int8_t {
         Invalid      = 0x0,
         Default      = 0x1,
         Molang       = 0x2,

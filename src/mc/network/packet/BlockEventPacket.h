@@ -12,8 +12,8 @@ class BlockEventPacket : public ::Packet {
 
 public:
     NetworkBlockPosition mPos; // this+0x2c
-    int                  mB0;  // this+0x38
-    int                  mB1;  // this+0x3c
+    int32_t                  mB0;  // this+0x38
+    int32_t                  mB1;  // this+0x3c
 
     // prevent constructor by default
     BlockEventPacket& operator=(BlockEventPacket const&) = delete;

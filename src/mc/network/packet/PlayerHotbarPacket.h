@@ -12,7 +12,7 @@
 class PlayerHotbarPacket : public ::Packet {
 
 public:
-    unsigned int mSelectedSlot;     // this+0x30
+    uint32_t mSelectedSlot;     // this+0x30
     bool         mShouldSelectSlot; // this+0x34
     ContainerID  mContainerId;      // this+0x35
 

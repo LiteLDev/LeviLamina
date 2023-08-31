@@ -8,17 +8,17 @@
 using ll::logger;
 
 namespace Schedule {
-LLAPI ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay) {
+LLAPI ScheduleTask delay(std::function<void(void)> task, uint64_t tickDelay) {
     return delay(std::move(task), tickDelay, nullptr);
 }
-LLAPI ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickInterval, int maxCount = -1) {
+LLAPI ScheduleTask repeat(std::function<void(void)> task, uint64_t tickInterval, int32_t maxCount = -1) {
     return repeat(std::move(task), tickInterval, maxCount, nullptr);
 }
 LLAPI ScheduleTask delayRepeat(
     std::function<void(void)> task,
-    unsigned long long        tickDelay,
-    unsigned long long        tickInterval,
-    int                       maxCount = -1
+    uint64_t        tickDelay,
+    uint64_t        tickInterval,
+    int32_t                       maxCount = -1
 ) {
     return delayRepeat(std::move(task), tickDelay, tickInterval, maxCount, nullptr);
 }

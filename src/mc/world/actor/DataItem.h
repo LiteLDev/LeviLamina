@@ -14,7 +14,7 @@ class DataItem {
 
 public:
     enum class DataItemType mType;
-    unsigned short          mId;
+    uint16_t          mId;
     bool                    mDirty = true;
 
     template <typename T>
@@ -24,10 +24,10 @@ public:
     template <typename T>
     inline bool setData(T const& value);
 
-    DataItem(DataItemType type, unsigned short id) : mId(id), mType(type) {}
+    DataItem(DataItemType type, uint16_t id) : mId(id), mType(type) {}
 
     template <typename T>
-    inline static std::unique_ptr<DataItem> create(unsigned short key, T const& value);
+    inline static std::unique_ptr<DataItem> create(uint16_t key, T const& value);
 
     template <typename T>
     inline static std::unique_ptr<DataItem> create(enum class ActorDataIDs key, T const& value);
@@ -78,8 +78,8 @@ public:
         setData(value);
         return *this;
     }
-    inline DataItem2(unsigned short key, T const& value) = delete;
-    inline static std::unique_ptr<DataItem> create(unsigned short key, T const& value) {
+    inline DataItem2(uint16_t key, T const& value) = delete;
+    inline static std::unique_ptr<DataItem> create(uint16_t key, T const& value) {
         return std::make_unique<DataItem>(key, value);
     }
     static DataItemType const DATA_ITEM_TYPE;
@@ -89,11 +89,11 @@ template <typename T>
 DataItemType const DataItem2<T>::DATA_ITEM_TYPE = static_cast<DataItemType>(-1);
 
 template <>
-DataItemType const DataItem2<signed char>::DATA_ITEM_TYPE = DataItemType::Byte;
+DataItemType const DataItem2<int8_t>::DATA_ITEM_TYPE = DataItemType::Byte;
 template <>
 DataItemType const DataItem2<short>::DATA_ITEM_TYPE = DataItemType::Short;
 template <>
-DataItemType const DataItem2<int>::DATA_ITEM_TYPE = DataItemType::Int;
+DataItemType const DataItem2<int32_t>::DATA_ITEM_TYPE = DataItemType::Int;
 template <>
 DataItemType const DataItem2<float>::DATA_ITEM_TYPE = DataItemType::Float;
 template <>
@@ -113,32 +113,32 @@ inline void DataItem2<CompoundTag>::setData(CompoundTag const& value) {
 }
 
 template <>
-inline DataItem2<signed char>::DataItem2(unsigned short key, signed char const& value)
+inline DataItem2<int8_t>::DataItem2(uint16_t key, int8_t const& value)
 : DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
 template <>
-inline DataItem2<short>::DataItem2(unsigned short key, short const& value)
+inline DataItem2<short>::DataItem2(uint16_t key, short const& value)
 : DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
 template <>
-inline DataItem2<int>::DataItem2(unsigned short key, int const& value) : DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
+inline DataItem2<int32_t>::DataItem2(uint16_t key, int32_t const& value) : DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
 template <>
-inline DataItem2<float>::DataItem2(unsigned short key, float const& value)
+inline DataItem2<float>::DataItem2(uint16_t key, float const& value)
 : DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
 template <>
-inline DataItem2<std::string>::DataItem2(unsigned short key, std::string const& value) // NOLINT
+inline DataItem2<std::string>::DataItem2(uint16_t key, std::string const& value) // NOLINT
 : DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
 template <>
-inline DataItem2<class CompoundTag>::DataItem2(unsigned short key, class CompoundTag const& value)
+inline DataItem2<class CompoundTag>::DataItem2(uint16_t key, class CompoundTag const& value)
 : DataItem(DATA_ITEM_TYPE, key) {
     mValue.deepCopy(value);
 }
 template <>
-inline DataItem2<BlockPos>::DataItem2(unsigned short key, BlockPos const& value)
+inline DataItem2<BlockPos>::DataItem2(uint16_t key, BlockPos const& value)
 : DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
 template <>
-inline DataItem2<int64_t>::DataItem2(unsigned short key, int64_t const& value)
+inline DataItem2<int64_t>::DataItem2(uint16_t key, int64_t const& value)
 : DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
 template <>
-inline DataItem2<Vec3>::DataItem2(unsigned short key, Vec3 const& value)
+inline DataItem2<Vec3>::DataItem2(uint16_t key, Vec3 const& value)
 : DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
 
 template <typename T>
@@ -164,11 +164,11 @@ inline bool DataItem::setData(T const& value) {
 }
 
 template <typename T>
-inline static std::unique_ptr<DataItem> DataItem::create(unsigned short key, T const& value) {
+inline static std::unique_ptr<DataItem> DataItem::create(uint16_t key, T const& value) {
     return std::unique_ptr<DataItem2>(key, value);
 }
 
 template <typename T>
 inline static std::unique_ptr<DataItem> DataItem::create(ActorDataIDs key, T const& value) {
-    return std::unique_ptr<DataItem2>((unsigned short)key, value);
+    return std::unique_ptr<DataItem2>((uint16_t)key, value);
 }

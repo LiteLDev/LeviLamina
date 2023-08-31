@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class BuildPlatform : int {
+enum class BuildPlatform : int32_t {
     Unknown      = -1,
     Android      = 0x1,
     iOS          = 0x2,

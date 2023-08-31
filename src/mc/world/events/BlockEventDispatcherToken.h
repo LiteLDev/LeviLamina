@@ -11,7 +11,7 @@ public:
     BlockEventDispatcherToken(BlockEventDispatcherToken const&)            = delete;
     BlockEventDispatcherToken()                                            = delete;
 
-    int                         mHandle;     // this+0x0
+    int32_t                         mHandle;     // this+0x0
     class BlockEventDispatcher* mDispatcher; // this+0x8
 public:
     // NOLINTBEGIN

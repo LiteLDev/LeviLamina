@@ -16,7 +16,7 @@ public:
     ActorUniqueID  mEntityId;  // this+0x30
     ActorRuntimeID mRuntimeId; // this+0x38
     Vec3           mPos;       // this+0x40
-    int            mDir;       // this+0x4c
+    int32_t            mDir;       // this+0x4c
     std::string    mMotive;    // this+0x50
 
     // prevent constructor by default

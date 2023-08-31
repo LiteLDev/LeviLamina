@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class InventoryTransactionError : int {
+enum class InventoryTransactionError : int32_t {
     Unknown            = 0x0,
     NoError            = 0x1,
     BalanceMismatch    = 0x2,

@@ -226,10 +226,10 @@ public:
     /**
      * @brief Get the 'ShowCmd' flags of the shell link file.
      *
-     * @return int  The 'ShowCmd' flags
+     * @return int32_t  The 'ShowCmd' flags
      * @see    https://docs.microsoft.com/en-us/windows/win32/api/shobjidl_core/nf-shobjidl_core-ishelllinkw-getshowcmd
      */
-    LLAPI int getShowCmd();
+    LLAPI int32_t getShowCmd();
     /**
      * @brief Set the 'ShowCmd' flags of the shell link file.
      *
@@ -237,7 +237,7 @@ public:
      * @return ShellLinkFile&  *this
      * @see    https://docs.microsoft.com/en-us/windows/win32/api/shobjidl_core/nf-shobjidl_core-ishelllinkw-getshowcmd
      */
-    LLAPI ShellLinkFile& setShowCmd(int showCmd);
+    LLAPI ShellLinkFile& setShowCmd(int32_t showCmd);
 
     /**
      * @brief Get the hot key of the shell link file.
