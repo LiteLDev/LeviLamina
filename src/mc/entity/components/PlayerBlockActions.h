@@ -23,7 +23,7 @@ public:
     /**
      * @symbol ?get\@PlayerBlockActions\@\@QEBA?AV?$span\@$$CBUPlayerBlockActionData\@\@$0?0\@gsl\@\@XZ
      */
-    MCAPI gsl::span<struct PlayerBlockActionData const, -1> get() const;
+    MCAPI gsl::span<struct PlayerBlockActionData const> get() const;
     /**
      * @symbol ??4PlayerBlockActions\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */

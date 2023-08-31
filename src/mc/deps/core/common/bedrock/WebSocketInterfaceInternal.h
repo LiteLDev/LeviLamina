@@ -43,7 +43,7 @@ public:
      * ?sendBinaryMessage\@WebSocketInterfaceInternal\@Http\@Bedrock\@\@UEAAJV?$not_null\@PEAUHC_WEBSOCKET_OBSERVER\@\@\@gsl\@\@V?$span\@$$CBE$0?0\@5\@V?$not_null\@PEAUXAsyncBlock\@\@\@5\@\@Z
      */
     MCVAPI long
-        sendBinaryMessage(gsl::not_null<struct HC_WEBSOCKET_OBSERVER*>, gsl::span<uint8_t const, -1>, gsl::not_null<struct XAsyncBlock*>);
+        sendBinaryMessage(gsl::not_null<struct HC_WEBSOCKET_OBSERVER*>, gsl::span<uint8_t const>, gsl::not_null<struct XAsyncBlock*>);
     /**
      * @symbol
      * ?sendMessage\@WebSocketInterfaceInternal\@Http\@Bedrock\@\@UEAAJV?$not_null\@PEAUHC_WEBSOCKET_OBSERVER\@\@\@gsl\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@V?$not_null\@PEAUXAsyncBlock\@\@\@5\@\@Z

@@ -56,7 +56,7 @@ public:
      * @symbol
      * ?fetchBlocksInBox\@TransactionalWorldBlockTarget\@\@UEAA?AV?$span\@$$CBV?$BlockDataFetchResult\@VBlock\@\@\@\@$0?0\@gsl\@\@AEBVBoundingBox\@\@V?$function\@$$A6A_NAEBVBlock\@\@\@Z\@std\@\@\@Z
      */
-    virtual gsl::span<class BlockDataFetchResult<class Block> const, -1>
+    virtual gsl::span<class BlockDataFetchResult<class Block> const>
     fetchBlocksInBox(class BoundingBox const&, std::function<bool(class Block const&)>);
     /**
      * @vftbl 8

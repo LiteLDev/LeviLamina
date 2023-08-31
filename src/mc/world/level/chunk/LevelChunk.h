@@ -297,7 +297,7 @@ public:
      * ?getEntities\@LevelChunk\@\@QEBAXV?$span\@V?$not_null\@PEBVActor\@\@\@gsl\@\@$0?0\@gsl\@\@AEBVAABB\@\@AEAV?$vector\@PEAVActor\@\@V?$allocator\@PEAVActor\@\@\@std\@\@\@std\@\@_N\@Z
      */
     MCAPI void
-    getEntities(gsl::span<gsl::not_null<class Actor const*>, -1>, class AABB const&, std::vector<class Actor*>&, bool)
+    getEntities(gsl::span<gsl::not_null<class Actor const*>>, class AABB const&, std::vector<class Actor*>&, bool)
         const;
     /**
      * @symbol
