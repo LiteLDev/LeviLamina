@@ -102,14 +102,14 @@ MCAPI void initializeLogExtensions();
  * @symbol ?log\@BedrockLog\@\@YAXW4LogCategory\@1\@V?$bitset\@$02\@std\@\@W4LogRule\@1\@W4LogAreaID\@\@IPEBDH4ZZ
  */
 MCAPI void
-log(enum class BedrockLog::LogCategory,
-    std::bitset<3>,
-    enum class BedrockLog::LogRule,
-    enum class LogAreaID,
-    uint32_t,
-    char const*,
-    int32_t,
-    char const*,
+log(enum class BedrockLog::LogCategory _category,
+    std::bitset<3>                     _channelMask,
+    enum class BedrockLog::LogRule     _rule,
+    enum class LogAreaID               _area,
+    uint32_t                           _priority,
+    char const*                        _function,
+    int32_t                            _line,
+    char const*                        _pszFormat,
     ...);
 /**
  * @symbol

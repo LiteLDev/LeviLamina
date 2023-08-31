@@ -4,6 +4,9 @@
 
 namespace BedrockLog {
 
-enum class LogRule {};
+enum class LogRule : int {
+    DefaultRules    = 0x0,
+    ClientAndServer = 0x1,
+};
 
 };
