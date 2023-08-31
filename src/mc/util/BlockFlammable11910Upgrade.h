@@ -38,10 +38,10 @@ public:
      * @symbol
      * ?upgradeToNext\@BlockFlammable11910Upgrade\@BlockFlammableVersioning\@\@UEBA_NAEAV?$GenericDocument\@U?$UTF8\@D\@rapidjson\@\@V?$MemoryPoolAllocator\@VCrtAllocator\@rapidjson\@\@\@2\@VCrtAllocator\@2\@\@rapidjson\@\@\@Z
      */
-    virtual bool upgradeToNext(class rapidjson::GenericDocument<
-                               struct rapidjson::UTF8<char>,
-                               class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                               class rapidjson::CrtAllocator>&) const;
+    virtual bool upgradeToNext(rapidjson::GenericDocument<
+                               rapidjson::UTF8<char>,
+                               rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
+                               rapidjson::CrtAllocator>&) const;
     /**
      * @symbol ??0BlockFlammable11910Upgrade\@BlockFlammableVersioning\@\@QEAA\@XZ
      */

@@ -427,7 +427,7 @@ public:
          * ??0WoodlandMansionPiece\@WoodlandMansionPieces\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlockPos\@\@W4Rotation\@\@W4Mirror\@\@\@Z
          */
         MCAPI WoodlandMansionPiece(
-            class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>,
+            gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>,
             std::string const&,
             class BlockPos const&,
             enum class Rotation,
@@ -438,7 +438,7 @@ public:
          * ??0WoodlandMansionPiece\@WoodlandMansionPieces\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlockPos\@\@W4Rotation\@\@\@Z
          */
         MCAPI WoodlandMansionPiece(
-            class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>,
+            gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>,
             std::string const&,
             class BlockPos const&,
             enum class Rotation
@@ -473,6 +473,6 @@ public:
      * ?generateMansion\@WoodlandMansionPieces\@\@SAXV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEBVBlockPos\@\@W4Rotation\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@\@Z
      */
     MCAPI static void
-    generateMansion(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class BlockPos const&, enum class Rotation, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
+    generateMansion(gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class BlockPos const&, enum class Rotation, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
     // NOLINTEND
 };

@@ -74,7 +74,7 @@ public:
      * @symbol
      * ?parse\@Reader\@Json\@\@QEAA_NAEAV?$basic_istream\@DU?$char_traits\@D\@std\@\@\@std\@\@AEAVValue\@2\@_N\@Z
      */
-    MCAPI bool parse(std::basic_istream<char, std::char_traits<char>>&, class Json::Value&, bool);
+    MCAPI bool parse(std::istream&, class Json::Value&, bool);
     /**
      * @symbol ?parse\@Reader\@Json\@\@QEAA_NPEBD_KAEAVValue\@2\@_N\@Z
      */

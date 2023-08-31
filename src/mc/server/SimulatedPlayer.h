@@ -464,7 +464,7 @@ public:
      * ?create\@SimulatedPlayer\@\@SAPEAV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlockPos\@\@V?$AutomaticID\@VDimension\@\@H\@\@V?$not_null\@V?$NonOwnerPointer\@VServerNetworkHandler\@\@\@Bedrock\@\@\@gsl\@\@0\@Z
      */
     MCAPI static class SimulatedPlayer*
-    create(std::string const&, class BlockPos const&, DimensionType, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>, std::string const&);
+    create(std::string const&, class BlockPos const&, DimensionType, gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>, std::string const&);
     /**
      * @symbol ?tryGetFromEntity\@SimulatedPlayer\@\@SAPEAV1\@AEAVEntityContext\@\@_N\@Z
      */

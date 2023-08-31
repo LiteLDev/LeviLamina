@@ -16,7 +16,7 @@ public:
      * @symbol
      * ??0ActorMovementProxyComponent\@\@QEAA\@V?$not_null\@V?$shared_ptr\@UIActorMovementProxy\@\@\@std\@\@\@gsl\@\@\@Z
      */
-    MCAPI ActorMovementProxyComponent(class gsl::not_null<std::shared_ptr<struct IActorMovementProxy>>);
+    MCAPI ActorMovementProxyComponent(gsl::not_null<std::shared_ptr<struct IActorMovementProxy>>);
     /**
      * @symbol
      * ?getMovementProxy\@ActorMovementProxyComponent\@\@QEBA?AV?$shared_ptr\@$$CBUIActorMovementProxy\@\@\@std\@\@XZ

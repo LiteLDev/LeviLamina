@@ -97,13 +97,13 @@ public:
     /**
      * @symbol ?_resetToIPv6Only\@RakPeerHelper\@\@AEAAXV?$span\@USocketDescriptor\@RakNet\@\@$01\@gsl\@\@AEAH\@Z
      */
-    MCAPI void _resetToIPv6Only(class gsl::span<struct RakNet::SocketDescriptor, 2>, int32_t&);
+    MCAPI void _resetToIPv6Only(gsl::span<struct RakNet::SocketDescriptor, 2>, int32_t&);
     /**
      * @symbol
      * ?_startupInternal\@RakPeerHelper\@\@AEAA?AW4StartupResult\@RakNet\@\@V?$not_null\@PEAVRakPeerInterface\@RakNet\@\@\@gsl\@\@AEBUConnectionDefinition\@\@PEAUSocketDescriptor\@3\@AEAHH\@Z
      */
     MCAPI enum class RakNet::StartupResult _startupInternal(
-        class gsl::not_null<class RakNet::RakPeerInterface*>,
+        gsl::not_null<class RakNet::RakPeerInterface*>,
         struct ConnectionDefinition const&,
         struct RakNet::SocketDescriptor*,
         int32_t&,

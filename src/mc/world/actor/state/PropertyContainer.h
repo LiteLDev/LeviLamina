@@ -19,7 +19,7 @@ public:
      * @symbol
      * ??0PropertyContainer\@\@QEAA\@V?$not_null\@V?$shared_ptr\@$$CBVPropertyGroup\@\@\@std\@\@\@gsl\@\@AEAVRenderParams\@\@\@Z
      */
-    MCAPI PropertyContainer(class gsl::not_null<std::shared_ptr<class PropertyGroup const>>, class RenderParams&);
+    MCAPI PropertyContainer(gsl::not_null<std::shared_ptr<class PropertyGroup const>>, class RenderParams&);
     /**
      * @symbol ?addEntryToSyncData\@PropertyContainer\@\@QEBAXAEBVPropertyMetadata\@\@AEAUPropertySyncData\@\@\@Z
      */

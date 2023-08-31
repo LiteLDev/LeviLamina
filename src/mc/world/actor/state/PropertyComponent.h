@@ -23,7 +23,7 @@ public:
      * @symbol
      * ??0PropertyComponent\@\@QEAA\@V?$not_null\@V?$shared_ptr\@$$CBVPropertyGroup\@\@\@std\@\@\@gsl\@\@AEAVRenderParams\@\@\@Z
      */
-    MCAPI PropertyComponent(class gsl::not_null<std::shared_ptr<class PropertyGroup const>>, class RenderParams&);
+    MCAPI PropertyComponent(gsl::not_null<std::shared_ptr<class PropertyGroup const>>, class RenderParams&);
     /**
      * @symbol ?addAdditionalSaveData\@PropertyComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */

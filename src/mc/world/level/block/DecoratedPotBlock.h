@@ -282,6 +282,6 @@ public:
      * ?_addUserDataToItemInstance\@DecoratedPotBlock\@\@AEBAXV?$not_null\@PEBVDecoratedPotBlockActor\@\@\@gsl\@\@AEAVItemInstance\@\@\@Z
      */
     MCAPI void
-    _addUserDataToItemInstance(class gsl::not_null<class DecoratedPotBlockActor const*>, class ItemInstance&) const;
+    _addUserDataToItemInstance(gsl::not_null<class DecoratedPotBlockActor const*>, class ItemInstance&) const;
     // NOLINTEND
 };

@@ -26,22 +26,22 @@ public:
      * @vftbl 1
      * @symbol ?Append\@LevelDbWritableFile\@\@UEAA?AVStatus\@leveldb\@\@AEBVSlice\@3\@\@Z
      */
-    virtual class leveldb::Status Append(class leveldb::Slice const&);
+    virtual leveldb::Status Append(leveldb::Slice const&);
     /**
      * @vftbl 2
      * @symbol ?Close\@LevelDbWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
      */
-    virtual class leveldb::Status Close();
+    virtual leveldb::Status Close();
     /**
      * @vftbl 3
      * @symbol ?Flush\@LevelDbWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
      */
-    virtual class leveldb::Status Flush();
+    virtual leveldb::Status Flush();
     /**
      * @vftbl 4
      * @symbol ?Sync\@LevelDbWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
      */
-    virtual class leveldb::Status Sync();
+    virtual leveldb::Status Sync();
     /**
      * @symbol
      * ??0LevelDbWritableFile\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAVFile\@Core\@\@\@Z
@@ -54,6 +54,6 @@ public:
     /**
      * @symbol ?SyncDirIfManifest\@LevelDbWritableFile\@\@AEAA?AVStatus\@leveldb\@\@XZ
      */
-    MCAPI class leveldb::Status SyncDirIfManifest();
+    MCAPI leveldb::Status SyncDirIfManifest();
     // NOLINTEND
 };

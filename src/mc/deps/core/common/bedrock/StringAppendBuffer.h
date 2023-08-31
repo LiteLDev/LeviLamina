@@ -80,7 +80,7 @@ public:
      * @vftbl 12
      * @symbol ?setbuf\@?$basic_streambuf\@DU?$char_traits\@D\@std\@\@\@std\@\@MEAAPEAV12\@PEAD_J\@Z
      */
-    virtual std::basic_streambuf<char, std::char_traits<char>>* setbuf(char*, int64_t);
+    virtual std::streambuf* setbuf(char*, int64_t);
     /**
      * @vftbl 13
      * @symbol ?sync\@?$basic_streambuf\@DU?$char_traits\@D\@std\@\@\@std\@\@MEAAHXZ

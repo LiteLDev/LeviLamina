@@ -26,17 +26,17 @@ public:
      * @symbol
      * ??0ExpressionNode\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4MolangVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
      */
-    MCAPI ExpressionNode(std::string const&, enum class MolangVersion, class gsl::span<class HashedString const>);
+    MCAPI ExpressionNode(std::string const&, enum class MolangVersion, gsl::span<class HashedString const, -1>);
     /**
      * @symbol
      * ??0ExpressionNode\@\@QEAA\@AEBVValue\@Json\@\@W4MolangVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
      */
-    MCAPI ExpressionNode(class Json::Value const&, enum class MolangVersion, class gsl::span<class HashedString const>);
+    MCAPI ExpressionNode(class Json::Value const&, enum class MolangVersion, gsl::span<class HashedString const, -1>);
     /**
      * @symbol
      * ??0ExpressionNode\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSemVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
      */
-    MCAPI ExpressionNode(std::string const&, class SemVersion const&, class gsl::span<class HashedString const>);
+    MCAPI ExpressionNode(std::string const&, class SemVersion const&, gsl::span<class HashedString const, -1>);
     /**
      * @symbol ??0ExpressionNode\@\@QEAA\@AEBV0\@\@Z
      */
@@ -57,7 +57,7 @@ public:
      * @symbol
      * ??0ExpressionNode\@\@QEAA\@AEBVValue\@Json\@\@AEBVSemVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
      */
-    MCAPI ExpressionNode(class Json::Value const&, class SemVersion const&, class gsl::span<class HashedString const>);
+    MCAPI ExpressionNode(class Json::Value const&, class SemVersion const&, gsl::span<class HashedString const, -1>);
     /**
      * @symbol ?clear\@ExpressionNode\@\@QEAAXXZ
      */
@@ -142,7 +142,7 @@ public:
      * @symbol
      * ?parse\@ExpressionNode\@\@QEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4MolangVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
      */
-    MCAPI bool parse(std::string const&, enum class MolangVersion, class gsl::span<class HashedString const>);
+    MCAPI bool parse(std::string const&, enum class MolangVersion, gsl::span<class HashedString const, -1>);
     /**
      * @symbol ??1ExpressionNode\@\@QEAA\@XZ
      */
@@ -241,7 +241,7 @@ public:
      * @symbol
      * ?_readNextToken\@ExpressionNode\@\@AEAA_NAEAPEBDAEBV?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@W4MolangVersion\@\@\@Z
      */
-    MCAPI bool _readNextToken(char const*&, class gsl::span<class HashedString const> const&, enum class MolangVersion);
+    MCAPI bool _readNextToken(char const*&, gsl::span<class HashedString const, -1> const&, enum class MolangVersion);
     /**
      * @symbol
      * ?_setExpressionStringWithoutRelink\@ExpressionNode\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -254,7 +254,7 @@ public:
     MCAPI bool _tokenize(
         char const*,
         struct ExpressionOpBitField&,
-        class gsl::span<class HashedString const> const&,
+        gsl::span<class HashedString const, -1> const&,
         enum class MolangVersion
     );
     /**

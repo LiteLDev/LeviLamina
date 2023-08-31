@@ -424,7 +424,7 @@ public:
      * @symbol
      * ??0ScriptWorldAfterEvents\@ScriptModuleMinecraft\@\@QEAA\@AEBVWeakLifetimeScope\@Scripting\@\@V?$not_null\@PEAVLevel\@\@\@gsl\@\@\@Z
      */
-    MCAPI ScriptWorldAfterEvents(class Scripting::WeakLifetimeScope const&, class gsl::not_null<class Level*>);
+    MCAPI ScriptWorldAfterEvents(class Scripting::WeakLifetimeScope const&, gsl::not_null<class Level*>);
     /**
      * @symbol ??4ScriptWorldAfterEvents\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */

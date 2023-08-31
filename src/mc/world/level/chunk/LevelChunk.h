@@ -296,12 +296,9 @@ public:
      * @symbol
      * ?getEntities\@LevelChunk\@\@QEBAXV?$span\@V?$not_null\@PEBVActor\@\@\@gsl\@\@$0?0\@gsl\@\@AEBVAABB\@\@AEAV?$vector\@PEAVActor\@\@V?$allocator\@PEAVActor\@\@\@std\@\@\@std\@\@_N\@Z
      */
-    MCAPI void getEntities(
-        class gsl::span<class gsl::not_null<class Actor const*>>,
-        class AABB const&,
-        std::vector<class Actor*>&,
-        bool
-    ) const;
+    MCAPI void
+    getEntities(gsl::span<gsl::not_null<class Actor const*>, -1>, class AABB const&, std::vector<class Actor*>&, bool)
+        const;
     /**
      * @symbol
      * ?getEntities\@LevelChunk\@\@QEBAXW4ActorType\@\@AEBVAABB\@\@AEAV?$vector\@PEAVActor\@\@V?$allocator\@PEAVActor\@\@\@std\@\@\@std\@\@_N\@Z
@@ -892,7 +889,7 @@ public:
     /**
      * @symbol ?_addEntityToVolumes\@LevelChunk\@\@AEAAXV?$not_null\@PEAVActor\@\@\@gsl\@\@\@Z
      */
-    MCAPI void _addEntityToVolumes(class gsl::not_null<class Actor*>);
+    MCAPI void _addEntityToVolumes(gsl::not_null<class Actor*>);
     /**
      * @symbol ?_deserializeCCsubChunks\@LevelChunk\@\@AEAAXFAEAVStringByteInput\@\@\@Z
      */

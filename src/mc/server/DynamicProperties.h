@@ -81,6 +81,6 @@ public:
      * @symbol
      * ?_getPropertyVariant\@DynamicProperties\@\@CA?AVmeta_any\@entt\@\@AEBV?$variant\@M_NV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI static class entt::meta_any _getPropertyVariant(std::variant<float, bool, std::string> const&);
+    MCAPI static entt::meta_any _getPropertyVariant(std::variant<float, bool, std::string> const&);
     // NOLINTEND
 };

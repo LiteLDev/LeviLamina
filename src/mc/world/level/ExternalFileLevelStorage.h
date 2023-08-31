@@ -27,7 +27,7 @@ MCAPI bool _writeLevelDat(class Core::Path const&, class LevelData const&);
  * ?getAccessStrategy\@ExternalFileLevelStorage\@\@YA?AV?$unique_ptr\@VPackAccessStrategy\@\@U?$default_delete\@VPackAccessStrategy\@\@\@std\@\@\@std\@\@AEBVPath\@Core\@\@AEBVContentIdentity\@\@AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentKeyProvider\@\@\@Bedrock\@\@\@gsl\@\@\@Z
  */
 MCAPI std::unique_ptr<class PackAccessStrategy>
-getAccessStrategy(class Core::Path const&, class ContentIdentity const&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
+getAccessStrategy(class Core::Path const&, class ContentIdentity const&, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
 /**
  * @symbol
  * ?getImportantFiles\@ExternalFileLevelStorage\@\@YA?BV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
@@ -81,8 +81,7 @@ MCAPI void saveLevelDataToPath(class Core::Path const&, std::string const&, clas
  * @symbol
  * ?saveLevelDisplayDataToCache\@ExternalFileLevelStorage\@\@YAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVLevelData\@\@V?$not_null\@PEAVTaskGroup\@\@\@gsl\@\@\@Z
  */
-MCAPI void
-saveLevelDisplayDataToCache(std::string const&, class LevelData const&, class gsl::not_null<class TaskGroup*>);
+MCAPI void saveLevelDisplayDataToCache(std::string const&, class LevelData const&, gsl::not_null<class TaskGroup*>);
 /**
  * @symbol ?validateLevelDat\@ExternalFileLevelStorage\@\@YA?AVResult\@Core\@\@VPath\@3\@\@Z
  */

@@ -65,7 +65,7 @@ public:
      * ??0NetworkStatistics\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VNetworkSystem\@\@\@Bedrock\@\@\@gsl\@\@W4TrackerType\@\@$$QEAV?$function\@$$A6A_NAEAURakNetStatistics\@RakNet\@\@\@Z\@std\@\@V?$not_null\@V?$NonOwnerPointer\@VNetworkDebugManager\@\@\@Bedrock\@\@\@2\@\@Z
      */
     MCAPI
-    NetworkStatistics(class gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkSystem>>, enum class TrackerType, std::function<bool(struct RakNet::RakNetStatistics&)>&&, class gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkDebugManager>>);
+    NetworkStatistics(gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkSystem>>, enum class TrackerType, std::function<bool(struct RakNet::RakNetStatistics&)>&&, gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkDebugManager>>);
     /**
      * @symbol
      * ?getVerboseInfo\@NetworkStatistics\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ

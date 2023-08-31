@@ -34,13 +34,13 @@ public:
      * ?load\@WorldTemplatePackSource\@\@UEAA?AVPackSourceReport\@\@AEAVIPackManifestFactory\@\@AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentKeyProvider\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     virtual class PackSourceReport
-    load(class IPackManifestFactory&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
+    load(class IPackManifestFactory&, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
     /**
      * @symbol
      * ??0WorldTemplatePackSource\@\@QEAA\@AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVWorldTemplateManager\@\@\@Bedrock\@\@\@gsl\@\@AEBVUUID\@mce\@\@W4PackType\@\@W4PackOrigin\@\@\@Z
      */
     MCAPI WorldTemplatePackSource(
-        class gsl::not_null<class Bedrock::NonOwnerPointer<class WorldTemplateManager const>> const&,
+        gsl::not_null<class Bedrock::NonOwnerPointer<class WorldTemplateManager const>> const&,
         class mce::UUID const&,
         enum class PackType,
         enum class PackOrigin

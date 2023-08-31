@@ -73,7 +73,7 @@ public:
      * @symbol
      * ??0BackgroundTaskBase\@\@QEAA\@V?$not_null\@PEAVIBackgroundTaskOwner\@\@\@gsl\@\@AEBUTaskStartInfoBase\@\@_N\@Z
      */
-    MCAPI BackgroundTaskBase(class gsl::not_null<class IBackgroundTaskOwner*>, struct TaskStartInfoBase const&, bool);
+    MCAPI BackgroundTaskBase(gsl::not_null<class IBackgroundTaskOwner*>, struct TaskStartInfoBase const&, bool);
     /**
      * @symbol ?_makeOrphan\@BackgroundTaskBase\@\@QEAAXXZ
      */

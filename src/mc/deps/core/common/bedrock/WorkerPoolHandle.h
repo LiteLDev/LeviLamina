@@ -33,7 +33,7 @@ public:
      * @symbol
      * ?get\@WorkerPoolHandle\@Bedrock\@\@UEBA?AV?$not_null\@V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@\@gsl\@\@XZ
      */
-    virtual class gsl::not_null<class Bedrock::NonOwnerPointer<class WorkerPool>> get() const;
+    virtual gsl::not_null<class Bedrock::NonOwnerPointer<class WorkerPool>> get() const;
     // NOLINTEND
 };
 

@@ -46,9 +46,9 @@ public:
      */
     MCAPI WorldTemplateManager(
         class PackManifestFactory&,
-        class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&,
+        gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&,
         class PackSourceFactory&,
-        class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const&,
+        gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const&,
         bool
     );
     /**

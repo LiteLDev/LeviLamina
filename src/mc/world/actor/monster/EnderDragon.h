@@ -349,11 +349,11 @@ public:
     /**
      * @symbol ?_hurtEntities\@EnderDragon\@\@AEBAXV?$span\@V?$not_null\@PEAVActor\@\@\@gsl\@\@$0?0\@gsl\@\@\@Z
      */
-    MCAPI void _hurtEntities(class gsl::span<class gsl::not_null<class Actor*>>) const;
+    MCAPI void _hurtEntities(gsl::span<gsl::not_null<class Actor*>, -1>) const;
     /**
      * @symbol ?_knockBack\@EnderDragon\@\@AEBAXV?$span\@V?$not_null\@PEAVActor\@\@\@gsl\@\@$0?0\@gsl\@\@\@Z
      */
-    MCAPI void _knockBack(class gsl::span<class gsl::not_null<class Actor*>>) const;
+    MCAPI void _knockBack(gsl::span<gsl::not_null<class Actor*>, -1>) const;
     /**
      * @symbol
      * ?_reconstructPath\@EnderDragon\@\@AEAA?AV?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@AEAVPathfinderNode\@\@0W4PathCompletionType\@\@\@Z

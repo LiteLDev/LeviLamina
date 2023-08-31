@@ -131,7 +131,7 @@ public:
      * ??0DirectoryPackWithEncryptionAccessStrategy\@\@QEAA\@AEBVResourceLocation\@\@0AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentKeyProvider\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     MCAPI
-    DirectoryPackWithEncryptionAccessStrategy(class ResourceLocation const&, class ResourceLocation const&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
+    DirectoryPackWithEncryptionAccessStrategy(class ResourceLocation const&, class ResourceLocation const&, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
     // NOLINTEND
 
     // private:

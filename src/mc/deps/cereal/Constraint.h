@@ -24,7 +24,7 @@ public:
      * @symbol
      * ?doValidate\@ExpressionNodeCerealConstraint\@\@EEBA_NAEBVmeta_any\@entt\@\@AEAVSerializerContext\@cereal\@\@\@Z
      */
-    virtual bool doValidate(class entt::meta_any const&, class cereal::SerializerContext&) const = 0;
+    virtual bool doValidate(entt::meta_any const&, class cereal::SerializerContext&) const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREAL_CONSTRAINT
     /**
      * @symbol __unk_destructor_-1
@@ -34,7 +34,7 @@ public:
     /**
      * @symbol ?validate\@Constraint\@cereal\@\@QEBA_NAEBVmeta_any\@entt\@\@AEAVSerializerContext\@2\@\@Z
      */
-    MCAPI bool validate(class entt::meta_any const&, class cereal::SerializerContext&) const;
+    MCAPI bool validate(entt::meta_any const&, class cereal::SerializerContext&) const;
     // NOLINTEND
 };
 

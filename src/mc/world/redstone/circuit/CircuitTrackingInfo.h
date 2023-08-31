@@ -15,6 +15,6 @@ public:
     /**
      * @symbol ??0CircuitTrackingInfo\@\@QEAA\@V?$not_null\@PEAVBaseCircuitComponent\@\@\@gsl\@\@AEBVBlockPos\@\@H\@Z
      */
-    MCAPI CircuitTrackingInfo(class gsl::not_null<class BaseCircuitComponent*>, class BlockPos const&, int32_t);
+    MCAPI CircuitTrackingInfo(gsl::not_null<class BaseCircuitComponent*>, class BlockPos const&, int32_t);
     // NOLINTEND
 };

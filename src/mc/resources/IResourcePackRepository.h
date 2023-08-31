@@ -218,8 +218,7 @@ public:
      * @symbol
      * ?getKeyProvider\@ResourcePackRepository\@\@UEBA?AV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentKeyProvider\@\@\@Bedrock\@\@\@gsl\@\@XZ
      */
-    virtual class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>>
-    getKeyProvider() const = 0;
+    virtual gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> getKeyProvider() const = 0;
     /**
      * @vftbl 35
      * @symbol ?getPackManifestFactory\@ResourcePackRepository\@\@UEAAAEAVPackManifestFactory\@\@XZ

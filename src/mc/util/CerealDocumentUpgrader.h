@@ -49,9 +49,9 @@ public:
      * @symbol
      * ?_getVersion\@CerealDocumentUpgrader\@\@AEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$GenericDocument\@U?$UTF8\@D\@rapidjson\@\@V?$MemoryPoolAllocator\@VCrtAllocator\@rapidjson\@\@\@2\@VCrtAllocator\@2\@\@rapidjson\@\@\@Z
      */
-    MCAPI std::string _getVersion(class rapidjson::GenericDocument<
-                                  struct rapidjson::UTF8<char>,
-                                  class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                                  class rapidjson::CrtAllocator>&);
+    MCAPI std::string _getVersion(rapidjson::GenericDocument<
+                                  rapidjson::UTF8<char>,
+                                  rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
+                                  rapidjson::CrtAllocator>&);
     // NOLINTEND
 };

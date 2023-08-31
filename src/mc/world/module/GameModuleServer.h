@@ -24,8 +24,7 @@ public:
      * @symbol
      * ?init\@VanillaGameModuleServer\@\@UEAAXAEAVServerInstance\@\@AEBV?$not_null\@V?$NonOwnerPointer\@VLevel\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
-    virtual void
-    init(class ServerInstance&, class gsl::not_null<class Bedrock::NonOwnerPointer<class Level>> const&) = 0;
+    virtual void init(class ServerInstance&, gsl::not_null<class Bedrock::NonOwnerPointer<class Level>> const&) = 0;
     /**
      * @vftbl 2
      * @symbol
@@ -39,7 +38,7 @@ public:
      * ?configureLevel\@VanillaGameModuleServer\@\@UEAAXAEBV?$not_null\@V?$NonOwnerPointer\@VLevel\@\@\@Bedrock\@\@\@gsl\@\@AEBVExperiments\@\@AEAVResourcePackManager\@\@AEBVBaseGameVersion\@\@\@Z
      */
     virtual void
-    configureLevel(class gsl::not_null<class Bedrock::NonOwnerPointer<class Level>> const&, class Experiments const&, class ResourcePackManager&, class BaseGameVersion const&) = 0;
+    configureLevel(gsl::not_null<class Bedrock::NonOwnerPointer<class Level>> const&, class Experiments const&, class ResourcePackManager&, class BaseGameVersion const&) = 0;
     /**
      * @vftbl 4
      * @symbol __unk_vfn_4
@@ -67,7 +66,7 @@ public:
      * ?configureServerNetworkHandler\@VanillaGameModuleServer\@\@UEAAXAEAVServerInstance\@\@V?$not_null\@V?$NonOwnerPointer\@VServerNetworkHandler\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     virtual void
-    configureServerNetworkHandler(class ServerInstance&, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>) = 0;
+    configureServerNetworkHandler(class ServerInstance&, gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>) = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEMODULESERVER
     /**
      * @symbol __unk_destructor_-1

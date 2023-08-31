@@ -30,7 +30,7 @@ public:
      * ?onServerMinecraftInitialized\@ServerInstanceEventListener\@\@UEAA?AW4EventResult\@\@AEAVServerInstance\@\@AEBV?$not_null\@V?$NonOwnerPointer\@VMinecraft\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     MCVAPI enum class EventResult
-    onServerMinecraftInitialized(class ServerInstance&, class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const&);
+    onServerMinecraftInitialized(class ServerInstance&, gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const&);
     /**
      * @symbol ?onServerResume\@ServerInstanceEventListener\@\@UEAA?AW4EventResult\@\@AEAVServerInstance\@\@\@Z
      */

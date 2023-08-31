@@ -273,8 +273,8 @@ public:
          * @symbol
          * ?_findParsePrediction\@Parser\@CommandRegistry\@\@AEBA?AV?$dense_map_iterator\@V?$_Vector_const_iterator\@V?$_Vector_val\@U?$_Simple_types\@U?$dense_map_node\@U?$pair\@VSymbol\@CommandRegistry\@\@V12\@\@std\@\@H\@internal\@entt\@\@\@std\@\@\@std\@\@\@std\@\@\@internal\@entt\@\@AEBULexicalToken\@2\@AEBVSymbol\@2\@\@Z
          */
-        MCAPI class entt::internal::dense_map_iterator<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<
-            struct entt::internal::
+        MCAPI entt::internal::dense_map_iterator<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<
+            entt::internal::
                 dense_map_node<std::pair<class CommandRegistry::Symbol, class CommandRegistry::Symbol>, int32_t>>>>>
         _findParsePrediction(struct CommandRegistry::LexicalToken const&, class CommandRegistry::Symbol const&) const;
         /**
@@ -656,7 +656,7 @@ public:
      */
     MCAPI class CommandRegistry::Symbol buildRules(
         struct CommandRegistry::Signature&,
-        std::vector<class gsl::not_null<struct CommandRegistry::Overload*>> const&,
+        std::vector<gsl::not_null<struct CommandRegistry::Overload*>> const&,
         uint64_t
     );
     /**
@@ -786,8 +786,7 @@ public:
      * @symbol
      * ?addNonEpsilonSymbols\@CommandRegistry\@\@CAXAEAV?$dense_set\@VSymbol\@CommandRegistry\@\@USymbolHasher\@2\@U?$equal_to\@VSymbol\@CommandRegistry\@\@\@std\@\@V?$allocator\@VSymbol\@CommandRegistry\@\@\@5\@\@entt\@\@AEBV23\@\@Z
      */
-    MCAPI static void
-    addNonEpsilonSymbols(class entt::dense_set<class CommandRegistry::Symbol, struct CommandRegistry::SymbolHasher, std::equal_to<class CommandRegistry::Symbol>, std::allocator<class CommandRegistry::Symbol>>&, class entt::dense_set<class CommandRegistry::Symbol, struct CommandRegistry::SymbolHasher, std::equal_to<class CommandRegistry::Symbol>, std::allocator<class CommandRegistry::Symbol>> const&);
+    MCAPI static void addNonEpsilonSymbols(entt::dense_set<class CommandRegistry::Symbol, struct CommandRegistry::SymbolHasher, std::equal_to<class CommandRegistry::Symbol>, std::allocator<class CommandRegistry::Symbol>>&, entt::dense_set<class CommandRegistry::Symbol, struct CommandRegistry::SymbolHasher, std::equal_to<class CommandRegistry::Symbol>, std::allocator<class CommandRegistry::Symbol>> const&);
     /**
      * @symbol ?buildOverload\@CommandRegistry\@\@CAXAEAUOverload\@1\@\@Z
      */

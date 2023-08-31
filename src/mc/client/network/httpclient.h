@@ -42,7 +42,7 @@ namespace xbox::httpclient {
  * @symbol
  * ?BasicAsciiLowercase\@httpclient\@xbox\@\@YAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@\@Z
  */
-MCAPI void BasicAsciiLowercase(std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>>&);
+MCAPI void BasicAsciiLowercase(http_string&);
 /**
  * @symbol ?IsPathCharacter\@httpclient\@xbox\@\@YA_ND\@Z
  */
@@ -81,14 +81,11 @@ MCAPI long WebSocketppSendMessageAsync(struct HC_WEBSOCKET_OBSERVER*, char const
  * @symbol
  * ?flatten_http_headers\@httpclient\@xbox\@\@YA?AV?$basic_string\@_WU?$char_traits\@_W\@std\@\@V?$http_stl_allocator\@_W\@\@\@std\@\@AEBV?$map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@V12\@UHeaderCompare\@httpclient\@xbox\@\@V?$http_stl_allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@V12\@\@std\@\@\@\@\@4\@\@Z
  */
-MCAPI std::basic_string<wchar_t, std::char_traits<wchar_t>, class http_stl_allocator<wchar_t>>
-      flatten_http_headers(std::map<
-                     std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>>,
-                     std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>>,
-                     struct xbox::httpclient::HeaderCompare,
-                     class http_stl_allocator<std::pair<
-                         std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>> const,
-                         std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>>>>> const&);
+MCAPI http_wstring flatten_http_headers(std::map<
+                                        http_string,
+                                        http_string,
+                                        struct xbox::httpclient::HeaderCompare,
+                                        class http_stl_allocator<std::pair<http_string const, http_string>>> const&);
 /**
  * @symbol ?get_http_singleton\@httpclient\@xbox\@\@YA?AV?$shared_ptr\@Uhttp_singleton\@httpclient\@xbox\@\@\@std\@\@XZ
  */
@@ -102,13 +99,12 @@ get_ie_proxy_info(enum class xbox::httpclient::proxy_protocol, class xbox::httpc
  * @symbol
  * ?trim_whitespace\@httpclient\@xbox\@\@YAXAEAV?$basic_string\@_WU?$char_traits\@_W\@std\@\@V?$http_stl_allocator\@_W\@\@\@std\@\@\@Z
  */
-MCAPI void trim_whitespace(std::basic_string<wchar_t, std::char_traits<wchar_t>, class http_stl_allocator<wchar_t>>&);
+MCAPI void trim_whitespace(http_wstring&);
 /**
  * @symbol
  * ?verify_cert_chain_platform_specific\@httpclient\@xbox\@\@YA_NAEAVverify_context\@ssl\@asio\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@\@Z
  */
-MCAPI bool
-verify_cert_chain_platform_specific(class asio::ssl::verify_context&, std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>> const&);
+MCAPI bool verify_cert_chain_platform_specific(asio::ssl::verify_context&, http_string const&);
 // NOLINTEND
 
 }; // namespace xbox::httpclient

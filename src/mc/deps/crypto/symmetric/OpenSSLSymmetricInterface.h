@@ -57,7 +57,7 @@ public:
      * @symbol
      * ?encryptToBuffer\@OpenSSLSymmetricInterface\@Symmetric\@Crypto\@\@UEAA_NV?$span\@$$CBD$0?0\@gsl\@\@V?$span\@D$0?0\@5\@AEA_K\@Z
      */
-    virtual bool encryptToBuffer(class gsl::span<char const>, class gsl::span<char>, uint64_t&);
+    virtual bool encryptToBuffer(gsl::span<char const, -1>, gsl::span<char, -1>, uint64_t&);
     // NOLINTEND
 };
 

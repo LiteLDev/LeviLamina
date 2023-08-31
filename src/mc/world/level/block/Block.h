@@ -40,7 +40,7 @@ public:
     /**
      * @symbol ??0Block\@\@QEAA\@GV?$not_null\@PEAVBlockLegacy\@\@\@gsl\@\@VCompoundTag\@\@AEBI\@Z
      */
-    MCAPI Block(uint16_t, class gsl::not_null<class BlockLegacy*>, class CompoundTag, uint32_t const&);
+    MCAPI Block(uint16_t, gsl::not_null<class BlockLegacy*>, class CompoundTag, uint32_t const&);
     /**
      * @symbol
      * ?addAABBs\@Block\@\@QEBAXAEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@\@Z

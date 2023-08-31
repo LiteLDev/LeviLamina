@@ -32,7 +32,7 @@ public:
      * @symbol
      * ?read\@BinaryRequestBody\@Http\@Bedrock\@\@MEAA?AUReadResult\@IRequestBody\@Internal\@23\@V?$span\@E$0?0\@gsl\@\@\@Z
      */
-    virtual struct Bedrock::Http::Internal::IRequestBody::ReadResult read(class gsl::span<uint8_t>);
+    virtual struct Bedrock::Http::Internal::IRequestBody::ReadResult read(gsl::span<uint8_t, -1>);
     /**
      * @vftbl 2
      * @symbol ?getSize\@BinaryRequestBody\@Http\@Bedrock\@\@MEAA_KXZ
@@ -53,7 +53,7 @@ public:
      * @vftbl 5
      * @symbol ?getLoggableData\@BinaryRequestBody\@Http\@Bedrock\@\@MEBA?AV?$span\@$$CBE$0?0\@gsl\@\@XZ
      */
-    virtual class gsl::span<uint8_t const> getLoggableData() const;
+    virtual gsl::span<uint8_t const, -1> getLoggableData() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_HTTP_BINARYREQUESTBODY
     /**
      * @symbol __unk_destructor_-1
@@ -63,7 +63,7 @@ public:
     /**
      * @symbol ?setData\@BinaryRequestBody\@Http\@Bedrock\@\@QEAAXV?$span\@$$CBE$0?0\@gsl\@\@\@Z
      */
-    MCAPI void setData(class gsl::span<uint8_t const>);
+    MCAPI void setData(gsl::span<uint8_t const, -1>);
     // NOLINTEND
 
     // protected:
@@ -71,11 +71,11 @@ public:
     /**
      * @symbol ??0BinaryRequestBody\@Http\@Bedrock\@\@IEAA\@V?$span\@$$CBE$0?0\@gsl\@\@\@Z
      */
-    MCAPI BinaryRequestBody(class gsl::span<uint8_t const>);
+    MCAPI BinaryRequestBody(gsl::span<uint8_t const, -1>);
     /**
      * @symbol ?_getData\@BinaryRequestBody\@Http\@Bedrock\@\@IEBA?AV?$span\@$$CBE$0?0\@gsl\@\@XZ
      */
-    MCAPI class gsl::span<uint8_t const> _getData() const;
+    MCAPI gsl::span<uint8_t const, -1> _getData() const;
     // NOLINTEND
 };
 

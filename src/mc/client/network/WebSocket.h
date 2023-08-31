@@ -55,8 +55,7 @@ public:
      * @symbol
      * ?ConnectAsync\@WebSocket\@httpclient\@xbox\@\@QEAAJ$$QEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@0PEAUXAsyncBlock\@\@\@Z
      */
-    MCAPI long
-    ConnectAsync(std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>>&&, std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>>&&, struct XAsyncBlock*);
+    MCAPI long ConnectAsync(http_string&&, http_string&&, struct XAsyncBlock*);
     /**
      * @symbol ?Disconnect\@WebSocket\@httpclient\@xbox\@\@QEAAJXZ
      */
@@ -66,12 +65,10 @@ public:
      * ?Headers\@WebSocket\@httpclient\@xbox\@\@QEBAAEBV?$map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@V12\@UHeaderCompare\@httpclient\@xbox\@\@V?$http_stl_allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@V12\@\@std\@\@\@\@\@std\@\@XZ
      */
     MCAPI std::map<
-        std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>>,
-        std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>>,
+        http_string,
+        http_string,
         struct xbox::httpclient::HeaderCompare,
-        class http_stl_allocator<std::pair<
-            std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>> const,
-            std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>>>>> const&
+        class http_stl_allocator<std::pair<http_string const, http_string>>> const&
     Headers() const;
     /**
      * @symbol ?MaxReceiveBufferSize\@WebSocket\@httpclient\@xbox\@\@QEBA_KXZ
@@ -85,7 +82,7 @@ public:
      * @symbol
      * ?ProxyUri\@WebSocket\@httpclient\@xbox\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@XZ
      */
-    MCAPI std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>> const& ProxyUri() const;
+    MCAPI http_string const& ProxyUri() const;
     /**
      * @symbol
      * ?RegisterEventCallbacks\@WebSocket\@httpclient\@xbox\@\@QEAAIP6AXPEAUHC_WEBSOCKET_OBSERVER\@\@PEBDPEAX\@ZP6AX0PEBEI2\@ZP6AX04I_N2\@ZP6AX0W4HCWebSocketCloseStatus\@\@2\@Z2\@Z

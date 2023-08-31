@@ -46,7 +46,7 @@ MCAPI extern std::try_to_lock_t const& TryToLock;
 /**
  * @symbol ?getDefaultWorkerPool\@Threading\@Bedrock\@\@YA?AV?$not_null\@PEAVWorkerPool\@\@\@gsl\@\@XZ
  */
-MCAPI class gsl::not_null<class WorkerPool*> getDefaultWorkerPool();
+MCAPI gsl::not_null<class WorkerPool*> getDefaultWorkerPool();
 /**
  * @symbol ?getMainThread\@Threading\@Bedrock\@\@YAAEAVAssignedThread\@12\@XZ
  */
@@ -54,11 +54,11 @@ MCAPI class Bedrock::Threading::AssignedThread& getMainThread();
 /**
  * @symbol ?getMainThreadScheduler\@Threading\@Bedrock\@\@YA?AV?$not_null\@PEAVScheduler\@\@\@gsl\@\@XZ
  */
-MCAPI class gsl::not_null<class Scheduler*> getMainThreadScheduler();
+MCAPI gsl::not_null<class Scheduler*> getMainThreadScheduler();
 /**
  * @symbol ?getNetworkWorkerPool\@Threading\@Bedrock\@\@YA?AV?$not_null\@PEAVWorkerPool\@\@\@gsl\@\@XZ
  */
-MCAPI class gsl::not_null<class WorkerPool*> getNetworkWorkerPool();
+MCAPI gsl::not_null<class WorkerPool*> getNetworkWorkerPool();
 /**
  * @symbol ?getServerThread\@Threading\@Bedrock\@\@YAAEAVAssignedThread\@12\@XZ
  */

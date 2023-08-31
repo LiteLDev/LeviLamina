@@ -99,7 +99,7 @@ public:
      * ?GetProxyName\@WinHttpProvider\@httpclient\@xbox\@\@CAJW4proxy_type\@23\@VUri\@23\@AEAKAEAV?$basic_string\@_WU?$char_traits\@_W\@std\@\@V?$http_stl_allocator\@_W\@\@\@std\@\@\@Z
      */
     MCAPI static long
-    GetProxyName(enum class xbox::httpclient::proxy_type, class xbox::httpclient::Uri, unsigned long&, std::basic_string<wchar_t, std::char_traits<wchar_t>, class http_stl_allocator<wchar_t>>&);
+    GetProxyName(enum class xbox::httpclient::proxy_type, class xbox::httpclient::Uri, unsigned long&, http_wstring&);
     /**
      * @symbol ?SetGlobalProxyForHSession\@WinHttpProvider\@httpclient\@xbox\@\@CAJPEAXPEBD\@Z
      */

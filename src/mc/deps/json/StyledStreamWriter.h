@@ -28,7 +28,7 @@ public:
      * @symbol
      * ?write\@StyledStreamWriter\@Json\@\@QEAAXAEAV?$basic_ostream\@DU?$char_traits\@D\@std\@\@\@std\@\@AEBVValue\@2\@\@Z
      */
-    MCAPI void write(std::basic_ostream<char, std::char_traits<char>>&, class Json::Value const&);
+    MCAPI void write(std::ostream&, class Json::Value const&);
     /**
      * @symbol ??1StyledStreamWriter\@Json\@\@QEAA\@XZ
      */

@@ -121,7 +121,7 @@ public:
     /**
      * @symbol ?_onDiscoveryResponse\@NetherNetServerLocator\@\@AEAAX_KV?$span\@$$CBD$0?0\@gsl\@\@\@Z
      */
-    MCAPI void _onDiscoveryResponse(uint64_t, class gsl::span<char const>);
+    MCAPI void _onDiscoveryResponse(uint64_t, gsl::span<char const, -1>);
     /**
      * @symbol
      * ?_pruneStaleServers\@NetherNetServerLocator\@\@AEAAXV?$duration\@_JU?$ratio\@$00$00\@std\@\@\@chrono\@std\@\@\@Z

@@ -21,21 +21,21 @@ public:
      * @vftbl 1
      * @symbol ?Append\@SnapshotWritableFile\@\@UEAA?AVStatus\@leveldb\@\@AEBVSlice\@3\@\@Z
      */
-    virtual class leveldb::Status Append(class leveldb::Slice const&);
+    virtual leveldb::Status Append(leveldb::Slice const&);
     /**
      * @vftbl 2
      * @symbol ?Close\@SnapshotWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
      */
-    virtual class leveldb::Status Close();
+    virtual leveldb::Status Close();
     /**
      * @vftbl 3
      * @symbol ?Flush\@SnapshotWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
      */
-    virtual class leveldb::Status Flush();
+    virtual leveldb::Status Flush();
     /**
      * @vftbl 4
      * @symbol ?Sync\@SnapshotWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
      */
-    virtual class leveldb::Status Sync();
+    virtual leveldb::Status Sync();
     // NOLINTEND
 };

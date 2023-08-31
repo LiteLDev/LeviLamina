@@ -34,7 +34,7 @@ public:
      * @symbol
      * ?getBody\@Request\@Http\@Bedrock\@\@QEBA?AV?$not_null\@V?$shared_ptr\@VIRequestBody\@Internal\@Http\@Bedrock\@\@\@std\@\@\@gsl\@\@XZ
      */
-    MCAPI class gsl::not_null<std::shared_ptr<class Bedrock::Http::Internal::IRequestBody>> getBody() const;
+    MCAPI gsl::not_null<std::shared_ptr<class Bedrock::Http::Internal::IRequestBody>> getBody() const;
     /**
      * @symbol ?getHeaders\@Request\@Http\@Bedrock\@\@QEBAAEBVHeaderCollection\@23\@XZ
      */
@@ -51,8 +51,7 @@ public:
      * @symbol
      * ?getResponseBodyHandler\@Request\@Http\@Bedrock\@\@QEBA?AV?$not_null\@V?$shared_ptr\@VIResponseBody\@Internal\@Http\@Bedrock\@\@\@std\@\@\@gsl\@\@XZ
      */
-    MCAPI class gsl::not_null<std::shared_ptr<class Bedrock::Http::Internal::IResponseBody>>
-    getResponseBodyHandler() const;
+    MCAPI gsl::not_null<std::shared_ptr<class Bedrock::Http::Internal::IResponseBody>> getResponseBodyHandler() const;
     /**
      * @symbol ?getRetryPolicy\@Request\@Http\@Bedrock\@\@QEBAAEBVRetryPolicy\@23\@XZ
      */
@@ -79,7 +78,7 @@ public:
      * @symbol
      * ?setBody\@Request\@Http\@Bedrock\@\@QEAAXV?$not_null\@V?$shared_ptr\@VIRequestBody\@Internal\@Http\@Bedrock\@\@\@std\@\@\@gsl\@\@\@Z
      */
-    MCAPI void setBody(class gsl::not_null<std::shared_ptr<class Bedrock::Http::Internal::IRequestBody>>);
+    MCAPI void setBody(gsl::not_null<std::shared_ptr<class Bedrock::Http::Internal::IRequestBody>>);
     /**
      * @symbol ?setHeaders\@Request\@Http\@Bedrock\@\@QEAAXAEBVHeaderCollection\@23\@\@Z
      */

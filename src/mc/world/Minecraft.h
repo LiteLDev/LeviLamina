@@ -80,7 +80,8 @@ public:
      * @symbol
      * ??0Minecraft\@\@QEAA\@AEAVIMinecraftApp\@\@AEAVGameCallbacks\@\@AEAVAllowList\@\@PEAVPermissionsFile\@\@AEBV?$not_null\@V?$NonOwnerPointer\@VFilePathManager\@Core\@\@\@Bedrock\@\@\@gsl\@\@V?$duration\@_JU?$ratio\@$00$00\@std\@\@\@chrono\@std\@\@AEAVIMinecraftEventing\@\@AEAVNetworkSystem\@\@AEAVPacketSender\@\@W4SubClientId\@\@AEAVTimer\@\@AEAVTimer\@\@AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentTierManager\@\@\@Bedrock\@\@\@6\@PEAVServerMetrics\@\@\@Z
      */
-    MCAPI Minecraft(class IMinecraftApp&, class GameCallbacks&, class AllowList&, class PermissionsFile*, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const&, std::chrono::seconds, class IMinecraftEventing&, class NetworkSystem&, class PacketSender&, enum class SubClientId, class Timer&, class Timer&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentTierManager const>> const&, class ServerMetrics*);
+    MCAPI
+    Minecraft(class IMinecraftApp&, class GameCallbacks&, class AllowList&, class PermissionsFile*, gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const&, std::chrono::seconds, class IMinecraftEventing&, class NetworkSystem&, class PacketSender&, enum class SubClientId, class Timer&, class Timer&, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentTierManager const>> const&, class ServerMetrics*);
     /**
      * @symbol ?activateAllowList\@Minecraft\@\@QEAAXXZ
      */
@@ -139,7 +140,7 @@ public:
      * @symbol
      * ?getStructureManager\@Minecraft\@\@QEAA?AV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@XZ
      */
-    MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>> getStructureManager();
+    MCAPI gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>> getStructureManager();
     /**
      * @symbol ?hasCommands\@Minecraft\@\@QEAA_NXZ
      */

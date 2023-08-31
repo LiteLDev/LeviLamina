@@ -34,7 +34,7 @@ public:
      * ?WebSocketConnectAsyncShim\@HC_PERFORM_ENV\@\@QEAAJ$$QEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@0PEAUHC_WEBSOCKET_OBSERVER\@\@PEAUXAsyncBlock\@\@\@Z
      */
     MCAPI long
-    WebSocketConnectAsyncShim(std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>>&&, std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>>&&, struct HC_WEBSOCKET_OBSERVER*, struct XAsyncBlock*);
+    WebSocketConnectAsyncShim(http_string&&, http_string&&, struct HC_WEBSOCKET_OBSERVER*, struct XAsyncBlock*);
     /**
      * @symbol ?GetPlatformDefaultHttpHandlers\@HC_PERFORM_ENV\@\@SA?AUHttpPerformInfo\@\@XZ
      */

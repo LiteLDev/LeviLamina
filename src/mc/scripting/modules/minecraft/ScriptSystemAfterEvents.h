@@ -95,7 +95,7 @@ public:
      * @symbol
      * ??0ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAA\@AEBVWeakLifetimeScope\@Scripting\@\@V?$not_null\@PEAVServerLevel\@\@\@gsl\@\@\@Z
      */
-    MCAPI ScriptSystemAfterEvents(class Scripting::WeakLifetimeScope const&, class gsl::not_null<class ServerLevel*>);
+    MCAPI ScriptSystemAfterEvents(class Scripting::WeakLifetimeScope const&, gsl::not_null<class ServerLevel*>);
     /**
      * @symbol ?getScriptTickSignal\@ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAAAEAVScriptTickSignal\@2\@XZ
      */

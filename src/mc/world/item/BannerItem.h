@@ -145,7 +145,7 @@ public:
      * @symbol
      * ?getPatternAndColorPairsFromItemStack\@BannerItem\@\@SA?AV?$vector\@U?$pair\@V?$not_null\@PEBVBannerPattern\@\@\@gsl\@\@W4ItemColor\@\@\@std\@\@V?$allocator\@U?$pair\@V?$not_null\@PEBVBannerPattern\@\@\@gsl\@\@W4ItemColor\@\@\@std\@\@\@2\@\@std\@\@AEBVItemStackBase\@\@\@Z
      */
-    MCAPI static std::vector<std::pair<class gsl::not_null<class BannerPattern const*>, enum class ItemColor>>
+    MCAPI static std::vector<std::pair<gsl::not_null<class BannerPattern const*>, enum class ItemColor>>
     getPatternAndColorPairsFromItemStack(class ItemStackBase const&);
     // NOLINTEND
 };

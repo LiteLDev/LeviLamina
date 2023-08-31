@@ -25,9 +25,9 @@ public:
     MCVAPI std::shared_ptr<class SignalServiceSigninJob> createSignalServiceSigninJob(
         std::function<void(bool)>&&,
         std::function<void(void)>&&,
-        class gsl::not_null<class Bedrock::NonOwnerPointer<class DisconnectionRequestHandler>>,
-        class gsl::not_null<class Bedrock::NonOwnerPointer<class ServicesManager>>,
-        class gsl::not_null<class Bedrock::NonOwnerPointer<class IMinecraftEventing>>,
+        gsl::not_null<class Bedrock::NonOwnerPointer<class DisconnectionRequestHandler>>,
+        gsl::not_null<class Bedrock::NonOwnerPointer<class ServicesManager>>,
+        gsl::not_null<class Bedrock::NonOwnerPointer<class IMinecraftEventing>>,
         bool
     );
 #endif
@@ -36,7 +36,7 @@ public:
      * ??0ServerNetworkSystem\@\@QEAA\@AEAVScheduler\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEBUNetworkSystemToggles\@\@AEBV?$NonOwnerPointer\@VNetworkDebugManager\@\@\@Bedrock\@\@V?$ServiceReference\@VServicesManager\@\@\@\@V?$not_null\@V?$NonOwnerPointer\@VNetworkSessionOwner\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     MCAPI
-    ServerNetworkSystem(class Scheduler&, std::vector<std::string> const&, struct NetworkSystemToggles const&, class Bedrock::NonOwnerPointer<class NetworkDebugManager> const&, class ServiceReference<class ServicesManager>, class gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkSessionOwner>>);
+    ServerNetworkSystem(class Scheduler&, std::vector<std::string> const&, struct NetworkSystemToggles const&, class Bedrock::NonOwnerPointer<class NetworkDebugManager> const&, class ServiceReference<class ServicesManager>, gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkSessionOwner>>);
     // NOLINTEND
 
     // private:
@@ -52,6 +52,6 @@ public:
      * ?_createConstructionDependencies\@ServerNetworkSystem\@\@CA?AUDependencies\@NetworkSystem\@\@PEAV1\@AEAVScheduler\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEBUNetworkSystemToggles\@\@V?$ServiceReference\@VServicesManager\@\@\@\@AEBVNetherNetTransportFactory\@\@AEBV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@V?$function\@$$A6A_NXZ\@6\@V?$not_null\@V?$NonOwnerPointer\@VNetworkSessionOwner\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     MCAPI static struct NetworkSystem::Dependencies
-    _createConstructionDependencies(class ServerNetworkSystem*, class Scheduler&, std::vector<std::string> const&, struct NetworkSystemToggles const&, class ServiceReference<class ServicesManager>, class NetherNetTransportFactory const&, class Bedrock::NonOwnerPointer<class AppPlatform> const&, std::function<bool(void)>, class gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkSessionOwner>>);
+    _createConstructionDependencies(class ServerNetworkSystem*, class Scheduler&, std::vector<std::string> const&, struct NetworkSystemToggles const&, class ServiceReference<class ServicesManager>, class NetherNetTransportFactory const&, class Bedrock::NonOwnerPointer<class AppPlatform> const&, std::function<bool(void)>, gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkSessionOwner>>);
     // NOLINTEND
 };

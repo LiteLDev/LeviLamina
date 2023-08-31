@@ -61,7 +61,7 @@ public:
      * @vftbl 7
      * @symbol ?taskComplete\@TaskGroup\@\@UEAAXV?$not_null\@PEAVBackgroundTaskBase\@\@\@gsl\@\@\@Z
      */
-    virtual void taskComplete(class gsl::not_null<class BackgroundTaskBase*>);
+    virtual void taskComplete(gsl::not_null<class BackgroundTaskBase*>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKGROUP
     /**
      * @symbol __unk_destructor_-1

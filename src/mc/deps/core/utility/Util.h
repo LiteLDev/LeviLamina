@@ -260,8 +260,7 @@ MCAPI std::string removeTrailingSpaces(std::string const&);
  * @symbol
  * ?safeGetline\@Util\@\@YAAEAV?$basic_istream\@DU?$char_traits\@D\@std\@\@\@std\@\@AEAV23\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
  */
-MCAPI std::basic_istream<char, std::char_traits<char>>&
-      safeGetline(std::basic_istream<char, std::char_traits<char>>&, std::string&);
+MCAPI std::istream& safeGetline(std::istream&, std::string&);
 /**
  * @symbol
  * ?simpleFormat\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z
@@ -281,8 +280,7 @@ MCAPI std::vector<std::string> splitLines(
     std::vector<std::string> const&,
     bool,
     bool,
-    std::basic_istream<char, std::char_traits<char>>&(__cdecl*)(std::basic_istream<char, std::char_traits<char>>&,
-                                                                std::string&)
+    std::istream&(__cdecl*)(std::istream&, std::string&)
 );
 /**
  * @symbol
@@ -373,7 +371,7 @@ MCAPI std::string toString(float, int32_t);
  * @symbol
  * ?toString\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$basic_string\@_WU?$char_traits\@_W\@std\@\@V?$allocator\@_W\@2\@\@3\@\@Z
  */
-MCAPI std::string toString(std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>> const&);
+MCAPI std::string toString(std::wstring const&);
 /**
  * @symbol
  * ?toStringWithPaddedZeroes\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@IE\@Z
@@ -388,7 +386,7 @@ MCAPI std::string toUpper(std::string_view const&);
  * @symbol
  * ?toWideString\@Util\@\@YA?AV?$basic_string\@_WU?$char_traits\@_W\@std\@\@V?$allocator\@_W\@2\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
  */
-MCAPI std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>> toWideString(std::string const&);
+MCAPI std::wstring toWideString(std::string const&);
 /**
  * @symbol ?utf8len\@Util\@\@YAHAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
  */

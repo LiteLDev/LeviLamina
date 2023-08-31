@@ -599,7 +599,7 @@ public:
     /**
      * @symbol ?addActorToReplicationList\@ServerPlayer\@\@QEAAXV?$not_null\@PEAVActor\@\@\@gsl\@\@_N\@Z
      */
-    MCAPI void addActorToReplicationList(class gsl::not_null<class Actor*>, bool);
+    MCAPI void addActorToReplicationList(gsl::not_null<class Actor*>, bool);
     /**
      * @symbol ?checkCheating\@ServerPlayer\@\@QEAAXAEBVVec3\@\@\@Z
      */

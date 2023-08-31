@@ -31,7 +31,7 @@ public:
      * @symbol
      * ??0ScriptSystem\@ScriptModuleMinecraft\@\@QEAA\@AEBVWeakLifetimeScope\@Scripting\@\@V?$not_null\@PEAVServerLevel\@\@\@gsl\@\@\@Z
      */
-    MCAPI ScriptSystem(class Scripting::WeakLifetimeScope const&, class gsl::not_null<class ServerLevel*>);
+    MCAPI ScriptSystem(class Scripting::WeakLifetimeScope const&, gsl::not_null<class ServerLevel*>);
     /**
      * @symbol ?clearRun\@ScriptSystem\@ScriptModuleMinecraft\@\@QEAAXI\@Z
      */

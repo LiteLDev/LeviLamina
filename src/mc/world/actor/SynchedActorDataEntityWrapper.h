@@ -105,10 +105,10 @@ public:
     /**
      * @symbol ?_get\@SynchedActorDataEntityWrapper\@\@AEAA?AV?$not_null\@PEAVSynchedActorData\@\@\@gsl\@\@XZ
      */
-    MCAPI class gsl::not_null<class SynchedActorData*> _get();
+    MCAPI gsl::not_null<class SynchedActorData*> _get();
     /**
      * @symbol ?_get\@SynchedActorDataEntityWrapper\@\@AEBA?AV?$not_null\@PEBVSynchedActorData\@\@\@gsl\@\@XZ
      */
-    MCAPI class gsl::not_null<class SynchedActorData const*> _get() const;
+    MCAPI gsl::not_null<class SynchedActorData const*> _get() const;
     // NOLINTEND
 };

@@ -203,8 +203,7 @@ public:
      * ?createContentAccessibility\@AppConfigs\@\@UEBA?AV?$unique_ptr\@VIContentAccessibilityProvider\@\@U?$default_delete\@VIContentAccessibilityProvider\@\@\@std\@\@\@std\@\@V?$not_null\@V?$NonOwnerPointer\@VIEntitlementManager\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     virtual std::unique_ptr<class IContentAccessibilityProvider>
-        createContentAccessibility(class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntitlementManager>>)
-            const;
+        createContentAccessibility(gsl::not_null<class Bedrock::NonOwnerPointer<class IEntitlementManager>>) const;
     /**
      * @vftbl 35
      * @symbol

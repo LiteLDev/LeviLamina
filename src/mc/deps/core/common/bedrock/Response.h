@@ -38,7 +38,7 @@ public:
     /**
      * @symbol ?getBodyAsBytes\@Response\@Http\@Bedrock\@\@QEBA?AV?$span\@$$CBE$0?0\@gsl\@\@XZ
      */
-    MCAPI class gsl::span<uint8_t const> getBodyAsBytes() const;
+    MCAPI gsl::span<uint8_t const, -1> getBodyAsBytes() const;
     /**
      * @symbol
      * ?getBodyAsUtf8String\@Response\@Http\@Bedrock\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -56,7 +56,7 @@ public:
      * @symbol
      * ?setBody\@Response\@Http\@Bedrock\@\@QEAAXV?$not_null\@V?$shared_ptr\@VIResponseBody\@Internal\@Http\@Bedrock\@\@\@std\@\@\@gsl\@\@\@Z
      */
-    MCAPI void setBody(class gsl::not_null<std::shared_ptr<class Bedrock::Http::Internal::IResponseBody>>);
+    MCAPI void setBody(gsl::not_null<std::shared_ptr<class Bedrock::Http::Internal::IResponseBody>>);
     /**
      * @symbol ?setHeaders\@Response\@Http\@Bedrock\@\@QEAAXAEBVHeaderCollection\@23\@\@Z
      */

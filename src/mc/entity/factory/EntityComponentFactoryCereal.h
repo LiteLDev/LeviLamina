@@ -20,7 +20,7 @@ public:
      * ?serializeComponentDefinitions\@EntityComponentFactoryCereal\@\@QEBAXAEAVDefinitionInstanceGroup\@\@AEBV?$GenericValue\@U?$UTF8\@D\@rapidjson\@\@V?$MemoryPoolAllocator\@VCrtAllocator\@rapidjson\@\@\@2\@\@rapidjson\@\@AEBVSemVersion\@\@\@Z
      */
     MCAPI void
-    serializeComponentDefinitions(class DefinitionInstanceGroup&, class rapidjson::GenericValue<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>> const&, class SemVersion const&)
+    serializeComponentDefinitions(class DefinitionInstanceGroup&, rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>> const&, class SemVersion const&)
         const;
     /**
      * @symbol

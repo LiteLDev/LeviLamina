@@ -15,11 +15,11 @@ public:
     /**
      * @symbol ??0NoiseCellInterpolator\@\@QEAA\@V?$span\@$$CBM$0?0\@gsl\@\@HH\@Z
      */
-    MCAPI NoiseCellInterpolator(class gsl::span<float const>, int32_t, int32_t);
+    MCAPI NoiseCellInterpolator(gsl::span<float const, -1>, int32_t, int32_t);
     /**
      * @symbol ??0NoiseCellInterpolator\@\@QEAA\@V?$span\@$$CBM$0?0\@gsl\@\@\@Z
      */
-    MCAPI NoiseCellInterpolator(class gsl::span<float const>);
+    MCAPI NoiseCellInterpolator(gsl::span<float const, -1>);
     /**
      * @symbol ?getLerpedValue\@NoiseCellInterpolator\@\@QEBAMXZ
      */

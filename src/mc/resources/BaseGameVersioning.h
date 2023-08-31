@@ -30,7 +30,7 @@ MCAPI std::vector<class BaseGameVersion> const& getAvailableResourcePackBaseGame
  * ?upgradeBaseGameVersionFromWorldTemplate\@BaseGameVersioning\@\@YA_NAEBV?$not_null\@V?$NonOwnerPointer\@$$CBVWorldTemplateManager\@\@\@Bedrock\@\@\@gsl\@\@AEAVLevelData\@\@\@Z
  */
 MCAPI bool
-upgradeBaseGameVersionFromWorldTemplate(class gsl::not_null<class Bedrock::NonOwnerPointer<class WorldTemplateManager const>> const&, class LevelData&);
+upgradeBaseGameVersionFromWorldTemplate(gsl::not_null<class Bedrock::NonOwnerPointer<class WorldTemplateManager const>> const&, class LevelData&);
 // NOLINTEND
 
 }; // namespace BaseGameVersioning

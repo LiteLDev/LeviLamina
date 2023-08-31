@@ -34,7 +34,7 @@ public:
      * ?_buildHand\@CoralFeature\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAV?$vector\@VBlockPos\@\@V?$allocator\@VBlockPos\@\@\@std\@\@\@std\@\@AEAV?$vector\@U?$pair\@VBlockPos\@\@E\@std\@\@V?$allocator\@U?$pair\@VBlockPos\@\@E\@std\@\@\@2\@\@6\@V?$not_null\@PEBVBlock\@\@\@gsl\@\@\@Z
      */
     MCAPI void
-    _buildHand(class BlockSource&, class BlockPos const&, class Random&, std::vector<class BlockPos>&, std::vector<std::pair<class BlockPos, uint8_t>>&, class gsl::not_null<class Block const*>)
+    _buildHand(class BlockSource&, class BlockPos const&, class Random&, std::vector<class BlockPos>&, std::vector<std::pair<class BlockPos, uint8_t>>&, gsl::not_null<class Block const*>)
         const;
     /**
      * @symbol
@@ -44,7 +44,7 @@ public:
         class BlockSource&,
         class Random&,
         class BlockPos const&,
-        class gsl::not_null<class Block const*>,
+        gsl::not_null<class Block const*>,
         std::vector<class BlockPos>&,
         std::vector<std::pair<class BlockPos, uint8_t>>&,
         uint8_t,
@@ -55,21 +55,21 @@ public:
      * ?_buildPlantLike\@CoralFeature\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAV?$vector\@VBlockPos\@\@V?$allocator\@VBlockPos\@\@\@std\@\@\@std\@\@AEAV?$vector\@U?$pair\@VBlockPos\@\@E\@std\@\@V?$allocator\@U?$pair\@VBlockPos\@\@E\@std\@\@\@2\@\@6\@V?$not_null\@PEBVBlock\@\@\@gsl\@\@\@Z
      */
     MCAPI void
-    _buildPlantLike(class BlockSource&, class BlockPos const&, class Random&, std::vector<class BlockPos>&, std::vector<std::pair<class BlockPos, uint8_t>>&, class gsl::not_null<class Block const*>)
+    _buildPlantLike(class BlockSource&, class BlockPos const&, class Random&, std::vector<class BlockPos>&, std::vector<std::pair<class BlockPos, uint8_t>>&, gsl::not_null<class Block const*>)
         const;
     /**
      * @symbol
      * ?_buildSmallClump\@CoralFeature\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAV?$vector\@VBlockPos\@\@V?$allocator\@VBlockPos\@\@\@std\@\@\@std\@\@AEAV?$vector\@U?$pair\@VBlockPos\@\@E\@std\@\@V?$allocator\@U?$pair\@VBlockPos\@\@E\@std\@\@\@2\@\@6\@V?$not_null\@PEBVBlock\@\@\@gsl\@\@\@Z
      */
     MCAPI void
-    _buildSmallClump(class BlockSource&, class BlockPos const&, class Random&, std::vector<class BlockPos>&, std::vector<std::pair<class BlockPos, uint8_t>>&, class gsl::not_null<class Block const*>)
+    _buildSmallClump(class BlockSource&, class BlockPos const&, class Random&, std::vector<class BlockPos>&, std::vector<std::pair<class BlockPos, uint8_t>>&, gsl::not_null<class Block const*>)
         const;
     /**
      * @symbol
      * ?_buildSpire\@CoralFeature\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAV?$vector\@VBlockPos\@\@V?$allocator\@VBlockPos\@\@\@std\@\@\@std\@\@AEAV?$vector\@U?$pair\@VBlockPos\@\@E\@std\@\@V?$allocator\@U?$pair\@VBlockPos\@\@E\@std\@\@\@2\@\@6\@V?$not_null\@PEBVBlock\@\@\@gsl\@\@\@Z
      */
     MCAPI void
-    _buildSpire(class BlockSource&, class BlockPos const&, class Random&, std::vector<class BlockPos>&, std::vector<std::pair<class BlockPos, uint8_t>>&, class gsl::not_null<class Block const*>)
+    _buildSpire(class BlockSource&, class BlockPos const&, class Random&, std::vector<class BlockPos>&, std::vector<std::pair<class BlockPos, uint8_t>>&, gsl::not_null<class Block const*>)
         const;
     /**
      * @symbol ?_canOverwrite\@CoralFeature\@\@AEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@H\@Z
@@ -87,14 +87,13 @@ public:
      * @symbol
      * ?_setBlock\@CoralFeature\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@V?$not_null\@PEBVBlock\@\@\@gsl\@\@H\@Z
      */
-    MCAPI bool
-    _setBlock(class BlockSource&, class BlockPos const&, class gsl::not_null<class Block const*>, int32_t) const;
+    MCAPI bool _setBlock(class BlockSource&, class BlockPos const&, gsl::not_null<class Block const*>, int32_t) const;
     /**
      * @symbol
      * ?_setBlockOnSolid\@CoralFeature\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@V?$not_null\@PEBVBlock\@\@\@gsl\@\@H\@Z
      */
     MCAPI bool
-    _setBlockOnSolid(class BlockSource&, class BlockPos const&, class gsl::not_null<class Block const*>, int32_t) const;
+    _setBlockOnSolid(class BlockSource&, class BlockPos const&, gsl::not_null<class Block const*>, int32_t) const;
     /**
      * @symbol
      * ?_starCorners\@CoralFeature\@\@AEBAXAEAVBlockSource\@\@AEAVRandom\@\@AEBVBlockPos\@\@V?$not_null\@PEBVBlock\@\@\@gsl\@\@MH_N\@Z
@@ -103,7 +102,7 @@ public:
         class BlockSource&,
         class Random&,
         class BlockPos const&,
-        class gsl::not_null<class Block const*>,
+        gsl::not_null<class Block const*>,
         float,
         int32_t,
         bool
@@ -116,7 +115,7 @@ public:
         class BlockSource&,
         class Random&,
         class BlockPos const&,
-        class gsl::not_null<class Block const*>,
+        gsl::not_null<class Block const*>,
         float,
         int32_t,
         bool

@@ -21,11 +21,11 @@ public:
      * @vftbl 1
      * @symbol ?Read\@LevelDbSequentialFile\@\@UEAA?AVStatus\@leveldb\@\@_KPEAVSlice\@3\@PEAD\@Z
      */
-    virtual class leveldb::Status Read(uint64_t, class leveldb::Slice*, char*);
+    virtual leveldb::Status Read(uint64_t, leveldb::Slice*, char*);
     /**
      * @vftbl 2
      * @symbol ?Skip\@LevelDbSequentialFile\@\@UEAA?AVStatus\@leveldb\@\@_K\@Z
      */
-    virtual class leveldb::Status Skip(uint64_t);
+    virtual leveldb::Status Skip(uint64_t);
     // NOLINTEND
 };

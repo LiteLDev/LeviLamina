@@ -21,7 +21,7 @@ public:
      * ?checkChatFilteringEventsAndSendToastIfClientWasMuted\@TextFilteringUtils\@\@SAXAEBV?$vector\@W4TextFilteringEvent\@Safety\@\@V?$allocator\@W4TextFilteringEvent\@Safety\@\@\@std\@\@\@std\@\@V?$not_null\@PEAVPacketSender\@\@\@gsl\@\@AEBVNetworkIdentifier\@\@AEBW4SubClientId\@\@\@Z
      */
     MCAPI static void
-    checkChatFilteringEventsAndSendToastIfClientWasMuted(std::vector<enum class Safety::TextFilteringEvent> const&, class gsl::not_null<class PacketSender*>, class NetworkIdentifier const&, enum class SubClientId const&);
+    checkChatFilteringEventsAndSendToastIfClientWasMuted(std::vector<enum class Safety::TextFilteringEvent> const&, gsl::not_null<class PacketSender*>, class NetworkIdentifier const&, enum class SubClientId const&);
     /**
      * @symbol
      * ?checkChatFilteringEventsForFlooding\@TextFilteringUtils\@\@SA_NAEBV?$vector\@W4TextFilteringEvent\@Safety\@\@V?$allocator\@W4TextFilteringEvent\@Safety\@\@\@std\@\@\@std\@\@\@Z

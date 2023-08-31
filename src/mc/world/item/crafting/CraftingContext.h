@@ -27,7 +27,7 @@ public:
          * @symbol
          * ??0Impl\@CraftingContext\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VILevel\@\@\@Bedrock\@\@\@gsl\@\@\@Z
          */
-        MCAPI Impl(class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel>>);
+        MCAPI Impl(gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel>>);
         // NOLINTEND
     };
 
@@ -42,7 +42,7 @@ public:
     /**
      * @symbol ??0CraftingContext\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VILevel\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
-    MCAPI CraftingContext(class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel>>);
+    MCAPI CraftingContext(gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel>>);
     /**
      * @symbol ?copyAndLockMap\@CraftingContext\@\@QEAA_NUActorUniqueID\@\@0\@Z
      */

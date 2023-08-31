@@ -114,7 +114,7 @@ public:
      */
     MCAPI ResourcePackManager(
         std::function<class Core::PathBuffer<std::string>(void)>,
-        class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentTierManager const>> const&,
+        gsl::not_null<class Bedrock::NonOwnerPointer<class IContentTierManager const>> const&,
         bool
     );
     /**

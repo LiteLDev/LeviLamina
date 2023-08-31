@@ -2,8 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class Vec3;
-
 class VehicleUtils {
 public:
     // VehicleUtils inner types declare

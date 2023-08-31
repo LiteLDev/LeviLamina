@@ -48,7 +48,7 @@ public:
      * @symbol
      * ?_tryBeginClientLegacyTransactionRequest\@ItemStackNetManagerBase\@\@MEAA?AV?$final_action\@V?$function\@$$A6AXXZ\@std\@\@\@gsl\@\@XZ
      */
-    virtual class gsl::final_action<std::function<void(void)>> _tryBeginClientLegacyTransactionRequest();
+    virtual gsl::final_action<std::function<void(void)>> _tryBeginClientLegacyTransactionRequest();
     /**
      * @vftbl 6
      * @symbol ?onContainerScreenOpen\@ItemStackNetManagerBase\@\@UEAAXAEBVContainerScreenContext\@\@\@Z
@@ -104,8 +104,7 @@ public:
      * @symbol
      * ?_tryBeginClientLegacyTransactionRequest\@ItemStackNetManagerBase\@\@SA?AV?$final_action\@V?$function\@$$A6AXXZ\@std\@\@\@gsl\@\@PEAVPlayer\@\@\@Z
      */
-    MCAPI static class gsl::final_action<std::function<void(void)>>
-    _tryBeginClientLegacyTransactionRequest(class Player*);
+    MCAPI static gsl::final_action<std::function<void(void)>> _tryBeginClientLegacyTransactionRequest(class Player*);
     /**
      * @symbol
      * ?setPlayerContainer\@ItemStackNetManagerBase\@\@SA_NAEAVPlayer\@\@W4ContainerType\@\@HAEBVItemStack\@\@AEAV4\@AEBV?$function\@$$A6AXAEBVItemStack\@\@\@Z\@std\@\@\@Z

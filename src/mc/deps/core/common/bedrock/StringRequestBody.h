@@ -26,7 +26,7 @@ public:
     /**
      * @symbol ?getLoggableData\@StringRequestBody\@Http\@Bedrock\@\@MEBA?AV?$span\@$$CBE$0?0\@gsl\@\@XZ
      */
-    MCVAPI class gsl::span<uint8_t const> getLoggableData() const;
+    MCVAPI gsl::span<uint8_t const, -1> getLoggableData() const;
 #endif
     // NOLINTEND
 };

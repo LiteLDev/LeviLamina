@@ -52,6 +52,6 @@ public:
      * @symbol
      * ?_getActorsInRange\@Explosion\@\@AEBA?AV?$vector\@V?$not_null\@PEAVActor\@\@\@gsl\@\@V?$allocator\@V?$not_null\@PEAVActor\@\@\@gsl\@\@\@std\@\@\@std\@\@PEAVActor\@\@M\@Z
      */
-    MCAPI std::vector<class gsl::not_null<class Actor*>> _getActorsInRange(class Actor*, float) const;
+    MCAPI std::vector<gsl::not_null<class Actor*>> _getActorsInRange(class Actor*, float) const;
     // NOLINTEND
 };

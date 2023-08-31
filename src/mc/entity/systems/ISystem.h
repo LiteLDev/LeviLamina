@@ -16,7 +16,7 @@ public:
     /**
      * @symbol ?registerEvents\@ISystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
      */
-    MCVAPI void registerEvents(class entt::basic_dispatcher<std::allocator<void>>&);
+    MCVAPI void registerEvents(entt::dispatcher&);
 #endif
     // NOLINTEND
 };

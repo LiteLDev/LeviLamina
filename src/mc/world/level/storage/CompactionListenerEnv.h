@@ -25,25 +25,25 @@ public:
      * @symbol
      * ?NewSequentialFile\@InMemoryEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVSequentialFile\@3\@\@Z
      */
-    virtual class leveldb::Status NewSequentialFile(std::string const&, class leveldb::SequentialFile**);
+    virtual leveldb::Status NewSequentialFile(std::string const&, leveldb::SequentialFile**);
     /**
      * @vftbl 2
      * @symbol
      * ?NewRandomAccessFile\@InMemoryEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVRandomAccessFile\@3\@\@Z
      */
-    virtual class leveldb::Status NewRandomAccessFile(std::string const&, class leveldb::RandomAccessFile**);
+    virtual leveldb::Status NewRandomAccessFile(std::string const&, leveldb::RandomAccessFile**);
     /**
      * @vftbl 3
      * @symbol
      * ?NewWritableFile\@InMemoryEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVWritableFile\@3\@\@Z
      */
-    virtual class leveldb::Status NewWritableFile(std::string const&, class leveldb::WritableFile**);
+    virtual leveldb::Status NewWritableFile(std::string const&, leveldb::WritableFile**);
     /**
      * @vftbl 4
      * @symbol
      * ?NewAppendableFile\@Env\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVWritableFile\@2\@\@Z
      */
-    virtual class leveldb::Status NewAppendableFile(std::string const&, class leveldb::WritableFile**);
+    virtual leveldb::Status NewAppendableFile(std::string const&, leveldb::WritableFile**);
     /**
      * @vftbl 5
      * @symbol
@@ -55,48 +55,48 @@ public:
      * @symbol
      * ?GetChildren\@InMemoryEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@5\@\@Z
      */
-    virtual class leveldb::Status GetChildren(std::string const&, std::vector<std::string>*);
+    virtual leveldb::Status GetChildren(std::string const&, std::vector<std::string>*);
     /**
      * @vftbl 7
      * @symbol
      * ?DeleteFileA\@InMemoryEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual class leveldb::Status DeleteFileA(std::string const&);
+    virtual leveldb::Status DeleteFileA(std::string const&);
     /**
      * @vftbl 8
      * @symbol
      * ?CreateDir\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual class leveldb::Status CreateDir(std::string const&);
+    virtual leveldb::Status CreateDir(std::string const&);
     /**
      * @vftbl 9
      * @symbol
      * ?DeleteDir\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual class leveldb::Status DeleteDir(std::string const&);
+    virtual leveldb::Status DeleteDir(std::string const&);
     /**
      * @vftbl 10
      * @symbol
      * ?GetFileSize\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEA_K\@Z
      */
-    virtual class leveldb::Status GetFileSize(std::string const&, uint64_t*);
+    virtual leveldb::Status GetFileSize(std::string const&, uint64_t*);
     /**
      * @vftbl 11
      * @symbol
      * ?RenameFile\@InMemoryEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
-    virtual class leveldb::Status RenameFile(std::string const&, std::string const&);
+    virtual leveldb::Status RenameFile(std::string const&, std::string const&);
     /**
      * @vftbl 12
      * @symbol
      * ?LockFile\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVFileLock\@2\@\@Z
      */
-    virtual class leveldb::Status LockFile(std::string const&, class leveldb::FileLock**);
+    virtual leveldb::Status LockFile(std::string const&, leveldb::FileLock**);
     /**
      * @vftbl 13
      * @symbol ?UnlockFile\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@PEAVFileLock\@2\@\@Z
      */
-    virtual class leveldb::Status UnlockFile(class leveldb::FileLock*);
+    virtual leveldb::Status UnlockFile(leveldb::FileLock*);
     /**
      * @vftbl 14
      * @symbol ?Schedule\@CompactionListenerEnv\@\@UEAAXP6AXPEAX\@Z0\@Z
@@ -112,13 +112,13 @@ public:
      * @symbol
      * ?GetTestDirectory\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@PEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual class leveldb::Status GetTestDirectory(std::string*);
+    virtual leveldb::Status GetTestDirectory(std::string*);
     /**
      * @vftbl 17
      * @symbol
      * ?NewLogger\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVLogger\@2\@\@Z
      */
-    virtual class leveldb::Status NewLogger(std::string const&, class leveldb::Logger**);
+    virtual leveldb::Status NewLogger(std::string const&, leveldb::Logger**);
     /**
      * @vftbl 18
      * @symbol ?NowMicros\@EnvWrapper\@leveldb\@\@UEAA_KXZ

@@ -32,8 +32,8 @@ public:
      * @symbol
      * ?getPlacementBlock\@UpdateFacingGetPlacementBlockCallback\@PlacementDirection\@BlockTrait\@\@UEBA?AV?$not_null\@PEBVBlock\@\@\@gsl\@\@V45\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
-    virtual class gsl::not_null<class Block const*> getPlacementBlock(
-        class gsl::not_null<class Block const*>,
+    virtual gsl::not_null<class Block const*> getPlacementBlock(
+        gsl::not_null<class Block const*>,
         class Actor const&,
         class BlockPos const&,
         uint8_t,

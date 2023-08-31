@@ -54,7 +54,7 @@ public:
     /**
      * @symbol ?save\@Schema\@cereal\@\@QEAA?AUResult\@internal\@2\@AEAUSchemaWriter\@2\@Umeta_handle\@entt\@\@\@Z
      */
-    MCAPI struct cereal::internal::Result save(struct cereal::SchemaWriter&, struct entt::meta_handle);
+    MCAPI struct cereal::internal::Result save(struct cereal::SchemaWriter&, entt::meta_handle);
     /**
      * @symbol ?validate\@Schema\@cereal\@\@QEAA?AUResult\@internal\@2\@$$QEAUSchemaReader\@2\@\@Z
      */
@@ -75,8 +75,7 @@ public:
      * @symbol
      * ?loadImpl\@Schema\@cereal\@\@AEAA?AUResult\@internal\@2\@AEAUSchemaReader\@2\@Vmeta_any\@entt\@\@AEBV67\@\@Z
      */
-    MCAPI struct cereal::internal::Result
-    loadImpl(struct cereal::SchemaReader&, class entt::meta_any, class entt::meta_any const&);
+    MCAPI struct cereal::internal::Result loadImpl(struct cereal::SchemaReader&, entt::meta_any, entt::meta_any const&);
     // NOLINTEND
 };
 

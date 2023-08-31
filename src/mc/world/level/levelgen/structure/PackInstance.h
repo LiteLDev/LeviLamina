@@ -26,13 +26,13 @@ public:
      * ??0PackInstance\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VResourcePack\@\@\@Bedrock\@\@\@gsl\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_NPEAVPackSettings\@\@\@Z
      */
     MCAPI
-    PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, std::string const&, bool, class PackSettings*);
+    PackInstance(gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, std::string const&, bool, class PackSettings*);
     /**
      * @symbol
      * ??0PackInstance\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VResourcePack\@\@\@Bedrock\@\@\@gsl\@\@H_NPEAVPackSettings\@\@\@Z
      */
     MCAPI
-    PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, int32_t, bool, class PackSettings*);
+    PackInstance(gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, int32_t, bool, class PackSettings*);
     /**
      * @symbol ??0PackInstance\@\@QEAA\@AEBV0\@\@Z
      */

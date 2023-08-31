@@ -175,8 +175,7 @@ public:
      * @symbol
      * ?fireCurrentInputUpdated\@MinecraftEventing\@\@UEAAXAEBV?$not_null\@V?$NonOwnerPointer\@VIClientInstance\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
-    MCVAPI void
-    fireCurrentInputUpdated(class gsl::not_null<class Bedrock::NonOwnerPointer<class IClientInstance>> const&);
+    MCVAPI void fireCurrentInputUpdated(gsl::not_null<class Bedrock::NonOwnerPointer<class IClientInstance>> const&);
     /**
      * @symbol
      * ?fireDBStorageError\@MinecraftEventing\@\@UEAAXAEBULevelStorageEventingContext\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -601,7 +600,7 @@ public:
      * @symbol
      * ?fireEventMultiplayerSessionUpdate\@MinecraftEventing\@\@UEAAXV?$not_null\@PEBVLevel\@\@\@gsl\@\@PEBVPlayer\@\@\@Z
      */
-    MCVAPI void fireEventMultiplayerSessionUpdate(class gsl::not_null<class Level const*>, class Player const*);
+    MCVAPI void fireEventMultiplayerSessionUpdate(gsl::not_null<class Level const*>, class Player const*);
     /**
      * @symbol
      * ?fireEventNewContentCheckCompleted\@MinecraftEventing\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
@@ -1592,7 +1591,7 @@ public:
      * @symbol
      * ?getCrashTelemetryProcessor\@MinecraftEventing\@\@UEAA?AV?$not_null\@PEAVCrashTelemetryProcessor\@Bedrock\@\@\@gsl\@\@XZ
      */
-    MCVAPI class gsl::not_null<class Bedrock::CrashTelemetryProcessor*> getCrashTelemetryProcessor();
+    MCVAPI gsl::not_null<class Bedrock::CrashTelemetryProcessor*> getCrashTelemetryProcessor();
     /**
      * @symbol ?getEventManager\@MinecraftEventing\@\@EEBAAEAVEventManager\@Events\@Social\@\@XZ
      */
@@ -1620,7 +1619,7 @@ public:
      * ?init\@MinecraftEventing\@\@UEAAXAEBV?$not_null\@V?$NonOwnerPointer\@VIUserManager\@Social\@\@\@Bedrock\@\@\@gsl\@\@AEBV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@\@Z
      */
     MCVAPI void
-    init(class gsl::not_null<class Bedrock::NonOwnerPointer<class Social::IUserManager>> const&, class Bedrock::NonOwnerPointer<class AppPlatform> const&);
+    init(gsl::not_null<class Bedrock::NonOwnerPointer<class Social::IUserManager>> const&, class Bedrock::NonOwnerPointer<class AppPlatform> const&);
     /**
      * @symbol ?initDeviceAndSessionIds\@MinecraftEventing\@\@UEAAXXZ
      */

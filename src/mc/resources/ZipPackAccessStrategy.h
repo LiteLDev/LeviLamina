@@ -132,7 +132,7 @@ public:
      * ??0ZipPackAccessStrategy\@\@QEAA\@AEBV?$not_null\@V?$NonOwnerPointer\@VIFileAccess\@\@\@Bedrock\@\@\@gsl\@\@AEBVResourceLocation\@\@AEBVPath\@Core\@\@\@Z
      */
     MCAPI
-    ZipPackAccessStrategy(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const&, class ResourceLocation const&, class Core::Path const&);
+    ZipPackAccessStrategy(gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const&, class ResourceLocation const&, class Core::Path const&);
     // NOLINTEND
 
     // private:

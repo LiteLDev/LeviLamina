@@ -29,13 +29,13 @@ public:
      * @symbol
      * ?getAutomationClient\@DedicatedServer\@\@EEBA?AV?$not_null\@V?$NonOwnerPointer\@VAutomationClient\@Automation\@\@\@Bedrock\@\@\@gsl\@\@XZ
      */
-    MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient>>
-    getAutomationClient() const;
+    MCVAPI gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient>>
+           getAutomationClient() const;
     /**
      * @symbol
      * ?getFileArchiver\@DedicatedServer\@\@UEBA?AV?$not_null\@V?$NonOwnerPointer\@VFileArchiver\@\@\@Bedrock\@\@\@gsl\@\@XZ
      */
-    MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class FileArchiver>> getFileArchiver() const;
+    MCVAPI gsl::not_null<class Bedrock::NonOwnerPointer<class FileArchiver>> getFileArchiver() const;
     /**
      * @symbol ?getGameModuleShared\@DedicatedServer\@\@EEAAAEAVIGameModuleShared\@\@XZ
      */
@@ -44,7 +44,7 @@ public:
      * @symbol
      * ?getPrimaryMinecraft\@DedicatedServer\@\@EEAA?AV?$not_null\@V?$NonOwnerPointer\@VMinecraft\@\@\@Bedrock\@\@\@gsl\@\@XZ
      */
-    MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> getPrimaryMinecraft();
+    MCVAPI gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> getPrimaryMinecraft();
     /**
      * @symbol ?isDedicatedServer\@DedicatedServer\@\@EEBA_NXZ
      */

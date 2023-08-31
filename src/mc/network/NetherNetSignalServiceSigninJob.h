@@ -98,12 +98,12 @@ public:
      * ??0NetherNetSignalServiceSigninJob\@\@QEAA\@$$QEAV?$not_null\@V?$NonOwnerPointer\@UNetherNetConnector\@\@\@Bedrock\@\@\@gsl\@\@$$QEAV?$function\@$$A6AX_N\@Z\@std\@\@$$QEAV?$function\@$$A6AXXZ\@4\@V?$not_null\@V?$NonOwnerPointer\@VDisconnectionRequestHandler\@\@\@Bedrock\@\@\@2\@V?$not_null\@V?$NonOwnerPointer\@VServicesManager\@\@\@Bedrock\@\@\@2\@V?$not_null\@V?$NonOwnerPointer\@VIMinecraftEventing\@\@\@Bedrock\@\@\@2\@_N\@Z
      */
     MCAPI NetherNetSignalServiceSigninJob(
-        class gsl::not_null<class Bedrock::NonOwnerPointer<struct NetherNetConnector>>&&,
+        gsl::not_null<class Bedrock::NonOwnerPointer<struct NetherNetConnector>>&&,
         std::function<void(bool)>&&,
         std::function<void(void)>&&,
-        class gsl::not_null<class Bedrock::NonOwnerPointer<class DisconnectionRequestHandler>>,
-        class gsl::not_null<class Bedrock::NonOwnerPointer<class ServicesManager>>,
-        class gsl::not_null<class Bedrock::NonOwnerPointer<class IMinecraftEventing>>,
+        gsl::not_null<class Bedrock::NonOwnerPointer<class DisconnectionRequestHandler>>,
+        gsl::not_null<class Bedrock::NonOwnerPointer<class ServicesManager>>,
+        gsl::not_null<class Bedrock::NonOwnerPointer<class IMinecraftEventing>>,
         bool
     );
     // NOLINTEND
