@@ -68,13 +68,13 @@ public:
          * @symbol
          * ?getOwningDataStore\@EditorImpl\@DataStore\@Bedrock\@\@UEBA?AV?$not_null\@PEBVDataStore\@Bedrock\@\@\@gsl\@\@XZ
          */
-        virtual class gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const;
+        virtual gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const;
         /**
          * @vftbl 2
          * @symbol
          * ?getOwningDataStore\@EditorImpl\@DataStore\@Bedrock\@\@UEAA?AV?$not_null\@PEAVDataStore\@Bedrock\@\@\@gsl\@\@XZ
          */
-        virtual class gsl::not_null<class Bedrock::DataStore*> getOwningDataStore();
+        virtual gsl::not_null<class Bedrock::DataStore*> getOwningDataStore();
         /**
          * @vftbl 3
          * @symbol
@@ -138,13 +138,13 @@ public:
          * @symbol
          * ?getOwningDataStore\@EditorImpl\@DataStore\@Bedrock\@\@UEBA?AV?$not_null\@PEBVDataStore\@Bedrock\@\@\@gsl\@\@XZ
          */
-        virtual class gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const = 0;
+        virtual gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const = 0;
         /**
          * @vftbl 2
          * @symbol
          * ?getOwningDataStore\@EditorImpl\@DataStore\@Bedrock\@\@UEAA?AV?$not_null\@PEAVDataStore\@Bedrock\@\@\@gsl\@\@XZ
          */
-        virtual class gsl::not_null<class Bedrock::DataStore*> getOwningDataStore() = 0;
+        virtual gsl::not_null<class Bedrock::DataStore*> getOwningDataStore() = 0;
         /**
          * @vftbl 3
          * @symbol
@@ -174,13 +174,13 @@ public:
          * @symbol
          * ?getOwningDataStore\@ViewerImpl\@DataStore\@Bedrock\@\@UEBA?AV?$not_null\@PEBVDataStore\@Bedrock\@\@\@gsl\@\@XZ
          */
-        virtual class gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const;
+        virtual gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const;
         /**
          * @vftbl 2
          * @symbol
          * ?getOwningDataStore\@ViewerImpl\@DataStore\@Bedrock\@\@UEAA?AV?$not_null\@PEAVDataStore\@Bedrock\@\@\@gsl\@\@XZ
          */
-        virtual class gsl::not_null<class Bedrock::DataStore*> getOwningDataStore();
+        virtual gsl::not_null<class Bedrock::DataStore*> getOwningDataStore();
         /**
          * @vftbl 3
          * @symbol

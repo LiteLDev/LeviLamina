@@ -38,10 +38,10 @@ public:
      * @symbol
      * ?upgradeToNext\@BlockSelectionBox11920Upgrade\@BlockSelectionBoxVersioning\@\@UEBA_NAEAV?$GenericDocument\@U?$UTF8\@D\@rapidjson\@\@V?$MemoryPoolAllocator\@VCrtAllocator\@rapidjson\@\@\@2\@VCrtAllocator\@2\@\@rapidjson\@\@\@Z
      */
-    virtual bool upgradeToNext(class rapidjson::GenericDocument<
-                               struct rapidjson::UTF8<char>,
-                               class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                               class rapidjson::CrtAllocator>&) const;
+    virtual bool upgradeToNext(rapidjson::GenericDocument<
+                               rapidjson::UTF8<char>,
+                               rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
+                               rapidjson::CrtAllocator>&) const;
     /**
      * @symbol ??0BlockSelectionBox11920Upgrade\@BlockSelectionBoxVersioning\@\@QEAA\@XZ
      */

@@ -44,7 +44,7 @@ public:
      * ?validate\@SerializerTraits\@cereal\@\@QEAAAEAU12\@V?$function\@$$A6A_NAEAVmeta_any\@entt\@\@AEAVSerializerContext\@cereal\@\@\@Z\@std\@\@\@Z
      */
     MCAPI struct cereal::SerializerTraits&
-        validate(std::function<bool(class entt::meta_any&, class cereal::SerializerContext&)>);
+        validate(std::function<bool(entt::meta_any&, class cereal::SerializerContext&)>);
     /**
      * @symbol ??1SerializerTraits\@cereal\@\@QEAA\@XZ
      */
@@ -56,7 +56,7 @@ public:
     /**
      * @symbol ?performValidation\@SerializerTraits\@cereal\@\@AEBA_NVmeta_any\@entt\@\@AEAVSerializerContext\@2\@\@Z
      */
-    MCAPI bool performValidation(class entt::meta_any, class cereal::SerializerContext&) const;
+    MCAPI bool performValidation(entt::meta_any, class cereal::SerializerContext&) const;
     // NOLINTEND
 };
 

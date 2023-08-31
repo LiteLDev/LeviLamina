@@ -59,7 +59,7 @@ public:
      * @vftbl 8
      * @symbol ?write\@BufferedResponseBody\@Http\@Bedrock\@\@MEAA?AVerror_code\@std\@\@V?$span\@$$CBE$0?0\@gsl\@\@\@Z
      */
-    virtual std::error_code write(class gsl::span<uint8_t const>);
+    virtual std::error_code write(gsl::span<uint8_t const>);
     /**
      * @vftbl 9
      * @symbol ?complete\@BufferedResponseBody\@Http\@Bedrock\@\@MEAAXXZ
@@ -80,7 +80,7 @@ public:
      * @vftbl 12
      * @symbol ?getLoggableData\@BufferedResponseBody\@Http\@Bedrock\@\@MEBA?AV?$span\@$$CBE$0?0\@gsl\@\@XZ
      */
-    virtual class gsl::span<uint8_t const> getLoggableData() const;
+    virtual gsl::span<uint8_t const> getLoggableData() const;
     /**
      * @symbol ?get\@HttpErrorCategory\@Http\@Bedrock\@\@SAAEBVerror_category\@std\@\@XZ
      */

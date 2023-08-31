@@ -61,7 +61,7 @@ public:
      * @vftbl 7
      * @symbol ?_realloc\@InternalHeapAllocator\@Memory\@Bedrock\@\@EEAAPEAXV?$not_null\@PEAX\@gsl\@\@_K\@Z
      */
-    virtual void* _realloc(class gsl::not_null<void*>, uint64_t);
+    virtual void* _realloc(gsl::not_null<void*>, uint64_t);
     // NOLINTEND
 };
 

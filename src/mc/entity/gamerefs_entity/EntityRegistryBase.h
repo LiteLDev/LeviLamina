@@ -18,7 +18,7 @@ public:
      * @symbol
      * ??0EntityRegistryBase\@\@QEAA\@AEAV?$basic_registry\@VEntityId\@\@V?$allocator\@VEntityId\@\@\@std\@\@\@entt\@\@\@Z
      */
-    MCAPI EntityRegistryBase(class entt::basic_registry<class EntityId, std::allocator<class EntityId>>&);
+    MCAPI EntityRegistryBase(entt::basic_registry<class EntityId>&);
     /**
      * @symbol ?isValidEntity\@EntityRegistryBase\@\@QEBA_NAEBVEntityContextBase\@\@\@Z
      */

@@ -181,6 +181,6 @@ public:
     /**
      * @symbol ??0NBTSchemaReader\@\@QEAA\@V?$not_null\@PEBVCompoundTag\@\@\@gsl\@\@\@Z
      */
-    MCAPI NBTSchemaReader(class gsl::not_null<class CompoundTag const*>);
+    MCAPI NBTSchemaReader(gsl::not_null<class CompoundTag const*>);
     // NOLINTEND
 };

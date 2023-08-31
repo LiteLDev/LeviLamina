@@ -51,12 +51,8 @@ public:
      * @symbol
      * ?onMakeObject\@ScriptPluginHandleCounter\@\@UEAAXAEAVLifetimeRegistry\@Scripting\@\@UObjectHandle\@3\@AEBVmeta_type\@entt\@\@I\@Z
      */
-    virtual void onMakeObject(
-        class Scripting::LifetimeRegistry&,
-        struct Scripting::ObjectHandle,
-        class entt::meta_type const&,
-        uint32_t
-    );
+    virtual void
+    onMakeObject(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle, entt::meta_type const&, uint32_t);
     /**
      * @vftbl 2
      * @symbol
@@ -65,7 +61,7 @@ public:
     virtual void onDestroyObject(
         class Scripting::LifetimeRegistry&,
         struct Scripting::ObjectHandle,
-        class entt::meta_type const&,
+        entt::meta_type const&,
         uint32_t
     );
     /**
@@ -73,12 +69,8 @@ public:
      * @symbol
      * ?onTrackObject\@ScriptPluginHandleCounter\@\@UEAAXAEAVLifetimeRegistry\@Scripting\@\@UObjectHandle\@3\@AEBVmeta_type\@entt\@\@I\@Z
      */
-    virtual void onTrackObject(
-        class Scripting::LifetimeRegistry&,
-        struct Scripting::ObjectHandle,
-        class entt::meta_type const&,
-        uint32_t
-    );
+    virtual void
+    onTrackObject(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle, entt::meta_type const&, uint32_t);
     /**
      * @vftbl 4
      * @symbol
@@ -87,7 +79,7 @@ public:
     virtual void onUntrackObject(
         class Scripting::LifetimeRegistry&,
         struct Scripting::ObjectHandle,
-        class entt::meta_type const&,
+        entt::meta_type const&,
         uint32_t
     );
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINHANDLECOUNTER
@@ -117,6 +109,6 @@ public:
     /**
      * @symbol ?_getOrMakeStats\@ScriptPluginHandleCounter\@\@AEAAPEAUTypeStats\@1\@AEBVmeta_type\@entt\@\@\@Z
      */
-    MCAPI struct ScriptPluginHandleCounter::TypeStats* _getOrMakeStats(class entt::meta_type const&);
+    MCAPI struct ScriptPluginHandleCounter::TypeStats* _getOrMakeStats(entt::meta_type const&);
     // NOLINTEND
 };

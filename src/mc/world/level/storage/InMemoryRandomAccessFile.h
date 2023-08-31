@@ -21,7 +21,7 @@ public:
      * @vftbl 1
      * @symbol ?Read\@InMemoryRandomAccessFile\@\@UEBA?AVStatus\@leveldb\@\@_K0PEAVSlice\@3\@PEAD\@Z
      */
-    virtual class leveldb::Status Read(uint64_t, uint64_t, class leveldb::Slice*, char*) const;
+    virtual leveldb::Status Read(uint64_t, uint64_t, leveldb::Slice*, char*) const;
     /**
      * @symbol ??0InMemoryRandomAccessFile\@\@QEAA\@V?$shared_ptr\@VInMemoryFile\@\@\@std\@\@\@Z
      */

@@ -1656,7 +1656,7 @@ public:
     /**
      * @symbol ?forEachLeashedActor\@Actor\@\@QEAAXV?$function\@$$A6AXV?$not_null\@PEAVActor\@\@\@gsl\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI void forEachLeashedActor(std::function<void(class gsl::not_null<class Actor*>)>);
+    MCAPI void forEachLeashedActor(std::function<void(gsl::not_null<class Actor*>)>);
     /**
      * @symbol ?getAABB\@Actor\@\@QEBAAEBVAABB\@\@XZ
      */
@@ -1693,11 +1693,11 @@ public:
     /**
      * @symbol ?getAttributes\@Actor\@\@QEBA?AV?$not_null\@PEBVBaseAttributeMap\@\@\@gsl\@\@XZ
      */
-    MCAPI class gsl::not_null<class BaseAttributeMap const*> getAttributes() const;
+    MCAPI gsl::not_null<class BaseAttributeMap const*> getAttributes() const;
     /**
      * @symbol ?getAttributes\@Actor\@\@QEAA?AV?$not_null\@PEAVBaseAttributeMap\@\@\@gsl\@\@XZ
      */
-    MCAPI class gsl::not_null<class BaseAttributeMap*> getAttributes();
+    MCAPI gsl::not_null<class BaseAttributeMap*> getAttributes();
     /**
      * @symbol ?getBlockPosCurrentlyStandingOn\@Actor\@\@QEBA?AVBlockPos\@\@PEBV1\@\@Z
      */
@@ -1922,12 +1922,12 @@ public:
      * @symbol
      * ?getMovementProxy\@Actor\@\@QEBA?AV?$not_null\@V?$shared_ptr\@$$CBUIActorMovementProxy\@\@\@std\@\@\@gsl\@\@XZ
      */
-    MCAPI class gsl::not_null<std::shared_ptr<struct IActorMovementProxy const>> getMovementProxy() const;
+    MCAPI gsl::not_null<std::shared_ptr<struct IActorMovementProxy const>> getMovementProxy() const;
     /**
      * @symbol
      * ?getMovementProxy\@Actor\@\@QEAA?AV?$not_null\@V?$shared_ptr\@UIActorMovementProxy\@\@\@std\@\@\@gsl\@\@XZ
      */
-    MCAPI class gsl::not_null<std::shared_ptr<struct IActorMovementProxy>> getMovementProxy();
+    MCAPI gsl::not_null<std::shared_ptr<struct IActorMovementProxy>> getMovementProxy();
     /**
      * @symbol ?getOffhandSlot\@Actor\@\@QEBAAEBVItemStack\@\@XZ
      */
@@ -3148,7 +3148,7 @@ public:
      * @symbol
      * ?_assignActorMovementProxy\@Actor\@\@IEAAXV?$not_null\@V?$shared_ptr\@UIActorMovementProxy\@\@\@std\@\@\@gsl\@\@\@Z
      */
-    MCAPI void _assignActorMovementProxy(class gsl::not_null<std::shared_ptr<struct IActorMovementProxy>>);
+    MCAPI void _assignActorMovementProxy(gsl::not_null<std::shared_ptr<struct IActorMovementProxy>>);
     /**
      * @symbol ?_drop\@Actor\@\@IEAAPEBVItemActor\@\@AEBVItemStack\@\@_N\@Z
      */

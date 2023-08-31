@@ -24,7 +24,7 @@ public:
      * @vftbl 1
      * @symbol ?registerEvents\@HoldBlockSystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
      */
-    virtual void registerEvents(class entt::basic_dispatcher<std::allocator<void>>&);
+    virtual void registerEvents(entt::dispatcher&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOLDBLOCKSYSTEM
     /**
      * @symbol ?tick\@HoldBlockSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z

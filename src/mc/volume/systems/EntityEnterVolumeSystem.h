@@ -35,7 +35,7 @@ public:
      * @symbol
      * ??0EntityEnterVolumeSystem\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@$$CBVILevel\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
-    MCAPI EntityEnterVolumeSystem(class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>);
+    MCAPI EntityEnterVolumeSystem(gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>);
     // NOLINTEND
 
     // private:

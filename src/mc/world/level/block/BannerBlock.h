@@ -311,6 +311,6 @@ public:
      * @symbol
      * ?_itemInstanceFromBlockEntity\@BannerBlock\@\@AEBA?AVItemInstance\@\@V?$not_null\@PEBVBannerBlockActor\@\@\@gsl\@\@\@Z
      */
-    MCAPI class ItemInstance _itemInstanceFromBlockEntity(class gsl::not_null<class BannerBlockActor const*>) const;
+    MCAPI class ItemInstance _itemInstanceFromBlockEntity(gsl::not_null<class BannerBlockActor const*>) const;
     // NOLINTEND
 };

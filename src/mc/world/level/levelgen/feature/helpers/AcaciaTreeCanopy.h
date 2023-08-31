@@ -42,7 +42,7 @@ public:
      * ?_placeLeaf\@AcaciaTreeCanopy\@\@AEBAXAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@V?$not_null\@PEBVBlock\@\@\@gsl\@\@AEBUTreeParams\@TreeHelper\@\@\@Z
      */
     MCAPI void
-    _placeLeaf(class IBlockWorldGenAPI&, class BlockPos const&, class gsl::not_null<class Block const*>, struct TreeHelper::TreeParams const&)
+    _placeLeaf(class IBlockWorldGenAPI&, class BlockPos const&, gsl::not_null<class Block const*>, struct TreeHelper::TreeParams const&)
         const;
     // NOLINTEND
 };

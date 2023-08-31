@@ -93,7 +93,7 @@ public:
     MCAPI LegacyTelemetryEventPacket(
         class Player const*,
         class Actor const*,
-        class gsl::not_null<class Mob const*>,
+        gsl::not_null<class Mob const*>,
         enum class ActorDamageCause,
         std::string,
         int32_t,
@@ -129,11 +129,11 @@ public:
     /**
      * @symbol ??0LegacyTelemetryEventPacket\@\@QEAA\@PEBVPlayer\@\@V?$not_null\@PEBVMob\@\@\@gsl\@\@\@Z
      */
-    MCAPI LegacyTelemetryEventPacket(class Player const*, class gsl::not_null<class Mob const*>);
+    MCAPI LegacyTelemetryEventPacket(class Player const*, gsl::not_null<class Mob const*>);
     /**
      * @symbol ??0LegacyTelemetryEventPacket\@\@QEAA\@PEBVPlayer\@\@HV?$not_null\@PEBVActor\@\@\@gsl\@\@\@Z
      */
-    MCAPI LegacyTelemetryEventPacket(class Player const*, int32_t, class gsl::not_null<class Actor const*>);
+    MCAPI LegacyTelemetryEventPacket(class Player const*, int32_t, gsl::not_null<class Actor const*>);
     /**
      * @symbol
      * ??0LegacyTelemetryEventPacket\@\@QEAA\@AEBVPlayer\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -145,7 +145,7 @@ public:
      */
     MCAPI LegacyTelemetryEventPacket(
         class Player const*,
-        class gsl::not_null<class Actor const*>,
+        gsl::not_null<class Actor const*>,
         enum class MinecraftEventing::InteractionType
     );
     /**
@@ -171,7 +171,7 @@ public:
     MCAPI LegacyTelemetryEventPacket(
         class Player const*,
         class Actor const*,
-        class gsl::not_null<class Mob const*>,
+        gsl::not_null<class Mob const*>,
         enum class ActorDamageCause,
         enum class ActorType
     );

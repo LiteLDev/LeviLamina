@@ -45,7 +45,7 @@ namespace Bedrock::Http {
  * @symbol
  * ?getStringDataAsSpan\@Http\@Bedrock\@\@YA?AV?$span\@$$CBE$0?0\@gsl\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
  */
-MCAPI class gsl::span<uint8_t const> getStringDataAsSpan(std::string const&);
+MCAPI gsl::span<uint8_t const> getStringDataAsSpan(std::string const&);
 /**
  * @symbol
  * ?initializeLibHttpClient\@Http\@Bedrock\@\@YA?AV?$shared_ptr\@VLibHttpClientInstance\@Http\@Bedrock\@\@\@std\@\@XZ
@@ -55,7 +55,7 @@ MCAPI std::shared_ptr<class Bedrock::Http::LibHttpClientInstance> initializeLibH
  * @symbol
  * ?interpretDataAsUtf8String\@Http\@Bedrock\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$span\@$$CBE$0?0\@gsl\@\@\@Z
  */
-MCAPI std::string interpretDataAsUtf8String(class gsl::span<uint8_t const>);
+MCAPI std::string interpretDataAsUtf8String(gsl::span<uint8_t const>);
 /**
  * @symbol ?isInitialized\@Http\@Bedrock\@\@YA_NXZ
  */

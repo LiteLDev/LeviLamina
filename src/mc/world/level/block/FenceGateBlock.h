@@ -317,7 +317,6 @@ public:
      * ?_setOpen\@FenceGateBlock\@\@AEBAXAEAVBlockSource\@\@V?$not_null\@PEBVBlock\@\@\@gsl\@\@AEBVBlockPos\@\@PEAVPlayer\@\@_N\@Z
      */
     MCAPI void
-    _setOpen(class BlockSource&, class gsl::not_null<class Block const*>, class BlockPos const&, class Player*, bool)
-        const;
+    _setOpen(class BlockSource&, gsl::not_null<class Block const*>, class BlockPos const&, class Player*, bool) const;
     // NOLINTEND
 };

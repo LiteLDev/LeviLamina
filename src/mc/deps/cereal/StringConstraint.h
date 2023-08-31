@@ -25,7 +25,7 @@ public:
      * @vftbl 0
      * @symbol ?doValidate\@StringConstraint\@cereal\@\@EEBA_NAEBVmeta_any\@entt\@\@AEAVSerializerContext\@2\@\@Z
      */
-    virtual bool doValidate(class entt::meta_any const&, class cereal::SerializerContext&) const;
+    virtual bool doValidate(entt::meta_any const&, class cereal::SerializerContext&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREAL_STRINGCONSTRAINT
     /**
      * @symbol __unk_destructor_-1

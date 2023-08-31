@@ -304,8 +304,8 @@ public:
      * @symbol
      * ?getFileAccess\@AppPlatform\@\@UEAA?AV?$not_null\@V?$NonOwnerPointer\@VIFileAccess\@\@\@Bedrock\@\@\@gsl\@\@W4ResourceFileSystem\@\@\@Z
      */
-    MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>>
-        getFileAccess(enum class ResourceFileSystem);
+    MCVAPI gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> getFileAccess(enum class ResourceFileSystem
+    );
     /**
      * @symbol ?getFocusState\@AppPlatform\@\@UEAA?AW4AppFocusState\@\@XZ
      */

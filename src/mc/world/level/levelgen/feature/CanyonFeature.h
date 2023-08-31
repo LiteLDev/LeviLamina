@@ -28,7 +28,7 @@ public:
      * ?carve\@CanyonFeature\@\@MEBA_NAEAVBlockVolume\@\@AEBVBiomeSource\@\@AEAVRandom\@\@AEBVChunkPos\@\@AEBVVec3\@\@4HHHHHHMMV?$span\@$$CBM$0?0\@gsl\@\@AEBUWorldGenContext\@\@\@Z
      */
     virtual bool
-    carve(class BlockVolume&, class BiomeSource const&, class Random&, class ChunkPos const&, class Vec3 const&, class Vec3 const&, int32_t, int32_t, int32_t, int32_t, int32_t, int32_t, float, float, class gsl::span<float const>, struct WorldGenContext const&)
+    carve(class BlockVolume&, class BiomeSource const&, class Random&, class ChunkPos const&, class Vec3 const&, class Vec3 const&, int32_t, int32_t, int32_t, int32_t, int32_t, int32_t, float, float, gsl::span<float const>, struct WorldGenContext const&)
         const;
     /**
      * @vftbl 2

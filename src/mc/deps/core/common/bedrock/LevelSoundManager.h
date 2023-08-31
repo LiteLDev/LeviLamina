@@ -34,11 +34,8 @@ public:
      * @symbol
      * ??0LevelSoundManager\@\@QEAA\@AEBV?$not_null\@V?$NonOwnerPointer\@VSoundPlayerInterface\@\@\@Bedrock\@\@\@gsl\@\@_N1\@Z
      */
-    MCAPI LevelSoundManager(
-        class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> const&,
-        bool,
-        bool
-    );
+    MCAPI
+    LevelSoundManager(gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> const&, bool, bool);
     /**
      * @symbol
      * ?broadcastSoundEvent\@LevelSoundManager\@\@QEAAXAEAVIDimension\@\@W4LevelSoundEvent\@\@AEBVVec3\@\@HAEBUActorDefinitionIdentifier\@\@_N4PEAVPlayer\@\@\@Z
@@ -49,7 +46,7 @@ public:
      * @symbol
      * ?getSoundPlayer\@LevelSoundManager\@\@QEBA?AV?$not_null\@V?$NonOwnerPointer\@VSoundPlayerInterface\@\@\@Bedrock\@\@\@gsl\@\@XZ
      */
-    MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> getSoundPlayer() const;
+    MCAPI gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> getSoundPlayer() const;
     /**
      * @symbol
      * ?playPredictiveSynchronizedSound\@LevelSoundManager\@\@QEAAXAEAVIDimension\@\@W4LevelSoundEvent\@\@AEBVVec3\@\@PEAVPlayer\@\@HAEBUActorDefinitionIdentifier\@\@_N5\@Z

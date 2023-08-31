@@ -26,7 +26,7 @@ public:
      * @symbol
      * ?doValidate\@ExpressionNodeCerealConstraint\@\@EEBA_NAEBVmeta_any\@entt\@\@AEAVSerializerContext\@cereal\@\@\@Z
      */
-    virtual bool doValidate(class entt::meta_any const&, class cereal::SerializerContext&) const;
+    virtual bool doValidate(entt::meta_any const&, class cereal::SerializerContext&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPRESSIONNODECEREALCONSTRAINT
     /**
      * @symbol __unk_destructor_-1

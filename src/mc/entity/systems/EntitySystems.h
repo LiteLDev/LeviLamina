@@ -21,7 +21,7 @@ public:
      * ?registerTickingSystem\@EntitySystems\@\@UEAAXV?$span\@$$CBV?$typeid_t\@USystemCategory\@\@\@Bedrock\@\@$0?0\@gsl\@\@V?$unique_ptr\@VITickingSystem\@\@U?$default_delete\@VITickingSystem\@\@\@std\@\@\@std\@\@AEBUSystemInfo\@\@UEntitySystemTickingMode\@\@\@Z
      */
     MCVAPI void registerTickingSystem(
-        class gsl::span<class Bedrock::typeid_t<struct SystemCategory> const>,
+        gsl::span<class Bedrock::typeid_t<struct SystemCategory> const>,
         std::unique_ptr<class ITickingSystem>,
         struct SystemInfo const&,
         struct EntitySystemTickingMode

@@ -48,7 +48,7 @@ public:
      * ?load\@RealmsUnknownPackSource\@\@UEAA?AVPackSourceReport\@\@AEAVIPackManifestFactory\@\@AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentKeyProvider\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     virtual class PackSourceReport
-    load(class IPackManifestFactory&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&) = 0;
+    load(class IPackManifestFactory&, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&) = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSOURCE
     /**
      * @symbol __unk_destructor_-1
@@ -64,6 +64,6 @@ public:
      * ?resolveUpgradeDependencies\@PackSource\@\@QEAAXAEAVPack\@\@AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentKeyProvider\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     MCAPI void
-    resolveUpgradeDependencies(class Pack&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
+    resolveUpgradeDependencies(class Pack&, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
     // NOLINTEND
 };

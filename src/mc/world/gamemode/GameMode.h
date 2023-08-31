@@ -166,8 +166,8 @@ public:
      * @symbol
      * ?createBlockBreakCaptureScope\@GameMode\@\@QEAA?AV?$final_action\@V?$function\@$$A6AXXZ\@std\@\@\@gsl\@\@V?$function\@$$A6AXAEBVItemStack\@\@0AEBVBlockPos\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI class gsl::final_action<std::function<void(void)>>
-        createBlockBreakCaptureScope(std::function<
+    MCAPI gsl::final_action<std::function<void(void)>>
+          createBlockBreakCaptureScope(std::function<
                                      void(class ItemStack const&, class ItemStack const&, class BlockPos const&)>);
     /**
      * @symbol ?getDestroyBlockFace\@GameMode\@\@QEBAEXZ

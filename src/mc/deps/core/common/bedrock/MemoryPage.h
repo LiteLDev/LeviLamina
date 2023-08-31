@@ -24,7 +24,7 @@ public:
      * ??0MemoryPage\@JSONObject\@Bedrock\@\@QEAA\@V?$not_null\@PEAVDocument\@JSONObject\@Bedrock\@\@\@gsl\@\@PEAV012\@II\@Z
      */
     MCAPI MemoryPage(
-        class gsl::not_null<class Bedrock::JSONObject::Document*>,
+        gsl::not_null<class Bedrock::JSONObject::Document*>,
         class Bedrock::JSONObject::MemoryPage*,
         uint32_t,
         uint32_t

@@ -21,6 +21,6 @@ public:
      * @symbol
      * ?registerListener\@GameEventListenerRegistry\@\@QEAA?AV?$final_action\@V?$function\@$$A6AXXZ\@std\@\@\@gsl\@\@AEAVGameEventListener\@\@\@Z
      */
-    MCAPI class gsl::final_action<std::function<void(void)>> registerListener(class GameEventListener&);
+    MCAPI gsl::final_action<std::function<void(void)>> registerListener(class GameEventListener&);
     // NOLINTEND
 };

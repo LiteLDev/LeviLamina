@@ -36,14 +36,14 @@ public:
      * @symbol
      * ?getAutomationClient\@Manager\@CodeBuilder\@\@UEBA?AV?$not_null\@V?$NonOwnerPointer\@VAutomationClient\@Automation\@\@\@Bedrock\@\@\@gsl\@\@XZ
      */
-    virtual class gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient>>
+    virtual gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient>>
     getAutomationClient() const;
     /**
      * @vftbl 2
      * @symbol
      * ?getEventing\@Manager\@CodeBuilder\@\@UEBA?AV?$not_null\@V?$NonOwnerPointer\@VIMessenger\@CodeBuilder\@\@\@Bedrock\@\@\@gsl\@\@XZ
      */
-    virtual class gsl::not_null<class Bedrock::NonOwnerPointer<class CodeBuilder::IMessenger>> getEventing() const;
+    virtual gsl::not_null<class Bedrock::NonOwnerPointer<class CodeBuilder::IMessenger>> getEventing() const;
     /**
      * @symbol ??0Manager\@CodeBuilder\@\@QEAA\@AEAVIMinecraftApp\@\@\@Z
      */

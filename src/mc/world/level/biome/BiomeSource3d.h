@@ -39,7 +39,7 @@ public:
      * @vftbl 4
      * @symbol ?containsOnly\@BiomeSource3d\@\@UEBA_NHHHHV?$span\@$$CB_K$0?0\@gsl\@\@\@Z
      */
-    virtual bool containsOnly(int32_t, int32_t, int32_t, int32_t, class gsl::span<uint64_t const>) const;
+    virtual bool containsOnly(int32_t, int32_t, int32_t, int32_t, gsl::span<uint64_t const>) const;
     /**
      * @vftbl 5
      * @symbol ?getBiome\@BiomeSource3d\@\@UEBAPEBVBiome\@\@AEBVBlockPos\@\@\@Z

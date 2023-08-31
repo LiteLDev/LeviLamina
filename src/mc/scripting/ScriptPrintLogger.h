@@ -44,12 +44,12 @@ public:
      * @vftbl 4
      * @symbol ?onException\@ScriptPrintLogger\@\@UEBAXUContextId\@Scripting\@\@AEBVmeta_any\@entt\@\@\@Z
      */
-    virtual void onException(struct Scripting::ContextId, class entt::meta_any const&) const;
+    virtual void onException(struct Scripting::ContextId, entt::meta_any const&) const;
     /**
      * @vftbl 5
      * @symbol ?shouldPrintException\@ScriptPrintLogger\@\@UEBA_NUContextId\@Scripting\@\@AEBVmeta_any\@entt\@\@\@Z
      */
-    virtual bool shouldPrintException(struct Scripting::ContextId, class entt::meta_any const&) const;
+    virtual bool shouldPrintException(struct Scripting::ContextId, entt::meta_any const&) const;
     /**
      * @vftbl 6
      * @symbol

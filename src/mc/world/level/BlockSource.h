@@ -196,14 +196,13 @@ public:
      * @symbol
      * ?fetchEntities\@BlockSource\@\@UEAA?AV?$span\@V?$not_null\@PEAVActor\@\@\@gsl\@\@$0?0\@gsl\@\@PEBVActor\@\@AEBVAABB\@\@_N2\@Z
      */
-    virtual class gsl::span<class gsl::not_null<class Actor*>>
-    fetchEntities(class Actor const*, class AABB const&, bool, bool);
+    virtual gsl::span<gsl::not_null<class Actor*>> fetchEntities(class Actor const*, class AABB const&, bool, bool);
     /**
      * @vftbl 26
      * @symbol
      * ?fetchEntities\@BlockSource\@\@UEAA?AV?$span\@V?$not_null\@PEAVActor\@\@\@gsl\@\@$0?0\@gsl\@\@W4ActorType\@\@AEBVAABB\@\@PEBVActor\@\@V?$function\@$$A6A_NPEAVActor\@\@\@Z\@std\@\@\@Z
      */
-    virtual class gsl::span<class gsl::not_null<class Actor*>>
+    virtual gsl::span<gsl::not_null<class Actor*>>
     fetchEntities(enum class ActorType, class AABB const&, class Actor const*, std::function<bool(class Actor*)>);
     /**
      * @vftbl 27
@@ -307,8 +306,8 @@ public:
      * @symbol
      * ?_fetchEntities\@BlockSource\@\@QEAA?AV?$span\@V?$not_null\@PEAVActor\@\@\@gsl\@\@$0?0\@gsl\@\@PEBUIActorMovementProxy\@\@AEBVAABB\@\@_N\@Z
      */
-    MCAPI class gsl::span<class gsl::not_null<class Actor*>>
-    _fetchEntities(struct IActorMovementProxy const*, class AABB const&, bool);
+    MCAPI gsl::span<gsl::not_null<class Actor*>>
+          _fetchEntities(struct IActorMovementProxy const*, class AABB const&, bool);
     /**
      * @symbol ?addToRandomTickingQueue\@BlockSource\@\@QEAAXAEBVBlockPos\@\@AEBVBlock\@\@HH_N\@Z
      */
@@ -417,8 +416,8 @@ public:
      * @symbol
      * ?fetchActors\@BlockSource\@\@QEAA?AV?$span\@V?$not_null\@PEAVActor\@\@\@gsl\@\@$0?0\@gsl\@\@AEBUActorDefinitionIdentifier\@\@AEBVAABB\@\@\@Z
      */
-    MCAPI class gsl::span<class gsl::not_null<class Actor*>>
-    fetchActors(struct ActorDefinitionIdentifier const&, class AABB const&);
+    MCAPI gsl::span<gsl::not_null<class Actor*>>
+          fetchActors(struct ActorDefinitionIdentifier const&, class AABB const&);
     /**
      * @symbol
      * ?fetchBlockEntities\@BlockSource\@\@QEAAAEBV?$vector\@PEAVBlockActor\@\@V?$allocator\@PEAVBlockActor\@\@\@std\@\@\@std\@\@AEBVAABB\@\@\@Z
@@ -442,32 +441,32 @@ public:
      * @symbol
      * ?fetchBlocksInBox\@BlockSource\@\@QEAA?AV?$span\@$$CBV?$BlockDataFetchResult\@VBlock\@\@\@\@$0?0\@gsl\@\@AEBVBoundingBox\@\@V?$function\@$$A6A_NAEBVBlock\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI class gsl::span<class BlockDataFetchResult<class Block> const>
-    fetchBlocksInBox(class BoundingBox const&, std::function<bool(class Block const&)>);
+    MCAPI gsl::span<class BlockDataFetchResult<class Block> const>
+          fetchBlocksInBox(class BoundingBox const&, std::function<bool(class Block const&)>);
     /**
      * @symbol
      * ?fetchBlocksInBoxSorted\@BlockSource\@\@QEAA?AV?$span\@$$CBV?$BlockDataFetchResult\@VBlock\@\@\@\@$0?0\@gsl\@\@AEBVBoundingBox\@\@V?$function\@$$A6A_NAEBVBlock\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI class gsl::span<class BlockDataFetchResult<class Block> const>
-    fetchBlocksInBoxSorted(class BoundingBox const&, std::function<bool(class Block const&)>);
+    MCAPI gsl::span<class BlockDataFetchResult<class Block> const>
+          fetchBlocksInBoxSorted(class BoundingBox const&, std::function<bool(class Block const&)>);
     /**
      * @symbol
      * ?fetchBlocksInCylinder\@BlockSource\@\@QEAA?AV?$span\@$$CBV?$BlockDataFetchResult\@VBlock\@\@\@\@$0?0\@gsl\@\@AEBVBlockPos\@\@IIV?$function\@$$A6A_NAEBVBlock\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI class gsl::span<class BlockDataFetchResult<class Block> const>
-    fetchBlocksInCylinder(class BlockPos const&, uint32_t, uint32_t, std::function<bool(class Block const&)>);
+    MCAPI gsl::span<class BlockDataFetchResult<class Block> const>
+          fetchBlocksInCylinder(class BlockPos const&, uint32_t, uint32_t, std::function<bool(class Block const&)>);
     /**
      * @symbol
      * ?fetchBlocksInCylinderSorted\@BlockSource\@\@QEAA?AV?$span\@$$CBV?$BlockDataFetchResult\@VBlock\@\@\@\@$0?0\@gsl\@\@AEBVBlockPos\@\@IIV?$function\@$$A6A_NAEBVBlock\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI class gsl::span<class BlockDataFetchResult<class Block> const>
+    MCAPI gsl::span<class BlockDataFetchResult<class Block> const>
     fetchBlocksInCylinderSorted(class BlockPos const&, uint32_t, uint32_t, std::function<bool(class Block const&)>);
     /**
      * @symbol
      * ?fetchEntities\@BlockSource\@\@QEAA?AV?$span\@V?$not_null\@PEAVActor\@\@\@gsl\@\@$0?0\@gsl\@\@V?$span\@V?$not_null\@PEBVActor\@\@\@gsl\@\@$0?0\@3\@AEBVAABB\@\@_N2\@Z
      */
-    MCAPI class gsl::span<class gsl::not_null<class Actor*>>
-    fetchEntities(class gsl::span<class gsl::not_null<class Actor const*>>, class AABB const&, bool, bool);
+    MCAPI gsl::span<gsl::not_null<class Actor*>>
+          fetchEntities(gsl::span<gsl::not_null<class Actor const*>>, class AABB const&, bool, bool);
     /**
      * @symbol
      * ?fetchEntities2\@BlockSource\@\@QEAAAEBV?$vector\@PEAVActor\@\@V?$allocator\@PEAVActor\@\@\@std\@\@\@std\@\@W4ActorType\@\@AEBVAABB\@\@_N\@Z
@@ -707,7 +706,7 @@ public:
      * @symbol
      * ?isUnobstructedByEntities\@BlockSource\@\@QEAA_NAEBVAABB\@\@V?$span\@V?$not_null\@PEBVActor\@\@\@gsl\@\@$0?0\@gsl\@\@\@Z
      */
-    MCAPI bool isUnobstructedByEntities(class AABB const&, class gsl::span<class gsl::not_null<class Actor const*>>);
+    MCAPI bool isUnobstructedByEntities(class AABB const&, gsl::span<gsl::not_null<class Actor const*>>);
     /**
      * @symbol ?isUnobstructedByEntities\@BlockSource\@\@QEAA_NAEBVAABB\@\@PEBVActor\@\@\@Z
      */
@@ -865,12 +864,8 @@ public:
      * @symbol
      * ?_fetchEntityHelper\@BlockSource\@\@IEAAXVWeakEntityRef\@\@V?$span\@V?$not_null\@PEBVActor\@\@\@gsl\@\@$0?0\@gsl\@\@AEBVAABB\@\@_N\@Z
      */
-    MCAPI void _fetchEntityHelper(
-        class WeakEntityRef,
-        class gsl::span<class gsl::not_null<class Actor const*>>,
-        class AABB const&,
-        bool
-    );
+    MCAPI void
+    _fetchEntityHelper(class WeakEntityRef, gsl::span<gsl::not_null<class Actor const*>>, class AABB const&, bool);
     /**
      * @symbol ?_hasChunksAt\@BlockSource\@\@IEBA_NAEBUBounds\@\@_N\@Z
      */

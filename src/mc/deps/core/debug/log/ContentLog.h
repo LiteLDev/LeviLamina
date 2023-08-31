@@ -30,7 +30,7 @@ public:
         /**
          * @symbol ??0ContentLogEndPointData\@ContentLog\@\@QEAA\@V?$not_null\@PEAVContentLogEndPoint\@\@\@gsl\@\@\@Z
          */
-        MCAPI ContentLogEndPointData(class gsl::not_null<class ContentLogEndPoint*>);
+        MCAPI ContentLogEndPointData(gsl::not_null<class ContentLogEndPoint*>);
         // NOLINTEND
     };
 

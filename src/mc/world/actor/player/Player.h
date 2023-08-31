@@ -1784,7 +1784,7 @@ public:
      */
     MCAPI static bool checkAndFixSpawnPosition(
         class Vec3&,
-        std::vector<class gsl::not_null<class BlockSource*>>,
+        std::vector<gsl::not_null<class BlockSource*>>,
         class AABB,
         bool,
         bool,
@@ -1944,15 +1944,9 @@ public:
      * @symbol
      * ?_checkAndFixSpawnPosition\@Player\@\@IEBA_NAEAVVec3\@\@V?$vector\@V?$not_null\@PEAVBlockSource\@\@\@gsl\@\@V?$allocator\@V?$not_null\@PEAVBlockSource\@\@\@gsl\@\@\@std\@\@\@std\@\@_N2222\@Z
      */
-    MCAPI bool _checkAndFixSpawnPosition(
-        class Vec3&,
-        std::vector<class gsl::not_null<class BlockSource*>>,
-        bool,
-        bool,
-        bool,
-        bool,
-        bool
-    ) const;
+    MCAPI bool
+    _checkAndFixSpawnPosition(class Vec3&, std::vector<gsl::not_null<class BlockSource*>>, bool, bool, bool, bool, bool)
+        const;
     /**
      * @symbol ?_chooseSpawnArea\@Player\@\@IEAAXXZ
      */
@@ -2009,7 +2003,7 @@ public:
      * @symbol
      * ?_findFallbackSpawnPosition\@Player\@\@AEAA_NAEAVVec3\@\@V?$vector\@V?$not_null\@PEAVBlockSource\@\@\@gsl\@\@V?$allocator\@V?$not_null\@PEAVBlockSource\@\@\@gsl\@\@\@std\@\@\@std\@\@I\@Z
      */
-    MCAPI bool _findFallbackSpawnPosition(class Vec3&, std::vector<class gsl::not_null<class BlockSource*>>, uint32_t);
+    MCAPI bool _findFallbackSpawnPosition(class Vec3&, std::vector<gsl::not_null<class BlockSource*>>, uint32_t);
     /**
      * @symbol ?_handleCarriedItemInteractText\@Player\@\@AEAAXXZ
      */

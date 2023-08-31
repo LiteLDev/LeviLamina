@@ -285,7 +285,7 @@ public:
      * @symbol
      * ?getKeyProvider\@ResourcePackRepository\@\@UEBA?AV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentKeyProvider\@\@\@Bedrock\@\@\@gsl\@\@XZ
      */
-    virtual class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> getKeyProvider() const;
+    virtual gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> getKeyProvider() const;
     /**
      * @vftbl 35
      * @symbol ?getPackManifestFactory\@ResourcePackRepository\@\@UEAAAEAVPackManifestFactory\@\@XZ
@@ -383,8 +383,8 @@ public:
     MCAPI ResourcePackRepository(
         class IMinecraftEventing&,
         class PackManifestFactory&,
-        class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentAccessibilityProvider>> const&,
-        class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const&,
+        gsl::not_null<class Bedrock::NonOwnerPointer<class IContentAccessibilityProvider>> const&,
+        gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const&,
         class PackSourceFactory&,
         bool
     );

@@ -160,9 +160,9 @@ public:
      * @symbol
      * ??0RapidJSONSchemaReader\@cereal\@\@QEAA\@AEBV?$GenericValue\@U?$UTF8\@D\@rapidjson\@\@V?$MemoryPoolAllocator\@VCrtAllocator\@rapidjson\@\@\@2\@\@rapidjson\@\@\@Z
      */
-    MCAPI RapidJSONSchemaReader(class rapidjson::GenericValue<
-                                struct rapidjson::UTF8<char>,
-                                class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>> const&);
+    MCAPI RapidJSONSchemaReader(rapidjson::GenericValue<
+                                rapidjson::UTF8<char>,
+                                rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>> const&);
     /**
      * @symbol
      * ??0RapidJSONSchemaReader\@cereal\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z

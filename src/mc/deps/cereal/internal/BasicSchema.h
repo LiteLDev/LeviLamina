@@ -59,7 +59,7 @@ public:
      * ?doValidate\@BasicSchema\@internal\@cereal\@\@MEBA?AUResult\@23\@AEAUSchemaReader\@3\@AEAVmeta_any\@entt\@\@AEBUSerializerTraits\@3\@AEAVSerializerContext\@3\@\@Z
      */
     virtual struct cereal::internal::Result
-    doValidate(struct cereal::SchemaReader&, class entt::meta_any&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
+    doValidate(struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
         const;
     /**
      * @vftbl 1
@@ -67,7 +67,7 @@ public:
      * ?doLoad\@BasicSchema\@internal\@cereal\@\@MEBA?AUResult\@23\@AEAUSchemaReader\@3\@AEAVmeta_any\@entt\@\@AEBUSerializerTraits\@3\@AEBV67\@AEAVSerializerContext\@3\@\@Z
      */
     virtual struct cereal::internal::Result
-    doLoad(struct cereal::SchemaReader&, class entt::meta_any&, struct cereal::SerializerTraits const&, class entt::meta_any const&, class cereal::SerializerContext&)
+    doLoad(struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&)
         const;
     /**
      * @vftbl 2
@@ -75,13 +75,13 @@ public:
      * ?doSave\@BasicSchema\@internal\@cereal\@\@MEBA?AUResult\@23\@AEAUSchemaWriter\@3\@AEBVmeta_any\@entt\@\@AEBUSerializerTraits\@3\@AEAVSerializerContext\@3\@\@Z
      */
     virtual struct cereal::internal::Result
-    doSave(struct cereal::SchemaWriter&, class entt::meta_any const&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
+    doSave(struct cereal::SchemaWriter&, entt::meta_any const&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
         const;
     /**
      * @vftbl 3
      * @symbol ?doVerifyInitialization\@BasicSchema\@internal\@cereal\@\@MEBA_NAEBVmeta_any\@entt\@\@\@Z
      */
-    virtual bool doVerifyInitialization(class entt::meta_any const&) const;
+    virtual bool doVerifyInitialization(entt::meta_any const&) const;
     /**
      * @vftbl 4
      * @symbol __unk_vfn_4
@@ -92,7 +92,7 @@ public:
      * @symbol
      * ?unpack\@BasicSchema\@internal\@cereal\@\@UEBAXAEAV?$vector\@V?$reference_wrapper\@$$CBVBasicSchema\@internal\@cereal\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVBasicSchema\@internal\@cereal\@\@\@std\@\@\@2\@\@std\@\@AEAV?$dense_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$reference_wrapper\@$$CBUMemberDescriptor\@BasicSchema\@internal\@cereal\@\@\@2\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$reference_wrapper\@$$CBUMemberDescriptor\@BasicSchema\@internal\@cereal\@\@\@2\@\@std\@\@\@2\@\@entt\@\@\@Z
      */
-    virtual void unpack(std::vector<std::reference_wrapper<class cereal::internal::BasicSchema const>>&, class entt::dense_map<std::string, std::reference_wrapper<struct cereal::internal::BasicSchema::MemberDescriptor const>, std::hash<std::string>, std::equal_to<std::string>, std::allocator<std::pair<std::string const, std::reference_wrapper<struct cereal::internal::BasicSchema::MemberDescriptor const>>>>&)
+    virtual void unpack(std::vector<std::reference_wrapper<class cereal::internal::BasicSchema const>>&, entt::dense_map<std::string, std::reference_wrapper<struct cereal::internal::BasicSchema::MemberDescriptor const>, std::hash<std::string>, std::equal_to<std::string>, std::allocator<std::pair<std::string const, std::reference_wrapper<struct cereal::internal::BasicSchema::MemberDescriptor const>>>>&)
         const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREAL_INTERNAL_BASICSCHEMA
     /**
@@ -127,20 +127,20 @@ public:
     /**
      * @symbol ?isProperlyInitialized\@BasicSchema\@internal\@cereal\@\@QEBA_NAEBVmeta_any\@entt\@\@\@Z
      */
-    MCAPI bool isProperlyInitialized(class entt::meta_any const&) const;
+    MCAPI bool isProperlyInitialized(entt::meta_any const&) const;
     /**
      * @symbol
      * ?load\@BasicSchema\@internal\@cereal\@\@QEBA?AUResult\@23\@AEAUSchemaReader\@3\@AEAVmeta_any\@entt\@\@AEBUSerializerTraits\@3\@AEBV67\@AEAVSerializerContext\@3\@\@Z
      */
     MCAPI struct cereal::internal::Result
-    load(struct cereal::SchemaReader&, class entt::meta_any&, struct cereal::SerializerTraits const&, class entt::meta_any const&, class cereal::SerializerContext&)
+    load(struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&)
         const;
     /**
      * @symbol
      * ?save\@BasicSchema\@internal\@cereal\@\@QEBA?AUResult\@23\@AEAUSchemaWriter\@3\@AEBVmeta_any\@entt\@\@AEBUSerializerTraits\@3\@AEAVSerializerContext\@3\@\@Z
      */
     MCAPI struct cereal::internal::Result
-    save(struct cereal::SchemaWriter&, class entt::meta_any const&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
+    save(struct cereal::SchemaWriter&, entt::meta_any const&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
         const;
     /**
      * @symbol ?traits\@BasicSchema\@internal\@cereal\@\@QEBAAEBUSerializerTraits\@3\@XZ
@@ -151,7 +151,7 @@ public:
      * ?validate\@BasicSchema\@internal\@cereal\@\@QEBA?AUResult\@23\@AEAUSchemaReader\@3\@AEAVmeta_any\@entt\@\@AEBUSerializerTraits\@3\@AEAVSerializerContext\@3\@\@Z
      */
     MCAPI struct cereal::internal::Result
-    validate(struct cereal::SchemaReader&, class entt::meta_any&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
+    validate(struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
         const;
     /**
      * @symbol

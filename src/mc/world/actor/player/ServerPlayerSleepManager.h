@@ -41,7 +41,7 @@ public:
      * @symbol
      * ??0ServerPlayerSleepManager\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VGameplayUserManager\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
-    MCAPI ServerPlayerSleepManager(class gsl::not_null<class Bedrock::NonOwnerPointer<class GameplayUserManager>>);
+    MCAPI ServerPlayerSleepManager(gsl::not_null<class Bedrock::NonOwnerPointer<class GameplayUserManager>>);
     /**
      * @symbol ?initializeWithPlayerDeathManager\@ServerPlayerSleepManager\@\@QEAAXAEAVPlayerDeathManager\@\@\@Z
      */

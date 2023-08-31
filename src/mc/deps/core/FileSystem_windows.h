@@ -315,7 +315,7 @@ public:
      * ?_iterateOverDirectoryWide\@FileSystem_windows\@Core\@\@AEAA?AVResult\@2\@AEBV?$basic_string\@_WU?$char_traits\@_W\@std\@\@V?$allocator\@_W\@2\@\@std\@\@W4DirectoryIterationFlags\@2\@V?$function\@$$A6A?AVResult\@Core\@\@AEBUDirectoryIterationItem\@2\@\@Z\@5\@\@Z
      */
     MCAPI class Core::Result
-    _iterateOverDirectoryWide(std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>> const&, enum class Core::DirectoryIterationFlags, std::function<class Core::Result(struct Core::DirectoryIterationItem const&)>);
+    _iterateOverDirectoryWide(std::wstring const&, enum class Core::DirectoryIterationFlags, std::function<class Core::Result(struct Core::DirectoryIterationItem const&)>);
     // NOLINTEND
 };
 

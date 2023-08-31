@@ -117,7 +117,7 @@ public:
      * @symbol
      * ?_tickSpawnStructureMobs\@Spawner\@\@IEAAXAEAVBlockSource\@\@AEBVLevelChunk\@\@VBlockPos\@\@AEBV?$function\@$$A6AXAEBVBlockPos\@\@AEBUHardcodedSpawningArea\@LevelChunk\@\@AEBVSpawnConditions\@\@\@Z\@std\@\@AEBV?$function\@$$A6A?AV?$span\@$$CBUHardcodedSpawningArea\@LevelChunk\@\@$0?0\@gsl\@\@AEBVLevelChunk\@\@\@Z\@6\@\@Z
      */
-    MCAPI void _tickSpawnStructureMobs(class BlockSource&, class LevelChunk const&, class BlockPos, std::function<void(class BlockPos const&, struct LevelChunk::HardcodedSpawningArea const&, class SpawnConditions const&)> const&, std::function<class gsl::span<struct LevelChunk::HardcodedSpawningArea const>(class LevelChunk const&)> const&);
+    MCAPI void _tickSpawnStructureMobs(class BlockSource&, class LevelChunk const&, class BlockPos, std::function<void(class BlockPos const&, struct LevelChunk::HardcodedSpawningArea const&, class SpawnConditions const&)> const&, std::function<gsl::span<struct LevelChunk::HardcodedSpawningArea const>(class LevelChunk const&)> const&);
     /**
      * @symbol ?_updateBaseTypeCount\@Spawner\@\@IEAAXAEAVBlockSource\@\@AEBVChunkPos\@\@\@Z
      */

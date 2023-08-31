@@ -60,7 +60,7 @@ public:
      * @vftbl 7
      * @symbol ?encryptToBuffer\@Symmetric\@1Crypto\@\@UEAA_NV?$span\@$$CBD$0?0\@gsl\@\@V?$span\@D$0?0\@4\@AEA_K\@Z
      */
-    virtual bool encryptToBuffer(class gsl::span<char const>, class gsl::span<char>, uint64_t&);
+    virtual bool encryptToBuffer(gsl::span<char const>, gsl::span<char>, uint64_t&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRYPTO_SYMMETRIC_SYMMETRIC
     /**
      * @symbol __unk_destructor_-1

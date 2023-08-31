@@ -305,7 +305,7 @@ public:
     /**
      * @symbol ?getChunkLoadActionList\@Dimension\@\@QEAA?AV?$not_null\@PEAVChunkLoadActionList\@\@\@gsl\@\@XZ
      */
-    MCAPI class gsl::not_null<class ChunkLoadActionList*> getChunkLoadActionList();
+    MCAPI gsl::not_null<class ChunkLoadActionList*> getChunkLoadActionList();
     /**
      * @symbol ?getChunkSource\@Dimension\@\@QEBAAEAVChunkSource\@\@XZ
      */
@@ -317,7 +317,7 @@ public:
     /**
      * @symbol ?getDelayActionList\@Dimension\@\@QEAA?AV?$not_null\@PEAVDelayActionList\@\@\@gsl\@\@XZ
      */
-    MCAPI class gsl::not_null<class DelayActionList*> getDelayActionList();
+    MCAPI gsl::not_null<class DelayActionList*> getDelayActionList();
     /**
      * @symbol
      * ?getDisplayEntities\@Dimension\@\@QEAAAEAV?$vector\@VWeakEntityRef\@\@V?$allocator\@VWeakEntityRef\@\@\@std\@\@\@std\@\@XZ

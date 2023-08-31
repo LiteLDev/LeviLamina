@@ -29,6 +29,6 @@ public:
     /**
      * @symbol ??0NBTLoader\@\@QEAA\@V?$not_null\@PEBVCompoundTag\@\@\@gsl\@\@\@Z
      */
-    MCAPI NBTLoader(class gsl::not_null<class CompoundTag const*>);
+    MCAPI NBTLoader(gsl::not_null<class CompoundTag const*>);
     // NOLINTEND
 };

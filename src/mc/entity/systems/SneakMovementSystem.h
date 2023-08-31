@@ -164,6 +164,5 @@ public:
                                 struct LocalSpatialEntityFetcherFactoryComponent>,
                             struct GlobalWrite<>,
                             struct EntityFactoryT<>>&);
-
     // NOLINTEND
 };

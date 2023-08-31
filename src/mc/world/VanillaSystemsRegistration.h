@@ -81,7 +81,7 @@ MCAPI void registerUpdateMobTravelSystems(class EntitySystems&);
  * ?registerVanillaServerTickingSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@V?$not_null\@V?$NonOwnerPointer\@$$CBVILevel\@\@\@Bedrock\@\@\@gsl\@\@AEBURegistrationOptions\@1\@\@Z
  */
 MCAPI void
-registerVanillaServerTickingSystems(class EntitySystems&, class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>, struct VanillaSystemsRegistration::RegistrationOptions const&);
+registerVanillaServerTickingSystems(class EntitySystems&, gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>, struct VanillaSystemsRegistration::RegistrationOptions const&);
 // NOLINTEND
 
 }; // namespace VanillaSystemsRegistration

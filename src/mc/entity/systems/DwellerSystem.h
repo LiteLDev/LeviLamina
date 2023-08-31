@@ -24,7 +24,7 @@ public:
      * @vftbl 1
      * @symbol ?registerEvents\@DwellerSystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
      */
-    virtual void registerEvents(class entt::basic_dispatcher<std::allocator<void>>&);
+    virtual void registerEvents(entt::dispatcher&);
     /**
      * @vftbl 2
      * @symbol ?tick\@DwellerSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z

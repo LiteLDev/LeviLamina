@@ -15,7 +15,7 @@ namespace ActorUpdateRidingIDSystemImpl {
  * ?updateRidingPrevID\@ActorUpdateRidingIDSystemImpl\@\@YAXU?$type_list\@U?$Include\@V?$FlagComponent\@UStopRidingRequestFlag\@\@\@\@\@\@\@entt\@\@AEBVStrictEntityContext\@\@AEBUPassengerComponent\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBUVehicleComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@URidingPrevIDComponent\@\@\@\@\@Z
  */
 MCAPI void
-updateRidingPrevID(struct entt::type_list<struct Include<class FlagComponent<struct StopRidingRequestFlag>>>, class StrictEntityContext const&, struct PassengerComponent const&, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct VehicleComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct RidingPrevIDComponent>);
+updateRidingPrevID(entt::type_list<struct Include<class FlagComponent<struct StopRidingRequestFlag>>>, class StrictEntityContext const&, struct PassengerComponent const&, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct VehicleComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct RidingPrevIDComponent>);
 // NOLINTEND
 
 }; // namespace ActorUpdateRidingIDSystemImpl

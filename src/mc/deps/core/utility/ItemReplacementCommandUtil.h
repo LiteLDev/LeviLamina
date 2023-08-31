@@ -47,7 +47,7 @@ public:
     MCAPI static void _replaceArmorSlots(
         struct Util::ReplacementResults&,
         class Actor&,
-        class gsl::span<class ItemStack const>,
+        gsl::span<class ItemStack const>,
         enum class EquipmentSlot,
         int32_t
     );

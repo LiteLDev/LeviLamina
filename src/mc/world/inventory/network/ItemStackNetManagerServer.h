@@ -68,7 +68,7 @@ public:
      * @symbol
      * ?_retainSetItemStackNetIdVariantScope\@ItemStackNetManagerServer\@\@QEAA?AV?$final_action\@V?$function\@$$A6AXXZ\@std\@\@\@gsl\@\@XZ
      */
-    MCAPI class gsl::final_action<std::function<void(void)>> _retainSetItemStackNetIdVariantScope();
+    MCAPI gsl::final_action<std::function<void(void)>> _retainSetItemStackNetIdVariantScope();
     /**
      * @symbol
      * ?handleRequest\@ItemStackNetManagerServer\@\@QEAAXV?$unique_ptr\@VItemStackRequestData\@\@U?$default_delete\@VItemStackRequestData\@\@\@std\@\@\@std\@\@V?$NonOwnerPointer\@VTextFilteringProcessor\@\@\@Bedrock\@\@\@Z

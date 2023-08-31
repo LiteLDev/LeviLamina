@@ -57,6 +57,7 @@
 #include "asio.hpp"      // Asio C++ Library
 #include "asio/ssl.hpp"  // Asio SSL C++ Library
 #include "entt/entt.hpp" // Entity Component System Library
+#include "entt/fwd.hpp"  // Entity Component Forward Declarations
 #include "gsl/gsl"       // Guideline Support Library
 
 // LevelDB C++ Library

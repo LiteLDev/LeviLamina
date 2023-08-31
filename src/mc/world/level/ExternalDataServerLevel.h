@@ -68,6 +68,6 @@ public:
      * @symbol
      * ??0ExternalDataServerLevel\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@$$CBVILevel\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
-    MCAPI ExternalDataServerLevel(class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>);
+    MCAPI ExternalDataServerLevel(gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>);
     // NOLINTEND
 };
