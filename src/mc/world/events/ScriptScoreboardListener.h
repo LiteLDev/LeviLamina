@@ -48,7 +48,7 @@ public:
      * ??0ScriptScoreboardListener\@ScriptModuleMinecraft\@\@QEAA\@V?$WeakTypedObjectHandle\@VScriptScoreboard\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
      */
     MCAPI
-        ScriptScoreboardListener(class Scripting::WeakTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboard>);
+    ScriptScoreboardListener(class Scripting::WeakTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboard>);
     // NOLINTEND
 };
 

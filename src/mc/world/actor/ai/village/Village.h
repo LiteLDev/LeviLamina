@@ -14,32 +14,30 @@ namespace mce { class UUID; }
 
 class Village {
 public:
-
     // Village inner types declare
     // clang-format off
     struct DwellerData;
     class StandingModifiers;
     // clang-format on
-    
+
     // Village inner types define
     struct DwellerData {
-    
+
     public:
         // prevent constructor by default
-        DwellerData& operator=(DwellerData const &) = delete;
-        DwellerData(DwellerData const &) = delete;
-        DwellerData() = delete;
-    
+        DwellerData& operator=(DwellerData const&) = delete;
+        DwellerData(DwellerData const&)            = delete;
+        DwellerData()                              = delete;
     };
-    
+
     class StandingModifiers {
-    
+
     public:
         // prevent constructor by default
-        StandingModifiers& operator=(StandingModifiers const &) = delete;
-        StandingModifiers(StandingModifiers const &) = delete;
-        StandingModifiers() = delete;
-    
+        StandingModifiers& operator=(StandingModifiers const&) = delete;
+        StandingModifiers(StandingModifiers const&)            = delete;
+        StandingModifiers()                                    = delete;
+
     public:
         // NOLINTBEGIN
         /**
@@ -67,29 +65,28 @@ public:
          */
         MCAPI static int32_t const SMALL_REWARD;
         // NOLINTEND
-    
     };
-    
+
 public:
     // prevent constructor by default
-    Village& operator=(Village const &) = delete;
-    Village(Village const &) = delete;
-    Village() = delete;
+    Village& operator=(Village const&) = delete;
+    Village(Village const&)            = delete;
+    Village()                          = delete;
 
 public:
     // NOLINTBEGIN
     /**
      * @symbol ??0Village\@\@QEAA\@AEAVDimension\@\@VUUID\@mce\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI Village(class Dimension &, class mce::UUID, class BlockPos const &);
+    MCAPI Village(class Dimension&, class mce::UUID, class BlockPos const&);
     /**
      * @symbol ?addActorToVillage\@Village\@\@QEAAXW4DwellerRole\@\@AEBUActorUniqueID\@\@\@Z
      */
-    MCAPI void addActorToVillage(enum class DwellerRole, struct ActorUniqueID const &);
+    MCAPI void addActorToVillage(enum class DwellerRole, struct ActorUniqueID const&);
     /**
      * @symbol ?addAggressor\@Village\@\@QEAAXAEBVMob\@\@\@Z
      */
-    MCAPI void addAggressor(class Mob const &);
+    MCAPI void addAggressor(class Mob const&);
     /**
      * @symbol ?addPOI\@Village\@\@QEAA_NV?$weak_ptr\@VPOIInstance\@\@\@std\@\@\@Z
      */
@@ -97,7 +94,7 @@ public:
     /**
      * @symbol ?addVillager\@Village\@\@QEAAXAEBUActorUniqueID\@\@\@Z
      */
-    MCAPI void addVillager(struct ActorUniqueID const &);
+    MCAPI void addVillager(struct ActorUniqueID const&);
     /**
      * @symbol ?checkNeedMoreVillagers\@Village\@\@QEBA_NXZ
      */
@@ -107,9 +104,10 @@ public:
      */
     MCAPI void debugDraw();
     /**
-     * @symbol ?fetchOwnedPOI\@Village\@\@QEAA?AV?$weak_ptr\@VPOIInstance\@\@\@std\@\@AEBUActorUniqueID\@\@W4POIType\@\@\@Z
+     * @symbol
+     * ?fetchOwnedPOI\@Village\@\@QEAA?AV?$weak_ptr\@VPOIInstance\@\@\@std\@\@AEBUActorUniqueID\@\@W4POIType\@\@\@Z
      */
-    MCAPI std::weak_ptr<class POIInstance> fetchOwnedPOI(struct ActorUniqueID const &, enum class POIType);
+    MCAPI std::weak_ptr<class POIInstance> fetchOwnedPOI(struct ActorUniqueID const&, enum class POIType);
     /**
      * @symbol ?fireSoundTheAlarm\@Village\@\@QEAAXXZ
      */
@@ -125,7 +123,7 @@ public:
     /**
      * @symbol ?getBounds\@Village\@\@QEBAAEBVAABB\@\@XZ
      */
-    MCAPI class AABB const & getBounds() const;
+    MCAPI class AABB const& getBounds() const;
     /**
      * @symbol ?getCenter\@Village\@\@QEBA?AVVec3\@\@XZ
      */
@@ -133,31 +131,31 @@ public:
     /**
      * @symbol ?getClosestAggressor\@Village\@\@QEAAPEAVActor\@\@PEAV2\@\@Z
      */
-    MCAPI class Actor * getClosestAggressor(class Actor *);
+    MCAPI class Actor* getClosestAggressor(class Actor*);
     /**
      * @symbol ?getClosestBadStandingPlayer\@Village\@\@QEAAPEAVPlayer\@\@AEAVActor\@\@\@Z
      */
-    MCAPI class Player * getClosestBadStandingPlayer(class Actor &);
+    MCAPI class Player* getClosestBadStandingPlayer(class Actor&);
     /**
      * @symbol ?getClosestPOI\@Village\@\@QEAA?AV?$weak_ptr\@VPOIInstance\@\@\@std\@\@W4POIType\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI std::weak_ptr<class POIInstance> getClosestPOI(enum class POIType, class BlockPos const &);
+    MCAPI std::weak_ptr<class POIInstance> getClosestPOI(enum class POIType, class BlockPos const&);
     /**
      * @symbol ?getRaid\@Village\@\@QEBAPEBVRaid\@\@XZ
      */
-    MCAPI class Raid const * getRaid() const;
+    MCAPI class Raid const* getRaid() const;
     /**
      * @symbol ?getRaidBounds\@Village\@\@QEBAAEBVAABB\@\@XZ
      */
-    MCAPI class AABB const & getRaidBounds() const;
+    MCAPI class AABB const& getRaidBounds() const;
     /**
      * @symbol ?getRaidMutable\@Village\@\@QEAAPEAVRaid\@\@XZ
      */
-    MCAPI class Raid * getRaidMutable();
+    MCAPI class Raid* getRaidMutable();
     /**
      * @symbol ?getStanding\@Village\@\@QEAAHAEBUActorUniqueID\@\@\@Z
      */
-    MCAPI int32_t getStanding(struct ActorUniqueID const &);
+    MCAPI int32_t getStanding(struct ActorUniqueID const&);
     /**
      * @symbol ?getUniqueID\@Village\@\@QEBA?AVUUID\@mce\@\@XZ
      */
@@ -165,7 +163,7 @@ public:
     /**
      * @symbol ?hasInvalidRole\@Village\@\@QEAA_NAEBUActorUniqueID\@\@AEBW4DwellerRole\@\@\@Z
      */
-    MCAPI bool hasInvalidRole(struct ActorUniqueID const &, enum class DwellerRole const &);
+    MCAPI bool hasInvalidRole(struct ActorUniqueID const&, enum class DwellerRole const&);
     /**
      * @symbol ?hasRaid\@Village\@\@QEBA_NXZ
      */
@@ -173,23 +171,27 @@ public:
     /**
      * @symbol ?hasSpecificDweller\@Village\@\@QEBA_NW4DwellerRole\@\@AEBUActorUniqueID\@\@\@Z
      */
-    MCAPI bool hasSpecificDweller(enum class DwellerRole, struct ActorUniqueID const &) const;
+    MCAPI bool hasSpecificDweller(enum class DwellerRole, struct ActorUniqueID const&) const;
     /**
-     * @symbol ?loadDataByKey\@Village\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVCompoundTag\@\@\@Z
+     * @symbol
+     * ?loadDataByKey\@Village\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVCompoundTag\@\@\@Z
      */
-    MCAPI void loadDataByKey(std::string const &, class CompoundTag const &);
+    MCAPI void loadDataByKey(std::string const&, class CompoundTag const&);
     /**
      * @symbol ?modifyStanding\@Village\@\@QEAAHAEBUActorUniqueID\@\@H\@Z
      */
-    MCAPI int32_t modifyStanding(struct ActorUniqueID const &, int32_t);
+    MCAPI int32_t modifyStanding(struct ActorUniqueID const&, int32_t);
     /**
-     * @symbol ?removeActorFromVillage\@Village\@\@QEAA?AV?$_List_iterator\@V?$_List_val\@U?$_List_simple_types\@U?$pair\@$$CBUActorUniqueID\@\@UDwellerData\@Village\@\@\@std\@\@\@std\@\@\@std\@\@\@std\@\@W4DwellerRole\@\@AEBUActorUniqueID\@\@\@Z
+     * @symbol
+     * ?removeActorFromVillage\@Village\@\@QEAA?AV?$_List_iterator\@V?$_List_val\@U?$_List_simple_types\@U?$pair\@$$CBUActorUniqueID\@\@UDwellerData\@Village\@\@\@std\@\@\@std\@\@\@std\@\@\@std\@\@W4DwellerRole\@\@AEBUActorUniqueID\@\@\@Z
      */
-    MCAPI std::_List_iterator<std::_List_val<std::_List_simple_types<std::pair<struct ActorUniqueID const, struct Village::DwellerData>>>> removeActorFromVillage(enum class DwellerRole, struct ActorUniqueID const &);
+    MCAPI std::_List_iterator<
+        std::_List_val<std::_List_simple_types<std::pair<struct ActorUniqueID const, struct Village::DwellerData>>>>
+    removeActorFromVillage(enum class DwellerRole, struct ActorUniqueID const&);
     /**
      * @symbol ?removeAllInstancesofActorFromVillage\@Village\@\@QEAAXAEBUActorUniqueID\@\@\@Z
      */
-    MCAPI void removeAllInstancesofActorFromVillage(struct ActorUniqueID const &);
+    MCAPI void removeAllInstancesofActorFromVillage(struct ActorUniqueID const&);
     /**
      * @symbol ?removeVillageSavedData\@Village\@\@QEAAXXZ
      */
@@ -197,7 +199,7 @@ public:
     /**
      * @symbol ?resetDwellerTimer\@Village\@\@QEAAXW4DwellerRole\@\@AEBUActorUniqueID\@\@\@Z
      */
-    MCAPI void resetDwellerTimer(enum class DwellerRole, struct ActorUniqueID const &);
+    MCAPI void resetDwellerTimer(enum class DwellerRole, struct ActorUniqueID const&);
     /**
      * @symbol ?resetNoBreedTimer\@Village\@\@QEAAXXZ
      */
@@ -209,11 +211,11 @@ public:
     /**
      * @symbol ?setSavedDwellerPosition\@Village\@\@QEAAXW4DwellerRole\@\@AEBUActorUniqueID\@\@VBlockPos\@\@\@Z
      */
-    MCAPI void setSavedDwellerPosition(enum class DwellerRole, struct ActorUniqueID const &, class BlockPos);
+    MCAPI void setSavedDwellerPosition(enum class DwellerRole, struct ActorUniqueID const&, class BlockPos);
     /**
      * @symbol ?tick\@Village\@\@QEAAXUTick\@\@AEAVBlockSource\@\@\@Z
      */
-    MCAPI void tick(struct Tick, class BlockSource &);
+    MCAPI void tick(struct Tick, class BlockSource&);
     /**
      * @symbol ?tickRaid\@Village\@\@QEAAXUTick\@\@\@Z
      */
@@ -225,31 +227,31 @@ public:
     /**
      * @symbol ?trySetVillagerWorkTimestamp\@Village\@\@QEAAXAEBUActorUniqueID\@\@\@Z
      */
-    MCAPI void trySetVillagerWorkTimestamp(struct ActorUniqueID const &);
+    MCAPI void trySetVillagerWorkTimestamp(struct ActorUniqueID const&);
     /**
      * @symbol ?unlinkMismatchedJobsites\@Village\@\@QEAAXAEBVActor\@\@\@Z
      */
-    MCAPI void unlinkMismatchedJobsites(class Actor const &);
+    MCAPI void unlinkMismatchedJobsites(class Actor const&);
     /**
      * @symbol ?villagerLivesHere\@Village\@\@QEBA_NAEBUActorUniqueID\@\@\@Z
      */
-    MCAPI bool villagerLivesHere(struct ActorUniqueID const &) const;
+    MCAPI bool villagerLivesHere(struct ActorUniqueID const&) const;
     /**
      * @symbol ?withinVillageBounds\@Village\@\@QEBA_NAEBVVec3\@\@M\@Z
      */
-    MCAPI bool withinVillageBounds(class Vec3 const &, float) const;
+    MCAPI bool withinVillageBounds(class Vec3 const&, float) const;
     /**
      * @symbol ?isValidRegisteredPOI\@Village\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI static bool isValidRegisteredPOI(class BlockSource &, class BlockPos const &);
+    MCAPI static bool isValidRegisteredPOI(class BlockSource&, class BlockPos const&);
     /**
      * @symbol ?isVillagePOI\@Village\@\@SA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI static bool isVillagePOI(class BlockSource const &, class BlockPos const &);
+    MCAPI static bool isVillagePOI(class BlockSource const&, class BlockPos const&);
     /**
      * @symbol ?isVillagePOI\@Village\@\@SA_NAEBVVillageManager\@\@AEBVBlock\@\@\@Z
      */
-    MCAPI static bool isVillagePOI(class VillageManager const &, class Block const &);
+    MCAPI static bool isVillagePOI(class VillageManager const&, class Block const&);
     /**
      * @symbol ?DEBUG_DRAWING\@Village\@\@2_NA
      */
@@ -267,7 +269,8 @@ public:
      */
     MCAPI static int32_t const MIN_VILLAGE_STANDING;
     /**
-     * @symbol ?STORAGE_KEY_PREFIX\@Village\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol
+     * ?STORAGE_KEY_PREFIX\@Village\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const STORAGE_KEY_PREFIX;
     /**
@@ -281,7 +284,7 @@ public:
     /**
      * @symbol ?_addPoiToVillage\@Village\@\@AEAAXAEBUActorUniqueID\@\@V?$weak_ptr\@VPOIInstance\@\@\@std\@\@\@Z
      */
-    MCAPI void _addPoiToVillage(struct ActorUniqueID const &, std::weak_ptr<class POIInstance>);
+    MCAPI void _addPoiToVillage(struct ActorUniqueID const&, std::weak_ptr<class POIInstance>);
     /**
      * @symbol ?_calcPOIDist\@Village\@\@AEAAXXZ
      */
@@ -293,7 +296,7 @@ public:
     /**
      * @symbol ?_clearVillagerPOIs\@Village\@\@AEAAXAEBUActorUniqueID\@\@\@Z
      */
-    MCAPI void _clearVillagerPOIs(struct ActorUniqueID const &);
+    MCAPI void _clearVillagerPOIs(struct ActorUniqueID const&);
     /**
      * @symbol ?_createRaid\@Village\@\@AEAAXXZ
      */
@@ -301,55 +304,59 @@ public:
     /**
      * @symbol ?_findAvailablePOI\@Village\@\@AEAA_N_KAEAVLevel\@\@AEAVRandom\@\@UActorUniqueID\@\@\@Z
      */
-    MCAPI bool _findAvailablePOI(uint64_t, class Level &, class Random &, struct ActorUniqueID);
+    MCAPI bool _findAvailablePOI(uint64_t, class Level&, class Random&, struct ActorUniqueID);
     /**
      * @symbol ?_findPlayerCentricSpawnPointForRaid\@Village\@\@AEBA_NAEAVVec3\@\@_N\@Z
      */
-    MCAPI bool _findPlayerCentricSpawnPointForRaid(class Vec3 &, bool) const;
+    MCAPI bool _findPlayerCentricSpawnPointForRaid(class Vec3&, bool) const;
     /**
-     * @symbol ?_findPreferredPOI\@Village\@\@AEAAXAEAV?$vector\@V?$weak_ptr\@VPOIInstance\@\@\@std\@\@V?$allocator\@V?$weak_ptr\@VPOIInstance\@\@\@std\@\@\@2\@\@std\@\@AEBVHashedString\@\@UActorUniqueID\@\@\@Z
+     * @symbol
+     * ?_findPreferredPOI\@Village\@\@AEAAXAEAV?$vector\@V?$weak_ptr\@VPOIInstance\@\@\@std\@\@V?$allocator\@V?$weak_ptr\@VPOIInstance\@\@\@std\@\@\@2\@\@std\@\@AEBVHashedString\@\@UActorUniqueID\@\@\@Z
      */
-    MCAPI void _findPreferredPOI(std::vector<std::weak_ptr<class POIInstance>> &, class HashedString const &, struct ActorUniqueID);
+    MCAPI void
+    _findPreferredPOI(std::vector<std::weak_ptr<class POIInstance>>&, class HashedString const&, struct ActorUniqueID);
     /**
      * @symbol ?_findSpawnPointForRaid\@Village\@\@AEBA_NAEAVVec3\@\@MM_N1\@Z
      */
-    MCAPI bool _findSpawnPointForRaid(class Vec3 &, float, float, bool, bool) const;
+    MCAPI bool _findSpawnPointForRaid(class Vec3&, float, float, bool, bool) const;
     /**
      * @symbol ?_findSpawnableRegion\@Village\@\@AEBAPEAVBlockSource\@\@VVec3\@\@HAEA_N\@Z
      */
-    MCAPI class BlockSource * _findSpawnableRegion(class Vec3, int32_t, bool &) const;
+    MCAPI class BlockSource* _findSpawnableRegion(class Vec3, int32_t, bool&) const;
     /**
-     * @symbol ?_findWeightedPOI\@Village\@\@AEAAXAEAV?$vector\@V?$weak_ptr\@VPOIInstance\@\@\@std\@\@V?$allocator\@V?$weak_ptr\@VPOIInstance\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@UActorUniqueID\@\@\@Z
+     * @symbol
+     * ?_findWeightedPOI\@Village\@\@AEAAXAEAV?$vector\@V?$weak_ptr\@VPOIInstance\@\@\@std\@\@V?$allocator\@V?$weak_ptr\@VPOIInstance\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@UActorUniqueID\@\@\@Z
      */
-    MCAPI void _findWeightedPOI(std::vector<std::weak_ptr<class POIInstance>> &, class Random &, struct ActorUniqueID);
+    MCAPI void _findWeightedPOI(std::vector<std::weak_ptr<class POIInstance>>&, class Random&, struct ActorUniqueID);
     /**
      * @symbol ?_helpLocateRaiders\@Village\@\@AEAAXAEBVRaid\@\@\@Z
      */
-    MCAPI void _helpLocateRaiders(class Raid const &);
+    MCAPI void _helpLocateRaiders(class Raid const&);
     /**
      * @symbol ?_loadVillageData\@Village\@\@AEAAXAEBVCompoundTag\@\@\@Z
      */
-    MCAPI void _loadVillageData(class CompoundTag const &);
+    MCAPI void _loadVillageData(class CompoundTag const&);
     /**
      * @symbol ?_loadVillageDwellers\@Village\@\@AEAAXAEBVCompoundTag\@\@\@Z
      */
-    MCAPI void _loadVillageDwellers(class CompoundTag const &);
+    MCAPI void _loadVillageDwellers(class CompoundTag const&);
     /**
      * @symbol ?_loadVillagePOIs\@Village\@\@AEAAXAEBVCompoundTag\@\@\@Z
      */
-    MCAPI void _loadVillagePOIs(class CompoundTag const &);
+    MCAPI void _loadVillagePOIs(class CompoundTag const&);
     /**
      * @symbol ?_playSoundFrom\@Village\@\@AEAAXAEBVVec3\@\@W4LevelSoundEvent\@\@\@Z
      */
-    MCAPI void _playSoundFrom(class Vec3 const &, enum class LevelSoundEvent);
+    MCAPI void _playSoundFrom(class Vec3 const&, enum class LevelSoundEvent);
     /**
-     * @symbol ?_readyRaidGroup\@Village\@\@AEAAXAEAV?$unordered_set\@UActorUniqueID\@\@U?$hash\@UActorUniqueID\@\@\@std\@\@U?$equal_to\@UActorUniqueID\@\@\@3\@V?$allocator\@UActorUniqueID\@\@\@3\@\@std\@\@\@Z
+     * @symbol
+     * ?_readyRaidGroup\@Village\@\@AEAAXAEAV?$unordered_set\@UActorUniqueID\@\@U?$hash\@UActorUniqueID\@\@\@std\@\@U?$equal_to\@UActorUniqueID\@\@\@3\@V?$allocator\@UActorUniqueID\@\@\@3\@\@std\@\@\@Z
      */
-    MCAPI void _readyRaidGroup(std::unordered_set<struct ActorUniqueID> &);
+    MCAPI void _readyRaidGroup(std::unordered_set<struct ActorUniqueID>&);
     /**
      * @symbol ?_ringBells\@Village\@\@AEBAXAEAVBlockSource\@\@AEAVRandom\@\@\@Z
      */
-    MCAPI void _ringBells(class BlockSource &, class Random &) const;
+    MCAPI void _ringBells(class BlockSource&, class Random&) const;
     /**
      * @symbol ?_saveVillageData\@Village\@\@AEBAXXZ
      */
@@ -373,19 +380,20 @@ public:
     /**
      * @symbol ?_spawnPassiveDwellers\@Village\@\@AEAAXAEAVBlockSource\@\@H\@Z
      */
-    MCAPI void _spawnPassiveDwellers(class BlockSource &, int32_t);
+    MCAPI void _spawnPassiveDwellers(class BlockSource&, int32_t);
     /**
-     * @symbol ?_spawnRaidGroup\@Village\@\@AEBA_NVVec3\@\@EAEAV?$unordered_set\@UActorUniqueID\@\@U?$hash\@UActorUniqueID\@\@\@std\@\@U?$equal_to\@UActorUniqueID\@\@\@3\@V?$allocator\@UActorUniqueID\@\@\@3\@\@std\@\@\@Z
+     * @symbol
+     * ?_spawnRaidGroup\@Village\@\@AEBA_NVVec3\@\@EAEAV?$unordered_set\@UActorUniqueID\@\@U?$hash\@UActorUniqueID\@\@\@std\@\@U?$equal_to\@UActorUniqueID\@\@\@3\@V?$allocator\@UActorUniqueID\@\@\@3\@\@std\@\@\@Z
      */
-    MCAPI bool _spawnRaidGroup(class Vec3, uint8_t, std::unordered_set<struct ActorUniqueID> &) const;
+    MCAPI bool _spawnRaidGroup(class Vec3, uint8_t, std::unordered_set<struct ActorUniqueID>&) const;
     /**
      * @symbol ?_tryShiftStandingsTowardNeutral\@Village\@\@AEAAXAEAUTick\@\@_K_N\@Z
      */
-    MCAPI void _tryShiftStandingsTowardNeutral(struct Tick &, uint64_t, bool);
+    MCAPI void _tryShiftStandingsTowardNeutral(struct Tick&, uint64_t, bool);
     /**
      * @symbol ?_trySpawnDefenderDwellers\@Village\@\@AEAAXAEAVBlockSource\@\@_K\@Z
      */
-    MCAPI void _trySpawnDefenderDwellers(class BlockSource &, uint64_t);
+    MCAPI void _trySpawnDefenderDwellers(class BlockSource&, uint64_t);
     /**
      * @symbol ?_updateAndRemoveInactiveDwellers\@Village\@\@AEAAX_KM\@Z
      */
@@ -393,11 +401,11 @@ public:
     /**
      * @symbol ?_updateClaimedPOIs\@Village\@\@AEAAXAEAVBlockSource\@\@\@Z
      */
-    MCAPI void _updateClaimedPOIs(class BlockSource &);
+    MCAPI void _updateClaimedPOIs(class BlockSource&);
     /**
      * @symbol ?_updateUnclaimedPOIs\@Village\@\@AEAAXAEAVBlockSource\@\@\@Z
      */
-    MCAPI void _updateUnclaimedPOIs(class BlockSource &);
+    MCAPI void _updateUnclaimedPOIs(class BlockSource&);
     // NOLINTEND
 
 private:
@@ -407,7 +415,8 @@ private:
      */
     MCAPI static float const ACHIEVEMENT_SOUND_THE_ALARM_TOLERANCE;
     /**
-     * @symbol ?CELEBRATION_EVENT\@Village\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol
+     * ?CELEBRATION_EVENT\@Village\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const CELEBRATION_EVENT;
     /**
@@ -415,7 +424,8 @@ private:
      */
     MCAPI static class Vec3 const RAID_BOUNDS_PADDING;
     /**
-     * @symbol ?RAID_EXPIRY_EVENT\@Village\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol
+     * ?RAID_EXPIRY_EVENT\@Village\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const RAID_EXPIRY_EVENT;
     /**
@@ -451,11 +461,13 @@ private:
      */
     MCAPI static uint64_t const STANDING_DECAY_INTERVAL_GOOD;
     /**
-     * @symbol ?STORAGE_KEY_DWELLERS\@Village\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol
+     * ?STORAGE_KEY_DWELLERS\@Village\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const STORAGE_KEY_DWELLERS;
     /**
-     * @symbol ?STORAGE_KEY_PLAYERS\@Village\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol
+     * ?STORAGE_KEY_PLAYERS\@Village\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const STORAGE_KEY_PLAYERS;
     /**
@@ -467,7 +479,8 @@ private:
      */
     MCAPI static std::string const STORAGE_KEY_RAID;
     /**
-     * @symbol ?STORAGE_KEY_VILLAGE\@Village\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol
+     * ?STORAGE_KEY_VILLAGE\@Village\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const STORAGE_KEY_VILLAGE;
     /**
@@ -511,6 +524,4 @@ private:
      */
     MCAPI static uint8_t const VILLAGE_VERSION_CURRENT;
     // NOLINTEND
-
 };
-

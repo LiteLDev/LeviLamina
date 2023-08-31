@@ -27,8 +27,8 @@ public:
      * ?begin\@BaseAttributeMap\@\@QEAA?AV?$_List_iterator\@V?$_List_val\@U?$_List_simple_types\@U?$pair\@$$CBIVAttributeInstance\@\@\@std\@\@\@std\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI
-        std::_List_iterator<std::_List_val<std::_List_simple_types<std::pair<uint32_t const, class AttributeInstance>>>>
-        begin();
+    std::_List_iterator<std::_List_val<std::_List_simple_types<std::pair<uint32_t const, class AttributeInstance>>>>
+    begin();
     /**
      * @symbol ?clearDirtyAttributes\@BaseAttributeMap\@\@QEAAXXZ
      */
@@ -45,8 +45,8 @@ public:
      * ?end\@BaseAttributeMap\@\@QEAA?AV?$_List_iterator\@V?$_List_val\@U?$_List_simple_types\@U?$pair\@$$CBIVAttributeInstance\@\@\@std\@\@\@std\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI
-        std::_List_iterator<std::_List_val<std::_List_simple_types<std::pair<uint32_t const, class AttributeInstance>>>>
-        end();
+    std::_List_iterator<std::_List_val<std::_List_simple_types<std::pair<uint32_t const, class AttributeInstance>>>>
+    end();
     /**
      * @symbol
      * ?getDirtyAttributes\@BaseAttributeMap\@\@QEBAAEBV?$vector\@VAttributeInstanceHandle\@\@V?$allocator\@VAttributeInstanceHandle\@\@\@std\@\@\@std\@\@XZ

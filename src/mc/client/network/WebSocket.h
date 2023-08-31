@@ -91,8 +91,8 @@ public:
      * ?RegisterEventCallbacks\@WebSocket\@httpclient\@xbox\@\@QEAAIP6AXPEAUHC_WEBSOCKET_OBSERVER\@\@PEBDPEAX\@ZP6AX0PEBEI2\@ZP6AX04I_N2\@ZP6AX0W4HCWebSocketCloseStatus\@\@2\@Z2\@Z
      */
     MCAPI
-        uint32_t
-        RegisterEventCallbacks(void(__cdecl*)(struct HC_WEBSOCKET_OBSERVER*, char const*, void*), void(__cdecl*)(struct HC_WEBSOCKET_OBSERVER*, uint8_t const*, uint32_t, void*), void(__cdecl*)(struct HC_WEBSOCKET_OBSERVER*, uint8_t const*, uint32_t, bool, void*), void(__cdecl*)(struct HC_WEBSOCKET_OBSERVER*, enum class HCWebSocketCloseStatus, void*), void*);
+    uint32_t
+    RegisterEventCallbacks(void(__cdecl*)(struct HC_WEBSOCKET_OBSERVER*, char const*, void*), void(__cdecl*)(struct HC_WEBSOCKET_OBSERVER*, uint8_t const*, uint32_t, void*), void(__cdecl*)(struct HC_WEBSOCKET_OBSERVER*, uint8_t const*, uint32_t, bool, void*), void(__cdecl*)(struct HC_WEBSOCKET_OBSERVER*, enum class HCWebSocketCloseStatus, void*), void*);
     /**
      * @symbol ?SendAsync\@WebSocket\@httpclient\@xbox\@\@QEAAJPEBDPEAUXAsyncBlock\@\@\@Z
      */
