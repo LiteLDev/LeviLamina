@@ -26,12 +26,10 @@ LLAPI bool unhook(FuncPtr target, FuncPtr detour);
 
 template <typename T>
 inline FuncPtr resolveIdentifier(T identifier)
-    requires std::is_function_v<std::remove_pointer_t<T>>
+    requires(std::is_function_v<std::remove_pointer_t<T>> || std::is_member_function_pointer_v<T> || std::is_same_v<T, uintptr_t>)
 {
-    return reinterpret_cast<FuncPtr>(identifier);
+    return toFuncPtr(identifier);
 }
-
-inline FuncPtr resolveIdentifier(uintptr_t identifier) { return reinterpret_cast<FuncPtr>(identifier); }
 
 /**
  * @brief Get the pointer of a function by identifier.
@@ -41,13 +39,13 @@ inline FuncPtr resolveIdentifier(uintptr_t identifier) { return reinterpret_cast
  */
 LLAPI FuncPtr resolveIdentifier(const char* identifier);
 
-// Use a individual struct to register hook, in case DefType can't be constructed.
+// Use an individual struct to register hook, in case DefType can't be constructed.
 template <typename T>
 struct HookAutoRegister {
     HookAutoRegister() { T::hook(); }
     ~HookAutoRegister() { T::unhook(); }
-    static int32_t  hook() { return T::hook(); }
-    static bool unhook() { return T::unhook(); }
+    static int32_t hook() { return T::hook(); }
+    static bool    unhook() { return T::unhook(); }
 };
 
 } // namespace ll::memory
@@ -70,7 +68,7 @@ struct HookAutoRegister {
                                                                                                                        \
         StaticDescriptor Ret detour(__VA_ARGS__);                                                                      \
                                                                                                                        \
-        static int32_t hook() {                                                                                            \
+        static int32_t hook() {                                                                                        \
             target = ll::memory::resolveIdentifier(identifier);                                                        \
                                                                                                                        \
             if (target == nullptr) {                                                                                   \
