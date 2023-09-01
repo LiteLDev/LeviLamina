@@ -8,7 +8,6 @@
 namespace BedrockLog {
 
 struct CategoryLogFile {
-
 public:
     // prevent constructor by default
     CategoryLogFile& operator=(CategoryLogFile const&) = delete;
@@ -16,18 +15,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?AddChannel\@CategoryLogFile\@BedrockLog\@\@QEAAXW4LogChannel\@2\@\@Z
-     */
-    MCAPI void AddChannel(enum class BedrockLog::LogChannel);
-    /**
-     * @symbol ??0CategoryLogFile\@BedrockLog\@\@QEAA\@XZ
-     */
+    // symbol: ?AddChannel@CategoryLogFile@BedrockLog@@QEAAXW4LogChannel@2@@Z
+    MCAPI void AddChannel(::BedrockLog::LogChannel);
+
+    // symbol: ??0CategoryLogFile@BedrockLog@@QEAA@XZ
     MCAPI CategoryLogFile();
-    /**
-     * @symbol ??1CategoryLogFile\@BedrockLog\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1CategoryLogFile@BedrockLog@@QEAA@XZ
     MCAPI ~CategoryLogFile();
+
     // NOLINTEND
 };
 

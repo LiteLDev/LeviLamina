@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class OnPlacedTrigger {
-
 public:
     // prevent constructor by default
     OnPlacedTrigger& operator=(OnPlacedTrigger const&) = delete;
@@ -12,15 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLACEDTRIGGER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1OnPlacedTrigger@@UEAA@XZ
     MCVAPI ~OnPlacedTrigger();
-#endif
-    /**
-     * @symbol ??0OnPlacedTrigger\@\@QEAA\@$$QEAV0\@\@Z
-     */
+
+    // symbol: ??0OnPlacedTrigger@@QEAA@$$QEAV0@@Z
     MCAPI OnPlacedTrigger(class OnPlacedTrigger&&);
+
     // NOLINTEND
 };

@@ -10,7 +10,6 @@ class Random;
 namespace ValueProviders {
 
 class UniformInt {
-
 public:
     // prevent constructor by default
     UniformInt& operator=(UniformInt const&) = delete;
@@ -19,10 +18,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?generateNext\@UniformInt\@ValueProviders\@\@QEBAHAEAVRandom\@\@\@Z
-     */
-    MCAPI int32_t generateNext(class Random&) const;
+    // symbol: ?generateNext@UniformInt@ValueProviders@@QEBAHAEAVRandom@@@Z
+    MCAPI int generateNext(class Random&) const;
+
     // NOLINTEND
 };
 

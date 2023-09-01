@@ -25,312 +25,208 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
+
+    // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
+
+    // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
+
+    // vIndex: 4, symbol: __unk_vfn_4
     virtual void __unk_vfn_4();
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
+
+    // vIndex: 5, symbol: __unk_vfn_5
     virtual void __unk_vfn_5();
-    /**
-     * @vftbl 6
-     * @symbol __unk_vfn_6
-     */
+
+    // vIndex: 6, symbol: __unk_vfn_6
     virtual void __unk_vfn_6();
-    /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
+
+    // vIndex: 7, symbol: __unk_vfn_7
     virtual void __unk_vfn_7();
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
+
+    // vIndex: 8, symbol: __unk_vfn_8
     virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
+
+    // vIndex: 9, symbol: __unk_vfn_9
     virtual void __unk_vfn_9();
-    /**
-     * @vftbl 10
-     * @symbol __unk_vfn_10
-     */
+
+    // vIndex: 10, symbol: __unk_vfn_10
     virtual void __unk_vfn_10();
-    /**
-     * @vftbl 11
-     * @symbol __unk_vfn_11
-     */
+
+    // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();
-    /**
-     * @vftbl 12
-     * @symbol __unk_vfn_12
-     */
+
+    // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();
-    /**
-     * @vftbl 13
-     * @symbol __unk_vfn_13
-     */
+
+    // vIndex: 13, symbol: __unk_vfn_13
     virtual void __unk_vfn_13();
-    /**
-     * @vftbl 14
-     * @symbol __unk_vfn_14
-     */
+
+    // vIndex: 14, symbol: __unk_vfn_14
     virtual void __unk_vfn_14();
-    /**
-     * @vftbl 15
-     * @symbol __unk_vfn_15
-     */
+
+    // vIndex: 15, symbol: __unk_vfn_15
     virtual void __unk_vfn_15();
-    /**
-     * @vftbl 16
-     * @symbol __unk_vfn_16
-     */
+
+    // vIndex: 16, symbol: __unk_vfn_16
     virtual void __unk_vfn_16();
-    /**
-     * @vftbl 17
-     * @symbol __unk_vfn_17
-     */
+
+    // vIndex: 17, symbol: __unk_vfn_17
     virtual void __unk_vfn_17();
-    /**
-     * @vftbl 18
-     * @symbol ?getEducationEditionOffering\@AppConfigs\@\@UEBA?AW4EducationEditionOffer\@\@XZ
-     */
-    virtual enum class EducationEditionOffer getEducationEditionOffering() const;
-    /**
-     * @vftbl 19
-     * @symbol __unk_vfn_19
-     */
+
+    // vIndex: 18, symbol: ?getEducationEditionOffering@AppConfigs@@UEBA?AW4EducationEditionOffer@@XZ
+    virtual ::EducationEditionOffer getEducationEditionOffering() const;
+
+    // vIndex: 19, symbol: __unk_vfn_19
     virtual void __unk_vfn_19();
-    /**
-     * @vftbl 20
-     * @symbol __unk_vfn_20
-     */
+
+    // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
-    /**
-     * @vftbl 21
-     * @symbol ?supports3DExport\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // vIndex: 21, symbol: ?supports3DExport@AppConfigs@@UEBA_NXZ
     virtual bool supports3DExport() const;
-    /**
-     * @vftbl 22
-     * @symbol __unk_vfn_22
-     */
+
+    // vIndex: 22, symbol: __unk_vfn_22
     virtual void __unk_vfn_22();
-    /**
-     * @vftbl 23
-     * @symbol ?getConnectionDefinition\@AppConfigs\@\@UEBA?AUConnectionDefinition\@\@XZ
-     */
+
+    // vIndex: 23, symbol: ?getConnectionDefinition@AppConfigs@@UEBA?AUConnectionDefinition@@XZ
     virtual struct ConnectionDefinition getConnectionDefinition() const;
-    /**
-     * @vftbl 24
-     * @symbol __unk_vfn_24
-     */
+
+    // vIndex: 24, symbol: __unk_vfn_24
     virtual void __unk_vfn_24();
-    /**
-     * @vftbl 25
-     * @symbol __unk_vfn_25
-     */
+
+    // vIndex: 25, symbol: __unk_vfn_25
     virtual void __unk_vfn_25();
-    /**
-     * @vftbl 26
-     * @symbol __unk_vfn_26
-     */
+
+    // vIndex: 26, symbol: __unk_vfn_26
     virtual void __unk_vfn_26();
-    /**
-     * @vftbl 27
-     * @symbol __unk_vfn_27
-     */
+
+    // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
-    /**
-     * @vftbl 28
-     * @symbol __unk_vfn_28
-     */
+
+    // vIndex: 28, symbol: __unk_vfn_28
     virtual void __unk_vfn_28();
-    /**
-     * @vftbl 29
-     * @symbol __unk_vfn_29
-     */
+
+    // vIndex: 29, symbol: __unk_vfn_29
     virtual void __unk_vfn_29();
-    /**
-     * @vftbl 30
-     * @symbol __unk_vfn_30
-     */
+
+    // vIndex: 30, symbol: __unk_vfn_30
     virtual void __unk_vfn_30();
-    /**
-     * @vftbl 31
-     * @symbol __unk_vfn_31
-     */
+
+    // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
-    /**
-     * @vftbl 32
-     * @symbol
-     * ?getAdditionalClientPacks\@AppConfigs\@\@UEBA?AV?$vector\@UPackIdVersion\@\@V?$allocator\@UPackIdVersion\@\@\@std\@\@\@std\@\@_N\@Z
-     */
+
+    // vIndex: 32, symbol:
+    // ?getAdditionalClientPacks@AppConfigs@@UEBA?AV?$vector@UPackIdVersion@@V?$allocator@UPackIdVersion@@@std@@@std@@_N@Z
     virtual std::vector<struct PackIdVersion> getAdditionalClientPacks(bool) const;
-    /**
-     * @vftbl 33
-     * @symbol
-     * ?getScreenCapabilities\@AppConfigs\@\@UEBA?AV?$unique_ptr\@VIScreenCapabilities\@\@U?$default_delete\@VIScreenCapabilities\@\@\@std\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
-     */
+
+    // vIndex: 33, symbol:
+    // ?getScreenCapabilities@AppConfigs@@UEBA?AV?$unique_ptr@VIScreenCapabilities@@U?$default_delete@VIScreenCapabilities@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
     virtual std::unique_ptr<class IScreenCapabilities> getScreenCapabilities(std::string const&) const;
-    /**
-     * @vftbl 34
-     * @symbol
-     * ?createContentAccessibility\@AppConfigs\@\@UEBA?AV?$unique_ptr\@VIContentAccessibilityProvider\@\@U?$default_delete\@VIContentAccessibilityProvider\@\@\@std\@\@\@std\@\@V?$not_null\@V?$NonOwnerPointer\@VIEntitlementManager\@\@\@Bedrock\@\@\@gsl\@\@\@Z
-     */
+
+    // vIndex: 34, symbol:
+    // ?createContentAccessibility@AppConfigs@@UEBA?AV?$unique_ptr@VIContentAccessibilityProvider@@U?$default_delete@VIContentAccessibilityProvider@@@std@@@std@@V?$not_null@V?$NonOwnerPointer@VIEntitlementManager@@@Bedrock@@@gsl@@@Z
     virtual std::unique_ptr<class IContentAccessibilityProvider>
         createContentAccessibility(gsl::not_null<class Bedrock::NonOwnerPointer<class IEntitlementManager>>) const;
-    /**
-     * @vftbl 35
-     * @symbol
-     * ?getFeedbackURL\@AppConfigs\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // vIndex: 35, symbol:
+    // ?getFeedbackURL@AppConfigs@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getFeedbackURL() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPCONFIGS
-    /**
-     * @symbol ?allowGameArguments\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?allowGameArguments@AppConfigs@@UEBA_NXZ
     MCVAPI bool allowGameArguments() const;
-    /**
-     * @symbol ?applyLevelDataOverride\@AppConfigs\@\@UEBAXAEAVLevelData\@\@\@Z
-     */
+
+    // symbol: ?applyLevelDataOverride@AppConfigs@@UEBAXAEAVLevelData@@@Z
     MCVAPI void applyLevelDataOverride(class LevelData&) const;
-    /**
-     * @symbol ?areEmotesSupported\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?areEmotesSupported@AppConfigs@@UEBA_NXZ
     MCVAPI bool areEmotesSupported() const;
-    /**
-     * @symbol ?arePremiumSkinPacksAllowed\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?arePremiumSkinPacksAllowed@AppConfigs@@UEBA_NXZ
     MCVAPI bool arePremiumSkinPacksAllowed() const;
-    /**
-     * @symbol ?areQuizzesSupported\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?areQuizzesSupported@AppConfigs@@UEBA_NXZ
     MCVAPI bool areQuizzesSupported() const;
-    /**
-     * @symbol ?areResourcePacksAllowed\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?areResourcePacksAllowed@AppConfigs@@UEBA_NXZ
     MCVAPI bool areResourcePacksAllowed() const;
-    /**
-     * @symbol ?canUseAzureNotebooks\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?canUseAzureNotebooks@AppConfigs@@UEBA_NXZ
     MCVAPI bool canUseAzureNotebooks() const;
-    /**
-     * @symbol ?canUseMaelstrom\@AppConfigs\@\@UEBA?AW4MaelstromEduUsabilityStatus\@1\@XZ
-     */
-    MCVAPI enum class AppConfigs::MaelstromEduUsabilityStatus canUseMaelstrom() const;
-    /**
-     * @symbol ?gameArgumentsNeedAuthentication\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?canUseMaelstrom@AppConfigs@@UEBA?AW4MaelstromEduUsabilityStatus@1@XZ
+    MCVAPI ::AppConfigs::MaelstromEduUsabilityStatus canUseMaelstrom() const;
+
+    // symbol: ?gameArgumentsNeedAuthentication@AppConfigs@@UEBA_NXZ
     MCVAPI bool gameArgumentsNeedAuthentication() const;
-    /**
-     * @symbol ?isChatScreenAllowed\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?isChatScreenAllowed@AppConfigs@@UEBA_NXZ
     MCVAPI bool isChatScreenAllowed() const;
-    /**
-     * @symbol ?isCoursesCacheEnabled\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?isCoursesCacheEnabled@AppConfigs@@UEBA_NXZ
     MCVAPI bool isCoursesCacheEnabled() const;
-    /**
-     * @symbol ?isExternalPlayerCommunicationAllowed\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?isExternalPlayerCommunicationAllowed@AppConfigs@@UEBA_NXZ
     MCVAPI bool isExternalPlayerCommunicationAllowed() const;
-    /**
-     * @symbol ?isGameTabShownInSettings\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?isGameTabShownInSettings@AppConfigs@@UEBA_NXZ
     MCVAPI bool isGameTabShownInSettings() const;
-    /**
-     * @symbol ?isLessonProgressionSupported\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?isLessonProgressionSupported@AppConfigs@@UEBA_NXZ
     MCVAPI bool isLessonProgressionSupported() const;
-    /**
-     * @symbol ?isPlayScreenAllowed\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?isPlayScreenAllowed@AppConfigs@@UEBA_NXZ
     MCVAPI bool isPlayScreenAllowed() const;
-    /**
-     * @symbol ?loadFromData\@AppConfigs\@\@UEAAXAEBVIAppConfigData\@\@\@Z
-     */
+
+    // symbol: ?loadFromData@AppConfigs@@UEAAXAEBVIAppConfigData@@@Z
     MCVAPI void loadFromData(class IAppConfigData const&);
-    /**
-     * @symbol ?muteByDefault\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?muteByDefault@AppConfigs@@UEBA_NXZ
     MCVAPI bool muteByDefault() const;
-    /**
-     * @symbol ?requireEduLevelSettings\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?requireEduLevelSettings@AppConfigs@@UEBA_NXZ
     MCVAPI bool requireEduLevelSettings() const;
-    /**
-     * @symbol ?requireTrustedContent\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?requireTrustedContent@AppConfigs@@UEBA_NXZ
     MCVAPI bool requireTrustedContent() const;
-    /**
-     * @symbol ?sendPermissionsTelemetry\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?sendPermissionsTelemetry@AppConfigs@@UEBA_NXZ
     MCVAPI bool sendPermissionsTelemetry() const;
-    /**
-     * @symbol ?setCanAccessWorldCallback\@AppConfigs\@\@UEAAXAEAVIMinecraftGame\@\@\@Z
-     */
+
+    // symbol: ?setCanAccessWorldCallback@AppConfigs@@UEAAXAEAVIMinecraftGame@@@Z
     MCVAPI void setCanAccessWorldCallback(class IMinecraftGame&);
-    /**
-     * @symbol ?shouldPromptBeforeExit\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?shouldPromptBeforeExit@AppConfigs@@UEBA_NXZ
     MCVAPI bool shouldPromptBeforeExit() const;
-    /**
-     * @symbol ?supportsChangingMultiplayerDuringPlay\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?supportsChangingMultiplayerDuringPlay@AppConfigs@@UEBA_NXZ
     MCVAPI bool supportsChangingMultiplayerDuringPlay() const;
-    /**
-     * @symbol ?useEduDemoUpsellDialog\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?useEduDemoUpsellDialog@AppConfigs@@UEBA_NXZ
     MCVAPI bool useEduDemoUpsellDialog() const;
-    /**
-     * @symbol ?useFullScreenByDefault\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?useFullScreenByDefault@AppConfigs@@UEBA_NXZ
     MCVAPI bool useFullScreenByDefault() const;
-    /**
-     * @symbol ?useNormalizedFontSize\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?useNormalizedFontSize@AppConfigs@@UEBA_NXZ
     MCVAPI bool useNormalizedFontSize() const;
-    /**
-     * @symbol ?webSocketsDisabled\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?webSocketsDisabled@AppConfigs@@UEBA_NXZ
     MCVAPI bool webSocketsDisabled() const;
-    /**
-     * @symbol ?worldBuilderDisabled\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?worldBuilderDisabled@AppConfigs@@UEBA_NXZ
     MCVAPI bool worldBuilderDisabled() const;
-    /**
-     * @symbol ?worldsAreSingleUse\@AppConfigs\@\@UEBA_NXZ
-     */
+
+    // symbol: ?worldsAreSingleUse@AppConfigs@@UEBA_NXZ
     MCVAPI bool worldsAreSingleUse() const;
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1AppConfigs@@UEAA@XZ
     MCVAPI ~AppConfigs();
-#endif
+
     // NOLINTEND
 };

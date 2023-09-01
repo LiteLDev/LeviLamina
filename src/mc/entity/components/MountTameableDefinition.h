@@ -11,7 +11,6 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class MountTameableDefinition {
-
 public:
     // prevent constructor by default
     MountTameableDefinition& operator=(MountTameableDefinition const&) = delete;
@@ -19,20 +18,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0MountTameableDefinition\@\@QEAA\@XZ
-     */
+    // symbol: ??0MountTameableDefinition@@QEAA@XZ
     MCAPI MountTameableDefinition();
-    /**
-     * @symbol ?initialize\@MountTameableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVMountTamingComponent\@\@\@Z
-     */
+
+    // symbol: ?initialize@MountTameableDefinition@@QEBAXAEAVEntityContext@@AEAVMountTamingComponent@@@Z
     MCAPI void initialize(class EntityContext&, class MountTamingComponent&) const;
-    /**
-     * @symbol
-     * ?buildSchema\@MountTameableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VMountTameableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?buildSchema@MountTameableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VMountTameableDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MountTameableDefinition>>&);
+
     // NOLINTEND
 };

@@ -5,7 +5,6 @@
 namespace Social::Events {
 
 class Property {
-
 public:
     // prevent constructor by default
     Property& operator=(Property const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1Property\@Events\@Social\@\@QEAA\@XZ
-     */
+    // symbol: ??1Property@Events@Social@@QEAA@XZ
     MCAPI ~Property();
+
     // NOLINTEND
 };
 

@@ -16,7 +16,6 @@ struct XAsyncBlock;
 namespace Bedrock::Http {
 
 class HttpInterfaceInternal : public ::Bedrock::Http::HttpInterface {
-
 public:
     // prevent constructor by default
     HttpInterfaceInternal& operator=(HttpInterfaceInternal const&) = delete;
@@ -25,23 +24,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?send\@HttpInterfaceInternal\@Http\@Bedrock\@\@UEAAXV?$not_null\@PEAUHC_CALL\@\@\@gsl\@\@V?$not_null\@PEAUXAsyncBlock\@\@\@5\@PEAUHC_PERFORM_ENV\@\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?send@HttpInterfaceInternal@Http@Bedrock@@UEAAXV?$not_null@PEAUHC_CALL@@@gsl@@V?$not_null@PEAUXAsyncBlock@@@5@PEAUHC_PERFORM_ENV@@@Z
     virtual void send(gsl::not_null<struct HC_CALL*>, gsl::not_null<struct XAsyncBlock*>, struct HC_PERFORM_ENV*);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_HTTP_HTTPINTERFACEINTERNAL
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1HttpInterfaceInternal@Http@Bedrock@@UEAA@XZ
     MCVAPI ~HttpInterfaceInternal();
-#endif
+
     // NOLINTEND
 };
 

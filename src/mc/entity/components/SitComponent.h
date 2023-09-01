@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class SitComponent {
-
 public:
     // prevent constructor by default
     SitComponent& operator=(SitComponent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?getInteraction\@SitComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
-     */
+    // symbol: ?getInteraction@SitComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
     MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+
     // NOLINTEND
 };

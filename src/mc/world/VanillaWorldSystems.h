@@ -12,10 +12,8 @@ namespace VanillaWorldSystems { class Impl; }
 
 namespace VanillaWorldSystems {
 // NOLINTBEGIN
-/**
- * @symbol
- * ?init\@VanillaWorldSystems\@\@YA?AV?$shared_ptr\@VImpl\@VanillaWorldSystems\@\@\@std\@\@AEBV?$NonOwnerPointer\@VLevel\@\@\@Bedrock\@\@AEBVExperiments\@\@AEBVBaseGameVersion\@\@PEAVResourcePackManager\@\@VItemRegistryRef\@\@\@Z
- */
+// symbol:
+// ?init@VanillaWorldSystems@@YA?AV?$shared_ptr@VImpl@VanillaWorldSystems@@@std@@AEBV?$NonOwnerPointer@VLevel@@@Bedrock@@AEBVExperiments@@AEBVBaseGameVersion@@PEAVResourcePackManager@@VItemRegistryRef@@@Z
 MCAPI std::shared_ptr<class VanillaWorldSystems::Impl> init(
     class Bedrock::NonOwnerPointer<class Level> const&,
     class Experiments const&,

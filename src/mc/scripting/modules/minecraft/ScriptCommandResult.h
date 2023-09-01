@@ -8,7 +8,6 @@
 namespace ScriptModuleMinecraft {
 
 struct ScriptCommandResult {
-
 public:
     // prevent constructor by default
     ScriptCommandResult& operator=(ScriptCommandResult const&) = delete;
@@ -17,11 +16,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?bind\@ScriptCommandResult\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptCommandResult\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+    // symbol:
+    // ?bind@ScriptCommandResult@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptCommandResult@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptCommandResult> bind();
+
     // NOLINTEND
 };
 

@@ -5,7 +5,6 @@
 namespace CodeBuilder {
 
 class IMessenger {
-
 public:
     // prevent constructor by default
     IMessenger& operator=(IMessenger const&) = delete;

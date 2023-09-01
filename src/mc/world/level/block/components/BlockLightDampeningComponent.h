@@ -6,7 +6,6 @@
 #include "mc/world/level/block/utils/BlockComponentBase.h"
 
 struct BlockLightDampeningComponent : public ::BlockComponentBase {
-
 public:
     // prevent constructor by default
     BlockLightDampeningComponent& operator=(BlockLightDampeningComponent const&) = delete;
@@ -15,9 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?usesNewComponentStorage\@BlockLightDampeningComponent\@\@SA_NXZ
-     */
+    // symbol: ?usesNewComponentStorage@BlockLightDampeningComponent@@SA_NXZ
     MCAPI static bool usesNewComponentStorage();
+
     // NOLINTEND
 };

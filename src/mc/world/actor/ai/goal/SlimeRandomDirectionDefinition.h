@@ -12,7 +12,6 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class SlimeRandomDirectionDefinition : public ::BaseGoalDefinition {
-
 public:
     // prevent constructor by default
     SlimeRandomDirectionDefinition& operator=(SlimeRandomDirectionDefinition const&) = delete;
@@ -20,25 +19,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @symbol ??0SlimeRandomDirectionDefinition\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0SlimeRandomDirectionDefinition@@QEAA@XZ
     MCAPI SlimeRandomDirectionDefinition();
-    /**
-     * @symbol
-     * ?initialize\@SlimeRandomDirectionDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVSlimeRandomDirectionGoal\@\@\@Z
-     */
+
+    // symbol: ?initialize@SlimeRandomDirectionDefinition@@QEBAXAEAVEntityContext@@AEAVSlimeRandomDirectionGoal@@@Z
     MCAPI void initialize(class EntityContext&, class SlimeRandomDirectionGoal&) const;
-    /**
-     * @symbol
-     * ?buildSchema\@SlimeRandomDirectionDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSlimeRandomDirectionDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
-     */
+
+    // symbol:
+    // ?buildSchema@SlimeRandomDirectionDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSlimeRandomDirectionDefinition@@@JsonUtil@@@3@@Z
     MCAPI static void
     buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeRandomDirectionDefinition>>&);
+
     // NOLINTEND
 };

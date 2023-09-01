@@ -5,7 +5,6 @@
 namespace Util {
 
 struct FormattedString {
-
 public:
     // prevent constructor by default
     FormattedString& operator=(FormattedString const&) = delete;

@@ -11,7 +11,6 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 // clang-format on
 
 class IPacketObserver : public ::Bedrock::EnableNonOwnerReferences {
-
 public:
     // prevent constructor by default
     IPacketObserver& operator=(IPacketObserver const&) = delete;
@@ -20,11 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IPACKETOBSERVER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1IPacketObserver@@UEAA@XZ
     MCVAPI ~IPacketObserver();
-#endif
+
     // NOLINTEND
 };

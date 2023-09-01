@@ -42,7 +42,6 @@ namespace Bedrock { class IIslandCore; }
 namespace Bedrock { class PlatformBootstrap; }
 namespace Bedrock { class WorkerPoolManager; }
 namespace Bedrock { struct CallStack; }
-namespace Bedrock::Http { class BinaryRequestBody; }
 namespace Bedrock::Http { class BufferedResponseBody; }
 namespace Bedrock::Http { class DispatcherProcess; }
 namespace Bedrock::Http { class HeaderCollection; }
@@ -93,17 +92,13 @@ namespace Json { class Value; }
 
 namespace Bedrock {
 // NOLINTBEGIN
-/**
- * @symbol ?strtoint32\@Bedrock\@\@YAHPEBDPEAPEADH\@Z
- */
-MCAPI int32_t strtoint32(char const*, char**, int32_t);
-/**
- * @symbol ?strtouint32\@Bedrock\@\@YAIPEBDPEAPEADH\@Z
- */
-MCAPI uint32_t strtouint32(char const*, char**, int32_t);
-/**
- * @symbol ?throw_system_error\@Bedrock\@\@YAXW4errc\@std\@\@\@Z
- */
+// symbol: ?strtoint32@Bedrock@@YAHPEBDPEAPEADH@Z
+MCAPI int strtoint32(char const*, char**, int);
+
+// symbol: ?strtouint32@Bedrock@@YAIPEBDPEAPEADH@Z
+MCAPI uint strtouint32(char const*, char**, int);
+
+// symbol: ?throw_system_error@Bedrock@@YAXW4errc@std@@@Z
 MCAPI void throw_system_error(std::errc);
 // NOLINTEND
 

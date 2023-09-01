@@ -7,7 +7,6 @@
 #include "mc/world/actor/ai/goal/BaseMoveToGoal.h"
 
 class BaseMoveToBlockGoal : public ::BaseMoveToGoal {
-
 public:
     // prevent constructor by default
     BaseMoveToBlockGoal& operator=(BaseMoveToBlockGoal const&) = delete;
@@ -16,40 +15,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@BaseMoveToBlockGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@BaseMoveToBlockGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@BaseMoveToBlockGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@BaseMoveToBlockGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 14
-     * @symbol ?_moveToBlock\@BaseMoveToBlockGoal\@\@MEAAXXZ
-     */
+
+    // vIndex: 14, symbol: ?_moveToBlock@BaseMoveToBlockGoal@@MEAAXXZ
     virtual void _moveToBlock();
-    /**
-     * @vftbl 17
-     * @symbol ?findTargetBlock\@BaseMoveToBlockGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 17, symbol: ?findTargetBlock@BaseMoveToBlockGoal@@UEAA_NXZ
     virtual bool findTargetBlock();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEMOVETOBLOCKGOAL
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1BaseMoveToBlockGoal@@UEAA@XZ
     MCVAPI ~BaseMoveToBlockGoal();
-#endif
-    /**
-     * @symbol ??0BaseMoveToBlockGoal\@\@QEAA\@AEAVMob\@\@MHHHMM\@Z
-     */
-    MCAPI BaseMoveToBlockGoal(class Mob&, float, int32_t, int32_t, int32_t, float, float);
+
+    // symbol: ??0BaseMoveToBlockGoal@@QEAA@AEAVMob@@MHHHMM@Z
+    MCAPI BaseMoveToBlockGoal(class Mob&, float, int, int, int, float, float);
+
     // NOLINTEND
 };

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class GatheringServerInfo {
-
 public:
     // prevent constructor by default
     GatheringServerInfo& operator=(GatheringServerInfo const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1GatheringServerInfo\@\@QEAA\@XZ
-     */
+    // symbol: ??1GatheringServerInfo@@QEAA@XZ
     MCAPI ~GatheringServerInfo();
+
     // NOLINTEND
 };

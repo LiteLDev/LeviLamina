@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class PlayerGameplayHandler {
-
 public:
     // prevent constructor by default
     PlayerGameplayHandler& operator=(PlayerGameplayHandler const&) = delete;

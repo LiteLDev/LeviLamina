@@ -8,7 +8,6 @@ namespace Json { class Value; }
 // clang-format on
 
 class ActorAliasDescription {
-
 public:
     // prevent constructor by default
     ActorAliasDescription& operator=(ActorAliasDescription const&) = delete;
@@ -17,25 +16,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getJsonName\@ActorAliasDescription\@\@UEBAPEBDXZ
-     */
+
+    // vIndex: 1, symbol: ?getJsonName@ActorAliasDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORALIASDESCRIPTION
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1ActorAliasDescription@@UEAA@XZ
     MCVAPI ~ActorAliasDescription();
-#endif
-    /**
-     * @symbol ?parse\@ActorAliasDescription\@\@QEAAXAEAVValue\@Json\@\@_N\@Z
-     */
+
+    // symbol: ?parse@ActorAliasDescription@@QEAAXAEAVValue@Json@@_N@Z
     MCAPI void parse(class Json::Value&, bool);
+
     // NOLINTEND
 };

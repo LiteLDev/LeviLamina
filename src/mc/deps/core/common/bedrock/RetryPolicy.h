@@ -10,7 +10,6 @@ namespace Bedrock::Http { class Response; }
 namespace Bedrock::Http {
 
 class RetryPolicy {
-
 public:
     // prevent constructor by default
     RetryPolicy& operator=(RetryPolicy const&) = delete;
@@ -19,11 +18,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?getDelay\@RetryPolicy\@Http\@Bedrock\@\@QEBA?AV?$optional\@V?$duration\@_JU?$ratio\@$00$00\@std\@\@\@chrono\@std\@\@\@std\@\@AEBVResponse\@23\@\@Z
-     */
+    // symbol:
+    // ?getDelay@RetryPolicy@Http@Bedrock@@QEBA?AV?$optional@V?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@@std@@AEBVResponse@23@@Z
     MCAPI std::optional<std::chrono::seconds> getDelay(class Bedrock::Http::Response const&) const;
+
     // NOLINTEND
 };
 

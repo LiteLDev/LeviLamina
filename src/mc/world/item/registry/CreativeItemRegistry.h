@@ -13,7 +13,6 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 // clang-format on
 
 class CreativeItemRegistry : public ::Bedrock::EnableNonOwnerReferences {
-
 public:
     // prevent constructor by default
     CreativeItemRegistry& operator=(CreativeItemRegistry const&) = delete;
@@ -21,104 +20,87 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATIVEITEMREGISTRY
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1CreativeItemRegistry@@UEAA@XZ
     MCVAPI ~CreativeItemRegistry();
-#endif
-    /**
-     * @symbol ??0CreativeItemRegistry\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0CreativeItemRegistry@@QEAA@XZ
     MCAPI CreativeItemRegistry();
-    /**
-     * @symbol
-     * ?findCreativeItemEntry\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemEntry\@\@AEBV?$TypedServerNetId\@UCreativeItemNetIdTag\@\@I$0A\@\@\@\@Z
-     */
+
+    // symbol:
+    // ?findCreativeItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@@Z
     MCAPI class CreativeItemEntry*
-    findCreativeItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, uint32_t, 0> const&);
-    /**
-     * @symbol ?findCreativeItemEntry\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemEntry\@\@AEBVItemInstance\@\@\@Z
-     */
+    findCreativeItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, uint, 0> const&);
+
+    // symbol: ?findCreativeItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBVItemInstance@@@Z
     MCAPI class CreativeItemEntry* findCreativeItemEntry(class ItemInstance const&);
-    /**
-     * @symbol
-     * ?getCreativeCategory\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemGroupCategory\@\@W4CreativeItemCategory\@\@\@Z
-     */
-    MCAPI class CreativeItemGroupCategory* getCreativeCategory(enum class CreativeItemCategory);
-    /**
-     * @symbol
-     * ?getCreativeItemEntries\@CreativeItemRegistry\@\@QEAAAEBV?$vector\@VCreativeItemEntry\@\@V?$allocator\@VCreativeItemEntry\@\@\@std\@\@\@std\@\@XZ
-     */
+
+    // symbol: ?getCreativeCategory@CreativeItemRegistry@@QEAAPEAVCreativeItemGroupCategory@@W4CreativeItemCategory@@@Z
+    MCAPI class CreativeItemGroupCategory* getCreativeCategory(::CreativeItemCategory);
+
+    // symbol:
+    // ?getCreativeItemEntries@CreativeItemRegistry@@QEAAAEBV?$vector@VCreativeItemEntry@@V?$allocator@VCreativeItemEntry@@@std@@@std@@XZ
     MCAPI std::vector<class CreativeItemEntry> const& getCreativeItemEntries();
-    /**
-     * @symbol ?getItemEntry\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemEntry\@\@I\@Z
-     */
-    MCAPI class CreativeItemEntry* getItemEntry(uint32_t);
-    /**
-     * @symbol
-     * ?newCreativeCategory\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemGroupCategory\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4CreativeItemCategory\@\@\@Z
-     */
-    MCAPI class CreativeItemGroupCategory* newCreativeCategory(std::string const&, enum class CreativeItemCategory);
-    /**
-     * @symbol
-     * ?newCreativeGroup\@CreativeItemRegistry\@\@QEAAPEAVCreativeGroupInfo\@\@W4CreativeItemCategory\@\@AEBVHashedString\@\@AEBVItemInstance\@\@\@Z
-     */
+
+    // symbol: ?getItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@I@Z
+    MCAPI class CreativeItemEntry* getItemEntry(uint);
+
+    // symbol:
+    // ?newCreativeCategory@CreativeItemRegistry@@QEAAPEAVCreativeItemGroupCategory@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CreativeItemCategory@@@Z
+    MCAPI class CreativeItemGroupCategory* newCreativeCategory(std::string const&, ::CreativeItemCategory);
+
+    // symbol:
+    // ?newCreativeGroup@CreativeItemRegistry@@QEAAPEAVCreativeGroupInfo@@W4CreativeItemCategory@@AEBVHashedString@@AEBVItemInstance@@@Z
     MCAPI class CreativeGroupInfo*
-    newCreativeGroup(enum class CreativeItemCategory, class HashedString const&, class ItemInstance const&);
-    /**
-     * @symbol
-     * ?newItemEntry\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemEntry\@\@AEBV?$TypedServerNetId\@UCreativeItemNetIdTag\@\@I$0A\@\@\@AEBVItemInstance\@\@\@Z
-     */
+    newCreativeGroup(::CreativeItemCategory, class HashedString const&, class ItemInstance const&);
+
+    // symbol:
+    // ?newItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@AEBVItemInstance@@@Z
     MCAPI class CreativeItemEntry*
-    newItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, uint32_t, 0> const&, class ItemInstance const&);
-    /**
-     * @symbol ?resetGroups\@CreativeItemRegistry\@\@QEAAXXZ
-     */
+    newItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, uint, 0> const&, class ItemInstance const&);
+
+    // symbol: ?resetGroups@CreativeItemRegistry@@QEAAXXZ
     MCAPI void resetGroups();
-    /**
-     * @symbol ?updateItemEntry\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemEntry\@\@IAEBVItemInstance\@\@\@Z
-     */
-    MCAPI class CreativeItemEntry* updateItemEntry(uint32_t, class ItemInstance const&);
-    /**
-     * @symbol ?updateNetIdMap\@CreativeItemRegistry\@\@QEAAXXZ
-     */
+
+    // symbol: ?updateItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@IAEBVItemInstance@@@Z
+    MCAPI class CreativeItemEntry* updateItemEntry(uint, class ItemInstance const&);
+
+    // symbol: ?updateNetIdMap@CreativeItemRegistry@@QEAAXXZ
     MCAPI void updateNetIdMap();
-    /**
-     * @symbol ?current\@CreativeItemRegistry\@\@SAPEAV1\@XZ
-     */
+
+    // symbol: ?current@CreativeItemRegistry@@SAPEAV1@XZ
     MCAPI static class CreativeItemRegistry* current();
-    /**
-     * @symbol
-     * ?forEachCreativeItemInstance\@CreativeItemRegistry\@\@SAXV?$function\@$$A6A_NAEAVItemInstance\@\@\@Z\@std\@\@\@Z
-     */
+
+    // symbol: ?forEachCreativeItemInstance@CreativeItemRegistry@@SAXV?$function@$$A6A_NAEAVItemInstance@@@Z@std@@@Z
     MCAPI static void forEachCreativeItemInstance(std::function<bool(class ItemInstance&)>);
-    /**
-     * @symbol
-     * ?setCurrentRegistry\@CreativeItemRegistry\@\@SAX$$QEAV?$unique_ptr\@VCreativeItemRegistry\@\@U?$default_delete\@VCreativeItemRegistry\@\@\@std\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?setCurrentRegistry@CreativeItemRegistry@@SAX$$QEAV?$unique_ptr@VCreativeItemRegistry@@U?$default_delete@VCreativeItemRegistry@@@std@@@std@@@Z
     MCAPI static void setCurrentRegistry(std::unique_ptr<class CreativeItemRegistry>&&);
-    /**
-     * @symbol ?mCreativeListMutex\@CreativeItemRegistry\@\@2Vmutex\@std\@\@A
-     */
+
+    // symbol: ?mCreativeListMutex@CreativeItemRegistry@@2Vmutex@std@@A
     MCAPI static std::mutex mCreativeListMutex;
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_forEachCreativeItemInstance\@CreativeItemRegistry\@\@AEAAXV?$function\@$$A6A_NAEAVItemInstance\@\@\@Z\@std\@\@\@Z
-     */
+    // symbol: ?_forEachCreativeItemInstance@CreativeItemRegistry@@AEAAXV?$function@$$A6A_NAEAVItemInstance@@@Z@std@@@Z
     MCAPI void _forEachCreativeItemInstance(std::function<bool(class ItemInstance&)>);
+
     // NOLINTEND
 
 private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?mCurrentRegistry\@CreativeItemRegistry\@\@0V?$unique_ptr\@VCreativeItemRegistry\@\@U?$default_delete\@VCreativeItemRegistry\@\@\@std\@\@\@std\@\@A
-     */
+    // symbol:
+    // ?mCurrentRegistry@CreativeItemRegistry@@0V?$unique_ptr@VCreativeItemRegistry@@U?$default_delete@VCreativeItemRegistry@@@std@@@std@@A
     MCAPI static std::unique_ptr<class CreativeItemRegistry> mCurrentRegistry;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $mCurrentRegistry() { return mCurrentRegistry; }
+
     // NOLINTEND
 };

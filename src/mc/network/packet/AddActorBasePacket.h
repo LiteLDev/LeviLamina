@@ -6,7 +6,6 @@
 #include "mc/network/packet/Packet.h"
 
 class AddActorBasePacket : public ::Packet {
-
 public:
     // prevent constructor by default
     AddActorBasePacket& operator=(AddActorBasePacket const&) = delete;
@@ -15,11 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDACTORBASEPACKET
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1AddActorBasePacket@@UEAA@XZ
     MCVAPI ~AddActorBasePacket();
-#endif
+
     // NOLINTEND
 };

@@ -7,7 +7,6 @@
 #include "mc/world/actor/ai/goal/BaseMoveToBlockGoal.h"
 
 class StompBlockGoal : public ::BaseMoveToBlockGoal {
-
 public:
     // prevent constructor by default
     StompBlockGoal& operator=(StompBlockGoal const&) = delete;
@@ -16,81 +15,51 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@StompBlockGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@StompBlockGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@StompBlockGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@StompBlockGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@StompBlockGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@StompBlockGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol ?stop\@StompBlockGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 5, symbol: ?stop@StompBlockGoal@@UEAAXXZ
     virtual void stop();
-    /**
-     * @vftbl 6
-     * @symbol ?tick\@StompBlockGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 6, symbol: ?tick@StompBlockGoal@@UEAAXXZ
     virtual void tick();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@StompBlockGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@StompBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @vftbl 11
-     * @symbol ?isValidTarget\@StompBlockGoal\@\@UEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
+
+    // vIndex: 11, symbol: ?isValidTarget@StompBlockGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
-    /**
-     * @vftbl 13
-     * @symbol ?_canReach\@StompBlockGoal\@\@MEAA_NAEBVBlockPos\@\@\@Z
-     */
+
+    // vIndex: 13, symbol: ?_canReach@StompBlockGoal@@MEAA_NAEBVBlockPos@@@Z
     virtual bool _canReach(class BlockPos const&);
-    /**
-     * @vftbl 14
-     * @symbol ?_moveToBlock\@StompBlockGoal\@\@MEAAXXZ
-     */
+
+    // vIndex: 14, symbol: ?_moveToBlock@StompBlockGoal@@MEAAXXZ
     virtual void _moveToBlock();
-    /**
-     * @vftbl 17
-     * @symbol ?findTargetBlock\@StompBlockGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 17, symbol: ?findTargetBlock@StompBlockGoal@@UEAA_NXZ
     virtual bool findTargetBlock();
-    /**
-     * @vftbl 18
-     * @symbol ?_createBreakProgressParticles\@StompBlockGoal\@\@MEAAXAEAVLevel\@\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
-     */
+
+    // vIndex: 18, symbol: ?_createBreakProgressParticles@StompBlockGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
     virtual void _createBreakProgressParticles(class Level&, class BlockSource&, class BlockPos);
-    /**
-     * @vftbl 19
-     * @symbol ?_createDestroyParticles\@StompBlockGoal\@\@MEAAXAEAVLevel\@\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
-     */
+
+    // vIndex: 19, symbol: ?_createDestroyParticles@StompBlockGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
     virtual void _createDestroyParticles(class Level&, class BlockSource&, class BlockPos);
-    /**
-     * @vftbl 20
-     * @symbol ?_playBreakProgressSound\@StompBlockGoal\@\@MEAAXAEAVLevel\@\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
-     */
+
+    // vIndex: 20, symbol: ?_playBreakProgressSound@StompBlockGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
     virtual void _playBreakProgressSound(class Level&, class BlockSource&, class BlockPos);
-    /**
-     * @vftbl 21
-     * @symbol ?_playDestroySound\@StompBlockGoal\@\@MEAAXAEAVLevel\@\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
-     */
+
+    // vIndex: 21, symbol: ?_playDestroySound@StompBlockGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
     virtual void _playDestroySound(class Level&, class BlockSource&, class BlockPos);
+
     // NOLINTEND
 };

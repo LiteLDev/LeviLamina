@@ -6,7 +6,6 @@
 #include "mc/world/actor/ActorComponentDescription.h"
 
 class TrailDescription : public ::ActorComponentDescription {
-
 public:
     // prevent constructor by default
     TrailDescription& operator=(TrailDescription const&) = delete;
@@ -14,30 +13,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol ?getJsonName\@TrailDescription\@\@UEBAPEBDXZ
-     */
+    // vIndex: 0, symbol: ?getJsonName@TrailDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?deserializeData\@TrailDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?deserializeData@TrailDescription@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRAILDESCRIPTION
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1TrailDescription@@UEAA@XZ
     MCVAPI ~TrailDescription();
-#endif
-    /**
-     * @symbol ??0TrailDescription\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0TrailDescription@@QEAA@XZ
     MCAPI TrailDescription();
+
     // NOLINTEND
 };

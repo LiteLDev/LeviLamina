@@ -6,7 +6,6 @@
 #include "mc/world/AutomaticID.h"
 
 class BlockSourceFactoryImpl {
-
 public:
     // prevent constructor by default
     BlockSourceFactoryImpl& operator=(BlockSourceFactoryImpl const&) = delete;
@@ -15,10 +14,9 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_createOrUpdate\@BlockSourceFactoryImpl\@\@IEBAXAEAVMockableOwnedBlockSource\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
-     */
-    MCAPI void _createOrUpdate(class MockableOwnedBlockSource&, DimensionType) const;
+    // symbol:
+    // ?_createOrUpdate@BlockSourceFactoryImpl@@IEBAXAEAVMockableOwnedBlockSource@@V?$AutomaticID@VDimension@@H@@@Z
+    MCAPI void _createOrUpdate(class MockableOwnedBlockSource&, class AutomaticID<class Dimension, int>) const;
+
     // NOLINTEND
 };

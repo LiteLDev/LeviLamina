@@ -5,7 +5,6 @@
 namespace Scripting {
 
 struct ObjectHandle {
-
 public:
     // prevent constructor by default
     ObjectHandle& operator=(ObjectHandle const&) = delete;

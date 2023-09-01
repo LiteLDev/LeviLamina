@@ -8,7 +8,6 @@ namespace RakNet { class BitStream; }
 // clang-format on
 
 class DatagramHeaderFormat {
-
 public:
     // prevent constructor by default
     DatagramHeaderFormat& operator=(DatagramHeaderFormat const&) = delete;
@@ -17,13 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?Deserialize\@DatagramHeaderFormat\@\@QEAAXPEAVBitStream\@RakNet\@\@\@Z
-     */
+    // symbol: ?Deserialize@DatagramHeaderFormat@@QEAAXPEAVBitStream@RakNet@@@Z
     MCAPI void Deserialize(class RakNet::BitStream*);
-    /**
-     * @symbol ?Serialize\@DatagramHeaderFormat\@\@QEAAXPEAVBitStream\@RakNet\@\@\@Z
-     */
+
+    // symbol: ?Serialize@DatagramHeaderFormat@@QEAAXPEAVBitStream@RakNet@@@Z
     MCAPI void Serialize(class RakNet::BitStream*);
+
     // NOLINTEND
 };

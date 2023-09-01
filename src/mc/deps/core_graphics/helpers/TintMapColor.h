@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class TintMapColor {
-
 public:
     // prevent constructor by default
     TintMapColor& operator=(TintMapColor const&) = delete;
@@ -11,9 +10,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0TintMapColor\@\@QEAA\@XZ
-     */
+    // symbol: ??0TintMapColor@@QEAA@XZ
     MCAPI TintMapColor();
+
     // NOLINTEND
 };

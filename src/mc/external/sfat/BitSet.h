@@ -5,7 +5,6 @@
 namespace SFAT {
 
 class BitSet {
-
 public:
     // prevent constructor by default
     BitSet& operator=(BitSet const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?npos\@BitSet\@SFAT\@\@2_KB
-     */
-    MCAPI static uint64_t const npos;
+    // symbol: ?npos@BitSet@SFAT@@2_KB
+    MCAPI static uint64 const npos;
+
     // NOLINTEND
 };
 

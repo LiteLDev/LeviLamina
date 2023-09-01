@@ -5,7 +5,6 @@
 namespace Core {
 
 struct LevelStorageResult {
-
 public:
     // prevent constructor by default
     LevelStorageResult& operator=(LevelStorageResult const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1LevelStorageResult\@Core\@\@QEAA\@XZ
-     */
+    // symbol: ??1LevelStorageResult@Core@@QEAA@XZ
     MCAPI ~LevelStorageResult();
+
     // NOLINTEND
 };
 

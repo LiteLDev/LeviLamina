@@ -11,7 +11,6 @@ namespace SplitBlockUtils { struct BlockNameRefAuxVariant; }
 namespace SplitBlockUtils {
 
 struct LegacyBlockInfo {
-
 public:
     // prevent constructor by default
     LegacyBlockInfo& operator=(LegacyBlockInfo const&) = delete;
@@ -20,16 +19,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ??0LegacyBlockInfo\@SplitBlockUtils\@\@QEAA\@HVHashedString\@\@0V?$vector\@UBlockNameRefAuxVariant\@SplitBlockUtils\@\@V?$allocator\@UBlockNameRefAuxVariant\@SplitBlockUtils\@\@\@std\@\@\@std\@\@\@Z
-     */
+    // symbol:
+    // ??0LegacyBlockInfo@SplitBlockUtils@@QEAA@HVHashedString@@0V?$vector@UBlockNameRefAuxVariant@SplitBlockUtils@@V?$allocator@UBlockNameRefAuxVariant@SplitBlockUtils@@@std@@@std@@@Z
     MCAPI
-    LegacyBlockInfo(int32_t, class HashedString, class HashedString, std::vector<struct SplitBlockUtils::BlockNameRefAuxVariant>);
-    /**
-     * @symbol ??1LegacyBlockInfo\@SplitBlockUtils\@\@QEAA\@XZ
-     */
+    LegacyBlockInfo(int, class HashedString, class HashedString, std::vector<struct SplitBlockUtils::BlockNameRefAuxVariant>);
+
+    // symbol: ??1LegacyBlockInfo@SplitBlockUtils@@QEAA@XZ
     MCAPI ~LegacyBlockInfo();
+
     // NOLINTEND
 };
 

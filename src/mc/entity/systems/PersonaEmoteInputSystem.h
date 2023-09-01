@@ -8,7 +8,6 @@
 #include "mc/entity/EntityModifierT.h"
 
 class PersonaEmoteInputSystem {
-
 public:
     // prevent constructor by default
     PersonaEmoteInputSystem& operator=(PersonaEmoteInputSystem const&) = delete;
@@ -17,24 +16,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createSystem\@PersonaEmoteInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createSystem@PersonaEmoteInputSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_personaEmoteInputSystem\@PersonaEmoteInputSystem\@\@CAXAEBVStrictEntityContext\@\@AEBUEventingDispatcherComponent\@\@AEBUEmotePlayedTelemetryDataComponent\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@UEventingRequestQueueComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UEmotePlayedTelemetryDataComponent\@\@UShouldStopEmotingRequestComponent\@\@\@\@\@Z
-     */
+    // symbol:
+    // ?_personaEmoteInputSystem@PersonaEmoteInputSystem@@CAXAEBVStrictEntityContext@@AEBUEventingDispatcherComponent@@AEBUEmotePlayedTelemetryDataComponent@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@UEventingRequestQueueComponent@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UEmotePlayedTelemetryDataComponent@@UShouldStopEmotingRequestComponent@@@@@Z
     MCAPI static void _personaEmoteInputSystem(class StrictEntityContext const&, struct EventingDispatcherComponent const&, struct EmotePlayedTelemetryDataComponent const&, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct EventingRequestQueueComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct EmotePlayedTelemetryDataComponent, struct ShouldStopEmotingRequestComponent>);
-    /**
-     * @symbol
-     * ?_tickPersonaEmoteInputSystem\@PersonaEmoteInputSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@UShouldStopEmotingRequestComponent\@\@\@\@$$CBUEventingDispatcherComponent\@\@$$CBUEmotePlayedTelemetryDataComponent\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@UEventingRequestQueueComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UEmotePlayedTelemetryDataComponent\@\@UShouldStopEmotingRequestComponent\@\@\@\@\@Z
-     */
+
+    // symbol:
+    // ?_tickPersonaEmoteInputSystem@PersonaEmoteInputSystem@@CAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@UShouldStopEmotingRequestComponent@@@@$$CBUEventingDispatcherComponent@@$$CBUEmotePlayedTelemetryDataComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@UEventingRequestQueueComponent@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UEmotePlayedTelemetryDataComponent@@UShouldStopEmotingRequestComponent@@@@@Z
     MCAPI static void
         _tickPersonaEmoteInputSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct ShouldStopEmotingRequestComponent>, struct EventingDispatcherComponent const, struct EmotePlayedTelemetryDataComponent const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct EventingRequestQueueComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct EmotePlayedTelemetryDataComponent, struct ShouldStopEmotingRequestComponent>);
+
     // NOLINTEND
 };

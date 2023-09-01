@@ -4,7 +4,6 @@
 
 template <typename T0>
 class SmallSet {
-
 public:
     // prevent constructor by default
     SmallSet& operator=(SmallSet const&) = delete;

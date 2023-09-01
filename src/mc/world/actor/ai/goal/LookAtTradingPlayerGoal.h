@@ -7,7 +7,6 @@
 #include "mc/world/actor/ai/goal/LookAtActorGoal.h"
 
 class LookAtTradingPlayerGoal : public ::LookAtActorGoal {
-
 public:
     // prevent constructor by default
     LookAtTradingPlayerGoal& operator=(LookAtTradingPlayerGoal const&) = delete;
@@ -16,30 +15,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@LookAtTradingPlayerGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@LookAtTradingPlayerGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@LookAtTradingPlayerGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@LookAtTradingPlayerGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@LookAtTradingPlayerGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@LookAtTradingPlayerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @symbol ??0LookAtTradingPlayerGoal\@\@QEAA\@AEAVMob\@\@MMHHHH\@Z
-     */
-    MCAPI LookAtTradingPlayerGoal(class Mob&, float, float, int32_t, int32_t, int32_t, int32_t);
+
+    // symbol: ??0LookAtTradingPlayerGoal@@QEAA@AEAVMob@@MMHHHH@Z
+    MCAPI LookAtTradingPlayerGoal(class Mob&, float, float, int, int, int, int);
+
     // NOLINTEND
 };

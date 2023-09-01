@@ -9,9 +9,7 @@ namespace Bedrock::Memory { class IMemoryAllocator; }
 
 namespace Bedrock::Memory {
 // NOLINTBEGIN
-/**
- * @symbol ?getDefaultAllocator\@Memory\@Bedrock\@\@YAAEAVIMemoryAllocator\@12\@XZ
- */
+// symbol: ?getDefaultAllocator@Memory@Bedrock@@YAAEAVIMemoryAllocator@12@XZ
 MCAPI class Bedrock::Memory::IMemoryAllocator& getDefaultAllocator();
 // NOLINTEND
 

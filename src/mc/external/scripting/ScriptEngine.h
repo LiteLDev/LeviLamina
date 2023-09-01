@@ -5,7 +5,6 @@
 namespace Scripting {
 
 class ScriptEngine {
-
 public:
     // prevent constructor by default
     ScriptEngine& operator=(ScriptEngine const&) = delete;

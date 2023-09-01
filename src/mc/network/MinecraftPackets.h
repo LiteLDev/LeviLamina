@@ -6,7 +6,6 @@
 #include "mc/enums/MinecraftPacketIds.h"
 
 class MinecraftPackets {
-
 public:
     // prevent constructor by default
     MinecraftPackets& operator=(MinecraftPackets const&) = delete;
@@ -15,9 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createPacket\@MinecraftPackets\@\@SA?AV?$shared_ptr\@VPacket\@\@\@std\@\@W4MinecraftPacketIds\@\@\@Z
-     */
-    MCAPI static std::shared_ptr<class Packet> createPacket(enum class MinecraftPacketIds);
+    // symbol: ?createPacket@MinecraftPackets@@SA?AV?$shared_ptr@VPacket@@@std@@W4MinecraftPacketIds@@@Z
+    MCAPI static std::shared_ptr<class Packet> createPacket(::MinecraftPacketIds);
+
     // NOLINTEND
 };

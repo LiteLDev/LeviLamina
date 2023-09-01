@@ -9,10 +9,8 @@
 
 namespace CheckFallDamageInMoveSystemImpl {
 // NOLINTBEGIN
-/**
- * @symbol
- * ?checkFallDamageInMove\@CheckFallDamageInMoveSystemImpl\@\@YAXAEAVStrictEntityContext\@\@AEBUMoveRequestComponent\@\@V?$Optional\@$$CBV?$FlagComponent\@UOnGroundFlag\@\@\@\@\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UCheckFallDamageRequestComponent\@\@\@\@\@Z
- */
+// symbol:
+// ?checkFallDamageInMove@CheckFallDamageInMoveSystemImpl@@YAXAEAVStrictEntityContext@@AEBUMoveRequestComponent@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UCheckFallDamageRequestComponent@@@@@Z
 MCAPI void
 checkFallDamageInMove(class StrictEntityContext&, struct MoveRequestComponent const&, class Optional<class FlagComponent<struct OnGroundFlag> const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct CheckFallDamageRequestComponent>&);
 // NOLINTEND

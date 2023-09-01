@@ -8,7 +8,6 @@
 #include "mc/world/components/FlagComponent.h"
 
 class ActorUpdatePreviousPositionSystem {
-
 public:
     // prevent constructor by default
     ActorUpdatePreviousPositionSystem& operator=(ActorUpdatePreviousPositionSystem const&) = delete;
@@ -17,18 +16,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?create\@ActorUpdatePreviousPositionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?create@ActorUpdatePreviousPositionSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo create();
-    /**
-     * @symbol
-     * ?tickSystem\@ActorUpdatePreviousPositionSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
-     */
+
+    // symbol:
+    // ?tickSystem@ActorUpdatePreviousPositionSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@VActorOwnerComponent@@@@@Z
     MCAPI static void tickSystem(class ViewT<
                                  class StrictEntityContext,
                                  class EntityRegistryBase,
                                  struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
                                  class ActorOwnerComponent>);
+
     // NOLINTEND
 };

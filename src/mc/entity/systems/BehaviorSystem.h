@@ -6,7 +6,6 @@
 #include "mc/entity/systems/ITickingSystem.h"
 
 class BehaviorSystem : public ::ITickingSystem {
-
 public:
     // prevent constructor by default
     BehaviorSystem& operator=(BehaviorSystem const&) = delete;
@@ -15,20 +14,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?tick\@BehaviorSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?tick@BehaviorSystem@@UEAAXAEAVEntityRegistry@@@Z
     virtual void tick(class EntityRegistry&);
+
     // NOLINTEND
 };

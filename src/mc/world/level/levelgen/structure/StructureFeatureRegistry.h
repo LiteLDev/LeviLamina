@@ -6,7 +6,6 @@
 #include "mc/world/level/levelgen/structure/StructureFeatureType.h"
 
 class StructureFeatureRegistry {
-
 public:
     // prevent constructor by default
     StructureFeatureRegistry& operator=(StructureFeatureRegistry const&) = delete;
@@ -14,41 +13,32 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0StructureFeatureRegistry\@\@QEAA\@XZ
-     */
+    // symbol: ??0StructureFeatureRegistry@@QEAA@XZ
     MCAPI StructureFeatureRegistry();
-    /**
-     * @symbol
-     * ?findNearestStructureFeature\@StructureFeatureRegistry\@\@QEAA_NAEAVDimension\@\@AEAVIPreliminarySurfaceProvider\@\@W4StructureFeatureType\@\@AEBVBlockPos\@\@AEAV5\@AEBVBiomeSource\@\@_N\@Z
-     */
+
+    // symbol:
+    // ?findNearestStructureFeature@StructureFeatureRegistry@@QEAA_NAEAVDimension@@AEAVIPreliminarySurfaceProvider@@W4StructureFeatureType@@AEBVBlockPos@@AEAV5@AEBVBiomeSource@@_N@Z
     MCAPI bool findNearestStructureFeature(
         class Dimension&,
         class IPreliminarySurfaceProvider&,
-        enum class StructureFeatureType,
+        ::StructureFeatureType,
         class BlockPos const&,
         class BlockPos&,
         class BiomeSource const&,
         bool
     );
-    /**
-     * @symbol
-     * ?findStructureFeatureTypeAt\@StructureFeatureRegistry\@\@QEAA?AW4StructureFeatureType\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI enum class StructureFeatureType findStructureFeatureTypeAt(class BlockPos const&);
-    /**
-     * @symbol
-     * ?getStructureFeatureOfType\@StructureFeatureRegistry\@\@QEBAPEAVStructureFeature\@\@W4StructureFeatureType\@\@\@Z
-     */
-    MCAPI class StructureFeature* getStructureFeatureOfType(enum class StructureFeatureType) const;
-    /**
-     * @symbol
-     * ?isStructureFeatureTypeAt\@StructureFeatureRegistry\@\@QEBA_NAEBVBlockPos\@\@W4StructureFeatureType\@\@\@Z
-     */
-    MCAPI bool isStructureFeatureTypeAt(class BlockPos const&, enum class StructureFeatureType) const;
-    /**
-     * @symbol ??1StructureFeatureRegistry\@\@QEAA\@XZ
-     */
+
+    // symbol: ?findStructureFeatureTypeAt@StructureFeatureRegistry@@QEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z
+    MCAPI ::StructureFeatureType findStructureFeatureTypeAt(class BlockPos const&);
+
+    // symbol: ?getStructureFeatureOfType@StructureFeatureRegistry@@QEBAPEAVStructureFeature@@W4StructureFeatureType@@@Z
+    MCAPI class StructureFeature* getStructureFeatureOfType(::StructureFeatureType) const;
+
+    // symbol: ?isStructureFeatureTypeAt@StructureFeatureRegistry@@QEBA_NAEBVBlockPos@@W4StructureFeatureType@@@Z
+    MCAPI bool isStructureFeatureTypeAt(class BlockPos const&, ::StructureFeatureType) const;
+
+    // symbol: ??1StructureFeatureRegistry@@QEAA@XZ
     MCAPI ~StructureFeatureRegistry();
+
     // NOLINTEND
 };

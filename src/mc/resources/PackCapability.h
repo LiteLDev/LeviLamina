@@ -20,7 +20,6 @@ public:
 
         // ValidationResult inner types define
         struct Failed {
-
         public:
             // prevent constructor by default
             Failed& operator=(Failed const&) = delete;
@@ -29,15 +28,13 @@ public:
 
         public:
             // NOLINTBEGIN
-            /**
-             * @symbol ??1Failed\@ValidationResult\@PackCapability\@\@QEAA\@XZ
-             */
+            // symbol: ??1Failed@ValidationResult@PackCapability@@QEAA@XZ
             MCAPI ~Failed();
+
             // NOLINTEND
         };
 
         struct Succeeded {
-
         public:
             // prevent constructor by default
             Succeeded& operator=(Succeeded const&) = delete;
@@ -46,10 +43,9 @@ public:
 
         public:
             // NOLINTBEGIN
-            /**
-             * @symbol ??1Succeeded\@ValidationResult\@PackCapability\@\@QEAA\@XZ
-             */
+            // symbol: ??1Succeeded@ValidationResult@PackCapability@@QEAA@XZ
             MCAPI ~Succeeded();
+
             // NOLINTEND
         };
 
@@ -68,9 +64,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1PackCapability\@\@QEAA\@XZ
-     */
+    // symbol: ??1PackCapability@@QEAA@XZ
     MCAPI ~PackCapability();
+
     // NOLINTEND
 };

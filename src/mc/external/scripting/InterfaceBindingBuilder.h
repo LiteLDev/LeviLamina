@@ -6,7 +6,6 @@ namespace Scripting {
 
 template <typename T0>
 class InterfaceBindingBuilder {
-
 public:
     // prevent constructor by default
     InterfaceBindingBuilder& operator=(InterfaceBindingBuilder const&) = delete;

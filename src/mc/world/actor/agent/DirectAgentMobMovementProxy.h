@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct DirectAgentMobMovementProxy {
-
 public:
     // prevent constructor by default
     DirectAgentMobMovementProxy& operator=(DirectAgentMobMovementProxy const&) = delete;
@@ -12,11 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTAGENTMOBMOVEMENTPROXY
-    /**
-     * @symbol ?isFlying\@DirectAgentMobMovementProxy\@\@UEBA_NXZ
-     */
+    // symbol: ?isFlying@DirectAgentMobMovementProxy@@UEBA_NXZ
     MCVAPI bool isFlying() const;
-#endif
+
     // NOLINTEND
 };

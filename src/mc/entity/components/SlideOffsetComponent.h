@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct SlideOffsetComponent {
-
 public:
     // prevent constructor by default
     SlideOffsetComponent& operator=(SlideOffsetComponent const&) = delete;

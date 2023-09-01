@@ -6,7 +6,6 @@
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 
 class TargetGoalDefinition : public ::BaseGoalDefinition {
-
 public:
     // prevent constructor by default
     TargetGoalDefinition& operator=(TargetGoalDefinition const&) = delete;
@@ -15,20 +14,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETGOALDEFINITION
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1TargetGoalDefinition@@UEAA@XZ
     MCVAPI ~TargetGoalDefinition();
-#endif
-    /**
-     * @symbol ?initialize\@TargetGoalDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVTargetGoal\@\@\@Z
-     */
+
+    // symbol: ?initialize@TargetGoalDefinition@@QEBAXAEAVEntityContext@@AEAVTargetGoal@@@Z
     MCAPI void initialize(class EntityContext&, class TargetGoal&) const;
+
     // NOLINTEND
 };

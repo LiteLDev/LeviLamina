@@ -11,7 +11,6 @@ namespace gametest { class IGameTestListener; }
 namespace gametest {
 
 class MultipleTestTracker {
-
 public:
     // prevent constructor by default
     MultipleTestTracker& operator=(MultipleTestTracker const&) = delete;
@@ -20,54 +19,58 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ??0MultipleTestTracker\@gametest\@\@QEAA\@AEBV?$vector\@V?$shared_ptr\@VBaseGameTestInstance\@gametest\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VBaseGameTestInstance\@gametest\@\@\@std\@\@\@2\@\@std\@\@\@Z
-     */
+    // symbol:
+    // ??0MultipleTestTracker@gametest@@QEAA@AEBV?$vector@V?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@@2@@std@@@Z
     MCAPI MultipleTestTracker(std::vector<std::shared_ptr<class gametest::BaseGameTestInstance>> const&);
-    /**
-     * @symbol
-     * ?addListener\@MultipleTestTracker\@gametest\@\@QEAAXV?$shared_ptr\@VIGameTestListener\@gametest\@\@\@std\@\@\@Z
-     */
+
+    // symbol: ?addListener@MultipleTestTracker@gametest@@QEAAXV?$shared_ptr@VIGameTestListener@gametest@@@std@@@Z
     MCAPI void addListener(std::shared_ptr<class gametest::IGameTestListener>);
-    /**
-     * @symbol ?isDone\@MultipleTestTracker\@gametest\@\@QEBA_NXZ
-     */
+
+    // symbol: ?isDone@MultipleTestTracker@gametest@@QEBA_NXZ
     MCAPI bool isDone() const;
-    /**
-     * @symbol
-     * ?removeListener\@MultipleTestTracker\@gametest\@\@QEAAXV?$shared_ptr\@VIGameTestListener\@gametest\@\@\@std\@\@\@Z
-     */
+
+    // symbol: ?removeListener@MultipleTestTracker@gametest@@QEAAXV?$shared_ptr@VIGameTestListener@gametest@@@std@@@Z
     MCAPI void removeListener(std::shared_ptr<class gametest::IGameTestListener>);
+
     // NOLINTEND
 
 private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?sFailedOptionalTest\@MultipleTestTracker\@gametest\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
-     */
+    // symbol:
+    // ?sFailedOptionalTest@MultipleTestTracker@gametest@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const sFailedOptionalTest;
-    /**
-     * @symbol
-     * ?sFailedRequiredTest\@MultipleTestTracker\@gametest\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
-     */
+
+    // symbol:
+    // ?sFailedRequiredTest@MultipleTestTracker@gametest@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const sFailedRequiredTest;
-    /**
-     * @symbol
-     * ?sNotStartedTest\@MultipleTestTracker\@gametest\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
-     */
+
+    // symbol:
+    // ?sNotStartedTest@MultipleTestTracker@gametest@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const sNotStartedTest;
-    /**
-     * @symbol
-     * ?sOnGoingTest\@MultipleTestTracker\@gametest\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
-     */
+
+    // symbol:
+    // ?sOnGoingTest@MultipleTestTracker@gametest@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const sOnGoingTest;
-    /**
-     * @symbol
-     * ?sSuccessfulTest\@MultipleTestTracker\@gametest\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
-     */
+
+    // symbol:
+    // ?sSuccessfulTest@MultipleTestTracker@gametest@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const sSuccessfulTest;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $sFailedOptionalTest() { return sFailedOptionalTest; }
+
+    inline auto& $sFailedRequiredTest() { return sFailedRequiredTest; }
+
+    inline auto& $sNotStartedTest() { return sNotStartedTest; }
+
+    inline auto& $sOnGoingTest() { return sOnGoingTest; }
+
+    inline auto& $sSuccessfulTest() { return sSuccessfulTest; }
+
     // NOLINTEND
 };
 

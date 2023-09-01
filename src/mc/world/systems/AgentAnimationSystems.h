@@ -14,10 +14,8 @@ namespace AgentComponents { struct AnimationCompleteFlag; }
 
 namespace AgentAnimationSystems {
 // NOLINTBEGIN
-/**
- * @symbol
- * ?animationTick\@AgentAnimationSystems\@\@YAXAEAVStrictEntityContext\@\@AEAVAnimating\@AgentComponents\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UAnimationCompleteFlag\@AgentComponents\@\@\@\@\@\@\@Z
- */
+// symbol:
+// ?animationTick@AgentAnimationSystems@@YAXAEAVStrictEntityContext@@AEAVAnimating@AgentComponents@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UAnimationCompleteFlag@AgentComponents@@@@@@@Z
 MCAPI void
 animationTick(class StrictEntityContext&, class AgentComponents::Animating&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct AgentComponents::AnimationCompleteFlag>>&);
 // NOLINTEND

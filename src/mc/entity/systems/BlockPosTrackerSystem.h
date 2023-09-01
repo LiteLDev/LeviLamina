@@ -6,7 +6,6 @@
 #include "mc/entity/systems/ITickingSystem.h"
 
 class BlockPosTrackerSystem : public ::ITickingSystem {
-
 public:
     // prevent constructor by default
     BlockPosTrackerSystem& operator=(BlockPosTrackerSystem const&) = delete;
@@ -15,25 +14,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?tick\@BlockPosTrackerSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?tick@BlockPosTrackerSystem@@UEAAXAEAVEntityRegistry@@@Z
     virtual void tick(class EntityRegistry&);
-    /**
-     * @symbol
-     * ?_tickBlockPosTrackerComponent\@BlockPosTrackerSystem\@\@SAXAEAVActor\@\@AEAVBlockPosTrackerComponent\@\@\@Z
-     */
+
+    // symbol: ?_tickBlockPosTrackerComponent@BlockPosTrackerSystem@@SAXAEAVActor@@AEAVBlockPosTrackerComponent@@@Z
     MCAPI static void _tickBlockPosTrackerComponent(class Actor&, class BlockPosTrackerComponent&);
+
     // NOLINTEND
 };

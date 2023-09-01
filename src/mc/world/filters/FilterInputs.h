@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct FilterInputs {
-
 public:
     // prevent constructor by default
     FilterInputs& operator=(FilterInputs const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1FilterInputs\@\@QEAA\@XZ
-     */
+    // symbol: ??1FilterInputs@@QEAA@XZ
     MCAPI ~FilterInputs();
+
     // NOLINTEND
 };

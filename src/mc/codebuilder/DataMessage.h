@@ -5,7 +5,6 @@
 namespace CodeBuilder {
 
 struct DataMessage {
-
 public:
     // prevent constructor by default
     DataMessage& operator=(DataMessage const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1DataMessage\@CodeBuilder\@\@QEAA\@XZ
-     */
+    // symbol: ??1DataMessage@CodeBuilder@@QEAA@XZ
     MCAPI ~DataMessage();
+
     // NOLINTEND
 };
 

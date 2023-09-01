@@ -11,7 +11,6 @@ public:
 
     // SubChunkBrightnessStorage inner types define
     struct LightPair {
-
     public:
         // prevent constructor by default
         LightPair& operator=(LightPair const&) = delete;

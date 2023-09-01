@@ -8,7 +8,6 @@
 namespace ScriptModuleMinecraft {
 
 struct ScriptWorldInitializeAfterEvent {
-
 public:
     // prevent constructor by default
     ScriptWorldInitializeAfterEvent& operator=(ScriptWorldInitializeAfterEvent const&) = delete;
@@ -17,22 +16,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ScriptWorldInitializeAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+    // symbol: ??1ScriptWorldInitializeAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptWorldInitializeAfterEvent();
-    /**
-     * @symbol
-     * ?bind\@ScriptWorldInitializeAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptWorldInitializeAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptWorldInitializeAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptWorldInitializeAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptWorldInitializeAfterEvent>
     bind();
-    /**
-     * @symbol
-     * ?bindV010\@ScriptWorldInitializeAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptWorldInitializeAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bindV010@ScriptWorldInitializeAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptWorldInitializeAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptWorldInitializeAfterEvent>
     bindV010();
+
     // NOLINTEND
 };
 

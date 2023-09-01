@@ -19,7 +19,6 @@ public:
 
     // ChunkPerformanceData inner types define
     class AtomicMemoryAccumulator {
-
     public:
         // prevent constructor by default
         AtomicMemoryAccumulator& operator=(AtomicMemoryAccumulator const&) = delete;
@@ -27,14 +26,12 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??0AtomicMemoryAccumulator\@ChunkPerformanceData\@\@QEAA\@XZ
-         */
+        // symbol: ??0AtomicMemoryAccumulator@ChunkPerformanceData@@QEAA@XZ
         MCAPI AtomicMemoryAccumulator();
-        /**
-         * @symbol ?getMemoryAverage\@AtomicMemoryAccumulator\@ChunkPerformanceData\@\@QEBA_KXZ
-         */
-        MCAPI uint64_t getMemoryAverage() const;
+
+        // symbol: ?getMemoryAverage@AtomicMemoryAccumulator@ChunkPerformanceData@@QEBA_KXZ
+        MCAPI uint64 getMemoryAverage() const;
+
         // NOLINTEND
     };
 
@@ -45,17 +42,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ChunkPerformanceData\@\@QEAA\@XZ
-     */
+    // symbol: ??0ChunkPerformanceData@@QEAA@XZ
     MCAPI ChunkPerformanceData();
-    /**
-     * @symbol ?recordLoadedChunk\@ChunkPerformanceData\@\@QEAAXAEBVLevelChunk\@\@\@Z
-     */
+
+    // symbol: ?recordLoadedChunk@ChunkPerformanceData@@QEAAXAEBVLevelChunk@@@Z
     MCAPI void recordLoadedChunk(class LevelChunk const&);
-    /**
-     * @symbol ?resetAll\@ChunkPerformanceData\@\@QEAAXXZ
-     */
+
+    // symbol: ?resetAll@ChunkPerformanceData@@QEAAXXZ
     MCAPI void resetAll();
+
     // NOLINTEND
 };

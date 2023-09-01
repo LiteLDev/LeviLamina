@@ -5,7 +5,6 @@
 namespace Core {
 
 struct PendingWrite {
-
 public:
     // prevent constructor by default
     PendingWrite& operator=(PendingWrite const&) = delete;

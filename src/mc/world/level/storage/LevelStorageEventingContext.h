@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct LevelStorageEventingContext {
-
 public:
     // prevent constructor by default
     LevelStorageEventingContext& operator=(LevelStorageEventingContext const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1LevelStorageEventingContext\@\@QEAA\@XZ
-     */
+    // symbol: ??1LevelStorageEventingContext@@QEAA@XZ
     MCAPI ~LevelStorageEventingContext();
+
     // NOLINTEND
 };

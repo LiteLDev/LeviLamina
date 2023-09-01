@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct CommunitySiftConfig {
-
 public:
     // prevent constructor by default
     CommunitySiftConfig& operator=(CommunitySiftConfig const&) = delete;
@@ -11,13 +10,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0CommunitySiftConfig\@\@QEAA\@XZ
-     */
+    // symbol: ??0CommunitySiftConfig@@QEAA@XZ
     MCAPI CommunitySiftConfig();
-    /**
-     * @symbol ??1CommunitySiftConfig\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1CommunitySiftConfig@@QEAA@XZ
     MCAPI ~CommunitySiftConfig();
+
     // NOLINTEND
 };

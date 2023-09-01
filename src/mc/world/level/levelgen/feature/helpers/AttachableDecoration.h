@@ -21,7 +21,6 @@ public:
 
     // AttachableDecoration inner types define
     struct DirectionMask {
-
     public:
         // prevent constructor by default
         DirectionMask& operator=(DirectionMask const&) = delete;
@@ -37,28 +36,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?placeDecoration\@AttachableDecoration\@TreeHelper\@\@QEBAXAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEBUDirectionMask\@12\@\@Z
-     */
+    // symbol:
+    // ?placeDecoration@AttachableDecoration@TreeHelper@@QEBAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEBUDirectionMask@12@@Z
     MCAPI void
     placeDecoration(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, struct TreeHelper::AttachableDecoration::DirectionMask const&)
         const;
-    /**
-     * @symbol ??1AttachableDecoration\@TreeHelper\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1AttachableDecoration@TreeHelper@@QEAA@XZ
     MCAPI ~AttachableDecoration();
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_placeMultiDecoration\@AttachableDecoration\@TreeHelper\@\@AEBAXAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEBVBlock\@\@1\@Z
-     */
+    // symbol:
+    // ?_placeMultiDecoration@AttachableDecoration@TreeHelper@@AEBAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@1@Z
     MCAPI void
     _placeMultiDecoration(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&, class BlockPos const&)
         const;
+
     // NOLINTEND
 };
 

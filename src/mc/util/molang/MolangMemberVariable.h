@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct MolangMemberVariable {
-
 public:
     // prevent constructor by default
     MolangMemberVariable& operator=(MolangMemberVariable const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1MolangMemberVariable\@\@QEAA\@XZ
-     */
+    // symbol: ??1MolangMemberVariable@@QEAA@XZ
     MCAPI ~MolangMemberVariable();
+
     // NOLINTEND
 };

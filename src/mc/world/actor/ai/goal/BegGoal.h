@@ -7,7 +7,6 @@
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class BegGoal : public ::Goal {
-
 public:
     // prevent constructor by default
     BegGoal& operator=(BegGoal const&) = delete;
@@ -16,54 +15,37 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@BegGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@BegGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@BegGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@BegGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@BegGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@BegGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol ?stop\@BegGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 5, symbol: ?stop@BegGoal@@UEAAXXZ
     virtual void stop();
-    /**
-     * @vftbl 6
-     * @symbol ?tick\@BegGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 6, symbol: ?tick@BegGoal@@UEAAXXZ
     virtual void tick();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@BegGoal\@\@EEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@BegGoal@@EEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @symbol
-     * ??0BegGoal\@\@QEAA\@AEAVMob\@\@AEBV?$vector\@VItemDescriptor\@\@V?$allocator\@VItemDescriptor\@\@\@std\@\@\@std\@\@MHH\@Z
-     */
-    MCAPI BegGoal(class Mob&, std::vector<class ItemDescriptor> const&, float, int32_t, int32_t);
+
+    // symbol: ??0BegGoal@@QEAA@AEAVMob@@AEBV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@MHH@Z
+    MCAPI BegGoal(class Mob&, std::vector<class ItemDescriptor> const&, float, int, int);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_playerHoldingInteresting\@BegGoal\@\@AEAA_NPEAVPlayer\@\@\@Z
-     */
+    // symbol: ?_playerHoldingInteresting@BegGoal@@AEAA_NPEAVPlayer@@@Z
     MCAPI bool _playerHoldingInteresting(class Player*);
+
     // NOLINTEND
 };

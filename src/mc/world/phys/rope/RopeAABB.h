@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct RopeAABB {
-
 public:
     // prevent constructor by default
     RopeAABB& operator=(RopeAABB const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?getContactPoint\@RopeAABB\@\@QEBA_NAEBVVec3\@\@MAEAUAABBContactPoint\@\@\@Z
-     */
+    // symbol: ?getContactPoint@RopeAABB@@QEBA_NAEBVVec3@@MAEAUAABBContactPoint@@@Z
     MCAPI bool getContactPoint(class Vec3 const&, float, struct AABBContactPoint&) const;
+
     // NOLINTEND
 };

@@ -4,7 +4,6 @@
 
 template <typename T0>
 struct InsideBlockWithPosComponent {
-
 public:
     // prevent constructor by default
     InsideBlockWithPosComponent& operator=(InsideBlockWithPosComponent const&) = delete;

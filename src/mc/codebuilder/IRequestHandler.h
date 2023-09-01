@@ -5,7 +5,6 @@
 namespace CodeBuilder {
 
 class IRequestHandler {
-
 public:
     // prevent constructor by default
     IRequestHandler& operator=(IRequestHandler const&) = delete;

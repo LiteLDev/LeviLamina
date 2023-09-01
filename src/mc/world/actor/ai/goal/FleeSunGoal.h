@@ -7,7 +7,6 @@
 #include "mc/world/actor/ai/goal/FindCoverGoal.h"
 
 class FleeSunGoal : public ::FindCoverGoal {
-
 public:
     // prevent constructor by default
     FleeSunGoal& operator=(FleeSunGoal const&) = delete;
@@ -16,25 +15,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@FleeSunGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@FleeSunGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@FleeSunGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@FleeSunGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @symbol ??0FleeSunGoal\@\@QEAA\@AEAVMob\@\@M\@Z
-     */
+
+    // symbol: ??0FleeSunGoal@@QEAA@AEAVMob@@M@Z
     MCAPI FleeSunGoal(class Mob&, float);
+
     // NOLINTEND
 };

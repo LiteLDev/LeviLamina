@@ -6,7 +6,6 @@ namespace Bedrock {
 
 template <typename T0>
 class typeid_t {
-
 public:
     // prevent constructor by default
     typeid_t& operator=(typeid_t const&) = delete;

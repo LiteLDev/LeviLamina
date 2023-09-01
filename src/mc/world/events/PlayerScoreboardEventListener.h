@@ -7,7 +7,6 @@
 #include "mc/world/events/ScoreboardEventListener.h"
 
 class PlayerScoreboardEventListener : public ::ScoreboardEventListener {
-
 public:
     // prevent constructor by default
     PlayerScoreboardEventListener& operator=(PlayerScoreboardEventListener const&) = delete;
@@ -15,35 +14,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 4
-     * @symbol
-     * ?onScoreChanged\@PlayerScoreboardEventListener\@\@UEAA?AW4EventResult\@\@AEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
-     */
-    virtual enum class EventResult onScoreChanged(struct ScoreboardId const&, std::string const&, int32_t);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSCOREBOARDEVENTLISTENER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // vIndex: 4, symbol:
+    // ?onScoreChanged@PlayerScoreboardEventListener@@UEAA?AW4EventResult@@AEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+    virtual ::EventResult onScoreChanged(struct ScoreboardId const&, std::string const&, int);
+
+    // symbol: ??1PlayerScoreboardEventListener@@UEAA@XZ
     MCVAPI ~PlayerScoreboardEventListener();
-#endif
-    /**
-     * @symbol ??0PlayerScoreboardEventListener\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0PlayerScoreboardEventListener@@QEAA@XZ
     MCAPI PlayerScoreboardEventListener();
-    /**
-     * @symbol
-     * ?getPlayerSubscriptions\@PlayerScoreboardEventListener\@\@QEAAAEAVSubscribedObjectives\@\@AEBUScoreboardId\@\@AEBVPlayer\@\@\@Z
-     */
+
+    // symbol:
+    // ?getPlayerSubscriptions@PlayerScoreboardEventListener@@QEAAAEAVSubscribedObjectives@@AEBUScoreboardId@@AEBVPlayer@@@Z
     MCAPI class SubscribedObjectives& getPlayerSubscriptions(struct ScoreboardId const&, class Player const&);
-    /**
-     * @symbol ?removePlayerSubscriptions\@PlayerScoreboardEventListener\@\@QEAAXAEBUScoreboardId\@\@\@Z
-     */
+
+    // symbol: ?removePlayerSubscriptions@PlayerScoreboardEventListener@@QEAAXAEBUScoreboardId@@@Z
     MCAPI void removePlayerSubscriptions(struct ScoreboardId const&);
+
     // NOLINTEND
 };

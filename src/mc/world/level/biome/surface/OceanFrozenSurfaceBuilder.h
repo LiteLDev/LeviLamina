@@ -14,7 +14,6 @@ class ISurfaceBuilder;
 namespace VanillaSurfaceBuilders {
 
 class OceanFrozenSurfaceBuilder : public ::ISurfaceBuilder {
-
 public:
     // prevent constructor by default
     OceanFrozenSurfaceBuilder& operator=(OceanFrozenSurfaceBuilder const&) = delete;
@@ -23,22 +22,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?init\@OceanFrozenSurfaceBuilder\@VanillaSurfaceBuilders\@\@UEAAXAEAVEntityContext\@\@I\@Z
-     */
-    virtual void init(class EntityContext&, uint32_t);
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?buildSurfaceAt\@OceanFrozenSurfaceBuilder\@VanillaSurfaceBuilders\@\@UEBAXAEBUBuildParameters\@ISurfaceBuilder\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?init@OceanFrozenSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVEntityContext@@I@Z
+    virtual void init(class EntityContext&, uint);
+
+    // vIndex: 2, symbol:
+    // ?buildSurfaceAt@OceanFrozenSurfaceBuilder@VanillaSurfaceBuilders@@UEBAXAEBUBuildParameters@ISurfaceBuilder@@@Z
     virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const&) const;
+
     // NOLINTEND
 };
 

@@ -14,7 +14,6 @@ namespace Bedrock { class IIslandCore; }
 namespace Bedrock {
 
 class AppIsland : public ::Bedrock::IIslandCore {
-
 public:
     // prevent constructor by default
     AppIsland& operator=(AppIsland const&) = delete;
@@ -22,50 +21,36 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getId\@AppIsland\@Bedrock\@\@UEAAGXZ
-     */
-    virtual uint16_t getId();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_APPISLAND
-    /**
-     * @symbol ?mainUpdate\@AppIsland\@Bedrock\@\@UEAAXXZ
-     */
+
+    // vIndex: 1, symbol: ?getId@AppIsland@Bedrock@@UEAAGXZ
+    virtual ushort getId();
+
+    // symbol: ?mainUpdate@AppIsland@Bedrock@@UEAAXXZ
     MCVAPI void mainUpdate();
-    /**
-     * @symbol ?processActivationArguments\@AppIsland\@Bedrock\@\@UEAAXAEBVActivationArguments\@2\@\@Z
-     */
+
+    // symbol: ?processActivationArguments@AppIsland@Bedrock@@UEAAXAEBVActivationArguments@2@@Z
     MCVAPI void processActivationArguments(class Bedrock::ActivationArguments const&);
-    /**
-     * @symbol ?resume\@AppIsland\@Bedrock\@\@UEAA_NXZ
-     */
+
+    // symbol: ?resume@AppIsland@Bedrock@@UEAA_NXZ
     MCVAPI bool resume();
-    /**
-     * @symbol ?start\@AppIsland\@Bedrock\@\@UEAA_NXZ
-     */
+
+    // symbol: ?start@AppIsland@Bedrock@@UEAA_NXZ
     MCVAPI bool start();
-    /**
-     * @symbol ?stop\@AppIsland\@Bedrock\@\@UEAA_NXZ
-     */
+
+    // symbol: ?stop@AppIsland@Bedrock@@UEAA_NXZ
     MCVAPI bool stop();
-    /**
-     * @symbol ?suspend\@AppIsland\@Bedrock\@\@UEAA_NXZ
-     */
+
+    // symbol: ?suspend@AppIsland@Bedrock@@UEAA_NXZ
     MCVAPI bool suspend();
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1AppIsland@Bedrock@@UEAA@XZ
     MCVAPI ~AppIsland();
-#endif
-    /**
-     * @symbol ??0AppIsland\@Bedrock\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0AppIsland@Bedrock@@QEAA@XZ
     MCAPI AppIsland();
+
     // NOLINTEND
 };
 

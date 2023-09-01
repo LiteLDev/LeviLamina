@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct FogDistanceSetting {
-
 public:
     // prevent constructor by default
     FogDistanceSetting& operator=(FogDistanceSetting const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?ZERO_SETTING\@FogDistanceSetting\@\@2U1\@B
-     */
+    // symbol: ?ZERO_SETTING@FogDistanceSetting@@2U1@B
     MCAPI static struct FogDistanceSetting const ZERO_SETTING;
+
     // NOLINTEND
 };

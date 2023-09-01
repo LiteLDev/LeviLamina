@@ -6,7 +6,6 @@
 #include "mc/world/actor/BodyControl.h"
 
 class LegacyBodyControl : public ::BodyControl {
-
 public:
     // prevent constructor by default
     LegacyBodyControl& operator=(LegacyBodyControl const&) = delete;
@@ -14,19 +13,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?clientTick\@LegacyBodyControl\@\@UEAAXAEAVMob\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?clientTick@LegacyBodyControl@@UEAAXAEAVMob@@@Z
     virtual void clientTick(class Mob&);
-    /**
-     * @symbol ??0LegacyBodyControl\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0LegacyBodyControl@@QEAA@XZ
     MCAPI LegacyBodyControl();
+
     // NOLINTEND
 };

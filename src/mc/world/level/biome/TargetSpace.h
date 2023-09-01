@@ -5,7 +5,6 @@
 namespace ClimateUtils {
 
 struct TargetSpace {
-
 public:
     // prevent constructor by default
     TargetSpace& operator=(TargetSpace const&) = delete;

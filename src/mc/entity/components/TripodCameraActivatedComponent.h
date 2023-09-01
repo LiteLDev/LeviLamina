@@ -11,7 +11,6 @@ public:
 
     // TripodCameraActivatedComponent inner types define
     class Definition {
-
     public:
         // prevent constructor by default
         Definition& operator=(Definition const&) = delete;
@@ -20,10 +19,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ?initialize\@Definition\@TripodCameraActivatedComponent\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
+        // symbol: ?initialize@Definition@TripodCameraActivatedComponent@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class TripodCameraActivatedComponent&) const;
+
         // NOLINTEND
     };
 

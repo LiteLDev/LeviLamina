@@ -5,7 +5,6 @@
 namespace CodeBuilder {
 
 struct EncryptionResult {
-
 public:
     // prevent constructor by default
     EncryptionResult& operator=(EncryptionResult const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1EncryptionResult\@CodeBuilder\@\@QEAA\@XZ
-     */
+    // symbol: ??1EncryptionResult@CodeBuilder@@QEAA@XZ
     MCAPI ~EncryptionResult();
+
     // NOLINTEND
 };
 

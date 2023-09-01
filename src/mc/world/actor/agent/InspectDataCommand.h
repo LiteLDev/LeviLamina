@@ -13,7 +13,6 @@ namespace AgentCommands { class Command; }
 namespace AgentCommands {
 
 class InspectDataCommand : public ::AgentCommands::Command {
-
 public:
     // prevent constructor by default
     InspectDataCommand& operator=(InspectDataCommand const&) = delete;
@@ -22,26 +21,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?execute\@InspectDataCommand\@AgentCommands\@\@UEAAXXZ
-     */
+
+    // vIndex: 1, symbol: ?execute@InspectDataCommand@AgentCommands@@UEAAXXZ
     virtual void execute();
-    /**
-     * @vftbl 2
-     * @symbol ?isDone\@InspectDataCommand\@AgentCommands\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?isDone@InspectDataCommand@AgentCommands@@UEAA_NXZ
     virtual bool isDone();
-    /**
-     * @vftbl 4
-     * @symbol ?fireCommandDoneEvent\@InspectDataCommand\@AgentCommands\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?fireCommandDoneEvent@InspectDataCommand@AgentCommands@@UEAAXXZ
     virtual void fireCommandDoneEvent();
+
     // NOLINTEND
 };
 

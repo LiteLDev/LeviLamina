@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class CameraShakeComponent {
-
 public:
     // prevent constructor by default
     CameraShakeComponent& operator=(CameraShakeComponent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?getMaxIntensity\@CameraShakeComponent\@\@SAMXZ
-     */
+    // symbol: ?getMaxIntensity@CameraShakeComponent@@SAMXZ
     MCAPI static float getMaxIntensity();
+
     // NOLINTEND
 };

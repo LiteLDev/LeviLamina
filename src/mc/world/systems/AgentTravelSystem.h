@@ -4,13 +4,10 @@
 
 namespace AgentTravelSystem {
 // NOLINTBEGIN
-/**
- * @symbol ?createClientSystem\@AgentTravelSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
- */
+// symbol: ?createClientSystem@AgentTravelSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createClientSystem();
-/**
- * @symbol ?createServerSystem\@AgentTravelSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
- */
+
+// symbol: ?createServerSystem@AgentTravelSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createServerSystem();
 // NOLINTEND
 

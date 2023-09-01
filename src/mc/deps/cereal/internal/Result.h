@@ -5,7 +5,6 @@
 namespace cereal::internal {
 
 struct Result {
-
 public:
     // prevent constructor by default
     Result& operator=(Result const&) = delete;

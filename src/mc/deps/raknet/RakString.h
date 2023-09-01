@@ -21,7 +21,6 @@ public:
 
     // RakString inner types define
     struct SharedString {
-
     public:
         // prevent constructor by default
         SharedString& operator=(SharedString const&) = delete;
@@ -35,78 +34,61 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?Deserialize\@RakString\@RakNet\@\@QEAA_NPEAVBitStream\@2\@\@Z
-     */
+    // symbol: ?Deserialize@RakString@RakNet@@QEAA_NPEAVBitStream@2@@Z
     MCAPI bool Deserialize(class RakNet::BitStream*);
-    /**
-     * @symbol ?GetLength\@RakString\@RakNet\@\@QEBA_KXZ
-     */
-    MCAPI uint64_t GetLength() const;
-    /**
-     * @symbol ?IsEmpty\@RakString\@RakNet\@\@QEBA_NXZ
-     */
+
+    // symbol: ?GetLength@RakString@RakNet@@QEBA_KXZ
+    MCAPI uint64 GetLength() const;
+
+    // symbol: ?IsEmpty@RakString@RakNet@@QEBA_NXZ
     MCAPI bool IsEmpty() const;
-    /**
-     * @symbol ??0RakString\@RakNet\@\@QEAA\@AEBV01\@\@Z
-     */
+
+    // symbol: ??0RakString@RakNet@@QEAA@AEBV01@@Z
     MCAPI RakString(class RakNet::RakString const&);
-    /**
-     * @symbol ??0RakString\@RakNet\@\@QEAA\@PEBDZZ
-     */
+
+    // symbol: ??0RakString@RakNet@@QEAA@PEBDZZ
     MCAPI RakString(char const*, ...);
-    /**
-     * @symbol ??0RakString\@RakNet\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0RakString@RakNet@@QEAA@XZ
     MCAPI RakString();
-    /**
-     * @symbol ??4RakString\@RakNet\@\@QEAAAEAV01\@PEBD\@Z
-     */
+
+    // symbol: ??4RakString@RakNet@@QEAAAEAV01@PEBD@Z
     MCAPI class RakNet::RakString& operator=(char const*);
-    /**
-     * @symbol ??4RakString\@RakNet\@\@QEAAAEAV01\@PEAD\@Z
-     */
+
+    // symbol: ??4RakString@RakNet@@QEAAAEAV01@PEAD@Z
     MCAPI class RakNet::RakString& operator=(char*);
-    /**
-     * @symbol ??8RakString\@RakNet\@\@QEBA_NAEBV01\@\@Z
-     */
+
+    // symbol: ??8RakString@RakNet@@QEBA_NAEBV01@@Z
     MCAPI bool operator==(class RakNet::RakString const&) const;
-    /**
-     * @symbol ??1RakString\@RakNet\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1RakString@RakNet@@QEAA@XZ
     MCAPI ~RakString();
-    /**
-     * @symbol ?FreeMemoryNoMutex\@RakString\@RakNet\@\@SAXXZ
-     */
+
+    // symbol: ?FreeMemoryNoMutex@RakString@RakNet@@SAXXZ
     MCAPI static void FreeMemoryNoMutex();
-    /**
-     * @symbol ?emptyString\@RakString\@RakNet\@\@2USharedString\@12\@A
-     */
+
+    // symbol: ?emptyString@RakString@RakNet@@2USharedString@12@A
     MCAPI static struct RakNet::RakString::SharedString emptyString;
-    /**
-     * @symbol ?freeList\@RakString\@RakNet\@\@2V?$List\@PEAUSharedString\@RakString\@RakNet\@\@\@DataStructures\@\@A
-     */
+
+    // symbol: ?freeList@RakString@RakNet@@2V?$List@PEAUSharedString@RakString@RakNet@@@DataStructures@@A
     MCAPI static class DataStructures::List<struct RakNet::RakString::SharedString*> freeList;
+
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    /**
-     * @symbol ?Allocate\@RakString\@RakNet\@\@IEAAX_K\@Z
-     */
-    MCAPI void Allocate(uint64_t);
-    /**
-     * @symbol ?Assign\@RakString\@RakNet\@\@IEAAXPEBDPEAD\@Z
-     */
+    // symbol: ?Allocate@RakString@RakNet@@IEAAX_K@Z
+    MCAPI void Allocate(uint64);
+
+    // symbol: ?Assign@RakString@RakNet@@IEAAXPEBDPEAD@Z
     MCAPI void Assign(char const*, char*);
-    /**
-     * @symbol ?Assign\@RakString\@RakNet\@\@IEAAXPEBD\@Z
-     */
+
+    // symbol: ?Assign@RakString@RakNet@@IEAAXPEBD@Z
     MCAPI void Assign(char const*);
-    /**
-     * @symbol ?Free\@RakString\@RakNet\@\@IEAAXXZ
-     */
+
+    // symbol: ?Free@RakString@RakNet@@IEAAXXZ
     MCAPI void Free();
+
     // NOLINTEND
 };
 

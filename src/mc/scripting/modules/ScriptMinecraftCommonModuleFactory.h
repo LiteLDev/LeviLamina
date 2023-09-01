@@ -8,7 +8,6 @@ namespace Scripting { class ModuleBindingBuilder; }
 // clang-format on
 
 class ScriptMinecraftCommonModuleFactory {
-
 public:
     // prevent constructor by default
     ScriptMinecraftCommonModuleFactory& operator=(ScriptMinecraftCommonModuleFactory const&) = delete;
@@ -17,9 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?addCommon\@ScriptMinecraftCommonModuleFactory\@\@QEAAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
-     */
+    // symbol: ?addCommon@ScriptMinecraftCommonModuleFactory@@QEAAXAEAVModuleBindingBuilder@Scripting@@@Z
     MCAPI void addCommon(class Scripting::ModuleBindingBuilder&);
+
     // NOLINTEND
 };

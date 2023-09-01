@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct LevelChunkPhase1Deleter {
-
 public:
     // prevent constructor by default
     LevelChunkPhase1Deleter& operator=(LevelChunkPhase1Deleter const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??RLevelChunkPhase1Deleter\@\@QEAAXPEAVLevelChunk\@\@\@Z
-     */
+    // symbol: ??RLevelChunkPhase1Deleter@@QEAAXPEAVLevelChunk@@@Z
     MCAPI void operator()(class LevelChunk*);
+
     // NOLINTEND
 };

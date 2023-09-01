@@ -5,7 +5,6 @@
 namespace Bedrock::Http {
 
 class Status {
-
 public:
     // prevent constructor by default
     Status& operator=(Status const&) = delete;

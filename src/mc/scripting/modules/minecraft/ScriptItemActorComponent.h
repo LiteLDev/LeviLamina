@@ -17,7 +17,6 @@ namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft {
 
 class ScriptItemActorComponent : public ::ScriptModuleMinecraft::ScriptActorComponent {
-
 public:
     // prevent constructor by default
     ScriptItemActorComponent& operator=(ScriptItemActorComponent const&) = delete;
@@ -26,33 +25,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTITEMACTORCOMPONENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1ScriptItemActorComponent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptItemActorComponent();
-#endif
-    /**
-     * @symbol
-     * ?getItemStack\@ScriptItemActorComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$StrongTypedObjectHandle\@VScriptItemStack\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?getItemStack@ScriptItemActorComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@Scripting@@XZ
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>
     getItemStack() const;
-    /**
-     * @symbol
-     * ?bind\@ScriptItemActorComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptItemActorComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptItemActorComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptItemActorComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemActorComponent> bind();
-    /**
-     * @symbol ?ComponentId\@ScriptItemActorComponent\@ScriptModuleMinecraft\@\@2PEBDEB
-     */
+
+    // symbol: ?ComponentId@ScriptItemActorComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;
+
     // NOLINTEND
 };
 

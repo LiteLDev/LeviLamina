@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct AdventureSettings {
-
 public:
     // prevent constructor by default
     AdventureSettings& operator=(AdventureSettings const&) = delete;
@@ -11,9 +10,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0AdventureSettings\@\@QEAA\@XZ
-     */
+    // symbol: ??0AdventureSettings@@QEAA@XZ
     MCAPI AdventureSettings();
+
     // NOLINTEND
 };

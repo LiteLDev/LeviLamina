@@ -5,7 +5,6 @@
 namespace Json {
 
 class ValueConstIterator {
-
 public:
     // prevent constructor by default
     ValueConstIterator& operator=(ValueConstIterator const&) = delete;

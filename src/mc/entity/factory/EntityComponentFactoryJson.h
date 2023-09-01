@@ -6,7 +6,6 @@
 #include "mc/entity/factory/EntityComponentFactoryBase.h"
 
 class EntityComponentFactoryJson : public ::EntityComponentFactoryBase {
-
 public:
     // prevent constructor by default
     EntityComponentFactoryJson& operator=(EntityComponentFactoryJson const&) = delete;
@@ -15,16 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCOMPONENTFACTORYJSON
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1EntityComponentFactoryJson@@UEAA@XZ
     MCVAPI ~EntityComponentFactoryJson();
-#endif
-    /**
-     * @symbol
-     * ?tryGetDefinitionSerializer\@EntityComponentFactoryJson\@\@QEBAPEAVIJsonDefinitionSerializer\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?tryGetDefinitionSerializer@EntityComponentFactoryJson@@QEBAPEAVIJsonDefinitionSerializer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class IJsonDefinitionSerializer* tryGetDefinitionSerializer(std::string const&) const;
+
     // NOLINTEND
 };

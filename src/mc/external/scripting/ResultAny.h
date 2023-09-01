@@ -5,7 +5,6 @@
 namespace Scripting {
 
 class ResultAny {
-
 public:
     // prevent constructor by default
     ResultAny& operator=(ResultAny const&) = delete;

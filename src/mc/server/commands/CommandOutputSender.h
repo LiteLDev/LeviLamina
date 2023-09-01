@@ -11,7 +11,6 @@ namespace Json { class Value; }
 // clang-format on
 
 class CommandOutputSender {
-
 public:
     // prevent constructor by default
     CommandOutputSender& operator=(CommandOutputSender const&) = delete;
@@ -19,43 +18,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?send\@CommandOutputSender\@\@UEAAXAEBVCommandOrigin\@\@AEBVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z
     virtual void send(class CommandOrigin const&, class CommandOutput const&);
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?registerOutputCallback\@CommandOutputSender\@\@UEAAXAEBV?$function\@$$A6AXAEAVAutomationCmdOutput\@\@\@Z\@std\@\@\@Z
-     */
+
+    // vIndex: 2, symbol:
+    // ?registerOutputCallback@CommandOutputSender@@UEAAXAEBV?$function@$$A6AXAEAVAutomationCmdOutput@@@Z@std@@@Z
     virtual void registerOutputCallback(std::function<void(class AutomationCmdOutput&)> const&);
-    /**
-     * @symbol ??0CommandOutputSender\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0CommandOutputSender@@QEAA@XZ
     MCAPI CommandOutputSender();
-    /**
-     * @symbol
-     * ?sendToAdmins\@CommandOutputSender\@\@QEAAXAEBVCommandOrigin\@\@AEBVCommandOutput\@\@W4CommandPermissionLevel\@\@\@Z
-     */
-    MCAPI void sendToAdmins(class CommandOrigin const&, class CommandOutput const&, enum class CommandPermissionLevel);
-    /**
-     * @symbol
-     * ?translate\@CommandOutputSender\@\@SA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEBV23\@\@Z
-     */
+
+    // symbol:
+    // ?sendToAdmins@CommandOutputSender@@QEAAXAEBVCommandOrigin@@AEBVCommandOutput@@W4CommandPermissionLevel@@@Z
+    MCAPI void sendToAdmins(class CommandOrigin const&, class CommandOutput const&, ::CommandPermissionLevel);
+
+    // symbol:
+    // ?translate@CommandOutputSender@@SA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV23@@Z
     MCAPI static std::vector<std::string> translate(std::vector<std::string> const&);
+
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_toJson\@CommandOutputSender\@\@IEBA?AVValue\@Json\@\@AEBVCommandOutput\@\@\@Z
-     */
+    // symbol: ?_toJson@CommandOutputSender@@IEBA?AVValue@Json@@AEBVCommandOutput@@@Z
     MCAPI class Json::Value _toJson(class CommandOutput const&) const;
+
     // NOLINTEND
 };

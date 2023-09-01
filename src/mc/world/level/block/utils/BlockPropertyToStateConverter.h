@@ -9,17 +9,13 @@ namespace Json { class Value; }
 
 namespace BlockPropertyToStateConverter {
 // NOLINTBEGIN
-/**
- * @symbol ?_convertPropertyToStateInDescription\@BlockPropertyToStateConverter\@\@YAXAEAVValue\@Json\@\@\@Z
- */
+// symbol: ?_convertPropertyToStateInDescription@BlockPropertyToStateConverter@@YAXAEAVValue@Json@@@Z
 MCAPI void _convertPropertyToStateInDescription(class Json::Value&);
-/**
- * @symbol ?_copyMembers\@BlockPropertyToStateConverter\@\@YAXAEAVValue\@Json\@\@0\@Z
- */
+
+// symbol: ?_copyMembers@BlockPropertyToStateConverter@@YAXAEAVValue@Json@@0@Z
 MCAPI void _copyMembers(class Json::Value&, class Json::Value&);
-/**
- * @symbol ?checkAndConvert\@BlockPropertyToStateConverter\@\@YAXAEBVSemVersion\@\@AEAVValue\@Json\@\@\@Z
- */
+
+// symbol: ?checkAndConvert@BlockPropertyToStateConverter@@YAXAEBVSemVersion@@AEAVValue@Json@@@Z
 MCAPI void checkAndConvert(class SemVersion const&, class Json::Value&);
 // NOLINTEND
 

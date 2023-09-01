@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class AtomicTimeAccumulator {
-
 public:
     // prevent constructor by default
     AtomicTimeAccumulator& operator=(AtomicTimeAccumulator const&) = delete;
@@ -11,14 +10,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0AtomicTimeAccumulator\@\@QEAA\@XZ
-     */
+    // symbol: ??0AtomicTimeAccumulator@@QEAA@XZ
     MCAPI AtomicTimeAccumulator();
-    /**
-     * @symbol
-     * ?addTime\@AtomicTimeAccumulator\@\@QEAAXAEBV?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@chrono\@std\@\@\@Z
-     */
+
+    // symbol: ?addTime@AtomicTimeAccumulator@@QEAAXAEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z
     MCAPI void addTime(std::chrono::nanoseconds const&);
+
     // NOLINTEND
 };

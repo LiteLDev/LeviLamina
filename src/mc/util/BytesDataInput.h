@@ -6,7 +6,6 @@
 #include "mc/util/IDataInput.h"
 
 class BytesDataInput : public ::IDataInput {
-
 public:
     // prevent constructor by default
     BytesDataInput& operator=(BytesDataInput const&) = delete;
@@ -15,41 +14,29 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BYTESDATAINPUT
-    /**
-     * @symbol ?readByte\@BytesDataInput\@\@UEAADXZ
-     */
+    // symbol: ?readByte@BytesDataInput@@UEAADXZ
     MCVAPI char readByte();
-    /**
-     * @symbol ?readDouble\@BytesDataInput\@\@UEAANXZ
-     */
+
+    // symbol: ?readDouble@BytesDataInput@@UEAANXZ
     MCVAPI double readDouble();
-    /**
-     * @symbol ?readFloat\@BytesDataInput\@\@UEAAMXZ
-     */
+
+    // symbol: ?readFloat@BytesDataInput@@UEAAMXZ
     MCVAPI float readFloat();
-    /**
-     * @symbol ?readInt\@BytesDataInput\@\@UEAAHXZ
-     */
-    MCVAPI int32_t readInt();
-    /**
-     * @symbol ?readLongLong\@BytesDataInput\@\@UEAA_JXZ
-     */
-    MCVAPI int64_t readLongLong();
-    /**
-     * @symbol
-     * ?readLongString\@BytesDataInput\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // symbol: ?readInt@BytesDataInput@@UEAAHXZ
+    MCVAPI int readInt();
+
+    // symbol: ?readLongLong@BytesDataInput@@UEAA_JXZ
+    MCVAPI int64 readLongLong();
+
+    // symbol: ?readLongString@BytesDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCVAPI std::string readLongString();
-    /**
-     * @symbol ?readShort\@BytesDataInput\@\@UEAAFXZ
-     */
-    MCVAPI int16_t readShort();
-    /**
-     * @symbol
-     * ?readString\@BytesDataInput\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // symbol: ?readShort@BytesDataInput@@UEAAFXZ
+    MCVAPI short readShort();
+
+    // symbol: ?readString@BytesDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCVAPI std::string readString();
-#endif
+
     // NOLINTEND
 };

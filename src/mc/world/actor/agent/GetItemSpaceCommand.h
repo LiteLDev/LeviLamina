@@ -13,7 +13,6 @@ namespace AgentCommands { class Command; }
 namespace AgentCommands {
 
 class GetItemSpaceCommand : public ::AgentCommands::Command {
-
 public:
     // prevent constructor by default
     GetItemSpaceCommand& operator=(GetItemSpaceCommand const&) = delete;
@@ -22,26 +21,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?execute\@GetItemSpaceCommand\@AgentCommands\@\@UEAAXXZ
-     */
+
+    // vIndex: 1, symbol: ?execute@GetItemSpaceCommand@AgentCommands@@UEAAXXZ
     virtual void execute();
-    /**
-     * @vftbl 2
-     * @symbol ?isDone\@GetItemSpaceCommand\@AgentCommands\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?isDone@GetItemSpaceCommand@AgentCommands@@UEAA_NXZ
     virtual bool isDone();
-    /**
-     * @vftbl 4
-     * @symbol ?fireCommandDoneEvent\@GetItemSpaceCommand\@AgentCommands\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?fireCommandDoneEvent@GetItemSpaceCommand@AgentCommands@@UEAAXXZ
     virtual void fireCommandDoneEvent();
+
     // NOLINTEND
 };
 

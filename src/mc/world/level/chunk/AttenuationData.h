@@ -5,7 +5,6 @@
 namespace ChunkBlenderUtil {
 
 struct AttenuationData {
-
 public:
     // prevent constructor by default
     AttenuationData& operator=(AttenuationData const&) = delete;

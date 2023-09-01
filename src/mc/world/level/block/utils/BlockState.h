@@ -11,7 +11,6 @@ public:
 
     // BlockState inner types define
     struct StateListNode {
-
     public:
         // prevent constructor by default
         StateListNode& operator=(StateListNode const&) = delete;
@@ -20,18 +19,15 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??0StateListNode\@BlockState\@\@QEAA\@PEAV1\@\@Z
-         */
+        // symbol: ??0StateListNode@BlockState@@QEAA@PEAV1@@Z
         MCAPI StateListNode(class BlockState*);
-        /**
-         * @symbol ??1StateListNode\@BlockState\@\@QEAA\@XZ
-         */
+
+        // symbol: ??1StateListNode@BlockState@@QEAA@XZ
         MCAPI ~StateListNode();
-        /**
-         * @symbol ?mHead\@StateListNode\@BlockState\@\@2PEAU12\@EA
-         */
+
+        // symbol: ?mHead@StateListNode@BlockState@@2PEAU12@EA
         MCAPI static struct BlockState::StateListNode* mHead;
+
         // NOLINTEND
     };
 
@@ -43,34 +39,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?toNBT\@?$BlockStateVariant\@_N\@\@UEBAXAEAVCompoundTag\@\@H\@Z
-     */
-    virtual void toNBT(class CompoundTag&, int32_t) const = 0;
-    /**
-     * @vftbl 2
-     * @symbol ?fromNBT\@?$BlockStateVariant\@_N\@\@UEBA_NAEBVCompoundTag\@\@AEAH\@Z
-     */
-    virtual bool fromNBT(class CompoundTag const&, int32_t&) const = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATE
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // vIndex: 1, symbol: ?toNBT@?$BlockStateVariant@_N@@UEBAXAEAVCompoundTag@@H@Z
+    virtual void toNBT(class CompoundTag&, int) const = 0;
+
+    // vIndex: 2, symbol: ?fromNBT@?$BlockStateVariant@_N@@UEBA_NAEBVCompoundTag@@AEAH@Z
+    virtual bool fromNBT(class CompoundTag const&, int&) const = 0;
+
+    // symbol: ??1BlockState@@UEAA@XZ
     MCVAPI ~BlockState();
-#endif
-    /**
-     * @symbol ?forEachState\@BlockState\@\@SAXV?$function\@$$A6A_NAEBVBlockState\@\@\@Z\@std\@\@\@Z
-     */
+
+    // symbol: ?forEachState@BlockState@@SAXV?$function@$$A6A_NAEBVBlockState@@@Z@std@@@Z
     MCAPI static void forEachState(std::function<bool(class BlockState const&)>);
-    /**
-     * @symbol ?getState\@BlockState\@\@SAPEBV1\@AEBVHashedString\@\@\@Z
-     */
+
+    // symbol: ?getState@BlockState@@SAPEBV1@AEBVHashedString@@@Z
     MCAPI static class BlockState const* getState(class HashedString const&);
+
     // NOLINTEND
 };

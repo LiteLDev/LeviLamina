@@ -21,7 +21,6 @@ namespace Core { struct DirectoryIterationItem; }
 namespace Core {
 
 class FileSystemInterfaceImpl : public ::Core::IFileSystem {
-
 public:
     // prevent constructor by default
     FileSystemInterfaceImpl& operator=(FileSystemInterfaceImpl const&) = delete;
@@ -29,41 +28,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?openFile\@FileSystemInterfaceImpl\@Core\@\@UEAA?AV?$unique_ptr\@VIFile\@Core\@\@U?$default_delete\@VIFile\@Core\@\@\@std\@\@\@std\@\@AEBVPath\@2\@VFileOpenMode\@2\@W4FileBufferingMode\@2\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?openFile@FileSystemInterfaceImpl@Core@@UEAA?AV?$unique_ptr@VIFile@Core@@U?$default_delete@VIFile@Core@@@std@@@std@@AEBVPath@2@VFileOpenMode@2@W4FileBufferingMode@2@@Z
     virtual std::unique_ptr<class Core::IFile>
-    openFile(class Core::Path const&, class Core::FileOpenMode, enum class Core::FileBufferingMode);
-    /**
-     * @vftbl 2
-     * @symbol ?fileExists\@FileSystemInterfaceImpl\@Core\@\@UEAA_NAEBVPath\@2\@\@Z
-     */
+    openFile(class Core::Path const&, class Core::FileOpenMode, ::Core::FileBufferingMode);
+
+    // vIndex: 2, symbol: ?fileExists@FileSystemInterfaceImpl@Core@@UEAA_NAEBVPath@2@@Z
     virtual bool fileExists(class Core::Path const&);
-    /**
-     * @vftbl 3
-     * @symbol
-     * ?iterateOverDirectory\@FileSystemInterfaceImpl\@Core\@\@UEAA?AVResult\@2\@AEBVPath\@2\@W4DirectoryIterationFlags\@2\@V?$function\@$$A6A?AVResult\@Core\@\@AEBUDirectoryIterationItem\@2\@\@Z\@std\@\@\@Z
-     */
+
+    // vIndex: 3, symbol:
+    // ?iterateOverDirectory@FileSystemInterfaceImpl@Core@@UEAA?AVResult@2@AEBVPath@2@W4DirectoryIterationFlags@2@V?$function@$$A6A?AVResult@Core@@AEBUDirectoryIterationItem@2@@Z@std@@@Z
     virtual class Core::Result
-    iterateOverDirectory(class Core::Path const&, enum class Core::DirectoryIterationFlags, std::function<class Core::Result(struct Core::DirectoryIterationItem const&)>);
-    /**
-     * @vftbl 4
-     * @symbol
-     * ?getDirectoryFiles\@FileSystemInterfaceImpl\@Core\@\@UEAA?AVResult\@2\@AEAV?$vector\@V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@V?$allocator\@V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@\@std\@\@\@std\@\@AEBVPath\@2\@\@Z
-     */
+    iterateOverDirectory(class Core::Path const&, ::Core::DirectoryIterationFlags, std::function<class Core::Result(struct Core::DirectoryIterationItem const&)>);
+
+    // vIndex: 4, symbol:
+    // ?getDirectoryFiles@FileSystemInterfaceImpl@Core@@UEAA?AVResult@2@AEAV?$vector@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@V?$allocator@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@std@@@std@@AEBVPath@2@@Z
     virtual class Core::Result
     getDirectoryFiles(std::vector<class Core::PathBuffer<std::string>>&, class Core::Path const&);
-    /**
-     * @symbol ??0FileSystemInterfaceImpl\@Core\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0FileSystemInterfaceImpl@Core@@QEAA@XZ
     MCAPI FileSystemInterfaceImpl();
+
     // NOLINTEND
 };
 

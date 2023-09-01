@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ActorSelectorArgs {
-
 public:
     // prevent constructor by default
     ActorSelectorArgs& operator=(ActorSelectorArgs const&) = delete;
@@ -11,17 +10,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ActorSelectorArgs\@\@QEAA\@XZ
-     */
+    // symbol: ??0ActorSelectorArgs@@QEAA@XZ
     MCAPI ActorSelectorArgs();
-    /**
-     * @symbol ??1ActorSelectorArgs\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ActorSelectorArgs@@QEAA@XZ
     MCAPI ~ActorSelectorArgs();
-    /**
-     * @symbol ?DEFAULT_LEVEL\@ActorSelectorArgs\@\@2U?$pair\@HH\@std\@\@B
-     */
-    MCAPI static std::pair<int32_t, int32_t> const DEFAULT_LEVEL;
+
+    // symbol: ?DEFAULT_LEVEL@ActorSelectorArgs@@2U?$pair@HH@std@@B
+    MCAPI static std::pair<int, int> const DEFAULT_LEVEL;
+
     // NOLINTEND
 };

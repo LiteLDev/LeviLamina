@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ModuleIdentifier {
-
 public:
     // prevent constructor by default
     ModuleIdentifier& operator=(ModuleIdentifier const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ModuleIdentifier\@\@QEAA\@XZ
-     */
+    // symbol: ??1ModuleIdentifier@@QEAA@XZ
     MCAPI ~ModuleIdentifier();
+
     // NOLINTEND
 };

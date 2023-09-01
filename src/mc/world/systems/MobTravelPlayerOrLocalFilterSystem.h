@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class MobTravelPlayerOrLocalFilterSystem {
-
 public:
     // prevent constructor by default
     MobTravelPlayerOrLocalFilterSystem& operator=(MobTravelPlayerOrLocalFilterSystem const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?create\@MobTravelPlayerOrLocalFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?create@MobTravelPlayerOrLocalFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo create();
+
     // NOLINTEND
 };

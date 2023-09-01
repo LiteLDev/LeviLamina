@@ -5,7 +5,6 @@
 namespace cereal {
 
 struct SchemaWriter {
-
 public:
     // prevent constructor by default
     SchemaWriter& operator=(SchemaWriter const&) = delete;
@@ -14,12 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREAL_SCHEMAWRITER
-    /**
-     * @symbol ?isSequenceWriter\@SchemaWriter\@cereal\@\@UEBA_NXZ
-     */
+    // symbol: ?isSequenceWriter@SchemaWriter@cereal@@UEBA_NXZ
     MCVAPI bool isSequenceWriter() const;
-#endif
+
     // NOLINTEND
 };
 

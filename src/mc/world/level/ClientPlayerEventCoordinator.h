@@ -6,7 +6,6 @@
 #include "mc/world/events/PlayerEventCoordinator.h"
 
 class ClientPlayerEventCoordinator : public ::PlayerEventCoordinator {
-
 public:
     // prevent constructor by default
     ClientPlayerEventCoordinator& operator=(ClientPlayerEventCoordinator const&) = delete;
@@ -15,17 +14,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?sendPlayerDestroyedBlock\@ClientPlayerEventCoordinator\@\@QEAAXAEAVPlayer\@\@AEBVBlock\@\@\@Z
-     */
+    // symbol: ?sendPlayerDestroyedBlock@ClientPlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlock@@@Z
     MCAPI void sendPlayerDestroyedBlock(class Player&, class Block const&);
-    /**
-     * @symbol ?sendPlayerInput\@ClientPlayerEventCoordinator\@\@QEAAXAEAUIPlayerMovementProxy\@\@\@Z
-     */
+
+    // symbol: ?sendPlayerInput@ClientPlayerEventCoordinator@@QEAAXAEAUIPlayerMovementProxy@@@Z
     MCAPI void sendPlayerInput(struct IPlayerMovementProxy&);
-    /**
-     * @symbol ?sendStartDestroyBlock\@ClientPlayerEventCoordinator\@\@QEAAXAEAVPlayer\@\@AEBVBlockPos\@\@AEAE\@Z
-     */
-    MCAPI void sendStartDestroyBlock(class Player&, class BlockPos const&, uint8_t&);
+
+    // symbol: ?sendStartDestroyBlock@ClientPlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlockPos@@AEAE@Z
+    MCAPI void sendStartDestroyBlock(class Player&, class BlockPos const&, uchar&);
+
     // NOLINTEND
 };

@@ -4,10 +4,8 @@
 
 namespace OfferFlowerTickUtility {
 // NOLINTBEGIN
-/**
- * @symbol ?offerFlower\@OfferFlowerTickUtility\@\@YAX_NAEAVActor\@\@H\@Z
- */
-MCAPI void offerFlower(bool, class Actor&, int32_t);
+// symbol: ?offerFlower@OfferFlowerTickUtility@@YAX_NAEAVActor@@H@Z
+MCAPI void offerFlower(bool, class Actor&, int);
 // NOLINTEND
 
 }; // namespace OfferFlowerTickUtility

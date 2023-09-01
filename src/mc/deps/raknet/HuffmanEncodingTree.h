@@ -13,7 +13,6 @@ struct HuffmanEncodingTreeNode;
 namespace RakNet {
 
 class HuffmanEncodingTree {
-
 public:
     // prevent constructor by default
     HuffmanEncodingTree& operator=(HuffmanEncodingTree const&) = delete;
@@ -21,33 +20,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?FreeMemory\@HuffmanEncodingTree\@RakNet\@\@QEAAXXZ
-     */
+    // symbol: ?FreeMemory@HuffmanEncodingTree@RakNet@@QEAAXXZ
     MCAPI void FreeMemory();
-    /**
-     * @symbol ?GenerateFromFrequencyTable\@HuffmanEncodingTree\@RakNet\@\@QEAAXQEAI\@Z
-     */
-    MCAPI void GenerateFromFrequencyTable(uint32_t* const);
-    /**
-     * @symbol ??0HuffmanEncodingTree\@RakNet\@\@QEAA\@XZ
-     */
+
+    // symbol: ?GenerateFromFrequencyTable@HuffmanEncodingTree@RakNet@@QEAAXQEAI@Z
+    MCAPI void GenerateFromFrequencyTable(uint* const);
+
+    // symbol: ??0HuffmanEncodingTree@RakNet@@QEAA@XZ
     MCAPI HuffmanEncodingTree();
-    /**
-     * @symbol ??1HuffmanEncodingTree\@RakNet\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1HuffmanEncodingTree@RakNet@@QEAA@XZ
     MCAPI ~HuffmanEncodingTree();
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?InsertNodeIntoSortedList\@HuffmanEncodingTree\@RakNet\@\@AEBAXPEAUHuffmanEncodingTreeNode\@\@PEAV?$LinkedList\@PEAUHuffmanEncodingTreeNode\@\@\@DataStructures\@\@\@Z
-     */
+    // symbol:
+    // ?InsertNodeIntoSortedList@HuffmanEncodingTree@RakNet@@AEBAXPEAUHuffmanEncodingTreeNode@@PEAV?$LinkedList@PEAUHuffmanEncodingTreeNode@@@DataStructures@@@Z
     MCAPI void
     InsertNodeIntoSortedList(struct HuffmanEncodingTreeNode*, class DataStructures::LinkedList<struct HuffmanEncodingTreeNode*>*)
         const;
+
     // NOLINTEND
 };
 

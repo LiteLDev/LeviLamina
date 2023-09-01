@@ -11,7 +11,6 @@ namespace Puv { struct Logger; }
 namespace Puv {
 
 class LoadResultAny {
-
 public:
     // prevent constructor by default
     LoadResultAny& operator=(LoadResultAny const&) = delete;
@@ -20,30 +19,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0LoadResultAny\@Puv\@\@QEAA\@$$QEAV01\@\@Z
-     */
+    // symbol: ??0LoadResultAny@Puv@@QEAA@$$QEAV01@@Z
     MCAPI LoadResultAny(class Puv::LoadResultAny&&);
-    /**
-     * @symbol ?log\@LoadResultAny\@Puv\@\@QEAAAEAULogger\@2\@XZ
-     */
+
+    // symbol: ?log@LoadResultAny@Puv@@QEAAAEAULogger@2@XZ
     MCAPI struct Puv::Logger& log();
-    /**
-     * @symbol ??BLoadResultAny\@Puv\@\@QEBA_NXZ
-     */
+
+    // symbol: ??BLoadResultAny@Puv@@QEBA_NXZ
     MCAPI operator bool() const;
-    /**
-     * @symbol ?version\@LoadResultAny\@Puv\@\@QEBAAEBVSemVersion\@\@XZ
-     */
+
+    // symbol: ?version@LoadResultAny@Puv@@QEBAAEBVSemVersion@@XZ
     MCAPI class SemVersion const& version() const;
-    /**
-     * @symbol ??1LoadResultAny\@Puv\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1LoadResultAny@Puv@@QEAA@XZ
     MCAPI ~LoadResultAny();
-    /**
-     * @symbol ?makeError\@LoadResultAny\@Puv\@\@SA?AV12\@ULogger\@2\@\@Z
-     */
+
+    // symbol: ?makeError@LoadResultAny@Puv@@SA?AV12@ULogger@2@@Z
     MCAPI static class Puv::LoadResultAny makeError(struct Puv::Logger);
+
     // NOLINTEND
 };
 

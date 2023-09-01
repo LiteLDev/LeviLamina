@@ -5,7 +5,6 @@
 namespace RakNet {
 
 struct uint24_t {
-
 public:
     // prevent constructor by default
     uint24_t& operator=(uint24_t const&) = delete;

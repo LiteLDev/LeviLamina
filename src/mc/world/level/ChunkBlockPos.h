@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ChunkBlockPos {
-
 public:
     // prevent constructor by default
     ChunkBlockPos& operator=(ChunkBlockPos const&) = delete;
@@ -12,25 +11,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ChunkBlockPos\@\@QEAA\@EVChunkLocalHeight\@\@E\@Z
-     */
-    MCAPI ChunkBlockPos(uint8_t, class ChunkLocalHeight, uint8_t);
-    /**
-     * @symbol ??0ChunkBlockPos\@\@QEAA\@AEBVBlockPos\@\@F\@Z
-     */
-    MCAPI ChunkBlockPos(class BlockPos const&, int16_t);
-    /**
-     * @symbol ?toPos\@ChunkBlockPos\@\@QEBA?AVPos\@\@XZ
-     */
+    // symbol: ??0ChunkBlockPos@@QEAA@EVChunkLocalHeight@@E@Z
+    MCAPI ChunkBlockPos(uchar, class ChunkLocalHeight, uchar);
+
+    // symbol: ??0ChunkBlockPos@@QEAA@AEBVBlockPos@@F@Z
+    MCAPI ChunkBlockPos(class BlockPos const&, short);
+
+    // symbol: ?toPos@ChunkBlockPos@@QEBA?AVPos@@XZ
     MCAPI class Pos toPos() const;
-    /**
-     * @symbol ?from2D\@ChunkBlockPos\@\@SA?AV1\@EE\@Z
-     */
-    MCAPI static class ChunkBlockPos from2D(uint8_t, uint8_t);
-    /**
-     * @symbol ?fromLegacyIndex\@ChunkBlockPos\@\@SA?AV1\@G\@Z
-     */
-    MCAPI static class ChunkBlockPos fromLegacyIndex(uint16_t);
+
+    // symbol: ?from2D@ChunkBlockPos@@SA?AV1@EE@Z
+    MCAPI static class ChunkBlockPos from2D(uchar, uchar);
+
+    // symbol: ?fromLegacyIndex@ChunkBlockPos@@SA?AV1@G@Z
+    MCAPI static class ChunkBlockPos fromLegacyIndex(ushort);
+
     // NOLINTEND
 };

@@ -6,7 +6,6 @@
 #include "mc/world/item/components/ItemStackNetResult.h"
 
 class ScreenHandlerBase {
-
 public:
     // prevent constructor by default
     ScreenHandlerBase& operator=(ScreenHandlerBase const&) = delete;
@@ -15,30 +14,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?handleAction\@ScreenHandlerBase\@\@UEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestAction\@\@\@Z
-     */
-    virtual enum class ItemStackNetResult handleAction(class ItemStackRequestAction const&);
-    /**
-     * @vftbl 2
-     * @symbol ?endRequest\@ScreenHandlerBase\@\@UEAA?AW4ItemStackNetResult\@\@XZ
-     */
-    virtual enum class ItemStackNetResult endRequest();
-    /**
-     * @vftbl 3
-     * @symbol ?endRequestBatch\@ScreenHandlerBase\@\@UEAAXXZ
-     */
+
+    // vIndex: 1, symbol: ?handleAction@ScreenHandlerBase@@UEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
+    virtual ::ItemStackNetResult handleAction(class ItemStackRequestAction const&);
+
+    // vIndex: 2, symbol: ?endRequest@ScreenHandlerBase@@UEAA?AW4ItemStackNetResult@@XZ
+    virtual ::ItemStackNetResult endRequest();
+
+    // vIndex: 3, symbol: ?endRequestBatch@ScreenHandlerBase@@UEAAXXZ
     virtual void endRequestBatch();
-    /**
-     * @vftbl 4
-     * @symbol ?postRequest\@ScreenHandlerBase\@\@UEAAX_N\@Z
-     */
+
+    // vIndex: 4, symbol: ?postRequest@ScreenHandlerBase@@UEAAX_N@Z
     virtual void postRequest(bool);
+
     // NOLINTEND
 };

@@ -6,7 +6,6 @@
 #include "mc/server/commands/ServerCommand.h"
 
 class SetMaxPlayersCommand : public ::ServerCommand {
-
 public:
     // prevent constructor by default
     SetMaxPlayersCommand& operator=(SetMaxPlayersCommand const&) = delete;
@@ -15,24 +14,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?collectOptionalArguments\@Command\@\@MEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?collectOptionalArguments@Command@@MEAA_NXZ
     virtual bool collectOptionalArguments();
-    /**
-     * @vftbl 2
-     * @symbol ?execute\@SetMaxPlayersCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?execute@SetMaxPlayersCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol ?setup\@SetMaxPlayersCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
-     */
+
+    // symbol: ?setup@SetMaxPlayersCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry&);
+
     // NOLINTEND
 };

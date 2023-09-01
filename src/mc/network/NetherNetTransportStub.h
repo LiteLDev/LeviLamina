@@ -19,7 +19,6 @@ namespace NetherNet { struct SessionState; }
 // clang-format on
 
 class NetherNetTransportStub : public ::NetherNet::INetherNetTransportInterface {
-
 public:
     // prevent constructor by default
     NetherNetTransportStub& operator=(NetherNetTransportStub const&) = delete;
@@ -28,90 +27,68 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERNETTRANSPORTSTUB
-    /**
-     * @symbol ?AcceptSessionWithUser\@NetherNetTransportStub\@\@UEAA_NUNetworkID\@NetherNet\@\@\@Z
-     */
+    // symbol: ?AcceptSessionWithUser@NetherNetTransportStub@@UEAA_NUNetworkID@NetherNet@@@Z
     MCVAPI bool AcceptSessionWithUser(struct NetherNet::NetworkID);
-    /**
-     * @symbol ?ClearPacketData\@NetherNetTransportStub\@\@UEAAXUNetworkID\@NetherNet\@\@\@Z
-     */
+
+    // symbol: ?ClearPacketData@NetherNetTransportStub@@UEAAXUNetworkID@NetherNet@@@Z
     MCVAPI void ClearPacketData(struct NetherNet::NetworkID);
-    /**
-     * @symbol ?CloseSessionWithUser\@NetherNetTransportStub\@\@UEAA_NUNetworkID\@NetherNet\@\@\@Z
-     */
+
+    // symbol: ?CloseSessionWithUser@NetherNetTransportStub@@UEAA_NUNetworkID@NetherNet@@@Z
     MCVAPI bool CloseSessionWithUser(struct NetherNet::NetworkID);
-    /**
-     * @symbol ?DisableBroadcastDiscovery\@NetherNetTransportStub\@\@UEAAXXZ
-     */
+
+    // symbol: ?DisableBroadcastDiscovery@NetherNetTransportStub@@UEAAXXZ
     MCVAPI void DisableBroadcastDiscovery();
-    /**
-     * @symbol ?DisableSignalingOverLAN\@NetherNetTransportStub\@\@UEAAXXZ
-     */
+
+    // symbol: ?DisableSignalingOverLAN@NetherNetTransportStub@@UEAAXXZ
     MCVAPI void DisableSignalingOverLAN();
-    /**
-     * @symbol ?EnableBroadcastDiscovery\@NetherNetTransportStub\@\@UEAAXXZ
-     */
+
+    // symbol: ?EnableBroadcastDiscovery@NetherNetTransportStub@@UEAAXXZ
     MCVAPI void EnableBroadcastDiscovery();
-    /**
-     * @symbol ?EnableSignalingOverLAN\@NetherNetTransportStub\@\@UEAAXXZ
-     */
+
+    // symbol: ?EnableSignalingOverLAN@NetherNetTransportStub@@UEAAXXZ
     MCVAPI void EnableSignalingOverLAN();
-    /**
-     * @symbol ?GetSessionState\@NetherNetTransportStub\@\@UEAA_NUNetworkID\@NetherNet\@\@PEAUSessionState\@3\@\@Z
-     */
+
+    // symbol: ?GetSessionState@NetherNetTransportStub@@UEAA_NUNetworkID@NetherNet@@PEAUSessionState@3@@Z
     MCVAPI bool GetSessionState(struct NetherNet::NetworkID, struct NetherNet::SessionState*);
-    /**
-     * @symbol ?IsBroadcastDiscoveryEnabled\@NetherNetTransportStub\@\@UEAA_NXZ
-     */
+
+    // symbol: ?IsBroadcastDiscoveryEnabled@NetherNetTransportStub@@UEAA_NXZ
     MCVAPI bool IsBroadcastDiscoveryEnabled();
-    /**
-     * @symbol ?IsPacketAvailable\@NetherNetTransportStub\@\@UEAA_NUNetworkID\@NetherNet\@\@PEAI\@Z
-     */
-    MCVAPI bool IsPacketAvailable(struct NetherNet::NetworkID, uint32_t*);
-    /**
-     * @symbol ?IsSignedIntoSignalingService\@NetherNetTransportStub\@\@UEBA_NXZ
-     */
+
+    // symbol: ?IsPacketAvailable@NetherNetTransportStub@@UEAA_NUNetworkID@NetherNet@@PEAI@Z
+    MCVAPI bool IsPacketAvailable(struct NetherNet::NetworkID, uint*);
+
+    // symbol: ?IsSignedIntoSignalingService@NetherNetTransportStub@@UEBA_NXZ
     MCVAPI bool IsSignedIntoSignalingService() const;
-    /**
-     * @symbol ?OpenSessionWithUser\@NetherNetTransportStub\@\@UEAA_NUNetworkID\@NetherNet\@\@\@Z
-     */
+
+    // symbol: ?OpenSessionWithUser@NetherNetTransportStub@@UEAA_NUNetworkID@NetherNet@@@Z
     MCVAPI bool OpenSessionWithUser(struct NetherNet::NetworkID);
-    /**
-     * @symbol ?ReadPacket\@NetherNetTransportStub\@\@UEAA_NUNetworkID\@NetherNet\@\@PEAXIPEAI\@Z
-     */
-    MCVAPI bool ReadPacket(struct NetherNet::NetworkID, void*, uint32_t, uint32_t*);
-    /**
-     * @symbol
-     * ?RegisterRelayServerCredentialsReadyCallback\@NetherNetTransportStub\@\@UEAAXAEBV?$function\@$$A6AXW4ERelayServerConfigurationResult\@NetherNet\@\@\@Z\@std\@\@\@Z
-     */
-    MCVAPI void
-    RegisterRelayServerCredentialsReadyCallback(std::function<void(enum class NetherNet::ERelayServerConfigurationResult
-                                                )> const&);
-    /**
-     * @symbol ?SendPacket\@NetherNetTransportStub\@\@UEAA_NUNetworkID\@NetherNet\@\@PEBDIW4ESendType\@3\@\@Z
-     */
-    MCVAPI bool SendPacket(struct NetherNet::NetworkID, char const*, uint32_t, enum class NetherNet::ESendType);
-    /**
-     * @symbol
-     * ?SetServerConfiguration\@NetherNetTransportStub\@\@UEAAXPEBUNetherNetTransportServerConfiguration\@NetherNet\@\@\@Z
-     */
+
+    // symbol: ?ReadPacket@NetherNetTransportStub@@UEAA_NUNetworkID@NetherNet@@PEAXIPEAI@Z
+    MCVAPI bool ReadPacket(struct NetherNet::NetworkID, void*, uint, uint*);
+
+    // symbol:
+    // ?RegisterRelayServerCredentialsReadyCallback@NetherNetTransportStub@@UEAAXAEBV?$function@$$A6AXW4ERelayServerConfigurationResult@NetherNet@@@Z@std@@@Z
+    MCVAPI void RegisterRelayServerCredentialsReadyCallback(std::function<
+                                                            void(::NetherNet::ERelayServerConfigurationResult)> const&);
+
+    // symbol: ?SendPacket@NetherNetTransportStub@@UEAA_NUNetworkID@NetherNet@@PEBDIW4ESendType@3@@Z
+    MCVAPI bool SendPacket(struct NetherNet::NetworkID, char const*, uint, ::NetherNet::ESendType);
+
+    // symbol:
+    // ?SetServerConfiguration@NetherNetTransportStub@@UEAAXPEBUNetherNetTransportServerConfiguration@NetherNet@@@Z
     MCVAPI void SetServerConfiguration(struct NetherNet::NetherNetTransportServerConfiguration const*);
-    /**
-     * @symbol
-     * ?SetWebRTCSignalingInterface\@NetherNetTransportStub\@\@UEAAXAEBV?$shared_ptr\@VIWebRTCSignalingInterface\@NetherNet\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?SetWebRTCSignalingInterface@NetherNetTransportStub@@UEAAXAEBV?$shared_ptr@VIWebRTCSignalingInterface@NetherNet@@@std@@@Z
     MCVAPI void SetWebRTCSignalingInterface(std::shared_ptr<class NetherNet::IWebRTCSignalingInterface> const&);
-    /**
-     * @symbol
-     * ?SignIntoSignalingService\@NetherNetTransportStub\@\@UEAAXAEBV?$function\@$$A6AXVerror_code\@std\@\@\@Z\@std\@\@AEBV?$function\@$$A6AXW4SignalingHostConnectionStatus\@NetherNet\@\@I\@Z\@3\@AEBUSignalingConfiguration\@IWebRTCSignalingInterface\@NetherNet\@\@\@Z
-     */
+
+    // symbol:
+    // ?SignIntoSignalingService@NetherNetTransportStub@@UEAAXAEBV?$function@$$A6AXVerror_code@std@@@Z@std@@AEBV?$function@$$A6AXW4SignalingHostConnectionStatus@NetherNet@@I@Z@3@AEBUSignalingConfiguration@IWebRTCSignalingInterface@NetherNet@@@Z
     MCVAPI void
-    SignIntoSignalingService(std::function<void(std::error_code)> const&, std::function<void(enum class NetherNet::SignalingHostConnectionStatus, uint32_t)> const&, struct NetherNet::IWebRTCSignalingInterface::SignalingConfiguration const&);
-    /**
-     * @symbol ?SignOutFromSignalingService\@NetherNetTransportStub\@\@UEAAXXZ
-     */
+    SignIntoSignalingService(std::function<void(std::error_code)> const&, std::function<void(::NetherNet::SignalingHostConnectionStatus, uint)> const&, struct NetherNet::IWebRTCSignalingInterface::SignalingConfiguration const&);
+
+    // symbol: ?SignOutFromSignalingService@NetherNetTransportStub@@UEAAXXZ
     MCVAPI void SignOutFromSignalingService();
-#endif
+
     // NOLINTEND
 };

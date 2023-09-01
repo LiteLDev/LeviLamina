@@ -8,7 +8,6 @@ namespace Json { class Value; }
 // clang-format on
 
 struct FloatRange {
-
 public:
     // prevent constructor by default
     FloatRange& operator=(FloatRange const&) = delete;
@@ -17,13 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?getValue\@FloatRange\@\@QEBAMAEAVRandom\@\@\@Z
-     */
+    // symbol: ?getValue@FloatRange@@QEBAMAEAVRandom@@@Z
     MCAPI float getValue(class Random&) const;
-    /**
-     * @symbol ?parseJson\@FloatRange\@\@QEAA_NAEBVValue\@Json\@\@MM\@Z
-     */
+
+    // symbol: ?parseJson@FloatRange@@QEAA_NAEBVValue@Json@@MM@Z
     MCAPI bool parseJson(class Json::Value const&, float, float);
+
     // NOLINTEND
 };

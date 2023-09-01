@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class IDimension {
-
 public:
     // prevent constructor by default
     IDimension& operator=(IDimension const&) = delete;
@@ -12,11 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDIMENSION
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1IDimension@@UEAA@XZ
     MCVAPI ~IDimension();
-#endif
+
     // NOLINTEND
 };

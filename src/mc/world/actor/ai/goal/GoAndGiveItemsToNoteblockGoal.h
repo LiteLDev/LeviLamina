@@ -22,7 +22,6 @@ public:
 
     // GoAndGiveItemsToNoteblockGoal inner types define
     class Definition : public ::BaseGoalDefinition {
-
     public:
         // prevent constructor by default
         Definition& operator=(Definition const&) = delete;
@@ -30,31 +29,23 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOANDGIVEITEMSTONOTEBLOCKGOAL_DEFINITION
-        /**
-         * @symbol __unk_destructor_-1
-         */
+
+        // symbol: ??1Definition@GoAndGiveItemsToNoteblockGoal@@UEAA@XZ
         MCVAPI ~Definition();
-#endif
-        /**
-         * @symbol ??0Definition\@GoAndGiveItemsToNoteblockGoal\@\@QEAA\@XZ
-         */
+
+        // symbol: ??0Definition@GoAndGiveItemsToNoteblockGoal@@QEAA@XZ
         MCAPI Definition();
-        /**
-         * @symbol ?initialize\@Definition\@GoAndGiveItemsToNoteblockGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
+
+        // symbol: ?initialize@Definition@GoAndGiveItemsToNoteblockGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class GoAndGiveItemsToNoteblockGoal&) const;
-        /**
-         * @symbol
-         * ?buildSchema\@Definition\@GoAndGiveItemsToNoteblockGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefinition\@GoAndGiveItemsToNoteblockGoal\@\@\@JsonUtil\@\@\@4\@\@Z
-         */
+
+        // symbol:
+        // ?buildSchema@Definition@GoAndGiveItemsToNoteblockGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@GoAndGiveItemsToNoteblockGoal@@@JsonUtil@@@4@@Z
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GoAndGiveItemsToNoteblockGoal::Definition>>&);
+
         // NOLINTEND
     };
 
@@ -66,45 +57,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@GoAndGiveItemsToNoteblockGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@GoAndGiveItemsToNoteblockGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@GoAndGiveItemsToNoteblockGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@GoAndGiveItemsToNoteblockGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@GoAndGiveItemsToNoteblockGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@GoAndGiveItemsToNoteblockGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol ?stop\@GoAndGiveItemsToNoteblockGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 5, symbol: ?stop@GoAndGiveItemsToNoteblockGoal@@UEAAXXZ
     virtual void stop();
-    /**
-     * @vftbl 6
-     * @symbol ?tick\@GoAndGiveItemsToNoteblockGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 6, symbol: ?tick@GoAndGiveItemsToNoteblockGoal@@UEAAXXZ
     virtual void tick();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@GoAndGiveItemsToNoteblockGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@GoAndGiveItemsToNoteblockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @symbol ??0GoAndGiveItemsToNoteblockGoal\@\@QEAA\@AEAVMob\@\@\@Z
-     */
+
+    // symbol: ??0GoAndGiveItemsToNoteblockGoal@@QEAA@AEAVMob@@@Z
     MCAPI GoAndGiveItemsToNoteblockGoal(class Mob&);
+
     // NOLINTEND
 };

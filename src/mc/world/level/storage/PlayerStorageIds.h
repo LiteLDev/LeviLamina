@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct PlayerStorageIds {
-
 public:
     // prevent constructor by default
     PlayerStorageIds& operator=(PlayerStorageIds const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1PlayerStorageIds\@\@QEAA\@XZ
-     */
+    // symbol: ??1PlayerStorageIds@@QEAA@XZ
     MCAPI ~PlayerStorageIds();
+
     // NOLINTEND
 };

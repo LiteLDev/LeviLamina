@@ -5,7 +5,6 @@
 namespace Scripting {
 
 struct ClassBinding {
-
 public:
     // prevent constructor by default
     ClassBinding& operator=(ClassBinding const&) = delete;

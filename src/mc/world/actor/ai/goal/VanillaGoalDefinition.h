@@ -4,9 +4,7 @@
 
 namespace VanillaGoalDefinition {
 // NOLINTBEGIN
-/**
- * @symbol ?init\@VanillaGoalDefinition\@\@YAXXZ
- */
+// symbol: ?init@VanillaGoalDefinition@@YAXXZ
 MCAPI void init();
 // NOLINTEND
 

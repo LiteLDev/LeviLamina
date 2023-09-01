@@ -9,11 +9,9 @@ class Block;
 
 namespace VanillaComplexAliasBlockUtils::LavaCauldron {
 // NOLINTBEGIN
-/**
- * @symbol
- * ?getComplexAliasCallback\@LavaCauldron\@VanillaComplexAliasBlockUtils\@\@YA?AV?$function\@$$A6APEBVBlock\@\@H\@Z\@std\@\@XZ
- */
-MCAPI std::function<class Block const*(int32_t)> getComplexAliasCallback();
+// symbol:
+// ?getComplexAliasCallback@LavaCauldron@VanillaComplexAliasBlockUtils@@YA?AV?$function@$$A6APEBVBlock@@H@Z@std@@XZ
+MCAPI std::function<class Block const*(int)> getComplexAliasCallback();
 // NOLINTEND
 
 }; // namespace VanillaComplexAliasBlockUtils::LavaCauldron

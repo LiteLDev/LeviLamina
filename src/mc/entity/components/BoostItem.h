@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct BoostItem {
-
 public:
     // prevent constructor by default
     BoostItem& operator=(BoostItem const&) = delete;
@@ -12,13 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?setReplacementItemDescriptor\@BoostItem\@\@QEAAXAEBVItemDescriptor\@\@\@Z
-     */
+    // symbol: ?setReplacementItemDescriptor@BoostItem@@QEAAXAEBVItemDescriptor@@@Z
     MCAPI void setReplacementItemDescriptor(class ItemDescriptor const&);
-    /**
-     * @symbol ??1BoostItem\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1BoostItem@@QEAA@XZ
     MCAPI ~BoostItem();
+
     // NOLINTEND
 };

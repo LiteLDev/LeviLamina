@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class CleanUpSingleTickRemovePassengersSystem {
-
 public:
     // prevent constructor by default
     CleanUpSingleTickRemovePassengersSystem& operator=(CleanUpSingleTickRemovePassengersSystem const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createSingleTickSystem\@CleanUpSingleTickRemovePassengersSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createSingleTickSystem@CleanUpSingleTickRemovePassengersSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSingleTickSystem();
+
     // NOLINTEND
 };

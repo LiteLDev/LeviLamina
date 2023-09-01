@@ -19,72 +19,59 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?read\@ItemUseInventoryTransaction\@\@UEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?read@ItemUseInventoryTransaction@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void, std::error_code> read(class ReadOnlyBinaryStream&);
-    /**
-     * @vftbl 2
-     * @symbol ?write\@ItemUseInventoryTransaction\@\@UEBAXAEAVBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?write@ItemUseInventoryTransaction@@UEBAXAEAVBinaryStream@@@Z
     virtual void write(class BinaryStream&) const;
-    /**
-     * @vftbl 3
-     * @symbol ?postLoadItems\@ItemUseInventoryTransaction\@\@UEAAXAEAVBlockPalette\@\@_N\@Z
-     */
+
+    // vIndex: 3, symbol: ?postLoadItems@ItemUseInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z
     virtual void postLoadItems(class BlockPalette&, bool);
-    /**
-     * @vftbl 4
-     * @symbol ?handle\@ItemUseInventoryTransaction\@\@UEBA?AW4InventoryTransactionError\@\@AEAVPlayer\@\@_N\@Z
-     */
-    virtual enum class InventoryTransactionError handle(class Player&, bool) const;
-    /**
-     * @vftbl 5
-     * @symbol ?onTransactionError\@ItemUseInventoryTransaction\@\@UEBAXAEAVPlayer\@\@W4InventoryTransactionError\@\@\@Z
-     */
-    virtual void onTransactionError(class Player&, enum class InventoryTransactionError) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMUSEINVENTORYTRANSACTION
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // vIndex: 4, symbol: ?handle@ItemUseInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
+    virtual ::InventoryTransactionError handle(class Player&, bool) const;
+
+    // vIndex: 5, symbol:
+    // ?onTransactionError@ItemUseInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
+    virtual void onTransactionError(class Player&, ::InventoryTransactionError) const;
+
+    // symbol: ??1ItemUseInventoryTransaction@@UEAA@XZ
     MCVAPI ~ItemUseInventoryTransaction();
-#endif
-    /**
-     * @symbol ??0ItemUseInventoryTransaction\@\@QEAA\@AEBV0\@\@Z
-     */
+
+    // symbol: ??0ItemUseInventoryTransaction@@QEAA@AEBV0@@Z
     MCAPI ItemUseInventoryTransaction(class ItemUseInventoryTransaction const&);
-    /**
-     * @symbol ??4ItemUseInventoryTransaction\@\@QEAAAEAV0\@AEBV0\@\@Z
-     */
+
+    // symbol: ??4ItemUseInventoryTransaction@@QEAAAEAV0@AEBV0@@Z
     MCAPI class ItemUseInventoryTransaction& operator=(class ItemUseInventoryTransaction const&);
-    /**
-     * @symbol ?resendBlocksAroundArea\@ItemUseInventoryTransaction\@\@QEBAXAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
-     */
-    MCAPI void resendBlocksAroundArea(class Player&, class BlockPos const&, uint8_t) const;
-    /**
-     * @symbol ?resendPlayerState\@ItemUseInventoryTransaction\@\@QEBAXAEAVPlayer\@\@\@Z
-     */
+
+    // symbol: ?resendBlocksAroundArea@ItemUseInventoryTransaction@@QEBAXAEAVPlayer@@AEBVBlockPos@@E@Z
+    MCAPI void resendBlocksAroundArea(class Player&, class BlockPos const&, uchar) const;
+
+    // symbol: ?resendPlayerState@ItemUseInventoryTransaction@@QEBAXAEAVPlayer@@@Z
     MCAPI void resendPlayerState(class Player&) const;
-    /**
-     * @symbol ?setSelectedItem\@ItemUseInventoryTransaction\@\@QEAAAEAV1\@AEBVItemStack\@\@\@Z
-     */
+
+    // symbol: ?setSelectedItem@ItemUseInventoryTransaction@@QEAAAEAV1@AEBVItemStack@@@Z
     MCAPI class ItemUseInventoryTransaction& setSelectedItem(class ItemStack const&);
+
     // NOLINTEND
 
 private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?actionTypeMap\@ItemUseInventoryTransaction\@\@0V?$BidirectionalUnorderedMap\@W4ActionType\@ItemUseInventoryTransaction\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@\@B
-     */
+    // symbol:
+    // ?actionTypeMap@ItemUseInventoryTransaction@@0V?$BidirectionalUnorderedMap@W4ActionType@ItemUseInventoryTransaction@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
     MCAPI static class BidirectionalUnorderedMap<::ItemUseInventoryTransaction::ActionType, std::string> const
         actionTypeMap;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $actionTypeMap() { return actionTypeMap; }
+
     // NOLINTEND
 };

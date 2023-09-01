@@ -7,7 +7,6 @@
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class DragonBaseGoal : public ::Goal {
-
 public:
     // prevent constructor by default
     DragonBaseGoal& operator=(DragonBaseGoal const&) = delete;
@@ -16,20 +15,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONBASEGOAL
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1DragonBaseGoal@@UEAA@XZ
     MCVAPI ~DragonBaseGoal();
-#endif
-    /**
-     * @symbol ??0DragonBaseGoal\@\@QEAA\@AEAVMob\@\@\@Z
-     */
+
+    // symbol: ??0DragonBaseGoal@@QEAA@AEAVMob@@@Z
     MCAPI DragonBaseGoal(class Mob&);
+
     // NOLINTEND
 };

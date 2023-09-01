@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class BiomeArea {
-
 public:
     // prevent constructor by default
     BiomeArea& operator=(BiomeArea const&) = delete;
@@ -12,13 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0BiomeArea\@\@QEAA\@AEBVBoundingBox\@\@I\@Z
-     */
-    MCAPI BiomeArea(class BoundingBox const&, uint32_t);
-    /**
-     * @symbol ??1BiomeArea\@\@QEAA\@XZ
-     */
+    // symbol: ??0BiomeArea@@QEAA@AEBVBoundingBox@@I@Z
+    MCAPI BiomeArea(class BoundingBox const&, uint);
+
+    // symbol: ??1BiomeArea@@QEAA@XZ
     MCAPI ~BiomeArea();
+
     // NOLINTEND
 };

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct DynamicPropertyDefinition {
-
 public:
     // prevent constructor by default
     DynamicPropertyDefinition& operator=(DynamicPropertyDefinition const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1DynamicPropertyDefinition\@\@QEAA\@XZ
-     */
+    // symbol: ??1DynamicPropertyDefinition@@QEAA@XZ
     MCAPI ~DynamicPropertyDefinition();
+
     // NOLINTEND
 };

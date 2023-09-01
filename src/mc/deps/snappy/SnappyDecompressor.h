@@ -5,7 +5,6 @@
 namespace snappy {
 
 class SnappyDecompressor {
-
 public:
     // prevent constructor by default
     SnappyDecompressor& operator=(SnappyDecompressor const&) = delete;
@@ -14,10 +13,9 @@ public:
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?RefillTag\@SnappyDecompressor\@snappy\@\@AEAA_NXZ
-     */
+    // symbol: ?RefillTag@SnappyDecompressor@snappy@@AEAA_NXZ
     MCAPI bool RefillTag();
+
     // NOLINTEND
 };
 

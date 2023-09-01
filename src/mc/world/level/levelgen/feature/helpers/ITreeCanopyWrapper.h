@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ITreeCanopyWrapper {
-
 public:
     // prevent constructor by default
     ITreeCanopyWrapper& operator=(ITreeCanopyWrapper const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ITreeCanopyWrapper\@\@QEAA\@XZ
-     */
+    // symbol: ??1ITreeCanopyWrapper@@QEAA@XZ
     MCAPI ~ITreeCanopyWrapper();
+
     // NOLINTEND
 };

@@ -13,7 +13,6 @@ public:
 
     // IWebRTCSignalingInterface inner types define
     struct SignalingConfiguration {
-
     public:
         // prevent constructor by default
         SignalingConfiguration& operator=(SignalingConfiguration const&) = delete;

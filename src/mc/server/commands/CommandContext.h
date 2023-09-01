@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class CommandContext {
-
 public:
     // prevent constructor by default
     CommandContext& operator=(CommandContext const&) = delete;
@@ -12,18 +11,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ??0CommandContext\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VCommandOrigin\@\@U?$default_delete\@VCommandOrigin\@\@\@std\@\@\@2\@H\@Z
-     */
-    MCAPI CommandContext(std::string const&, std::unique_ptr<class CommandOrigin>, int32_t);
-    /**
-     * @symbol ?getCommandOrigin\@CommandContext\@\@QEBAAEBVCommandOrigin\@\@XZ
-     */
+    // symbol:
+    // ??0CommandContext@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@2@H@Z
+    MCAPI CommandContext(std::string const&, std::unique_ptr<class CommandOrigin>, int);
+
+    // symbol: ?getCommandOrigin@CommandContext@@QEBAAEBVCommandOrigin@@XZ
     MCAPI class CommandOrigin const& getCommandOrigin() const;
-    /**
-     * @symbol ??1CommandContext\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1CommandContext@@QEAA@XZ
     MCAPI ~CommandContext();
+
     // NOLINTEND
 };

@@ -5,7 +5,6 @@
 namespace Bedrock::PubSub {
 
 class RawSubscription {
-
 public:
     // prevent constructor by default
     RawSubscription& operator=(RawSubscription const&) = delete;

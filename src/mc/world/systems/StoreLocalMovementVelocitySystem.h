@@ -4,9 +4,7 @@
 
 namespace StoreLocalMovementVelocitySystem {
 // NOLINTBEGIN
-/**
- * @symbol ?createSystem\@StoreLocalMovementVelocitySystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
- */
+// symbol: ?createSystem@StoreLocalMovementVelocitySystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
 // NOLINTEND
 

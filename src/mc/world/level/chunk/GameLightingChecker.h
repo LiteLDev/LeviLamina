@@ -9,10 +9,8 @@ namespace GameLightingChecker { struct CheckAreaForLightingResults; }
 
 namespace GameLightingChecker {
 // NOLINTBEGIN
-/**
- * @symbol
- * ?checkAreaForLighting\@GameLightingChecker\@\@YAXAEAVBlockSource\@\@AEBVBlockPos\@\@1AEAUCheckAreaForLightingResults\@1\@\@Z
- */
+// symbol:
+// ?checkAreaForLighting@GameLightingChecker@@YAXAEAVBlockSource@@AEBVBlockPos@@1AEAUCheckAreaForLightingResults@1@@Z
 MCAPI void
 checkAreaForLighting(class BlockSource&, class BlockPos const&, class BlockPos const&, struct GameLightingChecker::CheckAreaForLightingResults&);
 // NOLINTEND

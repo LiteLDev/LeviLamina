@@ -4,7 +4,6 @@
 
 template <typename... T0>
 struct Read {
-
 public:
     // prevent constructor by default
     Read& operator=(Read const&) = delete;

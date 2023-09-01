@@ -9,9 +9,7 @@ namespace Scripting { struct Version; }
 
 namespace ScriptModuleMinecraft::Betas {
 // NOLINTBEGIN
-/**
- * @symbol ?CURRENT\@Betas\@ScriptModuleMinecraft\@\@3UVersion\@Scripting\@\@B
- */
+// symbol: ?CURRENT@Betas@ScriptModuleMinecraft@@3UVersion@Scripting@@B
 MCAPI extern struct Scripting::Version const CURRENT;
 // NOLINTEND
 

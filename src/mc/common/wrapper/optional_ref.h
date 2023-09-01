@@ -4,7 +4,6 @@
 
 template <typename T0>
 class optional_ref {
-
 public:
     // prevent constructor by default
     optional_ref& operator=(optional_ref const&) = delete;

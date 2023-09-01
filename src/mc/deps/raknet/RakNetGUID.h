@@ -5,7 +5,6 @@
 namespace RakNet {
 
 struct RakNetGUID {
-
 public:
     // prevent constructor by default
     RakNetGUID& operator=(RakNetGUID const&) = delete;
@@ -13,26 +12,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?FromString\@RakNetGUID\@RakNet\@\@QEAA_NPEBD\@Z
-     */
+    // symbol: ?FromString@RakNetGUID@RakNet@@QEAA_NPEBD@Z
     MCAPI bool FromString(char const*);
-    /**
-     * @symbol ??0RakNetGUID\@RakNet\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0RakNetGUID@RakNet@@QEAA@XZ
     MCAPI RakNetGUID();
-    /**
-     * @symbol ?ToString\@RakNetGUID\@RakNet\@\@QEBAPEBDXZ
-     */
+
+    // symbol: ?ToString@RakNetGUID@RakNet@@QEBAPEBDXZ
     MCAPI char const* ToString() const;
-    /**
-     * @symbol ??8RakNetGUID\@RakNet\@\@QEBA_NAEBU01\@\@Z
-     */
+
+    // symbol: ??8RakNetGUID@RakNet@@QEBA_NAEBU01@@Z
     MCAPI bool operator==(struct RakNet::RakNetGUID const&) const;
-    /**
-     * @symbol ?ToUint32\@RakNetGUID\@RakNet\@\@SAKAEBU12\@\@Z
-     */
-    MCAPI static unsigned long ToUint32(struct RakNet::RakNetGUID const&);
+
+    // symbol: ?ToUint32@RakNetGUID@RakNet@@SAKAEBU12@@Z
+    MCAPI static ulong ToUint32(struct RakNet::RakNetGUID const&);
+
     // NOLINTEND
 };
 

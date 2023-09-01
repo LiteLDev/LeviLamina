@@ -13,7 +13,6 @@ namespace RakNet { class RakNetSocket2; }
 namespace RakNet {
 
 class IRNS2_Berkley : public ::RakNet::RakNetSocket2 {
-
 public:
     // prevent constructor by default
     IRNS2_Berkley& operator=(IRNS2_Berkley const&) = delete;
@@ -22,12 +21,9 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKNET_IRNS2_BERKLEY
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1IRNS2_Berkley@RakNet@@UEAA@XZ
     MCVAPI ~IRNS2_Berkley();
-#endif
+
     // NOLINTEND
 };
 

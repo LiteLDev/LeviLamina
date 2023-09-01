@@ -6,7 +6,6 @@
 #include "mc/entity/systems/ISystem.h"
 
 class ITickingSystem : public ::ISystem {
-
 public:
     // prevent constructor by default
     ITickingSystem& operator=(ITickingSystem const&) = delete;
@@ -15,11 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITICKINGSYSTEM
-    /**
-     * @symbol ?singleTick\@ITickingSystem\@\@UEAAXAEAVEntityRegistry\@\@AEAVEntityContext\@\@\@Z
-     */
+    // symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVEntityContext@@@Z
     MCVAPI void singleTick(class EntityRegistry&, class EntityContext&);
-#endif
+
     // NOLINTEND
 };

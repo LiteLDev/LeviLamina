@@ -12,7 +12,6 @@ namespace ValueProviders { struct UniformFloat; }
 namespace DripstoneUtils {
 
 class WindOffsetter {
-
 public:
     // prevent constructor by default
     WindOffsetter& operator=(WindOffsetter const&) = delete;
@@ -20,18 +19,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0WindOffsetter\@DripstoneUtils\@\@QEAA\@XZ
-     */
+    // symbol: ??0WindOffsetter@DripstoneUtils@@QEAA@XZ
     MCAPI WindOffsetter();
-    /**
-     * @symbol ??0WindOffsetter\@DripstoneUtils\@\@QEAA\@HAEAVRandom\@\@AEBUUniformFloat\@ValueProviders\@\@\@Z
-     */
-    MCAPI WindOffsetter(int32_t, class Random&, struct ValueProviders::UniformFloat const&);
-    /**
-     * @symbol ?offset\@WindOffsetter\@DripstoneUtils\@\@QEBA?AVBlockPos\@\@V3\@\@Z
-     */
+
+    // symbol: ??0WindOffsetter@DripstoneUtils@@QEAA@HAEAVRandom@@AEBUUniformFloat@ValueProviders@@@Z
+    MCAPI WindOffsetter(int, class Random&, struct ValueProviders::UniformFloat const&);
+
+    // symbol: ?offset@WindOffsetter@DripstoneUtils@@QEBA?AVBlockPos@@V3@@Z
     MCAPI class BlockPos offset(class BlockPos) const;
+
     // NOLINTEND
 };
 

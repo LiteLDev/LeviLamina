@@ -11,7 +11,6 @@ public:
 
     // CircuitComponentList inner types define
     class Item {
-
     public:
         // prevent constructor by default
         Item& operator=(Item const&) = delete;
@@ -27,13 +26,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?removeSource\@CircuitComponentList\@\@QEAA_NAEBVBlockPos\@\@PEBVBaseCircuitComponent\@\@\@Z
-     */
+    // symbol: ?removeSource@CircuitComponentList@@QEAA_NAEBVBlockPos@@PEBVBaseCircuitComponent@@@Z
     MCAPI bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
-    /**
-     * @symbol ??1CircuitComponentList\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1CircuitComponentList@@QEAA@XZ
     MCAPI ~CircuitComponentList();
+
     // NOLINTEND
 };

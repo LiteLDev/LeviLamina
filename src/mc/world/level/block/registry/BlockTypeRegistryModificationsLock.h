@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class BlockTypeRegistryModificationsLock {
-
 public:
     // prevent constructor by default
     BlockTypeRegistryModificationsLock& operator=(BlockTypeRegistryModificationsLock const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1BlockTypeRegistryModificationsLock\@\@QEAA\@XZ
-     */
+    // symbol: ??1BlockTypeRegistryModificationsLock@@QEAA@XZ
     MCAPI ~BlockTypeRegistryModificationsLock();
+
     // NOLINTEND
 };

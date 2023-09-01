@@ -4,7 +4,6 @@
 
 template <typename... T0>
 struct Filter {
-
 public:
     // prevent constructor by default
     Filter& operator=(Filter const&) = delete;

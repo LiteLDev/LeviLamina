@@ -6,7 +6,6 @@
 #include "mc/world/actor/ai/control/GenericMoveControl.h"
 
 class AmphibiousMoveControl : public ::GenericMoveControl {
-
 public:
     // prevent constructor by default
     AmphibiousMoveControl& operator=(AmphibiousMoveControl const&) = delete;
@@ -14,19 +13,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 2
-     * @symbol ?tick\@AmphibiousMoveControl\@\@UEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?tick@AmphibiousMoveControl@@UEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
     virtual void tick(class MoveControlComponent&, class Mob&);
-    /**
-     * @symbol ??0AmphibiousMoveControl\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0AmphibiousMoveControl@@QEAA@XZ
     MCAPI AmphibiousMoveControl();
+
     // NOLINTEND
 };

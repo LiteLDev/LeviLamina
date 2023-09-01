@@ -5,7 +5,6 @@
 namespace Scripting {
 
 class DependencyLocator {
-
 public:
     // prevent constructor by default
     DependencyLocator& operator=(DependencyLocator const&) = delete;

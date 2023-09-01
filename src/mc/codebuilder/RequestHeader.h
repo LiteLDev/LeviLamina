@@ -5,7 +5,6 @@
 namespace CodeBuilder {
 
 struct RequestHeader {
-
 public:
     // prevent constructor by default
     RequestHeader& operator=(RequestHeader const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1RequestHeader\@CodeBuilder\@\@QEAA\@XZ
-     */
+    // symbol: ??1RequestHeader@CodeBuilder@@QEAA@XZ
     MCAPI ~RequestHeader();
+
     // NOLINTEND
 };
 

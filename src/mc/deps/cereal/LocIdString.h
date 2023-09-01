@@ -5,7 +5,6 @@
 namespace CerealHelpers {
 
 struct LocIdString {
-
 public:
     // prevent constructor by default
     LocIdString& operator=(LocIdString const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1LocIdString\@CerealHelpers\@\@QEAA\@XZ
-     */
+    // symbol: ??1LocIdString@CerealHelpers@@QEAA@XZ
     MCAPI ~LocIdString();
+
     // NOLINTEND
 };
 

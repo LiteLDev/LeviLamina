@@ -6,7 +6,6 @@
 #include "mc/world/level/block/utils/BlockState.h"
 
 class CustomBlockStateVariant : public ::BlockState {
-
 public:
     // prevent constructor by default
     CustomBlockStateVariant& operator=(CustomBlockStateVariant const&) = delete;
@@ -15,20 +14,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?toNBT\@CustomBlockStateVariant\@\@UEBAXAEAVCompoundTag\@\@H\@Z
-     */
-    virtual void toNBT(class CompoundTag&, int32_t) const;
-    /**
-     * @vftbl 2
-     * @symbol ?fromNBT\@CustomBlockStateVariant\@\@UEBA_NAEBVCompoundTag\@\@AEAH\@Z
-     */
-    virtual bool fromNBT(class CompoundTag const&, int32_t&) const;
+
+    // vIndex: 1, symbol: ?toNBT@CustomBlockStateVariant@@UEBAXAEAVCompoundTag@@H@Z
+    virtual void toNBT(class CompoundTag&, int) const;
+
+    // vIndex: 2, symbol: ?fromNBT@CustomBlockStateVariant@@UEBA_NAEBVCompoundTag@@AEAH@Z
+    virtual bool fromNBT(class CompoundTag const&, int&) const;
+
     // NOLINTEND
 };

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ContainerSizeChangeListener {
-
 public:
     // prevent constructor by default
     ContainerSizeChangeListener& operator=(ContainerSizeChangeListener const&) = delete;
@@ -12,11 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSIZECHANGELISTENER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1ContainerSizeChangeListener@@UEAA@XZ
     MCVAPI ~ContainerSizeChangeListener();
-#endif
+
     // NOLINTEND
 };

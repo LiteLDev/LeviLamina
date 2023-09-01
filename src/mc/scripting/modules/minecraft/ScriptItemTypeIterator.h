@@ -8,7 +8,6 @@
 namespace ScriptModuleMinecraft {
 
 class ScriptItemTypeIterator {
-
 public:
     // prevent constructor by default
     ScriptItemTypeIterator& operator=(ScriptItemTypeIterator const&) = delete;
@@ -17,20 +16,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??4ScriptItemTypeIterator\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
-     */
+    // symbol: ??4ScriptItemTypeIterator@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptItemTypeIterator&
     operator=(class ScriptModuleMinecraft::ScriptItemTypeIterator&&);
-    /**
-     * @symbol ??1ScriptItemTypeIterator\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ScriptItemTypeIterator@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptItemTypeIterator();
-    /**
-     * @symbol
-     * ?bind\@ScriptItemTypeIterator\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptItemTypeIterator\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptItemTypeIterator@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptItemTypeIterator@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemTypeIterator> bind();
+
     // NOLINTEND
 };
 

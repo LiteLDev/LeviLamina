@@ -5,7 +5,6 @@
 namespace Social {
 
 class IGameConnectionInfoProvider {
-
 public:
     // prevent constructor by default
     IGameConnectionInfoProvider& operator=(IGameConnectionInfoProvider const&) = delete;
@@ -14,12 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOCIAL_IGAMECONNECTIONINFOPROVIDER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1IGameConnectionInfoProvider@Social@@UEAA@XZ
     MCVAPI ~IGameConnectionInfoProvider();
-#endif
+
     // NOLINTEND
 };
 

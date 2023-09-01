@@ -11,7 +11,6 @@ namespace mce { class UUID; }
 // clang-format on
 
 class DecoratedPotRecipe : public ::MultiRecipe {
-
 public:
     // prevent constructor by default
     DecoratedPotRecipe& operator=(DecoratedPotRecipe const&) = delete;
@@ -20,60 +19,40 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?assemble\@DecoratedPotRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@AEAVCraftingContext\@\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?assemble@DecoratedPotRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@AEAVCraftingContext@@@Z
     virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&, class CraftingContext&) const;
-    /**
-     * @vftbl 2
-     * @symbol ?getCraftingSize\@DecoratedPotRecipe\@\@UEBAHXZ
-     */
-    virtual int32_t getCraftingSize() const;
-    /**
-     * @vftbl 3
-     * @symbol ?getIngredient\@DecoratedPotRecipe\@\@UEBAAEBVRecipeIngredient\@\@HH\@Z
-     */
-    virtual class RecipeIngredient const& getIngredient(int32_t, int32_t) const;
-    /**
-     * @vftbl 4
-     * @symbol
-     * ?getResultItem\@DecoratedPotRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@XZ
-     */
+
+    // vIndex: 2, symbol: ?getCraftingSize@DecoratedPotRecipe@@UEBAHXZ
+    virtual int getCraftingSize() const;
+
+    // vIndex: 3, symbol: ?getIngredient@DecoratedPotRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
+    virtual class RecipeIngredient const& getIngredient(int, int) const;
+
+    // vIndex: 4, symbol:
+    // ?getResultItem@DecoratedPotRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
     virtual std::vector<class ItemInstance> const& getResultItem() const;
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
+
+    // vIndex: 5, symbol: __unk_vfn_5
     virtual void __unk_vfn_5();
-    /**
-     * @vftbl 6
-     * @symbol ?matches\@DecoratedPotRecipe\@\@UEBA_NAEBVCraftingContainer\@\@AEBVCraftingContext\@\@\@Z
-     */
+
+    // vIndex: 6, symbol: ?matches@DecoratedPotRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
     virtual bool matches(class CraftingContainer const&, class CraftingContext const&) const;
-    /**
-     * @vftbl 7
-     * @symbol ?size\@DecoratedPotRecipe\@\@UEBAHXZ
-     */
-    virtual int32_t size() const;
-    /**
-     * @symbol ??0DecoratedPotRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol: ?size@DecoratedPotRecipe@@UEBAHXZ
+    virtual int size() const;
+
+    // symbol: ??0DecoratedPotRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI DecoratedPotRecipe(std::string_view);
-    /**
-     * @symbol
-     * ??0DecoratedPotRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@AEBVUUID\@mce\@\@\@Z
-     */
+
+    // symbol: ??0DecoratedPotRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVUUID@mce@@@Z
     MCAPI DecoratedPotRecipe(std::string_view, class mce::UUID const&);
-    /**
-     * @symbol ?ID\@DecoratedPotRecipe\@\@2VUUID\@mce\@\@B
-     */
+
+    // symbol: ?ID@DecoratedPotRecipe@@2VUUID@mce@@B
     MCAPI static class mce::UUID const ID;
+
     // NOLINTEND
 };

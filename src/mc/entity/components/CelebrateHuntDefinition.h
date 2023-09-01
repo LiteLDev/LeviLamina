@@ -11,7 +11,6 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class CelebrateHuntDefinition {
-
 public:
     // prevent constructor by default
     CelebrateHuntDefinition& operator=(CelebrateHuntDefinition const&) = delete;
@@ -20,12 +19,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?buildSchema\@CelebrateHuntDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VCelebrateHuntDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+    // symbol:
+    // ?buildSchema@CelebrateHuntDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VCelebrateHuntDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class CelebrateHuntDefinition>>&);
+
     // NOLINTEND
 };

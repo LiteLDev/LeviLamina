@@ -11,7 +11,6 @@ namespace cereal { class BasicSaver; }
 // clang-format on
 
 class NBTSaver : public ::cereal::BasicSaver {
-
 public:
     // prevent constructor by default
     NBTSaver& operator=(NBTSaver const&) = delete;
@@ -20,15 +19,11 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTSAVER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1NBTSaver@@UEAA@XZ
     MCVAPI ~NBTSaver();
-#endif
-    /**
-     * @symbol ?getSavedCompoundTag\@NBTSaver\@\@QEAA?AVCompoundTag\@\@XZ
-     */
+
+    // symbol: ?getSavedCompoundTag@NBTSaver@@QEAA?AVCompoundTag@@XZ
     MCAPI class CompoundTag getSavedCompoundTag();
+
     // NOLINTEND
 };

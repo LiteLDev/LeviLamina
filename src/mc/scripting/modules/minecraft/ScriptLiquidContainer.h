@@ -8,7 +8,6 @@
 namespace ScriptModuleMinecraft {
 
 class ScriptLiquidContainer {
-
 public:
     // prevent constructor by default
     ScriptLiquidContainer& operator=(ScriptLiquidContainer const&) = delete;
@@ -17,11 +16,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?bind\@ScriptLiquidContainer\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptLiquidContainer\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+    // symbol:
+    // ?bind@ScriptLiquidContainer@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptLiquidContainer@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptLiquidContainer> bind();
+
     // NOLINTEND
 };
 

@@ -6,7 +6,6 @@
 #include "mc/world/effect/MobEffect.h"
 
 class AbsorptionMobEffect : public ::MobEffect {
-
 public:
     // prevent constructor by default
     AbsorptionMobEffect& operator=(AbsorptionMobEffect const&) = delete;
@@ -15,20 +14,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?applyEffects\@AbsorptionMobEffect\@\@UEBAXPEAVActor\@\@HH\@Z
-     */
-    virtual void applyEffects(class Actor*, int32_t, int32_t) const;
-    /**
-     * @vftbl 2
-     * @symbol ?removeEffects\@AbsorptionMobEffect\@\@UEAAXPEAVActor\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?applyEffects@AbsorptionMobEffect@@UEBAXPEAVActor@@HH@Z
+    virtual void applyEffects(class Actor*, int, int) const;
+
+    // vIndex: 2, symbol: ?removeEffects@AbsorptionMobEffect@@UEAAXPEAVActor@@@Z
     virtual void removeEffects(class Actor*);
+
     // NOLINTEND
 };

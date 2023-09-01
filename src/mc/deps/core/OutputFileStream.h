@@ -13,7 +13,6 @@ namespace Core { class FileStream; }
 namespace Core {
 
 class OutputFileStream : public ::Core::FileStream {
-
 public:
     // prevent constructor by default
     OutputFileStream& operator=(OutputFileStream const&) = delete;

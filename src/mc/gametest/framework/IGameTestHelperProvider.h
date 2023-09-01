@@ -5,7 +5,6 @@
 namespace gametest {
 
 class IGameTestHelperProvider {
-
 public:
     // prevent constructor by default
     IGameTestHelperProvider& operator=(IGameTestHelperProvider const&) = delete;

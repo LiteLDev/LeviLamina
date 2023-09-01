@@ -5,7 +5,6 @@
 namespace SFAT {
 
 class PathString {
-
 public:
     // prevent constructor by default
     PathString& operator=(PathString const&) = delete;
@@ -14,10 +13,16 @@ public:
 
 private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?mPreferedSeparator\@PathString\@SFAT\@\@0DA
-     */
+    // symbol: ?mPreferedSeparator@PathString@SFAT@@0DA
     MCAPI static char mPreferedSeparator;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $mPreferedSeparator() { return mPreferedSeparator; }
+
     // NOLINTEND
 };
 

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ChunkPositionAndDimension {
-
 public:
     // prevent constructor by default
     ChunkPositionAndDimension& operator=(ChunkPositionAndDimension const&) = delete;

@@ -11,7 +11,6 @@ public:
 
     // FeedItem inner types define
     struct Effect {
-
     public:
         // prevent constructor by default
         Effect(Effect const&) = delete;
@@ -19,18 +18,15 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??4Effect\@FeedItem\@\@QEAAAEAU01\@AEBU01\@\@Z
-         */
+        // symbol: ??4Effect@FeedItem@@QEAAAEAU01@AEBU01@@Z
         MCAPI struct FeedItem::Effect& operator=(struct FeedItem::Effect const&);
-        /**
-         * @symbol ??4Effect\@FeedItem\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-         */
+
+        // symbol: ??4Effect@FeedItem@@QEAAAEAU01@$$QEAU01@@Z
         MCAPI struct FeedItem::Effect& operator=(struct FeedItem::Effect&&);
-        /**
-         * @symbol ??1Effect\@FeedItem\@\@QEAA\@XZ
-         */
+
+        // symbol: ??1Effect@FeedItem@@QEAA@XZ
         MCAPI ~Effect();
+
         // NOLINTEND
     };
 
@@ -41,21 +37,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0FeedItem\@\@QEAA\@AEBU0\@\@Z
-     */
+    // symbol: ??0FeedItem@@QEAA@AEBU0@@Z
     MCAPI FeedItem(struct FeedItem const&);
-    /**
-     * @symbol ?addEffect\@FeedItem\@\@QEAAXAEBUEffect\@1\@\@Z
-     */
+
+    // symbol: ?addEffect@FeedItem@@QEAAXAEBUEffect@1@@Z
     MCAPI void addEffect(struct FeedItem::Effect const&);
-    /**
-     * @symbol ??4FeedItem\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
+
+    // symbol: ??4FeedItem@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct FeedItem& operator=(struct FeedItem&&);
-    /**
-     * @symbol ??1FeedItem\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1FeedItem@@QEAA@XZ
     MCAPI ~FeedItem();
+
     // NOLINTEND
 };

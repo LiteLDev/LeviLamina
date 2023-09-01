@@ -5,7 +5,6 @@
 namespace ScriptModuleMinecraft {
 
 class IScriptItemComponentFactory {
-
 public:
     // prevent constructor by default
     IScriptItemComponentFactory& operator=(IScriptItemComponentFactory const&) = delete;

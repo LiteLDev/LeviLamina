@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct TradeItem {
-
 public:
     // prevent constructor by default
     TradeItem& operator=(TradeItem const&) = delete;
@@ -12,13 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??4TradeItem\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
+    // symbol: ??4TradeItem@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct TradeItem& operator=(struct TradeItem&&);
-    /**
-     * @symbol ??1TradeItem\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1TradeItem@@QEAA@XZ
     MCAPI ~TradeItem();
+
     // NOLINTEND
 };

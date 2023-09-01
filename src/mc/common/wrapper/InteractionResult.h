@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class InteractionResult {
-
 public:
     // prevent constructor by default
     InteractionResult& operator=(InteractionResult const&) = delete;

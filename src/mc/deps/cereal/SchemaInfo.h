@@ -5,7 +5,6 @@
 namespace CerealHelpers {
 
 struct SchemaInfo {
-
 public:
     // prevent constructor by default
     SchemaInfo& operator=(SchemaInfo const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1SchemaInfo\@CerealHelpers\@\@QEAA\@XZ
-     */
+    // symbol: ??1SchemaInfo@CerealHelpers@@QEAA@XZ
     MCAPI ~SchemaInfo();
+
     // NOLINTEND
 };
 

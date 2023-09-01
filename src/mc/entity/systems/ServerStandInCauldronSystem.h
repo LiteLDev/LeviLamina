@@ -14,9 +14,7 @@
 
 namespace ServerStandInCauldronSystem {
 // NOLINTBEGIN
-/**
- * @symbol ?createSystem\@ServerStandInCauldronSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
- */
+// symbol: ?createSystem@ServerStandInCauldronSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
 // NOLINTEND
 

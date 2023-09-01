@@ -7,7 +7,6 @@
 #include "mc/resources/PackType.h"
 
 class VanillaInPackagePacks : public ::IInPackagePacks {
-
 public:
     // prevent constructor by default
     VanillaInPackagePacks& operator=(VanillaInPackagePacks const&) = delete;
@@ -16,16 +15,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?getPacks\@VanillaInPackagePacks\@\@UEBA?AV?$vector\@UMetaData\@IInPackagePacks\@\@V?$allocator\@UMetaData\@IInPackagePacks\@\@\@std\@\@\@std\@\@W4PackType\@\@\@Z
-     */
-    virtual std::vector<struct IInPackagePacks::MetaData> getPacks(enum class PackType) const;
+
+    // vIndex: 1, symbol:
+    // ?getPacks@VanillaInPackagePacks@@UEBA?AV?$vector@UMetaData@IInPackagePacks@@V?$allocator@UMetaData@IInPackagePacks@@@std@@@std@@W4PackType@@@Z
+    virtual std::vector<struct IInPackagePacks::MetaData> getPacks(::PackType) const;
+
     // NOLINTEND
 };

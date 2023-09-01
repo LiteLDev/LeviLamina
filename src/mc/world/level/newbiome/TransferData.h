@@ -6,7 +6,6 @@ namespace OperationNodeDetails {
 
 template <typename T0>
 class TransferData {
-
 public:
     // prevent constructor by default
     TransferData& operator=(TransferData const&) = delete;

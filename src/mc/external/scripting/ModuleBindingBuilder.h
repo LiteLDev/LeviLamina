@@ -5,7 +5,6 @@
 namespace Scripting {
 
 class ModuleBindingBuilder {
-
 public:
     // prevent constructor by default
     ModuleBindingBuilder& operator=(ModuleBindingBuilder const&) = delete;

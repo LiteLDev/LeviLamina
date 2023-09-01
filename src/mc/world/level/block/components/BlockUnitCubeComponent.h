@@ -11,7 +11,6 @@ namespace ClientBlockPipeline { struct BlockSchematic; }
 // clang-format on
 
 struct BlockUnitCubeComponent : public ::BlockComponentBase {
-
 public:
     // prevent constructor by default
     BlockUnitCubeComponent& operator=(BlockUnitCubeComponent const&) = delete;
@@ -20,10 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?mBlockSchematic\@BlockUnitCubeComponent\@\@2V?$shared_ptr\@UBlockSchematic\@ClientBlockPipeline\@\@\@std\@\@A
-     */
+    // symbol: ?mBlockSchematic@BlockUnitCubeComponent@@2V?$shared_ptr@UBlockSchematic@ClientBlockPipeline@@@std@@A
     MCAPI static std::shared_ptr<struct ClientBlockPipeline::BlockSchematic> mBlockSchematic;
+
     // NOLINTEND
 };

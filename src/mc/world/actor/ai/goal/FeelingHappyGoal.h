@@ -22,7 +22,6 @@ public:
 
     // FeelingHappyGoal inner types define
     class Definition : public ::BaseTimedActorFlagDefinition {
-
     public:
         // prevent constructor by default
         Definition& operator=(Definition const&) = delete;
@@ -31,17 +30,14 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @symbol
-         * ?buildSchema\@Definition\@FeelingHappyGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefinition\@FeelingHappyGoal\@\@\@JsonUtil\@\@\@4\@\@Z
-         */
+
+        // symbol:
+        // ?buildSchema@Definition@FeelingHappyGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@FeelingHappyGoal@@@JsonUtil@@@4@@Z
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FeelingHappyGoal::Definition>>&);
+
         // NOLINTEND
     };
 
@@ -53,14 +49,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @symbol ??0FeelingHappyGoal\@\@QEAA\@AEAVMob\@\@\@Z
-     */
+
+    // symbol: ??0FeelingHappyGoal@@QEAA@AEAVMob@@@Z
     MCAPI FeelingHappyGoal(class Mob&);
+
     // NOLINTEND
 };

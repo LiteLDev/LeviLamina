@@ -6,7 +6,6 @@
 #include "mc/world/actor/ActorComponentDescription.h"
 
 struct BreakBlocksDescription : public ::ActorComponentDescription {
-
 public:
     // prevent constructor by default
     BreakBlocksDescription& operator=(BreakBlocksDescription const&) = delete;
@@ -14,30 +13,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol ?getJsonName\@BreakBlocksDescription\@\@UEBAPEBDXZ
-     */
+    // vIndex: 0, symbol: ?getJsonName@BreakBlocksDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?deserializeData\@BreakBlocksDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?deserializeData@BreakBlocksDescription@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKBLOCKSDESCRIPTION
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1BreakBlocksDescription@@UEAA@XZ
     MCVAPI ~BreakBlocksDescription();
-#endif
-    /**
-     * @symbol ??0BreakBlocksDescription\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0BreakBlocksDescription@@QEAA@XZ
     MCAPI BreakBlocksDescription();
+
     // NOLINTEND
 };

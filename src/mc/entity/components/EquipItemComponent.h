@@ -19,7 +19,6 @@ public:
 
     // EquipItemComponent inner types define
     class Definition {
-
     public:
         // prevent constructor by default
         Definition& operator=(Definition const&) = delete;
@@ -28,17 +27,15 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ?initialize\@Definition\@EquipItemComponent\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
+        // symbol: ?initialize@Definition@EquipItemComponent@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class EquipItemComponent&) const;
-        /**
-         * @symbol
-         * ?buildSchema\@Definition\@EquipItemComponent\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefinition\@EquipItemComponent\@\@\@JsonUtil\@\@\@std\@\@\@Z
-         */
+
+        // symbol:
+        // ?buildSchema@Definition@EquipItemComponent@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@EquipItemComponent@@@JsonUtil@@@std@@@Z
         MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
                                           class JsonUtil::EmptyClass,
                                           class EquipItemComponent::Definition>>&);
+
         // NOLINTEND
     };
 
@@ -50,13 +47,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?onEquipItemPickedUp\@EquipItemComponent\@\@QEAAXVItemStack\@\@H\@Z
-     */
-    MCAPI void onEquipItemPickedUp(class ItemStack, int32_t);
-    /**
-     * @symbol ??1EquipItemComponent\@\@QEAA\@XZ
-     */
+    // symbol: ?onEquipItemPickedUp@EquipItemComponent@@QEAAXVItemStack@@H@Z
+    MCAPI void onEquipItemPickedUp(class ItemStack, int);
+
+    // symbol: ??1EquipItemComponent@@QEAA@XZ
     MCAPI ~EquipItemComponent();
+
     // NOLINTEND
 };

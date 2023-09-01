@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct OverworldBlendRules {
-
 public:
     // prevent constructor by default
     OverworldBlendRules& operator=(OverworldBlendRules const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1OverworldBlendRules\@\@QEAA\@XZ
-     */
+    // symbol: ??1OverworldBlendRules@@QEAA@XZ
     MCAPI ~OverworldBlendRules();
+
     // NOLINTEND
 };

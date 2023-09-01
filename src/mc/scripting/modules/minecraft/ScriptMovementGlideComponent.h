@@ -15,7 +15,6 @@ namespace ScriptModuleMinecraft { class MovementScriptActorComponent; }
 namespace ScriptModuleMinecraft {
 
 class ScriptMovementGlideComponent : public ::ScriptModuleMinecraft::MovementScriptActorComponent {
-
 public:
     // prevent constructor by default
     ScriptMovementGlideComponent& operator=(ScriptMovementGlideComponent const&) = delete;
@@ -24,36 +23,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTMOVEMENTGLIDECOMPONENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1ScriptMovementGlideComponent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptMovementGlideComponent();
-#endif
-    /**
-     * @symbol
-     * ?getSpeedWhenTurning\@ScriptMovementGlideComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@M\@Scripting\@\@XZ
-     */
+
+    // symbol: ?getSpeedWhenTurning@ScriptMovementGlideComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M@Scripting@@XZ
     MCAPI class Scripting::Result<float> getSpeedWhenTurning() const;
-    /**
-     * @symbol
-     * ?getStartSpeed\@ScriptMovementGlideComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@M\@Scripting\@\@XZ
-     */
+
+    // symbol: ?getStartSpeed@ScriptMovementGlideComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M@Scripting@@XZ
     MCAPI class Scripting::Result<float> getStartSpeed() const;
-    /**
-     * @symbol
-     * ?bind\@ScriptMovementGlideComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMovementGlideComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptMovementGlideComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptMovementGlideComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementGlideComponent> bind();
-    /**
-     * @symbol ?ComponentId\@ScriptMovementGlideComponent\@ScriptModuleMinecraft\@\@2PEBDEB
-     */
+
+    // symbol: ?ComponentId@ScriptMovementGlideComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;
+
     // NOLINTEND
 };
 

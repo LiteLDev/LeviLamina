@@ -8,7 +8,6 @@ namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
 class ScriptPluginManagerResult {
-
 public:
     // prevent constructor by default
     ScriptPluginManagerResult& operator=(ScriptPluginManagerResult const&) = delete;
@@ -17,18 +16,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?getOrCreatePluginResults\@ScriptPluginManagerResult\@\@QEAAAEAVScriptPluginResult\@\@AEBUModuleDescriptor\@Scripting\@\@\@Z
-     */
+    // symbol:
+    // ?getOrCreatePluginResults@ScriptPluginManagerResult@@QEAAAEAVScriptPluginResult@@AEBUModuleDescriptor@Scripting@@@Z
     MCAPI class ScriptPluginResult& getOrCreatePluginResults(struct Scripting::ModuleDescriptor const&);
-    /**
-     * @symbol ?writeToContentLog\@ScriptPluginManagerResult\@\@QEBAXXZ
-     */
+
+    // symbol: ?writeToContentLog@ScriptPluginManagerResult@@QEBAXXZ
     MCAPI void writeToContentLog() const;
-    /**
-     * @symbol ??1ScriptPluginManagerResult\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ScriptPluginManagerResult@@QEAA@XZ
     MCAPI ~ScriptPluginManagerResult();
+
     // NOLINTEND
 };

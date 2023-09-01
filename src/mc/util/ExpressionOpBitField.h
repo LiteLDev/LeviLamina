@@ -6,7 +6,6 @@
 #include "mc/enums/ExpressionOp.h"
 
 struct ExpressionOpBitField {
-
 public:
     // prevent constructor by default
     ExpressionOpBitField& operator=(ExpressionOpBitField const&) = delete;
@@ -15,45 +14,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?areBitsSet\@ExpressionOpBitField\@\@QEBA_NW4ExpressionOp\@\@0000\@Z
-     */
+    // symbol: ?areBitsSet@ExpressionOpBitField@@QEBA_NW4ExpressionOp@@0000@Z
+    MCAPI bool areBitsSet(::ExpressionOp, ::ExpressionOp, ::ExpressionOp, ::ExpressionOp, ::ExpressionOp) const;
+
+    // symbol: ?areBitsSet@ExpressionOpBitField@@QEBA_NW4ExpressionOp@@0000000@Z
     MCAPI bool areBitsSet(
-        enum class ExpressionOp,
-        enum class ExpressionOp,
-        enum class ExpressionOp,
-        enum class ExpressionOp,
-        enum class ExpressionOp
+        ::ExpressionOp,
+        ::ExpressionOp,
+        ::ExpressionOp,
+        ::ExpressionOp,
+        ::ExpressionOp,
+        ::ExpressionOp,
+        ::ExpressionOp,
+        ::ExpressionOp
     ) const;
-    /**
-     * @symbol ?areBitsSet\@ExpressionOpBitField\@\@QEBA_NW4ExpressionOp\@\@0000000\@Z
-     */
-    MCAPI bool areBitsSet(
-        enum class ExpressionOp,
-        enum class ExpressionOp,
-        enum class ExpressionOp,
-        enum class ExpressionOp,
-        enum class ExpressionOp,
-        enum class ExpressionOp,
-        enum class ExpressionOp,
-        enum class ExpressionOp
-    ) const;
-    /**
-     * @symbol ?areBitsSet\@ExpressionOpBitField\@\@QEBA_NW4ExpressionOp\@\@000\@Z
-     */
+
+    // symbol: ?areBitsSet@ExpressionOpBitField@@QEBA_NW4ExpressionOp@@000@Z
+    MCAPI bool areBitsSet(::ExpressionOp, ::ExpressionOp, ::ExpressionOp, ::ExpressionOp) const;
+
+    // symbol: ?areBitsSet@ExpressionOpBitField@@QEBA_NW4ExpressionOp@@00000@Z
     MCAPI bool
-        areBitsSet(enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp)
+        areBitsSet(::ExpressionOp, ::ExpressionOp, ::ExpressionOp, ::ExpressionOp, ::ExpressionOp, ::ExpressionOp)
             const;
-    /**
-     * @symbol ?areBitsSet\@ExpressionOpBitField\@\@QEBA_NW4ExpressionOp\@\@00000\@Z
-     */
-    MCAPI bool areBitsSet(
-        enum class ExpressionOp,
-        enum class ExpressionOp,
-        enum class ExpressionOp,
-        enum class ExpressionOp,
-        enum class ExpressionOp,
-        enum class ExpressionOp
-    ) const;
+
     // NOLINTEND
 };

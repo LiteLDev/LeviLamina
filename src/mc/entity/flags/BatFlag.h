@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct BatFlag {
-
 public:
     // prevent constructor by default
     BatFlag& operator=(BatFlag const&) = delete;

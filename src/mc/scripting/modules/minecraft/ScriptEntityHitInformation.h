@@ -8,7 +8,6 @@
 namespace ScriptModuleMinecraft {
 
 struct ScriptEntityHitInformation {
-
 public:
     // prevent constructor by default
     ScriptEntityHitInformation& operator=(ScriptEntityHitInformation const&) = delete;
@@ -17,16 +16,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ScriptEntityHitInformation\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+    // symbol: ??1ScriptEntityHitInformation@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptEntityHitInformation();
-    /**
-     * @symbol
-     * ?bind\@ScriptEntityHitInformation\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptEntityHitInformation\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptEntityHitInformation@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@UScriptEntityHitInformation@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptEntityHitInformation>
     bind();
+
     // NOLINTEND
 };
 

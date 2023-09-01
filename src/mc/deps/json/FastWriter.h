@@ -14,7 +14,6 @@ namespace Json { class Writer; }
 namespace Json {
 
 class FastWriter : public ::Json::Writer {
-
 public:
     // prevent constructor by default
     FastWriter& operator=(FastWriter const&) = delete;
@@ -22,35 +21,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?write\@FastWriter\@Json\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVValue\@2\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?write@FastWriter@Json@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@2@@Z
     virtual std::string write(class Json::Value const&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JSON_FASTWRITER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1FastWriter@Json@@UEAA@XZ
     MCVAPI ~FastWriter();
-#endif
-    /**
-     * @symbol ??0FastWriter\@Json\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0FastWriter@Json@@QEAA@XZ
     MCAPI FastWriter();
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?writeValue\@FastWriter\@Json\@\@AEAAXAEBVValue\@2\@\@Z
-     */
+    // symbol: ?writeValue@FastWriter@Json@@AEAAXAEBVValue@2@@Z
     MCAPI void writeValue(class Json::Value const&);
+
     // NOLINTEND
 };
 

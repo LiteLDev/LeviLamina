@@ -14,7 +14,6 @@ class Vec2;
 namespace ScriptModuleMinecraft {
 
 struct ScriptXYRotation {
-
 public:
     // prevent constructor by default
     ScriptXYRotation& operator=(ScriptXYRotation const&) = delete;
@@ -23,16 +22,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?bind\@ScriptXYRotation\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VVec2\@\@\@Scripting\@\@XZ
-     */
+    // symbol: ?bind@ScriptXYRotation@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@VVec2@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<class Vec2> bind();
-    /**
-     * @symbol
-     * ?bindV010\@ScriptXYRotation\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptXYRotation\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bindV010@ScriptXYRotation@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptXYRotation@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptXYRotation> bindV010();
+
     // NOLINTEND
 };
 

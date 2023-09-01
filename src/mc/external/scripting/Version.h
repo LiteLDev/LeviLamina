@@ -5,7 +5,6 @@
 namespace Scripting {
 
 struct Version {
-
 public:
     // prevent constructor by default
     Version& operator=(Version const&) = delete;

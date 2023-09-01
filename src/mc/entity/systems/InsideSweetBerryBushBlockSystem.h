@@ -4,9 +4,7 @@
 
 namespace InsideSweetBerryBushBlockSystem {
 // NOLINTBEGIN
-/**
- * @symbol ?createSystem\@InsideSweetBerryBushBlockSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
- */
+// symbol: ?createSystem@InsideSweetBerryBushBlockSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
 // NOLINTEND
 

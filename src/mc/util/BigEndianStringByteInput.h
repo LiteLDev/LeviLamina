@@ -6,7 +6,6 @@
 #include "mc/util/StringByteInput.h"
 
 class BigEndianStringByteInput : public ::StringByteInput {
-
 public:
     // prevent constructor by default
     BigEndianStringByteInput& operator=(BigEndianStringByteInput const&) = delete;
@@ -15,51 +14,32 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 3
-     * @symbol ?readFloat\@BigEndianStringByteInput\@\@UEAAMXZ
-     */
+
+    // vIndex: 3, symbol: ?readFloat@BigEndianStringByteInput@@UEAAMXZ
     virtual float readFloat();
-    /**
-     * @vftbl 4
-     * @symbol ?readDouble\@BigEndianStringByteInput\@\@UEAANXZ
-     */
+
+    // vIndex: 4, symbol: ?readDouble@BigEndianStringByteInput@@UEAANXZ
     virtual double readDouble();
-    /**
-     * @vftbl 6
-     * @symbol ?readShort\@BigEndianStringByteInput\@\@UEAAFXZ
-     */
-    virtual int16_t readShort();
-    /**
-     * @vftbl 7
-     * @symbol ?readInt\@BigEndianStringByteInput\@\@UEAAHXZ
-     */
-    virtual int32_t readInt();
-    /**
-     * @vftbl 8
-     * @symbol ?readLongLong\@BigEndianStringByteInput\@\@UEAA_JXZ
-     */
-    virtual int64_t readLongLong();
-    /**
-     * @vftbl 9
-     * @symbol ?readBytes\@BigEndianStringByteInput\@\@UEAA_NPEAX_K\@Z
-     */
-    virtual bool readBytes(void*, uint64_t);
-    /**
-     * @vftbl 11
-     * @symbol ?readBigEndianBytes\@BigEndianStringByteInput\@\@UEAA_NPEAX_K\@Z
-     */
-    virtual bool readBigEndianBytes(void*, uint64_t);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIGENDIANSTRINGBYTEINPUT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // vIndex: 6, symbol: ?readShort@BigEndianStringByteInput@@UEAAFXZ
+    virtual short readShort();
+
+    // vIndex: 7, symbol: ?readInt@BigEndianStringByteInput@@UEAAHXZ
+    virtual int readInt();
+
+    // vIndex: 8, symbol: ?readLongLong@BigEndianStringByteInput@@UEAA_JXZ
+    virtual int64 readLongLong();
+
+    // vIndex: 9, symbol: ?readBytes@BigEndianStringByteInput@@UEAA_NPEAX_K@Z
+    virtual bool readBytes(void*, uint64);
+
+    // vIndex: 11, symbol: ?readBigEndianBytes@BigEndianStringByteInput@@UEAA_NPEAX_K@Z
+    virtual bool readBigEndianBytes(void*, uint64);
+
+    // symbol: ??1BigEndianStringByteInput@@UEAA@XZ
     MCVAPI ~BigEndianStringByteInput();
-#endif
+
     // NOLINTEND
 };

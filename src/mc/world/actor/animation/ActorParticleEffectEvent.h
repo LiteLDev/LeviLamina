@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ActorParticleEffectEvent {
-
 public:
     // prevent constructor by default
     ActorParticleEffectEvent& operator=(ActorParticleEffectEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ActorParticleEffectEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1ActorParticleEffectEvent@@QEAA@XZ
     MCAPI ~ActorParticleEffectEvent();
+
     // NOLINTEND
 };

@@ -4,7 +4,6 @@
 
 template <typename T0>
 class MPMCQueue {
-
 public:
     // prevent constructor by default
     MPMCQueue& operator=(MPMCQueue const&) = delete;

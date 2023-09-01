@@ -13,7 +13,6 @@ class SimpleBlockVolume;
 namespace ScriptModuleMinecraft {
 
 class ScriptSimpleBlockVolume {
-
 public:
     // prevent constructor by default
     ScriptSimpleBlockVolume& operator=(ScriptSimpleBlockVolume const&) = delete;
@@ -22,11 +21,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?bind\@ScriptSimpleBlockVolume\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VSimpleBlockVolume\@\@\@Scripting\@\@XZ
-     */
+    // symbol:
+    // ?bind@ScriptSimpleBlockVolume@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@VSimpleBlockVolume@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<class SimpleBlockVolume> bind();
+
     // NOLINTEND
 };
 

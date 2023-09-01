@@ -5,7 +5,6 @@
 namespace RakNet {
 
 class StringTable {
-
 public:
     // prevent constructor by default
     StringTable& operator=(StringTable const&) = delete;
@@ -14,26 +13,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?AddReference\@StringTable\@RakNet\@\@SAXXZ
-     */
+    // symbol: ?AddReference@StringTable@RakNet@@SAXXZ
     MCAPI static void AddReference();
-    /**
-     * @symbol ?RemoveReference\@StringTable\@RakNet\@\@SAXXZ
-     */
+
+    // symbol: ?RemoveReference@StringTable@RakNet@@SAXXZ
     MCAPI static void RemoveReference();
+
     // NOLINTEND
 
 protected:
     // NOLINTBEGIN
-    /**
-     * @symbol ?instance\@StringTable\@RakNet\@\@1PEAV12\@EA
-     */
+    // symbol: ?instance@StringTable@RakNet@@1PEAV12@EA
     MCAPI static class RakNet::StringTable* instance;
-    /**
-     * @symbol ?referenceCount\@StringTable\@RakNet\@\@1HA
-     */
-    MCAPI static int32_t referenceCount;
+
+    // symbol: ?referenceCount@StringTable@RakNet@@1HA
+    MCAPI static int referenceCount;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
     // NOLINTEND
 };
 

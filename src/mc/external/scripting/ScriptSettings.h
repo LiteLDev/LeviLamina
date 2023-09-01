@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ScriptSettings {
-
 public:
     // prevent constructor by default
     ScriptSettings& operator=(ScriptSettings const&) = delete;
@@ -11,17 +10,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ScriptSettings\@\@QEAA\@$$QEAU0\@\@Z
-     */
+    // symbol: ??0ScriptSettings@@QEAA@$$QEAU0@@Z
     MCAPI ScriptSettings(struct ScriptSettings&&);
-    /**
-     * @symbol ??0ScriptSettings\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0ScriptSettings@@QEAA@XZ
     MCAPI ScriptSettings();
-    /**
-     * @symbol ??1ScriptSettings\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ScriptSettings@@QEAA@XZ
     MCAPI ~ScriptSettings();
+
     // NOLINTEND
 };

@@ -8,7 +8,6 @@ namespace Json { class Value; }
 // clang-format on
 
 struct IntRange {
-
 public:
     // prevent constructor by default
     IntRange& operator=(IntRange const&) = delete;
@@ -17,33 +16,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0IntRange\@\@QEAA\@H\@Z
-     */
-    MCAPI IntRange(int32_t);
-    /**
-     * @symbol ??0IntRange\@\@QEAA\@HH\@Z
-     */
-    MCAPI IntRange(int32_t, int32_t);
-    /**
-     * @symbol ?getValue\@IntRange\@\@QEBAHAEAVRandom\@\@\@Z
-     */
-    MCAPI int32_t getValue(class Random&) const;
-    /**
-     * @symbol ?getValueInclusive\@IntRange\@\@QEBAHAEAVRandom\@\@\@Z
-     */
-    MCAPI int32_t getValueInclusive(class Random&) const;
-    /**
-     * @symbol ?isInRangeInclusive\@IntRange\@\@QEBA_NH\@Z
-     */
-    MCAPI bool isInRangeInclusive(int32_t) const;
-    /**
-     * @symbol ?parseJson\@IntRange\@\@QEAA_NVValue\@Json\@\@HH\@Z
-     */
-    MCAPI bool parseJson(class Json::Value, int32_t, int32_t);
-    /**
-     * @symbol ?ZERO\@IntRange\@\@2U1\@B
-     */
+    // symbol: ??0IntRange@@QEAA@H@Z
+    MCAPI IntRange(int);
+
+    // symbol: ??0IntRange@@QEAA@HH@Z
+    MCAPI IntRange(int, int);
+
+    // symbol: ?getValue@IntRange@@QEBAHAEAVRandom@@@Z
+    MCAPI int getValue(class Random&) const;
+
+    // symbol: ?getValueInclusive@IntRange@@QEBAHAEAVRandom@@@Z
+    MCAPI int getValueInclusive(class Random&) const;
+
+    // symbol: ?isInRangeInclusive@IntRange@@QEBA_NH@Z
+    MCAPI bool isInRangeInclusive(int) const;
+
+    // symbol: ?parseJson@IntRange@@QEAA_NVValue@Json@@HH@Z
+    MCAPI bool parseJson(class Json::Value, int, int);
+
+    // symbol: ?ZERO@IntRange@@2U1@B
     MCAPI static struct IntRange const ZERO;
+
     // NOLINTEND
 };

@@ -10,7 +10,6 @@ namespace Core { class Result; }
 namespace Core {
 
 class Path {
-
 public:
     // prevent constructor by default
     Path& operator=(Path const&) = delete;
@@ -18,26 +17,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0Path\@Core\@\@QEAA\@XZ
-     */
+    // symbol: ??0Path@Core@@QEAA@XZ
     MCAPI Path();
-    /**
-     * @symbol ??8Path\@Core\@\@QEBA_NAEBV01\@\@Z
-     */
+
+    // symbol: ??8Path@Core@@QEBA_NAEBV01@@Z
     MCAPI bool operator==(class Core::Path const&) const;
-    /**
-     * @symbol ??1Path\@Core\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1Path@Core@@QEAA@XZ
     MCAPI ~Path();
-    /**
-     * @symbol ?makeFailure\@Path\@Core\@\@SA?AVResult\@2\@PEBD$$QEAV12\@\@Z
-     */
+
+    // symbol: ?makeFailure@Path@Core@@SA?AVResult@2@PEBD$$QEAV12@@Z
     MCAPI static class Core::Result makeFailure(char const*, class Core::Path&&);
-    /**
-     * @symbol ?EMPTY\@Path\@Core\@\@2V12\@B
-     */
+
+    // symbol: ?EMPTY@Path@Core@@2V12@B
     MCAPI static class Core::Path const EMPTY;
+
     // NOLINTEND
 };
 

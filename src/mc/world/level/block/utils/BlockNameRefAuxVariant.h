@@ -5,7 +5,6 @@
 namespace SplitBlockUtils {
 
 struct BlockNameRefAuxVariant {
-
 public:
     // prevent constructor by default
     BlockNameRefAuxVariant& operator=(BlockNameRefAuxVariant const&) = delete;

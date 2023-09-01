@@ -4,9 +4,7 @@
 
 namespace LiquidSplashRequestSystem {
 // NOLINTBEGIN
-/**
- * @symbol ?createSystem\@LiquidSplashRequestSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
- */
+// symbol: ?createSystem@LiquidSplashRequestSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
 // NOLINTEND
 

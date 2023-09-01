@@ -10,7 +10,6 @@ namespace gametest { struct GameTestError; }
 namespace gametest {
 
 class GameTestSequence {
-
 public:
     // prevent constructor by default
     GameTestSequence& operator=(GameTestSequence const&) = delete;
@@ -19,62 +18,52 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?thenExecute\@GameTestSequence\@gametest\@\@QEAAAEAV12\@V?$function\@$$A6A?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@XZ\@std\@\@\@Z
-     */
+    // symbol:
+    // ?thenExecute@GameTestSequence@gametest@@QEAAAEAV12@V?$function@$$A6A?AV?$optional@UGameTestError@gametest@@@std@@XZ@std@@@Z
     MCAPI class gametest::GameTestSequence&
         thenExecute(std::function<std::optional<struct gametest::GameTestError>(void)>);
-    /**
-     * @symbol
-     * ?thenExecuteAfter\@GameTestSequence\@gametest\@\@QEAAAEAV12\@HV?$function\@$$A6A?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@XZ\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?thenExecuteAfter@GameTestSequence@gametest@@QEAAAEAV12@HV?$function@$$A6A?AV?$optional@UGameTestError@gametest@@@std@@XZ@std@@@Z
     MCAPI class gametest::GameTestSequence&
-        thenExecuteAfter(int32_t, std::function<std::optional<struct gametest::GameTestError>(void)>);
-    /**
-     * @symbol
-     * ?thenExecuteFor\@GameTestSequence\@gametest\@\@QEAAAEAV12\@HV?$function\@$$A6A?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@XZ\@std\@\@\@Z
-     */
+    thenExecuteAfter(int, std::function<std::optional<struct gametest::GameTestError>(void)>);
+
+    // symbol:
+    // ?thenExecuteFor@GameTestSequence@gametest@@QEAAAEAV12@HV?$function@$$A6A?AV?$optional@UGameTestError@gametest@@@std@@XZ@std@@@Z
     MCAPI class gametest::GameTestSequence&
-        thenExecuteFor(int32_t, std::function<std::optional<struct gametest::GameTestError>(void)>);
-    /**
-     * @symbol ?thenFail\@GameTestSequence\@gametest\@\@QEAAXUGameTestError\@2\@\@Z
-     */
+    thenExecuteFor(int, std::function<std::optional<struct gametest::GameTestError>(void)>);
+
+    // symbol: ?thenFail@GameTestSequence@gametest@@QEAAXUGameTestError@2@@Z
     MCAPI void thenFail(struct gametest::GameTestError);
-    /**
-     * @symbol ?thenIdle\@GameTestSequence\@gametest\@\@QEAAAEAV12\@H\@Z
-     */
-    MCAPI class gametest::GameTestSequence& thenIdle(int32_t);
-    /**
-     * @symbol ?thenSucceed\@GameTestSequence\@gametest\@\@QEAAXXZ
-     */
+
+    // symbol: ?thenIdle@GameTestSequence@gametest@@QEAAAEAV12@H@Z
+    MCAPI class gametest::GameTestSequence& thenIdle(int);
+
+    // symbol: ?thenSucceed@GameTestSequence@gametest@@QEAAXXZ
     MCAPI void thenSucceed();
-    /**
-     * @symbol
-     * ?thenWait\@GameTestSequence\@gametest\@\@QEAAAEAV12\@V?$function\@$$A6A?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@XZ\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?thenWait@GameTestSequence@gametest@@QEAAAEAV12@V?$function@$$A6A?AV?$optional@UGameTestError@gametest@@@std@@XZ@std@@@Z
     MCAPI class gametest::GameTestSequence&
         thenWait(std::function<std::optional<struct gametest::GameTestError>(void)>);
-    /**
-     * @symbol
-     * ?thenWaitAfter\@GameTestSequence\@gametest\@\@QEAAAEAV12\@HV?$function\@$$A6A?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@XZ\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?thenWaitAfter@GameTestSequence@gametest@@QEAAAEAV12@HV?$function@$$A6A?AV?$optional@UGameTestError@gametest@@@std@@XZ@std@@@Z
     MCAPI class gametest::GameTestSequence&
-        thenWaitAfter(int32_t, std::function<std::optional<struct gametest::GameTestError>(void)>);
+    thenWaitAfter(int, std::function<std::optional<struct gametest::GameTestError>(void)>);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_executeWithoutFail\@GameTestSequence\@gametest\@\@AEAA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@AEBV34\@\@Z
-     */
+    // symbol:
+    // ?_executeWithoutFail@GameTestSequence@gametest@@AEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBV34@@Z
     MCAPI std::optional<struct gametest::GameTestError>
           _executeWithoutFail(std::optional<struct gametest::GameTestError> const&);
-    /**
-     * @symbol ?_tick\@GameTestSequence\@gametest\@\@AEAA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@H\@Z
-     */
-    MCAPI std::optional<struct gametest::GameTestError> _tick(int32_t);
+
+    // symbol: ?_tick@GameTestSequence@gametest@@AEAA?AV?$optional@UGameTestError@gametest@@@std@@H@Z
+    MCAPI std::optional<struct gametest::GameTestError> _tick(int);
+
     // NOLINTEND
 };
 

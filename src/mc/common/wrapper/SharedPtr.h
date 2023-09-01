@@ -4,7 +4,6 @@
 
 template <typename T0>
 class SharedPtr {
-
 public:
     // prevent constructor by default
     SharedPtr& operator=(SharedPtr const&) = delete;

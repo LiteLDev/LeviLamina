@@ -6,7 +6,6 @@
 #include "mc/world/actor/ai/control/MoveControl.h"
 
 class HopMoveControl : public ::MoveControl {
-
 public:
     // prevent constructor by default
     HopMoveControl& operator=(HopMoveControl const&) = delete;
@@ -14,24 +13,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 2
-     * @symbol ?tick\@HopMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?tick@HopMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
     virtual void tick(class MoveControlComponent&, class Mob&);
-    /**
-     * @vftbl 3
-     * @symbol ?setWantedPosition\@HopMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@AEBVVec3\@\@M\@Z
-     */
+
+    // vIndex: 3, symbol: ?setWantedPosition@HopMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@AEBVVec3@@M@Z
     virtual void setWantedPosition(class MoveControlComponent&, class Mob&, class Vec3 const&, float);
-    /**
-     * @symbol ??0HopMoveControl\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0HopMoveControl@@QEAA@XZ
     MCAPI HopMoveControl();
+
     // NOLINTEND
 };

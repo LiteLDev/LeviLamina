@@ -7,7 +7,6 @@
 #include "mc/world/redstone/circuit/components/ProducerComponent.h"
 
 class CapacitorComponent : public ::ProducerComponent {
-
 public:
     // prevent constructor by default
     CapacitorComponent& operator=(CapacitorComponent const&) = delete;
@@ -15,34 +14,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 17
-     * @symbol __unk_vfn_17
-     */
+
+    // vIndex: 17, symbol: __unk_vfn_17
     virtual void __unk_vfn_17();
-    /**
-     * @vftbl 20
-     * @symbol __unk_vfn_20
-     */
+
+    // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
-    /**
-     * @vftbl 23
-     * @symbol ?getCircuitComponentType\@CapacitorComponent\@\@UEBA?AW4CircuitComponentType\@\@XZ
-     */
-    virtual enum class CircuitComponentType getCircuitComponentType() const;
-    /**
-     * @vftbl 25
-     * @symbol ?getPoweroutDirection\@CapacitorComponent\@\@UEBAEXZ
-     */
-    virtual uint8_t getPoweroutDirection() const;
-    /**
-     * @symbol ??0CapacitorComponent\@\@QEAA\@XZ
-     */
+
+    // vIndex: 23, symbol: ?getCircuitComponentType@CapacitorComponent@@UEBA?AW4CircuitComponentType@@XZ
+    virtual ::CircuitComponentType getCircuitComponentType() const;
+
+    // vIndex: 25, symbol: ?getPoweroutDirection@CapacitorComponent@@UEBAEXZ
+    virtual uchar getPoweroutDirection() const;
+
+    // symbol: ??0CapacitorComponent@@QEAA@XZ
     MCAPI CapacitorComponent();
+
     // NOLINTEND
 };

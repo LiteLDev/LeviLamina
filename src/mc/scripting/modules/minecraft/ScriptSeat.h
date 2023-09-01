@@ -13,7 +13,6 @@ struct SeatDescription;
 namespace ScriptModuleMinecraft {
 
 class ScriptSeat {
-
 public:
     // prevent constructor by default
     ScriptSeat& operator=(ScriptSeat const&) = delete;
@@ -22,11 +21,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?bind\@ScriptSeat\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@USeatDescription\@\@\@Scripting\@\@XZ
-     */
+    // symbol: ?bind@ScriptSeat@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@USeatDescription@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct SeatDescription> bind();
+
     // NOLINTEND
 };
 

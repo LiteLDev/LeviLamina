@@ -4,9 +4,8 @@
 
 namespace glm {
 
-template <int32_t T0, typename T1, int32_t T2>
+template <int T0, typename T1, int T2>
 struct vec {
-
 public:
     // prevent constructor by default
     vec& operator=(vec const&) = delete;

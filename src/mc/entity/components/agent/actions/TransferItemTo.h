@@ -5,7 +5,6 @@
 namespace AgentComponents::Actions {
 
 struct TransferItemTo {
-
 public:
     // prevent constructor by default
     TransferItemTo& operator=(TransferItemTo const&) = delete;

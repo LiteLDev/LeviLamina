@@ -20,7 +20,6 @@ struct SurfaceMaterialBlocks;
 namespace VanillaSurfaceBuilders {
 
 class MesaSurfaceBuilder : public ::ISurfaceBuilder {
-
 public:
     // prevent constructor by default
     MesaSurfaceBuilder& operator=(MesaSurfaceBuilder const&) = delete;
@@ -29,57 +28,46 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?init\@MesaSurfaceBuilder\@VanillaSurfaceBuilders\@\@UEAAXAEAVEntityContext\@\@I\@Z
-     */
-    virtual void init(class EntityContext&, uint32_t);
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?buildSurfaceAt\@MesaSurfaceBuilder\@VanillaSurfaceBuilders\@\@UEBAXAEBUBuildParameters\@ISurfaceBuilder\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?init@MesaSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVEntityContext@@I@Z
+    virtual void init(class EntityContext&, uint);
+
+    // vIndex: 2, symbol:
+    // ?buildSurfaceAt@MesaSurfaceBuilder@VanillaSurfaceBuilders@@UEBAXAEBUBuildParameters@ISurfaceBuilder@@@Z
     virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const&) const;
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_buildSurface\@MesaSurfaceBuilder\@VanillaSurfaceBuilders\@\@AEBAXAEBVBlockPos\@\@MAEAVRandom\@\@AEAVBlockVolume\@\@HFAEBUMesaSurfaceBlocks\@\@AEBUSurfaceMaterialBlocks\@\@M\@Z
-     */
+    // symbol:
+    // ?_buildSurface@MesaSurfaceBuilder@VanillaSurfaceBuilders@@AEBAXAEBVBlockPos@@MAEAVRandom@@AEAVBlockVolume@@HFAEBUMesaSurfaceBlocks@@AEBUSurfaceMaterialBlocks@@M@Z
     MCAPI void _buildSurface(
         class BlockPos const&,
         float,
         class Random&,
         class BlockVolume&,
-        int32_t,
-        int16_t,
+        int,
+        short,
         struct MesaSurfaceBlocks const&,
         struct SurfaceMaterialBlocks const&,
         float
     ) const;
-    /**
-     * @symbol ?_init\@MesaSurfaceBuilder\@VanillaSurfaceBuilders\@\@AEAAXI\@Z
-     */
-    MCAPI void _init(uint32_t);
-    /**
-     * @symbol ?generateBands\@MesaSurfaceBuilder\@VanillaSurfaceBuilders\@\@AEAAXAEAVRandom\@\@\@Z
-     */
+
+    // symbol: ?_init@MesaSurfaceBuilder@VanillaSurfaceBuilders@@AEAAXI@Z
+    MCAPI void _init(uint);
+
+    // symbol: ?generateBands@MesaSurfaceBuilder@VanillaSurfaceBuilders@@AEAAXAEAVRandom@@@Z
     MCAPI void generateBands(class Random&);
-    /**
-     * @symbol ?getBand\@MesaSurfaceBuilder\@VanillaSurfaceBuilders\@\@AEBA?AW4BlockColor\@\@HHH\@Z
-     */
-    MCAPI enum class BlockColor getBand(int32_t, int32_t, int32_t) const;
-    /**
-     * @symbol ?makeBands\@MesaSurfaceBuilder\@VanillaSurfaceBuilders\@\@AEAAXAEAVRandom\@\@HW4BlockColor\@\@\@Z
-     */
-    MCAPI void makeBands(class Random&, int32_t, enum class BlockColor);
+
+    // symbol: ?getBand@MesaSurfaceBuilder@VanillaSurfaceBuilders@@AEBA?AW4BlockColor@@HHH@Z
+    MCAPI ::BlockColor getBand(int, int, int) const;
+
+    // symbol: ?makeBands@MesaSurfaceBuilder@VanillaSurfaceBuilders@@AEAAXAEAVRandom@@HW4BlockColor@@@Z
+    MCAPI void makeBands(class Random&, int, ::BlockColor);
+
     // NOLINTEND
 };
 

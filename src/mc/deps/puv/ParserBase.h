@@ -5,7 +5,6 @@
 namespace Puv {
 
 class ParserBase {
-
 public:
     // prevent constructor by default
     ParserBase& operator=(ParserBase const&) = delete;

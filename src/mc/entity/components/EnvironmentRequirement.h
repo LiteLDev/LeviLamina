@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct EnvironmentRequirement {
-
 public:
     // prevent constructor by default
     EnvironmentRequirement& operator=(EnvironmentRequirement const&) = delete;
@@ -12,13 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?addBlockDescriptor\@EnvironmentRequirement\@\@QEAAXAEBVBlockDescriptor\@\@\@Z
-     */
+    // symbol: ?addBlockDescriptor@EnvironmentRequirement@@QEAAXAEBVBlockDescriptor@@@Z
     MCAPI void addBlockDescriptor(class BlockDescriptor const&);
-    /**
-     * @symbol ??1EnvironmentRequirement\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1EnvironmentRequirement@@QEAA@XZ
     MCAPI ~EnvironmentRequirement();
+
     // NOLINTEND
 };

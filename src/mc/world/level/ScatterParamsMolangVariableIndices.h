@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ScatterParamsMolangVariableIndices {
-
 public:
     // prevent constructor by default
     ScatterParamsMolangVariableIndices& operator=(ScatterParamsMolangVariableIndices const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?initialize\@ScatterParamsMolangVariableIndices\@\@QEAAXXZ
-     */
+    // symbol: ?initialize@ScatterParamsMolangVariableIndices@@QEAAXXZ
     MCAPI void initialize();
+
     // NOLINTEND
 };

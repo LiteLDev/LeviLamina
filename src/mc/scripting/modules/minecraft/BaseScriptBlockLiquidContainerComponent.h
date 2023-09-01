@@ -21,7 +21,6 @@ namespace Scripting { class WeakLifetimeScope; }
 namespace ScriptModuleMinecraft {
 
 class BaseScriptBlockLiquidContainerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
-
 public:
     // prevent constructor by default
     BaseScriptBlockLiquidContainerComponent(BaseScriptBlockLiquidContainerComponent const&) = delete;
@@ -29,75 +28,61 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?_isValid\@BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@MEBA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?_isValid@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@MEBA_NXZ
     virtual bool _isValid() const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?setFillLevel\@BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@UEAA?AV?$Result\@X\@Scripting\@\@H\@Z
-     */
-    virtual class Scripting::Result<void> setFillLevel(int32_t);
-    /**
-     * @symbol
-     * ??0BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@QEAA\@AEAVBlockSource\@\@VBlockPos\@\@AEBVWeakLifetimeScope\@Scripting\@\@W4CauldronLiquidType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ScriptFluidType\@1\@\@Z
-     */
+
+    // vIndex: 2, symbol:
+    // ?setFillLevel@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@UEAA?AV?$Result@X@Scripting@@H@Z
+    virtual class Scripting::Result<void> setFillLevel(int);
+
+    // symbol:
+    // ??0BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@QEAA@AEAVBlockSource@@VBlockPos@@AEBVWeakLifetimeScope@Scripting@@W4CauldronLiquidType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ScriptFluidType@1@@Z
     MCAPI BaseScriptBlockLiquidContainerComponent(
         class BlockSource&,
         class BlockPos,
         class Scripting::WeakLifetimeScope const&,
-        enum class CauldronLiquidType,
+        ::CauldronLiquidType,
         std::string const&,
-        enum class ScriptModuleMinecraft::ScriptFluidType
+        ::ScriptModuleMinecraft::ScriptFluidType
     );
-    /**
-     * @symbol
-     * ?getFillLevel\@BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@H\@Scripting\@\@XZ
-     */
-    MCAPI class Scripting::Result<int32_t> getFillLevel();
-    /**
-     * @symbol ??4BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
-     */
+
+    // symbol:
+    // ?getFillLevel@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H@Scripting@@XZ
+    MCAPI class Scripting::Result<int> getFillLevel();
+
+    // symbol: ??4BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
     MCAPI class ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent&
     operator=(class ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent const&);
-    /**
-     * @symbol ??4BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
-     */
+
+    // symbol: ??4BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent&
     operator=(class ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent&&);
-    /**
-     * @symbol
-     * ?bind\@BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VBaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VBaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<
         class ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent>
     bind();
+
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_isValidLiquid\@BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@IEBA_NXZ
-     */
+    // symbol: ?_isValidLiquid@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@IEBA_NXZ
     MCAPI bool _isValidLiquid() const;
-    /**
-     * @symbol
-     * ?_tryGetCauldronBlockActor\@BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@IEAAPEAVCauldronBlockActor\@\@XZ
-     */
+
+    // symbol:
+    // ?_tryGetCauldronBlockActor@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@IEAAPEAVCauldronBlockActor@@XZ
     MCAPI class CauldronBlockActor* _tryGetCauldronBlockActor();
-    /**
-     * @symbol
-     * ?_getActualCauldronLiquidType\@BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@KA?AW4ScriptFluidType\@2\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
-     */
-    MCAPI static enum class ScriptModuleMinecraft::ScriptFluidType
+
+    // symbol:
+    // ?_getActualCauldronLiquidType@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@KA?AW4ScriptFluidType@2@AEAVBlockSource@@VBlockPos@@@Z
+    MCAPI static ::ScriptModuleMinecraft::ScriptFluidType
     _getActualCauldronLiquidType(class BlockSource&, class BlockPos);
+
     // NOLINTEND
 };
 

@@ -13,7 +13,6 @@ struct ActorDefinitionModifier;
 namespace ScriptModuleMinecraft {
 
 class ScriptDefinitionModifier {
-
 public:
     // prevent constructor by default
     ScriptDefinitionModifier& operator=(ScriptDefinitionModifier const&) = delete;
@@ -22,11 +21,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?bind\@ScriptDefinitionModifier\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UActorDefinitionModifier\@\@\@Scripting\@\@XZ
-     */
+    // symbol:
+    // ?bind@ScriptDefinitionModifier@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UActorDefinitionModifier@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ActorDefinitionModifier> bind();
+
     // NOLINTEND
 };
 

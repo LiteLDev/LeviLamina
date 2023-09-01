@@ -9,7 +9,6 @@
 #include "mc/world/components/FlagComponent.h"
 
 class PassengerPositionSelfSystem {
-
 public:
     // prevent constructor by default
     PassengerPositionSelfSystem& operator=(PassengerPositionSelfSystem const&) = delete;
@@ -18,25 +17,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createSystem\@PassengerPositionSelfSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createSystem@PassengerPositionSelfSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_doPassengerPositionSelfSystem\@PassengerPositionSelfSystem\@\@CAXAEBVStrictEntityContext\@\@AEBUPassengerComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UPositionPassengerRequestComponent\@\@\@\@\@Z
-     */
+    // symbol:
+    // ?_doPassengerPositionSelfSystem@PassengerPositionSelfSystem@@CAXAEBVStrictEntityContext@@AEBUPassengerComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UPositionPassengerRequestComponent@@@@@Z
     MCAPI static void
     _doPassengerPositionSelfSystem(class StrictEntityContext const&, struct PassengerComponent const&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct PositionPassengerRequestComponent>);
-    /**
-     * @symbol
-     * ?_tickPassengerPositionSelfSystem\@PassengerPositionSelfSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@\@\@$$CBUPassengerComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UPositionPassengerRequestComponent\@\@\@\@\@Z
-     */
+
+    // symbol:
+    // ?_tickPassengerPositionSelfSystem@PassengerPositionSelfSystem@@CAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@$$CBUPassengerComponent@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UPositionPassengerRequestComponent@@@@@Z
     MCAPI static void
         _tickPassengerPositionSelfSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>, struct PassengerComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct PositionPassengerRequestComponent>);
+
     // NOLINTEND
 };

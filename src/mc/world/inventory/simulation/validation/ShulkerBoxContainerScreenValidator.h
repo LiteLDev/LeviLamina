@@ -7,7 +7,6 @@
 #include "mc/world/inventory/simulation/ContainerScreenValidatorBase.h"
 
 class ShulkerBoxContainerScreenValidator : public ::ContainerScreenValidatorBase {
-
 public:
     // prevent constructor by default
     ShulkerBoxContainerScreenValidator& operator=(ShulkerBoxContainerScreenValidator const&) = delete;
@@ -15,14 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @symbol ??0ShulkerBoxContainerScreenValidator\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0ShulkerBoxContainerScreenValidator@@QEAA@XZ
     MCAPI ShulkerBoxContainerScreenValidator();
+
     // NOLINTEND
 };

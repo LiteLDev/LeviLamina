@@ -4,14 +4,11 @@
 
 namespace PacketUtil {
 // NOLINTBEGIN
-/**
- * @symbol ?byteToDegrees\@PacketUtil\@\@YAMC\@Z
- */
-MCAPI float byteToDegrees(int8_t);
-/**
- * @symbol ?degreesToByte\@PacketUtil\@\@YACM\@Z
- */
-MCAPI int8_t degreesToByte(float);
+// symbol: ?byteToDegrees@PacketUtil@@YAMC@Z
+MCAPI float byteToDegrees(schar);
+
+// symbol: ?degreesToByte@PacketUtil@@YACM@Z
+MCAPI schar degreesToByte(float);
 // NOLINTEND
 
 }; // namespace PacketUtil

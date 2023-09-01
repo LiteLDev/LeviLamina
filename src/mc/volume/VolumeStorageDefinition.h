@@ -10,7 +10,6 @@ class EntityContext;
 namespace VolumeInstanceData {
 
 struct VolumeStorageDefinition {
-
 public:
     // prevent constructor by default
     VolumeStorageDefinition& operator=(VolumeStorageDefinition const&) = delete;
@@ -19,22 +18,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?addDefinitionData\@VolumeStorageDefinition\@VolumeInstanceData\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
+    // symbol: ?addDefinitionData@VolumeStorageDefinition@VolumeInstanceData@@QEBAXAEAVEntityContext@@@Z
     MCAPI void addDefinitionData(class EntityContext&) const;
-    /**
-     * @symbol ??1VolumeStorageDefinition\@VolumeInstanceData\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1VolumeStorageDefinition@VolumeInstanceData@@QEAA@XZ
     MCAPI ~VolumeStorageDefinition();
-    /**
-     * @symbol ?bindType\@VolumeStorageDefinition\@VolumeInstanceData\@\@SAXXZ
-     */
+
+    // symbol: ?bindType@VolumeStorageDefinition@VolumeInstanceData@@SAXXZ
     MCAPI static void bindType();
-    /**
-     * @symbol ?fromEntity\@VolumeStorageDefinition\@VolumeInstanceData\@\@SA?AU12\@AEBVEntityContext\@\@\@Z
-     */
+
+    // symbol: ?fromEntity@VolumeStorageDefinition@VolumeInstanceData@@SA?AU12@AEBVEntityContext@@@Z
     MCAPI static struct VolumeInstanceData::VolumeStorageDefinition fromEntity(class EntityContext const&);
+
     // NOLINTEND
 };
 

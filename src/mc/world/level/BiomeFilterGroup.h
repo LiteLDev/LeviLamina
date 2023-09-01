@@ -11,7 +11,6 @@ namespace Json { class Value; }
 // clang-format on
 
 class BiomeFilterGroup : public ::FilterGroup {
-
 public:
     // prevent constructor by default
     BiomeFilterGroup& operator=(BiomeFilterGroup const&) = delete;
@@ -20,26 +19,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?_createSubgroup\@BiomeFilterGroup\@\@MEBA?AV?$shared_ptr\@VFilterGroup\@\@\@std\@\@W4CollectionType\@FilterGroup\@\@\@Z
-     */
-    virtual std::shared_ptr<class FilterGroup> _createSubgroup(enum class FilterGroup::CollectionType) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEFILTERGROUP
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // vIndex: 1, symbol:
+    // ?_createSubgroup@BiomeFilterGroup@@MEBA?AV?$shared_ptr@VFilterGroup@@@std@@W4CollectionType@FilterGroup@@@Z
+    virtual std::shared_ptr<class FilterGroup> _createSubgroup(::FilterGroup::CollectionType) const;
+
+    // symbol: ??1BiomeFilterGroup@@UEAA@XZ
     MCVAPI ~BiomeFilterGroup();
-#endif
-    /**
-     * @symbol ?finalizeParsedValue\@BiomeFilterGroup\@\@QEAAXAEAVIWorldRegistriesProvider\@\@\@Z
-     */
+
+    // symbol: ?finalizeParsedValue@BiomeFilterGroup@@QEAAXAEAVIWorldRegistriesProvider@@@Z
     MCAPI void finalizeParsedValue(class IWorldRegistriesProvider&);
+
     // NOLINTEND
 };

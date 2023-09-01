@@ -11,7 +11,6 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class EnvironmentSensorDefinition {
-
 public:
     // prevent constructor by default
     EnvironmentSensorDefinition& operator=(EnvironmentSensorDefinition const&) = delete;
@@ -20,16 +19,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?addEnvironmentTrigger\@EnvironmentSensorDefinition\@\@QEAAXAEBVActorDefinitionTrigger\@\@\@Z
-     */
+    // symbol: ?addEnvironmentTrigger@EnvironmentSensorDefinition@@QEAAXAEBVActorDefinitionTrigger@@@Z
     MCAPI void addEnvironmentTrigger(class ActorDefinitionTrigger const&);
-    /**
-     * @symbol
-     * ?buildSchema\@EnvironmentSensorDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VEnvironmentSensorDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?buildSchema@EnvironmentSensorDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VEnvironmentSensorDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EnvironmentSensorDefinition>>&);
+
     // NOLINTEND
 };

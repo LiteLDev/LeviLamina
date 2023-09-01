@@ -29,7 +29,6 @@ public:
 
             // Components inner types define
             struct Bounds {
-
             public:
                 // prevent constructor by default
                 Bounds& operator=(Bounds const&) = delete;
@@ -38,15 +37,13 @@ public:
 
             public:
                 // NOLINTBEGIN
-                /**
-                 * @symbol ?bindType\@Bounds\@Components\@Dimension\@DimensionDocument\@\@SAXXZ
-                 */
+                // symbol: ?bindType@Bounds@Components@Dimension@DimensionDocument@@SAXXZ
                 MCAPI static void bindType();
+
                 // NOLINTEND
             };
 
             struct Generation {
-
             public:
                 // prevent constructor by default
                 Generation& operator=(Generation const&) = delete;
@@ -55,10 +52,9 @@ public:
 
             public:
                 // NOLINTBEGIN
-                /**
-                 * @symbol ?bindType\@Generation\@Components\@Dimension\@DimensionDocument\@\@SAXXZ
-                 */
+                // symbol: ?bindType@Generation@Components@Dimension@DimensionDocument@@SAXXZ
                 MCAPI static void bindType();
+
                 // NOLINTEND
             };
 
@@ -69,24 +65,20 @@ public:
 
         public:
             // NOLINTBEGIN
-            /**
-             * @symbol ??4Components\@Dimension\@DimensionDocument\@\@QEAAAEAU012\@AEBU012\@\@Z
-             */
+            // symbol: ??4Components@Dimension@DimensionDocument@@QEAAAEAU012@AEBU012@@Z
             MCAPI struct DimensionDocument::Dimension::Components&
             operator=(struct DimensionDocument::Dimension::Components const&);
-            /**
-             * @symbol ??1Components\@Dimension\@DimensionDocument\@\@QEAA\@XZ
-             */
+
+            // symbol: ??1Components@Dimension@DimensionDocument@@QEAA@XZ
             MCAPI ~Components();
-            /**
-             * @symbol ?bindType\@Components\@Dimension\@DimensionDocument\@\@SAXXZ
-             */
+
+            // symbol: ?bindType@Components@Dimension@DimensionDocument@@SAXXZ
             MCAPI static void bindType();
+
             // NOLINTEND
         };
 
         struct Description {
-
         public:
             // prevent constructor by default
             Description& operator=(Description const&) = delete;
@@ -95,14 +87,12 @@ public:
 
         public:
             // NOLINTBEGIN
-            /**
-             * @symbol ??1Description\@Dimension\@DimensionDocument\@\@QEAA\@XZ
-             */
+            // symbol: ??1Description@Dimension@DimensionDocument@@QEAA@XZ
             MCAPI ~Description();
-            /**
-             * @symbol ?bindType\@Description\@Dimension\@DimensionDocument\@\@SAXXZ
-             */
+
+            // symbol: ?bindType@Description@Dimension@DimensionDocument@@SAXXZ
             MCAPI static void bindType();
+
             // NOLINTEND
         };
 
@@ -113,22 +103,18 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??4Dimension\@DimensionDocument\@\@QEAAAEAU01\@AEBU01\@\@Z
-         */
+        // symbol: ??4Dimension@DimensionDocument@@QEAAAEAU01@AEBU01@@Z
         MCAPI struct DimensionDocument::Dimension& operator=(struct DimensionDocument::Dimension const&);
-        /**
-         * @symbol ??4Dimension\@DimensionDocument\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-         */
+
+        // symbol: ??4Dimension@DimensionDocument@@QEAAAEAU01@$$QEAU01@@Z
         MCAPI struct DimensionDocument::Dimension& operator=(struct DimensionDocument::Dimension&&);
-        /**
-         * @symbol ??1Dimension\@DimensionDocument\@\@QEAA\@XZ
-         */
+
+        // symbol: ??1Dimension@DimensionDocument@@QEAA@XZ
         MCAPI ~Dimension();
-        /**
-         * @symbol ?bindType\@Dimension\@DimensionDocument\@\@SAXXZ
-         */
+
+        // symbol: ?bindType@Dimension@DimensionDocument@@SAXXZ
         MCAPI static void bindType();
+
         // NOLINTEND
     };
 
@@ -139,17 +125,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0DimensionDocument\@\@QEAA\@XZ
-     */
+    // symbol: ??0DimensionDocument@@QEAA@XZ
     MCAPI DimensionDocument();
-    /**
-     * @symbol ??1DimensionDocument\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1DimensionDocument@@QEAA@XZ
     MCAPI ~DimensionDocument();
-    /**
-     * @symbol ?bindType\@DimensionDocument\@\@SAXXZ
-     */
+
+    // symbol: ?bindType@DimensionDocument@@SAXXZ
     MCAPI static void bindType();
+
     // NOLINTEND
 };

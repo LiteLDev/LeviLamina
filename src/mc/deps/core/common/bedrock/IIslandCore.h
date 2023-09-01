@@ -5,7 +5,6 @@
 namespace Bedrock {
 
 class IIslandCore {
-
 public:
     // prevent constructor by default
     IIslandCore& operator=(IIslandCore const&) = delete;
@@ -14,22 +13,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getId\@AppIsland\@Bedrock\@\@UEAAGXZ
-     */
-    virtual uint16_t getId() = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_IISLANDCORE
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // vIndex: 1, symbol: ?getId@AppIsland@Bedrock@@UEAAGXZ
+    virtual ushort getId() = 0;
+
+    // symbol: ??1IIslandCore@Bedrock@@UEAA@XZ
     MCVAPI ~IIslandCore();
-#endif
+
     // NOLINTEND
 };
 

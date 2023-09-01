@@ -6,7 +6,6 @@
 #include "mc/world/attribute/AttributeInstanceDelegate.h"
 
 class ExhaustionAttributeDelegate : public ::AttributeInstanceDelegate {
-
 public:
     // prevent constructor by default
     ExhaustionAttributeDelegate& operator=(ExhaustionAttributeDelegate const&) = delete;
@@ -15,19 +14,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?tick\@ExhaustionAttributeDelegate\@\@UEAAXXZ
-     */
+
+    // vIndex: 1, symbol: ?tick@ExhaustionAttributeDelegate@@UEAAXXZ
     virtual void tick();
-    /**
-     * @symbol ??0ExhaustionAttributeDelegate\@\@QEAA\@AEBVAttributeInstance\@\@\@Z
-     */
+
+    // symbol: ??0ExhaustionAttributeDelegate@@QEAA@AEBVAttributeInstance@@@Z
     MCAPI ExhaustionAttributeDelegate(class AttributeInstance const&);
+
     // NOLINTEND
 };

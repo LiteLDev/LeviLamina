@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct MaterialReducerDataEntry {
-
 public:
     // prevent constructor by default
     MaterialReducerDataEntry& operator=(MaterialReducerDataEntry const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1MaterialReducerDataEntry\@\@QEAA\@XZ
-     */
+    // symbol: ??1MaterialReducerDataEntry@@QEAA@XZ
     MCAPI ~MaterialReducerDataEntry();
+
     // NOLINTEND
 };

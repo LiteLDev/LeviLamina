@@ -6,7 +6,6 @@ namespace nonstd::expected_lite {
 
 template <typename T0, typename T1>
 class expected {
-
 public:
     // prevent constructor by default
     expected& operator=(expected const&) = delete;

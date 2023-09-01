@@ -5,7 +5,6 @@
 namespace Legacy {
 
 struct WorldConversionReport {
-
 public:
     // prevent constructor by default
     WorldConversionReport& operator=(WorldConversionReport const&) = delete;

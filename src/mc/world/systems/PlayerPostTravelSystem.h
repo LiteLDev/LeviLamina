@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class PlayerPostTravelSystem {
-
 public:
     // prevent constructor by default
     PlayerPostTravelSystem& operator=(PlayerPostTravelSystem const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?create\@PlayerPostTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?create@PlayerPostTravelSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo create();
+
     // NOLINTEND
 };

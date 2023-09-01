@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class VanillaTrailRuinsJigsawStructureBlockRules {
-
 public:
     // prevent constructor by default
     VanillaTrailRuinsJigsawStructureBlockRules& operator=(VanillaTrailRuinsJigsawStructureBlockRules const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?initialize\@VanillaTrailRuinsJigsawStructureBlockRules\@\@SAXAEAVJigsawStructureRegistry\@\@\@Z
-     */
+    // symbol: ?initialize@VanillaTrailRuinsJigsawStructureBlockRules@@SAXAEAVJigsawStructureRegistry@@@Z
     MCAPI static void initialize(class JigsawStructureRegistry&);
+
     // NOLINTEND
 };

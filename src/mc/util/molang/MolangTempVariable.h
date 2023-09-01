@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct MolangTempVariable {
-
 public:
     // prevent constructor by default
     MolangTempVariable& operator=(MolangTempVariable const&) = delete;
@@ -12,13 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0MolangTempVariable\@\@QEAA\@AEBVHashedString\@\@\@Z
-     */
+    // symbol: ??0MolangTempVariable@@QEAA@AEBVHashedString@@@Z
     MCAPI MolangTempVariable(class HashedString const&);
-    /**
-     * @symbol ??1MolangTempVariable\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1MolangTempVariable@@QEAA@XZ
     MCAPI ~MolangTempVariable();
+
     // NOLINTEND
 };

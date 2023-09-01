@@ -6,7 +6,6 @@
 #include "mc/world/level/LevelEventCoordinator.h"
 
 class ClientLevelEventCoordinator : public ::LevelEventCoordinator {
-
 public:
     // prevent constructor by default
     ClientLevelEventCoordinator& operator=(ClientLevelEventCoordinator const&) = delete;

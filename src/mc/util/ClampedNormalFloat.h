@@ -10,7 +10,6 @@ class Random;
 namespace ValueProviders {
 
 class ClampedNormalFloat {
-
 public:
     // prevent constructor by default
     ClampedNormalFloat& operator=(ClampedNormalFloat const&) = delete;
@@ -19,14 +18,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?generateNext\@ClampedNormalFloat\@ValueProviders\@\@QEBAMAEAVRandom\@\@\@Z
-     */
+    // symbol: ?generateNext@ClampedNormalFloat@ValueProviders@@QEBAMAEAVRandom@@@Z
     MCAPI float generateNext(class Random&) const;
-    /**
-     * @symbol ?generateNext\@ClampedNormalFloat\@ValueProviders\@\@SAMAEAVRandom\@\@MMMM\@Z
-     */
+
+    // symbol: ?generateNext@ClampedNormalFloat@ValueProviders@@SAMAEAVRandom@@MMMM@Z
     MCAPI static float generateNext(class Random&, float, float, float, float);
+
     // NOLINTEND
 };
 

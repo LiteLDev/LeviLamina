@@ -8,7 +8,6 @@
 namespace ScriptModuleMinecraft {
 
 struct ScriptTickEvent {
-
 public:
     // prevent constructor by default
     ScriptTickEvent& operator=(ScriptTickEvent const&) = delete;
@@ -17,11 +16,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?bindV010\@ScriptTickEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptTickEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+    // symbol:
+    // ?bindV010@ScriptTickEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptTickEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptTickEvent> bindV010();
+
     // NOLINTEND
 };
 

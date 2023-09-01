@@ -4,10 +4,7 @@
 
 namespace PlayerRotationSystemImpl {
 // NOLINTBEGIN
-/**
- * @symbol
- * ?doPlayerRotationSystem\@PlayerRotationSystemImpl\@\@YAXAEBUMoveInputComponent\@\@AEAUActorRotationComponent\@\@\@Z
- */
+// symbol: ?doPlayerRotationSystem@PlayerRotationSystemImpl@@YAXAEBUMoveInputComponent@@AEAUActorRotationComponent@@@Z
 MCAPI void doPlayerRotationSystem(struct MoveInputComponent const&, struct ActorRotationComponent&);
 // NOLINTEND
 

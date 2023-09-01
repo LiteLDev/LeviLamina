@@ -6,7 +6,6 @@ namespace Scripting {
 
 template <typename T0>
 class ClassBindingBuilder {
-
 public:
     // prevent constructor by default
     ClassBindingBuilder& operator=(ClassBindingBuilder const&) = delete;

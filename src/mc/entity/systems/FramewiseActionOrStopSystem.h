@@ -8,7 +8,6 @@
 #include "mc/world/components/FlagComponent.h"
 
 class FramewiseActionOrStopSystem {
-
 public:
     // prevent constructor by default
     FramewiseActionOrStopSystem& operator=(FramewiseActionOrStopSystem const&) = delete;
@@ -17,14 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createFramewiseActionOrStopSystem\@FramewiseActionOrStopSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createFramewiseActionOrStopSystem@FramewiseActionOrStopSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createFramewiseActionOrStopSystem();
-    /**
-     * @symbol
-     * ?tickFramewiseActionOrStopSystem\@FramewiseActionOrStopSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@ULocalPlayerComponentFlag\@\@\@\@UPlayerInputRequestComponent\@\@\@\@$$CBULocalMoveVelocityComponent\@\@UActionOrStopComponent\@\@\@\@\@Z
-     */
+
+    // symbol:
+    // ?tickFramewiseActionOrStopSystem@FramewiseActionOrStopSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@ULocalPlayerComponentFlag@@@@UPlayerInputRequestComponent@@@@$$CBULocalMoveVelocityComponent@@UActionOrStopComponent@@@@@Z
     MCAPI static void tickFramewiseActionOrStopSystem(class ViewT<
                                                       class StrictEntityContext,
                                                       class EntityRegistryBase,
@@ -34,15 +30,15 @@ public:
                                                           struct PlayerInputRequestComponent>,
                                                       struct LocalMoveVelocityComponent const,
                                                       struct ActionOrStopComponent>);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?doFramewiseActionOrStopSystem\@FramewiseActionOrStopSystem\@\@CAXAEBULocalMoveVelocityComponent\@\@AEAUActionOrStopComponent\@\@\@Z
-     */
+    // symbol:
+    // ?doFramewiseActionOrStopSystem@FramewiseActionOrStopSystem@@CAXAEBULocalMoveVelocityComponent@@AEAUActionOrStopComponent@@@Z
     MCAPI static void
     doFramewiseActionOrStopSystem(struct LocalMoveVelocityComponent const&, struct ActionOrStopComponent&);
+
     // NOLINTEND
 };

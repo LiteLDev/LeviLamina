@@ -13,7 +13,6 @@ class EntityContext;
 namespace AgentComponents {
 
 class DetectRedstone {
-
 public:
     // prevent constructor by default
     DetectRedstone& operator=(DetectRedstone const&) = delete;
@@ -22,11 +21,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?setup\@DetectRedstone\@AgentComponents\@\@SAXAEAV12\@AEAVEntityContext\@\@W4Direction\@2\@\@Z
-     */
-    MCAPI static void
-    setup(class AgentComponents::DetectRedstone&, class EntityContext&, enum class AgentComponents::Direction);
+    // symbol: ?setup@DetectRedstone@AgentComponents@@SAXAEAV12@AEAVEntityContext@@W4Direction@2@@Z
+    MCAPI static void setup(class AgentComponents::DetectRedstone&, class EntityContext&, ::AgentComponents::Direction);
+
     // NOLINTEND
 };
 

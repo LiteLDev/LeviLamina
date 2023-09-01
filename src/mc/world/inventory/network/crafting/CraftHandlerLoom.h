@@ -9,7 +9,6 @@
 #include "mc/world/item/components/ItemStackRequestActionType.h"
 
 class CraftHandlerLoom : public ::CraftHandlerBase {
-
 public:
     // prevent constructor by default
     CraftHandlerLoom& operator=(CraftHandlerLoom const&) = delete;
@@ -18,16 +17,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 4
-     * @symbol
-     * ?_handleCraftAction\@CraftHandlerLoom\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@\@Z
-     */
-    virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+
+    // vIndex: 4, symbol:
+    // ?_handleCraftAction@CraftHandlerLoom@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
+    virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+
     // NOLINTEND
 };

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct WaterTravelFlag {
-
 public:
     // prevent constructor by default
     WaterTravelFlag& operator=(WaterTravelFlag const&) = delete;

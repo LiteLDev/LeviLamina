@@ -7,7 +7,6 @@
 #include "mc/world/level/levelgen/v1/IPreliminarySurfaceProvider.h"
 
 class SurfaceLevelCache : public ::IPreliminarySurfaceProvider {
-
 public:
     // prevent constructor by default
     SurfaceLevelCache& operator=(SurfaceLevelCache const&) = delete;
@@ -16,26 +15,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?getPreliminarySurfaceLevel\@SurfaceLevelCache\@\@UEBA?AV?$optional\@F\@std\@\@V?$DividedPos2d\@$03\@\@\@Z
-     */
-    virtual std::optional<int16_t> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SURFACELEVELCACHE
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // vIndex: 1, symbol:
+    // ?getPreliminarySurfaceLevel@SurfaceLevelCache@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z
+    virtual std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
+
+    // symbol: ??1SurfaceLevelCache@@UEAA@XZ
     MCVAPI ~SurfaceLevelCache();
-#endif
-    /**
-     * @symbol ??0SurfaceLevelCache\@\@QEAA\@V?$DividedPos2d\@$03\@\@AEBVIPreliminarySurfaceProvider\@\@_K\@Z
-     */
-    MCAPI SurfaceLevelCache(class DividedPos2d<4>, class IPreliminarySurfaceProvider const&, uint64_t);
+
+    // symbol: ??0SurfaceLevelCache@@QEAA@V?$DividedPos2d@$03@@AEBVIPreliminarySurfaceProvider@@_K@Z
+    MCAPI SurfaceLevelCache(class DividedPos2d<4>, class IPreliminarySurfaceProvider const&, uint64);
+
     // NOLINTEND
 };

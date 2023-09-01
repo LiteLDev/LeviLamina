@@ -5,7 +5,6 @@
 namespace PlayerCapabilities {
 
 struct ISharedController {
-
 public:
     // prevent constructor by default
     ISharedController& operator=(ISharedController const&) = delete;

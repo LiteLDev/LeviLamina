@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class BackwardsCompatTextureGroup {
-
 public:
     // prevent constructor by default
     BackwardsCompatTextureGroup& operator=(BackwardsCompatTextureGroup const&) = delete;
@@ -12,9 +11,15 @@ public:
 
 private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?invalidInfo\@BackwardsCompatTextureGroup\@\@0VBackwardsCompatTextureInfo\@\@B
-     */
+    // symbol: ?invalidInfo@BackwardsCompatTextureGroup@@0VBackwardsCompatTextureInfo@@B
     MCAPI static class BackwardsCompatTextureInfo const invalidInfo;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $invalidInfo() { return invalidInfo; }
+
     // NOLINTEND
 };

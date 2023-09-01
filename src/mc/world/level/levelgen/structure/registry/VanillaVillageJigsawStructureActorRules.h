@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class VanillaVillageJigsawStructureActorRules {
-
 public:
     // prevent constructor by default
     VanillaVillageJigsawStructureActorRules& operator=(VanillaVillageJigsawStructureActorRules const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?initialize\@VanillaVillageJigsawStructureActorRules\@\@SAXAEAVJigsawStructureRegistry\@\@\@Z
-     */
+    // symbol: ?initialize@VanillaVillageJigsawStructureActorRules@@SAXAEAVJigsawStructureRegistry@@@Z
     MCAPI static void initialize(class JigsawStructureRegistry&);
+
     // NOLINTEND
 };

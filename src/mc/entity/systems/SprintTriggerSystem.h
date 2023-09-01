@@ -4,9 +4,7 @@
 
 namespace SprintTriggerSystem {
 // NOLINTBEGIN
-/**
- * @symbol ?createSystem\@SprintTriggerSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
- */
+// symbol: ?createSystem@SprintTriggerSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
 // NOLINTEND
 

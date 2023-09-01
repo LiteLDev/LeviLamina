@@ -18,7 +18,6 @@ public:
 
     // CallStack inner types define
     struct Context {
-
     public:
         // prevent constructor by default
         Context& operator=(Context const&) = delete;
@@ -27,20 +26,17 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol
-         * ??0Context\@CallStack\@Bedrock\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$optional\@W4LogLevel\@Bedrock\@\@\@4\@V?$optional\@I\@4\@\@Z
-         */
-        MCAPI Context(std::string, std::optional<enum class Bedrock::LogLevel>, std::optional<uint32_t>);
-        /**
-         * @symbol ??1Context\@CallStack\@Bedrock\@\@QEAA\@XZ
-         */
+        // symbol:
+        // ??0Context@CallStack@Bedrock@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@W4LogLevel@Bedrock@@@4@V?$optional@I@4@@Z
+        MCAPI Context(std::string, std::optional<::Bedrock::LogLevel>, std::optional<uint>);
+
+        // symbol: ??1Context@CallStack@Bedrock@@QEAA@XZ
         MCAPI ~Context();
+
         // NOLINTEND
     };
 
     struct Frame {
-
     public:
         // prevent constructor by default
         Frame& operator=(Frame const&) = delete;
@@ -49,7 +45,6 @@ public:
     };
 
     struct FrameWithContext {
-
     public:
         // prevent constructor by default
         FrameWithContext& operator=(FrameWithContext const&) = delete;
@@ -58,15 +53,13 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol
-         * ??0FrameWithContext\@CallStack\@Bedrock\@\@QEAA\@$$QEAUFrame\@12\@$$QEAV?$optional\@UContext\@CallStack\@Bedrock\@\@\@std\@\@\@Z
-         */
+        // symbol:
+        // ??0FrameWithContext@CallStack@Bedrock@@QEAA@$$QEAUFrame@12@$$QEAV?$optional@UContext@CallStack@Bedrock@@@std@@@Z
         MCAPI FrameWithContext(struct Bedrock::CallStack::Frame&&, std::optional<struct Bedrock::CallStack::Context>&&);
-        /**
-         * @symbol ??1FrameWithContext\@CallStack\@Bedrock\@\@QEAA\@XZ
-         */
+
+        // symbol: ??1FrameWithContext@CallStack@Bedrock@@QEAA@XZ
         MCAPI ~FrameWithContext();
+
         // NOLINTEND
     };
 
@@ -78,14 +71,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0CallStack\@Bedrock\@\@QEAA\@$$QEAUFrameWithContext\@01\@\@Z
-     */
+    // symbol: ??0CallStack@Bedrock@@QEAA@$$QEAUFrameWithContext@01@@Z
     MCAPI CallStack(struct Bedrock::CallStack::FrameWithContext&&);
-    /**
-     * @symbol ??1CallStack\@Bedrock\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1CallStack@Bedrock@@QEAA@XZ
     MCAPI ~CallStack();
+
     // NOLINTEND
 };
 

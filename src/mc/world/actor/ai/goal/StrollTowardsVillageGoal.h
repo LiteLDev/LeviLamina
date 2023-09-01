@@ -7,7 +7,6 @@
 #include "mc/world/actor/ai/goal/MoveToVillageGoal.h"
 
 class StrollTowardsVillageGoal : public ::MoveToVillageGoal {
-
 public:
     // prevent constructor by default
     StrollTowardsVillageGoal& operator=(StrollTowardsVillageGoal const&) = delete;
@@ -16,26 +15,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@StrollTowardsVillageGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@StrollTowardsVillageGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@StrollTowardsVillageGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@StrollTowardsVillageGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @vftbl 17
-     * @symbol ?_selectRandomPosInVillage\@StrollTowardsVillageGoal\@\@MEAA?AVBlockPos\@\@XZ
-     */
+
+    // vIndex: 17, symbol: ?_selectRandomPosInVillage@StrollTowardsVillageGoal@@MEAA?AVBlockPos@@XZ
     virtual class BlockPos _selectRandomPosInVillage();
+
     // NOLINTEND
 };

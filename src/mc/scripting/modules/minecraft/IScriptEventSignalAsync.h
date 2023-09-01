@@ -10,7 +10,6 @@ struct ActorUniqueID;
 namespace ScriptModuleMinecraft {
 
 class IScriptEventSignalAsync {
-
 public:
     // prevent constructor by default
     IScriptEventSignalAsync& operator=(IScriptEventSignalAsync const&) = delete;
@@ -19,17 +18,12 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_ISCRIPTEVENTSIGNALASYNC
-    /**
-     * @symbol
-     * ?enqueueClosureRemovalForActor\@IScriptEventSignalAsync\@ScriptModuleMinecraft\@\@UEAAXUActorUniqueID\@\@\@Z
-     */
+    // symbol: ?enqueueClosureRemovalForActor@IScriptEventSignalAsync@ScriptModuleMinecraft@@UEAAXUActorUniqueID@@@Z
     MCVAPI void enqueueClosureRemovalForActor(struct ActorUniqueID);
-    /**
-     * @symbol ?isActorSignal\@IScriptEventSignalAsync\@ScriptModuleMinecraft\@\@UEAA_NXZ
-     */
+
+    // symbol: ?isActorSignal@IScriptEventSignalAsync@ScriptModuleMinecraft@@UEAA_NXZ
     MCVAPI bool isActorSignal();
-#endif
+
     // NOLINTEND
 };
 

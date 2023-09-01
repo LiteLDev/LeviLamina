@@ -6,7 +6,6 @@
 #include "mc/world/level/levelgen/feature/Feature.h"
 
 class NetherFireFeature : public ::Feature {
-
 public:
     // prevent constructor by default
     NetherFireFeature& operator=(NetherFireFeature const&) = delete;
@@ -15,21 +14,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 3
-     * @symbol ?place\@NetherFireFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
-     */
+
+    // vIndex: 3, symbol: ?place@NetherFireFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERFIREFEATURE
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1NetherFireFeature@@UEAA@XZ
     MCVAPI ~NetherFireFeature();
-#endif
+
     // NOLINTEND
 };

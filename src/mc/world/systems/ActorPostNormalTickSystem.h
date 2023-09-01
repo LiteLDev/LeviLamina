@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ActorPostNormalTickSystem {
-
 public:
     // prevent constructor by default
     ActorPostNormalTickSystem& operator=(ActorPostNormalTickSystem const&) = delete;
@@ -12,13 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createSystemClient\@ActorPostNormalTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createSystemClient@ActorPostNormalTickSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystemClient();
-    /**
-     * @symbol ?createSystemServer\@ActorPostNormalTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+
+    // symbol: ?createSystemServer@ActorPostNormalTickSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystemServer();
+
     // NOLINTEND
 };

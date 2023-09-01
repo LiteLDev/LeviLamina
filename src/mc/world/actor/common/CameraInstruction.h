@@ -21,7 +21,6 @@ public:
 
         // FadeInstruction inner types define
         struct ColorOption {
-
         public:
             // prevent constructor by default
             ColorOption& operator=(ColorOption const&) = delete;
@@ -30,15 +29,13 @@ public:
 
         public:
             // NOLINTBEGIN
-            /**
-             * @symbol ?bindType\@ColorOption\@FadeInstruction\@CameraInstruction\@\@SAXXZ
-             */
+            // symbol: ?bindType@ColorOption@FadeInstruction@CameraInstruction@@SAXXZ
             MCAPI static void bindType();
+
             // NOLINTEND
         };
 
         struct TimeOption {
-
         public:
             // prevent constructor by default
             TimeOption& operator=(TimeOption const&) = delete;
@@ -47,10 +44,9 @@ public:
 
         public:
             // NOLINTBEGIN
-            /**
-             * @symbol ?bindType\@TimeOption\@FadeInstruction\@CameraInstruction\@\@SAXXZ
-             */
+            // symbol: ?bindType@TimeOption@FadeInstruction@CameraInstruction@@SAXXZ
             MCAPI static void bindType();
+
             // NOLINTEND
         };
 
@@ -62,14 +58,12 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??8FadeInstruction\@CameraInstruction\@\@QEBA_NAEBU01\@\@Z
-         */
+        // symbol: ??8FadeInstruction@CameraInstruction@@QEBA_NAEBU01@@Z
         MCAPI bool operator==(struct CameraInstruction::FadeInstruction const&) const;
-        /**
-         * @symbol ?bindType\@FadeInstruction\@CameraInstruction\@\@SAXXZ
-         */
+
+        // symbol: ?bindType@FadeInstruction@CameraInstruction@@SAXXZ
         MCAPI static void bindType();
+
         // NOLINTEND
     };
 
@@ -83,7 +77,6 @@ public:
 
         // SetInstruction inner types define
         struct EaseOption {
-
         public:
             // prevent constructor by default
             EaseOption& operator=(EaseOption const&) = delete;
@@ -92,15 +85,13 @@ public:
 
         public:
             // NOLINTBEGIN
-            /**
-             * @symbol ?bindType\@EaseOption\@SetInstruction\@CameraInstruction\@\@SAXXZ
-             */
+            // symbol: ?bindType@EaseOption@SetInstruction@CameraInstruction@@SAXXZ
             MCAPI static void bindType();
+
             // NOLINTEND
         };
 
         struct RotOption {
-
         public:
             // prevent constructor by default
             RotOption& operator=(RotOption const&) = delete;
@@ -109,10 +100,9 @@ public:
 
         public:
             // NOLINTBEGIN
-            /**
-             * @symbol ?bindType\@RotOption\@SetInstruction\@CameraInstruction\@\@SAXXZ
-             */
+            // symbol: ?bindType@RotOption@SetInstruction@CameraInstruction@@SAXXZ
             MCAPI static void bindType();
+
             // NOLINTEND
         };
 
@@ -123,22 +113,18 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??4SetInstruction\@CameraInstruction\@\@QEAAAEAU01\@AEBU01\@\@Z
-         */
+        // symbol: ??4SetInstruction@CameraInstruction@@QEAAAEAU01@AEBU01@@Z
         MCAPI struct CameraInstruction::SetInstruction& operator=(struct CameraInstruction::SetInstruction const&);
-        /**
-         * @symbol ??4SetInstruction\@CameraInstruction\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-         */
+
+        // symbol: ??4SetInstruction@CameraInstruction@@QEAAAEAU01@$$QEAU01@@Z
         MCAPI struct CameraInstruction::SetInstruction& operator=(struct CameraInstruction::SetInstruction&&);
-        /**
-         * @symbol ??8SetInstruction\@CameraInstruction\@\@QEBA_NAEBU01\@\@Z
-         */
+
+        // symbol: ??8SetInstruction@CameraInstruction@@QEBA_NAEBU01@@Z
         MCAPI bool operator==(struct CameraInstruction::SetInstruction const&) const;
-        /**
-         * @symbol ?bindType\@SetInstruction\@CameraInstruction\@\@SAXXZ
-         */
+
+        // symbol: ?bindType@SetInstruction@CameraInstruction@@SAXXZ
         MCAPI static void bindType();
+
         // NOLINTEND
     };
 
@@ -150,13 +136,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??8CameraInstruction\@\@QEBA_NAEBU0\@\@Z
-     */
+    // symbol: ??8CameraInstruction@@QEBA_NAEBU0@@Z
     MCAPI bool operator==(struct CameraInstruction const&) const;
-    /**
-     * @symbol ?bindType\@CameraInstruction\@\@SAXXZ
-     */
+
+    // symbol: ?bindType@CameraInstruction@@SAXXZ
     MCAPI static void bindType();
+
     // NOLINTEND
 };

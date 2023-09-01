@@ -5,7 +5,6 @@
 namespace RakNet {
 
 class RakNetRandom {
-
 public:
     // prevent constructor by default
     RakNetRandom& operator=(RakNetRandom const&) = delete;
@@ -13,18 +12,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0RakNetRandom\@RakNet\@\@QEAA\@XZ
-     */
+    // symbol: ??0RakNetRandom@RakNet@@QEAA@XZ
     MCAPI RakNetRandom();
-    /**
-     * @symbol ?SeedMT\@RakNetRandom\@RakNet\@\@QEAAXI\@Z
-     */
-    MCAPI void SeedMT(uint32_t);
-    /**
-     * @symbol ??1RakNetRandom\@RakNet\@\@QEAA\@XZ
-     */
+
+    // symbol: ?SeedMT@RakNetRandom@RakNet@@QEAAXI@Z
+    MCAPI void SeedMT(uint);
+
+    // symbol: ??1RakNetRandom@RakNet@@QEAA@XZ
     MCAPI ~RakNetRandom();
+
     // NOLINTEND
 };
 

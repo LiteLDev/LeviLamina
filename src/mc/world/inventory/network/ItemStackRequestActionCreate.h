@@ -7,7 +7,6 @@
 #include "mc/world/inventory/network/ItemStackRequestAction.h"
 
 class ItemStackRequestActionCreate : public ::ItemStackRequestAction {
-
 public:
     // prevent constructor by default
     ItemStackRequestActionCreate& operator=(ItemStackRequestActionCreate const&) = delete;
@@ -16,25 +15,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 4
-     * @symbol ?_write\@ItemStackRequestActionCreate\@\@MEBAXAEAVBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 4, symbol: ?_write@ItemStackRequestActionCreate@@MEBAXAEAVBinaryStream@@@Z
     virtual void _write(class BinaryStream&) const;
-    /**
-     * @vftbl 5
-     * @symbol
-     * ?_read\@ItemStackRequestActionCreate\@\@MEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 5, symbol:
+    // ?_read@ItemStackRequestActionCreate@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
-    /**
-     * @symbol ?getResultsIndex\@ItemStackRequestActionCreate\@\@QEBAEXZ
-     */
-    MCAPI uint8_t getResultsIndex() const;
+
+    // symbol: ?getResultsIndex@ItemStackRequestActionCreate@@QEBAEXZ
+    MCAPI uchar getResultsIndex() const;
+
     // NOLINTEND
 };

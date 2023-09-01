@@ -19,19 +19,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_networkUpdateItem\@SparseContainerClient\@\@QEAAXHAEBVItemStack\@\@\@Z
-     */
-    MCAPI void _networkUpdateItem(int32_t, class ItemStack const&);
+    // symbol: ?_networkUpdateItem@SparseContainerClient@@QEAAXHAEBVItemStack@@@Z
+    MCAPI void _networkUpdateItem(int, class ItemStack const&);
+
     // NOLINTEND
 
 private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?pushSlotPredictionResultMap\@SparseContainerClient\@\@0V?$BidirectionalUnorderedMap\@W4PushSlotPredictionResult\@SparseContainerClient\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@\@B
-     */
+    // symbol:
+    // ?pushSlotPredictionResultMap@SparseContainerClient@@0V?$BidirectionalUnorderedMap@W4PushSlotPredictionResult@SparseContainerClient@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
     MCAPI static class BidirectionalUnorderedMap<::SparseContainerClient::PushSlotPredictionResult, std::string> const
         pushSlotPredictionResultMap;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $pushSlotPredictionResultMap() { return pushSlotPredictionResultMap; }
+
     // NOLINTEND
 };

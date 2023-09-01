@@ -5,7 +5,6 @@
 namespace PlayerCapabilities {
 
 struct IPlayerData {
-
 public:
     // prevent constructor by default
     IPlayerData& operator=(IPlayerData const&) = delete;

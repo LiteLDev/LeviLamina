@@ -11,7 +11,6 @@ namespace mce { class UUID; }
 // clang-format on
 
 class FireworksRecipe : public ::MultiRecipe {
-
 public:
     // prevent constructor by default
     FireworksRecipe& operator=(FireworksRecipe const&) = delete;
@@ -20,62 +19,40 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?assemble\@FireworksRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@AEAVCraftingContext\@\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?assemble@FireworksRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@AEAVCraftingContext@@@Z
     virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&, class CraftingContext&) const;
-    /**
-     * @vftbl 2
-     * @symbol ?getCraftingSize\@FireworksRecipe\@\@UEBAHXZ
-     */
-    virtual int32_t getCraftingSize() const;
-    /**
-     * @vftbl 3
-     * @symbol ?getIngredient\@FireworksRecipe\@\@UEBAAEBVRecipeIngredient\@\@HH\@Z
-     */
-    virtual class RecipeIngredient const& getIngredient(int32_t, int32_t) const;
-    /**
-     * @vftbl 4
-     * @symbol
-     * ?getResultItem\@FireworksRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@XZ
-     */
+
+    // vIndex: 2, symbol: ?getCraftingSize@FireworksRecipe@@UEBAHXZ
+    virtual int getCraftingSize() const;
+
+    // vIndex: 3, symbol: ?getIngredient@FireworksRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
+    virtual class RecipeIngredient const& getIngredient(int, int) const;
+
+    // vIndex: 4, symbol:
+    // ?getResultItem@FireworksRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
     virtual std::vector<class ItemInstance> const& getResultItem() const;
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
+
+    // vIndex: 5, symbol: __unk_vfn_5
     virtual void __unk_vfn_5();
-    /**
-     * @vftbl 6
-     * @symbol ?matches\@FireworksRecipe\@\@UEBA_NAEBVCraftingContainer\@\@AEBVCraftingContext\@\@\@Z
-     */
+
+    // vIndex: 6, symbol: ?matches@FireworksRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
     virtual bool matches(class CraftingContainer const&, class CraftingContext const&) const;
-    /**
-     * @vftbl 7
-     * @symbol ?size\@FireworksRecipe\@\@UEBAHXZ
-     */
-    virtual int32_t size() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREWORKSRECIPE
-    /**
-     * @symbol ?isShapeless\@FireworksRecipe\@\@UEBA_NXZ
-     */
+
+    // vIndex: 7, symbol: ?size@FireworksRecipe@@UEBAHXZ
+    virtual int size() const;
+
+    // symbol: ?isShapeless@FireworksRecipe@@UEBA_NXZ
     MCVAPI bool isShapeless() const;
-#endif
-    /**
-     * @symbol
-     * ??0FireworksRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@PEBVUUID\@mce\@\@\@Z
-     */
+
+    // symbol: ??0FireworksRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@PEBVUUID@mce@@@Z
     MCAPI FireworksRecipe(std::string_view, class mce::UUID const*);
-    /**
-     * @symbol ?ID\@FireworksRecipe\@\@2VUUID\@mce\@\@A
-     */
+
+    // symbol: ?ID@FireworksRecipe@@2VUUID@mce@@A
     MCAPI static class mce::UUID ID;
+
     // NOLINTEND
 };

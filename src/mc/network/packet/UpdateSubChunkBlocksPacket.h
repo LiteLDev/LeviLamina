@@ -17,7 +17,6 @@ public:
 
     // UpdateSubChunkBlocksPacket inner types define
     struct BlocksChangedInfo {
-
     public:
         // prevent constructor by default
         BlocksChangedInfo& operator=(BlocksChangedInfo const&) = delete;
@@ -25,25 +24,20 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??0BlocksChangedInfo\@UpdateSubChunkBlocksPacket\@\@QEAA\@XZ
-         */
+        // symbol: ??0BlocksChangedInfo@UpdateSubChunkBlocksPacket@@QEAA@XZ
         MCAPI BlocksChangedInfo();
-        /**
-         * @symbol
-         * ?add\@BlocksChangedInfo\@UpdateSubChunkBlocksPacket\@\@QEAAXAEBVBlockPos\@\@IAEBVBlock\@\@HPEBUActorBlockSyncMessage\@\@\@Z
-         */
-        MCAPI void
-        add(class BlockPos const&, uint32_t, class Block const&, int32_t, struct ActorBlockSyncMessage const*);
-        /**
-         * @symbol ??1BlocksChangedInfo\@UpdateSubChunkBlocksPacket\@\@QEAA\@XZ
-         */
+
+        // symbol:
+        // ?add@BlocksChangedInfo@UpdateSubChunkBlocksPacket@@QEAAXAEBVBlockPos@@IAEBVBlock@@HPEBUActorBlockSyncMessage@@@Z
+        MCAPI void add(class BlockPos const&, uint, class Block const&, int, struct ActorBlockSyncMessage const*);
+
+        // symbol: ??1BlocksChangedInfo@UpdateSubChunkBlocksPacket@@QEAA@XZ
         MCAPI ~BlocksChangedInfo();
+
         // NOLINTEND
     };
 
     struct NetworkBlockInfo {
-
     public:
         // prevent constructor by default
         NetworkBlockInfo& operator=(NetworkBlockInfo const&) = delete;
@@ -52,10 +46,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??1NetworkBlockInfo\@UpdateSubChunkBlocksPacket\@\@QEAA\@XZ
-         */
+        // symbol: ??1NetworkBlockInfo@UpdateSubChunkBlocksPacket@@QEAA@XZ
         MCAPI ~NetworkBlockInfo();
+
         // NOLINTEND
     };
 
@@ -66,52 +59,36 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getId\@UpdateSubChunkBlocksPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
-     */
-    virtual enum class MinecraftPacketIds getId() const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?getName\@UpdateSubChunkBlocksPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // vIndex: 1, symbol: ?getId@UpdateSubChunkBlocksPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    virtual ::MinecraftPacketIds getId() const;
+
+    // vIndex: 2, symbol:
+    // ?getName@UpdateSubChunkBlocksPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const;
-    /**
-     * @vftbl 3
-     * @symbol ?write\@UpdateSubChunkBlocksPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 3, symbol: ?write@UpdateSubChunkBlocksPacket@@UEBAXAEAVBinaryStream@@@Z
     virtual void write(class BinaryStream&) const;
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?_read\@UpdateSubChunkBlocksPacket\@\@MEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?_read@UpdateSubChunkBlocksPacket@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATESUBCHUNKBLOCKSPACKET
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1UpdateSubChunkBlocksPacket@@UEAA@XZ
     MCVAPI ~UpdateSubChunkBlocksPacket();
-#endif
-    /**
-     * @symbol ??0UpdateSubChunkBlocksPacket\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0UpdateSubChunkBlocksPacket@@QEAA@XZ
     MCAPI UpdateSubChunkBlocksPacket();
-    /**
-     * @symbol
-     * ??0UpdateSubChunkBlocksPacket\@\@QEAA\@AEBV?$vector\@UNetworkBlockInfo\@UpdateSubChunkBlocksPacket\@\@V?$allocator\@UNetworkBlockInfo\@UpdateSubChunkBlocksPacket\@\@\@std\@\@\@std\@\@0\@Z
-     */
+
+    // symbol:
+    // ??0UpdateSubChunkBlocksPacket@@QEAA@AEBV?$vector@UNetworkBlockInfo@UpdateSubChunkBlocksPacket@@V?$allocator@UNetworkBlockInfo@UpdateSubChunkBlocksPacket@@@std@@@std@@0@Z
     MCAPI
     UpdateSubChunkBlocksPacket(std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const&, std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const&);
-    /**
-     * @symbol ?setSubChunkPosition\@UpdateSubChunkBlocksPacket\@\@QEAAXAEBVSubChunkPos\@\@\@Z
-     */
+
+    // symbol: ?setSubChunkPosition@UpdateSubChunkBlocksPacket@@QEAAXAEBVSubChunkPos@@@Z
     MCAPI void setSubChunkPosition(class SubChunkPos const&);
+
     // NOLINTEND
 };

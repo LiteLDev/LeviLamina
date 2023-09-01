@@ -8,7 +8,6 @@
 namespace ScriptModuleMinecraft {
 
 struct ScriptActorRemovedAfterEvent {
-
 public:
     // prevent constructor by default
     ScriptActorRemovedAfterEvent& operator=(ScriptActorRemovedAfterEvent const&) = delete;
@@ -17,16 +16,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ScriptActorRemovedAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+    // symbol: ??1ScriptActorRemovedAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptActorRemovedAfterEvent();
-    /**
-     * @symbol
-     * ?bind\@ScriptActorRemovedAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptActorRemovedAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptActorRemovedAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptActorRemovedAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorRemovedAfterEvent>
     bind();
+
     // NOLINTEND
 };
 

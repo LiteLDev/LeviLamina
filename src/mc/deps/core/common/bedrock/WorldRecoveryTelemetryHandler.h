@@ -13,7 +13,6 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 namespace Bedrock {
 
 class WorldRecoveryTelemetryHandler : public ::Bedrock::EnableNonOwnerReferences {
-
 public:
     // prevent constructor by default
     WorldRecoveryTelemetryHandler& operator=(WorldRecoveryTelemetryHandler const&) = delete;
@@ -22,12 +21,9 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_WORLDRECOVERYTELEMETRYHANDLER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1WorldRecoveryTelemetryHandler@Bedrock@@UEAA@XZ
     MCVAPI ~WorldRecoveryTelemetryHandler();
-#endif
+
     // NOLINTEND
 };
 

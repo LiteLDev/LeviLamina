@@ -4,7 +4,6 @@
 
 template <typename T0>
 class ToFloatFunction {
-
 public:
     // prevent constructor by default
     ToFloatFunction& operator=(ToFloatFunction const&) = delete;

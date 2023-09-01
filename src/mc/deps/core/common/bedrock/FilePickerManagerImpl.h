@@ -15,7 +15,6 @@ namespace Bedrock { class FilePickerManager; }
 namespace Bedrock {
 
 class FilePickerManagerImpl : public ::Bedrock::FilePickerManager {
-
 public:
     // prevent constructor by default
     FilePickerManagerImpl& operator=(FilePickerManagerImpl const&) = delete;
@@ -23,23 +22,18 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_FILEPICKERMANAGERIMPL
-    /**
-     * @symbol ?directoryPickingEnabledForPlatform\@FilePickerManagerImpl\@Bedrock\@\@UEBA_NXZ
-     */
+    // symbol: ?directoryPickingEnabledForPlatform@FilePickerManagerImpl@Bedrock@@UEBA_NXZ
     MCVAPI bool directoryPickingEnabledForPlatform() const;
-    /**
-     * @symbol
-     * ?pickDirectory\@FilePickerManagerImpl\@Bedrock\@\@UEAA?AV?$shared_ptr\@V?$IAsyncResult\@UDirectoryPickerResult\@FilePickerManager\@Bedrock\@\@\@Threading\@Bedrock\@\@\@std\@\@AEBVDirectoryPickerConfig\@2\@\@Z
-     */
+
+    // symbol:
+    // ?pickDirectory@FilePickerManagerImpl@Bedrock@@UEAA?AV?$shared_ptr@V?$IAsyncResult@UDirectoryPickerResult@FilePickerManager@Bedrock@@@Threading@Bedrock@@@std@@AEBVDirectoryPickerConfig@2@@Z
     MCVAPI std::shared_ptr<
         class Bedrock::Threading::IAsyncResult<struct Bedrock::FilePickerManager::DirectoryPickerResult>>
     pickDirectory(class Bedrock::DirectoryPickerConfig const&);
-#endif
-    /**
-     * @symbol ??0FilePickerManagerImpl\@Bedrock\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0FilePickerManagerImpl@Bedrock@@QEAA@XZ
     MCAPI FilePickerManagerImpl();
+
     // NOLINTEND
 };
 

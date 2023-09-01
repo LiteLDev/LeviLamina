@@ -25,12 +25,9 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_IAPPLICATIONDATASTORES
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1IApplicationDataStores@Bedrock@@UEAA@XZ
     MCVAPI ~IApplicationDataStores();
-#endif
+
     // NOLINTEND
 };
 

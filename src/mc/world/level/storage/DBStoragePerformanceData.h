@@ -11,7 +11,6 @@ public:
 
     // DBStoragePerformanceData inner types define
     class AtomicAccumulator {
-
     public:
         // prevent constructor by default
         AtomicAccumulator& operator=(AtomicAccumulator const&) = delete;
@@ -20,10 +19,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ?reset\@AtomicAccumulator\@DBStoragePerformanceData\@\@QEAAXXZ
-         */
+        // symbol: ?reset@AtomicAccumulator@DBStoragePerformanceData@@QEAAXXZ
         MCAPI void reset();
+
         // NOLINTEND
     };
 
@@ -35,17 +33,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?resetAll\@DBStoragePerformanceData\@\@QEAAXXZ
-     */
+    // symbol: ?resetAll@DBStoragePerformanceData@@QEAAXXZ
     MCAPI void resetAll();
-    /**
-     * @symbol ?CATEGORY_NAMES\@DBStoragePerformanceData\@\@2V?$array\@PEBD$0N\@\@std\@\@A
-     */
+
+    // symbol: ?CATEGORY_NAMES@DBStoragePerformanceData@@2V?$array@PEBD$0N@@std@@A
     MCAPI static std::array<char const*, 13> CATEGORY_NAMES;
-    /**
-     * @symbol ?OPERATION_NAMES\@DBStoragePerformanceData\@\@2V?$array\@PEBD$03\@std\@\@A
-     */
+
+    // symbol: ?OPERATION_NAMES@DBStoragePerformanceData@@2V?$array@PEBD$03@std@@A
     MCAPI static std::array<char const*, 4> OPERATION_NAMES;
+
     // NOLINTEND
 };

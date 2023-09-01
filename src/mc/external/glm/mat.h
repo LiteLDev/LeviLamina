@@ -4,9 +4,8 @@
 
 namespace glm {
 
-template <int32_t T0, int32_t T1, typename T2, int32_t T3>
+template <int T0, int T1, typename T2, int T3>
 struct mat {
-
 public:
     // prevent constructor by default
     mat& operator=(mat const&) = delete;

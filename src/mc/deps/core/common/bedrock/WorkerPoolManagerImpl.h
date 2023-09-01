@@ -22,7 +22,6 @@ public:
 
     // WorkerPoolManagerImpl inner types define
     struct PoolEntry {
-
     public:
         // prevent constructor by default
         PoolEntry& operator=(PoolEntry const&) = delete;
@@ -31,10 +30,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??1PoolEntry\@WorkerPoolManagerImpl\@Bedrock\@\@QEAA\@XZ
-         */
+        // symbol: ??1PoolEntry@WorkerPoolManagerImpl@Bedrock@@QEAA@XZ
         MCAPI ~PoolEntry();
+
         // NOLINTEND
     };
 
@@ -45,26 +43,20 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_WORKERPOOLMANAGERIMPL
-    /**
-     * @symbol
-     * ?createWorkerPool\@WorkerPoolManagerImpl\@Bedrock\@\@UEAA?AV?$shared_ptr\@VPoolHandleInterface\@WorkerPoolManager\@Bedrock\@\@\@std\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@4\@_KAEBVOSThreadPriority\@Threading\@2\@V?$optional\@_K\@4\@_NV?$optional\@H\@4\@\@Z
-     */
+    // symbol:
+    // ?createWorkerPool@WorkerPoolManagerImpl@Bedrock@@UEAA?AV?$shared_ptr@VPoolHandleInterface@WorkerPoolManager@Bedrock@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@_KAEBVOSThreadPriority@Threading@2@V?$optional@_K@4@_NV?$optional@H@4@@Z
     MCVAPI std::shared_ptr<class Bedrock::WorkerPoolManager::PoolHandleInterface>
-    createWorkerPool(std::string, uint64_t, class Bedrock::Threading::OSThreadPriority const&, std::optional<uint64_t>, bool, std::optional<int32_t>);
-    /**
-     * @symbol ?init\@WorkerPoolManagerImpl\@Bedrock\@\@UEAAXXZ
-     */
+    createWorkerPool(std::string, uint64, class Bedrock::Threading::OSThreadPriority const&, std::optional<uint64>, bool, std::optional<int>);
+
+    // symbol: ?init@WorkerPoolManagerImpl@Bedrock@@UEAAXXZ
     MCVAPI void init();
-    /**
-     * @symbol ?tick\@WorkerPoolManagerImpl\@Bedrock\@\@UEAAXXZ
-     */
+
+    // symbol: ?tick@WorkerPoolManagerImpl@Bedrock@@UEAAXXZ
     MCVAPI void tick();
-#endif
-    /**
-     * @symbol ??0WorkerPoolManagerImpl\@Bedrock\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0WorkerPoolManagerImpl@Bedrock@@QEAA@XZ
     MCAPI WorkerPoolManagerImpl();
+
     // NOLINTEND
 };
 

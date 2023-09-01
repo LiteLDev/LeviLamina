@@ -14,7 +14,6 @@ class ISurfaceBuilder;
 namespace VanillaSurfaceBuilders {
 
 class NetherSurfaceBuilder : public ::ISurfaceBuilder {
-
 public:
     // prevent constructor by default
     NetherSurfaceBuilder& operator=(NetherSurfaceBuilder const&) = delete;
@@ -22,26 +21,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?init\@NetherSurfaceBuilder\@VanillaSurfaceBuilders\@\@UEAAXAEAVEntityContext\@\@I\@Z
-     */
-    virtual void init(class EntityContext&, uint32_t);
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?buildSurfaceAt\@NetherSurfaceBuilder\@VanillaSurfaceBuilders\@\@UEBAXAEBUBuildParameters\@ISurfaceBuilder\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?init@NetherSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVEntityContext@@I@Z
+    virtual void init(class EntityContext&, uint);
+
+    // vIndex: 2, symbol:
+    // ?buildSurfaceAt@NetherSurfaceBuilder@VanillaSurfaceBuilders@@UEBAXAEBUBuildParameters@ISurfaceBuilder@@@Z
     virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const&) const;
-    /**
-     * @symbol ??0NetherSurfaceBuilder\@VanillaSurfaceBuilders\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0NetherSurfaceBuilder@VanillaSurfaceBuilders@@QEAA@XZ
     MCAPI NetherSurfaceBuilder();
+
     // NOLINTEND
 };
 

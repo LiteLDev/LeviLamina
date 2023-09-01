@@ -5,7 +5,6 @@
 namespace Scripting {
 
 struct UUID {
-
 public:
     // prevent constructor by default
     UUID& operator=(UUID const&) = delete;

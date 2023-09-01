@@ -6,7 +6,6 @@
 #include "mc/events/LevelSoundEvent.h"
 
 class DanceComponentListener {
-
 public:
     // prevent constructor by default
     DanceComponentListener& operator=(DanceComponentListener const&) = delete;
@@ -15,29 +14,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?setLevel\@DanceComponentListener\@\@QEAAXAEAVLevel\@\@\@Z
-     */
+    // symbol: ?setLevel@DanceComponentListener@@QEAAXAEAVLevel@@@Z
     MCAPI void setLevel(class Level&);
-    /**
-     * @symbol ??1DanceComponentListener\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1DanceComponentListener@@QEAA@XZ
     MCAPI ~DanceComponentListener();
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_onLevelSoundEvent\@DanceComponentListener\@\@AEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@HAEBUActorDefinitionIdentifier\@\@_N3\@Z
-     */
-    MCAPI void _onLevelSoundEvent(
-        enum class LevelSoundEvent,
-        class Vec3 const&,
-        int32_t,
-        struct ActorDefinitionIdentifier const&,
-        bool,
-        bool
-    );
+    // symbol:
+    // ?_onLevelSoundEvent@DanceComponentListener@@AEAAXW4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z
+    MCAPI void
+    _onLevelSoundEvent(::LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
+
     // NOLINTEND
 };

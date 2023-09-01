@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 template <typename T0>
-class Spline {
-
+struct Spline {
 public:
     // prevent constructor by default
     Spline& operator=(Spline const&) = delete;

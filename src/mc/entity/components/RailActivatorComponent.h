@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class RailActivatorComponent {
-
 public:
     // prevent constructor by default
     RailActivatorComponent& operator=(RailActivatorComponent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?ejectAllPassengers\@RailActivatorComponent\@\@QEAAXAEAVActor\@\@\@Z
-     */
+    // symbol: ?ejectAllPassengers@RailActivatorComponent@@QEAAXAEAVActor@@@Z
     MCAPI void ejectAllPassengers(class Actor&);
+
     // NOLINTEND
 };

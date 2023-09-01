@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ActorEquippedArmorEvent {
-
 public:
     // prevent constructor by default
     ActorEquippedArmorEvent& operator=(ActorEquippedArmorEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ActorEquippedArmorEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1ActorEquippedArmorEvent@@QEAA@XZ
     MCAPI ~ActorEquippedArmorEvent();
+
     // NOLINTEND
 };

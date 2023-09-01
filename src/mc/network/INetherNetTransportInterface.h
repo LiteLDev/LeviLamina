@@ -5,7 +5,6 @@
 namespace NetherNet {
 
 class INetherNetTransportInterface {
-
 public:
     // prevent constructor by default
     INetherNetTransportInterface& operator=(INetherNetTransportInterface const&) = delete;

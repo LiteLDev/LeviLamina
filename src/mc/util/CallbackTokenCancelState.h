@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class CallbackTokenCancelState {
-
 public:
     // prevent constructor by default
     CallbackTokenCancelState& operator=(CallbackTokenCancelState const&) = delete;
@@ -11,13 +10,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0CallbackTokenCancelState\@\@QEAA\@XZ
-     */
+    // symbol: ??0CallbackTokenCancelState@@QEAA@XZ
     MCAPI CallbackTokenCancelState();
-    /**
-     * @symbol ?wasCanceled\@CallbackTokenCancelState\@\@QEBA_NXZ
-     */
+
+    // symbol: ?wasCanceled@CallbackTokenCancelState@@QEBA_NXZ
     MCAPI bool wasCanceled() const;
+
     // NOLINTEND
 };

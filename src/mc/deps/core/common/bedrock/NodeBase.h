@@ -13,7 +13,6 @@ public:
 
     // NodeBase inner types define
     class Offset {
-
     public:
         // prevent constructor by default
         Offset& operator=(Offset const&) = delete;
@@ -29,23 +28,19 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_getBase\@NodeBase\@JSONObject\@Bedrock\@\@IEBAAEBV123\@VOffset\@123\@E\@Z
-     */
-    MCAPI class Bedrock::JSONObject::NodeBase const&
-        _getBase(class Bedrock::JSONObject::NodeBase::Offset, uint8_t) const;
+    // symbol: ?_getBase@NodeBase@JSONObject@Bedrock@@IEBAAEBV123@VOffset@123@E@Z
+    MCAPI class Bedrock::JSONObject::NodeBase const& _getBase(class Bedrock::JSONObject::NodeBase::Offset, uchar) const;
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?list_set_next\@NodeBase\@JSONObject\@Bedrock\@\@CAXAEAV123\@0\@Z
-     */
+    // symbol: ?list_set_next@NodeBase@JSONObject@Bedrock@@CAXAEAV123@0@Z
     MCAPI static void list_set_next(class Bedrock::JSONObject::NodeBase&, class Bedrock::JSONObject::NodeBase&);
-    /**
-     * @symbol ?list_set_prev\@NodeBase\@JSONObject\@Bedrock\@\@CAXAEAV123\@0\@Z
-     */
+
+    // symbol: ?list_set_prev@NodeBase@JSONObject@Bedrock@@CAXAEAV123@0@Z
     MCAPI static void list_set_prev(class Bedrock::JSONObject::NodeBase&, class Bedrock::JSONObject::NodeBase&);
+
     // NOLINTEND
 };
 

@@ -5,7 +5,6 @@
 namespace Util::ResourceUri {
 
 struct ValidationResult {
-
 public:
     // prevent constructor by default
     ValidationResult& operator=(ValidationResult const&) = delete;
@@ -14,14 +13,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?isSuccess\@ValidationResult\@ResourceUri\@Util\@\@QEBA_NXZ
-     */
+    // symbol: ?isSuccess@ValidationResult@ResourceUri@Util@@QEBA_NXZ
     MCAPI bool isSuccess() const;
-    /**
-     * @symbol ??1ValidationResult\@ResourceUri\@Util\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ValidationResult@ResourceUri@Util@@QEAA@XZ
     MCAPI ~ValidationResult();
+
     // NOLINTEND
 };
 

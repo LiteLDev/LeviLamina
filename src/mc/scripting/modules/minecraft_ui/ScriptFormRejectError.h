@@ -9,7 +9,6 @@
 namespace ScriptModuleMinecraftServerUI {
 
 class ScriptFormRejectError {
-
 public:
     // prevent constructor by default
     ScriptFormRejectError& operator=(ScriptFormRejectError const&) = delete;
@@ -18,20 +17,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ScriptFormRejectError\@ScriptModuleMinecraftServerUI\@\@QEAA\@W4ScriptFormRejectReason\@1\@\@Z
-     */
-    MCAPI ScriptFormRejectError(enum class ScriptModuleMinecraftServerUI::ScriptFormRejectReason);
-    /**
-     * @symbol ??1ScriptFormRejectError\@ScriptModuleMinecraftServerUI\@\@QEAA\@XZ
-     */
+    // symbol: ??0ScriptFormRejectError@ScriptModuleMinecraftServerUI@@QEAA@W4ScriptFormRejectReason@1@@Z
+    MCAPI ScriptFormRejectError(::ScriptModuleMinecraftServerUI::ScriptFormRejectReason);
+
+    // symbol: ??1ScriptFormRejectError@ScriptModuleMinecraftServerUI@@QEAA@XZ
     MCAPI ~ScriptFormRejectError();
-    /**
-     * @symbol
-     * ?bind\@ScriptFormRejectError\@ScriptModuleMinecraftServerUI\@\@SA?AV?$ErrorBindingBuilder\@VScriptFormRejectError\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptFormRejectError@ScriptModuleMinecraftServerUI@@SA?AV?$ErrorBindingBuilder@VScriptFormRejectError@ScriptModuleMinecraftServerUI@@@Scripting@@XZ
     MCAPI static class Scripting::ErrorBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptFormRejectError>
     bind();
+
     // NOLINTEND
 };
 

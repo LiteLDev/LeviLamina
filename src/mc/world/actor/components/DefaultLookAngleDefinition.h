@@ -11,7 +11,6 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 struct DefaultLookAngleDefinition {
-
 public:
     // prevent constructor by default
     DefaultLookAngleDefinition& operator=(DefaultLookAngleDefinition const&) = delete;
@@ -20,12 +19,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?buildSchema\@DefaultLookAngleDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UDefaultLookAngleDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+    // symbol:
+    // ?buildSchema@DefaultLookAngleDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UDefaultLookAngleDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct DefaultLookAngleDefinition>>&);
+
     // NOLINTEND
 };

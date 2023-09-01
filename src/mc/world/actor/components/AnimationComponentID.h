@@ -6,7 +6,6 @@
 #include "mc/enums/AttachableSlotIndex.h"
 
 class AnimationComponentID {
-
 public:
     // prevent constructor by default
     AnimationComponentID& operator=(AnimationComponentID const&) = delete;
@@ -15,9 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0AnimationComponentID\@\@QEAA\@AEBUActorUniqueID\@\@GW4AttachableSlotIndex\@\@\@Z
-     */
-    MCAPI AnimationComponentID(struct ActorUniqueID const&, uint16_t, enum class AttachableSlotIndex);
+    // symbol: ??0AnimationComponentID@@QEAA@AEBUActorUniqueID@@GW4AttachableSlotIndex@@@Z
+    MCAPI AnimationComponentID(struct ActorUniqueID const&, ushort, ::AttachableSlotIndex);
+
     // NOLINTEND
 };

@@ -4,7 +4,6 @@
 
 template <typename T0>
 class SelectorIterator {
-
 public:
     // prevent constructor by default
     SelectorIterator& operator=(SelectorIterator const&) = delete;

@@ -5,7 +5,6 @@
 namespace cereal {
 
 struct ReflectionCtx {
-
 public:
     // prevent constructor by default
     ReflectionCtx& operator=(ReflectionCtx const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?global\@ReflectionCtx\@cereal\@\@SAAEAU12\@XZ
-     */
+    // symbol: ?global@ReflectionCtx@cereal@@SAAEAU12@XZ
     MCAPI static struct cereal::ReflectionCtx& global();
+
     // NOLINTEND
 };
 

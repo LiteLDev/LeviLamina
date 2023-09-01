@@ -10,7 +10,6 @@ namespace Json { class Value; }
 namespace ScriptModuleMinecraftServerUI {
 
 class IControl {
-
 public:
     // prevent constructor by default
     IControl& operator=(IControl const&) = delete;
@@ -19,22 +18,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getJson\@ToggleControl\@ScriptModuleMinecraftServerUI\@\@UEBA?AVValue\@Json\@\@XZ
-     */
+
+    // vIndex: 1, symbol: ?getJson@ToggleControl@ScriptModuleMinecraftServerUI@@UEBA?AVValue@Json@@XZ
     virtual class Json::Value getJson() const = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFTSERVERUI_ICONTROL
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1IControl@ScriptModuleMinecraftServerUI@@UEAA@XZ
     MCVAPI ~IControl();
-#endif
+
     // NOLINTEND
 };
 

@@ -4,7 +4,6 @@
 
 template <typename T0>
 class WildcardCommandSelector {
-
 public:
     // prevent constructor by default
     WildcardCommandSelector& operator=(WildcardCommandSelector const&) = delete;

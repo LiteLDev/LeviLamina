@@ -4,7 +4,6 @@
 
 template <typename T0>
 class WeightedChoices {
-
 public:
     // prevent constructor by default
     WeightedChoices& operator=(WeightedChoices const&) = delete;

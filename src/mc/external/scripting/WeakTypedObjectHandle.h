@@ -6,7 +6,6 @@ namespace Scripting {
 
 template <typename T0>
 class WeakTypedObjectHandle {
-
 public:
     // prevent constructor by default
     WeakTypedObjectHandle& operator=(WeakTypedObjectHandle const&) = delete;

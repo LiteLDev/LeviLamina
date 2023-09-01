@@ -5,7 +5,6 @@
 namespace SFAT {
 
 class CRC16 {
-
 public:
     // prevent constructor by default
     CRC16& operator=(CRC16 const&) = delete;
@@ -14,10 +13,16 @@ public:
 
 private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?table\@CRC16\@SFAT\@\@0QBIB
-     */
-    MCAPI static uint32_t const table[];
+    // symbol: ?table@CRC16@SFAT@@0QBIB
+    MCAPI static uint const table[];
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $table() { return table; }
+
     // NOLINTEND
 };
 

@@ -13,7 +13,6 @@ public:
 
     // FilePickerManager inner types define
     struct DirectoryPickerResult {
-
     public:
         // prevent constructor by default
         DirectoryPickerResult& operator=(DirectoryPickerResult const&) = delete;
@@ -22,10 +21,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??1DirectoryPickerResult\@FilePickerManager\@Bedrock\@\@QEAA\@XZ
-         */
+        // symbol: ??1DirectoryPickerResult@FilePickerManager@Bedrock@@QEAA@XZ
         MCAPI ~DirectoryPickerResult();
+
         // NOLINTEND
     };
 

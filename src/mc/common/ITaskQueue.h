@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ITaskQueue {
-
 public:
     // prevent constructor by default
     ITaskQueue& operator=(ITaskQueue const&) = delete;

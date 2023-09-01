@@ -5,7 +5,6 @@
 namespace Core {
 
 class PathPart {
-
 public:
     // prevent constructor by default
     PathPart& operator=(PathPart const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1PathPart\@Core\@\@QEAA\@XZ
-     */
+    // symbol: ??1PathPart@Core@@QEAA@XZ
     MCAPI ~PathPart();
+
     // NOLINTEND
 };
 

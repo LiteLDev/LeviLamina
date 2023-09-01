@@ -13,7 +13,6 @@ class Vec3;
 namespace ScriptModuleMinecraft {
 
 struct ScriptNavigationResult {
-
 public:
     // prevent constructor by default
     ScriptNavigationResult& operator=(ScriptNavigationResult const&) = delete;
@@ -22,20 +21,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?getPath\@ScriptNavigationResult\@ScriptModuleMinecraft\@\@QEBA?AV?$vector\@VVec3\@\@V?$allocator\@VVec3\@\@\@std\@\@\@std\@\@XZ
-     */
+    // symbol:
+    // ?getPath@ScriptNavigationResult@ScriptModuleMinecraft@@QEBA?AV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@XZ
     MCAPI std::vector<class Vec3> getPath() const;
-    /**
-     * @symbol ??1ScriptNavigationResult\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ScriptNavigationResult@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptNavigationResult();
-    /**
-     * @symbol
-     * ?bind\@ScriptNavigationResult\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptNavigationResult\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptNavigationResult@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptNavigationResult@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptNavigationResult> bind();
+
     // NOLINTEND
 };
 

@@ -6,7 +6,6 @@
 #include "mc/world/level/levelgen/structure/StructureStart.h"
 
 class OceanRuinStart : public ::StructureStart {
-
 public:
     // prevent constructor by default
     OceanRuinStart& operator=(OceanRuinStart const&) = delete;
@@ -15,14 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @symbol ?createRuin\@OceanRuinStart\@\@QEAAXAEAVDimension\@\@AEAVRandom\@\@HH\@Z
-     */
-    MCAPI void createRuin(class Dimension&, class Random&, int32_t, int32_t);
+
+    // symbol: ?createRuin@OceanRuinStart@@QEAAXAEAVDimension@@AEAVRandom@@HH@Z
+    MCAPI void createRuin(class Dimension&, class Random&, int, int);
+
     // NOLINTEND
 };

@@ -5,7 +5,6 @@
 namespace Bedrock::Memory {
 
 class IMemoryAllocator {
-
 public:
     // prevent constructor by default
     IMemoryAllocator& operator=(IMemoryAllocator const&) = delete;

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct BiomeDecorationFeature {
-
 public:
     // prevent constructor by default
     BiomeDecorationFeature& operator=(BiomeDecorationFeature const&) = delete;
@@ -11,17 +10,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0BiomeDecorationFeature\@\@QEAA\@AEBU0\@\@Z
-     */
+    // symbol: ??0BiomeDecorationFeature@@QEAA@AEBU0@@Z
     MCAPI BiomeDecorationFeature(struct BiomeDecorationFeature const&);
-    /**
-     * @symbol ??0BiomeDecorationFeature\@\@QEAA\@$$QEAU0\@\@Z
-     */
+
+    // symbol: ??0BiomeDecorationFeature@@QEAA@$$QEAU0@@Z
     MCAPI BiomeDecorationFeature(struct BiomeDecorationFeature&&);
-    /**
-     * @symbol ??1BiomeDecorationFeature\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1BiomeDecorationFeature@@QEAA@XZ
     MCAPI ~BiomeDecorationFeature();
+
     // NOLINTEND
 };

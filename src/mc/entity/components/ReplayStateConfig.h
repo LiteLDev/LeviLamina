@@ -6,7 +6,6 @@
 #include "mc/enums/ReplayStateMode.h"
 
 struct ReplayStateConfig {
-
 public:
     // prevent constructor by default
     ReplayStateConfig& operator=(ReplayStateConfig const&) = delete;
@@ -15,9 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ReplayStateConfig\@\@QEAA\@W4ReplayStateMode\@\@\@Z
-     */
-    MCAPI ReplayStateConfig(enum class ReplayStateMode);
+    // symbol: ??0ReplayStateConfig@@QEAA@W4ReplayStateMode@@@Z
+    MCAPI ReplayStateConfig(::ReplayStateMode);
+
     // NOLINTEND
 };

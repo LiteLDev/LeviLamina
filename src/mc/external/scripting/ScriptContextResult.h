@@ -5,7 +5,6 @@
 namespace Scripting {
 
 struct ScriptContextResult {
-
 public:
     // prevent constructor by default
     ScriptContextResult& operator=(ScriptContextResult const&) = delete;

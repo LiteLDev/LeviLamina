@@ -6,7 +6,6 @@
 #include "mc/common/wrapper/WeakRefT.h"
 
 struct PlayerDamageEvent {
-
 public:
     // prevent constructor by default
     PlayerDamageEvent& operator=(PlayerDamageEvent const&) = delete;
@@ -15,14 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ??0PlayerDamageEvent\@\@QEAA\@V?$WeakRefT\@UEntityRefTraits\@\@\@\@V?$unique_ptr\@VActorDamageSource\@\@U?$default_delete\@VActorDamageSource\@\@\@std\@\@\@std\@\@\@Z
-     */
+    // symbol:
+    // ??0PlayerDamageEvent@@QEAA@V?$WeakRefT@UEntityRefTraits@@@@V?$unique_ptr@VActorDamageSource@@U?$default_delete@VActorDamageSource@@@std@@@std@@@Z
     MCAPI PlayerDamageEvent(class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class ActorDamageSource>);
-    /**
-     * @symbol ??1PlayerDamageEvent\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1PlayerDamageEvent@@QEAA@XZ
     MCAPI ~PlayerDamageEvent();
+
     // NOLINTEND
 };

@@ -21,45 +21,36 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEBUGCOMMAND
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1ScriptDebugCommand@@UEAA@XZ
     MCVAPI ~ScriptDebugCommand();
-#endif
-    /**
-     * @symbol ??0ScriptDebugCommand\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0ScriptDebugCommand@@QEAA@XZ
     MCAPI ScriptDebugCommand();
+
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_handleDebuggerAttach\@ScriptDebugCommand\@\@IEBAXPEAVIScriptDebugger\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4DebuggerAction\@1\@1GAEAVCommandOutput\@\@\@Z
-     */
+    // symbol:
+    // ?_handleDebuggerAttach@ScriptDebugCommand@@IEBAXPEAVIScriptDebugger@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4DebuggerAction@1@1GAEAVCommandOutput@@@Z
     MCAPI void
-    _handleDebuggerAttach(class IScriptDebugger*, std::string const&, enum class ScriptDebugCommand::DebuggerAction, std::string const&, uint16_t, class CommandOutput&)
+    _handleDebuggerAttach(class IScriptDebugger*, std::string const&, ::ScriptDebugCommand::DebuggerAction, std::string const&, ushort, class CommandOutput&)
         const;
-    /**
-     * @symbol
-     * ?_handleProfilerAction\@ScriptDebugCommand\@\@IEBAXPEAVIScriptDebugger\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ProfilerAction\@1\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // symbol:
+    // ?_handleProfilerAction@ScriptDebugCommand@@IEBAXPEAVIScriptDebugger@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ProfilerAction@1@AEAVCommandOutput@@@Z
     MCAPI void
-    _handleProfilerAction(class IScriptDebugger*, std::string const&, enum class ScriptDebugCommand::ProfilerAction, class CommandOutput&)
+    _handleProfilerAction(class IScriptDebugger*, std::string const&, ::ScriptDebugCommand::ProfilerAction, class CommandOutput&)
         const;
-    /**
-     * @symbol
-     * ?_handleWatchdogAction\@ScriptDebugCommand\@\@IEBAXPEAVIScriptDebugger\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4WatchdogAction\@1\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // symbol:
+    // ?_handleWatchdogAction@ScriptDebugCommand@@IEBAXPEAVIScriptDebugger@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4WatchdogAction@1@AEAVCommandOutput@@@Z
     MCAPI void
-    _handleWatchdogAction(class IScriptDebugger*, std::string const&, enum class ScriptDebugCommand::WatchdogAction, class CommandOutput&)
+    _handleWatchdogAction(class IScriptDebugger*, std::string const&, ::ScriptDebugCommand::WatchdogAction, class CommandOutput&)
         const;
+
     // NOLINTEND
 };

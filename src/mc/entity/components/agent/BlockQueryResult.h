@@ -5,7 +5,6 @@
 namespace AgentComponents {
 
 struct BlockQueryResult {
-
 public:
     // prevent constructor by default
     BlockQueryResult& operator=(BlockQueryResult const&) = delete;

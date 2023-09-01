@@ -5,7 +5,6 @@
 namespace snappy {
 
 class Source {
-
 public:
     // prevent constructor by default
     Source& operator=(Source const&) = delete;
@@ -14,12 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNAPPY_SOURCE
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1Source@snappy@@UEAA@XZ
     MCVAPI ~Source();
-#endif
+
     // NOLINTEND
 };
 

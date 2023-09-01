@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct BlockPermutationDescription {
-
 public:
     // prevent constructor by default
     BlockPermutationDescription& operator=(BlockPermutationDescription const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1BlockPermutationDescription\@\@QEAA\@XZ
-     */
+    // symbol: ??1BlockPermutationDescription@@QEAA@XZ
     MCAPI ~BlockPermutationDescription();
+
     // NOLINTEND
 };

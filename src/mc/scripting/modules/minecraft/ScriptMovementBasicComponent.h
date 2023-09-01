@@ -15,7 +15,6 @@ namespace ScriptModuleMinecraft { class MovementScriptActorComponent; }
 namespace ScriptModuleMinecraft {
 
 class ScriptMovementBasicComponent : public ::ScriptModuleMinecraft::MovementScriptActorComponent {
-
 public:
     // prevent constructor by default
     ScriptMovementBasicComponent& operator=(ScriptMovementBasicComponent const&) = delete;
@@ -24,32 +23,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTMOVEMENTBASICCOMPONENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1ScriptMovementBasicComponent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptMovementBasicComponent();
-#endif
-    /**
-     * @symbol
-     * ?bind\@ScriptMovementBasicComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMovementBasicComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptMovementBasicComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptMovementBasicComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementBasicComponent> bind();
-    /**
-     * @symbol
-     * ?bindV010\@ScriptMovementBasicComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMovementBasicComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bindV010@ScriptMovementBasicComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptMovementBasicComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementBasicComponent>
     bindV010();
-    /**
-     * @symbol ?ComponentId\@ScriptMovementBasicComponent\@ScriptModuleMinecraft\@\@2PEBDEB
-     */
+
+    // symbol: ?ComponentId@ScriptMovementBasicComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;
+
     // NOLINTEND
 };
 

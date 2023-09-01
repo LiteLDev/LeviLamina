@@ -6,7 +6,6 @@
 #include "mc/enums/FilterSubject.h"
 
 class VariantParameterList {
-
 public:
     // prevent constructor by default
     VariantParameterList& operator=(VariantParameterList const&) = delete;
@@ -14,13 +13,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0VariantParameterList\@\@QEAA\@XZ
-     */
+    // symbol: ??0VariantParameterList@@QEAA@XZ
     MCAPI VariantParameterList();
-    /**
-     * @symbol ?hasParameter\@VariantParameterList\@\@QEBA_NW4FilterSubject\@\@\@Z
-     */
-    MCAPI bool hasParameter(enum class FilterSubject) const;
+
+    // symbol: ?hasParameter@VariantParameterList@@QEBA_NW4FilterSubject@@@Z
+    MCAPI bool hasParameter(::FilterSubject) const;
+
     // NOLINTEND
 };

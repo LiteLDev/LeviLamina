@@ -5,7 +5,6 @@
 namespace Bedrock {
 
 class CrashManager {
-
 public:
     // prevent constructor by default
     CrashManager& operator=(CrashManager const&) = delete;

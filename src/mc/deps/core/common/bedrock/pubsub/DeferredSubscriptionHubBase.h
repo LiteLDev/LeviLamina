@@ -16,7 +16,6 @@ namespace Bedrock::PubSub { class RawSubscription; }
 namespace Bedrock::PubSub {
 
 class DeferredSubscriptionHubBase : public ::Bedrock::PubSub::DeferredSubscriptionHub {
-
 public:
     // prevent constructor by default
     DeferredSubscriptionHubBase& operator=(DeferredSubscriptionHubBase const&) = delete;
@@ -25,58 +24,37 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?runDeferredEvents\@DeferredSubscriptionHubBase\@PubSub\@Bedrock\@\@UEAA_K_K\@Z
-     */
-    virtual uint64_t runDeferredEvents(uint64_t);
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?runDeferredEventsForDuration\@DeferredSubscriptionHubBase\@PubSub\@Bedrock\@\@UEAA_KV?$duration\@_JU?$ratio\@$00$0DOI\@\@std\@\@\@chrono\@std\@\@\@Z
-     */
-    virtual uint64_t runDeferredEventsForDuration(std::chrono::milliseconds);
-    /**
-     * @vftbl 4
-     * @symbol ?clear\@DeferredSubscriptionHubBase\@PubSub\@Bedrock\@\@UEAAXXZ
-     */
+
+    // vIndex: 1, symbol: ?runDeferredEvents@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEAA_K_K@Z
+    virtual uint64 runDeferredEvents(uint64);
+
+    // vIndex: 2, symbol:
+    // ?runDeferredEventsForDuration@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEAA_KV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@@Z
+    virtual uint64 runDeferredEventsForDuration(std::chrono::milliseconds);
+
+    // vIndex: 4, symbol: ?clear@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEAAXXZ
     virtual void clear();
-    /**
-     * @vftbl 5
-     * @symbol ?erase\@DeferredSubscriptionHubBase\@PubSub\@Bedrock\@\@UEAA_KAEAVRawSubscription\@23\@\@Z
-     */
-    virtual uint64_t erase(class Bedrock::PubSub::RawSubscription&);
-    /**
-     * @vftbl 6
-     * @symbol ?size\@DeferredSubscriptionHubBase\@PubSub\@Bedrock\@\@UEBA_KXZ
-     */
-    virtual uint64_t size() const;
-    /**
-     * @vftbl 7
-     * @symbol ?empty\@DeferredSubscriptionHubBase\@PubSub\@Bedrock\@\@UEBA_NXZ
-     */
+
+    // vIndex: 5, symbol: ?erase@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEAA_KAEAVRawSubscription@23@@Z
+    virtual uint64 erase(class Bedrock::PubSub::RawSubscription&);
+
+    // vIndex: 6, symbol: ?size@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEBA_KXZ
+    virtual uint64 size() const;
+
+    // vIndex: 7, symbol: ?empty@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEBA_NXZ
     virtual bool empty() const;
-    /**
-     * @vftbl 9
-     * @symbol ?_join\@DeferredSubscriptionHubBase\@PubSub\@Bedrock\@\@EEAAX$$QEAVDeferredSubscription\@23\@\@Z
-     */
+
+    // vIndex: 9, symbol: ?_join@DeferredSubscriptionHubBase@PubSub@Bedrock@@EEAAX$$QEAVDeferredSubscription@23@@Z
     virtual void _join(class Bedrock::PubSub::DeferredSubscription&&);
-    /**
-     * @vftbl 11
-     * @symbol ?_runOneEvent\@PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@EEAA_NXZ
-     */
+
+    // vIndex: 11, symbol: ?_runOneEvent@PriorityDeferredSubscriptionHub@PubSub@Bedrock@@EEAA_NXZ
     virtual bool _runOneEvent() = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_PUBSUB_DEFERREDSUBSCRIPTIONHUBBASE
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1DeferredSubscriptionHubBase@PubSub@Bedrock@@UEAA@XZ
     MCVAPI ~DeferredSubscriptionHubBase();
-#endif
+
     // NOLINTEND
 };
 

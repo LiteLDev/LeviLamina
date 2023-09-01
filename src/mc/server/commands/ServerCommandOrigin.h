@@ -17,7 +17,6 @@ namespace mce { class UUID; }
 // clang-format on
 
 class ServerCommandOrigin : public ::CommandOrigin {
-
 public:
     // prevent constructor by default
     ServerCommandOrigin& operator=(ServerCommandOrigin const&) = delete;
@@ -26,99 +25,64 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?getRequestId\@ServerCommandOrigin\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // vIndex: 1, symbol:
+    // ?getRequestId@ServerCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const& getRequestId() const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?getName\@ServerCommandOrigin\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // vIndex: 2, symbol:
+    // ?getName@ServerCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const;
-    /**
-     * @vftbl 3
-     * @symbol ?getBlockPosition\@ServerCommandOrigin\@\@UEBA?AVBlockPos\@\@XZ
-     */
+
+    // vIndex: 3, symbol: ?getBlockPosition@ServerCommandOrigin@@UEBA?AVBlockPos@@XZ
     virtual class BlockPos getBlockPosition() const;
-    /**
-     * @vftbl 4
-     * @symbol ?getWorldPosition\@ServerCommandOrigin\@\@UEBA?AVVec3\@\@XZ
-     */
+
+    // vIndex: 4, symbol: ?getWorldPosition@ServerCommandOrigin@@UEBA?AVVec3@@XZ
     virtual class Vec3 getWorldPosition() const;
-    /**
-     * @vftbl 5
-     * @symbol ?getRotation\@ServerCommandOrigin\@\@UEBA?AV?$optional\@VVec2\@\@\@std\@\@XZ
-     */
+
+    // vIndex: 5, symbol: ?getRotation@ServerCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
     virtual std::optional<class Vec2> getRotation() const;
-    /**
-     * @vftbl 6
-     * @symbol ?getLevel\@ServerCommandOrigin\@\@UEBAPEAVLevel\@\@XZ
-     */
+
+    // vIndex: 6, symbol: ?getLevel@ServerCommandOrigin@@UEBAPEAVLevel@@XZ
     virtual class Level* getLevel() const;
-    /**
-     * @vftbl 7
-     * @symbol ?getDimension\@ServerCommandOrigin\@\@UEBAPEAVDimension\@\@XZ
-     */
+
+    // vIndex: 7, symbol: ?getDimension@ServerCommandOrigin@@UEBAPEAVDimension@@XZ
     virtual class Dimension* getDimension() const;
-    /**
-     * @vftbl 8
-     * @symbol ?getEntity\@ServerCommandOrigin\@\@UEBAPEAVActor\@\@XZ
-     */
+
+    // vIndex: 8, symbol: ?getEntity@ServerCommandOrigin@@UEBAPEAVActor@@XZ
     virtual class Actor* getEntity() const;
-    /**
-     * @vftbl 9
-     * @symbol ?getPermissionsLevel\@ServerCommandOrigin\@\@UEBA?AW4CommandPermissionLevel\@\@XZ
-     */
-    virtual enum class CommandPermissionLevel getPermissionsLevel() const;
-    /**
-     * @vftbl 10
-     * @symbol
-     * ?clone\@ServerCommandOrigin\@\@UEBA?AV?$unique_ptr\@VCommandOrigin\@\@U?$default_delete\@VCommandOrigin\@\@\@std\@\@\@std\@\@XZ
-     */
+
+    // vIndex: 9, symbol: ?getPermissionsLevel@ServerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
+    virtual ::CommandPermissionLevel getPermissionsLevel() const;
+
+    // vIndex: 10, symbol:
+    // ?clone@ServerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
     virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /**
-     * @vftbl 17
-     * @symbol ?canUseCommandsWithoutCheatsEnabled\@ServerCommandOrigin\@\@UEBA_NXZ
-     */
+
+    // vIndex: 17, symbol: ?canUseCommandsWithoutCheatsEnabled@ServerCommandOrigin@@UEBA_NXZ
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
-    /**
-     * @vftbl 18
-     * @symbol ?isSelectorExpansionAllowed\@ServerCommandOrigin\@\@UEBA_NXZ
-     */
+
+    // vIndex: 18, symbol: ?isSelectorExpansionAllowed@ServerCommandOrigin@@UEBA_NXZ
     virtual bool isSelectorExpansionAllowed() const;
-    /**
-     * @vftbl 23
-     * @symbol ?getOriginType\@ServerCommandOrigin\@\@UEBA?AW4CommandOriginType\@\@XZ
-     */
-    virtual enum class CommandOriginType getOriginType() const;
-    /**
-     * @vftbl 29
-     * @symbol ?serialize\@ServerCommandOrigin\@\@UEBA?AVCompoundTag\@\@XZ
-     */
+
+    // vIndex: 23, symbol: ?getOriginType@ServerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+    virtual ::CommandOriginType getOriginType() const;
+
+    // vIndex: 29, symbol: ?serialize@ServerCommandOrigin@@UEBA?AVCompoundTag@@XZ
     virtual class CompoundTag serialize() const;
-    /**
-     * @vftbl 30
-     * @symbol ?isValid\@ServerCommandOrigin\@\@UEBA_NXZ
-     */
+
+    // vIndex: 30, symbol: ?isValid@ServerCommandOrigin@@UEBA_NXZ
     virtual bool isValid() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCOMMANDORIGIN
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1ServerCommandOrigin@@UEAA@XZ
     MCVAPI ~ServerCommandOrigin();
-#endif
-    /**
-     * @symbol
-     * ??0ServerCommandOrigin\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVServerLevel\@\@W4CommandPermissionLevel\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
-     */
-    MCAPI ServerCommandOrigin(std::string const&, class ServerLevel&, enum class CommandPermissionLevel, DimensionType);
+
+    // symbol:
+    // ??0ServerCommandOrigin@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVServerLevel@@W4CommandPermissionLevel@@V?$AutomaticID@VDimension@@H@@@Z
+    MCAPI
+    ServerCommandOrigin(std::string const&, class ServerLevel&, ::CommandPermissionLevel, class AutomaticID<class Dimension, int>);
+
     // NOLINTEND
 };

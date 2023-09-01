@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct CrashDumpFrameData {
-
 public:
     // prevent constructor by default
     CrashDumpFrameData& operator=(CrashDumpFrameData const&) = delete;
@@ -12,13 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0CrashDumpFrameData\@\@QEAA\@HH_KMMMM\@Z
-     */
-    MCAPI CrashDumpFrameData(int32_t, int32_t, uint64_t, float, float, float, float);
-    /**
-     * @symbol ?kFormat\@CrashDumpFrameData\@\@2QBUCrashDumpFormatEntryImpl\@\@B
-     */
+    // symbol: ??0CrashDumpFrameData@@QEAA@HH_KMMMM@Z
+    MCAPI CrashDumpFrameData(int, int, uint64, float, float, float, float);
+
+    // symbol: ?kFormat@CrashDumpFrameData@@2QBUCrashDumpFormatEntryImpl@@B
     MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
+
     // NOLINTEND
 };

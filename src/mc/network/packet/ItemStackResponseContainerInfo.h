@@ -6,7 +6,6 @@
 #include "mc/world/containers/ContainerEnumName.h"
 
 struct ItemStackResponseContainerInfo {
-
 public:
     // prevent constructor by default
     ItemStackResponseContainerInfo& operator=(ItemStackResponseContainerInfo const&) = delete;
@@ -15,13 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ItemStackResponseContainerInfo\@\@QEAA\@W4ContainerEnumName\@\@\@Z
-     */
-    MCAPI ItemStackResponseContainerInfo(enum class ContainerEnumName);
-    /**
-     * @symbol ??1ItemStackResponseContainerInfo\@\@QEAA\@XZ
-     */
+    // symbol: ??0ItemStackResponseContainerInfo@@QEAA@W4ContainerEnumName@@@Z
+    MCAPI ItemStackResponseContainerInfo(::ContainerEnumName);
+
+    // symbol: ??1ItemStackResponseContainerInfo@@QEAA@XZ
     MCAPI ~ItemStackResponseContainerInfo();
+
     // NOLINTEND
 };

@@ -7,7 +7,6 @@
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class SitGoal : public ::Goal {
-
 public:
     // prevent constructor by default
     SitGoal& operator=(SitGoal const&) = delete;
@@ -16,35 +15,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@SitGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@SitGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@SitGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@SitGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol ?stop\@SitGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 5, symbol: ?stop@SitGoal@@UEAAXXZ
     virtual void stop();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@SitGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@SitGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @symbol ??0SitGoal\@\@QEAA\@AEAVMob\@\@\@Z
-     */
+
+    // symbol: ??0SitGoal@@QEAA@AEAVMob@@@Z
     MCAPI SitGoal(class Mob&);
+
     // NOLINTEND
 };

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ActorSpawnRuleDefinition {
-
 public:
     // prevent constructor by default
     ActorSpawnRuleDefinition& operator=(ActorSpawnRuleDefinition const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ActorSpawnRuleDefinition\@\@QEAA\@XZ
-     */
+    // symbol: ??1ActorSpawnRuleDefinition@@QEAA@XZ
     MCAPI ~ActorSpawnRuleDefinition();
+
     // NOLINTEND
 };

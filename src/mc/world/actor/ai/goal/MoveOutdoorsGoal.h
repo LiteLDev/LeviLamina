@@ -22,7 +22,6 @@ public:
 
     // MoveOutdoorsGoal inner types define
     class MoveOutdoorsDefinition : public ::BaseGoalDefinition {
-
     public:
         // prevent constructor by default
         MoveOutdoorsDefinition& operator=(MoveOutdoorsDefinition const&) = delete;
@@ -30,31 +29,23 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEOUTDOORSGOAL_MOVEOUTDOORSDEFINITION
-        /**
-         * @symbol __unk_destructor_-1
-         */
+
+        // symbol: ??1MoveOutdoorsDefinition@MoveOutdoorsGoal@@UEAA@XZ
         MCVAPI ~MoveOutdoorsDefinition();
-#endif
-        /**
-         * @symbol ??0MoveOutdoorsDefinition\@MoveOutdoorsGoal\@\@QEAA\@XZ
-         */
+
+        // symbol: ??0MoveOutdoorsDefinition@MoveOutdoorsGoal@@QEAA@XZ
         MCAPI MoveOutdoorsDefinition();
-        /**
-         * @symbol ?initialize\@MoveOutdoorsDefinition\@MoveOutdoorsGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
+
+        // symbol: ?initialize@MoveOutdoorsDefinition@MoveOutdoorsGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class MoveOutdoorsGoal&) const;
-        /**
-         * @symbol
-         * ?buildSchema\@MoveOutdoorsDefinition\@MoveOutdoorsGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VMoveOutdoorsDefinition\@MoveOutdoorsGoal\@\@\@JsonUtil\@\@\@4\@\@Z
-         */
+
+        // symbol:
+        // ?buildSchema@MoveOutdoorsDefinition@MoveOutdoorsGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VMoveOutdoorsDefinition@MoveOutdoorsGoal@@@JsonUtil@@@4@@Z
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MoveOutdoorsGoal::MoveOutdoorsDefinition>>&);
+
         // NOLINTEND
     };
 
@@ -66,52 +57,37 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@MoveOutdoorsGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@MoveOutdoorsGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@MoveOutdoorsGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@MoveOutdoorsGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 6
-     * @symbol ?tick\@MoveOutdoorsGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 6, symbol: ?tick@MoveOutdoorsGoal@@UEAAXXZ
     virtual void tick();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@MoveOutdoorsGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@MoveOutdoorsGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @vftbl 11
-     * @symbol ?isValidTarget\@MoveOutdoorsGoal\@\@UEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
+
+    // vIndex: 11, symbol: ?isValidTarget@MoveOutdoorsGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
-    /**
-     * @symbol ??0MoveOutdoorsGoal\@\@QEAA\@AEAVMob\@\@\@Z
-     */
+
+    // symbol: ??0MoveOutdoorsGoal@@QEAA@AEAVMob@@@Z
     MCAPI MoveOutdoorsGoal(class Mob&);
-    /**
-     * @symbol ?mobHasClearSpaceAbove\@MoveOutdoorsGoal\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
+
+    // symbol: ?mobHasClearSpaceAbove@MoveOutdoorsGoal@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool mobHasClearSpaceAbove(class BlockSource&, class BlockPos const&);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_setNextTargetTick\@MoveOutdoorsGoal\@\@AEAAXXZ
-     */
+    // symbol: ?_setNextTargetTick@MoveOutdoorsGoal@@AEAAXXZ
     MCAPI void _setNextTargetTick();
+
     // NOLINTEND
 };

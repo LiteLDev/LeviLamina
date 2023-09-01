@@ -12,7 +12,6 @@ namespace mce { class UUID; }
 // clang-format on
 
 class IVillageManager : public ::Bedrock::EnableNonOwnerReferences {
-
 public:
     // prevent constructor by default
     IVillageManager& operator=(IVillageManager const&) = delete;
@@ -21,26 +20,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?fetchClosestVillage\@VillageManager\@\@UEBA?AV?$weak_ptr\@VVillage\@\@\@std\@\@AEBVBlockPos\@\@HI\@Z
-     */
-    virtual std::weak_ptr<class Village> fetchClosestVillage(class BlockPos const&, int32_t, uint32_t) const = 0;
-    /**
-     * @vftbl 2
-     * @symbol ?getVillageByID\@VillageManager\@\@UEBA?AV?$weak_ptr\@VVillage\@\@\@std\@\@AEBVUUID\@mce\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?fetchClosestVillage@VillageManager@@UEBA?AV?$weak_ptr@VVillage@@@std@@AEBVBlockPos@@HI@Z
+    virtual std::weak_ptr<class Village> fetchClosestVillage(class BlockPos const&, int, uint) const = 0;
+
+    // vIndex: 2, symbol: ?getVillageByID@VillageManager@@UEBA?AV?$weak_ptr@VVillage@@@std@@AEBVUUID@mce@@@Z
     virtual std::weak_ptr<class Village> getVillageByID(class mce::UUID const&) const = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IVILLAGEMANAGER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1IVillageManager@@UEAA@XZ
     MCVAPI ~IVillageManager();
-#endif
+
     // NOLINTEND
 };

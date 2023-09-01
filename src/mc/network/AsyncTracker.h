@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class AsyncTracker {
-
 public:
     // prevent constructor by default
     AsyncTracker& operator=(AsyncTracker const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?hasAsyncOperationTimedOut\@AsyncTracker\@\@QEAA_NXZ
-     */
+    // symbol: ?hasAsyncOperationTimedOut@AsyncTracker@@QEAA_NXZ
     MCAPI bool hasAsyncOperationTimedOut();
+
     // NOLINTEND
 };

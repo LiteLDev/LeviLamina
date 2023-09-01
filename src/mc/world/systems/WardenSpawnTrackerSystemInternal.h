@@ -4,10 +4,8 @@
 
 namespace WardenSpawnTrackerSystemInternal {
 // NOLINTBEGIN
-/**
- * @symbol
- * ?tickWardenSpawnTrackerComponent\@WardenSpawnTrackerSystemInternal\@\@YAXAEAVActorOwnerComponent\@\@AEAVWardenSpawnTrackerComponent\@\@\@Z
- */
+// symbol:
+// ?tickWardenSpawnTrackerComponent@WardenSpawnTrackerSystemInternal@@YAXAEAVActorOwnerComponent@@AEAVWardenSpawnTrackerComponent@@@Z
 MCAPI void tickWardenSpawnTrackerComponent(class ActorOwnerComponent&, class WardenSpawnTrackerComponent&);
 // NOLINTEND
 

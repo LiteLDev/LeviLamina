@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct GameRuleId {
-
 public:
     // prevent constructor by default
     GameRuleId& operator=(GameRuleId const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0GameRuleId\@\@QEAA\@H\@Z
-     */
-    MCAPI GameRuleId(int32_t);
+    // symbol: ??0GameRuleId@@QEAA@H@Z
+    MCAPI GameRuleId(int);
+
     // NOLINTEND
 };

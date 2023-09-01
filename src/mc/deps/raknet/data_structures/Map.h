@@ -5,7 +5,6 @@
 namespace DataStructures {
 
 struct Map {
-
 public:
     // prevent constructor by default
     Map& operator=(Map const&) = delete;

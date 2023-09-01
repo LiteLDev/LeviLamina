@@ -4,9 +4,7 @@
 
 namespace WorldGenMolangQueries {
 // NOLINTBEGIN
-/**
- * @symbol ?registerWorldGenMolangQueries\@WorldGenMolangQueries\@\@YAXXZ
- */
+// symbol: ?registerWorldGenMolangQueries@WorldGenMolangQueries@@YAXXZ
 MCAPI void registerWorldGenMolangQueries();
 // NOLINTEND
 

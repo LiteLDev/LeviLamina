@@ -5,7 +5,6 @@
 namespace JsonUtil {
 
 class EmptyClass {
-
 public:
     // prevent constructor by default
     EmptyClass& operator=(EmptyClass const&) = delete;

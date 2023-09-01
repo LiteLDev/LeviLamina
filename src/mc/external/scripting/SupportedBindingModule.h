@@ -5,7 +5,6 @@
 namespace Scripting {
 
 struct SupportedBindingModule {
-
 public:
     // prevent constructor by default
     SupportedBindingModule& operator=(SupportedBindingModule const&) = delete;

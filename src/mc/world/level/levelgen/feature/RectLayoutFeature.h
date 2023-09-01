@@ -14,7 +14,6 @@ public:
 
     // RectLayoutFeature inner types define
     struct FeatureArea {
-
     public:
         // prevent constructor by default
         FeatureArea& operator=(FeatureArea const&) = delete;
@@ -30,33 +29,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?place\@RectLayoutFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?place@RectLayoutFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
     virtual std::optional<class BlockPos>
     place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?isValidPlacement\@IFeature\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 2, symbol:
+    // ?isValidPlacement@IFeature@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual bool isValidPlacement(std::string const&);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_tryPlaceFeature\@RectLayoutFeature\@\@AEBA?AV?$optional\@UFeatureArea\@RectLayoutFeature\@\@\@std\@\@AEBVVec2\@\@HAEBV?$array\@V?$array\@E$0BA\@\@std\@\@$0BA\@\@3\@\@Z
-     */
+    // symbol:
+    // ?_tryPlaceFeature@RectLayoutFeature@@AEBA?AV?$optional@UFeatureArea@RectLayoutFeature@@@std@@AEBVVec2@@HAEBV?$array@V?$array@E$0BA@@std@@$0BA@@3@@Z
     MCAPI std::optional<struct RectLayoutFeature::FeatureArea>
-          _tryPlaceFeature(class Vec2 const&, int32_t, std::array<std::array<uint8_t, 16>, 16> const&) const;
+          _tryPlaceFeature(class Vec2 const&, int, std::array<std::array<uchar, 16>, 16> const&) const;
+
     // NOLINTEND
 };

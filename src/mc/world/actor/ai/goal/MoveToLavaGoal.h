@@ -7,7 +7,6 @@
 #include "mc/world/actor/ai/goal/MoveToLiquidGoal.h"
 
 class MoveToLavaGoal : public ::MoveToLiquidGoal {
-
 public:
     // prevent constructor by default
     MoveToLavaGoal& operator=(MoveToLavaGoal const&) = delete;
@@ -16,14 +15,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @symbol ??0MoveToLavaGoal\@\@QEAA\@AEAVMob\@\@MHHHM\@Z
-     */
-    MCAPI MoveToLavaGoal(class Mob&, float, int32_t, int32_t, int32_t, float);
+
+    // symbol: ??0MoveToLavaGoal@@QEAA@AEAVMob@@MHHHM@Z
+    MCAPI MoveToLavaGoal(class Mob&, float, int, int, int, float);
+
     // NOLINTEND
 };

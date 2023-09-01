@@ -7,7 +7,6 @@
 #include "mc/world/level/Command.h"
 
 class PlayAnimationCommand : public ::Command {
-
 public:
     // prevent constructor by default
     PlayAnimationCommand& operator=(PlayAnimationCommand const&) = delete;
@@ -16,33 +15,31 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 2
-     * @symbol ?execute\@PlayAnimationCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?execute@PlayAnimationCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYANIMATIONCOMMAND
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1PlayAnimationCommand@@UEAA@XZ
     MCVAPI ~PlayAnimationCommand();
-#endif
-    /**
-     * @symbol ?setup\@PlayAnimationCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
-     */
+
+    // symbol: ?setup@PlayAnimationCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry&);
+
     // NOLINTEND
 
 private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?mStopExpressionVersion\@PlayAnimationCommand\@\@0W4MolangVersion\@\@B
-     */
+    // symbol: ?mStopExpressionVersion@PlayAnimationCommand@@0W4MolangVersion@@B
     MCAPI static ::MolangVersion const mStopExpressionVersion;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $mStopExpressionVersion() { return mStopExpressionVersion; }
+
     // NOLINTEND
 };

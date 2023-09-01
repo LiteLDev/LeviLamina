@@ -4,7 +4,6 @@
 
 template <typename T0>
 struct SharePtrRefTraits {
-
 public:
     // prevent constructor by default
     SharePtrRefTraits& operator=(SharePtrRefTraits const&) = delete;

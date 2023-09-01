@@ -12,7 +12,6 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 // clang-format on
 
 class NetworkSessionOwner : public ::Bedrock::EnableNonOwnerReferences {
-
 public:
     // prevent constructor by default
     NetworkSessionOwner& operator=(NetworkSessionOwner const&) = delete;
@@ -20,13 +19,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0NetworkSessionOwner\@\@QEAA\@XZ
-     */
+    // symbol: ??0NetworkSessionOwner@@QEAA@XZ
     MCAPI NetworkSessionOwner();
-    /**
-     * @symbol ?getTransportLayer\@NetworkSessionOwner\@\@QEBA?AW4TransportLayer\@\@XZ
-     */
-    MCAPI enum class TransportLayer getTransportLayer() const;
+
+    // symbol: ?getTransportLayer@NetworkSessionOwner@@QEBA?AW4TransportLayer@@XZ
+    MCAPI ::TransportLayer getTransportLayer() const;
+
     // NOLINTEND
 };

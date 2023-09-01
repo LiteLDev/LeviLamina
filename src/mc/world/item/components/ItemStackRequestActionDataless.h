@@ -2,9 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template <int32_t T0>
+template <int T0>
 class ItemStackRequestActionDataless {
-
 public:
     // prevent constructor by default
     ItemStackRequestActionDataless& operator=(ItemStackRequestActionDataless const&) = delete;

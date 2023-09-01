@@ -8,7 +8,6 @@
 namespace ScriptModuleMinecraft {
 
 class ScriptScoreboardScoreInfo {
-
 public:
     // prevent constructor by default
     ScriptScoreboardScoreInfo& operator=(ScriptScoreboardScoreInfo const&) = delete;
@@ -17,15 +16,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ScriptScoreboardScoreInfo\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+    // symbol: ??1ScriptScoreboardScoreInfo@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptScoreboardScoreInfo();
-    /**
-     * @symbol
-     * ?bind\@ScriptScoreboardScoreInfo\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptScoreboardScoreInfo\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptScoreboardScoreInfo@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptScoreboardScoreInfo@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptScoreboardScoreInfo> bind();
+
     // NOLINTEND
 };
 

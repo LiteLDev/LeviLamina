@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class SchedulerComponent {
-
 public:
     // prevent constructor by default
     SchedulerComponent& operator=(SchedulerComponent const&) = delete;
@@ -12,13 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?getCurrentEventIndex\@SchedulerComponent\@\@QEBAHXZ
-     */
-    MCAPI int32_t getCurrentEventIndex() const;
-    /**
-     * @symbol ?setCurrentEventIndex\@SchedulerComponent\@\@QEAAXH\@Z
-     */
-    MCAPI void setCurrentEventIndex(int32_t);
+    // symbol: ?getCurrentEventIndex@SchedulerComponent@@QEBAHXZ
+    MCAPI int getCurrentEventIndex() const;
+
+    // symbol: ?setCurrentEventIndex@SchedulerComponent@@QEAAXH@Z
+    MCAPI void setCurrentEventIndex(int);
+
     // NOLINTEND
 };

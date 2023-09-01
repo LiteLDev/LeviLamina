@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class HorsePreTravelSystem {
-
 public:
     // prevent constructor by default
     HorsePreTravelSystem& operator=(HorsePreTravelSystem const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createHorsePreTravelSystem\@HorsePreTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createHorsePreTravelSystem@HorsePreTravelSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createHorsePreTravelSystem();
+
     // NOLINTEND
 };

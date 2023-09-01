@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ClassID {
-
 public:
     // prevent constructor by default
     ClassID& operator=(ClassID const&) = delete;
@@ -12,9 +11,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?getNextID\@ClassID\@\@CA_KXZ
-     */
-    MCAPI static uint64_t getNextID();
+    // symbol: ?getNextID@ClassID@@CA_KXZ
+    MCAPI static uint64 getNextID();
+
     // NOLINTEND
 };

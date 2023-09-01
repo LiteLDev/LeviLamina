@@ -6,7 +6,6 @@
 #include "mc/codebuilder/CodeStatus.h"
 
 class CodebuilderComponent {
-
 public:
     // prevent constructor by default
     CodebuilderComponent& operator=(CodebuilderComponent const&) = delete;
@@ -15,23 +14,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?getCodeStatus\@CodebuilderComponent\@\@QEBA?AW4CodeStatus\@CodeBuilderExecutionState\@\@XZ
-     */
-    MCAPI enum class CodeBuilderExecutionState::CodeStatus getCodeStatus() const;
-    /**
-     * @symbol ?resetCodeStatus\@CodebuilderComponent\@\@QEAAXXZ
-     */
+    // symbol: ?getCodeStatus@CodebuilderComponent@@QEBA?AW4CodeStatus@CodeBuilderExecutionState@@XZ
+    MCAPI ::CodeBuilderExecutionState::CodeStatus getCodeStatus() const;
+
+    // symbol: ?resetCodeStatus@CodebuilderComponent@@QEAAXXZ
     MCAPI void resetCodeStatus();
-    /**
-     * @symbol
-     * ?setCodeStatus\@CodebuilderComponent\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?setCodeStatus@CodebuilderComponent@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setCodeStatus(std::string const&);
-    /**
-     * @symbol
-     * ?stringToCodeStatus\@CodebuilderComponent\@\@QEBA?AW4CodeStatus\@CodeBuilderExecutionState\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI enum class CodeBuilderExecutionState::CodeStatus stringToCodeStatus(std::string const&) const;
+
+    // symbol:
+    // ?stringToCodeStatus@CodebuilderComponent@@QEBA?AW4CodeStatus@CodeBuilderExecutionState@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI ::CodeBuilderExecutionState::CodeStatus stringToCodeStatus(std::string const&) const;
+
     // NOLINTEND
 };

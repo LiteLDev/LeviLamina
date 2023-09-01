@@ -6,7 +6,6 @@
 #include "mc/world/actor/ai/control/MoveControl.h"
 
 class FlyMoveControl : public ::MoveControl {
-
 public:
     // prevent constructor by default
     FlyMoveControl& operator=(FlyMoveControl const&) = delete;
@@ -14,19 +13,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 2
-     * @symbol ?tick\@FlyMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?tick@FlyMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
     virtual void tick(class MoveControlComponent&, class Mob&);
-    /**
-     * @symbol ??0FlyMoveControl\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0FlyMoveControl@@QEAA@XZ
     MCAPI FlyMoveControl();
+
     // NOLINTEND
 };

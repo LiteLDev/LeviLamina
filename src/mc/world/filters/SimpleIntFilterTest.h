@@ -11,7 +11,6 @@ namespace Json { class Value; }
 // clang-format on
 
 class SimpleIntFilterTest : public ::FilterTest {
-
 public:
     // prevent constructor by default
     SimpleIntFilterTest& operator=(SimpleIntFilterTest const&) = delete;
@@ -20,15 +19,11 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLEINTFILTERTEST
-    /**
-     * @symbol ?_serializeValue\@SimpleIntFilterTest\@\@MEBA?AVValue\@Json\@\@XZ
-     */
+    // symbol: ?_serializeValue@SimpleIntFilterTest@@MEBA?AVValue@Json@@XZ
     MCVAPI class Json::Value _serializeValue() const;
-    /**
-     * @symbol ?setup\@SimpleIntFilterTest\@\@UEAA_NAEBUDefinition\@FilterTest\@\@AEBUFilterInputs\@\@\@Z
-     */
+
+    // symbol: ?setup@SimpleIntFilterTest@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
     MCVAPI bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);
-#endif
+
     // NOLINTEND
 };

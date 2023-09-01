@@ -4,9 +4,7 @@
 
 namespace Util::Detail {
 // NOLINTBEGIN
-/**
- * @symbol ?isStringPrefixLexicallyNegative\@Detail\@Util\@\@YA_NPEBD\@Z
- */
+// symbol: ?isStringPrefixLexicallyNegative@Detail@Util@@YA_NPEBD@Z
 MCAPI bool isStringPrefixLexicallyNegative(char const*);
 // NOLINTEND
 

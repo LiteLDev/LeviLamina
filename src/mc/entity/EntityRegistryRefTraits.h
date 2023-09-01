@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct EntityRegistryRefTraits {
-
 public:
     // prevent constructor by default
     EntityRegistryRefTraits& operator=(EntityRegistryRefTraits const&) = delete;

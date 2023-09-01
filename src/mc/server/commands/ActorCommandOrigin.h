@@ -16,7 +16,6 @@ namespace mce { class UUID; }
 // clang-format on
 
 class ActorCommandOrigin : public ::CommandOrigin {
-
 public:
     // prevent constructor by default
     ActorCommandOrigin& operator=(ActorCommandOrigin const&) = delete;
@@ -25,87 +24,56 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?getRequestId\@ActorCommandOrigin\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // vIndex: 1, symbol:
+    // ?getRequestId@ActorCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const& getRequestId() const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?getName\@ActorCommandOrigin\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // vIndex: 2, symbol:
+    // ?getName@ActorCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const;
-    /**
-     * @vftbl 3
-     * @symbol ?getBlockPosition\@ActorCommandOrigin\@\@UEBA?AVBlockPos\@\@XZ
-     */
+
+    // vIndex: 3, symbol: ?getBlockPosition@ActorCommandOrigin@@UEBA?AVBlockPos@@XZ
     virtual class BlockPos getBlockPosition() const;
-    /**
-     * @vftbl 4
-     * @symbol ?getWorldPosition\@ActorCommandOrigin\@\@UEBA?AVVec3\@\@XZ
-     */
+
+    // vIndex: 4, symbol: ?getWorldPosition@ActorCommandOrigin@@UEBA?AVVec3@@XZ
     virtual class Vec3 getWorldPosition() const;
-    /**
-     * @vftbl 5
-     * @symbol ?getRotation\@ActorCommandOrigin\@\@UEBA?AV?$optional\@VVec2\@\@\@std\@\@XZ
-     */
+
+    // vIndex: 5, symbol: ?getRotation@ActorCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
     virtual std::optional<class Vec2> getRotation() const;
-    /**
-     * @vftbl 6
-     * @symbol ?getLevel\@ActorCommandOrigin\@\@UEBAPEAVLevel\@\@XZ
-     */
+
+    // vIndex: 6, symbol: ?getLevel@ActorCommandOrigin@@UEBAPEAVLevel@@XZ
     virtual class Level* getLevel() const;
-    /**
-     * @vftbl 7
-     * @symbol ?getDimension\@ActorCommandOrigin\@\@UEBAPEAVDimension\@\@XZ
-     */
+
+    // vIndex: 7, symbol: ?getDimension@ActorCommandOrigin@@UEBAPEAVDimension@@XZ
     virtual class Dimension* getDimension() const;
-    /**
-     * @vftbl 8
-     * @symbol ?getEntity\@ActorCommandOrigin\@\@UEBAPEAVActor\@\@XZ
-     */
+
+    // vIndex: 8, symbol: ?getEntity@ActorCommandOrigin@@UEBAPEAVActor@@XZ
     virtual class Actor* getEntity() const;
-    /**
-     * @vftbl 9
-     * @symbol ?getPermissionsLevel\@ActorCommandOrigin\@\@UEBA?AW4CommandPermissionLevel\@\@XZ
-     */
-    virtual enum class CommandPermissionLevel getPermissionsLevel() const;
-    /**
-     * @vftbl 10
-     * @symbol
-     * ?clone\@ActorCommandOrigin\@\@UEBA?AV?$unique_ptr\@VCommandOrigin\@\@U?$default_delete\@VCommandOrigin\@\@\@std\@\@\@std\@\@XZ
-     */
+
+    // vIndex: 9, symbol: ?getPermissionsLevel@ActorCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
+    virtual ::CommandPermissionLevel getPermissionsLevel() const;
+
+    // vIndex: 10, symbol:
+    // ?clone@ActorCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
     virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /**
-     * @vftbl 18
-     * @symbol ?isSelectorExpansionAllowed\@ActorCommandOrigin\@\@UEBA_NXZ
-     */
+
+    // vIndex: 18, symbol: ?isSelectorExpansionAllowed@ActorCommandOrigin@@UEBA_NXZ
     virtual bool isSelectorExpansionAllowed() const;
-    /**
-     * @vftbl 23
-     * @symbol ?getOriginType\@ActorCommandOrigin\@\@UEBA?AW4CommandOriginType\@\@XZ
-     */
-    virtual enum class CommandOriginType getOriginType() const;
-    /**
-     * @vftbl 29
-     * @symbol ?serialize\@ActorCommandOrigin\@\@UEBA?AVCompoundTag\@\@XZ
-     */
+
+    // vIndex: 23, symbol: ?getOriginType@ActorCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+    virtual ::CommandOriginType getOriginType() const;
+
+    // vIndex: 29, symbol: ?serialize@ActorCommandOrigin@@UEBA?AVCompoundTag@@XZ
     virtual class CompoundTag serialize() const;
-    /**
-     * @vftbl 30
-     * @symbol ?isValid\@ActorCommandOrigin\@\@UEBA_NXZ
-     */
+
+    // vIndex: 30, symbol: ?isValid@ActorCommandOrigin@@UEBA_NXZ
     virtual bool isValid() const;
-    /**
-     * @symbol ??0ActorCommandOrigin\@\@QEAA\@AEAVActor\@\@\@Z
-     */
+
+    // symbol: ??0ActorCommandOrigin@@QEAA@AEAVActor@@@Z
     MCAPI ActorCommandOrigin(class Actor&);
+
     // NOLINTEND
 };

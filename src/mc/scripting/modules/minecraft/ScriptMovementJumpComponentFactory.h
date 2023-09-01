@@ -17,7 +17,6 @@ namespace Scripting { class WeakLifetimeScope; }
 namespace ScriptModuleMinecraft {
 
 class ScriptMovementJumpComponentFactory : public ::ScriptModuleMinecraft::IComponentFactory {
-
 public:
     // prevent constructor by default
     ScriptMovementJumpComponentFactory& operator=(ScriptMovementJumpComponentFactory const&) = delete;
@@ -26,23 +25,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?createComponent\@ScriptMovementJumpComponentFactory\@ScriptModuleMinecraft\@\@UEAA?AV?$StrongTypedObjectHandle\@VScriptActorComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@VWeakEntityRef\@\@AEBVWeakLifetimeScope\@4\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?createComponent@ScriptMovementJumpComponentFactory@ScriptModuleMinecraft@@UEAA?AV?$StrongTypedObjectHandle@VScriptActorComponent@ScriptModuleMinecraft@@@Scripting@@VWeakEntityRef@@AEBVWeakLifetimeScope@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActorComponent>
     createComponent(class WeakEntityRef, class Scripting::WeakLifetimeScope const&, std::string const&);
-    /**
-     * @vftbl 2
-     * @symbol ?hasComponent\@ScriptMovementJumpComponentFactory\@ScriptModuleMinecraft\@\@UEBA_NVWeakEntityRef\@\@\@Z
-     */
+
+    // vIndex: 2, symbol:
+    // ?hasComponent@ScriptMovementJumpComponentFactory@ScriptModuleMinecraft@@UEBA_NVWeakEntityRef@@@Z
     virtual bool hasComponent(class WeakEntityRef) const;
+
     // NOLINTEND
 };
 

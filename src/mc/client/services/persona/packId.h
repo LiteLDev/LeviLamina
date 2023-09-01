@@ -9,13 +9,10 @@ namespace mce { class UUID; }
 
 namespace personaDefault::packId {
 // NOLINTBEGIN
-/**
- * @symbol ?PERSONA_BUILTIN_PACK\@packId\@personaDefault\@\@3VUUID\@mce\@\@B
- */
+// symbol: ?PERSONA_BUILTIN_PACK@packId@personaDefault@@3VUUID@mce@@B
 MCAPI extern class mce::UUID const PERSONA_BUILTIN_PACK;
-/**
- * @symbol ?PERSONA_TESTING_PACK\@packId\@personaDefault\@\@3VUUID\@mce\@\@B
- */
+
+// symbol: ?PERSONA_TESTING_PACK@packId@personaDefault@@3VUUID@mce@@B
 MCAPI extern class mce::UUID const PERSONA_TESTING_PACK;
 // NOLINTEND
 

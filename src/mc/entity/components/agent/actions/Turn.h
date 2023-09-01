@@ -5,7 +5,6 @@
 namespace AgentComponents::Actions {
 
 struct Turn {
-
 public:
     // prevent constructor by default
     Turn& operator=(Turn const&) = delete;

@@ -5,7 +5,6 @@
 namespace AgentComponents {
 
 class Animating {
-
 public:
     // prevent constructor by default
     Animating& operator=(Animating const&) = delete;

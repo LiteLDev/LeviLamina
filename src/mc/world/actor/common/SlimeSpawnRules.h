@@ -4,9 +4,7 @@
 
 namespace SlimeSpawnRules {
 // NOLINTBEGIN
-/**
- * @symbol ?checkSpawnRulesCallback\@SlimeSpawnRules\@\@YA_NAEBVSpawnConditions\@\@AEAVBlockSource\@\@\@Z
- */
+// symbol: ?checkSpawnRulesCallback@SlimeSpawnRules@@YA_NAEBVSpawnConditions@@AEAVBlockSource@@@Z
 MCAPI bool checkSpawnRulesCallback(class SpawnConditions const&, class BlockSource&);
 // NOLINTEND
 

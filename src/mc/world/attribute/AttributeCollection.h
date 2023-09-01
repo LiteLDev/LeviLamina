@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class AttributeCollection {
-
 public:
     // prevent constructor by default
     AttributeCollection& operator=(AttributeCollection const&) = delete;
@@ -12,17 +11,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?hasAttribute\@AttributeCollection\@\@SA_NAEBVHashedString\@\@\@Z
-     */
+    // symbol: ?hasAttribute@AttributeCollection@@SA_NAEBVHashedString@@@Z
     MCAPI static bool hasAttribute(class HashedString const&);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?instance\@AttributeCollection\@\@CAAEAV1\@XZ
-     */
+    // symbol: ?instance@AttributeCollection@@CAAEAV1@XZ
     MCAPI static class AttributeCollection& instance();
+
     // NOLINTEND
 };

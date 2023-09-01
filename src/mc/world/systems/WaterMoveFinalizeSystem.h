@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class WaterMoveFinalizeSystem {
-
 public:
     // prevent constructor by default
     WaterMoveFinalizeSystem& operator=(WaterMoveFinalizeSystem const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createWaterMoveFinalizeSystem\@WaterMoveFinalizeSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createWaterMoveFinalizeSystem@WaterMoveFinalizeSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createWaterMoveFinalizeSystem();
+
     // NOLINTEND
 };

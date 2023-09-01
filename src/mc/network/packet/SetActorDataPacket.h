@@ -8,7 +8,6 @@
 #include "mc/network/packet/Packet.h"
 
 class SetActorDataPacket : public ::Packet {
-
 public:
     // prevent constructor by default
     SetActorDataPacket& operator=(SetActorDataPacket const&) = delete;
@@ -16,53 +15,38 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getId\@SetActorDataPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
-     */
-    virtual enum class MinecraftPacketIds getId() const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?getName\@SetActorDataPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // vIndex: 1, symbol: ?getId@SetActorDataPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    virtual ::MinecraftPacketIds getId() const;
+
+    // vIndex: 2, symbol:
+    // ?getName@SetActorDataPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const;
-    /**
-     * @vftbl 3
-     * @symbol ?write\@SetActorDataPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 3, symbol: ?write@SetActorDataPacket@@UEBAXAEAVBinaryStream@@@Z
     virtual void write(class BinaryStream&) const;
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?_read\@SetActorDataPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?_read@SetActorDataPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETACTORDATAPACKET
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1SetActorDataPacket@@UEAA@XZ
     MCVAPI ~SetActorDataPacket();
-#endif
-    /**
-     * @symbol ??0SetActorDataPacket\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0SetActorDataPacket@@QEAA@XZ
     MCAPI SetActorDataPacket();
-    /**
-     * @symbol
-     * ??0SetActorDataPacket\@\@QEAA\@VActorRuntimeID\@\@AEAVSynchedActorDataEntityWrapper\@\@PEAVPropertyComponent\@\@_K_N\@Z
-     */
+
+    // symbol:
+    // ??0SetActorDataPacket@@QEAA@VActorRuntimeID@@AEAVSynchedActorDataEntityWrapper@@PEAVPropertyComponent@@_K_N@Z
     MCAPI SetActorDataPacket(
         class ActorRuntimeID,
         class SynchedActorDataEntityWrapper&,
         class PropertyComponent*,
-        uint64_t,
+        uint64,
         bool
     );
+
     // NOLINTEND
 };

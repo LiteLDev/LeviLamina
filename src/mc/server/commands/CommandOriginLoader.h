@@ -6,7 +6,6 @@
 #include "mc/server/commands/ICommandOriginLoader.h"
 
 class CommandOriginLoader : public ::ICommandOriginLoader {
-
 public:
     // prevent constructor by default
     CommandOriginLoader& operator=(CommandOriginLoader const&) = delete;
@@ -15,31 +14,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?load\@CommandOriginLoader\@\@UEAA?AV?$unique_ptr\@VCommandOrigin\@\@U?$default_delete\@VCommandOrigin\@\@\@std\@\@\@std\@\@AEBVCompoundTag\@\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?load@CommandOriginLoader@@UEAA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@AEBVCompoundTag@@@Z
     virtual std::unique_ptr<class CommandOrigin> load(class CompoundTag const&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDORIGINLOADER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1CommandOriginLoader@@UEAA@XZ
     MCVAPI ~CommandOriginLoader();
-#endif
-    /**
-     * @symbol ??0CommandOriginLoader\@\@QEAA\@AEAVServerLevel\@\@\@Z
-     */
+
+    // symbol: ??0CommandOriginLoader@@QEAA@AEAVServerLevel@@@Z
     MCAPI CommandOriginLoader(class ServerLevel&);
-    /**
-     * @symbol
-     * ?load\@CommandOriginLoader\@\@SA?AV?$unique_ptr\@VCommandOrigin\@\@U?$default_delete\@VCommandOrigin\@\@\@std\@\@\@std\@\@AEBVCompoundTag\@\@AEAVServerLevel\@\@\@Z
-     */
+
+    // symbol:
+    // ?load@CommandOriginLoader@@SA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVServerLevel@@@Z
     MCAPI static std::unique_ptr<class CommandOrigin> load(class CompoundTag const&, class ServerLevel&);
+
     // NOLINTEND
 };

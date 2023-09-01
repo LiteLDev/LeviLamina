@@ -9,7 +9,6 @@
 namespace ScriptModuleMinecraft {
 
 struct ScriptItemEnchantmentType {
-
 public:
     // prevent constructor by default
     ScriptItemEnchantmentType(ScriptItemEnchantmentType const&) = delete;
@@ -17,33 +16,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ScriptItemEnchantmentType\@ScriptModuleMinecraft\@\@QEAA\@AEBW4Type\@Enchant\@\@\@Z
-     */
-    MCAPI ScriptItemEnchantmentType(enum class Enchant::Type const&);
-    /**
-     * @symbol
-     * ?getName\@ScriptItemEnchantmentType\@ScriptModuleMinecraft\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+    // symbol: ??0ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEAA@AEBW4Type@Enchant@@@Z
+    MCAPI ScriptItemEnchantmentType(::Enchant::Type const&);
+
+    // symbol:
+    // ?getName@ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getName() const;
-    /**
-     * @symbol ??4ScriptItemEnchantmentType\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
-     */
+
+    // symbol: ??4ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptItemEnchantmentType&
     operator=(struct ScriptModuleMinecraft::ScriptItemEnchantmentType const&);
-    /**
-     * @symbol ??8ScriptItemEnchantmentType\@ScriptModuleMinecraft\@\@QEBA_NAEBU01\@\@Z
-     */
+
+    // symbol: ??8ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEBA_NAEBU01@@Z
     MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptItemEnchantmentType const&) const;
-    /**
-     * @symbol ??1ScriptItemEnchantmentType\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptItemEnchantmentType();
-    /**
-     * @symbol
-     * ?bind\@ScriptItemEnchantmentType\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptItemEnchantmentType\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptItemEnchantmentType@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptItemEnchantmentType@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemEnchantmentType> bind();
+
     // NOLINTEND
 };
 

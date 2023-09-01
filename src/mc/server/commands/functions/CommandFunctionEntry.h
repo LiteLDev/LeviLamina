@@ -7,7 +7,6 @@
 #include "mc/server/commands/functions/IFunctionEntry.h"
 
 class CommandFunctionEntry : public ::IFunctionEntry {
-
 public:
     // prevent constructor by default
     CommandFunctionEntry& operator=(CommandFunctionEntry const&) = delete;
@@ -16,16 +15,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?execute\@CommandFunctionEntry\@\@UEAAXAEAVFunctionManager\@\@AEBVCommandOrigin\@\@W4FunctionQueueOrder\@\@\@Z
-     */
-    virtual void execute(class FunctionManager&, class CommandOrigin const&, enum class FunctionQueueOrder);
+
+    // vIndex: 1, symbol:
+    // ?execute@CommandFunctionEntry@@UEAAXAEAVFunctionManager@@AEBVCommandOrigin@@W4FunctionQueueOrder@@@Z
+    virtual void execute(class FunctionManager&, class CommandOrigin const&, ::FunctionQueueOrder);
+
     // NOLINTEND
 };

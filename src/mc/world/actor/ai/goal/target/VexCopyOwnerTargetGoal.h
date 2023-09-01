@@ -7,7 +7,6 @@
 #include "mc/world/actor/ai/goal/target/TargetGoal.h"
 
 class VexCopyOwnerTargetGoal : public ::TargetGoal {
-
 public:
     // prevent constructor by default
     VexCopyOwnerTargetGoal& operator=(VexCopyOwnerTargetGoal const&) = delete;
@@ -16,31 +15,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@VexCopyOwnerTargetGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@VexCopyOwnerTargetGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@VexCopyOwnerTargetGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@VexCopyOwnerTargetGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@VexCopyOwnerTargetGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@VexCopyOwnerTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @symbol
-     * ??0VexCopyOwnerTargetGoal\@\@QEAA\@AEAVMob\@\@AEBV?$vector\@UMobDescriptor\@\@V?$allocator\@UMobDescriptor\@\@\@std\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ??0VexCopyOwnerTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@@Z
     MCAPI VexCopyOwnerTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&);
+
     // NOLINTEND
 };

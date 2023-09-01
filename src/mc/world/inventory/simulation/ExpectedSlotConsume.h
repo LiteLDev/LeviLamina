@@ -6,7 +6,6 @@
 #include "mc/world/containers/ContainerEnumName.h"
 
 struct ExpectedSlotConsume {
-
 public:
     // prevent constructor by default
     ExpectedSlotConsume& operator=(ExpectedSlotConsume const&) = delete;
@@ -15,9 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ExpectedSlotConsume\@\@QEAA\@W4ContainerEnumName\@\@EAEBVItemStack\@\@E\@Z
-     */
-    MCAPI ExpectedSlotConsume(enum class ContainerEnumName, uint8_t, class ItemStack const&, uint8_t);
+    // symbol: ??0ExpectedSlotConsume@@QEAA@W4ContainerEnumName@@EAEBVItemStack@@E@Z
+    MCAPI ExpectedSlotConsume(::ContainerEnumName, uchar, class ItemStack const&, uchar);
+
     // NOLINTEND
 };

@@ -6,7 +6,6 @@
 #include "mc/world/events/gameevents/VibrationListenerConfig.h"
 
 class AllayVibrationConfig : public ::VibrationListenerConfig {
-
 public:
     // prevent constructor by default
     AllayVibrationConfig& operator=(AllayVibrationConfig const&) = delete;
@@ -15,37 +14,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?onSignalReceive\@AllayVibrationConfig\@\@UEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVGameEvent\@\@PEAVActor\@\@MI3\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?onSignalReceive@AllayVibrationConfig@@UEAAXAEAVBlockSource@@AEBVBlockPos@@AEBVGameEvent@@PEAVActor@@MI3@Z
     virtual void
-    onSignalReceive(class BlockSource&, class BlockPos const&, class GameEvent const&, class Actor*, float, uint32_t, class Actor*);
-    /**
-     * @vftbl 2
-     * @symbol ?isValidVibration\@AllayVibrationConfig\@\@UEAA_NAEBVGameEvent\@\@\@Z
-     */
+    onSignalReceive(class BlockSource&, class BlockPos const&, class GameEvent const&, class Actor*, float, uint, class Actor*);
+
+    // vIndex: 2, symbol: ?isValidVibration@AllayVibrationConfig@@UEAA_NAEBVGameEvent@@@Z
     virtual bool isValidVibration(class GameEvent const&);
-    /**
-     * @vftbl 3
-     * @symbol
-     * ?shouldListen\@AllayVibrationConfig\@\@UEAA_NAEAVBlockSource\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@\@Z
-     */
+
+    // vIndex: 3, symbol:
+    // ?shouldListen@AllayVibrationConfig@@UEAA_NAEAVBlockSource@@AEBVGameEvent@@AEBUGameEventContext@@@Z
     virtual bool shouldListen(class BlockSource&, class GameEvent const&, struct GameEventContext const&);
-    /**
-     * @vftbl 4
-     * @symbol ?onSerializableDataChanged\@VibrationListenerConfig\@\@UEAAXAEAVBlockSource\@\@\@Z
-     */
+
+    // vIndex: 4, symbol: ?onSerializableDataChanged@VibrationListenerConfig@@UEAAXAEAVBlockSource@@@Z
     virtual void onSerializableDataChanged(class BlockSource&);
-    /**
-     * @symbol ??0AllayVibrationConfig\@\@QEAA\@AEAVActor\@\@G\@Z
-     */
-    MCAPI AllayVibrationConfig(class Actor&, uint16_t);
+
+    // symbol: ??0AllayVibrationConfig@@QEAA@AEAVActor@@G@Z
+    MCAPI AllayVibrationConfig(class Actor&, ushort);
+
     // NOLINTEND
 };

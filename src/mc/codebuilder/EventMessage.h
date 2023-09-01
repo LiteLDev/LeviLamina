@@ -5,7 +5,6 @@
 namespace CodeBuilder {
 
 struct EventMessage {
-
 public:
     // prevent constructor by default
     EventMessage& operator=(EventMessage const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1EventMessage\@CodeBuilder\@\@QEAA\@XZ
-     */
+    // symbol: ??1EventMessage@CodeBuilder@@QEAA@XZ
     MCAPI ~EventMessage();
+
     // NOLINTEND
 };
 

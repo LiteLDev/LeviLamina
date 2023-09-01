@@ -13,7 +13,6 @@ class BoundingBox;
 namespace ScriptModuleMinecraft {
 
 class ScriptBoundingBox {
-
 public:
     // prevent constructor by default
     ScriptBoundingBox& operator=(ScriptBoundingBox const&) = delete;
@@ -22,11 +21,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?bind\@ScriptBoundingBox\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VBoundingBox\@\@\@Scripting\@\@XZ
-     */
+    // symbol:
+    // ?bind@ScriptBoundingBox@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@VBoundingBox@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<class BoundingBox> bind();
+
     // NOLINTEND
 };
 

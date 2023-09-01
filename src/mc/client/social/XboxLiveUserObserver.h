@@ -5,7 +5,6 @@
 namespace Social {
 
 class XboxLiveUserObserver {
-
 public:
     // prevent constructor by default
     XboxLiveUserObserver& operator=(XboxLiveUserObserver const&) = delete;
@@ -14,12 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOCIAL_XBOXLIVEUSEROBSERVER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1XboxLiveUserObserver@Social@@UEAA@XZ
     MCVAPI ~XboxLiveUserObserver();
-#endif
+
     // NOLINTEND
 };
 

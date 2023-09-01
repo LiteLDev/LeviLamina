@@ -4,9 +4,7 @@
 
 namespace RemovedVanillaBlockTypeIds {
 // NOLINTBEGIN
-/**
- * @symbol ?LavaCauldron\@RemovedVanillaBlockTypeIds\@\@3VHashedString\@\@B
- */
+// symbol: ?LavaCauldron@RemovedVanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const LavaCauldron;
 // NOLINTEND
 

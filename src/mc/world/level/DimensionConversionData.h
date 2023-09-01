@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class DimensionConversionData {
-
 public:
     // prevent constructor by default
     DimensionConversionData& operator=(DimensionConversionData const&) = delete;
@@ -12,13 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?getNetherScale\@DimensionConversionData\@\@QEBAHXZ
-     */
-    MCAPI int32_t getNetherScale() const;
-    /**
-     * @symbol ?getOverworldSpawnPoint\@DimensionConversionData\@\@QEBAAEBVVec3\@\@XZ
-     */
+    // symbol: ?getNetherScale@DimensionConversionData@@QEBAHXZ
+    MCAPI int getNetherScale() const;
+
+    // symbol: ?getOverworldSpawnPoint@DimensionConversionData@@QEBAAEBVVec3@@XZ
     MCAPI class Vec3 const& getOverworldSpawnPoint() const;
+
     // NOLINTEND
 };

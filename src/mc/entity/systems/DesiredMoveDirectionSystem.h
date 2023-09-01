@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class DesiredMoveDirectionSystem {
-
 public:
     // prevent constructor by default
     DesiredMoveDirectionSystem& operator=(DesiredMoveDirectionSystem const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createDesiredMoveDirectionSystem\@DesiredMoveDirectionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createDesiredMoveDirectionSystem@DesiredMoveDirectionSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createDesiredMoveDirectionSystem();
+
     // NOLINTEND
 };

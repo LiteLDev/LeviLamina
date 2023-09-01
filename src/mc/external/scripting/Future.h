@@ -6,7 +6,6 @@ namespace Scripting {
 
 template <typename T0>
 class Future {
-
 public:
     // prevent constructor by default
     Future& operator=(Future const&) = delete;

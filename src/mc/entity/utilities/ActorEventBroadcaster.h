@@ -6,7 +6,6 @@
 #include "mc/events/ActorEvent.h"
 
 class ActorEventBroadcaster {
-
 public:
     // prevent constructor by default
     ActorEventBroadcaster& operator=(ActorEventBroadcaster const&) = delete;
@@ -15,9 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?broadcastActorEvent\@ActorEventBroadcaster\@\@QEBAXAEAVActor\@\@W4ActorEvent\@\@HAEAVDimension\@\@\@Z
-     */
-    MCAPI void broadcastActorEvent(class Actor&, enum class ActorEvent, int32_t, class Dimension&) const;
+    // symbol: ?broadcastActorEvent@ActorEventBroadcaster@@QEBAXAEAVActor@@W4ActorEvent@@HAEAVDimension@@@Z
+    MCAPI void broadcastActorEvent(class Actor&, ::ActorEvent, int, class Dimension&) const;
+
     // NOLINTEND
 };

@@ -21,7 +21,6 @@ public:
 
     // GameTestNetworkAdapter inner types define
     class GameTestNetworkListener : public ::gametest::IGameTestListener {
-
     public:
         // prevent constructor by default
         GameTestNetworkListener& operator=(GameTestNetworkListener const&) = delete;
@@ -30,28 +29,20 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @vftbl 1
-         * @symbol __unk_vfn_1
-         */
+
+        // vIndex: 1, symbol: __unk_vfn_1
         virtual void __unk_vfn_1();
-        /**
-         * @vftbl 2
-         * @symbol
-         * ?onTestPassed\@GameTestNetworkListener\@GameTestNetworkAdapter\@\@UEAAXAEAVBaseGameTestInstance\@gametest\@\@\@Z
-         */
+
+        // vIndex: 2, symbol:
+        // ?onTestPassed@GameTestNetworkListener@GameTestNetworkAdapter@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
         virtual void onTestPassed(class gametest::BaseGameTestInstance&);
-        /**
-         * @vftbl 3
-         * @symbol
-         * ?onTestFailed\@GameTestNetworkListener\@GameTestNetworkAdapter\@\@UEAAXAEAVBaseGameTestInstance\@gametest\@\@\@Z
-         */
+
+        // vIndex: 3, symbol:
+        // ?onTestFailed@GameTestNetworkListener@GameTestNetworkAdapter@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
         virtual void onTestFailed(class gametest::BaseGameTestInstance&);
+
         // NOLINTEND
     };
 
@@ -63,15 +54,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0GameTestNetworkAdapter\@\@QEAA\@AEAVMinecraftGameTest\@\@\@Z
-     */
+    // symbol: ??0GameTestNetworkAdapter@@QEAA@AEAVMinecraftGameTest@@@Z
     MCAPI GameTestNetworkAdapter(class MinecraftGameTest&);
-    /**
-     * @symbol
-     * ?rungametest\@GameTestNetworkAdapter\@\@QEAAXV?$not_null\@PEAVPacketSender\@\@\@gsl\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVDimension\@\@AEBUTestParameters\@gametest\@\@\@Z
-     */
+
+    // symbol:
+    // ?rungametest@GameTestNetworkAdapter@@QEAAXV?$not_null@PEAVPacketSender@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVDimension@@AEBUTestParameters@gametest@@@Z
     MCAPI void
     rungametest(gsl::not_null<class PacketSender*>, std::string const&, class Dimension&, struct gametest::TestParameters const&);
+
     // NOLINTEND
 };

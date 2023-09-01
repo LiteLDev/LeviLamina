@@ -5,7 +5,6 @@
 namespace RakNet {
 
 class RakThread {
-
 public:
     // prevent constructor by default
     RakThread& operator=(RakThread const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?Create\@RakThread\@RakNet\@\@SAHP6AIPEAX\@Z0H\@Z
-     */
-    MCAPI static int32_t Create(uint32_t(__cdecl*)(void*), void*, int32_t);
+    // symbol: ?Create@RakThread@RakNet@@SAHP6AIPEAX@Z0H@Z
+    MCAPI static int Create(uint (*)(void*), void*, int);
+
     // NOLINTEND
 };
 

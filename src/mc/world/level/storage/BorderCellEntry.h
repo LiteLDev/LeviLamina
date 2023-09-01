@@ -5,7 +5,6 @@
 namespace BlendingDataFactoryUtil {
 
 struct BorderCellEntry {
-
 public:
     // prevent constructor by default
     BorderCellEntry& operator=(BorderCellEntry const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1BorderCellEntry\@BlendingDataFactoryUtil\@\@QEAA\@XZ
-     */
+    // symbol: ??1BorderCellEntry@BlendingDataFactoryUtil@@QEAA@XZ
     MCAPI ~BorderCellEntry();
+
     // NOLINTEND
 };
 

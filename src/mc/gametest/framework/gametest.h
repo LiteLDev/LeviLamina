@@ -38,11 +38,9 @@ namespace gametest { struct TestParameters; }
 
 namespace gametest {
 // NOLINTBEGIN
-/**
- * @symbol
- * ?bindGameTestErrorType\@gametest\@\@YA?AV?$EnumBindingBuilder\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4GameTestErrorType\@gametest\@\@\@Scripting\@\@XZ
- */
-MCAPI class Scripting::EnumBindingBuilder<std::string, enum class gametest::GameTestErrorType> bindGameTestErrorType();
+// symbol:
+// ?bindGameTestErrorType@gametest@@YA?AV?$EnumBindingBuilder@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4GameTestErrorType@gametest@@@Scripting@@XZ
+MCAPI class Scripting::EnumBindingBuilder<std::string, ::gametest::GameTestErrorType> bindGameTestErrorType();
 // NOLINTEND
 
 }; // namespace gametest

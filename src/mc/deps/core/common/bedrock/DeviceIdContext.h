@@ -5,7 +5,6 @@
 namespace Bedrock {
 
 struct DeviceIdContext {
-
 public:
     // prevent constructor by default
     DeviceIdContext& operator=(DeviceIdContext const&) = delete;

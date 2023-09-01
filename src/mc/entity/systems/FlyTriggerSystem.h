@@ -9,7 +9,6 @@
 #include "mc/entity/EntityModifierT.h"
 
 class FlyTriggerSystem {
-
 public:
     // prevent constructor by default
     FlyTriggerSystem& operator=(FlyTriggerSystem const&) = delete;
@@ -18,15 +17,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createSystem\@FlyTriggerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createSystem@FlyTriggerSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
-    /**
-     * @symbol
-     * ?tickEntity\@FlyTriggerSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUActorUniqueIDComponent\@\@AEBUMoveInputComponent\@\@V?$Optional\@$$CBUPassengerComponent\@\@\@\@AEAUAbilitiesComponent\@\@AEAUFallDistanceComponent\@\@AEAUPlayerInputRequestComponent\@\@AEAUVanillaClientGameplayComponent\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@UVehicleComponent\@\@\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@USendPacketsComponent\@\@\@\@\@Z
-     */
+
+    // symbol:
+    // ?tickEntity@FlyTriggerSystem@@SAXAEBVStrictEntityContext@@AEBUActorUniqueIDComponent@@AEBUMoveInputComponent@@V?$Optional@$$CBUPassengerComponent@@@@AEAUAbilitiesComponent@@AEAUFallDistanceComponent@@AEAUPlayerInputRequestComponent@@AEAUVanillaClientGameplayComponent@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@UVehicleComponent@@@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@USendPacketsComponent@@@@@Z
     MCAPI static void
     tickEntity(class StrictEntityContext const&, struct ActorUniqueIDComponent const&, struct MoveInputComponent const&, class Optional<struct PassengerComponent const>, struct AbilitiesComponent&, struct FallDistanceComponent&, struct PlayerInputRequestComponent&, struct VanillaClientGameplayComponent&, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct VehicleComponent>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct SendPacketsComponent>);
+
     // NOLINTEND
 };

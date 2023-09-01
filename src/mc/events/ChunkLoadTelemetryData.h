@@ -16,7 +16,6 @@ public:
 
     // ChunkLoadTelemetryData inner types define
     class ServerChunkLoading {
-
     public:
         // prevent constructor by default
         ServerChunkLoading& operator=(ServerChunkLoading const&) = delete;
@@ -25,10 +24,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ?toJson\@ServerChunkLoading\@ChunkLoadTelemetryData\@\@QEBA?AVValue\@Json\@\@XZ
-         */
+        // symbol: ?toJson@ServerChunkLoading@ChunkLoadTelemetryData@@QEBA?AVValue@Json@@XZ
         MCAPI class Json::Value toJson() const;
+
         // NOLINTEND
     };
 
@@ -40,13 +38,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?recordLoadedChunk\@ChunkLoadTelemetryData\@\@QEAAXAEBVLevelChunk\@\@\@Z
-     */
+    // symbol: ?recordLoadedChunk@ChunkLoadTelemetryData@@QEAAXAEBVLevelChunk@@@Z
     MCAPI void recordLoadedChunk(class LevelChunk const&);
-    /**
-     * @symbol ?toJson\@ChunkLoadTelemetryData\@\@QEBA?AVValue\@Json\@\@XZ
-     */
+
+    // symbol: ?toJson@ChunkLoadTelemetryData@@QEBA?AVValue@Json@@XZ
     MCAPI class Json::Value toJson() const;
+
     // NOLINTEND
 };

@@ -5,7 +5,6 @@
 namespace AgentComponents::Actions {
 
 struct InspectItemCount {
-
 public:
     // prevent constructor by default
     InspectItemCount& operator=(InspectItemCount const&) = delete;

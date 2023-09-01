@@ -2,9 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template <int32_t T0>
+template <int T0>
 class DividedPos {
-
 public:
     // prevent constructor by default
     DividedPos& operator=(DividedPos const&) = delete;

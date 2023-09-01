@@ -4,10 +4,8 @@
 
 namespace InsideGenericBlockSystemImpl {
 // NOLINTBEGIN
-/**
- * @symbol
- * ?tickInsideGenericBlock\@InsideGenericBlockSystemImpl\@\@YAXAEAUInsideGenericBlockComponent\@\@AEAVActorOwnerComponent\@\@\@Z
- */
+// symbol:
+// ?tickInsideGenericBlock@InsideGenericBlockSystemImpl@@YAXAEAUInsideGenericBlockComponent@@AEAVActorOwnerComponent@@@Z
 MCAPI void tickInsideGenericBlock(struct InsideGenericBlockComponent&, class ActorOwnerComponent&);
 // NOLINTEND
 

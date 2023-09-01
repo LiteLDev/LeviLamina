@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class PlayerSetWalkOrSprintFlySpeedSystem {
-
 public:
     // prevent constructor by default
     PlayerSetWalkOrSprintFlySpeedSystem& operator=(PlayerSetWalkOrSprintFlySpeedSystem const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createSystem\@PlayerSetWalkOrSprintFlySpeedSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createSystem@PlayerSetWalkOrSprintFlySpeedSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
+
     // NOLINTEND
 };

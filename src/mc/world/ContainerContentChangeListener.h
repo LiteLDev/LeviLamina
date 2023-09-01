@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ContainerContentChangeListener {
-
 public:
     // prevent constructor by default
     ContainerContentChangeListener& operator=(ContainerContentChangeListener const&) = delete;
@@ -12,16 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol ?containerContentChanged\@InventoryContainerModel\@\@UEAAXH\@Z
-     */
-    virtual void containerContentChanged(int32_t) = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERCONTENTCHANGELISTENER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // vIndex: 0, symbol: ?containerContentChanged@InventoryContainerModel@@UEAAXH@Z
+    virtual void containerContentChanged(int) = 0;
+
+    // symbol: ??1ContainerContentChangeListener@@UEAA@XZ
     MCVAPI ~ContainerContentChangeListener();
-#endif
+
     // NOLINTEND
 };

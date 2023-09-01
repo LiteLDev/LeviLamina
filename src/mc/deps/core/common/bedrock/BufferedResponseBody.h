@@ -14,7 +14,6 @@ namespace Bedrock::Http::Internal { class IResponseBody; }
 namespace Bedrock::Http {
 
 class BufferedResponseBody : public ::Bedrock::Http::Internal::IResponseBody {
-
 public:
     // prevent constructor by default
     BufferedResponseBody& operator=(BufferedResponseBody const&) = delete;
@@ -23,46 +22,34 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_HTTP_BUFFEREDRESPONSEBODY
-    /**
-     * @symbol ?cancel\@BufferedResponseBody\@Http\@Bedrock\@\@MEAAXXZ
-     */
+    // symbol: ?cancel@BufferedResponseBody@Http@Bedrock@@MEAAXXZ
     MCVAPI void cancel();
-    /**
-     * @symbol ?complete\@BufferedResponseBody\@Http\@Bedrock\@\@MEAAXXZ
-     */
+
+    // symbol: ?complete@BufferedResponseBody@Http@Bedrock@@MEAAXXZ
     MCVAPI void complete();
-    /**
-     * @symbol ?getLoggableData\@BufferedResponseBody\@Http\@Bedrock\@\@MEBA?AV?$span\@$$CBE$0?0\@gsl\@\@XZ
-     */
-    MCVAPI gsl::span<uint8_t const> getLoggableData() const;
-    /**
-     * @symbol
-     * ?getLoggableDestination\@BufferedResponseBody\@Http\@Bedrock\@\@MEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // symbol: ?getLoggableData@BufferedResponseBody@Http@Bedrock@@MEBA?AV?$span@$$CBE$0?0@gsl@@XZ
+    MCVAPI gsl::span<uchar const> getLoggableData() const;
+
+    // symbol:
+    // ?getLoggableDestination@BufferedResponseBody@Http@Bedrock@@MEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCVAPI std::string const& getLoggableDestination() const;
-    /**
-     * @symbol ?getType\@BufferedResponseBody\@Http\@Bedrock\@\@MEBA?AW4ResponseBodyType\@23\@XZ
-     */
-    MCVAPI enum class Bedrock::Http::ResponseBodyType getType() const;
-    /**
-     * @symbol ?start\@BufferedResponseBody\@Http\@Bedrock\@\@MEAA?AVerror_code\@std\@\@V?$optional\@_K\@5\@\@Z
-     */
-    MCVAPI std::error_code start(std::optional<uint64_t>);
-    /**
-     * @symbol ?write\@BufferedResponseBody\@Http\@Bedrock\@\@MEAA?AVerror_code\@std\@\@V?$span\@$$CBE$0?0\@gsl\@\@\@Z
-     */
-    MCVAPI std::error_code write(gsl::span<uint8_t const>);
-#endif
-    /**
-     * @symbol ?get\@BufferedResponseBody\@Http\@Bedrock\@\@QEBA?AV?$span\@$$CBE$0?0\@gsl\@\@XZ
-     */
-    MCAPI gsl::span<uint8_t const> get() const;
-    /**
-     * @symbol
-     * ?create\@BufferedResponseBody\@Http\@Bedrock\@\@SA?AV?$shared_ptr\@VBufferedResponseBody\@Http\@Bedrock\@\@\@std\@\@XZ
-     */
+
+    // symbol: ?getType@BufferedResponseBody@Http@Bedrock@@MEBA?AW4ResponseBodyType@23@XZ
+    MCVAPI ::Bedrock::Http::ResponseBodyType getType() const;
+
+    // symbol: ?start@BufferedResponseBody@Http@Bedrock@@MEAA?AVerror_code@std@@V?$optional@_K@5@@Z
+    MCVAPI std::error_code start(std::optional<uint64>);
+
+    // symbol: ?write@BufferedResponseBody@Http@Bedrock@@MEAA?AVerror_code@std@@V?$span@$$CBE$0?0@gsl@@@Z
+    MCVAPI std::error_code write(gsl::span<uchar const>);
+
+    // symbol: ?get@BufferedResponseBody@Http@Bedrock@@QEBA?AV?$span@$$CBE$0?0@gsl@@XZ
+    MCAPI gsl::span<uchar const> get() const;
+
+    // symbol: ?create@BufferedResponseBody@Http@Bedrock@@SA?AV?$shared_ptr@VBufferedResponseBody@Http@Bedrock@@@std@@XZ
     MCAPI static std::shared_ptr<class Bedrock::Http::BufferedResponseBody> create();
+
     // NOLINTEND
 };
 

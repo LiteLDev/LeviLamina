@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct PlayerNotificationEvent {
-
 public:
     // prevent constructor by default
     PlayerNotificationEvent& operator=(PlayerNotificationEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1PlayerNotificationEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1PlayerNotificationEvent@@QEAA@XZ
     MCAPI ~PlayerNotificationEvent();
+
     // NOLINTEND
 };

@@ -6,7 +6,6 @@
 #include "mc/world/level/levelgen/feature/Feature.h"
 
 class AzaleaTreeAndRootsFeature : public ::Feature {
-
 public:
     // prevent constructor by default
     AzaleaTreeAndRootsFeature& operator=(AzaleaTreeAndRootsFeature const&) = delete;
@@ -15,28 +14,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 3
-     * @symbol ?place\@AzaleaTreeAndRootsFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
-     */
+
+    // vIndex: 3, symbol: ?place@AzaleaTreeAndRootsFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_isLushGroundReplaceable\@AzaleaTreeAndRootsFeature\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
+    // symbol: ?_isLushGroundReplaceable@AzaleaTreeAndRootsFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool _isLushGroundReplaceable(class BlockSource&, class BlockPos const&) const;
-    /**
-     * @symbol
-     * ?_tryPlaceAzaleaTree\@AzaleaTreeAndRootsFeature\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@I\@Z
-     */
-    MCAPI bool _tryPlaceAzaleaTree(class BlockSource&, class BlockPos const&, class Random&, uint32_t) const;
+
+    // symbol: ?_tryPlaceAzaleaTree@AzaleaTreeAndRootsFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@I@Z
+    MCAPI bool _tryPlaceAzaleaTree(class BlockSource&, class BlockPos const&, class Random&, uint) const;
+
     // NOLINTEND
 };

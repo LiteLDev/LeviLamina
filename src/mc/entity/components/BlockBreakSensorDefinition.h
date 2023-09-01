@@ -11,7 +11,6 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class BlockBreakSensorDefinition {
-
 public:
     // prevent constructor by default
     BlockBreakSensorDefinition& operator=(BlockBreakSensorDefinition const&) = delete;
@@ -19,20 +18,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0BlockBreakSensorDefinition\@\@QEAA\@XZ
-     */
+    // symbol: ??0BlockBreakSensorDefinition@@QEAA@XZ
     MCAPI BlockBreakSensorDefinition();
-    /**
-     * @symbol ?initialize\@BlockBreakSensorDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVBlockBreakSensorComponent\@\@\@Z
-     */
+
+    // symbol: ?initialize@BlockBreakSensorDefinition@@QEBAXAEAVEntityContext@@AEAVBlockBreakSensorComponent@@@Z
     MCAPI void initialize(class EntityContext&, class BlockBreakSensorComponent&) const;
-    /**
-     * @symbol
-     * ?buildSchema\@BlockBreakSensorDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VBlockBreakSensorDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?buildSchema@BlockBreakSensorDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBlockBreakSensorDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BlockBreakSensorDefinition>>&);
+
     // NOLINTEND
 };

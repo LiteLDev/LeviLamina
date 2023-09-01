@@ -5,7 +5,6 @@
 namespace xbox::httpclient {
 
 struct WinHttpCallbackContext {
-
 public:
     // prevent constructor by default
     WinHttpCallbackContext& operator=(WinHttpCallbackContext const&) = delete;

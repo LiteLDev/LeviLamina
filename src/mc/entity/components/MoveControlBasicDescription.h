@@ -6,7 +6,6 @@
 #include "mc/entity/components/MoveControlDescription.h"
 
 class MoveControlBasicDescription : public ::MoveControlDescription {
-
 public:
     // prevent constructor by default
     MoveControlBasicDescription& operator=(MoveControlBasicDescription const&) = delete;
@@ -15,26 +14,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol ?getJsonName\@MoveControlBasicDescription\@\@UEBAPEBDXZ
-     */
+    // vIndex: 0, symbol: ?getJsonName@MoveControlBasicDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?deserializeData\@Description\@\@UEAAXUDeserializeDataParams\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?deserializeData@Description@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROLBASICDESCRIPTION
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1MoveControlBasicDescription@@UEAA@XZ
     MCVAPI ~MoveControlBasicDescription();
-#endif
+
     // NOLINTEND
 };

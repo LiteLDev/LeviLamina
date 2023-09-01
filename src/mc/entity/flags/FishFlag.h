@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct FishFlag {
-
 public:
     // prevent constructor by default
     FishFlag& operator=(FishFlag const&) = delete;

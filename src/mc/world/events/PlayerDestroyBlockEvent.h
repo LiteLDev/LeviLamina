@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct PlayerDestroyBlockEvent {
-
 public:
     // prevent constructor by default
     PlayerDestroyBlockEvent& operator=(PlayerDestroyBlockEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1PlayerDestroyBlockEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1PlayerDestroyBlockEvent@@QEAA@XZ
     MCAPI ~PlayerDestroyBlockEvent();
+
     // NOLINTEND
 };

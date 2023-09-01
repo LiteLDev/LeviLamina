@@ -6,7 +6,6 @@
 #include "mc/world/level/block/utils/BlockComponentBase.h"
 
 struct BlockCraftingTableComponent : public ::BlockComponentBase {
-
 public:
     // prevent constructor by default
     BlockCraftingTableComponent& operator=(BlockCraftingTableComponent const&) = delete;
@@ -15,15 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCRAFTINGTABLECOMPONENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1BlockCraftingTableComponent@@UEAA@XZ
     MCVAPI ~BlockCraftingTableComponent();
-#endif
-    /**
-     * @symbol ??4BlockCraftingTableComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
+
+    // symbol: ??4BlockCraftingTableComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct BlockCraftingTableComponent& operator=(struct BlockCraftingTableComponent&&);
+
     // NOLINTEND
 };

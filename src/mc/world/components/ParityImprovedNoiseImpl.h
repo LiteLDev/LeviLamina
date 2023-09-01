@@ -2,9 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template <int32_t T0>
+template <int T0>
 class ParityImprovedNoiseImpl {
-
 public:
     // prevent constructor by default
     ParityImprovedNoiseImpl& operator=(ParityImprovedNoiseImpl const&) = delete;

@@ -13,55 +13,39 @@ namespace Core::Profile { class CounterTokenMarker; }
 
 namespace Core::Profile {
 // NOLINTBEGIN
-/**
- * @symbol ?counterSet\@Profile\@Core\@\@YAXVCounterTokenMarker\@12\@_J\@Z
- */
-MCAPI void counterSet(class Core::Profile::CounterTokenMarker, int64_t);
-/**
- * @symbol
- * ?generateCounterTokenWithConfig\@Profile\@Core\@\@YA?AVCounterTokenMarker\@12\@PEBDW4CounterFormat\@12\@_JW4CounterFlags\@12\@\@Z
- */
-MCAPI class Core::Profile::CounterTokenMarker generateCounterTokenWithConfig(
-    char const*,
-    enum class Core::Profile::CounterFormat,
-    int64_t,
-    enum class Core::Profile::CounterFlags
-);
-/**
- * @symbol ?initializeProfile\@Profile\@Core\@\@YAXXZ
- */
+// symbol: ?counterSet@Profile@Core@@YAXVCounterTokenMarker@12@_J@Z
+MCAPI void counterSet(class Core::Profile::CounterTokenMarker, int64);
+
+// symbol:
+// ?generateCounterTokenWithConfig@Profile@Core@@YA?AVCounterTokenMarker@12@PEBDW4CounterFormat@12@_JW4CounterFlags@12@@Z
+MCAPI class Core::Profile::CounterTokenMarker
+generateCounterTokenWithConfig(char const*, ::Core::Profile::CounterFormat, int64, ::Core::Profile::CounterFlags);
+
+// symbol: ?initializeProfile@Profile@Core@@YAXXZ
 MCAPI void initializeProfile();
-/**
- * @symbol ?onFileOpenFailed\@Profile\@Core\@\@YAX_N\@Z
- */
+
+// symbol: ?onFileOpenFailed@Profile@Core@@YAX_N@Z
 MCAPI void onFileOpenFailed(bool);
-/**
- * @symbol ?onFileOpenRequest\@Profile\@Core\@\@YAX_N\@Z
- */
+
+// symbol: ?onFileOpenRequest@Profile@Core@@YAX_N@Z
 MCAPI void onFileOpenRequest(bool);
-/**
- * @symbol ?onFileOpenRetry\@Profile\@Core\@\@YAX_N\@Z
- */
+
+// symbol: ?onFileOpenRetry@Profile@Core@@YAX_N@Z
 MCAPI void onFileOpenRetry(bool);
-/**
- * @symbol ?onFileOpenRetrySuccess\@Profile\@Core\@\@YAX_N\@Z
- */
+
+// symbol: ?onFileOpenRetrySuccess@Profile@Core@@YAX_N@Z
 MCAPI void onFileOpenRetrySuccess(bool);
-/**
- * @symbol ?onMainThreadCreate\@Profile\@Core\@\@YAXXZ
- */
+
+// symbol: ?onMainThreadCreate@Profile@Core@@YAXXZ
 MCAPI void onMainThreadCreate();
-/**
- * @symbol ?onThreadDestroy\@Profile\@Core\@\@YAXXZ
- */
+
+// symbol: ?onThreadDestroy@Profile@Core@@YAXXZ
 MCAPI void onThreadDestroy();
-/**
- * @symbol ?profileFlip\@Profile\@Core\@\@YAXXZ
- */
+
+// symbol: ?profileFlip@Profile@Core@@YAXXZ
 MCAPI void profileFlip();
-/**
- * @symbol ?shutdownProfile\@Profile\@Core\@\@YAXXZ
- */
+
+// symbol: ?shutdownProfile@Profile@Core@@YAXXZ
 MCAPI void shutdownProfile();
 // NOLINTEND
 

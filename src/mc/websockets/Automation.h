@@ -24,13 +24,10 @@ namespace CodeBuilder { struct EventMessage; }
 
 namespace Automation {
 // NOLINTBEGIN
-/**
- * @symbol ?BodyData\@Automation\@\@3PEBDEB
- */
+// symbol: ?BodyData@Automation@@3PEBDEB
 MCAPI extern char const* BodyData;
-/**
- * @symbol ?HeaderData\@Automation\@\@3PEBDEB
- */
+
+// symbol: ?HeaderData@Automation@@3PEBDEB
 MCAPI extern char const* HeaderData;
 // NOLINTEND
 

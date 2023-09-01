@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class VanillaFeatures {
-
 public:
     // prevent constructor by default
     VanillaFeatures& operator=(VanillaFeatures const&) = delete;
@@ -12,14 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?registerFeatureTypes\@VanillaFeatures\@\@SAXAEAVFeatureTypeFactory\@\@\@Z
-     */
+    // symbol: ?registerFeatureTypes@VanillaFeatures@@SAXAEAVFeatureTypeFactory@@@Z
     MCAPI static void registerFeatureTypes(class FeatureTypeFactory&);
-    /**
-     * @symbol
-     * ?registerFeatures\@VanillaFeatures\@\@SAXAEAVFeatureRegistry\@\@AEBVBaseGameVersion\@\@AEBVExperiments\@\@\@Z
-     */
+
+    // symbol: ?registerFeatures@VanillaFeatures@@SAXAEAVFeatureRegistry@@AEBVBaseGameVersion@@AEBVExperiments@@@Z
     MCAPI static void registerFeatures(class FeatureRegistry&, class BaseGameVersion const&, class Experiments const&);
+
     // NOLINTEND
 };

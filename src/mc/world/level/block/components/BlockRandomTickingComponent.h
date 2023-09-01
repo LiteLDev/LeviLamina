@@ -6,7 +6,6 @@
 #include "mc/world/level/block/utils/BlockComponentBase.h"
 
 struct BlockRandomTickingComponent : public ::BlockComponentBase {
-
 public:
     // prevent constructor by default
     BlockRandomTickingComponent& operator=(BlockRandomTickingComponent const&) = delete;
@@ -15,15 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKRANDOMTICKINGCOMPONENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1BlockRandomTickingComponent@@UEAA@XZ
     MCVAPI ~BlockRandomTickingComponent();
-#endif
-    /**
-     * @symbol ??0BlockRandomTickingComponent\@\@QEAA\@$$QEAU0\@\@Z
-     */
+
+    // symbol: ??0BlockRandomTickingComponent@@QEAA@$$QEAU0@@Z
     MCAPI BlockRandomTickingComponent(struct BlockRandomTickingComponent&&);
+
     // NOLINTEND
 };

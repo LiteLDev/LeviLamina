@@ -11,7 +11,6 @@ namespace Bedrock::JSONObject { class ValueWrapper; }
 namespace Bedrock::JSONObject {
 
 class Node {
-
 public:
     // prevent constructor by default
     Node& operator=(Node const&) = delete;
@@ -20,19 +19,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?asObject\@Node\@JSONObject\@Bedrock\@\@QEAAPEAVObjectNode\@23\@XZ
-     */
+    // symbol: ?asObject@Node@JSONObject@Bedrock@@QEAAPEAVObjectNode@23@XZ
     MCAPI class Bedrock::JSONObject::ObjectNode* asObject();
-    /**
-     * @symbol ??4Node\@JSONObject\@Bedrock\@\@QEAAPEAV012\@AEBVValueWrapper\@12\@\@Z
-     */
+
+    // symbol: ??4Node@JSONObject@Bedrock@@QEAAPEAV012@AEBVValueWrapper@12@@Z
     MCAPI class Bedrock::JSONObject::Node* operator=(class Bedrock::JSONObject::ValueWrapper const&);
-    /**
-     * @symbol
-     * ?toJSONString\@Node\@JSONObject\@Bedrock\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // symbol:
+    // ?toJSONString@Node@JSONObject@Bedrock@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string toJSONString() const;
+
     // NOLINTEND
 };
 

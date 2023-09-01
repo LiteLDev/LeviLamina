@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct NetworkAddress {
-
 public:
     // prevent constructor by default
     NetworkAddress& operator=(NetworkAddress const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1NetworkAddress\@\@QEAA\@XZ
-     */
+    // symbol: ??1NetworkAddress@@QEAA@XZ
     MCAPI ~NetworkAddress();
+
     // NOLINTEND
 };

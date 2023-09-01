@@ -19,7 +19,6 @@ public:
 
     // RandomSpreadTreeCanopy inner types define
     struct WeightedBlockReference {
-
     public:
         // prevent constructor by default
         WeightedBlockReference& operator=(WeightedBlockReference const&) = delete;
@@ -28,10 +27,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??1WeightedBlockReference\@RandomSpreadTreeCanopy\@\@QEAA\@XZ
-         */
+        // symbol: ??1WeightedBlockReference@RandomSpreadTreeCanopy@@QEAA@XZ
         MCAPI ~WeightedBlockReference();
+
         // NOLINTEND
     };
 
@@ -42,22 +40,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?placeCanopy\@RandomSpreadTreeCanopy\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@AEBUTreeParams\@TreeHelper\@\@AEBV?$vector\@VBlockPos\@\@V?$allocator\@VBlockPos\@\@\@std\@\@\@3\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?placeCanopy@RandomSpreadTreeCanopy@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@AEBUTreeParams@TreeHelper@@AEBV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@3@@Z
     virtual std::optional<class BlockPos>
     placeCanopy(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, std::vector<class BlockPos> const&)
         const;
-    /**
-     * @symbol ??0RandomSpreadTreeCanopy\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0RandomSpreadTreeCanopy@@QEAA@XZ
     MCAPI RandomSpreadTreeCanopy();
+
     // NOLINTEND
 };

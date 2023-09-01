@@ -10,7 +10,6 @@ namespace Bedrock::JSONObject { class ValueWrapper; }
 namespace Bedrock::JSONObject {
 
 class ArrayNode {
-
 public:
     // prevent constructor by default
     ArrayNode& operator=(ArrayNode const&) = delete;
@@ -19,10 +18,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?setContents\@ArrayNode\@JSONObject\@Bedrock\@\@QEAA_NAEBVValueWrapper\@23\@\@Z
-     */
+    // symbol: ?setContents@ArrayNode@JSONObject@Bedrock@@QEAA_NAEBVValueWrapper@23@@Z
     MCAPI bool setContents(class Bedrock::JSONObject::ValueWrapper const&);
+
     // NOLINTEND
 };
 

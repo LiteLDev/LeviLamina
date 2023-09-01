@@ -11,7 +11,6 @@ namespace cereal { class BasicLoader; }
 // clang-format on
 
 class NBTLoader : public ::cereal::BasicLoader {
-
 public:
     // prevent constructor by default
     NBTLoader& operator=(NBTLoader const&) = delete;
@@ -20,15 +19,11 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTLOADER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1NBTLoader@@UEAA@XZ
     MCVAPI ~NBTLoader();
-#endif
-    /**
-     * @symbol ??0NBTLoader\@\@QEAA\@V?$not_null\@PEBVCompoundTag\@\@\@gsl\@\@\@Z
-     */
+
+    // symbol: ??0NBTLoader@@QEAA@V?$not_null@PEBVCompoundTag@@@gsl@@@Z
     MCAPI NBTLoader(gsl::not_null<class CompoundTag const*>);
+
     // NOLINTEND
 };

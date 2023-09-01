@@ -6,7 +6,6 @@
 #include "mc/entity/factory/EntityComponentFactoryCereal.h"
 
 class VolumeComponentFactory : public ::EntityComponentFactoryCereal {
-
 public:
     // prevent constructor by default
     VolumeComponentFactory& operator=(VolumeComponentFactory const&) = delete;
@@ -15,9 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?registerVolumeComponentDefinitions\@VolumeComponentFactory\@\@QEAAX_N\@Z
-     */
+    // symbol: ?registerVolumeComponentDefinitions@VolumeComponentFactory@@QEAAX_N@Z
     MCAPI void registerVolumeComponentDefinitions(bool);
+
     // NOLINTEND
 };

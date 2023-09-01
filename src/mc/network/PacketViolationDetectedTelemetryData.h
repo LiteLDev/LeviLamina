@@ -12,7 +12,6 @@ namespace Social::Events { class Event; }
 // clang-format on
 
 class PacketViolationDetectedTelemetryData {
-
 public:
     // prevent constructor by default
     PacketViolationDetectedTelemetryData& operator=(PacketViolationDetectedTelemetryData const&) = delete;
@@ -21,28 +20,31 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ??0PacketViolationDetectedTelemetryData\@\@QEAA\@_KV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PacketViolationResponse\@\@W4MinecraftPacketIds\@\@AEBVNetworkIdentifier\@\@\@Z
-     */
+    // symbol:
+    // ??0PacketViolationDetectedTelemetryData@@QEAA@_KV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PacketViolationResponse@@W4MinecraftPacketIds@@AEBVNetworkIdentifier@@@Z
     MCAPI
-    PacketViolationDetectedTelemetryData(uint64_t, std::string, enum class PacketViolationResponse, enum class MinecraftPacketIds, class NetworkIdentifier const&);
-    /**
-     * @symbol ?WriteEventData\@PacketViolationDetectedTelemetryData\@\@QEBAXAEAVEvent\@Events\@Social\@\@\@Z
-     */
+    PacketViolationDetectedTelemetryData(uint64, std::string, ::PacketViolationResponse, ::MinecraftPacketIds, class NetworkIdentifier const&);
+
+    // symbol: ?WriteEventData@PacketViolationDetectedTelemetryData@@QEBAXAEAVEvent@Events@Social@@@Z
     MCAPI void WriteEventData(class Social::Events::Event&) const;
-    /**
-     * @symbol ??1PacketViolationDetectedTelemetryData\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1PacketViolationDetectedTelemetryData@@QEAA@XZ
     MCAPI ~PacketViolationDetectedTelemetryData();
+
     // NOLINTEND
 
 private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?mEventName\@PacketViolationDetectedTelemetryData\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
-     */
+    // symbol:
+    // ?mEventName@PacketViolationDetectedTelemetryData@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const mEventName;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $mEventName() { return mEventName; }
+
     // NOLINTEND
 };

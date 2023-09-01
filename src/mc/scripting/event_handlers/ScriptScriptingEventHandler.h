@@ -16,7 +16,6 @@ namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 class ScriptScriptingEventHandler {
-
 public:
     // prevent constructor by default
     ScriptScriptingEventHandler& operator=(ScriptScriptingEventHandler const&) = delete;
@@ -25,47 +24,35 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?handleEvent\@?$Impl\@U?$type_list\@U?$MutableScriptingGameplayEvent\@W4CoordinatorResult\@\@\@\@$$CBU?$ScriptingGameplayEvent\@W4CoordinatorResult\@\@\@\@\@entt\@\@\@?$EventHandlerDispatcher\@VScriptingEventHandler\@\@\@Details\@\@MEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAU?$MutableScriptingGameplayEvent\@W4CoordinatorResult\@\@\@\@\@Z
-     */
-    virtual struct GameplayHandlerResult<enum class CoordinatorResult>
-    handleEvent(struct MutableScriptingGameplayEvent<enum class CoordinatorResult>&);
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?handleEvent\@?$Impl\@U?$type_list\@$$CBU?$ScriptingGameplayEvent\@W4CoordinatorResult\@\@\@\@\@entt\@\@\@?$EventHandlerDispatcher\@VScriptingEventHandler\@\@\@Details\@\@MEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEBU?$ScriptingGameplayEvent\@W4CoordinatorResult\@\@\@\@\@Z
-     */
-    virtual struct GameplayHandlerResult<enum class CoordinatorResult>
-    handleEvent(struct ScriptingGameplayEvent<enum class CoordinatorResult> const&);
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
+
+    // vIndex: 1, symbol:
+    // ?handleEvent@?$Impl@U?$type_list@U?$MutableScriptingGameplayEvent@W4CoordinatorResult@@@@$$CBU?$ScriptingGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VScriptingEventHandler@@@Details@@MEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAU?$MutableScriptingGameplayEvent@W4CoordinatorResult@@@@@Z
+    virtual struct GameplayHandlerResult<::CoordinatorResult>
+    handleEvent(struct MutableScriptingGameplayEvent<::CoordinatorResult>&);
+
+    // vIndex: 2, symbol:
+    // ?handleEvent@?$Impl@U?$type_list@$$CBU?$ScriptingGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VScriptingEventHandler@@@Details@@MEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEBU?$ScriptingGameplayEvent@W4CoordinatorResult@@@@@Z
+    virtual struct GameplayHandlerResult<::CoordinatorResult>
+    handleEvent(struct ScriptingGameplayEvent<::CoordinatorResult> const&);
+
+    // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol
-     * ?handleEvent\@ScriptScriptingEventHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAUBeforeWatchdogTerminateEvent\@\@\@Z
-     */
-    virtual struct GameplayHandlerResult<enum class CoordinatorResult>
-    handleEvent(struct BeforeWatchdogTerminateEvent&);
+
+    // vIndex: 4, symbol:
+    // ?handleEvent@ScriptScriptingEventHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUBeforeWatchdogTerminateEvent@@@Z
+    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct BeforeWatchdogTerminateEvent&);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_handleWatchdogTerminateEvent\@ScriptScriptingEventHandler\@\@AEBA_NAEAUBeforeWatchdogTerminateEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VScriptSystemBeforeEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
-     */
+    // symbol:
+    // ?_handleWatchdogTerminateEvent@ScriptScriptingEventHandler@@AEBA_NAEAUBeforeWatchdogTerminateEvent@@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VScriptSystemBeforeEvents@ScriptModuleMinecraft@@@4@@Z
     MCAPI bool
     _handleWatchdogTerminateEvent(struct BeforeWatchdogTerminateEvent&, class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptSystemBeforeEvents>)
         const;
+
     // NOLINTEND
 };

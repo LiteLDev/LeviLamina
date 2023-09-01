@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ItemData {
-
 public:
     // prevent constructor by default
     ItemData& operator=(ItemData const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ItemData\@\@QEAA\@XZ
-     */
+    // symbol: ??1ItemData@@QEAA@XZ
     MCAPI ~ItemData();
+
     // NOLINTEND
 };

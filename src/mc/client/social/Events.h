@@ -28,10 +28,8 @@ namespace Social::Events { class SummaryProperty; }
 
 namespace Social::Events {
 // NOLINTBEGIN
-/**
- * @symbol ?eventSequenceNumber\@Events\@Social\@\@3HA
- */
-MCAPI extern int32_t eventSequenceNumber;
+// symbol: ?eventSequenceNumber@Events@Social@@3HA
+MCAPI extern int eventSequenceNumber;
 // NOLINTEND
 
 }; // namespace Social::Events

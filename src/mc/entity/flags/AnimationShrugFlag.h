@@ -5,7 +5,6 @@
 namespace AgentComponents {
 
 struct AnimationShrugFlag {
-
 public:
     // prevent constructor by default
     AnimationShrugFlag& operator=(AnimationShrugFlag const&) = delete;

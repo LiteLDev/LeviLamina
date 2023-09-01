@@ -6,7 +6,6 @@
 #include "mc/world/actor/Description.h"
 
 class ActorComponentDescription : public ::Description {
-
 public:
     // prevent constructor by default
     ActorComponentDescription& operator=(ActorComponentDescription const&) = delete;
@@ -15,11 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORCOMPONENTDESCRIPTION
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1ActorComponentDescription@@UEAA@XZ
     MCVAPI ~ActorComponentDescription();
-#endif
+
     // NOLINTEND
 };

@@ -8,7 +8,6 @@
 #include "mc/network/packet/Packet.h"
 
 class ModalFormRequestPacket : public ::Packet {
-
 public:
     // prevent constructor by default
     ModalFormRequestPacket& operator=(ModalFormRequestPacket const&) = delete;
@@ -16,47 +15,31 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getId\@ModalFormRequestPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
-     */
-    virtual enum class MinecraftPacketIds getId() const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?getName\@ModalFormRequestPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // vIndex: 1, symbol: ?getId@ModalFormRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    virtual ::MinecraftPacketIds getId() const;
+
+    // vIndex: 2, symbol:
+    // ?getName@ModalFormRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const;
-    /**
-     * @vftbl 3
-     * @symbol ?write\@ModalFormRequestPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 3, symbol: ?write@ModalFormRequestPacket@@UEBAXAEAVBinaryStream@@@Z
     virtual void write(class BinaryStream&) const;
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?_read\@ModalFormRequestPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?_read@ModalFormRequestPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MODALFORMREQUESTPACKET
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1ModalFormRequestPacket@@UEAA@XZ
     MCVAPI ~ModalFormRequestPacket();
-#endif
-    /**
-     * @symbol
-     * ??0ModalFormRequestPacket\@\@QEAA\@IAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI ModalFormRequestPacket(uint32_t, std::string const&);
-    /**
-     * @symbol ??0ModalFormRequestPacket\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0ModalFormRequestPacket@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI ModalFormRequestPacket(uint, std::string const&);
+
+    // symbol: ??0ModalFormRequestPacket@@QEAA@XZ
     MCAPI ModalFormRequestPacket();
+
     // NOLINTEND
 };

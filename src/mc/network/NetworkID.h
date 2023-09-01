@@ -5,7 +5,6 @@
 namespace NetherNet {
 
 struct NetworkID {
-
 public:
     // prevent constructor by default
     NetworkID& operator=(NetworkID const&) = delete;

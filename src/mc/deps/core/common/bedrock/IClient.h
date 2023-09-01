@@ -13,7 +13,6 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 namespace CodeBuilder {
 
 class IClient : public ::Bedrock::EnableNonOwnerReferences {
-
 public:
     // prevent constructor by default
     IClient& operator=(IClient const&) = delete;
@@ -22,12 +21,9 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CODEBUILDER_ICLIENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1IClient@CodeBuilder@@UEAA@XZ
     MCVAPI ~IClient();
-#endif
+
     // NOLINTEND
 };
 

@@ -11,7 +11,6 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 // clang-format on
 
 class IEntityRegistryOwner : public ::Bedrock::EnableNonOwnerReferences {
-
 public:
     // prevent constructor by default
     IEntityRegistryOwner& operator=(IEntityRegistryOwner const&) = delete;
@@ -20,11 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IENTITYREGISTRYOWNER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1IEntityRegistryOwner@@MEAA@XZ
     MCVAPI ~IEntityRegistryOwner();
-#endif
+
     // NOLINTEND
 };

@@ -5,7 +5,6 @@
 namespace ScriptModuleMinecraft::ScriptRaycasting {
 
 struct BlockHitInfo {
-
 public:
     // prevent constructor by default
     BlockHitInfo& operator=(BlockHitInfo const&) = delete;

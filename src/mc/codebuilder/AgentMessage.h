@@ -5,7 +5,6 @@
 namespace CodeBuilder {
 
 struct AgentMessage {
-
 public:
     // prevent constructor by default
     AgentMessage& operator=(AgentMessage const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1AgentMessage\@CodeBuilder\@\@QEAA\@XZ
-     */
+    // symbol: ??1AgentMessage@CodeBuilder@@QEAA@XZ
     MCAPI ~AgentMessage();
+
     // NOLINTEND
 };
 

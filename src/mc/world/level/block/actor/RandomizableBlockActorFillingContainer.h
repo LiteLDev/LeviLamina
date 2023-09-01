@@ -7,7 +7,6 @@
 #include "mc/world/level/block/utils/BlockActorType.h"
 
 class RandomizableBlockActorFillingContainer {
-
 public:
     // prevent constructor by default
     RandomizableBlockActorFillingContainer& operator=(RandomizableBlockActorFillingContainer const&) = delete;
@@ -16,38 +15,30 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMIZABLEBLOCKACTORFILLINGCONTAINER
-    /**
-     * @symbol ?dropContents\@RandomizableBlockActorFillingContainer\@\@UEAAXAEAVBlockSource\@\@AEBVVec3\@\@_N\@Z
-     */
+    // symbol: ?dropContents@RandomizableBlockActorFillingContainer@@UEAAXAEAVBlockSource@@AEBVVec3@@_N@Z
     MCVAPI void dropContents(class BlockSource&, class Vec3 const&, bool);
-    /**
-     * @symbol ?initializeContainerContents\@RandomizableBlockActorFillingContainer\@\@UEAAXAEAVBlockSource\@\@\@Z
-     */
+
+    // symbol: ?initializeContainerContents@RandomizableBlockActorFillingContainer@@UEAAXAEAVBlockSource@@@Z
     MCVAPI void initializeContainerContents(class BlockSource&);
-    /**
-     * @symbol ?setContainerChanged\@RandomizableBlockActorFillingContainer\@\@UEAAXH\@Z
-     */
-    MCVAPI void setContainerChanged(int32_t);
-    /**
-     * @symbol ?startOpen\@RandomizableBlockActorFillingContainer\@\@UEAAXAEAVPlayer\@\@\@Z
-     */
+
+    // symbol: ?setContainerChanged@RandomizableBlockActorFillingContainer@@UEAAXH@Z
+    MCVAPI void setContainerChanged(int);
+
+    // symbol: ?startOpen@RandomizableBlockActorFillingContainer@@UEAAXAEAVPlayer@@@Z
     MCVAPI void startOpen(class Player&);
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1RandomizableBlockActorFillingContainer@@UEAA@XZ
     MCVAPI ~RandomizableBlockActorFillingContainer();
-#endif
-    /**
-     * @symbol
-     * ??0RandomizableBlockActorFillingContainer\@\@QEAA\@W4BlockActorType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlockPos\@\@HW4ContainerType\@\@\@Z
-     */
+
+    // symbol:
+    // ??0RandomizableBlockActorFillingContainer@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@HW4ContainerType@@@Z
     MCAPI RandomizableBlockActorFillingContainer(
-        enum class BlockActorType,
+        ::BlockActorType,
         std::string const&,
         class BlockPos const&,
-        int32_t,
-        enum class ContainerType
+        int,
+        ::ContainerType
     );
+
     // NOLINTEND
 };

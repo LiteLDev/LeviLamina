@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ConstDeserializeDataParams {
-
 public:
     // prevent constructor by default
     ConstDeserializeDataParams& operator=(ConstDeserializeDataParams const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ConstDeserializeDataParams\@\@QEAA\@XZ
-     */
+    // symbol: ??1ConstDeserializeDataParams@@QEAA@XZ
     MCAPI ~ConstDeserializeDataParams();
+
     // NOLINTEND
 };

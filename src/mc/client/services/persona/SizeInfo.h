@@ -5,7 +5,6 @@
 namespace persona {
 
 struct SizeInfo {
-
 public:
     // prevent constructor by default
     SizeInfo& operator=(SizeInfo const&) = delete;

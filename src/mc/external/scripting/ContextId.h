@@ -5,7 +5,6 @@
 namespace Scripting {
 
 struct ContextId {
-
 public:
     // prevent constructor by default
     ContextId& operator=(ContextId const&) = delete;

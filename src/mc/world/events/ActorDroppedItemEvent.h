@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ActorDroppedItemEvent {
-
 public:
     // prevent constructor by default
     ActorDroppedItemEvent& operator=(ActorDroppedItemEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ActorDroppedItemEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1ActorDroppedItemEvent@@QEAA@XZ
     MCAPI ~ActorDroppedItemEvent();
+
     // NOLINTEND
 };

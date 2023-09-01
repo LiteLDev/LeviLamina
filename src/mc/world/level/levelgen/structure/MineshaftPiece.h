@@ -7,7 +7,6 @@
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
 class MineshaftPiece : public ::StructurePiece {
-
 public:
     // prevent constructor by default
     MineshaftPiece& operator=(MineshaftPiece const&) = delete;
@@ -16,58 +15,46 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 6
-     * @symbol ?isInInvalidLocation\@MineshaftPiece\@\@UEAA_NAEAVBlockSource\@\@AEBVBoundingBox\@\@\@Z
-     */
+
+    // vIndex: 6, symbol: ?isInInvalidLocation@MineshaftPiece@@UEAA_NAEAVBlockSource@@AEBVBoundingBox@@@Z
     virtual bool isInInvalidLocation(class BlockSource&, class BoundingBox const&);
-    /**
-     * @vftbl 10
-     * @symbol ?canBeReplaced\@MineshaftPiece\@\@UEAA_NAEAVBlockSource\@\@HHHAEBVBoundingBox\@\@\@Z
-     */
-    virtual bool canBeReplaced(class BlockSource&, int32_t, int32_t, int32_t, class BoundingBox const&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINESHAFTPIECE
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // vIndex: 10, symbol: ?canBeReplaced@MineshaftPiece@@UEAA_NAEAVBlockSource@@HHHAEBVBoundingBox@@@Z
+    virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
+
+    // symbol: ??1MineshaftPiece@@UEAA@XZ
     MCVAPI ~MineshaftPiece();
-#endif
-    /**
-     * @symbol
-     * ?createRandomShaftPiece\@MineshaftPiece\@\@QEAA?AV?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@AEAUMineshaftData\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@3\@AEAVRandom\@\@HHHHH\@Z
-     */
+
+    // symbol:
+    // ?createRandomShaftPiece@MineshaftPiece@@QEAA?AV?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@AEAUMineshaftData@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@3@AEAVRandom@@HHHHH@Z
     MCAPI std::unique_ptr<class StructurePiece> createRandomShaftPiece(
         struct MineshaftData&,
         std::vector<std::unique_ptr<class StructurePiece>>&,
         class Random&,
-        int32_t,
-        int32_t,
-        int32_t,
-        int32_t,
-        int32_t
+        int,
+        int,
+        int,
+        int,
+        int
     );
-    /**
-     * @symbol
-     * ?generateAndAddPiece\@MineshaftPiece\@\@QEAAPEAVStructurePiece\@\@AEAV2\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@HHHHH\@Z
-     */
+
+    // symbol:
+    // ?generateAndAddPiece@MineshaftPiece@@QEAAPEAVStructurePiece@@AEAV2@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@HHHHH@Z
     MCAPI class StructurePiece* generateAndAddPiece(
         class StructurePiece&,
         std::vector<std::unique_ptr<class StructurePiece>>&,
         class Random&,
-        int32_t,
-        int32_t,
-        int32_t,
-        int32_t,
-        int32_t
+        int,
+        int,
+        int,
+        int,
+        int
     );
-    /**
-     * @symbol ?setPlanksBlock\@MineshaftPiece\@\@QEAAXAEAVBlockSource\@\@AEBVBlock\@\@HHH\@Z
-     */
-    MCAPI void setPlanksBlock(class BlockSource&, class Block const&, int32_t, int32_t, int32_t);
+
+    // symbol: ?setPlanksBlock@MineshaftPiece@@QEAAXAEAVBlockSource@@AEBVBlock@@HHH@Z
+    MCAPI void setPlanksBlock(class BlockSource&, class Block const&, int, int, int);
+
     // NOLINTEND
 };

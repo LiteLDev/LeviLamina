@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class AmbientSoundComponent {
-
 public:
     // prevent constructor by default
     AmbientSoundComponent& operator=(AmbientSoundComponent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?setAmbientSoundRemainingTime\@AmbientSoundComponent\@\@SAXAEAVActor\@\@M\@Z
-     */
+    // symbol: ?setAmbientSoundRemainingTime@AmbientSoundComponent@@SAXAEAVActor@@M@Z
     MCAPI static void setAmbientSoundRemainingTime(class Actor&, float);
+
     // NOLINTEND
 };

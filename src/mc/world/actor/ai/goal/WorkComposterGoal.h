@@ -8,7 +8,6 @@
 #include "mc/world/actor/ai/goal/WorkGoal.h"
 
 class WorkComposterGoal : public ::WorkGoal {
-
 public:
     // prevent constructor by default
     WorkComposterGoal& operator=(WorkComposterGoal const&) = delete;
@@ -17,32 +16,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@WorkComposterGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@WorkComposterGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 18
-     * @symbol ?useWorkstation\@WorkComposterGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 18, symbol: ?useWorkstation@WorkComposterGoal@@UEAAXXZ
     virtual void useWorkstation();
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_tryCompostItems\@WorkComposterGoal\@\@AEAA_NXZ
-     */
+    // symbol: ?_tryCompostItems@WorkComposterGoal@@AEAA_NXZ
     MCAPI bool _tryCompostItems();
-    /**
-     * @symbol ?_tryEmptyComposter\@WorkComposterGoal\@\@AEAA_NXZ
-     */
+
+    // symbol: ?_tryEmptyComposter@WorkComposterGoal@@AEAA_NXZ
     MCAPI bool _tryEmptyComposter();
+
     // NOLINTEND
 };

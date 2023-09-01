@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class MobEvent {
-
 public:
     // prevent constructor by default
     MobEvent& operator=(MobEvent const&) = delete;
@@ -11,30 +10,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0MobEvent\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0_N\@Z
-     */
+    // symbol: ??0MobEvent@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
     MCAPI MobEvent(std::string, std::string, bool);
-    /**
-     * @symbol ??0MobEvent\@\@QEAA\@AEBV0\@\@Z
-     */
+
+    // symbol: ??0MobEvent@@QEAA@AEBV0@@Z
     MCAPI MobEvent(class MobEvent const&);
-    /**
-     * @symbol
-     * ?getLocalizableName\@MobEvent\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // symbol: ?getLocalizableName@MobEvent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getLocalizableName() const;
-    /**
-     * @symbol ?getName\@MobEvent\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // symbol: ?getName@MobEvent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getName() const;
-    /**
-     * @symbol ?isEnabled\@MobEvent\@\@QEBA_NXZ
-     */
+
+    // symbol: ?isEnabled@MobEvent@@QEBA_NXZ
     MCAPI bool isEnabled() const;
-    /**
-     * @symbol ??1MobEvent\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1MobEvent@@QEAA@XZ
     MCAPI ~MobEvent();
+
     // NOLINTEND
 };

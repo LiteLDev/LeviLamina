@@ -15,7 +15,6 @@ namespace Bedrock { class IApplicationDataStores; }
 namespace Bedrock {
 
 class ApplicationDataStores : public ::Bedrock::IApplicationDataStores {
-
 public:
     // prevent constructor by default
     ApplicationDataStores& operator=(ApplicationDataStores const&) = delete;
@@ -24,38 +23,29 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?init\@ApplicationDataStores\@Bedrock\@\@UEAAXXZ
-     */
+
+    // vIndex: 1, symbol: ?init@ApplicationDataStores@Bedrock@@UEAAXXZ
     virtual void init();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_APPLICATIONDATASTORES
-    /**
-     * @symbol
-     * ?getDataStore\@ApplicationDataStores\@Bedrock\@\@UEBA?AV?$NonOwnerPointer\@$$CBVDataStore\@Bedrock\@\@\@2\@W4DataStores\@IApplicationDataStores\@2\@\@Z
-     */
+
+    // symbol:
+    // ?getDataStore@ApplicationDataStores@Bedrock@@UEBA?AV?$NonOwnerPointer@$$CBVDataStore@Bedrock@@@2@W4DataStores@IApplicationDataStores@2@@Z
     MCVAPI class Bedrock::NonOwnerPointer<class Bedrock::DataStore const>
-        getDataStore(enum class Bedrock::IApplicationDataStores::DataStores) const;
-    /**
-     * @symbol
-     * ?getDataStore\@ApplicationDataStores\@Bedrock\@\@UEAA?AV?$NonOwnerPointer\@VDataStore\@Bedrock\@\@\@2\@W4DataStores\@IApplicationDataStores\@2\@\@Z
-     */
+        getDataStore(::Bedrock::IApplicationDataStores::DataStores) const;
+
+    // symbol:
+    // ?getDataStore@ApplicationDataStores@Bedrock@@UEAA?AV?$NonOwnerPointer@VDataStore@Bedrock@@@2@W4DataStores@IApplicationDataStores@2@@Z
     MCVAPI class Bedrock::NonOwnerPointer<class Bedrock::DataStore>
-        getDataStore(enum class Bedrock::IApplicationDataStores::DataStores);
-#endif
+        getDataStore(::Bedrock::IApplicationDataStores::DataStores);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_initDataStore\@ApplicationDataStores\@Bedrock\@\@AEAAXW4DataStores\@IApplicationDataStores\@2\@\@Z
-     */
-    MCAPI void _initDataStore(enum class Bedrock::IApplicationDataStores::DataStores);
+    // symbol: ?_initDataStore@ApplicationDataStores@Bedrock@@AEAAXW4DataStores@IApplicationDataStores@2@@Z
+    MCAPI void _initDataStore(::Bedrock::IApplicationDataStores::DataStores);
+
     // NOLINTEND
 };
 

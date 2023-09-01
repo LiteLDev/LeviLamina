@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ChanceInformation {
-
 public:
     // prevent constructor by default
     ChanceInformation& operator=(ChanceInformation const&) = delete;
@@ -12,21 +11,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?isValid\@ChanceInformation\@\@QEBA_NXZ
-     */
+    // symbol: ?isValid@ChanceInformation@@QEBA_NXZ
     MCAPI bool isValid() const;
-    /**
-     * @symbol ?roll\@ChanceInformation\@\@QEBA_NAEAVRandom\@\@\@Z
-     */
+
+    // symbol: ?roll@ChanceInformation@@QEBA_NAEAVRandom@@@Z
     MCAPI bool roll(class Random&) const;
-    /**
-     * @symbol ?set\@ChanceInformation\@\@QEAAXII\@Z
-     */
-    MCAPI void set(uint32_t, uint32_t);
-    /**
-     * @symbol ?set\@ChanceInformation\@\@QEAAXM\@Z
-     */
+
+    // symbol: ?set@ChanceInformation@@QEAAXII@Z
+    MCAPI void set(uint, uint);
+
+    // symbol: ?set@ChanceInformation@@QEAAXM@Z
     MCAPI void set(float);
+
     // NOLINTEND
 };

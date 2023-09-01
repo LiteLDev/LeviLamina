@@ -5,7 +5,6 @@
 namespace persona {
 
 struct PersonaCharacterHandle {
-
 public:
     // prevent constructor by default
     PersonaCharacterHandle& operator=(PersonaCharacterHandle const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?INVALID\@PersonaCharacterHandle\@persona\@\@2U12\@B
-     */
+    // symbol: ?INVALID@PersonaCharacterHandle@persona@@2U12@B
     MCAPI static struct persona::PersonaCharacterHandle const INVALID;
+
     // NOLINTEND
 };
 

@@ -5,7 +5,6 @@
 namespace AgentComponents {
 
 class CommandCooldown {
-
 public:
     // prevent constructor by default
     CommandCooldown& operator=(CommandCooldown const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0CommandCooldown\@AgentComponents\@\@QEAA\@M\@Z
-     */
+    // symbol: ??0CommandCooldown@AgentComponents@@QEAA@M@Z
     MCAPI CommandCooldown(float);
+
     // NOLINTEND
 };
 

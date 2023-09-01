@@ -7,7 +7,6 @@
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
 class NBStartPiece : public ::NBBridgeCrossing {
-
 public:
     // prevent constructor by default
     NBStartPiece& operator=(NBStartPiece const&) = delete;
@@ -16,19 +15,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 2
-     * @symbol ?getType\@NBStartPiece\@\@UEBA?AW4StructurePieceType\@\@XZ
-     */
-    virtual enum class StructurePieceType getType() const;
-    /**
-     * @symbol ??0NBStartPiece\@\@QEAA\@AEAVRandom\@\@HH\@Z
-     */
-    MCAPI NBStartPiece(class Random&, int32_t, int32_t);
+
+    // vIndex: 2, symbol: ?getType@NBStartPiece@@UEBA?AW4StructurePieceType@@XZ
+    virtual ::StructurePieceType getType() const;
+
+    // symbol: ??0NBStartPiece@@QEAA@AEAVRandom@@HH@Z
+    MCAPI NBStartPiece(class Random&, int, int);
+
     // NOLINTEND
 };

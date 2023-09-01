@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class Performance {
-
 public:
     // prevent constructor by default
     Performance& operator=(Performance const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?watches\@Performance\@\@2VStopwatchHandler\@\@A
-     */
+    // symbol: ?watches@Performance@@2VStopwatchHandler@@A
     MCAPI static class StopwatchHandler watches;
+
     // NOLINTEND
 };

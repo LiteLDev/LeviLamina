@@ -5,7 +5,6 @@
 namespace Util {
 
 struct ReplacementResults {
-
 public:
     // prevent constructor by default
     ReplacementResults& operator=(ReplacementResults const&) = delete;

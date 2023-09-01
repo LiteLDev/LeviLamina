@@ -5,7 +5,6 @@
 namespace SFAT {
 
 class CRC32 {
-
 public:
     // prevent constructor by default
     CRC32& operator=(CRC32 const&) = delete;
@@ -14,10 +13,16 @@ public:
 
 private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?table\@CRC32\@SFAT\@\@0QBIB
-     */
-    MCAPI static uint32_t const table[];
+    // symbol: ?table@CRC32@SFAT@@0QBIB
+    MCAPI static uint const table[];
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $table() { return table; }
+
     // NOLINTEND
 };
 

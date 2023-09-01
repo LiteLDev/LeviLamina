@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ColorChannel {
-
 public:
     // prevent constructor by default
     ColorChannel& operator=(ColorChannel const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?INVALID\@ColorChannel\@\@2V1\@B
-     */
+    // symbol: ?INVALID@ColorChannel@@2V1@B
     MCAPI static class ColorChannel const INVALID;
+
     // NOLINTEND
 };

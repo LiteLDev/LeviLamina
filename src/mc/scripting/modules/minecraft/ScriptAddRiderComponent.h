@@ -15,7 +15,6 @@ namespace Scripting { class WeakLifetimeScope; }
 namespace ScriptModuleMinecraft {
 
 class ScriptAddRiderComponent {
-
 public:
     // prevent constructor by default
     ScriptAddRiderComponent& operator=(ScriptAddRiderComponent const&) = delete;
@@ -24,47 +23,35 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?_isValid\@BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@MEBA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?_isValid@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@MEBA_NXZ
     virtual bool _isValid() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTADDRIDERCOMPONENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1ScriptAddRiderComponent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptAddRiderComponent();
-#endif
-    /**
-     * @symbol
-     * ??0ScriptAddRiderComponent\@ScriptModuleMinecraft\@\@QEAA\@AEBVWeakEntityRef\@\@AEBVWeakLifetimeScope\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ??0ScriptAddRiderComponent@ScriptModuleMinecraft@@QEAA@AEBVWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI
     ScriptAddRiderComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
-    /**
-     * @symbol
-     * ?getEntityType\@ScriptAddRiderComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?getEntityType@ScriptAddRiderComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Scripting@@XZ
     MCAPI class Scripting::Result<std::string> getEntityType() const;
-    /**
-     * @symbol
-     * ?getSpawnEvent\@ScriptAddRiderComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?getSpawnEvent@ScriptAddRiderComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Scripting@@XZ
     MCAPI class Scripting::Result<std::string> getSpawnEvent() const;
-    /**
-     * @symbol
-     * ?bind\@ScriptAddRiderComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptAddRiderComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptAddRiderComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptAddRiderComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptAddRiderComponent> bind();
-    /**
-     * @symbol ?ComponentId\@ScriptAddRiderComponent\@ScriptModuleMinecraft\@\@2PEBDEB
-     */
+
+    // symbol: ?ComponentId@ScriptAddRiderComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;
+
     // NOLINTEND
 };
 

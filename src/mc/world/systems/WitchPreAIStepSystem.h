@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class WitchPreAIStepSystem {
-
 public:
     // prevent constructor by default
     WitchPreAIStepSystem& operator=(WitchPreAIStepSystem const&) = delete;
@@ -12,18 +11,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createSystem\@WitchPreAIStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createSystem@WitchPreAIStepSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_doWitchPreAIStepSystem\@WitchPreAIStepSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
-     */
+    // symbol: ?_doWitchPreAIStepSystem@WitchPreAIStepSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
     MCAPI static void _doWitchPreAIStepSystem(class StrictEntityContext const&, class ActorOwnerComponent&);
+
     // NOLINTEND
 };

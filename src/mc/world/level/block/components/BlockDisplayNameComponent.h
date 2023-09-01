@@ -6,7 +6,6 @@
 #include "mc/world/level/block/utils/BlockComponentBase.h"
 
 struct BlockDisplayNameComponent : public ::BlockComponentBase {
-
 public:
     // prevent constructor by default
     BlockDisplayNameComponent& operator=(BlockDisplayNameComponent const&) = delete;
@@ -15,11 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDISPLAYNAMECOMPONENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1BlockDisplayNameComponent@@UEAA@XZ
     MCVAPI ~BlockDisplayNameComponent();
-#endif
+
     // NOLINTEND
 };

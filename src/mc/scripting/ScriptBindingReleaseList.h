@@ -11,7 +11,6 @@ public:
 
     // ScriptBindingReleaseList inner types define
     struct ReleaseDetails {
-
     public:
         // prevent constructor by default
         ReleaseDetails& operator=(ReleaseDetails const&) = delete;
@@ -20,10 +19,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??1ReleaseDetails\@ScriptBindingReleaseList\@\@QEAA\@XZ
-         */
+        // symbol: ??1ReleaseDetails@ScriptBindingReleaseList@@QEAA@XZ
         MCAPI ~ReleaseDetails();
+
         // NOLINTEND
     };
 
@@ -35,10 +33,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ??0ScriptBindingReleaseList\@\@QEAA\@V?$vector\@UReleaseDetails\@ScriptBindingReleaseList\@\@V?$allocator\@UReleaseDetails\@ScriptBindingReleaseList\@\@\@std\@\@\@std\@\@\@Z
-     */
+    // symbol:
+    // ??0ScriptBindingReleaseList@@QEAA@V?$vector@UReleaseDetails@ScriptBindingReleaseList@@V?$allocator@UReleaseDetails@ScriptBindingReleaseList@@@std@@@std@@@Z
     MCAPI ScriptBindingReleaseList(std::vector<struct ScriptBindingReleaseList::ReleaseDetails>);
+
     // NOLINTEND
 };

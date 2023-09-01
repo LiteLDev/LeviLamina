@@ -7,7 +7,6 @@
 #include "mc/world/item/components/ItemStackNetResult.h"
 
 class ScreenHandlerBeacon : public ::ScreenHandlerBase {
-
 public:
     // prevent constructor by default
     ScreenHandlerBeacon& operator=(ScreenHandlerBeacon const&) = delete;
@@ -16,34 +15,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?handleAction\@ScreenHandlerBeacon\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestAction\@\@\@Z
-     */
-    virtual enum class ItemStackNetResult handleAction(class ItemStackRequestAction const&);
-    /**
-     * @vftbl 2
-     * @symbol ?endRequest\@ScreenHandlerBeacon\@\@MEAA?AW4ItemStackNetResult\@\@XZ
-     */
-    virtual enum class ItemStackNetResult endRequest();
-    /**
-     * @vftbl 4
-     * @symbol ?postRequest\@ScreenHandlerBeacon\@\@MEAAX_N\@Z
-     */
+
+    // vIndex: 1, symbol: ?handleAction@ScreenHandlerBeacon@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
+    virtual ::ItemStackNetResult handleAction(class ItemStackRequestAction const&);
+
+    // vIndex: 2, symbol: ?endRequest@ScreenHandlerBeacon@@MEAA?AW4ItemStackNetResult@@XZ
+    virtual ::ItemStackNetResult endRequest();
+
+    // vIndex: 4, symbol: ?postRequest@ScreenHandlerBeacon@@MEAAX_N@Z
     virtual void postRequest(bool);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_handleBeaconPaymentAction\@ScreenHandlerBeacon\@\@AEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionBeaconPayment\@\@\@Z
-     */
-    MCAPI enum class ItemStackNetResult _handleBeaconPaymentAction(class ItemStackRequestActionBeaconPayment const&);
+    // symbol:
+    // ?_handleBeaconPaymentAction@ScreenHandlerBeacon@@AEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionBeaconPayment@@@Z
+    MCAPI ::ItemStackNetResult _handleBeaconPaymentAction(class ItemStackRequestActionBeaconPayment const&);
+
     // NOLINTEND
 };

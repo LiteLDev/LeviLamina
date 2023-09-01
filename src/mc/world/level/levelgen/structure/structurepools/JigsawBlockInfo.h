@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class JigsawBlockInfo {
-
 public:
     // prevent constructor by default
     JigsawBlockInfo& operator=(JigsawBlockInfo const&) = delete;
@@ -12,13 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0JigsawBlockInfo\@\@QEAA\@AEBVBlockPos\@\@PEBVBlock\@\@1VJigsawEditorData\@\@\@Z
-     */
+    // symbol: ??0JigsawBlockInfo@@QEAA@AEBVBlockPos@@PEBVBlock@@1VJigsawEditorData@@@Z
     MCAPI JigsawBlockInfo(class BlockPos const&, class Block const*, class Block const*, class JigsawEditorData);
-    /**
-     * @symbol ??4JigsawBlockInfo\@\@QEAAAEAV0\@$$QEAV0\@\@Z
-     */
+
+    // symbol: ??4JigsawBlockInfo@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class JigsawBlockInfo& operator=(class JigsawBlockInfo&&);
+
     // NOLINTEND
 };

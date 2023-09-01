@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct PlayerSleepStatus {
-
 public:
     // prevent constructor by default
     PlayerSleepStatus& operator=(PlayerSleepStatus const&) = delete;

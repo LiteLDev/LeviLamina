@@ -5,7 +5,6 @@
 namespace Bedrock {
 
 class SessionInfoManager {
-
 public:
     // prevent constructor by default
     SessionInfoManager& operator=(SessionInfoManager const&) = delete;

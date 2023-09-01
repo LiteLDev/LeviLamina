@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class DataLoadHelper {
-
 public:
     // prevent constructor by default
     DataLoadHelper& operator=(DataLoadHelper const&) = delete;

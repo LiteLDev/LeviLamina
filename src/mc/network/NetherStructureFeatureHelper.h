@@ -7,12 +7,10 @@
 
 namespace NetherStructureFeatureHelper {
 // NOLINTBEGIN
-/**
- * @symbol
- * ?getStructureFeatureTypeForChunk\@NetherStructureFeatureHelper\@\@YA?AW4StructureFeatureType\@\@AEBVBiomeSource\@\@AEAVRandom\@\@AEBVChunkPos\@\@IAEBV?$vector\@_KV?$allocator\@_K\@std\@\@\@std\@\@\@Z
- */
-MCAPI enum class StructureFeatureType
-getStructureFeatureTypeForChunk(class BiomeSource const&, class Random&, class ChunkPos const&, uint32_t, std::vector<uint64_t> const&);
+// symbol:
+// ?getStructureFeatureTypeForChunk@NetherStructureFeatureHelper@@YA?AW4StructureFeatureType@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBV?$vector@_KV?$allocator@_K@std@@@std@@@Z
+MCAPI ::StructureFeatureType
+getStructureFeatureTypeForChunk(class BiomeSource const&, class Random&, class ChunkPos const&, uint, std::vector<uint64> const&);
 // NOLINTEND
 
 }; // namespace NetherStructureFeatureHelper

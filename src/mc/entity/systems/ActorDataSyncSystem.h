@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ActorDataSyncSystem {
-
 public:
     // prevent constructor by default
     ActorDataSyncSystem& operator=(ActorDataSyncSystem const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createActorDataSyncSystem\@ActorDataSyncSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createActorDataSyncSystem@ActorDataSyncSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createActorDataSyncSystem();
+
     // NOLINTEND
 };

@@ -22,7 +22,6 @@ public:
 
     // EquipItemGoal inner types define
     class Definition : public ::BaseGoalDefinition {
-
     public:
         // prevent constructor by default
         Definition& operator=(Definition const&) = delete;
@@ -31,21 +30,17 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @symbol ?initialize\@Definition\@EquipItemGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
+
+        // symbol: ?initialize@Definition@EquipItemGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class EquipItemGoal&) const;
-        /**
-         * @symbol
-         * ?buildSchema\@Definition\@EquipItemGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefinition\@EquipItemGoal\@\@\@JsonUtil\@\@\@4\@\@Z
-         */
+
+        // symbol:
+        // ?buildSchema@Definition@EquipItemGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@EquipItemGoal@@@JsonUtil@@@4@@Z
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EquipItemGoal::Definition>>&);
+
         // NOLINTEND
     };
 
@@ -57,43 +52,31 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@EquipItemGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@EquipItemGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@EquipItemGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@EquipItemGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 6
-     * @symbol ?tick\@EquipItemGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 6, symbol: ?tick@EquipItemGoal@@UEAAXXZ
     virtual void tick();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@EquipItemGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@EquipItemGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @symbol ??0EquipItemGoal\@\@QEAA\@AEAVMob\@\@\@Z
-     */
+
+    // symbol: ??0EquipItemGoal@@QEAA@AEAVMob@@@Z
     MCAPI EquipItemGoal(class Mob&);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_dropItem\@EquipItemGoal\@\@AEBAXAEBVItemStack\@\@\@Z
-     */
+    // symbol: ?_dropItem@EquipItemGoal@@AEBAXAEBVItemStack@@@Z
     MCAPI void _dropItem(class ItemStack const&) const;
+
     // NOLINTEND
 };

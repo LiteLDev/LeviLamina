@@ -17,7 +17,6 @@ class ITickDelegate;
 namespace FallingBlockSystemOnLand {
 
 class SystemTickDelegate : public ::ITickDelegate {
-
 public:
     // prevent constructor by default
     SystemTickDelegate& operator=(SystemTickDelegate const&) = delete;
@@ -26,28 +25,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?onLand\@SystemTickDelegate\@FallingBlockSystemOnLand\@\@UEAAXAEBVFallingBlock\@\@AEAVIBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?onLand@SystemTickDelegate@FallingBlockSystemOnLand@@UEAAXAEBVFallingBlock@@AEAVIBlockSource@@AEBVBlockPos@@@Z
     virtual void onLand(class FallingBlock const&, class IBlockSource&, class BlockPos const&);
-    /**
-     * @vftbl 2
-     * @symbol ?breakBlock\@SystemTickDelegate\@FallingBlockSystemOnLand\@\@UEAAXAEAVFallingBlockActor\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?breakBlock@SystemTickDelegate@FallingBlockSystemOnLand@@UEAAXAEAVFallingBlockActor@@@Z
     virtual void breakBlock(class FallingBlockActor&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FALLINGBLOCKSYSTEMONLAND_SYSTEMTICKDELEGATE
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1SystemTickDelegate@FallingBlockSystemOnLand@@UEAA@XZ
     MCVAPI ~SystemTickDelegate();
-#endif
+
     // NOLINTEND
 };
 

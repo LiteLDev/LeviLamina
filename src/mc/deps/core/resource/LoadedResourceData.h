@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class LoadedResourceData {
-
 public:
     // prevent constructor by default
     LoadedResourceData& operator=(LoadedResourceData const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1LoadedResourceData\@\@QEAA\@XZ
-     */
+    // symbol: ??1LoadedResourceData@@QEAA@XZ
     MCAPI ~LoadedResourceData();
+
     // NOLINTEND
 };

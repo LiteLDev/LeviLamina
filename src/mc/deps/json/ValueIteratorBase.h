@@ -10,7 +10,6 @@ namespace Json { class Value; }
 namespace Json {
 
 class ValueIteratorBase {
-
 public:
     // prevent constructor by default
     ValueIteratorBase& operator=(ValueIteratorBase const&) = delete;
@@ -18,34 +17,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ValueIteratorBase\@Json\@\@QEAA\@AEBV01\@\@Z
-     */
+    // symbol: ??0ValueIteratorBase@Json@@QEAA@AEBV01@@Z
     MCAPI ValueIteratorBase(class Json::ValueIteratorBase const&);
-    /**
-     * @symbol ?key\@ValueIteratorBase\@Json\@\@QEBA?AVValue\@2\@XZ
-     */
+
+    // symbol: ?key@ValueIteratorBase@Json@@QEBA?AVValue@2@XZ
     MCAPI class Json::Value key() const;
-    /**
-     * @symbol ?memberName\@ValueIteratorBase\@Json\@\@QEBAPEBDXZ
-     */
+
+    // symbol: ?memberName@ValueIteratorBase@Json@@QEBAPEBDXZ
     MCAPI char const* memberName() const;
+
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    /**
-     * @symbol ?deref\@ValueIteratorBase\@Json\@\@IEBAAEAVValue\@2\@XZ
-     */
+    // symbol: ?deref@ValueIteratorBase@Json@@IEBAAEAVValue@2@XZ
     MCAPI class Json::Value& deref() const;
-    /**
-     * @symbol ?increment\@ValueIteratorBase\@Json\@\@IEAAXXZ
-     */
+
+    // symbol: ?increment@ValueIteratorBase@Json@@IEAAXXZ
     MCAPI void increment();
-    /**
-     * @symbol ?isEqual\@ValueIteratorBase\@Json\@\@IEBA_NAEBV12\@\@Z
-     */
+
+    // symbol: ?isEqual@ValueIteratorBase@Json@@IEBA_NAEBV12@@Z
     MCAPI bool isEqual(class Json::ValueIteratorBase const&) const;
+
     // NOLINTEND
 };
 

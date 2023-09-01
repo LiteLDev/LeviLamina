@@ -22,7 +22,6 @@ public:
 
     // VillagerCelebrationGoal inner types define
     class VillagerCelebrationDefinition : public ::BaseGoalDefinition {
-
     public:
         // prevent constructor by default
         VillagerCelebrationDefinition& operator=(VillagerCelebrationDefinition const&) = delete;
@@ -31,17 +30,14 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @symbol
-         * ?buildSchema\@VillagerCelebrationDefinition\@VillagerCelebrationGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VVillagerCelebrationDefinition\@VillagerCelebrationGoal\@\@\@JsonUtil\@\@\@4\@\@Z
-         */
+
+        // symbol:
+        // ?buildSchema@VillagerCelebrationDefinition@VillagerCelebrationGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VVillagerCelebrationDefinition@VillagerCelebrationGoal@@@JsonUtil@@@4@@Z
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class VillagerCelebrationGoal::VillagerCelebrationDefinition>>&);
+
         // NOLINTEND
     };
 
@@ -53,53 +49,37 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@VillagerCelebrationGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@VillagerCelebrationGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@VillagerCelebrationGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@VillagerCelebrationGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@VillagerCelebrationGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@VillagerCelebrationGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol ?stop\@VillagerCelebrationGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 5, symbol: ?stop@VillagerCelebrationGoal@@UEAAXXZ
     virtual void stop();
-    /**
-     * @vftbl 6
-     * @symbol ?tick\@VillagerCelebrationGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 6, symbol: ?tick@VillagerCelebrationGoal@@UEAAXXZ
     virtual void tick();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@VillagerCelebrationGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@VillagerCelebrationGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_launchFirework\@VillagerCelebrationGoal\@\@AEAAXXZ
-     */
+    // symbol: ?_launchFirework@VillagerCelebrationGoal@@AEAAXXZ
     MCAPI void _launchFirework();
-    /**
-     * @symbol ?_setNextFireworkTick\@VillagerCelebrationGoal\@\@AEAAXXZ
-     */
+
+    // symbol: ?_setNextFireworkTick@VillagerCelebrationGoal@@AEAAXXZ
     MCAPI void _setNextFireworkTick();
+
     // NOLINTEND
 };

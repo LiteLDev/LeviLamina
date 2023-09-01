@@ -4,7 +4,6 @@
 
 template <typename T0>
 struct InvertableFilter {
-
 public:
     // prevent constructor by default
     InvertableFilter& operator=(InvertableFilter const&) = delete;

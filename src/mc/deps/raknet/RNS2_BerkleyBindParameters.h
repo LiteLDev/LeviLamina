@@ -5,7 +5,6 @@
 namespace RakNet {
 
 struct RNS2_BerkleyBindParameters {
-
 public:
     // prevent constructor by default
     RNS2_BerkleyBindParameters& operator=(RNS2_BerkleyBindParameters const&) = delete;

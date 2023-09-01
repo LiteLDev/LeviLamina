@@ -5,7 +5,6 @@
 namespace ClientBlobCache::Server {
 
 class ActiveTransfer {
-
 public:
     // prevent constructor by default
     ActiveTransfer& operator=(ActiveTransfer const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?onAckReceived\@ActiveTransfer\@Server\@ClientBlobCache\@\@QEAAX_K\@Z
-     */
-    MCAPI void onAckReceived(uint64_t);
+    // symbol: ?onAckReceived@ActiveTransfer@Server@ClientBlobCache@@QEAAX_K@Z
+    MCAPI void onAckReceived(uint64);
+
     // NOLINTEND
 };
 

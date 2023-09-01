@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct MesaSurfaceAttributes {
-
 public:
     // prevent constructor by default
     MesaSurfaceAttributes& operator=(MesaSurfaceAttributes const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1MesaSurfaceAttributes\@\@QEAA\@XZ
-     */
+    // symbol: ??1MesaSurfaceAttributes@@QEAA@XZ
     MCAPI ~MesaSurfaceAttributes();
+
     // NOLINTEND
 };

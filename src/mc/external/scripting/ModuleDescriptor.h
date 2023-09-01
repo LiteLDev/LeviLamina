@@ -5,7 +5,6 @@
 namespace Scripting {
 
 struct ModuleDescriptor {
-
 public:
     // prevent constructor by default
     ModuleDescriptor& operator=(ModuleDescriptor const&) = delete;

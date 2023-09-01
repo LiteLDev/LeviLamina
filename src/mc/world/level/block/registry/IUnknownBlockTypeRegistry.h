@@ -11,7 +11,6 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 // clang-format on
 
 class IUnknownBlockTypeRegistry : public ::Bedrock::EnableNonOwnerReferences {
-
 public:
     // prevent constructor by default
     IUnknownBlockTypeRegistry& operator=(IUnknownBlockTypeRegistry const&) = delete;
@@ -20,21 +19,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0() = 0;
-    /**
-     * @vftbl 1
-     * @symbol ?getUnknownBlock\@UnknownBlockTypeRegistry\@\@UEAAAEBVBlock\@\@AEBVCompoundTag\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?getUnknownBlock@UnknownBlockTypeRegistry@@UEAAAEBVBlock@@AEBVCompoundTag@@@Z
     virtual class Block const& getUnknownBlock(class CompoundTag const&) = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IUNKNOWNBLOCKTYPEREGISTRY
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1IUnknownBlockTypeRegistry@@UEAA@XZ
     MCVAPI ~IUnknownBlockTypeRegistry();
-#endif
+
     // NOLINTEND
 };

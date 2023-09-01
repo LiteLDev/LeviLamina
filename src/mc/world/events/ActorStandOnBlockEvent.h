@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ActorStandOnBlockEvent {
-
 public:
     // prevent constructor by default
     ActorStandOnBlockEvent& operator=(ActorStandOnBlockEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ActorStandOnBlockEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1ActorStandOnBlockEvent@@QEAA@XZ
     MCAPI ~ActorStandOnBlockEvent();
+
     // NOLINTEND
 };

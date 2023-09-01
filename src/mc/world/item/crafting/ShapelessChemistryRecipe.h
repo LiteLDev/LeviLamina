@@ -11,7 +11,6 @@ namespace mce { class UUID; }
 // clang-format on
 
 class ShapelessChemistryRecipe : public ::ShapelessRecipe {
-
 public:
     // prevent constructor by default
     ShapelessChemistryRecipe& operator=(ShapelessChemistryRecipe const&) = delete;
@@ -20,29 +19,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
+
+    // vIndex: 5, symbol: __unk_vfn_5
     virtual void __unk_vfn_5();
-    /**
-     * @vftbl 6
-     * @symbol ?matches\@ShapelessChemistryRecipe\@\@UEBA_NAEBVCraftingContainer\@\@AEBVCraftingContext\@\@\@Z
-     */
+
+    // vIndex: 6, symbol: ?matches@ShapelessChemistryRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
     virtual bool matches(class CraftingContainer const&, class CraftingContext const&) const;
-    /**
-     * @vftbl 8
-     * @symbol ?getId\@ShapelessChemistryRecipe\@\@UEBAAEBVUUID\@mce\@\@XZ
-     */
+
+    // vIndex: 8, symbol: ?getId@ShapelessChemistryRecipe@@UEBAAEBVUUID@mce@@XZ
     virtual class mce::UUID const& getId() const;
-    /**
-     * @symbol ?ID\@ShapelessChemistryRecipe\@\@2VUUID\@mce\@\@B
-     */
+
+    // symbol: ?ID@ShapelessChemistryRecipe@@2VUUID@mce@@B
     MCAPI static class mce::UUID const ID;
+
     // NOLINTEND
 };

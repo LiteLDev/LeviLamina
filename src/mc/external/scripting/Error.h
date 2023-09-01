@@ -5,7 +5,6 @@
 namespace Scripting {
 
 struct Error {
-
 public:
     // prevent constructor by default
     Error& operator=(Error const&) = delete;

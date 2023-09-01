@@ -4,7 +4,6 @@
 
 template <typename... T0>
 struct Exclude {
-
 public:
     // prevent constructor by default
     Exclude& operator=(Exclude const&) = delete;

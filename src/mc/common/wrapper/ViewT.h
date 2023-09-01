@@ -4,7 +4,6 @@
 
 template <typename T0, typename T1, typename... T2>
 class ViewT {
-
 public:
     // prevent constructor by default
     ViewT& operator=(ViewT const&) = delete;

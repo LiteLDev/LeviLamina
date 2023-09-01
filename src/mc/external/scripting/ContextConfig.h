@@ -5,7 +5,6 @@
 namespace Scripting {
 
 struct ContextConfig {
-
 public:
     // prevent constructor by default
     ContextConfig& operator=(ContextConfig const&) = delete;

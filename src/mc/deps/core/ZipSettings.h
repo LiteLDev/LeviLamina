@@ -5,7 +5,6 @@
 namespace Core::ZipUtils {
 
 class ZipSettings {
-
 public:
     // prevent constructor by default
     ZipSettings& operator=(ZipSettings const&) = delete;
@@ -13,14 +12,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ZipSettings\@ZipUtils\@Core\@\@QEAA\@XZ
-     */
+    // symbol: ??0ZipSettings@ZipUtils@Core@@QEAA@XZ
     MCAPI ZipSettings();
-    /**
-     * @symbol ??1ZipSettings\@ZipUtils\@Core\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ZipSettings@ZipUtils@Core@@QEAA@XZ
     MCAPI ~ZipSettings();
+
     // NOLINTEND
 };
 

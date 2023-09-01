@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class LevelDbRandomAccessFile {
-
 public:
     // prevent constructor by default
     LevelDbRandomAccessFile& operator=(LevelDbRandomAccessFile const&) = delete;
@@ -12,15 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?Read\@LevelDbRandomAccessFile\@\@UEBA?AVStatus\@leveldb\@\@_K0PEAVSlice\@3\@PEAD\@Z
-     */
-    virtual leveldb::Status Read(uint64_t, uint64_t, leveldb::Slice*, char*) const;
+
+    // vIndex: 1, symbol: ?Read@LevelDbRandomAccessFile@@UEBA?AVStatus@leveldb@@_K0PEAVSlice@3@PEAD@Z
+    virtual leveldb::Status Read(uint64, uint64, leveldb::Slice*, char*) const;
+
     // NOLINTEND
 };

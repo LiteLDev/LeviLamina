@@ -5,7 +5,6 @@
 namespace Bedrock::Http {
 
 class HttpInterface_windows {
-
 public:
     // prevent constructor by default
     HttpInterface_windows& operator=(HttpInterface_windows const&) = delete;

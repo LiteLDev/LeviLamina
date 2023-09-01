@@ -13,7 +13,6 @@ public:
 
     // WorkerPoolManager inner types define
     class PoolHandleInterface {
-
     public:
         // prevent constructor by default
         PoolHandleInterface& operator=(PoolHandleInterface const&) = delete;
@@ -29,12 +28,9 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_WORKERPOOLMANAGER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1WorkerPoolManager@Bedrock@@UEAA@XZ
     MCVAPI ~WorkerPoolManager();
-#endif
+
     // NOLINTEND
 };
 

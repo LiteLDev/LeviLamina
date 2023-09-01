@@ -11,7 +11,6 @@ public:
 
     // ActorHistory inner types define
     struct Snapshot {
-
     public:
         // prevent constructor by default
         Snapshot& operator=(Snapshot const&) = delete;
@@ -20,10 +19,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??1Snapshot\@ActorHistory\@\@QEAA\@XZ
-         */
+        // symbol: ??1Snapshot@ActorHistory@@QEAA@XZ
         MCAPI ~Snapshot();
+
         // NOLINTEND
     };
 
@@ -35,17 +33,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?addFrame\@ActorHistory\@\@QEAA_NAEAUIActorMovementProxy\@\@_KAEAVEntityRegistry\@\@\@Z
-     */
-    MCAPI bool addFrame(struct IActorMovementProxy&, uint64_t, class EntityRegistry&);
-    /**
-     * @symbol ?createSnapshot\@ActorHistory\@\@QEBA?AUSnapshot\@1\@AEAUIActorMovementProxy\@\@AEAVEntityRegistry\@\@\@Z
-     */
+    // symbol: ?addFrame@ActorHistory@@QEAA_NAEAUIActorMovementProxy@@_KAEAVEntityRegistry@@@Z
+    MCAPI bool addFrame(struct IActorMovementProxy&, uint64, class EntityRegistry&);
+
+    // symbol: ?createSnapshot@ActorHistory@@QEBA?AUSnapshot@1@AEAUIActorMovementProxy@@AEAVEntityRegistry@@@Z
     MCAPI struct ActorHistory::Snapshot createSnapshot(struct IActorMovementProxy&, class EntityRegistry&) const;
-    /**
-     * @symbol ??1ActorHistory\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ActorHistory@@QEAA@XZ
     MCAPI ~ActorHistory();
+
     // NOLINTEND
 };

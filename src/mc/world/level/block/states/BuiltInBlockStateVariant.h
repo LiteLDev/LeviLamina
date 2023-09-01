@@ -4,7 +4,6 @@
 
 template <typename T0>
 class BuiltInBlockStateVariant {
-
 public:
     // prevent constructor by default
     BuiltInBlockStateVariant& operator=(BuiltInBlockStateVariant const&) = delete;

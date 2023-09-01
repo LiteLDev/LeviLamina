@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ContainerValidationSlotInfo {
-
 public:
     // prevent constructor by default
     ContainerValidationSlotInfo& operator=(ContainerValidationSlotInfo const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ContainerValidationSlotInfo\@\@QEAA\@XZ
-     */
+    // symbol: ??1ContainerValidationSlotInfo@@QEAA@XZ
     MCAPI ~ContainerValidationSlotInfo();
+
     // NOLINTEND
 };

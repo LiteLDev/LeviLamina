@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct SyncedPlayerMovementSettings {
-
 public:
     // prevent constructor by default
     SyncedPlayerMovementSettings& operator=(SyncedPlayerMovementSettings const&) = delete;
@@ -11,13 +10,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0SyncedPlayerMovementSettings\@\@QEAA\@XZ
-     */
+    // symbol: ??0SyncedPlayerMovementSettings@@QEAA@XZ
     MCAPI SyncedPlayerMovementSettings();
-    /**
-     * @symbol ??0SyncedPlayerMovementSettings\@\@QEAA\@AEBUPlayerMovementSettings\@\@\@Z
-     */
+
+    // symbol: ??0SyncedPlayerMovementSettings@@QEAA@AEBUPlayerMovementSettings@@@Z
     MCAPI SyncedPlayerMovementSettings(struct PlayerMovementSettings const&);
+
     // NOLINTEND
 };

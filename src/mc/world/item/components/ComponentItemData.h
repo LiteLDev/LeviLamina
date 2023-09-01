@@ -4,9 +4,7 @@
 
 namespace ComponentItemData {
 // NOLINTBEGIN
-/**
- * @symbol ?bindTypes\@ComponentItemData\@\@YAXXZ
- */
+// symbol: ?bindTypes@ComponentItemData@@YAXXZ
 MCAPI void bindTypes();
 // NOLINTEND
 

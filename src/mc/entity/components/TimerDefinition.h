@@ -11,7 +11,6 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class TimerDefinition {
-
 public:
     // prevent constructor by default
     TimerDefinition& operator=(TimerDefinition const&) = delete;
@@ -19,24 +18,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0TimerDefinition\@\@QEAA\@XZ
-     */
+    // symbol: ??0TimerDefinition@@QEAA@XZ
     MCAPI TimerDefinition();
-    /**
-     * @symbol ?addWeightedChoiceEntry\@TimerDefinition\@\@QEAAXAEBUWeightChoiceEntry\@\@\@Z
-     */
+
+    // symbol: ?addWeightedChoiceEntry@TimerDefinition@@QEAAXAEBUWeightChoiceEntry@@@Z
     MCAPI void addWeightedChoiceEntry(struct WeightChoiceEntry const&);
-    /**
-     * @symbol ?initialize\@TimerDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVTimerComponent\@\@\@Z
-     */
+
+    // symbol: ?initialize@TimerDefinition@@QEBAXAEAVEntityContext@@AEAVTimerComponent@@@Z
     MCAPI void initialize(class EntityContext&, class TimerComponent&) const;
-    /**
-     * @symbol
-     * ?buildSchema\@TimerDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VTimerDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?buildSchema@TimerDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VTimerDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TimerDefinition>>&);
+
     // NOLINTEND
 };

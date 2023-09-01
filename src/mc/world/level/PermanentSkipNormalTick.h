@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct PermanentSkipNormalTick {
-
 public:
     // prevent constructor by default
     PermanentSkipNormalTick& operator=(PermanentSkipNormalTick const&) = delete;

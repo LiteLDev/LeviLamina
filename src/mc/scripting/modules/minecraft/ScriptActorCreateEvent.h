@@ -8,7 +8,6 @@
 namespace ScriptModuleMinecraft {
 
 struct ScriptActorCreateEvent {
-
 public:
     // prevent constructor by default
     ScriptActorCreateEvent& operator=(ScriptActorCreateEvent const&) = delete;
@@ -17,15 +16,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ScriptActorCreateEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+    // symbol: ??1ScriptActorCreateEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptActorCreateEvent();
-    /**
-     * @symbol
-     * ?bindV010\@ScriptActorCreateEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptActorCreateEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bindV010@ScriptActorCreateEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptActorCreateEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorCreateEvent> bindV010();
+
     // NOLINTEND
 };
 

@@ -18,7 +18,6 @@ namespace Scripting { class WeakLifetimeScope; }
 namespace ScriptModuleMinecraft {
 
 class ScriptSystem {
-
 public:
     // prevent constructor by default
     ScriptSystem& operator=(ScriptSystem const&) = delete;
@@ -27,50 +26,41 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ??0ScriptSystem\@ScriptModuleMinecraft\@\@QEAA\@AEBVWeakLifetimeScope\@Scripting\@\@V?$not_null\@PEAVServerLevel\@\@\@gsl\@\@\@Z
-     */
+    // symbol:
+    // ??0ScriptSystem@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@V?$not_null@PEAVServerLevel@@@gsl@@@Z
     MCAPI ScriptSystem(class Scripting::WeakLifetimeScope const&, gsl::not_null<class ServerLevel*>);
-    /**
-     * @symbol ?clearRun\@ScriptSystem\@ScriptModuleMinecraft\@\@QEAAXI\@Z
-     */
-    MCAPI void clearRun(uint32_t);
-    /**
-     * @symbol
-     * ?getSystemAfterEvents\@ScriptSystem\@ScriptModuleMinecraft\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol: ?clearRun@ScriptSystem@ScriptModuleMinecraft@@QEAAXI@Z
+    MCAPI void clearRun(uint);
+
+    // symbol:
+    // ?getSystemAfterEvents@ScriptSystem@ScriptModuleMinecraft@@QEAA?AV?$StrongTypedObjectHandle@VScriptSystemAfterEvents@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptSystemAfterEvents>
     getSystemAfterEvents();
-    /**
-     * @symbol
-     * ?getSystemBeforeEvents\@ScriptSystem\@ScriptModuleMinecraft\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptSystemBeforeEvents\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?getSystemBeforeEvents@ScriptSystem@ScriptModuleMinecraft@@QEAA?AV?$StrongTypedObjectHandle@VScriptSystemBeforeEvents@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptSystemBeforeEvents>
     getSystemBeforeEvents();
-    /**
-     * @symbol
-     * ?runInterval\@ScriptSystem\@ScriptModuleMinecraft\@\@QEAAIV?$Closure\@$$A6AXXZ$$V\@Scripting\@\@V?$optional\@I\@std\@\@\@Z
-     */
-    MCAPI uint32_t runInterval(class Scripting::Closure<void(void)>, std::optional<uint32_t>);
-    /**
-     * @symbol ?runSafe\@ScriptSystem\@ScriptModuleMinecraft\@\@QEAAIV?$Closure\@$$A6AXXZ$$V\@Scripting\@\@\@Z
-     */
-    MCAPI uint32_t runSafe(class Scripting::Closure<void(void)>);
-    /**
-     * @symbol
-     * ?runTimeout\@ScriptSystem\@ScriptModuleMinecraft\@\@QEAAIV?$Closure\@$$A6AXXZ$$V\@Scripting\@\@V?$optional\@I\@std\@\@\@Z
-     */
-    MCAPI uint32_t runTimeout(class Scripting::Closure<void(void)>, std::optional<uint32_t>);
-    /**
-     * @symbol ??1ScriptSystem\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+
+    // symbol:
+    // ?runInterval@ScriptSystem@ScriptModuleMinecraft@@QEAAIV?$Closure@$$A6AXXZ$$V@Scripting@@V?$optional@I@std@@@Z
+    MCAPI uint runInterval(class Scripting::Closure<void(void)>, std::optional<uint>);
+
+    // symbol: ?runSafe@ScriptSystem@ScriptModuleMinecraft@@QEAAIV?$Closure@$$A6AXXZ$$V@Scripting@@@Z
+    MCAPI uint runSafe(class Scripting::Closure<void(void)>);
+
+    // symbol:
+    // ?runTimeout@ScriptSystem@ScriptModuleMinecraft@@QEAAIV?$Closure@$$A6AXXZ$$V@Scripting@@V?$optional@I@std@@@Z
+    MCAPI uint runTimeout(class Scripting::Closure<void(void)>, std::optional<uint>);
+
+    // symbol: ??1ScriptSystem@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptSystem();
-    /**
-     * @symbol
-     * ?bind\@ScriptSystem\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptSystem\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptSystem@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptSystem@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptSystem> bind();
+
     // NOLINTEND
 };
 

@@ -6,7 +6,6 @@
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
 class VanillaBastionJigsawStructureElements {
-
 public:
     // prevent constructor by default
     VanillaBastionJigsawStructureElements& operator=(VanillaBastionJigsawStructureElements const&) = delete;
@@ -15,11 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?initialize\@VanillaBastionJigsawStructureElements\@\@SAXV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEAVFeatureRegistry\@\@AEAVJigsawStructureRegistry\@\@\@Z
-     */
+    // symbol:
+    // ?initialize@VanillaBastionJigsawStructureElements@@SAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEAVFeatureRegistry@@AEAVJigsawStructureRegistry@@@Z
     MCAPI static void
     initialize(gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class FeatureRegistry&, class JigsawStructureRegistry&);
+
     // NOLINTEND
 };

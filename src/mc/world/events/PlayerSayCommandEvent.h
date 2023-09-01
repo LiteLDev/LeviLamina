@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct PlayerSayCommandEvent {
-
 public:
     // prevent constructor by default
     PlayerSayCommandEvent& operator=(PlayerSayCommandEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1PlayerSayCommandEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1PlayerSayCommandEvent@@QEAA@XZ
     MCAPI ~PlayerSayCommandEvent();
+
     // NOLINTEND
 };
