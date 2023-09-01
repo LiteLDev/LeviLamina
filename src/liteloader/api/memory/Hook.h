@@ -25,9 +25,8 @@ LLAPI int32_t hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPr
 LLAPI bool unhook(FuncPtr target, FuncPtr detour);
 
 template <typename T>
-inline FuncPtr resolveIdentifier(T identifier)
     requires(std::is_function_v<std::remove_pointer_t<T>> || std::is_member_function_pointer_v<T> || std::is_same_v<T, uintptr_t>)
-{
+inline FuncPtr resolveIdentifier(T identifier) {
     return toFuncPtr(identifier);
 }
 
