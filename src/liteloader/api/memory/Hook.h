@@ -24,12 +24,6 @@ LLAPI int32_t hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPr
 
 LLAPI bool unhook(FuncPtr target, FuncPtr detour);
 
-template <typename T>
-    requires(std::is_function_v<std::remove_pointer_t<T>> || std::is_member_function_pointer_v<T> || std::is_same_v<T, uintptr_t>)
-inline FuncPtr resolveIdentifier(T identifier) {
-    return toFuncPtr(identifier);
-}
-
 /**
  * @brief Get the pointer of a function by identifier.
  *
@@ -37,6 +31,25 @@ inline FuncPtr resolveIdentifier(T identifier) {
  * @return FuncPtr
  */
 LLAPI FuncPtr resolveIdentifier(const char* identifier);
+
+template <typename T>
+concept FuncPtrType = std::is_function_v<std::remove_pointer_t<T>> || std::is_member_function_pointer_v<T>;
+
+template <typename T>
+    requires(FuncPtrType<T> || std::is_same_v<T, uintptr_t>)
+constexpr FuncPtr resolveIdentifier(T identifier) {
+    return toFuncPtr(identifier);
+}
+
+template <typename T>
+constexpr FuncPtr resolveIdentifier(const char* identifier) {
+    return resolveIdentifier(identifier);
+}
+
+template <typename T>
+constexpr FuncPtr resolveIdentifier(uintptr_t address) {
+    return resolveIdentifier(address);
+}
 
 // Use an individual struct to register hook, in case DefType can't be constructed.
 template <typename T>
@@ -68,7 +81,7 @@ struct HookAutoRegister {
         StaticDescriptor Ret detour(__VA_ARGS__);                                                                      \
                                                                                                                        \
         static int32_t hook() {                                                                                        \
-            target = ll::memory::resolveIdentifier(identifier);                                                        \
+            target = ll::memory::resolveIdentifier<OriginFuncType>(identifier);                                        \
                                                                                                                        \
             if (target == nullptr) {                                                                                   \
                 return -1;                                                                                             \
