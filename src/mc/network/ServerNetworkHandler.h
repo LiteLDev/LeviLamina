@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/ServerPlayer.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/OwnerPtrT.h"
@@ -46,6 +47,14 @@ public:
     };
 
 public:
+    // Do not use _getServerPlayer directly
+    // Please get SubID from the packet
+    inline optional_ref<ServerPlayer>
+    getServerPlayer(class NetworkIdentifier const& source, enum class SubClientId subId) {
+        auto& handler = ll::memory::dAccess<ServerNetworkHandler>(this, -16);
+        return {handler._getServerPlayer(source, subId)};
+    }
+
     // prevent constructor by default
     ServerNetworkHandler& operator=(ServerNetworkHandler const&) = delete;
     ServerNetworkHandler(ServerNetworkHandler const&)            = delete;
