@@ -17,7 +17,6 @@ namespace ScriptModuleMinecraft { class ScriptActorComponent; }
 namespace ScriptModuleMinecraft {
 
 class ScriptRidingComponent : public ::ScriptModuleMinecraft::ScriptActorComponent {
-
 public:
     // prevent constructor by default
     ScriptRidingComponent& operator=(ScriptRidingComponent const&) = delete;
@@ -26,32 +25,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTRIDINGCOMPONENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1ScriptRidingComponent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptRidingComponent();
-#endif
-    /**
-     * @symbol
-     * ?getEntityRidingOn\@ScriptRidingComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?getEntityRidingOn@ScriptRidingComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@Scripting@@XZ
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>
     getEntityRidingOn() const;
-    /**
-     * @symbol
-     * ?bind\@ScriptRidingComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptRidingComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptRidingComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptRidingComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptRidingComponent> bind();
-    /**
-     * @symbol ?ComponentId\@ScriptRidingComponent\@ScriptModuleMinecraft\@\@2PEBDEB
-     */
+
+    // symbol: ?ComponentId@ScriptRidingComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;
+
     // NOLINTEND
 };
 

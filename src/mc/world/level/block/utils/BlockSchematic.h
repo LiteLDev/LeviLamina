@@ -5,7 +5,6 @@
 namespace ClientBlockPipeline {
 
 struct BlockSchematic {
-
 public:
     // prevent constructor by default
     BlockSchematic& operator=(BlockSchematic const&) = delete;

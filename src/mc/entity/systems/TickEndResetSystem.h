@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class TickEndResetSystem {
-
 public:
     // prevent constructor by default
     TickEndResetSystem& operator=(TickEndResetSystem const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createSystem\@TickEndResetSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createSystem@TickEndResetSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
+
     // NOLINTEND
 };

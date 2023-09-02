@@ -10,7 +10,6 @@ namespace RakNet { struct RNS2_SendParameters; }
 namespace RakNet {
 
 class RNS2_Windows_Linux_360 {
-
 public:
     // prevent constructor by default
     RNS2_Windows_Linux_360& operator=(RNS2_Windows_Linux_360 const&) = delete;
@@ -19,11 +18,9 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    /**
-     * @symbol ?Send_Windows_Linux_360NoVDP\@RNS2_Windows_Linux_360\@RakNet\@\@KAHHPEAURNS2_SendParameters\@2\@PEBDI\@Z
-     */
-    MCAPI static int32_t
-    Send_Windows_Linux_360NoVDP(int32_t, struct RakNet::RNS2_SendParameters*, char const*, uint32_t);
+    // symbol: ?Send_Windows_Linux_360NoVDP@RNS2_Windows_Linux_360@RakNet@@KAHHPEAURNS2_SendParameters@2@PEBDI@Z
+    MCAPI static int Send_Windows_Linux_360NoVDP(int, struct RakNet::RNS2_SendParameters*, char const*, uint);
+
     // NOLINTEND
 };
 

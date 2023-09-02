@@ -5,7 +5,6 @@
 namespace AgentComponents::Actions {
 
 struct Till {
-
 public:
     // prevent constructor by default
     Till& operator=(Till const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1Till\@Actions\@AgentComponents\@\@QEAA\@XZ
-     */
+    // symbol: ??1Till@Actions@AgentComponents@@QEAA@XZ
     MCAPI ~Till();
+
     // NOLINTEND
 };
 

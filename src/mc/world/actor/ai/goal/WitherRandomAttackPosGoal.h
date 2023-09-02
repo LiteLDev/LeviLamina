@@ -7,7 +7,6 @@
 #include "mc/world/actor/ai/goal/RandomStrollGoal.h"
 
 class WitherRandomAttackPosGoal : public ::RandomStrollGoal {
-
 public:
     // prevent constructor by default
     WitherRandomAttackPosGoal& operator=(WitherRandomAttackPosGoal const&) = delete;
@@ -16,30 +15,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@WitherRandomAttackPosGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@WitherRandomAttackPosGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@WitherRandomAttackPosGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@WitherRandomAttackPosGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@WitherRandomAttackPosGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@WitherRandomAttackPosGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol ?stop\@WitherRandomAttackPosGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 5, symbol: ?stop@WitherRandomAttackPosGoal@@UEAAXXZ
     virtual void stop();
+
     // NOLINTEND
 };

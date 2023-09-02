@@ -19,29 +19,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 4
-     * @symbol ?_write\@ItemStackRequestActionMineBlock\@\@MEBAXAEAVBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 4, symbol: ?_write@ItemStackRequestActionMineBlock@@MEBAXAEAVBinaryStream@@@Z
     virtual void _write(class BinaryStream&) const;
-    /**
-     * @vftbl 5
-     * @symbol
-     * ?_read\@ItemStackRequestActionMineBlock\@\@MEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 5, symbol:
+    // ?_read@ItemStackRequestActionMineBlock@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
-    /**
-     * @symbol ?getSrc\@ItemStackRequestActionMineBlock\@\@QEBA?AUItemStackRequestSlotInfo\@\@XZ
-     */
+
+    // symbol: ?getSrc@ItemStackRequestActionMineBlock@@QEBA?AUItemStackRequestSlotInfo@@XZ
     MCAPI struct ItemStackRequestSlotInfo getSrc() const;
-    /**
-     * @symbol ?setPreValidationStatus\@ItemStackRequestActionMineBlock\@\@QEBAXW4PreValidationStatus\@1\@\@Z
-     */
-    MCAPI void setPreValidationStatus(enum class ItemStackRequestActionMineBlock::PreValidationStatus) const;
+
+    // symbol: ?setPreValidationStatus@ItemStackRequestActionMineBlock@@QEBAXW4PreValidationStatus@1@@Z
+    MCAPI void setPreValidationStatus(::ItemStackRequestActionMineBlock::PreValidationStatus) const;
+
     // NOLINTEND
 };

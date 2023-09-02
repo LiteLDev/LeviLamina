@@ -6,7 +6,6 @@ namespace JsonUtil {
 
 template <typename T0, typename T1>
 class JsonSchemaObjectNode {
-
 public:
     // prevent constructor by default
     JsonSchemaObjectNode& operator=(JsonSchemaObjectNode const&) = delete;

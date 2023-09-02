@@ -13,7 +13,6 @@ public:
     enum class WaterLevelStrategy {};
 
     struct BuildParameters {
-
     public:
         // prevent constructor by default
         BuildParameters& operator=(BuildParameters const&) = delete;
@@ -22,23 +21,22 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol
-         * ??0BuildParameters\@ISurfaceBuilder\@\@QEAA\@AEBVBiome\@\@AEAVRandom\@\@AEAVBlockVolume\@\@AEBVBlockPos\@\@MFAEBV?$unique_ptr\@VPerlinSimplexNoise\@\@U?$default_delete\@VPerlinSimplexNoise\@\@\@std\@\@\@std\@\@W4WaterLevelStrategy\@1\@HAEBVHeightmapWrapper\@\@_N\@Z
-         */
+        // symbol:
+        // ??0BuildParameters@ISurfaceBuilder@@QEAA@AEBVBiome@@AEAVRandom@@AEAVBlockVolume@@AEBVBlockPos@@MFAEBV?$unique_ptr@VPerlinSimplexNoise@@U?$default_delete@VPerlinSimplexNoise@@@std@@@std@@W4WaterLevelStrategy@1@HAEBVHeightmapWrapper@@_N@Z
         MCAPI BuildParameters(
             class Biome const&,
             class Random&,
             class BlockVolume&,
             class BlockPos const&,
             float,
-            int16_t,
+            short,
             std::unique_ptr<class PerlinSimplexNoise> const&,
-            enum class ISurfaceBuilder::WaterLevelStrategy,
-            int32_t,
+            ::ISurfaceBuilder::WaterLevelStrategy,
+            int,
             class HeightmapWrapper const&,
             bool
         );
+
         // NOLINTEND
     };
 

@@ -19,7 +19,6 @@ namespace gametest { struct TestParameters; }
 namespace gametest {
 
 class BaseGameTestBatchRunner {
-
 public:
     // prevent constructor by default
     BaseGameTestBatchRunner& operator=(BaseGameTestBatchRunner const&) = delete;
@@ -28,72 +27,56 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?_createGameTestInstance\@MinecraftGameTestBatchRunner\@\@MEAA?AV?$shared_ptr\@VBaseGameTestInstance\@gametest\@\@\@std\@\@AEAVBaseGameTestFunction\@gametest\@\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?_createGameTestInstance@MinecraftGameTestBatchRunner@@MEAA?AV?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@AEAVBaseGameTestFunction@gametest@@@Z
     virtual std::shared_ptr<class gametest::BaseGameTestInstance>
     _createGameTestInstance(class gametest::BaseGameTestFunction&) = 0;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?_runTest\@MinecraftGameTestBatchRunner\@\@MEAAXV?$shared_ptr\@VBaseGameTestInstance\@gametest\@\@\@std\@\@AEAVGameTestTicker\@gametest\@\@\@Z
-     */
+
+    // vIndex: 2, symbol:
+    // ?_runTest@MinecraftGameTestBatchRunner@@MEAAXV?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@AEAVGameTestTicker@gametest@@@Z
     virtual void _runTest(std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker&) = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETEST_BASEGAMETESTBATCHRUNNER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1BaseGameTestBatchRunner@gametest@@UEAA@XZ
     MCVAPI ~BaseGameTestBatchRunner();
-#endif
-    /**
-     * @symbol
-     * ??0BaseGameTestBatchRunner\@gametest\@\@QEAA\@$$QEAV?$vector\@VGameTestBatch\@gametest\@\@V?$allocator\@VGameTestBatch\@gametest\@\@\@std\@\@\@std\@\@AEAVGameTestTicker\@1\@$$QEAUTestParameters\@1\@\@Z
-     */
+
+    // symbol:
+    // ??0BaseGameTestBatchRunner@gametest@@QEAA@$$QEAV?$vector@VGameTestBatch@gametest@@V?$allocator@VGameTestBatch@gametest@@@std@@@std@@AEAVGameTestTicker@1@$$QEAUTestParameters@1@@Z
     MCAPI
     BaseGameTestBatchRunner(std::vector<class gametest::GameTestBatch>&&, class gametest::GameTestTicker&, struct gametest::TestParameters&&);
-    /**
-     * @symbol
-     * ?getTestInstances\@BaseGameTestBatchRunner\@gametest\@\@QEBAAEBV?$vector\@V?$shared_ptr\@VBaseGameTestInstance\@gametest\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VBaseGameTestInstance\@gametest\@\@\@std\@\@\@2\@\@std\@\@XZ
-     */
+
+    // symbol:
+    // ?getTestInstances@BaseGameTestBatchRunner@gametest@@QEBAAEBV?$vector@V?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@@2@@std@@XZ
     MCAPI std::vector<std::shared_ptr<class gametest::BaseGameTestInstance>> const& getTestInstances() const;
-    /**
-     * @symbol
-     * ?setBatchTestTracker\@BaseGameTestBatchRunner\@gametest\@\@QEAAXV?$unique_ptr\@VMultipleTestTracker\@gametest\@\@U?$default_delete\@VMultipleTestTracker\@gametest\@\@\@std\@\@\@std\@\@V?$weak_ptr\@VTestSummaryDisplayer\@\@\@4\@\@Z
-     */
+
+    // symbol:
+    // ?setBatchTestTracker@BaseGameTestBatchRunner@gametest@@QEAAXV?$unique_ptr@VMultipleTestTracker@gametest@@U?$default_delete@VMultipleTestTracker@gametest@@@std@@@std@@V?$weak_ptr@VTestSummaryDisplayer@@@4@@Z
     MCAPI void
         setBatchTestTracker(std::unique_ptr<class gametest::MultipleTestTracker>, std::weak_ptr<class TestSummaryDisplayer>);
-    /**
-     * @symbol ?start\@BaseGameTestBatchRunner\@gametest\@\@QEAAXXZ
-     */
+
+    // symbol: ?start@BaseGameTestBatchRunner@gametest@@QEAAXXZ
     MCAPI void start();
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_addTestInstanceWithRotation\@BaseGameTestBatchRunner\@gametest\@\@AEAAXAEAV?$vector\@V?$shared_ptr\@VBaseGameTestInstance\@gametest\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VBaseGameTestInstance\@gametest\@\@\@std\@\@\@2\@\@std\@\@V?$shared_ptr\@VBaseGameTestFunction\@gametest\@\@\@4\@W4Rotation\@\@\@Z
-     */
+    // symbol:
+    // ?_addTestInstanceWithRotation@BaseGameTestBatchRunner@gametest@@AEAAXAEAV?$vector@V?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@@2@@std@@V?$shared_ptr@VBaseGameTestFunction@gametest@@@4@W4Rotation@@@Z
     MCAPI void _addTestInstanceWithRotation(
         std::vector<std::shared_ptr<class gametest::BaseGameTestInstance>>&,
         std::shared_ptr<class gametest::BaseGameTestFunction>,
-        enum class Rotation
+        ::Rotation
     );
-    /**
-     * @symbol ?_resetBatchTracker\@BaseGameTestBatchRunner\@gametest\@\@AEAAXXZ
-     */
+
+    // symbol: ?_resetBatchTracker@BaseGameTestBatchRunner@gametest@@AEAAXXZ
     MCAPI void _resetBatchTracker();
-    /**
-     * @symbol ?_runBatch\@BaseGameTestBatchRunner\@gametest\@\@AEAAXH\@Z
-     */
-    MCAPI void _runBatch(int32_t);
+
+    // symbol: ?_runBatch@BaseGameTestBatchRunner@gametest@@AEAAXH@Z
+    MCAPI void _runBatch(int);
+
     // NOLINTEND
 };
 

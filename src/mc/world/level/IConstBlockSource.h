@@ -6,7 +6,6 @@
 #include "mc/enums/MaterialType.h"
 
 class IConstBlockSource {
-
 public:
     // prevent constructor by default
     IConstBlockSource& operator=(IConstBlockSource const&) = delete;
@@ -15,9 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?checkMaterial\@IConstBlockSource\@\@QEBA_NAEBVAABB\@\@W4MaterialType\@\@\@Z
-     */
-    MCAPI bool checkMaterial(class AABB const&, enum class MaterialType) const;
+    // symbol: ?checkMaterial@IConstBlockSource@@QEBA_NAEBVAABB@@W4MaterialType@@@Z
+    MCAPI bool checkMaterial(class AABB const&, ::MaterialType) const;
+
     // NOLINTEND
 };

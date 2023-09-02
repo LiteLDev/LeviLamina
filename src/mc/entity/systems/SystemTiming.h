@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct SystemTiming {
-
 public:
     // prevent constructor by default
     SystemTiming& operator=(SystemTiming const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1SystemTiming\@\@QEAA\@XZ
-     */
+    // symbol: ??1SystemTiming@@QEAA@XZ
     MCAPI ~SystemTiming();
+
     // NOLINTEND
 };

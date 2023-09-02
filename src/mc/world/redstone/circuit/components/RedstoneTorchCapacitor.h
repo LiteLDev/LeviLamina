@@ -7,7 +7,6 @@
 #include "mc/world/redstone/circuit/components/CapacitorComponent.h"
 
 class RedstoneTorchCapacitor : public ::CapacitorComponent {
-
 public:
     class State {
         bool mOn;
@@ -22,92 +21,62 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getStrength\@RedstoneTorchCapacitor\@\@UEBAHXZ
-     */
-    virtual int32_t getStrength() const;
-    /**
-     * @vftbl 10
-     * @symbol ?removeSource\@RedstoneTorchCapacitor\@\@UEAAXAEBVBlockPos\@\@PEBVBaseCircuitComponent\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?getStrength@RedstoneTorchCapacitor@@UEBAHXZ
+    virtual int getStrength() const;
+
+    // vIndex: 10, symbol: ?removeSource@RedstoneTorchCapacitor@@UEAAXAEBVBlockPos@@PEBVBaseCircuitComponent@@@Z
     virtual void removeSource(class BlockPos const&, class BaseCircuitComponent const*);
-    /**
-     * @vftbl 11
-     * @symbol
-     * ?addSource\@RedstoneTorchCapacitor\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEAHAEA_N\@Z
-     */
-    virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int32_t&, bool&);
-    /**
-     * @vftbl 12
-     * @symbol
-     * ?allowConnection\@RedstoneTorchCapacitor\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEA_N\@Z
-     */
+
+    // vIndex: 11, symbol:
+    // ?addSource@RedstoneTorchCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
+    virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
+
+    // vIndex: 12, symbol:
+    // ?allowConnection@RedstoneTorchCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
     virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
-    /**
-     * @vftbl 14
-     * @symbol ?evaluate\@RedstoneTorchCapacitor\@\@UEAA_NAEAVCircuitSystem\@\@AEBVBlockPos\@\@\@Z
-     */
+
+    // vIndex: 14, symbol: ?evaluate@RedstoneTorchCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
     virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
-    /**
-     * @vftbl 15
-     * @symbol ?cacheValues\@RedstoneTorchCapacitor\@\@UEAAXAEAVCircuitSystem\@\@AEBVBlockPos\@\@\@Z
-     */
+
+    // vIndex: 15, symbol: ?cacheValues@RedstoneTorchCapacitor@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
     virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
-    /**
-     * @vftbl 16
-     * @symbol ?updateDependencies\@RedstoneTorchCapacitor\@\@EEAAXAEAVCircuitSceneGraph\@\@AEBVBlockPos\@\@\@Z
-     */
+
+    // vIndex: 16, symbol: ?updateDependencies@RedstoneTorchCapacitor@@EEAAXAEAVCircuitSceneGraph@@AEBVBlockPos@@@Z
     virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
-    /**
-     * @vftbl 17
-     * @symbol __unk_vfn_17
-     */
+
+    // vIndex: 17, symbol: __unk_vfn_17
     virtual void __unk_vfn_17();
-    /**
-     * @vftbl 18
-     * @symbol ?isHalfPulse\@RedstoneTorchCapacitor\@\@UEBA_NXZ
-     */
+
+    // vIndex: 18, symbol: ?isHalfPulse@RedstoneTorchCapacitor@@UEBA_NXZ
     virtual bool isHalfPulse() const;
-    /**
-     * @vftbl 20
-     * @symbol __unk_vfn_20
-     */
+
+    // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
-    /**
-     * @vftbl 23
-     * @symbol ?getCircuitComponentType\@RedstoneTorchCapacitor\@\@UEBA?AW4CircuitComponentType\@\@XZ
-     */
-    virtual enum class CircuitComponentType getCircuitComponentType() const;
-    /**
-     * @vftbl 25
-     * @symbol ?getPoweroutDirection\@RedstoneTorchCapacitor\@\@UEBAEXZ
-     */
-    virtual uint8_t getPoweroutDirection() const;
-    /**
-     * @symbol ??0RedstoneTorchCapacitor\@\@QEAA\@XZ
-     */
+
+    // vIndex: 23, symbol: ?getCircuitComponentType@RedstoneTorchCapacitor@@UEBA?AW4CircuitComponentType@@XZ
+    virtual ::CircuitComponentType getCircuitComponentType() const;
+
+    // vIndex: 25, symbol: ?getPoweroutDirection@RedstoneTorchCapacitor@@UEBAEXZ
+    virtual uchar getPoweroutDirection() const;
+
+    // symbol: ??0RedstoneTorchCapacitor@@QEAA@XZ
     MCAPI RedstoneTorchCapacitor();
-    /**
-     * @symbol ?resetBurnOutCount\@RedstoneTorchCapacitor\@\@QEAAXXZ
-     */
+
+    // symbol: ?resetBurnOutCount@RedstoneTorchCapacitor@@QEAAXXZ
     MCAPI void resetBurnOutCount();
-    /**
-     * @symbol ?setOn\@RedstoneTorchCapacitor\@\@QEAAX_N\@Z
-     */
+
+    // symbol: ?setOn@RedstoneTorchCapacitor@@QEAAX_N@Z
     MCAPI void setOn(bool);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?FindStrongestStrength\@RedstoneTorchCapacitor\@\@AEAAHAEBVBlockPos\@\@AEAVCircuitSystem\@\@AEA_N\@Z
-     */
-    MCAPI int32_t FindStrongestStrength(class BlockPos const&, class CircuitSystem&, bool&);
+    // symbol: ?FindStrongestStrength@RedstoneTorchCapacitor@@AEAAHAEBVBlockPos@@AEAVCircuitSystem@@AEA_N@Z
+    MCAPI int FindStrongestStrength(class BlockPos const&, class CircuitSystem&, bool&);
+
     // NOLINTEND
 };

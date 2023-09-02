@@ -4,19 +4,16 @@
 #include "mc/nbt/ListTag.h"
 
 class ListTagIntAdder {
-
 public:
     std::unique_ptr<ListTag> mTag;
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??RListTagIntAdder\@\@QEAAAEAV0\@H\@Z
-     */
-    MCAPI class ListTagIntAdder& operator()(int32_t);
-    /**
-     * @symbol ??1ListTagIntAdder\@\@QEAA\@XZ
-     */
+    // symbol: ??RListTagIntAdder@@QEAAAEAV0@H@Z
+    MCAPI class ListTagIntAdder& operator()(int);
+
+    // symbol: ??1ListTagIntAdder@@QEAA@XZ
     MCAPI ~ListTagIntAdder();
+
     // NOLINTEND
 };

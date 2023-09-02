@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class InMemoryWritableFile {
-
 public:
     // prevent constructor by default
     InMemoryWritableFile& operator=(InMemoryWritableFile const&) = delete;
@@ -12,34 +11,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?Append\@InMemoryWritableFile\@\@UEAA?AVStatus\@leveldb\@\@AEBVSlice\@3\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?Append@InMemoryWritableFile@@UEAA?AVStatus@leveldb@@AEBVSlice@3@@Z
     virtual leveldb::Status Append(leveldb::Slice const&);
-    /**
-     * @vftbl 2
-     * @symbol ?Close\@InMemoryWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
-     */
+
+    // vIndex: 2, symbol: ?Close@InMemoryWritableFile@@UEAA?AVStatus@leveldb@@XZ
     virtual leveldb::Status Close();
-    /**
-     * @vftbl 3
-     * @symbol ?Flush\@InMemoryWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
-     */
+
+    // vIndex: 3, symbol: ?Flush@InMemoryWritableFile@@UEAA?AVStatus@leveldb@@XZ
     virtual leveldb::Status Flush();
-    /**
-     * @vftbl 4
-     * @symbol ?Sync\@InMemoryWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
-     */
+
+    // vIndex: 4, symbol: ?Sync@InMemoryWritableFile@@UEAA?AVStatus@leveldb@@XZ
     virtual leveldb::Status Sync();
-    /**
-     * @symbol ??0InMemoryWritableFile\@\@QEAA\@V?$shared_ptr\@VInMemoryFile\@\@\@std\@\@\@Z
-     */
+
+    // symbol: ??0InMemoryWritableFile@@QEAA@V?$shared_ptr@VInMemoryFile@@@std@@@Z
     MCAPI InMemoryWritableFile(std::shared_ptr<class InMemoryFile>);
+
     // NOLINTEND
 };

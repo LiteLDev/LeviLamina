@@ -23,7 +23,6 @@ public:
     enum class PeerPurpose {};
 
     class IPSupportInterface {
-
     public:
         // prevent constructor by default
         IPSupportInterface& operator=(IPSupportInterface const&) = delete;
@@ -32,12 +31,9 @@ public:
 
     public:
         // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKPEERHELPER_IPSUPPORTINTERFACE
-        /**
-         * @symbol __unk_destructor_-1
-         */
+        // symbol: ??1IPSupportInterface@RakPeerHelper@@UEAA@XZ
         MCVAPI ~IPSupportInterface();
-#endif
+
         // NOLINTEND
     };
 
@@ -49,65 +45,51 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0RakPeerHelper\@\@QEAA\@AEAVIPSupportInterface\@0\@\@Z
-     */
+    // symbol: ??0RakPeerHelper@@QEAA@AEAVIPSupportInterface@0@@Z
     MCAPI RakPeerHelper(class RakPeerHelper::IPSupportInterface&);
-    /**
-     * @symbol ?getConnectionIndex\@RakPeerHelper\@\@QEBAHAEBVGameConnectionInfo\@Social\@\@\@Z
-     */
-    MCAPI int32_t getConnectionIndex(class Social::GameConnectionInfo const&) const;
-    /**
-     * @symbol ?getIPv4BoundPort\@RakPeerHelper\@\@QEBAGXZ
-     */
-    MCAPI uint16_t getIPv4BoundPort() const;
-    /**
-     * @symbol ?getIPv4ConnectionIndex\@RakPeerHelper\@\@QEBAHXZ
-     */
-    MCAPI int32_t getIPv4ConnectionIndex() const;
-    /**
-     * @symbol ?getIPv6BoundPort\@RakPeerHelper\@\@QEBAGXZ
-     */
-    MCAPI uint16_t getIPv6BoundPort() const;
-    /**
-     * @symbol ?isIPv4Supported\@RakPeerHelper\@\@QEBA_NXZ
-     */
+
+    // symbol: ?getConnectionIndex@RakPeerHelper@@QEBAHAEBVGameConnectionInfo@Social@@@Z
+    MCAPI int getConnectionIndex(class Social::GameConnectionInfo const&) const;
+
+    // symbol: ?getIPv4BoundPort@RakPeerHelper@@QEBAGXZ
+    MCAPI ushort getIPv4BoundPort() const;
+
+    // symbol: ?getIPv4ConnectionIndex@RakPeerHelper@@QEBAHXZ
+    MCAPI int getIPv4ConnectionIndex() const;
+
+    // symbol: ?getIPv6BoundPort@RakPeerHelper@@QEBAGXZ
+    MCAPI ushort getIPv6BoundPort() const;
+
+    // symbol: ?isIPv4Supported@RakPeerHelper@@QEBA_NXZ
     MCAPI bool isIPv4Supported() const;
-    /**
-     * @symbol ?isIPv6Supported\@RakPeerHelper\@\@QEBA_NXZ
-     */
+
+    // symbol: ?isIPv6Supported@RakPeerHelper@@QEBA_NXZ
     MCAPI bool isIPv6Supported() const;
-    /**
-     * @symbol
-     * ?peerStartup\@RakPeerHelper\@\@QEAA?AW4StartupResult\@RakNet\@\@PEAVRakPeerInterface\@3\@AEBUConnectionDefinition\@\@W4PeerPurpose\@1\@\@Z
-     */
-    MCAPI enum class RakNet::StartupResult peerStartup(
-        class RakNet::RakPeerInterface*,
-        struct ConnectionDefinition const&,
-        enum class RakPeerHelper::PeerPurpose
-    );
+
+    // symbol:
+    // ?peerStartup@RakPeerHelper@@QEAA?AW4StartupResult@RakNet@@PEAVRakPeerInterface@3@AEBUConnectionDefinition@@W4PeerPurpose@1@@Z
+    MCAPI ::RakNet::StartupResult
+    peerStartup(class RakNet::RakPeerInterface*, struct ConnectionDefinition const&, ::RakPeerHelper::PeerPurpose);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?LogIPSupport\@RakPeerHelper\@\@AEAAXW4PeerPurpose\@1\@\@Z
-     */
-    MCAPI void LogIPSupport(enum class RakPeerHelper::PeerPurpose);
-    /**
-     * @symbol ?_resetToIPv6Only\@RakPeerHelper\@\@AEAAXV?$span\@USocketDescriptor\@RakNet\@\@$01\@gsl\@\@AEAH\@Z
-     */
-    MCAPI void _resetToIPv6Only(gsl::span<struct RakNet::SocketDescriptor, 2>, int32_t&);
-    /**
-     * @symbol
-     * ?_startupInternal\@RakPeerHelper\@\@AEAA?AW4StartupResult\@RakNet\@\@V?$not_null\@PEAVRakPeerInterface\@RakNet\@\@\@gsl\@\@AEBUConnectionDefinition\@\@PEAUSocketDescriptor\@3\@AEAHH\@Z
-     */
-    MCAPI enum class RakNet::StartupResult _startupInternal(
+    // symbol: ?LogIPSupport@RakPeerHelper@@AEAAXW4PeerPurpose@1@@Z
+    MCAPI void LogIPSupport(::RakPeerHelper::PeerPurpose);
+
+    // symbol: ?_resetToIPv6Only@RakPeerHelper@@AEAAXV?$span@USocketDescriptor@RakNet@@$01@gsl@@AEAH@Z
+    MCAPI void _resetToIPv6Only(gsl::span<struct RakNet::SocketDescriptor, 2>, int&);
+
+    // symbol:
+    // ?_startupInternal@RakPeerHelper@@AEAA?AW4StartupResult@RakNet@@V?$not_null@PEAVRakPeerInterface@RakNet@@@gsl@@AEBUConnectionDefinition@@PEAUSocketDescriptor@3@AEAHH@Z
+    MCAPI ::RakNet::StartupResult _startupInternal(
         gsl::not_null<class RakNet::RakPeerInterface*>,
         struct ConnectionDefinition const&,
         struct RakNet::SocketDescriptor*,
-        int32_t&,
-        int32_t
+        int&,
+        int
     );
+
     // NOLINTEND
 };

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class UriListener {
-
 public:
     // prevent constructor by default
     UriListener& operator=(UriListener const&) = delete;
@@ -12,11 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_URILISTENER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1UriListener@@UEAA@XZ
     MCVAPI ~UriListener();
-#endif
+
     // NOLINTEND
 };

@@ -14,7 +14,6 @@ namespace ScriptModuleMinecraftServerUI { class IControl; }
 namespace ScriptModuleMinecraftServerUI {
 
 class SliderControl : public ::ScriptModuleMinecraftServerUI::IControl {
-
 public:
     // prevent constructor by default
     SliderControl& operator=(SliderControl const&) = delete;
@@ -23,20 +22,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getJson\@SliderControl\@ScriptModuleMinecraftServerUI\@\@UEBA?AVValue\@Json\@\@XZ
-     */
+
+    // vIndex: 1, symbol: ?getJson@SliderControl@ScriptModuleMinecraftServerUI@@UEBA?AVValue@Json@@XZ
     virtual class Json::Value getJson() const;
-    /**
-     * @symbol ??0SliderControl\@ScriptModuleMinecraftServerUI\@\@QEAA\@VValue\@Json\@\@MMMV?$optional\@H\@std\@\@\@Z
-     */
-    MCAPI SliderControl(class Json::Value, float, float, float, std::optional<int32_t>);
+
+    // symbol: ??0SliderControl@ScriptModuleMinecraftServerUI@@QEAA@VValue@Json@@MMMV?$optional@H@std@@@Z
+    MCAPI SliderControl(class Json::Value, float, float, float, std::optional<int>);
+
     // NOLINTEND
 };
 

@@ -5,7 +5,6 @@
 namespace AgentComponents::Actions {
 
 struct Attack {
-
 public:
     // prevent constructor by default
     Attack& operator=(Attack const&) = delete;

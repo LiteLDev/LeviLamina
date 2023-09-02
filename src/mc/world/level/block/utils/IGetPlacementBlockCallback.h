@@ -13,7 +13,6 @@ class Vec3;
 namespace BlockTrait {
 
 class IGetPlacementBlockCallback {
-
 public:
     // prevent constructor by default
     IGetPlacementBlockCallback& operator=(IGetPlacementBlockCallback const&) = delete;
@@ -22,24 +21,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?getPlacementBlock\@UpdateFacingGetPlacementBlockCallback\@PlacementDirection\@BlockTrait\@\@UEBA?AV?$not_null\@PEBVBlock\@\@\@gsl\@\@V45\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?getPlacementBlock@UpdateFacingGetPlacementBlockCallback@PlacementDirection@BlockTrait@@UEBA?AV?$not_null@PEBVBlock@@@gsl@@V45@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
     virtual gsl::not_null<class Block const*> getPlacementBlock(
         gsl::not_null<class Block const*>,
         class Actor const&,
         class BlockPos const&,
-        uint8_t,
+        uchar,
         class Vec3 const&,
-        int32_t
+        int
     ) const = 0;
+
     // NOLINTEND
 };
 

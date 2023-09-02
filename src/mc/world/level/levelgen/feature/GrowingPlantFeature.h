@@ -14,7 +14,6 @@ public:
 
     // GrowingPlantFeature inner types define
     struct WeightedBlockReference {
-
     public:
         // prevent constructor by default
         WeightedBlockReference& operator=(WeightedBlockReference const&) = delete;
@@ -23,10 +22,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??1WeightedBlockReference\@GrowingPlantFeature\@\@QEAA\@XZ
-         */
+        // symbol: ??1WeightedBlockReference@GrowingPlantFeature@@QEAA@XZ
         MCAPI ~WeightedBlockReference();
+
         // NOLINTEND
     };
 
@@ -37,27 +35,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?place\@GrowingPlantFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?place@GrowingPlantFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
     virtual std::optional<class BlockPos>
     place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?isValidPlacement\@IFeature\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 2, symbol:
+    // ?isValidPlacement@IFeature@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual bool isValidPlacement(std::string const&);
-    /**
-     * @symbol ??0GrowingPlantFeature\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0GrowingPlantFeature@@QEAA@XZ
     MCAPI GrowingPlantFeature();
+
     // NOLINTEND
 };

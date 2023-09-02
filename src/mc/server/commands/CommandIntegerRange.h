@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class CommandIntegerRange {
-
 public:
     int32_t  mMinValue; // this+0x0
     int32_t  mMaxValue; // this+0x4
@@ -11,17 +10,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0CommandIntegerRange\@\@QEAA\@XZ
-     */
+    // symbol: ??0CommandIntegerRange@@QEAA@XZ
     MCAPI CommandIntegerRange();
-    /**
-     * @symbol ??0CommandIntegerRange\@\@QEAA\@HH_N\@Z
-     */
-    MCAPI CommandIntegerRange(int32_t, int32_t, bool);
-    /**
-     * @symbol ?isWithinRange\@CommandIntegerRange\@\@QEBA_NH\@Z
-     */
-    MCAPI bool isWithinRange(int32_t) const;
+
+    // symbol: ??0CommandIntegerRange@@QEAA@HH_N@Z
+    MCAPI CommandIntegerRange(int, int, bool);
+
+    // symbol: ?isWithinRange@CommandIntegerRange@@QEBA_NH@Z
+    MCAPI bool isWithinRange(int) const;
+
     // NOLINTEND
 };

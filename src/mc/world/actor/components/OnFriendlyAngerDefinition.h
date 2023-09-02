@@ -11,7 +11,6 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 struct OnFriendlyAngerDefinition {
-
 public:
     // prevent constructor by default
     OnFriendlyAngerDefinition& operator=(OnFriendlyAngerDefinition const&) = delete;
@@ -20,12 +19,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?buildSchema\@OnFriendlyAngerDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UOnFriendlyAngerDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+    // symbol:
+    // ?buildSchema@OnFriendlyAngerDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnFriendlyAngerDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnFriendlyAngerDefinition>>&);
+
     // NOLINTEND
 };

@@ -5,7 +5,6 @@
 namespace Util {
 
 class EntityComponentProcessor {
-
 public:
     // prevent constructor by default
     EntityComponentProcessor& operator=(EntityComponentProcessor const&) = delete;

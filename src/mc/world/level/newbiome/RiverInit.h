@@ -10,7 +10,6 @@ class BiomeRegistry;
 namespace OperationNodeFilters {
 
 struct RiverInit {
-
 public:
     // prevent constructor by default
     RiverInit& operator=(RiverInit const&) = delete;
@@ -19,10 +18,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0RiverInit\@OperationNodeFilters\@\@QEAA\@AEBVBiomeRegistry\@\@\@Z
-     */
+    // symbol: ??0RiverInit@OperationNodeFilters@@QEAA@AEBVBiomeRegistry@@@Z
     MCAPI RiverInit(class BiomeRegistry const&);
+
     // NOLINTEND
 };
 

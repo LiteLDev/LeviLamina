@@ -4,7 +4,6 @@
 
 template <typename T0>
 class ScalarOptional {
-
 public:
     // prevent constructor by default
     ScalarOptional& operator=(ScalarOptional const&) = delete;

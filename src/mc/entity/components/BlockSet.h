@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct BlockSet {
-
 public:
     // prevent constructor by default
     BlockSet& operator=(BlockSet const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1BlockSet\@\@QEAA\@XZ
-     */
+    // symbol: ??1BlockSet@@QEAA@XZ
     MCAPI ~BlockSet();
+
     // NOLINTEND
 };

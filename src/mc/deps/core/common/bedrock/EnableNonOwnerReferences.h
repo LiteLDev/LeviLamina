@@ -5,7 +5,6 @@
 namespace Bedrock {
 
 class EnableNonOwnerReferences {
-
 public:
     struct ControlBlock {
         EnableNonOwnerReferences* mPtr;
@@ -18,19 +17,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1EnableNonOwnerReferences@Bedrock@@UEAA@XZ
     virtual ~EnableNonOwnerReferences();
-    /**
-     * @symbol ??0EnableNonOwnerReferences\@Bedrock\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0EnableNonOwnerReferences@Bedrock@@QEAA@XZ
     MCAPI EnableNonOwnerReferences();
-    /**
-     * @symbol ??0EnableNonOwnerReferences\@Bedrock\@\@QEAA\@AEBV01\@\@Z
-     */
+
+    // symbol: ??0EnableNonOwnerReferences@Bedrock@@QEAA@AEBV01@@Z
     MCAPI EnableNonOwnerReferences(class Bedrock::EnableNonOwnerReferences const&);
+
     // NOLINTEND
 };
 

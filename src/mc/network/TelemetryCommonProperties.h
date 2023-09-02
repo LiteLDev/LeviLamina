@@ -5,7 +5,6 @@
 namespace Webview {
 
 struct TelemetryCommonProperties {
-
 public:
     // prevent constructor by default
     TelemetryCommonProperties& operator=(TelemetryCommonProperties const&) = delete;

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ActorBlockSyncMessage {
+class ActorBlockSyncMessage {
 public:
     // ActorBlockSyncMessage inner types define
     enum class MessageId : int32_t {

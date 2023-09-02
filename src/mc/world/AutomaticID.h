@@ -4,7 +4,6 @@
 
 template <typename A, typename T>
 class AutomaticID {
-
 public:
     T id;
 
@@ -16,7 +15,3 @@ public:
 
     constexpr operator T() const { return id; } // NOLINT
 };
-
-class Dimension;
-
-using DimensionType = AutomaticID<Dimension, int32_t>;

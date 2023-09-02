@@ -7,7 +7,6 @@
 #include "mc/world/level/levelgen/structure/StructureFeatureType.h"
 
 class StructureFeature {
-
 public:
     // prevent constructor by default
     StructureFeature& operator=(StructureFeature const&) = delete;
@@ -16,26 +15,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?shouldAddHardcodedSpawnAreas\@StructureFeature\@\@UEBA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?shouldAddHardcodedSpawnAreas@StructureFeature@@UEBA_NXZ
     virtual bool shouldAddHardcodedSpawnAreas() const;
-    /**
-     * @vftbl 2
-     * @symbol ?shouldPostProcessMobs\@StructureFeature\@\@UEBA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?shouldPostProcessMobs@StructureFeature@@UEBA_NXZ
     virtual bool shouldPostProcessMobs() const;
-    /**
-     * @vftbl 3
-     * @symbol
-     * ?getNearestGeneratedFeature\@StructureFeature\@\@UEAA_NAEAVDimension\@\@AEBVBiomeSource\@\@AEBVBlockPos\@\@AEAV4\@AEBVIPreliminarySurfaceProvider\@\@_N\@Z
-     */
+
+    // vIndex: 3, symbol:
+    // ?getNearestGeneratedFeature@StructureFeature@@UEAA_NAEAVDimension@@AEBVBiomeSource@@AEBVBlockPos@@AEAV4@AEBVIPreliminarySurfaceProvider@@_N@Z
     virtual bool getNearestGeneratedFeature(
         class Dimension&,
         class BiomeSource const&,
@@ -44,93 +34,69 @@ public:
         class IPreliminarySurfaceProvider const&,
         bool
     );
-    /**
-     * @vftbl 4
-     * @symbol ?initMobSpawnTypes\@StructureFeature\@\@UEAAXAEAVHardcodedSpawnAreaRegistry\@\@\@Z
-     */
+
+    // vIndex: 4, symbol: ?initMobSpawnTypes@StructureFeature@@UEAAXAEAVHardcodedSpawnAreaRegistry@@@Z
     virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry&);
-    /**
-     * @vftbl 5
-     * @symbol
-     * ?isFeatureChunk\@AncientCityFeature\@\@UEAA_NAEBVBiomeSource\@\@AEAVRandom\@\@AEBVChunkPos\@\@IAEBVIPreliminarySurfaceProvider\@\@AEBVDimension\@\@\@Z
-     */
+
+    // vIndex: 5, symbol:
+    // ?isFeatureChunk@AncientCityFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
     virtual bool
-    isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, uint32_t, class IPreliminarySurfaceProvider const&, class Dimension const&) = 0;
-    /**
-     * @vftbl 6
-     * @symbol
-     * ?createStructureStart\@AncientCityFeature\@\@MEAA?AV?$unique_ptr\@VStructureStart\@\@U?$default_delete\@VStructureStart\@\@\@std\@\@\@std\@\@AEAVDimension\@\@AEBVBiomeSource\@\@AEAVRandom\@\@AEBVChunkPos\@\@AEBVIPreliminarySurfaceProvider\@\@\@Z
-     */
+    isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, uint, class IPreliminarySurfaceProvider const&, class Dimension const&) = 0;
+
+    // vIndex: 6, symbol:
+    // ?createStructureStart@AncientCityFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
     virtual std::unique_ptr<class StructureStart>
     createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&) = 0;
-    /**
-     * @vftbl 7
-     * @symbol ?getStructureAt\@StructureFeature\@\@MEAAPEAVStructureStart\@\@HHH\@Z
-     */
-    virtual class StructureStart* getStructureAt(int32_t, int32_t, int32_t);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREFEATURE
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // vIndex: 7, symbol: ?getStructureAt@StructureFeature@@MEAAPEAVStructureStart@@HHH@Z
+    virtual class StructureStart* getStructureAt(int, int, int);
+
+    // symbol: ??1StructureFeature@@UEAA@XZ
     MCVAPI ~StructureFeature();
-#endif
-    /**
-     * @symbol ??0StructureFeature\@\@QEAA\@IW4StructureFeatureType\@\@\@Z
-     */
-    MCAPI StructureFeature(uint32_t, enum class StructureFeatureType);
-    /**
-     * @symbol ?addHardcodedSpawnAreas\@StructureFeature\@\@QEAAXAEAVLevelChunk\@\@\@Z
-     */
+
+    // symbol: ??0StructureFeature@@QEAA@IW4StructureFeatureType@@@Z
+    MCAPI StructureFeature(uint, ::StructureFeatureType);
+
+    // symbol: ?addHardcodedSpawnAreas@StructureFeature@@QEAAXAEAVLevelChunk@@@Z
     MCAPI void addHardcodedSpawnAreas(class LevelChunk&);
-    /**
-     * @symbol
-     * ?chunkStartAtSurfaceLevel\@StructureFeature\@\@QEAA?AVBlockPos\@\@AEBVIPreliminarySurfaceProvider\@\@VChunkPos\@\@H\@Z
-     */
-    MCAPI class BlockPos chunkStartAtSurfaceLevel(class IPreliminarySurfaceProvider const&, class ChunkPos, int32_t);
-    /**
-     * @symbol
-     * ?createBlueprints\@StructureFeature\@\@QEAAXAEAVDimension\@\@AEBVChunkPos\@\@AEBVBiomeSource\@\@AEBVIPreliminarySurfaceProvider\@\@\@Z
-     */
+
+    // symbol:
+    // ?chunkStartAtSurfaceLevel@StructureFeature@@QEAA?AVBlockPos@@AEBVIPreliminarySurfaceProvider@@VChunkPos@@H@Z
+    MCAPI class BlockPos chunkStartAtSurfaceLevel(class IPreliminarySurfaceProvider const&, class ChunkPos, int);
+
+    // symbol:
+    // ?createBlueprints@StructureFeature@@QEAAXAEAVDimension@@AEBVChunkPos@@AEBVBiomeSource@@AEBVIPreliminarySurfaceProvider@@@Z
     MCAPI void
     createBlueprints(class Dimension&, class ChunkPos const&, class BiomeSource const&, class IPreliminarySurfaceProvider const&);
-    /**
-     * @symbol ?debugRender\@StructureFeature\@\@QEAAXXZ
-     */
+
+    // symbol: ?debugRender@StructureFeature@@QEAAXXZ
     MCAPI void debugRender();
-    /**
-     * @symbol
-     * ?findFarAwayStructures\@StructureFeature\@\@QEAA?AV?$vector\@VChunkPos\@\@V?$allocator\@VChunkPos\@\@\@std\@\@\@std\@\@V?$buffer_span\@VChunkPos\@\@\@\@I\@Z
-     */
-    MCAPI std::vector<class ChunkPos> findFarAwayStructures(class buffer_span<class ChunkPos>, uint32_t);
-    /**
-     * @symbol
-     * ?foreachIntersectingStructureStart\@StructureFeature\@\@QEAAXAEBVBoundingBox\@\@V?$function\@$$A6AXAEAVStructureStart\@\@\@Z\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?findFarAwayStructures@StructureFeature@@QEAA?AV?$vector@VChunkPos@@V?$allocator@VChunkPos@@@std@@@std@@V?$buffer_span@VChunkPos@@@@I@Z
+    MCAPI std::vector<class ChunkPos> findFarAwayStructures(class buffer_span<class ChunkPos>, uint);
+
+    // symbol:
+    // ?foreachIntersectingStructureStart@StructureFeature@@QEAAXAEBVBoundingBox@@V?$function@$$A6AXAEAVStructureStart@@@Z@std@@@Z
     MCAPI void foreachIntersectingStructureStart(class BoundingBox const&, std::function<void(class StructureStart&)>);
-    /**
-     * @symbol ?garbageCollectBlueprints\@StructureFeature\@\@QEAAXV?$buffer_span\@VChunkPos\@\@\@\@I\@Z
-     */
-    MCAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos>, uint32_t);
-    /**
-     * @symbol ?isInsideBoundingFeature\@StructureFeature\@\@QEAA_NHHH\@Z
-     */
-    MCAPI bool isInsideBoundingFeature(int32_t, int32_t, int32_t);
-    /**
-     * @symbol ?postProcess\@StructureFeature\@\@QEAA_NAEAVBlockSource\@\@AEAVRandom\@\@HH\@Z
-     */
-    MCAPI bool postProcess(class BlockSource&, class Random&, int32_t, int32_t);
-    /**
-     * @symbol ?postProcessMobsAt\@StructureFeature\@\@QEAAXAEAVBlockSource\@\@HHAEAVRandom\@\@\@Z
-     */
-    MCAPI void postProcessMobsAt(class BlockSource&, int32_t, int32_t, class Random&);
-    /**
-     * @symbol ?waitForFeatureBlueprints\@StructureFeature\@\@QEAAXXZ
-     */
+
+    // symbol: ?garbageCollectBlueprints@StructureFeature@@QEAAXV?$buffer_span@VChunkPos@@@@I@Z
+    MCAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos>, uint);
+
+    // symbol: ?isInsideBoundingFeature@StructureFeature@@QEAA_NHHH@Z
+    MCAPI bool isInsideBoundingFeature(int, int, int);
+
+    // symbol: ?postProcess@StructureFeature@@QEAA_NAEAVBlockSource@@AEAVRandom@@HH@Z
+    MCAPI bool postProcess(class BlockSource&, class Random&, int, int);
+
+    // symbol: ?postProcessMobsAt@StructureFeature@@QEAAXAEAVBlockSource@@HHAEAVRandom@@@Z
+    MCAPI void postProcessMobsAt(class BlockSource&, int, int, class Random&);
+
+    // symbol: ?waitForFeatureBlueprints@StructureFeature@@QEAAXXZ
     MCAPI void waitForFeatureBlueprints();
-    /**
-     * @symbol
-     * ?findNearestFeaturePositionBySpacing\@StructureFeature\@\@SA_NAEAVDimension\@\@AEBVIPreliminarySurfaceProvider\@\@AEAV1\@AEBVBiomeSource\@\@AEBVBlockPos\@\@AEAV5\@HHH_NH6\@Z
-     */
+
+    // symbol:
+    // ?findNearestFeaturePositionBySpacing@StructureFeature@@SA_NAEAVDimension@@AEBVIPreliminarySurfaceProvider@@AEAV1@AEBVBiomeSource@@AEBVBlockPos@@AEAV5@HHH_NH6@Z
     MCAPI static bool findNearestFeaturePositionBySpacing(
         class Dimension&,
         class IPreliminarySurfaceProvider const&,
@@ -138,31 +104,28 @@ public:
         class BiomeSource const&,
         class BlockPos const&,
         class BlockPos&,
-        int32_t,
-        int32_t,
-        int32_t,
+        int,
+        int,
+        int,
         bool,
-        int32_t,
+        int,
         bool
     );
-    /**
-     * @symbol ?getChunkPosInSpace\@StructureFeature\@\@SA?AVChunkPos\@\@AEBV2\@AEAVRandom\@\@IHHH_N\@Z
-     */
-    MCAPI static class ChunkPos
-    getChunkPosInSpace(class ChunkPos const&, class Random&, uint32_t, int32_t, int32_t, int32_t, bool);
-    /**
-     * @symbol ?setRandomSeedFor\@StructureFeature\@\@SAXAEAVRandom\@\@HHHI\@Z
-     */
-    MCAPI static void setRandomSeedFor(class Random&, int32_t, int32_t, int32_t, uint32_t);
+
+    // symbol: ?getChunkPosInSpace@StructureFeature@@SA?AVChunkPos@@AEBV2@AEAVRandom@@IHHH_N@Z
+    MCAPI static class ChunkPos getChunkPosInSpace(class ChunkPos const&, class Random&, uint, int, int, int, bool);
+
+    // symbol: ?setRandomSeedFor@StructureFeature@@SAXAEAVRandom@@HHHI@Z
+    MCAPI static void setRandomSeedFor(class Random&, int, int, int, uint);
+
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?addFeature\@StructureFeature\@\@IEAAXAEAVDimension\@\@AEAVRandom\@\@AEBVChunkPos\@\@AEBVBiomeSource\@\@AEBVIPreliminarySurfaceProvider\@\@\@Z
-     */
+    // symbol:
+    // ?addFeature@StructureFeature@@IEAAXAEAVDimension@@AEAVRandom@@AEBVChunkPos@@AEBVBiomeSource@@AEBVIPreliminarySurfaceProvider@@@Z
     MCAPI void
     addFeature(class Dimension&, class Random&, class ChunkPos const&, class BiomeSource const&, class IPreliminarySurfaceProvider const&);
+
     // NOLINTEND
 };

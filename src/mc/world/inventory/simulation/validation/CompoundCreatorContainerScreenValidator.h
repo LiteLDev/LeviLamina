@@ -7,7 +7,6 @@
 #include "mc/world/inventory/simulation/ContainerScreenValidatorBase.h"
 
 class CompoundCreatorContainerScreenValidator : public ::ContainerScreenValidatorBase {
-
 public:
     // prevent constructor by default
     CompoundCreatorContainerScreenValidator& operator=(CompoundCreatorContainerScreenValidator const&) = delete;
@@ -15,14 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @symbol ??0CompoundCreatorContainerScreenValidator\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0CompoundCreatorContainerScreenValidator@@QEAA@XZ
     MCAPI CompoundCreatorContainerScreenValidator();
+
     // NOLINTEND
 };

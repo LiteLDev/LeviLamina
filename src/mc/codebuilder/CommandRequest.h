@@ -5,7 +5,6 @@
 namespace CodeBuilder {
 
 struct CommandRequest {
-
 public:
     // prevent constructor by default
     CommandRequest& operator=(CommandRequest const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1CommandRequest\@CodeBuilder\@\@QEAA\@XZ
-     */
+    // symbol: ??1CommandRequest@CodeBuilder@@QEAA@XZ
     MCAPI ~CommandRequest();
+
     // NOLINTEND
 };
 

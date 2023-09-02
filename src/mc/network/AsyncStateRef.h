@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class AsyncStateRef {
-
 public:
     // prevent constructor by default
     AsyncStateRef& operator=(AsyncStateRef const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1AsyncStateRef\@\@QEAA\@XZ
-     */
+    // symbol: ??1AsyncStateRef@@QEAA@XZ
     MCAPI ~AsyncStateRef();
+
     // NOLINTEND
 };

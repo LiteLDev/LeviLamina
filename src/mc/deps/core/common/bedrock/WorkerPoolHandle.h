@@ -14,7 +14,6 @@ class WorkerPool;
 namespace Bedrock {
 
 class WorkerPoolHandle : public ::Bedrock::WorkerPoolManager::PoolHandleInterface {
-
 public:
     // prevent constructor by default
     WorkerPoolHandle& operator=(WorkerPoolHandle const&) = delete;
@@ -23,17 +22,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?get\@WorkerPoolHandle\@Bedrock\@\@UEBA?AV?$not_null\@V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@\@gsl\@\@XZ
-     */
+
+    // vIndex: 1, symbol:
+    // ?get@WorkerPoolHandle@Bedrock@@UEBA?AV?$not_null@V?$NonOwnerPointer@VWorkerPool@@@Bedrock@@@gsl@@XZ
     virtual gsl::not_null<class Bedrock::NonOwnerPointer<class WorkerPool>> get() const;
+
     // NOLINTEND
 };
 

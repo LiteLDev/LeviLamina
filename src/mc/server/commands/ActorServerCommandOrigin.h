@@ -16,7 +16,6 @@ namespace mce { class UUID; }
 // clang-format on
 
 class ActorServerCommandOrigin : public ::ActorCommandOrigin {
-
 public:
     // prevent constructor by default
     ActorServerCommandOrigin& operator=(ActorServerCommandOrigin const&) = delete;
@@ -25,44 +24,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 9
-     * @symbol ?getPermissionsLevel\@ActorServerCommandOrigin\@\@UEBA?AW4CommandPermissionLevel\@\@XZ
-     */
-    virtual enum class CommandPermissionLevel getPermissionsLevel() const;
-    /**
-     * @vftbl 10
-     * @symbol
-     * ?clone\@ActorServerCommandOrigin\@\@UEBA?AV?$unique_ptr\@VCommandOrigin\@\@U?$default_delete\@VCommandOrigin\@\@\@std\@\@\@std\@\@XZ
-     */
+
+    // vIndex: 9, symbol: ?getPermissionsLevel@ActorServerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
+    virtual ::CommandPermissionLevel getPermissionsLevel() const;
+
+    // vIndex: 10, symbol:
+    // ?clone@ActorServerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
     virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /**
-     * @vftbl 18
-     * @symbol ?isSelectorExpansionAllowed\@ActorServerCommandOrigin\@\@UEBA_NXZ
-     */
+
+    // vIndex: 18, symbol: ?isSelectorExpansionAllowed@ActorServerCommandOrigin@@UEBA_NXZ
     virtual bool isSelectorExpansionAllowed() const;
-    /**
-     * @vftbl 23
-     * @symbol ?getOriginType\@ActorServerCommandOrigin\@\@UEBA?AW4CommandOriginType\@\@XZ
-     */
-    virtual enum class CommandOriginType getOriginType() const;
-    /**
-     * @vftbl 29
-     * @symbol ?serialize\@ActorServerCommandOrigin\@\@UEBA?AVCompoundTag\@\@XZ
-     */
+
+    // vIndex: 23, symbol: ?getOriginType@ActorServerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+    virtual ::CommandOriginType getOriginType() const;
+
+    // vIndex: 29, symbol: ?serialize@ActorServerCommandOrigin@@UEBA?AVCompoundTag@@XZ
     virtual class CompoundTag serialize() const;
-    /**
-     * @symbol ?getTargetOther\@ActorServerCommandOrigin\@\@QEBA?AUActorUniqueID\@\@XZ
-     */
+
+    // symbol: ?getTargetOther@ActorServerCommandOrigin@@QEBA?AUActorUniqueID@@XZ
     MCAPI struct ActorUniqueID getTargetOther() const;
-    /**
-     * @symbol ?setTargetOther\@ActorServerCommandOrigin\@\@QEAAXUActorUniqueID\@\@\@Z
-     */
+
+    // symbol: ?setTargetOther@ActorServerCommandOrigin@@QEAAXUActorUniqueID@@@Z
     MCAPI void setTargetOther(struct ActorUniqueID);
+
     // NOLINTEND
 };

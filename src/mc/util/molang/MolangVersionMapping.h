@@ -6,7 +6,6 @@
 #include "mc/util/molang/MolangVersion.h"
 
 class MolangVersionMapping {
-
 public:
     // prevent constructor by default
     MolangVersionMapping& operator=(MolangVersionMapping const&) = delete;
@@ -15,9 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?getVersion\@MolangVersionMapping\@\@SA?BW4MolangVersion\@\@AEBVSemVersion\@\@\@Z
-     */
-    MCAPI static enum class MolangVersion const getVersion(class SemVersion const&);
+    // symbol: ?getVersion@MolangVersionMapping@@SA?BW4MolangVersion@@AEBVSemVersion@@@Z
+    MCAPI static ::MolangVersion const getVersion(class SemVersion const&);
+
     // NOLINTEND
 };

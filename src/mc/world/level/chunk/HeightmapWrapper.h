@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class HeightmapWrapper {
-
 public:
     // prevent constructor by default
     HeightmapWrapper& operator=(HeightmapWrapper const&) = delete;
@@ -12,13 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?empty\@HeightmapWrapper\@\@QEBA_NXZ
-     */
+    // symbol: ?empty@HeightmapWrapper@@QEBA_NXZ
     MCAPI bool empty() const;
-    /**
-     * @symbol ?getHeightAt\@HeightmapWrapper\@\@QEBAFAEBVPos\@\@\@Z
-     */
-    MCAPI int16_t getHeightAt(class Pos const&) const;
+
+    // symbol: ?getHeightAt@HeightmapWrapper@@QEBAFAEBVPos@@@Z
+    MCAPI short getHeightAt(class Pos const&) const;
+
     // NOLINTEND
 };

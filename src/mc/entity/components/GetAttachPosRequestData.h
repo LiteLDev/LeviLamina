@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct GetAttachPosRequestData {
-
 public:
     // prevent constructor by default
     GetAttachPosRequestData& operator=(GetAttachPosRequestData const&) = delete;

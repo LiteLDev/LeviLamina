@@ -6,7 +6,6 @@
 #include "mc/world/level/block/MultifaceSpreader.h"
 
 class SculkVeinMultifaceSpreader : public ::MultifaceSpreader {
-
 public:
     // prevent constructor by default
     SculkVeinMultifaceSpreader& operator=(SculkVeinMultifaceSpreader const&) = delete;
@@ -15,32 +14,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?_canSpreadFrom\@SculkVeinMultifaceSpreader\@\@UEBA_NAEBVBlock\@\@E\@Z
-     */
-    virtual bool _canSpreadFrom(class Block const&, uint8_t) const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?_canSpreadInto\@SculkVeinMultifaceSpreader\@\@UEBA_NAEAVIBlockWorldGenAPI\@\@AEBVBlock\@\@AEBVBlockPos\@\@E\@Z
-     */
-    virtual bool _canSpreadInto(class IBlockWorldGenAPI&, class Block const&, class BlockPos const&, uint8_t) const;
-    /**
-     * @vftbl 3
-     * @symbol ?_isOtherBlockValidAsSource\@SculkVeinMultifaceSpreader\@\@UEBA_NAEBVBlock\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?_canSpreadFrom@SculkVeinMultifaceSpreader@@UEBA_NAEBVBlock@@E@Z
+    virtual bool _canSpreadFrom(class Block const&, uchar) const;
+
+    // vIndex: 2, symbol:
+    // ?_canSpreadInto@SculkVeinMultifaceSpreader@@UEBA_NAEAVIBlockWorldGenAPI@@AEBVBlock@@AEBVBlockPos@@E@Z
+    virtual bool _canSpreadInto(class IBlockWorldGenAPI&, class Block const&, class BlockPos const&, uchar) const;
+
+    // vIndex: 3, symbol: ?_isOtherBlockValidAsSource@SculkVeinMultifaceSpreader@@UEBA_NAEBVBlock@@@Z
     virtual bool _isOtherBlockValidAsSource(class Block const&) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKVEINMULTIFACESPREADER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1SculkVeinMultifaceSpreader@@UEAA@XZ
     MCVAPI ~SculkVeinMultifaceSpreader();
-#endif
+
     // NOLINTEND
 };

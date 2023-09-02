@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct BlockPatternPostEvent {
-
 public:
     // prevent constructor by default
     BlockPatternPostEvent& operator=(BlockPatternPostEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1BlockPatternPostEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1BlockPatternPostEvent@@QEAA@XZ
     MCAPI ~BlockPatternPostEvent();
+
     // NOLINTEND
 };

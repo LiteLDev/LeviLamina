@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct BlockMaterialInstanceProxy {
-
 public:
     // prevent constructor by default
     BlockMaterialInstanceProxy& operator=(BlockMaterialInstanceProxy const&) = delete;
@@ -11,17 +10,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0BlockMaterialInstanceProxy\@\@QEAA\@AEBU0\@\@Z
-     */
+    // symbol: ??0BlockMaterialInstanceProxy@@QEAA@AEBU0@@Z
     MCAPI BlockMaterialInstanceProxy(struct BlockMaterialInstanceProxy const&);
-    /**
-     * @symbol ??1BlockMaterialInstanceProxy\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1BlockMaterialInstanceProxy@@QEAA@XZ
     MCAPI ~BlockMaterialInstanceProxy();
-    /**
-     * @symbol ?bindType\@BlockMaterialInstanceProxy\@\@SAXXZ
-     */
+
+    // symbol: ?bindType@BlockMaterialInstanceProxy@@SAXXZ
     MCAPI static void bindType();
+
     // NOLINTEND
 };

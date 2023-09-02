@@ -7,10 +7,8 @@
 
 namespace InsideEndPortalBlockSystemImpl {
 // NOLINTBEGIN
-/**
- * @symbol
- * ?tickInsideEndPortalBlock\@InsideEndPortalBlockSystemImpl\@\@YAXAEBU?$InsideBlockWithPosAndBlockComponent\@UEndPortalBlockFlag\@\@\@\@AEAVActorOwnerComponent\@\@\@Z
- */
+// symbol:
+// ?tickInsideEndPortalBlock@InsideEndPortalBlockSystemImpl@@YAXAEBU?$InsideBlockWithPosAndBlockComponent@UEndPortalBlockFlag@@@@AEAVActorOwnerComponent@@@Z
 MCAPI void
 tickInsideEndPortalBlock(struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag> const&, class ActorOwnerComponent&);
 // NOLINTEND

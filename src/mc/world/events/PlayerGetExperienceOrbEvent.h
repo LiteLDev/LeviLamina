@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct PlayerGetExperienceOrbEvent {
-
 public:
     // prevent constructor by default
     PlayerGetExperienceOrbEvent& operator=(PlayerGetExperienceOrbEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1PlayerGetExperienceOrbEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1PlayerGetExperienceOrbEvent@@QEAA@XZ
     MCAPI ~PlayerGetExperienceOrbEvent();
+
     // NOLINTEND
 };

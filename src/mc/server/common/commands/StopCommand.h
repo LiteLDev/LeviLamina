@@ -6,7 +6,6 @@
 #include "mc/world/level/Command.h"
 
 class StopCommand : public ::Command {
-
 public:
     // prevent constructor by default
     StopCommand& operator=(StopCommand const&) = delete;
@@ -15,27 +14,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 2
-     * @symbol ?execute\@StopCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?execute@StopCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol ?setup\@StopCommand\@\@SAXAEAVCommandRegistry\@\@AEAVDedicatedServer\@\@\@Z
-     */
+
+    // symbol: ?setup@StopCommand@@SAXAEAVCommandRegistry@@AEAVDedicatedServer@@@Z
     MCAPI static void setup(class CommandRegistry&, class DedicatedServer&);
+
     // NOLINTEND
 
 private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?mServer\@StopCommand\@\@0PEAVDedicatedServer\@\@EA
-     */
+    // symbol: ?mServer@StopCommand@@0PEAVDedicatedServer@@EA
     MCAPI static class DedicatedServer* mServer;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $mServer() { return mServer; }
+
     // NOLINTEND
 };

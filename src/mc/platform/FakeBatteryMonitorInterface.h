@@ -7,7 +7,6 @@
 #include "mc/platform/battery/BatteryMonitorInterface.h"
 
 class FakeBatteryMonitorInterface : public ::BatteryMonitorInterface {
-
 public:
     // prevent constructor by default
     FakeBatteryMonitorInterface& operator=(FakeBatteryMonitorInterface const&) = delete;
@@ -15,24 +14,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getBatteryStatus\@FakeBatteryMonitorInterface\@\@UEBA?AW4BatteryStatus\@\@XZ
-     */
-    virtual enum class BatteryStatus getBatteryStatus() const;
-    /**
-     * @vftbl 2
-     * @symbol ?getBatteryLevel\@FakeBatteryMonitorInterface\@\@UEBAMXZ
-     */
+
+    // vIndex: 1, symbol: ?getBatteryStatus@FakeBatteryMonitorInterface@@UEBA?AW4BatteryStatus@@XZ
+    virtual ::BatteryStatus getBatteryStatus() const;
+
+    // vIndex: 2, symbol: ?getBatteryLevel@FakeBatteryMonitorInterface@@UEBAMXZ
     virtual float getBatteryLevel() const;
-    /**
-     * @symbol ??0FakeBatteryMonitorInterface\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0FakeBatteryMonitorInterface@@QEAA@XZ
     MCAPI FakeBatteryMonitorInterface();
+
     // NOLINTEND
 };

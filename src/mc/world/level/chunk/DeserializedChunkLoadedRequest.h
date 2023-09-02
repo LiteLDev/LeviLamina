@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct DeserializedChunkLoadedRequest {
-
 public:
     // prevent constructor by default
     DeserializedChunkLoadedRequest& operator=(DeserializedChunkLoadedRequest const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1DeserializedChunkLoadedRequest\@\@QEAA\@XZ
-     */
+    // symbol: ??1DeserializedChunkLoadedRequest@@QEAA@XZ
     MCAPI ~DeserializedChunkLoadedRequest();
+
     // NOLINTEND
 };

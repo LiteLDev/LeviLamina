@@ -9,7 +9,6 @@
 #include "mc/server/commands/CommandRegistry.h"
 
 class CommandParameterData {
-
 public:
     using ParseFn =
         bool (CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int32_t, std::string&, std::vector<std::string>&)
@@ -30,32 +29,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0CommandParameterData\@\@QEAA\@AEBV0\@\@Z
-     */
+    // symbol: ??0CommandParameterData@@QEAA@AEBV0@@Z
     MCAPI CommandParameterData(class CommandParameterData const&);
-    /**
-     * @symbol
-     * ??0CommandParameterData\@\@QEAA\@V?$typeid_t\@VCommandRegistry\@\@\@Bedrock\@\@P8CommandRegistry\@\@EBA_NPEAXAEBUParseToken\@3\@AEBVCommandOrigin\@\@HAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@7\@\@ZPEBDW4CommandParameterDataType\@\@77H_NH\@Z
-     */
+
+    // symbol:
+    // ??0CommandParameterData@@QEAA@V?$typeid_t@VCommandRegistry@@@Bedrock@@P8CommandRegistry@@EBA_NPEAXAEBUParseToken@3@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@7@@ZPEBDW4CommandParameterDataType@@77H_NH@Z
     MCAPI CommandParameterData(
         class Bedrock::typeid_t<class CommandRegistry> typeIndex,
         ParseFn                                        parser,
         char const*                                    name,
-        enum class CommandParameterDataType            paramType,
+        ::CommandParameterDataType                     paramType,
         char const*                                    enumName,
         char const*                                    postFix,
-        int32_t                                            offset,
+        int                                            offset,
         bool                                           optional,
-        int32_t                                            flagOffset
+        int                                            flagOffset
     );
-    /**
-     * @symbol ?addOptions\@CommandParameterData\@\@QEAAAEAV1\@W4CommandParameterOption\@\@\@Z
-     */
-    MCAPI class CommandParameterData& addOptions(enum class CommandParameterOption);
-    /**
-     * @symbol ??1CommandParameterData\@\@QEAA\@XZ
-     */
+
+    // symbol: ?addOptions@CommandParameterData@@QEAAAEAV1@W4CommandParameterOption@@@Z
+    MCAPI class CommandParameterData& addOptions(::CommandParameterOption);
+
+    // symbol: ??1CommandParameterData@@QEAA@XZ
     MCAPI ~CommandParameterData();
+
     // NOLINTEND
 };

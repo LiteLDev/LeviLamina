@@ -5,7 +5,6 @@
 #include "mc/world/level/biome/SpawnBiomeType.h"
 
 struct SpawnSettings {
-
 public:
     SpawnBiomeType type;
     std::string    userDefinedBiomeName;
@@ -17,13 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0SpawnSettings\@\@QEAA\@AEBU0\@\@Z
-     */
+    // symbol: ??0SpawnSettings@@QEAA@AEBU0@@Z
     MCAPI SpawnSettings(struct SpawnSettings const&);
-    /**
-     * @symbol ??1SpawnSettings\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1SpawnSettings@@QEAA@XZ
     MCAPI ~SpawnSettings();
+
     // NOLINTEND
 };

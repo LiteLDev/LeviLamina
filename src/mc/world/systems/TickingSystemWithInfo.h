@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct TickingSystemWithInfo {
-
 public:
     // prevent constructor by default
     TickingSystemWithInfo& operator=(TickingSystemWithInfo const&) = delete;
@@ -12,13 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0TickingSystemWithInfo\@\@QEAA\@$$QEAU0\@\@Z
-     */
+    // symbol: ??0TickingSystemWithInfo@@QEAA@$$QEAU0@@Z
     MCAPI TickingSystemWithInfo(struct TickingSystemWithInfo&&);
-    /**
-     * @symbol ??1TickingSystemWithInfo\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1TickingSystemWithInfo@@QEAA@XZ
     MCAPI ~TickingSystemWithInfo();
+
     // NOLINTEND
 };

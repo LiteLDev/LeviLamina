@@ -15,7 +15,6 @@ namespace ScriptModuleMinecraft { class MovementScriptActorComponent; }
 namespace ScriptModuleMinecraft {
 
 class ScriptMovementAmphibiousComponent : public ::ScriptModuleMinecraft::MovementScriptActorComponent {
-
 public:
     // prevent constructor by default
     ScriptMovementAmphibiousComponent& operator=(ScriptMovementAmphibiousComponent const&) = delete;
@@ -24,33 +23,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTMOVEMENTAMPHIBIOUSCOMPONENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1ScriptMovementAmphibiousComponent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptMovementAmphibiousComponent();
-#endif
-    /**
-     * @symbol
-     * ?bind\@ScriptMovementAmphibiousComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMovementAmphibiousComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptMovementAmphibiousComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptMovementAmphibiousComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementAmphibiousComponent>
     bind();
-    /**
-     * @symbol
-     * ?bindV010\@ScriptMovementAmphibiousComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMovementAmphibiousComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bindV010@ScriptMovementAmphibiousComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptMovementAmphibiousComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementAmphibiousComponent>
     bindV010();
-    /**
-     * @symbol ?ComponentId\@ScriptMovementAmphibiousComponent\@ScriptModuleMinecraft\@\@2PEBDEB
-     */
+
+    // symbol: ?ComponentId@ScriptMovementAmphibiousComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;
+
     // NOLINTEND
 };
 

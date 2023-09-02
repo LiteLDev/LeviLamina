@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class MoveActorDeltaData {
-
 public:
     union Header {
         uint16_t mRaw;                   // this+0x0

@@ -16,7 +16,6 @@ public:
 
     // SoundEventRequest inner types define
     struct PlainData {
-
     public:
         // prevent constructor by default
         PlainData& operator=(PlainData const&) = delete;
@@ -25,15 +24,13 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??1PlainData\@SoundEventRequest\@\@QEAA\@XZ
-         */
+        // symbol: ??1PlainData@SoundEventRequest@@QEAA@XZ
         MCAPI ~PlainData();
+
         // NOLINTEND
     };
 
     struct SynchronizedPlainData {
-
     public:
         // prevent constructor by default
         SynchronizedPlainData& operator=(SynchronizedPlainData const&) = delete;
@@ -49,25 +46,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0SoundEventRequest\@\@QEAA\@$$QEAU0\@\@Z
-     */
+    // symbol: ??0SoundEventRequest@@QEAA@$$QEAU0@@Z
     MCAPI SoundEventRequest(struct SoundEventRequest&&);
-    /**
-     * @symbol ??1SoundEventRequest\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1SoundEventRequest@@QEAA@XZ
     MCAPI ~SoundEventRequest();
-    /**
-     * @symbol
-     * ?tryPlaySound\@SoundEventRequest\@\@SA?AV?$optional\@USoundEventRequest\@\@\@std\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEBVSynchedActorData\@\@AEBUActorDefinitionIdentifier\@\@W4LevelSoundEvent\@\@AEBVVec3\@\@H\@Z
-     */
+
+    // symbol:
+    // ?tryPlaySound@SoundEventRequest@@SA?AV?$optional@USoundEventRequest@@@std@@V?$AutomaticID@VDimension@@H@@AEBVSynchedActorData@@AEBUActorDefinitionIdentifier@@W4LevelSoundEvent@@AEBVVec3@@H@Z
     MCAPI static std::optional<struct SoundEventRequest> tryPlaySound(
-        DimensionType,
+        class AutomaticID<class Dimension, int>,
         class SynchedActorData const&,
         struct ActorDefinitionIdentifier const&,
-        enum class LevelSoundEvent,
+        ::LevelSoundEvent,
         class Vec3 const&,
-        int32_t
+        int
     );
+
     // NOLINTEND
 };

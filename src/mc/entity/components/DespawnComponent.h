@@ -12,7 +12,6 @@ public:
 
     // DespawnComponent inner types define
     class IWorldAccessor {
-
     public:
         // prevent constructor by default
         IWorldAccessor& operator=(IWorldAccessor const&) = delete;
@@ -21,58 +20,38 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @vftbl 1
-         * @symbol ?fetchAnyInteractablePlayer\@WorldAccessor\@DespawnComponent\@\@UEBAPEAVPlayer\@\@AEBVVec3\@\@M\@Z
-         */
+
+        // vIndex: 1, symbol: ?fetchAnyInteractablePlayer@WorldAccessor@DespawnComponent@@UEBAPEAVPlayer@@AEBVVec3@@M@Z
         virtual class Player* fetchAnyInteractablePlayer(class Vec3 const&, float) const = 0;
-        /**
-         * @vftbl 2
-         * @symbol ?getChunkTickRange\@WorldAccessor\@DespawnComponent\@\@UEBAIXZ
-         */
-        virtual uint32_t getChunkTickRange() const = 0;
-        /**
-         * @vftbl 3
-         * @symbol ?areChunksFullyLoaded\@WorldAccessor\@DespawnComponent\@\@UEBA_NAEBVBlockPos\@\@H\@Z
-         */
-        virtual bool areChunksFullyLoaded(class BlockPos const&, int32_t) const = 0;
-        /**
-         * @vftbl 4
-         * @symbol ?hasUntickedNeighborChunk\@WorldAccessor\@DespawnComponent\@\@UEBA_NAEBVChunkPos\@\@H\@Z
-         */
-        virtual bool hasUntickedNeighborChunk(class ChunkPos const&, int32_t) const = 0;
-        /**
-         * @vftbl 5
-         * @symbol ?getChanceRandomize\@WorldAccessor\@DespawnComponent\@\@UEAAAEAVRandomize\@\@XZ
-         */
+
+        // vIndex: 2, symbol: ?getChunkTickRange@WorldAccessor@DespawnComponent@@UEBAIXZ
+        virtual uint getChunkTickRange() const = 0;
+
+        // vIndex: 3, symbol: ?areChunksFullyLoaded@WorldAccessor@DespawnComponent@@UEBA_NAEBVBlockPos@@H@Z
+        virtual bool areChunksFullyLoaded(class BlockPos const&, int) const = 0;
+
+        // vIndex: 4, symbol: ?hasUntickedNeighborChunk@WorldAccessor@DespawnComponent@@UEBA_NAEBVChunkPos@@H@Z
+        virtual bool hasUntickedNeighborChunk(class ChunkPos const&, int) const = 0;
+
+        // vIndex: 5, symbol: ?getChanceRandomize@WorldAccessor@DespawnComponent@@UEAAAEAVRandomize@@XZ
         virtual class Randomize& getChanceRandomize() = 0;
-        /**
-         * @vftbl 6
-         * @symbol
-         * ?getActorNoActionTime\@WorldAccessor\@DespawnComponent\@\@UEBA?AV?$optional\@H\@std\@\@AEBVActor\@\@\@Z
-         */
-        virtual std::optional<int32_t> getActorNoActionTime(class Actor const&) const = 0;
-        /**
-         * @vftbl 7
-         * @symbol ?resetActorNoActionTime\@WorldAccessor\@DespawnComponent\@\@UEAAXAEAVActor\@\@\@Z
-         */
+
+        // vIndex: 6, symbol:
+        // ?getActorNoActionTime@WorldAccessor@DespawnComponent@@UEBA?AV?$optional@H@std@@AEBVActor@@@Z
+        virtual std::optional<int> getActorNoActionTime(class Actor const&) const = 0;
+
+        // vIndex: 7, symbol: ?resetActorNoActionTime@WorldAccessor@DespawnComponent@@UEAAXAEAVActor@@@Z
         virtual void resetActorNoActionTime(class Actor&) = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESPAWNCOMPONENT_IWORLDACCESSOR
-        /**
-         * @symbol __unk_destructor_-1
-         */
+
+        // symbol: ??1IWorldAccessor@DespawnComponent@@UEAA@XZ
         MCVAPI ~IWorldAccessor();
-#endif
+
         // NOLINTEND
     };
 
     class WorldAccessor : public ::DespawnComponent::IWorldAccessor {
-
     public:
         // prevent constructor by default
         WorldAccessor& operator=(WorldAccessor const&) = delete;
@@ -81,53 +60,34 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @vftbl 1
-         * @symbol ?fetchAnyInteractablePlayer\@WorldAccessor\@DespawnComponent\@\@UEBAPEAVPlayer\@\@AEBVVec3\@\@M\@Z
-         */
+
+        // vIndex: 1, symbol: ?fetchAnyInteractablePlayer@WorldAccessor@DespawnComponent@@UEBAPEAVPlayer@@AEBVVec3@@M@Z
         virtual class Player* fetchAnyInteractablePlayer(class Vec3 const&, float) const;
-        /**
-         * @vftbl 2
-         * @symbol ?getChunkTickRange\@WorldAccessor\@DespawnComponent\@\@UEBAIXZ
-         */
-        virtual uint32_t getChunkTickRange() const;
-        /**
-         * @vftbl 3
-         * @symbol ?areChunksFullyLoaded\@WorldAccessor\@DespawnComponent\@\@UEBA_NAEBVBlockPos\@\@H\@Z
-         */
-        virtual bool areChunksFullyLoaded(class BlockPos const&, int32_t) const;
-        /**
-         * @vftbl 4
-         * @symbol ?hasUntickedNeighborChunk\@WorldAccessor\@DespawnComponent\@\@UEBA_NAEBVChunkPos\@\@H\@Z
-         */
-        virtual bool hasUntickedNeighborChunk(class ChunkPos const&, int32_t) const;
-        /**
-         * @vftbl 5
-         * @symbol ?getChanceRandomize\@WorldAccessor\@DespawnComponent\@\@UEAAAEAVRandomize\@\@XZ
-         */
+
+        // vIndex: 2, symbol: ?getChunkTickRange@WorldAccessor@DespawnComponent@@UEBAIXZ
+        virtual uint getChunkTickRange() const;
+
+        // vIndex: 3, symbol: ?areChunksFullyLoaded@WorldAccessor@DespawnComponent@@UEBA_NAEBVBlockPos@@H@Z
+        virtual bool areChunksFullyLoaded(class BlockPos const&, int) const;
+
+        // vIndex: 4, symbol: ?hasUntickedNeighborChunk@WorldAccessor@DespawnComponent@@UEBA_NAEBVChunkPos@@H@Z
+        virtual bool hasUntickedNeighborChunk(class ChunkPos const&, int) const;
+
+        // vIndex: 5, symbol: ?getChanceRandomize@WorldAccessor@DespawnComponent@@UEAAAEAVRandomize@@XZ
         virtual class Randomize& getChanceRandomize();
-        /**
-         * @vftbl 6
-         * @symbol
-         * ?getActorNoActionTime\@WorldAccessor\@DespawnComponent\@\@UEBA?AV?$optional\@H\@std\@\@AEBVActor\@\@\@Z
-         */
-        virtual std::optional<int32_t> getActorNoActionTime(class Actor const&) const;
-        /**
-         * @vftbl 7
-         * @symbol ?resetActorNoActionTime\@WorldAccessor\@DespawnComponent\@\@UEAAXAEAVActor\@\@\@Z
-         */
+
+        // vIndex: 6, symbol:
+        // ?getActorNoActionTime@WorldAccessor@DespawnComponent@@UEBA?AV?$optional@H@std@@AEBVActor@@@Z
+        virtual std::optional<int> getActorNoActionTime(class Actor const&) const;
+
+        // vIndex: 7, symbol: ?resetActorNoActionTime@WorldAccessor@DespawnComponent@@UEAAXAEAVActor@@@Z
         virtual void resetActorNoActionTime(class Actor&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESPAWNCOMPONENT_WORLDACCESSOR
-        /**
-         * @symbol __unk_destructor_-1
-         */
+
+        // symbol: ??1WorldAccessor@DespawnComponent@@UEAA@XZ
         MCVAPI ~WorldAccessor();
-#endif
+
         // NOLINTEND
     };
 
@@ -139,28 +99,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?onDespawn\@DespawnComponent\@\@QEAAXAEAVActor\@\@\@Z
-     */
+    // symbol: ?onDespawn@DespawnComponent@@QEAAXAEAVActor@@@Z
     MCAPI void onDespawn(class Actor&);
-    /**
-     * @symbol ?tick\@DespawnComponent\@\@QEAAXAEAVActor\@\@\@Z
-     */
+
+    // symbol: ?tick@DespawnComponent@@QEAAXAEAVActor@@@Z
     MCAPI void tick(class Actor&);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_tryStandardDespawnRules\@DespawnComponent\@\@AEBA_NAEAVActor\@\@AEBVDespawnDefinition\@\@AEAVIWorldAccessor\@1\@\@Z
-     */
+    // symbol:
+    // ?_tryStandardDespawnRules@DespawnComponent@@AEBA_NAEAVActor@@AEBVDespawnDefinition@@AEAVIWorldAccessor@1@@Z
     MCAPI bool
     _tryStandardDespawnRules(class Actor&, class DespawnDefinition const&, class DespawnComponent::IWorldAccessor&)
         const;
-    /**
-     * @symbol ?getDefinition\@DespawnComponent\@\@AEBAAEBVDespawnDefinition\@\@AEAVActor\@\@\@Z
-     */
+
+    // symbol: ?getDefinition@DespawnComponent@@AEBAAEBVDespawnDefinition@@AEAVActor@@@Z
     MCAPI class DespawnDefinition const& getDefinition(class Actor&) const;
+
     // NOLINTEND
 };

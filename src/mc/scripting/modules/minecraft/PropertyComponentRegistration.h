@@ -5,7 +5,6 @@
 namespace ScriptModuleMinecraft::ScriptPropertyComponents {
 
 struct PropertyComponentRegistration {
-
 public:
     // prevent constructor by default
     PropertyComponentRegistration& operator=(PropertyComponentRegistration const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1PropertyComponentRegistration\@ScriptPropertyComponents\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+    // symbol: ??1PropertyComponentRegistration@ScriptPropertyComponents@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~PropertyComponentRegistration();
+
     // NOLINTEND
 };
 

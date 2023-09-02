@@ -11,7 +11,6 @@ public:
 
     // VehicleUtils inner types define
     struct VehicleDirections {
-
     public:
         // prevent constructor by default
         VehicleDirections& operator=(VehicleDirections const&) = delete;
@@ -25,52 +24,44 @@ public:
     VehicleUtils(VehicleUtils const&)            = delete;
     VehicleUtils()                               = delete;
 
-    using PatternStrategyPtr = std::optional<
-        Vec3> (*)(struct VehicleUtils::VehicleDirections const&, std::function<bool(Vec3 const&, Vec3 const&)>);
-
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?calculateBlockFloorHeight\@VehicleUtils\@\@SA?AV?$optional\@M\@std\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
+    // symbol: ?calculateBlockFloorHeight@VehicleUtils@@SA?AV?$optional@M@std@@AEBVIConstBlockSource@@AEBVBlockPos@@@Z
     MCAPI static std::optional<float> calculateBlockFloorHeight(class IConstBlockSource const&, class BlockPos const&);
-    /**
-     * @symbol ?calculateVehicleDirections\@VehicleUtils\@\@SA?AUVehicleDirections\@1\@AEBVVec3\@\@0\@Z
-     */
+
+    // symbol: ?calculateVehicleDirections@VehicleUtils@@SA?AUVehicleDirections@1@AEBVVec3@@0@Z
     MCAPI static struct VehicleUtils::VehicleDirections
     calculateVehicleDirections(class Vec3 const&, class Vec3 const&);
-    /**
-     * @symbol
-     * ?getActivatorRailExitPatternStrategy\@VehicleUtils\@\@SAP6A?AV?$optional\@VVec3\@\@\@std\@\@AEBUVehicleDirections\@1\@V?$function\@$$A6A_NAEBVVec3\@\@0\@Z\@3\@\@ZAEBVBaseGameVersion\@\@\@Z
-     */
-    MCAPI static PatternStrategyPtr getActivatorRailExitPatternStrategy(class BaseGameVersion const&);
-    /**
-     * @symbol
-     * ?getActorExitPatternStrategy\@VehicleUtils\@\@SAP6A?AV?$optional\@VVec3\@\@\@std\@\@AEBUVehicleDirections\@1\@V?$function\@$$A6A_NAEBVVec3\@\@0\@Z\@3\@\@ZAEBVBaseGameVersion\@\@\@Z
-     */
-    MCAPI static PatternStrategyPtr getActorExitPatternStrategy(class BaseGameVersion const&);
-    /**
-     * @symbol ?ignoredExitCollisionBlock\@VehicleUtils\@\@SA_NAEBVBlock\@\@\@Z
-     */
+
+    // symbol:
+    // ?getActivatorRailExitPatternStrategy@VehicleUtils@@SAP6A?AV?$optional@VVec3@@@std@@AEBUVehicleDirections@1@V?$function@$$A6A_NAEBVVec3@@0@Z@3@@ZAEBVBaseGameVersion@@@Z
+    MCAPI static auto getActivatorRailExitPatternStrategy(class BaseGameVersion const&) -> std::optional<
+        class
+        Vec3> (*)(struct VehicleUtils::VehicleDirections const&, std::function<bool(class Vec3 const&, class Vec3 const&)>);
+
+    // symbol:
+    // ?getActorExitPatternStrategy@VehicleUtils@@SAP6A?AV?$optional@VVec3@@@std@@AEBUVehicleDirections@1@V?$function@$$A6A_NAEBVVec3@@0@Z@3@@ZAEBVBaseGameVersion@@@Z
+    MCAPI static auto getActorExitPatternStrategy(class BaseGameVersion const&) -> std::optional<
+        class
+        Vec3> (*)(struct VehicleUtils::VehicleDirections const&, std::function<bool(class Vec3 const&, class Vec3 const&)>);
+
+    // symbol: ?ignoredExitCollisionBlock@VehicleUtils@@SA_NAEBVBlock@@@Z
     MCAPI static bool ignoredExitCollisionBlock(class Block const&);
-    /**
-     * @symbol
-     * ?testPosFollowingEjectPattern\@VehicleUtils\@\@SA?AV?$optional\@VVec3\@\@\@std\@\@AEBUVehicleDirections\@1\@V?$function\@$$A6A_NAEBVVec3\@\@0\@Z\@3\@\@Z
-     */
+
+    // symbol:
+    // ?testPosFollowingEjectPattern@VehicleUtils@@SA?AV?$optional@VVec3@@@std@@AEBUVehicleDirections@1@V?$function@$$A6A_NAEBVVec3@@0@Z@3@@Z
     MCAPI static std::optional<class Vec3>
     testPosFollowingEjectPattern(struct VehicleUtils::VehicleDirections const&, std::function<bool(class Vec3 const&, class Vec3 const&)>);
-    /**
-     * @symbol
-     * ?testPosFollowingLegacyActivatorRailPattern\@VehicleUtils\@\@SA?AV?$optional\@VVec3\@\@\@std\@\@AEBUVehicleDirections\@1\@V?$function\@$$A6A_NAEBVVec3\@\@0\@Z\@3\@\@Z
-     */
+
+    // symbol:
+    // ?testPosFollowingLegacyActivatorRailPattern@VehicleUtils@@SA?AV?$optional@VVec3@@@std@@AEBUVehicleDirections@1@V?$function@$$A6A_NAEBVVec3@@0@Z@3@@Z
     MCAPI static std::optional<class Vec3>
     testPosFollowingLegacyActivatorRailPattern(struct VehicleUtils::VehicleDirections const&, std::function<bool(class Vec3 const&, class Vec3 const&)>);
-    /**
-     * @symbol
-     * ?testPosFollowingLegacyActorPattern\@VehicleUtils\@\@SA?AV?$optional\@VVec3\@\@\@std\@\@AEBUVehicleDirections\@1\@V?$function\@$$A6A_NAEBVVec3\@\@0\@Z\@3\@\@Z
-     */
+
+    // symbol:
+    // ?testPosFollowingLegacyActorPattern@VehicleUtils@@SA?AV?$optional@VVec3@@@std@@AEBUVehicleDirections@1@V?$function@$$A6A_NAEBVVec3@@0@Z@3@@Z
     MCAPI static std::optional<class Vec3>
     testPosFollowingLegacyActorPattern(struct VehicleUtils::VehicleDirections const&, std::function<bool(class Vec3 const&, class Vec3 const&)>);
+
     // NOLINTEND
 };

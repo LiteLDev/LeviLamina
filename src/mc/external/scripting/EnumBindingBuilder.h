@@ -6,7 +6,6 @@ namespace Scripting {
 
 template <typename T0, typename T1>
 class EnumBindingBuilder {
-
 public:
     // prevent constructor by default
     EnumBindingBuilder& operator=(EnumBindingBuilder const&) = delete;

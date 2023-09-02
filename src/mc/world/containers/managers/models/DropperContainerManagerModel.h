@@ -8,7 +8,6 @@
 #include "mc/world/containers/managers/models/LevelContainerManagerModel.h"
 
 class DropperContainerManagerModel : public ::LevelContainerManagerModel {
-
 public:
     // prevent constructor by default
     DropperContainerManagerModel& operator=(DropperContainerManagerModel const&) = delete;
@@ -17,19 +16,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 17
-     * @symbol ?_postInit\@DropperContainerManagerModel\@\@MEAA?AVContainerScreenContext\@\@XZ
-     */
+
+    // vIndex: 17, symbol: ?_postInit@DropperContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
     virtual class ContainerScreenContext _postInit();
-    /**
-     * @symbol ??0DropperContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI DropperContainerManagerModel(enum class ContainerID, class Player&, class BlockPos const&);
+
+    // symbol: ??0DropperContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
+    MCAPI DropperContainerManagerModel(::ContainerID, class Player&, class BlockPos const&);
+
     // NOLINTEND
 };

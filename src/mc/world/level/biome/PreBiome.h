@@ -5,7 +5,6 @@
 namespace OperationNodeValues {
 
 struct PreBiome {
-
 public:
     // prevent constructor by default
     PreBiome& operator=(PreBiome const&) = delete;

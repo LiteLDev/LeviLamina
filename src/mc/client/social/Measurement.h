@@ -5,7 +5,6 @@
 namespace Social::Events {
 
 class Measurement {
-
 public:
     // prevent constructor by default
     Measurement& operator=(Measurement const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1Measurement\@Events\@Social\@\@QEAA\@XZ
-     */
+    // symbol: ??1Measurement@Events@Social@@QEAA@XZ
     MCAPI ~Measurement();
+
     // NOLINTEND
 };
 

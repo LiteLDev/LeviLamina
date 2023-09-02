@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ItemDefinitionEventTriggeredEvent {
-
 public:
     // prevent constructor by default
     ItemDefinitionEventTriggeredEvent& operator=(ItemDefinitionEventTriggeredEvent const&) = delete;
@@ -11,13 +10,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ItemDefinitionEventTriggeredEvent\@\@QEAA\@AEBU0\@\@Z
-     */
+    // symbol: ??0ItemDefinitionEventTriggeredEvent@@QEAA@AEBU0@@Z
     MCAPI ItemDefinitionEventTriggeredEvent(struct ItemDefinitionEventTriggeredEvent const&);
-    /**
-     * @symbol ??1ItemDefinitionEventTriggeredEvent\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ItemDefinitionEventTriggeredEvent@@QEAA@XZ
     MCAPI ~ItemDefinitionEventTriggeredEvent();
+
     // NOLINTEND
 };

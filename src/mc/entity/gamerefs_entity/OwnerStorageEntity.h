@@ -31,41 +31,32 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0OwnerStorageEntity\@\@IEAA\@W4VariadicInit\@0\@AEAVEntityRegistry\@\@\@Z
-     */
-    MCAPI OwnerStorageEntity(enum class OwnerStorageEntity::VariadicInit, class EntityRegistry&);
-    /**
-     * @symbol ??0OwnerStorageEntity\@\@IEAA\@$$QEAV0\@\@Z
-     */
+    // symbol: ??0OwnerStorageEntity@@IEAA@W4VariadicInit@0@AEAVEntityRegistry@@@Z
+    MCAPI OwnerStorageEntity(::OwnerStorageEntity::VariadicInit, class EntityRegistry&);
+
+    // symbol: ??0OwnerStorageEntity@@IEAA@$$QEAV0@@Z
     MCAPI OwnerStorageEntity(class OwnerStorageEntity&&);
-    /**
-     * @symbol ??0OwnerStorageEntity\@\@IEAA\@W4EmptyInit\@0\@\@Z
-     */
-    MCAPI OwnerStorageEntity(enum class OwnerStorageEntity::EmptyInit);
-    /**
-     * @symbol ?_getStackRef\@OwnerStorageEntity\@\@IEBAAEAVEntityContext\@\@XZ
-     */
+
+    // symbol: ??0OwnerStorageEntity@@IEAA@W4EmptyInit@0@@Z
+    MCAPI OwnerStorageEntity(::OwnerStorageEntity::EmptyInit);
+
+    // symbol: ?_getStackRef@OwnerStorageEntity@@IEBAAEAVEntityContext@@XZ
     MCAPI class EntityContext& _getStackRef() const;
-    /**
-     * @symbol ?_hasValue\@OwnerStorageEntity\@\@IEBA_NXZ
-     */
+
+    // symbol: ?_hasValue@OwnerStorageEntity@@IEBA_NXZ
     MCAPI bool _hasValue() const;
-    /**
-     * @symbol ?_remake\@OwnerStorageEntity\@\@IEAAXAEAVEntityRegistry\@\@\@Z
-     */
+
+    // symbol: ?_remake@OwnerStorageEntity@@IEAAXAEAVEntityRegistry@@@Z
     MCAPI void _remake(class EntityRegistry&);
-    /**
-     * @symbol ?_reset\@OwnerStorageEntity\@\@IEAAXXZ
-     */
+
+    // symbol: ?_reset@OwnerStorageEntity@@IEAAXXZ
     MCAPI void _reset();
-    /**
-     * @symbol ??4OwnerStorageEntity\@\@IEAAAEAV0\@$$QEAV0\@\@Z
-     */
+
+    // symbol: ??4OwnerStorageEntity@@IEAAAEAV0@$$QEAV0@@Z
     MCAPI class OwnerStorageEntity& operator=(class OwnerStorageEntity&&);
-    /**
-     * @symbol ??1OwnerStorageEntity\@\@IEAA\@XZ
-     */
+
+    // symbol: ??1OwnerStorageEntity@@IEAA@XZ
     MCAPI ~OwnerStorageEntity();
+
     // NOLINTEND
 };

@@ -11,7 +11,6 @@ namespace cereal::internal { class BasicSchema; }
 namespace cereal {
 
 class BasicSaver {
-
 public:
     // prevent constructor by default
     BasicSaver& operator=(BasicSaver const&) = delete;
@@ -20,21 +19,16 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREAL_BASICSAVER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1BasicSaver@cereal@@UEAA@XZ
     MCVAPI ~BasicSaver();
-#endif
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?saveImpl\@BasicSaver\@cereal\@\@AEAA_NAEAUSchemaWriter\@2\@Umeta_handle\@entt\@\@AEBVBasicSchema\@internal\@2\@\@Z
-     */
+    // symbol: ?saveImpl@BasicSaver@cereal@@AEAA_NAEAUSchemaWriter@2@Umeta_handle@entt@@AEBVBasicSchema@internal@2@@Z
     MCAPI bool saveImpl(struct cereal::SchemaWriter&, entt::meta_handle, class cereal::internal::BasicSchema const&);
+
     // NOLINTEND
 };
 

@@ -5,7 +5,6 @@
 namespace AgentComponents {
 
 struct AnimationCompleteFlag {
-
 public:
     // prevent constructor by default
     AnimationCompleteFlag& operator=(AnimationCompleteFlag const&) = delete;

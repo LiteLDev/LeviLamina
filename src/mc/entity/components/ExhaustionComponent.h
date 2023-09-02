@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ExhaustionComponent {
-
 public:
     // prevent constructor by default
     ExhaustionComponent& operator=(ExhaustionComponent const&) = delete;
@@ -12,37 +11,29 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?getAttackValue\@ExhaustionComponent\@\@QEBAMXZ
-     */
+    // symbol: ?getAttackValue@ExhaustionComponent@@QEBAMXZ
     MCAPI float getAttackValue() const;
-    /**
-     * @symbol ?getHealValue\@ExhaustionComponent\@\@QEBAMXZ
-     */
+
+    // symbol: ?getHealValue@ExhaustionComponent@@QEBAMXZ
     MCAPI float getHealValue() const;
-    /**
-     * @symbol ?getJumpValue\@ExhaustionComponent\@\@QEBAMXZ
-     */
+
+    // symbol: ?getJumpValue@ExhaustionComponent@@QEBAMXZ
     MCAPI float getJumpValue() const;
-    /**
-     * @symbol ?getMiningValue\@ExhaustionComponent\@\@QEBAMXZ
-     */
+
+    // symbol: ?getMiningValue@ExhaustionComponent@@QEBAMXZ
     MCAPI float getMiningValue() const;
-    /**
-     * @symbol ?getSprintJumpValue\@ExhaustionComponent\@\@QEBAMXZ
-     */
+
+    // symbol: ?getSprintJumpValue@ExhaustionComponent@@QEBAMXZ
     MCAPI float getSprintJumpValue() const;
-    /**
-     * @symbol ?getSprintValue\@ExhaustionComponent\@\@QEBAMXZ
-     */
+
+    // symbol: ?getSprintValue@ExhaustionComponent@@QEBAMXZ
     MCAPI float getSprintValue() const;
-    /**
-     * @symbol ?getSwimValue\@ExhaustionComponent\@\@QEBAMXZ
-     */
+
+    // symbol: ?getSwimValue@ExhaustionComponent@@QEBAMXZ
     MCAPI float getSwimValue() const;
-    /**
-     * @symbol ?getWalkValue\@ExhaustionComponent\@\@QEBAMXZ
-     */
+
+    // symbol: ?getWalkValue@ExhaustionComponent@@QEBAMXZ
     MCAPI float getWalkValue() const;
+
     // NOLINTEND
 };

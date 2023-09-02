@@ -5,7 +5,6 @@
 namespace RakNet {
 
 class RakPeerInterface {
-
 public:
     // prevent constructor by default
     RakPeerInterface& operator=(RakPeerInterface const&) = delete;
@@ -14,20 +13,15 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKNET_RAKPEERINTERFACE
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1RakPeerInterface@RakNet@@UEAA@XZ
     MCVAPI ~RakPeerInterface();
-#endif
-    /**
-     * @symbol ?DestroyInstance\@RakPeerInterface\@RakNet\@\@SAXPEAV12\@\@Z
-     */
+
+    // symbol: ?DestroyInstance@RakPeerInterface@RakNet@@SAXPEAV12@@Z
     MCAPI static void DestroyInstance(class RakNet::RakPeerInterface*);
-    /**
-     * @symbol ?GetInstance\@RakPeerInterface\@RakNet\@\@SAPEAV12\@XZ
-     */
+
+    // symbol: ?GetInstance@RakPeerInterface@RakNet@@SAPEAV12@XZ
     MCAPI static class RakNet::RakPeerInterface* GetInstance();
+
     // NOLINTEND
 };
 

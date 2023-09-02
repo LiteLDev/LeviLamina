@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class CachedComponentData {
-
 public:
     // prevent constructor by default
     CachedComponentData& operator=(CachedComponentData const&) = delete;
@@ -12,13 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?cacheComponentData\@CachedComponentData\@\@QEAAXAEBVBlock\@\@\@Z
-     */
+    // symbol: ?cacheComponentData@CachedComponentData@@QEAAXAEBVBlock@@@Z
     MCAPI void cacheComponentData(class Block const&);
-    /**
-     * @symbol ??1CachedComponentData\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1CachedComponentData@@QEAA@XZ
     MCAPI ~CachedComponentData();
+
     // NOLINTEND
 };

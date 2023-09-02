@@ -14,7 +14,6 @@ struct ScriptingNotificationEvent;
 namespace ScriptModuleMinecraft {
 
 class ScriptScriptingEventListener {
-
 public:
     // prevent constructor by default
     ScriptScriptingEventListener& operator=(ScriptScriptingEventListener const&) = delete;
@@ -23,22 +22,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?onEvent\@ScriptScriptingEventListener\@ScriptModuleMinecraft\@\@UEAA?AW4EventResult\@\@AEBUScriptCommandMessageEvent\@\@\@Z
-     */
-    virtual enum class EventResult onEvent(struct ScriptCommandMessageEvent const&);
-    /**
-     * @vftbl 2
-     * @symbol ?onEvent\@ScriptingEventListener\@\@UEAA?AW4EventResult\@\@AEBUScriptingNotificationEvent\@\@\@Z
-     */
-    virtual enum class EventResult onEvent(struct ScriptingNotificationEvent const&);
+
+    // vIndex: 1, symbol:
+    // ?onEvent@ScriptScriptingEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUScriptCommandMessageEvent@@@Z
+    virtual ::EventResult onEvent(struct ScriptCommandMessageEvent const&);
+
+    // vIndex: 2, symbol: ?onEvent@ScriptingEventListener@@UEAA?AW4EventResult@@AEBUScriptingNotificationEvent@@@Z
+    virtual ::EventResult onEvent(struct ScriptingNotificationEvent const&);
+
     // NOLINTEND
 };
 

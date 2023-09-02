@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class TripodCameraComponent {
-
 public:
     // prevent constructor by default
     TripodCameraComponent& operator=(TripodCameraComponent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?getInteraction\@TripodCameraComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
-     */
+    // symbol: ?getInteraction@TripodCameraComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
     MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+
     // NOLINTEND
 };

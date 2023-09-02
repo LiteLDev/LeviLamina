@@ -14,7 +14,6 @@ namespace PositionTrackingDB { class TrackingRecord; }
 namespace PositionTrackingDB {
 
 class PositionTrackingDBClient {
-
 public:
     // prevent constructor by default
     PositionTrackingDBClient& operator=(PositionTrackingDBClient const&) = delete;
@@ -23,12 +22,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?findTracker\@PositionTrackingDBClient\@PositionTrackingDB\@\@QEAA?AW4ResultCode\@2\@AEBVPositionTrackingId\@\@PEAPEAVTrackingRecord\@2\@\@Z
-     */
-    MCAPI enum class PositionTrackingDB::ResultCode
+    // symbol:
+    // ?findTracker@PositionTrackingDBClient@PositionTrackingDB@@QEAA?AW4ResultCode@2@AEBVPositionTrackingId@@PEAPEAVTrackingRecord@2@@Z
+    MCAPI ::PositionTrackingDB::ResultCode
     findTracker(class PositionTrackingId const&, class PositionTrackingDB::TrackingRecord**);
+
     // NOLINTEND
 };
 

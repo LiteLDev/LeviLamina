@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct GameTestSaveData {
-
 public:
     // prevent constructor by default
     GameTestSaveData& operator=(GameTestSaveData const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1GameTestSaveData\@\@QEAA\@XZ
-     */
+    // symbol: ??1GameTestSaveData@@QEAA@XZ
     MCAPI ~GameTestSaveData();
+
     // NOLINTEND
 };

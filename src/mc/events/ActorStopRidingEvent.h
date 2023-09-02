@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ActorStopRidingEvent {
-
 public:
     // prevent constructor by default
     ActorStopRidingEvent& operator=(ActorStopRidingEvent const&) = delete;
@@ -11,13 +10,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ActorStopRidingEvent\@\@QEAA\@AEBU0\@\@Z
-     */
+    // symbol: ??0ActorStopRidingEvent@@QEAA@AEBU0@@Z
     MCAPI ActorStopRidingEvent(struct ActorStopRidingEvent const&);
-    /**
-     * @symbol ??1ActorStopRidingEvent\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ActorStopRidingEvent@@QEAA@XZ
     MCAPI ~ActorStopRidingEvent();
+
     // NOLINTEND
 };

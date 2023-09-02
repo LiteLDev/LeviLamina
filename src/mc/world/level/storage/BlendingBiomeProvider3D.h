@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class BlendingBiomeProvider3D {
-
 public:
     // prevent constructor by default
     BlendingBiomeProvider3D& operator=(BlendingBiomeProvider3D const&) = delete;

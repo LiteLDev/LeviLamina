@@ -11,7 +11,6 @@ public:
 
     // ScriptDeferredEventCoordinator inner types define
     struct DocumentableEventExecution {
-
     public:
         // prevent constructor by default
         DocumentableEventExecution& operator=(DocumentableEventExecution const&) = delete;
@@ -20,10 +19,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??1DocumentableEventExecution\@ScriptDeferredEventCoordinator\@\@QEAA\@XZ
-         */
+        // symbol: ??1DocumentableEventExecution@ScriptDeferredEventCoordinator@@QEAA@XZ
         MCAPI ~DocumentableEventExecution();
+
         // NOLINTEND
     };
 
@@ -35,31 +33,34 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?sendAllDeferredEvents\@ScriptDeferredEventCoordinator\@\@QEAAXXZ
-     */
+    // symbol: ?sendAllDeferredEvents@ScriptDeferredEventCoordinator@@QEAAXXZ
     MCAPI void sendAllDeferredEvents();
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_sendFlushSystemAfterEvents\@ScriptDeferredEventCoordinator\@\@AEAA_NXZ
-     */
+    // symbol: ?_sendFlushSystemAfterEvents@ScriptDeferredEventCoordinator@@AEAA_NXZ
     MCAPI bool _sendFlushSystemAfterEvents();
-    /**
-     * @symbol ?_sendFlushWorldAfterEvents\@ScriptDeferredEventCoordinator\@\@AEAA_NXZ
-     */
+
+    // symbol: ?_sendFlushWorldAfterEvents@ScriptDeferredEventCoordinator@@AEAA_NXZ
     MCAPI bool _sendFlushWorldAfterEvents();
+
     // NOLINTEND
 
 private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?sEventExecutionOrder\@ScriptDeferredEventCoordinator\@\@0V?$vector\@UDocumentableEventExecution\@ScriptDeferredEventCoordinator\@\@V?$allocator\@UDocumentableEventExecution\@ScriptDeferredEventCoordinator\@\@\@std\@\@\@std\@\@B
-     */
+    // symbol:
+    // ?sEventExecutionOrder@ScriptDeferredEventCoordinator@@0V?$vector@UDocumentableEventExecution@ScriptDeferredEventCoordinator@@V?$allocator@UDocumentableEventExecution@ScriptDeferredEventCoordinator@@@std@@@std@@B
     MCAPI static std::vector<struct ScriptDeferredEventCoordinator::DocumentableEventExecution> const
         sEventExecutionOrder;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $sEventExecutionOrder() { return sEventExecutionOrder; }
+
     // NOLINTEND
 };

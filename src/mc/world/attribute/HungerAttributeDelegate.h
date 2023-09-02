@@ -6,7 +6,6 @@
 #include "mc/world/attribute/AttributeInstanceDelegate.h"
 
 class HungerAttributeDelegate : public ::AttributeInstanceDelegate {
-
 public:
     // prevent constructor by default
     HungerAttributeDelegate& operator=(HungerAttributeDelegate const&) = delete;
@@ -15,24 +14,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?tick\@HungerAttributeDelegate\@\@UEAAXXZ
-     */
+
+    // vIndex: 1, symbol: ?tick@HungerAttributeDelegate@@UEAAXXZ
     virtual void tick();
-    /**
-     * @vftbl 2
-     * @symbol ?notify\@HungerAttributeDelegate\@\@UEAAX_J\@Z
-     */
-    virtual void notify(int64_t);
-    /**
-     * @symbol ??0HungerAttributeDelegate\@\@QEAA\@AEBVAttributeInstance\@\@PEAVPlayer\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?notify@HungerAttributeDelegate@@UEAAX_J@Z
+    virtual void notify(int64);
+
+    // symbol: ??0HungerAttributeDelegate@@QEAA@AEBVAttributeInstance@@PEAVPlayer@@@Z
     MCAPI HungerAttributeDelegate(class AttributeInstance const&, class Player*);
+
     // NOLINTEND
 };

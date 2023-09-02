@@ -17,7 +17,6 @@ struct ScoreboardId;
 namespace ScriptModuleMinecraft {
 
 class ScriptScoreboardListener : public ::ScoreboardEventListener {
-
 public:
     // prevent constructor by default
     ScriptScoreboardListener& operator=(ScriptScoreboardListener const&) = delete;
@@ -26,29 +25,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?onObjectiveRemoved\@ScriptScoreboardListener\@ScriptModuleMinecraft\@\@UEAA?AW4EventResult\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    virtual enum class EventResult onObjectiveRemoved(std::string const&);
-    /**
-     * @vftbl 3
-     * @symbol
-     * ?onScoreboardIdentityRemoved\@ScriptScoreboardListener\@ScriptModuleMinecraft\@\@UEAA?AW4EventResult\@\@AEBUScoreboardId\@\@\@Z
-     */
-    virtual enum class EventResult onScoreboardIdentityRemoved(struct ScoreboardId const&);
-    /**
-     * @symbol
-     * ??0ScriptScoreboardListener\@ScriptModuleMinecraft\@\@QEAA\@V?$WeakTypedObjectHandle\@VScriptScoreboard\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
-     */
+
+    // vIndex: 2, symbol:
+    // ?onObjectiveRemoved@ScriptScoreboardListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    virtual ::EventResult onObjectiveRemoved(std::string const&);
+
+    // vIndex: 3, symbol:
+    // ?onScoreboardIdentityRemoved@ScriptScoreboardListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUScoreboardId@@@Z
+    virtual ::EventResult onScoreboardIdentityRemoved(struct ScoreboardId const&);
+
+    // symbol:
+    // ??0ScriptScoreboardListener@ScriptModuleMinecraft@@QEAA@V?$WeakTypedObjectHandle@VScriptScoreboard@ScriptModuleMinecraft@@@Scripting@@@Z
     MCAPI
     ScriptScoreboardListener(class Scripting::WeakTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboard>);
+
     // NOLINTEND
 };
 

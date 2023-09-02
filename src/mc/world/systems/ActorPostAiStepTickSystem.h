@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ActorPostAiStepTickSystem {
-
 public:
     // prevent constructor by default
     ActorPostAiStepTickSystem& operator=(ActorPostAiStepTickSystem const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createSystem\@ActorPostAiStepTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createSystem@ActorPostAiStepTickSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
+
     // NOLINTEND
 };

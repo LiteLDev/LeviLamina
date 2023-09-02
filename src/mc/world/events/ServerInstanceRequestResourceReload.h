@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ServerInstanceRequestResourceReload {
-
 public:
     // prevent constructor by default
     ServerInstanceRequestResourceReload& operator=(ServerInstanceRequestResourceReload const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ServerInstanceRequestResourceReload\@\@QEAA\@XZ
-     */
+    // symbol: ??1ServerInstanceRequestResourceReload@@QEAA@XZ
     MCAPI ~ServerInstanceRequestResourceReload();
+
     // NOLINTEND
 };

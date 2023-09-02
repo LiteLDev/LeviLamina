@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct SendEventStage {
-
 public:
     // prevent constructor by default
     SendEventStage& operator=(SendEventStage const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1SendEventStage\@\@QEAA\@XZ
-     */
+    // symbol: ??1SendEventStage@@QEAA@XZ
     MCAPI ~SendEventStage();
+
     // NOLINTEND
 };

@@ -5,7 +5,6 @@
 #include "mc/world/item/components/ItemStackNetIdTag.h"
 
 struct ItemStackResponseSlotInfo {
-
 public:
     uint8_t                               mRequestedSlot;        // this+0x0
     uint8_t                               mSlot;                 // this+0x1
@@ -21,13 +20,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ItemStackResponseSlotInfo\@\@QEAA\@$$QEAU0\@\@Z
-     */
+    // symbol: ??0ItemStackResponseSlotInfo@@QEAA@$$QEAU0@@Z
     MCAPI ItemStackResponseSlotInfo(struct ItemStackResponseSlotInfo&&);
-    /**
-     * @symbol ??1ItemStackResponseSlotInfo\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ItemStackResponseSlotInfo@@QEAA@XZ
     MCAPI ~ItemStackResponseSlotInfo();
+
     // NOLINTEND
 };

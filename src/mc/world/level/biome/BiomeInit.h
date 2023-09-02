@@ -14,7 +14,6 @@ class BiomeRegistry;
 namespace OperationNodeFilters {
 
 class BiomeInit {
-
 public:
     // prevent constructor by default
     BiomeInit& operator=(BiomeInit const&) = delete;
@@ -23,10 +22,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0BiomeInit\@OperationNodeFilters\@\@QEAA\@AEBVBiomeRegistry\@\@AEAVBiome\@\@1W4GeneratorType\@\@\@Z
-     */
-    MCAPI BiomeInit(class BiomeRegistry const&, class Biome&, class Biome&, enum class GeneratorType);
+    // symbol: ??0BiomeInit@OperationNodeFilters@@QEAA@AEBVBiomeRegistry@@AEAVBiome@@1W4GeneratorType@@@Z
+    MCAPI BiomeInit(class BiomeRegistry const&, class Biome&, class Biome&, ::GeneratorType);
+
     // NOLINTEND
 };
 

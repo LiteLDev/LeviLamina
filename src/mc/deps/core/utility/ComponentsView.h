@@ -5,7 +5,6 @@
 namespace Util::Url {
 
 struct ComponentsView {
-
 public:
     // prevent constructor by default
     ComponentsView& operator=(ComponentsView const&) = delete;

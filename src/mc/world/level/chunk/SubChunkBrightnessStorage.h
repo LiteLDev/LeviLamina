@@ -11,7 +11,6 @@ public:
 
     // SubChunkBrightnessStorage inner types define
     struct LightPair {
-
     public:
         uint8_t blockLight : 4;
         uint8_t skyLight : 4;

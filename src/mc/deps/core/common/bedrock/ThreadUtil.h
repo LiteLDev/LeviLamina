@@ -10,7 +10,6 @@ namespace Bedrock::Threading { class OSThreadPriority; }
 namespace Bedrock::Threading {
 
 class ThreadUtil {
-
 public:
     // prevent constructor by default
     ThreadUtil& operator=(ThreadUtil const&) = delete;
@@ -19,22 +18,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?setCoreAffinity\@ThreadUtil\@Threading\@Bedrock\@\@SAXAEBQEAXH_K\@Z
-     */
-    MCAPI static void setCoreAffinity(void* const&, int32_t, uint64_t);
-    /**
-     * @symbol ?setCurrentThreadCoreAffinity\@ThreadUtil\@Threading\@Bedrock\@\@SAXH_K\@Z
-     */
-    MCAPI static void setCurrentThreadCoreAffinity(int32_t, uint64_t);
-    /**
-     * @symbol ?setCurrentThreadPriority\@ThreadUtil\@Threading\@Bedrock\@\@SAXAEBVOSThreadPriority\@23\@\@Z
-     */
+    // symbol: ?setCoreAffinity@ThreadUtil@Threading@Bedrock@@SAXAEBQEAXH_K@Z
+    MCAPI static void setCoreAffinity(void* const&, int, uint64);
+
+    // symbol: ?setCurrentThreadCoreAffinity@ThreadUtil@Threading@Bedrock@@SAXH_K@Z
+    MCAPI static void setCurrentThreadCoreAffinity(int, uint64);
+
+    // symbol: ?setCurrentThreadPriority@ThreadUtil@Threading@Bedrock@@SAXAEBVOSThreadPriority@23@@Z
     MCAPI static void setCurrentThreadPriority(class Bedrock::Threading::OSThreadPriority const&);
-    /**
-     * @symbol ?setThreadPriority\@ThreadUtil\@Threading\@Bedrock\@\@SAXAEBQEAXAEBVOSThreadPriority\@23\@\@Z
-     */
+
+    // symbol: ?setThreadPriority@ThreadUtil@Threading@Bedrock@@SAXAEBQEAXAEBVOSThreadPriority@23@@Z
     MCAPI static void setThreadPriority(void* const&, class Bedrock::Threading::OSThreadPriority const&);
+
     // NOLINTEND
 };
 

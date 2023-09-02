@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class DataLoadHelper {
-
 public:
     /**
      * @vftbl 0

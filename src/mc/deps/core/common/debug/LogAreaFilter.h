@@ -8,7 +8,6 @@
 namespace BedrockLog {
 
 class LogAreaFilter {
-
 public:
     // prevent constructor by default
     LogAreaFilter& operator=(LogAreaFilter const&) = delete;
@@ -17,10 +16,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?toggleFilter\@LogAreaFilter\@BedrockLog\@\@QEAAXW4LogAreaID\@\@\@Z
-     */
-    MCAPI void toggleFilter(enum class LogAreaID);
+    // symbol: ?toggleFilter@LogAreaFilter@BedrockLog@@QEAAXW4LogAreaID@@@Z
+    MCAPI void toggleFilter(::LogAreaID);
+
     // NOLINTEND
 };
 

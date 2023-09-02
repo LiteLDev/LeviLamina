@@ -5,7 +5,6 @@
 namespace cg {
 
 class ImageBuffer {
-
 public:
     // prevent constructor by default
     ImageBuffer& operator=(ImageBuffer const&) = delete;

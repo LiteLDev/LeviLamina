@@ -7,7 +7,6 @@
 #include "mc/world/actor/ai/goal/LookAtActorGoal.h"
 
 class LookAtEntityGoal : public ::LookAtActorGoal {
-
 public:
     // prevent constructor by default
     LookAtEntityGoal& operator=(LookAtEntityGoal const&) = delete;
@@ -16,10 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
+
     // NOLINTEND
 };

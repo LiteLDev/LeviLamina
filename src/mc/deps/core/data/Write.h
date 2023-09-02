@@ -4,7 +4,6 @@
 
 template <typename... T0>
 struct Write {
-
 public:
     // prevent constructor by default
     Write& operator=(Write const&) = delete;

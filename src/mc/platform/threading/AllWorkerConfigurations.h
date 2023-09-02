@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class AllWorkerConfigurations {
-
 public:
     // prevent constructor by default
     AllWorkerConfigurations& operator=(AllWorkerConfigurations const&) = delete;
@@ -11,9 +10,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0AllWorkerConfigurations\@\@QEAA\@XZ
-     */
+    // symbol: ??0AllWorkerConfigurations@@QEAA@XZ
     MCAPI AllWorkerConfigurations();
+
     // NOLINTEND
 };

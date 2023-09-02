@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct RideableComponentData {
-
 public:
     // prevent constructor by default
     RideableComponentData& operator=(RideableComponentData const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1RideableComponentData\@\@QEAA\@XZ
-     */
+    // symbol: ??1RideableComponentData@@QEAA@XZ
     MCAPI ~RideableComponentData();
+
     // NOLINTEND
 };

@@ -4,7 +4,6 @@
 
 template <typename T0>
 class EventRef {
-
 public:
     // prevent constructor by default
     EventRef& operator=(EventRef const&) = delete;

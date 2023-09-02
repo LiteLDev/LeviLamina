@@ -10,7 +10,6 @@ namespace Core { class Path; }
 namespace Core::ZipUtils {
 
 class ZipFileRestrictions {
-
 public:
     // prevent constructor by default
     ZipFileRestrictions& operator=(ZipFileRestrictions const&) = delete;
@@ -18,18 +17,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ZipFileRestrictions\@ZipUtils\@Core\@\@QEAA\@XZ
-     */
+    // symbol: ??0ZipFileRestrictions@ZipUtils@Core@@QEAA@XZ
     MCAPI ZipFileRestrictions();
-    /**
-     * @symbol ?allowFile\@ZipFileRestrictions\@ZipUtils\@Core\@\@QEBA_NAEBVPath\@3\@\@Z
-     */
+
+    // symbol: ?allowFile@ZipFileRestrictions@ZipUtils@Core@@QEBA_NAEBVPath@3@@Z
     MCAPI bool allowFile(class Core::Path const&) const;
-    /**
-     * @symbol ??1ZipFileRestrictions\@ZipUtils\@Core\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ZipFileRestrictions@ZipUtils@Core@@QEAA@XZ
     MCAPI ~ZipFileRestrictions();
+
     // NOLINTEND
 };
 

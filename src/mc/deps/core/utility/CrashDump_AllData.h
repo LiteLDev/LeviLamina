@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct CrashDump_AllData {
-
 public:
     // prevent constructor by default
     CrashDump_AllData& operator=(CrashDump_AllData const&) = delete;
@@ -11,9 +10,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0CrashDump_AllData\@\@QEAA\@XZ
-     */
+    // symbol: ??0CrashDump_AllData@@QEAA@XZ
     MCAPI CrashDump_AllData();
+
     // NOLINTEND
 };

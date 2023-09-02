@@ -6,7 +6,6 @@
 #include "mc/world/item/enchanting/Enchant.h"
 
 class EnchantmentInstance {
-
 public:
     // prevent constructor by default
     EnchantmentInstance& operator=(EnchantmentInstance const&) = delete;
@@ -14,33 +13,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0EnchantmentInstance\@\@QEAA\@XZ
-     */
+    // symbol: ??0EnchantmentInstance@@QEAA@XZ
     MCAPI EnchantmentInstance();
-    /**
-     * @symbol ??0EnchantmentInstance\@\@QEAA\@W4Type\@Enchant\@\@H\@Z
-     */
-    MCAPI EnchantmentInstance(enum class Enchant::Type, int32_t);
-    /**
-     * @symbol ?getEnchantLevel\@EnchantmentInstance\@\@QEBAHXZ
-     */
-    MCAPI int32_t getEnchantLevel() const;
-    /**
-     * @symbol ?getEnchantType\@EnchantmentInstance\@\@QEBA?AW4Type\@Enchant\@\@XZ
-     */
-    MCAPI enum class Enchant::Type getEnchantType() const;
-    /**
-     * @symbol ??8EnchantmentInstance\@\@QEBA_NAEBV0\@\@Z
-     */
+
+    // symbol: ??0EnchantmentInstance@@QEAA@W4Type@Enchant@@H@Z
+    MCAPI EnchantmentInstance(::Enchant::Type, int);
+
+    // symbol: ?getEnchantLevel@EnchantmentInstance@@QEBAHXZ
+    MCAPI int getEnchantLevel() const;
+
+    // symbol: ?getEnchantType@EnchantmentInstance@@QEBA?AW4Type@Enchant@@XZ
+    MCAPI ::Enchant::Type getEnchantType() const;
+
+    // symbol: ??8EnchantmentInstance@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class EnchantmentInstance const&) const;
-    /**
-     * @symbol ?setEnchantLevel\@EnchantmentInstance\@\@QEAAXH\@Z
-     */
-    MCAPI void setEnchantLevel(int32_t);
-    /**
-     * @symbol ?setEnchantType\@EnchantmentInstance\@\@QEAAXW4Type\@Enchant\@\@\@Z
-     */
-    MCAPI void setEnchantType(enum class Enchant::Type);
+
+    // symbol: ?setEnchantLevel@EnchantmentInstance@@QEAAXH@Z
+    MCAPI void setEnchantLevel(int);
+
+    // symbol: ?setEnchantType@EnchantmentInstance@@QEAAXW4Type@Enchant@@@Z
+    MCAPI void setEnchantType(::Enchant::Type);
+
     // NOLINTEND
 };

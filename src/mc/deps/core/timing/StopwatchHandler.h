@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class StopwatchHandler {
-
 public:
     // prevent constructor by default
     StopwatchHandler& operator=(StopwatchHandler const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?clearAll\@StopwatchHandler\@\@QEAAXXZ
-     */
+    // symbol: ?clearAll@StopwatchHandler@@QEAAXXZ
     MCAPI void clearAll();
+
     // NOLINTEND
 };

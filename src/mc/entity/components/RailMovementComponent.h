@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class RailMovementComponent {
-
 public:
     // prevent constructor by default
     RailMovementComponent& operator=(RailMovementComponent const&) = delete;
@@ -11,13 +10,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0RailMovementComponent\@\@QEAA\@XZ
-     */
+    // symbol: ??0RailMovementComponent@@QEAA@XZ
     MCAPI RailMovementComponent();
-    /**
-     * @symbol ?getMaxSpeed\@RailMovementComponent\@\@QEBAMXZ
-     */
+
+    // symbol: ?getMaxSpeed@RailMovementComponent@@QEBAMXZ
     MCAPI float getMaxSpeed() const;
+
     // NOLINTEND
 };

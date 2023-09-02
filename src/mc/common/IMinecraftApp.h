@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class IMinecraftApp {
-
 public:
     // prevent constructor by default
     IMinecraftApp& operator=(IMinecraftApp const&) = delete;
@@ -12,11 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMINECRAFTAPP
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1IMinecraftApp@@UEAA@XZ
     MCVAPI ~IMinecraftApp();
-#endif
+
     // NOLINTEND
 };

@@ -13,7 +13,6 @@ namespace cereal { class BasicLoader; }
 namespace cereal {
 
 class JsonLoader : public ::cereal::BasicLoader {
-
 public:
     // prevent constructor by default
     JsonLoader& operator=(JsonLoader const&) = delete;
@@ -22,12 +21,9 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREAL_JSONLOADER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1JsonLoader@cereal@@UEAA@XZ
     MCVAPI ~JsonLoader();
-#endif
+
     // NOLINTEND
 };
 

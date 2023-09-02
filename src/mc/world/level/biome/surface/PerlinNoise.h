@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class PerlinNoise {
-
 public:
     // prevent constructor by default
     PerlinNoise& operator=(PerlinNoise const&) = delete;
@@ -11,49 +10,39 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0PerlinNoise\@\@QEAA\@AEBV0\@\@Z
-     */
+    // symbol: ??0PerlinNoise@@QEAA@AEBV0@@Z
     MCAPI PerlinNoise(class PerlinNoise const&);
-    /**
-     * @symbol ??0PerlinNoise\@\@QEAA\@IHH\@Z
-     */
-    MCAPI PerlinNoise(uint32_t, int32_t, int32_t);
-    /**
-     * @symbol ??0PerlinNoise\@\@QEAA\@AEAVIRandom\@\@UYBlendingBugSettings\@\@HH\@Z
-     */
-    MCAPI PerlinNoise(class IRandom&, struct YBlendingBugSettings, int32_t, int32_t);
-    /**
-     * @symbol ??0PerlinNoise\@\@QEAA\@AEAVIRandom\@\@HH\@Z
-     */
-    MCAPI PerlinNoise(class IRandom&, int32_t, int32_t);
-    /**
-     * @symbol ?getRegion\@PerlinNoise\@\@QEBAXPEAMAEBVVec3\@\@HHH1\@Z
-     */
-    MCAPI void getRegion(float*, class Vec3 const&, int32_t, int32_t, int32_t, class Vec3 const&) const;
-    /**
-     * @symbol ?getRegion\@PerlinNoise\@\@QEBAXPEAMAEBVVec2\@\@HH1M\@Z
-     */
-    MCAPI void getRegion(float*, class Vec2 const&, int32_t, int32_t, class Vec2 const&, float) const;
-    /**
-     * @symbol ?getValue\@PerlinNoise\@\@QEBAMAEBVVec3\@\@\@Z
-     */
+
+    // symbol: ??0PerlinNoise@@QEAA@IHH@Z
+    MCAPI PerlinNoise(uint, int, int);
+
+    // symbol: ??0PerlinNoise@@QEAA@AEAVIRandom@@UYBlendingBugSettings@@HH@Z
+    MCAPI PerlinNoise(class IRandom&, struct YBlendingBugSettings, int, int);
+
+    // symbol: ??0PerlinNoise@@QEAA@AEAVIRandom@@HH@Z
+    MCAPI PerlinNoise(class IRandom&, int, int);
+
+    // symbol: ?getRegion@PerlinNoise@@QEBAXPEAMAEBVVec3@@HHH1@Z
+    MCAPI void getRegion(float*, class Vec3 const&, int, int, int, class Vec3 const&) const;
+
+    // symbol: ?getRegion@PerlinNoise@@QEBAXPEAMAEBVVec2@@HH1M@Z
+    MCAPI void getRegion(float*, class Vec2 const&, int, int, class Vec2 const&, float) const;
+
+    // symbol: ?getValue@PerlinNoise@@QEBAMAEBVVec3@@@Z
     MCAPI float getValue(class Vec3 const&) const;
-    /**
-     * @symbol ?getValueNormalized\@PerlinNoise\@\@QEBAMAEBVVec3\@\@\@Z
-     */
+
+    // symbol: ?getValueNormalized@PerlinNoise@@QEBAMAEBVVec3@@@Z
     MCAPI float getValueNormalized(class Vec3 const&) const;
-    /**
-     * @symbol ??1PerlinNoise\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1PerlinNoise@@QEAA@XZ
     MCAPI ~PerlinNoise();
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_init\@PerlinNoise\@\@AEAAXAEAVIRandom\@\@UYBlendingBugSettings\@\@\@Z
-     */
+    // symbol: ?_init@PerlinNoise@@AEAAXAEAVIRandom@@UYBlendingBugSettings@@@Z
     MCAPI void _init(class IRandom&, struct YBlendingBugSettings);
+
     // NOLINTEND
 };

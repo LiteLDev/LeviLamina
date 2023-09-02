@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct NamedMolangScript {
-
 public:
     // prevent constructor by default
     NamedMolangScript& operator=(NamedMolangScript const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1NamedMolangScript\@\@QEAA\@XZ
-     */
+    // symbol: ??1NamedMolangScript@@QEAA@XZ
     MCAPI ~NamedMolangScript();
+
     // NOLINTEND
 };

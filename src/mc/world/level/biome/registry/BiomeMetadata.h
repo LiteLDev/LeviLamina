@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct BiomeMetadata {
-
 public:
     // prevent constructor by default
     BiomeMetadata& operator=(BiomeMetadata const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1BiomeMetadata\@\@QEAA\@XZ
-     */
+    // symbol: ??1BiomeMetadata@@QEAA@XZ
     MCAPI ~BiomeMetadata();
+
     // NOLINTEND
 };

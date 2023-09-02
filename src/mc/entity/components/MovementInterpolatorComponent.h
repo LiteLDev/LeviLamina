@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct MovementInterpolatorComponent {
-
 public:
     // prevent constructor by default
     MovementInterpolatorComponent& operator=(MovementInterpolatorComponent const&) = delete;
@@ -12,33 +11,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?isActive\@MovementInterpolatorComponent\@\@QEBA_NXZ
-     */
+    // symbol: ?isActive@MovementInterpolatorComponent@@QEBA_NXZ
     MCAPI bool isActive() const;
-    /**
-     * @symbol ?lerpTo\@MovementInterpolatorComponent\@\@QEAAXAEBVVec3\@\@AEBVVec2\@\@H\@Z
-     */
-    MCAPI void lerpTo(class Vec3 const&, class Vec2 const&, int32_t);
-    /**
-     * @symbol ?lerpToRotation\@MovementInterpolatorComponent\@\@QEAAXAEBVVec2\@\@H\@Z
-     */
-    MCAPI void lerpToRotation(class Vec2 const&, int32_t);
-    /**
-     * @symbol ?reset\@MovementInterpolatorComponent\@\@QEAAXXZ
-     */
+
+    // symbol: ?lerpTo@MovementInterpolatorComponent@@QEAAXAEBVVec3@@AEBVVec2@@H@Z
+    MCAPI void lerpTo(class Vec3 const&, class Vec2 const&, int);
+
+    // symbol: ?lerpToRotation@MovementInterpolatorComponent@@QEAAXAEBVVec2@@H@Z
+    MCAPI void lerpToRotation(class Vec2 const&, int);
+
+    // symbol: ?reset@MovementInterpolatorComponent@@QEAAXXZ
     MCAPI void reset();
-    /**
-     * @symbol ?setHeadYawLerpTarget\@MovementInterpolatorComponent\@\@QEAAXMH\@Z
-     */
-    MCAPI void setHeadYawLerpTarget(float, int32_t);
-    /**
-     * @symbol ?start\@MovementInterpolatorComponent\@\@QEAAXXZ
-     */
+
+    // symbol: ?setHeadYawLerpTarget@MovementInterpolatorComponent@@QEAAXMH@Z
+    MCAPI void setHeadYawLerpTarget(float, int);
+
+    // symbol: ?start@MovementInterpolatorComponent@@QEAAXXZ
     MCAPI void start();
-    /**
-     * @symbol ?stop\@MovementInterpolatorComponent\@\@QEAAXXZ
-     */
+
+    // symbol: ?stop@MovementInterpolatorComponent@@QEAAXXZ
     MCAPI void stop();
+
     // NOLINTEND
 };

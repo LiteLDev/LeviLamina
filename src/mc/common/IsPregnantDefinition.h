@@ -11,7 +11,6 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 struct IsPregnantDefinition {
-
 public:
     // prevent constructor by default
     IsPregnantDefinition& operator=(IsPregnantDefinition const&) = delete;
@@ -20,20 +19,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?initialize\@IsPregnantDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
+    // symbol: ?initialize@IsPregnantDefinition@@QEBAXAEAVEntityContext@@@Z
     MCAPI void initialize(class EntityContext&) const;
-    /**
-     * @symbol ?uninitialize\@IsPregnantDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
+
+    // symbol: ?uninitialize@IsPregnantDefinition@@QEBAXAEAVEntityContext@@@Z
     MCAPI void uninitialize(class EntityContext&) const;
-    /**
-     * @symbol
-     * ?buildSchema\@IsPregnantDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsPregnantDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?buildSchema@IsPregnantDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsPregnantDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsPregnantDefinition>>&);
+
     // NOLINTEND
 };

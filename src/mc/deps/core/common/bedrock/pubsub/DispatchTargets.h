@@ -10,7 +10,6 @@ namespace Bedrock::PubSub::Detail { class PublisherBase; }
 namespace Bedrock::PubSub::Detail {
 
 class DispatchTargets {
-
 public:
     // prevent constructor by default
     DispatchTargets& operator=(DispatchTargets const&) = delete;
@@ -19,14 +18,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?loadSubscriptions\@DispatchTargets\@Detail\@PubSub\@Bedrock\@\@QEAA_NAEAVPublisherBase\@234\@\@Z
-     */
+    // symbol: ?loadSubscriptions@DispatchTargets@Detail@PubSub@Bedrock@@QEAA_NAEAVPublisherBase@234@@Z
     MCAPI bool loadSubscriptions(class Bedrock::PubSub::Detail::PublisherBase&);
-    /**
-     * @symbol ??1DispatchTargets\@Detail\@PubSub\@Bedrock\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1DispatchTargets@Detail@PubSub@Bedrock@@QEAA@XZ
     MCAPI ~DispatchTargets();
+
     // NOLINTEND
 };
 

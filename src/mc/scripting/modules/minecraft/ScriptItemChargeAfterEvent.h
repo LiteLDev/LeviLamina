@@ -17,7 +17,6 @@ struct ItemChargeEvent;
 namespace ScriptModuleMinecraft {
 
 class ScriptItemChargeAfterEvent : public ::ScriptModuleMinecraft::ScriptItemEvent {
-
 public:
     // prevent constructor by default
     ScriptItemChargeAfterEvent& operator=(ScriptItemChargeAfterEvent const&) = delete;
@@ -26,12 +25,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ??0ScriptItemChargeAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@V?$StrongTypedObjectHandle\@VScriptItemStack\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBUItemChargeEvent\@\@AEBVWeakLifetimeScope\@3\@\@Z
-     */
+    // symbol:
+    // ??0ScriptItemChargeAfterEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEBUItemChargeEvent@@AEBVWeakLifetimeScope@3@@Z
     MCAPI
     ScriptItemChargeAfterEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, struct ItemChargeEvent const&, class Scripting::WeakLifetimeScope const&);
+
     // NOLINTEND
 };
 

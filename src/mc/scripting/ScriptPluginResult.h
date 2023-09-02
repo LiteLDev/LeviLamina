@@ -18,7 +18,6 @@ public:
 
     // ScriptPluginResult inner types define
     struct Error {
-
     public:
         // prevent constructor by default
         Error& operator=(Error const&) = delete;
@@ -27,15 +26,13 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??1Error\@ScriptPluginResult\@\@QEAA\@XZ
-         */
+        // symbol: ??1Error@ScriptPluginResult@@QEAA@XZ
         MCAPI ~Error();
+
         // NOLINTEND
     };
 
     struct Info {
-
     public:
         // prevent constructor by default
         Info& operator=(Info const&) = delete;
@@ -44,15 +41,13 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??1Info\@ScriptPluginResult\@\@QEAA\@XZ
-         */
+        // symbol: ??1Info@ScriptPluginResult@@QEAA@XZ
         MCAPI ~Info();
+
         // NOLINTEND
     };
 
     struct Warning {
-
     public:
         // prevent constructor by default
         Warning& operator=(Warning const&) = delete;
@@ -61,10 +56,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??1Warning\@ScriptPluginResult\@\@QEAA\@XZ
-         */
+        // symbol: ??1Warning@ScriptPluginResult@@QEAA@XZ
         MCAPI ~Warning();
+
         // NOLINTEND
     };
 
@@ -75,42 +69,31 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ScriptPluginResult\@\@QEAA\@AEBV0\@\@Z
-     */
+    // symbol: ??0ScriptPluginResult@@QEAA@AEBV0@@Z
     MCAPI ScriptPluginResult(class ScriptPluginResult const&);
-    /**
-     * @symbol
-     * ?addError\@ScriptPluginResult\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // symbol: ?addError@ScriptPluginResult@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void addError(std::string const&);
-    /**
-     * @symbol
-     * ?addInfo\@ScriptPluginResult\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // symbol: ?addInfo@ScriptPluginResult@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void addInfo(std::string const&);
-    /**
-     * @symbol
-     * ?addWarning\@ScriptPluginResult\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // symbol: ?addWarning@ScriptPluginResult@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void addWarning(std::string const&);
-    /**
-     * @symbol
-     * ?getErrors\@ScriptPluginResult\@\@QEBAAEBV?$vector\@UError\@ScriptPluginResult\@\@V?$allocator\@UError\@ScriptPluginResult\@\@\@std\@\@\@std\@\@XZ
-     */
+
+    // symbol:
+    // ?getErrors@ScriptPluginResult@@QEBAAEBV?$vector@UError@ScriptPluginResult@@V?$allocator@UError@ScriptPluginResult@@@std@@@std@@XZ
     MCAPI std::vector<struct ScriptPluginResult::Error> const& getErrors() const;
-    /**
-     * @symbol ?getModuleDescriptor\@ScriptPluginResult\@\@QEBAAEBUModuleDescriptor\@Scripting\@\@XZ
-     */
+
+    // symbol: ?getModuleDescriptor@ScriptPluginResult@@QEBAAEBUModuleDescriptor@Scripting@@XZ
     MCAPI struct Scripting::ModuleDescriptor const& getModuleDescriptor() const;
-    /**
-     * @symbol
-     * ?getWarnings\@ScriptPluginResult\@\@QEBAAEBV?$vector\@UWarning\@ScriptPluginResult\@\@V?$allocator\@UWarning\@ScriptPluginResult\@\@\@std\@\@\@std\@\@XZ
-     */
+
+    // symbol:
+    // ?getWarnings@ScriptPluginResult@@QEBAAEBV?$vector@UWarning@ScriptPluginResult@@V?$allocator@UWarning@ScriptPluginResult@@@std@@@std@@XZ
     MCAPI std::vector<struct ScriptPluginResult::Warning> const& getWarnings() const;
-    /**
-     * @symbol ??1ScriptPluginResult\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ScriptPluginResult@@QEAA@XZ
     MCAPI ~ScriptPluginResult();
+
     // NOLINTEND
 };

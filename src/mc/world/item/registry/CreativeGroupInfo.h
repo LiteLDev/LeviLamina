@@ -11,7 +11,6 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 // clang-format on
 
 class CreativeGroupInfo : public ::Bedrock::EnableNonOwnerReferences {
-
 public:
     // prevent constructor by default
     CreativeGroupInfo& operator=(CreativeGroupInfo const&) = delete;
@@ -19,13 +18,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0CreativeGroupInfo\@\@QEAA\@AEBV0\@\@Z
-     */
+    // symbol: ??0CreativeGroupInfo@@QEAA@AEBV0@@Z
     MCAPI CreativeGroupInfo(class CreativeGroupInfo const&);
-    /**
-     * @symbol ?addCreativeItem\@CreativeGroupInfo\@\@QEAAXPEAVCreativeItemEntry\@\@\@Z
-     */
+
+    // symbol: ?addCreativeItem@CreativeGroupInfo@@QEAAXPEAVCreativeItemEntry@@@Z
     MCAPI void addCreativeItem(class CreativeItemEntry*);
+
     // NOLINTEND
 };

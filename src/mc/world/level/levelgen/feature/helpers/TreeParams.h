@@ -11,7 +11,6 @@ class IBlockWorldGenAPI;
 namespace TreeHelper {
 
 struct TreeParams {
-
 public:
     // prevent constructor by default
     TreeParams& operator=(TreeParams const&) = delete;
@@ -20,10 +19,9 @@ public:
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_placeBaseBlockCircle\@TreeParams\@TreeHelper\@\@AEBAXAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
-     */
+    // symbol: ?_placeBaseBlockCircle@TreeParams@TreeHelper@@AEBAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
     MCAPI void _placeBaseBlockCircle(class IBlockWorldGenAPI&, class BlockPos const&) const;
+
     // NOLINTEND
 };
 

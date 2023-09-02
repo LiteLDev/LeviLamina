@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ItemStackResponseInfo {
-
 public:
     // prevent constructor by default
     ItemStackResponseInfo& operator=(ItemStackResponseInfo const&) = delete;
@@ -11,17 +10,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ItemStackResponseInfo\@\@QEAA\@XZ
-     */
+    // symbol: ??0ItemStackResponseInfo@@QEAA@XZ
     MCAPI ItemStackResponseInfo();
-    /**
-     * @symbol ??0ItemStackResponseInfo\@\@QEAA\@$$QEAU0\@\@Z
-     */
+
+    // symbol: ??0ItemStackResponseInfo@@QEAA@$$QEAU0@@Z
     MCAPI ItemStackResponseInfo(struct ItemStackResponseInfo&&);
-    /**
-     * @symbol ??1ItemStackResponseInfo\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ItemStackResponseInfo@@QEAA@XZ
     MCAPI ~ItemStackResponseInfo();
+
     // NOLINTEND
 };

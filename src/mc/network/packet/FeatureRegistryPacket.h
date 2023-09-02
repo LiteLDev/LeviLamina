@@ -9,7 +9,6 @@
 #include "mc/world/level/levelgen/feature/registry/FeatureRegistry.h"
 
 class FeatureRegistryPacket : public ::Packet {
-
 public:
     std::vector<FeatureRegistry::FeatureBinaryJsonFormat> mFeaturesData; // this+0x30
 
@@ -20,43 +19,29 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getId\@FeatureRegistryPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
-     */
-    virtual enum class MinecraftPacketIds getId() const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?getName\@FeatureRegistryPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // vIndex: 1, symbol: ?getId@FeatureRegistryPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    virtual ::MinecraftPacketIds getId() const;
+
+    // vIndex: 2, symbol:
+    // ?getName@FeatureRegistryPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const;
-    /**
-     * @vftbl 3
-     * @symbol ?write\@FeatureRegistryPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 3, symbol: ?write@FeatureRegistryPacket@@UEBAXAEAVBinaryStream@@@Z
     virtual void write(class BinaryStream&) const;
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?_read\@FeatureRegistryPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?_read@FeatureRegistryPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATUREREGISTRYPACKET
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1FeatureRegistryPacket@@UEAA@XZ
     MCVAPI ~FeatureRegistryPacket();
-#endif
-    /**
-     * @symbol
-     * ??0FeatureRegistryPacket\@\@QEAA\@AEBV?$vector\@UFeatureBinaryJsonFormat\@FeatureRegistry\@\@V?$allocator\@UFeatureBinaryJsonFormat\@FeatureRegistry\@\@\@std\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ??0FeatureRegistryPacket@@QEAA@AEBV?$vector@UFeatureBinaryJsonFormat@FeatureRegistry@@V?$allocator@UFeatureBinaryJsonFormat@FeatureRegistry@@@std@@@std@@@Z
     MCAPI FeatureRegistryPacket(std::vector<struct FeatureRegistry::FeatureBinaryJsonFormat> const&);
+
     // NOLINTEND
 };

@@ -11,7 +11,6 @@ public:
 
     // CommandLexer inner types define
     struct Token {
-
     public:
         // prevent constructor by default
         Token& operator=(Token const&) = delete;
@@ -27,9 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?step\@CommandLexer\@\@QEAAXXZ
-     */
+    // symbol: ?step@CommandLexer@@QEAAXXZ
     MCAPI void step();
+
     // NOLINTEND
 };

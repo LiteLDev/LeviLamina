@@ -5,7 +5,6 @@
 namespace Bedrock::PubSub::Detail {
 
 class PublisherDisconnector {
-
 public:
     // prevent constructor by default
     PublisherDisconnector& operator=(PublisherDisconnector const&) = delete;
@@ -14,12 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_PUBSUB_DETAIL_PUBLISHERDISCONNECTOR
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1PublisherDisconnector@Detail@PubSub@Bedrock@@UEAA@XZ
     MCVAPI ~PublisherDisconnector();
-#endif
+
     // NOLINTEND
 };
 

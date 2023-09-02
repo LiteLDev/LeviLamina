@@ -5,7 +5,6 @@
 namespace NetherNet {
 
 struct SessionState {
-
 public:
     // prevent constructor by default
     SessionState& operator=(SessionState const&) = delete;

@@ -5,7 +5,6 @@
 namespace Util::Url {
 
 struct Components {
-
 public:
     // prevent constructor by default
     Components& operator=(Components const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1Components\@Url\@Util\@\@QEAA\@XZ
-     */
+    // symbol: ??1Components@Url@Util@@QEAA@XZ
     MCAPI ~Components();
+
     // NOLINTEND
 };
 

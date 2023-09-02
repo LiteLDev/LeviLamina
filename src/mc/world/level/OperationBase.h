@@ -5,7 +5,6 @@
 namespace PositionTrackingDB {
 
 class OperationBase {
-
 public:
     // prevent constructor by default
     OperationBase& operator=(OperationBase const&) = delete;

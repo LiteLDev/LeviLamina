@@ -8,7 +8,6 @@
 #include "mc/enums/SubClientId.h"
 
 class GameSession {
-
 public:
     // prevent constructor by default
     GameSession& operator=(GameSession const&) = delete;
@@ -17,47 +16,38 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ??0GameSession\@\@QEAA\@AEAVNetworkSystem\@\@V?$unique_ptr\@VServerNetworkHandler\@\@U?$default_delete\@VServerNetworkHandler\@\@\@std\@\@\@std\@\@AEAVLoopbackPacketSender\@\@V?$unique_ptr\@VNetEventCallback\@\@U?$default_delete\@VNetEventCallback\@\@\@std\@\@\@3\@U?$pair\@V?$unique_ptr\@VLevel\@\@U?$default_delete\@VLevel\@\@\@std\@\@\@std\@\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@\@3\@W4SubClientId\@\@\@Z
-     */
+    // symbol:
+    // ??0GameSession@@QEAA@AEAVNetworkSystem@@V?$unique_ptr@VServerNetworkHandler@@U?$default_delete@VServerNetworkHandler@@@std@@@std@@AEAVLoopbackPacketSender@@V?$unique_ptr@VNetEventCallback@@U?$default_delete@VNetEventCallback@@@std@@@3@U?$pair@V?$unique_ptr@VLevel@@U?$default_delete@VLevel@@@std@@@std@@V?$OwnerPtrT@UEntityRefTraits@@@@@3@W4SubClientId@@@Z
     MCAPI GameSession(
         class NetworkSystem&,
         std::unique_ptr<class ServerNetworkHandler>,
         class LoopbackPacketSender&,
         std::unique_ptr<class NetEventCallback>,
         std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits>>,
-        enum class SubClientId
+        ::SubClientId
     );
-    /**
-     * @symbol ?earlyShutdownMainthread\@GameSession\@\@QEAAXXZ
-     */
+
+    // symbol: ?earlyShutdownMainthread@GameSession@@QEAAXXZ
     MCAPI void earlyShutdownMainthread();
-    /**
-     * @symbol
-     * ?getServerNetworkHandler\@GameSession\@\@QEAA?AV?$NonOwnerPointer\@VServerNetworkHandler\@\@\@Bedrock\@\@XZ
-     */
+
+    // symbol: ?getServerNetworkHandler@GameSession@@QEAA?AV?$NonOwnerPointer@VServerNetworkHandler@@@Bedrock@@XZ
     MCAPI class Bedrock::NonOwnerPointer<class ServerNetworkHandler> getServerNetworkHandler();
-    /**
-     * @symbol ?isLeaveGameDone\@GameSession\@\@QEAA_NXZ
-     */
+
+    // symbol: ?isLeaveGameDone@GameSession@@QEAA_NXZ
     MCAPI bool isLeaveGameDone();
-    /**
-     * @symbol
-     * ?setLevel\@GameSession\@\@QEAAXU?$pair\@V?$unique_ptr\@VLevel\@\@U?$default_delete\@VLevel\@\@\@std\@\@\@std\@\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?setLevel@GameSession@@QEAAXU?$pair@V?$unique_ptr@VLevel@@U?$default_delete@VLevel@@@std@@@std@@V?$OwnerPtrT@UEntityRefTraits@@@@@std@@@Z
     MCAPI void setLevel(std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits>>);
-    /**
-     * @symbol ?startLeaveGame\@GameSession\@\@QEAAXXZ
-     */
+
+    // symbol: ?startLeaveGame@GameSession@@QEAAXXZ
     MCAPI void startLeaveGame();
-    /**
-     * @symbol ?tick\@GameSession\@\@QEAAXXZ
-     */
+
+    // symbol: ?tick@GameSession@@QEAAXXZ
     MCAPI void tick();
-    /**
-     * @symbol ??1GameSession\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1GameSession@@QEAA@XZ
     MCAPI ~GameSession();
+
     // NOLINTEND
 };

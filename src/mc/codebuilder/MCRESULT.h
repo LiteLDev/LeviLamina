@@ -4,7 +4,6 @@
 #include "mc/codebuilder/MCCATEGORY.h"
 
 struct MCRESULT {
-
 public:
     bool                  mSuccess;
     enum class MCCATEGORY mCategory;
@@ -14,17 +13,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?getFullCode\@MCRESULT\@\@QEBAHXZ
-     */
-    MCAPI int32_t getFullCode() const;
-    /**
-     * @symbol ?isSuccess\@MCRESULT\@\@QEBA_NXZ
-     */
+    // symbol: ?getFullCode@MCRESULT@@QEBAHXZ
+    MCAPI int getFullCode() const;
+
+    // symbol: ?isSuccess@MCRESULT@@QEBA_NXZ
     MCAPI bool isSuccess() const;
-    /**
-     * @symbol ??8MCRESULT\@\@QEBA_NAEBU0\@\@Z
-     */
+
+    // symbol: ??8MCRESULT@@QEBA_NAEBU0@@Z
     MCAPI bool operator==(struct MCRESULT const&) const;
+
     // NOLINTEND
 };

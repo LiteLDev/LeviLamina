@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class HashedString {
-
 public:
     uint64_t            hash;
     std::string         str;
@@ -99,18 +98,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?bindType\@HashedString\@\@SAXXZ
-     */
+    // symbol: ?bindType@HashedString@@SAXXZ
     MCAPI static void bindType();
-    /**
-     * @symbol ?getEmptyString\@HashedString\@\@SAAEBV1\@XZ
-     */
+
+    // symbol: ?getEmptyString@HashedString@@SAAEBV1@XZ
     MCAPI static class HashedString const& getEmptyString();
-    /**
-     * @symbol ?defaultErrorValue\@HashedString\@\@2V1\@A
-     */
+
+    // symbol: ?defaultErrorValue@HashedString@@2V1@A
     MCAPI static class HashedString defaultErrorValue;
+
     // NOLINTEND
 };
 

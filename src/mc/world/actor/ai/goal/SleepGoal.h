@@ -8,7 +8,6 @@
 #include "mc/world/actor/ai/goal/MoveToPOIGoal.h"
 
 class SleepGoal : public ::MoveToPOIGoal {
-
 public:
     // prevent constructor by default
     SleepGoal& operator=(SleepGoal const&) = delete;
@@ -17,62 +16,43 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@SleepGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@SleepGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@SleepGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@SleepGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@SleepGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@SleepGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol ?stop\@SleepGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 5, symbol: ?stop@SleepGoal@@UEAAXXZ
     virtual void stop();
-    /**
-     * @vftbl 6
-     * @symbol ?tick\@SleepGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 6, symbol: ?tick@SleepGoal@@UEAAXXZ
     virtual void tick();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@SleepGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@SleepGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @vftbl 16
-     * @symbol ?_getRepathTime\@SleepGoal\@\@EEBA_KXZ
-     */
-    virtual uint64_t _getRepathTime() const;
-    /**
-     * @symbol ??0SleepGoal\@\@QEAA\@AEAVMob\@\@MMM_NMHM\@Z
-     */
-    MCAPI SleepGoal(class Mob&, float, float, float, bool, float, int32_t, float);
+
+    // vIndex: 16, symbol: ?_getRepathTime@SleepGoal@@EEBA_KXZ
+    virtual uint64 _getRepathTime() const;
+
+    // symbol: ??0SleepGoal@@QEAA@AEAVMob@@MMM_NMHM@Z
+    MCAPI SleepGoal(class Mob&, float, float, float, bool, float, int, float);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_lockPosToBedPos\@SleepGoal\@\@AEAAXXZ
-     */
+    // symbol: ?_lockPosToBedPos@SleepGoal@@AEAAXXZ
     MCAPI void _lockPosToBedPos();
-    /**
-     * @symbol ?_wakeUp\@SleepGoal\@\@AEAAXXZ
-     */
+
+    // symbol: ?_wakeUp@SleepGoal@@AEAAXXZ
     MCAPI void _wakeUp();
+
     // NOLINTEND
 };

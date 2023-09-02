@@ -7,7 +7,6 @@
 #include "mc/world/redstone/circuit/components/BaseCircuitComponent.h"
 
 class CircuitTrackingInfo {
-
 public:
     class Entry {
     public:
@@ -34,9 +33,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0CircuitTrackingInfo\@\@QEAA\@V?$not_null\@PEAVBaseCircuitComponent\@\@\@gsl\@\@AEBVBlockPos\@\@H\@Z
-     */
-    MCAPI CircuitTrackingInfo(gsl::not_null<class BaseCircuitComponent*>, class BlockPos const&, int32_t);
+    // symbol: ??0CircuitTrackingInfo@@QEAA@V?$not_null@PEAVBaseCircuitComponent@@@gsl@@AEBVBlockPos@@H@Z
+    MCAPI CircuitTrackingInfo(gsl::not_null<class BaseCircuitComponent*>, class BlockPos const&, int);
+
     // NOLINTEND
 };

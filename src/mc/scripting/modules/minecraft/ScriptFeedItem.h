@@ -13,7 +13,6 @@ struct FeedItem;
 namespace ScriptModuleMinecraft {
 
 class ScriptFeedItem {
-
 public:
     // prevent constructor by default
     ScriptFeedItem& operator=(ScriptFeedItem const&) = delete;
@@ -22,11 +21,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?bind\@ScriptFeedItem\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UFeedItem\@\@\@Scripting\@\@XZ
-     */
+    // symbol: ?bind@ScriptFeedItem@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UFeedItem@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct FeedItem> bind();
+
     // NOLINTEND
 };
 

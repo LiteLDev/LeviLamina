@@ -11,7 +11,6 @@ class BiomeRegistry;
 namespace OperationNodeFilters {
 
 class AddBiomeIsland {
-
 public:
     // prevent constructor by default
     AddBiomeIsland& operator=(AddBiomeIsland const&) = delete;
@@ -20,10 +19,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0AddBiomeIsland\@OperationNodeFilters\@\@QEAA\@AEBVBiomeRegistry\@\@AEAVBiome\@\@1\@Z
-     */
+    // symbol: ??0AddBiomeIsland@OperationNodeFilters@@QEAA@AEBVBiomeRegistry@@AEAVBiome@@1@Z
     MCAPI AddBiomeIsland(class BiomeRegistry const&, class Biome&, class Biome&);
+
     // NOLINTEND
 };
 

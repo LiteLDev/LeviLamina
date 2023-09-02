@@ -5,7 +5,6 @@
 namespace Editor {
 
 class IEditorPlayer {
-
 public:
     // prevent constructor by default
     IEditorPlayer& operator=(IEditorPlayer const&) = delete;

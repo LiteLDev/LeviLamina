@@ -19,9 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??8InventorySource\@\@QEBA_NAEBV0\@\@Z
-     */
+    // symbol: ??8InventorySource@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class InventorySource const&) const;
+
     // NOLINTEND
 };

@@ -11,7 +11,6 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class GameEventMovementTrackingDefinition {
-
 public:
     // prevent constructor by default
     GameEventMovementTrackingDefinition& operator=(GameEventMovementTrackingDefinition const&) = delete;
@@ -20,17 +19,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?initialize\@GameEventMovementTrackingDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVGameEventMovementTrackingComponent\@\@\@Z
-     */
+    // symbol:
+    // ?initialize@GameEventMovementTrackingDefinition@@QEBAXAEAVEntityContext@@AEAVGameEventMovementTrackingComponent@@@Z
     MCAPI void initialize(class EntityContext&, class GameEventMovementTrackingComponent&) const;
-    /**
-     * @symbol
-     * ?buildSchema\@GameEventMovementTrackingDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VGameEventMovementTrackingDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?buildSchema@GameEventMovementTrackingDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VGameEventMovementTrackingDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
                                       class JsonUtil::EmptyClass,
                                       class GameEventMovementTrackingDefinition>>&);
+
     // NOLINTEND
 };

@@ -4,15 +4,13 @@
 #include "mc/deps/core/mce/Color.h"
 
 class TintMapColor {
-
 public:
     std::array<mce::Color, 4> colors;
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0TintMapColor\@\@QEAA\@XZ
-     */
+    // symbol: ??0TintMapColor@@QEAA@XZ
     MCAPI TintMapColor();
+
     // NOLINTEND
 };

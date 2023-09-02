@@ -19,7 +19,6 @@ public:
 
     // NetworkDebugManager inner types define
     class Tracker {
-
     public:
         // prevent constructor by default
         Tracker& operator=(Tracker const&) = delete;
@@ -27,14 +26,12 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??0Tracker\@NetworkDebugManager\@\@QEAA\@XZ
-         */
+        // symbol: ??0Tracker@NetworkDebugManager@@QEAA@XZ
         MCAPI Tracker();
-        /**
-         * @symbol ??1Tracker\@NetworkDebugManager\@\@QEAA\@XZ
-         */
+
+        // symbol: ??1Tracker@NetworkDebugManager@@QEAA@XZ
         MCAPI ~Tracker();
+
         // NOLINTEND
     };
 
@@ -46,13 +43,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?MAX_NUMBER_OF_SAMPLES\@NetworkDebugManager\@\@2HB
-     */
-    MCAPI static int32_t const MAX_NUMBER_OF_SAMPLES;
-    /**
-     * @symbol ?UPDATE_INTERVAL_MILLISECONDS\@NetworkDebugManager\@\@2HB
-     */
-    MCAPI static int32_t const UPDATE_INTERVAL_MILLISECONDS;
+    // symbol: ?MAX_NUMBER_OF_SAMPLES@NetworkDebugManager@@2HB
+    MCAPI static int const MAX_NUMBER_OF_SAMPLES;
+
+    // symbol: ?UPDATE_INTERVAL_MILLISECONDS@NetworkDebugManager@@2HB
+    MCAPI static int const UPDATE_INTERVAL_MILLISECONDS;
+
     // NOLINTEND
 };

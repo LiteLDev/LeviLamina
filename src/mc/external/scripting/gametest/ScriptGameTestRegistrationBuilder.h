@@ -14,7 +14,6 @@ namespace ScriptModuleGameTest { class BaseScriptGameTestFunction; }
 namespace ScriptModuleGameTest {
 
 class ScriptGameTestRegistrationBuilder {
-
 public:
     // prevent constructor by default
     ScriptGameTestRegistrationBuilder& operator=(ScriptGameTestRegistrationBuilder const&) = delete;
@@ -23,90 +22,75 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA\@$$QEAV01\@\@Z
-     */
+    // symbol: ??0ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA@$$QEAV01@@Z
     MCAPI ScriptGameTestRegistrationBuilder(class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&&);
-    /**
-     * @symbol
-     * ??0ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA\@V?$shared_ptr\@VBaseScriptGameTestFunction\@ScriptModuleGameTest\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ??0ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA@V?$shared_ptr@VBaseScriptGameTestFunction@ScriptModuleGameTest@@@std@@@Z
     MCAPI ScriptGameTestRegistrationBuilder(std::shared_ptr<class ScriptModuleGameTest::BaseScriptGameTestFunction>);
-    /**
-     * @symbol
-     * ?batch\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?batch@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
         batch(std::string);
-    /**
-     * @symbol
-     * ?maxAttempts\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@H\@Z
-     */
+
+    // symbol:
+    // ?maxAttempts@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@H@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-        maxAttempts(int32_t);
-    /**
-     * @symbol
-     * ?maxTicks\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@H\@Z
-     */
+    maxAttempts(int);
+
+    // symbol:
+    // ?maxTicks@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@H@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-        maxTicks(int32_t);
-    /**
-     * @symbol ??4ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAAAEAV01\@$$QEAV01\@\@Z
-     */
+    maxTicks(int);
+
+    // symbol: ??4ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&
     operator=(class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&&);
-    /**
-     * @symbol
-     * ?padding\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@H\@Z
-     */
+
+    // symbol:
+    // ?padding@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@H@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-        padding(int32_t);
-    /**
-     * @symbol
-     * ?required\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@_N\@Z
-     */
+    padding(int);
+
+    // symbol:
+    // ?required@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@_N@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     required(bool);
-    /**
-     * @symbol
-     * ?requiredSuccessfulAttempts\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@H\@Z
-     */
+
+    // symbol:
+    // ?requiredSuccessfulAttempts@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@H@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-        requiredSuccessfulAttempts(int32_t);
-    /**
-     * @symbol
-     * ?rotate\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@_N\@Z
-     */
+    requiredSuccessfulAttempts(int);
+
+    // symbol:
+    // ?rotate@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@_N@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     rotate(bool);
-    /**
-     * @symbol
-     * ?setScriptObjectHandle\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAAXV?$WeakTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@\@Z
-     */
+
+    // symbol:
+    // ?setScriptObjectHandle@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAAXV?$WeakTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@@Z
     MCAPI void setScriptObjectHandle(class Scripting::WeakTypedObjectHandle<
                                      class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>);
-    /**
-     * @symbol
-     * ?setupTicks\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@H\@Z
-     */
+
+    // symbol:
+    // ?setupTicks@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@H@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-        setupTicks(int32_t);
-    /**
-     * @symbol
-     * ?structureName\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+    setupTicks(int);
+
+    // symbol:
+    // ?structureName@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
         structureName(std::string);
-    /**
-     * @symbol
-     * ?tag\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?tag@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
         tag(std::string);
-    /**
-     * @symbol ??1ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA@XZ
     MCAPI ~ScriptGameTestRegistrationBuilder();
+
     // NOLINTEND
 };
 

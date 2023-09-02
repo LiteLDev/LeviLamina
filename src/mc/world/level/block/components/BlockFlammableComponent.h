@@ -6,7 +6,6 @@
 #include "mc/world/level/block/utils/BlockComponentBase.h"
 
 struct BlockFlammableComponent : public ::BlockComponentBase {
-
 public:
     // prevent constructor by default
     BlockFlammableComponent& operator=(BlockFlammableComponent const&) = delete;

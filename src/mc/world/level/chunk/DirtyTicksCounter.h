@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct DirtyTicksCounter {
-
 public:
     // prevent constructor by default
     DirtyTicksCounter& operator=(DirtyTicksCounter const&) = delete;
@@ -11,9 +10,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0DirtyTicksCounter\@\@QEAA\@XZ
-     */
+    // symbol: ??0DirtyTicksCounter@@QEAA@XZ
     MCAPI DirtyTicksCounter();
+
     // NOLINTEND
 };

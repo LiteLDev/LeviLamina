@@ -5,7 +5,6 @@
 namespace Core {
 
 class IFileStorageAreaFetcher {
-
 public:
     // prevent constructor by default
     IFileStorageAreaFetcher& operator=(IFileStorageAreaFetcher const&) = delete;

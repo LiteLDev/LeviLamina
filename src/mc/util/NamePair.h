@@ -5,7 +5,6 @@
 namespace TextureSetHelpers {
 
 class NamePair {
-
 public:
     // prevent constructor by default
     NamePair& operator=(NamePair const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1NamePair\@TextureSetHelpers\@\@QEAA\@XZ
-     */
+    // symbol: ??1NamePair@TextureSetHelpers@@QEAA@XZ
     MCAPI ~NamePair();
+
     // NOLINTEND
 };
 

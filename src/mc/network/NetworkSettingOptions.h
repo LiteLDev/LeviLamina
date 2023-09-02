@@ -4,7 +4,6 @@
 #include "mc/resources/PacketCompressionAlgorithm.h"
 
 struct NetworkSettingOptions {
-
 public:
     uint16_t                   mCompressionThreshold;
     PacketCompressionAlgorithm mCompressionAlgorithm;

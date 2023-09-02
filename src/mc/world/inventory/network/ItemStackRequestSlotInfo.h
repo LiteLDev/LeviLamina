@@ -5,7 +5,6 @@
 #include "mc/world/inventory/network/ItemStackNetIdVariant.h"
 
 struct ItemStackRequestSlotInfo {
-
 public:
     // prevent constructor by default
     ItemStackRequestSlotInfo() = delete;
@@ -15,9 +14,8 @@ public:
     ItemStackNetIdVariant mNetIdVariant;       // this+0x8
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ItemStackRequestSlotInfo\@\@QEAA\@XZ
-     */
+    // symbol: ??1ItemStackRequestSlotInfo@@QEAA@XZ
     MCAPI ~ItemStackRequestSlotInfo();
+
     // NOLINTEND
 };

@@ -10,7 +10,6 @@ namespace Core { class Path; }
 namespace Core {
 
 class FileStream {
-
 public:
     // prevent constructor by default
     FileStream& operator=(FileStream const&) = delete;
@@ -18,22 +17,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0FileStream\@Core\@\@QEAA\@AEBVPath\@1\@H\@Z
-     */
-    MCAPI FileStream(class Core::Path const&, int32_t);
-    /**
-     * @symbol ??0FileStream\@Core\@\@QEAA\@XZ
-     */
+    // symbol: ??0FileStream@Core@@QEAA@AEBVPath@1@H@Z
+    MCAPI FileStream(class Core::Path const&, int);
+
+    // symbol: ??0FileStream@Core@@QEAA@XZ
     MCAPI FileStream();
-    /**
-     * @symbol ?open\@FileStream\@Core\@\@QEAAXAEBVPath\@2\@H\@Z
-     */
-    MCAPI void open(class Core::Path const&, int32_t);
-    /**
-     * @symbol ?setLoggingEnabled\@FileStream\@Core\@\@QEAAX_N\@Z
-     */
+
+    // symbol: ?open@FileStream@Core@@QEAAXAEBVPath@2@H@Z
+    MCAPI void open(class Core::Path const&, int);
+
+    // symbol: ?setLoggingEnabled@FileStream@Core@@QEAAX_N@Z
     MCAPI void setLoggingEnabled(bool);
+
     // NOLINTEND
 };
 

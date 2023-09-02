@@ -12,25 +12,21 @@ namespace RakNet { struct SystemAddress; }
 namespace RakNet {
 
 struct AddressOrGUID {
-
 public:
     RakNetGUID    guid;
     SystemAddress adr;
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0AddressOrGUID\@RakNet\@\@QEAA\@AEBUSystemAddress\@1\@\@Z
-     */
+    // symbol: ??0AddressOrGUID@RakNet@@QEAA@AEBUSystemAddress@1@@Z
     MCAPI AddressOrGUID(struct RakNet::SystemAddress const&);
-    /**
-     * @symbol ??0AddressOrGUID\@RakNet\@\@QEAA\@AEBU01\@\@Z
-     */
+
+    // symbol: ??0AddressOrGUID@RakNet@@QEAA@AEBU01@@Z
     MCAPI AddressOrGUID(struct RakNet::AddressOrGUID const&);
-    /**
-     * @symbol ?IsUndefined\@AddressOrGUID\@RakNet\@\@QEBA_NXZ
-     */
+
+    // symbol: ?IsUndefined@AddressOrGUID@RakNet@@QEBA_NXZ
     MCAPI bool IsUndefined() const;
+
     // NOLINTEND
 };
 

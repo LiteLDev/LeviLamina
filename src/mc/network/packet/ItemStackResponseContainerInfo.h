@@ -8,7 +8,6 @@
 #include "mc/world/containers/ContainerEnumName.h"
 
 struct ItemStackResponseContainerInfo {
-
 public:
     ContainerEnumName                      mOpenContainerNetId; // this+0x0
     std::vector<ItemStackResponseSlotInfo> mSlots;              // this+0x8
@@ -20,13 +19,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ItemStackResponseContainerInfo\@\@QEAA\@W4ContainerEnumName\@\@\@Z
-     */
-    MCAPI ItemStackResponseContainerInfo(enum class ContainerEnumName);
-    /**
-     * @symbol ??1ItemStackResponseContainerInfo\@\@QEAA\@XZ
-     */
+    // symbol: ??0ItemStackResponseContainerInfo@@QEAA@W4ContainerEnumName@@@Z
+    MCAPI ItemStackResponseContainerInfo(::ContainerEnumName);
+
+    // symbol: ??1ItemStackResponseContainerInfo@@QEAA@XZ
     MCAPI ~ItemStackResponseContainerInfo();
+
     // NOLINTEND
 };

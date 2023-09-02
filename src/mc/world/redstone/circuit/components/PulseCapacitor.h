@@ -7,7 +7,6 @@
 #include "mc/world/redstone/circuit/components/CapacitorComponent.h"
 
 class PulseCapacitor : public ::CapacitorComponent {
-
 public:
     bool                                  mPowered;
     bool                                  mNewPowered;
@@ -15,64 +14,42 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getStrength\@PulseCapacitor\@\@UEBAHXZ
-     */
-    virtual int32_t getStrength() const;
-    /**
-     * @vftbl 3
-     * @symbol ?setStrength\@PulseCapacitor\@\@UEAAXH\@Z
-     */
-    virtual void setStrength(int32_t);
-    /**
-     * @vftbl 6
-     * @symbol ?canConsumePowerAnyDirection\@PulseCapacitor\@\@UEBA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?getStrength@PulseCapacitor@@UEBAHXZ
+    virtual int getStrength() const;
+
+    // vIndex: 3, symbol: ?setStrength@PulseCapacitor@@UEAAXH@Z
+    virtual void setStrength(int);
+
+    // vIndex: 6, symbol: ?canConsumePowerAnyDirection@PulseCapacitor@@UEBA_NXZ
     virtual bool canConsumePowerAnyDirection() const;
-    /**
-     * @vftbl 7
-     * @symbol ?canConsumerPower\@PulseCapacitor\@\@UEBA_NXZ
-     */
+
+    // vIndex: 7, symbol: ?canConsumerPower@PulseCapacitor@@UEBA_NXZ
     virtual bool canConsumerPower() const;
-    /**
-     * @vftbl 12
-     * @symbol ?allowConnection\@PulseCapacitor\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEA_N\@Z
-     */
+
+    // vIndex: 12, symbol:
+    // ?allowConnection@PulseCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
     virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
-    /**
-     * @vftbl 14
-     * @symbol ?evaluate\@PulseCapacitor\@\@UEAA_NAEAVCircuitSystem\@\@AEBVBlockPos\@\@\@Z
-     */
+
+    // vIndex: 14, symbol: ?evaluate@PulseCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
     virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
-    /**
-     * @vftbl 17
-     * @symbol __unk_vfn_17
-     */
+
+    // vIndex: 17, symbol: __unk_vfn_17
     virtual void __unk_vfn_17();
-    /**
-     * @vftbl 20
-     * @symbol __unk_vfn_20
-     */
+
+    // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
-    /**
-     * @vftbl 23
-     * @symbol ?getCircuitComponentType\@PulseCapacitor\@\@UEBA?AW4CircuitComponentType\@\@XZ
-     */
-    virtual enum class CircuitComponentType getCircuitComponentType() const;
-    /**
-     * @vftbl 25
-     * @symbol ?getPoweroutDirection\@PulseCapacitor\@\@UEBAEXZ
-     */
-    virtual uint8_t getPoweroutDirection() const;
-    /**
-     * @symbol ??0PulseCapacitor\@\@QEAA\@XZ
-     */
+
+    // vIndex: 23, symbol: ?getCircuitComponentType@PulseCapacitor@@UEBA?AW4CircuitComponentType@@XZ
+    virtual ::CircuitComponentType getCircuitComponentType() const;
+
+    // vIndex: 25, symbol: ?getPoweroutDirection@PulseCapacitor@@UEBAEXZ
+    virtual uchar getPoweroutDirection() const;
+
+    // symbol: ??0PulseCapacitor@@QEAA@XZ
     MCAPI PulseCapacitor();
+
     // NOLINTEND
 };

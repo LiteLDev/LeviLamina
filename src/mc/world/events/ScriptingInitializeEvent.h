@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ScriptingInitializeEvent {
-
 public:
     // prevent constructor by default
     ScriptingInitializeEvent& operator=(ScriptingInitializeEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ScriptingInitializeEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1ScriptingInitializeEvent@@QEAA@XZ
     MCAPI ~ScriptingInitializeEvent();
+
     // NOLINTEND
 };

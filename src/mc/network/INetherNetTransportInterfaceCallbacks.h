@@ -5,7 +5,6 @@
 namespace NetherNet {
 
 class INetherNetTransportInterfaceCallbacks {
-
 public:
     // prevent constructor by default
     INetherNetTransportInterfaceCallbacks& operator=(INetherNetTransportInterfaceCallbacks const&) = delete;

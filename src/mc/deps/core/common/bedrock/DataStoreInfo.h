@@ -5,7 +5,6 @@
 namespace Bedrock::DataStoreDetail {
 
 class DataStoreInfo {
-
 public:
     // prevent constructor by default
     DataStoreInfo& operator=(DataStoreInfo const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1DataStoreInfo\@DataStoreDetail\@Bedrock\@\@QEAA\@XZ
-     */
+    // symbol: ??1DataStoreInfo@DataStoreDetail@Bedrock@@QEAA@XZ
     MCAPI ~DataStoreInfo();
+
     // NOLINTEND
 };
 

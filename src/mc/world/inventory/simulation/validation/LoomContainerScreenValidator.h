@@ -7,7 +7,6 @@
 #include "mc/world/inventory/simulation/ContainerScreenValidatorBase.h"
 
 class LoomContainerScreenValidator : public ::ContainerScreenValidatorBase {
-
 public:
     // prevent constructor by default
     LoomContainerScreenValidator& operator=(LoomContainerScreenValidator const&) = delete;
@@ -15,14 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @symbol ??0LoomContainerScreenValidator\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0LoomContainerScreenValidator@@QEAA@XZ
     MCAPI LoomContainerScreenValidator();
+
     // NOLINTEND
 };

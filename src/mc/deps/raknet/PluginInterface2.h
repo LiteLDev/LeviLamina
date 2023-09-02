@@ -5,7 +5,6 @@
 namespace RakNet {
 
 class PluginInterface2 {
-
 public:
     // prevent constructor by default
     PluginInterface2& operator=(PluginInterface2 const&) = delete;

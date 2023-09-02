@@ -5,7 +5,6 @@
 namespace Scripting {
 
 struct ScriptData {
-
 public:
     // prevent constructor by default
     ScriptData& operator=(ScriptData const&) = delete;

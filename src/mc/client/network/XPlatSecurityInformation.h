@@ -5,7 +5,6 @@
 namespace xbox::httpclient {
 
 struct XPlatSecurityInformation {
-
 public:
     // prevent constructor by default
     XPlatSecurityInformation& operator=(XPlatSecurityInformation const&) = delete;

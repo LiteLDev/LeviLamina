@@ -11,7 +11,6 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 // clang-format on
 
 class IDimensionFactory : public ::Bedrock::EnableNonOwnerReferences {
-
 public:
     // prevent constructor by default
     IDimensionFactory& operator=(IDimensionFactory const&) = delete;
@@ -20,11 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDIMENSIONFACTORY
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1IDimensionFactory@@UEAA@XZ
     MCVAPI ~IDimensionFactory();
-#endif
+
     // NOLINTEND
 };

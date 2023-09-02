@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class PlayerPositionModeComponent {
+struct PlayerPositionModeComponent {
 public:
     // PlayerPositionModeComponent inner types define
     enum class PositionMode {

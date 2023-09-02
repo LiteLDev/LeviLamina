@@ -7,14 +7,11 @@
 
 namespace FilterList {
 // NOLINTBEGIN
-/**
- * @symbol
- * ?findFilterDefinition\@FilterList\@\@YAPEBUDefinition\@FilterTest\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
- */
+// symbol:
+// ?findFilterDefinition@FilterList@@YAPEBUDefinition@FilterTest@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 MCAPI struct FilterTest::Definition const* findFilterDefinition(std::string const&);
-/**
- * @symbol ?initialize\@FilterList\@\@YAXXZ
- */
+
+// symbol: ?initialize@FilterList@@YAXXZ
 MCAPI void initialize();
 // NOLINTEND
 

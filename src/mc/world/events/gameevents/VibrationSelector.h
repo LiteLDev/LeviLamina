@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class VibrationSelector {
-
 public:
     // prevent constructor by default
     VibrationSelector& operator=(VibrationSelector const&) = delete;
@@ -12,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?addCandidate\@VibrationSelector\@\@QEAAXUTick\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@AEBVBlockPos\@\@\@Z
-     */
+    // symbol: ?addCandidate@VibrationSelector@@QEAAXUTick@@AEBVGameEvent@@AEBUGameEventContext@@AEBVBlockPos@@@Z
     MCAPI void addCandidate(struct Tick, class GameEvent const&, struct GameEventContext const&, class BlockPos const&);
+
     // NOLINTEND
 };

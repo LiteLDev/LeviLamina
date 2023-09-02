@@ -18,7 +18,6 @@ namespace cereal::internal { struct Result; }
 namespace cereal::internal {
 
 class DeprecatedSchema : public ::cereal::internal::BasicSchema {
-
 public:
     // prevent constructor by default
     DeprecatedSchema& operator=(DeprecatedSchema const&) = delete;
@@ -27,27 +26,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol
-     * ?doValidate\@DeprecatedSchema\@internal\@cereal\@\@MEBA?AUResult\@23\@AEAUSchemaReader\@3\@AEAVmeta_any\@entt\@\@AEBUSerializerTraits\@3\@AEAVSerializerContext\@3\@\@Z
-     */
+    // vIndex: 0, symbol:
+    // ?doValidate@DeprecatedSchema@internal@cereal@@MEBA?AUResult@23@AEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEAVSerializerContext@3@@Z
     virtual struct cereal::internal::Result
     doValidate(struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
         const;
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?doLoad\@DeprecatedSchema\@internal\@cereal\@\@MEBA?AUResult\@23\@AEAUSchemaReader\@3\@AEAVmeta_any\@entt\@\@AEBUSerializerTraits\@3\@AEBV67\@AEAVSerializerContext\@3\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?doLoad@DeprecatedSchema@internal@cereal@@MEBA?AUResult@23@AEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEBV67@AEAVSerializerContext@3@@Z
     virtual struct cereal::internal::Result
     doLoad(struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&)
         const;
-    /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
+
+    // vIndex: 4, symbol: __unk_vfn_4
     virtual void __unk_vfn_4();
+
     // NOLINTEND
 };
 

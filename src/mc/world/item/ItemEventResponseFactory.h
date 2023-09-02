@@ -6,7 +6,6 @@
 #include "mc/util/EventResponseFactory.h"
 
 class ItemEventResponseFactory : public ::EventResponseFactory {
-
 public:
     // prevent constructor by default
     ItemEventResponseFactory& operator=(ItemEventResponseFactory const&) = delete;
@@ -15,20 +14,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?initializeFactory\@ItemEventResponseFactory\@\@UEAAXAEBVExperiments\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?initializeFactory@ItemEventResponseFactory@@UEAAXAEBVExperiments@@@Z
     virtual void initializeFactory(class Experiments const&);
-    /**
-     * @vftbl 2
-     * @symbol ?initSchema\@ItemEventResponseFactory\@\@UEAAXXZ
-     */
+
+    // vIndex: 2, symbol: ?initSchema@ItemEventResponseFactory@@UEAAXXZ
     virtual void initSchema();
+
     // NOLINTEND
 };

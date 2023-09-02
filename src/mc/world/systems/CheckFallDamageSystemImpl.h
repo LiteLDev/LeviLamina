@@ -4,10 +4,8 @@
 
 namespace CheckFallDamageSystemImpl {
 // NOLINTBEGIN
-/**
- * @symbol
- * ?checkFallDamage\@CheckFallDamageSystemImpl\@\@YAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@AEAUCheckFallDamageRequestComponent\@\@\@Z
- */
+// symbol:
+// ?checkFallDamage@CheckFallDamageSystemImpl@@YAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@AEAUCheckFallDamageRequestComponent@@@Z
 MCAPI void
 checkFallDamage(class StrictEntityContext&, class ActorOwnerComponent&, struct CheckFallDamageRequestComponent&);
 // NOLINTEND

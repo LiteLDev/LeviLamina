@@ -4,7 +4,6 @@
 
 template <typename T0>
 struct IDType {
-
 public:
     // prevent constructor by default
     IDType& operator=(IDType const&) = delete;

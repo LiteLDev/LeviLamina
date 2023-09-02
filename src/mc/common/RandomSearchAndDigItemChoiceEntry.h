@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct RandomSearchAndDigItemChoiceEntry {
-
 public:
     // prevent constructor by default
     RandomSearchAndDigItemChoiceEntry& operator=(RandomSearchAndDigItemChoiceEntry const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1RandomSearchAndDigItemChoiceEntry\@\@QEAA\@XZ
-     */
+    // symbol: ??1RandomSearchAndDigItemChoiceEntry@@QEAA@XZ
     MCAPI ~RandomSearchAndDigItemChoiceEntry();
+
     // NOLINTEND
 };

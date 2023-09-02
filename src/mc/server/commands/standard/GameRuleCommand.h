@@ -19,7 +19,6 @@ public:
 
     // GameRuleCommand inner types define
     struct InitProxy {
-
     public:
         // prevent constructor by default
         InitProxy& operator=(InitProxy const&) = delete;
@@ -28,10 +27,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??0InitProxy\@GameRuleCommand\@\@QEAA\@AEAVLevel\@\@\@Z
-         */
+        // symbol: ??0InitProxy@GameRuleCommand@@QEAA@AEAVLevel@@@Z
         MCAPI InitProxy(class Level&);
+
         // NOLINTEND
     };
 
@@ -43,36 +41,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 2
-     * @symbol ?execute\@GameRuleCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?execute@GameRuleCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol ?setup\@GameRuleCommand\@\@SAXAEAVCommandRegistry\@\@$$QEAUInitProxy\@1\@\@Z
-     */
+
+    // symbol: ?setup@GameRuleCommand@@SAXAEAVCommandRegistry@@$$QEAUInitProxy@1@@Z
     MCAPI static void setup(class CommandRegistry&, struct GameRuleCommand::InitProxy&&);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?getGameRule\@GameRuleCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+    // symbol: ?getGameRule@GameRuleCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     MCAPI void getGameRule(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol ?setGameRule\@GameRuleCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // symbol: ?setGameRule@GameRuleCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     MCAPI void setGameRule(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol
-     * ?createJsonIndex\@GameRuleCommand\@\@CAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVGameRule\@\@AEAVValue\@Json\@\@PEAV23\@\@Z
-     */
+
+    // symbol:
+    // ?createJsonIndex@GameRuleCommand@@CAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVGameRule@@AEAVValue@Json@@PEAV23@@Z
     MCAPI static void createJsonIndex(std::string const&, class GameRule const&, class Json::Value&, std::string*);
+
     // NOLINTEND
 };

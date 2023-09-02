@@ -67,7 +67,6 @@ public:
     enum class WorldClassroomCustomization {};
 
     struct CommandParseTableEntry {
-
     public:
         // prevent constructor by default
         CommandParseTableEntry& operator=(CommandParseTableEntry const&) = delete;
@@ -83,15 +82,11 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMINECRAFTEVENTING
-    /**
-     * @symbol ?updatePlayerUndergroundStatus\@IMinecraftEventing\@\@UEAAXPEAVPlayer\@\@_N\@Z
-     */
+    // symbol: ?updatePlayerUndergroundStatus@IMinecraftEventing@@UEAAXPEAVPlayer@@_N@Z
     MCVAPI void updatePlayerUndergroundStatus(class Player*, bool);
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1IMinecraftEventing@@UEAA@XZ
     MCVAPI ~IMinecraftEventing();
-#endif
+
     // NOLINTEND
 };

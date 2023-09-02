@@ -23,7 +23,6 @@ public:
 
     // ThreadPoolImpl inner types define
     struct ActionStatusImpl : public ::OS::ThreadPoolActionStatus {
-
     public:
         // prevent constructor by default
         ActionStatusImpl& operator=(ActionStatusImpl const&) = delete;
@@ -32,16 +31,12 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @vftbl 0
-         * @symbol ?Complete\@ActionStatusImpl\@ThreadPoolImpl\@OS\@\@UEAAXXZ
-         */
+        // vIndex: 0, symbol: ?Complete@ActionStatusImpl@ThreadPoolImpl@OS@@UEAAXXZ
         virtual void Complete();
-        /**
-         * @vftbl 1
-         * @symbol ?MayRunLong\@ActionStatusImpl\@ThreadPoolImpl\@OS\@\@UEAAXXZ
-         */
+
+        // vIndex: 1, symbol: ?MayRunLong@ActionStatusImpl@ThreadPoolImpl@OS@@UEAAXXZ
         virtual void MayRunLong();
+
         // NOLINTEND
     };
 
@@ -53,10 +48,9 @@ public:
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?TPCallback\@ThreadPoolImpl\@OS\@\@CAXPEAU_TP_CALLBACK_INSTANCE\@\@PEAXPEAU_TP_WORK\@\@\@Z
-     */
+    // symbol: ?TPCallback@ThreadPoolImpl@OS@@CAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_WORK@@@Z
     MCAPI static void TPCallback(struct _TP_CALLBACK_INSTANCE*, void*, struct _TP_WORK*);
+
     // NOLINTEND
 };
 

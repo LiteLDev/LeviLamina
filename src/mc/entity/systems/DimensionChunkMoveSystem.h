@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class DimensionChunkMoveSystem {
-
 public:
     // prevent constructor by default
     DimensionChunkMoveSystem& operator=(DimensionChunkMoveSystem const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createDimensionChunkMoveSystem\@DimensionChunkMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createDimensionChunkMoveSystem@DimensionChunkMoveSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createDimensionChunkMoveSystem();
+
     // NOLINTEND
 };

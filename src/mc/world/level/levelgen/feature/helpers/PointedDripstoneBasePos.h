@@ -5,7 +5,6 @@
 namespace DripstoneUtils {
 
 struct PointedDripstoneBasePos {
-
 public:
     // prevent constructor by default
     PointedDripstoneBasePos& operator=(PointedDripstoneBasePos const&) = delete;

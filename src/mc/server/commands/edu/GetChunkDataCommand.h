@@ -6,7 +6,6 @@
 #include "mc/world/level/Command.h"
 
 class GetChunkDataCommand : public ::Command {
-
 public:
     // prevent constructor by default
     GetChunkDataCommand& operator=(GetChunkDataCommand const&) = delete;
@@ -15,19 +14,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 2
-     * @symbol ?execute\@GetChunkDataCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?execute@GetChunkDataCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol ?setup\@GetChunkDataCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
-     */
+
+    // symbol: ?setup@GetChunkDataCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry&);
+
     // NOLINTEND
 };

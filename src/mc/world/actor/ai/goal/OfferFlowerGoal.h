@@ -22,7 +22,6 @@ public:
 
     // OfferFlowerGoal inner types define
     class OfferFlowerDefinition : public ::BaseGoalDefinition {
-
     public:
         // prevent constructor by default
         OfferFlowerDefinition& operator=(OfferFlowerDefinition const&) = delete;
@@ -31,25 +30,20 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @symbol ?initialize\@OfferFlowerDefinition\@OfferFlowerGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
+
+        // symbol: ?initialize@OfferFlowerDefinition@OfferFlowerGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class OfferFlowerGoal&) const;
-        /**
-         * @symbol
-         * ?buildSchema\@OfferFlowerDefinition\@OfferFlowerGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VOfferFlowerDefinition\@OfferFlowerGoal\@\@\@JsonUtil\@\@\@4\@\@Z
-         */
+
+        // symbol:
+        // ?buildSchema@OfferFlowerDefinition@OfferFlowerGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VOfferFlowerDefinition@OfferFlowerGoal@@@JsonUtil@@@4@@Z
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class OfferFlowerGoal::OfferFlowerDefinition>>&);
-        /**
-         * @symbol ?getStrictParsingVersion\@OfferFlowerDefinition\@OfferFlowerGoal\@\@SA?AVSemVersion\@\@XZ
-         */
+
+        // symbol: ?getStrictParsingVersion@OfferFlowerDefinition@OfferFlowerGoal@@SA?AVSemVersion@@XZ
         MCAPI static class SemVersion getStrictParsingVersion();
+
         // NOLINTEND
     };
 
@@ -61,49 +55,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@OfferFlowerGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@OfferFlowerGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@OfferFlowerGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@OfferFlowerGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@OfferFlowerGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@OfferFlowerGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol ?stop\@OfferFlowerGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 5, symbol: ?stop@OfferFlowerGoal@@UEAAXXZ
     virtual void stop();
-    /**
-     * @vftbl 6
-     * @symbol ?tick\@OfferFlowerGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 6, symbol: ?tick@OfferFlowerGoal@@UEAAXXZ
     virtual void tick();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@OfferFlowerGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@OfferFlowerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @symbol ??0OfferFlowerGoal\@\@QEAA\@AEAVMob\@\@\@Z
-     */
+
+    // symbol: ??0OfferFlowerGoal@@QEAA@AEAVMob@@@Z
     MCAPI OfferFlowerGoal(class Mob&);
-    /**
-     * @symbol ?getMaxOfferFlowerDurationTicks\@OfferFlowerGoal\@\@QEBAHXZ
-     */
-    MCAPI int32_t getMaxOfferFlowerDurationTicks() const;
+
+    // symbol: ?getMaxOfferFlowerDurationTicks@OfferFlowerGoal@@QEBAHXZ
+    MCAPI int getMaxOfferFlowerDurationTicks() const;
+
     // NOLINTEND
 };

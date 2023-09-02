@@ -18,7 +18,6 @@ class StructureStart;
 namespace RandomScatteredLargeFeatureDetails {
 
 class ScatteredFeatureStart : public ::StructureStart {
-
 public:
     // prevent constructor by default
     ScatteredFeatureStart& operator=(ScatteredFeatureStart const&) = delete;
@@ -27,17 +26,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @symbol
-     * ??0ScatteredFeatureStart\@RandomScatteredLargeFeatureDetails\@\@QEAA\@AEBVBiomeSource\@\@FHHAEBVIPreliminarySurfaceProvider\@\@\@Z
-     */
-    MCAPI
-    ScatteredFeatureStart(class BiomeSource const&, int16_t, int32_t, int32_t, class IPreliminarySurfaceProvider const&);
+
+    // symbol:
+    // ??0ScatteredFeatureStart@RandomScatteredLargeFeatureDetails@@QEAA@AEBVBiomeSource@@FHHAEBVIPreliminarySurfaceProvider@@@Z
+    MCAPI ScatteredFeatureStart(class BiomeSource const&, short, int, int, class IPreliminarySurfaceProvider const&);
+
     // NOLINTEND
 };
 

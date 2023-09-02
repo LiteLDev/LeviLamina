@@ -6,7 +6,6 @@
 #include "mc/world/level/LevelEventCoordinator.h"
 
 class ServerLevelEventCoordinator : public ::LevelEventCoordinator {
-
 public:
     // prevent constructor by default
     ServerLevelEventCoordinator& operator=(ServerLevelEventCoordinator const&) = delete;
@@ -15,13 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?sendLevelAddedPlayer\@ServerLevelEventCoordinator\@\@QEAAXAEAVLevel\@\@AEAVPlayer\@\@\@Z
-     */
+    // symbol: ?sendLevelAddedPlayer@ServerLevelEventCoordinator@@QEAAXAEAVLevel@@AEAVPlayer@@@Z
     MCAPI void sendLevelAddedPlayer(class Level&, class Player&);
-    /**
-     * @symbol ?sendLevelRemovedPlayer\@ServerLevelEventCoordinator\@\@QEAAXAEAVLevel\@\@AEAVPlayer\@\@\@Z
-     */
+
+    // symbol: ?sendLevelRemovedPlayer@ServerLevelEventCoordinator@@QEAAXAEAVLevel@@AEAVPlayer@@@Z
     MCAPI void sendLevelRemovedPlayer(class Level&, class Player&);
+
     // NOLINTEND
 };

@@ -15,7 +15,6 @@ namespace ScriptModuleMinecraft { class MovementScriptActorComponent; }
 namespace ScriptModuleMinecraft {
 
 class ScriptMovementJumpComponent : public ::ScriptModuleMinecraft::MovementScriptActorComponent {
-
 public:
     // prevent constructor by default
     ScriptMovementJumpComponent& operator=(ScriptMovementJumpComponent const&) = delete;
@@ -24,26 +23,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTMOVEMENTJUMPCOMPONENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1ScriptMovementJumpComponent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptMovementJumpComponent();
-#endif
-    /**
-     * @symbol
-     * ?bind\@ScriptMovementJumpComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMovementJumpComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptMovementJumpComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptMovementJumpComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementJumpComponent> bind();
-    /**
-     * @symbol ?ComponentId\@ScriptMovementJumpComponent\@ScriptModuleMinecraft\@\@2PEBDEB
-     */
+
+    // symbol: ?ComponentId@ScriptMovementJumpComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;
+
     // NOLINTEND
 };
 

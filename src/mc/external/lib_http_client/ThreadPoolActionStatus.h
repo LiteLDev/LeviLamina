@@ -5,7 +5,6 @@
 namespace OS {
 
 struct ThreadPoolActionStatus {
-
 public:
     // prevent constructor by default
     ThreadPoolActionStatus& operator=(ThreadPoolActionStatus const&) = delete;

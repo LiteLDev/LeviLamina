@@ -9,7 +9,6 @@
 #include "mc/network/packet/Packet.h"
 
 class UpdateAbilitiesPacket : public ::Packet {
-
 public:
     SerializedAbilitiesData mData; // this+0x30
 
@@ -19,46 +18,31 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getId\@UpdateAbilitiesPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
-     */
-    virtual enum class MinecraftPacketIds getId() const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?getName\@UpdateAbilitiesPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // vIndex: 1, symbol: ?getId@UpdateAbilitiesPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    virtual ::MinecraftPacketIds getId() const;
+
+    // vIndex: 2, symbol:
+    // ?getName@UpdateAbilitiesPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const;
-    /**
-     * @vftbl 3
-     * @symbol ?write\@UpdateAbilitiesPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 3, symbol: ?write@UpdateAbilitiesPacket@@UEBAXAEAVBinaryStream@@@Z
     virtual void write(class BinaryStream&) const;
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?_read\@UpdateAbilitiesPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?_read@UpdateAbilitiesPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEABILITIESPACKET
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1UpdateAbilitiesPacket@@UEAA@XZ
     MCVAPI ~UpdateAbilitiesPacket();
-#endif
-    /**
-     * @symbol ??0UpdateAbilitiesPacket\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0UpdateAbilitiesPacket@@QEAA@XZ
     MCAPI UpdateAbilitiesPacket();
-    /**
-     * @symbol ??0UpdateAbilitiesPacket\@\@QEAA\@UActorUniqueID\@\@AEBVLayeredAbilities\@\@\@Z
-     */
+
+    // symbol: ??0UpdateAbilitiesPacket@@QEAA@UActorUniqueID@@AEBVLayeredAbilities@@@Z
     MCAPI UpdateAbilitiesPacket(struct ActorUniqueID, class LayeredAbilities const&);
+
     // NOLINTEND
 };

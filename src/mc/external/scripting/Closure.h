@@ -6,7 +6,6 @@ namespace Scripting {
 
 template <typename T0>
 class Closure {
-
 public:
     // prevent constructor by default
     Closure& operator=(Closure const&) = delete;

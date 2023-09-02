@@ -5,7 +5,6 @@
 namespace Util::Agent {
 
 struct SimulatedMoveResult {
-
 public:
     // prevent constructor by default
     SimulatedMoveResult& operator=(SimulatedMoveResult const&) = delete;

@@ -13,7 +13,6 @@ struct StrictActorIDEntityContextPair;
 namespace RideableComponentHelpers {
 
 class VehicleStateProvider {
-
 public:
     // prevent constructor by default
     VehicleStateProvider& operator=(VehicleStateProvider const&) = delete;
@@ -22,25 +21,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?canAddPassenger\@VehicleStateProvider\@RideableComponentHelpers\@\@UEBA_NAEBV?$vector\@UStrictActorIDEntityContextPair\@\@V?$allocator\@UStrictActorIDEntityContextPair\@\@\@std\@\@\@std\@\@AEBURideableComponentData\@\@AEBVIRideableActor\@2\@2\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?canAddPassenger@VehicleStateProvider@RideableComponentHelpers@@UEBA_NAEBV?$vector@UStrictActorIDEntityContextPair@@V?$allocator@UStrictActorIDEntityContextPair@@@std@@@std@@AEBURideableComponentData@@AEBVIRideableActor@2@2@Z
     virtual bool
     canAddPassenger(std::vector<struct StrictActorIDEntityContextPair> const&, struct RideableComponentData const&, class RideableComponentHelpers::IRideableActor const&, class RideableComponentHelpers::IRideableActor const&)
         const;
-    /**
-     * @symbol
-     * ?isPassenger\@VehicleStateProvider\@RideableComponentHelpers\@\@SA_NAEBV?$vector\@UStrictActorIDEntityContextPair\@\@V?$allocator\@UStrictActorIDEntityContextPair\@\@\@std\@\@\@std\@\@AEBUActorUniqueID\@\@\@Z
-     */
+
+    // symbol:
+    // ?isPassenger@VehicleStateProvider@RideableComponentHelpers@@SA_NAEBV?$vector@UStrictActorIDEntityContextPair@@V?$allocator@UStrictActorIDEntityContextPair@@@std@@@std@@AEBUActorUniqueID@@@Z
     MCAPI static bool
     isPassenger(std::vector<struct StrictActorIDEntityContextPair> const&, struct ActorUniqueID const&);
+
     // NOLINTEND
 };
 

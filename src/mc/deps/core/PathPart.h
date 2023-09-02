@@ -5,16 +5,14 @@
 namespace Core {
 
 class PathPart {
-
 public:
     std::string mUtf8StdString;
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1PathPart\@Core\@\@QEAA\@XZ
-     */
+    // symbol: ??1PathPart@Core@@QEAA@XZ
     MCAPI ~PathPart();
+
     // NOLINTEND
 };
 

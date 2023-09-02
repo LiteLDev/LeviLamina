@@ -11,7 +11,6 @@ public:
 
     // PostprocessingManager inner types define
     struct LockedChunk {
-
     public:
         // prevent constructor by default
         LockedChunk& operator=(LockedChunk const&) = delete;
@@ -26,19 +25,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0PostprocessingManager\@\@QEAA\@XZ
-     */
+    // symbol: ??0PostprocessingManager@@QEAA@XZ
     MCAPI PostprocessingManager();
-    /**
-     * @symbol
-     * ?tryLock\@PostprocessingManager\@\@QEAA?AV?$optional\@V?$vector\@ULockedChunk\@PostprocessingManager\@\@V?$allocator\@ULockedChunk\@PostprocessingManager\@\@\@std\@\@\@std\@\@\@std\@\@AEBVChunkPos\@\@AEAVChunkSource\@\@\@Z
-     */
+
+    // symbol:
+    // ?tryLock@PostprocessingManager@@QEAA?AV?$optional@V?$vector@ULockedChunk@PostprocessingManager@@V?$allocator@ULockedChunk@PostprocessingManager@@@std@@@std@@@std@@AEBVChunkPos@@AEAVChunkSource@@@Z
     MCAPI std::optional<std::vector<struct PostprocessingManager::LockedChunk>>
           tryLock(class ChunkPos const&, class ChunkSource&);
-    /**
-     * @symbol ??1PostprocessingManager\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1PostprocessingManager@@QEAA@XZ
     MCAPI ~PostprocessingManager();
+
     // NOLINTEND
 };

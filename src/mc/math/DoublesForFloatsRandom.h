@@ -15,7 +15,6 @@ namespace NoiseUtils { class DelegatingRandom; }
 namespace NoiseUtils {
 
 class DoublesForFloatsRandom : public ::NoiseUtils::DelegatingRandom {
-
 public:
     // prevent constructor by default
     DoublesForFloatsRandom& operator=(DoublesForFloatsRandom const&) = delete;
@@ -24,69 +23,44 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?nextInt\@DelegatingRandom\@NoiseUtils\@\@UEAAHXZ
-     */
-    virtual int32_t nextInt();
-    /**
-     * @vftbl 2
-     * @symbol ?nextInt\@DelegatingRandom\@NoiseUtils\@\@UEAAHH\@Z
-     */
-    virtual int32_t nextInt(int32_t);
-    /**
-     * @vftbl 3
-     * @symbol ?nextLong\@DelegatingRandom\@NoiseUtils\@\@UEAA_JXZ
-     */
-    virtual int64_t nextLong();
-    /**
-     * @vftbl 4
-     * @symbol ?nextBoolean\@DelegatingRandom\@NoiseUtils\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?nextInt@DelegatingRandom@NoiseUtils@@UEAAHXZ
+    virtual int nextInt();
+
+    // vIndex: 2, symbol: ?nextInt@DelegatingRandom@NoiseUtils@@UEAAHH@Z
+    virtual int nextInt(int);
+
+    // vIndex: 3, symbol: ?nextLong@DelegatingRandom@NoiseUtils@@UEAA_JXZ
+    virtual int64 nextLong();
+
+    // vIndex: 4, symbol: ?nextBoolean@DelegatingRandom@NoiseUtils@@UEAA_NXZ
     virtual bool nextBoolean();
-    /**
-     * @vftbl 5
-     * @symbol ?nextFloat\@DoublesForFloatsRandom\@NoiseUtils\@\@UEAAMXZ
-     */
+
+    // vIndex: 5, symbol: ?nextFloat@DoublesForFloatsRandom@NoiseUtils@@UEAAMXZ
     virtual float nextFloat();
-    /**
-     * @vftbl 6
-     * @symbol ?nextDouble\@DelegatingRandom\@NoiseUtils\@\@UEAANXZ
-     */
+
+    // vIndex: 6, symbol: ?nextDouble@DelegatingRandom@NoiseUtils@@UEAANXZ
     virtual double nextDouble();
-    /**
-     * @vftbl 7
-     * @symbol ?nextGaussianDouble\@XoroshiroRandom\@\@UEAANXZ
-     */
+
+    // vIndex: 7, symbol: ?nextGaussianDouble@XoroshiroRandom@@UEAANXZ
     virtual double nextGaussianDouble();
-    /**
-     * @vftbl 8
-     * @symbol ?consumeCount\@DelegatingRandom\@NoiseUtils\@\@UEAAXI\@Z
-     */
-    virtual void consumeCount(uint32_t);
-    /**
-     * @vftbl 9
-     * @symbol
-     * ?fork\@DelegatingRandom\@NoiseUtils\@\@UEAA?AV?$unique_ptr\@VIRandom\@\@U?$default_delete\@VIRandom\@\@\@std\@\@\@std\@\@XZ
-     */
+
+    // vIndex: 8, symbol: ?consumeCount@DelegatingRandom@NoiseUtils@@UEAAXI@Z
+    virtual void consumeCount(uint);
+
+    // vIndex: 9, symbol:
+    // ?fork@DelegatingRandom@NoiseUtils@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
     virtual std::unique_ptr<class IRandom> fork();
-    /**
-     * @vftbl 10
-     * @symbol
-     * ?forkPositional\@IRandom\@\@UEAA?AV?$unique_ptr\@VIPositionalRandomFactory\@\@U?$default_delete\@VIPositionalRandomFactory\@\@\@std\@\@\@std\@\@XZ
-     */
+
+    // vIndex: 10, symbol:
+    // ?forkPositional@IRandom@@UEAA?AV?$unique_ptr@VIPositionalRandomFactory@@U?$default_delete@VIPositionalRandomFactory@@@std@@@std@@XZ
     virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NOISEUTILS_DOUBLESFORFLOATSRANDOM
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1DoublesForFloatsRandom@NoiseUtils@@UEAA@XZ
     MCVAPI ~DoublesForFloatsRandom();
-#endif
+
     // NOLINTEND
 };
 

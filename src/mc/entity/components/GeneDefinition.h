@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct GeneDefinition {
-
 public:
     // prevent constructor by default
     GeneDefinition& operator=(GeneDefinition const&) = delete;
@@ -12,13 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?addGeneticVariant\@GeneDefinition\@\@QEAAXAEBUGeneticVariant\@\@\@Z
-     */
+    // symbol: ?addGeneticVariant@GeneDefinition@@QEAAXAEBUGeneticVariant@@@Z
     MCAPI void addGeneticVariant(struct GeneticVariant const&);
-    /**
-     * @symbol ??1GeneDefinition\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1GeneDefinition@@QEAA@XZ
     MCAPI ~GeneDefinition();
+
     // NOLINTEND
 };

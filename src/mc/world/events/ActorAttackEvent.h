@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ActorAttackEvent {
-
 public:
     // prevent constructor by default
     ActorAttackEvent& operator=(ActorAttackEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ActorAttackEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1ActorAttackEvent@@QEAA@XZ
     MCAPI ~ActorAttackEvent();
+
     // NOLINTEND
 };

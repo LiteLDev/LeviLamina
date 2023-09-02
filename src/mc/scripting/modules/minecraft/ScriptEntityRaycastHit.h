@@ -14,7 +14,6 @@ namespace Scripting { class WeakLifetimeScope; }
 namespace ScriptModuleMinecraft {
 
 class ScriptEntityRaycastHit {
-
 public:
     // prevent constructor by default
     ScriptEntityRaycastHit& operator=(ScriptEntityRaycastHit const&) = delete;
@@ -23,20 +22,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ??0ScriptEntityRaycastHit\@ScriptModuleMinecraft\@\@QEAA\@AEBVWeakEntityRef\@\@MAEBVWeakLifetimeScope\@Scripting\@\@\@Z
-     */
+    // symbol:
+    // ??0ScriptEntityRaycastHit@ScriptModuleMinecraft@@QEAA@AEBVWeakEntityRef@@MAEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI ScriptEntityRaycastHit(class WeakEntityRef const&, float, class Scripting::WeakLifetimeScope const&);
-    /**
-     * @symbol ??1ScriptEntityRaycastHit\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ScriptEntityRaycastHit@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptEntityRaycastHit();
-    /**
-     * @symbol
-     * ?bind\@ScriptEntityRaycastHit\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VScriptEntityRaycastHit\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptEntityRaycastHit@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@VScriptEntityRaycastHit@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptEntityRaycastHit> bind();
+
     // NOLINTEND
 };
 

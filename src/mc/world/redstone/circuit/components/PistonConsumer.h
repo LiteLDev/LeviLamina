@@ -7,55 +7,39 @@
 #include "mc/world/redstone/circuit/components/ConsumerComponent.h"
 
 class PistonConsumer : public ::ConsumerComponent {
-
 public:
     enum class FacingID        mBlockedFace;
     const CircuitComponentType mCircuitComponentType = CircuitComponentType::PistonConsumer;
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 6
-     * @symbol ?canConsumePowerAnyDirection\@PistonConsumer\@\@UEBA_NXZ
-     */
+
+    // vIndex: 6, symbol: ?canConsumePowerAnyDirection@PistonConsumer@@UEBA_NXZ
     virtual bool canConsumePowerAnyDirection() const;
-    /**
-     * @vftbl 11
-     * @symbol ?addSource\@PistonConsumer\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEAHAEA_N\@Z
-     */
-    virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int32_t&, bool&);
-    /**
-     * @vftbl 12
-     * @symbol ?allowConnection\@PistonConsumer\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEA_N\@Z
-     */
+
+    // vIndex: 11, symbol: ?addSource@PistonConsumer@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
+    virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
+
+    // vIndex: 12, symbol:
+    // ?allowConnection@PistonConsumer@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
     virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
-    /**
-     * @vftbl 17
-     * @symbol __unk_vfn_17
-     */
+
+    // vIndex: 17, symbol: __unk_vfn_17
     virtual void __unk_vfn_17();
-    /**
-     * @vftbl 20
-     * @symbol __unk_vfn_20
-     */
+
+    // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
-    /**
-     * @vftbl 23
-     * @symbol ?getCircuitComponentType\@PistonConsumer\@\@UEBA?AW4CircuitComponentType\@\@XZ
-     */
-    virtual enum class CircuitComponentType getCircuitComponentType() const;
-    /**
-     * @symbol ??0PistonConsumer\@\@QEAA\@XZ
-     */
+
+    // vIndex: 23, symbol: ?getCircuitComponentType@PistonConsumer@@UEBA?AW4CircuitComponentType@@XZ
+    virtual ::CircuitComponentType getCircuitComponentType() const;
+
+    // symbol: ??0PistonConsumer@@QEAA@XZ
     MCAPI PistonConsumer();
-    /**
-     * @symbol ?setBlockPowerFace\@PistonConsumer\@\@QEAAXE\@Z
-     */
-    MCAPI void setBlockPowerFace(uint8_t);
+
+    // symbol: ?setBlockPowerFace@PistonConsumer@@QEAAXE@Z
+    MCAPI void setBlockPowerFace(uchar);
+
     // NOLINTEND
 };

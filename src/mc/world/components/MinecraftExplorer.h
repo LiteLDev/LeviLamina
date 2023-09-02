@@ -4,9 +4,7 @@
 
 namespace MinecraftExplorer {
 // NOLINTBEGIN
-/**
- * @symbol ?registerGeneratedBlocks\@MinecraftExplorer\@\@YAXXZ
- */
+// symbol: ?registerGeneratedBlocks@MinecraftExplorer@@YAXXZ
 MCAPI void registerGeneratedBlocks();
 // NOLINTEND
 

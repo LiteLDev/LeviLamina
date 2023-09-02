@@ -5,7 +5,6 @@
 namespace ExpressionNodeSerializer {
 
 struct ExpressionNodeProxy {
-
 public:
     // prevent constructor by default
     ExpressionNodeProxy& operator=(ExpressionNodeProxy const&) = delete;
@@ -14,14 +13,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ExpressionNodeProxy\@ExpressionNodeSerializer\@\@QEAA\@XZ
-     */
+    // symbol: ??1ExpressionNodeProxy@ExpressionNodeSerializer@@QEAA@XZ
     MCAPI ~ExpressionNodeProxy();
-    /**
-     * @symbol ?bindType\@ExpressionNodeProxy\@ExpressionNodeSerializer\@\@SAXXZ
-     */
+
+    // symbol: ?bindType@ExpressionNodeProxy@ExpressionNodeSerializer@@SAXXZ
     MCAPI static void bindType();
+
     // NOLINTEND
 };
 

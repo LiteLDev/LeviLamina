@@ -4,10 +4,8 @@
 
 namespace VibrationListenerSystemInternal {
 // NOLINTBEGIN
-/**
- * @symbol
- * ?tickComponent\@VibrationListenerSystemInternal\@\@YAXAEAVActorOwnerComponent\@\@AEAVVibrationListenerComponent\@\@\@Z
- */
+// symbol:
+// ?tickComponent@VibrationListenerSystemInternal@@YAXAEAVActorOwnerComponent@@AEAVVibrationListenerComponent@@@Z
 MCAPI void tickComponent(class ActorOwnerComponent&, class VibrationListenerComponent&);
 // NOLINTEND
 

@@ -25,7 +25,6 @@ public:
 
     // CappedSurfaceBuilder inner types define
     class MaterialHelper {
-
     public:
         // prevent constructor by default
         MaterialHelper& operator=(MaterialHelper const&) = delete;
@@ -34,27 +33,21 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @vftbl 1
-         * @symbol
-         * ?isFoundationBlock\@MaterialHelper\@CappedSurfaceBuilder\@VanillaSurfaceBuilders\@\@UEBA_NAEBVBlock\@\@\@Z
-         */
+
+        // vIndex: 1, symbol:
+        // ?isFoundationBlock@MaterialHelper@CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEBA_NAEBVBlock@@@Z
         virtual bool isFoundationBlock(class Block const&) const;
-        /**
-         * @vftbl 2
-         * @symbol ?isWaterBlock\@MaterialHelper\@CappedSurfaceBuilder\@VanillaSurfaceBuilders\@\@UEBA_NAEBVBlock\@\@\@Z
-         */
+
+        // vIndex: 2, symbol:
+        // ?isWaterBlock@MaterialHelper@CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEBA_NAEBVBlock@@@Z
         virtual bool isWaterBlock(class Block const&) const;
-        /**
-         * @vftbl 3
-         * @symbol ?isSolidBlock\@MaterialHelper\@CappedSurfaceBuilder\@VanillaSurfaceBuilders\@\@UEBA_NAEBVBlock\@\@\@Z
-         */
+
+        // vIndex: 3, symbol:
+        // ?isSolidBlock@MaterialHelper@CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEBA_NAEBVBlock@@@Z
         virtual bool isSolidBlock(class Block const&) const;
+
         // NOLINTEND
     };
 
@@ -65,36 +58,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?init\@CappedSurfaceBuilder\@VanillaSurfaceBuilders\@\@UEAAXAEAVEntityContext\@\@I\@Z
-     */
-    virtual void init(class EntityContext&, uint32_t);
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?buildSurfaceAt\@CappedSurfaceBuilder\@VanillaSurfaceBuilders\@\@UEBAXAEBUBuildParameters\@ISurfaceBuilder\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?init@CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVEntityContext@@I@Z
+    virtual void init(class EntityContext&, uint);
+
+    // vIndex: 2, symbol:
+    // ?buildSurfaceAt@CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEBAXAEBUBuildParameters@ISurfaceBuilder@@@Z
     virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const&) const;
-    /**
-     * @symbol ??0CappedSurfaceBuilder\@VanillaSurfaceBuilders\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0CappedSurfaceBuilder@VanillaSurfaceBuilders@@QEAA@XZ
     MCAPI CappedSurfaceBuilder();
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?addSurfaceMaterial\@CappedSurfaceBuilder\@VanillaSurfaceBuilders\@\@AEBAXAEAVBlockVolume\@\@VPos\@\@HAEBV?$function\@$$A6APEBVBlock\@\@H\@Z\@std\@\@\@Z
-     */
+    // symbol:
+    // ?addSurfaceMaterial@CappedSurfaceBuilder@VanillaSurfaceBuilders@@AEBAXAEAVBlockVolume@@VPos@@HAEBV?$function@$$A6APEBVBlock@@H@Z@std@@@Z
     MCAPI void
-    addSurfaceMaterial(class BlockVolume&, class Pos, int32_t, std::function<class Block const*(int32_t)> const&) const;
+    addSurfaceMaterial(class BlockVolume&, class Pos, int, std::function<class Block const*(int)> const&) const;
+
     // NOLINTEND
 };
 

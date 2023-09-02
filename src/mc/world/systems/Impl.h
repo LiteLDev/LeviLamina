@@ -17,7 +17,6 @@ class ResourcePackManager;
 namespace VanillaWorldSystems {
 
 class Impl {
-
 public:
     // prevent constructor by default
     Impl& operator=(Impl const&) = delete;
@@ -26,10 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ??0Impl\@VanillaWorldSystems\@\@QEAA\@AEBV?$NonOwnerPointer\@VLevel\@\@\@Bedrock\@\@AEBVExperiments\@\@AEBVBaseGameVersion\@\@PEAVResourcePackManager\@\@VItemRegistryRef\@\@\@Z
-     */
+    // symbol:
+    // ??0Impl@VanillaWorldSystems@@QEAA@AEBV?$NonOwnerPointer@VLevel@@@Bedrock@@AEBVExperiments@@AEBVBaseGameVersion@@PEAVResourcePackManager@@VItemRegistryRef@@@Z
     MCAPI Impl(
         class Bedrock::NonOwnerPointer<class Level> const&,
         class Experiments const&,
@@ -37,10 +34,10 @@ public:
         class ResourcePackManager*,
         class ItemRegistryRef
     );
-    /**
-     * @symbol ?mInstance\@Impl\@VanillaWorldSystems\@\@2V?$weak_ptr\@VImpl\@VanillaWorldSystems\@\@\@std\@\@A
-     */
+
+    // symbol: ?mInstance@Impl@VanillaWorldSystems@@2V?$weak_ptr@VImpl@VanillaWorldSystems@@@std@@A
     MCAPI static std::weak_ptr<class VanillaWorldSystems::Impl> mInstance;
+
     // NOLINTEND
 };
 

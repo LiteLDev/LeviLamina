@@ -4,7 +4,6 @@
 
 template <typename T0>
 struct MutableItemGameplayEvent {
-
 public:
     // prevent constructor by default
     MutableItemGameplayEvent& operator=(MutableItemGameplayEvent const&) = delete;

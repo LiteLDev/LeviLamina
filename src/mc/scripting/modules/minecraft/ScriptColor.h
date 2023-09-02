@@ -14,7 +14,6 @@ namespace mce { class Color; }
 namespace ScriptModuleMinecraft {
 
 class ScriptColor {
-
 public:
     // prevent constructor by default
     ScriptColor& operator=(ScriptColor const&) = delete;
@@ -23,24 +22,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ScriptColor\@ScriptModuleMinecraft\@\@QEAA\@AEBVColor\@mce\@\@\@Z
-     */
+    // symbol: ??0ScriptColor@ScriptModuleMinecraft@@QEAA@AEBVColor@mce@@@Z
     MCAPI ScriptColor(class mce::Color const&);
-    /**
-     * @symbol ?getColor\@ScriptColor\@ScriptModuleMinecraft\@\@QEBAAEBVColor\@mce\@\@XZ
-     */
+
+    // symbol: ?getColor@ScriptColor@ScriptModuleMinecraft@@QEBAAEBVColor@mce@@XZ
     MCAPI class mce::Color const& getColor() const;
-    /**
-     * @symbol
-     * ?bind\@ScriptColor\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VScriptColor\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptColor@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@VScriptColor@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptColor> bind();
-    /**
-     * @symbol
-     * ?bindV010\@ScriptColor\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptColor\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bindV010@ScriptColor@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptColor@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptColor> bindV010();
+
     // NOLINTEND
 };
 

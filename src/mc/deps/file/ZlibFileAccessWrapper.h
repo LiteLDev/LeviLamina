@@ -6,7 +6,6 @@
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
 class ZlibFileAccessWrapper {
-
 public:
     // prevent constructor by default
     ZlibFileAccessWrapper& operator=(ZlibFileAccessWrapper const&) = delete;
@@ -15,14 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ??0ZlibFileAccessWrapper\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VIFileAccess\@\@\@Bedrock\@\@\@gsl\@\@\@Z
-     */
+    // symbol: ??0ZlibFileAccessWrapper@@QEAA@V?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@@Z
     MCAPI ZlibFileAccessWrapper(gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>>);
-    /**
-     * @symbol ??1ZlibFileAccessWrapper\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ZlibFileAccessWrapper@@QEAA@XZ
     MCAPI ~ZlibFileAccessWrapper();
+
     // NOLINTEND
 };

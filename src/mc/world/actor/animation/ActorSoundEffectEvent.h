@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ActorSoundEffectEvent {
-
 public:
     // prevent constructor by default
     ActorSoundEffectEvent& operator=(ActorSoundEffectEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ActorSoundEffectEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1ActorSoundEffectEvent@@QEAA@XZ
     MCAPI ~ActorSoundEffectEvent();
+
     // NOLINTEND
 };

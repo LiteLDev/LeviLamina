@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class BehaviorComponent {
-
 public:
     // prevent constructor by default
     BehaviorComponent& operator=(BehaviorComponent const&) = delete;
@@ -11,21 +10,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0BehaviorComponent\@\@QEAA\@$$QEAV0\@\@Z
-     */
+    // symbol: ??0BehaviorComponent@@QEAA@$$QEAV0@@Z
     MCAPI BehaviorComponent(class BehaviorComponent&&);
-    /**
-     * @symbol ??0BehaviorComponent\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0BehaviorComponent@@QEAA@XZ
     MCAPI BehaviorComponent();
-    /**
-     * @symbol ??4BehaviorComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
-     */
+
+    // symbol: ??4BehaviorComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class BehaviorComponent& operator=(class BehaviorComponent&&);
-    /**
-     * @symbol ??1BehaviorComponent\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1BehaviorComponent@@QEAA@XZ
     MCAPI ~BehaviorComponent();
+
     // NOLINTEND
 };

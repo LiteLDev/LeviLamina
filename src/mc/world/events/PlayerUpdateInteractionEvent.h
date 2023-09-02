@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct PlayerUpdateInteractionEvent {
-
 public:
     // prevent constructor by default
     PlayerUpdateInteractionEvent& operator=(PlayerUpdateInteractionEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1PlayerUpdateInteractionEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1PlayerUpdateInteractionEvent@@QEAA@XZ
     MCAPI ~PlayerUpdateInteractionEvent();
+
     // NOLINTEND
 };

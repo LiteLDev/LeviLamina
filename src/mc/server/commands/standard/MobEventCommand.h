@@ -14,7 +14,6 @@ public:
 
     // MobEventCommand inner types define
     struct InitProxy {
-
     public:
         // prevent constructor by default
         InitProxy& operator=(InitProxy const&) = delete;
@@ -23,10 +22,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??0InitProxy\@MobEventCommand\@\@QEAA\@AEAVServerLevel\@\@\@Z
-         */
+        // symbol: ??0InitProxy@MobEventCommand@@QEAA@AEAVServerLevel@@@Z
         MCAPI InitProxy(class ServerLevel&);
+
         // NOLINTEND
     };
 
@@ -38,19 +36,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 2
-     * @symbol ?execute\@MobEventCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?execute@MobEventCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol ?setup\@MobEventCommand\@\@SAXAEAVCommandRegistry\@\@$$QEAUInitProxy\@1\@\@Z
-     */
+
+    // symbol: ?setup@MobEventCommand@@SAXAEAVCommandRegistry@@$$QEAUInitProxy@1@@Z
     MCAPI static void setup(class CommandRegistry&, struct MobEventCommand::InitProxy&&);
+
     // NOLINTEND
 };

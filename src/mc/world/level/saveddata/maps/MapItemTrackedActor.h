@@ -13,7 +13,6 @@ public:
     enum class Type {};
 
     struct UniqueId {
-
     public:
         // prevent constructor by default
         UniqueId& operator=(UniqueId const&) = delete;
@@ -29,22 +28,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0MapItemTrackedActor\@\@QEAA\@AEBUUniqueId\@0\@AEAVBlockSource\@\@\@Z
-     */
+    // symbol: ??0MapItemTrackedActor@@QEAA@AEBUUniqueId@0@AEAVBlockSource@@@Z
     MCAPI MapItemTrackedActor(struct MapItemTrackedActor::UniqueId const&, class BlockSource&);
-    /**
-     * @symbol ?getDecorationRotation\@MapItemTrackedActor\@\@QEAAMAEAVBlockSource\@\@\@Z
-     */
+
+    // symbol: ?getDecorationRotation@MapItemTrackedActor@@QEAAMAEAVBlockSource@@@Z
     MCAPI float getDecorationRotation(class BlockSource&);
-    /**
-     * @symbol
-     * ?nextUpdatePacket\@MapItemTrackedActor\@\@QEAA?AV?$unique_ptr\@VPacket\@\@U?$default_delete\@VPacket\@\@\@std\@\@\@std\@\@AEBVMapItemSavedData\@\@\@Z
-     */
+
+    // symbol:
+    // ?nextUpdatePacket@MapItemTrackedActor@@QEAA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@AEBVMapItemSavedData@@@Z
     MCAPI std::unique_ptr<class Packet> nextUpdatePacket(class MapItemSavedData const&);
-    /**
-     * @symbol ?setNeedsResend\@MapItemTrackedActor\@\@QEAAXXZ
-     */
+
+    // symbol: ?setNeedsResend@MapItemTrackedActor@@QEAAXXZ
     MCAPI void setNeedsResend();
+
     // NOLINTEND
 };

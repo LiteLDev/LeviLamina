@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct WorldGenContext {
-
 public:
     // prevent constructor by default
     WorldGenContext& operator=(WorldGenContext const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1WorldGenContext\@\@QEAA\@XZ
-     */
+    // symbol: ??1WorldGenContext@@QEAA@XZ
     MCAPI ~WorldGenContext();
+
     // NOLINTEND
 };

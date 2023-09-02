@@ -5,7 +5,6 @@
 namespace Bedrock {
 
 class DeviceIdManager {
-
 public:
     // prevent constructor by default
     DeviceIdManager& operator=(DeviceIdManager const&) = delete;

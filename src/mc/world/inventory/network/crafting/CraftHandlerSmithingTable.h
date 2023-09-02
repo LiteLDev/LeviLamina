@@ -9,7 +9,6 @@
 #include "mc/world/item/components/ItemStackRequestActionType.h"
 
 class CraftHandlerSmithingTable : public ::CraftHandlerBase {
-
 public:
     // prevent constructor by default
     CraftHandlerSmithingTable& operator=(CraftHandlerSmithingTable const&) = delete;
@@ -18,21 +17,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 4
-     * @symbol
-     * ?_handleCraftAction\@CraftHandlerSmithingTable\@\@EEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@\@Z
-     */
-    virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
-    /**
-     * @vftbl 6
-     * @symbol ?_getLevelRecipes\@CraftHandlerSmithingTable\@\@EEBAPEBVRecipes\@\@XZ
-     */
+
+    // vIndex: 4, symbol:
+    // ?_handleCraftAction@CraftHandlerSmithingTable@@EEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
+    virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+
+    // vIndex: 6, symbol: ?_getLevelRecipes@CraftHandlerSmithingTable@@EEBAPEBVRecipes@@XZ
     virtual class Recipes const* _getLevelRecipes() const;
+
     // NOLINTEND
 };

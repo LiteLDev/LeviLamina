@@ -97,3 +97,24 @@
 #include "liteloader/api/memory/MemoryUtils.h" // for dAccess
 
 #include "mc/common/wrapper/optional_ref.h" // replace optional<reference_wrapper<>>
+
+using uchar  = uint8_t;
+using ushort = uint16_t;
+using uint   = uint32_t;
+using ulong  = unsigned long;
+using uint64 = uint64_t;
+
+using schar = int8_t;
+using int64 = int64_t;
+
+// clang-format off
+template <typename T0, typename T1>
+class AutomaticID;
+class Dimension;
+using DimensionType = AutomaticID<Dimension, int>;
+// union GameRule::Value;
+template <typename T0>
+class http_stl_allocator;
+using http_string  = std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>>;
+using http_wstring = std::basic_string<wchar_t, std::char_traits<wchar_t>, class http_stl_allocator<wchar_t>>;
+// clang-format on

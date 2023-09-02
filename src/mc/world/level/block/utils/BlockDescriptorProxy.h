@@ -5,7 +5,6 @@
 namespace BlockDescriptorSerializer {
 
 struct BlockDescriptorProxy {
-
 public:
     // prevent constructor by default
     BlockDescriptorProxy& operator=(BlockDescriptorProxy const&) = delete;
@@ -14,14 +13,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1BlockDescriptorProxy\@BlockDescriptorSerializer\@\@QEAA\@XZ
-     */
+    // symbol: ??1BlockDescriptorProxy@BlockDescriptorSerializer@@QEAA@XZ
     MCAPI ~BlockDescriptorProxy();
-    /**
-     * @symbol ?bindType\@BlockDescriptorProxy\@BlockDescriptorSerializer\@\@SAXXZ
-     */
+
+    // symbol: ?bindType@BlockDescriptorProxy@BlockDescriptorSerializer@@SAXXZ
     MCAPI static void bindType();
+
     // NOLINTEND
 };
 

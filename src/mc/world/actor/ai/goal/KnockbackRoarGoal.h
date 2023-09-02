@@ -22,7 +22,6 @@ public:
 
     // KnockbackRoarGoal inner types define
     class KnockbackRoarDefinition : public ::BaseGoalDefinition {
-
     public:
         // prevent constructor by default
         KnockbackRoarDefinition& operator=(KnockbackRoarDefinition const&) = delete;
@@ -31,25 +30,20 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @symbol ?initialize\@KnockbackRoarDefinition\@KnockbackRoarGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
+
+        // symbol: ?initialize@KnockbackRoarDefinition@KnockbackRoarGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class KnockbackRoarGoal&) const;
-        /**
-         * @symbol
-         * ?buildSchema\@KnockbackRoarDefinition\@KnockbackRoarGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VKnockbackRoarDefinition\@KnockbackRoarGoal\@\@\@JsonUtil\@\@\@4\@\@Z
-         */
+
+        // symbol:
+        // ?buildSchema@KnockbackRoarDefinition@KnockbackRoarGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VKnockbackRoarDefinition@KnockbackRoarGoal@@@JsonUtil@@@4@@Z
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class KnockbackRoarGoal::KnockbackRoarDefinition>>&);
-        /**
-         * @symbol ?getStrictParsingVersion\@KnockbackRoarDefinition\@KnockbackRoarGoal\@\@SA?AVSemVersion\@\@XZ
-         */
+
+        // symbol: ?getStrictParsingVersion@KnockbackRoarDefinition@KnockbackRoarGoal@@SA?AVSemVersion@@XZ
         MCAPI static class SemVersion getStrictParsingVersion();
+
         // NOLINTEND
     };
 
@@ -61,45 +55,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@KnockbackRoarGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@KnockbackRoarGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@KnockbackRoarGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@KnockbackRoarGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@KnockbackRoarGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@KnockbackRoarGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol ?stop\@KnockbackRoarGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 5, symbol: ?stop@KnockbackRoarGoal@@UEAAXXZ
     virtual void stop();
-    /**
-     * @vftbl 6
-     * @symbol ?tick\@KnockbackRoarGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 6, symbol: ?tick@KnockbackRoarGoal@@UEAAXXZ
     virtual void tick();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@KnockbackRoarGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@KnockbackRoarGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @symbol ??0KnockbackRoarGoal\@\@QEAA\@AEAVMob\@\@\@Z
-     */
+
+    // symbol: ??0KnockbackRoarGoal@@QEAA@AEAVMob@@@Z
     MCAPI KnockbackRoarGoal(class Mob&);
+
     // NOLINTEND
 };

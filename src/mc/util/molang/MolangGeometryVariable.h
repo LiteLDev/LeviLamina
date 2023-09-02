@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct MolangGeometryVariable {
-
 public:
     // prevent constructor by default
     MolangGeometryVariable& operator=(MolangGeometryVariable const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1MolangGeometryVariable\@\@QEAA\@XZ
-     */
+    // symbol: ??1MolangGeometryVariable@@QEAA@XZ
     MCAPI ~MolangGeometryVariable();
+
     // NOLINTEND
 };

@@ -6,7 +6,6 @@ namespace Scripting {
 
 template <typename T0>
 struct TypedObjectHandle {
-
 public:
     // prevent constructor by default
     TypedObjectHandle& operator=(TypedObjectHandle const&) = delete;

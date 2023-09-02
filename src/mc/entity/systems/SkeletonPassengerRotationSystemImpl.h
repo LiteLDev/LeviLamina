@@ -7,7 +7,6 @@
 #include "mc/world/components/FlagComponent.h"
 
 class SkeletonPassengerRotationSystemImpl {
-
 public:
     // prevent constructor by default
     SkeletonPassengerRotationSystemImpl& operator=(SkeletonPassengerRotationSystemImpl const&) = delete;
@@ -16,11 +15,10 @@ public:
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_tickSkeletonView\@SkeletonPassengerRotationSystemImpl\@\@CAXAEAVStrictEntityContext\@\@AEBUPassengerComponent\@\@AEBV?$FlagComponent\@USkeletonFlag\@\@\@\@AEAUMobBodyRotationComponent\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBUVehicleComponent\@\@$$CBUMobBodyRotationComponent\@\@\@\@\@Z
-     */
+    // symbol:
+    // ?_tickSkeletonView@SkeletonPassengerRotationSystemImpl@@CAXAEAVStrictEntityContext@@AEBUPassengerComponent@@AEBV?$FlagComponent@USkeletonFlag@@@@AEAUMobBodyRotationComponent@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUVehicleComponent@@$$CBUMobBodyRotationComponent@@@@@Z
     MCAPI static void
     _tickSkeletonView(class StrictEntityContext&, struct PassengerComponent const&, class FlagComponent<struct SkeletonFlag> const&, struct MobBodyRotationComponent&, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct VehicleComponent const, struct MobBodyRotationComponent const>);
+
     // NOLINTEND
 };

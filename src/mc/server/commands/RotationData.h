@@ -13,7 +13,6 @@ class Vec2;
 namespace RotationCommandUtils {
 
 class RotationData {
-
 public:
     RelativeFloat       mRotX;
     RelativeFloat       mRotY;
@@ -23,10 +22,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ??0RotationData\@RotationCommandUtils\@\@QEAA\@AEBVRelativeFloat\@\@0AEBV?$optional\@VVec2\@\@\@std\@\@\@Z
-     */
+    // symbol: ??0RotationData@RotationCommandUtils@@QEAA@AEBVRelativeFloat@@0AEBV?$optional@VVec2@@@std@@@Z
     MCAPI RotationData(class RelativeFloat const& x, class RelativeFloat const& y, std::optional<class Vec2> const& originRot = std::nullopt);
     // NOLINTEND
 };

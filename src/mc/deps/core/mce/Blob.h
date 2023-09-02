@@ -5,7 +5,6 @@
 namespace mce {
 
 class Blob {
-
 public:
     using value_type     = uint8_t;
     using size_type      = size_t;
@@ -43,46 +42,37 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0Blob\@mce\@\@QEAA\@XZ
-     */
+    // symbol: ??0Blob@mce@@QEAA@XZ
     MCAPI Blob();
-    /**
-     * @symbol ??0Blob\@mce\@\@QEAA\@$$QEAV01\@\@Z
-     */
+
+    // symbol: ??0Blob@mce@@QEAA@$$QEAV01@@Z
     MCAPI Blob(class mce::Blob&&);
-    /**
-     * @symbol ??0Blob\@mce\@\@QEAA\@_K\@Z
-     */
+
+    // symbol: ??0Blob@mce@@QEAA@_K@Z
     MCAPI Blob(size_type);
-    /**
-     * @symbol ?cbegin\@Blob\@mce\@\@QEBAPEBEXZ
-     */
+
+    // symbol: ?cbegin@Blob@mce@@QEBAPEBEXZ
     MCAPI const_iterator cbegin() const;
-    /**
-     * @symbol ?cend\@Blob\@mce\@\@QEBAPEBEXZ
-     */
+
+    // symbol: ?cend@Blob@mce@@QEBAPEBEXZ
     MCAPI const_iterator cend() const;
-    /**
-     * @symbol ?empty\@Blob\@mce\@\@QEBA_NXZ
-     */
+
+    // symbol: ?empty@Blob@mce@@QEBA_NXZ
     MCAPI bool empty() const;
-    /**
-     * @symbol ??4Blob\@mce\@\@QEAAAEAV01\@$$QEAV01\@\@Z
-     */
+
+    // symbol: ??4Blob@mce@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class mce::Blob& operator=(class mce::Blob&&);
-    /**
-     * @symbol ??1Blob\@mce\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1Blob@mce@@QEAA@XZ
     MCAPI ~Blob();
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?defaultDeleter\@Blob\@mce\@\@CAXPEAE\@Z
-     */
+    // symbol: ?defaultDeleter@Blob@mce@@CAXPEAE@Z
     MCAPI static void defaultDeleter(pointer);
+
     // NOLINTEND
 };
 

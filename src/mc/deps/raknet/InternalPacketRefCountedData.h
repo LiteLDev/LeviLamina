@@ -5,7 +5,6 @@
 namespace RakNet {
 
 struct InternalPacketRefCountedData {
-
 public:
     // prevent constructor by default
     InternalPacketRefCountedData& operator=(InternalPacketRefCountedData const&) = delete;

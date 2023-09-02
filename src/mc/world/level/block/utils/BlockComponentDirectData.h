@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class BlockComponentDirectData {
-
 public:
     // prevent constructor by default
     BlockComponentDirectData& operator=(BlockComponentDirectData const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?finalize\@BlockComponentDirectData\@\@QEAAXAEBVBlock\@\@\@Z
-     */
+    // symbol: ?finalize@BlockComponentDirectData@@QEAAXAEBVBlock@@@Z
     MCAPI void finalize(class Block const&);
+
     // NOLINTEND
 };

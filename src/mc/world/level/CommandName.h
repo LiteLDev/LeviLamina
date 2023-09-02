@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct CommandName {
-
 public:
     // prevent constructor by default
     CommandName& operator=(CommandName const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1CommandName\@\@QEAA\@XZ
-     */
+    // symbol: ??1CommandName@@QEAA@XZ
     MCAPI ~CommandName();
+
     // NOLINTEND
 };

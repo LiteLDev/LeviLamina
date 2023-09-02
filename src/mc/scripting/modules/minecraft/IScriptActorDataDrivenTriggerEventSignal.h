@@ -4,9 +4,8 @@
 
 namespace ScriptModuleMinecraft {
 
-template <typename T0, int32_t T1>
+template <typename T0, int T1>
 class IScriptActorDataDrivenTriggerEventSignal {
-
 public:
     // prevent constructor by default
     IScriptActorDataDrivenTriggerEventSignal& operator=(IScriptActorDataDrivenTriggerEventSignal const&) = delete;

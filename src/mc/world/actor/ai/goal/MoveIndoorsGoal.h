@@ -22,7 +22,6 @@ public:
 
     // MoveIndoorsGoal inner types define
     class MoveIndoorsDefinition : public ::BaseGoalDefinition {
-
     public:
         // prevent constructor by default
         MoveIndoorsDefinition& operator=(MoveIndoorsDefinition const&) = delete;
@@ -30,29 +29,23 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @symbol ??0MoveIndoorsDefinition\@MoveIndoorsGoal\@\@QEAA\@XZ
-         */
+
+        // symbol: ??0MoveIndoorsDefinition@MoveIndoorsGoal@@QEAA@XZ
         MCAPI MoveIndoorsDefinition();
-        /**
-         * @symbol ?addCooldownTicksBySeconds\@MoveIndoorsDefinition\@MoveIndoorsGoal\@\@QEAAXAEBM\@Z
-         */
+
+        // symbol: ?addCooldownTicksBySeconds@MoveIndoorsDefinition@MoveIndoorsGoal@@QEAAXAEBM@Z
         MCAPI void addCooldownTicksBySeconds(float const&);
-        /**
-         * @symbol ?initialize\@MoveIndoorsDefinition\@MoveIndoorsGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
+
+        // symbol: ?initialize@MoveIndoorsDefinition@MoveIndoorsGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class MoveIndoorsGoal&) const;
-        /**
-         * @symbol
-         * ?buildSchema\@MoveIndoorsDefinition\@MoveIndoorsGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VMoveIndoorsDefinition\@MoveIndoorsGoal\@\@\@JsonUtil\@\@\@4\@\@Z
-         */
+
+        // symbol:
+        // ?buildSchema@MoveIndoorsDefinition@MoveIndoorsGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VMoveIndoorsDefinition@MoveIndoorsGoal@@@JsonUtil@@@4@@Z
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MoveIndoorsGoal::MoveIndoorsDefinition>>&);
+
         // NOLINTEND
     };
 
@@ -64,57 +57,40 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@MoveIndoorsGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@MoveIndoorsGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@MoveIndoorsGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@MoveIndoorsGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@MoveIndoorsGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@MoveIndoorsGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol ?stop\@MoveIndoorsGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 5, symbol: ?stop@MoveIndoorsGoal@@UEAAXXZ
     virtual void stop();
-    /**
-     * @vftbl 6
-     * @symbol ?tick\@MoveIndoorsGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 6, symbol: ?tick@MoveIndoorsGoal@@UEAAXXZ
     virtual void tick();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@MoveIndoorsGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@MoveIndoorsGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @symbol ??0MoveIndoorsGoal\@\@QEAA\@AEAVMob\@\@\@Z
-     */
+
+    // symbol: ??0MoveIndoorsGoal@@QEAA@AEAVMob@@@Z
     MCAPI MoveIndoorsGoal(class Mob&);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_isInside\@MoveIndoorsGoal\@\@AEAA_NAEBVBlockPos\@\@\@Z
-     */
+    // symbol: ?_isInside@MoveIndoorsGoal@@AEAA_NAEBVBlockPos@@@Z
     MCAPI bool _isInside(class BlockPos const&);
-    /**
-     * @symbol ?_startPathfinding\@MoveIndoorsGoal\@\@AEAAXXZ
-     */
+
+    // symbol: ?_startPathfinding@MoveIndoorsGoal@@AEAAXXZ
     MCAPI void _startPathfinding();
+
     // NOLINTEND
 };

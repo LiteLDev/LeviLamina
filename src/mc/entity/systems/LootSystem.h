@@ -6,7 +6,6 @@
 #include "mc/entity/systems/ITickingSystem.h"
 
 class LootSystem : public ::ITickingSystem {
-
 public:
     // prevent constructor by default
     LootSystem& operator=(LootSystem const&) = delete;
@@ -15,21 +14,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?registerEvents\@LootSystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?registerEvents@LootSystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
     virtual void registerEvents(entt::dispatcher&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTSYSTEM
-    /**
-     * @symbol ?tick\@LootSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
-     */
+
+    // symbol: ?tick@LootSystem@@UEAAXAEAVEntityRegistry@@@Z
     MCVAPI void tick(class EntityRegistry&);
-#endif
+
     // NOLINTEND
 };

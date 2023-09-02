@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ExternalLinkSettings {
-
 public:
     std::string mUrl;
     std::string mDisplayName;
@@ -15,9 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ExternalLinkSettings\@\@QEAA\@XZ
-     */
+    // symbol: ??1ExternalLinkSettings@@QEAA@XZ
     MCAPI ~ExternalLinkSettings();
+
     // NOLINTEND
 };

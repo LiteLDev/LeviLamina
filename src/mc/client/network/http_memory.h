@@ -5,7 +5,6 @@
 namespace xbox::httpclient {
 
 class http_memory {
-
 public:
     // prevent constructor by default
     http_memory& operator=(http_memory const&) = delete;
@@ -14,14 +13,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?mem_alloc\@http_memory\@httpclient\@xbox\@\@SAPEAX_K\@Z
-     */
-    MCAPI static void* mem_alloc(uint64_t);
-    /**
-     * @symbol ?mem_free\@http_memory\@httpclient\@xbox\@\@SAXPEAX\@Z
-     */
+    // symbol: ?mem_alloc@http_memory@httpclient@xbox@@SAPEAX_K@Z
+    MCAPI static void* mem_alloc(uint64);
+
+    // symbol: ?mem_free@http_memory@httpclient@xbox@@SAXPEAX@Z
     MCAPI static void mem_free(void*);
+
     // NOLINTEND
 };
 

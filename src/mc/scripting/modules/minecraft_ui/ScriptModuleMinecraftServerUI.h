@@ -34,11 +34,9 @@ namespace Scripting { struct Version; }
 
 namespace ScriptModuleMinecraftServerUI {
 // NOLINTBEGIN
-/**
- * @symbol
- * ?bindScriptFormRejectReason\@ScriptModuleMinecraftServerUI\@\@YA?AV?$EnumBindingBuilder\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ScriptFormRejectReason\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@XZ
- */
-MCAPI class Scripting::EnumBindingBuilder<std::string, enum class ScriptModuleMinecraftServerUI::ScriptFormRejectReason>
+// symbol:
+// ?bindScriptFormRejectReason@ScriptModuleMinecraftServerUI@@YA?AV?$EnumBindingBuilder@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ScriptFormRejectReason@ScriptModuleMinecraftServerUI@@@Scripting@@XZ
+MCAPI class Scripting::EnumBindingBuilder<std::string, ::ScriptModuleMinecraftServerUI::ScriptFormRejectReason>
 bindScriptFormRejectReason();
 // NOLINTEND
 

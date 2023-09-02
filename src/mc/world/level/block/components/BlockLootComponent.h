@@ -6,7 +6,6 @@
 #include "mc/world/level/block/utils/BlockComponentBase.h"
 
 struct BlockLootComponent : public ::BlockComponentBase {
-
 public:
     // prevent constructor by default
     BlockLootComponent& operator=(BlockLootComponent const&) = delete;
@@ -14,20 +13,14 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKLOOTCOMPONENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1BlockLootComponent@@UEAA@XZ
     MCVAPI ~BlockLootComponent();
-#endif
-    /**
-     * @symbol ??0BlockLootComponent\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0BlockLootComponent@@QEAA@XZ
     MCAPI BlockLootComponent();
-    /**
-     * @symbol
-     * ?getLootTable\@BlockLootComponent\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // symbol: ?getLootTable@BlockLootComponent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getLootTable() const;
+
     // NOLINTEND
 };

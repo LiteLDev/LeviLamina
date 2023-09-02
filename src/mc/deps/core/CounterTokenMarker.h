@@ -5,7 +5,6 @@
 namespace Core::Profile {
 
 class CounterTokenMarker {
-
 public:
     // prevent constructor by default
     CounterTokenMarker& operator=(CounterTokenMarker const&) = delete;

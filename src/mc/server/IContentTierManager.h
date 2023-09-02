@@ -11,7 +11,6 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 // clang-format on
 
 class IContentTierManager : public ::Bedrock::EnableNonOwnerReferences {
-
 public:
     // prevent constructor by default
     IContentTierManager& operator=(IContentTierManager const&) = delete;
@@ -20,11 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTENTTIERMANAGER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1IContentTierManager@@UEAA@XZ
     MCVAPI ~IContentTierManager();
-#endif
+
     // NOLINTEND
 };

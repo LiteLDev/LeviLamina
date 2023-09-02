@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ResetMoveDirectionJumpPendingSystem {
-
 public:
     // prevent constructor by default
     ResetMoveDirectionJumpPendingSystem& operator=(ResetMoveDirectionJumpPendingSystem const&) = delete;
@@ -12,10 +11,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?createResetMoveDirectionJumpPendingSystem\@ResetMoveDirectionJumpPendingSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol:
+    // ?createResetMoveDirectionJumpPendingSystem@ResetMoveDirectionJumpPendingSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createResetMoveDirectionJumpPendingSystem();
+
     // NOLINTEND
 };

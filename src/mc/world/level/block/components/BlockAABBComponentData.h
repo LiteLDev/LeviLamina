@@ -6,7 +6,6 @@
 #include "mc/world/level/block/utils/BlockComponentBase.h"
 
 class BlockAABBComponentData : public ::BlockComponentBase {
-
 public:
     // prevent constructor by default
     BlockAABBComponentData& operator=(BlockAABBComponentData const&) = delete;

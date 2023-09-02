@@ -6,7 +6,6 @@ namespace ScriptModuleMinecraft {
 
 template <typename T0>
 class ScriptMessageReceiveEventSignalAsync {
-
 public:
     // prevent constructor by default
     ScriptMessageReceiveEventSignalAsync& operator=(ScriptMessageReceiveEventSignalAsync const&) = delete;

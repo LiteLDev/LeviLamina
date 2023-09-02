@@ -23,7 +23,6 @@ public:
 
     // ImguiProfiler inner types define
     struct Record {
-
     public:
         // prevent constructor by default
         Record& operator=(Record const&) = delete;
@@ -41,7 +40,6 @@ public:
 
         // RecordGroup inner types define
         struct FullStackRecord {
-
         public:
             // prevent constructor by default
             FullStackRecord& operator=(FullStackRecord const&) = delete;
@@ -50,19 +48,16 @@ public:
 
         public:
             // NOLINTBEGIN
-            /**
-             * @symbol ??0FullStackRecord\@RecordGroup\@ImguiProfiler\@\@QEAA\@$$QEAU012\@\@Z
-             */
+            // symbol: ??0FullStackRecord@RecordGroup@ImguiProfiler@@QEAA@$$QEAU012@@Z
             MCAPI FullStackRecord(struct ImguiProfiler::RecordGroup::FullStackRecord&&);
-            /**
-             * @symbol ??1FullStackRecord\@RecordGroup\@ImguiProfiler\@\@QEAA\@XZ
-             */
+
+            // symbol: ??1FullStackRecord@RecordGroup@ImguiProfiler@@QEAA@XZ
             MCAPI ~FullStackRecord();
+
             // NOLINTEND
         };
 
         struct Record {
-
         public:
             // prevent constructor by default
             Record& operator=(Record const&) = delete;
@@ -70,18 +65,15 @@ public:
 
         public:
             // NOLINTBEGIN
-            /**
-             * @symbol ??0Record\@RecordGroup\@ImguiProfiler\@\@QEAA\@AEBU012\@\@Z
-             */
+            // symbol: ??0Record@RecordGroup@ImguiProfiler@@QEAA@AEBU012@@Z
             MCAPI Record(struct ImguiProfiler::RecordGroup::Record const&);
-            /**
-             * @symbol ??4Record\@RecordGroup\@ImguiProfiler\@\@QEAAAEAU012\@$$QEAU012\@\@Z
-             */
+
+            // symbol: ??4Record@RecordGroup@ImguiProfiler@@QEAAAEAU012@$$QEAU012@@Z
             MCAPI struct ImguiProfiler::RecordGroup::Record& operator=(struct ImguiProfiler::RecordGroup::Record&&);
-            /**
-             * @symbol ??1Record\@RecordGroup\@ImguiProfiler\@\@QEAA\@XZ
-             */
+
+            // symbol: ??1Record@RecordGroup@ImguiProfiler@@QEAA@XZ
             MCAPI ~Record();
+
             // NOLINTEND
         };
 
@@ -93,25 +85,22 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol
-         * ??ARecordGroup\@ImguiProfiler\@\@QEAAAEAUFullStackRecord\@01\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-         */
+        // symbol:
+        // ??ARecordGroup@ImguiProfiler@@QEAAAEAUFullStackRecord@01@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
         MCAPI struct ImguiProfiler::RecordGroup::FullStackRecord& operator[](std::string const&);
+
         // NOLINTEND
 
         // private:
         // NOLINTBEGIN
-        /**
-         * @symbol ?isGreaterThan\@RecordGroup\@ImguiProfiler\@\@AEAA_NAEBUFullStackRecord\@12\@0\@Z
-         */
+        // symbol: ?isGreaterThan@RecordGroup@ImguiProfiler@@AEAA_NAEBUFullStackRecord@12@0@Z
         MCAPI bool
         isGreaterThan(struct ImguiProfiler::RecordGroup::FullStackRecord const&, struct ImguiProfiler::RecordGroup::FullStackRecord const&);
+
         // NOLINTEND
     };
 
     class Timer {
-
     public:
         // prevent constructor by default
         Timer& operator=(Timer const&) = delete;
@@ -120,7 +109,6 @@ public:
     };
 
     class ManualTimer : public ::ImguiProfiler::Timer {
-
     public:
         // prevent constructor by default
         ManualTimer& operator=(ManualTimer const&) = delete;
@@ -129,21 +117,16 @@ public:
 
     public:
         // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMGUIPROFILER_MANUALTIMER
-        /**
-         * @symbol __unk_destructor_-1
-         */
+        // symbol: ??1ManualTimer@ImguiProfiler@@UEAA@XZ
         MCVAPI ~ManualTimer();
-#endif
-        /**
-         * @symbol ?mark\@ManualTimer\@ImguiProfiler\@\@QEAAXXZ
-         */
+
+        // symbol: ?mark@ManualTimer@ImguiProfiler@@QEAAXXZ
         MCAPI void mark();
+
         // NOLINTEND
     };
 
     class ScopedTimer : public ::ImguiProfiler::Timer {
-
     public:
         // prevent constructor by default
         ScopedTimer& operator=(ScopedTimer const&) = delete;
@@ -152,16 +135,12 @@ public:
 
     public:
         // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMGUIPROFILER_SCOPEDTIMER
-        /**
-         * @symbol __unk_destructor_-1
-         */
+        // symbol: ??1ScopedTimer@ImguiProfiler@@UEAA@XZ
         MCVAPI ~ScopedTimer();
-#endif
-        /**
-         * @symbol ??0ScopedTimer\@ImguiProfiler\@\@QEAA\@PEBD0_N\@Z
-         */
+
+        // symbol: ??0ScopedTimer@ImguiProfiler@@QEAA@PEBD0_N@Z
         MCAPI ScopedTimer(char const*, char const*, bool);
+
         // NOLINTEND
     };
 
@@ -173,10 +152,29 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?getTimeAccumulator\@ImguiProfiler\@\@QEAA?AVTimeAccumulator\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0_N\@Z
-     */
+    // symbol:
+    // ?getTimeAccumulator@ImguiProfiler@@QEAA?AVTimeAccumulator@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
     MCAPI class TimeAccumulator getTimeAccumulator(std::string const&, std::string const&, bool);
+
+    // NOLINTEND
+
+private:
+    // NOLINTBEGIN
+    // symbol:
+    // ?sPendingRecords@ImguiProfiler@@0V?$vector@URecord@ImguiProfiler@@V?$allocator@URecord@ImguiProfiler@@@std@@@std@@A
+    MCAPI static std::vector<struct ImguiProfiler::Record> sPendingRecords;
+
+    // symbol: ?sRecordMutex@ImguiProfiler@@0Vmutex@std@@A
+    MCAPI static std::mutex sRecordMutex;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $sPendingRecords() { return sPendingRecords; }
+
+    inline auto& $sRecordMutex() { return sRecordMutex; }
+
     // NOLINTEND
 };

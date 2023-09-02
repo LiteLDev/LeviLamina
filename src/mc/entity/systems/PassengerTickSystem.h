@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class PassengerTickSystem {
-
 public:
     // prevent constructor by default
     PassengerTickSystem& operator=(PassengerTickSystem const&) = delete;
@@ -12,17 +11,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createMobPostPassengerTickSystem\@PassengerTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createMobPostPassengerTickSystem@PassengerTickSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createMobPostPassengerTickSystem();
-    /**
-     * @symbol ?createPlayerPostPassengerTickSystem\@PassengerTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+
+    // symbol: ?createPlayerPostPassengerTickSystem@PassengerTickSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createPlayerPostPassengerTickSystem();
-    /**
-     * @symbol ?createPlayerPrePassengerTickSystem\@PassengerTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+
+    // symbol: ?createPlayerPrePassengerTickSystem@PassengerTickSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createPlayerPrePassengerTickSystem();
+
     // NOLINTEND
 };

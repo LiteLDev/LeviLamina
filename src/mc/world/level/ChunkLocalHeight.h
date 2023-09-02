@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ChunkLocalHeight {
-
 public:
     short mVal = 0;
     explicit constexpr ChunkLocalHeight(short v) noexcept : mVal(v){};

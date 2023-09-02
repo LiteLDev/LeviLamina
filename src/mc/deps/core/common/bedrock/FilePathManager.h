@@ -16,7 +16,6 @@ namespace Core { class Path; }
 namespace Core {
 
 class FilePathManager : public ::Bedrock::EnableNonOwnerReferences {
-
 public:
     // prevent constructor by default
     FilePathManager& operator=(FilePathManager const&) = delete;
@@ -25,55 +24,42 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORE_FILEPATHMANAGER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1FilePathManager@Core@@UEAA@XZ
     MCVAPI ~FilePathManager();
-#endif
-    /**
-     * @symbol ??0FilePathManager\@Core\@\@QEAA\@AEBVPath\@1\@_N\@Z
-     */
+
+    // symbol: ??0FilePathManager@Core@@QEAA@AEBVPath@1@_N@Z
     MCAPI FilePathManager(class Core::Path const&, bool);
-    /**
-     * @symbol
-     * ?getResourcePacksPath\@FilePathManager\@Core\@\@QEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@XZ
-     */
+
+    // symbol:
+    // ?getResourcePacksPath@FilePathManager@Core@@QEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@XZ
     MCAPI class Core::PathBuffer<std::string> getResourcePacksPath() const;
-    /**
-     * @symbol
-     * ?getUserDataPath\@FilePathManager\@Core\@\@QEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@XZ
-     */
+
+    // symbol:
+    // ?getUserDataPath@FilePathManager@Core@@QEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@XZ
     MCAPI class Core::PathBuffer<std::string> getUserDataPath() const;
-    /**
-     * @symbol
-     * ?getWorldsPath\@FilePathManager\@Core\@\@QEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@XZ
-     */
+
+    // symbol:
+    // ?getWorldsPath@FilePathManager@Core@@QEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@XZ
     MCAPI class Core::PathBuffer<std::string> getWorldsPath() const;
-    /**
-     * @symbol ?ARCHIVE_DIR\@FilePathManager\@Core\@\@2V?$PathBuffer\@V?$StackString\@D$0EAA\@\@Core\@\@\@2\@B
-     */
+
+    // symbol: ?ARCHIVE_DIR@FilePathManager@Core@@2V?$PathBuffer@V?$StackString@D$0EAA@@Core@@@2@B
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const ARCHIVE_DIR;
-    /**
-     * @symbol ?HOME_DIR\@FilePathManager\@Core\@\@2V?$PathBuffer\@V?$StackString\@D$0EAA\@\@Core\@\@\@2\@B
-     */
+
+    // symbol: ?HOME_DIR@FilePathManager@Core@@2V?$PathBuffer@V?$StackString@D$0EAA@@Core@@@2@B
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const HOME_DIR;
-    /**
-     * @symbol ?PERSONA_TEST_DIR\@FilePathManager\@Core\@\@2V?$PathBuffer\@V?$StackString\@D$0EAA\@\@Core\@\@\@2\@B
-     */
+
+    // symbol: ?PERSONA_TEST_DIR@FilePathManager@Core@@2V?$PathBuffer@V?$StackString@D$0EAA@@Core@@@2@B
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const PERSONA_TEST_DIR;
-    /**
-     * @symbol ?REALM_WORLDS_DIR\@FilePathManager\@Core\@\@2V?$PathBuffer\@V?$StackString\@D$0EAA\@\@Core\@\@\@2\@B
-     */
+
+    // symbol: ?REALM_WORLDS_DIR@FilePathManager@Core@@2V?$PathBuffer@V?$StackString@D$0EAA@@Core@@@2@B
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const REALM_WORLDS_DIR;
-    /**
-     * @symbol ?RESOURCE_PACKS_DIR\@FilePathManager\@Core\@\@2V?$PathBuffer\@V?$StackString\@D$0EAA\@\@Core\@\@\@2\@B
-     */
+
+    // symbol: ?RESOURCE_PACKS_DIR@FilePathManager@Core@@2V?$PathBuffer@V?$StackString@D$0EAA@@Core@@@2@B
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const RESOURCE_PACKS_DIR;
-    /**
-     * @symbol ?WORLDS_DIR\@FilePathManager\@Core\@\@2V?$PathBuffer\@V?$StackString\@D$0EAA\@\@Core\@\@\@2\@B
-     */
+
+    // symbol: ?WORLDS_DIR@FilePathManager@Core@@2V?$PathBuffer@V?$StackString@D$0EAA@@Core@@@2@B
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const WORLDS_DIR;
+
     // NOLINTEND
 };
 

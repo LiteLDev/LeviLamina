@@ -13,7 +13,6 @@ class CompoundBlockVolumeItem;
 namespace ScriptModuleMinecraft {
 
 class ScriptCompoundBlockVolumeItem {
-
 public:
     // prevent constructor by default
     ScriptCompoundBlockVolumeItem& operator=(ScriptCompoundBlockVolumeItem const&) = delete;
@@ -22,11 +21,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?bindInterface\@ScriptCompoundBlockVolumeItem\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VCompoundBlockVolumeItem\@\@\@Scripting\@\@XZ
-     */
+    // symbol:
+    // ?bindInterface@ScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@VCompoundBlockVolumeItem@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<class CompoundBlockVolumeItem> bindInterface();
+
     // NOLINTEND
 };
 

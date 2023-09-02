@@ -10,7 +10,6 @@ class Random;
 namespace ValueProviders {
 
 struct UniformFloat {
-
 public:
     // prevent constructor by default
     UniformFloat& operator=(UniformFloat const&) = delete;
@@ -19,10 +18,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?generateNext\@UniformFloat\@ValueProviders\@\@QEBAMAEAVRandom\@\@\@Z
-     */
+    // symbol: ?generateNext@UniformFloat@ValueProviders@@QEBAMAEAVRandom@@@Z
     MCAPI float generateNext(class Random&) const;
+
     // NOLINTEND
 };
 

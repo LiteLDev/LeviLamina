@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ActorRuntimeID {
-
 public:
     uint64_t id;
 

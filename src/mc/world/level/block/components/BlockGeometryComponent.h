@@ -6,7 +6,6 @@
 #include "mc/world/level/block/utils/BlockComponentBase.h"
 
 struct BlockGeometryComponent : public ::BlockComponentBase {
-
 public:
     // prevent constructor by default
     BlockGeometryComponent& operator=(BlockGeometryComponent const&) = delete;
@@ -15,19 +14,14 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKGEOMETRYCOMPONENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1BlockGeometryComponent@@UEAA@XZ
     MCVAPI ~BlockGeometryComponent();
-#endif
-    /**
-     * @symbol ??0BlockGeometryComponent\@\@QEAA\@$$QEAU0\@\@Z
-     */
+
+    // symbol: ??0BlockGeometryComponent@@QEAA@$$QEAU0@@Z
     MCAPI BlockGeometryComponent(struct BlockGeometryComponent&&);
-    /**
-     * @symbol ??4BlockGeometryComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
+
+    // symbol: ??4BlockGeometryComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct BlockGeometryComponent& operator=(struct BlockGeometryComponent&&);
+
     // NOLINTEND
 };

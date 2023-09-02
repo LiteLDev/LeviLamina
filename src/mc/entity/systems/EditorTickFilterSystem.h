@@ -9,7 +9,6 @@
 #include "mc/world/components/FlagComponent.h"
 
 class EditorTickFilterSystem {
-
 public:
     // prevent constructor by default
     EditorTickFilterSystem& operator=(EditorTickFilterSystem const&) = delete;
@@ -18,25 +17,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_addPauseTickNeeded\@EditorTickFilterSystem\@\@SAXAEAVStrictEntityContext\@\@AEAVActorTickNeededComponent\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UEditorActorPauseTickNeededFlag\@\@\@\@\@\@\@Z
-     */
+    // symbol:
+    // ?_addPauseTickNeeded@EditorTickFilterSystem@@SAXAEAVStrictEntityContext@@AEAVActorTickNeededComponent@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UEditorActorPauseTickNeededFlag@@@@@@@Z
     MCAPI static void
     _addPauseTickNeeded(class StrictEntityContext&, class ActorTickNeededComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct EditorActorPauseTickNeededFlag>>&);
-    /**
-     * @symbol
-     * ?_tickAddPauseTickNeeded\@EditorTickFilterSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UEditorActorPausedFlag\@\@\@\@\@\@VActorTickNeededComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UEditorActorPauseTickNeededFlag\@\@\@\@\@\@\@Z
-     */
+
+    // symbol:
+    // ?_tickAddPauseTickNeeded@EditorTickFilterSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UEditorActorPausedFlag@@@@@@VActorTickNeededComponent@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UEditorActorPauseTickNeededFlag@@@@@@@Z
     MCAPI static void
         _tickAddPauseTickNeeded(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct EditorActorPausedFlag>>, class ActorTickNeededComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct EditorActorPauseTickNeededFlag>>);
-    /**
-     * @symbol ?createAddPauseTickNeeded\@EditorTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+
+    // symbol: ?createAddPauseTickNeeded@EditorTickFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createAddPauseTickNeeded();
-    /**
-     * @symbol ?createRemoveActorTickNeeded\@EditorTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+
+    // symbol: ?createRemoveActorTickNeeded@EditorTickFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createRemoveActorTickNeeded();
+
     // NOLINTEND
 };

@@ -8,7 +8,6 @@
 #include "mc/server/commands/standard/MessagingCommand.h"
 
 class TitleRawCommand : public ::MessagingCommand {
-
 public:
     // prevent constructor by default
     TitleRawCommand& operator=(TitleRawCommand const&) = delete;
@@ -17,30 +16,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 2
-     * @symbol ?execute\@TitleRawCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?execute@TitleRawCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol ?setup\@TitleRawCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
-     */
+
+    // symbol: ?setup@TitleRawCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry&);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_sendTitlePacketTextObject\@TitleRawCommand\@\@AEBA_NW4TitleType\@SetTitlePacket\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@AEBV?$CommandSelectorResults\@VPlayer\@\@\@\@\@Z
-     */
+    // symbol:
+    // ?_sendTitlePacketTextObject@TitleRawCommand@@AEBA_NW4TitleType@SetTitlePacket@@AEBVCommandOrigin@@AEAVCommandOutput@@AEBV?$CommandSelectorResults@VPlayer@@@@@Z
     MCAPI bool
-    _sendTitlePacketTextObject(enum class SetTitlePacket::TitleType, class CommandOrigin const&, class CommandOutput&, class CommandSelectorResults<class Player> const&)
+    _sendTitlePacketTextObject(::SetTitlePacket::TitleType, class CommandOrigin const&, class CommandOutput&, class CommandSelectorResults<class Player> const&)
         const;
+
     // NOLINTEND
 };

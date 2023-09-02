@@ -5,7 +5,6 @@
 namespace ComplexAliasBlockUtils {
 
 struct NewBlockAndSplitState {
-
 public:
     // prevent constructor by default
     NewBlockAndSplitState& operator=(NewBlockAndSplitState const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1NewBlockAndSplitState\@ComplexAliasBlockUtils\@\@QEAA\@XZ
-     */
+    // symbol: ??1NewBlockAndSplitState@ComplexAliasBlockUtils@@QEAA@XZ
     MCAPI ~NewBlockAndSplitState();
+
     // NOLINTEND
 };
 

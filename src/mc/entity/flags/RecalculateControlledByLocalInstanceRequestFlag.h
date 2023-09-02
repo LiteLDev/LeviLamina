@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct RecalculateControlledByLocalInstanceRequestFlag {
-
 public:
     // prevent constructor by default
     RecalculateControlledByLocalInstanceRequestFlag&

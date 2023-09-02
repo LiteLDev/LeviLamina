@@ -13,7 +13,6 @@ namespace Core { class Path; }
 namespace Core {
 
 class DiskAccessTracker {
-
 public:
     // prevent constructor by default
     DiskAccessTracker& operator=(DiskAccessTracker const&) = delete;
@@ -21,34 +20,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0DiskAccessTracker\@Core\@\@QEAA\@XZ
-     */
+    // symbol: ??0DiskAccessTracker@Core@@QEAA@XZ
     MCAPI DiskAccessTracker();
-    /**
-     * @symbol ?addIgnoredPath\@DiskAccessTracker\@Core\@\@QEAAXAEBVPath\@2\@\@Z
-     */
+
+    // symbol: ?addIgnoredPath@DiskAccessTracker@Core@@QEAAXAEBVPath@2@@Z
     MCAPI void addIgnoredPath(class Core::Path const&);
-    /**
-     * @symbol ?trackWriteAmount\@DiskAccessTracker\@Core\@\@QEAAXAEBVPath\@2\@_KW4WriteOperation\@2\@\@Z
-     */
-    MCAPI void trackWriteAmount(class Core::Path const&, uint64_t, enum class Core::WriteOperation);
-    /**
-     * @symbol ?trackWriteOperation\@DiskAccessTracker\@Core\@\@QEAAXAEBVPath\@2\@W4WriteOperation\@2\@\@Z
-     */
-    MCAPI void trackWriteOperation(class Core::Path const&, enum class Core::WriteOperation);
-    /**
-     * @symbol ?getDiskAccessTracker\@DiskAccessTracker\@Core\@\@SAAEAV12\@XZ
-     */
+
+    // symbol: ?trackWriteAmount@DiskAccessTracker@Core@@QEAAXAEBVPath@2@_KW4WriteOperation@2@@Z
+    MCAPI void trackWriteAmount(class Core::Path const&, uint64, ::Core::WriteOperation);
+
+    // symbol: ?trackWriteOperation@DiskAccessTracker@Core@@QEAAXAEBVPath@2@W4WriteOperation@2@@Z
+    MCAPI void trackWriteOperation(class Core::Path const&, ::Core::WriteOperation);
+
+    // symbol: ?getDiskAccessTracker@DiskAccessTracker@Core@@SAAEAV12@XZ
     MCAPI static class Core::DiskAccessTracker& getDiskAccessTracker();
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_addNewWriteOperation\@DiskAccessTracker\@Core\@\@AEAAX_KW4WriteOperation\@2\@AEBVPath\@2\@\@Z
-     */
-    MCAPI void _addNewWriteOperation(uint64_t, enum class Core::WriteOperation, class Core::Path const&);
+    // symbol: ?_addNewWriteOperation@DiskAccessTracker@Core@@AEAAX_KW4WriteOperation@2@AEBVPath@2@@Z
+    MCAPI void _addNewWriteOperation(uint64, ::Core::WriteOperation, class Core::Path const&);
+
     // NOLINTEND
 };
 

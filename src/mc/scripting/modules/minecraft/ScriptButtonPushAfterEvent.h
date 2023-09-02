@@ -8,7 +8,6 @@
 namespace ScriptModuleMinecraft {
 
 struct ScriptButtonPushAfterEvent {
-
 public:
     // prevent constructor by default
     ScriptButtonPushAfterEvent& operator=(ScriptButtonPushAfterEvent const&) = delete;
@@ -17,20 +16,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??4ScriptButtonPushAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-     */
+    // symbol: ??4ScriptButtonPushAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptButtonPushAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptButtonPushAfterEvent&&);
-    /**
-     * @symbol ??1ScriptButtonPushAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ScriptButtonPushAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptButtonPushAfterEvent();
-    /**
-     * @symbol
-     * ?bind\@ScriptButtonPushAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptButtonPushAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptButtonPushAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptButtonPushAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptButtonPushAfterEvent> bind();
+
     // NOLINTEND
 };
 

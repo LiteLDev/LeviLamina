@@ -17,7 +17,6 @@ namespace CodeBuilder { class IMessenger; }
 namespace CodeBuilder {
 
 class Manager : public ::CodeBuilder::IManager {
-
 public:
     // prevent constructor by default
     Manager& operator=(Manager const&) = delete;
@@ -26,28 +25,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?getAutomationClient\@Manager\@CodeBuilder\@\@UEBA?AV?$not_null\@V?$NonOwnerPointer\@VAutomationClient\@Automation\@\@\@Bedrock\@\@\@gsl\@\@XZ
-     */
+
+    // vIndex: 1, symbol:
+    // ?getAutomationClient@Manager@CodeBuilder@@UEBA?AV?$not_null@V?$NonOwnerPointer@VAutomationClient@Automation@@@Bedrock@@@gsl@@XZ
     virtual gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient>>
     getAutomationClient() const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?getEventing\@Manager\@CodeBuilder\@\@UEBA?AV?$not_null\@V?$NonOwnerPointer\@VIMessenger\@CodeBuilder\@\@\@Bedrock\@\@\@gsl\@\@XZ
-     */
+
+    // vIndex: 2, symbol:
+    // ?getEventing@Manager@CodeBuilder@@UEBA?AV?$not_null@V?$NonOwnerPointer@VIMessenger@CodeBuilder@@@Bedrock@@@gsl@@XZ
     virtual gsl::not_null<class Bedrock::NonOwnerPointer<class CodeBuilder::IMessenger>> getEventing() const;
-    /**
-     * @symbol ??0Manager\@CodeBuilder\@\@QEAA\@AEAVIMinecraftApp\@\@\@Z
-     */
+
+    // symbol: ??0Manager@CodeBuilder@@QEAA@AEAVIMinecraftApp@@@Z
     MCAPI Manager(class IMinecraftApp&);
+
     // NOLINTEND
 };
 

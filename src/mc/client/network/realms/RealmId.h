@@ -5,7 +5,6 @@
 namespace Realms {
 
 struct RealmId {
-
 public:
     // prevent constructor by default
     RealmId& operator=(RealmId const&) = delete;

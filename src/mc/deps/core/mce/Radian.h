@@ -10,7 +10,6 @@ namespace mce { struct Degree; }
 namespace mce {
 
 struct Radian {
-
 public:
     // prevent constructor by default
     Radian& operator=(Radian const&) = delete;
@@ -19,14 +18,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0Radian\@mce\@\@QEAA\@UDegree\@1\@\@Z
-     */
+    // symbol: ??0Radian@mce@@QEAA@UDegree@1@@Z
     MCAPI Radian(struct mce::Degree);
-    /**
-     * @symbol ?asFloat\@Radian\@mce\@\@QEBAAEBMXZ
-     */
+
+    // symbol: ?asFloat@Radian@mce@@QEBAAEBMXZ
     MCAPI float const& asFloat() const;
+
     // NOLINTEND
 };
 

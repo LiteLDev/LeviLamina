@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class BlockCollisionsSystem {
-
 public:
     // prevent constructor by default
     BlockCollisionsSystem& operator=(BlockCollisionsSystem const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createBlockCollisionsSystem\@BlockCollisionsSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createBlockCollisionsSystem@BlockCollisionsSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createBlockCollisionsSystem();
+
     // NOLINTEND
 };

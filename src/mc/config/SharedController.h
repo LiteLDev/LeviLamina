@@ -15,7 +15,6 @@ namespace PlayerCapabilities { struct ISharedController; }
 namespace PlayerCapabilities {
 
 class SharedController : public ::PlayerCapabilities::ISharedController {
-
 public:
     std::unique_ptr<struct PlayerCapabilities::ISharedData> mShared;
 
@@ -26,26 +25,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canChat\@SharedController\@PlayerCapabilities\@\@UEBA_NAEBUIPlayerData\@2\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?canChat@SharedController@PlayerCapabilities@@UEBA_NAEBUIPlayerData@2@@Z
     virtual bool canChat(struct PlayerCapabilities::IPlayerData const&) const;
-    /**
-     * @vftbl 2
-     * @symbol ?canTell\@SharedController\@PlayerCapabilities\@\@UEBA_NAEBUIPlayerData\@2\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?canTell@SharedController@PlayerCapabilities@@UEBA_NAEBUIPlayerData@2@@Z
     virtual bool canTell(struct PlayerCapabilities::IPlayerData const&) const;
-    /**
-     * @vftbl 3
-     * @symbol ?canOpenChat\@SharedController\@PlayerCapabilities\@\@UEBA_NAEBUIPlayerData\@2\@\@Z
-     */
+
+    // vIndex: 3, symbol: ?canOpenChat@SharedController@PlayerCapabilities@@UEBA_NAEBUIPlayerData@2@@Z
     virtual bool canOpenChat(struct PlayerCapabilities::IPlayerData const&) const;
+
     // NOLINTEND
 };
 

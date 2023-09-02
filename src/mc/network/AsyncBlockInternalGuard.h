@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class AsyncBlockInternalGuard {
-
 public:
     // prevent constructor by default
     AsyncBlockInternalGuard& operator=(AsyncBlockInternalGuard const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0AsyncBlockInternalGuard\@\@QEAA\@PEAUXAsyncBlock\@\@\@Z
-     */
+    // symbol: ??0AsyncBlockInternalGuard@@QEAA@PEAUXAsyncBlock@@@Z
     MCAPI AsyncBlockInternalGuard(struct XAsyncBlock*);
+
     // NOLINTEND
 };

@@ -5,7 +5,6 @@
 namespace Bedrock {
 
 struct CrashUploadStatus {
-
 public:
     // prevent constructor by default
     CrashUploadStatus& operator=(CrashUploadStatus const&) = delete;

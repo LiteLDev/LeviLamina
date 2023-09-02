@@ -11,7 +11,6 @@
 #include "mc/network/packet/Packet.h"
 
 class ResourcePackStackPacket : public ::Packet {
-
 public:
     std::vector<PackInstanceId> mAddOnIdsAndVersions;
     std::vector<PackInstanceId> mTexturePackIdsAndVersions;
@@ -25,48 +24,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getId\@ResourcePackStackPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
-     */
-    virtual enum class MinecraftPacketIds getId() const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?getName\@ResourcePackStackPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // vIndex: 1, symbol: ?getId@ResourcePackStackPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    virtual ::MinecraftPacketIds getId() const;
+
+    // vIndex: 2, symbol:
+    // ?getName@ResourcePackStackPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const;
-    /**
-     * @vftbl 3
-     * @symbol ?write\@ResourcePackStackPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 3, symbol: ?write@ResourcePackStackPacket@@UEBAXAEAVBinaryStream@@@Z
     virtual void write(class BinaryStream&) const;
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?_read\@ResourcePackStackPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?_read@ResourcePackStackPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKSTACKPACKET
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1ResourcePackStackPacket@@UEAA@XZ
     MCVAPI ~ResourcePackStackPacket();
-#endif
-    /**
-     * @symbol ??0ResourcePackStackPacket\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0ResourcePackStackPacket@@QEAA@XZ
     MCAPI ResourcePackStackPacket();
-    /**
-     * @symbol
-     * ??0ResourcePackStackPacket\@\@QEAA\@V?$vector\@UPackInstanceId\@\@V?$allocator\@UPackInstanceId\@\@\@std\@\@\@std\@\@0AEBVBaseGameVersion\@\@_NAEBVExperiments\@\@\@Z
-     */
+
+    // symbol:
+    // ??0ResourcePackStackPacket@@QEAA@V?$vector@UPackInstanceId@@V?$allocator@UPackInstanceId@@@std@@@std@@0AEBVBaseGameVersion@@_NAEBVExperiments@@@Z
     MCAPI
     ResourcePackStackPacket(std::vector<struct PackInstanceId>, std::vector<struct PackInstanceId>, class BaseGameVersion const&, bool, class Experiments const&);
+
     // NOLINTEND
 };

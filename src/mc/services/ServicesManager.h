@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ServicesManager {
-
 public:
     // prevent constructor by default
     ServicesManager& operator=(ServicesManager const&) = delete;

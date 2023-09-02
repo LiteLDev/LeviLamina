@@ -5,7 +5,6 @@
 namespace NetherNet {
 
 struct NetherNetTransportServerConfiguration {
-
 public:
     // prevent constructor by default
     NetherNetTransportServerConfiguration& operator=(NetherNetTransportServerConfiguration const&) = delete;

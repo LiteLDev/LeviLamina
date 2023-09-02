@@ -5,7 +5,6 @@
 namespace Scripting {
 
 class IDebuggerController {
-
 public:
     // prevent constructor by default
     IDebuggerController& operator=(IDebuggerController const&) = delete;

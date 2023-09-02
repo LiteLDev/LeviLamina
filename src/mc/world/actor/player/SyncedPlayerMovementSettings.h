@@ -4,7 +4,6 @@
 #include "mc/enums/ServerAuthMovementMode.h"
 
 struct SyncedPlayerMovementSettings {
-
 public:
     ServerAuthMovementMode AuthorityMode;
     int32_t                    mRewindHistorySize;
@@ -16,13 +15,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0SyncedPlayerMovementSettings\@\@QEAA\@XZ
-     */
+    // symbol: ??0SyncedPlayerMovementSettings@@QEAA@XZ
     MCAPI SyncedPlayerMovementSettings();
-    /**
-     * @symbol ??0SyncedPlayerMovementSettings\@\@QEAA\@AEBUPlayerMovementSettings\@\@\@Z
-     */
+
+    // symbol: ??0SyncedPlayerMovementSettings@@QEAA@AEBUPlayerMovementSettings@@@Z
     MCAPI SyncedPlayerMovementSettings(struct PlayerMovementSettings const&);
+
     // NOLINTEND
 };

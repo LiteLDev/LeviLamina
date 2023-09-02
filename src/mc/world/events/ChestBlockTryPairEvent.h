@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ChestBlockTryPairEvent {
-
 public:
     // prevent constructor by default
     ChestBlockTryPairEvent& operator=(ChestBlockTryPairEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ChestBlockTryPairEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1ChestBlockTryPairEvent@@QEAA@XZ
     MCAPI ~ChestBlockTryPairEvent();
+
     // NOLINTEND
 };

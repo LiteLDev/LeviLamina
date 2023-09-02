@@ -8,7 +8,6 @@
 namespace ScriptModuleMinecraftServerUI {
 
 class ScriptActionFormResponse {
-
 public:
     // prevent constructor by default
     ScriptActionFormResponse& operator=(ScriptActionFormResponse const&) = delete;
@@ -17,12 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?bind\@ScriptActionFormResponse\@ScriptModuleMinecraftServerUI\@\@SA?AV?$ClassBindingBuilder\@VScriptActionFormResponse\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@XZ
-     */
+    // symbol:
+    // ?bind@ScriptActionFormResponse@ScriptModuleMinecraftServerUI@@SA?AV?$ClassBindingBuilder@VScriptActionFormResponse@ScriptModuleMinecraftServerUI@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptActionFormResponse>
     bind();
+
     // NOLINTEND
 };
 

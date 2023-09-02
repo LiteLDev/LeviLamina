@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ExperimentStorage {
-
 public:
     std::vector<bool> mExperimentData;
     std::vector<bool> mDeprecatedData;
@@ -15,17 +14,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?isAnyToggleEnabled\@ExperimentStorage\@\@QEBA_NXZ
-     */
+    // symbol: ?isAnyToggleEnabled@ExperimentStorage@@QEBA_NXZ
     MCAPI bool isAnyToggleEnabled() const;
-    /**
-     * @symbol ??4ExperimentStorage\@\@QEAAAEAV0\@AEBV0\@\@Z
-     */
+
+    // symbol: ??4ExperimentStorage@@QEAAAEAV0@AEBV0@@Z
     MCAPI class ExperimentStorage& operator=(class ExperimentStorage const&);
-    /**
-     * @symbol ??1ExperimentStorage\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ExperimentStorage@@QEAA@XZ
     MCAPI ~ExperimentStorage();
+
     // NOLINTEND
 };

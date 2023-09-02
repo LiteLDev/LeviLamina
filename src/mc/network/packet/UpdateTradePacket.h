@@ -14,7 +14,6 @@
 #include "mc/world/containers/ContainerType.h"
 
 class UpdateTradePacket : public ::Packet {
-
 public:
     ContainerID   mContainerId;       // this+0x30
     ContainerType mType;              // this+0x31
@@ -33,58 +32,43 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getId\@UpdateTradePacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
-     */
-    virtual enum class MinecraftPacketIds getId() const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?getName\@UpdateTradePacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // vIndex: 1, symbol: ?getId@UpdateTradePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    virtual ::MinecraftPacketIds getId() const;
+
+    // vIndex: 2, symbol:
+    // ?getName@UpdateTradePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const;
-    /**
-     * @vftbl 3
-     * @symbol ?write\@UpdateTradePacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 3, symbol: ?write@UpdateTradePacket@@UEBAXAEAVBinaryStream@@@Z
     virtual void write(class BinaryStream&) const;
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?_read\@UpdateTradePacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?_read@UpdateTradePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATETRADEPACKET
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1UpdateTradePacket@@UEAA@XZ
     MCVAPI ~UpdateTradePacket();
-#endif
-    /**
-     * @symbol ??0UpdateTradePacket\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0UpdateTradePacket@@QEAA@XZ
     MCAPI UpdateTradePacket();
-    /**
-     * @symbol
-     * ??0UpdateTradePacket\@\@QEAA\@W4ContainerID\@\@W4ContainerType\@\@HAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAVCompoundTag\@\@AEBUActorUniqueID\@\@4H_N5\@Z
-     */
+
+    // symbol:
+    // ??0UpdateTradePacket@@QEAA@W4ContainerID@@W4ContainerType@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVCompoundTag@@AEBUActorUniqueID@@4H_N5@Z
     MCAPI UpdateTradePacket(
-        enum class ContainerID,
-        enum class ContainerType,
-        int32_t,
+        ::ContainerID,
+        ::ContainerType,
+        int,
         std::string const&,
         class CompoundTag&&,
         struct ActorUniqueID const&,
         struct ActorUniqueID const&,
-        int32_t,
+        int,
         bool,
         bool
     );
+
     // NOLINTEND
 };

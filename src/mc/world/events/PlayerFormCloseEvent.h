@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct PlayerFormCloseEvent {
-
 public:
     // prevent constructor by default
     PlayerFormCloseEvent& operator=(PlayerFormCloseEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1PlayerFormCloseEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1PlayerFormCloseEvent@@QEAA@XZ
     MCAPI ~PlayerFormCloseEvent();
+
     // NOLINTEND
 };

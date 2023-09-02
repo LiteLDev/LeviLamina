@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class PieceWeight {
-
 public:
     // prevent constructor by default
     PieceWeight& operator=(PieceWeight const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1PieceWeight\@\@QEAA\@XZ
-     */
+    // symbol: ??1PieceWeight@@QEAA@XZ
     MCAPI ~PieceWeight();
+
     // NOLINTEND
 };

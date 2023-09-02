@@ -7,7 +7,6 @@
 #include "mc/world/item/crafting/Recipe.h"
 
 class CraftingDataEntry {
-
 public:
     std::unique_ptr<Recipe>       mRecipe;     // this+0x0
     int32_t                           mItemData;   // this+0x8
@@ -18,21 +17,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?fillFromMultiRecipe\@CraftingDataEntry\@\@QEAAXAEBVMultiRecipe\@\@\@Z
-     */
+    // symbol: ?fillFromMultiRecipe@CraftingDataEntry@@QEAAXAEBVMultiRecipe@@@Z
     MCAPI void fillFromMultiRecipe(class MultiRecipe const&);
-    /**
-     * @symbol ?fillFromRecipe\@CraftingDataEntry\@\@QEAAXAEBVRecipe\@\@\@Z
-     */
+
+    // symbol: ?fillFromRecipe@CraftingDataEntry@@QEAAXAEBVRecipe@@@Z
     MCAPI void fillFromRecipe(class Recipe const&);
-    /**
-     * @symbol ?write\@CraftingDataEntry\@\@QEBAXAEAVBinaryStream\@\@\@Z
-     */
+
+    // symbol: ?write@CraftingDataEntry@@QEBAXAEAVBinaryStream@@@Z
     MCAPI void write(class BinaryStream&) const;
-    /**
-     * @symbol ??1CraftingDataEntry\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1CraftingDataEntry@@QEAA@XZ
     MCAPI ~CraftingDataEntry();
+
     // NOLINTEND
 };

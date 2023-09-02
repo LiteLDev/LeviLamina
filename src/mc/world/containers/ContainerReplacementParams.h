@@ -5,7 +5,6 @@
 namespace Util {
 
 struct ContainerReplacementParams {
-
 public:
     // prevent constructor by default
     ContainerReplacementParams& operator=(ContainerReplacementParams const&) = delete;

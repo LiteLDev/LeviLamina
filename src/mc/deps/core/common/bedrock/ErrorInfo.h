@@ -6,7 +6,6 @@ namespace Bedrock {
 
 template <typename E>
 struct ErrorInfo {
-
 public:
     ErrorInfo() = default;
 

@@ -15,11 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTLISTENER
-    /**
-     * @symbol ?getDeliveryMode\@GameEventListener\@\@UEBA?AW4DeliveryMode\@1\@XZ
-     */
-    MCVAPI enum class GameEventListener::DeliveryMode getDeliveryMode() const;
-#endif
+    // symbol: ?getDeliveryMode@GameEventListener@@UEBA?AW4DeliveryMode@1@XZ
+    MCVAPI ::GameEventListener::DeliveryMode getDeliveryMode() const;
+
     // NOLINTEND
 };

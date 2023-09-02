@@ -12,7 +12,6 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class SlimeAttackDefinition : public ::BaseGoalDefinition {
-
 public:
     // prevent constructor by default
     SlimeAttackDefinition& operator=(SlimeAttackDefinition const&) = delete;
@@ -20,24 +19,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @symbol ??0SlimeAttackDefinition\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0SlimeAttackDefinition@@QEAA@XZ
     MCAPI SlimeAttackDefinition();
-    /**
-     * @symbol ?initialize\@SlimeAttackDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVSlimeAttackGoal\@\@\@Z
-     */
+
+    // symbol: ?initialize@SlimeAttackDefinition@@QEBAXAEAVEntityContext@@AEAVSlimeAttackGoal@@@Z
     MCAPI void initialize(class EntityContext&, class SlimeAttackGoal&) const;
-    /**
-     * @symbol
-     * ?buildSchema\@SlimeAttackDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSlimeAttackDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
-     */
+
+    // symbol:
+    // ?buildSchema@SlimeAttackDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSlimeAttackDefinition@@@JsonUtil@@@3@@Z
     MCAPI static void
     buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeAttackDefinition>>&);
+
     // NOLINTEND
 };

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct PlayerFormResponseEvent {
-
 public:
     // prevent constructor by default
     PlayerFormResponseEvent& operator=(PlayerFormResponseEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1PlayerFormResponseEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1PlayerFormResponseEvent@@QEAA@XZ
     MCAPI ~PlayerFormResponseEvent();
+
     // NOLINTEND
 };

@@ -14,7 +14,6 @@ class Vec3;
 namespace ScriptModuleMinecraft {
 
 class ScriptLocation {
-
 public:
     // prevent constructor by default
     ScriptLocation& operator=(ScriptLocation const&) = delete;
@@ -23,16 +22,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?bind\@ScriptLocation\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VVec3\@\@\@Scripting\@\@XZ
-     */
+    // symbol: ?bind@ScriptLocation@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@VVec3@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<class Vec3> bind();
-    /**
-     * @symbol
-     * ?bind_V010\@ScriptLocation\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VVec3\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol: ?bind_V010@ScriptLocation@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VVec3@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class Vec3> bind_V010();
+
     // NOLINTEND
 };
 

@@ -4,7 +4,6 @@
 #include "mc/entity/EntityContext.h"
 
 class StackResultStorageEntity {
-
 public:
     std::optional<EntityContext> mContext;
 
@@ -25,25 +24,20 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0StackResultStorageEntity\@\@IEAA\@AEBVWeakStorageEntity\@\@\@Z
-     */
+    // symbol: ??0StackResultStorageEntity@@IEAA@AEBVWeakStorageEntity@@@Z
     MCAPI StackResultStorageEntity(class WeakStorageEntity const&);
-    /**
-     * @symbol ??0StackResultStorageEntity\@\@IEAA\@$$QEAV0\@\@Z
-     */
+
+    // symbol: ??0StackResultStorageEntity@@IEAA@$$QEAV0@@Z
     MCAPI StackResultStorageEntity(class StackResultStorageEntity&&);
-    /**
-     * @symbol ??0StackResultStorageEntity\@\@IEAA\@AEBVOwnerStorageEntity\@\@\@Z
-     */
+
+    // symbol: ??0StackResultStorageEntity@@IEAA@AEBVOwnerStorageEntity@@@Z
     MCAPI StackResultStorageEntity(class OwnerStorageEntity const&);
-    /**
-     * @symbol ?_getStackRef\@StackResultStorageEntity\@\@IEBAAEAVEntityContext\@\@XZ
-     */
+
+    // symbol: ?_getStackRef@StackResultStorageEntity@@IEBAAEAVEntityContext@@XZ
     MCAPI class EntityContext& _getStackRef() const;
-    /**
-     * @symbol ?_hasValue\@StackResultStorageEntity\@\@IEBA_NXZ
-     */
+
+    // symbol: ?_hasValue@StackResultStorageEntity@@IEBA_NXZ
     MCAPI bool _hasValue() const;
+
     // NOLINTEND
 };

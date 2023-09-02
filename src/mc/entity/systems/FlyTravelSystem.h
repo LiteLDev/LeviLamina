@@ -8,7 +8,6 @@
 #include "mc/world/components/FlagComponent.h"
 
 class FlyTravelSystem {
-
 public:
     // prevent constructor by default
     FlyTravelSystem& operator=(FlyTravelSystem const&) = delete;
@@ -17,14 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createFlyTravelSystem\@FlyTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createFlyTravelSystem@FlyTravelSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createFlyTravelSystem();
-    /**
-     * @symbol
-     * ?tickFlyTravelSystem\@FlyTravelSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@UMobTravelComponent\@\@\@\@$$CBUAbilitiesComponent\@\@$$CBUSynchedActorDataComponent\@\@UFlySpeedComponent\@\@\@\@\@Z
-     */
+
+    // symbol:
+    // ?tickFlyTravelSystem@FlyTravelSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UPlayerComponentFlag@@@@UMobTravelComponent@@@@$$CBUAbilitiesComponent@@$$CBUSynchedActorDataComponent@@UFlySpeedComponent@@@@@Z
     MCAPI static void
         tickFlyTravelSystem(class ViewT<
                             class StrictEntityContext,
@@ -33,5 +29,6 @@ public:
                             struct AbilitiesComponent const,
                             struct SynchedActorDataComponent const,
                             struct FlySpeedComponent>);
+
     // NOLINTEND
 };

@@ -8,7 +8,6 @@
 namespace ScriptModuleMinecraft {
 
 class ScriptMinecraftBlockProperties {
-
 public:
     // prevent constructor by default
     ScriptMinecraftBlockProperties& operator=(ScriptMinecraftBlockProperties const&) = delete;
@@ -17,12 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?bind\@ScriptMinecraftBlockProperties\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMinecraftBlockProperties\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+    // symbol:
+    // ?bind@ScriptMinecraftBlockProperties@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptMinecraftBlockProperties@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMinecraftBlockProperties>
     bind();
+
     // NOLINTEND
 };
 

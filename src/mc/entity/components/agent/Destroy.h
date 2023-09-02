@@ -5,7 +5,6 @@
 namespace AgentComponents {
 
 class Destroy {
-
 public:
     // prevent constructor by default
     Destroy& operator=(Destroy const&) = delete;

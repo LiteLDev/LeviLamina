@@ -8,7 +8,6 @@
 #include "mc/world/components/FlagComponent.h"
 
 class ShulkerPostAiStepSystem {
-
 public:
     // prevent constructor by default
     ShulkerPostAiStepSystem& operator=(ShulkerPostAiStepSystem const&) = delete;
@@ -17,14 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createSystem\@ShulkerPostAiStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createSystem@ShulkerPostAiStepSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
-    /**
-     * @symbol
-     * ?tick\@ShulkerPostAiStepSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UShulkerFlag\@\@\@\@\@\@UActorRotationComponent\@\@UMobBodyRotationComponent\@\@UStateVectorComponent\@\@\@\@\@Z
-     */
+
+    // symbol:
+    // ?tick@ShulkerPostAiStepSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UShulkerFlag@@@@@@UActorRotationComponent@@UMobBodyRotationComponent@@UStateVectorComponent@@@@@Z
     MCAPI static void tick(class ViewT<
                            class StrictEntityContext,
                            class EntityRegistryBase,
@@ -34,15 +30,15 @@ public:
                            struct ActorRotationComponent,
                            struct MobBodyRotationComponent,
                            struct StateVectorComponent>);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_doShulkerPostAiStepSystem\@ShulkerPostAiStepSystem\@\@CAXAEBVStrictEntityContext\@\@AEAUActorRotationComponent\@\@AEAUMobBodyRotationComponent\@\@AEAUStateVectorComponent\@\@\@Z
-     */
+    // symbol:
+    // ?_doShulkerPostAiStepSystem@ShulkerPostAiStepSystem@@CAXAEBVStrictEntityContext@@AEAUActorRotationComponent@@AEAUMobBodyRotationComponent@@AEAUStateVectorComponent@@@Z
     MCAPI static void
     _doShulkerPostAiStepSystem(class StrictEntityContext const&, struct ActorRotationComponent&, struct MobBodyRotationComponent&, struct StateVectorComponent&);
+
     // NOLINTEND
 };

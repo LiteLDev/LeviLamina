@@ -5,7 +5,6 @@
 namespace Bedrock::JSONObject {
 
 class DocumentOptions {
-
 public:
     // prevent constructor by default
     DocumentOptions& operator=(DocumentOptions const&) = delete;

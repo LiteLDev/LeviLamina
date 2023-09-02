@@ -7,7 +7,6 @@
 #include "mc/server/commands/ServerCommand.h"
 
 class MessagingCommand : public ::ServerCommand {
-
 public:
     // prevent constructor by default
     MessagingCommand& operator=(MessagingCommand const&) = delete;
@@ -16,50 +15,37 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?collectOptionalArguments\@Command\@\@MEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?collectOptionalArguments@Command@@MEAA_NXZ
     virtual bool collectOptionalArguments();
-    /**
-     * @vftbl 2
-     * @symbol ?execute\@TakePictureCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?execute@TakePictureCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MESSAGINGCOMMAND
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1MessagingCommand@@UEAA@XZ
     MCVAPI ~MessagingCommand();
-#endif
+
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0MessagingCommand\@\@IEAA\@_N0\@Z
-     */
+    // symbol: ??0MessagingCommand@@IEAA@_N0@Z
     MCAPI MessagingCommand(bool, bool);
-    /**
-     * @symbol ?checkChatPermissions\@MessagingCommand\@\@IEBA_NAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // symbol: ?checkChatPermissions@MessagingCommand@@IEBA_NAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     MCAPI bool checkChatPermissions(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol
-     * ?checkMutedAndSendToastIfMuted\@MessagingCommand\@\@KAXAEBUCommandOriginIdentity\@\@AEBVLevel\@\@AEBV?$vector\@W4TextFilteringEvent\@Safety\@\@V?$allocator\@W4TextFilteringEvent\@Safety\@\@\@std\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?checkMutedAndSendToastIfMuted@MessagingCommand@@KAXAEBUCommandOriginIdentity@@AEBVLevel@@AEBV?$vector@W4TextFilteringEvent@Safety@@V?$allocator@W4TextFilteringEvent@Safety@@@std@@@std@@@Z
     MCAPI static void
-    checkMutedAndSendToastIfMuted(struct CommandOriginIdentity const&, class Level const&, std::vector<enum class Safety::TextFilteringEvent> const&);
-    /**
-     * @symbol
-     * ?checkMutedAndSendToastIfMuted\@MessagingCommand\@\@KAXAEBVPlayer\@\@AEBV?$vector\@W4TextFilteringEvent\@Safety\@\@V?$allocator\@W4TextFilteringEvent\@Safety\@\@\@std\@\@\@std\@\@\@Z
-     */
+    checkMutedAndSendToastIfMuted(struct CommandOriginIdentity const&, class Level const&, std::vector<::Safety::TextFilteringEvent> const&);
+
+    // symbol:
+    // ?checkMutedAndSendToastIfMuted@MessagingCommand@@KAXAEBVPlayer@@AEBV?$vector@W4TextFilteringEvent@Safety@@V?$allocator@W4TextFilteringEvent@Safety@@@std@@@std@@@Z
     MCAPI static void
-    checkMutedAndSendToastIfMuted(class Player const&, std::vector<enum class Safety::TextFilteringEvent> const&);
+    checkMutedAndSendToastIfMuted(class Player const&, std::vector<::Safety::TextFilteringEvent> const&);
+
     // NOLINTEND
 };

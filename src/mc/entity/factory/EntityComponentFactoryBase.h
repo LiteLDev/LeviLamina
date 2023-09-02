@@ -11,7 +11,6 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 // clang-format on
 
 class EntityComponentFactoryBase : public ::Bedrock::EnableNonOwnerReferences {
-
 public:
     // prevent constructor by default
     EntityComponentFactoryBase& operator=(EntityComponentFactoryBase const&) = delete;
@@ -20,22 +19,17 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCOMPONENTFACTORYBASE
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1EntityComponentFactoryBase@@MEAA@XZ
     MCVAPI ~EntityComponentFactoryBase();
-#endif
-    /**
-     * @symbol
-     * ?addComponents\@EntityComponentFactoryBase\@\@QEBAXAEAVEntityRegistry\@\@AEAVEntityContext\@\@AEBVDefinitionInstanceGroup\@\@\@Z
-     */
+
+    // symbol:
+    // ?addComponents@EntityComponentFactoryBase@@QEBAXAEAVEntityRegistry@@AEAVEntityContext@@AEBVDefinitionInstanceGroup@@@Z
     MCAPI void addComponents(class EntityRegistry&, class EntityContext&, class DefinitionInstanceGroup const&) const;
-    /**
-     * @symbol
-     * ?removeComponents\@EntityComponentFactoryBase\@\@QEBAXAEAVEntityRegistry\@\@AEAVEntityContext\@\@AEBVDefinitionInstanceGroup\@\@\@Z
-     */
+
+    // symbol:
+    // ?removeComponents@EntityComponentFactoryBase@@QEBAXAEAVEntityRegistry@@AEAVEntityContext@@AEBVDefinitionInstanceGroup@@@Z
     MCAPI void
     removeComponents(class EntityRegistry&, class EntityContext&, class DefinitionInstanceGroup const&) const;
+
     // NOLINTEND
 };

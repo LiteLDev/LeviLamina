@@ -6,7 +6,6 @@
 namespace Json {
 
 class ValueConstIterator : public ValueIteratorBase {
-
 };
 
 }; // namespace Json

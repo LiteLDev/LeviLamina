@@ -10,7 +10,6 @@ class Biome;
 namespace OperationNodeFilters {
 
 class RareBiomeSpot {
-
 public:
     // prevent constructor by default
     RareBiomeSpot& operator=(RareBiomeSpot const&) = delete;
@@ -19,10 +18,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0RareBiomeSpot\@OperationNodeFilters\@\@QEAA\@IAEAVBiome\@\@0\@Z
-     */
-    MCAPI RareBiomeSpot(uint32_t, class Biome&, class Biome&);
+    // symbol: ??0RareBiomeSpot@OperationNodeFilters@@QEAA@IAEAVBiome@@0@Z
+    MCAPI RareBiomeSpot(uint, class Biome&, class Biome&);
+
     // NOLINTEND
 };
 

@@ -5,7 +5,6 @@
 namespace moodycamel {
 
 struct ConcurrentQueueDefaultTraits {
-
 public:
     // prevent constructor by default
     ConcurrentQueueDefaultTraits& operator=(ConcurrentQueueDefaultTraits const&) = delete;

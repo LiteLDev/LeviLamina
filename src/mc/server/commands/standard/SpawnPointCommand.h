@@ -6,7 +6,6 @@
 #include "mc/world/level/Command.h"
 
 class SpawnPointCommand : public ::Command {
-
 public:
     // prevent constructor by default
     SpawnPointCommand& operator=(SpawnPointCommand const&) = delete;
@@ -15,19 +14,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 2
-     * @symbol ?execute\@SpawnPointCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?execute@SpawnPointCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol ?setup\@SpawnPointCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
-     */
+
+    // symbol: ?setup@SpawnPointCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry&);
+
     // NOLINTEND
 };

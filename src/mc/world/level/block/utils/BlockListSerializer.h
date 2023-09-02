@@ -8,7 +8,6 @@ namespace Json { class Value; }
 // clang-format on
 
 class BlockListSerializer {
-
 public:
     // prevent constructor by default
     BlockListSerializer& operator=(BlockListSerializer const&) = delete;
@@ -17,19 +16,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?loadJSON\@BlockListSerializer\@\@SAXVValue\@Json\@\@AEBVSemVersion\@\@AEAVBlockDescriptor\@\@\@Z
-     */
+    // symbol: ?loadJSON@BlockListSerializer@@SAXVValue@Json@@AEBVSemVersion@@AEAVBlockDescriptor@@@Z
     MCAPI static void loadJSON(class Json::Value, class SemVersion const&, class BlockDescriptor&);
-    /**
-     * @symbol
-     * ?loadJSON\@BlockListSerializer\@\@SAXVValue\@Json\@\@AEBVSemVersion\@\@AEAV?$vector\@VBlockDescriptor\@\@V?$allocator\@VBlockDescriptor\@\@\@std\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?loadJSON@BlockListSerializer@@SAXVValue@Json@@AEBVSemVersion@@AEAV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@@Z
     MCAPI static void loadJSON(class Json::Value, class SemVersion const&, std::vector<class BlockDescriptor>&);
-    /**
-     * @symbol
-     * ?saveJSON\@BlockListSerializer\@\@SAXAEBV?$vector\@VBlockDescriptor\@\@V?$allocator\@VBlockDescriptor\@\@\@std\@\@\@std\@\@AEAVValue\@Json\@\@\@Z
-     */
+
+    // symbol:
+    // ?saveJSON@BlockListSerializer@@SAXAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@AEAVValue@Json@@@Z
     MCAPI static void saveJSON(std::vector<class BlockDescriptor> const&, class Json::Value&);
+
     // NOLINTEND
 };

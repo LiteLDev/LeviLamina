@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ScriptCommandMessageEvent {
-
 public:
     // prevent constructor by default
     ScriptCommandMessageEvent& operator=(ScriptCommandMessageEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ScriptCommandMessageEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1ScriptCommandMessageEvent@@QEAA@XZ
     MCAPI ~ScriptCommandMessageEvent();
+
     // NOLINTEND
 };

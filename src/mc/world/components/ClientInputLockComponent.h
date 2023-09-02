@@ -7,7 +7,6 @@
 #include "mc/enums/ClientInputLockType.h"
 
 struct ClientInputLockComponent {
-
 public:
     // prevent constructor by default
     ClientInputLockComponent& operator=(ClientInputLockComponent const&) = delete;
@@ -16,25 +15,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?hasAnyLock\@ClientInputLockComponent\@\@QEBA_NXZ
-     */
+    // symbol: ?hasAnyLock@ClientInputLockComponent@@QEBA_NXZ
     MCAPI bool hasAnyLock() const;
-    /**
-     * @symbol ?hasLockCategory\@ClientInputLockComponent\@\@QEBA_NW4ClientInputLockCategory\@\@\@Z
-     */
-    MCAPI bool hasLockCategory(enum class ClientInputLockCategory) const;
-    /**
-     * @symbol ?hasLockType\@ClientInputLockComponent\@\@QEBA_NW4ClientInputLockType\@\@\@Z
-     */
-    MCAPI bool hasLockType(enum class ClientInputLockType) const;
-    /**
-     * @symbol ?serialize\@ClientInputLockComponent\@\@QEBAIXZ
-     */
-    MCAPI uint32_t serialize() const;
-    /**
-     * @symbol ?setLockCategory\@ClientInputLockComponent\@\@QEAAXW4ClientInputLockCategory\@\@_N\@Z
-     */
-    MCAPI void setLockCategory(enum class ClientInputLockCategory, bool);
+
+    // symbol: ?hasLockCategory@ClientInputLockComponent@@QEBA_NW4ClientInputLockCategory@@@Z
+    MCAPI bool hasLockCategory(::ClientInputLockCategory) const;
+
+    // symbol: ?hasLockType@ClientInputLockComponent@@QEBA_NW4ClientInputLockType@@@Z
+    MCAPI bool hasLockType(::ClientInputLockType) const;
+
+    // symbol: ?serialize@ClientInputLockComponent@@QEBAIXZ
+    MCAPI uint serialize() const;
+
+    // symbol: ?setLockCategory@ClientInputLockComponent@@QEAAXW4ClientInputLockCategory@@_N@Z
+    MCAPI void setLockCategory(::ClientInputLockCategory, bool);
+
     // NOLINTEND
 };

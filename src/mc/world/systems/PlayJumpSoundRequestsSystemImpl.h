@@ -7,10 +7,8 @@
 
 namespace PlayJumpSoundRequestsSystemImpl {
 // NOLINTBEGIN
-/**
- * @symbol
- * ?doPlayJumpSoundRequestsSystem\@PlayJumpSoundRequestsSystemImpl\@\@YAXAEBVStrictEntityContext\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UGetAttachPosRequestComponent\@\@\@\@\@Z
- */
+// symbol:
+// ?doPlayJumpSoundRequestsSystem@PlayJumpSoundRequestsSystemImpl@@YAXAEBVStrictEntityContext@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UGetAttachPosRequestComponent@@@@@Z
 MCAPI void
 doPlayJumpSoundRequestsSystem(class StrictEntityContext const&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct GetAttachPosRequestComponent>);
 // NOLINTEND

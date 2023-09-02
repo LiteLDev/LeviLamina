@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class NetworkPacketEventListener {
-
 public:
     // prevent constructor by default
     NetworkPacketEventListener& operator=(NetworkPacketEventListener const&) = delete;

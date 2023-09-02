@@ -4,9 +4,7 @@
 
 namespace VanillaBuiltInEntities {
 // NOLINTBEGIN
-/**
- * @symbol ?registerMappings\@VanillaBuiltInEntities\@\@YAXAEBVBaseGameVersion\@\@AEBVExperiments\@\@\@Z
- */
+// symbol: ?registerMappings@VanillaBuiltInEntities@@YAXAEBVBaseGameVersion@@AEBVExperiments@@@Z
 MCAPI void registerMappings(class BaseGameVersion const&, class Experiments const&);
 // NOLINTEND
 

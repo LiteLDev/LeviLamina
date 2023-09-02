@@ -5,7 +5,6 @@
 
 
 struct MaterialReducerDataEntry {
-
 public:
     int32_t                                     fromItemKey;        // this+0x0
     std::vector<MaterialReducerEntryOutput> toItemIdsAndCounts; // this+0x8
@@ -17,9 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1MaterialReducerDataEntry\@\@QEAA\@XZ
-     */
+    // symbol: ??1MaterialReducerDataEntry@@QEAA@XZ
     MCAPI ~MaterialReducerDataEntry();
+
     // NOLINTEND
 };

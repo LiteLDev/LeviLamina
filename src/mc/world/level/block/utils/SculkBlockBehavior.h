@@ -6,7 +6,6 @@
 #include "mc/world/level/block/SculkBehavior.h"
 
 class SculkBlockBehavior : public ::SculkBehavior {
-
 public:
     // prevent constructor by default
     SculkBlockBehavior& operator=(SculkBlockBehavior const&) = delete;
@@ -15,59 +14,47 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol ?updateDecayDelay\@SculkBlockBehavior\@\@UEBAHH\@Z
-     */
-    virtual int32_t updateDecayDelay(int32_t) const;
-    /**
-     * @vftbl 1
-     * @symbol ?updateFacingData\@SculkBlockBehavior\@\@UEBAHHAEBVBlock\@\@\@Z
-     */
-    virtual int32_t updateFacingData(int32_t, class Block const&) const;
-    /**
-     * @vftbl 2
-     * @symbol ?canChangeBlockOnSpread\@SculkBlockBehavior\@\@UEBA_NXZ
-     */
+    // vIndex: 0, symbol: ?updateDecayDelay@SculkBlockBehavior@@UEBAHH@Z
+    virtual int updateDecayDelay(int) const;
+
+    // vIndex: 1, symbol: ?updateFacingData@SculkBlockBehavior@@UEBAHHAEBVBlock@@@Z
+    virtual int updateFacingData(int, class Block const&) const;
+
+    // vIndex: 2, symbol: ?canChangeBlockOnSpread@SculkBlockBehavior@@UEBA_NXZ
     virtual bool canChangeBlockOnSpread() const;
-    /**
-     * @vftbl 3
-     * @symbol
-     * ?attemptSpreadVeins\@SculkBlockBehavior\@\@UEBA_NAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEBVBlock\@\@HAEAVSculkSpreader\@\@\@Z
-     */
+
+    // vIndex: 3, symbol:
+    // ?attemptSpreadVeins@SculkBlockBehavior@@UEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@HAEAVSculkSpreader@@@Z
     virtual bool
-    attemptSpreadVeins(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&, int32_t, class SculkSpreader&)
+    attemptSpreadVeins(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&, int, class SculkSpreader&)
         const;
-    /**
-     * @vftbl 4
-     * @symbol
-     * ?attemptUseCharge\@SculkBlockBehavior\@\@UEBAHAEAVIBlockWorldGenAPI\@\@PEAVBlockSource\@\@AEBVBlockPos\@\@2HHAEAVRandom\@\@AEAVSculkSpreader\@\@_N\@Z
-     */
-    virtual int32_t attemptUseCharge(
+
+    // vIndex: 4, symbol:
+    // ?attemptUseCharge@SculkBlockBehavior@@UEBAHAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@2HHAEAVRandom@@AEAVSculkSpreader@@_N@Z
+    virtual int attemptUseCharge(
         class IBlockWorldGenAPI&,
         class BlockSource*,
         class BlockPos const&,
         class BlockPos const&,
-        int32_t,
-        int32_t,
+        int,
+        int,
         class Random&,
         class SculkSpreader&,
         bool
     ) const;
-    /**
-     * @vftbl 5
-     * @symbol ?onDischarged\@SculkBlockBehavior\@\@UEBAXAEAVIBlockWorldGenAPI\@\@PEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
+
+    // vIndex: 5, symbol:
+    // ?onDischarged@SculkBlockBehavior@@UEBAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void onDischarged(class IBlockWorldGenAPI&, class BlockSource*, class BlockPos const&) const;
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_placeGrowthAt\@SculkBlockBehavior\@\@CAXAEAVIBlockWorldGenAPI\@\@PEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVSculkSpreader\@\@\@Z
-     */
+    // symbol:
+    // ?_placeGrowthAt@SculkBlockBehavior@@CAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@AEAVSculkSpreader@@@Z
     MCAPI static void
     _placeGrowthAt(class IBlockWorldGenAPI&, class BlockSource*, class BlockPos const&, class Random&, class SculkSpreader&);
+
     // NOLINTEND
 };

@@ -4,45 +4,36 @@
 
 namespace VanillaBlockTypeGroups {
 // NOLINTBEGIN
-/**
- * @symbol
- * ?CarpetBlockIds\@VanillaBlockTypeGroups\@\@3V?$vector\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@\@2\@\@std\@\@B
- */
+// symbol:
+// ?CarpetBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
 MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const CarpetBlockIds;
-/**
- * @symbol
- * ?ConcreteBlockIds\@VanillaBlockTypeGroups\@\@3V?$vector\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@\@2\@\@std\@\@B
- */
+
+// symbol:
+// ?ConcreteBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
 MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const ConcreteBlockIds;
-/**
- * @symbol
- * ?CoralIds\@VanillaBlockTypeGroups\@\@3V?$vector\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@\@2\@\@std\@\@B
- */
+
+// symbol:
+// ?CoralIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
 MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const CoralIds;
-/**
- * @symbol
- * ?LogBlockIds\@VanillaBlockTypeGroups\@\@3V?$vector\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@\@2\@\@std\@\@B
- */
+
+// symbol:
+// ?LogBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
 MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const LogBlockIds;
-/**
- * @symbol
- * ?OldLogBlockIds\@VanillaBlockTypeGroups\@\@3V?$vector\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@\@2\@\@std\@\@B
- */
+
+// symbol:
+// ?OldLogBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
 MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const OldLogBlockIds;
-/**
- * @symbol
- * ?RemovedBlockIds\@VanillaBlockTypeGroups\@\@3V?$vector\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@\@2\@\@std\@\@B
- */
+
+// symbol:
+// ?RemovedBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
 MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const RemovedBlockIds;
-/**
- * @symbol
- * ?ShulkerBoxIds\@VanillaBlockTypeGroups\@\@3V?$vector\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@\@2\@\@std\@\@B
- */
+
+// symbol:
+// ?ShulkerBoxIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
 MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const ShulkerBoxIds;
-/**
- * @symbol
- * ?WoodFenceBlockIds\@VanillaBlockTypeGroups\@\@3V?$vector\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@\@2\@\@std\@\@B
- */
+
+// symbol:
+// ?WoodFenceBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
 MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const WoodFenceBlockIds;
 // NOLINTEND
 

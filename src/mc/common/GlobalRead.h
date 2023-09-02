@@ -4,7 +4,6 @@
 
 template <typename... T0>
 struct GlobalRead {
-
 public:
     // prevent constructor by default
     GlobalRead& operator=(GlobalRead const&) = delete;

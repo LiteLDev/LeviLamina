@@ -5,7 +5,6 @@
 namespace NetherNet {
 
 struct NetworkID {
-
 public:
     uint64_t value;
 };

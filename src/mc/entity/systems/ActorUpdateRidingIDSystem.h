@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ActorUpdateRidingIDSystem {
-
 public:
     // prevent constructor by default
     ActorUpdateRidingIDSystem& operator=(ActorUpdateRidingIDSystem const&) = delete;
@@ -12,17 +11,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createClearPrevRidingIDSystem\@ActorUpdateRidingIDSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createClearPrevRidingIDSystem@ActorUpdateRidingIDSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createClearPrevRidingIDSystem();
-    /**
-     * @symbol ?createClearRidingIDSystem\@ActorUpdateRidingIDSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+
+    // symbol: ?createClearRidingIDSystem@ActorUpdateRidingIDSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createClearRidingIDSystem();
-    /**
-     * @symbol ?createUpdatePrevRidingIDSystem\@ActorUpdateRidingIDSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+
+    // symbol: ?createUpdatePrevRidingIDSystem@ActorUpdateRidingIDSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createUpdatePrevRidingIDSystem();
+
     // NOLINTEND
 };

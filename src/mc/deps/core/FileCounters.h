@@ -5,7 +5,6 @@
 namespace Core::Profile {
 
 struct FileCounters {
-
 public:
     // prevent constructor by default
     FileCounters& operator=(FileCounters const&) = delete;

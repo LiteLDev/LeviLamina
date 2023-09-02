@@ -6,7 +6,6 @@
 #include "mc/world/level/block/utils/BlockComponentBase.h"
 
 struct BlockPlacementFilterComponent : public ::BlockComponentBase {
-
 public:
     // prevent constructor by default
     BlockPlacementFilterComponent& operator=(BlockPlacementFilterComponent const&) = delete;
@@ -15,17 +14,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?mayPlace\@BlockPlacementFilterComponent\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
-     */
-    MCAPI bool mayPlace(class BlockSource&, class BlockPos const&, uint8_t) const;
-    /**
-     * @symbol ?mayPlace\@BlockPlacementFilterComponent\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
+    // symbol: ?mayPlace@BlockPlacementFilterComponent@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
+    MCAPI bool mayPlace(class BlockSource&, class BlockPos const&, uchar) const;
+
+    // symbol: ?mayPlace@BlockPlacementFilterComponent@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool mayPlace(class BlockSource&, class BlockPos const&) const;
-    /**
-     * @symbol ??4BlockPlacementFilterComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
+
+    // symbol: ??4BlockPlacementFilterComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct BlockPlacementFilterComponent& operator=(struct BlockPlacementFilterComponent&&);
+
     // NOLINTEND
 };

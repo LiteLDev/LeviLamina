@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ClipParameters {
-
 public:
     class Vec3 const* mA;                  // this+0x0
     class Vec3 const* mB;                  // this+0x8
@@ -23,19 +22,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ??0ClipParameters\@\@QEAA\@AEBVVec3\@\@0AEBV?$function\@$$A6A_NAEBVBlockSource\@\@AEBVBlock\@\@_N\@Z\@std\@\@\@Z
-     */
+    // symbol: ??0ClipParameters@@QEAA@AEBVVec3@@0AEBV?$function@$$A6A_NAEBVBlockSource@@AEBVBlock@@_N@Z@std@@@Z
     MCAPI
     ClipParameters(class Vec3 const&, class Vec3 const&, std::function<bool(class BlockSource const&, class Block const&, bool)> const&);
-    /**
-     * @symbol ??0ClipParameters\@\@QEAA\@AEBVVec3\@\@0\@Z
-     */
+
+    // symbol: ??0ClipParameters@@QEAA@AEBVVec3@@0@Z
     MCAPI ClipParameters(class Vec3 const&, class Vec3 const&);
-    /**
-     * @symbol ??1ClipParameters\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ClipParameters@@QEAA@XZ
     MCAPI ~ClipParameters();
+
     // NOLINTEND
 };

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ItemStopUseEvent {
-
 public:
     // prevent constructor by default
     ItemStopUseEvent& operator=(ItemStopUseEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ItemStopUseEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1ItemStopUseEvent@@QEAA@XZ
     MCAPI ~ItemStopUseEvent();
+
     // NOLINTEND
 };

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct AdventureSettings {
-
 public:
     bool mNoPvM;
     bool mNoMvP;
@@ -13,9 +12,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0AdventureSettings\@\@QEAA\@XZ
-     */
+    // symbol: ??0AdventureSettings@@QEAA@XZ
     MCAPI AdventureSettings();
+
     // NOLINTEND
 };

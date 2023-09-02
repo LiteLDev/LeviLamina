@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct PropertySyncData {
-
 public:
     struct PropertySyncIntEntry {
         uint32_t mPropertyIndex;
@@ -25,13 +24,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??4PropertySyncData\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
+    // symbol: ??4PropertySyncData@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct PropertySyncData& operator=(struct PropertySyncData&&);
-    /**
-     * @symbol ??1PropertySyncData\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1PropertySyncData@@QEAA@XZ
     MCAPI ~PropertySyncData();
+
     // NOLINTEND
 };

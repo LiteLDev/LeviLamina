@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct SkipEntityInsideFlag {
-
 public:
     // prevent constructor by default
     SkipEntityInsideFlag& operator=(SkipEntityInsideFlag const&) = delete;

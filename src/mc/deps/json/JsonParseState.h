@@ -6,7 +6,6 @@ namespace JsonUtil {
 
 template <typename T0, typename T1>
 class JsonParseState {
-
 public:
     // prevent constructor by default
     JsonParseState& operator=(JsonParseState const&) = delete;

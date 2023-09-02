@@ -5,7 +5,6 @@
 namespace CerealHelpers {
 
 struct IdentifierString {
-
 public:
     // prevent constructor by default
     IdentifierString& operator=(IdentifierString const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1IdentifierString\@CerealHelpers\@\@QEAA\@XZ
-     */
+    // symbol: ??1IdentifierString@CerealHelpers@@QEAA@XZ
     MCAPI ~IdentifierString();
+
     // NOLINTEND
 };
 

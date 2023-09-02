@@ -6,7 +6,6 @@
 #include "mc/world/level/levelgen/structure/StructureStart.h"
 
 class NetherFortressStart : public ::StructureStart {
-
 public:
     // prevent constructor by default
     NetherFortressStart& operator=(NetherFortressStart const&) = delete;
@@ -15,14 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @symbol ??0NetherFortressStart\@\@QEAA\@AEAVRandom\@\@FHH\@Z
-     */
-    MCAPI NetherFortressStart(class Random&, int16_t, int32_t, int32_t);
+
+    // symbol: ??0NetherFortressStart@@QEAA@AEAVRandom@@FHH@Z
+    MCAPI NetherFortressStart(class Random&, short, int, int);
+
     // NOLINTEND
 };

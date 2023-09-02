@@ -5,7 +5,6 @@
 namespace ColumnUtils {
 
 struct ColumnRange {
-
 public:
     // prevent constructor by default
     ColumnRange& operator=(ColumnRange const&) = delete;

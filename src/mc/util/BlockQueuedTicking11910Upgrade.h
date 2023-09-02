@@ -14,7 +14,6 @@ namespace cereal { class SchemaFactory; }
 namespace BlockQueuedTickingVersioning {
 
 class BlockQueuedTicking11910Upgrade : public ::CerealSchemaUpgrade {
-
 public:
     // prevent constructor by default
     BlockQueuedTicking11910Upgrade& operator=(BlockQueuedTicking11910Upgrade const&) = delete;
@@ -22,30 +21,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?previousSchema\@BlockQueuedTicking11910Upgrade\@BlockQueuedTickingVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?previousSchema@BlockQueuedTicking11910Upgrade@BlockQueuedTickingVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z
     virtual void previousSchema(class cereal::SchemaFactory&) const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?upgradeToNext\@BlockQueuedTicking11910Upgrade\@BlockQueuedTickingVersioning\@\@UEBA_NAEAV?$GenericDocument\@U?$UTF8\@D\@rapidjson\@\@V?$MemoryPoolAllocator\@VCrtAllocator\@rapidjson\@\@\@2\@VCrtAllocator\@2\@\@rapidjson\@\@\@Z
-     */
+
+    // vIndex: 2, symbol:
+    // ?upgradeToNext@BlockQueuedTicking11910Upgrade@BlockQueuedTickingVersioning@@UEBA_NAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@@Z
     virtual bool upgradeToNext(rapidjson::GenericDocument<
                                rapidjson::UTF8<char>,
                                rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
                                rapidjson::CrtAllocator>&) const;
-    /**
-     * @symbol ??0BlockQueuedTicking11910Upgrade\@BlockQueuedTickingVersioning\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0BlockQueuedTicking11910Upgrade@BlockQueuedTickingVersioning@@QEAA@XZ
     MCAPI BlockQueuedTicking11910Upgrade();
+
     // NOLINTEND
 };
 

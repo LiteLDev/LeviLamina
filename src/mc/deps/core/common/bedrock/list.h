@@ -6,7 +6,6 @@ namespace Bedrock::Intrusive {
 
 template <typename T0, typename T1, typename T2>
 class list {
-
 public:
     // prevent constructor by default
     list& operator=(list const&) = delete;

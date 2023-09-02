@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class MarketplaceSkinValidator {
-
 public:
     // prevent constructor by default
     MarketplaceSkinValidator& operator=(MarketplaceSkinValidator const&) = delete;
@@ -12,10 +11,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?checkIfValid\@MarketplaceSkinValidator\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+    // symbol:
+    // ?checkIfValid@MarketplaceSkinValidator@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static bool checkIfValid(std::string const&);
+
     // NOLINTEND
 };

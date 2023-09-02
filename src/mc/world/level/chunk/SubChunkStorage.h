@@ -4,7 +4,6 @@
 
 template <typename T0>
 class SubChunkStorage {
-
 public:
     // prevent constructor by default
     SubChunkStorage& operator=(SubChunkStorage const&) = delete;

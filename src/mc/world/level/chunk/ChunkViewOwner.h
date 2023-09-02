@@ -6,7 +6,6 @@
 #include "mc/enums/SubClientId.h"
 
 class ChunkViewOwner {
-
 public:
     // prevent constructor by default
     ChunkViewOwner& operator=(ChunkViewOwner const&) = delete;
@@ -14,17 +13,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ChunkViewOwner\@\@QEAA\@AEBV0\@\@Z
-     */
+    // symbol: ??0ChunkViewOwner@@QEAA@AEBV0@@Z
     MCAPI ChunkViewOwner(class ChunkViewOwner const&);
-    /**
-     * @symbol ??0ChunkViewOwner\@\@QEAA\@AEBVNetworkIdentifier\@\@W4SubClientId\@\@\@Z
-     */
-    MCAPI ChunkViewOwner(class NetworkIdentifier const&, enum class SubClientId);
-    /**
-     * @symbol ?getHash\@ChunkViewOwner\@\@QEBA_KXZ
-     */
-    MCAPI uint64_t getHash() const;
+
+    // symbol: ??0ChunkViewOwner@@QEAA@AEBVNetworkIdentifier@@W4SubClientId@@@Z
+    MCAPI ChunkViewOwner(class NetworkIdentifier const&, ::SubClientId);
+
+    // symbol: ?getHash@ChunkViewOwner@@QEBA_KXZ
+    MCAPI uint64 getHash() const;
+
     // NOLINTEND
 };

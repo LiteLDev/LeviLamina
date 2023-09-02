@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct AgentCapabilities {
-
 public:
     std::optional<bool> mCanModifyBlocks;
 

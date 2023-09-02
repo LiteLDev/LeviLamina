@@ -6,7 +6,6 @@
 #include "mc/entity/utilities/ActorType.h"
 
 class ProjectileItemComponent {
-
 public:
     // prevent constructor by default
     ProjectileItemComponent& operator=(ProjectileItemComponent const&) = delete;
@@ -15,82 +14,55 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?checkComponentDataForContentErrors\@ItemComponent\@\@UEBA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ
     virtual bool checkComponentDataForContentErrors() const;
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
+
+    // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol ?isNetworkComponent\@ChargeableItemComponent\@\@UEBA_NXZ
-     */
+
+    // vIndex: 3, symbol: ?isNetworkComponent@ChargeableItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
-    /**
-     * @vftbl 4
-     * @symbol
-     * ?buildNetworkTag\@ChargeableItemComponent\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
-     */
+
+    // vIndex: 4, symbol:
+    // ?buildNetworkTag@ChargeableItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /**
-     * @vftbl 5
-     * @symbol ?initializeFromNetwork\@ChargeableItemComponent\@\@UEAA_NAEBVCompoundTag\@\@\@Z
-     */
+
+    // vIndex: 5, symbol: ?initializeFromNetwork@ChargeableItemComponent@@UEAA_NAEBVCompoundTag@@@Z
     virtual bool initializeFromNetwork(class CompoundTag const&);
-    /**
-     * @vftbl 6
-     * @symbol ?handleVersionBasedInitialization\@ItemComponent\@\@UEAAXAEBVSemVersion\@\@\@Z
-     */
+
+    // vIndex: 6, symbol: ?handleVersionBasedInitialization@ItemComponent@@UEAAXAEBVSemVersion@@@Z
     virtual void handleVersionBasedInitialization(class SemVersion const&);
-    /**
-     * @vftbl 7
-     * @symbol ?initializeComponent\@ItemComponent\@\@UEBAXXZ
-     */
+
+    // vIndex: 7, symbol: ?initializeComponent@ItemComponent@@UEBAXXZ
     virtual void initializeComponent() const;
-    /**
-     * @vftbl 8
-     * @symbol ?_canUseOn\@ItemComponent\@\@MEBA_NAEBVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@E\@Z
-     */
-    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uint8_t) const;
-    /**
-     * @vftbl 9
-     * @symbol ?_useOn\@ItemComponent\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
-     */
-    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uint8_t, class Vec3 const&) const;
-    /**
-     * @symbol ??0ProjectileItemComponent\@\@QEAA\@PEAVComponentItem\@\@W4ActorType\@\@M\@Z
-     */
-    MCAPI ProjectileItemComponent(class ComponentItem*, enum class ActorType, float);
-    /**
-     * @symbol ?dispense\@ProjectileItemComponent\@\@QEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
-     */
-    MCAPI bool dispense(class BlockSource&, class Container&, int32_t, class Vec3 const&, uint8_t) const;
-    /**
-     * @symbol ?getShootDir\@ProjectileItemComponent\@\@QEBA?AVVec3\@\@AEBVPlayer\@\@M\@Z
-     */
+
+    // vIndex: 8, symbol: ?_canUseOn@ItemComponent@@MEBA_NAEBVItemStack@@AEAVActor@@AEBVBlockPos@@E@Z
+    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
+
+    // vIndex: 9, symbol: ?_useOn@ItemComponent@@MEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
+    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
+
+    // symbol: ??0ProjectileItemComponent@@QEAA@PEAVComponentItem@@W4ActorType@@M@Z
+    MCAPI ProjectileItemComponent(class ComponentItem*, ::ActorType, float);
+
+    // symbol: ?dispense@ProjectileItemComponent@@QEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    MCAPI bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
+
+    // symbol: ?getShootDir@ProjectileItemComponent@@QEBA?AVVec3@@AEBVPlayer@@M@Z
     MCAPI class Vec3 getShootDir(class Player const&, float) const;
-    /**
-     * @symbol
-     * ?shootProjectile\@ProjectileItemComponent\@\@QEBAPEAVActor\@\@AEAVBlockSource\@\@AEBVVec3\@\@1MPEAVPlayer\@\@\@Z
-     */
+
+    // symbol: ?shootProjectile@ProjectileItemComponent@@QEBAPEAVActor@@AEAVBlockSource@@AEBVVec3@@1MPEAVPlayer@@@Z
     MCAPI class Actor*
     shootProjectile(class BlockSource&, class Vec3 const&, class Vec3 const&, float, class Player*) const;
-    /**
-     * @symbol ?bindType\@ProjectileItemComponent\@\@SAXXZ
-     */
+
+    // symbol: ?bindType@ProjectileItemComponent@@SAXXZ
     MCAPI static void bindType();
-    /**
-     * @symbol ?getIdentifier\@ProjectileItemComponent\@\@SAAEBVHashedString\@\@XZ
-     */
+
+    // symbol: ?getIdentifier@ProjectileItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();
+
     // NOLINTEND
 };

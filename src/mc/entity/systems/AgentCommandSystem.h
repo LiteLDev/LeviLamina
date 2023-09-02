@@ -11,7 +11,6 @@ namespace AgentComponents { class CommandCooldown; }
 // clang-format on
 
 class AgentCommandSystem : public ::ITickingSystem {
-
 public:
     // prevent constructor by default
     AgentCommandSystem& operator=(AgentCommandSystem const&) = delete;
@@ -20,37 +19,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?tick\@AgentCommandSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?tick@AgentCommandSystem@@UEAAXAEAVEntityRegistry@@@Z
     virtual void tick(class EntityRegistry&);
-    /**
-     * @symbol ?cleanUp\@AgentCommandSystem\@\@SAXAEAVEntityContext\@\@M\@Z
-     */
+
+    // symbol: ?cleanUp@AgentCommandSystem@@SAXAEAVEntityContext@@M@Z
     MCAPI static void cleanUp(class EntityContext&, float);
-    /**
-     * @symbol ?initialize\@AgentCommandSystem\@\@SAXAEAVEntityContext\@\@\@Z
-     */
+
+    // symbol: ?initialize@AgentCommandSystem@@SAXAEAVEntityContext@@@Z
     MCAPI static void initialize(class EntityContext&);
-    /**
-     * @symbol
-     * ?tickAgentCooldown\@AgentCommandSystem\@\@SAXAEAVEntityContext\@\@AEAVCommandCooldown\@AgentComponents\@\@\@Z
-     */
+
+    // symbol: ?tickAgentCooldown@AgentCommandSystem@@SAXAEAVEntityContext@@AEAVCommandCooldown@AgentComponents@@@Z
     MCAPI static void tickAgentCooldown(class EntityContext&, class AgentComponents::CommandCooldown&);
-    /**
-     * @symbol ?tickLegacy\@AgentCommandSystem\@\@SAXAEAVEntityContext\@\@AEAVAgentCommandComponent\@\@\@Z
-     */
+
+    // symbol: ?tickLegacy@AgentCommandSystem@@SAXAEAVEntityContext@@AEAVAgentCommandComponent@@@Z
     MCAPI static void tickLegacy(class EntityContext&, class AgentCommandComponent&);
+
     // NOLINTEND
 };

@@ -5,7 +5,6 @@
 namespace JsonUtil {
 
 class JsonSchemaNodeBase {
-
 public:
     // prevent constructor by default
     JsonSchemaNodeBase& operator=(JsonSchemaNodeBase const&) = delete;

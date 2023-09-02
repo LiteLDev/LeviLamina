@@ -5,7 +5,6 @@
 namespace CodeBuilder {
 
 struct EncryptionRequest {
-
 public:
     // prevent constructor by default
     EncryptionRequest& operator=(EncryptionRequest const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1EncryptionRequest\@CodeBuilder\@\@QEAA\@XZ
-     */
+    // symbol: ??1EncryptionRequest@CodeBuilder@@QEAA@XZ
     MCAPI ~EncryptionRequest();
+
     // NOLINTEND
 };
 

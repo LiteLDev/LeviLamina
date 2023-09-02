@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct MolangQueryFunctionPtr {
-
 public:
     // prevent constructor by default
     MolangQueryFunctionPtr& operator=(MolangQueryFunctionPtr const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1MolangQueryFunctionPtr\@\@QEAA\@XZ
-     */
+    // symbol: ??1MolangQueryFunctionPtr@@QEAA@XZ
     MCAPI ~MolangQueryFunctionPtr();
+
     // NOLINTEND
 };

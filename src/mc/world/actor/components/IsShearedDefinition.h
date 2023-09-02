@@ -11,7 +11,6 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 struct IsShearedDefinition {
-
 public:
     // prevent constructor by default
     IsShearedDefinition& operator=(IsShearedDefinition const&) = delete;
@@ -20,20 +19,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?initialize\@IsShearedDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
+    // symbol: ?initialize@IsShearedDefinition@@QEBAXAEAVEntityContext@@@Z
     MCAPI void initialize(class EntityContext&) const;
-    /**
-     * @symbol ?uninitialize\@IsShearedDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
+
+    // symbol: ?uninitialize@IsShearedDefinition@@QEBAXAEAVEntityContext@@@Z
     MCAPI void uninitialize(class EntityContext&) const;
-    /**
-     * @symbol
-     * ?buildSchema\@IsShearedDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsShearedDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?buildSchema@IsShearedDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsShearedDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsShearedDefinition>>&);
+
     // NOLINTEND
 };

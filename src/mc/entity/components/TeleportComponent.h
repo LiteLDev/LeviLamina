@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class TeleportComponent {
-
 public:
     // prevent constructor by default
     TeleportComponent& operator=(TeleportComponent const&) = delete;
@@ -11,61 +10,47 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0TeleportComponent\@\@QEAA\@XZ
-     */
+    // symbol: ??0TeleportComponent@@QEAA@XZ
     MCAPI TeleportComponent();
-    /**
-     * @symbol ?getDarkTeleportChance\@TeleportComponent\@\@QEAAMXZ
-     */
+
+    // symbol: ?getDarkTeleportChance@TeleportComponent@@QEAAMXZ
     MCAPI float getDarkTeleportChance();
-    /**
-     * @symbol ?getLightTeleportChance\@TeleportComponent\@\@QEAAMXZ
-     */
+
+    // symbol: ?getLightTeleportChance@TeleportComponent@@QEAAMXZ
     MCAPI float getLightTeleportChance();
-    /**
-     * @symbol ?getMaxTeleportTime\@TeleportComponent\@\@QEAAHXZ
-     */
-    MCAPI int32_t getMaxTeleportTime();
-    /**
-     * @symbol ?getMinTeleportTime\@TeleportComponent\@\@QEAAHXZ
-     */
-    MCAPI int32_t getMinTeleportTime();
-    /**
-     * @symbol ?getRandomTeleports\@TeleportComponent\@\@QEAA_NXZ
-     */
+
+    // symbol: ?getMaxTeleportTime@TeleportComponent@@QEAAHXZ
+    MCAPI int getMaxTeleportTime();
+
+    // symbol: ?getMinTeleportTime@TeleportComponent@@QEAAHXZ
+    MCAPI int getMinTeleportTime();
+
+    // symbol: ?getRandomTeleports@TeleportComponent@@QEAA_NXZ
     MCAPI bool getRandomTeleports();
-    /**
-     * @symbol ?getTargetDistance\@TeleportComponent\@\@QEAAMXZ
-     */
+
+    // symbol: ?getTargetDistance@TeleportComponent@@QEAAMXZ
     MCAPI float getTargetDistance();
-    /**
-     * @symbol ?getTargetTeleportChance\@TeleportComponent\@\@QEAAMXZ
-     */
+
+    // symbol: ?getTargetTeleportChance@TeleportComponent@@QEAAMXZ
     MCAPI float getTargetTeleportChance();
-    /**
-     * @symbol ?getTeleportTime\@TeleportComponent\@\@QEAAHXZ
-     */
-    MCAPI int32_t getTeleportTime();
-    /**
-     * @symbol ?initFromDefinition\@TeleportComponent\@\@QEAAXAEAVActor\@\@\@Z
-     */
+
+    // symbol: ?getTeleportTime@TeleportComponent@@QEAAHXZ
+    MCAPI int getTeleportTime();
+
+    // symbol: ?initFromDefinition@TeleportComponent@@QEAAXAEAVActor@@@Z
     MCAPI void initFromDefinition(class Actor&);
-    /**
-     * @symbol ?randomTeleport\@TeleportComponent\@\@QEAA_NAEAVActor\@\@\@Z
-     */
+
+    // symbol: ?randomTeleport@TeleportComponent@@QEAA_NAEAVActor@@@Z
     MCAPI bool randomTeleport(class Actor&);
-    /**
-     * @symbol ?setTeleportTime\@TeleportComponent\@\@QEAAXH\@Z
-     */
-    MCAPI void setTeleportTime(int32_t);
-    /**
-     * @symbol ?teleport\@TeleportComponent\@\@QEAA_NAEAVActor\@\@AEBVVec3\@\@\@Z
-     */
+
+    // symbol: ?setTeleportTime@TeleportComponent@@QEAAXH@Z
+    MCAPI void setTeleportTime(int);
+
+    // symbol: ?teleport@TeleportComponent@@QEAA_NAEAVActor@@AEBVVec3@@@Z
     MCAPI bool teleport(class Actor&, class Vec3 const&);
-    /**
-     * @symbol ?teleportTowards\@TeleportComponent\@\@QEAA_NAEAVActor\@\@AEBV2\@\@Z
-     */
+
+    // symbol: ?teleportTowards@TeleportComponent@@QEAA_NAEAVActor@@AEBV2@@Z
     MCAPI bool teleportTowards(class Actor&, class Actor const&);
+
     // NOLINTEND
 };

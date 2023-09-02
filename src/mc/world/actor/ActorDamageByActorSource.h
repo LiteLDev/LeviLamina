@@ -12,7 +12,6 @@
 #include "mc/world/actor/ActorDamageSource.h"
 
 class ActorDamageByActorSource : public ::ActorDamageSource {
-
 public:
     class BlockSource const* mRegion;           // this+0x10
     bool                     mIsWorldBuilder;   // this+0x18
@@ -24,72 +23,46 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?isEntitySource\@ActorDamageByActorSource\@\@UEBA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?isEntitySource@ActorDamageByActorSource@@UEBA_NXZ
     virtual bool isEntitySource() const;
-    /**
-     * @vftbl 10
-     * @symbol
-     * ?getDeathMessage\@ActorDamageByActorSource\@\@UEBA?AU?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@2\@\@std\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@PEAVActor\@\@\@Z
-     */
+
+    // vIndex: 10, symbol:
+    // ?getDeathMessage@ActorDamageByActorSource@@UEBA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@PEAVActor@@@Z
     virtual std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor*) const;
-    /**
-     * @vftbl 11
-     * @symbol ?getIsCreative\@ActorDamageByActorSource\@\@UEBA_NXZ
-     */
+
+    // vIndex: 11, symbol: ?getIsCreative@ActorDamageByActorSource@@UEBA_NXZ
     virtual bool getIsCreative() const;
-    /**
-     * @vftbl 12
-     * @symbol ?getIsWorldBuilder\@ActorDamageByActorSource\@\@UEBA_NXZ
-     */
+
+    // vIndex: 12, symbol: ?getIsWorldBuilder@ActorDamageByActorSource@@UEBA_NXZ
     virtual bool getIsWorldBuilder() const;
-    /**
-     * @vftbl 13
-     * @symbol ?getEntityUniqueID\@ActorDamageByActorSource\@\@UEBA?AUActorUniqueID\@\@XZ
-     */
+
+    // vIndex: 13, symbol: ?getEntityUniqueID@ActorDamageByActorSource@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getEntityUniqueID() const;
-    /**
-     * @vftbl 14
-     * @symbol ?getEntityType\@ActorDamageByActorSource\@\@UEBA?AW4ActorType\@\@XZ
-     */
-    virtual enum class ActorType getEntityType() const;
-    /**
-     * @vftbl 15
-     * @symbol ?getEntityCategories\@ActorDamageByActorSource\@\@UEBA?AW4ActorCategory\@\@XZ
-     */
-    virtual enum class ActorCategory getEntityCategories() const;
-    /**
-     * @vftbl 18
-     * @symbol ?getDamagingEntityUniqueID\@ActorDamageByActorSource\@\@UEBA?AUActorUniqueID\@\@XZ
-     */
+
+    // vIndex: 14, symbol: ?getEntityType@ActorDamageByActorSource@@UEBA?AW4ActorType@@XZ
+    virtual ::ActorType getEntityType() const;
+
+    // vIndex: 15, symbol: ?getEntityCategories@ActorDamageByActorSource@@UEBA?AW4ActorCategory@@XZ
+    virtual ::ActorCategory getEntityCategories() const;
+
+    // vIndex: 18, symbol: ?getDamagingEntityUniqueID@ActorDamageByActorSource@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
-    /**
-     * @vftbl 19
-     * @symbol ?getDamagingEntityType\@ActorDamageByActorSource\@\@UEBA?AW4ActorType\@\@XZ
-     */
-    virtual enum class ActorType getDamagingEntityType() const;
-    /**
-     * @vftbl 21
-     * @symbol
-     * ?clone\@ActorDamageByActorSource\@\@UEBA?AV?$unique_ptr\@VActorDamageSource\@\@U?$default_delete\@VActorDamageSource\@\@\@std\@\@\@std\@\@XZ
-     */
+
+    // vIndex: 19, symbol: ?getDamagingEntityType@ActorDamageByActorSource@@UEBA?AW4ActorType@@XZ
+    virtual ::ActorType getDamagingEntityType() const;
+
+    // vIndex: 21, symbol:
+    // ?clone@ActorDamageByActorSource@@UEBA?AV?$unique_ptr@VActorDamageSource@@U?$default_delete@VActorDamageSource@@@std@@@std@@XZ
     virtual std::unique_ptr<class ActorDamageSource> clone() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDAMAGEBYACTORSOURCE
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1ActorDamageByActorSource@@UEAA@XZ
     MCVAPI ~ActorDamageByActorSource();
-#endif
-    /**
-     * @symbol ??0ActorDamageByActorSource\@\@QEAA\@AEBVActor\@\@W4ActorDamageCause\@\@\@Z
-     */
-    MCAPI ActorDamageByActorSource(class Actor const&, enum class ActorDamageCause);
+
+    // symbol: ??0ActorDamageByActorSource@@QEAA@AEBVActor@@W4ActorDamageCause@@@Z
+    MCAPI ActorDamageByActorSource(class Actor const&, ::ActorDamageCause);
+
     // NOLINTEND
 };

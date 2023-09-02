@@ -5,7 +5,6 @@
 namespace ClientBlobCache::Server {
 
 class Blob {
-
 public:
     // prevent constructor by default
     Blob& operator=(Blob const&) = delete;

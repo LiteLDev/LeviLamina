@@ -5,7 +5,6 @@
 namespace Core::Profile {
 
 class ProfileThread {
-
 public:
     // prevent constructor by default
     ProfileThread& operator=(ProfileThread const&) = delete;
@@ -14,14 +13,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ProfileThread\@Profile\@Core\@\@QEAA\@PEBD\@Z
-     */
+    // symbol: ??0ProfileThread@Profile@Core@@QEAA@PEBD@Z
     MCAPI ProfileThread(char const*);
-    /**
-     * @symbol ??1ProfileThread\@Profile\@Core\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ProfileThread@Profile@Core@@QEAA@XZ
     MCAPI ~ProfileThread();
+
     // NOLINTEND
 };
 

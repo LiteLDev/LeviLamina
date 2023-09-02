@@ -5,7 +5,6 @@
 namespace CodeBuilder {
 
 struct CommandMessage {
-
 public:
     // prevent constructor by default
     CommandMessage& operator=(CommandMessage const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1CommandMessage\@CodeBuilder\@\@QEAA\@XZ
-     */
+    // symbol: ??1CommandMessage@CodeBuilder@@QEAA@XZ
     MCAPI ~CommandMessage();
+
     // NOLINTEND
 };
 

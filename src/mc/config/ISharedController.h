@@ -5,7 +5,6 @@
 namespace PlayerCapabilities {
 
 struct ISharedController {
-
 public:
 };
 

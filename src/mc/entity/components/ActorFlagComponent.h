@@ -4,7 +4,6 @@
 
 template <typename T0>
 class ActorFlagComponent {
-
 public:
     // prevent constructor by default
     ActorFlagComponent& operator=(ActorFlagComponent const&) = delete;

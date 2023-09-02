@@ -11,7 +11,6 @@ struct _TP_TIMER;
 namespace OS {
 
 class WaitTimerImpl {
-
 public:
     // prevent constructor by default
     WaitTimerImpl& operator=(WaitTimerImpl const&) = delete;
@@ -20,10 +19,9 @@ public:
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?WaitCallback\@WaitTimerImpl\@OS\@\@CAXPEAU_TP_CALLBACK_INSTANCE\@\@PEAXPEAU_TP_TIMER\@\@\@Z
-     */
+    // symbol: ?WaitCallback@WaitTimerImpl@OS@@CAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_TIMER@@@Z
     MCAPI static void WaitCallback(struct _TP_CALLBACK_INSTANCE*, void*, struct _TP_TIMER*);
+
     // NOLINTEND
 };
 

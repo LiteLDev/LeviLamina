@@ -5,7 +5,6 @@
 namespace AgentComponents::Actions {
 
 struct DropAll {
-
 public:
     // prevent constructor by default
     DropAll& operator=(DropAll const&) = delete;

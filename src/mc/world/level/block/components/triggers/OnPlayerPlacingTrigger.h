@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class OnPlayerPlacingTrigger {
-
 public:
     // prevent constructor by default
     OnPlayerPlacingTrigger& operator=(OnPlayerPlacingTrigger const&) = delete;
@@ -12,15 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLAYERPLACINGTRIGGER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1OnPlayerPlacingTrigger@@UEAA@XZ
     MCVAPI ~OnPlayerPlacingTrigger();
-#endif
-    /**
-     * @symbol ??0OnPlayerPlacingTrigger\@\@QEAA\@$$QEAV0\@\@Z
-     */
+
+    // symbol: ??0OnPlayerPlacingTrigger@@QEAA@$$QEAV0@@Z
     MCAPI OnPlayerPlacingTrigger(class OnPlayerPlacingTrigger&&);
+
     // NOLINTEND
 };

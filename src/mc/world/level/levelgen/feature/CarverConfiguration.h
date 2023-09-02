@@ -5,7 +5,6 @@
 namespace CaveFeatureUtils {
 
 struct CarverConfiguration {
-
 public:
     // prevent constructor by default
     CarverConfiguration& operator=(CarverConfiguration const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1CarverConfiguration\@CaveFeatureUtils\@\@QEAA\@XZ
-     */
+    // symbol: ??1CarverConfiguration@CaveFeatureUtils@@QEAA@XZ
     MCAPI ~CarverConfiguration();
+
     // NOLINTEND
 };
 

@@ -14,7 +14,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Http { class BinaryRequestBody; }
 namespace Bedrock::Http { class BufferedResponseBody; }
 namespace Bedrock::Http { class DispatcherProcess; }
 namespace Bedrock::Http { class HeaderCollection; }
@@ -41,29 +40,22 @@ struct XAsyncBlock;
 
 namespace Bedrock::Http {
 // NOLINTBEGIN
-/**
- * @symbol
- * ?getStringDataAsSpan\@Http\@Bedrock\@\@YA?AV?$span\@$$CBE$0?0\@gsl\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
- */
-MCAPI gsl::span<uint8_t const> getStringDataAsSpan(std::string const&);
-/**
- * @symbol
- * ?initializeLibHttpClient\@Http\@Bedrock\@\@YA?AV?$shared_ptr\@VLibHttpClientInstance\@Http\@Bedrock\@\@\@std\@\@XZ
- */
+// symbol:
+// ?getStringDataAsSpan@Http@Bedrock@@YA?AV?$span@$$CBE$0?0@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+MCAPI gsl::span<uchar const> getStringDataAsSpan(std::string const&);
+
+// symbol: ?initializeLibHttpClient@Http@Bedrock@@YA?AV?$shared_ptr@VLibHttpClientInstance@Http@Bedrock@@@std@@XZ
 MCAPI std::shared_ptr<class Bedrock::Http::LibHttpClientInstance> initializeLibHttpClient();
-/**
- * @symbol
- * ?interpretDataAsUtf8String\@Http\@Bedrock\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$span\@$$CBE$0?0\@gsl\@\@\@Z
- */
-MCAPI std::string interpretDataAsUtf8String(gsl::span<uint8_t const>);
-/**
- * @symbol ?isInitialized\@Http\@Bedrock\@\@YA_NXZ
- */
+
+// symbol:
+// ?interpretDataAsUtf8String@Http@Bedrock@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$span@$$CBE$0?0@gsl@@@Z
+MCAPI std::string interpretDataAsUtf8String(gsl::span<uchar const>);
+
+// symbol: ?isInitialized@Http@Bedrock@@YA_NXZ
 MCAPI bool isInitialized();
-/**
- * @symbol ?make_error_code\@Http\@Bedrock\@\@YA?AVerror_code\@std\@\@W4ClientErrorCode\@12\@\@Z
- */
-MCAPI std::error_code make_error_code(enum class Bedrock::Http::ClientErrorCode);
+
+// symbol: ?make_error_code@Http@Bedrock@@YA?AVerror_code@std@@W4ClientErrorCode@12@@Z
+MCAPI std::error_code make_error_code(::Bedrock::Http::ClientErrorCode);
 // NOLINTEND
 
 }; // namespace Bedrock::Http

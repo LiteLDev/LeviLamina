@@ -6,7 +6,6 @@ namespace Bedrock::PubSub {
 
 template <typename T0>
 class Connector {
-
 public:
     // prevent constructor by default
     Connector& operator=(Connector const&) = delete;

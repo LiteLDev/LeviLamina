@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ServerInstanceNotificationEvent {
-
 public:
     // prevent constructor by default
     ServerInstanceNotificationEvent& operator=(ServerInstanceNotificationEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ServerInstanceNotificationEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1ServerInstanceNotificationEvent@@QEAA@XZ
     MCAPI ~ServerInstanceNotificationEvent();
+
     // NOLINTEND
 };

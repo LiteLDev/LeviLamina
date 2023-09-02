@@ -8,7 +8,6 @@
 #include "mc/world/components/FlagComponent.h"
 
 class FallingBlockNormalTickSystem {
-
 public:
     // prevent constructor by default
     FallingBlockNormalTickSystem& operator=(FallingBlockNormalTickSystem const&) = delete;
@@ -17,24 +16,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createSystem\@FallingBlockNormalTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createSystem@FallingBlockNormalTickSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_doFallingBlockNormalTickSystem\@FallingBlockNormalTickSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@AEAVITickDelegate\@\@\@Z
-     */
+    // symbol:
+    // ?_doFallingBlockNormalTickSystem@FallingBlockNormalTickSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@AEAVITickDelegate@@@Z
     MCAPI static void
     _doFallingBlockNormalTickSystem(class StrictEntityContext const&, class ActorOwnerComponent&, class ITickDelegate&);
-    /**
-     * @symbol
-     * ?_tickFallingBlockNormalTickSystem\@FallingBlockNormalTickSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UFallingBlockFlag\@\@\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
-     */
+
+    // symbol:
+    // ?_tickFallingBlockNormalTickSystem@FallingBlockNormalTickSystem@@CAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UFallingBlockFlag@@@@@@VActorOwnerComponent@@@@@Z
     MCAPI static void _tickFallingBlockNormalTickSystem(class ViewT<
                                                         class StrictEntityContext,
                                                         class EntityRegistryBase,
@@ -42,5 +37,6 @@ public:
                                                             class FlagComponent<struct ActorMovementTickNeededFlag>,
                                                             class FlagComponent<struct FallingBlockFlag>>,
                                                         class ActorOwnerComponent>);
+
     // NOLINTEND
 };

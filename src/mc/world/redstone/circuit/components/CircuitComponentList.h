@@ -13,7 +13,6 @@ public:
 
     // CircuitComponentList inner types define
     class Item {
-
     public:
         class BaseCircuitComponent* mComponent = nullptr;
         int32_t                         mDampening{};
@@ -31,13 +30,11 @@ public:
     std::vector<Item> mComponents;
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?removeSource\@CircuitComponentList\@\@QEAA_NAEBVBlockPos\@\@PEBVBaseCircuitComponent\@\@\@Z
-     */
+    // symbol: ?removeSource@CircuitComponentList@@QEAA_NAEBVBlockPos@@PEBVBaseCircuitComponent@@@Z
     MCAPI bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
-    /**
-     * @symbol ??1CircuitComponentList\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1CircuitComponentList@@QEAA@XZ
     MCAPI ~CircuitComponentList();
+
     // NOLINTEND
 };

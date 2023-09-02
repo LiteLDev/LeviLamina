@@ -19,7 +19,6 @@ public:
 
     // AttackCooldownComponent inner types define
     class AttackCooldownDefinition {
-
     public:
         // prevent constructor by default
         AttackCooldownDefinition& operator=(AttackCooldownDefinition const&) = delete;
@@ -28,18 +27,15 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol
-         * ?initialize\@AttackCooldownDefinition\@AttackCooldownComponent\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
+        // symbol: ?initialize@AttackCooldownDefinition@AttackCooldownComponent@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class AttackCooldownComponent&) const;
-        /**
-         * @symbol
-         * ?buildSchema\@AttackCooldownDefinition\@AttackCooldownComponent\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VAttackCooldownDefinition\@AttackCooldownComponent\@\@\@JsonUtil\@\@\@std\@\@\@Z
-         */
+
+        // symbol:
+        // ?buildSchema@AttackCooldownDefinition@AttackCooldownComponent@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VAttackCooldownDefinition@AttackCooldownComponent@@@JsonUtil@@@std@@@Z
         MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
                                           class JsonUtil::EmptyClass,
                                           class AttackCooldownComponent::AttackCooldownDefinition>>&);
+
         // NOLINTEND
     };
 
@@ -51,9 +47,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1AttackCooldownComponent\@\@QEAA\@XZ
-     */
+    // symbol: ??1AttackCooldownComponent@@QEAA@XZ
     MCAPI ~AttackCooldownComponent();
+
     // NOLINTEND
 };

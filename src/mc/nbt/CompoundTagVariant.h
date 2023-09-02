@@ -20,7 +20,6 @@
 class CompoundTag;
 
 class CompoundTagVariant {
-
 public:
     using Variant = std::variant<
         class EndTag,
@@ -40,26 +39,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?emplace\@CompoundTagVariant\@\@QEAAAEAVTag\@\@$$QEAV2\@\@Z
-     */
+    // symbol: ?emplace@CompoundTagVariant@@QEAAAEAVTag@@$$QEAV2@@Z
     MCAPI class Tag& emplace(class Tag&&);
-    /**
-     * @symbol ?get\@CompoundTagVariant\@\@QEAAPEAVTag\@\@XZ
-     */
+
+    // symbol: ?get@CompoundTagVariant@@QEAAPEAVTag@@XZ
     MCAPI class Tag* get();
-    /**
-     * @symbol ?get\@CompoundTagVariant\@\@QEBAPEBVTag\@\@XZ
-     */
+
+    // symbol: ?get@CompoundTagVariant@@QEBAPEBVTag@@XZ
     MCAPI class Tag const* get() const;
-    /**
-     * @symbol ??CCompoundTagVariant\@\@QEBAPEBVTag\@\@XZ
-     */
+
+    // symbol: ??CCompoundTagVariant@@QEBAPEBVTag@@XZ
     MCAPI class Tag const* operator->() const;
-    /**
-     * @symbol ??1CompoundTagVariant\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1CompoundTagVariant@@QEAA@XZ
     MCAPI ~CompoundTagVariant();
+
     // NOLINTEND
 };
 

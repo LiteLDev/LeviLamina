@@ -11,7 +11,6 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 struct CanPowerJumpDefinition {
-
 public:
     // prevent constructor by default
     CanPowerJumpDefinition& operator=(CanPowerJumpDefinition const&) = delete;
@@ -20,20 +19,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?initialize\@CanPowerJumpDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
+    // symbol: ?initialize@CanPowerJumpDefinition@@QEBAXAEAVEntityContext@@@Z
     MCAPI void initialize(class EntityContext&) const;
-    /**
-     * @symbol ?uninitialize\@CanPowerJumpDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
+
+    // symbol: ?uninitialize@CanPowerJumpDefinition@@QEBAXAEAVEntityContext@@@Z
     MCAPI void uninitialize(class EntityContext&) const;
-    /**
-     * @symbol
-     * ?buildSchema\@CanPowerJumpDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UCanPowerJumpDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?buildSchema@CanPowerJumpDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UCanPowerJumpDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct CanPowerJumpDefinition>>&);
+
     // NOLINTEND
 };

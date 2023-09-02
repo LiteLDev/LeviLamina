@@ -5,7 +5,6 @@
 namespace AgentComponents {
 
 struct ActionDetails {
-
 public:
     // prevent constructor by default
     ActionDetails& operator=(ActionDetails const&) = delete;

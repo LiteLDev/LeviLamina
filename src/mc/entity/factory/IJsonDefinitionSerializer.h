@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class IJsonDefinitionSerializer {
-
 public:
     // prevent constructor by default
     IJsonDefinitionSerializer& operator=(IJsonDefinitionSerializer const&) = delete;

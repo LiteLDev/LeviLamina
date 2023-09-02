@@ -6,7 +6,6 @@
 #include "mc/enums/CrashDumpLogStringID.h"
 
 class CDScopedEvent {
-
 public:
     // prevent constructor by default
     CDScopedEvent& operator=(CDScopedEvent const&) = delete;
@@ -15,17 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0CDScopedEvent\@\@QEAA\@W4CrashDumpLogStringID\@\@00\@Z
-     */
-    MCAPI CDScopedEvent(
-        enum class CrashDumpLogStringID,
-        enum class CrashDumpLogStringID,
-        enum class CrashDumpLogStringID
-    );
-    /**
-     * @symbol ??1CDScopedEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??0CDScopedEvent@@QEAA@W4CrashDumpLogStringID@@00@Z
+    MCAPI CDScopedEvent(::CrashDumpLogStringID, ::CrashDumpLogStringID, ::CrashDumpLogStringID);
+
+    // symbol: ??1CDScopedEvent@@QEAA@XZ
     MCAPI ~CDScopedEvent();
+
     // NOLINTEND
 };

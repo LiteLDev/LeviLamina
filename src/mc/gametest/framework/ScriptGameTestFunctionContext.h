@@ -17,7 +17,6 @@ namespace gametest { class IGameTestFunctionContext; }
 namespace ScriptModuleGameTest {
 
 class ScriptGameTestFunctionContext : public ::gametest::IGameTestFunctionContext {
-
 public:
     // prevent constructor by default
     ScriptGameTestFunctionContext& operator=(ScriptGameTestFunctionContext const&) = delete;
@@ -26,17 +25,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ??0ScriptGameTestFunctionContext\@ScriptModuleGameTest\@\@QEAA\@VWeakLifetimeScope\@Scripting\@\@AEAVBaseGameTestHelper\@gametest\@\@\@Z
-     */
+    // symbol:
+    // ??0ScriptGameTestFunctionContext@ScriptModuleGameTest@@QEAA@VWeakLifetimeScope@Scripting@@AEAVBaseGameTestHelper@gametest@@@Z
     MCAPI ScriptGameTestFunctionContext(class Scripting::WeakLifetimeScope, class gametest::BaseGameTestHelper&);
-    /**
-     * @symbol
-     * ?getScriptGameTestHelper\@ScriptGameTestFunctionContext\@ScriptModuleGameTest\@\@QEAA?AV?$WeakTypedObjectHandle\@VScriptGameTestHelper\@ScriptModuleGameTest\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?getScriptGameTestHelper@ScriptGameTestFunctionContext@ScriptModuleGameTest@@QEAA?AV?$WeakTypedObjectHandle@VScriptGameTestHelper@ScriptModuleGameTest@@@Scripting@@XZ
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestHelper>
     getScriptGameTestHelper();
+
     // NOLINTEND
 };
 

@@ -15,7 +15,6 @@ namespace Scripting { class WeakLifetimeScope; }
 namespace ScriptModuleMinecraft {
 
 class ScriptActorFactory {
-
 public:
     // prevent constructor by default
     ScriptActorFactory& operator=(ScriptActorFactory const&) = delete;
@@ -24,18 +23,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?createHandle\@ScriptActorFactory\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@PEBVActor\@\@AEBVWeakLifetimeScope\@4\@\@Z
-     */
+    // symbol:
+    // ?createHandle@ScriptActorFactory@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@PEBVActor@@AEBVWeakLifetimeScope@4@@Z
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
     createHandle(class Actor const*, class Scripting::WeakLifetimeScope const&);
-    /**
-     * @symbol
-     * ?getHandle\@ScriptActorFactory\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@PEBVActor\@\@AEBVWeakLifetimeScope\@4\@\@Z
-     */
+
+    // symbol:
+    // ?getHandle@ScriptActorFactory@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@PEBVActor@@AEBVWeakLifetimeScope@4@@Z
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
     getHandle(class Actor const*, class Scripting::WeakLifetimeScope const&);
+
     // NOLINTEND
 };
 

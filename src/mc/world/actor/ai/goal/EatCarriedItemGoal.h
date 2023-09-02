@@ -7,7 +7,6 @@
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class EatCarriedItemGoal : public ::Goal {
-
 public:
     // prevent constructor by default
     EatCarriedItemGoal& operator=(EatCarriedItemGoal const&) = delete;
@@ -16,57 +15,49 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@EatCarriedItemGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@EatCarriedItemGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@EatCarriedItemGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@EatCarriedItemGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@EatCarriedItemGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@EatCarriedItemGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol ?stop\@EatCarriedItemGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 5, symbol: ?stop@EatCarriedItemGoal@@UEAAXXZ
     virtual void stop();
-    /**
-     * @vftbl 6
-     * @symbol ?tick\@EatCarriedItemGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 6, symbol: ?tick@EatCarriedItemGoal@@UEAAXXZ
     virtual void tick();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@EatCarriedItemGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@EatCarriedItemGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @symbol ??0EatCarriedItemGoal\@\@QEAA\@AEAVMob\@\@H\@Z
-     */
-    MCAPI EatCarriedItemGoal(class Mob&, int32_t);
+
+    // symbol: ??0EatCarriedItemGoal@@QEAA@AEAVMob@@H@Z
+    MCAPI EatCarriedItemGoal(class Mob&, int);
+
     // NOLINTEND
 
 private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?CHEW_CHANCE\@EatCarriedItemGoal\@\@0HB
-     */
-    MCAPI static int32_t const CHEW_CHANCE;
-    /**
-     * @symbol ?EATING_TIME\@EatCarriedItemGoal\@\@0HB
-     */
-    MCAPI static int32_t const EATING_TIME;
+    // symbol: ?CHEW_CHANCE@EatCarriedItemGoal@@0HB
+    MCAPI static int const CHEW_CHANCE;
+
+    // symbol: ?EATING_TIME@EatCarriedItemGoal@@0HB
+    MCAPI static int const EATING_TIME;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $CHEW_CHANCE() { return CHEW_CHANCE; }
+
+    inline auto& $EATING_TIME() { return EATING_TIME; }
+
     // NOLINTEND
 };

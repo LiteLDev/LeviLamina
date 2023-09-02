@@ -16,7 +16,6 @@ class CommandRegistry;
 namespace AgentCommands {
 
 class Destroy : public ::Command {
-
 public:
     // prevent constructor by default
     Destroy& operator=(Destroy const&) = delete;
@@ -25,20 +24,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 2
-     * @symbol ?execute\@Destroy\@AgentCommands\@\@EEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?execute@Destroy@AgentCommands@@EEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol ?setup\@Destroy\@AgentCommands\@\@SAXAEAVCommandRegistry\@\@\@Z
-     */
+
+    // symbol: ?setup@Destroy@AgentCommands@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry&);
+
     // NOLINTEND
 };
 

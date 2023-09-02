@@ -5,7 +5,6 @@
 namespace AgentComponents {
 
 struct ExecutingFlag {
-
 public:
     // prevent constructor by default
     ExecutingFlag& operator=(ExecutingFlag const&) = delete;

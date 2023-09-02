@@ -19,7 +19,6 @@ public:
 
     // ScriptFormPromiseTracker inner types define
     struct FromRequest {
-
     public:
         // prevent constructor by default
         FromRequest& operator=(FromRequest const&) = delete;
@@ -28,10 +27,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??1FromRequest\@ScriptFormPromiseTracker\@\@QEAA\@XZ
-         */
+        // symbol: ??1FromRequest@ScriptFormPromiseTracker@@QEAA@XZ
         MCAPI ~FromRequest();
+
         // NOLINTEND
     };
 
@@ -42,31 +40,23 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFORMPROMISETRACKER
-    /**
-     * @symbol ?onEvent\@ScriptFormPromiseTracker\@\@UEAA?AW4EventResult\@\@AEBUPlayerFormResponseEvent\@\@\@Z
-     */
-    MCVAPI enum class EventResult onEvent(struct PlayerFormResponseEvent const&);
-    /**
-     * @symbol ?onEvent\@ScriptFormPromiseTracker\@\@UEAA?AW4EventResult\@\@AEBUPlayerFormCloseEvent\@\@\@Z
-     */
-    MCVAPI enum class EventResult onEvent(struct PlayerFormCloseEvent const&);
-#endif
-    /**
-     * @symbol ??0ScriptFormPromiseTracker\@\@QEAA\@XZ
-     */
+    // symbol: ?onEvent@ScriptFormPromiseTracker@@UEAA?AW4EventResult@@AEBUPlayerFormResponseEvent@@@Z
+    MCVAPI ::EventResult onEvent(struct PlayerFormResponseEvent const&);
+
+    // symbol: ?onEvent@ScriptFormPromiseTracker@@UEAA?AW4EventResult@@AEBUPlayerFormCloseEvent@@@Z
+    MCVAPI ::EventResult onEvent(struct PlayerFormCloseEvent const&);
+
+    // symbol: ??0ScriptFormPromiseTracker@@QEAA@XZ
     MCAPI ScriptFormPromiseTracker();
-    /**
-     * @symbol ?handleFormResponse\@ScriptFormPromiseTracker\@\@QEAAXIAEBVValue\@Json\@\@\@Z
-     */
-    MCAPI void handleFormResponse(uint32_t, class Json::Value const&);
-    /**
-     * @symbol ?handlePlayerQuit\@ScriptFormPromiseTracker\@\@QEAAXAEBVNetworkIdentifier\@\@\@Z
-     */
+
+    // symbol: ?handleFormResponse@ScriptFormPromiseTracker@@QEAAXIAEBVValue@Json@@@Z
+    MCAPI void handleFormResponse(uint, class Json::Value const&);
+
+    // symbol: ?handlePlayerQuit@ScriptFormPromiseTracker@@QEAAXAEBVNetworkIdentifier@@@Z
     MCAPI void handlePlayerQuit(class NetworkIdentifier const&);
-    /**
-     * @symbol ?rejectAllForShutdown\@ScriptFormPromiseTracker\@\@QEAAXXZ
-     */
+
+    // symbol: ?rejectAllForShutdown@ScriptFormPromiseTracker@@QEAAXXZ
     MCAPI void rejectAllForShutdown();
+
     // NOLINTEND
 };

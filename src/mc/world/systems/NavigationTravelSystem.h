@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class NavigationTravelSystem {
-
 public:
     // prevent constructor by default
     NavigationTravelSystem& operator=(NavigationTravelSystem const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createNavigationTravelSystem\@NavigationTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createNavigationTravelSystem@NavigationTravelSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createNavigationTravelSystem();
+
     // NOLINTEND
 };

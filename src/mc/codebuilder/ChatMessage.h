@@ -5,7 +5,6 @@
 namespace CodeBuilder {
 
 struct ChatMessage {
-
 public:
     // prevent constructor by default
     ChatMessage& operator=(ChatMessage const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ChatMessage\@CodeBuilder\@\@QEAA\@XZ
-     */
+    // symbol: ??1ChatMessage@CodeBuilder@@QEAA@XZ
     MCAPI ~ChatMessage();
+
     // NOLINTEND
 };
 

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class WaterMovementComponent {
-
 public:
     // prevent constructor by default
     WaterMovementComponent& operator=(WaterMovementComponent const&) = delete;
@@ -11,21 +10,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0WaterMovementComponent\@\@QEAA\@XZ
-     */
+    // symbol: ??0WaterMovementComponent@@QEAA@XZ
     MCAPI WaterMovementComponent();
-    /**
-     * @symbol ?getDragFactor\@WaterMovementComponent\@\@QEBAMXZ
-     */
+
+    // symbol: ?getDragFactor@WaterMovementComponent@@QEBAMXZ
     MCAPI float getDragFactor() const;
-    /**
-     * @symbol ?initFromDefinition\@WaterMovementComponent\@\@QEAAXAEAVActor\@\@\@Z
-     */
+
+    // symbol: ?initFromDefinition@WaterMovementComponent@@QEAAXAEAVActor@@@Z
     MCAPI void initFromDefinition(class Actor&);
-    /**
-     * @symbol ?getDefaultDragFactor\@WaterMovementComponent\@\@SAMXZ
-     */
+
+    // symbol: ?getDefaultDragFactor@WaterMovementComponent@@SAMXZ
     MCAPI static float getDefaultDragFactor();
+
     // NOLINTEND
 };

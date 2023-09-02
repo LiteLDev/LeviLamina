@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class SetActorLinkPacketSystem {
-
 public:
     // prevent constructor by default
     SetActorLinkPacketSystem& operator=(SetActorLinkPacketSystem const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createSetActorLinkPacketSystem\@SetActorLinkPacketSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createSetActorLinkPacketSystem@SetActorLinkPacketSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSetActorLinkPacketSystem();
+
     // NOLINTEND
 };

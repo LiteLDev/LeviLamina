@@ -7,7 +7,6 @@
 
 
 struct ScorePacketInfo {
-
 public:
     ScoreboardId             mScoreboardId;   // this+0x0
     std::string              mObjectiveName;  // this+0x10
@@ -21,13 +20,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ScorePacketInfo\@\@QEAA\@$$QEAU0\@\@Z
-     */
+    // symbol: ??0ScorePacketInfo@@QEAA@$$QEAU0@@Z
     MCAPI ScorePacketInfo(struct ScorePacketInfo&&);
-    /**
-     * @symbol ??1ScorePacketInfo\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ScorePacketInfo@@QEAA@XZ
     MCAPI ~ScorePacketInfo();
+
     // NOLINTEND
 };

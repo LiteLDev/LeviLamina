@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct BoatPaddleComponent {
-
 public:
     // prevent constructor by default
     BoatPaddleComponent& operator=(BoatPaddleComponent const&) = delete;

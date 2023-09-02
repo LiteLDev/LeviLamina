@@ -5,7 +5,6 @@
 namespace AgentComponents::Actions {
 
 struct Interact {
-
 public:
     // prevent constructor by default
     Interact& operator=(Interact const&) = delete;

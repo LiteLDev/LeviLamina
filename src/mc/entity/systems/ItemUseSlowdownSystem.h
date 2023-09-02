@@ -4,9 +4,7 @@
 
 namespace ItemUseSlowdownSystem {
 // NOLINTBEGIN
-/**
- * @symbol ?createSystem\@ItemUseSlowdownSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
- */
+// symbol: ?createSystem@ItemUseSlowdownSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
 // NOLINTEND
 

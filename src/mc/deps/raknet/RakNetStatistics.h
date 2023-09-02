@@ -5,7 +5,6 @@
 namespace RakNet {
 
 struct RakNetStatistics {
-
 public:
     // prevent constructor by default
     RakNetStatistics& operator=(RakNetStatistics const&) = delete;

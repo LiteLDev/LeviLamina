@@ -14,7 +14,6 @@
 #include "mc/enums/Rotation.h"
 
 class StructureSettings {
-
 public:
     std::string   mPaletteName;                               // this+0x0
     bool          mIgnoreEntities;                            // this+0x20
@@ -45,163 +44,123 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0StructureSettings\@\@QEAA\@XZ
-     */
+    // symbol: ??0StructureSettings@@QEAA@XZ
     MCAPI StructureSettings();
-    /**
-     * @symbol ??0StructureSettings\@\@QEAA\@$$QEAV0\@\@Z
-     */
+
+    // symbol: ??0StructureSettings@@QEAA@$$QEAV0@@Z
     MCAPI StructureSettings(class StructureSettings&&);
-    /**
-     * @symbol ?getAnimationMode\@StructureSettings\@\@QEBA?AW4AnimationMode\@\@XZ
-     */
-    MCAPI enum class AnimationMode getAnimationMode() const;
-    /**
-     * @symbol ?getAnimationSeconds\@StructureSettings\@\@QEBAMXZ
-     */
+
+    // symbol: ?getAnimationMode@StructureSettings@@QEBA?AW4AnimationMode@@XZ
+    MCAPI ::AnimationMode getAnimationMode() const;
+
+    // symbol: ?getAnimationSeconds@StructureSettings@@QEBAMXZ
     MCAPI float getAnimationSeconds() const;
-    /**
-     * @symbol ?getAnimationTicks\@StructureSettings\@\@QEBAIXZ
-     */
-    MCAPI uint32_t getAnimationTicks() const;
-    /**
-     * @symbol ?getIgnoreBlocks\@StructureSettings\@\@QEBA_NXZ
-     */
+
+    // symbol: ?getAnimationTicks@StructureSettings@@QEBAIXZ
+    MCAPI uint getAnimationTicks() const;
+
+    // symbol: ?getIgnoreBlocks@StructureSettings@@QEBA_NXZ
     MCAPI bool getIgnoreBlocks() const;
-    /**
-     * @symbol ?getIgnoreEntities\@StructureSettings\@\@QEBA_NXZ
-     */
+
+    // symbol: ?getIgnoreEntities@StructureSettings@@QEBA_NXZ
     MCAPI bool getIgnoreEntities() const;
-    /**
-     * @symbol ?getIntegritySeed\@StructureSettings\@\@QEBAIXZ
-     */
-    MCAPI uint32_t getIntegritySeed() const;
-    /**
-     * @symbol ?getIntegrityValue\@StructureSettings\@\@QEBAMXZ
-     */
+
+    // symbol: ?getIntegritySeed@StructureSettings@@QEBAIXZ
+    MCAPI uint getIntegritySeed() const;
+
+    // symbol: ?getIntegrityValue@StructureSettings@@QEBAMXZ
     MCAPI float getIntegrityValue() const;
-    /**
-     * @symbol ?getLastTouchedByPlayerID\@StructureSettings\@\@QEBA?AUActorUniqueID\@\@XZ
-     */
+
+    // symbol: ?getLastTouchedByPlayerID@StructureSettings@@QEBA?AUActorUniqueID@@XZ
     MCAPI struct ActorUniqueID getLastTouchedByPlayerID() const;
-    /**
-     * @symbol ?getMirror\@StructureSettings\@\@QEBA?AW4Mirror\@\@XZ
-     */
-    MCAPI enum class Mirror getMirror() const;
-    /**
-     * @symbol
-     * ?getPaletteName\@StructureSettings\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // symbol: ?getMirror@StructureSettings@@QEBA?AW4Mirror@@XZ
+    MCAPI ::Mirror getMirror() const;
+
+    // symbol:
+    // ?getPaletteName@StructureSettings@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getPaletteName() const;
-    /**
-     * @symbol ?getPivot\@StructureSettings\@\@QEBAAEBVVec3\@\@XZ
-     */
+
+    // symbol: ?getPivot@StructureSettings@@QEBAAEBVVec3@@XZ
     MCAPI class Vec3 const& getPivot() const;
-    /**
-     * @symbol ?getRotation\@StructureSettings\@\@QEBA?AW4Rotation\@\@XZ
-     */
-    MCAPI enum class Rotation getRotation() const;
-    /**
-     * @symbol ?getStructureOffset\@StructureSettings\@\@QEBAAEBVBlockPos\@\@XZ
-     */
+
+    // symbol: ?getRotation@StructureSettings@@QEBA?AW4Rotation@@XZ
+    MCAPI ::Rotation getRotation() const;
+
+    // symbol: ?getStructureOffset@StructureSettings@@QEBAAEBVBlockPos@@XZ
     MCAPI class BlockPos const& getStructureOffset() const;
-    /**
-     * @symbol ?getStructureSize\@StructureSettings\@\@QEBAAEBVBlockPos\@\@XZ
-     */
+
+    // symbol: ?getStructureSize@StructureSettings@@QEBAAEBVBlockPos@@XZ
     MCAPI class BlockPos const& getStructureSize() const;
-    /**
-     * @symbol ?isAnimated\@StructureSettings\@\@QEBA_NXZ
-     */
+
+    // symbol: ?isAnimated@StructureSettings@@QEBA_NXZ
     MCAPI bool isAnimated() const;
-    /**
-     * @symbol ??4StructureSettings\@\@QEAAAEAV0\@AEBV0\@\@Z
-     */
+
+    // symbol: ??4StructureSettings@@QEAAAEAV0@AEBV0@@Z
     MCAPI class StructureSettings& operator=(class StructureSettings const&);
-    /**
-     * @symbol ??4StructureSettings\@\@QEAAAEAV0\@$$QEAV0\@\@Z
-     */
+
+    // symbol: ??4StructureSettings@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class StructureSettings& operator=(class StructureSettings&&);
-    /**
-     * @symbol ?setAllowNonTickingPlayerAndTickingAreaChunks\@StructureSettings\@\@QEAAX_N\@Z
-     */
+
+    // symbol: ?setAllowNonTickingPlayerAndTickingAreaChunks@StructureSettings@@QEAAX_N@Z
     MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool);
-    /**
-     * @symbol ?setAnimationMode\@StructureSettings\@\@QEAAXW4AnimationMode\@\@\@Z
-     */
-    MCAPI void setAnimationMode(enum class AnimationMode);
-    /**
-     * @symbol ?setAnimationSeconds\@StructureSettings\@\@QEAAXM\@Z
-     */
+
+    // symbol: ?setAnimationMode@StructureSettings@@QEAAXW4AnimationMode@@@Z
+    MCAPI void setAnimationMode(::AnimationMode);
+
+    // symbol: ?setAnimationSeconds@StructureSettings@@QEAAXM@Z
     MCAPI void setAnimationSeconds(float);
-    /**
-     * @symbol ?setIgnoreBlocks\@StructureSettings\@\@QEAAX_N\@Z
-     */
+
+    // symbol: ?setIgnoreBlocks@StructureSettings@@QEAAX_N@Z
     MCAPI void setIgnoreBlocks(bool);
-    /**
-     * @symbol ?setIgnoreEntities\@StructureSettings\@\@QEAAX_N\@Z
-     */
+
+    // symbol: ?setIgnoreEntities@StructureSettings@@QEAAX_N@Z
     MCAPI void setIgnoreEntities(bool);
-    /**
-     * @symbol ?setIgnoreJigsawBlocks\@StructureSettings\@\@QEAAX_N\@Z
-     */
+
+    // symbol: ?setIgnoreJigsawBlocks@StructureSettings@@QEAAX_N@Z
     MCAPI void setIgnoreJigsawBlocks(bool);
-    /**
-     * @symbol ?setIntegritySeed\@StructureSettings\@\@QEAAXI\@Z
-     */
-    MCAPI void setIntegritySeed(uint32_t);
-    /**
-     * @symbol ?setIntegrityValue\@StructureSettings\@\@QEAAXM\@Z
-     */
+
+    // symbol: ?setIntegritySeed@StructureSettings@@QEAAXI@Z
+    MCAPI void setIntegritySeed(uint);
+
+    // symbol: ?setIntegrityValue@StructureSettings@@QEAAXM@Z
     MCAPI void setIntegrityValue(float);
-    /**
-     * @symbol ?setLastTouchedByPlayerID\@StructureSettings\@\@QEAAXUActorUniqueID\@\@\@Z
-     */
+
+    // symbol: ?setLastTouchedByPlayerID@StructureSettings@@QEAAXUActorUniqueID@@@Z
     MCAPI void setLastTouchedByPlayerID(struct ActorUniqueID);
-    /**
-     * @symbol ?setMirror\@StructureSettings\@\@QEAAXW4Mirror\@\@\@Z
-     */
-    MCAPI void setMirror(enum class Mirror);
-    /**
-     * @symbol
-     * ?setPaletteName\@StructureSettings\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // symbol: ?setMirror@StructureSettings@@QEAAXW4Mirror@@@Z
+    MCAPI void setMirror(::Mirror);
+
+    // symbol: ?setPaletteName@StructureSettings@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setPaletteName(std::string);
-    /**
-     * @symbol ?setPivot\@StructureSettings\@\@QEAAXAEBVVec3\@\@\@Z
-     */
+
+    // symbol: ?setPivot@StructureSettings@@QEAAXAEBVVec3@@@Z
     MCAPI void setPivot(class Vec3 const&);
-    /**
-     * @symbol ?setReloadActorEquipment\@StructureSettings\@\@QEAAX_N\@Z
-     */
+
+    // symbol: ?setReloadActorEquipment@StructureSettings@@QEAAX_N@Z
     MCAPI void setReloadActorEquipment(bool);
-    /**
-     * @symbol ?setRotation\@StructureSettings\@\@QEAAXW4Rotation\@\@\@Z
-     */
-    MCAPI void setRotation(enum class Rotation);
-    /**
-     * @symbol ?setStructureOffset\@StructureSettings\@\@QEAAXAEBVBlockPos\@\@\@Z
-     */
+
+    // symbol: ?setRotation@StructureSettings@@QEAAXW4Rotation@@@Z
+    MCAPI void setRotation(::Rotation);
+
+    // symbol: ?setStructureOffset@StructureSettings@@QEAAXAEBVBlockPos@@@Z
     MCAPI void setStructureOffset(class BlockPos const&);
-    /**
-     * @symbol ?setStructureSize\@StructureSettings\@\@QEAAXAEBVBlockPos\@\@\@Z
-     */
+
+    // symbol: ?setStructureSize@StructureSettings@@QEAAXAEBVBlockPos@@@Z
     MCAPI void setStructureSize(class BlockPos const&);
-    /**
-     * @symbol ?shouldAllowNonTickingPlayerAndTickingAreaChunks\@StructureSettings\@\@QEBA_NXZ
-     */
+
+    // symbol: ?shouldAllowNonTickingPlayerAndTickingAreaChunks@StructureSettings@@QEBA_NXZ
     MCAPI bool shouldAllowNonTickingPlayerAndTickingAreaChunks() const;
-    /**
-     * @symbol ??1StructureSettings\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1StructureSettings@@QEAA@XZ
     MCAPI ~StructureSettings();
-    /**
-     * @symbol ?DEFAULT_STRUCTURE_OFFSET\@StructureSettings\@\@2VBlockPos\@\@B
-     */
+
+    // symbol: ?DEFAULT_STRUCTURE_OFFSET@StructureSettings@@2VBlockPos@@B
     MCAPI static class BlockPos const DEFAULT_STRUCTURE_OFFSET;
-    /**
-     * @symbol ?DEFAULT_STRUCTURE_SIZE\@StructureSettings\@\@2VBlockPos\@\@B
-     */
+
+    // symbol: ?DEFAULT_STRUCTURE_SIZE@StructureSettings@@2VBlockPos@@B
     MCAPI static class BlockPos const DEFAULT_STRUCTURE_SIZE;
+
     // NOLINTEND
 };

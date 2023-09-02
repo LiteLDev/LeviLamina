@@ -11,7 +11,6 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 struct CanFlyDefinition {
-
 public:
     // prevent constructor by default
     CanFlyDefinition& operator=(CanFlyDefinition const&) = delete;
@@ -20,20 +19,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?initialize\@CanFlyDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
+    // symbol: ?initialize@CanFlyDefinition@@QEBAXAEAVEntityContext@@@Z
     MCAPI void initialize(class EntityContext&) const;
-    /**
-     * @symbol ?uninitialize\@CanFlyDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
+
+    // symbol: ?uninitialize@CanFlyDefinition@@QEBAXAEAVEntityContext@@@Z
     MCAPI void uninitialize(class EntityContext&) const;
-    /**
-     * @symbol
-     * ?buildSchema\@CanFlyDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UCanFlyDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?buildSchema@CanFlyDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UCanFlyDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct CanFlyDefinition>>&);
+
     // NOLINTEND
 };

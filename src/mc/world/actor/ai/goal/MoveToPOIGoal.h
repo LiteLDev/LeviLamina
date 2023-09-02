@@ -8,7 +8,6 @@
 #include "mc/world/actor/ai/goal/BaseMoveToGoal.h"
 
 class MoveToPOIGoal : public ::BaseMoveToGoal {
-
 public:
     // prevent constructor by default
     MoveToPOIGoal& operator=(MoveToPOIGoal const&) = delete;
@@ -17,81 +16,56 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@MoveToPOIGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@MoveToPOIGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 5
-     * @symbol ?stop\@MoveToPOIGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 5, symbol: ?stop@MoveToPOIGoal@@UEAAXXZ
     virtual void stop();
-    /**
-     * @vftbl 6
-     * @symbol ?tick\@MoveToPOIGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 6, symbol: ?tick@MoveToPOIGoal@@UEAAXXZ
     virtual void tick();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@MoveToPOIGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@MoveToPOIGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @vftbl 11
-     * @symbol ?isValidTarget\@MoveToPOIGoal\@\@UEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
+
+    // vIndex: 11, symbol: ?isValidTarget@MoveToPOIGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
-    /**
-     * @vftbl 14
-     * @symbol ?_moveToBlock\@MoveToPOIGoal\@\@MEAAXXZ
-     */
+
+    // vIndex: 14, symbol: ?_moveToBlock@MoveToPOIGoal@@MEAAXXZ
     virtual void _moveToBlock();
-    /**
-     * @vftbl 15
-     * @symbol ?_getTargetPosition\@MoveToPOIGoal\@\@MEBA?AVVec3\@\@XZ
-     */
+
+    // vIndex: 15, symbol: ?_getTargetPosition@MoveToPOIGoal@@MEBA?AVVec3@@XZ
     virtual class Vec3 _getTargetPosition() const;
-    /**
-     * @vftbl 17
-     * @symbol ?_getOwnedPOI\@MoveToPOIGoal\@\@MEBA?AV?$weak_ptr\@VPOIInstance\@\@\@std\@\@W4POIType\@\@\@Z
-     */
-    virtual std::weak_ptr<class POIInstance> _getOwnedPOI(enum class POIType) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOPOIGOAL
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // vIndex: 17, symbol: ?_getOwnedPOI@MoveToPOIGoal@@MEBA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@@Z
+    virtual std::weak_ptr<class POIInstance> _getOwnedPOI(::POIType) const;
+
+    // symbol: ??1MoveToPOIGoal@@UEAA@XZ
     MCVAPI ~MoveToPOIGoal();
-#endif
-    /**
-     * @symbol ??0MoveToPOIGoal\@\@QEAA\@AEAVMob\@\@MW4POIType\@\@M\@Z
-     */
-    MCAPI MoveToPOIGoal(class Mob&, float, enum class POIType, float);
-    /**
-     * @symbol ?getPOI\@MoveToPOIGoal\@\@QEAA_NW4POIType\@\@\@Z
-     */
-    MCAPI bool getPOI(enum class POIType);
+
+    // symbol: ??0MoveToPOIGoal@@QEAA@AEAVMob@@MW4POIType@@M@Z
+    MCAPI MoveToPOIGoal(class Mob&, float, ::POIType, float);
+
+    // symbol: ?getPOI@MoveToPOIGoal@@QEAA_NW4POIType@@@Z
+    MCAPI bool getPOI(::POIType);
+
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_canReachPOI\@MoveToPOIGoal\@\@IEAA_NAEBVVec3\@\@M_N\@Z
-     */
+    // symbol: ?_canReachPOI@MoveToPOIGoal@@IEAA_NAEBVVec3@@M_N@Z
     MCAPI bool _canReachPOI(class Vec3 const&, float, bool);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_updatePOIBooking\@MoveToPOIGoal\@\@AEAAXXZ
-     */
+    // symbol: ?_updatePOIBooking@MoveToPOIGoal@@AEAAXXZ
     MCAPI void _updatePOIBooking();
+
     // NOLINTEND
 };

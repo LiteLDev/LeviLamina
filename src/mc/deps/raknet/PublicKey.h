@@ -5,7 +5,6 @@
 namespace RakNet {
 
 struct PublicKey {
-
 public:
     // prevent constructor by default
     PublicKey& operator=(PublicKey const&) = delete;

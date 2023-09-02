@@ -5,7 +5,6 @@
 namespace AgentComponents::Actions {
 
 struct Collect {
-
 public:
     // prevent constructor by default
     Collect& operator=(Collect const&) = delete;

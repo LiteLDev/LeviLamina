@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class RecipeCraftInputs {
-
 public:
     // prevent constructor by default
     RecipeCraftInputs& operator=(RecipeCraftInputs const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1RecipeCraftInputs\@\@QEAA\@XZ
-     */
+    // symbol: ??1RecipeCraftInputs@@QEAA@XZ
     MCAPI ~RecipeCraftInputs();
+
     // NOLINTEND
 };

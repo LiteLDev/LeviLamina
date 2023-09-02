@@ -7,7 +7,6 @@
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
 class ScatteredFeaturePiece : public ::StructurePiece {
-
 public:
     // prevent constructor by default
     ScatteredFeaturePiece& operator=(ScatteredFeaturePiece const&) = delete;
@@ -16,28 +15,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCATTEREDFEATUREPIECE
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1ScatteredFeaturePiece@@UEAA@XZ
     MCVAPI ~ScatteredFeaturePiece();
-#endif
+
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ScatteredFeaturePiece\@\@IEAA\@HHHHHH\@Z
-     */
-    MCAPI ScatteredFeaturePiece(int32_t, int32_t, int32_t, int32_t, int32_t, int32_t);
-    /**
-     * @symbol ?updateAverageGroundHeight\@ScatteredFeaturePiece\@\@IEAA_NAEAVBlockSource\@\@AEBVBoundingBox\@\@H\@Z
-     */
-    MCAPI bool updateAverageGroundHeight(class BlockSource&, class BoundingBox const&, int32_t);
+    // symbol: ??0ScatteredFeaturePiece@@IEAA@HHHHHH@Z
+    MCAPI ScatteredFeaturePiece(int, int, int, int, int, int);
+
+    // symbol: ?updateAverageGroundHeight@ScatteredFeaturePiece@@IEAA_NAEAVBlockSource@@AEBVBoundingBox@@H@Z
+    MCAPI bool updateAverageGroundHeight(class BlockSource&, class BoundingBox const&, int);
+
     // NOLINTEND
 };

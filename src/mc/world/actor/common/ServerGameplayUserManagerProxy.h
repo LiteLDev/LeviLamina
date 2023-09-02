@@ -6,7 +6,6 @@
 #include "mc/world/actor/common/GameplayUserManagerProxy.h"
 
 class ServerGameplayUserManagerProxy : public ::GameplayUserManagerProxy {
-
 public:
     // prevent constructor by default
     ServerGameplayUserManagerProxy& operator=(ServerGameplayUserManagerProxy const&) = delete;
@@ -15,21 +14,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?validatePlayerName\@ServerGameplayUserManagerProxy\@\@UEBA?AV?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@AEBVGameplayUserManager\@\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?validatePlayerName@ServerGameplayUserManagerProxy@@UEBA?AV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVGameplayUserManager@@@Z
     virtual std::optional<std::string> validatePlayerName(std::string const&, class GameplayUserManager const&) const;
-    /**
-     * @vftbl 2
-     * @symbol ?shouldGeneratePlayerIndex\@ServerGameplayUserManagerProxy\@\@UEBA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?shouldGeneratePlayerIndex@ServerGameplayUserManagerProxy@@UEBA_NXZ
     virtual bool shouldGeneratePlayerIndex() const;
+
     // NOLINTEND
 };

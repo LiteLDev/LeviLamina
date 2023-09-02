@@ -11,7 +11,6 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class BalloonableDefinition {
-
 public:
     // prevent constructor by default
     BalloonableDefinition& operator=(BalloonableDefinition const&) = delete;
@@ -20,12 +19,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?buildSchema\@BalloonableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VBalloonableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+    // symbol:
+    // ?buildSchema@BalloonableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBalloonableDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BalloonableDefinition>>&);
+
     // NOLINTEND
 };

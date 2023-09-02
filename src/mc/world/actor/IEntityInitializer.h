@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class IEntityInitializer {
-
 public:
     // prevent constructor by default
     IEntityInitializer& operator=(IEntityInitializer const&) = delete;

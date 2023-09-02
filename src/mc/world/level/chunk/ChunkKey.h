@@ -6,7 +6,6 @@
 #include "mc/world/AutomaticID.h"
 
 class ChunkKey {
-
 public:
     // prevent constructor by default
     ChunkKey& operator=(ChunkKey const&) = delete;
@@ -15,21 +14,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ChunkKey\@\@QEAA\@AEBVChunkPos\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
-     */
-    MCAPI ChunkKey(class ChunkPos const&, DimensionType);
-    /**
-     * @symbol ??0ChunkKey\@\@QEAA\@AEBVLevelChunk\@\@\@Z
-     */
+    // symbol: ??0ChunkKey@@QEAA@AEBVChunkPos@@V?$AutomaticID@VDimension@@H@@@Z
+    MCAPI ChunkKey(class ChunkPos const&, class AutomaticID<class Dimension, int>);
+
+    // symbol: ??0ChunkKey@@QEAA@AEBVLevelChunk@@@Z
     MCAPI ChunkKey(class LevelChunk const&);
-    /**
-     * @symbol ?asSpan\@ChunkKey\@\@QEBA?AV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@XZ
-     */
+
+    // symbol: ?asSpan@ChunkKey@@QEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
     MCAPI std::string_view asSpan() const;
-    /**
-     * @symbol ?hashCode\@ChunkKey\@\@QEBA_KXZ
-     */
-    MCAPI uint64_t hashCode() const;
+
+    // symbol: ?hashCode@ChunkKey@@QEBA_KXZ
+    MCAPI uint64 hashCode() const;
+
     // NOLINTEND
 };

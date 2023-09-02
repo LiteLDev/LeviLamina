@@ -6,7 +6,6 @@
 namespace gametest {
 
 struct TestParameters {
-
 public:
     BlockPos                   mTestPos;  //this+0x0
     bool                       mStopOnFailure; //this+0xC
@@ -24,10 +23,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1TestParameters\@gametest\@\@QEAA\@XZ
-     */
+    // symbol: ??1TestParameters@gametest@@QEAA@XZ
     MCAPI ~TestParameters();
+
     // NOLINTEND
 };
 

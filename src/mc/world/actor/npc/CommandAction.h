@@ -14,7 +14,6 @@ enum class ActionMode : int8_t {
 };
 
 struct CommandAction {
-
 public:
     npc::ActionValue                mActionValue;
     npc::Button                     mButton;
@@ -28,14 +27,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??9CommandAction\@npc\@\@QEBA_NAEBU01\@\@Z
-     */
+    // symbol: ??9CommandAction@npc@@QEBA_NAEBU01@@Z
     MCAPI bool operator!=(struct npc::CommandAction const&) const;
-    /**
-     * @symbol ??1CommandAction\@npc\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1CommandAction@npc@@QEAA@XZ
     MCAPI ~CommandAction();
+
     // NOLINTEND
 };
 

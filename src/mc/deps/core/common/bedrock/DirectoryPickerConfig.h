@@ -5,7 +5,6 @@
 namespace Bedrock {
 
 class DirectoryPickerConfig {
-
 public:
     // prevent constructor by default
     DirectoryPickerConfig& operator=(DirectoryPickerConfig const&) = delete;

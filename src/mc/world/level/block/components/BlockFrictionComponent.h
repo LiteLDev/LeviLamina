@@ -6,7 +6,6 @@
 #include "mc/world/level/block/utils/BlockComponentBase.h"
 
 struct BlockFrictionComponent : public ::BlockComponentBase {
-
 public:
     // prevent constructor by default
     BlockFrictionComponent& operator=(BlockFrictionComponent const&) = delete;

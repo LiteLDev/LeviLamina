@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct Tick {
-
 public:
     uint64_t t;
 
@@ -19,9 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?MAX\@Tick\@\@2U1\@B
-     */
+    // symbol: ?MAX@Tick@@2U1@B
     MCAPI static struct Tick const MAX;
+
     // NOLINTEND
 };

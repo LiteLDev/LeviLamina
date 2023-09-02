@@ -5,7 +5,6 @@
 namespace CaveFeatureUtils {
 
 struct CarvingParameters {
-
 public:
     // prevent constructor by default
     CarvingParameters& operator=(CarvingParameters const&) = delete;

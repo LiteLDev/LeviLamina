@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct SyncedAttribute {
-
 public:
     std::string mName;         // this+0x0
     float       mMinValue;     // this+0x20
@@ -17,9 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1SyncedAttribute\@\@QEAA\@XZ
-     */
+    // symbol: ??1SyncedAttribute@@QEAA@XZ
     MCAPI ~SyncedAttribute();
+
     // NOLINTEND
 };

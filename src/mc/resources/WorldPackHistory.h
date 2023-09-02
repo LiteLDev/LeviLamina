@@ -8,28 +8,23 @@ namespace Json { class Value; }
 // clang-format on
 
 class WorldPackHistory {
-
 public:
     // prevent constructor by default
     WorldPackHistory& operator=(WorldPackHistory const&) = delete;
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0WorldPackHistory\@\@QEAA\@AEBV0\@\@Z
-     */
+    // symbol: ??0WorldPackHistory@@QEAA@AEBV0@@Z
     MCAPI WorldPackHistory(class WorldPackHistory const&);
-    /**
-     * @symbol ??0WorldPackHistory\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0WorldPackHistory@@QEAA@XZ
     MCAPI WorldPackHistory();
-    /**
-     * @symbol ?initializeFromJson\@WorldPackHistory\@\@QEAA_NAEBVValue\@Json\@\@\@Z
-     */
+
+    // symbol: ?initializeFromJson@WorldPackHistory@@QEAA_NAEBVValue@Json@@@Z
     MCAPI bool initializeFromJson(class Json::Value const&);
-    /**
-     * @symbol ??1WorldPackHistory\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1WorldPackHistory@@QEAA@XZ
     MCAPI ~WorldPackHistory();
+
     // NOLINTEND
 };

@@ -5,7 +5,6 @@
 namespace Scripting {
 
 struct JSON {
-
 public:
     // prevent constructor by default
     JSON& operator=(JSON const&) = delete;

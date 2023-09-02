@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class BlockSelector {
-
 public:
     // prevent constructor by default
     BlockSelector& operator=(BlockSelector const&) = delete;
@@ -12,21 +11,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?next\@MossStoneSelector\@\@UEBAAEBVBlock\@\@AEAVRandom\@\@HHH_N\@Z
-     */
-    virtual class Block const& next(class Random&, int32_t, int32_t, int32_t, bool) const = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSELECTOR
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // vIndex: 1, symbol: ?next@MossStoneSelector@@UEBAAEBVBlock@@AEAVRandom@@HHH_N@Z
+    virtual class Block const& next(class Random&, int, int, int, bool) const = 0;
+
+    // symbol: ??1BlockSelector@@UEAA@XZ
     MCVAPI ~BlockSelector();
-#endif
+
     // NOLINTEND
 };

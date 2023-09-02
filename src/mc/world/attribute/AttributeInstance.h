@@ -8,7 +8,6 @@ namespace mce { class UUID; }
 // clang-format on
 
 class AttributeInstance {
-
 public:
     // prevent constructor by default
     AttributeInstance& operator=(AttributeInstance const&) = delete;
@@ -16,212 +15,159 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?tick\@AttributeInstance\@\@UEAAXXZ
-     */
+
+    // vIndex: 1, symbol: ?tick@AttributeInstance@@UEAAXXZ
     virtual void tick();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTEINSTANCE
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1AttributeInstance@@UEAA@XZ
     MCVAPI ~AttributeInstance();
-#endif
-    /**
-     * @symbol ??0AttributeInstance\@\@QEAA\@AEBV0\@\@Z
-     */
+
+    // symbol: ??0AttributeInstance@@QEAA@AEBV0@@Z
     MCAPI AttributeInstance(class AttributeInstance const&);
-    /**
-     * @symbol ?addBuff\@AttributeInstance\@\@QEAAXAEBVAttributeBuff\@\@\@Z
-     */
+
+    // symbol: ?addBuff@AttributeInstance@@QEAAXAEBVAttributeBuff@@@Z
     MCAPI void addBuff(class AttributeBuff const&);
-    /**
-     * @symbol ?addModifier\@AttributeInstance\@\@QEAAXV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
-     */
+
+    // symbol: ?addModifier@AttributeInstance@@QEAAXV?$shared_ptr@VAttributeModifier@@@std@@@Z
     MCAPI void addModifier(std::shared_ptr<class AttributeModifier>);
-    /**
-     * @symbol ?addModifier\@AttributeInstance\@\@QEAAXAEBVAttributeModifier\@\@\@Z
-     */
+
+    // symbol: ?addModifier@AttributeInstance@@QEAAXAEBVAttributeModifier@@@Z
     MCAPI void addModifier(class AttributeModifier const&);
-    /**
-     * @symbol ?getAttribute\@AttributeInstance\@\@QEBAPEBVAttribute\@\@XZ
-     */
+
+    // symbol: ?getAttribute@AttributeInstance@@QEBAPEBVAttribute@@XZ
     MCAPI class Attribute const* getAttribute() const;
-    /**
-     * @symbol
-     * ?getBuffs\@AttributeInstance\@\@QEBAAEBV?$vector\@VTemporalAttributeBuff\@\@V?$allocator\@VTemporalAttributeBuff\@\@\@std\@\@\@std\@\@XZ
-     */
+
+    // symbol:
+    // ?getBuffs@AttributeInstance@@QEBAAEBV?$vector@VTemporalAttributeBuff@@V?$allocator@VTemporalAttributeBuff@@@std@@@std@@XZ
     MCAPI std::vector<class TemporalAttributeBuff> const& getBuffs() const;
-    /**
-     * @symbol ?getCurrentValue\@AttributeInstance\@\@QEBAMXZ
-     */
+
+    // symbol: ?getCurrentValue@AttributeInstance@@QEBAMXZ
     MCAPI float getCurrentValue() const;
-    /**
-     * @symbol ?getDefaultValue\@AttributeInstance\@\@QEBAMH\@Z
-     */
-    MCAPI float getDefaultValue(int32_t) const;
-    /**
-     * @symbol ?getHandle\@AttributeInstance\@\@QEBA?AVAttributeInstanceHandle\@\@XZ
-     */
+
+    // symbol: ?getDefaultValue@AttributeInstance@@QEBAMH@Z
+    MCAPI float getDefaultValue(int) const;
+
+    // symbol: ?getHandle@AttributeInstance@@QEBA?AVAttributeInstanceHandle@@XZ
     MCAPI class AttributeInstanceHandle getHandle() const;
-    /**
-     * @symbol ?getMaxValue\@AttributeInstance\@\@QEBAMXZ
-     */
+
+    // symbol: ?getMaxValue@AttributeInstance@@QEBAMXZ
     MCAPI float getMaxValue() const;
-    /**
-     * @symbol ?getMinValue\@AttributeInstance\@\@QEBAMXZ
-     */
+
+    // symbol: ?getMinValue@AttributeInstance@@QEBAMXZ
     MCAPI float getMinValue() const;
-    /**
-     * @symbol ?getModifier\@AttributeInstance\@\@QEBA?AVAttributeModifier\@\@AEBVUUID\@mce\@\@\@Z
-     */
+
+    // symbol: ?getModifier@AttributeInstance@@QEBA?AVAttributeModifier@@AEBVUUID@mce@@@Z
     MCAPI class AttributeModifier getModifier(class mce::UUID const&) const;
-    /**
-     * @symbol
-     * ?getModifiers\@AttributeInstance\@\@QEBA?AV?$vector\@VAttributeModifier\@\@V?$allocator\@VAttributeModifier\@\@\@std\@\@\@std\@\@XZ
-     */
+
+    // symbol:
+    // ?getModifiers@AttributeInstance@@QEBA?AV?$vector@VAttributeModifier@@V?$allocator@VAttributeModifier@@@std@@@std@@XZ
     MCAPI std::vector<class AttributeModifier> getModifiers() const;
-    /**
-     * @symbol
-     * ?getModifiers\@AttributeInstance\@\@QEBA?AV?$vector\@VAttributeModifier\@\@V?$allocator\@VAttributeModifier\@\@\@std\@\@\@std\@\@H\@Z
-     */
-    MCAPI std::vector<class AttributeModifier> getModifiers(int32_t) const;
-    /**
-     * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NAEBVUUID\@mce\@\@\@Z
-     */
+
+    // symbol:
+    // ?getModifiers@AttributeInstance@@QEBA?AV?$vector@VAttributeModifier@@V?$allocator@VAttributeModifier@@@std@@@std@@H@Z
+    MCAPI std::vector<class AttributeModifier> getModifiers(int) const;
+
+    // symbol: ?hasModifier@AttributeInstance@@QEBA_NAEBVUUID@mce@@@Z
     MCAPI bool hasModifier(class mce::UUID const&) const;
-    /**
-     * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NAEBVAttributeModifier\@\@\@Z
-     */
+
+    // symbol: ?hasModifier@AttributeInstance@@QEBA_NAEBVAttributeModifier@@@Z
     MCAPI bool hasModifier(class AttributeModifier const&) const;
-    /**
-     * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
-     */
+
+    // symbol: ?hasModifier@AttributeInstance@@QEBA_NV?$shared_ptr@VAttributeModifier@@@std@@@Z
     MCAPI bool hasModifier(std::shared_ptr<class AttributeModifier>) const;
-    /**
-     * @symbol ?hasModifiers\@AttributeInstance\@\@QEBA_NXZ
-     */
+
+    // symbol: ?hasModifiers@AttributeInstance@@QEBA_NXZ
     MCAPI bool hasModifiers() const;
-    /**
-     * @symbol ?hasTemporalBuffs\@AttributeInstance\@\@QEBA_NXZ
-     */
+
+    // symbol: ?hasTemporalBuffs@AttributeInstance@@QEBA_NXZ
     MCAPI bool hasTemporalBuffs() const;
-    /**
-     * @symbol ?inheritFrom\@AttributeInstance\@\@QEAAXAEBV1\@PEAVBaseAttributeMap\@\@\@Z
-     */
+
+    // symbol: ?inheritFrom@AttributeInstance@@QEAAXAEBV1@PEAVBaseAttributeMap@@@Z
     MCAPI void inheritFrom(class AttributeInstance const&, class BaseAttributeMap*);
-    /**
-     * @symbol ?isValid\@AttributeInstance\@\@QEBA_NXZ
-     */
+
+    // symbol: ?isValid@AttributeInstance@@QEBA_NXZ
     MCAPI bool isValid() const;
-    /**
-     * @symbol ?recalculateModifiers\@AttributeInstance\@\@QEAAXXZ
-     */
+
+    // symbol: ?recalculateModifiers@AttributeInstance@@QEAAXXZ
     MCAPI void recalculateModifiers();
-    /**
-     * @symbol ?registerListener\@AttributeInstance\@\@QEAAXAEBV1\@\@Z
-     */
+
+    // symbol: ?registerListener@AttributeInstance@@QEAAXAEBV1@@Z
     MCAPI void registerListener(class AttributeInstance const&);
-    /**
-     * @symbol ?removeBuff\@AttributeInstance\@\@QEAAXV?$shared_ptr\@VAttributeBuff\@\@\@std\@\@\@Z
-     */
+
+    // symbol: ?removeBuff@AttributeInstance@@QEAAXV?$shared_ptr@VAttributeBuff@@@std@@@Z
     MCAPI void removeBuff(std::shared_ptr<class AttributeBuff>);
-    /**
-     * @symbol ?removeBuff\@AttributeInstance\@\@QEAAXAEBVAttributeBuff\@\@\@Z
-     */
+
+    // symbol: ?removeBuff@AttributeInstance@@QEAAXAEBVAttributeBuff@@@Z
     MCAPI void removeBuff(class AttributeBuff const&);
-    /**
-     * @symbol ?removeBuffs\@AttributeInstance\@\@QEAAXXZ
-     */
+
+    // symbol: ?removeBuffs@AttributeInstance@@QEAAXXZ
     MCAPI void removeBuffs();
-    /**
-     * @symbol ?removeModifier\@AttributeInstance\@\@QEAA_NAEBVUUID\@mce\@\@\@Z
-     */
+
+    // symbol: ?removeModifier@AttributeInstance@@QEAA_NAEBVUUID@mce@@@Z
     MCAPI bool removeModifier(class mce::UUID const&);
-    /**
-     * @symbol ?removeModifier\@AttributeInstance\@\@QEAAXAEBVAttributeModifier\@\@\@Z
-     */
+
+    // symbol: ?removeModifier@AttributeInstance@@QEAAXAEBVAttributeModifier@@@Z
     MCAPI void removeModifier(class AttributeModifier const&);
-    /**
-     * @symbol ?removeModifier\@AttributeInstance\@\@QEAAXV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
-     */
+
+    // symbol: ?removeModifier@AttributeInstance@@QEAAXV?$shared_ptr@VAttributeModifier@@@std@@@Z
     MCAPI void removeModifier(std::shared_ptr<class AttributeModifier>);
-    /**
-     * @symbol ?removeModifiers\@AttributeInstance\@\@QEAAXXZ
-     */
+
+    // symbol: ?removeModifiers@AttributeInstance@@QEAAXXZ
     MCAPI void removeModifiers();
-    /**
-     * @symbol ?resetToDefaultValue\@AttributeInstance\@\@QEAAXXZ
-     */
+
+    // symbol: ?resetToDefaultValue@AttributeInstance@@QEAAXXZ
     MCAPI void resetToDefaultValue();
-    /**
-     * @symbol ?resetToMaxValue\@AttributeInstance\@\@QEAAXXZ
-     */
+
+    // symbol: ?resetToMaxValue@AttributeInstance@@QEAAXXZ
     MCAPI void resetToMaxValue();
-    /**
-     * @symbol ?resetToMinValue\@AttributeInstance\@\@QEAAXXZ
-     */
+
+    // symbol: ?resetToMinValue@AttributeInstance@@QEAAXXZ
     MCAPI void resetToMinValue();
-    /**
-     * @symbol ?serializationSetRange\@AttributeInstance\@\@QEAAXMMM\@Z
-     */
+
+    // symbol: ?serializationSetRange@AttributeInstance@@QEAAXMMM@Z
     MCAPI void serializationSetRange(float, float, float);
-    /**
-     * @symbol ?serializationSetValue\@AttributeInstance\@\@QEAAXMHM\@Z
-     */
-    MCAPI void serializationSetValue(float, int32_t, float);
-    /**
-     * @symbol ?setCurrentValue\@AttributeInstance\@\@QEAAXM\@Z
-     */
+
+    // symbol: ?serializationSetValue@AttributeInstance@@QEAAXMHM@Z
+    MCAPI void serializationSetValue(float, int, float);
+
+    // symbol: ?setCurrentValue@AttributeInstance@@QEAAXM@Z
     MCAPI void setCurrentValue(float);
-    /**
-     * @symbol ?setDefaultValue\@AttributeInstance\@\@QEAAXMH\@Z
-     */
-    MCAPI void setDefaultValue(float, int32_t);
-    /**
-     * @symbol ?setDefaultValueOnly\@AttributeInstance\@\@QEAAXM\@Z
-     */
+
+    // symbol: ?setDefaultValue@AttributeInstance@@QEAAXMH@Z
+    MCAPI void setDefaultValue(float, int);
+
+    // symbol: ?setDefaultValueOnly@AttributeInstance@@QEAAXM@Z
     MCAPI void setDefaultValueOnly(float);
-    /**
-     * @symbol ?setDelegate\@AttributeInstance\@\@QEAAXV?$shared_ptr\@VAttributeInstanceDelegate\@\@\@std\@\@\@Z
-     */
+
+    // symbol: ?setDelegate@AttributeInstance@@QEAAXV?$shared_ptr@VAttributeInstanceDelegate@@@std@@@Z
     MCAPI void setDelegate(std::shared_ptr<class AttributeInstanceDelegate>);
-    /**
-     * @symbol ?setMaxValue\@AttributeInstance\@\@QEAAXM\@Z
-     */
+
+    // symbol: ?setMaxValue@AttributeInstance@@QEAAXM@Z
     MCAPI void setMaxValue(float);
-    /**
-     * @symbol ?setRange\@AttributeInstance\@\@QEAAXMMM\@Z
-     */
+
+    // symbol: ?setRange@AttributeInstance@@QEAAXMMM@Z
     MCAPI void setRange(float, float, float);
-    /**
-     * @symbol ?updateModifier\@AttributeInstance\@\@QEAAXAEBVAttributeModifier\@\@\@Z
-     */
+
+    // symbol: ?updateModifier@AttributeInstance@@QEAAXAEBVAttributeModifier@@@Z
     MCAPI void updateModifier(class AttributeModifier const&);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_calculateValue\@AttributeInstance\@\@AEAAMAEBVAttributeBuff\@\@\@Z
-     */
+    // symbol: ?_calculateValue@AttributeInstance@@AEAAMAEBVAttributeBuff@@@Z
     MCAPI float _calculateValue(class AttributeBuff const&);
-    /**
-     * @symbol ?_calculateValue\@AttributeInstance\@\@AEAAMXZ
-     */
+
+    // symbol: ?_calculateValue@AttributeInstance@@AEAAMXZ
     MCAPI float _calculateValue();
-    /**
-     * @symbol ?_sanitizeValue\@AttributeInstance\@\@AEAAMM\@Z
-     */
+
+    // symbol: ?_sanitizeValue@AttributeInstance@@AEAAMM@Z
     MCAPI float _sanitizeValue(float);
-    /**
-     * @symbol ?_setDirty\@AttributeInstance\@\@AEAAXXZ
-     */
+
+    // symbol: ?_setDirty@AttributeInstance@@AEAAXXZ
     MCAPI void _setDirty();
+
     // NOLINTEND
 };

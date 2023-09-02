@@ -6,7 +6,6 @@ namespace Bedrock::PubSub {
 
 template <typename T0, typename T1>
 class Publisher {
-
 public:
     // prevent constructor by default
     Publisher& operator=(Publisher const&) = delete;

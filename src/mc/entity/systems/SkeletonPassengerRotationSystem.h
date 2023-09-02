@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class SkeletonPassengerRotationSystem {
-
 public:
     // prevent constructor by default
     SkeletonPassengerRotationSystem& operator=(SkeletonPassengerRotationSystem const&) = delete;
@@ -12,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?createSkeletonPassengerRotationSystem\@SkeletonPassengerRotationSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createSkeletonPassengerRotationSystem@SkeletonPassengerRotationSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSkeletonPassengerRotationSystem();
+
     // NOLINTEND
 };

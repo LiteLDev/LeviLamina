@@ -8,7 +8,6 @@
 namespace ScriptModuleMinecraft {
 
 struct ScriptWeatherChangedAfterEvent {
-
 public:
     // prevent constructor by default
     ScriptWeatherChangedAfterEvent& operator=(ScriptWeatherChangedAfterEvent const&) = delete;
@@ -17,23 +16,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??4ScriptWeatherChangedAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-     */
+    // symbol: ??4ScriptWeatherChangedAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent&&);
-    /**
-     * @symbol
-     * ?bind\@ScriptWeatherChangedAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptWeatherChangedAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptWeatherChangedAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptWeatherChangedAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>
     bind();
-    /**
-     * @symbol
-     * ?bindV010\@ScriptWeatherChangedAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptWeatherChangedAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bindV010@ScriptWeatherChangedAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptWeatherChangedAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>
     bindV010();
+
     // NOLINTEND
 };
 

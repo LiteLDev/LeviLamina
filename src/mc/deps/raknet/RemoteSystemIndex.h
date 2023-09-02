@@ -5,7 +5,6 @@
 namespace RakNet {
 
 struct RemoteSystemIndex {
-
 public:
     // prevent constructor by default
     RemoteSystemIndex& operator=(RemoteSystemIndex const&) = delete;

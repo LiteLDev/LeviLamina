@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class LegacyStructureBlockPalette {
-
 public:
     // prevent constructor by default
     LegacyStructureBlockPalette& operator=(LegacyStructureBlockPalette const&) = delete;
@@ -11,17 +10,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0LegacyStructureBlockPalette\@\@QEAA\@XZ
-     */
+    // symbol: ??0LegacyStructureBlockPalette@@QEAA@XZ
     MCAPI LegacyStructureBlockPalette();
-    /**
-     * @symbol ?getBlock\@LegacyStructureBlockPalette\@\@QEAAAEBVBlock\@\@H\@Z
-     */
-    MCAPI class Block const& getBlock(int32_t);
-    /**
-     * @symbol ??1LegacyStructureBlockPalette\@\@QEAA\@XZ
-     */
+
+    // symbol: ?getBlock@LegacyStructureBlockPalette@@QEAAAEBVBlock@@H@Z
+    MCAPI class Block const& getBlock(int);
+
+    // symbol: ??1LegacyStructureBlockPalette@@QEAA@XZ
     MCAPI ~LegacyStructureBlockPalette();
+
     // NOLINTEND
 };

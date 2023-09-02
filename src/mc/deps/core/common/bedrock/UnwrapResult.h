@@ -6,7 +6,6 @@ namespace Bedrock::Threading::AsyncResult {
 
 template <typename T0>
 class UnwrapResult {
-
 public:
     // prevent constructor by default
     UnwrapResult& operator=(UnwrapResult const&) = delete;

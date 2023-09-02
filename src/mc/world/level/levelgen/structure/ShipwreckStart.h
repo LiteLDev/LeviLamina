@@ -6,7 +6,6 @@
 #include "mc/world/level/levelgen/structure/StructureStart.h"
 
 class ShipwreckStart : public ::StructureStart {
-
 public:
     // prevent constructor by default
     ShipwreckStart& operator=(ShipwreckStart const&) = delete;
@@ -15,14 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @symbol ??0ShipwreckStart\@\@QEAA\@AEBVBiomeSource\@\@AEAVRandom\@\@HHF\@Z
-     */
-    MCAPI ShipwreckStart(class BiomeSource const&, class Random&, int32_t, int32_t, int16_t);
+
+    // symbol: ??0ShipwreckStart@@QEAA@AEBVBiomeSource@@AEAVRandom@@HHF@Z
+    MCAPI ShipwreckStart(class BiomeSource const&, class Random&, int, int, short);
+
     // NOLINTEND
 };

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ActorAnimationGroupParseMetaData {
-
 public:
     // prevent constructor by default
     ActorAnimationGroupParseMetaData& operator=(ActorAnimationGroupParseMetaData const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ActorAnimationGroupParseMetaData\@\@QEAA\@XZ
-     */
+    // symbol: ??1ActorAnimationGroupParseMetaData@@QEAA@XZ
     MCAPI ~ActorAnimationGroupParseMetaData();
+
     // NOLINTEND
 };

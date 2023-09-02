@@ -5,7 +5,6 @@
 namespace CodeBuilder {
 
 struct Item {
-
 public:
     // prevent constructor by default
     Item& operator=(Item const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1Item\@CodeBuilder\@\@QEAA\@XZ
-     */
+    // symbol: ??1Item@CodeBuilder@@QEAA@XZ
     MCAPI ~Item();
+
     // NOLINTEND
 };
 

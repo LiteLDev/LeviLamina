@@ -8,7 +8,6 @@
 namespace ScriptModuleMinecraft {
 
 struct ScriptActorHealthChangedAfterEvent {
-
 public:
     // prevent constructor by default
     ScriptActorHealthChangedAfterEvent& operator=(ScriptActorHealthChangedAfterEvent const&) = delete;
@@ -17,21 +16,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??4ScriptActorHealthChangedAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-     */
+    // symbol: ??4ScriptActorHealthChangedAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent&&);
-    /**
-     * @symbol ??1ScriptActorHealthChangedAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ScriptActorHealthChangedAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptActorHealthChangedAfterEvent();
-    /**
-     * @symbol
-     * ?bind\@ScriptActorHealthChangedAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptActorHealthChangedAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptActorHealthChangedAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptActorHealthChangedAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent>
     bind();
+
     // NOLINTEND
 };
 

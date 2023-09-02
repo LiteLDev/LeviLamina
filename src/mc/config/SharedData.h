@@ -17,7 +17,6 @@ struct ISharedData {
 };
 
 struct SharedData : public ISharedData {
-
 public:
     const Level *mLevel;
 
@@ -28,21 +27,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?isGameRuleEnabled\@SharedData\@PlayerCapabilities\@\@UEBA?AV?$optional\@_N\@std\@\@UGameRuleId\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?isGameRuleEnabled@SharedData@PlayerCapabilities@@UEBA?AV?$optional@_N@std@@UGameRuleId@@@Z
     virtual std::optional<bool> isGameRuleEnabled(struct GameRuleId) const;
-    /**
-     * @vftbl 2
-     * @symbol ?getChatRestrictionLevel\@SharedData\@PlayerCapabilities\@\@UEBA?AW4ChatRestrictionLevel\@\@XZ
-     */
-    virtual enum class ChatRestrictionLevel getChatRestrictionLevel() const;
+
+    // vIndex: 2, symbol: ?getChatRestrictionLevel@SharedData@PlayerCapabilities@@UEBA?AW4ChatRestrictionLevel@@XZ
+    virtual ::ChatRestrictionLevel getChatRestrictionLevel() const;
+
     // NOLINTEND
 };
 

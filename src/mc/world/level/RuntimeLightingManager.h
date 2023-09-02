@@ -11,7 +11,6 @@ public:
 
     // RuntimeLightingManager inner types define
     struct RuntimeLightingSubchunkList {
-
     public:
         // prevent constructor by default
         RuntimeLightingSubchunkList& operator=(RuntimeLightingSubchunkList const&) = delete;
@@ -20,10 +19,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??1RuntimeLightingSubchunkList\@RuntimeLightingManager\@\@QEAA\@XZ
-         */
+        // symbol: ??1RuntimeLightingSubchunkList@RuntimeLightingManager@@QEAA@XZ
         MCAPI ~RuntimeLightingSubchunkList();
+
         // NOLINTEND
     };
 
@@ -35,17 +33,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0RuntimeLightingManager\@\@QEAA\@AEAVDimension\@\@\@Z
-     */
+    // symbol: ??0RuntimeLightingManager@@QEAA@AEAVDimension@@@Z
     MCAPI RuntimeLightingManager(class Dimension&);
-    /**
-     * @symbol ?flushRunTimeLighting\@RuntimeLightingManager\@\@QEAAXXZ
-     */
+
+    // symbol: ?flushRunTimeLighting@RuntimeLightingManager@@QEAAXXZ
     MCAPI void flushRunTimeLighting();
-    /**
-     * @symbol ?updateBlockLight\@RuntimeLightingManager\@\@QEAAXAEBVBlockPos\@\@UBrightness\@\@111_N\@Z
-     */
+
+    // symbol: ?updateBlockLight@RuntimeLightingManager@@QEAAXAEBVBlockPos@@UBrightness@@111_N@Z
     MCAPI void updateBlockLight(
         class BlockPos const&,
         struct Brightness,
@@ -54,31 +48,26 @@ public:
         struct Brightness,
         bool
     );
-    /**
-     * @symbol ??1RuntimeLightingManager\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1RuntimeLightingManager@@QEAA@XZ
     MCAPI ~RuntimeLightingManager();
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_checkForRelightingTask\@RuntimeLightingManager\@\@AEAAXV?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@chrono\@std\@\@\@Z
-     */
+    // symbol:
+    // ?_checkForRelightingTask@RuntimeLightingManager@@AEAAXV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z
     MCAPI void _checkForRelightingTask(std::chrono::nanoseconds);
-    /**
-     * @symbol ?_getListOfChunksWithPlayerDistance\@RuntimeLightingManager\@\@AEAAXXZ
-     */
+
+    // symbol: ?_getListOfChunksWithPlayerDistance@RuntimeLightingManager@@AEAAXXZ
     MCAPI void _getListOfChunksWithPlayerDistance();
-    /**
-     * @symbol
-     * ?_relightChunks\@RuntimeLightingManager\@\@AEAAXV?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@chrono\@std\@\@\@Z
-     */
+
+    // symbol: ?_relightChunks@RuntimeLightingManager@@AEAAXV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z
     MCAPI void _relightChunks(std::chrono::nanoseconds);
-    /**
-     * @symbol ?_removeProcessedSubchunks\@RuntimeLightingManager\@\@AEAAXXZ
-     */
+
+    // symbol: ?_removeProcessedSubchunks@RuntimeLightingManager@@AEAAXXZ
     MCAPI void _removeProcessedSubchunks();
+
     // NOLINTEND
 };

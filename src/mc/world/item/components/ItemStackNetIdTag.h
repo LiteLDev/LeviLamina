@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ItemStackNetIdTag {
-
 public:
     // prevent constructor by default
     ItemStackNetIdTag& operator=(ItemStackNetIdTag const&) = delete;

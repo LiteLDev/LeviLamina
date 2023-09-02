@@ -30,14 +30,12 @@ public:
     };
 
     struct ChainedSubcommandData {
-
     public:
         std::string                             name;
         std::vector<ChainedSubcommandDataValue> valueIndices;
     };
 
     struct CommandData {
-
     public:
         std::string                       name;           // 0
         std::string                       description;    // 32
@@ -49,19 +47,16 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??0CommandData\@AvailableCommandsPacket\@\@QEAA\@$$QEAU01\@\@Z
-         */
+        // symbol: ??0CommandData@AvailableCommandsPacket@@QEAA@$$QEAU01@@Z
         MCAPI CommandData(struct AvailableCommandsPacket::CommandData&&);
-        /**
-         * @symbol ??1CommandData\@AvailableCommandsPacket\@\@QEAA\@XZ
-         */
+
+        // symbol: ??1CommandData@AvailableCommandsPacket@@QEAA@XZ
         MCAPI ~CommandData();
+
         // NOLINTEND
     };
 
     struct ConstrainedValueData {
-
     public:
         int32_t                        enumValueIndex;
         int32_t                        enumNameIndex;
@@ -69,45 +64,39 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??1ConstrainedValueData\@AvailableCommandsPacket\@\@QEAA\@XZ
-         */
+        // symbol: ??1ConstrainedValueData@AvailableCommandsPacket@@QEAA@XZ
         MCAPI ~ConstrainedValueData();
+
         // NOLINTEND
     };
 
     struct EnumData {
-
     public:
         std::string               name;
         std::vector<uint32_t> valueIndices;
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??1EnumData\@AvailableCommandsPacket\@\@QEAA\@XZ
-         */
+        // symbol: ??1EnumData@AvailableCommandsPacket@@QEAA@XZ
         MCAPI ~EnumData();
+
         // NOLINTEND
     };
 
     struct OverloadData {
-
     public:
         std::vector<ParamData> datas;
         bool                   chained;
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??1OverloadData\@AvailableCommandsPacket\@\@QEAA\@XZ
-         */
+        // symbol: ??1OverloadData@AvailableCommandsPacket@@QEAA@XZ
         MCAPI ~OverloadData();
+
         // NOLINTEND
     };
 
     struct ParamData {
-
     public:
         std::string   desc;
         uint32_t  sym;
@@ -116,25 +105,22 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??1ParamData\@AvailableCommandsPacket\@\@QEAA\@XZ
-         */
+        // symbol: ??1ParamData@AvailableCommandsPacket@@QEAA@XZ
         MCAPI ~ParamData();
+
         // NOLINTEND
     };
 
     struct SoftEnumData {
-
     public:
         std::string              name;
         std::vector<std::string> values;
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??1SoftEnumData\@AvailableCommandsPacket\@\@QEAA\@XZ
-         */
+        // symbol: ??1SoftEnumData@AvailableCommandsPacket@@QEAA@XZ
         MCAPI ~SoftEnumData();
+
         // NOLINTEND
     };
 
@@ -159,48 +145,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getId\@AvailableCommandsPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
-     */
-    virtual enum class MinecraftPacketIds getId() const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?getName\@AvailableCommandsPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // vIndex: 1, symbol: ?getId@AvailableCommandsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    virtual ::MinecraftPacketIds getId() const;
+
+    // vIndex: 2, symbol:
+    // ?getName@AvailableCommandsPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const;
-    /**
-     * @vftbl 3
-     * @symbol ?write\@AvailableCommandsPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 3, symbol: ?write@AvailableCommandsPacket@@UEBAXAEAVBinaryStream@@@Z
     virtual void write(class BinaryStream&) const;
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?_read\@AvailableCommandsPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?_read@AvailableCommandsPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AVAILABLECOMMANDSPACKET
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1AvailableCommandsPacket@@UEAA@XZ
     MCVAPI ~AvailableCommandsPacket();
-#endif
-    /**
-     * @symbol ??0AvailableCommandsPacket\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0AvailableCommandsPacket@@QEAA@XZ
     MCAPI AvailableCommandsPacket();
-    /**
-     * @symbol
-     * ??0AvailableCommandsPacket\@\@QEAA\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@00$$QEAV?$vector\@UEnumData\@AvailableCommandsPacket\@\@V?$allocator\@UEnumData\@AvailableCommandsPacket\@\@\@std\@\@\@2\@$$QEAV?$vector\@UChainedSubcommandData\@AvailableCommandsPacket\@\@V?$allocator\@UChainedSubcommandData\@AvailableCommandsPacket\@\@\@std\@\@\@2\@$$QEAV?$vector\@UConstrainedValueData\@AvailableCommandsPacket\@\@V?$allocator\@UConstrainedValueData\@AvailableCommandsPacket\@\@\@std\@\@\@2\@$$QEAV?$vector\@UCommandData\@AvailableCommandsPacket\@\@V?$allocator\@UCommandData\@AvailableCommandsPacket\@\@\@std\@\@\@2\@$$QEAV?$vector\@USoftEnumData\@AvailableCommandsPacket\@\@V?$allocator\@USoftEnumData\@AvailableCommandsPacket\@\@\@std\@\@\@2\@\@Z
-     */
+
+    // symbol:
+    // ??0AvailableCommandsPacket@@QEAA@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@00$$QEAV?$vector@UEnumData@AvailableCommandsPacket@@V?$allocator@UEnumData@AvailableCommandsPacket@@@std@@@2@$$QEAV?$vector@UChainedSubcommandData@AvailableCommandsPacket@@V?$allocator@UChainedSubcommandData@AvailableCommandsPacket@@@std@@@2@$$QEAV?$vector@UConstrainedValueData@AvailableCommandsPacket@@V?$allocator@UConstrainedValueData@AvailableCommandsPacket@@@std@@@2@$$QEAV?$vector@UCommandData@AvailableCommandsPacket@@V?$allocator@UCommandData@AvailableCommandsPacket@@@std@@@2@$$QEAV?$vector@USoftEnumData@AvailableCommandsPacket@@V?$allocator@USoftEnumData@AvailableCommandsPacket@@@std@@@2@@Z
     MCAPI
     AvailableCommandsPacket(std::vector<std::string> const&, std::vector<std::string> const&, std::vector<std::string> const&, std::vector<struct AvailableCommandsPacket::EnumData>&&, std::vector<struct AvailableCommandsPacket::ChainedSubcommandData>&&, std::vector<struct AvailableCommandsPacket::ConstrainedValueData>&&, std::vector<struct AvailableCommandsPacket::CommandData>&&, std::vector<struct AvailableCommandsPacket::SoftEnumData>&&);
+
     // NOLINTEND
 };

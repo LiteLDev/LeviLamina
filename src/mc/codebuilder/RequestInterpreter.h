@@ -13,7 +13,6 @@ namespace Json { class Value; }
 namespace CodeBuilder {
 
 class RequestInterpreter {
-
 public:
     // prevent constructor by default
     RequestInterpreter& operator=(RequestInterpreter const&) = delete;
@@ -22,21 +21,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?process\@RequestInterpreter\@CodeBuilder\@\@QEBAXAEAVIRequestHandler\@2\@AEBURequestHeader\@2\@AEBVValue\@Json\@\@\@Z
-     */
+    // symbol:
+    // ?process@RequestInterpreter@CodeBuilder@@QEBAXAEAVIRequestHandler@2@AEBURequestHeader@2@AEBVValue@Json@@@Z
     MCAPI void
     process(class CodeBuilder::IRequestHandler&, struct CodeBuilder::RequestHeader const&, class Json::Value const&)
         const;
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_parse\@RequestInterpreter\@CodeBuilder\@\@CA_NAEBVValue\@Json\@\@AEAUCommandRequest\@2\@\@Z
-     */
+    // symbol: ?_parse@RequestInterpreter@CodeBuilder@@CA_NAEBVValue@Json@@AEAUCommandRequest@2@@Z
     MCAPI static bool _parse(class Json::Value const&, struct CodeBuilder::CommandRequest&);
+
     // NOLINTEND
 };
 

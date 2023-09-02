@@ -13,7 +13,6 @@ class Vec3;
 namespace ScriptModuleMinecraft {
 
 struct ScriptPositionOutOfWorldBoundsError {
-
 public:
     // prevent constructor by default
     ScriptPositionOutOfWorldBoundsError& operator=(ScriptPositionOutOfWorldBoundsError const&) = delete;
@@ -22,25 +21,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ScriptPositionOutOfWorldBoundsError\@ScriptModuleMinecraft\@\@QEAA\@AEBVVec3\@\@\@Z
-     */
+    // symbol: ??0ScriptPositionOutOfWorldBoundsError@ScriptModuleMinecraft@@QEAA@AEBVVec3@@@Z
     MCAPI ScriptPositionOutOfWorldBoundsError(class Vec3 const&);
-    /**
-     * @symbol
-     * ??0ScriptPositionOutOfWorldBoundsError\@ScriptModuleMinecraft\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVVec3\@\@\@Z
-     */
+
+    // symbol:
+    // ??0ScriptPositionOutOfWorldBoundsError@ScriptModuleMinecraft@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@@Z
     MCAPI ScriptPositionOutOfWorldBoundsError(std::string const&, class Vec3 const&);
-    /**
-     * @symbol ??1ScriptPositionOutOfWorldBoundsError\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ScriptPositionOutOfWorldBoundsError@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptPositionOutOfWorldBoundsError();
-    /**
-     * @symbol
-     * ?bind\@ScriptPositionOutOfWorldBoundsError\@ScriptModuleMinecraft\@\@SA?AV?$ErrorBindingBuilder\@UScriptPositionOutOfWorldBoundsError\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptPositionOutOfWorldBoundsError@ScriptModuleMinecraft@@SA?AV?$ErrorBindingBuilder@UScriptPositionOutOfWorldBoundsError@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ErrorBindingBuilder<struct ScriptModuleMinecraft::ScriptPositionOutOfWorldBoundsError>
     bind();
+
     // NOLINTEND
 };
 

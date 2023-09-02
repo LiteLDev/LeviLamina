@@ -6,7 +6,6 @@
 #include "mc/world/events/EventResult.h"
 
 class ScriptTickListener {
-
 public:
     // prevent constructor by default
     ScriptTickListener& operator=(ScriptTickListener const&) = delete;
@@ -15,15 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTTICKLISTENER
-    /**
-     * @symbol ?onLevelRemovedPlayer\@ScriptTickListener\@\@UEAA?AW4EventResult\@\@AEAVLevel\@\@AEAVPlayer\@\@\@Z
-     */
-    MCVAPI enum class EventResult onLevelRemovedPlayer(class Level&, class Player&);
-    /**
-     * @symbol ?onLevelTickEnd\@ScriptTickListener\@\@UEAAXXZ
-     */
+    // symbol: ?onLevelRemovedPlayer@ScriptTickListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
+    MCVAPI ::EventResult onLevelRemovedPlayer(class Level&, class Player&);
+
+    // symbol: ?onLevelTickEnd@ScriptTickListener@@UEAAXXZ
     MCVAPI void onLevelTickEnd();
-#endif
+
     // NOLINTEND
 };

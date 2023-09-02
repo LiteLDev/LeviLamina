@@ -5,7 +5,6 @@
 namespace Util {
 
 struct ActorReplacementParams {
-
 public:
     // prevent constructor by default
     ActorReplacementParams& operator=(ActorReplacementParams const&) = delete;

@@ -7,7 +7,6 @@
 #include "mc/world/inventory/network/ItemStackRequestActionTransferBase.h"
 
 class ItemStackRequestActionDestroy : public ::ItemStackRequestActionTransferBase {
-
 public:
     // prevent constructor by default
     ItemStackRequestActionDestroy& operator=(ItemStackRequestActionDestroy const&) = delete;
@@ -16,36 +15,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getCraftAction\@ItemStackRequestAction\@\@UEBAPEBVItemStackRequestActionCraftBase\@\@XZ
-     */
+
+    // vIndex: 1, symbol: ?getCraftAction@ItemStackRequestAction@@UEBAPEBVItemStackRequestActionCraftBase@@XZ
     virtual class ItemStackRequestActionCraftBase const* getCraftAction() const;
-    /**
-     * @vftbl 2
-     * @symbol ?getFilteredStringIndex\@ItemStackRequestAction\@\@UEBAHXZ
-     */
-    virtual int32_t getFilteredStringIndex() const;
-    /**
-     * @vftbl 3
-     * @symbol ?postLoadItems_DEPRECATEDASKTYLAING\@ItemStackRequestActionCraftBase\@\@UEAAXAEAVBlockPalette\@\@_N\@Z
-     */
+
+    // vIndex: 2, symbol: ?getFilteredStringIndex@ItemStackRequestAction@@UEBAHXZ
+    virtual int getFilteredStringIndex() const;
+
+    // vIndex: 3, symbol:
+    // ?postLoadItems_DEPRECATEDASKTYLAING@ItemStackRequestActionCraftBase@@UEAAXAEAVBlockPalette@@_N@Z
     virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
-    /**
-     * @vftbl 4
-     * @symbol ?_write\@ItemStackRequestActionCraftRecipeAuto\@\@UEBAXAEAVBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 4, symbol: ?_write@ItemStackRequestActionCraftRecipeAuto@@UEBAXAEAVBinaryStream@@@Z
     virtual void _write(class BinaryStream&) const;
-    /**
-     * @vftbl 5
-     * @symbol
-     * ?_read\@ItemStackRequestActionCraftRecipeAuto\@\@UEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 5, symbol:
+    // ?_read@ItemStackRequestActionCraftRecipeAuto@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
+
     // NOLINTEND
 };

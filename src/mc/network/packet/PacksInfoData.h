@@ -4,7 +4,6 @@
 #include "mc/network/packet/PackInfoData.h"
 
 struct PacksInfoData {
-
 public:
     bool                      mResourcePackRequired;    // this+0x0
     bool                      mHasScripts;              // this+0x1
@@ -20,13 +19,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?getBehaviorPackSize\@PacksInfoData\@\@QEBA_KXZ
-     */
-    MCAPI uint64_t getBehaviorPackSize() const;
-    /**
-     * @symbol ?getResourcePackSize\@PacksInfoData\@\@QEBA_KXZ
-     */
-    MCAPI uint64_t getResourcePackSize() const;
+    // symbol: ?getBehaviorPackSize@PacksInfoData@@QEBA_KXZ
+    MCAPI uint64 getBehaviorPackSize() const;
+
+    // symbol: ?getResourcePackSize@PacksInfoData@@QEBA_KXZ
+    MCAPI uint64 getResourcePackSize() const;
+
     // NOLINTEND
 };

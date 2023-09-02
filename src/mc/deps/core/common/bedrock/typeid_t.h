@@ -6,7 +6,6 @@ namespace Bedrock {
 
 template <typename T0>
 class typeid_t {
-
 public:
     constexpr static uint16_t count = 0;
 

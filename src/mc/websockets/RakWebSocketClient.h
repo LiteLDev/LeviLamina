@@ -8,7 +8,6 @@
 #include "mc/websockets/RakWebSocket.h"
 
 class RakWebSocketClient : public ::RakWebSocket {
-
 public:
     // prevent constructor by default
     RakWebSocketClient& operator=(RakWebSocketClient const&) = delete;
@@ -17,31 +16,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 8
-     * @symbol ?_updateState\@RakWebSocketClient\@\@MEAAXXZ
-     */
+
+    // vIndex: 8, symbol: ?_updateState@RakWebSocketClient@@MEAAXXZ
     virtual void _updateState();
-    /**
-     * @vftbl 9
-     * @symbol ?_genMaskingKey\@RakWebSocketClient\@\@MEBAIXZ
-     */
-    virtual uint32_t _genMaskingKey() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKETCLIENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // vIndex: 9, symbol: ?_genMaskingKey@RakWebSocketClient@@MEBAIXZ
+    virtual uint _genMaskingKey() const;
+
+    // symbol: ??1RakWebSocketClient@@UEAA@XZ
     MCVAPI ~RakWebSocketClient();
-#endif
-    /**
-     * @symbol
-     * ??0RakWebSocketClient\@\@QEAA\@V?$unique_ptr\@VTcpProxy\@\@U?$default_delete\@VTcpProxy\@\@\@std\@\@\@std\@\@\@Z
-     */
+
+    // symbol: ??0RakWebSocketClient@@QEAA@V?$unique_ptr@VTcpProxy@@U?$default_delete@VTcpProxy@@@std@@@std@@@Z
     MCAPI RakWebSocketClient(std::unique_ptr<class TcpProxy>);
+
     // NOLINTEND
 };

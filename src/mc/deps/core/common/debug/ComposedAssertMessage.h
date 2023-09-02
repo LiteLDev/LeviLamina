@@ -10,7 +10,6 @@ struct AssertHandlerContext;
 namespace DebugUtils {
 
 class ComposedAssertMessage {
-
 public:
     // prevent constructor by default
     ComposedAssertMessage& operator=(ComposedAssertMessage const&) = delete;
@@ -19,14 +18,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?compose\@ComposedAssertMessage\@DebugUtils\@\@QEAAXAEBUAssertHandlerContext\@\@\@Z
-     */
+    // symbol: ?compose@ComposedAssertMessage@DebugUtils@@QEAAXAEBUAssertHandlerContext@@@Z
     MCAPI void compose(struct AssertHandlerContext const&);
-    /**
-     * @symbol ??1ComposedAssertMessage\@DebugUtils\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ComposedAssertMessage@DebugUtils@@QEAA@XZ
     MCAPI ~ComposedAssertMessage();
+
     // NOLINTEND
 };
 

@@ -13,7 +13,6 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 namespace CodeBuilder {
 
 class IManager : public ::Bedrock::EnableNonOwnerReferences {
-
 public:
     // prevent constructor by default
     IManager& operator=(IManager const&) = delete;
@@ -22,12 +21,9 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CODEBUILDER_IMANAGER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1IManager@CodeBuilder@@UEAA@XZ
     MCVAPI ~IManager();
-#endif
+
     // NOLINTEND
 };
 

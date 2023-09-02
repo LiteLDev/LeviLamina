@@ -13,7 +13,6 @@ class ActorFilterGroup;
 namespace ScriptModuleMinecraft {
 
 class ScriptFilterGroup {
-
 public:
     // prevent constructor by default
     ScriptFilterGroup& operator=(ScriptFilterGroup const&) = delete;
@@ -22,11 +21,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?bind\@ScriptFilterGroup\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VActorFilterGroup\@\@\@Scripting\@\@XZ
-     */
+    // symbol:
+    // ?bind@ScriptFilterGroup@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VActorFilterGroup@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ActorFilterGroup> bind();
+
     // NOLINTEND
 };
 

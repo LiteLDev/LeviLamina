@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class SnapshotWritableFile {
-
 public:
     // prevent constructor by default
     SnapshotWritableFile& operator=(SnapshotWritableFile const&) = delete;
@@ -12,30 +11,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?Append\@SnapshotWritableFile\@\@UEAA?AVStatus\@leveldb\@\@AEBVSlice\@3\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?Append@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@AEBVSlice@3@@Z
     virtual leveldb::Status Append(leveldb::Slice const&);
-    /**
-     * @vftbl 2
-     * @symbol ?Close\@SnapshotWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
-     */
+
+    // vIndex: 2, symbol: ?Close@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@XZ
     virtual leveldb::Status Close();
-    /**
-     * @vftbl 3
-     * @symbol ?Flush\@SnapshotWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
-     */
+
+    // vIndex: 3, symbol: ?Flush@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@XZ
     virtual leveldb::Status Flush();
-    /**
-     * @vftbl 4
-     * @symbol ?Sync\@SnapshotWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
-     */
+
+    // vIndex: 4, symbol: ?Sync@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@XZ
     virtual leveldb::Status Sync();
+
     // NOLINTEND
 };

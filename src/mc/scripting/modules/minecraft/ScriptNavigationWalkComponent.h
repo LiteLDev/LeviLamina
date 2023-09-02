@@ -15,7 +15,6 @@ namespace ScriptModuleMinecraft { class NavigationScriptActorComponent; }
 namespace ScriptModuleMinecraft {
 
 class ScriptNavigationWalkComponent : public ::ScriptModuleMinecraft::NavigationScriptActorComponent {
-
 public:
     // prevent constructor by default
     ScriptNavigationWalkComponent& operator=(ScriptNavigationWalkComponent const&) = delete;
@@ -24,27 +23,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTNAVIGATIONWALKCOMPONENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1ScriptNavigationWalkComponent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptNavigationWalkComponent();
-#endif
-    /**
-     * @symbol
-     * ?bind\@ScriptNavigationWalkComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptNavigationWalkComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptNavigationWalkComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptNavigationWalkComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptNavigationWalkComponent>
     bind();
-    /**
-     * @symbol ?ComponentId\@ScriptNavigationWalkComponent\@ScriptModuleMinecraft\@\@2PEBDEB
-     */
+
+    // symbol: ?ComponentId@ScriptNavigationWalkComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;
+
     // NOLINTEND
 };
 

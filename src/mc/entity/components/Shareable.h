@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct Shareable {
-
 public:
     // prevent constructor by default
     Shareable& operator=(Shareable const&) = delete;
@@ -12,15 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?setCraftInto\@Shareable\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+    // symbol: ?setCraftInto@Shareable@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setCraftInto(std::string const&);
-    /**
-     * @symbol
-     * ?setItem\@Shareable\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // symbol: ?setItem@Shareable@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setItem(std::string const&);
+
     // NOLINTEND
 };

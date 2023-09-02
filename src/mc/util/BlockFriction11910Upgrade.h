@@ -14,7 +14,6 @@ namespace cereal { class SchemaFactory; }
 namespace BlockFrictionVersioning {
 
 class BlockFriction11910Upgrade : public ::CerealSchemaUpgrade {
-
 public:
     // prevent constructor by default
     BlockFriction11910Upgrade& operator=(BlockFriction11910Upgrade const&) = delete;
@@ -22,30 +21,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?previousSchema\@BlockFriction11910Upgrade\@BlockFrictionVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?previousSchema@BlockFriction11910Upgrade@BlockFrictionVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z
     virtual void previousSchema(class cereal::SchemaFactory&) const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?upgradeToNext\@BlockFriction11910Upgrade\@BlockFrictionVersioning\@\@UEBA_NAEAV?$GenericDocument\@U?$UTF8\@D\@rapidjson\@\@V?$MemoryPoolAllocator\@VCrtAllocator\@rapidjson\@\@\@2\@VCrtAllocator\@2\@\@rapidjson\@\@\@Z
-     */
+
+    // vIndex: 2, symbol:
+    // ?upgradeToNext@BlockFriction11910Upgrade@BlockFrictionVersioning@@UEBA_NAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@@Z
     virtual bool upgradeToNext(rapidjson::GenericDocument<
                                rapidjson::UTF8<char>,
                                rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
                                rapidjson::CrtAllocator>&) const;
-    /**
-     * @symbol ??0BlockFriction11910Upgrade\@BlockFrictionVersioning\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0BlockFriction11910Upgrade@BlockFrictionVersioning@@QEAA@XZ
     MCAPI BlockFriction11910Upgrade();
+
     // NOLINTEND
 };
 

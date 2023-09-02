@@ -14,7 +14,6 @@ struct PistonActionEvent;
 namespace ScriptModuleMinecraft {
 
 struct ScriptPistonActionAfterEvent {
-
 public:
     // prevent constructor by default
     ScriptPistonActionAfterEvent(ScriptPistonActionAfterEvent const&) = delete;
@@ -22,31 +21,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ??0ScriptPistonActionAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBUPistonActionEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@\@Z
-     */
+    // symbol:
+    // ??0ScriptPistonActionAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUPistonActionEvent@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI ScriptPistonActionAfterEvent(struct PistonActionEvent const&, class Scripting::WeakLifetimeScope const&);
-    /**
-     * @symbol ??4ScriptPistonActionAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-     */
+
+    // symbol: ??4ScriptPistonActionAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptPistonActionAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptPistonActionAfterEvent&&);
-    /**
-     * @symbol ??4ScriptPistonActionAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
-     */
+
+    // symbol: ??4ScriptPistonActionAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptPistonActionAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptPistonActionAfterEvent const&);
-    /**
-     * @symbol ??1ScriptPistonActionAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ScriptPistonActionAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptPistonActionAfterEvent();
-    /**
-     * @symbol
-     * ?bind\@ScriptPistonActionAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptPistonActionAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptPistonActionAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptPistonActionAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptPistonActionAfterEvent>
     bind();
+
     // NOLINTEND
 };
 

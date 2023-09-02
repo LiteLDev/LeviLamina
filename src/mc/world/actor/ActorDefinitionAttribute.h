@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ActorDefinitionAttribute {
-
 public:
     // prevent constructor by default
     ActorDefinitionAttribute& operator=(ActorDefinitionAttribute const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ActorDefinitionAttribute\@\@QEAA\@XZ
-     */
+    // symbol: ??1ActorDefinitionAttribute@@QEAA@XZ
     MCAPI ~ActorDefinitionAttribute();
+
     // NOLINTEND
 };

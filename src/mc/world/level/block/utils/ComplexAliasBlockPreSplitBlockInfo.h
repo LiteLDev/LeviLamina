@@ -5,7 +5,6 @@
 namespace ComplexAliasBlockAchievementEventHelper {
 
 struct ComplexAliasBlockPreSplitBlockInfo {
-
 public:
     // prevent constructor by default
     ComplexAliasBlockPreSplitBlockInfo& operator=(ComplexAliasBlockPreSplitBlockInfo const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ComplexAliasBlockPreSplitBlockInfo\@ComplexAliasBlockAchievementEventHelper\@\@QEAA\@XZ
-     */
+    // symbol: ??1ComplexAliasBlockPreSplitBlockInfo@ComplexAliasBlockAchievementEventHelper@@QEAA@XZ
     MCAPI ~ComplexAliasBlockPreSplitBlockInfo();
+
     // NOLINTEND
 };
 

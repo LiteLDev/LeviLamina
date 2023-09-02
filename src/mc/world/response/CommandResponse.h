@@ -12,7 +12,6 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class CommandResponse {
-
 public:
     // prevent constructor by default
     CommandResponse& operator=(CommandResponse const&) = delete;
@@ -21,29 +20,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?getName\@CommandResponse\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // vIndex: 1, symbol:
+    // ?getName@CommandResponse@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const& getName() const;
-    /**
-     * @vftbl 2
-     * @symbol ?executeAction\@CommandResponse\@\@UEBAXAEAVRenderParams\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?executeAction@CommandResponse@@UEBAXAEAVRenderParams@@@Z
     virtual void executeAction(class RenderParams&) const;
-    /**
-     * @vftbl 3
-     * @symbol
-     * ?buildSchema\@CommandResponse\@\@UEBAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UEventResponseCollection\@\@\@JsonUtil\@\@\@std\@\@AEBV?$Factory\@VEventResponse\@\@$$V\@\@\@Z
-     */
+
+    // vIndex: 3, symbol:
+    // ?buildSchema@CommandResponse@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VEventResponse@@$$V@@@Z
     virtual void
     buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>>&, class Factory<class EventResponse> const&)
         const;
+
     // NOLINTEND
 };

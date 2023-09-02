@@ -15,14 +15,12 @@ class ValueIterator : public ValueIteratorBase {
 public:
 
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ValueIterator\@Json\@\@QEAA\@AEBV01\@\@Z
-     */
+    // symbol: ??0ValueIterator@Json@@QEAA@AEBV01@@Z
     MCAPI ValueIterator(class Json::ValueIterator const&);
-    /**
-     * @symbol ??0ValueIterator\@Json\@\@QEAA\@AEBVValueConstIterator\@1\@\@Z
-     */
+
+    // symbol: ??0ValueIterator@Json@@QEAA@AEBVValueConstIterator@1@@Z
     MCAPI ValueIterator(class Json::ValueConstIterator const&);
+
     // NOLINTEND
 };
 

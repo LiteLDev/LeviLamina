@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class IDefinitionInstance {
-
 public:
     // prevent constructor by default
     IDefinitionInstance& operator=(IDefinitionInstance const&) = delete;
@@ -12,51 +11,32 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0() = 0;
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
+
+    // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2() = 0;
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
+
+    // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3() = 0;
-    /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
+
+    // vIndex: 4, symbol: __unk_vfn_4
     virtual void __unk_vfn_4() = 0;
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
+
+    // vIndex: 5, symbol: __unk_vfn_5
     virtual void __unk_vfn_5() = 0;
-    /**
-     * @vftbl 6
-     * @symbol __unk_vfn_6
-     */
+
+    // vIndex: 6, symbol: __unk_vfn_6
     virtual void __unk_vfn_6() = 0;
-    /**
-     * @vftbl 7
-     * @symbol ?getRuntimeTypeId\@IDefinitionInstance\@\@UEBAGXZ
-     */
-    virtual uint16_t getRuntimeTypeId() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDEFINITIONINSTANCE
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // vIndex: 7, symbol: ?getRuntimeTypeId@IDefinitionInstance@@UEBAGXZ
+    virtual ushort getRuntimeTypeId() const;
+
+    // symbol: ??1IDefinitionInstance@@UEAA@XZ
     MCVAPI ~IDefinitionInstance();
-#endif
+
     // NOLINTEND
 };

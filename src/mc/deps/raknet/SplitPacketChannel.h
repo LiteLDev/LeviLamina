@@ -5,7 +5,6 @@
 namespace RakNet {
 
 struct SplitPacketChannel {
-
 public:
     // prevent constructor by default
     SplitPacketChannel& operator=(SplitPacketChannel const&) = delete;

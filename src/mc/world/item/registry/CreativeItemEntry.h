@@ -12,7 +12,6 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 // clang-format on
 
 class CreativeItemEntry : public ::Bedrock::EnableNonOwnerReferences {
-
 public:
     // prevent constructor by default
     CreativeItemEntry& operator=(CreativeItemEntry const&) = delete;
@@ -21,25 +20,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0CreativeItemEntry\@\@QEAA\@$$QEAV0\@\@Z
-     */
+    // symbol: ??0CreativeItemEntry@@QEAA@$$QEAV0@@Z
     MCAPI CreativeItemEntry(class CreativeItemEntry&&);
-    /**
-     * @symbol ?getCreativeNetId\@CreativeItemEntry\@\@QEBAAEBV?$TypedServerNetId\@UCreativeItemNetIdTag\@\@I$0A\@\@\@XZ
-     */
-    MCAPI class TypedServerNetId<struct CreativeItemNetIdTag, uint32_t, 0> const& getCreativeNetId() const;
-    /**
-     * @symbol ?getGroup\@CreativeItemEntry\@\@QEBAPEAVCreativeGroupInfo\@\@XZ
-     */
+
+    // symbol: ?getCreativeNetId@CreativeItemEntry@@QEBAAEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@XZ
+    MCAPI class TypedServerNetId<struct CreativeItemNetIdTag, uint, 0> const& getCreativeNetId() const;
+
+    // symbol: ?getGroup@CreativeItemEntry@@QEBAPEAVCreativeGroupInfo@@XZ
     MCAPI class CreativeGroupInfo* getGroup() const;
-    /**
-     * @symbol ?getIndex\@CreativeItemEntry\@\@QEBAIXZ
-     */
-    MCAPI uint32_t getIndex() const;
-    /**
-     * @symbol ?getItemInstance\@CreativeItemEntry\@\@QEBAAEBVItemInstance\@\@XZ
-     */
+
+    // symbol: ?getIndex@CreativeItemEntry@@QEBAIXZ
+    MCAPI uint getIndex() const;
+
+    // symbol: ?getItemInstance@CreativeItemEntry@@QEBAAEBVItemInstance@@XZ
     MCAPI class ItemInstance const& getItemInstance() const;
+
     // NOLINTEND
 };

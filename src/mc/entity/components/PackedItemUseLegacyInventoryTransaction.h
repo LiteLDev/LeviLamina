@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct PackedItemUseLegacyInventoryTransaction {
-
 public:
     // prevent constructor by default
     PackedItemUseLegacyInventoryTransaction& operator=(PackedItemUseLegacyInventoryTransaction const&) = delete;
@@ -11,17 +10,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0PackedItemUseLegacyInventoryTransaction\@\@QEAA\@XZ
-     */
+    // symbol: ??0PackedItemUseLegacyInventoryTransaction@@QEAA@XZ
     MCAPI PackedItemUseLegacyInventoryTransaction();
-    /**
-     * @symbol ??0PackedItemUseLegacyInventoryTransaction\@\@QEAA\@$$QEAU0\@\@Z
-     */
+
+    // symbol: ??0PackedItemUseLegacyInventoryTransaction@@QEAA@$$QEAU0@@Z
     MCAPI PackedItemUseLegacyInventoryTransaction(struct PackedItemUseLegacyInventoryTransaction&&);
-    /**
-     * @symbol ??1PackedItemUseLegacyInventoryTransaction\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1PackedItemUseLegacyInventoryTransaction@@QEAA@XZ
     MCAPI ~PackedItemUseLegacyInventoryTransaction();
+
     // NOLINTEND
 };

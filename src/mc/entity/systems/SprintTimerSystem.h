@@ -8,7 +8,6 @@
 #include "mc/world/components/FlagComponent.h"
 
 class SprintTimerSystem {
-
 public:
     // prevent constructor by default
     SprintTimerSystem& operator=(SprintTimerSystem const&) = delete;
@@ -17,14 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createSprintTimerSystem\@SprintTimerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createSprintTimerSystem@SprintTimerSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSprintTimerSystem();
-    /**
-     * @symbol
-     * ?tickSprintTimerSystem\@SprintTimerSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@ULocalPlayerComponentFlag\@\@\@\@\@\@$$CBUMoveInputComponent\@\@UPlayerInputRequestComponent\@\@UVanillaClientGameplayComponent\@\@\@\@\@Z
-     */
+
+    // symbol:
+    // ?tickSprintTimerSystem@SprintTimerSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@ULocalPlayerComponentFlag@@@@@@$$CBUMoveInputComponent@@UPlayerInputRequestComponent@@UVanillaClientGameplayComponent@@@@@Z
     MCAPI static void tickSprintTimerSystem(class ViewT<
                                             class StrictEntityContext,
                                             class EntityRegistryBase,
@@ -34,5 +30,6 @@ public:
                                             struct MoveInputComponent const,
                                             struct PlayerInputRequestComponent,
                                             struct VanillaClientGameplayComponent>);
+
     // NOLINTEND
 };

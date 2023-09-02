@@ -17,7 +17,6 @@ namespace mce { class UUID; }
 // clang-format on
 
 class PackInstance {
-
 public:
     PackReport                                                        mPackReport;   // this+0x0
     class PackSettings*                                               mPackSettings; // this+0x1B0
@@ -27,120 +26,93 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ??0PackInstance\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VResourcePack\@\@\@Bedrock\@\@\@gsl\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_NPEAVPackSettings\@\@\@Z
-     */
+    // symbol:
+    // ??0PackInstance@@QEAA@V?$not_null@V?$NonOwnerPointer@VResourcePack@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NPEAVPackSettings@@@Z
     MCAPI
     PackInstance(gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, std::string const&, bool, class PackSettings*);
-    /**
-     * @symbol
-     * ??0PackInstance\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VResourcePack\@\@\@Bedrock\@\@\@gsl\@\@H_NPEAVPackSettings\@\@\@Z
-     */
+
+    // symbol:
+    // ??0PackInstance@@QEAA@V?$not_null@V?$NonOwnerPointer@VResourcePack@@@Bedrock@@@gsl@@H_NPEAVPackSettings@@@Z
     MCAPI
-    PackInstance(gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, int32_t, bool, class PackSettings*);
-    /**
-     * @symbol ??0PackInstance\@\@QEAA\@AEBV0\@\@Z
-     */
+    PackInstance(gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, int, bool, class PackSettings*);
+
+    // symbol: ??0PackInstance@@QEAA@AEBV0@@Z
     MCAPI PackInstance(class PackInstance const&);
-    /**
-     * @symbol ?forEachIn\@PackInstance\@\@QEBAXAEBVPath\@Core\@\@V?$function\@$$A6AXAEBVPath\@Core\@\@\@Z\@std\@\@_N\@Z
-     */
+
+    // symbol: ?forEachIn@PackInstance@@QEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@_N@Z
     MCAPI void forEachIn(class Core::Path const&, std::function<void(class Core::Path const&)>, bool) const;
-    /**
-     * @symbol
-     * ?getFolderName\@PackInstance\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // symbol: ?getFolderName@PackInstance@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getFolderName() const;
-    /**
-     * @symbol ?getLoadTime\@PackInstance\@\@QEBANXZ
-     */
+
+    // symbol: ?getLoadTime@PackInstance@@QEBANXZ
     MCAPI double getLoadTime() const;
-    /**
-     * @symbol ?getManifest\@PackInstance\@\@QEBAAEBVPackManifest\@\@XZ
-     */
+
+    // symbol: ?getManifest@PackInstance@@QEBAAEBVPackManifest@@XZ
     MCAPI class PackManifest const& getManifest() const;
-    /**
-     * @symbol ?getManifest\@PackInstance\@\@QEAAAEAVPackManifest\@\@XZ
-     */
+
+    // symbol: ?getManifest@PackInstance@@QEAAAEAVPackManifest@@XZ
     MCAPI class PackManifest& getManifest();
-    /**
-     * @symbol ?getPackCategory\@PackInstance\@\@QEBA?AW4PackCategory\@\@XZ
-     */
-    MCAPI enum class PackCategory getPackCategory() const;
-    /**
-     * @symbol ?getPackId\@PackInstance\@\@QEBA?BVUUID\@mce\@\@XZ
-     */
+
+    // symbol: ?getPackCategory@PackInstance@@QEBA?AW4PackCategory@@XZ
+    MCAPI ::PackCategory getPackCategory() const;
+
+    // symbol: ?getPackId@PackInstance@@QEBA?BVUUID@mce@@XZ
     MCAPI class mce::UUID const getPackId() const;
-    /**
-     * @symbol ?getPackOrigin\@PackInstance\@\@QEBA?AW4PackOrigin\@\@XZ
-     */
-    MCAPI enum class PackOrigin getPackOrigin() const;
-    /**
-     * @symbol ?getPackStats\@PackInstance\@\@QEAAAEAVPackStats\@\@XZ
-     */
+
+    // symbol: ?getPackOrigin@PackInstance@@QEBA?AW4PackOrigin@@XZ
+    MCAPI ::PackOrigin getPackOrigin() const;
+
+    // symbol: ?getPackStats@PackInstance@@QEAAAEAVPackStats@@XZ
     MCAPI class PackStats& getPackStats();
-    /**
-     * @symbol ?getPackStats\@PackInstance\@\@QEBAAEBVPackStats\@\@XZ
-     */
+
+    // symbol: ?getPackStats@PackInstance@@QEBAAEBVPackStats@@XZ
     MCAPI class PackStats const& getPackStats() const;
-    /**
-     * @symbol
-     * ?getResource\@PackInstance\@\@QEBA_NAEBVPath\@Core\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?getResource@PackInstance@@QEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI bool getResource(class Core::Path const&, std::string&) const;
-    /**
-     * @symbol ?getResourceLocation\@PackInstance\@\@QEBAAEBVResourceLocation\@\@XZ
-     */
+
+    // symbol: ?getResourceLocation@PackInstance@@QEBAAEBVResourceLocation@@XZ
     MCAPI class ResourceLocation const& getResourceLocation() const;
-    /**
-     * @symbol
-     * ?getSubpackFolderName\@PackInstance\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // symbol:
+    // ?getSubpackFolderName@PackInstance@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getSubpackFolderName() const;
-    /**
-     * @symbol ?getTierInfo\@PackInstance\@\@QEBA?AVContentTierInfo\@\@XZ
-     */
+
+    // symbol: ?getTierInfo@PackInstance@@QEBA?AVContentTierInfo@@XZ
     MCAPI class ContentTierInfo getTierInfo() const;
-    /**
-     * @symbol ?getVersion\@PackInstance\@\@QEBAAEBVSemVersion\@\@XZ
-     */
+
+    // symbol: ?getVersion@PackInstance@@QEBAAEBVSemVersion@@XZ
     MCAPI class SemVersion const& getVersion() const;
-    /**
-     * @symbol ?hasResource\@PackInstance\@\@QEBA_NAEBVPath\@Core\@\@\@Z
-     */
+
+    // symbol: ?hasResource@PackInstance@@QEBA_NAEBVPath@Core@@@Z
     MCAPI bool hasResource(class Core::Path const&) const;
-    /**
-     * @symbol ?isBaseGamePack\@PackInstance\@\@QEBA_NXZ
-     */
+
+    // symbol: ?isBaseGamePack@PackInstance@@QEBA_NXZ
     MCAPI bool isBaseGamePack() const;
-    /**
-     * @symbol ?isTrusted\@PackInstance\@\@QEBA_NXZ
-     */
+
+    // symbol: ?isTrusted@PackInstance@@QEBA_NXZ
     MCAPI bool isTrusted() const;
-    /**
-     * @symbol ?isZipped\@PackInstance\@\@QEBA_NXZ
-     */
+
+    // symbol: ?isZipped@PackInstance@@QEBA_NXZ
     MCAPI bool isZipped() const;
-    /**
-     * @symbol ??4PackInstance\@\@QEAAAEAV0\@AEBV0\@\@Z
-     */
+
+    // symbol: ??4PackInstance@@QEAAAEAV0@AEBV0@@Z
     MCAPI class PackInstance& operator=(class PackInstance const&);
-    /**
-     * @symbol ??8PackInstance\@\@QEBA_NAEBV0\@\@Z
-     */
+
+    // symbol: ??8PackInstance@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class PackInstance const&) const;
-    /**
-     * @symbol ??1PackInstance\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1PackInstance@@QEAA@XZ
     MCAPI ~PackInstance();
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_isPackPointerValid\@PackInstance\@\@AEBA_NXZ
-     */
+    // symbol: ?_isPackPointerValid@PackInstance@@AEBA_NXZ
     MCAPI bool _isPackPointerValid() const;
+
     // NOLINTEND
 };

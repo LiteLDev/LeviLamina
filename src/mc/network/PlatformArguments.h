@@ -5,7 +5,6 @@
 namespace Webview {
 
 class PlatformArguments {
-
 public:
     // prevent constructor by default
     PlatformArguments& operator=(PlatformArguments const&) = delete;

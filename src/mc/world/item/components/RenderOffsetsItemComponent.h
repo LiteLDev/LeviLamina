@@ -12,7 +12,6 @@ public:
 
     // RenderOffsetsItemComponent inner types define
     struct ItemTransforms {
-
     public:
         // prevent constructor by default
         ItemTransforms& operator=(ItemTransforms const&) = delete;
@@ -21,15 +20,13 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??8ItemTransforms\@RenderOffsetsItemComponent\@\@QEBA_NAEBU01\@\@Z
-         */
+        // symbol: ??8ItemTransforms@RenderOffsetsItemComponent@@QEBA_NAEBU01@@Z
         MCAPI bool operator==(struct RenderOffsetsItemComponent::ItemTransforms const&) const;
+
         // NOLINTEND
     };
 
     struct TRS {
-
     public:
         // prevent constructor by default
         TRS& operator=(TRS const&) = delete;
@@ -38,10 +35,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??8TRS\@RenderOffsetsItemComponent\@\@QEBA_NAEBU01\@\@Z
-         */
+        // symbol: ??8TRS@RenderOffsetsItemComponent@@QEBA_NAEBU01@@Z
         MCAPI bool operator==(struct RenderOffsetsItemComponent::TRS const&) const;
+
         // NOLINTEND
     };
 
@@ -53,76 +49,61 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?checkComponentDataForContentErrors\@ItemComponent\@\@UEBA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ
     virtual bool checkComponentDataForContentErrors() const;
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
+
+    // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol ?isNetworkComponent\@ChargeableItemComponent\@\@UEBA_NXZ
-     */
+
+    // vIndex: 3, symbol: ?isNetworkComponent@ChargeableItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
-    /**
-     * @vftbl 4
-     * @symbol
-     * ?buildNetworkTag\@ChargeableItemComponent\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
-     */
+
+    // vIndex: 4, symbol:
+    // ?buildNetworkTag@ChargeableItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /**
-     * @vftbl 5
-     * @symbol ?initializeFromNetwork\@ChargeableItemComponent\@\@UEAA_NAEBVCompoundTag\@\@\@Z
-     */
+
+    // vIndex: 5, symbol: ?initializeFromNetwork@ChargeableItemComponent@@UEAA_NAEBVCompoundTag@@@Z
     virtual bool initializeFromNetwork(class CompoundTag const&);
-    /**
-     * @vftbl 6
-     * @symbol ?handleVersionBasedInitialization\@ItemComponent\@\@UEAAXAEBVSemVersion\@\@\@Z
-     */
+
+    // vIndex: 6, symbol: ?handleVersionBasedInitialization@ItemComponent@@UEAAXAEBVSemVersion@@@Z
     virtual void handleVersionBasedInitialization(class SemVersion const&);
-    /**
-     * @vftbl 7
-     * @symbol ?initializeComponent\@ItemComponent\@\@UEBAXXZ
-     */
+
+    // vIndex: 7, symbol: ?initializeComponent@ItemComponent@@UEBAXXZ
     virtual void initializeComponent() const;
-    /**
-     * @vftbl 8
-     * @symbol ?_canUseOn\@ItemComponent\@\@MEBA_NAEBVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@E\@Z
-     */
-    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uint8_t) const;
-    /**
-     * @vftbl 9
-     * @symbol ?_useOn\@ItemComponent\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
-     */
-    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uint8_t, class Vec3 const&) const;
-    /**
-     * @symbol ?bindType\@RenderOffsetsItemComponent\@\@SAXXZ
-     */
+
+    // vIndex: 8, symbol: ?_canUseOn@ItemComponent@@MEBA_NAEBVItemStack@@AEAVActor@@AEBVBlockPos@@E@Z
+    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
+
+    // vIndex: 9, symbol: ?_useOn@ItemComponent@@MEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
+    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
+
+    // symbol: ?bindType@RenderOffsetsItemComponent@@SAXXZ
     MCAPI static void bindType();
-    /**
-     * @symbol ?getIdentifier\@RenderOffsetsItemComponent\@\@SAAEBVHashedString\@\@XZ
-     */
+
+    // symbol: ?getIdentifier@RenderOffsetsItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();
+
     // NOLINTEND
 
 private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?Main_Hand_Defaults\@RenderOffsetsItemComponent\@\@0UItemTransforms\@1\@A
-     */
+    // symbol: ?Main_Hand_Defaults@RenderOffsetsItemComponent@@0UItemTransforms@1@A
     MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Main_Hand_Defaults;
-    /**
-     * @symbol ?Off_Hand_Defaults\@RenderOffsetsItemComponent\@\@0UItemTransforms\@1\@A
-     */
+
+    // symbol: ?Off_Hand_Defaults@RenderOffsetsItemComponent@@0UItemTransforms@1@A
     MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Off_Hand_Defaults;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $Main_Hand_Defaults() { return Main_Hand_Defaults; }
+
+    inline auto& $Off_Hand_Defaults() { return Off_Hand_Defaults; }
+
     // NOLINTEND
 };

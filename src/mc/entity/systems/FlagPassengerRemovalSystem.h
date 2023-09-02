@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class FlagPassengerRemovalSystem {
-
 public:
     // prevent constructor by default
     FlagPassengerRemovalSystem& operator=(FlagPassengerRemovalSystem const&) = delete;
@@ -12,13 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createDeferredSystem\@FlagPassengerRemovalSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createDeferredSystem@FlagPassengerRemovalSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createDeferredSystem();
-    /**
-     * @symbol ?createImmediateSystem\@FlagPassengerRemovalSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+
+    // symbol: ?createImmediateSystem@FlagPassengerRemovalSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createImmediateSystem();
+
     // NOLINTEND
 };

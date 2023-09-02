@@ -6,7 +6,6 @@
 #include "mc/world/AutomaticID.h"
 
 class GameEventDynamicRegistration {
-
 public:
     // prevent constructor by default
     GameEventDynamicRegistration& operator=(GameEventDynamicRegistration const&) = delete;
@@ -15,32 +14,29 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0GameEventDynamicRegistration\@\@QEAA\@V?$shared_ptr\@VGameEventListener\@\@\@std\@\@\@Z
-     */
+    // symbol: ??0GameEventDynamicRegistration@@QEAA@V?$shared_ptr@VGameEventListener@@@std@@@Z
     MCAPI GameEventDynamicRegistration(std::shared_ptr<class GameEventListener>);
-    /**
-     * @symbol
-     * ?onActorLoadedIntoChunk\@GameEventDynamicRegistration\@\@QEAAXAEBVBlockSource\@\@VChunkPos\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
-     */
-    MCAPI void onActorLoadedIntoChunk(class BlockSource const&, class ChunkPos, DimensionType);
-    /**
-     * @symbol
-     * ?onActorMovedBetweenChunks\@GameEventDynamicRegistration\@\@QEAAXAEBVBlockSource\@\@VChunkPos\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
-     */
-    MCAPI void onActorMovedBetweenChunks(class BlockSource const&, class ChunkPos, DimensionType);
-    /**
-     * @symbol ?onActorRemoved\@GameEventDynamicRegistration\@\@QEAAXXZ
-     */
+
+    // symbol:
+    // ?onActorLoadedIntoChunk@GameEventDynamicRegistration@@QEAAXAEBVBlockSource@@VChunkPos@@V?$AutomaticID@VDimension@@H@@@Z
+    MCAPI void
+    onActorLoadedIntoChunk(class BlockSource const&, class ChunkPos, class AutomaticID<class Dimension, int>);
+
+    // symbol:
+    // ?onActorMovedBetweenChunks@GameEventDynamicRegistration@@QEAAXAEBVBlockSource@@VChunkPos@@V?$AutomaticID@VDimension@@H@@@Z
+    MCAPI void
+    onActorMovedBetweenChunks(class BlockSource const&, class ChunkPos, class AutomaticID<class Dimension, int>);
+
+    // symbol: ?onActorRemoved@GameEventDynamicRegistration@@QEAAXXZ
     MCAPI void onActorRemoved();
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_onActorChangedChunk\@GameEventDynamicRegistration\@\@AEAAXAEBVBlockSource\@\@VChunkPos\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
-     */
-    MCAPI void _onActorChangedChunk(class BlockSource const&, class ChunkPos, DimensionType);
+    // symbol:
+    // ?_onActorChangedChunk@GameEventDynamicRegistration@@AEAAXAEBVBlockSource@@VChunkPos@@V?$AutomaticID@VDimension@@H@@@Z
+    MCAPI void _onActorChangedChunk(class BlockSource const&, class ChunkPos, class AutomaticID<class Dimension, int>);
+
     // NOLINTEND
 };

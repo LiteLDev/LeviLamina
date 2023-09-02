@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct PistonActionEvent {
-
 public:
     // prevent constructor by default
     PistonActionEvent& operator=(PistonActionEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1PistonActionEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1PistonActionEvent@@QEAA@XZ
     MCAPI ~PistonActionEvent();
+
     // NOLINTEND
 };

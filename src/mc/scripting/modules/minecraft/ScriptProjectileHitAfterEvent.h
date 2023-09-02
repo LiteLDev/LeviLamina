@@ -16,7 +16,6 @@ struct ProjectileHitEvent;
 namespace ScriptModuleMinecraft {
 
 struct ScriptProjectileHitAfterEvent {
-
 public:
     // prevent constructor by default
     ScriptProjectileHitAfterEvent& operator=(ScriptProjectileHitAfterEvent const&) = delete;
@@ -24,44 +23,36 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ScriptProjectileHitAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
-     */
+    // symbol: ??0ScriptProjectileHitAfterEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptProjectileHitAfterEvent(struct ScriptModuleMinecraft::ScriptProjectileHitAfterEvent const&);
-    /**
-     * @symbol
-     * ??0ScriptProjectileHitAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBUProjectileHitEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@\@Z
-     */
+
+    // symbol:
+    // ??0ScriptProjectileHitAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUProjectileHitEvent@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI ScriptProjectileHitAfterEvent(struct ProjectileHitEvent const&, class Scripting::WeakLifetimeScope const&);
-    /**
-     * @symbol ??0ScriptProjectileHitAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@$$QEAU01\@\@Z
-     */
+
+    // symbol: ??0ScriptProjectileHitAfterEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
     MCAPI ScriptProjectileHitAfterEvent(struct ScriptModuleMinecraft::ScriptProjectileHitAfterEvent&&);
-    /**
-     * @symbol
-     * ?getBlockHit\@ScriptProjectileHitAfterEvent\@ScriptModuleMinecraft\@\@QEBA?AV?$optional\@UScriptBlockHitInformation\@ScriptModuleMinecraft\@\@\@std\@\@XZ
-     */
+
+    // symbol:
+    // ?getBlockHit@ScriptProjectileHitAfterEvent@ScriptModuleMinecraft@@QEBA?AV?$optional@UScriptBlockHitInformation@ScriptModuleMinecraft@@@std@@XZ
     MCAPI std::optional<struct ScriptModuleMinecraft::ScriptBlockHitInformation> getBlockHit() const;
-    /**
-     * @symbol
-     * ?getEntityHit\@ScriptProjectileHitAfterEvent\@ScriptModuleMinecraft\@\@QEBA?AV?$optional\@UScriptEntityHitInformation\@ScriptModuleMinecraft\@\@\@std\@\@XZ
-     */
+
+    // symbol:
+    // ?getEntityHit@ScriptProjectileHitAfterEvent@ScriptModuleMinecraft@@QEBA?AV?$optional@UScriptEntityHitInformation@ScriptModuleMinecraft@@@std@@XZ
     MCAPI std::optional<struct ScriptModuleMinecraft::ScriptEntityHitInformation> getEntityHit() const;
-    /**
-     * @symbol ??4ScriptProjectileHitAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-     */
+
+    // symbol: ??4ScriptProjectileHitAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptProjectileHitAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptProjectileHitAfterEvent&&);
-    /**
-     * @symbol ??1ScriptProjectileHitAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ScriptProjectileHitAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptProjectileHitAfterEvent();
-    /**
-     * @symbol
-     * ?bind\@ScriptProjectileHitAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptProjectileHitAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptProjectileHitAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptProjectileHitAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptProjectileHitAfterEvent>
     bind();
+
     // NOLINTEND
 };
 

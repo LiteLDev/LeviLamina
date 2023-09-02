@@ -13,7 +13,6 @@ struct ActorDefinitionFeedItem;
 namespace ScriptModuleMinecraft {
 
 class ScriptActorDefinitionFeedItem {
-
 public:
     // prevent constructor by default
     ScriptActorDefinitionFeedItem& operator=(ScriptActorDefinitionFeedItem const&) = delete;
@@ -22,11 +21,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?bind\@ScriptActorDefinitionFeedItem\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UActorDefinitionFeedItem\@\@\@Scripting\@\@XZ
-     */
+    // symbol:
+    // ?bind@ScriptActorDefinitionFeedItem@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UActorDefinitionFeedItem@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ActorDefinitionFeedItem> bind();
+
     // NOLINTEND
 };
 

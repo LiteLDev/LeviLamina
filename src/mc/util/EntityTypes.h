@@ -8,7 +8,6 @@ namespace Json { class Value; }
 // clang-format on
 
 class EntityTypes {
-
 public:
     // prevent constructor by default
     EntityTypes& operator=(EntityTypes const&) = delete;
@@ -17,13 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?parseJson\@EntityTypes\@\@QEAA_NAEBVValue\@Json\@\@\@Z
-     */
+    // symbol: ?parseJson@EntityTypes@@QEAA_NAEBVValue@Json@@@Z
     MCAPI bool parseJson(class Json::Value const&);
-    /**
-     * @symbol ??1EntityTypes\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1EntityTypes@@QEAA@XZ
     MCAPI ~EntityTypes();
+
     // NOLINTEND
 };

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ExitVehicleSystem {
-
 public:
     // prevent constructor by default
     ExitVehicleSystem& operator=(ExitVehicleSystem const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createSystem\@ExitVehicleSystem\@\@SA?AUTickingSystemWithInfo\@\@AEBVBaseGameVersion\@\@\@Z
-     */
+    // symbol: ?createSystem@ExitVehicleSystem@@SA?AUTickingSystemWithInfo@@AEBVBaseGameVersion@@@Z
     MCAPI static struct TickingSystemWithInfo createSystem(class BaseGameVersion const&);
+
     // NOLINTEND
 };

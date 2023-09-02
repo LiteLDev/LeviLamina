@@ -28,7 +28,6 @@ enum class CommandFlagValue : uint16_t {
 };
 
 struct CommandFlag {
-
 public:
     enum class CommandFlagValue value;
 

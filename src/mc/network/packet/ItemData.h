@@ -4,7 +4,6 @@
 #include "mc/deps/core/string/HashedString.h"
 
 struct ItemData {
-
 public:
     HashedString mName;             // this+0x0
     short        mId;               // this+0x30
@@ -17,9 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ItemData\@\@QEAA\@XZ
-     */
+    // symbol: ??1ItemData@@QEAA@XZ
     MCAPI ~ItemData();
+
     // NOLINTEND
 };

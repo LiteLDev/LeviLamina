@@ -5,7 +5,6 @@
 namespace Bedrock {
 
 struct DirectoryEntry {
-
 public:
     // prevent constructor by default
     DirectoryEntry& operator=(DirectoryEntry const&) = delete;

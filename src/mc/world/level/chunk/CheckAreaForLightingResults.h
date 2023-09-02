@@ -5,7 +5,6 @@
 namespace GameLightingChecker {
 
 struct CheckAreaForLightingResults {
-
 public:
     // prevent constructor by default
     CheckAreaForLightingResults& operator=(CheckAreaForLightingResults const&) = delete;

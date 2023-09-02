@@ -11,7 +11,6 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class DashDefinition {
-
 public:
     // prevent constructor by default
     DashDefinition& operator=(DashDefinition const&) = delete;
@@ -20,20 +19,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?initialize\@DashDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDashComponent\@\@\@Z
-     */
+    // symbol: ?initialize@DashDefinition@@QEBAXAEAVEntityContext@@AEAVDashComponent@@@Z
     MCAPI void initialize(class EntityContext&, class DashComponent&) const;
-    /**
-     * @symbol ?uninitialize\@DashDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDashComponent\@\@\@Z
-     */
+
+    // symbol: ?uninitialize@DashDefinition@@QEBAXAEAVEntityContext@@AEAVDashComponent@@@Z
     MCAPI void uninitialize(class EntityContext&, class DashComponent&) const;
-    /**
-     * @symbol
-     * ?buildSchema\@DashDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDashDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?buildSchema@DashDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDashDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DashDefinition>>&);
+
     // NOLINTEND
 };

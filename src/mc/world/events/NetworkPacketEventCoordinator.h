@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class NetworkPacketEventCoordinator {
-
 public:
     // prevent constructor by default
     NetworkPacketEventCoordinator& operator=(NetworkPacketEventCoordinator const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?sendPacketReceivedFrom\@NetworkPacketEventCoordinator\@\@QEAAXAEBVPacketHeader\@\@AEBVPacket\@\@\@Z
-     */
+    // symbol: ?sendPacketReceivedFrom@NetworkPacketEventCoordinator@@QEAAXAEBVPacketHeader@@AEBVPacket@@@Z
     MCAPI void sendPacketReceivedFrom(class PacketHeader const&, class Packet const&);
+
     // NOLINTEND
 };

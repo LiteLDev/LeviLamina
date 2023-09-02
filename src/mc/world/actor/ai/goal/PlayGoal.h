@@ -22,7 +22,6 @@ public:
 
     // PlayGoal inner types define
     class PlayDefinition : public ::BaseGoalDefinition {
-
     public:
         // prevent constructor by default
         PlayDefinition& operator=(PlayDefinition const&) = delete;
@@ -31,25 +30,20 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @symbol ?initialize\@PlayDefinition\@PlayGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
+
+        // symbol: ?initialize@PlayDefinition@PlayGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class PlayGoal&) const;
-        /**
-         * @symbol
-         * ?buildSchema\@PlayDefinition\@PlayGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VPlayDefinition\@PlayGoal\@\@\@JsonUtil\@\@\@4\@\@Z
-         */
+
+        // symbol:
+        // ?buildSchema@PlayDefinition@PlayGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VPlayDefinition@PlayGoal@@@JsonUtil@@@4@@Z
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class PlayGoal::PlayDefinition>>&);
-        /**
-         * @symbol ?getStrictParsingVersion\@PlayDefinition\@PlayGoal\@\@SA?AVSemVersion\@\@XZ
-         */
+
+        // symbol: ?getStrictParsingVersion@PlayDefinition@PlayGoal@@SA?AVSemVersion@@XZ
         MCAPI static class SemVersion getStrictParsingVersion();
+
         // NOLINTEND
     };
 
@@ -61,45 +55,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@PlayGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@PlayGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@PlayGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@PlayGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@PlayGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@PlayGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol ?stop\@PlayGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 5, symbol: ?stop@PlayGoal@@UEAAXXZ
     virtual void stop();
-    /**
-     * @vftbl 6
-     * @symbol ?tick\@PlayGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 6, symbol: ?tick@PlayGoal@@UEAAXXZ
     virtual void tick();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@PlayGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@PlayGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @symbol ??0PlayGoal\@\@QEAA\@AEAVMob\@\@\@Z
-     */
+
+    // symbol: ??0PlayGoal@@QEAA@AEAVMob@@@Z
     MCAPI PlayGoal(class Mob&);
+
     // NOLINTEND
 };

@@ -11,7 +11,6 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 struct IsIgnitedDefinition {
-
 public:
     // prevent constructor by default
     IsIgnitedDefinition& operator=(IsIgnitedDefinition const&) = delete;
@@ -20,20 +19,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?initialize\@IsIgnitedDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
+    // symbol: ?initialize@IsIgnitedDefinition@@QEBAXAEAVEntityContext@@@Z
     MCAPI void initialize(class EntityContext&) const;
-    /**
-     * @symbol ?uninitialize\@IsIgnitedDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
+
+    // symbol: ?uninitialize@IsIgnitedDefinition@@QEBAXAEAVEntityContext@@@Z
     MCAPI void uninitialize(class EntityContext&) const;
-    /**
-     * @symbol
-     * ?buildSchema\@IsIgnitedDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsIgnitedDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?buildSchema@IsIgnitedDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsIgnitedDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsIgnitedDefinition>>&);
+
     // NOLINTEND
 };

@@ -5,7 +5,6 @@
 namespace PlayerCapabilities {
 
 struct IPlayerData {
-
 public:
 };
 

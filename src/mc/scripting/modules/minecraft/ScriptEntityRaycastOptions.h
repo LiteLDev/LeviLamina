@@ -9,7 +9,6 @@
 namespace ScriptModuleMinecraft {
 
 struct ScriptEntityRaycastOptions {
-
 public:
     // prevent constructor by default
     ScriptEntityRaycastOptions& operator=(ScriptEntityRaycastOptions const&) = delete;
@@ -18,18 +17,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?bind\@ScriptEntityRaycastOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptEntityRaycastOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+    // symbol:
+    // ?bind@ScriptEntityRaycastOptions@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@UScriptEntityRaycastOptions@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptEntityRaycastOptions>
     bind();
-    /**
-     * @symbol
-     * ?bindV010\@ScriptEntityRaycastOptions\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptEntityRaycastOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bindV010@ScriptEntityRaycastOptions@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptEntityRaycastOptions@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptEntityRaycastOptions>
     bindV010();
+
     // NOLINTEND
 };
 

@@ -9,7 +9,6 @@
 class AABB;
 
 class BoundingBox : public CommutativeGroup<BoundingBox, BlockPos, BlockPos> {
-
 public:
     union {
         BlockPos min, x, r, s;
@@ -102,18 +101,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0BoundingBox\@\@QEAA\@AEBVBlockPos\@\@0W4Rotation\@\@\@Z
-     */
-    MCAPI BoundingBox(class BlockPos const&, class BlockPos const&, enum class Rotation);
-    /**
-     * @symbol ?isValid\@BoundingBox\@\@QEBA_NXZ
-     */
+    // symbol: ??0BoundingBox@@QEAA@AEBVBlockPos@@0W4Rotation@@@Z
+    MCAPI BoundingBox(class BlockPos const&, class BlockPos const&, ::Rotation);
+
+    // symbol: ?isValid@BoundingBox@@QEBA_NXZ
     MCAPI bool isValid() const;
-    /**
-     * @symbol ?orientBox\@BoundingBox\@\@SA?AV1\@HHHHHHHHHH\@Z
-     */
-    MCAPI static class BoundingBox
-        orientBox(int32_t, int32_t, int32_t, int32_t, int32_t, int32_t, int32_t, int32_t, int32_t, int32_t);
+
+    // symbol: ?orientBox@BoundingBox@@SA?AV1@HHHHHHHHHH@Z
+    MCAPI static class BoundingBox orientBox(int, int, int, int, int, int, int, int, int, int);
+
     // NOLINTEND
 };

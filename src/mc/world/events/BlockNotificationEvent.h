@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct BlockNotificationEvent {
-
 public:
     // prevent constructor by default
     BlockNotificationEvent& operator=(BlockNotificationEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1BlockNotificationEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1BlockNotificationEvent@@QEAA@XZ
     MCAPI ~BlockNotificationEvent();
+
     // NOLINTEND
 };

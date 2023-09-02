@@ -15,7 +15,6 @@ namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft {
 
 class IScriptBlockProperty {
-
 public:
     // prevent constructor by default
     IScriptBlockProperty& operator=(IScriptBlockProperty const&) = delete;
@@ -24,32 +23,25 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_ISCRIPTBLOCKPROPERTY
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // symbol: ??1IScriptBlockProperty@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~IScriptBlockProperty();
-#endif
-    /**
-     * @symbol ??0IScriptBlockProperty\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
-     */
+
+    // symbol: ??0IScriptBlockProperty@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
     MCAPI IScriptBlockProperty(class ScriptModuleMinecraft::IScriptBlockProperty&&);
-    /**
-     * @symbol
-     * ??0IScriptBlockProperty\@ScriptModuleMinecraft\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlockState\@\@V?$StrongTypedObjectHandle\@VScriptBlockPermutation\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
-     */
+
+    // symbol:
+    // ??0IScriptBlockProperty@ScriptModuleMinecraft@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockState@@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@@Z
     MCAPI
     IScriptBlockProperty(std::string, class BlockState const&, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>);
-    /**
-     * @symbol ??4IScriptBlockProperty\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
-     */
+
+    // symbol: ??4IScriptBlockProperty@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::IScriptBlockProperty&
     operator=(class ScriptModuleMinecraft::IScriptBlockProperty&&);
-    /**
-     * @symbol
-     * ?bindV010\@IScriptBlockProperty\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VIScriptBlockProperty\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bindV010@IScriptBlockProperty@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VIScriptBlockProperty@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::IScriptBlockProperty> bindV010();
+
     // NOLINTEND
 };
 

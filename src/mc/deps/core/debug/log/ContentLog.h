@@ -18,7 +18,6 @@ public:
 
     // ContentLog inner types define
     class ContentLogEndPointData {
-
     public:
         // prevent constructor by default
         ContentLogEndPointData& operator=(ContentLogEndPointData const&) = delete;
@@ -27,15 +26,13 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??0ContentLogEndPointData\@ContentLog\@\@QEAA\@V?$not_null\@PEAVContentLogEndPoint\@\@\@gsl\@\@\@Z
-         */
+        // symbol: ??0ContentLogEndPointData@ContentLog@@QEAA@V?$not_null@PEAVContentLogEndPoint@@@gsl@@@Z
         MCAPI ContentLogEndPointData(gsl::not_null<class ContentLogEndPoint*>);
+
         // NOLINTEND
     };
 
     class ContentLogScope {
-
     public:
         // prevent constructor by default
         ContentLogScope& operator=(ContentLogScope const&) = delete;
@@ -44,20 +41,16 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol
-         * ??0ContentLogScope\@ContentLog\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-         */
+        // symbol: ??0ContentLogScope@ContentLog@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
         MCAPI ContentLogScope(std::string);
-        /**
-         * @symbol ??1ContentLogScope\@ContentLog\@\@QEAA\@XZ
-         */
+
+        // symbol: ??1ContentLogScope@ContentLog@@QEAA@XZ
         MCAPI ~ContentLogScope();
+
         // NOLINTEND
     };
 
     class ThreadSpecificData {
-
     public:
         // prevent constructor by default
         ThreadSpecificData& operator=(ThreadSpecificData const&) = delete;
@@ -72,42 +65,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ContentLog\@\@QEAA\@XZ
-     */
+    // symbol: ??0ContentLog@@QEAA@XZ
     MCAPI ContentLog();
-    /**
-     * @symbol
-     * ?getScope\@ContentLog\@\@QEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // symbol: ?getScope@ContentLog@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getScope();
-    /**
-     * @symbol ?isEnabled\@ContentLog\@\@QEBA_NXZ
-     */
+
+    // symbol: ?isEnabled@ContentLog@@QEBA_NXZ
     MCAPI bool isEnabled() const;
-    /**
-     * @symbol ?log\@ContentLog\@\@QEAAX_NW4LogLevel\@\@W4LogArea\@\@ZZ
-     */
-    MCAPI void log(bool, enum class LogLevel, enum class LogArea, ...);
-    /**
-     * @symbol ?updateEnabledStatus\@ContentLog\@\@QEAAXXZ
-     */
+
+    // symbol: ?log@ContentLog@@QEAAX_NW4LogLevel@@W4LogArea@@ZZ
+    MCAPI void log(bool, ::LogLevel, ::LogArea, ...);
+
+    // symbol: ?updateEnabledStatus@ContentLog@@QEAAXXZ
     MCAPI void updateEnabledStatus();
-    /**
-     * @symbol ?getBedrockLogAreaFromContentLogArea\@ContentLog\@\@SA?BW4LogAreaID\@\@W4LogArea\@\@\@Z
-     */
-    MCAPI static enum class LogAreaID const getBedrockLogAreaFromContentLogArea(enum class LogArea);
-    /**
-     * @symbol ?getLogAreaName\@ContentLog\@\@SAPEBDW4LogArea\@\@\@Z
-     */
-    MCAPI static char const* getLogAreaName(enum class LogArea);
+
+    // symbol: ?getBedrockLogAreaFromContentLogArea@ContentLog@@SA?BW4LogAreaID@@W4LogArea@@@Z
+    MCAPI static ::LogAreaID const getBedrockLogAreaFromContentLogArea(::LogArea);
+
+    // symbol: ?getLogAreaName@ContentLog@@SAPEBDW4LogArea@@@Z
+    MCAPI static char const* getLogAreaName(::LogArea);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_writeToLog\@ContentLog\@\@AEAAX_NW4LogArea\@\@W4LogLevel\@\@AEAPEAD\@Z
-     */
-    MCAPI void _writeToLog(bool, enum class LogArea, enum class LogLevel, char*&);
+    // symbol: ?_writeToLog@ContentLog@@AEAAX_NW4LogArea@@W4LogLevel@@AEAPEAD@Z
+    MCAPI void _writeToLog(bool, ::LogArea, ::LogLevel, char*&);
+
     // NOLINTEND
 };

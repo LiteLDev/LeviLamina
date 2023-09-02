@@ -48,7 +48,6 @@ struct VehicleComponent;
 namespace FoodExhaustionSystemImpl {
 
 struct FoodExhaustionSystemImpl {
-
 public:
     // prevent constructor by default
     FoodExhaustionSystemImpl& operator=(FoodExhaustionSystemImpl const&) = delete;
@@ -57,31 +56,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
+
+    // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
+
+    // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol
-     * ?tick\@FoodExhaustionSystemImpl\@1\@UEAAXAEAV?$StrictExecutionContext\@U?$Filter\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@UPassengerComponent\@\@V?$FlagComponent\@UHorseFlag\@\@\@\@V?$FlagComponent\@UMobFlag\@\@\@\@V?$FlagComponent\@UParrotFlag\@\@\@\@UVehicleComponent\@\@V?$FlagComponent\@UCamelFlag\@\@\@\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@\@\@U?$Read\@UDimensionTypeComponent\@\@VExhaustionComponent\@\@V?$FlagComponent\@UOnGroundFlag\@\@\@\@UActorGameTypeComponent\@\@UServerPlayerCurrentMovementComponent\@\@V?$FlagComponent\@UInWaterFlag\@\@\@\@UMobBodyRotationComponent\@\@UPassengerComponent\@\@URenderRotationComponent\@\@UStandAnimationComponent\@\@UStateVectorComponent\@\@USynchedActorDataComponent\@\@UAABBShapeComponent\@\@UActorRotationComponent\@\@UOffsetsComponent\@\@V?$Optional\@UVanillaOffsetComponent\@\@\@\@V?$Optional\@UPassengerRenderingRidingOffsetComponent\@\@\@\@\@\@U?$Write\@UAttributesComponent\@\@\@\@U?$AddRemove\@$$V\@\@U?$GlobalRead\@ULocalConstBlockSourceFactoryComponent\@\@UExternalDataComponent\@\@\@\@U?$GlobalWrite\@$$V\@\@U?$EntityFactoryT\@$$V\@\@\@\@\@Z
-     */
+
+    // vIndex: 4, symbol:
+    // ?tick@FoodExhaustionSystemImpl@1@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorMovementTickNeededFlag@@@@UPassengerComponent@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@@@U?$Read@UDimensionTypeComponent@@VExhaustionComponent@@V?$FlagComponent@UOnGroundFlag@@@@UActorGameTypeComponent@@UServerPlayerCurrentMovementComponent@@V?$FlagComponent@UInWaterFlag@@@@UMobBodyRotationComponent@@UPassengerComponent@@URenderRotationComponent@@UStandAnimationComponent@@UStateVectorComponent@@USynchedActorDataComponent@@UAABBShapeComponent@@UActorRotationComponent@@UOffsetsComponent@@V?$Optional@UVanillaOffsetComponent@@@@V?$Optional@UPassengerRenderingRidingOffsetComponent@@@@@@U?$Write@UAttributesComponent@@@@U?$AddRemove@$$V@@U?$GlobalRead@ULocalConstBlockSourceFactoryComponent@@UExternalDataComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
     virtual void tick(class StrictExecutionContext<
                       struct Filter<
                           class FlagComponent<struct ActorMovementTickNeededFlag>,
@@ -115,6 +103,7 @@ public:
                       struct GlobalRead<struct LocalConstBlockSourceFactoryComponent, struct ExternalDataComponent>,
                       struct GlobalWrite<>,
                       struct EntityFactoryT<>>&);
+
     // NOLINTEND
 };
 

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ContentLogEndPoint {
-
 public:
     // prevent constructor by default
     ContentLogEndPoint& operator=(ContentLogEndPoint const&) = delete;
@@ -11,19 +10,14 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTLOGENDPOINT
-    /**
-     * @symbol ?log\@ContentLogEndPoint\@\@UEAAXPEBD\@Z
-     */
+    // symbol: ?log@ContentLogEndPoint@@UEAAXPEBD@Z
     MCVAPI void log(char const*);
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1ContentLogEndPoint@@UEAA@XZ
     MCVAPI ~ContentLogEndPoint();
-#endif
-    /**
-     * @symbol ??0ContentLogEndPoint\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0ContentLogEndPoint@@QEAA@XZ
     MCAPI ContentLogEndPoint();
+
     // NOLINTEND
 };

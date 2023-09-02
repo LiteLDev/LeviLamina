@@ -5,7 +5,6 @@
 namespace Core::ZipUtils {
 
 class UnzipSettings {
-
 public:
     // prevent constructor by default
     UnzipSettings& operator=(UnzipSettings const&) = delete;
@@ -13,14 +12,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0UnzipSettings\@ZipUtils\@Core\@\@QEAA\@XZ
-     */
+    // symbol: ??0UnzipSettings@ZipUtils@Core@@QEAA@XZ
     MCAPI UnzipSettings();
-    /**
-     * @symbol ??1UnzipSettings\@ZipUtils\@Core\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1UnzipSettings@ZipUtils@Core@@QEAA@XZ
     MCAPI ~UnzipSettings();
+
     // NOLINTEND
 };
 

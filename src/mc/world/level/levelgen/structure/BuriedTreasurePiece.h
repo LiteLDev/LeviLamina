@@ -7,7 +7,6 @@
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
 class BuriedTreasurePiece : public ::StructurePiece {
-
 public:
     // prevent constructor by default
     BuriedTreasurePiece& operator=(BuriedTreasurePiece const&) = delete;
@@ -16,28 +15,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 2
-     * @symbol ?getType\@BuriedTreasurePiece\@\@UEBA?AW4StructurePieceType\@\@XZ
-     */
-    virtual enum class StructurePieceType getType() const;
-    /**
-     * @vftbl 4
-     * @symbol ?postProcess\@BuriedTreasurePiece\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?getType@BuriedTreasurePiece@@UEBA?AW4StructurePieceType@@XZ
+    virtual ::StructurePieceType getType() const;
+
+    // vIndex: 4, symbol: ?postProcess@BuriedTreasurePiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
     virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_isCovered\@BuriedTreasurePiece\@\@AEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
+    // symbol: ?_isCovered@BuriedTreasurePiece@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool _isCovered(class BlockSource const&, class BlockPos const&) const;
+
     // NOLINTEND
 };

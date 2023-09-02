@@ -11,7 +11,6 @@ class BiomeRegistry;
 namespace OperationNodeFilters {
 
 class Shore {
-
 public:
     // prevent constructor by default
     Shore& operator=(Shore const&) = delete;
@@ -20,10 +19,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0Shore\@OperationNodeFilters\@\@QEAA\@AEBVBiomeRegistry\@\@AEAVBiome\@\@\@Z
-     */
+    // symbol: ??0Shore@OperationNodeFilters@@QEAA@AEBVBiomeRegistry@@AEAVBiome@@@Z
     MCAPI Shore(class BiomeRegistry const&, class Biome&);
+
     // NOLINTEND
 };
 

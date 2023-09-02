@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class CommandArea {
-
 public:
     // prevent constructor by default
     CommandArea& operator=(CommandArea const&) = delete;
@@ -12,13 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?getDimensionBlockSource\@CommandArea\@\@QEAAAEAVBlockSource\@\@XZ
-     */
+    // symbol: ?getDimensionBlockSource@CommandArea@@QEAAAEAVBlockSource@@XZ
     MCAPI class BlockSource& getDimensionBlockSource();
-    /**
-     * @symbol ??1CommandArea\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1CommandArea@@QEAA@XZ
     MCAPI ~CommandArea();
+
     // NOLINTEND
 };

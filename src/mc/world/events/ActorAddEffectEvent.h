@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ActorAddEffectEvent {
-
 public:
     // prevent constructor by default
     ActorAddEffectEvent& operator=(ActorAddEffectEvent const&) = delete;
@@ -11,13 +10,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0ActorAddEffectEvent\@\@QEAA\@AEBU0\@\@Z
-     */
+    // symbol: ??0ActorAddEffectEvent@@QEAA@AEBU0@@Z
     MCAPI ActorAddEffectEvent(struct ActorAddEffectEvent const&);
-    /**
-     * @symbol ??1ActorAddEffectEvent\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ActorAddEffectEvent@@QEAA@XZ
     MCAPI ~ActorAddEffectEvent();
+
     // NOLINTEND
 };

@@ -6,7 +6,6 @@
 #include "mc/world/item/enchanting/Enchant.h"
 
 class TridentLoyaltyEnchant : public ::Enchant {
-
 public:
     // prevent constructor by default
     TridentLoyaltyEnchant& operator=(TridentLoyaltyEnchant const&) = delete;
@@ -15,58 +14,34 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 2
-     * @symbol ?getMinCost\@TridentLoyaltyEnchant\@\@UEBAHH\@Z
-     */
-    virtual int32_t getMinCost(int32_t) const;
-    /**
-     * @vftbl 3
-     * @symbol ?getMaxCost\@TridentLoyaltyEnchant\@\@UEBAHH\@Z
-     */
-    virtual int32_t getMaxCost(int32_t) const;
-    /**
-     * @vftbl 5
-     * @symbol ?getMaxLevel\@TridentLoyaltyEnchant\@\@UEBAHXZ
-     */
-    virtual int32_t getMaxLevel() const;
-    /**
-     * @vftbl 10
-     * @symbol __unk_vfn_10
-     */
+
+    // vIndex: 2, symbol: ?getMinCost@TridentLoyaltyEnchant@@UEBAHH@Z
+    virtual int getMinCost(int) const;
+
+    // vIndex: 3, symbol: ?getMaxCost@TridentLoyaltyEnchant@@UEBAHH@Z
+    virtual int getMaxCost(int) const;
+
+    // vIndex: 5, symbol: ?getMaxLevel@TridentLoyaltyEnchant@@UEBAHXZ
+    virtual int getMaxLevel() const;
+
+    // vIndex: 10, symbol: __unk_vfn_10
     virtual void __unk_vfn_10();
-    /**
-     * @vftbl 11
-     * @symbol __unk_vfn_11
-     */
+
+    // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();
-    /**
-     * @vftbl 12
-     * @symbol __unk_vfn_12
-     */
+
+    // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();
-    /**
-     * @vftbl 13
-     * @symbol __unk_vfn_13
-     */
+
+    // vIndex: 13, symbol: __unk_vfn_13
     virtual void __unk_vfn_13();
-    /**
-     * @symbol
-     * ??0TridentLoyaltyEnchant\@\@QEAA\@W4Type\@Enchant\@\@W4Frequency\@2\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@2H_NH\@Z
-     */
-    MCAPI TridentLoyaltyEnchant(
-        enum class Enchant::Type,
-        enum class Enchant::Frequency,
-        std::string_view,
-        std::string_view,
-        int32_t,
-        bool,
-        int32_t
-    );
+
+    // symbol:
+    // ??0TridentLoyaltyEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2H_NH@Z
+    MCAPI
+    TridentLoyaltyEnchant(::Enchant::Type, ::Enchant::Frequency, std::string_view, std::string_view, int, bool, int);
+
     // NOLINTEND
 };

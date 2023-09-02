@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class GlideMoveSystem {
-
 public:
     // prevent constructor by default
     GlideMoveSystem& operator=(GlideMoveSystem const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createGlideMoveSystem\@GlideMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createGlideMoveSystem@GlideMoveSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createGlideMoveSystem();
+
     // NOLINTEND
 };

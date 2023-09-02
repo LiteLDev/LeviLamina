@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct PassengerTickRequestComponent {
-
 public:
     // prevent constructor by default
     PassengerTickRequestComponent& operator=(PassengerTickRequestComponent const&) = delete;

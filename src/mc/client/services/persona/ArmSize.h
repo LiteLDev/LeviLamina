@@ -33,20 +33,24 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_getSizeInfoIteratorByType\@ArmSize\@persona\@\@KA?AV?$_List_const_iterator\@V?$_List_val\@U?$_List_simple_types\@U?$pair\@$$CBW4Type\@ArmSize\@persona\@\@USizeInfo\@3\@\@std\@\@\@std\@\@\@std\@\@\@std\@\@W4Type\@12\@\@Z
-     */
-    MCAPI static Proxy::constIterator _getSizeInfoIteratorByType(enum class persona::ArmSize::Type);
+    // symbol:
+    // ?_getSizeInfoIteratorByType@ArmSize@persona@@KA?AV?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBW4Type@ArmSize@persona@@USizeInfo@3@@std@@@std@@@std@@@std@@W4Type@12@@Z
+    MCAPI static Proxy::constIterator _getSizeInfoIteratorByType(::persona::ArmSize::Type);
+
     // NOLINTEND
 
 private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?mInfoList\@ArmSize\@persona\@\@0V?$unordered_map\@W4Type\@ArmSize\@persona\@\@USizeInfo\@3\@U?$hash\@W4Type\@ArmSize\@persona\@\@\@std\@\@U?$equal_to\@W4Type\@ArmSize\@persona\@\@\@6\@V?$allocator\@U?$pair\@$$CBW4Type\@ArmSize\@persona\@\@USizeInfo\@3\@\@std\@\@\@6\@\@std\@\@B
-     */
+    // symbol:
+    // ?mInfoList@ArmSize@persona@@0V?$unordered_map@W4Type@ArmSize@persona@@USizeInfo@3@U?$hash@W4Type@ArmSize@persona@@@std@@U?$equal_to@W4Type@ArmSize@persona@@@6@V?$allocator@U?$pair@$$CBW4Type@ArmSize@persona@@USizeInfo@3@@std@@@6@@std@@B
     MCAPI static SizeInfoList const mInfoList;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $mInfoList() { return mInfoList; }
     // NOLINTEND
 };
 

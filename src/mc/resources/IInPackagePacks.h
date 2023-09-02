@@ -19,7 +19,6 @@ public:
 
     // IInPackagePacks inner types define
     struct MetaData {
-
     public:
         // prevent constructor by default
         MetaData& operator=(MetaData const&) = delete;
@@ -28,10 +27,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??0MetaData\@IInPackagePacks\@\@QEAA\@AEBVPath\@Core\@\@_NW4PackCategory\@\@\@Z
-         */
-        MCAPI MetaData(class Core::Path const&, bool, enum class PackCategory);
+        // symbol: ??0MetaData@IInPackagePacks@@QEAA@AEBVPath@Core@@_NW4PackCategory@@@Z
+        MCAPI MetaData(class Core::Path const&, bool, ::PackCategory);
+
         // NOLINTEND
     };
 

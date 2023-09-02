@@ -11,7 +11,6 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 struct OnTargetAcquiredDefinition {
-
 public:
     // prevent constructor by default
     OnTargetAcquiredDefinition& operator=(OnTargetAcquiredDefinition const&) = delete;
@@ -20,12 +19,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?buildSchema\@OnTargetAcquiredDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UOnTargetAcquiredDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+    // symbol:
+    // ?buildSchema@OnTargetAcquiredDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnTargetAcquiredDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnTargetAcquiredDefinition>>&);
+
     // NOLINTEND
 };

@@ -7,7 +7,6 @@
 #include "mc/world/actor/ai/goal/target/NearestAttackableTargetGoal.h"
 
 class NearestPrioritizedAttackableTargetGoal : public ::NearestAttackableTargetGoal {
-
 public:
     // prevent constructor by default
     NearestPrioritizedAttackableTargetGoal& operator=(NearestPrioritizedAttackableTargetGoal const&) = delete;
@@ -16,41 +15,34 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@NearestPrioritizedAttackableTargetGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@NearestPrioritizedAttackableTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @vftbl 11
-     * @symbol
-     * ?_findTarget\@NearestPrioritizedAttackableTargetGoal\@\@EEAA?AUActorUniqueID\@\@PEAPEBUMobDescriptor\@\@\@Z
-     */
+
+    // vIndex: 11, symbol:
+    // ?_findTarget@NearestPrioritizedAttackableTargetGoal@@EEAA?AUActorUniqueID@@PEAPEBUMobDescriptor@@@Z
     virtual struct ActorUniqueID _findTarget(struct MobDescriptor const**);
-    /**
-     * @symbol
-     * ??0NearestPrioritizedAttackableTargetGoal\@\@QEAA\@AEAVMob\@\@AEBV?$vector\@UMobDescriptor\@\@V?$allocator\@UMobDescriptor\@\@\@std\@\@\@std\@\@MH_NH22HM2H2\@Z
-     */
+
+    // symbol:
+    // ??0NearestPrioritizedAttackableTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@MH_NH22HM2H2@Z
     MCAPI NearestPrioritizedAttackableTargetGoal(
         class Mob&,
         std::vector<struct MobDescriptor> const&,
         float,
-        int32_t,
+        int,
         bool,
-        int32_t,
+        int,
         bool,
         bool,
-        int32_t,
+        int,
         float,
         bool,
-        int32_t,
+        int,
         bool
     );
+
     // NOLINTEND
 };

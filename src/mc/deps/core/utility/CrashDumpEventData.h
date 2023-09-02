@@ -6,7 +6,6 @@
 #include "mc/enums/CrashDumpLogStringID.h"
 
 struct CrashDumpEventData {
-
 public:
     // prevent constructor by default
     CrashDumpEventData& operator=(CrashDumpEventData const&) = delete;
@@ -15,13 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0CrashDumpEventData\@\@QEAA\@W4CrashDumpLogStringID\@\@0\@Z
-     */
-    MCAPI CrashDumpEventData(enum class CrashDumpLogStringID, enum class CrashDumpLogStringID);
-    /**
-     * @symbol ?kFormat\@CrashDumpEventData\@\@2QBUCrashDumpFormatEntryImpl\@\@B
-     */
+    // symbol: ??0CrashDumpEventData@@QEAA@W4CrashDumpLogStringID@@0@Z
+    MCAPI CrashDumpEventData(::CrashDumpLogStringID, ::CrashDumpLogStringID);
+
+    // symbol: ?kFormat@CrashDumpEventData@@2QBUCrashDumpFormatEntryImpl@@B
     MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
+
     // NOLINTEND
 };

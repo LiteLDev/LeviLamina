@@ -8,7 +8,6 @@
 #include "mc/network/packet/EntityServerPacket.h"
 
 class AddEntityPacket : public ::EntityServerPacket {
-
 public:
     // prevent constructor by default
     AddEntityPacket& operator=(AddEntityPacket const&) = delete;
@@ -16,31 +15,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getId\@AddEntityPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
-     */
-    virtual enum class MinecraftPacketIds getId() const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?getName\@AddEntityPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // vIndex: 1, symbol: ?getId@AddEntityPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    virtual ::MinecraftPacketIds getId() const;
+
+    // vIndex: 2, symbol:
+    // ?getName@AddEntityPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDENTITYPACKET
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1AddEntityPacket@@UEAA@XZ
     MCVAPI ~AddEntityPacket();
-#endif
-    /**
-     * @symbol ??0AddEntityPacket\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0AddEntityPacket@@QEAA@XZ
     MCAPI AddEntityPacket();
+
     // NOLINTEND
 };

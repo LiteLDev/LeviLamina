@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class EducationLocalLevelSettings {
-
 public:
     std::optional<std::string> mCodeBuilderOverrideUri;
     bool                       mHasQuiz;
@@ -15,9 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1EducationLocalLevelSettings\@\@QEAA\@XZ
-     */
+    // symbol: ??1EducationLocalLevelSettings@@QEAA@XZ
     MCAPI ~EducationLocalLevelSettings();
+
     // NOLINTEND
 };

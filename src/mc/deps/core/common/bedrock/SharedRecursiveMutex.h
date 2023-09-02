@@ -13,7 +13,6 @@ namespace Bedrock::Threading { class SharedRecursiveMutexBase; }
 namespace Bedrock::Threading {
 
 class SharedRecursiveMutex : public ::Bedrock::Threading::SharedRecursiveMutexBase {
-
 public:
     // prevent constructor by default
     SharedRecursiveMutex& operator=(SharedRecursiveMutex const&) = delete;
@@ -22,32 +21,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?_threadHoldsSharedLock\@SharedRecursiveMutex\@Threading\@Bedrock\@\@MEAA_NVid\@thread\@std\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?_threadHoldsSharedLock@SharedRecursiveMutex@Threading@Bedrock@@MEAA_NVid@thread@std@@@Z
     virtual bool _threadHoldsSharedLock(std::thread::id);
-    /**
-     * @vftbl 2
-     * @symbol ?_shouldLockForSharedAccess\@SharedRecursiveMutex\@Threading\@Bedrock\@\@MEAA_NVid\@thread\@std\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?_shouldLockForSharedAccess@SharedRecursiveMutex@Threading@Bedrock@@MEAA_NVid@thread@std@@@Z
     virtual bool _shouldLockForSharedAccess(std::thread::id);
-    /**
-     * @vftbl 3
-     * @symbol ?_shouldUnLockForSharedAccess\@SharedRecursiveMutex\@Threading\@Bedrock\@\@MEAA_NVid\@thread\@std\@\@\@Z
-     */
+
+    // vIndex: 3, symbol: ?_shouldUnLockForSharedAccess@SharedRecursiveMutex@Threading@Bedrock@@MEAA_NVid@thread@std@@@Z
     virtual bool _shouldUnLockForSharedAccess(std::thread::id);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_THREADING_SHAREDRECURSIVEMUTEX
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1SharedRecursiveMutex@Threading@Bedrock@@UEAA@XZ
     MCVAPI ~SharedRecursiveMutex();
-#endif
+
     // NOLINTEND
 };
 

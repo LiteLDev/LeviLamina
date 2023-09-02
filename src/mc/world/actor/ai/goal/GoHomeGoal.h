@@ -22,7 +22,6 @@ public:
 
     // GoHomeGoal inner types define
     class GoHomeDefinition : public ::BaseGoalDefinition {
-
     public:
         // prevent constructor by default
         GoHomeDefinition& operator=(GoHomeDefinition const&) = delete;
@@ -31,21 +30,17 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @symbol ?initialize\@GoHomeDefinition\@GoHomeGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
+
+        // symbol: ?initialize@GoHomeDefinition@GoHomeGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class GoHomeGoal&) const;
-        /**
-         * @symbol
-         * ?buildSchema\@GoHomeDefinition\@GoHomeGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VGoHomeDefinition\@GoHomeGoal\@\@\@JsonUtil\@\@\@4\@\@Z
-         */
+
+        // symbol:
+        // ?buildSchema@GoHomeDefinition@GoHomeGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VGoHomeDefinition@GoHomeGoal@@@JsonUtil@@@4@@Z
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GoHomeGoal::GoHomeDefinition>>&);
+
         // NOLINTEND
     };
 
@@ -57,65 +52,46 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@GoHomeGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@GoHomeGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@GoHomeGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@GoHomeGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@GoHomeGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@GoHomeGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol ?stop\@GoHomeGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 5, symbol: ?stop@GoHomeGoal@@UEAAXXZ
     virtual void stop();
-    /**
-     * @vftbl 6
-     * @symbol ?tick\@GoHomeGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 6, symbol: ?tick@GoHomeGoal@@UEAAXXZ
     virtual void tick();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@GoHomeGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@GoHomeGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @symbol ??0GoHomeGoal\@\@QEAA\@AEAVMob\@\@\@Z
-     */
+
+    // symbol: ??0GoHomeGoal@@QEAA@AEAVMob@@@Z
     MCAPI GoHomeGoal(class Mob&);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_getHomeDimension\@GoHomeGoal\@\@AEBA?AV?$AutomaticID\@VDimension\@\@H\@\@XZ
-     */
-    MCAPI DimensionType _getHomeDimension() const;
-    /**
-     * @symbol ?_getHomePos\@GoHomeGoal\@\@AEBA?AVBlockPos\@\@XZ
-     */
+    // symbol: ?_getHomeDimension@GoHomeGoal@@AEBA?AV?$AutomaticID@VDimension@@H@@XZ
+    MCAPI class AutomaticID<class Dimension, int> _getHomeDimension() const;
+
+    // symbol: ?_getHomePos@GoHomeGoal@@AEBA?AVBlockPos@@XZ
     MCAPI class BlockPos _getHomePos() const;
-    /**
-     * @symbol ?_hasRequiredComponents\@GoHomeGoal\@\@AEBA_NXZ
-     */
+
+    // symbol: ?_hasRequiredComponents@GoHomeGoal@@AEBA_NXZ
     MCAPI bool _hasRequiredComponents() const;
-    /**
-     * @symbol ?_triggerOnFailedEvents\@GoHomeGoal\@\@AEAAXXZ
-     */
+
+    // symbol: ?_triggerOnFailedEvents@GoHomeGoal@@AEAAXXZ
     MCAPI void _triggerOnFailedEvents();
+
     // NOLINTEND
 };

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ActorRemovedEvent {
-
 public:
     // prevent constructor by default
     ActorRemovedEvent& operator=(ActorRemovedEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ActorRemovedEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1ActorRemovedEvent@@QEAA@XZ
     MCAPI ~ActorRemovedEvent();
+
     // NOLINTEND
 };

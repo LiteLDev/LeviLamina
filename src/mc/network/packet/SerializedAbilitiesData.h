@@ -23,7 +23,6 @@ public:
     };
 
     struct SerializedLayer {
-
     public:
         SerializedAbilitiesLayer mSerializedLayer; // this+0x0
         uint32_t                 mAbilitiesSet;    // this+0x4
@@ -50,21 +49,32 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0SerializedAbilitiesData\@\@QEAA\@UActorUniqueID\@\@AEBVLayeredAbilities\@\@\@Z
-     */
+    // symbol: ??0SerializedAbilitiesData@@QEAA@UActorUniqueID@@AEBVLayeredAbilities@@@Z
     MCAPI SerializedAbilitiesData(struct ActorUniqueID, class LayeredAbilities const&);
-    /**
-     * @symbol ?fillIn\@SerializedAbilitiesData\@\@QEBAXAEAVLayeredAbilities\@\@\@Z
-     */
+
+    // symbol: ?fillIn@SerializedAbilitiesData@@QEBAXAEAVLayeredAbilities@@@Z
     MCAPI void fillIn(class LayeredAbilities&) const;
-    /**
-     * @symbol ?getTargetPlayer\@SerializedAbilitiesData\@\@QEBA?AUActorUniqueID\@\@XZ
-     */
+
+    // symbol: ?getTargetPlayer@SerializedAbilitiesData@@QEBA?AUActorUniqueID@@XZ
     MCAPI struct ActorUniqueID getTargetPlayer() const;
-    /**
-     * @symbol ??1SerializedAbilitiesData\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1SerializedAbilitiesData@@QEAA@XZ
     MCAPI ~SerializedAbilitiesData();
+
+    // NOLINTEND
+
+private:
+    // NOLINTBEGIN
+    // symbol:
+    // ?ABILITIES_LAYER_MAP@SerializedAbilitiesData@@0V?$array@W4SerializedAbilitiesLayer@SerializedAbilitiesData@@$04@std@@B
+    MCAPI static std::array<::SerializedAbilitiesData::SerializedAbilitiesLayer, 5> const ABILITIES_LAYER_MAP;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $ABILITIES_LAYER_MAP() { return ABILITIES_LAYER_MAP; }
+
     // NOLINTEND
 };

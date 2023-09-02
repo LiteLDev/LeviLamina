@@ -7,7 +7,6 @@
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class PlayerVehicleTamedGoal : public ::Goal {
-
 public:
     // prevent constructor by default
     PlayerVehicleTamedGoal& operator=(PlayerVehicleTamedGoal const&) = delete;
@@ -16,40 +15,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@PlayerVehicleTamedGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@PlayerVehicleTamedGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@PlayerVehicleTamedGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@PlayerVehicleTamedGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@PlayerVehicleTamedGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@PlayerVehicleTamedGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 6
-     * @symbol ?tick\@PlayerVehicleTamedGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 6, symbol: ?tick@PlayerVehicleTamedGoal@@UEAAXXZ
     virtual void tick();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@PlayerVehicleTamedGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@PlayerVehicleTamedGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @symbol ??0PlayerVehicleTamedGoal\@\@QEAA\@AEAVMob\@\@\@Z
-     */
+
+    // symbol: ??0PlayerVehicleTamedGoal@@QEAA@AEAVMob@@@Z
     MCAPI PlayerVehicleTamedGoal(class Mob&);
+
     // NOLINTEND
 };

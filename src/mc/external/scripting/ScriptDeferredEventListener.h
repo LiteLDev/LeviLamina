@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ScriptDeferredEventListener {
-
 public:
     // prevent constructor by default
     ScriptDeferredEventListener& operator=(ScriptDeferredEventListener const&) = delete;
@@ -12,31 +11,23 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEFERREDEVENTLISTENER
-    /**
-     * @symbol ?onFlushSystemAfterEvents\@ScriptDeferredEventListener\@\@UEAA_NXZ
-     */
+    // symbol: ?onFlushSystemAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
     MCVAPI bool onFlushSystemAfterEvents();
-    /**
-     * @symbol ?onFlushWorldAfterEvents\@ScriptDeferredEventListener\@\@UEAA_NXZ
-     */
+
+    // symbol: ?onFlushWorldAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
     MCVAPI bool onFlushWorldAfterEvents();
-    /**
-     * @symbol ?onLevelTickEnd\@ScriptDeferredEventListener\@\@UEAAXXZ
-     */
+
+    // symbol: ?onLevelTickEnd@ScriptDeferredEventListener@@UEAAXXZ
     MCVAPI void onLevelTickEnd();
-    /**
-     * @symbol ?onPostFlushAfterEvents\@ScriptDeferredEventListener\@\@UEAAXXZ
-     */
+
+    // symbol: ?onPostFlushAfterEvents@ScriptDeferredEventListener@@UEAAXXZ
     MCVAPI void onPostFlushAfterEvents();
-    /**
-     * @symbol ?onPreFlushAfterEvents\@ScriptDeferredEventListener\@\@UEAAXXZ
-     */
+
+    // symbol: ?onPreFlushAfterEvents@ScriptDeferredEventListener@@UEAAXXZ
     MCVAPI void onPreFlushAfterEvents();
-    /**
-     * @symbol ?onRunSystemTick\@ScriptDeferredEventListener\@\@UEAA_NXZ
-     */
+
+    // symbol: ?onRunSystemTick@ScriptDeferredEventListener@@UEAA_NXZ
     MCVAPI bool onRunSystemTick();
-#endif
+
     // NOLINTEND
 };

@@ -5,7 +5,6 @@
 namespace RakNet {
 
 struct SocketDescriptor {
-
 public:
     // prevent constructor by default
     SocketDescriptor& operator=(SocketDescriptor const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0SocketDescriptor\@RakNet\@\@QEAA\@GPEBD\@Z
-     */
-    MCAPI SocketDescriptor(uint16_t, char const*);
+    // symbol: ??0SocketDescriptor@RakNet@@QEAA@GPEBD@Z
+    MCAPI SocketDescriptor(ushort, char const*);
+
     // NOLINTEND
 };
 

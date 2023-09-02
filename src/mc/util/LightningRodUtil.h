@@ -4,10 +4,8 @@
 
 namespace LightningRodUtil {
 // NOLINTBEGIN
-/**
- * @symbol ?emitLightningRodParticles\@LightningRodUtil\@\@YAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
- */
-MCAPI void emitLightningRodParticles(class BlockSource&, class BlockPos const&, int32_t);
+// symbol: ?emitLightningRodParticles@LightningRodUtil@@YAXAEAVBlockSource@@AEBVBlockPos@@H@Z
+MCAPI void emitLightningRodParticles(class BlockSource&, class BlockPos const&, int);
 // NOLINTEND
 
 }; // namespace LightningRodUtil

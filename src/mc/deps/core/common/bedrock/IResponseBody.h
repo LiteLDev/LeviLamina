@@ -5,7 +5,6 @@
 namespace Bedrock::Http::Internal {
 
 class IResponseBody {
-
 public:
     // prevent constructor by default
     IResponseBody& operator=(IResponseBody const&) = delete;

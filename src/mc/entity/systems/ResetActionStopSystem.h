@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ResetActionStopSystem {
-
 public:
     // prevent constructor by default
     ResetActionStopSystem& operator=(ResetActionStopSystem const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createResetActionStopSystem\@ResetActionStopSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createResetActionStopSystem@ResetActionStopSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createResetActionStopSystem();
+
     // NOLINTEND
 };

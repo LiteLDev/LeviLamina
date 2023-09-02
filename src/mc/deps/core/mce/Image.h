@@ -10,7 +10,6 @@
 namespace mce {
 
 struct Image {
-
 public:
     ImageFormat imageFormat{};       // 0x0
     uint32_t    mWidth{}, mHeight{}; // 0x4, 0x8
@@ -42,30 +41,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0Image\@mce\@\@QEAA\@IIW4ImageFormat\@1\@W4ImageUsage\@1\@\@Z
-     */
-    MCAPI Image(uint32_t, uint32_t, enum class mce::ImageFormat, enum class mce::ImageUsage);
-    /**
-     * @symbol ?clone\@Image\@mce\@\@QEBA?AU12\@XZ
-     */
+    // symbol: ??0Image@mce@@QEAA@IIW4ImageFormat@1@W4ImageUsage@1@@Z
+    MCAPI Image(uint, uint, ::mce::ImageFormat, ::mce::ImageUsage);
+
+    // symbol: ?clone@Image@mce@@QEBA?AU12@XZ
     MCAPI struct mce::Image clone() const;
-    /**
-     * @symbol ?isEmpty\@Image\@mce\@\@QEBA_NXZ
-     */
+
+    // symbol: ?isEmpty@Image@mce@@QEBA_NXZ
     MCAPI bool isEmpty() const;
-    /**
-     * @symbol ??4Image\@mce\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-     */
+
+    // symbol: ??4Image@mce@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct mce::Image& operator=(struct mce::Image&&);
-    /**
-     * @symbol ?resizeImageBytesToFitImageDescription\@Image\@mce\@\@QEAAXXZ
-     */
+
+    // symbol: ?resizeImageBytesToFitImageDescription@Image@mce@@QEAAXXZ
     MCAPI void resizeImageBytesToFitImageDescription();
-    /**
-     * @symbol ??1Image\@mce\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1Image@mce@@QEAA@XZ
     MCAPI ~Image();
+
     // NOLINTEND
 };
 

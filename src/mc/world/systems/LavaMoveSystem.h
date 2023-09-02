@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class LavaMoveSystem {
-
 public:
     // prevent constructor by default
     LavaMoveSystem& operator=(LavaMoveSystem const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createLavaMoveSystem\@LavaMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createLavaMoveSystem@LavaMoveSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createLavaMoveSystem();
+
     // NOLINTEND
 };

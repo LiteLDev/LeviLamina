@@ -5,7 +5,6 @@
 namespace AgentComponents::Actions {
 
 struct PlaceBlock {
-
 public:
     // prevent constructor by default
     PlaceBlock& operator=(PlaceBlock const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1PlaceBlock\@Actions\@AgentComponents\@\@QEAA\@XZ
-     */
+    // symbol: ??1PlaceBlock@Actions@AgentComponents@@QEAA@XZ
     MCAPI ~PlaceBlock();
+
     // NOLINTEND
 };
 

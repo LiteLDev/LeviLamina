@@ -15,7 +15,6 @@ namespace ScriptModuleMinecraft { class NavigationScriptActorComponent; }
 namespace ScriptModuleMinecraft {
 
 class ScriptNavigationClimbComponent : public ::ScriptModuleMinecraft::NavigationScriptActorComponent {
-
 public:
     // prevent constructor by default
     ScriptNavigationClimbComponent& operator=(ScriptNavigationClimbComponent const&) = delete;
@@ -24,27 +23,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTNAVIGATIONCLIMBCOMPONENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1ScriptNavigationClimbComponent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptNavigationClimbComponent();
-#endif
-    /**
-     * @symbol
-     * ?bind\@ScriptNavigationClimbComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptNavigationClimbComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptNavigationClimbComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptNavigationClimbComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptNavigationClimbComponent>
     bind();
-    /**
-     * @symbol ?ComponentId\@ScriptNavigationClimbComponent\@ScriptModuleMinecraft\@\@2PEBDEB
-     */
+
+    // symbol: ?ComponentId@ScriptNavigationClimbComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;
+
     // NOLINTEND
 };
 

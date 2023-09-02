@@ -6,7 +6,6 @@ namespace ScriptModuleMinecraft {
 
 template <typename T0>
 class ScriptActorDataDrivenTriggerEventSignalAsync {
-
 public:
     // prevent constructor by default
     ScriptActorDataDrivenTriggerEventSignalAsync&

@@ -31,7 +31,6 @@ public:
 
     // PlacementPosition inner types define
     struct EnabledStates {
-
     public:
         // prevent constructor by default
         EnabledStates& operator=(EnabledStates const&) = delete;
@@ -40,17 +39,15 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol
-         * ?fromStringVector\@EnabledStates\@PlacementPosition\@BlockTrait\@\@SAXAEAU123\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
-         */
+        // symbol:
+        // ?fromStringVector@EnabledStates@PlacementPosition@BlockTrait@@SAXAEAU123@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
         MCAPI static void
         fromStringVector(struct BlockTrait::PlacementPosition::EnabledStates&, std::vector<std::string> const&);
+
         // NOLINTEND
     };
 
     class UpdateBlockFaceGetPlacementBlockCallback : public ::BlockTrait::IGetPlacementBlockCallback {
-
     public:
         // prevent constructor by default
         UpdateBlockFaceGetPlacementBlockCallback& operator=(UpdateBlockFaceGetPlacementBlockCallback const&) = delete;
@@ -59,29 +56,24 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @vftbl 1
-         * @symbol
-         * ?getPlacementBlock\@UpdateBlockFaceGetPlacementBlockCallback\@PlacementPosition\@BlockTrait\@\@UEBA?AV?$not_null\@PEBVBlock\@\@\@gsl\@\@V45\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
-         */
+
+        // vIndex: 1, symbol:
+        // ?getPlacementBlock@UpdateBlockFaceGetPlacementBlockCallback@PlacementPosition@BlockTrait@@UEBA?AV?$not_null@PEBVBlock@@@gsl@@V45@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
         virtual gsl::not_null<class Block const*> getPlacementBlock(
             gsl::not_null<class Block const*>,
             class Actor const&,
             class BlockPos const&,
-            uint8_t,
+            uchar,
             class Vec3 const&,
-            int32_t
+            int
         ) const;
+
         // NOLINTEND
     };
 
     class UpdateVerticalHalfGetPlacementBlockCallback : public ::BlockTrait::IGetPlacementBlockCallback {
-
     public:
         // prevent constructor by default
         UpdateVerticalHalfGetPlacementBlockCallback&
@@ -91,24 +83,20 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @vftbl 1
-         * @symbol
-         * ?getPlacementBlock\@UpdateVerticalHalfGetPlacementBlockCallback\@PlacementPosition\@BlockTrait\@\@UEBA?AV?$not_null\@PEBVBlock\@\@\@gsl\@\@V45\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
-         */
+
+        // vIndex: 1, symbol:
+        // ?getPlacementBlock@UpdateVerticalHalfGetPlacementBlockCallback@PlacementPosition@BlockTrait@@UEBA?AV?$not_null@PEBVBlock@@@gsl@@V45@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
         virtual gsl::not_null<class Block const*> getPlacementBlock(
             gsl::not_null<class Block const*>,
             class Actor const&,
             class BlockPos const&,
-            uint8_t,
+            uchar,
             class Vec3 const&,
-            int32_t
+            int
         ) const;
+
         // NOLINTEND
     };
 
@@ -120,36 +108,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?applyToBlockLegacy\@PlacementPosition\@BlockTrait\@\@UEBAXAEAVBlockLegacy\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?applyToBlockLegacy@PlacementPosition@BlockTrait@@UEBAXAEAVBlockLegacy@@@Z
     virtual void applyToBlockLegacy(class BlockLegacy&) const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?buildNetworkTag\@PlacementPosition\@BlockTrait\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
-     */
+
+    // vIndex: 2, symbol:
+    // ?buildNetworkTag@PlacementPosition@BlockTrait@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /**
-     * @vftbl 3
-     * @symbol ?initializeFromNetwork\@PlacementPosition\@BlockTrait\@\@UEAAXAEBVCompoundTag\@\@\@Z
-     */
+
+    // vIndex: 3, symbol: ?initializeFromNetwork@PlacementPosition@BlockTrait@@UEAAXAEBVCompoundTag@@@Z
     virtual void initializeFromNetwork(class CompoundTag const&);
-    /**
-     * @symbol ?bindType\@PlacementPosition\@BlockTrait\@\@SAXXZ
-     */
+
+    // symbol: ?bindType@PlacementPosition@BlockTrait@@SAXXZ
     MCAPI static void bindType();
-    /**
-     * @symbol
-     * ?getName\@PlacementPosition\@BlockTrait\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // symbol:
+    // ?getName@PlacementPosition@BlockTrait@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI static std::string const& getName();
+
     // NOLINTEND
 };
 

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct FileChunkInfo {
-
 public:
     // prevent constructor by default
     FileChunkInfo& operator=(FileChunkInfo const&) = delete;
@@ -12,17 +11,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0FileChunkInfo\@\@QEAA\@H_K0\@Z
-     */
-    MCAPI FileChunkInfo(int32_t, uint64_t, uint64_t);
-    /**
-     * @symbol ?isValid\@FileChunkInfo\@\@QEBA_NXZ
-     */
+    // symbol: ??0FileChunkInfo@@QEAA@H_K0@Z
+    MCAPI FileChunkInfo(int, uint64, uint64);
+
+    // symbol: ?isValid@FileChunkInfo@@QEBA_NXZ
     MCAPI bool isValid() const;
-    /**
-     * @symbol ?size\@FileChunkInfo\@\@QEBAHXZ
-     */
-    MCAPI int32_t size() const;
+
+    // symbol: ?size@FileChunkInfo@@QEBAHXZ
+    MCAPI int size() const;
+
     // NOLINTEND
 };

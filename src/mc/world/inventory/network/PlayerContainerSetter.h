@@ -6,7 +6,6 @@
 #include "mc/world/inventory/network/IPlayerContainerSetter.h"
 
 class PlayerContainerSetter : public ::IPlayerContainerSetter {
-
 public:
     // prevent constructor by default
     PlayerContainerSetter& operator=(PlayerContainerSetter const&) = delete;
@@ -15,29 +14,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?setArmor\@PlayerContainerSetter\@\@UEAAXHAEBVItemStack\@\@\@Z
-     */
-    virtual void setArmor(int32_t, class ItemStack const&);
-    /**
-     * @vftbl 2
-     * @symbol ?setOffhandSlot\@PlayerContainerSetter\@\@UEAAXAEBVItemStack\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?setArmor@PlayerContainerSetter@@UEAAXHAEBVItemStack@@@Z
+    virtual void setArmor(int, class ItemStack const&);
+
+    // vIndex: 2, symbol: ?setOffhandSlot@PlayerContainerSetter@@UEAAXAEBVItemStack@@@Z
     virtual void setOffhandSlot(class ItemStack const&);
-    /**
-     * @vftbl 3
-     * @symbol ?setPlayerUIItem\@PlayerContainerSetter\@\@UEAAXHAEBVItemStack\@\@\@Z
-     */
-    virtual void setPlayerUIItem(int32_t, class ItemStack const&);
-    /**
-     * @symbol ??0PlayerContainerSetter\@\@QEAA\@AEAVPlayer\@\@\@Z
-     */
+
+    // vIndex: 3, symbol: ?setPlayerUIItem@PlayerContainerSetter@@UEAAXHAEBVItemStack@@@Z
+    virtual void setPlayerUIItem(int, class ItemStack const&);
+
+    // symbol: ??0PlayerContainerSetter@@QEAA@AEAVPlayer@@@Z
     MCAPI PlayerContainerSetter(class Player&);
+
     // NOLINTEND
 };

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct MobEffectsComponent {
-
 public:
     // prevent constructor by default
     MobEffectsComponent& operator=(MobEffectsComponent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??4MobEffectsComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
+    // symbol: ??4MobEffectsComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct MobEffectsComponent& operator=(struct MobEffectsComponent&&);
+
     // NOLINTEND
 };

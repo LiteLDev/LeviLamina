@@ -4,10 +4,8 @@
 
 namespace DepthBasedBlockSupplierUtils {
 // NOLINTBEGIN
-/**
- * @symbol ?getDepthBasedBlock\@DepthBasedBlockSupplierUtils\@\@YAPEBVBlock\@\@HAEAVIRandom\@\@PEBV2\@1\@Z
- */
-MCAPI class Block const* getDepthBasedBlock(int32_t, class IRandom&, class Block const*, class Block const*);
+// symbol: ?getDepthBasedBlock@DepthBasedBlockSupplierUtils@@YAPEBVBlock@@HAEAVIRandom@@PEBV2@1@Z
+MCAPI class Block const* getDepthBasedBlock(int, class IRandom&, class Block const*, class Block const*);
 // NOLINTEND
 
 }; // namespace DepthBasedBlockSupplierUtils

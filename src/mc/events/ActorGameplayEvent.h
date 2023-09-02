@@ -4,7 +4,6 @@
 
 template <typename T0>
 struct ActorGameplayEvent {
-
 public:
     // prevent constructor by default
     ActorGameplayEvent& operator=(ActorGameplayEvent const&) = delete;

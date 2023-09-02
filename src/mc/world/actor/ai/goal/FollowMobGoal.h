@@ -7,7 +7,6 @@
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class FollowMobGoal : public ::Goal {
-
 public:
     // prevent constructor by default
     FollowMobGoal& operator=(FollowMobGoal const&) = delete;
@@ -16,53 +15,37 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@FollowMobGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@FollowMobGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@FollowMobGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@FollowMobGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@FollowMobGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@FollowMobGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol ?stop\@FollowMobGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 5, symbol: ?stop@FollowMobGoal@@UEAAXXZ
     virtual void stop();
-    /**
-     * @vftbl 6
-     * @symbol ?tick\@FollowMobGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 6, symbol: ?tick@FollowMobGoal@@UEAAXXZ
     virtual void tick();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@FollowMobGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@FollowMobGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @symbol ??0FollowMobGoal\@\@QEAA\@AEAVMob\@\@MMH\@Z
-     */
-    MCAPI FollowMobGoal(class Mob&, float, float, int32_t);
+
+    // symbol: ??0FollowMobGoal@@QEAA@AEAVMob@@MMH@Z
+    MCAPI FollowMobGoal(class Mob&, float, float, int);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_setWantedMob\@FollowMobGoal\@\@AEAA_NXZ
-     */
+    // symbol: ?_setWantedMob@FollowMobGoal@@AEAA_NXZ
     MCAPI bool _setWantedMob();
+
     // NOLINTEND
 };

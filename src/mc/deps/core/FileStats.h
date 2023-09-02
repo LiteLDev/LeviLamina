@@ -5,7 +5,6 @@
 namespace Core {
 
 class FileStats {
-
 public:
     // prevent constructor by default
     FileStats& operator=(FileStats const&) = delete;

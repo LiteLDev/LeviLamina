@@ -12,7 +12,6 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 // clang-format on
 
 class ResourceLoadManager : public ::Bedrock::EnableNonOwnerReferences {
-
 public:
     // prevent constructor by default
     ResourceLoadManager& operator=(ResourceLoadManager const&) = delete;
@@ -21,9 +20,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?cancel\@ResourceLoadManager\@\@QEAAXW4ResourceLoadType\@\@\@Z
-     */
-    MCAPI void cancel(enum class ResourceLoadType);
+    // symbol: ?cancel@ResourceLoadManager@@QEAAXW4ResourceLoadType@@@Z
+    MCAPI void cancel(::ResourceLoadType);
+
     // NOLINTEND
 };

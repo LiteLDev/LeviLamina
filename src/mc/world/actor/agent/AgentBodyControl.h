@@ -6,7 +6,6 @@
 #include "mc/world/actor/BodyControl.h"
 
 class AgentBodyControl : public ::BodyControl {
-
 public:
     // prevent constructor by default
     AgentBodyControl& operator=(AgentBodyControl const&) = delete;
@@ -15,15 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?clientTick\@AgentBodyControl\@\@UEAAXAEAVMob\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?clientTick@AgentBodyControl@@UEAAXAEAVMob@@@Z
     virtual void clientTick(class Mob&);
+
     // NOLINTEND
 };

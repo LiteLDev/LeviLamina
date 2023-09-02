@@ -7,7 +7,6 @@
 
 
 class TeleportTarget {
-
 public:
     struct TeleportData {
         Vec3 mDestination;      // this+0x0
@@ -22,9 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1TeleportTarget\@\@QEAA\@XZ
-     */
+    // symbol: ??1TeleportTarget@@QEAA@XZ
     MCAPI ~TeleportTarget();
+
     // NOLINTEND
 };

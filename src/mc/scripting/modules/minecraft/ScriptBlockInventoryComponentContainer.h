@@ -20,7 +20,6 @@ namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft {
 
 class ScriptBlockInventoryComponentContainer : public ::ScriptModuleMinecraft::ScriptContainer {
-
 public:
     // prevent constructor by default
     ScriptBlockInventoryComponentContainer& operator=(ScriptBlockInventoryComponentContainer const&) = delete;
@@ -29,29 +28,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?getEmptySlotsCount\@ScriptBlockInventoryComponentContainer\@ScriptModuleMinecraft\@\@UEBA?AV?$Result\@H\@Scripting\@\@XZ
-     */
-    virtual class Scripting::Result<int32_t> getEmptySlotsCount() const;
-    /**
-     * @vftbl 13
-     * @symbol
-     * ?_tryGetContainer\@ScriptBlockInventoryComponentContainer\@ScriptModuleMinecraft\@\@MEBAPEAVContainer\@\@XZ
-     */
+
+    // vIndex: 2, symbol:
+    // ?getEmptySlotsCount@ScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@H@Scripting@@XZ
+    virtual class Scripting::Result<int> getEmptySlotsCount() const;
+
+    // vIndex: 13, symbol:
+    // ?_tryGetContainer@ScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@MEBAPEAVContainer@@XZ
     virtual class Container* _tryGetContainer() const;
-    /**
-     * @vftbl 14
-     * @symbol
-     * ?_getItemContext\@ScriptBlockInventoryComponentContainer\@ScriptModuleMinecraft\@\@MEBA?AVItemContext\@\@H\@Z
-     */
-    virtual class ItemContext _getItemContext(int32_t) const;
+
+    // vIndex: 14, symbol:
+    // ?_getItemContext@ScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@MEBA?AVItemContext@@H@Z
+    virtual class ItemContext _getItemContext(int) const;
+
     // NOLINTEND
 };
 

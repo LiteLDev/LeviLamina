@@ -6,7 +6,6 @@
 #include "mc/entity/systems/ITickingSystem.h"
 
 class GroupSizeSystem : public ::ITickingSystem {
-
 public:
     // prevent constructor by default
     GroupSizeSystem& operator=(GroupSizeSystem const&) = delete;
@@ -15,28 +14,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?tick\@GroupSizeSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?tick@GroupSizeSystem@@UEAAXAEAVEntityRegistry@@@Z
     virtual void tick(class EntityRegistry&);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol ?_tickComponent\@GroupSizeSystem\@\@CAXAEAVActorOwnerComponent\@\@AEAVGroupSizeComponent\@\@\@Z
-     */
+    // symbol: ?_tickComponent@GroupSizeSystem@@CAXAEAVActorOwnerComponent@@AEAVGroupSizeComponent@@@Z
     MCAPI static void _tickComponent(class ActorOwnerComponent&, class GroupSizeComponent&);
+
     // NOLINTEND
 };

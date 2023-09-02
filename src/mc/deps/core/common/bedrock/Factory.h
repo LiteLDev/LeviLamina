@@ -10,7 +10,6 @@ namespace Bedrock::Http { class DispatcherProcess; }
 namespace Bedrock::Http {
 
 class Factory {
-
 public:
     // prevent constructor by default
     Factory& operator=(Factory const&) = delete;
@@ -19,11 +18,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?createDispatcher\@Factory\@Http\@Bedrock\@\@SA?AV?$shared_ptr\@VDispatcherProcess\@Http\@Bedrock\@\@\@std\@\@XZ
-     */
+    // symbol: ?createDispatcher@Factory@Http@Bedrock@@SA?AV?$shared_ptr@VDispatcherProcess@Http@Bedrock@@@std@@XZ
     MCAPI static std::shared_ptr<class Bedrock::Http::DispatcherProcess> createDispatcher();
+
     // NOLINTEND
 };
 

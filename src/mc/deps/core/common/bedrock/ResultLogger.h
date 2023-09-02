@@ -13,7 +13,6 @@ namespace Bedrock { struct CallStack; }
 namespace Bedrock {
 
 class ResultLogger {
-
 public:
     // prevent constructor by default
     ResultLogger& operator=(ResultLogger const&) = delete;
@@ -22,22 +21,20 @@ public:
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_logger\@ResultLogger\@Bedrock\@\@CAAEAV?$function\@$$A6AXV?$optional\@W4LogLevel\@Bedrock\@\@\@std\@\@V?$optional\@I\@2\@AEBVerror_code\@2\@AEBUCallStack\@Bedrock\@\@\@Z\@std\@\@XZ
-     */
+    // symbol:
+    // ?_logger@ResultLogger@Bedrock@@CAAEAV?$function@$$A6AXV?$optional@W4LogLevel@Bedrock@@@std@@V?$optional@I@2@AEBVerror_code@2@AEBUCallStack@Bedrock@@@Z@std@@XZ
     MCAPI static std::function<
-        void(std::optional<enum class Bedrock::LogLevel>, std::optional<uint32_t>, std::error_code const&, struct Bedrock::CallStack const&)>&
+        void(std::optional<::Bedrock::LogLevel>, std::optional<uint>, std::error_code const&, struct Bedrock::CallStack const&)>&
     _logger();
-    /**
-     * @symbol
-     * ?log\@ResultLogger\@Bedrock\@\@CAXV?$optional\@W4LogLevel\@Bedrock\@\@\@std\@\@V?$optional\@I\@4\@AEBVerror_code\@4\@AEBUCallStack\@2\@\@Z
-     */
+
+    // symbol:
+    // ?log@ResultLogger@Bedrock@@CAXV?$optional@W4LogLevel@Bedrock@@@std@@V?$optional@I@4@AEBVerror_code@4@AEBUCallStack@2@@Z
     MCAPI static void
-    log(std::optional<enum class Bedrock::LogLevel>,
-        std::optional<uint32_t>,
+    log(std::optional<::Bedrock::LogLevel>,
+        std::optional<uint>,
         std::error_code const&,
         struct Bedrock::CallStack const&);
+
     // NOLINTEND
 };
 

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ServerInstanceLeaveGameDoneEvent {
-
 public:
     // prevent constructor by default
     ServerInstanceLeaveGameDoneEvent& operator=(ServerInstanceLeaveGameDoneEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ServerInstanceLeaveGameDoneEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1ServerInstanceLeaveGameDoneEvent@@QEAA@XZ
     MCAPI ~ServerInstanceLeaveGameDoneEvent();
+
     // NOLINTEND
 };

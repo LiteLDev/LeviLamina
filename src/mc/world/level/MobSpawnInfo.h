@@ -6,7 +6,6 @@
 #include "mc/entity/utilities/ActorType.h"
 
 class MobSpawnInfo {
-
 public:
     // prevent constructor by default
     MobSpawnInfo& operator=(MobSpawnInfo const&) = delete;
@@ -15,9 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?categoryID\@MobSpawnInfo\@\@SAHW4ActorType\@\@\@Z
-     */
-    MCAPI static int32_t categoryID(enum class ActorType);
+    // symbol: ?categoryID@MobSpawnInfo@@SAHW4ActorType@@@Z
+    MCAPI static int categoryID(::ActorType);
+
     // NOLINTEND
 };

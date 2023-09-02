@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class TravelTypeSensingSystem {
-
 public:
     // prevent constructor by default
     TravelTypeSensingSystem& operator=(TravelTypeSensingSystem const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?createTravelTypeSensingSystem\@TravelTypeSensingSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // symbol: ?createTravelTypeSensingSystem@TravelTypeSensingSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createTravelTypeSensingSystem();
+
     // NOLINTEND
 };

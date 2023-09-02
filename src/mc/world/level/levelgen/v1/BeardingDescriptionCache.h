@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class BeardingDescriptionCache {
-
 public:
     // prevent constructor by default
     BeardingDescriptionCache& operator=(BeardingDescriptionCache const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0BeardingDescriptionCache\@\@QEAA\@AEBVBoundingBox\@\@H\@Z
-     */
-    MCAPI BeardingDescriptionCache(class BoundingBox const&, int32_t);
+    // symbol: ??0BeardingDescriptionCache@@QEAA@AEBVBoundingBox@@H@Z
+    MCAPI BeardingDescriptionCache(class BoundingBox const&, int);
+
     // NOLINTEND
 };

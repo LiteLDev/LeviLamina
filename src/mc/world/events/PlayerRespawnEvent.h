@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct PlayerRespawnEvent {
-
 public:
     // prevent constructor by default
     PlayerRespawnEvent& operator=(PlayerRespawnEvent const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1PlayerRespawnEvent\@\@QEAA\@XZ
-     */
+    // symbol: ??1PlayerRespawnEvent@@QEAA@XZ
     MCAPI ~PlayerRespawnEvent();
+
     // NOLINTEND
 };

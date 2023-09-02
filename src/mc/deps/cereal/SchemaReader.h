@@ -18,7 +18,6 @@ public:
 
     // SchemaReader inner types define
     struct ScopedPop {
-
     public:
         // prevent constructor by default
         ScopedPop& operator=(ScopedPop const&) = delete;
@@ -27,10 +26,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??1ScopedPop\@SchemaReader\@cereal\@\@QEAA\@XZ
-         */
+        // symbol: ??1ScopedPop@SchemaReader@cereal@@QEAA@XZ
         MCAPI ~ScopedPop();
+
         // NOLINTEND
     };
 
@@ -42,16 +40,12 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREAL_SCHEMAREADER
-    /**
-     * @symbol ?isSequenceReader\@SchemaReader\@cereal\@\@UEBA_NXZ
-     */
+    // symbol: ?isSequenceReader@SchemaReader@cereal@@UEBA_NXZ
     MCVAPI bool isSequenceReader() const;
-#endif
-    /**
-     * @symbol ?scopedPop\@SchemaReader\@cereal\@\@QEAA?AUScopedPop\@12\@AEBUSerializerTraits\@2\@\@Z
-     */
+
+    // symbol: ?scopedPop@SchemaReader@cereal@@QEAA?AUScopedPop@12@AEBUSerializerTraits@2@@Z
     MCAPI struct cereal::SchemaReader::ScopedPop scopedPop(struct cereal::SerializerTraits const&);
+
     // NOLINTEND
 };
 

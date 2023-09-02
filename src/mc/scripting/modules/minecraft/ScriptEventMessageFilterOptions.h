@@ -5,7 +5,6 @@
 namespace ScriptModuleMinecraft {
 
 struct ScriptEventMessageFilterOptions {
-
 public:
     // prevent constructor by default
     ScriptEventMessageFilterOptions& operator=(ScriptEventMessageFilterOptions const&) = delete;
@@ -14,10 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1ScriptEventMessageFilterOptions\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+    // symbol: ??1ScriptEventMessageFilterOptions@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptEventMessageFilterOptions();
+
     // NOLINTEND
 };
 

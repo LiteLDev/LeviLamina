@@ -5,7 +5,6 @@
 namespace Core {
 
 struct ExcludedPath {
-
 public:
     // prevent constructor by default
     ExcludedPath& operator=(ExcludedPath const&) = delete;

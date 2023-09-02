@@ -7,13 +7,10 @@
 
 namespace ActorUtil {
 // NOLINTBEGIN
-/**
- * @symbol ?canActorBeKilled\@ActorUtil\@\@YA?BW4CanBeKilledResult\@1\@AEBVActor\@\@_N\@Z
- */
-MCAPI enum class ActorUtil::CanBeKilledResult const canActorBeKilled(class Actor const&, bool);
-/**
- * @symbol ?startFizzEffect\@ActorUtil\@\@YAXAEAVActor\@\@\@Z
- */
+// symbol: ?canActorBeKilled@ActorUtil@@YA?BW4CanBeKilledResult@1@AEBVActor@@_N@Z
+MCAPI ::ActorUtil::CanBeKilledResult const canActorBeKilled(class Actor const&, bool);
+
+// symbol: ?startFizzEffect@ActorUtil@@YAXAEAVActor@@@Z
 MCAPI void startFizzEffect(class Actor&);
 // NOLINTEND
 

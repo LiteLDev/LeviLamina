@@ -5,7 +5,6 @@
 namespace Bedrock::PubSub {
 
 class SubscriptionContext {
-
 public:
     // prevent constructor by default
     SubscriptionContext& operator=(SubscriptionContext const&) = delete;

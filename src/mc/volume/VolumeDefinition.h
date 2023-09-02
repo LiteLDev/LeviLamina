@@ -11,7 +11,6 @@ public:
 
     // VolumeDefinition inner types define
     struct VolumeDescription {
-
     public:
         // prevent constructor by default
         VolumeDescription& operator=(VolumeDescription const&) = delete;
@@ -20,14 +19,12 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??8VolumeDescription\@VolumeDefinition\@\@QEBA_NAEBU01\@\@Z
-         */
+        // symbol: ??8VolumeDescription@VolumeDefinition@@QEBA_NAEBU01@@Z
         MCAPI bool operator==(struct VolumeDefinition::VolumeDescription const&) const;
-        /**
-         * @symbol ??1VolumeDescription\@VolumeDefinition\@\@QEAA\@XZ
-         */
+
+        // symbol: ??1VolumeDescription@VolumeDefinition@@QEAA@XZ
         MCAPI ~VolumeDescription();
+
         // NOLINTEND
     };
 
@@ -38,29 +35,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0VolumeDefinition\@\@QEAA\@XZ
-     */
+    // symbol: ??0VolumeDefinition@@QEAA@XZ
     MCAPI VolumeDefinition();
-    /**
-     * @symbol ??1VolumeDefinition\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1VolumeDefinition@@QEAA@XZ
     MCAPI ~VolumeDefinition();
-    /**
-     * @symbol ?bindType\@VolumeDefinition\@\@SAXXZ
-     */
+
+    // symbol: ?bindType@VolumeDefinition@@SAXXZ
     MCAPI static void bindType();
-    /**
-     * @symbol ?getMaxSupportedVersion\@VolumeDefinition\@\@SAAEBVSemVersion\@\@XZ
-     */
+
+    // symbol: ?getMaxSupportedVersion@VolumeDefinition@@SAAEBVSemVersion@@XZ
     MCAPI static class SemVersion const& getMaxSupportedVersion();
-    /**
-     * @symbol ?getMinSupportedVersion\@VolumeDefinition\@\@SAAEBVSemVersion\@\@XZ
-     */
+
+    // symbol: ?getMinSupportedVersion@VolumeDefinition@@SAAEBVSemVersion@@XZ
     MCAPI static class SemVersion const& getMinSupportedVersion();
-    /**
-     * @symbol ?NAME\@VolumeDefinition\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
-     */
+
+    // symbol: ?NAME@VolumeDefinition@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const NAME;
+
     // NOLINTEND
 };

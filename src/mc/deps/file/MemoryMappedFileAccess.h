@@ -24,7 +24,6 @@ public:
 
     // MemoryMappedFileAccess inner types define
     class MemoryMappedFileReadAccess : public ::IFileReadAccess {
-
     public:
         // prevent constructor by default
         MemoryMappedFileReadAccess& operator=(MemoryMappedFileReadAccess const&) = delete;
@@ -33,27 +32,19 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @vftbl 1
-         * @symbol ?fread\@MemoryMappedFileReadAccess\@MemoryMappedFileAccess\@\@UEBA_KPEAX_K10\@Z
-         */
-        virtual uint64_t fread(void*, uint64_t, uint64_t, void*) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MEMORYMAPPEDFILEACCESS_MEMORYMAPPEDFILEREADACCESS
-        /**
-         * @symbol __unk_destructor_-1
-         */
+
+        // vIndex: 1, symbol: ?fread@MemoryMappedFileReadAccess@MemoryMappedFileAccess@@UEBA_KPEAX_K10@Z
+        virtual uint64 fread(void*, uint64, uint64, void*) const;
+
+        // symbol: ??1MemoryMappedFileReadAccess@MemoryMappedFileAccess@@UEAA@XZ
         MCVAPI ~MemoryMappedFileReadAccess();
-#endif
+
         // NOLINTEND
     };
 
     class MemoryMappedFileWriteAccess : public ::IFileWriteAccess {
-
     public:
         // prevent constructor by default
         MemoryMappedFileWriteAccess& operator=(MemoryMappedFileWriteAccess const&) = delete;
@@ -62,27 +53,19 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @vftbl 1
-         * @symbol ?fwrite\@MemoryMappedFileWriteAccess\@MemoryMappedFileAccess\@\@UEAA_KPEBX_K1PEAX\@Z
-         */
-        virtual uint64_t fwrite(void const*, uint64_t, uint64_t, void*);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MEMORYMAPPEDFILEACCESS_MEMORYMAPPEDFILEWRITEACCESS
-        /**
-         * @symbol __unk_destructor_-1
-         */
+
+        // vIndex: 1, symbol: ?fwrite@MemoryMappedFileWriteAccess@MemoryMappedFileAccess@@UEAA_KPEBX_K1PEAX@Z
+        virtual uint64 fwrite(void const*, uint64, uint64, void*);
+
+        // symbol: ??1MemoryMappedFileWriteAccess@MemoryMappedFileAccess@@UEAA@XZ
         MCVAPI ~MemoryMappedFileWriteAccess();
-#endif
+
         // NOLINTEND
     };
 
     struct StreamDetails {
-
     public:
         // prevent constructor by default
         StreamDetails& operator=(StreamDetails const&) = delete;
@@ -91,10 +74,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ??1StreamDetails\@MemoryMappedFileAccess\@\@QEAA\@XZ
-         */
+        // symbol: ??1StreamDetails@MemoryMappedFileAccess@@QEAA@XZ
         MCAPI ~StreamDetails();
+
         // NOLINTEND
     };
 
@@ -106,56 +88,38 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?fopen\@MemoryMappedFileAccess\@\@UEAAPEAXAEBVPath\@Core\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?fopen@MemoryMappedFileAccess@@UEAAPEAXAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void* fopen(class Core::Path const&, std::string const&);
-    /**
-     * @vftbl 2
-     * @symbol ?fclose\@MemoryMappedFileAccess\@\@UEAAHPEAX\@Z
-     */
-    virtual int32_t fclose(void*);
-    /**
-     * @vftbl 3
-     * @symbol ?fseek\@MemoryMappedFileAccess\@\@UEAAHPEAX_JH\@Z
-     */
-    virtual int32_t fseek(void*, int64_t, int32_t);
-    /**
-     * @vftbl 4
-     * @symbol ?ftell\@MemoryMappedFileAccess\@\@UEAA_JPEAX\@Z
-     */
-    virtual int64_t ftell(void*);
-    /**
-     * @vftbl 5
-     * @symbol ?getReadInterface\@MemoryMappedFileAccess\@\@UEBAPEBVIFileReadAccess\@\@XZ
-     */
+
+    // vIndex: 2, symbol: ?fclose@MemoryMappedFileAccess@@UEAAHPEAX@Z
+    virtual int fclose(void*);
+
+    // vIndex: 3, symbol: ?fseek@MemoryMappedFileAccess@@UEAAHPEAX_JH@Z
+    virtual int fseek(void*, int64, int);
+
+    // vIndex: 4, symbol: ?ftell@MemoryMappedFileAccess@@UEAA_JPEAX@Z
+    virtual int64 ftell(void*);
+
+    // vIndex: 5, symbol: ?getReadInterface@MemoryMappedFileAccess@@UEBAPEBVIFileReadAccess@@XZ
     virtual class IFileReadAccess const* getReadInterface() const;
-    /**
-     * @vftbl 6
-     * @symbol ?getWriteInterface\@MemoryMappedFileAccess\@\@UEAAPEAVIFileWriteAccess\@\@XZ
-     */
+
+    // vIndex: 6, symbol: ?getWriteInterface@MemoryMappedFileAccess@@UEAAPEAVIFileWriteAccess@@XZ
     virtual class IFileWriteAccess* getWriteInterface();
-    /**
-     * @vftbl 7
-     * @symbol ?unload\@MemoryMappedFileAccess\@\@UEAAXXZ
-     */
+
+    // vIndex: 7, symbol: ?unload@MemoryMappedFileAccess@@UEAAXXZ
     virtual void unload();
-    /**
-     * @symbol
-     * ??0MemoryMappedFileAccess\@\@QEAA\@AEBV?$not_null\@V?$NonOwnerPointer\@VIFileAccess\@\@\@Bedrock\@\@\@gsl\@\@V?$unique_ptr\@VFileAccessTransforms\@\@U?$default_delete\@VFileAccessTransforms\@\@\@std\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ??0MemoryMappedFileAccess@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@V?$unique_ptr@VFileAccessTransforms@@U?$default_delete@VFileAccessTransforms@@@std@@@std@@@Z
     MCAPI
     MemoryMappedFileAccess(gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const&, std::unique_ptr<class FileAccessTransforms>);
-    /**
-     * @symbol ?EMPTY_TRANSFORMS\@MemoryMappedFileAccess\@\@2VFileAccessTransforms\@\@B
-     */
+
+    // symbol: ?EMPTY_TRANSFORMS@MemoryMappedFileAccess@@2VFileAccessTransforms@@B
     MCAPI static class FileAccessTransforms const EMPTY_TRANSFORMS;
+
     // NOLINTEND
 };

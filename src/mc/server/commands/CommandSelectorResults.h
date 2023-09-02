@@ -4,7 +4,6 @@
 
 template <typename T0>
 class CommandSelectorResults {
-
 public:
     std::shared_ptr<std::vector<T0*>> data;
 

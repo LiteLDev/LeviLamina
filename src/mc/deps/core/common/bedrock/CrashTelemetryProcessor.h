@@ -5,7 +5,6 @@
 namespace Bedrock {
 
 class CrashTelemetryProcessor {
-
 public:
     // prevent constructor by default
     CrashTelemetryProcessor& operator=(CrashTelemetryProcessor const&) = delete;

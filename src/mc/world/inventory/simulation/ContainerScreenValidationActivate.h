@@ -6,7 +6,6 @@
 #include "mc/world/inventory/simulation/ContainerScreenValidation.h"
 
 class ContainerScreenValidationActivate : public ::ContainerScreenValidation {
-
 public:
     // prevent constructor by default
     ContainerScreenValidationActivate& operator=(ContainerScreenValidationActivate const&) = delete;
@@ -15,15 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 3
-     * @symbol ?tryActivate\@ContainerScreenValidationActivate\@\@EEAA?AUContainerValidationResult\@\@XZ
-     */
+
+    // vIndex: 3, symbol: ?tryActivate@ContainerScreenValidationActivate@@EEAA?AUContainerValidationResult@@XZ
     virtual struct ContainerValidationResult tryActivate();
+
     // NOLINTEND
 };

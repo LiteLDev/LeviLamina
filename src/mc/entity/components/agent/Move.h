@@ -13,7 +13,6 @@ class EntityContext;
 namespace AgentComponents {
 
 class Move {
-
 public:
     // prevent constructor by default
     Move& operator=(Move const&) = delete;
@@ -22,10 +21,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?setup\@Move\@AgentComponents\@\@SAXAEAV12\@AEAVEntityContext\@\@W4Direction\@2\@\@Z
-     */
-    MCAPI static void setup(class AgentComponents::Move&, class EntityContext&, enum class AgentComponents::Direction);
+    // symbol: ?setup@Move@AgentComponents@@SAXAEAV12@AEAVEntityContext@@W4Direction@2@@Z
+    MCAPI static void setup(class AgentComponents::Move&, class EntityContext&, ::AgentComponents::Direction);
+
     // NOLINTEND
 };
 

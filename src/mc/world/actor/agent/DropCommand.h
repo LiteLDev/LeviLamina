@@ -13,7 +13,6 @@ namespace AgentCommands { class Command; }
 namespace AgentCommands {
 
 class DropCommand : public ::AgentCommands::Command {
-
 public:
     // prevent constructor by default
     DropCommand& operator=(DropCommand const&) = delete;
@@ -22,21 +21,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?execute\@DropCommand\@AgentCommands\@\@UEAAXXZ
-     */
+
+    // vIndex: 1, symbol: ?execute@DropCommand@AgentCommands@@UEAAXXZ
     virtual void execute();
-    /**
-     * @vftbl 2
-     * @symbol ?isDone\@DropCommand\@AgentCommands\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?isDone@DropCommand@AgentCommands@@UEAA_NXZ
     virtual bool isDone();
+
     // NOLINTEND
 };
 

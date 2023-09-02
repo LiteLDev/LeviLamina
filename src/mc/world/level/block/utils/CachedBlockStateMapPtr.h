@@ -5,7 +5,6 @@
 namespace VanillaStates {
 
 struct CachedBlockStateMapPtr {
-
 public:
     // prevent constructor by default
     CachedBlockStateMapPtr& operator=(CachedBlockStateMapPtr const&) = delete;

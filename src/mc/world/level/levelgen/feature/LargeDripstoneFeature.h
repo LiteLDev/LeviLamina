@@ -19,7 +19,6 @@ public:
 
     // LargeDripstoneFeature inner types define
     class LargeDripstone {
-
     public:
         // prevent constructor by default
         LargeDripstone& operator=(LargeDripstone const&) = delete;
@@ -28,18 +27,16 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol
-         * ?moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary\@LargeDripstone\@LargeDripstoneFeature\@\@QEAA_NAEAVIBlockWorldGenAPI\@\@AEBVWindOffsetter\@DripstoneUtils\@\@\@Z
-         */
+        // symbol:
+        // ?moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary@LargeDripstone@LargeDripstoneFeature@@QEAA_NAEAVIBlockWorldGenAPI@@AEBVWindOffsetter@DripstoneUtils@@@Z
         MCAPI bool
         moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(class IBlockWorldGenAPI&, class DripstoneUtils::WindOffsetter const&);
-        /**
-         * @symbol
-         * ?placeBlocks\@LargeDripstone\@LargeDripstoneFeature\@\@QEBAXAEAVIBlockWorldGenAPI\@\@AEAVRandom\@\@AEBVWindOffsetter\@DripstoneUtils\@\@\@Z
-         */
+
+        // symbol:
+        // ?placeBlocks@LargeDripstone@LargeDripstoneFeature@@QEBAXAEAVIBlockWorldGenAPI@@AEAVRandom@@AEBVWindOffsetter@DripstoneUtils@@@Z
         MCAPI void
         placeBlocks(class IBlockWorldGenAPI&, class Random&, class DripstoneUtils::WindOffsetter const&) const;
+
         // NOLINTEND
     };
 
@@ -51,23 +48,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?place\@LargeDripstoneFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?place@LargeDripstoneFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
     virtual std::optional<class BlockPos>
     place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?isValidPlacement\@IFeature\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 2, symbol:
+    // ?isValidPlacement@IFeature@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual bool isValidPlacement(std::string const&);
+
     // NOLINTEND
 };

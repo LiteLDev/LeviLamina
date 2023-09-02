@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class SoundDefinition {
-
 public:
     // prevent constructor by default
     SoundDefinition& operator=(SoundDefinition const&) = delete;
@@ -12,9 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??1SoundDefinition\@\@QEAA\@XZ
-     */
+    // symbol: ??1SoundDefinition@@QEAA@XZ
     MCAPI ~SoundDefinition();
+
     // NOLINTEND
 };

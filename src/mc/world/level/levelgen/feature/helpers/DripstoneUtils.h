@@ -13,59 +13,45 @@ namespace ValueProviders { struct UniformFloat; }
 
 namespace DripstoneUtils {
 // NOLINTBEGIN
-/**
- * @symbol ?buildBaseToTipColumn\@DripstoneUtils\@\@YAXAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@EH_N\@Z
- */
-MCAPI void buildBaseToTipColumn(class IBlockWorldGenAPI&, class BlockPos const&, uint8_t, int32_t, bool);
-/**
- * @symbol ?canBeAdjacentToWater\@DripstoneUtils\@\@YA_NAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
- */
+// symbol: ?buildBaseToTipColumn@DripstoneUtils@@YAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@EH_N@Z
+MCAPI void buildBaseToTipColumn(class IBlockWorldGenAPI&, class BlockPos const&, uchar, int, bool);
+
+// symbol: ?canBeAdjacentToWater@DripstoneUtils@@YA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
 MCAPI bool canBeAdjacentToWater(class IBlockWorldGenAPI&, class BlockPos const&);
-/**
- * @symbol ?canPlacePool\@DripstoneUtils\@\@YA_NAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
- */
+
+// symbol: ?canPlacePool@DripstoneUtils@@YA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
 MCAPI bool canPlacePool(class IBlockWorldGenAPI&, class BlockPos const&);
-/**
- * @symbol ?getDripstoneHeight\@DripstoneUtils\@\@YAMMMMM\@Z
- */
+
+// symbol: ?getDripstoneHeight@DripstoneUtils@@YAMMMMM@Z
 MCAPI float getDripstoneHeight(float, float, float, float);
-/**
- * @symbol ?getPlacementBlock\@DripstoneUtils\@\@YAAEBVBlock\@\@EAEBW4DripstoneThickness\@\@\@Z
- */
-MCAPI class Block const& getPlacementBlock(uint8_t, enum class DripstoneThickness const&);
-/**
- * @symbol
- * ?getPointedDripstoneBasePos\@DripstoneUtils\@\@YA?AV?$optional\@UPointedDripstoneBasePos\@DripstoneUtils\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
- */
+
+// symbol: ?getPlacementBlock@DripstoneUtils@@YAAEBVBlock@@EAEBW4DripstoneThickness@@@Z
+MCAPI class Block const& getPlacementBlock(uchar, ::DripstoneThickness const&);
+
+// symbol:
+// ?getPointedDripstoneBasePos@DripstoneUtils@@YA?AV?$optional@UPointedDripstoneBasePos@DripstoneUtils@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@@Z
 MCAPI std::optional<struct DripstoneUtils::PointedDripstoneBasePos>
       getPointedDripstoneBasePos(class IBlockWorldGenAPI&, class BlockPos const&, class Random&);
-/**
- * @symbol ?isCircleMostlyEmbeddedInStone\@DripstoneUtils\@\@YA_NAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@H\@Z
- */
-MCAPI bool isCircleMostlyEmbeddedInStone(class IBlockWorldGenAPI&, class BlockPos const&, int32_t);
-/**
- * @symbol ?isDripstoneBaseOrLava\@DripstoneUtils\@\@YA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
- */
+
+// symbol: ?isCircleMostlyEmbeddedInStone@DripstoneUtils@@YA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@H@Z
+MCAPI bool isCircleMostlyEmbeddedInStone(class IBlockWorldGenAPI&, class BlockPos const&, int);
+
+// symbol: ?isDripstoneBaseOrLava@DripstoneUtils@@YA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
 MCAPI bool isDripstoneBaseOrLava(class IBlockWorldGenAPI const&, class BlockPos const&);
-/**
- * @symbol ?isEmptyOrWater\@DripstoneUtils\@\@YA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
- */
+
+// symbol: ?isEmptyOrWater@DripstoneUtils@@YA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
 MCAPI bool isEmptyOrWater(class IBlockWorldGenAPI const&, class BlockPos const&);
-/**
- * @symbol ?isEmptyOrWaterOrLava\@DripstoneUtils\@\@YA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
- */
+
+// symbol: ?isEmptyOrWaterOrLava@DripstoneUtils@@YA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
 MCAPI bool isEmptyOrWaterOrLava(class IBlockWorldGenAPI const&, class BlockPos const&);
-/**
- * @symbol ?isLava\@DripstoneUtils\@\@YA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
- */
+
+// symbol: ?isLava@DripstoneUtils@@YA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
 MCAPI bool isLava(class IBlockWorldGenAPI const&, class BlockPos const&);
-/**
- * @symbol ?placeDripstoneBlockIfPossible\@DripstoneUtils\@\@YA_NAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
- */
+
+// symbol: ?placeDripstoneBlockIfPossible@DripstoneUtils@@YA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
 MCAPI bool placeDripstoneBlockIfPossible(class IBlockWorldGenAPI&, class BlockPos const&);
-/**
- * @symbol ?replaceableByDripstone\@DripstoneUtils\@\@YA_NAEBVBlockLegacy\@\@\@Z
- */
+
+// symbol: ?replaceableByDripstone@DripstoneUtils@@YA_NAEBVBlockLegacy@@@Z
 MCAPI bool replaceableByDripstone(class BlockLegacy const&);
 // NOLINTEND
 
