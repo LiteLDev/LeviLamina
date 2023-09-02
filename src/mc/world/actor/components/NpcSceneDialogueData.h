@@ -21,8 +21,6 @@ public:
     WeakEntityRef mOwner;     // this+0x8
     std::string   mSceneName; // this+0x20
 
-#define ENABLE_VIRTUAL_FAKESYMBOL_NPCSCENEDIALOGUEDATA
-
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __unk_vfn_0

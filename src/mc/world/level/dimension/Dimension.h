@@ -43,8 +43,6 @@ public:
         // NOLINTEND
     };
 
-#define ENABLE_VIRTUAL_FAKESYMBOL_DIMENSION
-
 public:
     // prevent constructor by default
     Dimension& operator=(Dimension const&) = delete;

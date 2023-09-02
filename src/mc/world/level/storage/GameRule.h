@@ -17,7 +17,11 @@ public:
         Float   = 3,
     };
 
-    union Value {};
+    union Value {
+        bool  boolVal;  // this+0x0
+        int32_t   intVal;   // this+0x0
+        float floatVal; // this+0x0
+    };
 
     class ValidationError {
     public:
@@ -31,12 +35,6 @@ public:
         MCAPI ~ValidationError();
 
         // NOLINTEND
-    };
-
-    union Value {
-        bool  boolVal;  // this+0x0
-        int32_t   intVal;   // this+0x0
-        float floatVal; // this+0x0
     };
 
     using TagDataNotFoundCallback = std::function<void(GameRule&)>;

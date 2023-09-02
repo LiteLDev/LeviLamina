@@ -58,8 +58,6 @@ public:
     ServerNetworkHandler(ServerNetworkHandler const&)            = delete;
     ServerNetworkHandler()                                       = delete;
 
-#define ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKHANDLER
-
 public:
     // NOLINTBEGIN
     // symbol: ?_getServerPlayer@ServerNetworkHandler@@EEAAPEAVServerPlayer@@AEBVNetworkIdentifier@@W4SubClientId@@@Z

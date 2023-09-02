@@ -26,23 +26,23 @@ public:
 
     // symbol:
     // ??0ExpressionNode@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
-    MCAPI ExpressionNode(std::string const&, ::MolangVersion, gsl::span<class HashedString const>);
-
-    // symbol: ??0ExpressionNode@@QEAA@AEBVValue@Json@@W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
     MCAPI
     ExpressionNode(
         std::string const&       expression,
-        enum class MolangVersion version          = MolangVersion::Latest,
+        ::MolangVersion version    = MolangVersion::Latest,
+        gsl::span<class HashedString const> = gsl::span<class HashedString const>{{HashedString{"default"}}}
+    );
+
+    // symbol: ??0ExpressionNode@@QEAA@AEBVValue@Json@@W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
+    MCAPI ExpressionNode(
+        class Json::Value const&,
+        ::MolangVersion version    = MolangVersion::Latest,
         gsl::span<class HashedString const> = gsl::span<class HashedString const>{{HashedString{"default"}}}
     );
 
     // symbol:
     // ??0ExpressionNode@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
-    MCAPI ExpressionNode(
-        class Json::Value const&,
-        enum class MolangVersion version          = MolangVersion::Latest,
-        gsl::span<class HashedString const> = gsl::span<class HashedString const>{{HashedString{"default"}}}
-    );
+    MCAPI ExpressionNode(std::string const&, class SemVersion const&, gsl::span<class HashedString const>);
 
     // symbol: ??0ExpressionNode@@QEAA@AEBV0@@Z
     MCAPI ExpressionNode(class ExpressionNode const&);

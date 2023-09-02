@@ -25,8 +25,6 @@ class ItemStack;
 class Mob;
 
 class BlockSource : public IBlockSource, public std::enable_shared_from_this<BlockSource> {
-
-#define ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSOURCE
 public:
     LLNDAPI std::vector<class Actor*> getEntities(
         class AABB const& range,

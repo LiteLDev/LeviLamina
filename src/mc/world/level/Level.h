@@ -49,8 +49,6 @@ class Player;
 class Actor;
 
 class Level : public ILevel, public BlockSourceListener, public IWorldRegistriesProvider {
-
-#define ENABLE_VIRTUAL_FAKESYMBOL_LEVEL
 public:
     [[nodiscard]] inline std::string const& getLevelName() const { return getLevelData().getLevelName(); }
     [[nodiscard]] inline std::string        getLevelPath() const { return "./worlds/" + getLevelName(); }
