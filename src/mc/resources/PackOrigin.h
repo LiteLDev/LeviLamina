@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class PackOrigin : int8_t {
+enum class PackOrigin : schar {
     Unknown          = 0x0,
     RealmsUnknown    = 0x1,
     Package          = 0x2,

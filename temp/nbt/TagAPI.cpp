@@ -1,4 +1,5 @@
 #include "liteloader/api/Global.h"
+#include "liteloader/api/utils/Base64.hpp"
 #include "mc/ByteArrayTag.hpp"
 #include "mc/ByteTag.hpp"
 #include "mc/CompoundTag.hpp"
@@ -11,7 +12,6 @@
 #include "mc/ShortTag.hpp"
 #include "mc/StringTag.hpp"
 #include "mc/Tag.hpp"
-#include "liteloader/api/utils/Base64.hpp"
 
 using namespace std;
 
@@ -207,7 +207,7 @@ void TagToJson_Compound_Helper(fifo_json& res, CompoundTag* nbt) {
     }
 }
 
-string Tag::toJson(int32_t formatIndent) {
+string Tag::toJson(int formatIndent) {
     string result;
     auto   nbt = this;
     switch (nbt->getTagType()) {

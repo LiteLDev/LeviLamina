@@ -11,7 +11,7 @@ namespace mce { class Color; }
 class MapDecoration {
 public:
     // MapDecoration inner types define
-    enum class Type : int32_t {
+    enum class Type : int {
         MarkerWhite      = 0x0,
         MarkerGreen      = 0x1,
         MarkerRed        = 0x2,
@@ -44,10 +44,11 @@ public:
 
     std::string mLabel;
     Type        mImage;
-    int8_t      mX;
-    int8_t      mY;
-    int8_t      mRotation;
+    schar       mX;
+    schar       mY;
+    schar       mRotation;
     mce::Color  mColor;
+
 public:
     // NOLINTBEGIN
     // symbol:

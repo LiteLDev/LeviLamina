@@ -8,7 +8,7 @@
 
 class RakDataOutput : public ::BytesDataOutput {
 public:
-  RakNet::BitStream *mBitStream;
+    RakNet::BitStream* mBitStream;
 
 public:
     // NOLINTBEGIN

@@ -7,16 +7,16 @@
 
 class SynchedActorData {
 public:
-    int32_t (**_vptr_SynchedActorData)(void);
+    int (**_vptr_SynchedActorData)(void);
 
     std::vector<std::unique_ptr<class DataItem>> mItemsArray; // this+0x8
-    uint16_t                               minIdxDirty; // this+0x20
-    uint16_t                               maxIdxDirty; // this+0x22
+    ushort                                       minIdxDirty; // this+0x20
+    ushort                                       maxIdxDirty; // this+0x22
 
     template <typename T>
-    MCAPI void define(uint16_t, T const&);
+    MCAPI void define(ushort, T const&);
     template <typename T>
-    MCAPI void set(uint16_t, T const&);
+    MCAPI void set(ushort, T const&);
 
 public:
     // NOLINTBEGIN

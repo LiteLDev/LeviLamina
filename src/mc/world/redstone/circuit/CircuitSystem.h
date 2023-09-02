@@ -20,13 +20,13 @@ public:
         class BlockPos const&           pos,
         class BlockSource*              pSource,
         enum class CircuitComponentType type,
-        enum class FacingID               direction
+        enum class FacingID             direction
     ) {
         if (mLockGraph) {
             if (!mSceneGraph.getComponent(pos, type))
                 return (Component*)mSceneGraph.getFromPendingAdd(pos, type);
         }
-        auto* pComponent = createComponent(pos, (uint8_t)direction, std::unique_ptr<BaseCircuitComponent>());
+        auto* pComponent = createComponent(pos, (uchar)direction, std::unique_ptr<BaseCircuitComponent>());
 
         if (pComponent) {
             pComponent->mChunkPosition.x = pos.x >> 4;

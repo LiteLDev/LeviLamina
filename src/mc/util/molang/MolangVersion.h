@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class MolangVersion : int32_t {
+enum class MolangVersion : int {
     Invalid                                = -1,
     BeforeVersioning                       = 0,
     Initial                                = 1,

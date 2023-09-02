@@ -11,9 +11,9 @@ namespace Json { class Value; }
 
 class PackSettings {
 public:
-    PackSettings()                               = delete;
+    PackSettings() = delete;
 
-    Json::Value                                  mSettings; // this+0x0
+    Json::Value                                  mSettings;     // this+0x0
     std::unordered_map<std::string, PackSetting> mPackSettings; // this+0x10
 
 public:

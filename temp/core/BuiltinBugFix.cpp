@@ -5,6 +5,7 @@
 
 #include "liteloader/api/ScheduleAPI.h"
 #include "liteloader/api/event/LegacyEvents.h"
+#include "liteloader/api/memory/Hook.h"
 #include "mc/AdventureSettings.hpp"
 #include "mc/BinaryStream.hpp"
 #include "mc/ChunkSource.hpp"
@@ -27,13 +28,12 @@
 #include "mc/SimulatedPlayer.hpp"
 #include "mc/UpdateAbilitiesPacket.hpp"
 #include "mc/UpdateAdventureSettingsPacket.hpp"
-#include "liteloader/api/memory/Hook.h"
 
 #include <Windows.h>
 using namespace ll;
 using namespace ll::memory;
 
-static inline bool checkPktId(uint32_t id) {
+static inline bool checkPktId(uint id) {
     id &= 0x3ff;
     return id == 0 || id == 0x01 || id == 0x5e || id == 0xc1;
 }
@@ -48,9 +48,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     "allocator@D@2@@std@@AEAVNetworkHandler@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_"
     "JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z",
     NetworkPeer::DataStatus,
-    string*   data,
-    int64_t   a3,
-    int64_t** a4
+    string* data,
+    int64   a3,
+    int64** a4
 ) {
     auto status = origin(data, a3, a4);
     if (status == NetworkPeer::DataStatus::HasData) {
@@ -110,10 +110,10 @@ LL_AUTO_INSTANCE_HOOK(
     HookPriority::Normal,
     "?Startup@RakPeer@RakNet@@UEAA?AW4StartupResult@2@IPEAUSocketDescriptor@2@IH@Z",
     enum StartupResult,
-    uint32_t            maxConnections,
+    uint                    maxConnections,
     class SocketDescriptor* socketDescriptors,
-    uint32_t                socketDescriptorCount,
-    int32_t                     threadPriority
+    uint                    socketDescriptorCount,
+    int                     threadPriority
 ) {
     if (maxConnections > 0xFFFF) {
         maxConnections = 0xFFFF;
@@ -170,8 +170,8 @@ LL_AUTO_INSTANCE_HOOK(
     void,
     class Player* a1,
     float         a2,
-    int32_t           a3,
-    int32_t           a4
+    int           a3,
+    int           a4
 ) {
     if (ll::globalConfig.enableFixBDSCrash && ll::isServerStopping())
         return;
@@ -181,7 +181,7 @@ LL_AUTO_INSTANCE_HOOK(
 // Set stdin mode to text mode if in wine environment
 inline bool tryFixConsoleInputMode() {
     if ((ll::globalConfig.enableFixMcBug && IsWineEnvironment()) || ll::globalConfig.enableForceUtf8Input) {
-        int32_t result = _setmode(_fileno(stdin), _O_U8TEXT);
+        int result = _setmode(_fileno(stdin), _O_U8TEXT);
         if (result == -1) {
             logger.error("Cannot set stdin to utf8 text mode");
             return false;
@@ -216,14 +216,14 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     "??0LevelData@@QEAA@AEBVLevelSettings@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@"
     "W4GeneratorType@@AEBVBlockPos@@_NW4EducationEditionOffer@@MM@Z",
     LevelData*,
-    void*        a2,
-    int64_t      a3,
-    uint32_t a4,
-    BlockPos*    a5,
-    char         a6,
-    int32_t          a7,
-    int32_t          a8,
-    int32_t          a9
+    void*     a2,
+    int64     a3,
+    uint      a4,
+    BlockPos* a5,
+    char      a6,
+    int       a7,
+    int       a8,
+    int       a9
 ) {
     if (ll::globalConfig.enableFixBroadcastBug) {
         auto data = origin(a2, a3, a4, a5, a6, a7, a8, a9);
@@ -241,9 +241,9 @@ LL_AUTO_STATIC_HOOK(
     Hook9,
     HookPriority::Normal,
     "std::_Func_impl_no_alloc<<lambda_2381ef31a87ebf59a36ffb68603804e4>,TaskResult>::_Do_call",
-    int64_t,
-    int64_t a1,
-    int64_t a2
+    int64,
+    int64 a1,
+    int64 a2
 ) {
     if (ll::globalConfig.disableAutoCompactionLog) {
         pauseBLogging = true;
@@ -259,14 +259,14 @@ LL_AUTO_INSTANCE_HOOK(
     HookPriority::Normal,
     "?log_va@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4PEAD@Z",
     char,
-    char         a2,
-    int32_t          a3,
-    int32_t          a4,
-    uint32_t a5,
-    int64_t      a6,
-    int32_t          a7,
-    int64_t      a8,
-    int64_t      a9
+    char  a2,
+    int   a3,
+    int   a4,
+    uint  a5,
+    int64 a6,
+    int   a7,
+    int64 a8,
+    int64 a9
 ) {
     if (ll::globalConfig.disableAutoCompactionLog && pauseBLogging) {
         return 0;
@@ -450,10 +450,10 @@ LL_AUTO_INSTANCE_HOOK(
                     );
                 if (actor->isSimulatedPlayer()) {
                     ItemInstance const& newItem = dAccess<ItemInstance, 160>(v59);
-                    int32_t                 slot    = dAccess<int32_t, 296>(v59);
+                    int                 slot    = dAccess<int, 296>(v59);
                     // Force to call the implementation of ServerPlayer
                     MobEquipmentPacket pkt(
-                        actor->getRuntimeID(), newItem, (int32_t)slot, (int32_t)slot, ContainerID::Inventory
+                        actor->getRuntimeID(), newItem, (int)slot, (int)slot, ContainerID::Inventory
                     );
                     SimulatedPlayerClient::send((SimulatedPlayer*)actor, pkt);
                 }
@@ -477,10 +477,10 @@ LL_AUTO_INSTANCE_HOOK(
                         v31
                     );
                 if (actor->isSimulatedPlayer()) {
-                    int32_t                 slot = dAccess<int32_t, 160>(v31);
+                    int                 slot = dAccess<int, 160>(v31);
                     ItemInstance const& item = dAccess<ItemInstance, 24>(v31);
                     // Force to call the implementation of ServerPlayer
-                    MobEquipmentPacket pkt(actor->getRuntimeID(), item, (int32_t)slot, (int32_t)slot, ContainerID::Armor);
+                    MobEquipmentPacket pkt(actor->getRuntimeID(), item, (int)slot, (int)slot, ContainerID::Armor);
                     SimulatedPlayerClient::send((SimulatedPlayer*)actor, pkt);
                 }
             }

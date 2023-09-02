@@ -5,10 +5,10 @@
 
 struct NetworkSettingOptions {
 public:
-    uint16_t                   mCompressionThreshold;
+    ushort                     mCompressionThreshold;
     PacketCompressionAlgorithm mCompressionAlgorithm;
     bool                       mClientThrottleEnabled;
-    int8_t                     mClientThrottleThreshold;
+    schar                      mClientThrottleThreshold;
     float                      mClientThrottleScalar;
 
     // prevent constructor by default

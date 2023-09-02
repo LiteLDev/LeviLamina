@@ -98,15 +98,15 @@ public:
     /**
      * @brief Get the number of affected rows by the last query.
      *
-     * @return uint64_t  The number of affected rows
+     * @return uint64  The number of affected rows
      */
-    virtual uint64_t getAffectedRows() const = 0;
+    virtual uint64 getAffectedRows() const = 0;
     /**
      * @brief Get the last insert id
      *
-     * @return uint64_t  The row id of the last inserted row
+     * @return uint64  The row id of the last inserted row
      */
-    virtual uint64_t getLastInsertId() const = 0;
+    virtual uint64 getLastInsertId() const = 0;
     /**
      * @brief Close the session.
      *
@@ -181,7 +181,7 @@ public:
     LLAPI static SharedPointer<Session> create(
         DBType             type,
         const std::string& host,
-        uint16_t           port,
+        ushort             port,
         const std::string& user,
         const std::string& password,
         const std::string& database

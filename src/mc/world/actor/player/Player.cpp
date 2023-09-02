@@ -19,7 +19,7 @@
 
 #include "liteloader/api/GlobalServiceAPI.h"
 
-UserEntityIdentifierComponent& Player::getUserEntityIdentifier() const{
+UserEntityIdentifierComponent& Player::getUserEntityIdentifier() const {
     return *(const_cast<Player*>(this)->tryGetComponent<UserEntityIdentifierComponent>());
 }
 

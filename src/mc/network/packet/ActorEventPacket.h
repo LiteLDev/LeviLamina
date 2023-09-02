@@ -13,7 +13,7 @@ class ActorEventPacket : public ::Packet {
 public:
     ActorRuntimeID mRuntimeId; // this+0x30
     ActorEvent     mEventId;   // this+0x38
-    int32_t            mData;      // this+0x3c
+    int            mData;      // this+0x3c
 
     // prevent constructor by default
     ActorEventPacket& operator=(ActorEventPacket const&) = delete;

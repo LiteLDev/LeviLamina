@@ -1,5 +1,5 @@
-#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/event/player/PlayerRespawnEvent.h"
+#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/memory/Hook.h"
 
 #include "mc/Player.hpp"
@@ -16,13 +16,7 @@ LL_GETTER_IMPL(PlayerRespawnEvent, Player*, player, getPlayer)
 
 using EventManager = EventManager<PlayerRespawnEvent>;
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
-    PlayerRespawnEventHook,
-    Player,
-    HookPriority::Normal,
-    "?respawn@Player@@UEAAXXZ",
-    void
-) {
+LL_AUTO_TYPED_INSTANCE_HOOK(PlayerRespawnEventHook, Player, HookPriority::Normal, "?respawn@Player@@UEAAXXZ", void) {
     // If the player returns from TheEnd, the health will > 0.
     if (getHealth() <= 0) {
         if (!this) {

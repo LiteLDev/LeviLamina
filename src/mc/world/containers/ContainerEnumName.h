@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ContainerEnumName : int8_t {
+enum class ContainerEnumName : schar {
     AnvilInputContainer                 = 0x0,
     AnvilMaterialContainer              = 0x1,
     AnvilResultPreviewContainer         = 0x2,

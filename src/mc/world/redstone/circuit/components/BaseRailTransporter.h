@@ -14,6 +14,7 @@ public:
     } mRailType;
 
     const CircuitComponentType mCircuitComponentType = CircuitComponentType::BaseRailTransporter;
+
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __unk_vfn_0

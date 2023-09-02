@@ -1,8 +1,8 @@
 #include <unordered_map>
 
 #include "liteloader/api/memory/Hook.h"
-#include "mc/SharedConstants.hpp"
 #include "mc/PropertiesSettings.hpp"
+#include "mc/SharedConstants.hpp"
 
 #include "liteloader/core/Config.h"
 
@@ -23,11 +23,11 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         // logger.warn("If you turn on this feature, your server will not be displayed on the LAN");
         DWORD v4Flag, v6Flag, _;
         VirtualProtect((void*)&SharedConstants::NetworkDefaultGamePort, 4, PAGE_READWRITE, &v4Flag);
-        *(uint16_t*)&SharedConstants::NetworkDefaultGamePort = getServerPort();
+        *(ushort*)&SharedConstants::NetworkDefaultGamePort = getServerPort();
         VirtualProtect((void*)&SharedConstants::NetworkDefaultGamePort, 4, v4Flag, &_);
 
         VirtualProtect((void*)&SharedConstants::NetworkDefaultGamePortv6, 4, PAGE_READWRITE, &v6Flag);
-        *(uint16_t*)&SharedConstants::NetworkDefaultGamePortv6 = getServerPortv6();
+        *(ushort*)&SharedConstants::NetworkDefaultGamePortv6 = getServerPortv6();
         VirtualProtect((void*)&SharedConstants::NetworkDefaultGamePortv6, 4, v6Flag, &_);
     }
     // Global service

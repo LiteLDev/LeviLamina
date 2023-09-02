@@ -1,14 +1,14 @@
 #include "liteloader/core/LiteLoader.h"
 
 #include <csignal>
+#include <iostream>
 #include <minwindef.h>
 #include <processenv.h>
 #include <string>
-#include <iostream>
 
-#include "liteloader/api/utils/StringHelper.h"
 #include "liteloader/api/utils/FileHelper.h"
 #include "liteloader/api/utils/SehTranslator.h"
+#include "liteloader/api/utils/StringHelper.h"
 
 #include "liteloader/api/memory/Hook.h"
 
@@ -20,17 +20,17 @@
 
 #include "mc/Minecraft.hpp"
 
-#include "liteloader/core/Config.h"
-#include "liteloader/core/Loader.h"
-#include "liteloader/core/CrashLogger.h"
 #include "liteloader/core/AddonsHelper.h"
-#include "liteloader/core/Version.h"
-#include "liteloader/core/SimpleServerLogger.h"
+#include "liteloader/core/Config.h"
+#include "liteloader/core/CrashLogger.h"
+#include "liteloader/core/Loader.h"
 #include "liteloader/core/PlayerDeathPositions.h"
+#include "liteloader/core/SimpleServerLogger.h"
+#include "liteloader/core/Version.h"
 
-#include <windows.h>
-#include <TlHelp32.h>
 #include <Psapi.h>
+#include <TlHelp32.h>
+#include <windows.h>
 
 Logger ll::logger("LiteLoader");
 time_t ll::startTime;
@@ -259,7 +259,7 @@ BOOL WINAPI ConsoleExitHandler(DWORD CEvent) {
     return FALSE;
 }
 
-void unixSignalHandler(int32_t signum) {
+void unixSignalHandler(int signum) {
     switch (signum) {
     case SIGINT:
     case SIGTERM: {
@@ -399,9 +399,9 @@ void liteloaderMain() {
 
 using namespace ll::memory;
 
-LL_AUTO_STATIC_HOOK(LiteLoaderMain, HookPriority::Normal, "main", int32_t, int32_t argc, char** argv) {
+LL_AUTO_STATIC_HOOK(LiteLoaderMain, HookPriority::Normal, "main", int, int argc, char** argv) {
     startTime = clock();
-    for (int32_t i = 0; i < argc; ++i) {
+    for (int i = 0; i < argc; ++i) {
         if (strcmp(argv[i], "--noColor") == 0) {
             ll::commandLineOption.noColorOption = true;
             break;

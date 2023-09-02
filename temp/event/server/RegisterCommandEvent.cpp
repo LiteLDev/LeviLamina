@@ -1,5 +1,5 @@
-#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/event/server/RegisterCommandEvent.h"
+#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/memory/Hook.h"
 
 #include "liteloader/api/DynamicCommandAPI.h"

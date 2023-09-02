@@ -4,7 +4,7 @@
 
 namespace Json {
 
-enum class CommentPlacement : int32_t {
+enum class CommentPlacement : int {
     Before          = 0x0,
     AfterOnSameLine = 0x1,
     After           = 0x2,

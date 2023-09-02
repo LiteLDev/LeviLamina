@@ -209,10 +209,10 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
 
 /////////////////////////////////// Debug Helper ///////////////////////////////////
 
-HMODULE GetCallerModule(unsigned long FramesToSkip) {
-    static const int32_t maxFrameCount = 1;
+HMODULE GetCallerModule(ulong FramesToSkip) {
+    static const int maxFrameCount = 1;
     void*            frames[maxFrameCount];
-    int32_t              frameCount = CaptureStackBackTrace(FramesToSkip + 2, maxFrameCount, frames, nullptr);
+    int              frameCount = CaptureStackBackTrace(FramesToSkip + 2, maxFrameCount, frames, nullptr);
 
     std::string name;
     if (0 < frameCount) {
@@ -227,16 +227,9 @@ HMODULE GetCallerModule(unsigned long FramesToSkip) {
     return HMODULE();
 }
 
-std::string GetCallerModuleFileName(unsigned long FramesToSkip) { return GetModuleName(GetCallerModule(FramesToSkip)); }
+std::string GetCallerModuleFileName(ulong FramesToSkip) { return GetModuleName(GetCallerModule(FramesToSkip)); }
 
-bool GetFileVersion(
-    const wchar_t*  filePath,
-    uint16_t* ver1,
-    uint16_t* ver2,
-    uint16_t* ver3,
-    uint16_t* ver4,
-    uint32_t*   flag
-) {
+bool GetFileVersion(const wchar_t* filePath, ushort* ver1, ushort* ver2, ushort* ver3, ushort* ver4, uint* flag) {
 
     DWORD dwLen = GetFileVersionInfoSizeW(filePath, nullptr);
     if (!dwLen) {
@@ -252,7 +245,7 @@ bool GetFileVersion(
     }
 
     VS_FIXEDFILEINFO* lpBuffer = nullptr;
-    uint32_t      uLen     = 0;
+    uint              uLen     = 0;
     if (!VerQueryValueW(pBlock, L"\\", (void**)&lpBuffer, &uLen)) {
         delete[] pBlock;
         return false;
@@ -273,13 +266,8 @@ bool GetFileVersion(
     return true;
 }
 
-inline std::string VersionToString(
-    uint16_t major_ver,
-    uint16_t minor_ver,
-    uint16_t revision_ver,
-    uint16_t build_ver,
-    uint32_t   flag = 0
-) {
+inline std::string
+VersionToString(ushort major_ver, ushort minor_ver, ushort revision_ver, ushort build_ver, uint flag = 0) {
     std::string flagStr;
     if (flag & VS_FF_DEBUG)
         flagStr += " DEBUG";
@@ -297,9 +285,9 @@ inline std::string VersionToString(
 }
 
 std::string GetFileVersionString(HMODULE hModule, bool includeFlag) {
-    uint16_t major_ver, minor_ver, revision_ver, build_ver;
-    uint32_t   flag;
-    wchar_t        filePath[MAX_PATH] = {0};
+    ushort  major_ver, minor_ver, revision_ver, build_ver;
+    uint    flag;
+    wchar_t filePath[MAX_PATH] = {0};
     GetModuleFileNameEx(GetCurrentProcess(), hModule, filePath, MAX_PATH);
     if (GetFileVersion(filePath, &major_ver, &minor_ver, &revision_ver, &build_ver, &flag)) {
         return VersionToString(major_ver, minor_ver, revision_ver, build_ver, includeFlag ? flag : 0);
@@ -308,9 +296,9 @@ std::string GetFileVersionString(HMODULE hModule, bool includeFlag) {
 }
 
 std::string GetFileVersionString(std::string const& filePath, bool includeFlag) {
-    uint16_t major_ver, minor_ver, revision_ver, build_ver;
-    uint32_t   flag;
-    std::wstring   wFilePath = str2wstr(filePath);
+    ushort       major_ver, minor_ver, revision_ver, build_ver;
+    uint         flag;
+    std::wstring wFilePath = str2wstr(filePath);
     if (GetFileVersion(wFilePath.c_str(), &major_ver, &minor_ver, &revision_ver, &build_ver, &flag)) {
         return VersionToString(major_ver, minor_ver, revision_ver, build_ver, includeFlag ? flag : 0);
     }

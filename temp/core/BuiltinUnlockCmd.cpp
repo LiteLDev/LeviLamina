@@ -1,6 +1,6 @@
 #include "liteloader/api/Global.h"
-#include "mc/CommandParameterData.hpp"
 #include "liteloader/api/memory/Hook.h"
+#include "mc/CommandParameterData.hpp"
 
 #include "liteloader/core/Config.h"
 #include "magic_enum.hpp"
@@ -103,7 +103,7 @@ LL_AUTO_INSTANCE_HOOK(
 // }
 //  bool unlockNewExecute = true;
 //  TClasslessInstanceHook(bool, "?isEnabled@FeatureToggles@@QEBA_NW4FeatureOptionID@@@Z",
-//                         int32_t feature)
+//                         int feature)
 //  {
 //      if (feature == 54 && unlockNewExecute)
 //          return true;

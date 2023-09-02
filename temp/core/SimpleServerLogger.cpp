@@ -3,12 +3,12 @@
 #include <magic_enum.hpp>
 
 #include "liteloader/api/LoggerAPI.h"
+#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/event/LegacyEvents.h"
 #include "liteloader/api/memory/Hook.h"
-#include "liteloader/api/event/EventManager.h"
-#include "mc/ServerPlayer.hpp"
-#include "mc/ItemStack.hpp"
 #include "mc/CommandRegistry.hpp"
+#include "mc/ItemStack.hpp"
+#include "mc/ServerPlayer.hpp"
 
 #include "liteloader/core/Config.h"
 
@@ -65,9 +65,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
             "<{}> {}({}) -> {}({})",
             getRealName(),
             magic_enum::enum_name(getCommandPermissionLevel()),
-            (int32_t)getCommandPermissionLevel(),
+            (int)getCommandPermissionLevel(),
             magic_enum::enum_name(perm),
-            (int32_t)perm
+            (int)perm
         );
     }
     return origin(perm);

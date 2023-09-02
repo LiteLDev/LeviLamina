@@ -1,5 +1,5 @@
-#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/event/player/PlayerSneakEvent.h"
+#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/memory/Hook.h"
 
 #include "mc/Actor.hpp"

@@ -48,7 +48,7 @@ public:
      * @vftbl 8
 
      */
-    virtual uint8_t loadFacingID(uint8_t) = 0;
+    virtual uchar loadFacingID(uchar) = 0;
     /**
      * @vftbl 9
 

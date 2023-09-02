@@ -9,7 +9,7 @@
 
 class OnScreenTextureAnimationPacket : public ::Packet {
 public:
-    uint32_t mEffectID; // this+0x30
+    uint mEffectID; // this+0x30
 
     // prevent constructor by default
     OnScreenTextureAnimationPacket& operator=(OnScreenTextureAnimationPacket const&) = delete;

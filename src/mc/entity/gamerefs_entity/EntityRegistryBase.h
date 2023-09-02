@@ -9,7 +9,7 @@ public:
     entt::basic_registry<class EntityId>& mRegistry;
     EntityId                              mViewedEntity;
     bool                                  mViewUsesViewedContext;
-    uint32_t                          mId;
+    uint                                  mId;
 
 public:
     // NOLINTBEGIN

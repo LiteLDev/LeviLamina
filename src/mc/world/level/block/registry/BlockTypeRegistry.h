@@ -19,10 +19,10 @@ public:
     struct LookupByNameImplReturnType;
     // clang-format on
 
-    using BlockComplexAliasCallback = std::function<class Block const*(int32_t)>;
+    using BlockComplexAliasCallback = std::function<class Block const*(int)>;
 
     // BlockTypeRegistry inner types define
-    enum class LookupByNameImplResolve : int32_t {
+    enum class LookupByNameImplResolve : int {
         BlockLegacy = 0x0,
         Block       = 0x1,
     };
@@ -30,8 +30,8 @@ public:
     struct BlockComplexAliasBlockState {
     public:
         class HashedString stateName;
-        int32_t                value;
-        BlockComplexAliasBlockState(HashedString const& stateName, int32_t value) noexcept
+        int                value;
+        BlockComplexAliasBlockState(HashedString const& stateName, int value) noexcept
         : stateName(stateName), value(value) {}
 
     public:
@@ -86,19 +86,20 @@ public:
     };
 
 public:
-// clang-format off
+    // clang-format off
     constexpr static std::map<class HashedString, class SharedPtr<class BlockLegacy>>& getBlockLookupMap() {
         return mBlockLookupMap;
     }
-// clang-format on
+    // clang-format on
 
 
     // prevent constructor by default
-    BlockTypeRegistry& operator=(BlockTypeRegistry const&) = delete;
-    BlockTypeRegistry(BlockTypeRegistry const&)            = delete;
-    BlockTypeRegistry()                                    = delete;
+    BlockTypeRegistry&
+    operator=(BlockTypeRegistry const&)         = delete;
+    BlockTypeRegistry(BlockTypeRegistry const&) = delete;
+    BlockTypeRegistry()                         = delete;
 
-public :
+public:
     // NOLINTBEGIN
     // symbol: ?computeBlockTypeRegistryChecksum@BlockTypeRegistry@@SA_KAEBVBaseGameVersion@@@Z
     MCAPI static uint64 computeBlockTypeRegistryChecksum(class BaseGameVersion const&);
@@ -175,8 +176,12 @@ public :
     // NOLINTBEGIN
     // symbol:
     // ?_lookupByNameImpl@BlockTypeRegistry@@CA?AULookupByNameImplReturnType@1@AEBVHashedString@@HW4LookupByNameImplResolve@1@_N@Z
-    MCAPI static struct BlockTypeRegistry::LookupByNameImplReturnType
-    _lookupByNameImpl(class HashedString const&, int data, ::BlockTypeRegistry::LookupByNameImplResolve resolve, bool logNotFound = false);
+    MCAPI static struct BlockTypeRegistry::LookupByNameImplReturnType _lookupByNameImpl(
+        class HashedString const&,
+        int                                          data,
+        ::BlockTypeRegistry::LookupByNameImplResolve resolve,
+        bool                                         logNotFound = false
+    );
 
     // NOLINTEND
 

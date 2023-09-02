@@ -6,8 +6,9 @@
 //  - Form that contains several buttons (with optional image)
 //  - Let the player choose an option from multiple options
 //
-//  SimpleForm form("Welcome to shop", "Choose what you want to do...");     // Initialize the form with title and content
-//  form.addButton("Buy", "textures/items/apple",                            // Add a button "Buy" with texture image
+//  SimpleForm form("Welcome to shop", "Choose what you want to do...");     // Initialize the form with title and
+//  content form.addButton("Buy", "textures/items/apple",                            // Add a button "Buy" with texture
+//  image
 //      [](Player* pl) { pl->sendText("To buy something..."); })             // Buy's callback function
 //
 //      .addButton("Sell", "https://xxx.com/xxx.png",                        // Add a button "Sell" with online image
@@ -24,9 +25,11 @@
 //  - Form with Confirm and Cancel buttons
 //  - Let the player confirm or cancel an action
 //
-//  ModalForm form("Confirm the action", "Do you want that?", "Yes", "Nope");     // Initialize the form with title, content and two buttons ("Yes", "Nope")
-//  form.sendTo(Level::getPlayer("S3v3N1ce"),                                     // Send the form to a player called "S3v3N1ce"
-//      [](Player* player, bool isConfirm)                                        // Callback function to process the result
+//  ModalForm form("Confirm the action", "Do you want that?", "Yes", "Nope");     // Initialize the form with title,
+//  content and two buttons ("Yes", "Nope") form.sendTo(Level::getPlayer("S3v3N1ce"), // Send the form to a player
+//  called "S3v3N1ce"
+//      [](Player* player, bool isConfirm)                                        // Callback function to process the
+//      result
 //          {
 //              if (isConfirm)                                                    // Player pressed button "Yes"
 //                  player->sendText("Okay, let's go");
@@ -40,17 +43,22 @@
 //  - Let the player provide some detailed information
 //
 //  CustomForm form2("Information Collection Form");                               // Initialize the form with title
-//  form2.addLabel("label1", "Personal Information")                               // Add a label shows "Personal Information"
-//      .addInput("username", "Your Name")                                         // Add an input line to gather player's name
-//      .addDropdown("sex", "Your Sex", { "Male","Female","Secret" })              // Add a dropdown to gather player's sex
-//      .addSlider("age", "Your Age", 3, 100)                                      // Add a slider to gather player's age
+//  form2.addLabel("label1", "Personal Information")                               // Add a label shows "Personal
+//  Information"
+//      .addInput("username", "Your Name")                                         // Add an input line to gather
+//      player's name .addDropdown("sex", "Your Sex", { "Male","Female","Secret" })              // Add a dropdown to
+//      gather player's sex .addSlider("age", "Your Age", 3, 100)                                      // Add a slider
+//      to gather player's age
 //
 //      .addLabel("label2", "MC Information")                                      // Add a label shows "MC Information"
-//      .addToggle("licensed", "Purchased a licensed Minecraft?", true)            // Add a toggle about whether he buys a licensed mc or not
-//      .addStepSlider("skill", "Skill Lvl", { "Beginner", "Amateur", "Pro" })     // Add a step slider shows his game skill level
+//      .addToggle("licensed", "Purchased a licensed Minecraft?", true)            // Add a toggle about whether he buys
+//      a licensed mc or not .addStepSlider("skill", "Skill Lvl", { "Beginner", "Amateur", "Pro" })     // Add a step
+//      slider shows his game skill level
 //
-//      .sendTo(Level::getPlayer("yqs112358"),                                     // Send the form to a player called "yqs112358"
-//          [](Player* player, auto result)                                        // Callback function to process the result
+//      .sendTo(Level::getPlayer("yqs112358"),                                     // Send the form to a player called
+//      "yqs112358"
+//          [](Player* player, auto result)                                        // Callback function to process the
+//          result
 //          {
 //              if (result.empty())                                                // Player cancelled the form
 //                  return;
@@ -69,8 +77,8 @@
 ////////////////////////////////////////////////////////////////////////
 
 
-#include <utility>
 #include "liteloader/api/Global.h"
+#include <utility>
 
 class ServerPlayer;
 class Player;
@@ -90,24 +98,15 @@ protected:
 
 public:
     using ButtonCallback = std::function<void(Player*)>;
-    string text, image;
+    string         text, image;
     ButtonCallback callback;
 
 public:
     inline explicit Button(string text, string image = "", ButtonCallback callback = ButtonCallback())
-    : text(std::move(text))
-    , image(std::move(image))
-    , callback(std::move(callback)) {
-    }
-    inline void setText(const string& _text) {
-        this->text = _text;
-    }
-    inline void setImage(const string& _image) {
-        this->image = _image;
-    }
-    inline void setCallback(ButtonCallback _callback) {
-        this->callback = std::move(_callback);
-    }
+    : text(std::move(text)), image(std::move(image)), callback(std::move(callback)) {}
+    inline void setText(const string& _text) { this->text = _text; }
+    inline void setImage(const string& _image) { this->image = _image; }
+    inline void setCallback(ButtonCallback _callback) { this->callback = std::move(_callback); }
 };
 
 //////////////////////////////// Custom Form Elements ////////////////////////////////
@@ -117,26 +116,17 @@ protected:
     friend class CustomForm;
 
 public:
-    enum class Type {
-        Label,
-        Input,
-        Toggle,
-        Dropdown,
-        Slider,
-        StepSlider
-    };
-    string name;
-    string value;
-    Type type{};
-    inline void setName(const string& _name) {
-        this->name = _name;
-    }
+    enum class Type { Label, Input, Toggle, Dropdown, Slider, StepSlider };
+    string              name;
+    string              value;
+    Type                type{};
+    inline void         setName(const string& _name) { this->name = _name; }
     inline virtual Type getType() = 0;
     LLAPI std::string getString();
-    LLAPI int32_t getInt();
-    LLAPI float getFloat();
-    LLAPI double getDouble();
-    LLAPI bool getBool();
+    LLAPI int         getInt();
+    LLAPI float       getFloat();
+    LLAPI double      getDouble();
+    LLAPI bool        getBool();
 };
 
 class Label : public CustomFormElement {
@@ -147,16 +137,9 @@ public:
     string text;
 
 public:
-    inline Label(const string& name, string text)
-    : text(std::move(text)) {
-        setName(name);
-    }
-    inline Type getType() override {
-        return Type::Label;
-    }
-    inline void setText(const string& _text) {
-        this->text = _text;
-    }
+    inline Label(const string& name, string text) : text(std::move(text)) { setName(name); }
+    inline Type getType() override { return Type::Label; }
+    inline void setText(const string& _text) { this->text = _text; }
 };
 
 class Input : public CustomFormElement {
@@ -166,23 +149,13 @@ protected:
 public:
     string title, placeholder, def;
     inline Input(const string& name, string title, string placeholder = "", string def = "")
-    : title(std::move(title))
-    , placeholder(std::move(placeholder))
-    , def(std::move(def)) {
+    : title(std::move(title)), placeholder(std::move(placeholder)), def(std::move(def)) {
         setName(name);
     }
-    inline Type getType() override {
-        return Type::Input;
-    }
-    inline void setTitle(const string& _title) {
-        this->title = _title;
-    }
-    inline void setPlaceHolder(const string& _placeholder) {
-        this->placeholder = _placeholder;
-    }
-    inline void setDefault(const string& _def) {
-        this->def = _def;
-    }
+    inline Type getType() override { return Type::Input; }
+    inline void setTitle(const string& _title) { this->title = _title; }
+    inline void setPlaceHolder(const string& _placeholder) { this->placeholder = _placeholder; }
+    inline void setDefault(const string& _def) { this->def = _def; }
 };
 
 class Toggle : public CustomFormElement {
@@ -192,23 +165,15 @@ protected:
 public:
 public:
     string title;
-    bool def;
+    bool   def;
 
 public:
-    inline Toggle(const string& name, string title, bool def = false)
-    : title(std::move(title))
-    , def(def) {
+    inline Toggle(const string& name, string title, bool def = false) : title(std::move(title)), def(def) {
         setName(name);
     }
-    inline virtual Type getType() override {
-        return Type::Toggle;
-    }
-    inline void setTitle(const string& _title) {
-        this->title = _title;
-    }
-    inline void setDefault(bool _def) {
-        this->def = _def;
-    }
+    inline virtual Type getType() override { return Type::Toggle; }
+    inline void         setTitle(const string& _title) { this->title = _title; }
+    inline void         setDefault(bool _def) { this->def = _def; }
 };
 
 class Dropdown : public CustomFormElement {
@@ -216,32 +181,20 @@ protected:
     LLAPI string serialize() override;
 
 public:
-    string title;
+    string         title;
     vector<string> options;
-    int32_t def;
+    int            def;
 
 public:
-    inline Dropdown(const string& name, string title, const vector<string>& options, int32_t defId = 0)
-    : title(std::move(title))
-    , options(options)
-    , def(defId) {
+    inline Dropdown(const string& name, string title, const vector<string>& options, int defId = 0)
+    : title(std::move(title)), options(options), def(defId) {
         setName(name);
     }
-    inline Type getType() override {
-        return Type::Dropdown;
-    }
-    inline void setTitle(const string& _title) {
-        this->title = _title;
-    }
-    inline void setOptions(const vector<string>& _options) {
-        this->options = _options;
-    }
-    inline void addOption(const string& option) {
-        options.push_back(option);
-    }
-    inline void setDefault(int32_t defId) {
-        this->def = defId;
-    }
+    inline Type getType() override { return Type::Dropdown; }
+    inline void setTitle(const string& _title) { this->title = _title; }
+    inline void setOptions(const vector<string>& _options) { this->options = _options; }
+    inline void addOption(const string& option) { options.push_back(option); }
+    inline void setDefault(int defId) { this->def = defId; }
 };
 
 class Slider : public CustomFormElement {
@@ -254,31 +207,15 @@ public:
 
 public:
     inline Slider(const string& name, string title, double minValue, double maxValue, double step = 1, double def = 0)
-    : title(std::move(title))
-    , minValue(minValue)
-    , maxValue(maxValue)
-    , step(step)
-    , def(def) {
+    : title(std::move(title)), minValue(minValue), maxValue(maxValue), step(step), def(def) {
         setName(name);
     }
-    inline Type getType() override {
-        return Type::Slider;
-    }
-    inline void setTitle(const string& _title) {
-        this->title = _title;
-    }
-    inline void setMin(double _minValue) {
-        this->minValue = _minValue;
-    }
-    inline void setMax(double _maxValue) {
-        this->maxValue = _maxValue;
-    }
-    inline void setStep(double _step) {
-        this->step = _step;
-    }
-    inline void setDefault(double _def) {
-        this->def = _def;
-    }
+    inline Type getType() override { return Type::Slider; }
+    inline void setTitle(const string& _title) { this->title = _title; }
+    inline void setMin(double _minValue) { this->minValue = _minValue; }
+    inline void setMax(double _maxValue) { this->maxValue = _maxValue; }
+    inline void setStep(double _step) { this->step = _step; }
+    inline void setDefault(double _def) { this->def = _def; }
 };
 
 class StepSlider : public CustomFormElement {
@@ -286,32 +223,20 @@ protected:
     LLAPI string serialize() override;
 
 public:
-    string title;
+    string         title;
     vector<string> options;
-    int32_t def;
+    int            def;
 
 public:
-    inline StepSlider(const string& name, string title, const vector<string>& options, int32_t defId = 0)
-    : title(std::move(title))
-    , options(options)
-    , def(defId) {
+    inline StepSlider(const string& name, string title, const vector<string>& options, int defId = 0)
+    : title(std::move(title)), options(options), def(defId) {
         setName(name);
     }
-    inline Type getType() override {
-        return Type::StepSlider;
-    }
-    inline void setTitle(const string& _title) {
-        this->title = _title;
-    }
-    inline void setOptions(const vector<string>& _options) {
-        this->options = _options;
-    }
-    inline void addOption(const string& option) {
-        options.push_back(option);
-    }
-    inline void setDefault(int32_t defId) {
-        this->def = defId;
-    }
+    inline Type getType() override { return Type::StepSlider; }
+    inline void setTitle(const string& _title) { this->title = _title; }
+    inline void setOptions(const vector<string>& _options) { this->options = _options; }
+    inline void addOption(const string& option) { options.push_back(option); }
+    inline void setDefault(int defId) { this->def = defId; }
 };
 
 //////////////////////////////// Forms ////////////////////////////////
@@ -326,16 +251,13 @@ protected:
     LLAPI string serialize() override;
 
 public:
-    using Callback = std::function<void(Player*, int32_t)>;
-    string title, content;
+    using Callback = std::function<void(Player*, int)>;
+    string                                     title, content;
     vector<std::shared_ptr<SimpleFormElement>> elements;
-    Callback callback;
+    Callback                                   callback;
 
 public:
-    SimpleForm(string title, string content)
-    : title(std::move(title))
-    , content(std::move(content)) {
-    }
+    SimpleForm(string title, string content) : title(std::move(title)), content(std::move(content)) {}
     template <typename T, typename... Args>
     SimpleForm(const string& title, const string& content, T element, Args... args) {
         append(element);
@@ -343,9 +265,10 @@ public:
     }
     LLAPI SimpleForm& setTitle(const string& title);
     LLAPI SimpleForm& setContent(const string& content);
-    LLAPI SimpleForm& addButton(string text, string image = "", Button::ButtonCallback callback = Button::ButtonCallback());
+    LLAPI SimpleForm&
+    addButton(string text, string image = "", Button::ButtonCallback callback = Button::ButtonCallback());
     LLAPI SimpleForm& append(const Button& element);
-    LLAPI bool sendTo(Player* player, Callback callback = Callback());
+    LLAPI bool        sendTo(Player* player, Callback callback = Callback());
 };
 
 class ModalForm : public FormImpl {
@@ -354,25 +277,28 @@ protected:
 
 public:
     using Callback = std::function<void(Player*, bool)>;
-    string title, content, confirmButton, cancelButton;
+    string   title, content, confirmButton, cancelButton;
     Callback callback;
 
 public:
     ModalForm(string title, string content, string button1, string button2)
-    : title(std::move(title))
-    , content(std::move(content))
-    , confirmButton(std::move(button1))
-    , cancelButton(std::move(button2)) {
-    }
+    : title(std::move(title)), content(std::move(content)), confirmButton(std::move(button1)),
+      cancelButton(std::move(button2)) {}
     template <typename T, typename... Args>
-    ModalForm(const string& title, const string& content, const string& confirmButton, const string& cancelButton, Args... args) {
+    ModalForm(
+        const string& title,
+        const string& content,
+        const string& confirmButton,
+        const string& cancelButton,
+        Args... args
+    ) {
         ModalForm(title, content, confirmButton, cancelButton, args...);
     }
     LLAPI ModalForm& setTitle(const string& title);
     LLAPI ModalForm& setContent(const string& content);
     LLAPI ModalForm& setConfirmButton(const string& text);
     LLAPI ModalForm& setCancelButton(const string& text);
-    LLAPI bool sendTo(Player* player, Callback callback = Callback());
+    LLAPI bool       sendTo(Player* player, Callback callback = Callback());
 };
 
 class CustomForm : public FormImpl {
@@ -380,16 +306,14 @@ protected:
     LLAPI string serialize() override;
 
 public:
-    using Callback = std::function<void(Player*, std::map<string, std::shared_ptr<CustomFormElement>>)>;
+    using Callback  = std::function<void(Player*, std::map<string, std::shared_ptr<CustomFormElement>>)>;
     using Callback2 = std::function<void(Player*, std::string)>;
-    string title;
+    string                                                             title;
     std::vector<std::pair<string, std::shared_ptr<CustomFormElement>>> elements;
-    Callback callback;
+    Callback                                                           callback;
 
 public:
-    explicit CustomForm(string title)
-    : title(std::move(title)) {
-    }
+    explicit CustomForm(string title) : title(std::move(title)) {}
     template <typename T, typename... Args>
     CustomForm(const string& title, T element, Args... args) {
         append(element);
@@ -400,9 +324,10 @@ public:
     LLAPI CustomForm& addLabel(const string& name, string text);
     LLAPI CustomForm& addInput(const string& name, string title, string placeholder = "", string def = "");
     LLAPI CustomForm& addToggle(const string& name, string title, bool def = false);
-    LLAPI CustomForm& addDropdown(const string& name, string title, const vector<string>& options, int32_t defId = 0);
-    LLAPI CustomForm& addSlider(const string& name, string title, double min, double max, double step = 1, double def = 0);
-    LLAPI CustomForm& addStepSlider(const string& name, string title, const vector<string>& options, int32_t defId = 0);
+    LLAPI CustomForm& addDropdown(const string& name, string title, const vector<string>& options, int defId = 0);
+    LLAPI CustomForm&
+    addSlider(const string& name, string title, double min, double max, double step = 1, double def = 0);
+    LLAPI CustomForm& addStepSlider(const string& name, string title, const vector<string>& options, int defId = 0);
 
     LLAPI CustomForm& append(const Label& element);
     LLAPI CustomForm& append(const Input& element);
@@ -411,30 +336,28 @@ public:
     LLAPI CustomForm& append(const Slider& element);
     LLAPI CustomForm& append(const StepSlider& element);
 
-    LLAPI bool sendTo(Player* player, Callback callback);
-    LLAPI bool sendToForRawJson(Player* player, Callback2 callback);
+    LLAPI bool               sendTo(Player* player, Callback callback);
+    LLAPI bool               sendToForRawJson(Player* player, Callback2 callback);
     LLAPI CustomFormElement* getElement(const string& name);
-    LLAPI CustomFormElement* getElement(int32_t index);
-    LLAPI CustomFormElement::Type getType(int32_t index);
+    LLAPI CustomFormElement* getElement(int index);
+    LLAPI CustomFormElement::Type getType(int index);
 
     LLAPI string getString(const string& name);
-    LLAPI int32_t getInt(const string& name);
-    LLAPI float getFloat(const string& name);
+    LLAPI int    getInt(const string& name);
+    LLAPI float  getFloat(const string& name);
     LLAPI double getDouble(const string& name);
-    LLAPI bool getBool(const string& name);
-    LLAPI string getString(int32_t index);
-    LLAPI int32_t getInt(int32_t index);
-    LLAPI float getFloat(int32_t index);
-    LLAPI double getDouble(int32_t index);
-    LLAPI bool getBool(int32_t index);
+    LLAPI bool   getBool(const string& name);
+    LLAPI string getString(int index);
+    LLAPI int    getInt(int index);
+    LLAPI float  getFloat(int index);
+    LLAPI double getDouble(int index);
+    LLAPI bool   getBool(int index);
 
     // Tool Functions
     template <typename T>
-    inline void setValue(int32_t index, T value) {
+    inline void setValue(int index, T value) {
         elements[index].second->value = std::to_string(value);
     }
-    inline void setValue(int32_t index, string value) {
-        elements[index].second->value = value;
-    }
+    inline void setValue(int index, string value) { elements[index].second->value = value; }
 };
 } // namespace Form

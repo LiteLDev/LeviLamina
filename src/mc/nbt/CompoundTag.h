@@ -8,7 +8,7 @@
 
 class CompoundTagVariant;
 
-enum class SnbtFormat : uint8_t {
+enum class SnbtFormat : uchar {
     PartialNewLine = 0,
     AlwayNewLine   = 1,
     Minimize       = 2,

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class BlockProperty : uint64_t {
+enum class BlockProperty : uint64 {
     None                         = 0,
     Stair                        = 1ull << 0,
     HalfSlab                     = 1ull << 1,

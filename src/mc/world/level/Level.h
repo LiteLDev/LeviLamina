@@ -60,8 +60,8 @@ public:
     LLNDAPI optional_ref<Player> getPlayerByNameOrXUID(std::string const& info) const;
 
     // LLAPI void broadcastText(const std::string& text, TextType type) const;
-    // LLAPI void broadcastTitle(const std::string& text, TitleType Type, int32_t FadeInDuration, int32_t
-    // RemainDuration, int32_t FadeOutDuration) const;
+    // LLAPI void broadcastTitle(const std::string& text, TitleType Type, int FadeInDuration, int
+    // RemainDuration, int FadeOutDuration) const;
 
     // LLAPI void sendPacketForAllPlayers(Packet& pkt) const;
 
@@ -1017,8 +1017,14 @@ public:
     MCVAPI void playSound(std::string const&, class Vec3 const&, float, float);
 
     // symbol: ?playSound@Level@@UEAAXW4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z
-    MCVAPI void
-    playSound(::LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool isBabyMob, bool isGlobal);
+    MCVAPI void playSound(
+        ::LevelSoundEvent,
+        class Vec3 const&,
+        int,
+        struct ActorDefinitionIdentifier const&,
+        bool isBabyMob,
+        bool isGlobal
+    );
 
     // symbol:
     // ?playSynchronizedSound@Level@@UEAAXAEAVBlockSource@@W4LevelSoundEvent@@AEBVVec3@@AEBVBlock@@AEBUActorDefinitionIdentifier@@_N5@Z

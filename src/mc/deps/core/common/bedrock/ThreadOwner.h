@@ -11,7 +11,7 @@ public:
     T0              mObject; // this+0x0
     bool            mThreadIdInitialized{};
     std::thread::id mThreadId;
-    uint32_t    mThreadCheckIndex{};
+    uint            mThreadCheckIndex{};
 
     // prevent constructor by default
     ThreadOwner& operator=(ThreadOwner const&) = delete;

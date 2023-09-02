@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class StructureBlockType : int32_t {
+enum class StructureBlockType : int {
     Data    = 0x0,
     Save    = 0x1,
     Load    = 0x2,

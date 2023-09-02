@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class PacketPriority : int32_t {
+enum class PacketPriority : int {
     Immediate = 0x0,
     High      = 0x1,
     Medium    = 0x2,

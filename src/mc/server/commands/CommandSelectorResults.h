@@ -7,19 +7,11 @@ class CommandSelectorResults {
 public:
     std::shared_ptr<std::vector<T0*>> data;
 
-    auto begin() {
-        return data->begin();
-    }
+    auto begin() { return data->begin(); }
 
-    auto end() {
-        return data->end();
-    }
+    auto end() { return data->end(); }
 
-    auto count() const {
-        return data->size();
-    }
+    auto count() const { return data->size(); }
 
-    auto empty() const {
-        return data->empty();
-    }
+    auto empty() const { return data->empty(); }
 };

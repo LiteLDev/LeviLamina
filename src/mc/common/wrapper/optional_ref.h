@@ -12,7 +12,7 @@ private:
     template <typename U>
     static constexpr bool IsCompatibleV =
         std::is_same_v<std::decay_t<T>, std::decay_t<U>> && std::is_convertible_v<U*, T*>;
-// NOLINTBEGIN
+    // NOLINTBEGIN
 public:
     constexpr optional_ref() noexcept = default;
 

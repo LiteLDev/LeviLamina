@@ -18,10 +18,10 @@
 // make sure the callback parameter type can be converted to json
 //
 // [Usage]
-// RemoteCall::exportAs("TestNameSpace", "strSize", [](std::string const& arg) -> int32_t { return arg.size(); });
+// RemoteCall::exportAs("TestNameSpace", "strSize", [](std::string const& arg) -> int { return arg.size(); });
 //
 // // in other plugin
-// auto strSize = RemoteCall::importAs<int32_t(std::string const& arg)>("TestNameSpace", "strSize");
+// auto strSize = RemoteCall::importAs<int(std::string const& arg)>("TestNameSpace", "strSize");
 // logger.info("Size of str: {}", strSize("12345678"));
 //
 // // in js plugin
@@ -108,24 +108,24 @@ struct BlockType {
 };
 
 struct NumberType {
-    int64_t i = 0;
-    double  f = 0;
-    NumberType(int64_t i, double f) : i(i), f(f){};
+    int64  i = 0;
+    double f = 0;
+    NumberType(int64 i, double f) : i(i), f(f){};
     template <typename T>
     std::enable_if_t<std::is_integral_v<T> || std::is_floating_point_v<T>, NumberType&> operator=(T v) {
-        i = static_cast<int64_t>(v);
+        i = static_cast<int64>(v);
         f = static_cast<double>(v);
     }
-    NumberType(double v) : i(static_cast<int64_t>(v)), f(static_cast<double>(v)){};
-    NumberType(float v) : i(static_cast<int64_t>(v)), f(static_cast<double>(v)){};
-    NumberType(int64_t v) : i(static_cast<int64_t>(v)), f(static_cast<double>(v)){};
-    NumberType(int32_t v) : i(static_cast<int64_t>(v)), f(static_cast<double>(v)){};
-    NumberType(short v) : i(static_cast<int64_t>(v)), f(static_cast<double>(v)){};
-    NumberType(char v) : i(static_cast<int64_t>(v)), f(static_cast<double>(v)){};
-    NumberType(uint64_t v) : i(static_cast<int64_t>(v)), f(static_cast<double>(v)){};
-    NumberType(uint32_t v) : i(static_cast<int64_t>(v)), f(static_cast<double>(v)){};
-    NumberType(uint16_t v) : i(static_cast<int64_t>(v)), f(static_cast<double>(v)){};
-    NumberType(uint8_t v) : i(static_cast<int64_t>(v)), f(static_cast<double>(v)){};
+    NumberType(double v) : i(static_cast<int64>(v)), f(static_cast<double>(v)){};
+    NumberType(float v) : i(static_cast<int64>(v)), f(static_cast<double>(v)){};
+    NumberType(int64 v) : i(static_cast<int64>(v)), f(static_cast<double>(v)){};
+    NumberType(int v) : i(static_cast<int64>(v)), f(static_cast<double>(v)){};
+    NumberType(short v) : i(static_cast<int64>(v)), f(static_cast<double>(v)){};
+    NumberType(char v) : i(static_cast<int64>(v)), f(static_cast<double>(v)){};
+    NumberType(uint64 v) : i(static_cast<int64>(v)), f(static_cast<double>(v)){};
+    NumberType(uint v) : i(static_cast<int64>(v)), f(static_cast<double>(v)){};
+    NumberType(ushort v) : i(static_cast<int64>(v)), f(static_cast<double>(v)){};
+    NumberType(uchar v) : i(static_cast<int64>(v)), f(static_cast<double>(v)){};
     template <typename RTN>
     inline std::enable_if_t<std::is_integral_v<RTN>, RTN> get() {
         return static_cast<RTN>(i);
@@ -137,10 +137,10 @@ struct NumberType {
 };
 
 struct WorldPosType {
-    Vec3    pos   = Vec3::ZERO;
-    int32_t dimID = 3; // VanillaDimensions::Undefined;
-    WorldPosType(Vec3 const& pos, int32_t dimID = 3) : pos(pos), dimID(dimID){};
-    WorldPosType(std::pair<Vec3, int32_t> const& pos) : pos(pos.first), dimID(pos.second){};
+    Vec3 pos   = Vec3::ZERO;
+    int  dimID = 3; // VanillaDimensions::Undefined;
+    WorldPosType(Vec3 const& pos, int dimID = 3) : pos(pos), dimID(dimID){};
+    WorldPosType(std::pair<Vec3, int> const& pos) : pos(pos.first), dimID(pos.second){};
     template <typename RTN>
     inline RTN get() = delete;
     template <>
@@ -152,20 +152,20 @@ struct WorldPosType {
         return BlockPos(pos);
     };
     template <>
-    inline std::pair<Vec3, int32_t> get() {
+    inline std::pair<Vec3, int> get() {
         return std::make_pair(pos, dimID);
     };
     template <>
-    inline std::pair<BlockPos, int32_t> get() {
+    inline std::pair<BlockPos, int> get() {
         return std::make_pair(BlockPos(pos), dimID);
     };
 };
 
 struct BlockPosType {
     BlockPos pos   = BlockPos::ZERO;
-    int32_t  dimID = 0;
-    BlockPosType(BlockPos const& pos, int32_t dimID = 0) : pos(pos), dimID(dimID){};
-    BlockPosType(std::pair<BlockPos, int32_t> const& pos) : pos(pos.first), dimID(pos.second){};
+    int      dimID = 0;
+    BlockPosType(BlockPos const& pos, int dimID = 0) : pos(pos), dimID(dimID){};
+    BlockPosType(std::pair<BlockPos, int> const& pos) : pos(pos.first), dimID(pos.second){};
     template <typename RTN>
     inline RTN get() = delete;
     template <>
@@ -173,7 +173,7 @@ struct BlockPosType {
         return pos;
     };
     template <>
-    inline std::pair<BlockPos, int32_t> get() {
+    inline std::pair<BlockPos, int> get() {
         return std::make_pair(pos, dimID);
     };
     template <>
@@ -181,7 +181,7 @@ struct BlockPosType {
         return pos.toVec3();
     };
     template <>
-    inline std::pair<Vec3, int32_t> get() {
+    inline std::pair<Vec3, int> get() {
         return std::make_pair(pos.toVec3(), dimID);
     };
 };
@@ -217,7 +217,7 @@ using Value                                                                     
 //     std::variant<ElementType> value;
 //     Value(bool v)
 //         : value(v){};
-//     Value(int64_t v)
+//     Value(int64 v)
 //         : value(v){};
 //     Value(double v)
 //         : value(v){};
@@ -428,7 +428,7 @@ LLAPI bool                    exportFunc(
 LLAPI CallbackFn const& importFunc(std::string const& nameSpace, std::string const& funcName);
 
 
-inline ValueType _expandArg(std::vector<ValueType>& args, int32_t& index) { return std::move(args[--index]); }
+inline ValueType _expandArg(std::vector<ValueType>& args, int& index) { return std::move(args[--index]); }
 
 template <typename RTN, typename... Args>
 inline bool
@@ -436,7 +436,7 @@ _exportAs(std::string const& nameSpace, std::string const& funcName, std::functi
     CallbackFn cb = [callback = std::move(callback)](std::vector<ValueType> args) -> ValueType {
         if (sizeof...(Args) != args.size())
             return std::move(ValueType());
-        int32_t index = sizeof...(Args);
+        int index = sizeof...(Args);
         if constexpr (std::is_void_v<RTN>) {
             callback(extract<Args>(_expandArg(args, index))...);
             return std::move(ValueType());
@@ -447,11 +447,11 @@ _exportAs(std::string const& nameSpace, std::string const& funcName, std::functi
     return exportFunc(nameSpace, funcName, std::move(cb), GetCurrentModule());
 }
 
-LLAPI bool    hasFunc(std::string const& nameSpace, std::string const& funcName);
-LLAPI bool    removeFunc(std::string const& nameSpace, std::string const& funcName);
-LLAPI int32_t removeNameSpace(std::string const& nameSpace);
-LLAPI int32_t removeFuncs(std::vector<std::pair<std::string, std::string>> funcs);
-LLAPI void    _onCallError(std::string const& msg, HMODULE handle = GetCurrentModule());
+LLAPI bool hasFunc(std::string const& nameSpace, std::string const& funcName);
+LLAPI bool removeFunc(std::string const& nameSpace, std::string const& funcName);
+LLAPI int  removeNameSpace(std::string const& nameSpace);
+LLAPI int  removeFuncs(std::vector<std::pair<std::string, std::string>> funcs);
+LLAPI void _onCallError(std::string const& msg, HMODULE handle = GetCurrentModule());
 
 template <typename RTN, typename... Args>
 inline bool _importAs(std::string const& nameSpace, std::string const& funcName, std::function<RTN(Args...)>& func) {

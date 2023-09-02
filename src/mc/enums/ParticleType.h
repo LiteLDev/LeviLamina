@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ParticleType : int32_t {
+enum class ParticleType : int {
     Undefined             = 0x0,
     Bubble                = 0x1,
     BubbleManual          = 0x2,
@@ -89,5 +89,5 @@ enum class ParticleType : int32_t {
     SculkSoul             = 0x53,
     SonicExplosion        = 0x54,
     BrushDust             = 0x55,
-    Count                = 0x56,
+    Count                 = 0x56,
 };

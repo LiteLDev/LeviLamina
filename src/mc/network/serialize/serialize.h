@@ -6,6 +6,6 @@
 template <typename T>
 struct serialize {
 public:
-    MCAPI static void write(T const&, class BinaryStream&);
+    MCAPI static void               write(T const&, class BinaryStream&);
     MCAPI static Bedrock::Result<T> read(class ReadOnlyBinaryStream&);
 };

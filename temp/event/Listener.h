@@ -16,7 +16,7 @@ class EventManager;
  * @note Don't try forcing to be executed first.
  * @see EventManager::addListener
  */
-enum class EventPriority : uint8_t { Lowest = 0, Low = 1, Normal = 2, High = 3, Highest = 4, Monitor = 5 };
+enum class EventPriority : uchar { Lowest = 0, Low = 1, Normal = 2, High = 3, Highest = 4, Monitor = 5 };
 
 /**
  * @brief Event listener.
@@ -24,11 +24,11 @@ enum class EventPriority : uint8_t { Lowest = 0, Low = 1, Normal = 2, High = 3, 
  */
 template <typename EventType>
 class Listener {
-    LL_RO_MEMBER(int32_t, id, getId);
+    LL_RO_MEMBER(int, id, getId);
     LL_RO_MEMBER(EventPriority, priority, getPriority);
     LL_RO_MEMBER(HMODULE, plugin, getPlugin);
     LL_RO_MEMBER(std::function<void(EventType&)>, callback, getCallback);
-    LL_RW_MEMBER(int64_t, timing, getTiming, setTiming);
+    LL_RW_MEMBER(int64, timing, getTiming, setTiming);
 
     friend class EventManager<EventType>;
 

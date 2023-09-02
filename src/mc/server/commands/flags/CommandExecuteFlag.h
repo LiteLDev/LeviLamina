@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class CommandExecuteFlag : uint16_t {
+enum class CommandExecuteFlag : ushort {
     Allowed    = 0,
     Disallowed = 1 << 5,
 };

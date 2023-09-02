@@ -7,8 +7,8 @@ namespace Core {
 template <typename T0>
 class PathBuffer {
 public:
-    T0  value;
-    T0& get() { return value; }
+    T0       value;
+    T0&      get() { return value; }
     explicit operator T0&() noexcept { return value; }
     explicit operator T0 const&() const noexcept { return value; }
 };

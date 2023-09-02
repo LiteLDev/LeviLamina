@@ -25,8 +25,8 @@ public:
     struct SerializedLayer {
     public:
         SerializedAbilitiesLayer mSerializedLayer; // this+0x0
-        uint32_t                 mAbilitiesSet;    // this+0x4
-        uint32_t                 mAbilityValues;   // this+0x8
+        uint                     mAbilitiesSet;    // this+0x4
+        uint                     mAbilityValues;   // this+0x8
         float                    mFlySpeed;        // this+0xC
         float                    mWalkSpeed;       // this+0x10
 

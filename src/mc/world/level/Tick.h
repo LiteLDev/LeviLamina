@@ -4,13 +4,13 @@
 
 struct Tick {
 public:
-    uint64_t t;
+    uint64 t;
 
-    constexpr explicit operator uint64_t() const { return t; }
+    constexpr explicit operator uint64() const { return t; }
 
-    constexpr explicit operator uint64_t&() { return t; }
+    constexpr explicit operator uint64&() { return t; }
 
-    constexpr explicit Tick(uint64_t v) : t(v){};
+    constexpr explicit Tick(uint64 v) : t(v){};
 
     constexpr Tick(const Tick& v) = default;
 

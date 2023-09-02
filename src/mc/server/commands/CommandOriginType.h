@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class CommandOriginType : int8_t {
+enum class CommandOriginType : schar {
     Player                   = 0x0,
     CommandBlock             = 0x1,
     MinecartCommandBlock     = 0x2,

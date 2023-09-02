@@ -8,34 +8,33 @@
 #include <unordered_map>
 #include <vector>
 #ifdef BUF_CHK
-#    define DO_BUF_CHK() assert(datamax > data)
-#    define BUF_CHK_VAR uintptr_t datamax
+#define DO_BUF_CHK() assert(datamax > data)
+#define BUF_CHK_VAR  uintptr_t datamax
 #else
-#    define DO_BUF_CHK()
-#    define BUF_CHK_VAR
+#define DO_BUF_CHK()
+#define BUF_CHK_VAR
 #endif
 template <class T>
-struct is_safe_obj
-    : std::integral_constant<bool, !std::is_class<std::remove_reference_t<T>>::value> {};
+struct is_safe_obj : std::integral_constant<bool, !std::is_class<std::remove_reference_t<T>>::value> {};
 
-typedef uint32_t bsize_t;
+typedef uint bsize_t;
 class RBStream {
-  public:
+public:
     uintptr_t data;
     BUF_CHK_VAR;
-    RBStream(void *dat, size_t len) {
+    RBStream(void* dat, size_t len) {
         data = (uintptr_t)dat;
         (void)len;
 #ifdef BUF_CHK
-        datamax = data;
+        datamax  = data;
         datamax += len;
 #endif
     }
-    RBStream(std::string_view x) { *this = {(void *)x.data(), (size_t)x.size()}; }
+    RBStream(std::string_view x) { *this = {(void*)x.data(), (size_t)x.size()}; }
 
-  private:
+private:
     template <typename T1, typename T2>
-    void __get(std::unordered_map<T1, T2> &x) {
+    void __get(std::unordered_map<T1, T2>& x) {
         bsize_t sz;
         __get(sz);
         x.reserve(sz);
@@ -48,7 +47,7 @@ class RBStream {
         }
     }
     template <typename T1>
-    void __get(std::vector<T1> &x) {
+    void __get(std::vector<T1>& x) {
         bsize_t sz;
         __get(sz);
         x.reserve(sz);
@@ -59,7 +58,7 @@ class RBStream {
         }
     }
     template <typename T1>
-    void __get(std::list<T1> &x) {
+    void __get(std::list<T1>& x) {
         bsize_t sz;
         __get(sz);
         for (bsize_t i = 0; i < sz; ++i) {
@@ -68,19 +67,19 @@ class RBStream {
             x.push_back(std::move(local));
         }
     }
-    void __get(std::string &x) {
+    void __get(std::string& x) {
         bsize_t sz;
         __get(sz);
         x.reserve(sz);
-        x.append((const char *)data, sz);
+        x.append((const char*)data, sz);
         data += sz;
         DO_BUF_CHK();
     }
     template <typename T>
-    void __get(T &x) {
+    void __get(T& x) {
         if constexpr (is_safe_obj<T>()) {
             static_assert(!std::is_reference<T>());
-            memcpy(&x, (void *)data, sizeof(x));
+            memcpy(&x, (void*)data, sizeof(x));
             data += sizeof(T);
             DO_BUF_CHK();
         } else {
@@ -88,34 +87,34 @@ class RBStream {
         }
     }
 
-  public:
+public:
     template <typename... T>
-    void apply(T &... args) {
+    void apply(T&... args) {
         (__get(args), ...);
     }
-    void read(void *dst, size_t n) {
-        memcpy(dst, (void *)data, n);
+    void read(void* dst, size_t n) {
+        memcpy(dst, (void*)data, n);
         data += n;
         DO_BUF_CHK();
     }
 };
 template <typename container>
 class WBStreamImpl {
-  public:
+public:
     container data;
 
-  private:
+private:
     template <typename T1, typename T2>
-    void __put(std::unordered_map<T1, T2> const &x) {
+    void __put(std::unordered_map<T1, T2> const& x) {
         bsize_t sz = (bsize_t)x.size();
         __put(sz);
-        for (auto &[k, v] : x) {
+        for (auto& [k, v] : x) {
             __put(k);
             __put(v);
         }
     }
     template <typename T2>
-    void __put(std::vector<T2> const &x) {
+    void __put(std::vector<T2> const& x) {
         bsize_t sz = x.size();
         __put(sz);
         for (auto i = x.begin(); i != x.end(); ++i) {
@@ -123,60 +122,59 @@ class WBStreamImpl {
         }
     }
     template <typename T2>
-    void __put(std::list<T2> const &x) {
+    void __put(std::list<T2> const& x) {
         bsize_t sz = (bsize_t)x.size();
         __put(sz);
         for (auto i = x.begin(); i != x.end(); ++i) {
             __put(*i);
         }
     }
-    void __put(std::string const &x) {
+    void __put(std::string const& x) {
         __put((bsize_t)x.size());
         data.append(x);
     }
-    void __put(std::string_view const &x) {
+    void __put(std::string_view const& x) {
         __put((bsize_t)x.size());
         data.append(x);
     }
     template <typename T>
-    void __put(T const &x) {
+    void __put(T const& x) {
         if constexpr (is_safe_obj<T>()) {
-            data.append((const char *)&x, sizeof(T));
+            data.append((const char*)&x, sizeof(T));
         } else {
             x.pack(*this);
         }
     }
 
-  public:
+public:
     WBStreamImpl() {}
-    WBStreamImpl(container &&x) : data(x) {}
+    WBStreamImpl(container&& x) : data(x) {}
     template <typename... T>
-    void apply(T const &... args) {
+    void apply(T const&... args) {
         (__put(args), ...);
     }
-    void write(const void *src, size_t n) { data.append((const char *)src, n); }
+    void write(const void* src, size_t n) { data.append((const char*)src, n); }
     operator std::string_view() { return data; }
 };
 using WBStream = WBStreamImpl<std::string>;
 struct BinVariant {
-    /*int64_t or string*/
-    union VType
-    {
-        int64_t x;
+    /*int64 or string*/
+    union VType {
+        int64       x;
         std::string y;
         VType() {}
         ~VType() {}
     } v;
-    uint8_t type;
-    BinVariant(int64_t x) {
+    uchar type;
+    BinVariant(int64 x) {
         type = 1;
         v.x  = x;
     }
-    BinVariant(std::string &&x) {
+    BinVariant(std::string&& x) {
         type = 2;
         new (&v.y) std::string(std::move(x));
     }
-    BinVariant(std::string const &x) {
+    BinVariant(std::string const& x) {
         type = 2;
         new (&v.y) std::string(x);
     }
@@ -186,34 +184,28 @@ struct BinVariant {
             v.y.~basic_string();
         }
     }
-    void unpack(RBStream &rs) {
+    void unpack(RBStream& rs) {
         rs.apply(type);
         switch (type) {
-            case 1:
-            {
-                rs.apply(v.x);
-            } break;
-            case 2:
-            {
-                new (&v.y) std::string();
-                rs.apply(v.y);
-            }
+        case 1: {
+            rs.apply(v.x);
+        } break;
+        case 2: {
+            new (&v.y) std::string();
+            rs.apply(v.y);
+        }
         }
     }
-    void pack(WBStream &ws) const {
+    void pack(WBStream& ws) const {
         ws.apply(type);
         switch (type) {
-            case 1:
-            {
-                ws.apply(v.x);
-            } break;
-            case 2:
-            {
-                ws.apply(v.y);
-            }
+        case 1: {
+            ws.apply(v.x);
+        } break;
+        case 2: {
+            ws.apply(v.y);
+        }
         }
     }
 };
-static inline uint64_t ZigZag(int64_t x) {
-    return (x << 1) ^ (x >> 63);
-}
+static inline uint64 ZigZag(int64 x) { return (x << 1) ^ (x >> 63); }

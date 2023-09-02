@@ -5,14 +5,14 @@
 class Enchant {
 public:
     // Enchant inner types define
-    enum class Frequency : int32_t {
+    enum class Frequency : int {
         Common   = 30,
         Uncommon = 10,
         Rare     = 3,
         VeryRare = 1,
     };
 
-    enum class Slot : int32_t {
+    enum class Slot : int {
         All           = -1,
         None          = 0,
         ArmorHead     = 1 << 0,
@@ -42,7 +42,7 @@ public:
         Tools    = Hoe | Shears | Flintsteel | Shield,
     };
 
-    enum class Type : int8_t {
+    enum class Type : schar {
         ArmorAll            = 0x0,
         ArmorFire           = 0x1,
         ArmorFall           = 0x2,
@@ -85,7 +85,7 @@ public:
         InvalidEnchantment  = 0x27,
     };
 
-    enum class Activation : int32_t {
+    enum class Activation : int {
         Equipped = 0x0,
         Held     = 0x1,
         Self     = 0x2,
@@ -93,7 +93,7 @@ public:
         Invalid  = 0x4,
     };
 
-    enum class CompatibilityID : int32_t {
+    enum class CompatibilityID : int {
         NonConflict  = 0x0,
         Damage       = 0x1,
         Gathering    = 0x2,

@@ -1,6 +1,6 @@
+#include "liteloader/api/GlobalServiceAPI.h"
 #include "mc/Objective.hpp"
 #include "mc/ServerScoreboard.hpp"
-#include "liteloader/api/GlobalServiceAPI.h"
 
 #include "liteloader/api/utils/Hash.h"
 

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class GeneratorType : int32_t {
+enum class GeneratorType : int {
     Legacy    = 0x0,
     Overworld = 0x1,
     Flat      = 0x2,

@@ -1,9 +1,9 @@
 #pragma once
 
 #include "liteloader/api/event/Event.h"
+#include "liteloader/api/utils/AccessorMacro.h"
 #include "mc/MobEffectInstance.hpp"
 #include "mc/Player.hpp"
-#include "liteloader/api/utils/AccessorMacro.h"
 
 
 namespace ll::event::player {
@@ -14,7 +14,7 @@ namespace ll::event::player {
  */
 class PlayerEffectChangeEvent : public Event<PlayerEffectChangeEvent> {
 public:
-    enum class ActionType : int8_t { Add, Remove, Update };
+    enum class ActionType : schar { Add, Remove, Update };
 
     LL_RO_MEMBER(Player*, player, getPlayer);
     LL_RO_MEMBER(MobEffectInstance*, effect, getEffect);

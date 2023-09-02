@@ -1,5 +1,5 @@
-#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/event/block/BlockInteractEvent.h"
+#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/memory/Hook.h"
 
 #include "mc/Level.hpp"
@@ -20,7 +20,7 @@ LL_AUTO_INSTANCE_HOOK(
     BlockInteractEventHook,
     HookPriority::Normal,
     "?onBlockInteractedWith@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z",
-    uint16_t,
+    ushort,
     Player*   player,
     BlockPos* blockPos
 ) {

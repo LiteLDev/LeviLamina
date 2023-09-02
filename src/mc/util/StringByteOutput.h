@@ -7,7 +7,7 @@
 
 class StringByteOutput : public ::BytesDataOutput {
 public:
-  std::string *mBuffer;
+    std::string* mBuffer;
 
 public:
     // NOLINTBEGIN

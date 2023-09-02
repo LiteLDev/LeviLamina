@@ -21,7 +21,7 @@ public:
     std::unique_ptr<class UnverifiedCertificate> mCertificateData;
     std::unique_ptr<class Certificate>           mCertificate;
     std::unique_ptr<class WebToken>              mRawToken;
-    uint8_t                        mClientSubId;
+    uchar                                        mClientSubId;
 
 public:
     // NOLINTBEGIN

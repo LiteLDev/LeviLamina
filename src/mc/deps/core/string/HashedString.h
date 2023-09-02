@@ -4,12 +4,12 @@
 
 class HashedString {
 public:
-    uint64_t            hash;
+    uint64              hash;
     std::string         str;
     class HashedString* lastMatch;
 
-    constexpr static uint64_t computeHash(std::string_view str) {
-        uint64_t hash = 0xCBF29CE484222325ULL;
+    constexpr static uint64 computeHash(std::string_view str) {
+        uint64 hash = 0xCBF29CE484222325ULL;
         for (char s : str) {
             hash = s ^ (0x100000001B3ULL * hash);
         }
@@ -19,7 +19,7 @@ public:
     // Constructors
     constexpr HashedString(std::nullptr_t = nullptr) noexcept : hash(0), lastMatch(nullptr) {} // NOLINT
 
-    constexpr HashedString(uint64_t h, const char* str) noexcept : hash(h), str(str), lastMatch(nullptr) {}
+    constexpr HashedString(uint64 h, const char* str) noexcept : hash(h), str(str), lastMatch(nullptr) {}
 
     constexpr HashedString(const char* str) noexcept : hash(computeHash(str)), str(str), lastMatch(nullptr) {} // NOLINT
 
@@ -58,7 +58,7 @@ public:
 
     [[nodiscard]] constexpr const std::string& getString() const noexcept { return str; }
 
-    [[nodiscard]] constexpr uint64_t getHash() const noexcept { return hash; }
+    [[nodiscard]] constexpr uint64 getHash() const noexcept { return hash; }
 
     [[nodiscard]] constexpr bool isEmpty() const noexcept { return str.empty(); }
 

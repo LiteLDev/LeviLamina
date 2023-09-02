@@ -15,13 +15,13 @@ public:
     // clang-format on
 
     // SemVersion inner types define
-    enum class MatchType : int32_t {
+    enum class MatchType : int {
         Full    = 0x0,
         Partial = 0x1,
         None    = 0x2,
     };
 
-    enum class ParseOption : int32_t {
+    enum class ParseOption : int {
         AllowWildcards = 0x0,
         NoWildcards    = 0x1,
     };
@@ -34,14 +34,15 @@ public:
         any_version_constructor()                                          = delete;
     };
 
-    uint16_t    mMajor;
-    uint16_t    mMinor;
-    uint16_t    mPatch;
+    ushort      mMajor;
+    ushort      mMinor;
+    ushort      mPatch;
     std::string mPreRelease;
     std::string mBuildMeta;
     std::string mFullVersionString;
     bool        mValidVersion;
     bool        mAnyVersion;
+
 public:
     // NOLINTBEGIN
     // symbol: ??0SemVersion@@QEAA@Uany_version_constructor@0@@Z

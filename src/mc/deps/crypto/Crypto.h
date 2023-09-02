@@ -18,14 +18,14 @@ namespace mce { class UUID; }
 namespace Crypto {
 
 union EncryptedFileHeader {
-    uint8_t _data[256]; // this+0x0
+    uchar _data[256]; // this+0x0
     struct {
-        uint8_t unknown;
+        uchar unknown;
     } _efheader; // this+0x0
 };
 
 union SignatureValue {
-    uint32_t  _value;             // this+0x0
-    uint8_t _signatureBytes[4]; // this+0x0
+    uint  _value;             // this+0x0
+    uchar _signatureBytes[4]; // this+0x0
 };
 }; // namespace Crypto

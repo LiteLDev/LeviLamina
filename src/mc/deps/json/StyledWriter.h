@@ -17,12 +17,12 @@ class StyledWriter : public ::Json::Writer {
 public:
     using ChildValues = std::vector<std::string>;
 
-    ChildValues  childValues_;
-    std::string  document_;
-    std::string  indentString_;
-    uint32_t rightMargin_;
-    uint32_t indentSize_;
-    bool         addChildValues_;
+    ChildValues childValues_;
+    std::string document_;
+    std::string indentString_;
+    uint        rightMargin_;
+    uint        indentSize_;
+    bool        addChildValues_;
 
     ~StyledWriter() override = default;
 

@@ -1,9 +1,9 @@
-#include <filesystem>
-#include "liteloader/api/LoggerAPI.h"
-#include "liteloader/api/GlobalServiceAPI.h"
 #include "liteloader/api/AllowListAPI.h"
+#include "liteloader/api/GlobalServiceAPI.h"
+#include "liteloader/api/LoggerAPI.h"
 #include "liteloader/api/utils/FileHelper.h"
 #include "mc/AllowListFile.hpp"
+#include <filesystem>
 #pragma warning(disable : 26812)
 
 Logger allowListLogger("AllowList");

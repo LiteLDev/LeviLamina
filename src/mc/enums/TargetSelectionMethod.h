@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class TargetSelectionMethod : int8_t {
+enum class TargetSelectionMethod : schar {
     Nearest = 0x0,
     Random  = 0x1,
 };

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class CircuitComponentType : int64_t {
+enum class CircuitComponentType : int64 {
     Unknown               = 0,
     Undefined             = 1,
     Mask                  = 0xFFFF0000,

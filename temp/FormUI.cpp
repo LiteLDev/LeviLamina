@@ -1,13 +1,13 @@
 #include "liteloader/api/FormUI.h"
 #include <memory>
 
-#include "liteloader/api/utils/fifo_json.h"
 #include "liteloader/api/impl/FormPacketHelper.h"
+#include "liteloader/api/utils/fifo_json.h"
 
+#include "liteloader/core/LiteLoader.h"
 #include "mc/BinaryStream.hpp"
 #include "mc/Packet.hpp"
 #include "mc/ServerPlayer.hpp"
-#include "liteloader/core/LiteLoader.h"
 #include <utility>
 
 using namespace std;
@@ -68,7 +68,7 @@ string SimpleForm::serialize() {
 }
 
 bool SimpleForm::sendTo(Player* player, Callback callback) {
-    uint32_t id    = NewFormId();
+    uint id        = NewFormId();
     this->callback = std::move(callback);
     SetSimpleFormBuilderData(id, make_shared<SimpleForm>(*this));
 
@@ -114,7 +114,7 @@ string ModalForm::serialize() {
 }
 
 bool ModalForm::sendTo(Player* player, Callback callback) {
-    uint32_t id    = NewFormId();
+    uint id        = NewFormId();
     this->callback = std::move(callback);
     SetModalFormBuilderData(id, make_shared<ModalForm>(*this));
 
@@ -127,9 +127,9 @@ bool ModalForm::sendTo(Player* player, Callback callback) {
 //////////////////////////////// Custom Form ////////////////////////////////
 std::string CustomFormElement::getString() { return value; }
 
-int32_t CustomFormElement::getNumber() { return getInt(); }
+int CustomFormElement::getNumber() { return getInt(); }
 
-int32_t CustomFormElement::getInt() {
+int CustomFormElement::getInt() {
     try {
         return stoi(value);
     } catch (...) {
@@ -281,7 +281,7 @@ CustomForm& CustomForm::addToggle(const string& name, string title, bool def) {
     return append(Toggle(name, title, def));
 }
 
-CustomForm& CustomForm::addDropdown(const string& name, string title, const vector<string>& options, int32_t defId) {
+CustomForm& CustomForm::addDropdown(const string& name, string title, const vector<string>& options, int defId) {
     return append(Dropdown(name, title, options, defId));
 }
 
@@ -289,7 +289,7 @@ CustomForm& CustomForm::addSlider(const string& name, string title, double min, 
     return append(Slider(name, title, min, max, step, def));
 }
 
-CustomForm& CustomForm::addStepSlider(const string& name, string title, const vector<string>& options, int32_t defId) {
+CustomForm& CustomForm::addStepSlider(const string& name, string title, const vector<string>& options, int defId) {
     return append(StepSlider(name, title, options, defId));
 }
 
@@ -340,7 +340,7 @@ string CustomForm::serialize() {
 }
 
 bool CustomForm::sendTo(Player* player, Callback callback) {
-    uint32_t id    = NewFormId();
+    uint id        = NewFormId();
     this->callback = std::move(callback);
     SetCustomFormBuilderData(id, make_shared<CustomForm>(*this));
 
@@ -352,7 +352,7 @@ bool CustomForm::sendTo(Player* player, Callback callback) {
 }
 
 bool CustomForm::sendToForRawJson(Player* player, Callback2 callback) {
-    uint32_t id = NewFormId();
+    uint id = NewFormId();
     // this->callback = callback;
     this->callback = nullptr;
     SetCustomFormPacketCallback(id, callback);
@@ -369,9 +369,9 @@ string CustomForm::getString(const string& name) {
     return element != nullptr ? element->getString() : "";
 }
 
-int32_t CustomForm::getNumber(const string& name) { return getInt(name); }
+int CustomForm::getNumber(const string& name) { return getInt(name); }
 
-int32_t CustomForm::getInt(const string& name) {
+int CustomForm::getInt(const string& name) {
     const auto element = getElement(name);
     return element != nullptr ? element->getInt() : 0;
 }
@@ -391,29 +391,29 @@ bool CustomForm::getBool(const string& name) {
     return element != nullptr ? element->getBool() : false;
 }
 
-string CustomForm::getString(int32_t index) {
+string CustomForm::getString(int index) {
     const auto element = getElement(index);
     return element != nullptr ? element->getString() : "";
 }
 
-int32_t CustomForm::getNumber(int32_t index) { return getInt(index); }
+int CustomForm::getNumber(int index) { return getInt(index); }
 
-int32_t CustomForm::getInt(int32_t index) {
+int CustomForm::getInt(int index) {
     const auto element = getElement(index);
     return element != nullptr ? element->getInt() : 0;
 }
 
-float CustomForm::getFloat(int32_t index) {
+float CustomForm::getFloat(int index) {
     const auto element = getElement(index);
     return element != nullptr ? element->getFloat() : 0;
 }
 
-double CustomForm::getDouble(int32_t index) {
+double CustomForm::getDouble(int index) {
     const auto element = getElement(index);
     return element != nullptr ? element->getDouble() : 0;
 }
 
-bool CustomForm::getBool(int32_t index) {
+bool CustomForm::getBool(int index) {
     const auto element = getElement(index);
     return element != nullptr ? element->getBool() : false;
 }
@@ -425,10 +425,10 @@ CustomFormElement* CustomForm::getElement(const string& name) {
     return nullptr;
 }
 
-CustomFormElement* CustomForm::getElement(int32_t index) {
+CustomFormElement* CustomForm::getElement(int index) {
     return elements.size() > index ? elements[index].second.get() : nullptr;
 }
 
-CustomFormElement::Type CustomForm::getType(int32_t index) { return elements[index].second->getType(); }
+CustomFormElement::Type CustomForm::getType(int index) { return elements[index].second->getType(); }
 
 } // namespace Form

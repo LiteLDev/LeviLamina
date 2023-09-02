@@ -1,10 +1,10 @@
 #pragma once
 
 #include "liteloader/api/event/Event.h"
+#include "liteloader/api/utils/AccessorMacro.h"
 #include "mc/Actor.hpp"
 #include "mc/BlockInstance.hpp"
 #include "mc/BlockPos.hpp"
-#include "liteloader/api/utils/AccessorMacro.h"
 
 namespace ll::event::block {
 /**
@@ -13,9 +13,9 @@ namespace ll::event::block {
 class LiquidSpreadEvent : public Event<LiquidSpreadEvent>, public Cancellable {
     LL_RO_MEMBER(BlockInstance, blockInstance, getBlockInstance);
     LL_RO_MEMBER(BlockPos, target, getTarget);
-    LL_RO_MEMBER(int32_t, dimensionId, getDimensionId);
+    LL_RO_MEMBER(int, dimensionId, getDimensionId);
 
-    LiquidSpreadEvent(BlockInstance const& blockInstance, BlockPos const& target, int32_t dimensionId = -1);
+    LiquidSpreadEvent(BlockInstance const& blockInstance, BlockPos const& target, int dimensionId = -1);
 
     LL_DELETE_COPY(LiquidSpreadEvent);
     LL_DELETE_MOVE(LiquidSpreadEvent);

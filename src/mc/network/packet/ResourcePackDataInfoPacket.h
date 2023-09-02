@@ -11,13 +11,13 @@
 
 class ResourcePackDataInfoPacket : public ::Packet {
 public:
-    std::string        mResourceName; // this+0x30
-    uint32_t       mChunkSize;    // this+0x50
-    int32_t                mNbChunks;     // this+0x54
-    uint64_t mFileSize;     // this+0x58
-    std::string        mFileHash;     // this+0x60
-    PackType           mPackType;     // this+0x80
-    bool               mIsPremium;    // this+0x81
+    std::string mResourceName; // this+0x30
+    uint        mChunkSize;    // this+0x50
+    int         mNbChunks;     // this+0x54
+    uint64      mFileSize;     // this+0x58
+    std::string mFileHash;     // this+0x60
+    PackType    mPackType;     // this+0x80
+    bool        mIsPremium;    // this+0x81
 
     // prevent constructor by default
     ResourcePackDataInfoPacket& operator=(ResourcePackDataInfoPacket const&) = delete;

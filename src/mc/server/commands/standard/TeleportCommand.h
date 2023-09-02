@@ -19,7 +19,7 @@ namespace RotationCommandUtils { class RotationData; }
 class TeleportCommand : public ::Command {
 public:
     std::function<
-        void(Actor&, Vec3, Vec3*, DimensionType, const std::optional<RotationCommandUtils::RotationData>&, int32_t)>
+        void(Actor&, Vec3, Vec3*, DimensionType, const std::optional<RotationCommandUtils::RotationData>&, int)>
         mApplyTeleport; // this+0x20
 
     class CommandSelector<Actor>       mTargets;               // this+0x60

@@ -13,12 +13,11 @@ class Level;
 
 namespace PlayerCapabilities {
 
-struct ISharedData {
-};
+struct ISharedData {};
 
 struct SharedData : public ISharedData {
 public:
-    const Level *mLevel;
+    const Level* mLevel;
 
     // prevent constructor by default
     SharedData& operator=(SharedData const&) = delete;

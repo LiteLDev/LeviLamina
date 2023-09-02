@@ -32,7 +32,13 @@ public:
     MCAPI void setSpawnSettings(struct SpawnSettings const&);
 
     // symbol: ?spawnItem@Spawner@@QEAAPEAVItemActor@@AEAVBlockSource@@AEBVItemStack@@PEAVActor@@AEBVVec3@@H@Z
-    MCAPI class ItemActor* spawnItem(class BlockSource& blockSource, class ItemStack const& item, class Actor* spawner, class Vec3 const& pos, int throwTime = 0);
+    MCAPI class ItemActor* spawnItem(
+        class BlockSource&     blockSource,
+        class ItemStack const& item,
+        class Actor*           spawner,
+        class Vec3 const&      pos,
+        int                    throwTime = 0
+    );
 
     // symbol:
     // ?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@_N44@Z

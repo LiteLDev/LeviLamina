@@ -10,7 +10,7 @@
 class SetTitlePacket : public ::Packet {
 public:
     // SetTitlePacket inner types define
-    enum class TitleType : int32_t {
+    enum class TitleType : int {
         Clear               = 0x0,
         Reset               = 0x1,
         Title               = 0x2,
@@ -25,9 +25,9 @@ public:
 public:
     TitleType   mType;             // this+0x30
     std::string mTitleText;        // this+0x38
-    int32_t         mFadeInTime;       // this+0x58
-    int32_t         mStayTime;         // this+0x5C
-    int32_t         mFadeOutTime;      // this+0x60
+    int         mFadeInTime;       // this+0x58
+    int         mStayTime;         // this+0x5C
+    int         mFadeOutTime;      // this+0x60
     std::string mXuid;             // this+0x68
     std::string mPlatformOnlineId; // this+0x88
 

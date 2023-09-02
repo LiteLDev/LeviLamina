@@ -17,8 +17,8 @@ class ResourceLocation {
 public:
     ResourceFileSystem            mFileSystem; // this+0x0
     Core::PathBuffer<std::string> mPath;       // this+0x8
-    uint64_t                      mPathHash;   // this+0x28
-    uint64_t                      mFullHash;   // this+0x30
+    uint64                        mPathHash;   // this+0x28
+    uint64                        mFullHash;   // this+0x30
 
 public:
     // NOLINTBEGIN

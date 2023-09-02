@@ -45,8 +45,7 @@ public:
         return tmp;
     }
     template <std::convertible_to<first_type> V>
-    constexpr T& operator+=(V const& b) noexcept
-    {
+    constexpr T& operator+=(V const& b) noexcept {
         unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
             static_cast<T*>(this)->template get<first_type>(iter) += static_cast<first_type>(b);
         });
@@ -55,8 +54,7 @@ public:
 
 
     template <std::convertible_to<first_type> V>
-    constexpr T& operator-=(V const& b) noexcept
-    {
+    constexpr T& operator-=(V const& b) noexcept {
         unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
             static_cast<T*>(this)->template get<first_type>(iter) -= static_cast<first_type>(b);
         });
@@ -64,18 +62,16 @@ public:
     }
 
     template <std::convertible_to<first_type> V>
-    [[nodiscard]] constexpr T operator+(V const& b) const noexcept
-    {
+    [[nodiscard]] constexpr T operator+(V const& b) const noexcept {
         T tmp  = *(static_cast<T const*>(this));
-        tmp    += static_cast<first_type>(b);
+        tmp   += static_cast<first_type>(b);
         return tmp;
     }
 
     template <std::convertible_to<first_type> V>
-    [[nodiscard]] constexpr T operator-(V const& b) const noexcept
-    {
+    [[nodiscard]] constexpr T operator-(V const& b) const noexcept {
         T tmp  = *(static_cast<T const*>(this));
-        tmp    -= static_cast<first_type>(b);
+        tmp   -= static_cast<first_type>(b);
         return tmp;
     }
 

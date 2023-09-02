@@ -7,14 +7,14 @@
 
 class ByteTag : public ::Tag {
 public:
-    uint8_t data;
+    uchar data;
 
-    ByteTag& operator=(uint8_t value) {
+    ByteTag& operator=(uchar value) {
         data = value;
         return *this;
     }
 
-    operator uint8_t() const { return data; }
+    operator uchar() const { return data; }
 
 public:
     // NOLINTBEGIN

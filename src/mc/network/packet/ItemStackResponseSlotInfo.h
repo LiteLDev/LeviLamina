@@ -6,10 +6,10 @@
 
 struct ItemStackResponseSlotInfo {
 public:
-    uint8_t                               mRequestedSlot;        // this+0x0
-    uint8_t                               mSlot;                 // this+0x1
-    uint8_t                               mAmount;               // this+0x2
-    TypedServerNetId<ItemStackNetIdTag, int32_t, 0> mItemStackNetId;       // this+0x4
+    uchar                                       mRequestedSlot;        // this+0x0
+    uchar                                       mSlot;                 // this+0x1
+    uchar                                       mAmount;               // this+0x2
+    TypedServerNetId<ItemStackNetIdTag, int, 0> mItemStackNetId;       // this+0x4
     std::string                                 mCustomName;           // this+0x8
     short                                       mDurabilityCorrection; // this+0x28
 

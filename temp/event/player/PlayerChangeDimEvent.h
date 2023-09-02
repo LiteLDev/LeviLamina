@@ -1,8 +1,8 @@
 #pragma once
 
 #include "liteloader/api/event/Event.h"
-#include "mc/Player.hpp"
 #include "liteloader/api/utils/AccessorMacro.h"
+#include "mc/Player.hpp"
 
 namespace ll::event::player {
 
@@ -12,9 +12,9 @@ namespace ll::event::player {
  */
 class PlayerChangeDimEvent : public Event<PlayerChangeDimEvent>, public Cancellable {
     LL_RO_MEMBER(Player*, player, getPlayer);
-    LL_RO_MEMBER(int32_t, toDimensionId, getToDimensionId);
+    LL_RO_MEMBER(int, toDimensionId, getToDimensionId);
 
-    explicit PlayerChangeDimEvent(Player* player, int32_t toDimensionId);
+    explicit PlayerChangeDimEvent(Player* player, int toDimensionId);
 
     LL_DELETE_COPY(PlayerChangeDimEvent);
     LL_DELETE_MOVE(PlayerChangeDimEvent);

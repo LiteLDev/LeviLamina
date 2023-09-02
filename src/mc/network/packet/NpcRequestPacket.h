@@ -11,7 +11,7 @@
 class NpcRequestPacket : public ::Packet {
 public:
     // NpcRequestPacket inner types define
-    enum class RequestType : uint8_t {
+    enum class RequestType : uchar {
         SetActions             = 0x0,
         ExecuteAction          = 0x1,
         ExecuteClosingCommands = 0x2,
@@ -25,7 +25,7 @@ public:
     ActorRuntimeID mId;          // this+0x30
     RequestType    mType;        // this+0x38
     std::string    mActions;     // this+0x40
-    uint8_t  mActionIndex; // this+0x60
+    uchar          mActionIndex; // this+0x60
     std::string    mSceneName;   // this+0x68
 
     // prevent constructor by default

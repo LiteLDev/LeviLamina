@@ -1,9 +1,9 @@
 #pragma once
 
 #include "liteloader/api/event/Event.h"
+#include "liteloader/api/utils/AccessorMacro.h"
 #include "mc/ItemStack.hpp"
 #include "mc/Player.hpp"
-#include "liteloader/api/utils/AccessorMacro.h"
 
 namespace ll::event::player {
 
@@ -14,11 +14,11 @@ namespace ll::event::player {
 class PlayerInventoryChangeEvent : public Event<PlayerInventoryChangeEvent> {
 public:
     LL_RO_MEMBER(Player*, player, getPlayer);
-    LL_RW_MEMBER(int32_t, slot, getSlot, setSlot);
+    LL_RW_MEMBER(int, slot, getSlot, setSlot);
     LL_RO_MEMBER(ItemStack*, previousItemStack, getPreviousItemStack);
     LL_RO_MEMBER(ItemStack*, newItemStack, getNewItemStack);
 
-    PlayerInventoryChangeEvent(Player* player, int32_t slot, ItemStack* oldItem, ItemStack* newItem);
+    PlayerInventoryChangeEvent(Player* player, int slot, ItemStack* oldItem, ItemStack* newItem);
 
     LL_DELETE_COPY(PlayerInventoryChangeEvent);
     LL_DELETE_MOVE(PlayerInventoryChangeEvent);

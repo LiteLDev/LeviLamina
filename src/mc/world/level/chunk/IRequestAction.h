@@ -5,7 +5,7 @@
 class IRequestAction {
 public:
     // IRequestAction inner types define
-    enum class RequestActionType : int8_t {
+    enum class RequestActionType : schar {
         FunctionAction           = 0x0,
         TestAction               = 0x1,
         StructureAnimationAction = 0x2,

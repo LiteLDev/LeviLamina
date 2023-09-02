@@ -1,8 +1,8 @@
 #pragma once
 
 #include "liteloader/api/event/Event.h"
-#include "mc/BlockInstance.hpp"
 #include "liteloader/api/utils/AccessorMacro.h"
+#include "mc/BlockInstance.hpp"
 
 namespace ll::event::block {
 /**

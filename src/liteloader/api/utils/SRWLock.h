@@ -3,11 +3,11 @@
 #include <synchapi.h>
 
 class SRWLock {
-    bool inited = false;
+    bool    inited = false;
     SRWLOCK srwlock{};
 
 public:
-    LLAPI SRWLock();
+    LLAPI      SRWLock();
     LLAPI void lock();
     LLAPI bool try_lock();
     LLAPI void unlock();
@@ -20,13 +20,8 @@ class SRWLockHolder {
     SRWLock& locker;
 
 public:
-    inline SRWLockHolder(SRWLock& lock)
-    : locker(lock) {
-        locker.lock();
-    }
-    inline ~SRWLockHolder() {
-        locker.unlock();
-    }
+    inline SRWLockHolder(SRWLock& lock) : locker(lock) { locker.lock(); }
+    inline ~SRWLockHolder() { locker.unlock(); }
 };
 
 
@@ -34,11 +29,6 @@ class SRWLockSharedHolder {
     SRWLock& locker;
 
 public:
-    inline SRWLockSharedHolder(SRWLock& lock)
-    : locker(lock) {
-        locker.lock_shared();
-    }
-    inline ~SRWLockSharedHolder() {
-        locker.unlock_shared();
-    }
+    inline SRWLockSharedHolder(SRWLock& lock) : locker(lock) { locker.lock_shared(); }
+    inline ~SRWLockSharedHolder() { locker.unlock_shared(); }
 };

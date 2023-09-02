@@ -4,7 +4,7 @@
 
 class BlockStateCommandParam {
 public:
-    enum class Type : int32_t {
+    enum class Type : int {
         Integer = 0x0,
         Float   = 0x1,
         Bool    = 0x2,

@@ -25,13 +25,13 @@ public:
     friend class ValueIteratorBase;
 
 
-    using Int         = int32_t;
-    using UInt        = uint32_t;
-    using Int64       = int64_t;
-    using UInt64      = uint64_t;
+    using Int         = int;
+    using UInt        = uint;
+    using Int64       = int64;
+    using UInt64      = uint64;
     using LargestInt  = Int64;
     using LargestUInt = UInt64;
-    using ArrayIndex  = uint32_t;
+    using ArrayIndex  = uint;
 
     using iterator       = ValueIterator;
     using const_iterator = ValueConstIterator;
@@ -40,7 +40,7 @@ public:
     // Value inner types define
     class CZString {
     public:
-        enum class DuplicationPolicy : uint32_t {
+        enum class DuplicationPolicy : uint {
             noDuplication   = 0,
             duplicate       = 1,
             duplicateOnCopy = 2,
@@ -48,7 +48,7 @@ public:
         };
         struct StringStorage {
             DuplicationPolicy policy_ : 2;
-            uint32_t          length_ : 30; // 1GB max
+            uint              length_ : 30; // 1GB max
         };
 
         char const* cstr_;
@@ -57,7 +57,7 @@ public:
             StringStorage storage_;
         };
 
-        CZString(char const* str, uint32_t length, DuplicationPolicy allocate) : cstr_(str) {
+        CZString(char const* str, uint length, DuplicationPolicy allocate) : cstr_(str) {
             storage_.policy_ = allocate;
             storage_.length_ = length & 0x3FFFFFFF;
         }
@@ -73,10 +73,10 @@ public:
         [[nodiscard]] constexpr std::strong_ordering operator<=>(CZString const& other) const {
             if (!cstr_)
                 return index_ <=> other.index_;
-            uint32_t this_len  = this->storage_.length_;
-            uint32_t other_len = other.storage_.length_;
-            uint32_t min_len   = std::min<uint32_t>(this_len, other_len);
-            int32_t      comp      = memcmp(this->cstr_, other.cstr_, min_len);
+            uint this_len  = this->storage_.length_;
+            uint other_len = other.storage_.length_;
+            uint min_len   = std::min<uint>(this_len, other_len);
+            int  comp      = memcmp(this->cstr_, other.cstr_, min_len);
 
             if (comp == 0)
                 return this_len <=> other_len;
@@ -101,8 +101,8 @@ public:
     };
 
     union ValueHolder {
-        int64_t                    int_;    // this+0x0
-        uint64_t                   uint_;   // this+0x0
+        int64                      int_;    // this+0x0
+        uint64                     uint_;   // this+0x0
         double                     real_;   // this+0x0
         bool                       bool_;   // this+0x0
         char*                      string_; // this+0x0

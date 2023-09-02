@@ -18,13 +18,13 @@ public:
 
     struct TickingQueueData {
     public:
-        int32_t mTickDelay;
+        int mTickDelay;
     };
 
     // StructureBlockPalette inner types define
     struct BlockPositionData {
     public:
-        std::unique_ptr<CompoundTag> mBlockEntityData;
+        std::unique_ptr<CompoundTag>                         mBlockEntityData;
         std::vector<StructureBlockPalette::TickingQueueData> mTickData;
 
         // prevent constructor by default
@@ -46,8 +46,8 @@ public:
     };
 
 public:
-    std::vector<std::unique_ptr<CompoundTag>> mStructurePaletteIdToSerializationId;
-    std::unordered_map<unsigned long,StructureBlockPalette::BlockPositionData> mBlockPositionData;
+    std::vector<std::unique_ptr<CompoundTag>>                           mStructurePaletteIdToSerializationId;
+    std::unordered_map<ulong, StructureBlockPalette::BlockPositionData> mBlockPositionData;
 
     // prevent constructor by default
     StructureBlockPalette& operator=(StructureBlockPalette const&) = delete;
@@ -75,7 +75,8 @@ public:
 
     // symbol:
     // ?getBlock@StructureBlockPalette@@QEBAAEBVBlock@@AEBVBlockPalette@@_KV?$NonOwnerPointer@VIUnknownBlockTypeRegistry@@@Bedrock@@@Z
-    MCAPI class Block const& getBlock(class BlockPalette const&, uint64, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>) const;
+    MCAPI class Block const&
+    getBlock(class BlockPalette const&, uint64, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>) const;
 
     // symbol: ?getBlockPositionData@StructureBlockPalette@@QEBAPEBUBlockPositionData@1@_K@Z
     MCAPI struct StructureBlockPalette::BlockPositionData const* getBlockPositionData(uint64) const;

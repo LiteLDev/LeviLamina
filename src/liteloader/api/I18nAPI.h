@@ -50,7 +50,7 @@ public:
     using SubLangData = std::unordered_map<std::string, std::string>;
     using LangData    = std::map<std::string, SubLangData>;
 
-    enum class Type : int8_t {
+    enum class Type : schar {
         None,
         SingleFile,
         MultiFile,
@@ -187,7 +187,7 @@ template <bool B, class T = void>
 using enable_if_t = typename std::enable_if<B, T>::type;
 
 ///////////////// tr Impl /////////////////
-template <typename S, typename... Args, Translation::enable_if_t<(fmt::v9::detail::is_string<S>::value), int32_t> = 0>
+template <typename S, typename... Args, Translation::enable_if_t<(fmt::v9::detail::is_string<S>::value), int> = 0>
 inline std::string trlImpl(HMODULE hPlugin, const std::string& localeName, const S& formatStr, Args&&... args) {
     std::string realFormatStr = formatStr;
     if (PluginOwnData::hasImpl(hPlugin, I18nBase::POD_KEY)) {
@@ -226,7 +226,7 @@ inline std::string trlImpl(HMODULE hPlugin, const std::string& localeName, const
         return fmt::format(fmt::runtime(realFormatStr), std::forward<Args>(args)...);
     }
 }
-template <typename S, typename... Args, Translation::enable_if_t<(fmt::v9::detail::is_string<S>::value), int32_t> = 0>
+template <typename S, typename... Args, Translation::enable_if_t<(fmt::v9::detail::is_string<S>::value), int> = 0>
 inline std::string trImpl(HMODULE hPlugin, const S& formatStr, Args&&... args) {
     return trlImpl(hPlugin, "", formatStr, std::forward<Args>(args)...);
 }
@@ -361,7 +361,7 @@ inline I18nBase* getI18N(HMODULE hPlugin = nullptr) {
  * tr(std::string("There are {0} days before {1} to come back"), 3, "alex");
  * @endcode
  */
-template <typename S, typename... Args, Translation::enable_if_t<(fmt::v9::detail::is_string<S>::value), int32_t> = 0>
+template <typename S, typename... Args, Translation::enable_if_t<(fmt::v9::detail::is_string<S>::value), int> = 0>
 inline std::string tr(const S& formatStr, Args&&... args) {
     return Translation::trImpl(GetCurrentModule(), formatStr, std::forward<Args>(args)...);
 }

@@ -7,14 +7,14 @@
 
 class Int64Tag : public ::Tag {
 public:
-    int64_t data;
+    int64 data;
 
-    Int64Tag& operator=(int64_t value) {
+    Int64Tag& operator=(int64 value) {
         data = value;
         return *this;
     }
 
-    operator int64_t() const { return data; }
+    operator int64() const { return data; }
 
 public:
     // NOLINTBEGIN

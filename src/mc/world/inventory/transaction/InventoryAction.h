@@ -11,7 +11,7 @@ public:
     InventoryAction() = delete;
 
     InventorySource            mSource;             // this+0x0
-    uint32_t               mSlot;               // this+0xC
+    uint                       mSlot;               // this+0xC
     NetworkItemStackDescriptor mFromItemDescriptor; // this+0x10
     NetworkItemStackDescriptor mToItemDescriptor;   // this+0x70
     ItemStack                  mFromItem;           // this+0xD0

@@ -6,11 +6,11 @@
 class OwnerStorageEntity {
 public:
     // OwnerStorageEntity inner types define
-    enum class EmptyInit : int32_t {
+    enum class EmptyInit : int {
         NoValue = 0x0,
     };
 
-    enum class VariadicInit : int32_t {
+    enum class VariadicInit : int {
         NonAmbiguous = 0x0,
     };
 

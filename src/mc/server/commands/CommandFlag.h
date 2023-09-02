@@ -11,7 +11,7 @@
 #include "mc/server/commands/flags/CommandVisibilityFlag.h"
 
 
-enum class CommandFlagValue : uint16_t {
+enum class CommandFlagValue : ushort {
     None                         = 0,
     UsageTest                    = 1 << 0,
     HiddenFromCommandBlockOrigin = 1 << 1,
@@ -34,7 +34,7 @@ public:
     constexpr bool operator==(CommandFlag const& rhs) const noexcept { return value == rhs.value; }
     constexpr bool operator!=(CommandFlag const& rhs) const noexcept { return value != rhs.value; }
     CommandFlag&   operator|=(CommandFlag const& rhs) {
-        value = (CommandFlagValue)((uint16_t)rhs.value | (uint16_t)value);
+        value = (CommandFlagValue)((ushort)rhs.value | (ushort)value);
         return *this;
     }
 };

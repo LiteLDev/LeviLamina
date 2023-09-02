@@ -17,7 +17,7 @@ class UpdateEquipPacket : public ::Packet {
 public:
     ContainerID   mContainerId;    // this+0x30
     ContainerType mType;           // this+0x31
-    int32_t           mSize;           // this+0x34
+    int           mSize;           // this+0x34
     ActorUniqueID mEntityUniqueID; // this+0x38
     CompoundTag   mData;           // this+0x40
 

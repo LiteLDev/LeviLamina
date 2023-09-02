@@ -16,7 +16,7 @@ public:
     DimensionType                                  mDimensionType;      // this+0x30
     std::vector<SubChunkPos>                       mSubChunkPos;        // this+0x38
     std::vector<SubChunkPacket::SubChunkPosOffset> mSubChunkPosOffsets; // this+0x50
-    uint32_t                                       mRequestCount;       // this+0x68
+    uint                                           mRequestCount;       // this+0x68
     SubChunkPos                                    mCenterPos;          // this+0x6C
 
     bool mArePositionsAbsolute; // this+0x78

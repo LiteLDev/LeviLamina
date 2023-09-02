@@ -66,6 +66,7 @@ public:
 
     using Nodes  = std::stack<Value*>;
     using Errors = std::deque<ErrorInfo>;
+
 public:
     Nodes          nodes_;
     Errors         errors_;

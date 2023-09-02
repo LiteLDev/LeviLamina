@@ -9,7 +9,7 @@
 
 class RequestNetworkSettingsPacket : public ::Packet {
 public:
-    int32_t mClientNetworkVersion; // this+0x30
+    int mClientNetworkVersion; // this+0x30
 
     // prevent constructor by default
     RequestNetworkSettingsPacket& operator=(RequestNetworkSettingsPacket const&) = delete;

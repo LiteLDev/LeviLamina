@@ -19,19 +19,19 @@ namespace mce { class Color; }
 
 class Block {
 public:
-    using BlockStateValueType = std::variant<int32_t, float, bool, std::string>;
+    using BlockStateValueType = std::variant<int, float, bool, std::string>;
     using BlockStatesType     = std::unordered_map<std::string, BlockStateValueType>;
 
-    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(uint32_t runtimeID);
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(uint runtimeID);
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string const& name);
-    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string const& name, uint16_t legacyData);
-    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(uint32_t legacyBlockID, uint16_t legacyData);
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string const& name, ushort legacyData);
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(uint legacyBlockID, ushort legacyData);
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string const& name, BlockStatesType const& states);
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(class CompoundTag const& nbt);
 
     [[nodiscard]] inline std::string const& getTypeName() const { return getName().getString(); }
 
-    [[nodiscard]] inline  short getBlockItemId() const { return getLegacyBlock().getBlockItemId(); }
+    [[nodiscard]] inline short getBlockItemId() const { return getLegacyBlock().getBlockItemId(); }
 
     // prevent constructor by default
     Block& operator=(Block const&) = delete;

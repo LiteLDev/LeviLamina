@@ -5,7 +5,7 @@
 class ActorBlockSyncMessage {
 public:
     // ActorBlockSyncMessage inner types define
-    enum class MessageId : int32_t {
+    enum class MessageId : int {
         CREATE  = 0x1,
         DESTROY = 0x2,
     };

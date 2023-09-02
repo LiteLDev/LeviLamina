@@ -13,7 +13,7 @@
 class InventorySlotPacket : public ::Packet {
 public:
     ContainerID                mInventoryId; // this+0x30
-    uint32_t               mSlot;        // this+0x34
+    uint                       mSlot;        // this+0x34
     NetworkItemStackDescriptor mItem;        // this+0x38
 
     // prevent constructor by default

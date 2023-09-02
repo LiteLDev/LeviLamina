@@ -6,7 +6,7 @@
 // a simple lock which is much faster than std::mutex
 
 class CsLock {
-    bool inited = false;
+    bool             inited = false;
     CRITICAL_SECTION cslock;
 
 public:
@@ -21,11 +21,6 @@ class CsLockHolder {
     CsLock& locker;
 
 public:
-    LLAPI CsLockHolder(CsLock& lock)
-    : locker(lock) {
-        locker.lock();
-    }
-    LLAPI ~CsLockHolder() {
-        locker.unlock();
-    }
+    LLAPI CsLockHolder(CsLock& lock) : locker(lock) { locker.lock(); }
+    LLAPI ~CsLockHolder() { locker.unlock(); }
 };

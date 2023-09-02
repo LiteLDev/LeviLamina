@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ActorLocation : int32_t {
+enum class ActorLocation : int {
     Feet              = 0x0,
     Body              = 0x1,
     WeaponAttachPoint = 0x2,

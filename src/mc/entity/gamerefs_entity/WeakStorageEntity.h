@@ -1,18 +1,18 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/EntityRegistryRefTraits.h"
 #include "mc/common/wrapper/WeakRefT.h"
+#include "mc/entity/EntityRegistryRefTraits.h"
 #include "mc/entity/gamerefs_entity/StackResultStorageEntity.h"
 
 class WeakStorageEntity {
 public:
     // WeakStorageEntity inner types define
-    enum class EmptyInit : int32_t {
+    enum class EmptyInit : int {
         NoValue = 0,
     };
 
-    enum class VariadicInit : int32_t {
+    enum class VariadicInit : int {
         NonAmbiguous = 0,
     };
 

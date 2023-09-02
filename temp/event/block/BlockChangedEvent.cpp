@@ -1,5 +1,5 @@
-#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/event/block/BlockChangedEvent.h"
+#include "liteloader/api/event/EventManager.h"
 
 #include "mc/Block.hpp"
 #include "mc/BlockSource.hpp"
@@ -26,16 +26,16 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     "?_blockChanged@BlockSource@@IEAAXAEBVBlockPos@@IAEBVBlock@@1HPEBUActorBlockSyncMessage@@PEAVActor@@@Z",
     void,
     BlockPos* blockPos,
-    int32_t       a3,
+    int       a3,
     Block*    afterBlock,
     Block*    beforeBlock,
-    int32_t       a6,
+    int       a6,
     void*     a7,
     Actor*    actor
 ) {
     using EventManager = EventManager<BlockChangedEvent>;
 
-    int32_t  dimID                 = this->getDimensionId();
+    int  dimID                 = this->getDimensionId();
     auto previousBlockInstance = BlockInstance::createBlockInstance(beforeBlock, *blockPos, dimID);
     auto newBlockInstance      = BlockInstance::createBlockInstance(afterBlock, *blockPos, dimID);
 

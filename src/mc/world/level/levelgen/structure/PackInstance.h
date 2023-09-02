@@ -22,7 +22,7 @@ public:
     class PackSettings*                                               mPackSettings; // this+0x1B0
     class gsl::not_null<Bedrock::NonOwnerPointer<class ResourcePack>> mPack;         // this+0x1B8
     PackStats                                                         mStats;        // this+0x1C8
-    int32_t                                                               mSubpackIndex; // this+0x1D8
+    int                                                               mSubpackIndex; // this+0x1D8
 
 public:
     // NOLINTBEGIN

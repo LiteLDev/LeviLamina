@@ -18,7 +18,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(MoveViewCrashFix, Player, HookPriority::Normal, "?mo
     movingViewPlayer = nullptr;
 }
 
-inline bool Interval(int32_t a1) {
+inline bool Interval(int a1) {
     if (a1 < 0x5ffffff && a1 > -0x5ffffff)
         return true;
     return false;
@@ -28,8 +28,7 @@ template <typename T>
 inline bool validPosition(T const& pos) {
     if (isnan(static_cast<float>(pos.x)) || isnan(static_cast<float>(pos.z)))
         return false;
-    return Interval(static_cast<int32_t>(pos.x)) && Interval(static_cast<int32_t>(pos.y)) &&
-           Interval(static_cast<int32_t>(pos.z));
+    return Interval(static_cast<int>(pos.x)) && Interval(static_cast<int>(pos.y)) && Interval(static_cast<int>(pos.z));
 }
 
 inline void fixPlayerPosition(Player* pl, bool kick = true) {
@@ -64,12 +63,12 @@ LL_AUTO_INSTANCE_HOOK(
     HookPriority::Normal,
     "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@@V?$function@$$A6AXV?$buffer_span_mut@"
     "V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z",
-    int64_t,
+    int64,
     BlockPos a1,
-    int32_t  a2,
-    uint8_t  a3,
-    int32_t  a4,
-    int64_t  a5
+    int      a2,
+    uchar    a3,
+    int      a4,
+    int64    a5
 ) {
     if (validPosition(a1))
         return origin(a1, a2, a3, a4, a5);

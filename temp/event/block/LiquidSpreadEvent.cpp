@@ -1,5 +1,5 @@
-#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/event/block/LiquidSpreadEvent.h"
+#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/memory/Hook.h"
 
 #include "mc/BlockSource.hpp"
@@ -11,12 +11,12 @@
 
 namespace ll::event::block {
 
-LiquidSpreadEvent::LiquidSpreadEvent(BlockInstance const& blockInstance, BlockPos const& target, int32_t dimensionId)
+LiquidSpreadEvent::LiquidSpreadEvent(BlockInstance const& blockInstance, BlockPos const& target, int dimensionId)
 : blockInstance(blockInstance), target(target), dimensionId(dimensionId) {}
 
 LL_GETTER_IMPL(LiquidSpreadEvent, BlockInstance, blockInstance, getBlockInstance)
 LL_GETTER_IMPL(LiquidSpreadEvent, BlockPos, target, getTarget)
-LL_GETTER_IMPL(LiquidSpreadEvent, int32_t, dimensionId, getDimensionId)
+LL_GETTER_IMPL(LiquidSpreadEvent, int, dimensionId, getDimensionId)
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     LiquidSpreadEventHook,
@@ -27,7 +27,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     class BlockSource&    blockSource,
     class BlockPos const& to,
     class BlockPos const& from,
-    uint8_t         unk
+    uchar                 unk
 ) {
     using EventManager = ll::event::EventManager<LiquidSpreadEvent>;
 

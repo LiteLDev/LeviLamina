@@ -10,8 +10,8 @@
 
 class LecternUpdatePacket : public ::Packet {
 public:
-    int32_t                  mPage;           // this+0x30
-    int32_t                  mTotalPages;     // this+0x34
+    int                  mPage;           // this+0x30
+    int                  mTotalPages;     // this+0x34
     bool                 mShouldDropBook; // this+0x38
     NetworkBlockPosition mPos;            // this+0x3C
 

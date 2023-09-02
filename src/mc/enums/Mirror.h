@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class Mirror : uint8_t {
+enum class Mirror : uchar {
     None = 0x0,
     X    = 0x1,
     Z    = 0x2,

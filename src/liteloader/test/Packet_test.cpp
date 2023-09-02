@@ -399,13 +399,8 @@
     Func(GameTestRequestPacket);                                                                                       \
     Func(GameTestResultsPacket);                                                                                       \
     Func(UpdateClientInputLocksPacket);                                                                                \
-    Func(CameraPresetsPacket)                                                                                          \
-    Func(UnlockedRecipesPacket)                                                                                        \
-    Func(CameraInstructionPacket)                                                                                      \
-    Func(CompressedBiomeDefinitionListPacket)                                                                          \
-    Func(TrimDataPacket)                                                                                               \
-    Func(OpenSignPacket)                                                                                               \
-    Func(AgentAnimationPacket)                                                                                         \
+    Func(CameraPresetsPacket) Func(UnlockedRecipesPacket) Func(CameraInstructionPacket)                                \
+        Func(CompressedBiomeDefinitionListPacket) Func(TrimDataPacket) Func(OpenSignPacket) Func(AgentAnimationPacket)
 
 
 #define DeclearClass(packet) class packet;
@@ -449,7 +444,7 @@ void __initPacketSize() {
         PACKET_SIZE<type> = size - 16;                                                                                 \
         continue;                                                                                                      \
     }
-    int32_t packetId = -1;
+    int packetId = -1;
     while (packetId < 500) {
         auto packet = MinecraftPackets::createPacket(++packetId);
         if (packet) {
@@ -473,7 +468,7 @@ std::string getClassName(Packet* packet) {
 }
 
 inline void forEachPacket(std::function<void(Packet const& packet, std::string className, size_t size)> callback) {
-    int32_t packetId = 0;
+    int packetId = 0;
     while (packetId < 500) {
         auto packet = MinecraftPackets::createPacket(packetId);
         if (packet) {
@@ -604,7 +599,7 @@ void __autoFill(std::string const& className) {
     }
 
     startOffset    += std::string("// Add Member There").size() + 1;
-    auto endOffset = content.find("#undef", startOffset);
+    auto endOffset  = content.find("#undef", startOffset);
 
     if (sizeof(T) != 48) {
         replaceString(content, "filler[", "]", std::to_string(getPacketSize<T>() - 48));

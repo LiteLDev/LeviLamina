@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class PackErrorType : int32_t {
+enum class PackErrorType : int {
     None                = 0x0,
     IncompletePackError = 0x1,
     PackParseError      = 0x2,

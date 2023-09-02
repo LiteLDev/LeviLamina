@@ -4,7 +4,7 @@
 
 class LevelSeed64 {
 public:
-    uint64_t mValue;
+    uint64 mValue;
 
     // prevent constructor by default
     LevelSeed64& operator=(LevelSeed64 const&) = delete;

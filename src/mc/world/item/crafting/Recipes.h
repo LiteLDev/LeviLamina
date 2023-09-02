@@ -28,10 +28,10 @@ public:
     // Recipes inner types define
     struct FurnaceRecipeKey {
     public:
-        int32_t          mID;
+        int          mID;
         HashedString mTag;
 
-        constexpr FurnaceRecipeKey(int32_t aux, HashedString tag) : mID(aux), mTag(std::move(tag)) {}
+        constexpr FurnaceRecipeKey(int aux, HashedString tag) : mID(aux), mTag(std::move(tag)) {}
 
     public:
         // NOLINTBEGIN
@@ -43,8 +43,8 @@ public:
 
     struct NormalizedRectangularRecipeResults {
     public:
-        int32_t         mWidth;
-        int32_t         mHeight;
+        int         mWidth;
+        int         mHeight;
         std::string mNormalizedResult;
         std::string mWarning;
 
@@ -68,7 +68,7 @@ public:
         RecipeIngredient   mIngredient;
         char               mC;
 
-        constexpr Type(std::string const& name, char label, int32_t aux, uint16_t count)
+        constexpr Type(std::string const& name, char label, int aux, ushort count)
         : mIngredient(name, aux, count), mC(label) {
             mItem  = mIngredient.getItem();
             mBlock = mIngredient.getBlock();

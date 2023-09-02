@@ -1,10 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/resource/PackIdVersion.h"
+#include "mc/deps/core/resource/ResourceLocation.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/resources/PackError.h"
-#include "mc/deps/core/resource/ResourceLocation.h"
-#include "mc/deps/core/resource/PackIdVersion.h"
 
 // auto generated inclusion list
 #include "mc/resources/PackType.h"

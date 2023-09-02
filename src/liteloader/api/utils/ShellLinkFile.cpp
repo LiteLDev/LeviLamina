@@ -8,7 +8,7 @@
 
 #pragma comment(lib, "Ole32.lib")
 
-constexpr int32_t MAX_PATH_LENGTH = 8192;
+constexpr int MAX_PATH_LENGTH = 8192;
 
 void ShellLinkFile::_Init() {
     auto res = ::CoInitialize(nullptr);
@@ -222,7 +222,7 @@ std::wstring ShellLinkFile::getIconLocationW() {
         throw std::exception("ShellLinkFile::getIconLocationW: shellLink is null");
     }
     auto buffer = new wchar_t[MAX_PATH_LENGTH];
-    int32_t  _;
+    int  _;
     auto res = shellLink->GetIconLocation(buffer, MAX_PATH_LENGTH, &_);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getIconLocationW: Failed to get the icon location");
@@ -247,11 +247,11 @@ ShellLinkFile& ShellLinkFile::setIconLocation(const std::wstring& iconLocation) 
     return *this;
 }
 
-int32_t ShellLinkFile::getShowCmd() {
+int ShellLinkFile::getShowCmd() {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::getShowCmd: shellLink is null");
     }
-    int32_t  showCmd = 0;
+    int  showCmd = 0;
     auto res     = shellLink->GetShowCmd(&showCmd);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getShowCmd: Failed to get the show command");
@@ -259,7 +259,7 @@ int32_t ShellLinkFile::getShowCmd() {
     return showCmd;
 }
 
-ShellLinkFile& ShellLinkFile::setShowCmd(int32_t showCmd) {
+ShellLinkFile& ShellLinkFile::setShowCmd(int showCmd) {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::setShowCmd: shellLink is null");
     }

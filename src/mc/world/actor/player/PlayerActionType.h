@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class PlayerActionType : int32_t {
+enum class PlayerActionType : int {
     Unknown                          = -1,
     StartDestroyBlock                = 0x0,
     AbortDestroyBlock                = 0x1,

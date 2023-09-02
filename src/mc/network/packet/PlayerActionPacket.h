@@ -15,7 +15,7 @@ class PlayerActionPacket : public ::Packet {
 public:
     NetworkBlockPosition mPos;       // this+0x30
     NetworkBlockPosition mResultPos; // this+0x3C
-    int32_t                  mFace;      // this+0x48
+    int                  mFace;      // this+0x48
     PlayerActionType     mAction;    // this+0x4C
     ActorRuntimeID       mRuntimeId; // this+0x50
     bool                 unk88;      // this+0x58

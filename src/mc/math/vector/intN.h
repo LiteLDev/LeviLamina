@@ -10,11 +10,11 @@
 //     intN operator=(const intN&) = delete;
 // };
 template <typename BaseType>
-VEC2_IMPL_(intN2, BaseType, int32_t, IntN);
+VEC2_IMPL_(intN2, BaseType, int, IntN);
 template <typename BaseType>
-VEC3_IMPL_(intN3, BaseType, int32_t, IntN);
+VEC3_IMPL_(intN3, BaseType, int, IntN);
 template <typename BaseType>
-VEC4_IMPL_(intN4, BaseType, int32_t, IntN);
+VEC4_IMPL_(intN4, BaseType, int, IntN);
 
 // using int2 = intN2<int2>;
 // using int3 = intN3<int3>;

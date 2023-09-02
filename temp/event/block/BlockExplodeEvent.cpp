@@ -1,11 +1,11 @@
-#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/event/block/BlockExplodeEvent.h"
+#include "liteloader/api/event/EventManager.h"
 
+#include "liteloader/api/memory/Hook.h"
 #include "mc/BlockSource.hpp"
 #include "mc/Level.hpp"
 #include "mc/Types.hpp"
 #include "mc/Vec3.hpp"
-#include "liteloader/api/memory/Hook.h"
 
 #include "liteloader/api/event/impl/EventImpl.inl"
 #include "liteloader/api/event/impl/EventManagerImpl.inl"

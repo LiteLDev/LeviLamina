@@ -1,5 +1,5 @@
-#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/event/block/BlockBreakEvent.h"
+#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/memory/Hook.h"
 
 #include "mc/Block.hpp"
@@ -28,8 +28,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     HookPriority::Normal,
     "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z",
     bool,
-    BlockPos        a3,
-    uint8_t a4
+    BlockPos a3,
+    uchar    a4
 ) {
     using ll::memory::dAccess;
     Player* player = this->getPlayer();

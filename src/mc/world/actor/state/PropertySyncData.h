@@ -5,13 +5,13 @@
 struct PropertySyncData {
 public:
     struct PropertySyncIntEntry {
-        uint32_t mPropertyIndex;
-        int32_t          mData;
+        uint mPropertyIndex;
+        int  mData;
     };
 
     struct PropertySyncFloatEntry {
-        uint32_t mPropertyIndex;
-        float        mData;
+        uint  mPropertyIndex;
+        float mData;
     };
 
     std::vector<PropertySyncData::PropertySyncIntEntry>   mIntEntries;

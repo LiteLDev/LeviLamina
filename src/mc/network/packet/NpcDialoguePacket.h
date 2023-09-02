@@ -11,7 +11,7 @@
 class NpcDialoguePacket : public ::Packet {
 public:
     // NpcDialoguePacket inner types define
-    enum class NpcDialogueActionType : int32_t {
+    enum class NpcDialogueActionType : int {
         Open  = 0x0,
         Close = 0x1,
     };

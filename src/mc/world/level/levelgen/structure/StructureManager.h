@@ -24,7 +24,7 @@ public:
                                                                               mLegacyStructureRepository; // this+0x20
     std::unordered_map<std::string, std::unique_ptr<class StructureTemplate>> mStructureRepository;       // this+0x60
     std::vector<std::unique_ptr<class StructureAnimationData>>                mStructurePlacementQueue;   // this+0xA0
-    uint32_t                                                  mStructurePlacementSaveCounter;             // this+0xB8
+    uint                                                      mStructurePlacementSaveCounter;             // this+0xB8
     Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry> mUnknownBlockRegistry;                      // this+0xC0
     const Bedrock::NonOwnerPointer<class ResourcePackManager> mPackManager;
 

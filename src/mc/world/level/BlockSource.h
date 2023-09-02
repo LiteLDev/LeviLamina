@@ -35,11 +35,8 @@ public:
 
     LLNDAPI optional_ref<Container> tryGetContainer(BlockPos const& pos) const;
 
-    LLAPI optional_ref<Actor> cloneActor(
-        Actor const&                                     origin,
-        Vec3 const&                                      pos,
-        std::optional<DimensionType> dimID = std::nullopt
-    ) const;
+    LLAPI optional_ref<Actor>
+          cloneActor(Actor const& origin, Vec3 const& pos, std::optional<DimensionType> dimID = std::nullopt) const;
 
     LLAPI bool destroyBlock(
         BlockPos const&         pos,
@@ -266,7 +263,7 @@ public:
         class Vec3 const&                                                              endPos,
         bool                                                                           checkAgainstLiquid,
         bool                                                                           solidOnly,
-        int32_t                                                                        maxManhattanDis,
+        int                                                                            maxManhattanDis,
         bool                                                                           ignoreBorderBlock,
         bool                                                                           fullOnly,
         class Player*                                                                  player,

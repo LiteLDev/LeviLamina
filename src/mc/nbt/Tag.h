@@ -9,7 +9,7 @@ class PrintStream;
 class Tag {
 public:
     // Tag inner types define
-    enum class Type : uint8_t {
+    enum class Type : uchar {
         End       = 0x0,
         Byte      = 0x1,
         Short     = 0x2,
@@ -27,16 +27,16 @@ public:
 
     template <typename T>
     T const* as_ptr() const {
-       return dynamic_cast<T const*>(this);
+        return dynamic_cast<T const*>(this);
     }
     template <typename T>
     T* as_ptr() {
-       return dynamic_cast<T*>(this);
+        return dynamic_cast<T*>(this);
     }
     template <typename T>
     T const& as() const {
         auto* res = dynamic_cast<T const*>(this);
-        if(res){
+        if (res) {
             return *res;
         }
         throw std::runtime_error("Invalid Tag As");
@@ -44,7 +44,7 @@ public:
     template <typename T>
     T& as() {
         auto* res = dynamic_cast<T*>(this);
-        if(res){
+        if (res) {
             return *res;
         }
         throw std::runtime_error("Invalid Tag As");

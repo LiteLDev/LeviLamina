@@ -10,7 +10,7 @@ struct ScorePacketInfo {
 public:
     ScoreboardId             mScoreboardId;   // this+0x0
     std::string              mObjectiveName;  // this+0x10
-    int32_t                      mScoreValue;     // this+0x30
+    int                      mScoreValue;     // this+0x30
     IdentityDefinition::Type mIdentityType;   // this+0x34
     PlayerScoreboardId       mPlayerId;       // this+0x38
     ActorUniqueID            mEntityId;       // this+0x40

@@ -1,5 +1,5 @@
-#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/event/player/PlayerPickupItemEvent.h"
+#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/memory/Hook.h"
 
 #include "mc/ItemActor.hpp"
@@ -27,8 +27,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     "?take@Player@@QEAA_NAEAVActor@@HH@Z",
     bool,
     Actor* actor,
-    int32_t    a2,
-    int32_t    a3
+    int    a2,
+    int    a3
 ) {
     using ll::memory::dAccess;
 

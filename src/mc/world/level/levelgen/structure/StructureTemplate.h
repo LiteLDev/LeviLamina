@@ -19,7 +19,7 @@ class StructureTemplate {
 public:
     std::string                                         mName;                  // this+0x0
     StructureTemplateData                               mStructureTemplateData; // this+0x20
-    uint8_t                                             mStructureVersion;      // this+0xD0
+    uchar                                               mStructureVersion;      // this+0xD0
     Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry> mUnknownBlockRegistry;
 
     inline bool load(class CompoundTag const& nbt) { return mStructureTemplateData.load(nbt); }
@@ -138,8 +138,8 @@ public:
     // ?_placeNextBlockSegmentInWorld@StructureTemplate@@AEBAXAEAVBlockSource@@_K1AEBVStructureSettings@@AEAVDataLoadHelper@@AEBVStructureBlockPalette@@AEBVBlockPalette@@VBlockPos@@AEBV7@AEBVVec3@@W4Rotation@@W4Mirror@@MIPEAVStructureTelemetryServerData@@_N_N@Z
     MCAPI void _placeNextBlockSegmentInWorld(
         class BlockSource&,
-        uint64_t startPlacement,
-        uint64_t endPlacement,
+        uint64 startPlacement,
+        uint64 endPlacement,
         class StructureSettings const&,
         class DataLoadHelper&,
         class StructureBlockPalette const&,
@@ -149,8 +149,8 @@ public:
         class Vec3 const&,
         ::Rotation,
         ::Mirror,
-        float    integrityValue,
-        uint integritySeed,
+        float integrityValue,
+        uint  integritySeed,
         class StructureTelemetryServerData*,
         bool updateItemData,
         bool ignoreJigsawBlocks

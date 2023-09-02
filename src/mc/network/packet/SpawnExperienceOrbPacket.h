@@ -11,7 +11,7 @@
 class SpawnExperienceOrbPacket : public ::Packet {
 public:
     Vec3 mPos;   // this+0x30
-    int32_t  mCount; // this+0x3C
+    int  mCount; // this+0x3C
 
     // prevent constructor by default
     SpawnExperienceOrbPacket& operator=(SpawnExperienceOrbPacket const&) = delete;

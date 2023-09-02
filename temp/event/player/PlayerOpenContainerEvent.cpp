@@ -1,5 +1,5 @@
-#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/event/player/PlayerOpenContainerEvent.h"
+#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/memory/Hook.h"
 
 #include "mc/Level.hpp"
@@ -24,7 +24,7 @@ LL_AUTO_INSTANCE_HOOK(
     PlayerOpenContainerEventHook,
     HookPriority::Normal,
     "?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z",
-    int64_t,
+    int64,
     void* a2
 ) {
     using ll::memory::dAccess;

@@ -15,7 +15,7 @@ class RequestPermissionsPacket : public ::Packet {
 public:
     ActorUniqueID         mTargetPlayerId;        // this+0x30
     PlayerPermissionLevel mPlayerPermissions;     // this+0x38
-    uint16_t        mCustomPermissionFlags; // this+0x3A
+    ushort                mCustomPermissionFlags; // this+0x3A
 
     // prevent constructor by default
     RequestPermissionsPacket& operator=(RequestPermissionsPacket const&) = delete;

@@ -1,12 +1,12 @@
 #pragma once
 
 #include "liteloader/api/event/Event.h"
+#include "liteloader/api/utils/AccessorMacro.h"
 #include "mc/Actor.hpp"
 #include "mc/BlockInstance.hpp"
 #include "mc/Container.hpp"
 #include "mc/ItemStack.hpp"
 #include "mc/Player.hpp"
-#include "liteloader/api/utils/AccessorMacro.h"
 
 namespace ll::event::block {
 /**
@@ -17,7 +17,7 @@ class ContainerChangeEvent : public Event<ContainerChangeEvent> {
     LL_RO_MEMBER(Actor*, actor, getActor);
     LL_RO_MEMBER(BlockInstance, blockInstance, getBlockInstance);
     LL_RO_MEMBER(Container*, container, getContainer);
-    LL_RO_MEMBER(int32_t, slot, getSlot);
+    LL_RO_MEMBER(int, slot, getSlot);
     LL_RO_MEMBER(ItemStack*, previousItemStack, getPreviousItemStack);
     LL_RO_MEMBER(ItemStack*, newItemStack, getNewItemStack);
 
@@ -28,7 +28,7 @@ class ContainerChangeEvent : public Event<ContainerChangeEvent> {
         Container*           container,
         ItemStack*           previousItemStack,
         ItemStack*           newItemStack,
-        int32_t                  slot = -1
+        int                  slot = -1
     );
 
     LL_DELETE_COPY(ContainerChangeEvent);

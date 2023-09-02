@@ -12,7 +12,7 @@ namespace Json { class Value; }
 
 class ItemDescriptorCount : public ::ItemDescriptor {
 public:
-    uint16_t mStackSize; // this+0x10
+    ushort mStackSize; // this+0x10
 
 public:
     // NOLINTBEGIN

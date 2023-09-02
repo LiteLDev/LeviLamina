@@ -1,50 +1,50 @@
 #include "liteloader/api/db/ConnParams.h"
-#include "liteloader/api/utils/StringHelper.h"
 #include "liteloader/api/LoggerAPI.h"
+#include "liteloader/api/utils/StringHelper.h"
 
 namespace DB {
 
 #pragma region URL_Parser
 
 struct URL {
-    std::string scheme;
-    std::string user;
-    std::string password;
-    std::string host;
-    uint16_t port = 0;
-    std::string path;
+    std::string                        scheme;
+    std::string                        user;
+    std::string                        password;
+    std::string                        host;
+    ushort                             port = 0;
+    std::string                        path;
     std::map<std::string, std::string> query;
-    std::string fragment;
+    std::string                        fragment;
 };
 
 URL ParseURL(const std::string& url) {
-    URL result;
+    URL         result;
     std::string cur = url;
 
     size_t pos = cur.find("://");
     if (pos != std::string::npos) {
         result.scheme = cur.substr(0, pos);
-        cur = cur.substr(pos + 3);
+        cur           = cur.substr(pos + 3);
     }
-    pos = cur.find('@');
+    pos       = cur.find('@');
     auto pos0 = pos;
     if (pos != std::string::npos) {
         std::string userInfo = cur.substr(0, pos);
-        pos = userInfo.find(':');
+        pos                  = userInfo.find(':');
         if (pos != std::string::npos) {
-            result.user = userInfo.substr(0, pos);
+            result.user     = userInfo.substr(0, pos);
             result.password = userInfo.substr(pos + 1);
         } else
             result.user = userInfo;
         cur = cur.substr(pos0 + 1);
     }
-    pos = cur.find_first_of("/?#");
-    auto pos1 = pos;
+    pos                 = cur.find_first_of("/?#");
+    auto        pos1    = pos;
     std::string address = cur.substr(0, pos);
-    pos = address.find(':');
+    pos                 = address.find(':');
     if (pos != std::string::npos) {
         result.host = address.substr(0, pos);
-        result.port = static_cast<uint16_t>(std::stoi(address.substr(pos + 1)));
+        result.port = static_cast<ushort>(std::stoi(address.substr(pos + 1)));
     } else
         result.host = address;
     if (pos1 == std::string::npos)
@@ -52,15 +52,15 @@ URL ParseURL(const std::string& url) {
     else
         cur = cur.substr(pos1);
 
-    pos = cur.find_first_of("?#");
+    pos         = cur.find_first_of("?#");
     result.path = cur.substr(0, pos);
     if (pos == std::string::npos)
         return result;
     else
         cur = cur.substr(pos);
     if (cur[0] == '?') {
-        cur = cur.substr(1);
-        pos = cur.find('#');
+        cur               = cur.substr(1);
+        pos               = cur.find('#');
         std::string query = cur.substr(0, pos);
         if (pos != std::string::npos) {
             result.fragment = cur.substr(pos + 1);
@@ -84,7 +84,7 @@ URL ParseURL(const std::string& url) {
 }
 
 extern Logger dbLogger;
-void PrintURL(const URL& url) {
+void          PrintURL(const URL& url) {
     dbLogger.debug("Parsed URL");
     dbLogger.debug("scheme: {}", url.scheme);
     dbLogger.debug("user: {}", url.user);
@@ -100,9 +100,8 @@ void PrintURL(const URL& url) {
 
 #pragma endregion
 
-ConnParams::ConnParams(const std::initializer_list<Any>& list)
-: std::unordered_map<std::string, Any>() {
-    bool key = true;
+ConnParams::ConnParams(const std::initializer_list<Any>& list) : std::unordered_map<std::string, Any>() {
+    bool        key = true;
     std::string keyName;
     for (auto& item : list) {
         if (key) {
@@ -110,7 +109,7 @@ ConnParams::ConnParams(const std::initializer_list<Any>& list)
                 throw std::invalid_argument("ConnParams::ConnParams: Key must be string");
             }
             keyName = item.get<std::string>();
-            key = false;
+            key     = false;
         } else {
             insert({keyName, item});
             key = true;
@@ -118,8 +117,8 @@ ConnParams::ConnParams(const std::initializer_list<Any>& list)
     }
     auto host = getHost();
     if (host.find(':') != std::string::npos) {
-        host = host.substr(0, host.find_last_of(':'));
-        auto port = host.substr(host.find_last_of(':') + 1);
+        host            = host.substr(0, host.find_last_of(':'));
+        auto port       = host.substr(host.find_last_of(':') + 1);
         (*this)["host"] = host;
         (*this)["port"] = std::stoi(port);
     }
@@ -131,15 +130,14 @@ ConnParams::ConnParams(const std::initializer_list<std::pair<std::string, Any>>&
     }
     auto host = getHost();
     if (host.find(':') != std::string::npos) {
-        host = host.substr(0, host.find_last_of(':'));
-        auto port = host.substr(host.find_last_of(':') + 1);
+        host            = host.substr(0, host.find_last_of(':'));
+        auto port       = host.substr(host.find_last_of(':') + 1);
         (*this)["host"] = host;
         (*this)["port"] = std::stoi(port);
     }
 }
-ConnParams::ConnParams(const std::string& str)
-: std::unordered_map<std::string, Any>() {
-    raw = str;
+ConnParams::ConnParams(const std::string& str) : std::unordered_map<std::string, Any>() {
+    raw      = str;
     auto url = ParseURL(str);
 #if defined(LLDB_DEBUG_MODE)
     PrintURL(url);
@@ -167,41 +165,30 @@ ConnParams::ConnParams(const std::string& str)
         insert({pair.first, Any::str2any(pair.second)});
     }
 }
-ConnParams::ConnParams(const char* str)
-: std::unordered_map<std::string, Any>() {
+ConnParams::ConnParams(const char* str) : std::unordered_map<std::string, Any>() {
     *this = ConnParams(std::string(str));
 }
 
-std::string ConnParams::getScheme() {
-    return get<std::string>({"scheme", "protocol", "type"}, true);
-}
+std::string ConnParams::getScheme() { return get<std::string>({"scheme", "protocol", "type"}, true); }
 
 std::string ConnParams::getHost() {
     return get<std::string>({"host", "hostname", "server", "server_name", "ip", "address"}, true);
 }
 
-uint16_t ConnParams::getPort() {
-    return get<uint16_t>({"port", "port_number", "port_num", "port_id", "portid"}, true, 0);
-}
+ushort ConnParams::getPort() { return get<ushort>({"port", "port_number", "port_num", "port_id", "portid"}, true, 0); }
 
 std::string ConnParams::getUsername() {
     return get<std::string>({"user", "username", "user_name", "usr", "usrname"}, true);
 }
 
-std::string ConnParams::getPassword() {
-    return get<std::string>({"password", "pass", "passwd", "pass_word"}, true);
-}
+std::string ConnParams::getPassword() { return get<std::string>({"password", "pass", "passwd", "pass_word"}, true); }
 
 std::string ConnParams::getDatabase() {
     return get<std::string>({"database", "db", "db_name", "dbname", "path"}, true);
 }
 
-std::string ConnParams::getPath() {
-    return get<std::string>({"path", "file", "file_name", "filename"}, true);
-}
+std::string ConnParams::getPath() { return get<std::string>({"path", "file", "file_name", "filename"}, true); }
 
-std::string ConnParams::getRaw() {
-    return raw;
-}
+std::string ConnParams::getRaw() { return raw; }
 
 } // namespace DB

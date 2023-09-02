@@ -5,8 +5,8 @@
 
 namespace SubChunkStorageUnit {
 union SubChunkStorageFormat {
-    bool network; // this(bf)+0x0:0x0 len(0x1)
-    Type type;    // this(bf)+0x0:0x1 len(0x7)
-    uint8_t raw;     // this+0x0
+    bool  network; // this(bf)+0x0:0x0 len(0x1)
+    Type  type;    // this(bf)+0x0:0x1 len(0x7)
+    uchar raw;     // this+0x0
 };
 }; // namespace SubChunkStorageUnit

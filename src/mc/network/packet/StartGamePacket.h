@@ -33,14 +33,14 @@ public:
     mce::UUID                                        mWorldTemplateId;
     bool                                             mIsTrial;
     SyncedPlayerMovementSettings                     mMovementSettings;
-    uint64_t                                         mLevelCurrentTime;
-    int32_t                                              mEnchantmentSeed;
+    uint64                                           mLevelCurrentTime;
+    int                                              mEnchantmentSeed;
     std::string                                      mMultiplayerCorrelationId;
     std::vector<ItemData>                            mItemData;
     bool                                             mEnableItemStackNetManager;
     std::string                                      mServerVersion;
     CompoundTag                                      mPlayerPropertyData;
-    uint64_t                                         mServerBlockTypeRegistryChecksum;
+    uint64                                           mServerBlockTypeRegistryChecksum;
     bool                                             mServerEnabledClientSideGeneration;
     bool                                             mBlockNetworkIdsAreHashes;
     std::vector<std::pair<std::string, CompoundTag>> mBlockProperties;

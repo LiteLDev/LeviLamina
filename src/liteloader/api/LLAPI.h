@@ -13,45 +13,38 @@
 #endif
 
 #include "liteloader/api/Global.h"
-#include "liteloader/api/utils/WinHelper.h"
 #include "liteloader/api/utils/PluginOwnData.h"
+#include "liteloader/api/utils/WinHelper.h"
 
 // LL types
 namespace ll {
 struct Version {
-    enum Status {
-        Dev,
-        Beta,
-        Release
-    };
+    enum Status { Dev, Beta, Release };
 
-    int32_t major;
-    int32_t minor;
-    int32_t revision;
+    int    major;
+    int    minor;
+    int    revision;
     Status status;
 
-    LLAPI explicit Version(int32_t major = 0, int32_t minor = 0, int32_t revision = 0, Status status = Status::Release);
+    LLAPI explicit Version(int major = 0, int minor = 0, int revision = 0, Status status = Status::Release);
 
     LLAPI bool operator<(Version b);
     LLAPI bool operator==(Version b);
 
-    LLAPI std::string toString(bool needStatus = false);
+    LLAPI std::string    toString(bool needStatus = false);
     LLAPI static Version parse(const std::string& str);
 };
 
 struct Plugin {
-    std::string name;
-    std::string desc; // `introduction` before
-    Version version;
+    std::string                        name;
+    std::string                        desc; // `introduction` before
+    Version                            version;
     std::map<std::string, std::string> others; // `otherInformation` before
 
     std::string filePath;
-    HMODULE handle;
+    HMODULE     handle;
 
-    enum class PluginType {
-        DllPlugin,
-        ScriptPlugin
-    };
+    enum class PluginType { DllPlugin, ScriptPlugin };
 
     PluginType type;
 
@@ -66,18 +59,17 @@ struct Plugin {
 };
 } // namespace ll
 
-inline bool operator<=(ll::Version a, ll::Version b) {
-    return a < b || a == b;
-}
-inline bool operator>(ll::Version a, ll::Version b) {
-    return b < a;
-}
-inline bool operator>=(ll::Version a, ll::Version b) {
-    return b < a || b == a;
-}
+inline bool operator<=(ll::Version a, ll::Version b) { return a < b || a == b; }
+inline bool operator>(ll::Version a, ll::Version b) { return b < a; }
+inline bool operator>=(ll::Version a, ll::Version b) { return b < a || b == a; }
 
-LLAPI bool RegisterPlugin(HMODULE hPlugin, std::string name, std::string desc, ll::Version version,
-                          std::map<std::string, std::string> others);
+LLAPI bool RegisterPlugin(
+    HMODULE                            hPlugin,
+    std::string                        name,
+    std::string                        desc,
+    ll::Version                        version,
+    std::map<std::string, std::string> others
+);
 
 // Loader APIs
 namespace ll {
@@ -121,8 +113,14 @@ LLAPI std::string getDataPath(const std::string& pluginName);
  * @return bool     True if the plugin is registered successfully
  * @note   The implementation of this function must be in header file(because of `GetCurrentModule`)
  */
-inline bool registerPlugin(std::string name, std::string desc, ll::Version version,
-                           std::string git = "", std::string license = "", std::string website = "") {
+inline bool registerPlugin(
+    std::string name,
+    std::string desc,
+    ll::Version version,
+    std::string git     = "",
+    std::string license = "",
+    std::string website = ""
+) {
     std::map<std::string, std::string> others;
     if (!git.empty())
         others.emplace("Git", git);
@@ -148,8 +146,8 @@ inline bool registerPlugin(std::string name, std::string desc, ll::Version versi
  * ll::registerPlugin("Test", "A test plugin", Version(0, 0, 1, Version::Dev), {{"Note","This is Note"}});
  * @endcode
  */
-inline bool registerPlugin(std::string name, std::string desc, ll::Version version,
-                           std::map<std::string, std::string> others) {
+inline bool
+registerPlugin(std::string name, std::string desc, ll::Version version, std::map<std::string, std::string> others) {
     return ::RegisterPlugin(GetCurrentModule(), name, desc, version, others);
 }
 
@@ -191,14 +189,10 @@ LLAPI std::unordered_map<std::string, ll::Plugin*> getAllPlugins();
 LLAPI HMODULE getLoaderHandle();
 
 /// Server Status
-enum class ServerStatus {
-    Starting,
-    Running,
-    Stopping
-};
+enum class ServerStatus { Starting, Running, Stopping };
 LLAPI ServerStatus getServerStatus();
-LLAPI bool isServerStarting();
-LLAPI bool isServerStopping();
+LLAPI bool         isServerStarting();
+LLAPI bool         isServerStopping();
 
 /**
  * @breif Get LiteLoaderBDS's current language

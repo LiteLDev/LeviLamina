@@ -13,10 +13,10 @@
 
 class InventoryTransactionPacket : public ::Packet {
 public:
-    TypedClientNetId<ItemStackLegacyRequestIdTag, int32_t, 0>                 mLegacyRequestId;    // this+0x30
-    std::vector<std::pair<ContainerEnumName, std::vector<uint8_t>>> mLegacySetItemSlots; // this+0x40
-    std::unique_ptr<ComplexInventoryTransaction>                          mTransaction;        // this+0x58
-    bool                                                                  mIsClientSide;       // this+0x60
+    TypedClientNetId<ItemStackLegacyRequestIdTag, int, 0>         mLegacyRequestId;    // this+0x30
+    std::vector<std::pair<ContainerEnumName, std::vector<uchar>>> mLegacySetItemSlots; // this+0x40
+    std::unique_ptr<ComplexInventoryTransaction>                  mTransaction;        // this+0x58
+    bool                                                          mIsClientSide;       // this+0x60
 
     // prevent constructor by default
     InventoryTransactionPacket& operator=(InventoryTransactionPacket const&) = delete;

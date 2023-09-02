@@ -89,7 +89,6 @@ public:
     };
 
 public:
-
     // prevent constructor by default
     RakPeer& operator=(RakPeer const&) = delete;
     RakPeer(RakPeer const&)            = delete;

@@ -1,9 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/NetworkIdentifier.h"
-#include "mc/enums/SubClientId.h"
 #include "mc/deps/core/mce/UUID.h"
+#include "mc/enums/SubClientId.h"
+#include "mc/network/NetworkIdentifier.h"
 
 // auto generated inclusion list
 #include "mc/enums/SubClientId.h"

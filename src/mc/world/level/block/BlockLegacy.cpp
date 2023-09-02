@@ -12,7 +12,7 @@ optional_ref<BlockLegacy> BlockLegacy::tryGetFromRegistry(std::string const& nam
     }
     return blockLegacyPtr.get();
 }
-optional_ref<BlockLegacy> BlockLegacy::tryGetFromRegistry(uint32_t legacyBlockID) {
+optional_ref<BlockLegacy> BlockLegacy::tryGetFromRegistry(uint legacyBlockID) {
     auto blockLegacyPtr = VanillaBlockConversion::getBlockTypeFromLegacyId(legacyBlockID);
     if (!blockLegacyPtr) {
         return nullptr;

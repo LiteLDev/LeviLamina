@@ -10,20 +10,21 @@ class ComparatorCapacitor : public ::SidePoweredComponent {
 public:
     // ComparatorCapacitor inner types define
     enum class Mode {
-        CompareMode = 0x0,
+        CompareMode  = 0x0,
         SubtractMode = 0x1,
     };
 
 
-    int32_t                        mRearAnalogStrength;
-    int32_t                        mSideAnalogStrengthRight;
-    int32_t                        mSideAnalogStrengthLeft;
-    int32_t                        mOldStrength;
+    int                        mRearAnalogStrength;
+    int                        mSideAnalogStrengthRight;
+    int                        mSideAnalogStrengthLeft;
+    int                        mOldStrength;
     Mode                       mMode;
-    int32_t                        mRearStrength;
-    int32_t                        mSideStrengths;
+    int                        mRearStrength;
+    int                        mSideStrengths;
     bool                       mHasAnalogBeenSet;
     const CircuitComponentType mCircuitComponentType = CircuitComponentType::ComparatorCapacitor;
+
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __unk_vfn_0

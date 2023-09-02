@@ -15,19 +15,20 @@ public:
     class Item {
     public:
         class BaseCircuitComponent* mComponent = nullptr;
-        int32_t                         mDampening{};
+        int                         mDampening{};
         class BlockPos              mPos;
-        enum class FacingID           mDirection = FacingID::Unknown;
+        enum class FacingID         mDirection = FacingID::Unknown;
         bool                        mDirectlyPowered{};
-        int32_t                         mData{};
+        int                         mData{};
 
         constexpr Item() = delete;
 
-        constexpr Item(BaseCircuitComponent* component, int32_t dampening, const BlockPos& pos)
+        constexpr Item(BaseCircuitComponent* component, int dampening, const BlockPos& pos)
         : mComponent(component), mDampening(dampening), mPos(pos) {}
     };
 
     std::vector<Item> mComponents;
+
 public:
     // NOLINTBEGIN
     // symbol: ?removeSource@CircuitComponentList@@QEAA_NAEBVBlockPos@@PEBVBaseCircuitComponent@@@Z

@@ -20,14 +20,14 @@ public:
     // clang-format on
 
     // SubChunkPacket inner types define
-    enum class HeightMapDataType : int8_t {
+    enum class HeightMapDataType : schar {
         NoData     = 0x0,
         HasData    = 0x1,
         AllTooHigh = 0x2,
         AllTooLow  = 0x3,
     };
 
-    enum class SubChunkRequestResult : int8_t {
+    enum class SubChunkRequestResult : schar {
         Undefined             = 0x0,
         Success               = 0x1,
         LevelChunkDoesntExist = 0x2,
@@ -39,8 +39,8 @@ public:
 
     class HeightmapData {
     public:
-        HeightMapDataType                          mHeightMapType;
-        std::array<std::array<int8_t, 16UL>, 16UL> mSubchunkHeightMap;
+        HeightMapDataType                         mHeightMapType;
+        std::array<std::array<schar, 16UL>, 16UL> mSubchunkHeightMap;
         // prevent constructor by default
         HeightmapData& operator=(HeightmapData const&) = delete;
         HeightmapData(HeightmapData const&)            = delete;
@@ -59,9 +59,9 @@ public:
 
     struct SubChunkPosOffset {
     public:
-        int8_t mX;
-        int8_t mY;
-        int8_t mZ;
+        schar mX;
+        schar mY;
+        schar mZ;
         // prevent constructor by default
         SubChunkPosOffset& operator=(SubChunkPosOffset const&) = delete;
         SubChunkPosOffset(SubChunkPosOffset const&)            = delete;
@@ -74,7 +74,7 @@ public:
         std::string             mSerializedSubChunk;
         SubChunkRequestResult   mResult;
         HeightmapData           mHeightMapData;
-        uint64_t                mBlobId;
+        uint64                  mBlobId;
         // prevent constructor by default
         SubChunkPacketData& operator=(SubChunkPacketData const&) = delete;
         SubChunkPacketData(SubChunkPacketData const&)            = delete;

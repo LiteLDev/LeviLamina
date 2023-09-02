@@ -1,7 +1,7 @@
 #pragma once
 
-#include "mc/_HeaderOutputPredefine.h"
 #include "../NetworkBlockPosition.h"
+#include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/level/levelgen/structure/StructureSettings.h"
 #include "mc/world/level/levelgen/structure/StructureTemplateRequestOperation.h"
 

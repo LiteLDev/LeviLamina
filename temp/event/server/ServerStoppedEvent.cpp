@@ -1,5 +1,5 @@
-#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/event/server/ServerStoppedEvent.h"
+#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/memory/Hook.h"
 
 #include "liteloader/api/event/impl/EventImpl.inl"
@@ -12,12 +12,7 @@ namespace ll::event::server {
 
 ServerStoppedEvent::ServerStoppedEvent() = default;
 
-LL_AUTO_INSTANCE_HOOK(
-    ServerStoppedEventHook,
-    ll::memory::HookPriority::Normal,
-    "??1DedicatedServer@@UEAA@XZ",
-    void,
-) {
+LL_AUTO_INSTANCE_HOOK(ServerStoppedEventHook, ll::memory::HookPriority::Normal, "??1DedicatedServer@@UEAA@XZ", void, ) {
     ll::globalRuntimeConfig.serverStatus = ll::LLServerStatus::Stopping;
     ServerStoppedEvent ev;
     EventManager<ServerStoppedEvent>::fireEvent(ev);

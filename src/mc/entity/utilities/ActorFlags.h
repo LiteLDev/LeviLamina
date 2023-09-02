@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ActorFlags : int32_t {
+enum class ActorFlags : int {
     Unknown                   = -1,
     Onfire                    = 0x0,
     Sneaking                  = 0x1,

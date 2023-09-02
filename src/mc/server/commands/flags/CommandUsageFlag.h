@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class CommandUsageFlag : uint16_t {
+enum class CommandUsageFlag : ushort {
     Normal = 0,
     Test   = 1 << 0,
 };

@@ -9,7 +9,7 @@
 class MerchantRecipeList {
 public:
     std::vector<class MerchantRecipe> mRecipeList;
-    std::vector<uint32_t>   mTierExpRequirements;
+    std::vector<uint>                 mTierExpRequirements;
 
 public:
     // NOLINTBEGIN

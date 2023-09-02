@@ -14,8 +14,8 @@
 
 class CommandSelectorBase {
 public:
-    static const uint64_t                                                            Unlimited = 0xFFFFFFFF; // constant
-    int32_t                                                                              mVersion;               // this+0x0
+    static const uint64                                                              Unlimited = 0xFFFFFFFF; // constant
+    int                                                                              mVersion;               // this+0x0
     enum class CommandSelectionType                                                  mType;                  // this+0x4
     enum class CommandSelectionOrder                                                 mOrder;                 // this+0x8
     std::vector<InvertableFilter<std::string>>                                       mNameFilters;          // this+0x10
@@ -27,7 +27,7 @@ public:
     class BlockPos                                                                   mBoxDeltas;            // this+0x98
     float                                                                            mRadiusMinSqr;         // this+0xA4
     float                                                                            mRadiusMaxSqr;         // this+0xA8
-    uint64_t                                                                         mCount;                // this+0xB0
+    uint64                                                                           mCount;                // this+0xB0
     bool                                                                             mIncludeDeadPlayers;   // this+0xB8
     bool                                                                             mIsPositionBound;      // this+0xB9
     bool                                                                             mDistanceFiltered;     // this+0xBA

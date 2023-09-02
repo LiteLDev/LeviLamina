@@ -65,7 +65,6 @@ GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, tanh)
 // GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, pow)
 
 
-
 template <IsFloatN T>
 [[nodiscard]] constexpr T fmod(T const& a, T const& b) noexcept {
     T tmp;

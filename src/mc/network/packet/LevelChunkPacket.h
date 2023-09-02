@@ -11,7 +11,7 @@
 class LevelChunkPacket : public ::Packet {
 public:
     struct SubChunkMetadata {
-        uint64_t blobId; // this+0x0
+        uint64 blobId; // this+0x0
     };
 
 public:

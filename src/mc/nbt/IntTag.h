@@ -7,14 +7,14 @@
 
 class IntTag : public ::Tag {
 public:
-    int32_t data;
+    int data;
 
-    IntTag& operator=(int32_t value) {
+    IntTag& operator=(int value) {
         data = value;
         return *this;
     }
 
-    operator int32_t() const { return data; }
+    operator int() const { return data; }
 
 public:
     // NOLINTBEGIN

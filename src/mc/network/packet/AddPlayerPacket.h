@@ -23,7 +23,7 @@
 
 class AddPlayerPacket : public ::AddActorBasePacket {
 public:
-    std::vector<ActorLink>                mLinks;
+    std::vector<ActorLink>                 mLinks;
     std::string                            mName;
     mce::UUID                              mUuid;
     ActorUniqueID                          mEntityId;
@@ -40,7 +40,7 @@ public:
     GameType                               mPlayerGameType;
     NetworkItemStackDescriptor             mCarriedItem;
     const SynchedActorDataEntityWrapper*   mEntityData;
-    PropertySyncData                      mSynchedProperties;
+    PropertySyncData                       mSynchedProperties;
 
     // prevent constructor by default
     AddPlayerPacket& operator=(AddPlayerPacket const&) = delete;

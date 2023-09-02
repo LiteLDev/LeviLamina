@@ -86,12 +86,12 @@ using std::vector;
 
 /////////////////////////////// Event Data ///////////////////////////////
 
-int32_t globalListenerId = 0;
+int globalListenerId = 0;
 
 template <typename EVENT>
 struct ListenerData {
     std::string                 pluginName;
-    int32_t                         listenerId = -1;
+    int                         listenerId = -1;
     bool                        isRef      = false;
     std::function<bool(EVENT)>  callback;
     std::function<bool(EVENT&)> callbackRef;
@@ -104,21 +104,21 @@ std::list<ListenerData<EVENT>> listeners;
 /////////////////////////////// Listener Manager ///////////////////////////////
 
 template <typename EVENT>
-int32_t EventManager<EVENT>::addEventListener(std::string name, std::function<bool(EVENT)> callback) {
-    int32_t newId = ++globalListenerId;
+int EventManager<EVENT>::addEventListener(std::string name, std::function<bool(EVENT)> callback) {
+    int newId = ++globalListenerId;
     listeners<EVENT>.push_back({name, newId, false, callback, nullptr});
     return newId;
 }
 
 template <typename EVENT>
-int32_t EventManager<EVENT>::addEventListenerRef(std::string name, std::function<bool(EVENT&)> callback) {
-    int32_t newId = ++globalListenerId;
+int EventManager<EVENT>::addEventListenerRef(std::string name, std::function<bool(EVENT&)> callback) {
+    int newId = ++globalListenerId;
     listeners<EVENT>.push_back({name, newId, true, nullptr, callback});
     return newId;
 }
 
 template <typename EVENT>
-bool EventManager<EVENT>::removeEventListener(int32_t id) {
+bool EventManager<EVENT>::removeEventListener(int id) {
     for (auto i = listeners<EVENT>.begin(); i != listeners<EVENT>.end(); ++i)
         if (i->listenerId == id) {
             listeners<EVENT>.erase(i);
@@ -137,7 +137,7 @@ bool EventManager<EVENT>::hasListener() {
 
 inline void OutputError(
     std::string        errorMsg,
-    int32_t                errorCode,
+    int                errorCode,
     const std::string& errorWhat,
     std::string        eventName,
     std::string        pluginName
@@ -488,11 +488,11 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     HookPriority::Normal,
     "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z",
     bool,
-    ItemStack&    it,
-    BlockPos      bp,
-    uint8_t side,
-    Vec3*         clickPos,
-    void*         a6_block
+    ItemStack& it,
+    BlockPos   bp,
+    uchar      side,
+    Vec3*      clickPos,
+    void*      a6_block
 ) {
     IF_LISTENED(PlayerUseItemOnEvent) {
         PlayerUseItemOnEvent ev{};
@@ -516,12 +516,12 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     HookPriority::Normal,
     "?_emptyBucket@BucketItem@@AEBA_NAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@PEAVActor@@AEBVItemStack@@E@Z",
     bool,
-    BlockSource*  blockSource,
-    Block*        block,
-    BlockPos*     blockPos,
-    Actor*        actor,
-    ItemStack*    itemStack,
-    uint8_t face
+    BlockSource* blockSource,
+    Block*       block,
+    BlockPos*    blockPos,
+    Actor*       actor,
+    ItemStack*   itemStack,
+    uchar        face
 ) {
     IF_LISTENED(PlayerUseBucketEvent) {
         // 当actor为空时，执行实体是发射器
@@ -658,12 +658,12 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     HookPriority::Normal,
     "?useOn@ItemStack@@QEAA_NAEAVActor@@HHHEAEBVVec3@@@Z",
     bool,
-    Actor*        actor,
-    int32_t           x,
-    int32_t           y,
-    int32_t           z,
-    uint8_t face,
-    Vec3          clickPos
+    Actor* actor,
+    int    x,
+    int    y,
+    int    z,
+    uchar  face,
+    Vec3   clickPos
 ) {
     IF_LISTENED(PlayerUseBucketEvent) {
         if (actor->getTypeName() != "minecraft:player") {
@@ -948,8 +948,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     Level*       a2,
     AABB*        aabb,
     BlockSource* a4,
-    int32_t          a5,
-    uint32_t a6
+    int          a5,
+    uint         a6
 ) {
     IF_LISTENED(WitherBossDestroyEvent) {
         WitherBossDestroyEvent ev{};
@@ -1100,7 +1100,7 @@ LL_AUTO_INSTANCE_HOOK(
     void,
     ItemStack* a2,
     Player*    a3,
-    int32_t        a4
+    int        a4
 ) {
     IF_LISTENED(ProjectileSpawnEvent) {
         ActorDefinitionIdentifier identifier("minecraft:thrown_trident");
@@ -1129,7 +1129,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     void,
     Actor*  ac,
     Player* pl,
-    int32_t     a4,
+    int     a4,
     string& a5
 ) {
     IF_LISTENED(NpcCmdEvent) {
@@ -1163,7 +1163,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     "?_trySwapItem@ArmorStand@@AEAA_NAEAVPlayer@@W4EquipmentSlot@@@Z",
     bool,
     Player* a2,
-    int32_t     a3
+    int     a3
 ) {
     IF_LISTENED(ArmorStandChangeEvent) {
         ArmorStandChangeEvent ev{};
@@ -1211,7 +1211,7 @@ LL_AUTO_INSTANCE_HOOK(
     Objective*    a2
 ) {
     IF_LISTENED(PlayerScoreChangedEvent) {
-        int64_t id = a1->id;
+        int64 id = a1->id;
 
         Player* player = nullptr;
         auto    pls    = Level::getAllPlayers();
@@ -1244,7 +1244,7 @@ LL_AUTO_STATIC_HOOK(
     std::ostream&,
     std::ostream& _this,
     const char*   str,
-    uint32_t      size
+    uint          size
 ) {
     IF_LISTENED(ConsoleOutputEvent) {
         if (&_this == &std::cout) {
@@ -1266,7 +1266,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     "?handle@ComplexInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z",
     void*,
     Player* a2,
-    int32_t     a3
+    int     a3
 ) {
     if (this->type == ComplexInventoryTransaction::Type::NORMAL) {
         IF_LISTENED(PlayerDropItemEvent) {
@@ -1298,7 +1298,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     ll::memory::HookPriority::Normal,
     "?dropSlot@Inventory@@QEAAXH_N00@Z",
     void,
-    int32_t  a2,
+    int  a2,
     char a3,
     char a4,
     bool a5
@@ -1329,7 +1329,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     Player,
     ll::memory::HookPriority::Normal,
     "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z",
-    int32_t,
+    int,
     BlockPos const& blk
 ) {
     auto bl = Level::getBlockInstance(blk, getDimensionId());
@@ -1414,7 +1414,7 @@ LL_AUTO_INSTANCE_HOOK(
     ll::memory::HookPriority::Normal,
     "?_setRespawnStage@EndDragonFight@@AEAAXW4RespawnAnimation@@@Z",
     void,
-    int32_t a1
+    int a1
 ) {
     IF_LISTENED(MobTrySpawnEvent) {
         MobTrySpawnEvent ev{};
@@ -1458,7 +1458,7 @@ LL_AUTO_INSTANCE_HOOK(
     ServerPlayer* sp     = handler->getServerPlayer(*id, 0);
     if (sp) {
         string data;
-        auto   formId = dAccess<int32_t>(packet, 48);
+        auto   formId = dAccess<int>(packet, 48);
 
         if (!dAccess<bool>(packet, 81)) {
             if (dAccess<bool>(packet, 72)) {

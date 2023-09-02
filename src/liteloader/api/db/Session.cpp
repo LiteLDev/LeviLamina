@@ -70,7 +70,7 @@ SharedPointer<Session> Session::create(DBType type, const ConnParams& params) { 
 SharedPointer<Session> Session::create(
     DBType             type,
     const std::string& host,
-    uint16_t           port,
+    ushort             port,
     const std::string& user,
     const std::string& password,
     const std::string& database

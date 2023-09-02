@@ -1,8 +1,8 @@
 #pragma once
 
 #include "liteloader/api/event/Event.h"
-#include "mc/Player.hpp"
 #include "liteloader/api/utils/AccessorMacro.h"
+#include "mc/Player.hpp"
 
 namespace ll::event::player {
 
@@ -12,9 +12,9 @@ namespace ll::event::player {
  */
 class PlayerAddExperienceEvent : public Event<PlayerAddExperienceEvent>, public Cancellable {
     LL_RO_MEMBER(Player*, player, getPlayer);
-    LL_RW_MEMBER(int32_t, exp, getExp, setExp);
+    LL_RW_MEMBER(int, exp, getExp, setExp);
 
-    explicit PlayerAddExperienceEvent(Player* player, int32_t exp);
+    explicit PlayerAddExperienceEvent(Player* player, int exp);
 
     LL_DELETE_COPY(PlayerAddExperienceEvent);
     LL_DELETE_MOVE(PlayerAddExperienceEvent);

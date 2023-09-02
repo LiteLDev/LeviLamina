@@ -4,7 +4,7 @@
 
 namespace persona {
 
-enum class AnimationExpression : int32_t {
+enum class AnimationExpression : int {
     Linear   = 0x0,
     Blinking = 0x1,
 };

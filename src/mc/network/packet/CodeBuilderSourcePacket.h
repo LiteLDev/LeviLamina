@@ -13,7 +13,7 @@ class CodeBuilderSourcePacket : public ::Packet {
 public:
     CodeBuilderStorageQueryOptions::Operation mOperation; // this+0x30
     CodeBuilderStorageQueryOptions::Category  mCategory;  // this+0x31
-    std::string                                mValue;     // this+0x38
+    std::string                               mValue;     // this+0x38
 
     // prevent constructor by default
     CodeBuilderSourcePacket& operator=(CodeBuilderSourcePacket const&) = delete;

@@ -11,9 +11,9 @@
 
 class PlayerHotbarPacket : public ::Packet {
 public:
-    uint32_t mSelectedSlot;     // this+0x30
-    bool         mShouldSelectSlot; // this+0x34
-    ContainerID  mContainerId;      // this+0x35
+    uint        mSelectedSlot;     // this+0x30
+    bool        mShouldSelectSlot; // this+0x34
+    ContainerID mContainerId;      // this+0x35
 
     // prevent constructor by default
     PlayerHotbarPacket& operator=(PlayerHotbarPacket const&) = delete;

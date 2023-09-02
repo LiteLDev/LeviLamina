@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class CommandSelectionType : int32_t {
+enum class CommandSelectionType : int {
     Self           = 0x0,
     Entities       = 0x1,
     Players        = 0x2,

@@ -12,7 +12,7 @@ class ChunkLoadedRequest {
 public:
     ChunkLoadedRequest() = delete;
 
-    enum class AreaType : int8_t {
+    enum class AreaType : schar {
         Bounds      = 0x0,
         Circle      = 0x1,
         TickingArea = 0x2,

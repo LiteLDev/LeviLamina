@@ -10,11 +10,11 @@ public:
     longlongN operator=(const longlongN&) = delete;
 };
 template <>
-VEC2_IMPL_(longlongN<2>, longlongN<2>, int64_t, IntN);
+VEC2_IMPL_(longlongN<2>, longlongN<2>, intmax_t, IntN);
 template <>
-VEC3_IMPL_(longlongN<3>, longlongN<3>, int64_t, IntN);
+VEC3_IMPL_(longlongN<3>, longlongN<3>, intmax_t, IntN);
 template <>
-VEC4_IMPL_(longlongN<4>, longlongN<4>, int64_t, IntN);
+VEC4_IMPL_(longlongN<4>, longlongN<4>, intmax_t, IntN);
 
 using longlong2 = longlongN<2>;
 using longlong3 = longlongN<3>;

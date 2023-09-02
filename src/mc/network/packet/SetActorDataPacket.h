@@ -15,7 +15,7 @@ public:
     ActorRuntimeID                         mId;
     std::vector<std::unique_ptr<DataItem>> mPackedItems;
     PropertySyncData                       mSynchedProperties;
-    uint64_t                               mTick;
+    uint64                                 mTick;
 
     // prevent constructor by default
     SetActorDataPacket& operator=(SetActorDataPacket const&) = delete;

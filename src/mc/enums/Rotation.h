@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class Rotation : uint8_t {
+enum class Rotation : uchar {
     None      = 0x0,
     Rotate90  = 0x1,
     Rotate180 = 0x2,

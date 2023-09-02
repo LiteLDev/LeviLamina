@@ -34,52 +34,52 @@ inline bool rand() {
 }
 
 template <>
-inline uint32_t rand() {
+inline uint rand() {
     return GolbalRandom32();
 }
 
 template <>
-inline uint32_t rand(uint32_t min, uint32_t max) {
+inline uint rand(uint min, uint max) {
     return min + GolbalRandom32(max - min + 1);
 }
 
 template <>
-inline int32_t rand() {
-    return static_cast<int32_t>(GolbalRandom32());
+inline int rand() {
+    return static_cast<int>(GolbalRandom32());
 }
 
 template <>
-inline int32_t rand(int32_t min, int32_t max) {
-    return (static_cast<int64_t>(min) + GolbalRandom32(static_cast<uint32_t>(static_cast<int64_t>(max) - min + 1)));
+inline int rand(int min, int max) {
+    return (static_cast<int64>(min) + GolbalRandom32(static_cast<uint>(static_cast<int64>(max) - min + 1)));
 }
 
 template <>
-inline int64_t rand() {
-    return static_cast<int64_t>(GolbalRandom64());
+inline int64 rand() {
+    return static_cast<int64>(GolbalRandom64());
 }
 
 template <>
-inline int64_t rand(int64_t min, int64_t max) {
-    return min + static_cast<int64_t>(GolbalRandom64(static_cast<uint64_t>(max - min + 1)));
+inline int64 rand(int64 min, int64 max) {
+    return min + static_cast<int64>(GolbalRandom64(static_cast<uint64>(max - min + 1)));
 }
 
 template <>
-inline uint64_t rand() {
+inline uint64 rand() {
     return GolbalRandom64();
 }
 
 template <>
-inline uint64_t rand(uint64_t min, uint64_t max) {
+inline uint64 rand(uint64 min, uint64 max) {
     return min + GolbalRandom64(max - min + 1);
 }
 
 template <>
 inline float rand() {
     union {
-        uint32_t u;
-        float    f;
+        uint  u;
+        float f;
     } x;
-    x.u = (rand<uint32_t>() >> 9u) | 0x3f800000u;
+    x.u = (rand<uint>() >> 9u) | 0x3f800000u;
     /* Trick from MTGP: generate an uniformly distributed
     single precision number in [1,2) and subtract 1. */
     return x.f - 1.0f;
@@ -93,10 +93,10 @@ inline float rand(float min, float max) {
 template <>
 inline double rand() {
     union {
-        uint64_t u;
-        double   f;
+        uint64 u;
+        double f;
     } x;
-    x.u = (rand<uint64_t>() >> 12ull) | 0x3ff0000000000000ull;
+    x.u = (rand<uint64>() >> 12ull) | 0x3ff0000000000000ull;
     /* Trick from MTGP: generate an uniformly distributed
     single precision number in [1,2) and subtract 1. */
     return x.f - 1.0;

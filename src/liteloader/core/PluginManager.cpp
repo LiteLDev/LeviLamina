@@ -3,17 +3,17 @@
 #include <string>
 #include <unordered_map>
 
+#include "liteloader/api/utils/STLHelper.h"
 #include "liteloader/api/utils/StringHelper.h"
 #include "liteloader/api/utils/WinHelper.h"
-#include "liteloader/api/utils/STLHelper.h"
 
 #include "liteloader/api/LLAPI.h"
 #include "liteloader/api/LoggerAPI.h"
 // #include "liteloader/api/event/LegacyEvents.h"
 // #include "liteloader/api/event/EventManager.h"
 // #include "liteloader/api/event/server/ServerStartedEvent.h"
-#include "liteloader/api/ScheduleAPI.h"
 #include "liteloader/api/I18nAPI.h"
+#include "liteloader/api/ScheduleAPI.h"
 
 #include "liteloader/core/LiteLoader.h"
 
@@ -160,8 +160,7 @@ bool ll::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
                 // ev.call();
 
                 // return ev.success;
-            }
-            else if (outputResult) {
+            } else if (outputResult) {
                 logger.error(tr("ll.pluginManager.error.invalidFileType", ext, pluginFilePath));
             }
             return false;
@@ -327,19 +326,19 @@ bool ll::PluginManager::reloadPlugin(string pluginName, bool outputResult) {
     }
 }
 
-int32_t ll::PluginManager::reloadAllPlugins(bool outputResult) {
+int ll::PluginManager::reloadAllPlugins(bool outputResult) {
     // if (!ll::isDebugMode())
     //     return false;
     try {
         auto allPlugins = getAllPlugins(true);
-        int32_t  cnt        = 0;
+        int  cnt        = 0;
         for (auto& [name, plugin] : allPlugins) {
             if (plugin->type == Plugin::PluginType::ScriptPlugin) {
                 // ll::event::legacy::ScriptPluginManagerEvent ev;
                 // ev.operation       = ll::event::legacy::ScriptPluginManagerEvent::Operation::Reload;
                 // ev.target          = plugin->name;
-                // ev.pluginExtension = UTF82String(filesystem::path(str2wstr(plugin->filePath)).extension().u8string());
-                // ev.call();
+                // ev.pluginExtension =
+                // UTF82String(filesystem::path(str2wstr(plugin->filePath)).extension().u8string()); ev.call();
 
                 // if (ev.success) {
                 //     ++cnt;
@@ -367,7 +366,7 @@ int32_t ll::PluginManager::reloadAllPlugins(bool outputResult) {
     }
 }
 
-//TODO: 使用插件系统的 onLoad onUnload onEnable onDisable代替
+// TODO: 使用插件系统的 onLoad onUnload onEnable onDisable代替
 bool ll::PluginManager::callEventAtHotLoad(std::string pluginName) {
     // using namespace ll::event;
     // // if (!ll::isDebugMode())

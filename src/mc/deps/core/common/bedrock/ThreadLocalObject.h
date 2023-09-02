@@ -8,12 +8,12 @@ template <typename T0, typename T1>
 class ThreadLocalObjectImplementation {
 
 public:
-	T0* mPtr; //this+0x0
+    T0* mPtr; // this+0x0
 
     // prevent constructor by default
     ThreadLocalObjectImplementation& operator=(ThreadLocalObjectImplementation const&) = delete;
     ThreadLocalObjectImplementation(ThreadLocalObjectImplementation const&)            = delete;
-    ThreadLocalObjectImplementation()                                                   = delete;
+    ThreadLocalObjectImplementation()                                                  = delete;
 };
 
 template <typename T0, typename T1 = std::allocator<T0>>

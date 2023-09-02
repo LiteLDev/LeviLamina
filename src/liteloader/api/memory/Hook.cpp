@@ -6,7 +6,7 @@
 
 namespace ll::memory {
 
-int32_t hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority priority) {
+int hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority priority) {
     return pl::hook::pl_hook(target, detour, originalFunc, static_cast<pl::hook::Priority>(priority));
 }
 

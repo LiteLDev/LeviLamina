@@ -1,7 +1,7 @@
 #pragma once
 #include "liteloader/api/Global.h"
-#include <vector>
 #include <string>
+#include <vector>
 
 // std::string -> std::wstring
 LLAPI std::wstring str2wstr(const std::string& str);
@@ -47,21 +47,20 @@ LLAPI std::string UTF82String(std::string str);
  * @endcode
  */
 template <typename T>
-std::string IntToHexStr(const T& value, bool upper = true, bool no0x = true,
-                        bool noLeadingZero = true) {
+std::string IntToHexStr(const T& value, bool upper = true, bool no0x = true, bool noLeadingZero = true) {
     std::string result;
     if (value < 0)
         result += '-';
     if (!no0x)
         result += "0x";
-    auto hexStr = upper ? "0123456789ABCDEF" : "0123456789abcdef";
+    auto hexStr      = upper ? "0123456789ABCDEF" : "0123456789abcdef";
     bool leadingZero = true;
-    for (int32_t i = sizeof(T) * 2; i > 0; --i) {
+    for (int i = sizeof(T) * 2; i > 0; --i) {
         auto hex = (value >> (i - 1) * 4) & 0xF;
         if (noLeadingZero && leadingZero && hex == 0)
             continue;
-        leadingZero = false;
-        result += hexStr[hex];
+        leadingZero  = false;
+        result      += hexStr[hex];
     }
     return result;
 }

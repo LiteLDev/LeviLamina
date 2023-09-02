@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class CommandCheatFlag : uint16_t {
+enum class CommandCheatFlag : ushort {
     Cheat    = 0,
     NotCheat = 1 << 7,
 };

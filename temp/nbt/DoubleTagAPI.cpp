@@ -1,5 +1,5 @@
-#include "mc/DoubleTag.hpp"
 #include "liteloader/api/memory/MemoryUtils.h"
+#include "mc/DoubleTag.hpp"
 
 using ll::memory::dAccess;
 

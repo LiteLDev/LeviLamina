@@ -3,10 +3,10 @@
 #include "liteloader/api/ServerAPI.h"
 #include "liteloader/api/memory/Hook.h"
 
-#include <regex>
-#include <string>
 #include "liteloader/core/Config.h"
 #include "liteloader/core/Version.h"
+#include <regex>
+#include <string>
 
 using namespace std;
 using namespace ll::memory;
@@ -40,15 +40,7 @@ string& replace_all_distinct(string& str, const string& old_value, const string&
     return str;
 }
 
-LL_AUTO_STATIC_HOOK(
-    MI_HOOK_NAME(2),
-    HookPriority::Normal,
-    "?BedrockLogOut@@YAXIPEBDZZ",
-    void,
-    int32_t   a1,
-    char* a2,
-    ...
-) {
+LL_AUTO_STATIC_HOOK(MI_HOOK_NAME(2), HookPriority::Normal, "?BedrockLogOut@@YAXIPEBDZZ", void, int a1, char* a2, ...) {
     char    Buffer[4096];
     va_list va;
     va_start(va, a2);
@@ -89,7 +81,7 @@ LL_AUTO_STATIC_HOOK(
     HookPriority::Normal,
     "?PlatformBedrockLogOut@@YAXIPEBD@Z",
     void,
-    int32_t         a1,
+    int         a1,
     const char* ts
 ) {
     string input = ts;
@@ -120,20 +112,20 @@ LL_AUTO_STATIC_HOOK(
     "?_appendLogEntryMetadata@LogDetails@BedrockLog@@AEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@"
     "std@@V34@W4LogAreaID@@I1HH@Z",
     void,
-    void*        a1,
-    void*        a2,
-    void**       a3,
-    int32_t          a4,
-    uint32_t a5,
-    int64_t      a6,
-    uint32_t a7,
-    uint32_t a8
+    void*  a1,
+    void*  a2,
+    void** a3,
+    int    a4,
+    uint   a5,
+    int64  a6,
+    uint   a7,
+    uint   a8
 ) {}
 
 #include "liteloader/core/LiteLoader.h"
 #include "mc/BedrockLog.hpp"
 namespace ModifyInfomation {
-int32_t telemetryText = 0;
+int telemetryText = 0;
 }
 LL_AUTO_STATIC_HOOK(
     MI_HOOK_NAME(5),
@@ -144,9 +136,9 @@ LL_AUTO_STATIC_HOOK(
     class std::bitset<3>         a2,
     enum BedrockLog::LogRule     a3,
     enum LogAreaID               a4,
-    uint32_t                 a5,
+    uint                         a5,
     char const*                  a6,
-    int32_t                          a7,
+    int                          a7,
     char const*                  a8,
     ...
 ) {

@@ -1,15 +1,17 @@
 #pragma once
 #include "liteloader/api/Global.h"
-#include <string>
 #include <libloaderapi.h>
+#include <string>
 
 // GetLastError() -> string
 LLAPI std::string GetLastErrorMessage();
 LLAPI std::string GetLastErrorMessage(DWORD error_message_id);
 
 // Create a new process and get its output when exited
-LLAPI bool NewProcess(const std::string& process, std::function<void(int32_t, std::string)> callback = nullptr, int32_t timeLimit = -1);
-LLAPI std::pair<int32_t, std::string> NewProcessSync(const std::string& process, int32_t timeLimit = -1, bool noReadOutput = true);
+LLAPI bool
+NewProcess(const std::string& process, std::function<void(int, std::string)> callback = nullptr, int timeLimit = -1);
+LLAPI std::pair<int, std::string>
+      NewProcessSync(const std::string& process, int timeLimit = -1, bool noReadOutput = true);
 
 /**
  * @brief Get Current DLL's module handle
@@ -18,8 +20,11 @@ LLAPI std::pair<int32_t, std::string> NewProcessSync(const std::string& process,
  */
 HMODULE inline GetCurrentModule() {
     HMODULE hModule = nullptr;
-    if (GetModuleHandleEx(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
-                          (LPCWSTR)GetCurrentModule, &hModule)) {
+    if (GetModuleHandleEx(
+            GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
+            (LPCWSTR)GetCurrentModule,
+            &hModule
+        )) {
         return hModule;
     }
     return nullptr;
@@ -31,7 +36,7 @@ LLAPI std::string GetModuleName(HMODULE handle);
 
 /**
  * @brief Get the system locale name.
- * 
+ *
  * @return  std::string  The system locale name.
  */
 LLAPI std::string GetSystemLocaleName();

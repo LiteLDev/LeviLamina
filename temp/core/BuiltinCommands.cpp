@@ -1,9 +1,10 @@
-﻿#include <filesystem>
-#include "liteloader/api/event/LegacyEvents.h"
-#include "liteloader/api/LLAPI.h"
-#include "liteloader/api/ServerAPI.h"
+﻿#include "liteloader/api/LLAPI.h"
 #include "liteloader/api/RegCommandAPI.h"
+#include "liteloader/api/ServerAPI.h"
+#include "liteloader/api/event/LegacyEvents.h"
 #include "liteloader/api/event/server/RegisterCommandEvent.h"
+#include "liteloader/core/Config.h"
+#include "liteloader/core/PluginManager.h"
 #include "mc/CommandOrigin.hpp"
 #include "mc/CommandOutput.hpp"
 #include "mc/CommandParameterData.hpp"
@@ -12,8 +13,7 @@
 #include "mc/Packet.hpp"
 #include "mc/ServerPlayer.hpp"
 #include "mc/VanillaDimensions.hpp"
-#include "liteloader/core/Config.h"
-#include "liteloader/core/PluginManager.h"
+#include <filesystem>
 // #include <ScriptEngine/src/Main/Configs.h>
 
 using namespace RegisterCommandHelper;
@@ -36,7 +36,7 @@ class TeleportDimensionCommand : public Command {
             return CommandPos.getPosition(0, ori, {0, 0, 0});
         auto pos              = actor->getPosition();
         Vec3 result           = pos;
-        int32_t  actorDimensionId = actor->getDimensionId();
+        int  actorDimensionId = actor->getDimensionId();
         switch (DimensionId) {
         case TeleportDimensionCommand::DimensionType::OverWorld:
             if (actorDimensionId == 1)
@@ -57,15 +57,15 @@ class TeleportDimensionCommand : public Command {
     }
 
     bool teleportTarget(CommandOrigin const& ori, CommandOutput& output, Actor* actor) const {
-        auto dim = VanillaDimensions::toString((int32_t)DimensionId);
+        auto dim = VanillaDimensions::toString((int)DimensionId);
         auto pos = getTargetPos(ori, actor);
-        actor->teleport(pos, (int32_t)DimensionId);
+        actor->teleport(pos, (int)DimensionId);
         output.trSuccess("ll.cmd.tpdim.success", actor->getNameTag(), dim, pos.x, pos.y, pos.z);
         return true;
     }
 
     bool teleportTargets(CommandOrigin const& ori, CommandOutput& output, CommandSelectorResults<Actor>& actors) const {
-        auto        dim = VanillaDimensions::toString((int32_t)DimensionId);
+        auto        dim = VanillaDimensions::toString((int)DimensionId);
         std::string names;
         for (auto& actor : actors) {
             std::string actorName = actor->getNameTag();
@@ -73,7 +73,7 @@ class TeleportDimensionCommand : public Command {
                 actorName = actor->getTypeName();
             }
             names.append(", ").append(actorName);
-            if (actor->teleport(getTargetPos(ori, actor), (int32_t)DimensionId)) {
+            if (actor->teleport(getTargetPos(ori, actor), (int)DimensionId)) {
                 output.success();
             }
         }
@@ -94,8 +94,8 @@ class TeleportDimensionCommand : public Command {
 public:
     void execute(CommandOrigin const& ori, CommandOutput& output) const override {
         output.setLanguageCode(ori);
-        if ((int32_t)DimensionId < 0 || (int32_t)DimensionId > 2) {
-            output.trError("ll.cmd.tpdim.invalidDimid", (int32_t)DimensionId);
+        if ((int)DimensionId < 0 || (int)DimensionId > 2) {
+            output.trError("ll.cmd.tpdim.invalidDimid", (int)DimensionId);
             return;
         }
         if (Victim_isSet) {
@@ -138,7 +138,7 @@ public:
             &TeleportDimensionCommand::DimensionId, "Dimension", "DimensionType"
         );
         auto dimensionIdParam =
-            makeMandatory((int32_t TeleportDimensionCommand::*)&TeleportDimensionCommand::DimensionId, "DimensionId");
+            makeMandatory((int TeleportDimensionCommand::*)&TeleportDimensionCommand::DimensionId, "DimensionId");
         auto victimParam =
             makeMandatory(&TeleportDimensionCommand::Victim, "victim", &TeleportDimensionCommand::Victim_isSet);
         auto positionParam = makeOptional(
@@ -242,7 +242,7 @@ void LLReloadPluginCommand(CommandOutput& output, const string& pluginName, bool
             output.trError("ll.cmd.reloadPlugin.fail", pluginName);
         }
     } else {
-        int32_t cnt = PluginManager::reloadAllPlugins(true);
+        int cnt = PluginManager::reloadAllPlugins(true);
         if (cnt > 0) {
             output.trSuccess("ll.cmd.reloadAllPlugins.success", cnt);
         } else {

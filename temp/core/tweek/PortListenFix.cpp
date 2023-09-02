@@ -11,14 +11,14 @@ LL_AUTO_INSTANCE_HOOK(
     PortListenFix,
     HookPriority::Normal,
     "?LogIPSupport@RakPeerHelper@@AEAAXW4PeerPurpose@1@@Z",
-    int64_t
+    int64
 ) {
     static bool isFirstLog = true;
     if (globalConfig.enableFixListenPort) {
         if (isFirstLog) {
-            isFirstLog  = false;
-            int64_t ret = origin();
-            endTime     = clock();
+            isFirstLog = false;
+            int64 ret  = origin();
+            endTime    = clock();
             Logger("Server").info(
                 "Done (" + fmt::format("{:.1f}", static_cast<double>(endTime - startTime) / 1000) +
                 R"(s)! For help, type "help" or "?")"
@@ -27,7 +27,7 @@ LL_AUTO_INSTANCE_HOOK(
         }
         return 0;
     } else {
-        int64_t ret = origin();
+        int64 ret = origin();
         if (!isFirstLog) {
             endTime = clock();
             Logger("Server").info(

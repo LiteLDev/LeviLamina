@@ -8,6 +8,6 @@ public:
     T1        mRawId;
     static T1 sNextRawId;
 
-    virtual void clientInit(TypedClientNetId<T0,T1,T2>);
+    virtual void clientInit(TypedClientNetId<T0, T1, T2>);
     virtual void clientInit();
 };

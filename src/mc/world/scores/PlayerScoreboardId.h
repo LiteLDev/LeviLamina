@@ -4,7 +4,7 @@
 
 struct PlayerScoreboardId {
 public:
-    int64_t mActorUniqueId; // this+0x0
+    int64 mActorUniqueId; // this+0x0
 public:
     // NOLINTBEGIN
     // symbol: ??0PlayerScoreboardId@@QEAA@XZ

@@ -1,9 +1,9 @@
 #pragma once
 
 #include "liteloader/api/event/Event.h"
+#include "liteloader/api/utils/AccessorMacro.h"
 #include "mc/ItemStack.hpp"
 #include "mc/Vec3.hpp"
-#include "liteloader/api/utils/AccessorMacro.h"
 
 namespace ll::event::block {
 /**
@@ -12,10 +12,10 @@ namespace ll::event::block {
 class HopperPushOutEvent : public Event<HopperPushOutEvent>, public Cancellable {
     LL_RO_MEMBER(bool, minecart, isMinecart);
     LL_RO_MEMBER(Vec3, pos, getPos);
-    LL_RO_MEMBER(int32_t, dimensionId, getDimensionId);
+    LL_RO_MEMBER(int, dimensionId, getDimensionId);
     LL_RO_MEMBER(ItemStack*, itemStack, getItemStack);
 
-    explicit HopperPushOutEvent(bool minecart, Vec3 const& pos, int32_t dimensionId, ItemStack* itemStack);
+    explicit HopperPushOutEvent(bool minecart, Vec3 const& pos, int dimensionId, ItemStack* itemStack);
 
     LL_DELETE_COPY(HopperPushOutEvent);
     LL_DELETE_MOVE(HopperPushOutEvent);

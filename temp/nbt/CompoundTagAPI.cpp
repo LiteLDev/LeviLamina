@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "liteloader/api/I18nAPI.h"
+#include "liteloader/api/memory/MemoryUtils.h"
 #include "mc/Actor.hpp"
 #include "mc/Block.hpp"
 #include "mc/BlockActor.hpp"
@@ -25,7 +26,6 @@
 #include "mc/ShortTag.hpp"
 #include "mc/StringTag.hpp"
 #include "mc/Tag.hpp"
-#include "liteloader/api/memory/MemoryUtils.h"
 
 #include "liteloader/core/LiteLoader.h"
 
@@ -53,7 +53,7 @@ void CompoundTag::putByteArray(std::string key, char data[], size_t size) {
     putByteArray(key, tmc);
 }
 
-void CompoundTag::putIntArray(std::string key, int32_t data[], size_t size) {
+void CompoundTag::putIntArray(std::string key, int data[], size_t size) {
     TagMemoryChunk tmc((char*)data, size * 4);
     putIntArray(key, tmc);
 }
@@ -188,7 +188,7 @@ using namespace std;
 #include "liteloader/api/LoggerAPI.h"
 
 inline void
-OutputNBTError(std::string const& errorMsg, int32_t errorCode, std::string errorWhat, std::string const& functionName) {
+OutputNBTError(std::string const& errorMsg, int errorCode, std::string errorWhat, std::string const& functionName) {
     logger.error(errorMsg);
     logger.error("Error: Code [{}] {}", errorCode, errorWhat);
     logger.error("In {}", functionName);
@@ -239,8 +239,8 @@ public:
     virtual void  writeDouble(double data) { writeBigEndianBytes((byte*)&data, 8); }
     virtual void  writeByte(byte data) { writeBytes(&data, 1); }
     virtual void  writeShort(short data) { writeBigEndianBytes((byte*)&data, 2); }
-    virtual void  writeInt(int32_t data) { writeBigEndianBytes((byte*)&data, 4); }
-    virtual void  writeLongLong(int64_t data) { writeBigEndianBytes((byte*)&data, 8); }
+    virtual void  writeInt(int data) { writeBigEndianBytes((byte*)&data, 4); }
+    virtual void  writeLongLong(int64 data) { writeBigEndianBytes((byte*)&data, 8); }
     virtual void* writeBytes(byte* bytes, size_t count) {
         return LL_SYMBOL_CALL("?writeBytes@StringByteOutput@@UEAAXPEBX_K@Z", void*, void*, byte*, size_t)(
             (void*)this, bytes, count
@@ -404,10 +404,10 @@ void TagToSNBT_List_Helper(tags::bytearray_list_tag& res, ListTag* nbt) {
     for (auto& tag : list) {
         auto& bytes = tag->asByteArrayTag()->value();
 
-        char*          raw = (char*)bytes.data.get();
-        vector<int8_t> data;
+        char*         raw = (char*)bytes.data.get();
+        vector<schar> data;
         data.reserve(bytes.size);
-        for (int32_t i = 0; i < bytes.size; ++i)
+        for (int i = 0; i < bytes.size; ++i)
             data.emplace_back(raw[i]);
 
         res.value.emplace_back(data);
@@ -419,10 +419,10 @@ void TagToSNBT_List_Helper(tags::intarray_list_tag& res, ListTag* nbt) {
     for (auto& tag : list) {
         auto& bytes = tag->asIntArrayTag()->value();
 
-        int32_t*            raw = (int32_t*)bytes.data.get();
-        vector<int32_t> data;
+        int*        raw = (int*)bytes.data.get();
+        vector<int> data;
         data.reserve(bytes.size);
-        for (int32_t i = 0; i < bytes.size / 4; ++i)
+        for (int i = 0; i < bytes.size / 4; ++i)
             data.emplace_back(raw[i]);
 
         res.value.emplace_back(data);
@@ -543,22 +543,22 @@ void TagToSNBT_Compound_Helper(tags::compound_tag& res, CompoundTag* nbt) {
             res.value[key] = make_unique<tags::string_tag>(tag.asStringTag()->value());
             break;
         case Tag::Type::ByteArray: {
-            auto&          bytes = tag.asByteArrayTag()->value();
-            char*          raw   = (char*)bytes.data.get();
-            vector<int8_t> data;
+            auto&         bytes = tag.asByteArrayTag()->value();
+            char*         raw   = (char*)bytes.data.get();
+            vector<schar> data;
             data.reserve(bytes.size);
-            for (int32_t i = 0; i < bytes.size; ++i)
+            for (int i = 0; i < bytes.size; ++i)
                 data.emplace_back(raw[i]);
 
             res.value[key] = make_unique<tags::bytearray_tag>(data);
             break;
         }
         case Tag::Type::IntArray: {
-            auto&           bytes = tag.asIntArrayTag()->value();
-            int32_t*            raw   = (int32_t*)bytes.data.get();
-            vector<int32_t> data;
+            auto&       bytes = tag.asIntArrayTag()->value();
+            int*        raw   = (int*)bytes.data.get();
+            vector<int> data;
             data.reserve(bytes.size);
-            for (int32_t i = 0; i < bytes.size / 4; ++i)
+            for (int i = 0; i < bytes.size / 4; ++i)
                 data.emplace_back(raw[i]);
 
             res.value[key] = make_unique<tags::intarray_tag>(data);
@@ -616,7 +616,7 @@ void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::end_list_tag& data) {
 
 void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::byte_list_tag& data) {
     for (auto& dat : data.value)
-        nbt->addByte((uint8_t)dat);
+        nbt->addByte((uchar)dat);
 }
 
 void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::short_list_tag& data) {
@@ -626,12 +626,12 @@ void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::short_list_tag& data)
 
 void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::int_list_tag& data) {
     for (auto& dat : data.value)
-        nbt->addInt((int32_t)dat);
+        nbt->addInt((int)dat);
 }
 
 void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::long_list_tag& data) {
     for (auto& dat : data.value)
-        nbt->addInt64((int64_t)dat);
+        nbt->addInt64((int64)dat);
 }
 
 void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::float_list_tag& data) {
@@ -856,7 +856,7 @@ void __appendString(std::ostringstream& oss, std::string const& str) {
     oss << '"';
 }
 
-inline void __appendSpace(std::ostringstream& oss, int32_t indent, int32_t level) {
+inline void __appendSpace(std::ostringstream& oss, int indent, int level) {
     switch (indent * level) {
     case 0:
         break;
@@ -883,46 +883,46 @@ inline void __appendSpace(std::ostringstream& oss, int32_t indent, int32_t level
     }
 }
 
-inline void __appendReturnSpace(std::ostringstream& oss, int32_t indent, int32_t level) {
+inline void __appendReturnSpace(std::ostringstream& oss, int indent, int level) {
     oss << '\n';
     __appendSpace(oss, indent, level);
 }
 
 template <typename T>
-inline void __appendSNBT(std::ostringstream& oss, T&, int32_t indent, int32_t level, SnbtFormat snbtFormat) = delete;
+inline void __appendSNBT(std::ostringstream& oss, T&, int indent, int level, SnbtFormat snbtFormat) = delete;
 template <>
-inline void __appendSNBT(std::ostringstream& oss, CompoundTag& tag, int32_t indent, int32_t level, SnbtFormat snbtFormat);
+inline void __appendSNBT(std::ostringstream& oss, CompoundTag& tag, int indent, int level, SnbtFormat snbtFormat);
 template <>
-inline void __appendSNBT(std::ostringstream& oss, ListTag& tag, int32_t indent, int32_t level, SnbtFormat snbtFormat);
+inline void __appendSNBT(std::ostringstream& oss, ListTag& tag, int indent, int level, SnbtFormat snbtFormat);
 
 template <>
-inline void __appendSNBT(std::ostringstream& oss, EndTag& tag, int32_t indent, int32_t level, SnbtFormat snbtFormat) {}
+inline void __appendSNBT(std::ostringstream& oss, EndTag& tag, int indent, int level, SnbtFormat snbtFormat) {}
 template <>
-inline void __appendSNBT(std::ostringstream& oss, ByteTag& tag, int32_t indent, int32_t level, SnbtFormat snbtFormat) {
-    oss << (int32_t)(int8_t)tag.value() << 'b';
+inline void __appendSNBT(std::ostringstream& oss, ByteTag& tag, int indent, int level, SnbtFormat snbtFormat) {
+    oss << (int)(schar)tag.value() << 'b';
 }
 template <>
-inline void __appendSNBT(std::ostringstream& oss, ShortTag& tag, int32_t indent, int32_t level, SnbtFormat snbtFormat) {
+inline void __appendSNBT(std::ostringstream& oss, ShortTag& tag, int indent, int level, SnbtFormat snbtFormat) {
     oss << tag.value() << 's';
 }
 template <>
-inline void __appendSNBT(std::ostringstream& oss, IntTag& tag, int32_t indent, int32_t level, SnbtFormat snbtFormat) {
+inline void __appendSNBT(std::ostringstream& oss, IntTag& tag, int indent, int level, SnbtFormat snbtFormat) {
     oss << tag.value();
 }
 template <>
-inline void __appendSNBT(std::ostringstream& oss, Int64Tag& tag, int32_t indent, int32_t level, SnbtFormat snbtFormat) {
+inline void __appendSNBT(std::ostringstream& oss, Int64Tag& tag, int indent, int level, SnbtFormat snbtFormat) {
     oss << tag.value() << 'L';
 }
 template <>
-inline void __appendSNBT(std::ostringstream& oss, FloatTag& tag, int32_t indent, int32_t level, SnbtFormat snbtFormat) {
+inline void __appendSNBT(std::ostringstream& oss, FloatTag& tag, int indent, int level, SnbtFormat snbtFormat) {
     oss << tag.value() << 'f';
 }
 template <>
-inline void __appendSNBT(std::ostringstream& oss, DoubleTag& tag, int32_t indent, int32_t level, SnbtFormat snbtFormat) {
+inline void __appendSNBT(std::ostringstream& oss, DoubleTag& tag, int indent, int level, SnbtFormat snbtFormat) {
     oss << tag.value() << 'd';
 }
 template <>
-inline void __appendSNBT(std::ostringstream& oss, ByteArrayTag& tag, int32_t indent, int32_t level, SnbtFormat snbtFormat) {
+inline void __appendSNBT(std::ostringstream& oss, ByteArrayTag& tag, int indent, int level, SnbtFormat snbtFormat) {
     size_t size = tag.value().size;
     if (size == 0) {
         oss << "[B;]";
@@ -936,12 +936,12 @@ inline void __appendSNBT(std::ostringstream& oss, ByteArrayTag& tag, int32_t ind
         if (!first)
             oss << separator;
         first = false;
-        oss << (int32_t)val[i] << 'b';
+        oss << (int)val[i] << 'b';
     }
     oss << ']';
 }
 template <>
-inline void __appendSNBT(std::ostringstream& oss, IntArrayTag& tag, int32_t indent, int32_t level, SnbtFormat snbtFormat) {
+inline void __appendSNBT(std::ostringstream& oss, IntArrayTag& tag, int indent, int level, SnbtFormat snbtFormat) {
     size_t size = tag.value().size;
     if (size == 0) {
         oss << "[I;]";
@@ -955,18 +955,18 @@ inline void __appendSNBT(std::ostringstream& oss, IntArrayTag& tag, int32_t inde
         if (!first)
             oss << separator;
         first = false;
-        oss << *(int32_t*)&val[i];
+        oss << *(int*)&val[i];
     }
     oss << ']';
 }
 
 template <>
-inline void __appendSNBT(std::ostringstream& oss, StringTag& tag, int32_t indent, int32_t level, SnbtFormat snbtFormat) {
+inline void __appendSNBT(std::ostringstream& oss, StringTag& tag, int indent, int level, SnbtFormat snbtFormat) {
     __appendString(oss, tag.value());
 }
 
 template <>
-inline void __appendSNBT(std::ostringstream& oss, ListTag& tag, int32_t indent, int32_t level, SnbtFormat snbtFormat) {
+inline void __appendSNBT(std::ostringstream& oss, ListTag& tag, int indent, int level, SnbtFormat snbtFormat) {
     if (tag.size() == 0) {
         oss << "[]";
         return;
@@ -1058,7 +1058,7 @@ inline void __appendSNBT(std::ostringstream& oss, ListTag& tag, int32_t indent, 
     oss << ']';
 }
 template <>
-inline void __appendSNBT(std::ostringstream& oss, CompoundTag& tag, int32_t indent, int32_t level, SnbtFormat snbtFormat) {
+inline void __appendSNBT(std::ostringstream& oss, CompoundTag& tag, int indent, int level, SnbtFormat snbtFormat) {
     if (tag.isEmpty()) {
         oss << "{}";
         return;
@@ -1125,7 +1125,7 @@ inline void __appendSNBT(std::ostringstream& oss, CompoundTag& tag, int32_t inde
     oss << '}';
 }
 
-string CompoundTag::toSNBT(int32_t indent, SnbtFormat snbtFormat) {
+string CompoundTag::toSNBT(int indent, SnbtFormat snbtFormat) {
     try {
         if (this->getTagType() != Tag::Type::Compound)
             return "";
@@ -1173,15 +1173,15 @@ void __appendPrettyString(std::ostringstream& oss, std::string const& str, Prett
     }
 }
 
-inline void __appendPrettySpace(std::ostringstream& oss, uint32_t level, PrettySnbtFormat const& format) {
+inline void __appendPrettySpace(std::ostringstream& oss, uint level, PrettySnbtFormat const& format) {
     if (level > format.mMaxLevel)
         return;
-    for (uint32_t i = 0; i < level; ++i) {
+    for (uint i = 0; i < level; ++i) {
         oss << format.mIndent;
     }
 }
 
-inline void __appendPrettyReturnSpace(std::ostringstream& oss, uint32_t level, PrettySnbtFormat const& format) {
+inline void __appendPrettyReturnSpace(std::ostringstream& oss, uint level, PrettySnbtFormat const& format) {
     if (level > format.mMaxLevel)
         return;
     oss << '\n';
@@ -1189,57 +1189,47 @@ inline void __appendPrettyReturnSpace(std::ostringstream& oss, uint32_t level, P
 }
 
 // template <typename T>
-// inline void __appendPrettySNBT(std::ostringstream& oss, T&, uint32_t level, PrettySnbtFormat const& format) =
+// inline void __appendPrettySNBT(std::ostringstream& oss, T&, uint level, PrettySnbtFormat const& format) =
 // delete;
 template <>
-inline void
-__appendPrettySNBT(std::ostringstream& oss, CompoundTag& tag, uint32_t level, PrettySnbtFormat const& format);
+inline void __appendPrettySNBT(std::ostringstream& oss, CompoundTag& tag, uint level, PrettySnbtFormat const& format);
 template <>
-inline void
-__appendPrettySNBT(std::ostringstream& oss, ListTag& tag, uint32_t level, PrettySnbtFormat const& format);
+inline void __appendPrettySNBT(std::ostringstream& oss, ListTag& tag, uint level, PrettySnbtFormat const& format);
 
 template <>
-inline void
-__appendPrettySNBT(std::ostringstream& oss, EndTag& tag, uint32_t level, PrettySnbtFormat const& format) {}
+inline void __appendPrettySNBT(std::ostringstream& oss, EndTag& tag, uint level, PrettySnbtFormat const& format) {}
 template <>
-inline void
-__appendPrettySNBT(std::ostringstream& oss, ByteTag& tag, uint32_t level, PrettySnbtFormat const& format) {
-    oss << format.mValueFormats[enum_integer(Tag::Type::Byte)].mPrefix << (int32_t)(int8_t)tag.value()
+inline void __appendPrettySNBT(std::ostringstream& oss, ByteTag& tag, uint level, PrettySnbtFormat const& format) {
+    oss << format.mValueFormats[enum_integer(Tag::Type::Byte)].mPrefix << (int)(schar)tag.value()
         << format.mValueFormats[enum_integer(Tag::Type::Byte)].mSuffix;
 }
 template <>
-inline void
-__appendPrettySNBT(std::ostringstream& oss, ShortTag& tag, uint32_t level, PrettySnbtFormat const& format) {
+inline void __appendPrettySNBT(std::ostringstream& oss, ShortTag& tag, uint level, PrettySnbtFormat const& format) {
     oss << format.mValueFormats[enum_integer(Tag::Type::Short)].mPrefix << tag.value()
         << format.mValueFormats[enum_integer(Tag::Type::Short)].mSuffix;
 }
 template <>
-inline void
-__appendPrettySNBT(std::ostringstream& oss, IntTag& tag, uint32_t level, PrettySnbtFormat const& format) {
+inline void __appendPrettySNBT(std::ostringstream& oss, IntTag& tag, uint level, PrettySnbtFormat const& format) {
     oss << format.mValueFormats[enum_integer(Tag::Type::Int)].mPrefix << tag.value()
         << format.mValueFormats[enum_integer(Tag::Type::Int)].mSuffix;
 }
 template <>
-inline void
-__appendPrettySNBT(std::ostringstream& oss, Int64Tag& tag, uint32_t level, PrettySnbtFormat const& format) {
+inline void __appendPrettySNBT(std::ostringstream& oss, Int64Tag& tag, uint level, PrettySnbtFormat const& format) {
     oss << format.mValueFormats[enum_integer(Tag::Type::Int64)].mPrefix << tag.value()
         << format.mValueFormats[enum_integer(Tag::Type::Int64)].mSuffix;
 }
 template <>
-inline void
-__appendPrettySNBT(std::ostringstream& oss, FloatTag& tag, uint32_t level, PrettySnbtFormat const& format) {
+inline void __appendPrettySNBT(std::ostringstream& oss, FloatTag& tag, uint level, PrettySnbtFormat const& format) {
     oss << format.mValueFormats[enum_integer(Tag::Type::Float)].mPrefix << tag.value()
         << format.mValueFormats[enum_integer(Tag::Type::Float)].mSuffix;
 }
 template <>
-inline void
-__appendPrettySNBT(std::ostringstream& oss, DoubleTag& tag, uint32_t level, PrettySnbtFormat const& format) {
+inline void __appendPrettySNBT(std::ostringstream& oss, DoubleTag& tag, uint level, PrettySnbtFormat const& format) {
     oss << format.mValueFormats[enum_integer(Tag::Type::Double)].mPrefix << tag.value()
         << format.mValueFormats[enum_integer(Tag::Type::Double)].mSuffix;
 }
 template <>
-inline void
-__appendPrettySNBT(std::ostringstream& oss, ByteArrayTag& tag, uint32_t level, PrettySnbtFormat const& format) {
+inline void __appendPrettySNBT(std::ostringstream& oss, ByteArrayTag& tag, uint level, PrettySnbtFormat const& format) {
     auto&  valueFormat   = format.mValueFormats[enum_integer(Tag::Type::ByteArray)];
     auto&  elementFormat = format.mValueFormats[enum_integer(Tag::Type::Byte)];
     auto&  separator     = format.mSeparator;
@@ -1255,13 +1245,12 @@ __appendPrettySNBT(std::ostringstream& oss, ByteArrayTag& tag, uint32_t level, P
         if (!first)
             oss << separator;
         first = false;
-        oss << elementFormat.mPrefix << (int32_t)val[i] << elementFormat.mSuffix;
+        oss << elementFormat.mPrefix << (int)val[i] << elementFormat.mSuffix;
     }
     oss << valueFormat.mSuffix;
 }
 template <>
-inline void
-__appendPrettySNBT(std::ostringstream& oss, IntArrayTag& tag, uint32_t level, PrettySnbtFormat const& format) {
+inline void __appendPrettySNBT(std::ostringstream& oss, IntArrayTag& tag, uint level, PrettySnbtFormat const& format) {
     auto&  valueFormat   = format.mValueFormats[enum_integer(Tag::Type::IntArray)];
     auto&  elementFormat = format.mValueFormats[enum_integer(Tag::Type::Int)];
     auto&  separator     = format.mSeparator;
@@ -1277,14 +1266,13 @@ __appendPrettySNBT(std::ostringstream& oss, IntArrayTag& tag, uint32_t level, Pr
         if (!first)
             oss << separator;
         first = false;
-        oss << elementFormat.mPrefix << *(int32_t*)&val[i] << elementFormat.mSuffix;
+        oss << elementFormat.mPrefix << *(int*)&val[i] << elementFormat.mSuffix;
     }
     oss << valueFormat.mSuffix;
 }
 
 template <>
-inline void
-__appendPrettySNBT(std::ostringstream& oss, StringTag& tag, uint32_t level, PrettySnbtFormat const& format) {
+inline void __appendPrettySNBT(std::ostringstream& oss, StringTag& tag, uint level, PrettySnbtFormat const& format) {
     auto& valueFormat = format.mValueFormats[enum_integer(Tag::Type::String)];
     oss << valueFormat.mPrefix;
     __appendPrettyString(oss, tag.value(), format);
@@ -1295,7 +1283,7 @@ template <typename type>
 inline void __appendPrettyList(
     std::ostringstream&     oss,
     ListTag&                tag,
-    uint32_t            level,
+    uint                    level,
     PrettySnbtFormat const& format,
     Tag::Type               childrenType
 ) {
@@ -1312,8 +1300,7 @@ inline void __appendPrettyList(
 }
 
 template <>
-inline void
-__appendPrettySNBT(std::ostringstream& oss, ListTag& tag, uint32_t level, PrettySnbtFormat const& format) {
+inline void __appendPrettySNBT(std::ostringstream& oss, ListTag& tag, uint level, PrettySnbtFormat const& format) {
     auto& valueFormat = format.mValueFormats[enum_integer(Tag::Type::List)];
     if (tag.size() == 0) {
         oss << valueFormat.mPrefix << valueFormat.mSuffix;
@@ -1373,8 +1360,7 @@ __appendPrettySNBT(std::ostringstream& oss, ListTag& tag, uint32_t level, Pretty
     oss << valueFormat.mSuffix;
 }
 template <>
-inline void
-__appendPrettySNBT(std::ostringstream& oss, CompoundTag& tag, uint32_t level, PrettySnbtFormat const& format) {
+inline void __appendPrettySNBT(std::ostringstream& oss, CompoundTag& tag, uint level, PrettySnbtFormat const& format) {
     auto& valueFormat = format.mValueFormats[enum_integer(Tag::Type::Compound)];
     if (tag.isEmpty()) {
         oss << valueFormat.mPrefix << valueFormat.mSuffix;
@@ -1465,8 +1451,8 @@ string CompoundTag::toPrettySNBT(PrettySnbtFormat const& format) const {
 #pragma region From SNBT For Tag of BDS
 #ifdef Working
 
-inline bool __isEmptyChar(int32_t c) { return c == ' ' || c == '\n' || c == '\t'; }
-inline int32_t  __readEmpty(std::istringstream& iss) {
+inline bool __isEmptyChar(int c) { return c == ' ' || c == '\n' || c == '\t'; }
+inline int  __readEmpty(std::istringstream& iss) {
     while (!iss.eof()) {
         auto c = cheof(iss);
         if (!__isEmptyChar(c))

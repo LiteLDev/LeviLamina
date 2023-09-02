@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class BossBarColor : int32_t {
+enum class BossBarColor : int {
     Pink   = 0x0,
     Blue   = 0x1,
     Red    = 0x2,

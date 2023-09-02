@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class LevelSoundEvent : int32_t {
+enum class LevelSoundEvent : int {
     ItemUseOn                         = 0x0,
     Hit                               = 0x1,
     Step                              = 0x2,

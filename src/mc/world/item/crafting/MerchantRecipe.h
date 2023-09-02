@@ -10,20 +10,20 @@ public:
     // prevent constructor by default
     MerchantRecipe() = delete;
 
-    class ItemInstance                                mBuyA;             // this+0x0
-    class ItemInstance                                mBuyB;             // this+0x88
-    class ItemInstance                                mSell;             // this+0x110
-    int32_t                                               mTier;             // this+0x198
-    int32_t                                               mUses;             // this+0x19C
-    int32_t                                               mMaxUses;          // this+0x1A0
-    uint32_t                                      mTraderExp;        // this+0x1A4
-    bool                                              mRewardExp;        // this+0x1A8
-    int32_t                                               mDemand;           // this+0x1AC
-    int32_t                                               mBuyCountA;        // this+0x1B0
-    int32_t                                               mBuyCountB;        // this+0x1B4
-    float                                             mPriceMultiplierA; // this+0x1B8
-    float                                             mPriceMultiplierB; // this+0x1BC
-    TypedServerNetId<RecipeNetIdTag, uint32_t, 0> mRecipeNetId;      // this+0x1C0
+    class ItemInstance                        mBuyA;             // this+0x0
+    class ItemInstance                        mBuyB;             // this+0x88
+    class ItemInstance                        mSell;             // this+0x110
+    int                                       mTier;             // this+0x198
+    int                                       mUses;             // this+0x19C
+    int                                       mMaxUses;          // this+0x1A0
+    uint                                      mTraderExp;        // this+0x1A4
+    bool                                      mRewardExp;        // this+0x1A8
+    int                                       mDemand;           // this+0x1AC
+    int                                       mBuyCountA;        // this+0x1B0
+    int                                       mBuyCountB;        // this+0x1B4
+    float                                     mPriceMultiplierA; // this+0x1B8
+    float                                     mPriceMultiplierB; // this+0x1BC
+    TypedServerNetId<RecipeNetIdTag, uint, 0> mRecipeNetId;      // this+0x1C0
 
 public:
     // NOLINTBEGIN

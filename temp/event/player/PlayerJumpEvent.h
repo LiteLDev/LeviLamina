@@ -1,8 +1,8 @@
 #pragma once
 
 #include "liteloader/api/event/Event.h"
-#include "mc/Player.hpp"
 #include "liteloader/api/utils/AccessorMacro.h"
+#include "mc/Player.hpp"
 
 
 namespace ll::event::player {

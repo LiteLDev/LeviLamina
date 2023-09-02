@@ -16,8 +16,8 @@ public:
     // DimensionDefinitionGroup inner types define
     struct DimensionDefinition {
     public:
-        int32_t                      mHeightMinimum; // this+0x0
-        int32_t                      mHeightMaximum; // this+0x4
+        int                      mHeightMinimum; // this+0x0
+        int                      mHeightMaximum; // this+0x4
         enum class GeneratorType mGeneratorType; // this+0x8
     };
 

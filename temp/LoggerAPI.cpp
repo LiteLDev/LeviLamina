@@ -4,12 +4,12 @@
 
 #pragma once
 
-#include <unordered_map>
 #include <regex>
+#include <unordered_map>
 
 #include "liteloader/api/LoggerAPI.h"
-#include "mc/Player.hpp"
 #include "liteloader/api/utils/Hash.h"
+#include "mc/Player.hpp"
 
 #include "liteloader/core/Config.h"
 
@@ -70,7 +70,7 @@ Logger::OutputStream::OutputStream() = default;
 
 Logger::OutputStream::OutputStream(
     Logger*           logger,
-    int32_t               level,
+    int               level,
     std::string&&     consoleFormat,
     std::string&&     fileFormat,
     std::string&&     playerFormat,
@@ -86,7 +86,7 @@ Logger::OutputStream::OutputStream(
     this->levelPrefix   = levelPrefix;
 }
 
-bool checkLogLevel(int32_t level, int32_t outLevel) {
+bool checkLogLevel(int level, int outLevel) {
     if (level >= outLevel)
         return true;
     if (level == -1 && ll::globalConfig.logLevel >= outLevel)

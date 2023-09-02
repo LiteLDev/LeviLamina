@@ -1,50 +1,44 @@
 #pragma once
-#include "liteloader/api/db/RowSet.h"
 #include "liteloader/api/db/Pointer.h"
+#include "liteloader/api/db/RowSet.h"
 
 #define IF_ENDBG if (debugOutput)
 
 class Logger;
 
-namespace DB
-{
+namespace DB {
 
 extern Logger dbLogger;
 
 class Session;
 
 
-struct BindType
-{
-    Any value;
+struct BindType {
+    Any         value;
     std::string name;
-    int32_t idx = -1;
+    int         idx = -1;
 };
 
 
 template <typename T>
-struct BindSequenceType
-{
+struct BindSequenceType {
     T values;
     static_assert(std::is_same<typename T::value_type, Any>::value, "Container value type must be DB::Any");
 };
 
 template <typename T>
-struct BindMapType
-{
+struct BindMapType {
     T values;
     static_assert(std::is_same<typename T::key_type, std::string>::value, "Map key type must be std::string");
     static_assert(std::is_same<typename T::mapped_type, Any>::value, "Map value type must be DB::Any");
 };
 
 template <typename T>
-struct IntoType
-{
+struct IntoType {
     T& value;
 };
 
-class Stmt
-{
+class Stmt {
 
 protected:
 #if defined(LLDB_DEBUG_MODE)
@@ -52,9 +46,9 @@ protected:
 #else
     bool debugOutput = false;
 #endif
-    bool autoExecute = false;      ///< Whether to automatically execute the statement on bind
-    std::weak_ptr<Session> parent; ///< Parent session
-    std::weak_ptr<Stmt> self;
+    bool                   autoExecute = false; ///< Whether to automatically execute the statement on bind
+    std::weak_ptr<Session> parent;              ///< Parent session
+    std::weak_ptr<Stmt>    self;
 
 public:
     Stmt(const std::weak_ptr<Session>& parent, bool autoExecute = false);
@@ -78,7 +72,7 @@ public:
      * @par Implementation
      * @see SQLiteStmt::bind
      */
-    virtual Stmt& bind(const Any& value, int32_t index) = 0;
+    virtual Stmt& bind(const Any& value, int index) = 0;
 
     /**
      * @brief Bind a value to a statement parameter.
@@ -105,7 +99,7 @@ public:
 
     /**
      * @brief Execute the statement(after binding all the parameters)
-     * 
+     *
      * @return Stmt&  *this
      * @note   If `this->autoExecute` is true, there is no need to call this method
      */
@@ -159,20 +153,18 @@ public:
      * @endcode
      */
     template <typename T = Row>
-    inline T fetch()
-    {
+    inline T fetch() {
         return row_to<T>(_Fetch());
     }
 
     /**
      * @brief Fetch the current row.
-     * 
+     *
      * @param[out] row    The current row
      * @return     Stmt&  *this
      */
     template <typename T = Row>
-    inline Stmt& fetch(T& row)
-    {
+    inline Stmt& fetch(T& row) {
         row = row_to<T>(_Fetch());
         return *this;
     }
@@ -194,8 +186,7 @@ public:
      *     ->close();
      * @endcode
      */
-    inline Stmt& fetchEach(std::function<bool(const Row&)> cb)
-    {
+    inline Stmt& fetchEach(std::function<bool(const Row&)> cb) {
         do {
             auto res = _Fetch();
             if (res.size() == 0) {
@@ -210,17 +201,14 @@ public:
 
     /**
      * @brief Fetch each of the result rows(For compatibility).
-     * 
+     *
      * @param  cb     Callback function to handle the result rows
      * @return Stmt&  *this
      * @note   Return false in callback to stop fetching
      * @see Stmt::fetchEach
      */
-    inline Stmt& fetchAll(std::function<bool(const Row&)> cb) 
-    {
-        return fetchEach(cb);
-    }
-    //virtual Stmt& fetchAll(std::function<bool(const Row&)> cb);
+    inline Stmt& fetchAll(std::function<bool(const Row&)> cb) { return fetchEach(cb); }
+    // virtual Stmt& fetchAll(std::function<bool(const Row&)> cb);
 
     /**
      * @brief Fetch all the result rows.
@@ -250,18 +238,16 @@ public:
         fetchAll(result);
         return result;
     }
-    //virtual ResultSet fetchAll() = 0;
-    //virtual Stmt& fetchAll(ResultSet& rows);
+    // virtual ResultSet fetchAll() = 0;
+    // virtual Stmt& fetchAll(ResultSet& rows);
 
-    inline ResultSet fetchAll()
-    {
+    inline ResultSet fetchAll() {
         ResultSet set;
         fetchAll(set);
         return set;
     }
 
-    inline Stmt& fetchAll(ResultSet& rows)
-    {
+    inline Stmt& fetchAll(ResultSet& rows) {
         return fetchEach([&rows](const Row& row) {
             rows.push_back(row);
             return true;
@@ -270,9 +256,9 @@ public:
 
     /**
      * @brief Reset the statement from executing state to perpared state
-     * 
+     *
      * @return Stmt& *this
-     * 
+     *
      * @par Note
      * Different between `reset()`, `reexec` and `clear()`:
      * - `reset()` : Reset the statement to the prepared state
@@ -287,7 +273,7 @@ public:
      * @return Stmt&  *this
      * @note   If you want to clear the bound value, use clear() instead.
      * @see    Stmt::reset
-     * 
+     *
      * @par Impletementation
      * @see SQLiteStmt::reexec
      */
@@ -316,55 +302,55 @@ public:
     /**
      * @brief Get the number of rows affected by the statement.
      *
-     * @return int32_t  The number of rows affected
+     * @return int  The number of rows affected
      * @note   It will return -1(ULLONG_MAX - 1) if the row count is not available
      *
      * @par Impletementation
      * @see SQLiteStmt::getAffectedRows
      */
-    virtual uint64_t getAffectedRows() const = 0;
+    virtual uint64 getAffectedRows() const = 0;
 
     /**
      * @brief Get the insert id of the statement
      *
-     * @return uint64_t  The insert id
+     * @return uint64  The insert id
      * @throws std::runtime_error  If error occurs
      * @note   It will return -1(ULLONG_MAX - 1) if the insert id is not available
      *
      * @par Implementation
      * @see SQLiteStmt::getInsertId
      */
-    virtual uint64_t getInsertId() const = 0;
+    virtual uint64 getInsertId() const = 0;
 
     /**
      * @brief Get the number of the unbound parameters.
      *
-     * @return int32_t  The number of the unbound parameters
+     * @return int  The number of the unbound parameters
      *
      * @par Impletementation
      * @see SQLiteStmt::getUnboundParams
      */
-    virtual int32_t getUnboundParams() const = 0;
+    virtual int getUnboundParams() const = 0;
 
     /**
      * @brief Get the number of the bound parameters.
      *
-     * @return int32_t  The number of the bound parameters
+     * @return int  The number of the bound parameters
      *
      * @par Impletementation
      * @see SQLiteStmt::getBoundParams
      */
-    virtual int32_t getBoundParams() const = 0;
+    virtual int getBoundParams() const = 0;
 
     /**
      * @brief Get the number of parameters.
      *
-     * @return int32_t  The number of parameters
+     * @return int  The number of parameters
      *
      * @par Impletementation
      * @see SQLiteStmt::getParamsCount
      */
-    virtual int32_t getParamsCount() const = 0;
+    virtual int getParamsCount() const = 0;
 
     /**
      * @brief Get the session.
@@ -375,7 +361,7 @@ public:
 
     /**
      * @brief Get the shared pointer point to this
-     * 
+     *
      * @return SharedPointer<Stmt>  The ptr
      */
     virtual SharedPointer<Stmt> getSharedPointer() const;
@@ -393,7 +379,7 @@ public:
 
     /**
      * @brief Fetch the current row(internal).
-     * 
+     *
      * @return Row  The current row
      */
     virtual Row _Fetch() = 0;
@@ -405,34 +391,30 @@ public:
      * @param  v  The value
      * @return SharedPointer<Stmt>  this
      */
-    inline SharedPointer<Stmt> operator<<(const Any& v)
-    {
+    inline SharedPointer<Stmt> operator<<(const Any& v) {
         bind(v);
         return getSharedPointer();
     }
 
     /**
      * @brief Operator>> to store the result.
-     * 
+     *
      * @tparam T  The value type
      * @param  v  Where to store
      * @return SharedPointer<Stmt>  this
      */
     template <typename T>
-    inline SharedPointer<Stmt> operator>>(T& v)
-    {
+    inline SharedPointer<Stmt> operator>>(T& v) {
         fetch(v);
         return getSharedPointer();
     }
     template <>
-    inline SharedPointer<Stmt> operator>>(ResultSet& v)
-    {
+    inline SharedPointer<Stmt> operator>>(ResultSet& v) {
         fetchAll(v);
-        return getSharedPointer();     
+        return getSharedPointer();
     }
     template <typename T>
-    inline SharedPointer<Stmt> operator>>(std::vector<T>& v)
-    {
+    inline SharedPointer<Stmt> operator>>(std::vector<T>& v) {
         fetchAll(v);
         return getSharedPointer();
     }
@@ -451,10 +433,8 @@ public:
      * @return SharedPointer<Stmt>  this
      */
     template <typename T>
-    inline SharedPointer<Stmt> operator,(const BindSequenceType<T>& b)
-    {
-        for (auto& v : b.values)
-        {
+    inline SharedPointer<Stmt> operator,(const BindSequenceType<T>& b) {
+        for (auto& v : b.values) {
             bind(v);
         }
         return getSharedPointer();
@@ -466,19 +446,14 @@ public:
      * @return SharedPointer<Stmt>  this
      */
     template <>
-    inline SharedPointer<Stmt> operator,(const BindSequenceType<Row>& b)
-    {
-        if (b.values.header && b.values.header->size())
-        {
+    inline SharedPointer<Stmt> operator,(const BindSequenceType<Row>& b) {
+        if (b.values.header && b.values.header->size()) {
             b.values.forEach([&](const std::string& name, const Any& value) {
                 bind(value, name);
                 return true;
             });
-        }
-        else
-        {
-            for (auto& v : b.values)
-            {
+        } else {
+            for (auto& v : b.values) {
                 bind(v);
             }
         }
@@ -491,10 +466,8 @@ public:
      * @return SharedPointer<Stmt>  this
      */
     template <typename T>
-    inline SharedPointer<Stmt> operator,(const BindMapType<T>& b)
-    {
-        for (auto& v : b.values)
-        {
+    inline SharedPointer<Stmt> operator,(const BindMapType<T>& b) {
+        for (auto& v : b.values) {
             bind(v.second, v.first);
         }
         return getSharedPointer();
@@ -506,9 +479,9 @@ public:
      * @return SharedPointer<Stmt>  this
      */
     template <typename T>
-    inline SharedPointer<Stmt> operator,(IntoType<T>& i)
-    {
-        if (!done()) fetch<T>(i.value);
+    inline SharedPointer<Stmt> operator,(IntoType<T>& i) {
+        if (!done())
+            fetch<T>(i.value);
         return getSharedPointer();
     }
     /**
@@ -518,8 +491,7 @@ public:
      * @return SharedPointer<Stmt>  this
      */
     template <typename T>
-    inline SharedPointer<Stmt> operator,(IntoType<std::vector<T>>& i)
-    {
+    inline SharedPointer<Stmt> operator,(IntoType<std::vector<T>>& i) {
         fetchAll<std::vector<T>>(i.value);
         return getSharedPointer();
     }
@@ -530,8 +502,7 @@ public:
      * @return SharedPointer<Stmt>  this
      */
     template <>
-    inline SharedPointer<Stmt> operator,(IntoType<ResultSet>& i)
-    {
+    inline SharedPointer<Stmt> operator,(IntoType<ResultSet>& i) {
         fetchAll(i.value);
         return getSharedPointer();
     }
@@ -542,113 +513,85 @@ public:
      * @return SharedPointer<Stmt>  this
      */
     template <>
-    inline SharedPointer<Stmt> operator,(IntoType<Row>& i)
-    {
+    inline SharedPointer<Stmt> operator,(IntoType<Row>& i) {
         fetch(i.value);
         return getSharedPointer();
     }
 
     /**
      * @brief Operator-> to implement better API.
-     * 
+     *
      * @return Stmt*  this
      */
-    inline Stmt* operator->()
-    {
-        return this;
-    }
+    inline Stmt* operator->() { return this; }
 };
 
-inline BindType use(const Any& value, int32_t idx = -1)
-{
-    return BindType{value, std::string(), idx};
-}
-inline BindType use(const Any& value, const std::string& name)
-{
-    return BindType{value, name};
-}
-inline BindSequenceType<Row> use(const Row& values)
-{
-    return BindSequenceType<Row>{values};
-}
+inline BindType              use(const Any& value, int idx = -1) { return BindType{value, std::string(), idx}; }
+inline BindType              use(const Any& value, const std::string& name) { return BindType{value, name}; }
+inline BindSequenceType<Row> use(const Row& values) { return BindSequenceType<Row>{values}; }
 
 
 template <typename T>
-inline BindSequenceType<std::vector<T>> use(const std::vector<T>& values)
-{
+inline BindSequenceType<std::vector<T>> use(const std::vector<T>& values) {
     return BindSequenceType<std::vector<Any>>{to_any_container(values)};
 }
 template <typename T>
-inline BindSequenceType<std::set<T>> use(const std::set<T>& values)
-{
+inline BindSequenceType<std::set<T>> use(const std::set<T>& values) {
     return BindSequenceType<std::set<T>>{to_any_container(values)};
 }
 template <typename T>
-inline BindSequenceType<std::list<T>> use(const std::list<T>& values)
-{
+inline BindSequenceType<std::list<T>> use(const std::list<T>& values) {
     return BindSequenceType<std::list<T>>{to_any_container(values)};
 }
 template <typename T>
-inline BindSequenceType<std::vector<T>> use(const std::initializer_list<T>& values)
-{
+inline BindSequenceType<std::vector<T>> use(const std::initializer_list<T>& values) {
     return BindSequenceType<std::vector<T>>{to_any_container(std::vector<T>(values))};
 }
 template <>
-inline BindSequenceType<std::vector<Any>> use(const std::vector<Any>& values)
-{
+inline BindSequenceType<std::vector<Any>> use(const std::vector<Any>& values) {
     return BindSequenceType<std::vector<Any>>{values};
 }
 template <>
-inline BindSequenceType<std::set<Any>> use(const std::set<Any>& values)
-{
+inline BindSequenceType<std::set<Any>> use(const std::set<Any>& values) {
     return BindSequenceType<std::set<Any>>{values};
 }
 template <>
-inline BindSequenceType<std::list<Any>> use(const std::list<Any>& values)
-{
+inline BindSequenceType<std::list<Any>> use(const std::list<Any>& values) {
     return BindSequenceType<std::list<Any>>{values};
 }
 template <>
-inline BindSequenceType<std::vector<Any>> use(const std::initializer_list<Any>& values)
-{
+inline BindSequenceType<std::vector<Any>> use(const std::initializer_list<Any>& values) {
     return BindSequenceType<std::vector<Any>>{std::vector<Any>(values)};
 }
 
 
 // Map
 template <typename T>
-inline BindMapType<std::map<std::string, T>> use(const std::map<std::string, T>& values)
-{
+inline BindMapType<std::map<std::string, T>> use(const std::map<std::string, T>& values) {
     return BindMapType<std::map<std::string, T>>{values};
 }
 template <typename T>
-inline BindMapType<std::unordered_map<std::string, T>> use(const std::unordered_map<std::string, T>& values)
-{
+inline BindMapType<std::unordered_map<std::string, T>> use(const std::unordered_map<std::string, T>& values) {
     return BindMapType<std::unordered_map<std::string, T>>{values};
 }
 template <>
-inline BindMapType<std::map<std::string, Any>> use(const std::map<std::string, Any>& values)
-{
+inline BindMapType<std::map<std::string, Any>> use(const std::map<std::string, Any>& values) {
     return BindMapType<std::map<std::string, Any>>{values};
 }
 template <>
-inline BindMapType<std::unordered_map<std::string, Any>> use(const std::unordered_map<std::string, Any>& values)
-{
+inline BindMapType<std::unordered_map<std::string, Any>> use(const std::unordered_map<std::string, Any>& values) {
     return BindMapType<std::unordered_map<std::string, Any>>{values};
 }
-inline BindMapType<std::map<std::string, Any>> use(const std::initializer_list<std::pair<std::string, Any>>& values)
-{
+inline BindMapType<std::map<std::string, Any>> use(const std::initializer_list<std::pair<std::string, Any>>& values) {
     std::map<std::string, Any> result;
-    for (auto& pair : values)
-    {
+    for (auto& pair : values) {
         result.insert(std::make_pair(pair.first, pair.second));
     }
     return BindMapType<std::map<std::string, Any>>{result};
 }
 
 template <typename T>
-inline IntoType<T> into(T& out)
-{
+inline IntoType<T> into(T& out) {
     return IntoType<T>{out};
 }
 

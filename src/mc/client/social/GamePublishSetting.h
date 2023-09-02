@@ -4,7 +4,7 @@
 
 namespace Social {
 
-enum class GamePublishSetting : int32_t {
+enum class GamePublishSetting : int {
     NoMultiPlay      = 0x0,
     InviteOnly       = 0x1,
     FriendsOnly      = 0x2,

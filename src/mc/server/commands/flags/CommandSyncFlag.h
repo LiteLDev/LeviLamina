@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class CommandSyncFlag : uint16_t {
+enum class CommandSyncFlag : ushort {
     Synced = 0,
     Local  = 1 << 4,
 };

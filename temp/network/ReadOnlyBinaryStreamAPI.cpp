@@ -1,5 +1,5 @@
-#include "mc/ReadOnlyBinaryStream.hpp"
 #include "mc/CompoundTag.hpp"
+#include "mc/ReadOnlyBinaryStream.hpp"
 
 #include "liteloader/api/memory/MemoryUtils.h"
 
@@ -24,7 +24,8 @@ void ReadOnlyBinaryStream::setReadPointer(std::size_t size) {
 std::unique_ptr<class CompoundTag> ReadOnlyBinaryStream::getCompoundTag() {
     auto tag = CompoundTag::create();
     class CompoundTag& (*rv)(class CompoundTag&, class ReadOnlyBinaryStream&);
-    *((void**)&rv) = LL_RESOLVE_SYMBOL("?read@?$serialize@VCompoundTag@@@@SA?AVCompoundTag@@AEAVReadOnlyBinaryStream@@@Z");
+    *((void**)&rv) =
+        LL_RESOLVE_SYMBOL("?read@?$serialize@VCompoundTag@@@@SA?AVCompoundTag@@AEAVReadOnlyBinaryStream@@@Z");
     (*rv)(*tag, *this);
     return std::move(tag);
 }

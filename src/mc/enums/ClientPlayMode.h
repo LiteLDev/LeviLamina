@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ClientPlayMode : int32_t {
+enum class ClientPlayMode : int {
     Normal              = 0x0,
     Teaser              = 0x1,
     Screen              = 0x2,

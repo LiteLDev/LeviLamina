@@ -5,23 +5,23 @@
 #include "liteloader/api/I18nAPI.h"
 #include "liteloader/api/LLAPI.h"
 #include "liteloader/api/LoggerAPI.h"
+#include "liteloader/api/ScheduleAPI.h"
+#include "liteloader/api/memory/Hook.h"
+#include "liteloader/api/utils/SRWLock.h"
+#include "mc/ActorDefinitionIdentifier.hpp"
 #include "mc/AvailableCommandsPacket.hpp"
+#include "mc/CommandBlockName.hpp"
 #include "mc/CommandMessage.hpp"
 #include "mc/CommandOutput.hpp"
 #include "mc/CommandRegistry.hpp"
-#include "mc/ItemInstance.hpp"
-#include "mc/MobEffect.hpp"
-#include "mc/ActorDefinitionIdentifier.hpp"
-#include "mc/Level.hpp"
-#include "mc/CommandBlockName.hpp"
-#include "liteloader/api/utils/SRWLock.h"
-#include "liteloader/api/ScheduleAPI.h"
-#include "mc/Minecraft.hpp"
-#include "mc/LoopbackPacketSender.hpp"
-#include "mc/CommandUtils.hpp"
 #include "mc/CommandSoftEnumRegistry.hpp"
+#include "mc/CommandUtils.hpp"
 #include "mc/CompoundTag.hpp"
-#include "liteloader/api/memory/Hook.h"
+#include "mc/ItemInstance.hpp"
+#include "mc/Level.hpp"
+#include "mc/LoopbackPacketSender.hpp"
+#include "mc/Minecraft.hpp"
+#include "mc/MobEffect.hpp"
 
 #include "liteloader/core/LiteLoader.h"
 
@@ -76,7 +76,7 @@ using ParameterIndex = DynamicCommandInstance::ParameterIndex;
 
 namespace ParameterDataType {
 typedef bool                           Bool;
-typedef int32_t                            Int;
+typedef int                            Int;
 typedef float                          Float;
 typedef std::string                    String;
 typedef WildcardCommandSelector<Actor> WildcardSelector;
@@ -92,15 +92,15 @@ typedef CommandBlockName               Block;
 typedef MobEffect const*               Effect;
 // typedef CommandPosition Position;
 #ifdef USE_PARSE_ENUM_STRING
-typedef std::pair<std::string, int32_t> Enum;
+typedef std::pair<std::string, int> Enum;
 #else
-typedef int32_t Enum;
+typedef int Enum;
 #endif // USE_PARSE_ENUM_STRING
 typedef std::string                      SoftEnum;
 typedef ActorDefinitionIdentifier const* ActorType;
 typedef std::unique_ptr<Command>         Command;
 #ifdef ENABLE_PARAMETER_TYPE_POSTFIX
-typedef int32_t Postfix;
+typedef int Postfix;
 #endif // ENABLE_PARAMETER_TYPE_POSTFIX
 } // namespace ParameterDataType
 
@@ -128,7 +128,7 @@ auto const ParameterSizeMap = std::unordered_map<ParameterType, size_t>{
 #endif  // ENABLE_PARAMETER_TYPE_POSTFIX
 };
 
-inline void OutputError(std::string errorMsg, int32_t errorCode, std::string errorWhat, std::string func, HMODULE handle) {
+inline void OutputError(std::string errorMsg, int errorCode, std::string errorWhat, std::string func, HMODULE handle) {
     logger.error(errorMsg);
     logger.error("Error: Code [{}] {}", errorCode, errorWhat);
     logger.error("In Function ({})", func);
@@ -317,12 +317,12 @@ inline std::string DynamicCommand::Result::getName() const {
 std::string DynamicCommand::Result::toDebugString() const {
     std::string   name     = getName();
     ParameterType type     = getType();
-    std::string   typeName = fmt::format("{}({})", magic_enum::enum_name(type), (int32_t)type);
+    std::string   typeName = fmt::format("{}({})", magic_enum::enum_name(type), (int)type);
     switch (type) {
     case ParameterType::Bool:
         return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, getRaw<bool>());
     case ParameterType::Int:
-        return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, getRaw<int32_t>());
+        return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, getRaw<int>());
     case ParameterType::Float:
         return fmt::format(
             "name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, getRaw<float>()
@@ -417,7 +417,7 @@ std::string DynamicCommand::Result::toDebugString() const {
             name,
             typeName,
             isSet,
-            fmt::format("{}({})", getRaw<std::string>(), getRaw<int32_t>())
+            fmt::format("{}({})", getRaw<std::string>(), getRaw<int>())
         );
     case ParameterType::SoftEnum:
         return fmt::format(
@@ -574,8 +574,8 @@ DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicComm
                     }
                 }
             }
-            std::vector<std::pair<std::string, uint64_t>> values;
-            size_t                                        index = range.first;
+            std::vector<std::pair<std::string, uint64>> values;
+            size_t                                      index = range.first;
             for (auto iter = commandInstance->enumValues.begin() + range.first;
                  iter != commandInstance->enumValues.begin() + range.first + range.second;
                  ++iter) {
@@ -585,7 +585,7 @@ DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicComm
 #ifdef USE_PARSE_ENUM_STRING
             Global<CommandRegistry>->_addEnumValuesInternal(fixedView.data(), values, typeid_t<CommandRegistry>::count++, &CommandRegistry::parseEnumStringAndInt).val;
 #else
-            Global<CommandRegistry>->_addEnumValuesInternal(fixedView.data(), values, typeid_t<CommandRegistry>::count++, &CommandRegistry::parseEnum<int32_t>).val;
+            Global<CommandRegistry>->_addEnumValuesInternal(fixedView.data(), values, typeid_t<CommandRegistry>::count++, &CommandRegistry::parseEnum<int>).val;
 #endif // USE_PARSE_ENUM_STRING
         }
         commandInstance->enumRanges.swap(convertedEnumRanges);
@@ -844,7 +844,7 @@ DynamicCommandInstance::setEnum(std::string const& description, std::vector<std:
     return *desc;
 }
 
-inline std::string const& DynamicCommandInstance::getEnumValue(int32_t index) const {
+inline std::string const& DynamicCommandInstance::getEnumValue(int index) const {
     if (index < 0 || index >= enumValues.size())
         throw std::runtime_error("Enum index out of range");
     return enumValues.at(index);
@@ -1126,8 +1126,8 @@ using ParamIndex = DynamicCommandInstance::ParameterIndex;
 #ifdef TEST_DYNAMIC_COMMAND
 
 #include "mc/Actor.hpp"
-#include "mc/Player.hpp"
 #include "mc/Minecraft.hpp"
+#include "mc/Player.hpp"
 
 void setupTestParamCommand() {
     using Param     = DynamicCommand::ParameterData;
@@ -1236,13 +1236,13 @@ void setupTestEnumCommand() {
             switch (do_hash(action.c_str())) {
             case do_hash("add"):
                 if (results["testInt"].isSet)
-                    output.success(fmt::format("add {}", results["testInt"].getRaw<int32_t>()));
+                    output.success(fmt::format("add {}", results["testInt"].getRaw<int>()));
                 else
                     output.success("add nothing");
                 break;
             case do_hash("remove"):
                 if (results["testInt"].isSet)
-                    output.success(fmt::format("remove {}", results["testInt"].getRaw<int32_t>()));
+                    output.success(fmt::format("remove {}", results["testInt"].getRaw<int>()));
                 else
                     output.success("remove nothing");
                 break;
@@ -1355,7 +1355,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     CommandParameterOption option
 ) {
     // logger.warn("CommandParameterData::addOptions - name: {}, type: {}, desc: {}, option: {:x}",
-    //             name, magic_enum::enum_name(type), desc ? desc : "", (int32_t)option);
+    //             name, magic_enum::enum_name(type), desc ? desc : "", (int)option);
     return origin(option);
 }
 

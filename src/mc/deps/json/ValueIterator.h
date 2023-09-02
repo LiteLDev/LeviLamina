@@ -13,7 +13,6 @@ namespace Json {
 class ValueIterator : public ValueIteratorBase {
 
 public:
-
     // NOLINTBEGIN
     // symbol: ??0ValueIterator@Json@@QEAA@AEBV01@@Z
     MCAPI ValueIterator(class Json::ValueIterator const&);

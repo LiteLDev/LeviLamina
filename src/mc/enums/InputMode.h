@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class InputMode : int32_t {
+enum class InputMode : int {
     Undefined        = 0x0,
     Mouse            = 0x1,
     Touch            = 0x2,

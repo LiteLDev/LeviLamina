@@ -1,5 +1,5 @@
-#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/event/player/PlayerWearArmorEvent.h"
+#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/memory/Hook.h"
 
 #include "liteloader/api/ScheduleAPI.h"
@@ -16,11 +16,11 @@
 
 namespace ll::event::player {
 
-PlayerWearArmorEvent::PlayerWearArmorEvent(Player* player, int32_t slot, ItemStack* armorItem)
+PlayerWearArmorEvent::PlayerWearArmorEvent(Player* player, int slot, ItemStack* armorItem)
 : player(player), slot(slot), armorItem(armorItem) {}
 
 LL_GETTER_IMPL(PlayerWearArmorEvent, Player*, player, getPlayer)
-LL_GETTER_IMPL(PlayerWearArmorEvent, int32_t, slot, getSlot)
+LL_GETTER_IMPL(PlayerWearArmorEvent, int, slot, getSlot)
 LL_GETTER_IMPL(PlayerWearArmorEvent, ItemStack*, armorItem, getArmorItem)
 LL_SETTER_IMPL(PlayerWearArmorEvent, ItemStack*, armorItem, setArmorItem)
 
@@ -32,7 +32,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     HookPriority::Normal,
     "?setArmor@ServerPlayer@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z",
     void,
-    int32_t        slot,
+    int        slot,
     ItemStack* it
 ) {
     using ll::memory::dAccess;

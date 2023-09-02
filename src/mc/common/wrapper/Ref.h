@@ -5,10 +5,10 @@
 template <typename T>
 class WeakStorageSharePtr {
 public:
-    enum class VariadicInit : int32_t {
+    enum class VariadicInit : int {
         NonAmbiguous = 0,
     };
-    enum class EmptyInit : int32_t {
+    enum class EmptyInit : int {
         NoValue = 0,
     };
     std::weak_ptr<T> mHandle;
@@ -52,10 +52,10 @@ public:
 template <typename T>
 class OwnerStorageSharePtr {
 public:
-    enum class VariadicInit : int32_t {
+    enum class VariadicInit : int {
         NonAmbiguous = 0,
     };
-    enum class EmptyInit : int32_t {
+    enum class EmptyInit : int {
         NoValue = 0,
     };
     std::shared_ptr<T> mHandle;
@@ -134,9 +134,9 @@ public:
 
     void addWeakCount() { weak_count++; }
 
-    int32_t getShareCount() const { return share_count.load(); }
+    int getShareCount() const { return share_count.load(); }
 
-    int32_t getWeakCount() const { return weak_count.load(); }
+    int getWeakCount() const { return weak_count.load(); }
 
     T* get() const { return ptr; }
 
@@ -162,6 +162,6 @@ public:
 
 private:
     T*               ptr;
-    std::atomic<int32_t> share_count;
-    std::atomic<int32_t> weak_count;
+    std::atomic<int> share_count;
+    std::atomic<int> weak_count;
 };

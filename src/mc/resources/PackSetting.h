@@ -10,7 +10,7 @@ namespace Json { class Value; }
 
 class PackSetting {
 public:
-    PackSetting()                              = delete;
+    PackSetting() = delete;
 
     Json::Value*                     mValue;     // this+0x0
     std::vector<PackSettingObserver> mObservers; // this+0x8

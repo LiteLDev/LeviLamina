@@ -1,5 +1,5 @@
-#include "mc/CommandOrigin.hpp"
 #include "mc/Actor.hpp"
+#include "mc/CommandOrigin.hpp"
 
 ServerPlayer* CommandOrigin::getPlayer() const {
     Actor* origin = getEntity();

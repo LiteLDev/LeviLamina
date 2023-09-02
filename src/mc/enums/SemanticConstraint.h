@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class SemanticConstraint : int8_t {
+enum class SemanticConstraint : schar {
     None                        = 0x0,
     RequiresCheatsEnabled       = 0x1,
     RequiresElevatedPermissions = 0x2,

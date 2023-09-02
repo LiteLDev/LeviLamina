@@ -5,19 +5,19 @@
 class MoveActorAbsoluteData {
 public:
     union Header {
-        uint8_t mRaw;                  // this+0x0
-        bool          mIsOnGround;           // this(bf)+0x0:0x0 len(0x1)
-        bool          mTeleported;           // this(bf)+0x0:0x1 len(0x1)
-        bool          mForceMoveLocalEntity; // this(bf)+0x0:0x2 len(0x1)
+        uchar mRaw;                  // this+0x0
+        bool  mIsOnGround;           // this(bf)+0x0:0x0 len(0x1)
+        bool  mTeleported;           // this(bf)+0x0:0x1 len(0x1)
+        bool  mForceMoveLocalEntity; // this(bf)+0x0:0x2 len(0x1)
     };
 
     ActorRuntimeID                mRuntimeId;
     MoveActorAbsoluteData::Header mHeader;
     Vec3                          mPos;
-    int8_t                        mRotX;
-    int8_t                        mRotY;
-    int8_t                        mRotYHead;
-    int8_t                        mRotYBody;
+    schar                         mRotX;
+    schar                         mRotY;
+    schar                         mRotYHead;
+    schar                         mRotYBody;
 
     // prevent constructor by default
     MoveActorAbsoluteData& operator=(MoveActorAbsoluteData const&) = delete;

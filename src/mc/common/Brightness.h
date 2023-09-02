@@ -7,7 +7,7 @@ public:
     // prevent constructor by default
     Brightness() = delete;
 
-    uint8_t value;
+    uchar value;
 
 public:
     // NOLINTBEGIN

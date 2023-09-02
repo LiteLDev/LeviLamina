@@ -6,7 +6,7 @@ namespace mce {
 
 class Blob {
 public:
-    using value_type     = uint8_t;
+    using value_type     = uchar;
     using size_type      = size_t;
     using pointer        = value_type*;
     using iterator       = value_type*;
@@ -27,7 +27,7 @@ public:
     pointer_type mBlob; // this+0x0
     size_type    mSize; // this+0x10
 
-    [[nodiscard]] inline uint8_t const* data() const { return mBlob.get(); }
+    [[nodiscard]] inline uchar const* data() const { return mBlob.get(); }
 
     [[nodiscard]] inline size_type size() const { return mSize; }
 
@@ -35,7 +35,7 @@ public:
 
     [[nodiscard]] inline Blob clone() const { return {data(), size()}; }
 
-    inline Blob(uint8_t const* srcData, size_type dataSize) : mSize(dataSize) {
+    inline Blob(uchar const* srcData, size_type dataSize) : mSize(dataSize) {
         mBlob = pointer_type(new value_type[dataSize], Deleter());
         std::copy(srcData, srcData + dataSize, mBlob.get());
     }

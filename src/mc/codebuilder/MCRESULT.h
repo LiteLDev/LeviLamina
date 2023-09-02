@@ -7,7 +7,7 @@ struct MCRESULT {
 public:
     bool                  mSuccess;
     enum class MCCATEGORY mCategory;
-    uint16_t              mCode;
+    ushort                mCode;
 
     operator bool() const { return mSuccess; } // NOLINT
 

@@ -12,8 +12,8 @@ public:
     E& getError() { return error; }
 
 private:
-    E    error;
-    uint8_t filler[0x30]{};
+    E     error;
+    uchar filler[0x30]{};
 };
 
 }; // namespace Bedrock

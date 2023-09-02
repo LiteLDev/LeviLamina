@@ -113,7 +113,7 @@ void ll::LoadMain() {
     cleanOldScriptEngine();
 
     // Load plugins
-    int32_t                 pluginCount = 0;
+    int                 pluginCount = 0;
     vector<std::string> preloadList = getPreloadList();
 
     filesystem::directory_iterator ent("plugins");
@@ -132,7 +132,7 @@ void ll::LoadMain() {
 
         // Process Shell link file
         std::string ext         = UTF82String(path.extension().u8string());
-        bool   isShellLink = false;
+        bool        isShellLink = false;
         if (ext == ".lnk") { // Shell link file
             ShellLinkFile lnk(path.wstring());
             path = lnk.getPathW();
@@ -157,7 +157,7 @@ void ll::LoadMain() {
 
         // Avoid preloaded plugin
         std::string pluginFileName = UTF82String(path.filename().u8string());
-        bool   loaded         = false;
+        bool        loaded         = false;
         for (auto& p : preloadList)
             if (p.find(pluginFileName) != std::wstring::npos) {
                 loaded = true;

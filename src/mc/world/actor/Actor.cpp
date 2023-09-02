@@ -49,7 +49,7 @@ bool Actor::isPlayer(bool allowSimulatedPlayer) const {
 bool Actor::isItemActor() const { return hasCategory(ActorCategory::Item); }
 bool Actor::isOnGround() const { return ActorCollision::isOnGround(getEntityContext()); }
 
-void Actor::setOnFire(int32_t num, bool isEffect) {
+void Actor::setOnFire(int num, bool isEffect) {
     if (isEffect) {
         OnFireSystem::setOnFire(*this, num);
     } else {
@@ -107,7 +107,7 @@ class HitResult Actor::traceRay(
             origin + rayDir * tMax,
             true,
             false,
-            ((static_cast<int32_t>(tMax) + 1) * 2),
+            ((static_cast<int>(tMax) + 1) * 2),
             false,
             false,
             nullptr,
@@ -123,7 +123,7 @@ class HitResult Actor::traceRay(
     return result;
 }
 
-void Actor::teleport(class Vec3 const& pos, int32_t dimID, class Vec2 const& rotation) {
+void Actor::teleport(class Vec3 const& pos, int dimID, class Vec2 const& rotation) {
     Vec2 relativeRotation = rotation - getRotation();
     TeleportCommand::applyTarget(
         *this,
@@ -139,7 +139,7 @@ void Actor::teleport(class Vec3 const& pos, int32_t dimID, class Vec2 const& rot
     );
 }
 
-void Actor::teleport(class Vec3 const& pos, int32_t dimID) {
+void Actor::teleport(class Vec3 const& pos, int dimID) {
     TeleportCommand::applyTarget(
         *this, TeleportCommand::computeTarget(*this, pos, nullptr, dimID, std::nullopt, 1), false
     );

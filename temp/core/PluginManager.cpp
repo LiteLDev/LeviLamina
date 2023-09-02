@@ -4,20 +4,20 @@
 #include <unordered_map>
 // #include <ScriptEngine/src/main/Configs.h>
 
+#include "liteloader/api/utils/STLHelper.h"
 #include "liteloader/api/utils/StringHelper.h"
 #include "liteloader/api/utils/WinHelper.h"
-#include "liteloader/api/utils/STLHelper.h"
 
 #include "mc/Level.hpp"
 #include "mc/Player.hpp"
 
+#include "liteloader/api/I18nAPI.h"
 #include "liteloader/api/LLAPI.h"
 #include "liteloader/api/LoggerAPI.h"
-#include "liteloader/api/event/LegacyEvents.h"
-#include "liteloader/api/event/EventManager.h"
-#include "liteloader/api/event/server/ServerStartedEvent.h"
 #include "liteloader/api/ScheduleAPI.h"
-#include "liteloader/api/I18nAPI.h"
+#include "liteloader/api/event/EventManager.h"
+#include "liteloader/api/event/LegacyEvents.h"
+#include "liteloader/api/event/server/ServerStartedEvent.h"
 
 #include "liteloader/core/LiteLoader.h"
 
@@ -344,12 +344,12 @@ bool ll::PluginManager::reloadPlugin(string pluginName, bool outputResult) {
     }
 }
 
-int32_t ll::PluginManager::reloadAllPlugins(bool outputResult) {
+int ll::PluginManager::reloadAllPlugins(bool outputResult) {
     // if (!ll::isDebugMode())
     //     return false;
     try {
         auto allPlugins = getAllPlugins(true);
-        int32_t  cnt        = 0;
+        int  cnt        = 0;
         for (auto& [name, plugin] : allPlugins) {
             if (plugin->type == Plugin::PluginType::ScriptPlugin) {
                 ll::event::legacy::ScriptPluginManagerEvent ev;
@@ -384,7 +384,7 @@ int32_t ll::PluginManager::reloadAllPlugins(bool outputResult) {
     }
 }
 
-//TODO: 使用插件系统的 onLoad onUnload onEnable onDisable代替
+// TODO: 使用插件系统的 onLoad onUnload onEnable onDisable代替
 bool ll::PluginManager::callEventAtHotLoad(std::string pluginName) {
     using namespace ll::event;
     // if (!ll::isDebugMode())

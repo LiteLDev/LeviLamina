@@ -9,8 +9,8 @@
 
 class ModalFormRequestPacket : public ::Packet {
 public:
-    uint32_t mFormId;   // this+0x30
-    std::string  mFormJSON; // this+0x38
+    uint        mFormId;   // this+0x30
+    std::string mFormJSON; // this+0x38
 
     // prevent constructor by default
     ModalFormRequestPacket& operator=(ModalFormRequestPacket const&) = delete;

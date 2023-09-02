@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ActorType : uint32_t {
+enum class ActorType : uint {
     Undefined       = 1,
     TypeMask        = 0b11111111,
     None            = 0,

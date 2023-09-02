@@ -1,12 +1,12 @@
 #include "liteloader/core/CrashLogger.h"
-#include "liteloader/core/Config.h"
 #include "liteloader/api/LoggerAPI.h"
 #include "liteloader/api/utils/StringHelper.h"
 #include "liteloader/api/utils/WinHelper.h"
-#include <filesystem>
+#include "liteloader/core/Config.h"
 #include "mc/Common.hpp"
 #include "mc/SharedConstants.hpp"
 #include <Windows.h>
+#include <filesystem>
 using namespace std;
 using namespace ll;
 
@@ -28,15 +28,20 @@ bool ll::CrashLogger::startCrashLoggerProcess() {
     PROCESS_INFORMATION pi;
 
     SECURITY_ATTRIBUTES sa;
-    sa.bInheritHandle = TRUE;
+    sa.bInheritHandle       = TRUE;
     sa.lpSecurityDescriptor = nullptr;
-    sa.nLength = sizeof(SECURITY_ATTRIBUTES);
+    sa.nLength              = sizeof(SECURITY_ATTRIBUTES);
 
-    wchar_t daemonCmd[MAX_PATH];
+    wchar_t     daemonCmd[MAX_PATH];
     std::string serverVersion =
         fmt::format("{}.{:0>2}", Common::getGameVersionStringNet(), SharedConstants::RevisionVersion);
-    wsprintf(daemonCmd, L"%ls %u \"%ls\"", str2wstr(globalConfig.crashLoggerPath).c_str(), GetCurrentProcessId(),
-             str2wstr(serverVersion).c_str());
+    wsprintf(
+        daemonCmd,
+        L"%ls %u \"%ls\"",
+        str2wstr(globalConfig.crashLoggerPath).c_str(),
+        GetCurrentProcessId(),
+        str2wstr(serverVersion).c_str()
+    );
     if (!CreateProcess(nullptr, daemonCmd, &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi)) {
         crashLogger.error(tr("ll.crashLogger.error.cannotCreateDaemonProcess"));
         crashLogger.error << GetLastErrorMessage() << Logger::endl;
@@ -59,7 +64,7 @@ void ll::CrashLogger::initCrashLogger(bool enableCrashLogger) {
         crashLogger.warn(tr("ll.crashLogger.warning.crashLoggerDisabled.4"));
         return;
     }
-    //string noCrashLoggerReason;
+    // string noCrashLoggerReason;
 
     // Get file list
     filesystem::directory_iterator ent("plugins");

@@ -1,13 +1,11 @@
 #include "liteloader/api/db/impl/sqlite/Session.h"
+#include "liteloader/api/LoggerAPI.h"
 #include "liteloader/api/db/impl/sqlite/Stmt.h"
 #include <sqlite3.h>
-#include "liteloader/api/LoggerAPI.h"
 
 namespace DB {
 
-SQLiteSession::SQLiteSession() {
-    IF_ENDBG dbLogger.debug("SQLiteSession: Constructed! this: {}", (void*)this);
-}
+SQLiteSession::SQLiteSession() { IF_ENDBG dbLogger.debug("SQLiteSession: Constructed! this: {}", (void*)this); }
 SQLiteSession::SQLiteSession(const ConnParams& params) {
     IF_ENDBG dbLogger.debug("SQLiteSession: Constructed! this: {}", (void*)this);
     open(params);
@@ -20,7 +18,7 @@ SQLiteSession::~SQLiteSession() {
 
 void SQLiteSession::open(const ConnParams& params) {
     // see https://www.sqlite.org/c3ref/open.html
-    auto p = params; // Copy to avoid modifying the origin.
+    auto p    = params; // Copy to avoid modifying the origin.
     auto path = p.getPath();
     if (path.empty()) {
         path = ":memory:";
@@ -66,13 +64,13 @@ void SQLiteSession::open(const ConnParams& params) {
 
 bool SQLiteSession::execute(const std::string& query) {
     IF_ENDBG dbLogger.debug("SQLiteSession::execute: Executing > " + query);
-    auto res = sqlite3_exec(conn, query.c_str(), nullptr, nullptr, nullptr);
+    auto     res = sqlite3_exec(conn, query.c_str(), nullptr, nullptr, nullptr);
     return res == SQLITE_OK;
 }
 
 Session& SQLiteSession::query(const std::string& query, std::function<bool(const Row&)> callback) {
     IF_ENDBG dbLogger.debug("SQLiteSession::query: Querying > " + query);
-    auto stmt = prepare(query);
+    auto     stmt = prepare(query);
     stmt->fetchAll(callback);
     return *this;
 }
@@ -83,23 +81,17 @@ SharedPointer<Stmt> SQLiteSession::prepare(const std::string& query, bool autoEx
     return stmt;
 }
 
-std::string SQLiteSession::getLastError() const {
-    return std::string(sqlite3_errmsg(conn));
-}
+std::string SQLiteSession::getLastError() const { return std::string(sqlite3_errmsg(conn)); }
 
-uint64_t SQLiteSession::getAffectedRows() const {
-    return sqlite3_changes(conn);
-}
+uint64 SQLiteSession::getAffectedRows() const { return sqlite3_changes(conn); }
 
-uint64_t SQLiteSession::getLastInsertId() const {
-    return sqlite3_last_insert_rowid(conn);
-}
+uint64 SQLiteSession::getLastInsertId() const { return sqlite3_last_insert_rowid(conn); }
 
 void SQLiteSession::close() {
     while (!stmtPool.empty()) {
         // Close all the active statements or it will error when closing
         auto& wptr = stmtPool.back();
-        auto ptr = wptr.lock();
+        auto  ptr  = wptr.lock();
         if (!wptr.expired() && ptr) {
             ptr->close();
         }
@@ -108,23 +100,19 @@ void SQLiteSession::close() {
     if (conn) {
         auto res = sqlite3_close(conn);
         if (res != SQLITE_OK) {
-            throw std::runtime_error("SQLiteSession::close: Failed to close database: " + std::string(sqlite3_errmsg(conn)));
+            throw std::runtime_error(
+                "SQLiteSession::close: Failed to close database: " + std::string(sqlite3_errmsg(conn))
+            );
         }
         conn = nullptr;
         IF_ENDBG dbLogger.debug("SQLiteSession::close: Closed database");
     }
 }
 
-bool SQLiteSession::isOpen() {
-    return conn != nullptr;
-}
+bool SQLiteSession::isOpen() { return conn != nullptr; }
 
-DBType SQLiteSession::getType() {
-    return DBType::SQLite;
-}
+DBType SQLiteSession::getType() { return DBType::SQLite; }
 
-SharedPointer<Stmt> SQLiteSession::operator<<(const std::string& query) {
-    return prepare(query, true);
-}
+SharedPointer<Stmt> SQLiteSession::operator<<(const std::string& query) { return prepare(query, true); }
 
 } // namespace DB

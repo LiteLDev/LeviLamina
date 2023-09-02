@@ -7,7 +7,6 @@
 
 class SimpleSparseContainer {
 public:
-
     // prevent constructor by default
     SimpleSparseContainer& operator=(SimpleSparseContainer const&) = delete;
     SimpleSparseContainer(SimpleSparseContainer const&)            = delete;

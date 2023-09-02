@@ -50,8 +50,8 @@ void _onCallError(std::string const& msg, HMODULE handle) {
         logger.error("In plugin <{}>", plugin->name);
 }
 
-int32_t removeNameSpace(std::string const& nameSpace) {
-    int32_t count = 0;
+int removeNameSpace(std::string const& nameSpace) {
+    int count = 0;
     for (auto iter = exportedFuncs.begin(); iter != exportedFuncs.end();) {
         if (SplitStrWithPattern(iter->first, "::")[0] == nameSpace) {
             iter = exportedFuncs.erase(iter);
@@ -62,8 +62,8 @@ int32_t removeNameSpace(std::string const& nameSpace) {
     return count;
 }
 
-int32_t removeFuncs(std::vector<std::pair<std::string, std::string>> funcs) {
-    int32_t count = 0;
+int removeFuncs(std::vector<std::pair<std::string, std::string>> funcs) {
+    int count = 0;
     for (auto& [ns, name] : funcs) {
         if (removeFunc(ns + "::" + name))
             count++;
@@ -74,7 +74,7 @@ int32_t removeFuncs(std::vector<std::pair<std::string, std::string>> funcs) {
 } // namespace RemoteCall
 
 static_assert(RemoteCall::is_supported_type_v<void>);
-static_assert(RemoteCall::is_supported_type_v<int32_t>);
+static_assert(RemoteCall::is_supported_type_v<int>);
 static_assert(RemoteCall::is_supported_type_v<bool>);
 static_assert(RemoteCall::is_supported_type_v<float>);
 static_assert(RemoteCall::is_supported_type_v<size_t>);
@@ -126,7 +126,7 @@ inline bool testExtra = ([]() {
 #endif // false
     return true;
 })();
-int32_t                          TestExport(std::string a0, int32_t a1, int32_t a2) { return static_cast<int32_t>(a0.size()) + a1; }
+int                          TestExport(std::string a0, int a1, int a2) { return static_cast<int>(a0.size()) + a1; }
 std::unique_ptr<CompoundTag> TestSimulatedPlayerLL(Player* player) { return player->getNbt(); }
 
 void exportTestSimulatedPlayerLL() {

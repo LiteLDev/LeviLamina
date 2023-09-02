@@ -14,7 +14,7 @@ class CustomEvent : public Event<CustomEvent> {
 public:
     virtual ~CustomEvent() = default;
 
-    [[nodiscard]] virtual int32_t getApiVersion() const = 0;
+    [[nodiscard]] virtual int getApiVersion() const = 0;
 
     [[nodiscard]] virtual ll::Plugin getPlugin() const = 0;
 
@@ -22,7 +22,7 @@ public:
 
     [[nodiscard]] virtual void* getContentPtr() const = 0;
 
-    constexpr static int32_t CURRENT_CUSTOM_EVENT_API_VERSION = 1;
+    constexpr static int CURRENT_CUSTOM_EVENT_API_VERSION = 1;
 
     template <class ContentType>
     inline ContentType* getContent() {

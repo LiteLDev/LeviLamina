@@ -12,7 +12,7 @@
 struct SubChunk {
 public:
     // SubChunk inner types define
-    enum class SubChunkState : int32_t {
+    enum class SubChunkState : int {
         Invalid                    = -1,
         Normal                     = 0,
         IsLightingSystemSubChunk   = 1,
@@ -24,7 +24,7 @@ public:
         RequestFinished            = 7,
     };
 
-    enum class BlockLayer : int8_t {
+    enum class BlockLayer : schar {
         Standard = 0,
         Extra    = 1,
         Count    = 2,

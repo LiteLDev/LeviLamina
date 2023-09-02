@@ -6,7 +6,7 @@
 struct SyncedPlayerMovementSettings {
 public:
     ServerAuthMovementMode AuthorityMode;
-    int32_t                    mRewindHistorySize;
+    int                    mRewindHistorySize;
     bool                   ServerAuthBlockBreaking;
 
     // prevent constructor by default

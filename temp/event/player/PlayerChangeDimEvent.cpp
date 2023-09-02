@@ -13,11 +13,11 @@
 
 namespace ll::event::player {
 
-PlayerChangeDimEvent::PlayerChangeDimEvent(Player* player, int32_t toDimensionId)
+PlayerChangeDimEvent::PlayerChangeDimEvent(Player* player, int toDimensionId)
 : player(player), toDimensionId(toDimensionId) {}
 
 LL_GETTER_IMPL(PlayerChangeDimEvent, Player*, player, getPlayer)
-LL_GETTER_IMPL(PlayerChangeDimEvent, int32_t, toDimensionId, getToDimensionId)
+LL_GETTER_IMPL(PlayerChangeDimEvent, int, toDimensionId, getToDimensionId)
 
 using EventManager = EventManager<PlayerChangeDimEvent>;
 

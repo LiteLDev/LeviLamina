@@ -6,9 +6,9 @@ namespace mce {
 
 class UUID {
 public:
-    uint64_t a, b;
+    uint64 a, b;
 
-    UUID(uint64_t a, uint64_t b) : a(a), b(b) {}
+    UUID(uint64 a, uint64 b) : a(a), b(b) {}
 
     LLNDAPI UUID();
 

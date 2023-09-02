@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class CommandTypeFlag : uint16_t {
+enum class CommandTypeFlag : ushort {
     None    = 0,
     Message = 1 << 6,
 };

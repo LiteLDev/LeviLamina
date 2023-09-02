@@ -340,11 +340,11 @@ Encoding getLocalEncoding() {
 
 Encoding detectEncoding(const std::string& text, bool* isReliable) {
     bool temp;
-    int32_t  bytes_consumed;
+    int  bytes_consumed;
 
     return DetectEncoding(
         text.c_str(),
-        (int32_t)text.size(),
+        (int)text.size(),
         nullptr,
         nullptr,
         nullptr,

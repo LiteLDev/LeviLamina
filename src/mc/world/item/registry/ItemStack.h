@@ -51,20 +51,20 @@ public:
 
     // symbol: ??0ItemStack@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HHPEBVCompoundTag@@@Z
     MCAPI
-    ItemStack(std::string_view name, int32_t count = 1, int32_t auxValue = 0, class CompoundTag const* userData = nullptr);
+    ItemStack(std::string_view name, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
 
     // symbol: ??0ItemStack@@QEAA@AEBV0@@Z
     MCAPI ItemStack(class ItemStack const&);
 
     // symbol: ??0ItemStack@@QEAA@AEBVBlock@@HPEBVCompoundTag@@@Z
-    MCAPI ItemStack(class Block const& block, int32_t count = 1, class CompoundTag const* userData = nullptr);
+    MCAPI ItemStack(class Block const& block, int count = 1, class CompoundTag const* userData = nullptr);
 
     // symbol: ??0ItemStack@@QEAA@AEBVBlockLegacy@@H@Z
-    MCAPI ItemStack(class BlockLegacy const& blockLegacy, int32_t count = 1);
+    MCAPI ItemStack(class BlockLegacy const& blockLegacy, int count = 1);
 
     // symbol: ??0ItemStack@@QEAA@AEBVItem@@HHPEBVCompoundTag@@@Z
     MCAPI
-    ItemStack(class Item const& item, int32_t count = 1, int32_t auxValue = 0, class CompoundTag const* userData = nullptr);
+    ItemStack(class Item const& item, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
 
     // symbol: ?_assignNetIdVariant@ItemStack@@QEBAXAEBV1@@Z
     MCAPI void _assignNetIdVariant(class ItemStack const&) const;
@@ -100,7 +100,7 @@ public:
     MCAPI bool matchesNetIdVariant(class ItemStack const&) const;
 
     // symbol: ?mineBlock@ItemStack@@QEAAXAEBVBlock@@HHHPEAVMob@@@Z
-    MCAPI void mineBlock(class Block const& block, int32_t x, int32_t y, int32_t z, class Mob* owner);
+    MCAPI void mineBlock(class Block const& block, int x, int y, int z, class Mob* owner);
 
     // symbol: ??4ItemStack@@QEAAAEAV0@AEBV0@@Z
     MCAPI class ItemStack& operator=(class ItemStack const&);
@@ -127,7 +127,8 @@ public:
     MCAPI void useAsFuel();
 
     // symbol: ?useOn@ItemStack@@QEAA?AVInteractionResult@@AEAVActor@@HHHEAEBVVec3@@@Z
-    MCAPI class InteractionResult useOn(class Actor& entity, int32_t x, int32_t y, int32_t z, uint8_t face, class Vec3 const& clickPos);
+    MCAPI class InteractionResult
+    useOn(class Actor& entity, int x, int y, int z, uchar face, class Vec3 const& clickPos);
 
     // symbol: ?useTimeDepleted@ItemStack@@QEAA?AW4ItemUseMethod@@PEAVLevel@@PEAVPlayer@@@Z
     MCAPI ::ItemUseMethod useTimeDepleted(class Level*, class Player*);

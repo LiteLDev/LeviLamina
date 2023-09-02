@@ -1,11 +1,11 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/ForceBlockNetworkIdsAreHashes.h"
+#include "mc/options/EducationEditionOfferValue.h"
 #include "mc/world/level/LevelSeed64.h"
 #include "mc/world/level/SpawnSettings.h"
-#include "mc/options/EducationEditionOfferValue.h"
 #include "mc/world/level/storage/GameRules.h"
-#include "mc/network/ForceBlockNetworkIdsAreHashes.h"
 
 // auto generated inclusion list
 #include "mc/client/social/GamePublishSetting.h"
@@ -35,7 +35,7 @@ public:
     bool                                  mIsEditorWorld;
     bool                                  mIsCreatedInEditor;
     bool                                  mIsExportedFromEditor;
-    int32_t                                   mTime;
+    int                                   mTime;
     EducationEditionOfferValue            mEducationEditionOffer;
     bool                                  mEducationFeaturesEnabled;
     bool                                  mImmutableWorld;
@@ -60,15 +60,15 @@ public:
     bool                                  mOverrideSettings;
     bool                                  mBonusChestEnabled;
     bool                                  mStartWithMapEnabled;
-    int32_t                                   mServerChunkTickRange;
+    int                                   mServerChunkTickRange;
     bool                                  mIsFromWorldTemplate;
     bool                                  mIsWorldTemplateOptionLocked;
     bool                                  mSpawnV1Villagers;
     bool                                  mPersonaDisabled;
     bool                                  mCustomSkinsDisabled;
     bool                                  mEmoteChatMuted;
-    int32_t                                   mLimitedWorldWidth;
-    int32_t                                   mLimitedWorldDepth;
+    int                                   mLimitedWorldWidth;
+    int                                   mLimitedWorldDepth;
     PermissionsHandler                    mDefaultPermissions;
     BlockPos                              mDefaultSpawn;
     std::vector<PackInstanceId>           mNewWorldBehaviorPackIdentities;

@@ -1,7 +1,7 @@
 #include "mc/nbt/TagMemoryChunk.h"
 
-TagMemoryChunk::TagMemoryChunk(uint8_t data[], size_t size) : mElements(size), mSize(size) {
-    this->mBuffer = std::unique_ptr<uint8_t[]>(new uint8_t[mSize]);
+TagMemoryChunk::TagMemoryChunk(uchar data[], size_t size) : mElements(size), mSize(size) {
+    this->mBuffer = std::unique_ptr<uchar[]>(new uchar[mSize]);
     memcpy(this->mBuffer.get(), data, mSize);
 }
 

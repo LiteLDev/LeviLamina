@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ItemStackNetResult : int8_t {
+enum class ItemStackNetResult : schar {
     Success                                          = 0x0,
     Error                                            = 0x1,
     InvalidRequestActionType                         = 0x2,

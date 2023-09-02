@@ -13,21 +13,21 @@ public:
     // clang-format on
 
     // NetworkPeer inner types define
-    enum class DataStatus : int32_t {
+    enum class DataStatus : int {
         HasData        = 0x0,
         NoData         = 0x1,
         BrokenData     = 0x2,
         ConnectionLost = 0x3,
     };
 
-    enum class Reliability : int32_t {
+    enum class Reliability : int {
         Reliable            = 0x0,
         ReliableOrdered     = 0x1,
         Unreliable          = 0x2,
         UnreliableSequenced = 0x3,
     };
 
-    enum class NetworkLoad : int32_t {
+    enum class NetworkLoad : int {
         Unrestricted = 0x0,
         Low          = 0x1,
         Medium       = 0x2,
@@ -39,15 +39,15 @@ public:
     struct NetworkStatus {
     public:
         NetworkLoad mLoad;                   // this+0x0
-        int32_t         mCurrentPing;            // this+0x4
-        int32_t         mAveragePing;            // this+0x8
-        int32_t         mApproximateMaxBps;      // this+0xC
+        int         mCurrentPing;            // this+0x4
+        int         mAveragePing;            // this+0x8
+        int         mApproximateMaxBps;      // this+0xC
         float       mCurrentPacketLoss;      // this+0x10
         float       mAveragePacketLoss;      // this+0x14
-        uint64_t    mTotalBytesReceived;     // this+0x18
-        uint64_t    mTotalBytesSent;         // this+0x20
-        uint64_t    mCurrentBytesSendBuffer; // this+0x28
-        int32_t         mICEState;               // this+0x30
+        uint64      mTotalBytesReceived;     // this+0x18
+        uint64      mTotalBytesSent;         // this+0x20
+        uint64      mCurrentBytesSendBuffer; // this+0x28
+        int         mICEState;               // this+0x30
         bool        mUsingRelays;            // this+0x34
     };
 

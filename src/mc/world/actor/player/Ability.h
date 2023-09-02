@@ -5,14 +5,14 @@
 class Ability {
 public:
     // Ability inner types define
-    enum class Options : int8_t {
+    enum class Options : schar {
         None                        = 0x0,
         NoSave                      = 0x1,
         CommandExposed              = 0x2,
         PermissionsInterfaceExposed = 0x4,
     };
 
-    enum class Type : int8_t {
+    enum class Type : schar {
         Invalid = 0x0,
         Unset   = 0x1,
         Bool    = 0x2,

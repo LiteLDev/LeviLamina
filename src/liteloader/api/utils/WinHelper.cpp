@@ -2,16 +2,16 @@
 
 #include <string>
 
-#include "liteloader/api/utils/StringHelper.h"
 #include "liteloader/api/utils/DbgHelper.h"
+#include "liteloader/api/utils/StringHelper.h"
 
 #include "liteloader/api/I18nAPI.h"
 
 #include "liteloader/core/Config.h"
 #include "liteloader/core/LiteLoader.h"
 
-#include <Windows.h>
 #include <Psapi.h>
+#include <Windows.h>
 
 std::string GetLastErrorMessage(DWORD error_message_id) {
     if (error_message_id == 0)
@@ -63,7 +63,7 @@ wchar_t* str2cwstr(const std::string& str) {
 
 #define READ_BUFFER_SIZE 4096
 
-bool NewProcess(const std::string& process, std::function<void(int32_t, std::string)> callback, int32_t timeLimit) {
+bool NewProcess(const std::string& process, std::function<void(int, std::string)> callback, int timeLimit) {
     SECURITY_ATTRIBUTES sa;
     HANDLE              hRead, hWrite;
     sa.nLength              = sizeof(SECURITY_ATTRIBUTES);
@@ -98,9 +98,9 @@ bool NewProcess(const std::string& process, std::function<void(int32_t, std::str
             WaitForSingleObject(hProcess, timeLimit);
             TerminateProcess(hProcess, -1);
         }
-        char   buffer[READ_BUFFER_SIZE];
+        char        buffer[READ_BUFFER_SIZE];
         std::string strOutput;
-        DWORD  bytesRead, exitCode;
+        DWORD       bytesRead, exitCode;
 
         delete[] wCmd;
         GetExitCodeProcess(hProcess, &exitCode);
@@ -115,7 +115,7 @@ bool NewProcess(const std::string& process, std::function<void(int32_t, std::str
 
         try {
             if (callback)
-                callback((int32_t)exitCode, strOutput);
+                callback((int)exitCode, strOutput);
         } catch (const seh_exception& e) {
             ll::logger.error("SEH Uncaught Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
             ll::logger.error("In NewProcess callback");
@@ -130,7 +130,7 @@ bool NewProcess(const std::string& process, std::function<void(int32_t, std::str
     return true;
 }
 
-std::pair<int32_t, std::string> NewProcessSync(const std::string& process, int32_t timeLimit, bool noReadOutput) {
+std::pair<int, std::string> NewProcessSync(const std::string& process, int timeLimit, bool noReadOutput) {
     SECURITY_ATTRIBUTES sa;
     HANDLE              hRead, hWrite;
     sa.nLength              = sizeof(SECURITY_ATTRIBUTES);
@@ -161,9 +161,9 @@ std::pair<int32_t, std::string> NewProcessSync(const std::string& process, int32
         WaitForSingleObject(pi.hProcess, timeLimit);
         TerminateProcess(pi.hProcess, -1);
     }
-    char   buffer[READ_BUFFER_SIZE];
+    char        buffer[READ_BUFFER_SIZE];
     std::string strOutput;
-    DWORD  bytesRead, exitCode;
+    DWORD       bytesRead, exitCode;
 
     delete[] wCmd;
     GetExitCodeProcess(pi.hProcess, &exitCode);
@@ -255,7 +255,7 @@ inline std::vector<std::string> split(std::string str, const std::string& patter
     std::string::size_type   pos;
     std::vector<std::string> result;
     str         += pattern;
-    size_t size = str.size();
+    size_t size  = str.size();
     for (size_t i = 0; i < size; i++) {
         pos = str.find(pattern, i);
         if (pos < size) {

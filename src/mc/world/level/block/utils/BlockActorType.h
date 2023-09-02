@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class BlockActorType : int32_t {
+enum class BlockActorType : int {
     Undefined             = 0x0,
     Furnace               = 0x1,
     Chest                 = 0x2,
@@ -55,5 +55,5 @@ enum class BlockActorType : int32_t {
     BrushableBlock        = 0x34,
     DecoratedPot          = 0x35,
     CalibratedSculkSensor = 0x36,
-    Count                = 0x37,
+    Count                 = 0x37,
 };

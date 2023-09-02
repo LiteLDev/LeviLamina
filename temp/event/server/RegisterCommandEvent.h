@@ -1,8 +1,8 @@
 #pragma once
 
 #include "liteloader/api/event/Event.h"
-#include "mc/CommandRegistry.hpp"
 #include "liteloader/api/utils/AccessorMacro.h"
+#include "mc/CommandRegistry.hpp"
 
 
 namespace ll::event::server {

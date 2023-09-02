@@ -11,7 +11,7 @@
 
 class LevelEventGenericPacket : public ::Packet {
 public:
-    int32_t                          mEventId; // this+0x30
+    int                          mEventId; // this+0x30
     std::unique_ptr<CompoundTag> mData;    // this+0x38
 
     // prevent constructor by default

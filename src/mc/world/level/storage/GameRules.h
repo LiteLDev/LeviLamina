@@ -8,7 +8,7 @@
 
 class GameRules {
 public:
-    enum class GameRulesIndex : int32_t {
+    enum class GameRulesIndex : int {
         InvalidGameRule         = -1,
         CommandBlockOutput      = 0x0,
         DoDaylightCycle         = 0x1,

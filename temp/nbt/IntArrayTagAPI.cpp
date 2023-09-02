@@ -1,10 +1,10 @@
-#include "mc/IntArrayTag.hpp"
 #include "liteloader/api/memory/MemoryUtils.h"
+#include "mc/IntArrayTag.hpp"
 
 using ll::memory::dAccess;
 
 TagMemoryChunk& IntArrayTag::value() { return dAccess<TagMemoryChunk, 8>(this); }
-IntArrayTag& IntArrayTag::operator=(TagMemoryChunk const& val) {
+IntArrayTag&    IntArrayTag::operator=(TagMemoryChunk const& val) {
     value() = val;
     return *this;
 }
@@ -21,7 +21,7 @@ std::unique_ptr<IntArrayTag> IntArrayTag::create(TagMemoryChunk const& val) {
     return std::unique_ptr<IntArrayTag>((IntArrayTag*)tag.release());
 }
 
-std::unique_ptr<IntArrayTag> IntArrayTag::create(int32_t data[], size_t size) {
+std::unique_ptr<IntArrayTag> IntArrayTag::create(int data[], size_t size) {
     TagMemoryChunk tmc((char*)data, size * 4);
     return create(tmc);
 }

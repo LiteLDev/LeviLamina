@@ -7,10 +7,10 @@ namespace RakNet {
 struct SystemAddress {
 public:
     struct {
-        uint8_t filler[0x80];
-    } address;                  // this+0x0
-    uint16_t debugPort;   // this+0x80
-    uint16_t systemIndex; // this+0x82
+        uchar filler[0x80];
+    } address;          // this+0x0
+    ushort debugPort;   // this+0x80
+    ushort systemIndex; // this+0x82
 
 public:
     // NOLINTBEGIN

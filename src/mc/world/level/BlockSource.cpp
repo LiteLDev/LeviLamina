@@ -22,8 +22,8 @@ BlockSource::getEntities(class AABB const& range, float extendDistance, ActorTyp
     ChunkPos minChunk{range.min.x - extendDistance, range.min.z - extendDistance};
     ChunkPos maxChunk{range.max.x + extendDistance, range.max.z + extendDistance};
 
-    for (int32_t x = minChunk.x; x <= maxChunk.x; x++)
-        for (int32_t z = minChunk.z; z <= maxChunk.z; z++) {
+    for (int x = minChunk.x; x <= maxChunk.x; x++)
+        for (int z = minChunk.z; z <= maxChunk.z; z++) {
             LevelChunk* chunk = getChunk({x, z});
             if (chunk == nullptr) {
                 continue;

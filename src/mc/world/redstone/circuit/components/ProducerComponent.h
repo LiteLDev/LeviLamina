@@ -8,7 +8,7 @@
 
 class ProducerComponent : public ::BaseCircuitComponent {
 public:
-    int32_t                        mNextStrength;
+    int                        mNextStrength;
     bool                       mAttachedAllowed;
     bool                       mStopPower;
     const CircuitComponentType mCircuitComponentType = CircuitComponentType::ProducerComponent;

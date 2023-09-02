@@ -13,9 +13,9 @@ public:
     };
 
     class Pos dim;
-    int32_t       area;
-    int32_t       volume;
-    int32_t       side;
+    int       area;
+    int       volume;
+    int       side;
 
     Bounds() = delete;
 

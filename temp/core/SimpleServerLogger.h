@@ -9,8 +9,8 @@ class SimpleServerLogger {
     using ChatListenerType = ll::event::Listener<PlayerChatEvent>;
 
 private:
-    static bool                                        inited;
-    static std::weak_ptr<ChatListenerType>             chatListener;
+    static bool                                                                inited;
+    static std::weak_ptr<ChatListenerType>                                     chatListener;
     static ll::event::legacy::EventListener<ll::event::legacy::PlayerCmdEvent> cmdListener;
 
 public:

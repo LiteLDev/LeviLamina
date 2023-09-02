@@ -12,7 +12,7 @@ namespace persona {
 class ArmSize {
 public:
     // ArmSize inner types define
-    enum class Type : int64_t {
+    enum class Type : int64 {
         Slim    = 0,
         Wide    = 1,
         Count   = 2,

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "liteloader/api/event/Event.h"
-#include "mc/BlockPos.hpp"
 #include "liteloader/api/utils/AccessorMacro.h"
+#include "mc/BlockPos.hpp"
 
 namespace ll::event::block {
 /**
@@ -10,9 +10,9 @@ namespace ll::event::block {
  */
 class FireSpreadEvent : public Event<FireSpreadEvent>, public Cancellable {
     LL_RO_MEMBER(BlockPos, target, getTarget);
-    LL_RO_MEMBER(int32_t, dimensionId, getDimensionId);
+    LL_RO_MEMBER(int, dimensionId, getDimensionId);
 
-    explicit FireSpreadEvent(BlockPos const& target, int32_t dimensionId = -1);
+    explicit FireSpreadEvent(BlockPos const& target, int dimensionId = -1);
 
     LL_DELETE_COPY(FireSpreadEvent);
     LL_DELETE_MOVE(FireSpreadEvent);

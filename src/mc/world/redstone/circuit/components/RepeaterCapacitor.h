@@ -15,11 +15,11 @@ public:
         Onlocked  = 0x3,
     };
     States                     mOnStates[5];
-    int32_t                        mInsertAt;
+    int                        mInsertAt;
     bool                       mPowered;
     bool                       mNextPower;
     bool                       mLocked;
-    int32_t                        mPulseCount;
+    int                        mPulseCount;
     bool                       mPulse;
     bool                       mNextPulse;
     const CircuitComponentType mCircuitComponentType = CircuitComponentType::RepeaterCapacitor;

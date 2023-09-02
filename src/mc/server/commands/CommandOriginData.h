@@ -8,7 +8,7 @@ public:
     CommandOriginType mType;
     mce::UUID         mUUID;
     std::string       mRequestId;
-    int64_t           mPlayerId;
+    int64             mPlayerId;
 
     // NOLINTBEGIN
     // symbol: ??0CommandOriginData@@QEAA@AEBU0@@Z

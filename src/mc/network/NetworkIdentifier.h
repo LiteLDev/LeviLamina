@@ -10,7 +10,7 @@ namespace RakNet { struct RakNetGUID; }
 
 class NetworkIdentifier {
 public:
-    enum class Type : int32_t {
+    enum class Type : int {
         RakNet    = 0x0,
         Address   = 0x1,
         Address6  = 0x2,
@@ -18,7 +18,7 @@ public:
         Generic   = 0x4,
     };
 
-    uint64_t           mNetherNetIdValue; // this+0x0
+    uint64             mNetherNetIdValue; // this+0x0
     RakNet::RakNetGUID mGuid;             // this+0x8
     sockaddr_storage   mSock;             // this+0x18
     Type               mType;             // this+0x98

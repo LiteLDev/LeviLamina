@@ -4,7 +4,7 @@
 
 namespace ScriptModuleMinecraft {
 
-enum class ScriptFacing : int8_t {
+enum class ScriptFacing : schar {
     Unknown = -1,
     Down    = 0,
     Up      = 1,

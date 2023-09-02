@@ -1,5 +1,5 @@
-#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/event/block/RedStoneUpdateEvent.h"
+#include "liteloader/api/event/EventManager.h"
 #include "liteloader/api/memory/Hook.h"
 
 #include "mc/Level.hpp"
@@ -10,12 +10,12 @@
 
 namespace ll::event::block {
 
-RedStoneUpdateEvent::RedStoneUpdateEvent(BlockInstance const& blockInstance, bool isActivated, int32_t redStonePower)
+RedStoneUpdateEvent::RedStoneUpdateEvent(BlockInstance const& blockInstance, bool isActivated, int redStonePower)
 : blockInstance(blockInstance), redStonePower(redStonePower), activated(isActivated) {}
 
 LL_GETTER_IMPL(RedStoneUpdateEvent, BlockInstance, blockInstance, getBlockInstance)
-LL_GETTER_IMPL(RedStoneUpdateEvent, int32_t, redStonePower, getRedStonePower)
-LL_SETTER_IMPL(RedStoneUpdateEvent, int32_t, redStonePower, setRedStonePower)
+LL_GETTER_IMPL(RedStoneUpdateEvent, int, redStonePower, getRedStonePower)
+LL_SETTER_IMPL(RedStoneUpdateEvent, int, redStonePower, setRedStonePower)
 LL_GETTER_IMPL(RedStoneUpdateEvent, bool, activated, isActivated)
 
 using EventManager = ll::event::EventManager<RedStoneUpdateEvent>;
@@ -28,7 +28,7 @@ LL_AUTO_INSTANCE_HOOK(
     void,
     BlockSource* blockSource,
     BlockPos*    blockPos,
-    int32_t          level,
+    int          level,
     bool         isActive
 ) {
     RedStoneUpdateEvent event(Level::getBlockInstance(blockPos, blockSource), level != 0, level);
@@ -49,7 +49,7 @@ LL_AUTO_INSTANCE_HOOK(
     void,
     BlockSource* blockSource,
     BlockPos*    blockPos,
-    int32_t          level,
+    int          level,
     bool         isActive
 ) {
     RedStoneUpdateEvent event(Level::getBlockInstance(blockPos, blockSource), level != 0, level);
@@ -70,7 +70,7 @@ LL_AUTO_INSTANCE_HOOK(
     void,
     BlockSource* blockSource,
     BlockPos*    blockPos,
-    int32_t          level,
+    int          level,
     bool         isActive
 ) {
     RedStoneUpdateEvent event(Level::getBlockInstance(blockPos, blockSource), level != 0, level);
@@ -91,7 +91,7 @@ LL_AUTO_INSTANCE_HOOK(
     void,
     BlockSource* blockSource,
     BlockPos*    blockPos,
-    int32_t          level,
+    int          level,
     bool         isActive
 ) {
     RedStoneUpdateEvent event(Level::getBlockInstance(blockPos, blockSource), level != 0, level);

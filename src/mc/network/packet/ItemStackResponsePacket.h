@@ -10,7 +10,7 @@
 
 class ItemStackResponsePacket : public ::Packet {
 public:
-	std::vector<ItemStackResponseInfo> mResponses; // this+0x30
+    std::vector<ItemStackResponseInfo> mResponses; // this+0x30
 
     // prevent constructor by default
     ItemStackResponsePacket& operator=(ItemStackResponsePacket const&) = delete;

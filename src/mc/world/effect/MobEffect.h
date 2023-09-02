@@ -14,7 +14,7 @@ public:
     struct FactorCalculationData;
     // clang-format on
 
-    enum class EffectType : uint32_t {
+    enum class EffectType : uint {
         Empty          = 0,
         Speed          = 1,
         Slowness       = 2,
@@ -53,12 +53,12 @@ public:
     public:
         FactorCalculationData() = delete;
 
-        int32_t                                              mPaddingDuration;        // this+0x0
+        int                                              mPaddingDuration;        // this+0x0
         float                                            mFactorStart;            // this+0x4
         float                                            mFactorTarget;           // this+0x8
         float                                            mFactorCurrent;          // this+0xC
-        std::function<void(FactorCalculationData&, int32_t)> mUpdateFn;               // this+0x10
-        int32_t                                              mEffectChangedTimestamp; // this+0x50
+        std::function<void(FactorCalculationData&, int)> mUpdateFn;               // this+0x10
+        int                                              mEffectChangedTimestamp; // this+0x50
         float                                            mFactorPreviousFrame;    // this+0x54
         bool                                             mHadEffectLastTick;      // this+0x58
         bool                                             mHadApplied;             // this+0x59

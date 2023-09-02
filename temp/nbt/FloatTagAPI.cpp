@@ -1,5 +1,5 @@
-#include "mc/FloatTag.hpp"
 #include "liteloader/api/memory/MemoryUtils.h"
+#include "mc/FloatTag.hpp"
 
 using ll::memory::dAccess;
 

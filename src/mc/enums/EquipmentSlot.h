@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class EquipmentSlot : int32_t {
+enum class EquipmentSlot : int {
     None          = 0xFF,
     Begin         = 0x0,
     HandSlot      = 0x0,
@@ -21,5 +21,5 @@ enum class EquipmentSlot : int32_t {
     EntityArmor   = 0xA,
     Chest         = 0xB,
     Equippable    = 0xC,
-    Count        = 0xD,
+    Count         = 0xD,
 };

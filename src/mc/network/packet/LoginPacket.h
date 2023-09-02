@@ -10,7 +10,7 @@
 
 class LoginPacket : public ::Packet {
 public:
-    int32_t                                mClientNetworkVersion; // this+0x30
+    int                                mClientNetworkVersion; // this+0x30
     std::unique_ptr<ConnectionRequest> mConnectionRequest;    // this+0x38
 
     // prevent constructor by default

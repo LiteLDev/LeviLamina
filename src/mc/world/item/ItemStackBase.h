@@ -32,15 +32,15 @@ public:
     std::unique_ptr<class CompoundTag>    mUserData;       // this+0x10
     class Block const*                    mBlock;          // this+0x18
     short                                 mAuxValue;       // this+0x20
-    uint8_t                               mCount;          // this+0x22
+    uchar                                 mCount;          // this+0x22
     bool                                  mValid;          // this+0x23
     std::chrono::steady_clock::time_point mPickupTime;     // this+0x28
     bool                                  mShowPickUp;     // this+0x30
     bool                                  mWasPickedUp;    // this+0x31
     std::vector<class BlockLegacy const*> mCanPlaceOn;     // this+0x38
-    uint64_t                              mCanPlaceOnHash; // this+0x50
+    uint64                                mCanPlaceOnHash; // this+0x50
     std::vector<class BlockLegacy const*> mCanDestroy;     // this+0x58
-    uint64_t                              mCanDestroyHash; // this+0x70
+    uint64                                mCanDestroyHash; // this+0x70
     Tick                                  mBlockingTick;   // this+0x78
     std::unique_ptr<class ItemInstance>   mChargedItem;    // this+0x80
 
@@ -497,19 +497,21 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ??0ItemStackBase@@IEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HHPEBVCompoundTag@@@Z
-    MCAPI ItemStackBase(std::string_view name, int32_t count = 1, int32_t auxValue = 0, class CompoundTag const* userData = nullptr);
+    MCAPI
+    ItemStackBase(std::string_view name, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
 
     // symbol: ??0ItemStackBase@@IEAA@AEBVItem@@HHPEBVCompoundTag@@@Z
-    MCAPI ItemStackBase(class Item const& item, int32_t count = 1, int32_t auxValue = 0, class CompoundTag const* userData = nullptr);
+    MCAPI
+    ItemStackBase(class Item const& item, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
 
     // symbol: ??0ItemStackBase@@IEAA@XZ
     MCAPI ItemStackBase();
 
     // symbol: ??0ItemStackBase@@IEAA@AEBVBlock@@HPEBVCompoundTag@@@Z
-    MCAPI ItemStackBase(class Block const& block, int32_t count = 1, class CompoundTag const* userData = nullptr);
+    MCAPI ItemStackBase(class Block const& block, int count = 1, class CompoundTag const* userData = nullptr);
 
     // symbol: ??0ItemStackBase@@IEAA@AEBVBlockLegacy@@H@Z
-    MCAPI ItemStackBase(class BlockLegacy const& blockLegacy, int32_t count = 1);
+    MCAPI ItemStackBase(class BlockLegacy const& blockLegacy, int count = 1);
 
     // symbol: ??0ItemStackBase@@IEAA@AEBV0@@Z
     MCAPI ItemStackBase(class ItemStackBase const&);

@@ -10,7 +10,7 @@
 class UnlockedRecipesPacket : public ::Packet {
 public:
     // UnlockedRecipesPacket inner types define
-    enum class PacketType : int32_t {
+    enum class PacketType : int {
         Empty                    = 0x0,
         InitiallyUnlockedRecipes = 0x1,
         NewlyUnlockedRecipes     = 0x2,
@@ -19,7 +19,7 @@ public:
     };
 
 public:
-    PacketType mPacketType; // this+0x30
+    PacketType               mPacketType;      // this+0x30
     std::vector<std::string> mUnlockedRecipes; // this+0x38
 
     // prevent constructor by default

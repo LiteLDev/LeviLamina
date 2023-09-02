@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/entity/utilities/ActorDamageCause.h"
-#include "mc/world/phys/HitResult.h"
 #include "mc/world/actor/common/ClipDefaults.h"
+#include "mc/world/phys/HitResult.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/SharePtrRefTraits.h"
@@ -47,7 +47,7 @@ public:
     };
 
     // vptr 8
-    uint8_t filler[1176]; // IDA isAffectedByWaterBottle
+    uchar filler[1176]; // IDA isAffectedByWaterBottle
 
 public:
     LLNDAPI class EntityContext&       getEntityContext();
@@ -70,7 +70,7 @@ public:
     LLNDAPI bool isItemActor() const;
     LLNDAPI bool isOnGround() const;
 
-    LLAPI void setOnFire(int32_t time, bool isEffect = true);
+    LLAPI void setOnFire(int time, bool isEffect = true);
     LLAPI void stopFire();
 
     LLNDAPI float getPosDeltaPerSecLength() const;
@@ -89,8 +89,8 @@ public:
             ClipDefaults::CHECK_ALL_PICKABLE_BLOCKS
     ) const;
 
-    LLAPI void teleport(class Vec3 const& pos, int32_t dimID, class Vec2 const& rotation);
-    LLAPI void teleport(class Vec3 const& pos, int32_t dimID);
+    LLAPI void teleport(class Vec3 const& pos, int dimID, class Vec2 const& rotation);
+    LLAPI void teleport(class Vec3 const& pos, int dimID);
 
     LLAPI void setName(std::string const& name);
 

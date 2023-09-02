@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/util/molang/MolangVersion.h"
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/util/molang/MolangVersion.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/MolangCompileResult.h"
@@ -18,7 +18,7 @@ namespace Json { class Value; }
 
 class ExpressionNode {
 public:
-    uint8_t filler[200];
+    uchar filler[200];
 
     // NOLINTBEGIN
     // symbol: ??0ExpressionNode@@QEAA@XZ
@@ -28,15 +28,15 @@ public:
     // ??0ExpressionNode@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
     MCAPI
     ExpressionNode(
-        std::string const&       expression,
-        ::MolangVersion version    = MolangVersion::Latest,
+        std::string const& expression,
+        ::MolangVersion    version          = MolangVersion::Latest,
         gsl::span<class HashedString const> = gsl::span<class HashedString const>{{HashedString{"default"}}}
     );
 
     // symbol: ??0ExpressionNode@@QEAA@AEBVValue@Json@@W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
     MCAPI ExpressionNode(
         class Json::Value const&,
-        ::MolangVersion version    = MolangVersion::Latest,
+        ::MolangVersion version             = MolangVersion::Latest,
         gsl::span<class HashedString const> = gsl::span<class HashedString const>{{HashedString{"default"}}}
     );
 

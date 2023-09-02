@@ -12,7 +12,7 @@
 class NetworkChunkPublisherUpdatePacket : public ::Packet {
 public:
     BlockPos              mPosition;    // this+0x30
-    uint32_t          mRadius;      // this+0x3C
+    uint                  mRadius;      // this+0x3C
     std::vector<ChunkPos> mSavedChunks; // this+0x40
 
     // prevent constructor by default

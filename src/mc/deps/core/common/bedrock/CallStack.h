@@ -46,7 +46,7 @@ public:
 
     struct FrameWithContext {
     public:
-        uint8_t filler[80];
+        uchar filler[80];
         FrameWithContext() = delete;
 
     public:

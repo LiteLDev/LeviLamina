@@ -13,7 +13,7 @@ public:
 
     std::string                    mCommand;
     std::unique_ptr<CommandOrigin> mOrigin;
-    int32_t                            mVersion = CommandVersion::CurrentVersion;
+    int                            mVersion = CommandVersion::CurrentVersion;
 
     [[nodiscard]] std::string&         getCmd() { return mCommand; }
     [[nodiscard]] std::string const&   getCmd() const { return mCommand; }

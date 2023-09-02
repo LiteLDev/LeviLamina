@@ -17,11 +17,11 @@ public:
     MobEffectInstance() = delete;
 
     MobEffect::EffectType            mId;                              // this+0x0
-    int32_t                              mDuration;                        // this+0x4
-    int32_t                              mDurationEasy;                    // this+0x8
-    int32_t                              mDurationNormal;                  // this+0xC
-    int32_t                              mDurationHard;                    // this+0x10
-    int32_t                              mAmplifier;                       // this+0x14
+    int                              mDuration;                        // this+0x4
+    int                              mDurationEasy;                    // this+0x8
+    int                              mDurationNormal;                  // this+0xC
+    int                              mDurationHard;                    // this+0x10
+    int                              mAmplifier;                       // this+0x14
     bool                             mDisplayOnScreenTextureAnimation; // this+0x18
     bool                             mAmbient;                         // this+0x19
     bool                             mNoCounter;                       // this+0x1A
@@ -31,29 +31,23 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0MobEffectInstance@@QEAA@IHH@Z
-    MCAPI MobEffectInstance(uint32_t type, int32_t duration, int32_t amplifier);
+    MCAPI MobEffectInstance(uint type, int duration, int amplifier);
 
     // symbol: ??0MobEffectInstance@@QEAA@IHHHHH_N00@Z
     MCAPI MobEffectInstance(uint, int, int, int, int, int, bool, bool, bool);
 
     // symbol: ??0MobEffectInstance@@QEAA@IHH_N00@Z
-    MCAPI MobEffectInstance(
-        uint32_t type,
-        int32_t  duration,
-        int32_t  amplifier,
-        bool     ambient,
-        bool     showParticles,
-        bool     showAnimation
-    );
+    MCAPI
+    MobEffectInstance(uint type, int duration, int amplifier, bool ambient, bool showParticles, bool showAnimation);
 
     // symbol: ??0MobEffectInstance@@QEAA@AEBV0@@Z
     MCAPI MobEffectInstance(class MobEffectInstance const&);
 
     // symbol: ??0MobEffectInstance@@QEAA@IH@Z
-    MCAPI MobEffectInstance(uint32_t type, int32_t duration);
+    MCAPI MobEffectInstance(uint type, int duration);
 
     // symbol: ??0MobEffectInstance@@QEAA@I@Z
-    MCAPI MobEffectInstance(uint32_t type);
+    MCAPI MobEffectInstance(uint type);
 
     // symbol: ??0MobEffectInstance@@QEAA@$$QEAV0@@Z
     MCAPI MobEffectInstance(class MobEffectInstance&&);

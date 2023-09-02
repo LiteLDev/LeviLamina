@@ -13,7 +13,7 @@ public:
     std::string   mPropName;           // this+0x30
     bool          mBoolComponentVal;   // this+0x50
     float         mFloatComponentVal;  // this+0x54
-    int32_t           mIntComponentVal;    // this+0x58
+    int           mIntComponentVal;    // this+0x58
     std::string   mStringComponentVal; // this+0x60
     ActorUniqueID mActorId;            // this+0x80
 

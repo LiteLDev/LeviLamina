@@ -1,16 +1,16 @@
 #include "liteloader/api/Global.h"
 #include "liteloader/api/memory/Hook.h"
-#include "mc/ResourcePack.hpp"
-#include "mc/Pack.hpp"
-#include "mc/ResourceLocation.hpp"
-#include "mc/ResourcePackRepository.hpp"
-#include "mc/PackManifest.hpp"
-#include "mc/ResourcePackStack.hpp"
-#include "mc/PackSettingsFactory.hpp"
-#include "mc/PackSettings.hpp"
-#include "mc/PackInstance.hpp"
 #include "mc/IResourcePackRepository.hpp"
+#include "mc/Pack.hpp"
 #include "mc/PackIdVersion.hpp"
+#include "mc/PackInstance.hpp"
+#include "mc/PackManifest.hpp"
+#include "mc/PackSettings.hpp"
+#include "mc/PackSettingsFactory.hpp"
+#include "mc/ResourceLocation.hpp"
+#include "mc/ResourcePack.hpp"
+#include "mc/ResourcePackRepository.hpp"
+#include "mc/ResourcePackStack.hpp"
 
 namespace ModifyPack {
 vector<PackIdVersion> PackListCache;
@@ -40,7 +40,7 @@ LL_AUTO_STATIC_HOOK(
     "?deserialize@ResourcePackStack@@SA?AV?$unique_ptr@VResourcePackStack@@U?$default_delete@VResourcePackStack@@@std@@"
     "@std@@AEAV?$basic_istream@DU?$char_traits@D@std@@@3@AEBVIResourcePackRepository@@@Z",
     std::unique_ptr<ResourcePackStack>,
-    int64_t                 a2,
+    int64                   a2,
     ResourcePackRepository* a3
 ) {
     auto Stack = origin(a2, a3);
@@ -55,7 +55,7 @@ LL_AUTO_STATIC_HOOK(
             );
         char size[480];
         auto Instance =
-            LL_SYMBOL_CALL("??0PackInstance@@QEAA@V?$not_null@V?$NonOwnerPointer@VResourcePack@@@Bedrock@@@gsl@@H_NPEAVPackSettings@@@Z", PackInstance*, char*, void*, int32_t, bool, PackSettings*)(
+            LL_SYMBOL_CALL("??0PackInstance@@QEAA@V?$not_null@V?$NonOwnerPointer@VResourcePack@@@Bedrock@@@gsl@@H_NPEAVPackSettings@@@Z", PackInstance*, char*, void*, int, bool, PackSettings*)(
                 size, gslPath, 0, false, settings
             );
         Stack->add(*Instance, *(IResourcePackRepository*)a3, 0);

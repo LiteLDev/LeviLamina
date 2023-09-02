@@ -6,7 +6,7 @@ class Block;
 class CommandBlockNameResult {
 public:
     // CommandBlockNameResult inner types define
-    enum class Result : uint8_t {
+    enum class Result : uchar {
         Unknown       = 0x0,
         Succeess      = 0x1,
         NoBlockName   = 0x2,

@@ -28,11 +28,11 @@ public:
     public:
         struct PlayerAtChunk {
             class ChunkPos chunkPos;    // this+0x0
-            uint16_t playerIndex; // this+0x8
+            ushort         playerIndex; // this+0x8
         };
-        std::unordered_map<class ChunkPos, std::vector<uint16_t>> mPlayersAtChunks;    // this+0x0
-        std::vector<PlayerAtChunk>                                      mPlayerInterestMap;  // this+0x40
-        std::vector<gsl::not_null<class ServerPlayer*>>                 unwrappedPlayerList; // this+0x58
+        std::unordered_map<class ChunkPos, std::vector<ushort>> mPlayersAtChunks;    // this+0x0
+        std::vector<PlayerAtChunk>                              mPlayerInterestMap;  // this+0x40
+        std::vector<gsl::not_null<class ServerPlayer*>>         unwrappedPlayerList; // this+0x58
 
     public:
         // NOLINTBEGIN

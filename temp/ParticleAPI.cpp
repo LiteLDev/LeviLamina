@@ -4,9 +4,9 @@
 #include "liteloader/api/ParticleAPI.h"
 #include "mc/Player.hpp"
 
+#include "liteloader/api/event/LegacyEvents.h"
 #include "mc/ResourcePackRepository.hpp"
 #include "mc/ResourcePackStack.hpp"
-#include "liteloader/api/event/LegacyEvents.h"
 
 void InitParticle() {
     ll::event::legacy::ResourcePackInitEvent::subscribe([](const ll::event::legacy::ResourcePackInitEvent& ev) {

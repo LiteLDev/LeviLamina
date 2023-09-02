@@ -11,8 +11,8 @@ public:
     struct TeleportData {
         Vec3 mDestination;      // this+0x0
         bool mShouldStopRiding; // this+0xC
-        int32_t  mCause;            // this+0x10
-        int32_t  mEntityType;       // this+0x14
+        int  mCause;            // this+0x10
+        int  mEntityType;       // this+0x14
     };
 
     std::optional<Vec2>                           mRotation;      // this+0x0

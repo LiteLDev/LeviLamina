@@ -4,7 +4,7 @@
 
 class CommandBlockName {
 public:
-    uint64_t id;
+    uint64 id;
 
 public:
     // NOLINTBEGIN

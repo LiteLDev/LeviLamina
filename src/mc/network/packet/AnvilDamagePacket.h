@@ -10,7 +10,7 @@
 
 class AnvilDamagePacket : public ::Packet {
 public:
-    int32_t                  mDamage;   // this+0x2c
+    int                  mDamage;   // this+0x2c
     NetworkBlockPosition mPosition; // this+0x30
 
     // prevent constructor by default

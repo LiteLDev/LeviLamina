@@ -10,7 +10,7 @@ public:
     BlockEventDispatcherToken(BlockEventDispatcherToken const&)            = delete;
     BlockEventDispatcherToken()                                            = delete;
 
-    int32_t                         mHandle;     // this+0x0
+    int                         mHandle;     // this+0x0
     class BlockEventDispatcher* mDispatcher; // this+0x8
 public:
     // NOLINTBEGIN

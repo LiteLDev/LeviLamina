@@ -12,7 +12,7 @@
 
 class PositionTrackingDBServerBroadcastPacket : public ::Packet {
 public:
-    enum Action : uint8_t {
+    enum Action : uchar {
         Update   = 0x0,
         Destroy  = 0x1,
         NotFound = 0x2,

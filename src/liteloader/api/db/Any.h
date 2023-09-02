@@ -44,8 +44,8 @@ class Any {
 public:
     union Value {
         bool         boolean;
-        int64_t      integer;
-        uint64_t     uinteger;
+        int64        integer;
+        uint64       uinteger;
         double       floating;
         std::string* string;
         Date*        date;
@@ -54,7 +54,7 @@ public:
         ByteArray*   blob;
     } value; ///< Value
 
-    enum class Type : int8_t {
+    enum class Type : schar {
         Null     = 0,
         Boolean  = 1,
         Integer  = 2,
@@ -83,13 +83,13 @@ public:
      *
      * @param v The integer value
      */
-    LLAPI Any(int64_t v);
+    LLAPI Any(int64 v);
     /**
      * @brief Construct a new Any object with uint64 value.
      *
-     * @param v The uint32_t integer value
+     * @param v The uint integer value
      */
-    LLAPI Any(uint64_t v);
+    LLAPI Any(uint64 v);
     /**
      * @brief Construct a new Any object with double value.
      *
@@ -140,11 +140,11 @@ public:
      */
     LLAPI Any(char v);
     /**
-     * @brief Construct a new Any object with uint8(uint8_t) value.
+     * @brief Construct a new Any object with uint8(uchar) value.
      *
-     * @param v The uint8_t value
+     * @param v The uchar value
      */
-    LLAPI Any(uint8_t v);
+    LLAPI Any(uchar v);
     /**
      * @brief Construct a new Any object with int16(short) value.
      *
@@ -152,23 +152,23 @@ public:
      */
     LLAPI Any(short v);
     /**
-     * @brief Construct a new Any object with uint16(uint16_t) value.
+     * @brief Construct a new Any object with uint16(ushort) value.
      *
-     * @param v The uint16_t value
+     * @param v The ushort value
      */
-    LLAPI Any(uint16_t v);
+    LLAPI Any(ushort v);
     /**
-     * @brief Construct a new Any object with int32(int32_t) value.
+     * @brief Construct a new Any object with int32(int) value.
      *
-     * @param v The int32_t value
+     * @param v The int value
      */
-    LLAPI Any(int32_t v);
+    LLAPI Any(int v);
     /**
-     * @brief Construct a new Any object with uint32(uint32_t) value.
+     * @brief Construct a new Any object with uint32(uint) value.
      *
-     * @param v The uint32_t value
+     * @param v The uint value
      */
-    LLAPI Any(uint32_t v);
+    LLAPI Any(uint v);
     /**
      * @brief Construct a new Any object with long value.
      *
@@ -176,11 +176,11 @@ public:
      */
     LLAPI Any(long v);
     /**
-     * @brief Construct a new Any object with unsigned long value.
+     * @brief Construct a new Any object with ulong value.
      *
-     * @param v The unsigned long value
+     * @param v The ulong value
      */
-    LLAPI Any(unsigned long v);
+    LLAPI Any(ulong v);
     /**
      * @brief Construct a new Any object with float value.
      *
@@ -212,12 +212,12 @@ public:
      */
     LLAPI bool is_boolean() const;
     /**
-     * @brief Get if the value is (uint32_t) integer.
+     * @brief Get if the value is (uint) integer.
      *
      */
     LLAPI bool is_integer() const;
     /**
-     * @brief Get if the value is uint32_t integer.
+     * @brief Get if the value is uint integer.
      *
      */
     LLAPI bool is_uinteger() const;
@@ -252,7 +252,7 @@ public:
      */
     LLAPI bool is_blob() const;
     /**
-     * @brief Get if the value is floating or (uint32_t) integer.
+     * @brief Get if the value is floating or (uint) integer.
      *
      */
     LLAPI bool is_number() const;
@@ -260,7 +260,7 @@ public:
     /**
      * @brief Get the number value as T
      *
-     * @tparam T             The C++ basic number type to convert to, such as int32_t, long, double, etc.
+     * @tparam T             The C++ basic number type to convert to, such as int, long, double, etc.
      * @return T             The value
      * @throws std::bad_cast If the value cannot be converted to T or the value is not a number
      * @note   You can use Any::is_number() to check if the value is a number before calling this function.
@@ -360,15 +360,15 @@ public:
         return get_number<char>();
     }
     /**
-     * @brief Get the value as uint8_t
+     * @brief Get the value as uchar
      *
-     * @tparam T              = uint8_t
-     * @return uint8_t  The value
-     * @throws std::bad_cast  If the value cannot be converted to uint8_t
+     * @tparam T              = uchar
+     * @return uchar  The value
+     * @throws std::bad_cast  If the value cannot be converted to uchar
      */
     template <>
-    inline uint8_t get() const {
-        return get_number<uint8_t>();
+    inline uchar get() const {
+        return get_number<uchar>();
     }
     /**
      * @brief Get the value as short
@@ -382,37 +382,37 @@ public:
         return get_number<short>();
     }
     /**
-     * @brief Get the value as uint16_t
+     * @brief Get the value as ushort
      *
-     * @tparam T               = uint16_t
-     * @return uint16_t  The value
-     * @throws std::bad_cast   If the value cannot be converted to uint16_t
+     * @tparam T               = ushort
+     * @return ushort  The value
+     * @throws std::bad_cast   If the value cannot be converted to ushort
      */
     template <>
-    inline uint16_t get() const {
-        return get_number<uint16_t>();
+    inline ushort get() const {
+        return get_number<ushort>();
     }
     /**
-     * @brief Get the value as int32_t
+     * @brief Get the value as int
      *
-     * @tparam T    = int32_t
-     * @return int32_t  The value
-     * @throws std::bad_cast  If the value cannot be converted to int32_t
+     * @tparam T    = int
+     * @return int  The value
+     * @throws std::bad_cast  If the value cannot be converted to int
      */
     template <>
-    inline int32_t get() const {
-        return get_number<int32_t>();
+    inline int get() const {
+        return get_number<int>();
     }
     /**
-     * @brief Get the value as uint32_t
+     * @brief Get the value as uint
      *
-     * @tparam T              = uint32_t
-     * @return uint32_t   The value
-     * @throws std::bad_cast  If the value cannot be converted to uint32_t
+     * @tparam T              = uint
+     * @return uint   The value
+     * @throws std::bad_cast  If the value cannot be converted to uint
      */
     template <>
-    inline uint32_t get() const {
-        return get_number<uint32_t>();
+    inline uint get() const {
+        return get_number<uint>();
     }
     /**
      * @brief Get the value as long
@@ -426,37 +426,37 @@ public:
         return get_number<long>();
     }
     /**
-     * @brief Get the value as unsigned long
+     * @brief Get the value as ulong
      *
-     * @tparam T              = unsigned long
-     * @return unsigned long  The value
-     * @throws std::bad_cast  If the value cannot be converted to unsigned long
+     * @tparam T              = ulong
+     * @return ulong  The value
+     * @throws std::bad_cast  If the value cannot be converted to ulong
      */
     template <>
-    inline unsigned long get() const {
-        return get_number<unsigned long>();
+    inline ulong get() const {
+        return get_number<ulong>();
     }
     /**
-     * @brief Get the value as int64_t
+     * @brief Get the value as int64
      *
-     * @tparam T              = int64_t
-     * @return int64_t      The value
-     * @throws std::bad_cast  If the value cannot be converted to int64_t
+     * @tparam T              = int64
+     * @return int64      The value
+     * @throws std::bad_cast  If the value cannot be converted to int64
      */
     template <>
-    inline int64_t get() const {
-        return get_number<int64_t>();
+    inline int64 get() const {
+        return get_number<int64>();
     }
     /**
-     * @brief Get the value as uint64_t
+     * @brief Get the value as uint64
      *
-     * @tparam T                   = uint64_t
-     * @return uint64_t  The value
-     * @throws std::bad_cast       If the value cannot be converted to uint64_t
+     * @tparam T                   = uint64
+     * @return uint64  The value
+     * @throws std::bad_cast       If the value cannot be converted to uint64
      */
     template <>
-    inline uint64_t get() const {
-        return get_number<uint64_t>();
+    inline uint64 get() const {
+        return get_number<uint64>();
     }
     /**
      * @brief Get the value as double.
@@ -605,7 +605,7 @@ public:
         case Type::Blob:
             return *value.blob;
         case Type::String:
-            return ByteArray((uint8_t*)value.string->data(), (uint8_t*)value.string->data() + value.string->size());
+            return ByteArray((uchar*)value.string->data(), (uchar*)value.string->data() + value.string->size());
         case Type::Integer:
         case Type::UInteger:
         case Type::Floating:

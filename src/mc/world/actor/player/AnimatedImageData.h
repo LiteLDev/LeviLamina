@@ -1,9 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/mce/Image.h"
 #include "mc/client/services/persona/AnimatedTextureType.h"
 #include "mc/client/services/persona/AnimationExpression.h"
+#include "mc/deps/core/mce/Image.h"
 
 // auto generated inclusion list
 #include "mc/client/services/persona/AnimatedTextureType.h"

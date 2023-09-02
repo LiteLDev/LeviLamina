@@ -13,7 +13,7 @@ optional_ref<SimulatedPlayer> SimulatedPlayer::create(
     class Vec2 const&  rotation
 ) {
     OwnerPtrT<EntityRefTraits> ownerPtr =
-        Global<ServerNetworkHandler>->createSimulatedPlayer(name, '-' + std::to_string(RNG::rand<uint64_t>()));
+        Global<ServerNetworkHandler>->createSimulatedPlayer(name, '-' + std::to_string(RNG::rand<uint64>()));
     auto player = ownerPtr.tryUnwrap<SimulatedPlayer>();
 
     if (player == nullptr) {

@@ -2,15 +2,15 @@
 #include <string_view>
 
 
-typedef uint64_t CHash;
+typedef uint64 CHash;
 
-constexpr uint64_t do_hash(const char* x);
-constexpr uint64_t do_hash(const char* x, int32_t len);
-constexpr uint64_t do_hash2(std::string_view x);
+constexpr uint64 do_hash(const char* x);
+constexpr uint64 do_hash(const char* x, int len);
+constexpr uint64 do_hash2(std::string_view x);
 
-constexpr uint64_t do_hash(const char* x) {
+constexpr uint64 do_hash(const char* x) {
     // ap hash
-    uint64_t rval = 0;
+    uint64 rval = 0;
     for (size_t i = 0; x[i]; ++i) {
         if (i & 1) {
             rval ^= (~((rval << 11) ^ x[i] ^ (rval >> 5)));
@@ -20,9 +20,9 @@ constexpr uint64_t do_hash(const char* x) {
     }
     return rval;
 }
-constexpr uint64_t do_hash(const char* x, int32_t len) {
+constexpr uint64 do_hash(const char* x, int len) {
     // ap hash
-    uint64_t rval = 0;
+    uint64 rval = 0;
     for (size_t i = 0; i < len; ++i) {
         if (i & 1) {
             rval ^= (~((rval << 11) ^ x[i] ^ (rval >> 5)));
@@ -33,9 +33,9 @@ constexpr uint64_t do_hash(const char* x, int32_t len) {
     return rval;
 }
 
-constexpr uint64_t do_hash2(std::string_view x) {
+constexpr uint64 do_hash2(std::string_view x) {
     // ap hash
-    uint64_t rval = 0;
+    uint64 rval = 0;
     for (char i : x) {
         rval *= 128;
         rval += i;

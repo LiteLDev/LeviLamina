@@ -10,7 +10,7 @@
 class PlayerStartItemCooldownPacket : public ::Packet {
 public:
     std::string mItemCategory;  // this+0x30
-    int32_t         mDurationTicks; // this+0x50
+    int         mDurationTicks; // this+0x50
 
     // prevent constructor by default
     PlayerStartItemCooldownPacket& operator=(PlayerStartItemCooldownPacket const&) = delete;

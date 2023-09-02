@@ -2,8 +2,8 @@
 
 #include "ContainerMixDataEntry.h"
 #include "CraftingDataEntry.h"
-#include "PotionMixDataEntry.h"
 #include "MaterialReducerDataEntry.h"
+#include "PotionMixDataEntry.h"
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list

@@ -9,11 +9,11 @@
 
 class StructureTemplateData {
 public:
-    int32_t                                                          mFormatVersion;        // this+0x8
+    int                                                          mFormatVersion;        // this+0x8
     BlockPos                                                     mSize;                 // this+0xC
     BlockPos                                                     mStructureWorldOrigin; // this+0x18
-    std::vector<int32_t>                                             mBlockIndices;         // this+0x28
-    std::vector<int32_t>                                             mExtraBlockIndices;    // this+0x40
+    std::vector<int>                                             mBlockIndices;         // this+0x28
+    std::vector<int>                                             mExtraBlockIndices;    // this+0x40
     std::unordered_map<std::string, class StructureBlockPalette> mPalettes;             // this+0x58
     std::vector<std::unique_ptr<class CompoundTag>>              mEntityData;           // this+0x98
 

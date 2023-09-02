@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class CommandParameterDataType : int32_t {
+enum class CommandParameterDataType : int {
     Basic    = 0x0,
     Enum     = 0x1,
     SoftEnum = 0x2,

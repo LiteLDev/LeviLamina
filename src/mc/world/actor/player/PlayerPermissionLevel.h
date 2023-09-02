@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class PlayerPermissionLevel : int8_t {
+enum class PlayerPermissionLevel : schar {
     Visitor  = 0x0,
     Member   = 0x1,
     Operator = 0x2,

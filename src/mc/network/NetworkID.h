@@ -6,7 +6,7 @@ namespace NetherNet {
 
 struct NetworkID {
 public:
-    uint64_t value;
+    uint64 value;
 };
 
 }; // namespace NetherNet

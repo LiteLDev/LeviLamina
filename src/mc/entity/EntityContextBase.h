@@ -1,18 +1,17 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/gamerefs_entity/EntityRegistryBase.h"
 #include "mc/entity/EntityId.h"
+#include "mc/entity/gamerefs_entity/EntityRegistryBase.h"
 
 class EntityContextBase {
 public:
     class EntityRegistryBase& mRegistry;
-    class EntityId      mEntity;
+    class EntityId            mEntity;
 
     [[nodiscard]] class entt::basic_registry<EntityId>& _enttRegistry() {
         return mRegistry.mRegistry;
-    }
-    [[nodiscard]] class entt::basic_registry<EntityId> const& _enttRegistry() const {
+    } [[nodiscard]] class entt::basic_registry<EntityId> const& _enttRegistry() const {
         return mRegistry.mRegistry;
     }
 

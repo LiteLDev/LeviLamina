@@ -46,7 +46,7 @@ std::unordered_map<std::string, ll::Plugin*> ll::getAllPlugins() { return Plugin
 HMODULE ll::getLoaderHandle() { return GetCurrentModule(); }
 
 // Version
-ll::Version::Version(int32_t major, int32_t minor, int32_t revision, Status status)
+ll::Version::Version(int major, int minor, int revision, Status status)
 : major(major), minor(minor), revision(revision), status(status) {}
 
 bool ll::Version::operator<(ll::Version b) {

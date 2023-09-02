@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/PermissionsHandler.h"
 #include "mc/world/level/Abilities.h"
+#include "mc/world/level/PermissionsHandler.h"
 
 // auto generated inclusion list
 #include "mc/enums/AbilitiesIndex.h"

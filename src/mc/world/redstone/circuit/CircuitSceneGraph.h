@@ -22,6 +22,7 @@ public:
         class BaseCircuitComponent*                 mRawComponentPtr;
         std::unique_ptr<class BaseCircuitComponent> mComponent;
         class BlockPos                              mPos;
+
     public:
         // NOLINTBEGIN
         // symbol: ??0PendingEntry@CircuitSceneGraph@@QEAA@$$QEAV01@@Z

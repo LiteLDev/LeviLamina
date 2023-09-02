@@ -1,28 +1,28 @@
-#include <filesystem>
-#include <set>
-#include <utility>
-#include <vector>
 #include "liteloader/core/AddonsHelper.h"
-#include "liteloader/core/Config.h"
+#include "liteloader/api/GlobalServiceAPI.h"
+#include "liteloader/api/I18nAPI.h"
+#include "liteloader/api/LLAPI.h"
+#include "liteloader/api/LoggerAPI.h"
+#include "liteloader/api/RegCommandAPI.h"
 #include "liteloader/api/event/LegacyEvents.h"
 #include "liteloader/api/event/server/RegisterCommandEvent.h"
-#include "liteloader/api/RegCommandAPI.h"
-#include "liteloader/api/LLAPI.h"
+#include "liteloader/api/utils/FileHelper.h"
+#include "liteloader/api/utils/WinHelper.h"
+#include "liteloader/api/utils/fifo_json.h"
+#include "liteloader/core/Config.h"
+#include "mc/ColorFormat.hpp"
 #include "mc/CommandOrigin.hpp"
 #include "mc/CommandOutput.hpp"
 #include "mc/CommandPosition.hpp"
 #include "mc/CommandRegistry.hpp"
-#include "mc/PropertiesSettings.hpp"
 #include "mc/Level.hpp"
-#include "liteloader/api/GlobalServiceAPI.h"
-#include "liteloader/api/utils/WinHelper.h"
-#include "liteloader/api/utils/FileHelper.h"
-#include "liteloader/api/utils/fifo_json.h"
+#include "mc/PropertiesSettings.hpp"
 #include <Nlohmann/json.hpp>
-#include "liteloader/api/LoggerAPI.h"
-#include "liteloader/api/I18nAPI.h"
-#include "mc/ColorFormat.hpp"
+#include <filesystem>
 #include <magic_enum.hpp>
+#include <set>
+#include <utility>
+#include <vector>
 using namespace std;
 using namespace RegisterCommandHelper;
 
@@ -120,7 +120,7 @@ bool RemoveAddonFromList(Addon& addon) {
         return false;
     }
     auto addonJson = fifo_json::parse(*addonJsonContent, nullptr, true, true);
-    int32_t  id        = 0;
+    int  id        = 0;
     for (auto item : addonJson) {
         if (item["pack_id"] == addon.uuid) {
             addonJson.erase(id);
@@ -466,7 +466,7 @@ class AddonsCommand : public Command {
 
     Operation   operation = static_cast<Operation>(-1);
     std::string target;
-    int32_t         index        = -1;
+    int         index        = -1;
     bool        target_isSet = false;
     bool        index_isSet  = false;
 
@@ -480,7 +480,7 @@ class AddonsCommand : public Command {
             }
         } else {
             auto allAddons = AddonsManager::getAllAddons();
-            if (index - 1 >= 0 && index - 1 < static_cast<int32_t>(allAddons.size()))
+            if (index - 1 >= 0 && index - 1 < static_cast<int>(allAddons.size()))
                 return allAddons[index - 1];
             else
                 output.trError("ll.addonsHelper.error.outOfRange", index);
@@ -698,7 +698,7 @@ bool AutoInstallAddons(string path) {
         return false;
 
     addonLogger.info(tr("ll.addonsHelper.autoInstall.working", toInstallList.size()));
-    int32_t cnt = 0;
+    int cnt = 0;
     for (auto& addonPath : toInstallList) {
         addonLogger.debug("Installing \"{}\"...", addonPath);
         if (!AddonsManager::install(addonPath)) {

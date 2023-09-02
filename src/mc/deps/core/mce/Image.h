@@ -12,7 +12,7 @@ namespace mce {
 struct Image {
 public:
     ImageFormat imageFormat{};       // 0x0
-    uint32_t    mWidth{}, mHeight{}; // 0x4, 0x8
+    uint        mWidth{}, mHeight{}; // 0x4, 0x8
     ImageUsage  mUsage{};            // 0xC
     Blob        mImageBytes;         // 0x10
 
@@ -22,7 +22,7 @@ public:
 
     inline void copyRawImage(Blob const& blob) { mImageBytes = blob.clone(); }
 
-    constexpr void setImageDescription(uint32_t width, uint32_t height, ImageFormat format, ImageUsage usage) {
+    constexpr void setImageDescription(uint width, uint height, ImageFormat format, ImageUsage usage) {
         this->mWidth      = width;
         this->mHeight     = height;
         this->imageFormat = format;

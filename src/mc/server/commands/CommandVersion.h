@@ -7,7 +7,7 @@
 
 class CommandVersion {
 public:
-    int32_t mFrom = 1, mTo = 0x7FFFFFFF;
+    int mFrom = 1, mTo = 0x7FFFFFFF;
 
 public:
     // NOLINTBEGIN

@@ -10,7 +10,7 @@
 
 class PositionTrackingDBClientRequestPacket : public ::Packet {
 public:
-    enum class Action : uint8_t {
+    enum class Action : uchar {
         Query = 0x0,
     };
 

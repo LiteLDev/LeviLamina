@@ -11,7 +11,7 @@
 class ClientCacheMissResponsePacket : public ::Packet {
 public:
     std::vector<std::shared_ptr<ClientBlobCache::Server::Blob>> mWriteMissingContent;    // this+0x30
-    std::unordered_map<uint64_t, std::string>         mReceivedMissingContent; // this+0x48
+    std::unordered_map<uint64, std::string>                     mReceivedMissingContent; // this+0x48
 
     // prevent constructor by default
     ClientCacheMissResponsePacket& operator=(ClientCacheMissResponsePacket const&) = delete;

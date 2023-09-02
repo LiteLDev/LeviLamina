@@ -8,7 +8,7 @@ struct optional : Ioptional {
     char filler[sizeof(T)];
     using Tval = typename T;
     bool set;
-    T& value() {
+    T&   value() {
         if (!set) {
             throw(std::exception("bad optional access"));
         }
@@ -20,15 +20,9 @@ struct optional : Ioptional {
         }
         return *(T*)filler;
     }
-    const T& val() const {
-        return value();
-    }
-    T& val() {
-        return value();
-    }
-    inline bool Set() const {
-        return set;
-    }
+    const T&    val() const { return value(); }
+    T&          val() { return value(); }
+    inline bool Set() const { return set; }
     optional(T const& v) {
         new (filler) T(v);
         set = true;
@@ -37,9 +31,7 @@ struct optional : Ioptional {
         new (filler) T(std::forward<T>(v));
         set = true;
     }
-    optional() {
-        set = false;
-    }
+    optional() { set = false; }
     optional(const optional<T>& x) {
         set = x.set;
         if (set) {

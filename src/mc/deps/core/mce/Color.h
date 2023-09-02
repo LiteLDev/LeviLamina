@@ -118,12 +118,10 @@ public:
 
     LLNDAPI double deltaE00(Color const& dst) const noexcept; // 1.0 for JND
 
-    [[nodiscard]] [[maybe_unused]] inline double distanceTo(Color const& dst) const noexcept {
-        return deltaE00(dst);
-    }
+    [[nodiscard]] [[maybe_unused]] inline double distanceTo(Color const& dst) const noexcept { return deltaE00(dst); }
 
 private:
-    constexpr uint8_t static hexToNum(char hex) noexcept {
+    constexpr uchar static hexToNum(char hex) noexcept {
         if ('A' <= hex && hex <= 'F') {
             return 10 + (hex - 'A');
         }

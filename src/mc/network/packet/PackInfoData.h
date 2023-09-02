@@ -14,7 +14,7 @@ public:
     PackInfoData() = delete;
 
     PackIdVersion   mPackIdVersion;       // this+0x0
-    uint64_t        mPackSize;            // this+0x88
+    uint64          mPackSize;            // this+0x88
     std::string     mContentKey;          // this+0x90
     std::string     mSubpackName;         // this+0xB0
     ContentIdentity mContentIdentity;     // this+0xD0

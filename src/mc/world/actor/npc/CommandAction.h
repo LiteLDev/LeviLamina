@@ -1,16 +1,16 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/StoredCommand.h"
 #include "mc/world/actor/npc/ActionValue.h"
 #include "mc/world/actor/npc/Button.h"
-#include "mc/server/commands/StoredCommand.h"
 
 namespace npc {
 
-enum class ActionMode : int8_t {
+enum class ActionMode : schar {
     Button = 0x0,
     Close  = 0x1,
-    Open  = 0x2,
+    Open   = 0x2,
 };
 
 struct CommandAction {

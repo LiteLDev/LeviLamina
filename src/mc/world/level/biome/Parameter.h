@@ -6,8 +6,8 @@ namespace ClimateUtils {
 
 struct Parameter {
 public:
-    int64_t mMin; // this+0x0
-    int64_t mMax; // this+0x8
+    int64 mMin; // this+0x0
+    int64 mMax; // this+0x8
 
 public:
     // NOLINTBEGIN

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class FacingID : int8_t {
+enum class FacingID : schar {
     Unknown = -1,
     Down    = 0,
     Up      = 1,

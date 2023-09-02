@@ -1,30 +1,30 @@
 #pragma once
 #include "liteloader/api/Global.h"
 #include "mc/Actor.hpp"
-#include "mc/Player.hpp"
 #include "mc/Command.hpp"
 #include "mc/CommandMessage.hpp"
 #include "mc/CommandOutput.hpp"
 #include "mc/CommandParameterData.hpp"
 #include "mc/CommandPosition.hpp"
-#include "mc/CommandSelector.hpp"
 #include "mc/CommandRegistry.hpp"
+#include "mc/CommandSelector.hpp"
+#include "mc/Player.hpp"
 #include <tuple>
 
 namespace RegisterCommandHelper {
 template <typename Command, typename Type>
-static int32_t getOffset(Type Command::*src) {
+static int getOffset(Type Command::*src) {
     union {
         Type Command::*src;
-        int32_t value;
+        int            value;
     } u;
     u.src = src;
     return u.value;
 }
 
-using ParseFn = bool (CommandRegistry::*)(
-    void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int32_t, std::string&,
-    std::vector<std::string>&) const;
+using ParseFn =
+    bool (CommandRegistry::*)(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
+        const;
 
 template <typename Command, typename Type>
 static CommandParameterData makeMandatory(Type Command::*field, std::string name, bool Command::*isSet = nullptr) {
@@ -42,7 +42,7 @@ static CommandParameterData makeMandatory(Type Command::*field, std::string name
 }
 template <CommandParameterDataType DataType, typename Command, typename Type>
 static CommandParameterData
-    makeMandatory(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
+makeMandatory(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
     return {
         type_id<CommandRegistry, Type>(),
         CommandRegistry::getParseFn<Type>(),
@@ -71,7 +71,7 @@ static CommandParameterData makeOptional(Type Command::*field, std::string name,
 }
 template <CommandParameterDataType DataType, typename Command, typename Type>
 static CommandParameterData
-    makeOptional(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
+makeOptional(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
 
     return {
         type_id<CommandRegistry, Type>(),

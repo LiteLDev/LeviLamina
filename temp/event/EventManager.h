@@ -38,7 +38,7 @@ public:
      * @brief Get the listener by id.
      * @param id The listener id.
      */
-    LLAPI static std::optional<std::weak_ptr<ListenerType>> getListener(int32_t id) noexcept;
+    LLAPI static std::optional<std::weak_ptr<ListenerType>> getListener(int id) noexcept;
 
     /**
      * @brief Get if the event has listeners.
