@@ -8,29 +8,32 @@
 class BytesDataOutput : public ::IDataOutput {
 public:
     // NOLINTBEGIN
-    // symbol: ?writeByte@BytesDataOutput@@UEAAXD@Z
-    MCVAPI void writeByte(char);
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual ~BytesDataOutput() = default;
 
-    // symbol: ?writeDouble@BytesDataOutput@@UEAAXN@Z
-    MCVAPI void writeDouble(double);
+    // vIndex: 1, symbol: ?writeString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    virtual void writeString(std::string_view);
 
-    // symbol: ?writeFloat@BytesDataOutput@@UEAAXM@Z
-    MCVAPI void writeFloat(float);
+    // vIndex: 2, symbol: ?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    virtual void writeLongString(std::string_view);
 
-    // symbol: ?writeInt@BytesDataOutput@@UEAAXH@Z
-    MCVAPI void writeInt(int);
+    // vIndex: 3, symbol: ?writeFloat@BigEndianStringByteOutput@@UEAAXM@Z
+    virtual void writeFloat(float);
 
-    // symbol: ?writeLongLong@BytesDataOutput@@UEAAX_J@Z
-    MCVAPI void writeLongLong(int64);
+    // vIndex: 4, symbol: ?writeDouble@BigEndianStringByteOutput@@UEAAXN@Z
+    virtual void writeDouble(double);
 
-    // symbol: ?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCVAPI void writeLongString(std::string_view);
+    // vIndex: 5, symbol: ?writeByte@BytesDataOutput@@UEAAXD@Z
+    virtual void writeByte(char);
 
-    // symbol: ?writeShort@BytesDataOutput@@UEAAXF@Z
-    MCVAPI void writeShort(short);
+    // vIndex: 6, symbol: ?writeShort@BigEndianStringByteOutput@@UEAAXF@Z
+    virtual void writeShort(short);
 
-    // symbol: ?writeString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCVAPI void writeString(std::string_view);
+    // vIndex: 7, symbol: ?writeInt@BigEndianStringByteOutput@@UEAAXH@Z
+    virtual void writeInt(int);
+
+    // vIndex: 8, symbol: ?writeLongLong@BigEndianStringByteOutput@@UEAAX_J@Z
+    virtual void writeLongLong(int64);
 
     // NOLINTEND
 };

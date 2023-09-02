@@ -9,9 +9,11 @@
 class CompoundTagVariant;
 
 enum class SnbtFormat : uchar {
-    PartialNewLine = 0,
-    AlwayNewLine   = 1,
-    Minimize       = 2,
+    Minimize       = 0,
+    PartialNewLine = 1 << 0,
+    AlwayNewLine   = 1 << 1,
+    Colored        = 1 << 2,
+    Console        = 1 << 3,
 };
 
 class CompoundTag : public ::Tag {
@@ -29,6 +31,15 @@ public:
     inline T* get(std::string_view key) {
         return dynamic_cast<T*>(get(key));
     };
+
+    // LLNDAPI std::string toSNBT(uchar indent = 4, SnbtFormat snbtFormat = SnbtFormat::PartialNewLine) const;
+    // LLNDAPI static std::unique_ptr<CompoundTag> fromSNBT(std::string_view snbt);
+
+    LLNDAPI std::string                         toBinaryNBT(bool isLittleEndian = true) const;
+    LLNDAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(std::string_view dataView, bool isLittleEndian = true);
+
+    LLNDAPI std::string                         toNetworkNBT() const;
+    LLNDAPI static std::unique_ptr<CompoundTag> fromNetworkNBT(std::string const& data);
 
 public:
     // NOLINTBEGIN
