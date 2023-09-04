@@ -73,7 +73,7 @@ jobs:
 
       - name: Build liteloader
         run: |
-          xmake f -p windows -m release -a x64 --ccache=n -y
+          xmake f -p windows -m release -a x64 --ccache=n -y -v
           xmake -w -y
 
       - name: Prepare Artifacts
