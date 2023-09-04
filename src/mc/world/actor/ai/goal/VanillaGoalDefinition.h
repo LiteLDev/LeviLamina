@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace VanillaGoalDefinition {
-/**
- * @symbol ?init\@VanillaGoalDefinition\@\@YAXXZ
- */
+// NOLINTBEGIN
+// symbol: ?init@VanillaGoalDefinition@@YAXXZ
 MCAPI void init();
+// NOLINTEND
 
 }; // namespace VanillaGoalDefinition

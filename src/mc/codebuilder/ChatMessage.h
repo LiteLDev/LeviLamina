@@ -5,19 +5,18 @@
 namespace CodeBuilder {
 
 struct ChatMessage {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CODEBUILDER_CHATMESSAGE
 public:
+    // prevent constructor by default
     ChatMessage& operator=(ChatMessage const&) = delete;
     ChatMessage(ChatMessage const&)            = delete;
     ChatMessage()                              = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1ChatMessage\@CodeBuilder\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1ChatMessage@CodeBuilder@@QEAA@XZ
     MCAPI ~ChatMessage();
+
+    // NOLINTEND
 };
 
 }; // namespace CodeBuilder

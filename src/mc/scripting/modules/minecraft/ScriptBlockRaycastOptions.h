@@ -9,27 +9,25 @@
 namespace ScriptModuleMinecraft {
 
 struct ScriptBlockRaycastOptions {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTBLOCKRAYCASTOPTIONS
 public:
+    // prevent constructor by default
     ScriptBlockRaycastOptions& operator=(ScriptBlockRaycastOptions const&) = delete;
     ScriptBlockRaycastOptions(ScriptBlockRaycastOptions const&)            = delete;
     ScriptBlockRaycastOptions()                                            = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?bind\@ScriptBlockRaycastOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptBlockRaycastOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?bind@ScriptBlockRaycastOptions@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@UScriptBlockRaycastOptions@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptBlockRaycastOptions>
     bind();
-    /**
-     * @symbol
-     * ?bindV010\@ScriptBlockRaycastOptions\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptBlockRaycastOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bindV010@ScriptBlockRaycastOptions@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptBlockRaycastOptions@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptBlockRaycastOptions>
     bindV010();
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

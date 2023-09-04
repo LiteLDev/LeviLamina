@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class SurfaceBuilderRegistry {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SURFACEBUILDERREGISTRY
 public:
+    // prevent constructor by default
     SurfaceBuilderRegistry& operator=(SurfaceBuilderRegistry const&) = delete;
     SurfaceBuilderRegistry(SurfaceBuilderRegistry const&)            = delete;
     SurfaceBuilderRegistry()                                         = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?lookupForEntity\@SurfaceBuilderRegistry\@\@QEBAPEAVISurfaceBuilder\@\@AEAVEntityContext\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?lookupForEntity@SurfaceBuilderRegistry@@QEBAPEAVISurfaceBuilder@@AEAVEntityContext@@@Z
     MCAPI class ISurfaceBuilder* lookupForEntity(class EntityContext&) const;
+
+    // NOLINTEND
 };

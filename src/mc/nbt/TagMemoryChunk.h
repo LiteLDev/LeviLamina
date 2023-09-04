@@ -3,25 +3,28 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct TagMemoryChunk {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TAGMEMORYCHUNK
 public:
-    TagMemoryChunk& operator=(TagMemoryChunk const&) = delete;
-    TagMemoryChunk(TagMemoryChunk const&)            = delete;
-    TagMemoryChunk()                                 = delete;
-#endif
+    size_t                   mElements{0};
+    size_t                   mSize{0};
+    std::unique_ptr<uchar[]> mBuffer;
+
+    LLNDAPI TagMemoryChunk(uchar data[], size_t size);
+    LLNDAPI TagMemoryChunk(const TagMemoryChunk&);
+    LLNDAPI TagMemoryChunk(TagMemoryChunk&&) noexcept;
+
+    LLAPI TagMemoryChunk& operator=(const TagMemoryChunk&);
+    LLAPI TagMemoryChunk& operator=(TagMemoryChunk&&) noexcept;
 
 public:
-    /**
-     * @symbol ?copy\@TagMemoryChunk\@\@QEBA?AU1\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?copy@TagMemoryChunk@@QEBA?AU1@XZ
     MCAPI struct TagMemoryChunk copy() const;
-    /**
-     * @symbol ??9TagMemoryChunk\@\@QEBA_NAEBU0\@\@Z
-     */
+
+    // symbol: ??9TagMemoryChunk@@QEBA_NAEBU0@@Z
     MCAPI bool operator!=(struct TagMemoryChunk const&) const;
-    /**
-     * @symbol ??1TagMemoryChunk\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1TagMemoryChunk@@QEAA@XZ
     MCAPI ~TagMemoryChunk();
+
+    // NOLINTEND
 };

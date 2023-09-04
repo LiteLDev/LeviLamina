@@ -10,31 +10,26 @@ namespace gametest { struct GameTestError; }
 namespace gametest {
 
 class NativeFunctionGameTestAction {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETEST_NATIVEFUNCTIONGAMETESTACTION
 public:
+    // prevent constructor by default
     NativeFunctionGameTestAction& operator=(NativeFunctionGameTestAction const&) = delete;
     NativeFunctionGameTestAction(NativeFunctionGameTestAction const&)            = delete;
     NativeFunctionGameTestAction()                                               = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?run\@NativeFunctionGameTestAction\@gametest\@\@UEAA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@XZ
-     */
-    virtual class std::optional<struct gametest::GameTestError> run();
-    /**
-     * @symbol
-     * ??0NativeFunctionGameTestAction\@gametest\@\@QEAA\@V?$function\@$$A6A?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@XZ\@std\@\@\@Z
-     */
-    MCAPI NativeFunctionGameTestAction(class std::function<class std::optional<struct gametest::GameTestError>(void)>);
+
+    // vIndex: 1, symbol:
+    // ?run@NativeFunctionGameTestAction@gametest@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@XZ
+    virtual std::optional<struct gametest::GameTestError> run();
+
+    // symbol:
+    // ??0NativeFunctionGameTestAction@gametest@@QEAA@V?$function@$$A6A?AV?$optional@UGameTestError@gametest@@@std@@XZ@std@@@Z
+    MCAPI NativeFunctionGameTestAction(std::function<std::optional<struct gametest::GameTestError>(void)>);
+
+    // NOLINTEND
 };
 
 }; // namespace gametest

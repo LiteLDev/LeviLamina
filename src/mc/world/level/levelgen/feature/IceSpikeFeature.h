@@ -6,31 +6,26 @@
 #include "mc/world/level/levelgen/feature/Feature.h"
 
 class IceSpikeFeature : public ::Feature {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICESPIKEFEATURE
 public:
+    // prevent constructor by default
     IceSpikeFeature& operator=(IceSpikeFeature const&) = delete;
     IceSpikeFeature(IceSpikeFeature const&)            = delete;
     IceSpikeFeature()                                  = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 3
-     * @symbol ?place\@IceSpikeFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
-     */
+
+    // vIndex: 3, symbol: ?place@IceSpikeFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol ?_isValidPlaceBlock\@IceSpikeFeature\@\@AEBA_NAEBVBlock\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?_isValidPlaceBlock@IceSpikeFeature@@AEBA_NAEBVBlock@@@Z
     MCAPI bool _isValidPlaceBlock(class Block const&) const;
 
-private:
+    // NOLINTEND
 };

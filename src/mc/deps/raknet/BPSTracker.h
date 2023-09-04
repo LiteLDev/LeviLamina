@@ -13,39 +13,36 @@ public:
 
     // BPSTracker inner types define
     struct TimeAndValue2 {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNET_BPSTRACKER_TIMEANDVALUE2
     public:
+        // prevent constructor by default
         TimeAndValue2& operator=(TimeAndValue2 const&) = delete;
         TimeAndValue2(TimeAndValue2 const&)            = delete;
-#endif
 
     public:
-        /**
-         * @symbol ??0TimeAndValue2\@BPSTracker\@RakNet\@\@QEAA\@XZ
-         */
+        // NOLINTBEGIN
+        // symbol: ??0TimeAndValue2@BPSTracker@RakNet@@QEAA@XZ
         MCAPI TimeAndValue2();
-        /**
-         * @symbol ??1TimeAndValue2\@BPSTracker\@RakNet\@\@QEAA\@XZ
-         */
+
+        // symbol: ??1TimeAndValue2@BPSTracker@RakNet@@QEAA@XZ
         MCAPI ~TimeAndValue2();
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNET_BPSTRACKER
 public:
+    // prevent constructor by default
     BPSTracker& operator=(BPSTracker const&) = delete;
     BPSTracker(BPSTracker const&)            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0BPSTracker\@RakNet\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0BPSTracker@RakNet@@QEAA@XZ
     MCAPI BPSTracker();
-    /**
-     * @symbol ??1BPSTracker\@RakNet\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1BPSTracker@RakNet@@QEAA@XZ
     MCAPI ~BPSTracker();
+
+    // NOLINTEND
 };
 
 }; // namespace RakNet

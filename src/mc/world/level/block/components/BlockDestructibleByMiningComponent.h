@@ -2,14 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockDestructibleByMiningComponent {
+// auto generated inclusion list
+#include "mc/world/level/block/utils/BlockComponentBase.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDESTRUCTIBLEBYMININGCOMPONENT
+struct BlockDestructibleByMiningComponent : public ::BlockComponentBase {
 public:
+    // prevent constructor by default
     BlockDestructibleByMiningComponent& operator=(BlockDestructibleByMiningComponent const&) = delete;
     BlockDestructibleByMiningComponent(BlockDestructibleByMiningComponent const&)            = delete;
     BlockDestructibleByMiningComponent()                                                     = delete;
-#endif
-
-public:
 };

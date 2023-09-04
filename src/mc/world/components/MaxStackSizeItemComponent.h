@@ -3,63 +3,50 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class MaxStackSizeItemComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAXSTACKSIZEITEMCOMPONENT
 public:
+    // prevent constructor by default
     MaxStackSizeItemComponent& operator=(MaxStackSizeItemComponent const&) = delete;
     MaxStackSizeItemComponent(MaxStackSizeItemComponent const&)            = delete;
     MaxStackSizeItemComponent()                                            = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?isNetworkComponent\@?$NetworkedItemComponent\@VMaxStackSizeItemComponent\@\@\@\@UEBA_NXZ
-     */
-    virtual bool isNetworkComponent() const;
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
+
+    // vIndex: 1, symbol: ?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ
+    virtual bool checkComponentDataForContentErrors() const;
+
+    // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol
-     * ?buildNetworkTag\@?$NetworkedItemComponent\@VMaxStackSizeItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
-     */
+
+    // vIndex: 3, symbol: ?isNetworkComponent@ChargeableItemComponent@@UEBA_NXZ
+    virtual bool isNetworkComponent() const;
+
+    // vIndex: 4, symbol:
+    // ?buildNetworkTag@ChargeableItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /**
-     * @vftbl 5
-     * @symbol
-     * ?initializeFromNetwork\@?$NetworkedItemComponent\@VMaxStackSizeItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
-     */
+
+    // vIndex: 5, symbol: ?initializeFromNetwork@ChargeableItemComponent@@UEAA_NAEBVCompoundTag@@@Z
     virtual bool initializeFromNetwork(class CompoundTag const&);
-    /**
-     * @vftbl 6
-     * @symbol __unk_vfn_6
-     */
-    virtual void __unk_vfn_6();
-    /**
-     * @vftbl 7
-     * @symbol ?initializeComponent\@MaxStackSizeItemComponent\@\@UEBAXXZ
-     */
+
+    // vIndex: 6, symbol: ?handleVersionBasedInitialization@ItemComponent@@UEAAXAEBVSemVersion@@@Z
+    virtual void handleVersionBasedInitialization(class SemVersion const&);
+
+    // vIndex: 7, symbol: ?initializeComponent@MaxStackSizeItemComponent@@UEBAXXZ
     virtual void initializeComponent() const;
-    /**
-     * @symbol ?bindType\@MaxStackSizeItemComponent\@\@SAXXZ
-     */
+
+    // vIndex: 8, symbol: ?_canUseOn@ItemComponent@@MEBA_NAEBVItemStack@@AEAVActor@@AEBVBlockPos@@E@Z
+    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
+
+    // vIndex: 9, symbol: ?_useOn@ItemComponent@@MEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
+    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
+
+    // symbol: ?bindType@MaxStackSizeItemComponent@@SAXXZ
     MCAPI static void bindType();
-    /**
-     * @symbol ?getIdentifier\@MaxStackSizeItemComponent\@\@SAAEBVHashedString\@\@XZ
-     */
+
+    // symbol: ?getIdentifier@MaxStackSizeItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();
+
+    // NOLINTEND
 };

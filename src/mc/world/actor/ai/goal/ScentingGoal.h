@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/BaseTimedActorFlagDefinition.h"
 #include "mc/world/actor/ai/goal/BaseTimedActorFlagGoal.h"
 
 // auto generated forward declare list
@@ -19,44 +21,39 @@ public:
     // clang-format on
 
     // ScentingGoal inner types define
-    class Definition {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCENTINGGOAL_DEFINITION
+    class Definition : public ::BaseTimedActorFlagDefinition {
     public:
+        // prevent constructor by default
         Definition& operator=(Definition const&) = delete;
         Definition(Definition const&)            = delete;
         Definition()                             = delete;
-#endif
 
     public:
-        /**
-         * @symbol
-         * ?buildSchema\@Definition\@ScentingGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefinition\@ScentingGoal\@\@\@JsonUtil\@\@\@4\@\@Z
-         */
+        // NOLINTBEGIN
+        // vIndex: 0, symbol: __unk_vfn_0
+        virtual void __unk_vfn_0();
+
+        // symbol:
+        // ?buildSchema@Definition@ScentingGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@ScentingGoal@@@JsonUtil@@@4@@Z
         MCAPI static void
-        buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ScentingGoal::Definition>>&);
+        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ScentingGoal::Definition>>&);
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCENTINGGOAL
 public:
+    // prevent constructor by default
     ScentingGoal& operator=(ScentingGoal const&) = delete;
     ScentingGoal(ScentingGoal const&)            = delete;
     ScentingGoal()                               = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @symbol ??0ScentingGoal\@\@QEAA\@AEAVMob\@\@\@Z
-     */
+
+    // symbol: ??0ScentingGoal@@QEAA@AEAVMob@@@Z
     MCAPI ScentingGoal(class Mob&);
+
+    // NOLINTEND
 };

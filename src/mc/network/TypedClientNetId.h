@@ -4,13 +4,10 @@
 
 template <typename T0, typename T1, int T2>
 class TypedClientNetId {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TYPEDCLIENTNETID
 public:
-    TypedClientNetId& operator=(TypedClientNetId const&) = delete;
-    TypedClientNetId(TypedClientNetId const&)            = delete;
-    TypedClientNetId()                                   = delete;
-#endif
+    T1        mRawId;
+    static T1 sNextRawId;
 
-public:
+    virtual void clientInit(TypedClientNetId<T0, T1, T2>);
+    virtual void clientInit();
 };

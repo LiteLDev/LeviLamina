@@ -2,24 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ScriptingEventListener {
+// auto generated inclusion list
+#include "mc/world/events/EventResult.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTINGEVENTLISTENER
+class ScriptingEventListener {
 public:
+    // prevent constructor by default
     ScriptingEventListener& operator=(ScriptingEventListener const&) = delete;
     ScriptingEventListener(ScriptingEventListener const&)            = delete;
     ScriptingEventListener()                                         = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?onEvent\@ScriptingEventListener\@\@UEAA?AW4EventResult\@\@AEBUScriptingNotificationEvent\@\@\@Z
-     */
-    virtual enum class EventResult onEvent(struct ScriptingNotificationEvent const&);
+
+    // vIndex: 1, symbol: ?onEvent@ScriptingEventListener@@UEAA?AW4EventResult@@AEBUScriptingNotificationEvent@@@Z
+    virtual ::EventResult onEvent(struct ScriptingNotificationEvent const&);
+
+    // NOLINTEND
 };

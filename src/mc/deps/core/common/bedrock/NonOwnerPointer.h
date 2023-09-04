@@ -1,20 +1,15 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 
 namespace Bedrock {
 
 template <typename T0>
 class NonOwnerPointer {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_NONOWNERPOINTER
 public:
-    NonOwnerPointer& operator=(NonOwnerPointer const&) = delete;
-    NonOwnerPointer(NonOwnerPointer const&)            = delete;
-    NonOwnerPointer()                                  = delete;
-#endif
-
-public:
+    std::shared_ptr<Bedrock::EnableNonOwnerReferences::ControlBlock> mControlBlock;
+    NonOwnerPointer(std::nullptr_t null) : mControlBlock(null) {}
 };
 
 }; // namespace Bedrock

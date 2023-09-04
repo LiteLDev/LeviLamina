@@ -8,9 +8,9 @@ namespace Bedrock::Memory { class IMemoryAllocator; }
 // clang-format on
 
 namespace Bedrock::Memory {
-/**
- * @symbol ?getDefaultAllocator\@Memory\@Bedrock\@\@YAAEAVIMemoryAllocator\@12\@XZ
- */
+// NOLINTBEGIN
+// symbol: ?getDefaultAllocator@Memory@Bedrock@@YAAEAVIMemoryAllocator@12@XZ
 MCAPI class Bedrock::Memory::IMemoryAllocator& getDefaultAllocator();
+// NOLINTEND
 
 }; // namespace Bedrock::Memory

@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ICommandOriginLoader {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICOMMANDORIGINLOADER
 public:
+    // prevent constructor by default
     ICommandOriginLoader& operator=(ICommandOriginLoader const&) = delete;
     ICommandOriginLoader(ICommandOriginLoader const&)            = delete;
     ICommandOriginLoader()                                       = delete;
-#endif
-
-public:
 };

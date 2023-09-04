@@ -2,20 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class EmptyLootItem {
+// auto generated inclusion list
+#include "mc/world/level/storage/loot/entries/LootPoolEntry.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EMPTYLOOTITEM
+class EmptyLootItem : public ::LootPoolEntry {
 public:
+    // prevent constructor by default
     EmptyLootItem& operator=(EmptyLootItem const&) = delete;
     EmptyLootItem(EmptyLootItem const&)            = delete;
     EmptyLootItem()                                = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol
-     * ?_createItem\@EmptyLootItem\@\@MEAA_NAEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol:
+    // ?_createItem@EmptyLootItem@@MEAA_NAEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
+
+    // NOLINTEND
 };

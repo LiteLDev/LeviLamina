@@ -3,25 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class SensingComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SENSINGCOMPONENT
 public:
+    // prevent constructor by default
     SensingComponent& operator=(SensingComponent const&) = delete;
     SensingComponent(SensingComponent const&)            = delete;
     SensingComponent()                                   = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?canSee\@SensingComponent\@\@QEAA_NAEAVMob\@\@AEBVActor\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?canSee@SensingComponent@@QEAA_NAEAVMob@@AEBVActor@@@Z
     MCAPI bool canSee(class Mob&, class Actor const&);
-    /**
-     * @symbol ?reset\@SensingComponent\@\@QEAAXXZ
-     */
+
+    // symbol: ?reset@SensingComponent@@QEAAXXZ
     MCAPI void reset();
-    /**
-     * @symbol ?withinFOV\@SensingComponent\@\@QEAA_NAEAVMob\@\@AEBVVec3\@\@M\@Z
-     */
+
+    // symbol: ?withinFOV@SensingComponent@@QEAA_NAEAVMob@@AEBVVec3@@M@Z
     MCAPI bool withinFOV(class Mob&, class Vec3 const&, float);
+
+    // NOLINTEND
 };

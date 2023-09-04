@@ -1,19 +1,40 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/CircuitComponentType.h"
+#include "mc/enums/FacingID.h"
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/redstone/circuit/components/BaseCircuitComponent.h"
 
 class CircuitTrackingInfo {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CIRCUITTRACKINGINFO
 public:
-    CircuitTrackingInfo& operator=(CircuitTrackingInfo const&) = delete;
-    CircuitTrackingInfo(CircuitTrackingInfo const&)            = delete;
-    CircuitTrackingInfo()                                      = delete;
-#endif
+    class Entry {
+    public:
+        class BaseCircuitComponent*     mComponent;
+        class BlockPos                  mPos;
+        enum class FacingID             mDirection;
+        enum class CircuitComponentType mTypeID;
+
+        constexpr Entry(class BaseCircuitComponent* component, const BlockPos& pos) {
+            mComponent = component;
+            mDirection = (FacingID)component->getDirection();
+            mPos       = pos;
+            mTypeID    = component->getCircuitComponentGroupType();
+        }
+    };
+
+    Entry mCurrent;
+    Entry mPower;
+    Entry mNearest;
+    Entry m2ndNearest;
+    int   mDampening;
+    bool  mDirectlyPowered;
+    int   mData;
 
 public:
-    /**
-     * @symbol ??0CircuitTrackingInfo\@\@QEAA\@V?$not_null\@PEAVBaseCircuitComponent\@\@\@gsl\@\@AEBVBlockPos\@\@H\@Z
-     */
-    MCAPI CircuitTrackingInfo(class gsl::not_null<class BaseCircuitComponent*>, class BlockPos const&, int);
+    // NOLINTBEGIN
+    // symbol: ??0CircuitTrackingInfo@@QEAA@V?$not_null@PEAVBaseCircuitComponent@@@gsl@@AEBVBlockPos@@H@Z
+    MCAPI CircuitTrackingInfo(gsl::not_null<class BaseCircuitComponent*>, class BlockPos const&, int);
+
+    // NOLINTEND
 };

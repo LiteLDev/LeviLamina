@@ -11,24 +11,22 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class HeartbeatDefinition {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HEARTBEATDEFINITION
 public:
+    // prevent constructor by default
     HeartbeatDefinition& operator=(HeartbeatDefinition const&) = delete;
     HeartbeatDefinition(HeartbeatDefinition const&)            = delete;
     HeartbeatDefinition()                                      = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?initialize\@HeartbeatDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVHeartbeatServerComponent\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?initialize@HeartbeatDefinition@@QEBAXAEAVEntityContext@@AEAVHeartbeatServerComponent@@@Z
     MCAPI void initialize(class EntityContext&, class HeartbeatServerComponent&) const;
-    /**
-     * @symbol
-     * ?buildSchema\@HeartbeatDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VHeartbeatDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?buildSchema@HeartbeatDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VHeartbeatDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
-    buildSchema(class std::shared_ptr<
+    buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HeartbeatDefinition>>&);
+
+    // NOLINTEND
 };

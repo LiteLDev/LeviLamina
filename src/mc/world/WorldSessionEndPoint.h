@@ -2,40 +2,37 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class WorldSessionEndPoint {
+// auto generated inclusion list
+#include "mc/deps/core/debug/log/ContentLogEndPoint.h"
+#include "mc/enums/LogArea.h"
+#include "mc/enums/LogLevel.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDSESSIONENDPOINT
+class WorldSessionEndPoint : public ::ContentLogEndPoint {
 public:
+    // prevent constructor by default
     WorldSessionEndPoint& operator=(WorldSessionEndPoint const&) = delete;
     WorldSessionEndPoint(WorldSessionEndPoint const&)            = delete;
     WorldSessionEndPoint()                                       = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDSESSIONENDPOINT
-    /**
-     * @symbol ?flush\@WorldSessionEndPoint\@\@UEAAXXZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?flush@WorldSessionEndPoint@@UEAAXXZ
     MCVAPI void flush();
-    /**
-     * @symbol ?isEnabled\@WorldSessionEndPoint\@\@UEBA_NXZ
-     */
+
+    // symbol: ?isEnabled@WorldSessionEndPoint@@UEBA_NXZ
     MCVAPI bool isEnabled() const;
-    /**
-     * @symbol ?log\@WorldSessionEndPoint\@\@UEAAXW4LogArea\@\@W4LogLevel\@\@PEBD\@Z
-     */
-    MCVAPI void log(enum class LogArea, enum class LogLevel, char const*);
-    /**
-     * @symbol ?logOnlyOnce\@WorldSessionEndPoint\@\@UEBA_NXZ
-     */
+
+    // symbol: ?log@WorldSessionEndPoint@@UEAAXW4LogArea@@W4LogLevel@@PEBD@Z
+    MCVAPI void log(::LogArea, ::LogLevel, char const*);
+
+    // symbol: ?logOnlyOnce@WorldSessionEndPoint@@UEBA_NXZ
     MCVAPI bool logOnlyOnce() const;
-    /**
-     * @symbol ?setEnabled\@WorldSessionEndPoint\@\@UEAAX_N\@Z
-     */
+
+    // symbol: ?setEnabled@WorldSessionEndPoint@@UEAAX_N@Z
     MCVAPI void setEnabled(bool);
-#endif
-    /**
-     * @symbol ??0WorldSessionEndPoint\@\@QEAA\@AEAVIMinecraftEventing\@\@\@Z
-     */
+
+    // symbol: ??0WorldSessionEndPoint@@QEAA@AEAVIMinecraftEventing@@@Z
     MCAPI WorldSessionEndPoint(class IMinecraftEventing&);
+
+    // NOLINTEND
 };

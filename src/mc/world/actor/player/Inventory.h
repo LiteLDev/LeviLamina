@@ -6,80 +6,55 @@
 #include "mc/world/FillingContainer.h"
 
 class Inventory : public ::FillingContainer {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORY
 public:
+    // prevent constructor by default
     Inventory& operator=(Inventory const&) = delete;
     Inventory(Inventory const&)            = delete;
     Inventory()                            = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?init\@Inventory\@\@UEAAXXZ
-     */
+
+    // vIndex: 1, symbol: ?init@Inventory@@UEAAXXZ
     virtual void init();
-    /**
-     * @vftbl 10
-     * @symbol ?setItem\@Inventory\@\@UEAAXHAEBVItemStack\@\@\@Z
-     */
+
+    // vIndex: 10, symbol: ?setItem@Inventory@@UEAAXHAEBVItemStack@@@Z
     virtual void setItem(int, class ItemStack const&);
-    /**
-     * @vftbl 11
-     * @symbol ?setItemWithForceBalance\@Inventory\@\@UEAAXHAEBVItemStack\@\@_N\@Z
-     */
+
+    // vIndex: 11, symbol: ?setItemWithForceBalance@Inventory@@UEAAXHAEBVItemStack@@_N@Z
     virtual void setItemWithForceBalance(int, class ItemStack const&, bool);
-    /**
-     * @vftbl 22
-     * @symbol ?getEmptySlotsCount\@Inventory\@\@UEBAHXZ
-     */
+
+    // vIndex: 22, symbol: ?getEmptySlotsCount@Inventory@@UEBAHXZ
     virtual int getEmptySlotsCount() const;
-    /**
-     * @vftbl 25
-     * @symbol __unk_vfn_25
-     */
+
+    // vIndex: 25, symbol: __unk_vfn_25
     virtual void __unk_vfn_25();
-    /**
-     * @vftbl 26
-     * @symbol __unk_vfn_26
-     */
+
+    // vIndex: 26, symbol: __unk_vfn_26
     virtual void __unk_vfn_26();
-    /**
-     * @vftbl 36
-     * @symbol ?add\@Inventory\@\@UEAA_NAEAVItemStack\@\@\@Z
-     */
+
+    // vIndex: 36, symbol: ?add@Inventory@@UEAA_NAEAVItemStack@@@Z
     virtual bool add(class ItemStack&);
-    /**
-     * @vftbl 37
-     * @symbol ?canAdd\@Inventory\@\@UEBA_NAEBVItemStack\@\@\@Z
-     */
+
+    // vIndex: 37, symbol: ?canAdd@Inventory@@UEBA_NAEBVItemStack@@@Z
     virtual bool canAdd(class ItemStack const&) const;
-    /**
-     * @vftbl 41
-     * @symbol ?getFirstEmptySlot\@Inventory\@\@UEBAHXZ
-     */
+
+    // vIndex: 41, symbol: ?getFirstEmptySlot@Inventory@@UEBAHXZ
     virtual int getFirstEmptySlot() const;
-    /**
-     * @vftbl 42
-     * @symbol ?setContainerSize\@Inventory\@\@UEAAXH\@Z
-     */
+
+    // vIndex: 42, symbol: ?setContainerSize@Inventory@@UEAAXH@Z
     virtual void setContainerSize(int);
-    /**
-     * @symbol ?dropSlot\@Inventory\@\@QEAAXH_N00\@Z
-     */
+
+    // symbol: ?dropSlot@Inventory@@QEAAXH_N00@Z
     MCAPI void dropSlot(int, bool, bool, bool);
-    /**
-     * @symbol ?setupDefault\@Inventory\@\@QEAAXXZ
-     */
+
+    // symbol: ?setupDefault@Inventory@@QEAAXXZ
     MCAPI void setupDefault();
-    /**
-     * @symbol ?tick\@Inventory\@\@QEAAXH\@Z
-     */
+
+    // symbol: ?tick@Inventory@@QEAAXH@Z
     MCAPI void tick(int);
+
+    // NOLINTEND
 };

@@ -8,33 +8,29 @@
 namespace ScriptModuleMinecraft {
 
 struct ScriptDimensionLocation {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTDIMENSIONLOCATION
 public:
+    // prevent constructor by default
     ScriptDimensionLocation(ScriptDimensionLocation const&) = delete;
     ScriptDimensionLocation()                               = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??4ScriptDimensionLocation\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??4ScriptDimensionLocation@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptDimensionLocation&
     operator=(struct ScriptModuleMinecraft::ScriptDimensionLocation const&);
-    /**
-     * @symbol ??4ScriptDimensionLocation\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-     */
+
+    // symbol: ??4ScriptDimensionLocation@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptDimensionLocation&
     operator=(struct ScriptModuleMinecraft::ScriptDimensionLocation&&);
-    /**
-     * @symbol ??1ScriptDimensionLocation\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ScriptDimensionLocation@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptDimensionLocation();
-    /**
-     * @symbol
-     * ?bind\@ScriptDimensionLocation\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptDimensionLocation\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptDimensionLocation@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@UScriptDimensionLocation@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptDimensionLocation> bind();
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

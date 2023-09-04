@@ -2,19 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BlockPartVisibilityDescription {
+// auto generated inclusion list
+#include "mc/world/level/block/components/BlockComponentDescription.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPARTVISIBILITYDESCRIPTION
+class BlockPartVisibilityDescription : public ::BlockComponentDescription {
 public:
+    // prevent constructor by default
     BlockPartVisibilityDescription& operator=(BlockPartVisibilityDescription const&) = delete;
     BlockPartVisibilityDescription(BlockPartVisibilityDescription const&)            = delete;
     BlockPartVisibilityDescription()                                                 = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?NameID\@BlockPartVisibilityDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
-     */
+    // NOLINTBEGIN
+    // symbol: ?NameID@BlockPartVisibilityDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const NameID;
+
+    // NOLINTEND
 };

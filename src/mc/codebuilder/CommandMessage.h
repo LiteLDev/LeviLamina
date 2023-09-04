@@ -5,19 +5,18 @@
 namespace CodeBuilder {
 
 struct CommandMessage {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CODEBUILDER_COMMANDMESSAGE
 public:
+    // prevent constructor by default
     CommandMessage& operator=(CommandMessage const&) = delete;
     CommandMessage(CommandMessage const&)            = delete;
     CommandMessage()                                 = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1CommandMessage\@CodeBuilder\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1CommandMessage@CodeBuilder@@QEAA@XZ
     MCAPI ~CommandMessage();
+
+    // NOLINTEND
 };
 
 }; // namespace CodeBuilder

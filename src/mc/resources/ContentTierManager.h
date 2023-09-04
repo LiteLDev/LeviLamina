@@ -2,34 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ContentTierManager {
+// auto generated inclusion list
+#include "mc/server/IContentTierManager.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTENTTIERMANAGER
+class ContentTierManager : public ::IContentTierManager {
 public:
+    // prevent constructor by default
     ContentTierManager& operator=(ContentTierManager const&) = delete;
     ContentTierManager(ContentTierManager const&)            = delete;
     ContentTierManager()                                     = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getContentTierInfo\@ContentTierManager\@\@UEBA?AVContentTierInfo\@\@XZ
-     */
+
+    // vIndex: 1, symbol: ?getContentTierInfo@ContentTierManager@@UEBA?AVContentTierInfo@@XZ
     virtual class ContentTierInfo getContentTierInfo() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTTIERMANAGER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1ContentTierManager@@UEAA@XZ
     MCVAPI ~ContentTierManager();
-#endif
-    /**
-     * @symbol ??0ContentTierManager\@\@QEAA\@V?$function\@$$A6A_NXZ\@std\@\@\@Z
-     */
-    MCAPI ContentTierManager(class std::function<bool(void)>);
+
+    // symbol: ??0ContentTierManager@@QEAA@V?$function@$$A6A_NXZ@std@@@Z
+    MCAPI ContentTierManager(std::function<bool(void)>);
+
+    // NOLINTEND
 };

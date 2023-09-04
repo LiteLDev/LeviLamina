@@ -3,24 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class InventoryTransactionItemGroup {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYTRANSACTIONITEMGROUP
 public:
-    InventoryTransactionItemGroup(InventoryTransactionItemGroup const&) = delete;
-    InventoryTransactionItemGroup()                                     = delete;
-#endif
+    InventoryTransactionItemGroup() = delete;
+
+
+    int                                mItemId;   // this+0x0
+    int                                mItemAux;  // this+0x4
+    std::unique_ptr<class CompoundTag> mTag;      // this+0x8
+    int                                mCount;    // this+0x10
+    bool                               mOverflow; // this+0x14
 
 public:
-    /**
-     * @symbol ?getItemInstance\@InventoryTransactionItemGroup\@\@QEBA?AVItemStack\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?getItemInstance@InventoryTransactionItemGroup@@QEBA?AVItemStack@@XZ
     MCAPI class ItemStack getItemInstance() const;
-    /**
-     * @symbol ??4InventoryTransactionItemGroup\@\@QEAAAEAV0\@AEBV0\@\@Z
-     */
+
+    // symbol: ??4InventoryTransactionItemGroup@@QEAAAEAV0@AEBV0@@Z
     MCAPI class InventoryTransactionItemGroup& operator=(class InventoryTransactionItemGroup const&);
-    /**
-     * @symbol ??1InventoryTransactionItemGroup\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1InventoryTransactionItemGroup@@QEAA@XZ
     MCAPI ~InventoryTransactionItemGroup();
+
+    // NOLINTEND
 };

@@ -4,34 +4,39 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/data/BidirectionalUnorderedMap.h"
+#include "mc/enums/ParticleType.h"
 
 class ParticleTypeMap {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARTICLETYPEMAP
 public:
+    // prevent constructor by default
     ParticleTypeMap& operator=(ParticleTypeMap const&) = delete;
     ParticleTypeMap(ParticleTypeMap const&)            = delete;
     ParticleTypeMap()                                  = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?getParticleName\@ParticleTypeMap\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ParticleType\@\@\@Z
-     */
-    MCAPI static std::string const& getParticleName(enum class ParticleType);
-    /**
-     * @symbol
-     * ?getParticleTypeId\@ParticleTypeMap\@\@SA?AW4ParticleType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static enum class ParticleType getParticleTypeId(std::string const&);
+    // NOLINTBEGIN
+    // symbol:
+    // ?getParticleName@ParticleTypeMap@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ParticleType@@@Z
+    MCAPI static std::string const& getParticleName(::ParticleType);
 
-    // private:
+    // symbol:
+    // ?getParticleTypeId@ParticleTypeMap@@SA?AW4ParticleType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI static ::ParticleType getParticleTypeId(std::string const&);
+
+    // NOLINTEND
 
 private:
-    /**
-     * @symbol
-     * ?map\@ParticleTypeMap\@\@0V?$BidirectionalUnorderedMap\@W4ParticleType\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@\@B
-     */
-    MCAPI static class BidirectionalUnorderedMap<enum class ParticleType, std::string> const map;
+    // NOLINTBEGIN
+    // symbol:
+    // ?map@ParticleTypeMap@@0V?$BidirectionalUnorderedMap@W4ParticleType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
+    MCAPI static class BidirectionalUnorderedMap<::ParticleType, std::string> const map;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $map() { return map; }
+
+    // NOLINTEND
 };

@@ -2,17 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock { template<typename T0> class NonOwnerPointer; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
 namespace PackCapabilities {
-/**
- * @symbol
- * ?createRegistry\@PackCapabilities\@\@YA?AVPackCapabilityRegistry\@\@V?$NonOwnerPointer\@VIAdvancedGraphicsOptions\@\@\@Bedrock\@\@V2\@\@Z
- */
+// NOLINTBEGIN
+// symbol:
+// ?createRegistry@PackCapabilities@@YA?AVPackCapabilityRegistry@@V?$NonOwnerPointer@VIAdvancedGraphicsOptions@@@Bedrock@@V2@@Z
 MCAPI class PackCapabilityRegistry
     createRegistry(class Bedrock::NonOwnerPointer<class IAdvancedGraphicsOptions>, class PackCapabilityRegistry);
+// NOLINTEND
 
 }; // namespace PackCapabilities

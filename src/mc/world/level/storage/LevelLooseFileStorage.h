@@ -11,19 +11,18 @@ namespace Core { class Path; }
 // clang-format on
 
 class LevelLooseFileStorage {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELLOOSEFILESTORAGE
 public:
+    // prevent constructor by default
     LevelLooseFileStorage& operator=(LevelLooseFileStorage const&) = delete;
     LevelLooseFileStorage(LevelLooseFileStorage const&)            = delete;
     LevelLooseFileStorage()                                        = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ??0LevelLooseFileStorage\@\@QEAA\@AEBVPath\@Core\@\@AEBVContentIdentity\@\@AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentKeyProvider\@\@\@Bedrock\@\@\@gsl\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ??0LevelLooseFileStorage@@QEAA@AEBVPath@Core@@AEBVContentIdentity@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
     MCAPI
-    LevelLooseFileStorage(class Core::Path const&, class ContentIdentity const&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
+    LevelLooseFileStorage(class Core::Path const&, class ContentIdentity const&, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
+
+    // NOLINTEND
 };

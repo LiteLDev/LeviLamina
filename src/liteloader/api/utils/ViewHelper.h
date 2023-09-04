@@ -6,10 +6,10 @@ inline static constexpr std::string_view to_view(T& x) {
 }
 template <typename T = int>
 static constexpr T atoi(std::string_view sv) {
-    T res = 0;
-    int fg = 0;
-    const char* c = sv.data();
-    auto sz = sv.size();
+    T           res = 0;
+    int         fg  = 0;
+    const char* c   = sv.data();
+    auto        sz  = sv.size();
     for (decltype(sz) i = 0; i < sz; ++i) {
         if constexpr (!std::is_unsigned_v<T>) {
             if (c[i] == '-') {

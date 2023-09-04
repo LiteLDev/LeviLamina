@@ -2,18 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ExpectedSlotConsume {
+// auto generated inclusion list
+#include "mc/world/containers/ContainerEnumName.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPECTEDSLOTCONSUME
+struct ExpectedSlotConsume {
 public:
+    // prevent constructor by default
     ExpectedSlotConsume& operator=(ExpectedSlotConsume const&) = delete;
     ExpectedSlotConsume(ExpectedSlotConsume const&)            = delete;
     ExpectedSlotConsume()                                      = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0ExpectedSlotConsume\@\@QEAA\@W4ContainerEnumName\@\@EAEBVItemStack\@\@E\@Z
-     */
-    MCAPI ExpectedSlotConsume(enum class ContainerEnumName, unsigned char, class ItemStack const&, unsigned char);
+    // NOLINTBEGIN
+    // symbol: ??0ExpectedSlotConsume@@QEAA@W4ContainerEnumName@@EAEBVItemStack@@E@Z
+    MCAPI ExpectedSlotConsume(::ContainerEnumName, uchar, class ItemStack const&, uchar);
+
+    // NOLINTEND
 };

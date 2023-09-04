@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct BeforeWatchdogTerminateEvent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEFOREWATCHDOGTERMINATEEVENT
 public:
+    // prevent constructor by default
     BeforeWatchdogTerminateEvent& operator=(BeforeWatchdogTerminateEvent const&) = delete;
     BeforeWatchdogTerminateEvent(BeforeWatchdogTerminateEvent const&)            = delete;
     BeforeWatchdogTerminateEvent()                                               = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1BeforeWatchdogTerminateEvent\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1BeforeWatchdogTerminateEvent@@QEAA@XZ
     MCAPI ~BeforeWatchdogTerminateEvent();
+
+    // NOLINTEND
 };

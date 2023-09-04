@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/AsyncStatus.h"
 #include "mc/deps/core/common/bedrock/DispatcherProcess.h"
 #include "mc/deps/core/common/bedrock/IAsyncResult.h"
 
@@ -11,7 +12,6 @@
 namespace Bedrock::Http { class DispatcherProcess; }
 namespace Bedrock::Http { class Request; }
 namespace Bedrock::Http { class Response; }
-namespace Bedrock::Threading { enum class AsyncStatus; }
 // clang-format on
 
 namespace Bedrock::Http {
@@ -25,79 +25,88 @@ public:
 
     // DispatchQueue inner types define
     class AsyncQueueResult {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_HTTP_DISPATCHQUEUE_ASYNCQUEUERESULT
     public:
+        // prevent constructor by default
         AsyncQueueResult& operator=(AsyncQueueResult const&) = delete;
         AsyncQueueResult(AsyncQueueResult const&)            = delete;
         AsyncQueueResult()                                   = delete;
-#endif
 
     public:
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // NOLINTBEGIN
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @vftbl 7
-         * @symbol ?_cancel\@AsyncQueueResult\@DispatchQueue\@Http\@Bedrock\@\@UEAAXXZ
-         */
+
+        // vIndex: 1, symbol:
+        // ?getStatus@?$AsyncResultBase@VResponse@Http@Bedrock@@@Threading@Bedrock@@UEBA?AW4AsyncStatus@23@XZ
+        virtual ::Bedrock::Threading::AsyncStatus getStatus() const;
+
+        // vIndex: 2, symbol:
+        // ?getError@?$AsyncResultBase@VResponse@Http@Bedrock@@@Threading@Bedrock@@UEBA?AVerror_code@std@@XZ
+        virtual std::error_code getError() const;
+
+        // vIndex: 3, symbol:
+        // ?getException@?$AsyncResultBase@VResponse@Http@Bedrock@@@Threading@Bedrock@@UEBA?AVexception_ptr@std@@XZ
+        virtual std::exception_ptr getException() const;
+
+        // vIndex: 4, symbol:
+        // ?getResult@?$AsyncResultBase@VResponse@Http@Bedrock@@@Threading@Bedrock@@UEBA?AVResponse@Http@3@XZ
+        virtual class Bedrock::Http::Response getResult() const;
+
+        // vIndex: 5, symbol: ?cancel@?$AsyncResultBase@VResponse@Http@Bedrock@@@Threading@Bedrock@@UEAAXXZ
+        virtual void cancel();
+
+        // vIndex: 6, symbol:
+        // ?addOnComplete@?$AsyncResultBase@VResponse@Http@Bedrock@@@Threading@Bedrock@@UEAAXV?$function@$$A6AXAEBV?$IAsyncResult@VResponse@Http@Bedrock@@@Threading@Bedrock@@@Z@std@@@Z
+        virtual void addOnComplete(std::function<
+                                   void(class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response> const&)>);
+
+        // vIndex: 7, symbol: ?_cancel@AsyncQueueResult@DispatchQueue@Http@Bedrock@@UEAAXXZ
         virtual void _cancel();
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_HTTP_DISPATCHQUEUE
 public:
+    // prevent constructor by default
     DispatchQueue& operator=(DispatchQueue const&) = delete;
     DispatchQueue(DispatchQueue const&)            = delete;
     DispatchQueue()                                = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?send\@DispatchQueue\@Http\@Bedrock\@\@UEAA?AV?$shared_ptr\@V?$IAsyncResult\@VResponse\@Http\@Bedrock\@\@\@Threading\@Bedrock\@\@\@std\@\@$$QEAVRequest\@23\@\@Z
-     */
-    virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
+
+    // vIndex: 1, symbol:
+    // ?send@DispatchQueue@Http@Bedrock@@UEAA?AV?$shared_ptr@V?$IAsyncResult@VResponse@Http@Bedrock@@@Threading@Bedrock@@@std@@$$QEAVRequest@23@@Z
+    virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
     send(class Bedrock::Http::Request&&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_HTTP_DISPATCHQUEUE
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1DispatchQueue@Http@Bedrock@@UEAA@XZ
     MCVAPI ~DispatchQueue();
-#endif
-    /**
-     * @symbol ??0DispatchQueue\@Http\@Bedrock\@\@QEAA\@V?$shared_ptr\@VDispatcherProcess\@Http\@Bedrock\@\@\@std\@\@\@Z
-     */
-    MCAPI DispatchQueue(class std::shared_ptr<class Bedrock::Http::DispatcherProcess>);
+
+    // symbol: ??0DispatchQueue@Http@Bedrock@@QEAA@V?$shared_ptr@VDispatcherProcess@Http@Bedrock@@@std@@@Z
+    MCAPI DispatchQueue(std::shared_ptr<class Bedrock::Http::DispatcherProcess>);
+
+    // NOLINTEND
 
     // private:
-    /**
-     * @symbol
-     * ?_addNewRequest\@DispatchQueue\@Http\@Bedrock\@\@AEAA?AV?$shared_ptr\@V?$IAsyncResult\@VResponse\@Http\@Bedrock\@\@\@Threading\@Bedrock\@\@\@std\@\@$$QEAVRequest\@23\@\@Z
-     */
-    MCAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
-    _addNewRequest(class Bedrock::Http::Request&&);
-    /**
-     * @symbol ?_cleanUpCompletedRequests\@DispatchQueue\@Http\@Bedrock\@\@AEAAXXZ
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?_addNewRequest@DispatchQueue@Http@Bedrock@@AEAA?AV?$shared_ptr@V?$IAsyncResult@VResponse@Http@Bedrock@@@Threading@Bedrock@@@std@@$$QEAVRequest@23@@Z
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
+          _addNewRequest(class Bedrock::Http::Request&&);
+
+    // symbol: ?_cleanUpCompletedRequests@DispatchQueue@Http@Bedrock@@AEAAXXZ
     MCAPI void _cleanUpCompletedRequests();
-    /**
-     * @symbol ?_handlePendingRequest\@DispatchQueue\@Http\@Bedrock\@\@AEAAXXZ
-     */
+
+    // symbol: ?_handlePendingRequest@DispatchQueue@Http@Bedrock@@AEAAXXZ
     MCAPI void _handlePendingRequest();
-    /**
-     * @symbol ?_onCompletion\@DispatchQueue\@Http\@Bedrock\@\@AEAAXXZ
-     */
+
+    // symbol: ?_onCompletion@DispatchQueue@Http@Bedrock@@AEAAXXZ
     MCAPI void _onCompletion();
 
-private:
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Http

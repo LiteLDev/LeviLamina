@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class PackStats {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSTATS
 public:
-    PackStats& operator=(PackStats const&) = delete;
-    PackStats(PackStats const&)            = delete;
-    PackStats()                            = delete;
-#endif
-
-public:
+    uint mOverriddenEntityCount; // this+0x0
+    uint mCustomEntityCount;     // this+0x4
+    uint mCustomAnimationCount;  // this+0x8
+    uint mCustomEffectCount;     // this+0xC
 };

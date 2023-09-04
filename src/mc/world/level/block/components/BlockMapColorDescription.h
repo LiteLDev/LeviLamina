@@ -2,39 +2,39 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockMapColorDescription {
+// auto generated inclusion list
+#include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/world/level/block/components/BlockComponentDescription.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKMAPCOLORDESCRIPTION
+// auto generated forward declare list
+// clang-format off
+namespace JsonUtil { class EmptyClass; }
+// clang-format on
+
+struct BlockMapColorDescription : public ::BlockComponentDescription {
 public:
+    // prevent constructor by default
     BlockMapColorDescription& operator=(BlockMapColorDescription const&) = delete;
     BlockMapColorDescription(BlockMapColorDescription const&)            = delete;
     BlockMapColorDescription()                                           = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?getName\@BlockMapColorDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // vIndex: 1, symbol:
+    // ?getName@BlockMapColorDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const& getName() const;
-    /**
-     * @vftbl 2
-     * @symbol ?initializeComponent\@BlockMapColorDescription\@\@UEBAXAEAVBlockComponentStorage\@\@\@Z
-     */
+
+    // vIndex: 3, symbol: ?initializeComponent@BlockMapColorDescription@@UEBAXAEAVBlockComponentStorage@@@Z
     virtual void initializeComponent(class BlockComponentStorage&) const;
-    /**
-     * @symbol
-     * ?NameID\@BlockMapColorDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
-     */
-    MCAPI static std::string const NameID;
-    /**
-     * @symbol ?bindType\@BlockMapColorDescription\@\@SAXXZ
-     */
+
+    // symbol: ?bindType@BlockMapColorDescription@@SAXXZ
     MCAPI static void bindType();
+
+    // symbol: ?NameID@BlockMapColorDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+    MCAPI static std::string const NameID;
+
+    // NOLINTEND
 };

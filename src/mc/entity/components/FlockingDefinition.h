@@ -11,27 +11,24 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class FlockingDefinition {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOCKINGDEFINITION
 public:
+    // prevent constructor by default
     FlockingDefinition& operator=(FlockingDefinition const&) = delete;
     FlockingDefinition(FlockingDefinition const&)            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0FlockingDefinition\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0FlockingDefinition@@QEAA@XZ
     MCAPI FlockingDefinition();
-    /**
-     * @symbol ?initialize\@FlockingDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVFlockingComponent\@\@\@Z
-     */
+
+    // symbol: ?initialize@FlockingDefinition@@QEBAXAEAVEntityContext@@AEAVFlockingComponent@@@Z
     MCAPI void initialize(class EntityContext&, class FlockingComponent&) const;
-    /**
-     * @symbol
-     * ?buildSchema\@FlockingDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VFlockingDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?buildSchema@FlockingDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VFlockingDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
-    buildSchema(class std::shared_ptr<
+    buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FlockingDefinition>>&);
+
+    // NOLINTEND
 };

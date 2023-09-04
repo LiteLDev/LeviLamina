@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct LocalSpatialEntityFetcherFactoryComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOCALSPATIALENTITYFETCHERFACTORYCOMPONENT
 public:
+    // prevent constructor by default
     LocalSpatialEntityFetcherFactoryComponent& operator=(LocalSpatialEntityFetcherFactoryComponent const&) = delete;
     LocalSpatialEntityFetcherFactoryComponent(LocalSpatialEntityFetcherFactoryComponent const&)            = delete;
     LocalSpatialEntityFetcherFactoryComponent()                                                            = delete;
-#endif
-
-public:
 };

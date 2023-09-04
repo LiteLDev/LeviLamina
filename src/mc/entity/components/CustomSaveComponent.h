@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class CustomSaveComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CUSTOMSAVECOMPONENT
 public:
+    // prevent constructor by default
     CustomSaveComponent& operator=(CustomSaveComponent const&) = delete;
     CustomSaveComponent(CustomSaveComponent const&)            = delete;
     CustomSaveComponent()                                      = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?save\@CustomSaveComponent\@\@QEAA_NAEAVLevelStorage\@\@AEAVActor\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?save@CustomSaveComponent@@QEAA_NAEAVLevelStorage@@AEAVActor@@@Z
     MCAPI bool save(class LevelStorage&, class Actor&);
+
+    // NOLINTEND
 };

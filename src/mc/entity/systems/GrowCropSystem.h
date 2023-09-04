@@ -2,29 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class GrowCropSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROWCROPSYSTEM
+class GrowCropSystem : public ::ITickingSystem {
 public:
+    // prevent constructor by default
     GrowCropSystem& operator=(GrowCropSystem const&) = delete;
     GrowCropSystem(GrowCropSystem const&)            = delete;
     GrowCropSystem()                                 = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?tick\@GrowCropSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?tick@GrowCropSystem@@UEAAXAEAVEntityRegistry@@@Z
     virtual void tick(class EntityRegistry&);
+
+    // NOLINTEND
 };

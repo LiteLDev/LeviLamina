@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct PlayerScore {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSCORE
 public:
+    // prevent constructor by default
     PlayerScore& operator=(PlayerScore const&) = delete;
     PlayerScore(PlayerScore const&)            = delete;
     PlayerScore()                              = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?getId\@PlayerScore\@\@QEBAAEBUScoreboardId\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?getId@PlayerScore@@QEBAAEBUScoreboardId@@XZ
     MCAPI struct ScoreboardId const& getId() const;
+
+    // NOLINTEND
 };

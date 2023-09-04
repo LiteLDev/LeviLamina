@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct InvalidPacksFilterGroup {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVALIDPACKSFILTERGROUP
 public:
+    // prevent constructor by default
     InvalidPacksFilterGroup& operator=(InvalidPacksFilterGroup const&) = delete;
     InvalidPacksFilterGroup(InvalidPacksFilterGroup const&)            = delete;
     InvalidPacksFilterGroup()                                          = delete;
-#endif
-
-public:
 };

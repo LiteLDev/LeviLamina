@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct BlockCollisionEvaluationQueueComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCOLLISIONEVALUATIONQUEUECOMPONENT
 public:
+    // prevent constructor by default
     BlockCollisionEvaluationQueueComponent& operator=(BlockCollisionEvaluationQueueComponent const&) = delete;
     BlockCollisionEvaluationQueueComponent(BlockCollisionEvaluationQueueComponent const&)            = delete;
     BlockCollisionEvaluationQueueComponent()                                                         = delete;
-#endif
-
-public:
 };

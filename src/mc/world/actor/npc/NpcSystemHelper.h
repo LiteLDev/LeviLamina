@@ -8,9 +8,9 @@ namespace NpcComponents { struct LeaveMenuCountdown; }
 // clang-format on
 
 namespace NpcSystemHelper {
-/**
- * @symbol ?sendClosePacket\@NpcSystemHelper\@\@YAXAEAVEntityContext\@\@AEBULeaveMenuCountdown\@NpcComponents\@\@\@Z
- */
+// NOLINTBEGIN
+// symbol: ?sendClosePacket@NpcSystemHelper@@YAXAEAVEntityContext@@AEBULeaveMenuCountdown@NpcComponents@@@Z
 MCAPI void sendClosePacket(class EntityContext&, struct NpcComponents::LeaveMenuCountdown const&);
+// NOLINTEND
 
 }; // namespace NpcSystemHelper

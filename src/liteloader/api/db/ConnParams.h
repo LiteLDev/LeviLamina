@@ -2,12 +2,10 @@
 #include "liteloader/api/db/Any.h"
 #include <unordered_map>
 
-namespace DB
-{
+namespace DB {
 
 
-class ConnParams : public std::unordered_map<std::string, Any>
-{
+class ConnParams : public std::unordered_map<std::string, Any> {
 
     std::string raw;
 
@@ -41,7 +39,7 @@ public:
 
     /**
      * @brief Get the scheme.
-     * 
+     *
      * @return std::string  The scheme
      */
     LLAPI std::string getScheme();
@@ -54,9 +52,9 @@ public:
     /**
      * @brief Get the port.
      *
-     * @return uint16_t  The port number
+     * @return ushort  The port number
      */
-    LLAPI uint16_t getPort();
+    LLAPI ushort getPort();
     /**
      * @brief Get the username.
      *
@@ -104,29 +102,26 @@ public:
      *          the first one(keys[0]) will be returned.
      */
     template <typename T>
-    inline T get(const std::vector<std::string>& keys, bool ignoreCase = true, T defaultValue = T())
-    {
+    inline T get(const std::vector<std::string>& keys, bool ignoreCase = true, T defaultValue = T()) {
         Any value;
         int w = INT_MAX;
-        for (auto& [k, v] : *this)
-        {
+        for (auto& [k, v] : *this) {
             std::string lowerKey = k;
-            if (ignoreCase)
-            {
+            if (ignoreCase) {
                 std::transform(lowerKey.begin(), lowerKey.end(), lowerKey.begin(), ::tolower);
             }
             int i = 0;
-            for (auto& key : keys)
-            {
-                if (lowerKey == key && i < w)
-                {
+            for (auto& key : keys) {
+                if (lowerKey == key && i < w) {
                     value = v;
-                    w = i;
-                    if (w == 0) break;
+                    w     = i;
+                    if (w == 0)
+                        break;
                 }
                 i++;
             }
-            if (w == 0) break;
+            if (w == 0)
+                break;
         }
         if (value.is_null())
             return defaultValue;

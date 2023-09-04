@@ -16,38 +16,36 @@ namespace Scripting { class WeakLifetimeScope; }
 namespace ScriptModuleMinecraft {
 
 struct ScriptItemEnchantmentTypes {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTITEMENCHANTMENTTYPES
 public:
+    // prevent constructor by default
     ScriptItemEnchantmentTypes& operator=(ScriptItemEnchantmentTypes const&) = delete;
     ScriptItemEnchantmentTypes(ScriptItemEnchantmentTypes const&)            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0ScriptItemEnchantmentTypes\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0ScriptItemEnchantmentTypes@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ScriptItemEnchantmentTypes();
-    /**
-     * @symbol
-     * ?getEnchantmentHandle\@ScriptItemEnchantmentTypes\@ScriptModuleMinecraft\@\@QEAA?AV?$optional\@V?$StrongTypedObjectHandle\@UScriptItemEnchantmentType\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@AEAVWeakLifetimeScope\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@4\@\@Z
-     */
-    MCAPI class std::optional<
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemEnchantmentType>>
+
+    // symbol:
+    // ?getEnchantmentHandle@ScriptItemEnchantmentTypes@ScriptModuleMinecraft@@QEAA?AV?$optional@V?$StrongTypedObjectHandle@UScriptItemEnchantmentType@ScriptModuleMinecraft@@@Scripting@@@std@@AEAVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
+    MCAPI
+    std::optional<class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemEnchantmentType>>
     getEnchantmentHandle(class Scripting::WeakLifetimeScope&, std::string const&);
-    /**
-     * @symbol
-     * ?bind\@ScriptItemEnchantmentTypes\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptItemEnchantmentTypes\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptItemEnchantmentTypes@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptItemEnchantmentTypes@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemEnchantmentTypes> bind();
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol
-     * ?add\@ScriptItemEnchantmentTypes\@ScriptModuleMinecraft\@\@AEAA?AV?$StrongTypedObjectHandle\@UScriptItemEnchantmentType\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEAVWeakLifetimeScope\@4\@W4Type\@Enchant\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?add@ScriptItemEnchantmentTypes@ScriptModuleMinecraft@@AEAA?AV?$StrongTypedObjectHandle@UScriptItemEnchantmentType@ScriptModuleMinecraft@@@Scripting@@AEAVWeakLifetimeScope@4@W4Type@Enchant@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemEnchantmentType>
-    add(class Scripting::WeakLifetimeScope&, enum class Enchant::Type);
+    add(class Scripting::WeakLifetimeScope&, ::Enchant::Type);
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

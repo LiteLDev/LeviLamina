@@ -8,17 +8,15 @@ namespace mce { class UUID; }
 // clang-format on
 
 namespace personaDefault::skinRepository {
-/**
- * @symbol ?PERSONA_SKIN_PACK_UUID\@skinRepository\@personaDefault\@\@3VUUID\@mce\@\@B
- */
+// NOLINTBEGIN
+// symbol: ?PERSONA_SKIN_PACK_UUID@skinRepository@personaDefault@@3VUUID@mce@@B
 MCAPI extern class mce::UUID const PERSONA_SKIN_PACK_UUID;
-/**
- * @symbol ?PERSONA_SKIN_PACK_UUID_HASH\@skinRepository\@personaDefault\@\@3_KB
- */
-MCAPI extern unsigned __int64 const PERSONA_SKIN_PACK_UUID_HASH;
-/**
- * @symbol ?VANILLA_SKIN_PACK_UUID\@skinRepository\@personaDefault\@\@3VUUID\@mce\@\@B
- */
+
+// symbol: ?PERSONA_SKIN_PACK_UUID_HASH@skinRepository@personaDefault@@3_KB
+MCAPI extern uint64 const PERSONA_SKIN_PACK_UUID_HASH;
+
+// symbol: ?VANILLA_SKIN_PACK_UUID@skinRepository@personaDefault@@3VUUID@mce@@B
 MCAPI extern class mce::UUID const VANILLA_SKIN_PACK_UUID;
+// NOLINTEND
 
 }; // namespace personaDefault::skinRepository

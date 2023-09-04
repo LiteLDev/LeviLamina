@@ -3,13 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace InsidePowderSnowBlockSystem {
-/**
- * @symbol ?createClientSideSpawnParticleSystem\@InsidePowderSnowBlockSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
- */
+// NOLINTBEGIN
+// symbol: ?createClientSideSpawnParticleSystem@InsidePowderSnowBlockSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createClientSideSpawnParticleSystem();
-/**
- * @symbol ?createServerSideClearFireSystem\@InsidePowderSnowBlockSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
- */
+
+// symbol: ?createServerSideClearFireSystem@InsidePowderSnowBlockSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createServerSideClearFireSystem();
+// NOLINTEND
 
 }; // namespace InsidePowderSnowBlockSystem

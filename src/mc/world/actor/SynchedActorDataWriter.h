@@ -2,30 +2,30 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SynchedActorDataWriter {
+// auto generated inclusion list
+#include "mc/entity/utilities/ActorFlags.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SYNCHEDACTORDATAWRITER
+class SynchedActorDataWriter {
 public:
+    // prevent constructor by default
     SynchedActorDataWriter& operator=(SynchedActorDataWriter const&) = delete;
     SynchedActorDataWriter(SynchedActorDataWriter const&)            = delete;
     SynchedActorDataWriter()                                         = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?reader\@SynchedActorDataWriter\@\@QEBA?AVSynchedActorDataReader\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?reader@SynchedActorDataWriter@@QEBA?AVSynchedActorDataReader@@XZ
     MCAPI class SynchedActorDataReader reader() const;
-    /**
-     * @symbol ?setStatusFlag\@SynchedActorDataWriter\@\@QEAAXW4ActorFlags\@\@_N\@Z
-     */
-    MCAPI void setStatusFlag(enum class ActorFlags, bool);
+
+    // symbol: ?setStatusFlag@SynchedActorDataWriter@@QEAAXW4ActorFlags@@_N@Z
+    MCAPI void setStatusFlag(::ActorFlags, bool);
+
+    // NOLINTEND
 
     // private:
-    /**
-     * @symbol ?_get\@SynchedActorDataWriter\@\@AEAA?AV?$not_null\@PEAVSynchedActorData\@\@\@gsl\@\@XZ
-     */
-    MCAPI class gsl::not_null<class SynchedActorData*> _get();
+    // NOLINTBEGIN
+    // symbol: ?_get@SynchedActorDataWriter@@AEAA?AV?$not_null@PEAVSynchedActorData@@@gsl@@XZ
+    MCAPI gsl::not_null<class SynchedActorData*> _get();
 
-private:
+    // NOLINTEND
 };

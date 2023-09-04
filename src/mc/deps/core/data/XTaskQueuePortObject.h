@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct XTaskQueuePortObject {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_XTASKQUEUEPORTOBJECT
 public:
+    // prevent constructor by default
     XTaskQueuePortObject& operator=(XTaskQueuePortObject const&) = delete;
     XTaskQueuePortObject(XTaskQueuePortObject const&)            = delete;
     XTaskQueuePortObject()                                       = delete;
-#endif
-
-public:
 };

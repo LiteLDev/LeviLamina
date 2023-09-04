@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct TriggerJumpRequestComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRIGGERJUMPREQUESTCOMPONENT
 public:
+    // prevent constructor by default
     TriggerJumpRequestComponent& operator=(TriggerJumpRequestComponent const&) = delete;
     TriggerJumpRequestComponent(TriggerJumpRequestComponent const&)            = delete;
     TriggerJumpRequestComponent()                                              = delete;
-#endif
-
-public:
 };

@@ -3,13 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ChunkLocalHeight {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKLOCALHEIGHT
 public:
-    ChunkLocalHeight& operator=(ChunkLocalHeight const&) = delete;
-    ChunkLocalHeight(ChunkLocalHeight const&)            = delete;
-    ChunkLocalHeight()                                   = delete;
-#endif
-
-public:
+    short mVal = 0;
+    explicit constexpr ChunkLocalHeight(short v) noexcept : mVal(v){};
+    constexpr ChunkLocalHeight() noexcept : mVal(0){};
 };

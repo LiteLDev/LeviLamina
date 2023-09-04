@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class LevelLocationObserver {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELLOCATIONOBSERVER
 public:
+    // prevent constructor by default
     LevelLocationObserver& operator=(LevelLocationObserver const&) = delete;
     LevelLocationObserver(LevelLocationObserver const&)            = delete;
     LevelLocationObserver()                                        = delete;
-#endif
-
-public:
 };

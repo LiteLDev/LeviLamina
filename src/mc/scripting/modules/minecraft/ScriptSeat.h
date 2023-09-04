@@ -5,23 +5,26 @@
 // auto generated inclusion list
 #include "mc/external/scripting/ClassBindingBuilder.h"
 
+// auto generated forward declare list
+// clang-format off
+struct SeatDescription;
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptSeat {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTSEAT
 public:
+    // prevent constructor by default
     ScriptSeat& operator=(ScriptSeat const&) = delete;
     ScriptSeat(ScriptSeat const&)            = delete;
     ScriptSeat()                             = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?bind\@ScriptSeat\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@USeatDescription\@\@\@Scripting\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?bind@ScriptSeat@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@USeatDescription@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct SeatDescription> bind();
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

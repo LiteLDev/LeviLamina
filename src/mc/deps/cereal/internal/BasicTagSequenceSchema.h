@@ -13,38 +13,37 @@ namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
 namespace cereal { struct SerializerTraits; }
+namespace cereal::internal { class BasicSchema; }
 namespace cereal::internal { struct Result; }
 // clang-format on
 
 namespace cereal::internal {
 
 class BasicTagSequenceSchema : public ::cereal::internal::BasicSchema {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREAL_INTERNAL_BASICTAGSEQUENCESCHEMA
 public:
+    // prevent constructor by default
     BasicTagSequenceSchema& operator=(BasicTagSequenceSchema const&) = delete;
     BasicTagSequenceSchema(BasicTagSequenceSchema const&)            = delete;
     BasicTagSequenceSchema()                                         = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREAL_INTERNAL_BASICTAGSEQUENCESCHEMA
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // vIndex: 4, symbol: __unk_vfn_4
+    virtual void __unk_vfn_4();
+
+    // symbol: ??1BasicTagSequenceSchema@internal@cereal@@UEAA@XZ
     MCVAPI ~BasicTagSequenceSchema();
-#endif
-    /**
-     * @symbol
-     * ??0BasicTagSequenceSchema\@internal\@cereal\@\@QEAA\@AEBUReflectionCtx\@2\@AEBV?$vector\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@\@std\@\@V?$allocator\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@\@std\@\@\@2\@\@std\@\@V?$unique_ptr\@VConstraint\@cereal\@\@U?$default_delete\@VConstraint\@cereal\@\@\@std\@\@\@5\@\@Z
-     */
+
+    // symbol:
+    // ??0BasicTagSequenceSchema@internal@cereal@@QEAA@AEBUReflectionCtx@2@AEBV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@V?$unique_ptr@VConstraint@cereal@@U?$default_delete@VConstraint@cereal@@@std@@@5@@Z
     MCAPI
-    BasicTagSequenceSchema(struct cereal::ReflectionCtx const&, std::vector<struct std::pair<std::string, std::string>> const&, std::unique_ptr<class cereal::Constraint>);
-    /**
-     * @symbol
-     * ??0BasicTagSequenceSchema\@internal\@cereal\@\@QEAA\@AEBUReflectionCtx\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1\@Z
-     */
+    BasicTagSequenceSchema(struct cereal::ReflectionCtx const&, std::vector<std::pair<std::string, std::string>> const&, std::unique_ptr<class cereal::Constraint>);
+
+    // symbol:
+    // ??0BasicTagSequenceSchema@internal@cereal@@QEAA@AEBUReflectionCtx@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
     MCAPI BasicTagSequenceSchema(struct cereal::ReflectionCtx const&, std::string const&, std::string const&);
+
+    // NOLINTEND
 };
 
 }; // namespace cereal::internal

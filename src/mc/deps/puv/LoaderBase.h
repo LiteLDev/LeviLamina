@@ -12,38 +12,34 @@ namespace Puv { class Upgrader; }
 namespace Puv::internal {
 
 class LoaderBase {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PUV_INTERNAL_LOADERBASE
 public:
+    // prevent constructor by default
     LoaderBase& operator=(LoaderBase const&) = delete;
     LoaderBase(LoaderBase const&)            = delete;
     LoaderBase()                             = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?registerParser\@LoaderBase\@internal\@Puv\@\@QEAAXV?$unique_ptr\@VParserBase\@Puv\@\@U?$default_delete\@VParserBase\@Puv\@\@\@std\@\@\@std\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?registerParser@LoaderBase@internal@Puv@@QEAAXV?$unique_ptr@VParserBase@Puv@@U?$default_delete@VParserBase@Puv@@@std@@@std@@@Z
     MCAPI void registerParser(std::unique_ptr<class Puv::ParserBase>);
-    /**
-     * @symbol
-     * ?registerUpgrader\@LoaderBase\@internal\@Puv\@\@QEAAXV?$unique_ptr\@VUpgrader\@Puv\@\@U?$default_delete\@VUpgrader\@Puv\@\@\@std\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?registerUpgrader@LoaderBase@internal@Puv@@QEAAXV?$unique_ptr@VUpgrader@Puv@@U?$default_delete@VUpgrader@Puv@@@std@@@std@@@Z
     MCAPI void registerUpgrader(std::unique_ptr<class Puv::Upgrader>);
-    /**
-     * @symbol ??1LoaderBase\@internal\@Puv\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1LoaderBase@internal@Puv@@QEAA@XZ
     MCAPI ~LoaderBase();
 
+    // NOLINTEND
+
     // protected:
-    /**
-     * @symbol
-     * ?doLoad\@LoaderBase\@internal\@Puv\@\@IEBA?AVLoadResultAny\@3\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?doLoad@LoaderBase@internal@Puv@@IEBA?AVLoadResultAny@3@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Puv::LoadResultAny doLoad(std::string const&) const;
 
-protected:
+    // NOLINTEND
 };
 
 }; // namespace Puv::internal

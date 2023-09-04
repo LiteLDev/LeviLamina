@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class BookAddPagePacket {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOOKADDPAGEPACKET
 public:
+    // prevent constructor by default
     BookAddPagePacket& operator=(BookAddPagePacket const&) = delete;
     BookAddPagePacket(BookAddPagePacket const&)            = delete;
     BookAddPagePacket()                                    = delete;
-#endif
-
-public:
 };

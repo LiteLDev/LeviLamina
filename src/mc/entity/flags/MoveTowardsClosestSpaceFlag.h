@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct MoveTowardsClosestSpaceFlag {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOWARDSCLOSESTSPACEFLAG
 public:
+    // prevent constructor by default
     MoveTowardsClosestSpaceFlag& operator=(MoveTowardsClosestSpaceFlag const&) = delete;
     MoveTowardsClosestSpaceFlag(MoveTowardsClosestSpaceFlag const&)            = delete;
     MoveTowardsClosestSpaceFlag()                                              = delete;
-#endif
-
-public:
 };

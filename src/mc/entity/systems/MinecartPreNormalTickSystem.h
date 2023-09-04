@@ -6,27 +6,25 @@
 #include "mc/entity/EntityModifierT.h"
 
 class MinecartPreNormalTickSystem {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECARTPRENORMALTICKSYSTEM
 public:
+    // prevent constructor by default
     MinecartPreNormalTickSystem& operator=(MinecartPreNormalTickSystem const&) = delete;
     MinecartPreNormalTickSystem(MinecartPreNormalTickSystem const&)            = delete;
     MinecartPreNormalTickSystem()                                              = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?createSystem\@MinecartPreNormalTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?createSystem@MinecartPreNormalTickSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol
-     * ?_doMinecartPreNormalTickSystem\@MinecartPreNormalTickSystem\@\@CAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UMinecartPreNormalTickBlockPosComponent\@\@\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?_doMinecartPreNormalTickSystem@MinecartPreNormalTickSystem@@CAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UMinecartPreNormalTickBlockPosComponent@@@@@Z
     MCAPI static void
     _doMinecartPreNormalTickSystem(class StrictEntityContext&, class ActorOwnerComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MinecartPreNormalTickBlockPosComponent>);
 
-private:
+    // NOLINTEND
 };

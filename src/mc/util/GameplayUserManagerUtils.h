@@ -3,11 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace GameplayUserManagerUtils {
-/**
- * @symbol
- * ?countUsersWithMatchingNetworkId\@GameplayUserManagerUtils\@\@YA_KAEBVGameplayUserManager\@\@AEBVNetworkIdentifier\@\@\@Z
- */
-MCAPI unsigned __int64
-countUsersWithMatchingNetworkId(class GameplayUserManager const&, class NetworkIdentifier const&);
+// NOLINTBEGIN
+// symbol:
+// ?countUsersWithMatchingNetworkId@GameplayUserManagerUtils@@YA_KAEBVGameplayUserManager@@AEBVNetworkIdentifier@@@Z
+MCAPI uint64 countUsersWithMatchingNetworkId(class GameplayUserManager const&, class NetworkIdentifier const&);
+// NOLINTEND
 
 }; // namespace GameplayUserManagerUtils

@@ -2,29 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class AngerLevelSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANGERLEVELSYSTEM
+class AngerLevelSystem : public ::ITickingSystem {
 public:
+    // prevent constructor by default
     AngerLevelSystem& operator=(AngerLevelSystem const&) = delete;
     AngerLevelSystem(AngerLevelSystem const&)            = delete;
     AngerLevelSystem()                                   = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?tick\@AngerLevelSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?tick@AngerLevelSystem@@UEAAXAEAVEntityRegistry@@@Z
     virtual void tick(class EntityRegistry&);
+
+    // NOLINTEND
 };

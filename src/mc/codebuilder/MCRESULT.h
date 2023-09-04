@@ -1,27 +1,26 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/codebuilder/MCCATEGORY.h"
 
 struct MCRESULT {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MCRESULT
 public:
-    MCRESULT& operator=(MCRESULT const&) = delete;
-    MCRESULT(MCRESULT const&)            = delete;
-    MCRESULT()                           = delete;
-#endif
+    bool                  mSuccess;
+    enum class MCCATEGORY mCategory;
+    ushort                mCode;
+
+    operator bool() const { return mSuccess; } // NOLINT
 
 public:
-    /**
-     * @symbol ?getFullCode\@MCRESULT\@\@QEBAHXZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?getFullCode@MCRESULT@@QEBAHXZ
     MCAPI int getFullCode() const;
-    /**
-     * @symbol ?isSuccess\@MCRESULT\@\@QEBA_NXZ
-     */
+
+    // symbol: ?isSuccess@MCRESULT@@QEBA_NXZ
     MCAPI bool isSuccess() const;
-    /**
-     * @symbol ??8MCRESULT\@\@QEBA_NAEBU0\@\@Z
-     */
+
+    // symbol: ??8MCRESULT@@QEBA_NAEBU0@@Z
     MCAPI bool operator==(struct MCRESULT const&) const;
+
+    // NOLINTEND
 };

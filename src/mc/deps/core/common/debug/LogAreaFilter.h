@@ -2,22 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/LogAreaID.h"
+
 namespace BedrockLog {
 
 class LogAreaFilter {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCKLOG_LOGAREAFILTER
 public:
+    // prevent constructor by default
     LogAreaFilter& operator=(LogAreaFilter const&) = delete;
     LogAreaFilter(LogAreaFilter const&)            = delete;
     LogAreaFilter()                                = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?toggleFilter\@LogAreaFilter\@BedrockLog\@\@QEAAXW4LogAreaID\@\@\@Z
-     */
-    MCAPI void toggleFilter(enum class LogAreaID);
+    // NOLINTBEGIN
+    // symbol: ?toggleFilter@LogAreaFilter@BedrockLog@@QEAAXW4LogAreaID@@@Z
+    MCAPI void toggleFilter(::LogAreaID);
+
+    // NOLINTEND
 };
 
 }; // namespace BedrockLog

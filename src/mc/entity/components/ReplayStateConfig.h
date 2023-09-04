@@ -2,18 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ReplayStateConfig {
+// auto generated inclusion list
+#include "mc/enums/ReplayStateMode.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPLAYSTATECONFIG
+struct ReplayStateConfig {
 public:
+    // prevent constructor by default
     ReplayStateConfig& operator=(ReplayStateConfig const&) = delete;
     ReplayStateConfig(ReplayStateConfig const&)            = delete;
     ReplayStateConfig()                                    = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0ReplayStateConfig\@\@QEAA\@W4ReplayStateMode\@\@\@Z
-     */
-    MCAPI ReplayStateConfig(enum class ReplayStateMode);
+    // NOLINTBEGIN
+    // symbol: ??0ReplayStateConfig@@QEAA@W4ReplayStateMode@@@Z
+    MCAPI ReplayStateConfig(::ReplayStateMode);
+
+    // NOLINTEND
 };

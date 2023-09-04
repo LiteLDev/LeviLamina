@@ -2,14 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BlockAABBComponentData {
+// auto generated inclusion list
+#include "mc/world/level/block/utils/BlockComponentBase.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKAABBCOMPONENTDATA
+class BlockAABBComponentData : public ::BlockComponentBase {
 public:
+    // prevent constructor by default
     BlockAABBComponentData& operator=(BlockAABBComponentData const&) = delete;
     BlockAABBComponentData(BlockAABBComponentData const&)            = delete;
     BlockAABBComponentData()                                         = delete;
-#endif
-
-public:
 };

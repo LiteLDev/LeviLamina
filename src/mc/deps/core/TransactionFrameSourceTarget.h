@@ -11,33 +11,30 @@ namespace Core { class Result; }
 namespace Core {
 
 class TransactionFrameSourceTarget {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORE_TRANSACTIONFRAMESOURCETARGET
 public:
+    // prevent constructor by default
     TransactionFrameSourceTarget& operator=(TransactionFrameSourceTarget const&) = delete;
     TransactionFrameSourceTarget(TransactionFrameSourceTarget const&)            = delete;
     TransactionFrameSourceTarget()                                               = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1TransactionFrameSourceTarget\@Core\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1TransactionFrameSourceTarget@Core@@QEAA@XZ
     MCAPI ~TransactionFrameSourceTarget();
-    /**
-     * @symbol
-     * ?exec\@TransactionFrameSourceTarget\@Core\@\@SA?AVResult\@2\@AEBVPath\@2\@0V?$function\@$$A6A?AVResult\@Core\@\@AEAVTransactionFrameSourceTarget\@2\@\@Z\@std\@\@1\@Z
-     */
+
+    // symbol:
+    // ?exec@TransactionFrameSourceTarget@Core@@SA?AVResult@2@AEBVPath@2@0V?$function@$$A6A?AVResult@Core@@AEAVTransactionFrameSourceTarget@2@@Z@std@@1@Z
     MCAPI static class Core::Result
-    exec(class Core::Path const&, class Core::Path const&, class std::function<class Core::Result(class Core::TransactionFrameSourceTarget&)>, class std::function<class Core::Result(class Core::TransactionFrameSourceTarget&)>);
+    exec(class Core::Path const&, class Core::Path const&, std::function<class Core::Result(class Core::TransactionFrameSourceTarget&)>, std::function<class Core::Result(class Core::TransactionFrameSourceTarget&)>);
+
+    // NOLINTEND
 
     // private:
-    /**
-     * @symbol ??0TransactionFrameSourceTarget\@Core\@\@AEAA\@AEBVPath\@1\@0\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0TransactionFrameSourceTarget@Core@@AEAA@AEBVPath@1@0@Z
     MCAPI TransactionFrameSourceTarget(class Core::Path const&, class Core::Path const&);
 
-private:
+    // NOLINTEND
 };
 
 }; // namespace Core

@@ -2,26 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ClientPlayerEventCoordinator {
+// auto generated inclusion list
+#include "mc/world/events/PlayerEventCoordinator.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTPLAYEREVENTCOORDINATOR
+class ClientPlayerEventCoordinator : public ::PlayerEventCoordinator {
 public:
+    // prevent constructor by default
     ClientPlayerEventCoordinator& operator=(ClientPlayerEventCoordinator const&) = delete;
     ClientPlayerEventCoordinator(ClientPlayerEventCoordinator const&)            = delete;
     ClientPlayerEventCoordinator()                                               = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?sendPlayerDestroyedBlock\@ClientPlayerEventCoordinator\@\@QEAAXAEAVPlayer\@\@AEBVBlock\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?sendPlayerDestroyedBlock@ClientPlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlock@@@Z
     MCAPI void sendPlayerDestroyedBlock(class Player&, class Block const&);
-    /**
-     * @symbol ?sendPlayerInput\@ClientPlayerEventCoordinator\@\@QEAAXAEAUIPlayerMovementProxy\@\@\@Z
-     */
+
+    // symbol: ?sendPlayerInput@ClientPlayerEventCoordinator@@QEAAXAEAUIPlayerMovementProxy@@@Z
     MCAPI void sendPlayerInput(struct IPlayerMovementProxy&);
-    /**
-     * @symbol ?sendStartDestroyBlock\@ClientPlayerEventCoordinator\@\@QEAAXAEAVPlayer\@\@AEBVBlockPos\@\@AEAE\@Z
-     */
-    MCAPI void sendStartDestroyBlock(class Player&, class BlockPos const&, unsigned char&);
+
+    // symbol: ?sendStartDestroyBlock@ClientPlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlockPos@@AEAE@Z
+    MCAPI void sendStartDestroyBlock(class Player&, class BlockPos const&, uchar&);
+
+    // NOLINTEND
 };

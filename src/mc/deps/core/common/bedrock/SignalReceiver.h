@@ -5,22 +5,20 @@
 namespace Bedrock {
 
 class SignalReceiver {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_SIGNALRECEIVER
 public:
+    // prevent constructor by default
     SignalReceiver& operator=(SignalReceiver const&) = delete;
     SignalReceiver(SignalReceiver const&)            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0SignalReceiver\@Bedrock\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0SignalReceiver@Bedrock@@QEAA@XZ
     MCAPI SignalReceiver();
-    /**
-     * @symbol ??1SignalReceiver\@Bedrock\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1SignalReceiver@Bedrock@@QEAA@XZ
     MCAPI ~SignalReceiver();
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

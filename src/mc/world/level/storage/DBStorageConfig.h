@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct DBStorageConfig {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DBSTORAGECONFIG
 public:
+    // prevent constructor by default
     DBStorageConfig& operator=(DBStorageConfig const&) = delete;
     DBStorageConfig(DBStorageConfig const&)            = delete;
     DBStorageConfig()                                  = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1DBStorageConfig\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1DBStorageConfig@@QEAA@XZ
     MCAPI ~DBStorageConfig();
+
+    // NOLINTEND
 };

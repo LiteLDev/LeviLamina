@@ -3,21 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class IllagerBeastBlockedComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ILLAGERBEASTBLOCKEDCOMPONENT
 public:
+    // prevent constructor by default
     IllagerBeastBlockedComponent& operator=(IllagerBeastBlockedComponent const&) = delete;
     IllagerBeastBlockedComponent(IllagerBeastBlockedComponent const&)            = delete;
     IllagerBeastBlockedComponent()                                               = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?initFromDefinition\@IllagerBeastBlockedComponent\@\@QEAAXAEAVActor\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?initFromDefinition@IllagerBeastBlockedComponent@@QEAAXAEAVActor@@@Z
     MCAPI void initFromDefinition(class Actor&);
-    /**
-     * @symbol ?onBlocked\@IllagerBeastBlockedComponent\@\@QEAAXAEAVActor\@\@AEBVActorDamageSource\@\@0\@Z
-     */
+
+    // symbol: ?onBlocked@IllagerBeastBlockedComponent@@QEAAXAEAVActor@@AEBVActorDamageSource@@0@Z
     MCAPI void onBlocked(class Actor&, class ActorDamageSource const&, class Actor&);
+
+    // NOLINTEND
 };

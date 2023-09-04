@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/resource/ContentIdentity.h"
+#include "mc/deps/core/resource/PackIdVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -8,31 +10,35 @@ namespace mce { class UUID; }
 // clang-format on
 
 struct PackInfoData {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKINFODATA
 public:
-    PackInfoData& operator=(PackInfoData const&) = delete;
-    PackInfoData(PackInfoData const&)            = delete;
-    PackInfoData()                               = delete;
-#endif
+    PackInfoData() = delete;
+
+    PackIdVersion   mPackIdVersion;       // this+0x0
+    uint64          mPackSize;            // this+0x88
+    std::string     mContentKey;          // this+0x90
+    std::string     mSubpackName;         // this+0xB0
+    ContentIdentity mContentIdentity;     // this+0xD0
+    bool            mHasScripts;          // this+0xE8
+    bool            mIsRayTracingCapable; // this+0xE9
+    bool            mHasExceptions;       // this+0xEA
 
 public:
-    /**
-     * @symbol
-     * ??0PackInfoData\@\@QEAA\@AEBVUUID\@mce\@\@AEBVSemVersion\@\@_KAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@3AEBVContentIdentity\@\@_N5\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ??0PackInfoData@@QEAA@AEBVUUID@mce@@AEBVSemVersion@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@3AEBVContentIdentity@@_N5@Z
     MCAPI PackInfoData(
         class mce::UUID const&,
         class SemVersion const&,
-        unsigned __int64,
+        uint64,
         std::string const&,
         std::string const&,
         class ContentIdentity const&,
         bool,
         bool
     );
-    /**
-     * @symbol ??1PackInfoData\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1PackInfoData@@QEAA@XZ
     MCAPI ~PackInfoData();
+
+    // NOLINTEND
 };

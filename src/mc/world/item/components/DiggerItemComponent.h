@@ -11,84 +11,76 @@ public:
 
     // DiggerItemComponent inner types define
     struct BlockInfo {
-
     public:
-        /**
-         * @symbol ??0BlockInfo\@DiggerItemComponent\@\@QEAA\@AEBU01\@\@Z
-         */
-        MCAPI BlockInfo(struct DiggerItemComponent::BlockInfo const&);
-        /**
-         * @symbol ??0BlockInfo\@DiggerItemComponent\@\@QEAA\@XZ
-         */
+        // NOLINTBEGIN
+        // symbol: ??0BlockInfo@DiggerItemComponent@@QEAA@XZ
         MCAPI BlockInfo();
-        /**
-         * @symbol ??4BlockInfo\@DiggerItemComponent\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-         */
-        MCAPI struct DiggerItemComponent::BlockInfo& operator=(struct DiggerItemComponent::BlockInfo&&);
-        /**
-         * @symbol ??4BlockInfo\@DiggerItemComponent\@\@QEAAAEAU01\@AEBU01\@\@Z
-         */
+
+        // symbol: ??0BlockInfo@DiggerItemComponent@@QEAA@AEBU01@@Z
+        MCAPI BlockInfo(struct DiggerItemComponent::BlockInfo const&);
+
+        // symbol: ??4BlockInfo@DiggerItemComponent@@QEAAAEAU01@AEBU01@@Z
         MCAPI struct DiggerItemComponent::BlockInfo& operator=(struct DiggerItemComponent::BlockInfo const&);
-        /**
-         * @symbol ??8BlockInfo\@DiggerItemComponent\@\@QEBA_NAEBU01\@\@Z
-         */
+
+        // symbol: ??4BlockInfo@DiggerItemComponent@@QEAAAEAU01@$$QEAU01@@Z
+        MCAPI struct DiggerItemComponent::BlockInfo& operator=(struct DiggerItemComponent::BlockInfo&&);
+
+        // symbol: ??8BlockInfo@DiggerItemComponent@@QEBA_NAEBU01@@Z
         MCAPI bool operator==(struct DiggerItemComponent::BlockInfo const&) const;
-        /**
-         * @symbol ??1BlockInfo\@DiggerItemComponent\@\@QEAA\@XZ
-         */
+
+        // symbol: ??1BlockInfo@DiggerItemComponent@@QEAA@XZ
         MCAPI ~BlockInfo();
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIGGERITEMCOMPONENT
 public:
+    // prevent constructor by default
     DiggerItemComponent& operator=(DiggerItemComponent const&) = delete;
     DiggerItemComponent(DiggerItemComponent const&)            = delete;
     DiggerItemComponent()                                      = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?isNetworkComponent\@?$NetworkedItemComponent\@VDiggerItemComponent\@\@\@\@UEBA_NXZ
-     */
-    virtual bool isNetworkComponent() const;
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
+
+    // vIndex: 1, symbol: ?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ
+    virtual bool checkComponentDataForContentErrors() const;
+
+    // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol
-     * ?buildNetworkTag\@?$NetworkedItemComponent\@VDiggerItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
-     */
+
+    // vIndex: 3, symbol: ?isNetworkComponent@ChargeableItemComponent@@UEBA_NXZ
+    virtual bool isNetworkComponent() const;
+
+    // vIndex: 4, symbol:
+    // ?buildNetworkTag@ChargeableItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /**
-     * @vftbl 5
-     * @symbol
-     * ?initializeFromNetwork\@?$NetworkedItemComponent\@VDiggerItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
-     */
+
+    // vIndex: 5, symbol: ?initializeFromNetwork@ChargeableItemComponent@@UEAA_NAEBVCompoundTag@@@Z
     virtual bool initializeFromNetwork(class CompoundTag const&);
-    /**
-     * @symbol ?mineBlock\@DiggerItemComponent\@\@QEAA_NAEAVItemStack\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
-     */
+
+    // vIndex: 6, symbol: ?handleVersionBasedInitialization@ItemComponent@@UEAAXAEBVSemVersion@@@Z
+    virtual void handleVersionBasedInitialization(class SemVersion const&);
+
+    // vIndex: 7, symbol: ?initializeComponent@ItemComponent@@UEBAXXZ
+    virtual void initializeComponent() const;
+
+    // vIndex: 8, symbol: ?_canUseOn@ItemComponent@@MEBA_NAEBVItemStack@@AEAVActor@@AEBVBlockPos@@E@Z
+    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
+
+    // vIndex: 9, symbol: ?_useOn@ItemComponent@@MEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
+    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
+
+    // symbol: ?mineBlock@DiggerItemComponent@@QEAA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
     MCAPI bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*);
-    /**
-     * @symbol ?bindType\@DiggerItemComponent\@\@SAXXZ
-     */
+
+    // symbol: ?bindType@DiggerItemComponent@@SAXXZ
     MCAPI static void bindType();
-    /**
-     * @symbol ?getIdentifier\@DiggerItemComponent\@\@SAAEBVHashedString\@\@XZ
-     */
+
+    // symbol: ?getIdentifier@DiggerItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();
+
+    // NOLINTEND
 };

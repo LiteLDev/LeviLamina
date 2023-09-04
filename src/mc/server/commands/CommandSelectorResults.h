@@ -4,13 +4,14 @@
 
 template <typename T0>
 class CommandSelectorResults {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDSELECTORRESULTS
 public:
-    CommandSelectorResults& operator=(CommandSelectorResults const&) = delete;
-    CommandSelectorResults(CommandSelectorResults const&)            = delete;
-    CommandSelectorResults()                                         = delete;
-#endif
+    std::shared_ptr<std::vector<T0*>> data;
 
-public:
+    auto begin() { return data->begin(); }
+
+    auto end() { return data->end(); }
+
+    auto count() const { return data->size(); }
+
+    auto empty() const { return data->empty(); }
 };

@@ -2,19 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-template<typename T0, typename T1, typename... T2> class EntityModifierT;
-template<typename T0> class FlagComponent;
-template<typename T0> class Optional;
-// clang-format on
+// auto generated inclusion list
+#include "mc/common/wrapper/Optional.h"
+#include "mc/entity/EntityModifierT.h"
+#include "mc/world/components/FlagComponent.h"
 
 namespace CheckFallDamageInMoveSystemImpl {
-/**
- * @symbol
- * ?checkFallDamageInMove\@CheckFallDamageInMoveSystemImpl\@\@YAXAEAVStrictEntityContext\@\@AEBUMoveRequestComponent\@\@V?$Optional\@$$CBV?$FlagComponent\@UOnGroundFlag\@\@\@\@\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UCheckFallDamageRequestComponent\@\@\@\@\@Z
- */
+// NOLINTBEGIN
+// symbol:
+// ?checkFallDamageInMove@CheckFallDamageInMoveSystemImpl@@YAXAEAVStrictEntityContext@@AEBUMoveRequestComponent@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UCheckFallDamageRequestComponent@@@@@Z
 MCAPI void
 checkFallDamageInMove(class StrictEntityContext&, struct MoveRequestComponent const&, class Optional<class FlagComponent<struct OnGroundFlag> const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct CheckFallDamageRequestComponent>&);
+// NOLINTEND
 
 }; // namespace CheckFallDamageInMoveSystemImpl

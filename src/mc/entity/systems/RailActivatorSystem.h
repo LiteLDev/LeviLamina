@@ -2,38 +2,34 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class RailActivatorSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAILACTIVATORSYSTEM
+class RailActivatorSystem : public ::ITickingSystem {
 public:
+    // prevent constructor by default
     RailActivatorSystem& operator=(RailActivatorSystem const&) = delete;
     RailActivatorSystem(RailActivatorSystem const&)            = delete;
     RailActivatorSystem()                                      = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?tick\@RailActivatorSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?tick@RailActivatorSystem@@UEAAXAEAVEntityRegistry@@@Z
     virtual void tick(class EntityRegistry&);
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol
-     * ?_tickComponent\@RailActivatorSystem\@\@CAXAEAVEntityContext\@\@AEAVActorOwnerComponent\@\@AEAVRailActivatorComponent\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?_tickComponent@RailActivatorSystem@@CAXAEAVEntityContext@@AEAVActorOwnerComponent@@AEAVRailActivatorComponent@@@Z
     MCAPI static void _tickComponent(class EntityContext&, class ActorOwnerComponent&, class RailActivatorComponent&);
 
-private:
+    // NOLINTEND
 };

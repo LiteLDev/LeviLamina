@@ -5,33 +5,32 @@
 // auto generated inclusion list
 #include "mc/world/actor/agent/Command.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace AgentCommands { class Command; }
+// clang-format on
+
 namespace AgentCommands {
 
 class AttackCommand : public ::AgentCommands::Command {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMMANDS_ATTACKCOMMAND
 public:
+    // prevent constructor by default
     AttackCommand& operator=(AttackCommand const&) = delete;
     AttackCommand(AttackCommand const&)            = delete;
     AttackCommand()                                = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?execute\@AttackCommand\@AgentCommands\@\@UEAAXXZ
-     */
+
+    // vIndex: 1, symbol: ?execute@AttackCommand@AgentCommands@@UEAAXXZ
     virtual void execute();
-    /**
-     * @vftbl 2
-     * @symbol ?isDone\@AttackCommand\@AgentCommands\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?isDone@AttackCommand@AgentCommands@@UEAA_NXZ
     virtual bool isDone();
+
+    // NOLINTEND
 };
 
 }; // namespace AgentCommands

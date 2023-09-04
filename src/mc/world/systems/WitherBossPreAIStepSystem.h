@@ -6,27 +6,25 @@
 #include "mc/entity/EntityModifierT.h"
 
 class WitherBossPreAIStepSystem {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WITHERBOSSPREAISTEPSYSTEM
 public:
+    // prevent constructor by default
     WitherBossPreAIStepSystem& operator=(WitherBossPreAIStepSystem const&) = delete;
     WitherBossPreAIStepSystem(WitherBossPreAIStepSystem const&)            = delete;
     WitherBossPreAIStepSystem()                                            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?createSystem\@WitherBossPreAIStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?createSystem@WitherBossPreAIStepSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol
-     * ?_doWitherBossPreAIStepSystem\@WitherBossPreAIStepSystem\@\@CAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UWitherBossPreAIStepResultComponent\@\@\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?_doWitherBossPreAIStepSystem@WitherBossPreAIStepSystem@@CAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UWitherBossPreAIStepResultComponent@@@@@Z
     MCAPI static void
     _doWitherBossPreAIStepSystem(class StrictEntityContext&, class ActorOwnerComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct WitherBossPreAIStepResultComponent>);
 
-private:
+    // NOLINTEND
 };

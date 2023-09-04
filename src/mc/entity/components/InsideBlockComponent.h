@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct InsideBlockComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEBLOCKCOMPONENT
 public:
+    // prevent constructor by default
     InsideBlockComponent& operator=(InsideBlockComponent const&) = delete;
     InsideBlockComponent(InsideBlockComponent const&)            = delete;
     InsideBlockComponent()                                       = delete;
-#endif
-
-public:
 };

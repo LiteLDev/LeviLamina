@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct RepairItemResult {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPAIRITEMRESULT
 public:
+    // prevent constructor by default
     RepairItemResult& operator=(RepairItemResult const&) = delete;
     RepairItemResult(RepairItemResult const&)            = delete;
     RepairItemResult()                                   = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1RepairItemResult\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1RepairItemResult@@QEAA@XZ
     MCAPI ~RepairItemResult();
+
+    // NOLINTEND
 };

@@ -1,36 +1,36 @@
 #include "liteloader/core/LiteLoader.h"
 
 #include <csignal>
+#include <iostream>
 #include <minwindef.h>
 #include <processenv.h>
 #include <string>
-#include <iostream>
 
-#include "liteloader/api/utils/StringHelper.h"
 #include "liteloader/api/utils/FileHelper.h"
 #include "liteloader/api/utils/SehTranslator.h"
+#include "liteloader/api/utils/StringHelper.h"
 
 #include "liteloader/api/memory/Hook.h"
 
 #include "liteloader/api/LoggerAPI.h"
-#include "liteloader/api/ServerAPI.h"
-#include "liteloader/api/event/LegacyEvents.h"
-#include "liteloader/api/event/server/ServerStartedEvent.h"
-#include "liteloader/api/event/server/ServerStoppedEvent.h"
+// #include "liteloader/api/ServerAPI.h"
+// #include "liteloader/api/event/LegacyEvents.h"
+// #include "liteloader/api/event/server/ServerStartedEvent.h"
+// #include "liteloader/api/event/server/ServerStoppedEvent.h"
 
-#include "mc/Minecraft.hpp"
+#include "mc/world/Minecraft.h"
 
 #include "liteloader/core/Config.h"
 #include "liteloader/core/Loader.h"
-#include "liteloader/core/CrashLogger.h"
-#include "liteloader/core/AddonsHelper.h"
+// #include "liteloader/core/CrashLogger.h"
+// #include "liteloader/core/AddonsHelper.h"
 #include "liteloader/core/Version.h"
-#include "liteloader/core/SimpleServerLogger.h"
-#include "liteloader/core/PlayerDeathPositions.h"
+// #include "liteloader/core/SimpleServerLogger.h"
+// #include "liteloader/core/PlayerDeathPositions.h"
 
-#include <windows.h>
-#include <TlHelp32.h>
 #include <Psapi.h>
+#include <TlHelp32.h>
+#include <windows.h>
 
 Logger ll::logger("LiteLoader");
 time_t ll::startTime;
@@ -161,7 +161,7 @@ void checkRunningBDS() {
                     logger.error(tr("ll.main.checkRunningBDS.ask", pid));
                     char input;
                     rewind(stdin);
-                    input = getchar();
+                    input = static_cast<char>(getchar());
                     rewind(stdin);
                     if (input == 'n' || input == 'N') {
                         break;
@@ -232,13 +232,13 @@ void checkBetaVersion() {
 }
 
 void checkProtocolVersion() {
-    auto currentProtocol = ll::getServerProtocolVersion();
-    if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
-        std::string tmp = tr("ll.main.warning.protocolVersionNotMatch.1");
-        logger.warn(tmp, TARGET_BDS_PROTOCOL_VERSION, currentProtocol);
-        logger.warn(tr("ll.main.warning.protocolVersionNotMatch.2"));
-        std::this_thread::sleep_for(std::chrono::seconds(1));
-    }
+    // auto currentProtocol = ll::getServerProtocolVersion();
+    // if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
+    //     std::string tmp = tr("ll.main.warning.protocolVersionNotMatch.1");
+    //     logger.warn(tmp, TARGET_BDS_PROTOCOL_VERSION, currentProtocol);
+    //     logger.warn(tr("ll.main.warning.protocolVersionNotMatch.2"));
+    //     std::this_thread::sleep_for(std::chrono::seconds(1));
+    // }
 }
 
 BOOL WINAPI ConsoleExitHandler(DWORD CEvent) {
@@ -339,15 +339,15 @@ void liteloaderMain() {
     checkRunningBDS();
 
     // Builtin CrashLogger
-    ll::CrashLogger::initCrashLogger(ll::globalConfig.enableCrashLogger);
+    // ll::CrashLogger::initCrashLogger(ll::globalConfig.enableCrashLogger);
 
     // Initialize Player Database
     InitPlayerDatabase();
 
     // Rename Window
-    HWND         hwnd = GetConsoleWindow();
-    std::wstring s    = L"Bedrock Dedicated Server " + str2wstr(ll::getBdsVersion().substr(1));
-    SetWindowText(hwnd, s.c_str());
+    // HWND         hwnd = GetConsoleWindow();
+    // std::wstring s    = L"Bedrock Dedicated Server " + str2wstr(ll::getBdsVersion().substr(1));
+    // SetWindowText(hwnd, s.c_str());
 
     // Register Exit Event Handler.
     SetConsoleCtrlHandler(ConsoleExitHandler, TRUE);
@@ -361,40 +361,40 @@ void liteloaderMain() {
     checkDevMode();
 
     // Addon Helper
-    if (ll::globalConfig.enableAddonsHelper) {
-        InitAddonsHelper();
-    }
+    // if (ll::globalConfig.enableAddonsHelper) {
+    //     InitAddonsHelper();
+    // }
 
     // Load plugins
     ll::LoadMain();
 
     // Register built-in commands
-    RegisterCommands();
+    // RegisterCommands();
 
     // Register simple server logger
-    ll::SimpleServerLogger::registerSimpleServerLogger();
+    // ll::SimpleServerLogger::registerSimpleServerLogger();
 
     // Register BStats
-    bstats::registerBStats();
+    // bstats::registerBStats();
 
     // Register Started
-    using namespace ll::event::server;
-    ServerStartedEvent::subscribe([](const ServerStartedEvent&) {
-        logger.info(tr("ll.notice.license", "LGPLv3"));
-        logger.info(tr("ll.notice.newForum", "https://forum.litebds.com"));
-        logger.info(tr("ll.notice.translateText", "https://crowdin.com/project/liteloaderbds"));
-        logger.info("Thanks to RhyMC(rhymc.com) for the support");
-        return true;
-    });
+    // using namespace ll::event::server;
+    // ServerStartedEvent::subscribe([](const ServerStartedEvent&) {
+    //     logger.info(tr("ll.notice.license", "LGPLv3"));
+    //     logger.info(tr("ll.notice.newForum", "https://forum.litebds.com"));
+    //     logger.info(tr("ll.notice.translateText", "https://crowdin.com/project/liteloaderbds"));
+    //     logger.info("Thanks to RhyMC(rhymc.com) for the support");
+    //     return true;
+    // });
 
     // Register Cleanup
-    ServerStoppedEvent::subscribe([](const ServerStoppedEvent&) {
-        EndScheduleSystem();
-        return true;
-    });
+    // ServerStoppedEvent::subscribe([](const ServerStoppedEvent&) {
+    //     EndScheduleSystem();
+    //     return true;
+    // });
 
     // Initialize PlayerDeathPosition counter
-    PlayerDeathPositions::deathEventListener();
+    // PlayerDeathPositions::deathEventListener();
 }
 
 using namespace ll::memory;
@@ -411,4 +411,4 @@ LL_AUTO_STATIC_HOOK(LiteLoaderMain, HookPriority::Normal, "main", int, int argc,
     return origin(argc, argv);
 }
 
-LL_UNUSED BOOL WINAPI DllMain(HMODULE, DWORD ul_reason_for_call, LPVOID) { return TRUE; }
+LL_UNUSED BOOL WINAPI DllMain(HMODULE, DWORD /*ul_reason_for_call*/, LPVOID) { return TRUE; }

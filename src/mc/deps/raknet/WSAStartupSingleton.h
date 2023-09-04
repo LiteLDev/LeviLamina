@@ -3,29 +3,31 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class WSAStartupSingleton {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WSASTARTUPSINGLETON
 public:
+    // prevent constructor by default
     WSAStartupSingleton& operator=(WSAStartupSingleton const&) = delete;
     WSAStartupSingleton(WSAStartupSingleton const&)            = delete;
     WSAStartupSingleton()                                      = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?AddRef\@WSAStartupSingleton\@\@SAXXZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?AddRef@WSAStartupSingleton@@SAXXZ
     MCAPI static void AddRef();
-    /**
-     * @symbol ?Deref\@WSAStartupSingleton\@\@SAXXZ
-     */
+
+    // symbol: ?Deref@WSAStartupSingleton@@SAXXZ
     MCAPI static void Deref();
 
-    // protected:
+    // NOLINTEND
 
 protected:
-    /**
-     * @symbol ?refCount\@WSAStartupSingleton\@\@1HA
-     */
+    // NOLINTBEGIN
+    // symbol: ?refCount@WSAStartupSingleton@@1HA
     MCAPI static int refCount;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    // NOLINTEND
 };

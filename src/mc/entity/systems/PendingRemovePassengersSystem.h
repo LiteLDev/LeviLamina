@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class PendingRemovePassengersSystem {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PENDINGREMOVEPASSENGERSSYSTEM
 public:
+    // prevent constructor by default
     PendingRemovePassengersSystem& operator=(PendingRemovePassengersSystem const&) = delete;
     PendingRemovePassengersSystem(PendingRemovePassengersSystem const&)            = delete;
     PendingRemovePassengersSystem()                                                = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?createPendingRemovePassengersSystem\@PendingRemovePassengersSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?createPendingRemovePassengersSystem@PendingRemovePassengersSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createPendingRemovePassengersSystem();
+
+    // NOLINTEND
 };

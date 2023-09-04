@@ -2,71 +2,50 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BreedGoal {
+// auto generated inclusion list
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/Goal.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREEDGOAL
+class BreedGoal : public ::Goal {
 public:
+    // prevent constructor by default
     BreedGoal& operator=(BreedGoal const&) = delete;
     BreedGoal(BreedGoal const&)            = delete;
     BreedGoal()                            = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@BreedGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@BreedGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@BreedGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@BreedGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
-     * @vftbl 5
-     * @symbol ?stop\@BreedGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 5, symbol: ?stop@BreedGoal@@UEAAXXZ
     virtual void stop();
-    /**
-     * @vftbl 6
-     * @symbol ?tick\@BreedGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 6, symbol: ?tick@BreedGoal@@UEAAXXZ
     virtual void tick();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@BreedGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@BreedGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @symbol ??0BreedGoal\@\@QEAA\@AEAVMob\@\@M\@Z
-     */
+
+    // symbol: ??0BreedGoal@@QEAA@AEAVMob@@M@Z
     MCAPI BreedGoal(class Mob&, float);
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol ?_isCloseEnoughToBreed\@BreedGoal\@\@AEBA_NVVec3\@\@VVec2\@\@01\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?_isCloseEnoughToBreed@BreedGoal@@AEBA_NVVec3@@VVec2@@01@Z
     MCAPI bool _isCloseEnoughToBreed(class Vec3, class Vec2, class Vec3, class Vec2) const;
-    /**
-     * @symbol ?_moveToFreePartner\@BreedGoal\@\@AEBAPEAVMob\@\@XZ
-     */
+
+    // symbol: ?_moveToFreePartner@BreedGoal@@AEBAPEAVMob@@XZ
     MCAPI class Mob* _moveToFreePartner() const;
 
-private:
+    // NOLINTEND
 };

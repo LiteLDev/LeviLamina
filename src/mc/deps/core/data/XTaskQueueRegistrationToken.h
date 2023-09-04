@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct XTaskQueueRegistrationToken {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_XTASKQUEUEREGISTRATIONTOKEN
 public:
+    // prevent constructor by default
     XTaskQueueRegistrationToken& operator=(XTaskQueueRegistrationToken const&) = delete;
     XTaskQueueRegistrationToken(XTaskQueueRegistrationToken const&)            = delete;
     XTaskQueueRegistrationToken()                                              = delete;
-#endif
-
-public:
 };

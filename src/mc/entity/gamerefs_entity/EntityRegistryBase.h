@@ -1,36 +1,42 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/EntityId.h"
 
 class EntityRegistryBase {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYREGISTRYBASE
 public:
-    EntityRegistryBase& operator=(EntityRegistryBase const&) = delete;
-    EntityRegistryBase(EntityRegistryBase const&)            = delete;
-    EntityRegistryBase()                                     = delete;
-#endif
+    void*                                 mCanModifyDuringView;
+    entt::basic_registry<class EntityId>& mRegistry;
+    EntityId                              mViewedEntity;
+    bool                                  mViewUsesViewedContext;
+    uint                                  mId;
 
 public:
-    /**
-     * @symbol
-     * ??0EntityRegistryBase\@\@QEAA\@AEAV?$basic_registry\@VEntityId\@\@V?$allocator\@VEntityId\@\@\@std\@\@\@entt\@\@\@Z
-     */
-    MCAPI EntityRegistryBase(class entt::basic_registry<class EntityId, class std::allocator<class EntityId>>&);
-    /**
-     * @symbol ?isValidEntity\@EntityRegistryBase\@\@QEBA_NAEBVEntityContextBase\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0EntityRegistryBase@@QEAA@AEAV?$basic_registry@VEntityId@@V?$allocator@VEntityId@@@std@@@entt@@@Z
+    MCAPI EntityRegistryBase(entt::basic_registry<class EntityId>&);
+
+    // symbol: ?isValidEntity@EntityRegistryBase@@QEBA_NAEBVEntityContextBase@@@Z
     MCAPI bool isValidEntity(class EntityContextBase const&) const;
 
+    // NOLINTEND
+
     // protected:
-    /**
-     * @symbol ?_assertValidRegistry\@EntityRegistryBase\@\@IEBAXAEBVEntityContextBase\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?_assertValidRegistry@EntityRegistryBase@@IEBAXAEBVEntityContextBase@@@Z
     MCAPI void _assertValidRegistry(class EntityContextBase const&) const;
 
+    // NOLINTEND
+
 protected:
-    /**
-     * @symbol ?mRegistryCount\@EntityRegistryBase\@\@1U?$atomic\@I\@std\@\@A
-     */
-    MCAPI static struct std::atomic<unsigned int> mRegistryCount;
+    // NOLINTBEGIN
+    // symbol: ?mRegistryCount@EntityRegistryBase@@1U?$atomic@I@std@@A
+    MCAPI static std::atomic<uint> mRegistryCount;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    // NOLINTEND
 };

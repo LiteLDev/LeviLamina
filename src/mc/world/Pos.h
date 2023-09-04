@@ -1,15 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/BlockPos.h"
 
-class Pos {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POS
+class Pos : public BlockPos {
 public:
-    Pos& operator=(Pos const&) = delete;
-    Pos(Pos const&)            = delete;
-    Pos()                      = delete;
-#endif
-
-public:
+    using BlockPos::BlockPos;
 };

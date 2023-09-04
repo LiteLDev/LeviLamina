@@ -2,38 +2,31 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BreakBlocksDescription {
+// auto generated inclusion list
+#include "mc/world/actor/ActorComponentDescription.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREAKBLOCKSDESCRIPTION
+struct BreakBlocksDescription : public ::ActorComponentDescription {
 public:
+    // prevent constructor by default
     BreakBlocksDescription& operator=(BreakBlocksDescription const&) = delete;
     BreakBlocksDescription(BreakBlocksDescription const&)            = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol ?getJsonName\@BreakBlocksDescription\@\@UEBAPEBDXZ
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: ?getJsonName@BreakBlocksDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?deserializeData\@BreakBlocksDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?deserializeData@BreakBlocksDescription@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKBLOCKSDESCRIPTION
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1BreakBlocksDescription@@UEAA@XZ
     MCVAPI ~BreakBlocksDescription();
-#endif
-    /**
-     * @symbol ??0BreakBlocksDescription\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0BreakBlocksDescription@@QEAA@XZ
     MCAPI BreakBlocksDescription();
+
+    // NOLINTEND
 };

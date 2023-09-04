@@ -7,9 +7,9 @@ struct IPersistFile;
 
 class ShellLinkFile {
 
-    IShellLinkW* shellLink = nullptr;
+    IShellLinkW*  shellLink   = nullptr;
     IPersistFile* presistFile = nullptr;
-    std::wstring lnkPath;
+    std::wstring  lnkPath;
 
     void _Init();
 
@@ -17,7 +17,8 @@ public:
     /**
      * @brief The HotKey struct
      *
-     * @see  https://docs.microsoft.com/en-us/windows/win32/api/shobjidl_core/nf-shobjidl_core-ishelllinkw-gethotkey#parameters
+     * @see
+     * https://docs.microsoft.com/en-us/windows/win32/api/shobjidl_core/nf-shobjidl_core-ishelllinkw-gethotkey#parameters
      * @note The modifier flags(mod) can be a combination of the following values:
      *        HOTKEYF_ALT, HOTKEYF_CONTROL, HOTKEYF_EXT, HOTKEYF_SHIFT.
      */

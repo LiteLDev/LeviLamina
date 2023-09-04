@@ -8,23 +8,19 @@
 #include "mc/world/components/FlagComponent.h"
 
 class GetInterpolatedRidingPositionSystem {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GETINTERPOLATEDRIDINGPOSITIONSYSTEM
 public:
+    // prevent constructor by default
     GetInterpolatedRidingPositionSystem& operator=(GetInterpolatedRidingPositionSystem const&) = delete;
     GetInterpolatedRidingPositionSystem(GetInterpolatedRidingPositionSystem const&)            = delete;
     GetInterpolatedRidingPositionSystem()                                                      = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?createSystem\@GetInterpolatedRidingPositionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?createSystem@GetInterpolatedRidingPositionSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
-    /**
-     * @symbol
-     * ?getInterpolatedRidingPosition\@GetInterpolatedRidingPositionSystem\@\@SA?AVVec3\@\@AEBVStrictEntityContext\@\@AEBV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBUActorRotationComponent\@\@$$CBURenderRotationComponent\@\@$$CBUStateVectorComponent\@\@$$CBUSynchedActorDataComponent\@\@\@\@AEBV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBUPassengerComponent\@\@\@\@AEBV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UParrotFlag\@\@\@\@\@\@\@\@AEBV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@UVehicleComponent\@\@\@\@\@\@AEBV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UCamelFlag\@\@\@\@\@\@$$CBUSynchedActorDataComponent\@\@\@\@AEBV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UHorseFlag\@\@\@\@\@\@$$CBUStandAnimationComponent\@\@\@\@AEBV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UMobFlag\@\@\@\@\@\@$$CBUMobBodyRotationComponent\@\@\@\@M\@Z
-     */
+
+    // symbol:
+    // ?getInterpolatedRidingPosition@GetInterpolatedRidingPositionSystem@@SA?AVVec3@@AEBVStrictEntityContext@@AEBV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUActorRotationComponent@@$$CBURenderRotationComponent@@$$CBUStateVectorComponent@@$$CBUSynchedActorDataComponent@@@@AEBV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUPassengerComponent@@@@AEBV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UParrotFlag@@@@@@@@AEBV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@UVehicleComponent@@@@@@AEBV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UCamelFlag@@@@@@$$CBUSynchedActorDataComponent@@@@AEBV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UHorseFlag@@@@@@$$CBUStandAnimationComponent@@@@AEBV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UMobFlag@@@@@@$$CBUMobBodyRotationComponent@@@@M@Z
     MCAPI static class Vec3 getInterpolatedRidingPosition(
         class StrictEntityContext const&,
         class ViewT<
@@ -60,4 +56,6 @@ public:
             struct MobBodyRotationComponent const> const&,
         float
     );
+
+    // NOLINTEND
 };

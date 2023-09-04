@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace EmitJumpPreventedEventSystem {
-/**
- * @symbol ?createSystem\@EmitJumpPreventedEventSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
- */
+// NOLINTBEGIN
+// symbol: ?createSystem@EmitJumpPreventedEventSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
+// NOLINTEND
 
 }; // namespace EmitJumpPreventedEventSystem

@@ -5,31 +5,28 @@
 namespace Bedrock {
 
 class SanitizedFormatString {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_SANITIZEDFORMATSTRING
 public:
+    // prevent constructor by default
     SanitizedFormatString& operator=(SanitizedFormatString const&) = delete;
     SanitizedFormatString(SanitizedFormatString const&)            = delete;
     SanitizedFormatString()                                        = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0SanitizedFormatString\@Bedrock\@\@QEAA\@PEBD\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0SanitizedFormatString@Bedrock@@QEAA@PEBD@Z
     MCAPI SanitizedFormatString(char const*);
-    /**
-     * @symbol ?getOriginalWithoutFlag\@SanitizedFormatString\@Bedrock\@\@QEBAPEBDXZ
-     */
+
+    // symbol: ?getOriginalWithoutFlag@SanitizedFormatString@Bedrock@@QEBAPEBDXZ
     MCAPI char const* getOriginalWithoutFlag() const;
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol ?_sanitize\@SanitizedFormatString\@Bedrock\@\@AEAAXXZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?_sanitize@SanitizedFormatString@Bedrock@@AEAAXXZ
     MCAPI void _sanitize();
 
-private:
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

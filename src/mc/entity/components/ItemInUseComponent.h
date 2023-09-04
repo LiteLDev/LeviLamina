@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ItemInUseComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMINUSECOMPONENT
 public:
+    // prevent constructor by default
     ItemInUseComponent& operator=(ItemInUseComponent const&) = delete;
     ItemInUseComponent(ItemInUseComponent const&)            = delete;
     ItemInUseComponent()                                     = delete;
-#endif
-
-public:
 };

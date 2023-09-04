@@ -6,27 +6,22 @@
 #include "mc/world/level/Command.h"
 
 class ParticleCommand : public ::Command {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARTICLECOMMAND
 public:
+    // prevent constructor by default
     ParticleCommand& operator=(ParticleCommand const&) = delete;
     ParticleCommand(ParticleCommand const&)            = delete;
     ParticleCommand()                                  = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?execute\@ParticleCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?execute@ParticleCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol ?setup\@ParticleCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
-     */
+
+    // symbol: ?setup@ParticleCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry&);
+
+    // NOLINTEND
 };

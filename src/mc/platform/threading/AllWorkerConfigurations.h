@@ -3,16 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class AllWorkerConfigurations {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ALLWORKERCONFIGURATIONS
 public:
+    // prevent constructor by default
     AllWorkerConfigurations& operator=(AllWorkerConfigurations const&) = delete;
     AllWorkerConfigurations(AllWorkerConfigurations const&)            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0AllWorkerConfigurations\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0AllWorkerConfigurations@@QEAA@XZ
     MCAPI AllWorkerConfigurations();
+
+    // NOLINTEND
 };

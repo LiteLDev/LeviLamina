@@ -4,13 +4,13 @@
 
 template <typename T0, typename T1>
 class BidirectionalUnorderedMap {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIDIRECTIONALUNORDEREDMAP
 public:
-    BidirectionalUnorderedMap& operator=(BidirectionalUnorderedMap const&) = delete;
-    BidirectionalUnorderedMap(BidirectionalUnorderedMap const&)            = delete;
-    BidirectionalUnorderedMap()                                            = delete;
-#endif
+    std::unordered_map<T0, T1> mRight;
+    std::unordered_map<T1, T0> mLeft;
 
-public:
+    T1&       operator[](T0 const& key) { return mRight[key]; }
+    T1 const& operator[](T0 const& key) const { return mRight[key]; }
+
+    T0&       operator()(T1 const& value) { return mLeft[value]; }
+    T0 const& operator()(T1 const& value) const { return mLeft[value]; }
 };

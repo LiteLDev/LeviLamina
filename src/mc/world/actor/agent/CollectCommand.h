@@ -5,33 +5,32 @@
 // auto generated inclusion list
 #include "mc/world/actor/agent/Command.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace AgentCommands { class Command; }
+// clang-format on
+
 namespace AgentCommands {
 
 class CollectCommand : public ::AgentCommands::Command {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMMANDS_COLLECTCOMMAND
 public:
+    // prevent constructor by default
     CollectCommand& operator=(CollectCommand const&) = delete;
     CollectCommand(CollectCommand const&)            = delete;
     CollectCommand()                                 = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?execute\@CollectCommand\@AgentCommands\@\@UEAAXXZ
-     */
+
+    // vIndex: 1, symbol: ?execute@CollectCommand@AgentCommands@@UEAAXXZ
     virtual void execute();
-    /**
-     * @vftbl 2
-     * @symbol ?isDone\@CollectCommand\@AgentCommands\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?isDone@CollectCommand@AgentCommands@@UEAA_NXZ
     virtual bool isDone();
+
+    // NOLINTEND
 };
 
 }; // namespace AgentCommands

@@ -5,15 +5,11 @@
 namespace Core {
 
 class FileStats {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORE_FILESTATS
 public:
+    // prevent constructor by default
     FileStats& operator=(FileStats const&) = delete;
     FileStats(FileStats const&)            = delete;
     FileStats()                            = delete;
-#endif
-
-public:
 };
 
 }; // namespace Core

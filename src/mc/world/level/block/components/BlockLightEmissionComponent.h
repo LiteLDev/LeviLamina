@@ -2,18 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockLightEmissionComponent {
+// auto generated inclusion list
+#include "mc/world/level/block/utils/BlockComponentBase.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLIGHTEMISSIONCOMPONENT
+struct BlockLightEmissionComponent : public ::BlockComponentBase {
 public:
+    // prevent constructor by default
     BlockLightEmissionComponent& operator=(BlockLightEmissionComponent const&) = delete;
     BlockLightEmissionComponent(BlockLightEmissionComponent const&)            = delete;
     BlockLightEmissionComponent()                                              = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?usesNewComponentStorage\@BlockLightEmissionComponent\@\@SA_NXZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?usesNewComponentStorage@BlockLightEmissionComponent@@SA_NXZ
     MCAPI static bool usesNewComponentStorage();
+
+    // NOLINTEND
 };

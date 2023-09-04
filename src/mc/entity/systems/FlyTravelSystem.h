@@ -8,23 +8,19 @@
 #include "mc/world/components/FlagComponent.h"
 
 class FlyTravelSystem {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLYTRAVELSYSTEM
 public:
+    // prevent constructor by default
     FlyTravelSystem& operator=(FlyTravelSystem const&) = delete;
     FlyTravelSystem(FlyTravelSystem const&)            = delete;
     FlyTravelSystem()                                  = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?createFlyTravelSystem\@FlyTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?createFlyTravelSystem@FlyTravelSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createFlyTravelSystem();
-    /**
-     * @symbol
-     * ?tickFlyTravelSystem\@FlyTravelSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@UMobTravelComponent\@\@\@\@$$CBUAbilitiesComponent\@\@$$CBUSynchedActorDataComponent\@\@UFlySpeedComponent\@\@\@\@\@Z
-     */
+
+    // symbol:
+    // ?tickFlyTravelSystem@FlyTravelSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UPlayerComponentFlag@@@@UMobTravelComponent@@@@$$CBUAbilitiesComponent@@$$CBUSynchedActorDataComponent@@UFlySpeedComponent@@@@@Z
     MCAPI static void
         tickFlyTravelSystem(class ViewT<
                             class StrictEntityContext,
@@ -33,4 +29,6 @@ public:
                             struct AbilitiesComponent const,
                             struct SynchedActorDataComponent const,
                             struct FlySpeedComponent>);
+
+    // NOLINTEND
 };

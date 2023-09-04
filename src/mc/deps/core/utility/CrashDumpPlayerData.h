@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class CrashDumpPlayerData {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMPPLAYERDATA
 public:
+    // prevent constructor by default
     CrashDumpPlayerData& operator=(CrashDumpPlayerData const&) = delete;
     CrashDumpPlayerData(CrashDumpPlayerData const&)            = delete;
     CrashDumpPlayerData()                                      = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?kFormat\@CrashDumpPlayerData\@\@2QBUCrashDumpFormatEntryImpl\@\@B
-     */
+    // NOLINTBEGIN
+    // symbol: ?kFormat@CrashDumpPlayerData@@2QBUCrashDumpFormatEntryImpl@@B
     MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
+
+    // NOLINTEND
 };

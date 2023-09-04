@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct MountTamingEvent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOUNTTAMINGEVENT
 public:
+    // prevent constructor by default
     MountTamingEvent& operator=(MountTamingEvent const&) = delete;
     MountTamingEvent(MountTamingEvent const&)            = delete;
     MountTamingEvent()                                   = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1MountTamingEvent\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1MountTamingEvent@@QEAA@XZ
     MCAPI ~MountTamingEvent();
+
+    // NOLINTEND
 };

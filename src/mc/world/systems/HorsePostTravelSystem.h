@@ -7,27 +7,25 @@
 #include "mc/world/components/FlagComponent.h"
 
 class HorsePostTravelSystem {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HORSEPOSTTRAVELSYSTEM
 public:
+    // prevent constructor by default
     HorsePostTravelSystem& operator=(HorsePostTravelSystem const&) = delete;
     HorsePostTravelSystem(HorsePostTravelSystem const&)            = delete;
     HorsePostTravelSystem()                                        = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?createSystem\@HorsePostTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?createSystem@HorsePostTravelSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol
-     * ?_doHorsePostTravelSystem\@HorsePostTravelSystem\@\@CAXAEBVStrictEntityContext\@\@V?$Optional\@$$CBV?$FlagComponent\@UWasOnGroundPreTravelFlag\@\@\@\@\@\@AEAVActorOwnerComponent\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?_doHorsePostTravelSystem@HorsePostTravelSystem@@CAXAEBVStrictEntityContext@@V?$Optional@$$CBV?$FlagComponent@UWasOnGroundPreTravelFlag@@@@@@AEAVActorOwnerComponent@@@Z
     MCAPI static void
     _doHorsePostTravelSystem(class StrictEntityContext const&, class Optional<class FlagComponent<struct WasOnGroundPreTravelFlag> const>, class ActorOwnerComponent&);
 
-private:
+    // NOLINTEND
 };

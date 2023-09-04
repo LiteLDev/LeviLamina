@@ -3,20 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ExplosionStartedEvent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPLOSIONSTARTEDEVENT
 public:
+    // prevent constructor by default
     ExplosionStartedEvent& operator=(ExplosionStartedEvent const&) = delete;
     ExplosionStartedEvent()                                        = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0ExplosionStartedEvent\@\@QEAA\@AEBU0\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0ExplosionStartedEvent@@QEAA@AEBU0@@Z
     MCAPI ExplosionStartedEvent(struct ExplosionStartedEvent const&);
-    /**
-     * @symbol ??1ExplosionStartedEvent\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ExplosionStartedEvent@@QEAA@XZ
     MCAPI ~ExplosionStartedEvent();
+
+    // NOLINTEND
 };

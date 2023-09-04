@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class MobTravelTeleportedFilterSystem {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBTRAVELTELEPORTEDFILTERSYSTEM
 public:
+    // prevent constructor by default
     MobTravelTeleportedFilterSystem& operator=(MobTravelTeleportedFilterSystem const&) = delete;
     MobTravelTeleportedFilterSystem(MobTravelTeleportedFilterSystem const&)            = delete;
     MobTravelTeleportedFilterSystem()                                                  = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?create\@MobTravelTeleportedFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?create@MobTravelTeleportedFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo create();
+
+    // NOLINTEND
 };

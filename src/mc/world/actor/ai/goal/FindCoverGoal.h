@@ -2,67 +2,47 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class FindCoverGoal {
+// auto generated inclusion list
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/Goal.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FINDCOVERGOAL
+class FindCoverGoal : public ::Goal {
 public:
+    // prevent constructor by default
     FindCoverGoal& operator=(FindCoverGoal const&) = delete;
     FindCoverGoal(FindCoverGoal const&)            = delete;
     FindCoverGoal()                                = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@FindCoverGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@FindCoverGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@FindCoverGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@FindCoverGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@FindCoverGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@FindCoverGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol ?stop\@FindCoverGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 5, symbol: ?stop@FindCoverGoal@@UEAAXXZ
     virtual void stop();
-    /**
-     * @vftbl 6
-     * @symbol __unk_vfn_6
-     */
-    virtual void __unk_vfn_6();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@FindCoverGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@FindCoverGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @symbol ??0FindCoverGoal\@\@QEAA\@AEAVMob\@\@MM\@Z
-     */
+
+    // symbol: ??0FindCoverGoal@@QEAA@AEAVMob@@MM@Z
     MCAPI FindCoverGoal(class Mob&, float, float);
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol ?getHidePos\@FindCoverGoal\@\@AEBA_NAEAVVec3\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?getHidePos@FindCoverGoal@@AEBA_NAEAVVec3@@@Z
     MCAPI bool getHidePos(class Vec3&) const;
 
-private:
+    // NOLINTEND
 };

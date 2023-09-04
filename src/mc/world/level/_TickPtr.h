@@ -3,19 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class _TickPtr {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION__TICKPTR
 public:
+    // prevent constructor by default
     _TickPtr& operator=(_TickPtr const&) = delete;
     _TickPtr(_TickPtr const&)            = delete;
     _TickPtr()                           = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL__TICKPTR
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // symbol: ??1_TickPtr@@UEAA@XZ
     MCVAPI ~_TickPtr();
-#endif
+
+    // NOLINTEND
 };

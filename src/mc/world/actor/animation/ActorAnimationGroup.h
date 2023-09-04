@@ -2,47 +2,47 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/enums/CurrentCmdVersion.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
 namespace Core { class Path; }
 // clang-format on
 
-class ActorAnimationGroup {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORANIMATIONGROUP
+class ActorAnimationGroup : public ::Bedrock::EnableNonOwnerReferences {
 public:
+    // prevent constructor by default
     ActorAnimationGroup& operator=(ActorAnimationGroup const&) = delete;
     ActorAnimationGroup(ActorAnimationGroup const&)            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0ActorAnimationGroup\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0ActorAnimationGroup@@QEAA@XZ
     MCAPI ActorAnimationGroup();
-    /**
-     * @symbol ?getActorAnimation\@ActorAnimationGroup\@\@QEAA?AVActorSkeletalAnimationPtr\@\@AEBVHashedString\@\@\@Z
-     */
+
+    // symbol: ?getActorAnimation@ActorAnimationGroup@@QEAA?AVActorSkeletalAnimationPtr@@AEBVHashedString@@@Z
     MCAPI class ActorSkeletalAnimationPtr getActorAnimation(class HashedString const&);
-    /**
-     * @symbol
-     * ?getActorAnimationInfo\@ActorAnimationGroup\@\@QEAA?AV?$shared_ptr\@VActorAnimationInfo\@\@\@std\@\@AEBVHashedString\@\@\@Z
-     */
-    MCAPI class std::shared_ptr<class ActorAnimationInfo> getActorAnimationInfo(class HashedString const&);
-    /**
-     * @symbol
-     * ?loadActorAnimation\@ActorAnimationGroup\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPath\@Core\@\@AEAVPackStats\@\@AEBVSemVersion\@\@W4CurrentCmdVersion\@\@_N\@Z
-     */
+
+    // symbol:
+    // ?getActorAnimationInfo@ActorAnimationGroup@@QEAA?AV?$shared_ptr@VActorAnimationInfo@@@std@@AEBVHashedString@@@Z
+    MCAPI std::shared_ptr<class ActorAnimationInfo> getActorAnimationInfo(class HashedString const&);
+
+    // symbol:
+    // ?loadActorAnimation@ActorAnimationGroup@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@AEAVPackStats@@AEBVSemVersion@@W4CurrentCmdVersion@@_N@Z
     MCAPI void loadActorAnimation(
         std::string const&,
         class Core::Path const&,
         class PackStats&,
         class SemVersion const&,
-        enum class CurrentCmdVersion,
+        ::CurrentCmdVersion,
         bool
     );
-    /**
-     * @symbol ?loadActorAnimationsSync\@ActorAnimationGroup\@\@QEAAXAEAVResourcePackManager\@\@\@Z
-     */
+
+    // symbol: ?loadActorAnimationsSync@ActorAnimationGroup@@QEAAXAEAVResourcePackManager@@@Z
     MCAPI void loadActorAnimationsSync(class ResourcePackManager&);
+
+    // NOLINTEND
 };

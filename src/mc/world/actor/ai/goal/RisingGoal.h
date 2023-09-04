@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/BaseTimedActorFlagDefinition.h"
 #include "mc/world/actor/ai/goal/BaseTimedActorFlagGoal.h"
 
 // auto generated forward declare list
@@ -19,44 +21,39 @@ public:
     // clang-format on
 
     // RisingGoal inner types define
-    class Definition {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RISINGGOAL_DEFINITION
+    class Definition : public ::BaseTimedActorFlagDefinition {
     public:
+        // prevent constructor by default
         Definition& operator=(Definition const&) = delete;
         Definition(Definition const&)            = delete;
         Definition()                             = delete;
-#endif
 
     public:
-        /**
-         * @symbol
-         * ?buildSchema\@Definition\@RisingGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefinition\@RisingGoal\@\@\@JsonUtil\@\@\@4\@\@Z
-         */
+        // NOLINTBEGIN
+        // vIndex: 0, symbol: __unk_vfn_0
+        virtual void __unk_vfn_0();
+
+        // symbol:
+        // ?buildSchema@Definition@RisingGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@RisingGoal@@@JsonUtil@@@4@@Z
         MCAPI static void
-        buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RisingGoal::Definition>>&);
+        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RisingGoal::Definition>>&);
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RISINGGOAL
 public:
+    // prevent constructor by default
     RisingGoal& operator=(RisingGoal const&) = delete;
     RisingGoal(RisingGoal const&)            = delete;
     RisingGoal()                             = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @symbol ??0RisingGoal\@\@QEAA\@AEAVMob\@\@\@Z
-     */
+
+    // symbol: ??0RisingGoal@@QEAA@AEAVMob@@@Z
     MCAPI RisingGoal(class Mob&);
+
+    // NOLINTEND
 };

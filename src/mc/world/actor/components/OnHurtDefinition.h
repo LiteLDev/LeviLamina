@@ -11,20 +11,19 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 struct OnHurtDefinition {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONHURTDEFINITION
 public:
+    // prevent constructor by default
     OnHurtDefinition& operator=(OnHurtDefinition const&) = delete;
     OnHurtDefinition(OnHurtDefinition const&)            = delete;
     OnHurtDefinition()                                   = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?buildSchema\@OnHurtDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UOnHurtDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?buildSchema@OnHurtDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnHurtDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
-    buildSchema(class std::shared_ptr<
+    buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnHurtDefinition>>&);
+
+    // NOLINTEND
 };

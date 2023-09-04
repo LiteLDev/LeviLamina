@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/PathBuffer.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Core { class FileOpenMode; }
@@ -12,178 +15,138 @@ namespace Core { class Result; }
 namespace Core {
 
 class FileImpl {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORE_FILEIMPL
 public:
+    // prevent constructor by default
     FileImpl& operator=(FileImpl const&) = delete;
     FileImpl(FileImpl const&)            = delete;
     FileImpl()                           = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
-    virtual void __unk_vfn_0() = 0;
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
-    virtual void __unk_vfn_1() = 0;
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2() = 0;
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3() = 0;
-    /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4() = 0;
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5() = 0;
-    /**
-     * @vftbl 6
-     * @symbol __unk_vfn_6
-     */
-    virtual void __unk_vfn_6() = 0;
-    /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7() = 0;
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8() = 0;
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9() = 0;
-    /**
-     * @vftbl 10
-     * @symbol __unk_vfn_10
-     */
-    virtual void __unk_vfn_10() = 0;
-    /**
-     * @vftbl 11
-     * @symbol __unk_vfn_11
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual void __unk_vfn_0();
+
+    // vIndex: 1, symbol:
+    // ?_getPath@FlatFile@Core@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@XZ
+    virtual class Core::PathBuffer<std::string> _getPath() const = 0;
+
+    // vIndex: 2, symbol: ?_getBlockSize@FlatFile@Core@@UEBA_KXZ
+    virtual uint64 _getBlockSize() const = 0;
+
+    // vIndex: 3, symbol: ?_isOpen@FlatFile@Core@@UEAA_NXZ
+    virtual bool _isOpen() = 0;
+
+    // vIndex: 4, symbol: ?_close@FlatFile@Core@@UEAA?AVResult@2@XZ
+    virtual class Core::Result _close() = 0;
+
+    // vIndex: 5, symbol: ?_read@FlatFile@Core@@UEAA?AVResult@2@PEAX_KPEA_K@Z
+    virtual class Core::Result _read(void*, uint64, uint64*) = 0;
+
+    // vIndex: 6, symbol: ?_readExactly@FlatFile@Core@@UEAA?AVResult@2@PEAX_K@Z
+    virtual class Core::Result _readExactly(void*, uint64) = 0;
+
+    // vIndex: 7, symbol: ?_skip@FlatFile@Core@@UEAA?AVResult@2@_K@Z
+    virtual class Core::Result _skip(uint64) = 0;
+
+    // vIndex: 8, symbol: ?_readAtPosition@FlatFile@Core@@UEAA?AVResult@2@_KPEAX0PEA_K@Z
+    virtual class Core::Result _readAtPosition(uint64, void*, uint64, uint64*) = 0;
+
+    // vIndex: 9, symbol: ?_getPosition@FlatFile@Core@@UEAA?AVResult@2@PEA_K@Z
+    virtual class Core::Result _getPosition(uint64*) = 0;
+
+    // vIndex: 10, symbol: ?_setPosition@FlatFile@Core@@UEAA?AVResult@2@_K@Z
+    virtual class Core::Result _setPosition(uint64) = 0;
+
+    // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11() = 0;
-    /**
-     * @vftbl 12
-     * @symbol __unk_vfn_12
-     */
+
+    // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12() = 0;
-    /**
-     * @vftbl 13
-     * @symbol __unk_vfn_13
-     */
-    virtual void __unk_vfn_13() = 0;
-    /**
-     * @vftbl 14
-     * @symbol __unk_vfn_14
-     */
-    virtual void __unk_vfn_14();
-    /**
-     * @vftbl 15
-     * @symbol ?_setInitialFileSize\@FileImpl\@Core\@\@MEAA?AVResult\@2\@_K\@Z
-     */
-    virtual class Core::Result _setInitialFileSize(unsigned __int64);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORE_FILEIMPL
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // vIndex: 13, symbol: ?_getSize@FlatFile@Core@@UEAA?AVResult@2@PEA_K@Z
+    virtual class Core::Result _getSize(uint64*) = 0;
+
+    // vIndex: 14, symbol: ?_getRemainingSize@FlatFile@Core@@UEAA?AVResult@2@PEA_K@Z
+    virtual class Core::Result _getRemainingSize(uint64*) = 0;
+
+    // vIndex: 15, symbol: ?_setInitialFileSize@FileImpl@Core@@MEAA?AVResult@2@_K@Z
+    virtual class Core::Result _setInitialFileSize(uint64);
+
+    // symbol: ??1FileImpl@Core@@UEAA@XZ
     MCVAPI ~FileImpl();
-#endif
-    /**
-     * @symbol ??0FileImpl\@Core\@\@QEAA\@PEAVFileSystemImpl\@1\@VFileOpenMode\@1\@\@Z
-     */
+
+    // symbol: ??0FileImpl@Core@@QEAA@PEAVFileSystemImpl@1@VFileOpenMode@1@@Z
     MCAPI FileImpl(class Core::FileSystemImpl*, class Core::FileOpenMode);
-    /**
-     * @symbol ?close\@FileImpl\@Core\@\@QEAA?AVResult\@2\@XZ
-     */
+
+    // symbol: ?close@FileImpl@Core@@QEAA?AVResult@2@XZ
     MCAPI class Core::Result close();
-    /**
-     * @symbol ?flush\@FileImpl\@Core\@\@QEAA?AVResult\@2\@XZ
-     */
+
+    // symbol: ?flush@FileImpl@Core@@QEAA?AVResult@2@XZ
     MCAPI class Core::Result flush();
-    /**
-     * @symbol ?getPosition\@FileImpl\@Core\@\@QEAA?AVResult\@2\@PEA_K\@Z
-     */
-    MCAPI class Core::Result getPosition(unsigned __int64*);
-    /**
-     * @symbol ?getRemainingSize\@FileImpl\@Core\@\@QEAA?AVResult\@2\@PEA_K\@Z
-     */
-    MCAPI class Core::Result getRemainingSize(unsigned __int64*);
-    /**
-     * @symbol ?getSize\@FileImpl\@Core\@\@QEAA?AVResult\@2\@PEA_K\@Z
-     */
-    MCAPI class Core::Result getSize(unsigned __int64*);
-    /**
-     * @symbol ?getTransaction\@FileImpl\@Core\@\@QEAAPEAVFileSystemImpl\@2\@XZ
-     */
+
+    // symbol: ?getPosition@FileImpl@Core@@QEAA?AVResult@2@PEA_K@Z
+    MCAPI class Core::Result getPosition(uint64*);
+
+    // symbol: ?getRemainingSize@FileImpl@Core@@QEAA?AVResult@2@PEA_K@Z
+    MCAPI class Core::Result getRemainingSize(uint64*);
+
+    // symbol: ?getSize@FileImpl@Core@@QEAA?AVResult@2@PEA_K@Z
+    MCAPI class Core::Result getSize(uint64*);
+
+    // symbol: ?getTransaction@FileImpl@Core@@QEAAPEAVFileSystemImpl@2@XZ
     MCAPI class Core::FileSystemImpl* getTransaction();
-    /**
-     * @symbol ?isOpen\@FileImpl\@Core\@\@QEAA_NXZ
-     */
+
+    // symbol: ?isOpen@FileImpl@Core@@QEAA_NXZ
     MCAPI bool isOpen();
-    /**
-     * @symbol ?read\@FileImpl\@Core\@\@QEAA?AVResult\@2\@PEAX_KPEA_K\@Z
-     */
-    MCAPI class Core::Result read(void*, unsigned __int64, unsigned __int64*);
-    /**
-     * @symbol ?readAtPosition\@FileImpl\@Core\@\@QEAA?AVResult\@2\@_KPEAX0PEA_K\@Z
-     */
-    MCAPI class Core::Result readAtPosition(unsigned __int64, void*, unsigned __int64, unsigned __int64*);
-    /**
-     * @symbol ?readExactly\@FileImpl\@Core\@\@QEAA?AVResult\@2\@PEAX_K\@Z
-     */
-    MCAPI class Core::Result readExactly(void*, unsigned __int64);
-    /**
-     * @symbol ?setLoggingEnabled\@FileImpl\@Core\@\@QEAAX_N\@Z
-     */
+
+    // symbol: ?read@FileImpl@Core@@QEAA?AVResult@2@PEAX_KPEA_K@Z
+    MCAPI class Core::Result read(void*, uint64, uint64*);
+
+    // symbol: ?readAtPosition@FileImpl@Core@@QEAA?AVResult@2@_KPEAX0PEA_K@Z
+    MCAPI class Core::Result readAtPosition(uint64, void*, uint64, uint64*);
+
+    // symbol: ?readExactly@FileImpl@Core@@QEAA?AVResult@2@PEAX_K@Z
+    MCAPI class Core::Result readExactly(void*, uint64);
+
+    // symbol: ?setLoggingEnabled@FileImpl@Core@@QEAAX_N@Z
     MCAPI void setLoggingEnabled(bool);
-    /**
-     * @symbol ?setPosition\@FileImpl\@Core\@\@QEAA?AVResult\@2\@_K\@Z
-     */
-    MCAPI class Core::Result setPosition(unsigned __int64);
-    /**
-     * @symbol ?skip\@FileImpl\@Core\@\@QEAA?AVResult\@2\@_K\@Z
-     */
-    MCAPI class Core::Result skip(unsigned __int64);
-    /**
-     * @symbol ?write\@FileImpl\@Core\@\@QEAA?AVResult\@2\@PEBX_K\@Z
-     */
-    MCAPI class Core::Result write(void const*, unsigned __int64);
+
+    // symbol: ?setPosition@FileImpl@Core@@QEAA?AVResult@2@_K@Z
+    MCAPI class Core::Result setPosition(uint64);
+
+    // symbol: ?skip@FileImpl@Core@@QEAA?AVResult@2@_K@Z
+    MCAPI class Core::Result skip(uint64);
+
+    // symbol: ?write@FileImpl@Core@@QEAA?AVResult@2@PEBX_K@Z
+    MCAPI class Core::Result write(void const*, uint64);
+
+    // NOLINTEND
 
     // private:
-    /**
-     * @symbol ?_writeOperation\@FileImpl\@Core\@\@AEAA?AVResult\@2\@$$QEAV32\@_K\@Z
-     */
-    MCAPI class Core::Result _writeOperation(class Core::Result&&, unsigned __int64);
+    // NOLINTBEGIN
+    // symbol: ?_writeOperation@FileImpl@Core@@AEAA?AVResult@2@$$QEAV32@_K@Z
+    MCAPI class Core::Result _writeOperation(class Core::Result&&, uint64);
+
+    // NOLINTEND
 
 private:
-    /**
-     * @symbol
-     * ?sAllFiles\@FileImpl\@Core\@\@0V?$vector\@PEAVFileImpl\@Core\@\@V?$allocator\@PEAVFileImpl\@Core\@\@\@std\@\@\@std\@\@A
-     */
+    // NOLINTBEGIN
+    // symbol: ?sAllFiles@FileImpl@Core@@0V?$vector@PEAVFileImpl@Core@@V?$allocator@PEAVFileImpl@Core@@@std@@@std@@A
     MCAPI static std::vector<class Core::FileImpl*> sAllFiles;
-    /**
-     * @symbol ?sAllFilesLock\@FileImpl\@Core\@\@0Vmutex\@std\@\@A
-     */
-    MCAPI static class std::mutex sAllFilesLock;
+
+    // symbol: ?sAllFilesLock@FileImpl@Core@@0Vmutex@std@@A
+    MCAPI static std::mutex sAllFilesLock;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $sAllFiles() { return sAllFiles; }
+
+    inline auto& $sAllFilesLock() { return sAllFilesLock; }
+
+    // NOLINTEND
 };
 
 }; // namespace Core

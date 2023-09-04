@@ -2,45 +2,59 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ActorAnimationPlayer {
+// auto generated inclusion list
+#include "mc/entity/utilities/ActorAnimationType.h"
+#include "mc/enums/SkeletalHierarchyIndex.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORANIMATIONPLAYER
+class ActorAnimationPlayer {
 public:
+    // prevent constructor by default
     ActorAnimationPlayer& operator=(ActorAnimationPlayer const&) = delete;
     ActorAnimationPlayer(ActorAnimationPlayer const&)            = delete;
     ActorAnimationPlayer()                                       = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONPLAYER
-    /**
-     * @symbol
-     * ?bindParticleEffects\@ActorAnimationPlayer\@\@UEAAXAEBV?$unordered_map\@VHashedString\@\@V1\@U?$hash\@VHashedString\@\@\@std\@\@U?$equal_to\@VHashedString\@\@\@3\@V?$allocator\@U?$pair\@$$CBVHashedString\@\@V1\@\@std\@\@\@3\@\@std\@\@\@Z
-     */
-    MCVAPI void
-    bindParticleEffects(class std::unordered_map<
-                        class HashedString,
-                        class HashedString,
-                        struct std::hash<class HashedString>,
-                        struct std::equal_to<class HashedString>,
-                        class std::allocator<struct std::pair<class HashedString const, class HashedString>>> const&);
-    /**
-     * @symbol
-     * ?bindSoundEffects\@ActorAnimationPlayer\@\@UEAAXAEBV?$unordered_map\@VHashedString\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@U?$hash\@VHashedString\@\@\@3\@U?$equal_to\@VHashedString\@\@\@3\@V?$allocator\@U?$pair\@$$CBVHashedString\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@3\@\@std\@\@\@Z
-     */
-    MCVAPI void bindSoundEffects(class std::unordered_map<
-                                 class HashedString,
-                                 std::string,
-                                 struct std::hash<class HashedString>,
-                                 struct std::equal_to<class HashedString>,
-                                 class std::allocator<struct std::pair<class HashedString const, std::string>>> const&);
-    /**
-     * @symbol ?buildBoneToPartMapping\@ActorAnimationPlayer\@\@UEAAXAEAVAnimationComponent\@\@\@Z
-     */
-    MCVAPI void buildBoneToPartMapping(class AnimationComponent&);
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual void __unk_vfn_0();
+
+    // vIndex: 1, symbol:
+    // ?applyToPose@ActorSkeletalAnimationPlayer@@UEAAXAEAVRenderParams@@AEAV?$unordered_map@W4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@U?$hash@W4SkeletalHierarchyIndex@@@3@U?$equal_to@W4SkeletalHierarchyIndex@@@3@V?$allocator@U?$pair@$$CBW4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@@std@@@3@@std@@M@Z
+    virtual void applyToPose(
+        class RenderParams&,
+        std::unordered_map<::SkeletalHierarchyIndex, std::vector<class BoneOrientation>>&,
+        float
+    ) = 0;
+
+    // vIndex: 2, symbol: ?resetAnimation@ActorSkeletalAnimationPlayer@@UEAAXXZ
+    virtual void resetAnimation() = 0;
+
+    // vIndex: 3, symbol: ?buildBoneToPartMapping@ActorAnimationPlayer@@UEAAXAEAVAnimationComponent@@@Z
+    virtual void buildBoneToPartMapping(class AnimationComponent&);
+
+    // vIndex: 4, symbol:
+    // ?bindParticleEffects@ActorAnimationPlayer@@UEAAXAEBV?$unordered_map@VHashedString@@V1@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V1@@std@@@3@@std@@@Z
+    virtual void bindParticleEffects(std::unordered_map<class HashedString, class HashedString> const&);
+
+    // vIndex: 5, symbol:
+    // ?bindSoundEffects@ActorAnimationPlayer@@UEAAXAEBV?$unordered_map@VHashedString@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@VHashedString@@@3@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@std@@@Z
+    virtual void bindSoundEffects(std::unordered_map<class HashedString, std::string> const&);
+
+    // vIndex: 6, symbol: ?hasAnimationFinished@ActorSkeletalAnimationPlayer@@UEBA_NXZ
+    virtual bool hasAnimationFinished() const = 0;
+
+    // vIndex: 7, symbol:
+    // ?findAnimation@ActorSkeletalAnimationPlayer@@UEAA?AV?$shared_ptr@VActorAnimationPlayer@@@std@@AEBVHashedString@@@Z
+    virtual std::shared_ptr<class ActorAnimationPlayer> findAnimation(class HashedString const&) = 0;
+
+    // vIndex: 8, symbol: ?getAnimationType@ActorSkeletalAnimationPlayer@@UEBA?AW4ActorAnimationType@@XZ
+    virtual ::ActorAnimationType getAnimationType() const = 0;
+
+    // vIndex: 9, symbol: ?getRawName@ActorSkeletalAnimationPlayer@@UEBAAEBVHashedString@@XZ
+    virtual class HashedString const& getRawName() const = 0;
+
+    // symbol: ??1ActorAnimationPlayer@@UEAA@XZ
     MCVAPI ~ActorAnimationPlayer();
-#endif
+
+    // NOLINTEND
 };

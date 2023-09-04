@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct NetworkAddress {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKADDRESS
 public:
+    // prevent constructor by default
     NetworkAddress& operator=(NetworkAddress const&) = delete;
     NetworkAddress(NetworkAddress const&)            = delete;
     NetworkAddress()                                 = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1NetworkAddress\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1NetworkAddress@@QEAA@XZ
     MCAPI ~NetworkAddress();
+
+    // NOLINTEND
 };

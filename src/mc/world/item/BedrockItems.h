@@ -6,25 +6,22 @@
 #include "mc/common/wrapper/WeakPtr.h"
 
 class BedrockItems {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCKITEMS
 public:
+    // prevent constructor by default
     BedrockItems& operator=(BedrockItems const&) = delete;
     BedrockItems(BedrockItems const&)            = delete;
     BedrockItems()                               = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?mAir\@BedrockItems\@\@2V?$WeakPtr\@VItem\@\@\@\@A
-     */
-    MCAPI static class WeakPtr<class Item> mAir;
-    /**
-     * @symbol ?registerItems\@BedrockItems\@\@SAXVItemRegistryRef\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?registerItems@BedrockItems@@SAXVItemRegistryRef@@@Z
     MCAPI static void registerItems(class ItemRegistryRef);
-    /**
-     * @symbol ?unregisterItems\@BedrockItems\@\@SAXVItemRegistryRef\@\@\@Z
-     */
+
+    // symbol: ?unregisterItems@BedrockItems@@SAXVItemRegistryRef@@@Z
     MCAPI static void unregisterItems(class ItemRegistryRef);
+
+    // symbol: ?mAir@BedrockItems@@2V?$WeakPtr@VItem@@@@A
+    MCAPI static class WeakPtr<class Item> mAir;
+
+    // NOLINTEND
 };

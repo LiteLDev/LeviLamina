@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct FogCommandSettings {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOGCOMMANDSETTINGS
 public:
+    // prevent constructor by default
     FogCommandSettings& operator=(FogCommandSettings const&) = delete;
     FogCommandSettings(FogCommandSettings const&)            = delete;
     FogCommandSettings()                                     = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1FogCommandSettings\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1FogCommandSettings@@QEAA@XZ
     MCAPI ~FogCommandSettings();
+
+    // NOLINTEND
 };

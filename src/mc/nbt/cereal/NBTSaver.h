@@ -2,24 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class NBTSaver {
+// auto generated inclusion list
+#include "mc/deps/cereal/BasicSaver.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NBTSAVER
+// auto generated forward declare list
+// clang-format off
+namespace cereal { class BasicSaver; }
+// clang-format on
+
+class NBTSaver : public ::cereal::BasicSaver {
 public:
+    // prevent constructor by default
     NBTSaver& operator=(NBTSaver const&) = delete;
     NBTSaver(NBTSaver const&)            = delete;
     NBTSaver()                           = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTSAVER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // symbol: ??1NBTSaver@@UEAA@XZ
     MCVAPI ~NBTSaver();
-#endif
-    /**
-     * @symbol ?getSavedCompoundTag\@NBTSaver\@\@QEAA?AVCompoundTag\@\@XZ
-     */
+
+    // symbol: ?getSavedCompoundTag@NBTSaver@@QEAA?AVCompoundTag@@XZ
     MCAPI class CompoundTag getSavedCompoundTag();
+
+    // NOLINTEND
 };

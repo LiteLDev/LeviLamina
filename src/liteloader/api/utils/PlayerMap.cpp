@@ -16,7 +16,7 @@ LLAPI void         _regDePlayerCB(DePlayerCB cb) {
         if (CBSZ_USED == CBSZ) {
             // extend
             CBSZ += 4;
-            CBS  = (DePlayerCB*)realloc(CBS, CBSZ * sizeof(cb));
+            CBS   = (DePlayerCB*)realloc(CBS, CBSZ * sizeof(cb));
         }
         CBS[CBSZ_USED++] = cb;
     }
@@ -24,14 +24,7 @@ LLAPI void         _regDePlayerCB(DePlayerCB cb) {
     // printf("\n\nregister %d\n\n", CBSZ_USED);
 }
 
-LL_AUTO_STATIC_HOOK(
-    PM1,
-    HookPriority::Normal,
-    "??_EServerPlayer@@UEAAPEAXI@Z",
-    void,
-    ServerPlayer* thi,
-    char          a2
-) {
+LL_AUTO_STATIC_HOOK(PM1, HookPriority::Normal, "??_EServerPlayer@@UEAAPEAXI@Z", void, ServerPlayer* thi, char a2) {
     for (size_t i = 0; i < CBSZ_USED; ++i) {
         CBS[i](thi);
     }

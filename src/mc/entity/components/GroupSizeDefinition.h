@@ -11,20 +11,19 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class GroupSizeDefinition {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROUPSIZEDEFINITION
 public:
+    // prevent constructor by default
     GroupSizeDefinition& operator=(GroupSizeDefinition const&) = delete;
     GroupSizeDefinition(GroupSizeDefinition const&)            = delete;
     GroupSizeDefinition()                                      = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?buildSchema\@GroupSizeDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VGroupSizeDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?buildSchema@GroupSizeDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VGroupSizeDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
-    buildSchema(class std::shared_ptr<
+    buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GroupSizeDefinition>>&);
+
+    // NOLINTEND
 };

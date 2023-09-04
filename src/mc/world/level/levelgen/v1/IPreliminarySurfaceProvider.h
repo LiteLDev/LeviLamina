@@ -2,20 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class IPreliminarySurfaceProvider {
+// auto generated inclusion list
+#include "mc/deps/core/data/DividedPos2d.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IPRELIMINARYSURFACEPROVIDER
+class IPreliminarySurfaceProvider {
 public:
+    // prevent constructor by default
     IPreliminarySurfaceProvider& operator=(IPreliminarySurfaceProvider const&) = delete;
     IPreliminarySurfaceProvider(IPreliminarySurfaceProvider const&)            = delete;
     IPreliminarySurfaceProvider()                                              = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IPRELIMINARYSURFACEPROVIDER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual void __unk_vfn_0();
+
+    // vIndex: 1, symbol:
+    // ?getPreliminarySurfaceLevel@SurfaceLevelCache@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z
+    virtual std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const = 0;
+
+    // symbol: ??1IPreliminarySurfaceProvider@@UEAA@XZ
     MCVAPI ~IPreliminarySurfaceProvider();
-#endif
+
+    // NOLINTEND
 };

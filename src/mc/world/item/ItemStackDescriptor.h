@@ -11,35 +11,28 @@ namespace Json { class Value; }
 // clang-format on
 
 class ItemStackDescriptor : public ::ItemDescriptorCount {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKDESCRIPTOR
 public:
+    // prevent constructor by default
     ItemStackDescriptor& operator=(ItemStackDescriptor const&) = delete;
     ItemStackDescriptor(ItemStackDescriptor const&)            = delete;
-#endif
 
+    std::unique_ptr<CompoundTag, std::default_delete<CompoundTag>> mUserData; // this+0x18
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKDESCRIPTOR
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1ItemStackDescriptor@@UEAA@XZ
     MCVAPI ~ItemStackDescriptor();
-#endif
-    /**
-     * @symbol ??0ItemStackDescriptor\@\@QEAA\@AEBVItem\@\@HGPEBVCompoundTag\@\@\@Z
-     */
-    MCAPI ItemStackDescriptor(class Item const&, int, unsigned short, class CompoundTag const*);
-    /**
-     * @symbol ??0ItemStackDescriptor\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0ItemStackDescriptor@@QEAA@XZ
     MCAPI ItemStackDescriptor();
-    /**
-     * @symbol ??4ItemStackDescriptor\@\@QEAAAEAV0\@$$QEAV0\@\@Z
-     */
+
+    // symbol: ??0ItemStackDescriptor@@QEAA@AEBVItem@@HGPEBVCompoundTag@@@Z
+    MCAPI ItemStackDescriptor(class Item const&, int, ushort, class CompoundTag const*);
+
+    // symbol: ??4ItemStackDescriptor@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class ItemStackDescriptor& operator=(class ItemStackDescriptor&&);
+
+    // NOLINTEND
 };

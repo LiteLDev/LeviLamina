@@ -16,46 +16,42 @@ public:
 
     // BaseGamePackSlices inner types define
     struct BaseGameVersionPack {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASEGAMEPACKSLICES_BASEGAMEVERSIONPACK
     public:
+        // prevent constructor by default
         BaseGameVersionPack& operator=(BaseGameVersionPack const&) = delete;
         BaseGameVersionPack(BaseGameVersionPack const&)            = delete;
         BaseGameVersionPack()                                      = delete;
-#endif
 
     public:
-        /**
-         * @symbol ??1BaseGameVersionPack\@BaseGamePackSlices\@\@QEAA\@XZ
-         */
+        // NOLINTBEGIN
+        // symbol: ??1BaseGameVersionPack@BaseGamePackSlices@@QEAA@XZ
         MCAPI ~BaseGameVersionPack();
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASEGAMEPACKSLICES
 public:
+    // prevent constructor by default
     BaseGamePackSlices& operator=(BaseGamePackSlices const&) = delete;
     BaseGamePackSlices(BaseGamePackSlices const&)            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0BaseGamePackSlices\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0BaseGamePackSlices@@QEAA@XZ
     MCAPI BaseGamePackSlices();
-    /**
-     * @symbol
-     * ?addFromVersions\@BaseGamePackSlices\@\@QEAAXAEBV?$vector\@VBaseGameVersion\@\@V?$allocator\@VBaseGameVersion\@\@\@std\@\@\@std\@\@AEBVIResourcePackRepository\@\@AEBVUUID\@mce\@\@\@Z
-     */
+
+    // symbol:
+    // ?addFromVersions@BaseGamePackSlices@@QEAAXAEBV?$vector@VBaseGameVersion@@V?$allocator@VBaseGameVersion@@@std@@@std@@AEBVIResourcePackRepository@@AEBVUUID@mce@@@Z
     MCAPI void
     addFromVersions(std::vector<class BaseGameVersion> const&, class IResourcePackRepository const&, class mce::UUID const&);
-    /**
-     * @symbol
-     * ?applyPackSlices\@BaseGamePackSlices\@\@QEBAXAEBVBaseGameVersion\@\@AEBVIResourcePackRepository\@\@AEAVResourcePackStack\@\@\@Z
-     */
+
+    // symbol:
+    // ?applyPackSlices@BaseGamePackSlices@@QEBAXAEBVBaseGameVersion@@AEBVIResourcePackRepository@@AEAVResourcePackStack@@@Z
     MCAPI void
     applyPackSlices(class BaseGameVersion const&, class IResourcePackRepository const&, class ResourcePackStack&) const;
-    /**
-     * @symbol ??1BaseGamePackSlices\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1BaseGamePackSlices@@QEAA@XZ
     MCAPI ~BaseGamePackSlices();
+
+    // NOLINTEND
 };

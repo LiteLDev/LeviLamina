@@ -2,29 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class DwellerSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DWELLERSYSTEM
+class DwellerSystem : public ::ITickingSystem {
 public:
+    // prevent constructor by default
     DwellerSystem& operator=(DwellerSystem const&) = delete;
     DwellerSystem(DwellerSystem const&)            = delete;
     DwellerSystem()                                = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?registerEvents\@DwellerSystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
-     */
-    virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>>&);
-    /**
-     * @vftbl 2
-     * @symbol ?tick\@DwellerSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?registerEvents@DwellerSystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
+    virtual void registerEvents(entt::dispatcher&);
+
+    // vIndex: 2, symbol: ?tick@DwellerSystem@@UEAAXAEAVEntityRegistry@@@Z
     virtual void tick(class EntityRegistry&);
+
+    // vIndex: 3, symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVEntityContext@@@Z
+    virtual void singleTick(class EntityRegistry&, class EntityContext&);
+
+    // NOLINTEND
 };

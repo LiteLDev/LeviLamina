@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct WitherBossPreAIStepResultComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WITHERBOSSPREAISTEPRESULTCOMPONENT
 public:
+    // prevent constructor by default
     WitherBossPreAIStepResultComponent& operator=(WitherBossPreAIStepResultComponent const&) = delete;
     WitherBossPreAIStepResultComponent(WitherBossPreAIStepResultComponent const&)            = delete;
     WitherBossPreAIStepResultComponent()                                                     = delete;
-#endif
-
-public:
 };

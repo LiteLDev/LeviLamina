@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct AgentCapabilities {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCAPABILITIES
 public:
+    std::optional<bool> mCanModifyBlocks;
+
+    // prevent constructor by default
     AgentCapabilities& operator=(AgentCapabilities const&) = delete;
     AgentCapabilities(AgentCapabilities const&)            = delete;
     AgentCapabilities()                                    = delete;
-#endif
-
-public:
 };

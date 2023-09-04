@@ -8,24 +8,22 @@
 namespace ScriptModuleMinecraft {
 
 struct ScriptPlayerSpawnAfterEvent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTPLAYERSPAWNAFTEREVENT
 public:
+    // prevent constructor by default
     ScriptPlayerSpawnAfterEvent& operator=(ScriptPlayerSpawnAfterEvent const&) = delete;
     ScriptPlayerSpawnAfterEvent(ScriptPlayerSpawnAfterEvent const&)            = delete;
     ScriptPlayerSpawnAfterEvent()                                              = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1ScriptPlayerSpawnAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1ScriptPlayerSpawnAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptPlayerSpawnAfterEvent();
-    /**
-     * @symbol
-     * ?bind\@ScriptPlayerSpawnAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptPlayerSpawnAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptPlayerSpawnAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptPlayerSpawnAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptPlayerSpawnAfterEvent> bind();
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

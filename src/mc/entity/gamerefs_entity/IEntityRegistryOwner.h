@@ -2,20 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class IEntityRegistryOwner {
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IENTITYREGISTRYOWNER
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
+class IEntityRegistryOwner : public ::Bedrock::EnableNonOwnerReferences {
 public:
+    // prevent constructor by default
     IEntityRegistryOwner& operator=(IEntityRegistryOwner const&) = delete;
     IEntityRegistryOwner(IEntityRegistryOwner const&)            = delete;
     IEntityRegistryOwner()                                       = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IENTITYREGISTRYOWNER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // symbol: ??1IEntityRegistryOwner@@MEAA@XZ
     MCVAPI ~IEntityRegistryOwner();
-#endif
+
+    // NOLINTEND
 };

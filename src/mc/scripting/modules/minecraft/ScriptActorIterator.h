@@ -14,30 +14,27 @@ namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft {
 
 class ScriptActorIterator {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTACTORITERATOR
 public:
+    // prevent constructor by default
     ScriptActorIterator& operator=(ScriptActorIterator const&) = delete;
     ScriptActorIterator(ScriptActorIterator const&)            = delete;
     ScriptActorIterator()                                      = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ??0ScriptActorIterator\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV?$vector\@V?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$allocator\@V?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@\@std\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ??0ScriptActorIterator@ScriptModuleMinecraft@@QEAA@$$QEAV?$vector@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@@Z
     MCAPI ScriptActorIterator(std::vector<
                               class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>&&);
-    /**
-     * @symbol ??1ScriptActorIterator\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ScriptActorIterator@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptActorIterator();
-    /**
-     * @symbol
-     * ?bind\@ScriptActorIterator\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptActorIterator\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptActorIterator@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptActorIterator@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptActorIterator> bind();
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

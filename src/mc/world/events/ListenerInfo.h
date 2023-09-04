@@ -1,22 +1,31 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/math/Vec3.h"
 
 class ListenerInfo {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LISTENERINFO
 public:
+    // prevent constructor by default
     ListenerInfo& operator=(ListenerInfo const&) = delete;
     ListenerInfo(ListenerInfo const&)            = delete;
     ListenerInfo()                               = delete;
-#endif
 
-public:
-    // private:
+
+    std::function<void(class BlockPos const&, uint, class Block const&, class Actor*)> mCallback;  // this+0x0
+    class Vec3                                                                         mPosition;  // this+0x40
+    float                                                                              mRadiusSqr; // this+0x4C
 
 private:
-    /**
-     * @symbol ?SQRT_FLT_MAX\@ListenerInfo\@\@0MB
-     */
+    // NOLINTBEGIN
+    // symbol: ?SQRT_FLT_MAX@ListenerInfo@@0MB
     MCAPI static float const SQRT_FLT_MAX;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $SQRT_FLT_MAX() { return SQRT_FLT_MAX; }
+
+    // NOLINTEND
 };

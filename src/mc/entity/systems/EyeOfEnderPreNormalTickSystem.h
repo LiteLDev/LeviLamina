@@ -3,26 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class EyeOfEnderPreNormalTickSystem {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EYEOFENDERPRENORMALTICKSYSTEM
 public:
+    // prevent constructor by default
     EyeOfEnderPreNormalTickSystem& operator=(EyeOfEnderPreNormalTickSystem const&) = delete;
     EyeOfEnderPreNormalTickSystem(EyeOfEnderPreNormalTickSystem const&)            = delete;
     EyeOfEnderPreNormalTickSystem()                                                = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?createSystem\@EyeOfEnderPreNormalTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?createSystem@EyeOfEnderPreNormalTickSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol
-     * ?_doEyeOfEnderPreNormalTickSystem\@EyeOfEnderPreNormalTickSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?_doEyeOfEnderPreNormalTickSystem@EyeOfEnderPreNormalTickSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
     MCAPI static void _doEyeOfEnderPreNormalTickSystem(class StrictEntityContext const&, class ActorOwnerComponent&);
 
-private:
+    // NOLINTEND
 };

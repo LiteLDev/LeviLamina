@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace MobTravelIntentSystem {
-/**
- * @symbol ?createSystem\@MobTravelIntentSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
- */
+// NOLINTBEGIN
+// symbol: ?createSystem@MobTravelIntentSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
+// NOLINTEND
 
 }; // namespace MobTravelIntentSystem

@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct SurfaceMaterialBlocks {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SURFACEMATERIALBLOCKS
 public:
+    // prevent constructor by default
     SurfaceMaterialBlocks& operator=(SurfaceMaterialBlocks const&) = delete;
     SurfaceMaterialBlocks(SurfaceMaterialBlocks const&)            = delete;
     SurfaceMaterialBlocks()                                        = delete;
-#endif
-
-public:
 };

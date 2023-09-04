@@ -2,18 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ActorEventBroadcaster {
+// auto generated inclusion list
+#include "mc/events/ActorEvent.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOREVENTBROADCASTER
+class ActorEventBroadcaster {
 public:
+    // prevent constructor by default
     ActorEventBroadcaster& operator=(ActorEventBroadcaster const&) = delete;
     ActorEventBroadcaster(ActorEventBroadcaster const&)            = delete;
     ActorEventBroadcaster()                                        = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?broadcastActorEvent\@ActorEventBroadcaster\@\@QEBAXAEAVActor\@\@W4ActorEvent\@\@HAEAVDimension\@\@\@Z
-     */
-    MCAPI void broadcastActorEvent(class Actor&, enum class ActorEvent, int, class Dimension&) const;
+    // NOLINTBEGIN
+    // symbol: ?broadcastActorEvent@ActorEventBroadcaster@@QEBAXAEAVActor@@W4ActorEvent@@HAEAVDimension@@@Z
+    MCAPI void broadcastActorEvent(class Actor&, ::ActorEvent, int, class Dimension&) const;
+
+    // NOLINTEND
 };

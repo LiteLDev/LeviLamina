@@ -3,19 +3,35 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class SecureStorage {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SECURESTORAGE
 public:
+    // prevent constructor by default
     SecureStorage& operator=(SecureStorage const&) = delete;
     SecureStorage(SecureStorage const&)            = delete;
     SecureStorage()                                = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SECURESTORAGE
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual void __unk_vfn_0();
+
+    // vIndex: 1, symbol:
+    // ?add@FileSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+    virtual bool add(std::string const&, std::string const&) = 0;
+
+    // vIndex: 2, symbol:
+    // ?addOrUpdate@FileSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+    virtual bool addOrUpdate(std::string const&, std::string const&) = 0;
+
+    // vIndex: 3, symbol:
+    // ?remove@FileSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    virtual bool remove(std::string const&) = 0;
+
+    // vIndex: 4, symbol:
+    // ?get@FileSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV23@@Z
+    virtual bool get(std::string const&, std::string&) = 0;
+
+    // symbol: ??1SecureStorage@@UEAA@XZ
     MCVAPI ~SecureStorage();
-#endif
+
+    // NOLINTEND
 };

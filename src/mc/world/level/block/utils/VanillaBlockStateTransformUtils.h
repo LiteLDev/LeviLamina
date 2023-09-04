@@ -3,48 +3,44 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/CommonDirection.h"
+#include "mc/enums/Mirror.h"
+#include "mc/enums/Rotation.h"
 #include "mc/world/Facing.h"
 
 class VanillaBlockStateTransformUtils {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLABLOCKSTATETRANSFORMUTILS
 public:
+    // prevent constructor by default
     VanillaBlockStateTransformUtils& operator=(VanillaBlockStateTransformUtils const&) = delete;
     VanillaBlockStateTransformUtils(VanillaBlockStateTransformUtils const&)            = delete;
     VanillaBlockStateTransformUtils()                                                  = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?transformBlock\@VanillaBlockStateTransformUtils\@\@SAPEBVBlock\@\@AEBV2\@W4CommonDirection\@\@\@Z
-     */
-    MCAPI static class Block const* transformBlock(class Block const&, enum class CommonDirection);
-    /**
-     * @symbol ?transformBlock\@VanillaBlockStateTransformUtils\@\@SAPEBVBlock\@\@AEBV2\@W4Name\@Facing\@\@\@Z
-     */
-    MCAPI static class Block const* transformBlock(class Block const&, enum class Facing::Name);
-    /**
-     * @symbol ?transformBlock\@VanillaBlockStateTransformUtils\@\@SAPEBVBlock\@\@AEBV2\@W4Rotation\@\@W4Mirror\@\@\@Z
-     */
-    MCAPI static class Block const* transformBlock(class Block const&, enum class Rotation, enum class Mirror);
+    // NOLINTBEGIN
+    // symbol: ?transformBlock@VanillaBlockStateTransformUtils@@SAPEBVBlock@@AEBV2@W4CommonDirection@@@Z
+    MCAPI static class Block const* transformBlock(class Block const&, ::CommonDirection);
+
+    // symbol: ?transformBlock@VanillaBlockStateTransformUtils@@SAPEBVBlock@@AEBV2@W4Name@Facing@@@Z
+    MCAPI static class Block const* transformBlock(class Block const&, ::Facing::Name);
+
+    // symbol: ?transformBlock@VanillaBlockStateTransformUtils@@SAPEBVBlock@@AEBV2@W4Rotation@@W4Mirror@@@Z
+    MCAPI static class Block const* transformBlock(class Block const&, ::Rotation, ::Mirror);
+
+    // NOLINTEND
 
     // private:
-    /**
-     * @symbol ?_mirror\@VanillaBlockStateTransformUtils\@\@CA?AW4CommonDirection\@\@W42\@W4Mirror\@\@\@Z
-     */
-    MCAPI static enum class CommonDirection _mirror(enum class CommonDirection, enum class Mirror);
-    /**
-     * @symbol ?_mirrorFrontBack\@VanillaBlockStateTransformUtils\@\@CA?AW4CommonDirection\@\@W42\@\@Z
-     */
-    MCAPI static enum class CommonDirection _mirrorFrontBack(enum class CommonDirection);
-    /**
-     * @symbol ?_mirrorLeftRight\@VanillaBlockStateTransformUtils\@\@CA?AW4CommonDirection\@\@W42\@\@Z
-     */
-    MCAPI static enum class CommonDirection _mirrorLeftRight(enum class CommonDirection);
-    /**
-     * @symbol ?_rotate\@VanillaBlockStateTransformUtils\@\@CA?AW4CommonDirection\@\@W42\@W4Rotation\@\@\@Z
-     */
-    MCAPI static enum class CommonDirection _rotate(enum class CommonDirection, enum class Rotation);
+    // NOLINTBEGIN
+    // symbol: ?_mirror@VanillaBlockStateTransformUtils@@CA?AW4CommonDirection@@W42@W4Mirror@@@Z
+    MCAPI static ::CommonDirection _mirror(::CommonDirection, ::Mirror);
 
-private:
+    // symbol: ?_mirrorFrontBack@VanillaBlockStateTransformUtils@@CA?AW4CommonDirection@@W42@@Z
+    MCAPI static ::CommonDirection _mirrorFrontBack(::CommonDirection);
+
+    // symbol: ?_mirrorLeftRight@VanillaBlockStateTransformUtils@@CA?AW4CommonDirection@@W42@@Z
+    MCAPI static ::CommonDirection _mirrorLeftRight(::CommonDirection);
+
+    // symbol: ?_rotate@VanillaBlockStateTransformUtils@@CA?AW4CommonDirection@@W42@W4Rotation@@@Z
+    MCAPI static ::CommonDirection _rotate(::CommonDirection, ::Rotation);
+
+    // NOLINTEND
 };

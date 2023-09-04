@@ -3,17 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace xbox::httpclient::detail {
-/**
- * @symbol ?StdBadAllocToResult\@detail\@httpclient\@xbox\@\@YAJAEBVbad_alloc\@std\@\@PEBDI\@Z
- */
-MCAPI long StdBadAllocToResult(class std::bad_alloc const&, char const*, unsigned int);
-/**
- * @symbol ?StdExceptionToResult\@detail\@httpclient\@xbox\@\@YAJAEBVexception\@std\@\@PEBDI\@Z
- */
-MCAPI long StdExceptionToResult(class std::exception const&, char const*, unsigned int);
-/**
- * @symbol ?UnknownExceptionToResult\@detail\@httpclient\@xbox\@\@YAJPEBDI\@Z
- */
-MCAPI long UnknownExceptionToResult(char const*, unsigned int);
+// NOLINTBEGIN
+// symbol: ?StdBadAllocToResult@detail@httpclient@xbox@@YAJAEBVbad_alloc@std@@PEBDI@Z
+MCAPI long StdBadAllocToResult(std::bad_alloc const&, char const*, uint);
+
+// symbol: ?StdExceptionToResult@detail@httpclient@xbox@@YAJAEBVexception@std@@PEBDI@Z
+MCAPI long StdExceptionToResult(std::exception const&, char const*, uint);
+
+// symbol: ?UnknownExceptionToResult@detail@httpclient@xbox@@YAJPEBDI@Z
+MCAPI long UnknownExceptionToResult(char const*, uint);
+// NOLINTEND
 
 }; // namespace xbox::httpclient::detail

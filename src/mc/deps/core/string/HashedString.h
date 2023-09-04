@@ -3,109 +3,119 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class HashedString {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HASHEDSTRING
 public:
-    HashedString() = delete;
-#endif
+    uint64              hash;
+    std::string         str;
+    class HashedString* lastMatch;
+
+    constexpr static uint64 computeHash(std::string_view str) {
+        uint64 hash = 0xCBF29CE484222325ULL;
+        for (char s : str) {
+            hash = s ^ (0x100000001B3ULL * hash);
+        }
+        return hash;
+    }
+
+    // Constructors
+    constexpr HashedString(std::nullptr_t = nullptr) noexcept : hash(0), lastMatch(nullptr) {} // NOLINT
+
+    constexpr HashedString(uint64 h, const char* str) noexcept : hash(h), str(str), lastMatch(nullptr) {}
+
+    constexpr HashedString(const char* str) noexcept : hash(computeHash(str)), str(str), lastMatch(nullptr) {} // NOLINT
+
+    constexpr HashedString(const std::string& str) noexcept // NOLINT
+    : hash(computeHash(str)), str(str), lastMatch(nullptr) {}
+
+    constexpr HashedString(const HashedString& other) noexcept : hash(other.hash), str(other.str), lastMatch(nullptr) {}
+
+    constexpr HashedString(HashedString&& other) noexcept
+    : hash(other.hash), str(std::move(other.str)), lastMatch(other.lastMatch) {
+        other.hash      = 0;
+        other.lastMatch = nullptr;
+    }
+
+    [[nodiscard]] constexpr HashedString& operator=(const HashedString& other) noexcept {
+        if (this == &other) {
+            return *this;
+        }
+        hash      = other.hash;
+        str       = other.str;
+        lastMatch = nullptr;
+        return *this;
+    }
+
+    [[nodiscard]] constexpr HashedString& operator=(HashedString&& other) noexcept {
+        hash            = other.hash;
+        str             = std::move(other.str);
+        lastMatch       = other.lastMatch;
+        other.hash      = 0;
+        other.lastMatch = nullptr;
+        return *this;
+    }
+
+    // Accessors
+    [[nodiscard]] constexpr const char* c_str() const noexcept { return str.c_str(); }
+
+    [[nodiscard]] constexpr const std::string& getString() const noexcept { return str; }
+
+    [[nodiscard]] constexpr uint64 getHash() const noexcept { return hash; }
+
+    [[nodiscard]] constexpr bool isEmpty() const noexcept { return str.empty(); }
+
+    // Mutators
+    constexpr void clear() noexcept {
+        hash = 0;
+        str.clear();
+        lastMatch = nullptr;
+    }
+
+    // Operators
+    template <typename StringType>
+    [[nodiscard]] constexpr bool operator==(StringType const& rhs) const noexcept {
+        return str == rhs;
+    }
+
+    [[nodiscard]] constexpr bool operator==(const HashedString& other) const noexcept { return hash == other.hash; }
+
+    template <typename StringType>
+    [[nodiscard]] constexpr bool operator!=(StringType const& rhs) const noexcept {
+        return str != rhs;
+    }
+
+    [[nodiscard]] constexpr bool operator!=(const HashedString& other) const noexcept { return hash != other.hash; }
+
+    template <typename StringType>
+    constexpr std::strong_ordering operator<=>(const StringType& other) const noexcept {
+        return str <=> other.str;
+    }
+
+    constexpr std::strong_ordering operator<=>(const HashedString& other) const noexcept { return str <=> other.str; }
+
+    // Convertors
+    constexpr explicit operator std::string() const { return str; }
+
+    constexpr explicit operator std::string_view() const { return std::string_view(str); }
 
 public:
-    /**
-     * @symbol ??0HashedString\@\@QEAA\@$$T\@Z
-     */
-    MCAPI HashedString(std::nullptr_t);
-    /**
-     * @symbol ??0HashedString\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI HashedString(class HashedString const&);
-    /**
-     * @symbol ??0HashedString\@\@QEAA\@_KPEBD\@Z
-     */
-    MCAPI HashedString(unsigned __int64, char const*);
-    /**
-     * @symbol ??0HashedString\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI HashedString(class HashedString&&);
-    /**
-     * @symbol ??0HashedString\@\@QEAA\@PEBD\@Z
-     */
-    MCAPI HashedString(char const*);
-    /**
-     * @symbol ??0HashedString\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI HashedString(std::string const&);
-    /**
-     * @symbol ?c_str\@HashedString\@\@QEBAPEBDXZ
-     */
-    MCAPI char const* c_str() const;
-    /**
-     * @symbol ?clear\@HashedString\@\@QEAAXXZ
-     */
-    MCAPI void clear();
-    /**
-     * @symbol ?empty\@HashedString\@\@QEBA_NXZ
-     */
-    MCAPI bool empty() const;
-    /**
-     * @symbol ?getHash\@HashedString\@\@QEBA_KXZ
-     */
-    MCAPI unsigned __int64 getHash() const;
-    /**
-     * @symbol
-     * ?getString\@HashedString\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string const& getString() const;
-    /**
-     * @symbol ?isEmpty\@HashedString\@\@QEBA_NXZ
-     */
-    MCAPI bool isEmpty() const;
-    /**
-     * @symbol ??BHashedString\@\@QEBA?AV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@XZ
-     */
-    MCAPI operator class std::basic_string_view<char, struct std::char_traits<char>>() const;
-    /**
-     * @symbol ??9HashedString\@\@QEBA_NAEBV0\@\@Z
-     */
-    MCAPI bool operator!=(class HashedString const&) const;
-    /**
-     * @symbol ??MHashedString\@\@QEBA_NAEBV0\@\@Z
-     */
-    MCAPI bool operator<(class HashedString const&) const;
-    /**
-     * @symbol ??4HashedString\@\@QEAAAEAV0\@AEBV0\@\@Z
-     */
-    MCAPI class HashedString& operator=(class HashedString const&);
-    /**
-     * @symbol ??4HashedString\@\@QEAAAEAV0\@$$QEAV0\@\@Z
-     */
-    MCAPI class HashedString& operator=(class HashedString&&);
-    /**
-     * @symbol ??8HashedString\@\@QEBA_NAEBV0\@\@Z
-     */
-    MCAPI bool operator==(class HashedString const&) const;
-    /**
-     * @symbol ??1HashedString\@\@QEAA\@XZ
-     */
-    MCAPI ~HashedString();
-    /**
-     * @symbol ?bindType\@HashedString\@\@SAXXZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?bindType@HashedString@@SAXXZ
     MCAPI static void bindType();
-    /**
-     * @symbol ?computeHash\@HashedString\@\@SA_KPEBD\@Z
-     */
-    MCAPI static unsigned __int64 computeHash(char const*);
-    /**
-     * @symbol
-     * ?computeHash\@HashedString\@\@SA_KAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static unsigned __int64 computeHash(std::string const&);
-    /**
-     * @symbol ?defaultErrorValue\@HashedString\@\@2V1\@A
-     */
-    MCAPI static class HashedString defaultErrorValue;
-    /**
-     * @symbol ?getEmptyString\@HashedString\@\@SAAEBV1\@XZ
-     */
+
+    // symbol: ?getEmptyString@HashedString@@SAAEBV1@XZ
     MCAPI static class HashedString const& getEmptyString();
+
+    // symbol: ?defaultErrorValue@HashedString@@2V1@A
+    MCAPI static class HashedString defaultErrorValue;
+
+    // NOLINTEND
 };
+
+
+namespace std {
+
+template <>
+struct hash<HashedString> {
+    std::size_t operator()(HashedString const& str) const noexcept { return str.getHash(); }
+};
+
+} // namespace std

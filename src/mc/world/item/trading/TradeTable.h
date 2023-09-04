@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct TradeTable {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADETABLE
 public:
+    // prevent constructor by default
     TradeTable& operator=(TradeTable const&) = delete;
     TradeTable(TradeTable const&)            = delete;
     TradeTable()                             = delete;
-#endif
-
-public:
 };

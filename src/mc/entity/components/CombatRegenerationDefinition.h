@@ -11,20 +11,19 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class CombatRegenerationDefinition {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMBATREGENERATIONDEFINITION
 public:
+    // prevent constructor by default
     CombatRegenerationDefinition& operator=(CombatRegenerationDefinition const&) = delete;
     CombatRegenerationDefinition(CombatRegenerationDefinition const&)            = delete;
     CombatRegenerationDefinition()                                               = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?buildSchema\@CombatRegenerationDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VCombatRegenerationDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?buildSchema@CombatRegenerationDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VCombatRegenerationDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
-    buildSchema(class std::shared_ptr<
+    buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class CombatRegenerationDefinition>>&);
+
+    // NOLINTEND
 };

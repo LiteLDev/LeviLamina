@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ITreeCanopyWrapper {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITREECANOPYWRAPPER
 public:
+    // prevent constructor by default
     ITreeCanopyWrapper& operator=(ITreeCanopyWrapper const&) = delete;
     ITreeCanopyWrapper(ITreeCanopyWrapper const&)            = delete;
     ITreeCanopyWrapper()                                     = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1ITreeCanopyWrapper\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1ITreeCanopyWrapper@@QEAA@XZ
     MCAPI ~ITreeCanopyWrapper();
+
+    // NOLINTEND
 };

@@ -2,19 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class UIProfanityContext {
+// auto generated inclusion list
+#include "mc/enums/ProfanityFilterContext.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UIPROFANITYCONTEXT
+class UIProfanityContext {
 public:
+    // prevent constructor by default
     UIProfanityContext& operator=(UIProfanityContext const&) = delete;
     UIProfanityContext(UIProfanityContext const&)            = delete;
     UIProfanityContext()                                     = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?filterProfanityFromString\@UIProfanityContext\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ProfanityFilterContext\@\@AEBV23\@_N\@Z
-     */
-    MCAPI std::string filterProfanityFromString(enum class ProfanityFilterContext, std::string const&, bool) const;
+    // NOLINTBEGIN
+    // symbol:
+    // ?filterProfanityFromString@UIProfanityContext@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ProfanityFilterContext@@AEBV23@_N@Z
+    MCAPI std::string filterProfanityFromString(::ProfanityFilterContext, std::string const&, bool) const;
+
+    // NOLINTEND
 };

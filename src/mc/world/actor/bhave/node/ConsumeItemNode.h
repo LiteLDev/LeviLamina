@@ -2,27 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ConsumeItemNode {
+// auto generated inclusion list
+#include "mc/enums/BehaviorStatus.h"
+#include "mc/world/actor/bhave/node/BehaviorNode.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONSUMEITEMNODE
+class ConsumeItemNode : public ::BehaviorNode {
 public:
+    // prevent constructor by default
     ConsumeItemNode& operator=(ConsumeItemNode const&) = delete;
     ConsumeItemNode(ConsumeItemNode const&)            = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?tick\@ConsumeItemNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
-     */
-    virtual enum class BehaviorStatus tick(class Actor&);
-    /**
-     * @symbol ??0ConsumeItemNode\@\@QEAA\@XZ
-     */
+
+    // vIndex: 1, symbol: ?tick@ConsumeItemNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+    virtual ::BehaviorStatus tick(class Actor&);
+
+    // symbol: ??0ConsumeItemNode@@QEAA@XZ
     MCAPI ConsumeItemNode();
+
+    // NOLINTEND
 };

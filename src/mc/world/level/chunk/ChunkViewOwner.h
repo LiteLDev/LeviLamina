@@ -2,25 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ChunkViewOwner {
+// auto generated inclusion list
+#include "mc/enums/SubClientId.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKVIEWOWNER
+class ChunkViewOwner {
 public:
+    // prevent constructor by default
     ChunkViewOwner& operator=(ChunkViewOwner const&) = delete;
     ChunkViewOwner()                                 = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0ChunkViewOwner\@\@QEAA\@AEBVNetworkIdentifier\@\@W4SubClientId\@\@\@Z
-     */
-    MCAPI ChunkViewOwner(class NetworkIdentifier const&, enum class SubClientId);
-    /**
-     * @symbol ??0ChunkViewOwner\@\@QEAA\@AEBV0\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0ChunkViewOwner@@QEAA@AEBV0@@Z
     MCAPI ChunkViewOwner(class ChunkViewOwner const&);
-    /**
-     * @symbol ?getHash\@ChunkViewOwner\@\@QEBA_KXZ
-     */
-    MCAPI unsigned __int64 getHash() const;
+
+    // symbol: ??0ChunkViewOwner@@QEAA@AEBVNetworkIdentifier@@W4SubClientId@@@Z
+    MCAPI ChunkViewOwner(class NetworkIdentifier const&, ::SubClientId);
+
+    // symbol: ?getHash@ChunkViewOwner@@QEBA_KXZ
+    MCAPI uint64 getHash() const;
+
+    // NOLINTEND
 };

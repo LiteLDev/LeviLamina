@@ -3,26 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class GuardianPreAIStepSystem {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GUARDIANPREAISTEPSYSTEM
 public:
+    // prevent constructor by default
     GuardianPreAIStepSystem& operator=(GuardianPreAIStepSystem const&) = delete;
     GuardianPreAIStepSystem(GuardianPreAIStepSystem const&)            = delete;
     GuardianPreAIStepSystem()                                          = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?createSystem\@GuardianPreAIStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?createSystem@GuardianPreAIStepSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol
-     * ?_doGuardianPreAIStepSystem\@GuardianPreAIStepSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?_doGuardianPreAIStepSystem@GuardianPreAIStepSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
     MCAPI static void _doGuardianPreAIStepSystem(class StrictEntityContext const&, class ActorOwnerComponent&);
 
-private:
+    // NOLINTEND
 };

@@ -2,24 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class AppPlatformNetworkSettings {
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_APPPLATFORMNETWORKSETTINGS
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
+class AppPlatformNetworkSettings : public ::Bedrock::EnableNonOwnerReferences {
 public:
+    // prevent constructor by default
     AppPlatformNetworkSettings& operator=(AppPlatformNetworkSettings const&) = delete;
     AppPlatformNetworkSettings(AppPlatformNetworkSettings const&)            = delete;
     AppPlatformNetworkSettings()                                             = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?requiresNetworkOutageMessaging\@AppPlatformNetworkSettings\@\@UEBA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?requiresNetworkOutageMessaging@AppPlatformNetworkSettings@@UEBA_NXZ
     virtual bool requiresNetworkOutageMessaging() const;
+
+    // NOLINTEND
 };

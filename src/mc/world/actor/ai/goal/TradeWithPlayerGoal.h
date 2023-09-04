@@ -4,13 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
+#include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class TradeWithPlayerGoal {
+class TradeWithPlayerGoal : public ::Goal {
 public:
     // TradeWithPlayerGoal inner types declare
     // clang-format off
@@ -18,71 +21,49 @@ public:
     // clang-format on
 
     // TradeWithPlayerGoal inner types define
-    class TradeWithPlayerDefinition {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADEWITHPLAYERGOAL_TRADEWITHPLAYERDEFINITION
+    class TradeWithPlayerDefinition : public ::BaseGoalDefinition {
     public:
+        // prevent constructor by default
         TradeWithPlayerDefinition& operator=(TradeWithPlayerDefinition const&) = delete;
         TradeWithPlayerDefinition(TradeWithPlayerDefinition const&)            = delete;
         TradeWithPlayerDefinition()                                            = delete;
-#endif
 
     public:
-        /**
-         * @symbol
-         * ?buildSchema\@TradeWithPlayerDefinition\@TradeWithPlayerGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VTradeWithPlayerDefinition\@TradeWithPlayerGoal\@\@\@JsonUtil\@\@\@4\@\@Z
-         */
+        // NOLINTBEGIN
+        // vIndex: 0, symbol: __unk_vfn_0
+        virtual void __unk_vfn_0();
+
+        // symbol:
+        // ?buildSchema@TradeWithPlayerDefinition@TradeWithPlayerGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VTradeWithPlayerDefinition@TradeWithPlayerGoal@@@JsonUtil@@@4@@Z
         MCAPI static void
-        buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TradeWithPlayerGoal::TradeWithPlayerDefinition>>&);
+        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TradeWithPlayerGoal::TradeWithPlayerDefinition>>&);
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADEWITHPLAYERGOAL
 public:
+    // prevent constructor by default
     TradeWithPlayerGoal& operator=(TradeWithPlayerGoal const&) = delete;
     TradeWithPlayerGoal(TradeWithPlayerGoal const&)            = delete;
     TradeWithPlayerGoal()                                      = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@TradeWithPlayerGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@TradeWithPlayerGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@TradeWithPlayerGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@TradeWithPlayerGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@TradeWithPlayerGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@TradeWithPlayerGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5();
-    /**
-     * @vftbl 6
-     * @symbol __unk_vfn_6
-     */
-    virtual void __unk_vfn_6();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@TradeWithPlayerGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@TradeWithPlayerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
+
+    // NOLINTEND
 };

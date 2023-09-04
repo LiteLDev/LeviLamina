@@ -2,22 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct CrashDumpEventData {
+// auto generated inclusion list
+#include "mc/enums/CrashDumpLogStringID.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMPEVENTDATA
+struct CrashDumpEventData {
 public:
+    // prevent constructor by default
     CrashDumpEventData& operator=(CrashDumpEventData const&) = delete;
     CrashDumpEventData(CrashDumpEventData const&)            = delete;
     CrashDumpEventData()                                     = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0CrashDumpEventData\@\@QEAA\@W4CrashDumpLogStringID\@\@0\@Z
-     */
-    MCAPI CrashDumpEventData(enum class CrashDumpLogStringID, enum class CrashDumpLogStringID);
-    /**
-     * @symbol ?kFormat\@CrashDumpEventData\@\@2QBUCrashDumpFormatEntryImpl\@\@B
-     */
+    // NOLINTBEGIN
+    // symbol: ??0CrashDumpEventData@@QEAA@W4CrashDumpLogStringID@@0@Z
+    MCAPI CrashDumpEventData(::CrashDumpLogStringID, ::CrashDumpLogStringID);
+
+    // symbol: ?kFormat@CrashDumpEventData@@2QBUCrashDumpFormatEntryImpl@@B
     MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
+
+    // NOLINTEND
 };

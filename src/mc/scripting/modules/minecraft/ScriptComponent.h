@@ -13,34 +13,34 @@ namespace Scripting { class WeakLifetimeScope; }
 namespace ScriptModuleMinecraft {
 
 class ScriptComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTCOMPONENT
 public:
+    // prevent constructor by default
     ScriptComponent(ScriptComponent const&) = delete;
     ScriptComponent()                       = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTCOMPONENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual void __unk_vfn_0();
+
+    // vIndex: 1, symbol: ?_isValid@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    virtual bool _isValid() const = 0;
+
+    // symbol: ??1ScriptComponent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptComponent();
-#endif
-    /**
-     * @symbol
-     * ??0ScriptComponent\@ScriptModuleMinecraft\@\@QEAA\@AEBVWeakLifetimeScope\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ??0ScriptComponent@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI ScriptComponent(class Scripting::WeakLifetimeScope const&, std::string const&);
-    /**
-     * @symbol ??4ScriptComponent\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
-     */
+
+    // symbol: ??4ScriptComponent@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptComponent& operator=(class ScriptModuleMinecraft::ScriptComponent const&);
-    /**
-     * @symbol
-     * ?bind\@ScriptComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptComponent> bind();
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

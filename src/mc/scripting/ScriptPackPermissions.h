@@ -3,25 +3,30 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ScriptPackPermissions {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPACKPERMISSIONS
 public:
+    // prevent constructor by default
     ScriptPackPermissions& operator=(ScriptPackPermissions const&) = delete;
     ScriptPackPermissions()                                        = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0ScriptPackPermissions\@\@QEAA\@AEBV0\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0ScriptPackPermissions@@QEAA@AEBV0@@Z
     MCAPI ScriptPackPermissions(class ScriptPackPermissions const&);
 
-    // private:
+    // NOLINTEND
 
 private:
-    /**
-     * @symbol
-     * ?sWildCardModuleName\@ScriptPackPermissions\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?sWildCardModuleName@ScriptPackPermissions@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const sWildCardModuleName;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $sWildCardModuleName() { return sWildCardModuleName; }
+
+    // NOLINTEND
 };

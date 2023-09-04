@@ -2,18 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockMapColorComponent {
+// auto generated inclusion list
+#include "mc/world/level/block/utils/BlockComponentBase.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKMAPCOLORCOMPONENT
+struct BlockMapColorComponent : public ::BlockComponentBase {
 public:
+    // prevent constructor by default
     BlockMapColorComponent& operator=(BlockMapColorComponent const&) = delete;
     BlockMapColorComponent(BlockMapColorComponent const&)            = delete;
     BlockMapColorComponent()                                         = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?usesNewComponentStorage\@BlockMapColorComponent\@\@SA_NXZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?usesNewComponentStorage@BlockMapColorComponent@@SA_NXZ
     MCAPI static bool usesNewComponentStorage();
+
+    // NOLINTEND
 };

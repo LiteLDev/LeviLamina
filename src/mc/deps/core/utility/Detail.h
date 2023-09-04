@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace Util::Detail {
-/**
- * @symbol ?isStringPrefixLexicallyNegative\@Detail\@Util\@\@YA_NPEBD\@Z
- */
+// NOLINTBEGIN
+// symbol: ?isStringPrefixLexicallyNegative@Detail@Util@@YA_NPEBD@Z
 MCAPI bool isStringPrefixLexicallyNegative(char const*);
+// NOLINTEND
 
 }; // namespace Util::Detail

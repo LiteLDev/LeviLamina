@@ -2,14 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockDestructibleByExplosionComponent {
+// auto generated inclusion list
+#include "mc/world/level/block/utils/BlockComponentBase.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDESTRUCTIBLEBYEXPLOSIONCOMPONENT
+struct BlockDestructibleByExplosionComponent : public ::BlockComponentBase {
 public:
+    // prevent constructor by default
     BlockDestructibleByExplosionComponent& operator=(BlockDestructibleByExplosionComponent const&) = delete;
     BlockDestructibleByExplosionComponent(BlockDestructibleByExplosionComponent const&)            = delete;
     BlockDestructibleByExplosionComponent()                                                        = delete;
-#endif
-
-public:
 };

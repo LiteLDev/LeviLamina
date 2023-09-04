@@ -2,21 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class VariantParameterList {
+// auto generated inclusion list
+#include "mc/enums/FilterSubject.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VARIANTPARAMETERLIST
+class VariantParameterList {
 public:
+    // prevent constructor by default
     VariantParameterList& operator=(VariantParameterList const&) = delete;
     VariantParameterList(VariantParameterList const&)            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0VariantParameterList\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0VariantParameterList@@QEAA@XZ
     MCAPI VariantParameterList();
-    /**
-     * @symbol ?hasParameter\@VariantParameterList\@\@QEBA_NW4FilterSubject\@\@\@Z
-     */
-    MCAPI bool hasParameter(enum class FilterSubject) const;
+
+    // symbol: ?hasParameter@VariantParameterList@@QEBA_NW4FilterSubject@@@Z
+    MCAPI bool hasParameter(::FilterSubject) const;
+
+    // NOLINTEND
 };

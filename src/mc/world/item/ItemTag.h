@@ -1,19 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/string/HashedString.h"
 
-struct ItemTag {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMTAG
+struct ItemTag : public HashedString {
 public:
-    ItemTag& operator=(ItemTag const&) = delete;
-    ItemTag(ItemTag const&)            = delete;
-    ItemTag()                          = delete;
-#endif
-
-public:
-    /**
-     * @symbol ??1ItemTag\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1ItemTag@@QEAA@XZ
     MCAPI ~ItemTag();
+
+    // NOLINTEND
 };

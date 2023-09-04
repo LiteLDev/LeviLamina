@@ -5,15 +5,11 @@
 namespace gametest {
 
 class IGameTestHelperProvider {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETEST_IGAMETESTHELPERPROVIDER
 public:
+    // prevent constructor by default
     IGameTestHelperProvider& operator=(IGameTestHelperProvider const&) = delete;
     IGameTestHelperProvider(IGameTestHelperProvider const&)            = delete;
     IGameTestHelperProvider()                                          = delete;
-#endif
-
-public:
 };
 
 }; // namespace gametest

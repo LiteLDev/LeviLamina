@@ -1,32 +1,43 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/item/components/ItemStackNetResult.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/data/BidirectionalUnorderedMap.h"
+#include "mc/world/item/components/ItemStackNetResult.h"
 
 class ItemStackNetResultMap {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKNETRESULTMAP
 public:
+    // prevent constructor by default
     ItemStackNetResultMap& operator=(ItemStackNetResultMap const&) = delete;
     ItemStackNetResultMap(ItemStackNetResultMap const&)            = delete;
     ItemStackNetResultMap()                                        = delete;
-#endif
+
+    static constexpr BidirectionalUnorderedMap<enum class ItemStackNetResult, std::string> const& getMap() {
+        return mMap;
+    }
 
 public:
-    /**
-     * @symbol
-     * ?getItemStackNetResultName\@ItemStackNetResultMap\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ItemStackNetResult\@\@\@Z
-     */
-    MCAPI static std::string const& getItemStackNetResultName(enum class ItemStackNetResult);
+    // NOLINTBEGIN
+    // symbol:
+    // ?getItemStackNetResultName@ItemStackNetResultMap@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ItemStackNetResult@@@Z
+    MCAPI static std::string const& getItemStackNetResultName(::ItemStackNetResult);
 
-    // private:
+    // NOLINTEND
 
 private:
-    /**
-     * @symbol
-     * ?mMap\@ItemStackNetResultMap\@\@0V?$BidirectionalUnorderedMap\@W4ItemStackNetResult\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@\@B
-     */
-    MCAPI static class BidirectionalUnorderedMap<enum class ItemStackNetResult, std::string> const mMap;
+    // NOLINTBEGIN
+    // symbol:
+    // ?mMap@ItemStackNetResultMap@@0V?$BidirectionalUnorderedMap@W4ItemStackNetResult@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
+    MCAPI static class BidirectionalUnorderedMap<::ItemStackNetResult, std::string> const mMap;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $mMap() { return mMap; }
+
+    // NOLINTEND
 };

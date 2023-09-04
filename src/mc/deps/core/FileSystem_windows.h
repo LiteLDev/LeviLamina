@@ -3,7 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/FileSystemImpl.h"
+#include "mc/deps/core/DirectoryIterationFlags.h"
+#include "mc/deps/core/FileAccessType.h"
+#include "mc/deps/core/FileBufferingMode.h"
+#include "mc/deps/core/FileType.h"
 #include "mc/deps/core/PathBuffer.h"
 
 // auto generated forward declare list
@@ -14,141 +17,206 @@ namespace Core { class FileStorageArea; }
 namespace Core { class FlatFileManifestTracker; }
 namespace Core { class Path; }
 namespace Core { class Result; }
-namespace Core { enum class CrossStorageCopyMode; }
-namespace Core { enum class DirectoryIterationFlags; }
-namespace Core { enum class FileAccessType; }
-namespace Core { enum class FileBufferingMode; }
-namespace Core { enum class FileType; }
 namespace Core { struct DirectoryIterationItem; }
 namespace Core { struct ExcludedPath; }
 // clang-format on
 
 namespace Core {
 
-class FileSystem_windows : public ::Core::FileSystemImpl {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORE_FILESYSTEM_WINDOWS
+class FileSystem_windows {
 public:
+    // prevent constructor by default
     FileSystem_windows& operator=(FileSystem_windows const&) = delete;
     FileSystem_windows(FileSystem_windows const&)            = delete;
     FileSystem_windows()                                     = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
+
+    // vIndex: 1, symbol: ?getLastModificationTime@FileSystemImpl@Core@@UEAA?AVResult@2@AEBVPath@2@PEA_J@Z
+    virtual class Core::Result getLastModificationTime(class Core::Path const&, int64*);
+
+    // vIndex: 2, symbol: ?copyTimeAndAccessRights@FileSystemImpl@Core@@UEAA?AVResult@2@AEBVPath@2@0@Z
+    virtual class Core::Result copyTimeAndAccessRights(class Core::Path const&, class Core::Path const&);
+
+    // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?_openFile\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEAV?$unique_ptr\@VFileImpl\@Core\@\@U?$default_delete\@VFileImpl\@Core\@\@\@std\@\@\@std\@\@AEBVPath\@2\@VFileOpenMode\@2\@W4FileBufferingMode\@2\@\@Z
-     */
+
+    // vIndex: 4, symbol: __unk_vfn_4
+    virtual void __unk_vfn_4();
+
+    // vIndex: 5, symbol: __unk_vfn_5
+    virtual void __unk_vfn_5();
+
+    // vIndex: 6, symbol: __unk_vfn_6
+    virtual void __unk_vfn_6();
+
+    // vIndex: 7, symbol:
+    // ?_openFile@FileSystem_windows@Core@@MEAA?AVResult@2@AEAV?$unique_ptr@VFileImpl@Core@@U?$default_delete@VFileImpl@Core@@@std@@@std@@AEBVPath@2@VFileOpenMode@2@W4FileBufferingMode@2@@Z
     virtual class Core::Result _openFile(
         std::unique_ptr<class Core::FileImpl>&,
         class Core::Path const&,
         class Core::FileOpenMode,
-        enum class Core::FileBufferingMode
+        ::Core::FileBufferingMode
     );
-    /**
-     * @vftbl 8
-     * @symbol ?_fileExists\@FileSystem_windows\@Core\@\@MEAA_NAEBVPath\@2\@\@Z
-     */
+
+    // vIndex: 8, symbol: ?_fileExists@FileSystem_windows@Core@@MEAA_NAEBVPath@2@@Z
     virtual bool _fileExists(class Core::Path const&);
-    /**
-     * @vftbl 9
-     * @symbol ?_deleteFile\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@\@Z
-     */
+
+    // vIndex: 9, symbol: ?_deleteFile@FileSystem_windows@Core@@MEAA?AVResult@2@AEBVPath@2@@Z
     virtual class Core::Result _deleteFile(class Core::Path const&);
-    /**
-     * @vftbl 10
-     * @symbol ?_getFileSize\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@PEA_K\@Z
-     */
-    virtual class Core::Result _getFileSize(class Core::Path const&, unsigned __int64*);
-    /**
-     * @vftbl 11
-     * @symbol ?_renameFile\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@0\@Z
-     */
+
+    // vIndex: 10, symbol: ?_getFileSize@FileSystem_windows@Core@@MEAA?AVResult@2@AEBVPath@2@PEA_K@Z
+    virtual class Core::Result _getFileSize(class Core::Path const&, uint64*);
+
+    // vIndex: 11, symbol: ?_renameFile@FileSystem_windows@Core@@MEAA?AVResult@2@AEBVPath@2@0@Z
     virtual class Core::Result _renameFile(class Core::Path const&, class Core::Path const&);
-    /**
-     * @vftbl 16
-     * @symbol ?_createOneDirectory\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@\@Z
-     */
-    virtual class Core::Result _createOneDirectory(class Core::Path const&);
-    /**
-     * @vftbl 19
-     * @symbol ?_directoryExists\@FileSystem_windows\@Core\@\@MEAA_NAEBVPath\@2\@\@Z
-     */
-    virtual bool _directoryExists(class Core::Path const&);
-    /**
-     * @vftbl 20
-     * @symbol ?_deleteEmptyDirectory\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@\@Z
-     */
-    virtual class Core::Result _deleteEmptyDirectory(class Core::Path const&);
-    /**
-     * @vftbl 24
-     * @symbol ?_renameDirectory\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@0\@Z
-     */
-    virtual class Core::Result _renameDirectory(class Core::Path const&, class Core::Path const&);
-    /**
-     * @vftbl 25
-     * @symbol
-     * ?_iterateOverDirectory\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@W4DirectoryIterationFlags\@2\@V?$function\@$$A6A?AVResult\@Core\@\@AEBUDirectoryIterationItem\@2\@\@Z\@std\@\@\@Z
-     */
+
+    // vIndex: 12, symbol: ?_createEmptyFile@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@@Z
+    virtual class Core::Result _createEmptyFile(class Core::Path const&);
+
+    // vIndex: 13, symbol: ?_copyFile@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@0@Z
+    virtual class Core::Result _copyFile(class Core::Path const&, class Core::Path const&);
+
+    // vIndex: 14, symbol: ?_copyFileWithLimit@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@0_KAEA_K2@Z
     virtual class Core::Result
-    _iterateOverDirectory(class Core::Path const&, enum class Core::DirectoryIterationFlags, class std::function<class Core::Result(struct Core::DirectoryIterationItem const&)>);
-    /**
-     * @vftbl 31
-     * @symbol ?_fileOrDirectoryExists\@FileSystem_windows\@Core\@\@MEAA_NAEBVPath\@2\@\@Z
-     */
+    _copyFileWithLimit(class Core::Path const&, class Core::Path const&, uint64, uint64&, uint64&);
+
+    // vIndex: 15, symbol:
+    // ?_readFileData@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@AEAV?$vector@EV?$allocator@E@std@@@std@@@Z
+    virtual class Core::Result _readFileData(class Core::Path const&, std::vector<uchar>&);
+
+    // vIndex: 16, symbol: ?_createOneDirectory@FileSystem_windows@Core@@MEAA?AVResult@2@AEBVPath@2@@Z
+    virtual class Core::Result _createOneDirectory(class Core::Path const&);
+
+    // vIndex: 17, symbol: ?_createOneDirectoryIfNotExisting@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@@Z
+    virtual class Core::Result _createOneDirectoryIfNotExisting(class Core::Path const&);
+
+    // vIndex: 18, symbol: ?_createDirectoryRecursively@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@@Z
+    virtual class Core::Result _createDirectoryRecursively(class Core::Path const&);
+
+    // vIndex: 19, symbol: ?_directoryExists@FileSystem_windows@Core@@MEAA_NAEBVPath@2@@Z
+    virtual bool _directoryExists(class Core::Path const&);
+
+    // vIndex: 20, symbol: ?_deleteEmptyDirectory@FileSystem_windows@Core@@MEAA?AVResult@2@AEBVPath@2@@Z
+    virtual class Core::Result _deleteEmptyDirectory(class Core::Path const&);
+
+    // vIndex: 21, symbol: ?_deleteDirectoryAndContentsRecursively@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@@Z
+    virtual class Core::Result _deleteDirectoryAndContentsRecursively(class Core::Path const&);
+
+    // vIndex: 22, symbol: ?_deleteDirectoryContentsRecursively@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@@Z
+    virtual class Core::Result _deleteDirectoryContentsRecursively(class Core::Path const&);
+
+    // vIndex: 23, symbol: ?_deleteRecursively@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@W4FileType@2@@Z
+    virtual class Core::Result _deleteRecursively(class Core::Path const&, ::Core::FileType);
+
+    // vIndex: 24, symbol: ?_renameDirectory@FileSystem_windows@Core@@MEAA?AVResult@2@AEBVPath@2@0@Z
+    virtual class Core::Result _renameDirectory(class Core::Path const&, class Core::Path const&);
+
+    // vIndex: 25, symbol:
+    // ?_iterateOverDirectory@FileSystem_windows@Core@@MEAA?AVResult@2@AEBVPath@2@W4DirectoryIterationFlags@2@V?$function@$$A6A?AVResult@Core@@AEBUDirectoryIterationItem@2@@Z@std@@@Z
+    virtual class Core::Result
+    _iterateOverDirectory(class Core::Path const&, ::Core::DirectoryIterationFlags, std::function<class Core::Result(struct Core::DirectoryIterationItem const&)>);
+
+    // vIndex: 26, symbol:
+    // ?_getDirectoryFiles@FileSystemImpl@Core@@MEAA?AVResult@2@AEAV?$vector@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@V?$allocator@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@std@@@std@@AEBVPath@2@@Z
+    virtual class Core::Result
+    _getDirectoryFiles(std::vector<class Core::PathBuffer<std::string>>&, class Core::Path const&);
+
+    // vIndex: 27, symbol:
+    // ?_getDirectoryFilesRecursively@FileSystemImpl@Core@@MEAA?AVResult@2@AEAV?$vector@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@V?$allocator@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@std@@@std@@AEBVPath@2@@Z
+    virtual class Core::Result
+    _getDirectoryFilesRecursively(std::vector<class Core::PathBuffer<std::string>>&, class Core::Path const&);
+
+    // vIndex: 28, symbol: ?_getDirectoryFilesSizeRecursively@FileSystemImpl@Core@@MEAA?AVResult@2@AEA_KAEBVPath@2@@Z
+    virtual class Core::Result _getDirectoryFilesSizeRecursively(uint64&, class Core::Path const&);
+
+    // vIndex: 29, symbol:
+    // ?_getDirectoryFilesAllocatedSizeRecursively@FileSystemImpl@Core@@MEAA?AVResult@2@AEA_K0AEBVPath@2@@Z
+    virtual class Core::Result _getDirectoryFilesAllocatedSizeRecursively(uint64&, uint64&, class Core::Path const&);
+
+    // vIndex: 30, symbol: ?_copyDirectoryAndContentsRecursively@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@0@Z
+    virtual class Core::Result _copyDirectoryAndContentsRecursively(class Core::Path const&, class Core::Path const&);
+
+    // vIndex: 31, symbol: ?_fileOrDirectoryExists@FileSystem_windows@Core@@MEAA_NAEBVPath@2@@Z
     virtual bool _fileOrDirectoryExists(class Core::Path const&);
-    /**
-     * @vftbl 33
-     * @symbol ?_getEntryType\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@AEAW4FileType\@2\@\@Z
-     */
-    virtual class Core::Result _getEntryType(class Core::Path const&, enum class Core::FileType&);
-    /**
-     * @vftbl 34
-     * @symbol __unk_vfn_34
-     */
+
+    // vIndex: 32, symbol: ?_getFileOrDirectorySize@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@PEA_K@Z
+    virtual class Core::Result _getFileOrDirectorySize(class Core::Path const&, uint64*);
+
+    // vIndex: 33, symbol: ?_getEntryType@FileSystem_windows@Core@@MEAA?AVResult@2@AEBVPath@2@AEAW4FileType@2@@Z
+    virtual class Core::Result _getEntryType(class Core::Path const&, ::Core::FileType&);
+
+    // vIndex: 34, symbol: __unk_vfn_34
     virtual void __unk_vfn_34();
-    /**
-     * @vftbl 35
-     * @symbol __unk_vfn_35
-     */
+
+    // vIndex: 35, symbol: __unk_vfn_35
     virtual void __unk_vfn_35();
-    /**
-     * @vftbl 44
-     * @symbol ?_getLastModificationTime\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@PEA_J\@Z
-     */
-    virtual class Core::Result _getLastModificationTime(class Core::Path const&, __int64*);
-    /**
-     * @vftbl 45
-     * @symbol ?_copyTimeAndAccessRights\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@0\@Z
-     */
+
+    // vIndex: 36, symbol: ?_createFlatFile@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@0@Z
+    virtual class Core::Result _createFlatFile(class Core::Path const&, class Core::Path const&);
+
+    // vIndex: 37, symbol: ?_flatFileFileExists@FileSystemImpl@Core@@MEAA_NAEBVPath@2@0@Z
+    virtual bool _flatFileFileExists(class Core::Path const&, class Core::Path const&);
+
+    // vIndex: 38, symbol: ?_flatFileDirectoryExists@FileSystemImpl@Core@@MEAA_NAEBVPath@2@0@Z
+    virtual bool _flatFileDirectoryExists(class Core::Path const&, class Core::Path const&);
+
+    // vIndex: 39, symbol:
+    // ?_flatFileIterateOverDirectory@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@0W4DirectoryIterationFlags@2@V?$function@$$A6A?AVResult@Core@@AEBUDirectoryIterationItem@2@@Z@std@@@Z
+    virtual class Core::Result
+    _flatFileIterateOverDirectory(class Core::Path const&, class Core::Path const&, ::Core::DirectoryIterationFlags, std::function<class Core::Result(struct Core::DirectoryIterationItem const&)>);
+
+    // vIndex: 40, symbol: ?_isDirectoryPathAFlatFile@FileSystemImpl@Core@@MEAA_NAEBVPath@2@@Z
+    virtual bool _isDirectoryPathAFlatFile(class Core::Path const&);
+
+    // vIndex: 41, symbol:
+    // ?_copyFlatFile@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@0AEBV?$vector@UExcludedPath@Core@@V?$allocator@UExcludedPath@Core@@@std@@@std@@1@Z
+    virtual class Core::Result
+    _copyFlatFile(class Core::Path const&, class Core::Path const&, std::vector<struct Core::ExcludedPath> const&, std::vector<struct Core::ExcludedPath> const&);
+
+    // vIndex: 42, symbol: ?_flatFileDeleteFileOrDirectory@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@0_N1@Z
+    virtual class Core::Result
+    _flatFileDeleteFileOrDirectory(class Core::Path const&, class Core::Path const&, bool, bool);
+
+    // vIndex: 43, symbol: ?_flatFileGetFileSize@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@0PEA_K@Z
+    virtual class Core::Result _flatFileGetFileSize(class Core::Path const&, class Core::Path const&, uint64*);
+
+    // vIndex: 44, symbol: ?_getLastModificationTime@FileSystem_windows@Core@@MEAA?AVResult@2@AEBVPath@2@PEA_J@Z
+    virtual class Core::Result _getLastModificationTime(class Core::Path const&, int64*);
+
+    // vIndex: 45, symbol: ?_copyTimeAndAccessRights@FileSystem_windows@Core@@MEAA?AVResult@2@AEBVPath@2@0@Z
     virtual class Core::Result _copyTimeAndAccessRights(class Core::Path const&, class Core::Path const&);
 
-    // private:
-    /**
-     * @symbol
-     * ??0FileSystem_windows\@Core\@\@AEAA\@W4FileAccessType\@1\@V?$shared_ptr\@VFileStorageArea\@Core\@\@\@std\@\@V?$shared_ptr\@VFlatFileManifestTracker\@Core\@\@\@4\@\@Z
-     */
-    MCAPI
-        FileSystem_windows(enum class Core::FileAccessType, class std::shared_ptr<class Core::FileStorageArea>, class std::shared_ptr<class Core::FlatFileManifestTracker>);
-    /**
-     * @symbol
-     * ?_iterateOverDirectoryWide\@FileSystem_windows\@Core\@\@AEAA?AVResult\@2\@AEBV?$basic_string\@_WU?$char_traits\@_W\@std\@\@V?$allocator\@_W\@2\@\@std\@\@W4DirectoryIterationFlags\@2\@V?$function\@$$A6A?AVResult\@Core\@\@AEBUDirectoryIterationItem\@2\@\@Z\@5\@\@Z
-     */
-    MCAPI class Core::Result
-    _iterateOverDirectoryWide(class std::basic_string<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t>> const&, enum class Core::DirectoryIterationFlags, class std::function<class Core::Result(struct Core::DirectoryIterationItem const&)>);
+    // vIndex: 46, symbol: ?_endTransaction@FileSystemImpl@Core@@MEAA?AVResult@2@XZ
+    virtual class Core::Result _endTransaction();
 
-private:
+    // vIndex: 47, symbol:
+    // ?_writeOperation@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@$$QEAV32@V?$function@$$A6AXPEAVFileStorageArea@Core@@@Z@std@@_K@Z
+    virtual class Core::Result _writeOperation(
+        class Core::Path const&,
+        class Core::Result&&,
+        std::function<void(class Core::FileStorageArea*)>,
+        uint64
+    );
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol:
+    // ??0FileSystem_windows@Core@@AEAA@W4FileAccessType@1@V?$shared_ptr@VFileStorageArea@Core@@@std@@V?$shared_ptr@VFlatFileManifestTracker@Core@@@4@@Z
+    MCAPI
+    FileSystem_windows(::Core::FileAccessType, std::shared_ptr<class Core::FileStorageArea>, std::shared_ptr<class Core::FlatFileManifestTracker>);
+
+    // symbol:
+    // ?_iterateOverDirectoryWide@FileSystem_windows@Core@@AEAA?AVResult@2@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@W4DirectoryIterationFlags@2@V?$function@$$A6A?AVResult@Core@@AEBUDirectoryIterationItem@2@@Z@5@@Z
+    MCAPI class Core::Result
+    _iterateOverDirectoryWide(std::wstring const&, ::Core::DirectoryIterationFlags, std::function<class Core::Result(struct Core::DirectoryIterationItem const&)>);
+
+    // NOLINTEND
 };
 
 }; // namespace Core

@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct SubChunkLightUpdate {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKLIGHTUPDATE
 public:
+    // prevent constructor by default
     SubChunkLightUpdate& operator=(SubChunkLightUpdate const&) = delete;
     SubChunkLightUpdate(SubChunkLightUpdate const&)            = delete;
     SubChunkLightUpdate()                                      = delete;
-#endif
-
-public:
 };

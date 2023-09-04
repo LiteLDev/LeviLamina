@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct SnapOnRailComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SNAPONRAILCOMPONENT
 public:
+    // prevent constructor by default
     SnapOnRailComponent& operator=(SnapOnRailComponent const&) = delete;
     SnapOnRailComponent(SnapOnRailComponent const&)            = delete;
     SnapOnRailComponent()                                      = delete;
-#endif
-
-public:
 };

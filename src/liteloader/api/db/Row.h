@@ -3,17 +3,15 @@
 #include <unordered_map>
 #include <vector>
 
-namespace DB
-{
+namespace DB {
 
 class Row;
 
 
-class RowHeader : private std::vector<std::string>
-{
+class RowHeader : private std::vector<std::string> {
 
     using Base = std::vector<std::string>;
-    std::vector<uint64_t> hashes;
+    std::vector<uint64> hashes;
 
 public:
     /**
@@ -125,8 +123,7 @@ public:
 };
 
 
-class Row : public std::vector<Any>
-{
+class Row : public std::vector<Any> {
 public:
     std::shared_ptr<RowHeader> header; //!< The header of the row
 
@@ -164,8 +161,7 @@ public:
      * @param header  The header(column names) of the row(shared_ptr)
      * @throw std::invalid_argument If the size of the list is not equal to the size of the header
      */
-    LLAPI Row(const std::initializer_list<Any>& list,
-              const std::shared_ptr<RowHeader>& header = nullptr);
+    LLAPI Row(const std::initializer_list<Any>& list, const std::shared_ptr<RowHeader>& header = nullptr);
     /**
      * @brief Construct a new Row object(move).
      *
@@ -223,7 +219,7 @@ public:
      * @return Any&    The value of the column
      * @throw  std::out_of_range If the column does not exist
      */
-    LLAPI Any& at(const std::string& column);
+    LLAPI Any&       at(const std::string& column);
     LLAPI const Any& at(const std::string& column) const;
     /**
      * @brief Traverse the row(references)
@@ -251,13 +247,11 @@ public:
  * @return T    The converted value
  */
 template <typename T>
-inline T row_to(const DB::Row& row)
-{
+inline T row_to(const DB::Row& row) {
     throw std::bad_cast();
 }
 
 template <>
-inline DB::Row row_to(const DB::Row& row)
-{
+inline DB::Row row_to(const DB::Row& row) {
     return row;
 }

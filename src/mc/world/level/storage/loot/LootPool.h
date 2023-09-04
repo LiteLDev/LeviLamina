@@ -8,31 +8,28 @@ namespace Json { class Value; }
 // clang-format on
 
 class LootPool {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTPOOL
 public:
+    // prevent constructor by default
     LootPool& operator=(LootPool const&) = delete;
     LootPool(LootPool const&)            = delete;
     LootPool()                           = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?addRandomItems\@LootPool\@\@QEAAXAEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?addRandomItems@LootPool@@QEAAXAEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEAVRandom@@AEAVLootTableContext@@@Z
     MCAPI void addRandomItems(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
-    /**
-     * @symbol ?deserialize\@LootPool\@\@QEAAXAEBVValue\@Json\@\@\@Z
-     */
+
+    // symbol: ?deserialize@LootPool@@QEAAXAEBVValue@Json@@@Z
     MCAPI void deserialize(class Json::Value const&);
 
+    // NOLINTEND
+
     // protected:
-    /**
-     * @symbol
-     * ?addRandomItem\@LootPool\@\@IEAAXAEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?addRandomItem@LootPool@@IEAAXAEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEAVRandom@@AEAVLootTableContext@@@Z
     MCAPI void addRandomItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
 
-protected:
+    // NOLINTEND
 };

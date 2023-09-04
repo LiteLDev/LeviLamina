@@ -3,21 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace MobJumpFromGroundSystem {
-/**
- * @symbol ?createCleanupFilterJumpRequestSystem\@MobJumpFromGroundSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
- */
+// NOLINTBEGIN
+// symbol: ?createCleanupFilterJumpRequestSystem@MobJumpFromGroundSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createCleanupFilterJumpRequestSystem();
-/**
- * @symbol ?createCleanupTriggerJumpRequestSystem\@MobJumpFromGroundSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
- */
+
+// symbol: ?createCleanupTriggerJumpRequestSystem@MobJumpFromGroundSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createCleanupTriggerJumpRequestSystem();
-/**
- * @symbol ?createFilterSystem\@MobJumpFromGroundSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
- */
+
+// symbol: ?createFilterSystem@MobJumpFromGroundSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createFilterSystem();
-/**
- * @symbol ?createSystem\@MobJumpFromGroundSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
- */
+
+// symbol: ?createSystem@MobJumpFromGroundSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
+// NOLINTEND
 
 }; // namespace MobJumpFromGroundSystem

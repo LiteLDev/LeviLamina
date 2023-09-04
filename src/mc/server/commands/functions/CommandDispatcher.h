@@ -2,27 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CommandDispatcher {
+// auto generated inclusion list
+#include "mc/server/commands/functions/ICommandDispatcher.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDDISPATCHER
+class CommandDispatcher : public ::ICommandDispatcher {
 public:
+    // prevent constructor by default
     CommandDispatcher& operator=(CommandDispatcher const&) = delete;
     CommandDispatcher(CommandDispatcher const&)            = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?performCommand\@CommandDispatcher\@\@UEAAHAEBVCommandOrigin\@\@AEAVCommand\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?performCommand@CommandDispatcher@@UEAAHAEBVCommandOrigin@@AEAVCommand@@@Z
     virtual int performCommand(class CommandOrigin const&, class Command&);
-    /**
-     * @symbol ??0CommandDispatcher\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0CommandDispatcher@@QEAA@XZ
     MCAPI CommandDispatcher();
+
+    // NOLINTEND
 };

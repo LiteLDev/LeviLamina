@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct PendingRemovePassengersComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PENDINGREMOVEPASSENGERSCOMPONENT
 public:
+    // prevent constructor by default
     PendingRemovePassengersComponent& operator=(PendingRemovePassengersComponent const&) = delete;
     PendingRemovePassengersComponent(PendingRemovePassengersComponent const&)            = delete;
     PendingRemovePassengersComponent()                                                   = delete;
-#endif
-
-public:
 };

@@ -2,34 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class PlaySoundReactionComponent {
+// auto generated inclusion list
+#include "mc/world/level/block/actor/LabTableReactionComponent.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYSOUNDREACTIONCOMPONENT
+class PlaySoundReactionComponent : public ::LabTableReactionComponent {
 public:
+    // prevent constructor by default
     PlaySoundReactionComponent& operator=(PlaySoundReactionComponent const&) = delete;
     PlaySoundReactionComponent(PlaySoundReactionComponent const&)            = delete;
     PlaySoundReactionComponent()                                             = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
+
+    // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol ?_onEnd\@PlaySoundReactionComponent\@\@UEAAXAEAVLabTableReaction\@\@AEAVBlockSource\@\@\@Z
-     */
+
+    // vIndex: 3, symbol: ?_onEnd@PlaySoundReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
     virtual void _onEnd(class LabTableReaction&, class BlockSource&);
+
+    // NOLINTEND
 };

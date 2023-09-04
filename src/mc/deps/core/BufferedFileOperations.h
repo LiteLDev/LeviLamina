@@ -12,26 +12,24 @@ namespace Core { class Result; }
 namespace Core {
 
 class BufferedFileOperations {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORE_BUFFEREDFILEOPERATIONS
 public:
+    // prevent constructor by default
     BufferedFileOperations& operator=(BufferedFileOperations const&) = delete;
     BufferedFileOperations(BufferedFileOperations const&)            = delete;
     BufferedFileOperations()                                         = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?copyFile\@BufferedFileOperations\@Core\@\@SA?AVResult\@2\@PEAVFileSystemImpl\@2\@AEBVPath\@2\@01\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?copyFile@BufferedFileOperations@Core@@SA?AVResult@2@PEAVFileSystemImpl@2@AEBVPath@2@01@Z
     MCAPI static class Core::Result
     copyFile(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&);
-    /**
-     * @symbol
-     * ?copyFileWithLimit\@BufferedFileOperations\@Core\@\@SA?AVResult\@2\@PEAVFileSystemImpl\@2\@AEBVPath\@2\@01_KAEA_K3\@Z
-     */
+
+    // symbol:
+    // ?copyFileWithLimit@BufferedFileOperations@Core@@SA?AVResult@2@PEAVFileSystemImpl@2@AEBVPath@2@01_KAEA_K3@Z
     MCAPI static class Core::Result
-    copyFileWithLimit(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&, unsigned __int64, unsigned __int64&, unsigned __int64&);
+    copyFileWithLimit(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&, uint64, uint64&, uint64&);
+
+    // NOLINTEND
 };
 
 }; // namespace Core

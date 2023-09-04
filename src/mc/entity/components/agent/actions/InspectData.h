@@ -5,15 +5,11 @@
 namespace AgentComponents::Actions {
 
 struct InspectData {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMPONENTS_ACTIONS_INSPECTDATA
 public:
+    // prevent constructor by default
     InspectData& operator=(InspectData const&) = delete;
     InspectData(InspectData const&)            = delete;
     InspectData()                              = delete;
-#endif
-
-public:
 };
 
 }; // namespace AgentComponents::Actions

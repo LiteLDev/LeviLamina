@@ -1,8 +1,8 @@
-﻿#include "liteloader/api/Global.h"
-#include "liteloader/api/KVDBAPI.h"
+﻿#include "liteloader/api/KVDBAPI.h"
+#include "liteloader/api/Global.h"
+#include "liteloader/api/I18nAPI.h"
 #include "liteloader/api/LoggerAPI.h"
 #include "liteloader/api/utils/FileHelper.h"
-#include "liteloader/api/I18nAPI.h"
 
 Logger levelDBLogger("LevelDB");
 
@@ -37,15 +37,14 @@ void KVDB::_init(const char* path, bool create, bool read_cache, int cache_sz, i
     status                    = leveldb::DB::Open(options, path, &db);
     if (!status.ok()) {
         levelDBLogger.error("Fail to load KVDB <{}>", path);
-        auto output = error(status);
+        auto output = status.ToString();
         output.erase(std::remove(output.begin(), output.end(), '\n'), output.end());
         levelDBLogger.error("{}", TextEncoding::toUTF8(output));
     }
 }
 
 KVDB::~KVDB() {
-    if (options.filter_policy)
-        delete options.filter_policy;
+    delete options.filter_policy;
     delete db;
 }
 
@@ -107,7 +106,7 @@ void KVDB::iter(std::function<bool(std::string_view key, std::string_view val)> 
 std::vector<std::string> KVDB::getAllKeys() {
     std::vector<std::string> keyList;
     iter([&keyList](const std::string_view& key) {
-        keyList.push_back(std::string(key));
+        keyList.emplace_back(key);
         return true;
     });
     return keyList;
@@ -117,4 +116,4 @@ bool KVDB::isValid() { return status.ok(); }
 
 KVDB::operator bool() { return isValid(); }
 
-LLAPI std::string KVDB::error(leveldb::Status status) { return status.ToString(); }
+LLAPI std::string KVDB::error() { return status.ToString(); }

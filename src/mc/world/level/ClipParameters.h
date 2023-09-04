@@ -3,27 +3,34 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ClipParameters {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIPPARAMETERS
 public:
+    class Vec3 const* mA;                  // this+0x0
+    class Vec3 const* mB;                  // this+0x8
+    class Player*     mPlayer;             // this+0x10
+    bool              mLiquid;             // this+0x18
+    bool              mFullOnly;           // this+0x19
+    bool              mSolidOnly;          // this+0x1A
+    bool              mIgnoreBorderBlocks; // this+0x1B
+    int               mMaxDistance;        // this+0x1C
+
+    std::function<bool(class BlockSource const&, class Block const&, bool)> mShouldCheckBlock; // this+0x20
+
+    // prevent constructor by default
     ClipParameters& operator=(ClipParameters const&) = delete;
     ClipParameters(ClipParameters const&)            = delete;
     ClipParameters()                                 = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ??0ClipParameters\@\@QEAA\@AEBVVec3\@\@0AEBV?$function\@$$A6A_NAEBVBlockSource\@\@AEBVBlock\@\@_N\@Z\@std\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0ClipParameters@@QEAA@AEBVVec3@@0AEBV?$function@$$A6A_NAEBVBlockSource@@AEBVBlock@@_N@Z@std@@@Z
     MCAPI
-    ClipParameters(class Vec3 const&, class Vec3 const&, class std::function<bool(class BlockSource const&, class Block const&, bool)> const&);
-    /**
-     * @symbol ??0ClipParameters\@\@QEAA\@AEBVVec3\@\@0\@Z
-     */
+    ClipParameters(class Vec3 const&, class Vec3 const&, std::function<bool(class BlockSource const&, class Block const&, bool)> const&);
+
+    // symbol: ??0ClipParameters@@QEAA@AEBVVec3@@0@Z
     MCAPI ClipParameters(class Vec3 const&, class Vec3 const&);
-    /**
-     * @symbol ??1ClipParameters\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ClipParameters@@QEAA@XZ
     MCAPI ~ClipParameters();
+
+    // NOLINTEND
 };

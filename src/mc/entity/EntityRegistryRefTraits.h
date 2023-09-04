@@ -1,15 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/wrapper/SharePtrRefTraits.h"
+#include "mc/entity/gamerefs_entity/EntityRegistry.h"
 
-struct EntityRegistryRefTraits {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYREGISTRYREFTRAITS
-public:
-    EntityRegistryRefTraits& operator=(EntityRegistryRefTraits const&) = delete;
-    EntityRegistryRefTraits(EntityRegistryRefTraits const&)            = delete;
-    EntityRegistryRefTraits()                                          = delete;
-#endif
-
-public:
-};
+struct EntityRegistryRefTraits : SharePtrRefTraits<EntityRegistry> {};

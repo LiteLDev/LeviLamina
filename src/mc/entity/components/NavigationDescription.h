@@ -2,38 +2,31 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct NavigationDescription {
+// auto generated inclusion list
+#include "mc/world/actor/ActorComponentDescription.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONDESCRIPTION
+struct NavigationDescription : public ::ActorComponentDescription {
 public:
+    // prevent constructor by default
     NavigationDescription& operator=(NavigationDescription const&) = delete;
     NavigationDescription(NavigationDescription const&)            = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol ?getJsonName\@NavigationFlyDescription\@\@UEBAPEBDXZ
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: ?getJsonName@NavigationFlyDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const = 0;
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?deserializeData\@NavigationDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?deserializeData@NavigationDescription@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONDESCRIPTION
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1NavigationDescription@@UEAA@XZ
     MCVAPI ~NavigationDescription();
-#endif
-    /**
-     * @symbol ??0NavigationDescription\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0NavigationDescription@@QEAA@XZ
     MCAPI NavigationDescription();
+
+    // NOLINTEND
 };

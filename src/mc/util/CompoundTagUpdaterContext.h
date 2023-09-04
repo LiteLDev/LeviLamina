@@ -2,39 +2,37 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CompoundTagUpdaterContext {
+// auto generated inclusion list
+#include "mc/common/wrapper/CompoundTagUpdaterResult.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDTAGUPDATERCONTEXT
+class CompoundTagUpdaterContext {
 public:
+    // prevent constructor by default
     CompoundTagUpdaterContext& operator=(CompoundTagUpdaterContext const&) = delete;
     CompoundTagUpdaterContext(CompoundTagUpdaterContext const&)            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0CompoundTagUpdaterContext\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0CompoundTagUpdaterContext@@QEAA@XZ
     MCAPI CompoundTagUpdaterContext();
-    /**
-     * @symbol ?addUpdater\@CompoundTagUpdaterContext\@\@QEAA?AVCompoundTagUpdaterBuilder\@\@EEE\@Z
-     */
-    MCAPI class CompoundTagUpdaterBuilder addUpdater(unsigned char, unsigned char, unsigned char);
-    /**
-     * @symbol ?sortUpdaters\@CompoundTagUpdaterContext\@\@QEAAXXZ
-     */
+
+    // symbol: ?addUpdater@CompoundTagUpdaterContext@@QEAA?AVCompoundTagUpdaterBuilder@@EEE@Z
+    MCAPI class CompoundTagUpdaterBuilder addUpdater(uchar, uchar, uchar);
+
+    // symbol: ?sortUpdaters@CompoundTagUpdaterContext@@QEAAXXZ
     MCAPI void sortUpdaters();
-    /**
-     * @symbol ?update\@CompoundTagUpdaterContext\@\@QEAA?AW4CompoundTagUpdaterResult\@\@AEAVCompoundTag\@\@I\@Z
-     */
-    MCAPI enum class CompoundTagUpdaterResult update(class CompoundTag&, unsigned int);
+
+    // symbol: ?update@CompoundTagUpdaterContext@@QEAA?AW4CompoundTagUpdaterResult@@AEAVCompoundTag@@I@Z
+    MCAPI ::CompoundTagUpdaterResult update(class CompoundTag&, uint);
+
+    // NOLINTEND
 
     // private:
-    /**
-     * @symbol
-     * ?comparisonPredicate\@CompoundTagUpdaterContext\@\@CA_NAEBV?$unique_ptr\@VCompoundTagUpdater\@\@U?$default_delete\@VCompoundTagUpdater\@\@\@std\@\@\@std\@\@0\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?comparisonPredicate@CompoundTagUpdaterContext@@CA_NAEBV?$unique_ptr@VCompoundTagUpdater@@U?$default_delete@VCompoundTagUpdater@@@std@@@std@@0@Z
     MCAPI static bool
     comparisonPredicate(std::unique_ptr<class CompoundTagUpdater> const&, std::unique_ptr<class CompoundTagUpdater> const&);
 
-private:
+    // NOLINTEND
 };

@@ -2,42 +2,39 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class OnFireSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONFIRESYSTEM
+class OnFireSystem : public ::ITickingSystem {
 public:
+    // prevent constructor by default
     OnFireSystem& operator=(OnFireSystem const&) = delete;
     OnFireSystem(OnFireSystem const&)            = delete;
     OnFireSystem()                               = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?extinguishFire\@OnFireSystem\@\@SAXAEAVActor\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?extinguishFire@OnFireSystem@@SAXAEAVActor@@@Z
     MCAPI static void extinguishFire(class Actor&);
-    /**
-     * @symbol ?onFireChanged\@OnFireSystem\@\@SAXAEAVActor\@\@\@Z
-     */
+
+    // symbol: ?onFireChanged@OnFireSystem@@SAXAEAVActor@@@Z
     MCAPI static void onFireChanged(class Actor&);
-    /**
-     * @symbol ?setOnFire\@OnFireSystem\@\@SAXAEAVActor\@\@H\@Z
-     */
+
+    // symbol: ?setOnFire@OnFireSystem@@SAXAEAVActor@@H@Z
     MCAPI static void setOnFire(class Actor&, int);
-    /**
-     * @symbol ?setOnFireNoEffects\@OnFireSystem\@\@SAXAEAVActor\@\@H\@Z
-     */
+
+    // symbol: ?setOnFireNoEffects@OnFireSystem@@SAXAEAVActor@@H@Z
     MCAPI static void setOnFireNoEffects(class Actor&, int);
-    /**
-     * @symbol ?stopFire\@OnFireSystem\@\@SAXAEAVActor\@\@\@Z
-     */
+
+    // symbol: ?stopFire@OnFireSystem@@SAXAEAVActor@@@Z
     MCAPI static void stopFire(class Actor&);
 
+    // NOLINTEND
+
     // protected:
-    /**
-     * @symbol ?_extinguishFireIfInWater\@OnFireSystem\@\@KA_NAEAVActor\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?_extinguishFireIfInWater@OnFireSystem@@KA_NAEAVActor@@@Z
     MCAPI static bool _extinguishFireIfInWater(class Actor&);
 
-protected:
+    // NOLINTEND
 };

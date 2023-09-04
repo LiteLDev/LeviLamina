@@ -2,75 +2,56 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class DragonStrafePlayerGoal {
+// auto generated inclusion list
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/DragonBaseGoal.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONSTRAFEPLAYERGOAL
+class DragonStrafePlayerGoal : public ::DragonBaseGoal {
 public:
+    // prevent constructor by default
     DragonStrafePlayerGoal& operator=(DragonStrafePlayerGoal const&) = delete;
     DragonStrafePlayerGoal(DragonStrafePlayerGoal const&)            = delete;
     DragonStrafePlayerGoal()                                         = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@DragonStrafePlayerGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@DragonStrafePlayerGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@DragonStrafePlayerGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@DragonStrafePlayerGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@DragonStrafePlayerGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@DragonStrafePlayerGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol ?stop\@DragonStrafePlayerGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 5, symbol: ?stop@DragonStrafePlayerGoal@@UEAAXXZ
     virtual void stop();
-    /**
-     * @vftbl 6
-     * @symbol ?tick\@DragonStrafePlayerGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 6, symbol: ?tick@DragonStrafePlayerGoal@@UEAAXXZ
     virtual void tick();
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@DragonStrafePlayerGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // vIndex: 7, symbol:
+    // ?appendDebugInfo@DragonStrafePlayerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @symbol ??0DragonStrafePlayerGoal\@\@QEAA\@AEAVMob\@\@\@Z
-     */
+
+    // symbol: ??0DragonStrafePlayerGoal@@QEAA@AEAVMob@@@Z
     MCAPI DragonStrafePlayerGoal(class Mob&);
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol ?findNewTarget\@DragonStrafePlayerGoal\@\@AEAAXXZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?findNewTarget@DragonStrafePlayerGoal@@AEAAXXZ
     MCAPI void findNewTarget();
-    /**
-     * @symbol ?navigateToNextPathNode\@DragonStrafePlayerGoal\@\@AEAAXXZ
-     */
+
+    // symbol: ?navigateToNextPathNode@DragonStrafePlayerGoal@@AEAAXXZ
     MCAPI void navigateToNextPathNode();
-    /**
-     * @symbol ?setTarget\@DragonStrafePlayerGoal\@\@AEAAXPEAVActor\@\@\@Z
-     */
+
+    // symbol: ?setTarget@DragonStrafePlayerGoal@@AEAAXPEAVActor@@@Z
     MCAPI void setTarget(class Actor*);
 
-private:
+    // NOLINTEND
 };

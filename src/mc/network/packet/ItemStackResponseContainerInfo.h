@@ -1,23 +1,29 @@
 #pragma once
 
+#include "ItemStackResponseSlotInfo.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/containers/ContainerEnumName.h"
+
+// auto generated inclusion list
+#include "mc/world/containers/ContainerEnumName.h"
 
 struct ItemStackResponseContainerInfo {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKRESPONSECONTAINERINFO
 public:
+    ContainerEnumName                      mOpenContainerNetId; // this+0x0
+    std::vector<ItemStackResponseSlotInfo> mSlots;              // this+0x8
+
+    // prevent constructor by default
     ItemStackResponseContainerInfo& operator=(ItemStackResponseContainerInfo const&) = delete;
     ItemStackResponseContainerInfo(ItemStackResponseContainerInfo const&)            = delete;
     ItemStackResponseContainerInfo()                                                 = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0ItemStackResponseContainerInfo\@\@QEAA\@W4ContainerEnumName\@\@\@Z
-     */
-    MCAPI ItemStackResponseContainerInfo(enum class ContainerEnumName);
-    /**
-     * @symbol ??1ItemStackResponseContainerInfo\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0ItemStackResponseContainerInfo@@QEAA@W4ContainerEnumName@@@Z
+    MCAPI ItemStackResponseContainerInfo(::ContainerEnumName);
+
+    // symbol: ??1ItemStackResponseContainerInfo@@QEAA@XZ
     MCAPI ~ItemStackResponseContainerInfo();
+
+    // NOLINTEND
 };

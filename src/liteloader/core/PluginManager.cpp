@@ -2,22 +2,18 @@
 
 #include <string>
 #include <unordered_map>
-// #include <ScriptEngine/src/main/Configs.h>
 
+#include "liteloader/api/utils/STLHelper.h"
 #include "liteloader/api/utils/StringHelper.h"
 #include "liteloader/api/utils/WinHelper.h"
-#include "liteloader/api/utils/STLHelper.h"
-
-#include "mc/Level.hpp"
-#include "mc/Player.hpp"
 
 #include "liteloader/api/LLAPI.h"
 #include "liteloader/api/LoggerAPI.h"
-#include "liteloader/api/event/LegacyEvents.h"
-#include "liteloader/api/event/EventManager.h"
-#include "liteloader/api/event/server/ServerStartedEvent.h"
-#include "liteloader/api/ScheduleAPI.h"
+// #include "liteloader/api/event/LegacyEvents.h"
+// #include "liteloader/api/event/EventManager.h"
+// #include "liteloader/api/event/server/ServerStartedEvent.h"
 #include "liteloader/api/I18nAPI.h"
+#include "liteloader/api/ScheduleAPI.h"
 
 #include "liteloader/core/LiteLoader.h"
 
@@ -146,39 +142,25 @@ bool ll::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
         if (ext != ".dll") {
             if (filesystem::is_directory(path)) {
                 // Maybe uncompressed LLSE Script Plugin Package
-                ll::event::legacy::ScriptPluginManagerEvent ev;
-                ev.operation       = ll::event::legacy::ScriptPluginManagerEvent::Operation::Load;
-                ev.target          = pluginFilePath;
-                ev.pluginExtension = ext;
-                ev.pluginType      = ll::event::legacy::ScriptPluginManagerEvent::PluginType::UncompressedPackage;
-                ev.call();
+                // ll::event::legacy::ScriptPluginManagerEvent ev;
+                // ev.operation       = ll::event::legacy::ScriptPluginManagerEvent::Operation::Load;
+                // ev.target          = pluginFilePath;
+                // ev.pluginExtension = ext;
+                // ev.pluginType      = ll::event::legacy::ScriptPluginManagerEvent::PluginType::UncompressedPackage;
+                // ev.call();
 
-                return ev.success;
+                // return ev.success;
             } else if (ext == ".llplugin") {
                 // LLSE Script Plugin Package
-                ll::event::legacy::ScriptPluginManagerEvent ev;
-                ev.operation       = ll::event::legacy::ScriptPluginManagerEvent::Operation::Load;
-                ev.target          = pluginFilePath;
-                ev.pluginExtension = ext;
-                ev.pluginType      = ll::event::legacy::ScriptPluginManagerEvent::PluginType::PluginPackage;
-                ev.call();
+                // ll::event::legacy::ScriptPluginManagerEvent ev;
+                // ev.operation       = ll::event::legacy::ScriptPluginManagerEvent::Operation::Load;
+                // ev.target          = pluginFilePath;
+                // ev.pluginExtension = ext;
+                // ev.pluginType      = ll::event::legacy::ScriptPluginManagerEvent::PluginType::PluginPackage;
+                // ev.call();
 
-                return ev.success;
-            }
-            //            auto validExts = LLSE_VALID_PLUGIN_EXTENSIONS;
-            //            if(!ext.empty() && std::find(validExts.begin(), validExts.end(), ext) != validExts.end())
-            //            {
-            //                // LLSE single-file script plugin
-            //                Event::ScriptPluginManagerEvent ev;
-            //                ev.operation = Event::ScriptPluginManagerEvent::Operation::Load;
-            //                ev.target = pluginFilePath;
-            //                ev.pluginExtension = ext;
-            //                ev.pluginType = Event::ScriptPluginManagerEvent::PluginType::SingleFile;
-            //                ev.call();
-            //
-            //                return ev.success;
-            //            }
-            else if (outputResult) {
+                // return ev.success;
+            } else if (outputResult) {
                 logger.error(tr("ll.pluginManager.error.invalidFileType", ext, pluginFilePath));
             }
             return false;
@@ -271,13 +253,13 @@ bool ll::PluginManager::unloadPlugin(string pluginName, bool outputResult) {
 
         if (plugin->type == Plugin::PluginType::ScriptPlugin) // Script Plugin
         {
-            ll::event::legacy::ScriptPluginManagerEvent ev;
-            ev.operation       = ll::event::legacy::ScriptPluginManagerEvent::Operation::Unload;
-            ev.target          = pluginName;
-            ev.pluginExtension = UTF82String(filesystem::path(str2wstr(plugin->filePath)).extension().u8string());
-            ev.call();
+            // ll::event::legacy::ScriptPluginManagerEvent ev;
+            // ev.operation       = ll::event::legacy::ScriptPluginManagerEvent::Operation::Unload;
+            // ev.target          = pluginName;
+            // ev.pluginExtension = UTF82String(filesystem::path(str2wstr(plugin->filePath)).extension().u8string());
+            // ev.call();
 
-            return ev.success;
+            // return ev.success;
         }
 
         // Hot unload
@@ -315,12 +297,12 @@ bool ll::PluginManager::reloadPlugin(string pluginName, bool outputResult) {
 
         if (plugin->type == Plugin::PluginType::ScriptPlugin) // Script Plugin
         {
-            ll::event::legacy::ScriptPluginManagerEvent ev;
-            ev.operation       = ll::event::legacy::ScriptPluginManagerEvent::Operation::Reload;
-            ev.target          = pluginName;
-            ev.pluginExtension = UTF82String(filesystem::path(str2wstr(plugin->filePath)).extension().u8string());
-            ev.call();
-            return ev.success;
+            // ll::event::legacy::ScriptPluginManagerEvent ev;
+            // ev.operation       = ll::event::legacy::ScriptPluginManagerEvent::Operation::Reload;
+            // ev.target          = pluginName;
+            // ev.pluginExtension = UTF82String(filesystem::path(str2wstr(plugin->filePath)).extension().u8string());
+            // ev.call();
+            // return ev.success;
         }
 
         /*string path = plugin->filePath;
@@ -352,15 +334,15 @@ int ll::PluginManager::reloadAllPlugins(bool outputResult) {
         int  cnt        = 0;
         for (auto& [name, plugin] : allPlugins) {
             if (plugin->type == Plugin::PluginType::ScriptPlugin) {
-                ll::event::legacy::ScriptPluginManagerEvent ev;
-                ev.operation       = ll::event::legacy::ScriptPluginManagerEvent::Operation::Reload;
-                ev.target          = plugin->name;
-                ev.pluginExtension = UTF82String(filesystem::path(str2wstr(plugin->filePath)).extension().u8string());
-                ev.call();
+                // ll::event::legacy::ScriptPluginManagerEvent ev;
+                // ev.operation       = ll::event::legacy::ScriptPluginManagerEvent::Operation::Reload;
+                // ev.target          = plugin->name;
+                // ev.pluginExtension =
+                // UTF82String(filesystem::path(str2wstr(plugin->filePath)).extension().u8string()); ev.call();
 
-                if (ev.success) {
-                    ++cnt;
-                }
+                // if (ev.success) {
+                //     ++cnt;
+                // }
             } else {
                 if (reloadPlugin(name)) {
                     ++cnt;
@@ -384,15 +366,15 @@ int ll::PluginManager::reloadAllPlugins(bool outputResult) {
     }
 }
 
-//TODO: 使用插件系统的 onLoad onUnload onEnable onDisable代替
+// TODO: 使用插件系统的 onLoad onUnload onEnable onDisable代替
 bool ll::PluginManager::callEventAtHotLoad(std::string pluginName) {
-    using namespace ll::event;
-    // if (!ll::isDebugMode())
-    //     return false;
-    Schedule::nextTick([pluginName]() {
-        ll::event::server::ServerStartedEvent event;
-        EventManager<server::ServerStartedEvent>::fireEvent(event, getPlugin(pluginName, false)->handle);
-    });
+    // using namespace ll::event;
+    // // if (!ll::isDebugMode())
+    // //     return false;
+    // Schedule::nextTick([pluginName]() {
+    //     ll::event::server::ServerStartedEvent event;
+    //     EventManager<server::ServerStartedEvent>::fireEvent(event, getPlugin(pluginName, false)->handle);
+    // });
 
     return true;
 }
@@ -408,17 +390,4 @@ LLAPI bool RegisterPlugin(
     others["PluginType"]     = "DLL Plugin";
     others["PluginFilePath"] = handle ? GetModulePath(handle) : name;
     return ll::PluginManager::registerPlugin(handle, name, desc, version, others);
-}
-
-// for abi compatibility
-LLAPI bool RegisterPlugin(
-    HMODULE                            handle,
-    std::string                        name,
-    std::string                        desc,
-    LL::Version                        version,
-    std::map<std::string, std::string> others
-) {
-    others["PluginType"]     = "DLL Plugin";
-    others["PluginFilePath"] = handle ? GetModulePath(handle) : name;
-    return ll::PluginManager::registerPlugin(handle, name, desc, version.toNewVersion(), others);
 }

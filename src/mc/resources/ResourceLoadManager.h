@@ -2,18 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ResourceLoadManager {
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/resources/ResourceLoadType.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCELOADMANAGER
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
+class ResourceLoadManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
+    // prevent constructor by default
     ResourceLoadManager& operator=(ResourceLoadManager const&) = delete;
     ResourceLoadManager(ResourceLoadManager const&)            = delete;
     ResourceLoadManager()                                      = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?cancel\@ResourceLoadManager\@\@QEAAXW4ResourceLoadType\@\@\@Z
-     */
-    MCAPI void cancel(enum class ResourceLoadType);
+    // NOLINTBEGIN
+    // symbol: ?cancel@ResourceLoadManager@@QEAAXW4ResourceLoadType@@@Z
+    MCAPI void cancel(::ResourceLoadType);
+
+    // NOLINTEND
 };

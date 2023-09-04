@@ -2,24 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockCraftingTableComponent {
+// auto generated inclusion list
+#include "mc/world/level/block/utils/BlockComponentBase.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCRAFTINGTABLECOMPONENT
+struct BlockCraftingTableComponent : public ::BlockComponentBase {
 public:
+    // prevent constructor by default
     BlockCraftingTableComponent& operator=(BlockCraftingTableComponent const&) = delete;
     BlockCraftingTableComponent(BlockCraftingTableComponent const&)            = delete;
     BlockCraftingTableComponent()                                              = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCRAFTINGTABLECOMPONENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // symbol: ??1BlockCraftingTableComponent@@UEAA@XZ
     MCVAPI ~BlockCraftingTableComponent();
-#endif
-    /**
-     * @symbol ??4BlockCraftingTableComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
+
+    // symbol: ??4BlockCraftingTableComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct BlockCraftingTableComponent& operator=(struct BlockCraftingTableComponent&&);
+
+    // NOLINTEND
 };

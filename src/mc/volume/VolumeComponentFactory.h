@@ -2,18 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class VolumeComponentFactory {
+// auto generated inclusion list
+#include "mc/entity/factory/EntityComponentFactoryCereal.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VOLUMECOMPONENTFACTORY
+class VolumeComponentFactory : public ::EntityComponentFactoryCereal {
 public:
+    // prevent constructor by default
     VolumeComponentFactory& operator=(VolumeComponentFactory const&) = delete;
     VolumeComponentFactory(VolumeComponentFactory const&)            = delete;
     VolumeComponentFactory()                                         = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?registerVolumeComponentDefinitions\@VolumeComponentFactory\@\@QEAAX_N\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?registerVolumeComponentDefinitions@VolumeComponentFactory@@QEAAX_N@Z
     MCAPI void registerVolumeComponentDefinitions(bool);
+
+    // NOLINTEND
 };

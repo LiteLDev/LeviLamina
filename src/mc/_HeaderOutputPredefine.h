@@ -1,6 +1,9 @@
 #pragma once
 
-#define MCAPI __declspec(dllimport)
+#pragma warning(disable : 4099)
+
+#define MCAPI  __declspec(dllimport)
+#define MCVAPI __declspec(dllimport)
 
 #include <algorithm>     // STL general algorithms
 #include <array>         // STL array container
@@ -32,6 +35,7 @@
 #include <map>           // STL map container
 #include <memory>        // STL unique_ptr, shared_ptr, weak_ptr
 #include <mutex>         // STL mutual exclusion primitives
+#include <numbers>       // numbers standard header
 #include <optional>      // STL optional type
 #include <ostream>       // Basic output stream classes
 #include <queue>         // STL queue and priority_queue container
@@ -53,6 +57,7 @@
 #include "asio.hpp"      // Asio C++ Library
 #include "asio/ssl.hpp"  // Asio SSL C++ Library
 #include "entt/entt.hpp" // Entity Component System Library
+#include "entt/fwd.hpp"  // Entity Component Forward Declarations
 #include "gsl/gsl"       // Guideline Support Library
 
 // LevelDB C++ Library
@@ -84,3 +89,32 @@
 #include "rapidjson/schema.h"
 #include "rapidjson/stringbuffer.h"
 #include "rapidjson/writer.h"
+
+#include "mc/math/vector/Vecs.h" // for vector types
+
+#include "liteloader/api/Macro.h" // for LLAPI
+
+#include "liteloader/api/memory/MemoryUtils.h" // for dAccess
+
+#include "mc/common/wrapper/optional_ref.h" // replace optional<reference_wrapper<>>
+
+using uchar  = uint8_t;
+using ushort = uint16_t;
+using uint   = uint32_t;
+using ulong  = unsigned long;
+using uint64 = uint64_t;
+
+using schar = int8_t;
+using int64 = int64_t;
+
+// clang-format off
+template <typename T0, typename T1>
+class AutomaticID;
+class Dimension;
+using DimensionType = AutomaticID<Dimension, int>;
+// union GameRule::Value;
+template <typename T0>
+class http_stl_allocator;
+using http_string  = std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>>;
+using http_wstring = std::basic_string<wchar_t, std::char_traits<wchar_t>, class http_stl_allocator<wchar_t>>;
+// clang-format on

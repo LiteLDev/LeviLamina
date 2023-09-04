@@ -5,19 +5,15 @@
 namespace Core {
 
 class PathPart {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORE_PATHPART
 public:
-    PathPart& operator=(PathPart const&) = delete;
-    PathPart(PathPart const&)            = delete;
-    PathPart()                           = delete;
-#endif
+    std::string mUtf8StdString;
 
 public:
-    /**
-     * @symbol ??1PathPart\@Core\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1PathPart@Core@@QEAA@XZ
     MCAPI ~PathPart();
+
+    // NOLINTEND
 };
 
 }; // namespace Core

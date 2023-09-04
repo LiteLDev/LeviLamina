@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct SubBBsComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBBBSCOMPONENT
 public:
+    // prevent constructor by default
     SubBBsComponent& operator=(SubBBsComponent const&) = delete;
     SubBBsComponent(SubBBsComponent const&)            = delete;
     SubBBsComponent()                                  = delete;
-#endif
-
-public:
 };

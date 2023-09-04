@@ -2,11 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+class Vec3;
+class AABB;
+class Actor;
+class Player;
+
 namespace HitDetection {
-/**
- * @symbol
- * ?searchActors\@HitDetection\@\@YAXAEBVVec3\@\@M0AEBVAABB\@\@PEAVActor\@\@PEAVPlayer\@\@AEAMAEAPEAV4\@AEAV2\@_N\@Z
- */
+// NOLINTBEGIN
+// symbol: ?searchActors@HitDetection@@YAXAEBVVec3@@M0AEBVAABB@@PEAVActor@@PEAVPlayer@@AEAMAEAPEAV4@AEAV2@_N@Z
 MCAPI void searchActors(
     class Vec3 const&,
     float,
@@ -19,5 +22,6 @@ MCAPI void searchActors(
     class Vec3&,
     bool
 );
+// NOLINTEND
 
 }; // namespace HitDetection

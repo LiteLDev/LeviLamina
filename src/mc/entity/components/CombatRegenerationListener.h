@@ -2,24 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CombatRegenerationListener {
+// auto generated inclusion list
+#include "mc/world/events/ActorEventListener.h"
+#include "mc/world/events/EventResult.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMBATREGENERATIONLISTENER
+class CombatRegenerationListener : public ::ActorEventListener {
 public:
+    // prevent constructor by default
     CombatRegenerationListener& operator=(CombatRegenerationListener const&) = delete;
     CombatRegenerationListener(CombatRegenerationListener const&)            = delete;
     CombatRegenerationListener()                                             = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?onEvent\@CombatRegenerationListener\@\@UEAA?AW4EventResult\@\@AEBUActorNotificationEvent\@\@\@Z
-     */
-    virtual enum class EventResult onEvent(struct ActorNotificationEvent const&);
+
+    // vIndex: 1, symbol: ?onEvent@CombatRegenerationListener@@UEAA?AW4EventResult@@AEBUActorNotificationEvent@@@Z
+    virtual ::EventResult onEvent(struct ActorNotificationEvent const&);
+
+    // NOLINTEND
 };

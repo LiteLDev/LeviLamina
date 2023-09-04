@@ -1,18 +1,16 @@
 #pragma once
-#include "liteloader/api/db/RowSet.h"
-#include "liteloader/api/db/Stmt.h"
 #include "liteloader/api/db/ConnParams.h"
 #include "liteloader/api/db/Pointer.h"
+#include "liteloader/api/db/RowSet.h"
+#include "liteloader/api/db/Stmt.h"
 
 class Logger;
 
-namespace DB
-{
+namespace DB {
 
 extern Logger dbLogger;
 
-class Session
-{
+class Session {
 
 protected:
 #if defined(LLDB_DEBUG_MODE)
@@ -20,11 +18,10 @@ protected:
 #else
     bool debugOutput = false;
 #endif
-    std::weak_ptr<Session> self;
+    std::weak_ptr<Session>           self;
     std::vector<std::weak_ptr<Stmt>> stmtPool; ///< List of statements opened by prepare method.
 
 public:
-
     /// Destructor
     virtual ~Session() = default;
     /**
@@ -58,7 +55,7 @@ public:
      * @param  query     Query to execute
      * @param  callback  Callback to process results
      * @return *this
-     * 
+     *
      * @par Implementation
      * @see SQLiteSession::query
      */
@@ -97,19 +94,19 @@ public:
      *
      * @return std::string  Error message
      */
-    virtual std::string getLastError() const;
+    virtual std::string getLastError() const = 0;
     /**
      * @brief Get the number of affected rows by the last query.
      *
-     * @return uint64_t  The number of affected rows
+     * @return uint64  The number of affected rows
      */
-    virtual uint64_t getAffectedRows() const = 0;
+    virtual uint64 getAffectedRows() const = 0;
     /**
      * @brief Get the last insert id
      *
-     * @return uint64_t  The row id of the last inserted row
+     * @return uint64  The row id of the last inserted row
      */
-    virtual uint64_t getLastInsertId() const = 0;
+    virtual uint64 getLastInsertId() const = 0;
     /**
      * @brief Close the session.
      *
@@ -128,7 +125,7 @@ public:
     virtual DBType getType() = 0;
     /**
      * @brief Get or set the self pointer
-     * 
+     *
      * @return std::weak_ptr<Session>  self
      */
     virtual std::weak_ptr<Session> getOrSetSelf();
@@ -181,7 +178,14 @@ public:
      * @param  database  Database name
      * @return SharedPointer<Session>  The session
      */
-    LLAPI static SharedPointer<Session> create(DBType type, const std::string& host, uint16_t port, const std::string& user, const std::string& password, const std::string& database);
+    LLAPI static SharedPointer<Session> create(
+        DBType             type,
+        const std::string& host,
+        ushort             port,
+        const std::string& user,
+        const std::string& password,
+        const std::string& database
+    );
     /**
      * @brief Create and open a new session.
      *
@@ -192,10 +196,9 @@ public:
     LLAPI static SharedPointer<Session> create(DBType type, const std::string& path);
 
 private:
-
     /**
      * @brief Create a new session(internal).
-     * 
+     *
      * @param  type    Database type
      * @param  params  Connection parameters
      * @return SharedPointer<Session>  The session
@@ -203,29 +206,25 @@ private:
     static SharedPointer<Session> _Create(DBType type, const ConnParams& params = {});
 
 private:
-
     static std::vector<std::weak_ptr<Session>> sessionPool; ///< List of sessions(weak pointers)
 
 public:
-
     /**
      * @brief Get the Session ptr by the (this) pointer.
-     * 
+     *
      * @param  session  The (this) pointer
      * @return std::shared_ptr<Session>  The Session ptr
      */
-    static std::shared_ptr<Session> getSession(Session* session)
-    {
-        for (auto& s : sessionPool)
-        {
-            if (s.expired()) continue;
+    static std::shared_ptr<Session> getSession(Session* session) {
+        for (auto& s : sessionPool) {
+            if (s.expired())
+                continue;
             auto ptr = s.lock();
             if (ptr.get() == session)
                 return ptr;
         }
         throw std::runtime_error("Session::getSession: Session is not found or expired");
     }
-
 };
 
 } // namespace DB

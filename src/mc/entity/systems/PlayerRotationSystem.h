@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace PlayerRotationSystem {
-/**
- * @symbol ?createSystem\@PlayerRotationSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
- */
+// NOLINTBEGIN
+// symbol: ?createSystem@PlayerRotationSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
+// NOLINTEND
 
 }; // namespace PlayerRotationSystem

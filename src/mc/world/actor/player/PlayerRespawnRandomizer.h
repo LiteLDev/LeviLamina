@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class PlayerRespawnRandomizer {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERRESPAWNRANDOMIZER
 public:
+    // prevent constructor by default
     PlayerRespawnRandomizer& operator=(PlayerRespawnRandomizer const&) = delete;
     PlayerRespawnRandomizer(PlayerRespawnRandomizer const&)            = delete;
     PlayerRespawnRandomizer()                                          = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1PlayerRespawnRandomizer\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1PlayerRespawnRandomizer@@QEAA@XZ
     MCAPI ~PlayerRespawnRandomizer();
+
+    // NOLINTEND
 };

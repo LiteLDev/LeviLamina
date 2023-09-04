@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace BehaviorNodeUtils {
-/**
- * @symbol ?lookAt\@BehaviorNodeUtils\@\@YAXAEAVActor\@\@AEBVVec3\@\@MM\@Z
- */
+// NOLINTBEGIN
+// symbol: ?lookAt@BehaviorNodeUtils@@YAXAEAVActor@@AEBVVec3@@MM@Z
 MCAPI void lookAt(class Actor&, class Vec3 const&, float, float);
+// NOLINTEND
 
 }; // namespace BehaviorNodeUtils

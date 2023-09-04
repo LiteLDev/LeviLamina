@@ -3,51 +3,32 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/AutomaticID.h"
 #include "mc/world/actor/ai/goal/RandomStrollGoal.h"
 
 class WitherRandomAttackPosGoal : public ::RandomStrollGoal {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WITHERRANDOMATTACKPOSGOAL
 public:
+    // prevent constructor by default
     WitherRandomAttackPosGoal& operator=(WitherRandomAttackPosGoal const&) = delete;
     WitherRandomAttackPosGoal(WitherRandomAttackPosGoal const&)            = delete;
     WitherRandomAttackPosGoal()                                            = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@WitherRandomAttackPosGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@WitherRandomAttackPosGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@WitherRandomAttackPosGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@WitherRandomAttackPosGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 4
-     * @symbol ?start\@WitherRandomAttackPosGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?start@WitherRandomAttackPosGoal@@UEAAXXZ
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol ?stop\@WitherRandomAttackPosGoal\@\@UEAAXXZ
-     */
+
+    // vIndex: 5, symbol: ?stop@WitherRandomAttackPosGoal@@UEAAXXZ
     virtual void stop();
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
+
+    // NOLINTEND
 };

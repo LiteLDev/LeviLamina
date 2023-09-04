@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class WaterMoveFinalizeSystem {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WATERMOVEFINALIZESYSTEM
 public:
+    // prevent constructor by default
     WaterMoveFinalizeSystem& operator=(WaterMoveFinalizeSystem const&) = delete;
     WaterMoveFinalizeSystem(WaterMoveFinalizeSystem const&)            = delete;
     WaterMoveFinalizeSystem()                                          = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?createWaterMoveFinalizeSystem\@WaterMoveFinalizeSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?createWaterMoveFinalizeSystem@WaterMoveFinalizeSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createWaterMoveFinalizeSystem();
+
+    // NOLINTEND
 };

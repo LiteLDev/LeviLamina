@@ -2,44 +2,43 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class Scheduler {
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCHEDULER
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
+class Scheduler : public ::Bedrock::EnableNonOwnerReferences {
 public:
+    // prevent constructor by default
     Scheduler& operator=(Scheduler const&) = delete;
     Scheduler(Scheduler const&)            = delete;
     Scheduler()                            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0Scheduler\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@I\@Z
-     */
-    MCAPI Scheduler(std::string, unsigned int);
-    /**
-     * @symbol ?changeThread\@Scheduler\@\@QEAAXVid\@thread\@std\@\@\@Z
-     */
-    MCAPI void changeThread(class std::thread::id);
-    /**
-     * @symbol ?getCoroutinePool\@Scheduler\@\@QEAAAEAVWorkerPool\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0Scheduler@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z
+    MCAPI Scheduler(std::string, uint);
+
+    // symbol: ?changeThread@Scheduler@@QEAAXVid@thread@std@@@Z
+    MCAPI void changeThread(std::thread::id);
+
+    // symbol: ?getCoroutinePool@Scheduler@@QEAAAEAVWorkerPool@@XZ
     MCAPI class WorkerPool& getCoroutinePool();
-    /**
-     * @symbol
-     * ?processCoroutines\@Scheduler\@\@QEAAXV?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@chrono\@std\@\@0\@Z
-     */
-    MCAPI void
-        processCoroutines(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
-    /**
-     * @symbol ?queueCallback\@Scheduler\@\@QEAAXV?$shared_ptr\@VBackgroundTaskBase\@\@\@std\@\@\@Z
-     */
-    MCAPI void queueCallback(class std::shared_ptr<class BackgroundTaskBase>);
-    /**
-     * @symbol ?setTargetFPS\@Scheduler\@\@QEAAXI\@Z
-     */
-    MCAPI void setTargetFPS(unsigned int);
-    /**
-     * @symbol ?AVERAGE_TASK_TOLERANCE\@Scheduler\@\@2MB
-     */
+
+    // symbol: ?processCoroutines@Scheduler@@QEAAXV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@0@Z
+    MCAPI void processCoroutines(std::chrono::nanoseconds, std::chrono::nanoseconds);
+
+    // symbol: ?queueCallback@Scheduler@@QEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
+    MCAPI void queueCallback(std::shared_ptr<class BackgroundTaskBase>);
+
+    // symbol: ?setTargetFPS@Scheduler@@QEAAXI@Z
+    MCAPI void setTargetFPS(uint);
+
+    // symbol: ?AVERAGE_TASK_TOLERANCE@Scheduler@@2MB
     MCAPI static float const AVERAGE_TASK_TOLERANCE;
+
+    // NOLINTEND
 };

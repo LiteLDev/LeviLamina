@@ -8,9 +8,9 @@ namespace Scripting { struct Version; }
 // clang-format on
 
 namespace ScriptModuleIdentity::Betas {
-/**
- * @symbol ?CURRENT\@Betas\@ScriptModuleIdentity\@\@3UVersion\@Scripting\@\@B
- */
+// NOLINTBEGIN
+// symbol: ?CURRENT@Betas@ScriptModuleIdentity@@3UVersion@Scripting@@B
 MCAPI extern struct Scripting::Version const CURRENT;
+// NOLINTEND
 
 }; // namespace ScriptModuleIdentity::Betas

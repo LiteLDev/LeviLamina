@@ -5,19 +5,18 @@
 namespace Bedrock {
 
 class ScopeExit {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_SCOPEEXIT
 public:
+    // prevent constructor by default
     ScopeExit& operator=(ScopeExit const&) = delete;
     ScopeExit(ScopeExit const&)            = delete;
     ScopeExit()                            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1ScopeExit\@Bedrock\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1ScopeExit@Bedrock@@QEAA@XZ
     MCAPI ~ScopeExit();
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

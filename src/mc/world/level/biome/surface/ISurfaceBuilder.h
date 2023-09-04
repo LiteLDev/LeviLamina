@@ -13,19 +13,16 @@ public:
     enum class WaterLevelStrategy {};
 
     struct BuildParameters {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISURFACEBUILDER_BUILDPARAMETERS
     public:
+        // prevent constructor by default
         BuildParameters& operator=(BuildParameters const&) = delete;
         BuildParameters(BuildParameters const&)            = delete;
         BuildParameters()                                  = delete;
-#endif
 
     public:
-        /**
-         * @symbol
-         * ??0BuildParameters\@ISurfaceBuilder\@\@QEAA\@AEBVBiome\@\@AEAVRandom\@\@AEAVBlockVolume\@\@AEBVBlockPos\@\@MFAEBV?$unique_ptr\@VPerlinSimplexNoise\@\@U?$default_delete\@VPerlinSimplexNoise\@\@\@std\@\@\@std\@\@W4WaterLevelStrategy\@1\@HAEBVHeightmapWrapper\@\@_N\@Z
-         */
+        // NOLINTBEGIN
+        // symbol:
+        // ??0BuildParameters@ISurfaceBuilder@@QEAA@AEBVBiome@@AEAVRandom@@AEAVBlockVolume@@AEBVBlockPos@@MFAEBV?$unique_ptr@VPerlinSimplexNoise@@U?$default_delete@VPerlinSimplexNoise@@@std@@@std@@W4WaterLevelStrategy@1@HAEBVHeightmapWrapper@@_N@Z
         MCAPI BuildParameters(
             class Biome const&,
             class Random&,
@@ -34,19 +31,18 @@ public:
             float,
             short,
             std::unique_ptr<class PerlinSimplexNoise> const&,
-            enum class ISurfaceBuilder::WaterLevelStrategy,
+            ::ISurfaceBuilder::WaterLevelStrategy,
             int,
             class HeightmapWrapper const&,
             bool
         );
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISURFACEBUILDER
 public:
+    // prevent constructor by default
     ISurfaceBuilder& operator=(ISurfaceBuilder const&) = delete;
     ISurfaceBuilder(ISurfaceBuilder const&)            = delete;
     ISurfaceBuilder()                                  = delete;
-#endif
-
-public:
 };

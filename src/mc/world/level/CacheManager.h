@@ -7,27 +7,29 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
+class Dimension;
+class PositionTrackingId;
 namespace PositionTrackingDB { class TrackingRecord; }
 // clang-format on
 
 namespace PositionTrackingDB {
 
 class CacheManager {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POSITIONTRACKINGDB_CACHEMANAGER
 public:
+    // prevent constructor by default
     CacheManager& operator=(CacheManager const&) = delete;
     CacheManager(CacheManager const&)            = delete;
     CacheManager()                               = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?createTrackingRecordInLocalCache\@CacheManager\@PositionTrackingDB\@\@QEAA?AV?$not_null\@PEAVTrackingRecord\@PositionTrackingDB\@\@\@gsl\@\@AEBVPositionTrackingId\@\@AEBVBlockPos\@\@AEBV?$AutomaticID\@VDimension\@\@H\@\@\@Z
-     */
-    MCAPI class gsl::not_null<class PositionTrackingDB::TrackingRecord*>
+    // NOLINTBEGIN
+    // symbol:
+    // ?createTrackingRecordInLocalCache@CacheManager@PositionTrackingDB@@QEAA?AV?$not_null@PEAVTrackingRecord@PositionTrackingDB@@@gsl@@AEBVPositionTrackingId@@AEBVBlockPos@@AEBV?$AutomaticID@VDimension@@H@@@Z
+    MCAPI gsl::not_null<class PositionTrackingDB::TrackingRecord*>
     createTrackingRecordInLocalCache(class PositionTrackingId const&, class BlockPos const&, class AutomaticID<class Dimension, int> const&);
+
+    // NOLINTEND
 };
 
 }; // namespace PositionTrackingDB

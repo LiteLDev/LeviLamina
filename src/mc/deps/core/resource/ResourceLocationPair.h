@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ResourceLocationPair {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCELOCATIONPAIR
 public:
+    // prevent constructor by default
     ResourceLocationPair& operator=(ResourceLocationPair const&) = delete;
     ResourceLocationPair(ResourceLocationPair const&)            = delete;
     ResourceLocationPair()                                       = delete;
-#endif
-
-public:
 };

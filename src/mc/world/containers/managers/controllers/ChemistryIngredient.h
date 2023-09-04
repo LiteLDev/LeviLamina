@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ChemistryIngredient {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHEMISTRYINGREDIENT
 public:
+    // prevent constructor by default
     ChemistryIngredient& operator=(ChemistryIngredient const&) = delete;
     ChemistryIngredient(ChemistryIngredient const&)            = delete;
     ChemistryIngredient()                                      = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1ChemistryIngredient\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1ChemistryIngredient@@QEAA@XZ
     MCAPI ~ChemistryIngredient();
+
+    // NOLINTEND
 };

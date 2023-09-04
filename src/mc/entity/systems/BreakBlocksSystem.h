@@ -2,37 +2,33 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BreakBlocksSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREAKBLOCKSSYSTEM
+class BreakBlocksSystem : public ::ITickingSystem {
 public:
+    // prevent constructor by default
     BreakBlocksSystem& operator=(BreakBlocksSystem const&) = delete;
     BreakBlocksSystem(BreakBlocksSystem const&)            = delete;
     BreakBlocksSystem()                                    = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?tick\@BreakBlocksSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?tick@BreakBlocksSystem@@UEAAXAEAVEntityRegistry@@@Z
     virtual void tick(class EntityRegistry&);
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol ?_tickComponent\@BreakBlocksSystem\@\@CAXAEAVActorOwnerComponent\@\@AEAVBreakBlocksComponent\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?_tickComponent@BreakBlocksSystem@@CAXAEAVActorOwnerComponent@@AEAVBreakBlocksComponent@@@Z
     MCAPI static void _tickComponent(class ActorOwnerComponent&, class BreakBlocksComponent&);
 
-private:
+    // NOLINTEND
 };

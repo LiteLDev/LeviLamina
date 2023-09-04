@@ -11,24 +11,22 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class SuspectTrackingDefinition {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUSPECTTRACKINGDEFINITION
 public:
+    // prevent constructor by default
     SuspectTrackingDefinition& operator=(SuspectTrackingDefinition const&) = delete;
     SuspectTrackingDefinition(SuspectTrackingDefinition const&)            = delete;
     SuspectTrackingDefinition()                                            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?initialize\@SuspectTrackingDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVSuspectTrackingComponent\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?initialize@SuspectTrackingDefinition@@QEBAXAEAVEntityContext@@AEAVSuspectTrackingComponent@@@Z
     MCAPI void initialize(class EntityContext&, class SuspectTrackingComponent&) const;
-    /**
-     * @symbol
-     * ?buildSchema\@SuspectTrackingDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSuspectTrackingDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?buildSchema@SuspectTrackingDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSuspectTrackingDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
-    buildSchema(class std::shared_ptr<
+    buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SuspectTrackingDefinition>>&);
+
+    // NOLINTEND
 };

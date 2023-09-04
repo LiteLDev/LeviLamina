@@ -1,24 +1,16 @@
-#include "liteloader/api/db/Session.h"
 #include "liteloader/api/LoggerAPI.h"
+#include "liteloader/api/db/Session.h"
 
 namespace DB {
 
-Stmt::Stmt(const std::weak_ptr<Session>& parent, bool autoExecute)
-: parent(parent)
-, autoExecute(autoExecute) {
-}
+Stmt::Stmt(const std::weak_ptr<Session>& parent, bool autoExecute) : parent(parent), autoExecute(autoExecute) {}
 
 
-Stmt::~Stmt() {
-}
+Stmt::~Stmt() {}
 
-void Stmt::setDebugOutput(bool enable) {
-    debugOutput = enable;
-}
+void Stmt::setDebugOutput(bool enable) { debugOutput = enable; }
 
-std::weak_ptr<Session> Stmt::getParent() const {
-    return parent;
-}
+std::weak_ptr<Session> Stmt::getParent() const { return parent; }
 
 SharedPointer<Stmt> Stmt::getSharedPointer() const {
     if (!self.expired()) {
@@ -49,7 +41,7 @@ SharedPointer<Stmt> Stmt::getSharedPointer() const {
     */
 }
 
-SharedPointer<Stmt> Stmt::operator,(const BindType&b) {
+SharedPointer<Stmt> Stmt::operator,(const BindType& b) {
     if (b.name.empty() && b.idx == -1) {
         bind(b.value);
     } else if (!b.name.empty()) {

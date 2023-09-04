@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct PermanentSkipMobAiStepFlag {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERMANENTSKIPMOBAISTEPFLAG
 public:
+    // prevent constructor by default
     PermanentSkipMobAiStepFlag& operator=(PermanentSkipMobAiStepFlag const&) = delete;
     PermanentSkipMobAiStepFlag(PermanentSkipMobAiStepFlag const&)            = delete;
     PermanentSkipMobAiStepFlag()                                             = delete;
-#endif
-
-public:
 };

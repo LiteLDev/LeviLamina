@@ -1,15 +1,18 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/resources/PacketCompressionAlgorithm.h"
 
 struct NetworkSettingOptions {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKSETTINGOPTIONS
 public:
+    ushort                     mCompressionThreshold;
+    PacketCompressionAlgorithm mCompressionAlgorithm;
+    bool                       mClientThrottleEnabled;
+    schar                      mClientThrottleThreshold;
+    float                      mClientThrottleScalar;
+
+    // prevent constructor by default
     NetworkSettingOptions& operator=(NetworkSettingOptions const&) = delete;
     NetworkSettingOptions(NetworkSettingOptions const&)            = delete;
     NetworkSettingOptions()                                        = delete;
-#endif
-
-public:
 };

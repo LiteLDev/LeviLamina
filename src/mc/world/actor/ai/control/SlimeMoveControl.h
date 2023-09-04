@@ -6,26 +6,21 @@
 #include "mc/world/actor/ai/control/MoveControl.h"
 
 class SlimeMoveControl : public ::MoveControl {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLIMEMOVECONTROL
 public:
+    // prevent constructor by default
     SlimeMoveControl& operator=(SlimeMoveControl const&) = delete;
     SlimeMoveControl(SlimeMoveControl const&)            = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 2
-     * @symbol ?tick\@SlimeMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?tick@SlimeMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
     virtual void tick(class MoveControlComponent&, class Mob&);
-    /**
-     * @symbol ??0SlimeMoveControl\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0SlimeMoveControl@@QEAA@XZ
     MCAPI SlimeMoveControl();
+
+    // NOLINTEND
 };

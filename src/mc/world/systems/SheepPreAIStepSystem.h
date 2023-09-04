@@ -3,26 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class SheepPreAIStepSystem {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHEEPPREAISTEPSYSTEM
 public:
+    // prevent constructor by default
     SheepPreAIStepSystem& operator=(SheepPreAIStepSystem const&) = delete;
     SheepPreAIStepSystem(SheepPreAIStepSystem const&)            = delete;
     SheepPreAIStepSystem()                                       = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?createSystem\@SheepPreAIStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?createSystem@SheepPreAIStepSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol
-     * ?_doSheepPreAIStepSystem\@SheepPreAIStepSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?_doSheepPreAIStepSystem@SheepPreAIStepSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
     MCAPI static void _doSheepPreAIStepSystem(class StrictEntityContext const&, class ActorOwnerComponent&);
 
-private:
+    // NOLINTEND
 };

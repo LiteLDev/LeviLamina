@@ -14,133 +14,97 @@ public:
 
     // BeehiveBlockActor inner types define
     struct Occupant {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEEHIVEBLOCKACTOR_OCCUPANT
     public:
+        // prevent constructor by default
         Occupant& operator=(Occupant const&) = delete;
         Occupant(Occupant const&)            = delete;
         Occupant()                           = delete;
-#endif
 
     public:
-        /**
-         * @symbol ??0Occupant\@BeehiveBlockActor\@\@QEAA\@UActorDefinitionIdentifier\@\@VCompoundTag\@\@I\@Z
-         */
-        MCAPI Occupant(struct ActorDefinitionIdentifier, class CompoundTag, unsigned int);
+        // NOLINTBEGIN
+        // symbol: ??0Occupant@BeehiveBlockActor@@QEAA@UActorDefinitionIdentifier@@VCompoundTag@@I@Z
+        MCAPI Occupant(struct ActorDefinitionIdentifier, class CompoundTag, uint);
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEEHIVEBLOCKACTOR
 public:
+    // prevent constructor by default
     BeehiveBlockActor& operator=(BeehiveBlockActor const&) = delete;
     BeehiveBlockActor(BeehiveBlockActor const&)            = delete;
     BeehiveBlockActor()                                    = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?load\@BeehiveBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?load@BeehiveBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
-    /**
-     * @vftbl 2
-     * @symbol ?save\@BeehiveBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?save@BeehiveBlockActor@@UEBA_NAEAVCompoundTag@@@Z
     virtual bool save(class CompoundTag&) const;
-    /**
-     * @vftbl 7
-     * @symbol ?tick\@BeehiveBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
-     */
+
+    // vIndex: 7, symbol: ?tick@BeehiveBlockActor@@UEAAXAEAVBlockSource@@@Z
     virtual void tick(class BlockSource&);
-    /**
-     * @vftbl 12
-     * @symbol __unk_vfn_12
-     */
+
+    // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();
-    /**
-     * @vftbl 18
-     * @symbol __unk_vfn_18
-     */
+
+    // vIndex: 18, symbol: __unk_vfn_18
     virtual void __unk_vfn_18();
-    /**
-     * @vftbl 30
-     * @symbol __unk_vfn_30
-     */
+
+    // vIndex: 30, symbol: __unk_vfn_30
     virtual void __unk_vfn_30();
-    /**
-     * @vftbl 31
-     * @symbol __unk_vfn_31
-     */
+
+    // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
-    /**
-     * @vftbl 32
-     * @symbol __unk_vfn_32
-     */
+
+    // vIndex: 32, symbol: __unk_vfn_32
     virtual void __unk_vfn_32();
-    /**
-     * @vftbl 33
-     * @symbol __unk_vfn_33
-     */
+
+    // vIndex: 33, symbol: __unk_vfn_33
     virtual void __unk_vfn_33();
-    /**
-     * @vftbl 34
-     * @symbol __unk_vfn_34
-     */
+
+    // vIndex: 34, symbol: __unk_vfn_34
     virtual void __unk_vfn_34();
-    /**
-     * @vftbl 35
-     * @symbol __unk_vfn_35
-     */
+
+    // vIndex: 35, symbol: __unk_vfn_35
     virtual void __unk_vfn_35();
-    /**
-     * @vftbl 36
-     * @symbol __unk_vfn_36
-     */
+
+    // vIndex: 36, symbol: __unk_vfn_36
     virtual void __unk_vfn_36();
-    /**
-     * @vftbl 39
-     * @symbol __unk_vfn_39
-     */
+
+    // vIndex: 39, symbol: __unk_vfn_39
     virtual void __unk_vfn_39();
-    /**
-     * @symbol ?disableBeeSpawn\@BeehiveBlockActor\@\@QEAAXXZ
-     */
+
+    // symbol: ?disableBeeSpawn@BeehiveBlockActor@@QEAAXXZ
     MCAPI void disableBeeSpawn();
-    /**
-     * @symbol ?evictAll\@BeehiveBlockActor\@\@QEAAXAEAVBlockSource\@\@_N\@Z
-     */
+
+    // symbol: ?evictAll@BeehiveBlockActor@@QEAAXAEAVBlockSource@@_N@Z
     MCAPI void evictAll(class BlockSource&, bool);
-    /**
-     * @symbol ?saveUserData\@BeehiveBlockActor\@\@QEBAXAEAVCompoundTag\@\@\@Z
-     */
+
+    // symbol: ?saveUserData@BeehiveBlockActor@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void saveUserData(class CompoundTag&) const;
-    /**
-     * @symbol ?tryAdmit\@BeehiveBlockActor\@\@QEAA_NAEAVActor\@\@\@Z
-     */
+
+    // symbol: ?tryAdmit@BeehiveBlockActor@@QEAA_NAEAVActor@@@Z
     MCAPI bool tryAdmit(class Actor&);
-    /**
-     * @symbol ?MAX_OCCUPANCY\@BeehiveBlockActor\@\@2IB
-     */
-    MCAPI static unsigned int const MAX_OCCUPANCY;
+
+    // symbol: ?MAX_OCCUPANCY@BeehiveBlockActor@@2IB
+    MCAPI static uint const MAX_OCCUPANCY;
+
+    // NOLINTEND
 
     // private:
-    /**
-     * @symbol ?_revive\@BeehiveBlockActor\@\@AEAAPEAVActor\@\@AEAVBlockSource\@\@AEBUOccupant\@1\@E\@Z
-     */
-    MCAPI class Actor* _revive(class BlockSource&, struct BeehiveBlockActor::Occupant const&, unsigned char);
-    /**
-     * @symbol ?_tickOccupant\@BeehiveBlockActor\@\@AEAA_NAEAVBlockSource\@\@AEAUOccupant\@1\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?_revive@BeehiveBlockActor@@AEAAPEAVActor@@AEAVBlockSource@@AEBUOccupant@1@E@Z
+    MCAPI class Actor* _revive(class BlockSource&, struct BeehiveBlockActor::Occupant const&, uchar);
+
+    // symbol: ?_tickOccupant@BeehiveBlockActor@@AEAA_NAEAVBlockSource@@AEAUOccupant@1@@Z
     MCAPI bool _tickOccupant(class BlockSource&, struct BeehiveBlockActor::Occupant&);
-    /**
-     * @symbol ?_trySpawnBees\@BeehiveBlockActor\@\@AEAAXAEAVBlockSource\@\@\@Z
-     */
+
+    // symbol: ?_trySpawnBees@BeehiveBlockActor@@AEAAXAEAVBlockSource@@@Z
     MCAPI void _trySpawnBees(class BlockSource&);
 
-private:
+    // NOLINTEND
 };

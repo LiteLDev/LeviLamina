@@ -3,13 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace PlayJumpSoundSystem {
-/**
- * @symbol ?createPlayJumpSoundSystem\@PlayJumpSoundSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
- */
+// NOLINTBEGIN
+// symbol: ?createPlayJumpSoundSystem@PlayJumpSoundSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createPlayJumpSoundSystem();
-/**
- * @symbol ?createPlayPowerJumpSoundSystem\@PlayJumpSoundSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
- */
+
+// symbol: ?createPlayPowerJumpSoundSystem@PlayJumpSoundSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createPlayPowerJumpSoundSystem();
+// NOLINTEND
 
 }; // namespace PlayJumpSoundSystem

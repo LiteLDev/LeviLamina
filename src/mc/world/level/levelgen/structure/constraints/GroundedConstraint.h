@@ -2,28 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class GroundedConstraint {
+// auto generated inclusion list
+#include "mc/enums/Rotation.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROUNDEDCONSTRAINT
+class GroundedConstraint {
 public:
+    // prevent constructor by default
     GroundedConstraint& operator=(GroundedConstraint const&) = delete;
     GroundedConstraint(GroundedConstraint const&)            = delete;
     GroundedConstraint()                                     = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?isSatisfied\@GroundedConstraint\@\@UEBA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEBW4Rotation\@\@\@Z
-     */
-    virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, enum class Rotation const&) const;
-    /**
-     * @symbol ??0GroundedConstraint\@\@QEAA\@AEAVStructureTemplate\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?isSatisfied@GroundedConstraint@@UEBA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@AEBW4Rotation@@@Z
+    virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, ::Rotation const&) const;
+
+    // symbol: ??0GroundedConstraint@@QEAA@AEAVStructureTemplate@@@Z
     MCAPI GroundedConstraint(class StructureTemplate&);
+
+    // NOLINTEND
 };

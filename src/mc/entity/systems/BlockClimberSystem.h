@@ -2,29 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BlockClimberSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCLIMBERSYSTEM
+class BlockClimberSystem : public ::ITickingSystem {
 public:
+    // prevent constructor by default
     BlockClimberSystem& operator=(BlockClimberSystem const&) = delete;
     BlockClimberSystem(BlockClimberSystem const&)            = delete;
     BlockClimberSystem()                                     = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?tick\@BlockClimberSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?tick@BlockClimberSystem@@UEAAXAEAVEntityRegistry@@@Z
     virtual void tick(class EntityRegistry&);
+
+    // NOLINTEND
 };

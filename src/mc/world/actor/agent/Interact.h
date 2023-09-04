@@ -2,37 +2,38 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/Command.h"
+
+// auto generated forward declare list
+// clang-format off
+class Command;
+class CommandOrigin;
+class CommandOutput;
+class CommandRegistry;
+// clang-format on
+
 namespace AgentCommands {
 
-class Interact {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMMANDS_INTERACT
+class Interact : public ::Command {
 public:
+    // prevent constructor by default
     Interact& operator=(Interact const&) = delete;
     Interact(Interact const&)            = delete;
     Interact()                           = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
-    virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?execute\@Interact\@AgentCommands\@\@EEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?execute@Interact@AgentCommands@@EEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol ?setup\@Interact\@AgentCommands\@\@SAXAEAVCommandRegistry\@\@\@Z
-     */
+
+    // symbol: ?setup@Interact@AgentCommands@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry&);
+
+    // NOLINTEND
 };
 
 }; // namespace AgentCommands

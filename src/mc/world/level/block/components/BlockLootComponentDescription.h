@@ -2,44 +2,39 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockLootComponentDescription {
+// auto generated inclusion list
+#include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/world/level/block/components/BlockComponentDescription.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLOOTCOMPONENTDESCRIPTION
+// auto generated forward declare list
+// clang-format off
+namespace JsonUtil { class EmptyClass; }
+// clang-format on
+
+struct BlockLootComponentDescription : public ::BlockComponentDescription {
 public:
+    // prevent constructor by default
     BlockLootComponentDescription& operator=(BlockLootComponentDescription const&) = delete;
     BlockLootComponentDescription(BlockLootComponentDescription const&)            = delete;
     BlockLootComponentDescription()                                                = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?getName\@BlockLootComponentDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // vIndex: 1, symbol:
+    // ?getName@BlockLootComponentDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const& getName() const;
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol ?initializeComponent\@BlockLootComponentDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?initializeComponent@BlockLootComponentDescription@@UEBAXAEAVEntityContext@@@Z
     virtual void initializeComponent(class EntityContext&) const;
-    /**
-     * @symbol
-     * ?NameID\@BlockLootComponentDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
-     */
-    MCAPI static std::string const NameID;
-    /**
-     * @symbol ?bindType\@BlockLootComponentDescription\@\@SAXXZ
-     */
+
+    // symbol: ?bindType@BlockLootComponentDescription@@SAXXZ
     MCAPI static void bindType();
+
+    // symbol: ?NameID@BlockLootComponentDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+    MCAPI static std::string const NameID;
+
+    // NOLINTEND
 };

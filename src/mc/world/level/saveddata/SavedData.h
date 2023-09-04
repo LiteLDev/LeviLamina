@@ -3,19 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class SavedData {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SAVEDDATA
 public:
+    // prevent constructor by default
     SavedData& operator=(SavedData const&) = delete;
     SavedData(SavedData const&)            = delete;
     SavedData()                            = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAVEDDATA
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual void __unk_vfn_0();
+
+    // vIndex: 1, symbol: ?deserialize@PortalForcer@@UEAAXAEBVCompoundTag@@@Z
+    virtual void deserialize(class CompoundTag const&) = 0;
+
+    // vIndex: 2, symbol: ?serialize@PortalForcer@@UEBAXAEAVCompoundTag@@@Z
+    virtual void serialize(class CompoundTag&) const = 0;
+
+    // symbol: ??1SavedData@@UEAA@XZ
     MCVAPI ~SavedData();
-#endif
+
+    // NOLINTEND
 };

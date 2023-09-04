@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ActorAnimationControllerGroupParseMetaData {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORANIMATIONCONTROLLERGROUPPARSEMETADATA
 public:
+    // prevent constructor by default
     ActorAnimationControllerGroupParseMetaData& operator=(ActorAnimationControllerGroupParseMetaData const&) = delete;
     ActorAnimationControllerGroupParseMetaData(ActorAnimationControllerGroupParseMetaData const&)            = delete;
     ActorAnimationControllerGroupParseMetaData()                                                             = delete;
-#endif
-
-public:
 };

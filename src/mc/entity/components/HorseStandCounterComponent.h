@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct HorseStandCounterComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HORSESTANDCOUNTERCOMPONENT
 public:
+    // prevent constructor by default
     HorseStandCounterComponent& operator=(HorseStandCounterComponent const&) = delete;
     HorseStandCounterComponent(HorseStandCounterComponent const&)            = delete;
     HorseStandCounterComponent()                                             = delete;
-#endif
-
-public:
 };

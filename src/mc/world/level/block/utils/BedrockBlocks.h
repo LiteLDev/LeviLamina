@@ -2,26 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+class Block;
+
 namespace BedrockBlocks {
-/**
- * @symbol ?assignBlocks\@BedrockBlocks\@\@YAXXZ
- */
+// NOLINTBEGIN
+// symbol: ?assignBlocks@BedrockBlocks@@YAXXZ
 MCAPI void assignBlocks();
-/**
- * @symbol ?mAir\@BedrockBlocks\@\@3PEBVBlock\@\@EB
- */
+
+// symbol: ?mAir@BedrockBlocks@@3PEBVBlock@@EB
 MCAPI extern class Block const* mAir;
-/**
- * @symbol ?mClientRequestPlaceholderBlock\@BedrockBlocks\@\@3PEBVBlock\@\@EB
- */
+
+// symbol: ?mClientRequestPlaceholderBlock@BedrockBlocks@@3PEBVBlock@@EB
 MCAPI extern class Block const* mClientRequestPlaceholderBlock;
-/**
- * @symbol ?mUnknown\@BedrockBlocks\@\@3PEBVBlock\@\@EB
- */
+
+// symbol: ?mUnknown@BedrockBlocks@@3PEBVBlock@@EB
 MCAPI extern class Block const* mUnknown;
-/**
- * @symbol ?unassignBlocks\@BedrockBlocks\@\@YAXXZ
- */
+
+// symbol: ?unassignBlocks@BedrockBlocks@@YAXXZ
 MCAPI void unassignBlocks();
+// NOLINTEND
 
 }; // namespace BedrockBlocks

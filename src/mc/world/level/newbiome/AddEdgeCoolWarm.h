@@ -13,21 +13,20 @@ namespace OperationNodeValues { struct PreBiome; }
 namespace OperationNodeFilters {
 
 struct AddEdgeCoolWarm {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OPERATIONNODEFILTERS_ADDEDGECOOLWARM
 public:
+    // prevent constructor by default
     AddEdgeCoolWarm& operator=(AddEdgeCoolWarm const&) = delete;
     AddEdgeCoolWarm(AddEdgeCoolWarm const&)            = delete;
     AddEdgeCoolWarm()                                  = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ??RAddEdgeCoolWarm\@OperationNodeFilters\@\@QEBA?AUPreBiome\@OperationNodeValues\@\@AEAU?$NeighborhoodReader\@UPreBiome\@OperationNodeValues\@\@$00$00\@OperationNodeDetails\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ??RAddEdgeCoolWarm@OperationNodeFilters@@QEBA?AUPreBiome@OperationNodeValues@@AEAU?$NeighborhoodReader@UPreBiome@OperationNodeValues@@$00$00@OperationNodeDetails@@@Z
     MCAPI struct OperationNodeValues::PreBiome
     operator()(struct OperationNodeDetails::NeighborhoodReader<struct OperationNodeValues::PreBiome, 1, 1>&) const;
+
+    // NOLINTEND
 };
 
 }; // namespace OperationNodeFilters

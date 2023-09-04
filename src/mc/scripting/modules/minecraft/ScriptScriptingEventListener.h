@@ -2,35 +2,37 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/events/EventResult.h"
+
+// auto generated forward declare list
+// clang-format off
+struct ScriptCommandMessageEvent;
+struct ScriptingNotificationEvent;
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptScriptingEventListener {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTSCRIPTINGEVENTLISTENER
 public:
+    // prevent constructor by default
     ScriptScriptingEventListener& operator=(ScriptScriptingEventListener const&) = delete;
     ScriptScriptingEventListener(ScriptScriptingEventListener const&)            = delete;
     ScriptScriptingEventListener()                                               = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?onEvent\@ScriptScriptingEventListener\@ScriptModuleMinecraft\@\@UEAA?AW4EventResult\@\@AEBUScriptCommandMessageEvent\@\@\@Z
-     */
-    virtual enum class EventResult onEvent(struct ScriptCommandMessageEvent const&);
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?onEvent\@?$EventListenerDispatcher\@VScriptingEventListener\@\@\@\@MEAA?AW4EventResult\@\@AEBUScriptingNotificationEvent\@\@\@Z
-     */
-    virtual enum class EventResult onEvent(struct ScriptingNotificationEvent const&);
+
+    // vIndex: 1, symbol:
+    // ?onEvent@ScriptScriptingEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUScriptCommandMessageEvent@@@Z
+    virtual ::EventResult onEvent(struct ScriptCommandMessageEvent const&);
+
+    // vIndex: 2, symbol: ?onEvent@ScriptingEventListener@@UEAA?AW4EventResult@@AEBUScriptingNotificationEvent@@@Z
+    virtual ::EventResult onEvent(struct ScriptingNotificationEvent const&);
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -5,19 +5,18 @@
 namespace Core {
 
 class FlatFileSearchResult {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORE_FLATFILESEARCHRESULT
 public:
+    // prevent constructor by default
     FlatFileSearchResult& operator=(FlatFileSearchResult const&) = delete;
     FlatFileSearchResult(FlatFileSearchResult const&)            = delete;
     FlatFileSearchResult()                                       = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1FlatFileSearchResult\@Core\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1FlatFileSearchResult@Core@@QEAA@XZ
     MCAPI ~FlatFileSearchResult();
+
+    // NOLINTEND
 };
 
 }; // namespace Core

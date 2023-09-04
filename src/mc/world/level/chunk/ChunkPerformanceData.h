@@ -2,7 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ChunkPerformanceData {
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
+struct ChunkPerformanceData : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // ChunkPerformanceData inner types declare
     // clang-format off
@@ -11,41 +19,37 @@ public:
 
     // ChunkPerformanceData inner types define
     class AtomicMemoryAccumulator {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKPERFORMANCEDATA_ATOMICMEMORYACCUMULATOR
     public:
+        // prevent constructor by default
         AtomicMemoryAccumulator& operator=(AtomicMemoryAccumulator const&) = delete;
         AtomicMemoryAccumulator(AtomicMemoryAccumulator const&)            = delete;
-#endif
 
     public:
-        /**
-         * @symbol ??0AtomicMemoryAccumulator\@ChunkPerformanceData\@\@QEAA\@XZ
-         */
+        // NOLINTBEGIN
+        // symbol: ??0AtomicMemoryAccumulator@ChunkPerformanceData@@QEAA@XZ
         MCAPI AtomicMemoryAccumulator();
-        /**
-         * @symbol ?getMemoryAverage\@AtomicMemoryAccumulator\@ChunkPerformanceData\@\@QEBA_KXZ
-         */
-        MCAPI unsigned __int64 getMemoryAverage() const;
+
+        // symbol: ?getMemoryAverage@AtomicMemoryAccumulator@ChunkPerformanceData@@QEBA_KXZ
+        MCAPI uint64 getMemoryAverage() const;
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKPERFORMANCEDATA
 public:
+    // prevent constructor by default
     ChunkPerformanceData& operator=(ChunkPerformanceData const&) = delete;
     ChunkPerformanceData(ChunkPerformanceData const&)            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0ChunkPerformanceData\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0ChunkPerformanceData@@QEAA@XZ
     MCAPI ChunkPerformanceData();
-    /**
-     * @symbol ?recordLoadedChunk\@ChunkPerformanceData\@\@QEAAXAEBVLevelChunk\@\@\@Z
-     */
+
+    // symbol: ?recordLoadedChunk@ChunkPerformanceData@@QEAAXAEBVLevelChunk@@@Z
     MCAPI void recordLoadedChunk(class LevelChunk const&);
-    /**
-     * @symbol ?resetAll\@ChunkPerformanceData\@\@QEAAXXZ
-     */
+
+    // symbol: ?resetAll@ChunkPerformanceData@@QEAAXXZ
     MCAPI void resetAll();
+
+    // NOLINTEND
 };

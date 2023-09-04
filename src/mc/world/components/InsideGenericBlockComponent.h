@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct InsideGenericBlockComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEGENERICBLOCKCOMPONENT
 public:
+    // prevent constructor by default
     InsideGenericBlockComponent& operator=(InsideGenericBlockComponent const&) = delete;
     InsideGenericBlockComponent(InsideGenericBlockComponent const&)            = delete;
     InsideGenericBlockComponent()                                              = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??4InsideGenericBlockComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??4InsideGenericBlockComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct InsideGenericBlockComponent& operator=(struct InsideGenericBlockComponent&&);
+
+    // NOLINTEND
 };

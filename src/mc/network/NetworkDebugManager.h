@@ -2,7 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class NetworkDebugManager {
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
+class NetworkDebugManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // NetworkDebugManager inner types declare
     // clang-format off
@@ -11,38 +19,35 @@ public:
 
     // NetworkDebugManager inner types define
     class Tracker {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKDEBUGMANAGER_TRACKER
     public:
+        // prevent constructor by default
         Tracker& operator=(Tracker const&) = delete;
         Tracker(Tracker const&)            = delete;
-#endif
 
     public:
-        /**
-         * @symbol ??0Tracker\@NetworkDebugManager\@\@QEAA\@XZ
-         */
+        // NOLINTBEGIN
+        // symbol: ??0Tracker@NetworkDebugManager@@QEAA@XZ
         MCAPI Tracker();
-        /**
-         * @symbol ??1Tracker\@NetworkDebugManager\@\@QEAA\@XZ
-         */
+
+        // symbol: ??1Tracker@NetworkDebugManager@@QEAA@XZ
         MCAPI ~Tracker();
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKDEBUGMANAGER
 public:
+    // prevent constructor by default
     NetworkDebugManager& operator=(NetworkDebugManager const&) = delete;
     NetworkDebugManager(NetworkDebugManager const&)            = delete;
     NetworkDebugManager()                                      = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?MAX_NUMBER_OF_SAMPLES\@NetworkDebugManager\@\@2HB
-     */
+    // NOLINTBEGIN
+    // symbol: ?MAX_NUMBER_OF_SAMPLES@NetworkDebugManager@@2HB
     MCAPI static int const MAX_NUMBER_OF_SAMPLES;
-    /**
-     * @symbol ?UPDATE_INTERVAL_MILLISECONDS\@NetworkDebugManager\@\@2HB
-     */
+
+    // symbol: ?UPDATE_INTERVAL_MILLISECONDS@NetworkDebugManager@@2HB
     MCAPI static int const UPDATE_INTERVAL_MILLISECONDS;
+
+    // NOLINTEND
 };

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/resources/PackCategory.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
@@ -16,27 +19,23 @@ public:
 
     // IInPackagePacks inner types define
     struct MetaData {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IINPACKAGEPACKS_METADATA
     public:
+        // prevent constructor by default
         MetaData& operator=(MetaData const&) = delete;
         MetaData(MetaData const&)            = delete;
         MetaData()                           = delete;
-#endif
 
     public:
-        /**
-         * @symbol ??0MetaData\@IInPackagePacks\@\@QEAA\@AEBVPath\@Core\@\@_NW4PackCategory\@\@\@Z
-         */
-        MCAPI MetaData(class Core::Path const&, bool, enum class PackCategory);
+        // NOLINTBEGIN
+        // symbol: ??0MetaData@IInPackagePacks@@QEAA@AEBVPath@Core@@_NW4PackCategory@@@Z
+        MCAPI MetaData(class Core::Path const&, bool, ::PackCategory);
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IINPACKAGEPACKS
 public:
+    // prevent constructor by default
     IInPackagePacks& operator=(IInPackagePacks const&) = delete;
     IInPackagePacks(IInPackagePacks const&)            = delete;
     IInPackagePacks()                                  = delete;
-#endif
-
-public:
 };

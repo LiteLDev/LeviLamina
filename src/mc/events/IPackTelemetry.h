@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class IPackTelemetry {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IPACKTELEMETRY
 public:
+    // prevent constructor by default
     IPackTelemetry& operator=(IPackTelemetry const&) = delete;
     IPackTelemetry(IPackTelemetry const&)            = delete;
     IPackTelemetry()                                 = delete;
-#endif
-
-public:
 };

@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class RegistryKey {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_REGISTRYKEY
 public:
+    // prevent constructor by default
     RegistryKey& operator=(RegistryKey const&) = delete;
     RegistryKey(RegistryKey const&)            = delete;
     RegistryKey()                              = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1RegistryKey\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1RegistryKey@@QEAA@XZ
     MCAPI ~RegistryKey();
+
+    // NOLINTEND
 };

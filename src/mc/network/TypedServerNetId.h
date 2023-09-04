@@ -4,13 +4,9 @@
 
 template <typename T0, typename T1, int T2>
 class TypedServerNetId {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TYPEDSERVERNETID
 public:
-    TypedServerNetId& operator=(TypedServerNetId const&) = delete;
-    TypedServerNetId(TypedServerNetId const&)            = delete;
-    TypedServerNetId()                                   = delete;
-#endif
-
-public:
+    T1        mRawId;
+    static T1 sNextRawId;
+    TypedServerNetId(T1 const& rawId) : mRawId(rawId) {}
+    constexpr explicit operator T1() { return mRawId; }
 };

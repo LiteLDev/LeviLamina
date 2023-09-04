@@ -30,22 +30,22 @@
 #define FMT_HEADER_ONLY
 #endif
 
-#include <filesystem>
+#include "liteloader/api/I18nAPI.h"
+#include "liteloader/api/utils/CsLock.h"
+#include "liteloader/api/utils/FileHelper.h"
+#include "liteloader/api/utils/PluginOwnData.h"
+#include "liteloader/api/utils/StringHelper.h"
+#include "liteloader/api/utils/WinHelper.h"
 #include <FMT/chrono.h>
 #include <FMT/color.h>
 #include <FMT/core.h>
 #include <FMT/os.h>
 #include <FMT/printf.h>
-#include "liteloader/api/utils/CsLock.h"
-#include "liteloader/api/utils/WinHelper.h"
-#include "liteloader/api/utils/FileHelper.h"
-#include "liteloader/api/utils/PluginOwnData.h"
-#include "liteloader/api/utils/StringHelper.h"
-#include "liteloader/api/I18nAPI.h"
-#include <string>
-#include <sstream>
-#include <iostream>
+#include <filesystem>
 #include <fstream>
+#include <iostream>
+#include <sstream>
+#include <string>
 #include <utility>
 
 class Player;
@@ -66,17 +66,25 @@ public:
         LLAPI explicit OutputStream();
 
     public:
-        Logger* logger{};
-        int level{};
-        std::string consoleFormat;
-        std::string fileFormat;
-        std::string playerFormat;
-        fmt::text_style style;
-        std::string levelPrefix;
+        Logger*            logger{};
+        int                level{};
+        std::string        consoleFormat;
+        std::string        fileFormat;
+        std::string        playerFormat;
+        fmt::text_style    style;
+        std::string        levelPrefix;
         std::ostringstream os;
-        bool locked = false; // Deprecated
+        bool               locked = false; // Deprecated
 
-        LLAPI explicit OutputStream(Logger* logger, int level, std::string&& consoleFormat, std::string&& fileFormat, std::string&& playerFormat, fmt::text_style&& style, std::string&& mode);
+        LLAPI explicit OutputStream(
+            Logger*           logger,
+            int               level,
+            std::string&&     consoleFormat,
+            std::string&&     fileFormat,
+            std::string&&     playerFormat,
+            fmt::text_style&& style,
+            std::string&&     mode
+        );
 
         template <typename T>
         OutputStream& operator<<(T t) {
@@ -137,35 +145,29 @@ private:
     LLAPI static void endlImpl(HMODULE hPlugin, OutputStream& o);
 
 public:
-    std::string title;
+    std::string   title;
     std::ofstream ofs;
-    Player* player = nullptr;
-    int consoleLevel = -1;
-    int fileLevel = -1;
-    int playerLevel = -1;
+    Player*       player       = nullptr;
+    int           consoleLevel = -1;
+    int           fileLevel    = -1;
+    int           playerLevel  = -1;
 
-    ~Logger() {
-        setFile(nullptr);
-    }
+    ~Logger() { setFile(nullptr); }
 
     inline static bool setDefaultFile(const std::string& logFile, bool appendMode) {
         return setDefaultFileImpl(GetCurrentModule(), logFile, appendMode);
     };
 
-    inline static bool setDefaultFile(nullptr_t a0) {
-        return setDefaultFileImpl(GetCurrentModule(), a0);
-    };
+    inline static bool setDefaultFile(nullptr_t a0) { return setDefaultFileImpl(GetCurrentModule(), a0); };
 
-    inline static void endl(OutputStream& o) {
-        return endlImpl(GetCurrentModule(), o);
-    };
+    inline static void endl(OutputStream& o) { return endlImpl(GetCurrentModule(), o); };
 
     LLAPI bool setFile(const std::string& logFile, bool appendMode = true);
     LLAPI bool setFile(nullptr_t);
 
-    LLAPI bool tryLock();
-    LLAPI bool lock();
-    LLAPI bool unlock();
+    LLAPI bool tryLock() const;
+    LLAPI bool lock() const;
+    LLAPI bool unlock() const;
 
     OutputStream debug;
     OutputStream info;
@@ -173,18 +175,9 @@ public:
     OutputStream error;
     OutputStream fatal;
 
-    inline Logger()
-    : Logger("") {
-    }
+    inline Logger() : Logger("") {}
     LLAPI explicit Logger(const std::string& title);
 
 private:
-    LLAPI CsLock& getLocker();
-
-
-    // For compatibility
-private:
-    LLAPI static void initLockImpl(HMODULE hPlugin);
-    LLAPI static void lockImpl(HMODULE hPlugin);
-    LLAPI static void unlockImpl(HMODULE hPlugin);
+    LLAPI CsLock& getLocker() const;
 };

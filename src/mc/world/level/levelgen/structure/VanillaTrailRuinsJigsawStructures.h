@@ -6,19 +6,18 @@
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
 class VanillaTrailRuinsJigsawStructures {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLATRAILRUINSJIGSAWSTRUCTURES
 public:
+    // prevent constructor by default
     VanillaTrailRuinsJigsawStructures& operator=(VanillaTrailRuinsJigsawStructures const&) = delete;
     VanillaTrailRuinsJigsawStructures(VanillaTrailRuinsJigsawStructures const&)            = delete;
     VanillaTrailRuinsJigsawStructures()                                                    = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?initialize\@VanillaTrailRuinsJigsawStructures\@\@SAXV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEAVJigsawStructureRegistry\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?initialize@VanillaTrailRuinsJigsawStructures@@SAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEAVJigsawStructureRegistry@@@Z
     MCAPI static void
-    initialize(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class JigsawStructureRegistry&);
+    initialize(gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class JigsawStructureRegistry&);
+
+    // NOLINTEND
 };

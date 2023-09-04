@@ -5,11 +5,11 @@
 //////////////////////////////// CONSTRUCTOR ////////////////////////////////
 
 StringReader::StringReader(const std::string& str)
-: str(str), len(str.length()), begin(str.begin()), end(str.end()), it(begin) {}
+: str(str), length(str.length()), begin(str.begin()), end(str.end()), it(begin) {}
 StringReader::StringReader(const char* cstr)
-: str(cstr), len(str.length()), begin(str.begin()), end(str.end()), it(begin) {}
+: str(cstr), length(str.length()), begin(str.begin()), end(str.end()), it(begin) {}
 StringReader::StringReader(const char* cstr, size_t len)
-: str(cstr, len), len(len), begin(str.begin()), end(str.end()), it(begin) {}
+: str(cstr, len), length(len), begin(str.begin()), end(str.end()), it(begin) {}
 
 StringReader::StringReader(const StringReader& other)                = default;
 StringReader::StringReader(StringReader&& other) noexcept            = default;
@@ -18,7 +18,7 @@ StringReader& StringReader::operator=(StringReader&& other) noexcept = default;
 
 //////////////////////////////// GET ////////////////////////////////
 
-bool StringReader::isEmpty() const { return len == 0; }
+bool StringReader::isEmpty() const { return length == 0; }
 
 bool StringReader::isEnd() const { return it == end; }
 
@@ -28,7 +28,7 @@ bool StringReader::isValid() const { return it != end; }
 
 size_t StringReader::getPos() const { return it - begin; }
 
-size_t StringReader::getLength() const { return len; }
+size_t StringReader::getLength() const { return length; }
 
 size_t StringReader::getRemaining() const { return end - it; }
 

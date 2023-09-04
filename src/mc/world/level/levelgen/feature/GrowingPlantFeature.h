@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class GrowingPlantFeature {
+// auto generated inclusion list
+#include "mc/world/level/levelgen/feature/IFeature.h"
+
+class GrowingPlantFeature : public ::IFeature {
 public:
     // GrowingPlantFeature inner types declare
     // clang-format off
@@ -11,42 +14,41 @@ public:
 
     // GrowingPlantFeature inner types define
     struct WeightedBlockReference {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROWINGPLANTFEATURE_WEIGHTEDBLOCKREFERENCE
     public:
+        // prevent constructor by default
         WeightedBlockReference& operator=(WeightedBlockReference const&) = delete;
         WeightedBlockReference(WeightedBlockReference const&)            = delete;
         WeightedBlockReference()                                         = delete;
-#endif
 
     public:
-        /**
-         * @symbol ??1WeightedBlockReference\@GrowingPlantFeature\@\@QEAA\@XZ
-         */
+        // NOLINTBEGIN
+        // symbol: ??1WeightedBlockReference@GrowingPlantFeature@@QEAA@XZ
         MCAPI ~WeightedBlockReference();
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROWINGPLANTFEATURE
 public:
+    // prevent constructor by default
     GrowingPlantFeature& operator=(GrowingPlantFeature const&) = delete;
     GrowingPlantFeature(GrowingPlantFeature const&)            = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?place\@GrowingPlantFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
-     */
-    virtual class std::optional<class BlockPos>
+
+    // vIndex: 1, symbol:
+    // ?place@GrowingPlantFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
+    virtual std::optional<class BlockPos>
     place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
-    /**
-     * @symbol ??0GrowingPlantFeature\@\@QEAA\@XZ
-     */
+
+    // vIndex: 2, symbol:
+    // ?isValidPlacement@IFeature@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    virtual bool isValidPlacement(std::string const&);
+
+    // symbol: ??0GrowingPlantFeature@@QEAA@XZ
     MCAPI GrowingPlantFeature();
+
+    // NOLINTEND
 };

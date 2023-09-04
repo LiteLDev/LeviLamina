@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ExternalDataComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXTERNALDATACOMPONENT
 public:
+    // prevent constructor by default
     ExternalDataComponent& operator=(ExternalDataComponent const&) = delete;
     ExternalDataComponent(ExternalDataComponent const&)            = delete;
     ExternalDataComponent()                                        = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1ExternalDataComponent\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1ExternalDataComponent@@QEAA@XZ
     MCAPI ~ExternalDataComponent();
+
+    // NOLINTEND
 };

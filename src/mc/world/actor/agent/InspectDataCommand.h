@@ -3,45 +3,37 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/Command.h"
+#include "mc/world/actor/agent/Command.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace AgentCommands { class Command; }
+// clang-format on
 
 namespace AgentCommands {
 
-class InspectDataCommand : public ::Command {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMMANDS_INSPECTDATACOMMAND
+class InspectDataCommand : public ::AgentCommands::Command {
 public:
+    // prevent constructor by default
     InspectDataCommand& operator=(InspectDataCommand const&) = delete;
     InspectDataCommand(InspectDataCommand const&)            = delete;
     InspectDataCommand()                                     = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?execute\@InspectDataCommand\@AgentCommands\@\@UEAAXXZ
-     */
+
+    // vIndex: 1, symbol: ?execute@InspectDataCommand@AgentCommands@@UEAAXXZ
     virtual void execute();
-    /**
-     * @vftbl 2
-     * @symbol ?isDone\@InspectDataCommand\@AgentCommands\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?isDone@InspectDataCommand@AgentCommands@@UEAA_NXZ
     virtual bool isDone();
-    /**
-     * @vftbl 3
-     * @symbol ?tick\@Command\@AgentCommands\@\@UEAAXXZ
-     */
-    virtual void tick();
-    /**
-     * @vftbl 4
-     * @symbol ?fireCommandDoneEvent\@InspectDataCommand\@AgentCommands\@\@UEAAXXZ
-     */
+
+    // vIndex: 4, symbol: ?fireCommandDoneEvent@InspectDataCommand@AgentCommands@@UEAAXXZ
     virtual void fireCommandDoneEvent();
+
+    // NOLINTEND
 };
 
 }; // namespace AgentCommands

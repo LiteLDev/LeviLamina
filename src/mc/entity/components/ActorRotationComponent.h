@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ActorRotationComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORROTATIONCOMPONENT
 public:
+    // prevent constructor by default
     ActorRotationComponent& operator=(ActorRotationComponent const&) = delete;
     ActorRotationComponent(ActorRotationComponent const&)            = delete;
     ActorRotationComponent()                                         = delete;
-#endif
-
-public:
 };

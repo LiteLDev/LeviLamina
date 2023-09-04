@@ -4,12 +4,12 @@
 
 #pragma once
 
-#include <unordered_map>
 #include <regex>
+#include <unordered_map>
 
 #include "liteloader/api/LoggerAPI.h"
-#include "mc/Player.hpp"
 #include "liteloader/api/utils/Hash.h"
+#include "mc/world/actor/player/Player.h"
 
 #include "liteloader/core/Config.h"
 
@@ -58,13 +58,13 @@ bool Logger::setFile(nullptr_t) {
     return true;
 }
 
-bool Logger::tryLock() { return lockerList[title].tryLock(); }
+bool Logger::tryLock() const { return lockerList[title].tryLock(); }
 
-bool Logger::lock() { return lockerList[title].lock(); }
+bool Logger::lock() const { return lockerList[title].lock(); }
 
-bool Logger::unlock() { return lockerList[title].unlock(); }
+bool Logger::unlock() const { return lockerList[title].unlock(); }
 
-CsLock& Logger::getLocker() { return lockerList[title]; }
+CsLock& Logger::getLocker() const { return lockerList[title]; }
 
 Logger::OutputStream::OutputStream() = default;
 
@@ -94,7 +94,7 @@ bool checkLogLevel(int level, int outLevel) {
     return false;
 }
 #define H do_hash
-fmt::text_style getModeColor(const string& a1) {
+fmt::text_style getModeColor(const std::string& a1) {
     if (!ll::globalConfig.colorLog)
         return {};
     switch (H(a1.c_str())) {
@@ -187,12 +187,13 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o) {
             }
         }
 
-        if (checkLogLevel(o.logger->playerLevel, o.level) && o.logger->player && Player::isValid(o.logger->player) &&
-            (ll::globalConfig.onlyFilterConsoleOutput || !filterBanned)) {
-            o.logger->player->sendTextPacket(
-                fmt::format(fmt::runtime(o.playerFormat), fmt::localtime(_time64(nullptr)), o.levelPrefix, title, text)
-            );
-        }
+        // if (checkLogLevel(o.logger->playerLevel, o.level) && o.logger->player && Player::isValid(o.logger->player) &&
+        //     (ll::globalConfig.onlyFilterConsoleOutput || !filterBanned)) {
+        //     o.logger->player->sendTextPacket(
+        //         fmt::format(fmt::runtime(o.playerFormat), fmt::localtime(_time64(nullptr)), o.levelPrefix, title,
+        //         text)
+        //     );
+        // }
 
         o.os.str("");
         o.os.clear();
@@ -246,8 +247,3 @@ Logger::Logger(const std::string& title) {
         fmt::fg(fmt::color::red) | fmt::emphasis::bold,
         "FATAL"};
 }
-
-// For compatibility
-void Logger::initLockImpl(HMODULE hPlugin) { ; }
-void Logger::lockImpl(HMODULE hPlugin) { ; }
-void Logger::unlockImpl(HMODULE hPlugin) { ; }

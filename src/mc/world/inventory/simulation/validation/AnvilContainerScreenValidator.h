@@ -2,36 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class AnvilContainerScreenValidator {
+// auto generated inclusion list
+#include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/inventory/simulation/ContainerScreenValidatorBase.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANVILCONTAINERSCREENVALIDATOR
+class AnvilContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
+    // prevent constructor by default
     AnvilContainerScreenValidator& operator=(AnvilContainerScreenValidator const&) = delete;
     AnvilContainerScreenValidator(AnvilContainerScreenValidator const&)            = delete;
     AnvilContainerScreenValidator()                                                = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
-    virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?isCraftingImplemented\@AnvilContainerScreenValidator\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?isCraftingImplemented@AnvilContainerScreenValidator@@UEAA_NXZ
     virtual bool isCraftingImplemented();
-    /**
-     * @vftbl 3
-     * @symbol
-     * ?getCraftResult\@AnvilContainerScreenValidator\@\@UEAA?AUContainerValidationCraftResult\@\@AEBVContainerScreenContext\@\@AEAVContainerScreenValidation\@\@V?$unique_ptr\@UContainerValidationCraftInputs\@\@U?$default_delete\@UContainerValidationCraftInputs\@\@\@std\@\@\@std\@\@\@Z
-     */
+
+    // vIndex: 3, symbol:
+    // ?getCraftResult@AnvilContainerScreenValidator@@UEAA?AUContainerValidationCraftResult@@AEBVContainerScreenContext@@AEAVContainerScreenValidation@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z
     virtual struct ContainerValidationCraftResult
     getCraftResult(class ContainerScreenContext const&, class ContainerScreenValidation&, std::unique_ptr<struct ContainerValidationCraftInputs>);
+
+    // NOLINTEND
 };

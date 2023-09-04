@@ -9,19 +9,16 @@
 #include "mc/world/components/FlagComponent.h"
 
 class ApplyJumpModifierSystem {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_APPLYJUMPMODIFIERSYSTEM
 public:
+    // prevent constructor by default
     ApplyJumpModifierSystem& operator=(ApplyJumpModifierSystem const&) = delete;
     ApplyJumpModifierSystem(ApplyJumpModifierSystem const&)            = delete;
     ApplyJumpModifierSystem()                                          = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?_tickApplyJumpModifierSystem\@ApplyJumpModifierSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UOnGroundFlag\@\@\@\@V?$FlagComponent\@UPowerJump\@\@\@\@\@\@U?$Exclude\@V?$FlagComponent\@UMobIsJumpingFlag\@\@\@\@\@\@$$CBUTriggerJumpRequestComponent\@\@$$CBUActorRotationComponent\@\@$$CBUAttributesComponent\@\@$$CBUMobEffectsComponent\@\@$$CBUMobTravelComponent\@\@UJumpPendingScaleComponent\@\@UStateVectorComponent\@\@\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?_tickApplyJumpModifierSystem@ApplyJumpModifierSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UOnGroundFlag@@@@V?$FlagComponent@UPowerJump@@@@@@U?$Exclude@V?$FlagComponent@UMobIsJumpingFlag@@@@@@$$CBUTriggerJumpRequestComponent@@$$CBUActorRotationComponent@@$$CBUAttributesComponent@@$$CBUMobEffectsComponent@@$$CBUMobTravelComponent@@UJumpPendingScaleComponent@@UStateVectorComponent@@@@@Z
     MCAPI static void _tickApplyJumpModifierSystem(class ViewT<
                                                    class StrictEntityContext,
                                                    class EntityRegistryBase,
@@ -36,14 +33,14 @@ public:
                                                    struct MobTravelComponent const,
                                                    struct JumpPendingScaleComponent,
                                                    struct StateVectorComponent>);
-    /**
-     * @symbol ?createApplyJumpModifierSystem\@ApplyJumpModifierSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+
+    // symbol: ?createApplyJumpModifierSystem@ApplyJumpModifierSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createApplyJumpModifierSystem();
-    /**
-     * @symbol
-     * ?tickApplyJumpModifierSystem\@ApplyJumpModifierSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUTriggerJumpRequestComponent\@\@AEBUActorRotationComponent\@\@AEBUAttributesComponent\@\@AEBUMobEffectsComponent\@\@AEBUMobTravelComponent\@\@AEAUJumpPendingScaleComponent\@\@AEAUStateVectorComponent\@\@\@Z
-     */
+
+    // symbol:
+    // ?tickApplyJumpModifierSystem@ApplyJumpModifierSystem@@SAXAEBVStrictEntityContext@@AEBUTriggerJumpRequestComponent@@AEBUActorRotationComponent@@AEBUAttributesComponent@@AEBUMobEffectsComponent@@AEBUMobTravelComponent@@AEAUJumpPendingScaleComponent@@AEAUStateVectorComponent@@@Z
     MCAPI static void
     tickApplyJumpModifierSystem(class StrictEntityContext const&, struct TriggerJumpRequestComponent const&, struct ActorRotationComponent const&, struct AttributesComponent const&, struct MobEffectsComponent const&, struct MobTravelComponent const&, struct JumpPendingScaleComponent&, struct StateVectorComponent&);
+
+    // NOLINTEND
 };

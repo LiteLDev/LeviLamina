@@ -5,15 +5,11 @@
 namespace SplitBlockUtils {
 
 struct BlockNameRefAuxVariant {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPLITBLOCKUTILS_BLOCKNAMEREFAUXVARIANT
 public:
+    // prevent constructor by default
     BlockNameRefAuxVariant& operator=(BlockNameRefAuxVariant const&) = delete;
     BlockNameRefAuxVariant(BlockNameRefAuxVariant const&)            = delete;
     BlockNameRefAuxVariant()                                         = delete;
-#endif
-
-public:
 };
 
 }; // namespace SplitBlockUtils

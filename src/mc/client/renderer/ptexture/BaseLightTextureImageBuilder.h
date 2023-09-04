@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class BaseLightTextureImageBuilder {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASELIGHTTEXTUREIMAGEBUILDER
 public:
+    // prevent constructor by default
     BaseLightTextureImageBuilder& operator=(BaseLightTextureImageBuilder const&) = delete;
     BaseLightTextureImageBuilder(BaseLightTextureImageBuilder const&)            = delete;
     BaseLightTextureImageBuilder()                                               = delete;
-#endif
-
-public:
 };

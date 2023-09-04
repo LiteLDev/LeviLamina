@@ -6,27 +6,22 @@
 #include "mc/world/level/Command.h"
 
 class FogCommand : public ::Command {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOGCOMMAND
 public:
+    // prevent constructor by default
     FogCommand& operator=(FogCommand const&) = delete;
     FogCommand(FogCommand const&)            = delete;
     FogCommand()                             = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?execute\@FogCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?execute@FogCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol ?setup\@FogCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
-     */
+
+    // symbol: ?setup@FogCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry&);
+
+    // NOLINTEND
 };

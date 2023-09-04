@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct MovementCorrection {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEMENTCORRECTION
 public:
+    // prevent constructor by default
     MovementCorrection& operator=(MovementCorrection const&) = delete;
     MovementCorrection(MovementCorrection const&)            = delete;
     MovementCorrection()                                     = delete;
-#endif
-
-public:
 };

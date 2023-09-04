@@ -2,48 +2,38 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BytesDataOutput {
+// auto generated inclusion list
+#include "mc/util/IDataOutput.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BYTESDATAOUTPUT
+class BytesDataOutput : public ::IDataOutput {
 public:
-    BytesDataOutput& operator=(BytesDataOutput const&) = delete;
-    BytesDataOutput(BytesDataOutput const&)            = delete;
-    BytesDataOutput()                                  = delete;
-#endif
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual ~BytesDataOutput() = default;
 
-public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BYTESDATAOUTPUT
-    /**
-     * @symbol ?writeByte\@BytesDataOutput\@\@UEAAXD\@Z
-     */
-    MCVAPI void writeByte(char);
-    /**
-     * @symbol ?writeDouble\@BytesDataOutput\@\@UEAAXN\@Z
-     */
-    MCVAPI void writeDouble(double);
-    /**
-     * @symbol ?writeFloat\@BytesDataOutput\@\@UEAAXM\@Z
-     */
-    MCVAPI void writeFloat(float);
-    /**
-     * @symbol ?writeInt\@BytesDataOutput\@\@UEAAXH\@Z
-     */
-    MCVAPI void writeInt(int);
-    /**
-     * @symbol ?writeLongLong\@BytesDataOutput\@\@UEAAX_J\@Z
-     */
-    MCVAPI void writeLongLong(__int64);
-    /**
-     * @symbol ?writeLongString\@BytesDataOutput\@\@UEAAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
-     */
-    MCVAPI void writeLongString(class std::basic_string_view<char, struct std::char_traits<char>>);
-    /**
-     * @symbol ?writeShort\@BytesDataOutput\@\@UEAAXF\@Z
-     */
-    MCVAPI void writeShort(short);
-    /**
-     * @symbol ?writeString\@BytesDataOutput\@\@UEAAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
-     */
-    MCVAPI void writeString(class std::basic_string_view<char, struct std::char_traits<char>>);
-#endif
+    // vIndex: 1, symbol: ?writeString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    virtual void writeString(std::string_view);
+
+    // vIndex: 2, symbol: ?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    virtual void writeLongString(std::string_view);
+
+    // vIndex: 3, symbol: ?writeFloat@BigEndianStringByteOutput@@UEAAXM@Z
+    virtual void writeFloat(float);
+
+    // vIndex: 4, symbol: ?writeDouble@BigEndianStringByteOutput@@UEAAXN@Z
+    virtual void writeDouble(double);
+
+    // vIndex: 5, symbol: ?writeByte@BytesDataOutput@@UEAAXD@Z
+    virtual void writeByte(char);
+
+    // vIndex: 6, symbol: ?writeShort@BigEndianStringByteOutput@@UEAAXF@Z
+    virtual void writeShort(short);
+
+    // vIndex: 7, symbol: ?writeInt@BigEndianStringByteOutput@@UEAAXH@Z
+    virtual void writeInt(int);
+
+    // vIndex: 8, symbol: ?writeLongLong@BigEndianStringByteOutput@@UEAAX_J@Z
+    virtual void writeLongLong(int64);
+
+    // NOLINTEND
 };

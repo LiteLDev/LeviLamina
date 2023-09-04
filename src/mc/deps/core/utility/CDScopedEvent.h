@@ -2,26 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CDScopedEvent {
+// auto generated inclusion list
+#include "mc/enums/CrashDumpLogStringID.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CDSCOPEDEVENT
+class CDScopedEvent {
 public:
+    // prevent constructor by default
     CDScopedEvent& operator=(CDScopedEvent const&) = delete;
     CDScopedEvent(CDScopedEvent const&)            = delete;
     CDScopedEvent()                                = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0CDScopedEvent\@\@QEAA\@W4CrashDumpLogStringID\@\@00\@Z
-     */
-    MCAPI CDScopedEvent(
-        enum class CrashDumpLogStringID,
-        enum class CrashDumpLogStringID,
-        enum class CrashDumpLogStringID
-    );
-    /**
-     * @symbol ??1CDScopedEvent\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0CDScopedEvent@@QEAA@W4CrashDumpLogStringID@@00@Z
+    MCAPI CDScopedEvent(::CrashDumpLogStringID, ::CrashDumpLogStringID, ::CrashDumpLogStringID);
+
+    // symbol: ??1CDScopedEvent@@QEAA@XZ
     MCAPI ~CDScopedEvent();
+
+    // NOLINTEND
 };

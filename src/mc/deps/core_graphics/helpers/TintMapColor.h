@@ -1,18 +1,16 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/mce/Color.h"
 
 class TintMapColor {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TINTMAPCOLOR
 public:
-    TintMapColor& operator=(TintMapColor const&) = delete;
-    TintMapColor(TintMapColor const&)            = delete;
-#endif
+    std::array<mce::Color, 4> colors;
 
 public:
-    /**
-     * @symbol ??0TintMapColor\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0TintMapColor@@QEAA@XZ
     MCAPI TintMapColor();
+
+    // NOLINTEND
 };

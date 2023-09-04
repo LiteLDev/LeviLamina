@@ -3,16 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct AdventureSettings {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADVENTURESETTINGS
 public:
-    AdventureSettings& operator=(AdventureSettings const&) = delete;
-    AdventureSettings(AdventureSettings const&)            = delete;
-#endif
+    bool mNoPvM;
+    bool mNoMvP;
+    bool mImmutableWorld;
+    bool mShowNameTags;
+    bool mAutoJump;
 
 public:
-    /**
-     * @symbol ??0AdventureSettings\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0AdventureSettings@@QEAA@XZ
     MCAPI AdventureSettings();
+
+    // NOLINTEND
 };

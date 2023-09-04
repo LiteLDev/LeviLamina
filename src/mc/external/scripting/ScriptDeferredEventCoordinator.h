@@ -11,49 +11,56 @@ public:
 
     // ScriptDeferredEventCoordinator inner types define
     struct DocumentableEventExecution {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTDEFERREDEVENTCOORDINATOR_DOCUMENTABLEEVENTEXECUTION
     public:
+        // prevent constructor by default
         DocumentableEventExecution& operator=(DocumentableEventExecution const&) = delete;
         DocumentableEventExecution(DocumentableEventExecution const&)            = delete;
         DocumentableEventExecution()                                             = delete;
-#endif
 
     public:
-        /**
-         * @symbol ??1DocumentableEventExecution\@ScriptDeferredEventCoordinator\@\@QEAA\@XZ
-         */
+        // NOLINTBEGIN
+        // symbol: ??1DocumentableEventExecution@ScriptDeferredEventCoordinator@@QEAA@XZ
         MCAPI ~DocumentableEventExecution();
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTDEFERREDEVENTCOORDINATOR
 public:
+    // prevent constructor by default
     ScriptDeferredEventCoordinator& operator=(ScriptDeferredEventCoordinator const&) = delete;
     ScriptDeferredEventCoordinator(ScriptDeferredEventCoordinator const&)            = delete;
     ScriptDeferredEventCoordinator()                                                 = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?sendAllDeferredEvents\@ScriptDeferredEventCoordinator\@\@QEAAXXZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?sendAllDeferredEvents@ScriptDeferredEventCoordinator@@QEAAXXZ
     MCAPI void sendAllDeferredEvents();
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol ?_sendFlushSystemAfterEvents\@ScriptDeferredEventCoordinator\@\@AEAA_NXZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?_sendFlushSystemAfterEvents@ScriptDeferredEventCoordinator@@AEAA_NXZ
     MCAPI bool _sendFlushSystemAfterEvents();
-    /**
-     * @symbol ?_sendFlushWorldAfterEvents\@ScriptDeferredEventCoordinator\@\@AEAA_NXZ
-     */
+
+    // symbol: ?_sendFlushWorldAfterEvents@ScriptDeferredEventCoordinator@@AEAA_NXZ
     MCAPI bool _sendFlushWorldAfterEvents();
 
+    // NOLINTEND
+
 private:
-    /**
-     * @symbol
-     * ?sEventExecutionOrder\@ScriptDeferredEventCoordinator\@\@0V?$vector\@UDocumentableEventExecution\@ScriptDeferredEventCoordinator\@\@V?$allocator\@UDocumentableEventExecution\@ScriptDeferredEventCoordinator\@\@\@std\@\@\@std\@\@B
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?sEventExecutionOrder@ScriptDeferredEventCoordinator@@0V?$vector@UDocumentableEventExecution@ScriptDeferredEventCoordinator@@V?$allocator@UDocumentableEventExecution@ScriptDeferredEventCoordinator@@@std@@@std@@B
     MCAPI static std::vector<struct ScriptDeferredEventCoordinator::DocumentableEventExecution> const
         sEventExecutionOrder;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $sEventExecutionOrder() { return sEventExecutionOrder; }
+
+    // NOLINTEND
 };

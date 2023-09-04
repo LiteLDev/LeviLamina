@@ -2,24 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class DragonBaseGoal {
+// auto generated inclusion list
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/Goal.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONBASEGOAL
+class DragonBaseGoal : public ::Goal {
 public:
+    // prevent constructor by default
     DragonBaseGoal& operator=(DragonBaseGoal const&) = delete;
     DragonBaseGoal(DragonBaseGoal const&)            = delete;
     DragonBaseGoal()                                 = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONBASEGOAL
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual void __unk_vfn_0();
+
+    // symbol: ??1DragonBaseGoal@@UEAA@XZ
     MCVAPI ~DragonBaseGoal();
-#endif
-    /**
-     * @symbol ??0DragonBaseGoal\@\@QEAA\@AEAVMob\@\@\@Z
-     */
+
+    // symbol: ??0DragonBaseGoal@@QEAA@AEAVMob@@@Z
     MCAPI DragonBaseGoal(class Mob&);
+
+    // NOLINTEND
 };

@@ -11,24 +11,22 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class BoostableDefinition {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOOSTABLEDEFINITION
 public:
+    // prevent constructor by default
     BoostableDefinition& operator=(BoostableDefinition const&) = delete;
     BoostableDefinition(BoostableDefinition const&)            = delete;
     BoostableDefinition()                                      = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?initialize\@BoostableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVBoostableComponent\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?initialize@BoostableDefinition@@QEBAXAEAVEntityContext@@AEAVBoostableComponent@@@Z
     MCAPI void initialize(class EntityContext&, class BoostableComponent&) const;
-    /**
-     * @symbol
-     * ?buildSchema\@BoostableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VBoostableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?buildSchema@BoostableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBoostableDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
-    buildSchema(class std::shared_ptr<
+    buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BoostableDefinition>>&);
+
+    // NOLINTEND
 };

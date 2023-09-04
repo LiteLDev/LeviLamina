@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ChemistryRecipes {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHEMISTRYRECIPES
 public:
+    // prevent constructor by default
     ChemistryRecipes& operator=(ChemistryRecipes const&) = delete;
     ChemistryRecipes(ChemistryRecipes const&)            = delete;
     ChemistryRecipes()                                   = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?addRecipes\@ChemistryRecipes\@\@SAXAEAVRecipes\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?addRecipes@ChemistryRecipes@@SAXAEAVRecipes@@@Z
     MCAPI static void addRecipes(class Recipes&);
+
+    // NOLINTEND
 };

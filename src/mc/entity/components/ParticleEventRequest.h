@@ -11,27 +11,23 @@ public:
 
     // ParticleEventRequest inner types define
     struct BreakingItemData {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARTICLEEVENTREQUEST_BREAKINGITEMDATA
     public:
+        // prevent constructor by default
         BreakingItemData& operator=(BreakingItemData const&) = delete;
         BreakingItemData(BreakingItemData const&)            = delete;
         BreakingItemData()                                   = delete;
-#endif
 
     public:
-        /**
-         * @symbol ??1BreakingItemData\@ParticleEventRequest\@\@QEAA\@XZ
-         */
+        // NOLINTBEGIN
+        // symbol: ??1BreakingItemData@ParticleEventRequest@@QEAA@XZ
         MCAPI ~BreakingItemData();
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARTICLEEVENTREQUEST
 public:
+    // prevent constructor by default
     ParticleEventRequest& operator=(ParticleEventRequest const&) = delete;
     ParticleEventRequest(ParticleEventRequest const&)            = delete;
     ParticleEventRequest()                                       = delete;
-#endif
-
-public:
 };

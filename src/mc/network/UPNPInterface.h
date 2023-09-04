@@ -6,35 +6,28 @@
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
 class UPNPInterface {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPNPINTERFACE
 public:
+    // prevent constructor by default
     UPNPInterface& operator=(UPNPInterface const&) = delete;
     UPNPInterface(UPNPInterface const&)            = delete;
     UPNPInterface()                                = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPNPINTERFACE
-    /**
-     * @symbol ?_onDisable\@UPNPInterface\@\@EEAAXXZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?_onDisable@UPNPInterface@@EEAAXXZ
     MCVAPI void _onDisable();
-    /**
-     * @symbol ?_onEnable\@UPNPInterface\@\@EEAAXXZ
-     */
+
+    // symbol: ?_onEnable@UPNPInterface@@EEAAXXZ
     MCVAPI void _onEnable();
-#endif
-    /**
-     * @symbol ??0UPNPInterface\@\@QEAA\@AEBV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@\@Z
-     */
+
+    // symbol: ??0UPNPInterface@@QEAA@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
     MCAPI UPNPInterface(class Bedrock::NonOwnerPointer<class AppPlatform> const&);
-    /**
-     * @symbol ?reset\@UPNPInterface\@\@QEAAXXZ
-     */
+
+    // symbol: ?reset@UPNPInterface@@QEAAXXZ
     MCAPI void reset();
-    /**
-     * @symbol ?tick\@UPNPInterface\@\@QEAAXXZ
-     */
+
+    // symbol: ?tick@UPNPInterface@@QEAAXXZ
     MCAPI void tick();
+
+    // NOLINTEND
 };

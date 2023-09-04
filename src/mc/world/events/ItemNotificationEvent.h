@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ItemNotificationEvent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMNOTIFICATIONEVENT
 public:
+    // prevent constructor by default
     ItemNotificationEvent& operator=(ItemNotificationEvent const&) = delete;
     ItemNotificationEvent(ItemNotificationEvent const&)            = delete;
     ItemNotificationEvent()                                        = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1ItemNotificationEvent\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1ItemNotificationEvent@@QEAA@XZ
     MCAPI ~ItemNotificationEvent();
+
+    // NOLINTEND
 };

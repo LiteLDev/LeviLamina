@@ -3,21 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class PushActorsSystem {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PUSHACTORSSYSTEM
 public:
+    // prevent constructor by default
     PushActorsSystem& operator=(PushActorsSystem const&) = delete;
     PushActorsSystem(PushActorsSystem const&)            = delete;
     PushActorsSystem()                                   = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?createSystem\@PushActorsSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?createSystem@PushActorsSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
-    /**
-     * @symbol ?pushActors\@PushActorsSystem\@\@SAXAEAVActorOwnerComponent\@\@\@Z
-     */
+
+    // symbol: ?pushActors@PushActorsSystem@@SAXAEAVActorOwnerComponent@@@Z
     MCAPI static void pushActors(class ActorOwnerComponent&);
+
+    // NOLINTEND
 };

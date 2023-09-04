@@ -2,50 +2,40 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BytesDataInput {
+// auto generated inclusion list
+#include "mc/util/IDataInput.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BYTESDATAINPUT
+class BytesDataInput : public ::IDataInput {
 public:
-    BytesDataInput& operator=(BytesDataInput const&) = delete;
-    BytesDataInput(BytesDataInput const&)            = delete;
-    BytesDataInput()                                 = delete;
-#endif
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual ~BytesDataInput() = default;
 
-public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BYTESDATAINPUT
-    /**
-     * @symbol ?readByte\@BytesDataInput\@\@UEAADXZ
-     */
-    MCVAPI char readByte();
-    /**
-     * @symbol ?readDouble\@BytesDataInput\@\@UEAANXZ
-     */
-    MCVAPI double readDouble();
-    /**
-     * @symbol ?readFloat\@BytesDataInput\@\@UEAAMXZ
-     */
-    MCVAPI float readFloat();
-    /**
-     * @symbol ?readInt\@BytesDataInput\@\@UEAAHXZ
-     */
-    MCVAPI int readInt();
-    /**
-     * @symbol ?readLongLong\@BytesDataInput\@\@UEAA_JXZ
-     */
-    MCVAPI __int64 readLongLong();
-    /**
-     * @symbol
-     * ?readLongString\@BytesDataInput\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCVAPI std::string readLongString();
-    /**
-     * @symbol ?readShort\@BytesDataInput\@\@UEAAFXZ
-     */
-    MCVAPI short readShort();
-    /**
-     * @symbol
-     * ?readString\@BytesDataInput\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCVAPI std::string readString();
-#endif
+    // vIndex: 1, symbol:
+    // ?readString@BytesDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    virtual std::string readString();
+
+    // vIndex: 2, symbol:
+    // ?readLongString@BytesDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    virtual std::string readLongString();
+
+    // vIndex: 3, symbol: ?readFloat@BytesDataInput@@UEAAMXZ
+    virtual float readFloat();
+
+    // vIndex: 4, symbol: ?readDouble@BytesDataInput@@UEAANXZ
+    virtual double readDouble();
+
+    // vIndex: 5, symbol: ?readByte@BytesDataInput@@UEAADXZ
+    virtual char readByte();
+
+    // vIndex: 6, symbol: ?readShort@BytesDataInput@@UEAAFXZ
+    virtual short readShort();
+
+    // vIndex: 7, symbol: ?readInt@BytesDataInput@@UEAAHXZ
+    virtual int readInt();
+
+    // vIndex: 8, symbol: ?readLongLong@BytesDataInput@@UEAA_JXZ
+    virtual int64 readLongLong();
+
+    // NOLINTEND
 };

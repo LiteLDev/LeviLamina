@@ -10,23 +10,21 @@ namespace mce { struct Degree; }
 namespace mce {
 
 struct Radian {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MCE_RADIAN
 public:
+    // prevent constructor by default
     Radian& operator=(Radian const&) = delete;
     Radian(Radian const&)            = delete;
     Radian()                         = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0Radian\@mce\@\@QEAA\@UDegree\@1\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0Radian@mce@@QEAA@UDegree@1@@Z
     MCAPI Radian(struct mce::Degree);
-    /**
-     * @symbol ?asFloat\@Radian\@mce\@\@QEBAAEBMXZ
-     */
+
+    // symbol: ?asFloat@Radian@mce@@QEBAAEBMXZ
     MCAPI float const& asFloat() const;
+
+    // NOLINTEND
 };
 
 }; // namespace mce

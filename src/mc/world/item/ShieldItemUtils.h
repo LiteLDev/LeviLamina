@@ -2,27 +2,35 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ShieldItemUtils {
+// auto generated inclusion list
+#include "mc/entity/utilities/ActorDamageCause.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHIELDITEMUTILS
+class ShieldItemUtils {
 public:
+    // prevent constructor by default
     ShieldItemUtils& operator=(ShieldItemUtils const&) = delete;
     ShieldItemUtils(ShieldItemUtils const&)            = delete;
     ShieldItemUtils()                                  = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?isBlockedDamageCause\@ShieldItemUtils\@\@SA_NAEBVActorDamageSource\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?isBlockedDamageCause@ShieldItemUtils@@SA_NAEBVActorDamageSource@@@Z
     MCAPI static bool isBlockedDamageCause(class ActorDamageSource const&);
 
-    // private:
+    // NOLINTEND
 
 private:
-    /**
-     * @symbol
-     * ?mAlwaysBlockableDamageCauses\@ShieldItemUtils\@\@0V?$vector\@W4ActorDamageCause\@\@V?$allocator\@W4ActorDamageCause\@\@\@std\@\@\@std\@\@B
-     */
-    MCAPI static std::vector<enum class ActorDamageCause> const mAlwaysBlockableDamageCauses;
+    // NOLINTBEGIN
+    // symbol:
+    // ?mAlwaysBlockableDamageCauses@ShieldItemUtils@@0V?$vector@W4ActorDamageCause@@V?$allocator@W4ActorDamageCause@@@std@@@std@@B
+    MCAPI static std::vector<::ActorDamageCause> const mAlwaysBlockableDamageCauses;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $mAlwaysBlockableDamageCauses() { return mAlwaysBlockableDamageCauses; }
+
+    // NOLINTEND
 };

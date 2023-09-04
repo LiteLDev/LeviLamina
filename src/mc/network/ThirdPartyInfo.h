@@ -3,23 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ThirdPartyInfo {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_THIRDPARTYINFO
 public:
+    // prevent constructor by default
     ThirdPartyInfo& operator=(ThirdPartyInfo const&) = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0ThirdPartyInfo\@\@QEAA\@XZ
-     */
-    MCAPI ThirdPartyInfo();
-    /**
-     * @symbol ??0ThirdPartyInfo\@\@QEAA\@AEBV0\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0ThirdPartyInfo@@QEAA@AEBV0@@Z
     MCAPI ThirdPartyInfo(class ThirdPartyInfo const&);
-    /**
-     * @symbol ??1ThirdPartyInfo\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0ThirdPartyInfo@@QEAA@XZ
+    MCAPI ThirdPartyInfo();
+
+    // symbol: ??1ThirdPartyInfo@@QEAA@XZ
     MCAPI ~ThirdPartyInfo();
+
+    // NOLINTEND
 };

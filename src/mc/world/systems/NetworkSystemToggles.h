@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct NetworkSystemToggles {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKSYSTEMTOGGLES
 public:
+    // prevent constructor by default
     NetworkSystemToggles& operator=(NetworkSystemToggles const&) = delete;
     NetworkSystemToggles(NetworkSystemToggles const&)            = delete;
     NetworkSystemToggles()                                       = delete;
-#endif
-
-public:
 };

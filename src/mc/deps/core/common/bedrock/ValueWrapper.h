@@ -5,23 +5,21 @@
 namespace Bedrock::JSONObject {
 
 class ValueWrapper {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_JSONOBJECT_VALUEWRAPPER
 public:
+    // prevent constructor by default
     ValueWrapper& operator=(ValueWrapper const&) = delete;
     ValueWrapper(ValueWrapper const&)            = delete;
     ValueWrapper()                               = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1ValueWrapper\@JSONObject\@Bedrock\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1ValueWrapper@JSONObject@Bedrock@@QEAA@XZ
     MCAPI ~ValueWrapper();
-    /**
-     * @symbol ?emptyObject\@ValueWrapper\@JSONObject\@Bedrock\@\@SA?AV123\@XZ
-     */
+
+    // symbol: ?emptyObject@ValueWrapper@JSONObject@Bedrock@@SA?AV123@XZ
     MCAPI static class Bedrock::JSONObject::ValueWrapper emptyObject();
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::JSONObject

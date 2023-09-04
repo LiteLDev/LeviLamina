@@ -2,38 +2,31 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PushableDescription {
+// auto generated inclusion list
+#include "mc/world/actor/ActorComponentDescription.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PUSHABLEDESCRIPTION
+struct PushableDescription : public ::ActorComponentDescription {
 public:
+    // prevent constructor by default
     PushableDescription& operator=(PushableDescription const&) = delete;
     PushableDescription(PushableDescription const&)            = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol ?getJsonName\@PushableDescription\@\@UEBAPEBDXZ
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: ?getJsonName@PushableDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?deserializeData\@PushableDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?deserializeData@PushableDescription@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PUSHABLEDESCRIPTION
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1PushableDescription@@UEAA@XZ
     MCVAPI ~PushableDescription();
-#endif
-    /**
-     * @symbol ??0PushableDescription\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0PushableDescription@@QEAA@XZ
     MCAPI PushableDescription();
+
+    // NOLINTEND
 };

@@ -3,17 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct SyncedAttribute {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SYNCEDATTRIBUTE
 public:
+    std::string mName;         // this+0x0
+    float       mMinValue;     // this+0x20
+    float       mCurrentValue; // this+0x24
+    float       mMaxValue;     // this+0x28
+
+    // prevent constructor by default
     SyncedAttribute& operator=(SyncedAttribute const&) = delete;
     SyncedAttribute(SyncedAttribute const&)            = delete;
     SyncedAttribute()                                  = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1SyncedAttribute\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1SyncedAttribute@@QEAA@XZ
     MCAPI ~SyncedAttribute();
+
+    // NOLINTEND
 };

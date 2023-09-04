@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ActorIsKnockedBackOnDeathFlag {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORISKNOCKEDBACKONDEATHFLAG
 public:
+    // prevent constructor by default
     ActorIsKnockedBackOnDeathFlag& operator=(ActorIsKnockedBackOnDeathFlag const&) = delete;
     ActorIsKnockedBackOnDeathFlag(ActorIsKnockedBackOnDeathFlag const&)            = delete;
     ActorIsKnockedBackOnDeathFlag()                                                = delete;
-#endif
-
-public:
 };

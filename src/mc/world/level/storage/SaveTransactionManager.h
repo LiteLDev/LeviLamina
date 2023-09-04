@@ -2,39 +2,41 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SaveTransactionManager {
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SAVETRANSACTIONMANAGER
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
+class SaveTransactionManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
+    // prevent constructor by default
     SaveTransactionManager& operator=(SaveTransactionManager const&) = delete;
     SaveTransactionManager(SaveTransactionManager const&)            = delete;
     SaveTransactionManager()                                         = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ??0SaveTransactionManager\@\@QEAA\@AEAVWorkerPool\@\@AEAVScheduler\@\@V?$function\@$$A6AX_N\@Z\@std\@\@\@Z
-     */
-    MCAPI SaveTransactionManager(class WorkerPool&, class Scheduler&, class std::function<void(bool)>);
-    /**
-     * @symbol ?onBeginCompaction\@SaveTransactionManager\@\@QEAAXXZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0SaveTransactionManager@@QEAA@AEAVWorkerPool@@AEAVScheduler@@V?$function@$$A6AX_N@Z@std@@@Z
+    MCAPI SaveTransactionManager(class WorkerPool&, class Scheduler&, std::function<void(bool)>);
+
+    // symbol: ?onBeginCompaction@SaveTransactionManager@@QEAAXXZ
     MCAPI void onBeginCompaction();
-    /**
-     * @symbol ?onEndCompaction\@SaveTransactionManager\@\@QEAAXXZ
-     */
+
+    // symbol: ?onEndCompaction@SaveTransactionManager@@QEAAXXZ
     MCAPI void onEndCompaction();
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol ?_hideGlobalSaveIcon\@SaveTransactionManager\@\@AEAAXXZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?_hideGlobalSaveIcon@SaveTransactionManager@@AEAAXXZ
     MCAPI void _hideGlobalSaveIcon();
-    /**
-     * @symbol ?_showGlobalSaveIcon\@SaveTransactionManager\@\@AEAAXXZ
-     */
+
+    // symbol: ?_showGlobalSaveIcon@SaveTransactionManager@@AEAAXXZ
     MCAPI void _showGlobalSaveIcon();
 
-private:
+    // NOLINTEND
 };

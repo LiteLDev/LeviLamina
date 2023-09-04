@@ -4,25 +4,22 @@
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/SHStairsDown.h"
+#include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
 class SHStartPiece : public ::SHStairsDown {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHSTARTPIECE
 public:
+    // prevent constructor by default
     SHStartPiece& operator=(SHStartPiece const&) = delete;
     SHStartPiece(SHStartPiece const&)            = delete;
     SHStartPiece()                               = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 2
-     * @symbol ?getType\@SHStartPiece\@\@UEBA?AW4StructurePieceType\@\@XZ
-     */
-    virtual enum class StructurePieceType getType() const;
+
+    // vIndex: 2, symbol: ?getType@SHStartPiece@@UEBA?AW4StructurePieceType@@XZ
+    virtual ::StructurePieceType getType() const;
+
+    // NOLINTEND
 };

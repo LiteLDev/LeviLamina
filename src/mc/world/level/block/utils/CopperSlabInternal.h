@@ -2,15 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-template<typename T0> class WeakPtr;
-// clang-format on
+// auto generated inclusion list
+#include "mc/common/wrapper/WeakPtr.h"
 
 namespace CopperSlabInternal {
-/**
- * @symbol ?BlockLegacy_nullptr\@CopperSlabInternal\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
- */
+// NOLINTBEGIN
+// symbol: ?BlockLegacy_nullptr@CopperSlabInternal@@3V?$WeakPtr@VBlockLegacy@@@@A
 MCAPI extern class WeakPtr<class BlockLegacy> BlockLegacy_nullptr;
+// NOLINTEND
 
 }; // namespace CopperSlabInternal

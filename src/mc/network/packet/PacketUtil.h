@@ -3,13 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace PacketUtil {
-/**
- * @symbol ?byteToDegrees\@PacketUtil\@\@YAMC\@Z
- */
-MCAPI float byteToDegrees(signed char);
-/**
- * @symbol ?degreesToByte\@PacketUtil\@\@YACM\@Z
- */
-MCAPI signed char degreesToByte(float);
+// NOLINTBEGIN
+// symbol: ?byteToDegrees@PacketUtil@@YAMC@Z
+MCAPI float byteToDegrees(schar);
+
+// symbol: ?degreesToByte@PacketUtil@@YACM@Z
+MCAPI schar degreesToByte(float);
+// NOLINTEND
 
 }; // namespace PacketUtil

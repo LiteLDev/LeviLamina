@@ -1,38 +1,43 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/EntityContext.h"
 
 class StackResultStorageEntity {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STACKRESULTSTORAGEENTITY
 public:
+    std::optional<EntityContext> mContext;
+
+    template <class Entity, bool IncludeRemoved = false>
+    constexpr Entity* tryUnwrap() {
+        if (_hasValue()) {
+            return Entity::tryGetFromEntity(_getStackRef(), IncludeRemoved);
+        }
+        return nullptr;
+    }
+
+    operator bool() const { return _hasValue(); } // NOLINT
+
+    // prevent constructor by default
     StackResultStorageEntity& operator=(StackResultStorageEntity const&) = delete;
     StackResultStorageEntity(StackResultStorageEntity const&)            = delete;
     StackResultStorageEntity()                                           = delete;
-#endif
 
-public:
     // protected:
-    /**
-     * @symbol ??0StackResultStorageEntity\@\@IEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI StackResultStorageEntity(class StackResultStorageEntity&&);
-    /**
-     * @symbol ??0StackResultStorageEntity\@\@IEAA\@AEBVWeakStorageEntity\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0StackResultStorageEntity@@IEAA@AEBVWeakStorageEntity@@@Z
     MCAPI StackResultStorageEntity(class WeakStorageEntity const&);
-    /**
-     * @symbol ??0StackResultStorageEntity\@\@IEAA\@AEBVOwnerStorageEntity\@\@\@Z
-     */
+
+    // symbol: ??0StackResultStorageEntity@@IEAA@$$QEAV0@@Z
+    MCAPI StackResultStorageEntity(class StackResultStorageEntity&&);
+
+    // symbol: ??0StackResultStorageEntity@@IEAA@AEBVOwnerStorageEntity@@@Z
     MCAPI StackResultStorageEntity(class OwnerStorageEntity const&);
-    /**
-     * @symbol ?_getStackRef\@StackResultStorageEntity\@\@IEBAAEAVEntityContext\@\@XZ
-     */
+
+    // symbol: ?_getStackRef@StackResultStorageEntity@@IEBAAEAVEntityContext@@XZ
     MCAPI class EntityContext& _getStackRef() const;
-    /**
-     * @symbol ?_hasValue\@StackResultStorageEntity\@\@IEBA_NXZ
-     */
+
+    // symbol: ?_hasValue@StackResultStorageEntity@@IEBA_NXZ
     MCAPI bool _hasValue() const;
 
-protected:
+    // NOLINTEND
 };

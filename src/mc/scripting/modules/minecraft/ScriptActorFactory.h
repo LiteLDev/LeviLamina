@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
@@ -14,27 +15,25 @@ namespace Scripting { class WeakLifetimeScope; }
 namespace ScriptModuleMinecraft {
 
 class ScriptActorFactory {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTACTORFACTORY
 public:
+    // prevent constructor by default
     ScriptActorFactory& operator=(ScriptActorFactory const&) = delete;
     ScriptActorFactory(ScriptActorFactory const&)            = delete;
     ScriptActorFactory()                                     = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?createHandle\@ScriptActorFactory\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@PEBVActor\@\@AEBVWeakLifetimeScope\@4\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?createHandle@ScriptActorFactory@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@PEBVActor@@AEBVWeakLifetimeScope@4@@Z
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
     createHandle(class Actor const*, class Scripting::WeakLifetimeScope const&);
-    /**
-     * @symbol
-     * ?getHandle\@ScriptActorFactory\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@PEBVActor\@\@AEBVWeakLifetimeScope\@4\@\@Z
-     */
+
+    // symbol:
+    // ?getHandle@ScriptActorFactory@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@PEBVActor@@AEBVWeakLifetimeScope@4@@Z
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
     getHandle(class Actor const*, class Scripting::WeakLifetimeScope const&);
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

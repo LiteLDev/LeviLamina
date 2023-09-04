@@ -3,27 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct BlockStateDefinition {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSTATEDEFINITION
 public:
+    // prevent constructor by default
     BlockStateDefinition& operator=(BlockStateDefinition const&) = delete;
     BlockStateDefinition(BlockStateDefinition const&)            = delete;
     BlockStateDefinition()                                       = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??4BlockStateDefinition\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??4BlockStateDefinition@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct BlockStateDefinition& operator=(struct BlockStateDefinition&&);
-    /**
-     * @symbol ??1BlockStateDefinition\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1BlockStateDefinition@@QEAA@XZ
     MCAPI ~BlockStateDefinition();
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol ?_copy\@BlockStateDefinition\@\@AEAAXAEBU1\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?_copy@BlockStateDefinition@@AEAAXAEBU1@@Z
     MCAPI void _copy(struct BlockStateDefinition const&);
+
+    // NOLINTEND
 };

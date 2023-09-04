@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct IReplayableActorInput {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IREPLAYABLEACTORINPUT
 public:
+    // prevent constructor by default
     IReplayableActorInput& operator=(IReplayableActorInput const&) = delete;
     IReplayableActorInput(IReplayableActorInput const&)            = delete;
     IReplayableActorInput()                                        = delete;
-#endif
-
-public:
 };

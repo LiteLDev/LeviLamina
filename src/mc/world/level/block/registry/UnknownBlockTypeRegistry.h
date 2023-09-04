@@ -2,33 +2,31 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class UnknownBlockTypeRegistry {
+// auto generated inclusion list
+#include "mc/world/level/block/registry/IUnknownBlockTypeRegistry.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UNKNOWNBLOCKTYPEREGISTRY
+class UnknownBlockTypeRegistry : public ::IUnknownBlockTypeRegistry {
 public:
+    // prevent constructor by default
     UnknownBlockTypeRegistry& operator=(UnknownBlockTypeRegistry const&) = delete;
     UnknownBlockTypeRegistry(UnknownBlockTypeRegistry const&)            = delete;
     UnknownBlockTypeRegistry()                                           = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getUnknownBlock\@UnknownBlockTypeRegistry\@\@UEAAAEBVBlock\@\@AEBVCompoundTag\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?getUnknownBlock@UnknownBlockTypeRegistry@@UEAAAEBVBlock@@AEBVCompoundTag@@@Z
     virtual class Block const& getUnknownBlock(class CompoundTag const&);
 
-    // private:
-    /**
-     * @symbol
-     * ?_registerBlock\@UnknownBlockTypeRegistry\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_K\@Z
-     */
-    MCAPI void _registerBlock(std::string const&, unsigned __int64);
+    // NOLINTEND
 
-private:
+    // private:
+    // NOLINTBEGIN
+    // symbol:
+    // ?_registerBlock@UnknownBlockTypeRegistry@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K@Z
+    MCAPI void _registerBlock(std::string const&, uint64);
+
+    // NOLINTEND
 };

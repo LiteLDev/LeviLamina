@@ -2,26 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class WorkDefinition {
+// auto generated inclusion list
+#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORKDEFINITION
+class WorkDefinition : public ::BaseGoalDefinition {
 public:
+    // prevent constructor by default
     WorkDefinition(WorkDefinition const&) = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKDEFINITION
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual void __unk_vfn_0();
+
+    // symbol: ??1WorkDefinition@@UEAA@XZ
     MCVAPI ~WorkDefinition();
-#endif
-    /**
-     * @symbol ??0WorkDefinition\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0WorkDefinition@@QEAA@XZ
     MCAPI WorkDefinition();
-    /**
-     * @symbol ??4WorkDefinition\@\@QEAAAEAV0\@AEBV0\@\@Z
-     */
+
+    // symbol: ??4WorkDefinition@@QEAAAEAV0@AEBV0@@Z
     MCAPI class WorkDefinition& operator=(class WorkDefinition const&);
+
+    // NOLINTEND
 };

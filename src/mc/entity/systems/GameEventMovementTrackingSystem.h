@@ -2,44 +2,38 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class GameEventMovementTrackingSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEEVENTMOVEMENTTRACKINGSYSTEM
+class GameEventMovementTrackingSystem : public ::ITickingSystem {
 public:
+    // prevent constructor by default
     GameEventMovementTrackingSystem& operator=(GameEventMovementTrackingSystem const&) = delete;
     GameEventMovementTrackingSystem(GameEventMovementTrackingSystem const&)            = delete;
     GameEventMovementTrackingSystem()                                                  = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?tick\@GameEventMovementTrackingSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?tick@GameEventMovementTrackingSystem@@UEAAXAEAVEntityRegistry@@@Z
     virtual void tick(class EntityRegistry&);
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol
-     * ?_tickGameEventMovementTrackingComponent\@GameEventMovementTrackingSystem\@\@CAXAEAVActorOwnerComponent\@\@AEAVGameEventMovementTrackingComponent\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?_tickGameEventMovementTrackingComponent@GameEventMovementTrackingSystem@@CAXAEAVActorOwnerComponent@@AEAVGameEventMovementTrackingComponent@@@Z
     MCAPI static void
     _tickGameEventMovementTrackingComponent(class ActorOwnerComponent&, class GameEventMovementTrackingComponent&);
-    /**
-     * @symbol
-     * ?_trackMovement\@GameEventMovementTrackingSystem\@\@CAXAEAVActor\@\@AEAVGameEventMovementTrackingComponent\@\@\@Z
-     */
+
+    // symbol: ?_trackMovement@GameEventMovementTrackingSystem@@CAXAEAVActor@@AEAVGameEventMovementTrackingComponent@@@Z
     MCAPI static void _trackMovement(class Actor&, class GameEventMovementTrackingComponent&);
 
-private:
+    // NOLINTEND
 };

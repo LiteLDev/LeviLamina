@@ -1,5 +1,10 @@
 name: Build
-
+env:
+  VERSION: v0.0.0
+  ZIP_SHA256: ""
+  DLL_SHA256: ""
+  PDB_SHA256: ""
+  LIB_SHA256: ""
 on:
   push:
     paths:
@@ -68,7 +73,7 @@ jobs:
 
       - name: Build liteloader
         run: |
-          xmake f -p windows -m release -a x64 --ccache=n -y
+          xmake f -p windows -m release -a x64 --ccache=n -y -v
           xmake -w -y
 
       - name: Prepare Artifacts
@@ -128,6 +133,7 @@ jobs:
             liteloader-${{ env.VERSION }}-windows-amd64/LiteLoader.lib
             liteloader-${{ env.VERSION }}-windows-amd64/LiteLoader.pdb
           body: |
+            ---
             | File                                           | SHA256                |
             | :--------------------------------------------- | :-------------------- |
             | liteloader-${{ env.VERSION }}-windows-amd64.zip | ${{ env.ZIP_SHA256 }} |

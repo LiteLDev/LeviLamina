@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ActorAddedFlag {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORADDEDFLAG
 public:
+    // prevent constructor by default
     ActorAddedFlag& operator=(ActorAddedFlag const&) = delete;
     ActorAddedFlag(ActorAddedFlag const&)            = delete;
     ActorAddedFlag()                                 = delete;
-#endif
-
-public:
 };

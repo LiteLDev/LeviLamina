@@ -6,35 +6,36 @@
 #include "mc/world/level/Command.h"
 
 class StopCommand : public ::Command {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STOPCOMMAND
 public:
+    // prevent constructor by default
     StopCommand& operator=(StopCommand const&) = delete;
     StopCommand(StopCommand const&)            = delete;
     StopCommand()                              = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?execute\@StopCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?execute@StopCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol ?setup\@StopCommand\@\@SAXAEAVCommandRegistry\@\@AEAVDedicatedServer\@\@\@Z
-     */
+
+    // symbol: ?setup@StopCommand@@SAXAEAVCommandRegistry@@AEAVDedicatedServer@@@Z
     MCAPI static void setup(class CommandRegistry&, class DedicatedServer&);
 
-    // private:
+    // NOLINTEND
 
 private:
-    /**
-     * @symbol ?mServer\@StopCommand\@\@0PEAVDedicatedServer\@\@EA
-     */
+    // NOLINTBEGIN
+    // symbol: ?mServer@StopCommand@@0PEAVDedicatedServer@@EA
     MCAPI static class DedicatedServer* mServer;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $mServer() { return mServer; }
+
+    // NOLINTEND
 };

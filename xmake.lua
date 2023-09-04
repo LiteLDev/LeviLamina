@@ -20,11 +20,12 @@ add_requires("cpp-httplib v0.12.1")
 add_requires("entt v3.11.1")
 add_requires("fmt 9.1.0")
 add_requires("gsl v3.1.0")
+add_requires("gtest 1.12.1")
 add_requires("leveldb 1.23")
+add_requires("openssl 1.1.1-t") -- should be installed before mariadb-connector-c
 add_requires("mariadb-connector-c 3.3.4")
 add_requires("magic_enum v0.8.2")
 add_requires("nlohmann_json v3.11.2")
-add_requires("openssl 1.1.1-t")
 add_requires("rapidjson v1.1.0")
 
 -- liteldev-repo
@@ -34,13 +35,13 @@ add_requires("sqlitecpp 3.2.1")
 add_requires("fifo_map v1.0.0")
 add_requires("pcg_cpp v1.0.0")
 add_requires("nbt_cpp v1.0.1")
-add_requires("preloader v1.0.3")
+add_requires("preloader v1.1.0")
 add_requires("symbolprovider v1.0.1")
 
 if has_config("localbdslibrary") then
     add_requires("localbdslibrary")
 else
-    add_requires("bdslibrary 1.19.63.01")
+    add_requires("bdslibrary 1.20.15.01")
 end
 
 target("LiteLoader")
@@ -50,18 +51,18 @@ target("LiteLoader")
     set_symbols("debug")
     set_exceptions("none")
     set_pcxxheader("src/liteloader/api/Global.h")
-    add_headerfiles("src/(**.h)", "src/(**.hpp)", "src/(**.inl)")
+    add_headerfiles("src/(**.h)", "src/(**.hpp)")
     add_includedirs("./src")
-    add_cxflags("/utf-8", "/permissive-", "/EHa", "/W3")
+    add_cxflags("/utf-8", "/permissive-", "/EHa", "/W4")
     add_defines(
         "UNICODE", "LITELOADER_EXPORTS", "WIN32_LEAN_AND_MEAN", 
         "CPPHTTPLIB_OPENSSL_SUPPORT", "_AMD64_", "NOMINMAX", 
         "_CRT_SECURE_NO_WARNINGS"
     )
     add_shflags("/DELAYLOAD:bedrock_server.dll")
-    add_files("src/**.cpp", "src/**.rc")
+    add_files("src/**.cpp")
     -- xmake-repo
-    add_packages("asio", "cpp-httplib", "entt", "fmt", "gsl", "leveldb", "mariadb-connector-c", "magic_enum", "nlohmann_json", "openssl", "rapidjson")
+    add_packages("asio", "cpp-httplib", "entt", "fmt", "gsl", "gtest", "leveldb", "mariadb-connector-c", "magic_enum", "nlohmann_json", "openssl", "rapidjson")
     -- liteldev-repo
     add_packages("fifo_map", "pcg_cpp", "nbt_cpp", "dyncall", "compact_enc_det", "sqlitecpp", "preloader", "symbolprovider")
     if has_config("localbdslibrary") then

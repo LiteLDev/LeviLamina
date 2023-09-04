@@ -6,34 +6,25 @@
 #include "mc/entity/components/MoveControlDescription.h"
 
 class MoveControlSkipDescription : public ::MoveControlDescription {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVECONTROLSKIPDESCRIPTION
 public:
+    // prevent constructor by default
     MoveControlSkipDescription& operator=(MoveControlSkipDescription const&) = delete;
     MoveControlSkipDescription(MoveControlSkipDescription const&)            = delete;
     MoveControlSkipDescription()                                             = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol ?getJsonName\@MoveControlSkipDescription\@\@UEBAPEBDXZ
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: ?getJsonName@MoveControlSkipDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?deserializeData\@MoveControlDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?deserializeData@Description@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROLSKIPDESCRIPTION
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1MoveControlSkipDescription@@UEAA@XZ
     MCVAPI ~MoveControlSkipDescription();
-#endif
+
+    // NOLINTEND
 };

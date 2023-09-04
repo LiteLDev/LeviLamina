@@ -3,17 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class EducationLocalLevelSettings {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUCATIONLOCALLEVELSETTINGS
 public:
+    std::optional<std::string> mCodeBuilderOverrideUri;
+    bool                       mHasQuiz;
+
+    // prevent constructor by default
     EducationLocalLevelSettings& operator=(EducationLocalLevelSettings const&) = delete;
     EducationLocalLevelSettings(EducationLocalLevelSettings const&)            = delete;
     EducationLocalLevelSettings()                                              = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1EducationLocalLevelSettings\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1EducationLocalLevelSettings@@QEAA@XZ
     MCAPI ~EducationLocalLevelSettings();
+
+    // NOLINTEND
 };

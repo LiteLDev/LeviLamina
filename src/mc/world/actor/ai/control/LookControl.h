@@ -2,38 +2,31 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class LookControl {
+// auto generated inclusion list
+#include "mc/world/actor/ai/control/Control.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKCONTROL
+class LookControl : public ::Control {
 public:
+    // prevent constructor by default
     LookControl& operator=(LookControl const&) = delete;
     LookControl(LookControl const&)            = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?initializeInternal\@LookControl\@\@UEAAXAEAVMob\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?initializeInternal@LookControl@@UEAAXAEAVMob@@@Z
     virtual void initializeInternal(class Mob&);
-    /**
-     * @vftbl 2
-     * @symbol ?tick\@LookControl\@\@UEAAXAEAVMob\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?tick@LookControl@@UEAAXAEAVMob@@@Z
     virtual void tick(class Mob&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKCONTROL
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1LookControl@@UEAA@XZ
     MCVAPI ~LookControl();
-#endif
-    /**
-     * @symbol ??0LookControl\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0LookControl@@QEAA@XZ
     MCAPI LookControl();
+
+    // NOLINTEND
 };

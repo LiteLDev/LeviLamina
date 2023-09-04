@@ -2,18 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class MolangVersionMapping {
+// auto generated inclusion list
+#include "mc/util/molang/MolangVersion.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGVERSIONMAPPING
+class MolangVersionMapping {
 public:
+    // prevent constructor by default
     MolangVersionMapping& operator=(MolangVersionMapping const&) = delete;
     MolangVersionMapping(MolangVersionMapping const&)            = delete;
     MolangVersionMapping()                                       = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?getVersion\@MolangVersionMapping\@\@SA?BW4MolangVersion\@\@AEBVSemVersion\@\@\@Z
-     */
-    MCAPI static enum class MolangVersion const getVersion(class SemVersion const&);
+    // NOLINTBEGIN
+    // symbol: ?getVersion@MolangVersionMapping@@SA?BW4MolangVersion@@AEBVSemVersion@@@Z
+    MCAPI static ::MolangVersion const getVersion(class SemVersion const&);
+
+    // NOLINTEND
 };

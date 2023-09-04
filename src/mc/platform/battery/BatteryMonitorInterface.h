@@ -2,14 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BatteryMonitorInterface {
+// auto generated inclusion list
+#include "mc/enums/BatteryStatus.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BATTERYMONITORINTERFACE
+class BatteryMonitorInterface {
 public:
+    // prevent constructor by default
     BatteryMonitorInterface& operator=(BatteryMonitorInterface const&) = delete;
     BatteryMonitorInterface(BatteryMonitorInterface const&)            = delete;
     BatteryMonitorInterface()                                          = delete;
-#endif
 
 public:
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual void __unk_vfn_0();
+
+    // vIndex: 1, symbol: ?getBatteryStatus@FakeBatteryMonitorInterface@@UEBA?AW4BatteryStatus@@XZ
+    virtual ::BatteryStatus getBatteryStatus() const = 0;
+
+    // vIndex: 2, symbol: ?getBatteryLevel@FakeBatteryMonitorInterface@@UEBAMXZ
+    virtual float getBatteryLevel() const = 0;
+
+    // NOLINTEND
 };

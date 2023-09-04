@@ -2,31 +2,33 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Item;
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptItemType {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTITEMTYPE
 public:
+    // prevent constructor by default
     ScriptItemType& operator=(ScriptItemType const&) = delete;
     ScriptItemType(ScriptItemType const&)            = delete;
     ScriptItemType()                                 = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?getItem\@ScriptItemType\@ScriptModuleMinecraft\@\@QEBAAEBVItem\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?getItem@ScriptItemType@ScriptModuleMinecraft@@QEBAAEBVItem@@XZ
     MCAPI class Item const& getItem() const;
-    /**
-     * @symbol
-     * ?getName\@ScriptItemType\@ScriptModuleMinecraft\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // symbol:
+    // ?getName@ScriptItemType@ScriptModuleMinecraft@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getName() const;
-    /**
-     * @symbol ??8ScriptItemType\@ScriptModuleMinecraft\@\@QEBA_NAEBV01\@\@Z
-     */
+
+    // symbol: ??8ScriptItemType@ScriptModuleMinecraft@@QEBA_NAEBV01@@Z
     MCAPI bool operator==(class ScriptModuleMinecraft::ScriptItemType const&) const;
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

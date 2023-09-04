@@ -6,21 +6,19 @@
 #include "mc/util/ProfilerLite.h"
 
 class _ProfilerLiteTimer {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION__PROFILERLITETIMER
 public:
+    // prevent constructor by default
     _ProfilerLiteTimer& operator=(_ProfilerLiteTimer const&) = delete;
     _ProfilerLiteTimer(_ProfilerLiteTimer const&)            = delete;
     _ProfilerLiteTimer()                                     = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0_ProfilerLiteTimer\@\@QEAA\@AEAUScopedData\@ProfilerLite\@\@Vid\@thread\@std\@\@\@Z
-     */
-    MCAPI _ProfilerLiteTimer(struct ProfilerLite::ScopedData&, class std::thread::id);
-    /**
-     * @symbol ??1_ProfilerLiteTimer\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0_ProfilerLiteTimer@@QEAA@AEAUScopedData@ProfilerLite@@Vid@thread@std@@@Z
+    MCAPI _ProfilerLiteTimer(struct ProfilerLite::ScopedData&, std::thread::id);
+
+    // symbol: ??1_ProfilerLiteTimer@@QEAA@XZ
     MCAPI ~_ProfilerLiteTimer();
+
+    // NOLINTEND
 };

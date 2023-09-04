@@ -3,10 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace HangingActorMoveSystemImpl {
-/**
- * @symbol
- * ?doActorMoveSystem\@HangingActorMoveSystemImpl\@\@YAXAEAVActorOwnerComponent\@\@AEAUMoveRequestComponent\@\@\@Z
- */
+// NOLINTBEGIN
+// symbol: ?doActorMoveSystem@HangingActorMoveSystemImpl@@YAXAEAVActorOwnerComponent@@AEAUMoveRequestComponent@@@Z
 MCAPI void doActorMoveSystem(class ActorOwnerComponent&, struct MoveRequestComponent&);
+// NOLINTEND
 
 }; // namespace HangingActorMoveSystemImpl

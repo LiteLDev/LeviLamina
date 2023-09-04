@@ -11,33 +11,28 @@ namespace Core { class Path; }
 namespace Core {
 
 class FlatFileManifestTracker {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORE_FLATFILEMANIFESTTRACKER
 public:
+    // prevent constructor by default
     FlatFileManifestTracker& operator=(FlatFileManifestTracker const&) = delete;
     FlatFileManifestTracker(FlatFileManifestTracker const&)            = delete;
     FlatFileManifestTracker()                                          = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?loadManifest\@FlatFileManifestTracker\@Core\@\@QEAA?AV?$shared_ptr\@$$CBVFlatFileManifest\@Core\@\@\@std\@\@AEBVPath\@2\@\@Z
-     */
-    MCAPI class std::shared_ptr<class Core::FlatFileManifest const> loadManifest(class Core::Path const&);
-    /**
-     * @symbol ?manifestExists\@FlatFileManifestTracker\@Core\@\@QEBA_NAEBVPath\@2\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?loadManifest@FlatFileManifestTracker@Core@@QEAA?AV?$shared_ptr@$$CBVFlatFileManifest@Core@@@std@@AEBVPath@2@@Z
+    MCAPI std::shared_ptr<class Core::FlatFileManifest const> loadManifest(class Core::Path const&);
+
+    // symbol: ?manifestExists@FlatFileManifestTracker@Core@@QEBA_NAEBVPath@2@@Z
     MCAPI bool manifestExists(class Core::Path const&) const;
-    /**
-     * @symbol ?tryUnloadManifest\@FlatFileManifestTracker\@Core\@\@QEAA_NAEBVPath\@2\@\@Z
-     */
+
+    // symbol: ?tryUnloadManifest@FlatFileManifestTracker@Core@@QEAA_NAEBVPath@2@@Z
     MCAPI bool tryUnloadManifest(class Core::Path const&);
-    /**
-     * @symbol
-     * ?updateManifest\@FlatFileManifestTracker\@Core\@\@QEAAXV?$shared_ptr\@VFlatFileManifest\@Core\@\@\@std\@\@_N\@Z
-     */
-    MCAPI void updateManifest(class std::shared_ptr<class Core::FlatFileManifest>, bool);
+
+    // symbol: ?updateManifest@FlatFileManifestTracker@Core@@QEAAXV?$shared_ptr@VFlatFileManifest@Core@@@std@@_N@Z
+    MCAPI void updateManifest(std::shared_ptr<class Core::FlatFileManifest>, bool);
+
+    // NOLINTEND
 };
 
 }; // namespace Core

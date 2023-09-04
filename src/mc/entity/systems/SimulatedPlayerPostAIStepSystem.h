@@ -3,26 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class SimulatedPlayerPostAIStepSystem {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMULATEDPLAYERPOSTAISTEPSYSTEM
 public:
+    // prevent constructor by default
     SimulatedPlayerPostAIStepSystem& operator=(SimulatedPlayerPostAIStepSystem const&) = delete;
     SimulatedPlayerPostAIStepSystem(SimulatedPlayerPostAIStepSystem const&)            = delete;
     SimulatedPlayerPostAIStepSystem()                                                  = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?createSystem\@SimulatedPlayerPostAIStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?createSystem@SimulatedPlayerPostAIStepSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol
-     * ?_doSimulatedPlayerPostAIStepSystem\@SimulatedPlayerPostAIStepSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?_doSimulatedPlayerPostAIStepSystem@SimulatedPlayerPostAIStepSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
     MCAPI static void _doSimulatedPlayerPostAIStepSystem(class StrictEntityContext const&, class ActorOwnerComponent&);
 
-private:
+    // NOLINTEND
 };

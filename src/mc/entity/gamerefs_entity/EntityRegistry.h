@@ -1,45 +1,37 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/gamerefs_entity/EntityRegistryBase.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/WeakRefT.h"
 
-class EntityRegistry {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYREGISTRY
-public:
-    EntityRegistry& operator=(EntityRegistry const&) = delete;
-    EntityRegistry(EntityRegistry const&)            = delete;
-    EntityRegistry()                                 = delete;
-#endif
+class EntityRegistry : public EntityRegistryBase, public std::enable_shared_from_this<EntityRegistry> {
 
 public:
-    /**
-     * @symbol ?getWeakRef\@EntityRegistry\@\@QEAA?AV?$WeakRefT\@UEntityRegistryRefTraits\@\@\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?getWeakRef@EntityRegistry@@QEAA?AV?$WeakRefT@UEntityRegistryRefTraits@@@@XZ
     MCAPI class WeakRefT<struct EntityRegistryRefTraits> getWeakRef();
-    /**
-     * @symbol ??1EntityRegistry\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1EntityRegistry@@QEAA@XZ
     MCAPI ~EntityRegistry();
 
+    // NOLINTEND
+
     // protected:
-    /**
-     * @symbol ??0EntityRegistry\@\@IEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0EntityRegistry@@IEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI EntityRegistry(std::string);
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol ?_createEntity\@EntityRegistry\@\@AEAA?AVEntityContext\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?_createEntity@EntityRegistry@@AEAA?AVEntityContext@@XZ
     MCAPI class EntityContext _createEntity();
-    /**
-     * @symbol ?_destroyEntity\@EntityRegistry\@\@AEAAXVEntityContext\@\@\@Z
-     */
+
+    // symbol: ?_destroyEntity@EntityRegistry@@AEAAXVEntityContext@@@Z
     MCAPI void _destroyEntity(class EntityContext);
 
-protected:
-private:
+    // NOLINTEND
 };

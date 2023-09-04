@@ -2,8 +2,7 @@
 
 #include "liteloader/api/PlayerInfoAPI.h"
 #include "liteloader/api/db/Session.h"
-#include "liteloader/api/event/LegacyEvents.h"
-#include "liteloader/api/event/player/PlayerJoinEvent.h"
+// #include "liteloader/api/event/player/PlayerJoinEvent.h"
 
 #include "liteloader/core/LiteLoader.h"
 
@@ -35,7 +34,7 @@ std::optional<Info> findByName(const std::string& name) {
     }
     return {};
 }
-std::optional<Info> findByXuid(const xuid_t& xuid) {
+std::optional<Info> findByXuid(const std::string& xuid) {
     for (Info info : data) {
         if (info.xuid == xuid) {
             return info;
@@ -105,7 +104,7 @@ std::string getUUID(std::string name) {
     return res.has_value() ? res.value().uuid : "";
 }
 
-std::string getUUIDByXuid(xuid_t xuid) {
+std::string getUUIDByXuid(std::string xuid) {
     auto res = findByXuid(xuid);
     return res.has_value() ? res.value().uuid : "";
 }
@@ -141,7 +140,7 @@ void UpdatePlayerDatabase() {
     auto    query = db->query(R"(SELECT count(*) FROM sqlite_master WHERE type="table" AND name = "player")");
     DB::Any res   = query.data()->front();
     if (res.is_number()) {
-        if (res.get_number<unsigned short>() > 0) {
+        if (res.get_number<ushort>() > 0) {
             ll::logger.warn("Converting old PlayerInfo to new one, please wait.");
             db->execute(SQL_UPDATE_PLAYER_TABLE);
         }
@@ -160,19 +159,13 @@ bool InitPlayerDatabase() {
 
         PlayerInfo::data = db->prepare("SELECT NAME, XUID, UUID FROM player_new")->execute()->fetchAll<Info>();
 
-        // Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent&) {
-        //     if (Global<PropertiesSettings> && !Global<PropertiesSettings>->useOnlineAuthentication()) {
-        //         ll::logger.warn("Online Authentication(online-mode in server.properties) is disabled!");
+        // using ll::event::player::PlayerJoinEvent;
+        // PlayerJoinEvent::subscribe([](const PlayerJoinEvent& e) {
+        //     if (!e.getPlayer()->isSimulatedPlayer()) {
+        //         insert(e.getPlayer()->getRealName(), e.getPlayer()->getXuid(), e.getPlayer()->getUuid());
         //     }
         //     return true;
         // });
-        using ll::event::player::PlayerJoinEvent;
-        PlayerJoinEvent::subscribe([](const PlayerJoinEvent& e) {
-            if (!e.getPlayer()->isSimulatedPlayer()) {
-                insert(e.getPlayer()->getRealName(), e.getPlayer()->getXuid(), e.getPlayer()->getUuid());
-            }
-            return true;
-        });
     } catch (std::exception const& e) {
         ll::logger.error("Read PlayerDB Error: {}", e.what());
         return false;

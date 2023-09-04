@@ -6,35 +6,29 @@
 #include "mc/world/level/Command.h"
 
 class EffectCommand : public ::Command {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EFFECTCOMMAND
 public:
+    // prevent constructor by default
     EffectCommand& operator=(EffectCommand const&) = delete;
     EffectCommand(EffectCommand const&)            = delete;
     EffectCommand()                                = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?execute\@EffectCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?execute@EffectCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol ?setup\@EffectCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
-     */
+
+    // symbol: ?setup@EffectCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry&);
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol ?clear\@EffectCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?clear@EffectCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     MCAPI void clear(class CommandOrigin const&, class CommandOutput&) const;
 
-private:
+    // NOLINTEND
 };

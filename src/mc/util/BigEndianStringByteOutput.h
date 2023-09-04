@@ -6,49 +6,27 @@
 #include "mc/util/StringByteOutput.h"
 
 class BigEndianStringByteOutput : public ::StringByteOutput {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIGENDIANSTRINGBYTEOUTPUT
 public:
-    BigEndianStringByteOutput& operator=(BigEndianStringByteOutput const&) = delete;
-    BigEndianStringByteOutput(BigEndianStringByteOutput const&)            = delete;
-    BigEndianStringByteOutput()                                            = delete;
-#endif
+    using StringByteOutput::StringByteOutput;
 
-public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
-    virtual void __unk_vfn_0();
-    /**
-     * @vftbl 3
-     * @symbol ?writeFloat\@BigEndianStringByteOutput\@\@UEAAXM\@Z
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1BigEndianStringByteOutput@@UEAA@XZ
+    virtual ~BigEndianStringByteOutput();
+
+    // vIndex: 3, symbol: ?writeFloat@BigEndianStringByteOutput@@UEAAXM@Z
     virtual void writeFloat(float);
-    /**
-     * @vftbl 4
-     * @symbol ?writeDouble\@BigEndianStringByteOutput\@\@UEAAXN\@Z
-     */
+
+    // vIndex: 4, symbol: ?writeDouble@BigEndianStringByteOutput@@UEAAXN@Z
     virtual void writeDouble(double);
-    /**
-     * @vftbl 6
-     * @symbol ?writeShort\@BigEndianStringByteOutput\@\@UEAAXF\@Z
-     */
+
+    // vIndex: 6, symbol: ?writeShort@BigEndianStringByteOutput@@UEAAXF@Z
     virtual void writeShort(short);
-    /**
-     * @vftbl 7
-     * @symbol ?writeInt\@BigEndianStringByteOutput\@\@UEAAXH\@Z
-     */
+
+    // vIndex: 7, symbol: ?writeInt@BigEndianStringByteOutput@@UEAAXH@Z
     virtual void writeInt(int);
-    /**
-     * @vftbl 8
-     * @symbol ?writeLongLong\@BigEndianStringByteOutput\@\@UEAAX_J\@Z
-     */
-    virtual void writeLongLong(__int64);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIGENDIANSTRINGBYTEOUTPUT
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~BigEndianStringByteOutput();
-#endif
+
+    // vIndex: 8, symbol: ?writeLongLong@BigEndianStringByteOutput@@UEAAX_J@Z
+    virtual void writeLongLong(int64);
+
+    // NOLINTEND
 };

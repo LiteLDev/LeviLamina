@@ -4,11 +4,6 @@
 
 class IConnectionEventing {
 public:
-    // IConnectionEventing inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // IConnectionEventing inner types define
     enum class ConnectionFailureReason {};
 
@@ -18,12 +13,9 @@ public:
 
     enum class SignalServiceConnectState {};
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICONNECTIONEVENTING
 public:
+    // prevent constructor by default
     IConnectionEventing& operator=(IConnectionEventing const&) = delete;
     IConnectionEventing(IConnectionEventing const&)            = delete;
     IConnectionEventing()                                      = delete;
-#endif
-
-public:
 };

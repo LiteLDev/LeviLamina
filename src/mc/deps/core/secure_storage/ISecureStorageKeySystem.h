@@ -3,19 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ISecureStorageKeySystem {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISECURESTORAGEKEYSYSTEM
 public:
+    // prevent constructor by default
     ISecureStorageKeySystem& operator=(ISecureStorageKeySystem const&) = delete;
     ISecureStorageKeySystem(ISecureStorageKeySystem const&)            = delete;
     ISecureStorageKeySystem()                                          = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISECURESTORAGEKEYSYSTEM
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // symbol: ??1ISecureStorageKeySystem@@UEAA@XZ
     MCVAPI ~ISecureStorageKeySystem();
-#endif
+
+    // NOLINTEND
 };

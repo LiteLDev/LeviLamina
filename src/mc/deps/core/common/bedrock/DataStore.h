@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
 namespace Bedrock::JSONObject { class Node; }
 namespace Bedrock::JSONObject { class ValueWrapper; }
 namespace Core { class Path; }
@@ -11,7 +15,7 @@ namespace Core { class Path; }
 
 namespace Bedrock {
 
-class DataStore {
+class DataStore : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // DataStore inner types declare
     // clang-format off
@@ -24,172 +28,154 @@ public:
 
     // DataStore inner types define
     struct CustomFileHandlers {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_DATASTORE_CUSTOMFILEHANDLERS
     public:
+        // prevent constructor by default
         CustomFileHandlers& operator=(CustomFileHandlers const&) = delete;
         CustomFileHandlers(CustomFileHandlers const&)            = delete;
         CustomFileHandlers()                                     = delete;
-#endif
 
     public:
-        /**
-         * @symbol ??4CustomFileHandlers\@DataStore\@Bedrock\@\@QEAAAEAU012\@$$QEAU012\@\@Z
-         */
+        // NOLINTBEGIN
+        // symbol: ??4CustomFileHandlers@DataStore@Bedrock@@QEAAAEAU012@$$QEAU012@@Z
         MCAPI struct Bedrock::DataStore::CustomFileHandlers& operator=(struct Bedrock::DataStore::CustomFileHandlers&&);
-        /**
-         * @symbol ??1CustomFileHandlers\@DataStore\@Bedrock\@\@QEAA\@XZ
-         */
+
+        // symbol: ??1CustomFileHandlers@DataStore@Bedrock@@QEAA@XZ
         MCAPI ~CustomFileHandlers();
+
+        // NOLINTEND
     };
 
     class EditorImpl {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_DATASTORE_EDITORIMPL
     public:
+        // prevent constructor by default
         EditorImpl& operator=(EditorImpl const&) = delete;
         EditorImpl(EditorImpl const&)            = delete;
         EditorImpl()                             = delete;
-#endif
 
     public:
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // NOLINTBEGIN
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @vftbl 1
-         * @symbol
-         * ?getOwningDataStore\@EditorImpl\@DataStore\@Bedrock\@\@UEBA?AV?$not_null\@PEBVDataStore\@Bedrock\@\@\@gsl\@\@XZ
-         */
-        virtual class gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const;
-        /**
-         * @vftbl 2
-         * @symbol
-         * ?getOwningDataStore\@EditorImpl\@DataStore\@Bedrock\@\@UEAA?AV?$not_null\@PEAVDataStore\@Bedrock\@\@\@gsl\@\@XZ
-         */
-        virtual class gsl::not_null<class Bedrock::DataStore*> getOwningDataStore();
-        /**
-         * @vftbl 3
-         * @symbol
-         * ?getValueForKey\@EditorImpl\@DataStore\@Bedrock\@\@UEAAPEAVNode\@JSONObject\@3\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
-         */
+
+        // vIndex: 1, symbol:
+        // ?getOwningDataStore@EditorImpl@DataStore@Bedrock@@UEBA?AV?$not_null@PEBVDataStore@Bedrock@@@gsl@@XZ
+        virtual gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const;
+
+        // vIndex: 2, symbol:
+        // ?getOwningDataStore@EditorImpl@DataStore@Bedrock@@UEAA?AV?$not_null@PEAVDataStore@Bedrock@@@gsl@@XZ
+        virtual gsl::not_null<class Bedrock::DataStore*> getOwningDataStore();
+
+        // vIndex: 3, symbol:
+        // ?getValueForKey@EditorImpl@DataStore@Bedrock@@UEAAPEAVNode@JSONObject@3@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+        virtual class Bedrock::JSONObject::Node* getValueForKey(std::string_view);
+
+        // vIndex: 4, symbol:
+        // ?getValueForKey@EditorImpl@DataStore@Bedrock@@UEBAPEBVNode@JSONObject@3@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+        virtual class Bedrock::JSONObject::Node const* getValueForKey(std::string_view) const;
+
+        // vIndex: 5, symbol:
+        // ?setValueForKey@EditorImpl@DataStore@Bedrock@@UEAAPEAVNode@JSONObject@3@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVValueWrapper@53@@Z
         virtual class Bedrock::JSONObject::Node*
-            getValueForKey(class std::basic_string_view<char, struct std::char_traits<char>>);
-        /**
-         * @vftbl 4
-         * @symbol
-         * ?getValueForKey\@EditorImpl\@DataStore\@Bedrock\@\@UEBAPEBVNode\@JSONObject\@3\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
-         */
-        virtual class Bedrock::JSONObject::Node const*
-            getValueForKey(class std::basic_string_view<char, struct std::char_traits<char>>) const;
-        /**
-         * @vftbl 5
-         * @symbol
-         * ?setValueForKey\@EditorImpl\@DataStore\@Bedrock\@\@UEAAPEAVNode\@JSONObject\@3\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@AEBVValueWrapper\@53\@\@Z
-         */
-        virtual class Bedrock::JSONObject::Node*
-        setValueForKey(class std::basic_string_view<char, struct std::char_traits<char>>, class Bedrock::JSONObject::ValueWrapper const&);
+        setValueForKey(std::string_view, class Bedrock::JSONObject::ValueWrapper const&);
+
+        // NOLINTEND
     };
 
     class Impl {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_DATASTORE_IMPL
     public:
+        // prevent constructor by default
         Impl& operator=(Impl const&) = delete;
         Impl(Impl const&)            = delete;
         Impl()                       = delete;
-#endif
 
     public:
-        /**
-         * @symbol ??0Impl\@DataStore\@Bedrock\@\@QEAA\@PEAV12\@\@Z
-         */
+        // NOLINTBEGIN
+        // symbol: ??0Impl@DataStore@Bedrock@@QEAA@PEAV12@@Z
         MCAPI Impl(class Bedrock::DataStore*);
-        /**
-         * @symbol ?load\@Impl\@DataStore\@Bedrock\@\@QEAAXXZ
-         */
+
+        // symbol: ?load@Impl@DataStore@Bedrock@@QEAAXXZ
         MCAPI void load();
+
+        // NOLINTEND
     };
 
     class Viewer {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_DATASTORE_VIEWER
     public:
+        // prevent constructor by default
         Viewer& operator=(Viewer const&) = delete;
         Viewer(Viewer const&)            = delete;
         Viewer()                         = delete;
-#endif
 
     public:
+        // NOLINTBEGIN
+        // vIndex: 0, symbol: __unk_vfn_0
+        virtual void __unk_vfn_0();
+
+        // vIndex: 1, symbol:
+        // ?getOwningDataStore@EditorImpl@DataStore@Bedrock@@UEBA?AV?$not_null@PEBVDataStore@Bedrock@@@gsl@@XZ
+        virtual gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const = 0;
+
+        // vIndex: 2, symbol:
+        // ?getOwningDataStore@EditorImpl@DataStore@Bedrock@@UEAA?AV?$not_null@PEAVDataStore@Bedrock@@@gsl@@XZ
+        virtual gsl::not_null<class Bedrock::DataStore*> getOwningDataStore() = 0;
+
+        // vIndex: 3, symbol:
+        // ?getValueForKey@EditorImpl@DataStore@Bedrock@@UEBAPEBVNode@JSONObject@3@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+        virtual class Bedrock::JSONObject::Node const* getValueForKey(std::string_view) const = 0;
+
+        // NOLINTEND
     };
 
-    class ViewerImpl {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_DATASTORE_VIEWERIMPL
+    class ViewerImpl : public ::Bedrock::DataStore::Viewer {
     public:
+        // prevent constructor by default
         ViewerImpl& operator=(ViewerImpl const&) = delete;
         ViewerImpl(ViewerImpl const&)            = delete;
         ViewerImpl()                             = delete;
-#endif
 
     public:
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // NOLINTBEGIN
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @vftbl 1
-         * @symbol
-         * ?getOwningDataStore\@ViewerImpl\@DataStore\@Bedrock\@\@UEBA?AV?$not_null\@PEBVDataStore\@Bedrock\@\@\@gsl\@\@XZ
-         */
-        virtual class gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const;
-        /**
-         * @vftbl 2
-         * @symbol
-         * ?getOwningDataStore\@ViewerImpl\@DataStore\@Bedrock\@\@UEAA?AV?$not_null\@PEAVDataStore\@Bedrock\@\@\@gsl\@\@XZ
-         */
-        virtual class gsl::not_null<class Bedrock::DataStore*> getOwningDataStore();
-        /**
-         * @vftbl 3
-         * @symbol
-         * ?getValueForKey\@ViewerImpl\@DataStore\@Bedrock\@\@UEBAPEBVNode\@JSONObject\@3\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
-         */
-        virtual class Bedrock::JSONObject::Node const*
-            getValueForKey(class std::basic_string_view<char, struct std::char_traits<char>>) const;
+
+        // vIndex: 1, symbol:
+        // ?getOwningDataStore@ViewerImpl@DataStore@Bedrock@@UEBA?AV?$not_null@PEBVDataStore@Bedrock@@@gsl@@XZ
+        virtual gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const;
+
+        // vIndex: 2, symbol:
+        // ?getOwningDataStore@ViewerImpl@DataStore@Bedrock@@UEAA?AV?$not_null@PEAVDataStore@Bedrock@@@gsl@@XZ
+        virtual gsl::not_null<class Bedrock::DataStore*> getOwningDataStore();
+
+        // vIndex: 3, symbol:
+        // ?getValueForKey@ViewerImpl@DataStore@Bedrock@@UEBAPEBVNode@JSONObject@3@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+        virtual class Bedrock::JSONObject::Node const* getValueForKey(std::string_view) const;
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_DATASTORE
 public:
+    // prevent constructor by default
     DataStore& operator=(DataStore const&) = delete;
     DataStore(DataStore const&)            = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_DATASTORE
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // symbol: ??1DataStore@Bedrock@@UEAA@XZ
     MCVAPI ~DataStore();
-#endif
-    /**
-     * @symbol ??0DataStore\@Bedrock\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0DataStore@Bedrock@@QEAA@XZ
     MCAPI DataStore();
-    /**
-     * @symbol ?load\@DataStore\@Bedrock\@\@QEAAXXZ
-     */
+
+    // symbol: ?load@DataStore@Bedrock@@QEAAXXZ
     MCAPI void load();
-    /**
-     * @symbol ?setCustomFileHandlers\@DataStore\@Bedrock\@\@QEAAXUCustomFileHandlers\@12\@\@Z
-     */
+
+    // symbol: ?setCustomFileHandlers@DataStore@Bedrock@@QEAAXUCustomFileHandlers@12@@Z
     MCAPI void setCustomFileHandlers(struct Bedrock::DataStore::CustomFileHandlers);
-    /**
-     * @symbol ?setFilePath\@DataStore\@Bedrock\@\@QEAAXAEBVPath\@Core\@\@\@Z
-     */
+
+    // symbol: ?setFilePath@DataStore@Bedrock@@QEAAXAEBVPath@Core@@@Z
     MCAPI void setFilePath(class Core::Path const&);
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

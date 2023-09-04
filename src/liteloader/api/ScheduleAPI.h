@@ -31,14 +31,12 @@ public:
      *
      * @return True if canceled; otherwise false.
      */
-    LLAPI bool cancel();
+    LLAPI bool cancel() const;
 
     LLAPI ScheduleTask() = default;
-    LLAPI ScheduleTask(unsigned int taskId);
+    LLAPI ScheduleTask(uint taskId);
 
-    inline unsigned int getTaskId() {
-        return taskId;
-    }
+    inline uint getTaskId() { return taskId; }
 
     /**
      * @brief Check if the scheduled task is finished.
@@ -48,7 +46,7 @@ public:
     LLAPI bool isFinished() const;
 
 private:
-    unsigned int taskId;
+    uint taskId;
 };
 
 /**
@@ -67,44 +65,51 @@ private:
  * // Cancel the task
  * task.cancel();
  * @endcode
- * 
+ *
  * @note You should not assume a 0.05s gap between two ticks, for Minecraft does not guarantee 20 ticks per second.
  */
 namespace Schedule {
 
 /**
  * @brief Delay `tickDelay` ticks to execute the function.
- * 
+ *
  * @param task The function to execute
  * @param tickDelay The delayed ticks
  * @return The scheduled task
  */
-LLAPI ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay, HMODULE handle = GetCurrentModule());
+LLAPI ScheduleTask delay(std::function<void(void)> task, uint64 tickDelay, HMODULE handle = GetCurrentModule());
 
 /**
  * @brief Execute the function every `tickInterval` ticks.
- * 
+ *
  * @param task The function to execute
  * @param tickInterval The ticks in an interval
  * @param maxCount The maximum number of executions, -1 means the function will always execute
  * @return The scheduled task
  */
-LLAPI ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickInterval, int maxCount = -1, HMODULE handle = GetCurrentModule());
+LLAPI ScheduleTask
+repeat(std::function<void(void)> task, uint64 tickInterval, int maxCount = -1, HMODULE handle = GetCurrentModule());
 
 /**
  * @brief After `tickDelay` ticks, execute the function every `tickInterval` ticks.
- * 
+ *
  * @param task The function to execute
  * @param tickDelay The delayed ticks
  * @param tickInterval The ticks in an interval
  * @param maxCount The maximum number of executions, -1 means the function will always execute
  * @return The scheduled task
  */
-LLAPI ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay, unsigned long long tickInterval, int maxCount = -1, HMODULE handle = GetCurrentModule());
+LLAPI ScheduleTask delayRepeat(
+    std::function<void(void)> task,
+    uint64                    tickDelay,
+    uint64                    tickInterval,
+    int                       maxCount = -1,
+    HMODULE                   handle   = GetCurrentModule()
+);
 
 /**
  * @brief Execute the function the next tick.
- * 
+ *
  * @param task The function to execute
  * @return The scheduled task
  */

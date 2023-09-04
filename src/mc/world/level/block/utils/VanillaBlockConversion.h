@@ -2,24 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-template<typename T0> class WeakPtr;
-// clang-format on
+// auto generated inclusion list
+#include "mc/common/wrapper/WeakPtr.h"
 
 namespace VanillaBlockConversion {
-/**
- * @symbol ?getBlockTypeFromLegacyId\@VanillaBlockConversion\@\@YA?AV?$WeakPtr\@VBlockLegacy\@\@\@\@I\@Z
- */
-MCAPI class WeakPtr<class BlockLegacy> getBlockTypeFromLegacyId(unsigned int);
-/**
- * @symbol
- * ?getBlockTypeLegacyIdFromName\@VanillaBlockConversion\@\@YAHAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
- */
+// NOLINTBEGIN
+// symbol: ?getBlockTypeFromLegacyId@VanillaBlockConversion@@YA?AV?$WeakPtr@VBlockLegacy@@@@I@Z
+MCAPI class WeakPtr<class BlockLegacy> getBlockTypeFromLegacyId(uint);
+
+// symbol:
+// ?getBlockTypeLegacyIdFromName@VanillaBlockConversion@@YAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 MCAPI int getBlockTypeLegacyIdFromName(std::string const&);
-/**
- * @symbol ?tryGetLegacyState\@VanillaBlockConversion\@\@YAPEBVBlock\@\@II\@Z
- */
-MCAPI class Block const* tryGetLegacyState(unsigned int, unsigned int);
+
+// symbol: ?tryGetLegacyState@VanillaBlockConversion@@YAPEBVBlock@@II@Z
+MCAPI class Block const* tryGetLegacyState(uint, uint);
+// NOLINTEND
 
 }; // namespace VanillaBlockConversion

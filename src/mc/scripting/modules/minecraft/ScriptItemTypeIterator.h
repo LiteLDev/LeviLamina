@@ -8,29 +8,26 @@
 namespace ScriptModuleMinecraft {
 
 class ScriptItemTypeIterator {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTITEMTYPEITERATOR
 public:
+    // prevent constructor by default
     ScriptItemTypeIterator& operator=(ScriptItemTypeIterator const&) = delete;
     ScriptItemTypeIterator(ScriptItemTypeIterator const&)            = delete;
     ScriptItemTypeIterator()                                         = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??4ScriptItemTypeIterator\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??4ScriptItemTypeIterator@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptItemTypeIterator&
     operator=(class ScriptModuleMinecraft::ScriptItemTypeIterator&&);
-    /**
-     * @symbol ??1ScriptItemTypeIterator\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ScriptItemTypeIterator@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptItemTypeIterator();
-    /**
-     * @symbol
-     * ?bind\@ScriptItemTypeIterator\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptItemTypeIterator\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+
+    // symbol:
+    // ?bind@ScriptItemTypeIterator@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptItemTypeIterator@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemTypeIterator> bind();
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -16,11 +16,11 @@
 ////////////////////////////////////////////////////////////////////////
 
 
-#include <unordered_map>
 #include "WinHelper.h"
+#include "liteloader/api/Global.h"
 #include <minwindef.h>
 #include <string_view>
-#include "liteloader/api/Global.h"
+#include <unordered_map>
 
 LLAPI extern std::unordered_map<HMODULE, std::unordered_map<std::string, void*>> ll_PluginOwnData;
 
@@ -39,7 +39,7 @@ inline void removeImpl(HMODULE hPlugin, const std::string& key) {
 template <typename T, typename... Args>
 inline T& setImpl(HMODULE hPlugin, const std::string& key, const Args&... args) {
     removeImpl<T>(hPlugin, key);
-    T* res = new T(args...);
+    T* res                         = new T(args...);
     ll_PluginOwnData[hPlugin][key] = res;
     return *res;
 }
@@ -82,14 +82,12 @@ inline T& get(const std::string& key) {
     return getImpl<T>(GetCurrentModule(), key);
 }
 
-template <typename T, typename ... Args>
-inline T& getOr(const std::string& key, const Args& ... args) {
+template <typename T, typename... Args>
+inline T& getOr(const std::string& key, const Args&... args) {
     return getOrImpl<T>(GetCurrentModule(), key, args...);
 }
 
-inline bool has(const std::string& key) {
-    return hasImpl(GetCurrentModule(), key);
-}
+inline bool has(const std::string& key) { return hasImpl(GetCurrentModule(), key); }
 
 template <typename T>
 inline void remove(const std::string& key) {

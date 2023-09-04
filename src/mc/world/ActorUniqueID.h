@@ -3,21 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ActorUniqueID {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORUNIQUEID
 public:
-    ActorUniqueID& operator=(ActorUniqueID const&) = delete;
-    ActorUniqueID(ActorUniqueID const&)            = delete;
-    ActorUniqueID()                                = delete;
-#endif
+    int64 id;
+    ActorUniqueID() { id = -1; }
+
+    explicit ActorUniqueID(int64 i) { id = i; }
+
+    [[nodiscard]] constexpr int64 get() const { return id; }
+
+    constexpr explicit operator int64() const { return id; }
 
 public:
-    /**
-     * @symbol ?getHash\@ActorUniqueID\@\@QEBA_KXZ
-     */
-    MCAPI unsigned __int64 getHash() const;
-    /**
-     * @symbol ?INVALID_ID\@ActorUniqueID\@\@2U1\@B
-     */
+    // NOLINTBEGIN
+    // symbol: ?getHash@ActorUniqueID@@QEBA_KXZ
+    MCAPI uint64 getHash() const;
+
+    // symbol: ?INVALID_ID@ActorUniqueID@@2U1@B
     MCAPI static struct ActorUniqueID const INVALID_ID;
+
+    // NOLINTEND
 };

@@ -3,21 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct GameTestReport {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETESTREPORT
 public:
+    // prevent constructor by default
     GameTestReport& operator=(GameTestReport const&) = delete;
     GameTestReport(GameTestReport const&)            = delete;
     GameTestReport()                                 = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1GameTestReport\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1GameTestReport@@QEAA@XZ
     MCAPI ~GameTestReport();
-    /**
-     * @symbol ?bindType\@GameTestReport\@\@SAXXZ
-     */
+
+    // symbol: ?bindType@GameTestReport@@SAXXZ
     MCAPI static void bindType();
+
+    // NOLINTEND
 };

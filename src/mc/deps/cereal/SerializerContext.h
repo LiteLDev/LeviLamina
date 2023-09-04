@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal::internal { enum class ResultCode; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/cereal/internal/ResultCode.h"
 
 namespace cereal {
 
@@ -21,101 +19,87 @@ public:
     enum class ContextType {};
 
     struct LogEntry {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREAL_SERIALIZERCONTEXT_LOGENTRY
     public:
+        // prevent constructor by default
         LogEntry(LogEntry const&) = delete;
         LogEntry()                = delete;
-#endif
 
     public:
-        /**
-         * @symbol ??4LogEntry\@SerializerContext\@cereal\@\@QEAAAEAU012\@AEBU012\@\@Z
-         */
+        // NOLINTBEGIN
+        // symbol: ??4LogEntry@SerializerContext@cereal@@QEAAAEAU012@AEBU012@@Z
         MCAPI struct cereal::SerializerContext::LogEntry& operator=(struct cereal::SerializerContext::LogEntry const&);
-        /**
-         * @symbol ??1LogEntry\@SerializerContext\@cereal\@\@QEAA\@XZ
-         */
+
+        // symbol: ??1LogEntry@SerializerContext@cereal@@QEAA@XZ
         MCAPI ~LogEntry();
+
+        // NOLINTEND
     };
 
     class ScopedPop {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREAL_SERIALIZERCONTEXT_SCOPEDPOP
     public:
+        // prevent constructor by default
         ScopedPop& operator=(ScopedPop const&) = delete;
         ScopedPop(ScopedPop const&)            = delete;
         ScopedPop()                            = delete;
-#endif
 
     public:
-        /**
-         * @symbol ??1ScopedPop\@SerializerContext\@cereal\@\@QEAA\@XZ
-         */
+        // NOLINTBEGIN
+        // symbol: ??1ScopedPop@SerializerContext@cereal@@QEAA@XZ
         MCAPI ~ScopedPop();
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREAL_SERIALIZERCONTEXT
 public:
+    // prevent constructor by default
     SerializerContext& operator=(SerializerContext const&) = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0SerializerContext\@cereal\@\@QEAA\@XZ
-     */
-    MCAPI SerializerContext();
-    /**
-     * @symbol ??0SerializerContext\@cereal\@\@QEAA\@AEBV01\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0SerializerContext@cereal@@QEAA@AEBV01@@Z
     MCAPI SerializerContext(class cereal::SerializerContext const&);
-    /**
-     * @symbol ?clear\@SerializerContext\@cereal\@\@QEAAXXZ
-     */
+
+    // symbol: ??0SerializerContext@cereal@@QEAA@XZ
+    MCAPI SerializerContext();
+
+    // symbol: ?clear@SerializerContext@cereal@@QEAAXXZ
     MCAPI void clear();
-    /**
-     * @symbol ?consumeContext\@SerializerContext\@cereal\@\@QEAAX$$QEAV12\@\@Z
-     */
+
+    // symbol: ?consumeContext@SerializerContext@cereal@@QEAAX$$QEAV12@@Z
     MCAPI void consumeContext(class cereal::SerializerContext&&);
-    /**
-     * @symbol ?detachContext\@SerializerContext\@cereal\@\@QEAA?AV12\@XZ
-     */
+
+    // symbol: ?detachContext@SerializerContext@cereal@@QEAA?AV12@XZ
     MCAPI class cereal::SerializerContext detachContext();
-    /**
-     * @symbol
-     * ?getErrors\@SerializerContext\@cereal\@\@QEBA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
-     */
+
+    // symbol:
+    // ?getErrors@SerializerContext@cereal@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
     MCAPI std::vector<std::string> getErrors() const;
-    /**
-     * @symbol
-     * ?getLog\@SerializerContext\@cereal\@\@QEBAAEBV?$vector\@ULogEntry\@SerializerContext\@cereal\@\@V?$allocator\@ULogEntry\@SerializerContext\@cereal\@\@\@std\@\@\@std\@\@XZ
-     */
+
+    // symbol:
+    // ?getLog@SerializerContext@cereal@@QEBAAEBV?$vector@ULogEntry@SerializerContext@cereal@@V?$allocator@ULogEntry@SerializerContext@cereal@@@std@@@std@@XZ
     MCAPI std::vector<struct cereal::SerializerContext::LogEntry> const& getLog() const;
-    /**
-     * @symbol
-     * ?log\@SerializerContext\@cereal\@\@QEAA?AW4ResultCode\@internal\@2\@W4342\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI enum class cereal::internal::ResultCode log(enum class cereal::internal::ResultCode, std::string);
-    /**
-     * @symbol ?popContext\@SerializerContext\@cereal\@\@QEAAXXZ
-     */
+
+    // symbol:
+    // ?log@SerializerContext@cereal@@QEAA?AW4ResultCode@internal@2@W4342@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI ::cereal::internal::ResultCode log(::cereal::internal::ResultCode, std::string);
+
+    // symbol: ?popContext@SerializerContext@cereal@@QEAAXXZ
     MCAPI void popContext();
-    /**
-     * @symbol
-     * ?pushContext\@SerializerContext\@cereal\@\@QEAAAEAV12\@U?$pair\@W4ContextType\@SerializerContext\@cereal\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?pushContext@SerializerContext@cereal@@QEAAAEAV12@U?$pair@W4ContextType@SerializerContext@cereal@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
     MCAPI class cereal::SerializerContext&
-        pushContext(struct std::pair<enum class cereal::SerializerContext::ContextType, std::string>);
-    /**
-     * @symbol ??1SerializerContext\@cereal\@\@QEAA\@XZ
-     */
+        pushContext(std::pair<::cereal::SerializerContext::ContextType, std::string>);
+
+    // symbol: ??1SerializerContext@cereal@@QEAA@XZ
     MCAPI ~SerializerContext();
-    /**
-     * @symbol
-     * ?contextString\@SerializerContext\@cereal\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@U?$pair\@W4ContextType\@SerializerContext\@cereal\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@V?$allocator\@U?$pair\@W4ContextType\@SerializerContext\@cereal\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@2\@\@4\@\@Z
-     */
+
+    // symbol:
+    // ?contextString@SerializerContext@cereal@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@U?$pair@W4ContextType@SerializerContext@cereal@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@V?$allocator@U?$pair@W4ContextType@SerializerContext@cereal@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@4@@Z
     MCAPI static std::string
-    contextString(std::vector<struct std::pair<enum class cereal::SerializerContext::ContextType, std::string>> const&);
+    contextString(std::vector<std::pair<::cereal::SerializerContext::ContextType, std::string>> const&);
+
+    // NOLINTEND
 };
 
 }; // namespace cereal

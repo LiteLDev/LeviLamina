@@ -1,6 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/world/ActorUniqueID.h"
+#include "mc/world/actor/player/PlayerPermissionLevel.h"
+
 
 struct SerializedAbilitiesData {
 public:
@@ -10,44 +14,67 @@ public:
     // clang-format on
 
     // SerializedAbilitiesData inner types define
-    enum class SerializedAbilitiesLayer {};
+    enum class SerializedAbilitiesLayer : short {
+        CustomCache = 0x0,
+        Base        = 0x1,
+        Spectator   = 0x2,
+        Commands    = 0x3,
+        Editor      = 0x4,
+    };
 
     struct SerializedLayer {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERIALIZEDABILITIESDATA_SERIALIZEDLAYER
     public:
+        SerializedAbilitiesLayer mSerializedLayer; // this+0x0
+        uint                     mAbilitiesSet;    // this+0x4
+        uint                     mAbilityValues;   // this+0x8
+        float                    mFlySpeed;        // this+0xC
+        float                    mWalkSpeed;       // this+0x10
+
+        // prevent constructor by default
         SerializedLayer& operator=(SerializedLayer const&) = delete;
         SerializedLayer(SerializedLayer const&)            = delete;
         SerializedLayer()                                  = delete;
-#endif
-
-    public:
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERIALIZEDABILITIESDATA
 public:
+    ActorUniqueID                mTargetPlayer;       // this+0x0
+    CommandPermissionLevel       mCommandPermissions; // this+0x8
+    PlayerPermissionLevel        mPlayerPermissions;  // this+0x9
+    std::vector<SerializedLayer> mLayers;             // this+0x10
+
+    // prevent constructor by default
     SerializedAbilitiesData& operator=(SerializedAbilitiesData const&) = delete;
     SerializedAbilitiesData(SerializedAbilitiesData const&)            = delete;
     SerializedAbilitiesData()                                          = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0SerializedAbilitiesData\@\@QEAA\@UActorUniqueID\@\@AEBVLayeredAbilities\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0SerializedAbilitiesData@@QEAA@UActorUniqueID@@AEBVLayeredAbilities@@@Z
     MCAPI SerializedAbilitiesData(struct ActorUniqueID, class LayeredAbilities const&);
-    /**
-     * @symbol ?fillIn\@SerializedAbilitiesData\@\@QEBAXAEAVLayeredAbilities\@\@\@Z
-     */
+
+    // symbol: ?fillIn@SerializedAbilitiesData@@QEBAXAEAVLayeredAbilities@@@Z
     MCAPI void fillIn(class LayeredAbilities&) const;
-    /**
-     * @symbol ?getTargetPlayer\@SerializedAbilitiesData\@\@QEBA?AUActorUniqueID\@\@XZ
-     */
+
+    // symbol: ?getTargetPlayer@SerializedAbilitiesData@@QEBA?AUActorUniqueID@@XZ
     MCAPI struct ActorUniqueID getTargetPlayer() const;
-    /**
-     * @symbol ??1SerializedAbilitiesData\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1SerializedAbilitiesData@@QEAA@XZ
     MCAPI ~SerializedAbilitiesData();
 
-    // private:
+    // NOLINTEND
+
+private:
+    // NOLINTBEGIN
+    // symbol:
+    // ?ABILITIES_LAYER_MAP@SerializedAbilitiesData@@0V?$array@W4SerializedAbilitiesLayer@SerializedAbilitiesData@@$04@std@@B
+    MCAPI static std::array<::SerializedAbilitiesData::SerializedAbilitiesLayer, 5> const ABILITIES_LAYER_MAP;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $ABILITIES_LAYER_MAP() { return ABILITIES_LAYER_MAP; }
+
+    // NOLINTEND
 };

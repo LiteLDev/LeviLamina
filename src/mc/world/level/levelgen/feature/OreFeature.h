@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class OreFeature {
+// auto generated inclusion list
+#include "mc/world/level/levelgen/feature/IFeature.h"
+
+class OreFeature : public ::IFeature {
 public:
     // OreFeature inner types declare
     // clang-format off
@@ -11,48 +14,45 @@ public:
 
     // OreFeature inner types define
     class ReplaceRulesAccelerator {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OREFEATURE_REPLACERULESACCELERATOR
     public:
+        // prevent constructor by default
         ReplaceRulesAccelerator& operator=(ReplaceRulesAccelerator const&) = delete;
         ReplaceRulesAccelerator(ReplaceRulesAccelerator const&)            = delete;
         ReplaceRulesAccelerator()                                          = delete;
-#endif
 
     public:
-        /**
-         * @symbol
-         * ?setRules\@ReplaceRulesAccelerator\@OreFeature\@\@QEAAXAEBV?$vector\@UReplaceRule\@\@V?$allocator\@UReplaceRule\@\@\@std\@\@\@std\@\@\@Z
-         */
+        // NOLINTBEGIN
+        // symbol:
+        // ?setRules@ReplaceRulesAccelerator@OreFeature@@QEAAXAEBV?$vector@UReplaceRule@@V?$allocator@UReplaceRule@@@std@@@std@@@Z
         MCAPI void setRules(std::vector<struct ReplaceRule> const&);
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OREFEATURE
 public:
+    // prevent constructor by default
     OreFeature& operator=(OreFeature const&) = delete;
     OreFeature(OreFeature const&)            = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?place\@OreFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
-     */
-    virtual class std::optional<class BlockPos>
+
+    // vIndex: 1, symbol:
+    // ?place@OreFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
+    virtual std::optional<class BlockPos>
     place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
-    /**
-     * @symbol ??0OreFeature\@\@QEAA\@XZ
-     */
+
+    // vIndex: 2, symbol:
+    // ?isValidPlacement@IFeature@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    virtual bool isValidPlacement(std::string const&);
+
+    // symbol: ??0OreFeature@@QEAA@XZ
     MCAPI OreFeature();
-    /**
-     * @symbol
-     * ??0OreFeature\@\@QEAA\@H$$QEAV?$vector\@UReplaceRule\@\@V?$allocator\@UReplaceRule\@\@\@std\@\@\@std\@\@\@Z
-     */
+
+    // symbol: ??0OreFeature@@QEAA@H$$QEAV?$vector@UReplaceRule@@V?$allocator@UReplaceRule@@@std@@@std@@@Z
     MCAPI OreFeature(int, std::vector<struct ReplaceRule>&&);
+
+    // NOLINTEND
 };

@@ -1,9 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/SubChunkPos.h"
+#include "mc/world/level/dimension/Dimension.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/enums/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/world/AutomaticID.h"
 
@@ -12,121 +15,123 @@ public:
     // SubChunkPacket inner types declare
     // clang-format off
     class HeightmapData;
-    struct SubChunkPacketData;
     struct SubChunkPosOffset;
+    struct SubChunkPacketData;
     // clang-format on
 
     // SubChunkPacket inner types define
-    enum class HeightMapDataType {};
+    enum class HeightMapDataType : schar {
+        NoData     = 0x0,
+        HasData    = 0x1,
+        AllTooHigh = 0x2,
+        AllTooLow  = 0x3,
+    };
 
-    enum class SubChunkRequestResult {};
+    enum class SubChunkRequestResult : schar {
+        Undefined             = 0x0,
+        Success               = 0x1,
+        LevelChunkDoesntExist = 0x2,
+        WrongDimension        = 0x3,
+        PlayerDoesntExist     = 0x4,
+        IndexOutOfBounds      = 0x5,
+        SuccessAllAir         = 0x6,
+    };
 
     class HeightmapData {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKPACKET_HEIGHTMAPDATA
     public:
+        HeightMapDataType                         mHeightMapType;
+        std::array<std::array<schar, 16UL>, 16UL> mSubchunkHeightMap;
+        // prevent constructor by default
         HeightmapData& operator=(HeightmapData const&) = delete;
         HeightmapData(HeightmapData const&)            = delete;
         HeightmapData()                                = delete;
-#endif
 
     public:
-        /**
-         * @symbol ?HEIGHT_COLUMN_ABOVE_SUBCHUNK\@HeightmapData\@SubChunkPacket\@\@2CB
-         */
-        MCAPI static signed char const HEIGHT_COLUMN_ABOVE_SUBCHUNK;
-        /**
-         * @symbol ?HEIGHT_COLUMN_BELOW_SUBCHUNK\@HeightmapData\@SubChunkPacket\@\@2CB
-         */
-        MCAPI static signed char const HEIGHT_COLUMN_BELOW_SUBCHUNK;
-    };
+        // NOLINTBEGIN
+        // symbol: ?HEIGHT_COLUMN_ABOVE_SUBCHUNK@HeightmapData@SubChunkPacket@@2CB
+        MCAPI static schar const HEIGHT_COLUMN_ABOVE_SUBCHUNK;
 
-    struct SubChunkPacketData {
+        // symbol: ?HEIGHT_COLUMN_BELOW_SUBCHUNK@HeightmapData@SubChunkPacket@@2CB
+        MCAPI static schar const HEIGHT_COLUMN_BELOW_SUBCHUNK;
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKPACKET_SUBCHUNKPACKETDATA
-    public:
-        SubChunkPacketData& operator=(SubChunkPacketData const&) = delete;
-        SubChunkPacketData(SubChunkPacketData const&)            = delete;
-        SubChunkPacketData()                                     = delete;
-#endif
-
-    public:
-        /**
-         * @symbol
-         * ??0SubChunkPacketData\@SubChunkPacket\@\@QEAA\@AEBUSubChunkPosOffset\@1\@W4SubChunkRequestResult\@1\@\@Z
-         */
-        MCAPI SubChunkPacketData(
-            struct SubChunkPacket::SubChunkPosOffset const&,
-            enum class SubChunkPacket::SubChunkRequestResult
-        );
-        /**
-         * @symbol ??0SubChunkPacketData\@SubChunkPacket\@\@QEAA\@$$QEAU01\@\@Z
-         */
-        MCAPI SubChunkPacketData(struct SubChunkPacket::SubChunkPacketData&&);
-        /**
-         * @symbol ??1SubChunkPacketData\@SubChunkPacket\@\@QEAA\@XZ
-         */
-        MCAPI ~SubChunkPacketData();
+        // NOLINTEND
     };
 
     struct SubChunkPosOffset {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKPACKET_SUBCHUNKPOSOFFSET
     public:
+        schar mX;
+        schar mY;
+        schar mZ;
+        // prevent constructor by default
         SubChunkPosOffset& operator=(SubChunkPosOffset const&) = delete;
         SubChunkPosOffset(SubChunkPosOffset const&)            = delete;
         SubChunkPosOffset()                                    = delete;
-#endif
-
-    public:
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKPACKET
-public:
-    SubChunkPacket& operator=(SubChunkPacket const&) = delete;
-    SubChunkPacket(SubChunkPacket const&)            = delete;
-#endif
+    struct SubChunkPacketData {
+    public:
+        const SubChunkPosOffset mSubChunkPosOffset;
+        std::string             mSerializedSubChunk;
+        SubChunkRequestResult   mResult;
+        HeightmapData           mHeightMapData;
+        uint64                  mBlobId;
+        // prevent constructor by default
+        SubChunkPacketData& operator=(SubChunkPacketData const&) = delete;
+        SubChunkPacketData(SubChunkPacketData const&)            = delete;
+        SubChunkPacketData()                                     = delete;
+
+    public:
+        // NOLINTBEGIN
+        // symbol: ??0SubChunkPacketData@SubChunkPacket@@QEAA@AEBUSubChunkPosOffset@1@W4SubChunkRequestResult@1@@Z
+        MCAPI
+        SubChunkPacketData(struct SubChunkPacket::SubChunkPosOffset const&, ::SubChunkPacket::SubChunkRequestResult);
+
+        // symbol: ??0SubChunkPacketData@SubChunkPacket@@QEAA@$$QEAU01@@Z
+        MCAPI SubChunkPacketData(struct SubChunkPacket::SubChunkPacketData&&);
+
+        // symbol: ??1SubChunkPacketData@SubChunkPacket@@QEAA@XZ
+        MCAPI ~SubChunkPacketData();
+
+        // NOLINTEND
+    };
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    bool                            mCacheEnabled;  // this+0x30
+    DimensionType                   mDimensionType; // this+0x34
+    std::vector<SubChunkPacketData> mSubChunkData;  // this+0x38
+    SubChunkPos                     mCenterPos;     // this+0x50
+
+    // prevent constructor by default
+    SubChunkPacket& operator=(SubChunkPacket const&) = delete;
+    SubChunkPacket(SubChunkPacket const&)            = delete;
+
+public:
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getId\@SubChunkPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
-     */
-    virtual enum class MinecraftPacketIds getId() const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?getName\@SubChunkPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // vIndex: 1, symbol: ?getId@SubChunkPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    virtual ::MinecraftPacketIds getId() const;
+
+    // vIndex: 2, symbol:
+    // ?getName@SubChunkPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const;
-    /**
-     * @vftbl 3
-     * @symbol ?write\@SubChunkPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
-     */
+
+    // vIndex: 3, symbol: ?write@SubChunkPacket@@UEBAXAEAVBinaryStream@@@Z
     virtual void write(class BinaryStream&) const;
-    /**
-     * @vftbl 7
-     * @symbol
-     * ?_read\@SubChunkPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
-     */
-    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCHUNKPACKET
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // vIndex: 7, symbol:
+    // ?_read@SubChunkPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
+
+    // symbol: ??1SubChunkPacket@@UEAA@XZ
     MCVAPI ~SubChunkPacket();
-#endif
-    /**
-     * @symbol ??0SubChunkPacket\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0SubChunkPacket@@QEAA@XZ
     MCAPI SubChunkPacket();
-    /**
-     * @symbol ??0SubChunkPacket\@\@QEAA\@AEBV?$AutomaticID\@VDimension\@\@H\@\@AEBVSubChunkPos\@\@_N\@Z
-     */
+
+    // symbol: ??0SubChunkPacket@@QEAA@AEBV?$AutomaticID@VDimension@@H@@AEBVSubChunkPos@@_N@Z
     MCAPI SubChunkPacket(class AutomaticID<class Dimension, int> const&, class SubChunkPos const&, bool);
+
+    // NOLINTEND
 };

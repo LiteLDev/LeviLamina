@@ -11,66 +11,60 @@ public:
 
     // ProfilerLite inner types define
     struct ScopedData {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROFILERLITE_SCOPEDDATA
     public:
+        // prevent constructor by default
         ScopedData& operator=(ScopedData const&) = delete;
         ScopedData(ScopedData const&)            = delete;
         ScopedData()                             = delete;
-#endif
 
     public:
-        /**
-         * @symbol ??1ScopedData\@ProfilerLite\@\@QEAA\@XZ
-         */
+        // NOLINTBEGIN
+        // symbol: ??1ScopedData@ProfilerLite@@QEAA@XZ
         MCAPI ~ScopedData();
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROFILERLITE
 public:
+    // prevent constructor by default
     ProfilerLite& operator=(ProfilerLite const&) = delete;
     ProfilerLite(ProfilerLite const&)            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0ProfilerLite\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0ProfilerLite@@QEAA@XZ
     MCAPI ProfilerLite();
-    /**
-     * @symbol
-     * ?calculateAndSetServerNetworkTime\@ProfilerLite\@\@QEAAXV?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@\@Z
-     */
-    MCAPI void
-        calculateAndSetServerNetworkTime(class std::chrono::time_point<
-                                         struct std::chrono::steady_clock,
-                                         class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>);
-    /**
-     * @symbol
-     * ?calculateAndSetServerTickTimes\@ProfilerLite\@\@QEAAXV?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@\@Z
-     */
-    MCAPI void calculateAndSetServerTickTimes(class std::chrono::time_point<
-                                              struct std::chrono::steady_clock,
-                                              class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>);
-    /**
-     * @symbol
-     * ?getServerTickTime\@ProfilerLite\@\@QEBA?AV?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@chrono\@std\@\@XZ
-     */
-    MCAPI class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> getServerTickTime() const;
-    /**
-     * @symbol ??1ProfilerLite\@\@QEAA\@XZ
-     */
-    MCAPI ~ProfilerLite();
-    /**
-     * @symbol ?sEmptyThreadID\@ProfilerLite\@\@2Vid\@thread\@std\@\@A
-     */
-    MCAPI static class std::thread::id sEmptyThreadID;
 
-    // private:
+    // symbol:
+    // ?calculateAndSetServerNetworkTime@ProfilerLite@@QEAAXV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
+    MCAPI void calculateAndSetServerNetworkTime(std::chrono::steady_clock::time_point);
+
+    // symbol:
+    // ?calculateAndSetServerTickTimes@ProfilerLite@@QEAAXV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
+    MCAPI void calculateAndSetServerTickTimes(std::chrono::steady_clock::time_point);
+
+    // symbol: ?getServerTickTime@ProfilerLite@@QEBA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@XZ
+    MCAPI std::chrono::nanoseconds getServerTickTime() const;
+
+    // symbol: ??1ProfilerLite@@QEAA@XZ
+    MCAPI ~ProfilerLite();
+
+    // symbol: ?sEmptyThreadID@ProfilerLite@@2Vid@thread@std@@A
+    MCAPI static std::thread::id sEmptyThreadID;
+
+    // NOLINTEND
 
 private:
-    /**
-     * @symbol ?gProfilerLiteInstance\@ProfilerLite\@\@0V1\@A
-     */
+    // NOLINTBEGIN
+    // symbol: ?gProfilerLiteInstance@ProfilerLite@@0V1@A
     MCAPI static class ProfilerLite gProfilerLiteInstance;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $gProfilerLiteInstance() { return gProfilerLiteInstance; }
+
+    // NOLINTEND
 };

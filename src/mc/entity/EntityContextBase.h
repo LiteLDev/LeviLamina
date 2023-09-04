@@ -1,39 +1,45 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/EntityId.h"
+#include "mc/entity/gamerefs_entity/EntityRegistryBase.h"
 
 class EntityContextBase {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYCONTEXTBASE
 public:
-    EntityContextBase& operator=(EntityContextBase const&) = delete;
-    EntityContextBase(EntityContextBase const&)            = delete;
-    EntityContextBase()                                    = delete;
-#endif
+    class EntityRegistryBase& mRegistry;
+    class EntityId            mEntity;
+
+    [[nodiscard]] class entt::basic_registry<EntityId>& _enttRegistry() {
+        return mRegistry.mRegistry;
+    } [[nodiscard]] class entt::basic_registry<EntityId> const& _enttRegistry() const {
+        return mRegistry.mRegistry;
+    }
+
+    template <class T>
+    constexpr T* tryGetComponent() const {
+        return const_cast<T*>(_enttRegistry().try_get<T>(_getEntityId()));
+    }
 
 public:
-    /**
-     * @symbol ??0EntityContextBase\@\@QEAA\@AEAVEntityRegistryBase\@\@VEntityId\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0EntityContextBase@@QEAA@AEAVEntityRegistryBase@@VEntityId@@@Z
     MCAPI EntityContextBase(class EntityRegistryBase&, class EntityId);
-    /**
-     * @symbol ?isValid\@EntityContextBase\@\@QEBA_NXZ
-     */
+
+    // symbol: ?isValid@EntityContextBase@@QEBA_NXZ
     MCAPI bool isValid() const;
-    /**
-     * @symbol ??8EntityContextBase\@\@QEBA_NAEBV0\@\@Z
-     */
+
+    // symbol: ??8EntityContextBase@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class EntityContextBase const&) const;
 
-    // protected:
-    /**
-     * @symbol ?_getEntityId\@EntityContextBase\@\@IEBA?AVEntityId\@\@XZ
-     */
-    MCAPI class EntityId _getEntityId() const;
-    /**
-     * @symbol ?_getRegistryId\@EntityContextBase\@\@IEBAIXZ
-     */
-    MCAPI unsigned int _getRegistryId() const;
+    // NOLINTEND
 
-protected:
+    // protected:
+    // NOLINTBEGIN
+    // symbol: ?_getEntityId@EntityContextBase@@IEBA?AVEntityId@@XZ
+    MCAPI class EntityId _getEntityId() const;
+
+    // symbol: ?_getRegistryId@EntityContextBase@@IEBAIXZ
+    MCAPI uint _getRegistryId() const;
+
+    // NOLINTEND
 };

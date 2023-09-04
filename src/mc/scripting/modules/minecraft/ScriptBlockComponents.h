@@ -10,19 +10,18 @@ namespace Scripting { class ModuleBindingBuilder; }
 namespace ScriptModuleMinecraft {
 
 class ScriptBlockComponents {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTBLOCKCOMPONENTS
 public:
+    // prevent constructor by default
     ScriptBlockComponents& operator=(ScriptBlockComponents const&) = delete;
     ScriptBlockComponents(ScriptBlockComponents const&)            = delete;
     ScriptBlockComponents()                                        = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?bind\@ScriptBlockComponents\@ScriptModuleMinecraft\@\@SAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?bind@ScriptBlockComponents@ScriptModuleMinecraft@@SAXAEAVModuleBindingBuilder@Scripting@@@Z
     MCAPI static void bind(class Scripting::ModuleBindingBuilder&);
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

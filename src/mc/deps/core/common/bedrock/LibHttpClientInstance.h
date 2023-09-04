@@ -5,39 +5,46 @@
 namespace Bedrock::Http {
 
 class LibHttpClientInstance {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_HTTP_LIBHTTPCLIENTINSTANCE
 public:
+    // prevent constructor by default
     LibHttpClientInstance& operator=(LibHttpClientInstance const&) = delete;
     LibHttpClientInstance(LibHttpClientInstance const&)            = delete;
     LibHttpClientInstance()                                        = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_HTTP_LIBHTTPCLIENTINSTANCE
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // symbol: ??1LibHttpClientInstance@Http@Bedrock@@UEAA@XZ
     MCVAPI ~LibHttpClientInstance();
-#endif
+
+    // NOLINTEND
 
     // private:
-    /**
-     * @symbol
-     * ?_getSharedInstance\@LibHttpClientInstance\@Http\@Bedrock\@\@CA?AV?$shared_ptr\@VLibHttpClientInstance\@Http\@Bedrock\@\@\@std\@\@XZ
-     */
-    MCAPI static class std::shared_ptr<class Bedrock::Http::LibHttpClientInstance> _getSharedInstance();
+    // NOLINTBEGIN
+    // symbol:
+    // ?_getSharedInstance@LibHttpClientInstance@Http@Bedrock@@CA?AV?$shared_ptr@VLibHttpClientInstance@Http@Bedrock@@@std@@XZ
+    MCAPI static std::shared_ptr<class Bedrock::Http::LibHttpClientInstance> _getSharedInstance();
+
+    // NOLINTEND
 
 private:
-    /**
-     * @symbol ?sMutex\@LibHttpClientInstance\@Http\@Bedrock\@\@0Vmutex\@std\@\@A
-     */
-    MCAPI static class std::mutex sMutex;
-    /**
-     * @symbol
-     * ?sWeakInstance\@LibHttpClientInstance\@Http\@Bedrock\@\@0V?$weak_ptr\@VLibHttpClientInstance\@Http\@Bedrock\@\@\@std\@\@A
-     */
-    MCAPI static class std::weak_ptr<class Bedrock::Http::LibHttpClientInstance> sWeakInstance;
+    // NOLINTBEGIN
+    // symbol: ?sMutex@LibHttpClientInstance@Http@Bedrock@@0Vmutex@std@@A
+    MCAPI static std::mutex sMutex;
+
+    // symbol:
+    // ?sWeakInstance@LibHttpClientInstance@Http@Bedrock@@0V?$weak_ptr@VLibHttpClientInstance@Http@Bedrock@@@std@@A
+    MCAPI static std::weak_ptr<class Bedrock::Http::LibHttpClientInstance> sWeakInstance;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $sMutex() { return sMutex; }
+
+    inline auto& $sWeakInstance() { return sWeakInstance; }
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Http

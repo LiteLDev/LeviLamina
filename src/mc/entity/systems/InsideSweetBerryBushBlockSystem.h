@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace InsideSweetBerryBushBlockSystem {
-/**
- * @symbol ?createSystem\@InsideSweetBerryBushBlockSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
- */
+// NOLINTBEGIN
+// symbol: ?createSystem@InsideSweetBerryBushBlockSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
+// NOLINTEND
 
 }; // namespace InsideSweetBerryBushBlockSystem

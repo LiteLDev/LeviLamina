@@ -2,24 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class TargetGoalDefinition {
+// auto generated inclusion list
+#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TARGETGOALDEFINITION
+class TargetGoalDefinition : public ::BaseGoalDefinition {
 public:
+    // prevent constructor by default
     TargetGoalDefinition& operator=(TargetGoalDefinition const&) = delete;
     TargetGoalDefinition(TargetGoalDefinition const&)            = delete;
     TargetGoalDefinition()                                       = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETGOALDEFINITION
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual void __unk_vfn_0();
+
+    // symbol: ??1TargetGoalDefinition@@UEAA@XZ
     MCVAPI ~TargetGoalDefinition();
-#endif
-    /**
-     * @symbol ?initialize\@TargetGoalDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVTargetGoal\@\@\@Z
-     */
+
+    // symbol: ?initialize@TargetGoalDefinition@@QEBAXAEAVEntityContext@@AEAVTargetGoal@@@Z
     MCAPI void initialize(class EntityContext&, class TargetGoal&) const;
+
+    // NOLINTEND
 };

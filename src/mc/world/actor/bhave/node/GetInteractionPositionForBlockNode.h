@@ -3,43 +3,37 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/BehaviorStatus.h"
 #include "mc/world/Facing.h"
+#include "mc/world/actor/bhave/node/BehaviorNode.h"
 
-class GetInteractionPositionForBlockNode {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GETINTERACTIONPOSITIONFORBLOCKNODE
+class GetInteractionPositionForBlockNode : public ::BehaviorNode {
 public:
+    // prevent constructor by default
     GetInteractionPositionForBlockNode& operator=(GetInteractionPositionForBlockNode const&) = delete;
     GetInteractionPositionForBlockNode(GetInteractionPositionForBlockNode const&)            = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?tick\@GetInteractionPositionForBlockNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
-     */
-    virtual enum class BehaviorStatus tick(class Actor&);
-    /**
-     * @vftbl 2
-     * @symbol ?initializeFromDefinition\@GetInteractionPositionForBlockNode\@\@EEAAXAEAVActor\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?tick@GetInteractionPositionForBlockNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+    virtual ::BehaviorStatus tick(class Actor&);
+
+    // vIndex: 2, symbol: ?initializeFromDefinition@GetInteractionPositionForBlockNode@@EEAAXAEAVActor@@@Z
     virtual void initializeFromDefinition(class Actor&);
-    /**
-     * @symbol ??0GetInteractionPositionForBlockNode\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0GetInteractionPositionForBlockNode@@QEAA@XZ
     MCAPI GetInteractionPositionForBlockNode();
 
-    // private:
-    /**
-     * @symbol
-     * ?parseFacingNameFromString\@GetInteractionPositionForBlockNode\@\@AEAA?AW4Name\@Facing\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI enum class Facing::Name parseFacingNameFromString(std::string);
+    // NOLINTEND
 
-private:
+    // private:
+    // NOLINTBEGIN
+    // symbol:
+    // ?parseFacingNameFromString@GetInteractionPositionForBlockNode@@AEAA?AW4Name@Facing@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI ::Facing::Name parseFacingNameFromString(std::string);
+
+    // NOLINTEND
 };

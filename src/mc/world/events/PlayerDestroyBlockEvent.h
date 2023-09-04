@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct PlayerDestroyBlockEvent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERDESTROYBLOCKEVENT
 public:
+    // prevent constructor by default
     PlayerDestroyBlockEvent& operator=(PlayerDestroyBlockEvent const&) = delete;
     PlayerDestroyBlockEvent(PlayerDestroyBlockEvent const&)            = delete;
     PlayerDestroyBlockEvent()                                          = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1PlayerDestroyBlockEvent\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1PlayerDestroyBlockEvent@@QEAA@XZ
     MCAPI ~PlayerDestroyBlockEvent();
+
+    // NOLINTEND
 };

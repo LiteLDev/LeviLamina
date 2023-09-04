@@ -2,28 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class FunctionEntry {
+// auto generated inclusion list
+#include "mc/enums/FunctionQueueOrder.h"
+#include "mc/enums/FunctionState.h"
+#include "mc/server/commands/functions/IFunctionEntry.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FUNCTIONENTRY
+class FunctionEntry : public ::IFunctionEntry {
 public:
+    // prevent constructor by default
     FunctionEntry& operator=(FunctionEntry const&) = delete;
     FunctionEntry(FunctionEntry const&)            = delete;
     FunctionEntry()                                = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?execute\@FunctionEntry\@\@UEAAXAEAVFunctionManager\@\@AEBVCommandOrigin\@\@W4FunctionQueueOrder\@\@\@Z
-     */
-    virtual void execute(class FunctionManager&, class CommandOrigin const&, enum class FunctionQueueOrder);
-    /**
-     * @symbol ?getErrorState\@FunctionEntry\@\@QEBA?AW4FunctionState\@\@XZ
-     */
-    MCAPI enum class FunctionState getErrorState() const;
+
+    // vIndex: 1, symbol: ?execute@FunctionEntry@@UEAAXAEAVFunctionManager@@AEBVCommandOrigin@@W4FunctionQueueOrder@@@Z
+    virtual void execute(class FunctionManager&, class CommandOrigin const&, ::FunctionQueueOrder);
+
+    // symbol: ?getErrorState@FunctionEntry@@QEBA?AW4FunctionState@@XZ
+    MCAPI ::FunctionState getErrorState() const;
+
+    // NOLINTEND
 };

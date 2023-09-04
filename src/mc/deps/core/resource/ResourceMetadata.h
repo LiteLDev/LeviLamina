@@ -3,20 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ResourceMetadata {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEMETADATA
 public:
+    // prevent constructor by default
     ResourceMetadata& operator=(ResourceMetadata const&) = delete;
     ResourceMetadata(ResourceMetadata const&)            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0ResourceMetadata\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0ResourceMetadata@@QEAA@XZ
     MCAPI ResourceMetadata();
-    /**
-     * @symbol ??1ResourceMetadata\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ResourceMetadata@@QEAA@XZ
     MCAPI ~ResourceMetadata();
+
+    // NOLINTEND
 };

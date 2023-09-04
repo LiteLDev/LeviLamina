@@ -10,23 +10,21 @@ namespace Bedrock::PubSub::Detail { class PublisherBase; }
 namespace Bedrock::PubSub::Detail {
 
 class DispatchTargets {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_PUBSUB_DETAIL_DISPATCHTARGETS
 public:
+    // prevent constructor by default
     DispatchTargets& operator=(DispatchTargets const&) = delete;
     DispatchTargets(DispatchTargets const&)            = delete;
     DispatchTargets()                                  = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?loadSubscriptions\@DispatchTargets\@Detail\@PubSub\@Bedrock\@\@QEAA_NAEAVPublisherBase\@234\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?loadSubscriptions@DispatchTargets@Detail@PubSub@Bedrock@@QEAA_NAEAVPublisherBase@234@@Z
     MCAPI bool loadSubscriptions(class Bedrock::PubSub::Detail::PublisherBase&);
-    /**
-     * @symbol ??1DispatchTargets\@Detail\@PubSub\@Bedrock\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1DispatchTargets@Detail@PubSub@Bedrock@@QEAA@XZ
     MCAPI ~DispatchTargets();
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::PubSub::Detail

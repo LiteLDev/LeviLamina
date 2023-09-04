@@ -11,27 +11,24 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class ScaleByAgeDefinition {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCALEBYAGEDEFINITION
 public:
+    // prevent constructor by default
     ScaleByAgeDefinition& operator=(ScaleByAgeDefinition const&) = delete;
     ScaleByAgeDefinition(ScaleByAgeDefinition const&)            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0ScaleByAgeDefinition\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0ScaleByAgeDefinition@@QEAA@XZ
     MCAPI ScaleByAgeDefinition();
-    /**
-     * @symbol ?initialize\@ScaleByAgeDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVScaleByAgeComponent\@\@\@Z
-     */
+
+    // symbol: ?initialize@ScaleByAgeDefinition@@QEBAXAEAVEntityContext@@AEAVScaleByAgeComponent@@@Z
     MCAPI void initialize(class EntityContext&, class ScaleByAgeComponent&) const;
-    /**
-     * @symbol
-     * ?buildSchema\@ScaleByAgeDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VScaleByAgeDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?buildSchema@ScaleByAgeDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VScaleByAgeDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
-    buildSchema(class std::shared_ptr<
+    buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ScaleByAgeDefinition>>&);
+
+    // NOLINTEND
 };

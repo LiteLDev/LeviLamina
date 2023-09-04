@@ -11,20 +11,19 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 struct WalkAnimationSpeedDefinition {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WALKANIMATIONSPEEDDEFINITION
 public:
+    // prevent constructor by default
     WalkAnimationSpeedDefinition& operator=(WalkAnimationSpeedDefinition const&) = delete;
     WalkAnimationSpeedDefinition(WalkAnimationSpeedDefinition const&)            = delete;
     WalkAnimationSpeedDefinition()                                               = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?buildSchema\@WalkAnimationSpeedDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UWalkAnimationSpeedDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+    // NOLINTBEGIN
+    // symbol:
+    // ?buildSchema@WalkAnimationSpeedDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UWalkAnimationSpeedDefinition@@@JsonUtil@@@std@@@Z
+    MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
                                       class JsonUtil::EmptyClass,
                                       struct WalkAnimationSpeedDefinition>>&);
+
+    // NOLINTEND
 };

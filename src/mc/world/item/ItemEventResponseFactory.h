@@ -2,29 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ItemEventResponseFactory {
+// auto generated inclusion list
+#include "mc/util/EventResponseFactory.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMEVENTRESPONSEFACTORY
+class ItemEventResponseFactory : public ::EventResponseFactory {
 public:
+    // prevent constructor by default
     ItemEventResponseFactory& operator=(ItemEventResponseFactory const&) = delete;
     ItemEventResponseFactory(ItemEventResponseFactory const&)            = delete;
     ItemEventResponseFactory()                                           = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?initializeFactory\@ItemEventResponseFactory\@\@UEAAXAEBVExperiments\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?initializeFactory@ItemEventResponseFactory@@UEAAXAEBVExperiments@@@Z
     virtual void initializeFactory(class Experiments const&);
-    /**
-     * @vftbl 2
-     * @symbol ?initSchema\@ItemEventResponseFactory\@\@UEAAXXZ
-     */
+
+    // vIndex: 2, symbol: ?initSchema@ItemEventResponseFactory@@UEAAXXZ
     virtual void initSchema();
+
+    // NOLINTEND
 };

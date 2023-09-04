@@ -2,37 +2,33 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class HoldBlockSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOLDBLOCKSYSTEM
+class HoldBlockSystem : public ::ITickingSystem {
 public:
+    // prevent constructor by default
     HoldBlockSystem& operator=(HoldBlockSystem const&) = delete;
     HoldBlockSystem(HoldBlockSystem const&)            = delete;
     HoldBlockSystem()                                  = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?registerEvents\@HoldBlockSystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
-     */
-    virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>>&);
-    /**
-     * @vftbl 2
-     * @symbol ?tick\@HoldBlockSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
-     */
-    virtual void tick(class EntityRegistry&);
+
+    // vIndex: 1, symbol: ?registerEvents@HoldBlockSystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
+    virtual void registerEvents(entt::dispatcher&);
+
+    // symbol: ?tick@HoldBlockSystem@@UEAAXAEAVEntityRegistry@@@Z
+    MCVAPI void tick(class EntityRegistry&);
+
+    // NOLINTEND
 
     // private:
-    /**
-     * @symbol ?_holdBlockSystemOnActorDie\@HoldBlockSystem\@\@CAXAEAUActorDieEvent\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?_holdBlockSystemOnActorDie@HoldBlockSystem@@CAXAEAUActorDieEvent@@@Z
     MCAPI static void _holdBlockSystemOnActorDie(struct ActorDieEvent&);
 
-private:
+    // NOLINTEND
 };

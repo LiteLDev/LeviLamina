@@ -2,55 +2,47 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class WardenSpawnTrackerComponent {
+// auto generated inclusion list
+#include "mc/events/LevelSoundEvent.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WARDENSPAWNTRACKERCOMPONENT
+class WardenSpawnTrackerComponent {
 public:
+    // prevent constructor by default
     WardenSpawnTrackerComponent& operator=(WardenSpawnTrackerComponent const&) = delete;
     WardenSpawnTrackerComponent(WardenSpawnTrackerComponent const&)            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0WardenSpawnTrackerComponent\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0WardenSpawnTrackerComponent@@QEAA@XZ
     MCAPI WardenSpawnTrackerComponent();
-    /**
-     * @symbol ?addAdditionalSaveData\@WardenSpawnTrackerComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
-     */
+
+    // symbol: ?addAdditionalSaveData@WardenSpawnTrackerComponent@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void addAdditionalSaveData(class CompoundTag&) const;
-    /**
-     * @symbol ?canIncreaseThreatLevel\@WardenSpawnTrackerComponent\@\@QEBA_NXZ
-     */
+
+    // symbol: ?canIncreaseThreatLevel@WardenSpawnTrackerComponent@@QEBA_NXZ
     MCAPI bool canIncreaseThreatLevel() const;
-    /**
-     * @symbol ?copyDataFrom\@WardenSpawnTrackerComponent\@\@QEAAXAEBV1\@\@Z
-     */
+
+    // symbol: ?copyDataFrom@WardenSpawnTrackerComponent@@QEAAXAEBV1@@Z
     MCAPI void copyDataFrom(class WardenSpawnTrackerComponent const&);
-    /**
-     * @symbol
-     * ?readAdditionalSaveData\@WardenSpawnTrackerComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
-     */
+
+    // symbol:
+    // ?readAdditionalSaveData@WardenSpawnTrackerComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
-    /**
-     * @symbol ?tick\@WardenSpawnTrackerComponent\@\@QEAAXXZ
-     */
+
+    // symbol: ?tick@WardenSpawnTrackerComponent@@QEAAXXZ
     MCAPI void tick();
-    /**
-     * @symbol ?tryIncreaseThreatLevel\@WardenSpawnTrackerComponent\@\@QEAAHXZ
-     */
+
+    // symbol: ?tryIncreaseThreatLevel@WardenSpawnTrackerComponent@@QEAAHXZ
     MCAPI int tryIncreaseThreatLevel();
-    /**
-     * @symbol ?MAX_THREAT_LEVEL\@WardenSpawnTrackerComponent\@\@2HB
-     */
-    MCAPI static int const MAX_THREAT_LEVEL;
-    /**
-     * @symbol
-     * ?getSoundEventForThreatLevel\@WardenSpawnTrackerComponent\@\@SA?AV?$optional\@W4LevelSoundEvent\@\@\@std\@\@H\@Z
-     */
-    MCAPI static class std::optional<enum class LevelSoundEvent> getSoundEventForThreatLevel(int);
-    /**
-     * @symbol ?hasNearbyWarden\@WardenSpawnTrackerComponent\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
+
+    // symbol: ?getSoundEventForThreatLevel@WardenSpawnTrackerComponent@@SA?AV?$optional@W4LevelSoundEvent@@@std@@H@Z
+    MCAPI static std::optional<::LevelSoundEvent> getSoundEventForThreatLevel(int);
+
+    // symbol: ?hasNearbyWarden@WardenSpawnTrackerComponent@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool hasNearbyWarden(class BlockSource&, class BlockPos const&);
+
+    // symbol: ?MAX_THREAT_LEVEL@WardenSpawnTrackerComponent@@2HB
+    MCAPI static int const MAX_THREAT_LEVEL;
+
+    // NOLINTEND
 };

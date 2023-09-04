@@ -6,27 +6,22 @@
 #include "mc/world/attribute/AttributeInstanceDelegate.h"
 
 class ExhaustionAttributeDelegate : public ::AttributeInstanceDelegate {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXHAUSTIONATTRIBUTEDELEGATE
 public:
+    // prevent constructor by default
     ExhaustionAttributeDelegate& operator=(ExhaustionAttributeDelegate const&) = delete;
     ExhaustionAttributeDelegate(ExhaustionAttributeDelegate const&)            = delete;
     ExhaustionAttributeDelegate()                                              = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?tick\@ExhaustionAttributeDelegate\@\@UEAAXXZ
-     */
+
+    // vIndex: 1, symbol: ?tick@ExhaustionAttributeDelegate@@UEAAXXZ
     virtual void tick();
-    /**
-     * @symbol ??0ExhaustionAttributeDelegate\@\@QEAA\@AEBVAttributeInstance\@\@\@Z
-     */
+
+    // symbol: ??0ExhaustionAttributeDelegate@@QEAA@AEBVAttributeInstance@@@Z
     MCAPI ExhaustionAttributeDelegate(class AttributeInstance const&);
+
+    // NOLINTEND
 };

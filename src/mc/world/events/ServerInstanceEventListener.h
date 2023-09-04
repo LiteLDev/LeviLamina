@@ -4,47 +4,39 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/world/events/EventResult.h"
 
 class ServerInstanceEventListener {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERINSTANCEEVENTLISTENER
 public:
+    // prevent constructor by default
     ServerInstanceEventListener& operator=(ServerInstanceEventListener const&) = delete;
     ServerInstanceEventListener(ServerInstanceEventListener const&)            = delete;
     ServerInstanceEventListener()                                              = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCEEVENTLISTENER
-    /**
-     * @symbol ?onServerInitializeEnd\@ServerInstanceEventListener\@\@UEAA?AW4EventResult\@\@AEAVServerInstance\@\@\@Z
-     */
-    MCVAPI enum class EventResult onServerInitializeEnd(class ServerInstance&);
-    /**
-     * @symbol ?onServerInitializeStart\@ServerInstanceEventListener\@\@UEAA?AW4EventResult\@\@AEAVServerInstance\@\@\@Z
-     */
-    MCVAPI enum class EventResult onServerInitializeStart(class ServerInstance&);
-    /**
-     * @symbol
-     * ?onServerMinecraftInitialized\@ServerInstanceEventListener\@\@UEAA?AW4EventResult\@\@AEAVServerInstance\@\@AEBV?$not_null\@V?$NonOwnerPointer\@VMinecraft\@\@\@Bedrock\@\@\@gsl\@\@\@Z
-     */
-    MCVAPI enum class EventResult
-    onServerMinecraftInitialized(class ServerInstance&, class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const&);
-    /**
-     * @symbol ?onServerResume\@ServerInstanceEventListener\@\@UEAA?AW4EventResult\@\@AEAVServerInstance\@\@\@Z
-     */
-    MCVAPI enum class EventResult onServerResume(class ServerInstance&);
-    /**
-     * @symbol ?onServerSuspend\@ServerInstanceEventListener\@\@UEAA?AW4EventResult\@\@AEAVServerInstance\@\@\@Z
-     */
-    MCVAPI enum class EventResult onServerSuspend(class ServerInstance&);
-    /**
-     * @symbol ?onServerUpdateEnd\@ServerInstanceEventListener\@\@UEAA?AW4EventResult\@\@AEAVServerInstance\@\@\@Z
-     */
-    MCVAPI enum class EventResult onServerUpdateEnd(class ServerInstance&);
-    /**
-     * @symbol ?onStartLeaveGame\@ServerInstanceEventListener\@\@UEAA?AW4EventResult\@\@AEAVServerInstance\@\@\@Z
-     */
-    MCVAPI enum class EventResult onStartLeaveGame(class ServerInstance&);
-#endif
+    // NOLINTBEGIN
+    // symbol: ?onServerInitializeEnd@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
+    MCVAPI ::EventResult onServerInitializeEnd(class ServerInstance&);
+
+    // symbol: ?onServerInitializeStart@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
+    MCVAPI ::EventResult onServerInitializeStart(class ServerInstance&);
+
+    // symbol:
+    // ?onServerMinecraftInitialized@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@AEBV?$not_null@V?$NonOwnerPointer@VMinecraft@@@Bedrock@@@gsl@@@Z
+    MCVAPI ::EventResult
+    onServerMinecraftInitialized(class ServerInstance&, gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const&);
+
+    // symbol: ?onServerResume@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
+    MCVAPI ::EventResult onServerResume(class ServerInstance&);
+
+    // symbol: ?onServerSuspend@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
+    MCVAPI ::EventResult onServerSuspend(class ServerInstance&);
+
+    // symbol: ?onServerUpdateEnd@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
+    MCVAPI ::EventResult onServerUpdateEnd(class ServerInstance&);
+
+    // symbol: ?onStartLeaveGame@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
+    MCVAPI ::EventResult onStartLeaveGame(class ServerInstance&);
+
+    // NOLINTEND
 };

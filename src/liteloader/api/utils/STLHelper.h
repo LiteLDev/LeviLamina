@@ -1,6 +1,6 @@
 #pragma once
-#include <map>
 #include <functional>
+#include <map>
 
 template <typename ContainerT, typename PredicateT>
 void erase_if(ContainerT& items, const PredicateT& predicate) {

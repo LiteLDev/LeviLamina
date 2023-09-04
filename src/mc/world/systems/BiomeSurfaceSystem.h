@@ -6,14 +6,12 @@
 #include "mc/world/level/biome/surface/ISurfaceBuilder.h"
 
 namespace BiomeSurfaceSystem {
-/**
- * @symbol ?buildSurfaceAt\@BiomeSurfaceSystem\@\@YAXAEBUBuildParameters\@ISurfaceBuilder\@\@\@Z
- */
+// NOLINTBEGIN
+// symbol: ?buildSurfaceAt@BiomeSurfaceSystem@@YAXAEBUBuildParameters@ISurfaceBuilder@@@Z
 MCAPI void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const&);
-/**
- * @symbol
- * ?resolveBuilderImplementation\@BiomeSurfaceSystem\@\@YAXAEAVEntityRegistry\@\@AEBVSurfaceBuilderRegistry\@\@I\@Z
- */
-MCAPI void resolveBuilderImplementation(class EntityRegistry&, class SurfaceBuilderRegistry const&, unsigned int);
+
+// symbol: ?resolveBuilderImplementation@BiomeSurfaceSystem@@YAXAEAVEntityRegistry@@AEBVSurfaceBuilderRegistry@@I@Z
+MCAPI void resolveBuilderImplementation(class EntityRegistry&, class SurfaceBuilderRegistry const&, uint);
+// NOLINTEND
 
 }; // namespace BiomeSurfaceSystem

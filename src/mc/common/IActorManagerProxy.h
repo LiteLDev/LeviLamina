@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class IActorManagerProxy {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IACTORMANAGERPROXY
 public:
+    // prevent constructor by default
     IActorManagerProxy& operator=(IActorManagerProxy const&) = delete;
     IActorManagerProxy(IActorManagerProxy const&)            = delete;
     IActorManagerProxy()                                     = delete;
-#endif
-
-public:
 };

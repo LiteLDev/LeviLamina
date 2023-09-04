@@ -8,19 +8,18 @@
 namespace OperationNodeFilters {
 
 struct River {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OPERATIONNODEFILTERS_RIVER
 public:
+    // prevent constructor by default
     River& operator=(River const&) = delete;
     River(River const&)            = delete;
     River()                        = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??RRiver\@OperationNodeFilters\@\@QEBA_NAEAU?$NeighborhoodReader\@H$00$00\@OperationNodeDetails\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??RRiver@OperationNodeFilters@@QEBA_NAEAU?$NeighborhoodReader@H$00$00@OperationNodeDetails@@@Z
     MCAPI bool operator()(struct OperationNodeDetails::NeighborhoodReader<int, 1, 1>&) const;
+
+    // NOLINTEND
 };
 
 }; // namespace OperationNodeFilters

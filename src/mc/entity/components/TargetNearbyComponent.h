@@ -3,41 +3,34 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class TargetNearbyComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TARGETNEARBYCOMPONENT
 public:
+    // prevent constructor by default
     TargetNearbyComponent& operator=(TargetNearbyComponent const&) = delete;
     TargetNearbyComponent(TargetNearbyComponent const&)            = delete;
     TargetNearbyComponent()                                        = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?getWasInsideRange\@TargetNearbyComponent\@\@QEBA_NXZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?getWasInsideRange@TargetNearbyComponent@@QEBA_NXZ
     MCAPI bool getWasInsideRange() const;
-    /**
-     * @symbol ?getWasOutsideRange\@TargetNearbyComponent\@\@QEBA_NXZ
-     */
+
+    // symbol: ?getWasOutsideRange@TargetNearbyComponent@@QEBA_NXZ
     MCAPI bool getWasOutsideRange() const;
-    /**
-     * @symbol ?getWasSeenLastTick\@TargetNearbyComponent\@\@QEBA_NXZ
-     */
+
+    // symbol: ?getWasSeenLastTick@TargetNearbyComponent@@QEBA_NXZ
     MCAPI bool getWasSeenLastTick() const;
-    /**
-     * @symbol ?setPreviousDistance\@TargetNearbyComponent\@\@QEAAXM\@Z
-     */
+
+    // symbol: ?setPreviousDistance@TargetNearbyComponent@@QEAAXM@Z
     MCAPI void setPreviousDistance(float);
-    /**
-     * @symbol ?setWasInsideRange\@TargetNearbyComponent\@\@QEAAX_N\@Z
-     */
+
+    // symbol: ?setWasInsideRange@TargetNearbyComponent@@QEAAX_N@Z
     MCAPI void setWasInsideRange(bool);
-    /**
-     * @symbol ?setWasOutsideRange\@TargetNearbyComponent\@\@QEAAX_N\@Z
-     */
+
+    // symbol: ?setWasOutsideRange@TargetNearbyComponent@@QEAAX_N@Z
     MCAPI void setWasOutsideRange(bool);
-    /**
-     * @symbol ?setWasSeenLastTick\@TargetNearbyComponent\@\@QEAAX_N\@Z
-     */
+
+    // symbol: ?setWasSeenLastTick@TargetNearbyComponent@@QEAAX_N@Z
     MCAPI void setWasSeenLastTick(bool);
+
+    // NOLINTEND
 };

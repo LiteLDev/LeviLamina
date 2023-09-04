@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct BlockMovementSlowdownMultiplierComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKMOVEMENTSLOWDOWNMULTIPLIERCOMPONENT
 public:
+    // prevent constructor by default
     BlockMovementSlowdownMultiplierComponent& operator=(BlockMovementSlowdownMultiplierComponent const&) = delete;
     BlockMovementSlowdownMultiplierComponent(BlockMovementSlowdownMultiplierComponent const&)            = delete;
     BlockMovementSlowdownMultiplierComponent()                                                           = delete;
-#endif
-
-public:
 };

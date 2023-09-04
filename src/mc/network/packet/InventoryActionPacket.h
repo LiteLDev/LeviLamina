@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class InventoryActionPacket {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYACTIONPACKET
 public:
+    // prevent constructor by default
     InventoryActionPacket& operator=(InventoryActionPacket const&) = delete;
     InventoryActionPacket(InventoryActionPacket const&)            = delete;
     InventoryActionPacket()                                        = delete;
-#endif
-
-public:
 };

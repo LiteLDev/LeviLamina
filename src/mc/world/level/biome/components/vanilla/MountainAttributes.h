@@ -11,35 +11,29 @@ public:
 
     // MountainAttributes inner types define
     struct SteepMaterial {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOUNTAINATTRIBUTES_STEEPMATERIAL
     public:
+        // prevent constructor by default
         SteepMaterial& operator=(SteepMaterial const&) = delete;
         SteepMaterial(SteepMaterial const&)            = delete;
         SteepMaterial()                                = delete;
-#endif
-
-    public:
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOUNTAINATTRIBUTES
 public:
+    // prevent constructor by default
     MountainAttributes& operator=(MountainAttributes const&) = delete;
     MountainAttributes(MountainAttributes const&)            = delete;
     MountainAttributes()                                     = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0MountainAttributes\@\@QEAA\@$$QEAU0\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0MountainAttributes@@QEAA@$$QEAU0@@Z
     MCAPI MountainAttributes(struct MountainAttributes&&);
-    /**
-     * @symbol ??4MountainAttributes\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
+
+    // symbol: ??4MountainAttributes@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct MountainAttributes& operator=(struct MountainAttributes&&);
-    /**
-     * @symbol ??1MountainAttributes\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1MountainAttributes@@QEAA@XZ
     MCAPI ~MountainAttributes();
+
+    // NOLINTEND
 };

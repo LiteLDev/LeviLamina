@@ -2,29 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class LootSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTSYSTEM
+class LootSystem : public ::ITickingSystem {
 public:
+    // prevent constructor by default
     LootSystem& operator=(LootSystem const&) = delete;
     LootSystem(LootSystem const&)            = delete;
     LootSystem()                             = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?registerEvents\@LootSystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
-     */
-    virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>>&);
-    /**
-     * @vftbl 2
-     * @symbol ?tick\@LootSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
-     */
-    virtual void tick(class EntityRegistry&);
+
+    // vIndex: 1, symbol: ?registerEvents@LootSystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
+    virtual void registerEvents(entt::dispatcher&);
+
+    // symbol: ?tick@LootSystem@@UEAAXAEAVEntityRegistry@@@Z
+    MCVAPI void tick(class EntityRegistry&);
+
+    // NOLINTEND
 };

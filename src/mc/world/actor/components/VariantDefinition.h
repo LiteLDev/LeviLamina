@@ -11,20 +11,19 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 struct VariantDefinition {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VARIANTDEFINITION
 public:
+    // prevent constructor by default
     VariantDefinition& operator=(VariantDefinition const&) = delete;
     VariantDefinition(VariantDefinition const&)            = delete;
     VariantDefinition()                                    = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?buildSchema\@VariantDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UVariantDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?buildSchema@VariantDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UVariantDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
-    buildSchema(class std::shared_ptr<
+    buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct VariantDefinition>>&);
+
+    // NOLINTEND
 };

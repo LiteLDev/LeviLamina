@@ -5,6 +5,8 @@ package("localbdslibrary")
         import("core.project.config")
         import("net.http")
 
+        local pe_editor_version = "v3.3.0"
+
         package:set("installdir", path.join(config.buildir(), "bds"))
         local bedrock_server_api = path.join(package:installdir("lib"), "bedrock_server_api.lib")
         local bedrock_server_var = path.join(package:installdir("lib"), "bedrock_server_var.lib")
@@ -14,11 +16,11 @@ package("localbdslibrary")
         end
         -- generate lib
         print("[localbdslibrary] Local bds library not found, attempting to generate it...")
-        local tools_path = path.join(config.buildir(), "tools", "PeEditor.exe")
+        local tools_path = path.join(config.buildir(), "tools", "PeEditor-" .. pe_editor_version .. ".exe")
         if not os.isfile(tools_path) then
             -- not found, download it
             print("[localbdslibrary] Downloading PeEditor.exe...")
-            http.download("https://github.com/LiteLDev/PeEditor/releases/download/v3.1.1/PeEditor.exe", tools_path)
+            http.download("https://github.com/LiteLDev/PeEditor/releases/download/" .. pe_editor_version .. "/PeEditor.exe", tools_path)
             if not os.isfile(tools_path) then
                 raise("[localbdslibrary] Failed to download PeEditor.exe")
             end

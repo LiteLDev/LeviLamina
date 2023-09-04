@@ -11,20 +11,19 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class BarterDefinition {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BARTERDEFINITION
 public:
+    // prevent constructor by default
     BarterDefinition& operator=(BarterDefinition const&) = delete;
     BarterDefinition(BarterDefinition const&)            = delete;
     BarterDefinition()                                   = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?buildSchema\@BarterDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VBarterDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?buildSchema@BarterDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBarterDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
-    buildSchema(class std::shared_ptr<
+    buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BarterDefinition>>&);
+
+    // NOLINTEND
 };

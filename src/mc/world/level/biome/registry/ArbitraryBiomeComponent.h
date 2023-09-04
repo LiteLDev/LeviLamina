@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ArbitraryBiomeComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ARBITRARYBIOMECOMPONENT
 public:
+    // prevent constructor by default
     ArbitraryBiomeComponent& operator=(ArbitraryBiomeComponent const&) = delete;
     ArbitraryBiomeComponent(ArbitraryBiomeComponent const&)            = delete;
     ArbitraryBiomeComponent()                                          = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1ArbitraryBiomeComponent\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1ArbitraryBiomeComponent@@QEAA@XZ
     MCAPI ~ArbitraryBiomeComponent();
+
+    // NOLINTEND
 };

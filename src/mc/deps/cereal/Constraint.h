@@ -10,25 +10,25 @@ namespace cereal { class SerializerContext; }
 namespace cereal {
 
 class Constraint {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREAL_CONSTRAINT
 public:
+    // prevent constructor by default
     Constraint& operator=(Constraint const&) = delete;
     Constraint(Constraint const&)            = delete;
     Constraint()                             = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREAL_CONSTRAINT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol:
+    // ?doValidate@ExpressionNodeCerealConstraint@@EEBA_NAEBVmeta_any@entt@@AEAVSerializerContext@cereal@@@Z
+    virtual bool doValidate(entt::meta_any const&, class cereal::SerializerContext&) const = 0;
+
+    // symbol: ??1Constraint@cereal@@UEAA@XZ
     MCVAPI ~Constraint();
-#endif
-    /**
-     * @symbol ?validate\@Constraint\@cereal\@\@QEBA_NAEBVmeta_any\@entt\@\@AEAVSerializerContext\@2\@\@Z
-     */
-    MCAPI bool validate(class entt::meta_any const&, class cereal::SerializerContext&) const;
+
+    // symbol: ?validate@Constraint@cereal@@QEBA_NAEBVmeta_any@entt@@AEAVSerializerContext@2@@Z
+    MCAPI bool validate(entt::meta_any const&, class cereal::SerializerContext&) const;
+
+    // NOLINTEND
 };
 
 }; // namespace cereal

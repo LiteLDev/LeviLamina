@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct CreativeItemNetIdTag {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CREATIVEITEMNETIDTAG
 public:
+    // prevent constructor by default
     CreativeItemNetIdTag& operator=(CreativeItemNetIdTag const&) = delete;
     CreativeItemNetIdTag(CreativeItemNetIdTag const&)            = delete;
     CreativeItemNetIdTag()                                       = delete;
-#endif
-
-public:
 };

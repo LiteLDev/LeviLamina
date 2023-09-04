@@ -5,15 +5,11 @@
 namespace Puv {
 
 class ParserBase {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PUV_PARSERBASE
 public:
+    // prevent constructor by default
     ParserBase& operator=(ParserBase const&) = delete;
     ParserBase(ParserBase const&)            = delete;
     ParserBase()                             = delete;
-#endif
-
-public:
 };
 
 }; // namespace Puv

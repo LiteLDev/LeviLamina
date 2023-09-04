@@ -2,20 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockDisplayNameComponent {
+// auto generated inclusion list
+#include "mc/world/level/block/utils/BlockComponentBase.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDISPLAYNAMECOMPONENT
+struct BlockDisplayNameComponent : public ::BlockComponentBase {
 public:
+    // prevent constructor by default
     BlockDisplayNameComponent& operator=(BlockDisplayNameComponent const&) = delete;
     BlockDisplayNameComponent(BlockDisplayNameComponent const&)            = delete;
     BlockDisplayNameComponent()                                            = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDISPLAYNAMECOMPONENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // symbol: ??1BlockDisplayNameComponent@@UEAA@XZ
     MCVAPI ~BlockDisplayNameComponent();
-#endif
+
+    // NOLINTEND
 };

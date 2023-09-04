@@ -3,21 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct PlayerChangeDimensionRequestComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERCHANGEDIMENSIONREQUESTCOMPONENT
 public:
+    // prevent constructor by default
     PlayerChangeDimensionRequestComponent& operator=(PlayerChangeDimensionRequestComponent const&) = delete;
     PlayerChangeDimensionRequestComponent(PlayerChangeDimensionRequestComponent const&)            = delete;
     PlayerChangeDimensionRequestComponent()                                                        = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??4PlayerChangeDimensionRequestComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??4PlayerChangeDimensionRequestComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct PlayerChangeDimensionRequestComponent& operator=(struct PlayerChangeDimensionRequestComponent&&);
-    /**
-     * @symbol ??1PlayerChangeDimensionRequestComponent\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1PlayerChangeDimensionRequestComponent@@QEAA@XZ
     MCAPI ~PlayerChangeDimensionRequestComponent();
+
+    // NOLINTEND
 };

@@ -11,18 +11,16 @@ namespace Json { class Value; }
 // clang-format on
 
 class PlaceBlockDefinition : public ::BehaviorDefinition {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLACEBLOCKDEFINITION
 public:
+    // prevent constructor by default
     PlaceBlockDefinition& operator=(PlaceBlockDefinition const&) = delete;
     PlaceBlockDefinition(PlaceBlockDefinition const&)            = delete;
     PlaceBlockDefinition()                                       = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
+
+    // NOLINTEND
 };

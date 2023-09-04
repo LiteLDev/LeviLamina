@@ -12,30 +12,27 @@ namespace Core { class Result; }
 namespace Core {
 
 class FullCopyFileOperations {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORE_FULLCOPYFILEOPERATIONS
 public:
+    // prevent constructor by default
     FullCopyFileOperations& operator=(FullCopyFileOperations const&) = delete;
     FullCopyFileOperations(FullCopyFileOperations const&)            = delete;
     FullCopyFileOperations()                                         = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?copyDirectory\@FullCopyFileOperations\@Core\@\@SA?AVResult\@2\@PEAVFileSystemImpl\@2\@AEBVPath\@2\@01\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?copyDirectory@FullCopyFileOperations@Core@@SA?AVResult@2@PEAVFileSystemImpl@2@AEBVPath@2@01@Z
     MCAPI static class Core::Result
     copyDirectory(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&);
-    /**
-     * @symbol ?copyFile\@FullCopyFileOperations\@Core\@\@SA?AVResult\@2\@PEAVFileSystemImpl\@2\@AEBVPath\@2\@01\@Z
-     */
+
+    // symbol: ?copyFile@FullCopyFileOperations@Core@@SA?AVResult@2@PEAVFileSystemImpl@2@AEBVPath@2@01@Z
     MCAPI static class Core::Result
     copyFile(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&);
-    /**
-     * @symbol ?moveFile\@FullCopyFileOperations\@Core\@\@SA?AVResult\@2\@PEAVFileSystemImpl\@2\@AEBVPath\@2\@01\@Z
-     */
+
+    // symbol: ?moveFile@FullCopyFileOperations@Core@@SA?AVResult@2@PEAVFileSystemImpl@2@AEBVPath@2@01@Z
     MCAPI static class Core::Result
     moveFile(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&);
+
+    // NOLINTEND
 };
 
 }; // namespace Core

@@ -1,16 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/CommandSelector.h"
 
 template <typename T0>
-class WildcardCommandSelector {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WILDCARDCOMMANDSELECTOR
-public:
-    WildcardCommandSelector& operator=(WildcardCommandSelector const&) = delete;
-    WildcardCommandSelector(WildcardCommandSelector const&)            = delete;
-    WildcardCommandSelector()                                          = delete;
-#endif
-
-public:
-};
+class WildcardCommandSelector : public CommandSelector<T0> {};

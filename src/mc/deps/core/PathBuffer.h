@@ -6,15 +6,11 @@ namespace Core {
 
 template <typename T0>
 class PathBuffer {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORE_PATHBUFFER
 public:
-    PathBuffer& operator=(PathBuffer const&) = delete;
-    PathBuffer(PathBuffer const&)            = delete;
-    PathBuffer()                             = delete;
-#endif
-
-public:
+    T0       value;
+    T0&      get() { return value; }
+    explicit operator T0&() noexcept { return value; }
+    explicit operator T0 const&() const noexcept { return value; }
 };
 
 }; // namespace Core

@@ -2,27 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class StructurePoolBlockPredicateAlwaysTrue {
+// auto generated inclusion list
+#include "mc/world/level/levelgen/structure/structurepools/IStructurePoolBlockPredicate.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREPOOLBLOCKPREDICATEALWAYSTRUE
+class StructurePoolBlockPredicateAlwaysTrue : public ::IStructurePoolBlockPredicate {
 public:
+    // prevent constructor by default
     StructurePoolBlockPredicateAlwaysTrue& operator=(StructurePoolBlockPredicateAlwaysTrue const&) = delete;
     StructurePoolBlockPredicateAlwaysTrue(StructurePoolBlockPredicateAlwaysTrue const&)            = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLBLOCKPREDICATEALWAYSTRUE
-    /**
-     * @symbol ?test\@StructurePoolBlockPredicateAlwaysTrue\@\@UEBA_NAEBVBlockPos\@\@0AEAVRandomize\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?test@StructurePoolBlockPredicateAlwaysTrue@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
     MCVAPI bool test(class BlockPos const&, class BlockPos const&, class Randomize&) const;
-    /**
-     * @symbol ?test\@StructurePoolBlockPredicateAlwaysTrue\@\@UEBA_NAEBVBlock\@\@AEAVRandomize\@\@\@Z
-     */
+
+    // symbol: ?test@StructurePoolBlockPredicateAlwaysTrue@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
     MCVAPI bool test(class Block const&, class Randomize&) const;
-#endif
-    /**
-     * @symbol ??0StructurePoolBlockPredicateAlwaysTrue\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0StructurePoolBlockPredicateAlwaysTrue@@QEAA@XZ
     MCAPI StructurePoolBlockPredicateAlwaysTrue();
+
+    // NOLINTEND
 };

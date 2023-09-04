@@ -1,78 +1,59 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/item/crafting/MerchantRecipe.h"
 
 // auto generated inclusion list
 #include "mc/network/TypedServerNetId.h"
 
 class MerchantRecipeList {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MERCHANTRECIPELIST
 public:
-    MerchantRecipeList& operator=(MerchantRecipeList const&) = delete;
-    MerchantRecipeList(MerchantRecipeList const&)            = delete;
-#endif
+    std::vector<class MerchantRecipe> mRecipeList;
+    std::vector<uint>                 mTierExpRequirements;
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getRecipeFor\@MerchantRecipeList\@\@UEAAPEAVMerchantRecipe\@\@AEBVItemInstance\@\@0H\@Z
-     */
+
+    // vIndex: 1, symbol: ?getRecipeFor@MerchantRecipeList@@UEAAPEAVMerchantRecipe@@AEBVItemInstance@@0H@Z
     virtual class MerchantRecipe* getRecipeFor(class ItemInstance const&, class ItemInstance const&, int);
-    /**
-     * @vftbl 2
-     * @symbol ?addIfNewOrBetter\@MerchantRecipeList\@\@UEAAXPEAVMerchantRecipe\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?addIfNewOrBetter@MerchantRecipeList@@UEAAXPEAVMerchantRecipe@@@Z
     virtual void addIfNewOrBetter(class MerchantRecipe*);
-    /**
-     * @vftbl 3
-     * @symbol ?getMatchingRecipeFor\@MerchantRecipeList\@\@UEAAPEAVMerchantRecipe\@\@AEBVItemInstance\@\@00\@Z
-     */
+
+    // vIndex: 3, symbol: ?getMatchingRecipeFor@MerchantRecipeList@@UEAAPEAVMerchantRecipe@@AEBVItemInstance@@00@Z
     virtual class MerchantRecipe*
     getMatchingRecipeFor(class ItemInstance const&, class ItemInstance const&, class ItemInstance const&);
-    /**
-     * @vftbl 4
-     * @symbol ?getMatchingRecipeFor\@MerchantRecipeList\@\@UEAAPEAVMerchantRecipe\@\@AEBV2\@\@Z
-     */
+
+    // vIndex: 4, symbol: ?getMatchingRecipeFor@MerchantRecipeList@@UEAAPEAVMerchantRecipe@@AEBV2@@Z
     virtual class MerchantRecipe* getMatchingRecipeFor(class MerchantRecipe const&);
-    /**
-     * @vftbl 5
-     * @symbol ?load\@MerchantRecipeList\@\@UEAAXAEBVCompoundTag\@\@\@Z
-     */
+
+    // vIndex: 5, symbol: ?load@MerchantRecipeList@@UEAAXAEBVCompoundTag@@@Z
     virtual void load(class CompoundTag const&);
-    /**
-     * @vftbl 6
-     * @symbol
-     * ?createTag\@MerchantRecipeList\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@_N\@Z
-     */
+
+    // vIndex: 6, symbol:
+    // ?createTag@MerchantRecipeList@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@_N@Z
     virtual std::unique_ptr<class CompoundTag> createTag(bool) const;
-    /**
-     * @symbol ??0MerchantRecipeList\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0MerchantRecipeList@@QEAA@XZ
     MCAPI MerchantRecipeList();
-    /**
-     * @symbol ?assignNetIds\@MerchantRecipeList\@\@QEAAXXZ
-     */
+
+    // symbol: ?assignNetIds@MerchantRecipeList@@QEAAXXZ
     MCAPI void assignNetIds();
-    /**
-     * @symbol
-     * ?getRecipeByNetId\@MerchantRecipeList\@\@QEBAPEBVMerchantRecipe\@\@AEBV?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@\@Z
-     */
+
+    // symbol:
+    // ?getRecipeByNetId@MerchantRecipeList@@QEBAPEBVMerchantRecipe@@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
     MCAPI class MerchantRecipe const*
-    getRecipeByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&) const;
-    /**
-     * @symbol
-     * ?getRecipeIndexByNetId\@MerchantRecipeList\@\@QEBA?AV?$optional\@_K\@std\@\@AEBV?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@\@Z
-     */
-    MCAPI class std::optional<unsigned __int64>
-    getRecipeIndexByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&) const;
-    /**
-     * @symbol ?isRequiredItem\@MerchantRecipeList\@\@QEAA_NAEBVItemInstance\@\@0\@Z
-     */
+    getRecipeByNetId(class TypedServerNetId<struct RecipeNetIdTag, uint, 0> const&) const;
+
+    // symbol:
+    // ?getRecipeIndexByNetId@MerchantRecipeList@@QEBA?AV?$optional@_K@std@@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
+    MCAPI std::optional<uint64>
+          getRecipeIndexByNetId(class TypedServerNetId<struct RecipeNetIdTag, uint, 0> const&) const;
+
+    // symbol: ?isRequiredItem@MerchantRecipeList@@QEAA_NAEBVItemInstance@@0@Z
     MCAPI bool isRequiredItem(class ItemInstance const&, class ItemInstance const&);
+
+    // NOLINTEND
 };

@@ -6,36 +6,33 @@
 #include "mc/common/wrapper/ViewT.h"
 
 class EventingRequestSystem {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EVENTINGREQUESTSYSTEM
 public:
+    // prevent constructor by default
     EventingRequestSystem& operator=(EventingRequestSystem const&) = delete;
     EventingRequestSystem(EventingRequestSystem const&)            = delete;
     EventingRequestSystem()                                        = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?createSystem\@EventingRequestSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?createSystem@EventingRequestSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol
-     * ?_eventingRequestSystem\@EventingRequestSystem\@\@CAXAEBVStrictEntityContext\@\@AEAUEventingRequestQueueComponent\@\@AEAVLevelComponent\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?_eventingRequestSystem@EventingRequestSystem@@CAXAEBVStrictEntityContext@@AEAUEventingRequestQueueComponent@@AEAVLevelComponent@@@Z
     MCAPI static void
     _eventingRequestSystem(class StrictEntityContext const&, struct EventingRequestQueueComponent&, class LevelComponent&);
-    /**
-     * @symbol
-     * ?_tickEventingRequestSystem\@EventingRequestSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@UEventingRequestQueueComponent\@\@VLevelComponent\@\@\@\@\@Z
-     */
+
+    // symbol:
+    // ?_tickEventingRequestSystem@EventingRequestSystem@@CAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@UEventingRequestQueueComponent@@VLevelComponent@@@@@Z
     MCAPI static void _tickEventingRequestSystem(class ViewT<
                                                  class StrictEntityContext,
                                                  class EntityRegistryBase,
                                                  struct EventingRequestQueueComponent,
                                                  class LevelComponent>);
 
-private:
+    // NOLINTEND
 };

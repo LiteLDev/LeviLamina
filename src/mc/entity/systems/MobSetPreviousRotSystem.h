@@ -8,23 +8,19 @@
 #include "mc/world/components/FlagComponent.h"
 
 class MobSetPreviousRotSystem {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBSETPREVIOUSROTSYSTEM
 public:
+    // prevent constructor by default
     MobSetPreviousRotSystem& operator=(MobSetPreviousRotSystem const&) = delete;
     MobSetPreviousRotSystem(MobSetPreviousRotSystem const&)            = delete;
     MobSetPreviousRotSystem()                                          = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?createSystem\@MobSetPreviousRotSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?createSystem@MobSetPreviousRotSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
-    /**
-     * @symbol
-     * ?tick\@MobSetPreviousRotSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UMobFlag\@\@\@\@\@\@UActorHeadRotationComponent\@\@UActorRotationComponent\@\@UMobBodyRotationComponent\@\@\@\@\@Z
-     */
+
+    // symbol:
+    // ?tick@MobSetPreviousRotSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UMobFlag@@@@@@UActorHeadRotationComponent@@UActorRotationComponent@@UMobBodyRotationComponent@@@@@Z
     MCAPI static void tick(class ViewT<
                            class StrictEntityContext,
                            class EntityRegistryBase,
@@ -35,13 +31,14 @@ public:
                            struct ActorRotationComponent,
                            struct MobBodyRotationComponent>);
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol
-     * ?_setPreviousRotation\@MobSetPreviousRotSystem\@\@CAXAEAVStrictEntityContext\@\@AEAUActorHeadRotationComponent\@\@AEAUActorRotationComponent\@\@AEAUMobBodyRotationComponent\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?_setPreviousRotation@MobSetPreviousRotSystem@@CAXAEAVStrictEntityContext@@AEAUActorHeadRotationComponent@@AEAUActorRotationComponent@@AEAUMobBodyRotationComponent@@@Z
     MCAPI static void
     _setPreviousRotation(class StrictEntityContext&, struct ActorHeadRotationComponent&, struct ActorRotationComponent&, struct MobBodyRotationComponent&);
 
-private:
+    // NOLINTEND
 };

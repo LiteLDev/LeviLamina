@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/json/Value.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -10,42 +11,52 @@ namespace Json { class Value; }
 namespace Json {
 
 class ValueIteratorBase {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JSON_VALUEITERATORBASE
 public:
+    // prevent constructor by default
     ValueIteratorBase& operator=(ValueIteratorBase const&) = delete;
     ValueIteratorBase()                                    = delete;
-#endif
+
+    using iterator_category = std::forward_iterator_tag;
+
+    Value::ObjectValues::iterator current_;
+    bool                          isNull_;
+
+    bool operator==(const ValueIteratorBase& other) const { return isEqual(other); }
+    bool operator!=(const ValueIteratorBase& other) const { return !isEqual(other); }
+
+
+    ValueIteratorBase& operator++() {
+        increment();
+        return *this;
+    }
+
+    Json::Value& operator*() const { return deref(); }
 
 public:
-    /**
-     * @symbol ??0ValueIteratorBase\@Json\@\@QEAA\@AEBV01\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0ValueIteratorBase@Json@@QEAA@AEBV01@@Z
     MCAPI ValueIteratorBase(class Json::ValueIteratorBase const&);
-    /**
-     * @symbol ?key\@ValueIteratorBase\@Json\@\@QEBA?AVValue\@2\@XZ
-     */
+
+    // symbol: ?key@ValueIteratorBase@Json@@QEBA?AVValue@2@XZ
     MCAPI class Json::Value key() const;
-    /**
-     * @symbol ?memberName\@ValueIteratorBase\@Json\@\@QEBAPEBDXZ
-     */
+
+    // symbol: ?memberName@ValueIteratorBase@Json@@QEBAPEBDXZ
     MCAPI char const* memberName() const;
 
+    // NOLINTEND
+
     // protected:
-    /**
-     * @symbol ?deref\@ValueIteratorBase\@Json\@\@IEBAAEAVValue\@2\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?deref@ValueIteratorBase@Json@@IEBAAEAVValue@2@XZ
     MCAPI class Json::Value& deref() const;
-    /**
-     * @symbol ?increment\@ValueIteratorBase\@Json\@\@IEAAXXZ
-     */
+
+    // symbol: ?increment@ValueIteratorBase@Json@@IEAAXXZ
     MCAPI void increment();
-    /**
-     * @symbol ?isEqual\@ValueIteratorBase\@Json\@\@IEBA_NAEBV12\@\@Z
-     */
+
+    // symbol: ?isEqual@ValueIteratorBase@Json@@IEBA_NAEBV12@@Z
     MCAPI bool isEqual(class Json::ValueIteratorBase const&) const;
 
-protected:
+    // NOLINTEND
 };
 
 }; // namespace Json

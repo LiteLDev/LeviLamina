@@ -2,6 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/lib_http_client/ThreadPoolActionStatus.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace OS { struct ThreadPoolActionStatus; }
+struct _TP_CALLBACK_INSTANCE;
+struct _TP_WORK;
+// clang-format on
+
 namespace OS {
 
 class ThreadPoolImpl {
@@ -12,43 +22,36 @@ public:
     // clang-format on
 
     // ThreadPoolImpl inner types define
-    struct ActionStatusImpl {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OS_THREADPOOLIMPL_ACTIONSTATUSIMPL
+    struct ActionStatusImpl : public ::OS::ThreadPoolActionStatus {
     public:
+        // prevent constructor by default
         ActionStatusImpl& operator=(ActionStatusImpl const&) = delete;
         ActionStatusImpl(ActionStatusImpl const&)            = delete;
         ActionStatusImpl()                                   = delete;
-#endif
 
     public:
-        /**
-         * @vftbl 0
-         * @symbol ?Complete\@ActionStatusImpl\@ThreadPoolImpl\@OS\@\@UEAAXXZ
-         */
+        // NOLINTBEGIN
+        // vIndex: 0, symbol: ?Complete@ActionStatusImpl@ThreadPoolImpl@OS@@UEAAXXZ
         virtual void Complete();
-        /**
-         * @vftbl 1
-         * @symbol ?MayRunLong\@ActionStatusImpl\@ThreadPoolImpl\@OS\@\@UEAAXXZ
-         */
+
+        // vIndex: 1, symbol: ?MayRunLong@ActionStatusImpl@ThreadPoolImpl@OS@@UEAAXXZ
         virtual void MayRunLong();
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OS_THREADPOOLIMPL
 public:
+    // prevent constructor by default
     ThreadPoolImpl& operator=(ThreadPoolImpl const&) = delete;
     ThreadPoolImpl(ThreadPoolImpl const&)            = delete;
     ThreadPoolImpl()                                 = delete;
-#endif
 
-public:
     // private:
-    /**
-     * @symbol ?TPCallback\@ThreadPoolImpl\@OS\@\@CAXPEAU_TP_CALLBACK_INSTANCE\@\@PEAXPEAU_TP_WORK\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?TPCallback@ThreadPoolImpl@OS@@CAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_WORK@@@Z
     MCAPI static void TPCallback(struct _TP_CALLBACK_INSTANCE*, void*, struct _TP_WORK*);
 
-private:
+    // NOLINTEND
 };
 
 }; // namespace OS

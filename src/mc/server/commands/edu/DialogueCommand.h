@@ -6,27 +6,22 @@
 #include "mc/world/level/Command.h"
 
 class DialogueCommand : public ::Command {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIALOGUECOMMAND
 public:
+    // prevent constructor by default
     DialogueCommand& operator=(DialogueCommand const&) = delete;
     DialogueCommand(DialogueCommand const&)            = delete;
     DialogueCommand()                                  = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?execute\@DialogueCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?execute@DialogueCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol ?setup\@DialogueCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
-     */
+
+    // symbol: ?setup@DialogueCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry&);
+
+    // NOLINTEND
 };

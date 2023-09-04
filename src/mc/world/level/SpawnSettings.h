@@ -1,22 +1,26 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/AutomaticID.h"
+#include "mc/world/level/biome/SpawnBiomeType.h"
 
 struct SpawnSettings {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNSETTINGS
 public:
+    SpawnBiomeType type;
+    std::string    userDefinedBiomeName;
+    DimensionType  dimension;
+
+    // prevent constructor by default
     SpawnSettings& operator=(SpawnSettings const&) = delete;
     SpawnSettings()                                = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0SpawnSettings\@\@QEAA\@AEBU0\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0SpawnSettings@@QEAA@AEBU0@@Z
     MCAPI SpawnSettings(struct SpawnSettings const&);
-    /**
-     * @symbol ??1SpawnSettings\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1SpawnSettings@@QEAA@XZ
     MCAPI ~SpawnSettings();
+
+    // NOLINTEND
 };

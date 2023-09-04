@@ -3,25 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class PeekComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PEEKCOMPONENT
 public:
+    // prevent constructor by default
     PeekComponent& operator=(PeekComponent const&) = delete;
     PeekComponent(PeekComponent const&)            = delete;
     PeekComponent()                                = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?getDuration\@PeekComponent\@\@QEAAAEAHXZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?getDuration@PeekComponent@@QEAAAEAHXZ
     MCAPI int& getDuration();
-    /**
-     * @symbol ?getHadTarget\@PeekComponent\@\@QEBA_NXZ
-     */
+
+    // symbol: ?getHadTarget@PeekComponent@@QEBA_NXZ
     MCAPI bool getHadTarget() const;
-    /**
-     * @symbol ?setHadTarget\@PeekComponent\@\@QEAAX_N\@Z
-     */
+
+    // symbol: ?setHadTarget@PeekComponent@@QEAAX_N@Z
     MCAPI void setHadTarget(bool);
+
+    // NOLINTEND
 };

@@ -6,35 +6,36 @@
 #include "mc/world/level/Command.h"
 
 class EnableEncryptionCommand : public ::Command {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENABLEENCRYPTIONCOMMAND
 public:
+    // prevent constructor by default
     EnableEncryptionCommand& operator=(EnableEncryptionCommand const&) = delete;
     EnableEncryptionCommand(EnableEncryptionCommand const&)            = delete;
     EnableEncryptionCommand()                                          = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?execute\@EnableEncryptionCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?execute@EnableEncryptionCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol ?setup\@EnableEncryptionCommand\@\@SAXAEAVCommandRegistry\@\@AEAVIMinecraftApp\@\@\@Z
-     */
+
+    // symbol: ?setup@EnableEncryptionCommand@@SAXAEAVCommandRegistry@@AEAVIMinecraftApp@@@Z
     MCAPI static void setup(class CommandRegistry&, class IMinecraftApp&);
 
-    // private:
+    // NOLINTEND
 
 private:
-    /**
-     * @symbol ?mApp\@EnableEncryptionCommand\@\@0PEAVIMinecraftApp\@\@EA
-     */
+    // NOLINTBEGIN
+    // symbol: ?mApp@EnableEncryptionCommand@@0PEAVIMinecraftApp@@EA
     MCAPI static class IMinecraftApp* mApp;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $mApp() { return mApp; }
+
+    // NOLINTEND
 };

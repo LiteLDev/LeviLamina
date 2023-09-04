@@ -1,16 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/wrapper/SharePtrRefTraits.h"
 
 template <typename T0>
-class StackRefResultT {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STACKREFRESULTT
+class StackRefResultT : public T0::StackResultStorage {
 public:
-    StackRefResultT& operator=(StackRefResultT const&) = delete;
-    StackRefResultT(StackRefResultT const&)            = delete;
-    StackRefResultT()                                  = delete;
-#endif
-
-public:
+    using StackRef = typename T0::StackRef;
 };

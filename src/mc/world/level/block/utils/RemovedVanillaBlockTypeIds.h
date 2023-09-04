@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace RemovedVanillaBlockTypeIds {
-/**
- * @symbol ?LavaCauldron\@RemovedVanillaBlockTypeIds\@\@3VHashedString\@\@B
- */
+// NOLINTBEGIN
+// symbol: ?LavaCauldron@RemovedVanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const LavaCauldron;
+// NOLINTEND
 
 }; // namespace RemovedVanillaBlockTypeIds

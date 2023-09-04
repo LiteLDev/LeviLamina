@@ -6,43 +6,35 @@
 #include "mc/world/level/Command.h"
 
 class MusicCommand : public ::Command {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MUSICCOMMAND
 public:
+    // prevent constructor by default
     MusicCommand& operator=(MusicCommand const&) = delete;
     MusicCommand(MusicCommand const&)            = delete;
     MusicCommand()                               = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?execute\@MusicCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?execute@MusicCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol ?setup\@MusicCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
-     */
+
+    // symbol: ?setup@MusicCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry&);
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol ?_handleActionQueueOrPlay\@MusicCommand\@\@AEBAXAEAVCompoundTag\@\@AEAVCommandOutput\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?_handleActionQueueOrPlay@MusicCommand@@AEBAXAEAVCompoundTag@@AEAVCommandOutput@@@Z
     MCAPI void _handleActionQueueOrPlay(class CompoundTag&, class CommandOutput&) const;
-    /**
-     * @symbol ?_handleActionStop\@MusicCommand\@\@AEBAXAEAVCompoundTag\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // symbol: ?_handleActionStop@MusicCommand@@AEBAXAEAVCompoundTag@@AEAVCommandOutput@@@Z
     MCAPI void _handleActionStop(class CompoundTag&, class CommandOutput&) const;
-    /**
-     * @symbol ?_handleActionVolume\@MusicCommand\@\@AEBAXAEAVCompoundTag\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // symbol: ?_handleActionVolume@MusicCommand@@AEBAXAEAVCompoundTag@@AEAVCommandOutput@@@Z
     MCAPI void _handleActionVolume(class CompoundTag&, class CommandOutput&) const;
 
-private:
+    // NOLINTEND
 };

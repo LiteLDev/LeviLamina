@@ -5,18 +5,17 @@
 namespace RakNet {
 
 struct InternalPacket {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNET_INTERNALPACKET
 public:
+    // prevent constructor by default
     InternalPacket(InternalPacket const&) = delete;
     InternalPacket()                      = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??4InternalPacket\@RakNet\@\@QEAAAEAU01\@AEBU01\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??4InternalPacket@RakNet@@QEAAAEAU01@AEBU01@@Z
     MCAPI struct RakNet::InternalPacket& operator=(struct RakNet::InternalPacket const&);
+
+    // NOLINTEND
 };
 
 }; // namespace RakNet

@@ -6,22 +6,19 @@
 #include "mc/world/level/block/utils/BaseBlockLocationIterator.h"
 
 class SimpleBlockVolumeIterator : public ::BaseBlockLocationIterator {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLEBLOCKVOLUMEITERATOR
 public:
+    // prevent constructor by default
     SimpleBlockVolumeIterator& operator=(SimpleBlockVolumeIterator const&) = delete;
     SimpleBlockVolumeIterator(SimpleBlockVolumeIterator const&)            = delete;
     SimpleBlockVolumeIterator()                                            = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @symbol ??0SimpleBlockVolumeIterator\@\@QEAA\@AEBVSimpleBlockVolume\@\@_N\@Z
-     */
+
+    // symbol: ??0SimpleBlockVolumeIterator@@QEAA@AEBVSimpleBlockVolume@@_N@Z
     MCAPI SimpleBlockVolumeIterator(class SimpleBlockVolume const&, bool);
+
+    // NOLINTEND
 };

@@ -14,43 +14,62 @@
 #include "mc/entity/EntityFactoryT.h"
 #include "mc/world/components/FlagComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+class ExhaustionComponent;
+struct AABBShapeComponent;
+struct ActorGameTypeComponent;
+struct ActorMovementTickNeededFlag;
+struct ActorRotationComponent;
+struct AttributesComponent;
+struct CamelFlag;
+struct DimensionTypeComponent;
+struct ExternalDataComponent;
+struct HorseFlag;
+struct InWaterFlag;
+struct LocalConstBlockSourceFactoryComponent;
+struct MobBodyRotationComponent;
+struct MobFlag;
+struct OffsetsComponent;
+struct OnGroundFlag;
+struct ParrotFlag;
+struct PassengerComponent;
+struct PassengerRenderingRidingOffsetComponent;
+struct PlayerComponentFlag;
+struct RenderRotationComponent;
+struct ServerPlayerCurrentMovementComponent;
+struct StandAnimationComponent;
+struct StateVectorComponent;
+struct SynchedActorDataComponent;
+struct VanillaOffsetComponent;
+struct VehicleComponent;
+// clang-format on
+
 namespace FoodExhaustionSystemImpl {
 
 struct FoodExhaustionSystemImpl {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOODEXHAUSTIONSYSTEMIMPL_FOODEXHAUSTIONSYSTEMIMPL
 public:
+    // prevent constructor by default
     FoodExhaustionSystemImpl& operator=(FoodExhaustionSystemImpl const&) = delete;
     FoodExhaustionSystemImpl(FoodExhaustionSystemImpl const&)            = delete;
     FoodExhaustionSystemImpl()                                           = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
+
+    // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
+
+    // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol
-     * ?tick\@FoodExhaustionSystemImpl\@1\@UEAAXAEAV?$StrictExecutionContext\@U?$Filter\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@UPassengerComponent\@\@V?$FlagComponent\@UHorseFlag\@\@\@\@V?$FlagComponent\@UMobFlag\@\@\@\@V?$FlagComponent\@UParrotFlag\@\@\@\@UVehicleComponent\@\@V?$FlagComponent\@UCamelFlag\@\@\@\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@\@\@U?$Read\@UDimensionTypeComponent\@\@VExhaustionComponent\@\@V?$FlagComponent\@UOnGroundFlag\@\@\@\@UActorGameTypeComponent\@\@UServerPlayerCurrentMovementComponent\@\@V?$FlagComponent\@UInWaterFlag\@\@\@\@UMobBodyRotationComponent\@\@UPassengerComponent\@\@URenderRotationComponent\@\@UStandAnimationComponent\@\@UStateVectorComponent\@\@USynchedActorDataComponent\@\@UAABBShapeComponent\@\@UActorRotationComponent\@\@UOffsetsComponent\@\@V?$Optional\@UVanillaOffsetComponent\@\@\@\@V?$Optional\@UPassengerRenderingRidingOffsetComponent\@\@\@\@\@\@U?$Write\@UAttributesComponent\@\@\@\@U?$AddRemove\@$$V\@\@U?$GlobalRead\@ULocalConstBlockSourceFactoryComponent\@\@UExternalDataComponent\@\@\@\@U?$GlobalWrite\@$$V\@\@U?$EntityFactoryT\@$$V\@\@\@\@\@Z
-     */
+
+    // vIndex: 4, symbol:
+    // ?tick@FoodExhaustionSystemImpl@1@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorMovementTickNeededFlag@@@@UPassengerComponent@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@@@U?$Read@UDimensionTypeComponent@@VExhaustionComponent@@V?$FlagComponent@UOnGroundFlag@@@@UActorGameTypeComponent@@UServerPlayerCurrentMovementComponent@@V?$FlagComponent@UInWaterFlag@@@@UMobBodyRotationComponent@@UPassengerComponent@@URenderRotationComponent@@UStandAnimationComponent@@UStateVectorComponent@@USynchedActorDataComponent@@UAABBShapeComponent@@UActorRotationComponent@@UOffsetsComponent@@V?$Optional@UVanillaOffsetComponent@@@@V?$Optional@UPassengerRenderingRidingOffsetComponent@@@@@@U?$Write@UAttributesComponent@@@@U?$AddRemove@$$V@@U?$GlobalRead@ULocalConstBlockSourceFactoryComponent@@UExternalDataComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
     virtual void tick(class StrictExecutionContext<
                       struct Filter<
                           class FlagComponent<struct ActorMovementTickNeededFlag>,
@@ -84,6 +103,8 @@ public:
                       struct GlobalRead<struct LocalConstBlockSourceFactoryComponent, struct ExternalDataComponent>,
                       struct GlobalWrite<>,
                       struct EntityFactoryT<>>&);
+
+    // NOLINTEND
 };
 
 }; // namespace FoodExhaustionSystemImpl

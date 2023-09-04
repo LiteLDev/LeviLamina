@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace MinecraftExplorer {
-/**
- * @symbol ?registerGeneratedBlocks\@MinecraftExplorer\@\@YAXXZ
- */
+// NOLINTBEGIN
+// symbol: ?registerGeneratedBlocks@MinecraftExplorer@@YAXXZ
 MCAPI void registerGeneratedBlocks();
+// NOLINTEND
 
 }; // namespace MinecraftExplorer

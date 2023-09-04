@@ -6,30 +6,23 @@
 #include "mc/deps/core/common/bedrock/typeid_t.h"
 
 struct SettingsScreenCapabilities {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETTINGSSCREENCAPABILITIES
 public:
+    // prevent constructor by default
     SettingsScreenCapabilities& operator=(SettingsScreenCapabilities const&) = delete;
     SettingsScreenCapabilities(SettingsScreenCapabilities const&)            = delete;
     SettingsScreenCapabilities()                                             = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?isOfType\@?$TypedScreenCapabilities\@USettingsScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@Bedrock\@\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?isOfType@?$TypedScreenCapabilities@USettingsScreenCapabilities@@@@UEBA_NV?$typeid_t@VIScreenCapabilities@@@Bedrock@@@Z
     virtual bool isOfType(class Bedrock::typeid_t<class IScreenCapabilities>) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETTINGSSCREENCAPABILITIES
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1SettingsScreenCapabilities@@UEAA@XZ
     MCVAPI ~SettingsScreenCapabilities();
-#endif
+
+    // NOLINTEND
 };

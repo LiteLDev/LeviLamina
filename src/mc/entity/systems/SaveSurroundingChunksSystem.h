@@ -2,37 +2,33 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SaveSurroundingChunksSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SAVESURROUNDINGCHUNKSSYSTEM
+class SaveSurroundingChunksSystem : public ::ITickingSystem {
 public:
+    // prevent constructor by default
     SaveSurroundingChunksSystem& operator=(SaveSurroundingChunksSystem const&) = delete;
     SaveSurroundingChunksSystem(SaveSurroundingChunksSystem const&)            = delete;
     SaveSurroundingChunksSystem()                                              = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?tick\@SaveSurroundingChunksSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?tick@SaveSurroundingChunksSystem@@UEAAXAEAVEntityRegistry@@@Z
     virtual void tick(class EntityRegistry&);
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol ?_tickSaveSurroundingChunks\@SaveSurroundingChunksSystem\@\@CAXAEAVActorOwnerComponent\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?_tickSaveSurroundingChunks@SaveSurroundingChunksSystem@@CAXAEAVActorOwnerComponent@@@Z
     MCAPI static void _tickSaveSurroundingChunks(class ActorOwnerComponent&);
 
-private:
+    // NOLINTEND
 };

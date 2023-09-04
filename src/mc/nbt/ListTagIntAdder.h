@@ -1,23 +1,19 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/nbt/ListTag.h"
 
 class ListTagIntAdder {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LISTTAGINTADDER
 public:
-    ListTagIntAdder& operator=(ListTagIntAdder const&) = delete;
-    ListTagIntAdder(ListTagIntAdder const&)            = delete;
-    ListTagIntAdder()                                  = delete;
-#endif
+    std::unique_ptr<ListTag> mTag;
 
 public:
-    /**
-     * @symbol ??RListTagIntAdder\@\@QEAAAEAV0\@H\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??RListTagIntAdder@@QEAAAEAV0@H@Z
     MCAPI class ListTagIntAdder& operator()(int);
-    /**
-     * @symbol ??1ListTagIntAdder\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ListTagIntAdder@@QEAA@XZ
     MCAPI ~ListTagIntAdder();
+
+    // NOLINTEND
 };

@@ -3,36 +3,38 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class BucketableComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUCKETABLECOMPONENT
 public:
+    // prevent constructor by default
     BucketableComponent& operator=(BucketableComponent const&) = delete;
     BucketableComponent(BucketableComponent const&)            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0BucketableComponent\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0BucketableComponent@@QEAA@XZ
     MCAPI BucketableComponent();
-    /**
-     * @symbol ?getInteraction\@BucketableComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
-     */
+
+    // symbol: ?getInteraction@BucketableComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
     MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
-    /**
-     * @symbol ?initFromDefinition\@BucketableComponent\@\@QEAAXAEAVActor\@\@\@Z
-     */
+
+    // symbol: ?initFromDefinition@BucketableComponent@@QEAAXAEAVActor@@@Z
     MCAPI void initFromDefinition(class Actor&);
-    /**
-     * @symbol ?implInteraction\@BucketableComponent\@\@SAXAEAVActor\@\@AEAVPlayer\@\@\@Z
-     */
+
+    // symbol: ?implInteraction@BucketableComponent@@SAXAEAVActor@@AEAVPlayer@@@Z
     MCAPI static void implInteraction(class Actor&, class Player&);
 
-    // private:
+    // NOLINTEND
 
 private:
-    /**
-     * @symbol ?WATER_BUCKET_USEABLE_VERSION\@BucketableComponent\@\@0VBaseGameVersion\@\@B
-     */
+    // NOLINTBEGIN
+    // symbol: ?WATER_BUCKET_USEABLE_VERSION@BucketableComponent@@0VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const WATER_BUCKET_USEABLE_VERSION;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $WATER_BUCKET_USEABLE_VERSION() { return WATER_BUCKET_USEABLE_VERSION; }
+
+    // NOLINTEND
 };

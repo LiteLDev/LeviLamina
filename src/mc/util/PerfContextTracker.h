@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/events/PerfContextEvent.h"
+
 class PerfContextTracker {
 public:
     // PerfContextTracker inner types declare
@@ -13,107 +16,89 @@ public:
 
     // PerfContextTracker inner types define
     class Duration {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERFCONTEXTTRACKER_DURATION
     public:
+        // prevent constructor by default
         Duration& operator=(Duration const&) = delete;
         Duration(Duration const&)            = delete;
-#endif
 
     public:
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // NOLINTBEGIN
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @vftbl 1
-         * @symbol ?reset\@Duration\@PerfContextTracker\@\@UEAAXXZ
-         */
+
+        // vIndex: 1, symbol: ?reset@Duration@PerfContextTracker@@UEAAXXZ
         virtual void reset();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERFCONTEXTTRACKER_DURATION
-        /**
-         * @symbol __unk_destructor_-1
-         */
+
+        // symbol: ??1Duration@PerfContextTracker@@UEAA@XZ
         MCVAPI ~Duration();
-#endif
-        /**
-         * @symbol ??0Duration\@PerfContextTracker\@\@QEAA\@XZ
-         */
+
+        // symbol: ??0Duration@PerfContextTracker@@QEAA@XZ
         MCAPI Duration();
+
+        // NOLINTEND
     };
 
     class EventScope {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERFCONTEXTTRACKER_EVENTSCOPE
     public:
+        // prevent constructor by default
         EventScope& operator=(EventScope const&) = delete;
         EventScope(EventScope const&)            = delete;
         EventScope()                             = delete;
-#endif
 
     public:
-        /**
-         * @symbol ??0EventScope\@PerfContextTracker\@\@QEAA\@W4PerfContextEvent\@\@\@Z
-         */
-        MCAPI EventScope(enum class PerfContextEvent);
-        /**
-         * @symbol ??1EventScope\@PerfContextTracker\@\@QEAA\@XZ
-         */
+        // NOLINTBEGIN
+        // symbol: ??0EventScope@PerfContextTracker@@QEAA@W4PerfContextEvent@@@Z
+        MCAPI EventScope(::PerfContextEvent);
+
+        // symbol: ??1EventScope@PerfContextTracker@@QEAA@XZ
         MCAPI ~EventScope();
+
+        // NOLINTEND
     };
 
-    class Timer {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERFCONTEXTTRACKER_TIMER
+    class Timer : public ::PerfContextTracker::Duration {
     public:
+        // prevent constructor by default
         Timer& operator=(Timer const&) = delete;
         Timer(Timer const&)            = delete;
         Timer()                        = delete;
-#endif
 
     public:
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // NOLINTBEGIN
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @vftbl 1
-         * @symbol ?reset\@Timer\@PerfContextTracker\@\@UEAAXXZ
-         */
+
+        // vIndex: 1, symbol: ?reset@Timer@PerfContextTracker@@UEAAXXZ
         virtual void reset();
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERFCONTEXTTRACKER
 public:
+    // prevent constructor by default
     PerfContextTracker& operator=(PerfContextTracker const&) = delete;
     PerfContextTracker(PerfContextTracker const&)            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0PerfContextTracker\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0PerfContextTracker@@QEAA@XZ
     MCAPI PerfContextTracker();
-    /**
-     * @symbol ?incrementPacketReceivedInfo\@PerfContextTracker\@\@QEAAXI\@Z
-     */
-    MCAPI void incrementPacketReceivedInfo(unsigned int);
-    /**
-     * @symbol ?incrementPacketSentInfo\@PerfContextTracker\@\@QEAAXI\@Z
-     */
-    MCAPI void incrementPacketSentInfo(unsigned int);
-    /**
-     * @symbol ?getInstance\@PerfContextTracker\@\@SAAEAV1\@XZ
-     */
+
+    // symbol: ?incrementPacketReceivedInfo@PerfContextTracker@@QEAAXI@Z
+    MCAPI void incrementPacketReceivedInfo(uint);
+
+    // symbol: ?incrementPacketSentInfo@PerfContextTracker@@QEAAXI@Z
+    MCAPI void incrementPacketSentInfo(uint);
+
+    // symbol: ?getInstance@PerfContextTracker@@SAAEAV1@XZ
     MCAPI static class PerfContextTracker& getInstance();
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol ?_resetStats\@PerfContextTracker\@\@AEAAXXZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?_resetStats@PerfContextTracker@@AEAAXXZ
     MCAPI void _resetStats();
 
-private:
+    // NOLINTEND
 };

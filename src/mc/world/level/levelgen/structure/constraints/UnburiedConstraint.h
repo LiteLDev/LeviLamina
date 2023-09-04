@@ -2,28 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class UnburiedConstraint {
+// auto generated inclusion list
+#include "mc/enums/Rotation.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UNBURIEDCONSTRAINT
+class UnburiedConstraint {
 public:
+    // prevent constructor by default
     UnburiedConstraint& operator=(UnburiedConstraint const&) = delete;
     UnburiedConstraint(UnburiedConstraint const&)            = delete;
     UnburiedConstraint()                                     = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?isSatisfied\@UnburiedConstraint\@\@UEBA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEBW4Rotation\@\@\@Z
-     */
-    virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, enum class Rotation const&) const;
-    /**
-     * @symbol ??0UnburiedConstraint\@\@QEAA\@AEAVStructureTemplate\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?isSatisfied@UnburiedConstraint@@UEBA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@AEBW4Rotation@@@Z
+    virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, ::Rotation const&) const;
+
+    // symbol: ??0UnburiedConstraint@@QEAA@AEAVStructureTemplate@@@Z
     MCAPI UnburiedConstraint(class StructureTemplate&);
+
+    // NOLINTEND
 };

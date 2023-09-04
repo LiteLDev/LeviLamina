@@ -2,24 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SubmitCallback {
+// auto generated inclusion list
+#include "mc/enums/XTaskQueuePort.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBMITCALLBACK
+class SubmitCallback {
 public:
+    // prevent constructor by default
     SubmitCallback& operator=(SubmitCallback const&) = delete;
     SubmitCallback(SubmitCallback const&)            = delete;
     SubmitCallback()                                 = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?Register\@SubmitCallback\@\@QEAAJPEAXP6AX0PEAUXTaskQueueObject\@\@W4XTaskQueuePort\@\@\@ZPEAUXTaskQueueRegistrationToken\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?Register@SubmitCallback@@QEAAJPEAXP6AX0PEAUXTaskQueueObject@@W4XTaskQueuePort@@@ZPEAUXTaskQueueRegistrationToken@@@Z
     MCAPI long
-    Register(void*, void (*)(void*, struct XTaskQueueObject*, enum class XTaskQueuePort), struct XTaskQueueRegistrationToken*);
-    /**
-     * @symbol ?Unregister\@SubmitCallback\@\@QEAAXUXTaskQueueRegistrationToken\@\@\@Z
-     */
+    Register(void*, void (*)(void*, struct XTaskQueueObject*, ::XTaskQueuePort), struct XTaskQueueRegistrationToken*);
+
+    // symbol: ?Unregister@SubmitCallback@@QEAAXUXTaskQueueRegistrationToken@@@Z
     MCAPI void Unregister(struct XTaskQueueRegistrationToken);
+
+    // NOLINTEND
 };

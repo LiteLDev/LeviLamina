@@ -6,29 +6,22 @@
 #include "mc/world/level/levelgen/feature/Feature.h"
 
 class GlowStoneFeature : public ::Feature {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLOWSTONEFEATURE
 public:
+    // prevent constructor by default
     GlowStoneFeature& operator=(GlowStoneFeature const&) = delete;
     GlowStoneFeature(GlowStoneFeature const&)            = delete;
     GlowStoneFeature()                                   = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 3
-     * @symbol ?place\@GlowStoneFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
-     */
+
+    // vIndex: 3, symbol: ?place@GlowStoneFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLOWSTONEFEATURE
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1GlowStoneFeature@@UEAA@XZ
     MCVAPI ~GlowStoneFeature();
-#endif
+
+    // NOLINTEND
 };

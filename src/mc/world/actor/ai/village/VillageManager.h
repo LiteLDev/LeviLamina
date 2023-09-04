@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/IVillageManager.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace mce { class UUID; }
 // clang-format on
 
-class VillageManager {
+class VillageManager : public ::IVillageManager {
 public:
     // VillageManager inner types declare
     // clang-format off
@@ -19,191 +22,162 @@ public:
     enum class BedAvailabilityState {};
 
     class DwellerTestVillageInfo {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VILLAGEMANAGER_DWELLERTESTVILLAGEINFO
     public:
+        // prevent constructor by default
         DwellerTestVillageInfo& operator=(DwellerTestVillageInfo const&) = delete;
         DwellerTestVillageInfo(DwellerTestVillageInfo const&)            = delete;
         DwellerTestVillageInfo()                                         = delete;
-#endif
 
     public:
-        /**
-         * @symbol ??1DwellerTestVillageInfo\@VillageManager\@\@QEAA\@XZ
-         */
+        // NOLINTBEGIN
+        // symbol: ??1DwellerTestVillageInfo@VillageManager@@QEAA@XZ
         MCAPI ~DwellerTestVillageInfo();
+
+        // NOLINTEND
     };
 
     class VillageInfo {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VILLAGEMANAGER_VILLAGEINFO
     public:
+        // prevent constructor by default
         VillageInfo& operator=(VillageInfo const&) = delete;
         VillageInfo(VillageInfo const&)            = delete;
         VillageInfo()                              = delete;
-#endif
 
     public:
-        /**
-         * @symbol ??1VillageInfo\@VillageManager\@\@QEAA\@XZ
-         */
+        // NOLINTBEGIN
+        // symbol: ??1VillageInfo@VillageManager@@QEAA@XZ
         MCAPI ~VillageInfo();
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VILLAGEMANAGER
 public:
+    // prevent constructor by default
     VillageManager& operator=(VillageManager const&) = delete;
     VillageManager(VillageManager const&)            = delete;
     VillageManager()                                 = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?fetchClosestVillage\@VillageManager\@\@UEBA?AV?$weak_ptr\@VVillage\@\@\@std\@\@AEBVBlockPos\@\@HI\@Z
-     */
-    virtual class std::weak_ptr<class Village> fetchClosestVillage(class BlockPos const&, int, unsigned int) const;
-    /**
-     * @vftbl 2
-     * @symbol ?getVillageByID\@VillageManager\@\@UEBA?AV?$weak_ptr\@VVillage\@\@\@std\@\@AEBVUUID\@mce\@\@\@Z
-     */
-    virtual class std::weak_ptr<class Village> getVillageByID(class mce::UUID const&) const;
-    /**
-     * @symbol ??0VillageManager\@\@QEAA\@AEAVDimension\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?fetchClosestVillage@VillageManager@@UEBA?AV?$weak_ptr@VVillage@@@std@@AEBVBlockPos@@HI@Z
+    virtual std::weak_ptr<class Village> fetchClosestVillage(class BlockPos const&, int, uint) const;
+
+    // vIndex: 2, symbol: ?getVillageByID@VillageManager@@UEBA?AV?$weak_ptr@VVillage@@@std@@AEBVUUID@mce@@@Z
+    virtual std::weak_ptr<class Village> getVillageByID(class mce::UUID const&) const;
+
+    // symbol: ??0VillageManager@@QEAA@AEAVDimension@@@Z
     MCAPI VillageManager(class Dimension&);
-    /**
-     * @symbol
-     * ?fetchClosestVillageMostSuitableForDweller\@VillageManager\@\@QEBA?AV?$weak_ptr\@VVillage\@\@\@std\@\@AEBVBlockPos\@\@HI\@Z
-     */
-    MCAPI class std::weak_ptr<class Village>
-    fetchClosestVillageMostSuitableForDweller(class BlockPos const&, int, unsigned int) const;
-    /**
-     * @symbol ?getClosestVillageWithRaid\@VillageManager\@\@QEAA?AV?$weak_ptr\@VVillage\@\@\@std\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI class std::weak_ptr<class Village> getClosestVillageWithRaid(class BlockPos const&);
-    /**
-     * @symbol ?getPOI\@VillageManager\@\@QEBA?AV?$weak_ptr\@VPOIInstance\@\@\@std\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI class std::weak_ptr<class POIInstance> getPOI(class BlockPos const&) const;
-    /**
-     * @symbol ?getPOIInitEventFromName\@VillageManager\@\@QEBA?AVHashedString\@\@AEBV2\@\@Z
-     */
+
+    // symbol:
+    // ?fetchClosestVillageMostSuitableForDweller@VillageManager@@QEBA?AV?$weak_ptr@VVillage@@@std@@AEBVBlockPos@@HI@Z
+    MCAPI std::weak_ptr<class Village>
+          fetchClosestVillageMostSuitableForDweller(class BlockPos const&, int, uint) const;
+
+    // symbol: ?getClosestVillageWithRaid@VillageManager@@QEAA?AV?$weak_ptr@VVillage@@@std@@AEBVBlockPos@@@Z
+    MCAPI std::weak_ptr<class Village> getClosestVillageWithRaid(class BlockPos const&);
+
+    // symbol: ?getPOI@VillageManager@@QEBA?AV?$weak_ptr@VPOIInstance@@@std@@AEBVBlockPos@@@Z
+    MCAPI std::weak_ptr<class POIInstance> getPOI(class BlockPos const&) const;
+
+    // symbol: ?getPOIInitEventFromName@VillageManager@@QEBA?AVHashedString@@AEBV2@@Z
     MCAPI class HashedString getPOIInitEventFromName(class HashedString const&) const;
-    /**
-     * @symbol ?initializeWithLevelStorageManager\@VillageManager\@\@QEAAXAEAVLevelStorageManager\@\@\@Z
-     */
+
+    // symbol: ?initializeWithLevelStorageManager@VillageManager@@QEAAXAEAVLevelStorageManager@@@Z
     MCAPI void initializeWithLevelStorageManager(class LevelStorageManager&);
-    /**
-     * @symbol ?insertPOI\@VillageManager\@\@QEAAX$$QEAV?$shared_ptr\@VPOIInstance\@\@\@std\@\@\@Z
-     */
-    MCAPI void insertPOI(class std::shared_ptr<class POIInstance>&&);
-    /**
-     * @symbol ?isValidPOIType\@VillageManager\@\@QEBA_NAEBVBlockPos\@\@AEBVBlock\@\@\@Z
-     */
+
+    // symbol: ?insertPOI@VillageManager@@QEAAX$$QEAV?$shared_ptr@VPOIInstance@@@std@@@Z
+    MCAPI void insertPOI(std::shared_ptr<class POIInstance>&&);
+
+    // symbol: ?isValidPOIType@VillageManager@@QEBA_NAEBVBlockPos@@AEBVBlock@@@Z
     MCAPI bool isValidPOIType(class BlockPos const&, class Block const&) const;
-    /**
-     * @symbol ?isWanderingTraderManagedByScheduler\@VillageManager\@\@QEAA_NAEBVActor\@\@\@Z
-     */
+
+    // symbol: ?isWanderingTraderManagedByScheduler@VillageManager@@QEAA_NAEBVActor@@@Z
     MCAPI bool isWanderingTraderManagedByScheduler(class Actor const&);
-    /**
-     * @symbol ?loadAllVillages\@VillageManager\@\@QEAAXXZ
-     */
+
+    // symbol: ?loadAllVillages@VillageManager@@QEAAXXZ
     MCAPI void loadAllVillages();
-    /**
-     * @symbol ?removePOI\@VillageManager\@\@QEAAXV?$weak_ptr\@VPOIInstance\@\@\@std\@\@\@Z
-     */
-    MCAPI void removePOI(class std::weak_ptr<class POIInstance>);
-    /**
-     * @symbol ?submitFindPOIQuery\@VillageManager\@\@QEAAXAEBUActorUniqueID\@\@\@Z
-     */
+
+    // symbol: ?removePOI@VillageManager@@QEAAXV?$weak_ptr@VPOIInstance@@@std@@@Z
+    MCAPI void removePOI(std::weak_ptr<class POIInstance>);
+
+    // symbol: ?submitFindPOIQuery@VillageManager@@QEAAXAEBUActorUniqueID@@@Z
     MCAPI void submitFindPOIQuery(struct ActorUniqueID const&);
-    /**
-     * @symbol ?tick\@VillageManager\@\@QEAAXAEBUTick\@\@\@Z
-     */
+
+    // symbol: ?tick@VillageManager@@QEAAXAEBUTick@@@Z
     MCAPI void tick(struct Tick const&);
-    /**
-     * @symbol ?tickVillages\@VillageManager\@\@QEAAXAEBUTick\@\@AEBVVec3\@\@AEAVBlockSource\@\@\@Z
-     */
+
+    // symbol: ?tickVillages@VillageManager@@QEAAXAEBUTick@@AEBVVec3@@AEAVBlockSource@@@Z
     MCAPI void tickVillages(struct Tick const&, class Vec3 const&, class BlockSource&);
-    /**
-     * @symbol
-     * ?tryCreatePOI\@VillageManager\@\@QEAA?AV?$shared_ptr\@VPOIInstance\@\@\@std\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
-     */
-    MCAPI class std::shared_ptr<class POIInstance> tryCreatePOI(class BlockPos const&, class Block const&);
-    /**
-     * @symbol ?MAX_POI_TOLERANCE_DIST\@VillageManager\@\@2HB
-     */
+
+    // symbol: ?tryCreatePOI@VillageManager@@QEAA?AV?$shared_ptr@VPOIInstance@@@std@@AEBVBlockPos@@AEBVBlock@@@Z
+    MCAPI std::shared_ptr<class POIInstance> tryCreatePOI(class BlockPos const&, class Block const&);
+
+    // symbol: ?MAX_POI_TOLERANCE_DIST@VillageManager@@2HB
     MCAPI static int const MAX_POI_TOLERANCE_DIST;
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol ?_addPOIWithinRadius\@VillageManager\@\@AEAAXAEBVBlockPos\@\@AEAVBlockSource\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?_addPOIWithinRadius@VillageManager@@AEAAXAEBVBlockPos@@AEAVBlockSource@@@Z
     MCAPI void _addPOIWithinRadius(class BlockPos const&, class BlockSource&);
-    /**
-     * @symbol ?_assignPOIOnly\@VillageManager\@\@AEAAX$$QEAV?$shared_ptr\@VPOIInstance\@\@\@std\@\@\@Z
-     */
-    MCAPI void _assignPOIOnly(class std::shared_ptr<class POIInstance>&&);
-    /**
-     * @symbol ?_calculateDistanceFromPositionToEdgeOfVillage\@VillageManager\@\@AEBAMAEBVBlockPos\@\@AEBVVillage\@\@\@Z
-     */
+
+    // symbol: ?_assignPOIOnly@VillageManager@@AEAAX$$QEAV?$shared_ptr@VPOIInstance@@@std@@@Z
+    MCAPI void _assignPOIOnly(std::shared_ptr<class POIInstance>&&);
+
+    // symbol: ?_calculateDistanceFromPositionToEdgeOfVillage@VillageManager@@AEBAMAEBVBlockPos@@AEBVVillage@@@Z
     MCAPI float _calculateDistanceFromPositionToEdgeOfVillage(class BlockPos const&, class Village const&) const;
-    /**
-     * @symbol
-     * ?_createOrGetVillage\@VillageManager\@\@AEAA?AV?$shared_ptr\@VVillage\@\@\@std\@\@AEBVUUID\@mce\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI class std::shared_ptr<class Village> _createOrGetVillage(class mce::UUID const&, class BlockPos const&);
-    /**
-     * @symbol
-     * ?_getVillageWithBedsAvailableMap\@VillageManager\@\@AEBA?AV?$unordered_map\@PEBVVillage\@\@W4BedAvailabilityState\@VillageManager\@\@U?$hash\@PEBVVillage\@\@\@std\@\@U?$equal_to\@PEBVVillage\@\@\@5\@V?$allocator\@U?$pair\@QEBVVillage\@\@W4BedAvailabilityState\@VillageManager\@\@\@std\@\@\@5\@\@std\@\@XZ
-     */
-    MCAPI class std::unordered_map<
-        class Village const*,
-        enum class VillageManager::BedAvailabilityState,
-        struct std::hash<class Village const*>,
-        struct std::equal_to<class Village const*>,
-        class std::allocator<
-            struct std::pair<class Village const* const, enum class VillageManager::BedAvailabilityState>>>
-    _getVillageWithBedsAvailableMap() const;
-    /**
-     * @symbol ?_loadPOIBlueprints\@VillageManager\@\@AEAAXXZ
-     */
+
+    // symbol: ?_createOrGetVillage@VillageManager@@AEAA?AV?$shared_ptr@VVillage@@@std@@AEBVUUID@mce@@AEBVBlockPos@@@Z
+    MCAPI std::shared_ptr<class Village> _createOrGetVillage(class mce::UUID const&, class BlockPos const&);
+
+    // symbol:
+    // ?_getVillageWithBedsAvailableMap@VillageManager@@AEBA?AV?$unordered_map@PEBVVillage@@W4BedAvailabilityState@VillageManager@@U?$hash@PEBVVillage@@@std@@U?$equal_to@PEBVVillage@@@5@V?$allocator@U?$pair@QEBVVillage@@W4BedAvailabilityState@VillageManager@@@std@@@5@@std@@XZ
+    MCAPI std::unordered_map<class Village const*, ::VillageManager::BedAvailabilityState>
+          _getVillageWithBedsAvailableMap() const;
+
+    // symbol: ?_loadPOIBlueprints@VillageManager@@AEAAXXZ
     MCAPI void _loadPOIBlueprints();
-    /**
-     * @symbol ?_removeVillage\@VillageManager\@\@AEAAXAEAVVillage\@\@\@Z
-     */
+
+    // symbol: ?_removeVillage@VillageManager@@AEAAXAEAVVillage@@@Z
     MCAPI void _removeVillage(class Village&);
-    /**
-     * @symbol ?_saveAllVillages\@VillageManager\@\@AEAAXAEAVLevelStorage\@\@\@Z
-     */
+
+    // symbol: ?_saveAllVillages@VillageManager@@AEAAXAEAVLevelStorage@@@Z
     MCAPI void _saveAllVillages(class LevelStorage&);
-    /**
-     * @symbol ?_tryAssignPOIOrCreateVillage\@VillageManager\@\@AEAAX$$QEAV?$shared_ptr\@VPOIInstance\@\@\@std\@\@\@Z
-     */
-    MCAPI void _tryAssignPOIOrCreateVillage(class std::shared_ptr<class POIInstance>&&);
-    /**
-     * @symbol
-     * ?_unclusterDerelictPOIs\@VillageManager\@\@AEAAXAEAV?$vector\@V?$weak_ptr\@VPOIInstance\@\@\@std\@\@V?$allocator\@V?$weak_ptr\@VPOIInstance\@\@\@std\@\@\@2\@\@std\@\@\@Z
-     */
-    MCAPI void _unclusterDerelictPOIs(std::vector<class std::weak_ptr<class POIInstance>>&);
+
+    // symbol: ?_tryAssignPOIOrCreateVillage@VillageManager@@AEAAX$$QEAV?$shared_ptr@VPOIInstance@@@std@@@Z
+    MCAPI void _tryAssignPOIOrCreateVillage(std::shared_ptr<class POIInstance>&&);
+
+    // symbol:
+    // ?_unclusterDerelictPOIs@VillageManager@@AEAAXAEAV?$vector@V?$weak_ptr@VPOIInstance@@@std@@V?$allocator@V?$weak_ptr@VPOIInstance@@@std@@@2@@std@@@Z
+    MCAPI void _unclusterDerelictPOIs(std::vector<std::weak_ptr<class POIInstance>>&);
+
+    // NOLINTEND
 
 private:
-    /**
-     * @symbol ?MAX_POI_QUERIES\@VillageManager\@\@0_KB
-     */
-    MCAPI static unsigned __int64 const MAX_POI_QUERIES;
-    /**
-     * @symbol ?MAX_QUERY_SCAN_ITERATIONS\@VillageManager\@\@0HB
-     */
+    // NOLINTBEGIN
+    // symbol: ?MAX_POI_QUERIES@VillageManager@@0_KB
+    MCAPI static uint64 const MAX_POI_QUERIES;
+
+    // symbol: ?MAX_QUERY_SCAN_ITERATIONS@VillageManager@@0HB
     MCAPI static int const MAX_QUERY_SCAN_ITERATIONS;
-    /**
-     * @symbol ?VILLAGE_HERO_EFFECT_DURATION\@VillageManager\@\@0HB
-     */
+
+    // symbol: ?VILLAGE_HERO_EFFECT_DURATION@VillageManager@@0HB
     MCAPI static int const VILLAGE_HERO_EFFECT_DURATION;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $MAX_POI_QUERIES() { return MAX_POI_QUERIES; }
+
+    inline auto& $MAX_QUERY_SCAN_ITERATIONS() { return MAX_QUERY_SCAN_ITERATIONS; }
+
+    inline auto& $VILLAGE_HERO_EFFECT_DURATION() { return VILLAGE_HERO_EFFECT_DURATION; }
+
+    // NOLINTEND
 };

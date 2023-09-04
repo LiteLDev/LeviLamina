@@ -11,28 +11,25 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 struct IsSaddledDefinition {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISSADDLEDDEFINITION
 public:
+    // prevent constructor by default
     IsSaddledDefinition& operator=(IsSaddledDefinition const&) = delete;
     IsSaddledDefinition(IsSaddledDefinition const&)            = delete;
     IsSaddledDefinition()                                      = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?initialize\@IsSaddledDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?initialize@IsSaddledDefinition@@QEBAXAEAVEntityContext@@@Z
     MCAPI void initialize(class EntityContext&) const;
-    /**
-     * @symbol ?uninitialize\@IsSaddledDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
+
+    // symbol: ?uninitialize@IsSaddledDefinition@@QEBAXAEAVEntityContext@@@Z
     MCAPI void uninitialize(class EntityContext&) const;
-    /**
-     * @symbol
-     * ?buildSchema\@IsSaddledDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsSaddledDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?buildSchema@IsSaddledDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsSaddledDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
-    buildSchema(class std::shared_ptr<
+    buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsSaddledDefinition>>&);
+
+    // NOLINTEND
 };

@@ -11,23 +11,11 @@ public:
 
     // SubChunkBrightnessStorage inner types define
     struct LightPair {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKBRIGHTNESSSTORAGE_LIGHTPAIR
     public:
-        LightPair& operator=(LightPair const&) = delete;
-        LightPair(LightPair const&)            = delete;
-        LightPair()                            = delete;
-#endif
-
-    public:
+        uchar blockLight : 4;
+        uchar skyLight : 4;
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKBRIGHTNESSSTORAGE
 public:
-    SubChunkBrightnessStorage& operator=(SubChunkBrightnessStorage const&) = delete;
-    SubChunkBrightnessStorage(SubChunkBrightnessStorage const&)            = delete;
-    SubChunkBrightnessStorage()                                            = delete;
-#endif
-
-public:
+    std::array<LightPair, 2048> mLightValues; // this+0x0
 };

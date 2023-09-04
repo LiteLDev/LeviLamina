@@ -2,22 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class PlayerPositionModeComponent {
+struct PlayerPositionModeComponent {
 public:
-    // PlayerPositionModeComponent inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // PlayerPositionModeComponent inner types define
-    enum class PositionMode {};
+    enum class PositionMode {
+        Normal      = 0,
+        Respawn     = 1,
+        Teleport    = 2,
+        OnlyHeadRot = 3,
+    };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERPOSITIONMODECOMPONENT
 public:
+    // prevent constructor by default
     PlayerPositionModeComponent& operator=(PlayerPositionModeComponent const&) = delete;
     PlayerPositionModeComponent(PlayerPositionModeComponent const&)            = delete;
     PlayerPositionModeComponent()                                              = delete;
-#endif
-
-public:
 };

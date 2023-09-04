@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct MolangMemberAccessor {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGMEMBERACCESSOR
 public:
+    // prevent constructor by default
     MolangMemberAccessor& operator=(MolangMemberAccessor const&) = delete;
     MolangMemberAccessor(MolangMemberAccessor const&)            = delete;
     MolangMemberAccessor()                                       = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1MolangMemberAccessor\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1MolangMemberAccessor@@QEAA@XZ
     MCAPI ~MolangMemberAccessor();
+
+    // NOLINTEND
 };

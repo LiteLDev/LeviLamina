@@ -5,19 +5,18 @@
 namespace persona {
 
 struct PersonaCharacterHandle {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERSONA_PERSONACHARACTERHANDLE
 public:
+    // prevent constructor by default
     PersonaCharacterHandle& operator=(PersonaCharacterHandle const&) = delete;
     PersonaCharacterHandle(PersonaCharacterHandle const&)            = delete;
     PersonaCharacterHandle()                                         = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?INVALID\@PersonaCharacterHandle\@persona\@\@2U12\@B
-     */
+    // NOLINTBEGIN
+    // symbol: ?INVALID@PersonaCharacterHandle@persona@@2U12@B
     MCAPI static struct persona::PersonaCharacterHandle const INVALID;
+
+    // NOLINTEND
 };
 
 }; // namespace persona

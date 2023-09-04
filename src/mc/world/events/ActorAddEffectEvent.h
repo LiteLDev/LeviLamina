@@ -3,20 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ActorAddEffectEvent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORADDEFFECTEVENT
 public:
+    // prevent constructor by default
     ActorAddEffectEvent& operator=(ActorAddEffectEvent const&) = delete;
     ActorAddEffectEvent()                                      = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0ActorAddEffectEvent\@\@QEAA\@AEBU0\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0ActorAddEffectEvent@@QEAA@AEBU0@@Z
     MCAPI ActorAddEffectEvent(struct ActorAddEffectEvent const&);
-    /**
-     * @symbol ??1ActorAddEffectEvent\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ActorAddEffectEvent@@QEAA@XZ
     MCAPI ~ActorAddEffectEvent();
+
+    // NOLINTEND
 };

@@ -3,29 +3,33 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ResourcePackFileDownloaderManager {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKFILEDOWNLOADERMANAGER
 public:
+    // prevent constructor by default
     ResourcePackFileDownloaderManager& operator=(ResourcePackFileDownloaderManager const&) = delete;
     ResourcePackFileDownloaderManager(ResourcePackFileDownloaderManager const&)            = delete;
     ResourcePackFileDownloaderManager()                                                    = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?cleanup\@ResourcePackFileDownloaderManager\@\@QEAAXXZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?cleanup@ResourcePackFileDownloaderManager@@QEAAXXZ
     MCAPI void cleanup();
-    /**
-     * @symbol ?update\@ResourcePackFileDownloaderManager\@\@QEAAXXZ
-     */
+
+    // symbol: ?update@ResourcePackFileDownloaderManager@@QEAAXXZ
     MCAPI void update();
 
-    // private:
+    // NOLINTEND
 
 private:
-    /**
-     * @symbol ?MAX_CHUNK_ATTEMPTS\@ResourcePackFileDownloaderManager\@\@0HB
-     */
+    // NOLINTBEGIN
+    // symbol: ?MAX_CHUNK_ATTEMPTS@ResourcePackFileDownloaderManager@@0HB
     MCAPI static int const MAX_CHUNK_ATTEMPTS;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $MAX_CHUNK_ATTEMPTS() { return MAX_CHUNK_ATTEMPTS; }
+
+    // NOLINTEND
 };

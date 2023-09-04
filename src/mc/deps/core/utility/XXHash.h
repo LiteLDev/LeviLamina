@@ -5,22 +5,18 @@
 namespace Util {
 
 class XXHash {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UTIL_XXHASH
 public:
+    // prevent constructor by default
     XXHash& operator=(XXHash const&) = delete;
     XXHash(XXHash const&)            = delete;
     XXHash()                         = delete;
-#endif
 
-public:
     // private:
-    /**
-     * @symbol ?_hash64Impl\@XXHash\@Util\@\@CA_KPEBX_K1\@Z
-     */
-    MCAPI static unsigned __int64 _hash64Impl(void const*, unsigned __int64, unsigned __int64);
+    // NOLINTBEGIN
+    // symbol: ?_hash64Impl@XXHash@Util@@CA_KPEBX_K1@Z
+    MCAPI static uint64 _hash64Impl(void const*, uint64, uint64);
 
-private:
+    // NOLINTEND
 };
 
 }; // namespace Util

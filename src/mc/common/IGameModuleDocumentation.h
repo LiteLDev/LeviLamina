@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class IGameModuleDocumentation {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IGAMEMODULEDOCUMENTATION
 public:
+    // prevent constructor by default
     IGameModuleDocumentation& operator=(IGameModuleDocumentation const&) = delete;
     IGameModuleDocumentation(IGameModuleDocumentation const&)            = delete;
     IGameModuleDocumentation()                                           = delete;
-#endif
-
-public:
 };

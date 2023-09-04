@@ -2,17 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-template<typename T0> struct InsideBlockWithPosAndBlockComponent;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/components/InsideBlockWithPosAndBlockComponent.h"
 
 namespace InsideSweetBerryBushBlockSystemImpl {
-/**
- * @symbol
- * ?tick\@InsideSweetBerryBushBlockSystemImpl\@\@YAXAEBU?$InsideBlockWithPosAndBlockComponent\@USweetBerryBushBlockFlag\@\@\@\@AEAVActorOwnerComponent\@\@\@Z
- */
+// NOLINTBEGIN
+// symbol:
+// ?tick@InsideSweetBerryBushBlockSystemImpl@@YAXAEBU?$InsideBlockWithPosAndBlockComponent@USweetBerryBushBlockFlag@@@@AEAVActorOwnerComponent@@@Z
 MCAPI void
 tick(struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag> const&, class ActorOwnerComponent&);
+// NOLINTEND
 
 }; // namespace InsideSweetBerryBushBlockSystemImpl

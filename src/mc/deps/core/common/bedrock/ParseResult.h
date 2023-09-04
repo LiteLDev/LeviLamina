@@ -5,19 +5,18 @@
 namespace Bedrock::JSONObject {
 
 class ParseResult {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_JSONOBJECT_PARSERESULT
 public:
+    // prevent constructor by default
     ParseResult& operator=(ParseResult const&) = delete;
     ParseResult(ParseResult const&)            = delete;
     ParseResult()                              = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?isError\@ParseResult\@JSONObject\@Bedrock\@\@QEBA_NXZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?isError@ParseResult@JSONObject@Bedrock@@QEBA_NXZ
     MCAPI bool isError() const;
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::JSONObject

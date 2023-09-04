@@ -2,20 +2,18 @@
 
 #include <string>
 
-#include "liteloader/api/utils/StringHelper.h"
 #include "liteloader/api/utils/DbgHelper.h"
+#include "liteloader/api/utils/StringHelper.h"
 
 #include "liteloader/api/I18nAPI.h"
 
 #include "liteloader/core/Config.h"
 #include "liteloader/core/LiteLoader.h"
 
-#include <Windows.h>
 #include <Psapi.h>
+#include <Windows.h>
 
-using namespace std;
-
-string GetLastErrorMessage(DWORD error_message_id) {
+std::string GetLastErrorMessage(DWORD error_message_id) {
     if (error_message_id == 0)
         return "";
 
@@ -29,12 +27,12 @@ string GetLastErrorMessage(DWORD error_message_id) {
         0,
         nullptr
     );
-    string res = wstr2str(wstring(message_buffer));
+    std::string res = wstr2str(std::wstring(message_buffer));
     LocalFree(message_buffer);
     return res;
 }
 
-string GetLastErrorMessage() {
+std::string GetLastErrorMessage() {
     DWORD error_message_id = ::GetLastError();
     if (error_message_id == 0)
         return "";
@@ -49,13 +47,13 @@ string GetLastErrorMessage() {
         0,
         nullptr
     );
-    string res = wstr2str(wstring(message_buffer));
+    std::string res = wstr2str(std::wstring(message_buffer));
     LocalFree(message_buffer);
     return res;
 }
 
 // Tool
-wchar_t* str2cwstr(const string& str) {
+wchar_t* str2cwstr(const std::string& str) {
     auto  len    = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, nullptr, 0);
     auto* buffer = new wchar_t[len + 1];
     MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, buffer, len + 1);
@@ -100,9 +98,9 @@ bool NewProcess(const std::string& process, std::function<void(int, std::string)
             WaitForSingleObject(hProcess, timeLimit);
             TerminateProcess(hProcess, -1);
         }
-        char   buffer[READ_BUFFER_SIZE];
-        string strOutput;
-        DWORD  bytesRead, exitCode;
+        char        buffer[READ_BUFFER_SIZE];
+        std::string strOutput;
+        DWORD       bytesRead, exitCode;
 
         delete[] wCmd;
         GetExitCodeProcess(hProcess, &exitCode);
@@ -132,7 +130,7 @@ bool NewProcess(const std::string& process, std::function<void(int, std::string)
     return true;
 }
 
-std::pair<int, string> NewProcessSync(const std::string& process, int timeLimit, bool noReadOutput) {
+std::pair<int, std::string> NewProcessSync(const std::string& process, int timeLimit, bool noReadOutput) {
     SECURITY_ATTRIBUTES sa;
     HANDLE              hRead, hWrite;
     sa.nLength              = sizeof(SECURITY_ATTRIBUTES);
@@ -163,9 +161,9 @@ std::pair<int, string> NewProcessSync(const std::string& process, int timeLimit,
         WaitForSingleObject(pi.hProcess, timeLimit);
         TerminateProcess(pi.hProcess, -1);
     }
-    char   buffer[READ_BUFFER_SIZE];
-    string strOutput;
-    DWORD  bytesRead, exitCode;
+    char        buffer[READ_BUFFER_SIZE];
+    std::string strOutput;
+    DWORD       bytesRead, exitCode;
 
     delete[] wCmd;
     GetExitCodeProcess(pi.hProcess, &exitCode);
@@ -182,13 +180,13 @@ std::pair<int, string> NewProcessSync(const std::string& process, int timeLimit,
     return {exitCode, strOutput};
 }
 
-string GetModulePath(HMODULE handle) {
+std::string GetModulePath(HMODULE handle) {
     wchar_t buf[MAX_PATH] = {0};
     GetModuleFileNameEx(GetCurrentProcess(), handle, buf, MAX_PATH);
     return wstr2str(std::wstring(buf));
 }
 
-string GetModuleName(HMODULE handle) {
+std::string GetModuleName(HMODULE handle) {
     wchar_t buf[MAX_PATH] = {0};
     GetModuleFileNameEx(GetCurrentProcess(), handle, buf, MAX_PATH);
     return UTF82String(std::filesystem::path(buf).filename().u8string());
@@ -257,7 +255,7 @@ inline std::vector<std::string> split(std::string str, const std::string& patter
     std::string::size_type   pos;
     std::vector<std::string> result;
     str         += pattern;
-    size_t size = str.size();
+    size_t size  = str.size();
     for (size_t i = 0; i < size; i++) {
         pos = str.find(pattern, i);
         if (pos < size) {

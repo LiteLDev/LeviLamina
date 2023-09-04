@@ -2,32 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class AttackNode {
+// auto generated inclusion list
+#include "mc/enums/BehaviorStatus.h"
+#include "mc/world/actor/bhave/node/BehaviorNode.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTACKNODE
+class AttackNode : public ::BehaviorNode {
 public:
+    // prevent constructor by default
     AttackNode& operator=(AttackNode const&) = delete;
     AttackNode(AttackNode const&)            = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?tick\@AttackNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
-     */
-    virtual enum class BehaviorStatus tick(class Actor&);
-    /**
-     * @vftbl 2
-     * @symbol ?initializeFromDefinition\@AttackNode\@\@EEAAXAEAVActor\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?tick@AttackNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+    virtual ::BehaviorStatus tick(class Actor&);
+
+    // vIndex: 2, symbol: ?initializeFromDefinition@AttackNode@@EEAAXAEAVActor@@@Z
     virtual void initializeFromDefinition(class Actor&);
-    /**
-     * @symbol ??0AttackNode\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0AttackNode@@QEAA@XZ
     MCAPI AttackNode();
+
+    // NOLINTEND
 };

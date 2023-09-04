@@ -8,17 +8,16 @@ namespace Json { class Value; }
 // clang-format on
 
 class NpcGUIOffset {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCGUIOFFSET
 public:
+    // prevent constructor by default
     NpcGUIOffset& operator=(NpcGUIOffset const&) = delete;
     NpcGUIOffset(NpcGUIOffset const&)            = delete;
     NpcGUIOffset()                               = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0NpcGUIOffset\@\@QEAA\@AEBVValue\@Json\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0NpcGUIOffset@@QEAA@AEBVValue@Json@@@Z
     MCAPI NpcGUIOffset(class Json::Value const&);
+
+    // NOLINTEND
 };

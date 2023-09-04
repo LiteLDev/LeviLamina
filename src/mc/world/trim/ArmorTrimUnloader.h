@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ArmorTrimUnloader {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ARMORTRIMUNLOADER
 public:
+    // prevent constructor by default
     ArmorTrimUnloader& operator=(ArmorTrimUnloader const&) = delete;
     ArmorTrimUnloader(ArmorTrimUnloader const&)            = delete;
     ArmorTrimUnloader()                                    = delete;
-#endif
-
-public:
 };

@@ -2,52 +2,40 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ChunkBuildOrderPolicy {
+// auto generated inclusion list
+#include "mc/world/level/dimension/ChunkBuildOrderPolicyBase.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKBUILDORDERPOLICY
+class ChunkBuildOrderPolicy : public ::ChunkBuildOrderPolicyBase {
 public:
+    // prevent constructor by default
     ChunkBuildOrderPolicy& operator=(ChunkBuildOrderPolicy const&) = delete;
     ChunkBuildOrderPolicy(ChunkBuildOrderPolicy const&)            = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getChunkRebuildPriority\@ChunkBuildOrderPolicy\@\@UEBAHAEBVChunkPos\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?getChunkRebuildPriority@ChunkBuildOrderPolicy@@UEBAHAEBVChunkPos@@@Z
     virtual int getChunkRebuildPriority(class ChunkPos const&) const;
-    /**
-     * @vftbl 2
-     * @symbol ?registerForUpdates\@ChunkBuildOrderPolicy\@\@UEAAIXZ
-     */
-    virtual unsigned int registerForUpdates();
-    /**
-     * @vftbl 3
-     * @symbol ?unregisterForUpdates\@ChunkBuildOrderPolicy\@\@UEAAXI\@Z
-     */
-    virtual void unregisterForUpdates(unsigned int);
-    /**
-     * @vftbl 4
-     * @symbol ?setPlayerInfluence\@ChunkBuildOrderPolicy\@\@UEAAXIAEBVChunkPos\@\@AEBVVec3\@\@\@Z
-     */
-    virtual void setPlayerInfluence(unsigned int, class ChunkPos const&, class Vec3 const&);
-    /**
-     * @vftbl 5
-     * @symbol ?setTickingAreaInfluence\@ChunkBuildOrderPolicy\@\@UEAAXIAEBVChunkPos\@\@HH_N1\@Z
-     */
-    virtual void setTickingAreaInfluence(unsigned int, class ChunkPos const&, int, int, bool, bool);
-    /**
-     * @vftbl 6
-     * @symbol ?updateInfluences\@ChunkBuildOrderPolicy\@\@UEAAXXZ
-     */
+
+    // vIndex: 2, symbol: ?registerForUpdates@ChunkBuildOrderPolicy@@UEAAIXZ
+    virtual uint registerForUpdates();
+
+    // vIndex: 3, symbol: ?unregisterForUpdates@ChunkBuildOrderPolicy@@UEAAXI@Z
+    virtual void unregisterForUpdates(uint);
+
+    // vIndex: 4, symbol: ?setPlayerInfluence@ChunkBuildOrderPolicy@@UEAAXIAEBVChunkPos@@AEBVVec3@@@Z
+    virtual void setPlayerInfluence(uint, class ChunkPos const&, class Vec3 const&);
+
+    // vIndex: 5, symbol: ?setTickingAreaInfluence@ChunkBuildOrderPolicy@@UEAAXIAEBVChunkPos@@HH_N1@Z
+    virtual void setTickingAreaInfluence(uint, class ChunkPos const&, int, int, bool, bool);
+
+    // vIndex: 6, symbol: ?updateInfluences@ChunkBuildOrderPolicy@@UEAAXXZ
     virtual void updateInfluences();
-    /**
-     * @symbol ??0ChunkBuildOrderPolicy\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0ChunkBuildOrderPolicy@@QEAA@XZ
     MCAPI ChunkBuildOrderPolicy();
+
+    // NOLINTEND
 };

@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ActorNotificationEvent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORNOTIFICATIONEVENT
 public:
+    // prevent constructor by default
     ActorNotificationEvent& operator=(ActorNotificationEvent const&) = delete;
     ActorNotificationEvent(ActorNotificationEvent const&)            = delete;
     ActorNotificationEvent()                                         = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1ActorNotificationEvent\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1ActorNotificationEvent@@QEAA@XZ
     MCAPI ~ActorNotificationEvent();
+
+    // NOLINTEND
 };

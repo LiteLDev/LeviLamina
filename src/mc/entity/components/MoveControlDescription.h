@@ -2,20 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MoveControlDescription {
+// auto generated inclusion list
+#include "mc/world/actor/ActorComponentDescription.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVECONTROLDESCRIPTION
+struct MoveControlDescription : public ::ActorComponentDescription {
 public:
+    // prevent constructor by default
     MoveControlDescription& operator=(MoveControlDescription const&) = delete;
     MoveControlDescription(MoveControlDescription const&)            = delete;
     MoveControlDescription()                                         = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROLDESCRIPTION
-    /**
-     * @symbol ?deserializeData\@MoveControlDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?deserializeData@MoveControlDescription@@UEAAXUDeserializeDataParams@@@Z
     MCVAPI void deserializeData(struct DeserializeDataParams);
-#endif
+
+    // NOLINTEND
 };

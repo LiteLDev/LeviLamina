@@ -8,23 +8,19 @@
 #include "mc/world/components/FlagComponent.h"
 
 class ShulkerPostAiStepSystem {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHULKERPOSTAISTEPSYSTEM
 public:
+    // prevent constructor by default
     ShulkerPostAiStepSystem& operator=(ShulkerPostAiStepSystem const&) = delete;
     ShulkerPostAiStepSystem(ShulkerPostAiStepSystem const&)            = delete;
     ShulkerPostAiStepSystem()                                          = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?createSystem\@ShulkerPostAiStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?createSystem@ShulkerPostAiStepSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
-    /**
-     * @symbol
-     * ?tick\@ShulkerPostAiStepSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UShulkerFlag\@\@\@\@\@\@UActorRotationComponent\@\@UMobBodyRotationComponent\@\@UStateVectorComponent\@\@\@\@\@Z
-     */
+
+    // symbol:
+    // ?tick@ShulkerPostAiStepSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UShulkerFlag@@@@@@UActorRotationComponent@@UMobBodyRotationComponent@@UStateVectorComponent@@@@@Z
     MCAPI static void tick(class ViewT<
                            class StrictEntityContext,
                            class EntityRegistryBase,
@@ -35,13 +31,14 @@ public:
                            struct MobBodyRotationComponent,
                            struct StateVectorComponent>);
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol
-     * ?_doShulkerPostAiStepSystem\@ShulkerPostAiStepSystem\@\@CAXAEBVStrictEntityContext\@\@AEAUActorRotationComponent\@\@AEAUMobBodyRotationComponent\@\@AEAUStateVectorComponent\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?_doShulkerPostAiStepSystem@ShulkerPostAiStepSystem@@CAXAEBVStrictEntityContext@@AEAUActorRotationComponent@@AEAUMobBodyRotationComponent@@AEAUStateVectorComponent@@@Z
     MCAPI static void
     _doShulkerPostAiStepSystem(class StrictEntityContext const&, struct ActorRotationComponent&, struct MobBodyRotationComponent&, struct StateVectorComponent&);
 
-private:
+    // NOLINTEND
 };

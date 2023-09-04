@@ -2,21 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ActorComponentFactory {
+// auto generated inclusion list
+#include "mc/entity/factory/EntityComponentFactoryJson.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORCOMPONENTFACTORY
+class ActorComponentFactory : public ::EntityComponentFactoryJson {
 public:
+    // prevent constructor by default
     ActorComponentFactory& operator=(ActorComponentFactory const&) = delete;
     ActorComponentFactory(ActorComponentFactory const&)            = delete;
     ActorComponentFactory()                                        = delete;
-#endif
 
-public:
     // private:
-    /**
-     * @symbol ?_initialize\@ActorComponentFactory\@\@AEAAXAEBVExperiments\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?_initialize@ActorComponentFactory@@AEAAXAEBVExperiments@@@Z
     MCAPI void _initialize(class Experiments const&);
 
-private:
+    // NOLINTEND
 };

@@ -10,6 +10,6 @@
 
 namespace ll::perm {
 
-    using Members = PermVector<xuid_t>;
+    using Members = PermVector<std::string>;
 
 }

@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ServerLevel;
 namespace Json { class Value; }
 namespace ScriptModuleMinecraft { class ScriptTickSignal; }
 namespace ScriptModuleMinecraft { struct ScriptEventCommandMessageAfterEvent; }
@@ -27,96 +28,86 @@ public:
 
     // ScriptSystemAfterEvents inner types define
     class ScriptSystemAfterEventsDeferredEventListener {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTSYSTEMAFTEREVENTS_SCRIPTSYSTEMAFTEREVENTSDEFERREDEVENTLISTENER
     public:
+        // prevent constructor by default
         ScriptSystemAfterEventsDeferredEventListener&
         operator=(ScriptSystemAfterEventsDeferredEventListener const&)                                    = delete;
         ScriptSystemAfterEventsDeferredEventListener(ScriptSystemAfterEventsDeferredEventListener const&) = delete;
         ScriptSystemAfterEventsDeferredEventListener()                                                    = delete;
-#endif
 
     public:
-        /**
-         * @vftbl 0
-         * @symbol __unk_vfn_0
-         */
+        // NOLINTBEGIN
+        // vIndex: 0, symbol: __unk_vfn_0
         virtual void __unk_vfn_0();
-        /**
-         * @vftbl 1
-         * @symbol __unk_vfn_1
-         */
-        virtual void __unk_vfn_1();
-        /**
-         * @vftbl 2
-         * @symbol __unk_vfn_2
-         */
+
+        // vIndex: 1, symbol: ?onLevelTickEnd@ScriptDeferredEventListener@@UEAAXXZ
+        virtual void onLevelTickEnd();
+
+        // vIndex: 2, symbol: __unk_vfn_2
         virtual void __unk_vfn_2();
-        /**
-         * @vftbl 3
-         * @symbol __unk_vfn_3
-         */
+
+        // vIndex: 3, symbol: __unk_vfn_3
         virtual void __unk_vfn_3();
-        /**
-         * @vftbl 4
-         * @symbol
-         * ?onFlushSystemAfterEvents\@ScriptSystemAfterEventsDeferredEventListener\@ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@UEAA_NXZ
-         */
+
+        // vIndex: 4, symbol:
+        // ?onFlushSystemAfterEvents@ScriptSystemAfterEventsDeferredEventListener@ScriptSystemAfterEvents@ScriptModuleMinecraft@@UEAA_NXZ
         virtual bool onFlushSystemAfterEvents();
+
+        // vIndex: 5, symbol:
+        // ?onPreFlushAfterEvents@?$IScriptScriptDeferredEventListener@VScriptSystemAfterEvents@ScriptModuleMinecraft@@@ScriptModuleMinecraft@@UEAAXXZ
+        virtual void onPreFlushAfterEvents();
+
+        // vIndex: 6, symbol:
+        // ?onPostFlushAfterEvents@?$IScriptScriptDeferredEventListener@VScriptSystemAfterEvents@ScriptModuleMinecraft@@@ScriptModuleMinecraft@@UEAAXXZ
+        virtual void onPostFlushAfterEvents();
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTSYSTEMAFTEREVENTS
 public:
+    // prevent constructor by default
     ScriptSystemAfterEvents& operator=(ScriptSystemAfterEvents const&) = delete;
     ScriptSystemAfterEvents(ScriptSystemAfterEvents const&)            = delete;
     ScriptSystemAfterEvents()                                          = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ??0ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAA\@AEBVWeakLifetimeScope\@Scripting\@\@V?$not_null\@PEAVServerLevel\@\@\@gsl\@\@\@Z
-     */
-    MCAPI ScriptSystemAfterEvents(class Scripting::WeakLifetimeScope const&, class gsl::not_null<class ServerLevel*>);
-    /**
-     * @symbol ??0ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0ScriptSystemAfterEvents@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
     MCAPI ScriptSystemAfterEvents(class ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
-    /**
-     * @symbol ?getScriptTickSignal\@ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAAAEAVScriptTickSignal\@2\@XZ
-     */
+
+    // symbol:
+    // ??0ScriptSystemAfterEvents@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@V?$not_null@PEAVServerLevel@@@gsl@@@Z
+    MCAPI ScriptSystemAfterEvents(class Scripting::WeakLifetimeScope const&, gsl::not_null<class ServerLevel*>);
+
+    // symbol: ?getScriptTickSignal@ScriptSystemAfterEvents@ScriptModuleMinecraft@@QEAAAEAVScriptTickSignal@2@XZ
     MCAPI class ScriptModuleMinecraft::ScriptTickSignal& getScriptTickSignal();
-    /**
-     * @symbol
-     * ?onScriptCommandMessageEvent\@ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAAXV?$StrongTypedObjectHandle\@UScriptEventCommandMessageAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
-     */
+
+    // symbol:
+    // ?onScriptCommandMessageEvent@ScriptSystemAfterEvents@ScriptModuleMinecraft@@QEAAXV?$StrongTypedObjectHandle@UScriptEventCommandMessageAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     MCAPI void onScriptCommandMessageEvent(class Scripting::StrongTypedObjectHandle<
                                            struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent>);
-    /**
-     * @symbol ??4ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
-     */
+
+    // symbol: ??4ScriptSystemAfterEvents@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptSystemAfterEvents&
     operator=(class ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
-    /**
-     * @symbol
-     * ?registerListener\@ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAAXU?$TypedObjectHandle\@VScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
-     */
+
+    // symbol:
+    // ?registerListener@ScriptSystemAfterEvents@ScriptModuleMinecraft@@QEAAXU?$TypedObjectHandle@VScriptSystemAfterEvents@ScriptModuleMinecraft@@@Scripting@@@Z
     MCAPI void
         registerListener(struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptSystemAfterEvents>);
-    /**
-     * @symbol ??1ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ScriptSystemAfterEvents@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptSystemAfterEvents();
-    /**
-     * @symbol ?bind\@ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@SAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
-     */
+
+    // symbol: ?bind@ScriptSystemAfterEvents@ScriptModuleMinecraft@@SAXAEAVModuleBindingBuilder@Scripting@@@Z
     MCAPI static void bind(class Scripting::ModuleBindingBuilder&);
-    /**
-     * @symbol
-     * ?generateOrderDocumentationForVersion\@ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@SAXAEBUModuleDescriptor\@Scripting\@\@AEAVValue\@Json\@\@\@Z
-     */
+
+    // symbol:
+    // ?generateOrderDocumentationForVersion@ScriptSystemAfterEvents@ScriptModuleMinecraft@@SAXAEBUModuleDescriptor@Scripting@@AEAVValue@Json@@@Z
     MCAPI static void
     generateOrderDocumentationForVersion(struct Scripting::ModuleDescriptor const&, class Json::Value&);
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

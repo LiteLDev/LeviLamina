@@ -8,27 +8,25 @@
 #include "mc/world/components/FlagComponent.h"
 
 class PostAIUpdateSystem {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POSTAIUPDATESYSTEM
 public:
+    // prevent constructor by default
     PostAIUpdateSystem& operator=(PostAIUpdateSystem const&) = delete;
     PostAIUpdateSystem(PostAIUpdateSystem const&)            = delete;
     PostAIUpdateSystem()                                     = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?createSystem\@PostAIUpdateSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?createSystem@PostAIUpdateSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol
-     * ?doPostAiUpdate\@PostAIUpdateSystem\@\@CAXAEAVStrictEntityContext\@\@AEBUAttributesComponent\@\@V?$Optional\@$$CBV?$FlagComponent\@UOnGroundFlag\@\@\@\@\@\@AEAUNoActionTimeComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UWasOnGroundFlag\@\@\@\@\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?doPostAiUpdate@PostAIUpdateSystem@@CAXAEAVStrictEntityContext@@AEBUAttributesComponent@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@AEAUNoActionTimeComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UWasOnGroundFlag@@@@@@@Z
     MCAPI static void
     doPostAiUpdate(class StrictEntityContext&, struct AttributesComponent const&, class Optional<class FlagComponent<struct OnGroundFlag> const>, struct NoActionTimeComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct WasOnGroundFlag>>);
 
-private:
+    // NOLINTEND
 };

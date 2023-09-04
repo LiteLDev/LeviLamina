@@ -6,46 +6,38 @@
 #include "mc/deps/json/JsonValidator.h"
 
 class FormJsonValidator {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FORMJSONVALIDATOR
 public:
+    // prevent constructor by default
     FormJsonValidator& operator=(FormJsonValidator const&) = delete;
     FormJsonValidator(FormJsonValidator const&)            = delete;
     FormJsonValidator()                                    = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?getContentItemProperty\@FormJsonValidator\@\@SA?AVProperty\@JsonValidator\@\@AEBV23\@00000\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?getContentItemProperty@FormJsonValidator@@SA?AVProperty@JsonValidator@@AEBV23@00000@Z
     MCAPI static class JsonValidator::Property
     getContentItemProperty(class JsonValidator::Property const&, class JsonValidator::Property const&, class JsonValidator::Property const&, class JsonValidator::Property const&, class JsonValidator::Property const&, class JsonValidator::Property const&);
-    /**
-     * @symbol ?getControlLockedProperty\@FormJsonValidator\@\@SA?AVProperty\@JsonValidator\@\@XZ
-     */
+
+    // symbol: ?getControlLockedProperty@FormJsonValidator@@SA?AVProperty@JsonValidator@@XZ
     MCAPI static class JsonValidator::Property getControlLockedProperty();
-    /**
-     * @symbol ?getDropdownProperty\@FormJsonValidator\@\@SA?AVProperty\@JsonValidator\@\@_N\@Z
-     */
+
+    // symbol: ?getDropdownProperty@FormJsonValidator@@SA?AVProperty@JsonValidator@@_N@Z
     MCAPI static class JsonValidator::Property getDropdownProperty(bool);
-    /**
-     * @symbol ?getLabelProperty\@FormJsonValidator\@\@SA?AVProperty\@JsonValidator\@\@XZ
-     */
+
+    // symbol: ?getLabelProperty@FormJsonValidator@@SA?AVProperty@JsonValidator@@XZ
     MCAPI static class JsonValidator::Property getLabelProperty();
-    /**
-     * @symbol ?getSliderProperty\@FormJsonValidator\@\@SA?AVProperty\@JsonValidator\@\@_N\@Z
-     */
+
+    // symbol: ?getSliderProperty@FormJsonValidator@@SA?AVProperty@JsonValidator@@_N@Z
     MCAPI static class JsonValidator::Property getSliderProperty(bool);
-    /**
-     * @symbol ?getStepSliderProperty\@FormJsonValidator\@\@SA?AVProperty\@JsonValidator\@\@_N\@Z
-     */
+
+    // symbol: ?getStepSliderProperty@FormJsonValidator@@SA?AVProperty@JsonValidator@@_N@Z
     MCAPI static class JsonValidator::Property getStepSliderProperty(bool);
-    /**
-     * @symbol ?getTextInputProperty\@FormJsonValidator\@\@SA?AVProperty\@JsonValidator\@\@_N\@Z
-     */
+
+    // symbol: ?getTextInputProperty@FormJsonValidator@@SA?AVProperty@JsonValidator@@_N@Z
     MCAPI static class JsonValidator::Property getTextInputProperty(bool);
-    /**
-     * @symbol ?getToggleProperty\@FormJsonValidator\@\@SA?AVProperty\@JsonValidator\@\@_N\@Z
-     */
+
+    // symbol: ?getToggleProperty@FormJsonValidator@@SA?AVProperty@JsonValidator@@_N@Z
     MCAPI static class JsonValidator::Property getToggleProperty(bool);
+
+    // NOLINTEND
 };

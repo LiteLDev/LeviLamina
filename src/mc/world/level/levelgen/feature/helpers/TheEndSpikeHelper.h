@@ -6,10 +6,10 @@
 #include "mc/world/level/levelgen/feature/SpikeFeature.h"
 
 namespace TheEndSpikeHelper {
-/**
- * @symbol
- * ?getSpikesForLevel\@TheEndSpikeHelper\@\@YA?AV?$vector\@VEndSpike\@SpikeFeature\@\@V?$allocator\@VEndSpike\@SpikeFeature\@\@\@std\@\@\@std\@\@AEAVLevel\@\@\@Z
- */
+// NOLINTBEGIN
+// symbol:
+// ?getSpikesForLevel@TheEndSpikeHelper@@YA?AV?$vector@VEndSpike@SpikeFeature@@V?$allocator@VEndSpike@SpikeFeature@@@std@@@std@@AEAVLevel@@@Z
 MCAPI std::vector<class SpikeFeature::EndSpike> getSpikesForLevel(class Level&);
+// NOLINTEND
 
 }; // namespace TheEndSpikeHelper

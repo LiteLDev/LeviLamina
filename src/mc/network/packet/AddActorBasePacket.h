@@ -2,20 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class AddActorBasePacket {
+// auto generated inclusion list
+#include "mc/network/packet/Packet.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADDACTORBASEPACKET
+class AddActorBasePacket : public ::Packet {
 public:
+    // prevent constructor by default
     AddActorBasePacket& operator=(AddActorBasePacket const&) = delete;
     AddActorBasePacket(AddActorBasePacket const&)            = delete;
     AddActorBasePacket()                                     = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDACTORBASEPACKET
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // symbol: ??1AddActorBasePacket@@UEAA@XZ
     MCVAPI ~AddActorBasePacket();
-#endif
+
+    // NOLINTEND
 };

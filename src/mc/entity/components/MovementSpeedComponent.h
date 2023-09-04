@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct MovementSpeedComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEMENTSPEEDCOMPONENT
 public:
+    // prevent constructor by default
     MovementSpeedComponent& operator=(MovementSpeedComponent const&) = delete;
     MovementSpeedComponent(MovementSpeedComponent const&)            = delete;
     MovementSpeedComponent()                                         = delete;
-#endif
-
-public:
 };

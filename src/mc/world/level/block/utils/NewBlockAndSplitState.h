@@ -5,19 +5,18 @@
 namespace ComplexAliasBlockUtils {
 
 struct NewBlockAndSplitState {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPLEXALIASBLOCKUTILS_NEWBLOCKANDSPLITSTATE
 public:
+    // prevent constructor by default
     NewBlockAndSplitState& operator=(NewBlockAndSplitState const&) = delete;
     NewBlockAndSplitState(NewBlockAndSplitState const&)            = delete;
     NewBlockAndSplitState()                                        = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1NewBlockAndSplitState\@ComplexAliasBlockUtils\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1NewBlockAndSplitState@ComplexAliasBlockUtils@@QEAA@XZ
     MCAPI ~NewBlockAndSplitState();
+
+    // NOLINTEND
 };
 
 }; // namespace ComplexAliasBlockUtils

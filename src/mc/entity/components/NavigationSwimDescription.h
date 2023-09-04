@@ -6,29 +6,22 @@
 #include "mc/entity/components/NavigationDescription.h"
 
 class NavigationSwimDescription : public ::NavigationDescription {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONSWIMDESCRIPTION
 public:
+    // prevent constructor by default
     NavigationSwimDescription& operator=(NavigationSwimDescription const&) = delete;
     NavigationSwimDescription(NavigationSwimDescription const&)            = delete;
     NavigationSwimDescription()                                            = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol ?getJsonName\@NavigationSwimDescription\@\@UEBAPEBDXZ
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: ?getJsonName@NavigationSwimDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONSWIMDESCRIPTION
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1NavigationSwimDescription@@UEAA@XZ
     MCVAPI ~NavigationSwimDescription();
-#endif
+
+    // NOLINTEND
 };

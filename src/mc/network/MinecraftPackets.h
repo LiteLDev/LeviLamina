@@ -1,19 +1,22 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/MinecraftPacketIds.h"
+
+// auto generated inclusion list
+#include "mc/enums/MinecraftPacketIds.h"
 
 class MinecraftPackets {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTPACKETS
 public:
+    // prevent constructor by default
     MinecraftPackets& operator=(MinecraftPackets const&) = delete;
     MinecraftPackets(MinecraftPackets const&)            = delete;
     MinecraftPackets()                                   = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?createPacket\@MinecraftPackets\@\@SA?AV?$shared_ptr\@VPacket\@\@\@std\@\@W4MinecraftPacketIds\@\@\@Z
-     */
-    MCAPI static class std::shared_ptr<class Packet> createPacket(enum class MinecraftPacketIds);
+    // NOLINTBEGIN
+    // symbol: ?createPacket@MinecraftPackets@@SA?AV?$shared_ptr@VPacket@@@std@@W4MinecraftPacketIds@@@Z
+    MCAPI static std::shared_ptr<class Packet> createPacket(::MinecraftPacketIds);
+
+    // NOLINTEND
 };

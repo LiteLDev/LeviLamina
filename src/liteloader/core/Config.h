@@ -28,31 +28,31 @@ struct LLConfig {
     bool        enableAddonsHelper = true;
     std::string addonsInstallPath  = R"(.\plugins\AddonsHelper\)";
 
-    bool                     enableCrashLogger              = true;
-    std::string              crashLoggerPath                = R"(.\plugins\LiteLoader\CrashLogger_Daemon.exe)";
-    std::string              antiGiveCommand                = "kick {player}";
-    bool                     enableSimpleServerLogger       = true;
-    bool                     enableFixListenPort            = false;
-    bool                     enableAntiGive                 = true;
-    bool                     enableUnlockCmd                = true;
-    bool                     enableErrorStackTraceback      = true;
-    bool                     cacheErrorStackTracebackSymbol = false;
-    bool                     enableUnoccupyPort19132        = true;
-    bool                     enableCheckRunningBDS          = true;
-    bool                     enableWelcomeText              = true;
-    bool                     enableFixMcBug                 = true;
-    bool                     disableAutoCompactionLog       = true;
-    bool                     enableFixBroadcastBug          = true;
-    bool                     enableOutputFilter             = false;
-    bool                     onlyFilterConsoleOutput        = true;
-    bool                     enableEconomyCore              = true;
-    bool                     enableTpdimCommand             = true;
-    bool                     enableForceUtf8Input           = false;
-    bool                     enableFixBDSCrash              = true;
-    bool                     enableParticleAPI              = false;
-    bool                     enableFixAbility               = true;
-    std::vector<std::string> outputFilterRegex              = {};
-    std::map<string, string> resourcePackEncryptionMap      = {};
+    bool                               enableCrashLogger         = true;
+    std::string                        crashLoggerPath           = R"(.\plugins\LiteLoader\CrashLogger_Daemon.exe)";
+    std::string                        antiGiveCommand           = "kick {player}";
+    bool                               enableSimpleServerLogger  = true;
+    bool                               enableFixListenPort       = false;
+    bool                               enableAntiGive            = true;
+    bool                               enableUnlockCmd           = true;
+    bool                               enableErrorStackTraceback = true;
+    bool                               cacheErrorStackTracebackSymbol = false;
+    bool                               enableUnoccupyPort19132        = true;
+    bool                               enableCheckRunningBDS          = true;
+    bool                               enableWelcomeText              = true;
+    bool                               enableFixMcBug                 = true;
+    bool                               disableAutoCompactionLog       = true;
+    bool                               enableFixBroadcastBug          = true;
+    bool                               enableOutputFilter             = false;
+    bool                               onlyFilterConsoleOutput        = true;
+    bool                               enableEconomyCore              = true;
+    bool                               enableTpdimCommand             = true;
+    bool                               enableForceUtf8Input           = false;
+    bool                               enableFixBDSCrash              = true;
+    bool                               enableParticleAPI              = false;
+    bool                               enableFixAbility               = true;
+    std::vector<std::string>           outputFilterRegex              = {};
+    std::map<std::string, std::string> resourcePackEncryptionMap      = {};
 };
 
 struct LLRuntimeConfig {
@@ -78,4 +78,4 @@ bool SaveLLConfig();
 #define ZIP_PROGRAM_PATH           "./plugins/LiteLoader/7z/7za.exe"
 #define ADDON_INSTALL_TEMP_DIR     "./plugins/LiteLoader/Temp/"
 #define ADDON_INSTALL_MAX_WAIT     30000
-#define VALID_ADDON_FILE_EXTENSION std::set<string>({".mcpack", ".mcaddon", ".zip"})
+#define VALID_ADDON_FILE_EXTENSION std::set<std::string>({".mcpack", ".mcaddon", ".zip"})

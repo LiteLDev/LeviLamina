@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/FacingID.h"
+#include "mc/world/level/BlockPos.h"
 
 class CircuitComponentList {
 public:
@@ -11,31 +13,29 @@ public:
 
     // CircuitComponentList inner types define
     class Item {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CIRCUITCOMPONENTLIST_ITEM
     public:
-        Item& operator=(Item const&) = delete;
-        Item(Item const&)            = delete;
-        Item()                       = delete;
-#endif
+        class BaseCircuitComponent* mComponent = nullptr;
+        int                         mDampening{};
+        class BlockPos              mPos;
+        enum class FacingID         mDirection = FacingID::Unknown;
+        bool                        mDirectlyPowered{};
+        int                         mData{};
 
-    public:
+        constexpr Item() = delete;
+
+        constexpr Item(BaseCircuitComponent* component, int dampening, const BlockPos& pos)
+        : mComponent(component), mDampening(dampening), mPos(pos) {}
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CIRCUITCOMPONENTLIST
-public:
-    CircuitComponentList& operator=(CircuitComponentList const&) = delete;
-    CircuitComponentList(CircuitComponentList const&)            = delete;
-    CircuitComponentList()                                       = delete;
-#endif
+    std::vector<Item> mComponents;
 
 public:
-    /**
-     * @symbol ?removeSource\@CircuitComponentList\@\@QEAA_NAEBVBlockPos\@\@PEBVBaseCircuitComponent\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?removeSource@CircuitComponentList@@QEAA_NAEBVBlockPos@@PEBVBaseCircuitComponent@@@Z
     MCAPI bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
-    /**
-     * @symbol ??1CircuitComponentList\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1CircuitComponentList@@QEAA@XZ
     MCAPI ~CircuitComponentList();
+
+    // NOLINTEND
 };

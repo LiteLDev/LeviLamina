@@ -3,30 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ActorEventResponseFactory {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOREVENTRESPONSEFACTORY
 public:
+    // prevent constructor by default
     ActorEventResponseFactory& operator=(ActorEventResponseFactory const&) = delete;
     ActorEventResponseFactory(ActorEventResponseFactory const&)            = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTRESPONSEFACTORY
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // symbol: ??1ActorEventResponseFactory@@UEAA@XZ
     MCVAPI ~ActorEventResponseFactory();
-#endif
-    /**
-     * @symbol ??0ActorEventResponseFactory\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0ActorEventResponseFactory@@QEAA@XZ
     MCAPI ActorEventResponseFactory();
-    /**
-     * @symbol ?initSchema\@ActorEventResponseFactory\@\@QEAAXXZ
-     */
+
+    // symbol: ?initSchema@ActorEventResponseFactory@@QEAAXXZ
     MCAPI void initSchema();
-    /**
-     * @symbol ?initializeFactory\@ActorEventResponseFactory\@\@QEAAXAEBVExperiments\@\@\@Z
-     */
+
+    // symbol: ?initializeFactory@ActorEventResponseFactory@@QEAAXAEBVExperiments@@@Z
     MCAPI void initializeFactory(class Experiments const&);
+
+    // NOLINTEND
 };

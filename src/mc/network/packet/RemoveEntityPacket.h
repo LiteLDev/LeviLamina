@@ -4,41 +4,32 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/enums/MinecraftPacketIds.h"
 #include "mc/network/packet/EntityServerPacket.h"
 
 class RemoveEntityPacket : public ::EntityServerPacket {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_REMOVEENTITYPACKET
 public:
+    // prevent constructor by default
     RemoveEntityPacket& operator=(RemoveEntityPacket const&) = delete;
     RemoveEntityPacket(RemoveEntityPacket const&)            = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getId\@RemoveEntityPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
-     */
-    virtual enum class MinecraftPacketIds getId() const;
-    /**
-     * @vftbl 2
-     * @symbol
-     * ?getName\@RemoveEntityPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // vIndex: 1, symbol: ?getId@RemoveEntityPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    virtual ::MinecraftPacketIds getId() const;
+
+    // vIndex: 2, symbol:
+    // ?getName@RemoveEntityPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEENTITYPACKET
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1RemoveEntityPacket@@UEAA@XZ
     MCVAPI ~RemoveEntityPacket();
-#endif
-    /**
-     * @symbol ??0RemoveEntityPacket\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0RemoveEntityPacket@@QEAA@XZ
     MCAPI RemoveEntityPacket();
+
+    // NOLINTEND
 };

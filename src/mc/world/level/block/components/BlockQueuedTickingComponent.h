@@ -2,24 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockQueuedTickingComponent {
+// auto generated inclusion list
+#include "mc/world/level/block/utils/BlockComponentBase.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKQUEUEDTICKINGCOMPONENT
+struct BlockQueuedTickingComponent : public ::BlockComponentBase {
 public:
+    // prevent constructor by default
     BlockQueuedTickingComponent& operator=(BlockQueuedTickingComponent const&) = delete;
     BlockQueuedTickingComponent(BlockQueuedTickingComponent const&)            = delete;
     BlockQueuedTickingComponent()                                              = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKQUEUEDTICKINGCOMPONENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // symbol: ??1BlockQueuedTickingComponent@@UEAA@XZ
     MCVAPI ~BlockQueuedTickingComponent();
-#endif
-    /**
-     * @symbol ??0BlockQueuedTickingComponent\@\@QEAA\@$$QEAU0\@\@Z
-     */
+
+    // symbol: ??0BlockQueuedTickingComponent@@QEAA@$$QEAU0@@Z
     MCAPI BlockQueuedTickingComponent(struct BlockQueuedTickingComponent&&);
+
+    // NOLINTEND
 };

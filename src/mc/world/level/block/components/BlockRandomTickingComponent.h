@@ -2,24 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockRandomTickingComponent {
+// auto generated inclusion list
+#include "mc/world/level/block/utils/BlockComponentBase.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKRANDOMTICKINGCOMPONENT
+struct BlockRandomTickingComponent : public ::BlockComponentBase {
 public:
+    // prevent constructor by default
     BlockRandomTickingComponent& operator=(BlockRandomTickingComponent const&) = delete;
     BlockRandomTickingComponent(BlockRandomTickingComponent const&)            = delete;
     BlockRandomTickingComponent()                                              = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKRANDOMTICKINGCOMPONENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // symbol: ??1BlockRandomTickingComponent@@UEAA@XZ
     MCVAPI ~BlockRandomTickingComponent();
-#endif
-    /**
-     * @symbol ??0BlockRandomTickingComponent\@\@QEAA\@$$QEAU0\@\@Z
-     */
+
+    // symbol: ??0BlockRandomTickingComponent@@QEAA@$$QEAU0@@Z
     MCAPI BlockRandomTickingComponent(struct BlockRandomTickingComponent&&);
+
+    // NOLINTEND
 };

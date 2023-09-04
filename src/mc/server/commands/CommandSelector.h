@@ -1,16 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/CommandSelectorBase.h"
 
 template <typename T0>
-class CommandSelector {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDSELECTOR
-public:
-    CommandSelector& operator=(CommandSelector const&) = delete;
-    CommandSelector(CommandSelector const&)            = delete;
-    CommandSelector()                                  = delete;
-#endif
-
-public:
+class CommandSelector : CommandSelectorBase {
+    CommandSelector() : CommandSelectorBase(std::is_same_v<T0, class Player>) {}
 };

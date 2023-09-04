@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace ActorOwnerUtils {
-/**
- * @symbol ?constActorOwnerComponentOrAssert\@ActorOwnerUtils\@\@YAPEBVActorOwnerComponent\@\@AEBVEntityContext\@\@\@Z
- */
+// NOLINTBEGIN
+// symbol: ?constActorOwnerComponentOrAssert@ActorOwnerUtils@@YAPEBVActorOwnerComponent@@AEBVEntityContext@@@Z
 MCAPI class ActorOwnerComponent const* constActorOwnerComponentOrAssert(class EntityContext const&);
+// NOLINTEND
 
 }; // namespace ActorOwnerUtils

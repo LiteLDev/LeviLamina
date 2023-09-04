@@ -2,22 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class LoadingProgressTickingSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOADINGPROGRESSTICKINGSYSTEM
+class LoadingProgressTickingSystem : public ::ITickingSystem {
 public:
+    // prevent constructor by default
     LoadingProgressTickingSystem& operator=(LoadingProgressTickingSystem const&) = delete;
     LoadingProgressTickingSystem(LoadingProgressTickingSystem const&)            = delete;
     LoadingProgressTickingSystem()                                               = delete;
-#endif
-
-public:
-    // private:
 
 private:
-    /**
-     * @symbol
-     * ?mChunksNeededForLoadOffsets\@LoadingProgressTickingSystem\@\@0V?$vector\@VChunkPos\@\@V?$allocator\@VChunkPos\@\@\@std\@\@\@std\@\@B
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?mChunksNeededForLoadOffsets@LoadingProgressTickingSystem@@0V?$vector@VChunkPos@@V?$allocator@VChunkPos@@@std@@@std@@B
     MCAPI static std::vector<class ChunkPos> const mChunksNeededForLoadOffsets;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $mChunksNeededForLoadOffsets() { return mChunksNeededForLoadOffsets; }
+
+    // NOLINTEND
 };

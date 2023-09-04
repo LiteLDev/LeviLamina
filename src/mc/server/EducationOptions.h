@@ -6,63 +6,61 @@
 #include "mc/services/ServiceReference.h"
 
 class EducationOptions {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUCATIONOPTIONS
 public:
+    // prevent constructor by default
     EducationOptions& operator=(EducationOptions const&) = delete;
     EducationOptions(EducationOptions const&)            = delete;
     EducationOptions()                                   = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUCATIONOPTIONS
-    /**
-     * @symbol ?onActiveResourcePacksChanged\@EducationOptions\@\@UEAAXAEAVResourcePackManager\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?onActiveResourcePacksChanged@EducationOptions@@UEAAXAEAVResourcePackManager@@@Z
     MCVAPI void onActiveResourcePacksChanged(class ResourcePackManager&);
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1EducationOptions@@UEAA@XZ
     MCVAPI ~EducationOptions();
-#endif
-    /**
-     * @symbol ??0EducationOptions\@\@QEAA\@PEAVResourcePackManager\@\@\@Z
-     */
+
+    // symbol: ??0EducationOptions@@QEAA@PEAVResourcePackManager@@@Z
     MCAPI EducationOptions(class ResourcePackManager*);
-    /**
-     * @symbol ?init\@EducationOptions\@\@QEAAXAEBVLevelData\@\@\@Z
-     */
+
+    // symbol: ?init@EducationOptions@@QEAAXAEBVLevelData@@@Z
     MCAPI void init(class LevelData const&);
-    /**
-     * @symbol ?getPackCapability\@EducationOptions\@\@SA?AVPackCapability\@\@XZ
-     */
+
+    // symbol: ?getPackCapability@EducationOptions@@SA?AVPackCapability@@XZ
     MCAPI static class PackCapability getPackCapability();
-    /**
-     * @symbol ?isBaseCodeBuilderEnabled\@EducationOptions\@\@SA_NXZ
-     */
+
+    // symbol: ?isBaseCodeBuilderEnabled@EducationOptions@@SA_NXZ
     MCAPI static bool isBaseCodeBuilderEnabled();
-    /**
-     * @symbol ?isChemistryEnabled\@EducationOptions\@\@SA_NXZ
-     */
+
+    // symbol: ?isChemistryEnabled@EducationOptions@@SA_NXZ
     MCAPI static bool isChemistryEnabled();
-    /**
-     * @symbol ?isCodeBuilderEnabled\@EducationOptions\@\@SA_NXZ
-     */
+
+    // symbol: ?isCodeBuilderEnabled@EducationOptions@@SA_NXZ
     MCAPI static bool isCodeBuilderEnabled();
-    /**
-     * @symbol ?isEducationEnabled\@EducationOptions\@\@SA_NXZ
-     */
+
+    // symbol: ?isEducationEnabled@EducationOptions@@SA_NXZ
     MCAPI static bool isEducationEnabled();
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol ?_getCurrentOptions\@EducationOptions\@\@CA?AV?$ServiceReference\@VEducationOptions\@\@\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?_getCurrentOptions@EducationOptions@@CA?AV?$ServiceReference@VEducationOptions@@@@XZ
     MCAPI static class ServiceReference<class EducationOptions> _getCurrentOptions();
 
+    // NOLINTEND
+
 private:
-    /**
-     * @symbol ?DEFAULT_OPTION\@EducationOptions\@\@0V1\@A
-     */
+    // NOLINTBEGIN
+    // symbol: ?DEFAULT_OPTION@EducationOptions@@0V1@A
     MCAPI static class EducationOptions DEFAULT_OPTION;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $DEFAULT_OPTION() { return DEFAULT_OPTION; }
+
+    // NOLINTEND
 };

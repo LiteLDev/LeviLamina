@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct HasTeleportedFlag {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HASTELEPORTEDFLAG
 public:
+    // prevent constructor by default
     HasTeleportedFlag& operator=(HasTeleportedFlag const&) = delete;
     HasTeleportedFlag(HasTeleportedFlag const&)            = delete;
     HasTeleportedFlag()                                    = delete;
-#endif
-
-public:
 };

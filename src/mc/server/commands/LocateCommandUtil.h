@@ -2,17 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace LocateCommandUtil { enum class Biomes; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/server/commands/Biomes.h"
 
 namespace LocateCommandUtil {
-/**
- * @symbol
- * ?locateNearbyBiome\@LocateCommandUtil\@\@YA?AV?$optional\@VBlockPos\@\@\@std\@\@VBlockPos\@\@PEAVDimension\@\@W4Biomes\@1\@\@Z
- */
-MCAPI class std::optional<class BlockPos>
-locateNearbyBiome(class BlockPos, class Dimension*, enum class LocateCommandUtil::Biomes);
+// NOLINTBEGIN
+// symbol:
+// ?locateNearbyBiome@LocateCommandUtil@@YA?AV?$optional@VBlockPos@@@std@@VBlockPos@@PEAVDimension@@W4Biomes@1@@Z
+MCAPI std::optional<class BlockPos> locateNearbyBiome(class BlockPos, class Dimension*, ::LocateCommandUtil::Biomes);
+// NOLINTEND
 
 }; // namespace LocateCommandUtil

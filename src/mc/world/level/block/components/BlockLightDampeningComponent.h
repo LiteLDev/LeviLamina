@@ -2,18 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockLightDampeningComponent {
+// auto generated inclusion list
+#include "mc/world/level/block/utils/BlockComponentBase.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLIGHTDAMPENINGCOMPONENT
+struct BlockLightDampeningComponent : public ::BlockComponentBase {
 public:
+    // prevent constructor by default
     BlockLightDampeningComponent& operator=(BlockLightDampeningComponent const&) = delete;
     BlockLightDampeningComponent(BlockLightDampeningComponent const&)            = delete;
     BlockLightDampeningComponent()                                               = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?usesNewComponentStorage\@BlockLightDampeningComponent\@\@SA_NXZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?usesNewComponentStorage@BlockLightDampeningComponent@@SA_NXZ
     MCAPI static bool usesNewComponentStorage();
+
+    // NOLINTEND
 };

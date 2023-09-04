@@ -29,7 +29,7 @@ using ll::logger;
 std::set<std::wstring> loadedSymbolDir;
 bool                   symbolsLoaded = false;
 
-void FindSymbols(wstring& collection, const string& nowPath, bool recursion = false) {
+void FindSymbols(wstring& collection, const std::string& nowPath, bool recursion = false) {
     filesystem::directory_iterator list(nowPath);
     for (auto& it : list) {
         if (it.is_directory() && recursion) {
@@ -39,7 +39,7 @@ void FindSymbols(wstring& collection, const string& nowPath, bool recursion = fa
             wstring          dirPath = dir.remove_filename().native();
 
             if (loadedSymbolDir.find(dirPath) == loadedSymbolDir.end()) {
-                collection = collection + L";" + dirPath.substr(0, dirPath.size() - 1);
+                collection += L";" + dirPath.substr(0, dirPath.size() - 1);
                 loadedSymbolDir.insert(dirPath);
             }
         }
@@ -83,12 +83,12 @@ PSYMBOL_INFOW GetSymbolInfo(HANDLE hProcess, void* address) {
     if (SymFromAddrW(hProcess, (DWORD64)address, &displacement, pSymbol))
         return pSymbol;
     else
-        return NULL;
+        return nullptr;
 }
 
 void CleanSymbolInfo(PSYMBOL_INFOW pSymbol) { delete[] ((char*)pSymbol); }
 
-BOOL CALLBACK EnumerateModuleCallBack(PCTSTR ModuleName, DWORD64 ModuleBase, ULONG ModuleSize, PVOID UserContext) {
+BOOL CALLBACK EnumerateModuleCallBack(PCTSTR ModuleName, DWORD64 ModuleBase, ULONG /*ModuleSize*/, PVOID UserContext) {
     std::map<DWORD, std::wstring>* pModuleMap = (std::map<DWORD, std::wstring>*)UserContext;
     LPCWSTR                        name       = wcsrchr(ModuleName, TEXT('\\')) + 1;
     (*pModuleMap)[(DWORD)ModuleBase]          = name;
@@ -136,13 +136,13 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
         if (e)
             pContext = e->ContextRecord;
         else {
-            HANDLE hThread = OpenThread(THREAD_ALL_ACCESS, TRUE, threadId);
-            if (hThread == NULL) {
+            HANDLE ohThread = OpenThread(THREAD_ALL_ACCESS, TRUE, threadId);
+            if (ohThread == nullptr) {
                 logger.error("Fail to Open Thread! Error Code: {}", GetLastError());
                 return;
             }
             context.ContextFlags = CONTEXT_FULL;
-            if (!GetThreadContext(hThread, &context)) {
+            if (!GetThreadContext(ohThread, &context)) {
                 logger.error("Fail to Get Context! Error Code: {}", GetLastError());
                 return;
             }
@@ -165,17 +165,18 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
             hThread,
             &stackFrame,
             pContext,
-            NULL,
+            nullptr,
             SymFunctionTableAccess64,
             SymGetModuleBase64,
-            NULL
+            nullptr
         )) {
             DWORD64 address = stackFrame.AddrPC.Offset;
 
             // Function
             PSYMBOL_INFOW info;
             auto          moduleName = wstr2str(MapModuleFromAddr(hProcess, (void*)address).c_str());
-            if (info = GetSymbolInfo(hProcess, (void*)address)) {
+            info                     = GetSymbolInfo(hProcess, (void*)address);
+            if (info) {
                 if (skipingPrintFunctionsStack) {
                     if (wcscmp(info->Name, L"PrintCurrentStackTraceback") == 0) // Skiping these print functions' stack
                         skipingPrintFunctionsStack = false;
@@ -208,10 +209,10 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
 
 /////////////////////////////////// Debug Helper ///////////////////////////////////
 
-HMODULE GetCallerModule(unsigned long FramesToSkip) {
+HMODULE GetCallerModule(ulong FramesToSkip) {
     static const int maxFrameCount = 1;
     void*            frames[maxFrameCount];
-    int              frameCount = CaptureStackBackTrace(FramesToSkip + 2, maxFrameCount, frames, NULL);
+    int              frameCount = CaptureStackBackTrace(FramesToSkip + 2, maxFrameCount, frames, nullptr);
 
     std::string name;
     if (0 < frameCount) {
@@ -226,16 +227,9 @@ HMODULE GetCallerModule(unsigned long FramesToSkip) {
     return HMODULE();
 }
 
-std::string GetCallerModuleFileName(unsigned long FramesToSkip) { return GetModuleName(GetCallerModule(FramesToSkip)); }
+std::string GetCallerModuleFileName(ulong FramesToSkip) { return GetModuleName(GetCallerModule(FramesToSkip)); }
 
-bool GetFileVersion(
-    const wchar_t*  filePath,
-    unsigned short* ver1,
-    unsigned short* ver2,
-    unsigned short* ver3,
-    unsigned short* ver4,
-    unsigned int*   flag
-) {
+bool GetFileVersion(const wchar_t* filePath, ushort* ver1, ushort* ver2, ushort* ver3, ushort* ver4, uint* flag) {
 
     DWORD dwLen = GetFileVersionInfoSizeW(filePath, nullptr);
     if (!dwLen) {
@@ -251,7 +245,7 @@ bool GetFileVersion(
     }
 
     VS_FIXEDFILEINFO* lpBuffer = nullptr;
-    unsigned int      uLen     = 0;
+    uint              uLen     = 0;
     if (!VerQueryValueW(pBlock, L"\\", (void**)&lpBuffer, &uLen)) {
         delete[] pBlock;
         return false;
@@ -272,14 +266,9 @@ bool GetFileVersion(
     return true;
 }
 
-inline std::string VersionToString(
-    unsigned short major_ver,
-    unsigned short minor_ver,
-    unsigned short revision_ver,
-    unsigned short build_ver,
-    unsigned int   flag = 0
-) {
-    std::string flagStr = "";
+inline std::string
+VersionToString(ushort major_ver, ushort minor_ver, ushort revision_ver, ushort build_ver, uint flag = 0) {
+    std::string flagStr;
     if (flag & VS_FF_DEBUG)
         flagStr += " DEBUG";
     if (flag & VS_FF_PRERELEASE)
@@ -296,9 +285,9 @@ inline std::string VersionToString(
 }
 
 std::string GetFileVersionString(HMODULE hModule, bool includeFlag) {
-    unsigned short major_ver, minor_ver, revision_ver, build_ver;
-    unsigned int   flag;
-    wchar_t        filePath[MAX_PATH] = {0};
+    ushort  major_ver, minor_ver, revision_ver, build_ver;
+    uint    flag;
+    wchar_t filePath[MAX_PATH] = {0};
     GetModuleFileNameEx(GetCurrentProcess(), hModule, filePath, MAX_PATH);
     if (GetFileVersion(filePath, &major_ver, &minor_ver, &revision_ver, &build_ver, &flag)) {
         return VersionToString(major_ver, minor_ver, revision_ver, build_ver, includeFlag ? flag : 0);
@@ -307,9 +296,9 @@ std::string GetFileVersionString(HMODULE hModule, bool includeFlag) {
 }
 
 std::string GetFileVersionString(std::string const& filePath, bool includeFlag) {
-    unsigned short major_ver, minor_ver, revision_ver, build_ver;
-    unsigned int   flag;
-    std::wstring   wFilePath = str2wstr(filePath);
+    ushort       major_ver, minor_ver, revision_ver, build_ver;
+    uint         flag;
+    std::wstring wFilePath = str2wstr(filePath);
     if (GetFileVersion(wFilePath.c_str(), &major_ver, &minor_ver, &revision_ver, &build_ver, &flag)) {
         return VersionToString(major_ver, minor_ver, revision_ver, build_ver, includeFlag ? flag : 0);
     }

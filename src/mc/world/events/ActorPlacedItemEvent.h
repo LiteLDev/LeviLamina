@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ActorPlacedItemEvent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORPLACEDITEMEVENT
 public:
+    // prevent constructor by default
     ActorPlacedItemEvent& operator=(ActorPlacedItemEvent const&) = delete;
     ActorPlacedItemEvent(ActorPlacedItemEvent const&)            = delete;
     ActorPlacedItemEvent()                                       = delete;
-#endif
-
-public:
 };

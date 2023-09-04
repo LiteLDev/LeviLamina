@@ -1,27 +1,26 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/InventorySourceType.h"
+#include "mc/world/containers/ContainerID.h"
 
 class InventorySource {
 public:
-    // InventorySource inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // InventorySource inner types define
-    enum class InventorySourceFlags {};
+    enum class InventorySourceFlags : uint {
+        NoFlag                  = 0x0,
+        WorldInteraction_Random = 0x1,
+    };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYSOURCE
-public:
-    InventorySource& operator=(InventorySource const&) = delete;
-    InventorySource(InventorySource const&)            = delete;
-    InventorySource()                                  = delete;
-#endif
+
+    InventorySourceType  mType        = InventorySourceType::InvalidInventory; // this+0x0
+    ContainerID          mContainerId = ContainerID::None;                     // this+0x4
+    InventorySourceFlags mFlags       = InventorySourceFlags::NoFlag;          // this+0x8
 
 public:
-    /**
-     * @symbol ??8InventorySource\@\@QEBA_NAEBV0\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??8InventorySource@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class InventorySource const&) const;
+
+    // NOLINTEND
 };

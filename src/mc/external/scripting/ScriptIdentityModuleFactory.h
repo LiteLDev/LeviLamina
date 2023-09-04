@@ -8,24 +8,28 @@ namespace mce { class UUID; }
 // clang-format on
 
 class ScriptIdentityModuleFactory {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTIDENTITYMODULEFACTORY
 public:
+    // prevent constructor by default
     ScriptIdentityModuleFactory& operator=(ScriptIdentityModuleFactory const&) = delete;
     ScriptIdentityModuleFactory(ScriptIdentityModuleFactory const&)            = delete;
     ScriptIdentityModuleFactory()                                              = delete;
-#endif
-
-public:
-    // private:
 
 private:
-    /**
-     * @symbol ?ModuleName\@ScriptIdentityModuleFactory\@\@0PEBDEB
-     */
+    // NOLINTBEGIN
+    // symbol: ?ModuleName@ScriptIdentityModuleFactory@@0PEBDEB
     MCAPI static char const* ModuleName;
-    /**
-     * @symbol ?ModuleUUID\@ScriptIdentityModuleFactory\@\@0VUUID\@mce\@\@B
-     */
+
+    // symbol: ?ModuleUUID@ScriptIdentityModuleFactory@@0VUUID@mce@@B
     MCAPI static class mce::UUID const ModuleUUID;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $ModuleName() { return ModuleName; }
+
+    inline auto& $ModuleUUID() { return ModuleUUID; }
+
+    // NOLINTEND
 };

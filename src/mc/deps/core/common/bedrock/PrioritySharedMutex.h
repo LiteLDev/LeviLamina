@@ -6,15 +6,11 @@ namespace Bedrock::Threading {
 
 template <typename T0>
 class PrioritySharedMutex {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_THREADING_PRIORITYSHAREDMUTEX
 public:
+    // prevent constructor by default
     PrioritySharedMutex& operator=(PrioritySharedMutex const&) = delete;
     PrioritySharedMutex(PrioritySharedMutex const&)            = delete;
     PrioritySharedMutex()                                      = delete;
-#endif
-
-public:
 };
 
 }; // namespace Bedrock::Threading

@@ -6,53 +6,41 @@
 #include "mc/nbt/Tag.h"
 
 class DoubleTag : public ::Tag {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DOUBLETAG
 public:
-    DoubleTag& operator=(DoubleTag const&) = delete;
-    DoubleTag(DoubleTag const&)            = delete;
-    DoubleTag()                            = delete;
-#endif
+    double data;
+
+    DoubleTag& operator=(double value) {
+        data = value;
+        return *this;
+    }
+
+    operator double() const { return data; }
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 2
-     * @symbol ?write\@DoubleTag\@\@UEBAXAEAVIDataOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?write@DoubleTag@@UEBAXAEAVIDataOutput@@@Z
     virtual void write(class IDataOutput&) const;
-    /**
-     * @vftbl 3
-     * @symbol ?load\@DoubleTag\@\@UEAAXAEAVIDataInput\@\@\@Z
-     */
+
+    // vIndex: 3, symbol: ?load@DoubleTag@@UEAAXAEAVIDataInput@@@Z
     virtual void load(class IDataInput&);
-    /**
-     * @vftbl 4
-     * @symbol ?toString\@DoubleTag\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
+
+    // vIndex: 4, symbol: ?toString@DoubleTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string toString() const;
-    /**
-     * @vftbl 5
-     * @symbol ?getId\@DoubleTag\@\@UEBA?AW4Type\@Tag\@\@XZ
-     */
-    virtual enum class Tag::Type getId() const;
-    /**
-     * @vftbl 6
-     * @symbol ?equals\@DoubleTag\@\@UEBA_NAEBVTag\@\@\@Z
-     */
+
+    // vIndex: 5, symbol: ?getId@DoubleTag@@UEBA?AW4Type@Tag@@XZ
+    virtual ::Tag::Type getId() const;
+
+    // vIndex: 6, symbol: ?equals@DoubleTag@@UEBA_NAEBVTag@@@Z
     virtual bool equals(class Tag const&) const;
-    /**
-     * @vftbl 9
-     * @symbol ?copy\@DoubleTag\@\@UEBA?AV?$unique_ptr\@VTag\@\@U?$default_delete\@VTag\@\@\@std\@\@\@std\@\@XZ
-     */
+
+    // vIndex: 9, symbol: ?copy@DoubleTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
     virtual std::unique_ptr<class Tag> copy() const;
-    /**
-     * @vftbl 10
-     * @symbol ?hash\@DoubleTag\@\@UEBA_KXZ
-     */
-    virtual unsigned __int64 hash() const;
+
+    // vIndex: 10, symbol: ?hash@DoubleTag@@UEBA_KXZ
+    virtual uint64 hash() const;
+
+    // NOLINTEND
 };

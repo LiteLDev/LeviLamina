@@ -9,52 +9,44 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { class DataStore; }
+namespace Bedrock { class IApplicationDataStores; }
 // clang-format on
 
 namespace Bedrock {
 
-class ApplicationDataStores {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_APPLICATIONDATASTORES
+class ApplicationDataStores : public ::Bedrock::IApplicationDataStores {
 public:
+    // prevent constructor by default
     ApplicationDataStores& operator=(ApplicationDataStores const&) = delete;
     ApplicationDataStores(ApplicationDataStores const&)            = delete;
     ApplicationDataStores()                                        = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?init\@ApplicationDataStores\@Bedrock\@\@UEAAXXZ
-     */
+
+    // vIndex: 1, symbol: ?init@ApplicationDataStores@Bedrock@@UEAAXXZ
     virtual void init();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_APPLICATIONDATASTORES
-    /**
-     * @symbol
-     * ?getDataStore\@ApplicationDataStores\@Bedrock\@\@UEBA?AV?$NonOwnerPointer\@$$CBVDataStore\@Bedrock\@\@\@2\@W4DataStores\@IApplicationDataStores\@2\@\@Z
-     */
+
+    // symbol:
+    // ?getDataStore@ApplicationDataStores@Bedrock@@UEBA?AV?$NonOwnerPointer@$$CBVDataStore@Bedrock@@@2@W4DataStores@IApplicationDataStores@2@@Z
     MCVAPI class Bedrock::NonOwnerPointer<class Bedrock::DataStore const>
-        getDataStore(enum class Bedrock::IApplicationDataStores::DataStores) const;
-    /**
-     * @symbol
-     * ?getDataStore\@ApplicationDataStores\@Bedrock\@\@UEAA?AV?$NonOwnerPointer\@VDataStore\@Bedrock\@\@\@2\@W4DataStores\@IApplicationDataStores\@2\@\@Z
-     */
+        getDataStore(::Bedrock::IApplicationDataStores::DataStores) const;
+
+    // symbol:
+    // ?getDataStore@ApplicationDataStores@Bedrock@@UEAA?AV?$NonOwnerPointer@VDataStore@Bedrock@@@2@W4DataStores@IApplicationDataStores@2@@Z
     MCVAPI class Bedrock::NonOwnerPointer<class Bedrock::DataStore>
-        getDataStore(enum class Bedrock::IApplicationDataStores::DataStores);
-#endif
+        getDataStore(::Bedrock::IApplicationDataStores::DataStores);
+
+    // NOLINTEND
 
     // private:
-    /**
-     * @symbol ?_initDataStore\@ApplicationDataStores\@Bedrock\@\@AEAAXW4DataStores\@IApplicationDataStores\@2\@\@Z
-     */
-    MCAPI void _initDataStore(enum class Bedrock::IApplicationDataStores::DataStores);
+    // NOLINTBEGIN
+    // symbol: ?_initDataStore@ApplicationDataStores@Bedrock@@AEAAXW4DataStores@IApplicationDataStores@2@@Z
+    MCAPI void _initDataStore(::Bedrock::IApplicationDataStores::DataStores);
 
-private:
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

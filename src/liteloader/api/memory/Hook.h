@@ -1,18 +1,23 @@
 #pragma once
 
 #include <memory>
+#include <type_traits>
 
 #include "liteloader/api/Macro.h"
 #include "liteloader/api/memory/MemoryUtils.h"
 
 namespace ll::memory {
 
+/**
+ * @brief Hook priority enum.
+ * @details The lower priority, the hook will be executed earlier
+ */
 enum class HookPriority : int {
-    Highest = 0,
-    High    = 100,
+    Lowest  = 0,
+    Low     = 100,
     Normal  = 200,
-    Low     = 300,
-    Lowest  = 400,
+    High    = 300,
+    Highest = 400,
 };
 
 LLAPI int hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority priority);
@@ -27,7 +32,26 @@ LLAPI bool unhook(FuncPtr target, FuncPtr detour);
  */
 LLAPI FuncPtr resolveIdentifier(const char* identifier);
 
-// Use a individual struct to register hook, in case DefType can't be constructed.
+template <typename T>
+concept FuncPtrType = std::is_function_v<std::remove_pointer_t<T>> || std::is_member_function_pointer_v<T>;
+
+template <typename T>
+    requires(FuncPtrType<T> || std::is_same_v<T, uintptr_t>)
+constexpr FuncPtr resolveIdentifier(T identifier) {
+    return toFuncPtr(identifier);
+}
+
+template <typename T>
+constexpr FuncPtr resolveIdentifier(const char* identifier) {
+    return resolveIdentifier(identifier);
+}
+
+template <typename T>
+constexpr FuncPtr resolveIdentifier(uintptr_t address) {
+    return resolveIdentifier(address);
+}
+
+// Use an individual struct to register hook, in case DefType can't be constructed.
 template <typename T>
 struct HookAutoRegister {
     HookAutoRegister() { T::hook(); }
@@ -57,7 +81,7 @@ struct HookAutoRegister {
         StaticDescriptor Ret detour(__VA_ARGS__);                                                                      \
                                                                                                                        \
         static int hook() {                                                                                            \
-            target = ll::memory::resolveIdentifier(identifier);                                                        \
+            target = ll::memory::resolveIdentifier<OriginFuncType>(identifier);                                        \
                                                                                                                        \
             if (target == nullptr) {                                                                                   \
                 return -1;                                                                                             \

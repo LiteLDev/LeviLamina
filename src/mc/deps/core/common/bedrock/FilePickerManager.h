@@ -13,29 +13,25 @@ public:
 
     // FilePickerManager inner types define
     struct DirectoryPickerResult {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_FILEPICKERMANAGER_DIRECTORYPICKERRESULT
     public:
+        // prevent constructor by default
         DirectoryPickerResult& operator=(DirectoryPickerResult const&) = delete;
         DirectoryPickerResult(DirectoryPickerResult const&)            = delete;
         DirectoryPickerResult()                                        = delete;
-#endif
 
     public:
-        /**
-         * @symbol ??1DirectoryPickerResult\@FilePickerManager\@Bedrock\@\@QEAA\@XZ
-         */
+        // NOLINTBEGIN
+        // symbol: ??1DirectoryPickerResult@FilePickerManager@Bedrock@@QEAA@XZ
         MCAPI ~DirectoryPickerResult();
+
+        // NOLINTEND
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_FILEPICKERMANAGER
 public:
+    // prevent constructor by default
     FilePickerManager& operator=(FilePickerManager const&) = delete;
     FilePickerManager(FilePickerManager const&)            = delete;
     FilePickerManager()                                    = delete;
-#endif
-
-public:
 };
 
 }; // namespace Bedrock

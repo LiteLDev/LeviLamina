@@ -8,10 +8,16 @@
 #endif
 #endif
 
-#ifndef LICAPI
-#define LICAPI extern "C" LLAPI
+#ifndef LLCAPI
+#define LLCAPI extern "C" LLAPI
+#endif
+
+#ifndef LLNDAPI
+#define LLNDAPI [[nodiscard]] LLAPI
 #endif
 
 #ifndef LL_UNUSED
 #define LL_UNUSED [[maybe_unused]]
 #endif
+
+#define LL_EBO __declspec(empty_bases)

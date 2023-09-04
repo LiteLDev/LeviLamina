@@ -7,38 +7,32 @@
 #include "mc/world/level/Command.h"
 
 class DamageCommand : public ::Command {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAMAGECOMMAND
 public:
+    // prevent constructor by default
     DamageCommand& operator=(DamageCommand const&) = delete;
     DamageCommand(DamageCommand const&)            = delete;
     DamageCommand()                                = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?execute\@DamageCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?execute@DamageCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol ?setup\@DamageCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
-     */
+
+    // symbol: ?setup@DamageCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry&);
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol
-     * ?_applyDamage\@DamageCommand\@\@AEBAXAEAV?$CommandSelectorResults\@VActor\@\@\@\@AEBVActorDamageSource\@\@AEAVCommandOutput\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?_applyDamage@DamageCommand@@AEBAXAEAV?$CommandSelectorResults@VActor@@@@AEBVActorDamageSource@@AEAVCommandOutput@@@Z
     MCAPI void
     _applyDamage(class CommandSelectorResults<class Actor>&, class ActorDamageSource const&, class CommandOutput&)
         const;
 
-private:
+    // NOLINTEND
 };

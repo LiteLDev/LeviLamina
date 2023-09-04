@@ -1,13 +1,14 @@
 #include "liteloader/api/ScheduleAPI.h"
+#include "liteloader/api/I18nAPI.h"
+#include "liteloader/api/LLAPI.h"
+#include "liteloader/api/LoggerAPI.h"
 #include "liteloader/api/utils/CsLock.h"
-#include <queue>
-#include <atomic>
+#include "liteloader/api/utils/DbgHelper.h"
 #include "liteloader/core/Config.h"
 #include "liteloader/core/LiteLoader.h"
-#include "liteloader/api/LoggerAPI.h"
-#include "liteloader/api/LLAPI.h"
-#include "liteloader/api/utils/DbgHelper.h"
-#include "liteloader/api/I18nAPI.h"
+#include <atomic>
+#include <queue>
+#include <utility>
 
 #include "liteloader/api/memory/Hook.h"
 
@@ -19,9 +20,9 @@ atomic_uint nextTaskId = 0;
 class ScheduleTaskData {
 public:
     enum class TaskType { Delay, Repeat, InfiniteRepeat };
-    unsigned int              taskId;
+    uint                      taskId;
     TaskType                  type;
-    long long                 leftTime, interval;
+    int64                     leftTime, interval;
     int                       count;
     std::function<void(void)> task;
     HMODULE                   handle;
@@ -29,29 +30,27 @@ public:
     ScheduleTaskData(
         TaskType                  type,
         std::function<void(void)> task,
-        unsigned long long        delay,
-        unsigned long long        interval,
+        uint64                    delay,
+        uint64                    interval,
         int                       count,
         HMODULE                   handle
     )
-    : type(type), task(task), leftTime((long long)delay), interval((long long)interval), count(count),
+    : type(type), task(std::move(task)), leftTime((int64)delay), interval((int64)interval), count(count),
       taskId(++nextTaskId), handle(handle){};
 
-    inline unsigned int getTaskId() { return taskId; }
+    [[nodiscard]] inline uint getTaskId() const { return taskId; }
 
     inline bool operator>(const ScheduleTaskData& t) const { return leftTime > t.leftTime; }
 };
 
 std::vector<ScheduleTaskData> pendingTaskList{};
-std::vector<unsigned int>     pendingCancelList{};
+std::vector<uint>             pendingCancelList{};
 bool                          pendingClear = false;
 
-class ScheduleTaskQueueType
-: public priority_queue<ScheduleTaskData, vector<ScheduleTaskData>, greater<ScheduleTaskData>> {
+class ScheduleTaskQueueType : public priority_queue<ScheduleTaskData, vector<ScheduleTaskData>, greater<>> {
 public:
-    bool remove(unsigned int taskId) {
-        size_t size    = c.size();
-        bool   removed = false;
+    bool remove(uint taskId) {
+        bool removed = false;
 
         for (size_t i = 0; i < c.size(); ++i)
             if (c[i].taskId == taskId) {
@@ -90,7 +89,7 @@ public:
             return;
         }
         if (!pendingCancelList.empty()) {
-            std::vector<uint32_t> tmpList;
+            std::vector<uint> tmpList;
             locker.lock();
             // ScheduleTaskData destructor may trigger ScriptX's lock
             tmpList.swap(pendingCancelList);
@@ -101,8 +100,8 @@ public:
             tmpList.clear();
         }
         try {
-            for (size_t i = 0; i < c.size(); ++i)
-                --c[i].leftTime;
+            for (auto& i : c)
+                --i.leftTime;
 
             while (true) {
                 if (empty())
@@ -119,14 +118,14 @@ public:
 
                     switch (t.type) {
                     case ScheduleTaskData::TaskType::InfiniteRepeat: {
-                        ScheduleTaskData sche{std::move(t)};
+                        ScheduleTaskData sche{t};
                         sche.leftTime = sche.interval;
                         push(std::move(sche));
                         break;
                     }
                     case ScheduleTaskData::TaskType::Repeat: {
                         if (t.count > 0) {
-                            ScheduleTaskData sche{std::move(t)};
+                            ScheduleTaskData sche{t};
                             sche.leftTime = sche.interval;
                             --sche.count;
                             push(std::move(sche));
@@ -161,11 +160,9 @@ public:
         }
     }
 
-    bool has(unsigned int taskId) {
-        for (auto& task : c)
-            if (task.taskId == taskId)
-                return true;
-        return false;
+    bool has(uint taskId) {
+
+        return std::ranges::any_of(c, [taskId](ScheduleTaskData const& task) { return task.taskId == taskId; });
     }
 };
 
@@ -173,61 +170,58 @@ ScheduleTaskQueueType taskQueue;
 
 
 namespace Schedule {
-ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay, HMODULE handle) {
+ScheduleTask delay(std::function<void(void)> task, uint64 tickDelay, HMODULE handle) {
     if (ll::globalRuntimeConfig.serverStatus >= ll::LLServerStatus::Stopping)
-        return ScheduleTask((unsigned)-1);
-    ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, tickDelay, -1, -1, handle);
+        return {(uint)-1};
+    ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, std::move(task), tickDelay, -1, -1, handle);
     locker.lock();
     pendingTaskList.push_back(sche);
     locker.unlock();
-    return ScheduleTask(sche.getTaskId());
+    return {sche.getTaskId()};
 }
 
-ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickRepeat, int maxCount, HMODULE handle) {
+ScheduleTask repeat(std::function<void(void)> task, uint64 tickRepeat, int maxCount, HMODULE handle) {
     if (ll::globalRuntimeConfig.serverStatus >= ll::LLServerStatus::Stopping)
-        return ScheduleTask((unsigned)-1);
+        return {(uint)-1};
     ScheduleTaskData::TaskType type =
         maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat : ScheduleTaskData::TaskType::Repeat;
-    ScheduleTaskData sche(type, task, std::max(tickRepeat, 1ull), std::max(tickRepeat, 1ull), maxCount, handle);
+    ScheduleTaskData sche(
+        type, std::move(task), std::max(tickRepeat, 1ull), std::max(tickRepeat, 1ull), maxCount, handle
+    );
     locker.lock();
     pendingTaskList.push_back(sche);
     locker.unlock();
-    return ScheduleTask(sche.getTaskId());
+    return {sche.getTaskId()};
 }
 
-ScheduleTask delayRepeat(
-    std::function<void(void)> task,
-    unsigned long long        tickDelay,
-    unsigned long long        tickRepeat,
-    int                       maxCount,
-    HMODULE                   handle
-) {
+ScheduleTask
+delayRepeat(std::function<void(void)> task, uint64 tickDelay, uint64 tickRepeat, int maxCount, HMODULE handle) {
     if (ll::globalRuntimeConfig.serverStatus >= ll::LLServerStatus::Stopping)
-        return ScheduleTask((unsigned)-1);
+        return {(uint)-1};
     ScheduleTaskData::TaskType type =
         maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat : ScheduleTaskData::TaskType::Repeat;
-    ScheduleTaskData sche(type, task, tickDelay, std::max(tickRepeat, 1ull), maxCount, handle);
+    ScheduleTaskData sche(type, std::move(task), tickDelay, std::max(tickRepeat, 1ull), maxCount, handle);
     locker.lock();
     pendingTaskList.push_back(sche);
     locker.unlock();
-    return ScheduleTask(sche.getTaskId());
+    return {sche.getTaskId()};
 }
 
 ScheduleTask nextTick(std::function<void(void)> task, HMODULE handle) {
     if (ll::globalRuntimeConfig.serverStatus >= ll::LLServerStatus::Stopping)
-        return ScheduleTask((unsigned)-1);
-    ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, 1, -1, -1, handle);
+        return {(uint)-1};
+    ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, std::move(task), 1, -1, -1, handle);
     locker.lock();
     pendingTaskList.push_back(sche);
     locker.unlock();
-    return ScheduleTask(sche.getTaskId());
+    return {sche.getTaskId()};
 }
 } // namespace Schedule
 
-LL_AUTO_STATIC_HOOK(SAHook1, HookPriority::Normal, "?tick@ServerLevel@@UEAAXXZ", void, void* _this) {
-    origin(_this);
-    taskQueue.tick();
-}
+// LL_AUTO_STATIC_HOOK(SAHook1, HookPriority::Normal, "?tick@ServerLevel@@UEAAXXZ", void, void* _this) {
+//     origin(_this);
+//     taskQueue.tick();
+// }
 
 void EndScheduleSystem() {
     locker.lock();
@@ -236,9 +230,9 @@ void EndScheduleSystem() {
 }
 
 
-ScheduleTask::ScheduleTask(unsigned int taskId) : taskId(taskId) {}
+ScheduleTask::ScheduleTask(uint taskId) : taskId(taskId) {}
 
-bool ScheduleTask::cancel() {
+bool ScheduleTask::cancel() const {
     locker.lock();
     pendingCancelList.push_back(taskId);
     locker.unlock();

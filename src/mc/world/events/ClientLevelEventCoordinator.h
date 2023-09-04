@@ -2,14 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ClientLevelEventCoordinator {
+// auto generated inclusion list
+#include "mc/world/level/LevelEventCoordinator.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTLEVELEVENTCOORDINATOR
+class ClientLevelEventCoordinator : public ::LevelEventCoordinator {
 public:
+    // prevent constructor by default
     ClientLevelEventCoordinator& operator=(ClientLevelEventCoordinator const&) = delete;
     ClientLevelEventCoordinator(ClientLevelEventCoordinator const&)            = delete;
     ClientLevelEventCoordinator()                                              = delete;
-#endif
-
-public:
 };

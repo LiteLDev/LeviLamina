@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class ActorRuntimeID {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORRUNTIMEID
 public:
-    ActorRuntimeID& operator=(ActorRuntimeID const&) = delete;
-    ActorRuntimeID(ActorRuntimeID const&)            = delete;
-    ActorRuntimeID()                                 = delete;
-#endif
+    uint64 id;
 
-public:
+    constexpr ActorRuntimeID() : id(0) {}
+    constexpr ActorRuntimeID(uint64 x) : id(x) {} // NOLINT
+
+    constexpr operator uint64() const { return id; } // NOLINT
 };

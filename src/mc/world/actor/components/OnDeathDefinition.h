@@ -11,20 +11,19 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 struct OnDeathDefinition {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONDEATHDEFINITION
 public:
+    // prevent constructor by default
     OnDeathDefinition& operator=(OnDeathDefinition const&) = delete;
     OnDeathDefinition(OnDeathDefinition const&)            = delete;
     OnDeathDefinition()                                    = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?buildSchema\@OnDeathDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UOnDeathDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?buildSchema@OnDeathDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnDeathDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
-    buildSchema(class std::shared_ptr<
+    buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnDeathDefinition>>&);
+
+    // NOLINTEND
 };

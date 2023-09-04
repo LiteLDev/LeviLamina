@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct LevelDayCycleEvent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELDAYCYCLEEVENT
 public:
+    // prevent constructor by default
     LevelDayCycleEvent& operator=(LevelDayCycleEvent const&) = delete;
     LevelDayCycleEvent(LevelDayCycleEvent const&)            = delete;
     LevelDayCycleEvent()                                     = delete;
-#endif
-
-public:
 };

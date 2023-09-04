@@ -2,22 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockPropertyComponent {
+// auto generated inclusion list
+#include "mc/world/level/block/utils/BlockComponentBase.h"
+#include "mc/world/level/block/utils/BlockProperty.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPROPERTYCOMPONENT
+struct BlockPropertyComponent : public ::BlockComponentBase {
 public:
+    // prevent constructor by default
     BlockPropertyComponent& operator=(BlockPropertyComponent const&) = delete;
     BlockPropertyComponent(BlockPropertyComponent const&)            = delete;
     BlockPropertyComponent()                                         = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?getProperty\@BlockPropertyComponent\@\@QEBA_NW4BlockProperty\@\@\@Z
-     */
-    MCAPI bool getProperty(enum class BlockProperty) const;
-    /**
-     * @symbol ?hasProperty\@BlockPropertyComponent\@\@QEBA_NW4BlockProperty\@\@\@Z
-     */
-    MCAPI bool hasProperty(enum class BlockProperty) const;
+    // NOLINTBEGIN
+    // symbol: ?getProperty@BlockPropertyComponent@@QEBA_NW4BlockProperty@@@Z
+    MCAPI bool getProperty(::BlockProperty) const;
+
+    // symbol: ?hasProperty@BlockPropertyComponent@@QEBA_NW4BlockProperty@@@Z
+    MCAPI bool hasProperty(::BlockProperty) const;
+
+    // NOLINTEND
 };

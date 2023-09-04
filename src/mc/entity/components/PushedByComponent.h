@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct PushedByComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PUSHEDBYCOMPONENT
 public:
+    // prevent constructor by default
     PushedByComponent& operator=(PushedByComponent const&) = delete;
     PushedByComponent(PushedByComponent const&)            = delete;
     PushedByComponent()                                    = delete;
-#endif
-
-public:
 };

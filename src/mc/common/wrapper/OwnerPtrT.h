@@ -1,16 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/wrapper/SharePtrRefTraits.h"
 
 template <typename T0>
-class OwnerPtrT {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OWNERPTRT
-public:
-    OwnerPtrT& operator=(OwnerPtrT const&) = delete;
-    OwnerPtrT(OwnerPtrT const&)            = delete;
-    OwnerPtrT()                            = delete;
-#endif
-
-public:
-};
+class OwnerPtrT : public T0::OwnerStorage {};

@@ -3,20 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct TargetBlockHitEvent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TARGETBLOCKHITEVENT
 public:
+    // prevent constructor by default
     TargetBlockHitEvent& operator=(TargetBlockHitEvent const&) = delete;
     TargetBlockHitEvent()                                      = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0TargetBlockHitEvent\@\@QEAA\@AEBU0\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0TargetBlockHitEvent@@QEAA@AEBU0@@Z
     MCAPI TargetBlockHitEvent(struct TargetBlockHitEvent const&);
-    /**
-     * @symbol ??1TargetBlockHitEvent\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1TargetBlockHitEvent@@QEAA@XZ
     MCAPI ~TargetBlockHitEvent();
+
+    // NOLINTEND
 };

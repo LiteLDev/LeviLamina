@@ -2,38 +2,33 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class WorldTemplatePackManifest {
+// auto generated inclusion list
+#include "mc/enums/GameType.h"
+#include "mc/resources/PackManifest.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDTEMPLATEPACKMANIFEST
+class WorldTemplatePackManifest : public ::PackManifest {
 public:
+    // prevent constructor by default
     WorldTemplatePackManifest& operator=(WorldTemplatePackManifest const&) = delete;
     WorldTemplatePackManifest(WorldTemplatePackManifest const&)            = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?clone\@WorldTemplatePackManifest\@\@UEBA?AV?$unique_ptr\@VPackManifest\@\@U?$default_delete\@VPackManifest\@\@\@std\@\@\@std\@\@XZ
-     */
+
+    // vIndex: 1, symbol:
+    // ?clone@WorldTemplatePackManifest@@UEBA?AV?$unique_ptr@VPackManifest@@U?$default_delete@VPackManifest@@@std@@@std@@XZ
     virtual std::unique_ptr<class PackManifest> clone() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDTEMPLATEPACKMANIFEST
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1WorldTemplatePackManifest@@UEAA@XZ
     MCVAPI ~WorldTemplatePackManifest();
-#endif
-    /**
-     * @symbol ??0WorldTemplatePackManifest\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0WorldTemplatePackManifest@@QEAA@XZ
     MCAPI WorldTemplatePackManifest();
-    /**
-     * @symbol ?getGameType\@WorldTemplatePackManifest\@\@QEBA?AW4GameType\@\@XZ
-     */
-    MCAPI enum class GameType getGameType() const;
+
+    // symbol: ?getGameType@WorldTemplatePackManifest@@QEBA?AW4GameType@@XZ
+    MCAPI ::GameType getGameType() const;
+
+    // NOLINTEND
 };

@@ -2,21 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CreativeGroupInfo {
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CREATIVEGROUPINFO
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
+class CreativeGroupInfo : public ::Bedrock::EnableNonOwnerReferences {
 public:
+    // prevent constructor by default
     CreativeGroupInfo& operator=(CreativeGroupInfo const&) = delete;
     CreativeGroupInfo()                                    = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0CreativeGroupInfo\@\@QEAA\@AEBV0\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0CreativeGroupInfo@@QEAA@AEBV0@@Z
     MCAPI CreativeGroupInfo(class CreativeGroupInfo const&);
-    /**
-     * @symbol ?addCreativeItem\@CreativeGroupInfo\@\@QEAAXPEAVCreativeItemEntry\@\@\@Z
-     */
+
+    // symbol: ?addCreativeItem@CreativeGroupInfo@@QEAAXPEAVCreativeItemEntry@@@Z
     MCAPI void addCreativeItem(class CreativeItemEntry*);
+
+    // NOLINTEND
 };

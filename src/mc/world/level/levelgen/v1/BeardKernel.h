@@ -3,22 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct BeardKernel {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEARDKERNEL
 public:
+    // prevent constructor by default
     BeardKernel& operator=(BeardKernel const&) = delete;
     BeardKernel(BeardKernel const&)            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0BeardKernel\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0BeardKernel@@QEAA@XZ
     MCAPI BeardKernel();
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol ?createBeardKernel\@BeardKernel\@\@AEAA?BV?$array\@M$0DGAA\@\@std\@\@XZ
-     */
-    MCAPI class std::array<float, 13824> const createBeardKernel();
+    // NOLINTBEGIN
+    // symbol: ?createBeardKernel@BeardKernel@@AEAA?BV?$array@M$0DGAA@@std@@XZ
+    MCAPI std::array<float, 13824> const createBeardKernel();
+
+    // NOLINTEND
 };

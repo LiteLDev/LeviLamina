@@ -8,22 +8,19 @@
 namespace xbox::httpclient {
 
 struct HeaderCompare {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_XBOX_HTTPCLIENT_HEADERCOMPARE
 public:
+    // prevent constructor by default
     HeaderCompare& operator=(HeaderCompare const&) = delete;
     HeaderCompare(HeaderCompare const&)            = delete;
     HeaderCompare()                                = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ??RHeaderCompare\@httpclient\@xbox\@\@QEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@0\@Z
-     */
-    MCAPI bool
-    operator()(class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const&, class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const&)
-        const;
+    // NOLINTBEGIN
+    // symbol:
+    // ??RHeaderCompare@httpclient@xbox@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$http_stl_allocator@D@@@std@@0@Z
+    MCAPI bool operator()(http_string const&, http_string const&) const;
+
+    // NOLINTEND
 };
 
 }; // namespace xbox::httpclient

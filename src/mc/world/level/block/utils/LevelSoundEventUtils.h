@@ -3,25 +3,30 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class LevelSoundEventUtils {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSOUNDEVENTUTILS
 public:
+    // prevent constructor by default
     LevelSoundEventUtils& operator=(LevelSoundEventUtils const&) = delete;
     LevelSoundEventUtils(LevelSoundEventUtils const&)            = delete;
     LevelSoundEventUtils()                                       = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?serializePercentageToData\@LevelSoundEventUtils\@\@SAHM\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?serializePercentageToData@LevelSoundEventUtils@@SAHM@Z
     MCAPI static int serializePercentageToData(float);
 
-    // private:
+    // NOLINTEND
 
 private:
-    /**
-     * @symbol ?MAX_INT_REPRESENTABLE_AS_FLOAT\@LevelSoundEventUtils\@\@0HB
-     */
+    // NOLINTBEGIN
+    // symbol: ?MAX_INT_REPRESENTABLE_AS_FLOAT@LevelSoundEventUtils@@0HB
     MCAPI static int const MAX_INT_REPRESENTABLE_AS_FLOAT;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $MAX_INT_REPRESENTABLE_AS_FLOAT() { return MAX_INT_REPRESENTABLE_AS_FLOAT; }
+
+    // NOLINTEND
 };

@@ -4,13 +4,6 @@
 
 template <typename T0>
 struct InvertableFilter {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVERTABLEFILTER
-public:
-    InvertableFilter& operator=(InvertableFilter const&) = delete;
-    InvertableFilter(InvertableFilter const&)            = delete;
-    InvertableFilter()                                   = delete;
-#endif
-
-public:
+    T0   value;    // this+0x0
+    bool inverted; // this+0x4
 };

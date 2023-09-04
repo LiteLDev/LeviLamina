@@ -6,35 +6,36 @@
 #include "mc/world/level/Command.h"
 
 class AllowListCommand : public ::Command {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ALLOWLISTCOMMAND
 public:
+    // prevent constructor by default
     AllowListCommand& operator=(AllowListCommand const&) = delete;
     AllowListCommand(AllowListCommand const&)            = delete;
     AllowListCommand()                                   = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?execute\@AllowListCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?execute@AllowListCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol ?setup\@AllowListCommand\@\@SAXAEAVCommandRegistry\@\@AEAVAllowListFile\@\@\@Z
-     */
+
+    // symbol: ?setup@AllowListCommand@@SAXAEAVCommandRegistry@@AEAVAllowListFile@@@Z
     MCAPI static void setup(class CommandRegistry&, class AllowListFile&);
 
-    // private:
+    // NOLINTEND
 
 private:
-    /**
-     * @symbol ?mAllowListFile\@AllowListCommand\@\@0PEAVAllowListFile\@\@EA
-     */
+    // NOLINTBEGIN
+    // symbol: ?mAllowListFile@AllowListCommand@@0PEAVAllowListFile@@EA
     MCAPI static class AllowListFile* mAllowListFile;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $mAllowListFile() { return mAllowListFile; }
+
+    // NOLINTEND
 };

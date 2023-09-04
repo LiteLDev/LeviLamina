@@ -11,23 +11,21 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class LeashableDefinition {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEASHABLEDEFINITION
 public:
+    // prevent constructor by default
     LeashableDefinition& operator=(LeashableDefinition const&) = delete;
     LeashableDefinition(LeashableDefinition const&)            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0LeashableDefinition\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??0LeashableDefinition@@QEAA@XZ
     MCAPI LeashableDefinition();
-    /**
-     * @symbol
-     * ?buildSchema\@LeashableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VLeashableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?buildSchema@LeashableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VLeashableDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
-    buildSchema(class std::shared_ptr<
+    buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LeashableDefinition>>&);
+
+    // NOLINTEND
 };

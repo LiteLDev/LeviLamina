@@ -2,15 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template <typename T0, typename T1>
+template <typename A, typename T>
 class AutomaticID {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AUTOMATICID
 public:
-    AutomaticID& operator=(AutomaticID const&) = delete;
-    AutomaticID(AutomaticID const&)            = delete;
-    AutomaticID()                              = delete;
-#endif
+    T id;
 
-public:
+    using Type = A;
+
+    constexpr AutomaticID() : id(0) {}
+
+    constexpr AutomaticID(T x) : id(x) {} // NOLINT
+
+    constexpr operator T() const { return id; } // NOLINT
 };

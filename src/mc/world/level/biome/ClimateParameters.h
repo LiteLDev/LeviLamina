@@ -8,18 +8,15 @@ namespace ClimateUtils { struct Parameter; }
 // clang-format on
 
 struct ClimateParameters {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIMATEPARAMETERS
 public:
+    // prevent constructor by default
     ClimateParameters& operator=(ClimateParameters const&) = delete;
     ClimateParameters(ClimateParameters const&)            = delete;
     ClimateParameters()                                    = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??0ClimateParameters\@\@QEAA\@UParameter\@ClimateUtils\@\@00000M\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??0ClimateParameters@@QEAA@UParameter@ClimateUtils@@00000M@Z
     MCAPI ClimateParameters(
         struct ClimateUtils::Parameter,
         struct ClimateUtils::Parameter,
@@ -29,4 +26,6 @@ public:
         struct ClimateUtils::Parameter,
         float
     );
+
+    // NOLINTEND
 };

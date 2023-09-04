@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ShapedRecipeTriggeredEvent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAPEDRECIPETRIGGEREDEVENT
 public:
+    // prevent constructor by default
     ShapedRecipeTriggeredEvent& operator=(ShapedRecipeTriggeredEvent const&) = delete;
     ShapedRecipeTriggeredEvent(ShapedRecipeTriggeredEvent const&)            = delete;
     ShapedRecipeTriggeredEvent()                                             = delete;
-#endif
-
-public:
 };

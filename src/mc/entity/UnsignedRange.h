@@ -6,15 +6,11 @@ namespace EntityGoalUtility {
 
 template <typename T0>
 struct UnsignedRange {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYGOALUTILITY_UNSIGNEDRANGE
 public:
+    // prevent constructor by default
     UnsignedRange& operator=(UnsignedRange const&) = delete;
     UnsignedRange(UnsignedRange const&)            = delete;
     UnsignedRange()                                = delete;
-#endif
-
-public:
 };
 
 }; // namespace EntityGoalUtility

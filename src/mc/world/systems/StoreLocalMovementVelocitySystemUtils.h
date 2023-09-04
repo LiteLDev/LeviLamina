@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace StoreLocalMovementVelocitySystemUtils {
-/**
- * @symbol
- * ?storeLocalMovementVelocity\@StoreLocalMovementVelocitySystemUtils\@\@YAXAEBUMobTravelComponent\@\@AEAUCurrentLocalMoveVelocityComponent\@\@\@Z
- */
+// NOLINTBEGIN
+// symbol:
+// ?storeLocalMovementVelocity@StoreLocalMovementVelocitySystemUtils@@YAXAEBUMobTravelComponent@@AEAUCurrentLocalMoveVelocityComponent@@@Z
 MCAPI void storeLocalMovementVelocity(struct MobTravelComponent const&, struct CurrentLocalMoveVelocityComponent&);
+// NOLINTEND
 
 }; // namespace StoreLocalMovementVelocitySystemUtils

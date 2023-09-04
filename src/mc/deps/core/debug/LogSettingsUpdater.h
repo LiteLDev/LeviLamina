@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class LogSettingsUpdater {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOGSETTINGSUPDATER
 public:
+    // prevent constructor by default
     LogSettingsUpdater& operator=(LogSettingsUpdater const&) = delete;
     LogSettingsUpdater(LogSettingsUpdater const&)            = delete;
     LogSettingsUpdater()                                     = delete;
-#endif
-
-public:
 };

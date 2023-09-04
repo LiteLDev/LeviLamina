@@ -2,86 +2,79 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/json/Writer.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
+namespace Json { class Writer; }
 // clang-format on
 
 namespace Json {
 
-class StyledWriter {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JSON_STYLEDWRITER
+class StyledWriter : public ::Json::Writer {
 public:
-    StyledWriter& operator=(StyledWriter const&) = delete;
-    StyledWriter(StyledWriter const&)            = delete;
-#endif
+    using ChildValues = std::vector<std::string>;
+
+    ChildValues childValues_;
+    std::string document_;
+    std::string indentString_;
+    uint        rightMargin_;
+    uint        indentSize_;
+    bool        addChildValues_;
+
+    ~StyledWriter() override = default;
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?write\@StyledWriter\@Json\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVValue\@2\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?write@StyledWriter@Json@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@2@@Z
     virtual std::string write(class Json::Value const&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JSON_STYLEDWRITER
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1StyledWriter@Json@@UEAA@XZ
     MCVAPI ~StyledWriter();
-#endif
-    /**
-     * @symbol ??0StyledWriter\@Json\@\@QEAA\@XZ
-     */
+
+    // symbol: ??0StyledWriter@Json@@QEAA@XZ
     MCAPI StyledWriter();
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol ?indent\@StyledWriter\@Json\@\@AEAAXXZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?indent@StyledWriter@Json@@AEAAXXZ
     MCAPI void indent();
-    /**
-     * @symbol
-     * ?pushValue\@StyledWriter\@Json\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // symbol: ?pushValue@StyledWriter@Json@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void pushValue(std::string const&);
-    /**
-     * @symbol ?unindent\@StyledWriter\@Json\@\@AEAAXXZ
-     */
+
+    // symbol: ?unindent@StyledWriter@Json@@AEAAXXZ
     MCAPI void unindent();
-    /**
-     * @symbol ?writeArrayValue\@StyledWriter\@Json\@\@AEAAXAEBVValue\@2\@\@Z
-     */
+
+    // symbol: ?writeArrayValue@StyledWriter@Json@@AEAAXAEBVValue@2@@Z
     MCAPI void writeArrayValue(class Json::Value const&);
-    /**
-     * @symbol ?writeCommentAfterValueOnSameLine\@StyledWriter\@Json\@\@AEAAXAEBVValue\@2\@\@Z
-     */
+
+    // symbol: ?writeCommentAfterValueOnSameLine@StyledWriter@Json@@AEAAXAEBVValue@2@@Z
     MCAPI void writeCommentAfterValueOnSameLine(class Json::Value const&);
-    /**
-     * @symbol ?writeCommentBeforeValue\@StyledWriter\@Json\@\@AEAAXAEBVValue\@2\@\@Z
-     */
+
+    // symbol: ?writeCommentBeforeValue@StyledWriter@Json@@AEAAXAEBVValue@2@@Z
     MCAPI void writeCommentBeforeValue(class Json::Value const&);
-    /**
-     * @symbol ?writeValue\@StyledWriter\@Json\@\@AEAAXAEBVValue\@2\@\@Z
-     */
+
+    // symbol: ?writeValue@StyledWriter@Json@@AEAAXAEBVValue@2@@Z
     MCAPI void writeValue(class Json::Value const&);
-    /**
-     * @symbol
-     * ?writeWithIndent\@StyledWriter\@Json\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?writeWithIndent@StyledWriter@Json@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void writeWithIndent(std::string const&);
-    /**
-     * @symbol
-     * ?normalizeEOL\@StyledWriter\@Json\@\@CA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV34\@\@Z
-     */
+
+    // symbol:
+    // ?normalizeEOL@StyledWriter@Json@@CA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV34@@Z
     MCAPI static std::string normalizeEOL(std::string const&);
 
-private:
+    // NOLINTEND
 };
 
 }; // namespace Json

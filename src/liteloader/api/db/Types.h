@@ -1,44 +1,38 @@
 #pragma once
 #include <vector>
-//#define LLDB_DEBUG_MODE
+// #define LLDB_DEBUG_MODE
 
-namespace DB
-{
+namespace DB {
 
-enum class DBType : char
-{
+enum class DBType : schar {
     None,
     SQLite,
     MySQL,
 };
 
-struct Date
-{
+struct Date {
     int year;
     int month;
     int day;
 };
 
-struct Time
-{
+struct Time {
     int hour;
     int minute;
     int second;
     int timezone = -1;
 };
 
-struct DateTime
-{
+struct DateTime {
     Date date;
     Time time;
 };
 
-struct Decimal
-{
-    int64_t value;
-    int scale;
+struct Decimal {
+    int64 value;
+    int   scale;
 };
 
-using ByteArray = std::vector<unsigned char>;
+using ByteArray = std::vector<uchar>;
 
 } // namespace DB

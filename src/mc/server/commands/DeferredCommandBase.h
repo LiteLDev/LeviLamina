@@ -3,19 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class DeferredCommandBase {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFERREDCOMMANDBASE
 public:
+    // prevent constructor by default
     DeferredCommandBase& operator=(DeferredCommandBase const&) = delete;
     DeferredCommandBase(DeferredCommandBase const&)            = delete;
     DeferredCommandBase()                                      = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFERREDCOMMANDBASE
-    /**
-     * @symbol __unk_destructor_-1
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual void __unk_vfn_0();
+
+    // vIndex: 1, symbol: ?execute@DeferredScriptCommand@@UEAAXAEAVMinecraftCommands@@@Z
+    virtual void execute(class MinecraftCommands&) = 0;
+
+    // symbol: ??1DeferredCommandBase@@UEAA@XZ
     MCVAPI ~DeferredCommandBase();
-#endif
+
+    // NOLINTEND
 };

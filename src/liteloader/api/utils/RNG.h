@@ -14,79 +14,72 @@
 
 namespace RNG {
 
+static pcg64 GolbalRandom64{pcg_extras::seed_seq_from<std::random_device>{}};
+
+static pcg32 GolbalRandom32{pcg_extras::seed_seq_from<std::random_device>{}};
+
 template <class T>
 inline T rand() {
-    static pcg64 rng(pcg_extras::seed_seq_from<std::random_device>{});
-    return static_cast<T>(rng());
+    return static_cast<T>(GolbalRandom64());
 }
 
 template <class T>
 inline T rand(T min, T max) {
-    static pcg64 rng(pcg_extras::seed_seq_from<std::random_device>{});
-    return min + static_cast<T>(rng(max - min + 1));
+    return min + static_cast<T>(GolbalRandom64(max - min + 1));
 }
 
 template <>
 inline bool rand() {
-    static pcg32 rng(pcg_extras::seed_seq_from<std::random_device>{});
-    return static_cast<bool>(rng(2));
+    return static_cast<bool>(GolbalRandom32(2));
 }
 
 template <>
-inline uint32_t rand() {
-    static pcg32 rng(pcg_extras::seed_seq_from<std::random_device>{});
-    return rng();
+inline uint rand() {
+    return GolbalRandom32();
 }
 
 template <>
-inline uint32_t rand(uint32_t min, uint32_t max) {
-    static pcg32 rng(pcg_extras::seed_seq_from<std::random_device>{});
-    return min + rng(max - min + 1);
+inline uint rand(uint min, uint max) {
+    return min + GolbalRandom32(max - min + 1);
 }
 
 template <>
-inline int32_t rand() {
-    static pcg32 rng(pcg_extras::seed_seq_from<std::random_device>{});
-    return static_cast<int32_t>(rng());
+inline int rand() {
+    return static_cast<int>(GolbalRandom32());
 }
 
 template <>
-inline int32_t rand(int32_t min, int32_t max) {
-    static pcg32 rng(pcg_extras::seed_seq_from<std::random_device>{});
-    return (static_cast<int64_t>(min) + rng(static_cast<uint32_t>(static_cast<int64_t>(max) - min + 1)));
+inline int rand(int min, int max) {
+    return (static_cast<int64>(min) + GolbalRandom32(static_cast<uint>(static_cast<int64>(max) - min + 1)));
 }
 
 template <>
-inline int64_t rand() {
-    static pcg64 rng(pcg_extras::seed_seq_from<std::random_device>{});
-    return static_cast<int64_t>(rng());
+inline int64 rand() {
+    return static_cast<int64>(GolbalRandom64());
 }
 
 template <>
-inline int64_t rand(int64_t min, int64_t max) {
-    static pcg64 rng(pcg_extras::seed_seq_from<std::random_device>{});
-    return min + static_cast<int64_t>(rng(static_cast<uint64_t>(max - min + 1)));
+inline int64 rand(int64 min, int64 max) {
+    return min + static_cast<int64>(GolbalRandom64(static_cast<uint64>(max - min + 1)));
 }
 
 template <>
-inline uint64_t rand() {
-    static pcg64 rng(pcg_extras::seed_seq_from<std::random_device>{});
-    return rng();
+inline uint64 rand() {
+    return GolbalRandom64();
 }
 
 template <>
-inline uint64_t rand(uint64_t min, uint64_t max) {
-    static pcg64 rng(pcg_extras::seed_seq_from<std::random_device>{});
-    return min + rng(max - min + 1);
+inline uint64 rand(uint64 min, uint64 max) {
+    return min + GolbalRandom64(max - min + 1);
 }
 
 template <>
 inline float rand() {
     union {
-        uint32_t u;
-        float    f;
+        uint  u;
+        float f;
     } x;
-    x.u = (rand<uint32_t>() >> 9u) | 0x3f800000u;
+    x.u = (rand<uint>() >> 9u) | 0x3f800000u;
     /* Trick from MTGP: generate an uniformly distributed
     single precision number in [1,2) and subtract 1. */
     return x.f - 1.0f;
@@ -100,10 +93,10 @@ inline float rand(float min, float max) {
 template <>
 inline double rand() {
     union {
-        uint64_t u;
-        double   f;
+        uint64 u;
+        double f;
     } x;
-    x.u = (rand<uint64_t>() >> 12ull) | 0x3ff0000000000000ull;
+    x.u = (rand<uint64>() >> 12ull) | 0x3ff0000000000000ull;
     /* Trick from MTGP: generate an uniformly distributed
     single precision number in [1,2) and subtract 1. */
     return x.f - 1.0;

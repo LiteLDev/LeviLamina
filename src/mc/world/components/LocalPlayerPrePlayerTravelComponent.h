@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct LocalPlayerPrePlayerTravelComponent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOCALPLAYERPREPLAYERTRAVELCOMPONENT
 public:
+    // prevent constructor by default
     LocalPlayerPrePlayerTravelComponent& operator=(LocalPlayerPrePlayerTravelComponent const&) = delete;
     LocalPlayerPrePlayerTravelComponent(LocalPlayerPrePlayerTravelComponent const&)            = delete;
     LocalPlayerPrePlayerTravelComponent()                                                      = delete;
-#endif
-
-public:
 };

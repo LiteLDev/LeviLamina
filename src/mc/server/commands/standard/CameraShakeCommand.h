@@ -6,39 +6,32 @@
 #include "mc/world/level/Command.h"
 
 class CameraShakeCommand : public ::Command {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERASHAKECOMMAND
 public:
+    // prevent constructor by default
     CameraShakeCommand& operator=(CameraShakeCommand const&) = delete;
     CameraShakeCommand(CameraShakeCommand const&)            = delete;
     CameraShakeCommand()                                     = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?execute\@CameraShakeCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?execute@CameraShakeCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol ?setup\@CameraShakeCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
-     */
+
+    // symbol: ?setup@CameraShakeCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry&);
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol ?_executeAdd\@CameraShakeCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?_executeAdd@CameraShakeCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     MCAPI void _executeAdd(class CommandOrigin const&, class CommandOutput&) const;
-    /**
-     * @symbol ?_executeStop\@CameraShakeCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
-     */
+
+    // symbol: ?_executeStop@CameraShakeCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     MCAPI void _executeStop(class CommandOrigin const&, class CommandOutput&) const;
 
-private:
+    // NOLINTEND
 };

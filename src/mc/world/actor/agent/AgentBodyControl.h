@@ -2,24 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class AgentBodyControl {
+// auto generated inclusion list
+#include "mc/world/actor/BodyControl.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTBODYCONTROL
+class AgentBodyControl : public ::BodyControl {
 public:
+    // prevent constructor by default
     AgentBodyControl& operator=(AgentBodyControl const&) = delete;
     AgentBodyControl(AgentBodyControl const&)            = delete;
     AgentBodyControl()                                   = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?clientTick\@AgentBodyControl\@\@UEAAXAEAVMob\@\@\@Z
-     */
+
+    // vIndex: 1, symbol: ?clientTick@AgentBodyControl@@UEAAXAEAVMob@@@Z
     virtual void clientTick(class Mob&);
+
+    // NOLINTEND
 };

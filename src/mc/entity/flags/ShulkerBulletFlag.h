@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ShulkerBulletFlag {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHULKERBULLETFLAG
 public:
+    // prevent constructor by default
     ShulkerBulletFlag& operator=(ShulkerBulletFlag const&) = delete;
     ShulkerBulletFlag(ShulkerBulletFlag const&)            = delete;
     ShulkerBulletFlag()                                    = delete;
-#endif
-
-public:
 };

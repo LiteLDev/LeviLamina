@@ -2,26 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class LootItemRandomChanceWithSpecialModifierCondition {
+// auto generated inclusion list
+#include "mc/world/level/storage/loot/predicates/LootItemCondition.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMRANDOMCHANCEWITHSPECIALMODIFIERCONDITION
+class LootItemRandomChanceWithSpecialModifierCondition : public ::LootItemCondition {
 public:
+    // prevent constructor by default
     LootItemRandomChanceWithSpecialModifierCondition&
     operator=(LootItemRandomChanceWithSpecialModifierCondition const&)                                        = delete;
     LootItemRandomChanceWithSpecialModifierCondition(LootItemRandomChanceWithSpecialModifierCondition const&) = delete;
     LootItemRandomChanceWithSpecialModifierCondition()                                                        = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?applies\@LootItemRandomChanceWithSpecialModifierCondition\@\@UEAA_NAEAVRandom\@\@AEAVLootTableContext\@\@\@Z
-     */
+
+    // vIndex: 1, symbol:
+    // ?applies@LootItemRandomChanceWithSpecialModifierCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
     virtual bool applies(class Random&, class LootTableContext&);
+
+    // NOLINTEND
 };

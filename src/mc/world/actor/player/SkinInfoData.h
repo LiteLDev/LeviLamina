@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class SkinInfoData {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKININFODATA
 public:
+    // prevent constructor by default
     SkinInfoData& operator=(SkinInfoData const&) = delete;
     SkinInfoData(SkinInfoData const&)            = delete;
     SkinInfoData()                               = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?isValidSize\@SkinInfoData\@\@SA_N_K\@Z
-     */
-    MCAPI static bool isValidSize(unsigned __int64);
+    // NOLINTBEGIN
+    // symbol: ?isValidSize@SkinInfoData@@SA_N_K@Z
+    MCAPI static bool isValidSize(uint64);
+
+    // NOLINTEND
 };

@@ -6,37 +6,46 @@
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/world/AutomaticID.h"
 
+// auto generated forward declare list
+// clang-format off
+class Dimension;
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptDimensionTypes {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTDIMENSIONTYPES
 public:
+    // prevent constructor by default
     ScriptDimensionTypes& operator=(ScriptDimensionTypes const&) = delete;
     ScriptDimensionTypes(ScriptDimensionTypes const&)            = delete;
     ScriptDimensionTypes()                                       = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?bind\@ScriptDimensionTypes\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptDimensionTypes\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?bind@ScriptDimensionTypes@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptDimensionTypes@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptDimensionTypes> bind();
-    /**
-     * @symbol
-     * ?fromString\@ScriptDimensionTypes\@ScriptModuleMinecraft\@\@SA?AV?$AutomaticID\@VDimension\@\@H\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?fromString@ScriptDimensionTypes@ScriptModuleMinecraft@@SA?AV?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static class AutomaticID<class Dimension, int> fromString(std::string const&);
 
-    // private:
+    // NOLINTEND
 
 private:
-    /**
-     * @symbol
-     * ?sMinecraftNamespace\@ScriptDimensionTypes\@ScriptModuleMinecraft\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?sMinecraftNamespace@ScriptDimensionTypes@ScriptModuleMinecraft@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const sMinecraftNamespace;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $sMinecraftNamespace() { return sMinecraftNamespace; }
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

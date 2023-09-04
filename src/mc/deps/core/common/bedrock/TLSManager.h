@@ -5,19 +5,18 @@
 namespace Bedrock::Threading::CustomTLS {
 
 class TLSManager {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_THREADING_CUSTOMTLS_TLSMANAGER
 public:
+    // prevent constructor by default
     TLSManager& operator=(TLSManager const&) = delete;
     TLSManager(TLSManager const&)            = delete;
     TLSManager()                             = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?getSharedInstance\@TLSManager\@CustomTLS\@Threading\@Bedrock\@\@SAAEAV1234\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?getSharedInstance@TLSManager@CustomTLS@Threading@Bedrock@@SAAEAV1234@XZ
     MCAPI static class Bedrock::Threading::CustomTLS::TLSManager& getSharedInstance();
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Threading::CustomTLS

@@ -2,37 +2,33 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class MobEffectSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEFFECTSYSTEM
+class MobEffectSystem : public ::ITickingSystem {
 public:
+    // prevent constructor by default
     MobEffectSystem& operator=(MobEffectSystem const&) = delete;
     MobEffectSystem(MobEffectSystem const&)            = delete;
     MobEffectSystem()                                  = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
+
+    // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?tick\@MobEffectSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
-     */
+
+    // vIndex: 2, symbol: ?tick@MobEffectSystem@@UEAAXAEAVEntityRegistry@@@Z
     virtual void tick(class EntityRegistry&);
 
+    // NOLINTEND
+
     // private:
-    /**
-     * @symbol ?_tickComponent\@MobEffectSystem\@\@CAXAEAVActorOwnerComponent\@\@AEAVMobEffectComponent\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?_tickComponent@MobEffectSystem@@CAXAEAVActorOwnerComponent@@AEAVMobEffectComponent@@@Z
     MCAPI static void _tickComponent(class ActorOwnerComponent&, class MobEffectComponent&);
 
-private:
+    // NOLINTEND
 };

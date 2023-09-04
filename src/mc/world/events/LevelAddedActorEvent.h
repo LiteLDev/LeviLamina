@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct LevelAddedActorEvent {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELADDEDACTOREVENT
 public:
+    // prevent constructor by default
     LevelAddedActorEvent& operator=(LevelAddedActorEvent const&) = delete;
     LevelAddedActorEvent(LevelAddedActorEvent const&)            = delete;
     LevelAddedActorEvent()                                       = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1LevelAddedActorEvent\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1LevelAddedActorEvent@@QEAA@XZ
     MCAPI ~LevelAddedActorEvent();
+
+    // NOLINTEND
 };

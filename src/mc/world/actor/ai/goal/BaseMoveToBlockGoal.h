@@ -3,66 +3,38 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/AutomaticID.h"
 #include "mc/world/actor/ai/goal/BaseMoveToGoal.h"
 
 class BaseMoveToBlockGoal : public ::BaseMoveToGoal {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASEMOVETOBLOCKGOAL
 public:
+    // prevent constructor by default
     BaseMoveToBlockGoal& operator=(BaseMoveToBlockGoal const&) = delete;
     BaseMoveToBlockGoal(BaseMoveToBlockGoal const&)            = delete;
     BaseMoveToBlockGoal()                                      = delete;
-#endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?canUse\@BaseMoveToBlockGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 1, symbol: ?canUse@BaseMoveToBlockGoal@@UEAA_NXZ
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol ?canContinueToUse\@BaseMoveToBlockGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 2, symbol: ?canContinueToUse@BaseMoveToBlockGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
-    /**
-     * @vftbl 14
-     * @symbol ?_moveToBlock\@BaseMoveToBlockGoal\@\@MEAAXXZ
-     */
+
+    // vIndex: 14, symbol: ?_moveToBlock@BaseMoveToBlockGoal@@MEAAXXZ
     virtual void _moveToBlock();
-    /**
-     * @vftbl 17
-     * @symbol ?findTargetBlock\@BaseMoveToBlockGoal\@\@UEAA_NXZ
-     */
+
+    // vIndex: 17, symbol: ?findTargetBlock@BaseMoveToBlockGoal@@UEAA_NXZ
     virtual bool findTargetBlock();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEMOVETOBLOCKGOAL
-    /**
-     * @symbol __unk_destructor_-1
-     */
+
+    // symbol: ??1BaseMoveToBlockGoal@@UEAA@XZ
     MCVAPI ~BaseMoveToBlockGoal();
-#endif
-    /**
-     * @symbol ??0BaseMoveToBlockGoal\@\@QEAA\@AEAVMob\@\@MHHHMM\@Z
-     */
+
+    // symbol: ??0BaseMoveToBlockGoal@@QEAA@AEAVMob@@MHHHMM@Z
     MCAPI BaseMoveToBlockGoal(class Mob&, float, int, int, int, float, float);
+
+    // NOLINTEND
 };

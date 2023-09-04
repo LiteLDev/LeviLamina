@@ -11,28 +11,25 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 struct IsIllagerCaptainDefinition {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISILLAGERCAPTAINDEFINITION
 public:
+    // prevent constructor by default
     IsIllagerCaptainDefinition& operator=(IsIllagerCaptainDefinition const&) = delete;
     IsIllagerCaptainDefinition(IsIllagerCaptainDefinition const&)            = delete;
     IsIllagerCaptainDefinition()                                             = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?initialize\@IsIllagerCaptainDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?initialize@IsIllagerCaptainDefinition@@QEBAXAEAVEntityContext@@@Z
     MCAPI void initialize(class EntityContext&) const;
-    /**
-     * @symbol ?uninitialize\@IsIllagerCaptainDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
+
+    // symbol: ?uninitialize@IsIllagerCaptainDefinition@@QEBAXAEAVEntityContext@@@Z
     MCAPI void uninitialize(class EntityContext&) const;
-    /**
-     * @symbol
-     * ?buildSchema\@IsIllagerCaptainDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsIllagerCaptainDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
+
+    // symbol:
+    // ?buildSchema@IsIllagerCaptainDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsIllagerCaptainDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
-    buildSchema(class std::shared_ptr<
+    buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsIllagerCaptainDefinition>>&);
+
+    // NOLINTEND
 };

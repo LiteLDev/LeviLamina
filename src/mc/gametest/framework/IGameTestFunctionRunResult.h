@@ -5,15 +5,11 @@
 namespace gametest {
 
 class IGameTestFunctionRunResult {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETEST_IGAMETESTFUNCTIONRUNRESULT
 public:
+    // prevent constructor by default
     IGameTestFunctionRunResult& operator=(IGameTestFunctionRunResult const&) = delete;
     IGameTestFunctionRunResult(IGameTestFunctionRunResult const&)            = delete;
     IGameTestFunctionRunResult()                                             = delete;
-#endif
-
-public:
 };
 
 }; // namespace gametest

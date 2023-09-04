@@ -5,15 +5,11 @@
 namespace Scripting {
 
 struct Error {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTING_ERROR
 public:
+    // prevent constructor by default
     Error& operator=(Error const&) = delete;
     Error(Error const&)            = delete;
     Error()                        = delete;
-#endif
-
-public:
 };
 
 }; // namespace Scripting

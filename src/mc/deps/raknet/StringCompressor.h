@@ -5,35 +5,40 @@
 namespace RakNet {
 
 class StringCompressor {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNET_STRINGCOMPRESSOR
 public:
+    // prevent constructor by default
     StringCompressor& operator=(StringCompressor const&) = delete;
     StringCompressor(StringCompressor const&)            = delete;
     StringCompressor()                                   = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?AddReference\@StringCompressor\@RakNet\@\@SAXXZ
-     */
+    // NOLINTBEGIN
+    // symbol: ?AddReference@StringCompressor@RakNet@@SAXXZ
     MCAPI static void AddReference();
-    /**
-     * @symbol ?RemoveReference\@StringCompressor\@RakNet\@\@SAXXZ
-     */
+
+    // symbol: ?RemoveReference@StringCompressor@RakNet@@SAXXZ
     MCAPI static void RemoveReference();
 
-    // private:
+    // NOLINTEND
 
 private:
-    /**
-     * @symbol ?instance\@StringCompressor\@RakNet\@\@0PEAV12\@EA
-     */
+    // NOLINTBEGIN
+    // symbol: ?instance@StringCompressor@RakNet@@0PEAV12@EA
     MCAPI static class RakNet::StringCompressor* instance;
-    /**
-     * @symbol ?referenceCount\@StringCompressor\@RakNet\@\@0HA
-     */
+
+    // symbol: ?referenceCount@StringCompressor@RakNet@@0HA
     MCAPI static int referenceCount;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    inline auto& $instance() { return instance; }
+
+    inline auto& $referenceCount() { return referenceCount; }
+
+    // NOLINTEND
 };
 
 }; // namespace RakNet

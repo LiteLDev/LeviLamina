@@ -5,19 +5,18 @@
 namespace Social {
 
 struct PlayerIDs {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SOCIAL_PLAYERIDS
 public:
+    // prevent constructor by default
     PlayerIDs& operator=(PlayerIDs const&) = delete;
     PlayerIDs(PlayerIDs const&)            = delete;
     PlayerIDs()                            = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??1PlayerIDs\@Social\@\@QEAA\@XZ
-     */
+    // NOLINTBEGIN
+    // symbol: ??1PlayerIDs@Social@@QEAA@XZ
     MCAPI ~PlayerIDs();
+
+    // NOLINTEND
 };
 
 }; // namespace Social

@@ -3,24 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 struct ConditionalBandwidthOptimization {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONDITIONALBANDWIDTHOPTIMIZATION
 public:
+    // prevent constructor by default
     ConditionalBandwidthOptimization(ConditionalBandwidthOptimization const&) = delete;
     ConditionalBandwidthOptimization()                                        = delete;
-#endif
 
 public:
-    /**
-     * @symbol ??4ConditionalBandwidthOptimization\@\@QEAAAEAU0\@AEBU0\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ??4ConditionalBandwidthOptimization@@QEAAAEAU0@AEBU0@@Z
     MCAPI struct ConditionalBandwidthOptimization& operator=(struct ConditionalBandwidthOptimization const&);
-    /**
-     * @symbol ??4ConditionalBandwidthOptimization\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
+
+    // symbol: ??4ConditionalBandwidthOptimization@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct ConditionalBandwidthOptimization& operator=(struct ConditionalBandwidthOptimization&&);
-    /**
-     * @symbol ??1ConditionalBandwidthOptimization\@\@QEAA\@XZ
-     */
+
+    // symbol: ??1ConditionalBandwidthOptimization@@QEAA@XZ
     MCAPI ~ConditionalBandwidthOptimization();
+
+    // NOLINTEND
 };

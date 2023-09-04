@@ -2,40 +2,38 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SparseContainer {
+// auto generated inclusion list
+#include "mc/world/containers/ContainerEnumName.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPARSECONTAINER
+class SparseContainer {
 public:
+    // prevent constructor by default
     SparseContainer& operator=(SparseContainer const&) = delete;
     SparseContainer(SparseContainer const&)            = delete;
     SparseContainer()                                  = delete;
-#endif
 
 public:
-    /**
-     * @symbol
-     * ?addItemNetworkChangedCallback\@SparseContainer\@\@QEAAXW4ContainerEnumName\@\@V?$function\@$$A6AXHAEBVItemStack\@\@0\@Z\@std\@\@\@Z
-     */
+    // NOLINTBEGIN
+    // symbol:
+    // ?addItemNetworkChangedCallback@SparseContainer@@QEAAXW4ContainerEnumName@@V?$function@$$A6AXHAEBVItemStack@@0@Z@std@@@Z
     MCAPI void
-        addItemNetworkChangedCallback(enum class ContainerEnumName, class std::function<void(int, class ItemStack const&, class ItemStack const&)>);
-    /**
-     * @symbol ?isUsingLegacyScreenTransactions\@SparseContainer\@\@QEBA_NXZ
-     */
+        addItemNetworkChangedCallback(::ContainerEnumName, std::function<void(int, class ItemStack const&, class ItemStack const&)>);
+
+    // symbol: ?isUsingLegacyScreenTransactions@SparseContainer@@QEBA_NXZ
     MCAPI bool isUsingLegacyScreenTransactions() const;
-    /**
-     * @symbol ?removeItemNetworkChangedCallback\@SparseContainer\@\@QEAAXW4ContainerEnumName\@\@\@Z
-     */
-    MCAPI void removeItemNetworkChangedCallback(enum class ContainerEnumName);
+
+    // symbol: ?removeItemNetworkChangedCallback@SparseContainer@@QEAAXW4ContainerEnumName@@@Z
+    MCAPI void removeItemNetworkChangedCallback(::ContainerEnumName);
+
+    // NOLINTEND
 
     // protected:
-    /**
-     * @symbol ?_onItemNetworkChanged\@SparseContainer\@\@IEAAXHAEBVItemStack\@\@0\@Z
-     */
+    // NOLINTBEGIN
+    // symbol: ?_onItemNetworkChanged@SparseContainer@@IEAAXHAEBVItemStack@@0@Z
     MCAPI void _onItemNetworkChanged(int, class ItemStack const&, class ItemStack const&);
-    /**
-     * @symbol ?_setBackingContainerSlot\@SparseContainer\@\@IEAAXHAEBVItemStack\@\@\@Z
-     */
+
+    // symbol: ?_setBackingContainerSlot@SparseContainer@@IEAAXHAEBVItemStack@@@Z
     MCAPI void _setBackingContainerSlot(int, class ItemStack const&);
 
-protected:
+    // NOLINTEND
 };

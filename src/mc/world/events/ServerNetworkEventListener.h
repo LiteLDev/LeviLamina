@@ -2,25 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ServerNetworkEventListener {
+// auto generated inclusion list
+#include "mc/world/events/EventResult.h"
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERNETWORKEVENTLISTENER
+class ServerNetworkEventListener {
 public:
+    // prevent constructor by default
     ServerNetworkEventListener& operator=(ServerNetworkEventListener const&) = delete;
     ServerNetworkEventListener(ServerNetworkEventListener const&)            = delete;
     ServerNetworkEventListener()                                             = delete;
-#endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKEVENTLISTENER
-    /**
-     * @symbol
-     * ?onEvent\@ServerNetworkEventListener\@\@UEAA?AW4EventResult\@\@AEBUServerNetworkGameplayNotificationEvent\@\@\@Z
-     */
-    MCVAPI enum class EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const&);
-    /**
-     * @symbol ?onMessage\@ServerNetworkEventListener\@\@UEAA?AW4EventResult\@\@AEBUMessageEvent\@\@\@Z
-     */
-    MCVAPI enum class EventResult onMessage(struct MessageEvent const&);
-#endif
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual void __unk_vfn_0();
+
+    // vIndex: 1, symbol:
+    // ?onEvent@ServerNetworkEventListener@@UEAA?AW4EventResult@@AEBUServerNetworkGameplayNotificationEvent@@@Z
+    virtual ::EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const&);
+
+    // vIndex: 2, symbol: ?onMessage@ServerNetworkEventListener@@UEAA?AW4EventResult@@AEBUMessageEvent@@@Z
+    virtual ::EventResult onMessage(struct MessageEvent const&);
+
+    // NOLINTEND
 };
