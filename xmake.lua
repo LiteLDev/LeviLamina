@@ -21,12 +21,11 @@ add_requires("entt v3.11.1")
 add_requires("fmt 9.1.0")
 add_requires("gsl v3.1.0")
 add_requires("gtest 1.12.1")
-
 add_requires("leveldb 1.23")
+add_requires("openssl 1.1.1-t") -- should be installed before mariadb-connector-c
 add_requires("mariadb-connector-c 3.3.4")
 add_requires("magic_enum v0.8.2")
 add_requires("nlohmann_json v3.11.2")
-add_requires("openssl 1.1.1-t")
 add_requires("rapidjson v1.1.0")
 
 -- liteldev-repo
