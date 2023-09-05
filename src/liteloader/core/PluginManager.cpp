@@ -2,6 +2,7 @@
 
 #include <string>
 #include <unordered_map>
+#include <utility>
 
 #include "liteloader/api/utils/STLHelper.h"
 #include "liteloader/api/utils/StringHelper.h"
@@ -27,11 +28,14 @@ std::unordered_map<std::string, ll::Plugin> plugins;
 
 bool ll::PluginManager::registerPlugin(
     HMODULE                            handle,
-    std::string                        name,
+    const std::string&                        name,
     std::string                        desc,
     ll::Version                        version,
     std::map<std::string, std::string> others
 ) {
+
+    others["PluginType"]     = "DLL Plugin";
+    others["PluginFilePath"] = handle ? GetModulePath(handle) : name;
     if (handle != nullptr) // DLL Plugin
     {
         if (getPlugin(handle) != nullptr) {
@@ -43,7 +47,7 @@ bool ll::PluginManager::registerPlugin(
         }
     }
 
-    ll::Plugin plugin{name, desc, version, others};
+    ll::Plugin plugin{name, std::move(desc), version, others};
     plugin.handle = handle;
     try {
         plugin.type = others.at("PluginType") == "Script Plugin" ? Plugin::PluginType::ScriptPlugin
@@ -67,7 +71,7 @@ bool ll::PluginManager::registerPlugin(
 }
 
 bool ll::PluginManager::unRegisterPlugin(std::string name) {
-    auto plugin = getPlugin(name);
+    auto plugin = getPlugin(std::move(name));
     if (plugin == nullptr) {
         return false;
     } else {
@@ -77,7 +81,7 @@ bool ll::PluginManager::unRegisterPlugin(std::string name) {
 }
 
 // Helper
-ll::Plugin* GetPlugin_Raw(std::string name, bool includeScriptPlugin) {
+ll::Plugin* GetPlugin_Raw(const std::string& name, bool includeScriptPlugin) {
     for (auto& it : plugins) {
         if (it.second.name == name ||
             UTF82String(filesystem::path(str2wstr(it.second.filePath)).filename().u8string()) == name) {
@@ -90,7 +94,7 @@ ll::Plugin* GetPlugin_Raw(std::string name, bool includeScriptPlugin) {
 }
 
 ll::Plugin* ll::PluginManager::getPlugin(std::string name, bool includeScriptPlugin) {
-    auto res = GetPlugin_Raw(name, includeScriptPlugin);
+    auto res = GetPlugin_Raw(std::move(name), includeScriptPlugin);
     if (res)
         return res;
     /* issue #510
@@ -118,7 +122,7 @@ ll::Plugin* ll::PluginManager::getPlugin(HMODULE handle) {
 }
 
 bool ll::PluginManager::hasPlugin(std::string name, bool includeScriptPlugin) {
-    return getPlugin(name, includeScriptPlugin) != nullptr;
+    return getPlugin(std::move(name), includeScriptPlugin) != nullptr;
 }
 
 std::unordered_map<std::string, ll::Plugin*> ll::PluginManager::getAllPlugins(bool includeScriptPlugin) {
@@ -166,7 +170,7 @@ bool ll::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
             return false;
         }
 
-        if (pluginFilePath.find("/") == string::npos && pluginFilePath.find("\\") == string::npos &&
+        if (pluginFilePath.find('/') == string::npos && pluginFilePath.find('\\') == string::npos &&
             loadPlugin("plugins/" + pluginFilePath)) {
             if (outputResult) {
                 logger.error(tr("ll.pluginManager.error.noValidPluginFound", pluginFilePath));
@@ -178,7 +182,7 @@ bool ll::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
         auto   lib            = LoadLibrary(str2wstr(pluginFilePath).c_str());
         if (lib) {
             if (getPlugin(lib) == nullptr) {
-                if (!RegisterPlugin(lib, pluginFileName, pluginFileName, ll::Version(1, 0, 0), {})) {
+                if (!registerPlugin(lib, pluginFileName, pluginFileName, ll::Version(1, 0, 0), {})) {
                     logger.error(tr("ll.pluginManager.error.failToRegisterPlugin", pluginFilePath));
                     if (getPlugin(pluginFileName)) {
                         logger.error(tr("ll.pluginManager.error.hasBeenRegistered", pluginFileName));
@@ -239,7 +243,7 @@ bool ll::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
     }
 }
 
-bool ll::PluginManager::unloadPlugin(string pluginName, bool outputResult) {
+bool ll::PluginManager::unloadPlugin(const string& pluginName, bool outputResult) {
     // if (!ll::isDebugMode())
     //     return false;
     try {
@@ -283,7 +287,7 @@ bool ll::PluginManager::unloadPlugin(string pluginName, bool outputResult) {
     }
 }
 
-bool ll::PluginManager::reloadPlugin(string pluginName, bool outputResult) {
+bool ll::PluginManager::reloadPlugin(const string& pluginName, bool outputResult) {
     // if (!ll::isDebugMode())
     //     return false;
     try {
@@ -367,7 +371,7 @@ int ll::PluginManager::reloadAllPlugins(bool outputResult) {
 }
 
 // TODO: 使用插件系统的 onLoad onUnload onEnable onDisable代替
-bool ll::PluginManager::callEventAtHotLoad(std::string pluginName) {
+bool ll::PluginManager::callEventAtHotLoad(const std::string& /*pluginName*/) {
     // using namespace ll::event;
     // // if (!ll::isDebugMode())
     // //     return false;
@@ -377,17 +381,4 @@ bool ll::PluginManager::callEventAtHotLoad(std::string pluginName) {
     // });
 
     return true;
-}
-
-// Helper
-LLAPI bool RegisterPlugin(
-    HMODULE                            handle,
-    std::string                        name,
-    std::string                        desc,
-    ll::Version                        version,
-    std::map<std::string, std::string> others
-) {
-    others["PluginType"]     = "DLL Plugin";
-    others["PluginFilePath"] = handle ? GetModulePath(handle) : name;
-    return ll::PluginManager::registerPlugin(handle, name, desc, version, others);
 }

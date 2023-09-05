@@ -72,7 +72,7 @@ bool NewProcess(const std::string& process, std::function<void(int, std::string)
 
     if (!CreatePipe(&hRead, &hWrite, &sa, 0))
         return false;
-    STARTUPINFOW        si = {0};
+    STARTUPINFOW        si = {};
     PROCESS_INFORMATION pi;
 
     si.cb = sizeof(STARTUPINFO);
@@ -139,7 +139,7 @@ std::pair<int, std::string> NewProcessSync(const std::string& process, int timeL
 
     if (!CreatePipe(&hRead, &hWrite, &sa, 0))
         return {-1, ""};
-    STARTUPINFOW        si = {0};
+    STARTUPINFOW        si = {};
     PROCESS_INFORMATION pi;
 
     si.cb = sizeof(STARTUPINFO);
@@ -217,10 +217,10 @@ bool IsWineEnvironment() {
     return result;
 }
 
-#define IN_RANGE(x, a, b) (x >= a && x <= b)
-#define GET_BYTE(x)       (GET_BITS(x[0]) << 4 | GET_BITS(x[1]))
+#define IN_RANGE(x, a, b) ((x) >= (a) && (x) <= (b))
+#define GET_BYTE(x)       (GET_BITS((x)[0]) << 4 | GET_BITS((x)[1]))
 #define GET_BITS(x)                                                                                                    \
-    (IN_RANGE((x & (~0x20)), 'A', 'F') ? ((x & (~0x20)) - 'A' + 0xa) : (IN_RANGE(x, '0', '9') ? x - '0' : 0))
+    (IN_RANGE(((x) & (~0x20)), 'A', 'F') ? (((x) & (~0x20)) - 'A' + 0xa) : (IN_RANGE(x, '0', '9') ? (x) - '0' : 0))
 
 inline DWORD_PTR GetProcessBaseAddress(DWORD processId) {
     DWORD_PTR baseAddress   = 0;

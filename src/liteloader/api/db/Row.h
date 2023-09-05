@@ -227,14 +227,14 @@ public:
      * @param cb  The function to call for each element
      * @note  Return false in callback function to stop the iteration
      */
-    LLAPI void forEach_ref(std::function<bool(const std::string&, Any&)> cb);
+    LLAPI void forEach_ref(const std::function<bool(const std::string&, Any&)>& cb);
     /**
      * @brief Traverse the row
      *
      * @param cb  The function to call for each element
      * @note  Return false in callback function to stop the iteration
      */
-    LLAPI void forEach(std::function<bool(const std::string&, const Any&)> cb) const;
+    LLAPI void forEach(const std::function<bool(const std::string&, const Any&)>& cb) const;
 };
 
 } // namespace DB
@@ -247,7 +247,7 @@ public:
  * @return T    The converted value
  */
 template <typename T>
-inline T row_to(const DB::Row& row) {
+inline T row_to(const DB::Row&) {
     throw std::bad_cast();
 }
 

@@ -149,7 +149,7 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
             pContext = &context;
         }
 
-        STACKFRAME64 stackFrame     = {0};
+        STACKFRAME64 stackFrame     = {};
         stackFrame.AddrPC.Mode      = AddrModeFlat;
         stackFrame.AddrPC.Offset    = pContext->Rip;
         stackFrame.AddrStack.Mode   = AddrModeFlat;

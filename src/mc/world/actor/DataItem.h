@@ -5,8 +5,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/entity/utilities/ActorDataIDs.h"
 #include "mc/enums/DataItemType.h"
-#include "mc/math/vec2.h"
-#include "mc/math/vec3.h"
+#include "mc/math/Vec2.h"
+#include "mc/math/Vec3.h"
 #include "mc/nbt/CompoundTag.h"
 #include "mc/world/level/BlockPos.h"
 
@@ -149,11 +149,11 @@ inline bool DataItem::setData(T const& value) {
 }
 
 template <typename T>
-inline static std::unique_ptr<DataItem> DataItem::create(ushort key, T const& value) {
-    return std::unique_ptr<DataItem2>(key, value);
+inline std::unique_ptr<DataItem> DataItem::create(ushort key, T const& value) {
+    return std::unique_ptr<DataItem2<T>>(key, value);
 }
 
 template <typename T>
-inline static std::unique_ptr<DataItem> DataItem::create(ActorDataIDs key, T const& value) {
-    return std::unique_ptr<DataItem2>((ushort)key, value);
+inline std::unique_ptr<DataItem> DataItem::create(ActorDataIDs key, T const& value) {
+    return std::unique_ptr<DataItem2<T>>((ushort)key, value);
 }

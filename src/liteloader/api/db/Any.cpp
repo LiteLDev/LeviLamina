@@ -109,6 +109,8 @@ Any& Any::operator=(const Any& v) {
     case Type::Blob:
         value.blob = new ByteArray(*v.value.blob);
         break;
+    default:
+        break;
     }
     return *this;
 }
@@ -173,7 +175,7 @@ std::string Any::type2str(Any::Type type) {
 
 Any Any::str2any(const std::string& str) {
     if (str.empty())
-        return Any();
+        return {};
     bool isInteger  = true;
     bool isFloating = false;
     bool first      = true;
@@ -195,14 +197,14 @@ Any Any::str2any(const std::string& str) {
         }
     }
     if (isFloating)
-        return Any(std::stod(str));
+        return {std::stod(str)};
     else if (isInteger) {
         auto floating = std::stod(str);
         if (floating > ULLONG_MAX || floating < LLONG_MIN)
-            return Any(floating);
+            return {floating};
         else if (floating > LLONG_MAX)
-            return Any(std::stoull(str));
-        return Any(std::stoll(str));
+            return {std::stoull(str)};
+        return {std::stoll(str)};
     } else
         return Any(str);
 }

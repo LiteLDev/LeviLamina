@@ -1,10 +1,18 @@
 #pragma once
 
+#ifndef LLDLL_UNUSED
+#if defined(__clang__)
+#define LLDLL_UNUSED
+#else
+#define LLDLL_UNUSED [[maybe_unused]]
+#endif//defined(__clang__)
+#endif//LLDLL_UNUSED
+
 #ifndef LLAPI
 #ifdef LITELOADER_EXPORTS
-#define LLAPI [[maybe_unused]] __declspec(dllexport)
+#define LLAPI LLDLL_UNUSED __declspec(dllexport)
 #else
-#define LLAPI [[maybe_unused]] __declspec(dllimport)
+#define LLAPI LLDLL_UNUSED __declspec(dllimport)
 #endif
 #endif
 

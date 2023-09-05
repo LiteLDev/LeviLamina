@@ -24,7 +24,7 @@ BlockSource::getEntities(class AABB const& range, float extendDistance, ActorTyp
 
     for (int x = minChunk.x; x <= maxChunk.x; x++)
         for (int z = minChunk.z; z <= maxChunk.z; z++) {
-            LevelChunk* chunk = getChunk({x, z});
+            auto* chunk = getChunk(x, z);
             if (chunk == nullptr) {
                 continue;
             }

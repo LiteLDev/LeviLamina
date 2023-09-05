@@ -5,7 +5,7 @@
 typedef uint64 CHash;
 
 constexpr uint64 do_hash(const char* x);
-constexpr uint64 do_hash(const char* x, int len);
+constexpr uint64 do_hash(const char* x, size_t len);
 constexpr uint64 do_hash2(std::string_view x);
 
 constexpr uint64 do_hash(const char* x) {
@@ -20,7 +20,7 @@ constexpr uint64 do_hash(const char* x) {
     }
     return rval;
 }
-constexpr uint64 do_hash(const char* x, int len) {
+constexpr uint64 do_hash(const char* x, size_t len) {
     // ap hash
     uint64 rval = 0;
     for (size_t i = 0; i < len; ++i) {

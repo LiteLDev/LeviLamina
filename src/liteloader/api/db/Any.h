@@ -17,7 +17,7 @@ class Any;
  * @return T The converted value
  */
 template <typename T>
-inline T any_to(const DB::Any& v) {
+inline T any_to(const DB::Any&) {
     throw std::bad_cast();
 }
 
@@ -52,7 +52,7 @@ public:
         Time*        time;
         DateTime*    datetime;
         ByteArray*   blob;
-    } value; ///< Value
+    } value{}; ///< Value
 
     enum class Type : schar {
         Null     = 0,

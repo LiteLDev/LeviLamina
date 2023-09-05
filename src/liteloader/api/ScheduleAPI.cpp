@@ -35,8 +35,8 @@ public:
         int                       count,
         HMODULE                   handle
     )
-    : type(type), task(std::move(task)), leftTime((int64)delay), interval((int64)interval), count(count),
-      taskId(++nextTaskId), handle(handle){};
+    : taskId(++nextTaskId), type(type), leftTime((int64)delay), interval((int64)interval), count(count),
+      task(std::move(task)), handle(handle){};
 
     [[nodiscard]] inline uint getTaskId() const { return taskId; }
 

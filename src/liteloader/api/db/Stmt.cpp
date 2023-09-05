@@ -3,10 +3,10 @@
 
 namespace DB {
 
-Stmt::Stmt(const std::weak_ptr<Session>& parent, bool autoExecute) : parent(parent), autoExecute(autoExecute) {}
+Stmt::Stmt(const std::weak_ptr<Session>& parent, bool autoExecute) : autoExecute(autoExecute), parent(parent) {}
 
 
-Stmt::~Stmt() {}
+Stmt::~Stmt() = default;
 
 void Stmt::setDebugOutput(bool enable) { debugOutput = enable; }
 

@@ -5,7 +5,7 @@ namespace DB {
 
 RowHeader::RowHeader(const std::initializer_list<std::string>& list) : std::vector<std::string>(list) {}
 
-RowHeader::~RowHeader() {}
+RowHeader::~RowHeader() = default;
 
 size_t RowHeader::add(const std::string& name) {
     push_back(name);
@@ -123,7 +123,7 @@ Row& Row::operator=(const Row& row) {
 
 Any& Row::operator[](const std::string& name) {
     auto idx = (*header)[name];
-    if (idx < (int)size())
+    if (idx < size())
         return std::vector<Any>::at(idx);
     resize((size_t)idx + 1, Any());
     return std::vector<Any>::at(idx);
@@ -133,7 +133,7 @@ const Any& Row::operator[](const std::string& name) const { return std::vector<A
 Any&       Row::at(const std::string& name) { return std::vector<Any>::at(header->at(name)); }
 const Any& Row::at(const std::string& name) const { return std::vector<Any>::at(header->at(name)); }
 
-void Row::forEach_ref(std::function<bool(const std::string&, Any&)> cb) {
+void Row::forEach_ref(const std::function<bool(const std::string&, Any&)>& cb) {
     if (!this->header)
         return;
     for (auto& col : *this->header) {
@@ -142,7 +142,7 @@ void Row::forEach_ref(std::function<bool(const std::string&, Any&)> cb) {
     }
 }
 
-void Row::forEach(std::function<bool(const std::string&, const Any&)> cb) const {
+void Row::forEach(const std::function<bool(const std::string&, const Any&)>& cb) const {
     if (!this->header)
         return;
     int i = 0;

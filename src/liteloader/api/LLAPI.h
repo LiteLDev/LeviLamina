@@ -15,6 +15,7 @@
 #include "liteloader/api/Global.h"
 #include "liteloader/api/utils/PluginOwnData.h"
 #include "liteloader/api/utils/WinHelper.h"
+#include "liteloader/core/PluginManager.h"
 
 // LL types
 namespace ll {
@@ -62,14 +63,6 @@ struct Plugin {
 inline bool operator<=(ll::Version a, ll::Version b) { return a < b || a == b; }
 inline bool operator>(ll::Version a, ll::Version b) { return b < a; }
 inline bool operator>=(ll::Version a, ll::Version b) { return b < a || b == a; }
-
-LLAPI bool RegisterPlugin(
-    HMODULE                            hPlugin,
-    std::string                        name,
-    std::string                        desc,
-    ll::Version                        version,
-    std::map<std::string, std::string> others
-);
 
 // Loader APIs
 namespace ll {
@@ -128,7 +121,7 @@ inline bool registerPlugin(
         others.emplace("License", license);
     if (!website.empty())
         others.emplace("Website", website);
-    return ::RegisterPlugin(GetCurrentModule(), name, desc, version, others);
+    return PluginManager::registerPlugin(GetCurrentModule(), name, desc, version, others);
 }
 
 /**
@@ -148,7 +141,7 @@ inline bool registerPlugin(
  */
 inline bool
 registerPlugin(std::string name, std::string desc, ll::Version version, std::map<std::string, std::string> others) {
-    return ::RegisterPlugin(GetCurrentModule(), name, desc, version, others);
+    return PluginManager::registerPlugin(GetCurrentModule(), name, desc, version, others);
 }
 
 /**

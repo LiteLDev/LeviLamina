@@ -322,9 +322,7 @@ namespace ll::perm {
 
         Roles& operator=(const Roles& other) = default;
         Roles& operator=(Roles&& other) = default;
-        Roles& operator=(const Base& other) {
-            return (Roles&)((Base&)*this) = other;
-        }
+        Roles& operator=(const Base& other) { return *this = Roles{other}; }
     };
 
 } // namespace PERM

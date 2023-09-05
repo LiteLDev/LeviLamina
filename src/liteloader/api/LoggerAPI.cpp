@@ -2,8 +2,6 @@
 // Created by RimuruChan on 2021/12/11.
 //
 
-#pragma once
-
 #include <regex>
 #include <unordered_map>
 

@@ -96,7 +96,7 @@ class boolN;
 template <typename T, typename... Components>
 class LL_EBO VectorBase : VectorBaseTag {
 public:
-    using first_type = max_type<Components...>::type;
+    using first_type = typename max_type<Components...>::type;
 
     [[nodiscard]] consteval static size_t size() noexcept { return sizeof...(Components); }
 
@@ -114,7 +114,7 @@ public:
         return res;
     }
 
-    [[nodiscard]] constexpr bool operator==(T const& b) const {
+    [[nodiscard]] constexpr bool operator==(T const& b) const noexcept {
         bool res = true;
         unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
             res =

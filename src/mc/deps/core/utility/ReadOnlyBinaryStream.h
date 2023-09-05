@@ -18,9 +18,9 @@ public:
         auto res = serialize<T>::read(*this);
         if (res.has_value()) {
             x = res.value();
-            return;
+            return {};
         }
-        return /*res.error()*/;
+        return res;
     }
     template <>
     MCAPI Bedrock::Result<void, class std::error_code> readType(class CompoundTag&);

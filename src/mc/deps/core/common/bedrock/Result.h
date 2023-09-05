@@ -8,7 +8,7 @@ namespace Bedrock {
 template <typename T, typename Err = std::error_code>
 class Result {
 
-private:
+public:
     union {
         T              mValue;
         ErrorInfo<Err> mError;
@@ -46,12 +46,12 @@ public:
 template <typename Err>
 class Result<void, Err> {
 
-private:
+public:
     ErrorInfo<Err> mError;
     bool           mHasValue;
 
 public:
-    explicit Result() : mHasValue(true) {}
+    Result() : mHasValue(true) {}
 
     Result(Result&& other) noexcept {
         mHasValue = other.mHasValue;

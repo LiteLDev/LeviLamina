@@ -223,7 +223,6 @@ public:
             rows.push_back(row_to<T>(row));
             return true;
         });
-        return *this;
     }
 
     /**

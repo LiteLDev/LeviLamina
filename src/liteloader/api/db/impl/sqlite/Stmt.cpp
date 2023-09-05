@@ -3,9 +3,11 @@
 #include "liteloader/api/db/impl/sqlite/Session.h"
 #include <sqlite3.h>
 
+#include <memory>
+
 namespace DB {
 
-SQLiteStmt::SQLiteStmt(sqlite3_stmt* stmt, const std::weak_ptr<Session> parent, bool autoExecute)
+SQLiteStmt::SQLiteStmt(sqlite3_stmt* stmt, const std::weak_ptr<Session>& parent, bool autoExecute)
 : Stmt(parent, autoExecute), stmt(stmt) {
     IF_ENDBG dbLogger.debug("SQLiteStmt::SQLiteStmt: Constructed! this: {}", (void*)this);
     totalParamsCount = sqlite3_bind_parameter_count(stmt);
@@ -15,8 +17,8 @@ SQLiteStmt::SQLiteStmt(sqlite3_stmt* stmt, const std::weak_ptr<Session> parent, 
 
 int SQLiteStmt::getNextParamIndex() {
     int result = -1;
-    for (int i = 0; i < boundIndexes.size() && i < totalParamsCount; i++) {
-        if (boundIndexes[i] == result + 1) {
+    for (auto& x : boundIndexes) {
+        if (x == result + 1) {
             result++;
         }
     }
@@ -26,7 +28,7 @@ int SQLiteStmt::getNextParamIndex() {
 
 void SQLiteStmt::fetchResultHeader() {
     if (!resultHeader)
-        resultHeader.reset(new RowHeader);
+        resultHeader = std::make_shared<RowHeader>();
     int colCnt = sqlite3_column_count(stmt);
     for (int i = 0; i < colCnt; i++) {
         auto     name = sqlite3_column_name(stmt, i);
@@ -170,7 +172,7 @@ Row SQLiteStmt::_Fetch() {
         fetchResultHeader();
     }
     Row row(resultHeader);
-    for (int i = 0; i < resultHeader->size(); i++) {
+    for (size_t i = 0; i < resultHeader->size(); i++) {
         switch (sqlite3_column_type(stmt, i)) {
         case SQLITE_INTEGER:
             row.push_back(sqlite3_column_int64(stmt, i));

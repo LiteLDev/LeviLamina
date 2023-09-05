@@ -65,16 +65,16 @@ inline void cleanOldScriptEngine() {
         filesystem::remove("plugins/LiteXLoader.Lua.dll", ec);
 }
 
-constexpr auto DEFAULT_ROOT_PACKAGE_JSON =
-    R"({
-    "name": "llse-nodejs-root",
-    "version" : "1.0.0",
-    "description" : "Root package environment of LLSE NodeJs backend",
-    "main" : "index.js",
-    "scripts" : { "test": "exit" },
-    "author" : "LiteLDev",
-    "license" : "LGPL-3.0"
-})";
+// constexpr auto DEFAULT_ROOT_PACKAGE_JSON =
+//     R"({
+//     "name": "llse-nodejs-root",
+//     "version" : "1.0.0",
+//     "description" : "Root package environment of LLSE NodeJs backend",
+//     "main" : "index.js",
+//     "scripts" : { "test": "exit" },
+//     "author" : "LiteLDev",
+//     "license" : "LGPL-3.0"
+// })";
 
 inline void loadDotNETEngine() {
     std::string path = "plugins/LiteLoader/LiteLoader.NET.dll";
@@ -82,7 +82,7 @@ inline void loadDotNETEngine() {
     if (lib) {
         ll::logger.info(tr("ll.loader.loadDotNetEngine.success"));
         // Fake Register
-        RegisterPlugin(
+        ll::PluginManager::registerPlugin(
             lib,
             "LiteLoader.NET",
             "LiteLoader.NET",
@@ -180,7 +180,7 @@ void ll::LoadMain() {
             }
 
             if (PluginManager::getPlugin(lib) == nullptr) {
-                if (!RegisterPlugin(lib, pluginFileName, pluginFileName, ll::Version(1, 0, 0), {})) {
+                if (!ll::PluginManager::registerPlugin(lib, pluginFileName, pluginFileName, ll::Version(1, 0, 0), {})) {
                     ll::logger.error(tr("ll.pluginManager.error.failToRegisterPlugin", UTF82String(path.u8string())));
                     if (PluginManager::getPlugin(pluginFileName)) {
                         ll::logger.error(tr("ll.pluginManager.error.hasBeenRegistered", pluginFileName));

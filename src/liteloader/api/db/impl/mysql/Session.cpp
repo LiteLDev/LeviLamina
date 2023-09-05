@@ -43,17 +43,17 @@ void MySQLSession::setSSL(const ConnParams& params) {
 
 void MySQLSession::open(const ConnParams& params) {
     auto   p     = params;
-    ulong  flags = 0;
+    // ulong  flags = 0;
     ushort port  = 0;
     if ((port = p.getPort()) == 0) {
         port = 3306;
     }
     std::string db = p.getDatabase();
     if (p.get({"compress"}, true, false)) {
-        flags |= CLIENT_COMPRESS;
+        // flags |= CLIENT_COMPRESS;
     }
     if (p.get({"ssl", "ssl_mode", "sslmode", "ssl-mode"}, true, false)) {
-        flags |= CLIENT_SSL;
+        // flags |= CLIENT_SSL;
         setSSL(p);
     }
     // auto defaultCharset = mysql_character_set_name(conn);
