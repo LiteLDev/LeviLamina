@@ -167,12 +167,12 @@ bool SQLiteStmt::done() {
 
 Row SQLiteStmt::_Fetch() {
     if (done())
-        return Row();
+        return {};
     if (!resultHeader || resultHeader->empty()) {
         fetchResultHeader();
     }
     Row row(resultHeader);
-    for (size_t i = 0; i < resultHeader->size(); i++) {
+    for (int i = 0; i < (int)(resultHeader->size()); i++) {
         switch (sqlite3_column_type(stmt, i)) {
         case SQLITE_INTEGER:
             row.push_back(sqlite3_column_int64(stmt, i));
