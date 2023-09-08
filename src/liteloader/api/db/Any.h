@@ -138,7 +138,7 @@ public:
      *
      * @param v The char value
      */
-    LLAPI Any(char v);
+    LLAPI Any(schar v);
     /**
      * @brief Construct a new Any object with uint8(uchar) value.
      *

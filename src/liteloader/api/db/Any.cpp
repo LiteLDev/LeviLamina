@@ -46,7 +46,7 @@ Any::Any(const DateTime& v) {
     type           = Type::DateTime;
     value.datetime = new DateTime(v);
 }
-Any::Any(char v) {
+Any::Any(schar v) {
     type          = Type::Integer;
     value.integer = v;
 }
