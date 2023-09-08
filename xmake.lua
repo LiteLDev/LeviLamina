@@ -55,8 +55,8 @@ target("LiteLoader")
     add_includedirs("./src")
     add_cxflags("/utf-8", "/permissive-", "/EHa", "/W4")
     add_defines(
-        "UNICODE", "LITELOADER_EXPORTS", "WIN32_LEAN_AND_MEAN", 
-        "CPPHTTPLIB_OPENSSL_SUPPORT", "_AMD64_", "NOMINMAX", 
+        "UNICODE", "LITELOADER_EXPORTS", "WIN32_LEAN_AND_MEAN",
+        "CPPHTTPLIB_OPENSSL_SUPPORT", "_AMD64_", "NOMINMAX",
         "_CRT_SECURE_NO_WARNINGS"
     )
     add_shflags("/DELAYLOAD:bedrock_server.dll")
