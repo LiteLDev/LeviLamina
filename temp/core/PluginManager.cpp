@@ -4,7 +4,6 @@
 #include <unordered_map>
 // #include <ScriptEngine/src/main/Configs.h>
 
-#include "liteloader/api/utils/STLHelper.h"
 #include "liteloader/api/utils/StringHelper.h"
 #include "liteloader/api/utils/WinHelper.h"
 
@@ -39,7 +38,7 @@ bool ll::PluginManager::registerPlugin(
     if (handle != nullptr) // DLL Plugin
     {
         if (getPlugin(handle) != nullptr) {
-            erase_if(plugins, [&handle](auto& data) { // Allow plugins to overwrite their own plugin registory
+            std::erase_if(plugins, [&handle](auto& data) { // Allow plugins to overwrite their own plugin registory
                 return data.second.handle == handle;
             });
         } else if (getPlugin(name) != nullptr) {

@@ -128,7 +128,7 @@ I18nBase::SubLangData NestedHelper(const nlohmann::json& j, const std::string& p
         // throw std::exception("Error when parsing I18nBase data: The value must be object!");
         return data; // Empty
     }
-    for (auto it = j.begin(); it != j.end(); ++it) {
+    for (auto& it : j.items()) {
         auto& val = it.value();
         if (val.is_object()) {
             data.merge(NestedHelper(val, prefix + it.key() + '.'));

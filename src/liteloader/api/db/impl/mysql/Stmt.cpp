@@ -303,9 +303,9 @@ void MySQLStmt::bindResult() {
     auto     cnt = mysql_num_fields(metadata);
     IF_ENDBG dbLogger.debug("MySQLStmt::bindResult: mysql_num_fields: {}", cnt);
     auto     fields = mysql_fetch_fields(metadata);
-    result = std::make_shared<MYSQL_BIND[]>(cnt); // Allocate result bindings
-    resultHeader = std::make_shared<RowHeader>(); // Allocate result header
-    for (auto i = 0U; i < cnt; i++) {
+    result          = std::make_shared<MYSQL_BIND[]>(cnt); // Allocate result bindings
+    resultHeader    = std::make_shared<RowHeader>();       // Allocate result header
+    for (uint i = 0; i < cnt; i++) {
         resultValues.push_back({});        // Allocate result values
         auto& rec   = resultValues.back(); // Get the binder
         auto& field = fields[i];

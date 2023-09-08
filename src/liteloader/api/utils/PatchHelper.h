@@ -69,7 +69,7 @@ struct PatchHelper {
     inline std::string Dump() const noexcept {
         char  buffer[2 * len + 1] = {};
         char* ptr                 = buffer;
-        for (auto ch : data)
+        for (auto& ch : data)
             ptr += sprintf(ptr, "%02X", (uint)ch);
         return {buffer};
     }

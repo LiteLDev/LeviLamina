@@ -94,7 +94,7 @@ public:
             // ScheduleTaskData destructor may trigger ScriptX's lock
             tmpList.swap(pendingCancelList);
             locker.unlock();
-            for (auto tid : tmpList) {
+            for (auto& tid : tmpList) {
                 remove(tid);
             }
             tmpList.clear();
@@ -245,7 +245,7 @@ bool ScheduleTask::isFinished() const {
         locker.unlock();
         return true;
     }
-    for (auto tid : pendingCancelList) { // 准备出队,但还在队里
+    for (auto& tid : pendingCancelList) { // 准备出队,但还在队里
         if (tid == taskId) {
             locker.unlock();
             return true;

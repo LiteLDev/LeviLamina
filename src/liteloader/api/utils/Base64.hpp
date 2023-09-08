@@ -39,12 +39,7 @@ inline size_t getEncodeLength(const std::string& str) {
 
 inline size_t getDecodeLength(const std::string& in) {
     uint8_t count      = 0;
-    size_t        input_size = in.size();
-    for (auto it = in.rbegin(); *it == '='; ++it) {
-        ++count;
-    }
-    input_size -= count;     // remove padding size
-    count = 0;               // reset padding counter
+    size_t  input_size  = in.rfind('=');// remove padding size
     while (input_size % 4) { // redo padding
         input_size++;
         count++;
@@ -73,7 +68,7 @@ inline std::string Encode(const std::string& text_input) {
     int32_t i = 0;
     int32_t j = -6;
 
-    for (auto c : text_input) {
+    for (auto& c : text_input) {
         i = (i << 8) + static_cast<uint8_t>(c);
         j += 8;
         while (j >= 0) {

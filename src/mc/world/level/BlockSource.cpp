@@ -54,12 +54,8 @@ BlockSource::cloneActor(Actor const& origin, Vec3 const& pos, std::optional<Dime
         return nullptr;
     }
 
-    auto* nbtPos = nbt->getList("Pos");
-
-    if (nbtPos) {
-        for (auto i : {0, 1, 2}) {
-            nbtPos[i].as<FloatTag>() = pos[i];
-        }
+    if (auto* nbtPos = nbt->getList("Pos"); nbtPos) {
+        unroll<3>([&](size_t i) { nbtPos[i].as<FloatTag>() = pos[i]; });
     }
 
     auto& level = getLevel();
