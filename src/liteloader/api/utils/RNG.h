@@ -8,9 +8,10 @@
  */
 #pragma once
 
+#include <mc/_HeaderOutputPredefine.h>
+#include <pcg_cpp/pcg_random.hpp>
 #include <random>
 
-#include <pcg_cpp/pcg_random.hpp>
 
 namespace RNG {
 
