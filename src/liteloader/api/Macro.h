@@ -1,12 +1,8 @@
 #pragma once
 
 #ifndef LLDLL_UNUSED
-#if defined(__clang__)
-#define LLDLL_UNUSED
-#else
 #define LLDLL_UNUSED [[maybe_unused]]
-#endif//defined(__clang__)
-#endif//LLDLL_UNUSED
+#endif
 
 #ifndef LLAPI
 #ifdef LITELOADER_EXPORTS
