@@ -14,12 +14,7 @@ using FuncPtr = void*;
 template <typename T>
     requires(sizeof(T) == sizeof(FuncPtr))
 constexpr FuncPtr toFuncPtr(T t) {
-    union {
-        T       t;
-        FuncPtr fp;
-    } u{};
-    u.t = t;
-    return u.fp;
+    return reinterpret_cast<FuncPtr>(t);
 }
 
 
