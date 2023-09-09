@@ -1,6 +1,8 @@
 #pragma once
 
 #include <string>
+#include <type_traits>
+#include <vcruntime.h>
 
 #include "liteloader/api/Macro.h"
 #include "liteloader/api/utils/FixedString.h"
@@ -10,12 +12,26 @@ namespace ll::memory {
 using FuncPtr = void*;
 
 template <typename T>
-constexpr FuncPtr toFuncPtr(T t)
     requires(sizeof(T) == sizeof(FuncPtr))
-{
+constexpr FuncPtr toFuncPtr(T t) {
     union {
         T       t;
         FuncPtr fp;
+    } u{};
+    u.t = t;
+    return u.fp;
+}
+
+
+template <typename T>
+    requires(std::is_member_function_pointer_v<T>)
+constexpr FuncPtr toFuncPtr(T t) {
+    union {
+        struct {
+            FuncPtr   fp;
+            ptrdiff_t offset;
+        };
+        T t;
     } u{};
     u.t = t;
     return u.fp;
