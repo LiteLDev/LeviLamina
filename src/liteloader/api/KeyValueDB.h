@@ -21,10 +21,10 @@ private:
 
 public:
     LLAPI static std::unique_ptr<KeyValueDB>
-    create(const std::string& path, bool read_cache = true, int cache_sz = 0, int Bfilter_bit = 0);
+    create(const std::string& path, bool readCache = true, int cacheSize = 0, int filterBit = 0);
 
     LLAPI static std::unique_ptr<KeyValueDB>
-    open(const std::string& path, bool create = true, bool read_cache = true, int cache_sz = 0, int Bfilter_bit = 0);
+    open(const std::string& path, bool create = true, bool readCache = true, int cacheSize = 0, int filterBit = 0);
 
     LLAPI ~KeyValueDB();
 
@@ -38,7 +38,7 @@ public:
 
     LLNDAPI bool del(std::string_view key);
 
-    LLAPI void iter(std::function<bool(std::string_view key, std::string_view val)> const& fn) const;
+    LLAPI void iter(std::function<bool(std::string_view, std::string_view)> const& fn) const;
 
     LLNDAPI std::string error() const;
 
