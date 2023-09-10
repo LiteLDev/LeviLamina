@@ -64,6 +64,7 @@ public:
 
     bool sendTo(Player* player, Callback callback = Callback()) {
         // TODO
+        return false;
     }
 
 protected:
