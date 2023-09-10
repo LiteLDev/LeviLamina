@@ -1,5 +1,5 @@
 #include "mc/world/level/block/Block.h"
-#include "liteloader/api/GlobalServiceAPI.h"
+
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/nbt/CompoundTag.h"
 #include "mc/world/level/BlockPalette.h"
@@ -8,6 +8,10 @@
 #include "mc/world/level/block/states/BlockState.h"
 #include "mc/world/level/block/utils/BlockSerializationUtils.h"
 #include "mc/world/level/block/utils/VanillaBlockConversion.h"
+
+#include "liteloader/api/service/GlobalService.h"
+
+using ll::Global;
 
 optional_ref<Block const> Block::tryGetFromRegistry(uint runtimeID) {
     auto& res = Global<Level>->getBlockPalette().getBlock(runtimeID);

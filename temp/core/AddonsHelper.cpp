@@ -1,5 +1,5 @@
 #include "liteloader/core/AddonsHelper.h"
-#include "liteloader/api/GlobalServiceAPI.h"
+#include "liteloader/api/service/GlobalService.h"
 #include "liteloader/api/I18nAPI.h"
 #include "liteloader/api/LLAPI.h"
 #include "liteloader/api/LoggerAPI.h"

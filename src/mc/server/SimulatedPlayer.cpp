@@ -1,5 +1,5 @@
 #include "mc/server/SimulatedPlayer.h"
-#include "liteloader/api/GlobalServiceAPI.h"
+#include "liteloader/api/service/GlobalService.h"
 #include "liteloader/api/utils/RNG.h"
 #include "mc/common/wrapper/OwnerPtrT.h"
 #include "mc/deps/core/string/HashedString.h"
@@ -13,7 +13,7 @@ optional_ref<SimulatedPlayer> SimulatedPlayer::create(
     class Vec2 const&  rotation
 ) {
     OwnerPtrT<EntityRefTraits> ownerPtr =
-        Global<ServerNetworkHandler>->createSimulatedPlayer(name, '-' + std::to_string(RNG::rand<uint64>()));
+        ll::Global<ServerNetworkHandler>->createSimulatedPlayer(name, '-' + std::to_string(RNG::rand<uint64>()));
     auto player = ownerPtr.tryUnwrap<SimulatedPlayer>();
 
     if (player == nullptr) {

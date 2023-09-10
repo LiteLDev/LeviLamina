@@ -1,5 +1,5 @@
 #include "mc/world/level/block/actor/BlockActor.h"
-#include "liteloader/api/GlobalServiceAPI.h"
+
 #include "mc/dataloadhelper/DefaultDataLoadHelper.h"
 #include "mc/nbt/CompoundTag.h"
 #include "mc/network/packet/BlockActorDataPacket.h"
@@ -7,6 +7,10 @@
 #include "mc/world/level/BlockSource.h"
 #include "mc/world/level/block/actor/ChestBlockActor.h"
 #include "mc/world/level/dimension/Dimension.h"
+
+#include "liteloader/api/service/GlobalService.h"
+
+using ll::Global;
 
 void BlockActor::refresh(optional_ref<class BlockSource> blockSourceRef) {
     setChanged();

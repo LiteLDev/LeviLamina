@@ -1,4 +1,4 @@
-#include "liteloader/api/GlobalServiceAPI.h"
+#include "liteloader/api/service/GlobalService.h"
 #include "mc/Objective.hpp"
 #include "mc/ServerScoreboard.hpp"
 

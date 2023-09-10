@@ -30,7 +30,5 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         *(ushort*)&SharedConstants::NetworkDefaultGamePortv6 = getServerPortv6();
         VirtualProtect((void*)&SharedConstants::NetworkDefaultGamePortv6, 4, v6Flag, &_);
     }
-    // Global service
-    Global<PropertiesSettings> = this;
     return out;
 }

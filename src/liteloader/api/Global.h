@@ -23,7 +23,6 @@
 #include <FMT/printf.h>
 #include <gsl/gsl>
 
-#include "liteloader/api/GlobalServiceAPI.h"
 #include "liteloader/api/utils/Optional.h"
 #include "liteloader/api/utils/SehTranslator.h"
 

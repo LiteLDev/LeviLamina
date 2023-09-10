@@ -2,35 +2,35 @@
 
 #include <csignal>
 #include <iostream>
-#include <minwindef.h>
-#include <processenv.h>
 #include <string>
 
+#include "liteloader/api/LoggerAPI.h"
+#include "liteloader/api/memory/Hook.h"
+#include "liteloader/api/service/GlobalService.h"
 #include "liteloader/api/utils/FileHelper.h"
 #include "liteloader/api/utils/SehTranslator.h"
 #include "liteloader/api/utils/StringHelper.h"
 
-#include "liteloader/api/memory/Hook.h"
-
-#include "liteloader/api/LoggerAPI.h"
 // #include "liteloader/api/ServerAPI.h"
 // #include "liteloader/api/event/LegacyEvents.h"
 // #include "liteloader/api/event/server/ServerStartedEvent.h"
 // #include "liteloader/api/event/server/ServerStoppedEvent.h"
-
-#include "mc/world/Minecraft.h"
-
 #include "liteloader/core/Config.h"
 #include "liteloader/core/Loader.h"
+#include "liteloader/core/Version.h"
 // #include "liteloader/core/CrashLogger.h"
 // #include "liteloader/core/AddonsHelper.h"
-#include "liteloader/core/Version.h"
 // #include "liteloader/core/SimpleServerLogger.h"
 // #include "liteloader/core/PlayerDeathPositions.h"
 
+#include "mc/world/Minecraft.h"
+
 #include <Psapi.h>
 #include <TlHelp32.h>
+#include <minwindef.h>
+#include <processenv.h>
 #include <windows.h>
+
 
 Logger ll::logger("LiteLoader");
 time_t ll::startTime;

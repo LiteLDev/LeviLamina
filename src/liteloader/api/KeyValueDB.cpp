@@ -9,7 +9,6 @@ using namespace ll;
 
 Logger levelDBLogger("LevelDB");
 
-
 class KeyValueDB::KeyValueDBImpl {
 public:
     std::unique_ptr<leveldb::DB> db;
@@ -102,7 +101,6 @@ private:
     KeyValueDBImpl() = default;
 };
 
-
 std::unique_ptr<KeyValueDB>
 KeyValueDB::create(const std::string& path, bool read_cache, int cache_sz, int Bfilter_bit) {
     CreateDirs(path);
@@ -118,6 +116,8 @@ KeyValueDB::open(const std::string& path, bool create, bool read_cache, int cach
     db->impl = std::make_unique<KeyValueDBImpl>(path.c_str(), create, read_cache, cache_sz, Bfilter_bit);
     return db;
 }
+
+KeyValueDB::~KeyValueDB() = default;
 
 std::optional<std::string> KeyValueDB::get(std::string_view key) const { return impl->get(key); }
 

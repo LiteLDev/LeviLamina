@@ -1,20 +1,28 @@
-#include "liteloader/api/Global.h"
-
-#include "mc/AllowListFile.hpp"
-#include "mc/CommandSoftEnumRegistry.hpp"
-#include "mc/DBStorage.hpp"
-#include "mc/Level.hpp"
-#include "mc/Minecraft.hpp"
-#include "mc/MinecraftCommands.hpp"
-#include "mc/RakNet.hpp"
-#include "mc/RakNetServerLocator.hpp"
-#include "mc/Scoreboard.hpp"
-#include "mc/ServerNetworkHandler.hpp"
-
 #include "liteloader/api/service/GlobalService.h"
+
+#include "mc/common/SharedConstants.h"
+#include "mc/deps/raknet/RakPeer.h"
+#include "mc/network/RakNetServerLocator.h"
+#include "mc/network/ServerNetworkHandler.h"
+#include "mc/server/commands/CommandSoftEnumRegistry.h"
+#include "mc/server/commands/MinecraftCommands.h"
+#include "mc/server/common/AllowListFile.h"
+#include "mc/server/common/PropertiesSettings.h"
+#include "mc/world/Minecraft.h"
+#include "mc/world/level/Level.h"
+#include "mc/world/level/storage/DBStorage.h"
+#include "mc/world/scores/Scoreboard.h"
+
 
 #include "liteloader/api/memory/Hook.h"
 #include "liteloader/api/utils/Hash.h"
+
+namespace {
+
+template <ll::IsGlobalService T>
+inline void initGlobalService(T* ptr) {
+    *const_cast<T**>(&ll::Global<T>) = ptr;
+}
 
 using namespace ll::memory;
 
@@ -26,7 +34,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     "?initAsDedicatedServer@Minecraft@@QEAAXXZ",
     void
 ) {
-    Global<Minecraft> = this;
+    initGlobalService<Minecraft>(this);
     origin();
 }
 
@@ -46,7 +54,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         initd = true;
         // auto v3 = (ServerNetworkHandler*)((char*)this + 16);
         // +16 cause fetchConnectionRequest returns nullptr
-        Global<ServerNetworkHandler> = this;
+        initGlobalService<ServerNetworkHandler>(this);
     }
     origin(a1, a2);
 }
@@ -82,7 +90,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     void* a6
 ) {
     origin(a2, a3, a4, a5, a6);
-    Global<MinecraftCommands> = this;
+    initGlobalService<MinecraftCommands>(this);
 }
 
 // LevelStorage & DBStorage
@@ -95,20 +103,19 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     struct DBStorageConfig* config,
     void*                   a3
 ) {
-    auto ret             = origin(config, a3);
-    Global<LevelStorage> = (LevelStorage*)this;
-    Global<DBStorage>    = this;
+    auto ret = origin(config, a3);
+    initGlobalService<LevelStorage>(this);
+    initGlobalService<DBStorage>(this);
     return ret;
 }
 
 // RakNetServerLocator
 // ?activate@RakNetServerLocator@@AEAAXXZ
 LL_AUTO_TYPED_INSTANCE_HOOK(RakNetServerLocatorService, RakNetServerLocator, HookPriority::Normal, "?_activate@RakNetServerLocator@@AEAAXXZ", void*) {
-    constexpr auto h   = do_hash("?_activate@RakNetServerLocator@@AEAAXXZ");
-    static bool    set = false;
+    static bool set = false;
     if (!set) {
-        set                         = true;
-        Global<RakNetServerLocator> = this;
+        set = true;
+        initGlobalService<RakNetServerLocator>(this);
     }
     return origin();
 }
@@ -117,8 +124,8 @@ using RakNet::RakPeer;
 LL_AUTO_TYPED_INSTANCE_HOOK(RakPeerService, RakPeer, HookPriority::Normal, "??0RakPeer@RakNet@@QEAA@XZ", void*) {
     static bool set = false;
     if (!set) {
-        set                     = true;
-        Global<RakNet::RakPeer> = this;
+        set = true;
+        initGlobalService<RakPeer>(this);
     }
     return origin();
 }
@@ -133,8 +140,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     void**              a2,
     class LevelStorage* a3
 ) {
-    Scoreboard* sc     = origin(a2, a3);
-    Global<Scoreboard> = sc;
+    Scoreboard* sc = origin(a2, a3);
+    initGlobalService<Scoreboard>(sc);
     return sc;
 }
 
@@ -148,10 +155,23 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 ) {
     static bool set = false;
     if (!set) {
-        Global<AllowListFile> = this;
-        set                   = true;
+        initGlobalService<AllowListFile>(this);
+        set = true;
     }
     return origin();
 }
+
 // PropertiesSettings
-// -> BuiltinBugFix.cpp
+LL_AUTO_TYPED_INSTANCE_HOOK(
+    UnBindDefaultPort,
+    PropertiesSettings,
+    HookPriority::Normal,
+    "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+    size_t,
+    const std::string& file
+) {
+    initGlobalService<PropertiesSettings>(this);
+    return origin(file);
+}
+
+} // namespace
