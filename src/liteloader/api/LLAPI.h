@@ -38,9 +38,9 @@ struct Version {
 
 struct Plugin {
     std::string                        name;
-    std::string                        desc; // `introduction` before
+    std::string                        desc;
     Version                            version;
-    std::map<std::string, std::string> others; // `otherInformation` before
+    std::map<std::string, std::string> others;
 
     std::string filePath;
     HMODULE     handle;
@@ -49,12 +49,21 @@ struct Plugin {
 
     PluginType type;
 
-    // Call a Function by Symbol String
+    /*
+     * @brief Call a function exported by the plugin using a symbol string
+     *
+     * @tparam ReturnType  The return type of the function
+     * @tparam Args        The arguments type of the function
+     * @param  sym         The symbol string
+     * @param  args        The arguments
+     * @return ReturnType  The return value of the function
+     * @exception          std::runtime_error if the symbol is not found
+     */
     template <typename ReturnType = void, typename... Args>
-    inline ReturnType callFunction(const char* functionName, Args... args) {
-        void* address = reinterpret_cast<void*>(GetProcAddress(handle, functionName));
+    inline ReturnType callFunction(const char* sym, Args... args) {
+        void* address = reinterpret_cast<void*>(GetProcAddress(handle, sym));
         if (!address)
-            return ReturnType();
+            throw std::runtime_error("ll::Plugin::callFunction: The symbol is not found!");
         return reinterpret_cast<ReturnType (*)(Args...)>(address)(std::forward<Args>(args)...);
     }
 };
