@@ -279,8 +279,6 @@ void unixSignalHandler(int signum) {
 
 extern void RegisterCommands();
 
-extern bool InitPlayerDatabase();
-
 extern void EndScheduleSystem();
 
 namespace bstats {
@@ -340,9 +338,6 @@ void liteloaderMain() {
 
     // Builtin CrashLogger
     ll::CrashLogger::initCrashLogger(ll::globalConfig.enableCrashLogger);
-
-    // Initialize Player Database
-    InitPlayerDatabase();
 
     // Rename Window
     HWND         hwnd = GetConsoleWindow();
