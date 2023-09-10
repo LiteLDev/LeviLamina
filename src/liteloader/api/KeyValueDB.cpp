@@ -59,6 +59,7 @@ public:
         auto s = db->Put(wropt, leveldb::Slice(key.data(), key.size()), leveldb::Slice(val.data(), val.size()));
         if (!s.ok()) {
             levelDBLogger.error("put {} {}", dbpath, s.ToString());
+            return false;
         }
         return true;
     }
@@ -67,6 +68,7 @@ public:
         auto s = db->Delete(wropt, leveldb::Slice(key.data(), key.size()));
         if (!s.ok()) {
             levelDBLogger.error("del {} {}", dbpath, s.ToString());
+            return false;
         }
         return true;
     }
