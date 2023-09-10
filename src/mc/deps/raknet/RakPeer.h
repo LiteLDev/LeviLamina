@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/raknet/RakNetGUID.h"
 #include "mc/deps/raknet/SystemAddress.h"
-#include "mc/network/NetworkIdentifier.h"
 
 // auto generated inclusion list
 #include "mc/deps/raknet/ConnectionAttemptResult.h"

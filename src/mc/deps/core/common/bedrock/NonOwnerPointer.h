@@ -31,7 +31,6 @@ template <class T1, class T2>
 [[nodiscard]] bool operator==(const NonOwnerPointer<T1>& l, const NonOwnerPointer<T2>& r) noexcept {
     return l.get() == r.get();
 }
-
 template <class T1, class T2>
 [[nodiscard]] std::strong_ordering operator<=>(const NonOwnerPointer<T1>& l, const NonOwnerPointer<T2>& r) noexcept {
     return l.get() <=> r.get();
