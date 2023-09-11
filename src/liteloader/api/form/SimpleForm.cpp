@@ -16,6 +16,12 @@ public:
     : mText(std::move(text)), mImage(std::move(image)), mCallback(std::move(callback)) {}
     ~Button() override = default;
 
+    void callback(Player* player) {
+        if (mCallback) {
+            mCallback(player);
+        }
+    }
+
 protected:
     fifo_json serialize() override {
         try {
@@ -44,6 +50,16 @@ public:
     std::string                                     mContent;
     std::vector<std::shared_ptr<SimpleFormElement>> mElements;
     Callback                                        mCallback;
+
+    const Callback defaultCallback = [&](Player* player, int selected) {
+        if (selected >= 0 && selected < mElements.size()) {
+            auto& e = mElements[selected];
+            if (e/* && e->getType() == SimpleFormElement::Type::Button */) {
+                auto* button = reinterpret_cast<Button*>(e.get());
+                button->callback(player);
+            }
+        }
+    };
 
     explicit SimpleFormImpl(std::string title, std::string content = "")
     : mTitle(std::move(title)), mContent(std::move(content)) {}
@@ -112,6 +128,9 @@ SimpleForm& SimpleForm::appendButton(const std::string& text, const std::string&
 }
 
 SimpleForm& SimpleForm::sendTo(Player* player, Callback callback) {
+    if (!callback) {
+        callback = impl->defaultCallback;
+    }
     impl->sendTo(player, std::move(callback));
     return *this;
 }

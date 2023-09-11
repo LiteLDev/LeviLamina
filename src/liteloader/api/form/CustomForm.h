@@ -1,6 +1,7 @@
 #pragma once
 
 #include "FormBase.h"
+#include "FormResult.h"
 #include <mc/world/actor/player/Player.h>
 
 namespace ll::form {
@@ -25,7 +26,7 @@ class CustomForm {
     std::unique_ptr<CustomFormImpl> impl;
 
 public:
-    using Callback = std::function<void(Player*, const std::unordered_map<std::string, FormElementResult>&)>;
+    using Callback = std::function<void(Player*, const CustomFormResult&)>;
 
     explicit LLAPI CustomForm(std::string title);
 

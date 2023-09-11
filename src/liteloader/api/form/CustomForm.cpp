@@ -200,7 +200,7 @@ public:
 class CustomForm::CustomFormImpl : public FormImpl {
 
 public:
-    using Callback = std::function<void(Player*, const std::unordered_map<std::string, FormElementResult>&)>;
+    using Callback = std::function<void(Player*, const CustomFormResult&)>;
 
     std::string                                     mTitle;
     std::vector<std::shared_ptr<CustomFormElement>> mElements;
@@ -255,8 +255,7 @@ protected:
             fifo_json form = {
                 {"title",   mTitle            },
                 {"type",    "custom_form"     },
-                {"content", fifo_json::array()},
- // TODO: {"buttons", fifo_json::array()} or not?
+                {"content", fifo_json::array()}
             };
             for (auto& e : mElements) {
                 fifo_json element = e->serialize();
