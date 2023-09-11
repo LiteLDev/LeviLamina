@@ -634,6 +634,7 @@ enum class MinecraftPacketIds : int {
     CompressedBiomeDefinitionList     = 0x12D,
     TrimData                          = 0x12E,
     OpenSign                          = 0x12F,
+    AgentAnimation                    = 0x130,
 };
 
 enum class ItemStackNetResult : unsigned char {
