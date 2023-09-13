@@ -17,11 +17,15 @@ public:
     bool                      mThreadIdInitialized;
     unsigned int              mThreadCheckIndex;
 
-    virtual ~EventCoordinatorPimpl();
+    // // ServerInstanceEventListener
+    // virtual ~EventCoordinatorPimpl();
 
-    MCAPI bool registerListener(gsl::not_null<T0*>);
+    // // ServerInstanceEventListener
+    // MCAPI bool registerListener(gsl::not_null<T0*>);
 
-    MCAPI void processEvent(EventFuncPtr);
+    // // ScriptingEventListener
+    // MCAPI void processEvent(EventFuncPtr);
 
-    MCAPI void unregisterListener(gsl::not_null<T0*>);
+    // // ActorEventListener
+    // MCAPI void unregisterListener(gsl::not_null<T0*>);
 };
