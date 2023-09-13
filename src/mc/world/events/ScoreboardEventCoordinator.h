@@ -1,18 +1,18 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/events/EventCoordinator.h"
+#include "mc/world/events/ScoreboardEventListener.h"
 
-class ScoreboardEventCoordinator {
+class ScoreboardEventCoordinator : public ::EventCoordinator<ScoreboardEventListener> {
 public:
     // prevent constructor by default
-    ScoreboardEventCoordinator& operator=(ScoreboardEventCoordinator const&) = delete;
-    ScoreboardEventCoordinator(ScoreboardEventCoordinator const&)            = delete;
-    ScoreboardEventCoordinator()                                             = delete;
+    ScoreboardEventCoordinator() = delete;
 
 public:
     // NOLINTBEGIN
     // symbol: ??1ScoreboardEventCoordinator@@UEAA@XZ
-    MCVAPI ~ScoreboardEventCoordinator();
+    virtual ~ScoreboardEventCoordinator();
 
     // symbol:
     // ?sendOnObjectiveAdded@ScoreboardEventCoordinator@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

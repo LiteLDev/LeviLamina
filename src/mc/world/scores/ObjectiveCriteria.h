@@ -4,6 +4,16 @@
 
 class ObjectiveCriteria {
 public:
+    enum class ObjectiveRenderType : unsigned char {
+        Integer = 0x0,
+        Hearts  = 0x1,
+    };
+
+    std::string const         mName;
+    bool const                mReadOnly;
+    ObjectiveRenderType const mRenderType;
+
+public:
     // prevent constructor by default
     ObjectiveCriteria& operator=(ObjectiveCriteria const&) = delete;
     ObjectiveCriteria(ObjectiveCriteria const&)            = delete;

@@ -4,10 +4,13 @@
 
 class BasicTimer {
 public:
+    double                  mTimeDelay;
+    double                  mStartTime;
+    std::function<double()> mGetCurrentTimeCallback;
+
+public:
     // prevent constructor by default
-    BasicTimer& operator=(BasicTimer const&) = delete;
-    BasicTimer(BasicTimer const&)            = delete;
-    BasicTimer()                             = delete;
+    BasicTimer() = delete;
 
 public:
     // NOLINTBEGIN

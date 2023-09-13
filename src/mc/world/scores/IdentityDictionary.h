@@ -1,12 +1,14 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/scores/IdentityDefinition.h"
 
 class IdentityDictionary {
 public:
-    // prevent constructor by default
-    IdentityDictionary& operator=(IdentityDictionary const&) = delete;
-    IdentityDictionary(IdentityDictionary const&)            = delete;
+    std::unordered_map<PlayerScoreboardId, ScoreboardId> mPlayers;
+    std::unordered_map<ActorUniqueID, ScoreboardId>      mEntities;
+    std::unordered_map<std::string, ScoreboardId>        mFakes;
+    std::unordered_map<ScoreboardId, IdentityDefinition> mIdentityDefs;
 
 public:
     // NOLINTBEGIN

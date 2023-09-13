@@ -1,17 +1,37 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/utility/BasicTimer.h"
 
 // auto generated inclusion list
 #include "mc/enums/ObjectiveSortOrder.h"
 #include "mc/world/scores/Scoreboard.h"
 
+class LevelStorage;
+
 class ServerScoreboard : public ::Scoreboard {
 public:
+    using ScoreChangedLevelCallback          = std::function<void(ScoreboardId const&)>;
+    using ScoreRemovedLevelCallback          = std::function<void(ScoreboardId const&)>;
+    using SetDisplayObjectiveLevelCallback   = std::function<void(std::string const&, DisplayObjective const&)>;
+    using ClearDisplayObjectiveLevelCallback = std::function<void(std::string const&, DisplayObjective const&)>;
+    using IdentityUpdatedLevelCallback       = std::function<void(ScoreboardId const&)>;
+
+    std::unique_ptr<BasicTimer>        mSaveTimer;
+    LevelStorage*                      mLevelStorage;
+    bool                               mIsDirty;
+    ScoreChangedLevelCallback          mScoreChangedLevelCallback;
+    ScoreRemovedLevelCallback          mScoreRemovedLevelCallback;
+    SetDisplayObjectiveLevelCallback   mSetDisplayObjectiveLevelCallback;
+    ClearDisplayObjectiveLevelCallback mClearDisplayObjectiveLevelCallback;
+    IdentityUpdatedLevelCallback       mIdentityUpdatedLevelCallback;
+    std::vector<Objective const*>      mTrackedObjectives;
+    PacketSender*                      mPacketSender;
+    ScoreboardId                       mLastUniqueSBID;
+
+public:
     // prevent constructor by default
-    ServerScoreboard& operator=(ServerScoreboard const&) = delete;
-    ServerScoreboard(ServerScoreboard const&)            = delete;
-    ServerScoreboard()                                   = delete;
+    ServerScoreboard() = delete;
 
 public:
     // NOLINTBEGIN
@@ -21,11 +41,11 @@ public:
     // vIndex: 1, symbol:
     // ?setDisplayObjective@ServerScoreboard@@UEAAPEBVDisplayObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVObjective@@W4ObjectiveSortOrder@@@Z
     virtual class DisplayObjective const*
-    setDisplayObjective(std::string const&, class Objective const&, ::ObjectiveSortOrder);
+    setDisplayObjective(std::string const& displaySlotName, class Objective const&, ::ObjectiveSortOrder);
 
     // vIndex: 2, symbol:
     // ?clearDisplayObjective@ServerScoreboard@@UEAAPEAVObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual class Objective* clearDisplayObjective(std::string const&);
+    virtual class Objective* clearDisplayObjective(std::string const& displaySlotName);
 
     // vIndex: 3, symbol: ?createScoreboardId@ServerScoreboard@@UEAAAEBUScoreboardId@@AEBVPlayer@@@Z
     virtual struct ScoreboardId const& createScoreboardId(class Player const&);

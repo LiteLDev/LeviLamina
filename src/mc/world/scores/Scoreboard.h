@@ -1,6 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/events/PlayerScoreboardEventListener.h"
+#include "mc/world/events/ScoreboardEventCoordinator.h"
+#include "mc/world/scores/DisplayObjective.h"
+#include "mc/world/scores/IdentityDictionary.h"
+#include "mc/world/scores/ObjectiveCriteria.h"
+#include "mc/world/scores/ScoreboardIdentityRef.h"
+#include "mc/server/commands/CommandSoftEnumRegistry.h"
 
 // auto generated inclusion list
 #include "mc/enums/ObjectiveSortOrder.h"
@@ -8,6 +15,17 @@
 #include "mc/world/actor/player/PlayerScoreSetFunction.h"
 
 class Scoreboard {
+    // size 720
+public:
+    CommandSoftEnumRegistry                                             mRegistry;
+    std::unordered_map<std::string, DisplayObjective>                   mDisplayObjectives;
+    IdentityDictionary                                                  mIdentityDict;
+    std::unordered_map<ScoreboardId, ScoreboardIdentityRef>             mIdentityRefs;
+    bool                                                                mShouldUpdateUI;
+    std::unordered_map<std::string, std::unique_ptr<Objective>>         mObjectives;
+    std::unordered_map<std::string, std::unique_ptr<ObjectiveCriteria>> mCriteria;
+    ScoreboardEventCoordinator                                          mScoreboardEventCoordinator; // this + 536
+    PlayerScoreboardEventListener                                       mPlayerListener;             // this + 648
 public:
     // prevent constructor by default
     Scoreboard& operator=(Scoreboard const&) = delete;
@@ -22,11 +40,11 @@ public:
     // vIndex: 1, symbol:
     // ?setDisplayObjective@Scoreboard@@UEAAPEBVDisplayObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVObjective@@W4ObjectiveSortOrder@@@Z
     virtual class DisplayObjective const*
-    setDisplayObjective(std::string const&, class Objective const&, ::ObjectiveSortOrder);
+    setDisplayObjective(std::string const& displaySlotName, class Objective const&, ::ObjectiveSortOrder);
 
     // vIndex: 2, symbol:
     // ?clearDisplayObjective@Scoreboard@@UEAAPEAVObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual class Objective* clearDisplayObjective(std::string const&);
+    virtual class Objective* clearDisplayObjective(std::string const& displaySlotName);
 
     // vIndex: 3, symbol: ?createScoreboardId@Scoreboard@@UEAAAEBUScoreboardId@@AEBVPlayer@@@Z
     virtual struct ScoreboardId const& createScoreboardId(class Player const&);
@@ -76,11 +94,12 @@ public:
 
     // symbol:
     // ?addObjective@Scoreboard@@QEAAPEAVObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEBVObjectiveCriteria@@@Z
-    MCAPI class Objective* addObjective(std::string const&, std::string const&, class ObjectiveCriteria const&);
+    MCAPI class Objective*
+    addObjective(std::string const& slotName, std::string const& displayName, class ObjectiveCriteria const&);
 
     // symbol:
     // ?addScoreListener@Scoreboard@@QEAAXAEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void addScoreListener(class Player&, std::string const&);
+    MCAPI void addScoreListener(class Player&, std::string const& slotName);
 
     // symbol:
     // ?applyPlayerOperation@Scoreboard@@QEAAHAEA_NAEAV?$vector@UScoreboardId@@V?$allocator@UScoreboardId@@@std@@@std@@AEBUScoreboardId@@AEAVObjective@@13W4CommandOperator@@@Z
@@ -105,7 +124,7 @@ public:
 
     // symbol:
     // ?getCriteria@Scoreboard@@QEBAPEAVObjectiveCriteria@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class ObjectiveCriteria* getCriteria(std::string const&) const;
+    MCAPI class ObjectiveCriteria* getCriteria(std::string const& criteriaName) const;
 
     // symbol:
     // ?getCriteriaNames@Scoreboard@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
@@ -113,11 +132,11 @@ public:
 
     // symbol:
     // ?getDisplayInfoFiltered@Scoreboard@@QEBA?AV?$vector@UPlayerScore@@V?$allocator@UPlayerScore@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-    MCAPI std::vector<struct PlayerScore> getDisplayInfoFiltered(std::string const&) const;
+    MCAPI std::vector<struct PlayerScore> getDisplayInfoFiltered(std::string const& displaySlotName) const;
 
     // symbol:
     // ?getDisplayObjective@Scoreboard@@QEBAPEBVDisplayObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class DisplayObjective const* getDisplayObjective(std::string const&) const;
+    MCAPI class DisplayObjective const* getDisplayObjective(std::string const& displaySlotName) const;
 
     // symbol:
     // ?getDisplayObjectiveSlotNames@Scoreboard@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
@@ -129,7 +148,7 @@ public:
 
     // symbol:
     // ?getObjective@Scoreboard@@QEBAPEAVObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Objective* getObjective(std::string const&) const;
+    MCAPI class Objective* getObjective(std::string const& slotName) const;
 
     // symbol:
     // ?getObjectiveNames@Scoreboard@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
@@ -199,7 +218,7 @@ public:
 
     // symbol:
     // ?removeScoreListener@Scoreboard@@QEAAXAEBVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void removeScoreListener(class Player const&, std::string const&);
+    MCAPI void removeScoreListener(class Player const&, std::string const& slotName);
 
     // symbol: ?removeScoreListener@Scoreboard@@QEAAXAEBVPlayer@@@Z
     MCAPI void removeScoreListener(class Player const&);

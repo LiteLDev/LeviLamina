@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/scores/Objective.h"
 
 // auto generated inclusion list
 #include "mc/enums/ObjectiveSortOrder.h"
@@ -8,9 +9,11 @@
 class DisplayObjective {
 public:
     // prevent constructor by default
-    DisplayObjective& operator=(DisplayObjective const&) = delete;
-    DisplayObjective(DisplayObjective const&)            = delete;
-    DisplayObjective()                                   = delete;
+    const Objective*   mObjective; // this+0x0
+    ObjectiveSortOrder mSortOrder; // this+0x8
+public:
+    // prevent constructor by default
+    DisplayObjective() = delete;
 
 public:
     // NOLINTBEGIN

@@ -1,16 +1,21 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/scores/ObjectiveCriteria.h"
 
 // auto generated inclusion list
 #include "mc/world/actor/player/PlayerScoreSetFunction.h"
 
 class Objective {
 public:
+    std::unordered_map<ScoreboardId, int> mScores;
+    const std::string                     mName;
+    std::string                           mDisplayName;
+    const ObjectiveCriteria*              mCriteria;
+
+public:
     // prevent constructor by default
-    Objective& operator=(Objective const&) = delete;
-    Objective(Objective const&)            = delete;
-    Objective()                            = delete;
+    Objective() = delete;
 
 public:
     // NOLINTBEGIN

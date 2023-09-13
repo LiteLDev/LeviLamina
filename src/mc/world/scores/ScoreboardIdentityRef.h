@@ -8,9 +8,8 @@
 
 class ScoreboardIdentityRef {
 public:
-    // prevent constructor by default
-    ScoreboardIdentityRef& operator=(ScoreboardIdentityRef const&) = delete;
-    ScoreboardIdentityRef(ScoreboardIdentityRef const&)            = delete;
+    unsigned int mObjectiveReferences; // this+0x0
+    ScoreboardId mScoreboardId;        // this+0x8
 
 public:
     // NOLINTBEGIN
