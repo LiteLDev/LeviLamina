@@ -59,7 +59,7 @@ target("LiteLoader")
         "_CRT_SECURE_NO_WARNINGS"
     )
     add_shflags("/DELAYLOAD:bedrock_server.dll")
-    add_files("src/**.cpp")
+    add_files("src/**.cpp","src/**.rc")
     -- xmake-repo
     add_packages("asio", "cpp-httplib", "entt", "fmt", "gsl", "gtest", "leveldb", "mariadb-connector-c", "magic_enum", "nlohmann_json", "openssl", "rapidjson")
     -- liteldev-repo
