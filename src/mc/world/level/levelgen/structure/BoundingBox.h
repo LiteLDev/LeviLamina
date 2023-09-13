@@ -18,7 +18,8 @@ public:
     };
 
     constexpr BoundingBox() noexcept : min(BlockPos::MIN), max(BlockPos::MIN){};
-    constexpr BoundingBox(class BoundingBox const& k) noexcept : min(k.min), max(k.max){};
+    constexpr BoundingBox(class BoundingBox const& k) noexcept            = default;
+    constexpr BoundingBox& operator=(class BoundingBox const& k) noexcept = default;
     constexpr BoundingBox(BlockPos const& min, BlockPos const& max) noexcept : min(min), max(max){};
 
     constexpr void forEachBlockInBox(std::function<void(const BlockPos&)>&& todo) const {

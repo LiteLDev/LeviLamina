@@ -3,10 +3,17 @@
 
 namespace ll::form {
 
+class SimpleFormElement {
+protected:
+    virtual ~SimpleFormElement()  = default;
+    virtual fifo_json serialize() = 0;
+    friend class SimpleForm;
+};
+
 class Button : public SimpleFormElement {
 
 public:
-    using ButtonCallback = std::function<void(Player*)>;
+    using ButtonCallback = std::function<void(Player&)>;
 
     std::string    mText;
     std::string    mImage;
@@ -16,7 +23,7 @@ public:
     : mText(std::move(text)), mImage(std::move(image)), mCallback(std::move(callback)) {}
     ~Button() override = default;
 
-    void callback(Player* player) {
+    void callback(Player& player) {
         if (mCallback) {
             mCallback(player);
         }
@@ -44,17 +51,17 @@ protected:
 class SimpleForm::SimpleFormImpl : public FormImpl {
 
 public:
-    using Callback = std::function<void(Player*, int)>;
+    using Callback = std::function<void(Player&, int)>;
 
     std::string                                     mTitle;
     std::string                                     mContent;
-    std::vector<std::shared_ptr<SimpleFormElement>> mElements;
+    std::vector<std::shared_ptr<SimpleFormElement>> mElements{};
     Callback                                        mCallback;
 
-    const Callback defaultCallback = [&](Player* player, int selected) {
-        if (selected >= 0 && selected < mElements.size()) {
+    const Callback defaultCallback = [&](Player& player, int selected) {
+        if (selected >= 0 && selected < static_cast<int>(mElements.size())) {
             auto& e = mElements[selected];
-            if (e/* && e->getType() == SimpleFormElement::Type::Button */) {
+            if (e /* && e->getType() == SimpleFormElement::Type::Button */) {
                 auto* button = reinterpret_cast<Button*>(e.get());
                 button->callback(player);
             }
@@ -75,16 +82,16 @@ public:
         const std::string&     image    = "",
         Button::ButtonCallback callback = Button::ButtonCallback()
     ) {
-        append(std::make_shared<Button>(std::move(text), std::move(image), std::move(callback)));
+        append(std::make_shared<Button>(text, image, std::move(callback)));
     }
 
-    bool sendTo(Player* player, Callback callback = Callback()) {
+    bool sendTo(Player& player, Callback callback) { // NOLINT
         // TODO
         return false;
     }
 
 protected:
-    FormType getType() const override { return FormType::SimpleForm; }
+    [[nodiscard]] FormType getType() const override { return FormType::SimpleForm; }
 
     fifo_json serialize() override {
         try {
@@ -108,8 +115,8 @@ protected:
     }
 };
 
-SimpleForm::SimpleForm(std::string title, std::string content) {
-    impl = std::make_unique<SimpleFormImpl>(std::move(title), std::move(content));
+SimpleForm::SimpleForm(const std::string& title, const std::string& content) {
+    impl = std::make_unique<SimpleFormImpl>(title, content);
 }
 
 SimpleForm& SimpleForm::setTitle(const std::string& title) {
@@ -127,7 +134,7 @@ SimpleForm& SimpleForm::appendButton(const std::string& text, const std::string&
     return *this;
 }
 
-SimpleForm& SimpleForm::sendTo(Player* player, Callback callback) {
+SimpleForm& SimpleForm::sendTo(Player& player, Callback callback) {
     if (!callback) {
         callback = impl->defaultCallback;
     }

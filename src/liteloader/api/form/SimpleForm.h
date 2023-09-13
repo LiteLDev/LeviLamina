@@ -6,25 +6,16 @@
 
 namespace ll::form {
 
-class SimpleFormElement {
-protected:
-    virtual ~SimpleFormElement() = default;
-    virtual fifo_json serialize() = 0;
-    friend class SimpleForm;
-};
-
-
 class SimpleForm {
 
     class SimpleFormImpl;
-    std::unique_ptr<SimpleFormImpl> impl;
+    std::unique_ptr<SimpleFormImpl> impl{};
 
 public:
+    using Callback       = std::function<void(Player&, int)>;
+    using ButtonCallback = std::function<void(Player&)>;
 
-    using Callback       = std::function<void(Player*, int)>;
-    using ButtonCallback = std::function<void(Player*)>;
-
-    explicit LLAPI SimpleForm(std::string title, std::string content = "");
+    LLAPI explicit SimpleForm(const std::string& title, const std::string& content = "");
 
     LLAPI SimpleForm& setTitle(const std::string& title);
 
@@ -39,7 +30,7 @@ public:
      * @note   If the `callback` parameter of sendTo() is set, the callback of the button will be ignored
      */
     LLAPI SimpleForm&
-    appendButton(const std::string& text, const std::string& image = "", ButtonCallback callback = ButtonCallback());
+    appendButton(const std::string& text, const std::string& image = "", ButtonCallback callback = {});
 
     /**
      * @brief  Send the form to the player
@@ -48,7 +39,7 @@ public:
      * @return SimpleForm&  *this
      * @note   If `callback` is set, the callbacks of each buttons will be ignored
      */
-    LLAPI SimpleForm& sendTo(Player* player, Callback callback = Callback());
+    LLAPI SimpleForm& sendTo(Player& player, Callback callback = Callback());
 };
 
 } // namespace ll::form

@@ -23,7 +23,7 @@ public:
     template <typename T>
     inline bool setData(T const& value);
 
-    DataItem(DataItemType type, ushort id) : mId(id), mType(type) {}
+    DataItem(DataItemType type, ushort id) : mType(type), mId(id) {}
 
     template <typename T>
     inline static std::unique_ptr<DataItem> create(ushort key, T const& value);

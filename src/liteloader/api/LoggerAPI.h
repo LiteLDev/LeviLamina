@@ -147,7 +147,6 @@ private:
 public:
     std::string   title;
     std::ofstream ofs;
-    Player*       player       = nullptr;
     int           consoleLevel = -1;
     int           fileLevel    = -1;
     int           playerLevel  = -1;

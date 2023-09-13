@@ -8,7 +8,7 @@
 
 class PlayerBlockActions {
 public:
-    std::vector<class PlayerBlockActionData> mActions;
+    std::vector<struct PlayerBlockActionData> mActions;
 
     // prevent constructor by default
     PlayerBlockActions& operator=(PlayerBlockActions const&) = delete;

@@ -13,7 +13,7 @@ class FormElementResult {
     Type        type = Type::Null;
     uint64      intVal;
     double      doubleVal;
-    std::string stringVal = nullptr;
+    std::string stringVal;
 
 public:
     FormElementResult() = default;

@@ -23,12 +23,12 @@ protected:
 class CustomForm {
 
     class CustomFormImpl;
-    std::unique_ptr<CustomFormImpl> impl;
+    std::unique_ptr<CustomFormImpl> impl{};
 
 public:
-    using Callback = std::function<void(Player*, const CustomFormResult&)>;
+    using Callback = std::function<void(Player&, const CustomFormResult&)>;
 
-    explicit LLAPI CustomForm(std::string title);
+    LLAPI explicit CustomForm(const std::string& title);
 
     LLAPI CustomForm& setTitle(const std::string& title);
 
@@ -66,8 +66,7 @@ public:
         int                             def = 0
     );
 
-    LLAPI CustomForm& sendTo(Player* player, Callback callback = Callback());
-
+    LLAPI CustomForm& sendTo(Player& player, Callback callback = {});
 };
 
 } // namespace ll::form

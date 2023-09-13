@@ -7,7 +7,7 @@
 
 #include "liteloader/api/LoggerAPI.h"
 #include "liteloader/api/utils/Hash.h"
-#include "mc/world/actor/player/Player.h"
+// #include "mc/world/actor/player/Player.h"
 
 #include "liteloader/core/Config.h"
 

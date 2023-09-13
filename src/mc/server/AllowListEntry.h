@@ -22,7 +22,7 @@ public:
         std::string name,
         std::string xuid,
         mce::UUID   uuid               = mce::UUID::EMPTY,
-        bool        ignoresPlayerLimit = true
+        bool        ignoresPlayerLimit = false
     )
     : mName(std::move(name)), mUuid(uuid), mXuid(std::move(xuid)), mIgnoresPlayerLimit(ignoresPlayerLimit) {}
 
@@ -38,7 +38,7 @@ public:
     virtual void deserialize(class Json::Value&);
 
     // symbol: ??0AllowListEntry@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI AllowListEntry(std::string);
+    MCAPI AllowListEntry(std::string name);
 
     // NOLINTEND
 };

@@ -1,6 +1,8 @@
 #include "CustomForm.h"
 #include <liteloader/core/LiteLoader.h>
 
+#include <utility>
+
 namespace ll::form {
 
 class Label : public CustomFormElement {
@@ -11,7 +13,7 @@ public:
     explicit Label(std::string text) : CustomFormElement(""), mText(std::move(text)) {}
     ~Label() override = default;
 
-    Type getType() const override { return Type::Label; }
+    [[nodiscard]] Type getType() const override { return Type::Label; }
 
     fifo_json serialize() override {
         try {
@@ -34,10 +36,11 @@ public:
     std::string mDefault{};
 
     Input(std::string name, std::string text, std::string placeholder = "", std::string def = "")
-    : CustomFormElement(name), mText(std::move(text)), mPlaceholder(std::move(placeholder)), mDefault(std::move(def)) {}
+    : CustomFormElement(std::move(name)), mText(std::move(text)), mPlaceholder(std::move(placeholder)),
+      mDefault(std::move(def)) {}
     ~Input() override = default;
 
-    Type getType() const override { return Type::Input; }
+    [[nodiscard]] Type getType() const override { return Type::Input; }
 
     fifo_json serialize() override {
         try {
@@ -66,10 +69,10 @@ public:
     bool        mDefault = false;
 
     Toggle(std::string name, std::string text, bool def = false)
-    : CustomFormElement(name), mText(std::move(text)), mDefault(def) {}
+    : CustomFormElement(std::move(name)), mText(std::move(text)), mDefault(def) {}
     ~Toggle() override = default;
 
-    Type getType() const override { return Type::Toggle; }
+    [[nodiscard]] Type getType() const override { return Type::Toggle; }
 
     fifo_json serialize() override {
         try {
@@ -90,19 +93,21 @@ class Dropdown : public CustomFormElement {
 public:
     std::string              mText{};
     std::vector<std::string> mOptions{};
+    int                      mDefault{};
 
-    Dropdown(std::string name, std::string text, std::vector<std::string> options)
-    : CustomFormElement(name), mText(std::move(text)), mOptions(std::move(options)) {}
+    Dropdown(std::string name, std::string text, std::vector<std::string> options, int def = 0)
+    : CustomFormElement(std::move(name)), mText(std::move(text)), mOptions(std::move(options)), mDefault(def) {}
     ~Dropdown() override = default;
 
-    Type getType() const override { return Type::Dropdown; }
+    [[nodiscard]] Type getType() const override { return Type::Dropdown; }
 
     fifo_json serialize() override {
         try {
             return {
                 {"type",    "dropdown"},
                 {"text",    mText     },
-                {"options", mOptions  }
+                {"options", mOptions  },
+                {"default", mDefault  }
             };
         } catch (...) {
             ll::logger.error("Failed to serialize Dropdown");
@@ -135,12 +140,12 @@ public:
     }
 
     Slider(std::string name, std::string text, double min, double max, double step, double def)
-    : CustomFormElement(name), mText(std::move(text)), mMin(min), mMax(max), mStep(step), mDefault(def) {
+    : CustomFormElement(std::move(name)), mText(std::move(text)), mMin(min), mMax(max), mStep(step), mDefault(def) {
         validate();
     }
     ~Slider() override = default;
 
-    Type getType() const override { return Type::Slider; }
+    [[nodiscard]] Type getType() const override { return Type::Slider; }
 
     fifo_json serialize() override {
         try {
@@ -174,12 +179,12 @@ public:
     }
 
     StepSlider(std::string name, std::string text, std::vector<std::string> steps, size_t def = 0)
-    : CustomFormElement(name), mText(std::move(text)), mSteps(std::move(steps)), mDefault(def) {
+    : CustomFormElement(std::move(name)), mText(std::move(text)), mSteps(std::move(steps)), mDefault(def) {
         validate();
     }
     ~StepSlider() override = default;
 
-    Type getType() const override { return Type::StepSlider; }
+    [[nodiscard]] Type getType() const override { return Type::StepSlider; }
 
     fifo_json serialize() override {
         try {
@@ -200,10 +205,10 @@ public:
 class CustomForm::CustomFormImpl : public FormImpl {
 
 public:
-    using Callback = std::function<void(Player*, const CustomFormResult&)>;
+    using Callback = std::function<void(Player&, const CustomFormResult&)>;
 
     std::string                                     mTitle;
-    std::vector<std::shared_ptr<CustomFormElement>> mElements;
+    std::vector<std::shared_ptr<CustomFormElement>> mElements{};
     Callback                                        mCallback;
 
     explicit CustomFormImpl(std::string title) : mTitle(std::move(title)) {}
@@ -229,7 +234,7 @@ public:
 
     void
     appendDropdown(const std::string& name, const std::string& text, const std::vector<std::string>& options, int def) {
-        append(std::make_shared<Dropdown>(name, text, options));
+        append(std::make_shared<Dropdown>(name, text, options, def));
     }
 
     void
@@ -242,13 +247,13 @@ public:
         append(std::make_shared<StepSlider>(name, text, steps, def));
     }
 
-    bool sendTo(Player* player, Callback callback = Callback()) {
+    bool sendTo(Player& player, Callback callback) { // NOLINT
         // TODO
         return false;
     }
 
 protected:
-    FormType getType() const override { return FormType::CustomForm; }
+    [[nodiscard]] FormType getType() const override { return FormType::CustomForm; }
 
     fifo_json serialize() override {
         try {
@@ -263,6 +268,7 @@ protected:
                     form["content"].push_back(element);
                 }
             }
+            return form;
         } catch (...) {
             ll::logger.error("Failed to serialize CustomForm");
             return {};
@@ -270,7 +276,7 @@ protected:
     }
 };
 
-CustomForm::CustomForm(std::string title) : impl(std::make_unique<CustomFormImpl>(std::move(title))) {}
+CustomForm::CustomForm(const std::string& title) : impl(std::make_unique<CustomFormImpl>(title)) {}
 
 CustomForm& CustomForm::setTitle(const std::string& title) {
     impl->setTitle(title);
@@ -329,8 +335,8 @@ CustomForm& CustomForm::appendStepSlider(
     return *this;
 }
 
-CustomForm& CustomForm::sendTo(Player* player, Callback callback) {
-    impl->sendTo(player, callback);
+CustomForm& CustomForm::sendTo(Player& player, Callback callback) {
+    impl->sendTo(player, std::move(callback));
     return *this;
 }
 

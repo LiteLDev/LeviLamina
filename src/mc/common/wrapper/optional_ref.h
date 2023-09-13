@@ -20,24 +20,30 @@ public:
 
     constexpr optional_ref(std::nullptr_t) noexcept {}
 
-    template <typename U, typename = std::enable_if_t<IsCompatibleV<U>>>
-    constexpr optional_ref(const std::optional<U>& o)
-        requires(std::is_const_v<T>)
-    : ptr_(o ? &*o : nullptr) {}
+    // template <typename U>
+    //     requires(IsCompatibleV<U>)
+    // constexpr optional_ref(const std::optional<U>& o)
+    //     requires(std::is_const_v<T>)
+    // : ptr_(o ? &*o : nullptr) {}
 
-    template <typename U, typename = std::enable_if_t<IsCompatibleV<U>>>
+    template <typename U>
+        requires(IsCompatibleV<U>)
     constexpr optional_ref(std::optional<U>& o) : ptr_(o ? &*o : nullptr) {}
 
-    template <typename U, typename = std::enable_if_t<IsCompatibleV<U>>>
+    template <typename U>
+        requires(IsCompatibleV<U>)
     constexpr optional_ref(U* p) : ptr_(p) {}
 
-    template <typename U, typename = std::enable_if_t<IsCompatibleV<const U>>>
-    constexpr optional_ref(const U& r) : ptr_(std::addressof(r)) {}
+    // template <typename U>
+    //     requires(IsCompatibleV<U>)
+    // constexpr optional_ref(const U& r) : ptr_(std::addressof(r)) {}
 
-    template <typename U, typename = std::enable_if_t<IsCompatibleV<U>>>
+    template <typename U>
+        requires(IsCompatibleV<U>)
     constexpr optional_ref(U& r) : ptr_(std::addressof(r)) {}
 
-    template <typename U = T, typename = std::enable_if_t<std::is_const_v<U>>>
+    template <typename U = T>
+        requires(std::is_const_v<U>)
     constexpr optional_ref(optional_ref<std::remove_const_t<U>> rhs) : ptr_(rhs.as_ptr()) {}
 
     constexpr optional_ref(const optional_ref&) = default;
@@ -84,7 +90,8 @@ public:
         return *ptr_;
     }
 
-    template <typename U = std::decay_t<T>, typename = std::enable_if_t<std::is_constructible_v<U, T>>>
+    template <typename U = std::decay_t<T>>
+        requires(std::is_constructible_v<U, T>)
     [[nodiscard]] constexpr std::optional<U> copy_as_optional() const {
         return ptr_ ? std::optional<U>(*ptr_) : std::nullopt;
     }
