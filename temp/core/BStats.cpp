@@ -1,6 +1,6 @@
 ﻿#include "liteloader/core/LiteLoader.h"
 
-#include "liteloader/api/Global.h"
+#include "liteloader/api/base/Global.h"
 #include "liteloader/api/ScheduleAPI.h"
 #include "liteloader/api/ServerAPI.h"
 #include "liteloader/api/event/server/ServerStartedEvent.h"

@@ -8,7 +8,7 @@
 
 #include <leveldb/db.h>
 
-#include "liteloader/api/Macro.h"
+#include "liteloader/api/base/Macro.h"
 
 namespace ll {
 class KeyValueDB {

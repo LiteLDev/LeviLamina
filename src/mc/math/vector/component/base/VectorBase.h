@@ -6,7 +6,7 @@
 #include <type_traits>
 #include <utility>
 
-#include "liteloader/api/Macro.h"
+#include "liteloader/api/base/Macro.h"
 
 template <typename T>
 constexpr void hashCombine(T const& v, std::size_t& seed) {

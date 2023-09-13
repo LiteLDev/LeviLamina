@@ -7,7 +7,7 @@
  * 
  */
 #pragma once
-#include "liteloader/api/Global.h"
+#include "liteloader/api/base/Global.h"
 
 namespace ll::perm {
 

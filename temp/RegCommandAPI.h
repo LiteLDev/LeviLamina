@@ -1,5 +1,5 @@
 #pragma once
-#include "liteloader/api/Global.h"
+#include "liteloader/api/base/Global.h"
 #include "mc/Actor.hpp"
 #include "mc/Command.hpp"
 #include "mc/CommandMessage.hpp"

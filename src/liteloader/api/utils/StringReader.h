@@ -1,5 +1,5 @@
 #pragma once
-#include "liteloader/api/Global.h"
+#include "liteloader/api/base/Global.h"
 
 class StringReader {
     std::string                 str;

@@ -3,7 +3,7 @@
 #include <memory>
 #include <type_traits>
 
-#include "liteloader/api/Macro.h"
+#include "liteloader/api/base/Macro.h"
 #include "liteloader/api/memory/MemoryUtils.h"
 
 namespace ll::memory {

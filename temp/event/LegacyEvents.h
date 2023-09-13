@@ -24,7 +24,7 @@ copies or substantial portions of the Software.
 #include <string>
 #include <unordered_map>
 
-#include "liteloader/api/Global.h"
+#include "liteloader/api/base/Global.h"
 #include "liteloader/api/LLAPI.h"
 #include "liteloader/api/LoggerAPI.h"
 #include "liteloader/api/utils/WinHelper.h"

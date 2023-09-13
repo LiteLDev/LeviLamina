@@ -18,7 +18,7 @@ copies or substantial portions of the Software.
 
 #include <functional>
 
-#include "liteloader/api/Global.h"
+#include "liteloader/api/base/Global.h"
 #include "liteloader/api/utils/WinHelper.h"
 
 /**

@@ -2,8 +2,8 @@
 
 #include <type_traits>
 
-#include "liteloader/api/Concepts.h"
-#include "liteloader/api/Macro.h"
+#include "liteloader/api/base/Concepts.h"
+#include "liteloader/api/base/Macro.h"
 
 namespace RakNet {
 class RakPeer;

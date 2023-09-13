@@ -4,7 +4,7 @@
 #include <type_traits>
 #include <vcruntime.h>
 
-#include "liteloader/api/Macro.h"
+#include "liteloader/api/base/Macro.h"
 #include "liteloader/api/utils/FixedString.h"
 
 namespace ll::memory {

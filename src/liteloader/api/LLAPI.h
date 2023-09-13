@@ -12,7 +12,7 @@
 #define NOMINMAX
 #endif
 
-#include "liteloader/api/Global.h"
+#include "liteloader/api/base/Global.h"
 #include "liteloader/api/utils/PluginOwnData.h"
 #include "liteloader/api/utils/WinHelper.h"
 #include "liteloader/core/PluginManager.h"

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "liteloader/api/FormUI.h"
-#include "liteloader/api/Global.h"
+#include "liteloader/api/base/Global.h"
 #include "mc/world/actor/player/Player.h"
 #include <cstdlib>
 

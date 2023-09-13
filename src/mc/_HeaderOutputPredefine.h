@@ -92,7 +92,7 @@
 
 #include "mc/math/vector/Vecs.h" // for vector types
 
-#include "liteloader/api/Macro.h" // for LLAPI
+#include "liteloader/api/base/Macro.h" // for LLAPI
 
 #include "liteloader/api/memory/MemoryUtils.h" // for dAccess
 

@@ -1,4 +1,4 @@
-#include "liteloader/api/Global.h"
+#include "liteloader/api/base/Global.h"
 #include "liteloader/api/utils/Base64.hpp"
 #include "mc/ByteArrayTag.hpp"
 #include "mc/ByteTag.hpp"

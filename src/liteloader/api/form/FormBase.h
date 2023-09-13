@@ -1,21 +1,16 @@
 #pragma once
 
-#include "liteloader/api/types/FifoJson.h"
+#include "liteloader/api/utils/FifoJson.h"
 
 namespace ll::form {
 
-enum class FormType {
-    None = -1,
-    SimpleForm,
-    ModalForm,
-    CustomForm
-};
+enum class FormType { None = -1, SimpleForm, ModalForm, CustomForm };
 
 class FormImpl {
 protected:
-    virtual ~FormImpl() = default;
-    virtual FormType getType() const = 0;
-    virtual fifo_json serialize() = 0;
+    virtual ~FormImpl()               = default;
+    virtual FormType  getType() const = 0;
+    virtual fifo_json serialize()     = 0;
 };
 
 } // namespace ll::form

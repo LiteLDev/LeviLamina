@@ -26,10 +26,6 @@
 
 #pragma once
 
-#ifndef FMT_HEADER_ONLY
-#define FMT_HEADER_ONLY
-#endif
-
 #include "liteloader/api/I18nAPI.h"
 #include "liteloader/api/utils/CsLock.h"
 #include "liteloader/api/utils/FileHelper.h"

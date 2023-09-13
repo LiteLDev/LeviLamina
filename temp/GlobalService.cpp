@@ -1,4 +1,4 @@
-#include "liteloader/api/Global.h"
+#include "liteloader/api/base/Global.h"
 
 #include "mc/AllowListFile.hpp"
 #include "mc/CommandSoftEnumRegistry.hpp"

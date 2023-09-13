@@ -1,5 +1,5 @@
-#include "CustomForm.h"
-#include <liteloader/core/LiteLoader.h>
+#include "liteloader/api/form/CustomForm.h"
+#include "liteloader/core/LiteLoader.h"
 
 #include <utility>
 

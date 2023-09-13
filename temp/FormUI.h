@@ -77,7 +77,7 @@
 ////////////////////////////////////////////////////////////////////////
 
 
-#include "liteloader/api/Global.h"
+#include "liteloader/api/base/Global.h"
 #include <utility>
 
 class ServerPlayer;

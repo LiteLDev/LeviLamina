@@ -1,6 +1,6 @@
 #pragma once
 
-#include "liteloader/api/Global.h"
+#include "liteloader/api/base/Global.h"
 #include <functional>
 #include <httplib.h>
 #include <string>

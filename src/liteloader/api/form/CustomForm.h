@@ -1,8 +1,8 @@
 #pragma once
 
-#include "FormBase.h"
-#include "FormResult.h"
-#include <mc/world/actor/player/Player.h>
+#include "liteloader/api/form/FormBase.h"
+#include "liteloader/api/form/FormResult.h"
+#include "mc/world/actor/player/Player.h"
 
 namespace ll::form {
 

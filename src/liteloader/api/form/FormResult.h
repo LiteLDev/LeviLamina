@@ -2,7 +2,7 @@
 
 #include <string>
 #include <any>
-#include "liteloader/api/types/StdInt.h"
+#include "liteloader/api/base/StdInt.h"
 
 namespace ll::form {
 

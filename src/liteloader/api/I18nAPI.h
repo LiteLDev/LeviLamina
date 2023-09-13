@@ -33,7 +33,7 @@
 //
 //////////////////////////////////////////////////////
 
-#include "liteloader/api/Global.h"
+#include "liteloader/api/base/Global.h"
 #include "liteloader/api/LLAPI.h"
 #include "liteloader/api/utils/FileHelper.h"
 #include "liteloader/api/utils/PluginOwnData.h"
