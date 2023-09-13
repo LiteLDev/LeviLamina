@@ -26,32 +26,30 @@
 
 #pragma once
 
-#include "liteloader/api/I18nAPI.h"
-#include "liteloader/api/utils/CsLock.h"
+#include "liteloader/api/i18n/I18nAPI.h"
 #include "liteloader/api/utils/FileHelper.h"
 #include "liteloader/api/utils/PluginOwnData.h"
 #include "liteloader/api/utils/StringHelper.h"
 #include "liteloader/api/utils/WinHelper.h"
+
+#include <filesystem>
+#include <fstream>
+#include <iostream>
+#include <mutex>
+#include <sstream>
+#include <string>
+#include <utility>
+
 #include <FMT/chrono.h>
 #include <FMT/color.h>
 #include <FMT/core.h>
 #include <FMT/os.h>
 #include <FMT/printf.h>
-#include <filesystem>
-#include <fstream>
-#include <iostream>
-#include <sstream>
-#include <string>
-#include <utility>
-
-class Player;
 
 #define LOGGER_CURRENT_FILE "ll_plugin_logger_file"
 
 template <bool B, class T = void>
 using enable_if_type = typename std::enable_if<B, T>::type;
-
-HMODULE GetCurrentModule();
 
 class Logger {
 public:
@@ -83,29 +81,24 @@ public:
         );
 
         template <typename T>
-        OutputStream& operator<<(T t) {
-            logger->lock();
-            os << t;
-            logger->unlock();
+        OutputStream& operator<<(T&& t) {
+            std::unique_lock lock(getLocker());
+            os << std::forward<T>(t);
             return *this;
         }
 
-        template <>
-        OutputStream& operator<<(std::wstring wstr) {
-            logger->lock();
+        OutputStream& operator<<(const std::wstring& wstr) {
+            std::unique_lock lock(getLocker());
             os << wstr2str(wstr);
-            logger->unlock();
             return *this;
         }
-        template <>
+
         OutputStream& operator<<(const wchar_t* wstr) {
-            logger->lock();
+            std::unique_lock lock(getLocker());
             os << wstr2str(wstr);
-            logger->unlock();
             return *this;
         }
 
-        template <>
         OutputStream& operator<<(void (*t)(OutputStream&)) {
             t(*this);
             return *this;
@@ -160,10 +153,6 @@ public:
     LLAPI bool setFile(const std::string& logFile, bool appendMode = true);
     LLAPI bool setFile(nullptr_t);
 
-    LLAPI bool tryLock() const;
-    LLAPI bool lock() const;
-    LLAPI bool unlock() const;
-
     OutputStream debug;
     OutputStream info;
     OutputStream warn;
@@ -174,5 +163,5 @@ public:
     LLAPI explicit Logger(const std::string& title);
 
 private:
-    LLAPI CsLock& getLocker() const;
+    LLAPI static std::mutex& getLocker();
 };

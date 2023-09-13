@@ -1,16 +1,19 @@
-#include "liteloader/api/utils/CryptHelper.h"
+#include "liteloader/api/utils/CryptoUtil.h"
 
 #include <openssl/md5.h>
 #include <openssl/sha.h>
 
+#include "liteloader/api/base/StdInt.h"
+
 using namespace std;
 
-std::string CalcMD5(const std::string& str) {
+namespace ll::crypto {
+std::string md5(std::string_view input) {
     uchar       md5[MD5_DIGEST_LENGTH];
     const char  map[] = "0123456789abcdef";
     std::string hexmd5;
 
-    MD5((const uchar*)str.c_str(), str.length(), md5);
+    MD5(reinterpret_cast<const uchar*>(input.data()), input.length(), md5);
     for (auto& x : md5) {
         hexmd5 += map[x / 16];
         hexmd5 += map[x % 16];
@@ -19,12 +22,12 @@ std::string CalcMD5(const std::string& str) {
     return hexmd5;
 }
 
-std::string CalcSHA1(const std::string& str) {
+std::string sha1(std::string_view input) {
     uchar       sha1[SHA_DIGEST_LENGTH];
     const char  map[] = "0123456789abcdef";
     std::string hexsha1;
 
-    SHA1((const uchar*)str.c_str(), str.length(), sha1);
+    SHA1(reinterpret_cast<const uchar*>(input.data()), input.length(), sha1);
     for (auto& x : sha1) {
         hexsha1 += map[x / 16];
         hexsha1 += map[x % 16];
@@ -32,3 +35,4 @@ std::string CalcSHA1(const std::string& str) {
 
     return hexsha1;
 }
+} // namespace ll::crypto

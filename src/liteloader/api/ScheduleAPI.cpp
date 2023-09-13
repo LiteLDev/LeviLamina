@@ -1,20 +1,21 @@
 #include "liteloader/api/ScheduleAPI.h"
-#include "liteloader/api/I18nAPI.h"
-#include "liteloader/api/LLAPI.h"
-#include "liteloader/api/LoggerAPI.h"
-#include "liteloader/api/utils/CsLock.h"
-#include "liteloader/api/utils/DbgHelper.h"
-#include "liteloader/core/Config.h"
-#include "liteloader/core/LiteLoader.h"
+
 #include <atomic>
+#include <mutex>
 #include <queue>
 #include <utility>
 
+#include "liteloader/api/LLAPI.h"
+#include "liteloader/api/LoggerAPI.h"
+#include "liteloader/api/i18n/I18nAPI.h"
 #include "liteloader/api/memory/Hook.h"
+#include "liteloader/api/utils/DbgHelper.h"
+#include "liteloader/core/Config.h"
+#include "liteloader/core/LiteLoader.h"
 
 using namespace std;
 
-CsLock      locker;
+std::mutex  locker;
 atomic_uint nextTaskId = 0;
 
 class ScheduleTaskData {
@@ -68,11 +69,11 @@ public:
         if (pendingClear) {
             clear();
             std::vector<ScheduleTaskData> tmpList;
-            locker.lock();
+
+            unique_lock lock(locker);
             pendingTaskList.swap(tmpList);
             pendingCancelList.clear();
             pendingClear = false;
-            locker.unlock();
             return;
         }
         if (!pendingTaskList.empty()) {

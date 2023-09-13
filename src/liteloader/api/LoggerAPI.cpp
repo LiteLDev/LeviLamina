@@ -2,6 +2,7 @@
 // Created by RimuruChan on 2021/12/11.
 //
 
+#include <mutex>
 #include <regex>
 #include <unordered_map>
 
@@ -14,7 +15,7 @@
 #define LOGGER_CURRENT_TITLE "ll_plugin_logger_title"
 #define LOGGER_CURRENT_FILE  "ll_plugin_logger_file"
 
-std::unordered_map<std::string, CsLock> lockerList;
+std::mutex loggerLock;
 
 bool Logger::setDefaultFileImpl(HMODULE hPlugin, const std::string& logFile, bool appendMode = true) {
     if (logFile.empty()) {
@@ -56,13 +57,7 @@ bool Logger::setFile(nullptr_t) {
     return true;
 }
 
-bool Logger::tryLock() const { return lockerList[title].tryLock(); }
-
-bool Logger::lock() const { return lockerList[title].lock(); }
-
-bool Logger::unlock() const { return lockerList[title].unlock(); }
-
-CsLock& Logger::getLocker() const { return lockerList[title]; }
+std::mutex& Logger::getLocker() { return loggerLock; }
 
 Logger::OutputStream::OutputStream() = default;
 
@@ -73,7 +68,7 @@ Logger::OutputStream::OutputStream(
     std::string&&     fileFormat,
     std::string&&     playerFormat,
     fmt::text_style&& style,
-    std::string&&     levelPrefix
+    std::string&&     mode
 ) {
     this->logger        = logger;
     this->level         = level;
@@ -81,7 +76,7 @@ Logger::OutputStream::OutputStream(
     this->fileFormat    = fileFormat;
     this->playerFormat  = playerFormat;
     this->style         = style;
-    this->levelPrefix   = levelPrefix;
+    this->levelPrefix   = mode;
 }
 
 bool checkLogLevel(int level, int outLevel) {
@@ -138,7 +133,7 @@ std::string applyTextStyle(const fmt::v9::text_style& ts, const S& format_str) {
 
 void Logger::endlImpl(HMODULE hPlugin, OutputStream& o) {
     try {
-        CsLockHolder lock(o.logger->getLocker());
+        std::unique_lock lock(loggerLock);
 
         std::string title = o.logger->title;
         if (!title.empty())

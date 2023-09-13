@@ -2,7 +2,7 @@
 #include <dyncall/dyncall_callback.h>
 
 #include "liteloader/api/DynamicCommandAPI.h"
-#include "liteloader/api/I18nAPI.h"
+#include "liteloader/api/i18n/I18nAPI.h"
 #include "liteloader/api/LLAPI.h"
 #include "liteloader/api/LoggerAPI.h"
 #include "liteloader/api/ScheduleAPI.h"

@@ -4,7 +4,7 @@
 #include <sstream>
 #include <vector>
 
-#include "liteloader/api/I18nAPI.h"
+#include "liteloader/api/i18n/I18nAPI.h"
 #include "liteloader/api/memory/MemoryUtils.h"
 #include "mc/Actor.hpp"
 #include "mc/Block.hpp"

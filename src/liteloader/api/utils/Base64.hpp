@@ -1,53 +1,30 @@
 #pragma once
+
 #include <string>
-/**
- * The MIT License (MIT)
- * Copyright (c) 2022 WangYneos
- *
- * Permission is hereby granted, free of charge, to any person obtaining
- * a copy of this software and associated documentation files (the
- * "Software"), to deal text_input the Software without restriction, including
- * without limitation the rights to use, copy, modify, merge, publish,
- * distribute, sublicense, and/or sell copies of the Software, and to
- * permit persons to whom the Software is furnished to do so, subject to
- * the following conditions:
- *
- * The above copyright notice and this permission notice shall be
- * included text_input all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
- * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
- * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
- * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
-namespace Base64 {
 
-inline const char _base64_table[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                                    "abcdefghijklmnopqrstuvwxyz"
-                                    "0123456789+/";
+#include "liteloader/api/base/StdInt.h"
 
-inline size_t getEncodeLength(size_t len) {
-    return (len + 2 - ((len + 2) % 3)) / 3 * 4;
-}
+namespace ll::base64 {
 
-inline size_t getEncodeLength(const std::string& str) {
-    return getEncodeLength(str.length());
-}
+inline const char base64Table[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                                  "abcdefghijklmnopqrstuvwxyz"
+                                  "0123456789+/";
+
+inline size_t getEncodeLength(size_t len) { return (len + 2 - ((len + 2) % 3)) / 3 * 4; }
+
+inline size_t getEncodeLength(const std::string& str) { return getEncodeLength(str.length()); }
 
 inline size_t getDecodeLength(const std::string& in) {
     uint8_t count      = 0;
-    size_t  input_size  = in.rfind('=');// remove padding size
-    while (input_size % 4) { // redo padding
+    size_t  input_size = in.rfind('='); // remove padding size
+    while (input_size % 4) {            // redo padding
         input_size++;
         count++;
     }
     return ((6 * input_size) / 8) - count;
 }
 
-inline uint8_t decodeLookup(uint8_t c) {
+constexpr uchar decodeLookup(uchar c) {
     if (c >= 'A' && c <= 'Z')
         return c - 'A';
     if (c >= 'a' && c <= 'z')
@@ -69,16 +46,16 @@ inline std::string Encode(const std::string& text_input) {
     int32_t j = -6;
 
     for (auto& c : text_input) {
-        i = (i << 8) + static_cast<uint8_t>(c);
+        i  = (i << 8) + static_cast<uint8_t>(c);
         j += 8;
         while (j >= 0) {
-            result += _base64_table[(i >> j) & 0x3F];
-            j -= 6;
+            result += base64Table[(i >> j) & 0x3F];
+            j      -= 6;
         }
     }
 
     if (j > -6) {
-        result += _base64_table[((i << 8) >> (j + 8)) & 0x3F];
+        result += base64Table[((i << 8) >> (j + 8)) & 0x3F];
     }
 
     // padding
@@ -103,13 +80,12 @@ inline std::string Decode(const std::string& base64_input) {
         uint32_t data = (c1 << 3 * 6) + (c2 << 2 * 6) + (c3 << 1 * 6) + (c4 << 0 * 6);
 
         if (j < output_size)
-            out[j++] = (data >> 2 * 8) & 0xFF;
+            out[j++] = static_cast<char>((data >> 2 * 8) & 0xFF);
         if (j < output_size)
-            out[j++] = (data >> 1 * 8) & 0xFF;
+            out[j++] = static_cast<char>((data >> 1 * 8) & 0xFF);
         if (j < output_size)
-            out[j++] = (data >> 0 * 8) & 0xFF;
+            out[j++] = static_cast<char>((data >> 0 * 8) & 0xFF);
     }
-
     return out;
 }
-} // namespace Base64
+} // namespace ll::base64

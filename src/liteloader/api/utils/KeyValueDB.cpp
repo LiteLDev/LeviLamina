@@ -1,6 +1,6 @@
 ﻿#include "liteloader/api/utils/KeyValueDB.h"
 
-#include "liteloader/api/I18nAPI.h"
+#include "liteloader/api/i18n/I18nAPI.h"
 #include "liteloader/api/utils/FileHelper.h"
 #include "liteloader/core/liteloader.h"
 #include <optional>

@@ -12,7 +12,7 @@
 // #include "liteloader/api/event/LegacyEvents.h"
 // #include "liteloader/api/event/EventManager.h"
 // #include "liteloader/api/event/server/ServerStartedEvent.h"
-#include "liteloader/api/I18nAPI.h"
+#include "liteloader/api/i18n/I18nAPI.h"
 #include "liteloader/api/ScheduleAPI.h"
 
 #include "liteloader/core/LiteLoader.h"

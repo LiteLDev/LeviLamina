@@ -10,7 +10,7 @@
 #include "mc/Level.hpp"
 #include "mc/Player.hpp"
 
-#include "liteloader/api/I18nAPI.h"
+#include "liteloader/api/i18n/I18nAPI.h"
 #include "liteloader/api/LLAPI.h"
 #include "liteloader/api/LoggerAPI.h"
 #include "liteloader/api/ScheduleAPI.h"

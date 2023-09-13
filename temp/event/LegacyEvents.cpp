@@ -60,7 +60,7 @@
 #include "liteloader/api/utils/StringHelper.h"
 
 #include "liteloader/api/DynamicCommandAPI.h"
-#include "liteloader/api/I18nAPI.h"
+#include "liteloader/api/i18n/I18nAPI.h"
 #include "liteloader/api/LoggerAPI.h"
 #include "liteloader/api/RegCommandAPI.h"
 #include "liteloader/api/ScheduleAPI.h"
