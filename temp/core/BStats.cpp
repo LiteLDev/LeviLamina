@@ -5,7 +5,7 @@
 #include "liteloader/api/ServerAPI.h"
 #include "liteloader/api/event/server/ServerStartedEvent.h"
 #include "liteloader/api/utils/NetworkHelper.h"
-#include "liteloader/api/utils/StringHelper.h"
+#include "liteloader/api/utils/StringUtils.h"
 #include "liteloader/api/utils/WinHelper.h"
 #include "mc/Level.hpp"
 #include "mc/PropertiesSettings.hpp"

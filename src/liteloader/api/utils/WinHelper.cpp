@@ -3,7 +3,7 @@
 #include <string>
 
 #include "liteloader/api/utils/DbgHelper.h"
-#include "liteloader/api/utils/StringHelper.h"
+#include "liteloader/api/utils/StringUtils.h"
 
 #include "liteloader/api/i18n/I18nAPI.h"
 
@@ -12,6 +12,8 @@
 
 #include <Psapi.h>
 #include <Windows.h>
+
+using namespace ll::StringUtils;
 
 std::string GetLastErrorMessage(DWORD error_message_id) {
     if (error_message_id == 0)
@@ -189,7 +191,7 @@ std::string GetModulePath(HMODULE handle) {
 std::string GetModuleName(HMODULE handle) {
     wchar_t buf[MAX_PATH] = {0};
     GetModuleFileNameEx(GetCurrentProcess(), handle, buf, MAX_PATH);
-    return UTF82String(std::filesystem::path(buf).filename().u8string());
+    return u8str2str(std::filesystem::path(buf).filename().u8string());
 }
 
 std::string GetSystemLocaleName() {

@@ -57,7 +57,7 @@
 #include "mc/VanillaBlocks.hpp"
 
 #include "liteloader/api/utils/DbgHelper.h"
-#include "liteloader/api/utils/StringHelper.h"
+#include "liteloader/api/utils/StringUtils.h"
 
 #include "liteloader/api/DynamicCommandAPI.h"
 #include "liteloader/api/i18n/I18nAPI.h"

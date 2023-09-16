@@ -1,6 +1,6 @@
 #include "liteloader/core/CrashLogger.h"
 #include "liteloader/api/LoggerAPI.h"
-#include "liteloader/api/utils/StringHelper.h"
+#include "liteloader/api/utils/StringUtils.h"
 #include "liteloader/api/utils/WinHelper.h"
 #include "liteloader/core/Config.h"
 #include "mc/Common.hpp"

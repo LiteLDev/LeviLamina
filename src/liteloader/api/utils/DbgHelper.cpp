@@ -5,7 +5,7 @@
 #include <thread>
 
 #include "liteloader/api/LoggerAPI.h"
-#include "liteloader/api/utils/StringHelper.h"
+#include "liteloader/api/utils/StringUtils.h"
 #include "liteloader/api/utils/WinHelper.h"
 
 #include "liteloader/core/Config.h"
@@ -19,6 +19,9 @@
 #pragma comment(lib, "dbghelp.lib")
 
 using namespace std;
+using namespace ll::StringUtils;
+
+namespace fs = std::filesystem;
 
 using ll::logger;
 
@@ -30,13 +33,13 @@ std::set<std::wstring> loadedSymbolDir;
 bool                   symbolsLoaded = false;
 
 void FindSymbols(wstring& collection, const std::string& nowPath, bool recursion = false) {
-    filesystem::directory_iterator list(nowPath);
+    fs::directory_iterator list(nowPath);
     for (auto& it : list) {
         if (it.is_directory() && recursion) {
             FindSymbols(collection, it.path().string(), recursion);
         } else if (it.path().extension() == ".pdb") {
-            filesystem::path dir     = filesystem::canonical(it.path());
-            wstring          dirPath = dir.remove_filename().native();
+            fs::path dir     = fs::canonical(it.path());
+            wstring  dirPath = dir.remove_filename().native();
 
             if (loadedSymbolDir.find(dirPath) == loadedSymbolDir.end()) {
                 collection += L";" + dirPath.substr(0, dirPath.size() - 1);

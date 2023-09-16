@@ -4,22 +4,18 @@
 #include <unordered_map>
 #include <utility>
 
-#include "liteloader/api/utils/StringHelper.h"
-#include "liteloader/api/utils/WinHelper.h"
-
 #include "liteloader/api/LLAPI.h"
 #include "liteloader/api/LoggerAPI.h"
-// #include "liteloader/api/event/LegacyEvents.h"
-// #include "liteloader/api/event/EventManager.h"
-// #include "liteloader/api/event/server/ServerStartedEvent.h"
-#include "liteloader/api/i18n/I18nAPI.h"
 #include "liteloader/api/ScheduleAPI.h"
-
+#include "liteloader/api/i18n/I18nAPI.h"
+#include "liteloader/api/utils/StringUtils.h"
+#include "liteloader/api/utils/WinHelper.h"
 #include "liteloader/core/LiteLoader.h"
 
 #include <windows.h>
 
 using namespace std;
+using namespace ll::StringUtils;
 
 using ll::logger;
 
@@ -27,7 +23,7 @@ std::unordered_map<std::string, ll::Plugin> plugins;
 
 bool ll::PluginManager::registerPlugin(
     HMODULE                            handle,
-    const std::string&                        name,
+    const std::string&                 name,
     std::string                        desc,
     ll::Version                        version,
     std::map<std::string, std::string> others
@@ -58,7 +54,7 @@ bool ll::PluginManager::registerPlugin(
 
     try {
         plugin.filePath =
-            UTF82String(filesystem::path(str2wstr(others.at("PluginFilePath"))).lexically_normal().u8string());
+            u8str2str(filesystem::path(str2wstr(others.at("PluginFilePath"))).lexically_normal().u8string());
         others.erase("PluginFilePath");
     } catch (...) {
         if (handle)
@@ -83,7 +79,7 @@ bool ll::PluginManager::unRegisterPlugin(std::string name) {
 ll::Plugin* GetPlugin_Raw(const std::string& name, bool includeScriptPlugin) {
     for (auto& it : plugins) {
         if (it.second.name == name ||
-            UTF82String(filesystem::path(str2wstr(it.second.filePath)).filename().u8string()) == name) {
+            u8str2str(filesystem::path(str2wstr(it.second.filePath)).filename().u8string()) == name) {
             if (!includeScriptPlugin && it.second.type == ll::Plugin::PluginType::ScriptPlugin)
                 continue;
             return &it.second;
@@ -139,9 +135,9 @@ bool ll::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
     //     return false;
     try {
         filesystem::path path(filesystem::path(str2wstr(pluginFilePath)).lexically_normal());
-        pluginFilePath = UTF82String(path.u8string());
+        pluginFilePath = u8str2str(path.u8string());
 
-        string ext = UTF82String(path.extension().u8string());
+        string ext = u8str2str(path.extension().u8string());
         if (ext != ".dll") {
             if (filesystem::is_directory(path)) {
                 // Maybe uncompressed LLSE Script Plugin Package
@@ -177,8 +173,8 @@ bool ll::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
             return false;
         }
 
-        string pluginFileName = UTF82String(path.filename().u8string());
-        auto   lib            = LoadLibrary(str2wstr(pluginFilePath).c_str());
+        string pluginFileName = u8str2str(path.filename().u8string());
+        auto   lib            = LoadLibraryW(str2wstr(pluginFilePath).c_str());
         if (lib) {
             if (getPlugin(lib) == nullptr) {
                 if (!registerPlugin(lib, pluginFileName, pluginFileName, ll::Version(1, 0, 0), {})) {

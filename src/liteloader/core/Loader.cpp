@@ -4,17 +4,16 @@
 #include <string>
 #include <vector>
 
-// #include <ScriptEngine/src/main/Configs.h>
-
 #include "liteloader/api/utils/DbgHelper.h"
 #include "liteloader/api/utils/ShellLinkFile.h"
-#include "liteloader/api/utils/StringHelper.h"
+#include "liteloader/api/utils/StringUtils.h"
 #include "liteloader/api/utils/WinHelper.h"
 
-#include "liteloader/api/i18n/I18nAPI.h"
 #include "liteloader/api/LLAPI.h"
 #include "liteloader/api/LoggerAPI.h"
+#include "liteloader/api/i18n/I18nAPI.h"
 #include "liteloader/api/perm/PermissionAPI.h"
+
 
 #include "liteloader/core/Config.h"
 #include "liteloader/core/LiteLoader.h"
@@ -24,6 +23,7 @@
 #include <windows.h>
 
 using namespace std;
+using namespace ll::StringUtils;
 
 inline vector<std::string> getPreloadList() {
     // Not load if is already loaded in preloader
@@ -76,8 +76,7 @@ inline void cleanOldScriptEngine() {
 // })";
 
 inline void loadDotNETEngine() {
-    std::string path = "plugins/LiteLoader/LiteLoader.NET.dll";
-    auto        lib  = LoadLibrary(str2wstr(path).c_str());
+    auto lib = LoadLibraryW(L"plugins/LiteLoader/LiteLoader.NET.dll");
     if (lib) {
         ll::logger.info(tr("ll.loader.loadDotNetEngine.success"));
         // Fake Register
@@ -124,41 +123,42 @@ void ll::LoadMain() {
         filesystem::path path = file.path();
 
         // Skip Wrong file path
-        auto strPath = UTF82String(path.u8string());
-        if (strPath == "LiteLoader.dll" || strPath.find("LiteXLoader") != std::string::npos) {
+        auto strPath = path.u8string();
+
+        if (strPath == u8"LiteLoader.dll" || strPath.find(u8"LiteXLoader") != std::u8string::npos) {
             continue;
         }
 
         // Process Shell link file
-        std::string ext         = UTF82String(path.extension().u8string());
-        bool        isShellLink = false;
-        if (ext == ".lnk") { // Shell link file
+        auto ext         = path.extension().u8string();
+        bool isShellLink = false;
+        if (ext == u8".lnk") { // Shell link file
             ShellLinkFile lnk(path.wstring());
             path = lnk.getPathW();
             if (!filesystem::is_regular_file(path)) {
                 continue;
             }
-            ext         = UTF82String(path.extension().u8string());
+            ext         = path.extension().u8string();
             isShellLink = true;
         }
 
         // Check is dll
-        if (ext != ".dll") {
+        if (ext != u8".dll") {
             continue;
         }
 
         // LLMoney load check
-        if (strPath.find("LLMoney.dll") != std::string::npos) {
+        if (strPath.find(u8"LLMoney.dll") != std::string::npos) {
             if (!globalConfig.enableEconomyCore) {
                 continue;
             }
         }
 
         // Avoid preloaded plugin
-        std::string pluginFileName = UTF82String(path.filename().u8string());
-        bool        loaded         = false;
+        auto pluginFileName = u8str2str(path.filename().u8string());
+        bool loaded         = false;
         for (auto& p : preloadList)
-            if (p.find(pluginFileName) != std::wstring::npos) {
+            if (p.find(pluginFileName) != std::string::npos) {
                 loaded = true;
                 break;
             }
@@ -172,15 +172,15 @@ void ll::LoadMain() {
 
             if (isShellLink) {
                 std::string tmp =
-                    tr("ll.loader.loadMain.loadedShellLink", UTF82String(file.path().filename().u8string()));
-                ll::logger.info(tmp, UTF82String(path.u8string()));
+                    tr("ll.loader.loadMain.loadedShellLink", u8str2str(file.path().filename().u8string()));
+                ll::logger.info(tmp, u8str2str(path.u8string()));
             } else {
                 ll::logger.info(tr("ll.loader.loadMain.loadedPlugin", fmt::arg("name", pluginFileName)));
             }
 
             if (PluginManager::getPlugin(lib) == nullptr) {
                 if (!ll::PluginManager::registerPlugin(lib, pluginFileName, pluginFileName, ll::Version(1, 0, 0), {})) {
-                    ll::logger.error(tr("ll.pluginManager.error.failToRegisterPlugin", UTF82String(path.u8string())));
+                    ll::logger.error(tr("ll.pluginManager.error.failToRegisterPlugin", u8str2str(path.u8string())));
                     if (PluginManager::getPlugin(pluginFileName)) {
                         ll::logger.error(tr("ll.pluginManager.error.hasBeenRegistered", pluginFileName));
                     }
@@ -188,7 +188,7 @@ void ll::LoadMain() {
             }
         } else {
             DWORD       lastError   = GetLastError();
-            std::string fileVersion = GetFileVersionString(UTF82String(path.u8string()), true);
+            std::string fileVersion = GetFileVersionString(u8str2str(path.u8string()), true);
             std::string info        = pluginFileName;
             if (!fileVersion.empty()) {
                 info += " [" + fileVersion + "]";

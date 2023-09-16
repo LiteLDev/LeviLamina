@@ -1,9 +1,17 @@
 #include "liteloader/api/i18n/I18nAPI.h"
-#include "liteloader/api/utils/StringHelper.h"
+
+#include "liteloader/api/utils/StringUtils.h"
 #include "liteloader/core/LiteLoader.h"
+
 #include <stringapiset.h>
+
 using namespace std;
+
 namespace fs = std::filesystem;
+
+using ll::StringUtils::splitByPattern;
+using ll::StringUtils::str2wstr;
+using ll::StringUtils::wstr2str;
 
 std::vector<std::string> GeneralLanguages{"en", "zh"};
 
@@ -179,8 +187,8 @@ void MultiFileI18N::save(bool nested) {
             if (nested) {
                 auto out = nlohmann::json::object();
                 for (auto& [k, v] : lv) {
-                    auto        keys = SplitStrWithPattern(k, ".");
-                    std::string name = keys.back();
+                    auto keys = splitByPattern(&k, ".");
+                    auto name = keys.back();
                     keys.pop_back();
                     nlohmann::json* j = &out;
                     for (auto& key : keys) {
@@ -241,14 +249,15 @@ I18nBase* loadFromImpl(HMODULE hPlugin, HMODULE hTarget) {
 }; // namespace Translation
 
 
-///////////////////////////// Encoding-CodePage Map /////////////////////////////
+// Encoding-CodePage Map
 #ifdef UNICODE
+#undef UNICODE
 #include <compact_enc_det/compact_enc_det.h>
 #define UNICODE
 #else
 #include <compact_enc_det/compact_enc_det.h>
 #endif
-#undef UNICODE
+
 namespace TextEncoding {
 const std::unordered_map<Encoding, UINT> Encoding_CodePage_Map = {
     {Encoding::ISO_8859_1,           28591  },

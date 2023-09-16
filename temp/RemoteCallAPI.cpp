@@ -1,6 +1,6 @@
 #include "liteloader/api/RemoteCallAPI.h"
 
-#include "liteloader/api/utils/StringHelper.h"
+#include "liteloader/api/utils/StringUtils.h"
 
 #include "liteloader/api/LLAPI.h"
 #include "liteloader/api/LoggerAPI.h"

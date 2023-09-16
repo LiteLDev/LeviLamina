@@ -1,15 +1,16 @@
 #include "liteloader/api/utils/FileHelper.h"
 
-#include <io.h>
-
 #include <filesystem>
 
-#include "liteloader/api/utils/StringHelper.h"
+#include "liteloader/api/utils/StringUtils.h"
 #include "liteloader/api/utils/WinHelper.h"
-
 #include "liteloader/core/Config.h"
 
+#include <io.h>
+
 using namespace std;
+using namespace ll::StringUtils;
+namespace fs = std::filesystem;
 
 Logger logger("FileHelper");
 
@@ -67,21 +68,21 @@ bool WriteAllFile(const std::string& filePath, const std::string& content, bool 
 }
 
 std::vector<std::string> GetFileNameList(const std::string& dir) {
-    std::filesystem::directory_entry d(dir);
+    fs::directory_entry d(dir);
     if (!d.is_directory())
         return {};
 
-    std::vector<std::string>            list;
-    std::filesystem::directory_iterator deps(d);
+    std::vector<std::string> list;
+    fs::directory_iterator   deps(d);
     for (auto& i : deps) {
-        list.push_back(UTF82String(i.path().filename().u8string()));
+        list.push_back(u8str2str(i.path().filename().u8string()));
     }
     return list;
 }
 
 bool CreateDirs(const std::string& path) {
     std::error_code ec;
-    auto            ret = std::filesystem::create_directories(std::filesystem::path(str2wstr(path)), ec);
+    auto            ret = fs::create_directories(fs::path(str2wstr(path)), ec);
     if (ec.value() != 0) {
         logger.error("Fail to create dir, err code: {}", ec.value());
         logger.error(ec.message());
@@ -89,11 +90,19 @@ bool CreateDirs(const std::string& path) {
     return ret;
 }
 
-std::pair<int, std::string> UncompressFile(const std::string& filePath, const std::string& toDir, int processTimeout) {
+std::pair<int, std::string> UncompressFile(const std::string& filePath, std::string toDir, int processTimeout) {
     error_code ec;
-    std::filesystem::create_directories(toDir, ec);
-    std::string realToDir = EndsWith(toDir, "/") ? toDir : toDir + "/";
+    fs::create_directories(toDir, ec);
+    toDir = u8str2str(fs::canonical(toDir, ec).u8string());
+    if (ec.value() != 0) {
+        logger.error("Fail to create dir, err code: {}", ec.value());
+        logger.error(ec.message());
+        return {ec.value(), ec.message()};
+    }
+    if (!toDir.ends_with("/")) {
+        toDir += "/";
+    }
     auto&& [exitCode, output] =
-        NewProcessSync(fmt::format(R"({} x "{}" -o"{}" -aoa)", ZIP_PROGRAM_PATH, filePath, realToDir), processTimeout);
+        NewProcessSync(fmt::format(R"({} x "{}" -o"{}" -aoa)", ZIP_PROGRAM_PATH, filePath, toDir), processTimeout);
     return {exitCode, std::move(output)};
 }

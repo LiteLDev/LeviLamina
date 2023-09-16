@@ -4,7 +4,7 @@
 #include <unordered_map>
 // #include <ScriptEngine/src/main/Configs.h>
 
-#include "liteloader/api/utils/StringHelper.h"
+#include "liteloader/api/utils/StringUtils.h"
 #include "liteloader/api/utils/WinHelper.h"
 
 #include "mc/Level.hpp"

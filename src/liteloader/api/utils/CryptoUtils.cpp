@@ -1,4 +1,4 @@
-#include "liteloader/api/utils/CryptoUtil.h"
+#include "liteloader/api/utils/CryptoUtils.h"
 
 #include <openssl/md5.h>
 #include <openssl/sha.h>

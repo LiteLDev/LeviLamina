@@ -2,11 +2,14 @@
 
 #include <string>
 
-#include "liteloader/api/utils/StringHelper.h"
+#include "liteloader/api/utils/StringUtils.h"
 
 #include <ShlObj.h>
 
 #pragma comment(lib, "Ole32.lib")
+
+using ll::StringUtils::wstr2str;
+using ll::StringUtils::str2wstr;
 
 constexpr int MAX_PATH_LENGTH = 8192;
 

@@ -29,10 +29,10 @@ struct Version {
 
     LLAPI explicit Version(int major = 0, int minor = 0, int revision = 0, Status status = Status::Release);
 
-    LLAPI bool operator<(Version b);
-    LLAPI bool operator==(Version b);
+    LLAPI bool operator<(const Version& b) const;
+    LLAPI bool operator==(const Version& b) const;
 
-    LLAPI std::string    toString(bool needStatus = false);
+    LLNDAPI std::string  toString(bool needStatus = false) const;
     LLAPI static Version parse(const std::string& str);
 };
 

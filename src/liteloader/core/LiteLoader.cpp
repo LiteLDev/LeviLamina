@@ -9,7 +9,7 @@
 #include "liteloader/api/service/GlobalService.h"
 #include "liteloader/api/utils/FileHelper.h"
 #include "liteloader/api/utils/SehTranslator.h"
-#include "liteloader/api/utils/StringHelper.h"
+#include "liteloader/api/utils/StringUtils.h"
 
 // #include "liteloader/api/ServerAPI.h"
 // #include "liteloader/api/event/LegacyEvents.h"

@@ -1,6 +1,8 @@
 ﻿#pragma once
+
 #include <string_view>
 
+#include "liteloader/api/base/StdInt.h"
 
 typedef uint64 CHash;
 

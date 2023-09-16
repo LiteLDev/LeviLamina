@@ -1,19 +1,16 @@
-//
-// Created by RimuruChan on 2021/12/11.
-//
+#include "liteloader/api/LoggerAPI.h"
 
 #include <mutex>
 #include <regex>
 #include <unordered_map>
 
-#include "liteloader/api/LoggerAPI.h"
 #include "liteloader/api/utils/Hash.h"
-// #include "mc/world/actor/player/Player.h"
-
 #include "liteloader/core/Config.h"
 
 #define LOGGER_CURRENT_TITLE "ll_plugin_logger_title"
 #define LOGGER_CURRENT_FILE  "ll_plugin_logger_file"
+
+using namespace ll::StringUtils;
 
 std::mutex loggerLock;
 
@@ -23,7 +20,7 @@ bool Logger::setDefaultFileImpl(HMODULE hPlugin, const std::string& logFile, boo
         return true;
     } else {
         std::error_code ec;
-        std::filesystem::create_directories(std::filesystem::path(str2wstr(logFile)).remove_filename(), ec);
+        std::filesystem::create_directories(std::filesystem::path(sv2u8sv(logFile)).remove_filename(), ec);
 
         auto& res = PluginOwnData::setImpl<std::ofstream>(
             hPlugin, LOGGER_CURRENT_FILE, logFile, appendMode ? std::ios::app : std::ios::out
@@ -45,7 +42,7 @@ bool Logger::setFile(const std::string& logFile, bool appendMode) {
         return true;
     } else {
         std::error_code ec;
-        std::filesystem::create_directories(std::filesystem::path(str2wstr(logFile)).remove_filename(), ec);
+        std::filesystem::create_directories(std::filesystem::path(sv2u8sv(logFile)).remove_filename(), ec);
         ofs.open(logFile, appendMode ? std::ios::app : std::ios::out);
         return ofs.is_open();
     }

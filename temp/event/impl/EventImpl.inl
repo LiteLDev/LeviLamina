@@ -8,7 +8,7 @@
 #include "liteloader/api/LLAPI.h"
 #include "liteloader/api/event/Event.h"
 #include "liteloader/api/event/EventManager.h"
-#include "liteloader/api/utils/StringHelper.h"
+#include "liteloader/api/utils/StringUtils.h"
 
 #define LL_EVENT_IMPL(EventType)                                                                                       \
     namespace ll::event {                                                                                              \

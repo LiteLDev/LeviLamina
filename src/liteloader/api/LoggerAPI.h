@@ -29,7 +29,7 @@
 #include "liteloader/api/i18n/I18nAPI.h"
 #include "liteloader/api/utils/FileHelper.h"
 #include "liteloader/api/utils/PluginOwnData.h"
-#include "liteloader/api/utils/StringHelper.h"
+#include "liteloader/api/utils/StringUtils.h"
 #include "liteloader/api/utils/WinHelper.h"
 
 #include <filesystem>
@@ -88,12 +88,14 @@ public:
         }
 
         OutputStream& operator<<(const std::wstring& wstr) {
+            using ll::StringUtils::wstr2str;
             std::unique_lock lock(getLocker());
             os << wstr2str(wstr);
             return *this;
         }
 
         OutputStream& operator<<(const wchar_t* wstr) {
+            using ll::StringUtils::wstr2str;
             std::unique_lock lock(getLocker());
             os << wstr2str(wstr);
             return *this;

@@ -8,7 +8,7 @@
 
 #include "liteloader/api/utils/FileHelper.h"
 #include "liteloader/api/utils/SehTranslator.h"
-#include "liteloader/api/utils/StringHelper.h"
+#include "liteloader/api/utils/StringUtils.h"
 
 #include "liteloader/api/memory/Hook.h"
 
