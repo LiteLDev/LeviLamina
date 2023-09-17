@@ -85,20 +85,42 @@ public:
     };
 
 public:
+      
     LLNDAPI UserEntityIdentifierComponent& getUserEntityIdentifier() const;
+
     // clang-format off
     [[nodiscard]] inline NetworkIdentifier& getNetworkIdentifier() const { return getUserEntityIdentifier().mNetworkId; }
     [[nodiscard]] inline optional_ref<Certificate> getCertificate() const { return getUserEntityIdentifier().mCertificate.get(); }
-    [[nodiscard]] inline mce::UUID& getUuid() const { return getUserEntityIdentifier().mClientUUID; }
     [[nodiscard]] inline SubClientId& getClientSubId() const { return getUserEntityIdentifier().mClientSubId; }
+
+    /**
+     * @brief Get the player's uuid
+     * @return Player's uuid
+     */
+    [[nodiscard]] inline mce::UUID& getUuid() const { return getUserEntityIdentifier().mClientUUID; }
+
+    /**
+     * @brief Get the player's IP and port
+     * @return player's IP and port
+     */
     [[nodiscard]] inline std::string getIPAndPort() const {return getNetworkIdentifier().getIPAndPort(); }
+
+    /**
+     * @brief Determine if a player is an administrator of the server
+     * @return Returns true if the player is an administrator of the server; otherwise returns false
+     * @warning Custom permissions are not considered administrators
+     */
+    inline [[nodiscard]] bool isOperator() const { return getPlayerPermissionLevel() == PlayerPermissionLevel::Operator; }
     // clang-format on
 
-    LLNDAPI std::string getDeviceId() const;
-
-    LLNDAPI std::optional<NetworkPeer::NetworkStatus> getNetworkStatus() const;
-
+    /**
+     * @brief Get the player's real in-game nickname
+     * @return player's real in-game nickname
+     */
     LLNDAPI std::string getRealName() const;
+
+    LLNDAPI std::string getDeviceId() const;
+    LLNDAPI std::optional<NetworkPeer::NetworkStatus> getNetworkStatus() const;
 
     // prevent constructor by default
     Player& operator=(Player const&) = delete;
