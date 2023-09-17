@@ -69,7 +69,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mThreadLocalRegistry() { return mThreadLocalRegistry; }
+    auto& $mThreadLocalRegistry() { return mThreadLocalRegistry; }
 
     // NOLINTEND
 };

@@ -53,7 +53,7 @@ public:
         // member accessor
     public:
         // NOLINTBEGIN
-        inline auto& $mSequenceIdGenerator() { return mSequenceIdGenerator; }
+        auto& $mSequenceIdGenerator() { return mSequenceIdGenerator; }
 
         // NOLINTEND
     };
@@ -102,7 +102,7 @@ public:
             // member accessor
         public:
             // NOLINTBEGIN
-            inline auto& $mMaxTicks() { return mMaxTicks; }
+            auto& $mMaxTicks() { return mMaxTicks; }
 
             // NOLINTEND
         };
@@ -181,9 +181,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $LERP_STEP_SIZE() { return LERP_STEP_SIZE; }
+    auto& $LERP_STEP_SIZE() { return LERP_STEP_SIZE; }
 
-    inline auto& $mGlobalRuntimePredictionData() { return mGlobalRuntimePredictionData; }
+    auto& $mGlobalRuntimePredictionData() { return mGlobalRuntimePredictionData; }
 
     // NOLINTEND
 };

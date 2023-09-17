@@ -44,7 +44,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mRealmsEventInternalNames() { return mRealmsEventInternalNames; }
+    auto& $mRealmsEventInternalNames() { return mRealmsEventInternalNames; }
 
     // NOLINTEND
 };

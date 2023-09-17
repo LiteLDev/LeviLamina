@@ -290,11 +290,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $BASE_WATER_PIXEL() { return BASE_WATER_PIXEL; }
+    auto& $BASE_WATER_PIXEL() { return BASE_WATER_PIXEL; }
 
-    inline auto& $CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
+    auto& $CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
 
-    inline auto& $PIXEL_PER_LEVEL() { return PIXEL_PER_LEVEL; }
+    auto& $PIXEL_PER_LEVEL() { return PIXEL_PER_LEVEL; }
 
     // NOLINTEND
 };

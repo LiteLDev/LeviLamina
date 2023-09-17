@@ -29,7 +29,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mInstance() { return mInstance; }
+    auto& $mInstance() { return mInstance; }
 
     // NOLINTEND
 };

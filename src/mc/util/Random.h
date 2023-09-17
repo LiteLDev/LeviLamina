@@ -78,7 +78,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mThreadLocalRandom() { return mThreadLocalRandom; }
+    auto& $mThreadLocalRandom() { return mThreadLocalRandom; }
 
     // NOLINTEND
 };

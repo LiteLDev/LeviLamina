@@ -248,11 +248,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION() {
-        return COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
-    }
+    auto& $COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
 
-    inline auto& $PARTICLE_OFFSET() { return PARTICLE_OFFSET; }
+    auto& $PARTICLE_OFFSET() { return PARTICLE_OFFSET; }
 
     // NOLINTEND
 };

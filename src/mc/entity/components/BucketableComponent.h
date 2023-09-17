@@ -34,7 +34,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $WATER_BUCKET_USEABLE_VERSION() { return WATER_BUCKET_USEABLE_VERSION; }
+    auto& $WATER_BUCKET_USEABLE_VERSION() { return WATER_BUCKET_USEABLE_VERSION; }
 
     // NOLINTEND
 };

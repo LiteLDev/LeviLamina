@@ -138,7 +138,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $DEFAULT_FUSE_LENGTH() { return DEFAULT_FUSE_LENGTH; }
+    auto& $DEFAULT_FUSE_LENGTH() { return DEFAULT_FUSE_LENGTH; }
 
     // NOLINTEND
 };

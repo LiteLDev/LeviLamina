@@ -192,7 +192,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mElements() { return mElements; }
+    auto& $mElements() { return mElements; }
 
     // NOLINTEND
 };

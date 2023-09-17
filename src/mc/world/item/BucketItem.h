@@ -194,7 +194,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mFillTypeToEntityType() { return mFillTypeToEntityType; }
+    auto& $mFillTypeToEntityType() { return mFillTypeToEntityType; }
 
     // NOLINTEND
 };

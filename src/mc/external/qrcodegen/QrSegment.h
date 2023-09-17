@@ -55,7 +55,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $ALPHANUMERIC_CHARSET() { return ALPHANUMERIC_CHARSET; }
+    auto& $ALPHANUMERIC_CHARSET() { return ALPHANUMERIC_CHARSET; }
 
     // NOLINTEND
 };

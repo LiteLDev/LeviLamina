@@ -58,11 +58,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $SITTING_ATTACK_VIEW_RANGE() { return SITTING_ATTACK_VIEW_RANGE; }
+    auto& $SITTING_ATTACK_VIEW_RANGE() { return SITTING_ATTACK_VIEW_RANGE; }
 
-    inline auto& $SITTING_CHARGE_VIEW_RANGE() { return SITTING_CHARGE_VIEW_RANGE; }
+    auto& $SITTING_CHARGE_VIEW_RANGE() { return SITTING_CHARGE_VIEW_RANGE; }
 
-    inline auto& $SITTING_SCANNING_IDLE_TICKS() { return SITTING_SCANNING_IDLE_TICKS; }
+    auto& $SITTING_SCANNING_IDLE_TICKS() { return SITTING_SCANNING_IDLE_TICKS; }
 
     // NOLINTEND
 };

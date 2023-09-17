@@ -128,7 +128,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $EAT_ANIMATION_TICKS() { return EAT_ANIMATION_TICKS; }
+    auto& $EAT_ANIMATION_TICKS() { return EAT_ANIMATION_TICKS; }
 
     // NOLINTEND
 };

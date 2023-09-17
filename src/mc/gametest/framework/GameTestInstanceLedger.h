@@ -50,7 +50,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $GAME_TEST_INSTANCE_PREFIX() { return GAME_TEST_INSTANCE_PREFIX; }
+    auto& $GAME_TEST_INSTANCE_PREFIX() { return GAME_TEST_INSTANCE_PREFIX; }
 
     // NOLINTEND
 };

@@ -101,7 +101,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $sSingleton() { return sSingleton; }
+    auto& $sSingleton() { return sSingleton; }
 
     // NOLINTEND
 };

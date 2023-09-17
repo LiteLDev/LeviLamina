@@ -100,15 +100,15 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $ENDPOINT_IDENTIFIER() { return ENDPOINT_IDENTIFIER; }
+    auto& $ENDPOINT_IDENTIFIER() { return ENDPOINT_IDENTIFIER; }
 
-    inline auto& $ONEDS_URL() { return ONEDS_URL; }
+    auto& $ONEDS_URL() { return ONEDS_URL; }
 
-    inline auto& $PARTA_IDENTIFIER() { return PARTA_IDENTIFIER; }
+    auto& $PARTA_IDENTIFIER() { return PARTA_IDENTIFIER; }
 
-    inline auto& $SAFETY_ENDPOINT_IDENTIFIER() { return SAFETY_ENDPOINT_IDENTIFIER; }
+    auto& $SAFETY_ENDPOINT_IDENTIFIER() { return SAFETY_ENDPOINT_IDENTIFIER; }
 
-    inline auto& $SAFETY_PARTA_IDENTIFIER() { return SAFETY_PARTA_IDENTIFIER; }
+    auto& $SAFETY_PARTA_IDENTIFIER() { return SAFETY_PARTA_IDENTIFIER; }
 
     // NOLINTEND
 };

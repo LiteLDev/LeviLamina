@@ -220,7 +220,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $DELAYS() { return DELAYS; }
+    auto& $DELAYS() { return DELAYS; }
 
     // NOLINTEND
 };

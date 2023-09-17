@@ -136,7 +136,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $gCurrentTask() { return gCurrentTask; }
+    auto& $gCurrentTask() { return gCurrentTask; }
 
     // NOLINTEND
 };

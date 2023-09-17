@@ -19,7 +19,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $invalidInfo() { return invalidInfo; }
+    auto& $invalidInfo() { return invalidInfo; }
 
     // NOLINTEND
 };

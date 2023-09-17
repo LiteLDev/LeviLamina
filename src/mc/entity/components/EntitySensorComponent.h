@@ -37,7 +37,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $NO_MAX_COUNT() { return NO_MAX_COUNT; }
+    auto& $NO_MAX_COUNT() { return NO_MAX_COUNT; }
 
     // NOLINTEND
 };

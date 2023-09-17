@@ -61,15 +61,15 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $sFailedOptionalTest() { return sFailedOptionalTest; }
+    auto& $sFailedOptionalTest() { return sFailedOptionalTest; }
 
-    inline auto& $sFailedRequiredTest() { return sFailedRequiredTest; }
+    auto& $sFailedRequiredTest() { return sFailedRequiredTest; }
 
-    inline auto& $sNotStartedTest() { return sNotStartedTest; }
+    auto& $sNotStartedTest() { return sNotStartedTest; }
 
-    inline auto& $sOnGoingTest() { return sOnGoingTest; }
+    auto& $sOnGoingTest() { return sOnGoingTest; }
 
-    inline auto& $sSuccessfulTest() { return sSuccessfulTest; }
+    auto& $sSuccessfulTest() { return sSuccessfulTest; }
 
     // NOLINTEND
 };

@@ -85,9 +85,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mInitialized() { return mInitialized; }
+    auto& $mInitialized() { return mInitialized; }
 
-    inline auto& $mMaterials() { return mMaterials; }
+    auto& $mMaterials() { return mMaterials; }
 
     // NOLINTEND
 };

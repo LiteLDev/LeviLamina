@@ -714,7 +714,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $ParseRuleSymbols() { return ParseRuleSymbols; }
+    auto& $ParseRuleSymbols() { return ParseRuleSymbols; }
 
     // NOLINTEND
 };

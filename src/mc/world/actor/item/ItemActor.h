@@ -177,7 +177,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $LIFETIME() { return LIFETIME; }
+    auto& $LIFETIME() { return LIFETIME; }
 
     // NOLINTEND
 };

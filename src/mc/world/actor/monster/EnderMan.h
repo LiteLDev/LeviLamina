@@ -166,7 +166,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mMayTakeIsSetup() { return mMayTakeIsSetup; }
+    auto& $mMayTakeIsSetup() { return mMayTakeIsSetup; }
 
     // NOLINTEND
 };

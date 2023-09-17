@@ -66,7 +66,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $actionTypeMap() { return actionTypeMap; }
+    auto& $actionTypeMap() { return actionTypeMap; }
 
     // NOLINTEND
 };

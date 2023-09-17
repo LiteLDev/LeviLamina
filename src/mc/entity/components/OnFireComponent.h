@@ -38,9 +38,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $LEGACY_FIRE_TAG() { return LEGACY_FIRE_TAG; }
+    auto& $LEGACY_FIRE_TAG() { return LEGACY_FIRE_TAG; }
 
-    inline auto& $ON_FIRE_TAG() { return ON_FIRE_TAG; }
+    auto& $ON_FIRE_TAG() { return ON_FIRE_TAG; }
 
     // NOLINTEND
 };

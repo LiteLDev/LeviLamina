@@ -142,9 +142,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $sAllFiles() { return sAllFiles; }
+    auto& $sAllFiles() { return sAllFiles; }
 
-    inline auto& $sAllFilesLock() { return sAllFilesLock; }
+    auto& $sAllFilesLock() { return sAllFilesLock; }
 
     // NOLINTEND
 };

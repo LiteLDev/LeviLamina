@@ -55,9 +55,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $CHEW_CHANCE() { return CHEW_CHANCE; }
+    auto& $CHEW_CHANCE() { return CHEW_CHANCE; }
 
-    inline auto& $EATING_TIME() { return EATING_TIME; }
+    auto& $EATING_TIME() { return EATING_TIME; }
 
     // NOLINTEND
 };

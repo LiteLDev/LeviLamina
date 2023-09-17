@@ -173,11 +173,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $MAX_POI_QUERIES() { return MAX_POI_QUERIES; }
+    auto& $MAX_POI_QUERIES() { return MAX_POI_QUERIES; }
 
-    inline auto& $MAX_QUERY_SCAN_ITERATIONS() { return MAX_QUERY_SCAN_ITERATIONS; }
+    auto& $MAX_QUERY_SCAN_ITERATIONS() { return MAX_QUERY_SCAN_ITERATIONS; }
 
-    inline auto& $VILLAGE_HERO_EFFECT_DURATION() { return VILLAGE_HERO_EFFECT_DURATION; }
+    auto& $VILLAGE_HERO_EFFECT_DURATION() { return VILLAGE_HERO_EFFECT_DURATION; }
 
     // NOLINTEND
 };

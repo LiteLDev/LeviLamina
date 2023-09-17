@@ -220,9 +220,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $DATA_FROM_FACING() { return DATA_FROM_FACING; }
+    auto& $DATA_FROM_FACING() { return DATA_FROM_FACING; }
 
-    inline auto& $FACING_FROM_DATA() { return FACING_FROM_DATA; }
+    auto& $FACING_FROM_DATA() { return FACING_FROM_DATA; }
 
     // NOLINTEND
 };

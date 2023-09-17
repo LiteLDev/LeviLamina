@@ -56,7 +56,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mLootingFunctions() { return mLootingFunctions; }
+    auto& $mLootingFunctions() { return mLootingFunctions; }
 
     // NOLINTEND
 };

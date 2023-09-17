@@ -1499,19 +1499,19 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mAchievementEventing() { return mAchievementEventing; }
+    auto& $mAchievementEventing() { return mAchievementEventing; }
 
-    inline auto& $mAcquisitionMethodMap() { return mAcquisitionMethodMap; }
+    auto& $mAcquisitionMethodMap() { return mAcquisitionMethodMap; }
 
-    inline auto& $mPlayerTelemetry() { return mPlayerTelemetry; }
+    auto& $mPlayerTelemetry() { return mPlayerTelemetry; }
 
-    inline auto& $mUseMethodMap() { return mUseMethodMap; }
+    auto& $mUseMethodMap() { return mUseMethodMap; }
 
-    inline auto& $sHeartbeatMutex() { return sHeartbeatMutex; }
+    auto& $sHeartbeatMutex() { return sHeartbeatMutex; }
 
-    inline auto& $sMutex() { return sMutex; }
+    auto& $sMutex() { return sMutex; }
 
-    inline auto& $sPlayerTelemetryMutex() { return sPlayerTelemetryMutex; }
+    auto& $sPlayerTelemetryMutex() { return sPlayerTelemetryMutex; }
 
     // NOLINTEND
 };

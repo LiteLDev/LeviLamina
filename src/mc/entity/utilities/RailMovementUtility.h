@@ -62,7 +62,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $RAIL_EXITS() { return RAIL_EXITS; }
+    auto& $RAIL_EXITS() { return RAIL_EXITS; }
 
     // NOLINTEND
 };

@@ -184,9 +184,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $MAX_AGE() { return MAX_AGE; }
+    auto& $MAX_AGE() { return MAX_AGE; }
 
-    inline auto& $MIN_NEIGHBORS() { return MIN_NEIGHBORS; }
+    auto& $MIN_NEIGHBORS() { return MIN_NEIGHBORS; }
 
     // NOLINTEND
 };

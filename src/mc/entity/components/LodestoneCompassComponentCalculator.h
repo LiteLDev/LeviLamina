@@ -19,7 +19,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $COOLDOWN_TIME_SECONDS() { return COOLDOWN_TIME_SECONDS; }
+    auto& $COOLDOWN_TIME_SECONDS() { return COOLDOWN_TIME_SECONDS; }
 
     // NOLINTEND
 };

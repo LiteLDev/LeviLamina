@@ -40,9 +40,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $sForcedPort() { return sForcedPort; }
+    auto& $sForcedPort() { return sForcedPort; }
 
-    inline auto& $sServerScriptDebugger() { return sServerScriptDebugger; }
+    auto& $sServerScriptDebugger() { return sServerScriptDebugger; }
 
     // NOLINTEND
 };

@@ -77,11 +77,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $NUM_GROUPS_ON_EASY() { return NUM_GROUPS_ON_EASY; }
+    auto& $NUM_GROUPS_ON_EASY() { return NUM_GROUPS_ON_EASY; }
 
-    inline auto& $NUM_GROUPS_ON_HARD() { return NUM_GROUPS_ON_HARD; }
+    auto& $NUM_GROUPS_ON_HARD() { return NUM_GROUPS_ON_HARD; }
 
-    inline auto& $NUM_GROUPS_ON_NORMAL() { return NUM_GROUPS_ON_NORMAL; }
+    auto& $NUM_GROUPS_ON_NORMAL() { return NUM_GROUPS_ON_NORMAL; }
 
     // NOLINTEND
 };

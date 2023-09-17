@@ -26,7 +26,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $sWildCardModuleName() { return sWildCardModuleName; }
+    auto& $sWildCardModuleName() { return sWildCardModuleName; }
 
     // NOLINTEND
 };

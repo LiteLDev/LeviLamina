@@ -103,13 +103,13 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mDeprecatedComponents() { return mDeprecatedComponents; }
+    auto& $mDeprecatedComponents() { return mDeprecatedComponents; }
 
-    inline auto& $mItemContext() { return mItemContext; }
+    auto& $mItemContext() { return mItemContext; }
 
-    inline auto& $mRegisteredComponents() { return mRegisteredComponents; }
+    auto& $mRegisteredComponents() { return mRegisteredComponents; }
 
-    inline auto& $mReleasedMinFormatVersionForAnyComponent() { return mReleasedMinFormatVersionForAnyComponent; }
+    auto& $mReleasedMinFormatVersionForAnyComponent() { return mReleasedMinFormatVersionForAnyComponent; }
 
     // NOLINTEND
 };

@@ -142,7 +142,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $SPEED_MODIFIER_ATTACK_UUID() { return SPEED_MODIFIER_ATTACK_UUID; }
+    auto& $SPEED_MODIFIER_ATTACK_UUID() { return SPEED_MODIFIER_ATTACK_UUID; }
 
     // NOLINTEND
 };

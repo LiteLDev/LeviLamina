@@ -214,23 +214,23 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $BURN_DURATION_KEY() { return BURN_DURATION_KEY; }
+    auto& $BURN_DURATION_KEY() { return BURN_DURATION_KEY; }
 
-    inline auto& $BURN_TIME_KEY() { return BURN_TIME_KEY; }
+    auto& $BURN_TIME_KEY() { return BURN_TIME_KEY; }
 
-    inline auto& $COOK_TIME_KEY() { return COOK_TIME_KEY; }
+    auto& $COOK_TIME_KEY() { return COOK_TIME_KEY; }
 
-    inline auto& $CUSTOM_NAME_KEY() { return CUSTOM_NAME_KEY; }
+    auto& $CUSTOM_NAME_KEY() { return CUSTOM_NAME_KEY; }
 
-    inline auto& $ITEMS_LIST_KEY() { return ITEMS_LIST_KEY; }
+    auto& $ITEMS_LIST_KEY() { return ITEMS_LIST_KEY; }
 
-    inline auto& $LAST_FUEL_KEY() { return LAST_FUEL_KEY; }
+    auto& $LAST_FUEL_KEY() { return LAST_FUEL_KEY; }
 
-    inline auto& $SLOT_KEY() { return SLOT_KEY; }
+    auto& $SLOT_KEY() { return SLOT_KEY; }
 
-    inline auto& $STORED_XP_DEPRECATED_KEY() { return STORED_XP_DEPRECATED_KEY; }
+    auto& $STORED_XP_DEPRECATED_KEY() { return STORED_XP_DEPRECATED_KEY; }
 
-    inline auto& $STORED_XP_KEY() { return STORED_XP_KEY; }
+    auto& $STORED_XP_KEY() { return STORED_XP_KEY; }
 
     // NOLINTEND
 };

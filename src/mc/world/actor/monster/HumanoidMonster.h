@@ -146,13 +146,13 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $MAX_ENCHANTED_ARMOR_CHANCE() { return MAX_ENCHANTED_ARMOR_CHANCE; }
+    auto& $MAX_ENCHANTED_ARMOR_CHANCE() { return MAX_ENCHANTED_ARMOR_CHANCE; }
 
-    inline auto& $MAX_ENCHANTED_WEAPON_CHANCE() { return MAX_ENCHANTED_WEAPON_CHANCE; }
+    auto& $MAX_ENCHANTED_WEAPON_CHANCE() { return MAX_ENCHANTED_WEAPON_CHANCE; }
 
-    inline auto& $MAX_PICKUP_LOOT_CHANCE() { return MAX_PICKUP_LOOT_CHANCE; }
+    auto& $MAX_PICKUP_LOOT_CHANCE() { return MAX_PICKUP_LOOT_CHANCE; }
 
-    inline auto& $MAX_WEARING_ARMOR_CHANCE() { return MAX_WEARING_ARMOR_CHANCE; }
+    auto& $MAX_WEARING_ARMOR_CHANCE() { return MAX_WEARING_ARMOR_CHANCE; }
 
     // NOLINTEND
 };

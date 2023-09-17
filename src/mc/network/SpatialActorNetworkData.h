@@ -123,9 +123,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mDebugSendRateModifiers() { return mDebugSendRateModifiers; }
+    auto& $mDebugSendRateModifiers() { return mDebugSendRateModifiers; }
 
-    inline auto& $mDebugSpatialPacketModifiers() { return mDebugSpatialPacketModifiers; }
+    auto& $mDebugSpatialPacketModifiers() { return mDebugSpatialPacketModifiers; }
 
     // NOLINTEND
 };

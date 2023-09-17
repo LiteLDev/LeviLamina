@@ -178,9 +178,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mRotatedX() { return mRotatedX; }
+    auto& $mRotatedX() { return mRotatedX; }
 
-    inline auto& $mRotatedZ() { return mRotatedZ; }
+    auto& $mRotatedZ() { return mRotatedZ; }
 
     // NOLINTEND
 };

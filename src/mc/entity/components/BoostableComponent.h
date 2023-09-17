@@ -56,7 +56,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $SPEED_MODIFIER_BOOSTING_UUID() { return SPEED_MODIFIER_BOOSTING_UUID; }
+    auto& $SPEED_MODIFIER_BOOSTING_UUID() { return SPEED_MODIFIER_BOOSTING_UUID; }
 
     // NOLINTEND
 };

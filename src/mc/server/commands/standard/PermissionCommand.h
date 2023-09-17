@@ -51,7 +51,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mPermissionsFile() { return mPermissionsFile; }
+    auto& $mPermissionsFile() { return mPermissionsFile; }
 
     // NOLINTEND
 };

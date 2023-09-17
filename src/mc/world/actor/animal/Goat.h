@@ -155,9 +155,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $DEFAULT_HORN_COUNT() { return DEFAULT_HORN_COUNT; }
+    auto& $DEFAULT_HORN_COUNT() { return DEFAULT_HORN_COUNT; }
 
-    inline auto& $SCREAMING_GOAT_VARIANT() { return SCREAMING_GOAT_VARIANT; }
+    auto& $SCREAMING_GOAT_VARIANT() { return SCREAMING_GOAT_VARIANT; }
 
     // NOLINTEND
 };

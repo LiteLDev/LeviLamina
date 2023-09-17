@@ -58,7 +58,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $RANDOM_SKEW_CHANCE() { return RANDOM_SKEW_CHANCE; }
+    auto& $RANDOM_SKEW_CHANCE() { return RANDOM_SKEW_CHANCE; }
 
     // NOLINTEND
 };

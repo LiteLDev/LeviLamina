@@ -191,7 +191,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $HANGING_OFFSET() { return HANGING_OFFSET; }
+    auto& $HANGING_OFFSET() { return HANGING_OFFSET; }
 
     // NOLINTEND
 };

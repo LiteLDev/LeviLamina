@@ -257,7 +257,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $TIME_BEFORE_MOVING() { return TIME_BEFORE_MOVING; }
+    auto& $TIME_BEFORE_MOVING() { return TIME_BEFORE_MOVING; }
 
     // NOLINTEND
 };

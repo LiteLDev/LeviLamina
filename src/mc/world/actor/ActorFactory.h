@@ -141,7 +141,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $builtinEntityMappings() { return builtinEntityMappings; }
+    auto& $builtinEntityMappings() { return builtinEntityMappings; }
 
     // NOLINTEND
 };

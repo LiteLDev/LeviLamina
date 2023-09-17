@@ -32,7 +32,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mMap() { return mMap; }
+    auto& $mMap() { return mMap; }
 
     // NOLINTEND
 };

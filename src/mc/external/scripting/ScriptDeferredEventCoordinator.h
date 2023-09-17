@@ -60,7 +60,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $sEventExecutionOrder() { return sEventExecutionOrder; }
+    auto& $sEventExecutionOrder() { return sEventExecutionOrder; }
 
     // NOLINTEND
 };

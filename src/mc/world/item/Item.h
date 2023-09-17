@@ -763,7 +763,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mServerItemsUsedInCreativeItems() { return mServerItemsUsedInCreativeItems; }
+    auto& $mServerItemsUsedInCreativeItems() { return mServerItemsUsedInCreativeItems; }
 
     // NOLINTEND
 };

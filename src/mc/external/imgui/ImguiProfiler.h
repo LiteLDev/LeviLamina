@@ -172,9 +172,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $sPendingRecords() { return sPendingRecords; }
+    auto& $sPendingRecords() { return sPendingRecords; }
 
-    inline auto& $sRecordMutex() { return sRecordMutex; }
+    auto& $sRecordMutex() { return sRecordMutex; }
 
     // NOLINTEND
 };

@@ -176,7 +176,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $DEFAULT_STRUCTURE_TYPE() { return DEFAULT_STRUCTURE_TYPE; }
+    auto& $DEFAULT_STRUCTURE_TYPE() { return DEFAULT_STRUCTURE_TYPE; }
 
     // NOLINTEND
 };

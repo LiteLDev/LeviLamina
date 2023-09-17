@@ -88,7 +88,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mBeardKernel() { return mBeardKernel; }
+    auto& $mBeardKernel() { return mBeardKernel; }
 
     // NOLINTEND
 };

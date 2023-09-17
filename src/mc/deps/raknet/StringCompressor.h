@@ -34,9 +34,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $instance() { return instance; }
+    auto& $instance() { return instance; }
 
-    inline auto& $referenceCount() { return referenceCount; }
+    auto& $referenceCount() { return referenceCount; }
 
     // NOLINTEND
 };

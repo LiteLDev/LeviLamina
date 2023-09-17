@@ -199,7 +199,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $STRING_TO_PACK_SCOPE() { return STRING_TO_PACK_SCOPE; }
+    auto& $STRING_TO_PACK_SCOPE() { return STRING_TO_PACK_SCOPE; }
 
     // NOLINTEND
 };

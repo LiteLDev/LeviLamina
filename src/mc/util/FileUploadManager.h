@@ -112,7 +112,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $BOUNDARY() { return BOUNDARY; }
+    auto& $BOUNDARY() { return BOUNDARY; }
 
     // NOLINTEND
 };

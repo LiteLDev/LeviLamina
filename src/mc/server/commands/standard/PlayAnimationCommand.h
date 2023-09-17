@@ -39,7 +39,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mStopExpressionVersion() { return mStopExpressionVersion; }
+    auto& $mStopExpressionVersion() { return mStopExpressionVersion; }
 
     // NOLINTEND
 };

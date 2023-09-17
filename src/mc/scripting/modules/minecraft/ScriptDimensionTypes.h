@@ -43,7 +43,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $sMinecraftNamespace() { return sMinecraftNamespace; }
+    auto& $sMinecraftNamespace() { return sMinecraftNamespace; }
 
     // NOLINTEND
 };

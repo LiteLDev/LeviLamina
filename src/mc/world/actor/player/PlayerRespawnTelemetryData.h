@@ -31,7 +31,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mEventName() { return mEventName; }
+    auto& $mEventName() { return mEventName; }
 
     // NOLINTEND
 };

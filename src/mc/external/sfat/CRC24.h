@@ -21,7 +21,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $table() { return table; }
+    auto& $table() { return table; }
 
     // NOLINTEND
 };

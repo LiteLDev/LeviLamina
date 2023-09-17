@@ -41,7 +41,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mInfoList() { return mInfoList; }
+    auto& $mInfoList() { return mInfoList; }
 
     // NOLINTEND
 };

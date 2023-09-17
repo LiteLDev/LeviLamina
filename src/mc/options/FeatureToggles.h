@@ -102,7 +102,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mFeatureToggles() { return mFeatureToggles; }
+    auto& $mFeatureToggles() { return mFeatureToggles; }
 
     // NOLINTEND
 };

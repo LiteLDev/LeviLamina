@@ -187,7 +187,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $STAINED_GLASS_DOESNT_BREAK_FALLING_BLOCK_VERSION() {
+    auto& $STAINED_GLASS_DOESNT_BREAK_FALLING_BLOCK_VERSION() {
         return STAINED_GLASS_DOESNT_BREAK_FALLING_BLOCK_VERSION;
     }
 

@@ -60,7 +60,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $DEFAULT_OPTION() { return DEFAULT_OPTION; }
+    auto& $DEFAULT_OPTION() { return DEFAULT_OPTION; }
 
     // NOLINTEND
 };

@@ -62,11 +62,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mSaveAllFileList() { return mSaveAllFileList; }
+    auto& $mSaveAllFileList() { return mSaveAllFileList; }
 
-    inline auto& $mSaveAllMutex() { return mSaveAllMutex; }
+    auto& $mSaveAllMutex() { return mSaveAllMutex; }
 
-    inline auto& $mState() { return mState; }
+    auto& $mState() { return mState; }
 
     // NOLINTEND
 };

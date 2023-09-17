@@ -97,7 +97,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $DefaultCommandBlockName() { return DefaultCommandBlockName; }
+    auto& $DefaultCommandBlockName() { return DefaultCommandBlockName; }
 
     // NOLINTEND
 };

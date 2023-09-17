@@ -71,7 +71,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $chunkOffset() { return chunkOffset; }
+    auto& $chunkOffset() { return chunkOffset; }
 
     // NOLINTEND
 };

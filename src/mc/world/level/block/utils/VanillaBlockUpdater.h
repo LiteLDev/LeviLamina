@@ -80,7 +80,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mContext() { return mContext; }
+    auto& $mContext() { return mContext; }
 
     // NOLINTEND
 };

@@ -84,7 +84,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $EDUCATION_METADATA_FILE() { return EDUCATION_METADATA_FILE; }
+    auto& $EDUCATION_METADATA_FILE() { return EDUCATION_METADATA_FILE; }
 
     // NOLINTEND
 };

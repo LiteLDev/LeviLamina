@@ -186,7 +186,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $MAX_AGE() { return MAX_AGE; }
+    auto& $MAX_AGE() { return MAX_AGE; }
 
     // NOLINTEND
 };

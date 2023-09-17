@@ -304,15 +304,15 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $_defaultUnknownQueryFunction() { return _defaultUnknownQueryFunction; }
+    auto& $_defaultUnknownQueryFunction() { return _defaultUnknownQueryFunction; }
 
-    inline auto& $mExperiments() { return mExperiments; }
+    auto& $mExperiments() { return mExperiments; }
 
-    inline auto& $mMolangInitialized() { return mMolangInitialized; }
+    auto& $mMolangInitialized() { return mMolangInitialized; }
 
-    inline auto& $mQueryFunctionAccessors() { return mQueryFunctionAccessors; }
+    auto& $mQueryFunctionAccessors() { return mQueryFunctionAccessors; }
 
-    inline auto& $mQuerySets() { return mQuerySets; }
+    auto& $mQuerySets() { return mQuerySets; }
 
     // NOLINTEND
 };

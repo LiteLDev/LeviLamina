@@ -44,7 +44,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $MAX_CLAMP_ANGLE() { return MAX_CLAMP_ANGLE; }
+    auto& $MAX_CLAMP_ANGLE() { return MAX_CLAMP_ANGLE; }
 
     // NOLINTEND
 };

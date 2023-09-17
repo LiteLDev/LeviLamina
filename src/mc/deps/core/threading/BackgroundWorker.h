@@ -96,7 +96,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $gLocalWorkerMappingSingleton() { return gLocalWorkerMappingSingleton; }
+    auto& $gLocalWorkerMappingSingleton() { return gLocalWorkerMappingSingleton; }
 
     // NOLINTEND
 };

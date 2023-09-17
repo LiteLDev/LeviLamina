@@ -104,7 +104,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mAssertAreas() { return mAssertAreas; }
+    auto& $mAssertAreas() { return mAssertAreas; }
 
     // NOLINTEND
 };

@@ -35,7 +35,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mAllowListFile() { return mAllowListFile; }
+    auto& $mAllowListFile() { return mAllowListFile; }
 
     // NOLINTEND
 };

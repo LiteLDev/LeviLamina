@@ -220,7 +220,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mCombinedItemRegistryInstance() { return mCombinedItemRegistryInstance; }
+    auto& $mCombinedItemRegistryInstance() { return mCombinedItemRegistryInstance; }
 
     // NOLINTEND
 };

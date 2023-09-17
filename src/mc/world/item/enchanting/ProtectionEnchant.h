@@ -70,9 +70,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $THORNS_CHANCE_PER_LEVEL() { return THORNS_CHANCE_PER_LEVEL; }
+    auto& $THORNS_CHANCE_PER_LEVEL() { return THORNS_CHANCE_PER_LEVEL; }
 
-    inline auto& $VALID_ENCHANTMENTS() { return VALID_ENCHANTMENTS; }
+    auto& $VALID_ENCHANTMENTS() { return VALID_ENCHANTMENTS; }
 
     // NOLINTEND
 };

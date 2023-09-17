@@ -577,7 +577,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $MAX_STACK_SIZE() { return MAX_STACK_SIZE; }
+    auto& $MAX_STACK_SIZE() { return MAX_STACK_SIZE; }
 
     // NOLINTEND
 };

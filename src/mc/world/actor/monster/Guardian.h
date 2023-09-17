@@ -187,9 +187,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $ATTACK_TIME() { return ATTACK_TIME; }
+    auto& $ATTACK_TIME() { return ATTACK_TIME; }
 
-    inline auto& $FIRST_DAMAGE_TIME() { return FIRST_DAMAGE_TIME; }
+    auto& $FIRST_DAMAGE_TIME() { return FIRST_DAMAGE_TIME; }
 
     // NOLINTEND
 };

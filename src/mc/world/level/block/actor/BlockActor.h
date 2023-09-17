@@ -268,9 +268,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mClassIdMap() { return mClassIdMap; }
+    auto& $mClassIdMap() { return mClassIdMap; }
 
-    inline auto& $mIdClassMap() { return mIdClassMap; }
+    auto& $mIdClassMap() { return mIdClassMap; }
 
     // NOLINTEND
 };

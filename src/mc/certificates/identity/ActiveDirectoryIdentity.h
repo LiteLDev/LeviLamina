@@ -48,7 +48,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mCachedServiceEndpoint() { return mCachedServiceEndpoint; }
+    auto& $mCachedServiceEndpoint() { return mCachedServiceEndpoint; }
 
     // NOLINTEND
 };

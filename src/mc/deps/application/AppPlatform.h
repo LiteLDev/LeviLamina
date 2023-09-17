@@ -828,7 +828,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mIsInitialized() { return mIsInitialized; }
+    auto& $mIsInitialized() { return mIsInitialized; }
 
     // NOLINTEND
 };

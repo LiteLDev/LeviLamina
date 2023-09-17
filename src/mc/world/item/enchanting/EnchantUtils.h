@@ -156,7 +156,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mEnchantmentNames() { return mEnchantmentNames; }
+    auto& $mEnchantmentNames() { return mEnchantmentNames; }
 
     // NOLINTEND
 };

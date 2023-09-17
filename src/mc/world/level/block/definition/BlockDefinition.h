@@ -48,7 +48,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mDocumentUpgrader() { return mDocumentUpgrader; }
+    auto& $mDocumentUpgrader() { return mDocumentUpgrader; }
 
     // NOLINTEND
 };

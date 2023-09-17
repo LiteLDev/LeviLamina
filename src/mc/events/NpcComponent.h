@@ -161,19 +161,19 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $ACTIONS_TAG() { return ACTIONS_TAG; }
+    auto& $ACTIONS_TAG() { return ACTIONS_TAG; }
 
-    inline auto& $INTERACTIVE_TAG() { return INTERACTIVE_TAG; }
+    auto& $INTERACTIVE_TAG() { return INTERACTIVE_TAG; }
 
-    inline auto& $NAME_RAW_TEXT_TAG() { return NAME_RAW_TEXT_TAG; }
+    auto& $NAME_RAW_TEXT_TAG() { return NAME_RAW_TEXT_TAG; }
 
-    inline auto& $PLAYER_ID_TAG() { return PLAYER_ID_TAG; }
+    auto& $PLAYER_ID_TAG() { return PLAYER_ID_TAG; }
 
-    inline auto& $PLAYER_SCENE_MAPPING_TAG() { return PLAYER_SCENE_MAPPING_TAG; }
+    auto& $PLAYER_SCENE_MAPPING_TAG() { return PLAYER_SCENE_MAPPING_TAG; }
 
-    inline auto& $SCENE_NAME_TAG() { return SCENE_NAME_TAG; }
+    auto& $SCENE_NAME_TAG() { return SCENE_NAME_TAG; }
 
-    inline auto& $URL_TAG() { return URL_TAG; }
+    auto& $URL_TAG() { return URL_TAG; }
 
     // NOLINTEND
 };

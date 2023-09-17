@@ -126,7 +126,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $ITEMS_SIZE() { return ITEMS_SIZE; }
+    auto& $ITEMS_SIZE() { return ITEMS_SIZE; }
 
     // NOLINTEND
 };

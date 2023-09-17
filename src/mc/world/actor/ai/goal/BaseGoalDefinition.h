@@ -39,7 +39,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mControlFlagMap() { return mControlFlagMap; }
+    auto& $mControlFlagMap() { return mControlFlagMap; }
 
     // NOLINTEND
 };

@@ -101,9 +101,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $Main_Hand_Defaults() { return Main_Hand_Defaults; }
+    auto& $Main_Hand_Defaults() { return Main_Hand_Defaults; }
 
-    inline auto& $Off_Hand_Defaults() { return Off_Hand_Defaults; }
+    auto& $Off_Hand_Defaults() { return Off_Hand_Defaults; }
 
     // NOLINTEND
 };

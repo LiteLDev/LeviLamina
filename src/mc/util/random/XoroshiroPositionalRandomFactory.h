@@ -53,7 +53,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mThreadLocalDigest() { return mThreadLocalDigest; }
+    auto& $mThreadLocalDigest() { return mThreadLocalDigest; }
 
     // NOLINTEND
 };

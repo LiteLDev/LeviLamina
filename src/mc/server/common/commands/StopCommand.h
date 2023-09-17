@@ -35,7 +35,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mServer() { return mServer; }
+    auto& $mServer() { return mServer; }
 
     // NOLINTEND
 };

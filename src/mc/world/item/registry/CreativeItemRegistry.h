@@ -100,7 +100,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mCurrentRegistry() { return mCurrentRegistry; }
+    auto& $mCurrentRegistry() { return mCurrentRegistry; }
 
     // NOLINTEND
 };

@@ -86,9 +86,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $ModuleName() { return ModuleName; }
+    auto& $ModuleName() { return ModuleName; }
 
-    inline auto& $ModuleUUID() { return ModuleUUID; }
+    auto& $ModuleUUID() { return ModuleUUID; }
 
     // NOLINTEND
 };

@@ -130,19 +130,19 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mChemistryMixes() { return mChemistryMixes; }
+    auto& $mChemistryMixes() { return mChemistryMixes; }
 
-    inline auto& $mContainerMixes() { return mContainerMixes; }
+    auto& $mContainerMixes() { return mContainerMixes; }
 
-    inline auto& $mIsInitialized() { return mIsInitialized; }
+    auto& $mIsInitialized() { return mIsInitialized; }
 
-    inline auto& $mPotionMixes() { return mPotionMixes; }
+    auto& $mPotionMixes() { return mPotionMixes; }
 
-    inline auto& $mValidContainers() { return mValidContainers; }
+    auto& $mValidContainers() { return mValidContainers; }
 
-    inline auto& $mValidIngredients() { return mValidIngredients; }
+    auto& $mValidIngredients() { return mValidIngredients; }
 
-    inline auto& $mValidRecipeInputs() { return mValidRecipeInputs; }
+    auto& $mValidRecipeInputs() { return mValidRecipeInputs; }
 
     // NOLINTEND
 };

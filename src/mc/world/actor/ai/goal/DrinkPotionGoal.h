@@ -61,9 +61,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $SPEED_MODIFIER_DRINKING_UUID() { return SPEED_MODIFIER_DRINKING_UUID; }
+    auto& $SPEED_MODIFIER_DRINKING_UUID() { return SPEED_MODIFIER_DRINKING_UUID; }
 
-    inline auto& $THROTTLE_COOLDOWN() { return THROTTLE_COOLDOWN; }
+    auto& $THROTTLE_COOLDOWN() { return THROTTLE_COOLDOWN; }
 
     // NOLINTEND
 };

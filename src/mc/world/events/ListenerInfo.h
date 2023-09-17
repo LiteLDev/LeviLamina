@@ -19,7 +19,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $SQRT_FLT_MAX() { return SQRT_FLT_MAX; }
+    auto& $SQRT_FLT_MAX() { return SQRT_FLT_MAX; }
 
     // NOLINTEND
 };

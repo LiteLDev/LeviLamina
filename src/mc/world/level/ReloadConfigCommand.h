@@ -35,7 +35,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $sScriptSettings() { return sScriptSettings; }
+    auto& $sScriptSettings() { return sScriptSettings; }
 
     // NOLINTEND
 };

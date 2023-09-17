@@ -105,7 +105,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $sLocalConnectivitySystem() { return sLocalConnectivitySystem; }
+    auto& $sLocalConnectivitySystem() { return sLocalConnectivitySystem; }
 
     // NOLINTEND
 };

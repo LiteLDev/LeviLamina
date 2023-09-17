@@ -33,7 +33,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mGameEventPairs() { return mGameEventPairs; }
+    auto& $mGameEventPairs() { return mGameEventPairs; }
 
     // NOLINTEND
 };

@@ -37,7 +37,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $WHAT() { return WHAT; }
+    auto& $WHAT() { return WHAT; }
 
     // NOLINTEND
 };

@@ -106,7 +106,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mInvalidInstance() { return mInvalidInstance; }
+    auto& $mInvalidInstance() { return mInvalidInstance; }
 
     // NOLINTEND
 };

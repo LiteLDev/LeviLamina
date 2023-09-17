@@ -96,7 +96,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $ABILITY_NAMES() { return ABILITY_NAMES; }
+    auto& $ABILITY_NAMES() { return ABILITY_NAMES; }
 
     // NOLINTEND
 };

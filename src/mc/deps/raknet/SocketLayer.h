@@ -38,7 +38,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mPlatformAdapterOverride() { return mPlatformAdapterOverride; }
+    auto& $mPlatformAdapterOverride() { return mPlatformAdapterOverride; }
 
     // NOLINTEND
 };
