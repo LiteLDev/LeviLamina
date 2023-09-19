@@ -93,7 +93,7 @@ public:
 protected:
     [[nodiscard]] FormType getType() const override { return FormType::SimpleForm; }
 
-    fifo_json serialize() override {
+    [[nodiscard]] fifo_json serialize() const override {
         try {
             fifo_json form = {
                 {"title",   mTitle            },

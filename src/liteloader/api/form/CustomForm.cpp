@@ -15,7 +15,7 @@ public:
 
     [[nodiscard]] Type getType() const override { return Type::Label; }
 
-    fifo_json serialize() override {
+    [[nodiscard]] fifo_json serialize() const override {
         try {
             return {
                 {"type", "label"},
@@ -26,6 +26,8 @@ public:
             return {};
         }
     }
+
+    [[nodiscard]] FormElementResult parseResult(const fifo_json&) const override { return {}; }
 };
 
 class Input : public CustomFormElement {
@@ -42,7 +44,7 @@ public:
 
     [[nodiscard]] Type getType() const override { return Type::Input; }
 
-    fifo_json serialize() override {
+    [[nodiscard]] fifo_json serialize() const override {
         try {
             fifo_json input = {
                 {"type", "input"},
@@ -60,6 +62,8 @@ public:
             return {};
         }
     }
+
+    [[nodiscard]] FormElementResult parseResult(const fifo_json& data) const override { return data.get<std::string>(); }
 };
 
 class Toggle : public CustomFormElement {
@@ -74,7 +78,7 @@ public:
 
     [[nodiscard]] Type getType() const override { return Type::Toggle; }
 
-    fifo_json serialize() override {
+    [[nodiscard]] fifo_json serialize() const override {
         try {
             return {
                 {"type",    "toggle"},
@@ -86,6 +90,8 @@ public:
             return {};
         }
     }
+
+    [[nodiscard]] FormElementResult parseResult(const fifo_json& data) const override { return data.get<bool>(); }
 };
 
 class Dropdown : public CustomFormElement {
@@ -101,7 +107,7 @@ public:
 
     [[nodiscard]] Type getType() const override { return Type::Dropdown; }
 
-    fifo_json serialize() override {
+    [[nodiscard]] fifo_json serialize() const override {
         try {
             return {
                 {"type",    "dropdown"},
@@ -114,6 +120,8 @@ public:
             return {};
         }
     }
+
+    [[nodiscard]] FormElementResult parseResult(const fifo_json& data) const override { return mOptions[data.get<int>()]; }
 };
 
 class Slider : public CustomFormElement {
@@ -124,6 +132,8 @@ public:
     double      mMax     = 0.0;
     double      mStep    = 1.0;
     double      mDefault = 0.0;
+
+    [[nodiscard]] bool isValid() const { return mMin <= mMax && mStep > 0.0 && mDefault >= mMin && mDefault <= mMax; }
 
     void validate() {
         if (mMin > mMax) {
@@ -140,16 +150,20 @@ public:
     }
 
     Slider(std::string name, std::string text, double min, double max, double step, double defaultVal)
-    : CustomFormElement(std::move(name)), mText(std::move(text)), mMin(min), mMax(max), mStep(step), mDefault(defaultVal) {
+    : CustomFormElement(std::move(name)), mText(std::move(text)), mMin(min), mMax(max), mStep(step),
+      mDefault(defaultVal) {
         validate();
     }
     ~Slider() override = default;
 
     [[nodiscard]] Type getType() const override { return Type::Slider; }
 
-    fifo_json serialize() override {
+    [[nodiscard]] fifo_json serialize() const override {
         try {
-            validate();
+            if (!isValid()) {
+                ll::logger.error("Failed to serialize Slider: invalid data");
+                return {};
+            }
             return {
                 {"type",    "slider"},
                 {"text",    mText   },
@@ -163,6 +177,8 @@ public:
             return {};
         }
     }
+
+    [[nodiscard]] FormElementResult parseResult(const fifo_json& data) const override { return data.get<double>(); }
 };
 
 class StepSlider : public CustomFormElement {
@@ -171,6 +187,8 @@ public:
     std::string              mText{};
     std::vector<std::string> mSteps{};
     size_t                   mDefault = 0;
+
+    [[nodiscard]] bool isValid() const { return !mSteps.empty() && mDefault < mSteps.size(); }
 
     void validate() {
         if (mDefault >= mSteps.size()) {
@@ -186,9 +204,12 @@ public:
 
     [[nodiscard]] Type getType() const override { return Type::StepSlider; }
 
-    fifo_json serialize() override {
+    [[nodiscard]] fifo_json serialize() const override {
         try {
-            validate();
+            if (!isValid()) {
+                ll::logger.error("Failed to serialize StepSlider: invalid data");
+                return {};
+            }
             return {
                 {"type",    "step_slider"},
                 {"text",    mText        },
@@ -200,6 +221,8 @@ public:
             return {};
         }
     }
+
+    [[nodiscard]] FormElementResult parseResult(const fifo_json& data) const override { return mSteps[data.get<int>()]; }
 };
 
 class CustomForm::CustomFormImpl : public FormImpl {
@@ -241,8 +264,14 @@ public:
         append(std::make_shared<Dropdown>(name, text, options, defaultVal));
     }
 
-    void
-    appendSlider(const std::string& name, const std::string& text, double min, double max, double step, double defaultVal) {
+    void appendSlider(
+        const std::string& name,
+        const std::string& text,
+        double             min,
+        double             max,
+        double             step,
+        double             defaultVal
+    ) {
         append(std::make_shared<Slider>(name, text, min, max, step, defaultVal));
     }
 
@@ -263,7 +292,7 @@ public:
 protected:
     [[nodiscard]] FormType getType() const override { return FormType::CustomForm; }
 
-    fifo_json serialize() override {
+    [[nodiscard]] fifo_json serialize() const override {
         try {
             fifo_json form = {
                 {"title",   mTitle            },

@@ -6,21 +6,27 @@
 
 namespace ll::form {
 
+class FormElementResult;
+
 class CustomFormElement {
 public:
     enum class Type { None = -1, Label, Input, Toggle, Dropdown, Slider, StepSlider };
 
-protected:
-    std::string name{};
+    std::string mName{};
 
-    explicit CustomFormElement(std::string name) : name(std::move(name)) {}
-    virtual ~CustomFormElement()      = default;
-    virtual Type      getType() const = 0;
-    virtual fifo_json serialize()     = 0;
+    [[nodiscard]] virtual Type              getType() const                          = 0;
+    [[nodiscard]] virtual FormElementResult parseResult(const fifo_json& data) const = 0;
+
+protected:
+    explicit CustomFormElement(std::string name) : mName(std::move(name)) {}
+    virtual ~CustomFormElement() = default;
+
+    [[nodiscard]] virtual fifo_json serialize() const = 0;
+
     friend class CustomForm;
 };
 
-class CustomForm {
+class CustomForm : public Form {
 
     class CustomFormImpl;
     std::unique_ptr<CustomFormImpl> impl{};
@@ -30,6 +36,8 @@ public:
 
     LLAPI explicit CustomForm(const std::string& title);
 
+    ~CustomForm() override = default;
+
     LLAPI CustomForm& setTitle(const std::string& title);
 
     LLAPI CustomForm& appendLabel(const std::string& text);
@@ -38,7 +46,7 @@ public:
         const std::string& name,
         const std::string& text,
         const std::string& placeholder = "",
-        const std::string& defaultVal         = ""
+        const std::string& defaultVal  = ""
     );
 
     LLAPI CustomForm& appendToggle(const std::string& name, const std::string& text, bool defaultVal = false);
@@ -55,8 +63,8 @@ public:
         const std::string& text,
         double             min,
         double             max,
-        double             step = 0.0,
-        double             defaultVal  = 0.0
+        double             step       = 0.0,
+        double             defaultVal = 0.0
     );
 
     LLAPI CustomForm& appendStepSlider(

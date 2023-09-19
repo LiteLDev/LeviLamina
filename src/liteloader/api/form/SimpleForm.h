@@ -6,7 +6,7 @@
 
 namespace ll::form {
 
-class SimpleForm {
+class SimpleForm : public Form {
 
     class SimpleFormImpl;
     std::unique_ptr<SimpleFormImpl> impl{};
@@ -16,6 +16,7 @@ public:
     using ButtonCallback = std::function<void(Player&)>;
 
     LLAPI explicit SimpleForm(const std::string& title, const std::string& content = "");
+    ~SimpleForm() override = default;
 
     LLAPI SimpleForm& setTitle(const std::string& title);
 
