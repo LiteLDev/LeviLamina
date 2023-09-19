@@ -58,9 +58,29 @@ void CustomFormHandler::handle(Player& player, const std::string& data) const {
     }
 }
 
-std::map<uint, std::unique_ptr<FormHandler>> formHandlers;
-uint                                         currentId = 0;
+void ModalFormHandler::handle(Player& player, const std::string& data) const {
+    bool selected = data == "true";
+    if (mCallback) {
+        mCallback(player, selected);
+    }
+}
 
-void addFormHandler(std::unique_ptr<FormHandler>&& data) { formHandlers.emplace(++currentId, std::move(data)); }
+std::map<uint, std::unique_ptr<FormHandler>> formHandlers = {};
+uint                                         currentId    = 114514;
+
+uint addFormHandler(std::unique_ptr<FormHandler>&& data) {
+    formHandlers.emplace(++currentId, std::move(data));
+    return currentId;
+}
+
+void handleFormPacket(Player* player, uint formId, const std::string& data) {
+    auto it = formHandlers.find(formId);
+    if (it == formHandlers.end()) {
+        ll::logger.error("Failed to find form handler for form id {}", formId);
+        return;
+    }
+    it->second->handle(*player, data);
+    formHandlers.erase(it);
+}
 
 } // namespace ll::form::handler

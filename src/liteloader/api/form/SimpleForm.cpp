@@ -1,5 +1,6 @@
 #include "SimpleForm.h"
 #include <liteloader/core/LiteLoader.h>
+#include <liteloader/core/form/FormHandler.h>
 
 namespace ll::form {
 
@@ -58,16 +59,6 @@ public:
     std::vector<std::shared_ptr<SimpleFormElement>> mElements{};
     Callback                                        mCallback;
 
-    const Callback defaultCallback = [&](Player& player, int selected) {
-        if (selected >= 0 && selected < static_cast<int>(mElements.size())) {
-            auto& e = mElements[selected];
-            if (e /* && e->getType() == SimpleFormElement::Type::Button */) {
-                auto* button = reinterpret_cast<Button*>(e.get());
-                button->callback(player);
-            }
-        }
-    };
-
     explicit SimpleFormImpl(std::string title, std::string content = "")
     : mTitle(std::move(title)), mContent(std::move(content)) {}
 
@@ -85,9 +76,24 @@ public:
         append(std::make_shared<Button>(text, image, std::move(callback)));
     }
 
-    bool sendTo(Player& player, Callback callback) { // NOLINT
-        // TODO
-        return false;
+    bool sendTo(Player& player, Callback callback) {
+        callback = callback ? std::move(callback) : mCallback;
+        if (!callback) {
+            ll::logger.error("SimpleForm callback is null");
+            return false;
+        }
+        std::vector<SimpleForm::ButtonCallback> buttonCallbacks;
+        for (auto& e : mElements) {
+            // Currently, SimpleFormElement can only be Button
+            buttonCallbacks.push_back(((Button*)e.get())->mCallback);
+        }
+        uint id = handler::addFormHandler(std::make_unique<handler::SimpleFormHandler>(std::move(callback), buttonCallbacks));
+        auto json = serialize();
+        if (json.is_null()) {
+            return false;
+        }
+        player.sendRawFormPacket(id, json.dump());
+        return true;
     }
 
 protected:
@@ -115,9 +121,8 @@ protected:
     }
 };
 
-SimpleForm::SimpleForm(const std::string& title, const std::string& content) {
-    impl = std::make_unique<SimpleFormImpl>(title, content);
-}
+SimpleForm::SimpleForm(const std::string& title, const std::string& content)
+: impl(std::make_unique<SimpleFormImpl>(title, content)) {}
 
 SimpleForm& SimpleForm::setTitle(const std::string& title) {
     impl->setTitle(title);
@@ -135,9 +140,6 @@ SimpleForm& SimpleForm::appendButton(const std::string& text, const std::string&
 }
 
 SimpleForm& SimpleForm::sendTo(Player& player, Callback callback) {
-    if (!callback) {
-        callback = impl->defaultCallback;
-    }
     impl->sendTo(player, std::move(callback));
     return *this;
 }

@@ -1,6 +1,7 @@
 #include "liteloader/api/form/CustomForm.h"
 #include "liteloader/core/LiteLoader.h"
 
+#include <liteloader/core/form/FormHandler.h>
 #include <utility>
 
 namespace ll::form {
@@ -284,9 +285,19 @@ public:
         append(std::make_shared<StepSlider>(name, text, steps, defaultVal));
     }
 
-    bool sendTo(Player& player, Callback callback) { // NOLINT
-        // TODO
-        return false;
+    bool sendTo(Player& player, Callback callback) {
+        callback = callback ? std::move(callback) : mCallback;
+        if (!callback) {
+            ll::logger.error("CustomForm callback is null");
+            return false;
+        }
+        int id = handler::addFormHandler(std::make_unique<handler::CustomFormHandler>(std::move(callback), mElements));
+        auto json = serialize();
+        if (json.is_null()) {
+            return false;
+        }
+        player.sendRawFormPacket(id, json.dump());
+        return true;
     }
 
 protected:
