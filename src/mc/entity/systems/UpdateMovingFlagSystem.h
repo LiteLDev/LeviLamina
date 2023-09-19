@@ -11,9 +11,9 @@
 class UpdateMovingFlagSystem {
 public:
     // prevent constructor by default
-    UpdateMovingFlagSystem& operator=(UpdateMovingFlagSystem const&) = delete;
-    UpdateMovingFlagSystem(UpdateMovingFlagSystem const&)            = delete;
-    UpdateMovingFlagSystem()                                         = delete;
+    UpdateMovingFlagSystem& operator=(UpdateMovingFlagSystem const&);
+    UpdateMovingFlagSystem(UpdateMovingFlagSystem const&);
+    UpdateMovingFlagSystem();
 
 public:
     // NOLINTBEGIN

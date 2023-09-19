@@ -10,8 +10,8 @@
 class CraftingEventPacket : public ::Packet {
 public:
     // prevent constructor by default
-    CraftingEventPacket& operator=(CraftingEventPacket const&) = delete;
-    CraftingEventPacket(CraftingEventPacket const&)            = delete;
+    CraftingEventPacket& operator=(CraftingEventPacket const&);
+    CraftingEventPacket(CraftingEventPacket const&);
 
 public:
     // NOLINTBEGIN

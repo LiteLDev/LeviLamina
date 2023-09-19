@@ -16,9 +16,9 @@ public:
     struct RotationType {
     public:
         // prevent constructor by default
-        RotationType& operator=(RotationType const&) = delete;
-        RotationType(RotationType const&)            = delete;
-        RotationType()                               = delete;
+        RotationType& operator=(RotationType const&);
+        RotationType(RotationType const&);
+        RotationType();
 
     public:
         // NOLINTBEGIN
@@ -33,9 +33,9 @@ public:
 
 public:
     // prevent constructor by default
-    BlockTransformationComponent& operator=(BlockTransformationComponent const&) = delete;
-    BlockTransformationComponent(BlockTransformationComponent const&)            = delete;
-    BlockTransformationComponent()                                               = delete;
+    BlockTransformationComponent& operator=(BlockTransformationComponent const&);
+    BlockTransformationComponent(BlockTransformationComponent const&);
+    BlockTransformationComponent();
 
 public:
     // NOLINTBEGIN

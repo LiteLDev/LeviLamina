@@ -5,7 +5,7 @@
 struct CactusBlockFlag {
 public:
     // prevent constructor by default
-    CactusBlockFlag& operator=(CactusBlockFlag const&) = delete;
-    CactusBlockFlag(CactusBlockFlag const&)            = delete;
-    CactusBlockFlag()                                  = delete;
+    CactusBlockFlag& operator=(CactusBlockFlag const&);
+    CactusBlockFlag(CactusBlockFlag const&);
+    CactusBlockFlag();
 };

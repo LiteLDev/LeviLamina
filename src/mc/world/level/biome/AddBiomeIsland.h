@@ -13,9 +13,9 @@ namespace OperationNodeFilters {
 class AddBiomeIsland {
 public:
     // prevent constructor by default
-    AddBiomeIsland& operator=(AddBiomeIsland const&) = delete;
-    AddBiomeIsland(AddBiomeIsland const&)            = delete;
-    AddBiomeIsland()                                 = delete;
+    AddBiomeIsland& operator=(AddBiomeIsland const&);
+    AddBiomeIsland(AddBiomeIsland const&);
+    AddBiomeIsland();
 
 public:
     // NOLINTBEGIN

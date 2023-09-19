@@ -10,8 +10,8 @@
 class SettingsCommandPacket : public ::Packet {
 public:
     // prevent constructor by default
-    SettingsCommandPacket& operator=(SettingsCommandPacket const&) = delete;
-    SettingsCommandPacket(SettingsCommandPacket const&)            = delete;
+    SettingsCommandPacket& operator=(SettingsCommandPacket const&);
+    SettingsCommandPacket(SettingsCommandPacket const&);
 
 public:
     // NOLINTBEGIN

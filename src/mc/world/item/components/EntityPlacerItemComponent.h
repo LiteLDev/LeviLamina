@@ -5,9 +5,9 @@
 class EntityPlacerItemComponent {
 public:
     // prevent constructor by default
-    EntityPlacerItemComponent& operator=(EntityPlacerItemComponent const&) = delete;
-    EntityPlacerItemComponent(EntityPlacerItemComponent const&)            = delete;
-    EntityPlacerItemComponent()                                            = delete;
+    EntityPlacerItemComponent& operator=(EntityPlacerItemComponent const&);
+    EntityPlacerItemComponent(EntityPlacerItemComponent const&);
+    EntityPlacerItemComponent();
 
 public:
     // NOLINTBEGIN

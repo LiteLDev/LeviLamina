@@ -5,7 +5,7 @@
 struct LevelTagIDType {
 public:
     // prevent constructor by default
-    LevelTagIDType& operator=(LevelTagIDType const&) = delete;
-    LevelTagIDType(LevelTagIDType const&)            = delete;
-    LevelTagIDType()                                 = delete;
+    LevelTagIDType& operator=(LevelTagIDType const&);
+    LevelTagIDType(LevelTagIDType const&);
+    LevelTagIDType();
 };

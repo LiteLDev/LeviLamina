@@ -5,7 +5,7 @@
 struct PlayerIsSleepingFlag {
 public:
     // prevent constructor by default
-    PlayerIsSleepingFlag& operator=(PlayerIsSleepingFlag const&) = delete;
-    PlayerIsSleepingFlag(PlayerIsSleepingFlag const&)            = delete;
-    PlayerIsSleepingFlag()                                       = delete;
+    PlayerIsSleepingFlag& operator=(PlayerIsSleepingFlag const&);
+    PlayerIsSleepingFlag(PlayerIsSleepingFlag const&);
+    PlayerIsSleepingFlag();
 };

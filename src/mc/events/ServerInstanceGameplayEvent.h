@@ -6,7 +6,7 @@ template <typename T0>
 struct ServerInstanceGameplayEvent {
 public:
     // prevent constructor by default
-    ServerInstanceGameplayEvent& operator=(ServerInstanceGameplayEvent const&) = delete;
-    ServerInstanceGameplayEvent(ServerInstanceGameplayEvent const&)            = delete;
-    ServerInstanceGameplayEvent()                                              = delete;
+    ServerInstanceGameplayEvent& operator=(ServerInstanceGameplayEvent const&);
+    ServerInstanceGameplayEvent(ServerInstanceGameplayEvent const&);
+    ServerInstanceGameplayEvent();
 };

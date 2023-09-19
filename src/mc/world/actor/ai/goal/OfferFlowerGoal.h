@@ -24,9 +24,9 @@ public:
     class OfferFlowerDefinition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        OfferFlowerDefinition& operator=(OfferFlowerDefinition const&) = delete;
-        OfferFlowerDefinition(OfferFlowerDefinition const&)            = delete;
-        OfferFlowerDefinition()                                        = delete;
+        OfferFlowerDefinition& operator=(OfferFlowerDefinition const&);
+        OfferFlowerDefinition(OfferFlowerDefinition const&);
+        OfferFlowerDefinition();
 
     public:
         // NOLINTBEGIN
@@ -49,9 +49,9 @@ public:
 
 public:
     // prevent constructor by default
-    OfferFlowerGoal& operator=(OfferFlowerGoal const&) = delete;
-    OfferFlowerGoal(OfferFlowerGoal const&)            = delete;
-    OfferFlowerGoal()                                  = delete;
+    OfferFlowerGoal& operator=(OfferFlowerGoal const&);
+    OfferFlowerGoal(OfferFlowerGoal const&);
+    OfferFlowerGoal();
 
 public:
     // NOLINTBEGIN
@@ -78,7 +78,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0OfferFlowerGoal@@QEAA@AEAVMob@@@Z
-    MCAPI OfferFlowerGoal(class Mob&);
+    MCAPI explicit OfferFlowerGoal(class Mob&);
 
     // symbol: ?getMaxOfferFlowerDurationTicks@OfferFlowerGoal@@QEBAHXZ
     MCAPI int getMaxOfferFlowerDurationTicks() const;

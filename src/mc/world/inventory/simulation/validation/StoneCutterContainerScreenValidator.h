@@ -10,8 +10,8 @@
 class StoneCutterContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // prevent constructor by default
-    StoneCutterContainerScreenValidator& operator=(StoneCutterContainerScreenValidator const&) = delete;
-    StoneCutterContainerScreenValidator(StoneCutterContainerScreenValidator const&)            = delete;
+    StoneCutterContainerScreenValidator& operator=(StoneCutterContainerScreenValidator const&);
+    StoneCutterContainerScreenValidator(StoneCutterContainerScreenValidator const&);
 
 public:
     // NOLINTBEGIN

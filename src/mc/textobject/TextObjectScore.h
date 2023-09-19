@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class TextObjectScore : public ::ITextObject {
 public:
     // prevent constructor by default
-    TextObjectScore& operator=(TextObjectScore const&) = delete;
-    TextObjectScore(TextObjectScore const&)            = delete;
-    TextObjectScore()                                  = delete;
+    TextObjectScore& operator=(TextObjectScore const&);
+    TextObjectScore(TextObjectScore const&);
+    TextObjectScore();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class SleepState : public ::PetSleepWithOwnerState {
 public:
     // prevent constructor by default
-    SleepState& operator=(SleepState const&) = delete;
-    SleepState(SleepState const&)            = delete;
-    SleepState()                             = delete;
+    SleepState& operator=(SleepState const&);
+    SleepState(SleepState const&);
+    SleepState();
 
 public:
     // NOLINTBEGIN

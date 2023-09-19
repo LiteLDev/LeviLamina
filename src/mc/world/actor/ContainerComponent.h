@@ -10,8 +10,8 @@
 class ContainerComponent : public ::ContainerContentChangeListener {
 public:
     // prevent constructor by default
-    ContainerComponent& operator=(ContainerComponent const&) = delete;
-    ContainerComponent(ContainerComponent const&)            = delete;
+    ContainerComponent& operator=(ContainerComponent const&);
+    ContainerComponent(ContainerComponent const&);
 
 public:
     // NOLINTBEGIN

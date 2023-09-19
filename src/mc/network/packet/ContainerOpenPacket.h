@@ -12,8 +12,8 @@
 class ContainerOpenPacket : public ::Packet {
 public:
     // prevent constructor by default
-    ContainerOpenPacket& operator=(ContainerOpenPacket const&) = delete;
-    ContainerOpenPacket(ContainerOpenPacket const&)            = delete;
+    ContainerOpenPacket& operator=(ContainerOpenPacket const&);
+    ContainerOpenPacket(ContainerOpenPacket const&);
 
 public:
     // NOLINTBEGIN

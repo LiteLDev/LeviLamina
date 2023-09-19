@@ -5,7 +5,7 @@
 struct MesaSurfaceBlocks {
 public:
     // prevent constructor by default
-    MesaSurfaceBlocks& operator=(MesaSurfaceBlocks const&) = delete;
-    MesaSurfaceBlocks(MesaSurfaceBlocks const&)            = delete;
-    MesaSurfaceBlocks()                                    = delete;
+    MesaSurfaceBlocks& operator=(MesaSurfaceBlocks const&);
+    MesaSurfaceBlocks(MesaSurfaceBlocks const&);
+    MesaSurfaceBlocks();
 };

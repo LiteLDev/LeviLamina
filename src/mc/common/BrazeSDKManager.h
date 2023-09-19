@@ -5,9 +5,9 @@
 class BrazeSDKManager {
 public:
     // prevent constructor by default
-    BrazeSDKManager& operator=(BrazeSDKManager const&) = delete;
-    BrazeSDKManager(BrazeSDKManager const&)            = delete;
-    BrazeSDKManager()                                  = delete;
+    BrazeSDKManager& operator=(BrazeSDKManager const&);
+    BrazeSDKManager(BrazeSDKManager const&);
+    BrazeSDKManager();
 
 public:
     // NOLINTBEGIN

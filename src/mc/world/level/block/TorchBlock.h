@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class TorchBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    TorchBlock& operator=(TorchBlock const&) = delete;
-    TorchBlock(TorchBlock const&)            = delete;
-    TorchBlock()                             = delete;
+    TorchBlock& operator=(TorchBlock const&);
+    TorchBlock(TorchBlock const&);
+    TorchBlock();
 
 public:
     // NOLINTBEGIN

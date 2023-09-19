@@ -11,8 +11,8 @@
 class PlayStatusPacket : public ::Packet {
 public:
     // prevent constructor by default
-    PlayStatusPacket& operator=(PlayStatusPacket const&) = delete;
-    PlayStatusPacket(PlayStatusPacket const&)            = delete;
+    PlayStatusPacket& operator=(PlayStatusPacket const&);
+    PlayStatusPacket(PlayStatusPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -37,7 +37,7 @@ public:
     MCVAPI ~PlayStatusPacket();
 
     // symbol: ??0PlayStatusPacket@@QEAA@W4PlayStatus@@@Z
-    MCAPI PlayStatusPacket(::PlayStatus);
+    MCAPI explicit PlayStatusPacket(::PlayStatus);
 
     // symbol: ??0PlayStatusPacket@@QEAA@XZ
     MCAPI PlayStatusPacket();

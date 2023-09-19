@@ -15,8 +15,8 @@ namespace Core {
 class StorageAreaStateListener {
 public:
     // prevent constructor by default
-    StorageAreaStateListener& operator=(StorageAreaStateListener const&) = delete;
-    StorageAreaStateListener(StorageAreaStateListener const&)            = delete;
+    StorageAreaStateListener& operator=(StorageAreaStateListener const&);
+    StorageAreaStateListener(StorageAreaStateListener const&);
 
 public:
     // NOLINTBEGIN

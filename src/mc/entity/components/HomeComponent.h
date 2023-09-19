@@ -8,8 +8,8 @@
 class HomeComponent {
 public:
     // prevent constructor by default
-    HomeComponent& operator=(HomeComponent const&) = delete;
-    HomeComponent(HomeComponent const&)            = delete;
+    HomeComponent& operator=(HomeComponent const&);
+    HomeComponent(HomeComponent const&);
 
 public:
     // NOLINTBEGIN

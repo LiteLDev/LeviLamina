@@ -10,8 +10,8 @@
 class ModalFormResponsePacket : public ::Packet {
 public:
     // prevent constructor by default
-    ModalFormResponsePacket& operator=(ModalFormResponsePacket const&) = delete;
-    ModalFormResponsePacket(ModalFormResponsePacket const&)            = delete;
+    ModalFormResponsePacket& operator=(ModalFormResponsePacket const&);
+    ModalFormResponsePacket(ModalFormResponsePacket const&);
 
 public:
     // NOLINTBEGIN

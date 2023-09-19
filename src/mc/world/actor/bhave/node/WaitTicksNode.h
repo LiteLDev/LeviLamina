@@ -9,8 +9,8 @@
 class WaitTicksNode : public ::BehaviorNode {
 public:
     // prevent constructor by default
-    WaitTicksNode& operator=(WaitTicksNode const&) = delete;
-    WaitTicksNode(WaitTicksNode const&)            = delete;
+    WaitTicksNode& operator=(WaitTicksNode const&);
+    WaitTicksNode(WaitTicksNode const&);
 
 public:
     // NOLINTBEGIN

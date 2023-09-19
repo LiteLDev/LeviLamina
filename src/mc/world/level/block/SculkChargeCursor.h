@@ -5,14 +5,14 @@
 class SculkChargeCursor {
 public:
     // prevent constructor by default
-    SculkChargeCursor& operator=(SculkChargeCursor const&) = delete;
-    SculkChargeCursor(SculkChargeCursor const&)            = delete;
-    SculkChargeCursor()                                    = delete;
+    SculkChargeCursor& operator=(SculkChargeCursor const&);
+    SculkChargeCursor(SculkChargeCursor const&);
+    SculkChargeCursor();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0SculkChargeCursor@@QEAA@AEBVCompoundTag@@@Z
-    MCAPI SculkChargeCursor(class CompoundTag const&);
+    MCAPI explicit SculkChargeCursor(class CompoundTag const&);
 
     // symbol:
     // ?update@SculkChargeCursor@@QEAAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@AEAVSculkSpreader@@_N@Z

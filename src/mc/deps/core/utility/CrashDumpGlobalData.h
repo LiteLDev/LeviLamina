@@ -5,9 +5,9 @@
 class CrashDumpGlobalData {
 public:
     // prevent constructor by default
-    CrashDumpGlobalData& operator=(CrashDumpGlobalData const&) = delete;
-    CrashDumpGlobalData(CrashDumpGlobalData const&)            = delete;
-    CrashDumpGlobalData()                                      = delete;
+    CrashDumpGlobalData& operator=(CrashDumpGlobalData const&);
+    CrashDumpGlobalData(CrashDumpGlobalData const&);
+    CrashDumpGlobalData();
 
 public:
     // NOLINTBEGIN

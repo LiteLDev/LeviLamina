@@ -10,9 +10,9 @@ namespace ScriptModuleMinecraft {
 class ScriptItemTypeIterator {
 public:
     // prevent constructor by default
-    ScriptItemTypeIterator& operator=(ScriptItemTypeIterator const&) = delete;
-    ScriptItemTypeIterator(ScriptItemTypeIterator const&)            = delete;
-    ScriptItemTypeIterator()                                         = delete;
+    ScriptItemTypeIterator& operator=(ScriptItemTypeIterator const&);
+    ScriptItemTypeIterator(ScriptItemTypeIterator const&);
+    ScriptItemTypeIterator();
 
 public:
     // NOLINTBEGIN

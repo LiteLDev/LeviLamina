@@ -5,8 +5,8 @@
 class LevelChunkMetaData {
 public:
     // prevent constructor by default
-    LevelChunkMetaData& operator=(LevelChunkMetaData const&) = delete;
-    LevelChunkMetaData()                                     = delete;
+    LevelChunkMetaData& operator=(LevelChunkMetaData const&);
+    LevelChunkMetaData();
 
 public:
     // NOLINTBEGIN

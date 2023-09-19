@@ -5,9 +5,9 @@
 class FuelItemComponent {
 public:
     // prevent constructor by default
-    FuelItemComponent& operator=(FuelItemComponent const&) = delete;
-    FuelItemComponent(FuelItemComponent const&)            = delete;
-    FuelItemComponent()                                    = delete;
+    FuelItemComponent& operator=(FuelItemComponent const&);
+    FuelItemComponent(FuelItemComponent const&);
+    FuelItemComponent();
 
 public:
     // NOLINTBEGIN
@@ -43,7 +43,7 @@ public:
     virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
 
     // symbol: ??0FuelItemComponent@@QEAA@PEAVComponentItem@@@Z
-    MCAPI FuelItemComponent(class ComponentItem*);
+    MCAPI explicit FuelItemComponent(class ComponentItem*);
 
     // symbol: ?setFuelDuration@FuelItemComponent@@QEAAXM@Z
     MCAPI void setFuelDuration(float);

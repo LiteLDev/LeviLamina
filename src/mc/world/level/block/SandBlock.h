@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class SandBlock : public ::FallingBlock {
 public:
     // prevent constructor by default
-    SandBlock& operator=(SandBlock const&) = delete;
-    SandBlock(SandBlock const&)            = delete;
-    SandBlock()                            = delete;
+    SandBlock& operator=(SandBlock const&);
+    SandBlock(SandBlock const&);
+    SandBlock();
 
 public:
     // NOLINTBEGIN

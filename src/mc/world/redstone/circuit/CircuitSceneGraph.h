@@ -16,9 +16,9 @@ public:
     class PendingEntry {
     public:
         // prevent constructor by default
-        PendingEntry& operator=(PendingEntry const&) = delete;
-        PendingEntry(PendingEntry const&)            = delete;
-        PendingEntry()                               = delete;
+        PendingEntry& operator=(PendingEntry const&);
+        PendingEntry(PendingEntry const&);
+        PendingEntry();
 
     public:
         // NOLINTBEGIN
@@ -36,8 +36,8 @@ public:
 
 public:
     // prevent constructor by default
-    CircuitSceneGraph& operator=(CircuitSceneGraph const&) = delete;
-    CircuitSceneGraph(CircuitSceneGraph const&)            = delete;
+    CircuitSceneGraph& operator=(CircuitSceneGraph const&);
+    CircuitSceneGraph(CircuitSceneGraph const&);
 
 public:
     // NOLINTBEGIN

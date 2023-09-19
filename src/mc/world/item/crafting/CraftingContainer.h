@@ -8,9 +8,9 @@
 class CraftingContainer : public ::Container {
 public:
     // prevent constructor by default
-    CraftingContainer& operator=(CraftingContainer const&) = delete;
-    CraftingContainer(CraftingContainer const&)            = delete;
-    CraftingContainer()                                    = delete;
+    CraftingContainer& operator=(CraftingContainer const&);
+    CraftingContainer(CraftingContainer const&);
+    CraftingContainer();
 
 public:
     // NOLINTBEGIN

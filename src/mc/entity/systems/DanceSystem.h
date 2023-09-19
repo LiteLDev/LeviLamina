@@ -8,9 +8,9 @@
 class DanceSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    DanceSystem& operator=(DanceSystem const&) = delete;
-    DanceSystem(DanceSystem const&)            = delete;
-    DanceSystem()                              = delete;
+    DanceSystem& operator=(DanceSystem const&);
+    DanceSystem(DanceSystem const&);
+    DanceSystem();
 
 public:
     // NOLINTBEGIN

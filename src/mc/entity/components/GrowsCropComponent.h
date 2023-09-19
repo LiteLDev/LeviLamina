@@ -5,8 +5,8 @@
 class GrowsCropComponent {
 public:
     // prevent constructor by default
-    GrowsCropComponent& operator=(GrowsCropComponent const&) = delete;
-    GrowsCropComponent(GrowsCropComponent const&)            = delete;
+    GrowsCropComponent& operator=(GrowsCropComponent const&);
+    GrowsCropComponent(GrowsCropComponent const&);
 
 public:
     // NOLINTBEGIN

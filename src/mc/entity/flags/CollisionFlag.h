@@ -5,7 +5,7 @@
 struct CollisionFlag {
 public:
     // prevent constructor by default
-    CollisionFlag& operator=(CollisionFlag const&) = delete;
-    CollisionFlag(CollisionFlag const&)            = delete;
-    CollisionFlag()                                = delete;
+    CollisionFlag& operator=(CollisionFlag const&);
+    CollisionFlag(CollisionFlag const&);
+    CollisionFlag();
 };

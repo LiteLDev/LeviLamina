@@ -9,14 +9,14 @@
 class ItemEnchants {
 public:
     // prevent constructor by default
-    ItemEnchants& operator=(ItemEnchants const&) = delete;
-    ItemEnchants(ItemEnchants const&)            = delete;
-    ItemEnchants()                               = delete;
+    ItemEnchants& operator=(ItemEnchants const&);
+    ItemEnchants(ItemEnchants const&);
+    ItemEnchants();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ItemEnchants@@QEAA@H@Z
-    MCAPI ItemEnchants(int);
+    MCAPI explicit ItemEnchants(int);
 
     // symbol: ??0ItemEnchants@@QEAA@HAEBVListTag@@@Z
     MCAPI ItemEnchants(int, class ListTag const&);

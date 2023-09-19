@@ -10,9 +10,9 @@ namespace ScriptModuleMinecraft {
 struct ScriptPressurePlatePushAfterEvent {
 public:
     // prevent constructor by default
-    ScriptPressurePlatePushAfterEvent& operator=(ScriptPressurePlatePushAfterEvent const&) = delete;
-    ScriptPressurePlatePushAfterEvent(ScriptPressurePlatePushAfterEvent const&)            = delete;
-    ScriptPressurePlatePushAfterEvent()                                                    = delete;
+    ScriptPressurePlatePushAfterEvent& operator=(ScriptPressurePlatePushAfterEvent const&);
+    ScriptPressurePlatePushAfterEvent(ScriptPressurePlatePushAfterEvent const&);
+    ScriptPressurePlatePushAfterEvent();
 
 public:
     // NOLINTBEGIN

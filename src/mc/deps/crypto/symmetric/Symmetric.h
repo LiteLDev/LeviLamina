@@ -11,9 +11,9 @@ namespace Crypto::Symmetric {
 class Symmetric {
 public:
     // prevent constructor by default
-    Symmetric& operator=(Symmetric const&) = delete;
-    Symmetric(Symmetric const&)            = delete;
-    Symmetric()                            = delete;
+    Symmetric& operator=(Symmetric const&);
+    Symmetric(Symmetric const&);
+    Symmetric();
 
 public:
     // NOLINTBEGIN

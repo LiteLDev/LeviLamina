@@ -5,9 +5,9 @@
 class Xoroshiro128PlusPlus {
 public:
     // prevent constructor by default
-    Xoroshiro128PlusPlus& operator=(Xoroshiro128PlusPlus const&) = delete;
-    Xoroshiro128PlusPlus(Xoroshiro128PlusPlus const&)            = delete;
-    Xoroshiro128PlusPlus()                                       = delete;
+    Xoroshiro128PlusPlus& operator=(Xoroshiro128PlusPlus const&);
+    Xoroshiro128PlusPlus(Xoroshiro128PlusPlus const&);
+    Xoroshiro128PlusPlus();
 
 public:
     // NOLINTBEGIN

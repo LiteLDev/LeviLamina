@@ -8,9 +8,9 @@
 class StringByteInput : public ::BytesDataInput {
 public:
     // prevent constructor by default
-    StringByteInput& operator=(StringByteInput const&) = delete;
-    StringByteInput(StringByteInput const&)            = delete;
-    StringByteInput()                                  = delete;
+    StringByteInput& operator=(StringByteInput const&);
+    StringByteInput(StringByteInput const&);
+    StringByteInput();
 
 public:
     // NOLINTBEGIN

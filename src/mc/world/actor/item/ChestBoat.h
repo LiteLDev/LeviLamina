@@ -26,9 +26,9 @@
 class ChestBoat : public ::Boat {
 public:
     // prevent constructor by default
-    ChestBoat& operator=(ChestBoat const&) = delete;
-    ChestBoat(ChestBoat const&)            = delete;
-    ChestBoat()                            = delete;
+    ChestBoat& operator=(ChestBoat const&);
+    ChestBoat(ChestBoat const&);
+    ChestBoat();
 
 public:
     // NOLINTBEGIN

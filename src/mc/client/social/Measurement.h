@@ -7,9 +7,9 @@ namespace Social::Events {
 class Measurement {
 public:
     // prevent constructor by default
-    Measurement& operator=(Measurement const&) = delete;
-    Measurement(Measurement const&)            = delete;
-    Measurement()                              = delete;
+    Measurement& operator=(Measurement const&);
+    Measurement(Measurement const&);
+    Measurement();
 
 public:
     // NOLINTBEGIN

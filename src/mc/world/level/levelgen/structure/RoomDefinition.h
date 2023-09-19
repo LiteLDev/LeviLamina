@@ -5,8 +5,8 @@
 class RoomDefinition {
 public:
     // prevent constructor by default
-    RoomDefinition& operator=(RoomDefinition const&) = delete;
-    RoomDefinition()                                 = delete;
+    RoomDefinition& operator=(RoomDefinition const&);
+    RoomDefinition();
 
 public:
     // NOLINTBEGIN
@@ -14,7 +14,7 @@ public:
     MCAPI RoomDefinition(class RoomDefinition const&);
 
     // symbol: ??0RoomDefinition@@QEAA@H@Z
-    MCAPI RoomDefinition(int);
+    MCAPI explicit RoomDefinition(int);
 
     // symbol: ?findSource@RoomDefinition@@QEAA_NH@Z
     MCAPI bool findSource(int);

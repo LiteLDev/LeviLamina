@@ -11,9 +11,9 @@
 class FinalizeMoveSystem {
 public:
     // prevent constructor by default
-    FinalizeMoveSystem& operator=(FinalizeMoveSystem const&) = delete;
-    FinalizeMoveSystem(FinalizeMoveSystem const&)            = delete;
-    FinalizeMoveSystem()                                     = delete;
+    FinalizeMoveSystem& operator=(FinalizeMoveSystem const&);
+    FinalizeMoveSystem(FinalizeMoveSystem const&);
+    FinalizeMoveSystem();
 
 public:
     // NOLINTBEGIN

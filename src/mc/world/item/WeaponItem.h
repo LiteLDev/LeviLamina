@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class WeaponItem : public ::Item {
 public:
     // prevent constructor by default
-    WeaponItem& operator=(WeaponItem const&) = delete;
-    WeaponItem(WeaponItem const&)            = delete;
-    WeaponItem()                             = delete;
+    WeaponItem& operator=(WeaponItem const&);
+    WeaponItem(WeaponItem const&);
+    WeaponItem();
 
 public:
     // NOLINTBEGIN

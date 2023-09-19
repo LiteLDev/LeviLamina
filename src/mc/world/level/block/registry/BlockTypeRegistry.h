@@ -23,9 +23,9 @@ public:
     struct BlockComplexAliasBlockState {
     public:
         // prevent constructor by default
-        BlockComplexAliasBlockState& operator=(BlockComplexAliasBlockState const&) = delete;
-        BlockComplexAliasBlockState(BlockComplexAliasBlockState const&)            = delete;
-        BlockComplexAliasBlockState()                                              = delete;
+        BlockComplexAliasBlockState& operator=(BlockComplexAliasBlockState const&);
+        BlockComplexAliasBlockState(BlockComplexAliasBlockState const&);
+        BlockComplexAliasBlockState();
 
     public:
         // NOLINTBEGIN
@@ -38,9 +38,9 @@ public:
     class BlockComplexAliasContent {
     public:
         // prevent constructor by default
-        BlockComplexAliasContent& operator=(BlockComplexAliasContent const&) = delete;
-        BlockComplexAliasContent(BlockComplexAliasContent const&)            = delete;
-        BlockComplexAliasContent()                                           = delete;
+        BlockComplexAliasContent& operator=(BlockComplexAliasContent const&);
+        BlockComplexAliasContent(BlockComplexAliasContent const&);
+        BlockComplexAliasContent();
 
     public:
         // NOLINTBEGIN
@@ -59,9 +59,9 @@ public:
     struct LookupByNameImplReturnType {
     public:
         // prevent constructor by default
-        LookupByNameImplReturnType& operator=(LookupByNameImplReturnType const&) = delete;
-        LookupByNameImplReturnType(LookupByNameImplReturnType const&)            = delete;
-        LookupByNameImplReturnType()                                             = delete;
+        LookupByNameImplReturnType& operator=(LookupByNameImplReturnType const&);
+        LookupByNameImplReturnType(LookupByNameImplReturnType const&);
+        LookupByNameImplReturnType();
 
     public:
         // NOLINTBEGIN
@@ -79,9 +79,9 @@ public:
 
 public:
     // prevent constructor by default
-    BlockTypeRegistry& operator=(BlockTypeRegistry const&) = delete;
-    BlockTypeRegistry(BlockTypeRegistry const&)            = delete;
-    BlockTypeRegistry()                                    = delete;
+    BlockTypeRegistry& operator=(BlockTypeRegistry const&);
+    BlockTypeRegistry(BlockTypeRegistry const&);
+    BlockTypeRegistry();
 
 public:
     // NOLINTBEGIN

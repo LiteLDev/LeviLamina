@@ -16,9 +16,9 @@ namespace Core {
 class FileInterfaceImpl : public ::Core::IFile {
 public:
     // prevent constructor by default
-    FileInterfaceImpl& operator=(FileInterfaceImpl const&) = delete;
-    FileInterfaceImpl(FileInterfaceImpl const&)            = delete;
-    FileInterfaceImpl()                                    = delete;
+    FileInterfaceImpl& operator=(FileInterfaceImpl const&);
+    FileInterfaceImpl(FileInterfaceImpl const&);
+    FileInterfaceImpl();
 
 public:
     // NOLINTBEGIN

@@ -16,8 +16,8 @@ namespace BlockLightDampeningVersioning {
 class BlockLightDampening11940Upgrade : public ::CerealSchemaUpgrade {
 public:
     // prevent constructor by default
-    BlockLightDampening11940Upgrade& operator=(BlockLightDampening11940Upgrade const&) = delete;
-    BlockLightDampening11940Upgrade(BlockLightDampening11940Upgrade const&)            = delete;
+    BlockLightDampening11940Upgrade& operator=(BlockLightDampening11940Upgrade const&);
+    BlockLightDampening11940Upgrade(BlockLightDampening11940Upgrade const&);
 
 public:
     // NOLINTBEGIN

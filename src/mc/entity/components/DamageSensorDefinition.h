@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class DamageSensorDefinition {
 public:
     // prevent constructor by default
-    DamageSensorDefinition& operator=(DamageSensorDefinition const&) = delete;
-    DamageSensorDefinition(DamageSensorDefinition const&)            = delete;
-    DamageSensorDefinition()                                         = delete;
+    DamageSensorDefinition& operator=(DamageSensorDefinition const&);
+    DamageSensorDefinition(DamageSensorDefinition const&);
+    DamageSensorDefinition();
 
 public:
     // NOLINTBEGIN

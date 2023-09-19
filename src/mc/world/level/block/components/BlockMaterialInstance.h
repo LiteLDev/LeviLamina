@@ -9,8 +9,8 @@
 struct BlockMaterialInstance {
 public:
     // prevent constructor by default
-    BlockMaterialInstance(BlockMaterialInstance const&) = delete;
-    BlockMaterialInstance()                             = delete;
+    BlockMaterialInstance(BlockMaterialInstance const&);
+    BlockMaterialInstance();
 
 public:
     // NOLINTBEGIN

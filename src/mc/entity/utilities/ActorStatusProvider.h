@@ -5,7 +5,7 @@
 class ActorStatusProvider {
 public:
     // prevent constructor by default
-    ActorStatusProvider& operator=(ActorStatusProvider const&) = delete;
-    ActorStatusProvider(ActorStatusProvider const&)            = delete;
-    ActorStatusProvider()                                      = delete;
+    ActorStatusProvider& operator=(ActorStatusProvider const&);
+    ActorStatusProvider(ActorStatusProvider const&);
+    ActorStatusProvider();
 };

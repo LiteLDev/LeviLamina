@@ -8,9 +8,9 @@
 class CurseVanishingEnchant : public ::Enchant {
 public:
     // prevent constructor by default
-    CurseVanishingEnchant& operator=(CurseVanishingEnchant const&) = delete;
-    CurseVanishingEnchant(CurseVanishingEnchant const&)            = delete;
-    CurseVanishingEnchant()                                        = delete;
+    CurseVanishingEnchant& operator=(CurseVanishingEnchant const&);
+    CurseVanishingEnchant(CurseVanishingEnchant const&);
+    CurseVanishingEnchant();
 
 public:
     // NOLINTBEGIN

@@ -16,8 +16,8 @@ namespace BlockDisplayNameVersioning {
 class BlockDisplayName11910Upgrade : public ::CerealSchemaUpgrade {
 public:
     // prevent constructor by default
-    BlockDisplayName11910Upgrade& operator=(BlockDisplayName11910Upgrade const&) = delete;
-    BlockDisplayName11910Upgrade(BlockDisplayName11910Upgrade const&)            = delete;
+    BlockDisplayName11910Upgrade& operator=(BlockDisplayName11910Upgrade const&);
+    BlockDisplayName11910Upgrade(BlockDisplayName11910Upgrade const&);
 
 public:
     // NOLINTBEGIN

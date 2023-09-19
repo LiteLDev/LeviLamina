@@ -8,9 +8,9 @@
 class MeCommand : public ::MessagingCommand {
 public:
     // prevent constructor by default
-    MeCommand& operator=(MeCommand const&) = delete;
-    MeCommand(MeCommand const&)            = delete;
-    MeCommand()                            = delete;
+    MeCommand& operator=(MeCommand const&);
+    MeCommand(MeCommand const&);
+    MeCommand();
 
 public:
     // NOLINTBEGIN

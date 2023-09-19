@@ -14,9 +14,9 @@ namespace Bedrock::PubSub { class Subscription; }
 class ServerPlayerSleepManager : public ::PlayerSleepManager {
 public:
     // prevent constructor by default
-    ServerPlayerSleepManager& operator=(ServerPlayerSleepManager const&) = delete;
-    ServerPlayerSleepManager(ServerPlayerSleepManager const&)            = delete;
-    ServerPlayerSleepManager()                                           = delete;
+    ServerPlayerSleepManager& operator=(ServerPlayerSleepManager const&);
+    ServerPlayerSleepManager(ServerPlayerSleepManager const&);
+    ServerPlayerSleepManager();
 
 public:
     // NOLINTBEGIN
@@ -30,7 +30,7 @@ public:
     MCVAPI ~ServerPlayerSleepManager();
 
     // symbol: ??0ServerPlayerSleepManager@@QEAA@V?$not_null@V?$NonOwnerPointer@VGameplayUserManager@@@Bedrock@@@gsl@@@Z
-    MCAPI ServerPlayerSleepManager(gsl::not_null<class Bedrock::NonOwnerPointer<class GameplayUserManager>>);
+    MCAPI explicit ServerPlayerSleepManager(gsl::not_null<class Bedrock::NonOwnerPointer<class GameplayUserManager>>);
 
     // symbol: ?initializeWithPlayerDeathManager@ServerPlayerSleepManager@@QEAAXAEAVPlayerDeathManager@@@Z
     MCAPI void initializeWithPlayerDeathManager(class PlayerDeathManager&);

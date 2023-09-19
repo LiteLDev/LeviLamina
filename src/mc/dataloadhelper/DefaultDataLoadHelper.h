@@ -13,9 +13,9 @@
 class DefaultDataLoadHelper : public ::DataLoadHelper {
 public:
     // prevent constructor by default
-    DefaultDataLoadHelper& operator=(DefaultDataLoadHelper const&) = delete;
-    DefaultDataLoadHelper(DefaultDataLoadHelper const&)            = delete;
-    DefaultDataLoadHelper()                                        = delete;
+    DefaultDataLoadHelper& operator=(DefaultDataLoadHelper const&);
+    DefaultDataLoadHelper(DefaultDataLoadHelper const&);
+    DefaultDataLoadHelper();
 
 public:
     // NOLINTBEGIN

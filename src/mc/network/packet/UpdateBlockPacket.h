@@ -10,8 +10,8 @@
 class UpdateBlockPacket : public ::Packet {
 public:
     // prevent constructor by default
-    UpdateBlockPacket& operator=(UpdateBlockPacket const&) = delete;
-    UpdateBlockPacket(UpdateBlockPacket const&)            = delete;
+    UpdateBlockPacket& operator=(UpdateBlockPacket const&);
+    UpdateBlockPacket(UpdateBlockPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -13,9 +13,9 @@ namespace mce { class Color; }
 class CauldronBlockActor {
 public:
     // prevent constructor by default
-    CauldronBlockActor& operator=(CauldronBlockActor const&) = delete;
-    CauldronBlockActor(CauldronBlockActor const&)            = delete;
-    CauldronBlockActor()                                     = delete;
+    CauldronBlockActor& operator=(CauldronBlockActor const&);
+    CauldronBlockActor(CauldronBlockActor const&);
+    CauldronBlockActor();
 
 public:
     // NOLINTBEGIN

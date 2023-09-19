@@ -7,9 +7,9 @@ namespace RakNet {
 class StringCompressor {
 public:
     // prevent constructor by default
-    StringCompressor& operator=(StringCompressor const&) = delete;
-    StringCompressor(StringCompressor const&)            = delete;
-    StringCompressor()                                   = delete;
+    StringCompressor& operator=(StringCompressor const&);
+    StringCompressor(StringCompressor const&);
+    StringCompressor();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class LabTableReactionComponent {
 public:
     // prevent constructor by default
-    LabTableReactionComponent& operator=(LabTableReactionComponent const&) = delete;
-    LabTableReactionComponent(LabTableReactionComponent const&)            = delete;
-    LabTableReactionComponent()                                            = delete;
+    LabTableReactionComponent& operator=(LabTableReactionComponent const&);
+    LabTableReactionComponent(LabTableReactionComponent const&);
+    LabTableReactionComponent();
 
 public:
     // NOLINTBEGIN

@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class ActorPlacerItem : public ::Item {
 public:
     // prevent constructor by default
-    ActorPlacerItem& operator=(ActorPlacerItem const&) = delete;
-    ActorPlacerItem(ActorPlacerItem const&)            = delete;
-    ActorPlacerItem()                                  = delete;
+    ActorPlacerItem& operator=(ActorPlacerItem const&);
+    ActorPlacerItem(ActorPlacerItem const&);
+    ActorPlacerItem();
 
 public:
     // NOLINTBEGIN

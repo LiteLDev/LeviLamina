@@ -5,9 +5,9 @@
 struct PlayerFormResponseEvent {
 public:
     // prevent constructor by default
-    PlayerFormResponseEvent& operator=(PlayerFormResponseEvent const&) = delete;
-    PlayerFormResponseEvent(PlayerFormResponseEvent const&)            = delete;
-    PlayerFormResponseEvent()                                          = delete;
+    PlayerFormResponseEvent& operator=(PlayerFormResponseEvent const&);
+    PlayerFormResponseEvent(PlayerFormResponseEvent const&);
+    PlayerFormResponseEvent();
 
 public:
     // NOLINTBEGIN

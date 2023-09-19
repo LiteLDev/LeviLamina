@@ -8,9 +8,9 @@
 class CloseWebSocketCommand : public ::Command {
 public:
     // prevent constructor by default
-    CloseWebSocketCommand& operator=(CloseWebSocketCommand const&) = delete;
-    CloseWebSocketCommand(CloseWebSocketCommand const&)            = delete;
-    CloseWebSocketCommand()                                        = delete;
+    CloseWebSocketCommand& operator=(CloseWebSocketCommand const&);
+    CloseWebSocketCommand(CloseWebSocketCommand const&);
+    CloseWebSocketCommand();
 
 public:
     // NOLINTBEGIN

@@ -10,8 +10,8 @@
 class PositionTrackingDBServerBroadcastPacket : public ::Packet {
 public:
     // prevent constructor by default
-    PositionTrackingDBServerBroadcastPacket& operator=(PositionTrackingDBServerBroadcastPacket const&) = delete;
-    PositionTrackingDBServerBroadcastPacket(PositionTrackingDBServerBroadcastPacket const&)            = delete;
+    PositionTrackingDBServerBroadcastPacket& operator=(PositionTrackingDBServerBroadcastPacket const&);
+    PositionTrackingDBServerBroadcastPacket(PositionTrackingDBServerBroadcastPacket const&);
 
 public:
     // NOLINTBEGIN

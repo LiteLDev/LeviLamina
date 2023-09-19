@@ -5,9 +5,9 @@
 struct ScriptingInitializeEvent {
 public:
     // prevent constructor by default
-    ScriptingInitializeEvent& operator=(ScriptingInitializeEvent const&) = delete;
-    ScriptingInitializeEvent(ScriptingInitializeEvent const&)            = delete;
-    ScriptingInitializeEvent()                                           = delete;
+    ScriptingInitializeEvent& operator=(ScriptingInitializeEvent const&);
+    ScriptingInitializeEvent(ScriptingInitializeEvent const&);
+    ScriptingInitializeEvent();
 
 public:
     // NOLINTBEGIN

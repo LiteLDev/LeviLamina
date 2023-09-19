@@ -5,9 +5,9 @@
 class ArmorTrimIconGenerationInfo {
 public:
     // prevent constructor by default
-    ArmorTrimIconGenerationInfo& operator=(ArmorTrimIconGenerationInfo const&) = delete;
-    ArmorTrimIconGenerationInfo(ArmorTrimIconGenerationInfo const&)            = delete;
-    ArmorTrimIconGenerationInfo()                                              = delete;
+    ArmorTrimIconGenerationInfo& operator=(ArmorTrimIconGenerationInfo const&);
+    ArmorTrimIconGenerationInfo(ArmorTrimIconGenerationInfo const&);
+    ArmorTrimIconGenerationInfo();
 
 public:
     // NOLINTBEGIN

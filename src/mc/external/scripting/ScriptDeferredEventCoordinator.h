@@ -13,9 +13,9 @@ public:
     struct DocumentableEventExecution {
     public:
         // prevent constructor by default
-        DocumentableEventExecution& operator=(DocumentableEventExecution const&) = delete;
-        DocumentableEventExecution(DocumentableEventExecution const&)            = delete;
-        DocumentableEventExecution()                                             = delete;
+        DocumentableEventExecution& operator=(DocumentableEventExecution const&);
+        DocumentableEventExecution(DocumentableEventExecution const&);
+        DocumentableEventExecution();
 
     public:
         // NOLINTBEGIN
@@ -27,9 +27,9 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptDeferredEventCoordinator& operator=(ScriptDeferredEventCoordinator const&) = delete;
-    ScriptDeferredEventCoordinator(ScriptDeferredEventCoordinator const&)            = delete;
-    ScriptDeferredEventCoordinator()                                                 = delete;
+    ScriptDeferredEventCoordinator& operator=(ScriptDeferredEventCoordinator const&);
+    ScriptDeferredEventCoordinator(ScriptDeferredEventCoordinator const&);
+    ScriptDeferredEventCoordinator();
 
 public:
     // NOLINTBEGIN

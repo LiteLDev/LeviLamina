@@ -5,9 +5,9 @@
 class RegistryKey {
 public:
     // prevent constructor by default
-    RegistryKey& operator=(RegistryKey const&) = delete;
-    RegistryKey(RegistryKey const&)            = delete;
-    RegistryKey()                              = delete;
+    RegistryKey& operator=(RegistryKey const&);
+    RegistryKey(RegistryKey const&);
+    RegistryKey();
 
 public:
     // NOLINTBEGIN

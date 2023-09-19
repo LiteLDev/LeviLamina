@@ -15,8 +15,8 @@ namespace ScriptModuleMinecraft {
 struct ScriptExplosionStartedBeforeEvent {
 public:
     // prevent constructor by default
-    ScriptExplosionStartedBeforeEvent& operator=(ScriptExplosionStartedBeforeEvent const&) = delete;
-    ScriptExplosionStartedBeforeEvent()                                                    = delete;
+    ScriptExplosionStartedBeforeEvent& operator=(ScriptExplosionStartedBeforeEvent const&);
+    ScriptExplosionStartedBeforeEvent();
 
 public:
     // NOLINTBEGIN

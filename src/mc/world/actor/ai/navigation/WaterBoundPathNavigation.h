@@ -8,9 +8,9 @@
 class WaterBoundPathNavigation : public ::PathNavigation {
 public:
     // prevent constructor by default
-    WaterBoundPathNavigation& operator=(WaterBoundPathNavigation const&) = delete;
-    WaterBoundPathNavigation(WaterBoundPathNavigation const&)            = delete;
-    WaterBoundPathNavigation()                                           = delete;
+    WaterBoundPathNavigation& operator=(WaterBoundPathNavigation const&);
+    WaterBoundPathNavigation(WaterBoundPathNavigation const&);
+    WaterBoundPathNavigation();
 
 public:
     // NOLINTBEGIN

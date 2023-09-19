@@ -8,8 +8,8 @@
 class BaseTimedActorFlagDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    BaseTimedActorFlagDefinition& operator=(BaseTimedActorFlagDefinition const&) = delete;
-    BaseTimedActorFlagDefinition(BaseTimedActorFlagDefinition const&)            = delete;
+    BaseTimedActorFlagDefinition& operator=(BaseTimedActorFlagDefinition const&);
+    BaseTimedActorFlagDefinition(BaseTimedActorFlagDefinition const&);
 
 public:
     // NOLINTBEGIN

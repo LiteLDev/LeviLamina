@@ -7,8 +7,8 @@ namespace Core::ZipUtils {
 class UnzipSettings {
 public:
     // prevent constructor by default
-    UnzipSettings& operator=(UnzipSettings const&) = delete;
-    UnzipSettings(UnzipSettings const&)            = delete;
+    UnzipSettings& operator=(UnzipSettings const&);
+    UnzipSettings(UnzipSettings const&);
 
 public:
     // NOLINTBEGIN

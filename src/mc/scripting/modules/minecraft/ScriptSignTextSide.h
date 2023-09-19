@@ -11,9 +11,9 @@ namespace ScriptModuleMinecraft {
 class ScriptSignTextSide {
 public:
     // prevent constructor by default
-    ScriptSignTextSide& operator=(ScriptSignTextSide const&) = delete;
-    ScriptSignTextSide(ScriptSignTextSide const&)            = delete;
-    ScriptSignTextSide()                                     = delete;
+    ScriptSignTextSide& operator=(ScriptSignTextSide const&);
+    ScriptSignTextSide(ScriptSignTextSide const&);
+    ScriptSignTextSide();
 
 public:
     // NOLINTBEGIN

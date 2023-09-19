@@ -5,7 +5,7 @@
 struct IsHorizontalPoseFlagComponent {
 public:
     // prevent constructor by default
-    IsHorizontalPoseFlagComponent& operator=(IsHorizontalPoseFlagComponent const&) = delete;
-    IsHorizontalPoseFlagComponent(IsHorizontalPoseFlagComponent const&)            = delete;
-    IsHorizontalPoseFlagComponent()                                                = delete;
+    IsHorizontalPoseFlagComponent& operator=(IsHorizontalPoseFlagComponent const&);
+    IsHorizontalPoseFlagComponent(IsHorizontalPoseFlagComponent const&);
+    IsHorizontalPoseFlagComponent();
 };

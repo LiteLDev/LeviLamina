@@ -9,9 +9,9 @@
 class ItemStackRequestActionCreate : public ::ItemStackRequestAction {
 public:
     // prevent constructor by default
-    ItemStackRequestActionCreate& operator=(ItemStackRequestActionCreate const&) = delete;
-    ItemStackRequestActionCreate(ItemStackRequestActionCreate const&)            = delete;
-    ItemStackRequestActionCreate()                                               = delete;
+    ItemStackRequestActionCreate& operator=(ItemStackRequestActionCreate const&);
+    ItemStackRequestActionCreate(ItemStackRequestActionCreate const&);
+    ItemStackRequestActionCreate();
 
 public:
     // NOLINTBEGIN

@@ -19,9 +19,9 @@ public:
     class LazyTemplate {
     public:
         // prevent constructor by default
-        LazyTemplate& operator=(LazyTemplate const&) = delete;
-        LazyTemplate(LazyTemplate const&)            = delete;
-        LazyTemplate()                               = delete;
+        LazyTemplate& operator=(LazyTemplate const&);
+        LazyTemplate(LazyTemplate const&);
+        LazyTemplate();
 
     public:
         // NOLINTBEGIN
@@ -44,9 +44,9 @@ public:
 
 public:
     // prevent constructor by default
-    StructurePoolElement& operator=(StructurePoolElement const&) = delete;
-    StructurePoolElement(StructurePoolElement const&)            = delete;
-    StructurePoolElement()                                       = delete;
+    StructurePoolElement& operator=(StructurePoolElement const&);
+    StructurePoolElement(StructurePoolElement const&);
+    StructurePoolElement();
 
 public:
     // NOLINTBEGIN

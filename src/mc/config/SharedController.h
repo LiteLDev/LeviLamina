@@ -16,9 +16,9 @@ namespace PlayerCapabilities {
 class SharedController : public ::PlayerCapabilities::ISharedController {
 public:
     // prevent constructor by default
-    SharedController& operator=(SharedController const&) = delete;
-    SharedController(SharedController const&)            = delete;
-    SharedController()                                   = delete;
+    SharedController& operator=(SharedController const&);
+    SharedController(SharedController const&);
+    SharedController();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 struct PlayerFormCloseEvent {
 public:
     // prevent constructor by default
-    PlayerFormCloseEvent& operator=(PlayerFormCloseEvent const&) = delete;
-    PlayerFormCloseEvent(PlayerFormCloseEvent const&)            = delete;
-    PlayerFormCloseEvent()                                       = delete;
+    PlayerFormCloseEvent& operator=(PlayerFormCloseEvent const&);
+    PlayerFormCloseEvent(PlayerFormCloseEvent const&);
+    PlayerFormCloseEvent();
 
 public:
     // NOLINTBEGIN

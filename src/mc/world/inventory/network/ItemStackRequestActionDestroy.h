@@ -9,9 +9,9 @@
 class ItemStackRequestActionDestroy : public ::ItemStackRequestActionTransferBase {
 public:
     // prevent constructor by default
-    ItemStackRequestActionDestroy& operator=(ItemStackRequestActionDestroy const&) = delete;
-    ItemStackRequestActionDestroy(ItemStackRequestActionDestroy const&)            = delete;
-    ItemStackRequestActionDestroy()                                                = delete;
+    ItemStackRequestActionDestroy& operator=(ItemStackRequestActionDestroy const&);
+    ItemStackRequestActionDestroy(ItemStackRequestActionDestroy const&);
+    ItemStackRequestActionDestroy();
 
 public:
     // NOLINTBEGIN

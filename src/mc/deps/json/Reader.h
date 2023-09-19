@@ -27,9 +27,9 @@ public:
     class ErrorInfo {
     public:
         // prevent constructor by default
-        ErrorInfo& operator=(ErrorInfo const&) = delete;
-        ErrorInfo(ErrorInfo const&)            = delete;
-        ErrorInfo()                            = delete;
+        ErrorInfo& operator=(ErrorInfo const&);
+        ErrorInfo(ErrorInfo const&);
+        ErrorInfo();
 
     public:
         // NOLINTBEGIN
@@ -42,20 +42,20 @@ public:
     class Token {
     public:
         // prevent constructor by default
-        Token& operator=(Token const&) = delete;
-        Token(Token const&)            = delete;
-        Token()                        = delete;
+        Token& operator=(Token const&);
+        Token(Token const&);
+        Token();
     };
 
 public:
     // prevent constructor by default
-    Reader& operator=(Reader const&) = delete;
-    Reader(Reader const&)            = delete;
+    Reader& operator=(Reader const&);
+    Reader(Reader const&);
 
 public:
     // NOLINTBEGIN
     // symbol: ??0Reader@Json@@QEAA@AEBVFeatures@1@@Z
-    MCAPI Reader(class Json::Features const&);
+    MCAPI explicit Reader(class Json::Features const&);
 
     // symbol: ??0Reader@Json@@QEAA@XZ
     MCAPI Reader();

@@ -22,9 +22,9 @@ namespace mce { class Color; }
 class PickaxeItem : public ::DiggerItem {
 public:
     // prevent constructor by default
-    PickaxeItem& operator=(PickaxeItem const&) = delete;
-    PickaxeItem(PickaxeItem const&)            = delete;
-    PickaxeItem()                              = delete;
+    PickaxeItem& operator=(PickaxeItem const&);
+    PickaxeItem(PickaxeItem const&);
+    PickaxeItem();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class ContainerValidationCommitObject {
 public:
     // prevent constructor by default
-    ContainerValidationCommitObject& operator=(ContainerValidationCommitObject const&) = delete;
-    ContainerValidationCommitObject(ContainerValidationCommitObject const&)            = delete;
-    ContainerValidationCommitObject()                                                  = delete;
+    ContainerValidationCommitObject& operator=(ContainerValidationCommitObject const&);
+    ContainerValidationCommitObject(ContainerValidationCommitObject const&);
+    ContainerValidationCommitObject();
 
 public:
     // NOLINTBEGIN

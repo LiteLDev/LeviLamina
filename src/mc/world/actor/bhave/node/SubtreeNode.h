@@ -9,8 +9,8 @@
 class SubtreeNode : public ::BehaviorNode {
 public:
     // prevent constructor by default
-    SubtreeNode& operator=(SubtreeNode const&) = delete;
-    SubtreeNode(SubtreeNode const&)            = delete;
+    SubtreeNode& operator=(SubtreeNode const&);
+    SubtreeNode(SubtreeNode const&);
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class BodyControlSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    BodyControlSystem& operator=(BodyControlSystem const&) = delete;
-    BodyControlSystem(BodyControlSystem const&)            = delete;
-    BodyControlSystem()                                    = delete;
+    BodyControlSystem& operator=(BodyControlSystem const&);
+    BodyControlSystem(BodyControlSystem const&);
+    BodyControlSystem();
 
 public:
     // NOLINTBEGIN

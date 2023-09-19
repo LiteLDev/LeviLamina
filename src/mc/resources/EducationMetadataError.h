@@ -8,9 +8,9 @@
 class EducationMetadataError : public ::PackError {
 public:
     // prevent constructor by default
-    EducationMetadataError& operator=(EducationMetadataError const&) = delete;
-    EducationMetadataError(EducationMetadataError const&)            = delete;
-    EducationMetadataError()                                         = delete;
+    EducationMetadataError& operator=(EducationMetadataError const&);
+    EducationMetadataError(EducationMetadataError const&);
+    EducationMetadataError();
 
 public:
     // NOLINTBEGIN

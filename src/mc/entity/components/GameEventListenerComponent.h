@@ -5,8 +5,8 @@
 class GameEventListenerComponent {
 public:
     // prevent constructor by default
-    GameEventListenerComponent& operator=(GameEventListenerComponent const&) = delete;
-    GameEventListenerComponent(GameEventListenerComponent const&)            = delete;
+    GameEventListenerComponent& operator=(GameEventListenerComponent const&);
+    GameEventListenerComponent(GameEventListenerComponent const&);
 
 public:
     // NOLINTBEGIN

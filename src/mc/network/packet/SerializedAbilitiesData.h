@@ -15,16 +15,16 @@ public:
     struct SerializedLayer {
     public:
         // prevent constructor by default
-        SerializedLayer& operator=(SerializedLayer const&) = delete;
-        SerializedLayer(SerializedLayer const&)            = delete;
-        SerializedLayer()                                  = delete;
+        SerializedLayer& operator=(SerializedLayer const&);
+        SerializedLayer(SerializedLayer const&);
+        SerializedLayer();
     };
 
 public:
     // prevent constructor by default
-    SerializedAbilitiesData& operator=(SerializedAbilitiesData const&) = delete;
-    SerializedAbilitiesData(SerializedAbilitiesData const&)            = delete;
-    SerializedAbilitiesData()                                          = delete;
+    SerializedAbilitiesData& operator=(SerializedAbilitiesData const&);
+    SerializedAbilitiesData(SerializedAbilitiesData const&);
+    SerializedAbilitiesData();
 
 public:
     // NOLINTBEGIN

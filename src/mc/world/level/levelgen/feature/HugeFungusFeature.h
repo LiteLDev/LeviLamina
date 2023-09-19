@@ -8,9 +8,9 @@
 class HugeFungusFeature : public ::Feature {
 public:
     // prevent constructor by default
-    HugeFungusFeature& operator=(HugeFungusFeature const&) = delete;
-    HugeFungusFeature(HugeFungusFeature const&)            = delete;
-    HugeFungusFeature()                                    = delete;
+    HugeFungusFeature& operator=(HugeFungusFeature const&);
+    HugeFungusFeature(HugeFungusFeature const&);
+    HugeFungusFeature();
 
 public:
     // NOLINTBEGIN
@@ -24,7 +24,7 @@ public:
     MCVAPI ~HugeFungusFeature();
 
     // symbol: ??0HugeFungusFeature@@QEAA@_N@Z
-    MCAPI HugeFungusFeature(bool);
+    MCAPI explicit HugeFungusFeature(bool);
 
     // NOLINTEND
 };

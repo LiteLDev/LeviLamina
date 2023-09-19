@@ -7,9 +7,9 @@ namespace Scripting {
 struct ClassBinding {
 public:
     // prevent constructor by default
-    ClassBinding& operator=(ClassBinding const&) = delete;
-    ClassBinding(ClassBinding const&)            = delete;
-    ClassBinding()                               = delete;
+    ClassBinding& operator=(ClassBinding const&);
+    ClassBinding(ClassBinding const&);
+    ClassBinding();
 };
 
 }; // namespace Scripting

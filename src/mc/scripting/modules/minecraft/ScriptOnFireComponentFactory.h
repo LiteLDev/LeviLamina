@@ -19,9 +19,9 @@ namespace ScriptModuleMinecraft {
 class ScriptOnFireComponentFactory : public ::ScriptModuleMinecraft::IComponentFactory {
 public:
     // prevent constructor by default
-    ScriptOnFireComponentFactory& operator=(ScriptOnFireComponentFactory const&) = delete;
-    ScriptOnFireComponentFactory(ScriptOnFireComponentFactory const&)            = delete;
-    ScriptOnFireComponentFactory()                                               = delete;
+    ScriptOnFireComponentFactory& operator=(ScriptOnFireComponentFactory const&);
+    ScriptOnFireComponentFactory(ScriptOnFireComponentFactory const&);
+    ScriptOnFireComponentFactory();
 
 public:
     // NOLINTBEGIN

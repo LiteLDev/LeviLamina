@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class DecoratorDefinition : public ::BehaviorDefinition {
 public:
     // prevent constructor by default
-    DecoratorDefinition& operator=(DecoratorDefinition const&) = delete;
-    DecoratorDefinition(DecoratorDefinition const&)            = delete;
-    DecoratorDefinition()                                      = delete;
+    DecoratorDefinition& operator=(DecoratorDefinition const&);
+    DecoratorDefinition(DecoratorDefinition const&);
+    DecoratorDefinition();
 
 public:
     // NOLINTBEGIN

@@ -9,8 +9,8 @@
 class JumpControl : public ::Control {
 public:
     // prevent constructor by default
-    JumpControl& operator=(JumpControl const&) = delete;
-    JumpControl(JumpControl const&)            = delete;
+    JumpControl& operator=(JumpControl const&);
+    JumpControl(JumpControl const&);
 
 public:
     // NOLINTBEGIN

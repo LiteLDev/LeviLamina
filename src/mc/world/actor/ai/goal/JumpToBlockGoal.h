@@ -25,8 +25,8 @@ public:
     class Definition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        Definition& operator=(Definition const&) = delete;
-        Definition(Definition const&)            = delete;
+        Definition& operator=(Definition const&);
+        Definition(Definition const&);
 
     public:
         // NOLINTBEGIN
@@ -53,16 +53,16 @@ public:
     struct WeightedJumpToBlockPos {
     public:
         // prevent constructor by default
-        WeightedJumpToBlockPos& operator=(WeightedJumpToBlockPos const&) = delete;
-        WeightedJumpToBlockPos(WeightedJumpToBlockPos const&)            = delete;
-        WeightedJumpToBlockPos()                                         = delete;
+        WeightedJumpToBlockPos& operator=(WeightedJumpToBlockPos const&);
+        WeightedJumpToBlockPos(WeightedJumpToBlockPos const&);
+        WeightedJumpToBlockPos();
     };
 
 public:
     // prevent constructor by default
-    JumpToBlockGoal& operator=(JumpToBlockGoal const&) = delete;
-    JumpToBlockGoal(JumpToBlockGoal const&)            = delete;
-    JumpToBlockGoal()                                  = delete;
+    JumpToBlockGoal& operator=(JumpToBlockGoal const&);
+    JumpToBlockGoal(JumpToBlockGoal const&);
+    JumpToBlockGoal();
 
 public:
     // NOLINTBEGIN
@@ -92,7 +92,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0JumpToBlockGoal@@QEAA@AEAVMob@@@Z
-    MCAPI JumpToBlockGoal(class Mob&);
+    MCAPI explicit JumpToBlockGoal(class Mob&);
 
     // symbol: ?resetCooldown@JumpToBlockGoal@@QEAAXXZ
     MCAPI void resetCooldown();

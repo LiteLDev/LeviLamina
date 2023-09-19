@@ -26,8 +26,8 @@ public:
     class Definition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        Definition& operator=(Definition const&) = delete;
-        Definition(Definition const&)            = delete;
+        Definition& operator=(Definition const&);
+        Definition(Definition const&);
 
     public:
         // NOLINTBEGIN
@@ -50,9 +50,9 @@ public:
 
 public:
     // prevent constructor by default
-    DigGoal& operator=(DigGoal const&) = delete;
-    DigGoal(DigGoal const&)            = delete;
-    DigGoal()                          = delete;
+    DigGoal& operator=(DigGoal const&);
+    DigGoal(DigGoal const&);
+    DigGoal();
 
 public:
     // NOLINTBEGIN
@@ -79,7 +79,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0DigGoal@@QEAA@AEAVMob@@@Z
-    MCAPI DigGoal(class Mob&);
+    MCAPI explicit DigGoal(class Mob&);
 
     // NOLINTEND
 

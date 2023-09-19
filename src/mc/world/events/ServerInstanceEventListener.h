@@ -9,9 +9,9 @@
 class ServerInstanceEventListener {
 public:
     // prevent constructor by default
-    ServerInstanceEventListener& operator=(ServerInstanceEventListener const&) = delete;
-    ServerInstanceEventListener(ServerInstanceEventListener const&)            = delete;
-    ServerInstanceEventListener()                                              = delete;
+    ServerInstanceEventListener& operator=(ServerInstanceEventListener const&);
+    ServerInstanceEventListener(ServerInstanceEventListener const&);
+    ServerInstanceEventListener();
 
 public:
     // NOLINTBEGIN

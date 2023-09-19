@@ -5,9 +5,9 @@
 class WebviewObserver {
 public:
     // prevent constructor by default
-    WebviewObserver& operator=(WebviewObserver const&) = delete;
-    WebviewObserver(WebviewObserver const&)            = delete;
-    WebviewObserver()                                  = delete;
+    WebviewObserver& operator=(WebviewObserver const&);
+    WebviewObserver(WebviewObserver const&);
+    WebviewObserver();
 
 public:
     // NOLINTBEGIN

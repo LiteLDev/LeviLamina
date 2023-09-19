@@ -7,8 +7,8 @@ namespace Social::Events {
 class SummaryProperty {
 public:
     // prevent constructor by default
-    SummaryProperty(SummaryProperty const&) = delete;
-    SummaryProperty()                       = delete;
+    SummaryProperty(SummaryProperty const&);
+    SummaryProperty();
 
 public:
     // NOLINTBEGIN

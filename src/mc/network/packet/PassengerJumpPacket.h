@@ -10,8 +10,8 @@
 class PassengerJumpPacket : public ::Packet {
 public:
     // prevent constructor by default
-    PassengerJumpPacket& operator=(PassengerJumpPacket const&) = delete;
-    PassengerJumpPacket(PassengerJumpPacket const&)            = delete;
+    PassengerJumpPacket& operator=(PassengerJumpPacket const&);
+    PassengerJumpPacket(PassengerJumpPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -36,7 +36,7 @@ public:
     MCAPI PassengerJumpPacket();
 
     // symbol: ??0PassengerJumpPacket@@QEAA@H@Z
-    MCAPI PassengerJumpPacket(int);
+    MCAPI explicit PassengerJumpPacket(int);
 
     // NOLINTEND
 };

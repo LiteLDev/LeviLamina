@@ -12,9 +12,9 @@
 class MobOnPlayerJumpSystem {
 public:
     // prevent constructor by default
-    MobOnPlayerJumpSystem& operator=(MobOnPlayerJumpSystem const&) = delete;
-    MobOnPlayerJumpSystem(MobOnPlayerJumpSystem const&)            = delete;
-    MobOnPlayerJumpSystem()                                        = delete;
+    MobOnPlayerJumpSystem& operator=(MobOnPlayerJumpSystem const&);
+    MobOnPlayerJumpSystem(MobOnPlayerJumpSystem const&);
+    MobOnPlayerJumpSystem();
 
 public:
     // NOLINTBEGIN

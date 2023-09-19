@@ -8,9 +8,9 @@
 class WearableItemComponent {
 public:
     // prevent constructor by default
-    WearableItemComponent& operator=(WearableItemComponent const&) = delete;
-    WearableItemComponent(WearableItemComponent const&)            = delete;
-    WearableItemComponent()                                        = delete;
+    WearableItemComponent& operator=(WearableItemComponent const&);
+    WearableItemComponent(WearableItemComponent const&);
+    WearableItemComponent();
 
 public:
     // NOLINTBEGIN

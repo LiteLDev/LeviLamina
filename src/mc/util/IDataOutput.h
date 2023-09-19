@@ -5,9 +5,9 @@
 class IDataOutput {
 public:
     // prevent constructor by default
-    IDataOutput& operator=(IDataOutput const&) = delete;
-    IDataOutput(IDataOutput const&)            = delete;
-    IDataOutput()                              = delete;
+    IDataOutput& operator=(IDataOutput const&);
+    IDataOutput(IDataOutput const&);
+    IDataOutput();
 
 public:
     // NOLINTBEGIN

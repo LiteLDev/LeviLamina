@@ -5,9 +5,9 @@
 struct MaterialReducerDataEntry {
 public:
     // prevent constructor by default
-    MaterialReducerDataEntry& operator=(MaterialReducerDataEntry const&) = delete;
-    MaterialReducerDataEntry(MaterialReducerDataEntry const&)            = delete;
-    MaterialReducerDataEntry()                                           = delete;
+    MaterialReducerDataEntry& operator=(MaterialReducerDataEntry const&);
+    MaterialReducerDataEntry(MaterialReducerDataEntry const&);
+    MaterialReducerDataEntry();
 
 public:
     // NOLINTBEGIN

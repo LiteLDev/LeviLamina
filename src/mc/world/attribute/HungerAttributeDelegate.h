@@ -8,9 +8,9 @@
 class HungerAttributeDelegate : public ::AttributeInstanceDelegate {
 public:
     // prevent constructor by default
-    HungerAttributeDelegate& operator=(HungerAttributeDelegate const&) = delete;
-    HungerAttributeDelegate(HungerAttributeDelegate const&)            = delete;
-    HungerAttributeDelegate()                                          = delete;
+    HungerAttributeDelegate& operator=(HungerAttributeDelegate const&);
+    HungerAttributeDelegate(HungerAttributeDelegate const&);
+    HungerAttributeDelegate();
 
 public:
     // NOLINTBEGIN

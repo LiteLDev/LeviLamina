@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class BushBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    BushBlock& operator=(BushBlock const&) = delete;
-    BushBlock(BushBlock const&)            = delete;
-    BushBlock()                            = delete;
+    BushBlock& operator=(BushBlock const&);
+    BushBlock(BushBlock const&);
+    BushBlock();
 
 public:
     // NOLINTBEGIN

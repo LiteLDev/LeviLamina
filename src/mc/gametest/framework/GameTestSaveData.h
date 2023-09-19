@@ -5,9 +5,9 @@
 struct GameTestSaveData {
 public:
     // prevent constructor by default
-    GameTestSaveData& operator=(GameTestSaveData const&) = delete;
-    GameTestSaveData(GameTestSaveData const&)            = delete;
-    GameTestSaveData()                                   = delete;
+    GameTestSaveData& operator=(GameTestSaveData const&);
+    GameTestSaveData(GameTestSaveData const&);
+    GameTestSaveData();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 struct OnFireComponent {
 public:
     // prevent constructor by default
-    OnFireComponent& operator=(OnFireComponent const&) = delete;
-    OnFireComponent(OnFireComponent const&)            = delete;
-    OnFireComponent()                                  = delete;
+    OnFireComponent& operator=(OnFireComponent const&);
+    OnFireComponent(OnFireComponent const&);
+    OnFireComponent();
 
 public:
     // NOLINTBEGIN

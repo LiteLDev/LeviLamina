@@ -7,9 +7,9 @@ namespace Puv {
 class ParserBase {
 public:
     // prevent constructor by default
-    ParserBase& operator=(ParserBase const&) = delete;
-    ParserBase(ParserBase const&)            = delete;
-    ParserBase()                             = delete;
+    ParserBase& operator=(ParserBase const&);
+    ParserBase(ParserBase const&);
+    ParserBase();
 };
 
 }; // namespace Puv

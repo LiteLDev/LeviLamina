@@ -5,14 +5,14 @@
 class LevelChunkGarbageCollector {
 public:
     // prevent constructor by default
-    LevelChunkGarbageCollector& operator=(LevelChunkGarbageCollector const&) = delete;
-    LevelChunkGarbageCollector(LevelChunkGarbageCollector const&)            = delete;
-    LevelChunkGarbageCollector()                                             = delete;
+    LevelChunkGarbageCollector& operator=(LevelChunkGarbageCollector const&);
+    LevelChunkGarbageCollector(LevelChunkGarbageCollector const&);
+    LevelChunkGarbageCollector();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0LevelChunkGarbageCollector@@QEAA@AEAVDimension@@@Z
-    MCAPI LevelChunkGarbageCollector(class Dimension&);
+    MCAPI explicit LevelChunkGarbageCollector(class Dimension&);
 
     // symbol: ?getPendingDeletesCount@LevelChunkGarbageCollector@@QEBA_KXZ
     MCAPI uint64 getPendingDeletesCount() const;

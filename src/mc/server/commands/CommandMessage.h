@@ -5,8 +5,8 @@
 class CommandMessage {
 public:
     // prevent constructor by default
-    CommandMessage& operator=(CommandMessage const&) = delete;
-    CommandMessage(CommandMessage const&)            = delete;
+    CommandMessage& operator=(CommandMessage const&);
+    CommandMessage(CommandMessage const&);
 
 public:
     // NOLINTBEGIN

@@ -10,8 +10,8 @@
 class PlayerListPacket : public ::Packet {
 public:
     // prevent constructor by default
-    PlayerListPacket& operator=(PlayerListPacket const&) = delete;
-    PlayerListPacket(PlayerListPacket const&)            = delete;
+    PlayerListPacket& operator=(PlayerListPacket const&);
+    PlayerListPacket(PlayerListPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -16,14 +16,14 @@ namespace Core { class Result; }
 class JournaledFile {
 public:
     // prevent constructor by default
-    JournaledFile& operator=(JournaledFile const&) = delete;
-    JournaledFile(JournaledFile const&)            = delete;
-    JournaledFile()                                = delete;
+    JournaledFile& operator=(JournaledFile const&);
+    JournaledFile(JournaledFile const&);
+    JournaledFile();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0JournaledFile@@QEAA@$$QEAV?$function@$$A6A?AVResult@Core@@VPath@2@@Z@std@@@Z
-    MCAPI JournaledFile(std::function<class Core::Result(class Core::Path)>&&);
+    MCAPI explicit JournaledFile(std::function<class Core::Result(class Core::Path)>&&);
 
     // symbol: ?open@JournaledFile@@QEAA?AVResult@Core@@VPath@3@VFileOpenMode@3@W4FileBufferingMode@3@@Z
     MCAPI class Core::Result open(class Core::Path, class Core::FileOpenMode, ::Core::FileBufferingMode);

@@ -12,9 +12,9 @@
 struct ExternalDataServerLevel : public ::ExternalDataInterface {
 public:
     // prevent constructor by default
-    ExternalDataServerLevel& operator=(ExternalDataServerLevel const&) = delete;
-    ExternalDataServerLevel(ExternalDataServerLevel const&)            = delete;
-    ExternalDataServerLevel()                                          = delete;
+    ExternalDataServerLevel& operator=(ExternalDataServerLevel const&);
+    ExternalDataServerLevel(ExternalDataServerLevel const&);
+    ExternalDataServerLevel();
 
 public:
     // NOLINTBEGIN
@@ -46,7 +46,7 @@ public:
     MCVAPI ::ClientPlayMode getPlayMode() const;
 
     // symbol: ??0ExternalDataServerLevel@@QEAA@V?$not_null@V?$NonOwnerPointer@$$CBVILevel@@@Bedrock@@@gsl@@@Z
-    MCAPI ExternalDataServerLevel(gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>);
+    MCAPI explicit ExternalDataServerLevel(gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>);
 
     // NOLINTEND
 };

@@ -8,9 +8,9 @@
 class MaterialReducerOutputValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    MaterialReducerOutputValidation& operator=(MaterialReducerOutputValidation const&) = delete;
-    MaterialReducerOutputValidation(MaterialReducerOutputValidation const&)            = delete;
-    MaterialReducerOutputValidation()                                                  = delete;
+    MaterialReducerOutputValidation& operator=(MaterialReducerOutputValidation const&);
+    MaterialReducerOutputValidation(MaterialReducerOutputValidation const&);
+    MaterialReducerOutputValidation();
 
 public:
     // NOLINTBEGIN

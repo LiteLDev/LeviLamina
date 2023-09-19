@@ -15,9 +15,9 @@ public:
     struct BuildParameters {
     public:
         // prevent constructor by default
-        BuildParameters& operator=(BuildParameters const&) = delete;
-        BuildParameters(BuildParameters const&)            = delete;
-        BuildParameters()                                  = delete;
+        BuildParameters& operator=(BuildParameters const&);
+        BuildParameters(BuildParameters const&);
+        BuildParameters();
 
     public:
         // NOLINTBEGIN
@@ -42,7 +42,7 @@ public:
 
 public:
     // prevent constructor by default
-    ISurfaceBuilder& operator=(ISurfaceBuilder const&) = delete;
-    ISurfaceBuilder(ISurfaceBuilder const&)            = delete;
-    ISurfaceBuilder()                                  = delete;
+    ISurfaceBuilder& operator=(ISurfaceBuilder const&);
+    ISurfaceBuilder(ISurfaceBuilder const&);
+    ISurfaceBuilder();
 };

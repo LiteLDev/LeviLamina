@@ -8,9 +8,9 @@
 class EndIslandFeature : public ::Feature {
 public:
     // prevent constructor by default
-    EndIslandFeature& operator=(EndIslandFeature const&) = delete;
-    EndIslandFeature(EndIslandFeature const&)            = delete;
-    EndIslandFeature()                                   = delete;
+    EndIslandFeature& operator=(EndIslandFeature const&);
+    EndIslandFeature(EndIslandFeature const&);
+    EndIslandFeature();
 
 public:
     // NOLINTBEGIN

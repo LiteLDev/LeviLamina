@@ -7,9 +7,9 @@ namespace PlayerCapabilities {
 struct ISharedController {
 public:
     // prevent constructor by default
-    ISharedController& operator=(ISharedController const&) = delete;
-    ISharedController(ISharedController const&)            = delete;
-    ISharedController()                                    = delete;
+    ISharedController& operator=(ISharedController const&);
+    ISharedController(ISharedController const&);
+    ISharedController();
 };
 
 }; // namespace PlayerCapabilities

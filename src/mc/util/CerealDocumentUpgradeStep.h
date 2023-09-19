@@ -5,7 +5,7 @@
 class CerealDocumentUpgradeStep {
 public:
     // prevent constructor by default
-    CerealDocumentUpgradeStep() = delete;
+    CerealDocumentUpgradeStep();
 
 public:
     // NOLINTBEGIN

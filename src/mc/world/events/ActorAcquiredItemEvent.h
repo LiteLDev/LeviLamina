@@ -5,8 +5,8 @@
 struct ActorAcquiredItemEvent {
 public:
     // prevent constructor by default
-    ActorAcquiredItemEvent& operator=(ActorAcquiredItemEvent const&) = delete;
-    ActorAcquiredItemEvent()                                         = delete;
+    ActorAcquiredItemEvent& operator=(ActorAcquiredItemEvent const&);
+    ActorAcquiredItemEvent();
 
 public:
     // NOLINTBEGIN

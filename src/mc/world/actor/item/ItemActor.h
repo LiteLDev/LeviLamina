@@ -25,9 +25,9 @@
 class ItemActor : public ::Actor {
 public:
     // prevent constructor by default
-    ItemActor& operator=(ItemActor const&) = delete;
-    ItemActor(ItemActor const&)            = delete;
-    ItemActor()                            = delete;
+    ItemActor& operator=(ItemActor const&);
+    ItemActor(ItemActor const&);
+    ItemActor();
 
 public:
     // NOLINTBEGIN

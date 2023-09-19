@@ -8,9 +8,9 @@
 class Raid {
 public:
     // prevent constructor by default
-    Raid& operator=(Raid const&) = delete;
-    Raid(Raid const&)            = delete;
-    Raid()                       = delete;
+    Raid& operator=(Raid const&);
+    Raid(Raid const&);
+    Raid();
 
 public:
     // NOLINTBEGIN

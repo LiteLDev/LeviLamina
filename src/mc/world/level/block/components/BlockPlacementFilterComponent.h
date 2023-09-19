@@ -8,9 +8,9 @@
 struct BlockPlacementFilterComponent : public ::BlockComponentBase {
 public:
     // prevent constructor by default
-    BlockPlacementFilterComponent& operator=(BlockPlacementFilterComponent const&) = delete;
-    BlockPlacementFilterComponent(BlockPlacementFilterComponent const&)            = delete;
-    BlockPlacementFilterComponent()                                                = delete;
+    BlockPlacementFilterComponent& operator=(BlockPlacementFilterComponent const&);
+    BlockPlacementFilterComponent(BlockPlacementFilterComponent const&);
+    BlockPlacementFilterComponent();
 
 public:
     // NOLINTBEGIN

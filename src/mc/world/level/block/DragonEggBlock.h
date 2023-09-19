@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class DragonEggBlock : public ::FallingBlock {
 public:
     // prevent constructor by default
-    DragonEggBlock& operator=(DragonEggBlock const&) = delete;
-    DragonEggBlock(DragonEggBlock const&)            = delete;
-    DragonEggBlock()                                 = delete;
+    DragonEggBlock& operator=(DragonEggBlock const&);
+    DragonEggBlock(DragonEggBlock const&);
+    DragonEggBlock();
 
 public:
     // NOLINTBEGIN

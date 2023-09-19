@@ -8,9 +8,9 @@
 class LegacySwampFoliageFeature : public ::Feature {
 public:
     // prevent constructor by default
-    LegacySwampFoliageFeature& operator=(LegacySwampFoliageFeature const&) = delete;
-    LegacySwampFoliageFeature(LegacySwampFoliageFeature const&)            = delete;
-    LegacySwampFoliageFeature()                                            = delete;
+    LegacySwampFoliageFeature& operator=(LegacySwampFoliageFeature const&);
+    LegacySwampFoliageFeature(LegacySwampFoliageFeature const&);
+    LegacySwampFoliageFeature();
 
 public:
     // NOLINTBEGIN
@@ -21,7 +21,7 @@ public:
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
     // symbol: ??0LegacySwampFoliageFeature@@QEAA@AEAVFeatureRegistry@@@Z
-    MCAPI LegacySwampFoliageFeature(class FeatureRegistry&);
+    MCAPI explicit LegacySwampFoliageFeature(class FeatureRegistry&);
 
     // NOLINTEND
 };

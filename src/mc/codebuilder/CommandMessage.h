@@ -7,9 +7,9 @@ namespace CodeBuilder {
 struct CommandMessage {
 public:
     // prevent constructor by default
-    CommandMessage& operator=(CommandMessage const&) = delete;
-    CommandMessage(CommandMessage const&)            = delete;
-    CommandMessage()                                 = delete;
+    CommandMessage& operator=(CommandMessage const&);
+    CommandMessage(CommandMessage const&);
+    CommandMessage();
 
 public:
     // NOLINTBEGIN

@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class InfestedDeepslateBlock : public ::RotatedPillarInfestedBlock {
 public:
     // prevent constructor by default
-    InfestedDeepslateBlock& operator=(InfestedDeepslateBlock const&) = delete;
-    InfestedDeepslateBlock(InfestedDeepslateBlock const&)            = delete;
-    InfestedDeepslateBlock()                                         = delete;
+    InfestedDeepslateBlock& operator=(InfestedDeepslateBlock const&);
+    InfestedDeepslateBlock(InfestedDeepslateBlock const&);
+    InfestedDeepslateBlock();
 
 public:
     // NOLINTBEGIN

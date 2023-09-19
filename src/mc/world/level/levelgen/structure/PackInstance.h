@@ -16,7 +16,7 @@ namespace mce { class UUID; }
 class PackInstance {
 public:
     // prevent constructor by default
-    PackInstance() = delete;
+    PackInstance();
 
 public:
     // NOLINTBEGIN

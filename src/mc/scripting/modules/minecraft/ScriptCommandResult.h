@@ -10,9 +10,9 @@ namespace ScriptModuleMinecraft {
 struct ScriptCommandResult {
 public:
     // prevent constructor by default
-    ScriptCommandResult& operator=(ScriptCommandResult const&) = delete;
-    ScriptCommandResult(ScriptCommandResult const&)            = delete;
-    ScriptCommandResult()                                      = delete;
+    ScriptCommandResult& operator=(ScriptCommandResult const&);
+    ScriptCommandResult(ScriptCommandResult const&);
+    ScriptCommandResult();
 
 public:
     // NOLINTBEGIN

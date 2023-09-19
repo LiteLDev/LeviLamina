@@ -5,7 +5,7 @@
 struct ActorDefinitionModifier {
 public:
     // prevent constructor by default
-    ActorDefinitionModifier() = delete;
+    ActorDefinitionModifier();
 
 public:
     // NOLINTBEGIN

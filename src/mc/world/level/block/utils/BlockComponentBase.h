@@ -5,9 +5,9 @@
 struct BlockComponentBase {
 public:
     // prevent constructor by default
-    BlockComponentBase& operator=(BlockComponentBase const&) = delete;
-    BlockComponentBase(BlockComponentBase const&)            = delete;
-    BlockComponentBase()                                     = delete;
+    BlockComponentBase& operator=(BlockComponentBase const&);
+    BlockComponentBase(BlockComponentBase const&);
+    BlockComponentBase();
 
 public:
     // NOLINTBEGIN

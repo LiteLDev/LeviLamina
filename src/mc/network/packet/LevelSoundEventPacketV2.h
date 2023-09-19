@@ -10,8 +10,8 @@
 class LevelSoundEventPacketV2 : public ::Packet {
 public:
     // prevent constructor by default
-    LevelSoundEventPacketV2& operator=(LevelSoundEventPacketV2 const&) = delete;
-    LevelSoundEventPacketV2(LevelSoundEventPacketV2 const&)            = delete;
+    LevelSoundEventPacketV2& operator=(LevelSoundEventPacketV2 const&);
+    LevelSoundEventPacketV2(LevelSoundEventPacketV2 const&);
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class FillCommand : public ::Command {
 public:
     // prevent constructor by default
-    FillCommand& operator=(FillCommand const&) = delete;
-    FillCommand(FillCommand const&)            = delete;
-    FillCommand()                              = delete;
+    FillCommand& operator=(FillCommand const&);
+    FillCommand(FillCommand const&);
+    FillCommand();
 
 public:
     // NOLINTBEGIN

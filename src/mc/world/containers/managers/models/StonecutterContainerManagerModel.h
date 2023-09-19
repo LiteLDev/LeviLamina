@@ -10,9 +10,9 @@
 class StonecutterContainerManagerModel : public ::ContainerManagerModel {
 public:
     // prevent constructor by default
-    StonecutterContainerManagerModel& operator=(StonecutterContainerManagerModel const&) = delete;
-    StonecutterContainerManagerModel(StonecutterContainerManagerModel const&)            = delete;
-    StonecutterContainerManagerModel()                                                   = delete;
+    StonecutterContainerManagerModel& operator=(StonecutterContainerManagerModel const&);
+    StonecutterContainerManagerModel(StonecutterContainerManagerModel const&);
+    StonecutterContainerManagerModel();
 
 public:
     // NOLINTBEGIN

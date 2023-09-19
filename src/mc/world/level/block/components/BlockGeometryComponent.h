@@ -8,9 +8,9 @@
 struct BlockGeometryComponent : public ::BlockComponentBase {
 public:
     // prevent constructor by default
-    BlockGeometryComponent& operator=(BlockGeometryComponent const&) = delete;
-    BlockGeometryComponent(BlockGeometryComponent const&)            = delete;
-    BlockGeometryComponent()                                         = delete;
+    BlockGeometryComponent& operator=(BlockGeometryComponent const&);
+    BlockGeometryComponent(BlockGeometryComponent const&);
+    BlockGeometryComponent();
 
 public:
     // NOLINTBEGIN

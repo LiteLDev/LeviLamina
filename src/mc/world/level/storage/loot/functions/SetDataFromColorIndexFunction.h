@@ -8,9 +8,9 @@
 class SetDataFromColorIndexFunction : public ::LootItemFunction {
 public:
     // prevent constructor by default
-    SetDataFromColorIndexFunction& operator=(SetDataFromColorIndexFunction const&) = delete;
-    SetDataFromColorIndexFunction(SetDataFromColorIndexFunction const&)            = delete;
-    SetDataFromColorIndexFunction()                                                = delete;
+    SetDataFromColorIndexFunction& operator=(SetDataFromColorIndexFunction const&);
+    SetDataFromColorIndexFunction(SetDataFromColorIndexFunction const&);
+    SetDataFromColorIndexFunction();
 
 public:
     // NOLINTBEGIN

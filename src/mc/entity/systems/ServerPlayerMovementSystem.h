@@ -5,9 +5,9 @@
 class ServerPlayerMovementSystem {
 public:
     // prevent constructor by default
-    ServerPlayerMovementSystem& operator=(ServerPlayerMovementSystem const&) = delete;
-    ServerPlayerMovementSystem(ServerPlayerMovementSystem const&)            = delete;
-    ServerPlayerMovementSystem()                                             = delete;
+    ServerPlayerMovementSystem& operator=(ServerPlayerMovementSystem const&);
+    ServerPlayerMovementSystem(ServerPlayerMovementSystem const&);
+    ServerPlayerMovementSystem();
 
 public:
     // NOLINTBEGIN

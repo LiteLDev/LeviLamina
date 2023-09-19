@@ -14,8 +14,8 @@ namespace mce { class Color; }
 class SubClientConnectionRequest {
 public:
     // prevent constructor by default
-    SubClientConnectionRequest& operator=(SubClientConnectionRequest const&) = delete;
-    SubClientConnectionRequest()                                             = delete;
+    SubClientConnectionRequest& operator=(SubClientConnectionRequest const&);
+    SubClientConnectionRequest();
 
 public:
     // NOLINTBEGIN

@@ -5,8 +5,8 @@
 class LookControlComponent {
 public:
     // prevent constructor by default
-    LookControlComponent& operator=(LookControlComponent const&) = delete;
-    LookControlComponent(LookControlComponent const&)            = delete;
+    LookControlComponent& operator=(LookControlComponent const&);
+    LookControlComponent(LookControlComponent const&);
 
 public:
     // NOLINTBEGIN

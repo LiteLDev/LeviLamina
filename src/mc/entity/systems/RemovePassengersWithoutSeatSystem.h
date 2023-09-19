@@ -9,9 +9,9 @@
 class RemovePassengersWithoutSeatSystem {
 public:
     // prevent constructor by default
-    RemovePassengersWithoutSeatSystem& operator=(RemovePassengersWithoutSeatSystem const&) = delete;
-    RemovePassengersWithoutSeatSystem(RemovePassengersWithoutSeatSystem const&)            = delete;
-    RemovePassengersWithoutSeatSystem()                                                    = delete;
+    RemovePassengersWithoutSeatSystem& operator=(RemovePassengersWithoutSeatSystem const&);
+    RemovePassengersWithoutSeatSystem(RemovePassengersWithoutSeatSystem const&);
+    RemovePassengersWithoutSeatSystem();
 
 public:
     // NOLINTBEGIN

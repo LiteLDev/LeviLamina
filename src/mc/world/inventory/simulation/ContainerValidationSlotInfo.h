@@ -5,9 +5,9 @@
 struct ContainerValidationSlotInfo {
 public:
     // prevent constructor by default
-    ContainerValidationSlotInfo& operator=(ContainerValidationSlotInfo const&) = delete;
-    ContainerValidationSlotInfo(ContainerValidationSlotInfo const&)            = delete;
-    ContainerValidationSlotInfo()                                              = delete;
+    ContainerValidationSlotInfo& operator=(ContainerValidationSlotInfo const&);
+    ContainerValidationSlotInfo(ContainerValidationSlotInfo const&);
+    ContainerValidationSlotInfo();
 
 public:
     // NOLINTBEGIN

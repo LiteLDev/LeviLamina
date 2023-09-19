@@ -8,8 +8,8 @@
 class ListTag : public ::Tag {
 public:
     // prevent constructor by default
-    ListTag& operator=(ListTag const&) = delete;
-    ListTag(ListTag const&)            = delete;
+    ListTag& operator=(ListTag const&);
+    ListTag(ListTag const&);
 
 public:
     // NOLINTBEGIN

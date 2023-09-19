@@ -9,8 +9,8 @@
 struct ContainerValidationResult {
 public:
     // prevent constructor by default
-    ContainerValidationResult& operator=(ContainerValidationResult const&) = delete;
-    ContainerValidationResult()                                            = delete;
+    ContainerValidationResult& operator=(ContainerValidationResult const&);
+    ContainerValidationResult();
 
 public:
     // NOLINTBEGIN
@@ -18,7 +18,7 @@ public:
     MCAPI ContainerValidationResult(struct ContainerValidationResult const&);
 
     // symbol: ??0ContainerValidationResult@@QEAA@W4ContainerValidationOutcome@@@Z
-    MCAPI ContainerValidationResult(::ContainerValidationOutcome);
+    MCAPI explicit ContainerValidationResult(::ContainerValidationOutcome);
 
     // symbol: ?isSuccess@ContainerValidationResult@@QEBA_NXZ
     MCAPI bool isSuccess() const;

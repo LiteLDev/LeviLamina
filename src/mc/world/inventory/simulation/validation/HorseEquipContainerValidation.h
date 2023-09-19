@@ -8,9 +8,9 @@
 class HorseEquipContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    HorseEquipContainerValidation& operator=(HorseEquipContainerValidation const&) = delete;
-    HorseEquipContainerValidation(HorseEquipContainerValidation const&)            = delete;
-    HorseEquipContainerValidation()                                                = delete;
+    HorseEquipContainerValidation& operator=(HorseEquipContainerValidation const&);
+    HorseEquipContainerValidation(HorseEquipContainerValidation const&);
+    HorseEquipContainerValidation();
 
 public:
     // NOLINTBEGIN
@@ -49,7 +49,7 @@ public:
     virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
 
     // symbol: ??0HorseEquipContainerValidation@@QEAA@AEBVContainerScreenContext@@@Z
-    MCAPI HorseEquipContainerValidation(class ContainerScreenContext const&);
+    MCAPI explicit HorseEquipContainerValidation(class ContainerScreenContext const&);
 
     // NOLINTEND
 };

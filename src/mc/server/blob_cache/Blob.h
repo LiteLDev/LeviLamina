@@ -7,9 +7,9 @@ namespace ClientBlobCache::Server {
 class Blob {
 public:
     // prevent constructor by default
-    Blob& operator=(Blob const&) = delete;
-    Blob(Blob const&)            = delete;
-    Blob()                       = delete;
+    Blob& operator=(Blob const&);
+    Blob(Blob const&);
+    Blob();
 };
 
 }; // namespace ClientBlobCache::Server

@@ -9,9 +9,9 @@
 class TemplateStructurePiece : public ::StructurePiece {
 public:
     // prevent constructor by default
-    TemplateStructurePiece& operator=(TemplateStructurePiece const&) = delete;
-    TemplateStructurePiece(TemplateStructurePiece const&)            = delete;
-    TemplateStructurePiece()                                         = delete;
+    TemplateStructurePiece& operator=(TemplateStructurePiece const&);
+    TemplateStructurePiece(TemplateStructurePiece const&);
+    TemplateStructurePiece();
 
 public:
     // NOLINTBEGIN
@@ -33,7 +33,7 @@ public:
     MCVAPI ~TemplateStructurePiece();
 
     // symbol: ??0TemplateStructurePiece@@QEAA@H@Z
-    MCAPI TemplateStructurePiece(int);
+    MCAPI explicit TemplateStructurePiece(int);
 
     // NOLINTEND
 

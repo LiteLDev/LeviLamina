@@ -8,9 +8,9 @@
 class WallClimberPathNavigation : public ::PathNavigation {
 public:
     // prevent constructor by default
-    WallClimberPathNavigation& operator=(WallClimberPathNavigation const&) = delete;
-    WallClimberPathNavigation(WallClimberPathNavigation const&)            = delete;
-    WallClimberPathNavigation()                                            = delete;
+    WallClimberPathNavigation& operator=(WallClimberPathNavigation const&);
+    WallClimberPathNavigation(WallClimberPathNavigation const&);
+    WallClimberPathNavigation();
 
 public:
     // NOLINTBEGIN

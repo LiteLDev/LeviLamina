@@ -10,8 +10,8 @@
 class AvailableActorIdentifiersPacket : public ::Packet {
 public:
     // prevent constructor by default
-    AvailableActorIdentifiersPacket& operator=(AvailableActorIdentifiersPacket const&) = delete;
-    AvailableActorIdentifiersPacket(AvailableActorIdentifiersPacket const&)            = delete;
+    AvailableActorIdentifiersPacket& operator=(AvailableActorIdentifiersPacket const&);
+    AvailableActorIdentifiersPacket(AvailableActorIdentifiersPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -40,7 +40,7 @@ public:
     MCVAPI ~AvailableActorIdentifiersPacket();
 
     // symbol: ??0AvailableActorIdentifiersPacket@@QEAA@AEBV?$vector@UActorInfo@@V?$allocator@UActorInfo@@@std@@@std@@@Z
-    MCAPI AvailableActorIdentifiersPacket(std::vector<struct ActorInfo> const&);
+    MCAPI explicit AvailableActorIdentifiersPacket(std::vector<struct ActorInfo> const&);
 
     // symbol: ??0AvailableActorIdentifiersPacket@@QEAA@XZ
     MCAPI AvailableActorIdentifiersPacket();

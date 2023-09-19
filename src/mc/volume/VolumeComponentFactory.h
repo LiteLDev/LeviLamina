@@ -8,9 +8,9 @@
 class VolumeComponentFactory : public ::EntityComponentFactoryCereal {
 public:
     // prevent constructor by default
-    VolumeComponentFactory& operator=(VolumeComponentFactory const&) = delete;
-    VolumeComponentFactory(VolumeComponentFactory const&)            = delete;
-    VolumeComponentFactory()                                         = delete;
+    VolumeComponentFactory& operator=(VolumeComponentFactory const&);
+    VolumeComponentFactory(VolumeComponentFactory const&);
+    VolumeComponentFactory();
 
 public:
     // NOLINTBEGIN

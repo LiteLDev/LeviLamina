@@ -9,9 +9,9 @@
 class BuriedTreasurePiece : public ::StructurePiece {
 public:
     // prevent constructor by default
-    BuriedTreasurePiece& operator=(BuriedTreasurePiece const&) = delete;
-    BuriedTreasurePiece(BuriedTreasurePiece const&)            = delete;
-    BuriedTreasurePiece()                                      = delete;
+    BuriedTreasurePiece& operator=(BuriedTreasurePiece const&);
+    BuriedTreasurePiece(BuriedTreasurePiece const&);
+    BuriedTreasurePiece();
 
 public:
     // NOLINTBEGIN

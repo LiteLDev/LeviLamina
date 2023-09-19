@@ -10,9 +10,9 @@
 class MesaSurfaceBuilderNoises {
 public:
     // prevent constructor by default
-    MesaSurfaceBuilderNoises& operator=(MesaSurfaceBuilderNoises const&) = delete;
-    MesaSurfaceBuilderNoises(MesaSurfaceBuilderNoises const&)            = delete;
-    MesaSurfaceBuilderNoises()                                           = delete;
+    MesaSurfaceBuilderNoises& operator=(MesaSurfaceBuilderNoises const&);
+    MesaSurfaceBuilderNoises(MesaSurfaceBuilderNoises const&);
+    MesaSurfaceBuilderNoises();
 
 public:
     // NOLINTBEGIN
@@ -29,7 +29,7 @@ public:
     // symbol:
     // ??0MesaSurfaceBuilderNoises@@AEAA@V?$NormalNoiseImpl@$0A@V?$MultiOctaveNoiseImpl@$0A@V?$ParityImprovedNoiseImpl@$0A@@@@@@@000@Z
     MCAPI
-    MesaSurfaceBuilderNoises(class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>);
+        MesaSurfaceBuilderNoises(class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>);
 
     // NOLINTEND
 };

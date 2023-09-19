@@ -5,7 +5,7 @@
 struct HttpPerformInfo {
 public:
     // prevent constructor by default
-    HttpPerformInfo& operator=(HttpPerformInfo const&) = delete;
-    HttpPerformInfo(HttpPerformInfo const&)            = delete;
-    HttpPerformInfo()                                  = delete;
+    HttpPerformInfo& operator=(HttpPerformInfo const&);
+    HttpPerformInfo(HttpPerformInfo const&);
+    HttpPerformInfo();
 };

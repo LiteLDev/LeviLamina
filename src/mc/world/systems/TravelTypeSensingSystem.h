@@ -5,9 +5,9 @@
 class TravelTypeSensingSystem {
 public:
     // prevent constructor by default
-    TravelTypeSensingSystem& operator=(TravelTypeSensingSystem const&) = delete;
-    TravelTypeSensingSystem(TravelTypeSensingSystem const&)            = delete;
-    TravelTypeSensingSystem()                                          = delete;
+    TravelTypeSensingSystem& operator=(TravelTypeSensingSystem const&);
+    TravelTypeSensingSystem(TravelTypeSensingSystem const&);
+    TravelTypeSensingSystem();
 
 public:
     // NOLINTBEGIN

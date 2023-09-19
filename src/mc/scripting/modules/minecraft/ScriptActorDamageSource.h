@@ -10,7 +10,7 @@ namespace ScriptModuleMinecraft {
 struct ScriptActorDamageSource {
 public:
     // prevent constructor by default
-    ScriptActorDamageSource() = delete;
+    ScriptActorDamageSource();
 
 public:
     // NOLINTBEGIN

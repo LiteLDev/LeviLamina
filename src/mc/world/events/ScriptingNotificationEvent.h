@@ -5,9 +5,9 @@
 struct ScriptingNotificationEvent {
 public:
     // prevent constructor by default
-    ScriptingNotificationEvent& operator=(ScriptingNotificationEvent const&) = delete;
-    ScriptingNotificationEvent(ScriptingNotificationEvent const&)            = delete;
-    ScriptingNotificationEvent()                                             = delete;
+    ScriptingNotificationEvent& operator=(ScriptingNotificationEvent const&);
+    ScriptingNotificationEvent(ScriptingNotificationEvent const&);
+    ScriptingNotificationEvent();
 
 public:
     // NOLINTBEGIN

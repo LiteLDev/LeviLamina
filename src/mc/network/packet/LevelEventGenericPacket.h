@@ -11,8 +11,8 @@
 class LevelEventGenericPacket : public ::Packet {
 public:
     // prevent constructor by default
-    LevelEventGenericPacket& operator=(LevelEventGenericPacket const&) = delete;
-    LevelEventGenericPacket(LevelEventGenericPacket const&)            = delete;
+    LevelEventGenericPacket& operator=(LevelEventGenericPacket const&);
+    LevelEventGenericPacket(LevelEventGenericPacket const&);
 
 public:
     // NOLINTBEGIN

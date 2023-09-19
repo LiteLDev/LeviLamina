@@ -8,9 +8,9 @@
 class BreakBlocksSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    BreakBlocksSystem& operator=(BreakBlocksSystem const&) = delete;
-    BreakBlocksSystem(BreakBlocksSystem const&)            = delete;
-    BreakBlocksSystem()                                    = delete;
+    BreakBlocksSystem& operator=(BreakBlocksSystem const&);
+    BreakBlocksSystem(BreakBlocksSystem const&);
+    BreakBlocksSystem();
 
 public:
     // NOLINTBEGIN

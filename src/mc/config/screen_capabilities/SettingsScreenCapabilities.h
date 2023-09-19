@@ -8,9 +8,9 @@
 struct SettingsScreenCapabilities {
 public:
     // prevent constructor by default
-    SettingsScreenCapabilities& operator=(SettingsScreenCapabilities const&) = delete;
-    SettingsScreenCapabilities(SettingsScreenCapabilities const&)            = delete;
-    SettingsScreenCapabilities()                                             = delete;
+    SettingsScreenCapabilities& operator=(SettingsScreenCapabilities const&);
+    SettingsScreenCapabilities(SettingsScreenCapabilities const&);
+    SettingsScreenCapabilities();
 
 public:
     // NOLINTBEGIN

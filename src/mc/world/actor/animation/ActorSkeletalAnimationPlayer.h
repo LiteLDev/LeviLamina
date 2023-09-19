@@ -10,9 +10,9 @@
 class ActorSkeletalAnimationPlayer : public ::ActorAnimationPlayer {
 public:
     // prevent constructor by default
-    ActorSkeletalAnimationPlayer& operator=(ActorSkeletalAnimationPlayer const&) = delete;
-    ActorSkeletalAnimationPlayer(ActorSkeletalAnimationPlayer const&)            = delete;
-    ActorSkeletalAnimationPlayer()                                               = delete;
+    ActorSkeletalAnimationPlayer& operator=(ActorSkeletalAnimationPlayer const&);
+    ActorSkeletalAnimationPlayer(ActorSkeletalAnimationPlayer const&);
+    ActorSkeletalAnimationPlayer();
 
 public:
     // NOLINTBEGIN

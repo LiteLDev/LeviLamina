@@ -7,9 +7,9 @@ namespace CodeBuilder {
 struct EncryptionResult {
 public:
     // prevent constructor by default
-    EncryptionResult& operator=(EncryptionResult const&) = delete;
-    EncryptionResult(EncryptionResult const&)            = delete;
-    EncryptionResult()                                   = delete;
+    EncryptionResult& operator=(EncryptionResult const&);
+    EncryptionResult(EncryptionResult const&);
+    EncryptionResult();
 
 public:
     // NOLINTBEGIN

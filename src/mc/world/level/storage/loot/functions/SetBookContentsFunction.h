@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class SetBookContentsFunction : public ::LootItemFunction {
 public:
     // prevent constructor by default
-    SetBookContentsFunction& operator=(SetBookContentsFunction const&) = delete;
-    SetBookContentsFunction(SetBookContentsFunction const&)            = delete;
-    SetBookContentsFunction()                                          = delete;
+    SetBookContentsFunction& operator=(SetBookContentsFunction const&);
+    SetBookContentsFunction(SetBookContentsFunction const&);
+    SetBookContentsFunction();
 
 public:
     // NOLINTBEGIN

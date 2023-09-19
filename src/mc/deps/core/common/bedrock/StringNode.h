@@ -7,9 +7,9 @@ namespace Bedrock::JSONObject {
 class StringNode {
 public:
     // prevent constructor by default
-    StringNode& operator=(StringNode const&) = delete;
-    StringNode(StringNode const&)            = delete;
-    StringNode()                             = delete;
+    StringNode& operator=(StringNode const&);
+    StringNode(StringNode const&);
+    StringNode();
 
 public:
     // NOLINTBEGIN

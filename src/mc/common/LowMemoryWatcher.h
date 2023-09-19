@@ -5,9 +5,9 @@
 class LowMemoryWatcher {
 public:
     // prevent constructor by default
-    LowMemoryWatcher& operator=(LowMemoryWatcher const&) = delete;
-    LowMemoryWatcher(LowMemoryWatcher const&)            = delete;
-    LowMemoryWatcher()                                   = delete;
+    LowMemoryWatcher& operator=(LowMemoryWatcher const&);
+    LowMemoryWatcher(LowMemoryWatcher const&);
+    LowMemoryWatcher();
 
 private:
     // NOLINTBEGIN

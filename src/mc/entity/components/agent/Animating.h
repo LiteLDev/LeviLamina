@@ -7,9 +7,9 @@ namespace AgentComponents {
 class Animating {
 public:
     // prevent constructor by default
-    Animating& operator=(Animating const&) = delete;
-    Animating(Animating const&)            = delete;
-    Animating()                            = delete;
+    Animating& operator=(Animating const&);
+    Animating(Animating const&);
+    Animating();
 };
 
 }; // namespace AgentComponents

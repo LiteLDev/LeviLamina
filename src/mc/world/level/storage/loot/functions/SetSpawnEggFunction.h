@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class SetSpawnEggFunction : public ::LootItemFunction {
 public:
     // prevent constructor by default
-    SetSpawnEggFunction& operator=(SetSpawnEggFunction const&) = delete;
-    SetSpawnEggFunction(SetSpawnEggFunction const&)            = delete;
-    SetSpawnEggFunction()                                      = delete;
+    SetSpawnEggFunction& operator=(SetSpawnEggFunction const&);
+    SetSpawnEggFunction(SetSpawnEggFunction const&);
+    SetSpawnEggFunction();
 
 public:
     // NOLINTBEGIN

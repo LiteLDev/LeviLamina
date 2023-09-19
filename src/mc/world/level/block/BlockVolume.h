@@ -16,9 +16,9 @@ public:
     struct BlockVolumeIter {
     public:
         // prevent constructor by default
-        BlockVolumeIter& operator=(BlockVolumeIter const&) = delete;
-        BlockVolumeIter(BlockVolumeIter const&)            = delete;
-        BlockVolumeIter()                                  = delete;
+        BlockVolumeIter& operator=(BlockVolumeIter const&);
+        BlockVolumeIter(BlockVolumeIter const&);
+        BlockVolumeIter();
 
     public:
         // NOLINTBEGIN
@@ -36,9 +36,9 @@ public:
 
 public:
     // prevent constructor by default
-    BlockVolume& operator=(BlockVolume const&) = delete;
-    BlockVolume(BlockVolume const&)            = delete;
-    BlockVolume()                              = delete;
+    BlockVolume& operator=(BlockVolume const&);
+    BlockVolume(BlockVolume const&);
+    BlockVolume();
 
 public:
     // NOLINTBEGIN

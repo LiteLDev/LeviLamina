@@ -28,9 +28,9 @@ public:
     class FloorRoomCollection {
     public:
         // prevent constructor by default
-        FloorRoomCollection& operator=(FloorRoomCollection const&) = delete;
-        FloorRoomCollection(FloorRoomCollection const&)            = delete;
-        FloorRoomCollection()                                      = delete;
+        FloorRoomCollection& operator=(FloorRoomCollection const&);
+        FloorRoomCollection(FloorRoomCollection const&);
+        FloorRoomCollection();
 
     public:
         // NOLINTBEGIN
@@ -71,9 +71,9 @@ public:
     class FirstFloorRoomCollection : public ::WoodlandMansionPieces::FloorRoomCollection {
     public:
         // prevent constructor by default
-        FirstFloorRoomCollection& operator=(FirstFloorRoomCollection const&) = delete;
-        FirstFloorRoomCollection(FirstFloorRoomCollection const&)            = delete;
-        FirstFloorRoomCollection()                                           = delete;
+        FirstFloorRoomCollection& operator=(FirstFloorRoomCollection const&);
+        FirstFloorRoomCollection(FirstFloorRoomCollection const&);
+        FirstFloorRoomCollection();
 
     public:
         // NOLINTBEGIN
@@ -114,14 +114,14 @@ public:
     class MansionGrid {
     public:
         // prevent constructor by default
-        MansionGrid& operator=(MansionGrid const&) = delete;
-        MansionGrid(MansionGrid const&)            = delete;
-        MansionGrid()                              = delete;
+        MansionGrid& operator=(MansionGrid const&);
+        MansionGrid(MansionGrid const&);
+        MansionGrid();
 
     public:
         // NOLINTBEGIN
         // symbol: ??0MansionGrid@WoodlandMansionPieces@@QEAA@AEAVRandom@@@Z
-        MCAPI MansionGrid(class Random&);
+        MCAPI explicit MansionGrid(class Random&);
 
         // symbol: ?get1x2RoomDirection@MansionGrid@WoodlandMansionPieces@@QEBAEAEBVSimpleGrid@2@HHHH@Z
         MCAPI uchar get1x2RoomDirection(class WoodlandMansionPieces::SimpleGrid const&, int, int, int, int) const;
@@ -148,9 +148,9 @@ public:
     struct PlacementData {
     public:
         // prevent constructor by default
-        PlacementData& operator=(PlacementData const&) = delete;
-        PlacementData(PlacementData const&)            = delete;
-        PlacementData()                                = delete;
+        PlacementData& operator=(PlacementData const&);
+        PlacementData(PlacementData const&);
+        PlacementData();
 
     public:
         // NOLINTBEGIN
@@ -163,9 +163,9 @@ public:
     class SecondFloorRoomCollection : public ::WoodlandMansionPieces::FloorRoomCollection {
     public:
         // prevent constructor by default
-        SecondFloorRoomCollection& operator=(SecondFloorRoomCollection const&) = delete;
-        SecondFloorRoomCollection(SecondFloorRoomCollection const&)            = delete;
-        SecondFloorRoomCollection()                                            = delete;
+        SecondFloorRoomCollection& operator=(SecondFloorRoomCollection const&);
+        SecondFloorRoomCollection(SecondFloorRoomCollection const&);
+        SecondFloorRoomCollection();
 
     public:
         // NOLINTBEGIN
@@ -206,9 +206,9 @@ public:
     class SimpleGrid {
     public:
         // prevent constructor by default
-        SimpleGrid& operator=(SimpleGrid const&) = delete;
-        SimpleGrid(SimpleGrid const&)            = delete;
-        SimpleGrid()                             = delete;
+        SimpleGrid& operator=(SimpleGrid const&);
+        SimpleGrid(SimpleGrid const&);
+        SimpleGrid();
 
     public:
         // NOLINTBEGIN
@@ -224,9 +224,9 @@ public:
     class MansionPiecePlacer {
     public:
         // prevent constructor by default
-        MansionPiecePlacer& operator=(MansionPiecePlacer const&) = delete;
-        MansionPiecePlacer(MansionPiecePlacer const&)            = delete;
-        MansionPiecePlacer()                                     = delete;
+        MansionPiecePlacer& operator=(MansionPiecePlacer const&);
+        MansionPiecePlacer(MansionPiecePlacer const&);
+        MansionPiecePlacer();
 
     public:
         // NOLINTBEGIN
@@ -295,9 +295,9 @@ public:
     class ThirdFloorRoomCollection : public ::WoodlandMansionPieces::SecondFloorRoomCollection {
     public:
         // prevent constructor by default
-        ThirdFloorRoomCollection& operator=(ThirdFloorRoomCollection const&) = delete;
-        ThirdFloorRoomCollection(ThirdFloorRoomCollection const&)            = delete;
-        ThirdFloorRoomCollection()                                           = delete;
+        ThirdFloorRoomCollection& operator=(ThirdFloorRoomCollection const&);
+        ThirdFloorRoomCollection(ThirdFloorRoomCollection const&);
+        ThirdFloorRoomCollection();
 
     public:
         // NOLINTBEGIN
@@ -310,9 +310,9 @@ public:
     class WoodlandMansionPiece : public ::TemplateStructurePiece {
     public:
         // prevent constructor by default
-        WoodlandMansionPiece& operator=(WoodlandMansionPiece const&) = delete;
-        WoodlandMansionPiece(WoodlandMansionPiece const&)            = delete;
-        WoodlandMansionPiece()                                       = delete;
+        WoodlandMansionPiece& operator=(WoodlandMansionPiece const&);
+        WoodlandMansionPiece(WoodlandMansionPiece const&);
+        WoodlandMansionPiece();
 
     public:
         // NOLINTBEGIN
@@ -370,9 +370,9 @@ public:
 
 public:
     // prevent constructor by default
-    WoodlandMansionPieces& operator=(WoodlandMansionPieces const&) = delete;
-    WoodlandMansionPieces(WoodlandMansionPieces const&)            = delete;
-    WoodlandMansionPieces()                                        = delete;
+    WoodlandMansionPieces& operator=(WoodlandMansionPieces const&);
+    WoodlandMansionPieces(WoodlandMansionPieces const&);
+    WoodlandMansionPieces();
 
 public:
     // NOLINTBEGIN

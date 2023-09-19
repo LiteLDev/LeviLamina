@@ -10,9 +10,9 @@
 class ClientCacheMissResponsePacket : public ::Packet {
 public:
     // prevent constructor by default
-    ClientCacheMissResponsePacket& operator=(ClientCacheMissResponsePacket const&) = delete;
-    ClientCacheMissResponsePacket(ClientCacheMissResponsePacket const&)            = delete;
-    ClientCacheMissResponsePacket()                                                = delete;
+    ClientCacheMissResponsePacket& operator=(ClientCacheMissResponsePacket const&);
+    ClientCacheMissResponsePacket(ClientCacheMissResponsePacket const&);
+    ClientCacheMissResponsePacket();
 
 public:
     // NOLINTBEGIN

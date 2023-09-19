@@ -26,9 +26,9 @@
 class Llama : public ::Animal {
 public:
     // prevent constructor by default
-    Llama& operator=(Llama const&) = delete;
-    Llama(Llama const&)            = delete;
-    Llama()                        = delete;
+    Llama& operator=(Llama const&);
+    Llama(Llama const&);
+    Llama();
 
 public:
     // NOLINTBEGIN

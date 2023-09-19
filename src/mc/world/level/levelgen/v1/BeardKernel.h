@@ -5,8 +5,8 @@
 struct BeardKernel {
 public:
     // prevent constructor by default
-    BeardKernel& operator=(BeardKernel const&) = delete;
-    BeardKernel(BeardKernel const&)            = delete;
+    BeardKernel& operator=(BeardKernel const&);
+    BeardKernel(BeardKernel const&);
 
 public:
     // NOLINTBEGIN

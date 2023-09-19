@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class BoostableDefinition {
 public:
     // prevent constructor by default
-    BoostableDefinition& operator=(BoostableDefinition const&) = delete;
-    BoostableDefinition(BoostableDefinition const&)            = delete;
-    BoostableDefinition()                                      = delete;
+    BoostableDefinition& operator=(BoostableDefinition const&);
+    BoostableDefinition(BoostableDefinition const&);
+    BoostableDefinition();
 
 public:
     // NOLINTBEGIN

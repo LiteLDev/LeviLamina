@@ -5,9 +5,9 @@
 class InsideGenericBlockSystem {
 public:
     // prevent constructor by default
-    InsideGenericBlockSystem& operator=(InsideGenericBlockSystem const&) = delete;
-    InsideGenericBlockSystem(InsideGenericBlockSystem const&)            = delete;
-    InsideGenericBlockSystem()                                           = delete;
+    InsideGenericBlockSystem& operator=(InsideGenericBlockSystem const&);
+    InsideGenericBlockSystem(InsideGenericBlockSystem const&);
+    InsideGenericBlockSystem();
 
 public:
     // NOLINTBEGIN

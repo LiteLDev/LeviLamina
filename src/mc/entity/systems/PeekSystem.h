@@ -8,9 +8,9 @@
 class PeekSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    PeekSystem& operator=(PeekSystem const&) = delete;
-    PeekSystem(PeekSystem const&)            = delete;
-    PeekSystem()                             = delete;
+    PeekSystem& operator=(PeekSystem const&);
+    PeekSystem(PeekSystem const&);
+    PeekSystem();
 
 public:
     // NOLINTBEGIN

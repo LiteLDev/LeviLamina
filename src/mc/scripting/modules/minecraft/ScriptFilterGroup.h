@@ -15,9 +15,9 @@ namespace ScriptModuleMinecraft {
 class ScriptFilterGroup {
 public:
     // prevent constructor by default
-    ScriptFilterGroup& operator=(ScriptFilterGroup const&) = delete;
-    ScriptFilterGroup(ScriptFilterGroup const&)            = delete;
-    ScriptFilterGroup()                                    = delete;
+    ScriptFilterGroup& operator=(ScriptFilterGroup const&);
+    ScriptFilterGroup(ScriptFilterGroup const&);
+    ScriptFilterGroup();
 
 public:
     // NOLINTBEGIN

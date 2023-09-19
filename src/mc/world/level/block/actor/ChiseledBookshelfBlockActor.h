@@ -5,9 +5,9 @@
 class ChiseledBookshelfBlockActor {
 public:
     // prevent constructor by default
-    ChiseledBookshelfBlockActor& operator=(ChiseledBookshelfBlockActor const&) = delete;
-    ChiseledBookshelfBlockActor(ChiseledBookshelfBlockActor const&)            = delete;
-    ChiseledBookshelfBlockActor()                                              = delete;
+    ChiseledBookshelfBlockActor& operator=(ChiseledBookshelfBlockActor const&);
+    ChiseledBookshelfBlockActor(ChiseledBookshelfBlockActor const&);
+    ChiseledBookshelfBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -71,7 +71,7 @@ public:
     MCVAPI void stopOpen(class Player&);
 
     // symbol: ??0ChiseledBookshelfBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI ChiseledBookshelfBlockActor(class BlockPos const&);
+    MCAPI explicit ChiseledBookshelfBlockActor(class BlockPos const&);
 
     // symbol: ?getLastInteractedSlot@ChiseledBookshelfBlockActor@@QEBAIXZ
     MCAPI uint getLastInteractedSlot() const;

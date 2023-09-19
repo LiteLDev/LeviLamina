@@ -50,9 +50,9 @@ namespace FoodExhaustionSystemImpl {
 struct FoodExhaustionSystemImpl {
 public:
     // prevent constructor by default
-    FoodExhaustionSystemImpl& operator=(FoodExhaustionSystemImpl const&) = delete;
-    FoodExhaustionSystemImpl(FoodExhaustionSystemImpl const&)            = delete;
-    FoodExhaustionSystemImpl()                                           = delete;
+    FoodExhaustionSystemImpl& operator=(FoodExhaustionSystemImpl const&);
+    FoodExhaustionSystemImpl(FoodExhaustionSystemImpl const&);
+    FoodExhaustionSystemImpl();
 
 public:
     // NOLINTBEGIN

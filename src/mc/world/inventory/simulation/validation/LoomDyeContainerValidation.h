@@ -8,9 +8,9 @@
 class LoomDyeContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    LoomDyeContainerValidation& operator=(LoomDyeContainerValidation const&) = delete;
-    LoomDyeContainerValidation(LoomDyeContainerValidation const&)            = delete;
-    LoomDyeContainerValidation()                                             = delete;
+    LoomDyeContainerValidation& operator=(LoomDyeContainerValidation const&);
+    LoomDyeContainerValidation(LoomDyeContainerValidation const&);
+    LoomDyeContainerValidation();
 
 public:
     // NOLINTBEGIN

@@ -16,9 +16,9 @@ namespace VanillaSurfaceBuilders {
 class SwampSurfaceBuilder : public ::ISurfaceBuilder {
 public:
     // prevent constructor by default
-    SwampSurfaceBuilder& operator=(SwampSurfaceBuilder const&) = delete;
-    SwampSurfaceBuilder(SwampSurfaceBuilder const&)            = delete;
-    SwampSurfaceBuilder()                                      = delete;
+    SwampSurfaceBuilder& operator=(SwampSurfaceBuilder const&);
+    SwampSurfaceBuilder(SwampSurfaceBuilder const&);
+    SwampSurfaceBuilder();
 
 public:
     // NOLINTBEGIN

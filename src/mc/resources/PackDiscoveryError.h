@@ -9,9 +9,9 @@
 class PackDiscoveryError : public ::PackError {
 public:
     // prevent constructor by default
-    PackDiscoveryError& operator=(PackDiscoveryError const&) = delete;
-    PackDiscoveryError(PackDiscoveryError const&)            = delete;
-    PackDiscoveryError()                                     = delete;
+    PackDiscoveryError& operator=(PackDiscoveryError const&);
+    PackDiscoveryError(PackDiscoveryError const&);
+    PackDiscoveryError();
 
 public:
     // NOLINTBEGIN

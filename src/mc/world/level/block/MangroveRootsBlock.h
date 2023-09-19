@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class MangroveRootsBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    MangroveRootsBlock& operator=(MangroveRootsBlock const&) = delete;
-    MangroveRootsBlock(MangroveRootsBlock const&)            = delete;
-    MangroveRootsBlock()                                     = delete;
+    MangroveRootsBlock& operator=(MangroveRootsBlock const&);
+    MangroveRootsBlock(MangroveRootsBlock const&);
+    MangroveRootsBlock();
 
 public:
     // NOLINTBEGIN

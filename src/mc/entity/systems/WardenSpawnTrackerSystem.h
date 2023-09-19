@@ -8,9 +8,9 @@
 class WardenSpawnTrackerSystem {
 public:
     // prevent constructor by default
-    WardenSpawnTrackerSystem& operator=(WardenSpawnTrackerSystem const&) = delete;
-    WardenSpawnTrackerSystem(WardenSpawnTrackerSystem const&)            = delete;
-    WardenSpawnTrackerSystem()                                           = delete;
+    WardenSpawnTrackerSystem& operator=(WardenSpawnTrackerSystem const&);
+    WardenSpawnTrackerSystem(WardenSpawnTrackerSystem const&);
+    WardenSpawnTrackerSystem();
 
 public:
     // NOLINTBEGIN

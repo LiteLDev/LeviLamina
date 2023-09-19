@@ -10,9 +10,9 @@
 class FramewiseActionOrStopSystem {
 public:
     // prevent constructor by default
-    FramewiseActionOrStopSystem& operator=(FramewiseActionOrStopSystem const&) = delete;
-    FramewiseActionOrStopSystem(FramewiseActionOrStopSystem const&)            = delete;
-    FramewiseActionOrStopSystem()                                              = delete;
+    FramewiseActionOrStopSystem& operator=(FramewiseActionOrStopSystem const&);
+    FramewiseActionOrStopSystem(FramewiseActionOrStopSystem const&);
+    FramewiseActionOrStopSystem();
 
 public:
     // NOLINTBEGIN

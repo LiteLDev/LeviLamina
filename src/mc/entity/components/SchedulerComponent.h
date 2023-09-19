@@ -5,9 +5,9 @@
 class SchedulerComponent {
 public:
     // prevent constructor by default
-    SchedulerComponent& operator=(SchedulerComponent const&) = delete;
-    SchedulerComponent(SchedulerComponent const&)            = delete;
-    SchedulerComponent()                                     = delete;
+    SchedulerComponent& operator=(SchedulerComponent const&);
+    SchedulerComponent(SchedulerComponent const&);
+    SchedulerComponent();
 
 public:
     // NOLINTBEGIN

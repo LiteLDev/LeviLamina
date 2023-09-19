@@ -10,9 +10,9 @@ namespace TreeHelper { struct TreeParams; }
 class AcaciaTreeTrunk {
 public:
     // prevent constructor by default
-    AcaciaTreeTrunk& operator=(AcaciaTreeTrunk const&) = delete;
-    AcaciaTreeTrunk(AcaciaTreeTrunk const&)            = delete;
-    AcaciaTreeTrunk()                                  = delete;
+    AcaciaTreeTrunk& operator=(AcaciaTreeTrunk const&);
+    AcaciaTreeTrunk(AcaciaTreeTrunk const&);
+    AcaciaTreeTrunk();
 
 public:
     // NOLINTBEGIN

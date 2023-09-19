@@ -27,9 +27,9 @@
 class MinecartHopper : public ::Minecart {
 public:
     // prevent constructor by default
-    MinecartHopper& operator=(MinecartHopper const&) = delete;
-    MinecartHopper(MinecartHopper const&)            = delete;
-    MinecartHopper()                                 = delete;
+    MinecartHopper& operator=(MinecartHopper const&);
+    MinecartHopper(MinecartHopper const&);
+    MinecartHopper();
 
 public:
     // NOLINTBEGIN

@@ -9,8 +9,8 @@
 class InteractActionNode : public ::BehaviorNode {
 public:
     // prevent constructor by default
-    InteractActionNode& operator=(InteractActionNode const&) = delete;
-    InteractActionNode(InteractActionNode const&)            = delete;
+    InteractActionNode& operator=(InteractActionNode const&);
+    InteractActionNode(InteractActionNode const&);
 
 public:
     // NOLINTBEGIN

@@ -7,9 +7,9 @@ namespace Util {
 class EntityComponentProcessor {
 public:
     // prevent constructor by default
-    EntityComponentProcessor& operator=(EntityComponentProcessor const&) = delete;
-    EntityComponentProcessor(EntityComponentProcessor const&)            = delete;
-    EntityComponentProcessor()                                           = delete;
+    EntityComponentProcessor& operator=(EntityComponentProcessor const&);
+    EntityComponentProcessor(EntityComponentProcessor const&);
+    EntityComponentProcessor();
 };
 
 }; // namespace Util

@@ -5,7 +5,7 @@
 struct AutoJumpingFlag {
 public:
     // prevent constructor by default
-    AutoJumpingFlag& operator=(AutoJumpingFlag const&) = delete;
-    AutoJumpingFlag(AutoJumpingFlag const&)            = delete;
-    AutoJumpingFlag()                                  = delete;
+    AutoJumpingFlag& operator=(AutoJumpingFlag const&);
+    AutoJumpingFlag(AutoJumpingFlag const&);
+    AutoJumpingFlag();
 };

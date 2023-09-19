@@ -13,9 +13,9 @@ namespace AgentComponents { class CommandCooldown; }
 class AgentCommandSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    AgentCommandSystem& operator=(AgentCommandSystem const&) = delete;
-    AgentCommandSystem(AgentCommandSystem const&)            = delete;
-    AgentCommandSystem()                                     = delete;
+    AgentCommandSystem& operator=(AgentCommandSystem const&);
+    AgentCommandSystem(AgentCommandSystem const&);
+    AgentCommandSystem();
 
 public:
     // NOLINTBEGIN

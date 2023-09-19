@@ -9,9 +9,9 @@ public:
 
 public:
     // prevent constructor by default
-    PropertyMetadata& operator=(PropertyMetadata const&) = delete;
-    PropertyMetadata(PropertyMetadata const&)            = delete;
-    PropertyMetadata()                                   = delete;
+    PropertyMetadata& operator=(PropertyMetadata const&);
+    PropertyMetadata(PropertyMetadata const&);
+    PropertyMetadata();
 
 public:
     // NOLINTBEGIN

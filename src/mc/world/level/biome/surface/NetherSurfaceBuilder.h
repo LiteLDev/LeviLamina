@@ -16,8 +16,8 @@ namespace VanillaSurfaceBuilders {
 class NetherSurfaceBuilder : public ::ISurfaceBuilder {
 public:
     // prevent constructor by default
-    NetherSurfaceBuilder& operator=(NetherSurfaceBuilder const&) = delete;
-    NetherSurfaceBuilder(NetherSurfaceBuilder const&)            = delete;
+    NetherSurfaceBuilder& operator=(NetherSurfaceBuilder const&);
+    NetherSurfaceBuilder(NetherSurfaceBuilder const&);
 
 public:
     // NOLINTBEGIN

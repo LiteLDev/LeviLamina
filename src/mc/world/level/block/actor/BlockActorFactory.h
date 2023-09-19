@@ -8,9 +8,9 @@
 class BlockActorFactory {
 public:
     // prevent constructor by default
-    BlockActorFactory& operator=(BlockActorFactory const&) = delete;
-    BlockActorFactory(BlockActorFactory const&)            = delete;
-    BlockActorFactory()                                    = delete;
+    BlockActorFactory& operator=(BlockActorFactory const&);
+    BlockActorFactory(BlockActorFactory const&);
+    BlockActorFactory();
 
 public:
     // NOLINTBEGIN

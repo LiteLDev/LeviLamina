@@ -8,9 +8,9 @@
 class DiggingEnchant : public ::Enchant {
 public:
     // prevent constructor by default
-    DiggingEnchant& operator=(DiggingEnchant const&) = delete;
-    DiggingEnchant(DiggingEnchant const&)            = delete;
-    DiggingEnchant()                                 = delete;
+    DiggingEnchant& operator=(DiggingEnchant const&);
+    DiggingEnchant(DiggingEnchant const&);
+    DiggingEnchant();
 
 public:
     // NOLINTBEGIN

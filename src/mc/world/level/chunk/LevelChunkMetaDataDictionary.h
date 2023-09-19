@@ -5,9 +5,9 @@
 class LevelChunkMetaDataDictionary {
 public:
     // prevent constructor by default
-    LevelChunkMetaDataDictionary& operator=(LevelChunkMetaDataDictionary const&) = delete;
-    LevelChunkMetaDataDictionary(LevelChunkMetaDataDictionary const&)            = delete;
-    LevelChunkMetaDataDictionary()                                               = delete;
+    LevelChunkMetaDataDictionary& operator=(LevelChunkMetaDataDictionary const&);
+    LevelChunkMetaDataDictionary(LevelChunkMetaDataDictionary const&);
+    LevelChunkMetaDataDictionary();
 
 public:
     // NOLINTBEGIN

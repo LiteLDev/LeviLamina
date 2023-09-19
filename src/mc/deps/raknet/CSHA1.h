@@ -5,8 +5,8 @@
 class CSHA1 {
 public:
     // prevent constructor by default
-    CSHA1& operator=(CSHA1 const&) = delete;
-    CSHA1(CSHA1 const&)            = delete;
+    CSHA1& operator=(CSHA1 const&);
+    CSHA1(CSHA1 const&);
 
 public:
     // NOLINTBEGIN

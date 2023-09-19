@@ -25,8 +25,8 @@ public:
     class CZString {
     public:
         // prevent constructor by default
-        CZString& operator=(CZString const&) = delete;
-        CZString()                           = delete;
+        CZString& operator=(CZString const&);
+        CZString();
 
     public:
         // NOLINTBEGIN
@@ -41,36 +41,36 @@ public:
 
 public:
     // prevent constructor by default
-    Value() = delete;
+    Value();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0Value@Json@@QEAA@_K@Z
-    MCAPI Value(uint64);
+    MCAPI explicit Value(uint64);
 
     // symbol: ??0Value@Json@@QEAA@PEBD@Z
-    MCAPI Value(char const*);
+    MCAPI explicit Value(char const*);
 
     // symbol: ??0Value@Json@@QEAA@W4ValueType@1@@Z
-    MCAPI Value(::Json::ValueType);
+    MCAPI explicit Value(::Json::ValueType);
 
     // symbol: ??0Value@Json@@QEAA@_J@Z
-    MCAPI Value(int64);
+    MCAPI explicit Value(int64);
 
     // symbol: ??0Value@Json@@QEAA@H@Z
-    MCAPI Value(int);
+    MCAPI explicit Value(int);
 
     // symbol: ??0Value@Json@@QEAA@I@Z
-    MCAPI Value(uint);
+    MCAPI explicit Value(uint);
 
     // symbol: ??0Value@Json@@QEAA@N@Z
-    MCAPI Value(double);
+    MCAPI explicit Value(double);
 
     // symbol: ??0Value@Json@@QEAA@_N@Z
-    MCAPI Value(bool);
+    MCAPI explicit Value(bool);
 
     // symbol: ??0Value@Json@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI Value(std::string const&);
+    MCAPI explicit Value(std::string const&);
 
     // symbol: ??0Value@Json@@QEAA@AEBV01@@Z
     MCAPI Value(class Json::Value const&);

@@ -5,8 +5,8 @@
 class FlockingComponent {
 public:
     // prevent constructor by default
-    FlockingComponent& operator=(FlockingComponent const&) = delete;
-    FlockingComponent(FlockingComponent const&)            = delete;
+    FlockingComponent& operator=(FlockingComponent const&);
+    FlockingComponent(FlockingComponent const&);
 
 public:
     // NOLINTBEGIN

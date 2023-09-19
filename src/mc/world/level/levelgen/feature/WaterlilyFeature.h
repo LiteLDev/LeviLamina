@@ -8,9 +8,9 @@
 class WaterlilyFeature : public ::Feature {
 public:
     // prevent constructor by default
-    WaterlilyFeature& operator=(WaterlilyFeature const&) = delete;
-    WaterlilyFeature(WaterlilyFeature const&)            = delete;
-    WaterlilyFeature()                                   = delete;
+    WaterlilyFeature& operator=(WaterlilyFeature const&);
+    WaterlilyFeature(WaterlilyFeature const&);
+    WaterlilyFeature();
 
 public:
     // NOLINTBEGIN

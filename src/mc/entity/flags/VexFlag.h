@@ -5,7 +5,7 @@
 struct VexFlag {
 public:
     // prevent constructor by default
-    VexFlag& operator=(VexFlag const&) = delete;
-    VexFlag(VexFlag const&)            = delete;
-    VexFlag()                          = delete;
+    VexFlag& operator=(VexFlag const&);
+    VexFlag(VexFlag const&);
+    VexFlag();
 };

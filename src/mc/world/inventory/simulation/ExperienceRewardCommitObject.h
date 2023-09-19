@@ -8,9 +8,9 @@
 class ExperienceRewardCommitObject : public ::ContainerValidationCommitObject {
 public:
     // prevent constructor by default
-    ExperienceRewardCommitObject& operator=(ExperienceRewardCommitObject const&) = delete;
-    ExperienceRewardCommitObject(ExperienceRewardCommitObject const&)            = delete;
-    ExperienceRewardCommitObject()                                               = delete;
+    ExperienceRewardCommitObject& operator=(ExperienceRewardCommitObject const&);
+    ExperienceRewardCommitObject(ExperienceRewardCommitObject const&);
+    ExperienceRewardCommitObject();
 
 public:
     // NOLINTBEGIN
@@ -27,7 +27,7 @@ public:
     virtual void commit(class ContainerScreenContext const&);
 
     // symbol: ??0ExperienceRewardCommitObject@@QEAA@H@Z
-    MCAPI ExperienceRewardCommitObject(int);
+    MCAPI explicit ExperienceRewardCommitObject(int);
 
     // NOLINTEND
 };

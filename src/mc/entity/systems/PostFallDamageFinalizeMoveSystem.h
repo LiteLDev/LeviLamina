@@ -11,9 +11,9 @@
 class PostFallDamageFinalizeMoveSystem {
 public:
     // prevent constructor by default
-    PostFallDamageFinalizeMoveSystem& operator=(PostFallDamageFinalizeMoveSystem const&) = delete;
-    PostFallDamageFinalizeMoveSystem(PostFallDamageFinalizeMoveSystem const&)            = delete;
-    PostFallDamageFinalizeMoveSystem()                                                   = delete;
+    PostFallDamageFinalizeMoveSystem& operator=(PostFallDamageFinalizeMoveSystem const&);
+    PostFallDamageFinalizeMoveSystem(PostFallDamageFinalizeMoveSystem const&);
+    PostFallDamageFinalizeMoveSystem();
 
 public:
     // NOLINTBEGIN

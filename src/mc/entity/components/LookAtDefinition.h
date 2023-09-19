@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class LookAtDefinition {
 public:
     // prevent constructor by default
-    LookAtDefinition& operator=(LookAtDefinition const&) = delete;
-    LookAtDefinition(LookAtDefinition const&)            = delete;
+    LookAtDefinition& operator=(LookAtDefinition const&);
+    LookAtDefinition(LookAtDefinition const&);
 
 public:
     // NOLINTBEGIN

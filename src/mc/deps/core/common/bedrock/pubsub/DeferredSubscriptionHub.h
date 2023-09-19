@@ -20,9 +20,9 @@ public:
 
 public:
     // prevent constructor by default
-    DeferredSubscriptionHub& operator=(DeferredSubscriptionHub const&) = delete;
-    DeferredSubscriptionHub(DeferredSubscriptionHub const&)            = delete;
-    DeferredSubscriptionHub()                                          = delete;
+    DeferredSubscriptionHub& operator=(DeferredSubscriptionHub const&);
+    DeferredSubscriptionHub(DeferredSubscriptionHub const&);
+    DeferredSubscriptionHub();
 
 public:
     // NOLINTBEGIN

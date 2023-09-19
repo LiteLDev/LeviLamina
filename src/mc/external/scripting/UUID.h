@@ -7,9 +7,9 @@ namespace Scripting {
 struct UUID {
 public:
     // prevent constructor by default
-    UUID& operator=(UUID const&) = delete;
-    UUID(UUID const&)            = delete;
-    UUID()                       = delete;
+    UUID& operator=(UUID const&);
+    UUID(UUID const&);
+    UUID();
 };
 
 }; // namespace Scripting

@@ -8,9 +8,9 @@
 class DecoratedPotBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    DecoratedPotBlockActor& operator=(DecoratedPotBlockActor const&) = delete;
-    DecoratedPotBlockActor(DecoratedPotBlockActor const&)            = delete;
-    DecoratedPotBlockActor()                                         = delete;
+    DecoratedPotBlockActor& operator=(DecoratedPotBlockActor const&);
+    DecoratedPotBlockActor(DecoratedPotBlockActor const&);
+    DecoratedPotBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -61,7 +61,7 @@ public:
     virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
 
     // symbol: ??0DecoratedPotBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI DecoratedPotBlockActor(class BlockPos const&);
+    MCAPI explicit DecoratedPotBlockActor(class BlockPos const&);
 
     // symbol:
     // ?getSherdNames@DecoratedPotBlockActor@@QEBAAEBV?$array@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$03@std@@XZ

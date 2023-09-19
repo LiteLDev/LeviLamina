@@ -5,7 +5,7 @@
 class InventoryActionPacket {
 public:
     // prevent constructor by default
-    InventoryActionPacket& operator=(InventoryActionPacket const&) = delete;
-    InventoryActionPacket(InventoryActionPacket const&)            = delete;
-    InventoryActionPacket()                                        = delete;
+    InventoryActionPacket& operator=(InventoryActionPacket const&);
+    InventoryActionPacket(InventoryActionPacket const&);
+    InventoryActionPacket();
 };

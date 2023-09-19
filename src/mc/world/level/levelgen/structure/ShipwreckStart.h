@@ -8,9 +8,9 @@
 class ShipwreckStart : public ::StructureStart {
 public:
     // prevent constructor by default
-    ShipwreckStart& operator=(ShipwreckStart const&) = delete;
-    ShipwreckStart(ShipwreckStart const&)            = delete;
-    ShipwreckStart()                                 = delete;
+    ShipwreckStart& operator=(ShipwreckStart const&);
+    ShipwreckStart(ShipwreckStart const&);
+    ShipwreckStart();
 
 public:
     // NOLINTBEGIN

@@ -21,16 +21,16 @@ public:
     struct EnchantInfo {
     public:
         // prevent constructor by default
-        EnchantInfo& operator=(EnchantInfo const&) = delete;
-        EnchantInfo(EnchantInfo const&)            = delete;
-        EnchantInfo()                              = delete;
+        EnchantInfo& operator=(EnchantInfo const&);
+        EnchantInfo(EnchantInfo const&);
+        EnchantInfo();
     };
 
 public:
     // prevent constructor by default
-    LootItemMatchToolCondition& operator=(LootItemMatchToolCondition const&) = delete;
-    LootItemMatchToolCondition(LootItemMatchToolCondition const&)            = delete;
-    LootItemMatchToolCondition()                                             = delete;
+    LootItemMatchToolCondition& operator=(LootItemMatchToolCondition const&);
+    LootItemMatchToolCondition(LootItemMatchToolCondition const&);
+    LootItemMatchToolCondition();
 
 public:
     // NOLINTBEGIN

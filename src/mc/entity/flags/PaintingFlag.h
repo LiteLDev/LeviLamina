@@ -5,7 +5,7 @@
 struct PaintingFlag {
 public:
     // prevent constructor by default
-    PaintingFlag& operator=(PaintingFlag const&) = delete;
-    PaintingFlag(PaintingFlag const&)            = delete;
-    PaintingFlag()                               = delete;
+    PaintingFlag& operator=(PaintingFlag const&);
+    PaintingFlag(PaintingFlag const&);
+    PaintingFlag();
 };

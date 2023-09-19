@@ -16,9 +16,9 @@ namespace ScriptModuleMinecraft {
 class ScriptEntityRaycastHit {
 public:
     // prevent constructor by default
-    ScriptEntityRaycastHit& operator=(ScriptEntityRaycastHit const&) = delete;
-    ScriptEntityRaycastHit(ScriptEntityRaycastHit const&)            = delete;
-    ScriptEntityRaycastHit()                                         = delete;
+    ScriptEntityRaycastHit& operator=(ScriptEntityRaycastHit const&);
+    ScriptEntityRaycastHit(ScriptEntityRaycastHit const&);
+    ScriptEntityRaycastHit();
 
 public:
     // NOLINTBEGIN

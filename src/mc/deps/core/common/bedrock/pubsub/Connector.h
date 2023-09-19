@@ -8,9 +8,9 @@ template <typename T0>
 class Connector {
 public:
     // prevent constructor by default
-    Connector& operator=(Connector const&) = delete;
-    Connector(Connector const&)            = delete;
-    Connector()                            = delete;
+    Connector& operator=(Connector const&);
+    Connector(Connector const&);
+    Connector();
 };
 
 }; // namespace Bedrock::PubSub

@@ -8,9 +8,9 @@
 class UnburiedConstraint {
 public:
     // prevent constructor by default
-    UnburiedConstraint& operator=(UnburiedConstraint const&) = delete;
-    UnburiedConstraint(UnburiedConstraint const&)            = delete;
-    UnburiedConstraint()                                     = delete;
+    UnburiedConstraint& operator=(UnburiedConstraint const&);
+    UnburiedConstraint(UnburiedConstraint const&);
+    UnburiedConstraint();
 
 public:
     // NOLINTBEGIN
@@ -21,7 +21,7 @@ public:
     virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, ::Rotation const&) const;
 
     // symbol: ??0UnburiedConstraint@@QEAA@AEAVStructureTemplate@@@Z
-    MCAPI UnburiedConstraint(class StructureTemplate&);
+    MCAPI explicit UnburiedConstraint(class StructureTemplate&);
 
     // NOLINTEND
 };

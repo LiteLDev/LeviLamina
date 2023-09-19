@@ -8,9 +8,9 @@
 class PillagerOutpostFeature : public ::StructureFeature {
 public:
     // prevent constructor by default
-    PillagerOutpostFeature& operator=(PillagerOutpostFeature const&) = delete;
-    PillagerOutpostFeature(PillagerOutpostFeature const&)            = delete;
-    PillagerOutpostFeature()                                         = delete;
+    PillagerOutpostFeature& operator=(PillagerOutpostFeature const&);
+    PillagerOutpostFeature(PillagerOutpostFeature const&);
+    PillagerOutpostFeature();
 
 public:
     // NOLINTBEGIN
@@ -48,7 +48,7 @@ public:
     createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
 
     // symbol: ??0PillagerOutpostFeature@@QEAA@I@Z
-    MCAPI PillagerOutpostFeature(uint);
+    MCAPI explicit PillagerOutpostFeature(uint);
 
     // NOLINTEND
 };

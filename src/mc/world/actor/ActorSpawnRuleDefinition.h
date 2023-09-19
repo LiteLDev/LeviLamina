@@ -5,9 +5,9 @@
 struct ActorSpawnRuleDefinition {
 public:
     // prevent constructor by default
-    ActorSpawnRuleDefinition& operator=(ActorSpawnRuleDefinition const&) = delete;
-    ActorSpawnRuleDefinition(ActorSpawnRuleDefinition const&)            = delete;
-    ActorSpawnRuleDefinition()                                           = delete;
+    ActorSpawnRuleDefinition& operator=(ActorSpawnRuleDefinition const&);
+    ActorSpawnRuleDefinition(ActorSpawnRuleDefinition const&);
+    ActorSpawnRuleDefinition();
 
 public:
     // NOLINTBEGIN

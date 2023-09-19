@@ -5,9 +5,9 @@
 class CerealSchemaUpgradeSet {
 public:
     // prevent constructor by default
-    CerealSchemaUpgradeSet& operator=(CerealSchemaUpgradeSet const&) = delete;
-    CerealSchemaUpgradeSet(CerealSchemaUpgradeSet const&)            = delete;
-    CerealSchemaUpgradeSet()                                         = delete;
+    CerealSchemaUpgradeSet& operator=(CerealSchemaUpgradeSet const&);
+    CerealSchemaUpgradeSet(CerealSchemaUpgradeSet const&);
+    CerealSchemaUpgradeSet();
 
 public:
     // NOLINTBEGIN

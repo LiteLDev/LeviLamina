@@ -9,9 +9,9 @@
 class FollowTargetCaptainGoal : public ::MoveTowardsTargetGoal {
 public:
     // prevent constructor by default
-    FollowTargetCaptainGoal& operator=(FollowTargetCaptainGoal const&) = delete;
-    FollowTargetCaptainGoal(FollowTargetCaptainGoal const&)            = delete;
-    FollowTargetCaptainGoal()                                          = delete;
+    FollowTargetCaptainGoal& operator=(FollowTargetCaptainGoal const&);
+    FollowTargetCaptainGoal(FollowTargetCaptainGoal const&);
+    FollowTargetCaptainGoal();
 
 public:
     // NOLINTBEGIN

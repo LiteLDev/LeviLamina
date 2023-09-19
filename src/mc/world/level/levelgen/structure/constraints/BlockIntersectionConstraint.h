@@ -8,9 +8,9 @@
 class BlockIntersectionConstraint {
 public:
     // prevent constructor by default
-    BlockIntersectionConstraint& operator=(BlockIntersectionConstraint const&) = delete;
-    BlockIntersectionConstraint(BlockIntersectionConstraint const&)            = delete;
-    BlockIntersectionConstraint()                                              = delete;
+    BlockIntersectionConstraint& operator=(BlockIntersectionConstraint const&);
+    BlockIntersectionConstraint(BlockIntersectionConstraint const&);
+    BlockIntersectionConstraint();
 
 public:
     // NOLINTBEGIN
@@ -22,7 +22,7 @@ public:
     virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, ::Rotation const&) const;
 
     // symbol: ??0BlockIntersectionConstraint@@QEAA@AEAVStructureTemplate@@@Z
-    MCAPI BlockIntersectionConstraint(class StructureTemplate&);
+    MCAPI explicit BlockIntersectionConstraint(class StructureTemplate&);
 
     // NOLINTEND
 };

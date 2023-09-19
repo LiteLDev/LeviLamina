@@ -10,8 +10,8 @@
 class Container {
 public:
     // prevent constructor by default
-    Container& operator=(Container const&) = delete;
-    Container()                            = delete;
+    Container& operator=(Container const&);
+    Container();
 
 public:
     // NOLINTBEGIN
@@ -137,7 +137,7 @@ public:
     MCVAPI ~Container();
 
     // symbol: ??0Container@@QEAA@W4ContainerType@@@Z
-    MCAPI Container(::ContainerType);
+    MCAPI explicit Container(::ContainerType);
 
     // symbol: ??0Container@@QEAA@W4ContainerType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     MCAPI Container(::ContainerType, std::string const&, bool);

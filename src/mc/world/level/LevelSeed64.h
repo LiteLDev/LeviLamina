@@ -5,9 +5,9 @@
 class LevelSeed64 {
 public:
     // prevent constructor by default
-    LevelSeed64& operator=(LevelSeed64 const&) = delete;
-    LevelSeed64(LevelSeed64 const&)            = delete;
-    LevelSeed64()                              = delete;
+    LevelSeed64& operator=(LevelSeed64 const&);
+    LevelSeed64(LevelSeed64 const&);
+    LevelSeed64();
 
 public:
     // NOLINTBEGIN

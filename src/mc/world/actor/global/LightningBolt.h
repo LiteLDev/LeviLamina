@@ -25,9 +25,9 @@
 class LightningBolt : public ::Actor {
 public:
     // prevent constructor by default
-    LightningBolt& operator=(LightningBolt const&) = delete;
-    LightningBolt(LightningBolt const&)            = delete;
-    LightningBolt()                                = delete;
+    LightningBolt& operator=(LightningBolt const&);
+    LightningBolt(LightningBolt const&);
+    LightningBolt();
 
 public:
     // NOLINTBEGIN

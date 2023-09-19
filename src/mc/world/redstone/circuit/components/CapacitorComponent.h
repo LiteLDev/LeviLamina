@@ -9,8 +9,8 @@
 class CapacitorComponent : public ::ProducerComponent {
 public:
     // prevent constructor by default
-    CapacitorComponent& operator=(CapacitorComponent const&) = delete;
-    CapacitorComponent(CapacitorComponent const&)            = delete;
+    CapacitorComponent& operator=(CapacitorComponent const&);
+    CapacitorComponent(CapacitorComponent const&);
 
 public:
     // NOLINTBEGIN

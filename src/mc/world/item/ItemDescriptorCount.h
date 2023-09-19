@@ -13,7 +13,7 @@ namespace Json { class Value; }
 class ItemDescriptorCount : public ::ItemDescriptor {
 public:
     // prevent constructor by default
-    ItemDescriptorCount& operator=(ItemDescriptorCount const&) = delete;
+    ItemDescriptorCount& operator=(ItemDescriptorCount const&);
 
 public:
     // NOLINTBEGIN
@@ -27,7 +27,7 @@ public:
     MCVAPI ~ItemDescriptorCount();
 
     // symbol: ??0ItemDescriptorCount@@QEAA@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI ItemDescriptorCount(class ReadOnlyBinaryStream&);
+    MCAPI explicit ItemDescriptorCount(class ReadOnlyBinaryStream&);
 
     // symbol: ??0ItemDescriptorCount@@QEAA@AEBVBlockLegacy@@G@Z
     MCAPI ItemDescriptorCount(class BlockLegacy const&, ushort);

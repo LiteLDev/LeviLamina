@@ -17,9 +17,9 @@ namespace Core { class Path; }
 class ZipPackAccessStrategy : public ::PackAccessStrategy {
 public:
     // prevent constructor by default
-    ZipPackAccessStrategy& operator=(ZipPackAccessStrategy const&) = delete;
-    ZipPackAccessStrategy(ZipPackAccessStrategy const&)            = delete;
-    ZipPackAccessStrategy()                                        = delete;
+    ZipPackAccessStrategy& operator=(ZipPackAccessStrategy const&);
+    ZipPackAccessStrategy(ZipPackAccessStrategy const&);
+    ZipPackAccessStrategy();
 
 public:
     // NOLINTBEGIN

@@ -26,9 +26,9 @@
 class GlowSquid : public ::Squid {
 public:
     // prevent constructor by default
-    GlowSquid& operator=(GlowSquid const&) = delete;
-    GlowSquid(GlowSquid const&)            = delete;
-    GlowSquid()                            = delete;
+    GlowSquid& operator=(GlowSquid const&);
+    GlowSquid(GlowSquid const&);
+    GlowSquid();
 
 public:
     // NOLINTBEGIN

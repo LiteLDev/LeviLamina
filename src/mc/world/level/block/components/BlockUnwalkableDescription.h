@@ -14,9 +14,9 @@ namespace JsonUtil { class EmptyClass; }
 class BlockUnwalkableDescription : public ::BlockComponentDescription {
 public:
     // prevent constructor by default
-    BlockUnwalkableDescription& operator=(BlockUnwalkableDescription const&) = delete;
-    BlockUnwalkableDescription(BlockUnwalkableDescription const&)            = delete;
-    BlockUnwalkableDescription()                                             = delete;
+    BlockUnwalkableDescription& operator=(BlockUnwalkableDescription const&);
+    BlockUnwalkableDescription(BlockUnwalkableDescription const&);
+    BlockUnwalkableDescription();
 
 public:
     // NOLINTBEGIN

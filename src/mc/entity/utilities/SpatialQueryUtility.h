@@ -10,9 +10,9 @@
 class SpatialQueryUtility {
 public:
     // prevent constructor by default
-    SpatialQueryUtility& operator=(SpatialQueryUtility const&) = delete;
-    SpatialQueryUtility(SpatialQueryUtility const&)            = delete;
-    SpatialQueryUtility()                                      = delete;
+    SpatialQueryUtility& operator=(SpatialQueryUtility const&);
+    SpatialQueryUtility(SpatialQueryUtility const&);
+    SpatialQueryUtility();
 
 public:
     // NOLINTBEGIN

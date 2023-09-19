@@ -16,9 +16,9 @@ public:
     struct BatchEntry {
     public:
         // prevent constructor by default
-        BatchEntry& operator=(BatchEntry const&) = delete;
-        BatchEntry(BatchEntry const&)            = delete;
-        BatchEntry()                             = delete;
+        BatchEntry& operator=(BatchEntry const&);
+        BatchEntry(BatchEntry const&);
+        BatchEntry();
 
     public:
         // NOLINTBEGIN
@@ -30,8 +30,8 @@ public:
 
 public:
     // prevent constructor by default
-    LevelStorageWriteBatch& operator=(LevelStorageWriteBatch const&) = delete;
-    LevelStorageWriteBatch(LevelStorageWriteBatch const&)            = delete;
+    LevelStorageWriteBatch& operator=(LevelStorageWriteBatch const&);
+    LevelStorageWriteBatch(LevelStorageWriteBatch const&);
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class AmbientSoundServerComponent {
 public:
     // prevent constructor by default
-    AmbientSoundServerComponent& operator=(AmbientSoundServerComponent const&) = delete;
-    AmbientSoundServerComponent(AmbientSoundServerComponent const&)            = delete;
-    AmbientSoundServerComponent()                                              = delete;
+    AmbientSoundServerComponent& operator=(AmbientSoundServerComponent const&);
+    AmbientSoundServerComponent(AmbientSoundServerComponent const&);
+    AmbientSoundServerComponent();
 
 public:
     // NOLINTBEGIN

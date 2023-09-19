@@ -10,9 +10,9 @@ namespace ScriptModuleMinecraft {
 struct ScriptTripWireTripAfterEvent {
 public:
     // prevent constructor by default
-    ScriptTripWireTripAfterEvent& operator=(ScriptTripWireTripAfterEvent const&) = delete;
-    ScriptTripWireTripAfterEvent(ScriptTripWireTripAfterEvent const&)            = delete;
-    ScriptTripWireTripAfterEvent()                                               = delete;
+    ScriptTripWireTripAfterEvent& operator=(ScriptTripWireTripAfterEvent const&);
+    ScriptTripWireTripAfterEvent(ScriptTripWireTripAfterEvent const&);
+    ScriptTripWireTripAfterEvent();
 
 public:
     // NOLINTBEGIN

@@ -7,9 +7,9 @@ namespace cereal {
 class BasicLoader {
 public:
     // prevent constructor by default
-    BasicLoader& operator=(BasicLoader const&) = delete;
-    BasicLoader(BasicLoader const&)            = delete;
-    BasicLoader()                              = delete;
+    BasicLoader& operator=(BasicLoader const&);
+    BasicLoader(BasicLoader const&);
+    BasicLoader();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class SandFeature : public ::Feature {
 public:
     // prevent constructor by default
-    SandFeature& operator=(SandFeature const&) = delete;
-    SandFeature(SandFeature const&)            = delete;
-    SandFeature()                              = delete;
+    SandFeature& operator=(SandFeature const&);
+    SandFeature(SandFeature const&);
+    SandFeature();
 
 public:
     // NOLINTBEGIN

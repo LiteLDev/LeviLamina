@@ -7,8 +7,8 @@ namespace mce {
 class Blob {
 public:
     // prevent constructor by default
-    Blob& operator=(Blob const&) = delete;
-    Blob(Blob const&)            = delete;
+    Blob& operator=(Blob const&);
+    Blob(Blob const&);
 
 public:
     // NOLINTBEGIN
@@ -19,7 +19,7 @@ public:
     MCAPI Blob(class mce::Blob&&);
 
     // symbol: ??0Blob@mce@@QEAA@_K@Z
-    MCAPI Blob(uint64);
+    MCAPI explicit Blob(uint64);
 
     // symbol: ?cbegin@Blob@mce@@QEBAPEBEXZ
     MCAPI uchar const* cbegin() const;

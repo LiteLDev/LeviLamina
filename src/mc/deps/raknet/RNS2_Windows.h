@@ -16,9 +16,9 @@ namespace RakNet {
 class RNS2_Windows {
 public:
     // prevent constructor by default
-    RNS2_Windows& operator=(RNS2_Windows const&) = delete;
-    RNS2_Windows(RNS2_Windows const&)            = delete;
-    RNS2_Windows()                               = delete;
+    RNS2_Windows& operator=(RNS2_Windows const&);
+    RNS2_Windows(RNS2_Windows const&);
+    RNS2_Windows();
 
 public:
     // NOLINTBEGIN

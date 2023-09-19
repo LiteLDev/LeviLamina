@@ -18,9 +18,9 @@ namespace mce { class UUID; }
 class GameDirectorEntityServerCommandOrigin : public ::ActorServerCommandOrigin {
 public:
     // prevent constructor by default
-    GameDirectorEntityServerCommandOrigin& operator=(GameDirectorEntityServerCommandOrigin const&) = delete;
-    GameDirectorEntityServerCommandOrigin(GameDirectorEntityServerCommandOrigin const&)            = delete;
-    GameDirectorEntityServerCommandOrigin()                                                        = delete;
+    GameDirectorEntityServerCommandOrigin& operator=(GameDirectorEntityServerCommandOrigin const&);
+    GameDirectorEntityServerCommandOrigin(GameDirectorEntityServerCommandOrigin const&);
+    GameDirectorEntityServerCommandOrigin();
 
 public:
     // NOLINTBEGIN
@@ -44,7 +44,7 @@ public:
     virtual ::CommandOriginType getOriginType() const;
 
     // symbol: ??0GameDirectorEntityServerCommandOrigin@@QEAA@AEAVActor@@@Z
-    MCAPI GameDirectorEntityServerCommandOrigin(class Actor&);
+    MCAPI explicit GameDirectorEntityServerCommandOrigin(class Actor&);
 
     // NOLINTEND
 };

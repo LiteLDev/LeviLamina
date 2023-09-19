@@ -5,9 +5,9 @@
 class LevelDbLogger {
 public:
     // prevent constructor by default
-    LevelDbLogger& operator=(LevelDbLogger const&) = delete;
-    LevelDbLogger(LevelDbLogger const&)            = delete;
-    LevelDbLogger()                                = delete;
+    LevelDbLogger& operator=(LevelDbLogger const&);
+    LevelDbLogger(LevelDbLogger const&);
+    LevelDbLogger();
 
 public:
     // NOLINTBEGIN

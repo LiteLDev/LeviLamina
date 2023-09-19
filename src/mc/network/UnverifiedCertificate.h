@@ -10,8 +10,8 @@ namespace Json { class Value; }
 class UnverifiedCertificate {
 public:
     // prevent constructor by default
-    UnverifiedCertificate& operator=(UnverifiedCertificate const&) = delete;
-    UnverifiedCertificate()                                        = delete;
+    UnverifiedCertificate& operator=(UnverifiedCertificate const&);
+    UnverifiedCertificate();
 
 public:
     // NOLINTBEGIN

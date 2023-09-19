@@ -5,9 +5,9 @@
 class ServerMoveInputHandlerSystem {
 public:
     // prevent constructor by default
-    ServerMoveInputHandlerSystem& operator=(ServerMoveInputHandlerSystem const&) = delete;
-    ServerMoveInputHandlerSystem(ServerMoveInputHandlerSystem const&)            = delete;
-    ServerMoveInputHandlerSystem()                                               = delete;
+    ServerMoveInputHandlerSystem& operator=(ServerMoveInputHandlerSystem const&);
+    ServerMoveInputHandlerSystem(ServerMoveInputHandlerSystem const&);
+    ServerMoveInputHandlerSystem();
 
 public:
     // NOLINTBEGIN

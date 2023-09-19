@@ -12,9 +12,9 @@
 class DimensionTransitionSystem {
 public:
     // prevent constructor by default
-    DimensionTransitionSystem& operator=(DimensionTransitionSystem const&) = delete;
-    DimensionTransitionSystem(DimensionTransitionSystem const&)            = delete;
-    DimensionTransitionSystem()                                            = delete;
+    DimensionTransitionSystem& operator=(DimensionTransitionSystem const&);
+    DimensionTransitionSystem(DimensionTransitionSystem const&);
+    DimensionTransitionSystem();
 
 public:
     // NOLINTBEGIN

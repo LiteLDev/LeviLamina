@@ -10,9 +10,9 @@ namespace Json { class Value; }
 class RuntimeIdentifierDescription {
 public:
     // prevent constructor by default
-    RuntimeIdentifierDescription& operator=(RuntimeIdentifierDescription const&) = delete;
-    RuntimeIdentifierDescription(RuntimeIdentifierDescription const&)            = delete;
-    RuntimeIdentifierDescription()                                               = delete;
+    RuntimeIdentifierDescription& operator=(RuntimeIdentifierDescription const&);
+    RuntimeIdentifierDescription(RuntimeIdentifierDescription const&);
+    RuntimeIdentifierDescription();
 
 public:
     // NOLINTBEGIN

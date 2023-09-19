@@ -9,9 +9,9 @@
 class HudContainerModel : public ::ContainerModel {
 public:
     // prevent constructor by default
-    HudContainerModel& operator=(HudContainerModel const&) = delete;
-    HudContainerModel(HudContainerModel const&)            = delete;
-    HudContainerModel()                                    = delete;
+    HudContainerModel& operator=(HudContainerModel const&);
+    HudContainerModel(HudContainerModel const&);
+    HudContainerModel();
 
 public:
     // NOLINTBEGIN

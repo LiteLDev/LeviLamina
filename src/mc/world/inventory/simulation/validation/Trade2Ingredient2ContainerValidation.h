@@ -8,9 +8,9 @@
 class Trade2Ingredient2ContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    Trade2Ingredient2ContainerValidation& operator=(Trade2Ingredient2ContainerValidation const&) = delete;
-    Trade2Ingredient2ContainerValidation(Trade2Ingredient2ContainerValidation const&)            = delete;
-    Trade2Ingredient2ContainerValidation()                                                       = delete;
+    Trade2Ingredient2ContainerValidation& operator=(Trade2Ingredient2ContainerValidation const&);
+    Trade2Ingredient2ContainerValidation(Trade2Ingredient2ContainerValidation const&);
+    Trade2Ingredient2ContainerValidation();
 
 public:
     // NOLINTBEGIN

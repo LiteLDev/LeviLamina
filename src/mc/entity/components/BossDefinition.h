@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class BossDefinition {
 public:
     // prevent constructor by default
-    BossDefinition& operator=(BossDefinition const&) = delete;
-    BossDefinition(BossDefinition const&)            = delete;
+    BossDefinition& operator=(BossDefinition const&);
+    BossDefinition(BossDefinition const&);
 
 public:
     // NOLINTBEGIN

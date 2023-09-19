@@ -5,9 +5,9 @@
 struct TickingAreaDescription {
 public:
     // prevent constructor by default
-    TickingAreaDescription& operator=(TickingAreaDescription const&) = delete;
-    TickingAreaDescription(TickingAreaDescription const&)            = delete;
-    TickingAreaDescription()                                         = delete;
+    TickingAreaDescription& operator=(TickingAreaDescription const&);
+    TickingAreaDescription(TickingAreaDescription const&);
+    TickingAreaDescription();
 
 public:
     // NOLINTBEGIN

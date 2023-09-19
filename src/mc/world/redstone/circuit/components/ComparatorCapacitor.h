@@ -13,8 +13,8 @@ public:
 
 public:
     // prevent constructor by default
-    ComparatorCapacitor& operator=(ComparatorCapacitor const&) = delete;
-    ComparatorCapacitor(ComparatorCapacitor const&)            = delete;
+    ComparatorCapacitor& operator=(ComparatorCapacitor const&);
+    ComparatorCapacitor(ComparatorCapacitor const&);
 
 public:
     // NOLINTBEGIN

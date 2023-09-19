@@ -5,7 +5,7 @@
 struct ChunkPositionAndDimension {
 public:
     // prevent constructor by default
-    ChunkPositionAndDimension& operator=(ChunkPositionAndDimension const&) = delete;
-    ChunkPositionAndDimension(ChunkPositionAndDimension const&)            = delete;
-    ChunkPositionAndDimension()                                            = delete;
+    ChunkPositionAndDimension& operator=(ChunkPositionAndDimension const&);
+    ChunkPositionAndDimension(ChunkPositionAndDimension const&);
+    ChunkPositionAndDimension();
 };

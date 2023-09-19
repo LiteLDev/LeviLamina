@@ -5,7 +5,7 @@
 struct GetAttachPosRequestData {
 public:
     // prevent constructor by default
-    GetAttachPosRequestData& operator=(GetAttachPosRequestData const&) = delete;
-    GetAttachPosRequestData(GetAttachPosRequestData const&)            = delete;
-    GetAttachPosRequestData()                                          = delete;
+    GetAttachPosRequestData& operator=(GetAttachPosRequestData const&);
+    GetAttachPosRequestData(GetAttachPosRequestData const&);
+    GetAttachPosRequestData();
 };

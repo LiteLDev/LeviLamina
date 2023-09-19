@@ -8,8 +8,8 @@
 class SynchedActorData {
 public:
     // prevent constructor by default
-    SynchedActorData& operator=(SynchedActorData const&) = delete;
-    SynchedActorData(SynchedActorData const&)            = delete;
+    SynchedActorData& operator=(SynchedActorData const&);
+    SynchedActorData(SynchedActorData const&);
 
 public:
     // NOLINTBEGIN

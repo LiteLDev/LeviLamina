@@ -5,9 +5,9 @@
 class WaterAnimalPreAIStepSystem {
 public:
     // prevent constructor by default
-    WaterAnimalPreAIStepSystem& operator=(WaterAnimalPreAIStepSystem const&) = delete;
-    WaterAnimalPreAIStepSystem(WaterAnimalPreAIStepSystem const&)            = delete;
-    WaterAnimalPreAIStepSystem()                                             = delete;
+    WaterAnimalPreAIStepSystem& operator=(WaterAnimalPreAIStepSystem const&);
+    WaterAnimalPreAIStepSystem(WaterAnimalPreAIStepSystem const&);
+    WaterAnimalPreAIStepSystem();
 
 public:
     // NOLINTBEGIN

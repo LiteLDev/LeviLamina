@@ -33,7 +33,7 @@ public:
     MCAPI ItemInstance(class ItemInstance const&);
 
     // symbol: ??0ItemInstance@@QEAA@AEBVItemStackBase@@@Z
-    MCAPI ItemInstance(class ItemStackBase const&);
+    MCAPI explicit ItemInstance(class ItemStackBase const&);
 
     // symbol: ??0ItemInstance@@QEAA@AEBVBlock@@HPEBVCompoundTag@@@Z
     MCAPI ItemInstance(class Block const&, int, class CompoundTag const*);

@@ -8,9 +8,9 @@
 class OnFireServerSystem : public ::OnFireSystem {
 public:
     // prevent constructor by default
-    OnFireServerSystem& operator=(OnFireServerSystem const&) = delete;
-    OnFireServerSystem(OnFireServerSystem const&)            = delete;
-    OnFireServerSystem()                                     = delete;
+    OnFireServerSystem& operator=(OnFireServerSystem const&);
+    OnFireServerSystem(OnFireServerSystem const&);
+    OnFireServerSystem();
 
 public:
     // NOLINTBEGIN

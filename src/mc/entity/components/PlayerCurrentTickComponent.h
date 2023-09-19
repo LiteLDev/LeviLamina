@@ -5,7 +5,7 @@
 struct PlayerCurrentTickComponent {
 public:
     // prevent constructor by default
-    PlayerCurrentTickComponent& operator=(PlayerCurrentTickComponent const&) = delete;
-    PlayerCurrentTickComponent(PlayerCurrentTickComponent const&)            = delete;
-    PlayerCurrentTickComponent()                                             = delete;
+    PlayerCurrentTickComponent& operator=(PlayerCurrentTickComponent const&);
+    PlayerCurrentTickComponent(PlayerCurrentTickComponent const&);
+    PlayerCurrentTickComponent();
 };

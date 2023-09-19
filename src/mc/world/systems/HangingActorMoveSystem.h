@@ -5,9 +5,9 @@
 class HangingActorMoveSystem {
 public:
     // prevent constructor by default
-    HangingActorMoveSystem& operator=(HangingActorMoveSystem const&) = delete;
-    HangingActorMoveSystem(HangingActorMoveSystem const&)            = delete;
-    HangingActorMoveSystem()                                         = delete;
+    HangingActorMoveSystem& operator=(HangingActorMoveSystem const&);
+    HangingActorMoveSystem(HangingActorMoveSystem const&);
+    HangingActorMoveSystem();
 
 public:
     // NOLINTBEGIN

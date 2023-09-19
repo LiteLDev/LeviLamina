@@ -10,9 +10,9 @@
 class CodeBuilderPacket : public ::Packet {
 public:
     // prevent constructor by default
-    CodeBuilderPacket& operator=(CodeBuilderPacket const&) = delete;
-    CodeBuilderPacket(CodeBuilderPacket const&)            = delete;
-    CodeBuilderPacket()                                    = delete;
+    CodeBuilderPacket& operator=(CodeBuilderPacket const&);
+    CodeBuilderPacket(CodeBuilderPacket const&);
+    CodeBuilderPacket();
 
 public:
     // NOLINTBEGIN

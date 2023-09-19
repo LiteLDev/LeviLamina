@@ -8,9 +8,9 @@
 class SculkShriekerBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    SculkShriekerBlockActor& operator=(SculkShriekerBlockActor const&) = delete;
-    SculkShriekerBlockActor(SculkShriekerBlockActor const&)            = delete;
-    SculkShriekerBlockActor()                                          = delete;
+    SculkShriekerBlockActor& operator=(SculkShriekerBlockActor const&);
+    SculkShriekerBlockActor(SculkShriekerBlockActor const&);
+    SculkShriekerBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -60,7 +60,7 @@ public:
     virtual void __unk_vfn_39();
 
     // symbol: ??0SculkShriekerBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI SculkShriekerBlockActor(class BlockPos const&);
+    MCAPI explicit SculkShriekerBlockActor(class BlockPos const&);
 
     // symbol: ?tryRespond@SculkShriekerBlockActor@@QEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void tryRespond(class BlockSource&, class BlockPos const&);

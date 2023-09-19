@@ -9,9 +9,9 @@
 struct ClientInputLockComponent {
 public:
     // prevent constructor by default
-    ClientInputLockComponent& operator=(ClientInputLockComponent const&) = delete;
-    ClientInputLockComponent(ClientInputLockComponent const&)            = delete;
-    ClientInputLockComponent()                                           = delete;
+    ClientInputLockComponent& operator=(ClientInputLockComponent const&);
+    ClientInputLockComponent(ClientInputLockComponent const&);
+    ClientInputLockComponent();
 
 public:
     // NOLINTBEGIN

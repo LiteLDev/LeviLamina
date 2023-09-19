@@ -5,9 +5,9 @@
 class HoverTextColorItemComponent {
 public:
     // prevent constructor by default
-    HoverTextColorItemComponent& operator=(HoverTextColorItemComponent const&) = delete;
-    HoverTextColorItemComponent(HoverTextColorItemComponent const&)            = delete;
-    HoverTextColorItemComponent()                                              = delete;
+    HoverTextColorItemComponent& operator=(HoverTextColorItemComponent const&);
+    HoverTextColorItemComponent(HoverTextColorItemComponent const&);
+    HoverTextColorItemComponent();
 
 public:
     // NOLINTBEGIN

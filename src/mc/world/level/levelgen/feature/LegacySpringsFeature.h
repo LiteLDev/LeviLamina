@@ -8,9 +8,9 @@
 class LegacySpringsFeature : public ::Feature {
 public:
     // prevent constructor by default
-    LegacySpringsFeature& operator=(LegacySpringsFeature const&) = delete;
-    LegacySpringsFeature(LegacySpringsFeature const&)            = delete;
-    LegacySpringsFeature()                                       = delete;
+    LegacySpringsFeature& operator=(LegacySpringsFeature const&);
+    LegacySpringsFeature(LegacySpringsFeature const&);
+    LegacySpringsFeature();
 
 public:
     // NOLINTBEGIN

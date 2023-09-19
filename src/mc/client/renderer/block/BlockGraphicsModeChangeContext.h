@@ -5,7 +5,7 @@
 struct BlockGraphicsModeChangeContext {
 public:
     // prevent constructor by default
-    BlockGraphicsModeChangeContext& operator=(BlockGraphicsModeChangeContext const&) = delete;
-    BlockGraphicsModeChangeContext(BlockGraphicsModeChangeContext const&)            = delete;
-    BlockGraphicsModeChangeContext()                                                 = delete;
+    BlockGraphicsModeChangeContext& operator=(BlockGraphicsModeChangeContext const&);
+    BlockGraphicsModeChangeContext(BlockGraphicsModeChangeContext const&);
+    BlockGraphicsModeChangeContext();
 };

@@ -5,7 +5,7 @@
 struct ShooterProjectileData {
 public:
     // prevent constructor by default
-    ShooterProjectileData() = delete;
+    ShooterProjectileData();
 
 public:
     // NOLINTBEGIN

@@ -24,9 +24,9 @@ public:
 
 public:
     // prevent constructor by default
-    HugeMushroomBlock& operator=(HugeMushroomBlock const&) = delete;
-    HugeMushroomBlock(HugeMushroomBlock const&)            = delete;
-    HugeMushroomBlock()                                    = delete;
+    HugeMushroomBlock& operator=(HugeMushroomBlock const&);
+    HugeMushroomBlock(HugeMushroomBlock const&);
+    HugeMushroomBlock();
 
 public:
     // NOLINTBEGIN

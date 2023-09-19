@@ -15,9 +15,9 @@ namespace Bedrock::Threading {
 class SharedRecursiveMutex : public ::Bedrock::Threading::SharedRecursiveMutexBase {
 public:
     // prevent constructor by default
-    SharedRecursiveMutex& operator=(SharedRecursiveMutex const&) = delete;
-    SharedRecursiveMutex(SharedRecursiveMutex const&)            = delete;
-    SharedRecursiveMutex()                                       = delete;
+    SharedRecursiveMutex& operator=(SharedRecursiveMutex const&);
+    SharedRecursiveMutex(SharedRecursiveMutex const&);
+    SharedRecursiveMutex();
 
 public:
     // NOLINTBEGIN

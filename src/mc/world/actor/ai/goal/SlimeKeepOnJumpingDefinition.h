@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class SlimeKeepOnJumpingDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    SlimeKeepOnJumpingDefinition& operator=(SlimeKeepOnJumpingDefinition const&) = delete;
-    SlimeKeepOnJumpingDefinition(SlimeKeepOnJumpingDefinition const&)            = delete;
+    SlimeKeepOnJumpingDefinition& operator=(SlimeKeepOnJumpingDefinition const&);
+    SlimeKeepOnJumpingDefinition(SlimeKeepOnJumpingDefinition const&);
 
 public:
     // NOLINTBEGIN

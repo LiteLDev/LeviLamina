@@ -9,9 +9,9 @@
 class SquidDiveGoal : public ::Goal {
 public:
     // prevent constructor by default
-    SquidDiveGoal& operator=(SquidDiveGoal const&) = delete;
-    SquidDiveGoal(SquidDiveGoal const&)            = delete;
-    SquidDiveGoal()                                = delete;
+    SquidDiveGoal& operator=(SquidDiveGoal const&);
+    SquidDiveGoal(SquidDiveGoal const&);
+    SquidDiveGoal();
 
 public:
     // NOLINTBEGIN

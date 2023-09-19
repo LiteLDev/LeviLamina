@@ -16,8 +16,8 @@ namespace Json {
 class FastWriter : public ::Json::Writer {
 public:
     // prevent constructor by default
-    FastWriter& operator=(FastWriter const&) = delete;
-    FastWriter(FastWriter const&)            = delete;
+    FastWriter& operator=(FastWriter const&);
+    FastWriter(FastWriter const&);
 
 public:
     // NOLINTBEGIN

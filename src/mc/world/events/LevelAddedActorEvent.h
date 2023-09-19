@@ -5,9 +5,9 @@
 struct LevelAddedActorEvent {
 public:
     // prevent constructor by default
-    LevelAddedActorEvent& operator=(LevelAddedActorEvent const&) = delete;
-    LevelAddedActorEvent(LevelAddedActorEvent const&)            = delete;
-    LevelAddedActorEvent()                                       = delete;
+    LevelAddedActorEvent& operator=(LevelAddedActorEvent const&);
+    LevelAddedActorEvent(LevelAddedActorEvent const&);
+    LevelAddedActorEvent();
 
 public:
     // NOLINTBEGIN

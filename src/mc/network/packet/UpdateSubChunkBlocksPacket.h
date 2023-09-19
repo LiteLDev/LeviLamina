@@ -19,8 +19,8 @@ public:
     struct BlocksChangedInfo {
     public:
         // prevent constructor by default
-        BlocksChangedInfo& operator=(BlocksChangedInfo const&) = delete;
-        BlocksChangedInfo(BlocksChangedInfo const&)            = delete;
+        BlocksChangedInfo& operator=(BlocksChangedInfo const&);
+        BlocksChangedInfo(BlocksChangedInfo const&);
 
     public:
         // NOLINTBEGIN
@@ -40,9 +40,9 @@ public:
     struct NetworkBlockInfo {
     public:
         // prevent constructor by default
-        NetworkBlockInfo& operator=(NetworkBlockInfo const&) = delete;
-        NetworkBlockInfo(NetworkBlockInfo const&)            = delete;
-        NetworkBlockInfo()                                   = delete;
+        NetworkBlockInfo& operator=(NetworkBlockInfo const&);
+        NetworkBlockInfo(NetworkBlockInfo const&);
+        NetworkBlockInfo();
 
     public:
         // NOLINTBEGIN
@@ -54,8 +54,8 @@ public:
 
 public:
     // prevent constructor by default
-    UpdateSubChunkBlocksPacket& operator=(UpdateSubChunkBlocksPacket const&) = delete;
-    UpdateSubChunkBlocksPacket(UpdateSubChunkBlocksPacket const&)            = delete;
+    UpdateSubChunkBlocksPacket& operator=(UpdateSubChunkBlocksPacket const&);
+    UpdateSubChunkBlocksPacket(UpdateSubChunkBlocksPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class ShieldItem : public ::Item {
 public:
     // prevent constructor by default
-    ShieldItem& operator=(ShieldItem const&) = delete;
-    ShieldItem(ShieldItem const&)            = delete;
-    ShieldItem()                             = delete;
+    ShieldItem& operator=(ShieldItem const&);
+    ShieldItem(ShieldItem const&);
+    ShieldItem();
 
 public:
     // NOLINTBEGIN

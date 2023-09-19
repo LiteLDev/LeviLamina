@@ -10,9 +10,9 @@
 class Packet {
 public:
     // prevent constructor by default
-    Packet& operator=(Packet const&) = delete;
-    Packet(Packet const&)            = delete;
-    Packet()                         = delete;
+    Packet& operator=(Packet const&);
+    Packet(Packet const&);
+    Packet();
 
 public:
     // NOLINTBEGIN

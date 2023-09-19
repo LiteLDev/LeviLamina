@@ -15,16 +15,16 @@ public:
     class Offset {
     public:
         // prevent constructor by default
-        Offset& operator=(Offset const&) = delete;
-        Offset(Offset const&)            = delete;
-        Offset()                         = delete;
+        Offset& operator=(Offset const&);
+        Offset(Offset const&);
+        Offset();
     };
 
 public:
     // prevent constructor by default
-    NodeBase& operator=(NodeBase const&) = delete;
-    NodeBase(NodeBase const&)            = delete;
-    NodeBase()                           = delete;
+    NodeBase& operator=(NodeBase const&);
+    NodeBase(NodeBase const&);
+    NodeBase();
 
     // protected:
     // NOLINTBEGIN

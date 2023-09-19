@@ -28,9 +28,9 @@
 class Horse : public ::Animal {
 public:
     // prevent constructor by default
-    Horse& operator=(Horse const&) = delete;
-    Horse(Horse const&)            = delete;
-    Horse()                        = delete;
+    Horse& operator=(Horse const&);
+    Horse(Horse const&);
+    Horse();
 
 public:
     // NOLINTBEGIN

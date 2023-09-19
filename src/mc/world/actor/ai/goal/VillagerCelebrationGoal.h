@@ -24,9 +24,9 @@ public:
     class VillagerCelebrationDefinition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        VillagerCelebrationDefinition& operator=(VillagerCelebrationDefinition const&) = delete;
-        VillagerCelebrationDefinition(VillagerCelebrationDefinition const&)            = delete;
-        VillagerCelebrationDefinition()                                                = delete;
+        VillagerCelebrationDefinition& operator=(VillagerCelebrationDefinition const&);
+        VillagerCelebrationDefinition(VillagerCelebrationDefinition const&);
+        VillagerCelebrationDefinition();
 
     public:
         // NOLINTBEGIN
@@ -43,9 +43,9 @@ public:
 
 public:
     // prevent constructor by default
-    VillagerCelebrationGoal& operator=(VillagerCelebrationGoal const&) = delete;
-    VillagerCelebrationGoal(VillagerCelebrationGoal const&)            = delete;
-    VillagerCelebrationGoal()                                          = delete;
+    VillagerCelebrationGoal& operator=(VillagerCelebrationGoal const&);
+    VillagerCelebrationGoal(VillagerCelebrationGoal const&);
+    VillagerCelebrationGoal();
 
 public:
     // NOLINTBEGIN

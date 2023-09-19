@@ -8,9 +8,9 @@
 class ServerNetworkEventListener {
 public:
     // prevent constructor by default
-    ServerNetworkEventListener& operator=(ServerNetworkEventListener const&) = delete;
-    ServerNetworkEventListener(ServerNetworkEventListener const&)            = delete;
-    ServerNetworkEventListener()                                             = delete;
+    ServerNetworkEventListener& operator=(ServerNetworkEventListener const&);
+    ServerNetworkEventListener(ServerNetworkEventListener const&);
+    ServerNetworkEventListener();
 
 public:
     // NOLINTBEGIN

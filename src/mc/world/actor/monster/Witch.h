@@ -26,9 +26,9 @@
 class Witch : public ::HumanoidMonster {
 public:
     // prevent constructor by default
-    Witch& operator=(Witch const&) = delete;
-    Witch(Witch const&)            = delete;
-    Witch()                        = delete;
+    Witch& operator=(Witch const&);
+    Witch(Witch const&);
+    Witch();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 class Control {
 public:
     // prevent constructor by default
-    Control& operator=(Control const&) = delete;
-    Control(Control const&)            = delete;
-    Control()                          = delete;
+    Control& operator=(Control const&);
+    Control(Control const&);
+    Control();
 };

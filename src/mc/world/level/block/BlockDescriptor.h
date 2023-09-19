@@ -19,9 +19,9 @@ public:
     class ResolveHelper {
     public:
         // prevent constructor by default
-        ResolveHelper& operator=(ResolveHelper const&) = delete;
-        ResolveHelper(ResolveHelper const&)            = delete;
-        ResolveHelper()                                = delete;
+        ResolveHelper& operator=(ResolveHelper const&);
+        ResolveHelper(ResolveHelper const&);
+        ResolveHelper();
 
     public:
         // NOLINTBEGIN
@@ -34,9 +34,9 @@ public:
     class State {
     public:
         // prevent constructor by default
-        State& operator=(State const&) = delete;
-        State(State const&)            = delete;
-        State()                        = delete;
+        State& operator=(State const&);
+        State(State const&);
+        State();
 
     public:
         // NOLINTBEGIN
@@ -62,7 +62,7 @@ public:
     MCAPI BlockDescriptor(class BlockDescriptor&&);
 
     // symbol: ??0BlockDescriptor@@QEAA@AEBVHashedString@@@Z
-    MCAPI BlockDescriptor(class HashedString const&);
+    MCAPI explicit BlockDescriptor(class HashedString const&);
 
     // symbol: ??0BlockDescriptor@@QEAA@XZ
     MCAPI BlockDescriptor();

@@ -15,8 +15,8 @@ public:
 
 public:
     // prevent constructor by default
-    RequestAbilityPacket& operator=(RequestAbilityPacket const&) = delete;
-    RequestAbilityPacket(RequestAbilityPacket const&)            = delete;
+    RequestAbilityPacket& operator=(RequestAbilityPacket const&);
+    RequestAbilityPacket(RequestAbilityPacket const&);
 
 public:
     // NOLINTBEGIN

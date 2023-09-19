@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptItemEvent {
 public:
     // prevent constructor by default
-    ScriptItemEvent& operator=(ScriptItemEvent const&) = delete;
-    ScriptItemEvent(ScriptItemEvent const&)            = delete;
-    ScriptItemEvent()                                  = delete;
+    ScriptItemEvent& operator=(ScriptItemEvent const&);
+    ScriptItemEvent(ScriptItemEvent const&);
+    ScriptItemEvent();
 
 public:
     // NOLINTBEGIN

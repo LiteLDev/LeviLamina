@@ -8,9 +8,9 @@
 class VanillaGameModuleDedicatedServer : public ::IGameModuleShared {
 public:
     // prevent constructor by default
-    VanillaGameModuleDedicatedServer& operator=(VanillaGameModuleDedicatedServer const&) = delete;
-    VanillaGameModuleDedicatedServer(VanillaGameModuleDedicatedServer const&)            = delete;
-    VanillaGameModuleDedicatedServer()                                                   = delete;
+    VanillaGameModuleDedicatedServer& operator=(VanillaGameModuleDedicatedServer const&);
+    VanillaGameModuleDedicatedServer(VanillaGameModuleDedicatedServer const&);
+    VanillaGameModuleDedicatedServer();
 
 public:
     // NOLINTBEGIN

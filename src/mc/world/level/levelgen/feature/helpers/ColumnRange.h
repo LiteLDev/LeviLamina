@@ -7,9 +7,9 @@ namespace ColumnUtils {
 struct ColumnRange {
 public:
     // prevent constructor by default
-    ColumnRange& operator=(ColumnRange const&) = delete;
-    ColumnRange(ColumnRange const&)            = delete;
-    ColumnRange()                              = delete;
+    ColumnRange& operator=(ColumnRange const&);
+    ColumnRange(ColumnRange const&);
+    ColumnRange();
 };
 
 }; // namespace ColumnUtils

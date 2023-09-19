@@ -8,9 +8,9 @@
 class CalibratedSculkSensorBlockActor : public ::SculkSensorBlockActor {
 public:
     // prevent constructor by default
-    CalibratedSculkSensorBlockActor& operator=(CalibratedSculkSensorBlockActor const&) = delete;
-    CalibratedSculkSensorBlockActor(CalibratedSculkSensorBlockActor const&)            = delete;
-    CalibratedSculkSensorBlockActor()                                                  = delete;
+    CalibratedSculkSensorBlockActor& operator=(CalibratedSculkSensorBlockActor const&);
+    CalibratedSculkSensorBlockActor(CalibratedSculkSensorBlockActor const&);
+    CalibratedSculkSensorBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -48,7 +48,7 @@ public:
     virtual void __unk_vfn_39();
 
     // symbol: ??0CalibratedSculkSensorBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI CalibratedSculkSensorBlockActor(class BlockPos const&);
+    MCAPI explicit CalibratedSculkSensorBlockActor(class BlockPos const&);
 
     // NOLINTEND
 };

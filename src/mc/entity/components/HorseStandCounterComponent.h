@@ -5,7 +5,7 @@
 struct HorseStandCounterComponent {
 public:
     // prevent constructor by default
-    HorseStandCounterComponent& operator=(HorseStandCounterComponent const&) = delete;
-    HorseStandCounterComponent(HorseStandCounterComponent const&)            = delete;
-    HorseStandCounterComponent()                                             = delete;
+    HorseStandCounterComponent& operator=(HorseStandCounterComponent const&);
+    HorseStandCounterComponent(HorseStandCounterComponent const&);
+    HorseStandCounterComponent();
 };

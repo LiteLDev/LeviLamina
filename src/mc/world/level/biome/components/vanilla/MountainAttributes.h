@@ -13,16 +13,16 @@ public:
     struct SteepMaterial {
     public:
         // prevent constructor by default
-        SteepMaterial& operator=(SteepMaterial const&) = delete;
-        SteepMaterial(SteepMaterial const&)            = delete;
-        SteepMaterial()                                = delete;
+        SteepMaterial& operator=(SteepMaterial const&);
+        SteepMaterial(SteepMaterial const&);
+        SteepMaterial();
     };
 
 public:
     // prevent constructor by default
-    MountainAttributes& operator=(MountainAttributes const&) = delete;
-    MountainAttributes(MountainAttributes const&)            = delete;
-    MountainAttributes()                                     = delete;
+    MountainAttributes& operator=(MountainAttributes const&);
+    MountainAttributes(MountainAttributes const&);
+    MountainAttributes();
 
 public:
     // NOLINTBEGIN

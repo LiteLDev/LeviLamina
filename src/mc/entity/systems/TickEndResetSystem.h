@@ -5,9 +5,9 @@
 class TickEndResetSystem {
 public:
     // prevent constructor by default
-    TickEndResetSystem& operator=(TickEndResetSystem const&) = delete;
-    TickEndResetSystem(TickEndResetSystem const&)            = delete;
-    TickEndResetSystem()                                     = delete;
+    TickEndResetSystem& operator=(TickEndResetSystem const&);
+    TickEndResetSystem(TickEndResetSystem const&);
+    TickEndResetSystem();
 
 public:
     // NOLINTBEGIN

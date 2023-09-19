@@ -9,9 +9,9 @@
 class FollowOwnerGoal : public ::Goal {
 public:
     // prevent constructor by default
-    FollowOwnerGoal& operator=(FollowOwnerGoal const&) = delete;
-    FollowOwnerGoal(FollowOwnerGoal const&)            = delete;
-    FollowOwnerGoal()                                  = delete;
+    FollowOwnerGoal& operator=(FollowOwnerGoal const&);
+    FollowOwnerGoal(FollowOwnerGoal const&);
+    FollowOwnerGoal();
 
 public:
     // NOLINTBEGIN

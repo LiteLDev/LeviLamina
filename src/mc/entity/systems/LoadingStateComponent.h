@@ -5,7 +5,7 @@
 class LoadingStateComponent {
 public:
     // prevent constructor by default
-    LoadingStateComponent& operator=(LoadingStateComponent const&) = delete;
-    LoadingStateComponent(LoadingStateComponent const&)            = delete;
-    LoadingStateComponent()                                        = delete;
+    LoadingStateComponent& operator=(LoadingStateComponent const&);
+    LoadingStateComponent(LoadingStateComponent const&);
+    LoadingStateComponent();
 };

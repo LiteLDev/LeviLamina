@@ -10,9 +10,9 @@
 class GrindstoneContainerManagerModel : public ::ContainerManagerModel {
 public:
     // prevent constructor by default
-    GrindstoneContainerManagerModel& operator=(GrindstoneContainerManagerModel const&) = delete;
-    GrindstoneContainerManagerModel(GrindstoneContainerManagerModel const&)            = delete;
-    GrindstoneContainerManagerModel()                                                  = delete;
+    GrindstoneContainerManagerModel& operator=(GrindstoneContainerManagerModel const&);
+    GrindstoneContainerManagerModel(GrindstoneContainerManagerModel const&);
+    GrindstoneContainerManagerModel();
 
 public:
     // NOLINTBEGIN

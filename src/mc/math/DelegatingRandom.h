@@ -15,9 +15,9 @@ namespace NoiseUtils {
 class DelegatingRandom : public ::IRandom {
 public:
     // prevent constructor by default
-    DelegatingRandom& operator=(DelegatingRandom const&) = delete;
-    DelegatingRandom(DelegatingRandom const&)            = delete;
-    DelegatingRandom()                                   = delete;
+    DelegatingRandom& operator=(DelegatingRandom const&);
+    DelegatingRandom(DelegatingRandom const&);
+    DelegatingRandom();
 
 public:
     // NOLINTBEGIN

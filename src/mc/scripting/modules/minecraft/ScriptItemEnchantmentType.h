@@ -11,13 +11,13 @@ namespace ScriptModuleMinecraft {
 struct ScriptItemEnchantmentType {
 public:
     // prevent constructor by default
-    ScriptItemEnchantmentType(ScriptItemEnchantmentType const&) = delete;
-    ScriptItemEnchantmentType()                                 = delete;
+    ScriptItemEnchantmentType(ScriptItemEnchantmentType const&);
+    ScriptItemEnchantmentType();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEAA@AEBW4Type@Enchant@@@Z
-    MCAPI ScriptItemEnchantmentType(::Enchant::Type const&);
+    MCAPI explicit ScriptItemEnchantmentType(::Enchant::Type const&);
 
     // symbol:
     // ?getName@ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

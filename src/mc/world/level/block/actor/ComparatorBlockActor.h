@@ -8,9 +8,9 @@
 class ComparatorBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    ComparatorBlockActor& operator=(ComparatorBlockActor const&) = delete;
-    ComparatorBlockActor(ComparatorBlockActor const&)            = delete;
-    ComparatorBlockActor()                                       = delete;
+    ComparatorBlockActor& operator=(ComparatorBlockActor const&);
+    ComparatorBlockActor(ComparatorBlockActor const&);
+    ComparatorBlockActor();
 
 public:
     // NOLINTBEGIN

@@ -10,9 +10,9 @@
 class PersonaEmoteInputSystem {
 public:
     // prevent constructor by default
-    PersonaEmoteInputSystem& operator=(PersonaEmoteInputSystem const&) = delete;
-    PersonaEmoteInputSystem(PersonaEmoteInputSystem const&)            = delete;
-    PersonaEmoteInputSystem()                                          = delete;
+    PersonaEmoteInputSystem& operator=(PersonaEmoteInputSystem const&);
+    PersonaEmoteInputSystem(PersonaEmoteInputSystem const&);
+    PersonaEmoteInputSystem();
 
 public:
     // NOLINTBEGIN

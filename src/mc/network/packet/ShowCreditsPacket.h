@@ -14,8 +14,8 @@ public:
 
 public:
     // prevent constructor by default
-    ShowCreditsPacket& operator=(ShowCreditsPacket const&) = delete;
-    ShowCreditsPacket(ShowCreditsPacket const&)            = delete;
+    ShowCreditsPacket& operator=(ShowCreditsPacket const&);
+    ShowCreditsPacket(ShowCreditsPacket const&);
 
 public:
     // NOLINTBEGIN

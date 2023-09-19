@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class SmeltItemFunction : public ::LootItemFunction {
 public:
     // prevent constructor by default
-    SmeltItemFunction& operator=(SmeltItemFunction const&) = delete;
-    SmeltItemFunction(SmeltItemFunction const&)            = delete;
-    SmeltItemFunction()                                    = delete;
+    SmeltItemFunction& operator=(SmeltItemFunction const&);
+    SmeltItemFunction(SmeltItemFunction const&);
+    SmeltItemFunction();
 
 public:
     // NOLINTBEGIN

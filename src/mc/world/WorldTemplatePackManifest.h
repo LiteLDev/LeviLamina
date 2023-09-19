@@ -9,8 +9,8 @@
 class WorldTemplatePackManifest : public ::PackManifest {
 public:
     // prevent constructor by default
-    WorldTemplatePackManifest& operator=(WorldTemplatePackManifest const&) = delete;
-    WorldTemplatePackManifest(WorldTemplatePackManifest const&)            = delete;
+    WorldTemplatePackManifest& operator=(WorldTemplatePackManifest const&);
+    WorldTemplatePackManifest(WorldTemplatePackManifest const&);
 
 public:
     // NOLINTBEGIN

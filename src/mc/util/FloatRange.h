@@ -10,9 +10,9 @@ namespace Json { class Value; }
 struct FloatRange {
 public:
     // prevent constructor by default
-    FloatRange& operator=(FloatRange const&) = delete;
-    FloatRange(FloatRange const&)            = delete;
-    FloatRange()                             = delete;
+    FloatRange& operator=(FloatRange const&);
+    FloatRange(FloatRange const&);
+    FloatRange();
 
 public:
     // NOLINTBEGIN

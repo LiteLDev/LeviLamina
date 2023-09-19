@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class PlanksBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    PlanksBlock& operator=(PlanksBlock const&) = delete;
-    PlanksBlock(PlanksBlock const&)            = delete;
-    PlanksBlock()                              = delete;
+    PlanksBlock& operator=(PlanksBlock const&);
+    PlanksBlock(PlanksBlock const&);
+    PlanksBlock();
 
 public:
     // NOLINTBEGIN

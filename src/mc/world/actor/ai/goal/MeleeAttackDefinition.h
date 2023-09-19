@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class MeleeAttackDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    MeleeAttackDefinition& operator=(MeleeAttackDefinition const&) = delete;
-    MeleeAttackDefinition(MeleeAttackDefinition const&)            = delete;
+    MeleeAttackDefinition& operator=(MeleeAttackDefinition const&);
+    MeleeAttackDefinition(MeleeAttackDefinition const&);
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class StrengthDescription {
 public:
     // prevent constructor by default
-    StrengthDescription& operator=(StrengthDescription const&) = delete;
-    StrengthDescription(StrengthDescription const&)            = delete;
-    StrengthDescription()                                      = delete;
+    StrengthDescription& operator=(StrengthDescription const&);
+    StrengthDescription(StrengthDescription const&);
+    StrengthDescription();
 
 public:
     // NOLINTBEGIN

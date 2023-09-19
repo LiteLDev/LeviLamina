@@ -5,9 +5,9 @@
 struct Shareable {
 public:
     // prevent constructor by default
-    Shareable& operator=(Shareable const&) = delete;
-    Shareable(Shareable const&)            = delete;
-    Shareable()                            = delete;
+    Shareable& operator=(Shareable const&);
+    Shareable(Shareable const&);
+    Shareable();
 
 public:
     // NOLINTBEGIN

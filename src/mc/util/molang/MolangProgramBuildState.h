@@ -5,9 +5,9 @@
 struct MolangProgramBuildState {
 public:
     // prevent constructor by default
-    MolangProgramBuildState& operator=(MolangProgramBuildState const&) = delete;
-    MolangProgramBuildState(MolangProgramBuildState const&)            = delete;
-    MolangProgramBuildState()                                          = delete;
+    MolangProgramBuildState& operator=(MolangProgramBuildState const&);
+    MolangProgramBuildState(MolangProgramBuildState const&);
+    MolangProgramBuildState();
 
 public:
     // NOLINTBEGIN

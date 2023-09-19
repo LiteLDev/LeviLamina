@@ -9,9 +9,9 @@
 class EncryptedNetworkPeer : public ::NetworkPeer {
 public:
     // prevent constructor by default
-    EncryptedNetworkPeer& operator=(EncryptedNetworkPeer const&) = delete;
-    EncryptedNetworkPeer(EncryptedNetworkPeer const&)            = delete;
-    EncryptedNetworkPeer()                                       = delete;
+    EncryptedNetworkPeer& operator=(EncryptedNetworkPeer const&);
+    EncryptedNetworkPeer(EncryptedNetworkPeer const&);
+    EncryptedNetworkPeer();
 
 public:
     // NOLINTBEGIN
@@ -37,7 +37,7 @@ public:
     MCVAPI ~EncryptedNetworkPeer();
 
     // symbol: ??0EncryptedNetworkPeer@@QEAA@V?$shared_ptr@VNetworkPeer@@@std@@@Z
-    MCAPI EncryptedNetworkPeer(std::shared_ptr<class NetworkPeer>);
+    MCAPI explicit EncryptedNetworkPeer(std::shared_ptr<class NetworkPeer>);
 
     // symbol:
     // ?enableEncryption@EncryptedNetworkPeer@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

@@ -5,9 +5,9 @@
 class ScriptDebuggerTransport {
 public:
     // prevent constructor by default
-    ScriptDebuggerTransport& operator=(ScriptDebuggerTransport const&) = delete;
-    ScriptDebuggerTransport(ScriptDebuggerTransport const&)            = delete;
-    ScriptDebuggerTransport()                                          = delete;
+    ScriptDebuggerTransport& operator=(ScriptDebuggerTransport const&);
+    ScriptDebuggerTransport(ScriptDebuggerTransport const&);
+    ScriptDebuggerTransport();
 
 public:
     // NOLINTBEGIN

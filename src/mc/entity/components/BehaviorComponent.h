@@ -5,8 +5,8 @@
 class BehaviorComponent {
 public:
     // prevent constructor by default
-    BehaviorComponent& operator=(BehaviorComponent const&) = delete;
-    BehaviorComponent(BehaviorComponent const&)            = delete;
+    BehaviorComponent& operator=(BehaviorComponent const&);
+    BehaviorComponent(BehaviorComponent const&);
 
 public:
     // NOLINTBEGIN

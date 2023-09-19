@@ -6,7 +6,7 @@ template <int T0>
 class ItemStackRequestActionDataless {
 public:
     // prevent constructor by default
-    ItemStackRequestActionDataless& operator=(ItemStackRequestActionDataless const&) = delete;
-    ItemStackRequestActionDataless(ItemStackRequestActionDataless const&)            = delete;
-    ItemStackRequestActionDataless()                                                 = delete;
+    ItemStackRequestActionDataless& operator=(ItemStackRequestActionDataless const&);
+    ItemStackRequestActionDataless(ItemStackRequestActionDataless const&);
+    ItemStackRequestActionDataless();
 };

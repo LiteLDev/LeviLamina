@@ -8,8 +8,8 @@
 class Random {
 public:
     // prevent constructor by default
-    Random& operator=(Random const&) = delete;
-    Random(Random const&)            = delete;
+    Random& operator=(Random const&);
+    Random(Random const&);
 
 public:
     // NOLINTBEGIN

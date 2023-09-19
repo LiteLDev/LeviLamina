@@ -10,9 +10,9 @@
 class VanillaAppConfigs : public ::AppConfigs {
 public:
     // prevent constructor by default
-    VanillaAppConfigs& operator=(VanillaAppConfigs const&) = delete;
-    VanillaAppConfigs(VanillaAppConfigs const&)            = delete;
-    VanillaAppConfigs()                                    = delete;
+    VanillaAppConfigs& operator=(VanillaAppConfigs const&);
+    VanillaAppConfigs(VanillaAppConfigs const&);
+    VanillaAppConfigs();
 
 public:
     // NOLINTBEGIN

@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class IsHoldingSilkTouchTest : public ::SimpleBoolFilterTest {
 public:
     // prevent constructor by default
-    IsHoldingSilkTouchTest& operator=(IsHoldingSilkTouchTest const&) = delete;
-    IsHoldingSilkTouchTest(IsHoldingSilkTouchTest const&)            = delete;
-    IsHoldingSilkTouchTest()                                         = delete;
+    IsHoldingSilkTouchTest& operator=(IsHoldingSilkTouchTest const&);
+    IsHoldingSilkTouchTest(IsHoldingSilkTouchTest const&);
+    IsHoldingSilkTouchTest();
 
 public:
     // NOLINTBEGIN

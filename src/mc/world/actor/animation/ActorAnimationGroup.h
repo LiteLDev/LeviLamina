@@ -15,8 +15,8 @@ namespace Core { class Path; }
 class ActorAnimationGroup : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    ActorAnimationGroup& operator=(ActorAnimationGroup const&) = delete;
-    ActorAnimationGroup(ActorAnimationGroup const&)            = delete;
+    ActorAnimationGroup& operator=(ActorAnimationGroup const&);
+    ActorAnimationGroup(ActorAnimationGroup const&);
 
 public:
     // NOLINTBEGIN

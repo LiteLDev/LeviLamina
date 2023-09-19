@@ -12,8 +12,8 @@ namespace Json {
 class ValueIteratorBase {
 public:
     // prevent constructor by default
-    ValueIteratorBase& operator=(ValueIteratorBase const&) = delete;
-    ValueIteratorBase()                                    = delete;
+    ValueIteratorBase& operator=(ValueIteratorBase const&);
+    ValueIteratorBase();
 
 public:
     // NOLINTBEGIN

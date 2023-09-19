@@ -10,9 +10,9 @@ namespace Util { class EntityComponentProcessor; }
 class BlockCollisionBoxProcessor {
 public:
     // prevent constructor by default
-    BlockCollisionBoxProcessor& operator=(BlockCollisionBoxProcessor const&) = delete;
-    BlockCollisionBoxProcessor(BlockCollisionBoxProcessor const&)            = delete;
-    BlockCollisionBoxProcessor()                                             = delete;
+    BlockCollisionBoxProcessor& operator=(BlockCollisionBoxProcessor const&);
+    BlockCollisionBoxProcessor(BlockCollisionBoxProcessor const&);
+    BlockCollisionBoxProcessor();
 
 public:
     // NOLINTBEGIN

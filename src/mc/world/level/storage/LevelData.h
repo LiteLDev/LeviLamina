@@ -23,9 +23,9 @@ namespace RakNet { class BitStream; }
 class LevelData {
 public:
     // prevent constructor by default
-    LevelData& operator=(LevelData const&) = delete;
-    LevelData(LevelData const&)            = delete;
-    LevelData()                            = delete;
+    LevelData& operator=(LevelData const&);
+    LevelData(LevelData const&);
+    LevelData();
 
 public:
     // NOLINTBEGIN
@@ -46,7 +46,7 @@ public:
     MCAPI LevelData(class LevelData&&);
 
     // symbol: ??0LevelData@@QEAA@_N@Z
-    MCAPI LevelData(bool);
+    MCAPI explicit LevelData(bool);
 
     // symbol: ?achievementsWillBeDisabledOnLoad@LevelData@@QEBA_NXZ
     MCAPI bool achievementsWillBeDisabledOnLoad() const;

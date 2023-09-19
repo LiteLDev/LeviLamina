@@ -5,8 +5,8 @@
 class TintMapColor {
 public:
     // prevent constructor by default
-    TintMapColor& operator=(TintMapColor const&) = delete;
-    TintMapColor(TintMapColor const&)            = delete;
+    TintMapColor& operator=(TintMapColor const&);
+    TintMapColor(TintMapColor const&);
 
 public:
     // NOLINTBEGIN

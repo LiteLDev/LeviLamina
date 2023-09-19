@@ -8,9 +8,9 @@
 class BlockSourceListener {
 public:
     // prevent constructor by default
-    BlockSourceListener& operator=(BlockSourceListener const&) = delete;
-    BlockSourceListener(BlockSourceListener const&)            = delete;
-    BlockSourceListener()                                      = delete;
+    BlockSourceListener& operator=(BlockSourceListener const&);
+    BlockSourceListener(BlockSourceListener const&);
+    BlockSourceListener();
 
 public:
     // NOLINTBEGIN

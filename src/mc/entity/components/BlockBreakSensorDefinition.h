@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class BlockBreakSensorDefinition {
 public:
     // prevent constructor by default
-    BlockBreakSensorDefinition& operator=(BlockBreakSensorDefinition const&) = delete;
-    BlockBreakSensorDefinition(BlockBreakSensorDefinition const&)            = delete;
+    BlockBreakSensorDefinition& operator=(BlockBreakSensorDefinition const&);
+    BlockBreakSensorDefinition(BlockBreakSensorDefinition const&);
 
 public:
     // NOLINTBEGIN

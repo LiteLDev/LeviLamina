@@ -9,9 +9,9 @@
 class NapGoal : public ::Goal {
 public:
     // prevent constructor by default
-    NapGoal& operator=(NapGoal const&) = delete;
-    NapGoal(NapGoal const&)            = delete;
-    NapGoal()                          = delete;
+    NapGoal& operator=(NapGoal const&);
+    NapGoal(NapGoal const&);
+    NapGoal();
 
 public:
     // NOLINTBEGIN

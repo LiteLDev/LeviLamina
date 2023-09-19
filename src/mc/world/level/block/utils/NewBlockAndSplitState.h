@@ -7,9 +7,9 @@ namespace ComplexAliasBlockUtils {
 struct NewBlockAndSplitState {
 public:
     // prevent constructor by default
-    NewBlockAndSplitState& operator=(NewBlockAndSplitState const&) = delete;
-    NewBlockAndSplitState(NewBlockAndSplitState const&)            = delete;
-    NewBlockAndSplitState()                                        = delete;
+    NewBlockAndSplitState& operator=(NewBlockAndSplitState const&);
+    NewBlockAndSplitState(NewBlockAndSplitState const&);
+    NewBlockAndSplitState();
 
 public:
     // NOLINTBEGIN

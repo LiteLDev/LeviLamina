@@ -5,7 +5,7 @@
 struct ActorTickedFlag {
 public:
     // prevent constructor by default
-    ActorTickedFlag& operator=(ActorTickedFlag const&) = delete;
-    ActorTickedFlag(ActorTickedFlag const&)            = delete;
-    ActorTickedFlag()                                  = delete;
+    ActorTickedFlag& operator=(ActorTickedFlag const&);
+    ActorTickedFlag(ActorTickedFlag const&);
+    ActorTickedFlag();
 };

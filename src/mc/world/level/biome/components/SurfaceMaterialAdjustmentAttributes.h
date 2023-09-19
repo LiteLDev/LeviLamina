@@ -5,9 +5,9 @@
 struct SurfaceMaterialAdjustmentAttributes {
 public:
     // prevent constructor by default
-    SurfaceMaterialAdjustmentAttributes& operator=(SurfaceMaterialAdjustmentAttributes const&) = delete;
-    SurfaceMaterialAdjustmentAttributes(SurfaceMaterialAdjustmentAttributes const&)            = delete;
-    SurfaceMaterialAdjustmentAttributes()                                                      = delete;
+    SurfaceMaterialAdjustmentAttributes& operator=(SurfaceMaterialAdjustmentAttributes const&);
+    SurfaceMaterialAdjustmentAttributes(SurfaceMaterialAdjustmentAttributes const&);
+    SurfaceMaterialAdjustmentAttributes();
 
 public:
     // NOLINTBEGIN

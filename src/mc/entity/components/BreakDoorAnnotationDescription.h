@@ -8,9 +8,9 @@
 class BreakDoorAnnotationDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    BreakDoorAnnotationDescription& operator=(BreakDoorAnnotationDescription const&) = delete;
-    BreakDoorAnnotationDescription(BreakDoorAnnotationDescription const&)            = delete;
-    BreakDoorAnnotationDescription()                                                 = delete;
+    BreakDoorAnnotationDescription& operator=(BreakDoorAnnotationDescription const&);
+    BreakDoorAnnotationDescription(BreakDoorAnnotationDescription const&);
+    BreakDoorAnnotationDescription();
 
 public:
     // NOLINTBEGIN

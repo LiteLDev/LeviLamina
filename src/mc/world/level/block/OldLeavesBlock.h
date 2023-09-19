@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class OldLeavesBlock : public ::LeavesBlock {
 public:
     // prevent constructor by default
-    OldLeavesBlock& operator=(OldLeavesBlock const&) = delete;
-    OldLeavesBlock(OldLeavesBlock const&)            = delete;
-    OldLeavesBlock()                                 = delete;
+    OldLeavesBlock& operator=(OldLeavesBlock const&);
+    OldLeavesBlock(OldLeavesBlock const&);
+    OldLeavesBlock();
 
 public:
     // NOLINTBEGIN

@@ -23,9 +23,9 @@ public:
         struct ColorOption {
         public:
             // prevent constructor by default
-            ColorOption& operator=(ColorOption const&) = delete;
-            ColorOption(ColorOption const&)            = delete;
-            ColorOption()                              = delete;
+            ColorOption& operator=(ColorOption const&);
+            ColorOption(ColorOption const&);
+            ColorOption();
 
         public:
             // NOLINTBEGIN
@@ -38,9 +38,9 @@ public:
         struct TimeOption {
         public:
             // prevent constructor by default
-            TimeOption& operator=(TimeOption const&) = delete;
-            TimeOption(TimeOption const&)            = delete;
-            TimeOption()                             = delete;
+            TimeOption& operator=(TimeOption const&);
+            TimeOption(TimeOption const&);
+            TimeOption();
 
         public:
             // NOLINTBEGIN
@@ -52,9 +52,9 @@ public:
 
     public:
         // prevent constructor by default
-        FadeInstruction& operator=(FadeInstruction const&) = delete;
-        FadeInstruction(FadeInstruction const&)            = delete;
-        FadeInstruction()                                  = delete;
+        FadeInstruction& operator=(FadeInstruction const&);
+        FadeInstruction(FadeInstruction const&);
+        FadeInstruction();
 
     public:
         // NOLINTBEGIN
@@ -79,9 +79,9 @@ public:
         struct EaseOption {
         public:
             // prevent constructor by default
-            EaseOption& operator=(EaseOption const&) = delete;
-            EaseOption(EaseOption const&)            = delete;
-            EaseOption()                             = delete;
+            EaseOption& operator=(EaseOption const&);
+            EaseOption(EaseOption const&);
+            EaseOption();
 
         public:
             // NOLINTBEGIN
@@ -94,9 +94,9 @@ public:
         struct RotOption {
         public:
             // prevent constructor by default
-            RotOption& operator=(RotOption const&) = delete;
-            RotOption(RotOption const&)            = delete;
-            RotOption()                            = delete;
+            RotOption& operator=(RotOption const&);
+            RotOption(RotOption const&);
+            RotOption();
 
         public:
             // NOLINTBEGIN
@@ -108,8 +108,8 @@ public:
 
     public:
         // prevent constructor by default
-        SetInstruction(SetInstruction const&) = delete;
-        SetInstruction()                      = delete;
+        SetInstruction(SetInstruction const&);
+        SetInstruction();
 
     public:
         // NOLINTBEGIN
@@ -130,9 +130,9 @@ public:
 
 public:
     // prevent constructor by default
-    CameraInstruction& operator=(CameraInstruction const&) = delete;
-    CameraInstruction(CameraInstruction const&)            = delete;
-    CameraInstruction()                                    = delete;
+    CameraInstruction& operator=(CameraInstruction const&);
+    CameraInstruction(CameraInstruction const&);
+    CameraInstruction();
 
 public:
     // NOLINTBEGIN

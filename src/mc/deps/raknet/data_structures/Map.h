@@ -7,9 +7,9 @@ namespace DataStructures {
 struct Map {
 public:
     // prevent constructor by default
-    Map& operator=(Map const&) = delete;
-    Map(Map const&)            = delete;
-    Map()                      = delete;
+    Map& operator=(Map const&);
+    Map(Map const&);
+    Map();
 };
 
 }; // namespace DataStructures

@@ -5,7 +5,7 @@
 class InteractionResult {
 public:
     // prevent constructor by default
-    InteractionResult& operator=(InteractionResult const&) = delete;
-    InteractionResult(InteractionResult const&)            = delete;
-    InteractionResult()                                    = delete;
+    InteractionResult& operator=(InteractionResult const&);
+    InteractionResult(InteractionResult const&);
+    InteractionResult();
 };

@@ -5,9 +5,9 @@
 class InventoryTransactionManager {
 public:
     // prevent constructor by default
-    InventoryTransactionManager& operator=(InventoryTransactionManager const&) = delete;
-    InventoryTransactionManager(InventoryTransactionManager const&)            = delete;
-    InventoryTransactionManager()                                              = delete;
+    InventoryTransactionManager& operator=(InventoryTransactionManager const&);
+    InventoryTransactionManager(InventoryTransactionManager const&);
+    InventoryTransactionManager();
 
 public:
     // NOLINTBEGIN

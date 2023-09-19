@@ -5,7 +5,7 @@
 class BaseBlockLocationIterator {
 public:
     // prevent constructor by default
-    BaseBlockLocationIterator(BaseBlockLocationIterator const&) = delete;
+    BaseBlockLocationIterator(BaseBlockLocationIterator const&);
 
 public:
     // NOLINTBEGIN

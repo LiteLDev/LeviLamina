@@ -9,9 +9,9 @@
 class FindUnderwaterTreasureGoal : public ::Goal {
 public:
     // prevent constructor by default
-    FindUnderwaterTreasureGoal& operator=(FindUnderwaterTreasureGoal const&) = delete;
-    FindUnderwaterTreasureGoal(FindUnderwaterTreasureGoal const&)            = delete;
-    FindUnderwaterTreasureGoal()                                             = delete;
+    FindUnderwaterTreasureGoal& operator=(FindUnderwaterTreasureGoal const&);
+    FindUnderwaterTreasureGoal(FindUnderwaterTreasureGoal const&);
+    FindUnderwaterTreasureGoal();
 
 public:
     // NOLINTBEGIN

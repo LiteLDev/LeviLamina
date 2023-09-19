@@ -12,9 +12,9 @@ namespace gametest { struct GameTestError; }
 class MinecraftReportGameListener {
 public:
     // prevent constructor by default
-    MinecraftReportGameListener& operator=(MinecraftReportGameListener const&) = delete;
-    MinecraftReportGameListener(MinecraftReportGameListener const&)            = delete;
-    MinecraftReportGameListener()                                              = delete;
+    MinecraftReportGameListener& operator=(MinecraftReportGameListener const&);
+    MinecraftReportGameListener(MinecraftReportGameListener const&);
+    MinecraftReportGameListener();
 
 public:
     // NOLINTBEGIN

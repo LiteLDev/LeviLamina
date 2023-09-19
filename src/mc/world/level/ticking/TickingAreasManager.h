@@ -14,8 +14,8 @@ public:
 
 public:
     // prevent constructor by default
-    TickingAreasManager& operator=(TickingAreasManager const&) = delete;
-    TickingAreasManager(TickingAreasManager const&)            = delete;
+    TickingAreasManager& operator=(TickingAreasManager const&);
+    TickingAreasManager(TickingAreasManager const&);
 
 public:
     // NOLINTBEGIN

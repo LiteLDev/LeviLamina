@@ -10,8 +10,8 @@
 class SyncActorPropertyPacket : public ::Packet {
 public:
     // prevent constructor by default
-    SyncActorPropertyPacket& operator=(SyncActorPropertyPacket const&) = delete;
-    SyncActorPropertyPacket(SyncActorPropertyPacket const&)            = delete;
+    SyncActorPropertyPacket& operator=(SyncActorPropertyPacket const&);
+    SyncActorPropertyPacket(SyncActorPropertyPacket const&);
 
 public:
     // NOLINTBEGIN

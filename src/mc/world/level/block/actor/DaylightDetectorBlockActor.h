@@ -8,9 +8,9 @@
 class DaylightDetectorBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    DaylightDetectorBlockActor& operator=(DaylightDetectorBlockActor const&) = delete;
-    DaylightDetectorBlockActor(DaylightDetectorBlockActor const&)            = delete;
-    DaylightDetectorBlockActor()                                             = delete;
+    DaylightDetectorBlockActor& operator=(DaylightDetectorBlockActor const&);
+    DaylightDetectorBlockActor(DaylightDetectorBlockActor const&);
+    DaylightDetectorBlockActor();
 
 public:
     // NOLINTBEGIN

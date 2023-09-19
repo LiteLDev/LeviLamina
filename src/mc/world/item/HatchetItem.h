@@ -22,9 +22,9 @@ namespace mce { class Color; }
 class HatchetItem : public ::DiggerItem {
 public:
     // prevent constructor by default
-    HatchetItem& operator=(HatchetItem const&) = delete;
-    HatchetItem(HatchetItem const&)            = delete;
-    HatchetItem()                              = delete;
+    HatchetItem& operator=(HatchetItem const&);
+    HatchetItem(HatchetItem const&);
+    HatchetItem();
 
 public:
     // NOLINTBEGIN

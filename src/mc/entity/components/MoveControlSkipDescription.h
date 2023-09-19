@@ -8,9 +8,9 @@
 class MoveControlSkipDescription : public ::MoveControlDescription {
 public:
     // prevent constructor by default
-    MoveControlSkipDescription& operator=(MoveControlSkipDescription const&) = delete;
-    MoveControlSkipDescription(MoveControlSkipDescription const&)            = delete;
-    MoveControlSkipDescription()                                             = delete;
+    MoveControlSkipDescription& operator=(MoveControlSkipDescription const&);
+    MoveControlSkipDescription(MoveControlSkipDescription const&);
+    MoveControlSkipDescription();
 
 public:
     // NOLINTBEGIN

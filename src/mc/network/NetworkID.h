@@ -7,9 +7,9 @@ namespace NetherNet {
 struct NetworkID {
 public:
     // prevent constructor by default
-    NetworkID& operator=(NetworkID const&) = delete;
-    NetworkID(NetworkID const&)            = delete;
-    NetworkID()                            = delete;
+    NetworkID& operator=(NetworkID const&);
+    NetworkID(NetworkID const&);
+    NetworkID();
 };
 
 }; // namespace NetherNet

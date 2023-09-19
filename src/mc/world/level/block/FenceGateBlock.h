@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class FenceGateBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    FenceGateBlock& operator=(FenceGateBlock const&) = delete;
-    FenceGateBlock(FenceGateBlock const&)            = delete;
-    FenceGateBlock()                                 = delete;
+    FenceGateBlock& operator=(FenceGateBlock const&);
+    FenceGateBlock(FenceGateBlock const&);
+    FenceGateBlock();
 
 public:
     // NOLINTBEGIN

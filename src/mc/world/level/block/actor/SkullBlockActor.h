@@ -12,9 +12,9 @@ public:
 
 public:
     // prevent constructor by default
-    SkullBlockActor& operator=(SkullBlockActor const&) = delete;
-    SkullBlockActor(SkullBlockActor const&)            = delete;
-    SkullBlockActor()                                  = delete;
+    SkullBlockActor& operator=(SkullBlockActor const&);
+    SkullBlockActor(SkullBlockActor const&);
+    SkullBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -71,7 +71,7 @@ public:
     virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
 
     // symbol: ??0SkullBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI SkullBlockActor(class BlockPos const&);
+    MCAPI explicit SkullBlockActor(class BlockPos const&);
 
     // symbol: ?getSkullType@SkullBlockActor@@QEBA?AW4SkullType@1@XZ
     MCAPI ::SkullBlockActor::SkullType getSkullType() const;

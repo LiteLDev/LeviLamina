@@ -5,7 +5,7 @@
 class InventoryAction {
 public:
     // prevent constructor by default
-    InventoryAction() = delete;
+    InventoryAction();
 
 public:
     // NOLINTBEGIN

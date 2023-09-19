@@ -8,9 +8,9 @@
 class EffectCommand : public ::Command {
 public:
     // prevent constructor by default
-    EffectCommand& operator=(EffectCommand const&) = delete;
-    EffectCommand(EffectCommand const&)            = delete;
-    EffectCommand()                                = delete;
+    EffectCommand& operator=(EffectCommand const&);
+    EffectCommand(EffectCommand const&);
+    EffectCommand();
 
 public:
     // NOLINTBEGIN

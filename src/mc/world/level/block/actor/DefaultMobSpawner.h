@@ -8,9 +8,9 @@
 class DefaultMobSpawner : public ::BaseMobSpawner {
 public:
     // prevent constructor by default
-    DefaultMobSpawner& operator=(DefaultMobSpawner const&) = delete;
-    DefaultMobSpawner(DefaultMobSpawner const&)            = delete;
-    DefaultMobSpawner()                                    = delete;
+    DefaultMobSpawner& operator=(DefaultMobSpawner const&);
+    DefaultMobSpawner(DefaultMobSpawner const&);
+    DefaultMobSpawner();
 
 public:
     // NOLINTBEGIN

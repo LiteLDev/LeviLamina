@@ -22,9 +22,9 @@ namespace mce { class Color; }
 class DoorItem : public ::Item {
 public:
     // prevent constructor by default
-    DoorItem& operator=(DoorItem const&) = delete;
-    DoorItem(DoorItem const&)            = delete;
-    DoorItem()                           = delete;
+    DoorItem& operator=(DoorItem const&);
+    DoorItem(DoorItem const&);
+    DoorItem();
 
 public:
     // NOLINTBEGIN

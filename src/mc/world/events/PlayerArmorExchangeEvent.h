@@ -5,8 +5,8 @@
 struct PlayerArmorExchangeEvent {
 public:
     // prevent constructor by default
-    PlayerArmorExchangeEvent& operator=(PlayerArmorExchangeEvent const&) = delete;
-    PlayerArmorExchangeEvent()                                           = delete;
+    PlayerArmorExchangeEvent& operator=(PlayerArmorExchangeEvent const&);
+    PlayerArmorExchangeEvent();
 
 public:
     // NOLINTBEGIN

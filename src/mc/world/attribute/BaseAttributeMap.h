@@ -5,8 +5,8 @@
 class BaseAttributeMap {
 public:
     // prevent constructor by default
-    BaseAttributeMap& operator=(BaseAttributeMap const&) = delete;
-    BaseAttributeMap(BaseAttributeMap const&)            = delete;
+    BaseAttributeMap& operator=(BaseAttributeMap const&);
+    BaseAttributeMap(BaseAttributeMap const&);
 
 public:
     // NOLINTBEGIN

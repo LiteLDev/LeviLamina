@@ -10,8 +10,8 @@
 class ItemEventCoordinator {
 public:
     // prevent constructor by default
-    ItemEventCoordinator& operator=(ItemEventCoordinator const&) = delete;
-    ItemEventCoordinator(ItemEventCoordinator const&)            = delete;
+    ItemEventCoordinator& operator=(ItemEventCoordinator const&);
+    ItemEventCoordinator(ItemEventCoordinator const&);
 
 public:
     // NOLINTBEGIN

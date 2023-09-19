@@ -15,9 +15,9 @@ namespace Json { class Value; }
 struct DeferredDescriptor : public ::ItemDescriptor::BaseDescriptor {
 public:
     // prevent constructor by default
-    DeferredDescriptor& operator=(DeferredDescriptor const&) = delete;
-    DeferredDescriptor(DeferredDescriptor const&)            = delete;
-    DeferredDescriptor()                                     = delete;
+    DeferredDescriptor& operator=(DeferredDescriptor const&);
+    DeferredDescriptor(DeferredDescriptor const&);
+    DeferredDescriptor();
 
 public:
     // NOLINTBEGIN

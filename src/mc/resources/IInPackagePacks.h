@@ -21,9 +21,9 @@ public:
     struct MetaData {
     public:
         // prevent constructor by default
-        MetaData& operator=(MetaData const&) = delete;
-        MetaData(MetaData const&)            = delete;
-        MetaData()                           = delete;
+        MetaData& operator=(MetaData const&);
+        MetaData(MetaData const&);
+        MetaData();
 
     public:
         // NOLINTBEGIN
@@ -35,7 +35,7 @@ public:
 
 public:
     // prevent constructor by default
-    IInPackagePacks& operator=(IInPackagePacks const&) = delete;
-    IInPackagePacks(IInPackagePacks const&)            = delete;
-    IInPackagePacks()                                  = delete;
+    IInPackagePacks& operator=(IInPackagePacks const&);
+    IInPackagePacks(IInPackagePacks const&);
+    IInPackagePacks();
 };

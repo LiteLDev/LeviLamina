@@ -8,9 +8,9 @@
 class VehicleServerMolangSeatPositionSystem {
 public:
     // prevent constructor by default
-    VehicleServerMolangSeatPositionSystem& operator=(VehicleServerMolangSeatPositionSystem const&) = delete;
-    VehicleServerMolangSeatPositionSystem(VehicleServerMolangSeatPositionSystem const&)            = delete;
-    VehicleServerMolangSeatPositionSystem()                                                        = delete;
+    VehicleServerMolangSeatPositionSystem& operator=(VehicleServerMolangSeatPositionSystem const&);
+    VehicleServerMolangSeatPositionSystem(VehicleServerMolangSeatPositionSystem const&);
+    VehicleServerMolangSeatPositionSystem();
 
 public:
     // NOLINTBEGIN

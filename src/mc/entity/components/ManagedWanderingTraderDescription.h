@@ -8,9 +8,9 @@
 class ManagedWanderingTraderDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    ManagedWanderingTraderDescription& operator=(ManagedWanderingTraderDescription const&) = delete;
-    ManagedWanderingTraderDescription(ManagedWanderingTraderDescription const&)            = delete;
-    ManagedWanderingTraderDescription()                                                    = delete;
+    ManagedWanderingTraderDescription& operator=(ManagedWanderingTraderDescription const&);
+    ManagedWanderingTraderDescription(ManagedWanderingTraderDescription const&);
+    ManagedWanderingTraderDescription();
 
 public:
     // NOLINTBEGIN

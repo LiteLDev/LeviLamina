@@ -8,9 +8,9 @@
 class ConduitBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    ConduitBlockActor& operator=(ConduitBlockActor const&) = delete;
-    ConduitBlockActor(ConduitBlockActor const&)            = delete;
-    ConduitBlockActor()                                    = delete;
+    ConduitBlockActor& operator=(ConduitBlockActor const&);
+    ConduitBlockActor(ConduitBlockActor const&);
+    ConduitBlockActor();
 
 public:
     // NOLINTBEGIN

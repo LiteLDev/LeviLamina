@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class ObserverBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    ObserverBlock& operator=(ObserverBlock const&) = delete;
-    ObserverBlock(ObserverBlock const&)            = delete;
-    ObserverBlock()                                = delete;
+    ObserverBlock& operator=(ObserverBlock const&);
+    ObserverBlock(ObserverBlock const&);
+    ObserverBlock();
 
 public:
     // NOLINTBEGIN

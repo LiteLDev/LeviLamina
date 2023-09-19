@@ -5,8 +5,8 @@
 struct SurfaceMaterialAttributes {
 public:
     // prevent constructor by default
-    SurfaceMaterialAttributes& operator=(SurfaceMaterialAttributes const&) = delete;
-    SurfaceMaterialAttributes()                                            = delete;
+    SurfaceMaterialAttributes& operator=(SurfaceMaterialAttributes const&);
+    SurfaceMaterialAttributes();
 
 public:
     // NOLINTBEGIN

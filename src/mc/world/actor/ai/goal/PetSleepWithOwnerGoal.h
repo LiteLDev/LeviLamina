@@ -9,9 +9,9 @@
 class PetSleepWithOwnerGoal : public ::Goal {
 public:
     // prevent constructor by default
-    PetSleepWithOwnerGoal& operator=(PetSleepWithOwnerGoal const&) = delete;
-    PetSleepWithOwnerGoal(PetSleepWithOwnerGoal const&)            = delete;
-    PetSleepWithOwnerGoal()                                        = delete;
+    PetSleepWithOwnerGoal& operator=(PetSleepWithOwnerGoal const&);
+    PetSleepWithOwnerGoal(PetSleepWithOwnerGoal const&);
+    PetSleepWithOwnerGoal();
 
 public:
     // NOLINTBEGIN

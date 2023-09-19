@@ -9,9 +9,9 @@
 class SummonActorGoal : public ::Goal {
 public:
     // prevent constructor by default
-    SummonActorGoal& operator=(SummonActorGoal const&) = delete;
-    SummonActorGoal(SummonActorGoal const&)            = delete;
-    SummonActorGoal()                                  = delete;
+    SummonActorGoal& operator=(SummonActorGoal const&);
+    SummonActorGoal(SummonActorGoal const&);
+    SummonActorGoal();
 
 public:
     // NOLINTBEGIN

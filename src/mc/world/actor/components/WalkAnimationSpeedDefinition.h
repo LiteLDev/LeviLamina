@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct WalkAnimationSpeedDefinition {
 public:
     // prevent constructor by default
-    WalkAnimationSpeedDefinition& operator=(WalkAnimationSpeedDefinition const&) = delete;
-    WalkAnimationSpeedDefinition(WalkAnimationSpeedDefinition const&)            = delete;
-    WalkAnimationSpeedDefinition()                                               = delete;
+    WalkAnimationSpeedDefinition& operator=(WalkAnimationSpeedDefinition const&);
+    WalkAnimationSpeedDefinition(WalkAnimationSpeedDefinition const&);
+    WalkAnimationSpeedDefinition();
 
 public:
     // NOLINTBEGIN

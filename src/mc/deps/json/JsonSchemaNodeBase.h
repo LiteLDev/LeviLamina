@@ -7,9 +7,9 @@ namespace JsonUtil {
 class JsonSchemaNodeBase {
 public:
     // prevent constructor by default
-    JsonSchemaNodeBase& operator=(JsonSchemaNodeBase const&) = delete;
-    JsonSchemaNodeBase(JsonSchemaNodeBase const&)            = delete;
-    JsonSchemaNodeBase()                                     = delete;
+    JsonSchemaNodeBase& operator=(JsonSchemaNodeBase const&);
+    JsonSchemaNodeBase(JsonSchemaNodeBase const&);
+    JsonSchemaNodeBase();
 };
 
 }; // namespace JsonUtil

@@ -5,9 +5,9 @@
 class ServerPlayerInputSystem {
 public:
     // prevent constructor by default
-    ServerPlayerInputSystem& operator=(ServerPlayerInputSystem const&) = delete;
-    ServerPlayerInputSystem(ServerPlayerInputSystem const&)            = delete;
-    ServerPlayerInputSystem()                                          = delete;
+    ServerPlayerInputSystem& operator=(ServerPlayerInputSystem const&);
+    ServerPlayerInputSystem(ServerPlayerInputSystem const&);
+    ServerPlayerInputSystem();
 
 public:
     // NOLINTBEGIN

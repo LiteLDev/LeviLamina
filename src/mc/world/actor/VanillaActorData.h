@@ -5,7 +5,7 @@
 struct VanillaActorData {
 public:
     // prevent constructor by default
-    VanillaActorData& operator=(VanillaActorData const&) = delete;
-    VanillaActorData(VanillaActorData const&)            = delete;
-    VanillaActorData()                                   = delete;
+    VanillaActorData& operator=(VanillaActorData const&);
+    VanillaActorData(VanillaActorData const&);
+    VanillaActorData();
 };

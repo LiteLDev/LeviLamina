@@ -19,9 +19,9 @@ namespace mce { class UUID; }
 class BlockCommandOrigin : public ::CommandOrigin {
 public:
     // prevent constructor by default
-    BlockCommandOrigin& operator=(BlockCommandOrigin const&) = delete;
-    BlockCommandOrigin(BlockCommandOrigin const&)            = delete;
-    BlockCommandOrigin()                                     = delete;
+    BlockCommandOrigin& operator=(BlockCommandOrigin const&);
+    BlockCommandOrigin(BlockCommandOrigin const&);
+    BlockCommandOrigin();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class SynchedActorDataReader {
 public:
     // prevent constructor by default
-    SynchedActorDataReader& operator=(SynchedActorDataReader const&) = delete;
-    SynchedActorDataReader(SynchedActorDataReader const&)            = delete;
-    SynchedActorDataReader()                                         = delete;
+    SynchedActorDataReader& operator=(SynchedActorDataReader const&);
+    SynchedActorDataReader(SynchedActorDataReader const&);
+    SynchedActorDataReader();
 
 public:
     // NOLINTBEGIN

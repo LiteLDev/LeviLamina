@@ -7,9 +7,9 @@ namespace ClimateUtils {
 struct Parameter {
 public:
     // prevent constructor by default
-    Parameter& operator=(Parameter const&) = delete;
-    Parameter(Parameter const&)            = delete;
-    Parameter()                            = delete;
+    Parameter& operator=(Parameter const&);
+    Parameter(Parameter const&);
+    Parameter();
 
 public:
     // NOLINTBEGIN

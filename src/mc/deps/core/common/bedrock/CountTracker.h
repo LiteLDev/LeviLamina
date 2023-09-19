@@ -7,8 +7,8 @@ namespace Bedrock::Threading {
 class CountTracker {
 public:
     // prevent constructor by default
-    CountTracker& operator=(CountTracker const&) = delete;
-    CountTracker(CountTracker const&)            = delete;
+    CountTracker& operator=(CountTracker const&);
+    CountTracker(CountTracker const&);
 
 public:
     // NOLINTBEGIN

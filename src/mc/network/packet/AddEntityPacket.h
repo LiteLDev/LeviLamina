@@ -10,8 +10,8 @@
 class AddEntityPacket : public ::EntityServerPacket {
 public:
     // prevent constructor by default
-    AddEntityPacket& operator=(AddEntityPacket const&) = delete;
-    AddEntityPacket(AddEntityPacket const&)            = delete;
+    AddEntityPacket& operator=(AddEntityPacket const&);
+    AddEntityPacket(AddEntityPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -14,8 +14,8 @@ public:
 
 public:
     // prevent constructor by default
-    AnimatePacket& operator=(AnimatePacket const&) = delete;
-    AnimatePacket(AnimatePacket const&)            = delete;
+    AnimatePacket& operator=(AnimatePacket const&);
+    AnimatePacket(AnimatePacket const&);
 
 public:
     // NOLINTBEGIN

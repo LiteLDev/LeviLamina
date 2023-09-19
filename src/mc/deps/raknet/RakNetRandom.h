@@ -7,8 +7,8 @@ namespace RakNet {
 class RakNetRandom {
 public:
     // prevent constructor by default
-    RakNetRandom& operator=(RakNetRandom const&) = delete;
-    RakNetRandom(RakNetRandom const&)            = delete;
+    RakNetRandom& operator=(RakNetRandom const&);
+    RakNetRandom(RakNetRandom const&);
 
 public:
     // NOLINTBEGIN

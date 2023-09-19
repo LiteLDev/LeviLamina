@@ -5,9 +5,9 @@
 class CachedComponentData {
 public:
     // prevent constructor by default
-    CachedComponentData& operator=(CachedComponentData const&) = delete;
-    CachedComponentData(CachedComponentData const&)            = delete;
-    CachedComponentData()                                      = delete;
+    CachedComponentData& operator=(CachedComponentData const&);
+    CachedComponentData(CachedComponentData const&);
+    CachedComponentData();
 
 public:
     // NOLINTBEGIN

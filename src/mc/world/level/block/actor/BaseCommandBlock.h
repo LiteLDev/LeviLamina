@@ -5,8 +5,8 @@
 class BaseCommandBlock {
 public:
     // prevent constructor by default
-    BaseCommandBlock& operator=(BaseCommandBlock const&) = delete;
-    BaseCommandBlock(BaseCommandBlock const&)            = delete;
+    BaseCommandBlock& operator=(BaseCommandBlock const&);
+    BaseCommandBlock(BaseCommandBlock const&);
 
 public:
     // NOLINTBEGIN

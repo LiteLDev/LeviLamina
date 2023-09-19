@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct MovementSoundDistanceOffsetDefinition {
 public:
     // prevent constructor by default
-    MovementSoundDistanceOffsetDefinition& operator=(MovementSoundDistanceOffsetDefinition const&) = delete;
-    MovementSoundDistanceOffsetDefinition(MovementSoundDistanceOffsetDefinition const&)            = delete;
-    MovementSoundDistanceOffsetDefinition()                                                        = delete;
+    MovementSoundDistanceOffsetDefinition& operator=(MovementSoundDistanceOffsetDefinition const&);
+    MovementSoundDistanceOffsetDefinition(MovementSoundDistanceOffsetDefinition const&);
+    MovementSoundDistanceOffsetDefinition();
 
 public:
     // NOLINTBEGIN

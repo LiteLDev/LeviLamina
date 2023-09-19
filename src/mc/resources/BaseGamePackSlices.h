@@ -18,9 +18,9 @@ public:
     struct BaseGameVersionPack {
     public:
         // prevent constructor by default
-        BaseGameVersionPack& operator=(BaseGameVersionPack const&) = delete;
-        BaseGameVersionPack(BaseGameVersionPack const&)            = delete;
-        BaseGameVersionPack()                                      = delete;
+        BaseGameVersionPack& operator=(BaseGameVersionPack const&);
+        BaseGameVersionPack(BaseGameVersionPack const&);
+        BaseGameVersionPack();
 
     public:
         // NOLINTBEGIN
@@ -32,8 +32,8 @@ public:
 
 public:
     // prevent constructor by default
-    BaseGamePackSlices& operator=(BaseGamePackSlices const&) = delete;
-    BaseGamePackSlices(BaseGamePackSlices const&)            = delete;
+    BaseGamePackSlices& operator=(BaseGamePackSlices const&);
+    BaseGamePackSlices(BaseGamePackSlices const&);
 
 public:
     // NOLINTBEGIN

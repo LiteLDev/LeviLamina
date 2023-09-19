@@ -8,7 +8,7 @@
 class MolangVariableMap {
 public:
     // prevent constructor by default
-    MolangVariableMap() = delete;
+    MolangVariableMap();
 
 public:
     // NOLINTBEGIN

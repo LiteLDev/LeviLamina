@@ -13,9 +13,9 @@
 class StructureDataLoadHelper : public ::DataLoadHelper {
 public:
     // prevent constructor by default
-    StructureDataLoadHelper& operator=(StructureDataLoadHelper const&) = delete;
-    StructureDataLoadHelper(StructureDataLoadHelper const&)            = delete;
-    StructureDataLoadHelper()                                          = delete;
+    StructureDataLoadHelper& operator=(StructureDataLoadHelper const&);
+    StructureDataLoadHelper(StructureDataLoadHelper const&);
+    StructureDataLoadHelper();
 
 public:
     // NOLINTBEGIN

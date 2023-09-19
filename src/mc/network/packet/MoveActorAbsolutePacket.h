@@ -10,8 +10,8 @@
 class MoveActorAbsolutePacket : public ::Packet {
 public:
     // prevent constructor by default
-    MoveActorAbsolutePacket& operator=(MoveActorAbsolutePacket const&) = delete;
-    MoveActorAbsolutePacket(MoveActorAbsolutePacket const&)            = delete;
+    MoveActorAbsolutePacket& operator=(MoveActorAbsolutePacket const&);
+    MoveActorAbsolutePacket(MoveActorAbsolutePacket const&);
 
 public:
     // NOLINTBEGIN
@@ -36,7 +36,7 @@ public:
     MCVAPI ~MoveActorAbsolutePacket();
 
     // symbol: ??0MoveActorAbsolutePacket@@QEAA@AEBVMoveActorAbsoluteData@@@Z
-    MCAPI MoveActorAbsolutePacket(class MoveActorAbsoluteData const&);
+    MCAPI explicit MoveActorAbsolutePacket(class MoveActorAbsoluteData const&);
 
     // symbol: ??0MoveActorAbsolutePacket@@QEAA@XZ
     MCAPI MoveActorAbsolutePacket();

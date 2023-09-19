@@ -5,9 +5,9 @@
 class ResourcePackFileDownloaderManager {
 public:
     // prevent constructor by default
-    ResourcePackFileDownloaderManager& operator=(ResourcePackFileDownloaderManager const&) = delete;
-    ResourcePackFileDownloaderManager(ResourcePackFileDownloaderManager const&)            = delete;
-    ResourcePackFileDownloaderManager()                                                    = delete;
+    ResourcePackFileDownloaderManager& operator=(ResourcePackFileDownloaderManager const&);
+    ResourcePackFileDownloaderManager(ResourcePackFileDownloaderManager const&);
+    ResourcePackFileDownloaderManager();
 
 public:
     // NOLINTBEGIN

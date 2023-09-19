@@ -5,9 +5,9 @@
 struct PlayerEatFoodEvent {
 public:
     // prevent constructor by default
-    PlayerEatFoodEvent& operator=(PlayerEatFoodEvent const&) = delete;
-    PlayerEatFoodEvent(PlayerEatFoodEvent const&)            = delete;
-    PlayerEatFoodEvent()                                     = delete;
+    PlayerEatFoodEvent& operator=(PlayerEatFoodEvent const&);
+    PlayerEatFoodEvent(PlayerEatFoodEvent const&);
+    PlayerEatFoodEvent();
 
 public:
     // NOLINTBEGIN

@@ -22,9 +22,9 @@ namespace cereal::internal {
 class BasicTagSequenceSchema : public ::cereal::internal::BasicSchema {
 public:
     // prevent constructor by default
-    BasicTagSequenceSchema& operator=(BasicTagSequenceSchema const&) = delete;
-    BasicTagSequenceSchema(BasicTagSequenceSchema const&)            = delete;
-    BasicTagSequenceSchema()                                         = delete;
+    BasicTagSequenceSchema& operator=(BasicTagSequenceSchema const&);
+    BasicTagSequenceSchema(BasicTagSequenceSchema const&);
+    BasicTagSequenceSchema();
 
 public:
     // NOLINTBEGIN

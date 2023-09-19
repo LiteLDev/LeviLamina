@@ -8,14 +8,14 @@
 class WeakEntityRef {
 public:
     // prevent constructor by default
-    WeakEntityRef& operator=(WeakEntityRef const&) = delete;
-    WeakEntityRef(WeakEntityRef const&)            = delete;
-    WeakEntityRef()                                = delete;
+    WeakEntityRef& operator=(WeakEntityRef const&);
+    WeakEntityRef(WeakEntityRef const&);
+    WeakEntityRef();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0WeakEntityRef@@QEAA@V?$WeakRefT@UEntityRefTraits@@@@@Z
-    MCAPI WeakEntityRef(class WeakRefT<struct EntityRefTraits>);
+    MCAPI explicit WeakEntityRef(class WeakRefT<struct EntityRefTraits>);
 
     // symbol: ??9WeakEntityRef@@QEBA_NV0@@Z
     MCAPI bool operator!=(class WeakEntityRef) const;

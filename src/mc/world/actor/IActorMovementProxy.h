@@ -5,9 +5,9 @@
 struct IActorMovementProxy {
 public:
     // prevent constructor by default
-    IActorMovementProxy& operator=(IActorMovementProxy const&) = delete;
-    IActorMovementProxy(IActorMovementProxy const&)            = delete;
-    IActorMovementProxy()                                      = delete;
+    IActorMovementProxy& operator=(IActorMovementProxy const&);
+    IActorMovementProxy(IActorMovementProxy const&);
+    IActorMovementProxy();
 
 public:
     // NOLINTBEGIN

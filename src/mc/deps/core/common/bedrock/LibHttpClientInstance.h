@@ -7,9 +7,9 @@ namespace Bedrock::Http {
 class LibHttpClientInstance {
 public:
     // prevent constructor by default
-    LibHttpClientInstance& operator=(LibHttpClientInstance const&) = delete;
-    LibHttpClientInstance(LibHttpClientInstance const&)            = delete;
-    LibHttpClientInstance()                                        = delete;
+    LibHttpClientInstance& operator=(LibHttpClientInstance const&);
+    LibHttpClientInstance(LibHttpClientInstance const&);
+    LibHttpClientInstance();
 
 public:
     // NOLINTBEGIN

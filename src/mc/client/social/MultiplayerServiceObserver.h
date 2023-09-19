@@ -7,9 +7,9 @@ namespace Social {
 class MultiplayerServiceObserver {
 public:
     // prevent constructor by default
-    MultiplayerServiceObserver& operator=(MultiplayerServiceObserver const&) = delete;
-    MultiplayerServiceObserver(MultiplayerServiceObserver const&)            = delete;
-    MultiplayerServiceObserver()                                             = delete;
+    MultiplayerServiceObserver& operator=(MultiplayerServiceObserver const&);
+    MultiplayerServiceObserver(MultiplayerServiceObserver const&);
+    MultiplayerServiceObserver();
 
 public:
     // NOLINTBEGIN

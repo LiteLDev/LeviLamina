@@ -5,9 +5,9 @@
 class TravelMoveRequestSystem {
 public:
     // prevent constructor by default
-    TravelMoveRequestSystem& operator=(TravelMoveRequestSystem const&) = delete;
-    TravelMoveRequestSystem(TravelMoveRequestSystem const&)            = delete;
-    TravelMoveRequestSystem()                                          = delete;
+    TravelMoveRequestSystem& operator=(TravelMoveRequestSystem const&);
+    TravelMoveRequestSystem(TravelMoveRequestSystem const&);
+    TravelMoveRequestSystem();
 
 public:
     // NOLINTBEGIN

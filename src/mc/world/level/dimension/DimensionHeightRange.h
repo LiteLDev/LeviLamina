@@ -5,7 +5,7 @@
 class DimensionHeightRange {
 public:
     // prevent constructor by default
-    DimensionHeightRange& operator=(DimensionHeightRange const&) = delete;
-    DimensionHeightRange(DimensionHeightRange const&)            = delete;
-    DimensionHeightRange()                                       = delete;
+    DimensionHeightRange& operator=(DimensionHeightRange const&);
+    DimensionHeightRange(DimensionHeightRange const&);
+    DimensionHeightRange();
 };

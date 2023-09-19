@@ -10,8 +10,8 @@
 class ShowStoreOfferPacket : public ::Packet {
 public:
     // prevent constructor by default
-    ShowStoreOfferPacket& operator=(ShowStoreOfferPacket const&) = delete;
-    ShowStoreOfferPacket(ShowStoreOfferPacket const&)            = delete;
+    ShowStoreOfferPacket& operator=(ShowStoreOfferPacket const&);
+    ShowStoreOfferPacket(ShowStoreOfferPacket const&);
 
 public:
     // NOLINTBEGIN

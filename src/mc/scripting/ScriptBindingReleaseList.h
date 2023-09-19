@@ -13,9 +13,9 @@ public:
     struct ReleaseDetails {
     public:
         // prevent constructor by default
-        ReleaseDetails& operator=(ReleaseDetails const&) = delete;
-        ReleaseDetails(ReleaseDetails const&)            = delete;
-        ReleaseDetails()                                 = delete;
+        ReleaseDetails& operator=(ReleaseDetails const&);
+        ReleaseDetails(ReleaseDetails const&);
+        ReleaseDetails();
 
     public:
         // NOLINTBEGIN
@@ -27,15 +27,15 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptBindingReleaseList& operator=(ScriptBindingReleaseList const&) = delete;
-    ScriptBindingReleaseList(ScriptBindingReleaseList const&)            = delete;
-    ScriptBindingReleaseList()                                           = delete;
+    ScriptBindingReleaseList& operator=(ScriptBindingReleaseList const&);
+    ScriptBindingReleaseList(ScriptBindingReleaseList const&);
+    ScriptBindingReleaseList();
 
 public:
     // NOLINTBEGIN
     // symbol:
     // ??0ScriptBindingReleaseList@@QEAA@V?$vector@UReleaseDetails@ScriptBindingReleaseList@@V?$allocator@UReleaseDetails@ScriptBindingReleaseList@@@std@@@std@@@Z
-    MCAPI ScriptBindingReleaseList(std::vector<struct ScriptBindingReleaseList::ReleaseDetails>);
+    MCAPI explicit ScriptBindingReleaseList(std::vector<struct ScriptBindingReleaseList::ReleaseDetails>);
 
     // NOLINTEND
 };

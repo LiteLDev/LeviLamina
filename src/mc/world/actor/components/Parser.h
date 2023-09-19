@@ -18,9 +18,9 @@ namespace Json { class Value; }
 class Parser {
 public:
     // prevent constructor by default
-    Parser& operator=(Parser const&) = delete;
-    Parser(Parser const&)            = delete;
-    Parser()                         = delete;
+    Parser& operator=(Parser const&);
+    Parser(Parser const&);
+    Parser();
 
 public:
     // NOLINTBEGIN

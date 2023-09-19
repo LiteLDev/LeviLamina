@@ -11,9 +11,9 @@
 class SetScorePacket : public ::Packet {
 public:
     // prevent constructor by default
-    SetScorePacket& operator=(SetScorePacket const&) = delete;
-    SetScorePacket(SetScorePacket const&)            = delete;
-    SetScorePacket()                                 = delete;
+    SetScorePacket& operator=(SetScorePacket const&);
+    SetScorePacket(SetScorePacket const&);
+    SetScorePacket();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class ExitVehicleSystem {
 public:
     // prevent constructor by default
-    ExitVehicleSystem& operator=(ExitVehicleSystem const&) = delete;
-    ExitVehicleSystem(ExitVehicleSystem const&)            = delete;
-    ExitVehicleSystem()                                    = delete;
+    ExitVehicleSystem& operator=(ExitVehicleSystem const&);
+    ExitVehicleSystem(ExitVehicleSystem const&);
+    ExitVehicleSystem();
 
 public:
     // NOLINTBEGIN

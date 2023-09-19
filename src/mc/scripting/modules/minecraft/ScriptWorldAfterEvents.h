@@ -67,10 +67,9 @@ public:
     class ScriptWorldAfterEventsDeferredEventListener {
     public:
         // prevent constructor by default
-        ScriptWorldAfterEventsDeferredEventListener&
-        operator=(ScriptWorldAfterEventsDeferredEventListener const&)                                   = delete;
-        ScriptWorldAfterEventsDeferredEventListener(ScriptWorldAfterEventsDeferredEventListener const&) = delete;
-        ScriptWorldAfterEventsDeferredEventListener()                                                   = delete;
+        ScriptWorldAfterEventsDeferredEventListener& operator=(ScriptWorldAfterEventsDeferredEventListener const&);
+        ScriptWorldAfterEventsDeferredEventListener(ScriptWorldAfterEventsDeferredEventListener const&);
+        ScriptWorldAfterEventsDeferredEventListener();
 
     public:
         // NOLINTBEGIN
@@ -104,9 +103,9 @@ public:
     struct SignalHandle {
     public:
         // prevent constructor by default
-        SignalHandle& operator=(SignalHandle const&) = delete;
-        SignalHandle(SignalHandle const&)            = delete;
-        SignalHandle()                               = delete;
+        SignalHandle& operator=(SignalHandle const&);
+        SignalHandle(SignalHandle const&);
+        SignalHandle();
 
     public:
         // NOLINTBEGIN
@@ -118,9 +117,9 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptWorldAfterEvents& operator=(ScriptWorldAfterEvents const&) = delete;
-    ScriptWorldAfterEvents(ScriptWorldAfterEvents const&)            = delete;
-    ScriptWorldAfterEvents()                                         = delete;
+    ScriptWorldAfterEvents& operator=(ScriptWorldAfterEvents const&);
+    ScriptWorldAfterEvents(ScriptWorldAfterEvents const&);
+    ScriptWorldAfterEvents();
 
 public:
     // NOLINTBEGIN

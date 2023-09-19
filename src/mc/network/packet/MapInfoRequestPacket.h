@@ -10,8 +10,8 @@
 class MapInfoRequestPacket : public ::Packet {
 public:
     // prevent constructor by default
-    MapInfoRequestPacket& operator=(MapInfoRequestPacket const&) = delete;
-    MapInfoRequestPacket(MapInfoRequestPacket const&)            = delete;
+    MapInfoRequestPacket& operator=(MapInfoRequestPacket const&);
+    MapInfoRequestPacket(MapInfoRequestPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -39,7 +39,7 @@ public:
     MCAPI MapInfoRequestPacket(struct ActorUniqueID, class MapItemSavedData&);
 
     // symbol: ??0MapInfoRequestPacket@@QEAA@UActorUniqueID@@@Z
-    MCAPI MapInfoRequestPacket(struct ActorUniqueID);
+    MCAPI explicit MapInfoRequestPacket(struct ActorUniqueID);
 
     // symbol: ??0MapInfoRequestPacket@@QEAA@XZ
     MCAPI MapInfoRequestPacket();

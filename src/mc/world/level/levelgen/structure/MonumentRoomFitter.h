@@ -5,9 +5,9 @@
 class MonumentRoomFitter {
 public:
     // prevent constructor by default
-    MonumentRoomFitter& operator=(MonumentRoomFitter const&) = delete;
-    MonumentRoomFitter(MonumentRoomFitter const&)            = delete;
-    MonumentRoomFitter()                                     = delete;
+    MonumentRoomFitter& operator=(MonumentRoomFitter const&);
+    MonumentRoomFitter(MonumentRoomFitter const&);
+    MonumentRoomFitter();
 
 public:
     // NOLINTBEGIN

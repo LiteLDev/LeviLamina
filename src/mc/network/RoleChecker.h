@@ -8,8 +8,8 @@
 class RoleChecker {
 public:
     // prevent constructor by default
-    RoleChecker& operator=(RoleChecker const&) = delete;
-    RoleChecker(RoleChecker const&)            = delete;
+    RoleChecker& operator=(RoleChecker const&);
+    RoleChecker(RoleChecker const&);
 
 public:
     // NOLINTBEGIN

@@ -10,9 +10,9 @@
 class PauseManager {
 public:
     // prevent constructor by default
-    PauseManager& operator=(PauseManager const&) = delete;
-    PauseManager(PauseManager const&)            = delete;
-    PauseManager()                               = delete;
+    PauseManager& operator=(PauseManager const&);
+    PauseManager(PauseManager const&);
+    PauseManager();
 
 public:
     // NOLINTBEGIN

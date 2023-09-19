@@ -10,14 +10,14 @@
 class AutonomousActorManager {
 public:
     // prevent constructor by default
-    AutonomousActorManager& operator=(AutonomousActorManager const&) = delete;
-    AutonomousActorManager(AutonomousActorManager const&)            = delete;
-    AutonomousActorManager()                                         = delete;
+    AutonomousActorManager& operator=(AutonomousActorManager const&);
+    AutonomousActorManager(AutonomousActorManager const&);
+    AutonomousActorManager();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0AutonomousActorManager@@QEAA@V?$WeakRefT@UEntityRegistryRefTraits@@@@@Z
-    MCAPI AutonomousActorManager(class WeakRefT<struct EntityRegistryRefTraits>);
+    MCAPI explicit AutonomousActorManager(class WeakRefT<struct EntityRegistryRefTraits>);
 
     // symbol:
     // ?addAutonomousActorEntity@AutonomousActorManager@@QEAAPEAVActor@@AEAVDimension@@V?$OwnerPtrT@UEntityRefTraits@@@@@Z

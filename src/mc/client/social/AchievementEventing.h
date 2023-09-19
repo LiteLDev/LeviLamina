@@ -19,8 +19,8 @@ namespace Social::Events {
 class AchievementEventing {
 public:
     // prevent constructor by default
-    AchievementEventing& operator=(AchievementEventing const&) = delete;
-    AchievementEventing(AchievementEventing const&)            = delete;
+    AchievementEventing& operator=(AchievementEventing const&);
+    AchievementEventing(AchievementEventing const&);
 
 public:
     // NOLINTBEGIN

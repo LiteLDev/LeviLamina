@@ -8,9 +8,9 @@
 class VanillaAncientCityJigsawStructures {
 public:
     // prevent constructor by default
-    VanillaAncientCityJigsawStructures& operator=(VanillaAncientCityJigsawStructures const&) = delete;
-    VanillaAncientCityJigsawStructures(VanillaAncientCityJigsawStructures const&)            = delete;
-    VanillaAncientCityJigsawStructures()                                                     = delete;
+    VanillaAncientCityJigsawStructures& operator=(VanillaAncientCityJigsawStructures const&);
+    VanillaAncientCityJigsawStructures(VanillaAncientCityJigsawStructures const&);
+    VanillaAncientCityJigsawStructures();
 
 public:
     // NOLINTBEGIN

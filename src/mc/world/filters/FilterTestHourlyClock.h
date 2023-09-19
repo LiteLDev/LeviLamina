@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class FilterTestHourlyClock : public ::SimpleIntFilterTest {
 public:
     // prevent constructor by default
-    FilterTestHourlyClock& operator=(FilterTestHourlyClock const&) = delete;
-    FilterTestHourlyClock(FilterTestHourlyClock const&)            = delete;
-    FilterTestHourlyClock()                                        = delete;
+    FilterTestHourlyClock& operator=(FilterTestHourlyClock const&);
+    FilterTestHourlyClock(FilterTestHourlyClock const&);
+    FilterTestHourlyClock();
 
 public:
     // NOLINTBEGIN

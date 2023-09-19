@@ -5,8 +5,8 @@
 struct ItemUseOnEvent {
 public:
     // prevent constructor by default
-    ItemUseOnEvent& operator=(ItemUseOnEvent const&) = delete;
-    ItemUseOnEvent()                                 = delete;
+    ItemUseOnEvent& operator=(ItemUseOnEvent const&);
+    ItemUseOnEvent();
 
 public:
     // NOLINTBEGIN

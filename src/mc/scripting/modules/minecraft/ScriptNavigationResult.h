@@ -15,9 +15,9 @@ namespace ScriptModuleMinecraft {
 struct ScriptNavigationResult {
 public:
     // prevent constructor by default
-    ScriptNavigationResult& operator=(ScriptNavigationResult const&) = delete;
-    ScriptNavigationResult(ScriptNavigationResult const&)            = delete;
-    ScriptNavigationResult()                                         = delete;
+    ScriptNavigationResult& operator=(ScriptNavigationResult const&);
+    ScriptNavigationResult(ScriptNavigationResult const&);
+    ScriptNavigationResult();
 
 public:
     // NOLINTBEGIN

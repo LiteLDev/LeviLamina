@@ -11,8 +11,8 @@
 class CommandParameterData {
 public:
     // prevent constructor by default
-    CommandParameterData& operator=(CommandParameterData const&) = delete;
-    CommandParameterData()                                       = delete;
+    CommandParameterData& operator=(CommandParameterData const&);
+    CommandParameterData();
 
 public:
     // NOLINTBEGIN

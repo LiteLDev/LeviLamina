@@ -5,9 +5,9 @@
 class Vec3 {
 public:
     // prevent constructor by default
-    Vec3& operator=(Vec3 const&) = delete;
-    Vec3(Vec3 const&)            = delete;
-    Vec3()                       = delete;
+    Vec3& operator=(Vec3 const&);
+    Vec3(Vec3 const&);
+    Vec3();
 
 public:
     // NOLINTBEGIN

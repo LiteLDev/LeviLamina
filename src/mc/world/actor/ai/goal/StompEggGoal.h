@@ -9,9 +9,9 @@
 class StompEggGoal : public ::StompBlockGoal {
 public:
     // prevent constructor by default
-    StompEggGoal& operator=(StompEggGoal const&) = delete;
-    StompEggGoal(StompEggGoal const&)            = delete;
-    StompEggGoal()                               = delete;
+    StompEggGoal& operator=(StompEggGoal const&);
+    StompEggGoal(StompEggGoal const&);
+    StompEggGoal();
 
 public:
     // NOLINTBEGIN

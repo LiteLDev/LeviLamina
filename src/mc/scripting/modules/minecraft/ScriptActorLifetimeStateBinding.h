@@ -11,9 +11,9 @@ namespace ScriptModuleMinecraft {
 class ScriptActorLifetimeStateBinding {
 public:
     // prevent constructor by default
-    ScriptActorLifetimeStateBinding& operator=(ScriptActorLifetimeStateBinding const&) = delete;
-    ScriptActorLifetimeStateBinding(ScriptActorLifetimeStateBinding const&)            = delete;
-    ScriptActorLifetimeStateBinding()                                                  = delete;
+    ScriptActorLifetimeStateBinding& operator=(ScriptActorLifetimeStateBinding const&);
+    ScriptActorLifetimeStateBinding(ScriptActorLifetimeStateBinding const&);
+    ScriptActorLifetimeStateBinding();
 
 public:
     // NOLINTBEGIN

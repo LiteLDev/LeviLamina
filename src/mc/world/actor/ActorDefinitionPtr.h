@@ -5,9 +5,9 @@
 class ActorDefinitionPtr {
 public:
     // prevent constructor by default
-    ActorDefinitionPtr& operator=(ActorDefinitionPtr const&) = delete;
-    ActorDefinitionPtr(ActorDefinitionPtr const&)            = delete;
-    ActorDefinitionPtr()                                     = delete;
+    ActorDefinitionPtr& operator=(ActorDefinitionPtr const&);
+    ActorDefinitionPtr(ActorDefinitionPtr const&);
+    ActorDefinitionPtr();
 
 public:
     // NOLINTBEGIN

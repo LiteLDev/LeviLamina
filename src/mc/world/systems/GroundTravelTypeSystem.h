@@ -5,9 +5,9 @@
 class GroundTravelTypeSystem {
 public:
     // prevent constructor by default
-    GroundTravelTypeSystem& operator=(GroundTravelTypeSystem const&) = delete;
-    GroundTravelTypeSystem(GroundTravelTypeSystem const&)            = delete;
-    GroundTravelTypeSystem()                                         = delete;
+    GroundTravelTypeSystem& operator=(GroundTravelTypeSystem const&);
+    GroundTravelTypeSystem(GroundTravelTypeSystem const&);
+    GroundTravelTypeSystem();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class EndermanTakeBlockGoal : public ::Goal {
 public:
     // prevent constructor by default
-    EndermanTakeBlockGoal& operator=(EndermanTakeBlockGoal const&) = delete;
-    EndermanTakeBlockGoal(EndermanTakeBlockGoal const&)            = delete;
-    EndermanTakeBlockGoal()                                        = delete;
+    EndermanTakeBlockGoal& operator=(EndermanTakeBlockGoal const&);
+    EndermanTakeBlockGoal(EndermanTakeBlockGoal const&);
+    EndermanTakeBlockGoal();
 
 public:
     // NOLINTBEGIN
@@ -32,7 +32,7 @@ public:
     virtual class BlockPos getRandomNearbyBlockPos(class Vec3 const&) const;
 
     // symbol: ??0EndermanTakeBlockGoal@@QEAA@AEAVEnderMan@@@Z
-    MCAPI EndermanTakeBlockGoal(class EnderMan&);
+    MCAPI explicit EndermanTakeBlockGoal(class EnderMan&);
 
     // NOLINTEND
 };

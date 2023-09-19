@@ -10,14 +10,14 @@ namespace Json { class Value; }
 class SeedItemComponentLegacy {
 public:
     // prevent constructor by default
-    SeedItemComponentLegacy& operator=(SeedItemComponentLegacy const&) = delete;
-    SeedItemComponentLegacy(SeedItemComponentLegacy const&)            = delete;
-    SeedItemComponentLegacy()                                          = delete;
+    SeedItemComponentLegacy& operator=(SeedItemComponentLegacy const&);
+    SeedItemComponentLegacy(SeedItemComponentLegacy const&);
+    SeedItemComponentLegacy();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0SeedItemComponentLegacy@@QEAA@AEAVItem@@@Z
-    MCAPI SeedItemComponentLegacy(class Item&);
+    MCAPI explicit SeedItemComponentLegacy(class Item&);
 
     // symbol: ?init@SeedItemComponentLegacy@@QEAA_NAEAVValue@Json@@AEBVSemVersion@@@Z
     MCAPI bool init(class Json::Value&, class SemVersion const&);

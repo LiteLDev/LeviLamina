@@ -8,8 +8,8 @@
 class CommandOutputMessage {
 public:
     // prevent constructor by default
-    CommandOutputMessage& operator=(CommandOutputMessage const&) = delete;
-    CommandOutputMessage()                                       = delete;
+    CommandOutputMessage& operator=(CommandOutputMessage const&);
+    CommandOutputMessage();
 
 public:
     // NOLINTBEGIN

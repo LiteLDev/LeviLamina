@@ -19,9 +19,9 @@ public:
 
 public:
     // prevent constructor by default
-    AppConfigs& operator=(AppConfigs const&) = delete;
-    AppConfigs(AppConfigs const&)            = delete;
-    AppConfigs()                             = delete;
+    AppConfigs& operator=(AppConfigs const&);
+    AppConfigs(AppConfigs const&);
+    AppConfigs();
 
 public:
     // NOLINTBEGIN

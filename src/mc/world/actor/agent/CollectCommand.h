@@ -15,9 +15,9 @@ namespace AgentCommands {
 class CollectCommand : public ::AgentCommands::Command {
 public:
     // prevent constructor by default
-    CollectCommand& operator=(CollectCommand const&) = delete;
-    CollectCommand(CollectCommand const&)            = delete;
-    CollectCommand()                                 = delete;
+    CollectCommand& operator=(CollectCommand const&);
+    CollectCommand(CollectCommand const&);
+    CollectCommand();
 
 public:
     // NOLINTBEGIN

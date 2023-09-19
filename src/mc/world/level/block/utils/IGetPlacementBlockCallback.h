@@ -15,9 +15,9 @@ namespace BlockTrait {
 class IGetPlacementBlockCallback {
 public:
     // prevent constructor by default
-    IGetPlacementBlockCallback& operator=(IGetPlacementBlockCallback const&) = delete;
-    IGetPlacementBlockCallback(IGetPlacementBlockCallback const&)            = delete;
-    IGetPlacementBlockCallback()                                             = delete;
+    IGetPlacementBlockCallback& operator=(IGetPlacementBlockCallback const&);
+    IGetPlacementBlockCallback(IGetPlacementBlockCallback const&);
+    IGetPlacementBlockCallback();
 
 public:
     // NOLINTBEGIN

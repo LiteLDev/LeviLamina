@@ -5,9 +5,9 @@
 struct InsideBubbleColumnBlockComponent {
 public:
     // prevent constructor by default
-    InsideBubbleColumnBlockComponent& operator=(InsideBubbleColumnBlockComponent const&) = delete;
-    InsideBubbleColumnBlockComponent(InsideBubbleColumnBlockComponent const&)            = delete;
-    InsideBubbleColumnBlockComponent()                                                   = delete;
+    InsideBubbleColumnBlockComponent& operator=(InsideBubbleColumnBlockComponent const&);
+    InsideBubbleColumnBlockComponent(InsideBubbleColumnBlockComponent const&);
+    InsideBubbleColumnBlockComponent();
 
 public:
     // NOLINTBEGIN

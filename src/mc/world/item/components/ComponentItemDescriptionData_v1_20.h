@@ -5,8 +5,8 @@
 struct ComponentItemDescriptionData_v1_20 {
 public:
     // prevent constructor by default
-    ComponentItemDescriptionData_v1_20(ComponentItemDescriptionData_v1_20 const&) = delete;
-    ComponentItemDescriptionData_v1_20()                                          = delete;
+    ComponentItemDescriptionData_v1_20(ComponentItemDescriptionData_v1_20 const&);
+    ComponentItemDescriptionData_v1_20();
 
 public:
     // NOLINTBEGIN

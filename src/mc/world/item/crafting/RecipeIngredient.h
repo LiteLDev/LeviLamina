@@ -13,8 +13,8 @@ namespace Json { class Value; }
 class RecipeIngredient : public ::ItemDescriptorCount {
 public:
     // prevent constructor by default
-    RecipeIngredient& operator=(RecipeIngredient const&) = delete;
-    RecipeIngredient()                                   = delete;
+    RecipeIngredient& operator=(RecipeIngredient const&);
+    RecipeIngredient();
 
 public:
     // NOLINTBEGIN
@@ -43,7 +43,7 @@ public:
     MCAPI RecipeIngredient(class Item const&, int, ushort);
 
     // symbol: ??0RecipeIngredient@@QEAA@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI RecipeIngredient(class ReadOnlyBinaryStream&);
+    MCAPI explicit RecipeIngredient(class ReadOnlyBinaryStream&);
 
     // symbol: ??0RecipeIngredient@@QEAA@$$QEAV0@@Z
     MCAPI RecipeIngredient(class RecipeIngredient&&);

@@ -26,9 +26,9 @@
 class CaveSpider : public ::Spider {
 public:
     // prevent constructor by default
-    CaveSpider& operator=(CaveSpider const&) = delete;
-    CaveSpider(CaveSpider const&)            = delete;
-    CaveSpider()                             = delete;
+    CaveSpider& operator=(CaveSpider const&);
+    CaveSpider(CaveSpider const&);
+    CaveSpider();
 
 public:
     // NOLINTBEGIN

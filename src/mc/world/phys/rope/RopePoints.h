@@ -5,9 +5,9 @@
 class RopePoints {
 public:
     // prevent constructor by default
-    RopePoints& operator=(RopePoints const&) = delete;
-    RopePoints(RopePoints const&)            = delete;
-    RopePoints()                             = delete;
+    RopePoints& operator=(RopePoints const&);
+    RopePoints(RopePoints const&);
+    RopePoints();
 
 public:
     // NOLINTBEGIN

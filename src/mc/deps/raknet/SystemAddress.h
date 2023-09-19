@@ -7,7 +7,7 @@ namespace RakNet {
 struct SystemAddress {
 public:
     // prevent constructor by default
-    SystemAddress(SystemAddress const&) = delete;
+    SystemAddress(SystemAddress const&);
 
 public:
     // NOLINTBEGIN

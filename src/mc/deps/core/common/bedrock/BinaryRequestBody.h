@@ -15,9 +15,9 @@ namespace Bedrock::Http {
 class BinaryRequestBody : public ::Bedrock::Http::Internal::IRequestBody {
 public:
     // prevent constructor by default
-    BinaryRequestBody& operator=(BinaryRequestBody const&) = delete;
-    BinaryRequestBody(BinaryRequestBody const&)            = delete;
-    BinaryRequestBody()                                    = delete;
+    BinaryRequestBody& operator=(BinaryRequestBody const&);
+    BinaryRequestBody(BinaryRequestBody const&);
+    BinaryRequestBody();
 
 public:
     // NOLINTBEGIN
@@ -52,7 +52,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ??0BinaryRequestBody@Http@Bedrock@@IEAA@V?$span@$$CBE$0?0@gsl@@@Z
-    MCAPI BinaryRequestBody(gsl::span<uchar const>);
+    MCAPI explicit BinaryRequestBody(gsl::span<uchar const>);
 
     // symbol: ?_getData@BinaryRequestBody@Http@Bedrock@@IEBA?AV?$span@$$CBE$0?0@gsl@@XZ
     MCAPI gsl::span<uchar const> _getData() const;

@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class OcelotAttackDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    OcelotAttackDefinition& operator=(OcelotAttackDefinition const&) = delete;
-    OcelotAttackDefinition(OcelotAttackDefinition const&)            = delete;
+    OcelotAttackDefinition& operator=(OcelotAttackDefinition const&);
+    OcelotAttackDefinition(OcelotAttackDefinition const&);
 
 public:
     // NOLINTBEGIN

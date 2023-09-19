@@ -5,9 +5,9 @@
 struct PlayerScore {
 public:
     // prevent constructor by default
-    PlayerScore& operator=(PlayerScore const&) = delete;
-    PlayerScore(PlayerScore const&)            = delete;
-    PlayerScore()                              = delete;
+    PlayerScore& operator=(PlayerScore const&);
+    PlayerScore(PlayerScore const&);
+    PlayerScore();
 
 public:
     // NOLINTBEGIN

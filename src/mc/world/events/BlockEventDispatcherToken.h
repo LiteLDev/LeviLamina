@@ -5,9 +5,9 @@
 class BlockEventDispatcherToken {
 public:
     // prevent constructor by default
-    BlockEventDispatcherToken& operator=(BlockEventDispatcherToken const&) = delete;
-    BlockEventDispatcherToken(BlockEventDispatcherToken const&)            = delete;
-    BlockEventDispatcherToken()                                            = delete;
+    BlockEventDispatcherToken& operator=(BlockEventDispatcherToken const&);
+    BlockEventDispatcherToken(BlockEventDispatcherToken const&);
+    BlockEventDispatcherToken();
 
 public:
     // NOLINTBEGIN

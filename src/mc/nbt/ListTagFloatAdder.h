@@ -5,9 +5,9 @@
 class ListTagFloatAdder {
 public:
     // prevent constructor by default
-    ListTagFloatAdder& operator=(ListTagFloatAdder const&) = delete;
-    ListTagFloatAdder(ListTagFloatAdder const&)            = delete;
-    ListTagFloatAdder()                                    = delete;
+    ListTagFloatAdder& operator=(ListTagFloatAdder const&);
+    ListTagFloatAdder(ListTagFloatAdder const&);
+    ListTagFloatAdder();
 
 public:
     // NOLINTBEGIN

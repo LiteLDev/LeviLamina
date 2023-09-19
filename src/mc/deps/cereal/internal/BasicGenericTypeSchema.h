@@ -20,9 +20,9 @@ namespace cereal::internal {
 class BasicGenericTypeSchema : public ::cereal::internal::BasicSchema {
 public:
     // prevent constructor by default
-    BasicGenericTypeSchema& operator=(BasicGenericTypeSchema const&) = delete;
-    BasicGenericTypeSchema(BasicGenericTypeSchema const&)            = delete;
-    BasicGenericTypeSchema()                                         = delete;
+    BasicGenericTypeSchema& operator=(BasicGenericTypeSchema const&);
+    BasicGenericTypeSchema(BasicGenericTypeSchema const&);
+    BasicGenericTypeSchema();
 
 public:
     // NOLINTBEGIN

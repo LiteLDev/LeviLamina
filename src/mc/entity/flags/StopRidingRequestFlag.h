@@ -5,7 +5,7 @@
 struct StopRidingRequestFlag {
 public:
     // prevent constructor by default
-    StopRidingRequestFlag& operator=(StopRidingRequestFlag const&) = delete;
-    StopRidingRequestFlag(StopRidingRequestFlag const&)            = delete;
-    StopRidingRequestFlag()                                        = delete;
+    StopRidingRequestFlag& operator=(StopRidingRequestFlag const&);
+    StopRidingRequestFlag(StopRidingRequestFlag const&);
+    StopRidingRequestFlag();
 };

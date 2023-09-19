@@ -26,9 +26,9 @@
 class Goat : public ::Animal {
 public:
     // prevent constructor by default
-    Goat& operator=(Goat const&) = delete;
-    Goat(Goat const&)            = delete;
-    Goat()                       = delete;
+    Goat& operator=(Goat const&);
+    Goat(Goat const&);
+    Goat();
 
 public:
     // NOLINTBEGIN

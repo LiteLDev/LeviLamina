@@ -11,8 +11,8 @@
 class PacketViolationWarningPacket : public ::Packet {
 public:
     // prevent constructor by default
-    PacketViolationWarningPacket& operator=(PacketViolationWarningPacket const&) = delete;
-    PacketViolationWarningPacket(PacketViolationWarningPacket const&)            = delete;
+    PacketViolationWarningPacket& operator=(PacketViolationWarningPacket const&);
+    PacketViolationWarningPacket(PacketViolationWarningPacket const&);
 
 public:
     // NOLINTBEGIN

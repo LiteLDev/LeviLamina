@@ -11,8 +11,8 @@
 class PlayerHotbarPacket : public ::Packet {
 public:
     // prevent constructor by default
-    PlayerHotbarPacket& operator=(PlayerHotbarPacket const&) = delete;
-    PlayerHotbarPacket(PlayerHotbarPacket const&)            = delete;
+    PlayerHotbarPacket& operator=(PlayerHotbarPacket const&);
+    PlayerHotbarPacket(PlayerHotbarPacket const&);
 
 public:
     // NOLINTBEGIN

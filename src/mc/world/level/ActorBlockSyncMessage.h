@@ -9,7 +9,7 @@ public:
 
 public:
     // prevent constructor by default
-    ActorBlockSyncMessage& operator=(ActorBlockSyncMessage const&) = delete;
-    ActorBlockSyncMessage(ActorBlockSyncMessage const&)            = delete;
-    ActorBlockSyncMessage()                                        = delete;
+    ActorBlockSyncMessage& operator=(ActorBlockSyncMessage const&);
+    ActorBlockSyncMessage(ActorBlockSyncMessage const&);
+    ActorBlockSyncMessage();
 };

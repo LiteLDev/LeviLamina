@@ -26,9 +26,9 @@ namespace ScriptModuleMinecraft {
 class ScriptPlayerInventoryComponentContainer : public ::ScriptModuleMinecraft::ScriptInventoryComponentContainer {
 public:
     // prevent constructor by default
-    ScriptPlayerInventoryComponentContainer& operator=(ScriptPlayerInventoryComponentContainer const&) = delete;
-    ScriptPlayerInventoryComponentContainer(ScriptPlayerInventoryComponentContainer const&)            = delete;
-    ScriptPlayerInventoryComponentContainer()                                                          = delete;
+    ScriptPlayerInventoryComponentContainer& operator=(ScriptPlayerInventoryComponentContainer const&);
+    ScriptPlayerInventoryComponentContainer(ScriptPlayerInventoryComponentContainer const&);
+    ScriptPlayerInventoryComponentContainer();
 
 public:
     // NOLINTBEGIN

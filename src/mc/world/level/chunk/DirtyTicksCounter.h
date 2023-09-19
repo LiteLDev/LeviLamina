@@ -5,8 +5,8 @@
 struct DirtyTicksCounter {
 public:
     // prevent constructor by default
-    DirtyTicksCounter& operator=(DirtyTicksCounter const&) = delete;
-    DirtyTicksCounter(DirtyTicksCounter const&)            = delete;
+    DirtyTicksCounter& operator=(DirtyTicksCounter const&);
+    DirtyTicksCounter(DirtyTicksCounter const&);
 
 public:
     // NOLINTBEGIN

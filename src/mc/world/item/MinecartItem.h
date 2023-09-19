@@ -22,9 +22,9 @@ namespace mce { class Color; }
 class MinecartItem : public ::Item {
 public:
     // prevent constructor by default
-    MinecartItem& operator=(MinecartItem const&) = delete;
-    MinecartItem(MinecartItem const&)            = delete;
-    MinecartItem()                               = delete;
+    MinecartItem& operator=(MinecartItem const&);
+    MinecartItem(MinecartItem const&);
+    MinecartItem();
 
 public:
     // NOLINTBEGIN

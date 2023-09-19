@@ -5,7 +5,7 @@
 struct ActorLink {
 public:
     // prevent constructor by default
-    ActorLink& operator=(ActorLink const&) = delete;
-    ActorLink(ActorLink const&)            = delete;
-    ActorLink()                            = delete;
+    ActorLink& operator=(ActorLink const&);
+    ActorLink(ActorLink const&);
+    ActorLink();
 };

@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class CameraItem : public ::Item {
 public:
     // prevent constructor by default
-    CameraItem& operator=(CameraItem const&) = delete;
-    CameraItem(CameraItem const&)            = delete;
-    CameraItem()                             = delete;
+    CameraItem& operator=(CameraItem const&);
+    CameraItem(CameraItem const&);
+    CameraItem();
 
 public:
     // NOLINTBEGIN

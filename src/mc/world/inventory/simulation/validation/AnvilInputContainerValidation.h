@@ -8,9 +8,9 @@
 class AnvilInputContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    AnvilInputContainerValidation& operator=(AnvilInputContainerValidation const&) = delete;
-    AnvilInputContainerValidation(AnvilInputContainerValidation const&)            = delete;
-    AnvilInputContainerValidation()                                                = delete;
+    AnvilInputContainerValidation& operator=(AnvilInputContainerValidation const&);
+    AnvilInputContainerValidation(AnvilInputContainerValidation const&);
+    AnvilInputContainerValidation();
 
 public:
     // NOLINTBEGIN

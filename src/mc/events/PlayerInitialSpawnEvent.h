@@ -5,9 +5,9 @@
 struct PlayerInitialSpawnEvent {
 public:
     // prevent constructor by default
-    PlayerInitialSpawnEvent& operator=(PlayerInitialSpawnEvent const&) = delete;
-    PlayerInitialSpawnEvent(PlayerInitialSpawnEvent const&)            = delete;
-    PlayerInitialSpawnEvent()                                          = delete;
+    PlayerInitialSpawnEvent& operator=(PlayerInitialSpawnEvent const&);
+    PlayerInitialSpawnEvent(PlayerInitialSpawnEvent const&);
+    PlayerInitialSpawnEvent();
 
 public:
     // NOLINTBEGIN

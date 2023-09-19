@@ -16,17 +16,17 @@ public:
     class ScopedItemRegistry {
     public:
         // prevent constructor by default
-        ScopedItemRegistry& operator=(ScopedItemRegistry const&) = delete;
-        ScopedItemRegistry(ScopedItemRegistry const&)            = delete;
-        ScopedItemRegistry()                                     = delete;
+        ScopedItemRegistry& operator=(ScopedItemRegistry const&);
+        ScopedItemRegistry(ScopedItemRegistry const&);
+        ScopedItemRegistry();
 
     public:
         // NOLINTBEGIN
         // symbol: ??0ScopedItemRegistry@ItemRegistryManager@@QEAA@VItemRegistryRef@@@Z
-        MCAPI ScopedItemRegistry(class ItemRegistryRef);
+        MCAPI explicit ScopedItemRegistry(class ItemRegistryRef);
 
         // symbol: ??0ScopedItemRegistry@ItemRegistryManager@@QEAA@V?$weak_ptr@VItemRegistry@@@std@@@Z
-        MCAPI ScopedItemRegistry(std::weak_ptr<class ItemRegistry>);
+        MCAPI explicit ScopedItemRegistry(std::weak_ptr<class ItemRegistry>);
 
         // symbol: ?construct@ScopedItemRegistry@ItemRegistryManager@@QEAAXVItemRegistryRef@@@Z
         MCAPI void construct(class ItemRegistryRef);
@@ -39,9 +39,9 @@ public:
 
 public:
     // prevent constructor by default
-    ItemRegistryManager& operator=(ItemRegistryManager const&) = delete;
-    ItemRegistryManager(ItemRegistryManager const&)            = delete;
-    ItemRegistryManager()                                      = delete;
+    ItemRegistryManager& operator=(ItemRegistryManager const&);
+    ItemRegistryManager(ItemRegistryManager const&);
+    ItemRegistryManager();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 struct GetAttachPosRequestComponent {
 public:
     // prevent constructor by default
-    GetAttachPosRequestComponent& operator=(GetAttachPosRequestComponent const&) = delete;
-    GetAttachPosRequestComponent(GetAttachPosRequestComponent const&)            = delete;
-    GetAttachPosRequestComponent()                                               = delete;
+    GetAttachPosRequestComponent& operator=(GetAttachPosRequestComponent const&);
+    GetAttachPosRequestComponent(GetAttachPosRequestComponent const&);
+    GetAttachPosRequestComponent();
 
 public:
     // NOLINTBEGIN

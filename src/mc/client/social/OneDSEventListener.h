@@ -21,9 +21,9 @@ namespace Social::Events {
 class OneDSEventListener : public ::Social::Events::AggregationEventListener {
 public:
     // prevent constructor by default
-    OneDSEventListener& operator=(OneDSEventListener const&) = delete;
-    OneDSEventListener(OneDSEventListener const&)            = delete;
-    OneDSEventListener()                                     = delete;
+    OneDSEventListener& operator=(OneDSEventListener const&);
+    OneDSEventListener(OneDSEventListener const&);
+    OneDSEventListener();
 
 public:
     // NOLINTBEGIN
@@ -48,7 +48,7 @@ public:
     virtual bool _checkAgainstEventAllowlist(class Social::Events::Event const&) const;
 
     // symbol: ??0OneDSEventListener@Events@Social@@QEAA@VPath@Core@@@Z
-    MCAPI OneDSEventListener(class Core::Path);
+    MCAPI explicit OneDSEventListener(class Core::Path);
 
     // NOLINTEND
 

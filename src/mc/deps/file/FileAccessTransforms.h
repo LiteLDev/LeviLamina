@@ -5,9 +5,9 @@
 class FileAccessTransforms {
 public:
     // prevent constructor by default
-    FileAccessTransforms& operator=(FileAccessTransforms const&) = delete;
-    FileAccessTransforms(FileAccessTransforms const&)            = delete;
-    FileAccessTransforms()                                       = delete;
+    FileAccessTransforms& operator=(FileAccessTransforms const&);
+    FileAccessTransforms(FileAccessTransforms const&);
+    FileAccessTransforms();
 
 public:
     // NOLINTBEGIN

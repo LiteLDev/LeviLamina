@@ -14,9 +14,9 @@ namespace cereal { class SerializerContext; }
 class ExpressionNodeCerealConstraint : public ::cereal::Constraint {
 public:
     // prevent constructor by default
-    ExpressionNodeCerealConstraint& operator=(ExpressionNodeCerealConstraint const&) = delete;
-    ExpressionNodeCerealConstraint(ExpressionNodeCerealConstraint const&)            = delete;
-    ExpressionNodeCerealConstraint()                                                 = delete;
+    ExpressionNodeCerealConstraint& operator=(ExpressionNodeCerealConstraint const&);
+    ExpressionNodeCerealConstraint(ExpressionNodeCerealConstraint const&);
+    ExpressionNodeCerealConstraint();
 
 public:
     // NOLINTBEGIN

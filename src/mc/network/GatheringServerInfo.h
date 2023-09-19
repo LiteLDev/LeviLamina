@@ -5,9 +5,9 @@
 class GatheringServerInfo {
 public:
     // prevent constructor by default
-    GatheringServerInfo& operator=(GatheringServerInfo const&) = delete;
-    GatheringServerInfo(GatheringServerInfo const&)            = delete;
-    GatheringServerInfo()                                      = delete;
+    GatheringServerInfo& operator=(GatheringServerInfo const&);
+    GatheringServerInfo(GatheringServerInfo const&);
+    GatheringServerInfo();
 
 public:
     // NOLINTBEGIN

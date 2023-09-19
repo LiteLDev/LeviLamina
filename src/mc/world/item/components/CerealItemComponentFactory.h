@@ -18,9 +18,9 @@ public:
     struct Constructor {
     public:
         // prevent constructor by default
-        Constructor& operator=(Constructor const&) = delete;
-        Constructor(Constructor const&)            = delete;
-        Constructor()                              = delete;
+        Constructor& operator=(Constructor const&);
+        Constructor(Constructor const&);
+        Constructor();
 
     public:
         // NOLINTBEGIN
@@ -36,9 +36,9 @@ public:
 
 public:
     // prevent constructor by default
-    CerealItemComponentFactory& operator=(CerealItemComponentFactory const&) = delete;
-    CerealItemComponentFactory(CerealItemComponentFactory const&)            = delete;
-    CerealItemComponentFactory()                                             = delete;
+    CerealItemComponentFactory& operator=(CerealItemComponentFactory const&);
+    CerealItemComponentFactory(CerealItemComponentFactory const&);
+    CerealItemComponentFactory();
 
 public:
     // NOLINTBEGIN

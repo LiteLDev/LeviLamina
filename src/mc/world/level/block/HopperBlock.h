@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class HopperBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    HopperBlock& operator=(HopperBlock const&) = delete;
-    HopperBlock(HopperBlock const&)            = delete;
-    HopperBlock()                              = delete;
+    HopperBlock& operator=(HopperBlock const&);
+    HopperBlock(HopperBlock const&);
+    HopperBlock();
 
 public:
     // NOLINTBEGIN

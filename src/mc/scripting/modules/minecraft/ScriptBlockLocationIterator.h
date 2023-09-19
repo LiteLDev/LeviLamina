@@ -15,9 +15,9 @@ namespace ScriptModuleMinecraft {
 class ScriptBlockLocationIterator {
 public:
     // prevent constructor by default
-    ScriptBlockLocationIterator& operator=(ScriptBlockLocationIterator const&) = delete;
-    ScriptBlockLocationIterator(ScriptBlockLocationIterator const&)            = delete;
-    ScriptBlockLocationIterator()                                              = delete;
+    ScriptBlockLocationIterator& operator=(ScriptBlockLocationIterator const&);
+    ScriptBlockLocationIterator(ScriptBlockLocationIterator const&);
+    ScriptBlockLocationIterator();
 
 public:
     // NOLINTBEGIN
@@ -26,7 +26,7 @@ public:
 
     // symbol:
     // ??0ScriptBlockLocationIterator@ScriptModuleMinecraft@@QEAA@V?$unique_ptr@VBaseBlockLocationIterator@@U?$default_delete@VBaseBlockLocationIterator@@@std@@@std@@@Z
-    MCAPI ScriptBlockLocationIterator(std::unique_ptr<class BaseBlockLocationIterator>);
+    MCAPI explicit ScriptBlockLocationIterator(std::unique_ptr<class BaseBlockLocationIterator>);
 
     // symbol: ??4ScriptBlockLocationIterator@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptBlockLocationIterator&

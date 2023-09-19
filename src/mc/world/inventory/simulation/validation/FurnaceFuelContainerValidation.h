@@ -8,9 +8,9 @@
 class FurnaceFuelContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    FurnaceFuelContainerValidation& operator=(FurnaceFuelContainerValidation const&) = delete;
-    FurnaceFuelContainerValidation(FurnaceFuelContainerValidation const&)            = delete;
-    FurnaceFuelContainerValidation()                                                 = delete;
+    FurnaceFuelContainerValidation& operator=(FurnaceFuelContainerValidation const&);
+    FurnaceFuelContainerValidation(FurnaceFuelContainerValidation const&);
+    FurnaceFuelContainerValidation();
 
 public:
     // NOLINTBEGIN

@@ -24,9 +24,9 @@ public:
     struct BlockResource {
     public:
         // prevent constructor by default
-        BlockResource& operator=(BlockResource const&) = delete;
-        BlockResource(BlockResource const&)            = delete;
-        BlockResource()                                = delete;
+        BlockResource& operator=(BlockResource const&);
+        BlockResource(BlockResource const&);
+        BlockResource();
 
     public:
         // NOLINTBEGIN
@@ -38,8 +38,8 @@ public:
 
 public:
     // prevent constructor by default
-    BlockDefinitionGroup& operator=(BlockDefinitionGroup const&) = delete;
-    BlockDefinitionGroup(BlockDefinitionGroup const&)            = delete;
+    BlockDefinitionGroup& operator=(BlockDefinitionGroup const&);
+    BlockDefinitionGroup(BlockDefinitionGroup const&);
 
 public:
     // NOLINTBEGIN

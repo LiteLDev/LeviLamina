@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class CarpetBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    CarpetBlock& operator=(CarpetBlock const&) = delete;
-    CarpetBlock(CarpetBlock const&)            = delete;
-    CarpetBlock()                              = delete;
+    CarpetBlock& operator=(CarpetBlock const&);
+    CarpetBlock(CarpetBlock const&);
+    CarpetBlock();
 
 public:
     // NOLINTBEGIN

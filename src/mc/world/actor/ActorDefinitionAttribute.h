@@ -5,9 +5,9 @@
 struct ActorDefinitionAttribute {
 public:
     // prevent constructor by default
-    ActorDefinitionAttribute& operator=(ActorDefinitionAttribute const&) = delete;
-    ActorDefinitionAttribute(ActorDefinitionAttribute const&)            = delete;
-    ActorDefinitionAttribute()                                           = delete;
+    ActorDefinitionAttribute& operator=(ActorDefinitionAttribute const&);
+    ActorDefinitionAttribute(ActorDefinitionAttribute const&);
+    ActorDefinitionAttribute();
 
 public:
     // NOLINTBEGIN

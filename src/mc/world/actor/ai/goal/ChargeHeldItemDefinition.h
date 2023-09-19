@@ -14,9 +14,9 @@ namespace JsonUtil { class EmptyClass; }
 class ChargeHeldItemDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    ChargeHeldItemDefinition& operator=(ChargeHeldItemDefinition const&) = delete;
-    ChargeHeldItemDefinition(ChargeHeldItemDefinition const&)            = delete;
-    ChargeHeldItemDefinition()                                           = delete;
+    ChargeHeldItemDefinition& operator=(ChargeHeldItemDefinition const&);
+    ChargeHeldItemDefinition(ChargeHeldItemDefinition const&);
+    ChargeHeldItemDefinition();
 
 public:
     // NOLINTBEGIN

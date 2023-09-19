@@ -9,8 +9,8 @@
 class PlaceBlockNode : public ::BehaviorNode {
 public:
     // prevent constructor by default
-    PlaceBlockNode& operator=(PlaceBlockNode const&) = delete;
-    PlaceBlockNode(PlaceBlockNode const&)            = delete;
+    PlaceBlockNode& operator=(PlaceBlockNode const&);
+    PlaceBlockNode(PlaceBlockNode const&);
 
 public:
     // NOLINTBEGIN

@@ -12,9 +12,9 @@ namespace gametest {
 class IGameTestListener {
 public:
     // prevent constructor by default
-    IGameTestListener& operator=(IGameTestListener const&) = delete;
-    IGameTestListener(IGameTestListener const&)            = delete;
-    IGameTestListener()                                    = delete;
+    IGameTestListener& operator=(IGameTestListener const&);
+    IGameTestListener(IGameTestListener const&);
+    IGameTestListener();
 
 public:
     // NOLINTBEGIN

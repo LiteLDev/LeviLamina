@@ -8,9 +8,9 @@ template <typename T0>
 class ScriptMessageReceiveEventSignalAsync {
 public:
     // prevent constructor by default
-    ScriptMessageReceiveEventSignalAsync& operator=(ScriptMessageReceiveEventSignalAsync const&) = delete;
-    ScriptMessageReceiveEventSignalAsync(ScriptMessageReceiveEventSignalAsync const&)            = delete;
-    ScriptMessageReceiveEventSignalAsync()                                                       = delete;
+    ScriptMessageReceiveEventSignalAsync& operator=(ScriptMessageReceiveEventSignalAsync const&);
+    ScriptMessageReceiveEventSignalAsync(ScriptMessageReceiveEventSignalAsync const&);
+    ScriptMessageReceiveEventSignalAsync();
 };
 
 }; // namespace ScriptModuleMinecraft

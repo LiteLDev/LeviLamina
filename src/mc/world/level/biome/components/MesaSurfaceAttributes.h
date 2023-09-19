@@ -5,9 +5,9 @@
 struct MesaSurfaceAttributes {
 public:
     // prevent constructor by default
-    MesaSurfaceAttributes& operator=(MesaSurfaceAttributes const&) = delete;
-    MesaSurfaceAttributes(MesaSurfaceAttributes const&)            = delete;
-    MesaSurfaceAttributes()                                        = delete;
+    MesaSurfaceAttributes& operator=(MesaSurfaceAttributes const&);
+    MesaSurfaceAttributes(MesaSurfaceAttributes const&);
+    MesaSurfaceAttributes();
 
 public:
     // NOLINTBEGIN

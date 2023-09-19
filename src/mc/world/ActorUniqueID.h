@@ -5,9 +5,9 @@
 struct ActorUniqueID {
 public:
     // prevent constructor by default
-    ActorUniqueID& operator=(ActorUniqueID const&) = delete;
-    ActorUniqueID(ActorUniqueID const&)            = delete;
-    ActorUniqueID()                                = delete;
+    ActorUniqueID& operator=(ActorUniqueID const&);
+    ActorUniqueID(ActorUniqueID const&);
+    ActorUniqueID();
 
 public:
     // NOLINTBEGIN

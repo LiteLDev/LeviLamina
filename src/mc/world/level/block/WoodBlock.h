@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class WoodBlock : public ::RotatedPillarBlock {
 public:
     // prevent constructor by default
-    WoodBlock& operator=(WoodBlock const&) = delete;
-    WoodBlock(WoodBlock const&)            = delete;
-    WoodBlock()                            = delete;
+    WoodBlock& operator=(WoodBlock const&);
+    WoodBlock(WoodBlock const&);
+    WoodBlock();
 
 public:
     // NOLINTBEGIN

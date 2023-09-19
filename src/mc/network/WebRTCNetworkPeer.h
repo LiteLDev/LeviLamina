@@ -10,9 +10,9 @@
 class WebRTCNetworkPeer : public ::NetworkPeer {
 public:
     // prevent constructor by default
-    WebRTCNetworkPeer& operator=(WebRTCNetworkPeer const&) = delete;
-    WebRTCNetworkPeer(WebRTCNetworkPeer const&)            = delete;
-    WebRTCNetworkPeer()                                    = delete;
+    WebRTCNetworkPeer& operator=(WebRTCNetworkPeer const&);
+    WebRTCNetworkPeer(WebRTCNetworkPeer const&);
+    WebRTCNetworkPeer();
 
 public:
     // NOLINTBEGIN

@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class JigsawBlock : public ::FaceDirectionalActorBlock {
 public:
     // prevent constructor by default
-    JigsawBlock& operator=(JigsawBlock const&) = delete;
-    JigsawBlock(JigsawBlock const&)            = delete;
-    JigsawBlock()                              = delete;
+    JigsawBlock& operator=(JigsawBlock const&);
+    JigsawBlock(JigsawBlock const&);
+    JigsawBlock();
 
 public:
     // NOLINTBEGIN

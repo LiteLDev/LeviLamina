@@ -16,9 +16,9 @@ namespace PositionTrackingDB {
 class PositionTrackingDBClient {
 public:
     // prevent constructor by default
-    PositionTrackingDBClient& operator=(PositionTrackingDBClient const&) = delete;
-    PositionTrackingDBClient(PositionTrackingDBClient const&)            = delete;
-    PositionTrackingDBClient()                                           = delete;
+    PositionTrackingDBClient& operator=(PositionTrackingDBClient const&);
+    PositionTrackingDBClient(PositionTrackingDBClient const&);
+    PositionTrackingDBClient();
 
 public:
     // NOLINTBEGIN

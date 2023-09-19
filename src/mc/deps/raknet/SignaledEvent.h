@@ -7,8 +7,8 @@ namespace RakNet {
 class SignaledEvent {
 public:
     // prevent constructor by default
-    SignaledEvent& operator=(SignaledEvent const&) = delete;
-    SignaledEvent(SignaledEvent const&)            = delete;
+    SignaledEvent& operator=(SignaledEvent const&);
+    SignaledEvent(SignaledEvent const&);
 
 public:
     // NOLINTBEGIN

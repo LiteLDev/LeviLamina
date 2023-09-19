@@ -26,9 +26,9 @@
 class FallingBlockActor : public ::PredictableProjectile {
 public:
     // prevent constructor by default
-    FallingBlockActor& operator=(FallingBlockActor const&) = delete;
-    FallingBlockActor(FallingBlockActor const&)            = delete;
-    FallingBlockActor()                                    = delete;
+    FallingBlockActor& operator=(FallingBlockActor const&);
+    FallingBlockActor(FallingBlockActor const&);
+    FallingBlockActor();
 
 public:
     // NOLINTBEGIN

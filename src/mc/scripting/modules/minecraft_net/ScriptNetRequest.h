@@ -18,8 +18,8 @@ namespace ScriptModuleMinecraftNet {
 struct ScriptNetRequest {
 public:
     // prevent constructor by default
-    ScriptNetRequest& operator=(ScriptNetRequest const&) = delete;
-    ScriptNetRequest()                                   = delete;
+    ScriptNetRequest& operator=(ScriptNetRequest const&);
+    ScriptNetRequest();
 
 public:
     // NOLINTBEGIN

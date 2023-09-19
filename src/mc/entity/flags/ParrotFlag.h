@@ -5,7 +5,7 @@
 struct ParrotFlag {
 public:
     // prevent constructor by default
-    ParrotFlag& operator=(ParrotFlag const&) = delete;
-    ParrotFlag(ParrotFlag const&)            = delete;
-    ParrotFlag()                             = delete;
+    ParrotFlag& operator=(ParrotFlag const&);
+    ParrotFlag(ParrotFlag const&);
+    ParrotFlag();
 };

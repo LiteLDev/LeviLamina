@@ -5,9 +5,9 @@
 struct TrimPattern {
 public:
     // prevent constructor by default
-    TrimPattern& operator=(TrimPattern const&) = delete;
-    TrimPattern(TrimPattern const&)            = delete;
-    TrimPattern()                              = delete;
+    TrimPattern& operator=(TrimPattern const&);
+    TrimPattern(TrimPattern const&);
+    TrimPattern();
 
 public:
     // NOLINTBEGIN

@@ -6,7 +6,7 @@ template <typename T0>
 class FlagComponent {
 public:
     // prevent constructor by default
-    FlagComponent& operator=(FlagComponent const&) = delete;
-    FlagComponent(FlagComponent const&)            = delete;
-    FlagComponent()                                = delete;
+    FlagComponent& operator=(FlagComponent const&);
+    FlagComponent(FlagComponent const&);
+    FlagComponent();
 };

@@ -15,9 +15,9 @@ namespace JsonUtil { class EmptyClass; }
 struct BlockMaterialInstancesDescription : public ::BlockComponentDescription {
 public:
     // prevent constructor by default
-    BlockMaterialInstancesDescription& operator=(BlockMaterialInstancesDescription const&) = delete;
-    BlockMaterialInstancesDescription(BlockMaterialInstancesDescription const&)            = delete;
-    BlockMaterialInstancesDescription()                                                    = delete;
+    BlockMaterialInstancesDescription& operator=(BlockMaterialInstancesDescription const&);
+    BlockMaterialInstancesDescription(BlockMaterialInstancesDescription const&);
+    BlockMaterialInstancesDescription();
 
 public:
     // NOLINTBEGIN

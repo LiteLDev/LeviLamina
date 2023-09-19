@@ -11,8 +11,8 @@
 class CommandRequestPacket : public ::Packet {
 public:
     // prevent constructor by default
-    CommandRequestPacket& operator=(CommandRequestPacket const&) = delete;
-    CommandRequestPacket(CommandRequestPacket const&)            = delete;
+    CommandRequestPacket& operator=(CommandRequestPacket const&);
+    CommandRequestPacket(CommandRequestPacket const&);
 
 public:
     // NOLINTBEGIN

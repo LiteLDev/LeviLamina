@@ -5,9 +5,9 @@
 class IllagerBeastPostAIStepSystem {
 public:
     // prevent constructor by default
-    IllagerBeastPostAIStepSystem& operator=(IllagerBeastPostAIStepSystem const&) = delete;
-    IllagerBeastPostAIStepSystem(IllagerBeastPostAIStepSystem const&)            = delete;
-    IllagerBeastPostAIStepSystem()                                               = delete;
+    IllagerBeastPostAIStepSystem& operator=(IllagerBeastPostAIStepSystem const&);
+    IllagerBeastPostAIStepSystem(IllagerBeastPostAIStepSystem const&);
+    IllagerBeastPostAIStepSystem();
 
 public:
     // NOLINTBEGIN

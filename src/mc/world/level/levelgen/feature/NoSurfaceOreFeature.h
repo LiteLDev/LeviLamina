@@ -8,9 +8,9 @@
 class NoSurfaceOreFeature : public ::IFeature {
 public:
     // prevent constructor by default
-    NoSurfaceOreFeature& operator=(NoSurfaceOreFeature const&) = delete;
-    NoSurfaceOreFeature(NoSurfaceOreFeature const&)            = delete;
-    NoSurfaceOreFeature()                                      = delete;
+    NoSurfaceOreFeature& operator=(NoSurfaceOreFeature const&);
+    NoSurfaceOreFeature(NoSurfaceOreFeature const&);
+    NoSurfaceOreFeature();
 
 public:
     // NOLINTBEGIN

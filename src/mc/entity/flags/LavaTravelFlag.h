@@ -5,7 +5,7 @@
 struct LavaTravelFlag {
 public:
     // prevent constructor by default
-    LavaTravelFlag& operator=(LavaTravelFlag const&) = delete;
-    LavaTravelFlag(LavaTravelFlag const&)            = delete;
-    LavaTravelFlag()                                 = delete;
+    LavaTravelFlag& operator=(LavaTravelFlag const&);
+    LavaTravelFlag(LavaTravelFlag const&);
+    LavaTravelFlag();
 };

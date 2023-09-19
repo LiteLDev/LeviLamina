@@ -20,7 +20,7 @@ namespace ScriptModuleMinecraft {
 struct ScriptItemDefinitionAfterEvent : public ::ScriptModuleMinecraft::ScriptItemEvent {
 public:
     // prevent constructor by default
-    ScriptItemDefinitionAfterEvent() = delete;
+    ScriptItemDefinitionAfterEvent();
 
 public:
     // NOLINTBEGIN

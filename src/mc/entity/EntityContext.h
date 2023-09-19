@@ -8,9 +8,9 @@
 class EntityContext {
 public:
     // prevent constructor by default
-    EntityContext& operator=(EntityContext const&) = delete;
-    EntityContext(EntityContext const&)            = delete;
-    EntityContext()                                = delete;
+    EntityContext& operator=(EntityContext const&);
+    EntityContext(EntityContext const&);
+    EntityContext();
 
 public:
     // NOLINTBEGIN

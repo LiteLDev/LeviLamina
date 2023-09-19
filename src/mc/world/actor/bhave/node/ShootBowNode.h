@@ -9,8 +9,8 @@
 class ShootBowNode : public ::BehaviorNode {
 public:
     // prevent constructor by default
-    ShootBowNode& operator=(ShootBowNode const&) = delete;
-    ShootBowNode(ShootBowNode const&)            = delete;
+    ShootBowNode& operator=(ShootBowNode const&);
+    ShootBowNode(ShootBowNode const&);
 
 public:
     // NOLINTBEGIN

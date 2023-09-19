@@ -7,9 +7,9 @@ namespace Bedrock::Memory {
 class IMemoryAllocator {
 public:
     // prevent constructor by default
-    IMemoryAllocator& operator=(IMemoryAllocator const&) = delete;
-    IMemoryAllocator(IMemoryAllocator const&)            = delete;
-    IMemoryAllocator()                                   = delete;
+    IMemoryAllocator& operator=(IMemoryAllocator const&);
+    IMemoryAllocator(IMemoryAllocator const&);
+    IMemoryAllocator();
 };
 
 }; // namespace Bedrock::Memory

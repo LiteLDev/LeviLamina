@@ -8,9 +8,9 @@
 class RequestActionLoader {
 public:
     // prevent constructor by default
-    RequestActionLoader& operator=(RequestActionLoader const&) = delete;
-    RequestActionLoader(RequestActionLoader const&)            = delete;
-    RequestActionLoader()                                      = delete;
+    RequestActionLoader& operator=(RequestActionLoader const&);
+    RequestActionLoader(RequestActionLoader const&);
+    RequestActionLoader();
 
 public:
     // NOLINTBEGIN

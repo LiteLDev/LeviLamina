@@ -5,9 +5,9 @@
 class PassengerFreezeMovementSystem {
 public:
     // prevent constructor by default
-    PassengerFreezeMovementSystem& operator=(PassengerFreezeMovementSystem const&) = delete;
-    PassengerFreezeMovementSystem(PassengerFreezeMovementSystem const&)            = delete;
-    PassengerFreezeMovementSystem()                                                = delete;
+    PassengerFreezeMovementSystem& operator=(PassengerFreezeMovementSystem const&);
+    PassengerFreezeMovementSystem(PassengerFreezeMovementSystem const&);
+    PassengerFreezeMovementSystem();
 
 public:
     // NOLINTBEGIN

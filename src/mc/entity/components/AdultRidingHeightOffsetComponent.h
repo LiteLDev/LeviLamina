@@ -5,9 +5,9 @@
 struct AdultRidingHeightOffsetComponent {
 public:
     // prevent constructor by default
-    AdultRidingHeightOffsetComponent& operator=(AdultRidingHeightOffsetComponent const&) = delete;
-    AdultRidingHeightOffsetComponent(AdultRidingHeightOffsetComponent const&)            = delete;
-    AdultRidingHeightOffsetComponent()                                                   = delete;
+    AdultRidingHeightOffsetComponent& operator=(AdultRidingHeightOffsetComponent const&);
+    AdultRidingHeightOffsetComponent(AdultRidingHeightOffsetComponent const&);
+    AdultRidingHeightOffsetComponent();
 
 public:
     // NOLINTBEGIN

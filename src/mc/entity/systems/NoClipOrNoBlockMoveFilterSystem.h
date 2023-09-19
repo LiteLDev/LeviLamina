@@ -9,9 +9,9 @@
 class NoClipOrNoBlockMoveFilterSystem {
 public:
     // prevent constructor by default
-    NoClipOrNoBlockMoveFilterSystem& operator=(NoClipOrNoBlockMoveFilterSystem const&) = delete;
-    NoClipOrNoBlockMoveFilterSystem(NoClipOrNoBlockMoveFilterSystem const&)            = delete;
-    NoClipOrNoBlockMoveFilterSystem()                                                  = delete;
+    NoClipOrNoBlockMoveFilterSystem& operator=(NoClipOrNoBlockMoveFilterSystem const&);
+    NoClipOrNoBlockMoveFilterSystem(NoClipOrNoBlockMoveFilterSystem const&);
+    NoClipOrNoBlockMoveFilterSystem();
 
 public:
     // NOLINTBEGIN

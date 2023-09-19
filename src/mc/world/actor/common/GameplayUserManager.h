@@ -15,8 +15,8 @@ namespace Bedrock::PubSub { class Subscription; }
 class GameplayUserManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    GameplayUserManager& operator=(GameplayUserManager const&) = delete;
-    GameplayUserManager(GameplayUserManager const&)            = delete;
+    GameplayUserManager& operator=(GameplayUserManager const&);
+    GameplayUserManager(GameplayUserManager const&);
 
 public:
     // NOLINTBEGIN

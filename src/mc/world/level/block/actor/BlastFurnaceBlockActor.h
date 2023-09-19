@@ -8,9 +8,9 @@
 class BlastFurnaceBlockActor : public ::FurnaceBlockActor {
 public:
     // prevent constructor by default
-    BlastFurnaceBlockActor& operator=(BlastFurnaceBlockActor const&) = delete;
-    BlastFurnaceBlockActor(BlastFurnaceBlockActor const&)            = delete;
-    BlastFurnaceBlockActor()                                         = delete;
+    BlastFurnaceBlockActor& operator=(BlastFurnaceBlockActor const&);
+    BlastFurnaceBlockActor(BlastFurnaceBlockActor const&);
+    BlastFurnaceBlockActor();
 
 public:
     // NOLINTBEGIN

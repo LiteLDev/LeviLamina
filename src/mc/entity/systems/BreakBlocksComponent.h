@@ -5,9 +5,9 @@
 class BreakBlocksComponent {
 public:
     // prevent constructor by default
-    BreakBlocksComponent& operator=(BreakBlocksComponent const&) = delete;
-    BreakBlocksComponent(BreakBlocksComponent const&)            = delete;
-    BreakBlocksComponent()                                       = delete;
+    BreakBlocksComponent& operator=(BreakBlocksComponent const&);
+    BreakBlocksComponent(BreakBlocksComponent const&);
+    BreakBlocksComponent();
 
 public:
     // NOLINTBEGIN

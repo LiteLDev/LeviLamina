@@ -7,9 +7,9 @@ namespace ComplexAliasBlockUtils {
 struct NewCoralBlockAndSplitStates {
 public:
     // prevent constructor by default
-    NewCoralBlockAndSplitStates& operator=(NewCoralBlockAndSplitStates const&) = delete;
-    NewCoralBlockAndSplitStates(NewCoralBlockAndSplitStates const&)            = delete;
-    NewCoralBlockAndSplitStates()                                              = delete;
+    NewCoralBlockAndSplitStates& operator=(NewCoralBlockAndSplitStates const&);
+    NewCoralBlockAndSplitStates(NewCoralBlockAndSplitStates const&);
+    NewCoralBlockAndSplitStates();
 
 public:
     // NOLINTBEGIN

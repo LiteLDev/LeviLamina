@@ -5,8 +5,8 @@
 class PlayerLimboActorManager {
 public:
     // prevent constructor by default
-    PlayerLimboActorManager& operator=(PlayerLimboActorManager const&) = delete;
-    PlayerLimboActorManager(PlayerLimboActorManager const&)            = delete;
+    PlayerLimboActorManager& operator=(PlayerLimboActorManager const&);
+    PlayerLimboActorManager(PlayerLimboActorManager const&);
 
 public:
     // NOLINTBEGIN

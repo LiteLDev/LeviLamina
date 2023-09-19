@@ -5,9 +5,9 @@
 class CommandContext {
 public:
     // prevent constructor by default
-    CommandContext& operator=(CommandContext const&) = delete;
-    CommandContext(CommandContext const&)            = delete;
-    CommandContext()                                 = delete;
+    CommandContext& operator=(CommandContext const&);
+    CommandContext(CommandContext const&);
+    CommandContext();
 
 public:
     // NOLINTBEGIN

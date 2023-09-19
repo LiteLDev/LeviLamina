@@ -13,9 +13,9 @@ public:
     struct RuntimeLightingSubchunkList {
     public:
         // prevent constructor by default
-        RuntimeLightingSubchunkList& operator=(RuntimeLightingSubchunkList const&) = delete;
-        RuntimeLightingSubchunkList(RuntimeLightingSubchunkList const&)            = delete;
-        RuntimeLightingSubchunkList()                                              = delete;
+        RuntimeLightingSubchunkList& operator=(RuntimeLightingSubchunkList const&);
+        RuntimeLightingSubchunkList(RuntimeLightingSubchunkList const&);
+        RuntimeLightingSubchunkList();
 
     public:
         // NOLINTBEGIN
@@ -27,14 +27,14 @@ public:
 
 public:
     // prevent constructor by default
-    RuntimeLightingManager& operator=(RuntimeLightingManager const&) = delete;
-    RuntimeLightingManager(RuntimeLightingManager const&)            = delete;
-    RuntimeLightingManager()                                         = delete;
+    RuntimeLightingManager& operator=(RuntimeLightingManager const&);
+    RuntimeLightingManager(RuntimeLightingManager const&);
+    RuntimeLightingManager();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0RuntimeLightingManager@@QEAA@AEAVDimension@@@Z
-    MCAPI RuntimeLightingManager(class Dimension&);
+    MCAPI explicit RuntimeLightingManager(class Dimension&);
 
     // symbol: ?flushRunTimeLighting@RuntimeLightingManager@@QEAAXXZ
     MCAPI void flushRunTimeLighting();

@@ -5,9 +5,9 @@
 class BlockComponentStorage {
 public:
     // prevent constructor by default
-    BlockComponentStorage& operator=(BlockComponentStorage const&) = delete;
-    BlockComponentStorage(BlockComponentStorage const&)            = delete;
-    BlockComponentStorage()                                        = delete;
+    BlockComponentStorage& operator=(BlockComponentStorage const&);
+    BlockComponentStorage(BlockComponentStorage const&);
+    BlockComponentStorage();
 
 public:
     // NOLINTBEGIN

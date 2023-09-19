@@ -5,7 +5,7 @@
 struct InsideBlockComponent {
 public:
     // prevent constructor by default
-    InsideBlockComponent& operator=(InsideBlockComponent const&) = delete;
-    InsideBlockComponent(InsideBlockComponent const&)            = delete;
-    InsideBlockComponent()                                       = delete;
+    InsideBlockComponent& operator=(InsideBlockComponent const&);
+    InsideBlockComponent(InsideBlockComponent const&);
+    InsideBlockComponent();
 };

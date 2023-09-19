@@ -9,8 +9,8 @@
 class LoomContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // prevent constructor by default
-    LoomContainerScreenValidator& operator=(LoomContainerScreenValidator const&) = delete;
-    LoomContainerScreenValidator(LoomContainerScreenValidator const&)            = delete;
+    LoomContainerScreenValidator& operator=(LoomContainerScreenValidator const&);
+    LoomContainerScreenValidator(LoomContainerScreenValidator const&);
 
 public:
     // NOLINTBEGIN

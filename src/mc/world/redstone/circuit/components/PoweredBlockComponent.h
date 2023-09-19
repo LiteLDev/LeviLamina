@@ -9,9 +9,9 @@
 class PoweredBlockComponent : public ::BaseCircuitComponent {
 public:
     // prevent constructor by default
-    PoweredBlockComponent& operator=(PoweredBlockComponent const&) = delete;
-    PoweredBlockComponent(PoweredBlockComponent const&)            = delete;
-    PoweredBlockComponent()                                        = delete;
+    PoweredBlockComponent& operator=(PoweredBlockComponent const&);
+    PoweredBlockComponent(PoweredBlockComponent const&);
+    PoweredBlockComponent();
 
 public:
     // NOLINTBEGIN
@@ -48,7 +48,7 @@ public:
     MCVAPI bool hasChildrenSource() const;
 
     // symbol: ??0PoweredBlockComponent@@QEAA@E@Z
-    MCAPI PoweredBlockComponent(uchar);
+    MCAPI explicit PoweredBlockComponent(uchar);
 
     // NOLINTEND
 };

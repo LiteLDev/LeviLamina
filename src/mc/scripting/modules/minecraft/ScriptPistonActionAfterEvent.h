@@ -16,8 +16,8 @@ namespace ScriptModuleMinecraft {
 struct ScriptPistonActionAfterEvent {
 public:
     // prevent constructor by default
-    ScriptPistonActionAfterEvent(ScriptPistonActionAfterEvent const&) = delete;
-    ScriptPistonActionAfterEvent()                                    = delete;
+    ScriptPistonActionAfterEvent(ScriptPistonActionAfterEvent const&);
+    ScriptPistonActionAfterEvent();
 
 public:
     // NOLINTBEGIN

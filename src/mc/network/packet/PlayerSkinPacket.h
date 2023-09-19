@@ -10,8 +10,8 @@
 class PlayerSkinPacket : public ::Packet {
 public:
     // prevent constructor by default
-    PlayerSkinPacket& operator=(PlayerSkinPacket const&) = delete;
-    PlayerSkinPacket(PlayerSkinPacket const&)            = delete;
+    PlayerSkinPacket& operator=(PlayerSkinPacket const&);
+    PlayerSkinPacket(PlayerSkinPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class NoodleCavifier {
 public:
     // prevent constructor by default
-    NoodleCavifier& operator=(NoodleCavifier const&) = delete;
-    NoodleCavifier(NoodleCavifier const&)            = delete;
-    NoodleCavifier()                                 = delete;
+    NoodleCavifier& operator=(NoodleCavifier const&);
+    NoodleCavifier(NoodleCavifier const&);
+    NoodleCavifier();
 
 public:
     // NOLINTBEGIN

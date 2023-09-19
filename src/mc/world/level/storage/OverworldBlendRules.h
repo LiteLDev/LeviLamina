@@ -5,9 +5,9 @@
 struct OverworldBlendRules {
 public:
     // prevent constructor by default
-    OverworldBlendRules& operator=(OverworldBlendRules const&) = delete;
-    OverworldBlendRules(OverworldBlendRules const&)            = delete;
-    OverworldBlendRules()                                      = delete;
+    OverworldBlendRules& operator=(OverworldBlendRules const&);
+    OverworldBlendRules(OverworldBlendRules const&);
+    OverworldBlendRules();
 
 public:
     // NOLINTBEGIN

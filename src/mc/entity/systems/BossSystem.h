@@ -8,9 +8,9 @@
 class BossSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    BossSystem& operator=(BossSystem const&) = delete;
-    BossSystem(BossSystem const&)            = delete;
-    BossSystem()                             = delete;
+    BossSystem& operator=(BossSystem const&);
+    BossSystem(BossSystem const&);
+    BossSystem();
 
 public:
     // NOLINTBEGIN

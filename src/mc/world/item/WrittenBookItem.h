@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class WrittenBookItem : public ::Item {
 public:
     // prevent constructor by default
-    WrittenBookItem& operator=(WrittenBookItem const&) = delete;
-    WrittenBookItem(WrittenBookItem const&)            = delete;
-    WrittenBookItem()                                  = delete;
+    WrittenBookItem& operator=(WrittenBookItem const&);
+    WrittenBookItem(WrittenBookItem const&);
+    WrittenBookItem();
 
 public:
     // NOLINTBEGIN

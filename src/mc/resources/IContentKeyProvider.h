@@ -13,9 +13,9 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class IContentKeyProvider : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    IContentKeyProvider& operator=(IContentKeyProvider const&) = delete;
-    IContentKeyProvider(IContentKeyProvider const&)            = delete;
-    IContentKeyProvider()                                      = delete;
+    IContentKeyProvider& operator=(IContentKeyProvider const&);
+    IContentKeyProvider(IContentKeyProvider const&);
+    IContentKeyProvider();
 
 public:
     // NOLINTBEGIN

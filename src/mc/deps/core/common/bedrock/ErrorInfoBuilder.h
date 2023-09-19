@@ -8,9 +8,9 @@ template <typename T0>
 struct ErrorInfoBuilder {
 public:
     // prevent constructor by default
-    ErrorInfoBuilder& operator=(ErrorInfoBuilder const&) = delete;
-    ErrorInfoBuilder(ErrorInfoBuilder const&)            = delete;
-    ErrorInfoBuilder()                                   = delete;
+    ErrorInfoBuilder& operator=(ErrorInfoBuilder const&);
+    ErrorInfoBuilder(ErrorInfoBuilder const&);
+    ErrorInfoBuilder();
 };
 
 }; // namespace Bedrock::Detail

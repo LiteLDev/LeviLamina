@@ -27,9 +27,9 @@ namespace ScriptModuleMinecraft {
 class ScriptActorQuery {
 public:
     // prevent constructor by default
-    ScriptActorQuery& operator=(ScriptActorQuery const&) = delete;
-    ScriptActorQuery(ScriptActorQuery const&)            = delete;
-    ScriptActorQuery()                                   = delete;
+    ScriptActorQuery& operator=(ScriptActorQuery const&);
+    ScriptActorQuery(ScriptActorQuery const&);
+    ScriptActorQuery();
 
 public:
     // NOLINTBEGIN

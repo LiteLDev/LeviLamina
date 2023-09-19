@@ -11,8 +11,8 @@
 class UpdatePlayerGameTypePacket : public ::Packet {
 public:
     // prevent constructor by default
-    UpdatePlayerGameTypePacket& operator=(UpdatePlayerGameTypePacket const&) = delete;
-    UpdatePlayerGameTypePacket(UpdatePlayerGameTypePacket const&)            = delete;
+    UpdatePlayerGameTypePacket& operator=(UpdatePlayerGameTypePacket const&);
+    UpdatePlayerGameTypePacket(UpdatePlayerGameTypePacket const&);
 
 public:
     // NOLINTBEGIN

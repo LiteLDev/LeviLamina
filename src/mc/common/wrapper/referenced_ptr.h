@@ -6,7 +6,7 @@ template <typename T0>
 struct referenced_ptr {
 public:
     // prevent constructor by default
-    referenced_ptr& operator=(referenced_ptr const&) = delete;
-    referenced_ptr(referenced_ptr const&)            = delete;
-    referenced_ptr()                                 = delete;
+    referenced_ptr& operator=(referenced_ptr const&);
+    referenced_ptr(referenced_ptr const&);
+    referenced_ptr();
 };

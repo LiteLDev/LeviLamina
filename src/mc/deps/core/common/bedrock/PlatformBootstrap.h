@@ -23,32 +23,32 @@ public:
     struct CreateDirectoryResult {
     public:
         // prevent constructor by default
-        CreateDirectoryResult& operator=(CreateDirectoryResult const&) = delete;
-        CreateDirectoryResult(CreateDirectoryResult const&)            = delete;
-        CreateDirectoryResult()                                        = delete;
+        CreateDirectoryResult& operator=(CreateDirectoryResult const&);
+        CreateDirectoryResult(CreateDirectoryResult const&);
+        CreateDirectoryResult();
     };
 
     struct LoadResult {
     public:
         // prevent constructor by default
-        LoadResult& operator=(LoadResult const&) = delete;
-        LoadResult(LoadResult const&)            = delete;
-        LoadResult()                             = delete;
+        LoadResult& operator=(LoadResult const&);
+        LoadResult(LoadResult const&);
+        LoadResult();
     };
 
     struct SaveResult {
     public:
         // prevent constructor by default
-        SaveResult& operator=(SaveResult const&) = delete;
-        SaveResult(SaveResult const&)            = delete;
-        SaveResult()                             = delete;
+        SaveResult& operator=(SaveResult const&);
+        SaveResult(SaveResult const&);
+        SaveResult();
     };
 
 public:
     // prevent constructor by default
-    PlatformBootstrap& operator=(PlatformBootstrap const&) = delete;
-    PlatformBootstrap(PlatformBootstrap const&)            = delete;
-    PlatformBootstrap()                                    = delete;
+    PlatformBootstrap& operator=(PlatformBootstrap const&);
+    PlatformBootstrap(PlatformBootstrap const&);
+    PlatformBootstrap();
 
 public:
     // NOLINTBEGIN

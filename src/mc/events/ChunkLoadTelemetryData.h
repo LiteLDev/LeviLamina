@@ -18,9 +18,9 @@ public:
     class ServerChunkLoading {
     public:
         // prevent constructor by default
-        ServerChunkLoading& operator=(ServerChunkLoading const&) = delete;
-        ServerChunkLoading(ServerChunkLoading const&)            = delete;
-        ServerChunkLoading()                                     = delete;
+        ServerChunkLoading& operator=(ServerChunkLoading const&);
+        ServerChunkLoading(ServerChunkLoading const&);
+        ServerChunkLoading();
 
     public:
         // NOLINTBEGIN
@@ -32,9 +32,9 @@ public:
 
 public:
     // prevent constructor by default
-    ChunkLoadTelemetryData& operator=(ChunkLoadTelemetryData const&) = delete;
-    ChunkLoadTelemetryData(ChunkLoadTelemetryData const&)            = delete;
-    ChunkLoadTelemetryData()                                         = delete;
+    ChunkLoadTelemetryData& operator=(ChunkLoadTelemetryData const&);
+    ChunkLoadTelemetryData(ChunkLoadTelemetryData const&);
+    ChunkLoadTelemetryData();
 
 public:
     // NOLINTBEGIN

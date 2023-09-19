@@ -5,7 +5,7 @@
 struct RenderPositionComponent {
 public:
     // prevent constructor by default
-    RenderPositionComponent& operator=(RenderPositionComponent const&) = delete;
-    RenderPositionComponent(RenderPositionComponent const&)            = delete;
-    RenderPositionComponent()                                          = delete;
+    RenderPositionComponent& operator=(RenderPositionComponent const&);
+    RenderPositionComponent(RenderPositionComponent const&);
+    RenderPositionComponent();
 };

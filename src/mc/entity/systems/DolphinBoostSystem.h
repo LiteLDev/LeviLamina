@@ -10,9 +10,9 @@
 class DolphinBoostSystem {
 public:
     // prevent constructor by default
-    DolphinBoostSystem& operator=(DolphinBoostSystem const&) = delete;
-    DolphinBoostSystem(DolphinBoostSystem const&)            = delete;
-    DolphinBoostSystem()                                     = delete;
+    DolphinBoostSystem& operator=(DolphinBoostSystem const&);
+    DolphinBoostSystem(DolphinBoostSystem const&);
+    DolphinBoostSystem();
 
 public:
     // NOLINTBEGIN

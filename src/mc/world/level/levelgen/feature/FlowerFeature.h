@@ -8,9 +8,9 @@
 class FlowerFeature : public ::Feature {
 public:
     // prevent constructor by default
-    FlowerFeature& operator=(FlowerFeature const&) = delete;
-    FlowerFeature(FlowerFeature const&)            = delete;
-    FlowerFeature()                                = delete;
+    FlowerFeature& operator=(FlowerFeature const&);
+    FlowerFeature(FlowerFeature const&);
+    FlowerFeature();
 
 public:
     // NOLINTBEGIN
@@ -24,7 +24,7 @@ public:
     MCVAPI ~FlowerFeature();
 
     // symbol: ??0FlowerFeature@@QEAA@AEBVBlock@@@Z
-    MCAPI FlowerFeature(class Block const&);
+    MCAPI explicit FlowerFeature(class Block const&);
 
     // NOLINTEND
 

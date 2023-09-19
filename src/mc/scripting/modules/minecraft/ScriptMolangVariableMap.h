@@ -19,9 +19,9 @@ namespace ScriptModuleMinecraft {
 class ScriptMolangVariableMap {
 public:
     // prevent constructor by default
-    ScriptMolangVariableMap& operator=(ScriptMolangVariableMap const&) = delete;
-    ScriptMolangVariableMap(ScriptMolangVariableMap const&)            = delete;
-    ScriptMolangVariableMap()                                          = delete;
+    ScriptMolangVariableMap& operator=(ScriptMolangVariableMap const&);
+    ScriptMolangVariableMap(ScriptMolangVariableMap const&);
+    ScriptMolangVariableMap();
 
 public:
     // NOLINTBEGIN

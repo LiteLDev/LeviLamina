@@ -18,9 +18,9 @@ namespace mce { class UUID; }
 class VirtualCommandOrigin : public ::CommandOrigin {
 public:
     // prevent constructor by default
-    VirtualCommandOrigin& operator=(VirtualCommandOrigin const&) = delete;
-    VirtualCommandOrigin(VirtualCommandOrigin const&)            = delete;
-    VirtualCommandOrigin()                                       = delete;
+    VirtualCommandOrigin& operator=(VirtualCommandOrigin const&);
+    VirtualCommandOrigin(VirtualCommandOrigin const&);
+    VirtualCommandOrigin();
 
 public:
     // NOLINTBEGIN

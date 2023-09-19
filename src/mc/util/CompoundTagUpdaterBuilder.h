@@ -5,9 +5,9 @@
 class CompoundTagUpdaterBuilder {
 public:
     // prevent constructor by default
-    CompoundTagUpdaterBuilder& operator=(CompoundTagUpdaterBuilder const&) = delete;
-    CompoundTagUpdaterBuilder(CompoundTagUpdaterBuilder const&)            = delete;
-    CompoundTagUpdaterBuilder()                                            = delete;
+    CompoundTagUpdaterBuilder& operator=(CompoundTagUpdaterBuilder const&);
+    CompoundTagUpdaterBuilder(CompoundTagUpdaterBuilder const&);
+    CompoundTagUpdaterBuilder();
 
 public:
     // NOLINTBEGIN

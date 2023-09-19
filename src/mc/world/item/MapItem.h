@@ -22,9 +22,9 @@ namespace mce { class Color; }
 class MapItem : public ::ComplexItem {
 public:
     // prevent constructor by default
-    MapItem& operator=(MapItem const&) = delete;
-    MapItem(MapItem const&)            = delete;
-    MapItem()                          = delete;
+    MapItem& operator=(MapItem const&);
+    MapItem(MapItem const&);
+    MapItem();
 
 public:
     // NOLINTBEGIN

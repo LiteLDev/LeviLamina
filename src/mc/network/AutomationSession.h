@@ -25,9 +25,9 @@ namespace Automation {
 class AutomationSession {
 public:
     // prevent constructor by default
-    AutomationSession& operator=(AutomationSession const&) = delete;
-    AutomationSession(AutomationSession const&)            = delete;
-    AutomationSession()                                    = delete;
+    AutomationSession& operator=(AutomationSession const&);
+    AutomationSession(AutomationSession const&);
+    AutomationSession();
 
 public:
     // NOLINTBEGIN
@@ -87,7 +87,7 @@ public:
     MCVAPI ~AutomationSession();
 
     // symbol: ??0AutomationSession@Automation@@QEAA@AEAVAutomationClient@1@@Z
-    MCAPI AutomationSession(class Automation::AutomationClient&);
+    MCAPI explicit AutomationSession(class Automation::AutomationClient&);
 
     // symbol:
     // ?connect@AutomationSession@Automation@@QEAA?AW4WSConnectionResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

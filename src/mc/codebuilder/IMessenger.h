@@ -7,9 +7,9 @@ namespace CodeBuilder {
 class IMessenger {
 public:
     // prevent constructor by default
-    IMessenger& operator=(IMessenger const&) = delete;
-    IMessenger(IMessenger const&)            = delete;
-    IMessenger()                             = delete;
+    IMessenger& operator=(IMessenger const&);
+    IMessenger(IMessenger const&);
+    IMessenger();
 };
 
 }; // namespace CodeBuilder

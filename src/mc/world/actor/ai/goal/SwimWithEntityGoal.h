@@ -9,9 +9,9 @@
 class SwimWithEntityGoal : public ::Goal {
 public:
     // prevent constructor by default
-    SwimWithEntityGoal& operator=(SwimWithEntityGoal const&) = delete;
-    SwimWithEntityGoal(SwimWithEntityGoal const&)            = delete;
-    SwimWithEntityGoal()                                     = delete;
+    SwimWithEntityGoal& operator=(SwimWithEntityGoal const&);
+    SwimWithEntityGoal(SwimWithEntityGoal const&);
+    SwimWithEntityGoal();
 
 public:
     // NOLINTBEGIN

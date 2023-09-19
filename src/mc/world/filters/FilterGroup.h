@@ -17,8 +17,8 @@ public:
 
 public:
     // prevent constructor by default
-    FilterGroup& operator=(FilterGroup const&) = delete;
-    FilterGroup()                              = delete;
+    FilterGroup& operator=(FilterGroup const&);
+    FilterGroup();
 
 public:
     // NOLINTBEGIN

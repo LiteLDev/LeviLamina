@@ -5,9 +5,9 @@
 class SubpackInfoCollection {
 public:
     // prevent constructor by default
-    SubpackInfoCollection& operator=(SubpackInfoCollection const&) = delete;
-    SubpackInfoCollection(SubpackInfoCollection const&)            = delete;
-    SubpackInfoCollection()                                        = delete;
+    SubpackInfoCollection& operator=(SubpackInfoCollection const&);
+    SubpackInfoCollection(SubpackInfoCollection const&);
+    SubpackInfoCollection();
 
 public:
     // NOLINTBEGIN

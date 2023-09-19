@@ -9,8 +9,8 @@
 class ConsumerComponent : public ::BaseCircuitComponent {
 public:
     // prevent constructor by default
-    ConsumerComponent& operator=(ConsumerComponent const&) = delete;
-    ConsumerComponent(ConsumerComponent const&)            = delete;
+    ConsumerComponent& operator=(ConsumerComponent const&);
+    ConsumerComponent(ConsumerComponent const&);
 
 public:
     // NOLINTBEGIN

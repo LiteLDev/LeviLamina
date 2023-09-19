@@ -10,8 +10,8 @@ namespace Json { class Value; }
 class Certificate {
 public:
     // prevent constructor by default
-    Certificate& operator=(Certificate const&) = delete;
-    Certificate()                              = delete;
+    Certificate& operator=(Certificate const&);
+    Certificate();
 
 public:
     // NOLINTBEGIN

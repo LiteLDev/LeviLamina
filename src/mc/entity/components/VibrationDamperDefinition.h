@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct VibrationDamperDefinition {
 public:
     // prevent constructor by default
-    VibrationDamperDefinition& operator=(VibrationDamperDefinition const&) = delete;
-    VibrationDamperDefinition(VibrationDamperDefinition const&)            = delete;
-    VibrationDamperDefinition()                                            = delete;
+    VibrationDamperDefinition& operator=(VibrationDamperDefinition const&);
+    VibrationDamperDefinition(VibrationDamperDefinition const&);
+    VibrationDamperDefinition();
 
 public:
     // NOLINTBEGIN

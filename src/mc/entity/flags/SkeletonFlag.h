@@ -5,7 +5,7 @@
 struct SkeletonFlag {
 public:
     // prevent constructor by default
-    SkeletonFlag& operator=(SkeletonFlag const&) = delete;
-    SkeletonFlag(SkeletonFlag const&)            = delete;
-    SkeletonFlag()                               = delete;
+    SkeletonFlag& operator=(SkeletonFlag const&);
+    SkeletonFlag(SkeletonFlag const&);
+    SkeletonFlag();
 };

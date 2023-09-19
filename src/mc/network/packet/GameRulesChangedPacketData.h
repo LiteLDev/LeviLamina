@@ -5,9 +5,9 @@
 class GameRulesChangedPacketData {
 public:
     // prevent constructor by default
-    GameRulesChangedPacketData& operator=(GameRulesChangedPacketData const&) = delete;
-    GameRulesChangedPacketData(GameRulesChangedPacketData const&)            = delete;
-    GameRulesChangedPacketData()                                             = delete;
+    GameRulesChangedPacketData& operator=(GameRulesChangedPacketData const&);
+    GameRulesChangedPacketData(GameRulesChangedPacketData const&);
+    GameRulesChangedPacketData();
 
 public:
     // NOLINTBEGIN

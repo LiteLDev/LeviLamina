@@ -11,8 +11,8 @@
 class SetDisplayObjectivePacket : public ::Packet {
 public:
     // prevent constructor by default
-    SetDisplayObjectivePacket& operator=(SetDisplayObjectivePacket const&) = delete;
-    SetDisplayObjectivePacket(SetDisplayObjectivePacket const&)            = delete;
+    SetDisplayObjectivePacket& operator=(SetDisplayObjectivePacket const&);
+    SetDisplayObjectivePacket(SetDisplayObjectivePacket const&);
 
 public:
     // NOLINTBEGIN

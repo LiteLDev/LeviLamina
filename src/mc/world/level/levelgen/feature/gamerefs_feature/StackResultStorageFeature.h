@@ -5,14 +5,14 @@
 class StackResultStorageFeature {
 public:
     // prevent constructor by default
-    StackResultStorageFeature& operator=(StackResultStorageFeature const&) = delete;
-    StackResultStorageFeature(StackResultStorageFeature const&)            = delete;
-    StackResultStorageFeature()                                            = delete;
+    StackResultStorageFeature& operator=(StackResultStorageFeature const&);
+    StackResultStorageFeature(StackResultStorageFeature const&);
+    StackResultStorageFeature();
 
     // protected:
     // NOLINTBEGIN
     // symbol: ??0StackResultStorageFeature@@IEAA@AEBVWeakStorageFeature@@@Z
-    MCAPI StackResultStorageFeature(class WeakStorageFeature const&);
+    MCAPI explicit StackResultStorageFeature(class WeakStorageFeature const&);
 
     // symbol: ?_getStackRef@StackResultStorageFeature@@IEBAAEAVIFeature@@XZ
     MCAPI class IFeature& _getStackRef() const;

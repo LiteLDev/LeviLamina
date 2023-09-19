@@ -17,8 +17,8 @@ namespace Bedrock {
 class FilePickerManagerImpl : public ::Bedrock::FilePickerManager {
 public:
     // prevent constructor by default
-    FilePickerManagerImpl& operator=(FilePickerManagerImpl const&) = delete;
-    FilePickerManagerImpl(FilePickerManagerImpl const&)            = delete;
+    FilePickerManagerImpl& operator=(FilePickerManagerImpl const&);
+    FilePickerManagerImpl(FilePickerManagerImpl const&);
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class DoubleTag : public ::Tag {
 public:
     // prevent constructor by default
-    DoubleTag& operator=(DoubleTag const&) = delete;
-    DoubleTag(DoubleTag const&)            = delete;
-    DoubleTag()                            = delete;
+    DoubleTag& operator=(DoubleTag const&);
+    DoubleTag(DoubleTag const&);
+    DoubleTag();
 
 public:
     // NOLINTBEGIN

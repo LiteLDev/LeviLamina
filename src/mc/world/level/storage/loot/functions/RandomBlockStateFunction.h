@@ -17,9 +17,9 @@ public:
 
 public:
     // prevent constructor by default
-    RandomBlockStateFunction& operator=(RandomBlockStateFunction const&) = delete;
-    RandomBlockStateFunction(RandomBlockStateFunction const&)            = delete;
-    RandomBlockStateFunction()                                           = delete;
+    RandomBlockStateFunction& operator=(RandomBlockStateFunction const&);
+    RandomBlockStateFunction(RandomBlockStateFunction const&);
+    RandomBlockStateFunction();
 
 public:
     // NOLINTBEGIN

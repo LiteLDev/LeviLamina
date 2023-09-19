@@ -8,9 +8,9 @@
 class BuoyancySystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    BuoyancySystem& operator=(BuoyancySystem const&) = delete;
-    BuoyancySystem(BuoyancySystem const&)            = delete;
-    BuoyancySystem()                                 = delete;
+    BuoyancySystem& operator=(BuoyancySystem const&);
+    BuoyancySystem(BuoyancySystem const&);
+    BuoyancySystem();
 
 public:
     // NOLINTBEGIN

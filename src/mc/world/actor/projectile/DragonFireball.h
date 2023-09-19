@@ -27,9 +27,9 @@
 class DragonFireball : public ::Fireball {
 public:
     // prevent constructor by default
-    DragonFireball& operator=(DragonFireball const&) = delete;
-    DragonFireball(DragonFireball const&)            = delete;
-    DragonFireball()                                 = delete;
+    DragonFireball& operator=(DragonFireball const&);
+    DragonFireball(DragonFireball const&);
+    DragonFireball();
 
 public:
     // NOLINTBEGIN

@@ -10,8 +10,8 @@
 class BlockEventPacket : public ::Packet {
 public:
     // prevent constructor by default
-    BlockEventPacket& operator=(BlockEventPacket const&) = delete;
-    BlockEventPacket(BlockEventPacket const&)            = delete;
+    BlockEventPacket& operator=(BlockEventPacket const&);
+    BlockEventPacket(BlockEventPacket const&);
 
 public:
     // NOLINTBEGIN

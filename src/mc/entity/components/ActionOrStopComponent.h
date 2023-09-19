@@ -5,7 +5,7 @@
 struct ActionOrStopComponent {
 public:
     // prevent constructor by default
-    ActionOrStopComponent& operator=(ActionOrStopComponent const&) = delete;
-    ActionOrStopComponent(ActionOrStopComponent const&)            = delete;
-    ActionOrStopComponent()                                        = delete;
+    ActionOrStopComponent& operator=(ActionOrStopComponent const&);
+    ActionOrStopComponent(ActionOrStopComponent const&);
+    ActionOrStopComponent();
 };

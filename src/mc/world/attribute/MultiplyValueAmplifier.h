@@ -8,9 +8,9 @@
 class MultiplyValueAmplifier : public ::Amplifier {
 public:
     // prevent constructor by default
-    MultiplyValueAmplifier& operator=(MultiplyValueAmplifier const&) = delete;
-    MultiplyValueAmplifier(MultiplyValueAmplifier const&)            = delete;
-    MultiplyValueAmplifier()                                         = delete;
+    MultiplyValueAmplifier& operator=(MultiplyValueAmplifier const&);
+    MultiplyValueAmplifier(MultiplyValueAmplifier const&);
+    MultiplyValueAmplifier();
 
 public:
     // NOLINTBEGIN
@@ -21,7 +21,7 @@ public:
     virtual float getAmount(int, float) const;
 
     // symbol: ??0MultiplyValueAmplifier@@QEAA@M@Z
-    MCAPI MultiplyValueAmplifier(float);
+    MCAPI explicit MultiplyValueAmplifier(float);
 
     // NOLINTEND
 };

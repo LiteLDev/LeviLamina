@@ -5,7 +5,7 @@
 struct CurrentLocalMoveVelocityComponent {
 public:
     // prevent constructor by default
-    CurrentLocalMoveVelocityComponent& operator=(CurrentLocalMoveVelocityComponent const&) = delete;
-    CurrentLocalMoveVelocityComponent(CurrentLocalMoveVelocityComponent const&)            = delete;
-    CurrentLocalMoveVelocityComponent()                                                    = delete;
+    CurrentLocalMoveVelocityComponent& operator=(CurrentLocalMoveVelocityComponent const&);
+    CurrentLocalMoveVelocityComponent(CurrentLocalMoveVelocityComponent const&);
+    CurrentLocalMoveVelocityComponent();
 };

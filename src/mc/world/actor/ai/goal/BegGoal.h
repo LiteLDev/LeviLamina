@@ -9,9 +9,9 @@
 class BegGoal : public ::Goal {
 public:
     // prevent constructor by default
-    BegGoal& operator=(BegGoal const&) = delete;
-    BegGoal(BegGoal const&)            = delete;
-    BegGoal()                          = delete;
+    BegGoal& operator=(BegGoal const&);
+    BegGoal(BegGoal const&);
+    BegGoal();
 
 public:
     // NOLINTBEGIN

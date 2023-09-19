@@ -8,8 +8,8 @@
 class FloatTag : public ::Tag {
 public:
     // prevent constructor by default
-    FloatTag& operator=(FloatTag const&) = delete;
-    FloatTag(FloatTag const&)            = delete;
+    FloatTag& operator=(FloatTag const&);
+    FloatTag(FloatTag const&);
 
 public:
     // NOLINTBEGIN
@@ -44,7 +44,7 @@ public:
     MCAPI FloatTag();
 
     // symbol: ??0FloatTag@@QEAA@M@Z
-    MCAPI FloatTag(float);
+    MCAPI explicit FloatTag(float);
 
     // NOLINTEND
 };

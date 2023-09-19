@@ -5,14 +5,14 @@
 class PackCapabilityRegistry {
 public:
     // prevent constructor by default
-    PackCapabilityRegistry& operator=(PackCapabilityRegistry const&) = delete;
-    PackCapabilityRegistry(PackCapabilityRegistry const&)            = delete;
-    PackCapabilityRegistry()                                         = delete;
+    PackCapabilityRegistry& operator=(PackCapabilityRegistry const&);
+    PackCapabilityRegistry(PackCapabilityRegistry const&);
+    PackCapabilityRegistry();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0PackCapabilityRegistry@@QEAA@AEBV?$initializer_list@VPackCapability@@@std@@@Z
-    MCAPI PackCapabilityRegistry(std::initializer_list<class PackCapability> const&);
+    MCAPI explicit PackCapabilityRegistry(std::initializer_list<class PackCapability> const&);
 
     // symbol: ?merge@PackCapabilityRegistry@@QEAAXAEAV1@@Z
     MCAPI void merge(class PackCapabilityRegistry&);

@@ -21,16 +21,16 @@ public:
     class iterator_base {
     public:
         // prevent constructor by default
-        iterator_base& operator=(iterator_base const&) = delete;
-        iterator_base(iterator_base const&)            = delete;
-        iterator_base()                                = delete;
+        iterator_base& operator=(iterator_base const&);
+        iterator_base(iterator_base const&);
+        iterator_base();
     };
 
 public:
     // prevent constructor by default
-    ObjectNode& operator=(ObjectNode const&) = delete;
-    ObjectNode(ObjectNode const&)            = delete;
-    ObjectNode()                             = delete;
+    ObjectNode& operator=(ObjectNode const&);
+    ObjectNode(ObjectNode const&);
+    ObjectNode();
 
 public:
     // NOLINTBEGIN

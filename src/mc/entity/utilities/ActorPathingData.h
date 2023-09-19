@@ -5,9 +5,9 @@
 struct ActorPathingData {
 public:
     // prevent constructor by default
-    ActorPathingData& operator=(ActorPathingData const&) = delete;
-    ActorPathingData(ActorPathingData const&)            = delete;
-    ActorPathingData()                                   = delete;
+    ActorPathingData& operator=(ActorPathingData const&);
+    ActorPathingData(ActorPathingData const&);
+    ActorPathingData();
 
 public:
     // NOLINTBEGIN

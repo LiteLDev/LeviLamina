@@ -5,7 +5,7 @@
 class GameVersion {
 public:
     // prevent constructor by default
-    GameVersion& operator=(GameVersion const&) = delete;
+    GameVersion& operator=(GameVersion const&);
 
 public:
     // NOLINTBEGIN
@@ -16,7 +16,7 @@ public:
     MCAPI GameVersion(uint, uint, uint, uint, uint);
 
     // symbol: ??0GameVersion@@QEAA@AEBVListTag@@@Z
-    MCAPI GameVersion(class ListTag const&);
+    MCAPI explicit GameVersion(class ListTag const&);
 
     // symbol: ??0GameVersion@@QEAA@XZ
     MCAPI GameVersion();

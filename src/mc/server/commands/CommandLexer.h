@@ -13,16 +13,16 @@ public:
     struct Token {
     public:
         // prevent constructor by default
-        Token& operator=(Token const&) = delete;
-        Token(Token const&)            = delete;
-        Token()                        = delete;
+        Token& operator=(Token const&);
+        Token(Token const&);
+        Token();
     };
 
 public:
     // prevent constructor by default
-    CommandLexer& operator=(CommandLexer const&) = delete;
-    CommandLexer(CommandLexer const&)            = delete;
-    CommandLexer()                               = delete;
+    CommandLexer& operator=(CommandLexer const&);
+    CommandLexer(CommandLexer const&);
+    CommandLexer();
 
 public:
     // NOLINTBEGIN

@@ -10,17 +10,17 @@ namespace Json { class Value; }
 struct SkinData {
 public:
     // prevent constructor by default
-    SkinData& operator=(SkinData const&) = delete;
-    SkinData(SkinData const&)            = delete;
-    SkinData()                           = delete;
+    SkinData& operator=(SkinData const&);
+    SkinData(SkinData const&);
+    SkinData();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0SkinData@@QEAA@AEBVActor@@@Z
-    MCAPI SkinData(class Actor const&);
+    MCAPI explicit SkinData(class Actor const&);
 
     // symbol: ??0SkinData@@QEAA@AEBVValue@Json@@@Z
-    MCAPI SkinData(class Json::Value const&);
+    MCAPI explicit SkinData(class Json::Value const&);
 
     // symbol: ?applyToActor@SkinData@@QEBAXAEAVActor@@@Z
     MCAPI void applyToActor(class Actor&) const;

@@ -27,9 +27,9 @@
 class Slime : public ::Monster {
 public:
     // prevent constructor by default
-    Slime& operator=(Slime const&) = delete;
-    Slime(Slime const&)            = delete;
-    Slime()                        = delete;
+    Slime& operator=(Slime const&);
+    Slime(Slime const&);
+    Slime();
 
 public:
     // NOLINTBEGIN

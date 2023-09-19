@@ -8,9 +8,9 @@
 class Easing {
 public:
     // prevent constructor by default
-    Easing& operator=(Easing const&) = delete;
-    Easing(Easing const&)            = delete;
-    Easing()                         = delete;
+    Easing& operator=(Easing const&);
+    Easing(Easing const&);
+    Easing();
 
 public:
     // NOLINTBEGIN

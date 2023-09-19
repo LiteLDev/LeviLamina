@@ -7,9 +7,9 @@ namespace AgentComponents::Actions {
 struct Attack {
 public:
     // prevent constructor by default
-    Attack& operator=(Attack const&) = delete;
-    Attack(Attack const&)            = delete;
-    Attack()                         = delete;
+    Attack& operator=(Attack const&);
+    Attack(Attack const&);
+    Attack();
 };
 
 }; // namespace AgentComponents::Actions

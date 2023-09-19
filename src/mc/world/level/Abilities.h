@@ -10,7 +10,7 @@
 class Abilities {
 public:
     // prevent constructor by default
-    Abilities() = delete;
+    Abilities();
 
 public:
     // NOLINTBEGIN
@@ -18,7 +18,7 @@ public:
     MCAPI Abilities(class Abilities const&);
 
     // symbol: ??0Abilities@@QEAA@_N@Z
-    MCAPI Abilities(bool);
+    MCAPI explicit Abilities(bool);
 
     // symbol: ?addSaveData@Abilities@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void addSaveData(class CompoundTag&) const;

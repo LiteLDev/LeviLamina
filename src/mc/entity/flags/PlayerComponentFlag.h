@@ -5,7 +5,7 @@
 struct PlayerComponentFlag {
 public:
     // prevent constructor by default
-    PlayerComponentFlag& operator=(PlayerComponentFlag const&) = delete;
-    PlayerComponentFlag(PlayerComponentFlag const&)            = delete;
-    PlayerComponentFlag()                                      = delete;
+    PlayerComponentFlag& operator=(PlayerComponentFlag const&);
+    PlayerComponentFlag(PlayerComponentFlag const&);
+    PlayerComponentFlag();
 };

@@ -8,9 +8,9 @@
 class EndTag : public ::Tag {
 public:
     // prevent constructor by default
-    EndTag& operator=(EndTag const&) = delete;
-    EndTag(EndTag const&)            = delete;
-    EndTag()                         = delete;
+    EndTag& operator=(EndTag const&);
+    EndTag(EndTag const&);
+    EndTag();
 
 public:
     // NOLINTBEGIN

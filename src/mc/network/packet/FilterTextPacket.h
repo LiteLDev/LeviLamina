@@ -10,8 +10,8 @@
 class FilterTextPacket : public ::Packet {
 public:
     // prevent constructor by default
-    FilterTextPacket& operator=(FilterTextPacket const&) = delete;
-    FilterTextPacket(FilterTextPacket const&)            = delete;
+    FilterTextPacket& operator=(FilterTextPacket const&);
+    FilterTextPacket(FilterTextPacket const&);
 
 public:
     // NOLINTBEGIN

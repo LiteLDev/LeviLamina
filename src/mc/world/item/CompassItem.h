@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class CompassItem : public ::AbstractCompassItem {
 public:
     // prevent constructor by default
-    CompassItem& operator=(CompassItem const&) = delete;
-    CompassItem(CompassItem const&)            = delete;
-    CompassItem()                              = delete;
+    CompassItem& operator=(CompassItem const&);
+    CompassItem(CompassItem const&);
+    CompassItem();
 
 public:
     // NOLINTBEGIN

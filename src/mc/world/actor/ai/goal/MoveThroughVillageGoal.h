@@ -9,9 +9,9 @@
 class MoveThroughVillageGoal : public ::Goal {
 public:
     // prevent constructor by default
-    MoveThroughVillageGoal& operator=(MoveThroughVillageGoal const&) = delete;
-    MoveThroughVillageGoal(MoveThroughVillageGoal const&)            = delete;
-    MoveThroughVillageGoal()                                         = delete;
+    MoveThroughVillageGoal& operator=(MoveThroughVillageGoal const&);
+    MoveThroughVillageGoal(MoveThroughVillageGoal const&);
+    MoveThroughVillageGoal();
 
 public:
     // NOLINTBEGIN

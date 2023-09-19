@@ -5,9 +5,9 @@
 class FogCommandComponent {
 public:
     // prevent constructor by default
-    FogCommandComponent& operator=(FogCommandComponent const&) = delete;
-    FogCommandComponent(FogCommandComponent const&)            = delete;
-    FogCommandComponent()                                      = delete;
+    FogCommandComponent& operator=(FogCommandComponent const&);
+    FogCommandComponent(FogCommandComponent const&);
+    FogCommandComponent();
 
 public:
     // NOLINTBEGIN

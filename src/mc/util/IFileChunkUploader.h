@@ -9,8 +9,8 @@ public:
 
 public:
     // prevent constructor by default
-    IFileChunkUploader& operator=(IFileChunkUploader const&) = delete;
-    IFileChunkUploader(IFileChunkUploader const&)            = delete;
+    IFileChunkUploader& operator=(IFileChunkUploader const&);
+    IFileChunkUploader(IFileChunkUploader const&);
 
 public:
     // NOLINTBEGIN

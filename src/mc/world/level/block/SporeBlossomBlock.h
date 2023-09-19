@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class SporeBlossomBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    SporeBlossomBlock& operator=(SporeBlossomBlock const&) = delete;
-    SporeBlossomBlock(SporeBlossomBlock const&)            = delete;
-    SporeBlossomBlock()                                    = delete;
+    SporeBlossomBlock& operator=(SporeBlossomBlock const&);
+    SporeBlossomBlock(SporeBlossomBlock const&);
+    SporeBlossomBlock();
 
 public:
     // NOLINTBEGIN

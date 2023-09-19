@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class LodestoneBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    LodestoneBlock& operator=(LodestoneBlock const&) = delete;
-    LodestoneBlock(LodestoneBlock const&)            = delete;
-    LodestoneBlock()                                 = delete;
+    LodestoneBlock& operator=(LodestoneBlock const&);
+    LodestoneBlock(LodestoneBlock const&);
+    LodestoneBlock();
 
 public:
     // NOLINTBEGIN

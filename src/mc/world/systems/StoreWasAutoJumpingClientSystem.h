@@ -12,9 +12,9 @@
 class StoreWasAutoJumpingClientSystem {
 public:
     // prevent constructor by default
-    StoreWasAutoJumpingClientSystem& operator=(StoreWasAutoJumpingClientSystem const&) = delete;
-    StoreWasAutoJumpingClientSystem(StoreWasAutoJumpingClientSystem const&)            = delete;
-    StoreWasAutoJumpingClientSystem()                                                  = delete;
+    StoreWasAutoJumpingClientSystem& operator=(StoreWasAutoJumpingClientSystem const&);
+    StoreWasAutoJumpingClientSystem(StoreWasAutoJumpingClientSystem const&);
+    StoreWasAutoJumpingClientSystem();
 
 public:
     // NOLINTBEGIN

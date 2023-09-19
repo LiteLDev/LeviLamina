@@ -9,8 +9,8 @@
 class ProducerComponent : public ::BaseCircuitComponent {
 public:
     // prevent constructor by default
-    ProducerComponent& operator=(ProducerComponent const&) = delete;
-    ProducerComponent(ProducerComponent const&)            = delete;
+    ProducerComponent& operator=(ProducerComponent const&);
+    ProducerComponent(ProducerComponent const&);
 
 public:
     // NOLINTBEGIN

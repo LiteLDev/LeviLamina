@@ -8,9 +8,9 @@
 class PackSettingsError : public ::PackError {
 public:
     // prevent constructor by default
-    PackSettingsError& operator=(PackSettingsError const&) = delete;
-    PackSettingsError(PackSettingsError const&)            = delete;
-    PackSettingsError()                                    = delete;
+    PackSettingsError& operator=(PackSettingsError const&);
+    PackSettingsError(PackSettingsError const&);
+    PackSettingsError();
 
 public:
     // NOLINTBEGIN
@@ -34,7 +34,7 @@ public:
 
     // symbol:
     // ??0PackSettingsError@@QEAA@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-    MCAPI PackSettingsError(std::vector<std::string> const&);
+    MCAPI explicit PackSettingsError(std::vector<std::string> const&);
 
     // NOLINTEND
 };

@@ -5,7 +5,7 @@
 struct ClientBlobCacheTrackingData {
 public:
     // prevent constructor by default
-    ClientBlobCacheTrackingData& operator=(ClientBlobCacheTrackingData const&) = delete;
-    ClientBlobCacheTrackingData(ClientBlobCacheTrackingData const&)            = delete;
-    ClientBlobCacheTrackingData()                                              = delete;
+    ClientBlobCacheTrackingData& operator=(ClientBlobCacheTrackingData const&);
+    ClientBlobCacheTrackingData(ClientBlobCacheTrackingData const&);
+    ClientBlobCacheTrackingData();
 };

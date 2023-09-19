@@ -5,7 +5,7 @@
 class PlayerMovementSettingsComponent {
 public:
     // prevent constructor by default
-    PlayerMovementSettingsComponent& operator=(PlayerMovementSettingsComponent const&) = delete;
-    PlayerMovementSettingsComponent(PlayerMovementSettingsComponent const&)            = delete;
-    PlayerMovementSettingsComponent()                                                  = delete;
+    PlayerMovementSettingsComponent& operator=(PlayerMovementSettingsComponent const&);
+    PlayerMovementSettingsComponent(PlayerMovementSettingsComponent const&);
+    PlayerMovementSettingsComponent();
 };

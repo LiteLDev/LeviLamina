@@ -9,9 +9,9 @@
 struct MolangEvalParams {
 public:
     // prevent constructor by default
-    MolangEvalParams& operator=(MolangEvalParams const&) = delete;
-    MolangEvalParams(MolangEvalParams const&)            = delete;
-    MolangEvalParams()                                   = delete;
+    MolangEvalParams& operator=(MolangEvalParams const&);
+    MolangEvalParams(MolangEvalParams const&);
+    MolangEvalParams();
 
 public:
     // NOLINTBEGIN

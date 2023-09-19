@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class SoulFireBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    SoulFireBlock& operator=(SoulFireBlock const&) = delete;
-    SoulFireBlock(SoulFireBlock const&)            = delete;
-    SoulFireBlock()                                = delete;
+    SoulFireBlock& operator=(SoulFireBlock const&);
+    SoulFireBlock(SoulFireBlock const&);
+    SoulFireBlock();
 
 public:
     // NOLINTBEGIN

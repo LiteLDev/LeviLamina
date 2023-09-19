@@ -33,8 +33,8 @@ public:
     struct ButtonData {
     public:
         // prevent constructor by default
-        ButtonData(ButtonData const&) = delete;
-        ButtonData()                  = delete;
+        ButtonData(ButtonData const&);
+        ButtonData();
 
     public:
         // NOLINTBEGIN
@@ -50,7 +50,7 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptActionFormData& operator=(ScriptActionFormData const&) = delete;
+    ScriptActionFormData& operator=(ScriptActionFormData const&);
 
 public:
     // NOLINTBEGIN

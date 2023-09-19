@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class ShooterDefinition {
 public:
     // prevent constructor by default
-    ShooterDefinition& operator=(ShooterDefinition const&) = delete;
-    ShooterDefinition(ShooterDefinition const&)            = delete;
-    ShooterDefinition()                                    = delete;
+    ShooterDefinition& operator=(ShooterDefinition const&);
+    ShooterDefinition(ShooterDefinition const&);
+    ShooterDefinition();
 
 public:
     // NOLINTBEGIN

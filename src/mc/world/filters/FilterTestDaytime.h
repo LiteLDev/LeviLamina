@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class FilterTestDaytime : public ::SimpleBoolFilterTest {
 public:
     // prevent constructor by default
-    FilterTestDaytime& operator=(FilterTestDaytime const&) = delete;
-    FilterTestDaytime(FilterTestDaytime const&)            = delete;
-    FilterTestDaytime()                                    = delete;
+    FilterTestDaytime& operator=(FilterTestDaytime const&);
+    FilterTestDaytime(FilterTestDaytime const&);
+    FilterTestDaytime();
 
 public:
     // NOLINTBEGIN

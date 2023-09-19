@@ -8,9 +8,9 @@
 class SayCommand : public ::MessagingCommand {
 public:
     // prevent constructor by default
-    SayCommand& operator=(SayCommand const&) = delete;
-    SayCommand(SayCommand const&)            = delete;
-    SayCommand()                             = delete;
+    SayCommand& operator=(SayCommand const&);
+    SayCommand(SayCommand const&);
+    SayCommand();
 
 public:
     // NOLINTBEGIN

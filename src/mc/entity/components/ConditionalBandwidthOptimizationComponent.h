@@ -5,9 +5,9 @@
 class ConditionalBandwidthOptimizationComponent {
 public:
     // prevent constructor by default
-    ConditionalBandwidthOptimizationComponent& operator=(ConditionalBandwidthOptimizationComponent const&) = delete;
-    ConditionalBandwidthOptimizationComponent(ConditionalBandwidthOptimizationComponent const&)            = delete;
-    ConditionalBandwidthOptimizationComponent()                                                            = delete;
+    ConditionalBandwidthOptimizationComponent& operator=(ConditionalBandwidthOptimizationComponent const&);
+    ConditionalBandwidthOptimizationComponent(ConditionalBandwidthOptimizationComponent const&);
+    ConditionalBandwidthOptimizationComponent();
 
 public:
     // NOLINTBEGIN

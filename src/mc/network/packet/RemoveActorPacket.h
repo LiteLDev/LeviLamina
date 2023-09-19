@@ -10,8 +10,8 @@
 class RemoveActorPacket : public ::Packet {
 public:
     // prevent constructor by default
-    RemoveActorPacket& operator=(RemoveActorPacket const&) = delete;
-    RemoveActorPacket(RemoveActorPacket const&)            = delete;
+    RemoveActorPacket& operator=(RemoveActorPacket const&);
+    RemoveActorPacket(RemoveActorPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -36,7 +36,7 @@ public:
     MCVAPI ~RemoveActorPacket();
 
     // symbol: ??0RemoveActorPacket@@QEAA@UActorUniqueID@@@Z
-    MCAPI RemoveActorPacket(struct ActorUniqueID);
+    MCAPI explicit RemoveActorPacket(struct ActorUniqueID);
 
     // symbol: ??0RemoveActorPacket@@QEAA@XZ
     MCAPI RemoveActorPacket();

@@ -7,9 +7,9 @@ namespace Bedrock::Http::Internal {
 class IResponseBody {
 public:
     // prevent constructor by default
-    IResponseBody& operator=(IResponseBody const&) = delete;
-    IResponseBody(IResponseBody const&)            = delete;
-    IResponseBody()                                = delete;
+    IResponseBody& operator=(IResponseBody const&);
+    IResponseBody(IResponseBody const&);
+    IResponseBody();
 };
 
 }; // namespace Bedrock::Http::Internal

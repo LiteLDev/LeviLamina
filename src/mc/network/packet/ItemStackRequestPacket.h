@@ -10,8 +10,8 @@
 class ItemStackRequestPacket : public ::Packet {
 public:
     // prevent constructor by default
-    ItemStackRequestPacket& operator=(ItemStackRequestPacket const&) = delete;
-    ItemStackRequestPacket(ItemStackRequestPacket const&)            = delete;
+    ItemStackRequestPacket& operator=(ItemStackRequestPacket const&);
+    ItemStackRequestPacket(ItemStackRequestPacket const&);
 
 public:
     // NOLINTBEGIN

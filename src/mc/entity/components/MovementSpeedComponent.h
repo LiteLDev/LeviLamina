@@ -5,7 +5,7 @@
 struct MovementSpeedComponent {
 public:
     // prevent constructor by default
-    MovementSpeedComponent& operator=(MovementSpeedComponent const&) = delete;
-    MovementSpeedComponent(MovementSpeedComponent const&)            = delete;
-    MovementSpeedComponent()                                         = delete;
+    MovementSpeedComponent& operator=(MovementSpeedComponent const&);
+    MovementSpeedComponent(MovementSpeedComponent const&);
+    MovementSpeedComponent();
 };

@@ -8,9 +8,9 @@
 class LookControlSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    LookControlSystem& operator=(LookControlSystem const&) = delete;
-    LookControlSystem(LookControlSystem const&)            = delete;
-    LookControlSystem()                                    = delete;
+    LookControlSystem& operator=(LookControlSystem const&);
+    LookControlSystem(LookControlSystem const&);
+    LookControlSystem();
 
 public:
     // NOLINTBEGIN

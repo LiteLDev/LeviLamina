@@ -8,9 +8,9 @@
 struct BlockMapColorComponent : public ::BlockComponentBase {
 public:
     // prevent constructor by default
-    BlockMapColorComponent& operator=(BlockMapColorComponent const&) = delete;
-    BlockMapColorComponent(BlockMapColorComponent const&)            = delete;
-    BlockMapColorComponent()                                         = delete;
+    BlockMapColorComponent& operator=(BlockMapColorComponent const&);
+    BlockMapColorComponent(BlockMapColorComponent const&);
+    BlockMapColorComponent();
 
 public:
     // NOLINTBEGIN

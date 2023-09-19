@@ -14,9 +14,9 @@ public:
     struct ItemTransforms {
     public:
         // prevent constructor by default
-        ItemTransforms& operator=(ItemTransforms const&) = delete;
-        ItemTransforms(ItemTransforms const&)            = delete;
-        ItemTransforms()                                 = delete;
+        ItemTransforms& operator=(ItemTransforms const&);
+        ItemTransforms(ItemTransforms const&);
+        ItemTransforms();
 
     public:
         // NOLINTBEGIN
@@ -29,9 +29,9 @@ public:
     struct TRS {
     public:
         // prevent constructor by default
-        TRS& operator=(TRS const&) = delete;
-        TRS(TRS const&)            = delete;
-        TRS()                      = delete;
+        TRS& operator=(TRS const&);
+        TRS(TRS const&);
+        TRS();
 
     public:
         // NOLINTBEGIN
@@ -43,9 +43,9 @@ public:
 
 public:
     // prevent constructor by default
-    RenderOffsetsItemComponent& operator=(RenderOffsetsItemComponent const&) = delete;
-    RenderOffsetsItemComponent(RenderOffsetsItemComponent const&)            = delete;
-    RenderOffsetsItemComponent()                                             = delete;
+    RenderOffsetsItemComponent& operator=(RenderOffsetsItemComponent const&);
+    RenderOffsetsItemComponent(RenderOffsetsItemComponent const&);
+    RenderOffsetsItemComponent();
 
 public:
     // NOLINTBEGIN

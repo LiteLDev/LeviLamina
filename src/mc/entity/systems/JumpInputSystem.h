@@ -10,9 +10,9 @@
 class JumpInputSystem {
 public:
     // prevent constructor by default
-    JumpInputSystem& operator=(JumpInputSystem const&) = delete;
-    JumpInputSystem(JumpInputSystem const&)            = delete;
-    JumpInputSystem()                                  = delete;
+    JumpInputSystem& operator=(JumpInputSystem const&);
+    JumpInputSystem(JumpInputSystem const&);
+    JumpInputSystem();
 
 public:
     // NOLINTBEGIN

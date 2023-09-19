@@ -7,9 +7,9 @@ namespace AgentComponents {
 struct ActionDetails {
 public:
     // prevent constructor by default
-    ActionDetails& operator=(ActionDetails const&) = delete;
-    ActionDetails(ActionDetails const&)            = delete;
-    ActionDetails()                                = delete;
+    ActionDetails& operator=(ActionDetails const&);
+    ActionDetails(ActionDetails const&);
+    ActionDetails();
 };
 
 }; // namespace AgentComponents

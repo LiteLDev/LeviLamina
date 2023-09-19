@@ -15,16 +15,16 @@ public:
     struct ReadResult {
     public:
         // prevent constructor by default
-        ReadResult& operator=(ReadResult const&) = delete;
-        ReadResult(ReadResult const&)            = delete;
-        ReadResult()                             = delete;
+        ReadResult& operator=(ReadResult const&);
+        ReadResult(ReadResult const&);
+        ReadResult();
     };
 
 public:
     // prevent constructor by default
-    IRequestBody& operator=(IRequestBody const&) = delete;
-    IRequestBody(IRequestBody const&)            = delete;
-    IRequestBody()                               = delete;
+    IRequestBody& operator=(IRequestBody const&);
+    IRequestBody(IRequestBody const&);
+    IRequestBody();
 
 public:
     // NOLINTBEGIN

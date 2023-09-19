@@ -5,8 +5,8 @@
 struct AttributesComponent {
 public:
     // prevent constructor by default
-    AttributesComponent& operator=(AttributesComponent const&) = delete;
-    AttributesComponent()                                      = delete;
+    AttributesComponent& operator=(AttributesComponent const&);
+    AttributesComponent();
 
 public:
     // NOLINTBEGIN

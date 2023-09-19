@@ -23,9 +23,9 @@ public:
 
 public:
     // prevent constructor by default
-    PressurePlateBlock& operator=(PressurePlateBlock const&) = delete;
-    PressurePlateBlock(PressurePlateBlock const&)            = delete;
-    PressurePlateBlock()                                     = delete;
+    PressurePlateBlock& operator=(PressurePlateBlock const&);
+    PressurePlateBlock(PressurePlateBlock const&);
+    PressurePlateBlock();
 
 public:
     // NOLINTBEGIN

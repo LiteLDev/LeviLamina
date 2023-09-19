@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct OnTargetAcquiredDefinition {
 public:
     // prevent constructor by default
-    OnTargetAcquiredDefinition& operator=(OnTargetAcquiredDefinition const&) = delete;
-    OnTargetAcquiredDefinition(OnTargetAcquiredDefinition const&)            = delete;
-    OnTargetAcquiredDefinition()                                             = delete;
+    OnTargetAcquiredDefinition& operator=(OnTargetAcquiredDefinition const&);
+    OnTargetAcquiredDefinition(OnTargetAcquiredDefinition const&);
+    OnTargetAcquiredDefinition();
 
 public:
     // NOLINTBEGIN

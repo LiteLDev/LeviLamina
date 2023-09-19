@@ -5,9 +5,9 @@
 class UpdateRenderPosSystem {
 public:
     // prevent constructor by default
-    UpdateRenderPosSystem& operator=(UpdateRenderPosSystem const&) = delete;
-    UpdateRenderPosSystem(UpdateRenderPosSystem const&)            = delete;
-    UpdateRenderPosSystem()                                        = delete;
+    UpdateRenderPosSystem& operator=(UpdateRenderPosSystem const&);
+    UpdateRenderPosSystem(UpdateRenderPosSystem const&);
+    UpdateRenderPosSystem();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 class ITreeRootWrapper {
 public:
     // prevent constructor by default
-    ITreeRootWrapper& operator=(ITreeRootWrapper const&) = delete;
-    ITreeRootWrapper(ITreeRootWrapper const&)            = delete;
-    ITreeRootWrapper()                                   = delete;
+    ITreeRootWrapper& operator=(ITreeRootWrapper const&);
+    ITreeRootWrapper(ITreeRootWrapper const&);
+    ITreeRootWrapper();
 };

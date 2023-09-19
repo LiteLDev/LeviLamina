@@ -8,9 +8,9 @@
 class EndGatewayFeature : public ::Feature {
 public:
     // prevent constructor by default
-    EndGatewayFeature& operator=(EndGatewayFeature const&) = delete;
-    EndGatewayFeature(EndGatewayFeature const&)            = delete;
-    EndGatewayFeature()                                    = delete;
+    EndGatewayFeature& operator=(EndGatewayFeature const&);
+    EndGatewayFeature(EndGatewayFeature const&);
+    EndGatewayFeature();
 
 public:
     // NOLINTBEGIN

@@ -5,8 +5,8 @@
 class IdentityDictionary {
 public:
     // prevent constructor by default
-    IdentityDictionary& operator=(IdentityDictionary const&) = delete;
-    IdentityDictionary(IdentityDictionary const&)            = delete;
+    IdentityDictionary& operator=(IdentityDictionary const&);
+    IdentityDictionary(IdentityDictionary const&);
 
 public:
     // NOLINTBEGIN

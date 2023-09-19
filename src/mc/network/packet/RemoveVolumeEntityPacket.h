@@ -10,9 +10,9 @@
 class RemoveVolumeEntityPacket : public ::RemoveEntityPacket {
 public:
     // prevent constructor by default
-    RemoveVolumeEntityPacket& operator=(RemoveVolumeEntityPacket const&) = delete;
-    RemoveVolumeEntityPacket(RemoveVolumeEntityPacket const&)            = delete;
-    RemoveVolumeEntityPacket()                                           = delete;
+    RemoveVolumeEntityPacket& operator=(RemoveVolumeEntityPacket const&);
+    RemoveVolumeEntityPacket(RemoveVolumeEntityPacket const&);
+    RemoveVolumeEntityPacket();
 
 public:
     // NOLINTBEGIN
@@ -37,7 +37,7 @@ public:
     MCVAPI ~RemoveVolumeEntityPacket();
 
     // symbol: ??0RemoveVolumeEntityPacket@@QEAA@AEAVEntityContext@@@Z
-    MCAPI RemoveVolumeEntityPacket(class EntityContext&);
+    MCAPI explicit RemoveVolumeEntityPacket(class EntityContext&);
 
     // NOLINTEND
 };

@@ -11,8 +11,8 @@
 class SetDefaultGameTypePacket : public ::Packet {
 public:
     // prevent constructor by default
-    SetDefaultGameTypePacket& operator=(SetDefaultGameTypePacket const&) = delete;
-    SetDefaultGameTypePacket(SetDefaultGameTypePacket const&)            = delete;
+    SetDefaultGameTypePacket& operator=(SetDefaultGameTypePacket const&);
+    SetDefaultGameTypePacket(SetDefaultGameTypePacket const&);
 
 public:
     // NOLINTBEGIN
@@ -37,7 +37,7 @@ public:
     MCAPI SetDefaultGameTypePacket();
 
     // symbol: ??0SetDefaultGameTypePacket@@QEAA@W4GameType@@@Z
-    MCAPI SetDefaultGameTypePacket(::GameType);
+    MCAPI explicit SetDefaultGameTypePacket(::GameType);
 
     // NOLINTEND
 };

@@ -7,7 +7,7 @@ namespace Bedrock {
 class EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    EnableNonOwnerReferences& operator=(EnableNonOwnerReferences const&) = delete;
+    EnableNonOwnerReferences& operator=(EnableNonOwnerReferences const&);
 
 public:
     // NOLINTBEGIN

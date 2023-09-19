@@ -18,9 +18,9 @@ namespace ScriptModuleMinecraft {
 class ScriptLeashableComponent {
 public:
     // prevent constructor by default
-    ScriptLeashableComponent& operator=(ScriptLeashableComponent const&) = delete;
-    ScriptLeashableComponent(ScriptLeashableComponent const&)            = delete;
-    ScriptLeashableComponent()                                           = delete;
+    ScriptLeashableComponent& operator=(ScriptLeashableComponent const&);
+    ScriptLeashableComponent(ScriptLeashableComponent const&);
+    ScriptLeashableComponent();
 
 public:
     // NOLINTBEGIN

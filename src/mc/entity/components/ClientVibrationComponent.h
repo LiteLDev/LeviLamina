@@ -5,9 +5,9 @@
 class ClientVibrationComponent {
 public:
     // prevent constructor by default
-    ClientVibrationComponent& operator=(ClientVibrationComponent const&) = delete;
-    ClientVibrationComponent(ClientVibrationComponent const&)            = delete;
-    ClientVibrationComponent()                                           = delete;
+    ClientVibrationComponent& operator=(ClientVibrationComponent const&);
+    ClientVibrationComponent(ClientVibrationComponent const&);
+    ClientVibrationComponent();
 
 public:
     // NOLINTBEGIN

@@ -11,9 +11,9 @@
 class ActorDamageByActorSource : public ::ActorDamageSource {
 public:
     // prevent constructor by default
-    ActorDamageByActorSource& operator=(ActorDamageByActorSource const&) = delete;
-    ActorDamageByActorSource(ActorDamageByActorSource const&)            = delete;
-    ActorDamageByActorSource()                                           = delete;
+    ActorDamageByActorSource& operator=(ActorDamageByActorSource const&);
+    ActorDamageByActorSource(ActorDamageByActorSource const&);
+    ActorDamageByActorSource();
 
 public:
     // NOLINTBEGIN

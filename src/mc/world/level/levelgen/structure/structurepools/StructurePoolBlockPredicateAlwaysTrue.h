@@ -8,8 +8,8 @@
 class StructurePoolBlockPredicateAlwaysTrue : public ::IStructurePoolBlockPredicate {
 public:
     // prevent constructor by default
-    StructurePoolBlockPredicateAlwaysTrue& operator=(StructurePoolBlockPredicateAlwaysTrue const&) = delete;
-    StructurePoolBlockPredicateAlwaysTrue(StructurePoolBlockPredicateAlwaysTrue const&)            = delete;
+    StructurePoolBlockPredicateAlwaysTrue& operator=(StructurePoolBlockPredicateAlwaysTrue const&);
+    StructurePoolBlockPredicateAlwaysTrue(StructurePoolBlockPredicateAlwaysTrue const&);
 
 public:
     // NOLINTBEGIN

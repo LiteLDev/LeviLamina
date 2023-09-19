@@ -5,8 +5,7 @@
 struct RecalculateControlledByLocalInstanceRequestFlag {
 public:
     // prevent constructor by default
-    RecalculateControlledByLocalInstanceRequestFlag&
-    operator=(RecalculateControlledByLocalInstanceRequestFlag const&)                                       = delete;
-    RecalculateControlledByLocalInstanceRequestFlag(RecalculateControlledByLocalInstanceRequestFlag const&) = delete;
-    RecalculateControlledByLocalInstanceRequestFlag()                                                       = delete;
+    RecalculateControlledByLocalInstanceRequestFlag& operator=(RecalculateControlledByLocalInstanceRequestFlag const&);
+    RecalculateControlledByLocalInstanceRequestFlag(RecalculateControlledByLocalInstanceRequestFlag const&);
+    RecalculateControlledByLocalInstanceRequestFlag();
 };

@@ -5,9 +5,9 @@
 class ClassID {
 public:
     // prevent constructor by default
-    ClassID& operator=(ClassID const&) = delete;
-    ClassID(ClassID const&)            = delete;
-    ClassID()                          = delete;
+    ClassID& operator=(ClassID const&);
+    ClassID(ClassID const&);
+    ClassID();
 
     // private:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class RakDataOutput : public ::BytesDataOutput {
 public:
     // prevent constructor by default
-    RakDataOutput& operator=(RakDataOutput const&) = delete;
-    RakDataOutput(RakDataOutput const&)            = delete;
-    RakDataOutput()                                = delete;
+    RakDataOutput& operator=(RakDataOutput const&);
+    RakDataOutput(RakDataOutput const&);
+    RakDataOutput();
 
 public:
     // NOLINTBEGIN

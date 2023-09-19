@@ -9,9 +9,9 @@
 class SlimeRandomDirectionGoal : public ::Goal {
 public:
     // prevent constructor by default
-    SlimeRandomDirectionGoal& operator=(SlimeRandomDirectionGoal const&) = delete;
-    SlimeRandomDirectionGoal(SlimeRandomDirectionGoal const&)            = delete;
-    SlimeRandomDirectionGoal()                                           = delete;
+    SlimeRandomDirectionGoal& operator=(SlimeRandomDirectionGoal const&);
+    SlimeRandomDirectionGoal(SlimeRandomDirectionGoal const&);
+    SlimeRandomDirectionGoal();
 
 public:
     // NOLINTBEGIN
@@ -29,7 +29,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0SlimeRandomDirectionGoal@@QEAA@AEAVMob@@@Z
-    MCAPI SlimeRandomDirectionGoal(class Mob&);
+    MCAPI explicit SlimeRandomDirectionGoal(class Mob&);
 
     // NOLINTEND
 };

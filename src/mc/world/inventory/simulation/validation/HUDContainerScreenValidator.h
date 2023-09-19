@@ -9,8 +9,8 @@
 class HUDContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // prevent constructor by default
-    HUDContainerScreenValidator& operator=(HUDContainerScreenValidator const&) = delete;
-    HUDContainerScreenValidator(HUDContainerScreenValidator const&)            = delete;
+    HUDContainerScreenValidator& operator=(HUDContainerScreenValidator const&);
+    HUDContainerScreenValidator(HUDContainerScreenValidator const&);
 
 public:
     // NOLINTBEGIN

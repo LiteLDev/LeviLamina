@@ -8,14 +8,14 @@
 struct ReplayStateConfig {
 public:
     // prevent constructor by default
-    ReplayStateConfig& operator=(ReplayStateConfig const&) = delete;
-    ReplayStateConfig(ReplayStateConfig const&)            = delete;
-    ReplayStateConfig()                                    = delete;
+    ReplayStateConfig& operator=(ReplayStateConfig const&);
+    ReplayStateConfig(ReplayStateConfig const&);
+    ReplayStateConfig();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ReplayStateConfig@@QEAA@W4ReplayStateMode@@@Z
-    MCAPI ReplayStateConfig(::ReplayStateMode);
+    MCAPI explicit ReplayStateConfig(::ReplayStateMode);
 
     // NOLINTEND
 };

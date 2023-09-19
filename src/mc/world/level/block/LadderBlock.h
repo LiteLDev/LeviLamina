@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class LadderBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    LadderBlock& operator=(LadderBlock const&) = delete;
-    LadderBlock(LadderBlock const&)            = delete;
-    LadderBlock()                              = delete;
+    LadderBlock& operator=(LadderBlock const&);
+    LadderBlock(LadderBlock const&);
+    LadderBlock();
 
 public:
     // NOLINTBEGIN

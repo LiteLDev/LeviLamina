@@ -6,7 +6,7 @@ template <typename T0>
 class StackRefResultT {
 public:
     // prevent constructor by default
-    StackRefResultT& operator=(StackRefResultT const&) = delete;
-    StackRefResultT(StackRefResultT const&)            = delete;
-    StackRefResultT()                                  = delete;
+    StackRefResultT& operator=(StackRefResultT const&);
+    StackRefResultT(StackRefResultT const&);
+    StackRefResultT();
 };

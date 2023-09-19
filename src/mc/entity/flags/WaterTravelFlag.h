@@ -5,7 +5,7 @@
 struct WaterTravelFlag {
 public:
     // prevent constructor by default
-    WaterTravelFlag& operator=(WaterTravelFlag const&) = delete;
-    WaterTravelFlag(WaterTravelFlag const&)            = delete;
-    WaterTravelFlag()                                  = delete;
+    WaterTravelFlag& operator=(WaterTravelFlag const&);
+    WaterTravelFlag(WaterTravelFlag const&);
+    WaterTravelFlag();
 };

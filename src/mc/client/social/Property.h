@@ -7,9 +7,9 @@ namespace Social::Events {
 class Property {
 public:
     // prevent constructor by default
-    Property& operator=(Property const&) = delete;
-    Property(Property const&)            = delete;
-    Property()                           = delete;
+    Property& operator=(Property const&);
+    Property(Property const&);
+    Property();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class IConstBlockSource {
 public:
     // prevent constructor by default
-    IConstBlockSource& operator=(IConstBlockSource const&) = delete;
-    IConstBlockSource(IConstBlockSource const&)            = delete;
-    IConstBlockSource()                                    = delete;
+    IConstBlockSource& operator=(IConstBlockSource const&);
+    IConstBlockSource(IConstBlockSource const&);
+    IConstBlockSource();
 
 public:
     // NOLINTBEGIN

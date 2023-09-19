@@ -25,9 +25,9 @@ public:
     struct Record {
     public:
         // prevent constructor by default
-        Record& operator=(Record const&) = delete;
-        Record(Record const&)            = delete;
-        Record()                         = delete;
+        Record& operator=(Record const&);
+        Record(Record const&);
+        Record();
     };
 
     struct RecordGroup {
@@ -42,9 +42,9 @@ public:
         struct FullStackRecord {
         public:
             // prevent constructor by default
-            FullStackRecord& operator=(FullStackRecord const&) = delete;
-            FullStackRecord(FullStackRecord const&)            = delete;
-            FullStackRecord()                                  = delete;
+            FullStackRecord& operator=(FullStackRecord const&);
+            FullStackRecord(FullStackRecord const&);
+            FullStackRecord();
 
         public:
             // NOLINTBEGIN
@@ -60,8 +60,8 @@ public:
         struct Record {
         public:
             // prevent constructor by default
-            Record& operator=(Record const&) = delete;
-            Record()                         = delete;
+            Record& operator=(Record const&);
+            Record();
 
         public:
             // NOLINTBEGIN
@@ -79,9 +79,9 @@ public:
 
     public:
         // prevent constructor by default
-        RecordGroup& operator=(RecordGroup const&) = delete;
-        RecordGroup(RecordGroup const&)            = delete;
-        RecordGroup()                              = delete;
+        RecordGroup& operator=(RecordGroup const&);
+        RecordGroup(RecordGroup const&);
+        RecordGroup();
 
     public:
         // NOLINTBEGIN
@@ -103,17 +103,17 @@ public:
     class Timer {
     public:
         // prevent constructor by default
-        Timer& operator=(Timer const&) = delete;
-        Timer(Timer const&)            = delete;
-        Timer()                        = delete;
+        Timer& operator=(Timer const&);
+        Timer(Timer const&);
+        Timer();
     };
 
     class ManualTimer : public ::ImguiProfiler::Timer {
     public:
         // prevent constructor by default
-        ManualTimer& operator=(ManualTimer const&) = delete;
-        ManualTimer(ManualTimer const&)            = delete;
-        ManualTimer()                              = delete;
+        ManualTimer& operator=(ManualTimer const&);
+        ManualTimer(ManualTimer const&);
+        ManualTimer();
 
     public:
         // NOLINTBEGIN
@@ -129,9 +129,9 @@ public:
     class ScopedTimer : public ::ImguiProfiler::Timer {
     public:
         // prevent constructor by default
-        ScopedTimer& operator=(ScopedTimer const&) = delete;
-        ScopedTimer(ScopedTimer const&)            = delete;
-        ScopedTimer()                              = delete;
+        ScopedTimer& operator=(ScopedTimer const&);
+        ScopedTimer(ScopedTimer const&);
+        ScopedTimer();
 
     public:
         // NOLINTBEGIN
@@ -146,9 +146,9 @@ public:
 
 public:
     // prevent constructor by default
-    ImguiProfiler& operator=(ImguiProfiler const&) = delete;
-    ImguiProfiler(ImguiProfiler const&)            = delete;
-    ImguiProfiler()                                = delete;
+    ImguiProfiler& operator=(ImguiProfiler const&);
+    ImguiProfiler(ImguiProfiler const&);
+    ImguiProfiler();
 
 public:
     // NOLINTBEGIN

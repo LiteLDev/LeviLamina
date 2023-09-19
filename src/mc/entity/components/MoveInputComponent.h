@@ -5,9 +5,9 @@
 struct MoveInputComponent {
 public:
     // prevent constructor by default
-    MoveInputComponent& operator=(MoveInputComponent const&) = delete;
-    MoveInputComponent(MoveInputComponent const&)            = delete;
-    MoveInputComponent()                                     = delete;
+    MoveInputComponent& operator=(MoveInputComponent const&);
+    MoveInputComponent(MoveInputComponent const&);
+    MoveInputComponent();
 
 public:
     // NOLINTBEGIN

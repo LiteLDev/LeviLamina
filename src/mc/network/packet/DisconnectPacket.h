@@ -10,8 +10,8 @@
 class DisconnectPacket : public ::Packet {
 public:
     // prevent constructor by default
-    DisconnectPacket& operator=(DisconnectPacket const&) = delete;
-    DisconnectPacket(DisconnectPacket const&)            = delete;
+    DisconnectPacket& operator=(DisconnectPacket const&);
+    DisconnectPacket(DisconnectPacket const&);
 
 public:
     // NOLINTBEGIN

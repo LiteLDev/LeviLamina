@@ -5,7 +5,7 @@
 struct MoveTowardsClosestSpaceFlag {
 public:
     // prevent constructor by default
-    MoveTowardsClosestSpaceFlag& operator=(MoveTowardsClosestSpaceFlag const&) = delete;
-    MoveTowardsClosestSpaceFlag(MoveTowardsClosestSpaceFlag const&)            = delete;
-    MoveTowardsClosestSpaceFlag()                                              = delete;
+    MoveTowardsClosestSpaceFlag& operator=(MoveTowardsClosestSpaceFlag const&);
+    MoveTowardsClosestSpaceFlag(MoveTowardsClosestSpaceFlag const&);
+    MoveTowardsClosestSpaceFlag();
 };

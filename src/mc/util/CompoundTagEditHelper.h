@@ -5,9 +5,9 @@
 class CompoundTagEditHelper {
 public:
     // prevent constructor by default
-    CompoundTagEditHelper& operator=(CompoundTagEditHelper const&) = delete;
-    CompoundTagEditHelper(CompoundTagEditHelper const&)            = delete;
-    CompoundTagEditHelper()                                        = delete;
+    CompoundTagEditHelper& operator=(CompoundTagEditHelper const&);
+    CompoundTagEditHelper(CompoundTagEditHelper const&);
+    CompoundTagEditHelper();
 
 public:
     // NOLINTBEGIN

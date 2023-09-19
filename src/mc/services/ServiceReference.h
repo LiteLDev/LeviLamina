@@ -6,7 +6,7 @@ template <typename T0>
 class ServiceReference {
 public:
     // prevent constructor by default
-    ServiceReference& operator=(ServiceReference const&) = delete;
-    ServiceReference(ServiceReference const&)            = delete;
-    ServiceReference()                                   = delete;
+    ServiceReference& operator=(ServiceReference const&);
+    ServiceReference(ServiceReference const&);
+    ServiceReference();
 };

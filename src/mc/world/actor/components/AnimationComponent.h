@@ -9,9 +9,9 @@
 class AnimationComponent {
 public:
     // prevent constructor by default
-    AnimationComponent& operator=(AnimationComponent const&) = delete;
-    AnimationComponent(AnimationComponent const&)            = delete;
-    AnimationComponent()                                     = delete;
+    AnimationComponent& operator=(AnimationComponent const&);
+    AnimationComponent(AnimationComponent const&);
+    AnimationComponent();
 
 public:
     // NOLINTBEGIN

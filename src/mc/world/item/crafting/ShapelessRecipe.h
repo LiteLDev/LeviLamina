@@ -13,9 +13,9 @@ namespace mce { class UUID; }
 class ShapelessRecipe : public ::Recipe {
 public:
     // prevent constructor by default
-    ShapelessRecipe& operator=(ShapelessRecipe const&) = delete;
-    ShapelessRecipe(ShapelessRecipe const&)            = delete;
-    ShapelessRecipe()                                  = delete;
+    ShapelessRecipe& operator=(ShapelessRecipe const&);
+    ShapelessRecipe(ShapelessRecipe const&);
+    ShapelessRecipe();
 
 public:
     // NOLINTBEGIN

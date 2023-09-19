@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class CameraBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    CameraBlock& operator=(CameraBlock const&) = delete;
-    CameraBlock(CameraBlock const&)            = delete;
-    CameraBlock()                              = delete;
+    CameraBlock& operator=(CameraBlock const&);
+    CameraBlock(CameraBlock const&);
+    CameraBlock();
 
 public:
     // NOLINTBEGIN

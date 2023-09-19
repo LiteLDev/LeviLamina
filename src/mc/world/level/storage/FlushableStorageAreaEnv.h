@@ -8,9 +8,9 @@
 class FlushableStorageAreaEnv : public ::FlushableEnv {
 public:
     // prevent constructor by default
-    FlushableStorageAreaEnv& operator=(FlushableStorageAreaEnv const&) = delete;
-    FlushableStorageAreaEnv(FlushableStorageAreaEnv const&)            = delete;
-    FlushableStorageAreaEnv()                                          = delete;
+    FlushableStorageAreaEnv& operator=(FlushableStorageAreaEnv const&);
+    FlushableStorageAreaEnv(FlushableStorageAreaEnv const&);
+    FlushableStorageAreaEnv();
 
 public:
     // NOLINTBEGIN

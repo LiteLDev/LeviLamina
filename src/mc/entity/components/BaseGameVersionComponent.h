@@ -5,7 +5,7 @@
 struct BaseGameVersionComponent {
 public:
     // prevent constructor by default
-    BaseGameVersionComponent& operator=(BaseGameVersionComponent const&) = delete;
-    BaseGameVersionComponent(BaseGameVersionComponent const&)            = delete;
-    BaseGameVersionComponent()                                           = delete;
+    BaseGameVersionComponent& operator=(BaseGameVersionComponent const&);
+    BaseGameVersionComponent(BaseGameVersionComponent const&);
+    BaseGameVersionComponent();
 };

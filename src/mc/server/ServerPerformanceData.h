@@ -5,7 +5,7 @@
 struct ServerPerformanceData {
 public:
     // prevent constructor by default
-    ServerPerformanceData& operator=(ServerPerformanceData const&) = delete;
-    ServerPerformanceData(ServerPerformanceData const&)            = delete;
-    ServerPerformanceData()                                        = delete;
+    ServerPerformanceData& operator=(ServerPerformanceData const&);
+    ServerPerformanceData(ServerPerformanceData const&);
+    ServerPerformanceData();
 };

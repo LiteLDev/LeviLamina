@@ -9,9 +9,9 @@
 class SendEventGoal : public ::Goal {
 public:
     // prevent constructor by default
-    SendEventGoal& operator=(SendEventGoal const&) = delete;
-    SendEventGoal(SendEventGoal const&)            = delete;
-    SendEventGoal()                                = delete;
+    SendEventGoal& operator=(SendEventGoal const&);
+    SendEventGoal(SendEventGoal const&);
+    SendEventGoal();
 
 public:
     // NOLINTBEGIN

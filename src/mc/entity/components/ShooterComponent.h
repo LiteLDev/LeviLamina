@@ -5,9 +5,9 @@
 class ShooterComponent {
 public:
     // prevent constructor by default
-    ShooterComponent& operator=(ShooterComponent const&) = delete;
-    ShooterComponent(ShooterComponent const&)            = delete;
-    ShooterComponent()                                   = delete;
+    ShooterComponent& operator=(ShooterComponent const&);
+    ShooterComponent(ShooterComponent const&);
+    ShooterComponent();
 
 public:
     // NOLINTBEGIN

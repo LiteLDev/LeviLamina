@@ -5,8 +5,8 @@
 struct DrinkPotionData {
 public:
     // prevent constructor by default
-    DrinkPotionData(DrinkPotionData const&) = delete;
-    DrinkPotionData()                       = delete;
+    DrinkPotionData(DrinkPotionData const&);
+    DrinkPotionData();
 
 public:
     // NOLINTBEGIN

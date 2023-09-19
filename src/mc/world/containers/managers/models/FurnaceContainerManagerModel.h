@@ -11,9 +11,9 @@
 class FurnaceContainerManagerModel : public ::ContainerManagerModel {
 public:
     // prevent constructor by default
-    FurnaceContainerManagerModel& operator=(FurnaceContainerManagerModel const&) = delete;
-    FurnaceContainerManagerModel(FurnaceContainerManagerModel const&)            = delete;
-    FurnaceContainerManagerModel()                                               = delete;
+    FurnaceContainerManagerModel& operator=(FurnaceContainerManagerModel const&);
+    FurnaceContainerManagerModel(FurnaceContainerManagerModel const&);
+    FurnaceContainerManagerModel();
 
 public:
     // NOLINTBEGIN

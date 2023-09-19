@@ -5,7 +5,7 @@
 class TempEPtrBase {
 public:
     // prevent constructor by default
-    TempEPtrBase() = delete;
+    TempEPtrBase();
 
 public:
     // NOLINTBEGIN

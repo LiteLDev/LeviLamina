@@ -5,7 +5,7 @@
 struct ActorLocalPlayerEntityMovedFlag {
 public:
     // prevent constructor by default
-    ActorLocalPlayerEntityMovedFlag& operator=(ActorLocalPlayerEntityMovedFlag const&) = delete;
-    ActorLocalPlayerEntityMovedFlag(ActorLocalPlayerEntityMovedFlag const&)            = delete;
-    ActorLocalPlayerEntityMovedFlag()                                                  = delete;
+    ActorLocalPlayerEntityMovedFlag& operator=(ActorLocalPlayerEntityMovedFlag const&);
+    ActorLocalPlayerEntityMovedFlag(ActorLocalPlayerEntityMovedFlag const&);
+    ActorLocalPlayerEntityMovedFlag();
 };

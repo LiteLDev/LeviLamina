@@ -8,9 +8,9 @@
 class NetherSpringFeature : public ::Feature {
 public:
     // prevent constructor by default
-    NetherSpringFeature& operator=(NetherSpringFeature const&) = delete;
-    NetherSpringFeature(NetherSpringFeature const&)            = delete;
-    NetherSpringFeature()                                      = delete;
+    NetherSpringFeature& operator=(NetherSpringFeature const&);
+    NetherSpringFeature(NetherSpringFeature const&);
+    NetherSpringFeature();
 
 public:
     // NOLINTBEGIN

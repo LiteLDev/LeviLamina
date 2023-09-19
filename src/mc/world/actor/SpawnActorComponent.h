@@ -5,9 +5,9 @@
 class SpawnActorComponent {
 public:
     // prevent constructor by default
-    SpawnActorComponent& operator=(SpawnActorComponent const&) = delete;
-    SpawnActorComponent(SpawnActorComponent const&)            = delete;
-    SpawnActorComponent()                                      = delete;
+    SpawnActorComponent& operator=(SpawnActorComponent const&);
+    SpawnActorComponent(SpawnActorComponent const&);
+    SpawnActorComponent();
 
 public:
     // NOLINTBEGIN

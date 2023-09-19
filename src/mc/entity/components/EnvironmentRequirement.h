@@ -5,9 +5,9 @@
 struct EnvironmentRequirement {
 public:
     // prevent constructor by default
-    EnvironmentRequirement& operator=(EnvironmentRequirement const&) = delete;
-    EnvironmentRequirement(EnvironmentRequirement const&)            = delete;
-    EnvironmentRequirement()                                         = delete;
+    EnvironmentRequirement& operator=(EnvironmentRequirement const&);
+    EnvironmentRequirement(EnvironmentRequirement const&);
+    EnvironmentRequirement();
 
 public:
     // NOLINTBEGIN

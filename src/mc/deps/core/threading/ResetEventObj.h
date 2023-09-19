@@ -5,9 +5,9 @@
 class ResetEventObj {
 public:
     // prevent constructor by default
-    ResetEventObj& operator=(ResetEventObj const&) = delete;
-    ResetEventObj(ResetEventObj const&)            = delete;
-    ResetEventObj()                                = delete;
+    ResetEventObj& operator=(ResetEventObj const&);
+    ResetEventObj(ResetEventObj const&);
+    ResetEventObj();
 
 public:
     // NOLINTBEGIN

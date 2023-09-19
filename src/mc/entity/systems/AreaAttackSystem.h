@@ -8,9 +8,9 @@
 class AreaAttackSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    AreaAttackSystem& operator=(AreaAttackSystem const&) = delete;
-    AreaAttackSystem(AreaAttackSystem const&)            = delete;
-    AreaAttackSystem()                                   = delete;
+    AreaAttackSystem& operator=(AreaAttackSystem const&);
+    AreaAttackSystem(AreaAttackSystem const&);
+    AreaAttackSystem();
 
 public:
     // NOLINTBEGIN

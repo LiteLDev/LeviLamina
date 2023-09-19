@@ -9,9 +9,9 @@
 class SHStraight : public ::StrongholdPiece {
 public:
     // prevent constructor by default
-    SHStraight& operator=(SHStraight const&) = delete;
-    SHStraight(SHStraight const&)            = delete;
-    SHStraight()                             = delete;
+    SHStraight& operator=(SHStraight const&);
+    SHStraight(SHStraight const&);
+    SHStraight();
 
 public:
     // NOLINTBEGIN

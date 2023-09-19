@@ -8,9 +8,9 @@
 class EntityRegistry {
 public:
     // prevent constructor by default
-    EntityRegistry& operator=(EntityRegistry const&) = delete;
-    EntityRegistry(EntityRegistry const&)            = delete;
-    EntityRegistry()                                 = delete;
+    EntityRegistry& operator=(EntityRegistry const&);
+    EntityRegistry(EntityRegistry const&);
+    EntityRegistry();
 
 public:
     // NOLINTBEGIN
@@ -25,7 +25,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ??0EntityRegistry@@IEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI EntityRegistry(std::string);
+    MCAPI explicit EntityRegistry(std::string);
 
     // NOLINTEND
 

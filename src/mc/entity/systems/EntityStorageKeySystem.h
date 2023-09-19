@@ -5,9 +5,9 @@
 class EntityStorageKeySystem {
 public:
     // prevent constructor by default
-    EntityStorageKeySystem& operator=(EntityStorageKeySystem const&) = delete;
-    EntityStorageKeySystem(EntityStorageKeySystem const&)            = delete;
-    EntityStorageKeySystem()                                         = delete;
+    EntityStorageKeySystem& operator=(EntityStorageKeySystem const&);
+    EntityStorageKeySystem(EntityStorageKeySystem const&);
+    EntityStorageKeySystem();
 
 public:
     // NOLINTBEGIN

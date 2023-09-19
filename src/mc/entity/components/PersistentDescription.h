@@ -8,9 +8,9 @@
 class PersistentDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    PersistentDescription& operator=(PersistentDescription const&) = delete;
-    PersistentDescription(PersistentDescription const&)            = delete;
-    PersistentDescription()                                        = delete;
+    PersistentDescription& operator=(PersistentDescription const&);
+    PersistentDescription(PersistentDescription const&);
+    PersistentDescription();
 
 public:
     // NOLINTBEGIN

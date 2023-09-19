@@ -8,9 +8,9 @@
 class KickCommand : public ::ServerCommand {
 public:
     // prevent constructor by default
-    KickCommand& operator=(KickCommand const&) = delete;
-    KickCommand(KickCommand const&)            = delete;
-    KickCommand()                              = delete;
+    KickCommand& operator=(KickCommand const&);
+    KickCommand(KickCommand const&);
+    KickCommand();
 
 public:
     // NOLINTBEGIN

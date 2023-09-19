@@ -18,9 +18,9 @@ namespace Scripting { class WeakLifetimeScope; }
 class ScriptScriptingEventHandler {
 public:
     // prevent constructor by default
-    ScriptScriptingEventHandler& operator=(ScriptScriptingEventHandler const&) = delete;
-    ScriptScriptingEventHandler(ScriptScriptingEventHandler const&)            = delete;
-    ScriptScriptingEventHandler()                                              = delete;
+    ScriptScriptingEventHandler& operator=(ScriptScriptingEventHandler const&);
+    ScriptScriptingEventHandler(ScriptScriptingEventHandler const&);
+    ScriptScriptingEventHandler();
 
 public:
     // NOLINTBEGIN

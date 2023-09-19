@@ -10,14 +10,14 @@ namespace Json { class Value; }
 class CommandPropertyBag {
 public:
     // prevent constructor by default
-    CommandPropertyBag& operator=(CommandPropertyBag const&) = delete;
-    CommandPropertyBag(CommandPropertyBag const&)            = delete;
-    CommandPropertyBag()                                     = delete;
+    CommandPropertyBag& operator=(CommandPropertyBag const&);
+    CommandPropertyBag(CommandPropertyBag const&);
+    CommandPropertyBag();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0CommandPropertyBag@@QEAA@AEBVValue@Json@@@Z
-    MCAPI CommandPropertyBag(class Json::Value const&);
+    MCAPI explicit CommandPropertyBag(class Json::Value const&);
 
     // symbol:
     // ?addToResultList@CommandPropertyBag@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z

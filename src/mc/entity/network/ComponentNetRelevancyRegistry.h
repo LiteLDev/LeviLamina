@@ -13,9 +13,9 @@ public:
     struct NetSerializationCallbacks {
     public:
         // prevent constructor by default
-        NetSerializationCallbacks& operator=(NetSerializationCallbacks const&) = delete;
-        NetSerializationCallbacks(NetSerializationCallbacks const&)            = delete;
-        NetSerializationCallbacks()                                            = delete;
+        NetSerializationCallbacks& operator=(NetSerializationCallbacks const&);
+        NetSerializationCallbacks(NetSerializationCallbacks const&);
+        NetSerializationCallbacks();
 
     public:
         // NOLINTBEGIN
@@ -33,9 +33,9 @@ public:
 
 public:
     // prevent constructor by default
-    ComponentNetRelevancyRegistry& operator=(ComponentNetRelevancyRegistry const&) = delete;
-    ComponentNetRelevancyRegistry(ComponentNetRelevancyRegistry const&)            = delete;
-    ComponentNetRelevancyRegistry()                                                = delete;
+    ComponentNetRelevancyRegistry& operator=(ComponentNetRelevancyRegistry const&);
+    ComponentNetRelevancyRegistry(ComponentNetRelevancyRegistry const&);
+    ComponentNetRelevancyRegistry();
 
 public:
     // NOLINTBEGIN

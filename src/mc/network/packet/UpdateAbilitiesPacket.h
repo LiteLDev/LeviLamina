@@ -10,8 +10,8 @@
 class UpdateAbilitiesPacket : public ::Packet {
 public:
     // prevent constructor by default
-    UpdateAbilitiesPacket& operator=(UpdateAbilitiesPacket const&) = delete;
-    UpdateAbilitiesPacket(UpdateAbilitiesPacket const&)            = delete;
+    UpdateAbilitiesPacket& operator=(UpdateAbilitiesPacket const&);
+    UpdateAbilitiesPacket(UpdateAbilitiesPacket const&);
 
 public:
     // NOLINTBEGIN

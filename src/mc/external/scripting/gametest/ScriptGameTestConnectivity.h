@@ -7,8 +7,8 @@ namespace ScriptModuleGameTest {
 class ScriptGameTestConnectivity {
 public:
     // prevent constructor by default
-    ScriptGameTestConnectivity& operator=(ScriptGameTestConnectivity const&) = delete;
-    ScriptGameTestConnectivity()                                             = delete;
+    ScriptGameTestConnectivity& operator=(ScriptGameTestConnectivity const&);
+    ScriptGameTestConnectivity();
 
 public:
     // NOLINTBEGIN

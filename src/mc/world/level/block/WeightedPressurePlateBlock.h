@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class WeightedPressurePlateBlock : public ::BasePressurePlateBlock {
 public:
     // prevent constructor by default
-    WeightedPressurePlateBlock& operator=(WeightedPressurePlateBlock const&) = delete;
-    WeightedPressurePlateBlock(WeightedPressurePlateBlock const&)            = delete;
-    WeightedPressurePlateBlock()                                             = delete;
+    WeightedPressurePlateBlock& operator=(WeightedPressurePlateBlock const&);
+    WeightedPressurePlateBlock(WeightedPressurePlateBlock const&);
+    WeightedPressurePlateBlock();
 
 public:
     // NOLINTBEGIN

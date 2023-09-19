@@ -8,9 +8,9 @@
 class DanceComponentListener {
 public:
     // prevent constructor by default
-    DanceComponentListener& operator=(DanceComponentListener const&) = delete;
-    DanceComponentListener(DanceComponentListener const&)            = delete;
-    DanceComponentListener()                                         = delete;
+    DanceComponentListener& operator=(DanceComponentListener const&);
+    DanceComponentListener(DanceComponentListener const&);
+    DanceComponentListener();
 
 public:
     // NOLINTBEGIN

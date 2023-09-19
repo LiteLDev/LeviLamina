@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class BlastFurnaceBlock : public ::FurnaceBlock {
 public:
     // prevent constructor by default
-    BlastFurnaceBlock& operator=(BlastFurnaceBlock const&) = delete;
-    BlastFurnaceBlock(BlastFurnaceBlock const&)            = delete;
-    BlastFurnaceBlock()                                    = delete;
+    BlastFurnaceBlock& operator=(BlastFurnaceBlock const&);
+    BlastFurnaceBlock(BlastFurnaceBlock const&);
+    BlastFurnaceBlock();
 
 public:
     // NOLINTBEGIN

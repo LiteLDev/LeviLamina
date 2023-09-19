@@ -5,9 +5,9 @@
 class CommandArea {
 public:
     // prevent constructor by default
-    CommandArea& operator=(CommandArea const&) = delete;
-    CommandArea(CommandArea const&)            = delete;
-    CommandArea()                              = delete;
+    CommandArea& operator=(CommandArea const&);
+    CommandArea(CommandArea const&);
+    CommandArea();
 
 public:
     // NOLINTBEGIN

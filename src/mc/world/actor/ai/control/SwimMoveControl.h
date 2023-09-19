@@ -8,8 +8,8 @@
 class SwimMoveControl : public ::MoveControl {
 public:
     // prevent constructor by default
-    SwimMoveControl& operator=(SwimMoveControl const&) = delete;
-    SwimMoveControl(SwimMoveControl const&)            = delete;
+    SwimMoveControl& operator=(SwimMoveControl const&);
+    SwimMoveControl(SwimMoveControl const&);
 
 public:
     // NOLINTBEGIN

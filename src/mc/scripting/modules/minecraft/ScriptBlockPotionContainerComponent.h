@@ -18,9 +18,9 @@ namespace ScriptModuleMinecraft {
 class ScriptBlockPotionContainerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent {
 public:
     // prevent constructor by default
-    ScriptBlockPotionContainerComponent& operator=(ScriptBlockPotionContainerComponent const&) = delete;
-    ScriptBlockPotionContainerComponent(ScriptBlockPotionContainerComponent const&)            = delete;
-    ScriptBlockPotionContainerComponent()                                                      = delete;
+    ScriptBlockPotionContainerComponent& operator=(ScriptBlockPotionContainerComponent const&);
+    ScriptBlockPotionContainerComponent(ScriptBlockPotionContainerComponent const&);
+    ScriptBlockPotionContainerComponent();
 
 public:
     // NOLINTBEGIN

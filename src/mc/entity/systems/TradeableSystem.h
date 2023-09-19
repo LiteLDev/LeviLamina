@@ -8,9 +8,9 @@
 class TradeableSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    TradeableSystem& operator=(TradeableSystem const&) = delete;
-    TradeableSystem(TradeableSystem const&)            = delete;
-    TradeableSystem()                                  = delete;
+    TradeableSystem& operator=(TradeableSystem const&);
+    TradeableSystem(TradeableSystem const&);
+    TradeableSystem();
 
 public:
     // NOLINTBEGIN

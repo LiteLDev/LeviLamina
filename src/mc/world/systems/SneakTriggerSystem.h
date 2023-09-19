@@ -13,16 +13,16 @@ public:
     struct PlayerPoseTransitions {
     public:
         // prevent constructor by default
-        PlayerPoseTransitions& operator=(PlayerPoseTransitions const&) = delete;
-        PlayerPoseTransitions(PlayerPoseTransitions const&)            = delete;
-        PlayerPoseTransitions()                                        = delete;
+        PlayerPoseTransitions& operator=(PlayerPoseTransitions const&);
+        PlayerPoseTransitions(PlayerPoseTransitions const&);
+        PlayerPoseTransitions();
     };
 
 public:
     // prevent constructor by default
-    SneakTriggerSystem& operator=(SneakTriggerSystem const&) = delete;
-    SneakTriggerSystem(SneakTriggerSystem const&)            = delete;
-    SneakTriggerSystem()                                     = delete;
+    SneakTriggerSystem& operator=(SneakTriggerSystem const&);
+    SneakTriggerSystem(SneakTriggerSystem const&);
+    SneakTriggerSystem();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 struct GlidingCollisionDamageComponent {
 public:
     // prevent constructor by default
-    GlidingCollisionDamageComponent& operator=(GlidingCollisionDamageComponent const&) = delete;
-    GlidingCollisionDamageComponent(GlidingCollisionDamageComponent const&)            = delete;
-    GlidingCollisionDamageComponent()                                                  = delete;
+    GlidingCollisionDamageComponent& operator=(GlidingCollisionDamageComponent const&);
+    GlidingCollisionDamageComponent(GlidingCollisionDamageComponent const&);
+    GlidingCollisionDamageComponent();
 };

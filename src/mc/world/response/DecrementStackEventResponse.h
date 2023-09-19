@@ -15,9 +15,9 @@ namespace JsonUtil { class EmptyClass; }
 class DecrementStackEventResponse : public ::EventResponse {
 public:
     // prevent constructor by default
-    DecrementStackEventResponse& operator=(DecrementStackEventResponse const&) = delete;
-    DecrementStackEventResponse(DecrementStackEventResponse const&)            = delete;
-    DecrementStackEventResponse()                                              = delete;
+    DecrementStackEventResponse& operator=(DecrementStackEventResponse const&);
+    DecrementStackEventResponse(DecrementStackEventResponse const&);
+    DecrementStackEventResponse();
 
 public:
     // NOLINTBEGIN

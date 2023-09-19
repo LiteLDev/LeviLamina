@@ -8,9 +8,9 @@ template <typename T0, typename T1>
 struct ConcurrentQueue {
 public:
     // prevent constructor by default
-    ConcurrentQueue& operator=(ConcurrentQueue const&) = delete;
-    ConcurrentQueue(ConcurrentQueue const&)            = delete;
-    ConcurrentQueue()                                  = delete;
+    ConcurrentQueue& operator=(ConcurrentQueue const&);
+    ConcurrentQueue(ConcurrentQueue const&);
+    ConcurrentQueue();
 };
 
 }; // namespace moodycamel

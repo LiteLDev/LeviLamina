@@ -5,9 +5,9 @@
 class MobResetPassengerYRotLimitSystem {
 public:
     // prevent constructor by default
-    MobResetPassengerYRotLimitSystem& operator=(MobResetPassengerYRotLimitSystem const&) = delete;
-    MobResetPassengerYRotLimitSystem(MobResetPassengerYRotLimitSystem const&)            = delete;
-    MobResetPassengerYRotLimitSystem()                                                   = delete;
+    MobResetPassengerYRotLimitSystem& operator=(MobResetPassengerYRotLimitSystem const&);
+    MobResetPassengerYRotLimitSystem(MobResetPassengerYRotLimitSystem const&);
+    MobResetPassengerYRotLimitSystem();
 
 public:
     // NOLINTBEGIN

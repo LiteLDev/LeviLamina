@@ -9,8 +9,8 @@
 class LookAtBlockNode : public ::BehaviorNode {
 public:
     // prevent constructor by default
-    LookAtBlockNode& operator=(LookAtBlockNode const&) = delete;
-    LookAtBlockNode(LookAtBlockNode const&)            = delete;
+    LookAtBlockNode& operator=(LookAtBlockNode const&);
+    LookAtBlockNode(LookAtBlockNode const&);
 
 public:
     // NOLINTBEGIN

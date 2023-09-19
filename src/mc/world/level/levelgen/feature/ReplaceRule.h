@@ -5,9 +5,9 @@
 struct ReplaceRule {
 public:
     // prevent constructor by default
-    ReplaceRule& operator=(ReplaceRule const&) = delete;
-    ReplaceRule(ReplaceRule const&)            = delete;
-    ReplaceRule()                              = delete;
+    ReplaceRule& operator=(ReplaceRule const&);
+    ReplaceRule(ReplaceRule const&);
+    ReplaceRule();
 
 public:
     // NOLINTBEGIN

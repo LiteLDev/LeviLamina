@@ -9,9 +9,9 @@
 class RestrictSunGoal : public ::Goal {
 public:
     // prevent constructor by default
-    RestrictSunGoal& operator=(RestrictSunGoal const&) = delete;
-    RestrictSunGoal(RestrictSunGoal const&)            = delete;
-    RestrictSunGoal()                                  = delete;
+    RestrictSunGoal& operator=(RestrictSunGoal const&);
+    RestrictSunGoal(RestrictSunGoal const&);
+    RestrictSunGoal();
 
 public:
     // NOLINTBEGIN
@@ -32,7 +32,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0RestrictSunGoal@@QEAA@AEAVMob@@@Z
-    MCAPI RestrictSunGoal(class Mob&);
+    MCAPI explicit RestrictSunGoal(class Mob&);
 
     // NOLINTEND
 };

@@ -8,9 +8,9 @@
 struct ActorMapping {
 public:
     // prevent constructor by default
-    ActorMapping& operator=(ActorMapping const&) = delete;
-    ActorMapping(ActorMapping const&)            = delete;
-    ActorMapping()                               = delete;
+    ActorMapping& operator=(ActorMapping const&);
+    ActorMapping(ActorMapping const&);
+    ActorMapping();
 
 public:
     // NOLINTBEGIN

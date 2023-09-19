@@ -5,9 +5,9 @@
 struct MovementInterpolatorComponent {
 public:
     // prevent constructor by default
-    MovementInterpolatorComponent& operator=(MovementInterpolatorComponent const&) = delete;
-    MovementInterpolatorComponent(MovementInterpolatorComponent const&)            = delete;
-    MovementInterpolatorComponent()                                                = delete;
+    MovementInterpolatorComponent& operator=(MovementInterpolatorComponent const&);
+    MovementInterpolatorComponent(MovementInterpolatorComponent const&);
+    MovementInterpolatorComponent();
 
 public:
     // NOLINTBEGIN

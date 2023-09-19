@@ -5,8 +5,8 @@
 class RailMovementComponent {
 public:
     // prevent constructor by default
-    RailMovementComponent& operator=(RailMovementComponent const&) = delete;
-    RailMovementComponent(RailMovementComponent const&)            = delete;
+    RailMovementComponent& operator=(RailMovementComponent const&);
+    RailMovementComponent(RailMovementComponent const&);
 
 public:
     // NOLINTBEGIN

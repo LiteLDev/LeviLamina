@@ -9,9 +9,9 @@
 class SitGoal : public ::Goal {
 public:
     // prevent constructor by default
-    SitGoal& operator=(SitGoal const&) = delete;
-    SitGoal(SitGoal const&)            = delete;
-    SitGoal()                          = delete;
+    SitGoal& operator=(SitGoal const&);
+    SitGoal(SitGoal const&);
+    SitGoal();
 
 public:
     // NOLINTBEGIN
@@ -32,7 +32,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0SitGoal@@QEAA@AEAVMob@@@Z
-    MCAPI SitGoal(class Mob&);
+    MCAPI explicit SitGoal(class Mob&);
 
     // NOLINTEND
 };

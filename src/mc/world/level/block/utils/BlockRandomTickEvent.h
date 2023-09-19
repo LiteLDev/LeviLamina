@@ -5,9 +5,9 @@
 struct BlockRandomTickEvent {
 public:
     // prevent constructor by default
-    BlockRandomTickEvent& operator=(BlockRandomTickEvent const&) = delete;
-    BlockRandomTickEvent(BlockRandomTickEvent const&)            = delete;
-    BlockRandomTickEvent()                                       = delete;
+    BlockRandomTickEvent& operator=(BlockRandomTickEvent const&);
+    BlockRandomTickEvent(BlockRandomTickEvent const&);
+    BlockRandomTickEvent();
 
 public:
     // NOLINTBEGIN

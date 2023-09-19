@@ -17,9 +17,9 @@ namespace ScriptModuleMinecraft {
 class ScriptActorFactory {
 public:
     // prevent constructor by default
-    ScriptActorFactory& operator=(ScriptActorFactory const&) = delete;
-    ScriptActorFactory(ScriptActorFactory const&)            = delete;
-    ScriptActorFactory()                                     = delete;
+    ScriptActorFactory& operator=(ScriptActorFactory const&);
+    ScriptActorFactory(ScriptActorFactory const&);
+    ScriptActorFactory();
 
 public:
     // NOLINTBEGIN

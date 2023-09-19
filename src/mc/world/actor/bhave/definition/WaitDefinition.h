@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class WaitDefinition : public ::BehaviorDefinition {
 public:
     // prevent constructor by default
-    WaitDefinition& operator=(WaitDefinition const&) = delete;
-    WaitDefinition(WaitDefinition const&)            = delete;
-    WaitDefinition()                                 = delete;
+    WaitDefinition& operator=(WaitDefinition const&);
+    WaitDefinition(WaitDefinition const&);
+    WaitDefinition();
 
 public:
     // NOLINTBEGIN

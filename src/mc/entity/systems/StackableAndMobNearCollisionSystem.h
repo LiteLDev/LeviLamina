@@ -12,9 +12,9 @@
 class StackableAndMobNearCollisionSystem {
 public:
     // prevent constructor by default
-    StackableAndMobNearCollisionSystem& operator=(StackableAndMobNearCollisionSystem const&) = delete;
-    StackableAndMobNearCollisionSystem(StackableAndMobNearCollisionSystem const&)            = delete;
-    StackableAndMobNearCollisionSystem()                                                     = delete;
+    StackableAndMobNearCollisionSystem& operator=(StackableAndMobNearCollisionSystem const&);
+    StackableAndMobNearCollisionSystem(StackableAndMobNearCollisionSystem const&);
+    StackableAndMobNearCollisionSystem();
 
 public:
     // NOLINTBEGIN

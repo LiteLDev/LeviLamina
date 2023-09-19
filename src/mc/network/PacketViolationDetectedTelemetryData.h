@@ -14,9 +14,9 @@ namespace Social::Events { class Event; }
 class PacketViolationDetectedTelemetryData {
 public:
     // prevent constructor by default
-    PacketViolationDetectedTelemetryData& operator=(PacketViolationDetectedTelemetryData const&) = delete;
-    PacketViolationDetectedTelemetryData(PacketViolationDetectedTelemetryData const&)            = delete;
-    PacketViolationDetectedTelemetryData()                                                       = delete;
+    PacketViolationDetectedTelemetryData& operator=(PacketViolationDetectedTelemetryData const&);
+    PacketViolationDetectedTelemetryData(PacketViolationDetectedTelemetryData const&);
+    PacketViolationDetectedTelemetryData();
 
 public:
     // NOLINTBEGIN

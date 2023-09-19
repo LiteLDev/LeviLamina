@@ -8,9 +8,9 @@
 class EndCityFeature : public ::StructureFeature {
 public:
     // prevent constructor by default
-    EndCityFeature& operator=(EndCityFeature const&) = delete;
-    EndCityFeature(EndCityFeature const&)            = delete;
-    EndCityFeature()                                 = delete;
+    EndCityFeature& operator=(EndCityFeature const&);
+    EndCityFeature(EndCityFeature const&);
+    EndCityFeature();
 
 public:
     // NOLINTBEGIN

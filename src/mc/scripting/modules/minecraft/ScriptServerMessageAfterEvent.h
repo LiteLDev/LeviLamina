@@ -10,9 +10,9 @@ namespace ScriptModuleMinecraft {
 struct ScriptServerMessageAfterEvent {
 public:
     // prevent constructor by default
-    ScriptServerMessageAfterEvent& operator=(ScriptServerMessageAfterEvent const&) = delete;
-    ScriptServerMessageAfterEvent(ScriptServerMessageAfterEvent const&)            = delete;
-    ScriptServerMessageAfterEvent()                                                = delete;
+    ScriptServerMessageAfterEvent& operator=(ScriptServerMessageAfterEvent const&);
+    ScriptServerMessageAfterEvent(ScriptServerMessageAfterEvent const&);
+    ScriptServerMessageAfterEvent();
 
 public:
     // NOLINTBEGIN

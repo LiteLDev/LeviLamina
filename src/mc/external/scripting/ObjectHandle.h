@@ -7,9 +7,9 @@ namespace Scripting {
 struct ObjectHandle {
 public:
     // prevent constructor by default
-    ObjectHandle& operator=(ObjectHandle const&) = delete;
-    ObjectHandle(ObjectHandle const&)            = delete;
-    ObjectHandle()                               = delete;
+    ObjectHandle& operator=(ObjectHandle const&);
+    ObjectHandle(ObjectHandle const&);
+    ObjectHandle();
 };
 
 }; // namespace Scripting

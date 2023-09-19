@@ -10,9 +10,9 @@
 class Spawner {
 public:
     // prevent constructor by default
-    Spawner& operator=(Spawner const&) = delete;
-    Spawner(Spawner const&)            = delete;
-    Spawner()                          = delete;
+    Spawner& operator=(Spawner const&);
+    Spawner(Spawner const&);
+    Spawner();
 
 public:
     // NOLINTBEGIN

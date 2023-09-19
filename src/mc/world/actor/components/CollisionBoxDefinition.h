@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class CollisionBoxDefinition {
 public:
     // prevent constructor by default
-    CollisionBoxDefinition& operator=(CollisionBoxDefinition const&) = delete;
-    CollisionBoxDefinition(CollisionBoxDefinition const&)            = delete;
-    CollisionBoxDefinition()                                         = delete;
+    CollisionBoxDefinition& operator=(CollisionBoxDefinition const&);
+    CollisionBoxDefinition(CollisionBoxDefinition const&);
+    CollisionBoxDefinition();
 
 public:
     // NOLINTBEGIN

@@ -16,23 +16,23 @@ public:
     struct PacketStats {
     public:
         // prevent constructor by default
-        PacketStats& operator=(PacketStats const&) = delete;
-        PacketStats(PacketStats const&)            = delete;
-        PacketStats()                              = delete;
+        PacketStats& operator=(PacketStats const&);
+        PacketStats(PacketStats const&);
+        PacketStats();
 
     public:
         // NOLINTBEGIN
         // symbol: ??0PacketStats@PacketObserver@@QEAA@I@Z
-        MCAPI PacketStats(uint);
+        MCAPI explicit PacketStats(uint);
 
         // NOLINTEND
     };
 
 public:
     // prevent constructor by default
-    PacketObserver& operator=(PacketObserver const&) = delete;
-    PacketObserver(PacketObserver const&)            = delete;
-    PacketObserver()                                 = delete;
+    PacketObserver& operator=(PacketObserver const&);
+    PacketObserver(PacketObserver const&);
+    PacketObserver();
 
 public:
     // NOLINTBEGIN

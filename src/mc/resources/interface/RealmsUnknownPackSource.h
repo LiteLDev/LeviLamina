@@ -11,9 +11,9 @@
 class RealmsUnknownPackSource : public ::PackSource {
 public:
     // prevent constructor by default
-    RealmsUnknownPackSource& operator=(RealmsUnknownPackSource const&) = delete;
-    RealmsUnknownPackSource(RealmsUnknownPackSource const&)            = delete;
-    RealmsUnknownPackSource()                                          = delete;
+    RealmsUnknownPackSource& operator=(RealmsUnknownPackSource const&);
+    RealmsUnknownPackSource(RealmsUnknownPackSource const&);
+    RealmsUnknownPackSource();
 
 public:
     // NOLINTBEGIN

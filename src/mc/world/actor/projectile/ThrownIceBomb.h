@@ -27,9 +27,9 @@
 class ThrownIceBomb : public ::Throwable {
 public:
     // prevent constructor by default
-    ThrownIceBomb& operator=(ThrownIceBomb const&) = delete;
-    ThrownIceBomb(ThrownIceBomb const&)            = delete;
-    ThrownIceBomb()                                = delete;
+    ThrownIceBomb& operator=(ThrownIceBomb const&);
+    ThrownIceBomb(ThrownIceBomb const&);
+    ThrownIceBomb();
 
 public:
     // NOLINTBEGIN

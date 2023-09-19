@@ -8,9 +8,9 @@
 class ItemStackRequestBatch {
 public:
     // prevent constructor by default
-    ItemStackRequestBatch& operator=(ItemStackRequestBatch const&) = delete;
-    ItemStackRequestBatch(ItemStackRequestBatch const&)            = delete;
-    ItemStackRequestBatch()                                        = delete;
+    ItemStackRequestBatch& operator=(ItemStackRequestBatch const&);
+    ItemStackRequestBatch(ItemStackRequestBatch const&);
+    ItemStackRequestBatch();
 
 public:
     // NOLINTBEGIN

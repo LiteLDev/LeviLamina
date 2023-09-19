@@ -16,9 +16,9 @@ public:
     struct WeightedBlockReference {
     public:
         // prevent constructor by default
-        WeightedBlockReference& operator=(WeightedBlockReference const&) = delete;
-        WeightedBlockReference(WeightedBlockReference const&)            = delete;
-        WeightedBlockReference()                                         = delete;
+        WeightedBlockReference& operator=(WeightedBlockReference const&);
+        WeightedBlockReference(WeightedBlockReference const&);
+        WeightedBlockReference();
 
     public:
         // NOLINTBEGIN
@@ -30,8 +30,8 @@ public:
 
 public:
     // prevent constructor by default
-    GrowingPlantFeature& operator=(GrowingPlantFeature const&) = delete;
-    GrowingPlantFeature(GrowingPlantFeature const&)            = delete;
+    GrowingPlantFeature& operator=(GrowingPlantFeature const&);
+    GrowingPlantFeature(GrowingPlantFeature const&);
 
 public:
     // NOLINTBEGIN

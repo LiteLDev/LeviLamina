@@ -13,9 +13,9 @@ namespace mce { class UUID; }
 class UserEntityIdentifierComponent {
 public:
     // prevent constructor by default
-    UserEntityIdentifierComponent& operator=(UserEntityIdentifierComponent const&) = delete;
-    UserEntityIdentifierComponent(UserEntityIdentifierComponent const&)            = delete;
-    UserEntityIdentifierComponent()                                                = delete;
+    UserEntityIdentifierComponent& operator=(UserEntityIdentifierComponent const&);
+    UserEntityIdentifierComponent(UserEntityIdentifierComponent const&);
+    UserEntityIdentifierComponent();
 
 public:
     // NOLINTBEGIN

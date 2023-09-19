@@ -8,8 +8,8 @@
 class MerchantRecipeList {
 public:
     // prevent constructor by default
-    MerchantRecipeList& operator=(MerchantRecipeList const&) = delete;
-    MerchantRecipeList(MerchantRecipeList const&)            = delete;
+    MerchantRecipeList& operator=(MerchantRecipeList const&);
+    MerchantRecipeList(MerchantRecipeList const&);
 
 public:
     // NOLINTBEGIN

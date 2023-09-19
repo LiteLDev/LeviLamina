@@ -5,7 +5,7 @@
 struct IPlayerMovementProxy {
 public:
     // prevent constructor by default
-    IPlayerMovementProxy& operator=(IPlayerMovementProxy const&) = delete;
-    IPlayerMovementProxy(IPlayerMovementProxy const&)            = delete;
-    IPlayerMovementProxy()                                       = delete;
+    IPlayerMovementProxy& operator=(IPlayerMovementProxy const&);
+    IPlayerMovementProxy(IPlayerMovementProxy const&);
+    IPlayerMovementProxy();
 };

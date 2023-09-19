@@ -26,9 +26,9 @@
 class LlamaSpit : public ::PredictableProjectile {
 public:
     // prevent constructor by default
-    LlamaSpit& operator=(LlamaSpit const&) = delete;
-    LlamaSpit(LlamaSpit const&)            = delete;
-    LlamaSpit()                            = delete;
+    LlamaSpit& operator=(LlamaSpit const&);
+    LlamaSpit(LlamaSpit const&);
+    LlamaSpit();
 
 public:
     // NOLINTBEGIN

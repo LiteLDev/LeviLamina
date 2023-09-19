@@ -26,9 +26,9 @@
 class Parrot : public ::Animal {
 public:
     // prevent constructor by default
-    Parrot& operator=(Parrot const&) = delete;
-    Parrot(Parrot const&)            = delete;
-    Parrot()                         = delete;
+    Parrot& operator=(Parrot const&);
+    Parrot(Parrot const&);
+    Parrot();
 
 public:
     // NOLINTBEGIN

@@ -5,8 +5,8 @@
 class CommandPosition {
 public:
     // prevent constructor by default
-    CommandPosition& operator=(CommandPosition const&) = delete;
-    CommandPosition(CommandPosition const&)            = delete;
+    CommandPosition& operator=(CommandPosition const&);
+    CommandPosition(CommandPosition const&);
 
 public:
     // NOLINTBEGIN
@@ -14,7 +14,7 @@ public:
     MCAPI CommandPosition();
 
     // symbol: ??0CommandPosition@@QEAA@AEBVVec3@@@Z
-    MCAPI CommandPosition(class Vec3 const&);
+    MCAPI explicit CommandPosition(class Vec3 const&);
 
     // symbol: ?getBlockPos@CommandPosition@@QEBA?AVBlockPos@@AEBVVec3@@0@Z
     MCAPI class BlockPos getBlockPos(class Vec3 const&, class Vec3 const&) const;

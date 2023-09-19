@@ -12,9 +12,9 @@ namespace gametest {
 class GameTestSequence {
 public:
     // prevent constructor by default
-    GameTestSequence& operator=(GameTestSequence const&) = delete;
-    GameTestSequence(GameTestSequence const&)            = delete;
-    GameTestSequence()                                   = delete;
+    GameTestSequence& operator=(GameTestSequence const&);
+    GameTestSequence(GameTestSequence const&);
+    GameTestSequence();
 
 public:
     // NOLINTBEGIN

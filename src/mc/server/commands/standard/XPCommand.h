@@ -8,9 +8,9 @@
 class XPCommand : public ::Command {
 public:
     // prevent constructor by default
-    XPCommand& operator=(XPCommand const&) = delete;
-    XPCommand(XPCommand const&)            = delete;
-    XPCommand()                            = delete;
+    XPCommand& operator=(XPCommand const&);
+    XPCommand(XPCommand const&);
+    XPCommand();
 
 public:
     // NOLINTBEGIN

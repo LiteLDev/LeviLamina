@@ -9,9 +9,9 @@
 class LevelChunkMetaDataManager {
 public:
     // prevent constructor by default
-    LevelChunkMetaDataManager& operator=(LevelChunkMetaDataManager const&) = delete;
-    LevelChunkMetaDataManager(LevelChunkMetaDataManager const&)            = delete;
-    LevelChunkMetaDataManager()                                            = delete;
+    LevelChunkMetaDataManager& operator=(LevelChunkMetaDataManager const&);
+    LevelChunkMetaDataManager(LevelChunkMetaDataManager const&);
+    LevelChunkMetaDataManager();
 
 public:
     // NOLINTBEGIN

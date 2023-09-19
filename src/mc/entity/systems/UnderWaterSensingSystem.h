@@ -18,9 +18,9 @@
 struct UnderWaterSensingSystem {
 public:
     // prevent constructor by default
-    UnderWaterSensingSystem& operator=(UnderWaterSensingSystem const&) = delete;
-    UnderWaterSensingSystem(UnderWaterSensingSystem const&)            = delete;
-    UnderWaterSensingSystem()                                          = delete;
+    UnderWaterSensingSystem& operator=(UnderWaterSensingSystem const&);
+    UnderWaterSensingSystem(UnderWaterSensingSystem const&);
+    UnderWaterSensingSystem();
 
 public:
     // NOLINTBEGIN

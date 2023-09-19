@@ -6,7 +6,7 @@ template <int T0, typename T1>
 class MultiOctaveNoiseImpl {
 public:
     // prevent constructor by default
-    MultiOctaveNoiseImpl& operator=(MultiOctaveNoiseImpl const&) = delete;
-    MultiOctaveNoiseImpl(MultiOctaveNoiseImpl const&)            = delete;
-    MultiOctaveNoiseImpl()                                       = delete;
+    MultiOctaveNoiseImpl& operator=(MultiOctaveNoiseImpl const&);
+    MultiOctaveNoiseImpl(MultiOctaveNoiseImpl const&);
+    MultiOctaveNoiseImpl();
 };

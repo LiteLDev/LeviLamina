@@ -9,9 +9,9 @@
 class ChunkLoadedRequest {
 public:
     // prevent constructor by default
-    ChunkLoadedRequest& operator=(ChunkLoadedRequest const&) = delete;
-    ChunkLoadedRequest(ChunkLoadedRequest const&)            = delete;
-    ChunkLoadedRequest()                                     = delete;
+    ChunkLoadedRequest& operator=(ChunkLoadedRequest const&);
+    ChunkLoadedRequest(ChunkLoadedRequest const&);
+    ChunkLoadedRequest();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 struct WasPenetratingLastFrameFlag {
 public:
     // prevent constructor by default
-    WasPenetratingLastFrameFlag& operator=(WasPenetratingLastFrameFlag const&) = delete;
-    WasPenetratingLastFrameFlag(WasPenetratingLastFrameFlag const&)            = delete;
-    WasPenetratingLastFrameFlag()                                              = delete;
+    WasPenetratingLastFrameFlag& operator=(WasPenetratingLastFrameFlag const&);
+    WasPenetratingLastFrameFlag(WasPenetratingLastFrameFlag const&);
+    WasPenetratingLastFrameFlag();
 };

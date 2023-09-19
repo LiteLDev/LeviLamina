@@ -14,9 +14,9 @@ public:
 
 public:
     // prevent constructor by default
-    FoliageColor& operator=(FoliageColor const&) = delete;
-    FoliageColor(FoliageColor const&)            = delete;
-    FoliageColor()                               = delete;
+    FoliageColor& operator=(FoliageColor const&);
+    FoliageColor(FoliageColor const&);
+    FoliageColor();
 
 public:
     // NOLINTBEGIN

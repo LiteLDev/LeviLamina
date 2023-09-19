@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class PlaceBlockDefinition : public ::BehaviorDefinition {
 public:
     // prevent constructor by default
-    PlaceBlockDefinition& operator=(PlaceBlockDefinition const&) = delete;
-    PlaceBlockDefinition(PlaceBlockDefinition const&)            = delete;
-    PlaceBlockDefinition()                                       = delete;
+    PlaceBlockDefinition& operator=(PlaceBlockDefinition const&);
+    PlaceBlockDefinition(PlaceBlockDefinition const&);
+    PlaceBlockDefinition();
 
 public:
     // NOLINTBEGIN

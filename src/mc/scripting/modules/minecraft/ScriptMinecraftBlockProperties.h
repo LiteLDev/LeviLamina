@@ -10,9 +10,9 @@ namespace ScriptModuleMinecraft {
 class ScriptMinecraftBlockProperties {
 public:
     // prevent constructor by default
-    ScriptMinecraftBlockProperties& operator=(ScriptMinecraftBlockProperties const&) = delete;
-    ScriptMinecraftBlockProperties(ScriptMinecraftBlockProperties const&)            = delete;
-    ScriptMinecraftBlockProperties()                                                 = delete;
+    ScriptMinecraftBlockProperties& operator=(ScriptMinecraftBlockProperties const&);
+    ScriptMinecraftBlockProperties(ScriptMinecraftBlockProperties const&);
+    ScriptMinecraftBlockProperties();
 
 public:
     // NOLINTBEGIN

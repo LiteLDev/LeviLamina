@@ -5,8 +5,8 @@
 class AtomicTimeAccumulator {
 public:
     // prevent constructor by default
-    AtomicTimeAccumulator& operator=(AtomicTimeAccumulator const&) = delete;
-    AtomicTimeAccumulator(AtomicTimeAccumulator const&)            = delete;
+    AtomicTimeAccumulator& operator=(AtomicTimeAccumulator const&);
+    AtomicTimeAccumulator(AtomicTimeAccumulator const&);
 
 public:
     // NOLINTBEGIN

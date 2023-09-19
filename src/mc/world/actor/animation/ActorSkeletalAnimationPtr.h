@@ -5,8 +5,8 @@
 class ActorSkeletalAnimationPtr {
 public:
     // prevent constructor by default
-    ActorSkeletalAnimationPtr(ActorSkeletalAnimationPtr const&) = delete;
-    ActorSkeletalAnimationPtr()                                 = delete;
+    ActorSkeletalAnimationPtr(ActorSkeletalAnimationPtr const&);
+    ActorSkeletalAnimationPtr();
 
 public:
     // NOLINTBEGIN

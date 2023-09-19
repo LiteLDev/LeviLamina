@@ -9,9 +9,9 @@
 class SculkSensorBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    SculkSensorBlockActor& operator=(SculkSensorBlockActor const&) = delete;
-    SculkSensorBlockActor(SculkSensorBlockActor const&)            = delete;
-    SculkSensorBlockActor()                                        = delete;
+    SculkSensorBlockActor& operator=(SculkSensorBlockActor const&);
+    SculkSensorBlockActor(SculkSensorBlockActor const&);
+    SculkSensorBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -69,7 +69,7 @@ public:
     SculkSensorBlockActor(::BlockActorType, class BlockPos const&, std::string const&, uint, std::unique_ptr<class SculkSensorVibrationConfig>&&);
 
     // symbol: ??0SculkSensorBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI SculkSensorBlockActor(class BlockPos const&);
+    MCAPI explicit SculkSensorBlockActor(class BlockPos const&);
 
     // symbol: ?getLatestReceivedVibrationFrequency@SculkSensorBlockActor@@QEBAHXZ
     MCAPI int getLatestReceivedVibrationFrequency() const;

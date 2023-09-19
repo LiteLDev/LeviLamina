@@ -25,9 +25,9 @@ public:
     struct BiomeParent {
     public:
         // prevent constructor by default
-        BiomeParent& operator=(BiomeParent const&) = delete;
-        BiomeParent(BiomeParent const&)            = delete;
-        BiomeParent()                              = delete;
+        BiomeParent& operator=(BiomeParent const&);
+        BiomeParent(BiomeParent const&);
+        BiomeParent();
 
     public:
         // NOLINTBEGIN
@@ -39,8 +39,8 @@ public:
 
 public:
     // prevent constructor by default
-    BiomeRegistry& operator=(BiomeRegistry const&) = delete;
-    BiomeRegistry(BiomeRegistry const&)            = delete;
+    BiomeRegistry& operator=(BiomeRegistry const&);
+    BiomeRegistry(BiomeRegistry const&);
 
 public:
     // NOLINTBEGIN

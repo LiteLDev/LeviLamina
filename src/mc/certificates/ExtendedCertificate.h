@@ -10,9 +10,9 @@ namespace mce { class UUID; }
 class ExtendedCertificate {
 public:
     // prevent constructor by default
-    ExtendedCertificate& operator=(ExtendedCertificate const&) = delete;
-    ExtendedCertificate(ExtendedCertificate const&)            = delete;
-    ExtendedCertificate()                                      = delete;
+    ExtendedCertificate& operator=(ExtendedCertificate const&);
+    ExtendedCertificate(ExtendedCertificate const&);
+    ExtendedCertificate();
 
 public:
     // NOLINTBEGIN

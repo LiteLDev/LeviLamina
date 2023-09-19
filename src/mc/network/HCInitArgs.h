@@ -5,7 +5,7 @@
 struct HCInitArgs {
 public:
     // prevent constructor by default
-    HCInitArgs& operator=(HCInitArgs const&) = delete;
-    HCInitArgs(HCInitArgs const&)            = delete;
-    HCInitArgs()                             = delete;
+    HCInitArgs& operator=(HCInitArgs const&);
+    HCInitArgs(HCInitArgs const&);
+    HCInitArgs();
 };

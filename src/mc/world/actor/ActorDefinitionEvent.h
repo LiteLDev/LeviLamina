@@ -5,7 +5,7 @@
 class ActorDefinitionEvent {
 public:
     // prevent constructor by default
-    ActorDefinitionEvent() = delete;
+    ActorDefinitionEvent();
 
 public:
     // NOLINTBEGIN

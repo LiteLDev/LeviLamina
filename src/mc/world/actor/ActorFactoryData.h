@@ -5,7 +5,7 @@
 struct ActorFactoryData {
 public:
     // prevent constructor by default
-    ActorFactoryData(ActorFactoryData const&) = delete;
+    ActorFactoryData(ActorFactoryData const&);
 
 public:
     // NOLINTBEGIN

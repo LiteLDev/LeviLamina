@@ -15,9 +15,9 @@ namespace JsonUtil { class EmptyClass; }
 class TransformItemResponse : public ::EventResponse {
 public:
     // prevent constructor by default
-    TransformItemResponse& operator=(TransformItemResponse const&) = delete;
-    TransformItemResponse(TransformItemResponse const&)            = delete;
-    TransformItemResponse()                                        = delete;
+    TransformItemResponse& operator=(TransformItemResponse const&);
+    TransformItemResponse(TransformItemResponse const&);
+    TransformItemResponse();
 
 public:
     // NOLINTBEGIN

@@ -20,9 +20,9 @@ public:
     struct PendingSubscribe {
     public:
         // prevent constructor by default
-        PendingSubscribe& operator=(PendingSubscribe const&) = delete;
-        PendingSubscribe(PendingSubscribe const&)            = delete;
-        PendingSubscribe()                                   = delete;
+        PendingSubscribe& operator=(PendingSubscribe const&);
+        PendingSubscribe(PendingSubscribe const&);
+        PendingSubscribe();
 
     public:
         // NOLINTBEGIN
@@ -35,17 +35,17 @@ public:
     struct PendingUnsubscribe {
     public:
         // prevent constructor by default
-        PendingUnsubscribe& operator=(PendingUnsubscribe const&) = delete;
-        PendingUnsubscribe(PendingUnsubscribe const&)            = delete;
-        PendingUnsubscribe()                                     = delete;
+        PendingUnsubscribe& operator=(PendingUnsubscribe const&);
+        PendingUnsubscribe(PendingUnsubscribe const&);
+        PendingUnsubscribe();
     };
 
     struct Slot {
     public:
         // prevent constructor by default
-        Slot& operator=(Slot const&) = delete;
-        Slot(Slot const&)            = delete;
-        Slot()                       = delete;
+        Slot& operator=(Slot const&);
+        Slot(Slot const&);
+        Slot();
 
     public:
         // NOLINTBEGIN
@@ -57,9 +57,9 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptTickSignal& operator=(ScriptTickSignal const&) = delete;
-    ScriptTickSignal(ScriptTickSignal const&)            = delete;
-    ScriptTickSignal()                                   = delete;
+    ScriptTickSignal& operator=(ScriptTickSignal const&);
+    ScriptTickSignal(ScriptTickSignal const&);
+    ScriptTickSignal();
 
 public:
     // NOLINTBEGIN

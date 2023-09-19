@@ -8,9 +8,9 @@
 class ProtectionEnchant : public ::Enchant {
 public:
     // prevent constructor by default
-    ProtectionEnchant& operator=(ProtectionEnchant const&) = delete;
-    ProtectionEnchant(ProtectionEnchant const&)            = delete;
-    ProtectionEnchant()                                    = delete;
+    ProtectionEnchant& operator=(ProtectionEnchant const&);
+    ProtectionEnchant(ProtectionEnchant const&);
+    ProtectionEnchant();
 
 public:
     // NOLINTBEGIN

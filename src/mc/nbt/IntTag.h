@@ -8,8 +8,8 @@
 class IntTag : public ::Tag {
 public:
     // prevent constructor by default
-    IntTag& operator=(IntTag const&) = delete;
-    IntTag(IntTag const&)            = delete;
+    IntTag& operator=(IntTag const&);
+    IntTag(IntTag const&);
 
 public:
     // NOLINTBEGIN
@@ -41,7 +41,7 @@ public:
     MCVAPI ~IntTag();
 
     // symbol: ??0IntTag@@QEAA@H@Z
-    MCAPI IntTag(int);
+    MCAPI explicit IntTag(int);
 
     // symbol: ??0IntTag@@QEAA@XZ
     MCAPI IntTag();

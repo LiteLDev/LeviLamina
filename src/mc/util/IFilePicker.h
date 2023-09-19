@@ -5,7 +5,7 @@
 class IFilePicker {
 public:
     // prevent constructor by default
-    IFilePicker& operator=(IFilePicker const&) = delete;
-    IFilePicker(IFilePicker const&)            = delete;
-    IFilePicker()                              = delete;
+    IFilePicker& operator=(IFilePicker const&);
+    IFilePicker(IFilePicker const&);
+    IFilePicker();
 };

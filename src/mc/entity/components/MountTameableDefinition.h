@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class MountTameableDefinition {
 public:
     // prevent constructor by default
-    MountTameableDefinition& operator=(MountTameableDefinition const&) = delete;
-    MountTameableDefinition(MountTameableDefinition const&)            = delete;
+    MountTameableDefinition& operator=(MountTameableDefinition const&);
+    MountTameableDefinition(MountTameableDefinition const&);
 
 public:
     // NOLINTBEGIN

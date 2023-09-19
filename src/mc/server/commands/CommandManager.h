@@ -9,14 +9,14 @@
 class CommandManager {
 public:
     // prevent constructor by default
-    CommandManager& operator=(CommandManager const&) = delete;
-    CommandManager(CommandManager const&)            = delete;
-    CommandManager()                                 = delete;
+    CommandManager& operator=(CommandManager const&);
+    CommandManager(CommandManager const&);
+    CommandManager();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0CommandManager@@QEAA@AEAVMinecraftCommands@@@Z
-    MCAPI CommandManager(class MinecraftCommands&);
+    MCAPI explicit CommandManager(class MinecraftCommands&);
 
     // symbol: ?getCommands@CommandManager@@QEAAAEAVMinecraftCommands@@XZ
     MCAPI class MinecraftCommands& getCommands();

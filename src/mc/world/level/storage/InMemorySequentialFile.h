@@ -5,9 +5,9 @@
 class InMemorySequentialFile {
 public:
     // prevent constructor by default
-    InMemorySequentialFile& operator=(InMemorySequentialFile const&) = delete;
-    InMemorySequentialFile(InMemorySequentialFile const&)            = delete;
-    InMemorySequentialFile()                                         = delete;
+    InMemorySequentialFile& operator=(InMemorySequentialFile const&);
+    InMemorySequentialFile(InMemorySequentialFile const&);
+    InMemorySequentialFile();
 
 public:
     // NOLINTBEGIN
@@ -21,7 +21,7 @@ public:
     virtual leveldb::Status Skip(uint64);
 
     // symbol: ??0InMemorySequentialFile@@QEAA@V?$shared_ptr@VInMemoryFile@@@std@@@Z
-    MCAPI InMemorySequentialFile(std::shared_ptr<class InMemoryFile>);
+    MCAPI explicit InMemorySequentialFile(std::shared_ptr<class InMemoryFile>);
 
     // NOLINTEND
 };

@@ -7,9 +7,9 @@ namespace OperationNodeValues {
 struct PreBiome {
 public:
     // prevent constructor by default
-    PreBiome& operator=(PreBiome const&) = delete;
-    PreBiome(PreBiome const&)            = delete;
-    PreBiome()                           = delete;
+    PreBiome& operator=(PreBiome const&);
+    PreBiome(PreBiome const&);
+    PreBiome();
 };
 
 }; // namespace OperationNodeValues

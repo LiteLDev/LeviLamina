@@ -10,9 +10,9 @@ namespace mce { class UUID; }
 struct PackInfoData {
 public:
     // prevent constructor by default
-    PackInfoData& operator=(PackInfoData const&) = delete;
-    PackInfoData(PackInfoData const&)            = delete;
-    PackInfoData()                               = delete;
+    PackInfoData& operator=(PackInfoData const&);
+    PackInfoData(PackInfoData const&);
+    PackInfoData();
 
 public:
     // NOLINTBEGIN

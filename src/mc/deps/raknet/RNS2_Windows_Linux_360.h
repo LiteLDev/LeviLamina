@@ -12,9 +12,9 @@ namespace RakNet {
 class RNS2_Windows_Linux_360 {
 public:
     // prevent constructor by default
-    RNS2_Windows_Linux_360& operator=(RNS2_Windows_Linux_360 const&) = delete;
-    RNS2_Windows_Linux_360(RNS2_Windows_Linux_360 const&)            = delete;
-    RNS2_Windows_Linux_360()                                         = delete;
+    RNS2_Windows_Linux_360& operator=(RNS2_Windows_Linux_360 const&);
+    RNS2_Windows_Linux_360(RNS2_Windows_Linux_360 const&);
+    RNS2_Windows_Linux_360();
 
     // protected:
     // NOLINTBEGIN

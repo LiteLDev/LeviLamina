@@ -7,9 +7,9 @@ namespace Core {
 class FileStdStreamBuf {
 public:
     // prevent constructor by default
-    FileStdStreamBuf& operator=(FileStdStreamBuf const&) = delete;
-    FileStdStreamBuf(FileStdStreamBuf const&)            = delete;
-    FileStdStreamBuf()                                   = delete;
+    FileStdStreamBuf& operator=(FileStdStreamBuf const&);
+    FileStdStreamBuf(FileStdStreamBuf const&);
+    FileStdStreamBuf();
 
 public:
     // NOLINTBEGIN

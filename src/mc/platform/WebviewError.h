@@ -5,7 +5,7 @@
 struct WebviewError {
 public:
     // prevent constructor by default
-    WebviewError& operator=(WebviewError const&) = delete;
-    WebviewError(WebviewError const&)            = delete;
-    WebviewError()                               = delete;
+    WebviewError& operator=(WebviewError const&);
+    WebviewError(WebviewError const&);
+    WebviewError();
 };

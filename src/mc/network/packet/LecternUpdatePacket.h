@@ -10,8 +10,8 @@
 class LecternUpdatePacket : public ::Packet {
 public:
     // prevent constructor by default
-    LecternUpdatePacket& operator=(LecternUpdatePacket const&) = delete;
-    LecternUpdatePacket(LecternUpdatePacket const&)            = delete;
+    LecternUpdatePacket& operator=(LecternUpdatePacket const&);
+    LecternUpdatePacket(LecternUpdatePacket const&);
 
 public:
     // NOLINTBEGIN

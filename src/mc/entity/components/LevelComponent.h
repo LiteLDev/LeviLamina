@@ -5,14 +5,14 @@
 class LevelComponent {
 public:
     // prevent constructor by default
-    LevelComponent& operator=(LevelComponent const&) = delete;
-    LevelComponent(LevelComponent const&)            = delete;
-    LevelComponent()                                 = delete;
+    LevelComponent& operator=(LevelComponent const&);
+    LevelComponent(LevelComponent const&);
+    LevelComponent();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0LevelComponent@@QEAA@V?$unique_ptr@VILevel@@U?$default_delete@VILevel@@@std@@@std@@@Z
-    MCAPI LevelComponent(std::unique_ptr<class ILevel>);
+    MCAPI explicit LevelComponent(std::unique_ptr<class ILevel>);
 
     // symbol: ?getLevel@LevelComponent@@QEAAAEAVILevel@@XZ
     MCAPI class ILevel& getLevel();

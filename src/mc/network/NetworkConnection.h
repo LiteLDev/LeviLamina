@@ -17,9 +17,9 @@ public:
     struct PausedPacket {
     public:
         // prevent constructor by default
-        PausedPacket& operator=(PausedPacket const&) = delete;
-        PausedPacket(PausedPacket const&)            = delete;
-        PausedPacket()                               = delete;
+        PausedPacket& operator=(PausedPacket const&);
+        PausedPacket(PausedPacket const&);
+        PausedPacket();
 
     public:
         // NOLINTBEGIN
@@ -31,9 +31,9 @@ public:
 
 public:
     // prevent constructor by default
-    NetworkConnection& operator=(NetworkConnection const&) = delete;
-    NetworkConnection(NetworkConnection const&)            = delete;
-    NetworkConnection()                                    = delete;
+    NetworkConnection& operator=(NetworkConnection const&);
+    NetworkConnection(NetworkConnection const&);
+    NetworkConnection();
 
 public:
     // NOLINTBEGIN

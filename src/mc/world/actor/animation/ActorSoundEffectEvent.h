@@ -5,9 +5,9 @@
 class ActorSoundEffectEvent {
 public:
     // prevent constructor by default
-    ActorSoundEffectEvent& operator=(ActorSoundEffectEvent const&) = delete;
-    ActorSoundEffectEvent(ActorSoundEffectEvent const&)            = delete;
-    ActorSoundEffectEvent()                                        = delete;
+    ActorSoundEffectEvent& operator=(ActorSoundEffectEvent const&);
+    ActorSoundEffectEvent(ActorSoundEffectEvent const&);
+    ActorSoundEffectEvent();
 
 public:
     // NOLINTBEGIN

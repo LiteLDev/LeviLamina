@@ -10,8 +10,8 @@
 class PlayerStartItemCooldownPacket : public ::Packet {
 public:
     // prevent constructor by default
-    PlayerStartItemCooldownPacket& operator=(PlayerStartItemCooldownPacket const&) = delete;
-    PlayerStartItemCooldownPacket(PlayerStartItemCooldownPacket const&)            = delete;
+    PlayerStartItemCooldownPacket& operator=(PlayerStartItemCooldownPacket const&);
+    PlayerStartItemCooldownPacket(PlayerStartItemCooldownPacket const&);
 
 public:
     // NOLINTBEGIN

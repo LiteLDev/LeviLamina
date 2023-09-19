@@ -10,7 +10,7 @@ namespace ScriptModuleMinecraft {
 struct ScriptActorHurtAfterEvent {
 public:
     // prevent constructor by default
-    ScriptActorHurtAfterEvent& operator=(ScriptActorHurtAfterEvent const&) = delete;
+    ScriptActorHurtAfterEvent& operator=(ScriptActorHurtAfterEvent const&);
 
 public:
     // NOLINTBEGIN

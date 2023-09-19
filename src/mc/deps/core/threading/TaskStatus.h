@@ -12,8 +12,8 @@ public:
 
 public:
     // prevent constructor by default
-    TaskStatus& operator=(TaskStatus const&) = delete;
-    TaskStatus(TaskStatus const&)            = delete;
+    TaskStatus& operator=(TaskStatus const&);
+    TaskStatus(TaskStatus const&);
 
 public:
     // NOLINTBEGIN
@@ -24,7 +24,7 @@ public:
     MCAPI bool isComplete() const;
 
     // symbol: ??BTaskStatus@@QEBA?AW4Value@0@XZ
-    MCAPI operator enum TaskStatus::Value() const;
+    MCAPI explicit operator enum TaskStatus::Value() const;
 
     // symbol: ?toAsyncStatus@TaskStatus@@QEBA?AW4AsyncStatus@Threading@Bedrock@@XZ
     MCAPI ::Bedrock::Threading::AsyncStatus toAsyncStatus() const;

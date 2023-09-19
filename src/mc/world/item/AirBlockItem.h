@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class AirBlockItem : public ::Item {
 public:
     // prevent constructor by default
-    AirBlockItem& operator=(AirBlockItem const&) = delete;
-    AirBlockItem(AirBlockItem const&)            = delete;
-    AirBlockItem()                               = delete;
+    AirBlockItem& operator=(AirBlockItem const&);
+    AirBlockItem(AirBlockItem const&);
+    AirBlockItem();
 
 public:
     // NOLINTBEGIN

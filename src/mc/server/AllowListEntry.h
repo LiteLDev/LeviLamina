@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class AllowListEntry : public ::IJsonSerializable {
 public:
     // prevent constructor by default
-    AllowListEntry& operator=(AllowListEntry const&) = delete;
-    AllowListEntry(AllowListEntry const&)            = delete;
-    AllowListEntry()                                 = delete;
+    AllowListEntry& operator=(AllowListEntry const&);
+    AllowListEntry(AllowListEntry const&);
+    AllowListEntry();
 
 public:
     // NOLINTBEGIN
@@ -32,7 +32,7 @@ public:
     MCVAPI ~AllowListEntry();
 
     // symbol: ??0AllowListEntry@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI AllowListEntry(std::string);
+    MCAPI explicit AllowListEntry(std::string);
 
     // NOLINTEND
 };

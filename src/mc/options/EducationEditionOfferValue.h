@@ -8,9 +8,9 @@
 class EducationEditionOfferValue {
 public:
     // prevent constructor by default
-    EducationEditionOfferValue& operator=(EducationEditionOfferValue const&) = delete;
-    EducationEditionOfferValue(EducationEditionOfferValue const&)            = delete;
-    EducationEditionOfferValue()                                             = delete;
+    EducationEditionOfferValue& operator=(EducationEditionOfferValue const&);
+    EducationEditionOfferValue(EducationEditionOfferValue const&);
+    EducationEditionOfferValue();
 
 public:
     // NOLINTBEGIN

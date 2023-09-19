@@ -15,9 +15,9 @@ namespace ScriptModuleMinecraft {
 struct ScriptCommandError {
 public:
     // prevent constructor by default
-    ScriptCommandError& operator=(ScriptCommandError const&) = delete;
-    ScriptCommandError(ScriptCommandError const&)            = delete;
-    ScriptCommandError()                                     = delete;
+    ScriptCommandError& operator=(ScriptCommandError const&);
+    ScriptCommandError(ScriptCommandError const&);
+    ScriptCommandError();
 
 public:
     // NOLINTBEGIN

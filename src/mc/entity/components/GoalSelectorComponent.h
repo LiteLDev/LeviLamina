@@ -8,9 +8,9 @@
 class GoalSelectorComponent {
 public:
     // prevent constructor by default
-    GoalSelectorComponent& operator=(GoalSelectorComponent const&) = delete;
-    GoalSelectorComponent(GoalSelectorComponent const&)            = delete;
-    GoalSelectorComponent()                                        = delete;
+    GoalSelectorComponent& operator=(GoalSelectorComponent const&);
+    GoalSelectorComponent(GoalSelectorComponent const&);
+    GoalSelectorComponent();
 
 public:
     // NOLINTBEGIN

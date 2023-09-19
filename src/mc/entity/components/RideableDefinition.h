@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class RideableDefinition {
 public:
     // prevent constructor by default
-    RideableDefinition& operator=(RideableDefinition const&) = delete;
-    RideableDefinition(RideableDefinition const&)            = delete;
-    RideableDefinition()                                     = delete;
+    RideableDefinition& operator=(RideableDefinition const&);
+    RideableDefinition(RideableDefinition const&);
+    RideableDefinition();
 
 public:
     // NOLINTBEGIN

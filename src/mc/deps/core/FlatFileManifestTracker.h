@@ -13,9 +13,9 @@ namespace Core {
 class FlatFileManifestTracker {
 public:
     // prevent constructor by default
-    FlatFileManifestTracker& operator=(FlatFileManifestTracker const&) = delete;
-    FlatFileManifestTracker(FlatFileManifestTracker const&)            = delete;
-    FlatFileManifestTracker()                                          = delete;
+    FlatFileManifestTracker& operator=(FlatFileManifestTracker const&);
+    FlatFileManifestTracker(FlatFileManifestTracker const&);
+    FlatFileManifestTracker();
 
 public:
     // NOLINTBEGIN

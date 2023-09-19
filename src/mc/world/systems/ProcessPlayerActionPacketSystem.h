@@ -5,9 +5,9 @@
 class ProcessPlayerActionPacketSystem {
 public:
     // prevent constructor by default
-    ProcessPlayerActionPacketSystem& operator=(ProcessPlayerActionPacketSystem const&) = delete;
-    ProcessPlayerActionPacketSystem(ProcessPlayerActionPacketSystem const&)            = delete;
-    ProcessPlayerActionPacketSystem()                                                  = delete;
+    ProcessPlayerActionPacketSystem& operator=(ProcessPlayerActionPacketSystem const&);
+    ProcessPlayerActionPacketSystem(ProcessPlayerActionPacketSystem const&);
+    ProcessPlayerActionPacketSystem();
 
 public:
     // NOLINTBEGIN

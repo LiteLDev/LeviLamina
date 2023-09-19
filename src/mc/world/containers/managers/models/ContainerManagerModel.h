@@ -11,9 +11,9 @@
 class ContainerManagerModel : public ::IContainerManager {
 public:
     // prevent constructor by default
-    ContainerManagerModel& operator=(ContainerManagerModel const&) = delete;
-    ContainerManagerModel(ContainerManagerModel const&)            = delete;
-    ContainerManagerModel()                                        = delete;
+    ContainerManagerModel& operator=(ContainerManagerModel const&);
+    ContainerManagerModel(ContainerManagerModel const&);
+    ContainerManagerModel();
 
 public:
     // NOLINTBEGIN

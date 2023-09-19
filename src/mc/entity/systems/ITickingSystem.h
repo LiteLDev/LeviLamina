@@ -8,9 +8,9 @@
 class ITickingSystem : public ::ISystem {
 public:
     // prevent constructor by default
-    ITickingSystem& operator=(ITickingSystem const&) = delete;
-    ITickingSystem(ITickingSystem const&)            = delete;
-    ITickingSystem()                                 = delete;
+    ITickingSystem& operator=(ITickingSystem const&);
+    ITickingSystem(ITickingSystem const&);
+    ITickingSystem();
 
 public:
     // NOLINTBEGIN

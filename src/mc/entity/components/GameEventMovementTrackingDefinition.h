@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class GameEventMovementTrackingDefinition {
 public:
     // prevent constructor by default
-    GameEventMovementTrackingDefinition& operator=(GameEventMovementTrackingDefinition const&) = delete;
-    GameEventMovementTrackingDefinition(GameEventMovementTrackingDefinition const&)            = delete;
-    GameEventMovementTrackingDefinition()                                                      = delete;
+    GameEventMovementTrackingDefinition& operator=(GameEventMovementTrackingDefinition const&);
+    GameEventMovementTrackingDefinition(GameEventMovementTrackingDefinition const&);
+    GameEventMovementTrackingDefinition();
 
 public:
     // NOLINTBEGIN

@@ -7,8 +7,8 @@ namespace Core::ZipUtils {
 class ZipSettings {
 public:
     // prevent constructor by default
-    ZipSettings& operator=(ZipSettings const&) = delete;
-    ZipSettings(ZipSettings const&)            = delete;
+    ZipSettings& operator=(ZipSettings const&);
+    ZipSettings(ZipSettings const&);
 
 public:
     // NOLINTBEGIN

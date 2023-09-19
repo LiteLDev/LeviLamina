@@ -5,9 +5,9 @@
 class BlockStateCommandParam {
 public:
     // prevent constructor by default
-    BlockStateCommandParam& operator=(BlockStateCommandParam const&) = delete;
-    BlockStateCommandParam(BlockStateCommandParam const&)            = delete;
-    BlockStateCommandParam()                                         = delete;
+    BlockStateCommandParam& operator=(BlockStateCommandParam const&);
+    BlockStateCommandParam(BlockStateCommandParam const&);
+    BlockStateCommandParam();
 
 public:
     // NOLINTBEGIN

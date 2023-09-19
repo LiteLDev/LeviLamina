@@ -15,9 +15,9 @@ namespace AgentCommands {
 class TurnCommand : public ::AgentCommands::Command {
 public:
     // prevent constructor by default
-    TurnCommand& operator=(TurnCommand const&) = delete;
-    TurnCommand(TurnCommand const&)            = delete;
-    TurnCommand()                              = delete;
+    TurnCommand& operator=(TurnCommand const&);
+    TurnCommand(TurnCommand const&);
+    TurnCommand();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class SwoopAttackGoal : public ::Goal {
 public:
     // prevent constructor by default
-    SwoopAttackGoal& operator=(SwoopAttackGoal const&) = delete;
-    SwoopAttackGoal(SwoopAttackGoal const&)            = delete;
-    SwoopAttackGoal()                                  = delete;
+    SwoopAttackGoal& operator=(SwoopAttackGoal const&);
+    SwoopAttackGoal(SwoopAttackGoal const&);
+    SwoopAttackGoal();
 
 public:
     // NOLINTBEGIN

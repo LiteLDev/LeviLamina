@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class EntitySensorDefinition {
 public:
     // prevent constructor by default
-    EntitySensorDefinition& operator=(EntitySensorDefinition const&) = delete;
-    EntitySensorDefinition(EntitySensorDefinition const&)            = delete;
+    EntitySensorDefinition& operator=(EntitySensorDefinition const&);
+    EntitySensorDefinition(EntitySensorDefinition const&);
 
 public:
     // NOLINTBEGIN

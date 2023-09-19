@@ -10,9 +10,9 @@ namespace ScriptModuleMinecraft {
 struct ScriptActorHealthChangedAfterEvent {
 public:
     // prevent constructor by default
-    ScriptActorHealthChangedAfterEvent& operator=(ScriptActorHealthChangedAfterEvent const&) = delete;
-    ScriptActorHealthChangedAfterEvent(ScriptActorHealthChangedAfterEvent const&)            = delete;
-    ScriptActorHealthChangedAfterEvent()                                                     = delete;
+    ScriptActorHealthChangedAfterEvent& operator=(ScriptActorHealthChangedAfterEvent const&);
+    ScriptActorHealthChangedAfterEvent(ScriptActorHealthChangedAfterEvent const&);
+    ScriptActorHealthChangedAfterEvent();
 
 public:
     // NOLINTBEGIN

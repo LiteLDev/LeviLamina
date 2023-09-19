@@ -9,9 +9,9 @@
 class CompressedNetworkPeer : public ::NetworkPeer {
 public:
     // prevent constructor by default
-    CompressedNetworkPeer& operator=(CompressedNetworkPeer const&) = delete;
-    CompressedNetworkPeer(CompressedNetworkPeer const&)            = delete;
-    CompressedNetworkPeer()                                        = delete;
+    CompressedNetworkPeer& operator=(CompressedNetworkPeer const&);
+    CompressedNetworkPeer(CompressedNetworkPeer const&);
+    CompressedNetworkPeer();
 
 public:
     // NOLINTBEGIN
@@ -31,7 +31,7 @@ public:
     virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
 
     // symbol: ??0CompressedNetworkPeer@@QEAA@V?$shared_ptr@VNetworkPeer@@@std@@@Z
-    MCAPI CompressedNetworkPeer(std::shared_ptr<class NetworkPeer>);
+    MCAPI explicit CompressedNetworkPeer(std::shared_ptr<class NetworkPeer>);
 
     // symbol: ?setCompressionEnabled@CompressedNetworkPeer@@QEAAX_NUNetworkSettingOptions@@@Z
     MCAPI void setCompressionEnabled(bool, struct NetworkSettingOptions);

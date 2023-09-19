@@ -5,7 +5,7 @@
 class IGameModuleShared {
 public:
     // prevent constructor by default
-    IGameModuleShared& operator=(IGameModuleShared const&) = delete;
-    IGameModuleShared(IGameModuleShared const&)            = delete;
-    IGameModuleShared()                                    = delete;
+    IGameModuleShared& operator=(IGameModuleShared const&);
+    IGameModuleShared(IGameModuleShared const&);
+    IGameModuleShared();
 };

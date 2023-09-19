@@ -8,9 +8,9 @@
 class AnimationComponentGroup {
 public:
     // prevent constructor by default
-    AnimationComponentGroup& operator=(AnimationComponentGroup const&) = delete;
-    AnimationComponentGroup(AnimationComponentGroup const&)            = delete;
-    AnimationComponentGroup()                                          = delete;
+    AnimationComponentGroup& operator=(AnimationComponentGroup const&);
+    AnimationComponentGroup(AnimationComponentGroup const&);
+    AnimationComponentGroup();
 
 public:
     // NOLINTBEGIN

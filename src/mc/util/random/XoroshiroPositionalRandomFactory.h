@@ -14,9 +14,9 @@ namespace Crypto::Hash { class md5; }
 class XoroshiroPositionalRandomFactory : public ::IPositionalRandomFactory {
 public:
     // prevent constructor by default
-    XoroshiroPositionalRandomFactory& operator=(XoroshiroPositionalRandomFactory const&) = delete;
-    XoroshiroPositionalRandomFactory(XoroshiroPositionalRandomFactory const&)            = delete;
-    XoroshiroPositionalRandomFactory()                                                   = delete;
+    XoroshiroPositionalRandomFactory& operator=(XoroshiroPositionalRandomFactory const&);
+    XoroshiroPositionalRandomFactory(XoroshiroPositionalRandomFactory const&);
+    XoroshiroPositionalRandomFactory();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 struct MessageEvent {
 public:
     // prevent constructor by default
-    MessageEvent& operator=(MessageEvent const&) = delete;
-    MessageEvent(MessageEvent const&)            = delete;
-    MessageEvent()                               = delete;
+    MessageEvent& operator=(MessageEvent const&);
+    MessageEvent(MessageEvent const&);
+    MessageEvent();
 
 public:
     // NOLINTBEGIN

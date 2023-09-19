@@ -7,8 +7,8 @@ namespace DataStructures {
 class ByteQueue {
 public:
     // prevent constructor by default
-    ByteQueue& operator=(ByteQueue const&) = delete;
-    ByteQueue(ByteQueue const&)            = delete;
+    ByteQueue& operator=(ByteQueue const&);
+    ByteQueue(ByteQueue const&);
 
 public:
     // NOLINTBEGIN

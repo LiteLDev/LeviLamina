@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class GroupSizeDefinition {
 public:
     // prevent constructor by default
-    GroupSizeDefinition& operator=(GroupSizeDefinition const&) = delete;
-    GroupSizeDefinition(GroupSizeDefinition const&)            = delete;
-    GroupSizeDefinition()                                      = delete;
+    GroupSizeDefinition& operator=(GroupSizeDefinition const&);
+    GroupSizeDefinition(GroupSizeDefinition const&);
+    GroupSizeDefinition();
 
 public:
     // NOLINTBEGIN

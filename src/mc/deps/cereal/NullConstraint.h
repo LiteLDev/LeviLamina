@@ -16,9 +16,9 @@ namespace cereal {
 class NullConstraint : public ::cereal::Constraint {
 public:
     // prevent constructor by default
-    NullConstraint& operator=(NullConstraint const&) = delete;
-    NullConstraint(NullConstraint const&)            = delete;
-    NullConstraint()                                 = delete;
+    NullConstraint& operator=(NullConstraint const&);
+    NullConstraint(NullConstraint const&);
+    NullConstraint();
 
 public:
     // NOLINTBEGIN

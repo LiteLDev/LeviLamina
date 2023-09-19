@@ -15,9 +15,9 @@ public:
     class ChanceInformation {
     public:
         // prevent constructor by default
-        ChanceInformation& operator=(ChanceInformation const&) = delete;
-        ChanceInformation(ChanceInformation const&)            = delete;
-        ChanceInformation()                                    = delete;
+        ChanceInformation& operator=(ChanceInformation const&);
+        ChanceInformation(ChanceInformation const&);
+        ChanceInformation();
 
     public:
         // NOLINTBEGIN
@@ -30,7 +30,7 @@ public:
     struct CoordinateRange {
     public:
         // prevent constructor by default
-        CoordinateRange& operator=(CoordinateRange const&) = delete;
+        CoordinateRange& operator=(CoordinateRange const&);
 
     public:
         // NOLINTBEGIN
@@ -55,9 +55,9 @@ public:
     class ScatteredPositions {
     public:
         // prevent constructor by default
-        ScatteredPositions& operator=(ScatteredPositions const&) = delete;
-        ScatteredPositions(ScatteredPositions const&)            = delete;
-        ScatteredPositions()                                     = delete;
+        ScatteredPositions& operator=(ScatteredPositions const&);
+        ScatteredPositions(ScatteredPositions const&);
+        ScatteredPositions();
 
     public:
         // NOLINTBEGIN
@@ -72,9 +72,9 @@ public:
 
 public:
     // prevent constructor by default
-    ScatterParams& operator=(ScatterParams const&) = delete;
-    ScatterParams(ScatterParams const&)            = delete;
-    ScatterParams()                                = delete;
+    ScatterParams& operator=(ScatterParams const&);
+    ScatterParams(ScatterParams const&);
+    ScatterParams();
 
 public:
     // NOLINTBEGIN

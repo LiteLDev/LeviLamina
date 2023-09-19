@@ -14,9 +14,9 @@ namespace cereal { class SerializerContext; }
 class SemVersionConstraint : public ::cereal::Constraint {
 public:
     // prevent constructor by default
-    SemVersionConstraint& operator=(SemVersionConstraint const&) = delete;
-    SemVersionConstraint(SemVersionConstraint const&)            = delete;
-    SemVersionConstraint()                                       = delete;
+    SemVersionConstraint& operator=(SemVersionConstraint const&);
+    SemVersionConstraint(SemVersionConstraint const&);
+    SemVersionConstraint();
 
 public:
     // NOLINTBEGIN

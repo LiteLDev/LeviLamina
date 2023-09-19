@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct IsBabyDefinition {
 public:
     // prevent constructor by default
-    IsBabyDefinition& operator=(IsBabyDefinition const&) = delete;
-    IsBabyDefinition(IsBabyDefinition const&)            = delete;
-    IsBabyDefinition()                                   = delete;
+    IsBabyDefinition& operator=(IsBabyDefinition const&);
+    IsBabyDefinition(IsBabyDefinition const&);
+    IsBabyDefinition();
 
 public:
     // NOLINTBEGIN

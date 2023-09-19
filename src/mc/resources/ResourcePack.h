@@ -19,9 +19,9 @@ namespace mce { class UUID; }
 class ResourcePack : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    ResourcePack& operator=(ResourcePack const&) = delete;
-    ResourcePack(ResourcePack const&)            = delete;
-    ResourcePack()                               = delete;
+    ResourcePack& operator=(ResourcePack const&);
+    ResourcePack(ResourcePack const&);
+    ResourcePack();
 
 public:
     // NOLINTBEGIN
@@ -29,7 +29,7 @@ public:
     MCVAPI ~ResourcePack();
 
     // symbol: ??0ResourcePack@@QEAA@AEAVPack@@@Z
-    MCAPI ResourcePack(class Pack&);
+    MCAPI explicit ResourcePack(class Pack&);
 
     // symbol: ?areKnownFilesValid@ResourcePack@@QEAA_NXZ
     MCAPI bool areKnownFilesValid();

@@ -10,9 +10,9 @@ namespace Json { class Value; }
 class LootTable {
 public:
     // prevent constructor by default
-    LootTable& operator=(LootTable const&) = delete;
-    LootTable(LootTable const&)            = delete;
-    LootTable()                            = delete;
+    LootTable& operator=(LootTable const&);
+    LootTable(LootTable const&);
+    LootTable();
 
 public:
     // NOLINTBEGIN

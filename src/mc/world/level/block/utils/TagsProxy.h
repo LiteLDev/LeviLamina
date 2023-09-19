@@ -7,9 +7,9 @@ namespace BlockDescriptorSerializer {
 struct TagsProxy {
 public:
     // prevent constructor by default
-    TagsProxy& operator=(TagsProxy const&) = delete;
-    TagsProxy(TagsProxy const&)            = delete;
-    TagsProxy()                            = delete;
+    TagsProxy& operator=(TagsProxy const&);
+    TagsProxy(TagsProxy const&);
+    TagsProxy();
 
 public:
     // NOLINTBEGIN

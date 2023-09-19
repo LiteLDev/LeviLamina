@@ -5,9 +5,9 @@
 struct WorldGenContext {
 public:
     // prevent constructor by default
-    WorldGenContext& operator=(WorldGenContext const&) = delete;
-    WorldGenContext(WorldGenContext const&)            = delete;
-    WorldGenContext()                                  = delete;
+    WorldGenContext& operator=(WorldGenContext const&);
+    WorldGenContext(WorldGenContext const&);
+    WorldGenContext();
 
 public:
     // NOLINTBEGIN

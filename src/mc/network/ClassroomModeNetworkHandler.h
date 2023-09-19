@@ -8,9 +8,9 @@
 class ClassroomModeNetworkHandler {
 public:
     // prevent constructor by default
-    ClassroomModeNetworkHandler& operator=(ClassroomModeNetworkHandler const&) = delete;
-    ClassroomModeNetworkHandler(ClassroomModeNetworkHandler const&)            = delete;
-    ClassroomModeNetworkHandler()                                              = delete;
+    ClassroomModeNetworkHandler& operator=(ClassroomModeNetworkHandler const&);
+    ClassroomModeNetworkHandler(ClassroomModeNetworkHandler const&);
+    ClassroomModeNetworkHandler();
 
 public:
     // NOLINTBEGIN
@@ -22,7 +22,7 @@ public:
     MCVAPI void onWebsocketRequest(std::string const&, std::string const&, std::function<void(void)>);
 
     // symbol: ??0ClassroomModeNetworkHandler@@QEAA@_N@Z
-    MCAPI ClassroomModeNetworkHandler(bool);
+    MCAPI explicit ClassroomModeNetworkHandler(bool);
 
     // NOLINTEND
 

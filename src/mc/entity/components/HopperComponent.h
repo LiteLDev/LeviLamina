@@ -5,8 +5,8 @@
 class HopperComponent {
 public:
     // prevent constructor by default
-    HopperComponent& operator=(HopperComponent const&) = delete;
-    HopperComponent(HopperComponent const&)            = delete;
+    HopperComponent& operator=(HopperComponent const&);
+    HopperComponent(HopperComponent const&);
 
 public:
     // NOLINTBEGIN

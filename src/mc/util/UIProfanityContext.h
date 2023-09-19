@@ -8,9 +8,9 @@
 class UIProfanityContext {
 public:
     // prevent constructor by default
-    UIProfanityContext& operator=(UIProfanityContext const&) = delete;
-    UIProfanityContext(UIProfanityContext const&)            = delete;
-    UIProfanityContext()                                     = delete;
+    UIProfanityContext& operator=(UIProfanityContext const&);
+    UIProfanityContext(UIProfanityContext const&);
+    UIProfanityContext();
 
 public:
     // NOLINTBEGIN

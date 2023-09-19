@@ -8,9 +8,9 @@
 class SwiftSneakEnchant : public ::Enchant {
 public:
     // prevent constructor by default
-    SwiftSneakEnchant& operator=(SwiftSneakEnchant const&) = delete;
-    SwiftSneakEnchant(SwiftSneakEnchant const&)            = delete;
-    SwiftSneakEnchant()                                    = delete;
+    SwiftSneakEnchant& operator=(SwiftSneakEnchant const&);
+    SwiftSneakEnchant(SwiftSneakEnchant const&);
+    SwiftSneakEnchant();
 
 public:
     // NOLINTBEGIN

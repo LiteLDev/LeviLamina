@@ -9,9 +9,9 @@
 class RandomizableBlockActorContainerBase : public ::BlockActor {
 public:
     // prevent constructor by default
-    RandomizableBlockActorContainerBase& operator=(RandomizableBlockActorContainerBase const&) = delete;
-    RandomizableBlockActorContainerBase(RandomizableBlockActorContainerBase const&)            = delete;
-    RandomizableBlockActorContainerBase()                                                      = delete;
+    RandomizableBlockActorContainerBase& operator=(RandomizableBlockActorContainerBase const&);
+    RandomizableBlockActorContainerBase(RandomizableBlockActorContainerBase const&);
+    RandomizableBlockActorContainerBase();
 
 public:
     // NOLINTBEGIN

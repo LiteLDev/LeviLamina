@@ -9,9 +9,9 @@
 class EntityEnterVolumeSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    EntityEnterVolumeSystem& operator=(EntityEnterVolumeSystem const&) = delete;
-    EntityEnterVolumeSystem(EntityEnterVolumeSystem const&)            = delete;
-    EntityEnterVolumeSystem()                                          = delete;
+    EntityEnterVolumeSystem& operator=(EntityEnterVolumeSystem const&);
+    EntityEnterVolumeSystem(EntityEnterVolumeSystem const&);
+    EntityEnterVolumeSystem();
 
 public:
     // NOLINTBEGIN
@@ -25,7 +25,7 @@ public:
     virtual void tick(class EntityRegistry&);
 
     // symbol: ??0EntityEnterVolumeSystem@@QEAA@V?$not_null@V?$NonOwnerPointer@$$CBVILevel@@@Bedrock@@@gsl@@@Z
-    MCAPI EntityEnterVolumeSystem(gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>);
+    MCAPI explicit EntityEnterVolumeSystem(gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>);
 
     // NOLINTEND
 

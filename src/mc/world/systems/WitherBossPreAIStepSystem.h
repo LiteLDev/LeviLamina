@@ -8,9 +8,9 @@
 class WitherBossPreAIStepSystem {
 public:
     // prevent constructor by default
-    WitherBossPreAIStepSystem& operator=(WitherBossPreAIStepSystem const&) = delete;
-    WitherBossPreAIStepSystem(WitherBossPreAIStepSystem const&)            = delete;
-    WitherBossPreAIStepSystem()                                            = delete;
+    WitherBossPreAIStepSystem& operator=(WitherBossPreAIStepSystem const&);
+    WitherBossPreAIStepSystem(WitherBossPreAIStepSystem const&);
+    WitherBossPreAIStepSystem();
 
 public:
     // NOLINTBEGIN

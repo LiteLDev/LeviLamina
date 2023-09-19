@@ -10,8 +10,8 @@
 class UpdateClientInputLocksPacket : public ::Packet {
 public:
     // prevent constructor by default
-    UpdateClientInputLocksPacket& operator=(UpdateClientInputLocksPacket const&) = delete;
-    UpdateClientInputLocksPacket(UpdateClientInputLocksPacket const&)            = delete;
+    UpdateClientInputLocksPacket& operator=(UpdateClientInputLocksPacket const&);
+    UpdateClientInputLocksPacket(UpdateClientInputLocksPacket const&);
 
 public:
     // NOLINTBEGIN

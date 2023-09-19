@@ -9,9 +9,9 @@
 class VexRandomMoveGoal : public ::Goal {
 public:
     // prevent constructor by default
-    VexRandomMoveGoal& operator=(VexRandomMoveGoal const&) = delete;
-    VexRandomMoveGoal(VexRandomMoveGoal const&)            = delete;
-    VexRandomMoveGoal()                                    = delete;
+    VexRandomMoveGoal& operator=(VexRandomMoveGoal const&);
+    VexRandomMoveGoal(VexRandomMoveGoal const&);
+    VexRandomMoveGoal();
 
 public:
     // NOLINTBEGIN

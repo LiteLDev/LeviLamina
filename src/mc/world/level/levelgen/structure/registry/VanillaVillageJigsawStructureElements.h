@@ -8,9 +8,9 @@
 class VanillaVillageJigsawStructureElements {
 public:
     // prevent constructor by default
-    VanillaVillageJigsawStructureElements& operator=(VanillaVillageJigsawStructureElements const&) = delete;
-    VanillaVillageJigsawStructureElements(VanillaVillageJigsawStructureElements const&)            = delete;
-    VanillaVillageJigsawStructureElements()                                                        = delete;
+    VanillaVillageJigsawStructureElements& operator=(VanillaVillageJigsawStructureElements const&);
+    VanillaVillageJigsawStructureElements(VanillaVillageJigsawStructureElements const&);
+    VanillaVillageJigsawStructureElements();
 
 public:
     // NOLINTBEGIN

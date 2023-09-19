@@ -13,9 +13,9 @@ namespace CanyonFeatureUtils { struct CanyonConfiguration; }
 class UnderwaterCanyonFeature : public ::CanyonFeature {
 public:
     // prevent constructor by default
-    UnderwaterCanyonFeature& operator=(UnderwaterCanyonFeature const&) = delete;
-    UnderwaterCanyonFeature(UnderwaterCanyonFeature const&)            = delete;
-    UnderwaterCanyonFeature()                                          = delete;
+    UnderwaterCanyonFeature& operator=(UnderwaterCanyonFeature const&);
+    UnderwaterCanyonFeature(UnderwaterCanyonFeature const&);
+    UnderwaterCanyonFeature();
 
 public:
     // NOLINTBEGIN
@@ -32,7 +32,7 @@ public:
     MCVAPI ~UnderwaterCanyonFeature();
 
     // symbol: ??0UnderwaterCanyonFeature@@QEAA@F@Z
-    MCAPI UnderwaterCanyonFeature(short);
+    MCAPI explicit UnderwaterCanyonFeature(short);
 
     // symbol: ?isDiggable@UnderwaterCanyonFeature@@SA_NAEBVBlock@@@Z
     MCAPI static bool isDiggable(class Block const&);

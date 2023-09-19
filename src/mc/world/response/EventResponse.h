@@ -14,9 +14,9 @@ namespace JsonUtil { class EmptyClass; }
 class EventResponse {
 public:
     // prevent constructor by default
-    EventResponse& operator=(EventResponse const&) = delete;
-    EventResponse(EventResponse const&)            = delete;
-    EventResponse()                                = delete;
+    EventResponse& operator=(EventResponse const&);
+    EventResponse(EventResponse const&);
+    EventResponse();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class NpcI18nObserver : public ::I18nObserver {
 public:
     // prevent constructor by default
-    NpcI18nObserver& operator=(NpcI18nObserver const&) = delete;
-    NpcI18nObserver(NpcI18nObserver const&)            = delete;
-    NpcI18nObserver()                                  = delete;
+    NpcI18nObserver& operator=(NpcI18nObserver const&);
+    NpcI18nObserver(NpcI18nObserver const&);
+    NpcI18nObserver();
 
 public:
     // NOLINTBEGIN

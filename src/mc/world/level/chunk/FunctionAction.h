@@ -8,9 +8,9 @@
 class FunctionAction : public ::IRequestAction {
 public:
     // prevent constructor by default
-    FunctionAction& operator=(FunctionAction const&) = delete;
-    FunctionAction(FunctionAction const&)            = delete;
-    FunctionAction()                                 = delete;
+    FunctionAction& operator=(FunctionAction const&);
+    FunctionAction(FunctionAction const&);
+    FunctionAction();
 
 public:
     // NOLINTBEGIN

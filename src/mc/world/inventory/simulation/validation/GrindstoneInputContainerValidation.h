@@ -8,9 +8,9 @@
 class GrindstoneInputContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    GrindstoneInputContainerValidation& operator=(GrindstoneInputContainerValidation const&) = delete;
-    GrindstoneInputContainerValidation(GrindstoneInputContainerValidation const&)            = delete;
-    GrindstoneInputContainerValidation()                                                     = delete;
+    GrindstoneInputContainerValidation& operator=(GrindstoneInputContainerValidation const&);
+    GrindstoneInputContainerValidation(GrindstoneInputContainerValidation const&);
+    GrindstoneInputContainerValidation();
 
 public:
     // NOLINTBEGIN

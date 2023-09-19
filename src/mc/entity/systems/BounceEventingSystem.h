@@ -8,9 +8,9 @@
 class BounceEventingSystem {
 public:
     // prevent constructor by default
-    BounceEventingSystem& operator=(BounceEventingSystem const&) = delete;
-    BounceEventingSystem(BounceEventingSystem const&)            = delete;
-    BounceEventingSystem()                                       = delete;
+    BounceEventingSystem& operator=(BounceEventingSystem const&);
+    BounceEventingSystem(BounceEventingSystem const&);
+    BounceEventingSystem();
 
 public:
     // NOLINTBEGIN

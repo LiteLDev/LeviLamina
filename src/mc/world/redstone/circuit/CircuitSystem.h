@@ -5,8 +5,8 @@
 class CircuitSystem {
 public:
     // prevent constructor by default
-    CircuitSystem& operator=(CircuitSystem const&) = delete;
-    CircuitSystem(CircuitSystem const&)            = delete;
+    CircuitSystem& operator=(CircuitSystem const&);
+    CircuitSystem(CircuitSystem const&);
 
 public:
     // NOLINTBEGIN

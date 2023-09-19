@@ -5,7 +5,7 @@
 class ICameraItemComponent {
 public:
     // prevent constructor by default
-    ICameraItemComponent& operator=(ICameraItemComponent const&) = delete;
-    ICameraItemComponent(ICameraItemComponent const&)            = delete;
-    ICameraItemComponent()                                       = delete;
+    ICameraItemComponent& operator=(ICameraItemComponent const&);
+    ICameraItemComponent(ICameraItemComponent const&);
+    ICameraItemComponent();
 };

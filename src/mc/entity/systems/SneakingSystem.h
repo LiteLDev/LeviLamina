@@ -16,9 +16,9 @@
 class SneakingSystem {
 public:
     // prevent constructor by default
-    SneakingSystem& operator=(SneakingSystem const&) = delete;
-    SneakingSystem(SneakingSystem const&)            = delete;
-    SneakingSystem()                                 = delete;
+    SneakingSystem& operator=(SneakingSystem const&);
+    SneakingSystem(SneakingSystem const&);
+    SneakingSystem();
 
 public:
     // NOLINTBEGIN

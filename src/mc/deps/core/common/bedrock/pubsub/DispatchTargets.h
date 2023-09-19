@@ -12,9 +12,9 @@ namespace Bedrock::PubSub::Detail {
 class DispatchTargets {
 public:
     // prevent constructor by default
-    DispatchTargets& operator=(DispatchTargets const&) = delete;
-    DispatchTargets(DispatchTargets const&)            = delete;
-    DispatchTargets()                                  = delete;
+    DispatchTargets& operator=(DispatchTargets const&);
+    DispatchTargets(DispatchTargets const&);
+    DispatchTargets();
 
 public:
     // NOLINTBEGIN

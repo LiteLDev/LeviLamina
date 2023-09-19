@@ -5,7 +5,7 @@
 struct XTaskQueueObject {
 public:
     // prevent constructor by default
-    XTaskQueueObject& operator=(XTaskQueueObject const&) = delete;
-    XTaskQueueObject(XTaskQueueObject const&)            = delete;
-    XTaskQueueObject()                                   = delete;
+    XTaskQueueObject& operator=(XTaskQueueObject const&);
+    XTaskQueueObject(XTaskQueueObject const&);
+    XTaskQueueObject();
 };

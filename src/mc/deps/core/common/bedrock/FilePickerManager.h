@@ -15,9 +15,9 @@ public:
     struct DirectoryPickerResult {
     public:
         // prevent constructor by default
-        DirectoryPickerResult& operator=(DirectoryPickerResult const&) = delete;
-        DirectoryPickerResult(DirectoryPickerResult const&)            = delete;
-        DirectoryPickerResult()                                        = delete;
+        DirectoryPickerResult& operator=(DirectoryPickerResult const&);
+        DirectoryPickerResult(DirectoryPickerResult const&);
+        DirectoryPickerResult();
 
     public:
         // NOLINTBEGIN
@@ -29,9 +29,9 @@ public:
 
 public:
     // prevent constructor by default
-    FilePickerManager& operator=(FilePickerManager const&) = delete;
-    FilePickerManager(FilePickerManager const&)            = delete;
-    FilePickerManager()                                    = delete;
+    FilePickerManager& operator=(FilePickerManager const&);
+    FilePickerManager(FilePickerManager const&);
+    FilePickerManager();
 };
 
 }; // namespace Bedrock

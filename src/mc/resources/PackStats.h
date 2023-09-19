@@ -5,7 +5,7 @@
 class PackStats {
 public:
     // prevent constructor by default
-    PackStats& operator=(PackStats const&) = delete;
-    PackStats(PackStats const&)            = delete;
-    PackStats()                            = delete;
+    PackStats& operator=(PackStats const&);
+    PackStats(PackStats const&);
+    PackStats();
 };

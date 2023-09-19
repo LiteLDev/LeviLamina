@@ -5,9 +5,9 @@
 class MobTravelTeleportedFilterSystem {
 public:
     // prevent constructor by default
-    MobTravelTeleportedFilterSystem& operator=(MobTravelTeleportedFilterSystem const&) = delete;
-    MobTravelTeleportedFilterSystem(MobTravelTeleportedFilterSystem const&)            = delete;
-    MobTravelTeleportedFilterSystem()                                                  = delete;
+    MobTravelTeleportedFilterSystem& operator=(MobTravelTeleportedFilterSystem const&);
+    MobTravelTeleportedFilterSystem(MobTravelTeleportedFilterSystem const&);
+    MobTravelTeleportedFilterSystem();
 
 public:
     // NOLINTBEGIN

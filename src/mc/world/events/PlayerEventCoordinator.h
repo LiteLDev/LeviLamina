@@ -11,9 +11,9 @@
 class PlayerEventCoordinator {
 public:
     // prevent constructor by default
-    PlayerEventCoordinator& operator=(PlayerEventCoordinator const&) = delete;
-    PlayerEventCoordinator(PlayerEventCoordinator const&)            = delete;
-    PlayerEventCoordinator()                                         = delete;
+    PlayerEventCoordinator& operator=(PlayerEventCoordinator const&);
+    PlayerEventCoordinator(PlayerEventCoordinator const&);
+    PlayerEventCoordinator();
 
 public:
     // NOLINTBEGIN

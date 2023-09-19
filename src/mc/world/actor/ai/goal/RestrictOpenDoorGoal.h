@@ -9,9 +9,9 @@
 class RestrictOpenDoorGoal : public ::Goal {
 public:
     // prevent constructor by default
-    RestrictOpenDoorGoal& operator=(RestrictOpenDoorGoal const&) = delete;
-    RestrictOpenDoorGoal(RestrictOpenDoorGoal const&)            = delete;
-    RestrictOpenDoorGoal()                                       = delete;
+    RestrictOpenDoorGoal& operator=(RestrictOpenDoorGoal const&);
+    RestrictOpenDoorGoal(RestrictOpenDoorGoal const&);
+    RestrictOpenDoorGoal();
 
 public:
     // NOLINTBEGIN
@@ -35,7 +35,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0RestrictOpenDoorGoal@@QEAA@AEAVMob@@@Z
-    MCAPI RestrictOpenDoorGoal(class Mob&);
+    MCAPI explicit RestrictOpenDoorGoal(class Mob&);
 
     // NOLINTEND
 };

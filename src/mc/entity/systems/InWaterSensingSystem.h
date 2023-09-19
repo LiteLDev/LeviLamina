@@ -12,9 +12,9 @@
 class InWaterSensingSystem {
 public:
     // prevent constructor by default
-    InWaterSensingSystem& operator=(InWaterSensingSystem const&) = delete;
-    InWaterSensingSystem(InWaterSensingSystem const&)            = delete;
-    InWaterSensingSystem()                                       = delete;
+    InWaterSensingSystem& operator=(InWaterSensingSystem const&);
+    InWaterSensingSystem(InWaterSensingSystem const&);
+    InWaterSensingSystem();
 
 public:
     // NOLINTBEGIN

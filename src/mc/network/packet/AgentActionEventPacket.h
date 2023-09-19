@@ -16,8 +16,8 @@ namespace Json { class Value; }
 class AgentActionEventPacket : public ::Packet {
 public:
     // prevent constructor by default
-    AgentActionEventPacket& operator=(AgentActionEventPacket const&) = delete;
-    AgentActionEventPacket(AgentActionEventPacket const&)            = delete;
+    AgentActionEventPacket& operator=(AgentActionEventPacket const&);
+    AgentActionEventPacket(AgentActionEventPacket const&);
 
 public:
     // NOLINTBEGIN

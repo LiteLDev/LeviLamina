@@ -17,9 +17,9 @@ namespace ScriptModuleGameTest {
 class ScriptGameTestSequence {
 public:
     // prevent constructor by default
-    ScriptGameTestSequence& operator=(ScriptGameTestSequence const&) = delete;
-    ScriptGameTestSequence(ScriptGameTestSequence const&)            = delete;
-    ScriptGameTestSequence()                                         = delete;
+    ScriptGameTestSequence& operator=(ScriptGameTestSequence const&);
+    ScriptGameTestSequence(ScriptGameTestSequence const&);
+    ScriptGameTestSequence();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 struct EndPortalBlockFlag {
 public:
     // prevent constructor by default
-    EndPortalBlockFlag& operator=(EndPortalBlockFlag const&) = delete;
-    EndPortalBlockFlag(EndPortalBlockFlag const&)            = delete;
-    EndPortalBlockFlag()                                     = delete;
+    EndPortalBlockFlag& operator=(EndPortalBlockFlag const&);
+    EndPortalBlockFlag(EndPortalBlockFlag const&);
+    EndPortalBlockFlag();
 };

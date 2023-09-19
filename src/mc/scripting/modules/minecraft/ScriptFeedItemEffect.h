@@ -11,9 +11,9 @@ namespace ScriptModuleMinecraft {
 class ScriptFeedItemEffect {
 public:
     // prevent constructor by default
-    ScriptFeedItemEffect& operator=(ScriptFeedItemEffect const&) = delete;
-    ScriptFeedItemEffect(ScriptFeedItemEffect const&)            = delete;
-    ScriptFeedItemEffect()                                       = delete;
+    ScriptFeedItemEffect& operator=(ScriptFeedItemEffect const&);
+    ScriptFeedItemEffect(ScriptFeedItemEffect const&);
+    ScriptFeedItemEffect();
 
 public:
     // NOLINTBEGIN

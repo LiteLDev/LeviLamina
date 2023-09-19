@@ -17,9 +17,9 @@
 class SwimTriggerSystem {
 public:
     // prevent constructor by default
-    SwimTriggerSystem& operator=(SwimTriggerSystem const&) = delete;
-    SwimTriggerSystem(SwimTriggerSystem const&)            = delete;
-    SwimTriggerSystem()                                    = delete;
+    SwimTriggerSystem& operator=(SwimTriggerSystem const&);
+    SwimTriggerSystem(SwimTriggerSystem const&);
+    SwimTriggerSystem();
 
 public:
     // NOLINTBEGIN

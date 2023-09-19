@@ -19,9 +19,9 @@ namespace ScriptModuleMinecraft {
 class ScriptItemChargeAfterEvent : public ::ScriptModuleMinecraft::ScriptItemEvent {
 public:
     // prevent constructor by default
-    ScriptItemChargeAfterEvent& operator=(ScriptItemChargeAfterEvent const&) = delete;
-    ScriptItemChargeAfterEvent(ScriptItemChargeAfterEvent const&)            = delete;
-    ScriptItemChargeAfterEvent()                                             = delete;
+    ScriptItemChargeAfterEvent& operator=(ScriptItemChargeAfterEvent const&);
+    ScriptItemChargeAfterEvent(ScriptItemChargeAfterEvent const&);
+    ScriptItemChargeAfterEvent();
 
 public:
     // NOLINTBEGIN

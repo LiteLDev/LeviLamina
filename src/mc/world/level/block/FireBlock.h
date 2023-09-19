@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class FireBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    FireBlock& operator=(FireBlock const&) = delete;
-    FireBlock(FireBlock const&)            = delete;
-    FireBlock()                            = delete;
+    FireBlock& operator=(FireBlock const&);
+    FireBlock(FireBlock const&);
+    FireBlock();
 
 public:
     // NOLINTBEGIN

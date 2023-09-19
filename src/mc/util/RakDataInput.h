@@ -8,9 +8,9 @@
 class RakDataInput : public ::BytesDataInput {
 public:
     // prevent constructor by default
-    RakDataInput& operator=(RakDataInput const&) = delete;
-    RakDataInput(RakDataInput const&)            = delete;
-    RakDataInput()                               = delete;
+    RakDataInput& operator=(RakDataInput const&);
+    RakDataInput(RakDataInput const&);
+    RakDataInput();
 
 public:
     // NOLINTBEGIN

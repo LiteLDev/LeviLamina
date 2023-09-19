@@ -10,8 +10,8 @@
 class CommandOutputPacket : public ::Packet {
 public:
     // prevent constructor by default
-    CommandOutputPacket& operator=(CommandOutputPacket const&) = delete;
-    CommandOutputPacket(CommandOutputPacket const&)            = delete;
+    CommandOutputPacket& operator=(CommandOutputPacket const&);
+    CommandOutputPacket(CommandOutputPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class CombatRegenerationDefinition {
 public:
     // prevent constructor by default
-    CombatRegenerationDefinition& operator=(CombatRegenerationDefinition const&) = delete;
-    CombatRegenerationDefinition(CombatRegenerationDefinition const&)            = delete;
-    CombatRegenerationDefinition()                                               = delete;
+    CombatRegenerationDefinition& operator=(CombatRegenerationDefinition const&);
+    CombatRegenerationDefinition(CombatRegenerationDefinition const&);
+    CombatRegenerationDefinition();
 
 public:
     // NOLINTBEGIN

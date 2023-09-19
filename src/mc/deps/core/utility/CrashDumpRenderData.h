@@ -5,9 +5,9 @@
 class CrashDumpRenderData {
 public:
     // prevent constructor by default
-    CrashDumpRenderData& operator=(CrashDumpRenderData const&) = delete;
-    CrashDumpRenderData(CrashDumpRenderData const&)            = delete;
-    CrashDumpRenderData()                                      = delete;
+    CrashDumpRenderData& operator=(CrashDumpRenderData const&);
+    CrashDumpRenderData(CrashDumpRenderData const&);
+    CrashDumpRenderData();
 
 public:
     // NOLINTBEGIN

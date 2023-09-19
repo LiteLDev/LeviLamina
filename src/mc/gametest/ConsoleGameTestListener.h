@@ -14,9 +14,9 @@ namespace gametest { class IGameTestListener; }
 class ConsoleGameTestListener : public ::gametest::IGameTestListener {
 public:
     // prevent constructor by default
-    ConsoleGameTestListener& operator=(ConsoleGameTestListener const&) = delete;
-    ConsoleGameTestListener(ConsoleGameTestListener const&)            = delete;
-    ConsoleGameTestListener()                                          = delete;
+    ConsoleGameTestListener& operator=(ConsoleGameTestListener const&);
+    ConsoleGameTestListener(ConsoleGameTestListener const&);
+    ConsoleGameTestListener();
 
 public:
     // NOLINTBEGIN

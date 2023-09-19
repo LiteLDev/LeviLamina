@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class EndGatewayBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    EndGatewayBlock& operator=(EndGatewayBlock const&) = delete;
-    EndGatewayBlock(EndGatewayBlock const&)            = delete;
-    EndGatewayBlock()                                  = delete;
+    EndGatewayBlock& operator=(EndGatewayBlock const&);
+    EndGatewayBlock(EndGatewayBlock const&);
+    EndGatewayBlock();
 
 public:
     // NOLINTBEGIN

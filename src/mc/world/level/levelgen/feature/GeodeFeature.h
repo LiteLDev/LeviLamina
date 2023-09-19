@@ -8,9 +8,9 @@
 class GeodeFeature : public ::IFeature {
 public:
     // prevent constructor by default
-    GeodeFeature& operator=(GeodeFeature const&) = delete;
-    GeodeFeature(GeodeFeature const&)            = delete;
-    GeodeFeature()                               = delete;
+    GeodeFeature& operator=(GeodeFeature const&);
+    GeodeFeature(GeodeFeature const&);
+    GeodeFeature();
 
 public:
     // NOLINTBEGIN

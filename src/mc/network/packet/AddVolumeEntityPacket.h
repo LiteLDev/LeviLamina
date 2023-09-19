@@ -10,9 +10,9 @@
 class AddVolumeEntityPacket : public ::AddEntityPacket {
 public:
     // prevent constructor by default
-    AddVolumeEntityPacket& operator=(AddVolumeEntityPacket const&) = delete;
-    AddVolumeEntityPacket(AddVolumeEntityPacket const&)            = delete;
-    AddVolumeEntityPacket()                                        = delete;
+    AddVolumeEntityPacket& operator=(AddVolumeEntityPacket const&);
+    AddVolumeEntityPacket(AddVolumeEntityPacket const&);
+    AddVolumeEntityPacket();
 
 public:
     // NOLINTBEGIN

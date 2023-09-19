@@ -5,9 +5,9 @@
 struct DimensionTransitionComponent {
 public:
     // prevent constructor by default
-    DimensionTransitionComponent& operator=(DimensionTransitionComponent const&) = delete;
-    DimensionTransitionComponent(DimensionTransitionComponent const&)            = delete;
-    DimensionTransitionComponent()                                               = delete;
+    DimensionTransitionComponent& operator=(DimensionTransitionComponent const&);
+    DimensionTransitionComponent(DimensionTransitionComponent const&);
+    DimensionTransitionComponent();
 
 public:
     // NOLINTBEGIN

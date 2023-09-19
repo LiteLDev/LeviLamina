@@ -8,9 +8,9 @@ template <typename T0>
 class LockGuard {
 public:
     // prevent constructor by default
-    LockGuard& operator=(LockGuard const&) = delete;
-    LockGuard(LockGuard const&)            = delete;
-    LockGuard()                            = delete;
+    LockGuard& operator=(LockGuard const&);
+    LockGuard(LockGuard const&);
+    LockGuard();
 };
 
 }; // namespace Bedrock::Threading

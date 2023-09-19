@@ -17,9 +17,9 @@
 struct MoveTowardsClosestSpaceSystemImpl {
 public:
     // prevent constructor by default
-    MoveTowardsClosestSpaceSystemImpl& operator=(MoveTowardsClosestSpaceSystemImpl const&) = delete;
-    MoveTowardsClosestSpaceSystemImpl(MoveTowardsClosestSpaceSystemImpl const&)            = delete;
-    MoveTowardsClosestSpaceSystemImpl()                                                    = delete;
+    MoveTowardsClosestSpaceSystemImpl& operator=(MoveTowardsClosestSpaceSystemImpl const&);
+    MoveTowardsClosestSpaceSystemImpl(MoveTowardsClosestSpaceSystemImpl const&);
+    MoveTowardsClosestSpaceSystemImpl();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class MoveTowardsDwellingRestrictionGoal : public ::MoveTowardsRestrictionGoal {
 public:
     // prevent constructor by default
-    MoveTowardsDwellingRestrictionGoal& operator=(MoveTowardsDwellingRestrictionGoal const&) = delete;
-    MoveTowardsDwellingRestrictionGoal(MoveTowardsDwellingRestrictionGoal const&)            = delete;
-    MoveTowardsDwellingRestrictionGoal()                                                     = delete;
+    MoveTowardsDwellingRestrictionGoal& operator=(MoveTowardsDwellingRestrictionGoal const&);
+    MoveTowardsDwellingRestrictionGoal(MoveTowardsDwellingRestrictionGoal const&);
+    MoveTowardsDwellingRestrictionGoal();
 
 public:
     // NOLINTBEGIN
@@ -26,7 +26,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0MoveTowardsDwellingRestrictionGoal@@QEAA@AEAVMob@@@Z
-    MCAPI MoveTowardsDwellingRestrictionGoal(class Mob&);
+    MCAPI explicit MoveTowardsDwellingRestrictionGoal(class Mob&);
 
     // NOLINTEND
 };

@@ -15,8 +15,8 @@ public:
     struct TimeAndValue2 {
     public:
         // prevent constructor by default
-        TimeAndValue2& operator=(TimeAndValue2 const&) = delete;
-        TimeAndValue2(TimeAndValue2 const&)            = delete;
+        TimeAndValue2& operator=(TimeAndValue2 const&);
+        TimeAndValue2(TimeAndValue2 const&);
 
     public:
         // NOLINTBEGIN
@@ -31,8 +31,8 @@ public:
 
 public:
     // prevent constructor by default
-    BPSTracker& operator=(BPSTracker const&) = delete;
-    BPSTracker(BPSTracker const&)            = delete;
+    BPSTracker& operator=(BPSTracker const&);
+    BPSTracker(BPSTracker const&);
 
 public:
     // NOLINTBEGIN

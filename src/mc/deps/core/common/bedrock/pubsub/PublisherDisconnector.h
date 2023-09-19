@@ -7,9 +7,9 @@ namespace Bedrock::PubSub::Detail {
 class PublisherDisconnector {
 public:
     // prevent constructor by default
-    PublisherDisconnector& operator=(PublisherDisconnector const&) = delete;
-    PublisherDisconnector(PublisherDisconnector const&)            = delete;
-    PublisherDisconnector()                                        = delete;
+    PublisherDisconnector& operator=(PublisherDisconnector const&);
+    PublisherDisconnector(PublisherDisconnector const&);
+    PublisherDisconnector();
 
 public:
     // NOLINTBEGIN

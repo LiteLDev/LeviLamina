@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class DeadBushBlock : public ::BushBlock {
 public:
     // prevent constructor by default
-    DeadBushBlock& operator=(DeadBushBlock const&) = delete;
-    DeadBushBlock(DeadBushBlock const&)            = delete;
-    DeadBushBlock()                                = delete;
+    DeadBushBlock& operator=(DeadBushBlock const&);
+    DeadBushBlock(DeadBushBlock const&);
+    DeadBushBlock();
 
 public:
     // NOLINTBEGIN

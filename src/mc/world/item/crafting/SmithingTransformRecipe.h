@@ -13,9 +13,9 @@ namespace mce { class UUID; }
 class SmithingTransformRecipe : public ::ShapelessRecipe {
 public:
     // prevent constructor by default
-    SmithingTransformRecipe& operator=(SmithingTransformRecipe const&) = delete;
-    SmithingTransformRecipe(SmithingTransformRecipe const&)            = delete;
-    SmithingTransformRecipe()                                          = delete;
+    SmithingTransformRecipe& operator=(SmithingTransformRecipe const&);
+    SmithingTransformRecipe(SmithingTransformRecipe const&);
+    SmithingTransformRecipe();
 
 public:
     // NOLINTBEGIN

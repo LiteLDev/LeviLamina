@@ -8,9 +8,9 @@
 class PreviewContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    PreviewContainerValidation& operator=(PreviewContainerValidation const&) = delete;
-    PreviewContainerValidation(PreviewContainerValidation const&)            = delete;
-    PreviewContainerValidation()                                             = delete;
+    PreviewContainerValidation& operator=(PreviewContainerValidation const&);
+    PreviewContainerValidation(PreviewContainerValidation const&);
+    PreviewContainerValidation();
 
 public:
     // NOLINTBEGIN

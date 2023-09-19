@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class BreathableDefinition {
 public:
     // prevent constructor by default
-    BreathableDefinition& operator=(BreathableDefinition const&) = delete;
-    BreathableDefinition(BreathableDefinition const&)            = delete;
+    BreathableDefinition& operator=(BreathableDefinition const&);
+    BreathableDefinition(BreathableDefinition const&);
 
 public:
     // NOLINTBEGIN

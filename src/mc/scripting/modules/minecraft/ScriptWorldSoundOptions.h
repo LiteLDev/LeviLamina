@@ -16,14 +16,14 @@ namespace ScriptModuleMinecraft {
 struct ScriptWorldSoundOptions {
 public:
     // prevent constructor by default
-    ScriptWorldSoundOptions& operator=(ScriptWorldSoundOptions const&) = delete;
-    ScriptWorldSoundOptions(ScriptWorldSoundOptions const&)            = delete;
-    ScriptWorldSoundOptions()                                          = delete;
+    ScriptWorldSoundOptions& operator=(ScriptWorldSoundOptions const&);
+    ScriptWorldSoundOptions(ScriptWorldSoundOptions const&);
+    ScriptWorldSoundOptions();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ScriptWorldSoundOptions@ScriptModuleMinecraft@@QEAA@AEBUScriptSoundOptions@1@@Z
-    MCAPI ScriptWorldSoundOptions(struct ScriptModuleMinecraft::ScriptSoundOptions const&);
+    MCAPI explicit ScriptWorldSoundOptions(struct ScriptModuleMinecraft::ScriptSoundOptions const&);
 
     // symbol: ?getPitch@ScriptWorldSoundOptions@ScriptModuleMinecraft@@QEBAMXZ
     MCAPI float getPitch() const;

@@ -15,9 +15,9 @@ namespace Core {
 class StorageAreaState {
 public:
     // prevent constructor by default
-    StorageAreaState& operator=(StorageAreaState const&) = delete;
-    StorageAreaState(StorageAreaState const&)            = delete;
-    StorageAreaState()                                   = delete;
+    StorageAreaState& operator=(StorageAreaState const&);
+    StorageAreaState(StorageAreaState const&);
+    StorageAreaState();
 
 public:
     // NOLINTBEGIN

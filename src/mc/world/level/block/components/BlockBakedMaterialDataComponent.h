@@ -8,9 +8,9 @@
 struct BlockBakedMaterialDataComponent : public ::BlockComponentBase {
 public:
     // prevent constructor by default
-    BlockBakedMaterialDataComponent& operator=(BlockBakedMaterialDataComponent const&) = delete;
-    BlockBakedMaterialDataComponent(BlockBakedMaterialDataComponent const&)            = delete;
-    BlockBakedMaterialDataComponent()                                                  = delete;
+    BlockBakedMaterialDataComponent& operator=(BlockBakedMaterialDataComponent const&);
+    BlockBakedMaterialDataComponent(BlockBakedMaterialDataComponent const&);
+    BlockBakedMaterialDataComponent();
 
 public:
     // NOLINTBEGIN

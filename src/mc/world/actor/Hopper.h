@@ -5,9 +5,9 @@
 class Hopper {
 public:
     // prevent constructor by default
-    Hopper& operator=(Hopper const&) = delete;
-    Hopper(Hopper const&)            = delete;
-    Hopper()                         = delete;
+    Hopper& operator=(Hopper const&);
+    Hopper(Hopper const&);
+    Hopper();
 
 public:
     // NOLINTBEGIN

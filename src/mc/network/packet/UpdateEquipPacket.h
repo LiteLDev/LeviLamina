@@ -12,8 +12,8 @@
 class UpdateEquipPacket : public ::Packet {
 public:
     // prevent constructor by default
-    UpdateEquipPacket& operator=(UpdateEquipPacket const&) = delete;
-    UpdateEquipPacket(UpdateEquipPacket const&)            = delete;
+    UpdateEquipPacket& operator=(UpdateEquipPacket const&);
+    UpdateEquipPacket(UpdateEquipPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class RedStoneDustItem : public ::Item {
 public:
     // prevent constructor by default
-    RedStoneDustItem& operator=(RedStoneDustItem const&) = delete;
-    RedStoneDustItem(RedStoneDustItem const&)            = delete;
-    RedStoneDustItem()                                   = delete;
+    RedStoneDustItem& operator=(RedStoneDustItem const&);
+    RedStoneDustItem(RedStoneDustItem const&);
+    RedStoneDustItem();
 
 public:
     // NOLINTBEGIN

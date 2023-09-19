@@ -14,9 +14,9 @@ namespace Json { class Value; }
 struct InternalItemDescriptor : public ::ItemDescriptor::BaseDescriptor {
 public:
     // prevent constructor by default
-    InternalItemDescriptor& operator=(InternalItemDescriptor const&) = delete;
-    InternalItemDescriptor(InternalItemDescriptor const&)            = delete;
-    InternalItemDescriptor()                                         = delete;
+    InternalItemDescriptor& operator=(InternalItemDescriptor const&);
+    InternalItemDescriptor(InternalItemDescriptor const&);
+    InternalItemDescriptor();
 
 public:
     // NOLINTBEGIN

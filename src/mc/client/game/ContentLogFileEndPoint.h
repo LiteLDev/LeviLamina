@@ -15,9 +15,9 @@ namespace Core { class Path; }
 class ContentLogFileEndPoint : public ::ContentLogEndPoint {
 public:
     // prevent constructor by default
-    ContentLogFileEndPoint& operator=(ContentLogFileEndPoint const&) = delete;
-    ContentLogFileEndPoint(ContentLogFileEndPoint const&)            = delete;
-    ContentLogFileEndPoint()                                         = delete;
+    ContentLogFileEndPoint& operator=(ContentLogFileEndPoint const&);
+    ContentLogFileEndPoint(ContentLogFileEndPoint const&);
+    ContentLogFileEndPoint();
 
 public:
     // NOLINTBEGIN

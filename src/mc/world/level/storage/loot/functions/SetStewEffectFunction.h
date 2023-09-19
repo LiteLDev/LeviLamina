@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class SetStewEffectFunction : public ::LootItemFunction {
 public:
     // prevent constructor by default
-    SetStewEffectFunction& operator=(SetStewEffectFunction const&) = delete;
-    SetStewEffectFunction(SetStewEffectFunction const&)            = delete;
-    SetStewEffectFunction()                                        = delete;
+    SetStewEffectFunction& operator=(SetStewEffectFunction const&);
+    SetStewEffectFunction(SetStewEffectFunction const&);
+    SetStewEffectFunction();
 
 public:
     // NOLINTBEGIN

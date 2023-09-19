@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class StainedGlassBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    StainedGlassBlock& operator=(StainedGlassBlock const&) = delete;
-    StainedGlassBlock(StainedGlassBlock const&)            = delete;
-    StainedGlassBlock()                                    = delete;
+    StainedGlassBlock& operator=(StainedGlassBlock const&);
+    StainedGlassBlock(StainedGlassBlock const&);
+    StainedGlassBlock();
 
 public:
     // NOLINTBEGIN

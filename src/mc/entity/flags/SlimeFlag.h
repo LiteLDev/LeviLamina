@@ -5,7 +5,7 @@
 struct SlimeFlag {
 public:
     // prevent constructor by default
-    SlimeFlag& operator=(SlimeFlag const&) = delete;
-    SlimeFlag(SlimeFlag const&)            = delete;
-    SlimeFlag()                            = delete;
+    SlimeFlag& operator=(SlimeFlag const&);
+    SlimeFlag(SlimeFlag const&);
+    SlimeFlag();
 };

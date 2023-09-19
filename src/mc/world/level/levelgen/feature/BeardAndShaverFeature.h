@@ -8,8 +8,8 @@
 class BeardAndShaverFeature : public ::IFeature {
 public:
     // prevent constructor by default
-    BeardAndShaverFeature& operator=(BeardAndShaverFeature const&) = delete;
-    BeardAndShaverFeature(BeardAndShaverFeature const&)            = delete;
+    BeardAndShaverFeature& operator=(BeardAndShaverFeature const&);
+    BeardAndShaverFeature(BeardAndShaverFeature const&);
 
 public:
     // NOLINTBEGIN

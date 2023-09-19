@@ -5,9 +5,9 @@
 class ClientInteractStopRidingSystem {
 public:
     // prevent constructor by default
-    ClientInteractStopRidingSystem& operator=(ClientInteractStopRidingSystem const&) = delete;
-    ClientInteractStopRidingSystem(ClientInteractStopRidingSystem const&)            = delete;
-    ClientInteractStopRidingSystem()                                                 = delete;
+    ClientInteractStopRidingSystem& operator=(ClientInteractStopRidingSystem const&);
+    ClientInteractStopRidingSystem(ClientInteractStopRidingSystem const&);
+    ClientInteractStopRidingSystem();
 
 public:
     // NOLINTBEGIN

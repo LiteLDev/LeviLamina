@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct SoundVolumeDefinition {
 public:
     // prevent constructor by default
-    SoundVolumeDefinition& operator=(SoundVolumeDefinition const&) = delete;
-    SoundVolumeDefinition(SoundVolumeDefinition const&)            = delete;
-    SoundVolumeDefinition()                                        = delete;
+    SoundVolumeDefinition& operator=(SoundVolumeDefinition const&);
+    SoundVolumeDefinition(SoundVolumeDefinition const&);
+    SoundVolumeDefinition();
 
 public:
     // NOLINTBEGIN

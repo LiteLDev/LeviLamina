@@ -8,8 +8,8 @@
 class DolphinMoveControl : public ::MoveControl {
 public:
     // prevent constructor by default
-    DolphinMoveControl& operator=(DolphinMoveControl const&) = delete;
-    DolphinMoveControl(DolphinMoveControl const&)            = delete;
+    DolphinMoveControl& operator=(DolphinMoveControl const&);
+    DolphinMoveControl(DolphinMoveControl const&);
 
 public:
     // NOLINTBEGIN

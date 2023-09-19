@@ -5,9 +5,9 @@
 class Performance {
 public:
     // prevent constructor by default
-    Performance& operator=(Performance const&) = delete;
-    Performance(Performance const&)            = delete;
-    Performance()                              = delete;
+    Performance& operator=(Performance const&);
+    Performance(Performance const&);
+    Performance();
 
 public:
     // NOLINTBEGIN

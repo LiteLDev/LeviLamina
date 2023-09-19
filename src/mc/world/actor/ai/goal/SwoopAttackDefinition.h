@@ -14,9 +14,9 @@ namespace JsonUtil { class EmptyClass; }
 class SwoopAttackDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    SwoopAttackDefinition& operator=(SwoopAttackDefinition const&) = delete;
-    SwoopAttackDefinition(SwoopAttackDefinition const&)            = delete;
-    SwoopAttackDefinition()                                        = delete;
+    SwoopAttackDefinition& operator=(SwoopAttackDefinition const&);
+    SwoopAttackDefinition(SwoopAttackDefinition const&);
+    SwoopAttackDefinition();
 
 public:
     // NOLINTBEGIN

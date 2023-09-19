@@ -15,9 +15,9 @@ namespace AgentCommands {
 class InspectDataCommand : public ::AgentCommands::Command {
 public:
     // prevent constructor by default
-    InspectDataCommand& operator=(InspectDataCommand const&) = delete;
-    InspectDataCommand(InspectDataCommand const&)            = delete;
-    InspectDataCommand()                                     = delete;
+    InspectDataCommand& operator=(InspectDataCommand const&);
+    InspectDataCommand(InspectDataCommand const&);
+    InspectDataCommand();
 
 public:
     // NOLINTBEGIN

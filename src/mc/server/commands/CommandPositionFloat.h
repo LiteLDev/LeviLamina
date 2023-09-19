@@ -5,7 +5,7 @@
 class CommandPositionFloat {
 public:
     // prevent constructor by default
-    CommandPositionFloat& operator=(CommandPositionFloat const&) = delete;
-    CommandPositionFloat(CommandPositionFloat const&)            = delete;
-    CommandPositionFloat()                                       = delete;
+    CommandPositionFloat& operator=(CommandPositionFloat const&);
+    CommandPositionFloat(CommandPositionFloat const&);
+    CommandPositionFloat();
 };

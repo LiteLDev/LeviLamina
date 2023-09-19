@@ -38,7 +38,7 @@ public:
     MCAPI ExpressionNode(struct MolangScriptArg&, ::ExpressionOp);
 
     // symbol: ??0ExpressionNode@@QEAA@M@Z
-    MCAPI ExpressionNode(float);
+    MCAPI explicit ExpressionNode(float);
 
     // symbol: ??0ExpressionNode@@QEAA@$$QEAV0@@Z
     MCAPI ExpressionNode(class ExpressionNode&&);

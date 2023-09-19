@@ -9,8 +9,8 @@
 class PulseCapacitor : public ::CapacitorComponent {
 public:
     // prevent constructor by default
-    PulseCapacitor& operator=(PulseCapacitor const&) = delete;
-    PulseCapacitor(PulseCapacitor const&)            = delete;
+    PulseCapacitor& operator=(PulseCapacitor const&);
+    PulseCapacitor(PulseCapacitor const&);
 
 public:
     // NOLINTBEGIN

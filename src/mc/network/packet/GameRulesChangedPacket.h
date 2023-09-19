@@ -10,9 +10,9 @@
 class GameRulesChangedPacket : public ::Packet {
 public:
     // prevent constructor by default
-    GameRulesChangedPacket& operator=(GameRulesChangedPacket const&) = delete;
-    GameRulesChangedPacket(GameRulesChangedPacket const&)            = delete;
-    GameRulesChangedPacket()                                         = delete;
+    GameRulesChangedPacket& operator=(GameRulesChangedPacket const&);
+    GameRulesChangedPacket(GameRulesChangedPacket const&);
+    GameRulesChangedPacket();
 
 public:
     // NOLINTBEGIN

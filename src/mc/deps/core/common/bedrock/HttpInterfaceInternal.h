@@ -18,9 +18,9 @@ namespace Bedrock::Http {
 class HttpInterfaceInternal : public ::Bedrock::Http::HttpInterface {
 public:
     // prevent constructor by default
-    HttpInterfaceInternal& operator=(HttpInterfaceInternal const&) = delete;
-    HttpInterfaceInternal(HttpInterfaceInternal const&)            = delete;
-    HttpInterfaceInternal()                                        = delete;
+    HttpInterfaceInternal& operator=(HttpInterfaceInternal const&);
+    HttpInterfaceInternal(HttpInterfaceInternal const&);
+    HttpInterfaceInternal();
 
 public:
     // NOLINTBEGIN

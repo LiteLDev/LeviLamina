@@ -15,9 +15,9 @@ namespace ScriptModuleMinecraft {
 struct ScriptRawTextInterface {
 public:
     // prevent constructor by default
-    ScriptRawTextInterface& operator=(ScriptRawTextInterface const&) = delete;
-    ScriptRawTextInterface(ScriptRawTextInterface const&)            = delete;
-    ScriptRawTextInterface()                                         = delete;
+    ScriptRawTextInterface& operator=(ScriptRawTextInterface const&);
+    ScriptRawTextInterface(ScriptRawTextInterface const&);
+    ScriptRawTextInterface();
 
 public:
     // NOLINTBEGIN

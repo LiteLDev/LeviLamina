@@ -5,7 +5,7 @@
 class IStructurePoolActorPredicate {
 public:
     // prevent constructor by default
-    IStructurePoolActorPredicate& operator=(IStructurePoolActorPredicate const&) = delete;
-    IStructurePoolActorPredicate(IStructurePoolActorPredicate const&)            = delete;
-    IStructurePoolActorPredicate()                                               = delete;
+    IStructurePoolActorPredicate& operator=(IStructurePoolActorPredicate const&);
+    IStructurePoolActorPredicate(IStructurePoolActorPredicate const&);
+    IStructurePoolActorPredicate();
 };

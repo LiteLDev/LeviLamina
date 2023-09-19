@@ -5,9 +5,9 @@
 class BlockPatternBuilder {
 public:
     // prevent constructor by default
-    BlockPatternBuilder& operator=(BlockPatternBuilder const&) = delete;
-    BlockPatternBuilder(BlockPatternBuilder const&)            = delete;
-    BlockPatternBuilder()                                      = delete;
+    BlockPatternBuilder& operator=(BlockPatternBuilder const&);
+    BlockPatternBuilder(BlockPatternBuilder const&);
+    BlockPatternBuilder();
 
 public:
     // NOLINTBEGIN

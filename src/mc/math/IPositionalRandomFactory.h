@@ -5,7 +5,7 @@
 class IPositionalRandomFactory {
 public:
     // prevent constructor by default
-    IPositionalRandomFactory& operator=(IPositionalRandomFactory const&) = delete;
-    IPositionalRandomFactory(IPositionalRandomFactory const&)            = delete;
-    IPositionalRandomFactory()                                           = delete;
+    IPositionalRandomFactory& operator=(IPositionalRandomFactory const&);
+    IPositionalRandomFactory(IPositionalRandomFactory const&);
+    IPositionalRandomFactory();
 };

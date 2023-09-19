@@ -9,8 +9,8 @@
 class LegacyStructureTemplate {
 public:
     // prevent constructor by default
-    LegacyStructureTemplate& operator=(LegacyStructureTemplate const&) = delete;
-    LegacyStructureTemplate(LegacyStructureTemplate const&)            = delete;
+    LegacyStructureTemplate& operator=(LegacyStructureTemplate const&);
+    LegacyStructureTemplate(LegacyStructureTemplate const&);
 
 public:
     // NOLINTBEGIN

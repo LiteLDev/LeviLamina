@@ -5,9 +5,9 @@
 class ContainerContentChangeListener {
 public:
     // prevent constructor by default
-    ContainerContentChangeListener& operator=(ContainerContentChangeListener const&) = delete;
-    ContainerContentChangeListener(ContainerContentChangeListener const&)            = delete;
-    ContainerContentChangeListener()                                                 = delete;
+    ContainerContentChangeListener& operator=(ContainerContentChangeListener const&);
+    ContainerContentChangeListener(ContainerContentChangeListener const&);
+    ContainerContentChangeListener();
 
 public:
     // NOLINTBEGIN

@@ -19,9 +19,9 @@ namespace Util {
 class ItemReplacementCommandUtil {
 public:
     // prevent constructor by default
-    ItemReplacementCommandUtil& operator=(ItemReplacementCommandUtil const&) = delete;
-    ItemReplacementCommandUtil(ItemReplacementCommandUtil const&)            = delete;
-    ItemReplacementCommandUtil()                                             = delete;
+    ItemReplacementCommandUtil& operator=(ItemReplacementCommandUtil const&);
+    ItemReplacementCommandUtil(ItemReplacementCommandUtil const&);
+    ItemReplacementCommandUtil();
 
 public:
     // NOLINTBEGIN

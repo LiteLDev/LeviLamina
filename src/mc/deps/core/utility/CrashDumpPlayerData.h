@@ -5,9 +5,9 @@
 class CrashDumpPlayerData {
 public:
     // prevent constructor by default
-    CrashDumpPlayerData& operator=(CrashDumpPlayerData const&) = delete;
-    CrashDumpPlayerData(CrashDumpPlayerData const&)            = delete;
-    CrashDumpPlayerData()                                      = delete;
+    CrashDumpPlayerData& operator=(CrashDumpPlayerData const&);
+    CrashDumpPlayerData(CrashDumpPlayerData const&);
+    CrashDumpPlayerData();
 
 public:
     // NOLINTBEGIN

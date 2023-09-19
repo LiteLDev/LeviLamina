@@ -16,9 +16,9 @@ namespace ScriptModuleMinecraftServerUI {
 class ToggleControl : public ::ScriptModuleMinecraftServerUI::IControl {
 public:
     // prevent constructor by default
-    ToggleControl& operator=(ToggleControl const&) = delete;
-    ToggleControl(ToggleControl const&)            = delete;
-    ToggleControl()                                = delete;
+    ToggleControl& operator=(ToggleControl const&);
+    ToggleControl(ToggleControl const&);
+    ToggleControl();
 
 public:
     // NOLINTBEGIN

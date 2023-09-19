@@ -19,9 +19,9 @@ public:
     struct TypeStats {
     public:
         // prevent constructor by default
-        TypeStats& operator=(TypeStats const&) = delete;
-        TypeStats(TypeStats const&)            = delete;
-        TypeStats()                            = delete;
+        TypeStats& operator=(TypeStats const&);
+        TypeStats(TypeStats const&);
+        TypeStats();
 
     public:
         // NOLINTBEGIN
@@ -33,9 +33,9 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptPluginHandleCounter& operator=(ScriptPluginHandleCounter const&) = delete;
-    ScriptPluginHandleCounter(ScriptPluginHandleCounter const&)            = delete;
-    ScriptPluginHandleCounter()                                            = delete;
+    ScriptPluginHandleCounter& operator=(ScriptPluginHandleCounter const&);
+    ScriptPluginHandleCounter(ScriptPluginHandleCounter const&);
+    ScriptPluginHandleCounter();
 
 public:
     // NOLINTBEGIN

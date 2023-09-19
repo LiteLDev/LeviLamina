@@ -10,8 +10,8 @@ namespace Json { class Value; }
 class FeatureTypeFactory {
 public:
     // prevent constructor by default
-    FeatureTypeFactory& operator=(FeatureTypeFactory const&) = delete;
-    FeatureTypeFactory(FeatureTypeFactory const&)            = delete;
+    FeatureTypeFactory& operator=(FeatureTypeFactory const&);
+    FeatureTypeFactory(FeatureTypeFactory const&);
 
 public:
     // NOLINTBEGIN

@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class JukeboxBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    JukeboxBlock& operator=(JukeboxBlock const&) = delete;
-    JukeboxBlock(JukeboxBlock const&)            = delete;
-    JukeboxBlock()                               = delete;
+    JukeboxBlock& operator=(JukeboxBlock const&);
+    JukeboxBlock(JukeboxBlock const&);
+    JukeboxBlock();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class PortalForcer : public ::SavedData {
 public:
     // prevent constructor by default
-    PortalForcer& operator=(PortalForcer const&) = delete;
-    PortalForcer(PortalForcer const&)            = delete;
-    PortalForcer()                               = delete;
+    PortalForcer& operator=(PortalForcer const&);
+    PortalForcer(PortalForcer const&);
+    PortalForcer();
 
 public:
     // NOLINTBEGIN

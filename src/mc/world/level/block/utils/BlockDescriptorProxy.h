@@ -7,9 +7,9 @@ namespace BlockDescriptorSerializer {
 struct BlockDescriptorProxy {
 public:
     // prevent constructor by default
-    BlockDescriptorProxy& operator=(BlockDescriptorProxy const&) = delete;
-    BlockDescriptorProxy(BlockDescriptorProxy const&)            = delete;
-    BlockDescriptorProxy()                                       = delete;
+    BlockDescriptorProxy& operator=(BlockDescriptorProxy const&);
+    BlockDescriptorProxy(BlockDescriptorProxy const&);
+    BlockDescriptorProxy();
 
 public:
     // NOLINTBEGIN

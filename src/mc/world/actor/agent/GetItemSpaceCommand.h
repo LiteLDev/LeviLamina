@@ -15,9 +15,9 @@ namespace AgentCommands {
 class GetItemSpaceCommand : public ::AgentCommands::Command {
 public:
     // prevent constructor by default
-    GetItemSpaceCommand& operator=(GetItemSpaceCommand const&) = delete;
-    GetItemSpaceCommand(GetItemSpaceCommand const&)            = delete;
-    GetItemSpaceCommand()                                      = delete;
+    GetItemSpaceCommand& operator=(GetItemSpaceCommand const&);
+    GetItemSpaceCommand(GetItemSpaceCommand const&);
+    GetItemSpaceCommand();
 
 public:
     // NOLINTBEGIN

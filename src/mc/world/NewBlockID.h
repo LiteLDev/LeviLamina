@@ -5,7 +5,7 @@
 struct NewBlockID {
 public:
     // prevent constructor by default
-    NewBlockID& operator=(NewBlockID const&) = delete;
-    NewBlockID(NewBlockID const&)            = delete;
-    NewBlockID()                             = delete;
+    NewBlockID& operator=(NewBlockID const&);
+    NewBlockID(NewBlockID const&);
+    NewBlockID();
 };

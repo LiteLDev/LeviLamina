@@ -27,9 +27,9 @@ public:
     class PowderSnowInternal {
     public:
         // prevent constructor by default
-        PowderSnowInternal& operator=(PowderSnowInternal const&) = delete;
-        PowderSnowInternal(PowderSnowInternal const&)            = delete;
-        PowderSnowInternal()                                     = delete;
+        PowderSnowInternal& operator=(PowderSnowInternal const&);
+        PowderSnowInternal(PowderSnowInternal const&);
+        PowderSnowInternal();
 
     public:
         // NOLINTBEGIN
@@ -41,9 +41,9 @@ public:
 
 public:
     // prevent constructor by default
-    PowderSnowBlock& operator=(PowderSnowBlock const&) = delete;
-    PowderSnowBlock(PowderSnowBlock const&)            = delete;
-    PowderSnowBlock()                                  = delete;
+    PowderSnowBlock& operator=(PowderSnowBlock const&);
+    PowderSnowBlock(PowderSnowBlock const&);
+    PowderSnowBlock();
 
 public:
     // NOLINTBEGIN

@@ -9,8 +9,8 @@
 class BaseCircuitComponent {
 public:
     // prevent constructor by default
-    BaseCircuitComponent& operator=(BaseCircuitComponent const&) = delete;
-    BaseCircuitComponent(BaseCircuitComponent const&)            = delete;
+    BaseCircuitComponent& operator=(BaseCircuitComponent const&);
+    BaseCircuitComponent(BaseCircuitComponent const&);
 
 public:
     // NOLINTBEGIN

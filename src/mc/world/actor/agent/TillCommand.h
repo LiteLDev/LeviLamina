@@ -15,9 +15,9 @@ namespace AgentCommands {
 class TillCommand : public ::AgentCommands::Command {
 public:
     // prevent constructor by default
-    TillCommand& operator=(TillCommand const&) = delete;
-    TillCommand(TillCommand const&)            = delete;
-    TillCommand()                              = delete;
+    TillCommand& operator=(TillCommand const&);
+    TillCommand(TillCommand const&);
+    TillCommand();
 
 public:
     // NOLINTBEGIN

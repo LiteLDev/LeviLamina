@@ -5,9 +5,9 @@
 class IMinecraftApp {
 public:
     // prevent constructor by default
-    IMinecraftApp& operator=(IMinecraftApp const&) = delete;
-    IMinecraftApp(IMinecraftApp const&)            = delete;
-    IMinecraftApp()                                = delete;
+    IMinecraftApp& operator=(IMinecraftApp const&);
+    IMinecraftApp(IMinecraftApp const&);
+    IMinecraftApp();
 
 public:
     // NOLINTBEGIN

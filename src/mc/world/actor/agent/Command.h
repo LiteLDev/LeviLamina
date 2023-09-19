@@ -15,9 +15,9 @@ namespace AgentCommands {
 class Command {
 public:
     // prevent constructor by default
-    Command& operator=(Command const&) = delete;
-    Command(Command const&)            = delete;
-    Command()                          = delete;
+    Command& operator=(Command const&);
+    Command(Command const&);
+    Command();
 
 public:
     // NOLINTBEGIN

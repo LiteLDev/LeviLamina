@@ -10,9 +10,9 @@ namespace CanyonFeatureUtils { struct CanyonConfiguration; }
 class CanyonFeature {
 public:
     // prevent constructor by default
-    CanyonFeature& operator=(CanyonFeature const&) = delete;
-    CanyonFeature(CanyonFeature const&)            = delete;
-    CanyonFeature()                                = delete;
+    CanyonFeature& operator=(CanyonFeature const&);
+    CanyonFeature(CanyonFeature const&);
+    CanyonFeature();
 
 public:
     // NOLINTBEGIN
@@ -34,7 +34,7 @@ public:
     MCVAPI ~CanyonFeature();
 
     // symbol: ??0CanyonFeature@@QEAA@F@Z
-    MCAPI CanyonFeature(short);
+    MCAPI explicit CanyonFeature(short);
 
     // symbol:
     // ?apply@CanyonFeature@@QEAAXAEAVBlockVolume@@AEBVChunkPos@@AEBVBiomeSource@@AEBUCanyonConfiguration@CanyonFeatureUtils@@AEAVRandom@@IAEBUWorldGenContext@@@Z

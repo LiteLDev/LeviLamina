@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class BellBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    BellBlock& operator=(BellBlock const&) = delete;
-    BellBlock(BellBlock const&)            = delete;
-    BellBlock()                            = delete;
+    BellBlock& operator=(BellBlock const&);
+    BellBlock(BellBlock const&);
+    BellBlock();
 
 public:
     // NOLINTBEGIN

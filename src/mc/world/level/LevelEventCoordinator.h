@@ -9,8 +9,8 @@
 class LevelEventCoordinator {
 public:
     // prevent constructor by default
-    LevelEventCoordinator& operator=(LevelEventCoordinator const&) = delete;
-    LevelEventCoordinator(LevelEventCoordinator const&)            = delete;
+    LevelEventCoordinator& operator=(LevelEventCoordinator const&);
+    LevelEventCoordinator(LevelEventCoordinator const&);
 
 public:
     // NOLINTBEGIN

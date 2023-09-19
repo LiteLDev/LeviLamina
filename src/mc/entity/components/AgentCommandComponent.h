@@ -10,8 +10,8 @@ namespace AgentCommands { class Command; }
 class AgentCommandComponent {
 public:
     // prevent constructor by default
-    AgentCommandComponent& operator=(AgentCommandComponent const&) = delete;
-    AgentCommandComponent(AgentCommandComponent const&)            = delete;
+    AgentCommandComponent& operator=(AgentCommandComponent const&);
+    AgentCommandComponent(AgentCommandComponent const&);
 
 public:
     // NOLINTBEGIN

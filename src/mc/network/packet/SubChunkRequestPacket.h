@@ -10,8 +10,8 @@
 class SubChunkRequestPacket : public ::Packet {
 public:
     // prevent constructor by default
-    SubChunkRequestPacket& operator=(SubChunkRequestPacket const&) = delete;
-    SubChunkRequestPacket(SubChunkRequestPacket const&)            = delete;
+    SubChunkRequestPacket& operator=(SubChunkRequestPacket const&);
+    SubChunkRequestPacket(SubChunkRequestPacket const&);
 
 public:
     // NOLINTBEGIN

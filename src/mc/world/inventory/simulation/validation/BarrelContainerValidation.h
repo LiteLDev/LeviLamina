@@ -8,9 +8,9 @@
 class BarrelContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    BarrelContainerValidation& operator=(BarrelContainerValidation const&) = delete;
-    BarrelContainerValidation(BarrelContainerValidation const&)            = delete;
-    BarrelContainerValidation()                                            = delete;
+    BarrelContainerValidation& operator=(BarrelContainerValidation const&);
+    BarrelContainerValidation(BarrelContainerValidation const&);
+    BarrelContainerValidation();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class InventoryContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    InventoryContainerValidation& operator=(InventoryContainerValidation const&) = delete;
-    InventoryContainerValidation(InventoryContainerValidation const&)            = delete;
-    InventoryContainerValidation()                                               = delete;
+    InventoryContainerValidation& operator=(InventoryContainerValidation const&);
+    InventoryContainerValidation(InventoryContainerValidation const&);
+    InventoryContainerValidation();
 
 public:
     // NOLINTBEGIN

@@ -15,9 +15,9 @@ namespace AgentCommands {
 class GetItemDetailsCommand : public ::AgentCommands::Command {
 public:
     // prevent constructor by default
-    GetItemDetailsCommand& operator=(GetItemDetailsCommand const&) = delete;
-    GetItemDetailsCommand(GetItemDetailsCommand const&)            = delete;
-    GetItemDetailsCommand()                                        = delete;
+    GetItemDetailsCommand& operator=(GetItemDetailsCommand const&);
+    GetItemDetailsCommand(GetItemDetailsCommand const&);
+    GetItemDetailsCommand();
 
 public:
     // NOLINTBEGIN

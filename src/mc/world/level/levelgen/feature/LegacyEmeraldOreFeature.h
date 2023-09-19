@@ -8,9 +8,9 @@
 class LegacyEmeraldOreFeature : public ::Feature {
 public:
     // prevent constructor by default
-    LegacyEmeraldOreFeature& operator=(LegacyEmeraldOreFeature const&) = delete;
-    LegacyEmeraldOreFeature(LegacyEmeraldOreFeature const&)            = delete;
-    LegacyEmeraldOreFeature()                                          = delete;
+    LegacyEmeraldOreFeature& operator=(LegacyEmeraldOreFeature const&);
+    LegacyEmeraldOreFeature(LegacyEmeraldOreFeature const&);
+    LegacyEmeraldOreFeature();
 
 public:
     // NOLINTBEGIN

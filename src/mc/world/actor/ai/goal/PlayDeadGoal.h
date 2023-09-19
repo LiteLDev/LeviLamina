@@ -24,8 +24,8 @@ public:
     class Definition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        Definition& operator=(Definition const&) = delete;
-        Definition(Definition const&)            = delete;
+        Definition& operator=(Definition const&);
+        Definition(Definition const&);
 
     public:
         // NOLINTBEGIN
@@ -55,9 +55,9 @@ public:
 
 public:
     // prevent constructor by default
-    PlayDeadGoal& operator=(PlayDeadGoal const&) = delete;
-    PlayDeadGoal(PlayDeadGoal const&)            = delete;
-    PlayDeadGoal()                               = delete;
+    PlayDeadGoal& operator=(PlayDeadGoal const&);
+    PlayDeadGoal(PlayDeadGoal const&);
+    PlayDeadGoal();
 
 public:
     // NOLINTBEGIN
@@ -81,7 +81,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0PlayDeadGoal@@QEAA@AEAVMob@@@Z
-    MCAPI PlayDeadGoal(class Mob&);
+    MCAPI explicit PlayDeadGoal(class Mob&);
 
     // NOLINTEND
 };

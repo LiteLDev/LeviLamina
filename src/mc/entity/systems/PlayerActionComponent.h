@@ -5,8 +5,8 @@
 struct PlayerActionComponent {
 public:
     // prevent constructor by default
-    PlayerActionComponent& operator=(PlayerActionComponent const&) = delete;
-    PlayerActionComponent(PlayerActionComponent const&)            = delete;
+    PlayerActionComponent& operator=(PlayerActionComponent const&);
+    PlayerActionComponent(PlayerActionComponent const&);
 
 public:
     // NOLINTBEGIN

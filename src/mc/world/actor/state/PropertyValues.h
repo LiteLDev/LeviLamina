@@ -5,8 +5,8 @@
 struct PropertyValues {
 public:
     // prevent constructor by default
-    PropertyValues& operator=(PropertyValues const&) = delete;
-    PropertyValues()                                 = delete;
+    PropertyValues& operator=(PropertyValues const&);
+    PropertyValues();
 
 public:
     // NOLINTBEGIN

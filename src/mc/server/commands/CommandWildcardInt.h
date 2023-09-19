@@ -5,8 +5,8 @@
 class CommandWildcardInt {
 public:
     // prevent constructor by default
-    CommandWildcardInt& operator=(CommandWildcardInt const&) = delete;
-    CommandWildcardInt(CommandWildcardInt const&)            = delete;
+    CommandWildcardInt& operator=(CommandWildcardInt const&);
+    CommandWildcardInt(CommandWildcardInt const&);
 
 public:
     // NOLINTBEGIN

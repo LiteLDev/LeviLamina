@@ -5,9 +5,9 @@
 class EntityContextBase {
 public:
     // prevent constructor by default
-    EntityContextBase& operator=(EntityContextBase const&) = delete;
-    EntityContextBase(EntityContextBase const&)            = delete;
-    EntityContextBase()                                    = delete;
+    EntityContextBase& operator=(EntityContextBase const&);
+    EntityContextBase(EntityContextBase const&);
+    EntityContextBase();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class SnackGoal : public ::Goal {
 public:
     // prevent constructor by default
-    SnackGoal& operator=(SnackGoal const&) = delete;
-    SnackGoal(SnackGoal const&)            = delete;
-    SnackGoal()                            = delete;
+    SnackGoal& operator=(SnackGoal const&);
+    SnackGoal(SnackGoal const&);
+    SnackGoal();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class TransactionalWorldBlockTarget : public ::IBlockWorldGenAPI {
 public:
     // prevent constructor by default
-    TransactionalWorldBlockTarget& operator=(TransactionalWorldBlockTarget const&) = delete;
-    TransactionalWorldBlockTarget(TransactionalWorldBlockTarget const&)            = delete;
-    TransactionalWorldBlockTarget()                                                = delete;
+    TransactionalWorldBlockTarget& operator=(TransactionalWorldBlockTarget const&);
+    TransactionalWorldBlockTarget(TransactionalWorldBlockTarget const&);
+    TransactionalWorldBlockTarget();
 
 public:
     // NOLINTBEGIN
@@ -106,7 +106,7 @@ public:
     MCVAPI ~TransactionalWorldBlockTarget();
 
     // symbol: ??0TransactionalWorldBlockTarget@@QEAA@AEAVIBlockWorldGenAPI@@@Z
-    MCAPI TransactionalWorldBlockTarget(class IBlockWorldGenAPI&);
+    MCAPI explicit TransactionalWorldBlockTarget(class IBlockWorldGenAPI&);
 
     // NOLINTEND
 };

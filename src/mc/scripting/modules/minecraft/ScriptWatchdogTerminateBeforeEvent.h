@@ -16,9 +16,9 @@ namespace ScriptModuleMinecraft {
 struct ScriptWatchdogTerminateBeforeEvent {
 public:
     // prevent constructor by default
-    ScriptWatchdogTerminateBeforeEvent& operator=(ScriptWatchdogTerminateBeforeEvent const&) = delete;
-    ScriptWatchdogTerminateBeforeEvent(ScriptWatchdogTerminateBeforeEvent const&)            = delete;
-    ScriptWatchdogTerminateBeforeEvent()                                                     = delete;
+    ScriptWatchdogTerminateBeforeEvent& operator=(ScriptWatchdogTerminateBeforeEvent const&);
+    ScriptWatchdogTerminateBeforeEvent(ScriptWatchdogTerminateBeforeEvent const&);
+    ScriptWatchdogTerminateBeforeEvent();
 
 public:
     // NOLINTBEGIN

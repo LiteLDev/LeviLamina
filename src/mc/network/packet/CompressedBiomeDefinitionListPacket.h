@@ -10,8 +10,8 @@
 class CompressedBiomeDefinitionListPacket : public ::BiomeDefinitionListPacket {
 public:
     // prevent constructor by default
-    CompressedBiomeDefinitionListPacket& operator=(CompressedBiomeDefinitionListPacket const&) = delete;
-    CompressedBiomeDefinitionListPacket(CompressedBiomeDefinitionListPacket const&)            = delete;
+    CompressedBiomeDefinitionListPacket& operator=(CompressedBiomeDefinitionListPacket const&);
+    CompressedBiomeDefinitionListPacket(CompressedBiomeDefinitionListPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -39,7 +39,7 @@ public:
     MCAPI CompressedBiomeDefinitionListPacket();
 
     // symbol: ??0CompressedBiomeDefinitionListPacket@@QEAA@VCompoundTag@@@Z
-    MCAPI CompressedBiomeDefinitionListPacket(class CompoundTag);
+    MCAPI explicit CompressedBiomeDefinitionListPacket(class CompoundTag);
 
     // NOLINTEND
 };

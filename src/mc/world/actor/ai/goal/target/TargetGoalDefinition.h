@@ -8,9 +8,9 @@
 class TargetGoalDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    TargetGoalDefinition& operator=(TargetGoalDefinition const&) = delete;
-    TargetGoalDefinition(TargetGoalDefinition const&)            = delete;
-    TargetGoalDefinition()                                       = delete;
+    TargetGoalDefinition& operator=(TargetGoalDefinition const&);
+    TargetGoalDefinition(TargetGoalDefinition const&);
+    TargetGoalDefinition();
 
 public:
     // NOLINTBEGIN

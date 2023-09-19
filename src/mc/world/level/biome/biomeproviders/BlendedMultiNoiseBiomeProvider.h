@@ -9,9 +9,9 @@
 class BlendedMultiNoiseBiomeProvider {
 public:
     // prevent constructor by default
-    BlendedMultiNoiseBiomeProvider& operator=(BlendedMultiNoiseBiomeProvider const&) = delete;
-    BlendedMultiNoiseBiomeProvider(BlendedMultiNoiseBiomeProvider const&)            = delete;
-    BlendedMultiNoiseBiomeProvider()                                                 = delete;
+    BlendedMultiNoiseBiomeProvider& operator=(BlendedMultiNoiseBiomeProvider const&);
+    BlendedMultiNoiseBiomeProvider(BlendedMultiNoiseBiomeProvider const&);
+    BlendedMultiNoiseBiomeProvider();
 
 public:
     // NOLINTBEGIN

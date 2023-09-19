@@ -31,9 +31,9 @@ namespace mce { class UUID; }
 class Skeleton : public ::HumanoidMonster {
 public:
     // prevent constructor by default
-    Skeleton& operator=(Skeleton const&) = delete;
-    Skeleton(Skeleton const&)            = delete;
-    Skeleton()                           = delete;
+    Skeleton& operator=(Skeleton const&);
+    Skeleton(Skeleton const&);
+    Skeleton();
 
 public:
     // NOLINTBEGIN

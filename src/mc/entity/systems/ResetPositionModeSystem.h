@@ -10,9 +10,9 @@
 class ResetPositionModeSystem {
 public:
     // prevent constructor by default
-    ResetPositionModeSystem& operator=(ResetPositionModeSystem const&) = delete;
-    ResetPositionModeSystem(ResetPositionModeSystem const&)            = delete;
-    ResetPositionModeSystem()                                          = delete;
+    ResetPositionModeSystem& operator=(ResetPositionModeSystem const&);
+    ResetPositionModeSystem(ResetPositionModeSystem const&);
+    ResetPositionModeSystem();
 
 public:
     // NOLINTBEGIN

@@ -8,8 +8,8 @@
 class TrailDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    TrailDescription& operator=(TrailDescription const&) = delete;
-    TrailDescription(TrailDescription const&)            = delete;
+    TrailDescription& operator=(TrailDescription const&);
+    TrailDescription(TrailDescription const&);
 
 public:
     // NOLINTBEGIN

@@ -5,8 +5,8 @@
 struct SummonSpellStage {
 public:
     // prevent constructor by default
-    SummonSpellStage(SummonSpellStage const&) = delete;
-    SummonSpellStage()                        = delete;
+    SummonSpellStage(SummonSpellStage const&);
+    SummonSpellStage();
 
 public:
     // NOLINTBEGIN

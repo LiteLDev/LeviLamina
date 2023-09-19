@@ -5,9 +5,9 @@
 class ScoreboardEventCoordinator {
 public:
     // prevent constructor by default
-    ScoreboardEventCoordinator& operator=(ScoreboardEventCoordinator const&) = delete;
-    ScoreboardEventCoordinator(ScoreboardEventCoordinator const&)            = delete;
-    ScoreboardEventCoordinator()                                             = delete;
+    ScoreboardEventCoordinator& operator=(ScoreboardEventCoordinator const&);
+    ScoreboardEventCoordinator(ScoreboardEventCoordinator const&);
+    ScoreboardEventCoordinator();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class SHRightTurn : public ::StrongholdPiece {
 public:
     // prevent constructor by default
-    SHRightTurn& operator=(SHRightTurn const&) = delete;
-    SHRightTurn(SHRightTurn const&)            = delete;
-    SHRightTurn()                              = delete;
+    SHRightTurn& operator=(SHRightTurn const&);
+    SHRightTurn(SHRightTurn const&);
+    SHRightTurn();
 
 public:
     // NOLINTBEGIN

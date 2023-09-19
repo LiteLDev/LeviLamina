@@ -27,9 +27,9 @@
 class MinecartRideable : public ::Minecart {
 public:
     // prevent constructor by default
-    MinecartRideable& operator=(MinecartRideable const&) = delete;
-    MinecartRideable(MinecartRideable const&)            = delete;
-    MinecartRideable()                                   = delete;
+    MinecartRideable& operator=(MinecartRideable const&);
+    MinecartRideable(MinecartRideable const&);
+    MinecartRideable();
 
 public:
     // NOLINTBEGIN

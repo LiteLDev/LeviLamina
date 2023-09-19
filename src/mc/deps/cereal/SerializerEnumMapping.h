@@ -7,9 +7,9 @@ namespace cereal {
 class SerializerEnumMapping {
 public:
     // prevent constructor by default
-    SerializerEnumMapping& operator=(SerializerEnumMapping const&) = delete;
-    SerializerEnumMapping(SerializerEnumMapping const&)            = delete;
-    SerializerEnumMapping()                                        = delete;
+    SerializerEnumMapping& operator=(SerializerEnumMapping const&);
+    SerializerEnumMapping(SerializerEnumMapping const&);
+    SerializerEnumMapping();
 
 public:
     // NOLINTBEGIN

@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class EatBlockDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    EatBlockDefinition& operator=(EatBlockDefinition const&) = delete;
-    EatBlockDefinition(EatBlockDefinition const&)            = delete;
+    EatBlockDefinition& operator=(EatBlockDefinition const&);
+    EatBlockDefinition(EatBlockDefinition const&);
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class LegacyForestRockFeature : public ::Feature {
 public:
     // prevent constructor by default
-    LegacyForestRockFeature& operator=(LegacyForestRockFeature const&) = delete;
-    LegacyForestRockFeature(LegacyForestRockFeature const&)            = delete;
-    LegacyForestRockFeature()                                          = delete;
+    LegacyForestRockFeature& operator=(LegacyForestRockFeature const&);
+    LegacyForestRockFeature(LegacyForestRockFeature const&);
+    LegacyForestRockFeature();
 
 public:
     // NOLINTBEGIN
@@ -21,7 +21,7 @@ public:
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
     // symbol: ??0LegacyForestRockFeature@@QEAA@AEBVFeatureRegistry@@@Z
-    MCAPI LegacyForestRockFeature(class FeatureRegistry const&);
+    MCAPI explicit LegacyForestRockFeature(class FeatureRegistry const&);
 
     // NOLINTEND
 };

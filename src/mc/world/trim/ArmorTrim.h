@@ -5,14 +5,14 @@
 class ArmorTrim {
 public:
     // prevent constructor by default
-    ArmorTrim& operator=(ArmorTrim const&) = delete;
-    ArmorTrim(ArmorTrim const&)            = delete;
-    ArmorTrim()                            = delete;
+    ArmorTrim& operator=(ArmorTrim const&);
+    ArmorTrim(ArmorTrim const&);
+    ArmorTrim();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ArmorTrim@@QEAA@AEBVCompoundTag@@@Z
-    MCAPI ArmorTrim(class CompoundTag const&);
+    MCAPI explicit ArmorTrim(class CompoundTag const&);
 
     // symbol: ??0ArmorTrim@@QEAA@VHashedString@@0@Z
     MCAPI ArmorTrim(class HashedString, class HashedString);

@@ -9,9 +9,8 @@ class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING {
 public:
     // prevent constructor by default
     ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING&
-    operator=(ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const&) = delete;
-    ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const&) =
-        delete;
+    operator=(ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const&);
+    ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const&);
 
 public:
     // NOLINTBEGIN

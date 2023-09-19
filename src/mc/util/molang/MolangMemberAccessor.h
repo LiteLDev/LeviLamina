@@ -5,9 +5,9 @@
 struct MolangMemberAccessor {
 public:
     // prevent constructor by default
-    MolangMemberAccessor& operator=(MolangMemberAccessor const&) = delete;
-    MolangMemberAccessor(MolangMemberAccessor const&)            = delete;
-    MolangMemberAccessor()                                       = delete;
+    MolangMemberAccessor& operator=(MolangMemberAccessor const&);
+    MolangMemberAccessor(MolangMemberAccessor const&);
+    MolangMemberAccessor();
 
 public:
     // NOLINTBEGIN

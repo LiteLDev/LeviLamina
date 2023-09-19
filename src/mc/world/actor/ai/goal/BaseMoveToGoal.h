@@ -9,9 +9,9 @@
 class BaseMoveToGoal : public ::Goal {
 public:
     // prevent constructor by default
-    BaseMoveToGoal& operator=(BaseMoveToGoal const&) = delete;
-    BaseMoveToGoal(BaseMoveToGoal const&)            = delete;
-    BaseMoveToGoal()                                 = delete;
+    BaseMoveToGoal& operator=(BaseMoveToGoal const&);
+    BaseMoveToGoal(BaseMoveToGoal const&);
+    BaseMoveToGoal();
 
 public:
     // NOLINTBEGIN

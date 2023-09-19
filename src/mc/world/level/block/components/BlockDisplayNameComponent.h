@@ -8,9 +8,9 @@
 struct BlockDisplayNameComponent : public ::BlockComponentBase {
 public:
     // prevent constructor by default
-    BlockDisplayNameComponent& operator=(BlockDisplayNameComponent const&) = delete;
-    BlockDisplayNameComponent(BlockDisplayNameComponent const&)            = delete;
-    BlockDisplayNameComponent()                                            = delete;
+    BlockDisplayNameComponent& operator=(BlockDisplayNameComponent const&);
+    BlockDisplayNameComponent(BlockDisplayNameComponent const&);
+    BlockDisplayNameComponent();
 
 public:
     // NOLINTBEGIN

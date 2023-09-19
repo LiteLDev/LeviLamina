@@ -14,8 +14,8 @@ namespace Bedrock::PubSub { class Subscription; }
 class BossEventSubscriptionManagerImpl : public ::BossEventSubscriptionManager {
 public:
     // prevent constructor by default
-    BossEventSubscriptionManagerImpl& operator=(BossEventSubscriptionManagerImpl const&) = delete;
-    BossEventSubscriptionManagerImpl(BossEventSubscriptionManagerImpl const&)            = delete;
+    BossEventSubscriptionManagerImpl& operator=(BossEventSubscriptionManagerImpl const&);
+    BossEventSubscriptionManagerImpl(BossEventSubscriptionManagerImpl const&);
 
 public:
     // NOLINTBEGIN

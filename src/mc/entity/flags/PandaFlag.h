@@ -5,7 +5,7 @@
 struct PandaFlag {
 public:
     // prevent constructor by default
-    PandaFlag& operator=(PandaFlag const&) = delete;
-    PandaFlag(PandaFlag const&)            = delete;
-    PandaFlag()                            = delete;
+    PandaFlag& operator=(PandaFlag const&);
+    PandaFlag(PandaFlag const&);
+    PandaFlag();
 };

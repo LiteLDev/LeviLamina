@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class PodzolBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    PodzolBlock& operator=(PodzolBlock const&) = delete;
-    PodzolBlock(PodzolBlock const&)            = delete;
-    PodzolBlock()                              = delete;
+    PodzolBlock& operator=(PodzolBlock const&);
+    PodzolBlock(PodzolBlock const&);
+    PodzolBlock();
 
 public:
     // NOLINTBEGIN

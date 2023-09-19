@@ -8,9 +8,9 @@
 class BonusChestFeature : public ::Feature {
 public:
     // prevent constructor by default
-    BonusChestFeature& operator=(BonusChestFeature const&) = delete;
-    BonusChestFeature(BonusChestFeature const&)            = delete;
-    BonusChestFeature()                                    = delete;
+    BonusChestFeature& operator=(BonusChestFeature const&);
+    BonusChestFeature(BonusChestFeature const&);
+    BonusChestFeature();
 
 public:
     // NOLINTBEGIN

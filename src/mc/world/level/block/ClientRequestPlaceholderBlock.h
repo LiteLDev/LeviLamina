@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class ClientRequestPlaceholderBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    ClientRequestPlaceholderBlock& operator=(ClientRequestPlaceholderBlock const&) = delete;
-    ClientRequestPlaceholderBlock(ClientRequestPlaceholderBlock const&)            = delete;
-    ClientRequestPlaceholderBlock()                                                = delete;
+    ClientRequestPlaceholderBlock& operator=(ClientRequestPlaceholderBlock const&);
+    ClientRequestPlaceholderBlock(ClientRequestPlaceholderBlock const&);
+    ClientRequestPlaceholderBlock();
 
 public:
     // NOLINTBEGIN

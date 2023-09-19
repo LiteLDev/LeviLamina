@@ -9,9 +9,9 @@ public:
 
 public:
     // prevent constructor by default
-    MultifaceSpreader& operator=(MultifaceSpreader const&) = delete;
-    MultifaceSpreader(MultifaceSpreader const&)            = delete;
-    MultifaceSpreader()                                    = delete;
+    MultifaceSpreader& operator=(MultifaceSpreader const&);
+    MultifaceSpreader(MultifaceSpreader const&);
+    MultifaceSpreader();
 
 public:
     // NOLINTBEGIN
@@ -29,7 +29,7 @@ public:
 
     // symbol:
     // ??0MultifaceSpreader@@QEAA@AEBV?$vector@W4SpreadType@MultifaceSpreader@@V?$allocator@W4SpreadType@MultifaceSpreader@@@std@@@std@@@Z
-    MCAPI MultifaceSpreader(std::vector<::MultifaceSpreader::SpreadType> const&);
+    MCAPI explicit MultifaceSpreader(std::vector<::MultifaceSpreader::SpreadType> const&);
 
     // symbol:
     // ?getSpreadFromFaceTowardDirection@MultifaceSpreader@@QEBA?AV?$optional@U?$pair@$$CBVBlockPos@@$$CBE@std@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlock@@1AEBVBlockPos@@EE@Z

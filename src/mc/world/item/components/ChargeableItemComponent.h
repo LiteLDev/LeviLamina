@@ -8,9 +8,9 @@
 class ChargeableItemComponent : public ::ItemComponent {
 public:
     // prevent constructor by default
-    ChargeableItemComponent& operator=(ChargeableItemComponent const&) = delete;
-    ChargeableItemComponent(ChargeableItemComponent const&)            = delete;
-    ChargeableItemComponent()                                          = delete;
+    ChargeableItemComponent& operator=(ChargeableItemComponent const&);
+    ChargeableItemComponent(ChargeableItemComponent const&);
+    ChargeableItemComponent();
 
 public:
     // NOLINTBEGIN

@@ -12,9 +12,9 @@ public:
 
 public:
     // prevent constructor by default
-    SaveCommand& operator=(SaveCommand const&) = delete;
-    SaveCommand(SaveCommand const&)            = delete;
-    SaveCommand()                              = delete;
+    SaveCommand& operator=(SaveCommand const&);
+    SaveCommand(SaveCommand const&);
+    SaveCommand();
 
 public:
     // NOLINTBEGIN

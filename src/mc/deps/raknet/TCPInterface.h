@@ -13,8 +13,8 @@ namespace RakNet {
 class TCPInterface {
 public:
     // prevent constructor by default
-    TCPInterface& operator=(TCPInterface const&) = delete;
-    TCPInterface(TCPInterface const&)            = delete;
+    TCPInterface& operator=(TCPInterface const&);
+    TCPInterface(TCPInterface const&);
 
 public:
     // NOLINTBEGIN

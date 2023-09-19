@@ -8,9 +8,9 @@
 class PropertyComponent {
 public:
     // prevent constructor by default
-    PropertyComponent& operator=(PropertyComponent const&) = delete;
-    PropertyComponent(PropertyComponent const&)            = delete;
-    PropertyComponent()                                    = delete;
+    PropertyComponent& operator=(PropertyComponent const&);
+    PropertyComponent(PropertyComponent const&);
+    PropertyComponent();
 
 public:
     // NOLINTBEGIN

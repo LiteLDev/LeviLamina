@@ -5,9 +5,9 @@
 class BedHelper {
 public:
     // prevent constructor by default
-    BedHelper& operator=(BedHelper const&) = delete;
-    BedHelper(BedHelper const&)            = delete;
-    BedHelper()                            = delete;
+    BedHelper& operator=(BedHelper const&);
+    BedHelper(BedHelper const&);
+    BedHelper();
 
 public:
     // NOLINTBEGIN

@@ -9,7 +9,7 @@ class SerializedSkin {
 public:
     // NOLINTBEGIN
     // symbol: ??0SerializedSkin@@QEAA@AEBVSubClientConnectionRequest@@@Z
-    MCAPI SerializedSkin(class SubClientConnectionRequest const&);
+    MCAPI explicit SerializedSkin(class SubClientConnectionRequest const&);
 
     // symbol: ??0SerializedSkin@@QEAA@XZ
     MCAPI SerializedSkin();
@@ -21,7 +21,7 @@ public:
     MCAPI SerializedSkin(class SerializedSkin&&);
 
     // symbol: ??0SerializedSkin@@QEAA@AEBVConnectionRequest@@@Z
-    MCAPI SerializedSkin(class ConnectionRequest const&);
+    MCAPI explicit SerializedSkin(class ConnectionRequest const&);
 
     // symbol: ?getName@SerializedSkin@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getName() const;

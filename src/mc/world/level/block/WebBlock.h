@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class WebBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    WebBlock& operator=(WebBlock const&) = delete;
-    WebBlock(WebBlock const&)            = delete;
-    WebBlock()                           = delete;
+    WebBlock& operator=(WebBlock const&);
+    WebBlock(WebBlock const&);
+    WebBlock();
 
 public:
     // NOLINTBEGIN

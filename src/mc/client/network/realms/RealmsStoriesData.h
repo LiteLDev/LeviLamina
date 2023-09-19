@@ -8,14 +8,14 @@
 class RealmsStoriesData {
 public:
     // prevent constructor by default
-    RealmsStoriesData& operator=(RealmsStoriesData const&) = delete;
-    RealmsStoriesData(RealmsStoriesData const&)            = delete;
-    RealmsStoriesData()                                    = delete;
+    RealmsStoriesData& operator=(RealmsStoriesData const&);
+    RealmsStoriesData(RealmsStoriesData const&);
+    RealmsStoriesData();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0RealmsStoriesData@@QEAA@AEAVLevelStorage@@@Z
-    MCAPI RealmsStoriesData(class LevelStorage&);
+    MCAPI explicit RealmsStoriesData(class LevelStorage&);
 
     // symbol: ?didRealmsEventAlreadyHappen@RealmsStoriesData@@QEBA_NW4RealmsEventId@@@Z
     MCAPI bool didRealmsEventAlreadyHappen(::RealmsEventId) const;

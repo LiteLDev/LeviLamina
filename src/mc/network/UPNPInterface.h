@@ -8,9 +8,9 @@
 class UPNPInterface {
 public:
     // prevent constructor by default
-    UPNPInterface& operator=(UPNPInterface const&) = delete;
-    UPNPInterface(UPNPInterface const&)            = delete;
-    UPNPInterface()                                = delete;
+    UPNPInterface& operator=(UPNPInterface const&);
+    UPNPInterface(UPNPInterface const&);
+    UPNPInterface();
 
 public:
     // NOLINTBEGIN
@@ -21,7 +21,7 @@ public:
     MCVAPI void _onEnable();
 
     // symbol: ??0UPNPInterface@@QEAA@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
-    MCAPI UPNPInterface(class Bedrock::NonOwnerPointer<class AppPlatform> const&);
+    MCAPI explicit UPNPInterface(class Bedrock::NonOwnerPointer<class AppPlatform> const&);
 
     // symbol: ?reset@UPNPInterface@@QEAAXXZ
     MCAPI void reset();

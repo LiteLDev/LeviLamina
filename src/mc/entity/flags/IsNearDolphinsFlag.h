@@ -5,7 +5,7 @@
 struct IsNearDolphinsFlag {
 public:
     // prevent constructor by default
-    IsNearDolphinsFlag& operator=(IsNearDolphinsFlag const&) = delete;
-    IsNearDolphinsFlag(IsNearDolphinsFlag const&)            = delete;
-    IsNearDolphinsFlag()                                     = delete;
+    IsNearDolphinsFlag& operator=(IsNearDolphinsFlag const&);
+    IsNearDolphinsFlag(IsNearDolphinsFlag const&);
+    IsNearDolphinsFlag();
 };

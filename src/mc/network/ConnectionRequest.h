@@ -15,8 +15,8 @@ namespace mce { class Color; }
 class ConnectionRequest {
 public:
     // prevent constructor by default
-    ConnectionRequest& operator=(ConnectionRequest const&) = delete;
-    ConnectionRequest()                                    = delete;
+    ConnectionRequest& operator=(ConnectionRequest const&);
+    ConnectionRequest();
 
 public:
     // NOLINTBEGIN

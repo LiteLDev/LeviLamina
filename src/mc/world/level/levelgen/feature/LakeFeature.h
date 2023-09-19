@@ -8,9 +8,9 @@
 class LakeFeature : public ::Feature {
 public:
     // prevent constructor by default
-    LakeFeature& operator=(LakeFeature const&) = delete;
-    LakeFeature(LakeFeature const&)            = delete;
-    LakeFeature()                              = delete;
+    LakeFeature& operator=(LakeFeature const&);
+    LakeFeature(LakeFeature const&);
+    LakeFeature();
 
 public:
     // NOLINTBEGIN

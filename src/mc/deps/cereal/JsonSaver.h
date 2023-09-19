@@ -15,9 +15,9 @@ namespace cereal {
 class JsonSaver : public ::cereal::BasicSaver {
 public:
     // prevent constructor by default
-    JsonSaver& operator=(JsonSaver const&) = delete;
-    JsonSaver(JsonSaver const&)            = delete;
-    JsonSaver()                            = delete;
+    JsonSaver& operator=(JsonSaver const&);
+    JsonSaver(JsonSaver const&);
+    JsonSaver();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class StructureHelpers {
 public:
     // prevent constructor by default
-    StructureHelpers& operator=(StructureHelpers const&) = delete;
-    StructureHelpers(StructureHelpers const&)            = delete;
-    StructureHelpers()                                   = delete;
+    StructureHelpers& operator=(StructureHelpers const&);
+    StructureHelpers(StructureHelpers const&);
+    StructureHelpers();
 
 public:
     // NOLINTBEGIN

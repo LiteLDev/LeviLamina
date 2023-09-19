@@ -16,9 +16,9 @@ namespace ScriptModuleMinecraft {
 class ScriptVector {
 public:
     // prevent constructor by default
-    ScriptVector& operator=(ScriptVector const&) = delete;
-    ScriptVector(ScriptVector const&)            = delete;
-    ScriptVector()                               = delete;
+    ScriptVector& operator=(ScriptVector const&);
+    ScriptVector(ScriptVector const&);
+    ScriptVector();
 
 public:
     // NOLINTBEGIN

@@ -26,9 +26,9 @@
 class Chicken : public ::Animal {
 public:
     // prevent constructor by default
-    Chicken& operator=(Chicken const&) = delete;
-    Chicken(Chicken const&)            = delete;
-    Chicken()                          = delete;
+    Chicken& operator=(Chicken const&);
+    Chicken(Chicken const&);
+    Chicken();
 
 public:
     // NOLINTBEGIN

@@ -14,8 +14,8 @@ namespace Core { class Path; }
 class IFileAccess : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    IFileAccess& operator=(IFileAccess const&) = delete;
-    IFileAccess(IFileAccess const&)            = delete;
+    IFileAccess& operator=(IFileAccess const&);
+    IFileAccess(IFileAccess const&);
 
 public:
     // NOLINTBEGIN

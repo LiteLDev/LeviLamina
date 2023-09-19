@@ -14,9 +14,9 @@ namespace CaveFeatureUtils { struct CarvingParameters; }
 class NetherCaveFeature : public ::CaveFeature {
 public:
     // prevent constructor by default
-    NetherCaveFeature& operator=(NetherCaveFeature const&) = delete;
-    NetherCaveFeature(NetherCaveFeature const&)            = delete;
-    NetherCaveFeature()                                    = delete;
+    NetherCaveFeature& operator=(NetherCaveFeature const&);
+    NetherCaveFeature(NetherCaveFeature const&);
+    NetherCaveFeature();
 
 public:
     // NOLINTBEGIN

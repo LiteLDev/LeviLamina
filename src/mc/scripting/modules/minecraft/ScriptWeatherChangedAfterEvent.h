@@ -10,9 +10,9 @@ namespace ScriptModuleMinecraft {
 struct ScriptWeatherChangedAfterEvent {
 public:
     // prevent constructor by default
-    ScriptWeatherChangedAfterEvent& operator=(ScriptWeatherChangedAfterEvent const&) = delete;
-    ScriptWeatherChangedAfterEvent(ScriptWeatherChangedAfterEvent const&)            = delete;
-    ScriptWeatherChangedAfterEvent()                                                 = delete;
+    ScriptWeatherChangedAfterEvent& operator=(ScriptWeatherChangedAfterEvent const&);
+    ScriptWeatherChangedAfterEvent(ScriptWeatherChangedAfterEvent const&);
+    ScriptWeatherChangedAfterEvent();
 
 public:
     // NOLINTBEGIN

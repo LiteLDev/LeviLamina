@@ -9,9 +9,9 @@
 class Igloo : public ::ScatteredFeaturePiece {
 public:
     // prevent constructor by default
-    Igloo& operator=(Igloo const&) = delete;
-    Igloo(Igloo const&)            = delete;
-    Igloo()                        = delete;
+    Igloo& operator=(Igloo const&);
+    Igloo(Igloo const&);
+    Igloo();
 
 public:
     // NOLINTBEGIN

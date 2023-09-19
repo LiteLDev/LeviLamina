@@ -5,8 +5,8 @@
 class BinaryHeap {
 public:
     // prevent constructor by default
-    BinaryHeap& operator=(BinaryHeap const&) = delete;
-    BinaryHeap(BinaryHeap const&)            = delete;
+    BinaryHeap& operator=(BinaryHeap const&);
+    BinaryHeap(BinaryHeap const&);
 
 public:
     // NOLINTBEGIN

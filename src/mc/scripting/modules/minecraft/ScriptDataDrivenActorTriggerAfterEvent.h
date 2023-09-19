@@ -17,9 +17,9 @@ namespace ScriptModuleMinecraft {
 struct ScriptDataDrivenActorTriggerAfterEvent {
 public:
     // prevent constructor by default
-    ScriptDataDrivenActorTriggerAfterEvent& operator=(ScriptDataDrivenActorTriggerAfterEvent const&) = delete;
-    ScriptDataDrivenActorTriggerAfterEvent(ScriptDataDrivenActorTriggerAfterEvent const&)            = delete;
-    ScriptDataDrivenActorTriggerAfterEvent()                                                         = delete;
+    ScriptDataDrivenActorTriggerAfterEvent& operator=(ScriptDataDrivenActorTriggerAfterEvent const&);
+    ScriptDataDrivenActorTriggerAfterEvent(ScriptDataDrivenActorTriggerAfterEvent const&);
+    ScriptDataDrivenActorTriggerAfterEvent();
 
 public:
     // NOLINTBEGIN

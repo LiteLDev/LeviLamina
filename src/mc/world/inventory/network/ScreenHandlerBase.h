@@ -8,9 +8,9 @@
 class ScreenHandlerBase {
 public:
     // prevent constructor by default
-    ScreenHandlerBase& operator=(ScreenHandlerBase const&) = delete;
-    ScreenHandlerBase(ScreenHandlerBase const&)            = delete;
-    ScreenHandlerBase()                                    = delete;
+    ScreenHandlerBase& operator=(ScreenHandlerBase const&);
+    ScreenHandlerBase(ScreenHandlerBase const&);
+    ScreenHandlerBase();
 
 public:
     // NOLINTBEGIN

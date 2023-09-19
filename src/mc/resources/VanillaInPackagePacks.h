@@ -9,9 +9,9 @@
 class VanillaInPackagePacks : public ::IInPackagePacks {
 public:
     // prevent constructor by default
-    VanillaInPackagePacks& operator=(VanillaInPackagePacks const&) = delete;
-    VanillaInPackagePacks(VanillaInPackagePacks const&)            = delete;
-    VanillaInPackagePacks()                                        = delete;
+    VanillaInPackagePacks& operator=(VanillaInPackagePacks const&);
+    VanillaInPackagePacks(VanillaInPackagePacks const&);
+    VanillaInPackagePacks();
 
 public:
     // NOLINTBEGIN

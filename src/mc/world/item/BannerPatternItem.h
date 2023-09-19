@@ -25,9 +25,9 @@ public:
 
 public:
     // prevent constructor by default
-    BannerPatternItem& operator=(BannerPatternItem const&) = delete;
-    BannerPatternItem(BannerPatternItem const&)            = delete;
-    BannerPatternItem()                                    = delete;
+    BannerPatternItem& operator=(BannerPatternItem const&);
+    BannerPatternItem(BannerPatternItem const&);
+    BannerPatternItem();
 
 public:
     // NOLINTBEGIN

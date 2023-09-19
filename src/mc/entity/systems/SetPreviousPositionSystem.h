@@ -5,9 +5,9 @@
 class SetPreviousPositionSystem {
 public:
     // prevent constructor by default
-    SetPreviousPositionSystem& operator=(SetPreviousPositionSystem const&) = delete;
-    SetPreviousPositionSystem(SetPreviousPositionSystem const&)            = delete;
-    SetPreviousPositionSystem()                                            = delete;
+    SetPreviousPositionSystem& operator=(SetPreviousPositionSystem const&);
+    SetPreviousPositionSystem(SetPreviousPositionSystem const&);
+    SetPreviousPositionSystem();
 
 public:
     // NOLINTBEGIN

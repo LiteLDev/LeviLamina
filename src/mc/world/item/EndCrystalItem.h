@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class EndCrystalItem : public ::Item {
 public:
     // prevent constructor by default
-    EndCrystalItem& operator=(EndCrystalItem const&) = delete;
-    EndCrystalItem(EndCrystalItem const&)            = delete;
-    EndCrystalItem()                                 = delete;
+    EndCrystalItem& operator=(EndCrystalItem const&);
+    EndCrystalItem(EndCrystalItem const&);
+    EndCrystalItem();
 
 public:
     // NOLINTBEGIN

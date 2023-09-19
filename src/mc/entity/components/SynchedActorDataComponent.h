@@ -5,9 +5,9 @@
 struct SynchedActorDataComponent {
 public:
     // prevent constructor by default
-    SynchedActorDataComponent& operator=(SynchedActorDataComponent const&) = delete;
-    SynchedActorDataComponent(SynchedActorDataComponent const&)            = delete;
-    SynchedActorDataComponent()                                            = delete;
+    SynchedActorDataComponent& operator=(SynchedActorDataComponent const&);
+    SynchedActorDataComponent(SynchedActorDataComponent const&);
+    SynchedActorDataComponent();
 
 public:
     // NOLINTBEGIN

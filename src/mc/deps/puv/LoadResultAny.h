@@ -13,9 +13,9 @@ namespace Puv {
 class LoadResultAny {
 public:
     // prevent constructor by default
-    LoadResultAny& operator=(LoadResultAny const&) = delete;
-    LoadResultAny(LoadResultAny const&)            = delete;
-    LoadResultAny()                                = delete;
+    LoadResultAny& operator=(LoadResultAny const&);
+    LoadResultAny(LoadResultAny const&);
+    LoadResultAny();
 
 public:
     // NOLINTBEGIN
@@ -26,7 +26,7 @@ public:
     MCAPI struct Puv::Logger& log();
 
     // symbol: ??BLoadResultAny@Puv@@QEBA_NXZ
-    MCAPI operator bool() const;
+    MCAPI explicit operator bool() const;
 
     // symbol: ?version@LoadResultAny@Puv@@QEBAAEBVSemVersion@@XZ
     MCAPI class SemVersion const& version() const;

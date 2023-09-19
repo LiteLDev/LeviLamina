@@ -24,9 +24,9 @@ public:
     class Definition : public ::BaseTimedActorFlagDefinition {
     public:
         // prevent constructor by default
-        Definition& operator=(Definition const&) = delete;
-        Definition(Definition const&)            = delete;
-        Definition()                             = delete;
+        Definition& operator=(Definition const&);
+        Definition(Definition const&);
+        Definition();
 
     public:
         // NOLINTBEGIN
@@ -43,9 +43,9 @@ public:
 
 public:
     // prevent constructor by default
-    ScentingGoal& operator=(ScentingGoal const&) = delete;
-    ScentingGoal(ScentingGoal const&)            = delete;
-    ScentingGoal()                               = delete;
+    ScentingGoal& operator=(ScentingGoal const&);
+    ScentingGoal(ScentingGoal const&);
+    ScentingGoal();
 
 public:
     // NOLINTBEGIN
@@ -53,7 +53,7 @@ public:
     virtual void __unk_vfn_0();
 
     // symbol: ??0ScentingGoal@@QEAA@AEAVMob@@@Z
-    MCAPI ScentingGoal(class Mob&);
+    MCAPI explicit ScentingGoal(class Mob&);
 
     // NOLINTEND
 };

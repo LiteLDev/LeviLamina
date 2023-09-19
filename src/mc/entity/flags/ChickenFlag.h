@@ -5,7 +5,7 @@
 struct ChickenFlag {
 public:
     // prevent constructor by default
-    ChickenFlag& operator=(ChickenFlag const&) = delete;
-    ChickenFlag(ChickenFlag const&)            = delete;
-    ChickenFlag()                              = delete;
+    ChickenFlag& operator=(ChickenFlag const&);
+    ChickenFlag(ChickenFlag const&);
+    ChickenFlag();
 };

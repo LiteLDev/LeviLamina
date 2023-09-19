@@ -5,9 +5,9 @@
 class PlayerRespawnRandomizer {
 public:
     // prevent constructor by default
-    PlayerRespawnRandomizer& operator=(PlayerRespawnRandomizer const&) = delete;
-    PlayerRespawnRandomizer(PlayerRespawnRandomizer const&)            = delete;
-    PlayerRespawnRandomizer()                                          = delete;
+    PlayerRespawnRandomizer& operator=(PlayerRespawnRandomizer const&);
+    PlayerRespawnRandomizer(PlayerRespawnRandomizer const&);
+    PlayerRespawnRandomizer();
 
 public:
     // NOLINTBEGIN

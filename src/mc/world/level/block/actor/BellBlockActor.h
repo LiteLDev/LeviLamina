@@ -9,9 +9,9 @@
 class BellBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    BellBlockActor& operator=(BellBlockActor const&) = delete;
-    BellBlockActor(BellBlockActor const&)            = delete;
-    BellBlockActor()                                 = delete;
+    BellBlockActor& operator=(BellBlockActor const&);
+    BellBlockActor(BellBlockActor const&);
+    BellBlockActor();
 
 public:
     // NOLINTBEGIN

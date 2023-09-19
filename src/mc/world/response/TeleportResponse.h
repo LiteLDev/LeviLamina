@@ -15,9 +15,9 @@ namespace JsonUtil { class EmptyClass; }
 class TeleportResponse : public ::EventResponse {
 public:
     // prevent constructor by default
-    TeleportResponse& operator=(TeleportResponse const&) = delete;
-    TeleportResponse(TeleportResponse const&)            = delete;
-    TeleportResponse()                                   = delete;
+    TeleportResponse& operator=(TeleportResponse const&);
+    TeleportResponse(TeleportResponse const&);
+    TeleportResponse();
 
 public:
     // NOLINTBEGIN

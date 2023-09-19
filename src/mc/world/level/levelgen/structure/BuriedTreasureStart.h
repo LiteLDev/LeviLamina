@@ -8,9 +8,9 @@
 class BuriedTreasureStart : public ::StructureStart {
 public:
     // prevent constructor by default
-    BuriedTreasureStart& operator=(BuriedTreasureStart const&) = delete;
-    BuriedTreasureStart(BuriedTreasureStart const&)            = delete;
-    BuriedTreasureStart()                                      = delete;
+    BuriedTreasureStart& operator=(BuriedTreasureStart const&);
+    BuriedTreasureStart(BuriedTreasureStart const&);
+    BuriedTreasureStart();
 
 public:
     // NOLINTBEGIN

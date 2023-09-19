@@ -10,8 +10,8 @@
 class OnScreenTextureAnimationPacket : public ::Packet {
 public:
     // prevent constructor by default
-    OnScreenTextureAnimationPacket& operator=(OnScreenTextureAnimationPacket const&) = delete;
-    OnScreenTextureAnimationPacket(OnScreenTextureAnimationPacket const&)            = delete;
+    OnScreenTextureAnimationPacket& operator=(OnScreenTextureAnimationPacket const&);
+    OnScreenTextureAnimationPacket(OnScreenTextureAnimationPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -36,7 +36,7 @@ public:
     MCVAPI ~OnScreenTextureAnimationPacket();
 
     // symbol: ??0OnScreenTextureAnimationPacket@@QEAA@I@Z
-    MCAPI OnScreenTextureAnimationPacket(uint);
+    MCAPI explicit OnScreenTextureAnimationPacket(uint);
 
     // symbol: ??0OnScreenTextureAnimationPacket@@QEAA@XZ
     MCAPI OnScreenTextureAnimationPacket();

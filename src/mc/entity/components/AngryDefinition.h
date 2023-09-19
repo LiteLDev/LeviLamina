@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class AngryDefinition {
 public:
     // prevent constructor by default
-    AngryDefinition& operator=(AngryDefinition const&) = delete;
-    AngryDefinition(AngryDefinition const&)            = delete;
+    AngryDefinition& operator=(AngryDefinition const&);
+    AngryDefinition(AngryDefinition const&);
 
 public:
     // NOLINTBEGIN

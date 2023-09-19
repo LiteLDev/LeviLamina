@@ -5,7 +5,7 @@
 class VolumeBoundsComponent {
 public:
     // prevent constructor by default
-    VolumeBoundsComponent& operator=(VolumeBoundsComponent const&) = delete;
-    VolumeBoundsComponent(VolumeBoundsComponent const&)            = delete;
-    VolumeBoundsComponent()                                        = delete;
+    VolumeBoundsComponent& operator=(VolumeBoundsComponent const&);
+    VolumeBoundsComponent(VolumeBoundsComponent const&);
+    VolumeBoundsComponent();
 };

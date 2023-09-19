@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class EnderEyeItem : public ::Item {
 public:
     // prevent constructor by default
-    EnderEyeItem& operator=(EnderEyeItem const&) = delete;
-    EnderEyeItem(EnderEyeItem const&)            = delete;
-    EnderEyeItem()                               = delete;
+    EnderEyeItem& operator=(EnderEyeItem const&);
+    EnderEyeItem(EnderEyeItem const&);
+    EnderEyeItem();
 
 public:
     // NOLINTBEGIN

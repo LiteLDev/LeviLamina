@@ -13,9 +13,9 @@ namespace TreeHelper { struct TreeParams; }
 class MegaPineTreeCanopy : public ::ITreeCanopy {
 public:
     // prevent constructor by default
-    MegaPineTreeCanopy& operator=(MegaPineTreeCanopy const&) = delete;
-    MegaPineTreeCanopy(MegaPineTreeCanopy const&)            = delete;
-    MegaPineTreeCanopy()                                     = delete;
+    MegaPineTreeCanopy& operator=(MegaPineTreeCanopy const&);
+    MegaPineTreeCanopy(MegaPineTreeCanopy const&);
+    MegaPineTreeCanopy();
 
 public:
     // NOLINTBEGIN

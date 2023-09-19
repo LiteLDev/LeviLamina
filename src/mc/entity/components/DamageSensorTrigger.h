@@ -5,8 +5,8 @@
 struct DamageSensorTrigger {
 public:
     // prevent constructor by default
-    DamageSensorTrigger& operator=(DamageSensorTrigger const&) = delete;
-    DamageSensorTrigger()                                      = delete;
+    DamageSensorTrigger& operator=(DamageSensorTrigger const&);
+    DamageSensorTrigger();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class CommandSelectorBase {
 public:
     // prevent constructor by default
-    CommandSelectorBase& operator=(CommandSelectorBase const&) = delete;
-    CommandSelectorBase(CommandSelectorBase const&)            = delete;
-    CommandSelectorBase()                                      = delete;
+    CommandSelectorBase& operator=(CommandSelectorBase const&);
+    CommandSelectorBase(CommandSelectorBase const&);
+    CommandSelectorBase();
 
 public:
     // NOLINTBEGIN
@@ -50,7 +50,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ??0CommandSelectorBase@@IEAA@_N@Z
-    MCAPI CommandSelectorBase(bool);
+    MCAPI explicit CommandSelectorBase(bool);
 
     // symbol:
     // ?newResults@CommandSelectorBase@@IEBA?AV?$shared_ptr@V?$vector@PEAVActor@@V?$allocator@PEAVActor@@@std@@@std@@@std@@AEBVCommandOrigin@@@Z

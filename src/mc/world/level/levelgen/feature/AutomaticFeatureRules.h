@@ -21,9 +21,9 @@ public:
     struct AutomaticFeatureRule {
     public:
         // prevent constructor by default
-        AutomaticFeatureRule& operator=(AutomaticFeatureRule const&) = delete;
-        AutomaticFeatureRule(AutomaticFeatureRule const&)            = delete;
-        AutomaticFeatureRule()                                       = delete;
+        AutomaticFeatureRule& operator=(AutomaticFeatureRule const&);
+        AutomaticFeatureRule(AutomaticFeatureRule const&);
+        AutomaticFeatureRule();
 
     public:
         // NOLINTBEGIN
@@ -35,9 +35,9 @@ public:
 
 public:
     // prevent constructor by default
-    AutomaticFeatureRules& operator=(AutomaticFeatureRules const&) = delete;
-    AutomaticFeatureRules(AutomaticFeatureRules const&)            = delete;
-    AutomaticFeatureRules()                                        = delete;
+    AutomaticFeatureRules& operator=(AutomaticFeatureRules const&);
+    AutomaticFeatureRules(AutomaticFeatureRules const&);
+    AutomaticFeatureRules();
 
 public:
     // NOLINTBEGIN

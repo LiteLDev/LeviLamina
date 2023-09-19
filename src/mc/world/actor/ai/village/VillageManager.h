@@ -24,9 +24,9 @@ public:
     class DwellerTestVillageInfo {
     public:
         // prevent constructor by default
-        DwellerTestVillageInfo& operator=(DwellerTestVillageInfo const&) = delete;
-        DwellerTestVillageInfo(DwellerTestVillageInfo const&)            = delete;
-        DwellerTestVillageInfo()                                         = delete;
+        DwellerTestVillageInfo& operator=(DwellerTestVillageInfo const&);
+        DwellerTestVillageInfo(DwellerTestVillageInfo const&);
+        DwellerTestVillageInfo();
 
     public:
         // NOLINTBEGIN
@@ -39,9 +39,9 @@ public:
     class VillageInfo {
     public:
         // prevent constructor by default
-        VillageInfo& operator=(VillageInfo const&) = delete;
-        VillageInfo(VillageInfo const&)            = delete;
-        VillageInfo()                              = delete;
+        VillageInfo& operator=(VillageInfo const&);
+        VillageInfo(VillageInfo const&);
+        VillageInfo();
 
     public:
         // NOLINTBEGIN
@@ -53,9 +53,9 @@ public:
 
 public:
     // prevent constructor by default
-    VillageManager& operator=(VillageManager const&) = delete;
-    VillageManager(VillageManager const&)            = delete;
-    VillageManager()                                 = delete;
+    VillageManager& operator=(VillageManager const&);
+    VillageManager(VillageManager const&);
+    VillageManager();
 
 public:
     // NOLINTBEGIN
@@ -69,7 +69,7 @@ public:
     virtual std::weak_ptr<class Village> getVillageByID(class mce::UUID const&) const;
 
     // symbol: ??0VillageManager@@QEAA@AEAVDimension@@@Z
-    MCAPI VillageManager(class Dimension&);
+    MCAPI explicit VillageManager(class Dimension&);
 
     // symbol:
     // ?fetchClosestVillageMostSuitableForDweller@VillageManager@@QEBA?AV?$weak_ptr@VVillage@@@std@@AEBVBlockPos@@HI@Z

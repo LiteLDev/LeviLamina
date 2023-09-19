@@ -12,9 +12,9 @@ namespace Bedrock::Http {
 class RetryPolicy {
 public:
     // prevent constructor by default
-    RetryPolicy& operator=(RetryPolicy const&) = delete;
-    RetryPolicy(RetryPolicy const&)            = delete;
-    RetryPolicy()                              = delete;
+    RetryPolicy& operator=(RetryPolicy const&);
+    RetryPolicy(RetryPolicy const&);
+    RetryPolicy();
 
 public:
     // NOLINTBEGIN

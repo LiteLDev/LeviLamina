@@ -5,9 +5,9 @@
 class TeleportTarget {
 public:
     // prevent constructor by default
-    TeleportTarget& operator=(TeleportTarget const&) = delete;
-    TeleportTarget(TeleportTarget const&)            = delete;
-    TeleportTarget()                                 = delete;
+    TeleportTarget& operator=(TeleportTarget const&);
+    TeleportTarget(TeleportTarget const&);
+    TeleportTarget();
 
 public:
     // NOLINTBEGIN

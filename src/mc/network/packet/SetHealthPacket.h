@@ -10,8 +10,8 @@
 class SetHealthPacket : public ::Packet {
 public:
     // prevent constructor by default
-    SetHealthPacket& operator=(SetHealthPacket const&) = delete;
-    SetHealthPacket(SetHealthPacket const&)            = delete;
+    SetHealthPacket& operator=(SetHealthPacket const&);
+    SetHealthPacket(SetHealthPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -39,7 +39,7 @@ public:
     MCAPI SetHealthPacket();
 
     // symbol: ??0SetHealthPacket@@QEAA@H@Z
-    MCAPI SetHealthPacket(int);
+    MCAPI explicit SetHealthPacket(int);
 
     // NOLINTEND
 };

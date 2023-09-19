@@ -6,7 +6,7 @@ template <typename... T0>
 struct Read {
 public:
     // prevent constructor by default
-    Read& operator=(Read const&) = delete;
-    Read(Read const&)            = delete;
-    Read()                       = delete;
+    Read& operator=(Read const&);
+    Read(Read const&);
+    Read();
 };

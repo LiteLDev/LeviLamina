@@ -9,9 +9,9 @@
 class ShulkerPeekGoal : public ::Goal {
 public:
     // prevent constructor by default
-    ShulkerPeekGoal& operator=(ShulkerPeekGoal const&) = delete;
-    ShulkerPeekGoal(ShulkerPeekGoal const&)            = delete;
-    ShulkerPeekGoal()                                  = delete;
+    ShulkerPeekGoal& operator=(ShulkerPeekGoal const&);
+    ShulkerPeekGoal(ShulkerPeekGoal const&);
+    ShulkerPeekGoal();
 
 public:
     // NOLINTBEGIN
@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0ShulkerPeekGoal@@QEAA@AEAVMob@@@Z
-    MCAPI ShulkerPeekGoal(class Mob&);
+    MCAPI explicit ShulkerPeekGoal(class Mob&);
 
     // NOLINTEND
 };

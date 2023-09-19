@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class SlimeBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    SlimeBlock& operator=(SlimeBlock const&) = delete;
-    SlimeBlock(SlimeBlock const&)            = delete;
-    SlimeBlock()                             = delete;
+    SlimeBlock& operator=(SlimeBlock const&);
+    SlimeBlock(SlimeBlock const&);
+    SlimeBlock();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 struct ActorDefinitionIdentifierComponent {
 public:
     // prevent constructor by default
-    ActorDefinitionIdentifierComponent& operator=(ActorDefinitionIdentifierComponent const&) = delete;
-    ActorDefinitionIdentifierComponent(ActorDefinitionIdentifierComponent const&)            = delete;
-    ActorDefinitionIdentifierComponent()                                                     = delete;
+    ActorDefinitionIdentifierComponent& operator=(ActorDefinitionIdentifierComponent const&);
+    ActorDefinitionIdentifierComponent(ActorDefinitionIdentifierComponent const&);
+    ActorDefinitionIdentifierComponent();
 
 public:
     // NOLINTBEGIN

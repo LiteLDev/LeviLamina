@@ -8,9 +8,9 @@
 class StorageItemComponent : public ::ItemComponent {
 public:
     // prevent constructor by default
-    StorageItemComponent& operator=(StorageItemComponent const&) = delete;
-    StorageItemComponent(StorageItemComponent const&)            = delete;
-    StorageItemComponent()                                       = delete;
+    StorageItemComponent& operator=(StorageItemComponent const&);
+    StorageItemComponent(StorageItemComponent const&);
+    StorageItemComponent();
 
 public:
     // NOLINTBEGIN

@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class LiquidBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    LiquidBlock& operator=(LiquidBlock const&) = delete;
-    LiquidBlock(LiquidBlock const&)            = delete;
-    LiquidBlock()                              = delete;
+    LiquidBlock& operator=(LiquidBlock const&);
+    LiquidBlock(LiquidBlock const&);
+    LiquidBlock();
 
 public:
     // NOLINTBEGIN

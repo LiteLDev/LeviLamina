@@ -7,9 +7,9 @@ namespace Scripting {
 struct SupportedBindingModule {
 public:
     // prevent constructor by default
-    SupportedBindingModule& operator=(SupportedBindingModule const&) = delete;
-    SupportedBindingModule(SupportedBindingModule const&)            = delete;
-    SupportedBindingModule()                                         = delete;
+    SupportedBindingModule& operator=(SupportedBindingModule const&);
+    SupportedBindingModule(SupportedBindingModule const&);
+    SupportedBindingModule();
 };
 
 }; // namespace Scripting

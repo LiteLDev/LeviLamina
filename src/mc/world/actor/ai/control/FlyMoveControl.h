@@ -8,8 +8,8 @@
 class FlyMoveControl : public ::MoveControl {
 public:
     // prevent constructor by default
-    FlyMoveControl& operator=(FlyMoveControl const&) = delete;
-    FlyMoveControl(FlyMoveControl const&)            = delete;
+    FlyMoveControl& operator=(FlyMoveControl const&);
+    FlyMoveControl(FlyMoveControl const&);
 
 public:
     // NOLINTBEGIN

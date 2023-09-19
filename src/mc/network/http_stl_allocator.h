@@ -6,7 +6,7 @@ template <typename T0>
 class http_stl_allocator {
 public:
     // prevent constructor by default
-    http_stl_allocator& operator=(http_stl_allocator const&) = delete;
-    http_stl_allocator(http_stl_allocator const&)            = delete;
-    http_stl_allocator()                                     = delete;
+    http_stl_allocator& operator=(http_stl_allocator const&);
+    http_stl_allocator(http_stl_allocator const&);
+    http_stl_allocator();
 };

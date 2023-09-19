@@ -10,9 +10,9 @@ namespace Crypto::Hash {
 class HMAC {
 public:
     // prevent constructor by default
-    HMAC& operator=(HMAC const&) = delete;
-    HMAC(HMAC const&)            = delete;
-    HMAC()                       = delete;
+    HMAC& operator=(HMAC const&);
+    HMAC(HMAC const&);
+    HMAC();
 
 public:
     // NOLINTBEGIN

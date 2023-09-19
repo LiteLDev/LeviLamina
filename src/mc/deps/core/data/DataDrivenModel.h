@@ -5,7 +5,7 @@
 class DataDrivenModel {
 public:
     // prevent constructor by default
-    DataDrivenModel& operator=(DataDrivenModel const&) = delete;
-    DataDrivenModel(DataDrivenModel const&)            = delete;
-    DataDrivenModel()                                  = delete;
+    DataDrivenModel& operator=(DataDrivenModel const&);
+    DataDrivenModel(DataDrivenModel const&);
+    DataDrivenModel();
 };

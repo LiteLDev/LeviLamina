@@ -5,9 +5,9 @@
 class SeatDescriptionUtility {
 public:
     // prevent constructor by default
-    SeatDescriptionUtility& operator=(SeatDescriptionUtility const&) = delete;
-    SeatDescriptionUtility(SeatDescriptionUtility const&)            = delete;
-    SeatDescriptionUtility()                                         = delete;
+    SeatDescriptionUtility& operator=(SeatDescriptionUtility const&);
+    SeatDescriptionUtility(SeatDescriptionUtility const&);
+    SeatDescriptionUtility();
 
 public:
     // NOLINTBEGIN

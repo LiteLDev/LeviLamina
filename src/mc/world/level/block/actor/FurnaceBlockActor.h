@@ -10,9 +10,9 @@
 class FurnaceBlockActor {
 public:
     // prevent constructor by default
-    FurnaceBlockActor& operator=(FurnaceBlockActor const&) = delete;
-    FurnaceBlockActor(FurnaceBlockActor const&)            = delete;
-    FurnaceBlockActor()                                    = delete;
+    FurnaceBlockActor& operator=(FurnaceBlockActor const&);
+    FurnaceBlockActor(FurnaceBlockActor const&);
+    FurnaceBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -84,7 +84,7 @@ public:
     MCVAPI ~FurnaceBlockActor();
 
     // symbol: ??0FurnaceBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI FurnaceBlockActor(class BlockPos const&);
+    MCAPI explicit FurnaceBlockActor(class BlockPos const&);
 
     // symbol: ?checkForAlternativeFuelAchievement@FurnaceBlockActor@@QEAAXAEAVBlockSource@@AEBVItemStack@@@Z
     MCAPI void checkForAlternativeFuelAchievement(class BlockSource&, class ItemStack const&);

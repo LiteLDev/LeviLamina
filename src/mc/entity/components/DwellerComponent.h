@@ -17,8 +17,8 @@ public:
 
 public:
     // prevent constructor by default
-    DwellerComponent& operator=(DwellerComponent const&) = delete;
-    DwellerComponent(DwellerComponent const&)            = delete;
+    DwellerComponent& operator=(DwellerComponent const&);
+    DwellerComponent(DwellerComponent const&);
 
 public:
     // NOLINTBEGIN

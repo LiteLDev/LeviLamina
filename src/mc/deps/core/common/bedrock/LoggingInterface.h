@@ -7,9 +7,9 @@ namespace Bedrock::Http {
 class LoggingInterface {
 public:
     // prevent constructor by default
-    LoggingInterface& operator=(LoggingInterface const&) = delete;
-    LoggingInterface(LoggingInterface const&)            = delete;
-    LoggingInterface()                                   = delete;
+    LoggingInterface& operator=(LoggingInterface const&);
+    LoggingInterface(LoggingInterface const&);
+    LoggingInterface();
 };
 
 }; // namespace Bedrock::Http

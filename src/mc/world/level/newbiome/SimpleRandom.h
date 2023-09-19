@@ -8,9 +8,9 @@
 class SimpleRandom : public ::IRandom {
 public:
     // prevent constructor by default
-    SimpleRandom& operator=(SimpleRandom const&) = delete;
-    SimpleRandom(SimpleRandom const&)            = delete;
-    SimpleRandom()                               = delete;
+    SimpleRandom& operator=(SimpleRandom const&);
+    SimpleRandom(SimpleRandom const&);
+    SimpleRandom();
 
 public:
     // NOLINTBEGIN

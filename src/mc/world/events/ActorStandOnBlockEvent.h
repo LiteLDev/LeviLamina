@@ -5,9 +5,9 @@
 struct ActorStandOnBlockEvent {
 public:
     // prevent constructor by default
-    ActorStandOnBlockEvent& operator=(ActorStandOnBlockEvent const&) = delete;
-    ActorStandOnBlockEvent(ActorStandOnBlockEvent const&)            = delete;
-    ActorStandOnBlockEvent()                                         = delete;
+    ActorStandOnBlockEvent& operator=(ActorStandOnBlockEvent const&);
+    ActorStandOnBlockEvent(ActorStandOnBlockEvent const&);
+    ActorStandOnBlockEvent();
 
 public:
     // NOLINTBEGIN

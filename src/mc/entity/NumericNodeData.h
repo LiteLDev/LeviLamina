@@ -8,9 +8,9 @@ template <typename T0, typename T1>
 struct NumericNodeData {
 public:
     // prevent constructor by default
-    NumericNodeData& operator=(NumericNodeData const&) = delete;
-    NumericNodeData(NumericNodeData const&)            = delete;
-    NumericNodeData()                                  = delete;
+    NumericNodeData& operator=(NumericNodeData const&);
+    NumericNodeData(NumericNodeData const&);
+    NumericNodeData();
 };
 
 }; // namespace EntityGoalUtility

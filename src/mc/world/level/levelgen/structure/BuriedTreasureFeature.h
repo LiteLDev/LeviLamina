@@ -8,9 +8,9 @@
 class BuriedTreasureFeature : public ::StructureFeature {
 public:
     // prevent constructor by default
-    BuriedTreasureFeature& operator=(BuriedTreasureFeature const&) = delete;
-    BuriedTreasureFeature(BuriedTreasureFeature const&)            = delete;
-    BuriedTreasureFeature()                                        = delete;
+    BuriedTreasureFeature& operator=(BuriedTreasureFeature const&);
+    BuriedTreasureFeature(BuriedTreasureFeature const&);
+    BuriedTreasureFeature();
 
 public:
     // NOLINTBEGIN
@@ -39,7 +39,7 @@ public:
     createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
 
     // symbol: ??0BuriedTreasureFeature@@QEAA@I@Z
-    MCAPI BuriedTreasureFeature(uint);
+    MCAPI explicit BuriedTreasureFeature(uint);
 
     // NOLINTEND
 };

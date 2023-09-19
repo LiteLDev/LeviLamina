@@ -5,9 +5,9 @@
 struct PackInstanceId {
 public:
     // prevent constructor by default
-    PackInstanceId& operator=(PackInstanceId const&) = delete;
-    PackInstanceId(PackInstanceId const&)            = delete;
-    PackInstanceId()                                 = delete;
+    PackInstanceId& operator=(PackInstanceId const&);
+    PackInstanceId(PackInstanceId const&);
+    PackInstanceId();
 
 public:
     // NOLINTBEGIN

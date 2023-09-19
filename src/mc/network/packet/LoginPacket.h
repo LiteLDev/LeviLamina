@@ -10,8 +10,8 @@
 class LoginPacket : public ::Packet {
 public:
     // prevent constructor by default
-    LoginPacket& operator=(LoginPacket const&) = delete;
-    LoginPacket(LoginPacket const&)            = delete;
+    LoginPacket& operator=(LoginPacket const&);
+    LoginPacket(LoginPacket const&);
 
 public:
     // NOLINTBEGIN

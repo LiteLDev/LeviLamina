@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class DropperBlock : public ::DispenserBlock {
 public:
     // prevent constructor by default
-    DropperBlock& operator=(DropperBlock const&) = delete;
-    DropperBlock(DropperBlock const&)            = delete;
-    DropperBlock()                               = delete;
+    DropperBlock& operator=(DropperBlock const&);
+    DropperBlock(DropperBlock const&);
+    DropperBlock();
 
 public:
     // NOLINTBEGIN

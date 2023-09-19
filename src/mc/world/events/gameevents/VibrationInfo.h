@@ -5,9 +5,9 @@
 class VibrationInfo {
 public:
     // prevent constructor by default
-    VibrationInfo& operator=(VibrationInfo const&) = delete;
-    VibrationInfo(VibrationInfo const&)            = delete;
-    VibrationInfo()                                = delete;
+    VibrationInfo& operator=(VibrationInfo const&);
+    VibrationInfo(VibrationInfo const&);
+    VibrationInfo();
 
 public:
     // NOLINTBEGIN

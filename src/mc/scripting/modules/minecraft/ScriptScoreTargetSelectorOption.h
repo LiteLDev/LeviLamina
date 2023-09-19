@@ -11,8 +11,8 @@ namespace ScriptModuleMinecraft {
 struct ScriptScoreTargetSelectorOption {
 public:
     // prevent constructor by default
-    ScriptScoreTargetSelectorOption(ScriptScoreTargetSelectorOption const&) = delete;
-    ScriptScoreTargetSelectorOption()                                       = delete;
+    ScriptScoreTargetSelectorOption(ScriptScoreTargetSelectorOption const&);
+    ScriptScoreTargetSelectorOption();
 
 public:
     // NOLINTBEGIN

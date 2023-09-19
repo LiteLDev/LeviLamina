@@ -20,9 +20,9 @@ namespace Social::Events {
 class AggregationEventListener : public ::Social::Events::IEventListener {
 public:
     // prevent constructor by default
-    AggregationEventListener& operator=(AggregationEventListener const&) = delete;
-    AggregationEventListener(AggregationEventListener const&)            = delete;
-    AggregationEventListener()                                           = delete;
+    AggregationEventListener& operator=(AggregationEventListener const&);
+    AggregationEventListener(AggregationEventListener const&);
+    AggregationEventListener();
 
 public:
     // NOLINTBEGIN
@@ -63,7 +63,7 @@ public:
     MCAPI AggregationEventListener(uint, uint, uint, class Core::Path const&);
 
     // symbol: ??0AggregationEventListener@Events@Social@@IEAA@AEBVPath@Core@@@Z
-    MCAPI AggregationEventListener(class Core::Path const&);
+    MCAPI explicit AggregationEventListener(class Core::Path const&);
 
     // NOLINTEND
 

@@ -8,9 +8,9 @@
 class GetChunkDataCommand : public ::Command {
 public:
     // prevent constructor by default
-    GetChunkDataCommand& operator=(GetChunkDataCommand const&) = delete;
-    GetChunkDataCommand(GetChunkDataCommand const&)            = delete;
-    GetChunkDataCommand()                                      = delete;
+    GetChunkDataCommand& operator=(GetChunkDataCommand const&);
+    GetChunkDataCommand(GetChunkDataCommand const&);
+    GetChunkDataCommand();
 
 public:
     // NOLINTBEGIN

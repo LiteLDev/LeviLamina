@@ -59,9 +59,9 @@ namespace MobJumpFromGroundSystemImpl {
 struct JumpFromGroundSystem {
 public:
     // prevent constructor by default
-    JumpFromGroundSystem& operator=(JumpFromGroundSystem const&) = delete;
-    JumpFromGroundSystem(JumpFromGroundSystem const&)            = delete;
-    JumpFromGroundSystem()                                       = delete;
+    JumpFromGroundSystem& operator=(JumpFromGroundSystem const&);
+    JumpFromGroundSystem(JumpFromGroundSystem const&);
+    JumpFromGroundSystem();
 
 public:
     // NOLINTBEGIN

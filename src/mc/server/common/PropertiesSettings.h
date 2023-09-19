@@ -14,14 +14,14 @@
 class PropertiesSettings {
 public:
     // prevent constructor by default
-    PropertiesSettings& operator=(PropertiesSettings const&) = delete;
-    PropertiesSettings(PropertiesSettings const&)            = delete;
-    PropertiesSettings()                                     = delete;
+    PropertiesSettings& operator=(PropertiesSettings const&);
+    PropertiesSettings(PropertiesSettings const&);
+    PropertiesSettings();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI PropertiesSettings(std::string const&);
+    MCAPI explicit PropertiesSettings(std::string const&);
 
     // symbol: ?adventureModeOverridesEnabled@PropertiesSettings@@QEBA_NXZ
     MCAPI bool adventureModeOverridesEnabled() const;

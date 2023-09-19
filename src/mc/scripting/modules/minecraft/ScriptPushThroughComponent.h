@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptPushThroughComponent {
 public:
     // prevent constructor by default
-    ScriptPushThroughComponent& operator=(ScriptPushThroughComponent const&) = delete;
-    ScriptPushThroughComponent(ScriptPushThroughComponent const&)            = delete;
-    ScriptPushThroughComponent()                                             = delete;
+    ScriptPushThroughComponent& operator=(ScriptPushThroughComponent const&);
+    ScriptPushThroughComponent(ScriptPushThroughComponent const&);
+    ScriptPushThroughComponent();
 
 public:
     // NOLINTBEGIN

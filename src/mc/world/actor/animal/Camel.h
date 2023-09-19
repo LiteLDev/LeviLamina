@@ -26,9 +26,9 @@
 class Camel : public ::Animal {
 public:
     // prevent constructor by default
-    Camel& operator=(Camel const&) = delete;
-    Camel(Camel const&)            = delete;
-    Camel()                        = delete;
+    Camel& operator=(Camel const&);
+    Camel(Camel const&);
+    Camel();
 
 public:
     // NOLINTBEGIN

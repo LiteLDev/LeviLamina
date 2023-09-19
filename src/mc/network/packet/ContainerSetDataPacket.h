@@ -11,8 +11,8 @@
 class ContainerSetDataPacket : public ::Packet {
 public:
     // prevent constructor by default
-    ContainerSetDataPacket& operator=(ContainerSetDataPacket const&) = delete;
-    ContainerSetDataPacket(ContainerSetDataPacket const&)            = delete;
+    ContainerSetDataPacket& operator=(ContainerSetDataPacket const&);
+    ContainerSetDataPacket(ContainerSetDataPacket const&);
 
 public:
     // NOLINTBEGIN

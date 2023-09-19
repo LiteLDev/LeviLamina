@@ -8,9 +8,9 @@
 class MoveTowardsRestrictionDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    MoveTowardsRestrictionDefinition& operator=(MoveTowardsRestrictionDefinition const&) = delete;
-    MoveTowardsRestrictionDefinition(MoveTowardsRestrictionDefinition const&)            = delete;
-    MoveTowardsRestrictionDefinition()                                                   = delete;
+    MoveTowardsRestrictionDefinition& operator=(MoveTowardsRestrictionDefinition const&);
+    MoveTowardsRestrictionDefinition(MoveTowardsRestrictionDefinition const&);
+    MoveTowardsRestrictionDefinition();
 
 public:
     // NOLINTBEGIN

@@ -17,9 +17,9 @@ public:
     class ValidationError {
     public:
         // prevent constructor by default
-        ValidationError& operator=(ValidationError const&) = delete;
-        ValidationError(ValidationError const&)            = delete;
-        ValidationError()                                  = delete;
+        ValidationError& operator=(ValidationError const&);
+        ValidationError(ValidationError const&);
+        ValidationError();
 
     public:
         // NOLINTBEGIN
@@ -31,7 +31,7 @@ public:
 
 public:
     // prevent constructor by default
-    GameRule() = delete;
+    GameRule();
 
 public:
     // NOLINTBEGIN

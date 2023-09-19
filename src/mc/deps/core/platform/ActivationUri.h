@@ -5,7 +5,7 @@
 class ActivationUri {
 public:
     // prevent constructor by default
-    ActivationUri& operator=(ActivationUri const&) = delete;
-    ActivationUri(ActivationUri const&)            = delete;
-    ActivationUri()                                = delete;
+    ActivationUri& operator=(ActivationUri const&);
+    ActivationUri(ActivationUri const&);
+    ActivationUri();
 };

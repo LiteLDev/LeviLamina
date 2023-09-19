@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct PersistSitDefinition {
 public:
     // prevent constructor by default
-    PersistSitDefinition& operator=(PersistSitDefinition const&) = delete;
-    PersistSitDefinition(PersistSitDefinition const&)            = delete;
-    PersistSitDefinition()                                       = delete;
+    PersistSitDefinition& operator=(PersistSitDefinition const&);
+    PersistSitDefinition(PersistSitDefinition const&);
+    PersistSitDefinition();
 
 public:
     // NOLINTBEGIN

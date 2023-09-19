@@ -7,9 +7,9 @@ namespace Core {
 struct PendingWrite {
 public:
     // prevent constructor by default
-    PendingWrite& operator=(PendingWrite const&) = delete;
-    PendingWrite(PendingWrite const&)            = delete;
-    PendingWrite()                               = delete;
+    PendingWrite& operator=(PendingWrite const&);
+    PendingWrite(PendingWrite const&);
+    PendingWrite();
 };
 
 }; // namespace Core

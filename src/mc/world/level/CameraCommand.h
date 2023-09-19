@@ -8,9 +8,9 @@
 class CameraCommand : public ::Command {
 public:
     // prevent constructor by default
-    CameraCommand& operator=(CameraCommand const&) = delete;
-    CameraCommand(CameraCommand const&)            = delete;
-    CameraCommand()                                = delete;
+    CameraCommand& operator=(CameraCommand const&);
+    CameraCommand(CameraCommand const&);
+    CameraCommand();
 
 public:
     // NOLINTBEGIN

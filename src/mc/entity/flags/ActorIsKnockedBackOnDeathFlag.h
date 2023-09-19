@@ -5,7 +5,7 @@
 struct ActorIsKnockedBackOnDeathFlag {
 public:
     // prevent constructor by default
-    ActorIsKnockedBackOnDeathFlag& operator=(ActorIsKnockedBackOnDeathFlag const&) = delete;
-    ActorIsKnockedBackOnDeathFlag(ActorIsKnockedBackOnDeathFlag const&)            = delete;
-    ActorIsKnockedBackOnDeathFlag()                                                = delete;
+    ActorIsKnockedBackOnDeathFlag& operator=(ActorIsKnockedBackOnDeathFlag const&);
+    ActorIsKnockedBackOnDeathFlag(ActorIsKnockedBackOnDeathFlag const&);
+    ActorIsKnockedBackOnDeathFlag();
 };

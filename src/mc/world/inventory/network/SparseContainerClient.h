@@ -13,9 +13,9 @@ public:
 
 public:
     // prevent constructor by default
-    SparseContainerClient& operator=(SparseContainerClient const&) = delete;
-    SparseContainerClient(SparseContainerClient const&)            = delete;
-    SparseContainerClient()                                        = delete;
+    SparseContainerClient& operator=(SparseContainerClient const&);
+    SparseContainerClient(SparseContainerClient const&);
+    SparseContainerClient();
 
 public:
     // NOLINTBEGIN

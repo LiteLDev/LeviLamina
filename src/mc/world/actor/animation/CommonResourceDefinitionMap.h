@@ -5,8 +5,8 @@
 class CommonResourceDefinitionMap {
 public:
     // prevent constructor by default
-    CommonResourceDefinitionMap& operator=(CommonResourceDefinitionMap const&) = delete;
-    CommonResourceDefinitionMap(CommonResourceDefinitionMap const&)            = delete;
+    CommonResourceDefinitionMap& operator=(CommonResourceDefinitionMap const&);
+    CommonResourceDefinitionMap(CommonResourceDefinitionMap const&);
 
 public:
     // NOLINTBEGIN

@@ -11,9 +11,9 @@
 class PlayerUIContainerModelBase : public ::ContainerModel {
 public:
     // prevent constructor by default
-    PlayerUIContainerModelBase& operator=(PlayerUIContainerModelBase const&) = delete;
-    PlayerUIContainerModelBase(PlayerUIContainerModelBase const&)            = delete;
-    PlayerUIContainerModelBase()                                             = delete;
+    PlayerUIContainerModelBase& operator=(PlayerUIContainerModelBase const&);
+    PlayerUIContainerModelBase(PlayerUIContainerModelBase const&);
+    PlayerUIContainerModelBase();
 
 public:
     // NOLINTBEGIN

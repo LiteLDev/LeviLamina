@@ -14,9 +14,9 @@ namespace mce { class UUID; }
 class BannerAddPatternRecipe : public ::MultiRecipe {
 public:
     // prevent constructor by default
-    BannerAddPatternRecipe& operator=(BannerAddPatternRecipe const&) = delete;
-    BannerAddPatternRecipe(BannerAddPatternRecipe const&)            = delete;
-    BannerAddPatternRecipe()                                         = delete;
+    BannerAddPatternRecipe& operator=(BannerAddPatternRecipe const&);
+    BannerAddPatternRecipe(BannerAddPatternRecipe const&);
+    BannerAddPatternRecipe();
 
 public:
     // NOLINTBEGIN
@@ -50,7 +50,7 @@ public:
     MCAPI BannerAddPatternRecipe(std::string_view, class mce::UUID const&);
 
     // symbol: ??0BannerAddPatternRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI BannerAddPatternRecipe(std::string_view);
+    MCAPI explicit BannerAddPatternRecipe(std::string_view);
 
     // symbol:
     // ?matchPatterns@BannerAddPatternRecipe@@QEBA?BV?$NonOwnerPointer@$$CBVBannerPattern@@@Bedrock@@AEBVCraftingContainer@@@Z

@@ -5,8 +5,8 @@
 struct PlayerScoreboardId {
 public:
     // prevent constructor by default
-    PlayerScoreboardId& operator=(PlayerScoreboardId const&) = delete;
-    PlayerScoreboardId(PlayerScoreboardId const&)            = delete;
+    PlayerScoreboardId& operator=(PlayerScoreboardId const&);
+    PlayerScoreboardId(PlayerScoreboardId const&);
 
 public:
     // NOLINTBEGIN
@@ -14,7 +14,7 @@ public:
     MCAPI PlayerScoreboardId();
 
     // symbol: ??0PlayerScoreboardId@@QEAA@_J@Z
-    MCAPI PlayerScoreboardId(int64);
+    MCAPI explicit PlayerScoreboardId(int64);
 
     // symbol: ?INVALID@PlayerScoreboardId@@2U1@B
     MCAPI static struct PlayerScoreboardId const INVALID;

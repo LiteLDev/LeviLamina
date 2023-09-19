@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptFlyingSpeedComponent {
 public:
     // prevent constructor by default
-    ScriptFlyingSpeedComponent& operator=(ScriptFlyingSpeedComponent const&) = delete;
-    ScriptFlyingSpeedComponent(ScriptFlyingSpeedComponent const&)            = delete;
-    ScriptFlyingSpeedComponent()                                             = delete;
+    ScriptFlyingSpeedComponent& operator=(ScriptFlyingSpeedComponent const&);
+    ScriptFlyingSpeedComponent(ScriptFlyingSpeedComponent const&);
+    ScriptFlyingSpeedComponent();
 
 public:
     // NOLINTBEGIN

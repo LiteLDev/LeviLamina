@@ -11,9 +11,9 @@ namespace ScriptModuleMinecraft {
 class ScriptScoreboardIdentityType {
 public:
     // prevent constructor by default
-    ScriptScoreboardIdentityType& operator=(ScriptScoreboardIdentityType const&) = delete;
-    ScriptScoreboardIdentityType(ScriptScoreboardIdentityType const&)            = delete;
-    ScriptScoreboardIdentityType()                                               = delete;
+    ScriptScoreboardIdentityType& operator=(ScriptScoreboardIdentityType const&);
+    ScriptScoreboardIdentityType(ScriptScoreboardIdentityType const&);
+    ScriptScoreboardIdentityType();
 
 public:
     // NOLINTBEGIN

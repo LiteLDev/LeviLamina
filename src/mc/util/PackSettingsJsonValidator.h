@@ -8,9 +8,9 @@
 class PackSettingsJsonValidator {
 public:
     // prevent constructor by default
-    PackSettingsJsonValidator& operator=(PackSettingsJsonValidator const&) = delete;
-    PackSettingsJsonValidator(PackSettingsJsonValidator const&)            = delete;
-    PackSettingsJsonValidator()                                            = delete;
+    PackSettingsJsonValidator& operator=(PackSettingsJsonValidator const&);
+    PackSettingsJsonValidator(PackSettingsJsonValidator const&);
+    PackSettingsJsonValidator();
 
 public:
     // NOLINTBEGIN

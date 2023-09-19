@@ -5,7 +5,7 @@
 struct BlockSourceDebug {
 public:
     // prevent constructor by default
-    BlockSourceDebug& operator=(BlockSourceDebug const&) = delete;
-    BlockSourceDebug(BlockSourceDebug const&)            = delete;
-    BlockSourceDebug()                                   = delete;
+    BlockSourceDebug& operator=(BlockSourceDebug const&);
+    BlockSourceDebug(BlockSourceDebug const&);
+    BlockSourceDebug();
 };

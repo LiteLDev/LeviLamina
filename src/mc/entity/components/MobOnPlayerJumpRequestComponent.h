@@ -5,7 +5,7 @@
 struct MobOnPlayerJumpRequestComponent {
 public:
     // prevent constructor by default
-    MobOnPlayerJumpRequestComponent& operator=(MobOnPlayerJumpRequestComponent const&) = delete;
-    MobOnPlayerJumpRequestComponent(MobOnPlayerJumpRequestComponent const&)            = delete;
-    MobOnPlayerJumpRequestComponent()                                                  = delete;
+    MobOnPlayerJumpRequestComponent& operator=(MobOnPlayerJumpRequestComponent const&);
+    MobOnPlayerJumpRequestComponent(MobOnPlayerJumpRequestComponent const&);
+    MobOnPlayerJumpRequestComponent();
 };

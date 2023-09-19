@@ -10,9 +10,9 @@ namespace Json { class Value; }
 class BehaviorDefinition {
 public:
     // prevent constructor by default
-    BehaviorDefinition& operator=(BehaviorDefinition const&) = delete;
-    BehaviorDefinition(BehaviorDefinition const&)            = delete;
-    BehaviorDefinition()                                     = delete;
+    BehaviorDefinition& operator=(BehaviorDefinition const&);
+    BehaviorDefinition(BehaviorDefinition const&);
+    BehaviorDefinition();
 
 public:
     // NOLINTBEGIN

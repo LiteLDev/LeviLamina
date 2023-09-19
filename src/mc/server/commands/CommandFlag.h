@@ -5,7 +5,7 @@
 struct CommandFlag {
 public:
     // prevent constructor by default
-    CommandFlag& operator=(CommandFlag const&) = delete;
-    CommandFlag(CommandFlag const&)            = delete;
-    CommandFlag()                              = delete;
+    CommandFlag& operator=(CommandFlag const&);
+    CommandFlag(CommandFlag const&);
+    CommandFlag();
 };

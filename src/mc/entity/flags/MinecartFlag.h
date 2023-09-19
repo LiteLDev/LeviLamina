@@ -5,7 +5,7 @@
 struct MinecartFlag {
 public:
     // prevent constructor by default
-    MinecartFlag& operator=(MinecartFlag const&) = delete;
-    MinecartFlag(MinecartFlag const&)            = delete;
-    MinecartFlag()                               = delete;
+    MinecartFlag& operator=(MinecartFlag const&);
+    MinecartFlag(MinecartFlag const&);
+    MinecartFlag();
 };

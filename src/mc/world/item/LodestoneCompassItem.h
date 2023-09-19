@@ -23,9 +23,9 @@ namespace mce { class Color; }
 class LodestoneCompassItem : public ::AbstractCompassItem {
 public:
     // prevent constructor by default
-    LodestoneCompassItem& operator=(LodestoneCompassItem const&) = delete;
-    LodestoneCompassItem(LodestoneCompassItem const&)            = delete;
-    LodestoneCompassItem()                                       = delete;
+    LodestoneCompassItem& operator=(LodestoneCompassItem const&);
+    LodestoneCompassItem(LodestoneCompassItem const&);
+    LodestoneCompassItem();
 
 public:
     // NOLINTBEGIN

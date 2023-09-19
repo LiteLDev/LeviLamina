@@ -8,9 +8,9 @@
 struct ActiveDirectoryScreenCapabilities {
 public:
     // prevent constructor by default
-    ActiveDirectoryScreenCapabilities& operator=(ActiveDirectoryScreenCapabilities const&) = delete;
-    ActiveDirectoryScreenCapabilities(ActiveDirectoryScreenCapabilities const&)            = delete;
-    ActiveDirectoryScreenCapabilities()                                                    = delete;
+    ActiveDirectoryScreenCapabilities& operator=(ActiveDirectoryScreenCapabilities const&);
+    ActiveDirectoryScreenCapabilities(ActiveDirectoryScreenCapabilities const&);
+    ActiveDirectoryScreenCapabilities();
 
 public:
     // NOLINTBEGIN

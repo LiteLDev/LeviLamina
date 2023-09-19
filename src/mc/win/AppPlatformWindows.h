@@ -14,9 +14,9 @@ namespace Core { class Path; }
 class AppPlatformWindows {
 public:
     // prevent constructor by default
-    AppPlatformWindows& operator=(AppPlatformWindows const&) = delete;
-    AppPlatformWindows(AppPlatformWindows const&)            = delete;
-    AppPlatformWindows()                                     = delete;
+    AppPlatformWindows& operator=(AppPlatformWindows const&);
+    AppPlatformWindows(AppPlatformWindows const&);
+    AppPlatformWindows();
 
 public:
     // NOLINTBEGIN

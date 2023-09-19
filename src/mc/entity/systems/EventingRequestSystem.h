@@ -8,9 +8,9 @@
 class EventingRequestSystem {
 public:
     // prevent constructor by default
-    EventingRequestSystem& operator=(EventingRequestSystem const&) = delete;
-    EventingRequestSystem(EventingRequestSystem const&)            = delete;
-    EventingRequestSystem()                                        = delete;
+    EventingRequestSystem& operator=(EventingRequestSystem const&);
+    EventingRequestSystem(EventingRequestSystem const&);
+    EventingRequestSystem();
 
 public:
     // NOLINTBEGIN

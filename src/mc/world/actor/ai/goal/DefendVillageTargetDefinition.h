@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class DefendVillageTargetDefinition : public ::TargetGoalDefinition {
 public:
     // prevent constructor by default
-    DefendVillageTargetDefinition& operator=(DefendVillageTargetDefinition const&) = delete;
-    DefendVillageTargetDefinition(DefendVillageTargetDefinition const&)            = delete;
+    DefendVillageTargetDefinition& operator=(DefendVillageTargetDefinition const&);
+    DefendVillageTargetDefinition(DefendVillageTargetDefinition const&);
 
 public:
     // NOLINTBEGIN

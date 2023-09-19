@@ -8,9 +8,9 @@
 class PodzolAreaFeature : public ::Feature {
 public:
     // prevent constructor by default
-    PodzolAreaFeature& operator=(PodzolAreaFeature const&) = delete;
-    PodzolAreaFeature(PodzolAreaFeature const&)            = delete;
-    PodzolAreaFeature()                                    = delete;
+    PodzolAreaFeature& operator=(PodzolAreaFeature const&);
+    PodzolAreaFeature(PodzolAreaFeature const&);
+    PodzolAreaFeature();
 
 public:
     // NOLINTBEGIN

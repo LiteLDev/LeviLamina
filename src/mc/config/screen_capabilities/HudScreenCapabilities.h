@@ -8,9 +8,9 @@
 struct HudScreenCapabilities {
 public:
     // prevent constructor by default
-    HudScreenCapabilities& operator=(HudScreenCapabilities const&) = delete;
-    HudScreenCapabilities(HudScreenCapabilities const&)            = delete;
-    HudScreenCapabilities()                                        = delete;
+    HudScreenCapabilities& operator=(HudScreenCapabilities const&);
+    HudScreenCapabilities(HudScreenCapabilities const&);
+    HudScreenCapabilities();
 
 public:
     // NOLINTBEGIN

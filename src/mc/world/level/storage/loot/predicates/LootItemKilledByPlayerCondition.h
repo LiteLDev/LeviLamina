@@ -8,9 +8,9 @@
 class LootItemKilledByPlayerCondition : public ::LootItemCondition {
 public:
     // prevent constructor by default
-    LootItemKilledByPlayerCondition& operator=(LootItemKilledByPlayerCondition const&) = delete;
-    LootItemKilledByPlayerCondition(LootItemKilledByPlayerCondition const&)            = delete;
-    LootItemKilledByPlayerCondition()                                                  = delete;
+    LootItemKilledByPlayerCondition& operator=(LootItemKilledByPlayerCondition const&);
+    LootItemKilledByPlayerCondition(LootItemKilledByPlayerCondition const&);
+    LootItemKilledByPlayerCondition();
 
 public:
     // NOLINTBEGIN

@@ -11,8 +11,8 @@
 class MultiplayerSettingsPacket : public ::Packet {
 public:
     // prevent constructor by default
-    MultiplayerSettingsPacket& operator=(MultiplayerSettingsPacket const&) = delete;
-    MultiplayerSettingsPacket(MultiplayerSettingsPacket const&)            = delete;
+    MultiplayerSettingsPacket& operator=(MultiplayerSettingsPacket const&);
+    MultiplayerSettingsPacket(MultiplayerSettingsPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -37,7 +37,7 @@ public:
     MCVAPI ~MultiplayerSettingsPacket();
 
     // symbol: ??0MultiplayerSettingsPacket@@QEAA@W4MultiplayerSettingsPacketType@@@Z
-    MCAPI MultiplayerSettingsPacket(::MultiplayerSettingsPacketType);
+    MCAPI explicit MultiplayerSettingsPacket(::MultiplayerSettingsPacketType);
 
     // symbol: ??0MultiplayerSettingsPacket@@QEAA@XZ
     MCAPI MultiplayerSettingsPacket();

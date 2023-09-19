@@ -10,8 +10,8 @@
 class SetActorDataPacket : public ::Packet {
 public:
     // prevent constructor by default
-    SetActorDataPacket& operator=(SetActorDataPacket const&) = delete;
-    SetActorDataPacket(SetActorDataPacket const&)            = delete;
+    SetActorDataPacket& operator=(SetActorDataPacket const&);
+    SetActorDataPacket(SetActorDataPacket const&);
 
 public:
     // NOLINTBEGIN

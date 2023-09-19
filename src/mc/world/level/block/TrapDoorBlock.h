@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class TrapDoorBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    TrapDoorBlock& operator=(TrapDoorBlock const&) = delete;
-    TrapDoorBlock(TrapDoorBlock const&)            = delete;
-    TrapDoorBlock()                                = delete;
+    TrapDoorBlock& operator=(TrapDoorBlock const&);
+    TrapDoorBlock(TrapDoorBlock const&);
+    TrapDoorBlock();
 
 public:
     // NOLINTBEGIN

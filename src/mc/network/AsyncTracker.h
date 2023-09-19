@@ -5,9 +5,9 @@
 class AsyncTracker {
 public:
     // prevent constructor by default
-    AsyncTracker& operator=(AsyncTracker const&) = delete;
-    AsyncTracker(AsyncTracker const&)            = delete;
-    AsyncTracker()                               = delete;
+    AsyncTracker& operator=(AsyncTracker const&);
+    AsyncTracker(AsyncTracker const&);
+    AsyncTracker();
 
 public:
     // NOLINTBEGIN

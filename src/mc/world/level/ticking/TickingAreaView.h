@@ -9,9 +9,9 @@
 class TickingAreaView : public ::ITickingAreaView {
 public:
     // prevent constructor by default
-    TickingAreaView& operator=(TickingAreaView const&) = delete;
-    TickingAreaView(TickingAreaView const&)            = delete;
-    TickingAreaView()                                  = delete;
+    TickingAreaView& operator=(TickingAreaView const&);
+    TickingAreaView(TickingAreaView const&);
+    TickingAreaView();
 
 public:
     // NOLINTBEGIN
@@ -59,7 +59,7 @@ public:
     MCVAPI ~TickingAreaView();
 
     // symbol: ??0TickingAreaView@@QEAA@AEAVChunkSource@@@Z
-    MCAPI TickingAreaView(class ChunkSource&);
+    MCAPI explicit TickingAreaView(class ChunkSource&);
 
     // symbol: ?unregisterChunkBuildOrderPolicy@TickingAreaView@@QEAAXAEAVChunkBuildOrderPolicyBase@@@Z
     MCAPI void unregisterChunkBuildOrderPolicy(class ChunkBuildOrderPolicyBase&);

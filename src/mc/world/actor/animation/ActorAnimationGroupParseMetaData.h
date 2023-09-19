@@ -5,9 +5,9 @@
 struct ActorAnimationGroupParseMetaData {
 public:
     // prevent constructor by default
-    ActorAnimationGroupParseMetaData& operator=(ActorAnimationGroupParseMetaData const&) = delete;
-    ActorAnimationGroupParseMetaData(ActorAnimationGroupParseMetaData const&)            = delete;
-    ActorAnimationGroupParseMetaData()                                                   = delete;
+    ActorAnimationGroupParseMetaData& operator=(ActorAnimationGroupParseMetaData const&);
+    ActorAnimationGroupParseMetaData(ActorAnimationGroupParseMetaData const&);
+    ActorAnimationGroupParseMetaData();
 
 public:
     // NOLINTBEGIN

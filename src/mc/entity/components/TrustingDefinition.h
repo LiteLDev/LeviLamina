@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class TrustingDefinition {
 public:
     // prevent constructor by default
-    TrustingDefinition& operator=(TrustingDefinition const&) = delete;
-    TrustingDefinition(TrustingDefinition const&)            = delete;
+    TrustingDefinition& operator=(TrustingDefinition const&);
+    TrustingDefinition(TrustingDefinition const&);
 
 public:
     // NOLINTBEGIN

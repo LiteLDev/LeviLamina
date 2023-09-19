@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class TextObjectSelector : public ::ITextObject {
 public:
     // prevent constructor by default
-    TextObjectSelector& operator=(TextObjectSelector const&) = delete;
-    TextObjectSelector(TextObjectSelector const&)            = delete;
-    TextObjectSelector()                                     = delete;
+    TextObjectSelector& operator=(TextObjectSelector const&);
+    TextObjectSelector(TextObjectSelector const&);
+    TextObjectSelector();
 
 public:
     // NOLINTBEGIN

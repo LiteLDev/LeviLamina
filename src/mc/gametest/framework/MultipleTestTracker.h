@@ -13,15 +13,15 @@ namespace gametest {
 class MultipleTestTracker {
 public:
     // prevent constructor by default
-    MultipleTestTracker& operator=(MultipleTestTracker const&) = delete;
-    MultipleTestTracker(MultipleTestTracker const&)            = delete;
-    MultipleTestTracker()                                      = delete;
+    MultipleTestTracker& operator=(MultipleTestTracker const&);
+    MultipleTestTracker(MultipleTestTracker const&);
+    MultipleTestTracker();
 
 public:
     // NOLINTBEGIN
     // symbol:
     // ??0MultipleTestTracker@gametest@@QEAA@AEBV?$vector@V?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@@2@@std@@@Z
-    MCAPI MultipleTestTracker(std::vector<std::shared_ptr<class gametest::BaseGameTestInstance>> const&);
+    MCAPI explicit MultipleTestTracker(std::vector<std::shared_ptr<class gametest::BaseGameTestInstance>> const&);
 
     // symbol: ?addListener@MultipleTestTracker@gametest@@QEAAXV?$shared_ptr@VIGameTestListener@gametest@@@std@@@Z
     MCAPI void addListener(std::shared_ptr<class gametest::IGameTestListener>);

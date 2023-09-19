@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class UnknownBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    UnknownBlock& operator=(UnknownBlock const&) = delete;
-    UnknownBlock(UnknownBlock const&)            = delete;
-    UnknownBlock()                               = delete;
+    UnknownBlock& operator=(UnknownBlock const&);
+    UnknownBlock(UnknownBlock const&);
+    UnknownBlock();
 
 public:
     // NOLINTBEGIN

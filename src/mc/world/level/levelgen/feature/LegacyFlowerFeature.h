@@ -9,9 +9,9 @@
 class LegacyFlowerFeature : public ::Feature {
 public:
     // prevent constructor by default
-    LegacyFlowerFeature& operator=(LegacyFlowerFeature const&) = delete;
-    LegacyFlowerFeature(LegacyFlowerFeature const&)            = delete;
-    LegacyFlowerFeature()                                      = delete;
+    LegacyFlowerFeature& operator=(LegacyFlowerFeature const&);
+    LegacyFlowerFeature(LegacyFlowerFeature const&);
+    LegacyFlowerFeature();
 
 public:
     // NOLINTBEGIN
@@ -22,7 +22,7 @@ public:
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
     // symbol: ??0LegacyFlowerFeature@@QEAA@W4FlowerPlacementType@@@Z
-    MCAPI LegacyFlowerFeature(::FlowerPlacementType);
+    MCAPI explicit LegacyFlowerFeature(::FlowerPlacementType);
 
     // NOLINTEND
 };

@@ -12,9 +12,9 @@
 class RaidTriggerSystem {
 public:
     // prevent constructor by default
-    RaidTriggerSystem& operator=(RaidTriggerSystem const&) = delete;
-    RaidTriggerSystem(RaidTriggerSystem const&)            = delete;
-    RaidTriggerSystem()                                    = delete;
+    RaidTriggerSystem& operator=(RaidTriggerSystem const&);
+    RaidTriggerSystem(RaidTriggerSystem const&);
+    RaidTriggerSystem();
 
 public:
     // NOLINTBEGIN

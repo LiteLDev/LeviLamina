@@ -10,9 +10,9 @@
 class ServerPlayerFallDamageSystem {
 public:
     // prevent constructor by default
-    ServerPlayerFallDamageSystem& operator=(ServerPlayerFallDamageSystem const&) = delete;
-    ServerPlayerFallDamageSystem(ServerPlayerFallDamageSystem const&)            = delete;
-    ServerPlayerFallDamageSystem()                                               = delete;
+    ServerPlayerFallDamageSystem& operator=(ServerPlayerFallDamageSystem const&);
+    ServerPlayerFallDamageSystem(ServerPlayerFallDamageSystem const&);
+    ServerPlayerFallDamageSystem();
 
 public:
     // NOLINTBEGIN

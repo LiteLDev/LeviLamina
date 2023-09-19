@@ -5,7 +5,7 @@
 struct ImmuneToLavaDragFlag {
 public:
     // prevent constructor by default
-    ImmuneToLavaDragFlag& operator=(ImmuneToLavaDragFlag const&) = delete;
-    ImmuneToLavaDragFlag(ImmuneToLavaDragFlag const&)            = delete;
-    ImmuneToLavaDragFlag()                                       = delete;
+    ImmuneToLavaDragFlag& operator=(ImmuneToLavaDragFlag const&);
+    ImmuneToLavaDragFlag(ImmuneToLavaDragFlag const&);
+    ImmuneToLavaDragFlag();
 };

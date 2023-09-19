@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class BiomeFilterGroup : public ::FilterGroup {
 public:
     // prevent constructor by default
-    BiomeFilterGroup& operator=(BiomeFilterGroup const&) = delete;
-    BiomeFilterGroup(BiomeFilterGroup const&)            = delete;
-    BiomeFilterGroup()                                   = delete;
+    BiomeFilterGroup& operator=(BiomeFilterGroup const&);
+    BiomeFilterGroup(BiomeFilterGroup const&);
+    BiomeFilterGroup();
 
 public:
     // NOLINTBEGIN

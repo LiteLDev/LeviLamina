@@ -16,8 +16,8 @@ namespace JsonUtil { class EmptyClass; }
 class ActorAnimationControllerGroup {
 public:
     // prevent constructor by default
-    ActorAnimationControllerGroup& operator=(ActorAnimationControllerGroup const&) = delete;
-    ActorAnimationControllerGroup(ActorAnimationControllerGroup const&)            = delete;
+    ActorAnimationControllerGroup& operator=(ActorAnimationControllerGroup const&);
+    ActorAnimationControllerGroup(ActorAnimationControllerGroup const&);
 
 public:
     // NOLINTBEGIN

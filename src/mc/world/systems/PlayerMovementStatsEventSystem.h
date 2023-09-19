@@ -5,9 +5,9 @@
 class PlayerMovementStatsEventSystem {
 public:
     // prevent constructor by default
-    PlayerMovementStatsEventSystem& operator=(PlayerMovementStatsEventSystem const&) = delete;
-    PlayerMovementStatsEventSystem(PlayerMovementStatsEventSystem const&)            = delete;
-    PlayerMovementStatsEventSystem()                                                 = delete;
+    PlayerMovementStatsEventSystem& operator=(PlayerMovementStatsEventSystem const&);
+    PlayerMovementStatsEventSystem(PlayerMovementStatsEventSystem const&);
+    PlayerMovementStatsEventSystem();
 
 public:
     // NOLINTBEGIN

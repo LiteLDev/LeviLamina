@@ -5,7 +5,7 @@
 struct GlobalActorFlag {
 public:
     // prevent constructor by default
-    GlobalActorFlag& operator=(GlobalActorFlag const&) = delete;
-    GlobalActorFlag(GlobalActorFlag const&)            = delete;
-    GlobalActorFlag()                                  = delete;
+    GlobalActorFlag& operator=(GlobalActorFlag const&);
+    GlobalActorFlag(GlobalActorFlag const&);
+    GlobalActorFlag();
 };

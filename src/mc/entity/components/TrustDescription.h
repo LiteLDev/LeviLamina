@@ -8,9 +8,9 @@
 class TrustDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    TrustDescription& operator=(TrustDescription const&) = delete;
-    TrustDescription(TrustDescription const&)            = delete;
-    TrustDescription()                                   = delete;
+    TrustDescription& operator=(TrustDescription const&);
+    TrustDescription(TrustDescription const&);
+    TrustDescription();
 
 public:
     // NOLINTBEGIN

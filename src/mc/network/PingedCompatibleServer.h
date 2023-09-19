@@ -5,8 +5,8 @@
 struct PingedCompatibleServer {
 public:
     // prevent constructor by default
-    PingedCompatibleServer& operator=(PingedCompatibleServer const&) = delete;
-    PingedCompatibleServer()                                         = delete;
+    PingedCompatibleServer& operator=(PingedCompatibleServer const&);
+    PingedCompatibleServer();
 
 public:
     // NOLINTBEGIN

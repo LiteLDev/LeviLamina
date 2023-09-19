@@ -7,9 +7,9 @@ namespace moodycamel {
 struct ConcurrentQueueDefaultTraits {
 public:
     // prevent constructor by default
-    ConcurrentQueueDefaultTraits& operator=(ConcurrentQueueDefaultTraits const&) = delete;
-    ConcurrentQueueDefaultTraits(ConcurrentQueueDefaultTraits const&)            = delete;
-    ConcurrentQueueDefaultTraits()                                               = delete;
+    ConcurrentQueueDefaultTraits& operator=(ConcurrentQueueDefaultTraits const&);
+    ConcurrentQueueDefaultTraits(ConcurrentQueueDefaultTraits const&);
+    ConcurrentQueueDefaultTraits();
 };
 
 }; // namespace moodycamel

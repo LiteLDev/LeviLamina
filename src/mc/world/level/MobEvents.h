@@ -8,14 +8,14 @@
 class MobEvents {
 public:
     // prevent constructor by default
-    MobEvents& operator=(MobEvents const&) = delete;
-    MobEvents(MobEvents const&)            = delete;
-    MobEvents()                            = delete;
+    MobEvents& operator=(MobEvents const&);
+    MobEvents(MobEvents const&);
+    MobEvents();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0MobEvents@@QEAA@AEAVLevelStorage@@@Z
-    MCAPI MobEvents(class LevelStorage&);
+    MCAPI explicit MobEvents(class LevelStorage&);
 
     // symbol: ?areEventsEnabled@MobEvents@@QEBA_NXZ
     MCAPI bool areEventsEnabled() const;

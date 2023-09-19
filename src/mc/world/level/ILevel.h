@@ -13,9 +13,9 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class ILevel : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    ILevel& operator=(ILevel const&) = delete;
-    ILevel(ILevel const&)            = delete;
-    ILevel()                         = delete;
+    ILevel& operator=(ILevel const&);
+    ILevel(ILevel const&);
+    ILevel();
 
 public:
     // NOLINTBEGIN

@@ -7,9 +7,9 @@ namespace Core {
 struct LevelStorageResult {
 public:
     // prevent constructor by default
-    LevelStorageResult& operator=(LevelStorageResult const&) = delete;
-    LevelStorageResult(LevelStorageResult const&)            = delete;
-    LevelStorageResult()                                     = delete;
+    LevelStorageResult& operator=(LevelStorageResult const&);
+    LevelStorageResult(LevelStorageResult const&);
+    LevelStorageResult();
 
 public:
     // NOLINTBEGIN

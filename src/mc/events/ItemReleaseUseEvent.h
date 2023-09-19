@@ -5,9 +5,9 @@
 struct ItemReleaseUseEvent {
 public:
     // prevent constructor by default
-    ItemReleaseUseEvent& operator=(ItemReleaseUseEvent const&) = delete;
-    ItemReleaseUseEvent(ItemReleaseUseEvent const&)            = delete;
-    ItemReleaseUseEvent()                                      = delete;
+    ItemReleaseUseEvent& operator=(ItemReleaseUseEvent const&);
+    ItemReleaseUseEvent(ItemReleaseUseEvent const&);
+    ItemReleaseUseEvent();
 
 public:
     // NOLINTBEGIN

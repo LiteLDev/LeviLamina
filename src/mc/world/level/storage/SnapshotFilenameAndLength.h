@@ -5,7 +5,7 @@
 struct SnapshotFilenameAndLength {
 public:
     // prevent constructor by default
-    SnapshotFilenameAndLength& operator=(SnapshotFilenameAndLength const&) = delete;
-    SnapshotFilenameAndLength(SnapshotFilenameAndLength const&)            = delete;
-    SnapshotFilenameAndLength()                                            = delete;
+    SnapshotFilenameAndLength& operator=(SnapshotFilenameAndLength const&);
+    SnapshotFilenameAndLength(SnapshotFilenameAndLength const&);
+    SnapshotFilenameAndLength();
 };

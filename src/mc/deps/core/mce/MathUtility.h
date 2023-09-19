@@ -11,9 +11,9 @@ namespace mce {
 class MathUtility {
 public:
     // prevent constructor by default
-    MathUtility& operator=(MathUtility const&) = delete;
-    MathUtility(MathUtility const&)            = delete;
-    MathUtility()                              = delete;
+    MathUtility& operator=(MathUtility const&);
+    MathUtility(MathUtility const&);
+    MathUtility();
 
 public:
     // NOLINTBEGIN

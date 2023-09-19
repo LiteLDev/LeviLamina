@@ -8,9 +8,9 @@
 class GlowStoneFeature : public ::Feature {
 public:
     // prevent constructor by default
-    GlowStoneFeature& operator=(GlowStoneFeature const&) = delete;
-    GlowStoneFeature(GlowStoneFeature const&)            = delete;
-    GlowStoneFeature()                                   = delete;
+    GlowStoneFeature& operator=(GlowStoneFeature const&);
+    GlowStoneFeature(GlowStoneFeature const&);
+    GlowStoneFeature();
 
 public:
     // NOLINTBEGIN

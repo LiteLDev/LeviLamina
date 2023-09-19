@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class DragonStrafePlayerDefinition : public ::DragonBaseGoalDefinition {
 public:
     // prevent constructor by default
-    DragonStrafePlayerDefinition& operator=(DragonStrafePlayerDefinition const&) = delete;
-    DragonStrafePlayerDefinition(DragonStrafePlayerDefinition const&)            = delete;
+    DragonStrafePlayerDefinition& operator=(DragonStrafePlayerDefinition const&);
+    DragonStrafePlayerDefinition(DragonStrafePlayerDefinition const&);
 
 public:
     // NOLINTBEGIN

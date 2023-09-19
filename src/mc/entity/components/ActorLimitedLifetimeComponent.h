@@ -5,8 +5,8 @@
 class ActorLimitedLifetimeComponent {
 public:
     // prevent constructor by default
-    ActorLimitedLifetimeComponent& operator=(ActorLimitedLifetimeComponent const&) = delete;
-    ActorLimitedLifetimeComponent(ActorLimitedLifetimeComponent const&)            = delete;
+    ActorLimitedLifetimeComponent& operator=(ActorLimitedLifetimeComponent const&);
+    ActorLimitedLifetimeComponent(ActorLimitedLifetimeComponent const&);
 
 public:
     // NOLINTBEGIN

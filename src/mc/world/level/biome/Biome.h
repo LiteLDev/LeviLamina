@@ -19,9 +19,9 @@ public:
 
 public:
     // prevent constructor by default
-    Biome& operator=(Biome const&) = delete;
-    Biome(Biome const&)            = delete;
-    Biome()                        = delete;
+    Biome& operator=(Biome const&);
+    Biome(Biome const&);
+    Biome();
 
 public:
     // NOLINTBEGIN

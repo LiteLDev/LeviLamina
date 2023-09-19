@@ -19,9 +19,9 @@
 struct SneakMovementSystem {
 public:
     // prevent constructor by default
-    SneakMovementSystem& operator=(SneakMovementSystem const&) = delete;
-    SneakMovementSystem(SneakMovementSystem const&)            = delete;
-    SneakMovementSystem()                                      = delete;
+    SneakMovementSystem& operator=(SneakMovementSystem const&);
+    SneakMovementSystem(SneakMovementSystem const&);
+    SneakMovementSystem();
 
 public:
     // NOLINTBEGIN

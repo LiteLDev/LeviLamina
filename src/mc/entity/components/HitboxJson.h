@@ -5,7 +5,7 @@
 struct HitboxJson {
 public:
     // prevent constructor by default
-    HitboxJson& operator=(HitboxJson const&) = delete;
-    HitboxJson(HitboxJson const&)            = delete;
-    HitboxJson()                             = delete;
+    HitboxJson& operator=(HitboxJson const&);
+    HitboxJson(HitboxJson const&);
+    HitboxJson();
 };

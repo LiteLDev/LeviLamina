@@ -8,9 +8,9 @@
 class VoidGenerator : public ::WorldGenerator {
 public:
     // prevent constructor by default
-    VoidGenerator& operator=(VoidGenerator const&) = delete;
-    VoidGenerator(VoidGenerator const&)            = delete;
-    VoidGenerator()                                = delete;
+    VoidGenerator& operator=(VoidGenerator const&);
+    VoidGenerator(VoidGenerator const&);
+    VoidGenerator();
 
 public:
     // NOLINTBEGIN
@@ -56,7 +56,7 @@ public:
     MCVAPI void prepareHeights(class BlockVolume&, class ChunkPos const&, bool);
 
     // symbol: ??0VoidGenerator@@QEAA@AEAVDimension@@@Z
-    MCAPI VoidGenerator(class Dimension&);
+    MCAPI explicit VoidGenerator(class Dimension&);
 
     // NOLINTEND
 };

@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct MarkVariantDefinition {
 public:
     // prevent constructor by default
-    MarkVariantDefinition& operator=(MarkVariantDefinition const&) = delete;
-    MarkVariantDefinition(MarkVariantDefinition const&)            = delete;
-    MarkVariantDefinition()                                        = delete;
+    MarkVariantDefinition& operator=(MarkVariantDefinition const&);
+    MarkVariantDefinition(MarkVariantDefinition const&);
+    MarkVariantDefinition();
 
 public:
     // NOLINTBEGIN

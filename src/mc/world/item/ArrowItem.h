@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class ArrowItem : public ::Item {
 public:
     // prevent constructor by default
-    ArrowItem& operator=(ArrowItem const&) = delete;
-    ArrowItem(ArrowItem const&)            = delete;
-    ArrowItem()                            = delete;
+    ArrowItem& operator=(ArrowItem const&);
+    ArrowItem(ArrowItem const&);
+    ArrowItem();
 
 public:
     // NOLINTBEGIN

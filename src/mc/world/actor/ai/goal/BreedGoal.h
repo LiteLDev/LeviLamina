@@ -9,9 +9,9 @@
 class BreedGoal : public ::Goal {
 public:
     // prevent constructor by default
-    BreedGoal& operator=(BreedGoal const&) = delete;
-    BreedGoal(BreedGoal const&)            = delete;
-    BreedGoal()                            = delete;
+    BreedGoal& operator=(BreedGoal const&);
+    BreedGoal(BreedGoal const&);
+    BreedGoal();
 
 public:
     // NOLINTBEGIN

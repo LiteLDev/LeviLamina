@@ -9,9 +9,9 @@
 class PickupItemsGoal : public ::Goal {
 public:
     // prevent constructor by default
-    PickupItemsGoal& operator=(PickupItemsGoal const&) = delete;
-    PickupItemsGoal(PickupItemsGoal const&)            = delete;
-    PickupItemsGoal()                                  = delete;
+    PickupItemsGoal& operator=(PickupItemsGoal const&);
+    PickupItemsGoal(PickupItemsGoal const&);
+    PickupItemsGoal();
 
 public:
     // NOLINTBEGIN

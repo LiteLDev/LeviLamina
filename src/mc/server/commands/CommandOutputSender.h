@@ -13,8 +13,8 @@ namespace Json { class Value; }
 class CommandOutputSender {
 public:
     // prevent constructor by default
-    CommandOutputSender& operator=(CommandOutputSender const&) = delete;
-    CommandOutputSender(CommandOutputSender const&)            = delete;
+    CommandOutputSender& operator=(CommandOutputSender const&);
+    CommandOutputSender(CommandOutputSender const&);
 
 public:
     // NOLINTBEGIN

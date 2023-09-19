@@ -19,9 +19,9 @@ namespace Core { class Result; }
 class ExternalFileLevelStorageSource : public ::LevelStorageSource {
 public:
     // prevent constructor by default
-    ExternalFileLevelStorageSource& operator=(ExternalFileLevelStorageSource const&) = delete;
-    ExternalFileLevelStorageSource(ExternalFileLevelStorageSource const&)            = delete;
-    ExternalFileLevelStorageSource()                                                 = delete;
+    ExternalFileLevelStorageSource& operator=(ExternalFileLevelStorageSource const&);
+    ExternalFileLevelStorageSource(ExternalFileLevelStorageSource const&);
+    ExternalFileLevelStorageSource();
 
 public:
     // NOLINTBEGIN

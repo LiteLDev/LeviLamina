@@ -5,7 +5,7 @@
 struct AliasInfoDescription {
 public:
     // prevent constructor by default
-    AliasInfoDescription() = delete;
+    AliasInfoDescription();
 
 public:
     // NOLINTBEGIN

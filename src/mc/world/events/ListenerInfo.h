@@ -5,9 +5,9 @@
 class ListenerInfo {
 public:
     // prevent constructor by default
-    ListenerInfo& operator=(ListenerInfo const&) = delete;
-    ListenerInfo(ListenerInfo const&)            = delete;
-    ListenerInfo()                               = delete;
+    ListenerInfo& operator=(ListenerInfo const&);
+    ListenerInfo(ListenerInfo const&);
+    ListenerInfo();
 
 private:
     // NOLINTBEGIN

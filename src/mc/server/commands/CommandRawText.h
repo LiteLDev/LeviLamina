@@ -5,9 +5,9 @@
 class CommandRawText {
 public:
     // prevent constructor by default
-    CommandRawText& operator=(CommandRawText const&) = delete;
-    CommandRawText(CommandRawText const&)            = delete;
-    CommandRawText()                                 = delete;
+    CommandRawText& operator=(CommandRawText const&);
+    CommandRawText(CommandRawText const&);
+    CommandRawText();
 
 public:
     // NOLINTBEGIN

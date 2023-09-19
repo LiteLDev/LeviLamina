@@ -10,9 +10,9 @@ namespace Scripting { class ModuleBindingBuilder; }
 class ScriptMinecraftCommonModuleFactory {
 public:
     // prevent constructor by default
-    ScriptMinecraftCommonModuleFactory& operator=(ScriptMinecraftCommonModuleFactory const&) = delete;
-    ScriptMinecraftCommonModuleFactory(ScriptMinecraftCommonModuleFactory const&)            = delete;
-    ScriptMinecraftCommonModuleFactory()                                                     = delete;
+    ScriptMinecraftCommonModuleFactory& operator=(ScriptMinecraftCommonModuleFactory const&);
+    ScriptMinecraftCommonModuleFactory(ScriptMinecraftCommonModuleFactory const&);
+    ScriptMinecraftCommonModuleFactory();
 
 public:
     // NOLINTBEGIN

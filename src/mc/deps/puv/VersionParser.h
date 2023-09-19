@@ -16,9 +16,9 @@ namespace Puv {
 class VersionParser : public ::Puv::ParserBase {
 public:
     // prevent constructor by default
-    VersionParser& operator=(VersionParser const&) = delete;
-    VersionParser(VersionParser const&)            = delete;
-    VersionParser()                                = delete;
+    VersionParser& operator=(VersionParser const&);
+    VersionParser(VersionParser const&);
+    VersionParser();
 
 public:
     // NOLINTBEGIN
@@ -35,7 +35,7 @@ public:
     MCVAPI ~VersionParser();
 
     // symbol: ??0VersionParser@Puv@@QEAA@V?$initializer_list@U?$pair@VSemVersion@@V1@@std@@@std@@@Z
-    MCAPI VersionParser(std::initializer_list<std::pair<class SemVersion, class SemVersion>>);
+    MCAPI explicit VersionParser(std::initializer_list<std::pair<class SemVersion, class SemVersion>>);
 
     // symbol: ?maxSupportedVersion@VersionParser@Puv@@QEBA?AVSemVersion@@XZ
     MCAPI class SemVersion maxSupportedVersion() const;

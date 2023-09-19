@@ -11,9 +11,9 @@ namespace mce {
 struct Image {
 public:
     // prevent constructor by default
-    Image& operator=(Image const&) = delete;
-    Image(Image const&)            = delete;
-    Image()                        = delete;
+    Image& operator=(Image const&);
+    Image(Image const&);
+    Image();
 
 public:
     // NOLINTBEGIN

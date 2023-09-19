@@ -8,9 +8,9 @@
 class HeartbeatServerSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    HeartbeatServerSystem& operator=(HeartbeatServerSystem const&) = delete;
-    HeartbeatServerSystem(HeartbeatServerSystem const&)            = delete;
-    HeartbeatServerSystem()                                        = delete;
+    HeartbeatServerSystem& operator=(HeartbeatServerSystem const&);
+    HeartbeatServerSystem(HeartbeatServerSystem const&);
+    HeartbeatServerSystem();
 
 public:
     // NOLINTBEGIN

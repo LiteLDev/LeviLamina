@@ -5,9 +5,9 @@
 class BrushEffectsCooldownComponent {
 public:
     // prevent constructor by default
-    BrushEffectsCooldownComponent& operator=(BrushEffectsCooldownComponent const&) = delete;
-    BrushEffectsCooldownComponent(BrushEffectsCooldownComponent const&)            = delete;
-    BrushEffectsCooldownComponent()                                                = delete;
+    BrushEffectsCooldownComponent& operator=(BrushEffectsCooldownComponent const&);
+    BrushEffectsCooldownComponent(BrushEffectsCooldownComponent const&);
+    BrushEffectsCooldownComponent();
 
 private:
     // NOLINTBEGIN

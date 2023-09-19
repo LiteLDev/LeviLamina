@@ -5,7 +5,7 @@
 class IResourceDropsStrategy {
 public:
     // prevent constructor by default
-    IResourceDropsStrategy& operator=(IResourceDropsStrategy const&) = delete;
-    IResourceDropsStrategy(IResourceDropsStrategy const&)            = delete;
-    IResourceDropsStrategy()                                         = delete;
+    IResourceDropsStrategy& operator=(IResourceDropsStrategy const&);
+    IResourceDropsStrategy(IResourceDropsStrategy const&);
+    IResourceDropsStrategy();
 };

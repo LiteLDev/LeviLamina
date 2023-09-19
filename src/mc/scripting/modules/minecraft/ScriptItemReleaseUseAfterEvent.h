@@ -16,8 +16,8 @@ namespace ScriptModuleMinecraft {
 struct ScriptItemReleaseUseAfterEvent : public ::ScriptModuleMinecraft::ScriptItemChargeAfterEvent {
 public:
     // prevent constructor by default
-    ScriptItemReleaseUseAfterEvent& operator=(ScriptItemReleaseUseAfterEvent const&) = delete;
-    ScriptItemReleaseUseAfterEvent()                                                 = delete;
+    ScriptItemReleaseUseAfterEvent& operator=(ScriptItemReleaseUseAfterEvent const&);
+    ScriptItemReleaseUseAfterEvent();
 
 public:
     // NOLINTBEGIN

@@ -5,8 +5,8 @@
 class RopeSystem {
 public:
     // prevent constructor by default
-    RopeSystem& operator=(RopeSystem const&) = delete;
-    RopeSystem(RopeSystem const&)            = delete;
+    RopeSystem& operator=(RopeSystem const&);
+    RopeSystem(RopeSystem const&);
 
 public:
     // NOLINTBEGIN

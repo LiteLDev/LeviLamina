@@ -19,9 +19,9 @@ public:
     struct PacketViolation {
     public:
         // prevent constructor by default
-        PacketViolation& operator=(PacketViolation const&) = delete;
-        PacketViolation(PacketViolation const&)            = delete;
-        PacketViolation()                                  = delete;
+        PacketViolation& operator=(PacketViolation const&);
+        PacketViolation(PacketViolation const&);
+        PacketViolation();
 
     public:
         // NOLINTBEGIN
@@ -34,8 +34,8 @@ public:
 
 public:
     // prevent constructor by default
-    PacketViolationHandler& operator=(PacketViolationHandler const&) = delete;
-    PacketViolationHandler(PacketViolationHandler const&)            = delete;
+    PacketViolationHandler& operator=(PacketViolationHandler const&);
+    PacketViolationHandler(PacketViolationHandler const&);
 
 public:
     // NOLINTBEGIN

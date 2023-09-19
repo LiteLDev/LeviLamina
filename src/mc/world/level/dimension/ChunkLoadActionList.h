@@ -10,8 +10,8 @@
 class ChunkLoadActionList {
 public:
     // prevent constructor by default
-    ChunkLoadActionList& operator=(ChunkLoadActionList const&) = delete;
-    ChunkLoadActionList(ChunkLoadActionList const&)            = delete;
+    ChunkLoadActionList& operator=(ChunkLoadActionList const&);
+    ChunkLoadActionList(ChunkLoadActionList const&);
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class SubChunkRelighter {
 public:
     // prevent constructor by default
-    SubChunkRelighter& operator=(SubChunkRelighter const&) = delete;
-    SubChunkRelighter(SubChunkRelighter const&)            = delete;
-    SubChunkRelighter()                                    = delete;
+    SubChunkRelighter& operator=(SubChunkRelighter const&);
+    SubChunkRelighter(SubChunkRelighter const&);
+    SubChunkRelighter();
 
 public:
     // NOLINTBEGIN

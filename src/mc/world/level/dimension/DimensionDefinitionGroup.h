@@ -16,16 +16,16 @@ public:
     struct DimensionDefinition {
     public:
         // prevent constructor by default
-        DimensionDefinition& operator=(DimensionDefinition const&) = delete;
-        DimensionDefinition(DimensionDefinition const&)            = delete;
-        DimensionDefinition()                                      = delete;
+        DimensionDefinition& operator=(DimensionDefinition const&);
+        DimensionDefinition(DimensionDefinition const&);
+        DimensionDefinition();
     };
 
 public:
     // prevent constructor by default
-    DimensionDefinitionGroup& operator=(DimensionDefinitionGroup const&) = delete;
-    DimensionDefinitionGroup(DimensionDefinitionGroup const&)            = delete;
-    DimensionDefinitionGroup()                                           = delete;
+    DimensionDefinitionGroup& operator=(DimensionDefinitionGroup const&);
+    DimensionDefinitionGroup(DimensionDefinitionGroup const&);
+    DimensionDefinitionGroup();
 
 public:
     // NOLINTBEGIN

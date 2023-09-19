@@ -35,9 +35,9 @@ public:
 
 public:
     // prevent constructor by default
-    Zombie& operator=(Zombie const&) = delete;
-    Zombie(Zombie const&)            = delete;
-    Zombie()                         = delete;
+    Zombie& operator=(Zombie const&);
+    Zombie(Zombie const&);
+    Zombie();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class IContainerManager {
 public:
     // prevent constructor by default
-    IContainerManager& operator=(IContainerManager const&) = delete;
-    IContainerManager(IContainerManager const&)            = delete;
-    IContainerManager()                                    = delete;
+    IContainerManager& operator=(IContainerManager const&);
+    IContainerManager(IContainerManager const&);
+    IContainerManager();
 
 public:
     // NOLINTBEGIN

@@ -7,9 +7,9 @@ namespace NpcComponents {
 struct LeaveMenuCountdown {
 public:
     // prevent constructor by default
-    LeaveMenuCountdown& operator=(LeaveMenuCountdown const&) = delete;
-    LeaveMenuCountdown(LeaveMenuCountdown const&)            = delete;
-    LeaveMenuCountdown()                                     = delete;
+    LeaveMenuCountdown& operator=(LeaveMenuCountdown const&);
+    LeaveMenuCountdown(LeaveMenuCountdown const&);
+    LeaveMenuCountdown();
 };
 
 }; // namespace NpcComponents

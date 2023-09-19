@@ -8,9 +8,9 @@
 class CommandOriginLoader : public ::ICommandOriginLoader {
 public:
     // prevent constructor by default
-    CommandOriginLoader& operator=(CommandOriginLoader const&) = delete;
-    CommandOriginLoader(CommandOriginLoader const&)            = delete;
-    CommandOriginLoader()                                      = delete;
+    CommandOriginLoader& operator=(CommandOriginLoader const&);
+    CommandOriginLoader(CommandOriginLoader const&);
+    CommandOriginLoader();
 
 public:
     // NOLINTBEGIN
@@ -25,7 +25,7 @@ public:
     MCVAPI ~CommandOriginLoader();
 
     // symbol: ??0CommandOriginLoader@@QEAA@AEAVServerLevel@@@Z
-    MCAPI CommandOriginLoader(class ServerLevel&);
+    MCAPI explicit CommandOriginLoader(class ServerLevel&);
 
     // symbol:
     // ?load@CommandOriginLoader@@SA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVServerLevel@@@Z

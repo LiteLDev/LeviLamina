@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptIsShakingComponent {
 public:
     // prevent constructor by default
-    ScriptIsShakingComponent& operator=(ScriptIsShakingComponent const&) = delete;
-    ScriptIsShakingComponent(ScriptIsShakingComponent const&)            = delete;
-    ScriptIsShakingComponent()                                           = delete;
+    ScriptIsShakingComponent& operator=(ScriptIsShakingComponent const&);
+    ScriptIsShakingComponent(ScriptIsShakingComponent const&);
+    ScriptIsShakingComponent();
 
 public:
     // NOLINTBEGIN

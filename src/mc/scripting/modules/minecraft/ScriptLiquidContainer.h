@@ -10,9 +10,9 @@ namespace ScriptModuleMinecraft {
 class ScriptLiquidContainer {
 public:
     // prevent constructor by default
-    ScriptLiquidContainer& operator=(ScriptLiquidContainer const&) = delete;
-    ScriptLiquidContainer(ScriptLiquidContainer const&)            = delete;
-    ScriptLiquidContainer()                                        = delete;
+    ScriptLiquidContainer& operator=(ScriptLiquidContainer const&);
+    ScriptLiquidContainer(ScriptLiquidContainer const&);
+    ScriptLiquidContainer();
 
 public:
     // NOLINTBEGIN

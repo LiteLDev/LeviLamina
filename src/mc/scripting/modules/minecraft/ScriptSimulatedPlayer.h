@@ -31,9 +31,9 @@ namespace ScriptModuleGameTest {
 class ScriptSimulatedPlayer : public ::ScriptModuleMinecraft::ScriptPlayer {
 public:
     // prevent constructor by default
-    ScriptSimulatedPlayer& operator=(ScriptSimulatedPlayer const&) = delete;
-    ScriptSimulatedPlayer(ScriptSimulatedPlayer const&)            = delete;
-    ScriptSimulatedPlayer()                                        = delete;
+    ScriptSimulatedPlayer& operator=(ScriptSimulatedPlayer const&);
+    ScriptSimulatedPlayer(ScriptSimulatedPlayer const&);
+    ScriptSimulatedPlayer();
 
 public:
     // NOLINTBEGIN

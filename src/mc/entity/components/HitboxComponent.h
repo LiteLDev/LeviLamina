@@ -5,9 +5,9 @@
 class HitboxComponent {
 public:
     // prevent constructor by default
-    HitboxComponent& operator=(HitboxComponent const&) = delete;
-    HitboxComponent(HitboxComponent const&)            = delete;
-    HitboxComponent()                                  = delete;
+    HitboxComponent& operator=(HitboxComponent const&);
+    HitboxComponent(HitboxComponent const&);
+    HitboxComponent();
 
 public:
     // NOLINTBEGIN

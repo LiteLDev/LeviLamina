@@ -21,9 +21,9 @@ public:
     struct TreeChild {
     public:
         // prevent constructor by default
-        TreeChild& operator=(TreeChild const&) = delete;
-        TreeChild(TreeChild const&)            = delete;
-        TreeChild()                            = delete;
+        TreeChild& operator=(TreeChild const&);
+        TreeChild(TreeChild const&);
+        TreeChild();
 
     public:
         // NOLINTBEGIN
@@ -38,9 +38,9 @@ public:
 
 public:
     // prevent constructor by default
-    StorageAreasTree& operator=(StorageAreasTree const&) = delete;
-    StorageAreasTree(StorageAreasTree const&)            = delete;
-    StorageAreasTree()                                   = delete;
+    StorageAreasTree& operator=(StorageAreasTree const&);
+    StorageAreasTree(StorageAreasTree const&);
+    StorageAreasTree();
 
 public:
     // NOLINTBEGIN

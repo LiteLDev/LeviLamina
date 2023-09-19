@@ -5,7 +5,7 @@
 struct IClientInstanceProxy {
 public:
     // prevent constructor by default
-    IClientInstanceProxy& operator=(IClientInstanceProxy const&) = delete;
-    IClientInstanceProxy(IClientInstanceProxy const&)            = delete;
-    IClientInstanceProxy()                                       = delete;
+    IClientInstanceProxy& operator=(IClientInstanceProxy const&);
+    IClientInstanceProxy(IClientInstanceProxy const&);
+    IClientInstanceProxy();
 };

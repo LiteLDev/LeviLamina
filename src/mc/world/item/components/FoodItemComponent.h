@@ -5,8 +5,8 @@
 class FoodItemComponent {
 public:
     // prevent constructor by default
-    FoodItemComponent(FoodItemComponent const&) = delete;
-    FoodItemComponent()                         = delete;
+    FoodItemComponent(FoodItemComponent const&);
+    FoodItemComponent();
 
 public:
     // NOLINTBEGIN

@@ -10,9 +10,9 @@
 class LoopbackPacketSender : public ::PacketSender {
 public:
     // prevent constructor by default
-    LoopbackPacketSender& operator=(LoopbackPacketSender const&) = delete;
-    LoopbackPacketSender(LoopbackPacketSender const&)            = delete;
-    LoopbackPacketSender()                                       = delete;
+    LoopbackPacketSender& operator=(LoopbackPacketSender const&);
+    LoopbackPacketSender(LoopbackPacketSender const&);
+    LoopbackPacketSender();
 
 public:
     // NOLINTBEGIN

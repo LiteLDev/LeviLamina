@@ -14,9 +14,9 @@ namespace gametest { class BaseGameTestInstance; }
 class MinecraftGameTestInstance : public ::gametest::BaseGameTestInstance {
 public:
     // prevent constructor by default
-    MinecraftGameTestInstance& operator=(MinecraftGameTestInstance const&) = delete;
-    MinecraftGameTestInstance(MinecraftGameTestInstance const&)            = delete;
-    MinecraftGameTestInstance()                                            = delete;
+    MinecraftGameTestInstance& operator=(MinecraftGameTestInstance const&);
+    MinecraftGameTestInstance(MinecraftGameTestInstance const&);
+    MinecraftGameTestInstance();
 
 public:
     // NOLINTBEGIN

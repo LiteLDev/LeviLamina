@@ -5,9 +5,9 @@
 class SharedBuffs {
 public:
     // prevent constructor by default
-    SharedBuffs& operator=(SharedBuffs const&) = delete;
-    SharedBuffs(SharedBuffs const&)            = delete;
-    SharedBuffs()                              = delete;
+    SharedBuffs& operator=(SharedBuffs const&);
+    SharedBuffs(SharedBuffs const&);
+    SharedBuffs();
 
 public:
     // NOLINTBEGIN

@@ -10,8 +10,8 @@
 class RequestChunkRadiusPacket : public ::Packet {
 public:
     // prevent constructor by default
-    RequestChunkRadiusPacket& operator=(RequestChunkRadiusPacket const&) = delete;
-    RequestChunkRadiusPacket(RequestChunkRadiusPacket const&)            = delete;
+    RequestChunkRadiusPacket& operator=(RequestChunkRadiusPacket const&);
+    RequestChunkRadiusPacket(RequestChunkRadiusPacket const&);
 
 public:
     // NOLINTBEGIN

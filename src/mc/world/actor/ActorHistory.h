@@ -13,9 +13,9 @@ public:
     struct Snapshot {
     public:
         // prevent constructor by default
-        Snapshot& operator=(Snapshot const&) = delete;
-        Snapshot(Snapshot const&)            = delete;
-        Snapshot()                           = delete;
+        Snapshot& operator=(Snapshot const&);
+        Snapshot(Snapshot const&);
+        Snapshot();
 
     public:
         // NOLINTBEGIN
@@ -27,9 +27,9 @@ public:
 
 public:
     // prevent constructor by default
-    ActorHistory& operator=(ActorHistory const&) = delete;
-    ActorHistory(ActorHistory const&)            = delete;
-    ActorHistory()                               = delete;
+    ActorHistory& operator=(ActorHistory const&);
+    ActorHistory(ActorHistory const&);
+    ActorHistory();
 
 public:
     // NOLINTBEGIN

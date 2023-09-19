@@ -5,9 +5,9 @@
 class WitchPreAIStepSystem {
 public:
     // prevent constructor by default
-    WitchPreAIStepSystem& operator=(WitchPreAIStepSystem const&) = delete;
-    WitchPreAIStepSystem(WitchPreAIStepSystem const&)            = delete;
-    WitchPreAIStepSystem()                                       = delete;
+    WitchPreAIStepSystem& operator=(WitchPreAIStepSystem const&);
+    WitchPreAIStepSystem(WitchPreAIStepSystem const&);
+    WitchPreAIStepSystem();
 
 public:
     // NOLINTBEGIN

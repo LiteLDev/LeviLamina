@@ -10,9 +10,9 @@ namespace ScriptModuleMinecraftServerUI {
 class ScriptModalFormResponse {
 public:
     // prevent constructor by default
-    ScriptModalFormResponse& operator=(ScriptModalFormResponse const&) = delete;
-    ScriptModalFormResponse(ScriptModalFormResponse const&)            = delete;
-    ScriptModalFormResponse()                                          = delete;
+    ScriptModalFormResponse& operator=(ScriptModalFormResponse const&);
+    ScriptModalFormResponse(ScriptModalFormResponse const&);
+    ScriptModalFormResponse();
 
 public:
     // NOLINTBEGIN

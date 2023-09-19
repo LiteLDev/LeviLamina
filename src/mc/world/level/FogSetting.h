@@ -5,9 +5,9 @@
 struct FogSetting {
 public:
     // prevent constructor by default
-    FogSetting& operator=(FogSetting const&) = delete;
-    FogSetting(FogSetting const&)            = delete;
-    FogSetting()                             = delete;
+    FogSetting& operator=(FogSetting const&);
+    FogSetting(FogSetting const&);
+    FogSetting();
 
 public:
     // NOLINTBEGIN

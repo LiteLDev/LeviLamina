@@ -5,9 +5,9 @@
 class CircuitTrackingInfo {
 public:
     // prevent constructor by default
-    CircuitTrackingInfo& operator=(CircuitTrackingInfo const&) = delete;
-    CircuitTrackingInfo(CircuitTrackingInfo const&)            = delete;
-    CircuitTrackingInfo()                                      = delete;
+    CircuitTrackingInfo& operator=(CircuitTrackingInfo const&);
+    CircuitTrackingInfo(CircuitTrackingInfo const&);
+    CircuitTrackingInfo();
 
 public:
     // NOLINTBEGIN

@@ -31,16 +31,16 @@ public:
     struct WebSocketSendContext {
     public:
         // prevent constructor by default
-        WebSocketSendContext& operator=(WebSocketSendContext const&) = delete;
-        WebSocketSendContext(WebSocketSendContext const&)            = delete;
-        WebSocketSendContext()                                       = delete;
+        WebSocketSendContext& operator=(WebSocketSendContext const&);
+        WebSocketSendContext(WebSocketSendContext const&);
+        WebSocketSendContext();
     };
 
 public:
     // prevent constructor by default
-    WinHttpConnection& operator=(WinHttpConnection const&) = delete;
-    WinHttpConnection(WinHttpConnection const&)            = delete;
-    WinHttpConnection()                                    = delete;
+    WinHttpConnection& operator=(WinHttpConnection const&);
+    WinHttpConnection(WinHttpConnection const&);
+    WinHttpConnection();
 
 public:
     // NOLINTBEGIN

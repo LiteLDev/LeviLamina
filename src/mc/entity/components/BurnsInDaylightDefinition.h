@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class BurnsInDaylightDefinition {
 public:
     // prevent constructor by default
-    BurnsInDaylightDefinition& operator=(BurnsInDaylightDefinition const&) = delete;
-    BurnsInDaylightDefinition(BurnsInDaylightDefinition const&)            = delete;
-    BurnsInDaylightDefinition()                                            = delete;
+    BurnsInDaylightDefinition& operator=(BurnsInDaylightDefinition const&);
+    BurnsInDaylightDefinition(BurnsInDaylightDefinition const&);
+    BurnsInDaylightDefinition();
 
 public:
     // NOLINTBEGIN

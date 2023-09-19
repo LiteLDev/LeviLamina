@@ -13,9 +13,9 @@ namespace Core { class Path; }
 class LevelLooseFileStorage {
 public:
     // prevent constructor by default
-    LevelLooseFileStorage& operator=(LevelLooseFileStorage const&) = delete;
-    LevelLooseFileStorage(LevelLooseFileStorage const&)            = delete;
-    LevelLooseFileStorage()                                        = delete;
+    LevelLooseFileStorage& operator=(LevelLooseFileStorage const&);
+    LevelLooseFileStorage(LevelLooseFileStorage const&);
+    LevelLooseFileStorage();
 
 public:
     // NOLINTBEGIN

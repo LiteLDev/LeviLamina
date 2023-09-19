@@ -9,9 +9,9 @@
 class CombatRegenerationListener : public ::ActorEventListener {
 public:
     // prevent constructor by default
-    CombatRegenerationListener& operator=(CombatRegenerationListener const&) = delete;
-    CombatRegenerationListener(CombatRegenerationListener const&)            = delete;
-    CombatRegenerationListener()                                             = delete;
+    CombatRegenerationListener& operator=(CombatRegenerationListener const&);
+    CombatRegenerationListener(CombatRegenerationListener const&);
+    CombatRegenerationListener();
 
 public:
     // NOLINTBEGIN

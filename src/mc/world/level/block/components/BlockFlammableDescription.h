@@ -14,9 +14,9 @@ namespace JsonUtil { class EmptyClass; }
 struct BlockFlammableDescription : public ::BlockComponentDescription {
 public:
     // prevent constructor by default
-    BlockFlammableDescription& operator=(BlockFlammableDescription const&) = delete;
-    BlockFlammableDescription(BlockFlammableDescription const&)            = delete;
-    BlockFlammableDescription()                                            = delete;
+    BlockFlammableDescription& operator=(BlockFlammableDescription const&);
+    BlockFlammableDescription(BlockFlammableDescription const&);
+    BlockFlammableDescription();
 
 public:
     // NOLINTBEGIN

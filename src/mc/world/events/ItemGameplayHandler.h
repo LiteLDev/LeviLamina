@@ -5,7 +5,7 @@
 class ItemGameplayHandler {
 public:
     // prevent constructor by default
-    ItemGameplayHandler& operator=(ItemGameplayHandler const&) = delete;
-    ItemGameplayHandler(ItemGameplayHandler const&)            = delete;
-    ItemGameplayHandler()                                      = delete;
+    ItemGameplayHandler& operator=(ItemGameplayHandler const&);
+    ItemGameplayHandler(ItemGameplayHandler const&);
+    ItemGameplayHandler();
 };

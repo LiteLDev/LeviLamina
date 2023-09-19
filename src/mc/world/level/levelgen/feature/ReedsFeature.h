@@ -8,9 +8,9 @@
 class ReedsFeature : public ::Feature {
 public:
     // prevent constructor by default
-    ReedsFeature& operator=(ReedsFeature const&) = delete;
-    ReedsFeature(ReedsFeature const&)            = delete;
-    ReedsFeature()                               = delete;
+    ReedsFeature& operator=(ReedsFeature const&);
+    ReedsFeature(ReedsFeature const&);
+    ReedsFeature();
 
 public:
     // NOLINTBEGIN

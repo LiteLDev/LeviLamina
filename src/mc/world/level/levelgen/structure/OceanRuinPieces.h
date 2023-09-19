@@ -20,9 +20,9 @@ public:
     class OceanRuinPiece : public ::TemplateStructurePiece {
     public:
         // prevent constructor by default
-        OceanRuinPiece& operator=(OceanRuinPiece const&) = delete;
-        OceanRuinPiece(OceanRuinPiece const&)            = delete;
-        OceanRuinPiece()                                 = delete;
+        OceanRuinPiece& operator=(OceanRuinPiece const&);
+        OceanRuinPiece(OceanRuinPiece const&);
+        OceanRuinPiece();
 
     public:
         // NOLINTBEGIN
@@ -58,9 +58,9 @@ public:
 
 public:
     // prevent constructor by default
-    OceanRuinPieces& operator=(OceanRuinPieces const&) = delete;
-    OceanRuinPieces(OceanRuinPieces const&)            = delete;
-    OceanRuinPieces()                                  = delete;
+    OceanRuinPieces& operator=(OceanRuinPieces const&);
+    OceanRuinPieces(OceanRuinPieces const&);
+    OceanRuinPieces();
 
     // private:
     // NOLINTBEGIN

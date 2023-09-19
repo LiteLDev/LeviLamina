@@ -9,13 +9,13 @@
 class ScoreboardIdentityRef {
 public:
     // prevent constructor by default
-    ScoreboardIdentityRef& operator=(ScoreboardIdentityRef const&) = delete;
-    ScoreboardIdentityRef(ScoreboardIdentityRef const&)            = delete;
+    ScoreboardIdentityRef& operator=(ScoreboardIdentityRef const&);
+    ScoreboardIdentityRef(ScoreboardIdentityRef const&);
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ScoreboardIdentityRef@@QEAA@AEBUScoreboardId@@@Z
-    MCAPI ScoreboardIdentityRef(struct ScoreboardId const&);
+    MCAPI explicit ScoreboardIdentityRef(struct ScoreboardId const&);
 
     // symbol: ??0ScoreboardIdentityRef@@QEAA@XZ
     MCAPI ScoreboardIdentityRef();

@@ -13,9 +13,9 @@ namespace AgentComponents {
 class ActionQueue {
 public:
     // prevent constructor by default
-    ActionQueue& operator=(ActionQueue const&) = delete;
-    ActionQueue(ActionQueue const&)            = delete;
-    ActionQueue()                              = delete;
+    ActionQueue& operator=(ActionQueue const&);
+    ActionQueue(ActionQueue const&);
+    ActionQueue();
 
 public:
     // NOLINTBEGIN

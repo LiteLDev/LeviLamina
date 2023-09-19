@@ -8,9 +8,9 @@
 class GenericMoveControlDescription : public ::MoveControlDescription {
 public:
     // prevent constructor by default
-    GenericMoveControlDescription& operator=(GenericMoveControlDescription const&) = delete;
-    GenericMoveControlDescription(GenericMoveControlDescription const&)            = delete;
-    GenericMoveControlDescription()                                                = delete;
+    GenericMoveControlDescription& operator=(GenericMoveControlDescription const&);
+    GenericMoveControlDescription(GenericMoveControlDescription const&);
+    GenericMoveControlDescription();
 
 public:
     // NOLINTBEGIN

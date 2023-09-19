@@ -26,9 +26,9 @@
 class Villager : public ::VillagerBase {
 public:
     // prevent constructor by default
-    Villager& operator=(Villager const&) = delete;
-    Villager(Villager const&)            = delete;
-    Villager()                           = delete;
+    Villager& operator=(Villager const&);
+    Villager(Villager const&);
+    Villager();
 
 public:
     // NOLINTBEGIN

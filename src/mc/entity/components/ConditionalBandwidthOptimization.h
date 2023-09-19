@@ -5,8 +5,8 @@
 struct ConditionalBandwidthOptimization {
 public:
     // prevent constructor by default
-    ConditionalBandwidthOptimization(ConditionalBandwidthOptimization const&) = delete;
-    ConditionalBandwidthOptimization()                                        = delete;
+    ConditionalBandwidthOptimization(ConditionalBandwidthOptimization const&);
+    ConditionalBandwidthOptimization();
 
 public:
     // NOLINTBEGIN

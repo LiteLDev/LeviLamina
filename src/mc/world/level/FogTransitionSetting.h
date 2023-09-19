@@ -5,9 +5,9 @@
 struct FogTransitionSetting {
 public:
     // prevent constructor by default
-    FogTransitionSetting& operator=(FogTransitionSetting const&) = delete;
-    FogTransitionSetting(FogTransitionSetting const&)            = delete;
-    FogTransitionSetting()                                       = delete;
+    FogTransitionSetting& operator=(FogTransitionSetting const&);
+    FogTransitionSetting(FogTransitionSetting const&);
+    FogTransitionSetting();
 
 public:
     // NOLINTBEGIN

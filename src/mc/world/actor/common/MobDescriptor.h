@@ -5,7 +5,7 @@
 struct MobDescriptor {
 public:
     // prevent constructor by default
-    MobDescriptor() = delete;
+    MobDescriptor();
 
 public:
     // NOLINTBEGIN

@@ -16,9 +16,9 @@ public:
     struct UnlockingInstruction {
     public:
         // prevent constructor by default
-        UnlockingInstruction& operator=(UnlockingInstruction const&) = delete;
-        UnlockingInstruction(UnlockingInstruction const&)            = delete;
-        UnlockingInstruction()                                       = delete;
+        UnlockingInstruction& operator=(UnlockingInstruction const&);
+        UnlockingInstruction(UnlockingInstruction const&);
+        UnlockingInstruction();
 
     public:
         // NOLINTBEGIN
@@ -30,7 +30,7 @@ public:
 
 public:
     // prevent constructor by default
-    UnlockedRecipesServerComponent& operator=(UnlockedRecipesServerComponent const&) = delete;
+    UnlockedRecipesServerComponent& operator=(UnlockedRecipesServerComponent const&);
 
 public:
     // NOLINTBEGIN

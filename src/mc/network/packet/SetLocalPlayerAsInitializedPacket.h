@@ -10,8 +10,8 @@
 class SetLocalPlayerAsInitializedPacket : public ::Packet {
 public:
     // prevent constructor by default
-    SetLocalPlayerAsInitializedPacket& operator=(SetLocalPlayerAsInitializedPacket const&) = delete;
-    SetLocalPlayerAsInitializedPacket(SetLocalPlayerAsInitializedPacket const&)            = delete;
+    SetLocalPlayerAsInitializedPacket& operator=(SetLocalPlayerAsInitializedPacket const&);
+    SetLocalPlayerAsInitializedPacket(SetLocalPlayerAsInitializedPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class ExplodeDefinition {
 public:
     // prevent constructor by default
-    ExplodeDefinition& operator=(ExplodeDefinition const&) = delete;
-    ExplodeDefinition(ExplodeDefinition const&)            = delete;
+    ExplodeDefinition& operator=(ExplodeDefinition const&);
+    ExplodeDefinition(ExplodeDefinition const&);
 
 public:
     // NOLINTBEGIN

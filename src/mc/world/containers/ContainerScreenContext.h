@@ -8,8 +8,8 @@
 class ContainerScreenContext {
 public:
     // prevent constructor by default
-    ContainerScreenContext& operator=(ContainerScreenContext const&) = delete;
-    ContainerScreenContext(ContainerScreenContext const&)            = delete;
+    ContainerScreenContext& operator=(ContainerScreenContext const&);
+    ContainerScreenContext(ContainerScreenContext const&);
 
 public:
     // NOLINTBEGIN

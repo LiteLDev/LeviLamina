@@ -16,8 +16,8 @@ namespace Json {
 class StyledWriter : public ::Json::Writer {
 public:
     // prevent constructor by default
-    StyledWriter& operator=(StyledWriter const&) = delete;
-    StyledWriter(StyledWriter const&)            = delete;
+    StyledWriter& operator=(StyledWriter const&);
+    StyledWriter(StyledWriter const&);
 
 public:
     // NOLINTBEGIN

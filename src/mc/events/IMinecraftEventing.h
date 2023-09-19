@@ -69,16 +69,16 @@ public:
     struct CommandParseTableEntry {
     public:
         // prevent constructor by default
-        CommandParseTableEntry& operator=(CommandParseTableEntry const&) = delete;
-        CommandParseTableEntry(CommandParseTableEntry const&)            = delete;
-        CommandParseTableEntry()                                         = delete;
+        CommandParseTableEntry& operator=(CommandParseTableEntry const&);
+        CommandParseTableEntry(CommandParseTableEntry const&);
+        CommandParseTableEntry();
     };
 
 public:
     // prevent constructor by default
-    IMinecraftEventing& operator=(IMinecraftEventing const&) = delete;
-    IMinecraftEventing(IMinecraftEventing const&)            = delete;
-    IMinecraftEventing()                                     = delete;
+    IMinecraftEventing& operator=(IMinecraftEventing const&);
+    IMinecraftEventing(IMinecraftEventing const&);
+    IMinecraftEventing();
 
 public:
     // NOLINTBEGIN

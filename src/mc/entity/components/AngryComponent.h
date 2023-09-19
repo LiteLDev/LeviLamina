@@ -8,8 +8,8 @@
 class AngryComponent {
 public:
     // prevent constructor by default
-    AngryComponent& operator=(AngryComponent const&) = delete;
-    AngryComponent(AngryComponent const&)            = delete;
+    AngryComponent& operator=(AngryComponent const&);
+    AngryComponent(AngryComponent const&);
 
 public:
     // NOLINTBEGIN

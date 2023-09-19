@@ -9,9 +9,9 @@
 class EatCarriedItemGoal : public ::Goal {
 public:
     // prevent constructor by default
-    EatCarriedItemGoal& operator=(EatCarriedItemGoal const&) = delete;
-    EatCarriedItemGoal(EatCarriedItemGoal const&)            = delete;
-    EatCarriedItemGoal()                                     = delete;
+    EatCarriedItemGoal& operator=(EatCarriedItemGoal const&);
+    EatCarriedItemGoal(EatCarriedItemGoal const&);
+    EatCarriedItemGoal();
 
 public:
     // NOLINTBEGIN

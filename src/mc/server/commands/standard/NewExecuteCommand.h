@@ -22,9 +22,9 @@ public:
 
     public:
         // prevent constructor by default
-        ExecuteChainedSubcommand& operator=(ExecuteChainedSubcommand const&) = delete;
-        ExecuteChainedSubcommand(ExecuteChainedSubcommand const&)            = delete;
-        ExecuteChainedSubcommand()                                           = delete;
+        ExecuteChainedSubcommand& operator=(ExecuteChainedSubcommand const&);
+        ExecuteChainedSubcommand(ExecuteChainedSubcommand const&);
+        ExecuteChainedSubcommand();
 
     public:
         // NOLINTBEGIN
@@ -140,8 +140,8 @@ public:
 
 public:
     // prevent constructor by default
-    NewExecuteCommand& operator=(NewExecuteCommand const&) = delete;
-    NewExecuteCommand(NewExecuteCommand const&)            = delete;
+    NewExecuteCommand& operator=(NewExecuteCommand const&);
+    NewExecuteCommand(NewExecuteCommand const&);
 
 public:
     // NOLINTBEGIN

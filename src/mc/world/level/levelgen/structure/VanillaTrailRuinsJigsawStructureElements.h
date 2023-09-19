@@ -8,9 +8,9 @@
 class VanillaTrailRuinsJigsawStructureElements {
 public:
     // prevent constructor by default
-    VanillaTrailRuinsJigsawStructureElements& operator=(VanillaTrailRuinsJigsawStructureElements const&) = delete;
-    VanillaTrailRuinsJigsawStructureElements(VanillaTrailRuinsJigsawStructureElements const&)            = delete;
-    VanillaTrailRuinsJigsawStructureElements()                                                           = delete;
+    VanillaTrailRuinsJigsawStructureElements& operator=(VanillaTrailRuinsJigsawStructureElements const&);
+    VanillaTrailRuinsJigsawStructureElements(VanillaTrailRuinsJigsawStructureElements const&);
+    VanillaTrailRuinsJigsawStructureElements();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 struct PowderSnowBlockFlag {
 public:
     // prevent constructor by default
-    PowderSnowBlockFlag& operator=(PowderSnowBlockFlag const&) = delete;
-    PowderSnowBlockFlag(PowderSnowBlockFlag const&)            = delete;
-    PowderSnowBlockFlag()                                      = delete;
+    PowderSnowBlockFlag& operator=(PowderSnowBlockFlag const&);
+    PowderSnowBlockFlag(PowderSnowBlockFlag const&);
+    PowderSnowBlockFlag();
 };

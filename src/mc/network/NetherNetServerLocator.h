@@ -19,9 +19,9 @@ public:
     struct ServerData {
     public:
         // prevent constructor by default
-        ServerData& operator=(ServerData const&) = delete;
-        ServerData(ServerData const&)            = delete;
-        ServerData()                             = delete;
+        ServerData& operator=(ServerData const&);
+        ServerData(ServerData const&);
+        ServerData();
 
     public:
         // NOLINTBEGIN
@@ -37,8 +37,8 @@ public:
 
 public:
     // prevent constructor by default
-    NetherNetServerLocator& operator=(NetherNetServerLocator const&) = delete;
-    NetherNetServerLocator(NetherNetServerLocator const&)            = delete;
+    NetherNetServerLocator& operator=(NetherNetServerLocator const&);
+    NetherNetServerLocator(NetherNetServerLocator const&);
 
 public:
     // NOLINTBEGIN

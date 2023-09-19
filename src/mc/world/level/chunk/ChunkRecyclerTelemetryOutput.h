@@ -5,9 +5,9 @@
 struct ChunkRecyclerTelemetryOutput {
 public:
     // prevent constructor by default
-    ChunkRecyclerTelemetryOutput& operator=(ChunkRecyclerTelemetryOutput const&) = delete;
-    ChunkRecyclerTelemetryOutput(ChunkRecyclerTelemetryOutput const&)            = delete;
-    ChunkRecyclerTelemetryOutput()                                               = delete;
+    ChunkRecyclerTelemetryOutput& operator=(ChunkRecyclerTelemetryOutput const&);
+    ChunkRecyclerTelemetryOutput(ChunkRecyclerTelemetryOutput const&);
+    ChunkRecyclerTelemetryOutput();
 
 public:
     // NOLINTBEGIN

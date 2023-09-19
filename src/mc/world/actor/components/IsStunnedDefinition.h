@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct IsStunnedDefinition {
 public:
     // prevent constructor by default
-    IsStunnedDefinition& operator=(IsStunnedDefinition const&) = delete;
-    IsStunnedDefinition(IsStunnedDefinition const&)            = delete;
-    IsStunnedDefinition()                                      = delete;
+    IsStunnedDefinition& operator=(IsStunnedDefinition const&);
+    IsStunnedDefinition(IsStunnedDefinition const&);
+    IsStunnedDefinition();
 
 public:
     // NOLINTBEGIN

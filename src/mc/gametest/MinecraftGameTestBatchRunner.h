@@ -16,9 +16,9 @@ namespace gametest { class GameTestTicker; }
 class MinecraftGameTestBatchRunner : public ::gametest::BaseGameTestBatchRunner {
 public:
     // prevent constructor by default
-    MinecraftGameTestBatchRunner& operator=(MinecraftGameTestBatchRunner const&) = delete;
-    MinecraftGameTestBatchRunner(MinecraftGameTestBatchRunner const&)            = delete;
-    MinecraftGameTestBatchRunner()                                               = delete;
+    MinecraftGameTestBatchRunner& operator=(MinecraftGameTestBatchRunner const&);
+    MinecraftGameTestBatchRunner(MinecraftGameTestBatchRunner const&);
+    MinecraftGameTestBatchRunner();
 
 public:
     // NOLINTBEGIN

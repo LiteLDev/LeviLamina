@@ -10,9 +10,9 @@ namespace mce { class UUID; }
 class BoostableComponent {
 public:
     // prevent constructor by default
-    BoostableComponent& operator=(BoostableComponent const&) = delete;
-    BoostableComponent(BoostableComponent const&)            = delete;
-    BoostableComponent()                                     = delete;
+    BoostableComponent& operator=(BoostableComponent const&);
+    BoostableComponent(BoostableComponent const&);
+    BoostableComponent();
 
 public:
     // NOLINTBEGIN

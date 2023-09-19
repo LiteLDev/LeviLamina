@@ -29,7 +29,7 @@ public:
     struct KnownPackInfo {
     public:
         // prevent constructor by default
-        KnownPackInfo() = delete;
+        KnownPackInfo();
 
     public:
         // NOLINTBEGIN
@@ -52,9 +52,9 @@ public:
     struct KnownPackContainer {
     public:
         // prevent constructor by default
-        KnownPackContainer& operator=(KnownPackContainer const&) = delete;
-        KnownPackContainer(KnownPackContainer const&)            = delete;
-        KnownPackContainer()                                     = delete;
+        KnownPackContainer& operator=(KnownPackContainer const&);
+        KnownPackContainer(KnownPackContainer const&);
+        KnownPackContainer();
 
     public:
         // NOLINTBEGIN
@@ -72,9 +72,9 @@ public:
 
 public:
     // prevent constructor by default
-    ResourcePackRepository& operator=(ResourcePackRepository const&) = delete;
-    ResourcePackRepository(ResourcePackRepository const&)            = delete;
-    ResourcePackRepository()                                         = delete;
+    ResourcePackRepository& operator=(ResourcePackRepository const&);
+    ResourcePackRepository(ResourcePackRepository const&);
+    ResourcePackRepository();
 
 public:
     // NOLINTBEGIN

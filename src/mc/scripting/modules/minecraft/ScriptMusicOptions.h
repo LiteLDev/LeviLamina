@@ -16,9 +16,9 @@ namespace ScriptModuleMinecraft {
 struct ScriptMusicOptions {
 public:
     // prevent constructor by default
-    ScriptMusicOptions& operator=(ScriptMusicOptions const&) = delete;
-    ScriptMusicOptions(ScriptMusicOptions const&)            = delete;
-    ScriptMusicOptions()                                     = delete;
+    ScriptMusicOptions& operator=(ScriptMusicOptions const&);
+    ScriptMusicOptions(ScriptMusicOptions const&);
+    ScriptMusicOptions();
 
 public:
     // NOLINTBEGIN

@@ -11,9 +11,9 @@ namespace Bedrock::Threading::AsyncResult {
 class OnCanceled {
 public:
     // prevent constructor by default
-    OnCanceled& operator=(OnCanceled const&) = delete;
-    OnCanceled(OnCanceled const&)            = delete;
-    OnCanceled()                             = delete;
+    OnCanceled& operator=(OnCanceled const&);
+    OnCanceled(OnCanceled const&);
+    OnCanceled();
 
 public:
     // NOLINTBEGIN

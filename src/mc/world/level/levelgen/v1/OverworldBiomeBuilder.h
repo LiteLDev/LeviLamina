@@ -10,14 +10,14 @@ namespace ClimateUtils { struct Parameter; }
 class OverworldBiomeBuilder {
 public:
     // prevent constructor by default
-    OverworldBiomeBuilder& operator=(OverworldBiomeBuilder const&) = delete;
-    OverworldBiomeBuilder(OverworldBiomeBuilder const&)            = delete;
-    OverworldBiomeBuilder()                                        = delete;
+    OverworldBiomeBuilder& operator=(OverworldBiomeBuilder const&);
+    OverworldBiomeBuilder(OverworldBiomeBuilder const&);
+    OverworldBiomeBuilder();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0OverworldBiomeBuilder@@QEAA@AEBVBaseGameVersion@@@Z
-    MCAPI OverworldBiomeBuilder(class BaseGameVersion const&);
+    MCAPI explicit OverworldBiomeBuilder(class BaseGameVersion const&);
 
     // symbol:
     // ?addBiomes@OverworldBiomeBuilder@@QEBAXAEAV?$vector@UBiomeNoiseTarget@@V?$allocator@UBiomeNoiseTarget@@@std@@@std@@AEBVBiomeRegistry@@@Z

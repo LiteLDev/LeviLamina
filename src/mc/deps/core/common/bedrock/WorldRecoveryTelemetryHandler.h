@@ -15,9 +15,9 @@ namespace Bedrock {
 class WorldRecoveryTelemetryHandler : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    WorldRecoveryTelemetryHandler& operator=(WorldRecoveryTelemetryHandler const&) = delete;
-    WorldRecoveryTelemetryHandler(WorldRecoveryTelemetryHandler const&)            = delete;
-    WorldRecoveryTelemetryHandler()                                                = delete;
+    WorldRecoveryTelemetryHandler& operator=(WorldRecoveryTelemetryHandler const&);
+    WorldRecoveryTelemetryHandler(WorldRecoveryTelemetryHandler const&);
+    WorldRecoveryTelemetryHandler();
 
 public:
     // NOLINTBEGIN

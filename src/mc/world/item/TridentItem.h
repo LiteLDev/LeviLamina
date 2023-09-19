@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class TridentItem : public ::Item {
 public:
     // prevent constructor by default
-    TridentItem& operator=(TridentItem const&) = delete;
-    TridentItem(TridentItem const&)            = delete;
-    TridentItem()                              = delete;
+    TridentItem& operator=(TridentItem const&);
+    TridentItem(TridentItem const&);
+    TridentItem();
 
 public:
     // NOLINTBEGIN

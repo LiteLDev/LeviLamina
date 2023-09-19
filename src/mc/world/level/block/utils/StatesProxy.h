@@ -13,8 +13,8 @@ namespace BlockDescriptorSerializer {
 struct StatesProxy {
 public:
     // prevent constructor by default
-    StatesProxy(StatesProxy const&) = delete;
-    StatesProxy()                   = delete;
+    StatesProxy(StatesProxy const&);
+    StatesProxy();
 
 public:
     // NOLINTBEGIN

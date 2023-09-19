@@ -8,9 +8,9 @@
 class IllagerBeastBlockedDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    IllagerBeastBlockedDescription& operator=(IllagerBeastBlockedDescription const&) = delete;
-    IllagerBeastBlockedDescription(IllagerBeastBlockedDescription const&)            = delete;
-    IllagerBeastBlockedDescription()                                                 = delete;
+    IllagerBeastBlockedDescription& operator=(IllagerBeastBlockedDescription const&);
+    IllagerBeastBlockedDescription(IllagerBeastBlockedDescription const&);
+    IllagerBeastBlockedDescription();
 
 public:
     // NOLINTBEGIN

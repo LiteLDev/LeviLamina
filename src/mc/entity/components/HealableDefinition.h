@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class HealableDefinition {
 public:
     // prevent constructor by default
-    HealableDefinition& operator=(HealableDefinition const&) = delete;
-    HealableDefinition(HealableDefinition const&)            = delete;
+    HealableDefinition& operator=(HealableDefinition const&);
+    HealableDefinition(HealableDefinition const&);
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 struct BlazeFlag {
 public:
     // prevent constructor by default
-    BlazeFlag& operator=(BlazeFlag const&) = delete;
-    BlazeFlag(BlazeFlag const&)            = delete;
-    BlazeFlag()                            = delete;
+    BlazeFlag& operator=(BlazeFlag const&);
+    BlazeFlag(BlazeFlag const&);
+    BlazeFlag();
 };

@@ -11,9 +11,9 @@ namespace ScriptModuleMinecraft {
 class ScriptDyeColor {
 public:
     // prevent constructor by default
-    ScriptDyeColor& operator=(ScriptDyeColor const&) = delete;
-    ScriptDyeColor(ScriptDyeColor const&)            = delete;
-    ScriptDyeColor()                                 = delete;
+    ScriptDyeColor& operator=(ScriptDyeColor const&);
+    ScriptDyeColor(ScriptDyeColor const&);
+    ScriptDyeColor();
 
 public:
     // NOLINTBEGIN

@@ -10,8 +10,8 @@
 class ScriptMessagePacket : public ::Packet {
 public:
     // prevent constructor by default
-    ScriptMessagePacket& operator=(ScriptMessagePacket const&) = delete;
-    ScriptMessagePacket(ScriptMessagePacket const&)            = delete;
+    ScriptMessagePacket& operator=(ScriptMessagePacket const&);
+    ScriptMessagePacket(ScriptMessagePacket const&);
 
 public:
     // NOLINTBEGIN

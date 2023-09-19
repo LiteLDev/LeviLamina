@@ -21,9 +21,9 @@ public:
     struct UpgradeLogEntry {
     public:
         // prevent constructor by default
-        UpgradeLogEntry& operator=(UpgradeLogEntry const&) = delete;
-        UpgradeLogEntry(UpgradeLogEntry const&)            = delete;
-        UpgradeLogEntry()                                  = delete;
+        UpgradeLogEntry& operator=(UpgradeLogEntry const&);
+        UpgradeLogEntry(UpgradeLogEntry const&);
+        UpgradeLogEntry();
 
     public:
         // NOLINTBEGIN
@@ -35,9 +35,9 @@ public:
 
 public:
     // prevent constructor by default
-    Logger& operator=(Logger const&) = delete;
-    Logger(Logger const&)            = delete;
-    Logger()                         = delete;
+    Logger& operator=(Logger const&);
+    Logger(Logger const&);
+    Logger();
 
 public:
     // NOLINTBEGIN

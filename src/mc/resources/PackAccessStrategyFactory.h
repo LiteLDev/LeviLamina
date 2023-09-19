@@ -8,9 +8,9 @@
 class PackAccessStrategyFactory {
 public:
     // prevent constructor by default
-    PackAccessStrategyFactory& operator=(PackAccessStrategyFactory const&) = delete;
-    PackAccessStrategyFactory(PackAccessStrategyFactory const&)            = delete;
-    PackAccessStrategyFactory()                                            = delete;
+    PackAccessStrategyFactory& operator=(PackAccessStrategyFactory const&);
+    PackAccessStrategyFactory(PackAccessStrategyFactory const&);
+    PackAccessStrategyFactory();
 
 public:
     // NOLINTBEGIN

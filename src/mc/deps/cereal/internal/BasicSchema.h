@@ -26,9 +26,9 @@ public:
     struct MemberDescriptor {
     public:
         // prevent constructor by default
-        MemberDescriptor& operator=(MemberDescriptor const&) = delete;
-        MemberDescriptor(MemberDescriptor const&)            = delete;
-        MemberDescriptor()                                   = delete;
+        MemberDescriptor& operator=(MemberDescriptor const&);
+        MemberDescriptor(MemberDescriptor const&);
+        MemberDescriptor();
 
     public:
         // NOLINTBEGIN
@@ -44,9 +44,9 @@ public:
 
 public:
     // prevent constructor by default
-    BasicSchema& operator=(BasicSchema const&) = delete;
-    BasicSchema(BasicSchema const&)            = delete;
-    BasicSchema()                              = delete;
+    BasicSchema& operator=(BasicSchema const&);
+    BasicSchema(BasicSchema const&);
+    BasicSchema();
 
 public:
     // NOLINTBEGIN
@@ -83,7 +83,7 @@ public:
     MCVAPI ~BasicSchema();
 
     // symbol: ??0BasicSchema@internal@cereal@@QEAA@AEBUReflectionCtx@2@@Z
-    MCAPI BasicSchema(struct cereal::ReflectionCtx const&);
+    MCAPI explicit BasicSchema(struct cereal::ReflectionCtx const&);
 
     // symbol:
     // ??0BasicSchema@internal@cereal@@QEAA@AEBUReflectionCtx@2@V?$unique_ptr@VConstraint@cereal@@U?$default_delete@VConstraint@cereal@@@std@@@std@@@Z

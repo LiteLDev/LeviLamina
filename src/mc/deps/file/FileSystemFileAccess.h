@@ -25,9 +25,9 @@ public:
     class FileSystemFileReadAccess : public ::IFileReadAccess {
     public:
         // prevent constructor by default
-        FileSystemFileReadAccess& operator=(FileSystemFileReadAccess const&) = delete;
-        FileSystemFileReadAccess(FileSystemFileReadAccess const&)            = delete;
-        FileSystemFileReadAccess()                                           = delete;
+        FileSystemFileReadAccess& operator=(FileSystemFileReadAccess const&);
+        FileSystemFileReadAccess(FileSystemFileReadAccess const&);
+        FileSystemFileReadAccess();
 
     public:
         // NOLINTBEGIN
@@ -43,9 +43,9 @@ public:
     class FileSystemFileWriteAccess : public ::IFileWriteAccess {
     public:
         // prevent constructor by default
-        FileSystemFileWriteAccess& operator=(FileSystemFileWriteAccess const&) = delete;
-        FileSystemFileWriteAccess(FileSystemFileWriteAccess const&)            = delete;
-        FileSystemFileWriteAccess()                                            = delete;
+        FileSystemFileWriteAccess& operator=(FileSystemFileWriteAccess const&);
+        FileSystemFileWriteAccess(FileSystemFileWriteAccess const&);
+        FileSystemFileWriteAccess();
 
     public:
         // NOLINTBEGIN
@@ -60,9 +60,9 @@ public:
 
 public:
     // prevent constructor by default
-    FileSystemFileAccess& operator=(FileSystemFileAccess const&) = delete;
-    FileSystemFileAccess(FileSystemFileAccess const&)            = delete;
-    FileSystemFileAccess()                                       = delete;
+    FileSystemFileAccess& operator=(FileSystemFileAccess const&);
+    FileSystemFileAccess(FileSystemFileAccess const&);
+    FileSystemFileAccess();
 
 public:
     // NOLINTBEGIN
@@ -92,7 +92,7 @@ public:
     virtual void unload();
 
     // symbol: ??0FileSystemFileAccess@@QEAA@W4FileSystemMode@@@Z
-    MCAPI FileSystemFileAccess(::FileSystemMode);
+    MCAPI explicit FileSystemFileAccess(::FileSystemMode);
 
     // NOLINTEND
 };

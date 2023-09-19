@@ -8,9 +8,9 @@
 class TickingAreaList : public ::TickingAreaListBase {
 public:
     // prevent constructor by default
-    TickingAreaList& operator=(TickingAreaList const&) = delete;
-    TickingAreaList(TickingAreaList const&)            = delete;
-    TickingAreaList()                                  = delete;
+    TickingAreaList& operator=(TickingAreaList const&);
+    TickingAreaList(TickingAreaList const&);
+    TickingAreaList();
 
 public:
     // NOLINTBEGIN

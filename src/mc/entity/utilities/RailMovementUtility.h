@@ -13,16 +13,16 @@ public:
     struct RailExits {
     public:
         // prevent constructor by default
-        RailExits& operator=(RailExits const&) = delete;
-        RailExits(RailExits const&)            = delete;
-        RailExits()                            = delete;
+        RailExits& operator=(RailExits const&);
+        RailExits(RailExits const&);
+        RailExits();
     };
 
 public:
     // prevent constructor by default
-    RailMovementUtility& operator=(RailMovementUtility const&) = delete;
-    RailMovementUtility(RailMovementUtility const&)            = delete;
-    RailMovementUtility()                                      = delete;
+    RailMovementUtility& operator=(RailMovementUtility const&);
+    RailMovementUtility(RailMovementUtility const&);
+    RailMovementUtility();
 
 public:
     // NOLINTBEGIN

@@ -8,8 +8,8 @@
 class GenericMoveControl : public ::MoveControl {
 public:
     // prevent constructor by default
-    GenericMoveControl& operator=(GenericMoveControl const&) = delete;
-    GenericMoveControl(GenericMoveControl const&)            = delete;
+    GenericMoveControl& operator=(GenericMoveControl const&);
+    GenericMoveControl(GenericMoveControl const&);
 
 public:
     // NOLINTBEGIN

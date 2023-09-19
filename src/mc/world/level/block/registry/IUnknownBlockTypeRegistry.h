@@ -13,9 +13,9 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class IUnknownBlockTypeRegistry : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    IUnknownBlockTypeRegistry& operator=(IUnknownBlockTypeRegistry const&) = delete;
-    IUnknownBlockTypeRegistry(IUnknownBlockTypeRegistry const&)            = delete;
-    IUnknownBlockTypeRegistry()                                            = delete;
+    IUnknownBlockTypeRegistry& operator=(IUnknownBlockTypeRegistry const&);
+    IUnknownBlockTypeRegistry(IUnknownBlockTypeRegistry const&);
+    IUnknownBlockTypeRegistry();
 
 public:
     // NOLINTBEGIN

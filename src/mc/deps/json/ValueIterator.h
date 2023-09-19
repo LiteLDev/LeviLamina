@@ -12,8 +12,8 @@ namespace Json {
 class ValueIterator {
 public:
     // prevent constructor by default
-    ValueIterator& operator=(ValueIterator const&) = delete;
-    ValueIterator()                                = delete;
+    ValueIterator& operator=(ValueIterator const&);
+    ValueIterator();
 
 public:
     // NOLINTBEGIN
@@ -21,7 +21,7 @@ public:
     MCAPI ValueIterator(class Json::ValueIterator const&);
 
     // symbol: ??0ValueIterator@Json@@QEAA@AEBVValueConstIterator@1@@Z
-    MCAPI ValueIterator(class Json::ValueConstIterator const&);
+    MCAPI explicit ValueIterator(class Json::ValueConstIterator const&);
 
     // NOLINTEND
 };

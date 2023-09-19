@@ -10,9 +10,9 @@ namespace Scripting { struct ModuleDescriptor; }
 class ScriptPluginManagerResult {
 public:
     // prevent constructor by default
-    ScriptPluginManagerResult& operator=(ScriptPluginManagerResult const&) = delete;
-    ScriptPluginManagerResult(ScriptPluginManagerResult const&)            = delete;
-    ScriptPluginManagerResult()                                            = delete;
+    ScriptPluginManagerResult& operator=(ScriptPluginManagerResult const&);
+    ScriptPluginManagerResult(ScriptPluginManagerResult const&);
+    ScriptPluginManagerResult();
 
 public:
     // NOLINTBEGIN

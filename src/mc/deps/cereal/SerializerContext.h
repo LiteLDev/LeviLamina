@@ -21,8 +21,8 @@ public:
     struct LogEntry {
     public:
         // prevent constructor by default
-        LogEntry(LogEntry const&) = delete;
-        LogEntry()                = delete;
+        LogEntry(LogEntry const&);
+        LogEntry();
 
     public:
         // NOLINTBEGIN
@@ -38,9 +38,9 @@ public:
     class ScopedPop {
     public:
         // prevent constructor by default
-        ScopedPop& operator=(ScopedPop const&) = delete;
-        ScopedPop(ScopedPop const&)            = delete;
-        ScopedPop()                            = delete;
+        ScopedPop& operator=(ScopedPop const&);
+        ScopedPop(ScopedPop const&);
+        ScopedPop();
 
     public:
         // NOLINTBEGIN
@@ -52,7 +52,7 @@ public:
 
 public:
     // prevent constructor by default
-    SerializerContext& operator=(SerializerContext const&) = delete;
+    SerializerContext& operator=(SerializerContext const&);
 
 public:
     // NOLINTBEGIN

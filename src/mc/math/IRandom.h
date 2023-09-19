@@ -5,9 +5,9 @@
 class IRandom {
 public:
     // prevent constructor by default
-    IRandom& operator=(IRandom const&) = delete;
-    IRandom(IRandom const&)            = delete;
-    IRandom()                          = delete;
+    IRandom& operator=(IRandom const&);
+    IRandom(IRandom const&);
+    IRandom();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class ContainerSizeChangeListener {
 public:
     // prevent constructor by default
-    ContainerSizeChangeListener& operator=(ContainerSizeChangeListener const&) = delete;
-    ContainerSizeChangeListener(ContainerSizeChangeListener const&)            = delete;
-    ContainerSizeChangeListener()                                              = delete;
+    ContainerSizeChangeListener& operator=(ContainerSizeChangeListener const&);
+    ContainerSizeChangeListener(ContainerSizeChangeListener const&);
+    ContainerSizeChangeListener();
 
 public:
     // NOLINTBEGIN

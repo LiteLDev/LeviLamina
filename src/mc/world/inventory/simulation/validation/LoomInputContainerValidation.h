@@ -8,9 +8,9 @@
 class LoomInputContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    LoomInputContainerValidation& operator=(LoomInputContainerValidation const&) = delete;
-    LoomInputContainerValidation(LoomInputContainerValidation const&)            = delete;
-    LoomInputContainerValidation()                                               = delete;
+    LoomInputContainerValidation& operator=(LoomInputContainerValidation const&);
+    LoomInputContainerValidation(LoomInputContainerValidation const&);
+    LoomInputContainerValidation();
 
 public:
     // NOLINTBEGIN

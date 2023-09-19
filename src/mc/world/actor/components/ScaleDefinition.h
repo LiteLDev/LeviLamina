@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct ScaleDefinition {
 public:
     // prevent constructor by default
-    ScaleDefinition& operator=(ScaleDefinition const&) = delete;
-    ScaleDefinition(ScaleDefinition const&)            = delete;
-    ScaleDefinition()                                  = delete;
+    ScaleDefinition& operator=(ScaleDefinition const&);
+    ScaleDefinition(ScaleDefinition const&);
+    ScaleDefinition();
 
 public:
     // NOLINTBEGIN

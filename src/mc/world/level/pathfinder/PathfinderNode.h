@@ -8,8 +8,8 @@
 class PathfinderNode {
 public:
     // prevent constructor by default
-    PathfinderNode& operator=(PathfinderNode const&) = delete;
-    PathfinderNode()                                 = delete;
+    PathfinderNode& operator=(PathfinderNode const&);
+    PathfinderNode();
 
 public:
     // NOLINTBEGIN

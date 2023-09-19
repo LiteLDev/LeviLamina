@@ -9,9 +9,9 @@
 class NBBridgeEndFiller : public ::NetherFortressPiece {
 public:
     // prevent constructor by default
-    NBBridgeEndFiller& operator=(NBBridgeEndFiller const&) = delete;
-    NBBridgeEndFiller(NBBridgeEndFiller const&)            = delete;
-    NBBridgeEndFiller()                                    = delete;
+    NBBridgeEndFiller& operator=(NBBridgeEndFiller const&);
+    NBBridgeEndFiller(NBBridgeEndFiller const&);
+    NBBridgeEndFiller();
 
 public:
     // NOLINTBEGIN

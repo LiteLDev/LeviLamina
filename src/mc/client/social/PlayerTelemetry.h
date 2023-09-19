@@ -12,9 +12,9 @@ namespace Social::Events {
 class PlayerTelemetry {
 public:
     // prevent constructor by default
-    PlayerTelemetry& operator=(PlayerTelemetry const&) = delete;
-    PlayerTelemetry(PlayerTelemetry const&)            = delete;
-    PlayerTelemetry()                                  = delete;
+    PlayerTelemetry& operator=(PlayerTelemetry const&);
+    PlayerTelemetry(PlayerTelemetry const&);
+    PlayerTelemetry();
 
 public:
     // NOLINTBEGIN

@@ -7,9 +7,9 @@ namespace librarySearch {
 struct TelemetryData {
 public:
     // prevent constructor by default
-    TelemetryData& operator=(TelemetryData const&) = delete;
-    TelemetryData(TelemetryData const&)            = delete;
-    TelemetryData()                                = delete;
+    TelemetryData& operator=(TelemetryData const&);
+    TelemetryData(TelemetryData const&);
+    TelemetryData();
 };
 
 }; // namespace librarySearch

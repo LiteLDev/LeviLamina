@@ -10,8 +10,8 @@
 class OreVeinifierNoises {
 public:
     // prevent constructor by default
-    OreVeinifierNoises& operator=(OreVeinifierNoises const&) = delete;
-    OreVeinifierNoises()                                     = delete;
+    OreVeinifierNoises& operator=(OreVeinifierNoises const&);
+    OreVeinifierNoises();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class StructureFeature {
 public:
     // prevent constructor by default
-    StructureFeature& operator=(StructureFeature const&) = delete;
-    StructureFeature(StructureFeature const&)            = delete;
-    StructureFeature()                                   = delete;
+    StructureFeature& operator=(StructureFeature const&);
+    StructureFeature(StructureFeature const&);
+    StructureFeature();
 
 public:
     // NOLINTBEGIN

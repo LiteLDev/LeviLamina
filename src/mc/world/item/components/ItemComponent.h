@@ -5,9 +5,9 @@
 class ItemComponent {
 public:
     // prevent constructor by default
-    ItemComponent& operator=(ItemComponent const&) = delete;
-    ItemComponent(ItemComponent const&)            = delete;
-    ItemComponent()                                = delete;
+    ItemComponent& operator=(ItemComponent const&);
+    ItemComponent(ItemComponent const&);
+    ItemComponent();
 
 public:
     // NOLINTBEGIN
@@ -49,7 +49,7 @@ public:
     MCVAPI ~ItemComponent();
 
     // symbol: ??0ItemComponent@@QEAA@PEAVComponentItem@@@Z
-    MCAPI ItemComponent(class ComponentItem*);
+    MCAPI explicit ItemComponent(class ComponentItem*);
 
     // symbol: ?useOn@ItemComponent@@QEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
     MCAPI bool useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;

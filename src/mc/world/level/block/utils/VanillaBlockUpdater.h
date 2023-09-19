@@ -5,9 +5,9 @@
 class VanillaBlockUpdater {
 public:
     // prevent constructor by default
-    VanillaBlockUpdater& operator=(VanillaBlockUpdater const&) = delete;
-    VanillaBlockUpdater(VanillaBlockUpdater const&)            = delete;
-    VanillaBlockUpdater()                                      = delete;
+    VanillaBlockUpdater& operator=(VanillaBlockUpdater const&);
+    VanillaBlockUpdater(VanillaBlockUpdater const&);
+    VanillaBlockUpdater();
 
 public:
     // NOLINTBEGIN

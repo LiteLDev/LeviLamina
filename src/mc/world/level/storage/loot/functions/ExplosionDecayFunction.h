@@ -8,9 +8,9 @@
 class ExplosionDecayFunction : public ::LootItemFunction {
 public:
     // prevent constructor by default
-    ExplosionDecayFunction& operator=(ExplosionDecayFunction const&) = delete;
-    ExplosionDecayFunction(ExplosionDecayFunction const&)            = delete;
-    ExplosionDecayFunction()                                         = delete;
+    ExplosionDecayFunction& operator=(ExplosionDecayFunction const&);
+    ExplosionDecayFunction(ExplosionDecayFunction const&);
+    ExplosionDecayFunction();
 
 public:
     // NOLINTBEGIN

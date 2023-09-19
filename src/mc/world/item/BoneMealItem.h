@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class BoneMealItem : public ::FertilizerItem {
 public:
     // prevent constructor by default
-    BoneMealItem& operator=(BoneMealItem const&) = delete;
-    BoneMealItem(BoneMealItem const&)            = delete;
-    BoneMealItem()                               = delete;
+    BoneMealItem& operator=(BoneMealItem const&);
+    BoneMealItem(BoneMealItem const&);
+    BoneMealItem();
 
 public:
     // NOLINTBEGIN

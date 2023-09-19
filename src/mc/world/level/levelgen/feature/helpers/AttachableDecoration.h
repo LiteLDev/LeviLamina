@@ -23,16 +23,16 @@ public:
     struct DirectionMask {
     public:
         // prevent constructor by default
-        DirectionMask& operator=(DirectionMask const&) = delete;
-        DirectionMask(DirectionMask const&)            = delete;
-        DirectionMask()                                = delete;
+        DirectionMask& operator=(DirectionMask const&);
+        DirectionMask(DirectionMask const&);
+        DirectionMask();
     };
 
 public:
     // prevent constructor by default
-    AttachableDecoration& operator=(AttachableDecoration const&) = delete;
-    AttachableDecoration(AttachableDecoration const&)            = delete;
-    AttachableDecoration()                                       = delete;
+    AttachableDecoration& operator=(AttachableDecoration const&);
+    AttachableDecoration(AttachableDecoration const&);
+    AttachableDecoration();
 
 public:
     // NOLINTBEGIN

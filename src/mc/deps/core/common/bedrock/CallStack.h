@@ -20,9 +20,9 @@ public:
     struct Context {
     public:
         // prevent constructor by default
-        Context& operator=(Context const&) = delete;
-        Context(Context const&)            = delete;
-        Context()                          = delete;
+        Context& operator=(Context const&);
+        Context(Context const&);
+        Context();
 
     public:
         // NOLINTBEGIN
@@ -39,17 +39,17 @@ public:
     struct Frame {
     public:
         // prevent constructor by default
-        Frame& operator=(Frame const&) = delete;
-        Frame(Frame const&)            = delete;
-        Frame()                        = delete;
+        Frame& operator=(Frame const&);
+        Frame(Frame const&);
+        Frame();
     };
 
     struct FrameWithContext {
     public:
         // prevent constructor by default
-        FrameWithContext& operator=(FrameWithContext const&) = delete;
-        FrameWithContext(FrameWithContext const&)            = delete;
-        FrameWithContext()                                   = delete;
+        FrameWithContext& operator=(FrameWithContext const&);
+        FrameWithContext(FrameWithContext const&);
+        FrameWithContext();
 
     public:
         // NOLINTBEGIN
@@ -65,14 +65,14 @@ public:
 
 public:
     // prevent constructor by default
-    CallStack& operator=(CallStack const&) = delete;
-    CallStack(CallStack const&)            = delete;
-    CallStack()                            = delete;
+    CallStack& operator=(CallStack const&);
+    CallStack(CallStack const&);
+    CallStack();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0CallStack@Bedrock@@QEAA@$$QEAUFrameWithContext@01@@Z
-    MCAPI CallStack(struct Bedrock::CallStack::FrameWithContext&&);
+    MCAPI explicit CallStack(struct Bedrock::CallStack::FrameWithContext&&);
 
     // symbol: ??1CallStack@Bedrock@@QEAA@XZ
     MCAPI ~CallStack();

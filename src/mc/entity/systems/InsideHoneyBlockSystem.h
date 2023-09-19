@@ -5,9 +5,9 @@
 class InsideHoneyBlockSystem {
 public:
     // prevent constructor by default
-    InsideHoneyBlockSystem& operator=(InsideHoneyBlockSystem const&) = delete;
-    InsideHoneyBlockSystem(InsideHoneyBlockSystem const&)            = delete;
-    InsideHoneyBlockSystem()                                         = delete;
+    InsideHoneyBlockSystem& operator=(InsideHoneyBlockSystem const&);
+    InsideHoneyBlockSystem(InsideHoneyBlockSystem const&);
+    InsideHoneyBlockSystem();
 
 public:
     // NOLINTBEGIN

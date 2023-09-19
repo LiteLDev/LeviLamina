@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct BlockComponentDescription {
 public:
     // prevent constructor by default
-    BlockComponentDescription& operator=(BlockComponentDescription const&) = delete;
-    BlockComponentDescription(BlockComponentDescription const&)            = delete;
-    BlockComponentDescription()                                            = delete;
+    BlockComponentDescription& operator=(BlockComponentDescription const&);
+    BlockComponentDescription(BlockComponentDescription const&);
+    BlockComponentDescription();
 
 public:
     // NOLINTBEGIN

@@ -10,8 +10,8 @@
 class StructureTemplateDataRequestPacket : public ::Packet {
 public:
     // prevent constructor by default
-    StructureTemplateDataRequestPacket& operator=(StructureTemplateDataRequestPacket const&) = delete;
-    StructureTemplateDataRequestPacket(StructureTemplateDataRequestPacket const&)            = delete;
+    StructureTemplateDataRequestPacket& operator=(StructureTemplateDataRequestPacket const&);
+    StructureTemplateDataRequestPacket(StructureTemplateDataRequestPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class CompoundBlockVolumeItem {
 public:
     // prevent constructor by default
-    CompoundBlockVolumeItem& operator=(CompoundBlockVolumeItem const&) = delete;
-    CompoundBlockVolumeItem(CompoundBlockVolumeItem const&)            = delete;
-    CompoundBlockVolumeItem()                                          = delete;
+    CompoundBlockVolumeItem& operator=(CompoundBlockVolumeItem const&);
+    CompoundBlockVolumeItem(CompoundBlockVolumeItem const&);
+    CompoundBlockVolumeItem();
 
 public:
     // NOLINTBEGIN

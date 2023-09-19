@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class DashDefinition {
 public:
     // prevent constructor by default
-    DashDefinition& operator=(DashDefinition const&) = delete;
-    DashDefinition(DashDefinition const&)            = delete;
-    DashDefinition()                                 = delete;
+    DashDefinition& operator=(DashDefinition const&);
+    DashDefinition(DashDefinition const&);
+    DashDefinition();
 
 public:
     // NOLINTBEGIN

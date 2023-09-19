@@ -24,9 +24,9 @@ public:
     class Plane {
     public:
         // prevent constructor by default
-        Plane& operator=(Plane const&) = delete;
-        Plane(Plane const&)            = delete;
-        Plane()                        = delete;
+        Plane& operator=(Plane const&);
+        Plane(Plane const&);
+        Plane();
 
     public:
         // NOLINTBEGIN
@@ -38,9 +38,9 @@ public:
 
 public:
     // prevent constructor by default
-    Facing& operator=(Facing const&) = delete;
-    Facing(Facing const&)            = delete;
-    Facing()                         = delete;
+    Facing& operator=(Facing const&);
+    Facing(Facing const&);
+    Facing();
 
 public:
     // NOLINTBEGIN

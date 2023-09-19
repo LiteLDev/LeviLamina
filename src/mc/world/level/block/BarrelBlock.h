@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class BarrelBlock : public ::FaceDirectionalBlock {
 public:
     // prevent constructor by default
-    BarrelBlock& operator=(BarrelBlock const&) = delete;
-    BarrelBlock(BarrelBlock const&)            = delete;
-    BarrelBlock()                              = delete;
+    BarrelBlock& operator=(BarrelBlock const&);
+    BarrelBlock(BarrelBlock const&);
+    BarrelBlock();
 
 public:
     // NOLINTBEGIN

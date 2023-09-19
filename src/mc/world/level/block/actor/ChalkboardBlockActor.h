@@ -19,8 +19,8 @@ public:
     class CachedLineData {
     public:
         // prevent constructor by default
-        CachedLineData& operator=(CachedLineData const&) = delete;
-        CachedLineData(CachedLineData const&)            = delete;
+        CachedLineData& operator=(CachedLineData const&);
+        CachedLineData(CachedLineData const&);
 
     public:
         // NOLINTBEGIN
@@ -36,9 +36,9 @@ public:
     class CachedMessageData {
     public:
         // prevent constructor by default
-        CachedMessageData& operator=(CachedMessageData const&) = delete;
-        CachedMessageData(CachedMessageData const&)            = delete;
-        CachedMessageData()                                    = delete;
+        CachedMessageData& operator=(CachedMessageData const&);
+        CachedMessageData(CachedMessageData const&);
+        CachedMessageData();
 
     public:
         // NOLINTBEGIN
@@ -51,9 +51,9 @@ public:
     struct ChalkboardFinder {
     public:
         // prevent constructor by default
-        ChalkboardFinder& operator=(ChalkboardFinder const&) = delete;
-        ChalkboardFinder(ChalkboardFinder const&)            = delete;
-        ChalkboardFinder()                                   = delete;
+        ChalkboardFinder& operator=(ChalkboardFinder const&);
+        ChalkboardFinder(ChalkboardFinder const&);
+        ChalkboardFinder();
 
     public:
         // NOLINTBEGIN
@@ -65,9 +65,9 @@ public:
 
 public:
     // prevent constructor by default
-    ChalkboardBlockActor& operator=(ChalkboardBlockActor const&) = delete;
-    ChalkboardBlockActor(ChalkboardBlockActor const&)            = delete;
-    ChalkboardBlockActor()                                       = delete;
+    ChalkboardBlockActor& operator=(ChalkboardBlockActor const&);
+    ChalkboardBlockActor(ChalkboardBlockActor const&);
+    ChalkboardBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -136,7 +136,7 @@ public:
     virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
 
     // symbol: ??0ChalkboardBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI ChalkboardBlockActor(class BlockPos const&);
+    MCAPI explicit ChalkboardBlockActor(class BlockPos const&);
 
     // symbol: ?getChalkboardSize@ChalkboardBlockActor@@QEBA?BW4ChalkboardSize@@XZ
     MCAPI ::ChalkboardSize const getChalkboardSize() const;

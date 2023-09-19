@@ -5,7 +5,7 @@
 struct SystemCategory {
 public:
     // prevent constructor by default
-    SystemCategory& operator=(SystemCategory const&) = delete;
-    SystemCategory(SystemCategory const&)            = delete;
-    SystemCategory()                                 = delete;
+    SystemCategory& operator=(SystemCategory const&);
+    SystemCategory(SystemCategory const&);
+    SystemCategory();
 };

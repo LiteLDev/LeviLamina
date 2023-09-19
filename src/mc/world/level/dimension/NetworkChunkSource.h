@@ -8,9 +8,9 @@
 class NetworkChunkSource : public ::ChunkSource {
 public:
     // prevent constructor by default
-    NetworkChunkSource& operator=(NetworkChunkSource const&) = delete;
-    NetworkChunkSource(NetworkChunkSource const&)            = delete;
-    NetworkChunkSource()                                     = delete;
+    NetworkChunkSource& operator=(NetworkChunkSource const&);
+    NetworkChunkSource(NetworkChunkSource const&);
+    NetworkChunkSource();
 
 public:
     // NOLINTBEGIN
@@ -47,7 +47,7 @@ public:
     virtual bool canLaunchTasks() const;
 
     // symbol: ??0NetworkChunkSource@@QEAA@AEAVDimension@@@Z
-    MCAPI NetworkChunkSource(class Dimension&);
+    MCAPI explicit NetworkChunkSource(class Dimension&);
 
     // NOLINTEND
 };

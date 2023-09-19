@@ -5,7 +5,7 @@
 struct JumpPreventionResult {
 public:
     // prevent constructor by default
-    JumpPreventionResult& operator=(JumpPreventionResult const&) = delete;
-    JumpPreventionResult(JumpPreventionResult const&)            = delete;
-    JumpPreventionResult()                                       = delete;
+    JumpPreventionResult& operator=(JumpPreventionResult const&);
+    JumpPreventionResult(JumpPreventionResult const&);
+    JumpPreventionResult();
 };

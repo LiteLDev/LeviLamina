@@ -12,7 +12,7 @@
 class StructureEditorData {
 public:
     // prevent constructor by default
-    StructureEditorData& operator=(StructureEditorData const&) = delete;
+    StructureEditorData& operator=(StructureEditorData const&);
 
 public:
     // NOLINTBEGIN

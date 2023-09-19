@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class BoolOption : public ::Option {
 public:
     // prevent constructor by default
-    BoolOption& operator=(BoolOption const&) = delete;
-    BoolOption(BoolOption const&)            = delete;
-    BoolOption()                             = delete;
+    BoolOption& operator=(BoolOption const&);
+    BoolOption(BoolOption const&);
+    BoolOption();
 
 public:
     // NOLINTBEGIN

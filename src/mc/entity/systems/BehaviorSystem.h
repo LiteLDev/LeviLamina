@@ -8,9 +8,9 @@
 class BehaviorSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    BehaviorSystem& operator=(BehaviorSystem const&) = delete;
-    BehaviorSystem(BehaviorSystem const&)            = delete;
-    BehaviorSystem()                                 = delete;
+    BehaviorSystem& operator=(BehaviorSystem const&);
+    BehaviorSystem(BehaviorSystem const&);
+    BehaviorSystem();
 
 public:
     // NOLINTBEGIN

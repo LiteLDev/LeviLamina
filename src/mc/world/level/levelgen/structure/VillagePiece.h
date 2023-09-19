@@ -11,9 +11,9 @@
 class VillagePiece : public ::PoolElementStructurePiece {
 public:
     // prevent constructor by default
-    VillagePiece& operator=(VillagePiece const&) = delete;
-    VillagePiece(VillagePiece const&)            = delete;
-    VillagePiece()                               = delete;
+    VillagePiece& operator=(VillagePiece const&);
+    VillagePiece(VillagePiece const&);
+    VillagePiece();
 
 public:
     // NOLINTBEGIN

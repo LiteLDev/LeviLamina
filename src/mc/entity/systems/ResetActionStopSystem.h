@@ -5,9 +5,9 @@
 class ResetActionStopSystem {
 public:
     // prevent constructor by default
-    ResetActionStopSystem& operator=(ResetActionStopSystem const&) = delete;
-    ResetActionStopSystem(ResetActionStopSystem const&)            = delete;
-    ResetActionStopSystem()                                        = delete;
+    ResetActionStopSystem& operator=(ResetActionStopSystem const&);
+    ResetActionStopSystem(ResetActionStopSystem const&);
+    ResetActionStopSystem();
 
 public:
     // NOLINTBEGIN

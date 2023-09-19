@@ -8,9 +8,9 @@
 class DryingOutTimerSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    DryingOutTimerSystem& operator=(DryingOutTimerSystem const&) = delete;
-    DryingOutTimerSystem(DryingOutTimerSystem const&)            = delete;
-    DryingOutTimerSystem()                                       = delete;
+    DryingOutTimerSystem& operator=(DryingOutTimerSystem const&);
+    DryingOutTimerSystem(DryingOutTimerSystem const&);
+    DryingOutTimerSystem();
 
 public:
     // NOLINTBEGIN

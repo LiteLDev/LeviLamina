@@ -8,8 +8,8 @@
 class DamageSensorComponent {
 public:
     // prevent constructor by default
-    DamageSensorComponent& operator=(DamageSensorComponent const&) = delete;
-    DamageSensorComponent(DamageSensorComponent const&)            = delete;
+    DamageSensorComponent& operator=(DamageSensorComponent const&);
+    DamageSensorComponent(DamageSensorComponent const&);
 
 public:
     // NOLINTBEGIN

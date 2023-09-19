@@ -10,8 +10,8 @@
 class BlockActorDataPacket : public ::Packet {
 public:
     // prevent constructor by default
-    BlockActorDataPacket& operator=(BlockActorDataPacket const&) = delete;
-    BlockActorDataPacket(BlockActorDataPacket const&)            = delete;
+    BlockActorDataPacket& operator=(BlockActorDataPacket const&);
+    BlockActorDataPacket(BlockActorDataPacket const&);
 
 public:
     // NOLINTBEGIN

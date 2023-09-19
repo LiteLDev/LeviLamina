@@ -26,9 +26,9 @@
 class PolarBear : public ::Animal {
 public:
     // prevent constructor by default
-    PolarBear& operator=(PolarBear const&) = delete;
-    PolarBear(PolarBear const&)            = delete;
-    PolarBear()                            = delete;
+    PolarBear& operator=(PolarBear const&);
+    PolarBear(PolarBear const&);
+    PolarBear();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 struct MobAllowStandSlidingFlag {
 public:
     // prevent constructor by default
-    MobAllowStandSlidingFlag& operator=(MobAllowStandSlidingFlag const&) = delete;
-    MobAllowStandSlidingFlag(MobAllowStandSlidingFlag const&)            = delete;
-    MobAllowStandSlidingFlag()                                           = delete;
+    MobAllowStandSlidingFlag& operator=(MobAllowStandSlidingFlag const&);
+    MobAllowStandSlidingFlag(MobAllowStandSlidingFlag const&);
+    MobAllowStandSlidingFlag();
 };

@@ -11,9 +11,9 @@
 class FlyTriggerSystem {
 public:
     // prevent constructor by default
-    FlyTriggerSystem& operator=(FlyTriggerSystem const&) = delete;
-    FlyTriggerSystem(FlyTriggerSystem const&)            = delete;
-    FlyTriggerSystem()                                   = delete;
+    FlyTriggerSystem& operator=(FlyTriggerSystem const&);
+    FlyTriggerSystem(FlyTriggerSystem const&);
+    FlyTriggerSystem();
 
 public:
     // NOLINTBEGIN

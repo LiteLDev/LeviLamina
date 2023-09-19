@@ -18,9 +18,9 @@ public:
     struct AttributeData {
     public:
         // prevent constructor by default
-        AttributeData& operator=(AttributeData const&) = delete;
-        AttributeData(AttributeData const&)            = delete;
-        AttributeData()                                = delete;
+        AttributeData& operator=(AttributeData const&);
+        AttributeData(AttributeData const&);
+        AttributeData();
 
     public:
         // NOLINTBEGIN
@@ -39,8 +39,8 @@ public:
 
 public:
     // prevent constructor by default
-    UpdateAttributesPacket& operator=(UpdateAttributesPacket const&) = delete;
-    UpdateAttributesPacket(UpdateAttributesPacket const&)            = delete;
+    UpdateAttributesPacket& operator=(UpdateAttributesPacket const&);
+    UpdateAttributesPacket(UpdateAttributesPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class PoweredRailBlock : public ::BaseRailBlock {
 public:
     // prevent constructor by default
-    PoweredRailBlock& operator=(PoweredRailBlock const&) = delete;
-    PoweredRailBlock(PoweredRailBlock const&)            = delete;
-    PoweredRailBlock()                                   = delete;
+    PoweredRailBlock& operator=(PoweredRailBlock const&);
+    PoweredRailBlock(PoweredRailBlock const&);
+    PoweredRailBlock();
 
 public:
     // NOLINTBEGIN

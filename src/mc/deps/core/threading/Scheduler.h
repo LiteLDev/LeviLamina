@@ -13,9 +13,9 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class Scheduler : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    Scheduler& operator=(Scheduler const&) = delete;
-    Scheduler(Scheduler const&)            = delete;
-    Scheduler()                            = delete;
+    Scheduler& operator=(Scheduler const&);
+    Scheduler(Scheduler const&);
+    Scheduler();
 
 public:
     // NOLINTBEGIN

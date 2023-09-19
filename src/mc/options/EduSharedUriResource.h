@@ -5,8 +5,8 @@
 struct EduSharedUriResource {
 public:
     // prevent constructor by default
-    EduSharedUriResource& operator=(EduSharedUriResource const&) = delete;
-    EduSharedUriResource(EduSharedUriResource const&)            = delete;
+    EduSharedUriResource& operator=(EduSharedUriResource const&);
+    EduSharedUriResource(EduSharedUriResource const&);
 
 public:
     // NOLINTBEGIN
@@ -14,7 +14,7 @@ public:
     MCAPI EduSharedUriResource(struct EduSharedUriResource&&);
 
     // symbol: ??0EduSharedUriResource@@QEAA@AEBVCompoundTag@@@Z
-    MCAPI EduSharedUriResource(class CompoundTag const&);
+    MCAPI explicit EduSharedUriResource(class CompoundTag const&);
 
     // symbol: ??0EduSharedUriResource@@QEAA@XZ
     MCAPI EduSharedUriResource();

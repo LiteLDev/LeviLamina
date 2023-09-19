@@ -8,9 +8,9 @@
 class MountTamingSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    MountTamingSystem& operator=(MountTamingSystem const&) = delete;
-    MountTamingSystem(MountTamingSystem const&)            = delete;
-    MountTamingSystem()                                    = delete;
+    MountTamingSystem& operator=(MountTamingSystem const&);
+    MountTamingSystem(MountTamingSystem const&);
+    MountTamingSystem();
 
 public:
     // NOLINTBEGIN

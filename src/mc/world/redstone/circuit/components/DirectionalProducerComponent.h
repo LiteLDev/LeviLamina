@@ -9,8 +9,8 @@
 class DirectionalProducerComponent : public ::ProducerComponent {
 public:
     // prevent constructor by default
-    DirectionalProducerComponent& operator=(DirectionalProducerComponent const&) = delete;
-    DirectionalProducerComponent(DirectionalProducerComponent const&)            = delete;
+    DirectionalProducerComponent& operator=(DirectionalProducerComponent const&);
+    DirectionalProducerComponent(DirectionalProducerComponent const&);
 
 public:
     // NOLINTBEGIN

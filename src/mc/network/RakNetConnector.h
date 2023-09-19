@@ -34,9 +34,9 @@ public:
     class AtomicNatPunchInfo {
     public:
         // prevent constructor by default
-        AtomicNatPunchInfo& operator=(AtomicNatPunchInfo const&) = delete;
-        AtomicNatPunchInfo(AtomicNatPunchInfo const&)            = delete;
-        AtomicNatPunchInfo()                                     = delete;
+        AtomicNatPunchInfo& operator=(AtomicNatPunchInfo const&);
+        AtomicNatPunchInfo(AtomicNatPunchInfo const&);
+        AtomicNatPunchInfo();
 
     public:
         // NOLINTBEGIN
@@ -52,17 +52,17 @@ public:
     struct ConnectionCallbacks : public ::Connector::ConnectionCallbacks {
     public:
         // prevent constructor by default
-        ConnectionCallbacks& operator=(ConnectionCallbacks const&) = delete;
-        ConnectionCallbacks(ConnectionCallbacks const&)            = delete;
-        ConnectionCallbacks()                                      = delete;
+        ConnectionCallbacks& operator=(ConnectionCallbacks const&);
+        ConnectionCallbacks(ConnectionCallbacks const&);
+        ConnectionCallbacks();
     };
 
     struct PingCallbackData {
     public:
         // prevent constructor by default
-        PingCallbackData& operator=(PingCallbackData const&) = delete;
-        PingCallbackData(PingCallbackData const&)            = delete;
-        PingCallbackData()                                   = delete;
+        PingCallbackData& operator=(PingCallbackData const&);
+        PingCallbackData(PingCallbackData const&);
+        PingCallbackData();
 
     public:
         // NOLINTBEGIN
@@ -83,9 +83,9 @@ public:
         struct ReadBufferData {
         public:
             // prevent constructor by default
-            ReadBufferData& operator=(ReadBufferData const&) = delete;
-            ReadBufferData(ReadBufferData const&)            = delete;
-            ReadBufferData()                                 = delete;
+            ReadBufferData& operator=(ReadBufferData const&);
+            ReadBufferData(ReadBufferData const&);
+            ReadBufferData();
 
         public:
             // NOLINTBEGIN
@@ -97,9 +97,9 @@ public:
 
     public:
         // prevent constructor by default
-        RakNetNetworkPeer& operator=(RakNetNetworkPeer const&) = delete;
-        RakNetNetworkPeer(RakNetNetworkPeer const&)            = delete;
-        RakNetNetworkPeer()                                    = delete;
+        RakNetNetworkPeer& operator=(RakNetNetworkPeer const&);
+        RakNetNetworkPeer(RakNetNetworkPeer const&);
+        RakNetNetworkPeer();
 
     public:
         // NOLINTBEGIN
@@ -136,9 +136,9 @@ public:
 
 public:
     // prevent constructor by default
-    RakNetConnector& operator=(RakNetConnector const&) = delete;
-    RakNetConnector(RakNetConnector const&)            = delete;
-    RakNetConnector()                                  = delete;
+    RakNetConnector& operator=(RakNetConnector const&);
+    RakNetConnector(RakNetConnector const&);
+    RakNetConnector();
 
 public:
     // NOLINTBEGIN

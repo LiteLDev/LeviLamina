@@ -5,9 +5,9 @@
 struct TrimMaterial {
 public:
     // prevent constructor by default
-    TrimMaterial& operator=(TrimMaterial const&) = delete;
-    TrimMaterial(TrimMaterial const&)            = delete;
-    TrimMaterial()                               = delete;
+    TrimMaterial& operator=(TrimMaterial const&);
+    TrimMaterial(TrimMaterial const&);
+    TrimMaterial();
 
 public:
     // NOLINTBEGIN

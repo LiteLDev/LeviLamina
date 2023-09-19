@@ -25,9 +25,9 @@
 class HangingActor : public ::Actor {
 public:
     // prevent constructor by default
-    HangingActor& operator=(HangingActor const&) = delete;
-    HangingActor(HangingActor const&)            = delete;
-    HangingActor()                               = delete;
+    HangingActor& operator=(HangingActor const&);
+    HangingActor(HangingActor const&);
+    HangingActor();
 
 public:
     // NOLINTBEGIN

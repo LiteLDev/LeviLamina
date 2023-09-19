@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class ButtonBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    ButtonBlock& operator=(ButtonBlock const&) = delete;
-    ButtonBlock(ButtonBlock const&)            = delete;
-    ButtonBlock()                              = delete;
+    ButtonBlock& operator=(ButtonBlock const&);
+    ButtonBlock(ButtonBlock const&);
+    ButtonBlock();
 
 public:
     // NOLINTBEGIN

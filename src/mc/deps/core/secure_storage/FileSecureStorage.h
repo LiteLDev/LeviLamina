@@ -24,9 +24,9 @@ public:
     class StorageSystem {
     public:
         // prevent constructor by default
-        StorageSystem& operator=(StorageSystem const&) = delete;
-        StorageSystem(StorageSystem const&)            = delete;
-        StorageSystem()                                = delete;
+        StorageSystem& operator=(StorageSystem const&);
+        StorageSystem(StorageSystem const&);
+        StorageSystem();
 
     public:
         // NOLINTBEGIN
@@ -44,9 +44,9 @@ public:
     class FileStorageSystem : public ::FileSecureStorage::StorageSystem {
     public:
         // prevent constructor by default
-        FileStorageSystem& operator=(FileStorageSystem const&) = delete;
-        FileStorageSystem(FileStorageSystem const&)            = delete;
-        FileStorageSystem()                                    = delete;
+        FileStorageSystem& operator=(FileStorageSystem const&);
+        FileStorageSystem(FileStorageSystem const&);
+        FileStorageSystem();
 
     public:
         // NOLINTBEGIN
@@ -63,9 +63,9 @@ public:
 
 public:
     // prevent constructor by default
-    FileSecureStorage& operator=(FileSecureStorage const&) = delete;
-    FileSecureStorage(FileSecureStorage const&)            = delete;
-    FileSecureStorage()                                    = delete;
+    FileSecureStorage& operator=(FileSecureStorage const&);
+    FileSecureStorage(FileSecureStorage const&);
+    FileSecureStorage();
 
 public:
     // NOLINTBEGIN

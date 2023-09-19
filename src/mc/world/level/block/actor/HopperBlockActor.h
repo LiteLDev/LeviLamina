@@ -8,9 +8,9 @@
 class HopperBlockActor {
 public:
     // prevent constructor by default
-    HopperBlockActor& operator=(HopperBlockActor const&) = delete;
-    HopperBlockActor(HopperBlockActor const&)            = delete;
-    HopperBlockActor()                                   = delete;
+    HopperBlockActor& operator=(HopperBlockActor const&);
+    HopperBlockActor(HopperBlockActor const&);
+    HopperBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -70,7 +70,7 @@ public:
     MCVAPI void tick(class BlockSource&);
 
     // symbol: ??0HopperBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI HopperBlockActor(class BlockPos const&);
+    MCAPI explicit HopperBlockActor(class BlockPos const&);
 
     // symbol: ?checkForSmeltEverythingAchievement@HopperBlockActor@@QEAAXAEAVBlockSource@@@Z
     MCAPI void checkForSmeltEverythingAchievement(class BlockSource&);

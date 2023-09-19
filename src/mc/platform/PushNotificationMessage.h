@@ -5,7 +5,7 @@
 class PushNotificationMessage {
 public:
     // prevent constructor by default
-    PushNotificationMessage& operator=(PushNotificationMessage const&) = delete;
-    PushNotificationMessage(PushNotificationMessage const&)            = delete;
-    PushNotificationMessage()                                          = delete;
+    PushNotificationMessage& operator=(PushNotificationMessage const&);
+    PushNotificationMessage(PushNotificationMessage const&);
+    PushNotificationMessage();
 };

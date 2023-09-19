@@ -5,8 +5,8 @@
 struct PackedItemUseLegacyInventoryTransaction {
 public:
     // prevent constructor by default
-    PackedItemUseLegacyInventoryTransaction& operator=(PackedItemUseLegacyInventoryTransaction const&) = delete;
-    PackedItemUseLegacyInventoryTransaction(PackedItemUseLegacyInventoryTransaction const&)            = delete;
+    PackedItemUseLegacyInventoryTransaction& operator=(PackedItemUseLegacyInventoryTransaction const&);
+    PackedItemUseLegacyInventoryTransaction(PackedItemUseLegacyInventoryTransaction const&);
 
 public:
     // NOLINTBEGIN

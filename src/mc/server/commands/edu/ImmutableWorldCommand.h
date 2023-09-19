@@ -8,9 +8,9 @@
 class ImmutableWorldCommand : public ::Command {
 public:
     // prevent constructor by default
-    ImmutableWorldCommand& operator=(ImmutableWorldCommand const&) = delete;
-    ImmutableWorldCommand(ImmutableWorldCommand const&)            = delete;
-    ImmutableWorldCommand()                                        = delete;
+    ImmutableWorldCommand& operator=(ImmutableWorldCommand const&);
+    ImmutableWorldCommand(ImmutableWorldCommand const&);
+    ImmutableWorldCommand();
 
 public:
     // NOLINTBEGIN

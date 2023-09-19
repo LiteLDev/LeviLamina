@@ -8,9 +8,9 @@
 class SingleBlockFeature : public ::IFeature {
 public:
     // prevent constructor by default
-    SingleBlockFeature& operator=(SingleBlockFeature const&) = delete;
-    SingleBlockFeature(SingleBlockFeature const&)            = delete;
-    SingleBlockFeature()                                     = delete;
+    SingleBlockFeature& operator=(SingleBlockFeature const&);
+    SingleBlockFeature(SingleBlockFeature const&);
+    SingleBlockFeature();
 
 public:
     // NOLINTBEGIN

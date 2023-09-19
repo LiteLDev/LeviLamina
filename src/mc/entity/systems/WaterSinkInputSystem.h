@@ -5,9 +5,9 @@
 class WaterSinkInputSystem {
 public:
     // prevent constructor by default
-    WaterSinkInputSystem& operator=(WaterSinkInputSystem const&) = delete;
-    WaterSinkInputSystem(WaterSinkInputSystem const&)            = delete;
-    WaterSinkInputSystem()                                       = delete;
+    WaterSinkInputSystem& operator=(WaterSinkInputSystem const&);
+    WaterSinkInputSystem(WaterSinkInputSystem const&);
+    WaterSinkInputSystem();
 
 public:
     // NOLINTBEGIN

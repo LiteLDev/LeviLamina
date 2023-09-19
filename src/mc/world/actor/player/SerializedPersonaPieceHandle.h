@@ -13,8 +13,8 @@ namespace mce { class UUID; }
 class SerializedPersonaPieceHandle {
 public:
     // prevent constructor by default
-    SerializedPersonaPieceHandle(SerializedPersonaPieceHandle const&) = delete;
-    SerializedPersonaPieceHandle()                                    = delete;
+    SerializedPersonaPieceHandle(SerializedPersonaPieceHandle const&);
+    SerializedPersonaPieceHandle();
 
 public:
     // NOLINTBEGIN

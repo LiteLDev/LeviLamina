@@ -5,9 +5,9 @@
 class TargetNearbyComponent {
 public:
     // prevent constructor by default
-    TargetNearbyComponent& operator=(TargetNearbyComponent const&) = delete;
-    TargetNearbyComponent(TargetNearbyComponent const&)            = delete;
-    TargetNearbyComponent()                                        = delete;
+    TargetNearbyComponent& operator=(TargetNearbyComponent const&);
+    TargetNearbyComponent(TargetNearbyComponent const&);
+    TargetNearbyComponent();
 
 public:
     // NOLINTBEGIN

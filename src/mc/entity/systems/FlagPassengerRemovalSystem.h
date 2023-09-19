@@ -5,9 +5,9 @@
 class FlagPassengerRemovalSystem {
 public:
     // prevent constructor by default
-    FlagPassengerRemovalSystem& operator=(FlagPassengerRemovalSystem const&) = delete;
-    FlagPassengerRemovalSystem(FlagPassengerRemovalSystem const&)            = delete;
-    FlagPassengerRemovalSystem()                                             = delete;
+    FlagPassengerRemovalSystem& operator=(FlagPassengerRemovalSystem const&);
+    FlagPassengerRemovalSystem(FlagPassengerRemovalSystem const&);
+    FlagPassengerRemovalSystem();
 
 public:
     // NOLINTBEGIN

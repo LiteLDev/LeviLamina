@@ -8,9 +8,9 @@
 class PropertyContainer {
 public:
     // prevent constructor by default
-    PropertyContainer& operator=(PropertyContainer const&) = delete;
-    PropertyContainer(PropertyContainer const&)            = delete;
-    PropertyContainer()                                    = delete;
+    PropertyContainer& operator=(PropertyContainer const&);
+    PropertyContainer(PropertyContainer const&);
+    PropertyContainer();
 
 public:
     // NOLINTBEGIN

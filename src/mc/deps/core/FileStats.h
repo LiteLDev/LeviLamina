@@ -7,9 +7,9 @@ namespace Core {
 class FileStats {
 public:
     // prevent constructor by default
-    FileStats& operator=(FileStats const&) = delete;
-    FileStats(FileStats const&)            = delete;
-    FileStats()                            = delete;
+    FileStats& operator=(FileStats const&);
+    FileStats(FileStats const&);
+    FileStats();
 };
 
 }; // namespace Core

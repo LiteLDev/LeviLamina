@@ -13,7 +13,7 @@ namespace mce { class UUID; }
 struct PackIdVersion {
 public:
     // prevent constructor by default
-    PackIdVersion& operator=(PackIdVersion const&) = delete;
+    PackIdVersion& operator=(PackIdVersion const&);
 
 public:
     // NOLINTBEGIN

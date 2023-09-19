@@ -5,17 +5,17 @@
 class SubChunkPos {
 public:
     // prevent constructor by default
-    SubChunkPos& operator=(SubChunkPos const&) = delete;
-    SubChunkPos(SubChunkPos const&)            = delete;
-    SubChunkPos()                              = delete;
+    SubChunkPos& operator=(SubChunkPos const&);
+    SubChunkPos(SubChunkPos const&);
+    SubChunkPos();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0SubChunkPos@@QEAA@AEBVBlockPos@@@Z
-    MCAPI SubChunkPos(class BlockPos const&);
+    MCAPI explicit SubChunkPos(class BlockPos const&);
 
     // symbol: ??BSubChunkPos@@QEBA?AVBlockPos@@XZ
-    MCAPI operator class BlockPos() const;
+    MCAPI explicit operator class BlockPos() const;
 
     // symbol: ?MAX@SubChunkPos@@2V1@B
     MCAPI static class SubChunkPos const MAX;

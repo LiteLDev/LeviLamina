@@ -14,8 +14,8 @@ public:
 
 public:
     // prevent constructor by default
-    MobEffectPacket& operator=(MobEffectPacket const&) = delete;
-    MobEffectPacket(MobEffectPacket const&)            = delete;
+    MobEffectPacket& operator=(MobEffectPacket const&);
+    MobEffectPacket(MobEffectPacket const&);
 
 public:
     // NOLINTBEGIN

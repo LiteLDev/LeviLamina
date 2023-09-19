@@ -5,7 +5,7 @@
 class PackSourceReport {
 public:
     // prevent constructor by default
-    PackSourceReport& operator=(PackSourceReport const&) = delete;
+    PackSourceReport& operator=(PackSourceReport const&);
 
 public:
     // NOLINTBEGIN

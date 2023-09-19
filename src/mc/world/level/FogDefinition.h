@@ -5,9 +5,9 @@
 struct FogDefinition {
 public:
     // prevent constructor by default
-    FogDefinition& operator=(FogDefinition const&) = delete;
-    FogDefinition(FogDefinition const&)            = delete;
-    FogDefinition()                                = delete;
+    FogDefinition& operator=(FogDefinition const&);
+    FogDefinition(FogDefinition const&);
+    FogDefinition();
 
 public:
     // NOLINTBEGIN

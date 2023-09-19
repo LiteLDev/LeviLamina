@@ -10,9 +10,9 @@
 class ServerStatsPacket : public ::Packet {
 public:
     // prevent constructor by default
-    ServerStatsPacket& operator=(ServerStatsPacket const&) = delete;
-    ServerStatsPacket(ServerStatsPacket const&)            = delete;
-    ServerStatsPacket()                                    = delete;
+    ServerStatsPacket& operator=(ServerStatsPacket const&);
+    ServerStatsPacket(ServerStatsPacket const&);
+    ServerStatsPacket();
 
 public:
     // NOLINTBEGIN

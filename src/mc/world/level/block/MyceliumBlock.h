@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class MyceliumBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    MyceliumBlock& operator=(MyceliumBlock const&) = delete;
-    MyceliumBlock(MyceliumBlock const&)            = delete;
-    MyceliumBlock()                                = delete;
+    MyceliumBlock& operator=(MyceliumBlock const&);
+    MyceliumBlock(MyceliumBlock const&);
+    MyceliumBlock();
 
 public:
     // NOLINTBEGIN

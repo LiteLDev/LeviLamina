@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class BeaconBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    BeaconBlock& operator=(BeaconBlock const&) = delete;
-    BeaconBlock(BeaconBlock const&)            = delete;
-    BeaconBlock()                              = delete;
+    BeaconBlock& operator=(BeaconBlock const&);
+    BeaconBlock(BeaconBlock const&);
+    BeaconBlock();
 
 public:
     // NOLINTBEGIN

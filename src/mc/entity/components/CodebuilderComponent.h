@@ -8,9 +8,9 @@
 class CodebuilderComponent {
 public:
     // prevent constructor by default
-    CodebuilderComponent& operator=(CodebuilderComponent const&) = delete;
-    CodebuilderComponent(CodebuilderComponent const&)            = delete;
-    CodebuilderComponent()                                       = delete;
+    CodebuilderComponent& operator=(CodebuilderComponent const&);
+    CodebuilderComponent(CodebuilderComponent const&);
+    CodebuilderComponent();
 
 public:
     // NOLINTBEGIN

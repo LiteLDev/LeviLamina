@@ -5,9 +5,9 @@
 struct Tick {
 public:
     // prevent constructor by default
-    Tick& operator=(Tick const&) = delete;
-    Tick(Tick const&)            = delete;
-    Tick()                       = delete;
+    Tick& operator=(Tick const&);
+    Tick(Tick const&);
+    Tick();
 
 public:
     // NOLINTBEGIN

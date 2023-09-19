@@ -26,9 +26,9 @@
 class Fish : public ::WaterAnimal {
 public:
     // prevent constructor by default
-    Fish& operator=(Fish const&) = delete;
-    Fish(Fish const&)            = delete;
-    Fish()                       = delete;
+    Fish& operator=(Fish const&);
+    Fish(Fish const&);
+    Fish();
 
 public:
     // NOLINTBEGIN

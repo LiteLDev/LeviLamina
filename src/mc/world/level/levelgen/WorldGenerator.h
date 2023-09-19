@@ -18,16 +18,16 @@ public:
     struct BlockVolumeDimensions {
     public:
         // prevent constructor by default
-        BlockVolumeDimensions& operator=(BlockVolumeDimensions const&) = delete;
-        BlockVolumeDimensions(BlockVolumeDimensions const&)            = delete;
-        BlockVolumeDimensions()                                        = delete;
+        BlockVolumeDimensions& operator=(BlockVolumeDimensions const&);
+        BlockVolumeDimensions(BlockVolumeDimensions const&);
+        BlockVolumeDimensions();
     };
 
 public:
     // prevent constructor by default
-    WorldGenerator& operator=(WorldGenerator const&) = delete;
-    WorldGenerator(WorldGenerator const&)            = delete;
-    WorldGenerator()                                 = delete;
+    WorldGenerator& operator=(WorldGenerator const&);
+    WorldGenerator(WorldGenerator const&);
+    WorldGenerator();
 
 public:
     // NOLINTBEGIN
@@ -59,7 +59,7 @@ public:
     MCVAPI ~WorldGenerator();
 
     // symbol: ??0WorldGenerator@@QEAA@AEAVDimension@@@Z
-    MCAPI WorldGenerator(class Dimension&);
+    MCAPI explicit WorldGenerator(class Dimension&);
 
     // symbol:
     // ??0WorldGenerator@@QEAA@AEAVDimension@@V?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@@Z

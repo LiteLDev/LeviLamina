@@ -10,9 +10,9 @@
 class DimensionDataPacket : public ::Packet {
 public:
     // prevent constructor by default
-    DimensionDataPacket& operator=(DimensionDataPacket const&) = delete;
-    DimensionDataPacket(DimensionDataPacket const&)            = delete;
-    DimensionDataPacket()                                      = delete;
+    DimensionDataPacket& operator=(DimensionDataPacket const&);
+    DimensionDataPacket(DimensionDataPacket const&);
+    DimensionDataPacket();
 
 public:
     // NOLINTBEGIN
@@ -37,7 +37,7 @@ public:
     MCVAPI ~DimensionDataPacket();
 
     // symbol: ??0DimensionDataPacket@@QEAA@AEBVDimensionDefinitionGroup@@@Z
-    MCAPI DimensionDataPacket(class DimensionDefinitionGroup const&);
+    MCAPI explicit DimensionDataPacket(class DimensionDefinitionGroup const&);
 
     // NOLINTEND
 };

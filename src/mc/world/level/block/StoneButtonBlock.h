@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class StoneButtonBlock : public ::ButtonBlock {
 public:
     // prevent constructor by default
-    StoneButtonBlock& operator=(StoneButtonBlock const&) = delete;
-    StoneButtonBlock(StoneButtonBlock const&)            = delete;
-    StoneButtonBlock()                                   = delete;
+    StoneButtonBlock& operator=(StoneButtonBlock const&);
+    StoneButtonBlock(StoneButtonBlock const&);
+    StoneButtonBlock();
 
 public:
     // NOLINTBEGIN

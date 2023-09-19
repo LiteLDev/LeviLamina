@@ -13,9 +13,9 @@
 class ChunkBlender {
 public:
     // prevent constructor by default
-    ChunkBlender& operator=(ChunkBlender const&) = delete;
-    ChunkBlender(ChunkBlender const&)            = delete;
-    ChunkBlender()                               = delete;
+    ChunkBlender& operator=(ChunkBlender const&);
+    ChunkBlender(ChunkBlender const&);
+    ChunkBlender();
 
 public:
     // NOLINTBEGIN

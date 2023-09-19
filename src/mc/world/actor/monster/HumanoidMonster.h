@@ -26,9 +26,9 @@
 class HumanoidMonster : public ::Monster {
 public:
     // prevent constructor by default
-    HumanoidMonster& operator=(HumanoidMonster const&) = delete;
-    HumanoidMonster(HumanoidMonster const&)            = delete;
-    HumanoidMonster()                                  = delete;
+    HumanoidMonster& operator=(HumanoidMonster const&);
+    HumanoidMonster(HumanoidMonster const&);
+    HumanoidMonster();
 
 public:
     // NOLINTBEGIN

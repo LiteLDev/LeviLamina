@@ -9,9 +9,9 @@
 class TradeInterestGoal : public ::Goal {
 public:
     // prevent constructor by default
-    TradeInterestGoal& operator=(TradeInterestGoal const&) = delete;
-    TradeInterestGoal(TradeInterestGoal const&)            = delete;
-    TradeInterestGoal()                                    = delete;
+    TradeInterestGoal& operator=(TradeInterestGoal const&);
+    TradeInterestGoal(TradeInterestGoal const&);
+    TradeInterestGoal();
 
 public:
     // NOLINTBEGIN

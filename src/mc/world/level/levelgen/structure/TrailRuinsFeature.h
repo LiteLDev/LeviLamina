@@ -8,9 +8,9 @@
 class TrailRuinsFeature : public ::StructureFeature {
 public:
     // prevent constructor by default
-    TrailRuinsFeature& operator=(TrailRuinsFeature const&) = delete;
-    TrailRuinsFeature(TrailRuinsFeature const&)            = delete;
-    TrailRuinsFeature()                                    = delete;
+    TrailRuinsFeature& operator=(TrailRuinsFeature const&);
+    TrailRuinsFeature(TrailRuinsFeature const&);
+    TrailRuinsFeature();
 
 public:
     // NOLINTBEGIN

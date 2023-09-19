@@ -9,9 +9,9 @@
 class ServerScoreboard : public ::Scoreboard {
 public:
     // prevent constructor by default
-    ServerScoreboard& operator=(ServerScoreboard const&) = delete;
-    ServerScoreboard(ServerScoreboard const&)            = delete;
-    ServerScoreboard()                                   = delete;
+    ServerScoreboard& operator=(ServerScoreboard const&);
+    ServerScoreboard(ServerScoreboard const&);
+    ServerScoreboard();
 
 public:
     // NOLINTBEGIN

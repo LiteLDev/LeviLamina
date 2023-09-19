@@ -5,9 +5,9 @@
 struct ChestBlockTryPairEvent {
 public:
     // prevent constructor by default
-    ChestBlockTryPairEvent& operator=(ChestBlockTryPairEvent const&) = delete;
-    ChestBlockTryPairEvent(ChestBlockTryPairEvent const&)            = delete;
-    ChestBlockTryPairEvent()                                         = delete;
+    ChestBlockTryPairEvent& operator=(ChestBlockTryPairEvent const&);
+    ChestBlockTryPairEvent(ChestBlockTryPairEvent const&);
+    ChestBlockTryPairEvent();
 
 public:
     // NOLINTBEGIN

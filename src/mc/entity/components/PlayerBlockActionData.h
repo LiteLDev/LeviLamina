@@ -8,9 +8,9 @@
 struct PlayerBlockActionData {
 public:
     // prevent constructor by default
-    PlayerBlockActionData& operator=(PlayerBlockActionData const&) = delete;
-    PlayerBlockActionData(PlayerBlockActionData const&)            = delete;
-    PlayerBlockActionData()                                        = delete;
+    PlayerBlockActionData& operator=(PlayerBlockActionData const&);
+    PlayerBlockActionData(PlayerBlockActionData const&);
+    PlayerBlockActionData();
 
 public:
     // NOLINTBEGIN

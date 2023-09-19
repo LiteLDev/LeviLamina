@@ -10,9 +10,9 @@ namespace Social::Events { class Event; }
 class PlayerRespawnTelemetryData {
 public:
     // prevent constructor by default
-    PlayerRespawnTelemetryData& operator=(PlayerRespawnTelemetryData const&) = delete;
-    PlayerRespawnTelemetryData(PlayerRespawnTelemetryData const&)            = delete;
-    PlayerRespawnTelemetryData()                                             = delete;
+    PlayerRespawnTelemetryData& operator=(PlayerRespawnTelemetryData const&);
+    PlayerRespawnTelemetryData(PlayerRespawnTelemetryData const&);
+    PlayerRespawnTelemetryData();
 
 public:
     // NOLINTBEGIN

@@ -10,8 +10,8 @@
 class TakeItemActorPacket : public ::Packet {
 public:
     // prevent constructor by default
-    TakeItemActorPacket& operator=(TakeItemActorPacket const&) = delete;
-    TakeItemActorPacket(TakeItemActorPacket const&)            = delete;
+    TakeItemActorPacket& operator=(TakeItemActorPacket const&);
+    TakeItemActorPacket(TakeItemActorPacket const&);
 
 public:
     // NOLINTBEGIN

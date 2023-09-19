@@ -5,9 +5,9 @@
 class IllagerBeastBlockedComponent {
 public:
     // prevent constructor by default
-    IllagerBeastBlockedComponent& operator=(IllagerBeastBlockedComponent const&) = delete;
-    IllagerBeastBlockedComponent(IllagerBeastBlockedComponent const&)            = delete;
-    IllagerBeastBlockedComponent()                                               = delete;
+    IllagerBeastBlockedComponent& operator=(IllagerBeastBlockedComponent const&);
+    IllagerBeastBlockedComponent(IllagerBeastBlockedComponent const&);
+    IllagerBeastBlockedComponent();
 
 public:
     // NOLINTBEGIN

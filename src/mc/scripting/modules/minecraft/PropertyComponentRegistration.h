@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft::ScriptPropertyComponents {
 struct PropertyComponentRegistration {
 public:
     // prevent constructor by default
-    PropertyComponentRegistration& operator=(PropertyComponentRegistration const&) = delete;
-    PropertyComponentRegistration(PropertyComponentRegistration const&)            = delete;
-    PropertyComponentRegistration()                                                = delete;
+    PropertyComponentRegistration& operator=(PropertyComponentRegistration const&);
+    PropertyComponentRegistration(PropertyComponentRegistration const&);
+    PropertyComponentRegistration();
 
 public:
     // NOLINTBEGIN

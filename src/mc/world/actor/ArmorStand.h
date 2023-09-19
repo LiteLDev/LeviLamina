@@ -34,16 +34,16 @@ public:
     struct Pose {
     public:
         // prevent constructor by default
-        Pose& operator=(Pose const&) = delete;
-        Pose(Pose const&)            = delete;
-        Pose()                       = delete;
+        Pose& operator=(Pose const&);
+        Pose(Pose const&);
+        Pose();
     };
 
 public:
     // prevent constructor by default
-    ArmorStand& operator=(ArmorStand const&) = delete;
-    ArmorStand(ArmorStand const&)            = delete;
-    ArmorStand()                             = delete;
+    ArmorStand& operator=(ArmorStand const&);
+    ArmorStand(ArmorStand const&);
+    ArmorStand();
 
 public:
     // NOLINTBEGIN

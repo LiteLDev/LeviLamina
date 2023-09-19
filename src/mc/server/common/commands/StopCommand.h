@@ -8,9 +8,9 @@
 class StopCommand : public ::Command {
 public:
     // prevent constructor by default
-    StopCommand& operator=(StopCommand const&) = delete;
-    StopCommand(StopCommand const&)            = delete;
-    StopCommand()                              = delete;
+    StopCommand& operator=(StopCommand const&);
+    StopCommand(StopCommand const&);
+    StopCommand();
 
 public:
     // NOLINTBEGIN

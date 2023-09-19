@@ -5,7 +5,7 @@
 struct MaxAutoStepComponent {
 public:
     // prevent constructor by default
-    MaxAutoStepComponent& operator=(MaxAutoStepComponent const&) = delete;
-    MaxAutoStepComponent(MaxAutoStepComponent const&)            = delete;
-    MaxAutoStepComponent()                                       = delete;
+    MaxAutoStepComponent& operator=(MaxAutoStepComponent const&);
+    MaxAutoStepComponent(MaxAutoStepComponent const&);
+    MaxAutoStepComponent();
 };

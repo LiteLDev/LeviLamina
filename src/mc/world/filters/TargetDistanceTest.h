@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class TargetDistanceTest : public ::SimpleFloatFilterTest {
 public:
     // prevent constructor by default
-    TargetDistanceTest& operator=(TargetDistanceTest const&) = delete;
-    TargetDistanceTest(TargetDistanceTest const&)            = delete;
-    TargetDistanceTest()                                     = delete;
+    TargetDistanceTest& operator=(TargetDistanceTest const&);
+    TargetDistanceTest(TargetDistanceTest const&);
+    TargetDistanceTest();
 
 public:
     // NOLINTBEGIN

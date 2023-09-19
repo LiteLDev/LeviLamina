@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class FarmBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    FarmBlock& operator=(FarmBlock const&) = delete;
-    FarmBlock(FarmBlock const&)            = delete;
-    FarmBlock()                            = delete;
+    FarmBlock& operator=(FarmBlock const&);
+    FarmBlock(FarmBlock const&);
+    FarmBlock();
 
 public:
     // NOLINTBEGIN

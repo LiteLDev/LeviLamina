@@ -8,9 +8,9 @@
 class GameMode {
 public:
     // prevent constructor by default
-    GameMode& operator=(GameMode const&) = delete;
-    GameMode(GameMode const&)            = delete;
-    GameMode()                           = delete;
+    GameMode& operator=(GameMode const&);
+    GameMode(GameMode const&);
+    GameMode();
 
 public:
     // NOLINTBEGIN

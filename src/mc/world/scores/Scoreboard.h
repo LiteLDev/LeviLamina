@@ -10,9 +10,9 @@
 class Scoreboard {
 public:
     // prevent constructor by default
-    Scoreboard& operator=(Scoreboard const&) = delete;
-    Scoreboard(Scoreboard const&)            = delete;
-    Scoreboard()                             = delete;
+    Scoreboard& operator=(Scoreboard const&);
+    Scoreboard(Scoreboard const&);
+    Scoreboard();
 
 public:
     // NOLINTBEGIN
@@ -72,7 +72,7 @@ public:
     MCVAPI ~Scoreboard();
 
     // symbol: ??0Scoreboard@@QEAA@VCommandSoftEnumRegistry@@@Z
-    MCAPI Scoreboard(class CommandSoftEnumRegistry);
+    MCAPI explicit Scoreboard(class CommandSoftEnumRegistry);
 
     // symbol:
     // ?addObjective@Scoreboard@@QEAAPEAVObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEBVObjectiveCriteria@@@Z

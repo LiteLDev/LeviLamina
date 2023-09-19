@@ -5,9 +5,9 @@
 class CooldownItemComponent {
 public:
     // prevent constructor by default
-    CooldownItemComponent& operator=(CooldownItemComponent const&) = delete;
-    CooldownItemComponent(CooldownItemComponent const&)            = delete;
-    CooldownItemComponent()                                        = delete;
+    CooldownItemComponent& operator=(CooldownItemComponent const&);
+    CooldownItemComponent(CooldownItemComponent const&);
+    CooldownItemComponent();
 
 public:
     // NOLINTBEGIN

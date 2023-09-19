@@ -5,9 +5,9 @@
 class MaxStackSizeItemComponent {
 public:
     // prevent constructor by default
-    MaxStackSizeItemComponent& operator=(MaxStackSizeItemComponent const&) = delete;
-    MaxStackSizeItemComponent(MaxStackSizeItemComponent const&)            = delete;
-    MaxStackSizeItemComponent()                                            = delete;
+    MaxStackSizeItemComponent& operator=(MaxStackSizeItemComponent const&);
+    MaxStackSizeItemComponent(MaxStackSizeItemComponent const&);
+    MaxStackSizeItemComponent();
 
 public:
     // NOLINTBEGIN

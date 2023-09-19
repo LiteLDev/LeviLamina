@@ -5,9 +5,9 @@
 class PlayerPostTravelSystem {
 public:
     // prevent constructor by default
-    PlayerPostTravelSystem& operator=(PlayerPostTravelSystem const&) = delete;
-    PlayerPostTravelSystem(PlayerPostTravelSystem const&)            = delete;
-    PlayerPostTravelSystem()                                         = delete;
+    PlayerPostTravelSystem& operator=(PlayerPostTravelSystem const&);
+    PlayerPostTravelSystem(PlayerPostTravelSystem const&);
+    PlayerPostTravelSystem();
 
 public:
     // NOLINTBEGIN

@@ -11,14 +11,14 @@ namespace RakNet { class BitStream; }
 class RegionFile {
 public:
     // prevent constructor by default
-    RegionFile& operator=(RegionFile const&) = delete;
-    RegionFile(RegionFile const&)            = delete;
-    RegionFile()                             = delete;
+    RegionFile& operator=(RegionFile const&);
+    RegionFile(RegionFile const&);
+    RegionFile();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0RegionFile@@QEAA@AEBVPath@Core@@@Z
-    MCAPI RegionFile(class Core::Path const&);
+    MCAPI explicit RegionFile(class Core::Path const&);
 
     // symbol: ?open@RegionFile@@QEAA_NXZ
     MCAPI bool open();

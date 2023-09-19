@@ -11,8 +11,8 @@
 class ResourcePackClientResponsePacket : public ::Packet {
 public:
     // prevent constructor by default
-    ResourcePackClientResponsePacket& operator=(ResourcePackClientResponsePacket const&) = delete;
-    ResourcePackClientResponsePacket(ResourcePackClientResponsePacket const&)            = delete;
+    ResourcePackClientResponsePacket& operator=(ResourcePackClientResponsePacket const&);
+    ResourcePackClientResponsePacket(ResourcePackClientResponsePacket const&);
 
 public:
     // NOLINTBEGIN

@@ -15,9 +15,9 @@ namespace gametest { class IGameTestListener; }
 class GameTestInstanceLedger : public ::gametest::IGameTestListener {
 public:
     // prevent constructor by default
-    GameTestInstanceLedger& operator=(GameTestInstanceLedger const&) = delete;
-    GameTestInstanceLedger(GameTestInstanceLedger const&)            = delete;
-    GameTestInstanceLedger()                                         = delete;
+    GameTestInstanceLedger& operator=(GameTestInstanceLedger const&);
+    GameTestInstanceLedger(GameTestInstanceLedger const&);
+    GameTestInstanceLedger();
 
 public:
     // NOLINTBEGIN
@@ -28,7 +28,7 @@ public:
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
 
     // symbol: ??0GameTestInstanceLedger@@QEAA@AEAVLevelStorage@@@Z
-    MCAPI GameTestInstanceLedger(class LevelStorage&);
+    MCAPI explicit GameTestInstanceLedger(class LevelStorage&);
 
     // symbol: ?clear@GameTestInstanceLedger@@QEAAXV?$AutomaticID@VDimension@@H@@@Z
     MCAPI void clear(class AutomaticID<class Dimension, int>);

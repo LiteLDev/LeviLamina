@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class NetherWartBlock : public ::BushBlock {
 public:
     // prevent constructor by default
-    NetherWartBlock& operator=(NetherWartBlock const&) = delete;
-    NetherWartBlock(NetherWartBlock const&)            = delete;
-    NetherWartBlock()                                  = delete;
+    NetherWartBlock& operator=(NetherWartBlock const&);
+    NetherWartBlock(NetherWartBlock const&);
+    NetherWartBlock();
 
 public:
     // NOLINTBEGIN

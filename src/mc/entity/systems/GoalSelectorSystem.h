@@ -8,9 +8,9 @@
 class GoalSelectorSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    GoalSelectorSystem& operator=(GoalSelectorSystem const&) = delete;
-    GoalSelectorSystem(GoalSelectorSystem const&)            = delete;
-    GoalSelectorSystem()                                     = delete;
+    GoalSelectorSystem& operator=(GoalSelectorSystem const&);
+    GoalSelectorSystem(GoalSelectorSystem const&);
+    GoalSelectorSystem();
 
 public:
     // NOLINTBEGIN

@@ -5,14 +5,14 @@
 class GameDataSaveTimer {
 public:
     // prevent constructor by default
-    GameDataSaveTimer& operator=(GameDataSaveTimer const&) = delete;
-    GameDataSaveTimer(GameDataSaveTimer const&)            = delete;
-    GameDataSaveTimer()                                    = delete;
+    GameDataSaveTimer& operator=(GameDataSaveTimer const&);
+    GameDataSaveTimer(GameDataSaveTimer const&);
+    GameDataSaveTimer();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0GameDataSaveTimer@@QEAA@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z
-    MCAPI GameDataSaveTimer(std::chrono::nanoseconds);
+    MCAPI explicit GameDataSaveTimer(std::chrono::nanoseconds);
 
     // symbol: ?areStorageActionsAllowed@GameDataSaveTimer@@QEBA_NXZ
     MCAPI bool areStorageActionsAllowed() const;

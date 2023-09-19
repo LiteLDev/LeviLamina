@@ -15,9 +15,9 @@ namespace PlayerCapabilities {
 struct SharedData {
 public:
     // prevent constructor by default
-    SharedData& operator=(SharedData const&) = delete;
-    SharedData(SharedData const&)            = delete;
-    SharedData()                             = delete;
+    SharedData& operator=(SharedData const&);
+    SharedData(SharedData const&);
+    SharedData();
 
 public:
     // NOLINTBEGIN

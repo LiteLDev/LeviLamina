@@ -5,8 +5,8 @@
 class MoveActorAbsoluteData {
 public:
     // prevent constructor by default
-    MoveActorAbsoluteData& operator=(MoveActorAbsoluteData const&) = delete;
-    MoveActorAbsoluteData(MoveActorAbsoluteData const&)            = delete;
+    MoveActorAbsoluteData& operator=(MoveActorAbsoluteData const&);
+    MoveActorAbsoluteData(MoveActorAbsoluteData const&);
 
 public:
     // NOLINTBEGIN
@@ -14,7 +14,7 @@ public:
     MCAPI MoveActorAbsoluteData();
 
     // symbol: ??0MoveActorAbsoluteData@@QEAA@AEBVActor@@@Z
-    MCAPI MoveActorAbsoluteData(class Actor const&);
+    MCAPI explicit MoveActorAbsoluteData(class Actor const&);
 
     // symbol: ?calculateDelta@MoveActorAbsoluteData@@QEBA?AVMoveActorDeltaData@@AEBV1@@Z
     MCAPI class MoveActorDeltaData calculateDelta(class MoveActorAbsoluteData const&) const;

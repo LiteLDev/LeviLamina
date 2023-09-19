@@ -9,8 +9,8 @@
 class Trade2ContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // prevent constructor by default
-    Trade2ContainerScreenValidator& operator=(Trade2ContainerScreenValidator const&) = delete;
-    Trade2ContainerScreenValidator(Trade2ContainerScreenValidator const&)            = delete;
+    Trade2ContainerScreenValidator& operator=(Trade2ContainerScreenValidator const&);
+    Trade2ContainerScreenValidator(Trade2ContainerScreenValidator const&);
 
 public:
     // NOLINTBEGIN

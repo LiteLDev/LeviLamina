@@ -10,9 +10,9 @@ namespace ScriptModuleMinecraft {
 struct ScriptEntityHitInformation {
 public:
     // prevent constructor by default
-    ScriptEntityHitInformation& operator=(ScriptEntityHitInformation const&) = delete;
-    ScriptEntityHitInformation(ScriptEntityHitInformation const&)            = delete;
-    ScriptEntityHitInformation()                                             = delete;
+    ScriptEntityHitInformation& operator=(ScriptEntityHitInformation const&);
+    ScriptEntityHitInformation(ScriptEntityHitInformation const&);
+    ScriptEntityHitInformation();
 
 public:
     // NOLINTBEGIN

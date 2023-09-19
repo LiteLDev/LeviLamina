@@ -19,9 +19,9 @@ public:
     class PillagerOutpostPiece : public ::TemplateStructurePiece {
     public:
         // prevent constructor by default
-        PillagerOutpostPiece& operator=(PillagerOutpostPiece const&) = delete;
-        PillagerOutpostPiece(PillagerOutpostPiece const&)            = delete;
-        PillagerOutpostPiece()                                       = delete;
+        PillagerOutpostPiece& operator=(PillagerOutpostPiece const&);
+        PillagerOutpostPiece(PillagerOutpostPiece const&);
+        PillagerOutpostPiece();
 
     public:
         // NOLINTBEGIN
@@ -64,9 +64,9 @@ public:
 
 public:
     // prevent constructor by default
-    PillagerOutpostPieces& operator=(PillagerOutpostPieces const&) = delete;
-    PillagerOutpostPieces(PillagerOutpostPieces const&)            = delete;
-    PillagerOutpostPieces()                                        = delete;
+    PillagerOutpostPieces& operator=(PillagerOutpostPieces const&);
+    PillagerOutpostPieces(PillagerOutpostPieces const&);
+    PillagerOutpostPieces();
 
     // private:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class BlockDefinitionLoader {
 public:
     // prevent constructor by default
-    BlockDefinitionLoader& operator=(BlockDefinitionLoader const&) = delete;
-    BlockDefinitionLoader(BlockDefinitionLoader const&)            = delete;
-    BlockDefinitionLoader()                                        = delete;
+    BlockDefinitionLoader& operator=(BlockDefinitionLoader const&);
+    BlockDefinitionLoader(BlockDefinitionLoader const&);
+    BlockDefinitionLoader();
 
 public:
     // NOLINTBEGIN

@@ -8,8 +8,8 @@
 class BodyControl : public ::Control {
 public:
     // prevent constructor by default
-    BodyControl& operator=(BodyControl const&) = delete;
-    BodyControl(BodyControl const&)            = delete;
+    BodyControl& operator=(BodyControl const&);
+    BodyControl(BodyControl const&);
 
 public:
     // NOLINTBEGIN

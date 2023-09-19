@@ -26,9 +26,9 @@
 class Animal : public ::Mob {
 public:
     // prevent constructor by default
-    Animal& operator=(Animal const&) = delete;
-    Animal(Animal const&)            = delete;
-    Animal()                         = delete;
+    Animal& operator=(Animal const&);
+    Animal(Animal const&);
+    Animal();
 
 public:
     // NOLINTBEGIN

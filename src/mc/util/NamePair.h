@@ -7,9 +7,9 @@ namespace TextureSetHelpers {
 class NamePair {
 public:
     // prevent constructor by default
-    NamePair& operator=(NamePair const&) = delete;
-    NamePair(NamePair const&)            = delete;
-    NamePair()                           = delete;
+    NamePair& operator=(NamePair const&);
+    NamePair(NamePair const&);
+    NamePair();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 struct LevelChunkAndSubChunkLoggingData {
 public:
     // prevent constructor by default
-    LevelChunkAndSubChunkLoggingData& operator=(LevelChunkAndSubChunkLoggingData const&) = delete;
-    LevelChunkAndSubChunkLoggingData(LevelChunkAndSubChunkLoggingData const&)            = delete;
-    LevelChunkAndSubChunkLoggingData()                                                   = delete;
+    LevelChunkAndSubChunkLoggingData& operator=(LevelChunkAndSubChunkLoggingData const&);
+    LevelChunkAndSubChunkLoggingData(LevelChunkAndSubChunkLoggingData const&);
+    LevelChunkAndSubChunkLoggingData();
 
 public:
     // NOLINTBEGIN

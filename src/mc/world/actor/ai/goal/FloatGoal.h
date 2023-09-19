@@ -9,9 +9,9 @@
 class FloatGoal : public ::Goal {
 public:
     // prevent constructor by default
-    FloatGoal& operator=(FloatGoal const&) = delete;
-    FloatGoal(FloatGoal const&)            = delete;
-    FloatGoal()                            = delete;
+    FloatGoal& operator=(FloatGoal const&);
+    FloatGoal(FloatGoal const&);
+    FloatGoal();
 
 public:
     // NOLINTBEGIN

@@ -15,8 +15,8 @@ namespace RakNet {
 class HuffmanEncodingTree {
 public:
     // prevent constructor by default
-    HuffmanEncodingTree& operator=(HuffmanEncodingTree const&) = delete;
-    HuffmanEncodingTree(HuffmanEncodingTree const&)            = delete;
+    HuffmanEncodingTree& operator=(HuffmanEncodingTree const&);
+    HuffmanEncodingTree(HuffmanEncodingTree const&);
 
 public:
     // NOLINTBEGIN

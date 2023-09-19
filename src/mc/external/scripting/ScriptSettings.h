@@ -5,8 +5,8 @@
 struct ScriptSettings {
 public:
     // prevent constructor by default
-    ScriptSettings& operator=(ScriptSettings const&) = delete;
-    ScriptSettings(ScriptSettings const&)            = delete;
+    ScriptSettings& operator=(ScriptSettings const&);
+    ScriptSettings(ScriptSettings const&);
 
 public:
     // NOLINTBEGIN

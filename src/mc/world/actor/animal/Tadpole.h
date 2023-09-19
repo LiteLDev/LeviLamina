@@ -26,9 +26,9 @@
 class Tadpole : public ::WaterAnimal {
 public:
     // prevent constructor by default
-    Tadpole& operator=(Tadpole const&) = delete;
-    Tadpole(Tadpole const&)            = delete;
-    Tadpole()                          = delete;
+    Tadpole& operator=(Tadpole const&);
+    Tadpole(Tadpole const&);
+    Tadpole();
 
 public:
     // NOLINTBEGIN

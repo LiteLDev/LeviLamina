@@ -8,9 +8,9 @@
 struct PauseScreenCapabilities {
 public:
     // prevent constructor by default
-    PauseScreenCapabilities& operator=(PauseScreenCapabilities const&) = delete;
-    PauseScreenCapabilities(PauseScreenCapabilities const&)            = delete;
-    PauseScreenCapabilities()                                          = delete;
+    PauseScreenCapabilities& operator=(PauseScreenCapabilities const&);
+    PauseScreenCapabilities(PauseScreenCapabilities const&);
+    PauseScreenCapabilities();
 
 public:
     // NOLINTBEGIN

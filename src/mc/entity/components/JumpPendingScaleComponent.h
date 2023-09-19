@@ -5,7 +5,7 @@
 struct JumpPendingScaleComponent {
 public:
     // prevent constructor by default
-    JumpPendingScaleComponent& operator=(JumpPendingScaleComponent const&) = delete;
-    JumpPendingScaleComponent(JumpPendingScaleComponent const&)            = delete;
-    JumpPendingScaleComponent()                                            = delete;
+    JumpPendingScaleComponent& operator=(JumpPendingScaleComponent const&);
+    JumpPendingScaleComponent(JumpPendingScaleComponent const&);
+    JumpPendingScaleComponent();
 };

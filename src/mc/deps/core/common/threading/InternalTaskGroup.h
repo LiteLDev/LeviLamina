@@ -11,9 +11,9 @@
 class InternalTaskGroup : public ::IBackgroundTaskOwner {
 public:
     // prevent constructor by default
-    InternalTaskGroup& operator=(InternalTaskGroup const&) = delete;
-    InternalTaskGroup(InternalTaskGroup const&)            = delete;
-    InternalTaskGroup()                                    = delete;
+    InternalTaskGroup& operator=(InternalTaskGroup const&);
+    InternalTaskGroup(InternalTaskGroup const&);
+    InternalTaskGroup();
 
 public:
     // NOLINTBEGIN

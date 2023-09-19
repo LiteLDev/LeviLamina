@@ -11,9 +11,9 @@ namespace ScriptModuleMinecraft {
 class ScriptWatchdogTerminateReason {
 public:
     // prevent constructor by default
-    ScriptWatchdogTerminateReason& operator=(ScriptWatchdogTerminateReason const&) = delete;
-    ScriptWatchdogTerminateReason(ScriptWatchdogTerminateReason const&)            = delete;
-    ScriptWatchdogTerminateReason()                                                = delete;
+    ScriptWatchdogTerminateReason& operator=(ScriptWatchdogTerminateReason const&);
+    ScriptWatchdogTerminateReason(ScriptWatchdogTerminateReason const&);
+    ScriptWatchdogTerminateReason();
 
 public:
     // NOLINTBEGIN

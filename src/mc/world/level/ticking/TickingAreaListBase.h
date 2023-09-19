@@ -5,9 +5,9 @@
 class TickingAreaListBase {
 public:
     // prevent constructor by default
-    TickingAreaListBase& operator=(TickingAreaListBase const&) = delete;
-    TickingAreaListBase(TickingAreaListBase const&)            = delete;
-    TickingAreaListBase()                                      = delete;
+    TickingAreaListBase& operator=(TickingAreaListBase const&);
+    TickingAreaListBase(TickingAreaListBase const&);
+    TickingAreaListBase();
 
 public:
     // NOLINTBEGIN

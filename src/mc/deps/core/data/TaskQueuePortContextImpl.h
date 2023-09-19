@@ -11,9 +11,9 @@
 class TaskQueuePortContextImpl : public ::ITaskQueuePortContext {
 public:
     // prevent constructor by default
-    TaskQueuePortContextImpl& operator=(TaskQueuePortContextImpl const&) = delete;
-    TaskQueuePortContextImpl(TaskQueuePortContextImpl const&)            = delete;
-    TaskQueuePortContextImpl()                                           = delete;
+    TaskQueuePortContextImpl& operator=(TaskQueuePortContextImpl const&);
+    TaskQueuePortContextImpl(TaskQueuePortContextImpl const&);
+    TaskQueuePortContextImpl();
 
 public:
     // NOLINTBEGIN

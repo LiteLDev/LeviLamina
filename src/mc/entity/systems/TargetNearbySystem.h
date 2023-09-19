@@ -8,9 +8,9 @@
 class TargetNearbySystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    TargetNearbySystem& operator=(TargetNearbySystem const&) = delete;
-    TargetNearbySystem(TargetNearbySystem const&)            = delete;
-    TargetNearbySystem()                                     = delete;
+    TargetNearbySystem& operator=(TargetNearbySystem const&);
+    TargetNearbySystem(TargetNearbySystem const&);
+    TargetNearbySystem();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 struct TropicalFishInfo {
 public:
     // prevent constructor by default
-    TropicalFishInfo& operator=(TropicalFishInfo const&) = delete;
-    TropicalFishInfo(TropicalFishInfo const&)            = delete;
-    TropicalFishInfo()                                   = delete;
+    TropicalFishInfo& operator=(TropicalFishInfo const&);
+    TropicalFishInfo(TropicalFishInfo const&);
+    TropicalFishInfo();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class ThrownTridentNormalTickSystem {
 public:
     // prevent constructor by default
-    ThrownTridentNormalTickSystem& operator=(ThrownTridentNormalTickSystem const&) = delete;
-    ThrownTridentNormalTickSystem(ThrownTridentNormalTickSystem const&)            = delete;
-    ThrownTridentNormalTickSystem()                                                = delete;
+    ThrownTridentNormalTickSystem& operator=(ThrownTridentNormalTickSystem const&);
+    ThrownTridentNormalTickSystem(ThrownTridentNormalTickSystem const&);
+    ThrownTridentNormalTickSystem();
 
 public:
     // NOLINTBEGIN

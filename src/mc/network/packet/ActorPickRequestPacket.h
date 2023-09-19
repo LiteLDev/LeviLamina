@@ -10,8 +10,8 @@
 class ActorPickRequestPacket : public ::Packet {
 public:
     // prevent constructor by default
-    ActorPickRequestPacket& operator=(ActorPickRequestPacket const&) = delete;
-    ActorPickRequestPacket(ActorPickRequestPacket const&)            = delete;
+    ActorPickRequestPacket& operator=(ActorPickRequestPacket const&);
+    ActorPickRequestPacket(ActorPickRequestPacket const&);
 
 public:
     // NOLINTBEGIN

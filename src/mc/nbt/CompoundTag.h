@@ -8,8 +8,8 @@
 class CompoundTag : public ::Tag {
 public:
     // prevent constructor by default
-    CompoundTag& operator=(CompoundTag const&) = delete;
-    CompoundTag(CompoundTag const&)            = delete;
+    CompoundTag& operator=(CompoundTag const&);
+    CompoundTag(CompoundTag const&);
 
 public:
     // NOLINTBEGIN

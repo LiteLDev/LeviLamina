@@ -5,7 +5,7 @@
 struct YBlendingBugSettings {
 public:
     // prevent constructor by default
-    YBlendingBugSettings& operator=(YBlendingBugSettings const&) = delete;
-    YBlendingBugSettings(YBlendingBugSettings const&)            = delete;
-    YBlendingBugSettings()                                       = delete;
+    YBlendingBugSettings& operator=(YBlendingBugSettings const&);
+    YBlendingBugSettings(YBlendingBugSettings const&);
+    YBlendingBugSettings();
 };

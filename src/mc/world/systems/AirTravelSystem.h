@@ -5,9 +5,9 @@
 class AirTravelSystem {
 public:
     // prevent constructor by default
-    AirTravelSystem& operator=(AirTravelSystem const&) = delete;
-    AirTravelSystem(AirTravelSystem const&)            = delete;
-    AirTravelSystem()                                  = delete;
+    AirTravelSystem& operator=(AirTravelSystem const&);
+    AirTravelSystem(AirTravelSystem const&);
+    AirTravelSystem();
 
 public:
     // NOLINTBEGIN

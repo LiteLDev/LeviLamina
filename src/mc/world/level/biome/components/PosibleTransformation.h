@@ -5,8 +5,8 @@
 struct PosibleTransformation {
 public:
     // prevent constructor by default
-    PosibleTransformation(PosibleTransformation const&) = delete;
-    PosibleTransformation()                             = delete;
+    PosibleTransformation(PosibleTransformation const&);
+    PosibleTransformation();
 
 public:
     // NOLINTBEGIN

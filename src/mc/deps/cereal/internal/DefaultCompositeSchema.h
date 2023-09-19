@@ -23,9 +23,9 @@ namespace cereal::internal {
 class DefaultCompositeSchema : public ::cereal::internal::BasicCompositeSchema {
 public:
     // prevent constructor by default
-    DefaultCompositeSchema& operator=(DefaultCompositeSchema const&) = delete;
-    DefaultCompositeSchema(DefaultCompositeSchema const&)            = delete;
-    DefaultCompositeSchema()                                         = delete;
+    DefaultCompositeSchema& operator=(DefaultCompositeSchema const&);
+    DefaultCompositeSchema(DefaultCompositeSchema const&);
+    DefaultCompositeSchema();
 
 public:
     // NOLINTBEGIN

@@ -14,9 +14,9 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class NetworkSession : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    NetworkSession& operator=(NetworkSession const&) = delete;
-    NetworkSession(NetworkSession const&)            = delete;
-    NetworkSession()                                 = delete;
+    NetworkSession& operator=(NetworkSession const&);
+    NetworkSession(NetworkSession const&);
+    NetworkSession();
 
 public:
     // NOLINTBEGIN

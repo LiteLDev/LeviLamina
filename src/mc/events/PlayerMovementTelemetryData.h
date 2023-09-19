@@ -5,8 +5,8 @@
 class PlayerMovementTelemetryData {
 public:
     // prevent constructor by default
-    PlayerMovementTelemetryData& operator=(PlayerMovementTelemetryData const&) = delete;
-    PlayerMovementTelemetryData(PlayerMovementTelemetryData const&)            = delete;
+    PlayerMovementTelemetryData& operator=(PlayerMovementTelemetryData const&);
+    PlayerMovementTelemetryData(PlayerMovementTelemetryData const&);
 
 public:
     // NOLINTBEGIN

@@ -10,8 +10,8 @@
 class ToastRequestPacket : public ::Packet {
 public:
     // prevent constructor by default
-    ToastRequestPacket& operator=(ToastRequestPacket const&) = delete;
-    ToastRequestPacket(ToastRequestPacket const&)            = delete;
+    ToastRequestPacket& operator=(ToastRequestPacket const&);
+    ToastRequestPacket(ToastRequestPacket const&);
 
 public:
     // NOLINTBEGIN

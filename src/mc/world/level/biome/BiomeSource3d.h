@@ -8,9 +8,9 @@
 class BiomeSource3d : public ::BiomeSource {
 public:
     // prevent constructor by default
-    BiomeSource3d& operator=(BiomeSource3d const&) = delete;
-    BiomeSource3d(BiomeSource3d const&)            = delete;
-    BiomeSource3d()                                = delete;
+    BiomeSource3d& operator=(BiomeSource3d const&);
+    BiomeSource3d(BiomeSource3d const&);
+    BiomeSource3d();
 
 public:
     // NOLINTBEGIN

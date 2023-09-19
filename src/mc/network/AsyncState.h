@@ -5,9 +5,9 @@
 class AsyncState {
 public:
     // prevent constructor by default
-    AsyncState& operator=(AsyncState const&) = delete;
-    AsyncState(AsyncState const&)            = delete;
-    AsyncState()                             = delete;
+    AsyncState& operator=(AsyncState const&);
+    AsyncState(AsyncState const&);
+    AsyncState();
 
 public:
     // NOLINTBEGIN

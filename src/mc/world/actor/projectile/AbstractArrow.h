@@ -26,9 +26,9 @@
 class AbstractArrow : public ::PredictableProjectile {
 public:
     // prevent constructor by default
-    AbstractArrow& operator=(AbstractArrow const&) = delete;
-    AbstractArrow(AbstractArrow const&)            = delete;
-    AbstractArrow()                                = delete;
+    AbstractArrow& operator=(AbstractArrow const&);
+    AbstractArrow(AbstractArrow const&);
+    AbstractArrow();
 
 public:
     // NOLINTBEGIN

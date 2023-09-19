@@ -18,9 +18,9 @@ public:
     struct GateWayGenerator {
     public:
         // prevent constructor by default
-        GateWayGenerator& operator=(GateWayGenerator const&) = delete;
-        GateWayGenerator(GateWayGenerator const&)            = delete;
-        GateWayGenerator()                                   = delete;
+        GateWayGenerator& operator=(GateWayGenerator const&);
+        GateWayGenerator(GateWayGenerator const&);
+        GateWayGenerator();
 
     public:
         // NOLINTBEGIN
@@ -32,14 +32,14 @@ public:
 
 public:
     // prevent constructor by default
-    EndDragonFight& operator=(EndDragonFight const&) = delete;
-    EndDragonFight(EndDragonFight const&)            = delete;
-    EndDragonFight()                                 = delete;
+    EndDragonFight& operator=(EndDragonFight const&);
+    EndDragonFight(EndDragonFight const&);
+    EndDragonFight();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0EndDragonFight@@QEAA@AEAVBlockSource@@@Z
-    MCAPI EndDragonFight(class BlockSource&);
+    MCAPI explicit EndDragonFight(class BlockSource&);
 
     // symbol: ?loadData@EndDragonFight@@QEAAXAEBVCompoundTag@@@Z
     MCAPI void loadData(class CompoundTag const&);

@@ -8,9 +8,9 @@
 class StructureCommand : public ::Command {
 public:
     // prevent constructor by default
-    StructureCommand& operator=(StructureCommand const&) = delete;
-    StructureCommand(StructureCommand const&)            = delete;
-    StructureCommand()                                   = delete;
+    StructureCommand& operator=(StructureCommand const&);
+    StructureCommand(StructureCommand const&);
+    StructureCommand();
 
 public:
     // NOLINTBEGIN

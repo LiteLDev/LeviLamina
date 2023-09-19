@@ -17,9 +17,9 @@ public:
 
 public:
     // prevent constructor by default
-    CameraItemComponentLegacy& operator=(CameraItemComponentLegacy const&) = delete;
-    CameraItemComponentLegacy(CameraItemComponentLegacy const&)            = delete;
-    CameraItemComponentLegacy()                                            = delete;
+    CameraItemComponentLegacy& operator=(CameraItemComponentLegacy const&);
+    CameraItemComponentLegacy(CameraItemComponentLegacy const&);
+    CameraItemComponentLegacy();
 
 public:
     // NOLINTBEGIN
@@ -63,7 +63,7 @@ public:
     virtual bool useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&);
 
     // symbol: ??0CameraItemComponentLegacy@@QEAA@AEAVItem@@@Z
-    MCAPI CameraItemComponentLegacy(class Item&);
+    MCAPI explicit CameraItemComponentLegacy(class Item&);
 
     // symbol: ?init@CameraItemComponentLegacy@@QEAA_NAEAVValue@Json@@AEBVSemVersion@@@Z
     MCAPI bool init(class Json::Value&, class SemVersion const&);

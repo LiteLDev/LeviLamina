@@ -8,9 +8,9 @@
 class RandomPos {
 public:
     // prevent constructor by default
-    RandomPos& operator=(RandomPos const&) = delete;
-    RandomPos(RandomPos const&)            = delete;
-    RandomPos()                            = delete;
+    RandomPos& operator=(RandomPos const&);
+    RandomPos(RandomPos const&);
+    RandomPos();
 
 public:
     // NOLINTBEGIN

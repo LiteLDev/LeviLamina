@@ -9,8 +9,8 @@
 class SequenceBehaviorNode : public ::BehaviorNode {
 public:
     // prevent constructor by default
-    SequenceBehaviorNode& operator=(SequenceBehaviorNode const&) = delete;
-    SequenceBehaviorNode(SequenceBehaviorNode const&)            = delete;
+    SequenceBehaviorNode& operator=(SequenceBehaviorNode const&);
+    SequenceBehaviorNode(SequenceBehaviorNode const&);
 
 public:
     // NOLINTBEGIN

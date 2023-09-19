@@ -10,8 +10,8 @@ namespace Json { class Value; }
 class BlockStateGroup {
 public:
     // prevent constructor by default
-    BlockStateGroup& operator=(BlockStateGroup const&) = delete;
-    BlockStateGroup(BlockStateGroup const&)            = delete;
+    BlockStateGroup& operator=(BlockStateGroup const&);
+    BlockStateGroup(BlockStateGroup const&);
 
 public:
     // NOLINTBEGIN

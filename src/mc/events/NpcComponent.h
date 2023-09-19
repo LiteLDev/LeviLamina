@@ -16,8 +16,8 @@ namespace npc { struct UrlAction; }
 class NpcComponent {
 public:
     // prevent constructor by default
-    NpcComponent& operator=(NpcComponent const&) = delete;
-    NpcComponent(NpcComponent const&)            = delete;
+    NpcComponent& operator=(NpcComponent const&);
+    NpcComponent(NpcComponent const&);
 
 public:
     // NOLINTBEGIN

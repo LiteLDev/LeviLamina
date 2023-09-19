@@ -8,9 +8,9 @@
 class ShortTag : public ::Tag {
 public:
     // prevent constructor by default
-    ShortTag& operator=(ShortTag const&) = delete;
-    ShortTag(ShortTag const&)            = delete;
-    ShortTag()                           = delete;
+    ShortTag& operator=(ShortTag const&);
+    ShortTag(ShortTag const&);
+    ShortTag();
 
 public:
     // NOLINTBEGIN
@@ -39,7 +39,7 @@ public:
     virtual uint64 hash() const;
 
     // symbol: ??0ShortTag@@QEAA@F@Z
-    MCAPI ShortTag(short);
+    MCAPI explicit ShortTag(short);
 
     // NOLINTEND
 };

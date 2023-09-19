@@ -5,8 +5,8 @@
 class JigsawStructureBlockTagRulesRegistry {
 public:
     // prevent constructor by default
-    JigsawStructureBlockTagRulesRegistry& operator=(JigsawStructureBlockTagRulesRegistry const&) = delete;
-    JigsawStructureBlockTagRulesRegistry(JigsawStructureBlockTagRulesRegistry const&)            = delete;
+    JigsawStructureBlockTagRulesRegistry& operator=(JigsawStructureBlockTagRulesRegistry const&);
+    JigsawStructureBlockTagRulesRegistry(JigsawStructureBlockTagRulesRegistry const&);
 
 public:
     // NOLINTBEGIN

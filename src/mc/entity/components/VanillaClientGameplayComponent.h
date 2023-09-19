@@ -5,7 +5,7 @@
 struct VanillaClientGameplayComponent {
 public:
     // prevent constructor by default
-    VanillaClientGameplayComponent& operator=(VanillaClientGameplayComponent const&) = delete;
-    VanillaClientGameplayComponent(VanillaClientGameplayComponent const&)            = delete;
-    VanillaClientGameplayComponent()                                                 = delete;
+    VanillaClientGameplayComponent& operator=(VanillaClientGameplayComponent const&);
+    VanillaClientGameplayComponent(VanillaClientGameplayComponent const&);
+    VanillaClientGameplayComponent();
 };

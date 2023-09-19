@@ -5,9 +5,9 @@
 struct BlockSet {
 public:
     // prevent constructor by default
-    BlockSet& operator=(BlockSet const&) = delete;
-    BlockSet(BlockSet const&)            = delete;
-    BlockSet()                           = delete;
+    BlockSet& operator=(BlockSet const&);
+    BlockSet(BlockSet const&);
+    BlockSet();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class AncientCityFeature : public ::StructureFeature {
 public:
     // prevent constructor by default
-    AncientCityFeature& operator=(AncientCityFeature const&) = delete;
-    AncientCityFeature(AncientCityFeature const&)            = delete;
-    AncientCityFeature()                                     = delete;
+    AncientCityFeature& operator=(AncientCityFeature const&);
+    AncientCityFeature(AncientCityFeature const&);
+    AncientCityFeature();
 
 public:
     // NOLINTBEGIN

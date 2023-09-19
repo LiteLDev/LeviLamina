@@ -5,9 +5,9 @@
 struct ItemStackRequestSlotInfo {
 public:
     // prevent constructor by default
-    ItemStackRequestSlotInfo& operator=(ItemStackRequestSlotInfo const&) = delete;
-    ItemStackRequestSlotInfo(ItemStackRequestSlotInfo const&)            = delete;
-    ItemStackRequestSlotInfo()                                           = delete;
+    ItemStackRequestSlotInfo& operator=(ItemStackRequestSlotInfo const&);
+    ItemStackRequestSlotInfo(ItemStackRequestSlotInfo const&);
+    ItemStackRequestSlotInfo();
 
 public:
     // NOLINTBEGIN

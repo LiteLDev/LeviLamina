@@ -5,7 +5,7 @@
 class IScreenChangedEventing {
 public:
     // prevent constructor by default
-    IScreenChangedEventing& operator=(IScreenChangedEventing const&) = delete;
-    IScreenChangedEventing(IScreenChangedEventing const&)            = delete;
-    IScreenChangedEventing()                                         = delete;
+    IScreenChangedEventing& operator=(IScreenChangedEventing const&);
+    IScreenChangedEventing(IScreenChangedEventing const&);
+    IScreenChangedEventing();
 };

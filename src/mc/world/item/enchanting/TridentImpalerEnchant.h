@@ -8,9 +8,9 @@
 class TridentImpalerEnchant : public ::Enchant {
 public:
     // prevent constructor by default
-    TridentImpalerEnchant& operator=(TridentImpalerEnchant const&) = delete;
-    TridentImpalerEnchant(TridentImpalerEnchant const&)            = delete;
-    TridentImpalerEnchant()                                        = delete;
+    TridentImpalerEnchant& operator=(TridentImpalerEnchant const&);
+    TridentImpalerEnchant(TridentImpalerEnchant const&);
+    TridentImpalerEnchant();
 
 public:
     // NOLINTBEGIN

@@ -7,9 +7,9 @@ namespace Core {
 class Result {
 public:
     // prevent constructor by default
-    Result& operator=(Result const&) = delete;
-    Result(Result const&)            = delete;
-    Result()                         = delete;
+    Result& operator=(Result const&);
+    Result(Result const&);
+    Result();
 
 public:
     // NOLINTBEGIN
@@ -38,7 +38,7 @@ public:
     MCAPI char const* message() const;
 
     // symbol: ??BResult@Core@@QEBA_NXZ
-    MCAPI operator bool() const;
+    MCAPI explicit operator bool() const;
 
     // symbol: ??4Result@Core@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class Core::Result& operator=(class Core::Result&&);

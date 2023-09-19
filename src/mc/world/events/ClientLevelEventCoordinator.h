@@ -8,7 +8,7 @@
 class ClientLevelEventCoordinator : public ::LevelEventCoordinator {
 public:
     // prevent constructor by default
-    ClientLevelEventCoordinator& operator=(ClientLevelEventCoordinator const&) = delete;
-    ClientLevelEventCoordinator(ClientLevelEventCoordinator const&)            = delete;
-    ClientLevelEventCoordinator()                                              = delete;
+    ClientLevelEventCoordinator& operator=(ClientLevelEventCoordinator const&);
+    ClientLevelEventCoordinator(ClientLevelEventCoordinator const&);
+    ClientLevelEventCoordinator();
 };

@@ -5,9 +5,9 @@
 class SquidPreAiStepSystem {
 public:
     // prevent constructor by default
-    SquidPreAiStepSystem& operator=(SquidPreAiStepSystem const&) = delete;
-    SquidPreAiStepSystem(SquidPreAiStepSystem const&)            = delete;
-    SquidPreAiStepSystem()                                       = delete;
+    SquidPreAiStepSystem& operator=(SquidPreAiStepSystem const&);
+    SquidPreAiStepSystem(SquidPreAiStepSystem const&);
+    SquidPreAiStepSystem();
 
 public:
     // NOLINTBEGIN

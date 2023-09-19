@@ -11,8 +11,8 @@
 class SetDifficultyPacket : public ::Packet {
 public:
     // prevent constructor by default
-    SetDifficultyPacket& operator=(SetDifficultyPacket const&) = delete;
-    SetDifficultyPacket(SetDifficultyPacket const&)            = delete;
+    SetDifficultyPacket& operator=(SetDifficultyPacket const&);
+    SetDifficultyPacket(SetDifficultyPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -37,7 +37,7 @@ public:
     MCVAPI ~SetDifficultyPacket();
 
     // symbol: ??0SetDifficultyPacket@@QEAA@W4Difficulty@@@Z
-    MCAPI SetDifficultyPacket(::Difficulty);
+    MCAPI explicit SetDifficultyPacket(::Difficulty);
 
     // symbol: ??0SetDifficultyPacket@@QEAA@XZ
     MCAPI SetDifficultyPacket();

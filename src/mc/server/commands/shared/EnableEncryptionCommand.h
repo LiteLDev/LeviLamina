@@ -8,9 +8,9 @@
 class EnableEncryptionCommand : public ::Command {
 public:
     // prevent constructor by default
-    EnableEncryptionCommand& operator=(EnableEncryptionCommand const&) = delete;
-    EnableEncryptionCommand(EnableEncryptionCommand const&)            = delete;
-    EnableEncryptionCommand()                                          = delete;
+    EnableEncryptionCommand& operator=(EnableEncryptionCommand const&);
+    EnableEncryptionCommand(EnableEncryptionCommand const&);
+    EnableEncryptionCommand();
 
 public:
     // NOLINTBEGIN

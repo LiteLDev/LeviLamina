@@ -5,9 +5,9 @@
 struct ModuleIdentifier {
 public:
     // prevent constructor by default
-    ModuleIdentifier& operator=(ModuleIdentifier const&) = delete;
-    ModuleIdentifier(ModuleIdentifier const&)            = delete;
-    ModuleIdentifier()                                   = delete;
+    ModuleIdentifier& operator=(ModuleIdentifier const&);
+    ModuleIdentifier(ModuleIdentifier const&);
+    ModuleIdentifier();
 
 public:
     // NOLINTBEGIN

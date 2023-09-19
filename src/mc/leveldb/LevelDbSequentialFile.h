@@ -5,9 +5,9 @@
 class LevelDbSequentialFile {
 public:
     // prevent constructor by default
-    LevelDbSequentialFile& operator=(LevelDbSequentialFile const&) = delete;
-    LevelDbSequentialFile(LevelDbSequentialFile const&)            = delete;
-    LevelDbSequentialFile()                                        = delete;
+    LevelDbSequentialFile& operator=(LevelDbSequentialFile const&);
+    LevelDbSequentialFile(LevelDbSequentialFile const&);
+    LevelDbSequentialFile();
 
 public:
     // NOLINTBEGIN

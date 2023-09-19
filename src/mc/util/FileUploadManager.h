@@ -22,9 +22,9 @@ public:
     class MultiPartStreamHelper {
     public:
         // prevent constructor by default
-        MultiPartStreamHelper& operator=(MultiPartStreamHelper const&) = delete;
-        MultiPartStreamHelper(MultiPartStreamHelper const&)            = delete;
-        MultiPartStreamHelper()                                        = delete;
+        MultiPartStreamHelper& operator=(MultiPartStreamHelper const&);
+        MultiPartStreamHelper(MultiPartStreamHelper const&);
+        MultiPartStreamHelper();
 
     public:
         // NOLINTBEGIN
@@ -36,9 +36,9 @@ public:
 
 public:
     // prevent constructor by default
-    FileUploadManager& operator=(FileUploadManager const&) = delete;
-    FileUploadManager(FileUploadManager const&)            = delete;
-    FileUploadManager()                                    = delete;
+    FileUploadManager& operator=(FileUploadManager const&);
+    FileUploadManager(FileUploadManager const&);
+    FileUploadManager();
 
 public:
     // NOLINTBEGIN

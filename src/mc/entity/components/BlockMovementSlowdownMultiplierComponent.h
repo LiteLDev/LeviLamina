@@ -5,7 +5,7 @@
 struct BlockMovementSlowdownMultiplierComponent {
 public:
     // prevent constructor by default
-    BlockMovementSlowdownMultiplierComponent& operator=(BlockMovementSlowdownMultiplierComponent const&) = delete;
-    BlockMovementSlowdownMultiplierComponent(BlockMovementSlowdownMultiplierComponent const&)            = delete;
-    BlockMovementSlowdownMultiplierComponent()                                                           = delete;
+    BlockMovementSlowdownMultiplierComponent& operator=(BlockMovementSlowdownMultiplierComponent const&);
+    BlockMovementSlowdownMultiplierComponent(BlockMovementSlowdownMultiplierComponent const&);
+    BlockMovementSlowdownMultiplierComponent();
 };

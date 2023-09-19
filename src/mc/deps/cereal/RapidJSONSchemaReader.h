@@ -17,9 +17,9 @@ namespace cereal {
 class RapidJSONSchemaReader : public ::cereal::SchemaReader {
 public:
     // prevent constructor by default
-    RapidJSONSchemaReader& operator=(RapidJSONSchemaReader const&) = delete;
-    RapidJSONSchemaReader(RapidJSONSchemaReader const&)            = delete;
-    RapidJSONSchemaReader()                                        = delete;
+    RapidJSONSchemaReader& operator=(RapidJSONSchemaReader const&);
+    RapidJSONSchemaReader(RapidJSONSchemaReader const&);
+    RapidJSONSchemaReader();
 
 public:
     // NOLINTBEGIN
@@ -106,12 +106,12 @@ public:
 
     // symbol:
     // ??0RapidJSONSchemaReader@cereal@@QEAA@AEBV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@@Z
-    MCAPI RapidJSONSchemaReader(rapidjson::GenericValue<
-                                rapidjson::UTF8<char>,
-                                rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>> const&);
+    MCAPI explicit RapidJSONSchemaReader(rapidjson::GenericValue<
+                                         rapidjson::UTF8<char>,
+                                         rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>> const&);
 
     // symbol: ??0RapidJSONSchemaReader@cereal@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI RapidJSONSchemaReader(std::string const&);
+    MCAPI explicit RapidJSONSchemaReader(std::string const&);
 
     // NOLINTEND
 

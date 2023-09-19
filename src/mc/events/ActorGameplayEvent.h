@@ -6,7 +6,7 @@ template <typename T0>
 struct ActorGameplayEvent {
 public:
     // prevent constructor by default
-    ActorGameplayEvent& operator=(ActorGameplayEvent const&) = delete;
-    ActorGameplayEvent(ActorGameplayEvent const&)            = delete;
-    ActorGameplayEvent()                                     = delete;
+    ActorGameplayEvent& operator=(ActorGameplayEvent const&);
+    ActorGameplayEvent(ActorGameplayEvent const&);
+    ActorGameplayEvent();
 };

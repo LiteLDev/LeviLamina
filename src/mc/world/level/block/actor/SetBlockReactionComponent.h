@@ -8,9 +8,9 @@
 class SetBlockReactionComponent : public ::LabTableReactionComponent {
 public:
     // prevent constructor by default
-    SetBlockReactionComponent& operator=(SetBlockReactionComponent const&) = delete;
-    SetBlockReactionComponent(SetBlockReactionComponent const&)            = delete;
-    SetBlockReactionComponent()                                            = delete;
+    SetBlockReactionComponent& operator=(SetBlockReactionComponent const&);
+    SetBlockReactionComponent(SetBlockReactionComponent const&);
+    SetBlockReactionComponent();
 
 public:
     // NOLINTBEGIN

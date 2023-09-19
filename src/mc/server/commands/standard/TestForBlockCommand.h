@@ -8,9 +8,9 @@
 class TestForBlockCommand : public ::Command {
 public:
     // prevent constructor by default
-    TestForBlockCommand& operator=(TestForBlockCommand const&) = delete;
-    TestForBlockCommand(TestForBlockCommand const&)            = delete;
-    TestForBlockCommand()                                      = delete;
+    TestForBlockCommand& operator=(TestForBlockCommand const&);
+    TestForBlockCommand(TestForBlockCommand const&);
+    TestForBlockCommand();
 
 public:
     // NOLINTBEGIN

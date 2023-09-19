@@ -8,9 +8,9 @@
 class DimensionStateSystem {
 public:
     // prevent constructor by default
-    DimensionStateSystem& operator=(DimensionStateSystem const&) = delete;
-    DimensionStateSystem(DimensionStateSystem const&)            = delete;
-    DimensionStateSystem()                                       = delete;
+    DimensionStateSystem& operator=(DimensionStateSystem const&);
+    DimensionStateSystem(DimensionStateSystem const&);
+    DimensionStateSystem();
 
 public:
     // NOLINTBEGIN

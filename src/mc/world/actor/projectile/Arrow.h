@@ -31,9 +31,9 @@ namespace mce { class Color; }
 class Arrow : public ::AbstractArrow {
 public:
     // prevent constructor by default
-    Arrow& operator=(Arrow const&) = delete;
-    Arrow(Arrow const&)            = delete;
-    Arrow()                        = delete;
+    Arrow& operator=(Arrow const&);
+    Arrow(Arrow const&);
+    Arrow();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 struct MobJumpComponent {
 public:
     // prevent constructor by default
-    MobJumpComponent& operator=(MobJumpComponent const&) = delete;
-    MobJumpComponent(MobJumpComponent const&)            = delete;
-    MobJumpComponent()                                   = delete;
+    MobJumpComponent& operator=(MobJumpComponent const&);
+    MobJumpComponent(MobJumpComponent const&);
+    MobJumpComponent();
 };

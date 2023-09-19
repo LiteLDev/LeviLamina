@@ -8,9 +8,9 @@
 class ItemEventListener {
 public:
     // prevent constructor by default
-    ItemEventListener& operator=(ItemEventListener const&) = delete;
-    ItemEventListener(ItemEventListener const&)            = delete;
-    ItemEventListener()                                    = delete;
+    ItemEventListener& operator=(ItemEventListener const&);
+    ItemEventListener(ItemEventListener const&);
+    ItemEventListener();
 
 public:
     // NOLINTBEGIN

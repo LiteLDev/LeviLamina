@@ -7,9 +7,9 @@ namespace persona {
 struct PersonaCharacterHandle {
 public:
     // prevent constructor by default
-    PersonaCharacterHandle& operator=(PersonaCharacterHandle const&) = delete;
-    PersonaCharacterHandle(PersonaCharacterHandle const&)            = delete;
-    PersonaCharacterHandle()                                         = delete;
+    PersonaCharacterHandle& operator=(PersonaCharacterHandle const&);
+    PersonaCharacterHandle(PersonaCharacterHandle const&);
+    PersonaCharacterHandle();
 
 public:
     // NOLINTBEGIN

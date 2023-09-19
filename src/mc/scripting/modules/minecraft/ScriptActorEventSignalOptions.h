@@ -7,7 +7,7 @@ namespace ScriptModuleMinecraft {
 struct ScriptActorEventSignalOptions {
 public:
     // prevent constructor by default
-    ScriptActorEventSignalOptions() = delete;
+    ScriptActorEventSignalOptions();
 
 public:
     // NOLINTBEGIN

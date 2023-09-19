@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class StemBlock : public ::BushBlock {
 public:
     // prevent constructor by default
-    StemBlock& operator=(StemBlock const&) = delete;
-    StemBlock(StemBlock const&)            = delete;
-    StemBlock()                            = delete;
+    StemBlock& operator=(StemBlock const&);
+    StemBlock(StemBlock const&);
+    StemBlock();
 
 public:
     // NOLINTBEGIN

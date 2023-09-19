@@ -5,9 +5,9 @@
 class IDefinitionInstance {
 public:
     // prevent constructor by default
-    IDefinitionInstance& operator=(IDefinitionInstance const&) = delete;
-    IDefinitionInstance(IDefinitionInstance const&)            = delete;
-    IDefinitionInstance()                                      = delete;
+    IDefinitionInstance& operator=(IDefinitionInstance const&);
+    IDefinitionInstance(IDefinitionInstance const&);
+    IDefinitionInstance();
 
 public:
     // NOLINTBEGIN

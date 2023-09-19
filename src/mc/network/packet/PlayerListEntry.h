@@ -13,8 +13,8 @@ namespace mce { class UUID; }
 class PlayerListEntry {
 public:
     // prevent constructor by default
-    PlayerListEntry& operator=(PlayerListEntry const&) = delete;
-    PlayerListEntry(PlayerListEntry const&)            = delete;
+    PlayerListEntry& operator=(PlayerListEntry const&);
+    PlayerListEntry(PlayerListEntry const&);
 
 public:
     // NOLINTBEGIN
@@ -22,10 +22,10 @@ public:
     MCAPI PlayerListEntry();
 
     // symbol: ??0PlayerListEntry@@QEAA@VUUID@mce@@@Z
-    MCAPI PlayerListEntry(class mce::UUID);
+    MCAPI explicit PlayerListEntry(class mce::UUID);
 
     // symbol: ??0PlayerListEntry@@QEAA@AEBVPlayer@@@Z
-    MCAPI PlayerListEntry(class Player const&);
+    MCAPI explicit PlayerListEntry(class Player const&);
 
     // symbol: ?clone@PlayerListEntry@@QEBA?AV1@XZ
     MCAPI class PlayerListEntry clone() const;

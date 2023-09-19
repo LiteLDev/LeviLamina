@@ -10,8 +10,8 @@
 class SpawnParticleEffectPacket : public ::Packet {
 public:
     // prevent constructor by default
-    SpawnParticleEffectPacket& operator=(SpawnParticleEffectPacket const&) = delete;
-    SpawnParticleEffectPacket(SpawnParticleEffectPacket const&)            = delete;
+    SpawnParticleEffectPacket& operator=(SpawnParticleEffectPacket const&);
+    SpawnParticleEffectPacket(SpawnParticleEffectPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class PlayerVehicleTamedGoal : public ::Goal {
 public:
     // prevent constructor by default
-    PlayerVehicleTamedGoal& operator=(PlayerVehicleTamedGoal const&) = delete;
-    PlayerVehicleTamedGoal(PlayerVehicleTamedGoal const&)            = delete;
-    PlayerVehicleTamedGoal()                                         = delete;
+    PlayerVehicleTamedGoal& operator=(PlayerVehicleTamedGoal const&);
+    PlayerVehicleTamedGoal(PlayerVehicleTamedGoal const&);
+    PlayerVehicleTamedGoal();
 
 public:
     // NOLINTBEGIN
@@ -35,7 +35,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0PlayerVehicleTamedGoal@@QEAA@AEAVMob@@@Z
-    MCAPI PlayerVehicleTamedGoal(class Mob&);
+    MCAPI explicit PlayerVehicleTamedGoal(class Mob&);
 
     // NOLINTEND
 };

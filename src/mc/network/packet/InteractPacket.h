@@ -14,8 +14,8 @@ public:
 
 public:
     // prevent constructor by default
-    InteractPacket& operator=(InteractPacket const&) = delete;
-    InteractPacket(InteractPacket const&)            = delete;
+    InteractPacket& operator=(InteractPacket const&);
+    InteractPacket(InteractPacket const&);
 
 public:
     // NOLINTBEGIN

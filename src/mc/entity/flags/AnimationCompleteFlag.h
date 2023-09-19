@@ -7,9 +7,9 @@ namespace AgentComponents {
 struct AnimationCompleteFlag {
 public:
     // prevent constructor by default
-    AnimationCompleteFlag& operator=(AnimationCompleteFlag const&) = delete;
-    AnimationCompleteFlag(AnimationCompleteFlag const&)            = delete;
-    AnimationCompleteFlag()                                        = delete;
+    AnimationCompleteFlag& operator=(AnimationCompleteFlag const&);
+    AnimationCompleteFlag(AnimationCompleteFlag const&);
+    AnimationCompleteFlag();
 };
 
 }; // namespace AgentComponents

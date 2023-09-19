@@ -18,9 +18,9 @@ namespace Core {
 class StorageArea_windows {
 public:
     // prevent constructor by default
-    StorageArea_windows& operator=(StorageArea_windows const&) = delete;
-    StorageArea_windows(StorageArea_windows const&)            = delete;
-    StorageArea_windows()                                      = delete;
+    StorageArea_windows& operator=(StorageArea_windows const&);
+    StorageArea_windows(StorageArea_windows const&);
+    StorageArea_windows();
 
 public:
     // NOLINTBEGIN

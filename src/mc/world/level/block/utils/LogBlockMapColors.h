@@ -5,7 +5,7 @@
 struct LogBlockMapColors {
 public:
     // prevent constructor by default
-    LogBlockMapColors& operator=(LogBlockMapColors const&) = delete;
-    LogBlockMapColors(LogBlockMapColors const&)            = delete;
-    LogBlockMapColors()                                    = delete;
+    LogBlockMapColors& operator=(LogBlockMapColors const&);
+    LogBlockMapColors(LogBlockMapColors const&);
+    LogBlockMapColors();
 };

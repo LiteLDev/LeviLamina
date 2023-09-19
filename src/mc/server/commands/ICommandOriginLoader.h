@@ -5,7 +5,7 @@
 class ICommandOriginLoader {
 public:
     // prevent constructor by default
-    ICommandOriginLoader& operator=(ICommandOriginLoader const&) = delete;
-    ICommandOriginLoader(ICommandOriginLoader const&)            = delete;
-    ICommandOriginLoader()                                       = delete;
+    ICommandOriginLoader& operator=(ICommandOriginLoader const&);
+    ICommandOriginLoader(ICommandOriginLoader const&);
+    ICommandOriginLoader();
 };

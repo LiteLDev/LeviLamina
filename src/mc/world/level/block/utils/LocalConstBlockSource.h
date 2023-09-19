@@ -5,9 +5,9 @@
 class LocalConstBlockSource {
 public:
     // prevent constructor by default
-    LocalConstBlockSource& operator=(LocalConstBlockSource const&) = delete;
-    LocalConstBlockSource(LocalConstBlockSource const&)            = delete;
-    LocalConstBlockSource()                                        = delete;
+    LocalConstBlockSource& operator=(LocalConstBlockSource const&);
+    LocalConstBlockSource(LocalConstBlockSource const&);
+    LocalConstBlockSource();
 
 public:
     // NOLINTBEGIN

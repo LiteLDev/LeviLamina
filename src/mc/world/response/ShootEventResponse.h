@@ -15,9 +15,9 @@ namespace JsonUtil { class EmptyClass; }
 class ShootEventResponse : public ::EventResponse {
 public:
     // prevent constructor by default
-    ShootEventResponse& operator=(ShootEventResponse const&) = delete;
-    ShootEventResponse(ShootEventResponse const&)            = delete;
-    ShootEventResponse()                                     = delete;
+    ShootEventResponse& operator=(ShootEventResponse const&);
+    ShootEventResponse(ShootEventResponse const&);
+    ShootEventResponse();
 
 public:
     // NOLINTBEGIN

@@ -13,14 +13,14 @@ public:
     struct StateListNode {
     public:
         // prevent constructor by default
-        StateListNode& operator=(StateListNode const&) = delete;
-        StateListNode(StateListNode const&)            = delete;
-        StateListNode()                                = delete;
+        StateListNode& operator=(StateListNode const&);
+        StateListNode(StateListNode const&);
+        StateListNode();
 
     public:
         // NOLINTBEGIN
         // symbol: ??0StateListNode@BlockState@@QEAA@PEAV1@@Z
-        MCAPI StateListNode(class BlockState*);
+        MCAPI explicit StateListNode(class BlockState*);
 
         // symbol: ??1StateListNode@BlockState@@QEAA@XZ
         MCAPI ~StateListNode();
@@ -33,9 +33,9 @@ public:
 
 public:
     // prevent constructor by default
-    BlockState& operator=(BlockState const&) = delete;
-    BlockState(BlockState const&)            = delete;
-    BlockState()                             = delete;
+    BlockState& operator=(BlockState const&);
+    BlockState(BlockState const&);
+    BlockState();
 
 public:
     // NOLINTBEGIN

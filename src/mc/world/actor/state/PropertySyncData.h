@@ -5,9 +5,9 @@
 struct PropertySyncData {
 public:
     // prevent constructor by default
-    PropertySyncData& operator=(PropertySyncData const&) = delete;
-    PropertySyncData(PropertySyncData const&)            = delete;
-    PropertySyncData()                                   = delete;
+    PropertySyncData& operator=(PropertySyncData const&);
+    PropertySyncData(PropertySyncData const&);
+    PropertySyncData();
 
 public:
     // NOLINTBEGIN

@@ -5,18 +5,18 @@
 struct MolangScriptArg {
 public:
     // prevent constructor by default
-    MolangScriptArg() = delete;
+    MolangScriptArg();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0MolangScriptArg@@QEAA@H@Z
-    MCAPI MolangScriptArg(int);
+    MCAPI explicit MolangScriptArg(int);
 
     // symbol: ??0MolangScriptArg@@QEAA@AEBU0@@Z
     MCAPI MolangScriptArg(struct MolangScriptArg const&);
 
     // symbol: ??0MolangScriptArg@@QEAA@M@Z
-    MCAPI MolangScriptArg(float);
+    MCAPI explicit MolangScriptArg(float);
 
     // symbol: ?getAsNonConstMolangMemberArray@MolangScriptArg@@QEAAPEAUMolangMemberArray@@XZ
     MCAPI struct MolangMemberArray* getAsNonConstMolangMemberArray();

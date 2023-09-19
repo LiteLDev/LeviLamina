@@ -5,9 +5,9 @@
 class ActorDefinitionDiffList {
 public:
     // prevent constructor by default
-    ActorDefinitionDiffList& operator=(ActorDefinitionDiffList const&) = delete;
-    ActorDefinitionDiffList(ActorDefinitionDiffList const&)            = delete;
-    ActorDefinitionDiffList()                                          = delete;
+    ActorDefinitionDiffList& operator=(ActorDefinitionDiffList const&);
+    ActorDefinitionDiffList(ActorDefinitionDiffList const&);
+    ActorDefinitionDiffList();
 
 public:
     // NOLINTBEGIN

@@ -10,9 +10,9 @@
 class StandingVehiclePostPositionPassengerSystem {
 public:
     // prevent constructor by default
-    StandingVehiclePostPositionPassengerSystem& operator=(StandingVehiclePostPositionPassengerSystem const&) = delete;
-    StandingVehiclePostPositionPassengerSystem(StandingVehiclePostPositionPassengerSystem const&)            = delete;
-    StandingVehiclePostPositionPassengerSystem()                                                             = delete;
+    StandingVehiclePostPositionPassengerSystem& operator=(StandingVehiclePostPositionPassengerSystem const&);
+    StandingVehiclePostPositionPassengerSystem(StandingVehiclePostPositionPassengerSystem const&);
+    StandingVehiclePostPositionPassengerSystem();
 
 public:
     // NOLINTBEGIN

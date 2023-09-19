@@ -5,9 +5,9 @@
 class ICerealDefinitionSerializer {
 public:
     // prevent constructor by default
-    ICerealDefinitionSerializer& operator=(ICerealDefinitionSerializer const&) = delete;
-    ICerealDefinitionSerializer(ICerealDefinitionSerializer const&)            = delete;
-    ICerealDefinitionSerializer()                                              = delete;
+    ICerealDefinitionSerializer& operator=(ICerealDefinitionSerializer const&);
+    ICerealDefinitionSerializer(ICerealDefinitionSerializer const&);
+    ICerealDefinitionSerializer();
 
 public:
     // NOLINTBEGIN

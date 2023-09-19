@@ -8,9 +8,9 @@
 class HoverPathNavigation : public ::PathNavigation {
 public:
     // prevent constructor by default
-    HoverPathNavigation& operator=(HoverPathNavigation const&) = delete;
-    HoverPathNavigation(HoverPathNavigation const&)            = delete;
-    HoverPathNavigation()                                      = delete;
+    HoverPathNavigation& operator=(HoverPathNavigation const&);
+    HoverPathNavigation(HoverPathNavigation const&);
+    HoverPathNavigation();
 
 public:
     // NOLINTBEGIN

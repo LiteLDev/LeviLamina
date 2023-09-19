@@ -8,9 +8,9 @@
 class BasaltColumnsFeature : public ::Feature {
 public:
     // prevent constructor by default
-    BasaltColumnsFeature& operator=(BasaltColumnsFeature const&) = delete;
-    BasaltColumnsFeature(BasaltColumnsFeature const&)            = delete;
-    BasaltColumnsFeature()                                       = delete;
+    BasaltColumnsFeature& operator=(BasaltColumnsFeature const&);
+    BasaltColumnsFeature(BasaltColumnsFeature const&);
+    BasaltColumnsFeature();
 
 public:
     // NOLINTBEGIN

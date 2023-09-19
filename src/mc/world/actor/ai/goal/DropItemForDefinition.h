@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class DropItemForDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    DropItemForDefinition& operator=(DropItemForDefinition const&) = delete;
-    DropItemForDefinition(DropItemForDefinition const&)            = delete;
+    DropItemForDefinition& operator=(DropItemForDefinition const&);
+    DropItemForDefinition(DropItemForDefinition const&);
 
 public:
     // NOLINTBEGIN

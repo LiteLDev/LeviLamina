@@ -8,9 +8,9 @@
 class ToggleDownfallCommand : public ::Command {
 public:
     // prevent constructor by default
-    ToggleDownfallCommand& operator=(ToggleDownfallCommand const&) = delete;
-    ToggleDownfallCommand(ToggleDownfallCommand const&)            = delete;
-    ToggleDownfallCommand()                                        = delete;
+    ToggleDownfallCommand& operator=(ToggleDownfallCommand const&);
+    ToggleDownfallCommand(ToggleDownfallCommand const&);
+    ToggleDownfallCommand();
 
 public:
     // NOLINTBEGIN

@@ -11,9 +11,9 @@
 class WorldHistoryPackSource : public ::PackSource {
 public:
     // prevent constructor by default
-    WorldHistoryPackSource& operator=(WorldHistoryPackSource const&) = delete;
-    WorldHistoryPackSource(WorldHistoryPackSource const&)            = delete;
-    WorldHistoryPackSource()                                         = delete;
+    WorldHistoryPackSource& operator=(WorldHistoryPackSource const&);
+    WorldHistoryPackSource(WorldHistoryPackSource const&);
+    WorldHistoryPackSource();
 
 public:
     // NOLINTBEGIN

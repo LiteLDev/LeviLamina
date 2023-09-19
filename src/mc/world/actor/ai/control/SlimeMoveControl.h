@@ -8,8 +8,8 @@
 class SlimeMoveControl : public ::MoveControl {
 public:
     // prevent constructor by default
-    SlimeMoveControl& operator=(SlimeMoveControl const&) = delete;
-    SlimeMoveControl(SlimeMoveControl const&)            = delete;
+    SlimeMoveControl& operator=(SlimeMoveControl const&);
+    SlimeMoveControl(SlimeMoveControl const&);
 
 public:
     // NOLINTBEGIN

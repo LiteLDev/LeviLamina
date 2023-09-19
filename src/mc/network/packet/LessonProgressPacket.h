@@ -11,8 +11,8 @@
 class LessonProgressPacket : public ::Packet {
 public:
     // prevent constructor by default
-    LessonProgressPacket& operator=(LessonProgressPacket const&) = delete;
-    LessonProgressPacket(LessonProgressPacket const&)            = delete;
+    LessonProgressPacket& operator=(LessonProgressPacket const&);
+    LessonProgressPacket(LessonProgressPacket const&);
 
 public:
     // NOLINTBEGIN

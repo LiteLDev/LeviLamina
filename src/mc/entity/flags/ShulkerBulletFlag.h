@@ -5,7 +5,7 @@
 struct ShulkerBulletFlag {
 public:
     // prevent constructor by default
-    ShulkerBulletFlag& operator=(ShulkerBulletFlag const&) = delete;
-    ShulkerBulletFlag(ShulkerBulletFlag const&)            = delete;
-    ShulkerBulletFlag()                                    = delete;
+    ShulkerBulletFlag& operator=(ShulkerBulletFlag const&);
+    ShulkerBulletFlag(ShulkerBulletFlag const&);
+    ShulkerBulletFlag();
 };

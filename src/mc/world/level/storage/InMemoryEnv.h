@@ -8,9 +8,9 @@
 class InMemoryEnv : public ::FlushableEnv {
 public:
     // prevent constructor by default
-    InMemoryEnv& operator=(InMemoryEnv const&) = delete;
-    InMemoryEnv(InMemoryEnv const&)            = delete;
-    InMemoryEnv()                              = delete;
+    InMemoryEnv& operator=(InMemoryEnv const&);
+    InMemoryEnv(InMemoryEnv const&);
+    InMemoryEnv();
 
 public:
     // NOLINTBEGIN

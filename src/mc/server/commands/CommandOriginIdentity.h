@@ -5,9 +5,9 @@
 struct CommandOriginIdentity {
 public:
     // prevent constructor by default
-    CommandOriginIdentity& operator=(CommandOriginIdentity const&) = delete;
-    CommandOriginIdentity(CommandOriginIdentity const&)            = delete;
-    CommandOriginIdentity()                                        = delete;
+    CommandOriginIdentity& operator=(CommandOriginIdentity const&);
+    CommandOriginIdentity(CommandOriginIdentity const&);
+    CommandOriginIdentity();
 
 public:
     // NOLINTBEGIN

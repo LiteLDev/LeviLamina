@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class FilterTestAltitude : public ::SimpleIntFilterTest {
 public:
     // prevent constructor by default
-    FilterTestAltitude& operator=(FilterTestAltitude const&) = delete;
-    FilterTestAltitude(FilterTestAltitude const&)            = delete;
-    FilterTestAltitude()                                     = delete;
+    FilterTestAltitude& operator=(FilterTestAltitude const&);
+    FilterTestAltitude(FilterTestAltitude const&);
+    FilterTestAltitude();
 
 public:
     // NOLINTBEGIN

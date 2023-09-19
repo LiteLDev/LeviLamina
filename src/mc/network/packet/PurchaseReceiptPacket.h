@@ -10,8 +10,8 @@
 class PurchaseReceiptPacket : public ::Packet {
 public:
     // prevent constructor by default
-    PurchaseReceiptPacket& operator=(PurchaseReceiptPacket const&) = delete;
-    PurchaseReceiptPacket(PurchaseReceiptPacket const&)            = delete;
+    PurchaseReceiptPacket& operator=(PurchaseReceiptPacket const&);
+    PurchaseReceiptPacket(PurchaseReceiptPacket const&);
 
 public:
     // NOLINTBEGIN

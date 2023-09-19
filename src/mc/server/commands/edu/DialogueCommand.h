@@ -8,9 +8,9 @@
 class DialogueCommand : public ::Command {
 public:
     // prevent constructor by default
-    DialogueCommand& operator=(DialogueCommand const&) = delete;
-    DialogueCommand(DialogueCommand const&)            = delete;
-    DialogueCommand()                                  = delete;
+    DialogueCommand& operator=(DialogueCommand const&);
+    DialogueCommand(DialogueCommand const&);
+    DialogueCommand();
 
 public:
     // NOLINTBEGIN

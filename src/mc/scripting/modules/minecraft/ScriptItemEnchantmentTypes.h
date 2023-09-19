@@ -18,8 +18,8 @@ namespace ScriptModuleMinecraft {
 struct ScriptItemEnchantmentTypes {
 public:
     // prevent constructor by default
-    ScriptItemEnchantmentTypes& operator=(ScriptItemEnchantmentTypes const&) = delete;
-    ScriptItemEnchantmentTypes(ScriptItemEnchantmentTypes const&)            = delete;
+    ScriptItemEnchantmentTypes& operator=(ScriptItemEnchantmentTypes const&);
+    ScriptItemEnchantmentTypes(ScriptItemEnchantmentTypes const&);
 
 public:
     // NOLINTBEGIN
@@ -29,8 +29,8 @@ public:
     // symbol:
     // ?getEnchantmentHandle@ScriptItemEnchantmentTypes@ScriptModuleMinecraft@@QEAA?AV?$optional@V?$StrongTypedObjectHandle@UScriptItemEnchantmentType@ScriptModuleMinecraft@@@Scripting@@@std@@AEAVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
     MCAPI
-    std::optional<class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemEnchantmentType>>
-    getEnchantmentHandle(class Scripting::WeakLifetimeScope&, std::string const&);
+        std::optional<class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemEnchantmentType>>
+        getEnchantmentHandle(class Scripting::WeakLifetimeScope&, std::string const&);
 
     // symbol:
     // ?bind@ScriptItemEnchantmentTypes@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptItemEnchantmentTypes@ScriptModuleMinecraft@@@Scripting@@XZ

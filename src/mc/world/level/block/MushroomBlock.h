@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class MushroomBlock : public ::BushBlock {
 public:
     // prevent constructor by default
-    MushroomBlock& operator=(MushroomBlock const&) = delete;
-    MushroomBlock(MushroomBlock const&)            = delete;
-    MushroomBlock()                                = delete;
+    MushroomBlock& operator=(MushroomBlock const&);
+    MushroomBlock(MushroomBlock const&);
+    MushroomBlock();
 
 public:
     // NOLINTBEGIN

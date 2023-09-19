@@ -9,9 +9,9 @@
 class SpreadPlayersCommand : public ::Command {
 public:
     // prevent constructor by default
-    SpreadPlayersCommand& operator=(SpreadPlayersCommand const&) = delete;
-    SpreadPlayersCommand(SpreadPlayersCommand const&)            = delete;
-    SpreadPlayersCommand()                                       = delete;
+    SpreadPlayersCommand& operator=(SpreadPlayersCommand const&);
+    SpreadPlayersCommand(SpreadPlayersCommand const&);
+    SpreadPlayersCommand();
 
 public:
     // NOLINTBEGIN

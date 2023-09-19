@@ -7,9 +7,9 @@ namespace Social::Events {
 class TelemetryHeartbeat {
 public:
     // prevent constructor by default
-    TelemetryHeartbeat& operator=(TelemetryHeartbeat const&) = delete;
-    TelemetryHeartbeat(TelemetryHeartbeat const&)            = delete;
-    TelemetryHeartbeat()                                     = delete;
+    TelemetryHeartbeat& operator=(TelemetryHeartbeat const&);
+    TelemetryHeartbeat(TelemetryHeartbeat const&);
+    TelemetryHeartbeat();
 
 public:
     // NOLINTBEGIN

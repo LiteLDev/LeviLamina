@@ -8,9 +8,9 @@
 class ShiftedValueAmplifier : public ::Amplifier {
 public:
     // prevent constructor by default
-    ShiftedValueAmplifier& operator=(ShiftedValueAmplifier const&) = delete;
-    ShiftedValueAmplifier(ShiftedValueAmplifier const&)            = delete;
-    ShiftedValueAmplifier()                                        = delete;
+    ShiftedValueAmplifier& operator=(ShiftedValueAmplifier const&);
+    ShiftedValueAmplifier(ShiftedValueAmplifier const&);
+    ShiftedValueAmplifier();
 
 public:
     // NOLINTBEGIN

@@ -7,9 +7,9 @@ namespace qrcodegen {
 class QrCode {
 public:
     // prevent constructor by default
-    QrCode& operator=(QrCode const&) = delete;
-    QrCode(QrCode const&)            = delete;
-    QrCode()                         = delete;
+    QrCode& operator=(QrCode const&);
+    QrCode(QrCode const&);
+    QrCode();
 
 private:
     // NOLINTBEGIN

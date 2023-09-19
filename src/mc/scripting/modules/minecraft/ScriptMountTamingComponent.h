@@ -17,9 +17,9 @@ namespace ScriptModuleMinecraft {
 class ScriptMountTamingComponent {
 public:
     // prevent constructor by default
-    ScriptMountTamingComponent& operator=(ScriptMountTamingComponent const&) = delete;
-    ScriptMountTamingComponent(ScriptMountTamingComponent const&)            = delete;
-    ScriptMountTamingComponent()                                             = delete;
+    ScriptMountTamingComponent& operator=(ScriptMountTamingComponent const&);
+    ScriptMountTamingComponent(ScriptMountTamingComponent const&);
+    ScriptMountTamingComponent();
 
 public:
     // NOLINTBEGIN

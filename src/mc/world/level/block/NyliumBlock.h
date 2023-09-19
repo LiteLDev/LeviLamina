@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class NyliumBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    NyliumBlock& operator=(NyliumBlock const&) = delete;
-    NyliumBlock(NyliumBlock const&)            = delete;
-    NyliumBlock()                              = delete;
+    NyliumBlock& operator=(NyliumBlock const&);
+    NyliumBlock(NyliumBlock const&);
+    NyliumBlock();
 
 public:
     // NOLINTBEGIN

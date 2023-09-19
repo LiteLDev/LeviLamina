@@ -5,7 +5,7 @@
 struct WebviewDownloadInfo {
 public:
     // prevent constructor by default
-    WebviewDownloadInfo& operator=(WebviewDownloadInfo const&) = delete;
-    WebviewDownloadInfo(WebviewDownloadInfo const&)            = delete;
-    WebviewDownloadInfo()                                      = delete;
+    WebviewDownloadInfo& operator=(WebviewDownloadInfo const&);
+    WebviewDownloadInfo(WebviewDownloadInfo const&);
+    WebviewDownloadInfo();
 };

@@ -8,9 +8,9 @@
 class GameModeCommand : public ::Command {
 public:
     // prevent constructor by default
-    GameModeCommand& operator=(GameModeCommand const&) = delete;
-    GameModeCommand(GameModeCommand const&)            = delete;
-    GameModeCommand()                                  = delete;
+    GameModeCommand& operator=(GameModeCommand const&);
+    GameModeCommand(GameModeCommand const&);
+    GameModeCommand();
 
 public:
     // NOLINTBEGIN

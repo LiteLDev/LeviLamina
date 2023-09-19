@@ -5,7 +5,7 @@
 struct ActorRotationComponent {
 public:
     // prevent constructor by default
-    ActorRotationComponent& operator=(ActorRotationComponent const&) = delete;
-    ActorRotationComponent(ActorRotationComponent const&)            = delete;
-    ActorRotationComponent()                                         = delete;
+    ActorRotationComponent& operator=(ActorRotationComponent const&);
+    ActorRotationComponent(ActorRotationComponent const&);
+    ActorRotationComponent();
 };

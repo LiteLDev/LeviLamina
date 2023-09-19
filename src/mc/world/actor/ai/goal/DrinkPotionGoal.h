@@ -14,9 +14,9 @@ namespace mce { class UUID; }
 class DrinkPotionGoal : public ::Goal {
 public:
     // prevent constructor by default
-    DrinkPotionGoal& operator=(DrinkPotionGoal const&) = delete;
-    DrinkPotionGoal(DrinkPotionGoal const&)            = delete;
-    DrinkPotionGoal()                                  = delete;
+    DrinkPotionGoal& operator=(DrinkPotionGoal const&);
+    DrinkPotionGoal(DrinkPotionGoal const&);
+    DrinkPotionGoal();
 
 public:
     // NOLINTBEGIN

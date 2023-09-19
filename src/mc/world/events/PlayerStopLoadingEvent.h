@@ -5,7 +5,7 @@
 struct PlayerStopLoadingEvent {
 public:
     // prevent constructor by default
-    PlayerStopLoadingEvent& operator=(PlayerStopLoadingEvent const&) = delete;
-    PlayerStopLoadingEvent(PlayerStopLoadingEvent const&)            = delete;
-    PlayerStopLoadingEvent()                                         = delete;
+    PlayerStopLoadingEvent& operator=(PlayerStopLoadingEvent const&);
+    PlayerStopLoadingEvent(PlayerStopLoadingEvent const&);
+    PlayerStopLoadingEvent();
 };

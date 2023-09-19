@@ -7,9 +7,9 @@ namespace Scripting {
 struct ContextConfig {
 public:
     // prevent constructor by default
-    ContextConfig& operator=(ContextConfig const&) = delete;
-    ContextConfig(ContextConfig const&)            = delete;
-    ContextConfig()                                = delete;
+    ContextConfig& operator=(ContextConfig const&);
+    ContextConfig(ContextConfig const&);
+    ContextConfig();
 };
 
 }; // namespace Scripting

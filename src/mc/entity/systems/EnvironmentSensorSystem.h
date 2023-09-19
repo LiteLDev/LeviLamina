@@ -8,9 +8,9 @@
 class EnvironmentSensorSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    EnvironmentSensorSystem& operator=(EnvironmentSensorSystem const&) = delete;
-    EnvironmentSensorSystem(EnvironmentSensorSystem const&)            = delete;
-    EnvironmentSensorSystem()                                          = delete;
+    EnvironmentSensorSystem& operator=(EnvironmentSensorSystem const&);
+    EnvironmentSensorSystem(EnvironmentSensorSystem const&);
+    EnvironmentSensorSystem();
 
 public:
     // NOLINTBEGIN

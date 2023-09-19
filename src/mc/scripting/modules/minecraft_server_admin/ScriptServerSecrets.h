@@ -18,9 +18,9 @@ namespace ScriptModuleMinecraftServerAdmin {
 class ScriptServerSecrets {
 public:
     // prevent constructor by default
-    ScriptServerSecrets& operator=(ScriptServerSecrets const&) = delete;
-    ScriptServerSecrets(ScriptServerSecrets const&)            = delete;
-    ScriptServerSecrets()                                      = delete;
+    ScriptServerSecrets& operator=(ScriptServerSecrets const&);
+    ScriptServerSecrets(ScriptServerSecrets const&);
+    ScriptServerSecrets();
 
 public:
     // NOLINTBEGIN

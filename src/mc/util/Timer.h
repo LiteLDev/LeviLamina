@@ -5,9 +5,9 @@
 class Timer {
 public:
     // prevent constructor by default
-    Timer& operator=(Timer const&) = delete;
-    Timer(Timer const&)            = delete;
-    Timer()                        = delete;
+    Timer& operator=(Timer const&);
+    Timer(Timer const&);
+    Timer();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class ServerScriptDebugCommand : public ::ScriptDebugCommand {
 public:
     // prevent constructor by default
-    ServerScriptDebugCommand& operator=(ServerScriptDebugCommand const&) = delete;
-    ServerScriptDebugCommand(ServerScriptDebugCommand const&)            = delete;
-    ServerScriptDebugCommand()                                           = delete;
+    ServerScriptDebugCommand& operator=(ServerScriptDebugCommand const&);
+    ServerScriptDebugCommand(ServerScriptDebugCommand const&);
+    ServerScriptDebugCommand();
 
 public:
     // NOLINTBEGIN

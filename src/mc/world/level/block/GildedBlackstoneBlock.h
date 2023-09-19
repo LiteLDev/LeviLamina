@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class GildedBlackstoneBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    GildedBlackstoneBlock& operator=(GildedBlackstoneBlock const&) = delete;
-    GildedBlackstoneBlock(GildedBlackstoneBlock const&)            = delete;
-    GildedBlackstoneBlock()                                        = delete;
+    GildedBlackstoneBlock& operator=(GildedBlackstoneBlock const&);
+    GildedBlackstoneBlock(GildedBlackstoneBlock const&);
+    GildedBlackstoneBlock();
 
 public:
     // NOLINTBEGIN

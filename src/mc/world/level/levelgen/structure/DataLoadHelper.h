@@ -5,7 +5,7 @@
 class DataLoadHelper {
 public:
     // prevent constructor by default
-    DataLoadHelper& operator=(DataLoadHelper const&) = delete;
-    DataLoadHelper(DataLoadHelper const&)            = delete;
-    DataLoadHelper()                                 = delete;
+    DataLoadHelper& operator=(DataLoadHelper const&);
+    DataLoadHelper(DataLoadHelper const&);
+    DataLoadHelper();
 };

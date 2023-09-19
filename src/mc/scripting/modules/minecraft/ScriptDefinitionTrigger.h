@@ -15,9 +15,9 @@ namespace ScriptModuleMinecraft {
 class ScriptDefinitionTrigger {
 public:
     // prevent constructor by default
-    ScriptDefinitionTrigger& operator=(ScriptDefinitionTrigger const&) = delete;
-    ScriptDefinitionTrigger(ScriptDefinitionTrigger const&)            = delete;
-    ScriptDefinitionTrigger()                                          = delete;
+    ScriptDefinitionTrigger& operator=(ScriptDefinitionTrigger const&);
+    ScriptDefinitionTrigger(ScriptDefinitionTrigger const&);
+    ScriptDefinitionTrigger();
 
 public:
     // NOLINTBEGIN

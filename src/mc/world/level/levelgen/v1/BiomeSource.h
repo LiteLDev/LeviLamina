@@ -5,7 +5,7 @@
 class BiomeSource {
 public:
     // prevent constructor by default
-    BiomeSource& operator=(BiomeSource const&) = delete;
-    BiomeSource(BiomeSource const&)            = delete;
-    BiomeSource()                              = delete;
+    BiomeSource& operator=(BiomeSource const&);
+    BiomeSource(BiomeSource const&);
+    BiomeSource();
 };

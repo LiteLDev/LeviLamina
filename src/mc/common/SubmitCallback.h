@@ -8,9 +8,9 @@
 class SubmitCallback {
 public:
     // prevent constructor by default
-    SubmitCallback& operator=(SubmitCallback const&) = delete;
-    SubmitCallback(SubmitCallback const&)            = delete;
-    SubmitCallback()                                 = delete;
+    SubmitCallback& operator=(SubmitCallback const&);
+    SubmitCallback(SubmitCallback const&);
+    SubmitCallback();
 
 public:
     // NOLINTBEGIN

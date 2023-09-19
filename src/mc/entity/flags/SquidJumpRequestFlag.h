@@ -5,7 +5,7 @@
 struct SquidJumpRequestFlag {
 public:
     // prevent constructor by default
-    SquidJumpRequestFlag& operator=(SquidJumpRequestFlag const&) = delete;
-    SquidJumpRequestFlag(SquidJumpRequestFlag const&)            = delete;
-    SquidJumpRequestFlag()                                       = delete;
+    SquidJumpRequestFlag& operator=(SquidJumpRequestFlag const&);
+    SquidJumpRequestFlag(SquidJumpRequestFlag const&);
+    SquidJumpRequestFlag();
 };

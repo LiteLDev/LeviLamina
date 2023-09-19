@@ -5,9 +5,9 @@
 struct ScorePacketInfo {
 public:
     // prevent constructor by default
-    ScorePacketInfo& operator=(ScorePacketInfo const&) = delete;
-    ScorePacketInfo(ScorePacketInfo const&)            = delete;
-    ScorePacketInfo()                                  = delete;
+    ScorePacketInfo& operator=(ScorePacketInfo const&);
+    ScorePacketInfo(ScorePacketInfo const&);
+    ScorePacketInfo();
 
 public:
     // NOLINTBEGIN

@@ -6,7 +6,7 @@ template <typename T0, int T1>
 class ItemStackRequestActionCraft {
 public:
     // prevent constructor by default
-    ItemStackRequestActionCraft& operator=(ItemStackRequestActionCraft const&) = delete;
-    ItemStackRequestActionCraft(ItemStackRequestActionCraft const&)            = delete;
-    ItemStackRequestActionCraft()                                              = delete;
+    ItemStackRequestActionCraft& operator=(ItemStackRequestActionCraft const&);
+    ItemStackRequestActionCraft(ItemStackRequestActionCraft const&);
+    ItemStackRequestActionCraft();
 };

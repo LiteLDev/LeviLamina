@@ -11,8 +11,8 @@ public:
 
 public:
     // prevent constructor by default
-    Potion& operator=(Potion const&) = delete;
-    Potion()                         = delete;
+    Potion& operator=(Potion const&);
+    Potion();
 
 public:
     // NOLINTBEGIN

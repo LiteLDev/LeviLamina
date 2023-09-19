@@ -8,9 +8,9 @@
 class TellCommand : public ::MessagingCommand {
 public:
     // prevent constructor by default
-    TellCommand& operator=(TellCommand const&) = delete;
-    TellCommand(TellCommand const&)            = delete;
-    TellCommand()                              = delete;
+    TellCommand& operator=(TellCommand const&);
+    TellCommand(TellCommand const&);
+    TellCommand();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class LevelStorageEventing {
 public:
     // prevent constructor by default
-    LevelStorageEventing& operator=(LevelStorageEventing const&) = delete;
-    LevelStorageEventing(LevelStorageEventing const&)            = delete;
-    LevelStorageEventing()                                       = delete;
+    LevelStorageEventing& operator=(LevelStorageEventing const&);
+    LevelStorageEventing(LevelStorageEventing const&);
+    LevelStorageEventing();
 
 public:
     // NOLINTBEGIN

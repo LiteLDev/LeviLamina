@@ -9,9 +9,9 @@
 class RiseToLiquidLevelGoal : public ::Goal {
 public:
     // prevent constructor by default
-    RiseToLiquidLevelGoal& operator=(RiseToLiquidLevelGoal const&) = delete;
-    RiseToLiquidLevelGoal(RiseToLiquidLevelGoal const&)            = delete;
-    RiseToLiquidLevelGoal()                                        = delete;
+    RiseToLiquidLevelGoal& operator=(RiseToLiquidLevelGoal const&);
+    RiseToLiquidLevelGoal(RiseToLiquidLevelGoal const&);
+    RiseToLiquidLevelGoal();
 
 public:
     // NOLINTBEGIN

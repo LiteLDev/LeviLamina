@@ -5,7 +5,7 @@
 struct SoundEventPlayerComponent {
 public:
     // prevent constructor by default
-    SoundEventPlayerComponent& operator=(SoundEventPlayerComponent const&) = delete;
-    SoundEventPlayerComponent(SoundEventPlayerComponent const&)            = delete;
-    SoundEventPlayerComponent()                                            = delete;
+    SoundEventPlayerComponent& operator=(SoundEventPlayerComponent const&);
+    SoundEventPlayerComponent(SoundEventPlayerComponent const&);
+    SoundEventPlayerComponent();
 };

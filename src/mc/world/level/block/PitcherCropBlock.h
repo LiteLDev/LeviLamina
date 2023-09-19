@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class PitcherCropBlock : public ::BushBlock {
 public:
     // prevent constructor by default
-    PitcherCropBlock& operator=(PitcherCropBlock const&) = delete;
-    PitcherCropBlock(PitcherCropBlock const&)            = delete;
-    PitcherCropBlock()                                   = delete;
+    PitcherCropBlock& operator=(PitcherCropBlock const&);
+    PitcherCropBlock(PitcherCropBlock const&);
+    PitcherCropBlock();
 
 public:
     // NOLINTBEGIN

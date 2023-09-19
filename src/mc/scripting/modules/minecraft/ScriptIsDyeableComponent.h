@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptIsDyeableComponent {
 public:
     // prevent constructor by default
-    ScriptIsDyeableComponent& operator=(ScriptIsDyeableComponent const&) = delete;
-    ScriptIsDyeableComponent(ScriptIsDyeableComponent const&)            = delete;
-    ScriptIsDyeableComponent()                                           = delete;
+    ScriptIsDyeableComponent& operator=(ScriptIsDyeableComponent const&);
+    ScriptIsDyeableComponent(ScriptIsDyeableComponent const&);
+    ScriptIsDyeableComponent();
 
 public:
     // NOLINTBEGIN

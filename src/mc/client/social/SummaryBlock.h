@@ -7,7 +7,7 @@ namespace Social::Events {
 class SummaryBlock {
 public:
     // prevent constructor by default
-    SummaryBlock() = delete;
+    SummaryBlock();
 
 public:
     // NOLINTBEGIN

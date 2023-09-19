@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class TallGrassBlock : public ::BushBlock {
 public:
     // prevent constructor by default
-    TallGrassBlock& operator=(TallGrassBlock const&) = delete;
-    TallGrassBlock(TallGrassBlock const&)            = delete;
-    TallGrassBlock()                                 = delete;
+    TallGrassBlock& operator=(TallGrassBlock const&);
+    TallGrassBlock(TallGrassBlock const&);
+    TallGrassBlock();
 
 public:
     // NOLINTBEGIN

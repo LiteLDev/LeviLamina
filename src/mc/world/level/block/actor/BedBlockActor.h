@@ -8,9 +8,9 @@
 class BedBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    BedBlockActor& operator=(BedBlockActor const&) = delete;
-    BedBlockActor(BedBlockActor const&)            = delete;
-    BedBlockActor()                                = delete;
+    BedBlockActor& operator=(BedBlockActor const&);
+    BedBlockActor(BedBlockActor const&);
+    BedBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -80,7 +80,7 @@ public:
     virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
 
     // symbol: ??0BedBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI BedBlockActor(class BlockPos const&);
+    MCAPI explicit BedBlockActor(class BlockPos const&);
 
     // symbol: ?claimPetSleepOnBed@BedBlockActor@@QEAA_NUActorUniqueID@@@Z
     MCAPI bool claimPetSleepOnBed(struct ActorUniqueID);

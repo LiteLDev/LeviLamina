@@ -9,9 +9,9 @@
 class SHStartPiece : public ::SHStairsDown {
 public:
     // prevent constructor by default
-    SHStartPiece& operator=(SHStartPiece const&) = delete;
-    SHStartPiece(SHStartPiece const&)            = delete;
-    SHStartPiece()                               = delete;
+    SHStartPiece& operator=(SHStartPiece const&);
+    SHStartPiece(SHStartPiece const&);
+    SHStartPiece();
 
 public:
     // NOLINTBEGIN

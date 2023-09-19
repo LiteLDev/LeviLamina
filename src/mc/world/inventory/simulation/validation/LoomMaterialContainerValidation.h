@@ -8,9 +8,9 @@
 class LoomMaterialContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    LoomMaterialContainerValidation& operator=(LoomMaterialContainerValidation const&) = delete;
-    LoomMaterialContainerValidation(LoomMaterialContainerValidation const&)            = delete;
-    LoomMaterialContainerValidation()                                                  = delete;
+    LoomMaterialContainerValidation& operator=(LoomMaterialContainerValidation const&);
+    LoomMaterialContainerValidation(LoomMaterialContainerValidation const&);
+    LoomMaterialContainerValidation();
 
 public:
     // NOLINTBEGIN

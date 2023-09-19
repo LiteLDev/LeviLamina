@@ -5,7 +5,7 @@
 class DefinitionInstanceGroup {
 public:
     // prevent constructor by default
-    DefinitionInstanceGroup& operator=(DefinitionInstanceGroup const&) = delete;
-    DefinitionInstanceGroup(DefinitionInstanceGroup const&)            = delete;
-    DefinitionInstanceGroup()                                          = delete;
+    DefinitionInstanceGroup& operator=(DefinitionInstanceGroup const&);
+    DefinitionInstanceGroup(DefinitionInstanceGroup const&);
+    DefinitionInstanceGroup();
 };

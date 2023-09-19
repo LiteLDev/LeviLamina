@@ -16,8 +16,8 @@ namespace BlockCollisionVersioning {
 class BlockCollision118Upgrade : public ::CerealSchemaUpgrade {
 public:
     // prevent constructor by default
-    BlockCollision118Upgrade& operator=(BlockCollision118Upgrade const&) = delete;
-    BlockCollision118Upgrade(BlockCollision118Upgrade const&)            = delete;
+    BlockCollision118Upgrade& operator=(BlockCollision118Upgrade const&);
+    BlockCollision118Upgrade(BlockCollision118Upgrade const&);
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 class PositionTrackingId {
 public:
     // prevent constructor by default
-    PositionTrackingId() = delete;
+    PositionTrackingId();
 
 public:
     // NOLINTBEGIN

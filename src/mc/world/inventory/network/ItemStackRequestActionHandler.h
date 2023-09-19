@@ -24,9 +24,9 @@ public:
     struct PlayerLegacyRequestSlotIdAssignment {
     public:
         // prevent constructor by default
-        PlayerLegacyRequestSlotIdAssignment& operator=(PlayerLegacyRequestSlotIdAssignment const&) = delete;
-        PlayerLegacyRequestSlotIdAssignment(PlayerLegacyRequestSlotIdAssignment const&)            = delete;
-        PlayerLegacyRequestSlotIdAssignment()                                                      = delete;
+        PlayerLegacyRequestSlotIdAssignment& operator=(PlayerLegacyRequestSlotIdAssignment const&);
+        PlayerLegacyRequestSlotIdAssignment(PlayerLegacyRequestSlotIdAssignment const&);
+        PlayerLegacyRequestSlotIdAssignment();
 
     public:
         // NOLINTBEGIN
@@ -43,17 +43,17 @@ public:
     struct RequestSlotIdAssignment {
     public:
         // prevent constructor by default
-        RequestSlotIdAssignment& operator=(RequestSlotIdAssignment const&) = delete;
-        RequestSlotIdAssignment(RequestSlotIdAssignment const&)            = delete;
-        RequestSlotIdAssignment()                                          = delete;
+        RequestSlotIdAssignment& operator=(RequestSlotIdAssignment const&);
+        RequestSlotIdAssignment(RequestSlotIdAssignment const&);
+        RequestSlotIdAssignment();
     };
 
     struct ScreenData {
     public:
         // prevent constructor by default
-        ScreenData& operator=(ScreenData const&) = delete;
-        ScreenData(ScreenData const&)            = delete;
-        ScreenData()                             = delete;
+        ScreenData& operator=(ScreenData const&);
+        ScreenData(ScreenData const&);
+        ScreenData();
 
     public:
         // NOLINTBEGIN
@@ -69,9 +69,9 @@ public:
 
 public:
     // prevent constructor by default
-    ItemStackRequestActionHandler& operator=(ItemStackRequestActionHandler const&) = delete;
-    ItemStackRequestActionHandler(ItemStackRequestActionHandler const&)            = delete;
-    ItemStackRequestActionHandler()                                                = delete;
+    ItemStackRequestActionHandler& operator=(ItemStackRequestActionHandler const&);
+    ItemStackRequestActionHandler(ItemStackRequestActionHandler const&);
+    ItemStackRequestActionHandler();
 
 public:
     // NOLINTBEGIN

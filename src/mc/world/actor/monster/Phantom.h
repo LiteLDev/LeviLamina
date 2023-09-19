@@ -26,9 +26,9 @@
 class Phantom : public ::Monster {
 public:
     // prevent constructor by default
-    Phantom& operator=(Phantom const&) = delete;
-    Phantom(Phantom const&)            = delete;
-    Phantom()                          = delete;
+    Phantom& operator=(Phantom const&);
+    Phantom(Phantom const&);
+    Phantom();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class PlayAnimationCommand : public ::Command {
 public:
     // prevent constructor by default
-    PlayAnimationCommand& operator=(PlayAnimationCommand const&) = delete;
-    PlayAnimationCommand(PlayAnimationCommand const&)            = delete;
-    PlayAnimationCommand()                                       = delete;
+    PlayAnimationCommand& operator=(PlayAnimationCommand const&);
+    PlayAnimationCommand(PlayAnimationCommand const&);
+    PlayAnimationCommand();
 
 public:
     // NOLINTBEGIN

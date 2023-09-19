@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class LiquidBlockStatic : public ::LiquidBlock {
 public:
     // prevent constructor by default
-    LiquidBlockStatic& operator=(LiquidBlockStatic const&) = delete;
-    LiquidBlockStatic(LiquidBlockStatic const&)            = delete;
-    LiquidBlockStatic()                                    = delete;
+    LiquidBlockStatic& operator=(LiquidBlockStatic const&);
+    LiquidBlockStatic(LiquidBlockStatic const&);
+    LiquidBlockStatic();
 
 public:
     // NOLINTBEGIN

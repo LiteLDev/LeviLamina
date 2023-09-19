@@ -5,9 +5,9 @@
 class Explosion {
 public:
     // prevent constructor by default
-    Explosion& operator=(Explosion const&) = delete;
-    Explosion(Explosion const&)            = delete;
-    Explosion()                            = delete;
+    Explosion& operator=(Explosion const&);
+    Explosion(Explosion const&);
+    Explosion();
 
 public:
     // NOLINTBEGIN

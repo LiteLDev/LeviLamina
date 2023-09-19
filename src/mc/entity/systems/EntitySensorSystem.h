@@ -8,9 +8,9 @@
 class EntitySensorSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    EntitySensorSystem& operator=(EntitySensorSystem const&) = delete;
-    EntitySensorSystem(EntitySensorSystem const&)            = delete;
-    EntitySensorSystem()                                     = delete;
+    EntitySensorSystem& operator=(EntitySensorSystem const&);
+    EntitySensorSystem(EntitySensorSystem const&);
+    EntitySensorSystem();
 
 public:
     // NOLINTBEGIN

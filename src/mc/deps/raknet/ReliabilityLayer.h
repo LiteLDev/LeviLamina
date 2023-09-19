@@ -34,23 +34,23 @@ public:
     struct DatagramHistoryNode {
     public:
         // prevent constructor by default
-        DatagramHistoryNode& operator=(DatagramHistoryNode const&) = delete;
-        DatagramHistoryNode(DatagramHistoryNode const&)            = delete;
-        DatagramHistoryNode()                                      = delete;
+        DatagramHistoryNode& operator=(DatagramHistoryNode const&);
+        DatagramHistoryNode(DatagramHistoryNode const&);
+        DatagramHistoryNode();
     };
 
     struct MessageNumberNode {
     public:
         // prevent constructor by default
-        MessageNumberNode& operator=(MessageNumberNode const&) = delete;
-        MessageNumberNode(MessageNumberNode const&)            = delete;
-        MessageNumberNode()                                    = delete;
+        MessageNumberNode& operator=(MessageNumberNode const&);
+        MessageNumberNode(MessageNumberNode const&);
+        MessageNumberNode();
     };
 
 public:
     // prevent constructor by default
-    ReliabilityLayer& operator=(ReliabilityLayer const&) = delete;
-    ReliabilityLayer(ReliabilityLayer const&)            = delete;
+    ReliabilityLayer& operator=(ReliabilityLayer const&);
+    ReliabilityLayer(ReliabilityLayer const&);
 
 public:
     // NOLINTBEGIN

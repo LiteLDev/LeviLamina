@@ -8,9 +8,9 @@
 class LodestoneBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    LodestoneBlockActor& operator=(LodestoneBlockActor const&) = delete;
-    LodestoneBlockActor(LodestoneBlockActor const&)            = delete;
-    LodestoneBlockActor()                                      = delete;
+    LodestoneBlockActor& operator=(LodestoneBlockActor const&);
+    LodestoneBlockActor(LodestoneBlockActor const&);
+    LodestoneBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -67,7 +67,7 @@ public:
     virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
 
     // symbol: ??0LodestoneBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI LodestoneBlockActor(class BlockPos const&);
+    MCAPI explicit LodestoneBlockActor(class BlockPos const&);
 
     // symbol: ?getTrackingHandle@LodestoneBlockActor@@QEBAAEBVPositionTrackingId@@XZ
     MCAPI class PositionTrackingId const& getTrackingHandle() const;

@@ -23,9 +23,9 @@ namespace Core {
 class IFileSystem : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    IFileSystem& operator=(IFileSystem const&) = delete;
-    IFileSystem(IFileSystem const&)            = delete;
-    IFileSystem()                              = delete;
+    IFileSystem& operator=(IFileSystem const&);
+    IFileSystem(IFileSystem const&);
+    IFileSystem();
 
 public:
     // NOLINTBEGIN

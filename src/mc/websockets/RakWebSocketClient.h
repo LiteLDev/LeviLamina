@@ -10,9 +10,9 @@
 class RakWebSocketClient : public ::RakWebSocket {
 public:
     // prevent constructor by default
-    RakWebSocketClient& operator=(RakWebSocketClient const&) = delete;
-    RakWebSocketClient(RakWebSocketClient const&)            = delete;
-    RakWebSocketClient()                                     = delete;
+    RakWebSocketClient& operator=(RakWebSocketClient const&);
+    RakWebSocketClient(RakWebSocketClient const&);
+    RakWebSocketClient();
 
 public:
     // NOLINTBEGIN
@@ -29,7 +29,7 @@ public:
     MCVAPI ~RakWebSocketClient();
 
     // symbol: ??0RakWebSocketClient@@QEAA@V?$unique_ptr@VTcpProxy@@U?$default_delete@VTcpProxy@@@std@@@std@@@Z
-    MCAPI RakWebSocketClient(std::unique_ptr<class TcpProxy>);
+    MCAPI explicit RakWebSocketClient(std::unique_ptr<class TcpProxy>);
 
     // NOLINTEND
 };

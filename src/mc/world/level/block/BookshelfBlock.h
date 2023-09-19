@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class BookshelfBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    BookshelfBlock& operator=(BookshelfBlock const&) = delete;
-    BookshelfBlock(BookshelfBlock const&)            = delete;
-    BookshelfBlock()                                 = delete;
+    BookshelfBlock& operator=(BookshelfBlock const&);
+    BookshelfBlock(BookshelfBlock const&);
+    BookshelfBlock();
 
 public:
     // NOLINTBEGIN

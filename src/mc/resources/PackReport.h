@@ -13,7 +13,7 @@ namespace Json { class Value; }
 class PackReport {
 public:
     // prevent constructor by default
-    PackReport& operator=(PackReport const&) = delete;
+    PackReport& operator=(PackReport const&);
 
 public:
     // NOLINTBEGIN

@@ -10,7 +10,7 @@ namespace ScriptModuleMinecraft {
 struct ScriptTeleportOptions {
 public:
     // prevent constructor by default
-    ScriptTeleportOptions() = delete;
+    ScriptTeleportOptions();
 
 public:
     // NOLINTBEGIN

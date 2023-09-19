@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class HarvestFarmBlockDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    HarvestFarmBlockDefinition& operator=(HarvestFarmBlockDefinition const&) = delete;
-    HarvestFarmBlockDefinition(HarvestFarmBlockDefinition const&)            = delete;
+    HarvestFarmBlockDefinition& operator=(HarvestFarmBlockDefinition const&);
+    HarvestFarmBlockDefinition(HarvestFarmBlockDefinition const&);
 
 public:
     // NOLINTBEGIN

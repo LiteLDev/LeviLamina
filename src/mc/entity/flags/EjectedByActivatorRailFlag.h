@@ -5,7 +5,7 @@
 struct EjectedByActivatorRailFlag {
 public:
     // prevent constructor by default
-    EjectedByActivatorRailFlag& operator=(EjectedByActivatorRailFlag const&) = delete;
-    EjectedByActivatorRailFlag(EjectedByActivatorRailFlag const&)            = delete;
-    EjectedByActivatorRailFlag()                                             = delete;
+    EjectedByActivatorRailFlag& operator=(EjectedByActivatorRailFlag const&);
+    EjectedByActivatorRailFlag(EjectedByActivatorRailFlag const&);
+    EjectedByActivatorRailFlag();
 };

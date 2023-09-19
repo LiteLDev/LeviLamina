@@ -10,8 +10,8 @@
 class LevelChunkPacket : public ::Packet {
 public:
     // prevent constructor by default
-    LevelChunkPacket& operator=(LevelChunkPacket const&) = delete;
-    LevelChunkPacket(LevelChunkPacket const&)            = delete;
+    LevelChunkPacket& operator=(LevelChunkPacket const&);
+    LevelChunkPacket(LevelChunkPacket const&);
 
 public:
     // NOLINTBEGIN

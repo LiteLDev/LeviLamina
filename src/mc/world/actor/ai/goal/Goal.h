@@ -8,8 +8,8 @@
 class Goal {
 public:
     // prevent constructor by default
-    Goal& operator=(Goal const&) = delete;
-    Goal(Goal const&)            = delete;
+    Goal& operator=(Goal const&);
+    Goal(Goal const&);
 
 public:
     // NOLINTBEGIN

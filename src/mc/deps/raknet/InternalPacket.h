@@ -7,8 +7,8 @@ namespace RakNet {
 struct InternalPacket {
 public:
     // prevent constructor by default
-    InternalPacket(InternalPacket const&) = delete;
-    InternalPacket()                      = delete;
+    InternalPacket(InternalPacket const&);
+    InternalPacket();
 
 public:
     // NOLINTBEGIN

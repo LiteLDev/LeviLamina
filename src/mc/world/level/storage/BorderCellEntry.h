@@ -7,9 +7,9 @@ namespace BlendingDataFactoryUtil {
 struct BorderCellEntry {
 public:
     // prevent constructor by default
-    BorderCellEntry& operator=(BorderCellEntry const&) = delete;
-    BorderCellEntry(BorderCellEntry const&)            = delete;
-    BorderCellEntry()                                  = delete;
+    BorderCellEntry& operator=(BorderCellEntry const&);
+    BorderCellEntry(BorderCellEntry const&);
+    BorderCellEntry();
 
 public:
     // NOLINTBEGIN

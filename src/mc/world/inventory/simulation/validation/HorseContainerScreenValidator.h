@@ -9,8 +9,8 @@
 class HorseContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // prevent constructor by default
-    HorseContainerScreenValidator& operator=(HorseContainerScreenValidator const&) = delete;
-    HorseContainerScreenValidator(HorseContainerScreenValidator const&)            = delete;
+    HorseContainerScreenValidator& operator=(HorseContainerScreenValidator const&);
+    HorseContainerScreenValidator(HorseContainerScreenValidator const&);
 
 public:
     // NOLINTBEGIN

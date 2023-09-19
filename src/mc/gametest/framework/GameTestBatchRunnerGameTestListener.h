@@ -16,9 +16,9 @@ namespace gametest {
 class GameTestBatchRunnerGameTestListener : public ::gametest::IGameTestListener {
 public:
     // prevent constructor by default
-    GameTestBatchRunnerGameTestListener& operator=(GameTestBatchRunnerGameTestListener const&) = delete;
-    GameTestBatchRunnerGameTestListener(GameTestBatchRunnerGameTestListener const&)            = delete;
-    GameTestBatchRunnerGameTestListener()                                                      = delete;
+    GameTestBatchRunnerGameTestListener& operator=(GameTestBatchRunnerGameTestListener const&);
+    GameTestBatchRunnerGameTestListener(GameTestBatchRunnerGameTestListener const&);
+    GameTestBatchRunnerGameTestListener();
 
 public:
     // NOLINTBEGIN

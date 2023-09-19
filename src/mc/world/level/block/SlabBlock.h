@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class SlabBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    SlabBlock& operator=(SlabBlock const&) = delete;
-    SlabBlock(SlabBlock const&)            = delete;
-    SlabBlock()                            = delete;
+    SlabBlock& operator=(SlabBlock const&);
+    SlabBlock(SlabBlock const&);
+    SlabBlock();
 
 public:
     // NOLINTBEGIN

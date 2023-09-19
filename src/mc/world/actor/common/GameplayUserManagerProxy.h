@@ -5,9 +5,9 @@
 class GameplayUserManagerProxy {
 public:
     // prevent constructor by default
-    GameplayUserManagerProxy& operator=(GameplayUserManagerProxy const&) = delete;
-    GameplayUserManagerProxy(GameplayUserManagerProxy const&)            = delete;
-    GameplayUserManagerProxy()                                           = delete;
+    GameplayUserManagerProxy& operator=(GameplayUserManagerProxy const&);
+    GameplayUserManagerProxy(GameplayUserManagerProxy const&);
+    GameplayUserManagerProxy();
 
 public:
     // NOLINTBEGIN

@@ -13,9 +13,9 @@ namespace cereal {
 class BasicSaver {
 public:
     // prevent constructor by default
-    BasicSaver& operator=(BasicSaver const&) = delete;
-    BasicSaver(BasicSaver const&)            = delete;
-    BasicSaver()                             = delete;
+    BasicSaver& operator=(BasicSaver const&);
+    BasicSaver(BasicSaver const&);
+    BasicSaver();
 
 public:
     // NOLINTBEGIN

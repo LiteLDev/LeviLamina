@@ -8,9 +8,9 @@
 class SporeBlossomBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    SporeBlossomBlockActor& operator=(SporeBlossomBlockActor const&) = delete;
-    SporeBlossomBlockActor(SporeBlossomBlockActor const&)            = delete;
-    SporeBlossomBlockActor()                                         = delete;
+    SporeBlossomBlockActor& operator=(SporeBlossomBlockActor const&);
+    SporeBlossomBlockActor(SporeBlossomBlockActor const&);
+    SporeBlossomBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -51,7 +51,7 @@ public:
     virtual void __unk_vfn_39();
 
     // symbol: ??0SporeBlossomBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI SporeBlossomBlockActor(class BlockPos const&);
+    MCAPI explicit SporeBlossomBlockActor(class BlockPos const&);
 
     // NOLINTEND
 };

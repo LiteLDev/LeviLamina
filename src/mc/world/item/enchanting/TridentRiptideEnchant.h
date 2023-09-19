@@ -8,9 +8,9 @@
 class TridentRiptideEnchant : public ::Enchant {
 public:
     // prevent constructor by default
-    TridentRiptideEnchant& operator=(TridentRiptideEnchant const&) = delete;
-    TridentRiptideEnchant(TridentRiptideEnchant const&)            = delete;
-    TridentRiptideEnchant()                                        = delete;
+    TridentRiptideEnchant& operator=(TridentRiptideEnchant const&);
+    TridentRiptideEnchant(TridentRiptideEnchant const&);
+    TridentRiptideEnchant();
 
 public:
     // NOLINTBEGIN

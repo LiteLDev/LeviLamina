@@ -5,7 +5,7 @@
 class ResourceLocationPair {
 public:
     // prevent constructor by default
-    ResourceLocationPair& operator=(ResourceLocationPair const&) = delete;
-    ResourceLocationPair(ResourceLocationPair const&)            = delete;
-    ResourceLocationPair()                                       = delete;
+    ResourceLocationPair& operator=(ResourceLocationPair const&);
+    ResourceLocationPair(ResourceLocationPair const&);
+    ResourceLocationPair();
 };

@@ -10,9 +10,9 @@
 class HideGoal : public ::MoveToPOIGoal {
 public:
     // prevent constructor by default
-    HideGoal& operator=(HideGoal const&) = delete;
-    HideGoal(HideGoal const&)            = delete;
-    HideGoal()                           = delete;
+    HideGoal& operator=(HideGoal const&);
+    HideGoal(HideGoal const&);
+    HideGoal();
 
 public:
     // NOLINTBEGIN

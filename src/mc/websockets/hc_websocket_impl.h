@@ -7,9 +7,9 @@ namespace xbox::httpclient {
 struct hc_websocket_impl {
 public:
     // prevent constructor by default
-    hc_websocket_impl& operator=(hc_websocket_impl const&) = delete;
-    hc_websocket_impl(hc_websocket_impl const&)            = delete;
-    hc_websocket_impl()                                    = delete;
+    hc_websocket_impl& operator=(hc_websocket_impl const&);
+    hc_websocket_impl(hc_websocket_impl const&);
+    hc_websocket_impl();
 
 public:
     // NOLINTBEGIN

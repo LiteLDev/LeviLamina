@@ -8,9 +8,9 @@
 class GlowItemFrameBlockActor : public ::ItemFrameBlockActor {
 public:
     // prevent constructor by default
-    GlowItemFrameBlockActor& operator=(GlowItemFrameBlockActor const&) = delete;
-    GlowItemFrameBlockActor(GlowItemFrameBlockActor const&)            = delete;
-    GlowItemFrameBlockActor()                                          = delete;
+    GlowItemFrameBlockActor& operator=(GlowItemFrameBlockActor const&);
+    GlowItemFrameBlockActor(GlowItemFrameBlockActor const&);
+    GlowItemFrameBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -48,7 +48,7 @@ public:
     virtual void __unk_vfn_39();
 
     // symbol: ??0GlowItemFrameBlockActor@@QEAA@VBlockPos@@@Z
-    MCAPI GlowItemFrameBlockActor(class BlockPos);
+    MCAPI explicit GlowItemFrameBlockActor(class BlockPos);
 
     // NOLINTEND
 };

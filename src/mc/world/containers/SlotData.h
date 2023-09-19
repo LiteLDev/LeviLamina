@@ -5,8 +5,8 @@
 struct SlotData {
 public:
     // prevent constructor by default
-    SlotData& operator=(SlotData const&) = delete;
-    SlotData(SlotData const&)            = delete;
+    SlotData& operator=(SlotData const&);
+    SlotData(SlotData const&);
 
 public:
     // NOLINTBEGIN

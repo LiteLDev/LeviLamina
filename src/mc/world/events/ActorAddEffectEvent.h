@@ -5,8 +5,8 @@
 struct ActorAddEffectEvent {
 public:
     // prevent constructor by default
-    ActorAddEffectEvent& operator=(ActorAddEffectEvent const&) = delete;
-    ActorAddEffectEvent()                                      = delete;
+    ActorAddEffectEvent& operator=(ActorAddEffectEvent const&);
+    ActorAddEffectEvent();
 
 public:
     // NOLINTBEGIN

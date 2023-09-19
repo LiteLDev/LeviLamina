@@ -5,9 +5,9 @@
 struct FogDistanceSetting {
 public:
     // prevent constructor by default
-    FogDistanceSetting& operator=(FogDistanceSetting const&) = delete;
-    FogDistanceSetting(FogDistanceSetting const&)            = delete;
-    FogDistanceSetting()                                     = delete;
+    FogDistanceSetting& operator=(FogDistanceSetting const&);
+    FogDistanceSetting(FogDistanceSetting const&);
+    FogDistanceSetting();
 
 public:
     // NOLINTBEGIN

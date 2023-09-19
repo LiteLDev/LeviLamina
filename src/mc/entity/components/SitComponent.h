@@ -5,9 +5,9 @@
 class SitComponent {
 public:
     // prevent constructor by default
-    SitComponent& operator=(SitComponent const&) = delete;
-    SitComponent(SitComponent const&)            = delete;
-    SitComponent()                               = delete;
+    SitComponent& operator=(SitComponent const&);
+    SitComponent(SitComponent const&);
+    SitComponent();
 
 public:
     // NOLINTBEGIN

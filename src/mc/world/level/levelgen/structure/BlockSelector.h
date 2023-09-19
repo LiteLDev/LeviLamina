@@ -5,9 +5,9 @@
 class BlockSelector {
 public:
     // prevent constructor by default
-    BlockSelector& operator=(BlockSelector const&) = delete;
-    BlockSelector(BlockSelector const&)            = delete;
-    BlockSelector()                                = delete;
+    BlockSelector& operator=(BlockSelector const&);
+    BlockSelector(BlockSelector const&);
+    BlockSelector();
 
 public:
     // NOLINTBEGIN

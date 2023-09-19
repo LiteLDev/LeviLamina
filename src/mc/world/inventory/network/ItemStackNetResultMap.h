@@ -9,9 +9,9 @@
 class ItemStackNetResultMap {
 public:
     // prevent constructor by default
-    ItemStackNetResultMap& operator=(ItemStackNetResultMap const&) = delete;
-    ItemStackNetResultMap(ItemStackNetResultMap const&)            = delete;
-    ItemStackNetResultMap()                                        = delete;
+    ItemStackNetResultMap& operator=(ItemStackNetResultMap const&);
+    ItemStackNetResultMap(ItemStackNetResultMap const&);
+    ItemStackNetResultMap();
 
 public:
     // NOLINTBEGIN

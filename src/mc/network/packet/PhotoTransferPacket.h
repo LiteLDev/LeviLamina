@@ -10,8 +10,8 @@
 class PhotoTransferPacket : public ::Packet {
 public:
     // prevent constructor by default
-    PhotoTransferPacket& operator=(PhotoTransferPacket const&) = delete;
-    PhotoTransferPacket(PhotoTransferPacket const&)            = delete;
+    PhotoTransferPacket& operator=(PhotoTransferPacket const&);
+    PhotoTransferPacket(PhotoTransferPacket const&);
 
 public:
     // NOLINTBEGIN

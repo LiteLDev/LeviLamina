@@ -10,9 +10,9 @@ namespace Json { class Value; }
 class FlatWorldGeneratorOptions {
 public:
     // prevent constructor by default
-    FlatWorldGeneratorOptions& operator=(FlatWorldGeneratorOptions const&) = delete;
-    FlatWorldGeneratorOptions(FlatWorldGeneratorOptions const&)            = delete;
-    FlatWorldGeneratorOptions()                                            = delete;
+    FlatWorldGeneratorOptions& operator=(FlatWorldGeneratorOptions const&);
+    FlatWorldGeneratorOptions(FlatWorldGeneratorOptions const&);
+    FlatWorldGeneratorOptions();
 
 public:
     // NOLINTBEGIN

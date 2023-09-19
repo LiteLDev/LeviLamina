@@ -5,14 +5,14 @@
 struct GameRuleId {
 public:
     // prevent constructor by default
-    GameRuleId& operator=(GameRuleId const&) = delete;
-    GameRuleId(GameRuleId const&)            = delete;
-    GameRuleId()                             = delete;
+    GameRuleId& operator=(GameRuleId const&);
+    GameRuleId(GameRuleId const&);
+    GameRuleId();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0GameRuleId@@QEAA@H@Z
-    MCAPI GameRuleId(int);
+    MCAPI explicit GameRuleId(int);
 
     // NOLINTEND
 };

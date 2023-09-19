@@ -5,9 +5,9 @@
 class Cavifier {
 public:
     // prevent constructor by default
-    Cavifier& operator=(Cavifier const&) = delete;
-    Cavifier(Cavifier const&)            = delete;
-    Cavifier()                           = delete;
+    Cavifier& operator=(Cavifier const&);
+    Cavifier(Cavifier const&);
+    Cavifier();
 
 public:
     // NOLINTBEGIN

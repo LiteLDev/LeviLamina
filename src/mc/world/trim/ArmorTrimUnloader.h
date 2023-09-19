@@ -5,7 +5,7 @@
 class ArmorTrimUnloader {
 public:
     // prevent constructor by default
-    ArmorTrimUnloader& operator=(ArmorTrimUnloader const&) = delete;
-    ArmorTrimUnloader(ArmorTrimUnloader const&)            = delete;
-    ArmorTrimUnloader()                                    = delete;
+    ArmorTrimUnloader& operator=(ArmorTrimUnloader const&);
+    ArmorTrimUnloader(ArmorTrimUnloader const&);
+    ArmorTrimUnloader();
 };

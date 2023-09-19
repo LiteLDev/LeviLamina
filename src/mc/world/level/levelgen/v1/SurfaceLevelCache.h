@@ -9,9 +9,9 @@
 class SurfaceLevelCache : public ::IPreliminarySurfaceProvider {
 public:
     // prevent constructor by default
-    SurfaceLevelCache& operator=(SurfaceLevelCache const&) = delete;
-    SurfaceLevelCache(SurfaceLevelCache const&)            = delete;
-    SurfaceLevelCache()                                    = delete;
+    SurfaceLevelCache& operator=(SurfaceLevelCache const&);
+    SurfaceLevelCache(SurfaceLevelCache const&);
+    SurfaceLevelCache();
 
 public:
     // NOLINTBEGIN

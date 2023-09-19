@@ -5,9 +5,9 @@
 class AdmireItemComponent {
 public:
     // prevent constructor by default
-    AdmireItemComponent& operator=(AdmireItemComponent const&) = delete;
-    AdmireItemComponent(AdmireItemComponent const&)            = delete;
-    AdmireItemComponent()                                      = delete;
+    AdmireItemComponent& operator=(AdmireItemComponent const&);
+    AdmireItemComponent(AdmireItemComponent const&);
+    AdmireItemComponent();
 
 public:
     // NOLINTBEGIN

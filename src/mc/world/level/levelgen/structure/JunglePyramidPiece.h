@@ -9,9 +9,9 @@
 class JunglePyramidPiece : public ::ScatteredFeaturePiece {
 public:
     // prevent constructor by default
-    JunglePyramidPiece& operator=(JunglePyramidPiece const&) = delete;
-    JunglePyramidPiece(JunglePyramidPiece const&)            = delete;
-    JunglePyramidPiece()                                     = delete;
+    JunglePyramidPiece& operator=(JunglePyramidPiece const&);
+    JunglePyramidPiece(JunglePyramidPiece const&);
+    JunglePyramidPiece();
 
 public:
     // NOLINTBEGIN

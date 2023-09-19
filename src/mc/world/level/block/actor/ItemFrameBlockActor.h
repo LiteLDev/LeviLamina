@@ -10,9 +10,9 @@
 class ItemFrameBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    ItemFrameBlockActor& operator=(ItemFrameBlockActor const&) = delete;
-    ItemFrameBlockActor(ItemFrameBlockActor const&)            = delete;
-    ItemFrameBlockActor()                                      = delete;
+    ItemFrameBlockActor& operator=(ItemFrameBlockActor const&);
+    ItemFrameBlockActor(ItemFrameBlockActor const&);
+    ItemFrameBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -78,7 +78,7 @@ public:
     MCVAPI ~ItemFrameBlockActor();
 
     // symbol: ??0ItemFrameBlockActor@@QEAA@VBlockPos@@@Z
-    MCAPI ItemFrameBlockActor(class BlockPos);
+    MCAPI explicit ItemFrameBlockActor(class BlockPos);
 
     // symbol:
     // ??0ItemFrameBlockActor@@QEAA@VBlockPos@@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

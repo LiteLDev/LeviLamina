@@ -5,9 +5,9 @@
 class DepthBasedBlockSupplier {
 public:
     // prevent constructor by default
-    DepthBasedBlockSupplier& operator=(DepthBasedBlockSupplier const&) = delete;
-    DepthBasedBlockSupplier(DepthBasedBlockSupplier const&)            = delete;
-    DepthBasedBlockSupplier()                                          = delete;
+    DepthBasedBlockSupplier& operator=(DepthBasedBlockSupplier const&);
+    DepthBasedBlockSupplier(DepthBasedBlockSupplier const&);
+    DepthBasedBlockSupplier();
 
 public:
     // NOLINTBEGIN

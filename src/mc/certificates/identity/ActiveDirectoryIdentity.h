@@ -5,9 +5,9 @@
 class ActiveDirectoryIdentity {
 public:
     // prevent constructor by default
-    ActiveDirectoryIdentity& operator=(ActiveDirectoryIdentity const&) = delete;
-    ActiveDirectoryIdentity(ActiveDirectoryIdentity const&)            = delete;
-    ActiveDirectoryIdentity()                                          = delete;
+    ActiveDirectoryIdentity& operator=(ActiveDirectoryIdentity const&);
+    ActiveDirectoryIdentity(ActiveDirectoryIdentity const&);
+    ActiveDirectoryIdentity();
 
 public:
     // NOLINTBEGIN

@@ -10,14 +10,14 @@ namespace Json { class Value; }
 class WebToken {
 public:
     // prevent constructor by default
-    WebToken& operator=(WebToken const&) = delete;
-    WebToken(WebToken const&)            = delete;
-    WebToken()                           = delete;
+    WebToken& operator=(WebToken const&);
+    WebToken(WebToken const&);
+    WebToken();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0WebToken@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI WebToken(std::string);
+    MCAPI explicit WebToken(std::string);
 
     // symbol: ?toString@WebToken@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string toString() const;

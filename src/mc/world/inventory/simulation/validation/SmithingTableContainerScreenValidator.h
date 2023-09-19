@@ -9,8 +9,8 @@
 class SmithingTableContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // prevent constructor by default
-    SmithingTableContainerScreenValidator& operator=(SmithingTableContainerScreenValidator const&) = delete;
-    SmithingTableContainerScreenValidator(SmithingTableContainerScreenValidator const&)            = delete;
+    SmithingTableContainerScreenValidator& operator=(SmithingTableContainerScreenValidator const&);
+    SmithingTableContainerScreenValidator(SmithingTableContainerScreenValidator const&);
 
 public:
     // NOLINTBEGIN

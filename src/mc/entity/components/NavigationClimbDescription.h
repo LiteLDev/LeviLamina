@@ -8,9 +8,9 @@
 class NavigationClimbDescription : public ::NavigationDescription {
 public:
     // prevent constructor by default
-    NavigationClimbDescription& operator=(NavigationClimbDescription const&) = delete;
-    NavigationClimbDescription(NavigationClimbDescription const&)            = delete;
-    NavigationClimbDescription()                                             = delete;
+    NavigationClimbDescription& operator=(NavigationClimbDescription const&);
+    NavigationClimbDescription(NavigationClimbDescription const&);
+    NavigationClimbDescription();
 
 public:
     // NOLINTBEGIN

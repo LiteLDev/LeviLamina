@@ -16,8 +16,8 @@ namespace mce { class UUID; }
 class ScriptMinecraftServerUIModuleFactory {
 public:
     // prevent constructor by default
-    ScriptMinecraftServerUIModuleFactory& operator=(ScriptMinecraftServerUIModuleFactory const&) = delete;
-    ScriptMinecraftServerUIModuleFactory(ScriptMinecraftServerUIModuleFactory const&)            = delete;
+    ScriptMinecraftServerUIModuleFactory& operator=(ScriptMinecraftServerUIModuleFactory const&);
+    ScriptMinecraftServerUIModuleFactory(ScriptMinecraftServerUIModuleFactory const&);
 
 public:
     // NOLINTBEGIN

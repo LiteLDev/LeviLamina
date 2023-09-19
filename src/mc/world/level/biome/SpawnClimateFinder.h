@@ -13,16 +13,16 @@ public:
     struct ResultDetails {
     public:
         // prevent constructor by default
-        ResultDetails& operator=(ResultDetails const&) = delete;
-        ResultDetails(ResultDetails const&)            = delete;
-        ResultDetails()                                = delete;
+        ResultDetails& operator=(ResultDetails const&);
+        ResultDetails(ResultDetails const&);
+        ResultDetails();
     };
 
 public:
     // prevent constructor by default
-    SpawnClimateFinder& operator=(SpawnClimateFinder const&) = delete;
-    SpawnClimateFinder(SpawnClimateFinder const&)            = delete;
-    SpawnClimateFinder()                                     = delete;
+    SpawnClimateFinder& operator=(SpawnClimateFinder const&);
+    SpawnClimateFinder(SpawnClimateFinder const&);
+    SpawnClimateFinder();
 
 public:
     // NOLINTBEGIN

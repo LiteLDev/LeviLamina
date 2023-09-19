@@ -5,9 +5,9 @@
 class AABBPred {
 public:
     // prevent constructor by default
-    AABBPred& operator=(AABBPred const&) = delete;
-    AABBPred(AABBPred const&)            = delete;
-    AABBPred()                           = delete;
+    AABBPred& operator=(AABBPred const&);
+    AABBPred(AABBPred const&);
+    AABBPred();
 
 public:
     // NOLINTBEGIN

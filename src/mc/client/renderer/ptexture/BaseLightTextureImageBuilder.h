@@ -5,7 +5,7 @@
 class BaseLightTextureImageBuilder {
 public:
     // prevent constructor by default
-    BaseLightTextureImageBuilder& operator=(BaseLightTextureImageBuilder const&) = delete;
-    BaseLightTextureImageBuilder(BaseLightTextureImageBuilder const&)            = delete;
-    BaseLightTextureImageBuilder()                                               = delete;
+    BaseLightTextureImageBuilder& operator=(BaseLightTextureImageBuilder const&);
+    BaseLightTextureImageBuilder(BaseLightTextureImageBuilder const&);
+    BaseLightTextureImageBuilder();
 };

@@ -16,9 +16,9 @@ public:
     struct FeatureBinaryJsonFormat {
     public:
         // prevent constructor by default
-        FeatureBinaryJsonFormat& operator=(FeatureBinaryJsonFormat const&) = delete;
-        FeatureBinaryJsonFormat(FeatureBinaryJsonFormat const&)            = delete;
-        FeatureBinaryJsonFormat()                                          = delete;
+        FeatureBinaryJsonFormat& operator=(FeatureBinaryJsonFormat const&);
+        FeatureBinaryJsonFormat(FeatureBinaryJsonFormat const&);
+        FeatureBinaryJsonFormat();
 
     public:
         // NOLINTBEGIN
@@ -30,8 +30,8 @@ public:
 
 public:
     // prevent constructor by default
-    FeatureRegistry& operator=(FeatureRegistry const&) = delete;
-    FeatureRegistry(FeatureRegistry const&)            = delete;
+    FeatureRegistry& operator=(FeatureRegistry const&);
+    FeatureRegistry(FeatureRegistry const&);
 
 public:
     // NOLINTBEGIN

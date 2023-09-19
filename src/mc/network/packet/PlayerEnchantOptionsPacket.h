@@ -10,9 +10,9 @@
 class PlayerEnchantOptionsPacket : public ::Packet {
 public:
     // prevent constructor by default
-    PlayerEnchantOptionsPacket& operator=(PlayerEnchantOptionsPacket const&) = delete;
-    PlayerEnchantOptionsPacket(PlayerEnchantOptionsPacket const&)            = delete;
-    PlayerEnchantOptionsPacket()                                             = delete;
+    PlayerEnchantOptionsPacket& operator=(PlayerEnchantOptionsPacket const&);
+    PlayerEnchantOptionsPacket(PlayerEnchantOptionsPacket const&);
+    PlayerEnchantOptionsPacket();
 
 public:
     // NOLINTBEGIN

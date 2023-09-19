@@ -5,9 +5,9 @@
 class VanillaItemTags {
 public:
     // prevent constructor by default
-    VanillaItemTags& operator=(VanillaItemTags const&) = delete;
-    VanillaItemTags(VanillaItemTags const&)            = delete;
-    VanillaItemTags()                                  = delete;
+    VanillaItemTags& operator=(VanillaItemTags const&);
+    VanillaItemTags(VanillaItemTags const&);
+    VanillaItemTags();
 
 public:
     // NOLINTBEGIN

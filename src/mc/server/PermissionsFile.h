@@ -16,14 +16,14 @@ namespace Json { class Value; }
 class PermissionsFile {
 public:
     // prevent constructor by default
-    PermissionsFile& operator=(PermissionsFile const&) = delete;
-    PermissionsFile(PermissionsFile const&)            = delete;
-    PermissionsFile()                                  = delete;
+    PermissionsFile& operator=(PermissionsFile const&);
+    PermissionsFile(PermissionsFile const&);
+    PermissionsFile();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0PermissionsFile@@QEAA@AEBVPath@Core@@@Z
-    MCAPI PermissionsFile(class Core::Path const&);
+    MCAPI explicit PermissionsFile(class Core::Path const&);
 
     // symbol:
     // ?applyPlayerPermissionsFromDisk@PermissionsFile@@QEAAXAEAVPlayer@@AEBVUserEntityIdentifierComponent@@W4CommandPermissionLevel@@@Z

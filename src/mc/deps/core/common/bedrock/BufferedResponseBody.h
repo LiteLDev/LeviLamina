@@ -16,9 +16,9 @@ namespace Bedrock::Http {
 class BufferedResponseBody : public ::Bedrock::Http::Internal::IResponseBody {
 public:
     // prevent constructor by default
-    BufferedResponseBody& operator=(BufferedResponseBody const&) = delete;
-    BufferedResponseBody(BufferedResponseBody const&)            = delete;
-    BufferedResponseBody()                                       = delete;
+    BufferedResponseBody& operator=(BufferedResponseBody const&);
+    BufferedResponseBody(BufferedResponseBody const&);
+    BufferedResponseBody();
 
 public:
     // NOLINTBEGIN

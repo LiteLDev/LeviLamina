@@ -8,9 +8,9 @@
 class ExecuteCommand : public ::Command {
 public:
     // prevent constructor by default
-    ExecuteCommand& operator=(ExecuteCommand const&) = delete;
-    ExecuteCommand(ExecuteCommand const&)            = delete;
-    ExecuteCommand()                                 = delete;
+    ExecuteCommand& operator=(ExecuteCommand const&);
+    ExecuteCommand(ExecuteCommand const&);
+    ExecuteCommand();
 
 public:
     // NOLINTBEGIN

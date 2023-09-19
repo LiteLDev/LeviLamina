@@ -5,7 +5,7 @@
 struct LocalPlayerComponentFlag {
 public:
     // prevent constructor by default
-    LocalPlayerComponentFlag& operator=(LocalPlayerComponentFlag const&) = delete;
-    LocalPlayerComponentFlag(LocalPlayerComponentFlag const&)            = delete;
-    LocalPlayerComponentFlag()                                           = delete;
+    LocalPlayerComponentFlag& operator=(LocalPlayerComponentFlag const&);
+    LocalPlayerComponentFlag(LocalPlayerComponentFlag const&);
+    LocalPlayerComponentFlag();
 };

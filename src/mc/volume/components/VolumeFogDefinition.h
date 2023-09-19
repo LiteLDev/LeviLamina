@@ -5,9 +5,9 @@
 struct VolumeFogDefinition {
 public:
     // prevent constructor by default
-    VolumeFogDefinition& operator=(VolumeFogDefinition const&) = delete;
-    VolumeFogDefinition(VolumeFogDefinition const&)            = delete;
-    VolumeFogDefinition()                                      = delete;
+    VolumeFogDefinition& operator=(VolumeFogDefinition const&);
+    VolumeFogDefinition(VolumeFogDefinition const&);
+    VolumeFogDefinition();
 
 public:
     // NOLINTBEGIN

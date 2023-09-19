@@ -5,8 +5,8 @@
 struct TripWireTripEvent {
 public:
     // prevent constructor by default
-    TripWireTripEvent& operator=(TripWireTripEvent const&) = delete;
-    TripWireTripEvent()                                    = delete;
+    TripWireTripEvent& operator=(TripWireTripEvent const&);
+    TripWireTripEvent();
 
 public:
     // NOLINTBEGIN

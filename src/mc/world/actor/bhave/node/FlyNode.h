@@ -9,8 +9,8 @@
 class FlyNode : public ::BehaviorNode {
 public:
     // prevent constructor by default
-    FlyNode& operator=(FlyNode const&) = delete;
-    FlyNode(FlyNode const&)            = delete;
+    FlyNode& operator=(FlyNode const&);
+    FlyNode(FlyNode const&);
 
 public:
     // NOLINTBEGIN

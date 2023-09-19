@@ -10,9 +10,9 @@
 class SidePoweredComponent : public ::CapacitorComponent {
 public:
     // prevent constructor by default
-    SidePoweredComponent& operator=(SidePoweredComponent const&) = delete;
-    SidePoweredComponent(SidePoweredComponent const&)            = delete;
-    SidePoweredComponent()                                       = delete;
+    SidePoweredComponent& operator=(SidePoweredComponent const&);
+    SidePoweredComponent(SidePoweredComponent const&);
+    SidePoweredComponent();
 
 public:
     // NOLINTBEGIN

@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class HomeDefinition {
 public:
     // prevent constructor by default
-    HomeDefinition& operator=(HomeDefinition const&) = delete;
-    HomeDefinition(HomeDefinition const&)            = delete;
+    HomeDefinition& operator=(HomeDefinition const&);
+    HomeDefinition(HomeDefinition const&);
 
 public:
     // NOLINTBEGIN

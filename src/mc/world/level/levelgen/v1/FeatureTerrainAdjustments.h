@@ -13,8 +13,8 @@ public:
     struct Descriptions {
     public:
         // prevent constructor by default
-        Descriptions& operator=(Descriptions const&) = delete;
-        Descriptions()                               = delete;
+        Descriptions& operator=(Descriptions const&);
+        Descriptions();
 
     public:
         // NOLINTBEGIN
@@ -33,9 +33,9 @@ public:
 
 public:
     // prevent constructor by default
-    FeatureTerrainAdjustments& operator=(FeatureTerrainAdjustments const&) = delete;
-    FeatureTerrainAdjustments(FeatureTerrainAdjustments const&)            = delete;
-    FeatureTerrainAdjustments()                                            = delete;
+    FeatureTerrainAdjustments& operator=(FeatureTerrainAdjustments const&);
+    FeatureTerrainAdjustments(FeatureTerrainAdjustments const&);
+    FeatureTerrainAdjustments();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class DragonScanningGoal : public ::Goal {
 public:
     // prevent constructor by default
-    DragonScanningGoal& operator=(DragonScanningGoal const&) = delete;
-    DragonScanningGoal(DragonScanningGoal const&)            = delete;
-    DragonScanningGoal()                                     = delete;
+    DragonScanningGoal& operator=(DragonScanningGoal const&);
+    DragonScanningGoal(DragonScanningGoal const&);
+    DragonScanningGoal();
 
 public:
     // NOLINTBEGIN
@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0DragonScanningGoal@@QEAA@AEAVEnderDragon@@@Z
-    MCAPI DragonScanningGoal(class EnderDragon&);
+    MCAPI explicit DragonScanningGoal(class EnderDragon&);
 
     // NOLINTEND
 

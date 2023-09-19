@@ -7,9 +7,9 @@ namespace Bedrock::PlatformUtils {
 struct PlatformData {
 public:
     // prevent constructor by default
-    PlatformData& operator=(PlatformData const&) = delete;
-    PlatformData(PlatformData const&)            = delete;
-    PlatformData()                               = delete;
+    PlatformData& operator=(PlatformData const&);
+    PlatformData(PlatformData const&);
+    PlatformData();
 
 public:
     // NOLINTBEGIN

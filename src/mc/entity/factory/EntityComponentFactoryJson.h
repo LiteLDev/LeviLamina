@@ -8,9 +8,9 @@
 class EntityComponentFactoryJson : public ::EntityComponentFactoryBase {
 public:
     // prevent constructor by default
-    EntityComponentFactoryJson& operator=(EntityComponentFactoryJson const&) = delete;
-    EntityComponentFactoryJson(EntityComponentFactoryJson const&)            = delete;
-    EntityComponentFactoryJson()                                             = delete;
+    EntityComponentFactoryJson& operator=(EntityComponentFactoryJson const&);
+    EntityComponentFactoryJson(EntityComponentFactoryJson const&);
+    EntityComponentFactoryJson();
 
 public:
     // NOLINTBEGIN

@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class GuardianAttackDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    GuardianAttackDefinition& operator=(GuardianAttackDefinition const&) = delete;
-    GuardianAttackDefinition(GuardianAttackDefinition const&)            = delete;
+    GuardianAttackDefinition& operator=(GuardianAttackDefinition const&);
+    GuardianAttackDefinition(GuardianAttackDefinition const&);
 
 public:
     // NOLINTBEGIN

@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class DiodeBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    DiodeBlock& operator=(DiodeBlock const&) = delete;
-    DiodeBlock(DiodeBlock const&)            = delete;
-    DiodeBlock()                             = delete;
+    DiodeBlock& operator=(DiodeBlock const&);
+    DiodeBlock(DiodeBlock const&);
+    DiodeBlock();
 
 public:
     // NOLINTBEGIN

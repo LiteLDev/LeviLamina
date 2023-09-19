@@ -15,7 +15,7 @@ public:
 
 public:
     // prevent constructor by default
-    ItemUseInventoryTransaction() = delete;
+    ItemUseInventoryTransaction();
 
 public:
     // NOLINTBEGIN

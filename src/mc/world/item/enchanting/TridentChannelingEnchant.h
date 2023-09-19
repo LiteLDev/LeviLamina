@@ -8,9 +8,9 @@
 class TridentChannelingEnchant : public ::Enchant {
 public:
     // prevent constructor by default
-    TridentChannelingEnchant& operator=(TridentChannelingEnchant const&) = delete;
-    TridentChannelingEnchant(TridentChannelingEnchant const&)            = delete;
-    TridentChannelingEnchant()                                           = delete;
+    TridentChannelingEnchant& operator=(TridentChannelingEnchant const&);
+    TridentChannelingEnchant(TridentChannelingEnchant const&);
+    TridentChannelingEnchant();
 
 public:
     // NOLINTBEGIN

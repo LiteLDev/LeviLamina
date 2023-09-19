@@ -5,9 +5,9 @@
 class CollisionBoxComponent {
 public:
     // prevent constructor by default
-    CollisionBoxComponent& operator=(CollisionBoxComponent const&) = delete;
-    CollisionBoxComponent(CollisionBoxComponent const&)            = delete;
-    CollisionBoxComponent()                                        = delete;
+    CollisionBoxComponent& operator=(CollisionBoxComponent const&);
+    CollisionBoxComponent(CollisionBoxComponent const&);
+    CollisionBoxComponent();
 
 public:
     // NOLINTBEGIN

@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class CryingObsidianBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    CryingObsidianBlock& operator=(CryingObsidianBlock const&) = delete;
-    CryingObsidianBlock(CryingObsidianBlock const&)            = delete;
-    CryingObsidianBlock()                                      = delete;
+    CryingObsidianBlock& operator=(CryingObsidianBlock const&);
+    CryingObsidianBlock(CryingObsidianBlock const&);
+    CryingObsidianBlock();
 
 public:
     // NOLINTBEGIN

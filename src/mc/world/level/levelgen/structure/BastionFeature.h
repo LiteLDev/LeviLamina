@@ -8,9 +8,9 @@
 class BastionFeature : public ::StructureFeature {
 public:
     // prevent constructor by default
-    BastionFeature& operator=(BastionFeature const&) = delete;
-    BastionFeature(BastionFeature const&)            = delete;
-    BastionFeature()                                 = delete;
+    BastionFeature& operator=(BastionFeature const&);
+    BastionFeature(BastionFeature const&);
+    BastionFeature();
 
 public:
     // NOLINTBEGIN

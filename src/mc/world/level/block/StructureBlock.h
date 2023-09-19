@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class StructureBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    StructureBlock& operator=(StructureBlock const&) = delete;
-    StructureBlock(StructureBlock const&)            = delete;
-    StructureBlock()                                 = delete;
+    StructureBlock& operator=(StructureBlock const&);
+    StructureBlock(StructureBlock const&);
+    StructureBlock();
 
 public:
     // NOLINTBEGIN

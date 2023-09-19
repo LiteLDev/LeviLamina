@@ -10,9 +10,9 @@
 class ActorDamageSource {
 public:
     // prevent constructor by default
-    ActorDamageSource& operator=(ActorDamageSource const&) = delete;
-    ActorDamageSource(ActorDamageSource const&)            = delete;
-    ActorDamageSource()                                    = delete;
+    ActorDamageSource& operator=(ActorDamageSource const&);
+    ActorDamageSource(ActorDamageSource const&);
+    ActorDamageSource();
 
 public:
     // NOLINTBEGIN
@@ -85,7 +85,7 @@ public:
     virtual std::unique_ptr<class ActorDamageSource> clone() const;
 
     // symbol: ??0ActorDamageSource@@QEAA@W4ActorDamageCause@@@Z
-    MCAPI ActorDamageSource(::ActorDamageCause);
+    MCAPI explicit ActorDamageSource(::ActorDamageCause);
 
     // symbol: ?getCause@ActorDamageSource@@QEBA?AW4ActorDamageCause@@XZ
     MCAPI ::ActorDamageCause getCause() const;

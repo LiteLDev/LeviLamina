@@ -8,9 +8,9 @@
 class BlueIceFeature : public ::Feature {
 public:
     // prevent constructor by default
-    BlueIceFeature& operator=(BlueIceFeature const&) = delete;
-    BlueIceFeature(BlueIceFeature const&)            = delete;
-    BlueIceFeature()                                 = delete;
+    BlueIceFeature& operator=(BlueIceFeature const&);
+    BlueIceFeature(BlueIceFeature const&);
+    BlueIceFeature();
 
 public:
     // NOLINTBEGIN

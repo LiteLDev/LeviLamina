@@ -25,9 +25,9 @@
 class EyeOfEnder : public ::Actor {
 public:
     // prevent constructor by default
-    EyeOfEnder& operator=(EyeOfEnder const&) = delete;
-    EyeOfEnder(EyeOfEnder const&)            = delete;
-    EyeOfEnder()                             = delete;
+    EyeOfEnder& operator=(EyeOfEnder const&);
+    EyeOfEnder(EyeOfEnder const&);
+    EyeOfEnder();
 
 public:
     // NOLINTBEGIN

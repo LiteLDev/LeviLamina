@@ -7,9 +7,9 @@ namespace Util {
 struct ContainerReplacementParams {
 public:
     // prevent constructor by default
-    ContainerReplacementParams& operator=(ContainerReplacementParams const&) = delete;
-    ContainerReplacementParams(ContainerReplacementParams const&)            = delete;
-    ContainerReplacementParams()                                             = delete;
+    ContainerReplacementParams& operator=(ContainerReplacementParams const&);
+    ContainerReplacementParams(ContainerReplacementParams const&);
+    ContainerReplacementParams();
 };
 
 }; // namespace Util

@@ -8,9 +8,9 @@
 class AnimationComponentID {
 public:
     // prevent constructor by default
-    AnimationComponentID& operator=(AnimationComponentID const&) = delete;
-    AnimationComponentID(AnimationComponentID const&)            = delete;
-    AnimationComponentID()                                       = delete;
+    AnimationComponentID& operator=(AnimationComponentID const&);
+    AnimationComponentID(AnimationComponentID const&);
+    AnimationComponentID();
 
 public:
     // NOLINTBEGIN

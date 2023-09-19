@@ -9,8 +9,8 @@
 class BinaryStream : public ::ReadOnlyBinaryStream {
 public:
     // prevent constructor by default
-    BinaryStream& operator=(BinaryStream const&) = delete;
-    BinaryStream(BinaryStream const&)            = delete;
+    BinaryStream& operator=(BinaryStream const&);
+    BinaryStream(BinaryStream const&);
 
 public:
     // NOLINTBEGIN

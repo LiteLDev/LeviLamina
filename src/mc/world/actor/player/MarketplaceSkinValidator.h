@@ -5,9 +5,9 @@
 class MarketplaceSkinValidator {
 public:
     // prevent constructor by default
-    MarketplaceSkinValidator& operator=(MarketplaceSkinValidator const&) = delete;
-    MarketplaceSkinValidator(MarketplaceSkinValidator const&)            = delete;
-    MarketplaceSkinValidator()                                           = delete;
+    MarketplaceSkinValidator& operator=(MarketplaceSkinValidator const&);
+    MarketplaceSkinValidator(MarketplaceSkinValidator const&);
+    MarketplaceSkinValidator();
 
 public:
     // NOLINTBEGIN

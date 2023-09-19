@@ -5,9 +5,9 @@
 class DataItem {
 public:
     // prevent constructor by default
-    DataItem& operator=(DataItem const&) = delete;
-    DataItem(DataItem const&)            = delete;
-    DataItem()                           = delete;
+    DataItem& operator=(DataItem const&);
+    DataItem(DataItem const&);
+    DataItem();
 
 public:
     // NOLINTBEGIN

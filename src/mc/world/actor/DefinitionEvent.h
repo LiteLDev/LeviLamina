@@ -5,7 +5,7 @@
 class DefinitionEvent {
 public:
     // prevent constructor by default
-    DefinitionEvent() = delete;
+    DefinitionEvent();
 
 public:
     // NOLINTBEGIN

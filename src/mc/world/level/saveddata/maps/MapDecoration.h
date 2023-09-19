@@ -14,9 +14,9 @@ public:
 
 public:
     // prevent constructor by default
-    MapDecoration& operator=(MapDecoration const&) = delete;
-    MapDecoration(MapDecoration const&)            = delete;
-    MapDecoration()                                = delete;
+    MapDecoration& operator=(MapDecoration const&);
+    MapDecoration(MapDecoration const&);
+    MapDecoration();
 
 public:
     // NOLINTBEGIN

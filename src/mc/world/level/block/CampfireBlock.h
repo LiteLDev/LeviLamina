@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class CampfireBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    CampfireBlock& operator=(CampfireBlock const&) = delete;
-    CampfireBlock(CampfireBlock const&)            = delete;
-    CampfireBlock()                                = delete;
+    CampfireBlock& operator=(CampfireBlock const&);
+    CampfireBlock(CampfireBlock const&);
+    CampfireBlock();
 
 public:
     // NOLINTBEGIN

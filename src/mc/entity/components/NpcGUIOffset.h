@@ -10,14 +10,14 @@ namespace Json { class Value; }
 class NpcGUIOffset {
 public:
     // prevent constructor by default
-    NpcGUIOffset& operator=(NpcGUIOffset const&) = delete;
-    NpcGUIOffset(NpcGUIOffset const&)            = delete;
-    NpcGUIOffset()                               = delete;
+    NpcGUIOffset& operator=(NpcGUIOffset const&);
+    NpcGUIOffset(NpcGUIOffset const&);
+    NpcGUIOffset();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0NpcGUIOffset@@QEAA@AEBVValue@Json@@@Z
-    MCAPI NpcGUIOffset(class Json::Value const&);
+    MCAPI explicit NpcGUIOffset(class Json::Value const&);
 
     // NOLINTEND
 };

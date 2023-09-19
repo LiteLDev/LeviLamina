@@ -11,8 +11,8 @@
 class ActorEventPacket : public ::Packet {
 public:
     // prevent constructor by default
-    ActorEventPacket& operator=(ActorEventPacket const&) = delete;
-    ActorEventPacket(ActorEventPacket const&)            = delete;
+    ActorEventPacket& operator=(ActorEventPacket const&);
+    ActorEventPacket(ActorEventPacket const&);
 
 public:
     // NOLINTBEGIN

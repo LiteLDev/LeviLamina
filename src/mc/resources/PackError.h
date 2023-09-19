@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class PackError {
 public:
     // prevent constructor by default
-    PackError& operator=(PackError const&) = delete;
-    PackError(PackError const&)            = delete;
-    PackError()                            = delete;
+    PackError& operator=(PackError const&);
+    PackError(PackError const&);
+    PackError();
 
 public:
     // NOLINTBEGIN

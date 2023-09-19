@@ -6,7 +6,7 @@ template <typename T0>
 struct InvertableFilter {
 public:
     // prevent constructor by default
-    InvertableFilter& operator=(InvertableFilter const&) = delete;
-    InvertableFilter(InvertableFilter const&)            = delete;
-    InvertableFilter()                                   = delete;
+    InvertableFilter& operator=(InvertableFilter const&);
+    InvertableFilter(InvertableFilter const&);
+    InvertableFilter();
 };

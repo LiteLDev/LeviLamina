@@ -5,8 +5,8 @@
 class MobEvent {
 public:
     // prevent constructor by default
-    MobEvent& operator=(MobEvent const&) = delete;
-    MobEvent()                           = delete;
+    MobEvent& operator=(MobEvent const&);
+    MobEvent();
 
 public:
     // NOLINTBEGIN

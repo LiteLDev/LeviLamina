@@ -10,8 +10,8 @@
 class SubClientLoginPacket : public ::Packet {
 public:
     // prevent constructor by default
-    SubClientLoginPacket& operator=(SubClientLoginPacket const&) = delete;
-    SubClientLoginPacket(SubClientLoginPacket const&)            = delete;
+    SubClientLoginPacket& operator=(SubClientLoginPacket const&);
+    SubClientLoginPacket(SubClientLoginPacket const&);
 
 public:
     // NOLINTBEGIN

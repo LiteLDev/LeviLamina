@@ -8,9 +8,9 @@
 class CompoundCreatorInputValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    CompoundCreatorInputValidation& operator=(CompoundCreatorInputValidation const&) = delete;
-    CompoundCreatorInputValidation(CompoundCreatorInputValidation const&)            = delete;
-    CompoundCreatorInputValidation()                                                 = delete;
+    CompoundCreatorInputValidation& operator=(CompoundCreatorInputValidation const&);
+    CompoundCreatorInputValidation(CompoundCreatorInputValidation const&);
+    CompoundCreatorInputValidation();
 
 public:
     // NOLINTBEGIN

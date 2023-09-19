@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class BrushItem : public ::Item {
 public:
     // prevent constructor by default
-    BrushItem& operator=(BrushItem const&) = delete;
-    BrushItem(BrushItem const&)            = delete;
-    BrushItem()                            = delete;
+    BrushItem& operator=(BrushItem const&);
+    BrushItem(BrushItem const&);
+    BrushItem();
 
 public:
     // NOLINTBEGIN

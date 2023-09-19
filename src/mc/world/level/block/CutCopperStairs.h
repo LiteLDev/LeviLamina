@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class CutCopperStairs : public ::StairBlock {
 public:
     // prevent constructor by default
-    CutCopperStairs& operator=(CutCopperStairs const&) = delete;
-    CutCopperStairs(CutCopperStairs const&)            = delete;
-    CutCopperStairs()                                  = delete;
+    CutCopperStairs& operator=(CutCopperStairs const&);
+    CutCopperStairs(CutCopperStairs const&);
+    CutCopperStairs();
 
 public:
     // NOLINTBEGIN

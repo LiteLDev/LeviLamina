@@ -7,9 +7,9 @@ namespace OperationNodeDetails {
 class OperationNodeBase {
 public:
     // prevent constructor by default
-    OperationNodeBase& operator=(OperationNodeBase const&) = delete;
-    OperationNodeBase(OperationNodeBase const&)            = delete;
-    OperationNodeBase()                                    = delete;
+    OperationNodeBase& operator=(OperationNodeBase const&);
+    OperationNodeBase(OperationNodeBase const&);
+    OperationNodeBase();
 
 public:
     // NOLINTBEGIN

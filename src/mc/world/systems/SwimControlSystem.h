@@ -5,9 +5,9 @@
 class SwimControlSystem {
 public:
     // prevent constructor by default
-    SwimControlSystem& operator=(SwimControlSystem const&) = delete;
-    SwimControlSystem(SwimControlSystem const&)            = delete;
-    SwimControlSystem()                                    = delete;
+    SwimControlSystem& operator=(SwimControlSystem const&);
+    SwimControlSystem(SwimControlSystem const&);
+    SwimControlSystem();
 
 public:
     // NOLINTBEGIN

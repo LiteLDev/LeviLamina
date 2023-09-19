@@ -5,7 +5,7 @@
 struct PlayerHandsBusyFlag {
 public:
     // prevent constructor by default
-    PlayerHandsBusyFlag& operator=(PlayerHandsBusyFlag const&) = delete;
-    PlayerHandsBusyFlag(PlayerHandsBusyFlag const&)            = delete;
-    PlayerHandsBusyFlag()                                      = delete;
+    PlayerHandsBusyFlag& operator=(PlayerHandsBusyFlag const&);
+    PlayerHandsBusyFlag(PlayerHandsBusyFlag const&);
+    PlayerHandsBusyFlag();
 };

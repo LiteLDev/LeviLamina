@@ -5,7 +5,7 @@
 struct SlideOffsetComponent {
 public:
     // prevent constructor by default
-    SlideOffsetComponent& operator=(SlideOffsetComponent const&) = delete;
-    SlideOffsetComponent(SlideOffsetComponent const&)            = delete;
-    SlideOffsetComponent()                                       = delete;
+    SlideOffsetComponent& operator=(SlideOffsetComponent const&);
+    SlideOffsetComponent(SlideOffsetComponent const&);
+    SlideOffsetComponent();
 };

@@ -5,7 +5,7 @@
 class BackwardsCompatTextureInfo {
 public:
     // prevent constructor by default
-    BackwardsCompatTextureInfo& operator=(BackwardsCompatTextureInfo const&) = delete;
-    BackwardsCompatTextureInfo(BackwardsCompatTextureInfo const&)            = delete;
-    BackwardsCompatTextureInfo()                                             = delete;
+    BackwardsCompatTextureInfo& operator=(BackwardsCompatTextureInfo const&);
+    BackwardsCompatTextureInfo(BackwardsCompatTextureInfo const&);
+    BackwardsCompatTextureInfo();
 };

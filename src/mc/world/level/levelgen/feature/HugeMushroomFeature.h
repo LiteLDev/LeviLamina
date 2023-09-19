@@ -8,8 +8,8 @@
 class HugeMushroomFeature : public ::Feature {
 public:
     // prevent constructor by default
-    HugeMushroomFeature& operator=(HugeMushroomFeature const&) = delete;
-    HugeMushroomFeature(HugeMushroomFeature const&)            = delete;
+    HugeMushroomFeature& operator=(HugeMushroomFeature const&);
+    HugeMushroomFeature(HugeMushroomFeature const&);
 
 public:
     // NOLINTBEGIN
@@ -23,7 +23,7 @@ public:
     MCVAPI ~HugeMushroomFeature();
 
     // symbol: ??0HugeMushroomFeature@@QEAA@H@Z
-    MCAPI HugeMushroomFeature(int);
+    MCAPI explicit HugeMushroomFeature(int);
 
     // symbol: ??0HugeMushroomFeature@@QEAA@XZ
     MCAPI HugeMushroomFeature();

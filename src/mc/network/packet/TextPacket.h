@@ -16,8 +16,8 @@ namespace PlayerCapabilities { struct ISharedController; }
 class TextPacket : public ::Packet {
 public:
     // prevent constructor by default
-    TextPacket& operator=(TextPacket const&) = delete;
-    TextPacket(TextPacket const&)            = delete;
+    TextPacket& operator=(TextPacket const&);
+    TextPacket(TextPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -14,9 +14,9 @@ public:
 
 public:
     // prevent constructor by default
-    HttpHeaders& operator=(HttpHeaders const&) = delete;
-    HttpHeaders(HttpHeaders const&)            = delete;
-    HttpHeaders()                              = delete;
+    HttpHeaders& operator=(HttpHeaders const&);
+    HttpHeaders(HttpHeaders const&);
+    HttpHeaders();
 
 public:
     // NOLINTBEGIN

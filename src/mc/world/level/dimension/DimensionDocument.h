@@ -31,9 +31,9 @@ public:
             struct Bounds {
             public:
                 // prevent constructor by default
-                Bounds& operator=(Bounds const&) = delete;
-                Bounds(Bounds const&)            = delete;
-                Bounds()                         = delete;
+                Bounds& operator=(Bounds const&);
+                Bounds(Bounds const&);
+                Bounds();
 
             public:
                 // NOLINTBEGIN
@@ -46,9 +46,9 @@ public:
             struct Generation {
             public:
                 // prevent constructor by default
-                Generation& operator=(Generation const&) = delete;
-                Generation(Generation const&)            = delete;
-                Generation()                             = delete;
+                Generation& operator=(Generation const&);
+                Generation(Generation const&);
+                Generation();
 
             public:
                 // NOLINTBEGIN
@@ -60,8 +60,8 @@ public:
 
         public:
             // prevent constructor by default
-            Components(Components const&) = delete;
-            Components()                  = delete;
+            Components(Components const&);
+            Components();
 
         public:
             // NOLINTBEGIN
@@ -81,9 +81,9 @@ public:
         struct Description {
         public:
             // prevent constructor by default
-            Description& operator=(Description const&) = delete;
-            Description(Description const&)            = delete;
-            Description()                              = delete;
+            Description& operator=(Description const&);
+            Description(Description const&);
+            Description();
 
         public:
             // NOLINTBEGIN
@@ -98,8 +98,8 @@ public:
 
     public:
         // prevent constructor by default
-        Dimension(Dimension const&) = delete;
-        Dimension()                 = delete;
+        Dimension(Dimension const&);
+        Dimension();
 
     public:
         // NOLINTBEGIN
@@ -120,8 +120,8 @@ public:
 
 public:
     // prevent constructor by default
-    DimensionDocument& operator=(DimensionDocument const&) = delete;
-    DimensionDocument(DimensionDocument const&)            = delete;
+    DimensionDocument& operator=(DimensionDocument const&);
+    DimensionDocument(DimensionDocument const&);
 
 public:
     // NOLINTBEGIN

@@ -8,8 +8,8 @@
 class StringTag : public ::Tag {
 public:
     // prevent constructor by default
-    StringTag& operator=(StringTag const&) = delete;
-    StringTag(StringTag const&)            = delete;
+    StringTag& operator=(StringTag const&);
+    StringTag(StringTag const&);
 
 public:
     // NOLINTBEGIN
@@ -44,7 +44,7 @@ public:
     MCAPI StringTag();
 
     // symbol: ??0StringTag@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI StringTag(std::string);
+    MCAPI explicit StringTag(std::string);
 
     // NOLINTEND
 };

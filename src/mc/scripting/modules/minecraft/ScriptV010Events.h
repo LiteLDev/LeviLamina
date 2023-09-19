@@ -38,9 +38,9 @@ namespace ScriptModuleMinecraft {
 class ScriptV010Events {
 public:
     // prevent constructor by default
-    ScriptV010Events& operator=(ScriptV010Events const&) = delete;
-    ScriptV010Events(ScriptV010Events const&)            = delete;
-    ScriptV010Events()                                   = delete;
+    ScriptV010Events& operator=(ScriptV010Events const&);
+    ScriptV010Events(ScriptV010Events const&);
+    ScriptV010Events();
 
 public:
     // NOLINTBEGIN

@@ -22,8 +22,8 @@ public:
     struct BucketContext {
     public:
         // prevent constructor by default
-        BucketContext(BucketContext const&) = delete;
-        BucketContext()                     = delete;
+        BucketContext(BucketContext const&);
+        BucketContext();
 
     public:
         // NOLINTBEGIN
@@ -40,15 +40,15 @@ public:
     class TaskInfo {
     public:
         // prevent constructor by default
-        TaskInfo& operator=(TaskInfo const&) = delete;
-        TaskInfo(TaskInfo const&)            = delete;
-        TaskInfo()                           = delete;
+        TaskInfo& operator=(TaskInfo const&);
+        TaskInfo(TaskInfo const&);
+        TaskInfo();
     };
 
 public:
     // prevent constructor by default
-    ChunkRecyclerTelemetryData& operator=(ChunkRecyclerTelemetryData const&) = delete;
-    ChunkRecyclerTelemetryData(ChunkRecyclerTelemetryData const&)            = delete;
+    ChunkRecyclerTelemetryData& operator=(ChunkRecyclerTelemetryData const&);
+    ChunkRecyclerTelemetryData(ChunkRecyclerTelemetryData const&);
 
 public:
     // NOLINTBEGIN

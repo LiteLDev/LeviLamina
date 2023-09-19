@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class DeepslateOreBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    DeepslateOreBlock& operator=(DeepslateOreBlock const&) = delete;
-    DeepslateOreBlock(DeepslateOreBlock const&)            = delete;
-    DeepslateOreBlock()                                    = delete;
+    DeepslateOreBlock& operator=(DeepslateOreBlock const&);
+    DeepslateOreBlock(DeepslateOreBlock const&);
+    DeepslateOreBlock();
 
 public:
     // NOLINTBEGIN

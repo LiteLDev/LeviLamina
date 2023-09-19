@@ -5,7 +5,7 @@
 struct PlayerSelectedItemChangedEvent {
 public:
     // prevent constructor by default
-    PlayerSelectedItemChangedEvent& operator=(PlayerSelectedItemChangedEvent const&) = delete;
-    PlayerSelectedItemChangedEvent(PlayerSelectedItemChangedEvent const&)            = delete;
-    PlayerSelectedItemChangedEvent()                                                 = delete;
+    PlayerSelectedItemChangedEvent& operator=(PlayerSelectedItemChangedEvent const&);
+    PlayerSelectedItemChangedEvent(PlayerSelectedItemChangedEvent const&);
+    PlayerSelectedItemChangedEvent();
 };

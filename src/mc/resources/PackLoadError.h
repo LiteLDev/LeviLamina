@@ -9,9 +9,9 @@
 class PackLoadError : public ::PackError {
 public:
     // prevent constructor by default
-    PackLoadError& operator=(PackLoadError const&) = delete;
-    PackLoadError(PackLoadError const&)            = delete;
-    PackLoadError()                                = delete;
+    PackLoadError& operator=(PackLoadError const&);
+    PackLoadError(PackLoadError const&);
+    PackLoadError();
 
 public:
     // NOLINTBEGIN

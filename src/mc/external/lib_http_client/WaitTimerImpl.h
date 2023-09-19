@@ -13,9 +13,9 @@ namespace OS {
 class WaitTimerImpl {
 public:
     // prevent constructor by default
-    WaitTimerImpl& operator=(WaitTimerImpl const&) = delete;
-    WaitTimerImpl(WaitTimerImpl const&)            = delete;
-    WaitTimerImpl()                                = delete;
+    WaitTimerImpl& operator=(WaitTimerImpl const&);
+    WaitTimerImpl(WaitTimerImpl const&);
+    WaitTimerImpl();
 
     // private:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class SeagrassFeature : public ::Feature {
 public:
     // prevent constructor by default
-    SeagrassFeature& operator=(SeagrassFeature const&) = delete;
-    SeagrassFeature(SeagrassFeature const&)            = delete;
-    SeagrassFeature()                                  = delete;
+    SeagrassFeature& operator=(SeagrassFeature const&);
+    SeagrassFeature(SeagrassFeature const&);
+    SeagrassFeature();
 
 public:
     // NOLINTBEGIN

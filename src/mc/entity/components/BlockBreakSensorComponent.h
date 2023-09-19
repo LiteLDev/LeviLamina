@@ -5,9 +5,9 @@
 class BlockBreakSensorComponent {
 public:
     // prevent constructor by default
-    BlockBreakSensorComponent& operator=(BlockBreakSensorComponent const&) = delete;
-    BlockBreakSensorComponent(BlockBreakSensorComponent const&)            = delete;
-    BlockBreakSensorComponent()                                            = delete;
+    BlockBreakSensorComponent& operator=(BlockBreakSensorComponent const&);
+    BlockBreakSensorComponent(BlockBreakSensorComponent const&);
+    BlockBreakSensorComponent();
 
 public:
     // NOLINTBEGIN

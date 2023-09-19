@@ -8,9 +8,9 @@
 class ArmorContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    ArmorContainerValidation& operator=(ArmorContainerValidation const&) = delete;
-    ArmorContainerValidation(ArmorContainerValidation const&)            = delete;
-    ArmorContainerValidation()                                           = delete;
+    ArmorContainerValidation& operator=(ArmorContainerValidation const&);
+    ArmorContainerValidation(ArmorContainerValidation const&);
+    ArmorContainerValidation();
 
 public:
     // NOLINTBEGIN

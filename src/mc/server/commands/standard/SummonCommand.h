@@ -9,9 +9,9 @@
 class SummonCommand : public ::ServerCommand {
 public:
     // prevent constructor by default
-    SummonCommand& operator=(SummonCommand const&) = delete;
-    SummonCommand(SummonCommand const&)            = delete;
-    SummonCommand()                                = delete;
+    SummonCommand& operator=(SummonCommand const&);
+    SummonCommand(SummonCommand const&);
+    SummonCommand();
 
 public:
     // NOLINTBEGIN

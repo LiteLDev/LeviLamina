@@ -26,9 +26,9 @@
 class Bee : public ::Animal {
 public:
     // prevent constructor by default
-    Bee& operator=(Bee const&) = delete;
-    Bee(Bee const&)            = delete;
-    Bee()                      = delete;
+    Bee& operator=(Bee const&);
+    Bee(Bee const&);
+    Bee();
 
 public:
     // NOLINTBEGIN

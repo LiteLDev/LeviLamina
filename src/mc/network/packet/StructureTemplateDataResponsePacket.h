@@ -11,8 +11,8 @@
 class StructureTemplateDataResponsePacket : public ::Packet {
 public:
     // prevent constructor by default
-    StructureTemplateDataResponsePacket& operator=(StructureTemplateDataResponsePacket const&) = delete;
-    StructureTemplateDataResponsePacket(StructureTemplateDataResponsePacket const&)            = delete;
+    StructureTemplateDataResponsePacket& operator=(StructureTemplateDataResponsePacket const&);
+    StructureTemplateDataResponsePacket(StructureTemplateDataResponsePacket const&);
 
 public:
     // NOLINTBEGIN

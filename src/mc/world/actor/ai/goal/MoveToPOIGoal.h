@@ -10,9 +10,9 @@
 class MoveToPOIGoal : public ::BaseMoveToGoal {
 public:
     // prevent constructor by default
-    MoveToPOIGoal& operator=(MoveToPOIGoal const&) = delete;
-    MoveToPOIGoal(MoveToPOIGoal const&)            = delete;
-    MoveToPOIGoal()                                = delete;
+    MoveToPOIGoal& operator=(MoveToPOIGoal const&);
+    MoveToPOIGoal(MoveToPOIGoal const&);
+    MoveToPOIGoal();
 
 public:
     // NOLINTBEGIN

@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class PinkPetalsBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    PinkPetalsBlock& operator=(PinkPetalsBlock const&) = delete;
-    PinkPetalsBlock(PinkPetalsBlock const&)            = delete;
-    PinkPetalsBlock()                                  = delete;
+    PinkPetalsBlock& operator=(PinkPetalsBlock const&);
+    PinkPetalsBlock(PinkPetalsBlock const&);
+    PinkPetalsBlock();
 
 public:
     // NOLINTBEGIN

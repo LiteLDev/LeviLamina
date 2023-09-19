@@ -5,9 +5,9 @@
 class IFileWriteAccess {
 public:
     // prevent constructor by default
-    IFileWriteAccess& operator=(IFileWriteAccess const&) = delete;
-    IFileWriteAccess(IFileWriteAccess const&)            = delete;
-    IFileWriteAccess()                                   = delete;
+    IFileWriteAccess& operator=(IFileWriteAccess const&);
+    IFileWriteAccess(IFileWriteAccess const&);
+    IFileWriteAccess();
 
 public:
     // NOLINTBEGIN

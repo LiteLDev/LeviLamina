@@ -5,9 +5,9 @@
 struct DeserializedChunkLoadedRequest {
 public:
     // prevent constructor by default
-    DeserializedChunkLoadedRequest& operator=(DeserializedChunkLoadedRequest const&) = delete;
-    DeserializedChunkLoadedRequest(DeserializedChunkLoadedRequest const&)            = delete;
-    DeserializedChunkLoadedRequest()                                                 = delete;
+    DeserializedChunkLoadedRequest& operator=(DeserializedChunkLoadedRequest const&);
+    DeserializedChunkLoadedRequest(DeserializedChunkLoadedRequest const&);
+    DeserializedChunkLoadedRequest();
 
 public:
     // NOLINTBEGIN

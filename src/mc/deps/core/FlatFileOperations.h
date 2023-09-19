@@ -20,9 +20,9 @@ namespace Core {
 class FlatFileOperations {
 public:
     // prevent constructor by default
-    FlatFileOperations& operator=(FlatFileOperations const&) = delete;
-    FlatFileOperations(FlatFileOperations const&)            = delete;
-    FlatFileOperations()                                     = delete;
+    FlatFileOperations& operator=(FlatFileOperations const&);
+    FlatFileOperations(FlatFileOperations const&);
+    FlatFileOperations();
 
 public:
     // NOLINTBEGIN

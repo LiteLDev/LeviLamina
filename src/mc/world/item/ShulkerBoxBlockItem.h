@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class ShulkerBoxBlockItem : public ::AuxDataBlockItem {
 public:
     // prevent constructor by default
-    ShulkerBoxBlockItem& operator=(ShulkerBoxBlockItem const&) = delete;
-    ShulkerBoxBlockItem(ShulkerBoxBlockItem const&)            = delete;
-    ShulkerBoxBlockItem()                                      = delete;
+    ShulkerBoxBlockItem& operator=(ShulkerBoxBlockItem const&);
+    ShulkerBoxBlockItem(ShulkerBoxBlockItem const&);
+    ShulkerBoxBlockItem();
 
 public:
     // NOLINTBEGIN

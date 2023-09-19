@@ -9,8 +9,8 @@
 class FindBlockNode : public ::BehaviorNode {
 public:
     // prevent constructor by default
-    FindBlockNode& operator=(FindBlockNode const&) = delete;
-    FindBlockNode(FindBlockNode const&)            = delete;
+    FindBlockNode& operator=(FindBlockNode const&);
+    FindBlockNode(FindBlockNode const&);
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 struct SnapOnRailComponent {
 public:
     // prevent constructor by default
-    SnapOnRailComponent& operator=(SnapOnRailComponent const&) = delete;
-    SnapOnRailComponent(SnapOnRailComponent const&)            = delete;
-    SnapOnRailComponent()                                      = delete;
+    SnapOnRailComponent& operator=(SnapOnRailComponent const&);
+    SnapOnRailComponent(SnapOnRailComponent const&);
+    SnapOnRailComponent();
 };

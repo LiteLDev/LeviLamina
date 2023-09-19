@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class SubtreeDefinition : public ::BehaviorDefinition {
 public:
     // prevent constructor by default
-    SubtreeDefinition& operator=(SubtreeDefinition const&) = delete;
-    SubtreeDefinition(SubtreeDefinition const&)            = delete;
-    SubtreeDefinition()                                    = delete;
+    SubtreeDefinition& operator=(SubtreeDefinition const&);
+    SubtreeDefinition(SubtreeDefinition const&);
+    SubtreeDefinition();
 
 public:
     // NOLINTBEGIN

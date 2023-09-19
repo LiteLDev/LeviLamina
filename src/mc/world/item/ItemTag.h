@@ -5,9 +5,9 @@
 struct ItemTag {
 public:
     // prevent constructor by default
-    ItemTag& operator=(ItemTag const&) = delete;
-    ItemTag(ItemTag const&)            = delete;
-    ItemTag()                          = delete;
+    ItemTag& operator=(ItemTag const&);
+    ItemTag(ItemTag const&);
+    ItemTag();
 
 public:
     // NOLINTBEGIN

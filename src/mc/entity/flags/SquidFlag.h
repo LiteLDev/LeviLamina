@@ -5,7 +5,7 @@
 struct SquidFlag {
 public:
     // prevent constructor by default
-    SquidFlag& operator=(SquidFlag const&) = delete;
-    SquidFlag(SquidFlag const&)            = delete;
-    SquidFlag()                            = delete;
+    SquidFlag& operator=(SquidFlag const&);
+    SquidFlag(SquidFlag const&);
+    SquidFlag();
 };

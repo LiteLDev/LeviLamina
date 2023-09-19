@@ -5,8 +5,8 @@
 class PushableComponent {
 public:
     // prevent constructor by default
-    PushableComponent& operator=(PushableComponent const&) = delete;
-    PushableComponent(PushableComponent const&)            = delete;
+    PushableComponent& operator=(PushableComponent const&);
+    PushableComponent(PushableComponent const&);
 
 public:
     // NOLINTBEGIN

@@ -10,8 +10,8 @@ namespace mce { class UUID; }
 class AttributeInstance {
 public:
     // prevent constructor by default
-    AttributeInstance& operator=(AttributeInstance const&) = delete;
-    AttributeInstance()                                    = delete;
+    AttributeInstance& operator=(AttributeInstance const&);
+    AttributeInstance();
 
 public:
     // NOLINTBEGIN

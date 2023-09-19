@@ -8,9 +8,9 @@
 class BastionStart : public ::StructureStart {
 public:
     // prevent constructor by default
-    BastionStart& operator=(BastionStart const&) = delete;
-    BastionStart(BastionStart const&)            = delete;
-    BastionStart()                               = delete;
+    BastionStart& operator=(BastionStart const&);
+    BastionStart(BastionStart const&);
+    BastionStart();
 
 public:
     // NOLINTBEGIN

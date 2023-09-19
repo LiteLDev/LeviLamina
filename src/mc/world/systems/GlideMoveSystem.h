@@ -5,9 +5,9 @@
 class GlideMoveSystem {
 public:
     // prevent constructor by default
-    GlideMoveSystem& operator=(GlideMoveSystem const&) = delete;
-    GlideMoveSystem(GlideMoveSystem const&)            = delete;
-    GlideMoveSystem()                                  = delete;
+    GlideMoveSystem& operator=(GlideMoveSystem const&);
+    GlideMoveSystem(GlideMoveSystem const&);
+    GlideMoveSystem();
 
 public:
     // NOLINTBEGIN

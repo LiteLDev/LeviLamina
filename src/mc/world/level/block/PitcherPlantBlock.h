@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class PitcherPlantBlock : public ::DoublePlantBaseBlock {
 public:
     // prevent constructor by default
-    PitcherPlantBlock& operator=(PitcherPlantBlock const&) = delete;
-    PitcherPlantBlock(PitcherPlantBlock const&)            = delete;
-    PitcherPlantBlock()                                    = delete;
+    PitcherPlantBlock& operator=(PitcherPlantBlock const&);
+    PitcherPlantBlock(PitcherPlantBlock const&);
+    PitcherPlantBlock();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class LabTableReaction {
 public:
     // prevent constructor by default
-    LabTableReaction& operator=(LabTableReaction const&) = delete;
-    LabTableReaction(LabTableReaction const&)            = delete;
-    LabTableReaction()                                   = delete;
+    LabTableReaction& operator=(LabTableReaction const&);
+    LabTableReaction(LabTableReaction const&);
+    LabTableReaction();
 
 public:
     // NOLINTBEGIN

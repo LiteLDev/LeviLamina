@@ -5,9 +5,9 @@
 class SpawnConditions {
 public:
     // prevent constructor by default
-    SpawnConditions& operator=(SpawnConditions const&) = delete;
-    SpawnConditions(SpawnConditions const&)            = delete;
-    SpawnConditions()                                  = delete;
+    SpawnConditions& operator=(SpawnConditions const&);
+    SpawnConditions(SpawnConditions const&);
+    SpawnConditions();
 
 public:
     // NOLINTBEGIN

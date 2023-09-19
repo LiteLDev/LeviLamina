@@ -5,9 +5,9 @@
 struct TagMemoryChunk {
 public:
     // prevent constructor by default
-    TagMemoryChunk& operator=(TagMemoryChunk const&) = delete;
-    TagMemoryChunk(TagMemoryChunk const&)            = delete;
-    TagMemoryChunk()                                 = delete;
+    TagMemoryChunk& operator=(TagMemoryChunk const&);
+    TagMemoryChunk(TagMemoryChunk const&);
+    TagMemoryChunk();
 
 public:
     // NOLINTBEGIN

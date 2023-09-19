@@ -5,7 +5,7 @@
 class SculkBehavior {
 public:
     // prevent constructor by default
-    SculkBehavior& operator=(SculkBehavior const&) = delete;
-    SculkBehavior(SculkBehavior const&)            = delete;
-    SculkBehavior()                                = delete;
+    SculkBehavior& operator=(SculkBehavior const&);
+    SculkBehavior(SculkBehavior const&);
+    SculkBehavior();
 };

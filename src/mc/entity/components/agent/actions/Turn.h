@@ -7,9 +7,9 @@ namespace AgentComponents::Actions {
 struct Turn {
 public:
     // prevent constructor by default
-    Turn& operator=(Turn const&) = delete;
-    Turn(Turn const&)            = delete;
-    Turn()                       = delete;
+    Turn& operator=(Turn const&);
+    Turn(Turn const&);
+    Turn();
 };
 
 }; // namespace AgentComponents::Actions

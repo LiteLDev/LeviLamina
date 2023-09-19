@@ -5,8 +5,8 @@
 class Command {
 public:
     // prevent constructor by default
-    Command& operator=(Command const&) = delete;
-    Command(Command const&)            = delete;
+    Command& operator=(Command const&);
+    Command(Command const&);
 
 public:
     // NOLINTBEGIN

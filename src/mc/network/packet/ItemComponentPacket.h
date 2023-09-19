@@ -10,8 +10,8 @@
 class ItemComponentPacket : public ::Packet {
 public:
     // prevent constructor by default
-    ItemComponentPacket& operator=(ItemComponentPacket const&) = delete;
-    ItemComponentPacket(ItemComponentPacket const&)            = delete;
+    ItemComponentPacket& operator=(ItemComponentPacket const&);
+    ItemComponentPacket(ItemComponentPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -36,7 +36,7 @@ public:
     MCVAPI ~ItemComponentPacket();
 
     // symbol: ??0ItemComponentPacket@@QEAA@VItemRegistryRef@@@Z
-    MCAPI ItemComponentPacket(class ItemRegistryRef);
+    MCAPI explicit ItemComponentPacket(class ItemRegistryRef);
 
     // symbol: ??0ItemComponentPacket@@QEAA@XZ
     MCAPI ItemComponentPacket();

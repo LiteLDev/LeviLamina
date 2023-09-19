@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class SlimeAttackDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    SlimeAttackDefinition& operator=(SlimeAttackDefinition const&) = delete;
-    SlimeAttackDefinition(SlimeAttackDefinition const&)            = delete;
+    SlimeAttackDefinition& operator=(SlimeAttackDefinition const&);
+    SlimeAttackDefinition(SlimeAttackDefinition const&);
 
 public:
     // NOLINTBEGIN

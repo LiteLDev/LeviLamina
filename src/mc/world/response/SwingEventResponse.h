@@ -15,9 +15,9 @@ namespace JsonUtil { class EmptyClass; }
 class SwingEventResponse : public ::EventResponse {
 public:
     // prevent constructor by default
-    SwingEventResponse& operator=(SwingEventResponse const&) = delete;
-    SwingEventResponse(SwingEventResponse const&)            = delete;
-    SwingEventResponse()                                     = delete;
+    SwingEventResponse& operator=(SwingEventResponse const&);
+    SwingEventResponse(SwingEventResponse const&);
+    SwingEventResponse();
 
 public:
     // NOLINTBEGIN

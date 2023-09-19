@@ -5,9 +5,9 @@
 class PrintStream {
 public:
     // prevent constructor by default
-    PrintStream& operator=(PrintStream const&) = delete;
-    PrintStream(PrintStream const&)            = delete;
-    PrintStream()                              = delete;
+    PrintStream& operator=(PrintStream const&);
+    PrintStream(PrintStream const&);
+    PrintStream();
 
 public:
     // NOLINTBEGIN

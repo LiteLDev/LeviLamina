@@ -8,9 +8,9 @@
 class Feature : public ::IFeature {
 public:
     // prevent constructor by default
-    Feature& operator=(Feature const&) = delete;
-    Feature(Feature const&)            = delete;
-    Feature()                          = delete;
+    Feature& operator=(Feature const&);
+    Feature(Feature const&);
+    Feature();
 
 public:
     // NOLINTBEGIN
@@ -33,7 +33,7 @@ public:
     MCVAPI ~Feature();
 
     // symbol: ??0Feature@@QEAA@PEAVActor@@@Z
-    MCAPI Feature(class Actor*);
+    MCAPI explicit Feature(class Actor*);
 
     // NOLINTEND
 

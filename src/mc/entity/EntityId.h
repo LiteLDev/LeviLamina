@@ -5,7 +5,7 @@
 class EntityId {
 public:
     // prevent constructor by default
-    EntityId& operator=(EntityId const&) = delete;
-    EntityId(EntityId const&)            = delete;
-    EntityId()                           = delete;
+    EntityId& operator=(EntityId const&);
+    EntityId(EntityId const&);
+    EntityId();
 };

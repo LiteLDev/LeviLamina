@@ -15,9 +15,9 @@ namespace Json { class Value; }
 class ResourcePackFileUploadManager : public ::FileUploadManager {
 public:
     // prevent constructor by default
-    ResourcePackFileUploadManager& operator=(ResourcePackFileUploadManager const&) = delete;
-    ResourcePackFileUploadManager(ResourcePackFileUploadManager const&)            = delete;
-    ResourcePackFileUploadManager()                                                = delete;
+    ResourcePackFileUploadManager& operator=(ResourcePackFileUploadManager const&);
+    ResourcePackFileUploadManager(ResourcePackFileUploadManager const&);
+    ResourcePackFileUploadManager();
 
 public:
     // NOLINTBEGIN

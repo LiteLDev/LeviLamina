@@ -10,8 +10,8 @@ namespace Core { class Path; }
 class SystemFilePicker {
 public:
     // prevent constructor by default
-    SystemFilePicker& operator=(SystemFilePicker const&) = delete;
-    SystemFilePicker(SystemFilePicker const&)            = delete;
+    SystemFilePicker& operator=(SystemFilePicker const&);
+    SystemFilePicker(SystemFilePicker const&);
 
 public:
     // NOLINTBEGIN

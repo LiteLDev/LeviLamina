@@ -5,7 +5,7 @@
 struct SneakingComponent {
 public:
     // prevent constructor by default
-    SneakingComponent& operator=(SneakingComponent const&) = delete;
-    SneakingComponent(SneakingComponent const&)            = delete;
-    SneakingComponent()                                    = delete;
+    SneakingComponent& operator=(SneakingComponent const&);
+    SneakingComponent(SneakingComponent const&);
+    SneakingComponent();
 };

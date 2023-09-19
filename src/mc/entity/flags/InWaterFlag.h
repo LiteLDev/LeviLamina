@@ -5,7 +5,7 @@
 struct InWaterFlag {
 public:
     // prevent constructor by default
-    InWaterFlag& operator=(InWaterFlag const&) = delete;
-    InWaterFlag(InWaterFlag const&)            = delete;
-    InWaterFlag()                              = delete;
+    InWaterFlag& operator=(InWaterFlag const&);
+    InWaterFlag(InWaterFlag const&);
+    InWaterFlag();
 };

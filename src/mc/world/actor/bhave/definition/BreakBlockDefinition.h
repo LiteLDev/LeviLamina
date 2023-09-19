@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class BreakBlockDefinition : public ::BehaviorDefinition {
 public:
     // prevent constructor by default
-    BreakBlockDefinition& operator=(BreakBlockDefinition const&) = delete;
-    BreakBlockDefinition(BreakBlockDefinition const&)            = delete;
-    BreakBlockDefinition()                                       = delete;
+    BreakBlockDefinition& operator=(BreakBlockDefinition const&);
+    BreakBlockDefinition(BreakBlockDefinition const&);
+    BreakBlockDefinition();
 
 public:
     // NOLINTBEGIN

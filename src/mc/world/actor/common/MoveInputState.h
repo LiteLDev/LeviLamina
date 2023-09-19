@@ -5,9 +5,9 @@
 struct MoveInputState {
 public:
     // prevent constructor by default
-    MoveInputState& operator=(MoveInputState const&) = delete;
-    MoveInputState(MoveInputState const&)            = delete;
-    MoveInputState()                                 = delete;
+    MoveInputState& operator=(MoveInputState const&);
+    MoveInputState(MoveInputState const&);
+    MoveInputState();
 
 public:
     // NOLINTBEGIN

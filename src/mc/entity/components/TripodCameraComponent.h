@@ -5,9 +5,9 @@
 class TripodCameraComponent {
 public:
     // prevent constructor by default
-    TripodCameraComponent& operator=(TripodCameraComponent const&) = delete;
-    TripodCameraComponent(TripodCameraComponent const&)            = delete;
-    TripodCameraComponent()                                        = delete;
+    TripodCameraComponent& operator=(TripodCameraComponent const&);
+    TripodCameraComponent(TripodCameraComponent const&);
+    TripodCameraComponent();
 
 public:
     // NOLINTBEGIN

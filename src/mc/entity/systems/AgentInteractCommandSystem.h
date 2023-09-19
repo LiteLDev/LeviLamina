@@ -8,9 +8,9 @@
 class AgentInteractCommandSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    AgentInteractCommandSystem& operator=(AgentInteractCommandSystem const&) = delete;
-    AgentInteractCommandSystem(AgentInteractCommandSystem const&)            = delete;
-    AgentInteractCommandSystem()                                             = delete;
+    AgentInteractCommandSystem& operator=(AgentInteractCommandSystem const&);
+    AgentInteractCommandSystem(AgentInteractCommandSystem const&);
+    AgentInteractCommandSystem();
 
 public:
     // NOLINTBEGIN

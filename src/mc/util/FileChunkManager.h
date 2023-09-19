@@ -5,8 +5,8 @@
 class FileChunkManager {
 public:
     // prevent constructor by default
-    FileChunkManager& operator=(FileChunkManager const&) = delete;
-    FileChunkManager(FileChunkManager const&)            = delete;
+    FileChunkManager& operator=(FileChunkManager const&);
+    FileChunkManager(FileChunkManager const&);
 
 public:
     // NOLINTBEGIN

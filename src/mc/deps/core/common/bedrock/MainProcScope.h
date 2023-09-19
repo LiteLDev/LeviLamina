@@ -7,8 +7,8 @@ namespace Bedrock::Threading {
 class MainProcScope {
 public:
     // prevent constructor by default
-    MainProcScope& operator=(MainProcScope const&) = delete;
-    MainProcScope(MainProcScope const&)            = delete;
+    MainProcScope& operator=(MainProcScope const&);
+    MainProcScope(MainProcScope const&);
 
 public:
     // NOLINTBEGIN

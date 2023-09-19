@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class ChorusFlowerBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    ChorusFlowerBlock& operator=(ChorusFlowerBlock const&) = delete;
-    ChorusFlowerBlock(ChorusFlowerBlock const&)            = delete;
-    ChorusFlowerBlock()                                    = delete;
+    ChorusFlowerBlock& operator=(ChorusFlowerBlock const&);
+    ChorusFlowerBlock(ChorusFlowerBlock const&);
+    ChorusFlowerBlock();
 
 public:
     // NOLINTBEGIN

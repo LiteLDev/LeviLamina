@@ -7,9 +7,9 @@ namespace SFAT {
 class CRC32 {
 public:
     // prevent constructor by default
-    CRC32& operator=(CRC32 const&) = delete;
-    CRC32(CRC32 const&)            = delete;
-    CRC32()                        = delete;
+    CRC32& operator=(CRC32 const&);
+    CRC32(CRC32 const&);
+    CRC32();
 
 private:
     // NOLINTBEGIN

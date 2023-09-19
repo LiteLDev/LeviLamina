@@ -10,9 +10,9 @@
 class BlastFurnaceContainerManagerModel : public ::FurnaceContainerManagerModel {
 public:
     // prevent constructor by default
-    BlastFurnaceContainerManagerModel& operator=(BlastFurnaceContainerManagerModel const&) = delete;
-    BlastFurnaceContainerManagerModel(BlastFurnaceContainerManagerModel const&)            = delete;
-    BlastFurnaceContainerManagerModel()                                                    = delete;
+    BlastFurnaceContainerManagerModel& operator=(BlastFurnaceContainerManagerModel const&);
+    BlastFurnaceContainerManagerModel(BlastFurnaceContainerManagerModel const&);
+    BlastFurnaceContainerManagerModel();
 
 public:
     // NOLINTBEGIN

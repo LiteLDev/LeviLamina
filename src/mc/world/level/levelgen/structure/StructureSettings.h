@@ -10,7 +10,7 @@
 class StructureSettings {
 public:
     // prevent constructor by default
-    StructureSettings(StructureSettings const&) = delete;
+    StructureSettings(StructureSettings const&);
 
 public:
     // NOLINTBEGIN

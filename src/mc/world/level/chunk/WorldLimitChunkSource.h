@@ -8,9 +8,9 @@
 class WorldLimitChunkSource : public ::ChunkSource {
 public:
     // prevent constructor by default
-    WorldLimitChunkSource& operator=(WorldLimitChunkSource const&) = delete;
-    WorldLimitChunkSource(WorldLimitChunkSource const&)            = delete;
-    WorldLimitChunkSource()                                        = delete;
+    WorldLimitChunkSource& operator=(WorldLimitChunkSource const&);
+    WorldLimitChunkSource(WorldLimitChunkSource const&);
+    WorldLimitChunkSource();
 
 public:
     // NOLINTBEGIN

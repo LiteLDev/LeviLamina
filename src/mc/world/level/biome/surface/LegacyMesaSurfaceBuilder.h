@@ -19,9 +19,9 @@ namespace VanillaSurfaceBuilders {
 class LegacyMesaSurfaceBuilder : public ::ISurfaceBuilder {
 public:
     // prevent constructor by default
-    LegacyMesaSurfaceBuilder& operator=(LegacyMesaSurfaceBuilder const&) = delete;
-    LegacyMesaSurfaceBuilder(LegacyMesaSurfaceBuilder const&)            = delete;
-    LegacyMesaSurfaceBuilder()                                           = delete;
+    LegacyMesaSurfaceBuilder& operator=(LegacyMesaSurfaceBuilder const&);
+    LegacyMesaSurfaceBuilder(LegacyMesaSurfaceBuilder const&);
+    LegacyMesaSurfaceBuilder();
 
 public:
     // NOLINTBEGIN

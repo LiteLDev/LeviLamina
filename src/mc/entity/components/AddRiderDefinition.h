@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class AddRiderDefinition {
 public:
     // prevent constructor by default
-    AddRiderDefinition& operator=(AddRiderDefinition const&) = delete;
-    AddRiderDefinition(AddRiderDefinition const&)            = delete;
-    AddRiderDefinition()                                     = delete;
+    AddRiderDefinition& operator=(AddRiderDefinition const&);
+    AddRiderDefinition(AddRiderDefinition const&);
+    AddRiderDefinition();
 
 public:
     // NOLINTBEGIN

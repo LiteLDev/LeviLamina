@@ -9,7 +9,7 @@
 class TemporalAttributeBuff : public ::AttributeBuff {
 public:
     // prevent constructor by default
-    TemporalAttributeBuff() = delete;
+    TemporalAttributeBuff();
 
 public:
     // NOLINTBEGIN

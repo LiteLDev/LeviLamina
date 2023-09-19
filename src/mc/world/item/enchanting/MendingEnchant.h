@@ -8,9 +8,9 @@
 class MendingEnchant : public ::Enchant {
 public:
     // prevent constructor by default
-    MendingEnchant& operator=(MendingEnchant const&) = delete;
-    MendingEnchant(MendingEnchant const&)            = delete;
-    MendingEnchant()                                 = delete;
+    MendingEnchant& operator=(MendingEnchant const&);
+    MendingEnchant(MendingEnchant const&);
+    MendingEnchant();
 
 public:
     // NOLINTBEGIN

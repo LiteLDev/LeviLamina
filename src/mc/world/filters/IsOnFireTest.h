@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class IsOnFireTest : public ::SimpleBoolFilterTest {
 public:
     // prevent constructor by default
-    IsOnFireTest& operator=(IsOnFireTest const&) = delete;
-    IsOnFireTest(IsOnFireTest const&)            = delete;
-    IsOnFireTest()                               = delete;
+    IsOnFireTest& operator=(IsOnFireTest const&);
+    IsOnFireTest(IsOnFireTest const&);
+    IsOnFireTest();
 
 public:
     // NOLINTBEGIN

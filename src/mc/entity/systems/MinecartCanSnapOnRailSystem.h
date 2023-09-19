@@ -8,9 +8,9 @@
 class MinecartCanSnapOnRailSystem {
 public:
     // prevent constructor by default
-    MinecartCanSnapOnRailSystem& operator=(MinecartCanSnapOnRailSystem const&) = delete;
-    MinecartCanSnapOnRailSystem(MinecartCanSnapOnRailSystem const&)            = delete;
-    MinecartCanSnapOnRailSystem()                                              = delete;
+    MinecartCanSnapOnRailSystem& operator=(MinecartCanSnapOnRailSystem const&);
+    MinecartCanSnapOnRailSystem(MinecartCanSnapOnRailSystem const&);
+    MinecartCanSnapOnRailSystem();
 
 public:
     // NOLINTBEGIN

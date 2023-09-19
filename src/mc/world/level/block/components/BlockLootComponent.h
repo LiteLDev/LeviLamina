@@ -8,8 +8,8 @@
 struct BlockLootComponent : public ::BlockComponentBase {
 public:
     // prevent constructor by default
-    BlockLootComponent& operator=(BlockLootComponent const&) = delete;
-    BlockLootComponent(BlockLootComponent const&)            = delete;
+    BlockLootComponent& operator=(BlockLootComponent const&);
+    BlockLootComponent(BlockLootComponent const&);
 
 public:
     // NOLINTBEGIN

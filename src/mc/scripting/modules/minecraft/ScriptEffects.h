@@ -17,8 +17,8 @@ namespace ScriptModuleMinecraft {
 class ScriptEffects {
 public:
     // prevent constructor by default
-    ScriptEffects& operator=(ScriptEffects const&) = delete;
-    ScriptEffects(ScriptEffects const&)            = delete;
+    ScriptEffects& operator=(ScriptEffects const&);
+    ScriptEffects(ScriptEffects const&);
 
 public:
     // NOLINTBEGIN

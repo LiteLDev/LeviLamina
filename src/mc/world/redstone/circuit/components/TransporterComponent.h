@@ -9,8 +9,8 @@
 class TransporterComponent : public ::BaseCircuitComponent {
 public:
     // prevent constructor by default
-    TransporterComponent& operator=(TransporterComponent const&) = delete;
-    TransporterComponent(TransporterComponent const&)            = delete;
+    TransporterComponent& operator=(TransporterComponent const&);
+    TransporterComponent(TransporterComponent const&);
 
 public:
     // NOLINTBEGIN

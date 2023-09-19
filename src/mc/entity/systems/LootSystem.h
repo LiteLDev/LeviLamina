@@ -8,9 +8,9 @@
 class LootSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    LootSystem& operator=(LootSystem const&) = delete;
-    LootSystem(LootSystem const&)            = delete;
-    LootSystem()                             = delete;
+    LootSystem& operator=(LootSystem const&);
+    LootSystem(LootSystem const&);
+    LootSystem();
 
 public:
     // NOLINTBEGIN

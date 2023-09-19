@@ -8,9 +8,9 @@
 class ListDCommand : public ::ServerCommand {
 public:
     // prevent constructor by default
-    ListDCommand& operator=(ListDCommand const&) = delete;
-    ListDCommand(ListDCommand const&)            = delete;
-    ListDCommand()                               = delete;
+    ListDCommand& operator=(ListDCommand const&);
+    ListDCommand(ListDCommand const&);
+    ListDCommand();
 
 public:
     // NOLINTBEGIN

@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptScaleComponent {
 public:
     // prevent constructor by default
-    ScriptScaleComponent& operator=(ScriptScaleComponent const&) = delete;
-    ScriptScaleComponent(ScriptScaleComponent const&)            = delete;
-    ScriptScaleComponent()                                       = delete;
+    ScriptScaleComponent& operator=(ScriptScaleComponent const&);
+    ScriptScaleComponent(ScriptScaleComponent const&);
+    ScriptScaleComponent();
 
 public:
     // NOLINTBEGIN

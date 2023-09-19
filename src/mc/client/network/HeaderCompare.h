@@ -10,9 +10,9 @@ namespace xbox::httpclient {
 struct HeaderCompare {
 public:
     // prevent constructor by default
-    HeaderCompare& operator=(HeaderCompare const&) = delete;
-    HeaderCompare(HeaderCompare const&)            = delete;
-    HeaderCompare()                                = delete;
+    HeaderCompare& operator=(HeaderCompare const&);
+    HeaderCompare(HeaderCompare const&);
+    HeaderCompare();
 
 public:
     // NOLINTBEGIN

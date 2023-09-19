@@ -16,9 +16,9 @@ namespace Bedrock {
 class WorkerPoolHandle : public ::Bedrock::WorkerPoolManager::PoolHandleInterface {
 public:
     // prevent constructor by default
-    WorkerPoolHandle& operator=(WorkerPoolHandle const&) = delete;
-    WorkerPoolHandle(WorkerPoolHandle const&)            = delete;
-    WorkerPoolHandle()                                   = delete;
+    WorkerPoolHandle& operator=(WorkerPoolHandle const&);
+    WorkerPoolHandle(WorkerPoolHandle const&);
+    WorkerPoolHandle();
 
 public:
     // NOLINTBEGIN

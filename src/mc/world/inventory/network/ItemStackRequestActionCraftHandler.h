@@ -9,9 +9,9 @@
 class ItemStackRequestActionCraftHandler {
 public:
     // prevent constructor by default
-    ItemStackRequestActionCraftHandler& operator=(ItemStackRequestActionCraftHandler const&) = delete;
-    ItemStackRequestActionCraftHandler(ItemStackRequestActionCraftHandler const&)            = delete;
-    ItemStackRequestActionCraftHandler()                                                     = delete;
+    ItemStackRequestActionCraftHandler& operator=(ItemStackRequestActionCraftHandler const&);
+    ItemStackRequestActionCraftHandler(ItemStackRequestActionCraftHandler const&);
+    ItemStackRequestActionCraftHandler();
 
 public:
     // NOLINTBEGIN

@@ -18,8 +18,8 @@ public:
     struct FactorCalculationData {
     public:
         // prevent constructor by default
-        FactorCalculationData& operator=(FactorCalculationData const&) = delete;
-        FactorCalculationData()                                        = delete;
+        FactorCalculationData& operator=(FactorCalculationData const&);
+        FactorCalculationData();
 
     public:
         // NOLINTBEGIN
@@ -41,9 +41,9 @@ public:
 
 public:
     // prevent constructor by default
-    MobEffect& operator=(MobEffect const&) = delete;
-    MobEffect(MobEffect const&)            = delete;
-    MobEffect()                            = delete;
+    MobEffect& operator=(MobEffect const&);
+    MobEffect(MobEffect const&);
+    MobEffect();
 
 public:
     // NOLINTBEGIN

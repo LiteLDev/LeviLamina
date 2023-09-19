@@ -7,8 +7,8 @@ namespace Social::Events {
 class SummaryEvent {
 public:
     // prevent constructor by default
-    SummaryEvent& operator=(SummaryEvent const&) = delete;
-    SummaryEvent()                               = delete;
+    SummaryEvent& operator=(SummaryEvent const&);
+    SummaryEvent();
 
 public:
     // NOLINTBEGIN

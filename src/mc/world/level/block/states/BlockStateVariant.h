@@ -6,7 +6,7 @@ template <typename T0>
 class BlockStateVariant {
 public:
     // prevent constructor by default
-    BlockStateVariant& operator=(BlockStateVariant const&) = delete;
-    BlockStateVariant(BlockStateVariant const&)            = delete;
-    BlockStateVariant()                                    = delete;
+    BlockStateVariant& operator=(BlockStateVariant const&);
+    BlockStateVariant(BlockStateVariant const&);
+    BlockStateVariant();
 };

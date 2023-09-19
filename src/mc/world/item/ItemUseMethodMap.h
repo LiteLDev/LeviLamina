@@ -9,9 +9,9 @@
 class ItemUseMethodMap {
 public:
     // prevent constructor by default
-    ItemUseMethodMap& operator=(ItemUseMethodMap const&) = delete;
-    ItemUseMethodMap(ItemUseMethodMap const&)            = delete;
-    ItemUseMethodMap()                                   = delete;
+    ItemUseMethodMap& operator=(ItemUseMethodMap const&);
+    ItemUseMethodMap(ItemUseMethodMap const&);
+    ItemUseMethodMap();
 
 public:
     // NOLINTBEGIN

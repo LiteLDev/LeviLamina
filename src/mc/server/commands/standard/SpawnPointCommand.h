@@ -8,9 +8,9 @@
 class SpawnPointCommand : public ::Command {
 public:
     // prevent constructor by default
-    SpawnPointCommand& operator=(SpawnPointCommand const&) = delete;
-    SpawnPointCommand(SpawnPointCommand const&)            = delete;
-    SpawnPointCommand()                                    = delete;
+    SpawnPointCommand& operator=(SpawnPointCommand const&);
+    SpawnPointCommand(SpawnPointCommand const&);
+    SpawnPointCommand();
 
 public:
     // NOLINTBEGIN

@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class AirBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    AirBlock& operator=(AirBlock const&) = delete;
-    AirBlock(AirBlock const&)            = delete;
-    AirBlock()                           = delete;
+    AirBlock& operator=(AirBlock const&);
+    AirBlock(AirBlock const&);
+    AirBlock();
 
 public:
     // NOLINTBEGIN

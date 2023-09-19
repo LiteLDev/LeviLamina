@@ -5,9 +5,9 @@
 class StructureTemplatePool {
 public:
     // prevent constructor by default
-    StructureTemplatePool& operator=(StructureTemplatePool const&) = delete;
-    StructureTemplatePool(StructureTemplatePool const&)            = delete;
-    StructureTemplatePool()                                        = delete;
+    StructureTemplatePool& operator=(StructureTemplatePool const&);
+    StructureTemplatePool(StructureTemplatePool const&);
+    StructureTemplatePool();
 
 public:
     // NOLINTBEGIN

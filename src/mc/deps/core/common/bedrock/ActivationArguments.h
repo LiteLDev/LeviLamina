@@ -7,9 +7,9 @@ namespace Bedrock {
 class ActivationArguments {
 public:
     // prevent constructor by default
-    ActivationArguments& operator=(ActivationArguments const&) = delete;
-    ActivationArguments(ActivationArguments const&)            = delete;
-    ActivationArguments()                                      = delete;
+    ActivationArguments& operator=(ActivationArguments const&);
+    ActivationArguments(ActivationArguments const&);
+    ActivationArguments();
 
 public:
     // NOLINTBEGIN

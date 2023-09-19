@@ -10,9 +10,9 @@
 class CompoundCreatorContainerManagerModel : public ::ContainerManagerModel {
 public:
     // prevent constructor by default
-    CompoundCreatorContainerManagerModel& operator=(CompoundCreatorContainerManagerModel const&) = delete;
-    CompoundCreatorContainerManagerModel(CompoundCreatorContainerManagerModel const&)            = delete;
-    CompoundCreatorContainerManagerModel()                                                       = delete;
+    CompoundCreatorContainerManagerModel& operator=(CompoundCreatorContainerManagerModel const&);
+    CompoundCreatorContainerManagerModel(CompoundCreatorContainerManagerModel const&);
+    CompoundCreatorContainerManagerModel();
 
 public:
     // NOLINTBEGIN

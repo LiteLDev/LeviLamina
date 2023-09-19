@@ -8,9 +8,9 @@
 class BambooFeature : public ::Feature {
 public:
     // prevent constructor by default
-    BambooFeature& operator=(BambooFeature const&) = delete;
-    BambooFeature(BambooFeature const&)            = delete;
-    BambooFeature()                                = delete;
+    BambooFeature& operator=(BambooFeature const&);
+    BambooFeature(BambooFeature const&);
+    BambooFeature();
 
 public:
     // NOLINTBEGIN

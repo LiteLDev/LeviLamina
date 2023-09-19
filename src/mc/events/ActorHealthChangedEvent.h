@@ -5,9 +5,9 @@
 struct ActorHealthChangedEvent {
 public:
     // prevent constructor by default
-    ActorHealthChangedEvent& operator=(ActorHealthChangedEvent const&) = delete;
-    ActorHealthChangedEvent(ActorHealthChangedEvent const&)            = delete;
-    ActorHealthChangedEvent()                                          = delete;
+    ActorHealthChangedEvent& operator=(ActorHealthChangedEvent const&);
+    ActorHealthChangedEvent(ActorHealthChangedEvent const&);
+    ActorHealthChangedEvent();
 
 public:
     // NOLINTBEGIN

@@ -32,9 +32,9 @@ namespace mce { class UUID; }
 class Mob : public ::Actor {
 public:
     // prevent constructor by default
-    Mob& operator=(Mob const&) = delete;
-    Mob(Mob const&)            = delete;
-    Mob()                      = delete;
+    Mob& operator=(Mob const&);
+    Mob(Mob const&);
+    Mob();
 
 public:
     // NOLINTBEGIN

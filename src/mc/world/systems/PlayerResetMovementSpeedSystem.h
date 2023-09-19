@@ -5,9 +5,9 @@
 class PlayerResetMovementSpeedSystem {
 public:
     // prevent constructor by default
-    PlayerResetMovementSpeedSystem& operator=(PlayerResetMovementSpeedSystem const&) = delete;
-    PlayerResetMovementSpeedSystem(PlayerResetMovementSpeedSystem const&)            = delete;
-    PlayerResetMovementSpeedSystem()                                                 = delete;
+    PlayerResetMovementSpeedSystem& operator=(PlayerResetMovementSpeedSystem const&);
+    PlayerResetMovementSpeedSystem(PlayerResetMovementSpeedSystem const&);
+    PlayerResetMovementSpeedSystem();
 
 public:
     // NOLINTBEGIN

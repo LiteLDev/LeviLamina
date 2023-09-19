@@ -8,9 +8,9 @@
 class LocateCommand : public ::Command {
 public:
     // prevent constructor by default
-    LocateCommand& operator=(LocateCommand const&) = delete;
-    LocateCommand(LocateCommand const&)            = delete;
-    LocateCommand()                                = delete;
+    LocateCommand& operator=(LocateCommand const&);
+    LocateCommand(LocateCommand const&);
+    LocateCommand();
 
 public:
     // NOLINTBEGIN

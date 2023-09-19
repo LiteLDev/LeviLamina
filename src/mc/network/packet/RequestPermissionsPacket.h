@@ -12,8 +12,8 @@
 class RequestPermissionsPacket : public ::Packet {
 public:
     // prevent constructor by default
-    RequestPermissionsPacket& operator=(RequestPermissionsPacket const&) = delete;
-    RequestPermissionsPacket(RequestPermissionsPacket const&)            = delete;
+    RequestPermissionsPacket& operator=(RequestPermissionsPacket const&);
+    RequestPermissionsPacket(RequestPermissionsPacket const&);
 
 public:
     // NOLINTBEGIN

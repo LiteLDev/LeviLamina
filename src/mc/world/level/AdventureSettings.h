@@ -5,8 +5,8 @@
 struct AdventureSettings {
 public:
     // prevent constructor by default
-    AdventureSettings& operator=(AdventureSettings const&) = delete;
-    AdventureSettings(AdventureSettings const&)            = delete;
+    AdventureSettings& operator=(AdventureSettings const&);
+    AdventureSettings(AdventureSettings const&);
 
 public:
     // NOLINTBEGIN

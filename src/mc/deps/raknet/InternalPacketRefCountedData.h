@@ -7,9 +7,9 @@ namespace RakNet {
 struct InternalPacketRefCountedData {
 public:
     // prevent constructor by default
-    InternalPacketRefCountedData& operator=(InternalPacketRefCountedData const&) = delete;
-    InternalPacketRefCountedData(InternalPacketRefCountedData const&)            = delete;
-    InternalPacketRefCountedData()                                               = delete;
+    InternalPacketRefCountedData& operator=(InternalPacketRefCountedData const&);
+    InternalPacketRefCountedData(InternalPacketRefCountedData const&);
+    InternalPacketRefCountedData();
 };
 
 }; // namespace RakNet

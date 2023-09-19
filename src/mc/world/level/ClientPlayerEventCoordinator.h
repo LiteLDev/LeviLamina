@@ -8,9 +8,9 @@
 class ClientPlayerEventCoordinator : public ::PlayerEventCoordinator {
 public:
     // prevent constructor by default
-    ClientPlayerEventCoordinator& operator=(ClientPlayerEventCoordinator const&) = delete;
-    ClientPlayerEventCoordinator(ClientPlayerEventCoordinator const&)            = delete;
-    ClientPlayerEventCoordinator()                                               = delete;
+    ClientPlayerEventCoordinator& operator=(ClientPlayerEventCoordinator const&);
+    ClientPlayerEventCoordinator(ClientPlayerEventCoordinator const&);
+    ClientPlayerEventCoordinator();
 
 public:
     // NOLINTBEGIN

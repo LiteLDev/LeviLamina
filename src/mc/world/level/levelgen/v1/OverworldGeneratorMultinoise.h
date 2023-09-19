@@ -19,17 +19,17 @@ public:
     struct BlockGenerationResult {
     public:
         // prevent constructor by default
-        BlockGenerationResult& operator=(BlockGenerationResult const&) = delete;
-        BlockGenerationResult(BlockGenerationResult const&)            = delete;
-        BlockGenerationResult()                                        = delete;
+        BlockGenerationResult& operator=(BlockGenerationResult const&);
+        BlockGenerationResult(BlockGenerationResult const&);
+        BlockGenerationResult();
     };
 
     struct Noises {
     public:
         // prevent constructor by default
-        Noises& operator=(Noises const&) = delete;
-        Noises(Noises const&)            = delete;
-        Noises()                         = delete;
+        Noises& operator=(Noises const&);
+        Noises(Noises const&);
+        Noises();
 
     public:
         // NOLINTBEGIN
@@ -44,9 +44,9 @@ public:
 
 public:
     // prevent constructor by default
-    OverworldGeneratorMultinoise& operator=(OverworldGeneratorMultinoise const&) = delete;
-    OverworldGeneratorMultinoise(OverworldGeneratorMultinoise const&)            = delete;
-    OverworldGeneratorMultinoise()                                               = delete;
+    OverworldGeneratorMultinoise& operator=(OverworldGeneratorMultinoise const&);
+    OverworldGeneratorMultinoise(OverworldGeneratorMultinoise const&);
+    OverworldGeneratorMultinoise();
 
 public:
     // NOLINTBEGIN

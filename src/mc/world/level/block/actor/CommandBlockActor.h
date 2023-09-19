@@ -9,9 +9,9 @@
 class CommandBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    CommandBlockActor& operator=(CommandBlockActor const&) = delete;
-    CommandBlockActor(CommandBlockActor const&)            = delete;
-    CommandBlockActor()                                    = delete;
+    CommandBlockActor& operator=(CommandBlockActor const&);
+    CommandBlockActor(CommandBlockActor const&);
+    CommandBlockActor();
 
 public:
     // NOLINTBEGIN

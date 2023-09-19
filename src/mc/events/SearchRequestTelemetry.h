@@ -5,7 +5,7 @@
 class SearchRequestTelemetry {
 public:
     // prevent constructor by default
-    SearchRequestTelemetry& operator=(SearchRequestTelemetry const&) = delete;
-    SearchRequestTelemetry(SearchRequestTelemetry const&)            = delete;
-    SearchRequestTelemetry()                                         = delete;
+    SearchRequestTelemetry& operator=(SearchRequestTelemetry const&);
+    SearchRequestTelemetry(SearchRequestTelemetry const&);
+    SearchRequestTelemetry();
 };

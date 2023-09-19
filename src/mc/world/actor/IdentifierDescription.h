@@ -5,9 +5,9 @@
 class IdentifierDescription {
 public:
     // prevent constructor by default
-    IdentifierDescription& operator=(IdentifierDescription const&) = delete;
-    IdentifierDescription(IdentifierDescription const&)            = delete;
-    IdentifierDescription()                                        = delete;
+    IdentifierDescription& operator=(IdentifierDescription const&);
+    IdentifierDescription(IdentifierDescription const&);
+    IdentifierDescription();
 
 public:
     // NOLINTBEGIN

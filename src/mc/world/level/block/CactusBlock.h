@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class CactusBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    CactusBlock& operator=(CactusBlock const&) = delete;
-    CactusBlock(CactusBlock const&)            = delete;
-    CactusBlock()                              = delete;
+    CactusBlock& operator=(CactusBlock const&);
+    CactusBlock(CactusBlock const&);
+    CactusBlock();
 
 public:
     // NOLINTBEGIN

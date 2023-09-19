@@ -14,8 +14,8 @@ public:
 
 public:
     // prevent constructor by default
-    NpcDialoguePacket& operator=(NpcDialoguePacket const&) = delete;
-    NpcDialoguePacket(NpcDialoguePacket const&)            = delete;
+    NpcDialoguePacket& operator=(NpcDialoguePacket const&);
+    NpcDialoguePacket(NpcDialoguePacket const&);
 
 public:
     // NOLINTBEGIN
@@ -40,7 +40,7 @@ public:
     MCVAPI ~NpcDialoguePacket();
 
     // symbol: ??0NpcDialoguePacket@@QEAA@UActorUniqueID@@@Z
-    MCAPI NpcDialoguePacket(struct ActorUniqueID);
+    MCAPI explicit NpcDialoguePacket(struct ActorUniqueID);
 
     // symbol: ??0NpcDialoguePacket@@QEAA@XZ
     MCAPI NpcDialoguePacket();

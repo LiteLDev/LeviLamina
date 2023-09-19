@@ -8,8 +8,8 @@
 struct PreferredPathDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    PreferredPathDescription& operator=(PreferredPathDescription const&) = delete;
-    PreferredPathDescription(PreferredPathDescription const&)            = delete;
+    PreferredPathDescription& operator=(PreferredPathDescription const&);
+    PreferredPathDescription(PreferredPathDescription const&);
 
 public:
     // NOLINTBEGIN

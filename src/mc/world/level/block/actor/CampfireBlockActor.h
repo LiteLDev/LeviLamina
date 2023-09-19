@@ -8,9 +8,9 @@
 class CampfireBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    CampfireBlockActor& operator=(CampfireBlockActor const&) = delete;
-    CampfireBlockActor(CampfireBlockActor const&)            = delete;
-    CampfireBlockActor()                                     = delete;
+    CampfireBlockActor& operator=(CampfireBlockActor const&);
+    CampfireBlockActor(CampfireBlockActor const&);
+    CampfireBlockActor();
 
 public:
     // NOLINTBEGIN

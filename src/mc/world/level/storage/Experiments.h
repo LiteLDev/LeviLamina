@@ -8,8 +8,8 @@
 class Experiments {
 public:
     // prevent constructor by default
-    Experiments& operator=(Experiments const&) = delete;
-    Experiments(Experiments const&)            = delete;
+    Experiments& operator=(Experiments const&);
+    Experiments(Experiments const&);
 
 public:
     // NOLINTBEGIN

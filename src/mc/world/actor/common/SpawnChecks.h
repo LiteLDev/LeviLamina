@@ -5,9 +5,9 @@
 class SpawnChecks {
 public:
     // prevent constructor by default
-    SpawnChecks& operator=(SpawnChecks const&) = delete;
-    SpawnChecks(SpawnChecks const&)            = delete;
-    SpawnChecks()                              = delete;
+    SpawnChecks& operator=(SpawnChecks const&);
+    SpawnChecks(SpawnChecks const&);
+    SpawnChecks();
 
 public:
     // NOLINTBEGIN

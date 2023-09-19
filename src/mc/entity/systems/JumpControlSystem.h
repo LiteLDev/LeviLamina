@@ -8,9 +8,9 @@
 class JumpControlSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    JumpControlSystem& operator=(JumpControlSystem const&) = delete;
-    JumpControlSystem(JumpControlSystem const&)            = delete;
-    JumpControlSystem()                                    = delete;
+    JumpControlSystem& operator=(JumpControlSystem const&);
+    JumpControlSystem(JumpControlSystem const&);
+    JumpControlSystem();
 
 public:
     // NOLINTBEGIN

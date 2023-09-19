@@ -10,9 +10,9 @@ namespace mce { class UUID; }
 class ServerNetworkController {
 public:
     // prevent constructor by default
-    ServerNetworkController& operator=(ServerNetworkController const&) = delete;
-    ServerNetworkController(ServerNetworkController const&)            = delete;
-    ServerNetworkController()                                          = delete;
+    ServerNetworkController& operator=(ServerNetworkController const&);
+    ServerNetworkController(ServerNetworkController const&);
+    ServerNetworkController();
 
 public:
     // NOLINTBEGIN

@@ -10,8 +10,8 @@
 class SimulationTypePacket : public ::Packet {
 public:
     // prevent constructor by default
-    SimulationTypePacket& operator=(SimulationTypePacket const&) = delete;
-    SimulationTypePacket(SimulationTypePacket const&)            = delete;
+    SimulationTypePacket& operator=(SimulationTypePacket const&);
+    SimulationTypePacket(SimulationTypePacket const&);
 
 public:
     // NOLINTBEGIN

@@ -7,8 +7,8 @@ namespace Bedrock {
 class SignalReceiver {
 public:
     // prevent constructor by default
-    SignalReceiver& operator=(SignalReceiver const&) = delete;
-    SignalReceiver(SignalReceiver const&)            = delete;
+    SignalReceiver& operator=(SignalReceiver const&);
+    SignalReceiver(SignalReceiver const&);
 
 public:
     // NOLINTBEGIN

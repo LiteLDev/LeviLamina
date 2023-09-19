@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class ExhaustionDefinition {
 public:
     // prevent constructor by default
-    ExhaustionDefinition& operator=(ExhaustionDefinition const&) = delete;
-    ExhaustionDefinition(ExhaustionDefinition const&)            = delete;
-    ExhaustionDefinition()                                       = delete;
+    ExhaustionDefinition& operator=(ExhaustionDefinition const&);
+    ExhaustionDefinition(ExhaustionDefinition const&);
+    ExhaustionDefinition();
 
 public:
     // NOLINTBEGIN

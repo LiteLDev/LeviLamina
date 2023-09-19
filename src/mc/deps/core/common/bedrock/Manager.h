@@ -19,9 +19,9 @@ namespace CodeBuilder {
 class Manager : public ::CodeBuilder::IManager {
 public:
     // prevent constructor by default
-    Manager& operator=(Manager const&) = delete;
-    Manager(Manager const&)            = delete;
-    Manager()                          = delete;
+    Manager& operator=(Manager const&);
+    Manager(Manager const&);
+    Manager();
 
 public:
     // NOLINTBEGIN
@@ -38,7 +38,7 @@ public:
     virtual gsl::not_null<class Bedrock::NonOwnerPointer<class CodeBuilder::IMessenger>> getEventing() const;
 
     // symbol: ??0Manager@CodeBuilder@@QEAA@AEAVIMinecraftApp@@@Z
-    MCAPI Manager(class IMinecraftApp&);
+    MCAPI explicit Manager(class IMinecraftApp&);
 
     // NOLINTEND
 };

@@ -8,9 +8,9 @@
 class DedicatedServerCommands {
 public:
     // prevent constructor by default
-    DedicatedServerCommands& operator=(DedicatedServerCommands const&) = delete;
-    DedicatedServerCommands(DedicatedServerCommands const&)            = delete;
-    DedicatedServerCommands()                                          = delete;
+    DedicatedServerCommands& operator=(DedicatedServerCommands const&);
+    DedicatedServerCommands(DedicatedServerCommands const&);
+    DedicatedServerCommands();
 
 public:
     // NOLINTBEGIN

@@ -24,8 +24,8 @@ public:
     class Definition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        Definition& operator=(Definition const&) = delete;
-        Definition(Definition const&)            = delete;
+        Definition& operator=(Definition const&);
+        Definition(Definition const&);
 
     public:
         // NOLINTBEGIN
@@ -51,9 +51,9 @@ public:
 
 public:
     // prevent constructor by default
-    GoAndGiveItemsToNoteblockGoal& operator=(GoAndGiveItemsToNoteblockGoal const&) = delete;
-    GoAndGiveItemsToNoteblockGoal(GoAndGiveItemsToNoteblockGoal const&)            = delete;
-    GoAndGiveItemsToNoteblockGoal()                                                = delete;
+    GoAndGiveItemsToNoteblockGoal& operator=(GoAndGiveItemsToNoteblockGoal const&);
+    GoAndGiveItemsToNoteblockGoal(GoAndGiveItemsToNoteblockGoal const&);
+    GoAndGiveItemsToNoteblockGoal();
 
 public:
     // NOLINTBEGIN
@@ -80,7 +80,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0GoAndGiveItemsToNoteblockGoal@@QEAA@AEAVMob@@@Z
-    MCAPI GoAndGiveItemsToNoteblockGoal(class Mob&);
+    MCAPI explicit GoAndGiveItemsToNoteblockGoal(class Mob&);
 
     // NOLINTEND
 };

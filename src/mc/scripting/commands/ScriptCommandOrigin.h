@@ -18,9 +18,9 @@ namespace mce { class UUID; }
 class ScriptCommandOrigin : public ::CommandOrigin {
 public:
     // prevent constructor by default
-    ScriptCommandOrigin& operator=(ScriptCommandOrigin const&) = delete;
-    ScriptCommandOrigin(ScriptCommandOrigin const&)            = delete;
-    ScriptCommandOrigin()                                      = delete;
+    ScriptCommandOrigin& operator=(ScriptCommandOrigin const&);
+    ScriptCommandOrigin(ScriptCommandOrigin const&);
+    ScriptCommandOrigin();
 
 public:
     // NOLINTBEGIN

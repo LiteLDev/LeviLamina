@@ -5,7 +5,7 @@
 class IPacketHandlerDispatcher {
 public:
     // prevent constructor by default
-    IPacketHandlerDispatcher& operator=(IPacketHandlerDispatcher const&) = delete;
-    IPacketHandlerDispatcher(IPacketHandlerDispatcher const&)            = delete;
-    IPacketHandlerDispatcher()                                           = delete;
+    IPacketHandlerDispatcher& operator=(IPacketHandlerDispatcher const&);
+    IPacketHandlerDispatcher(IPacketHandlerDispatcher const&);
+    IPacketHandlerDispatcher();
 };

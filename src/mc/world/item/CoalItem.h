@@ -25,9 +25,9 @@ public:
 
 public:
     // prevent constructor by default
-    CoalItem& operator=(CoalItem const&) = delete;
-    CoalItem(CoalItem const&)            = delete;
-    CoalItem()                           = delete;
+    CoalItem& operator=(CoalItem const&);
+    CoalItem(CoalItem const&);
+    CoalItem();
 
 public:
     // NOLINTBEGIN

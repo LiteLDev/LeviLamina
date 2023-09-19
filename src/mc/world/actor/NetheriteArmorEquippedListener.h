@@ -8,9 +8,9 @@
 class NetheriteArmorEquippedListener {
 public:
     // prevent constructor by default
-    NetheriteArmorEquippedListener& operator=(NetheriteArmorEquippedListener const&) = delete;
-    NetheriteArmorEquippedListener(NetheriteArmorEquippedListener const&)            = delete;
-    NetheriteArmorEquippedListener()                                                 = delete;
+    NetheriteArmorEquippedListener& operator=(NetheriteArmorEquippedListener const&);
+    NetheriteArmorEquippedListener(NetheriteArmorEquippedListener const&);
+    NetheriteArmorEquippedListener();
 
 public:
     // NOLINTBEGIN

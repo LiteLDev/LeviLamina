@@ -10,7 +10,7 @@ namespace ScriptModuleMinecraft {
 struct ScriptRawMessageScoreInterface {
 public:
     // prevent constructor by default
-    ScriptRawMessageScoreInterface() = delete;
+    ScriptRawMessageScoreInterface();
 
 public:
     // NOLINTBEGIN

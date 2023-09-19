@@ -21,8 +21,8 @@ public:
     class AtomicMemoryAccumulator {
     public:
         // prevent constructor by default
-        AtomicMemoryAccumulator& operator=(AtomicMemoryAccumulator const&) = delete;
-        AtomicMemoryAccumulator(AtomicMemoryAccumulator const&)            = delete;
+        AtomicMemoryAccumulator& operator=(AtomicMemoryAccumulator const&);
+        AtomicMemoryAccumulator(AtomicMemoryAccumulator const&);
 
     public:
         // NOLINTBEGIN
@@ -37,8 +37,8 @@ public:
 
 public:
     // prevent constructor by default
-    ChunkPerformanceData& operator=(ChunkPerformanceData const&) = delete;
-    ChunkPerformanceData(ChunkPerformanceData const&)            = delete;
+    ChunkPerformanceData& operator=(ChunkPerformanceData const&);
+    ChunkPerformanceData(ChunkPerformanceData const&);
 
 public:
     // NOLINTBEGIN

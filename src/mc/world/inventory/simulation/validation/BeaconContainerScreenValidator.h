@@ -9,9 +9,9 @@
 class BeaconContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // prevent constructor by default
-    BeaconContainerScreenValidator& operator=(BeaconContainerScreenValidator const&) = delete;
-    BeaconContainerScreenValidator(BeaconContainerScreenValidator const&)            = delete;
-    BeaconContainerScreenValidator()                                                 = delete;
+    BeaconContainerScreenValidator& operator=(BeaconContainerScreenValidator const&);
+    BeaconContainerScreenValidator(BeaconContainerScreenValidator const&);
+    BeaconContainerScreenValidator();
 
 public:
     // NOLINTBEGIN

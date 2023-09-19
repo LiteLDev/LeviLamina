@@ -8,9 +8,9 @@
 class SimplePositionalRandomFactory : public ::IPositionalRandomFactory {
 public:
     // prevent constructor by default
-    SimplePositionalRandomFactory& operator=(SimplePositionalRandomFactory const&) = delete;
-    SimplePositionalRandomFactory(SimplePositionalRandomFactory const&)            = delete;
-    SimplePositionalRandomFactory()                                                = delete;
+    SimplePositionalRandomFactory& operator=(SimplePositionalRandomFactory const&);
+    SimplePositionalRandomFactory(SimplePositionalRandomFactory const&);
+    SimplePositionalRandomFactory();
 
 public:
     // NOLINTBEGIN
@@ -26,7 +26,7 @@ public:
     virtual std::unique_ptr<class IRandom> forString(std::string const&) const;
 
     // symbol: ??0SimplePositionalRandomFactory@@QEAA@_J@Z
-    MCAPI SimplePositionalRandomFactory(int64);
+    MCAPI explicit SimplePositionalRandomFactory(int64);
 
     // symbol: ?forBlockPosImpl@SimplePositionalRandomFactory@@QEBA?AVSimpleRandom@@AEBVBlockPos@@@Z
     MCAPI class SimpleRandom forBlockPosImpl(class BlockPos const&) const;

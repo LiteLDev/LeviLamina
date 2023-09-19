@@ -5,9 +5,9 @@
 class CraftingDataEntry {
 public:
     // prevent constructor by default
-    CraftingDataEntry& operator=(CraftingDataEntry const&) = delete;
-    CraftingDataEntry(CraftingDataEntry const&)            = delete;
-    CraftingDataEntry()                                    = delete;
+    CraftingDataEntry& operator=(CraftingDataEntry const&);
+    CraftingDataEntry(CraftingDataEntry const&);
+    CraftingDataEntry();
 
 public:
     // NOLINTBEGIN

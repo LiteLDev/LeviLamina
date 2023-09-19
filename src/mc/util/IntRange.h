@@ -10,14 +10,14 @@ namespace Json { class Value; }
 struct IntRange {
 public:
     // prevent constructor by default
-    IntRange& operator=(IntRange const&) = delete;
-    IntRange(IntRange const&)            = delete;
-    IntRange()                           = delete;
+    IntRange& operator=(IntRange const&);
+    IntRange(IntRange const&);
+    IntRange();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0IntRange@@QEAA@H@Z
-    MCAPI IntRange(int);
+    MCAPI explicit IntRange(int);
 
     // symbol: ??0IntRange@@QEAA@HH@Z
     MCAPI IntRange(int, int);

@@ -42,9 +42,9 @@ namespace mce { class UUID; }
 class Level {
 public:
     // prevent constructor by default
-    Level& operator=(Level const&) = delete;
-    Level(Level const&)            = delete;
-    Level()                        = delete;
+    Level& operator=(Level const&);
+    Level(Level const&);
+    Level();
 
 public:
     // NOLINTBEGIN

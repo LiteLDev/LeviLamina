@@ -5,7 +5,7 @@
 struct WasOnGroundPreTravelFlag {
 public:
     // prevent constructor by default
-    WasOnGroundPreTravelFlag& operator=(WasOnGroundPreTravelFlag const&) = delete;
-    WasOnGroundPreTravelFlag(WasOnGroundPreTravelFlag const&)            = delete;
-    WasOnGroundPreTravelFlag()                                           = delete;
+    WasOnGroundPreTravelFlag& operator=(WasOnGroundPreTravelFlag const&);
+    WasOnGroundPreTravelFlag(WasOnGroundPreTravelFlag const&);
+    WasOnGroundPreTravelFlag();
 };

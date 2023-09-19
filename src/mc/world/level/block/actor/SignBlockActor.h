@@ -25,8 +25,8 @@ public:
     struct CachedLineData {
     public:
         // prevent constructor by default
-        CachedLineData& operator=(CachedLineData const&) = delete;
-        CachedLineData(CachedLineData const&)            = delete;
+        CachedLineData& operator=(CachedLineData const&);
+        CachedLineData(CachedLineData const&);
 
     public:
         // NOLINTBEGIN
@@ -45,9 +45,9 @@ public:
     class CachedMessageData {
     public:
         // prevent constructor by default
-        CachedMessageData& operator=(CachedMessageData const&) = delete;
-        CachedMessageData(CachedMessageData const&)            = delete;
-        CachedMessageData()                                    = delete;
+        CachedMessageData& operator=(CachedMessageData const&);
+        CachedMessageData(CachedMessageData const&);
+        CachedMessageData();
 
     public:
         // NOLINTBEGIN
@@ -64,8 +64,8 @@ public:
 
     public:
         // prevent constructor by default
-        Text& operator=(Text const&) = delete;
-        Text(Text const&)            = delete;
+        Text& operator=(Text const&);
+        Text(Text const&);
 
     public:
         // NOLINTBEGIN
@@ -135,9 +135,9 @@ public:
 
 public:
     // prevent constructor by default
-    SignBlockActor& operator=(SignBlockActor const&) = delete;
-    SignBlockActor(SignBlockActor const&)            = delete;
-    SignBlockActor()                                 = delete;
+    SignBlockActor& operator=(SignBlockActor const&);
+    SignBlockActor(SignBlockActor const&);
+    SignBlockActor();
 
 public:
     // NOLINTBEGIN

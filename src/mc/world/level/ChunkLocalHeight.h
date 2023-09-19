@@ -5,7 +5,7 @@
 class ChunkLocalHeight {
 public:
     // prevent constructor by default
-    ChunkLocalHeight& operator=(ChunkLocalHeight const&) = delete;
-    ChunkLocalHeight(ChunkLocalHeight const&)            = delete;
-    ChunkLocalHeight()                                   = delete;
+    ChunkLocalHeight& operator=(ChunkLocalHeight const&);
+    ChunkLocalHeight(ChunkLocalHeight const&);
+    ChunkLocalHeight();
 };

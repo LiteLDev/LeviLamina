@@ -10,8 +10,8 @@
 class NetworkChunkPublisherUpdatePacket : public ::Packet {
 public:
     // prevent constructor by default
-    NetworkChunkPublisherUpdatePacket& operator=(NetworkChunkPublisherUpdatePacket const&) = delete;
-    NetworkChunkPublisherUpdatePacket(NetworkChunkPublisherUpdatePacket const&)            = delete;
+    NetworkChunkPublisherUpdatePacket& operator=(NetworkChunkPublisherUpdatePacket const&);
+    NetworkChunkPublisherUpdatePacket(NetworkChunkPublisherUpdatePacket const&);
 
 public:
     // NOLINTBEGIN

@@ -10,9 +10,9 @@
 class FlyTravelSystem {
 public:
     // prevent constructor by default
-    FlyTravelSystem& operator=(FlyTravelSystem const&) = delete;
-    FlyTravelSystem(FlyTravelSystem const&)            = delete;
-    FlyTravelSystem()                                  = delete;
+    FlyTravelSystem& operator=(FlyTravelSystem const&);
+    FlyTravelSystem(FlyTravelSystem const&);
+    FlyTravelSystem();
 
 public:
     // NOLINTBEGIN

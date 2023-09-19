@@ -20,16 +20,16 @@ public:
     struct NetworkStatus {
     public:
         // prevent constructor by default
-        NetworkStatus& operator=(NetworkStatus const&) = delete;
-        NetworkStatus(NetworkStatus const&)            = delete;
-        NetworkStatus()                                = delete;
+        NetworkStatus& operator=(NetworkStatus const&);
+        NetworkStatus(NetworkStatus const&);
+        NetworkStatus();
     };
 
 public:
     // prevent constructor by default
-    NetworkPeer& operator=(NetworkPeer const&) = delete;
-    NetworkPeer(NetworkPeer const&)            = delete;
-    NetworkPeer()                              = delete;
+    NetworkPeer& operator=(NetworkPeer const&);
+    NetworkPeer(NetworkPeer const&);
+    NetworkPeer();
 
 public:
     // NOLINTBEGIN

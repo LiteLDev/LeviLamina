@@ -17,8 +17,8 @@ public:
     struct BlockPositionData {
     public:
         // prevent constructor by default
-        BlockPositionData& operator=(BlockPositionData const&) = delete;
-        BlockPositionData()                                    = delete;
+        BlockPositionData& operator=(BlockPositionData const&);
+        BlockPositionData();
 
     public:
         // NOLINTBEGIN
@@ -36,8 +36,8 @@ public:
 
 public:
     // prevent constructor by default
-    StructureBlockPalette& operator=(StructureBlockPalette const&) = delete;
-    StructureBlockPalette(StructureBlockPalette const&)            = delete;
+    StructureBlockPalette& operator=(StructureBlockPalette const&);
+    StructureBlockPalette(StructureBlockPalette const&);
 
 public:
     // NOLINTBEGIN

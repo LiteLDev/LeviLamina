@@ -13,9 +13,9 @@ public:
     struct BreakingItemData {
     public:
         // prevent constructor by default
-        BreakingItemData& operator=(BreakingItemData const&) = delete;
-        BreakingItemData(BreakingItemData const&)            = delete;
-        BreakingItemData()                                   = delete;
+        BreakingItemData& operator=(BreakingItemData const&);
+        BreakingItemData(BreakingItemData const&);
+        BreakingItemData();
 
     public:
         // NOLINTBEGIN
@@ -27,7 +27,7 @@ public:
 
 public:
     // prevent constructor by default
-    ParticleEventRequest& operator=(ParticleEventRequest const&) = delete;
-    ParticleEventRequest(ParticleEventRequest const&)            = delete;
-    ParticleEventRequest()                                       = delete;
+    ParticleEventRequest& operator=(ParticleEventRequest const&);
+    ParticleEventRequest(ParticleEventRequest const&);
+    ParticleEventRequest();
 };

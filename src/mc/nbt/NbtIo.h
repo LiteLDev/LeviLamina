@@ -5,9 +5,9 @@
 class NbtIo {
 public:
     // prevent constructor by default
-    NbtIo& operator=(NbtIo const&) = delete;
-    NbtIo(NbtIo const&)            = delete;
-    NbtIo()                        = delete;
+    NbtIo& operator=(NbtIo const&);
+    NbtIo(NbtIo const&);
+    NbtIo();
 
 public:
     // NOLINTBEGIN

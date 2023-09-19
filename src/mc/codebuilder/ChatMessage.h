@@ -7,9 +7,9 @@ namespace CodeBuilder {
 struct ChatMessage {
 public:
     // prevent constructor by default
-    ChatMessage& operator=(ChatMessage const&) = delete;
-    ChatMessage(ChatMessage const&)            = delete;
-    ChatMessage()                              = delete;
+    ChatMessage& operator=(ChatMessage const&);
+    ChatMessage(ChatMessage const&);
+    ChatMessage();
 
 public:
     // NOLINTBEGIN

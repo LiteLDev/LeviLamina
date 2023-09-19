@@ -5,8 +5,8 @@
 struct ActorSelectorArgs {
 public:
     // prevent constructor by default
-    ActorSelectorArgs& operator=(ActorSelectorArgs const&) = delete;
-    ActorSelectorArgs(ActorSelectorArgs const&)            = delete;
+    ActorSelectorArgs& operator=(ActorSelectorArgs const&);
+    ActorSelectorArgs(ActorSelectorArgs const&);
 
 public:
     // NOLINTBEGIN

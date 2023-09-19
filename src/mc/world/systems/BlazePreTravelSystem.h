@@ -5,9 +5,9 @@
 class BlazePreTravelSystem {
 public:
     // prevent constructor by default
-    BlazePreTravelSystem& operator=(BlazePreTravelSystem const&) = delete;
-    BlazePreTravelSystem(BlazePreTravelSystem const&)            = delete;
-    BlazePreTravelSystem()                                       = delete;
+    BlazePreTravelSystem& operator=(BlazePreTravelSystem const&);
+    BlazePreTravelSystem(BlazePreTravelSystem const&);
+    BlazePreTravelSystem();
 
 public:
     // NOLINTBEGIN

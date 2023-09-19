@@ -8,8 +8,8 @@
 class ConditionalListFeature : public ::IFeature {
 public:
     // prevent constructor by default
-    ConditionalListFeature& operator=(ConditionalListFeature const&) = delete;
-    ConditionalListFeature(ConditionalListFeature const&)            = delete;
+    ConditionalListFeature& operator=(ConditionalListFeature const&);
+    ConditionalListFeature(ConditionalListFeature const&);
 
 public:
     // NOLINTBEGIN

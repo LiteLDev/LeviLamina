@@ -5,9 +5,9 @@
 class JigsawBlockInfo {
 public:
     // prevent constructor by default
-    JigsawBlockInfo& operator=(JigsawBlockInfo const&) = delete;
-    JigsawBlockInfo(JigsawBlockInfo const&)            = delete;
-    JigsawBlockInfo()                                  = delete;
+    JigsawBlockInfo& operator=(JigsawBlockInfo const&);
+    JigsawBlockInfo(JigsawBlockInfo const&);
+    JigsawBlockInfo();
 
 public:
     // NOLINTBEGIN

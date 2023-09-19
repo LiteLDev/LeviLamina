@@ -10,9 +10,9 @@ namespace npc {
 struct StoredCommand {
 public:
     // prevent constructor by default
-    StoredCommand& operator=(StoredCommand const&) = delete;
-    StoredCommand(StoredCommand const&)            = delete;
-    StoredCommand()                                = delete;
+    StoredCommand& operator=(StoredCommand const&);
+    StoredCommand(StoredCommand const&);
+    StoredCommand();
 
 public:
     // NOLINTBEGIN

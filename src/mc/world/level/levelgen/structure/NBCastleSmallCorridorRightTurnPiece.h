@@ -9,9 +9,9 @@
 class NBCastleSmallCorridorRightTurnPiece : public ::NetherFortressPiece {
 public:
     // prevent constructor by default
-    NBCastleSmallCorridorRightTurnPiece& operator=(NBCastleSmallCorridorRightTurnPiece const&) = delete;
-    NBCastleSmallCorridorRightTurnPiece(NBCastleSmallCorridorRightTurnPiece const&)            = delete;
-    NBCastleSmallCorridorRightTurnPiece()                                                      = delete;
+    NBCastleSmallCorridorRightTurnPiece& operator=(NBCastleSmallCorridorRightTurnPiece const&);
+    NBCastleSmallCorridorRightTurnPiece(NBCastleSmallCorridorRightTurnPiece const&);
+    NBCastleSmallCorridorRightTurnPiece();
 
 public:
     // NOLINTBEGIN

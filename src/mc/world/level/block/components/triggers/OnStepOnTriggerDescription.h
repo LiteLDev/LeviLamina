@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class OnStepOnTriggerDescription {
 public:
     // prevent constructor by default
-    OnStepOnTriggerDescription& operator=(OnStepOnTriggerDescription const&) = delete;
-    OnStepOnTriggerDescription(OnStepOnTriggerDescription const&)            = delete;
-    OnStepOnTriggerDescription()                                             = delete;
+    OnStepOnTriggerDescription& operator=(OnStepOnTriggerDescription const&);
+    OnStepOnTriggerDescription(OnStepOnTriggerDescription const&);
+    OnStepOnTriggerDescription();
 
 public:
     // NOLINTBEGIN

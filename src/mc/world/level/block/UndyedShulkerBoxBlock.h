@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class UndyedShulkerBoxBlock : public ::ChestBlock {
 public:
     // prevent constructor by default
-    UndyedShulkerBoxBlock& operator=(UndyedShulkerBoxBlock const&) = delete;
-    UndyedShulkerBoxBlock(UndyedShulkerBoxBlock const&)            = delete;
-    UndyedShulkerBoxBlock()                                        = delete;
+    UndyedShulkerBoxBlock& operator=(UndyedShulkerBoxBlock const&);
+    UndyedShulkerBoxBlock(UndyedShulkerBoxBlock const&);
+    UndyedShulkerBoxBlock();
 
 public:
     // NOLINTBEGIN

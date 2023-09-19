@@ -8,9 +8,9 @@
 class LootItemRandomChanceCondition : public ::LootItemCondition {
 public:
     // prevent constructor by default
-    LootItemRandomChanceCondition& operator=(LootItemRandomChanceCondition const&) = delete;
-    LootItemRandomChanceCondition(LootItemRandomChanceCondition const&)            = delete;
-    LootItemRandomChanceCondition()                                                = delete;
+    LootItemRandomChanceCondition& operator=(LootItemRandomChanceCondition const&);
+    LootItemRandomChanceCondition(LootItemRandomChanceCondition const&);
+    LootItemRandomChanceCondition();
 
 public:
     // NOLINTBEGIN

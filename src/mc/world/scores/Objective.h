@@ -8,9 +8,9 @@
 class Objective {
 public:
     // prevent constructor by default
-    Objective& operator=(Objective const&) = delete;
-    Objective(Objective const&)            = delete;
-    Objective()                            = delete;
+    Objective& operator=(Objective const&);
+    Objective(Objective const&);
+    Objective();
 
 public:
     // NOLINTBEGIN

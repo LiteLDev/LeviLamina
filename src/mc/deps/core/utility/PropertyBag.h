@@ -10,13 +10,13 @@ namespace Json { class Value; }
 class PropertyBag {
 public:
     // prevent constructor by default
-    PropertyBag& operator=(PropertyBag const&) = delete;
-    PropertyBag(PropertyBag const&)            = delete;
+    PropertyBag& operator=(PropertyBag const&);
+    PropertyBag(PropertyBag const&);
 
 public:
     // NOLINTBEGIN
     // symbol: ??0PropertyBag@@QEAA@AEBVValue@Json@@@Z
-    MCAPI PropertyBag(class Json::Value const&);
+    MCAPI explicit PropertyBag(class Json::Value const&);
 
     // symbol: ??0PropertyBag@@QEAA@XZ
     MCAPI PropertyBag();

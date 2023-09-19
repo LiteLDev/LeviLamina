@@ -5,7 +5,7 @@
 struct CameraPreset {
 public:
     // prevent constructor by default
-    CameraPreset() = delete;
+    CameraPreset();
 
 public:
     // NOLINTBEGIN

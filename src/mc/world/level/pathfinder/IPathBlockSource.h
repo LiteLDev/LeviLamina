@@ -5,9 +5,9 @@
 class IPathBlockSource {
 public:
     // prevent constructor by default
-    IPathBlockSource& operator=(IPathBlockSource const&) = delete;
-    IPathBlockSource(IPathBlockSource const&)            = delete;
-    IPathBlockSource()                                   = delete;
+    IPathBlockSource& operator=(IPathBlockSource const&);
+    IPathBlockSource(IPathBlockSource const&);
+    IPathBlockSource();
 
 public:
     // NOLINTBEGIN

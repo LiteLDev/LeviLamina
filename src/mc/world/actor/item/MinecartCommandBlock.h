@@ -27,9 +27,9 @@
 class MinecartCommandBlock : public ::Minecart {
 public:
     // prevent constructor by default
-    MinecartCommandBlock& operator=(MinecartCommandBlock const&) = delete;
-    MinecartCommandBlock(MinecartCommandBlock const&)            = delete;
-    MinecartCommandBlock()                                       = delete;
+    MinecartCommandBlock& operator=(MinecartCommandBlock const&);
+    MinecartCommandBlock(MinecartCommandBlock const&);
+    MinecartCommandBlock();
 
 public:
     // NOLINTBEGIN

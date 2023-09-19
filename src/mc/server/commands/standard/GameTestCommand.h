@@ -14,9 +14,9 @@ namespace gametest { struct TestParameters; }
 class GameTestCommand : public ::ServerCommand {
 public:
     // prevent constructor by default
-    GameTestCommand& operator=(GameTestCommand const&) = delete;
-    GameTestCommand(GameTestCommand const&)            = delete;
-    GameTestCommand()                                  = delete;
+    GameTestCommand& operator=(GameTestCommand const&);
+    GameTestCommand(GameTestCommand const&);
+    GameTestCommand();
 
 public:
     // NOLINTBEGIN

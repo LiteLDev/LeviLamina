@@ -5,14 +5,14 @@
 class ItemGroup {
 public:
     // prevent constructor by default
-    ItemGroup& operator=(ItemGroup const&) = delete;
-    ItemGroup(ItemGroup const&)            = delete;
-    ItemGroup()                            = delete;
+    ItemGroup& operator=(ItemGroup const&);
+    ItemGroup(ItemGroup const&);
+    ItemGroup();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ItemGroup@@QEAA@AEBVItemInstance@@@Z
-    MCAPI ItemGroup(class ItemInstance const&);
+    MCAPI explicit ItemGroup(class ItemInstance const&);
 
     // symbol: ?isEmpty@ItemGroup@@QEBA_NXZ
     MCAPI bool isEmpty() const;

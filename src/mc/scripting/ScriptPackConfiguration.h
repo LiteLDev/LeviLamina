@@ -10,8 +10,8 @@ namespace Json { class Value; }
 class ScriptPackConfiguration {
 public:
     // prevent constructor by default
-    ScriptPackConfiguration& operator=(ScriptPackConfiguration const&) = delete;
-    ScriptPackConfiguration()                                          = delete;
+    ScriptPackConfiguration& operator=(ScriptPackConfiguration const&);
+    ScriptPackConfiguration();
 
 public:
     // NOLINTBEGIN

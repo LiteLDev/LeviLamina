@@ -5,9 +5,9 @@
 class MinecraftScriptTelemetryLogger {
 public:
     // prevent constructor by default
-    MinecraftScriptTelemetryLogger& operator=(MinecraftScriptTelemetryLogger const&) = delete;
-    MinecraftScriptTelemetryLogger(MinecraftScriptTelemetryLogger const&)            = delete;
-    MinecraftScriptTelemetryLogger()                                                 = delete;
+    MinecraftScriptTelemetryLogger& operator=(MinecraftScriptTelemetryLogger const&);
+    MinecraftScriptTelemetryLogger(MinecraftScriptTelemetryLogger const&);
+    MinecraftScriptTelemetryLogger();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class BeardAndShaverDescription {
 public:
     // prevent constructor by default
-    BeardAndShaverDescription& operator=(BeardAndShaverDescription const&) = delete;
-    BeardAndShaverDescription(BeardAndShaverDescription const&)            = delete;
-    BeardAndShaverDescription()                                            = delete;
+    BeardAndShaverDescription& operator=(BeardAndShaverDescription const&);
+    BeardAndShaverDescription(BeardAndShaverDescription const&);
+    BeardAndShaverDescription();
 
 public:
     // NOLINTBEGIN

@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class ServerFileChunkUploader {
 public:
     // prevent constructor by default
-    ServerFileChunkUploader& operator=(ServerFileChunkUploader const&) = delete;
-    ServerFileChunkUploader(ServerFileChunkUploader const&)            = delete;
-    ServerFileChunkUploader()                                          = delete;
+    ServerFileChunkUploader& operator=(ServerFileChunkUploader const&);
+    ServerFileChunkUploader(ServerFileChunkUploader const&);
+    ServerFileChunkUploader();
 
 public:
     // NOLINTBEGIN

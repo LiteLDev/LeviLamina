@@ -5,9 +5,9 @@
 struct MobSpawnHerdInfo {
 public:
     // prevent constructor by default
-    MobSpawnHerdInfo& operator=(MobSpawnHerdInfo const&) = delete;
-    MobSpawnHerdInfo(MobSpawnHerdInfo const&)            = delete;
-    MobSpawnHerdInfo()                                   = delete;
+    MobSpawnHerdInfo& operator=(MobSpawnHerdInfo const&);
+    MobSpawnHerdInfo(MobSpawnHerdInfo const&);
+    MobSpawnHerdInfo();
 
 public:
     // NOLINTBEGIN

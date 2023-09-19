@@ -12,9 +12,9 @@
 class UpdateBoundingBoxSystem {
 public:
     // prevent constructor by default
-    UpdateBoundingBoxSystem& operator=(UpdateBoundingBoxSystem const&) = delete;
-    UpdateBoundingBoxSystem(UpdateBoundingBoxSystem const&)            = delete;
-    UpdateBoundingBoxSystem()                                          = delete;
+    UpdateBoundingBoxSystem& operator=(UpdateBoundingBoxSystem const&);
+    UpdateBoundingBoxSystem(UpdateBoundingBoxSystem const&);
+    UpdateBoundingBoxSystem();
 
 public:
     // NOLINTBEGIN

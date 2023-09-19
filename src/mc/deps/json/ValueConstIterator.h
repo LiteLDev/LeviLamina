@@ -7,9 +7,9 @@ namespace Json {
 class ValueConstIterator {
 public:
     // prevent constructor by default
-    ValueConstIterator& operator=(ValueConstIterator const&) = delete;
-    ValueConstIterator(ValueConstIterator const&)            = delete;
-    ValueConstIterator()                                     = delete;
+    ValueConstIterator& operator=(ValueConstIterator const&);
+    ValueConstIterator(ValueConstIterator const&);
+    ValueConstIterator();
 };
 
 }; // namespace Json

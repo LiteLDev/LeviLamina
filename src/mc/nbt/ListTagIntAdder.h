@@ -5,9 +5,9 @@
 class ListTagIntAdder {
 public:
     // prevent constructor by default
-    ListTagIntAdder& operator=(ListTagIntAdder const&) = delete;
-    ListTagIntAdder(ListTagIntAdder const&)            = delete;
-    ListTagIntAdder()                                  = delete;
+    ListTagIntAdder& operator=(ListTagIntAdder const&);
+    ListTagIntAdder(ListTagIntAdder const&);
+    ListTagIntAdder();
 
 public:
     // NOLINTBEGIN

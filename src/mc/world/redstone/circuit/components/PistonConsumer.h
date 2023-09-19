@@ -9,8 +9,8 @@
 class PistonConsumer : public ::ConsumerComponent {
 public:
     // prevent constructor by default
-    PistonConsumer& operator=(PistonConsumer const&) = delete;
-    PistonConsumer(PistonConsumer const&)            = delete;
+    PistonConsumer& operator=(PistonConsumer const&);
+    PistonConsumer(PistonConsumer const&);
 
 public:
     // NOLINTBEGIN

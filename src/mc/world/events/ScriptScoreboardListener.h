@@ -19,9 +19,9 @@ namespace ScriptModuleMinecraft {
 class ScriptScoreboardListener : public ::ScoreboardEventListener {
 public:
     // prevent constructor by default
-    ScriptScoreboardListener& operator=(ScriptScoreboardListener const&) = delete;
-    ScriptScoreboardListener(ScriptScoreboardListener const&)            = delete;
-    ScriptScoreboardListener()                                           = delete;
+    ScriptScoreboardListener& operator=(ScriptScoreboardListener const&);
+    ScriptScoreboardListener(ScriptScoreboardListener const&);
+    ScriptScoreboardListener();
 
 public:
     // NOLINTBEGIN
@@ -38,8 +38,8 @@ public:
 
     // symbol:
     // ??0ScriptScoreboardListener@ScriptModuleMinecraft@@QEAA@V?$WeakTypedObjectHandle@VScriptScoreboard@ScriptModuleMinecraft@@@Scripting@@@Z
-    MCAPI
-    ScriptScoreboardListener(class Scripting::WeakTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboard>);
+    MCAPI explicit ScriptScoreboardListener(class Scripting::WeakTypedObjectHandle<
+                                            class ScriptModuleMinecraft::ScriptScoreboard>);
 
     // NOLINTEND
 };

@@ -10,9 +10,9 @@ namespace ScriptModuleMinecraft {
 struct ScriptEntityEffectOptions {
 public:
     // prevent constructor by default
-    ScriptEntityEffectOptions& operator=(ScriptEntityEffectOptions const&) = delete;
-    ScriptEntityEffectOptions(ScriptEntityEffectOptions const&)            = delete;
-    ScriptEntityEffectOptions()                                            = delete;
+    ScriptEntityEffectOptions& operator=(ScriptEntityEffectOptions const&);
+    ScriptEntityEffectOptions(ScriptEntityEffectOptions const&);
+    ScriptEntityEffectOptions();
 
 public:
     // NOLINTBEGIN

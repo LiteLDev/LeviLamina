@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class StoneBricksBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    StoneBricksBlock& operator=(StoneBricksBlock const&) = delete;
-    StoneBricksBlock(StoneBricksBlock const&)            = delete;
-    StoneBricksBlock()                                   = delete;
+    StoneBricksBlock& operator=(StoneBricksBlock const&);
+    StoneBricksBlock(StoneBricksBlock const&);
+    StoneBricksBlock();
 
 public:
     // NOLINTBEGIN

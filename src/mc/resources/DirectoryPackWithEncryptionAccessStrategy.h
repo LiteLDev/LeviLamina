@@ -17,9 +17,9 @@ namespace Core { class Path; }
 class DirectoryPackWithEncryptionAccessStrategy : public ::PackAccessStrategy {
 public:
     // prevent constructor by default
-    DirectoryPackWithEncryptionAccessStrategy& operator=(DirectoryPackWithEncryptionAccessStrategy const&) = delete;
-    DirectoryPackWithEncryptionAccessStrategy(DirectoryPackWithEncryptionAccessStrategy const&)            = delete;
-    DirectoryPackWithEncryptionAccessStrategy()                                                            = delete;
+    DirectoryPackWithEncryptionAccessStrategy& operator=(DirectoryPackWithEncryptionAccessStrategy const&);
+    DirectoryPackWithEncryptionAccessStrategy(DirectoryPackWithEncryptionAccessStrategy const&);
+    DirectoryPackWithEncryptionAccessStrategy();
 
 public:
     // NOLINTBEGIN

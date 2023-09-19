@@ -5,7 +5,7 @@
 struct NetworkPermissions {
 public:
     // prevent constructor by default
-    NetworkPermissions& operator=(NetworkPermissions const&) = delete;
-    NetworkPermissions(NetworkPermissions const&)            = delete;
-    NetworkPermissions()                                     = delete;
+    NetworkPermissions& operator=(NetworkPermissions const&);
+    NetworkPermissions(NetworkPermissions const&);
+    NetworkPermissions();
 };

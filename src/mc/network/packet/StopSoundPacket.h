@@ -10,8 +10,8 @@
 class StopSoundPacket : public ::Packet {
 public:
     // prevent constructor by default
-    StopSoundPacket& operator=(StopSoundPacket const&) = delete;
-    StopSoundPacket(StopSoundPacket const&)            = delete;
+    StopSoundPacket& operator=(StopSoundPacket const&);
+    StopSoundPacket(StopSoundPacket const&);
 
 public:
     // NOLINTBEGIN

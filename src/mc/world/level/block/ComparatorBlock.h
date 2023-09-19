@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class ComparatorBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    ComparatorBlock& operator=(ComparatorBlock const&) = delete;
-    ComparatorBlock(ComparatorBlock const&)            = delete;
-    ComparatorBlock()                                  = delete;
+    ComparatorBlock& operator=(ComparatorBlock const&);
+    ComparatorBlock(ComparatorBlock const&);
+    ComparatorBlock();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class GameEventMapping {
 public:
     // prevent constructor by default
-    GameEventMapping& operator=(GameEventMapping const&) = delete;
-    GameEventMapping(GameEventMapping const&)            = delete;
-    GameEventMapping()                                   = delete;
+    GameEventMapping& operator=(GameEventMapping const&);
+    GameEventMapping(GameEventMapping const&);
+    GameEventMapping();
 
 public:
     // NOLINTBEGIN

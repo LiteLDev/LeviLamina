@@ -5,8 +5,8 @@
 class CommandItem {
 public:
     // prevent constructor by default
-    CommandItem& operator=(CommandItem const&) = delete;
-    CommandItem(CommandItem const&)            = delete;
+    CommandItem& operator=(CommandItem const&);
+    CommandItem(CommandItem const&);
 
 public:
     // NOLINTBEGIN
@@ -23,7 +23,7 @@ public:
     MCAPI int getId() const;
 
     // symbol: ??BCommandItem@@QEBA_NXZ
-    MCAPI operator bool() const;
+    MCAPI explicit operator bool() const;
 
     // NOLINTEND
 };

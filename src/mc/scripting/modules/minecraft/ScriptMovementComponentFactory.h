@@ -19,9 +19,9 @@ namespace ScriptModuleMinecraft {
 class ScriptMovementComponentFactory : public ::ScriptModuleMinecraft::IComponentFactory {
 public:
     // prevent constructor by default
-    ScriptMovementComponentFactory& operator=(ScriptMovementComponentFactory const&) = delete;
-    ScriptMovementComponentFactory(ScriptMovementComponentFactory const&)            = delete;
-    ScriptMovementComponentFactory()                                                 = delete;
+    ScriptMovementComponentFactory& operator=(ScriptMovementComponentFactory const&);
+    ScriptMovementComponentFactory(ScriptMovementComponentFactory const&);
+    ScriptMovementComponentFactory();
 
 public:
     // NOLINTBEGIN

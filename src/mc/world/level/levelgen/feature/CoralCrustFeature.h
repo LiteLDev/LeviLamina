@@ -8,9 +8,9 @@
 class CoralCrustFeature : public ::Feature {
 public:
     // prevent constructor by default
-    CoralCrustFeature& operator=(CoralCrustFeature const&) = delete;
-    CoralCrustFeature(CoralCrustFeature const&)            = delete;
-    CoralCrustFeature()                                    = delete;
+    CoralCrustFeature& operator=(CoralCrustFeature const&);
+    CoralCrustFeature(CoralCrustFeature const&);
+    CoralCrustFeature();
 
 public:
     // NOLINTBEGIN

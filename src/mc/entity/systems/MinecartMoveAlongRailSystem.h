@@ -12,9 +12,9 @@
 class MinecartMoveAlongRailSystem {
 public:
     // prevent constructor by default
-    MinecartMoveAlongRailSystem& operator=(MinecartMoveAlongRailSystem const&) = delete;
-    MinecartMoveAlongRailSystem(MinecartMoveAlongRailSystem const&)            = delete;
-    MinecartMoveAlongRailSystem()                                              = delete;
+    MinecartMoveAlongRailSystem& operator=(MinecartMoveAlongRailSystem const&);
+    MinecartMoveAlongRailSystem(MinecartMoveAlongRailSystem const&);
+    MinecartMoveAlongRailSystem();
 
 public:
     // NOLINTBEGIN

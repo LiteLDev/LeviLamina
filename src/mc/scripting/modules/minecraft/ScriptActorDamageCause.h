@@ -11,9 +11,9 @@ namespace ScriptModuleMinecraft {
 class ScriptActorDamageCause {
 public:
     // prevent constructor by default
-    ScriptActorDamageCause& operator=(ScriptActorDamageCause const&) = delete;
-    ScriptActorDamageCause(ScriptActorDamageCause const&)            = delete;
-    ScriptActorDamageCause()                                         = delete;
+    ScriptActorDamageCause& operator=(ScriptActorDamageCause const&);
+    ScriptActorDamageCause(ScriptActorDamageCause const&);
+    ScriptActorDamageCause();
 
 public:
     // NOLINTBEGIN

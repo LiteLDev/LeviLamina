@@ -11,9 +11,9 @@
 class AutoStepFilterSystem {
 public:
     // prevent constructor by default
-    AutoStepFilterSystem& operator=(AutoStepFilterSystem const&) = delete;
-    AutoStepFilterSystem(AutoStepFilterSystem const&)            = delete;
-    AutoStepFilterSystem()                                       = delete;
+    AutoStepFilterSystem& operator=(AutoStepFilterSystem const&);
+    AutoStepFilterSystem(AutoStepFilterSystem const&);
+    AutoStepFilterSystem();
 
 public:
     // NOLINTBEGIN

@@ -10,8 +10,8 @@
 class EmotePacket : public ::Packet {
 public:
     // prevent constructor by default
-    EmotePacket& operator=(EmotePacket const&) = delete;
-    EmotePacket(EmotePacket const&)            = delete;
+    EmotePacket& operator=(EmotePacket const&);
+    EmotePacket(EmotePacket const&);
 
 public:
     // NOLINTBEGIN

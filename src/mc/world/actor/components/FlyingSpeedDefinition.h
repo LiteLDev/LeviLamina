@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct FlyingSpeedDefinition {
 public:
     // prevent constructor by default
-    FlyingSpeedDefinition& operator=(FlyingSpeedDefinition const&) = delete;
-    FlyingSpeedDefinition(FlyingSpeedDefinition const&)            = delete;
-    FlyingSpeedDefinition()                                        = delete;
+    FlyingSpeedDefinition& operator=(FlyingSpeedDefinition const&);
+    FlyingSpeedDefinition(FlyingSpeedDefinition const&);
+    FlyingSpeedDefinition();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class StringByteOutput : public ::BytesDataOutput {
 public:
     // prevent constructor by default
-    StringByteOutput& operator=(StringByteOutput const&) = delete;
-    StringByteOutput(StringByteOutput const&)            = delete;
-    StringByteOutput()                                   = delete;
+    StringByteOutput& operator=(StringByteOutput const&);
+    StringByteOutput(StringByteOutput const&);
+    StringByteOutput();
 
 public:
     // NOLINTBEGIN

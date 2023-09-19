@@ -5,9 +5,9 @@
 struct KeyOrNameResult {
 public:
     // prevent constructor by default
-    KeyOrNameResult& operator=(KeyOrNameResult const&) = delete;
-    KeyOrNameResult(KeyOrNameResult const&)            = delete;
-    KeyOrNameResult()                                  = delete;
+    KeyOrNameResult& operator=(KeyOrNameResult const&);
+    KeyOrNameResult(KeyOrNameResult const&);
+    KeyOrNameResult();
 
 public:
     // NOLINTBEGIN

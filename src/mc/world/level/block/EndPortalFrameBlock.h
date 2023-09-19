@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class EndPortalFrameBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    EndPortalFrameBlock& operator=(EndPortalFrameBlock const&) = delete;
-    EndPortalFrameBlock(EndPortalFrameBlock const&)            = delete;
-    EndPortalFrameBlock()                                      = delete;
+    EndPortalFrameBlock& operator=(EndPortalFrameBlock const&);
+    EndPortalFrameBlock(EndPortalFrameBlock const&);
+    EndPortalFrameBlock();
 
 public:
     // NOLINTBEGIN

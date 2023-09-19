@@ -15,8 +15,8 @@ namespace Json { class Value; }
 class ResourceLocation {
 public:
     // prevent constructor by default
-    ResourceLocation& operator=(ResourceLocation const&) = delete;
-    ResourceLocation(ResourceLocation const&)            = delete;
+    ResourceLocation& operator=(ResourceLocation const&);
+    ResourceLocation(ResourceLocation const&);
 
 public:
     // NOLINTBEGIN
@@ -27,7 +27,7 @@ public:
     MCAPI ResourceLocation();
 
     // symbol: ??0ResourceLocation@@QEAA@AEBVPath@Core@@@Z
-    MCAPI ResourceLocation(class Core::Path const&);
+    MCAPI explicit ResourceLocation(class Core::Path const&);
 
     // symbol:
     // ?getFullPath@ResourceLocation@@QEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ

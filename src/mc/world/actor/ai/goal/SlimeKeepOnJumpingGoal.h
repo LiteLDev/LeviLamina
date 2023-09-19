@@ -9,9 +9,9 @@
 class SlimeKeepOnJumpingGoal : public ::Goal {
 public:
     // prevent constructor by default
-    SlimeKeepOnJumpingGoal& operator=(SlimeKeepOnJumpingGoal const&) = delete;
-    SlimeKeepOnJumpingGoal(SlimeKeepOnJumpingGoal const&)            = delete;
-    SlimeKeepOnJumpingGoal()                                         = delete;
+    SlimeKeepOnJumpingGoal& operator=(SlimeKeepOnJumpingGoal const&);
+    SlimeKeepOnJumpingGoal(SlimeKeepOnJumpingGoal const&);
+    SlimeKeepOnJumpingGoal();
 
 public:
     // NOLINTBEGIN
@@ -29,7 +29,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0SlimeKeepOnJumpingGoal@@QEAA@AEAVMob@@@Z
-    MCAPI SlimeKeepOnJumpingGoal(class Mob&);
+    MCAPI explicit SlimeKeepOnJumpingGoal(class Mob&);
 
     // NOLINTEND
 };

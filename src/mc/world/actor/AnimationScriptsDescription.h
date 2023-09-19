@@ -8,9 +8,9 @@
 class AnimationScriptsDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    AnimationScriptsDescription& operator=(AnimationScriptsDescription const&) = delete;
-    AnimationScriptsDescription(AnimationScriptsDescription const&)            = delete;
-    AnimationScriptsDescription()                                              = delete;
+    AnimationScriptsDescription& operator=(AnimationScriptsDescription const&);
+    AnimationScriptsDescription(AnimationScriptsDescription const&);
+    AnimationScriptsDescription();
 
 public:
     // NOLINTBEGIN

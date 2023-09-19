@@ -8,9 +8,9 @@
 class AddActorBasePacket : public ::Packet {
 public:
     // prevent constructor by default
-    AddActorBasePacket& operator=(AddActorBasePacket const&) = delete;
-    AddActorBasePacket(AddActorBasePacket const&)            = delete;
-    AddActorBasePacket()                                     = delete;
+    AddActorBasePacket& operator=(AddActorBasePacket const&);
+    AddActorBasePacket(AddActorBasePacket const&);
+    AddActorBasePacket();
 
 public:
     // NOLINTBEGIN

@@ -5,8 +5,8 @@
 class CommandBlockComponent {
 public:
     // prevent constructor by default
-    CommandBlockComponent& operator=(CommandBlockComponent const&) = delete;
-    CommandBlockComponent(CommandBlockComponent const&)            = delete;
+    CommandBlockComponent& operator=(CommandBlockComponent const&);
+    CommandBlockComponent(CommandBlockComponent const&);
 
 public:
     // NOLINTBEGIN

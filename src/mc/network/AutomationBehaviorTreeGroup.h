@@ -5,9 +5,9 @@
 class AutomationBehaviorTreeGroup {
 public:
     // prevent constructor by default
-    AutomationBehaviorTreeGroup& operator=(AutomationBehaviorTreeGroup const&) = delete;
-    AutomationBehaviorTreeGroup(AutomationBehaviorTreeGroup const&)            = delete;
-    AutomationBehaviorTreeGroup()                                              = delete;
+    AutomationBehaviorTreeGroup& operator=(AutomationBehaviorTreeGroup const&);
+    AutomationBehaviorTreeGroup(AutomationBehaviorTreeGroup const&);
+    AutomationBehaviorTreeGroup();
 
 public:
     // NOLINTBEGIN

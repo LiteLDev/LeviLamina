@@ -29,9 +29,9 @@
 class Agent : public ::Mob {
 public:
     // prevent constructor by default
-    Agent& operator=(Agent const&) = delete;
-    Agent(Agent const&)            = delete;
-    Agent()                        = delete;
+    Agent& operator=(Agent const&);
+    Agent(Agent const&);
+    Agent();
 
 public:
     // NOLINTBEGIN

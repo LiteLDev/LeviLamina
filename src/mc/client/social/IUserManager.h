@@ -7,9 +7,9 @@ namespace Social {
 class IUserManager {
 public:
     // prevent constructor by default
-    IUserManager& operator=(IUserManager const&) = delete;
-    IUserManager(IUserManager const&)            = delete;
-    IUserManager()                               = delete;
+    IUserManager& operator=(IUserManager const&);
+    IUserManager(IUserManager const&);
+    IUserManager();
 };
 
 }; // namespace Social

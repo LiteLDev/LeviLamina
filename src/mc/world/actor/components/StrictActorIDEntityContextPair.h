@@ -5,7 +5,7 @@
 struct StrictActorIDEntityContextPair {
 public:
     // prevent constructor by default
-    StrictActorIDEntityContextPair& operator=(StrictActorIDEntityContextPair const&) = delete;
-    StrictActorIDEntityContextPair(StrictActorIDEntityContextPair const&)            = delete;
-    StrictActorIDEntityContextPair()                                                 = delete;
+    StrictActorIDEntityContextPair& operator=(StrictActorIDEntityContextPair const&);
+    StrictActorIDEntityContextPair(StrictActorIDEntityContextPair const&);
+    StrictActorIDEntityContextPair();
 };

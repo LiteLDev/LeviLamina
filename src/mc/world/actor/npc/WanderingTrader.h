@@ -26,9 +26,9 @@
 class WanderingTrader : public ::Mob {
 public:
     // prevent constructor by default
-    WanderingTrader& operator=(WanderingTrader const&) = delete;
-    WanderingTrader(WanderingTrader const&)            = delete;
-    WanderingTrader()                                  = delete;
+    WanderingTrader& operator=(WanderingTrader const&);
+    WanderingTrader(WanderingTrader const&);
+    WanderingTrader();
 
 public:
     // NOLINTBEGIN

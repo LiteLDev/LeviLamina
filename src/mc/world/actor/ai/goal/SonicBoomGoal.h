@@ -24,9 +24,9 @@ public:
     class Definition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        Definition& operator=(Definition const&) = delete;
-        Definition(Definition const&)            = delete;
-        Definition()                             = delete;
+        Definition& operator=(Definition const&);
+        Definition(Definition const&);
+        Definition();
 
     public:
         // NOLINTBEGIN
@@ -46,9 +46,9 @@ public:
 
 public:
     // prevent constructor by default
-    SonicBoomGoal& operator=(SonicBoomGoal const&) = delete;
-    SonicBoomGoal(SonicBoomGoal const&)            = delete;
-    SonicBoomGoal()                                = delete;
+    SonicBoomGoal& operator=(SonicBoomGoal const&);
+    SonicBoomGoal(SonicBoomGoal const&);
+    SonicBoomGoal();
 
 public:
     // NOLINTBEGIN
@@ -75,7 +75,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0SonicBoomGoal@@QEAA@AEAVMob@@@Z
-    MCAPI SonicBoomGoal(class Mob&);
+    MCAPI explicit SonicBoomGoal(class Mob&);
 
     // NOLINTEND
 };

@@ -27,9 +27,9 @@
 class WitherSkull : public ::Fireball {
 public:
     // prevent constructor by default
-    WitherSkull& operator=(WitherSkull const&) = delete;
-    WitherSkull(WitherSkull const&)            = delete;
-    WitherSkull()                              = delete;
+    WitherSkull& operator=(WitherSkull const&);
+    WitherSkull(WitherSkull const&);
+    WitherSkull();
 
 public:
     // NOLINTBEGIN

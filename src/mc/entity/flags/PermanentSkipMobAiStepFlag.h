@@ -5,7 +5,7 @@
 struct PermanentSkipMobAiStepFlag {
 public:
     // prevent constructor by default
-    PermanentSkipMobAiStepFlag& operator=(PermanentSkipMobAiStepFlag const&) = delete;
-    PermanentSkipMobAiStepFlag(PermanentSkipMobAiStepFlag const&)            = delete;
-    PermanentSkipMobAiStepFlag()                                             = delete;
+    PermanentSkipMobAiStepFlag& operator=(PermanentSkipMobAiStepFlag const&);
+    PermanentSkipMobAiStepFlag(PermanentSkipMobAiStepFlag const&);
+    PermanentSkipMobAiStepFlag();
 };

@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class BreedableDefinition {
 public:
     // prevent constructor by default
-    BreedableDefinition& operator=(BreedableDefinition const&) = delete;
-    BreedableDefinition(BreedableDefinition const&)            = delete;
+    BreedableDefinition& operator=(BreedableDefinition const&);
+    BreedableDefinition(BreedableDefinition const&);
 
 public:
     // NOLINTBEGIN

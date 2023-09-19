@@ -17,9 +17,9 @@ public:
 
 public:
     // prevent constructor by default
-    BackgroundWorker& operator=(BackgroundWorker const&) = delete;
-    BackgroundWorker(BackgroundWorker const&)            = delete;
-    BackgroundWorker()                                   = delete;
+    BackgroundWorker& operator=(BackgroundWorker const&);
+    BackgroundWorker(BackgroundWorker const&);
+    BackgroundWorker();
 
 public:
     // NOLINTBEGIN

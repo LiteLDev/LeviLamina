@@ -8,9 +8,9 @@
 class CentralSpikedFeature : public ::Feature {
 public:
     // prevent constructor by default
-    CentralSpikedFeature& operator=(CentralSpikedFeature const&) = delete;
-    CentralSpikedFeature(CentralSpikedFeature const&)            = delete;
-    CentralSpikedFeature()                                       = delete;
+    CentralSpikedFeature& operator=(CentralSpikedFeature const&);
+    CentralSpikedFeature(CentralSpikedFeature const&);
+    CentralSpikedFeature();
 
 public:
     // NOLINTBEGIN
@@ -21,7 +21,7 @@ public:
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
     // symbol: ??0CentralSpikedFeature@@QEAA@AEBVBlock@@@Z
-    MCAPI CentralSpikedFeature(class Block const&);
+    MCAPI explicit CentralSpikedFeature(class Block const&);
 
     // NOLINTEND
 };

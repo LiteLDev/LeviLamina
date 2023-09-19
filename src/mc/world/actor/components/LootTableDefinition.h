@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct LootTableDefinition {
 public:
     // prevent constructor by default
-    LootTableDefinition& operator=(LootTableDefinition const&) = delete;
-    LootTableDefinition(LootTableDefinition const&)            = delete;
-    LootTableDefinition()                                      = delete;
+    LootTableDefinition& operator=(LootTableDefinition const&);
+    LootTableDefinition(LootTableDefinition const&);
+    LootTableDefinition();
 
 public:
     // NOLINTBEGIN

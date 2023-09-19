@@ -8,9 +8,9 @@
 class DefaultSculkBehavior : public ::SculkBehavior {
 public:
     // prevent constructor by default
-    DefaultSculkBehavior& operator=(DefaultSculkBehavior const&) = delete;
-    DefaultSculkBehavior(DefaultSculkBehavior const&)            = delete;
-    DefaultSculkBehavior()                                       = delete;
+    DefaultSculkBehavior& operator=(DefaultSculkBehavior const&);
+    DefaultSculkBehavior(DefaultSculkBehavior const&);
+    DefaultSculkBehavior();
 
 public:
     // NOLINTBEGIN

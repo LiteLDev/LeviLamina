@@ -8,9 +8,9 @@
 class SpringFeature : public ::Feature {
 public:
     // prevent constructor by default
-    SpringFeature& operator=(SpringFeature const&) = delete;
-    SpringFeature(SpringFeature const&)            = delete;
-    SpringFeature()                                = delete;
+    SpringFeature& operator=(SpringFeature const&);
+    SpringFeature(SpringFeature const&);
+    SpringFeature();
 
 public:
     // NOLINTBEGIN
@@ -21,7 +21,7 @@ public:
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
     // symbol: ??0SpringFeature@@QEAA@AEBVBlock@@@Z
-    MCAPI SpringFeature(class Block const&);
+    MCAPI explicit SpringFeature(class Block const&);
 
     // NOLINTEND
 

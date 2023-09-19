@@ -14,9 +14,9 @@ namespace RakNet { struct SystemAddress; }
 class RakTcpProxy : public ::TcpProxy {
 public:
     // prevent constructor by default
-    RakTcpProxy& operator=(RakTcpProxy const&) = delete;
-    RakTcpProxy(RakTcpProxy const&)            = delete;
-    RakTcpProxy()                              = delete;
+    RakTcpProxy& operator=(RakTcpProxy const&);
+    RakTcpProxy(RakTcpProxy const&);
+    RakTcpProxy();
 
 public:
     // NOLINTBEGIN

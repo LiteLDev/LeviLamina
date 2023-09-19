@@ -12,8 +12,8 @@
 class SetSpawnPositionPacket : public ::Packet {
 public:
     // prevent constructor by default
-    SetSpawnPositionPacket& operator=(SetSpawnPositionPacket const&) = delete;
-    SetSpawnPositionPacket(SetSpawnPositionPacket const&)            = delete;
+    SetSpawnPositionPacket& operator=(SetSpawnPositionPacket const&);
+    SetSpawnPositionPacket(SetSpawnPositionPacket const&);
 
 public:
     // NOLINTBEGIN

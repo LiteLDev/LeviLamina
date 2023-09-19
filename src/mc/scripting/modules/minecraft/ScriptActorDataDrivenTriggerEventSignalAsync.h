@@ -8,10 +8,9 @@ template <typename T0>
 class ScriptActorDataDrivenTriggerEventSignalAsync {
 public:
     // prevent constructor by default
-    ScriptActorDataDrivenTriggerEventSignalAsync&
-    operator=(ScriptActorDataDrivenTriggerEventSignalAsync const&)                                    = delete;
-    ScriptActorDataDrivenTriggerEventSignalAsync(ScriptActorDataDrivenTriggerEventSignalAsync const&) = delete;
-    ScriptActorDataDrivenTriggerEventSignalAsync()                                                    = delete;
+    ScriptActorDataDrivenTriggerEventSignalAsync& operator=(ScriptActorDataDrivenTriggerEventSignalAsync const&);
+    ScriptActorDataDrivenTriggerEventSignalAsync(ScriptActorDataDrivenTriggerEventSignalAsync const&);
+    ScriptActorDataDrivenTriggerEventSignalAsync();
 };
 
 }; // namespace ScriptModuleMinecraft

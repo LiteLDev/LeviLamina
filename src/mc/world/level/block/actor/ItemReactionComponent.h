@@ -8,9 +8,9 @@
 class ItemReactionComponent : public ::LabTableReactionComponent {
 public:
     // prevent constructor by default
-    ItemReactionComponent& operator=(ItemReactionComponent const&) = delete;
-    ItemReactionComponent(ItemReactionComponent const&)            = delete;
-    ItemReactionComponent()                                        = delete;
+    ItemReactionComponent& operator=(ItemReactionComponent const&);
+    ItemReactionComponent(ItemReactionComponent const&);
+    ItemReactionComponent();
 
 public:
     // NOLINTBEGIN

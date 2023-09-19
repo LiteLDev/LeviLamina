@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class InsideBlockNotifierDefinition {
 public:
     // prevent constructor by default
-    InsideBlockNotifierDefinition& operator=(InsideBlockNotifierDefinition const&) = delete;
-    InsideBlockNotifierDefinition(InsideBlockNotifierDefinition const&)            = delete;
-    InsideBlockNotifierDefinition()                                                = delete;
+    InsideBlockNotifierDefinition& operator=(InsideBlockNotifierDefinition const&);
+    InsideBlockNotifierDefinition(InsideBlockNotifierDefinition const&);
+    InsideBlockNotifierDefinition();
 
 public:
     // NOLINTBEGIN

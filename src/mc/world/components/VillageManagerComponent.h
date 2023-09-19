@@ -5,7 +5,7 @@
 struct VillageManagerComponent {
 public:
     // prevent constructor by default
-    VillageManagerComponent& operator=(VillageManagerComponent const&) = delete;
-    VillageManagerComponent(VillageManagerComponent const&)            = delete;
-    VillageManagerComponent()                                          = delete;
+    VillageManagerComponent& operator=(VillageManagerComponent const&);
+    VillageManagerComponent(VillageManagerComponent const&);
+    VillageManagerComponent();
 };

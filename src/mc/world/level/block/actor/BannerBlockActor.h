@@ -9,9 +9,9 @@
 class BannerBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    BannerBlockActor& operator=(BannerBlockActor const&) = delete;
-    BannerBlockActor(BannerBlockActor const&)            = delete;
-    BannerBlockActor()                                   = delete;
+    BannerBlockActor& operator=(BannerBlockActor const&);
+    BannerBlockActor(BannerBlockActor const&);
+    BannerBlockActor();
 
 public:
     // NOLINTBEGIN

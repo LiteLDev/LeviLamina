@@ -8,9 +8,9 @@
 class CelebrateHuntComponent {
 public:
     // prevent constructor by default
-    CelebrateHuntComponent& operator=(CelebrateHuntComponent const&) = delete;
-    CelebrateHuntComponent(CelebrateHuntComponent const&)            = delete;
-    CelebrateHuntComponent()                                         = delete;
+    CelebrateHuntComponent& operator=(CelebrateHuntComponent const&);
+    CelebrateHuntComponent(CelebrateHuntComponent const&);
+    CelebrateHuntComponent();
 
 public:
     // NOLINTBEGIN

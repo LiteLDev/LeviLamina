@@ -5,9 +5,9 @@
 class ScriptDeferredEventListener {
 public:
     // prevent constructor by default
-    ScriptDeferredEventListener& operator=(ScriptDeferredEventListener const&) = delete;
-    ScriptDeferredEventListener(ScriptDeferredEventListener const&)            = delete;
-    ScriptDeferredEventListener()                                              = delete;
+    ScriptDeferredEventListener& operator=(ScriptDeferredEventListener const&);
+    ScriptDeferredEventListener(ScriptDeferredEventListener const&);
+    ScriptDeferredEventListener();
 
 public:
     // NOLINTBEGIN

@@ -10,8 +10,8 @@
 class BlockPickRequestPacket : public ::Packet {
 public:
     // prevent constructor by default
-    BlockPickRequestPacket& operator=(BlockPickRequestPacket const&) = delete;
-    BlockPickRequestPacket(BlockPickRequestPacket const&)            = delete;
+    BlockPickRequestPacket& operator=(BlockPickRequestPacket const&);
+    BlockPickRequestPacket(BlockPickRequestPacket const&);
 
 public:
     // NOLINTBEGIN

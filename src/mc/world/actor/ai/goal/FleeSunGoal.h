@@ -9,9 +9,9 @@
 class FleeSunGoal : public ::FindCoverGoal {
 public:
     // prevent constructor by default
-    FleeSunGoal& operator=(FleeSunGoal const&) = delete;
-    FleeSunGoal(FleeSunGoal const&)            = delete;
-    FleeSunGoal()                              = delete;
+    FleeSunGoal& operator=(FleeSunGoal const&);
+    FleeSunGoal(FleeSunGoal const&);
+    FleeSunGoal();
 
 public:
     // NOLINTBEGIN

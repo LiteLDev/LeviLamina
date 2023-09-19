@@ -8,9 +8,9 @@
 class BoundingBox {
 public:
     // prevent constructor by default
-    BoundingBox& operator=(BoundingBox const&) = delete;
-    BoundingBox(BoundingBox const&)            = delete;
-    BoundingBox()                              = delete;
+    BoundingBox& operator=(BoundingBox const&);
+    BoundingBox(BoundingBox const&);
+    BoundingBox();
 
 public:
     // NOLINTBEGIN

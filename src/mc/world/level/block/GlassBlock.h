@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class GlassBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    GlassBlock& operator=(GlassBlock const&) = delete;
-    GlassBlock(GlassBlock const&)            = delete;
-    GlassBlock()                             = delete;
+    GlassBlock& operator=(GlassBlock const&);
+    GlassBlock(GlassBlock const&);
+    GlassBlock();
 
 public:
     // NOLINTBEGIN

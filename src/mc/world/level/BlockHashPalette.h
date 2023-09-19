@@ -8,9 +8,9 @@
 class BlockHashPalette : public ::BlockPalette {
 public:
     // prevent constructor by default
-    BlockHashPalette& operator=(BlockHashPalette const&) = delete;
-    BlockHashPalette(BlockHashPalette const&)            = delete;
-    BlockHashPalette()                                   = delete;
+    BlockHashPalette& operator=(BlockHashPalette const&);
+    BlockHashPalette(BlockHashPalette const&);
+    BlockHashPalette();
 
 public:
     // NOLINTBEGIN
@@ -30,7 +30,7 @@ public:
     virtual void assignBlockNetworkId(class Block const&, uint64) const;
 
     // symbol: ??0BlockHashPalette@@QEAA@AEAVLevel@@@Z
-    MCAPI BlockHashPalette(class Level&);
+    MCAPI explicit BlockHashPalette(class Level&);
 
     // NOLINTEND
 };

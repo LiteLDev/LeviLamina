@@ -5,7 +5,7 @@
 class MerchantRecipe {
 public:
     // prevent constructor by default
-    MerchantRecipe() = delete;
+    MerchantRecipe();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 struct BlockMaterialInstancesComponent : public ::BlockComponentBase {
 public:
     // prevent constructor by default
-    BlockMaterialInstancesComponent& operator=(BlockMaterialInstancesComponent const&) = delete;
-    BlockMaterialInstancesComponent(BlockMaterialInstancesComponent const&)            = delete;
-    BlockMaterialInstancesComponent()                                                  = delete;
+    BlockMaterialInstancesComponent& operator=(BlockMaterialInstancesComponent const&);
+    BlockMaterialInstancesComponent(BlockMaterialInstancesComponent const&);
+    BlockMaterialInstancesComponent();
 
 public:
     // NOLINTBEGIN

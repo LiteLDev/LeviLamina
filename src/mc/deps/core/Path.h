@@ -12,8 +12,8 @@ namespace Core {
 class Path {
 public:
     // prevent constructor by default
-    Path& operator=(Path const&) = delete;
-    Path(Path const&)            = delete;
+    Path& operator=(Path const&);
+    Path(Path const&);
 
 public:
     // NOLINTBEGIN

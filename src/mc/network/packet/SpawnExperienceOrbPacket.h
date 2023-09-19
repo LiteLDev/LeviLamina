@@ -10,8 +10,8 @@
 class SpawnExperienceOrbPacket : public ::Packet {
 public:
     // prevent constructor by default
-    SpawnExperienceOrbPacket& operator=(SpawnExperienceOrbPacket const&) = delete;
-    SpawnExperienceOrbPacket(SpawnExperienceOrbPacket const&)            = delete;
+    SpawnExperienceOrbPacket& operator=(SpawnExperienceOrbPacket const&);
+    SpawnExperienceOrbPacket(SpawnExperienceOrbPacket const&);
 
 public:
     // NOLINTBEGIN

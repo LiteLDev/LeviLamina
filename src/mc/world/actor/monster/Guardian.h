@@ -26,9 +26,9 @@
 class Guardian : public ::Monster {
 public:
     // prevent constructor by default
-    Guardian& operator=(Guardian const&) = delete;
-    Guardian(Guardian const&)            = delete;
-    Guardian()                           = delete;
+    Guardian& operator=(Guardian const&);
+    Guardian(Guardian const&);
+    Guardian();
 
 public:
     // NOLINTBEGIN

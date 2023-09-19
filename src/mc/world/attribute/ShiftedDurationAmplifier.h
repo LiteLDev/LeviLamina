@@ -8,9 +8,9 @@
 class ShiftedDurationAmplifier : public ::Amplifier {
 public:
     // prevent constructor by default
-    ShiftedDurationAmplifier& operator=(ShiftedDurationAmplifier const&) = delete;
-    ShiftedDurationAmplifier(ShiftedDurationAmplifier const&)            = delete;
-    ShiftedDurationAmplifier()                                           = delete;
+    ShiftedDurationAmplifier& operator=(ShiftedDurationAmplifier const&);
+    ShiftedDurationAmplifier(ShiftedDurationAmplifier const&);
+    ShiftedDurationAmplifier();
 
 public:
     // NOLINTBEGIN
@@ -24,7 +24,7 @@ public:
     virtual int getTickInterval(int) const;
 
     // symbol: ??0ShiftedDurationAmplifier@@QEAA@H@Z
-    MCAPI ShiftedDurationAmplifier(int);
+    MCAPI explicit ShiftedDurationAmplifier(int);
 
     // NOLINTEND
 };

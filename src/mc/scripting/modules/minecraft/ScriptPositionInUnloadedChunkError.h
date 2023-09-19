@@ -15,14 +15,14 @@ namespace ScriptModuleMinecraft {
 struct ScriptPositionInUnloadedChunkError {
 public:
     // prevent constructor by default
-    ScriptPositionInUnloadedChunkError& operator=(ScriptPositionInUnloadedChunkError const&) = delete;
-    ScriptPositionInUnloadedChunkError(ScriptPositionInUnloadedChunkError const&)            = delete;
-    ScriptPositionInUnloadedChunkError()                                                     = delete;
+    ScriptPositionInUnloadedChunkError& operator=(ScriptPositionInUnloadedChunkError const&);
+    ScriptPositionInUnloadedChunkError(ScriptPositionInUnloadedChunkError const&);
+    ScriptPositionInUnloadedChunkError();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ScriptPositionInUnloadedChunkError@ScriptModuleMinecraft@@QEAA@AEBVVec3@@@Z
-    MCAPI ScriptPositionInUnloadedChunkError(class Vec3 const&);
+    MCAPI explicit ScriptPositionInUnloadedChunkError(class Vec3 const&);
 
     // symbol: ??1ScriptPositionInUnloadedChunkError@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptPositionInUnloadedChunkError();

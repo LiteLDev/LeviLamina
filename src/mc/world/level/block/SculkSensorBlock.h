@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class SculkSensorBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    SculkSensorBlock& operator=(SculkSensorBlock const&) = delete;
-    SculkSensorBlock(SculkSensorBlock const&)            = delete;
-    SculkSensorBlock()                                   = delete;
+    SculkSensorBlock& operator=(SculkSensorBlock const&);
+    SculkSensorBlock(SculkSensorBlock const&);
+    SculkSensorBlock();
 
 public:
     // NOLINTBEGIN

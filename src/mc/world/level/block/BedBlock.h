@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class BedBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    BedBlock& operator=(BedBlock const&) = delete;
-    BedBlock(BedBlock const&)            = delete;
-    BedBlock()                           = delete;
+    BedBlock& operator=(BedBlock const&);
+    BedBlock(BedBlock const&);
+    BedBlock();
 
 public:
     // NOLINTBEGIN

@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class SetBannerDetailsFunction : public ::LootItemFunction {
 public:
     // prevent constructor by default
-    SetBannerDetailsFunction& operator=(SetBannerDetailsFunction const&) = delete;
-    SetBannerDetailsFunction(SetBannerDetailsFunction const&)            = delete;
-    SetBannerDetailsFunction()                                           = delete;
+    SetBannerDetailsFunction& operator=(SetBannerDetailsFunction const&);
+    SetBannerDetailsFunction(SetBannerDetailsFunction const&);
+    SetBannerDetailsFunction();
 
 public:
     // NOLINTBEGIN

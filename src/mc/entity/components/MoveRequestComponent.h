@@ -5,9 +5,9 @@
 struct MoveRequestComponent {
 public:
     // prevent constructor by default
-    MoveRequestComponent& operator=(MoveRequestComponent const&) = delete;
-    MoveRequestComponent(MoveRequestComponent const&)            = delete;
-    MoveRequestComponent()                                       = delete;
+    MoveRequestComponent& operator=(MoveRequestComponent const&);
+    MoveRequestComponent(MoveRequestComponent const&);
+    MoveRequestComponent();
 
 public:
     // NOLINTBEGIN

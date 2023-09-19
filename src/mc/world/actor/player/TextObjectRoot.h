@@ -13,8 +13,8 @@ namespace Json { class Value; }
 class TextObjectRoot : public ::ITextObject {
 public:
     // prevent constructor by default
-    TextObjectRoot& operator=(TextObjectRoot const&) = delete;
-    TextObjectRoot(TextObjectRoot const&)            = delete;
+    TextObjectRoot& operator=(TextObjectRoot const&);
+    TextObjectRoot(TextObjectRoot const&);
 
 public:
     // NOLINTBEGIN

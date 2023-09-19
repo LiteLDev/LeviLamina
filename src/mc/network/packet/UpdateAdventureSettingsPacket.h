@@ -10,8 +10,8 @@
 class UpdateAdventureSettingsPacket : public ::Packet {
 public:
     // prevent constructor by default
-    UpdateAdventureSettingsPacket& operator=(UpdateAdventureSettingsPacket const&) = delete;
-    UpdateAdventureSettingsPacket(UpdateAdventureSettingsPacket const&)            = delete;
+    UpdateAdventureSettingsPacket& operator=(UpdateAdventureSettingsPacket const&);
+    UpdateAdventureSettingsPacket(UpdateAdventureSettingsPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -36,7 +36,7 @@ public:
     MCVAPI ~UpdateAdventureSettingsPacket();
 
     // symbol: ??0UpdateAdventureSettingsPacket@@QEAA@AEBUAdventureSettings@@@Z
-    MCAPI UpdateAdventureSettingsPacket(struct AdventureSettings const&);
+    MCAPI explicit UpdateAdventureSettingsPacket(struct AdventureSettings const&);
 
     // symbol: ??0UpdateAdventureSettingsPacket@@QEAA@XZ
     MCAPI UpdateAdventureSettingsPacket();

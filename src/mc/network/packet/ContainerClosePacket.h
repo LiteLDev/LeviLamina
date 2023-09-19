@@ -11,8 +11,8 @@
 class ContainerClosePacket : public ::Packet {
 public:
     // prevent constructor by default
-    ContainerClosePacket& operator=(ContainerClosePacket const&) = delete;
-    ContainerClosePacket(ContainerClosePacket const&)            = delete;
+    ContainerClosePacket& operator=(ContainerClosePacket const&);
+    ContainerClosePacket(ContainerClosePacket const&);
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class MobSpawnInfo {
 public:
     // prevent constructor by default
-    MobSpawnInfo& operator=(MobSpawnInfo const&) = delete;
-    MobSpawnInfo(MobSpawnInfo const&)            = delete;
-    MobSpawnInfo()                               = delete;
+    MobSpawnInfo& operator=(MobSpawnInfo const&);
+    MobSpawnInfo(MobSpawnInfo const&);
+    MobSpawnInfo();
 
 public:
     // NOLINTBEGIN

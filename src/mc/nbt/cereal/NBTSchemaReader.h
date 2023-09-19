@@ -15,9 +15,9 @@ namespace cereal { struct SerializerTraits; }
 class NBTSchemaReader : public ::cereal::SchemaReader {
 public:
     // prevent constructor by default
-    NBTSchemaReader& operator=(NBTSchemaReader const&) = delete;
-    NBTSchemaReader(NBTSchemaReader const&)            = delete;
-    NBTSchemaReader()                                  = delete;
+    NBTSchemaReader& operator=(NBTSchemaReader const&);
+    NBTSchemaReader(NBTSchemaReader const&);
+    NBTSchemaReader();
 
 public:
     // NOLINTBEGIN
@@ -121,7 +121,7 @@ public:
     MCVAPI ~NBTSchemaReader();
 
     // symbol: ??0NBTSchemaReader@@QEAA@V?$not_null@PEBVCompoundTag@@@gsl@@@Z
-    MCAPI NBTSchemaReader(gsl::not_null<class CompoundTag const*>);
+    MCAPI explicit NBTSchemaReader(gsl::not_null<class CompoundTag const*>);
 
     // NOLINTEND
 };

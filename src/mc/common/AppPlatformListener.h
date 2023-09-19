@@ -8,9 +8,9 @@
 class AppPlatformListener {
 public:
     // prevent constructor by default
-    AppPlatformListener& operator=(AppPlatformListener const&) = delete;
-    AppPlatformListener(AppPlatformListener const&)            = delete;
-    AppPlatformListener()                                      = delete;
+    AppPlatformListener& operator=(AppPlatformListener const&);
+    AppPlatformListener(AppPlatformListener const&);
+    AppPlatformListener();
 
 public:
     // NOLINTBEGIN
@@ -95,7 +95,7 @@ public:
     MCVAPI ~AppPlatformListener();
 
     // symbol: ??0AppPlatformListener@@QEAA@_N@Z
-    MCAPI AppPlatformListener(bool);
+    MCAPI explicit AppPlatformListener(bool);
 
     // symbol: ?initListener@AppPlatformListener@@QEAAXM@Z
     MCAPI void initListener(float);

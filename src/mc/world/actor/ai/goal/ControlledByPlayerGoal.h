@@ -9,9 +9,9 @@
 class ControlledByPlayerGoal : public ::Goal {
 public:
     // prevent constructor by default
-    ControlledByPlayerGoal& operator=(ControlledByPlayerGoal const&) = delete;
-    ControlledByPlayerGoal(ControlledByPlayerGoal const&)            = delete;
-    ControlledByPlayerGoal()                                         = delete;
+    ControlledByPlayerGoal& operator=(ControlledByPlayerGoal const&);
+    ControlledByPlayerGoal(ControlledByPlayerGoal const&);
+    ControlledByPlayerGoal();
 
 public:
     // NOLINTBEGIN
@@ -35,7 +35,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0ControlledByPlayerGoal@@QEAA@AEAVMob@@@Z
-    MCAPI ControlledByPlayerGoal(class Mob&);
+    MCAPI explicit ControlledByPlayerGoal(class Mob&);
 
     // NOLINTEND
 

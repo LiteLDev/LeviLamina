@@ -15,9 +15,9 @@ namespace gametest { class MultipleTestTracker; }
 class TestSummaryDisplayer : public ::gametest::IGameTestListener {
 public:
     // prevent constructor by default
-    TestSummaryDisplayer& operator=(TestSummaryDisplayer const&) = delete;
-    TestSummaryDisplayer(TestSummaryDisplayer const&)            = delete;
-    TestSummaryDisplayer()                                       = delete;
+    TestSummaryDisplayer& operator=(TestSummaryDisplayer const&);
+    TestSummaryDisplayer(TestSummaryDisplayer const&);
+    TestSummaryDisplayer();
 
 public:
     // NOLINTBEGIN

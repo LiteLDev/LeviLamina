@@ -10,8 +10,8 @@
 class ItemStackResponsePacket : public ::Packet {
 public:
     // prevent constructor by default
-    ItemStackResponsePacket& operator=(ItemStackResponsePacket const&) = delete;
-    ItemStackResponsePacket(ItemStackResponsePacket const&)            = delete;
+    ItemStackResponsePacket& operator=(ItemStackResponsePacket const&);
+    ItemStackResponsePacket(ItemStackResponsePacket const&);
 
 public:
     // NOLINTBEGIN
@@ -40,7 +40,7 @@ public:
 
     // symbol:
     // ??0ItemStackResponsePacket@@QEAA@$$QEAV?$vector@UItemStackResponseInfo@@V?$allocator@UItemStackResponseInfo@@@std@@@std@@@Z
-    MCAPI ItemStackResponsePacket(std::vector<struct ItemStackResponseInfo>&&);
+    MCAPI explicit ItemStackResponsePacket(std::vector<struct ItemStackResponseInfo>&&);
 
     // symbol:
     // ?getResponses@ItemStackResponsePacket@@QEBAAEBV?$vector@UItemStackResponseInfo@@V?$allocator@UItemStackResponseInfo@@@std@@@std@@XZ

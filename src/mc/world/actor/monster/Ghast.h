@@ -26,9 +26,9 @@
 class Ghast : public ::Monster {
 public:
     // prevent constructor by default
-    Ghast& operator=(Ghast const&) = delete;
-    Ghast(Ghast const&)            = delete;
-    Ghast()                        = delete;
+    Ghast& operator=(Ghast const&);
+    Ghast(Ghast const&);
+    Ghast();
 
 public:
     // NOLINTBEGIN

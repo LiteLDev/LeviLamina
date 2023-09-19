@@ -5,9 +5,9 @@
 class LodestoneCompassComponentCalculator {
 public:
     // prevent constructor by default
-    LodestoneCompassComponentCalculator& operator=(LodestoneCompassComponentCalculator const&) = delete;
-    LodestoneCompassComponentCalculator(LodestoneCompassComponentCalculator const&)            = delete;
-    LodestoneCompassComponentCalculator()                                                      = delete;
+    LodestoneCompassComponentCalculator& operator=(LodestoneCompassComponentCalculator const&);
+    LodestoneCompassComponentCalculator(LodestoneCompassComponentCalculator const&);
+    LodestoneCompassComponentCalculator();
 
 private:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class NetherFortressFeature : public ::StructureFeature {
 public:
     // prevent constructor by default
-    NetherFortressFeature& operator=(NetherFortressFeature const&) = delete;
-    NetherFortressFeature(NetherFortressFeature const&)            = delete;
-    NetherFortressFeature()                                        = delete;
+    NetherFortressFeature& operator=(NetherFortressFeature const&);
+    NetherFortressFeature(NetherFortressFeature const&);
+    NetherFortressFeature();
 
 public:
     // NOLINTBEGIN

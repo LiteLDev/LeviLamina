@@ -8,9 +8,9 @@
 class ActorMotionSyncSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    ActorMotionSyncSystem& operator=(ActorMotionSyncSystem const&) = delete;
-    ActorMotionSyncSystem(ActorMotionSyncSystem const&)            = delete;
-    ActorMotionSyncSystem()                                        = delete;
+    ActorMotionSyncSystem& operator=(ActorMotionSyncSystem const&);
+    ActorMotionSyncSystem(ActorMotionSyncSystem const&);
+    ActorMotionSyncSystem();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class AttackCooldownSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    AttackCooldownSystem& operator=(AttackCooldownSystem const&) = delete;
-    AttackCooldownSystem(AttackCooldownSystem const&)            = delete;
-    AttackCooldownSystem()                                       = delete;
+    AttackCooldownSystem& operator=(AttackCooldownSystem const&);
+    AttackCooldownSystem(AttackCooldownSystem const&);
+    AttackCooldownSystem();
 
 public:
     // NOLINTBEGIN

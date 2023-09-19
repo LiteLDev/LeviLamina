@@ -8,9 +8,9 @@
 class NavigationWalkDescription : public ::NavigationDescription {
 public:
     // prevent constructor by default
-    NavigationWalkDescription& operator=(NavigationWalkDescription const&) = delete;
-    NavigationWalkDescription(NavigationWalkDescription const&)            = delete;
-    NavigationWalkDescription()                                            = delete;
+    NavigationWalkDescription& operator=(NavigationWalkDescription const&);
+    NavigationWalkDescription(NavigationWalkDescription const&);
+    NavigationWalkDescription();
 
 public:
     // NOLINTBEGIN

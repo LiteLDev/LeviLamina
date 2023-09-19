@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class DamageOverTimeDefinition {
 public:
     // prevent constructor by default
-    DamageOverTimeDefinition& operator=(DamageOverTimeDefinition const&) = delete;
-    DamageOverTimeDefinition(DamageOverTimeDefinition const&)            = delete;
-    DamageOverTimeDefinition()                                           = delete;
+    DamageOverTimeDefinition& operator=(DamageOverTimeDefinition const&);
+    DamageOverTimeDefinition(DamageOverTimeDefinition const&);
+    DamageOverTimeDefinition();
 
 public:
     // NOLINTBEGIN

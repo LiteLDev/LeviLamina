@@ -10,8 +10,8 @@
 class InventoryTransaction {
 public:
     // prevent constructor by default
-    InventoryTransaction& operator=(InventoryTransaction const&) = delete;
-    InventoryTransaction()                                       = delete;
+    InventoryTransaction& operator=(InventoryTransaction const&);
+    InventoryTransaction();
 
 public:
     // NOLINTBEGIN

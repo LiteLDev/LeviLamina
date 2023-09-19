@@ -17,8 +17,8 @@ namespace ScriptModuleMinecraft {
 class ScriptDynamicPropertiesDefinition {
 public:
     // prevent constructor by default
-    ScriptDynamicPropertiesDefinition& operator=(ScriptDynamicPropertiesDefinition const&) = delete;
-    ScriptDynamicPropertiesDefinition()                                                    = delete;
+    ScriptDynamicPropertiesDefinition& operator=(ScriptDynamicPropertiesDefinition const&);
+    ScriptDynamicPropertiesDefinition();
 
 public:
     // NOLINTBEGIN

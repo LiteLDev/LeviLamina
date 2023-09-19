@@ -10,9 +10,9 @@
 class NetworkStackLatencyPacket : public ::Packet {
 public:
     // prevent constructor by default
-    NetworkStackLatencyPacket& operator=(NetworkStackLatencyPacket const&) = delete;
-    NetworkStackLatencyPacket(NetworkStackLatencyPacket const&)            = delete;
-    NetworkStackLatencyPacket()                                            = delete;
+    NetworkStackLatencyPacket& operator=(NetworkStackLatencyPacket const&);
+    NetworkStackLatencyPacket(NetworkStackLatencyPacket const&);
+    NetworkStackLatencyPacket();
 
 public:
     // NOLINTBEGIN

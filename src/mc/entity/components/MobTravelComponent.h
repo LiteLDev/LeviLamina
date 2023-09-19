@@ -5,7 +5,7 @@
 struct MobTravelComponent {
 public:
     // prevent constructor by default
-    MobTravelComponent& operator=(MobTravelComponent const&) = delete;
-    MobTravelComponent(MobTravelComponent const&)            = delete;
-    MobTravelComponent()                                     = delete;
+    MobTravelComponent& operator=(MobTravelComponent const&);
+    MobTravelComponent(MobTravelComponent const&);
+    MobTravelComponent();
 };

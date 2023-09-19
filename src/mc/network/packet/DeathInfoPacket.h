@@ -10,8 +10,8 @@
 class DeathInfoPacket : public ::Packet {
 public:
     // prevent constructor by default
-    DeathInfoPacket& operator=(DeathInfoPacket const&) = delete;
-    DeathInfoPacket(DeathInfoPacket const&)            = delete;
+    DeathInfoPacket& operator=(DeathInfoPacket const&);
+    DeathInfoPacket(DeathInfoPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -40,7 +40,7 @@ public:
 
     // symbol:
     // ??0DeathInfoPacket@@QEAA@AEBU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@std@@@Z
-    MCAPI DeathInfoPacket(std::pair<std::string, std::vector<std::string>> const&);
+    MCAPI explicit DeathInfoPacket(std::pair<std::string, std::vector<std::string>> const&);
 
     // NOLINTEND
 };

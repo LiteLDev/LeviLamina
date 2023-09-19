@@ -9,10 +9,9 @@ class StructurePoolBlockTagPredicateBlockTagStringMatches : public ::IStructureP
 public:
     // prevent constructor by default
     StructurePoolBlockTagPredicateBlockTagStringMatches&
-    operator=(StructurePoolBlockTagPredicateBlockTagStringMatches const&) = delete;
-    StructurePoolBlockTagPredicateBlockTagStringMatches(StructurePoolBlockTagPredicateBlockTagStringMatches const&) =
-        delete;
-    StructurePoolBlockTagPredicateBlockTagStringMatches() = delete;
+    operator=(StructurePoolBlockTagPredicateBlockTagStringMatches const&);
+    StructurePoolBlockTagPredicateBlockTagStringMatches(StructurePoolBlockTagPredicateBlockTagStringMatches const&);
+    StructurePoolBlockTagPredicateBlockTagStringMatches();
 
 public:
     // NOLINTBEGIN

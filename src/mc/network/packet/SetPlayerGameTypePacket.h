@@ -10,8 +10,8 @@
 class SetPlayerGameTypePacket : public ::Packet {
 public:
     // prevent constructor by default
-    SetPlayerGameTypePacket& operator=(SetPlayerGameTypePacket const&) = delete;
-    SetPlayerGameTypePacket(SetPlayerGameTypePacket const&)            = delete;
+    SetPlayerGameTypePacket& operator=(SetPlayerGameTypePacket const&);
+    SetPlayerGameTypePacket(SetPlayerGameTypePacket const&);
 
 public:
     // NOLINTBEGIN

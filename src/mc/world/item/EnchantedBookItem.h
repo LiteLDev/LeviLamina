@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class EnchantedBookItem : public ::Item {
 public:
     // prevent constructor by default
-    EnchantedBookItem& operator=(EnchantedBookItem const&) = delete;
-    EnchantedBookItem(EnchantedBookItem const&)            = delete;
-    EnchantedBookItem()                                    = delete;
+    EnchantedBookItem& operator=(EnchantedBookItem const&);
+    EnchantedBookItem(EnchantedBookItem const&);
+    EnchantedBookItem();
 
 public:
     // NOLINTBEGIN

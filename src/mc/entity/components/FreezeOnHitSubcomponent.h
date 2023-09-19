@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class FreezeOnHitSubcomponent : public ::OnHitSubcomponent {
 public:
     // prevent constructor by default
-    FreezeOnHitSubcomponent& operator=(FreezeOnHitSubcomponent const&) = delete;
-    FreezeOnHitSubcomponent(FreezeOnHitSubcomponent const&)            = delete;
-    FreezeOnHitSubcomponent()                                          = delete;
+    FreezeOnHitSubcomponent& operator=(FreezeOnHitSubcomponent const&);
+    FreezeOnHitSubcomponent(FreezeOnHitSubcomponent const&);
+    FreezeOnHitSubcomponent();
 
 public:
     // NOLINTBEGIN

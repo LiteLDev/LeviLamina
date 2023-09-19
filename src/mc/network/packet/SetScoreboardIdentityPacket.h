@@ -10,9 +10,9 @@
 class SetScoreboardIdentityPacket : public ::Packet {
 public:
     // prevent constructor by default
-    SetScoreboardIdentityPacket& operator=(SetScoreboardIdentityPacket const&) = delete;
-    SetScoreboardIdentityPacket(SetScoreboardIdentityPacket const&)            = delete;
-    SetScoreboardIdentityPacket()                                              = delete;
+    SetScoreboardIdentityPacket& operator=(SetScoreboardIdentityPacket const&);
+    SetScoreboardIdentityPacket(SetScoreboardIdentityPacket const&);
+    SetScoreboardIdentityPacket();
 
 public:
     // NOLINTBEGIN

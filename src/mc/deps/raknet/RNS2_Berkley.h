@@ -18,9 +18,9 @@ namespace RakNet {
 class RNS2_Berkley : public ::RakNet::IRNS2_Berkley {
 public:
     // prevent constructor by default
-    RNS2_Berkley& operator=(RNS2_Berkley const&) = delete;
-    RNS2_Berkley(RNS2_Berkley const&)            = delete;
-    RNS2_Berkley()                               = delete;
+    RNS2_Berkley& operator=(RNS2_Berkley const&);
+    RNS2_Berkley(RNS2_Berkley const&);
+    RNS2_Berkley();
 
 public:
     // NOLINTBEGIN

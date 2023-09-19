@@ -13,8 +13,8 @@ namespace Json { class Value; }
 class IgniteSubcomponent : public ::OnHitSubcomponent {
 public:
     // prevent constructor by default
-    IgniteSubcomponent& operator=(IgniteSubcomponent const&) = delete;
-    IgniteSubcomponent(IgniteSubcomponent const&)            = delete;
+    IgniteSubcomponent& operator=(IgniteSubcomponent const&);
+    IgniteSubcomponent(IgniteSubcomponent const&);
 
 public:
     // NOLINTBEGIN

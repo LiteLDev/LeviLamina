@@ -5,8 +5,8 @@
 class DanceComponent {
 public:
     // prevent constructor by default
-    DanceComponent& operator=(DanceComponent const&) = delete;
-    DanceComponent(DanceComponent const&)            = delete;
+    DanceComponent& operator=(DanceComponent const&);
+    DanceComponent(DanceComponent const&);
 
 public:
     // NOLINTBEGIN

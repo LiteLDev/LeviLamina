@@ -13,16 +13,16 @@ public:
     class Item {
     public:
         // prevent constructor by default
-        Item& operator=(Item const&) = delete;
-        Item(Item const&)            = delete;
-        Item()                       = delete;
+        Item& operator=(Item const&);
+        Item(Item const&);
+        Item();
     };
 
 public:
     // prevent constructor by default
-    CircuitComponentList& operator=(CircuitComponentList const&) = delete;
-    CircuitComponentList(CircuitComponentList const&)            = delete;
-    CircuitComponentList()                                       = delete;
+    CircuitComponentList& operator=(CircuitComponentList const&);
+    CircuitComponentList(CircuitComponentList const&);
+    CircuitComponentList();
 
 public:
     // NOLINTBEGIN

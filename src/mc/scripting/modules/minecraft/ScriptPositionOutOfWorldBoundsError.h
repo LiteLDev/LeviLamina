@@ -15,14 +15,14 @@ namespace ScriptModuleMinecraft {
 struct ScriptPositionOutOfWorldBoundsError {
 public:
     // prevent constructor by default
-    ScriptPositionOutOfWorldBoundsError& operator=(ScriptPositionOutOfWorldBoundsError const&) = delete;
-    ScriptPositionOutOfWorldBoundsError(ScriptPositionOutOfWorldBoundsError const&)            = delete;
-    ScriptPositionOutOfWorldBoundsError()                                                      = delete;
+    ScriptPositionOutOfWorldBoundsError& operator=(ScriptPositionOutOfWorldBoundsError const&);
+    ScriptPositionOutOfWorldBoundsError(ScriptPositionOutOfWorldBoundsError const&);
+    ScriptPositionOutOfWorldBoundsError();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ScriptPositionOutOfWorldBoundsError@ScriptModuleMinecraft@@QEAA@AEBVVec3@@@Z
-    MCAPI ScriptPositionOutOfWorldBoundsError(class Vec3 const&);
+    MCAPI explicit ScriptPositionOutOfWorldBoundsError(class Vec3 const&);
 
     // symbol:
     // ??0ScriptPositionOutOfWorldBoundsError@ScriptModuleMinecraft@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@@Z

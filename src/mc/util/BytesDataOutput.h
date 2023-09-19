@@ -8,9 +8,9 @@
 class BytesDataOutput : public ::IDataOutput {
 public:
     // prevent constructor by default
-    BytesDataOutput& operator=(BytesDataOutput const&) = delete;
-    BytesDataOutput(BytesDataOutput const&)            = delete;
-    BytesDataOutput()                                  = delete;
+    BytesDataOutput& operator=(BytesDataOutput const&);
+    BytesDataOutput(BytesDataOutput const&);
+    BytesDataOutput();
 
 public:
     // NOLINTBEGIN

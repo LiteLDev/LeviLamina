@@ -8,9 +8,9 @@
 struct ChunksLoadedInfo {
 public:
     // prevent constructor by default
-    ChunksLoadedInfo& operator=(ChunksLoadedInfo const&) = delete;
-    ChunksLoadedInfo(ChunksLoadedInfo const&)            = delete;
-    ChunksLoadedInfo()                                   = delete;
+    ChunksLoadedInfo& operator=(ChunksLoadedInfo const&);
+    ChunksLoadedInfo(ChunksLoadedInfo const&);
+    ChunksLoadedInfo();
 
 public:
     // NOLINTBEGIN

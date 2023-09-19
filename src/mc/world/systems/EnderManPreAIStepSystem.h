@@ -5,9 +5,9 @@
 class EnderManPreAIStepSystem {
 public:
     // prevent constructor by default
-    EnderManPreAIStepSystem& operator=(EnderManPreAIStepSystem const&) = delete;
-    EnderManPreAIStepSystem(EnderManPreAIStepSystem const&)            = delete;
-    EnderManPreAIStepSystem()                                          = delete;
+    EnderManPreAIStepSystem& operator=(EnderManPreAIStepSystem const&);
+    EnderManPreAIStepSystem(EnderManPreAIStepSystem const&);
+    EnderManPreAIStepSystem();
 
 public:
     // NOLINTBEGIN

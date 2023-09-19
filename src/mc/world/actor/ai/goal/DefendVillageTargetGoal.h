@@ -9,9 +9,9 @@
 class DefendVillageTargetGoal : public ::TargetGoal {
 public:
     // prevent constructor by default
-    DefendVillageTargetGoal& operator=(DefendVillageTargetGoal const&) = delete;
-    DefendVillageTargetGoal(DefendVillageTargetGoal const&)            = delete;
-    DefendVillageTargetGoal()                                          = delete;
+    DefendVillageTargetGoal& operator=(DefendVillageTargetGoal const&);
+    DefendVillageTargetGoal(DefendVillageTargetGoal const&);
+    DefendVillageTargetGoal();
 
 public:
     // NOLINTBEGIN
@@ -32,7 +32,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0DefendVillageTargetGoal@@QEAA@AEAVMob@@@Z
-    MCAPI DefendVillageTargetGoal(class Mob&);
+    MCAPI explicit DefendVillageTargetGoal(class Mob&);
 
     // NOLINTEND
 };

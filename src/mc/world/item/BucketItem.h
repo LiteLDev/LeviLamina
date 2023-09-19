@@ -23,9 +23,9 @@ namespace mce { class Color; }
 class BucketItem : public ::Item {
 public:
     // prevent constructor by default
-    BucketItem& operator=(BucketItem const&) = delete;
-    BucketItem(BucketItem const&)            = delete;
-    BucketItem()                             = delete;
+    BucketItem& operator=(BucketItem const&);
+    BucketItem(BucketItem const&);
+    BucketItem();
 
 public:
     // NOLINTBEGIN

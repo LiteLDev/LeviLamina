@@ -8,9 +8,9 @@
 class VanillaServerGameplayEventListener {
 public:
     // prevent constructor by default
-    VanillaServerGameplayEventListener& operator=(VanillaServerGameplayEventListener const&) = delete;
-    VanillaServerGameplayEventListener(VanillaServerGameplayEventListener const&)            = delete;
-    VanillaServerGameplayEventListener()                                                     = delete;
+    VanillaServerGameplayEventListener& operator=(VanillaServerGameplayEventListener const&);
+    VanillaServerGameplayEventListener(VanillaServerGameplayEventListener const&);
+    VanillaServerGameplayEventListener();
 
 public:
     // NOLINTBEGIN

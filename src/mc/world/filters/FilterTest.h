@@ -18,9 +18,9 @@ public:
     struct Definition {
     public:
         // prevent constructor by default
-        Definition& operator=(Definition const&) = delete;
-        Definition(Definition const&)            = delete;
-        Definition()                             = delete;
+        Definition& operator=(Definition const&);
+        Definition(Definition const&);
+        Definition();
 
     public:
         // NOLINTBEGIN
@@ -32,9 +32,9 @@ public:
 
 public:
     // prevent constructor by default
-    FilterTest& operator=(FilterTest const&) = delete;
-    FilterTest(FilterTest const&)            = delete;
-    FilterTest()                             = delete;
+    FilterTest& operator=(FilterTest const&);
+    FilterTest(FilterTest const&);
+    FilterTest();
 
 public:
     // NOLINTBEGIN

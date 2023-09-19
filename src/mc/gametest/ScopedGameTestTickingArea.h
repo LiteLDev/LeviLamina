@@ -5,9 +5,9 @@
 class ScopedGameTestTickingArea {
 public:
     // prevent constructor by default
-    ScopedGameTestTickingArea& operator=(ScopedGameTestTickingArea const&) = delete;
-    ScopedGameTestTickingArea(ScopedGameTestTickingArea const&)            = delete;
-    ScopedGameTestTickingArea()                                            = delete;
+    ScopedGameTestTickingArea& operator=(ScopedGameTestTickingArea const&);
+    ScopedGameTestTickingArea(ScopedGameTestTickingArea const&);
+    ScopedGameTestTickingArea();
 
 public:
     // NOLINTBEGIN

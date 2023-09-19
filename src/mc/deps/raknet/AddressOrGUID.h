@@ -12,13 +12,13 @@ namespace RakNet {
 struct AddressOrGUID {
 public:
     // prevent constructor by default
-    AddressOrGUID& operator=(AddressOrGUID const&) = delete;
-    AddressOrGUID()                                = delete;
+    AddressOrGUID& operator=(AddressOrGUID const&);
+    AddressOrGUID();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0AddressOrGUID@RakNet@@QEAA@AEBUSystemAddress@1@@Z
-    MCAPI AddressOrGUID(struct RakNet::SystemAddress const&);
+    MCAPI explicit AddressOrGUID(struct RakNet::SystemAddress const&);
 
     // symbol: ??0AddressOrGUID@RakNet@@QEAA@AEBU01@@Z
     MCAPI AddressOrGUID(struct RakNet::AddressOrGUID const&);

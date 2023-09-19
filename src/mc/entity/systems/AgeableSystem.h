@@ -8,9 +8,9 @@
 class AgeableSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    AgeableSystem& operator=(AgeableSystem const&) = delete;
-    AgeableSystem(AgeableSystem const&)            = delete;
-    AgeableSystem()                                = delete;
+    AgeableSystem& operator=(AgeableSystem const&);
+    AgeableSystem(AgeableSystem const&);
+    AgeableSystem();
 
 public:
     // NOLINTBEGIN

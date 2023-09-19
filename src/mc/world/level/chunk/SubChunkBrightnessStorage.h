@@ -13,14 +13,14 @@ public:
     struct LightPair {
     public:
         // prevent constructor by default
-        LightPair& operator=(LightPair const&) = delete;
-        LightPair(LightPair const&)            = delete;
-        LightPair()                            = delete;
+        LightPair& operator=(LightPair const&);
+        LightPair(LightPair const&);
+        LightPair();
     };
 
 public:
     // prevent constructor by default
-    SubChunkBrightnessStorage& operator=(SubChunkBrightnessStorage const&) = delete;
-    SubChunkBrightnessStorage(SubChunkBrightnessStorage const&)            = delete;
-    SubChunkBrightnessStorage()                                            = delete;
+    SubChunkBrightnessStorage& operator=(SubChunkBrightnessStorage const&);
+    SubChunkBrightnessStorage(SubChunkBrightnessStorage const&);
+    SubChunkBrightnessStorage();
 };

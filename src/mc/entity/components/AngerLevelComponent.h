@@ -16,9 +16,9 @@ public:
     struct ConditionalSound {
     public:
         // prevent constructor by default
-        ConditionalSound& operator=(ConditionalSound const&) = delete;
-        ConditionalSound(ConditionalSound const&)            = delete;
-        ConditionalSound()                                   = delete;
+        ConditionalSound& operator=(ConditionalSound const&);
+        ConditionalSound(ConditionalSound const&);
+        ConditionalSound();
 
     public:
         // NOLINTBEGIN
@@ -30,8 +30,8 @@ public:
 
 public:
     // prevent constructor by default
-    AngerLevelComponent& operator=(AngerLevelComponent const&) = delete;
-    AngerLevelComponent()                                      = delete;
+    AngerLevelComponent& operator=(AngerLevelComponent const&);
+    AngerLevelComponent();
 
 public:
     // NOLINTBEGIN

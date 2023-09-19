@@ -12,9 +12,9 @@ namespace Crypto::Asymmetric {
 class OpenSSLInterface {
 public:
     // prevent constructor by default
-    OpenSSLInterface& operator=(OpenSSLInterface const&) = delete;
-    OpenSSLInterface(OpenSSLInterface const&)            = delete;
-    OpenSSLInterface()                                   = delete;
+    OpenSSLInterface& operator=(OpenSSLInterface const&);
+    OpenSSLInterface(OpenSSLInterface const&);
+    OpenSSLInterface();
 
 public:
     // NOLINTBEGIN

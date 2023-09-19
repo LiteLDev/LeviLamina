@@ -13,9 +13,9 @@ namespace Core { class Path; }
 class ResourceSignature {
 public:
     // prevent constructor by default
-    ResourceSignature& operator=(ResourceSignature const&) = delete;
-    ResourceSignature(ResourceSignature const&)            = delete;
-    ResourceSignature()                                    = delete;
+    ResourceSignature& operator=(ResourceSignature const&);
+    ResourceSignature(ResourceSignature const&);
+    ResourceSignature();
 
 public:
     // NOLINTBEGIN

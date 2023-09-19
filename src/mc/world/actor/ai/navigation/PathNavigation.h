@@ -9,9 +9,9 @@
 class PathNavigation {
 public:
     // prevent constructor by default
-    PathNavigation& operator=(PathNavigation const&) = delete;
-    PathNavigation(PathNavigation const&)            = delete;
-    PathNavigation()                                 = delete;
+    PathNavigation& operator=(PathNavigation const&);
+    PathNavigation(PathNavigation const&);
+    PathNavigation();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 struct GameRelightingTestData {
 public:
     // prevent constructor by default
-    GameRelightingTestData& operator=(GameRelightingTestData const&) = delete;
-    GameRelightingTestData(GameRelightingTestData const&)            = delete;
-    GameRelightingTestData()                                         = delete;
+    GameRelightingTestData& operator=(GameRelightingTestData const&);
+    GameRelightingTestData(GameRelightingTestData const&);
+    GameRelightingTestData();
 };

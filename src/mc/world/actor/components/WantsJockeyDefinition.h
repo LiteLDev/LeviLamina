@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct WantsJockeyDefinition {
 public:
     // prevent constructor by default
-    WantsJockeyDefinition& operator=(WantsJockeyDefinition const&) = delete;
-    WantsJockeyDefinition(WantsJockeyDefinition const&)            = delete;
-    WantsJockeyDefinition()                                        = delete;
+    WantsJockeyDefinition& operator=(WantsJockeyDefinition const&);
+    WantsJockeyDefinition(WantsJockeyDefinition const&);
+    WantsJockeyDefinition();
 
 public:
     // NOLINTBEGIN

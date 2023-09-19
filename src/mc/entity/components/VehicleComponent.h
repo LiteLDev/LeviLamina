@@ -5,8 +5,8 @@
 struct VehicleComponent {
 public:
     // prevent constructor by default
-    VehicleComponent& operator=(VehicleComponent const&) = delete;
-    VehicleComponent()                                   = delete;
+    VehicleComponent& operator=(VehicleComponent const&);
+    VehicleComponent();
 
 public:
     // NOLINTBEGIN

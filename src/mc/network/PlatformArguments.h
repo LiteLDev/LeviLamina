@@ -7,9 +7,9 @@ namespace Webview {
 class PlatformArguments {
 public:
     // prevent constructor by default
-    PlatformArguments& operator=(PlatformArguments const&) = delete;
-    PlatformArguments(PlatformArguments const&)            = delete;
-    PlatformArguments()                                    = delete;
+    PlatformArguments& operator=(PlatformArguments const&);
+    PlatformArguments(PlatformArguments const&);
+    PlatformArguments();
 };
 
 }; // namespace Webview

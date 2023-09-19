@@ -5,9 +5,9 @@
 class CompoundTagVariant {
 public:
     // prevent constructor by default
-    CompoundTagVariant& operator=(CompoundTagVariant const&) = delete;
-    CompoundTagVariant(CompoundTagVariant const&)            = delete;
-    CompoundTagVariant()                                     = delete;
+    CompoundTagVariant& operator=(CompoundTagVariant const&);
+    CompoundTagVariant(CompoundTagVariant const&);
+    CompoundTagVariant();
 
 public:
     // NOLINTBEGIN

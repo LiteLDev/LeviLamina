@@ -19,9 +19,9 @@ public:
 
 public:
     // prevent constructor by default
-    IApplicationDataStores& operator=(IApplicationDataStores const&) = delete;
-    IApplicationDataStores(IApplicationDataStores const&)            = delete;
-    IApplicationDataStores()                                         = delete;
+    IApplicationDataStores& operator=(IApplicationDataStores const&);
+    IApplicationDataStores(IApplicationDataStores const&);
+    IApplicationDataStores();
 
 public:
     // NOLINTBEGIN

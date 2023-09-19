@@ -9,20 +9,20 @@
 class BlockPos {
 public:
     // prevent constructor by default
-    BlockPos& operator=(BlockPos const&) = delete;
-    BlockPos(BlockPos const&)            = delete;
-    BlockPos()                           = delete;
+    BlockPos& operator=(BlockPos const&);
+    BlockPos(BlockPos const&);
+    BlockPos();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0BlockPos@@QEAA@AEBVVec3@@@Z
-    MCAPI BlockPos(class Vec3 const&);
+    MCAPI explicit BlockPos(class Vec3 const&);
 
     // symbol: ??0BlockPos@@QEAA@MMM@Z
     MCAPI BlockPos(float, float, float);
 
     // symbol: ??0BlockPos@@QEAA@AEBVSubChunkPos@@@Z
-    MCAPI BlockPos(class SubChunkPos const&);
+    MCAPI explicit BlockPos(class SubChunkPos const&);
 
     // symbol: ??0BlockPos@@QEAA@AEBVChunkPos@@H@Z
     MCAPI BlockPos(class ChunkPos const&, int);
@@ -37,7 +37,7 @@ public:
     MCAPI class BlockPos neighbor(uchar) const;
 
     // symbol: ??BBlockPos@@QEBA?AVVec3@@XZ
-    MCAPI operator class Vec3() const;
+    MCAPI explicit operator class Vec3() const;
 
     // symbol: ??9BlockPos@@QEBA_NAEBV0@@Z
     MCAPI bool operator!=(class BlockPos const&) const;

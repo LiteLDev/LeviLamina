@@ -17,9 +17,9 @@ namespace PositionTrackingDB {
 class AsyncOperationBase : public ::PositionTrackingDB::OperationBase {
 public:
     // prevent constructor by default
-    AsyncOperationBase& operator=(AsyncOperationBase const&) = delete;
-    AsyncOperationBase(AsyncOperationBase const&)            = delete;
-    AsyncOperationBase()                                     = delete;
+    AsyncOperationBase& operator=(AsyncOperationBase const&);
+    AsyncOperationBase(AsyncOperationBase const&);
+    AsyncOperationBase();
 
 public:
     // NOLINTBEGIN

@@ -15,9 +15,9 @@ namespace Core { class Result; }
 class DBStorageEnvironmentChain {
 public:
     // prevent constructor by default
-    DBStorageEnvironmentChain& operator=(DBStorageEnvironmentChain const&) = delete;
-    DBStorageEnvironmentChain(DBStorageEnvironmentChain const&)            = delete;
-    DBStorageEnvironmentChain()                                            = delete;
+    DBStorageEnvironmentChain& operator=(DBStorageEnvironmentChain const&);
+    DBStorageEnvironmentChain(DBStorageEnvironmentChain const&);
+    DBStorageEnvironmentChain();
 
 public:
     // NOLINTBEGIN

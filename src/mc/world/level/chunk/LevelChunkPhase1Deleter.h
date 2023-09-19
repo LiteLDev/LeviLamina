@@ -5,9 +5,9 @@
 struct LevelChunkPhase1Deleter {
 public:
     // prevent constructor by default
-    LevelChunkPhase1Deleter& operator=(LevelChunkPhase1Deleter const&) = delete;
-    LevelChunkPhase1Deleter(LevelChunkPhase1Deleter const&)            = delete;
-    LevelChunkPhase1Deleter()                                          = delete;
+    LevelChunkPhase1Deleter& operator=(LevelChunkPhase1Deleter const&);
+    LevelChunkPhase1Deleter(LevelChunkPhase1Deleter const&);
+    LevelChunkPhase1Deleter();
 
 public:
     // NOLINTBEGIN

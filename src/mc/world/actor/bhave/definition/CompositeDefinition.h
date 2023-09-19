@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class CompositeDefinition : public ::BehaviorDefinition {
 public:
     // prevent constructor by default
-    CompositeDefinition& operator=(CompositeDefinition const&) = delete;
-    CompositeDefinition(CompositeDefinition const&)            = delete;
-    CompositeDefinition()                                      = delete;
+    CompositeDefinition& operator=(CompositeDefinition const&);
+    CompositeDefinition(CompositeDefinition const&);
+    CompositeDefinition();
 
 public:
     // NOLINTBEGIN

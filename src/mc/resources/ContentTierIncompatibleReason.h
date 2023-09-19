@@ -5,14 +5,14 @@
 class ContentTierIncompatibleReason {
 public:
     // prevent constructor by default
-    ContentTierIncompatibleReason& operator=(ContentTierIncompatibleReason const&) = delete;
-    ContentTierIncompatibleReason(ContentTierIncompatibleReason const&)            = delete;
-    ContentTierIncompatibleReason()                                                = delete;
+    ContentTierIncompatibleReason& operator=(ContentTierIncompatibleReason const&);
+    ContentTierIncompatibleReason(ContentTierIncompatibleReason const&);
+    ContentTierIncompatibleReason();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ContentTierIncompatibleReason@@QEAA@I@Z
-    MCAPI ContentTierIncompatibleReason(uint);
+    MCAPI explicit ContentTierIncompatibleReason(uint);
 
     // symbol:
     // ?getExpandedI18nErrorList@ContentTierIncompatibleReason@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z

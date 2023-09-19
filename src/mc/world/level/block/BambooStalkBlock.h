@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class BambooStalkBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    BambooStalkBlock& operator=(BambooStalkBlock const&) = delete;
-    BambooStalkBlock(BambooStalkBlock const&)            = delete;
-    BambooStalkBlock()                                   = delete;
+    BambooStalkBlock& operator=(BambooStalkBlock const&);
+    BambooStalkBlock(BambooStalkBlock const&);
+    BambooStalkBlock();
 
 public:
     // NOLINTBEGIN

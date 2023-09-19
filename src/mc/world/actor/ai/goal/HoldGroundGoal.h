@@ -9,9 +9,9 @@
 class HoldGroundGoal : public ::Goal {
 public:
     // prevent constructor by default
-    HoldGroundGoal& operator=(HoldGroundGoal const&) = delete;
-    HoldGroundGoal(HoldGroundGoal const&)            = delete;
-    HoldGroundGoal()                                 = delete;
+    HoldGroundGoal& operator=(HoldGroundGoal const&);
+    HoldGroundGoal(HoldGroundGoal const&);
+    HoldGroundGoal();
 
 public:
     // NOLINTBEGIN

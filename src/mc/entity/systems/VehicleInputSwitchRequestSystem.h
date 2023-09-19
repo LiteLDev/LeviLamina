@@ -5,9 +5,9 @@
 class VehicleInputSwitchRequestSystem {
 public:
     // prevent constructor by default
-    VehicleInputSwitchRequestSystem& operator=(VehicleInputSwitchRequestSystem const&) = delete;
-    VehicleInputSwitchRequestSystem(VehicleInputSwitchRequestSystem const&)            = delete;
-    VehicleInputSwitchRequestSystem()                                                  = delete;
+    VehicleInputSwitchRequestSystem& operator=(VehicleInputSwitchRequestSystem const&);
+    VehicleInputSwitchRequestSystem(VehicleInputSwitchRequestSystem const&);
+    VehicleInputSwitchRequestSystem();
 
 public:
     // NOLINTBEGIN

@@ -11,8 +11,8 @@ public:
 
 public:
     // prevent constructor by default
-    Ability& operator=(Ability const&) = delete;
-    Ability(Ability const&)            = delete;
+    Ability& operator=(Ability const&);
+    Ability(Ability const&);
 
 public:
     // NOLINTBEGIN

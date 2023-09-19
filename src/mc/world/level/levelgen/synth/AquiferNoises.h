@@ -10,8 +10,8 @@
 class AquiferNoises {
 public:
     // prevent constructor by default
-    AquiferNoises& operator=(AquiferNoises const&) = delete;
-    AquiferNoises()                                = delete;
+    AquiferNoises& operator=(AquiferNoises const&);
+    AquiferNoises();
 
 public:
     // NOLINTBEGIN

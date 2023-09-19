@@ -5,9 +5,9 @@
 class CrashDumpLog {
 public:
     // prevent constructor by default
-    CrashDumpLog& operator=(CrashDumpLog const&) = delete;
-    CrashDumpLog(CrashDumpLog const&)            = delete;
-    CrashDumpLog()                               = delete;
+    CrashDumpLog& operator=(CrashDumpLog const&);
+    CrashDumpLog(CrashDumpLog const&);
+    CrashDumpLog();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class MoveControlHoverDescription : public ::MoveControlDescription {
 public:
     // prevent constructor by default
-    MoveControlHoverDescription& operator=(MoveControlHoverDescription const&) = delete;
-    MoveControlHoverDescription(MoveControlHoverDescription const&)            = delete;
-    MoveControlHoverDescription()                                              = delete;
+    MoveControlHoverDescription& operator=(MoveControlHoverDescription const&);
+    MoveControlHoverDescription(MoveControlHoverDescription const&);
+    MoveControlHoverDescription();
 
 public:
     // NOLINTBEGIN

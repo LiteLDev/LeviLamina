@@ -5,9 +5,9 @@
 struct MCRESULT {
 public:
     // prevent constructor by default
-    MCRESULT& operator=(MCRESULT const&) = delete;
-    MCRESULT(MCRESULT const&)            = delete;
-    MCRESULT()                           = delete;
+    MCRESULT& operator=(MCRESULT const&);
+    MCRESULT(MCRESULT const&);
+    MCRESULT();
 
 public:
     // NOLINTBEGIN

@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct OnTargetEscapeDefinition {
 public:
     // prevent constructor by default
-    OnTargetEscapeDefinition& operator=(OnTargetEscapeDefinition const&) = delete;
-    OnTargetEscapeDefinition(OnTargetEscapeDefinition const&)            = delete;
-    OnTargetEscapeDefinition()                                           = delete;
+    OnTargetEscapeDefinition& operator=(OnTargetEscapeDefinition const&);
+    OnTargetEscapeDefinition(OnTargetEscapeDefinition const&);
+    OnTargetEscapeDefinition();
 
 public:
     // NOLINTBEGIN

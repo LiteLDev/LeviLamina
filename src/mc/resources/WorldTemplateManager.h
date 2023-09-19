@@ -16,9 +16,9 @@ namespace mce { class UUID; }
 class WorldTemplateManager : public ::IWorldTemplateManager {
 public:
     // prevent constructor by default
-    WorldTemplateManager& operator=(WorldTemplateManager const&) = delete;
-    WorldTemplateManager(WorldTemplateManager const&)            = delete;
-    WorldTemplateManager()                                       = delete;
+    WorldTemplateManager& operator=(WorldTemplateManager const&);
+    WorldTemplateManager(WorldTemplateManager const&);
+    WorldTemplateManager();
 
 public:
     // NOLINTBEGIN

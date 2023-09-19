@@ -10,8 +10,8 @@
 class GuiDataPickItemPacket : public ::Packet {
 public:
     // prevent constructor by default
-    GuiDataPickItemPacket& operator=(GuiDataPickItemPacket const&) = delete;
-    GuiDataPickItemPacket(GuiDataPickItemPacket const&)            = delete;
+    GuiDataPickItemPacket& operator=(GuiDataPickItemPacket const&);
+    GuiDataPickItemPacket(GuiDataPickItemPacket const&);
 
 public:
     // NOLINTBEGIN

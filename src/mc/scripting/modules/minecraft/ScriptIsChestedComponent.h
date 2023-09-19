@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptIsChestedComponent {
 public:
     // prevent constructor by default
-    ScriptIsChestedComponent& operator=(ScriptIsChestedComponent const&) = delete;
-    ScriptIsChestedComponent(ScriptIsChestedComponent const&)            = delete;
-    ScriptIsChestedComponent()                                           = delete;
+    ScriptIsChestedComponent& operator=(ScriptIsChestedComponent const&);
+    ScriptIsChestedComponent(ScriptIsChestedComponent const&);
+    ScriptIsChestedComponent();
 
 public:
     // NOLINTBEGIN

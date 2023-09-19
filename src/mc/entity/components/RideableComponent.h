@@ -5,8 +5,8 @@
 class RideableComponent {
 public:
     // prevent constructor by default
-    RideableComponent& operator=(RideableComponent const&) = delete;
-    RideableComponent(RideableComponent const&)            = delete;
+    RideableComponent& operator=(RideableComponent const&);
+    RideableComponent(RideableComponent const&);
 
 public:
     // NOLINTBEGIN

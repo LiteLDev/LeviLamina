@@ -24,9 +24,9 @@ public:
     class KnockbackRoarDefinition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        KnockbackRoarDefinition& operator=(KnockbackRoarDefinition const&) = delete;
-        KnockbackRoarDefinition(KnockbackRoarDefinition const&)            = delete;
-        KnockbackRoarDefinition()                                          = delete;
+        KnockbackRoarDefinition& operator=(KnockbackRoarDefinition const&);
+        KnockbackRoarDefinition(KnockbackRoarDefinition const&);
+        KnockbackRoarDefinition();
 
     public:
         // NOLINTBEGIN
@@ -49,9 +49,9 @@ public:
 
 public:
     // prevent constructor by default
-    KnockbackRoarGoal& operator=(KnockbackRoarGoal const&) = delete;
-    KnockbackRoarGoal(KnockbackRoarGoal const&)            = delete;
-    KnockbackRoarGoal()                                    = delete;
+    KnockbackRoarGoal& operator=(KnockbackRoarGoal const&);
+    KnockbackRoarGoal(KnockbackRoarGoal const&);
+    KnockbackRoarGoal();
 
 public:
     // NOLINTBEGIN
@@ -78,7 +78,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0KnockbackRoarGoal@@QEAA@AEAVMob@@@Z
-    MCAPI KnockbackRoarGoal(class Mob&);
+    MCAPI explicit KnockbackRoarGoal(class Mob&);
 
     // NOLINTEND
 };

@@ -5,9 +5,9 @@
 class ActorParticleEffectEvent {
 public:
     // prevent constructor by default
-    ActorParticleEffectEvent& operator=(ActorParticleEffectEvent const&) = delete;
-    ActorParticleEffectEvent(ActorParticleEffectEvent const&)            = delete;
-    ActorParticleEffectEvent()                                           = delete;
+    ActorParticleEffectEvent& operator=(ActorParticleEffectEvent const&);
+    ActorParticleEffectEvent(ActorParticleEffectEvent const&);
+    ActorParticleEffectEvent();
 
 public:
     // NOLINTBEGIN

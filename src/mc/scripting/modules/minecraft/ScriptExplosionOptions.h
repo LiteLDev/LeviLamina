@@ -11,9 +11,9 @@ namespace ScriptModuleMinecraft {
 struct ScriptExplosionOptions {
 public:
     // prevent constructor by default
-    ScriptExplosionOptions& operator=(ScriptExplosionOptions const&) = delete;
-    ScriptExplosionOptions(ScriptExplosionOptions const&)            = delete;
-    ScriptExplosionOptions()                                         = delete;
+    ScriptExplosionOptions& operator=(ScriptExplosionOptions const&);
+    ScriptExplosionOptions(ScriptExplosionOptions const&);
+    ScriptExplosionOptions();
 
 public:
     // NOLINTBEGIN

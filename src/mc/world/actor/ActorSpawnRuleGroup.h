@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class ActorSpawnRuleGroup : public ::ActorSpawnRuleBase {
 public:
     // prevent constructor by default
-    ActorSpawnRuleGroup& operator=(ActorSpawnRuleGroup const&) = delete;
-    ActorSpawnRuleGroup(ActorSpawnRuleGroup const&)            = delete;
-    ActorSpawnRuleGroup()                                      = delete;
+    ActorSpawnRuleGroup& operator=(ActorSpawnRuleGroup const&);
+    ActorSpawnRuleGroup(ActorSpawnRuleGroup const&);
+    ActorSpawnRuleGroup();
 
 public:
     // NOLINTBEGIN

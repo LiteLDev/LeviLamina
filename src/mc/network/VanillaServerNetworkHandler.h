@@ -8,9 +8,9 @@
 class VanillaServerNetworkHandler : public ::GameSpecificNetEventCallback {
 public:
     // prevent constructor by default
-    VanillaServerNetworkHandler& operator=(VanillaServerNetworkHandler const&) = delete;
-    VanillaServerNetworkHandler(VanillaServerNetworkHandler const&)            = delete;
-    VanillaServerNetworkHandler()                                              = delete;
+    VanillaServerNetworkHandler& operator=(VanillaServerNetworkHandler const&);
+    VanillaServerNetworkHandler(VanillaServerNetworkHandler const&);
+    VanillaServerNetworkHandler();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class GlidingMoveFinalizeSystem {
 public:
     // prevent constructor by default
-    GlidingMoveFinalizeSystem& operator=(GlidingMoveFinalizeSystem const&) = delete;
-    GlidingMoveFinalizeSystem(GlidingMoveFinalizeSystem const&)            = delete;
-    GlidingMoveFinalizeSystem()                                            = delete;
+    GlidingMoveFinalizeSystem& operator=(GlidingMoveFinalizeSystem const&);
+    GlidingMoveFinalizeSystem(GlidingMoveFinalizeSystem const&);
+    GlidingMoveFinalizeSystem();
 
 public:
     // NOLINTBEGIN

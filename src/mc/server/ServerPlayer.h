@@ -41,9 +41,9 @@ namespace mce { class UUID; }
 class ServerPlayer : public ::Player {
 public:
     // prevent constructor by default
-    ServerPlayer& operator=(ServerPlayer const&) = delete;
-    ServerPlayer(ServerPlayer const&)            = delete;
-    ServerPlayer()                               = delete;
+    ServerPlayer& operator=(ServerPlayer const&);
+    ServerPlayer(ServerPlayer const&);
+    ServerPlayer();
 
 public:
     // NOLINTBEGIN

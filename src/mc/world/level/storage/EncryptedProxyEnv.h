@@ -5,9 +5,9 @@
 class EncryptedProxyEnv {
 public:
     // prevent constructor by default
-    EncryptedProxyEnv& operator=(EncryptedProxyEnv const&) = delete;
-    EncryptedProxyEnv(EncryptedProxyEnv const&)            = delete;
-    EncryptedProxyEnv()                                    = delete;
+    EncryptedProxyEnv& operator=(EncryptedProxyEnv const&);
+    EncryptedProxyEnv(EncryptedProxyEnv const&);
+    EncryptedProxyEnv();
 
 public:
     // NOLINTBEGIN

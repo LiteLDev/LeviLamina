@@ -13,9 +13,9 @@ namespace RotationCommandUtils {
 class RotationData {
 public:
     // prevent constructor by default
-    RotationData& operator=(RotationData const&) = delete;
-    RotationData(RotationData const&)            = delete;
-    RotationData()                               = delete;
+    RotationData& operator=(RotationData const&);
+    RotationData(RotationData const&);
+    RotationData();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class FogCommand : public ::Command {
 public:
     // prevent constructor by default
-    FogCommand& operator=(FogCommand const&) = delete;
-    FogCommand(FogCommand const&)            = delete;
-    FogCommand()                             = delete;
+    FogCommand& operator=(FogCommand const&);
+    FogCommand(FogCommand const&);
+    FogCommand();
 
 public:
     // NOLINTBEGIN

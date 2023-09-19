@@ -5,8 +5,8 @@
 struct GetAttachPositionViews {
 public:
     // prevent constructor by default
-    GetAttachPositionViews& operator=(GetAttachPositionViews const&) = delete;
-    GetAttachPositionViews()                                         = delete;
+    GetAttachPositionViews& operator=(GetAttachPositionViews const&);
+    GetAttachPositionViews();
 
 public:
     // NOLINTBEGIN

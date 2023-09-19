@@ -9,9 +9,9 @@
 class SetPreviousPosRotSystem {
 public:
     // prevent constructor by default
-    SetPreviousPosRotSystem& operator=(SetPreviousPosRotSystem const&) = delete;
-    SetPreviousPosRotSystem(SetPreviousPosRotSystem const&)            = delete;
-    SetPreviousPosRotSystem()                                          = delete;
+    SetPreviousPosRotSystem& operator=(SetPreviousPosRotSystem const&);
+    SetPreviousPosRotSystem(SetPreviousPosRotSystem const&);
+    SetPreviousPosRotSystem();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 struct CanVehicleSprintFlag {
 public:
     // prevent constructor by default
-    CanVehicleSprintFlag& operator=(CanVehicleSprintFlag const&) = delete;
-    CanVehicleSprintFlag(CanVehicleSprintFlag const&)            = delete;
-    CanVehicleSprintFlag()                                       = delete;
+    CanVehicleSprintFlag& operator=(CanVehicleSprintFlag const&);
+    CanVehicleSprintFlag(CanVehicleSprintFlag const&);
+    CanVehicleSprintFlag();
 };

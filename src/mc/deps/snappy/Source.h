@@ -7,9 +7,9 @@ namespace snappy {
 class Source {
 public:
     // prevent constructor by default
-    Source& operator=(Source const&) = delete;
-    Source(Source const&)            = delete;
-    Source()                         = delete;
+    Source& operator=(Source const&);
+    Source(Source const&);
+    Source();
 
 public:
     // NOLINTBEGIN

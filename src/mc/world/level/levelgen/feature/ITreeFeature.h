@@ -8,9 +8,9 @@
 class ITreeFeature : public ::IFeature {
 public:
     // prevent constructor by default
-    ITreeFeature& operator=(ITreeFeature const&) = delete;
-    ITreeFeature(ITreeFeature const&)            = delete;
-    ITreeFeature()                               = delete;
+    ITreeFeature& operator=(ITreeFeature const&);
+    ITreeFeature(ITreeFeature const&);
+    ITreeFeature();
 
 public:
     // NOLINTBEGIN

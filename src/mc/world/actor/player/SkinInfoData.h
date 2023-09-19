@@ -5,9 +5,9 @@
 class SkinInfoData {
 public:
     // prevent constructor by default
-    SkinInfoData& operator=(SkinInfoData const&) = delete;
-    SkinInfoData(SkinInfoData const&)            = delete;
-    SkinInfoData()                               = delete;
+    SkinInfoData& operator=(SkinInfoData const&);
+    SkinInfoData(SkinInfoData const&);
+    SkinInfoData();
 
 public:
     // NOLINTBEGIN

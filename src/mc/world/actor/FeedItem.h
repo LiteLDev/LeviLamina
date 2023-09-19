@@ -13,8 +13,8 @@ public:
     struct Effect {
     public:
         // prevent constructor by default
-        Effect(Effect const&) = delete;
-        Effect()              = delete;
+        Effect(Effect const&);
+        Effect();
 
     public:
         // NOLINTBEGIN
@@ -32,8 +32,8 @@ public:
 
 public:
     // prevent constructor by default
-    FeedItem& operator=(FeedItem const&) = delete;
-    FeedItem()                           = delete;
+    FeedItem& operator=(FeedItem const&);
+    FeedItem();
 
 public:
     // NOLINTBEGIN

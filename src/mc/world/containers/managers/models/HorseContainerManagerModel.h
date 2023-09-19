@@ -10,9 +10,9 @@
 class HorseContainerManagerModel : public ::LevelContainerManagerModel {
 public:
     // prevent constructor by default
-    HorseContainerManagerModel& operator=(HorseContainerManagerModel const&) = delete;
-    HorseContainerManagerModel(HorseContainerManagerModel const&)            = delete;
-    HorseContainerManagerModel()                                             = delete;
+    HorseContainerManagerModel& operator=(HorseContainerManagerModel const&);
+    HorseContainerManagerModel(HorseContainerManagerModel const&);
+    HorseContainerManagerModel();
 
 public:
     // NOLINTBEGIN

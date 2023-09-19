@@ -15,9 +15,9 @@ namespace Json { class Value; }
 struct MolangDescriptor : public ::ItemDescriptor::BaseDescriptor {
 public:
     // prevent constructor by default
-    MolangDescriptor& operator=(MolangDescriptor const&) = delete;
-    MolangDescriptor(MolangDescriptor const&)            = delete;
-    MolangDescriptor()                                   = delete;
+    MolangDescriptor& operator=(MolangDescriptor const&);
+    MolangDescriptor(MolangDescriptor const&);
+    MolangDescriptor();
 
 public:
     // NOLINTBEGIN

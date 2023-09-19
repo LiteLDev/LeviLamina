@@ -17,9 +17,9 @@ public:
     struct Listener {
     public:
         // prevent constructor by default
-        Listener& operator=(Listener const&) = delete;
-        Listener(Listener const&)            = delete;
-        Listener()                           = delete;
+        Listener& operator=(Listener const&);
+        Listener(Listener const&);
+        Listener();
 
     public:
         // NOLINTBEGIN
@@ -31,8 +31,8 @@ public:
 
 public:
     // prevent constructor by default
-    DebugInfoComponent& operator=(DebugInfoComponent const&) = delete;
-    DebugInfoComponent()                                     = delete;
+    DebugInfoComponent& operator=(DebugInfoComponent const&);
+    DebugInfoComponent();
 
 public:
     // NOLINTBEGIN

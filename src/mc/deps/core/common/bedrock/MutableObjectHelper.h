@@ -13,8 +13,8 @@ namespace Bedrock::JSONObject {
 class MutableObjectHelper {
 public:
     // prevent constructor by default
-    MutableObjectHelper& operator=(MutableObjectHelper const&) = delete;
-    MutableObjectHelper(MutableObjectHelper const&)            = delete;
+    MutableObjectHelper& operator=(MutableObjectHelper const&);
+    MutableObjectHelper(MutableObjectHelper const&);
 
 public:
     // NOLINTBEGIN

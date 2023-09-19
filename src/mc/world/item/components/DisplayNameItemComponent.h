@@ -5,9 +5,9 @@
 class DisplayNameItemComponent {
 public:
     // prevent constructor by default
-    DisplayNameItemComponent& operator=(DisplayNameItemComponent const&) = delete;
-    DisplayNameItemComponent(DisplayNameItemComponent const&)            = delete;
-    DisplayNameItemComponent()                                           = delete;
+    DisplayNameItemComponent& operator=(DisplayNameItemComponent const&);
+    DisplayNameItemComponent(DisplayNameItemComponent const&);
+    DisplayNameItemComponent();
 
 public:
     // NOLINTBEGIN
@@ -43,7 +43,7 @@ public:
     virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
 
     // symbol: ??0DisplayNameItemComponent@@QEAA@PEAVComponentItem@@@Z
-    MCAPI DisplayNameItemComponent(class ComponentItem*);
+    MCAPI explicit DisplayNameItemComponent(class ComponentItem*);
 
     // symbol:
     // ?getDescriptionId@DisplayNameItemComponent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

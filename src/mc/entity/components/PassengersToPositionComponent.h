@@ -5,7 +5,7 @@
 struct PassengersToPositionComponent {
 public:
     // prevent constructor by default
-    PassengersToPositionComponent& operator=(PassengersToPositionComponent const&) = delete;
-    PassengersToPositionComponent(PassengersToPositionComponent const&)            = delete;
-    PassengersToPositionComponent()                                                = delete;
+    PassengersToPositionComponent& operator=(PassengersToPositionComponent const&);
+    PassengersToPositionComponent(PassengersToPositionComponent const&);
+    PassengersToPositionComponent();
 };

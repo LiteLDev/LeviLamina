@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class AdmireItemDefinition {
 public:
     // prevent constructor by default
-    AdmireItemDefinition& operator=(AdmireItemDefinition const&) = delete;
-    AdmireItemDefinition(AdmireItemDefinition const&)            = delete;
-    AdmireItemDefinition()                                       = delete;
+    AdmireItemDefinition& operator=(AdmireItemDefinition const&);
+    AdmireItemDefinition(AdmireItemDefinition const&);
+    AdmireItemDefinition();
 
 public:
     // NOLINTBEGIN

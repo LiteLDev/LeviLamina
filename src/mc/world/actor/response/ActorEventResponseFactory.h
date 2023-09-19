@@ -5,8 +5,8 @@
 class ActorEventResponseFactory {
 public:
     // prevent constructor by default
-    ActorEventResponseFactory& operator=(ActorEventResponseFactory const&) = delete;
-    ActorEventResponseFactory(ActorEventResponseFactory const&)            = delete;
+    ActorEventResponseFactory& operator=(ActorEventResponseFactory const&);
+    ActorEventResponseFactory(ActorEventResponseFactory const&);
 
 public:
     // NOLINTBEGIN

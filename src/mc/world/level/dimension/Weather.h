@@ -9,9 +9,9 @@
 class Weather : public ::LevelListener {
 public:
     // prevent constructor by default
-    Weather& operator=(Weather const&) = delete;
-    Weather(Weather const&)            = delete;
-    Weather()                          = delete;
+    Weather& operator=(Weather const&);
+    Weather(Weather const&);
+    Weather();
 
 public:
     // NOLINTBEGIN

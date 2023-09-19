@@ -8,9 +8,9 @@
 class TickingAreaCommand : public ::Command {
 public:
     // prevent constructor by default
-    TickingAreaCommand& operator=(TickingAreaCommand const&) = delete;
-    TickingAreaCommand(TickingAreaCommand const&)            = delete;
-    TickingAreaCommand()                                     = delete;
+    TickingAreaCommand& operator=(TickingAreaCommand const&);
+    TickingAreaCommand(TickingAreaCommand const&);
+    TickingAreaCommand();
 
 public:
     // NOLINTBEGIN

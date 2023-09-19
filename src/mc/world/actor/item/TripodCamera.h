@@ -26,9 +26,9 @@
 class TripodCamera : public ::Mob {
 public:
     // prevent constructor by default
-    TripodCamera& operator=(TripodCamera const&) = delete;
-    TripodCamera(TripodCamera const&)            = delete;
-    TripodCamera()                               = delete;
+    TripodCamera& operator=(TripodCamera const&);
+    TripodCamera(TripodCamera const&);
+    TripodCamera();
 
 public:
     // NOLINTBEGIN

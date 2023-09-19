@@ -10,8 +10,8 @@
 class StubServerLocator : public ::ServerLocator {
 public:
     // prevent constructor by default
-    StubServerLocator& operator=(StubServerLocator const&) = delete;
-    StubServerLocator(StubServerLocator const&)            = delete;
+    StubServerLocator& operator=(StubServerLocator const&);
+    StubServerLocator(StubServerLocator const&);
 
 public:
     // NOLINTBEGIN

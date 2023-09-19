@@ -9,9 +9,9 @@
 class BlockRegistryManager {
 public:
     // prevent constructor by default
-    BlockRegistryManager& operator=(BlockRegistryManager const&) = delete;
-    BlockRegistryManager(BlockRegistryManager const&)            = delete;
-    BlockRegistryManager()                                       = delete;
+    BlockRegistryManager& operator=(BlockRegistryManager const&);
+    BlockRegistryManager(BlockRegistryManager const&);
+    BlockRegistryManager();
 
 private:
     // NOLINTBEGIN

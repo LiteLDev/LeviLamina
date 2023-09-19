@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class WaitTicksDefinition : public ::BehaviorDefinition {
 public:
     // prevent constructor by default
-    WaitTicksDefinition& operator=(WaitTicksDefinition const&) = delete;
-    WaitTicksDefinition(WaitTicksDefinition const&)            = delete;
-    WaitTicksDefinition()                                      = delete;
+    WaitTicksDefinition& operator=(WaitTicksDefinition const&);
+    WaitTicksDefinition(WaitTicksDefinition const&);
+    WaitTicksDefinition();
 
 public:
     // NOLINTBEGIN

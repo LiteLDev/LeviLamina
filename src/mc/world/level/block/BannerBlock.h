@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class BannerBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    BannerBlock& operator=(BannerBlock const&) = delete;
-    BannerBlock(BannerBlock const&)            = delete;
-    BannerBlock()                              = delete;
+    BannerBlock& operator=(BannerBlock const&);
+    BannerBlock(BannerBlock const&);
+    BannerBlock();
 
 public:
     // NOLINTBEGIN

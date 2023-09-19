@@ -16,16 +16,16 @@ public:
     struct ThreadData {
     public:
         // prevent constructor by default
-        ThreadData& operator=(ThreadData const&) = delete;
-        ThreadData(ThreadData const&)            = delete;
-        ThreadData()                             = delete;
+        ThreadData& operator=(ThreadData const&);
+        ThreadData(ThreadData const&);
+        ThreadData();
     };
 
 public:
     // prevent constructor by default
-    OverworldGenerator& operator=(OverworldGenerator const&) = delete;
-    OverworldGenerator(OverworldGenerator const&)            = delete;
-    OverworldGenerator()                                     = delete;
+    OverworldGenerator& operator=(OverworldGenerator const&);
+    OverworldGenerator(OverworldGenerator const&);
+    OverworldGenerator();
 
 public:
     // NOLINTBEGIN

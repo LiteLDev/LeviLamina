@@ -8,9 +8,9 @@
 class ResourcePackStack {
 public:
     // prevent constructor by default
-    ResourcePackStack& operator=(ResourcePackStack const&) = delete;
-    ResourcePackStack(ResourcePackStack const&)            = delete;
-    ResourcePackStack()                                    = delete;
+    ResourcePackStack& operator=(ResourcePackStack const&);
+    ResourcePackStack(ResourcePackStack const&);
+    ResourcePackStack();
 
 public:
     // NOLINTBEGIN

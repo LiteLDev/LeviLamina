@@ -5,9 +5,9 @@
 class InMemoryRandomAccessFile {
 public:
     // prevent constructor by default
-    InMemoryRandomAccessFile& operator=(InMemoryRandomAccessFile const&) = delete;
-    InMemoryRandomAccessFile(InMemoryRandomAccessFile const&)            = delete;
-    InMemoryRandomAccessFile()                                           = delete;
+    InMemoryRandomAccessFile& operator=(InMemoryRandomAccessFile const&);
+    InMemoryRandomAccessFile(InMemoryRandomAccessFile const&);
+    InMemoryRandomAccessFile();
 
 public:
     // NOLINTBEGIN
@@ -18,7 +18,7 @@ public:
     virtual leveldb::Status Read(uint64, uint64, leveldb::Slice*, char*) const;
 
     // symbol: ??0InMemoryRandomAccessFile@@QEAA@V?$shared_ptr@VInMemoryFile@@@std@@@Z
-    MCAPI InMemoryRandomAccessFile(std::shared_ptr<class InMemoryFile>);
+    MCAPI explicit InMemoryRandomAccessFile(std::shared_ptr<class InMemoryFile>);
 
     // NOLINTEND
 };

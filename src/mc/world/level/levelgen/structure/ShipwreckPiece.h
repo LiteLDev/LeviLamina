@@ -10,9 +10,9 @@
 class ShipwreckPiece : public ::StructurePiece {
 public:
     // prevent constructor by default
-    ShipwreckPiece& operator=(ShipwreckPiece const&) = delete;
-    ShipwreckPiece(ShipwreckPiece const&)            = delete;
-    ShipwreckPiece()                                 = delete;
+    ShipwreckPiece& operator=(ShipwreckPiece const&);
+    ShipwreckPiece(ShipwreckPiece const&);
+    ShipwreckPiece();
 
 public:
     // NOLINTBEGIN

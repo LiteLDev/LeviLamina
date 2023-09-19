@@ -18,7 +18,7 @@
 class LevelSettings {
 public:
     // prevent constructor by default
-    LevelSettings& operator=(LevelSettings const&) = delete;
+    LevelSettings& operator=(LevelSettings const&);
 
 public:
     // NOLINTBEGIN

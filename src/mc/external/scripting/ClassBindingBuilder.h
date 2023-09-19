@@ -8,9 +8,9 @@ template <typename T0>
 class ClassBindingBuilder {
 public:
     // prevent constructor by default
-    ClassBindingBuilder& operator=(ClassBindingBuilder const&) = delete;
-    ClassBindingBuilder(ClassBindingBuilder const&)            = delete;
-    ClassBindingBuilder()                                      = delete;
+    ClassBindingBuilder& operator=(ClassBindingBuilder const&);
+    ClassBindingBuilder(ClassBindingBuilder const&);
+    ClassBindingBuilder();
 };
 
 }; // namespace Scripting

@@ -5,8 +5,8 @@
 class BribeableComponent {
 public:
     // prevent constructor by default
-    BribeableComponent& operator=(BribeableComponent const&) = delete;
-    BribeableComponent(BribeableComponent const&)            = delete;
+    BribeableComponent& operator=(BribeableComponent const&);
+    BribeableComponent(BribeableComponent const&);
 
 public:
     // NOLINTBEGIN

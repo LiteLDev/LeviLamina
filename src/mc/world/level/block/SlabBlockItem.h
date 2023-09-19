@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class SlabBlockItem : public ::BlockItem {
 public:
     // prevent constructor by default
-    SlabBlockItem& operator=(SlabBlockItem const&) = delete;
-    SlabBlockItem(SlabBlockItem const&)            = delete;
-    SlabBlockItem()                                = delete;
+    SlabBlockItem& operator=(SlabBlockItem const&);
+    SlabBlockItem(SlabBlockItem const&);
+    SlabBlockItem();
 
 public:
     // NOLINTBEGIN

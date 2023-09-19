@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class ActorInactivityTimerTest : public ::SimpleIntFilterTest {
 public:
     // prevent constructor by default
-    ActorInactivityTimerTest& operator=(ActorInactivityTimerTest const&) = delete;
-    ActorInactivityTimerTest(ActorInactivityTimerTest const&)            = delete;
-    ActorInactivityTimerTest()                                           = delete;
+    ActorInactivityTimerTest& operator=(ActorInactivityTimerTest const&);
+    ActorInactivityTimerTest(ActorInactivityTimerTest const&);
+    ActorInactivityTimerTest();
 
 public:
     // NOLINTBEGIN

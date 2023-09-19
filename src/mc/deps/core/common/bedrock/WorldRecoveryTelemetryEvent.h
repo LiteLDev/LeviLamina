@@ -7,9 +7,9 @@ namespace Bedrock {
 struct WorldRecoveryTelemetryEvent {
 public:
     // prevent constructor by default
-    WorldRecoveryTelemetryEvent& operator=(WorldRecoveryTelemetryEvent const&) = delete;
-    WorldRecoveryTelemetryEvent(WorldRecoveryTelemetryEvent const&)            = delete;
-    WorldRecoveryTelemetryEvent()                                              = delete;
+    WorldRecoveryTelemetryEvent& operator=(WorldRecoveryTelemetryEvent const&);
+    WorldRecoveryTelemetryEvent(WorldRecoveryTelemetryEvent const&);
+    WorldRecoveryTelemetryEvent();
 };
 
 }; // namespace Bedrock

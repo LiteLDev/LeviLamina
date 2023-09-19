@@ -14,9 +14,9 @@ namespace JsonUtil { class EmptyClass; }
 class CommandResponse {
 public:
     // prevent constructor by default
-    CommandResponse& operator=(CommandResponse const&) = delete;
-    CommandResponse(CommandResponse const&)            = delete;
-    CommandResponse()                                  = delete;
+    CommandResponse& operator=(CommandResponse const&);
+    CommandResponse(CommandResponse const&);
+    CommandResponse();
 
 public:
     // NOLINTBEGIN

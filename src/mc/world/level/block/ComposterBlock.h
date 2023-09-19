@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class ComposterBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    ComposterBlock& operator=(ComposterBlock const&) = delete;
-    ComposterBlock(ComposterBlock const&)            = delete;
-    ComposterBlock()                                 = delete;
+    ComposterBlock& operator=(ComposterBlock const&);
+    ComposterBlock(ComposterBlock const&);
+    ComposterBlock();
 
 public:
     // NOLINTBEGIN

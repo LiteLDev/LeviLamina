@@ -13,8 +13,8 @@ namespace Json { class Value; }
 class MobEffectSubcomponent : public ::OnHitSubcomponent {
 public:
     // prevent constructor by default
-    MobEffectSubcomponent& operator=(MobEffectSubcomponent const&) = delete;
-    MobEffectSubcomponent(MobEffectSubcomponent const&)            = delete;
+    MobEffectSubcomponent& operator=(MobEffectSubcomponent const&);
+    MobEffectSubcomponent(MobEffectSubcomponent const&);
 
 public:
     // NOLINTBEGIN

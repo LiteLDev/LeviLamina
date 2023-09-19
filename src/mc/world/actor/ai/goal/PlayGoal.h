@@ -24,9 +24,9 @@ public:
     class PlayDefinition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        PlayDefinition& operator=(PlayDefinition const&) = delete;
-        PlayDefinition(PlayDefinition const&)            = delete;
-        PlayDefinition()                                 = delete;
+        PlayDefinition& operator=(PlayDefinition const&);
+        PlayDefinition(PlayDefinition const&);
+        PlayDefinition();
 
     public:
         // NOLINTBEGIN
@@ -49,9 +49,9 @@ public:
 
 public:
     // prevent constructor by default
-    PlayGoal& operator=(PlayGoal const&) = delete;
-    PlayGoal(PlayGoal const&)            = delete;
-    PlayGoal()                           = delete;
+    PlayGoal& operator=(PlayGoal const&);
+    PlayGoal(PlayGoal const&);
+    PlayGoal();
 
 public:
     // NOLINTBEGIN
@@ -78,7 +78,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0PlayGoal@@QEAA@AEAVMob@@@Z
-    MCAPI PlayGoal(class Mob&);
+    MCAPI explicit PlayGoal(class Mob&);
 
     // NOLINTEND
 };

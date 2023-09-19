@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class LootTableReference : public ::LootPoolEntry {
 public:
     // prevent constructor by default
-    LootTableReference& operator=(LootTableReference const&) = delete;
-    LootTableReference(LootTableReference const&)            = delete;
-    LootTableReference()                                     = delete;
+    LootTableReference& operator=(LootTableReference const&);
+    LootTableReference(LootTableReference const&);
+    LootTableReference();
 
 public:
     // NOLINTBEGIN

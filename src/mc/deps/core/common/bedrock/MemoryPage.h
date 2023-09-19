@@ -12,9 +12,9 @@ namespace Bedrock::JSONObject {
 class MemoryPage {
 public:
     // prevent constructor by default
-    MemoryPage& operator=(MemoryPage const&) = delete;
-    MemoryPage(MemoryPage const&)            = delete;
-    MemoryPage()                             = delete;
+    MemoryPage& operator=(MemoryPage const&);
+    MemoryPage(MemoryPage const&);
+    MemoryPage();
 
 public:
     // NOLINTBEGIN

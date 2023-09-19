@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class GrindstoneBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    GrindstoneBlock& operator=(GrindstoneBlock const&) = delete;
-    GrindstoneBlock(GrindstoneBlock const&)            = delete;
-    GrindstoneBlock()                                  = delete;
+    GrindstoneBlock& operator=(GrindstoneBlock const&);
+    GrindstoneBlock(GrindstoneBlock const&);
+    GrindstoneBlock();
 
 public:
     // NOLINTBEGIN

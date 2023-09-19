@@ -5,7 +5,7 @@
 struct BeeFlag {
 public:
     // prevent constructor by default
-    BeeFlag& operator=(BeeFlag const&) = delete;
-    BeeFlag(BeeFlag const&)            = delete;
-    BeeFlag()                          = delete;
+    BeeFlag& operator=(BeeFlag const&);
+    BeeFlag(BeeFlag const&);
+    BeeFlag();
 };

@@ -10,8 +10,8 @@
 class MobArmorEquipmentPacket : public ::Packet {
 public:
     // prevent constructor by default
-    MobArmorEquipmentPacket& operator=(MobArmorEquipmentPacket const&) = delete;
-    MobArmorEquipmentPacket(MobArmorEquipmentPacket const&)            = delete;
+    MobArmorEquipmentPacket& operator=(MobArmorEquipmentPacket const&);
+    MobArmorEquipmentPacket(MobArmorEquipmentPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -36,7 +36,7 @@ public:
     MCVAPI ~MobArmorEquipmentPacket();
 
     // symbol: ??0MobArmorEquipmentPacket@@QEAA@AEBVActor@@@Z
-    MCAPI MobArmorEquipmentPacket(class Actor const&);
+    MCAPI explicit MobArmorEquipmentPacket(class Actor const&);
 
     // symbol: ??0MobArmorEquipmentPacket@@QEAA@XZ
     MCAPI MobArmorEquipmentPacket();

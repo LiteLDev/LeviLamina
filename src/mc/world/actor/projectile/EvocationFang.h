@@ -25,9 +25,9 @@
 class EvocationFang : public ::Actor {
 public:
     // prevent constructor by default
-    EvocationFang& operator=(EvocationFang const&) = delete;
-    EvocationFang(EvocationFang const&)            = delete;
-    EvocationFang()                                = delete;
+    EvocationFang& operator=(EvocationFang const&);
+    EvocationFang(EvocationFang const&);
+    EvocationFang();
 
 public:
     // NOLINTBEGIN

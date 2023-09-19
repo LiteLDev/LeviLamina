@@ -5,9 +5,9 @@
 class SpawnFinder {
 public:
     // prevent constructor by default
-    SpawnFinder& operator=(SpawnFinder const&) = delete;
-    SpawnFinder(SpawnFinder const&)            = delete;
-    SpawnFinder()                              = delete;
+    SpawnFinder& operator=(SpawnFinder const&);
+    SpawnFinder(SpawnFinder const&);
+    SpawnFinder();
 
 public:
     // NOLINTBEGIN

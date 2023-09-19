@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class ScaffoldingBlockItem : public ::BlockItem {
 public:
     // prevent constructor by default
-    ScaffoldingBlockItem& operator=(ScaffoldingBlockItem const&) = delete;
-    ScaffoldingBlockItem(ScaffoldingBlockItem const&)            = delete;
-    ScaffoldingBlockItem()                                       = delete;
+    ScaffoldingBlockItem& operator=(ScaffoldingBlockItem const&);
+    ScaffoldingBlockItem(ScaffoldingBlockItem const&);
+    ScaffoldingBlockItem();
 
 public:
     // NOLINTBEGIN

@@ -12,7 +12,7 @@ namespace cereal {
 struct SerializerTraits {
 public:
     // prevent constructor by default
-    SerializerTraits& operator=(SerializerTraits const&) = delete;
+    SerializerTraits& operator=(SerializerTraits const&);
 
 public:
     // NOLINTBEGIN

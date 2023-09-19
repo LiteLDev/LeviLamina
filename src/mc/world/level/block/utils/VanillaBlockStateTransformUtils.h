@@ -11,9 +11,9 @@
 class VanillaBlockStateTransformUtils {
 public:
     // prevent constructor by default
-    VanillaBlockStateTransformUtils& operator=(VanillaBlockStateTransformUtils const&) = delete;
-    VanillaBlockStateTransformUtils(VanillaBlockStateTransformUtils const&)            = delete;
-    VanillaBlockStateTransformUtils()                                                  = delete;
+    VanillaBlockStateTransformUtils& operator=(VanillaBlockStateTransformUtils const&);
+    VanillaBlockStateTransformUtils(VanillaBlockStateTransformUtils const&);
+    VanillaBlockStateTransformUtils();
 
 public:
     // NOLINTBEGIN

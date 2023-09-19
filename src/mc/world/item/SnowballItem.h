@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class SnowballItem : public ::ComponentItem {
 public:
     // prevent constructor by default
-    SnowballItem& operator=(SnowballItem const&) = delete;
-    SnowballItem(SnowballItem const&)            = delete;
-    SnowballItem()                               = delete;
+    SnowballItem& operator=(SnowballItem const&);
+    SnowballItem(SnowballItem const&);
+    SnowballItem();
 
 public:
     // NOLINTBEGIN

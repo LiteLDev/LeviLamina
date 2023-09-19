@@ -9,9 +9,9 @@
 class MeleeAttackGoal : public ::Goal {
 public:
     // prevent constructor by default
-    MeleeAttackGoal& operator=(MeleeAttackGoal const&) = delete;
-    MeleeAttackGoal(MeleeAttackGoal const&)            = delete;
-    MeleeAttackGoal()                                  = delete;
+    MeleeAttackGoal& operator=(MeleeAttackGoal const&);
+    MeleeAttackGoal(MeleeAttackGoal const&);
+    MeleeAttackGoal();
 
 public:
     // NOLINTBEGIN
@@ -47,7 +47,7 @@ public:
     MCVAPI ~MeleeAttackGoal();
 
     // symbol: ??0MeleeAttackGoal@@QEAA@AEAVMob@@@Z
-    MCAPI MeleeAttackGoal(class Mob&);
+    MCAPI explicit MeleeAttackGoal(class Mob&);
 
     // symbol: ?canReachTarget@MeleeAttackGoal@@SA_NAEBVMob@@AEBVVec3@@MMMMH@Z
     MCAPI static bool canReachTarget(class Mob const&, class Vec3 const&, float, float, float, float, int);

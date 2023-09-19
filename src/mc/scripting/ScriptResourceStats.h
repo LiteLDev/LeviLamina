@@ -5,9 +5,9 @@
 struct ScriptResourceStats {
 public:
     // prevent constructor by default
-    ScriptResourceStats& operator=(ScriptResourceStats const&) = delete;
-    ScriptResourceStats(ScriptResourceStats const&)            = delete;
-    ScriptResourceStats()                                      = delete;
+    ScriptResourceStats& operator=(ScriptResourceStats const&);
+    ScriptResourceStats(ScriptResourceStats const&);
+    ScriptResourceStats();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class InsideEndPortalBlockSystem {
 public:
     // prevent constructor by default
-    InsideEndPortalBlockSystem& operator=(InsideEndPortalBlockSystem const&) = delete;
-    InsideEndPortalBlockSystem(InsideEndPortalBlockSystem const&)            = delete;
-    InsideEndPortalBlockSystem()                                             = delete;
+    InsideEndPortalBlockSystem& operator=(InsideEndPortalBlockSystem const&);
+    InsideEndPortalBlockSystem(InsideEndPortalBlockSystem const&);
+    InsideEndPortalBlockSystem();
 
 public:
     // NOLINTBEGIN

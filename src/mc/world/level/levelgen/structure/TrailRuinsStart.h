@@ -8,9 +8,9 @@
 class TrailRuinsStart : public ::StructureStart {
 public:
     // prevent constructor by default
-    TrailRuinsStart& operator=(TrailRuinsStart const&) = delete;
-    TrailRuinsStart(TrailRuinsStart const&)            = delete;
-    TrailRuinsStart()                                  = delete;
+    TrailRuinsStart& operator=(TrailRuinsStart const&);
+    TrailRuinsStart(TrailRuinsStart const&);
+    TrailRuinsStart();
 
 public:
     // NOLINTBEGIN

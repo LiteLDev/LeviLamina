@@ -5,7 +5,7 @@
 struct TerrainInfo {
 public:
     // prevent constructor by default
-    TerrainInfo& operator=(TerrainInfo const&) = delete;
-    TerrainInfo(TerrainInfo const&)            = delete;
-    TerrainInfo()                              = delete;
+    TerrainInfo& operator=(TerrainInfo const&);
+    TerrainInfo(TerrainInfo const&);
+    TerrainInfo();
 };

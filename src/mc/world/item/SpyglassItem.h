@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class SpyglassItem : public ::Item {
 public:
     // prevent constructor by default
-    SpyglassItem& operator=(SpyglassItem const&) = delete;
-    SpyglassItem(SpyglassItem const&)            = delete;
-    SpyglassItem()                               = delete;
+    SpyglassItem& operator=(SpyglassItem const&);
+    SpyglassItem(SpyglassItem const&);
+    SpyglassItem();
 
 public:
     // NOLINTBEGIN

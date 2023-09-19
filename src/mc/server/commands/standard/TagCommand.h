@@ -8,9 +8,9 @@
 class TagCommand : public ::Command {
 public:
     // prevent constructor by default
-    TagCommand& operator=(TagCommand const&) = delete;
-    TagCommand(TagCommand const&)            = delete;
-    TagCommand()                             = delete;
+    TagCommand& operator=(TagCommand const&);
+    TagCommand(TagCommand const&);
+    TagCommand();
 
 public:
     // NOLINTBEGIN

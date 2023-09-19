@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class BrushableBlock : public ::FallingBlock {
 public:
     // prevent constructor by default
-    BrushableBlock& operator=(BrushableBlock const&) = delete;
-    BrushableBlock(BrushableBlock const&)            = delete;
-    BrushableBlock()                                 = delete;
+    BrushableBlock& operator=(BrushableBlock const&);
+    BrushableBlock(BrushableBlock const&);
+    BrushableBlock();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class OcelotSitOnBlockGoal : public ::BaseMoveToBlockGoal {
 public:
     // prevent constructor by default
-    OcelotSitOnBlockGoal& operator=(OcelotSitOnBlockGoal const&) = delete;
-    OcelotSitOnBlockGoal(OcelotSitOnBlockGoal const&)            = delete;
-    OcelotSitOnBlockGoal()                                       = delete;
+    OcelotSitOnBlockGoal& operator=(OcelotSitOnBlockGoal const&);
+    OcelotSitOnBlockGoal(OcelotSitOnBlockGoal const&);
+    OcelotSitOnBlockGoal();
 
 public:
     // NOLINTBEGIN

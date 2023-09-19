@@ -13,9 +13,9 @@ namespace cereal { class BasicSaver; }
 class NBTSaver : public ::cereal::BasicSaver {
 public:
     // prevent constructor by default
-    NBTSaver& operator=(NBTSaver const&) = delete;
-    NBTSaver(NBTSaver const&)            = delete;
-    NBTSaver()                           = delete;
+    NBTSaver& operator=(NBTSaver const&);
+    NBTSaver(NBTSaver const&);
+    NBTSaver();
 
 public:
     // NOLINTBEGIN

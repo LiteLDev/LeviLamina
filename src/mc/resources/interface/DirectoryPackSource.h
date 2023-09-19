@@ -17,9 +17,9 @@ namespace Core { class Path; }
 class DirectoryPackSource : public ::PackSource {
 public:
     // prevent constructor by default
-    DirectoryPackSource& operator=(DirectoryPackSource const&) = delete;
-    DirectoryPackSource(DirectoryPackSource const&)            = delete;
-    DirectoryPackSource()                                      = delete;
+    DirectoryPackSource& operator=(DirectoryPackSource const&);
+    DirectoryPackSource(DirectoryPackSource const&);
+    DirectoryPackSource();
 
 public:
     // NOLINTBEGIN

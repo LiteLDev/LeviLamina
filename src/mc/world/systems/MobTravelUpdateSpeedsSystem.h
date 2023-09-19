@@ -11,9 +11,9 @@
 class MobTravelUpdateSpeedsSystem {
 public:
     // prevent constructor by default
-    MobTravelUpdateSpeedsSystem& operator=(MobTravelUpdateSpeedsSystem const&) = delete;
-    MobTravelUpdateSpeedsSystem(MobTravelUpdateSpeedsSystem const&)            = delete;
-    MobTravelUpdateSpeedsSystem()                                              = delete;
+    MobTravelUpdateSpeedsSystem& operator=(MobTravelUpdateSpeedsSystem const&);
+    MobTravelUpdateSpeedsSystem(MobTravelUpdateSpeedsSystem const&);
+    MobTravelUpdateSpeedsSystem();
 
 public:
     // NOLINTBEGIN

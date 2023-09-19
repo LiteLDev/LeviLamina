@@ -13,9 +13,9 @@ namespace RakNet {
 class SocketLayer {
 public:
     // prevent constructor by default
-    SocketLayer& operator=(SocketLayer const&) = delete;
-    SocketLayer(SocketLayer const&)            = delete;
-    SocketLayer()                              = delete;
+    SocketLayer& operator=(SocketLayer const&);
+    SocketLayer(SocketLayer const&);
+    SocketLayer();
 
 public:
     // NOLINTBEGIN

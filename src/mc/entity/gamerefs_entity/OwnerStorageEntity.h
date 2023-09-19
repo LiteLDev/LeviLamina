@@ -11,9 +11,9 @@ public:
 
 public:
     // prevent constructor by default
-    OwnerStorageEntity& operator=(OwnerStorageEntity const&) = delete;
-    OwnerStorageEntity(OwnerStorageEntity const&)            = delete;
-    OwnerStorageEntity()                                     = delete;
+    OwnerStorageEntity& operator=(OwnerStorageEntity const&);
+    OwnerStorageEntity(OwnerStorageEntity const&);
+    OwnerStorageEntity();
 
     // protected:
     // NOLINTBEGIN
@@ -24,7 +24,7 @@ public:
     MCAPI OwnerStorageEntity(class OwnerStorageEntity&&);
 
     // symbol: ??0OwnerStorageEntity@@IEAA@W4EmptyInit@0@@Z
-    MCAPI OwnerStorageEntity(::OwnerStorageEntity::EmptyInit);
+    MCAPI explicit OwnerStorageEntity(::OwnerStorageEntity::EmptyInit);
 
     // symbol: ?_getStackRef@OwnerStorageEntity@@IEBAAEAVEntityContext@@XZ
     MCAPI class EntityContext& _getStackRef() const;

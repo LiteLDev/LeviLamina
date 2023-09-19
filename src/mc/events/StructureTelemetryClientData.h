@@ -5,9 +5,9 @@
 class StructureTelemetryClientData {
 public:
     // prevent constructor by default
-    StructureTelemetryClientData& operator=(StructureTelemetryClientData const&) = delete;
-    StructureTelemetryClientData(StructureTelemetryClientData const&)            = delete;
-    StructureTelemetryClientData()                                               = delete;
+    StructureTelemetryClientData& operator=(StructureTelemetryClientData const&);
+    StructureTelemetryClientData(StructureTelemetryClientData const&);
+    StructureTelemetryClientData();
 
 public:
     // NOLINTBEGIN

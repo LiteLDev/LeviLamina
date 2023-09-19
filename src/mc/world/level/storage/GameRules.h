@@ -8,7 +8,7 @@
 class GameRules {
 public:
     // prevent constructor by default
-    GameRules& operator=(GameRules const&) = delete;
+    GameRules& operator=(GameRules const&);
 
 public:
     // NOLINTBEGIN

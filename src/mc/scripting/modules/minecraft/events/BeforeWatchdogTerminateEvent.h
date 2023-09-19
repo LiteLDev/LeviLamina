@@ -5,9 +5,9 @@
 struct BeforeWatchdogTerminateEvent {
 public:
     // prevent constructor by default
-    BeforeWatchdogTerminateEvent& operator=(BeforeWatchdogTerminateEvent const&) = delete;
-    BeforeWatchdogTerminateEvent(BeforeWatchdogTerminateEvent const&)            = delete;
-    BeforeWatchdogTerminateEvent()                                               = delete;
+    BeforeWatchdogTerminateEvent& operator=(BeforeWatchdogTerminateEvent const&);
+    BeforeWatchdogTerminateEvent(BeforeWatchdogTerminateEvent const&);
+    BeforeWatchdogTerminateEvent();
 
 public:
     // NOLINTBEGIN

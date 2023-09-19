@@ -9,9 +9,9 @@
 class IslandOperationNode {
 public:
     // prevent constructor by default
-    IslandOperationNode& operator=(IslandOperationNode const&) = delete;
-    IslandOperationNode(IslandOperationNode const&)            = delete;
-    IslandOperationNode()                                      = delete;
+    IslandOperationNode& operator=(IslandOperationNode const&);
+    IslandOperationNode(IslandOperationNode const&);
+    IslandOperationNode();
 
 public:
     // NOLINTBEGIN

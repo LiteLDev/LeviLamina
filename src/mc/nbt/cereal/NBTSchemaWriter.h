@@ -22,9 +22,9 @@ public:
     struct StackNode {
     public:
         // prevent constructor by default
-        StackNode& operator=(StackNode const&) = delete;
-        StackNode(StackNode const&)            = delete;
-        StackNode()                            = delete;
+        StackNode& operator=(StackNode const&);
+        StackNode(StackNode const&);
+        StackNode();
 
     public:
         // NOLINTBEGIN
@@ -36,8 +36,8 @@ public:
 
 public:
     // prevent constructor by default
-    NBTSchemaWriter& operator=(NBTSchemaWriter const&) = delete;
-    NBTSchemaWriter(NBTSchemaWriter const&)            = delete;
+    NBTSchemaWriter& operator=(NBTSchemaWriter const&);
+    NBTSchemaWriter(NBTSchemaWriter const&);
 
 public:
     // NOLINTBEGIN

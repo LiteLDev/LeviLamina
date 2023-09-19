@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class PistonArmBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    PistonArmBlock& operator=(PistonArmBlock const&) = delete;
-    PistonArmBlock(PistonArmBlock const&)            = delete;
-    PistonArmBlock()                                 = delete;
+    PistonArmBlock& operator=(PistonArmBlock const&);
+    PistonArmBlock(PistonArmBlock const&);
+    PistonArmBlock();
 
 public:
     // NOLINTBEGIN

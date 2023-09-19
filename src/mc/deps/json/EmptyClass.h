@@ -7,9 +7,9 @@ namespace JsonUtil {
 class EmptyClass {
 public:
     // prevent constructor by default
-    EmptyClass& operator=(EmptyClass const&) = delete;
-    EmptyClass(EmptyClass const&)            = delete;
-    EmptyClass()                             = delete;
+    EmptyClass& operator=(EmptyClass const&);
+    EmptyClass(EmptyClass const&);
+    EmptyClass();
 };
 
 }; // namespace JsonUtil

@@ -9,9 +9,9 @@
 class ItemAcquisitionMethodMap {
 public:
     // prevent constructor by default
-    ItemAcquisitionMethodMap& operator=(ItemAcquisitionMethodMap const&) = delete;
-    ItemAcquisitionMethodMap(ItemAcquisitionMethodMap const&)            = delete;
-    ItemAcquisitionMethodMap()                                           = delete;
+    ItemAcquisitionMethodMap& operator=(ItemAcquisitionMethodMap const&);
+    ItemAcquisitionMethodMap(ItemAcquisitionMethodMap const&);
+    ItemAcquisitionMethodMap();
 
 private:
     // NOLINTBEGIN

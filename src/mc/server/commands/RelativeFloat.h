@@ -5,8 +5,8 @@
 class RelativeFloat {
 public:
     // prevent constructor by default
-    RelativeFloat& operator=(RelativeFloat const&) = delete;
-    RelativeFloat(RelativeFloat const&)            = delete;
+    RelativeFloat& operator=(RelativeFloat const&);
+    RelativeFloat(RelativeFloat const&);
 
 public:
     // NOLINTBEGIN

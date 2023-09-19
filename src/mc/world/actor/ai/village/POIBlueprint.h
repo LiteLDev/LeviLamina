@@ -8,9 +8,9 @@
 struct POIBlueprint {
 public:
     // prevent constructor by default
-    POIBlueprint& operator=(POIBlueprint const&) = delete;
-    POIBlueprint(POIBlueprint const&)            = delete;
-    POIBlueprint()                               = delete;
+    POIBlueprint& operator=(POIBlueprint const&);
+    POIBlueprint(POIBlueprint const&);
+    POIBlueprint();
 
 public:
     // NOLINTBEGIN

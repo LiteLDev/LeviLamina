@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class RedStoneOreBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    RedStoneOreBlock& operator=(RedStoneOreBlock const&) = delete;
-    RedStoneOreBlock(RedStoneOreBlock const&)            = delete;
-    RedStoneOreBlock()                                   = delete;
+    RedStoneOreBlock& operator=(RedStoneOreBlock const&);
+    RedStoneOreBlock(RedStoneOreBlock const&);
+    RedStoneOreBlock();
 
 public:
     // NOLINTBEGIN

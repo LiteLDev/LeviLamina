@@ -8,9 +8,9 @@
 class ScanSurfaceFeature : public ::IFeature {
 public:
     // prevent constructor by default
-    ScanSurfaceFeature& operator=(ScanSurfaceFeature const&) = delete;
-    ScanSurfaceFeature(ScanSurfaceFeature const&)            = delete;
-    ScanSurfaceFeature()                                     = delete;
+    ScanSurfaceFeature& operator=(ScanSurfaceFeature const&);
+    ScanSurfaceFeature(ScanSurfaceFeature const&);
+    ScanSurfaceFeature();
 
 public:
     // NOLINTBEGIN

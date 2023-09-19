@@ -5,9 +5,9 @@
 class GameEventListenerRegistry {
 public:
     // prevent constructor by default
-    GameEventListenerRegistry& operator=(GameEventListenerRegistry const&) = delete;
-    GameEventListenerRegistry(GameEventListenerRegistry const&)            = delete;
-    GameEventListenerRegistry()                                            = delete;
+    GameEventListenerRegistry& operator=(GameEventListenerRegistry const&);
+    GameEventListenerRegistry(GameEventListenerRegistry const&);
+    GameEventListenerRegistry();
 
 public:
     // NOLINTBEGIN

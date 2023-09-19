@@ -10,8 +10,8 @@
 class AddBehaviorTreePacket : public ::Packet {
 public:
     // prevent constructor by default
-    AddBehaviorTreePacket& operator=(AddBehaviorTreePacket const&) = delete;
-    AddBehaviorTreePacket(AddBehaviorTreePacket const&)            = delete;
+    AddBehaviorTreePacket& operator=(AddBehaviorTreePacket const&);
+    AddBehaviorTreePacket(AddBehaviorTreePacket const&);
 
 public:
     // NOLINTBEGIN

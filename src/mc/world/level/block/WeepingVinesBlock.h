@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class WeepingVinesBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    WeepingVinesBlock& operator=(WeepingVinesBlock const&) = delete;
-    WeepingVinesBlock(WeepingVinesBlock const&)            = delete;
-    WeepingVinesBlock()                                    = delete;
+    WeepingVinesBlock& operator=(WeepingVinesBlock const&);
+    WeepingVinesBlock(WeepingVinesBlock const&);
+    WeepingVinesBlock();
 
 public:
     // NOLINTBEGIN

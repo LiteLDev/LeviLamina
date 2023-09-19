@@ -5,9 +5,9 @@
 struct MolangGeometryVariable {
 public:
     // prevent constructor by default
-    MolangGeometryVariable& operator=(MolangGeometryVariable const&) = delete;
-    MolangGeometryVariable(MolangGeometryVariable const&)            = delete;
-    MolangGeometryVariable()                                         = delete;
+    MolangGeometryVariable& operator=(MolangGeometryVariable const&);
+    MolangGeometryVariable(MolangGeometryVariable const&);
+    MolangGeometryVariable();
 
 public:
     // NOLINTBEGIN

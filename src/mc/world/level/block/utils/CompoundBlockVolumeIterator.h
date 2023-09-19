@@ -8,9 +8,9 @@
 class CompoundBlockVolumeIterator : public ::BaseBlockLocationIterator {
 public:
     // prevent constructor by default
-    CompoundBlockVolumeIterator& operator=(CompoundBlockVolumeIterator const&) = delete;
-    CompoundBlockVolumeIterator(CompoundBlockVolumeIterator const&)            = delete;
-    CompoundBlockVolumeIterator()                                              = delete;
+    CompoundBlockVolumeIterator& operator=(CompoundBlockVolumeIterator const&);
+    CompoundBlockVolumeIterator(CompoundBlockVolumeIterator const&);
+    CompoundBlockVolumeIterator();
 
 public:
     // NOLINTBEGIN

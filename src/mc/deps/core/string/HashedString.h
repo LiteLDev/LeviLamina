@@ -5,12 +5,12 @@
 class HashedString {
 public:
     // prevent constructor by default
-    HashedString() = delete;
+    HashedString();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0HashedString@@QEAA@$$T@Z
-    MCAPI HashedString(std::nullptr_t);
+    MCAPI explicit HashedString(std::nullptr_t);
 
     // symbol: ??0HashedString@@QEAA@AEBV0@@Z
     MCAPI HashedString(class HashedString const&);
@@ -19,10 +19,10 @@ public:
     MCAPI HashedString(class HashedString&&);
 
     // symbol: ??0HashedString@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI HashedString(std::string const&);
+    MCAPI explicit HashedString(std::string const&);
 
     // symbol: ??0HashedString@@QEAA@PEBD@Z
-    MCAPI HashedString(char const*);
+    MCAPI explicit HashedString(char const*);
 
     // symbol: ??0HashedString@@QEAA@_KPEBD@Z
     MCAPI HashedString(uint64, char const*);
@@ -46,7 +46,7 @@ public:
     MCAPI bool isEmpty() const;
 
     // symbol: ??BHashedString@@QEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
-    MCAPI operator std::string_view() const;
+    MCAPI explicit operator std::string_view() const;
 
     // symbol: ??9HashedString@@QEBA_NAEBV0@@Z
     MCAPI bool operator!=(class HashedString const&) const;

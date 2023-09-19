@@ -8,9 +8,9 @@
 class HangingSignBlockActor : public ::SignBlockActor {
 public:
     // prevent constructor by default
-    HangingSignBlockActor& operator=(HangingSignBlockActor const&) = delete;
-    HangingSignBlockActor(HangingSignBlockActor const&)            = delete;
-    HangingSignBlockActor()                                        = delete;
+    HangingSignBlockActor& operator=(HangingSignBlockActor const&);
+    HangingSignBlockActor(HangingSignBlockActor const&);
+    HangingSignBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -51,7 +51,7 @@ public:
     virtual void __unk_vfn_39();
 
     // symbol: ??0HangingSignBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI HangingSignBlockActor(class BlockPos const&);
+    MCAPI explicit HangingSignBlockActor(class BlockPos const&);
 
     // NOLINTEND
 };

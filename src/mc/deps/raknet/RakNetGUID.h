@@ -7,8 +7,8 @@ namespace RakNet {
 struct RakNetGUID {
 public:
     // prevent constructor by default
-    RakNetGUID& operator=(RakNetGUID const&) = delete;
-    RakNetGUID(RakNetGUID const&)            = delete;
+    RakNetGUID& operator=(RakNetGUID const&);
+    RakNetGUID(RakNetGUID const&);
 
 public:
     // NOLINTBEGIN

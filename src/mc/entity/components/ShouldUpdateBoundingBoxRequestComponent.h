@@ -5,7 +5,7 @@
 struct ShouldUpdateBoundingBoxRequestComponent {
 public:
     // prevent constructor by default
-    ShouldUpdateBoundingBoxRequestComponent& operator=(ShouldUpdateBoundingBoxRequestComponent const&) = delete;
-    ShouldUpdateBoundingBoxRequestComponent(ShouldUpdateBoundingBoxRequestComponent const&)            = delete;
-    ShouldUpdateBoundingBoxRequestComponent()                                                          = delete;
+    ShouldUpdateBoundingBoxRequestComponent& operator=(ShouldUpdateBoundingBoxRequestComponent const&);
+    ShouldUpdateBoundingBoxRequestComponent(ShouldUpdateBoundingBoxRequestComponent const&);
+    ShouldUpdateBoundingBoxRequestComponent();
 };

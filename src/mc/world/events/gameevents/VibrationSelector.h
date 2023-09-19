@@ -5,9 +5,9 @@
 class VibrationSelector {
 public:
     // prevent constructor by default
-    VibrationSelector& operator=(VibrationSelector const&) = delete;
-    VibrationSelector(VibrationSelector const&)            = delete;
-    VibrationSelector()                                    = delete;
+    VibrationSelector& operator=(VibrationSelector const&);
+    VibrationSelector(VibrationSelector const&);
+    VibrationSelector();
 
 public:
     // NOLINTBEGIN

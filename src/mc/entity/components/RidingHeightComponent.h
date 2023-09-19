@@ -5,7 +5,7 @@
 struct RidingHeightComponent {
 public:
     // prevent constructor by default
-    RidingHeightComponent& operator=(RidingHeightComponent const&) = delete;
-    RidingHeightComponent(RidingHeightComponent const&)            = delete;
-    RidingHeightComponent()                                        = delete;
+    RidingHeightComponent& operator=(RidingHeightComponent const&);
+    RidingHeightComponent(RidingHeightComponent const&);
+    RidingHeightComponent();
 };

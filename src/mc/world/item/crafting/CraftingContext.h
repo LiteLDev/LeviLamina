@@ -16,28 +16,28 @@ public:
     class Impl {
     public:
         // prevent constructor by default
-        Impl& operator=(Impl const&) = delete;
-        Impl(Impl const&)            = delete;
-        Impl()                       = delete;
+        Impl& operator=(Impl const&);
+        Impl(Impl const&);
+        Impl();
 
     public:
         // NOLINTBEGIN
         // symbol: ??0Impl@CraftingContext@@QEAA@V?$not_null@V?$NonOwnerPointer@VILevel@@@Bedrock@@@gsl@@@Z
-        MCAPI Impl(gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel>>);
+        MCAPI explicit Impl(gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel>>);
 
         // NOLINTEND
     };
 
 public:
     // prevent constructor by default
-    CraftingContext& operator=(CraftingContext const&) = delete;
-    CraftingContext(CraftingContext const&)            = delete;
-    CraftingContext()                                  = delete;
+    CraftingContext& operator=(CraftingContext const&);
+    CraftingContext(CraftingContext const&);
+    CraftingContext();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0CraftingContext@@QEAA@V?$not_null@V?$NonOwnerPointer@VILevel@@@Bedrock@@@gsl@@@Z
-    MCAPI CraftingContext(gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel>>);
+    MCAPI explicit CraftingContext(gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel>>);
 
     // symbol: ?copyAndLockMap@CraftingContext@@QEAA_NUActorUniqueID@@0@Z
     MCAPI bool copyAndLockMap(struct ActorUniqueID, struct ActorUniqueID);

@@ -8,9 +8,9 @@
 class MoveControlSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    MoveControlSystem& operator=(MoveControlSystem const&) = delete;
-    MoveControlSystem(MoveControlSystem const&)            = delete;
-    MoveControlSystem()                                    = delete;
+    MoveControlSystem& operator=(MoveControlSystem const&);
+    MoveControlSystem(MoveControlSystem const&);
+    MoveControlSystem();
 
 public:
     // NOLINTBEGIN

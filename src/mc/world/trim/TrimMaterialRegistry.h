@@ -5,9 +5,9 @@
 class TrimMaterialRegistry {
 public:
     // prevent constructor by default
-    TrimMaterialRegistry& operator=(TrimMaterialRegistry const&) = delete;
-    TrimMaterialRegistry(TrimMaterialRegistry const&)            = delete;
-    TrimMaterialRegistry()                                       = delete;
+    TrimMaterialRegistry& operator=(TrimMaterialRegistry const&);
+    TrimMaterialRegistry(TrimMaterialRegistry const&);
+    TrimMaterialRegistry();
 
 public:
     // NOLINTBEGIN

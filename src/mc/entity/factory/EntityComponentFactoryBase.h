@@ -13,9 +13,9 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class EntityComponentFactoryBase : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    EntityComponentFactoryBase& operator=(EntityComponentFactoryBase const&) = delete;
-    EntityComponentFactoryBase(EntityComponentFactoryBase const&)            = delete;
-    EntityComponentFactoryBase()                                             = delete;
+    EntityComponentFactoryBase& operator=(EntityComponentFactoryBase const&);
+    EntityComponentFactoryBase(EntityComponentFactoryBase const&);
+    EntityComponentFactoryBase();
 
 public:
     // NOLINTBEGIN

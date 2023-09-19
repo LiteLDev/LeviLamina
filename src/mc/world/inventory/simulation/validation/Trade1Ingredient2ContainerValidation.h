@@ -8,9 +8,9 @@
 class Trade1Ingredient2ContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    Trade1Ingredient2ContainerValidation& operator=(Trade1Ingredient2ContainerValidation const&) = delete;
-    Trade1Ingredient2ContainerValidation(Trade1Ingredient2ContainerValidation const&)            = delete;
-    Trade1Ingredient2ContainerValidation()                                                       = delete;
+    Trade1Ingredient2ContainerValidation& operator=(Trade1Ingredient2ContainerValidation const&);
+    Trade1Ingredient2ContainerValidation(Trade1Ingredient2ContainerValidation const&);
+    Trade1Ingredient2ContainerValidation();
 
 public:
     // NOLINTBEGIN
@@ -47,7 +47,7 @@ public:
     virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
 
     // symbol: ??0Trade1Ingredient2ContainerValidation@@QEAA@_N@Z
-    MCAPI Trade1Ingredient2ContainerValidation(bool);
+    MCAPI explicit Trade1Ingredient2ContainerValidation(bool);
 
     // NOLINTEND
 };

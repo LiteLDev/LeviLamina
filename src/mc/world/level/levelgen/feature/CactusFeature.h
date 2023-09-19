@@ -8,9 +8,9 @@
 class CactusFeature : public ::Feature {
 public:
     // prevent constructor by default
-    CactusFeature& operator=(CactusFeature const&) = delete;
-    CactusFeature(CactusFeature const&)            = delete;
-    CactusFeature()                                = delete;
+    CactusFeature& operator=(CactusFeature const&);
+    CactusFeature(CactusFeature const&);
+    CactusFeature();
 
 public:
     // NOLINTBEGIN

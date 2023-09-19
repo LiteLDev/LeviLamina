@@ -31,9 +31,9 @@ public:
     struct CommitOperation {
     public:
         // prevent constructor by default
-        CommitOperation& operator=(CommitOperation const&) = delete;
-        CommitOperation(CommitOperation const&)            = delete;
-        CommitOperation()                                  = delete;
+        CommitOperation& operator=(CommitOperation const&);
+        CommitOperation(CommitOperation const&);
+        CommitOperation();
 
     public:
         // NOLINTBEGIN
@@ -46,9 +46,9 @@ public:
     class DBStorageToken {
     public:
         // prevent constructor by default
-        DBStorageToken& operator=(DBStorageToken const&) = delete;
-        DBStorageToken(DBStorageToken const&)            = delete;
-        DBStorageToken()                                 = delete;
+        DBStorageToken& operator=(DBStorageToken const&);
+        DBStorageToken(DBStorageToken const&);
+        DBStorageToken();
 
     public:
         // NOLINTBEGIN
@@ -61,9 +61,9 @@ public:
     struct PendingWriteResult {
     public:
         // prevent constructor by default
-        PendingWriteResult& operator=(PendingWriteResult const&) = delete;
-        PendingWriteResult(PendingWriteResult const&)            = delete;
-        PendingWriteResult()                                     = delete;
+        PendingWriteResult& operator=(PendingWriteResult const&);
+        PendingWriteResult(PendingWriteResult const&);
+        PendingWriteResult();
 
     public:
         // NOLINTBEGIN
@@ -79,9 +79,9 @@ public:
 
 public:
     // prevent constructor by default
-    DBStorage& operator=(DBStorage const&) = delete;
-    DBStorage(DBStorage const&)            = delete;
-    DBStorage()                            = delete;
+    DBStorage& operator=(DBStorage const&);
+    DBStorage(DBStorage const&);
+    DBStorage();
 
 public:
     // NOLINTBEGIN

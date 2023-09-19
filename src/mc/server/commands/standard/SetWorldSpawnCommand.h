@@ -8,9 +8,9 @@
 class SetWorldSpawnCommand : public ::Command {
 public:
     // prevent constructor by default
-    SetWorldSpawnCommand& operator=(SetWorldSpawnCommand const&) = delete;
-    SetWorldSpawnCommand(SetWorldSpawnCommand const&)            = delete;
-    SetWorldSpawnCommand()                                       = delete;
+    SetWorldSpawnCommand& operator=(SetWorldSpawnCommand const&);
+    SetWorldSpawnCommand(SetWorldSpawnCommand const&);
+    SetWorldSpawnCommand();
 
 public:
     // NOLINTBEGIN

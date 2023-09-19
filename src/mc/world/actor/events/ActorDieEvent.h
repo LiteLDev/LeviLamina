@@ -5,7 +5,7 @@
 struct ActorDieEvent {
 public:
     // prevent constructor by default
-    ActorDieEvent& operator=(ActorDieEvent const&) = delete;
-    ActorDieEvent(ActorDieEvent const&)            = delete;
-    ActorDieEvent()                                = delete;
+    ActorDieEvent& operator=(ActorDieEvent const&);
+    ActorDieEvent(ActorDieEvent const&);
+    ActorDieEvent();
 };

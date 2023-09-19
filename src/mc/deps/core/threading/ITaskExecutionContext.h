@@ -5,7 +5,7 @@
 class ITaskExecutionContext {
 public:
     // prevent constructor by default
-    ITaskExecutionContext& operator=(ITaskExecutionContext const&) = delete;
-    ITaskExecutionContext(ITaskExecutionContext const&)            = delete;
-    ITaskExecutionContext()                                        = delete;
+    ITaskExecutionContext& operator=(ITaskExecutionContext const&);
+    ITaskExecutionContext(ITaskExecutionContext const&);
+    ITaskExecutionContext();
 };

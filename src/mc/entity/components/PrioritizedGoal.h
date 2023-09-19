@@ -5,9 +5,9 @@
 class PrioritizedGoal {
 public:
     // prevent constructor by default
-    PrioritizedGoal& operator=(PrioritizedGoal const&) = delete;
-    PrioritizedGoal(PrioritizedGoal const&)            = delete;
-    PrioritizedGoal()                                  = delete;
+    PrioritizedGoal& operator=(PrioritizedGoal const&);
+    PrioritizedGoal(PrioritizedGoal const&);
+    PrioritizedGoal();
 
 public:
     // NOLINTBEGIN

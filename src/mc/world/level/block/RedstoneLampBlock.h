@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class RedstoneLampBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    RedstoneLampBlock& operator=(RedstoneLampBlock const&) = delete;
-    RedstoneLampBlock(RedstoneLampBlock const&)            = delete;
-    RedstoneLampBlock()                                    = delete;
+    RedstoneLampBlock& operator=(RedstoneLampBlock const&);
+    RedstoneLampBlock(RedstoneLampBlock const&);
+    RedstoneLampBlock();
 
 public:
     // NOLINTBEGIN

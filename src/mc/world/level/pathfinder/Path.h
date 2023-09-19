@@ -17,15 +17,15 @@ public:
     class Node {
     public:
         // prevent constructor by default
-        Node& operator=(Node const&) = delete;
-        Node(Node const&)            = delete;
-        Node()                       = delete;
+        Node& operator=(Node const&);
+        Node(Node const&);
+        Node();
     };
 
 public:
     // prevent constructor by default
-    Path& operator=(Path const&) = delete;
-    Path(Path const&)            = delete;
+    Path& operator=(Path const&);
+    Path(Path const&);
 
 public:
     // NOLINTBEGIN

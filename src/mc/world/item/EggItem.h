@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class EggItem : public ::Item {
 public:
     // prevent constructor by default
-    EggItem& operator=(EggItem const&) = delete;
-    EggItem(EggItem const&)            = delete;
-    EggItem()                          = delete;
+    EggItem& operator=(EggItem const&);
+    EggItem(EggItem const&);
+    EggItem();
 
 public:
     // NOLINTBEGIN

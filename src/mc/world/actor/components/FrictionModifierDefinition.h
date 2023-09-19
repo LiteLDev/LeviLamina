@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct FrictionModifierDefinition {
 public:
     // prevent constructor by default
-    FrictionModifierDefinition& operator=(FrictionModifierDefinition const&) = delete;
-    FrictionModifierDefinition(FrictionModifierDefinition const&)            = delete;
-    FrictionModifierDefinition()                                             = delete;
+    FrictionModifierDefinition& operator=(FrictionModifierDefinition const&);
+    FrictionModifierDefinition(FrictionModifierDefinition const&);
+    FrictionModifierDefinition();
 
 public:
     // NOLINTBEGIN

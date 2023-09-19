@@ -8,9 +8,9 @@
 class HurtOnConditionSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    HurtOnConditionSystem& operator=(HurtOnConditionSystem const&) = delete;
-    HurtOnConditionSystem(HurtOnConditionSystem const&)            = delete;
-    HurtOnConditionSystem()                                        = delete;
+    HurtOnConditionSystem& operator=(HurtOnConditionSystem const&);
+    HurtOnConditionSystem(HurtOnConditionSystem const&);
+    HurtOnConditionSystem();
 
 public:
     // NOLINTBEGIN

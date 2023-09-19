@@ -8,9 +8,9 @@
 class DisplayObjective {
 public:
     // prevent constructor by default
-    DisplayObjective& operator=(DisplayObjective const&) = delete;
-    DisplayObjective(DisplayObjective const&)            = delete;
-    DisplayObjective()                                   = delete;
+    DisplayObjective& operator=(DisplayObjective const&);
+    DisplayObjective(DisplayObjective const&);
+    DisplayObjective();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 struct ConstDeserializeDataParams {
 public:
     // prevent constructor by default
-    ConstDeserializeDataParams& operator=(ConstDeserializeDataParams const&) = delete;
-    ConstDeserializeDataParams(ConstDeserializeDataParams const&)            = delete;
-    ConstDeserializeDataParams()                                             = delete;
+    ConstDeserializeDataParams& operator=(ConstDeserializeDataParams const&);
+    ConstDeserializeDataParams(ConstDeserializeDataParams const&);
+    ConstDeserializeDataParams();
 
 public:
     // NOLINTBEGIN

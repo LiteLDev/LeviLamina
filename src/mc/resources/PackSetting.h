@@ -10,9 +10,9 @@ namespace Json { class Value; }
 class PackSetting {
 public:
     // prevent constructor by default
-    PackSetting& operator=(PackSetting const&) = delete;
-    PackSetting(PackSetting const&)            = delete;
-    PackSetting()                              = delete;
+    PackSetting& operator=(PackSetting const&);
+    PackSetting(PackSetting const&);
+    PackSetting();
 
 public:
     // NOLINTBEGIN

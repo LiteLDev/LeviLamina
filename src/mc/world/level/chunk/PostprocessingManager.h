@@ -13,15 +13,15 @@ public:
     struct LockedChunk {
     public:
         // prevent constructor by default
-        LockedChunk& operator=(LockedChunk const&) = delete;
-        LockedChunk(LockedChunk const&)            = delete;
-        LockedChunk()                              = delete;
+        LockedChunk& operator=(LockedChunk const&);
+        LockedChunk(LockedChunk const&);
+        LockedChunk();
     };
 
 public:
     // prevent constructor by default
-    PostprocessingManager& operator=(PostprocessingManager const&) = delete;
-    PostprocessingManager(PostprocessingManager const&)            = delete;
+    PostprocessingManager& operator=(PostprocessingManager const&);
+    PostprocessingManager(PostprocessingManager const&);
 
 public:
     // NOLINTBEGIN

@@ -16,9 +16,9 @@ namespace gametest {
 class SyncGameTestFunctionRunResult : public ::gametest::IGameTestFunctionRunResult {
 public:
     // prevent constructor by default
-    SyncGameTestFunctionRunResult& operator=(SyncGameTestFunctionRunResult const&) = delete;
-    SyncGameTestFunctionRunResult(SyncGameTestFunctionRunResult const&)            = delete;
-    SyncGameTestFunctionRunResult()                                                = delete;
+    SyncGameTestFunctionRunResult& operator=(SyncGameTestFunctionRunResult const&);
+    SyncGameTestFunctionRunResult(SyncGameTestFunctionRunResult const&);
+    SyncGameTestFunctionRunResult();
 
 public:
     // NOLINTBEGIN

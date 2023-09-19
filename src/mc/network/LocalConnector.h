@@ -14,9 +14,9 @@ namespace Social { class GameConnectionInfo; }
 class LocalConnector : public ::Connector {
 public:
     // prevent constructor by default
-    LocalConnector& operator=(LocalConnector const&) = delete;
-    LocalConnector(LocalConnector const&)            = delete;
-    LocalConnector()                                 = delete;
+    LocalConnector& operator=(LocalConnector const&);
+    LocalConnector(LocalConnector const&);
+    LocalConnector();
 
 public:
     // NOLINTBEGIN

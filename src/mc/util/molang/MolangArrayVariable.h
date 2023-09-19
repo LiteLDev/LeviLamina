@@ -5,9 +5,9 @@
 struct MolangArrayVariable {
 public:
     // prevent constructor by default
-    MolangArrayVariable& operator=(MolangArrayVariable const&) = delete;
-    MolangArrayVariable(MolangArrayVariable const&)            = delete;
-    MolangArrayVariable()                                      = delete;
+    MolangArrayVariable& operator=(MolangArrayVariable const&);
+    MolangArrayVariable(MolangArrayVariable const&);
+    MolangArrayVariable();
 
 public:
     // NOLINTBEGIN

@@ -27,9 +27,9 @@
 class Throwable : public ::PredictableProjectile {
 public:
     // prevent constructor by default
-    Throwable& operator=(Throwable const&) = delete;
-    Throwable(Throwable const&)            = delete;
-    Throwable()                            = delete;
+    Throwable& operator=(Throwable const&);
+    Throwable(Throwable const&);
+    Throwable();
 
 public:
     // NOLINTBEGIN

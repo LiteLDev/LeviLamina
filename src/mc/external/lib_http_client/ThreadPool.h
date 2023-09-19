@@ -12,8 +12,8 @@ namespace OS {
 class ThreadPool {
 public:
     // prevent constructor by default
-    ThreadPool& operator=(ThreadPool const&) = delete;
-    ThreadPool(ThreadPool const&)            = delete;
+    ThreadPool& operator=(ThreadPool const&);
+    ThreadPool(ThreadPool const&);
 
 public:
     // NOLINTBEGIN

@@ -13,9 +13,9 @@ public:
     struct MatingResult {
     public:
         // prevent constructor by default
-        MatingResult& operator=(MatingResult const&) = delete;
-        MatingResult(MatingResult const&)            = delete;
-        MatingResult()                               = delete;
+        MatingResult& operator=(MatingResult const&);
+        MatingResult(MatingResult const&);
+        MatingResult();
 
     public:
         // NOLINTBEGIN
@@ -27,8 +27,8 @@ public:
 
 public:
     // prevent constructor by default
-    BreedableComponent& operator=(BreedableComponent const&) = delete;
-    BreedableComponent(BreedableComponent const&)            = delete;
+    BreedableComponent& operator=(BreedableComponent const&);
+    BreedableComponent(BreedableComponent const&);
 
 public:
     // NOLINTBEGIN

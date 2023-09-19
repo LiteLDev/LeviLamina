@@ -11,14 +11,14 @@ namespace ScriptModuleMinecraftServerUI {
 class ScriptFormRejectError {
 public:
     // prevent constructor by default
-    ScriptFormRejectError& operator=(ScriptFormRejectError const&) = delete;
-    ScriptFormRejectError(ScriptFormRejectError const&)            = delete;
-    ScriptFormRejectError()                                        = delete;
+    ScriptFormRejectError& operator=(ScriptFormRejectError const&);
+    ScriptFormRejectError(ScriptFormRejectError const&);
+    ScriptFormRejectError();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ScriptFormRejectError@ScriptModuleMinecraftServerUI@@QEAA@W4ScriptFormRejectReason@1@@Z
-    MCAPI ScriptFormRejectError(::ScriptModuleMinecraftServerUI::ScriptFormRejectReason);
+    MCAPI explicit ScriptFormRejectError(::ScriptModuleMinecraftServerUI::ScriptFormRejectReason);
 
     // symbol: ??1ScriptFormRejectError@ScriptModuleMinecraftServerUI@@QEAA@XZ
     MCAPI ~ScriptFormRejectError();

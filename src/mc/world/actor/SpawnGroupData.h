@@ -5,9 +5,9 @@
 class SpawnGroupData {
 public:
     // prevent constructor by default
-    SpawnGroupData& operator=(SpawnGroupData const&) = delete;
-    SpawnGroupData(SpawnGroupData const&)            = delete;
-    SpawnGroupData()                                 = delete;
+    SpawnGroupData& operator=(SpawnGroupData const&);
+    SpawnGroupData(SpawnGroupData const&);
+    SpawnGroupData();
 
 public:
     // NOLINTBEGIN

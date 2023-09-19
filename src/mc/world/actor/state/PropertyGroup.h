@@ -14,8 +14,8 @@ namespace Json { class Value; }
 class PropertyGroup {
 public:
     // prevent constructor by default
-    PropertyGroup& operator=(PropertyGroup const&) = delete;
-    PropertyGroup(PropertyGroup const&)            = delete;
+    PropertyGroup& operator=(PropertyGroup const&);
+    PropertyGroup(PropertyGroup const&);
 
 public:
     // NOLINTBEGIN

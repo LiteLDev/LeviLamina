@@ -13,16 +13,16 @@ public:
     struct Gene {
     public:
         // prevent constructor by default
-        Gene& operator=(Gene const&) = delete;
-        Gene(Gene const&)            = delete;
-        Gene()                       = delete;
+        Gene& operator=(Gene const&);
+        Gene(Gene const&);
+        Gene();
     };
 
 public:
     // prevent constructor by default
-    GeneticsComponent& operator=(GeneticsComponent const&) = delete;
-    GeneticsComponent(GeneticsComponent const&)            = delete;
-    GeneticsComponent()                                    = delete;
+    GeneticsComponent& operator=(GeneticsComponent const&);
+    GeneticsComponent(GeneticsComponent const&);
+    GeneticsComponent();
 
 public:
     // NOLINTBEGIN

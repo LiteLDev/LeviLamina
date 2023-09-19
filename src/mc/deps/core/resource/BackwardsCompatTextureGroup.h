@@ -5,9 +5,9 @@
 class BackwardsCompatTextureGroup {
 public:
     // prevent constructor by default
-    BackwardsCompatTextureGroup& operator=(BackwardsCompatTextureGroup const&) = delete;
-    BackwardsCompatTextureGroup(BackwardsCompatTextureGroup const&)            = delete;
-    BackwardsCompatTextureGroup()                                              = delete;
+    BackwardsCompatTextureGroup& operator=(BackwardsCompatTextureGroup const&);
+    BackwardsCompatTextureGroup(BackwardsCompatTextureGroup const&);
+    BackwardsCompatTextureGroup();
 
 private:
     // NOLINTBEGIN

@@ -8,14 +8,14 @@
 class SynchedActorDataEntityWrapper {
 public:
     // prevent constructor by default
-    SynchedActorDataEntityWrapper& operator=(SynchedActorDataEntityWrapper const&) = delete;
-    SynchedActorDataEntityWrapper(SynchedActorDataEntityWrapper const&)            = delete;
-    SynchedActorDataEntityWrapper()                                                = delete;
+    SynchedActorDataEntityWrapper& operator=(SynchedActorDataEntityWrapper const&);
+    SynchedActorDataEntityWrapper(SynchedActorDataEntityWrapper const&);
+    SynchedActorDataEntityWrapper();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0SynchedActorDataEntityWrapper@@QEAA@AEAVEntityContext@@@Z
-    MCAPI SynchedActorDataEntityWrapper(class EntityContext&);
+    MCAPI explicit SynchedActorDataEntityWrapper(class EntityContext&);
 
     // symbol: ?getCompoundTag@SynchedActorDataEntityWrapper@@QEBAAEBVCompoundTag@@G@Z
     MCAPI class CompoundTag const& getCompoundTag(ushort) const;

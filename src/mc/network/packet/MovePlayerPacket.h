@@ -11,8 +11,8 @@
 class MovePlayerPacket : public ::Packet {
 public:
     // prevent constructor by default
-    MovePlayerPacket& operator=(MovePlayerPacket const&) = delete;
-    MovePlayerPacket(MovePlayerPacket const&)            = delete;
+    MovePlayerPacket& operator=(MovePlayerPacket const&);
+    MovePlayerPacket(MovePlayerPacket const&);
 
 public:
     // NOLINTBEGIN

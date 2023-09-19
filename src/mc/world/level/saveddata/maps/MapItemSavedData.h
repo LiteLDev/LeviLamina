@@ -24,16 +24,16 @@ public:
     struct ChunkBounds {
     public:
         // prevent constructor by default
-        ChunkBounds& operator=(ChunkBounds const&) = delete;
-        ChunkBounds(ChunkBounds const&)            = delete;
-        ChunkBounds()                              = delete;
+        ChunkBounds& operator=(ChunkBounds const&);
+        ChunkBounds(ChunkBounds const&);
+        ChunkBounds();
     };
 
 public:
     // prevent constructor by default
-    MapItemSavedData& operator=(MapItemSavedData const&) = delete;
-    MapItemSavedData(MapItemSavedData const&)            = delete;
-    MapItemSavedData()                                   = delete;
+    MapItemSavedData& operator=(MapItemSavedData const&);
+    MapItemSavedData(MapItemSavedData const&);
+    MapItemSavedData();
 
 public:
     // NOLINTBEGIN

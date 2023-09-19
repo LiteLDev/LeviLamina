@@ -23,9 +23,9 @@ public:
 
 public:
     // prevent constructor by default
-    FlowerBlock& operator=(FlowerBlock const&) = delete;
-    FlowerBlock(FlowerBlock const&)            = delete;
-    FlowerBlock()                              = delete;
+    FlowerBlock& operator=(FlowerBlock const&);
+    FlowerBlock(FlowerBlock const&);
+    FlowerBlock();
 
 public:
     // NOLINTBEGIN

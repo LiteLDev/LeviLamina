@@ -8,9 +8,9 @@
 class CrossbowEnchant : public ::Enchant {
 public:
     // prevent constructor by default
-    CrossbowEnchant& operator=(CrossbowEnchant const&) = delete;
-    CrossbowEnchant(CrossbowEnchant const&)            = delete;
-    CrossbowEnchant()                                  = delete;
+    CrossbowEnchant& operator=(CrossbowEnchant const&);
+    CrossbowEnchant(CrossbowEnchant const&);
+    CrossbowEnchant();
 
 public:
     // NOLINTBEGIN

@@ -11,9 +11,9 @@
 class FeatureRegistryPacket : public ::Packet {
 public:
     // prevent constructor by default
-    FeatureRegistryPacket& operator=(FeatureRegistryPacket const&) = delete;
-    FeatureRegistryPacket(FeatureRegistryPacket const&)            = delete;
-    FeatureRegistryPacket()                                        = delete;
+    FeatureRegistryPacket& operator=(FeatureRegistryPacket const&);
+    FeatureRegistryPacket(FeatureRegistryPacket const&);
+    FeatureRegistryPacket();
 
 public:
     // NOLINTBEGIN
@@ -39,7 +39,7 @@ public:
 
     // symbol:
     // ??0FeatureRegistryPacket@@QEAA@AEBV?$vector@UFeatureBinaryJsonFormat@FeatureRegistry@@V?$allocator@UFeatureBinaryJsonFormat@FeatureRegistry@@@std@@@std@@@Z
-    MCAPI FeatureRegistryPacket(std::vector<struct FeatureRegistry::FeatureBinaryJsonFormat> const&);
+    MCAPI explicit FeatureRegistryPacket(std::vector<struct FeatureRegistry::FeatureBinaryJsonFormat> const&);
 
     // NOLINTEND
 };

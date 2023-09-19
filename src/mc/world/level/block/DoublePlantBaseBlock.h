@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class DoublePlantBaseBlock : public ::BushBlock {
 public:
     // prevent constructor by default
-    DoublePlantBaseBlock& operator=(DoublePlantBaseBlock const&) = delete;
-    DoublePlantBaseBlock(DoublePlantBaseBlock const&)            = delete;
-    DoublePlantBaseBlock()                                       = delete;
+    DoublePlantBaseBlock& operator=(DoublePlantBaseBlock const&);
+    DoublePlantBaseBlock(DoublePlantBaseBlock const&);
+    DoublePlantBaseBlock();
 
 public:
     // NOLINTBEGIN

@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class IceBombItem : public ::ChemistryItem {
 public:
     // prevent constructor by default
-    IceBombItem& operator=(IceBombItem const&) = delete;
-    IceBombItem(IceBombItem const&)            = delete;
-    IceBombItem()                              = delete;
+    IceBombItem& operator=(IceBombItem const&);
+    IceBombItem(IceBombItem const&);
+    IceBombItem();
 
 public:
     // NOLINTBEGIN

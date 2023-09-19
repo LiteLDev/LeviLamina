@@ -10,8 +10,8 @@
 class ServerSettingsResponsePacket : public ::Packet {
 public:
     // prevent constructor by default
-    ServerSettingsResponsePacket& operator=(ServerSettingsResponsePacket const&) = delete;
-    ServerSettingsResponsePacket(ServerSettingsResponsePacket const&)            = delete;
+    ServerSettingsResponsePacket& operator=(ServerSettingsResponsePacket const&);
+    ServerSettingsResponsePacket(ServerSettingsResponsePacket const&);
 
 public:
     // NOLINTBEGIN

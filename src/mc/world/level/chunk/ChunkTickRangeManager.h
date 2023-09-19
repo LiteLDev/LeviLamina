@@ -5,9 +5,9 @@
 class ChunkTickRangeManager {
 public:
     // prevent constructor by default
-    ChunkTickRangeManager& operator=(ChunkTickRangeManager const&) = delete;
-    ChunkTickRangeManager(ChunkTickRangeManager const&)            = delete;
-    ChunkTickRangeManager()                                        = delete;
+    ChunkTickRangeManager& operator=(ChunkTickRangeManager const&);
+    ChunkTickRangeManager(ChunkTickRangeManager const&);
+    ChunkTickRangeManager();
 
 public:
     // NOLINTBEGIN

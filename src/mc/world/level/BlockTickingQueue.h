@@ -14,17 +14,17 @@ public:
     class BlockTick {
     public:
         // prevent constructor by default
-        BlockTick& operator=(BlockTick const&) = delete;
-        BlockTick(BlockTick const&)            = delete;
-        BlockTick()                            = delete;
+        BlockTick& operator=(BlockTick const&);
+        BlockTick(BlockTick const&);
+        BlockTick();
     };
 
     class TickDataSet {
     public:
         // prevent constructor by default
-        TickDataSet& operator=(TickDataSet const&) = delete;
-        TickDataSet(TickDataSet const&)            = delete;
-        TickDataSet()                              = delete;
+        TickDataSet& operator=(TickDataSet const&);
+        TickDataSet(TickDataSet const&);
+        TickDataSet();
 
     public:
         // NOLINTBEGIN
@@ -48,9 +48,9 @@ public:
 
 public:
     // prevent constructor by default
-    BlockTickingQueue& operator=(BlockTickingQueue const&) = delete;
-    BlockTickingQueue(BlockTickingQueue const&)            = delete;
-    BlockTickingQueue()                                    = delete;
+    BlockTickingQueue& operator=(BlockTickingQueue const&);
+    BlockTickingQueue(BlockTickingQueue const&);
+    BlockTickingQueue();
 
 public:
     // NOLINTBEGIN

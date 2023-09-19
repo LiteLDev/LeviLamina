@@ -5,9 +5,9 @@
 class AppConfigsFactory {
 public:
     // prevent constructor by default
-    AppConfigsFactory& operator=(AppConfigsFactory const&) = delete;
-    AppConfigsFactory(AppConfigsFactory const&)            = delete;
-    AppConfigsFactory()                                    = delete;
+    AppConfigsFactory& operator=(AppConfigsFactory const&);
+    AppConfigsFactory(AppConfigsFactory const&);
+    AppConfigsFactory();
 
 public:
     // NOLINTBEGIN

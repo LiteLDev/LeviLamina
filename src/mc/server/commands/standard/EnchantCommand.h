@@ -8,9 +8,9 @@
 class EnchantCommand : public ::Command {
 public:
     // prevent constructor by default
-    EnchantCommand& operator=(EnchantCommand const&) = delete;
-    EnchantCommand(EnchantCommand const&)            = delete;
-    EnchantCommand()                                 = delete;
+    EnchantCommand& operator=(EnchantCommand const&);
+    EnchantCommand(EnchantCommand const&);
+    EnchantCommand();
 
 public:
     // NOLINTBEGIN

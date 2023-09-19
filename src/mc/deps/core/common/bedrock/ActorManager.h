@@ -16,8 +16,8 @@ namespace Bedrock::PubSub { class Subscription; }
 class ActorManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    ActorManager& operator=(ActorManager const&) = delete;
-    ActorManager(ActorManager const&)            = delete;
+    ActorManager& operator=(ActorManager const&);
+    ActorManager(ActorManager const&);
 
 public:
     // NOLINTBEGIN

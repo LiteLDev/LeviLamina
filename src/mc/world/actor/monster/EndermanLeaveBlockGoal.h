@@ -9,9 +9,9 @@
 class EndermanLeaveBlockGoal : public ::Goal {
 public:
     // prevent constructor by default
-    EndermanLeaveBlockGoal& operator=(EndermanLeaveBlockGoal const&) = delete;
-    EndermanLeaveBlockGoal(EndermanLeaveBlockGoal const&)            = delete;
-    EndermanLeaveBlockGoal()                                         = delete;
+    EndermanLeaveBlockGoal& operator=(EndermanLeaveBlockGoal const&);
+    EndermanLeaveBlockGoal(EndermanLeaveBlockGoal const&);
+    EndermanLeaveBlockGoal();
 
 public:
     // NOLINTBEGIN
@@ -29,7 +29,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0EndermanLeaveBlockGoal@@QEAA@AEAVEnderMan@@@Z
-    MCAPI EndermanLeaveBlockGoal(class EnderMan&);
+    MCAPI explicit EndermanLeaveBlockGoal(class EnderMan&);
 
     // NOLINTEND
 };

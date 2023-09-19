@@ -7,8 +7,8 @@ namespace OS {
 class WaitTimer {
 public:
     // prevent constructor by default
-    WaitTimer& operator=(WaitTimer const&) = delete;
-    WaitTimer(WaitTimer const&)            = delete;
+    WaitTimer& operator=(WaitTimer const&);
+    WaitTimer(WaitTimer const&);
 
 public:
     // NOLINTBEGIN

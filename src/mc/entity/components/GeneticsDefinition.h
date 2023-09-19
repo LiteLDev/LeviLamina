@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class GeneticsDefinition {
 public:
     // prevent constructor by default
-    GeneticsDefinition& operator=(GeneticsDefinition const&) = delete;
-    GeneticsDefinition(GeneticsDefinition const&)            = delete;
+    GeneticsDefinition& operator=(GeneticsDefinition const&);
+    GeneticsDefinition(GeneticsDefinition const&);
 
 public:
     // NOLINTBEGIN

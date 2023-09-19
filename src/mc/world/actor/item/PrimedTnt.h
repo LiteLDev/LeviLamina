@@ -26,9 +26,9 @@
 class PrimedTnt : public ::PredictableProjectile {
 public:
     // prevent constructor by default
-    PrimedTnt& operator=(PrimedTnt const&) = delete;
-    PrimedTnt(PrimedTnt const&)            = delete;
-    PrimedTnt()                            = delete;
+    PrimedTnt& operator=(PrimedTnt const&);
+    PrimedTnt(PrimedTnt const&);
+    PrimedTnt();
 
 public:
     // NOLINTBEGIN

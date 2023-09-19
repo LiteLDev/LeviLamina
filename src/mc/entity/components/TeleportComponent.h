@@ -5,8 +5,8 @@
 class TeleportComponent {
 public:
     // prevent constructor by default
-    TeleportComponent& operator=(TeleportComponent const&) = delete;
-    TeleportComponent(TeleportComponent const&)            = delete;
+    TeleportComponent& operator=(TeleportComponent const&);
+    TeleportComponent(TeleportComponent const&);
 
 public:
     // NOLINTBEGIN

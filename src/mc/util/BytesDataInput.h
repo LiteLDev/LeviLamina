@@ -8,9 +8,9 @@
 class BytesDataInput : public ::IDataInput {
 public:
     // prevent constructor by default
-    BytesDataInput& operator=(BytesDataInput const&) = delete;
-    BytesDataInput(BytesDataInput const&)            = delete;
-    BytesDataInput()                                 = delete;
+    BytesDataInput& operator=(BytesDataInput const&);
+    BytesDataInput(BytesDataInput const&);
+    BytesDataInput();
 
 public:
     // NOLINTBEGIN

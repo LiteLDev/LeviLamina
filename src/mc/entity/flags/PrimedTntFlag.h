@@ -5,7 +5,7 @@
 struct PrimedTntFlag {
 public:
     // prevent constructor by default
-    PrimedTntFlag& operator=(PrimedTntFlag const&) = delete;
-    PrimedTntFlag(PrimedTntFlag const&)            = delete;
-    PrimedTntFlag()                                = delete;
+    PrimedTntFlag& operator=(PrimedTntFlag const&);
+    PrimedTntFlag(PrimedTntFlag const&);
+    PrimedTntFlag();
 };

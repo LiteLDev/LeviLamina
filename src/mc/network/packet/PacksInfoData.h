@@ -5,9 +5,9 @@
 struct PacksInfoData {
 public:
     // prevent constructor by default
-    PacksInfoData& operator=(PacksInfoData const&) = delete;
-    PacksInfoData(PacksInfoData const&)            = delete;
-    PacksInfoData()                                = delete;
+    PacksInfoData& operator=(PacksInfoData const&);
+    PacksInfoData(PacksInfoData const&);
+    PacksInfoData();
 
 public:
     // NOLINTBEGIN

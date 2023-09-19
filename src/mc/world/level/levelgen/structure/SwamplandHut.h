@@ -9,9 +9,9 @@
 class SwamplandHut : public ::ScatteredFeaturePiece {
 public:
     // prevent constructor by default
-    SwamplandHut& operator=(SwamplandHut const&) = delete;
-    SwamplandHut(SwamplandHut const&)            = delete;
-    SwamplandHut()                               = delete;
+    SwamplandHut& operator=(SwamplandHut const&);
+    SwamplandHut(SwamplandHut const&);
+    SwamplandHut();
 
 public:
     // NOLINTBEGIN

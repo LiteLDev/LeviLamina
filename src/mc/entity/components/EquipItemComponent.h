@@ -21,9 +21,9 @@ public:
     class Definition {
     public:
         // prevent constructor by default
-        Definition& operator=(Definition const&) = delete;
-        Definition(Definition const&)            = delete;
-        Definition()                             = delete;
+        Definition& operator=(Definition const&);
+        Definition(Definition const&);
+        Definition();
 
     public:
         // NOLINTBEGIN
@@ -41,9 +41,9 @@ public:
 
 public:
     // prevent constructor by default
-    EquipItemComponent& operator=(EquipItemComponent const&) = delete;
-    EquipItemComponent(EquipItemComponent const&)            = delete;
-    EquipItemComponent()                                     = delete;
+    EquipItemComponent& operator=(EquipItemComponent const&);
+    EquipItemComponent(EquipItemComponent const&);
+    EquipItemComponent();
 
 public:
     // NOLINTBEGIN

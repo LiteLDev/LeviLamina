@@ -8,7 +8,7 @@
 class WorkDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    WorkDefinition(WorkDefinition const&) = delete;
+    WorkDefinition(WorkDefinition const&);
 
 public:
     // NOLINTBEGIN

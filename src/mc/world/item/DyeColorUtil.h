@@ -8,9 +8,9 @@
 class DyeColorUtil {
 public:
     // prevent constructor by default
-    DyeColorUtil& operator=(DyeColorUtil const&) = delete;
-    DyeColorUtil(DyeColorUtil const&)            = delete;
-    DyeColorUtil()                               = delete;
+    DyeColorUtil& operator=(DyeColorUtil const&);
+    DyeColorUtil(DyeColorUtil const&);
+    DyeColorUtil();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 class PacketHeader {
 public:
     // prevent constructor by default
-    PacketHeader& operator=(PacketHeader const&) = delete;
-    PacketHeader(PacketHeader const&)            = delete;
-    PacketHeader()                               = delete;
+    PacketHeader& operator=(PacketHeader const&);
+    PacketHeader(PacketHeader const&);
+    PacketHeader();
 };

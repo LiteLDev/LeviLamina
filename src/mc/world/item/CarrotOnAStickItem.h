@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class CarrotOnAStickItem : public ::Item {
 public:
     // prevent constructor by default
-    CarrotOnAStickItem& operator=(CarrotOnAStickItem const&) = delete;
-    CarrotOnAStickItem(CarrotOnAStickItem const&)            = delete;
-    CarrotOnAStickItem()                                     = delete;
+    CarrotOnAStickItem& operator=(CarrotOnAStickItem const&);
+    CarrotOnAStickItem(CarrotOnAStickItem const&);
+    CarrotOnAStickItem();
 
 public:
     // NOLINTBEGIN

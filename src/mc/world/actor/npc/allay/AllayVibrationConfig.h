@@ -8,9 +8,9 @@
 class AllayVibrationConfig : public ::VibrationListenerConfig {
 public:
     // prevent constructor by default
-    AllayVibrationConfig& operator=(AllayVibrationConfig const&) = delete;
-    AllayVibrationConfig(AllayVibrationConfig const&)            = delete;
-    AllayVibrationConfig()                                       = delete;
+    AllayVibrationConfig& operator=(AllayVibrationConfig const&);
+    AllayVibrationConfig(AllayVibrationConfig const&);
+    AllayVibrationConfig();
 
 public:
     // NOLINTBEGIN

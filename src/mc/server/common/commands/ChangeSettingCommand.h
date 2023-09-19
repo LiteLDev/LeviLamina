@@ -8,9 +8,9 @@
 class ChangeSettingCommand : public ::ServerCommand {
 public:
     // prevent constructor by default
-    ChangeSettingCommand& operator=(ChangeSettingCommand const&) = delete;
-    ChangeSettingCommand(ChangeSettingCommand const&)            = delete;
-    ChangeSettingCommand()                                       = delete;
+    ChangeSettingCommand& operator=(ChangeSettingCommand const&);
+    ChangeSettingCommand(ChangeSettingCommand const&);
+    ChangeSettingCommand();
 
 public:
     // NOLINTBEGIN

@@ -6,7 +6,7 @@ template <typename T0>
 class GridArea {
 public:
     // prevent constructor by default
-    GridArea& operator=(GridArea const&) = delete;
-    GridArea(GridArea const&)            = delete;
-    GridArea()                           = delete;
+    GridArea& operator=(GridArea const&);
+    GridArea(GridArea const&);
+    GridArea();
 };

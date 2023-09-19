@@ -5,8 +5,8 @@
 class ScreenCapabilitiesRepo {
 public:
     // prevent constructor by default
-    ScreenCapabilitiesRepo& operator=(ScreenCapabilitiesRepo const&) = delete;
-    ScreenCapabilitiesRepo(ScreenCapabilitiesRepo const&)            = delete;
+    ScreenCapabilitiesRepo& operator=(ScreenCapabilitiesRepo const&);
+    ScreenCapabilitiesRepo(ScreenCapabilitiesRepo const&);
 
 public:
     // NOLINTBEGIN

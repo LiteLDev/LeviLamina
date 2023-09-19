@@ -16,9 +16,9 @@ namespace RotationCommandUtils { class RotationData; }
 class TeleportCommand : public ::Command {
 public:
     // prevent constructor by default
-    TeleportCommand& operator=(TeleportCommand const&) = delete;
-    TeleportCommand(TeleportCommand const&)            = delete;
-    TeleportCommand()                                  = delete;
+    TeleportCommand& operator=(TeleportCommand const&);
+    TeleportCommand(TeleportCommand const&);
+    TeleportCommand();
 
 public:
     // NOLINTBEGIN

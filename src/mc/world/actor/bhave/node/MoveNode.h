@@ -9,8 +9,8 @@
 class MoveNode : public ::BehaviorNode {
 public:
     // prevent constructor by default
-    MoveNode& operator=(MoveNode const&) = delete;
-    MoveNode(MoveNode const&)            = delete;
+    MoveNode& operator=(MoveNode const&);
+    MoveNode(MoveNode const&);
 
 public:
     // NOLINTBEGIN

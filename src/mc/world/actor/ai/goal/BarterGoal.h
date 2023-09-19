@@ -9,9 +9,9 @@
 class BarterGoal : public ::Goal {
 public:
     // prevent constructor by default
-    BarterGoal& operator=(BarterGoal const&) = delete;
-    BarterGoal(BarterGoal const&)            = delete;
-    BarterGoal()                             = delete;
+    BarterGoal& operator=(BarterGoal const&);
+    BarterGoal(BarterGoal const&);
+    BarterGoal();
 
 public:
     // NOLINTBEGIN
@@ -32,7 +32,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0BarterGoal@@QEAA@AEAVMob@@@Z
-    MCAPI BarterGoal(class Mob&);
+    MCAPI explicit BarterGoal(class Mob&);
 
     // NOLINTEND
 

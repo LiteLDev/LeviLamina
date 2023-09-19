@@ -13,9 +13,9 @@ namespace Core { class IFileStorageAreaFetcher; }
 class UserStorageChecker {
 public:
     // prevent constructor by default
-    UserStorageChecker& operator=(UserStorageChecker const&) = delete;
-    UserStorageChecker(UserStorageChecker const&)            = delete;
-    UserStorageChecker()                                     = delete;
+    UserStorageChecker& operator=(UserStorageChecker const&);
+    UserStorageChecker(UserStorageChecker const&);
+    UserStorageChecker();
 
 public:
     // NOLINTBEGIN

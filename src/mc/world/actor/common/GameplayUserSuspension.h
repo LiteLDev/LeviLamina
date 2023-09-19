@@ -9,9 +9,9 @@ public:
 
 public:
     // prevent constructor by default
-    GameplayUserSuspension& operator=(GameplayUserSuspension const&) = delete;
-    GameplayUserSuspension(GameplayUserSuspension const&)            = delete;
-    GameplayUserSuspension()                                         = delete;
+    GameplayUserSuspension& operator=(GameplayUserSuspension const&);
+    GameplayUserSuspension(GameplayUserSuspension const&);
+    GameplayUserSuspension();
 
 public:
     // NOLINTBEGIN

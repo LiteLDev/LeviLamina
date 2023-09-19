@@ -5,7 +5,7 @@
 struct VanillaOffsetComponent {
 public:
     // prevent constructor by default
-    VanillaOffsetComponent& operator=(VanillaOffsetComponent const&) = delete;
-    VanillaOffsetComponent(VanillaOffsetComponent const&)            = delete;
-    VanillaOffsetComponent()                                         = delete;
+    VanillaOffsetComponent& operator=(VanillaOffsetComponent const&);
+    VanillaOffsetComponent(VanillaOffsetComponent const&);
+    VanillaOffsetComponent();
 };

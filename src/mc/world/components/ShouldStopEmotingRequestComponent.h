@@ -5,7 +5,7 @@
 struct ShouldStopEmotingRequestComponent {
 public:
     // prevent constructor by default
-    ShouldStopEmotingRequestComponent& operator=(ShouldStopEmotingRequestComponent const&) = delete;
-    ShouldStopEmotingRequestComponent(ShouldStopEmotingRequestComponent const&)            = delete;
-    ShouldStopEmotingRequestComponent()                                                    = delete;
+    ShouldStopEmotingRequestComponent& operator=(ShouldStopEmotingRequestComponent const&);
+    ShouldStopEmotingRequestComponent(ShouldStopEmotingRequestComponent const&);
+    ShouldStopEmotingRequestComponent();
 };

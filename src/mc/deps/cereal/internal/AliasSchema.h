@@ -21,9 +21,9 @@ namespace cereal::internal {
 class AliasSchema : public ::cereal::internal::BasicSchema {
 public:
     // prevent constructor by default
-    AliasSchema& operator=(AliasSchema const&) = delete;
-    AliasSchema(AliasSchema const&)            = delete;
-    AliasSchema()                              = delete;
+    AliasSchema& operator=(AliasSchema const&);
+    AliasSchema(AliasSchema const&);
+    AliasSchema();
 
 public:
     // NOLINTBEGIN

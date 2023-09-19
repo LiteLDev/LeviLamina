@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class ActorHealthTest : public ::SimpleIntFilterTest {
 public:
     // prevent constructor by default
-    ActorHealthTest& operator=(ActorHealthTest const&) = delete;
-    ActorHealthTest(ActorHealthTest const&)            = delete;
-    ActorHealthTest()                                  = delete;
+    ActorHealthTest& operator=(ActorHealthTest const&);
+    ActorHealthTest(ActorHealthTest const&);
+    ActorHealthTest();
 
 public:
     // NOLINTBEGIN

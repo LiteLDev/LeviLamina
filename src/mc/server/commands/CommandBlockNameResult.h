@@ -9,9 +9,9 @@ public:
 
 public:
     // prevent constructor by default
-    CommandBlockNameResult& operator=(CommandBlockNameResult const&) = delete;
-    CommandBlockNameResult(CommandBlockNameResult const&)            = delete;
-    CommandBlockNameResult()                                         = delete;
+    CommandBlockNameResult& operator=(CommandBlockNameResult const&);
+    CommandBlockNameResult(CommandBlockNameResult const&);
+    CommandBlockNameResult();
 
 public:
     // NOLINTBEGIN

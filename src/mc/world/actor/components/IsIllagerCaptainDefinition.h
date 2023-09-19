@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct IsIllagerCaptainDefinition {
 public:
     // prevent constructor by default
-    IsIllagerCaptainDefinition& operator=(IsIllagerCaptainDefinition const&) = delete;
-    IsIllagerCaptainDefinition(IsIllagerCaptainDefinition const&)            = delete;
-    IsIllagerCaptainDefinition()                                             = delete;
+    IsIllagerCaptainDefinition& operator=(IsIllagerCaptainDefinition const&);
+    IsIllagerCaptainDefinition(IsIllagerCaptainDefinition const&);
+    IsIllagerCaptainDefinition();
 
 public:
     // NOLINTBEGIN

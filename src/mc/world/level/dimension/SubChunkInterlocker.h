@@ -5,9 +5,9 @@
 class SubChunkInterlocker {
 public:
     // prevent constructor by default
-    SubChunkInterlocker& operator=(SubChunkInterlocker const&) = delete;
-    SubChunkInterlocker(SubChunkInterlocker const&)            = delete;
-    SubChunkInterlocker()                                      = delete;
+    SubChunkInterlocker& operator=(SubChunkInterlocker const&);
+    SubChunkInterlocker(SubChunkInterlocker const&);
+    SubChunkInterlocker();
 
 public:
     // NOLINTBEGIN

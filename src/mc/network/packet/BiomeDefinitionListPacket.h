@@ -10,8 +10,8 @@
 class BiomeDefinitionListPacket : public ::Packet {
 public:
     // prevent constructor by default
-    BiomeDefinitionListPacket& operator=(BiomeDefinitionListPacket const&) = delete;
-    BiomeDefinitionListPacket(BiomeDefinitionListPacket const&)            = delete;
+    BiomeDefinitionListPacket& operator=(BiomeDefinitionListPacket const&);
+    BiomeDefinitionListPacket(BiomeDefinitionListPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -43,7 +43,7 @@ public:
     MCAPI BiomeDefinitionListPacket();
 
     // symbol: ??0BiomeDefinitionListPacket@@QEAA@VCompoundTag@@@Z
-    MCAPI BiomeDefinitionListPacket(class CompoundTag);
+    MCAPI explicit BiomeDefinitionListPacket(class CompoundTag);
 
     // NOLINTEND
 };

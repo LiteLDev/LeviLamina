@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct CanClimbDefinition {
 public:
     // prevent constructor by default
-    CanClimbDefinition& operator=(CanClimbDefinition const&) = delete;
-    CanClimbDefinition(CanClimbDefinition const&)            = delete;
-    CanClimbDefinition()                                     = delete;
+    CanClimbDefinition& operator=(CanClimbDefinition const&);
+    CanClimbDefinition(CanClimbDefinition const&);
+    CanClimbDefinition();
 
 public:
     // NOLINTBEGIN

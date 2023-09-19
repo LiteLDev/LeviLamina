@@ -8,9 +8,9 @@
 class DeferredCompiledCommand : public ::DeferredCommandBase {
 public:
     // prevent constructor by default
-    DeferredCompiledCommand& operator=(DeferredCompiledCommand const&) = delete;
-    DeferredCompiledCommand(DeferredCompiledCommand const&)            = delete;
-    DeferredCompiledCommand()                                          = delete;
+    DeferredCompiledCommand& operator=(DeferredCompiledCommand const&);
+    DeferredCompiledCommand(DeferredCompiledCommand const&);
+    DeferredCompiledCommand();
 
 public:
     // NOLINTBEGIN

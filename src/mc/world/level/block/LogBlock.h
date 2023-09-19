@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class LogBlock : public ::RotatedPillarBlock {
 public:
     // prevent constructor by default
-    LogBlock& operator=(LogBlock const&) = delete;
-    LogBlock(LogBlock const&)            = delete;
-    LogBlock()                           = delete;
+    LogBlock& operator=(LogBlock const&);
+    LogBlock(LogBlock const&);
+    LogBlock();
 
 public:
     // NOLINTBEGIN

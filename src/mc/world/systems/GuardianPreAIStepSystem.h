@@ -5,9 +5,9 @@
 class GuardianPreAIStepSystem {
 public:
     // prevent constructor by default
-    GuardianPreAIStepSystem& operator=(GuardianPreAIStepSystem const&) = delete;
-    GuardianPreAIStepSystem(GuardianPreAIStepSystem const&)            = delete;
-    GuardianPreAIStepSystem()                                          = delete;
+    GuardianPreAIStepSystem& operator=(GuardianPreAIStepSystem const&);
+    GuardianPreAIStepSystem(GuardianPreAIStepSystem const&);
+    GuardianPreAIStepSystem();
 
 public:
     // NOLINTBEGIN

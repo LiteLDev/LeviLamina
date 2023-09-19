@@ -5,14 +5,14 @@
 class ResourcePackTransmissionManager {
 public:
     // prevent constructor by default
-    ResourcePackTransmissionManager& operator=(ResourcePackTransmissionManager const&) = delete;
-    ResourcePackTransmissionManager(ResourcePackTransmissionManager const&)            = delete;
-    ResourcePackTransmissionManager()                                                  = delete;
+    ResourcePackTransmissionManager& operator=(ResourcePackTransmissionManager const&);
+    ResourcePackTransmissionManager(ResourcePackTransmissionManager const&);
+    ResourcePackTransmissionManager();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ResourcePackTransmissionManager@@QEAA@AEAVScheduler@@@Z
-    MCAPI ResourcePackTransmissionManager(class Scheduler&);
+    MCAPI explicit ResourcePackTransmissionManager(class Scheduler&);
 
     // symbol: ?cleanupResourcePackManager@ResourcePackTransmissionManager@@QEAAXAEBVNetworkIdentifier@@@Z
     MCAPI void cleanupResourcePackManager(class NetworkIdentifier const&);

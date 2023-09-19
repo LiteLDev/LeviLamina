@@ -5,9 +5,9 @@
 class IDimension {
 public:
     // prevent constructor by default
-    IDimension& operator=(IDimension const&) = delete;
-    IDimension(IDimension const&)            = delete;
-    IDimension()                             = delete;
+    IDimension& operator=(IDimension const&);
+    IDimension(IDimension const&);
+    IDimension();
 
 public:
     // NOLINTBEGIN

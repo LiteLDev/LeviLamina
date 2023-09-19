@@ -8,9 +8,9 @@
 class CreatedOutputContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    CreatedOutputContainerValidation& operator=(CreatedOutputContainerValidation const&) = delete;
-    CreatedOutputContainerValidation(CreatedOutputContainerValidation const&)            = delete;
-    CreatedOutputContainerValidation()                                                   = delete;
+    CreatedOutputContainerValidation& operator=(CreatedOutputContainerValidation const&);
+    CreatedOutputContainerValidation(CreatedOutputContainerValidation const&);
+    CreatedOutputContainerValidation();
 
 public:
     // NOLINTBEGIN

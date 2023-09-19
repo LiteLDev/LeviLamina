@@ -8,9 +8,9 @@
 class EquippableComponent {
 public:
     // prevent constructor by default
-    EquippableComponent& operator=(EquippableComponent const&) = delete;
-    EquippableComponent(EquippableComponent const&)            = delete;
-    EquippableComponent()                                      = delete;
+    EquippableComponent& operator=(EquippableComponent const&);
+    EquippableComponent(EquippableComponent const&);
+    EquippableComponent();
 
 public:
     // NOLINTBEGIN

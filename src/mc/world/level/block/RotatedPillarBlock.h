@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class RotatedPillarBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    RotatedPillarBlock& operator=(RotatedPillarBlock const&) = delete;
-    RotatedPillarBlock(RotatedPillarBlock const&)            = delete;
-    RotatedPillarBlock()                                     = delete;
+    RotatedPillarBlock& operator=(RotatedPillarBlock const&);
+    RotatedPillarBlock(RotatedPillarBlock const&);
+    RotatedPillarBlock();
 
 public:
     // NOLINTBEGIN

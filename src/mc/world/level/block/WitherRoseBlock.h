@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class WitherRoseBlock : public ::FlowerBlock {
 public:
     // prevent constructor by default
-    WitherRoseBlock& operator=(WitherRoseBlock const&) = delete;
-    WitherRoseBlock(WitherRoseBlock const&)            = delete;
-    WitherRoseBlock()                                  = delete;
+    WitherRoseBlock& operator=(WitherRoseBlock const&);
+    WitherRoseBlock(WitherRoseBlock const&);
+    WitherRoseBlock();
 
 public:
     // NOLINTBEGIN

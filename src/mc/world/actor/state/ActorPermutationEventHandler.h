@@ -5,14 +5,14 @@
 class ActorPermutationEventHandler {
 public:
     // prevent constructor by default
-    ActorPermutationEventHandler& operator=(ActorPermutationEventHandler const&) = delete;
-    ActorPermutationEventHandler(ActorPermutationEventHandler const&)            = delete;
-    ActorPermutationEventHandler()                                               = delete;
+    ActorPermutationEventHandler& operator=(ActorPermutationEventHandler const&);
+    ActorPermutationEventHandler(ActorPermutationEventHandler const&);
+    ActorPermutationEventHandler();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ActorPermutationEventHandler@@QEAA@AEAVActor@@@Z
-    MCAPI ActorPermutationEventHandler(class Actor&);
+    MCAPI explicit ActorPermutationEventHandler(class Actor&);
 
     // symbol: ?checkActiveComponents@ActorPermutationEventHandler@@QEAAXV?$shared_ptr@VActorPermutation@@@std@@@Z
     MCAPI void checkActiveComponents(std::shared_ptr<class ActorPermutation>);

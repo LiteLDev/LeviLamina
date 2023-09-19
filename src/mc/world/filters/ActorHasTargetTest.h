@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class ActorHasTargetTest : public ::SimpleBoolFilterTest {
 public:
     // prevent constructor by default
-    ActorHasTargetTest& operator=(ActorHasTargetTest const&) = delete;
-    ActorHasTargetTest(ActorHasTargetTest const&)            = delete;
-    ActorHasTargetTest()                                     = delete;
+    ActorHasTargetTest& operator=(ActorHasTargetTest const&);
+    ActorHasTargetTest(ActorHasTargetTest const&);
+    ActorHasTargetTest();
 
 public:
     // NOLINTBEGIN

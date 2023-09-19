@@ -13,9 +13,9 @@ namespace TreeHelper { struct TreeParams; }
 class CherryTreeCanopy : public ::ITreeCanopy {
 public:
     // prevent constructor by default
-    CherryTreeCanopy& operator=(CherryTreeCanopy const&) = delete;
-    CherryTreeCanopy(CherryTreeCanopy const&)            = delete;
-    CherryTreeCanopy()                                   = delete;
+    CherryTreeCanopy& operator=(CherryTreeCanopy const&);
+    CherryTreeCanopy(CherryTreeCanopy const&);
+    CherryTreeCanopy();
 
 public:
     // NOLINTBEGIN

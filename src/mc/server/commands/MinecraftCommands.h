@@ -9,14 +9,14 @@
 class MinecraftCommands {
 public:
     // prevent constructor by default
-    MinecraftCommands& operator=(MinecraftCommands const&) = delete;
-    MinecraftCommands(MinecraftCommands const&)            = delete;
-    MinecraftCommands()                                    = delete;
+    MinecraftCommands& operator=(MinecraftCommands const&);
+    MinecraftCommands(MinecraftCommands const&);
+    MinecraftCommands();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0MinecraftCommands@@QEAA@AEAVMinecraft@@@Z
-    MCAPI MinecraftCommands(class Minecraft&);
+    MCAPI explicit MinecraftCommands(class Minecraft&);
 
     // symbol:
     // ?compileCommand@MinecraftCommands@@QEAAPEAVCommand@@AEBVHashedString@@AEAVCommandOrigin@@W4CurrentCmdVersion@@V?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@@Z

@@ -9,8 +9,8 @@
 class FurnaceContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // prevent constructor by default
-    FurnaceContainerScreenValidator& operator=(FurnaceContainerScreenValidator const&) = delete;
-    FurnaceContainerScreenValidator(FurnaceContainerScreenValidator const&)            = delete;
+    FurnaceContainerScreenValidator& operator=(FurnaceContainerScreenValidator const&);
+    FurnaceContainerScreenValidator(FurnaceContainerScreenValidator const&);
 
 public:
     // NOLINTBEGIN

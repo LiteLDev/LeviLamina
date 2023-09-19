@@ -5,9 +5,9 @@
 struct BlockStateDefinition {
 public:
     // prevent constructor by default
-    BlockStateDefinition& operator=(BlockStateDefinition const&) = delete;
-    BlockStateDefinition(BlockStateDefinition const&)            = delete;
-    BlockStateDefinition()                                       = delete;
+    BlockStateDefinition& operator=(BlockStateDefinition const&);
+    BlockStateDefinition(BlockStateDefinition const&);
+    BlockStateDefinition();
 
 public:
     // NOLINTBEGIN

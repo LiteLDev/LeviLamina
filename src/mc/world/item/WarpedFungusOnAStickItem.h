@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class WarpedFungusOnAStickItem : public ::ComponentItem {
 public:
     // prevent constructor by default
-    WarpedFungusOnAStickItem& operator=(WarpedFungusOnAStickItem const&) = delete;
-    WarpedFungusOnAStickItem(WarpedFungusOnAStickItem const&)            = delete;
-    WarpedFungusOnAStickItem()                                           = delete;
+    WarpedFungusOnAStickItem& operator=(WarpedFungusOnAStickItem const&);
+    WarpedFungusOnAStickItem(WarpedFungusOnAStickItem const&);
+    WarpedFungusOnAStickItem();
 
 public:
     // NOLINTBEGIN

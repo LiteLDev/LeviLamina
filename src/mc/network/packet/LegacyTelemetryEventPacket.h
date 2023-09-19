@@ -25,8 +25,8 @@ public:
     struct Data {
     public:
         // prevent constructor by default
-        Data& operator=(Data const&) = delete;
-        Data(Data const&)            = delete;
+        Data& operator=(Data const&);
+        Data(Data const&);
 
     public:
         // NOLINTBEGIN
@@ -41,8 +41,8 @@ public:
 
 public:
     // prevent constructor by default
-    LegacyTelemetryEventPacket& operator=(LegacyTelemetryEventPacket const&) = delete;
-    LegacyTelemetryEventPacket(LegacyTelemetryEventPacket const&)            = delete;
+    LegacyTelemetryEventPacket& operator=(LegacyTelemetryEventPacket const&);
+    LegacyTelemetryEventPacket(LegacyTelemetryEventPacket const&);
 
 public:
     // NOLINTBEGIN

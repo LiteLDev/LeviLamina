@@ -16,9 +16,9 @@ namespace mce { class UUID; }
 class TickingArea : public ::ITickingArea {
 public:
     // prevent constructor by default
-    TickingArea& operator=(TickingArea const&) = delete;
-    TickingArea(TickingArea const&)            = delete;
-    TickingArea()                              = delete;
+    TickingArea& operator=(TickingArea const&);
+    TickingArea(TickingArea const&);
+    TickingArea();
 
 public:
     // NOLINTBEGIN

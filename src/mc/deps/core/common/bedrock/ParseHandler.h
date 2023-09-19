@@ -12,9 +12,9 @@ namespace Bedrock::JSONObject {
 class ParseHandler {
 public:
     // prevent constructor by default
-    ParseHandler& operator=(ParseHandler const&) = delete;
-    ParseHandler(ParseHandler const&)            = delete;
-    ParseHandler()                               = delete;
+    ParseHandler& operator=(ParseHandler const&);
+    ParseHandler(ParseHandler const&);
+    ParseHandler();
 
 public:
     // NOLINTBEGIN

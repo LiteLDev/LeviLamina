@@ -13,9 +13,9 @@ namespace mce { class UUID; }
 class BannerDuplicateRecipe : public ::MultiRecipe {
 public:
     // prevent constructor by default
-    BannerDuplicateRecipe& operator=(BannerDuplicateRecipe const&) = delete;
-    BannerDuplicateRecipe(BannerDuplicateRecipe const&)            = delete;
-    BannerDuplicateRecipe()                                        = delete;
+    BannerDuplicateRecipe& operator=(BannerDuplicateRecipe const&);
+    BannerDuplicateRecipe(BannerDuplicateRecipe const&);
+    BannerDuplicateRecipe();
 
 public:
     // NOLINTBEGIN
@@ -49,7 +49,7 @@ public:
     MCAPI BannerDuplicateRecipe(std::string_view, class mce::UUID const&);
 
     // symbol: ??0BannerDuplicateRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI BannerDuplicateRecipe(std::string_view);
+    MCAPI explicit BannerDuplicateRecipe(std::string_view);
 
     // symbol: ?ID@BannerDuplicateRecipe@@2VUUID@mce@@B
     MCAPI static class mce::UUID const ID;

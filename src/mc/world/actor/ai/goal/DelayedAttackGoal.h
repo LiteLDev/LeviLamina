@@ -9,9 +9,9 @@
 class DelayedAttackGoal : public ::MeleeAttackGoal {
 public:
     // prevent constructor by default
-    DelayedAttackGoal& operator=(DelayedAttackGoal const&) = delete;
-    DelayedAttackGoal(DelayedAttackGoal const&)            = delete;
-    DelayedAttackGoal()                                    = delete;
+    DelayedAttackGoal& operator=(DelayedAttackGoal const&);
+    DelayedAttackGoal(DelayedAttackGoal const&);
+    DelayedAttackGoal();
 
 public:
     // NOLINTBEGIN
@@ -41,7 +41,7 @@ public:
     virtual void _attemptMoveToTarget(class Actor&);
 
     // symbol: ??0DelayedAttackGoal@@QEAA@AEAVMob@@@Z
-    MCAPI DelayedAttackGoal(class Mob&);
+    MCAPI explicit DelayedAttackGoal(class Mob&);
 
     // symbol: ?isTargetInLineOfSightLegacy@DelayedAttackGoal@@SA_NAEBVMob@@AEBVActor@@@Z
     MCAPI static bool isTargetInLineOfSightLegacy(class Mob const&, class Actor const&);

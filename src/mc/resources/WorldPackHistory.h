@@ -10,7 +10,7 @@ namespace Json { class Value; }
 class WorldPackHistory {
 public:
     // prevent constructor by default
-    WorldPackHistory& operator=(WorldPackHistory const&) = delete;
+    WorldPackHistory& operator=(WorldPackHistory const&);
 
 public:
     // NOLINTBEGIN

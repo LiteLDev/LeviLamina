@@ -13,9 +13,9 @@
 class TryExitVehicleSystem {
 public:
     // prevent constructor by default
-    TryExitVehicleSystem& operator=(TryExitVehicleSystem const&) = delete;
-    TryExitVehicleSystem(TryExitVehicleSystem const&)            = delete;
-    TryExitVehicleSystem()                                       = delete;
+    TryExitVehicleSystem& operator=(TryExitVehicleSystem const&);
+    TryExitVehicleSystem(TryExitVehicleSystem const&);
+    TryExitVehicleSystem();
 
 public:
     // NOLINTBEGIN

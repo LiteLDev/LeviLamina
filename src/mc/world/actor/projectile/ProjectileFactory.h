@@ -10,14 +10,14 @@ namespace Json { class Value; }
 class ProjectileFactory {
 public:
     // prevent constructor by default
-    ProjectileFactory& operator=(ProjectileFactory const&) = delete;
-    ProjectileFactory(ProjectileFactory const&)            = delete;
-    ProjectileFactory()                                    = delete;
+    ProjectileFactory& operator=(ProjectileFactory const&);
+    ProjectileFactory(ProjectileFactory const&);
+    ProjectileFactory();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ProjectileFactory@@QEAA@AEAVLevel@@@Z
-    MCAPI ProjectileFactory(class Level&);
+    MCAPI explicit ProjectileFactory(class Level&);
 
     // symbol:
     // ?shootProjectileFromDefinition@ProjectileFactory@@QEAAPEAVActor@@AEBUActorDefinitionIdentifier@@PEAVMob@@VVec3@@HM@Z

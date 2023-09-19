@@ -7,9 +7,9 @@ namespace Bedrock {
 struct PlatformBuildInfo {
 public:
     // prevent constructor by default
-    PlatformBuildInfo& operator=(PlatformBuildInfo const&) = delete;
-    PlatformBuildInfo(PlatformBuildInfo const&)            = delete;
-    PlatformBuildInfo()                                    = delete;
+    PlatformBuildInfo& operator=(PlatformBuildInfo const&);
+    PlatformBuildInfo(PlatformBuildInfo const&);
+    PlatformBuildInfo();
 
 public:
     // NOLINTBEGIN

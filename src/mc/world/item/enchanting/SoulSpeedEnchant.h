@@ -13,9 +13,9 @@ namespace mce { class UUID; }
 class SoulSpeedEnchant : public ::Enchant {
 public:
     // prevent constructor by default
-    SoulSpeedEnchant& operator=(SoulSpeedEnchant const&) = delete;
-    SoulSpeedEnchant(SoulSpeedEnchant const&)            = delete;
-    SoulSpeedEnchant()                                   = delete;
+    SoulSpeedEnchant& operator=(SoulSpeedEnchant const&);
+    SoulSpeedEnchant(SoulSpeedEnchant const&);
+    SoulSpeedEnchant();
 
 public:
     // NOLINTBEGIN

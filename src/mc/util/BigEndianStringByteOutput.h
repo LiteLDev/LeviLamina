@@ -8,9 +8,9 @@
 class BigEndianStringByteOutput : public ::StringByteOutput {
 public:
     // prevent constructor by default
-    BigEndianStringByteOutput& operator=(BigEndianStringByteOutput const&) = delete;
-    BigEndianStringByteOutput(BigEndianStringByteOutput const&)            = delete;
-    BigEndianStringByteOutput()                                            = delete;
+    BigEndianStringByteOutput& operator=(BigEndianStringByteOutput const&);
+    BigEndianStringByteOutput(BigEndianStringByteOutput const&);
+    BigEndianStringByteOutput();
 
 public:
     // NOLINTBEGIN

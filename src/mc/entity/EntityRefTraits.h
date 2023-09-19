@@ -5,7 +5,7 @@
 struct EntityRefTraits {
 public:
     // prevent constructor by default
-    EntityRefTraits& operator=(EntityRefTraits const&) = delete;
-    EntityRefTraits(EntityRefTraits const&)            = delete;
-    EntityRefTraits()                                  = delete;
+    EntityRefTraits& operator=(EntityRefTraits const&);
+    EntityRefTraits(EntityRefTraits const&);
+    EntityRefTraits();
 };

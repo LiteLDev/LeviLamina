@@ -5,9 +5,9 @@
 class VibrationDataComponent {
 public:
     // prevent constructor by default
-    VibrationDataComponent& operator=(VibrationDataComponent const&) = delete;
-    VibrationDataComponent(VibrationDataComponent const&)            = delete;
-    VibrationDataComponent()                                         = delete;
+    VibrationDataComponent& operator=(VibrationDataComponent const&);
+    VibrationDataComponent(VibrationDataComponent const&);
+    VibrationDataComponent();
 
 public:
     // NOLINTBEGIN

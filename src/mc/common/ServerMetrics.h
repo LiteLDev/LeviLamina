@@ -5,9 +5,9 @@
 class ServerMetrics {
 public:
     // prevent constructor by default
-    ServerMetrics& operator=(ServerMetrics const&) = delete;
-    ServerMetrics(ServerMetrics const&)            = delete;
-    ServerMetrics()                                = delete;
+    ServerMetrics& operator=(ServerMetrics const&);
+    ServerMetrics(ServerMetrics const&);
+    ServerMetrics();
 
 public:
     // NOLINTBEGIN

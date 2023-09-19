@@ -12,9 +12,9 @@ public:
 
 public:
     // prevent constructor by default
-    ActionEvent& operator=(ActionEvent const&) = delete;
-    ActionEvent(ActionEvent const&)            = delete;
-    ActionEvent()                              = delete;
+    ActionEvent& operator=(ActionEvent const&);
+    ActionEvent(ActionEvent const&);
+    ActionEvent();
 
 public:
     // NOLINTBEGIN

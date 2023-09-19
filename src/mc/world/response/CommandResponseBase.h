@@ -5,9 +5,9 @@
 class CommandResponseBase {
 public:
     // prevent constructor by default
-    CommandResponseBase& operator=(CommandResponseBase const&) = delete;
-    CommandResponseBase(CommandResponseBase const&)            = delete;
-    CommandResponseBase()                                      = delete;
+    CommandResponseBase& operator=(CommandResponseBase const&);
+    CommandResponseBase(CommandResponseBase const&);
+    CommandResponseBase();
 
 public:
     // NOLINTBEGIN

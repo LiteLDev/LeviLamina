@@ -5,8 +5,8 @@
 class InventoryTransactionItemGroup {
 public:
     // prevent constructor by default
-    InventoryTransactionItemGroup(InventoryTransactionItemGroup const&) = delete;
-    InventoryTransactionItemGroup()                                     = delete;
+    InventoryTransactionItemGroup(InventoryTransactionItemGroup const&);
+    InventoryTransactionItemGroup();
 
 public:
     // NOLINTBEGIN

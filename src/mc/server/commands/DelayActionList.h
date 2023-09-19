@@ -8,8 +8,8 @@
 class DelayActionList {
 public:
     // prevent constructor by default
-    DelayActionList& operator=(DelayActionList const&) = delete;
-    DelayActionList(DelayActionList const&)            = delete;
+    DelayActionList& operator=(DelayActionList const&);
+    DelayActionList(DelayActionList const&);
 
 public:
     // NOLINTBEGIN

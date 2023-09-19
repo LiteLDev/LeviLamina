@@ -5,7 +5,7 @@
 class BoneAnimation {
 public:
     // prevent constructor by default
-    BoneAnimation& operator=(BoneAnimation const&) = delete;
-    BoneAnimation(BoneAnimation const&)            = delete;
-    BoneAnimation()                                = delete;
+    BoneAnimation& operator=(BoneAnimation const&);
+    BoneAnimation(BoneAnimation const&);
+    BoneAnimation();
 };

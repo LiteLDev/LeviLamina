@@ -8,9 +8,9 @@
 class MineshaftStart : public ::StructureStart {
 public:
     // prevent constructor by default
-    MineshaftStart& operator=(MineshaftStart const&) = delete;
-    MineshaftStart(MineshaftStart const&)            = delete;
-    MineshaftStart()                                 = delete;
+    MineshaftStart& operator=(MineshaftStart const&);
+    MineshaftStart(MineshaftStart const&);
+    MineshaftStart();
 
 public:
     // NOLINTBEGIN

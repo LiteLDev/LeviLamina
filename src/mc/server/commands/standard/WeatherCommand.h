@@ -8,9 +8,9 @@
 class WeatherCommand : public ::Command {
 public:
     // prevent constructor by default
-    WeatherCommand& operator=(WeatherCommand const&) = delete;
-    WeatherCommand(WeatherCommand const&)            = delete;
-    WeatherCommand()                                 = delete;
+    WeatherCommand& operator=(WeatherCommand const&);
+    WeatherCommand(WeatherCommand const&);
+    WeatherCommand();
 
 public:
     // NOLINTBEGIN

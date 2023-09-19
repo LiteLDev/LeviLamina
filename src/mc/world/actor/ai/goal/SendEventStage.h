@@ -5,9 +5,9 @@
 struct SendEventStage {
 public:
     // prevent constructor by default
-    SendEventStage& operator=(SendEventStage const&) = delete;
-    SendEventStage(SendEventStage const&)            = delete;
-    SendEventStage()                                 = delete;
+    SendEventStage& operator=(SendEventStage const&);
+    SendEventStage(SendEventStage const&);
+    SendEventStage();
 
 public:
     // NOLINTBEGIN

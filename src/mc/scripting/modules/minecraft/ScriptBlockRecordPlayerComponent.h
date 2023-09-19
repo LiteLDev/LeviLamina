@@ -18,9 +18,9 @@ namespace ScriptModuleMinecraft {
 class ScriptBlockRecordPlayerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
 public:
     // prevent constructor by default
-    ScriptBlockRecordPlayerComponent& operator=(ScriptBlockRecordPlayerComponent const&) = delete;
-    ScriptBlockRecordPlayerComponent(ScriptBlockRecordPlayerComponent const&)            = delete;
-    ScriptBlockRecordPlayerComponent()                                                   = delete;
+    ScriptBlockRecordPlayerComponent& operator=(ScriptBlockRecordPlayerComponent const&);
+    ScriptBlockRecordPlayerComponent(ScriptBlockRecordPlayerComponent const&);
+    ScriptBlockRecordPlayerComponent();
 
 public:
     // NOLINTBEGIN

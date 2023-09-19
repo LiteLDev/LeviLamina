@@ -10,9 +10,9 @@
 class InventoryContainerModel : public ::ContainerModel {
 public:
     // prevent constructor by default
-    InventoryContainerModel& operator=(InventoryContainerModel const&) = delete;
-    InventoryContainerModel(InventoryContainerModel const&)            = delete;
-    InventoryContainerModel()                                          = delete;
+    InventoryContainerModel& operator=(InventoryContainerModel const&);
+    InventoryContainerModel(InventoryContainerModel const&);
+    InventoryContainerModel();
 
 public:
     // NOLINTBEGIN

@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class SaplingBlockItem : public ::BlockItem {
 public:
     // prevent constructor by default
-    SaplingBlockItem& operator=(SaplingBlockItem const&) = delete;
-    SaplingBlockItem(SaplingBlockItem const&)            = delete;
-    SaplingBlockItem()                                   = delete;
+    SaplingBlockItem& operator=(SaplingBlockItem const&);
+    SaplingBlockItem(SaplingBlockItem const&);
+    SaplingBlockItem();
 
 public:
     // NOLINTBEGIN

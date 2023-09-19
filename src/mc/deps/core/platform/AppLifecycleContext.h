@@ -5,8 +5,8 @@
 class AppLifecycleContext {
 public:
     // prevent constructor by default
-    AppLifecycleContext& operator=(AppLifecycleContext const&) = delete;
-    AppLifecycleContext(AppLifecycleContext const&)            = delete;
+    AppLifecycleContext& operator=(AppLifecycleContext const&);
+    AppLifecycleContext(AppLifecycleContext const&);
 
 public:
     // NOLINTBEGIN

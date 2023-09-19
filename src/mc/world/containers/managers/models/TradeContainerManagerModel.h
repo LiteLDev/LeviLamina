@@ -10,9 +10,9 @@
 class TradeContainerManagerModel : public ::LevelContainerManagerModel {
 public:
     // prevent constructor by default
-    TradeContainerManagerModel& operator=(TradeContainerManagerModel const&) = delete;
-    TradeContainerManagerModel(TradeContainerManagerModel const&)            = delete;
-    TradeContainerManagerModel()                                             = delete;
+    TradeContainerManagerModel& operator=(TradeContainerManagerModel const&);
+    TradeContainerManagerModel(TradeContainerManagerModel const&);
+    TradeContainerManagerModel();
 
 public:
     // NOLINTBEGIN

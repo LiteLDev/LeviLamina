@@ -8,9 +8,9 @@
 class DwellerSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    DwellerSystem& operator=(DwellerSystem const&) = delete;
-    DwellerSystem(DwellerSystem const&)            = delete;
-    DwellerSystem()                                = delete;
+    DwellerSystem& operator=(DwellerSystem const&);
+    DwellerSystem(DwellerSystem const&);
+    DwellerSystem();
 
 public:
     // NOLINTBEGIN

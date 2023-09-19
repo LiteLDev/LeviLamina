@@ -15,9 +15,9 @@ namespace Crypto::Hash {
 class Hash {
 public:
     // prevent constructor by default
-    Hash& operator=(Hash const&) = delete;
-    Hash(Hash const&)            = delete;
-    Hash()                       = delete;
+    Hash& operator=(Hash const&);
+    Hash(Hash const&);
+    Hash();
 
 public:
     // NOLINTBEGIN
@@ -40,7 +40,7 @@ public:
     MCVAPI ~Hash();
 
     // symbol: ??0Hash@0Crypto@@QEAA@W4HashType@01@@Z
-    MCAPI Hash(::Crypto::Hash::HashType);
+    MCAPI explicit Hash(::Crypto::Hash::HashType);
 
     // symbol: ?final@Hash@1Crypto@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string final();

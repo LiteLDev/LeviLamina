@@ -12,9 +12,9 @@
 class BlockEventCoordinator {
 public:
     // prevent constructor by default
-    BlockEventCoordinator& operator=(BlockEventCoordinator const&) = delete;
-    BlockEventCoordinator(BlockEventCoordinator const&)            = delete;
-    BlockEventCoordinator()                                        = delete;
+    BlockEventCoordinator& operator=(BlockEventCoordinator const&);
+    BlockEventCoordinator(BlockEventCoordinator const&);
+    BlockEventCoordinator();
 
 public:
     // NOLINTBEGIN

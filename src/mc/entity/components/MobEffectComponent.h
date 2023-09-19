@@ -5,8 +5,8 @@
 class MobEffectComponent {
 public:
     // prevent constructor by default
-    MobEffectComponent& operator=(MobEffectComponent const&) = delete;
-    MobEffectComponent(MobEffectComponent const&)            = delete;
+    MobEffectComponent& operator=(MobEffectComponent const&);
+    MobEffectComponent(MobEffectComponent const&);
 
 public:
     // NOLINTBEGIN

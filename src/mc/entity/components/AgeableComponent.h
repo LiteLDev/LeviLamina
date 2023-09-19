@@ -5,9 +5,9 @@
 class AgeableComponent {
 public:
     // prevent constructor by default
-    AgeableComponent& operator=(AgeableComponent const&) = delete;
-    AgeableComponent(AgeableComponent const&)            = delete;
-    AgeableComponent()                                   = delete;
+    AgeableComponent& operator=(AgeableComponent const&);
+    AgeableComponent(AgeableComponent const&);
+    AgeableComponent();
 
 public:
     // NOLINTBEGIN

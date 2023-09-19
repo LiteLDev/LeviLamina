@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct PushThroughDefinition {
 public:
     // prevent constructor by default
-    PushThroughDefinition& operator=(PushThroughDefinition const&) = delete;
-    PushThroughDefinition(PushThroughDefinition const&)            = delete;
-    PushThroughDefinition()                                        = delete;
+    PushThroughDefinition& operator=(PushThroughDefinition const&);
+    PushThroughDefinition(PushThroughDefinition const&);
+    PushThroughDefinition();
 
 public:
     // NOLINTBEGIN

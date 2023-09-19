@@ -8,9 +8,9 @@
 class StructurePoolBlockPredicateAlwaysTrueExcept : public ::IStructurePoolBlockPredicate {
 public:
     // prevent constructor by default
-    StructurePoolBlockPredicateAlwaysTrueExcept& operator=(StructurePoolBlockPredicateAlwaysTrueExcept const&) = delete;
-    StructurePoolBlockPredicateAlwaysTrueExcept(StructurePoolBlockPredicateAlwaysTrueExcept const&)            = delete;
-    StructurePoolBlockPredicateAlwaysTrueExcept()                                                              = delete;
+    StructurePoolBlockPredicateAlwaysTrueExcept& operator=(StructurePoolBlockPredicateAlwaysTrueExcept const&);
+    StructurePoolBlockPredicateAlwaysTrueExcept(StructurePoolBlockPredicateAlwaysTrueExcept const&);
+    StructurePoolBlockPredicateAlwaysTrueExcept();
 
 public:
     // NOLINTBEGIN

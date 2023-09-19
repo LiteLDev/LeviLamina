@@ -8,9 +8,9 @@
 class Material {
 public:
     // prevent constructor by default
-    Material& operator=(Material const&) = delete;
-    Material(Material const&)            = delete;
-    Material()                           = delete;
+    Material& operator=(Material const&);
+    Material(Material const&);
+    Material();
 
 public:
     // NOLINTBEGIN

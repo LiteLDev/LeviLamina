@@ -10,9 +10,9 @@
 class EnderChestBlockActor : public ::ChestBlockActor {
 public:
     // prevent constructor by default
-    EnderChestBlockActor& operator=(EnderChestBlockActor const&) = delete;
-    EnderChestBlockActor(EnderChestBlockActor const&)            = delete;
-    EnderChestBlockActor()                                       = delete;
+    EnderChestBlockActor& operator=(EnderChestBlockActor const&);
+    EnderChestBlockActor(EnderChestBlockActor const&);
+    EnderChestBlockActor();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 struct ServerNetworkGameplayNotificationEvent {
 public:
     // prevent constructor by default
-    ServerNetworkGameplayNotificationEvent& operator=(ServerNetworkGameplayNotificationEvent const&) = delete;
-    ServerNetworkGameplayNotificationEvent(ServerNetworkGameplayNotificationEvent const&)            = delete;
-    ServerNetworkGameplayNotificationEvent()                                                         = delete;
+    ServerNetworkGameplayNotificationEvent& operator=(ServerNetworkGameplayNotificationEvent const&);
+    ServerNetworkGameplayNotificationEvent(ServerNetworkGameplayNotificationEvent const&);
+    ServerNetworkGameplayNotificationEvent();
 
 public:
     // NOLINTBEGIN

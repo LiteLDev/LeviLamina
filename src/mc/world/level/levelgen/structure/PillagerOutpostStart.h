@@ -8,9 +8,9 @@
 class PillagerOutpostStart : public ::StructureStart {
 public:
     // prevent constructor by default
-    PillagerOutpostStart& operator=(PillagerOutpostStart const&) = delete;
-    PillagerOutpostStart(PillagerOutpostStart const&)            = delete;
-    PillagerOutpostStart()                                       = delete;
+    PillagerOutpostStart& operator=(PillagerOutpostStart const&);
+    PillagerOutpostStart(PillagerOutpostStart const&);
+    PillagerOutpostStart();
 
 public:
     // NOLINTBEGIN

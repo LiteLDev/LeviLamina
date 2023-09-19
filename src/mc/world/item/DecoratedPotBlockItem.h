@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class DecoratedPotBlockItem : public ::BlockItem {
 public:
     // prevent constructor by default
-    DecoratedPotBlockItem& operator=(DecoratedPotBlockItem const&) = delete;
-    DecoratedPotBlockItem(DecoratedPotBlockItem const&)            = delete;
-    DecoratedPotBlockItem()                                        = delete;
+    DecoratedPotBlockItem& operator=(DecoratedPotBlockItem const&);
+    DecoratedPotBlockItem(DecoratedPotBlockItem const&);
+    DecoratedPotBlockItem();
 
 public:
     // NOLINTBEGIN

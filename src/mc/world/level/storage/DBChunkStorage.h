@@ -14,9 +14,9 @@
 class DBChunkStorage : public ::ChunkSource {
 public:
     // prevent constructor by default
-    DBChunkStorage& operator=(DBChunkStorage const&) = delete;
-    DBChunkStorage(DBChunkStorage const&)            = delete;
-    DBChunkStorage()                                 = delete;
+    DBChunkStorage& operator=(DBChunkStorage const&);
+    DBChunkStorage(DBChunkStorage const&);
+    DBChunkStorage();
 
 public:
     // NOLINTBEGIN

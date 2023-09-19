@@ -5,9 +5,9 @@
 class MovementInterpolatorSystemImpl {
 public:
     // prevent constructor by default
-    MovementInterpolatorSystemImpl& operator=(MovementInterpolatorSystemImpl const&) = delete;
-    MovementInterpolatorSystemImpl(MovementInterpolatorSystemImpl const&)            = delete;
-    MovementInterpolatorSystemImpl()                                                 = delete;
+    MovementInterpolatorSystemImpl& operator=(MovementInterpolatorSystemImpl const&);
+    MovementInterpolatorSystemImpl(MovementInterpolatorSystemImpl const&);
+    MovementInterpolatorSystemImpl();
 
 public:
     // NOLINTBEGIN

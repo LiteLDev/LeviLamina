@@ -10,8 +10,8 @@
 class PlaySoundPacket : public ::Packet {
 public:
     // prevent constructor by default
-    PlaySoundPacket& operator=(PlaySoundPacket const&) = delete;
-    PlaySoundPacket(PlaySoundPacket const&)            = delete;
+    PlaySoundPacket& operator=(PlaySoundPacket const&);
+    PlaySoundPacket(PlaySoundPacket const&);
 
 public:
     // NOLINTBEGIN

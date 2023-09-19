@@ -9,9 +9,9 @@
 class DragonBaseGoal : public ::Goal {
 public:
     // prevent constructor by default
-    DragonBaseGoal& operator=(DragonBaseGoal const&) = delete;
-    DragonBaseGoal(DragonBaseGoal const&)            = delete;
-    DragonBaseGoal()                                 = delete;
+    DragonBaseGoal& operator=(DragonBaseGoal const&);
+    DragonBaseGoal(DragonBaseGoal const&);
+    DragonBaseGoal();
 
 public:
     // NOLINTBEGIN
@@ -22,7 +22,7 @@ public:
     MCVAPI ~DragonBaseGoal();
 
     // symbol: ??0DragonBaseGoal@@QEAA@AEAVMob@@@Z
-    MCAPI DragonBaseGoal(class Mob&);
+    MCAPI explicit DragonBaseGoal(class Mob&);
 
     // NOLINTEND
 };

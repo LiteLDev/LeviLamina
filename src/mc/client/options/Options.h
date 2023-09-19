@@ -5,7 +5,7 @@
 class Options {
 public:
     // prevent constructor by default
-    Options& operator=(Options const&) = delete;
-    Options(Options const&)            = delete;
-    Options()                          = delete;
+    Options& operator=(Options const&);
+    Options(Options const&);
+    Options();
 };

@@ -15,9 +15,9 @@ namespace OperationNodeFilters {
 class PromoteCenter {
 public:
     // prevent constructor by default
-    PromoteCenter& operator=(PromoteCenter const&) = delete;
-    PromoteCenter(PromoteCenter const&)            = delete;
-    PromoteCenter()                                = delete;
+    PromoteCenter& operator=(PromoteCenter const&);
+    PromoteCenter(PromoteCenter const&);
+    PromoteCenter();
 
 public:
     // NOLINTBEGIN

@@ -17,9 +17,9 @@ namespace mce { class UUID; }
 class ScriptGameTestModuleFactory {
 public:
     // prevent constructor by default
-    ScriptGameTestModuleFactory& operator=(ScriptGameTestModuleFactory const&) = delete;
-    ScriptGameTestModuleFactory(ScriptGameTestModuleFactory const&)            = delete;
-    ScriptGameTestModuleFactory()                                              = delete;
+    ScriptGameTestModuleFactory& operator=(ScriptGameTestModuleFactory const&);
+    ScriptGameTestModuleFactory(ScriptGameTestModuleFactory const&);
+    ScriptGameTestModuleFactory();
 
 public:
     // NOLINTBEGIN
@@ -51,7 +51,7 @@ public:
     createModuleBinding(struct Scripting::Version, std::optional<struct Scripting::ContextConfig> const&);
 
     // symbol: ??0ScriptGameTestModuleFactory@@QEAA@AEAVGameTestRegistry@gametest@@@Z
-    MCAPI ScriptGameTestModuleFactory(class gametest::GameTestRegistry&);
+    MCAPI explicit ScriptGameTestModuleFactory(class gametest::GameTestRegistry&);
 
     // symbol:
     // ?getModuleUUIDAsString@ScriptGameTestModuleFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

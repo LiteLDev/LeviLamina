@@ -6,7 +6,7 @@ template <int T0>
 class DividedPos {
 public:
     // prevent constructor by default
-    DividedPos& operator=(DividedPos const&) = delete;
-    DividedPos(DividedPos const&)            = delete;
-    DividedPos()                             = delete;
+    DividedPos& operator=(DividedPos const&);
+    DividedPos(DividedPos const&);
+    DividedPos();
 };

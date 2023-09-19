@@ -8,9 +8,9 @@
 class TrailSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    TrailSystem& operator=(TrailSystem const&) = delete;
-    TrailSystem(TrailSystem const&)            = delete;
-    TrailSystem()                              = delete;
+    TrailSystem& operator=(TrailSystem const&);
+    TrailSystem(TrailSystem const&);
+    TrailSystem();
 
 public:
     // NOLINTBEGIN

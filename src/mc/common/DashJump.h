@@ -5,7 +5,7 @@
 struct DashJump {
 public:
     // prevent constructor by default
-    DashJump& operator=(DashJump const&) = delete;
-    DashJump(DashJump const&)            = delete;
-    DashJump()                           = delete;
+    DashJump& operator=(DashJump const&);
+    DashJump(DashJump const&);
+    DashJump();
 };

@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class MoveToDefinition : public ::BehaviorDefinition {
 public:
     // prevent constructor by default
-    MoveToDefinition& operator=(MoveToDefinition const&) = delete;
-    MoveToDefinition(MoveToDefinition const&)            = delete;
-    MoveToDefinition()                                   = delete;
+    MoveToDefinition& operator=(MoveToDefinition const&);
+    MoveToDefinition(MoveToDefinition const&);
+    MoveToDefinition();
 
 public:
     // NOLINTBEGIN

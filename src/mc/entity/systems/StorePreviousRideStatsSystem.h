@@ -10,9 +10,9 @@
 class StorePreviousRideStatsSystem {
 public:
     // prevent constructor by default
-    StorePreviousRideStatsSystem& operator=(StorePreviousRideStatsSystem const&) = delete;
-    StorePreviousRideStatsSystem(StorePreviousRideStatsSystem const&)            = delete;
-    StorePreviousRideStatsSystem()                                               = delete;
+    StorePreviousRideStatsSystem& operator=(StorePreviousRideStatsSystem const&);
+    StorePreviousRideStatsSystem(StorePreviousRideStatsSystem const&);
+    StorePreviousRideStatsSystem();
 
 public:
     // NOLINTBEGIN

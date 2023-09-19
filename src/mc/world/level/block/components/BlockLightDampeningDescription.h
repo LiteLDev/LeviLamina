@@ -14,9 +14,9 @@ namespace JsonUtil { class EmptyClass; }
 struct BlockLightDampeningDescription : public ::BlockComponentDescription {
 public:
     // prevent constructor by default
-    BlockLightDampeningDescription& operator=(BlockLightDampeningDescription const&) = delete;
-    BlockLightDampeningDescription(BlockLightDampeningDescription const&)            = delete;
-    BlockLightDampeningDescription()                                                 = delete;
+    BlockLightDampeningDescription& operator=(BlockLightDampeningDescription const&);
+    BlockLightDampeningDescription(BlockLightDampeningDescription const&);
+    BlockLightDampeningDescription();
 
 public:
     // NOLINTBEGIN

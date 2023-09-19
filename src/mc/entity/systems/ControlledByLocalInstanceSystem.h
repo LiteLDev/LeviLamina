@@ -13,16 +13,16 @@ public:
     struct Config {
     public:
         // prevent constructor by default
-        Config& operator=(Config const&) = delete;
-        Config(Config const&)            = delete;
-        Config()                         = delete;
+        Config& operator=(Config const&);
+        Config(Config const&);
+        Config();
     };
 
 public:
     // prevent constructor by default
-    ControlledByLocalInstanceSystem& operator=(ControlledByLocalInstanceSystem const&) = delete;
-    ControlledByLocalInstanceSystem(ControlledByLocalInstanceSystem const&)            = delete;
-    ControlledByLocalInstanceSystem()                                                  = delete;
+    ControlledByLocalInstanceSystem& operator=(ControlledByLocalInstanceSystem const&);
+    ControlledByLocalInstanceSystem(ControlledByLocalInstanceSystem const&);
+    ControlledByLocalInstanceSystem();
 
 public:
     // NOLINTBEGIN

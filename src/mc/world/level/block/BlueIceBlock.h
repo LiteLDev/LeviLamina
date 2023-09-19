@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class BlueIceBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    BlueIceBlock& operator=(BlueIceBlock const&) = delete;
-    BlueIceBlock(BlueIceBlock const&)            = delete;
-    BlueIceBlock()                               = delete;
+    BlueIceBlock& operator=(BlueIceBlock const&);
+    BlueIceBlock(BlueIceBlock const&);
+    BlueIceBlock();
 
 public:
     // NOLINTBEGIN

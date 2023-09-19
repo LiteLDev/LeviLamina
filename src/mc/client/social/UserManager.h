@@ -7,9 +7,9 @@ namespace Social {
 class UserManager {
 public:
     // prevent constructor by default
-    UserManager& operator=(UserManager const&) = delete;
-    UserManager(UserManager const&)            = delete;
-    UserManager()                              = delete;
+    UserManager& operator=(UserManager const&);
+    UserManager(UserManager const&);
+    UserManager();
 };
 
 }; // namespace Social

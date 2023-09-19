@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class BarterDefinition {
 public:
     // prevent constructor by default
-    BarterDefinition& operator=(BarterDefinition const&) = delete;
-    BarterDefinition(BarterDefinition const&)            = delete;
-    BarterDefinition()                                   = delete;
+    BarterDefinition& operator=(BarterDefinition const&);
+    BarterDefinition(BarterDefinition const&);
+    BarterDefinition();
 
 public:
     // NOLINTBEGIN

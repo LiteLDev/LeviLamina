@@ -7,9 +7,9 @@ namespace Util {
 class XXHash {
 public:
     // prevent constructor by default
-    XXHash& operator=(XXHash const&) = delete;
-    XXHash(XXHash const&)            = delete;
-    XXHash()                         = delete;
+    XXHash& operator=(XXHash const&);
+    XXHash(XXHash const&);
+    XXHash();
 
     // private:
     // NOLINTBEGIN

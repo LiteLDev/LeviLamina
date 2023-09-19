@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class SpecificEnchantFunction : public ::LootItemFunction {
 public:
     // prevent constructor by default
-    SpecificEnchantFunction& operator=(SpecificEnchantFunction const&) = delete;
-    SpecificEnchantFunction(SpecificEnchantFunction const&)            = delete;
-    SpecificEnchantFunction()                                          = delete;
+    SpecificEnchantFunction& operator=(SpecificEnchantFunction const&);
+    SpecificEnchantFunction(SpecificEnchantFunction const&);
+    SpecificEnchantFunction();
 
 public:
     // NOLINTBEGIN

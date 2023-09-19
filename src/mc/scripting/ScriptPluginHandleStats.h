@@ -5,8 +5,8 @@
 struct ScriptPluginHandleStats {
 public:
     // prevent constructor by default
-    ScriptPluginHandleStats(ScriptPluginHandleStats const&) = delete;
-    ScriptPluginHandleStats()                               = delete;
+    ScriptPluginHandleStats(ScriptPluginHandleStats const&);
+    ScriptPluginHandleStats();
 
 public:
     // NOLINTBEGIN

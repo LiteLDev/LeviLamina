@@ -10,9 +10,9 @@
 class MobSetPreviousRotSystem {
 public:
     // prevent constructor by default
-    MobSetPreviousRotSystem& operator=(MobSetPreviousRotSystem const&) = delete;
-    MobSetPreviousRotSystem(MobSetPreviousRotSystem const&)            = delete;
-    MobSetPreviousRotSystem()                                          = delete;
+    MobSetPreviousRotSystem& operator=(MobSetPreviousRotSystem const&);
+    MobSetPreviousRotSystem(MobSetPreviousRotSystem const&);
+    MobSetPreviousRotSystem();
 
 public:
     // NOLINTBEGIN

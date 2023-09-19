@@ -5,9 +5,9 @@
 class CurrentSwimAmountSystem {
 public:
     // prevent constructor by default
-    CurrentSwimAmountSystem& operator=(CurrentSwimAmountSystem const&) = delete;
-    CurrentSwimAmountSystem(CurrentSwimAmountSystem const&)            = delete;
-    CurrentSwimAmountSystem()                                          = delete;
+    CurrentSwimAmountSystem& operator=(CurrentSwimAmountSystem const&);
+    CurrentSwimAmountSystem(CurrentSwimAmountSystem const&);
+    CurrentSwimAmountSystem();
 
 public:
     // NOLINTBEGIN

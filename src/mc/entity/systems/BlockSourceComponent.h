@@ -10,14 +10,14 @@
 class BlockSourceComponent {
 public:
     // prevent constructor by default
-    BlockSourceComponent& operator=(BlockSourceComponent const&) = delete;
-    BlockSourceComponent(BlockSourceComponent const&)            = delete;
-    BlockSourceComponent()                                       = delete;
+    BlockSourceComponent& operator=(BlockSourceComponent const&);
+    BlockSourceComponent(BlockSourceComponent const&);
+    BlockSourceComponent();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0BlockSourceComponent@@QEAA@V?$WeakRefT@U?$SharePtrRefTraits@VBlockSource@@@@@@@Z
-    MCAPI BlockSourceComponent(class WeakRefT<struct SharePtrRefTraits<class BlockSource>>);
+    MCAPI explicit BlockSourceComponent(class WeakRefT<struct SharePtrRefTraits<class BlockSource>>);
 
     // symbol:
     // ?tryGetBlockSource@BlockSourceComponent@@QEBA?AV?$StackRefResultT@U?$SharePtrRefTraits@VBlockSource@@@@@@XZ

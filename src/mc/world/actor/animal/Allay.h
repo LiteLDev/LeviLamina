@@ -26,9 +26,9 @@
 class Allay : public ::Mob {
 public:
     // prevent constructor by default
-    Allay& operator=(Allay const&) = delete;
-    Allay(Allay const&)            = delete;
-    Allay()                        = delete;
+    Allay& operator=(Allay const&);
+    Allay(Allay const&);
+    Allay();
 
 public:
     // NOLINTBEGIN

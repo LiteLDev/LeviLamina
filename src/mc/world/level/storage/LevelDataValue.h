@@ -13,8 +13,8 @@ public:
     struct Tag {
     public:
         // prevent constructor by default
-        Tag& operator=(Tag const&) = delete;
-        Tag(Tag const&)            = delete;
+        Tag& operator=(Tag const&);
+        Tag(Tag const&);
 
     public:
         // NOLINTBEGIN
@@ -25,7 +25,7 @@ public:
         MCAPI Tag(struct LevelDataValue::Tag&&);
 
         // symbol: ??0Tag@LevelDataValue@@QEAA@$$QEAVCompoundTag@@@Z
-        MCAPI Tag(class CompoundTag&&);
+        MCAPI explicit Tag(class CompoundTag&&);
 
         // symbol: ??4Tag@LevelDataValue@@QEAAAEAU01@$$QEAU01@@Z
         MCAPI struct LevelDataValue::Tag& operator=(struct LevelDataValue::Tag&&);
@@ -38,9 +38,9 @@ public:
 
 public:
     // prevent constructor by default
-    LevelDataValue& operator=(LevelDataValue const&) = delete;
-    LevelDataValue(LevelDataValue const&)            = delete;
-    LevelDataValue()                                 = delete;
+    LevelDataValue& operator=(LevelDataValue const&);
+    LevelDataValue(LevelDataValue const&);
+    LevelDataValue();
 
 public:
     // NOLINTBEGIN

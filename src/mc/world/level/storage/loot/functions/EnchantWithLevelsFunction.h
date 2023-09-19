@@ -8,9 +8,9 @@
 class EnchantWithLevelsFunction : public ::LootItemFunction {
 public:
     // prevent constructor by default
-    EnchantWithLevelsFunction& operator=(EnchantWithLevelsFunction const&) = delete;
-    EnchantWithLevelsFunction(EnchantWithLevelsFunction const&)            = delete;
-    EnchantWithLevelsFunction()                                            = delete;
+    EnchantWithLevelsFunction& operator=(EnchantWithLevelsFunction const&);
+    EnchantWithLevelsFunction(EnchantWithLevelsFunction const&);
+    EnchantWithLevelsFunction();
 
 public:
     // NOLINTBEGIN

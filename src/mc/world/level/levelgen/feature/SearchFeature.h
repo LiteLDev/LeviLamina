@@ -8,9 +8,9 @@
 class SearchFeature : public ::IFeature {
 public:
     // prevent constructor by default
-    SearchFeature& operator=(SearchFeature const&) = delete;
-    SearchFeature(SearchFeature const&)            = delete;
-    SearchFeature()                                = delete;
+    SearchFeature& operator=(SearchFeature const&);
+    SearchFeature(SearchFeature const&);
+    SearchFeature();
 
 public:
     // NOLINTBEGIN

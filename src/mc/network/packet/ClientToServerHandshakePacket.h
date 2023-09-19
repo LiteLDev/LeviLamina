@@ -10,8 +10,8 @@
 class ClientToServerHandshakePacket : public ::Packet {
 public:
     // prevent constructor by default
-    ClientToServerHandshakePacket& operator=(ClientToServerHandshakePacket const&) = delete;
-    ClientToServerHandshakePacket(ClientToServerHandshakePacket const&)            = delete;
+    ClientToServerHandshakePacket& operator=(ClientToServerHandshakePacket const&);
+    ClientToServerHandshakePacket(ClientToServerHandshakePacket const&);
 
 public:
     // NOLINTBEGIN

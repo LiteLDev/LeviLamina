@@ -8,9 +8,9 @@
 class EnchantRandomlyFunction : public ::LootItemFunction {
 public:
     // prevent constructor by default
-    EnchantRandomlyFunction& operator=(EnchantRandomlyFunction const&) = delete;
-    EnchantRandomlyFunction(EnchantRandomlyFunction const&)            = delete;
-    EnchantRandomlyFunction()                                          = delete;
+    EnchantRandomlyFunction& operator=(EnchantRandomlyFunction const&);
+    EnchantRandomlyFunction(EnchantRandomlyFunction const&);
+    EnchantRandomlyFunction();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 struct ClipParameters {
 public:
     // prevent constructor by default
-    ClipParameters& operator=(ClipParameters const&) = delete;
-    ClipParameters(ClipParameters const&)            = delete;
-    ClipParameters()                                 = delete;
+    ClipParameters& operator=(ClipParameters const&);
+    ClipParameters(ClipParameters const&);
+    ClipParameters();
 
 public:
     // NOLINTBEGIN

@@ -52,8 +52,8 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptDimension& operator=(ScriptDimension const&) = delete;
-    ScriptDimension()                                  = delete;
+    ScriptDimension& operator=(ScriptDimension const&);
+    ScriptDimension();
 
 public:
     // NOLINTBEGIN

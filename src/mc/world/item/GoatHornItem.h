@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class GoatHornItem : public ::Item {
 public:
     // prevent constructor by default
-    GoatHornItem& operator=(GoatHornItem const&) = delete;
-    GoatHornItem(GoatHornItem const&)            = delete;
-    GoatHornItem()                               = delete;
+    GoatHornItem& operator=(GoatHornItem const&);
+    GoatHornItem(GoatHornItem const&);
+    GoatHornItem();
 
 public:
     // NOLINTBEGIN

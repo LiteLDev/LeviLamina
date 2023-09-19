@@ -8,9 +8,9 @@ template <typename T0, typename T1>
 class JsonSchemaObjectNode {
 public:
     // prevent constructor by default
-    JsonSchemaObjectNode& operator=(JsonSchemaObjectNode const&) = delete;
-    JsonSchemaObjectNode(JsonSchemaObjectNode const&)            = delete;
-    JsonSchemaObjectNode()                                       = delete;
+    JsonSchemaObjectNode& operator=(JsonSchemaObjectNode const&);
+    JsonSchemaObjectNode(JsonSchemaObjectNode const&);
+    JsonSchemaObjectNode();
 };
 
 }; // namespace JsonUtil

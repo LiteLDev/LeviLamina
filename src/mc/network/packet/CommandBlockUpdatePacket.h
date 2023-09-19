@@ -10,7 +10,7 @@
 class CommandBlockUpdatePacket : public ::Packet {
 public:
     // prevent constructor by default
-    CommandBlockUpdatePacket& operator=(CommandBlockUpdatePacket const&) = delete;
+    CommandBlockUpdatePacket& operator=(CommandBlockUpdatePacket const&);
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 struct PersonaAnimationDefinition {
 public:
     // prevent constructor by default
-    PersonaAnimationDefinition& operator=(PersonaAnimationDefinition const&) = delete;
-    PersonaAnimationDefinition(PersonaAnimationDefinition const&)            = delete;
-    PersonaAnimationDefinition()                                             = delete;
+    PersonaAnimationDefinition& operator=(PersonaAnimationDefinition const&);
+    PersonaAnimationDefinition(PersonaAnimationDefinition const&);
+    PersonaAnimationDefinition();
 
 public:
     // NOLINTBEGIN

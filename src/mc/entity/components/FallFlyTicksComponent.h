@@ -5,7 +5,7 @@
 struct FallFlyTicksComponent {
 public:
     // prevent constructor by default
-    FallFlyTicksComponent& operator=(FallFlyTicksComponent const&) = delete;
-    FallFlyTicksComponent(FallFlyTicksComponent const&)            = delete;
-    FallFlyTicksComponent()                                        = delete;
+    FallFlyTicksComponent& operator=(FallFlyTicksComponent const&);
+    FallFlyTicksComponent(FallFlyTicksComponent const&);
+    FallFlyTicksComponent();
 };

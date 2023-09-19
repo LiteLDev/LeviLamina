@@ -5,9 +5,9 @@
 class ActorDataSyncSystem {
 public:
     // prevent constructor by default
-    ActorDataSyncSystem& operator=(ActorDataSyncSystem const&) = delete;
-    ActorDataSyncSystem(ActorDataSyncSystem const&)            = delete;
-    ActorDataSyncSystem()                                      = delete;
+    ActorDataSyncSystem& operator=(ActorDataSyncSystem const&);
+    ActorDataSyncSystem(ActorDataSyncSystem const&);
+    ActorDataSyncSystem();
 
 public:
     // NOLINTBEGIN

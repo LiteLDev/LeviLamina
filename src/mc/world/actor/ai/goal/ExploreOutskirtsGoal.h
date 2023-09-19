@@ -9,9 +9,9 @@
 class ExploreOutskirtsGoal : public ::Goal {
 public:
     // prevent constructor by default
-    ExploreOutskirtsGoal& operator=(ExploreOutskirtsGoal const&) = delete;
-    ExploreOutskirtsGoal(ExploreOutskirtsGoal const&)            = delete;
-    ExploreOutskirtsGoal()                                       = delete;
+    ExploreOutskirtsGoal& operator=(ExploreOutskirtsGoal const&);
+    ExploreOutskirtsGoal(ExploreOutskirtsGoal const&);
+    ExploreOutskirtsGoal();
 
 public:
     // NOLINTBEGIN
@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0ExploreOutskirtsGoal@@QEAA@AEAVMob@@@Z
-    MCAPI ExploreOutskirtsGoal(class Mob&);
+    MCAPI explicit ExploreOutskirtsGoal(class Mob&);
 
     // NOLINTEND
 };

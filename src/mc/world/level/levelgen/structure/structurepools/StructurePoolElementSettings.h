@@ -5,7 +5,7 @@
 struct StructurePoolElementSettings {
 public:
     // prevent constructor by default
-    StructurePoolElementSettings& operator=(StructurePoolElementSettings const&) = delete;
-    StructurePoolElementSettings(StructurePoolElementSettings const&)            = delete;
-    StructurePoolElementSettings()                                               = delete;
+    StructurePoolElementSettings& operator=(StructurePoolElementSettings const&);
+    StructurePoolElementSettings(StructurePoolElementSettings const&);
+    StructurePoolElementSettings();
 };

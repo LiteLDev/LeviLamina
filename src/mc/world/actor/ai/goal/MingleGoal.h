@@ -10,9 +10,9 @@
 class MingleGoal : public ::MoveToPOIGoal {
 public:
     // prevent constructor by default
-    MingleGoal& operator=(MingleGoal const&) = delete;
-    MingleGoal(MingleGoal const&)            = delete;
-    MingleGoal()                             = delete;
+    MingleGoal& operator=(MingleGoal const&);
+    MingleGoal(MingleGoal const&);
+    MingleGoal();
 
 public:
     // NOLINTBEGIN

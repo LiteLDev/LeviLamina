@@ -7,9 +7,9 @@ namespace cg {
 class ImageBuffer {
 public:
     // prevent constructor by default
-    ImageBuffer& operator=(ImageBuffer const&) = delete;
-    ImageBuffer(ImageBuffer const&)            = delete;
-    ImageBuffer()                              = delete;
+    ImageBuffer& operator=(ImageBuffer const&);
+    ImageBuffer(ImageBuffer const&);
+    ImageBuffer();
 };
 
 }; // namespace cg

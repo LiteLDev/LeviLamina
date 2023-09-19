@@ -8,9 +8,9 @@
 class LegacyIceFeature : public ::Feature {
 public:
     // prevent constructor by default
-    LegacyIceFeature& operator=(LegacyIceFeature const&) = delete;
-    LegacyIceFeature(LegacyIceFeature const&)            = delete;
-    LegacyIceFeature()                                   = delete;
+    LegacyIceFeature& operator=(LegacyIceFeature const&);
+    LegacyIceFeature(LegacyIceFeature const&);
+    LegacyIceFeature();
 
 public:
     // NOLINTBEGIN
@@ -21,7 +21,7 @@ public:
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
     // symbol: ??0LegacyIceFeature@@QEAA@AEBVFeatureRegistry@@@Z
-    MCAPI LegacyIceFeature(class FeatureRegistry const&);
+    MCAPI explicit LegacyIceFeature(class FeatureRegistry const&);
 
     // NOLINTEND
 };

@@ -8,9 +8,9 @@
 class _ProfilerLiteTimer {
 public:
     // prevent constructor by default
-    _ProfilerLiteTimer& operator=(_ProfilerLiteTimer const&) = delete;
-    _ProfilerLiteTimer(_ProfilerLiteTimer const&)            = delete;
-    _ProfilerLiteTimer()                                     = delete;
+    _ProfilerLiteTimer& operator=(_ProfilerLiteTimer const&);
+    _ProfilerLiteTimer(_ProfilerLiteTimer const&);
+    _ProfilerLiteTimer();
 
 public:
     // NOLINTBEGIN

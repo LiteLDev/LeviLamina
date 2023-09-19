@@ -11,8 +11,8 @@
 class UpdateSoftEnumPacket : public ::Packet {
 public:
     // prevent constructor by default
-    UpdateSoftEnumPacket& operator=(UpdateSoftEnumPacket const&) = delete;
-    UpdateSoftEnumPacket(UpdateSoftEnumPacket const&)            = delete;
+    UpdateSoftEnumPacket& operator=(UpdateSoftEnumPacket const&);
+    UpdateSoftEnumPacket(UpdateSoftEnumPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -5,8 +5,8 @@
 class EntitySensorComponent {
 public:
     // prevent constructor by default
-    EntitySensorComponent& operator=(EntitySensorComponent const&) = delete;
-    EntitySensorComponent(EntitySensorComponent const&)            = delete;
+    EntitySensorComponent& operator=(EntitySensorComponent const&);
+    EntitySensorComponent(EntitySensorComponent const&);
 
 public:
     // NOLINTBEGIN

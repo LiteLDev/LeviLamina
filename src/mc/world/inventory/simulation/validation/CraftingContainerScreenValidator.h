@@ -9,8 +9,8 @@
 class CraftingContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // prevent constructor by default
-    CraftingContainerScreenValidator& operator=(CraftingContainerScreenValidator const&) = delete;
-    CraftingContainerScreenValidator(CraftingContainerScreenValidator const&)            = delete;
+    CraftingContainerScreenValidator& operator=(CraftingContainerScreenValidator const&);
+    CraftingContainerScreenValidator(CraftingContainerScreenValidator const&);
 
 public:
     // NOLINTBEGIN

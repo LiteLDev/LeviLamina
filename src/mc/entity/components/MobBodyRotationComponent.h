@@ -5,7 +5,7 @@
 struct MobBodyRotationComponent {
 public:
     // prevent constructor by default
-    MobBodyRotationComponent& operator=(MobBodyRotationComponent const&) = delete;
-    MobBodyRotationComponent(MobBodyRotationComponent const&)            = delete;
-    MobBodyRotationComponent()                                           = delete;
+    MobBodyRotationComponent& operator=(MobBodyRotationComponent const&);
+    MobBodyRotationComponent(MobBodyRotationComponent const&);
+    MobBodyRotationComponent();
 };

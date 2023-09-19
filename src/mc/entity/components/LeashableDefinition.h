@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class LeashableDefinition {
 public:
     // prevent constructor by default
-    LeashableDefinition& operator=(LeashableDefinition const&) = delete;
-    LeashableDefinition(LeashableDefinition const&)            = delete;
+    LeashableDefinition& operator=(LeashableDefinition const&);
+    LeashableDefinition(LeashableDefinition const&);
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class PathBlockSource : public ::IPathBlockSource {
 public:
     // prevent constructor by default
-    PathBlockSource& operator=(PathBlockSource const&) = delete;
-    PathBlockSource(PathBlockSource const&)            = delete;
-    PathBlockSource()                                  = delete;
+    PathBlockSource& operator=(PathBlockSource const&);
+    PathBlockSource(PathBlockSource const&);
+    PathBlockSource();
 
 public:
     // NOLINTBEGIN

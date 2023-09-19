@@ -8,9 +8,9 @@
 class ProjectileSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    ProjectileSystem& operator=(ProjectileSystem const&) = delete;
-    ProjectileSystem(ProjectileSystem const&)            = delete;
-    ProjectileSystem()                                   = delete;
+    ProjectileSystem& operator=(ProjectileSystem const&);
+    ProjectileSystem(ProjectileSystem const&);
+    ProjectileSystem();
 
 public:
     // NOLINTBEGIN

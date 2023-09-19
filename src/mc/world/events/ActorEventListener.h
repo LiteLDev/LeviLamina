@@ -11,9 +11,9 @@
 class ActorEventListener {
 public:
     // prevent constructor by default
-    ActorEventListener& operator=(ActorEventListener const&) = delete;
-    ActorEventListener(ActorEventListener const&)            = delete;
-    ActorEventListener()                                     = delete;
+    ActorEventListener& operator=(ActorEventListener const&);
+    ActorEventListener(ActorEventListener const&);
+    ActorEventListener();
 
 public:
     // NOLINTBEGIN

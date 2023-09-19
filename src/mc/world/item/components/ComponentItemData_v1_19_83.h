@@ -5,9 +5,9 @@
 struct ComponentItemData_v1_19_83 {
 public:
     // prevent constructor by default
-    ComponentItemData_v1_19_83& operator=(ComponentItemData_v1_19_83 const&) = delete;
-    ComponentItemData_v1_19_83(ComponentItemData_v1_19_83 const&)            = delete;
-    ComponentItemData_v1_19_83()                                             = delete;
+    ComponentItemData_v1_19_83& operator=(ComponentItemData_v1_19_83 const&);
+    ComponentItemData_v1_19_83(ComponentItemData_v1_19_83 const&);
+    ComponentItemData_v1_19_83();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class SavedData {
 public:
     // prevent constructor by default
-    SavedData& operator=(SavedData const&) = delete;
-    SavedData(SavedData const&)            = delete;
-    SavedData()                            = delete;
+    SavedData& operator=(SavedData const&);
+    SavedData(SavedData const&);
+    SavedData();
 
 public:
     // NOLINTBEGIN

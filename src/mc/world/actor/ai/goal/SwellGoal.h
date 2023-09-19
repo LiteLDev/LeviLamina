@@ -9,9 +9,9 @@
 class SwellGoal : public ::Goal {
 public:
     // prevent constructor by default
-    SwellGoal& operator=(SwellGoal const&) = delete;
-    SwellGoal(SwellGoal const&)            = delete;
-    SwellGoal()                            = delete;
+    SwellGoal& operator=(SwellGoal const&);
+    SwellGoal(SwellGoal const&);
+    SwellGoal();
 
 public:
     // NOLINTBEGIN

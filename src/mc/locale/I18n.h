@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class I18n {
 public:
     // prevent constructor by default
-    I18n& operator=(I18n const&) = delete;
-    I18n(I18n const&)            = delete;
-    I18n()                       = delete;
+    I18n& operator=(I18n const&);
+    I18n(I18n const&);
+    I18n();
 
 public:
     // NOLINTBEGIN

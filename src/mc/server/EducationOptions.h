@@ -8,9 +8,9 @@
 class EducationOptions {
 public:
     // prevent constructor by default
-    EducationOptions& operator=(EducationOptions const&) = delete;
-    EducationOptions(EducationOptions const&)            = delete;
-    EducationOptions()                                   = delete;
+    EducationOptions& operator=(EducationOptions const&);
+    EducationOptions(EducationOptions const&);
+    EducationOptions();
 
 public:
     // NOLINTBEGIN
@@ -21,7 +21,7 @@ public:
     MCVAPI ~EducationOptions();
 
     // symbol: ??0EducationOptions@@QEAA@PEAVResourcePackManager@@@Z
-    MCAPI EducationOptions(class ResourcePackManager*);
+    MCAPI explicit EducationOptions(class ResourcePackManager*);
 
     // symbol: ?init@EducationOptions@@QEAAXAEBVLevelData@@@Z
     MCAPI void init(class LevelData const&);

@@ -8,9 +8,9 @@
 class BlockStateMeta {
 public:
     // prevent constructor by default
-    BlockStateMeta& operator=(BlockStateMeta const&) = delete;
-    BlockStateMeta(BlockStateMeta const&)            = delete;
-    BlockStateMeta()                                 = delete;
+    BlockStateMeta& operator=(BlockStateMeta const&);
+    BlockStateMeta(BlockStateMeta const&);
+    BlockStateMeta();
 
 public:
     // NOLINTBEGIN

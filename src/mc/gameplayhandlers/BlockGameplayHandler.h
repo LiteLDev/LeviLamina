@@ -5,7 +5,7 @@
 class BlockGameplayHandler {
 public:
     // prevent constructor by default
-    BlockGameplayHandler& operator=(BlockGameplayHandler const&) = delete;
-    BlockGameplayHandler(BlockGameplayHandler const&)            = delete;
-    BlockGameplayHandler()                                       = delete;
+    BlockGameplayHandler& operator=(BlockGameplayHandler const&);
+    BlockGameplayHandler(BlockGameplayHandler const&);
+    BlockGameplayHandler();
 };

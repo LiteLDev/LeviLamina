@@ -5,7 +5,7 @@
 class BookDeletePagePacket {
 public:
     // prevent constructor by default
-    BookDeletePagePacket& operator=(BookDeletePagePacket const&) = delete;
-    BookDeletePagePacket(BookDeletePagePacket const&)            = delete;
-    BookDeletePagePacket()                                       = delete;
+    BookDeletePagePacket& operator=(BookDeletePagePacket const&);
+    BookDeletePagePacket(BookDeletePagePacket const&);
+    BookDeletePagePacket();
 };

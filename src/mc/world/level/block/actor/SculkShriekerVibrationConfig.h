@@ -8,9 +8,9 @@
 class SculkShriekerVibrationConfig : public ::VibrationListenerConfig {
 public:
     // prevent constructor by default
-    SculkShriekerVibrationConfig& operator=(SculkShriekerVibrationConfig const&) = delete;
-    SculkShriekerVibrationConfig(SculkShriekerVibrationConfig const&)            = delete;
-    SculkShriekerVibrationConfig()                                               = delete;
+    SculkShriekerVibrationConfig& operator=(SculkShriekerVibrationConfig const&);
+    SculkShriekerVibrationConfig(SculkShriekerVibrationConfig const&);
+    SculkShriekerVibrationConfig();
 
 public:
     // NOLINTBEGIN

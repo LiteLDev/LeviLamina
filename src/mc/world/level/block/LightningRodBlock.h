@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class LightningRodBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    LightningRodBlock& operator=(LightningRodBlock const&) = delete;
-    LightningRodBlock(LightningRodBlock const&)            = delete;
-    LightningRodBlock()                                    = delete;
+    LightningRodBlock& operator=(LightningRodBlock const&);
+    LightningRodBlock(LightningRodBlock const&);
+    LightningRodBlock();
 
 public:
     // NOLINTBEGIN

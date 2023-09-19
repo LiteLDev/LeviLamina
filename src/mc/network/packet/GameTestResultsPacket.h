@@ -10,8 +10,8 @@
 class GameTestResultsPacket : public ::Packet {
 public:
     // prevent constructor by default
-    GameTestResultsPacket& operator=(GameTestResultsPacket const&) = delete;
-    GameTestResultsPacket(GameTestResultsPacket const&)            = delete;
+    GameTestResultsPacket& operator=(GameTestResultsPacket const&);
+    GameTestResultsPacket(GameTestResultsPacket const&);
 
 public:
     // NOLINTBEGIN

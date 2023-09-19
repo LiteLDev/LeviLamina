@@ -8,9 +8,9 @@
 class EnchantingInputContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    EnchantingInputContainerValidation& operator=(EnchantingInputContainerValidation const&) = delete;
-    EnchantingInputContainerValidation(EnchantingInputContainerValidation const&)            = delete;
-    EnchantingInputContainerValidation()                                                     = delete;
+    EnchantingInputContainerValidation& operator=(EnchantingInputContainerValidation const&);
+    EnchantingInputContainerValidation(EnchantingInputContainerValidation const&);
+    EnchantingInputContainerValidation();
 
 public:
     // NOLINTBEGIN

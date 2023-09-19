@@ -5,9 +5,9 @@
 class ExperienceRewardComponent {
 public:
     // prevent constructor by default
-    ExperienceRewardComponent& operator=(ExperienceRewardComponent const&) = delete;
-    ExperienceRewardComponent(ExperienceRewardComponent const&)            = delete;
-    ExperienceRewardComponent()                                            = delete;
+    ExperienceRewardComponent& operator=(ExperienceRewardComponent const&);
+    ExperienceRewardComponent(ExperienceRewardComponent const&);
+    ExperienceRewardComponent();
 
 public:
     // NOLINTBEGIN

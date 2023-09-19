@@ -10,8 +10,8 @@
 class SetCommandsEnabledPacket : public ::Packet {
 public:
     // prevent constructor by default
-    SetCommandsEnabledPacket& operator=(SetCommandsEnabledPacket const&) = delete;
-    SetCommandsEnabledPacket(SetCommandsEnabledPacket const&)            = delete;
+    SetCommandsEnabledPacket& operator=(SetCommandsEnabledPacket const&);
+    SetCommandsEnabledPacket(SetCommandsEnabledPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -36,7 +36,7 @@ public:
     MCVAPI ~SetCommandsEnabledPacket();
 
     // symbol: ??0SetCommandsEnabledPacket@@QEAA@_N@Z
-    MCAPI SetCommandsEnabledPacket(bool);
+    MCAPI explicit SetCommandsEnabledPacket(bool);
 
     // symbol: ??0SetCommandsEnabledPacket@@QEAA@XZ
     MCAPI SetCommandsEnabledPacket();

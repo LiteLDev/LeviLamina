@@ -22,9 +22,9 @@ namespace mce { class Color; }
 class ChestBoatItem : public ::BoatItem {
 public:
     // prevent constructor by default
-    ChestBoatItem& operator=(ChestBoatItem const&) = delete;
-    ChestBoatItem(ChestBoatItem const&)            = delete;
-    ChestBoatItem()                                = delete;
+    ChestBoatItem& operator=(ChestBoatItem const&);
+    ChestBoatItem(ChestBoatItem const&);
+    ChestBoatItem();
 
 public:
     // NOLINTBEGIN

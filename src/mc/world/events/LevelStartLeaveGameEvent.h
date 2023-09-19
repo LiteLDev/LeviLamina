@@ -5,7 +5,7 @@
 struct LevelStartLeaveGameEvent {
 public:
     // prevent constructor by default
-    LevelStartLeaveGameEvent& operator=(LevelStartLeaveGameEvent const&) = delete;
-    LevelStartLeaveGameEvent(LevelStartLeaveGameEvent const&)            = delete;
-    LevelStartLeaveGameEvent()                                           = delete;
+    LevelStartLeaveGameEvent& operator=(LevelStartLeaveGameEvent const&);
+    LevelStartLeaveGameEvent(LevelStartLeaveGameEvent const&);
+    LevelStartLeaveGameEvent();
 };

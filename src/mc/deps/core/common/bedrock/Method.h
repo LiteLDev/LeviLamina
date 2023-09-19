@@ -7,9 +7,9 @@ namespace Bedrock::Http {
 class Method {
 public:
     // prevent constructor by default
-    Method& operator=(Method const&) = delete;
-    Method(Method const&)            = delete;
-    Method()                         = delete;
+    Method& operator=(Method const&);
+    Method(Method const&);
+    Method();
 
 public:
     // NOLINTBEGIN

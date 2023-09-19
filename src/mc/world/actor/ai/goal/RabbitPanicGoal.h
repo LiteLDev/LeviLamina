@@ -9,9 +9,9 @@
 class RabbitPanicGoal : public ::PanicGoal {
 public:
     // prevent constructor by default
-    RabbitPanicGoal& operator=(RabbitPanicGoal const&) = delete;
-    RabbitPanicGoal(RabbitPanicGoal const&)            = delete;
-    RabbitPanicGoal()                                  = delete;
+    RabbitPanicGoal& operator=(RabbitPanicGoal const&);
+    RabbitPanicGoal(RabbitPanicGoal const&);
+    RabbitPanicGoal();
 
 public:
     // NOLINTBEGIN

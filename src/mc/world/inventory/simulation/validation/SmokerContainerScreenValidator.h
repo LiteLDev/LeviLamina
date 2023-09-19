@@ -9,8 +9,8 @@
 class SmokerContainerScreenValidator : public ::FurnaceContainerScreenValidator {
 public:
     // prevent constructor by default
-    SmokerContainerScreenValidator& operator=(SmokerContainerScreenValidator const&) = delete;
-    SmokerContainerScreenValidator(SmokerContainerScreenValidator const&)            = delete;
+    SmokerContainerScreenValidator& operator=(SmokerContainerScreenValidator const&);
+    SmokerContainerScreenValidator(SmokerContainerScreenValidator const&);
 
 public:
     // NOLINTBEGIN

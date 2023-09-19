@@ -7,9 +7,9 @@ namespace npc {
 struct UrlAction {
 public:
     // prevent constructor by default
-    UrlAction& operator=(UrlAction const&) = delete;
-    UrlAction(UrlAction const&)            = delete;
-    UrlAction()                            = delete;
+    UrlAction& operator=(UrlAction const&);
+    UrlAction(UrlAction const&);
+    UrlAction();
 
 public:
     // NOLINTBEGIN

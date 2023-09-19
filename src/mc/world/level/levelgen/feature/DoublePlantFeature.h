@@ -9,9 +9,9 @@
 class DoublePlantFeature : public ::Feature {
 public:
     // prevent constructor by default
-    DoublePlantFeature& operator=(DoublePlantFeature const&) = delete;
-    DoublePlantFeature(DoublePlantFeature const&)            = delete;
-    DoublePlantFeature()                                     = delete;
+    DoublePlantFeature& operator=(DoublePlantFeature const&);
+    DoublePlantFeature(DoublePlantFeature const&);
+    DoublePlantFeature();
 
 public:
     // NOLINTBEGIN

@@ -8,8 +8,8 @@
 class ItemStackRequestActionCraftGrindstone {
 public:
     // prevent constructor by default
-    ItemStackRequestActionCraftGrindstone& operator=(ItemStackRequestActionCraftGrindstone const&) = delete;
-    ItemStackRequestActionCraftGrindstone(ItemStackRequestActionCraftGrindstone const&)            = delete;
+    ItemStackRequestActionCraftGrindstone& operator=(ItemStackRequestActionCraftGrindstone const&);
+    ItemStackRequestActionCraftGrindstone(ItemStackRequestActionCraftGrindstone const&);
 
 public:
     // NOLINTBEGIN

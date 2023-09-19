@@ -5,9 +5,9 @@
 class UriListener {
 public:
     // prevent constructor by default
-    UriListener& operator=(UriListener const&) = delete;
-    UriListener(UriListener const&)            = delete;
-    UriListener()                              = delete;
+    UriListener& operator=(UriListener const&);
+    UriListener(UriListener const&);
+    UriListener();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class AttributeBuff {
 public:
     // prevent constructor by default
-    AttributeBuff& operator=(AttributeBuff const&) = delete;
-    AttributeBuff(AttributeBuff const&)            = delete;
-    AttributeBuff()                                = delete;
+    AttributeBuff& operator=(AttributeBuff const&);
+    AttributeBuff(AttributeBuff const&);
+    AttributeBuff();
 
 public:
     // NOLINTBEGIN

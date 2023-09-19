@@ -10,8 +10,8 @@
 class ResourcePackChunkRequestPacket : public ::Packet {
 public:
     // prevent constructor by default
-    ResourcePackChunkRequestPacket& operator=(ResourcePackChunkRequestPacket const&) = delete;
-    ResourcePackChunkRequestPacket(ResourcePackChunkRequestPacket const&)            = delete;
+    ResourcePackChunkRequestPacket& operator=(ResourcePackChunkRequestPacket const&);
+    ResourcePackChunkRequestPacket(ResourcePackChunkRequestPacket const&);
 
 public:
     // NOLINTBEGIN

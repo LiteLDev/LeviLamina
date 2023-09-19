@@ -10,8 +10,8 @@
 class ModalFormRequestPacket : public ::Packet {
 public:
     // prevent constructor by default
-    ModalFormRequestPacket& operator=(ModalFormRequestPacket const&) = delete;
-    ModalFormRequestPacket(ModalFormRequestPacket const&)            = delete;
+    ModalFormRequestPacket& operator=(ModalFormRequestPacket const&);
+    ModalFormRequestPacket(ModalFormRequestPacket const&);
 
 public:
     // NOLINTBEGIN

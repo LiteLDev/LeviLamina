@@ -8,9 +8,9 @@
 class VarIntDataInput : public ::BytesDataInput {
 public:
     // prevent constructor by default
-    VarIntDataInput& operator=(VarIntDataInput const&) = delete;
-    VarIntDataInput(VarIntDataInput const&)            = delete;
-    VarIntDataInput()                                  = delete;
+    VarIntDataInput& operator=(VarIntDataInput const&);
+    VarIntDataInput(VarIntDataInput const&);
+    VarIntDataInput();
 
 public:
     // NOLINTBEGIN

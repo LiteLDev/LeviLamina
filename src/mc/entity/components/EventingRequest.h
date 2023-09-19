@@ -5,9 +5,9 @@
 struct EventingRequest {
 public:
     // prevent constructor by default
-    EventingRequest& operator=(EventingRequest const&) = delete;
-    EventingRequest(EventingRequest const&)            = delete;
-    EventingRequest()                                  = delete;
+    EventingRequest& operator=(EventingRequest const&);
+    EventingRequest(EventingRequest const&);
+    EventingRequest();
 
 public:
     // NOLINTBEGIN

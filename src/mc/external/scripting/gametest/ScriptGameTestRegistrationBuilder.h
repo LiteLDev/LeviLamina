@@ -16,9 +16,9 @@ namespace ScriptModuleGameTest {
 class ScriptGameTestRegistrationBuilder {
 public:
     // prevent constructor by default
-    ScriptGameTestRegistrationBuilder& operator=(ScriptGameTestRegistrationBuilder const&) = delete;
-    ScriptGameTestRegistrationBuilder(ScriptGameTestRegistrationBuilder const&)            = delete;
-    ScriptGameTestRegistrationBuilder()                                                    = delete;
+    ScriptGameTestRegistrationBuilder& operator=(ScriptGameTestRegistrationBuilder const&);
+    ScriptGameTestRegistrationBuilder(ScriptGameTestRegistrationBuilder const&);
+    ScriptGameTestRegistrationBuilder();
 
 public:
     // NOLINTBEGIN
@@ -27,7 +27,8 @@ public:
 
     // symbol:
     // ??0ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA@V?$shared_ptr@VBaseScriptGameTestFunction@ScriptModuleGameTest@@@std@@@Z
-    MCAPI ScriptGameTestRegistrationBuilder(std::shared_ptr<class ScriptModuleGameTest::BaseScriptGameTestFunction>);
+    MCAPI explicit ScriptGameTestRegistrationBuilder(std::shared_ptr<
+                                                     class ScriptModuleGameTest::BaseScriptGameTestFunction>);
 
     // symbol:
     // ?batch@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

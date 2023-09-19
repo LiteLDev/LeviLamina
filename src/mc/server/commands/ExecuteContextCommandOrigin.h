@@ -20,9 +20,9 @@ namespace mce { class UUID; }
 class ExecuteContextCommandOrigin : public ::CommandOrigin {
 public:
     // prevent constructor by default
-    ExecuteContextCommandOrigin& operator=(ExecuteContextCommandOrigin const&) = delete;
-    ExecuteContextCommandOrigin(ExecuteContextCommandOrigin const&)            = delete;
-    ExecuteContextCommandOrigin()                                              = delete;
+    ExecuteContextCommandOrigin& operator=(ExecuteContextCommandOrigin const&);
+    ExecuteContextCommandOrigin(ExecuteContextCommandOrigin const&);
+    ExecuteContextCommandOrigin();
 
 public:
     // NOLINTBEGIN

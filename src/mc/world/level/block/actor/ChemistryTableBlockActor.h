@@ -8,9 +8,9 @@
 class ChemistryTableBlockActor {
 public:
     // prevent constructor by default
-    ChemistryTableBlockActor& operator=(ChemistryTableBlockActor const&) = delete;
-    ChemistryTableBlockActor(ChemistryTableBlockActor const&)            = delete;
-    ChemistryTableBlockActor()                                           = delete;
+    ChemistryTableBlockActor& operator=(ChemistryTableBlockActor const&);
+    ChemistryTableBlockActor(ChemistryTableBlockActor const&);
+    ChemistryTableBlockActor();
 
 public:
     // NOLINTBEGIN

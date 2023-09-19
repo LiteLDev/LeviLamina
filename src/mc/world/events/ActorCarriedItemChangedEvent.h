@@ -5,8 +5,8 @@
 struct ActorCarriedItemChangedEvent {
 public:
     // prevent constructor by default
-    ActorCarriedItemChangedEvent& operator=(ActorCarriedItemChangedEvent const&) = delete;
-    ActorCarriedItemChangedEvent()                                               = delete;
+    ActorCarriedItemChangedEvent& operator=(ActorCarriedItemChangedEvent const&);
+    ActorCarriedItemChangedEvent();
 
 public:
     // NOLINTBEGIN

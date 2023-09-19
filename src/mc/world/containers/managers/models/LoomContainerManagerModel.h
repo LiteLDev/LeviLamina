@@ -10,9 +10,9 @@
 class LoomContainerManagerModel : public ::ContainerManagerModel {
 public:
     // prevent constructor by default
-    LoomContainerManagerModel& operator=(LoomContainerManagerModel const&) = delete;
-    LoomContainerManagerModel(LoomContainerManagerModel const&)            = delete;
-    LoomContainerManagerModel()                                            = delete;
+    LoomContainerManagerModel& operator=(LoomContainerManagerModel const&);
+    LoomContainerManagerModel(LoomContainerManagerModel const&);
+    LoomContainerManagerModel();
 
 public:
     // NOLINTBEGIN

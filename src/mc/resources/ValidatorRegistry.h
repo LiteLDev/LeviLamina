@@ -22,9 +22,9 @@ public:
     class ValidatorRegistryValidators {
     public:
         // prevent constructor by default
-        ValidatorRegistryValidators& operator=(ValidatorRegistryValidators const&) = delete;
-        ValidatorRegistryValidators(ValidatorRegistryValidators const&)            = delete;
-        ValidatorRegistryValidators()                                              = delete;
+        ValidatorRegistryValidators& operator=(ValidatorRegistryValidators const&);
+        ValidatorRegistryValidators(ValidatorRegistryValidators const&);
+        ValidatorRegistryValidators();
 
     public:
         // NOLINTBEGIN
@@ -36,9 +36,9 @@ public:
 
 public:
     // prevent constructor by default
-    ValidatorRegistry& operator=(ValidatorRegistry const&) = delete;
-    ValidatorRegistry(ValidatorRegistry const&)            = delete;
-    ValidatorRegistry()                                    = delete;
+    ValidatorRegistry& operator=(ValidatorRegistry const&);
+    ValidatorRegistry(ValidatorRegistry const&);
+    ValidatorRegistry();
 
 public:
     // NOLINTBEGIN

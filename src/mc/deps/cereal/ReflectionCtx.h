@@ -7,9 +7,9 @@ namespace cereal {
 struct ReflectionCtx {
 public:
     // prevent constructor by default
-    ReflectionCtx& operator=(ReflectionCtx const&) = delete;
-    ReflectionCtx(ReflectionCtx const&)            = delete;
-    ReflectionCtx()                                = delete;
+    ReflectionCtx& operator=(ReflectionCtx const&);
+    ReflectionCtx(ReflectionCtx const&);
+    ReflectionCtx();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class CheckFallDamageSystem {
 public:
     // prevent constructor by default
-    CheckFallDamageSystem& operator=(CheckFallDamageSystem const&) = delete;
-    CheckFallDamageSystem(CheckFallDamageSystem const&)            = delete;
-    CheckFallDamageSystem()                                        = delete;
+    CheckFallDamageSystem& operator=(CheckFallDamageSystem const&);
+    CheckFallDamageSystem(CheckFallDamageSystem const&);
+    CheckFallDamageSystem();
 
 public:
     // NOLINTBEGIN

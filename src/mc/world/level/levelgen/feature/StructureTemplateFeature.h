@@ -8,8 +8,8 @@
 class StructureTemplateFeature : public ::IFeature {
 public:
     // prevent constructor by default
-    StructureTemplateFeature& operator=(StructureTemplateFeature const&) = delete;
-    StructureTemplateFeature(StructureTemplateFeature const&)            = delete;
+    StructureTemplateFeature& operator=(StructureTemplateFeature const&);
+    StructureTemplateFeature(StructureTemplateFeature const&);
 
 public:
     // NOLINTBEGIN

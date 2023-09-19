@@ -6,7 +6,7 @@ template <typename T0>
 class OwnerPtrT {
 public:
     // prevent constructor by default
-    OwnerPtrT& operator=(OwnerPtrT const&) = delete;
-    OwnerPtrT(OwnerPtrT const&)            = delete;
-    OwnerPtrT()                            = delete;
+    OwnerPtrT& operator=(OwnerPtrT const&);
+    OwnerPtrT(OwnerPtrT const&);
+    OwnerPtrT();
 };

@@ -10,9 +10,9 @@
 class PlayerArmorDamagePacket : public ::Packet {
 public:
     // prevent constructor by default
-    PlayerArmorDamagePacket& operator=(PlayerArmorDamagePacket const&) = delete;
-    PlayerArmorDamagePacket(PlayerArmorDamagePacket const&)            = delete;
-    PlayerArmorDamagePacket()                                          = delete;
+    PlayerArmorDamagePacket& operator=(PlayerArmorDamagePacket const&);
+    PlayerArmorDamagePacket(PlayerArmorDamagePacket const&);
+    PlayerArmorDamagePacket();
 
 public:
     // NOLINTBEGIN

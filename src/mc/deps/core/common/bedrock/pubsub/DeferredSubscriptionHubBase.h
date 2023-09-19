@@ -18,9 +18,9 @@ namespace Bedrock::PubSub {
 class DeferredSubscriptionHubBase : public ::Bedrock::PubSub::DeferredSubscriptionHub {
 public:
     // prevent constructor by default
-    DeferredSubscriptionHubBase& operator=(DeferredSubscriptionHubBase const&) = delete;
-    DeferredSubscriptionHubBase(DeferredSubscriptionHubBase const&)            = delete;
-    DeferredSubscriptionHubBase()                                              = delete;
+    DeferredSubscriptionHubBase& operator=(DeferredSubscriptionHubBase const&);
+    DeferredSubscriptionHubBase(DeferredSubscriptionHubBase const&);
+    DeferredSubscriptionHubBase();
 
 public:
     // NOLINTBEGIN

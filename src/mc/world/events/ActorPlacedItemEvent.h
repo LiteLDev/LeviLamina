@@ -5,7 +5,7 @@
 struct ActorPlacedItemEvent {
 public:
     // prevent constructor by default
-    ActorPlacedItemEvent& operator=(ActorPlacedItemEvent const&) = delete;
-    ActorPlacedItemEvent(ActorPlacedItemEvent const&)            = delete;
-    ActorPlacedItemEvent()                                       = delete;
+    ActorPlacedItemEvent& operator=(ActorPlacedItemEvent const&);
+    ActorPlacedItemEvent(ActorPlacedItemEvent const&);
+    ActorPlacedItemEvent();
 };

@@ -5,9 +5,9 @@
 class WanderingTraderScheduler {
 public:
     // prevent constructor by default
-    WanderingTraderScheduler& operator=(WanderingTraderScheduler const&) = delete;
-    WanderingTraderScheduler(WanderingTraderScheduler const&)            = delete;
-    WanderingTraderScheduler()                                           = delete;
+    WanderingTraderScheduler& operator=(WanderingTraderScheduler const&);
+    WanderingTraderScheduler(WanderingTraderScheduler const&);
+    WanderingTraderScheduler();
 
 public:
     // NOLINTBEGIN

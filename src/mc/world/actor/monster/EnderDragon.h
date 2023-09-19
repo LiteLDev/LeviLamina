@@ -27,9 +27,9 @@
 class EnderDragon : public ::Monster {
 public:
     // prevent constructor by default
-    EnderDragon& operator=(EnderDragon const&) = delete;
-    EnderDragon(EnderDragon const&)            = delete;
-    EnderDragon()                              = delete;
+    EnderDragon& operator=(EnderDragon const&);
+    EnderDragon(EnderDragon const&);
+    EnderDragon();
 
 public:
     // NOLINTBEGIN

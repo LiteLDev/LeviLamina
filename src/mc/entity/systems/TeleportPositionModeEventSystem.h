@@ -5,9 +5,9 @@
 class TeleportPositionModeEventSystem {
 public:
     // prevent constructor by default
-    TeleportPositionModeEventSystem& operator=(TeleportPositionModeEventSystem const&) = delete;
-    TeleportPositionModeEventSystem(TeleportPositionModeEventSystem const&)            = delete;
-    TeleportPositionModeEventSystem()                                                  = delete;
+    TeleportPositionModeEventSystem& operator=(TeleportPositionModeEventSystem const&);
+    TeleportPositionModeEventSystem(TeleportPositionModeEventSystem const&);
+    TeleportPositionModeEventSystem();
 
 public:
     // NOLINTBEGIN

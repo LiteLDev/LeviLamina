@@ -5,9 +5,9 @@
 class StorePreviousClientInputSystem {
 public:
     // prevent constructor by default
-    StorePreviousClientInputSystem& operator=(StorePreviousClientInputSystem const&) = delete;
-    StorePreviousClientInputSystem(StorePreviousClientInputSystem const&)            = delete;
-    StorePreviousClientInputSystem()                                                 = delete;
+    StorePreviousClientInputSystem& operator=(StorePreviousClientInputSystem const&);
+    StorePreviousClientInputSystem(StorePreviousClientInputSystem const&);
+    StorePreviousClientInputSystem();
 
 public:
     // NOLINTBEGIN

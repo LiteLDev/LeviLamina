@@ -5,9 +5,9 @@
 struct TradeGroup {
 public:
     // prevent constructor by default
-    TradeGroup& operator=(TradeGroup const&) = delete;
-    TradeGroup(TradeGroup const&)            = delete;
-    TradeGroup()                             = delete;
+    TradeGroup& operator=(TradeGroup const&);
+    TradeGroup(TradeGroup const&);
+    TradeGroup();
 
 public:
     // NOLINTBEGIN

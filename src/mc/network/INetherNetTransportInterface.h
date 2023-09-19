@@ -7,9 +7,9 @@ namespace NetherNet {
 class INetherNetTransportInterface {
 public:
     // prevent constructor by default
-    INetherNetTransportInterface& operator=(INetherNetTransportInterface const&) = delete;
-    INetherNetTransportInterface(INetherNetTransportInterface const&)            = delete;
-    INetherNetTransportInterface()                                               = delete;
+    INetherNetTransportInterface& operator=(INetherNetTransportInterface const&);
+    INetherNetTransportInterface(INetherNetTransportInterface const&);
+    INetherNetTransportInterface();
 };
 
 }; // namespace NetherNet

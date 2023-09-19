@@ -13,9 +13,9 @@ namespace Scripting { class IDebuggerController; }
 class ScriptDebugger : public ::IScriptDebugger {
 public:
     // prevent constructor by default
-    ScriptDebugger& operator=(ScriptDebugger const&) = delete;
-    ScriptDebugger(ScriptDebugger const&)            = delete;
-    ScriptDebugger()                                 = delete;
+    ScriptDebugger& operator=(ScriptDebugger const&);
+    ScriptDebugger(ScriptDebugger const&);
+    ScriptDebugger();
 
 public:
     // NOLINTBEGIN

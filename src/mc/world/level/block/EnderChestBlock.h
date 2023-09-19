@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class EnderChestBlock : public ::ChestBlock {
 public:
     // prevent constructor by default
-    EnderChestBlock& operator=(EnderChestBlock const&) = delete;
-    EnderChestBlock(EnderChestBlock const&)            = delete;
-    EnderChestBlock()                                  = delete;
+    EnderChestBlock& operator=(EnderChestBlock const&);
+    EnderChestBlock(EnderChestBlock const&);
+    EnderChestBlock();
 
 public:
     // NOLINTBEGIN

@@ -26,9 +26,9 @@
 class Pig : public ::Animal {
 public:
     // prevent constructor by default
-    Pig& operator=(Pig const&) = delete;
-    Pig(Pig const&)            = delete;
-    Pig()                      = delete;
+    Pig& operator=(Pig const&);
+    Pig(Pig const&);
+    Pig();
 
 public:
     // NOLINTBEGIN

@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class InvisibleBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    InvisibleBlock& operator=(InvisibleBlock const&) = delete;
-    InvisibleBlock(InvisibleBlock const&)            = delete;
-    InvisibleBlock()                                 = delete;
+    InvisibleBlock& operator=(InvisibleBlock const&);
+    InvisibleBlock(InvisibleBlock const&);
+    InvisibleBlock();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class FormJsonValidator {
 public:
     // prevent constructor by default
-    FormJsonValidator& operator=(FormJsonValidator const&) = delete;
-    FormJsonValidator(FormJsonValidator const&)            = delete;
-    FormJsonValidator()                                    = delete;
+    FormJsonValidator& operator=(FormJsonValidator const&);
+    FormJsonValidator(FormJsonValidator const&);
+    FormJsonValidator();
 
 public:
     // NOLINTBEGIN

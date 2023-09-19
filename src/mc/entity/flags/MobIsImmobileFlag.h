@@ -5,7 +5,7 @@
 struct MobIsImmobileFlag {
 public:
     // prevent constructor by default
-    MobIsImmobileFlag& operator=(MobIsImmobileFlag const&) = delete;
-    MobIsImmobileFlag(MobIsImmobileFlag const&)            = delete;
-    MobIsImmobileFlag()                                    = delete;
+    MobIsImmobileFlag& operator=(MobIsImmobileFlag const&);
+    MobIsImmobileFlag(MobIsImmobileFlag const&);
+    MobIsImmobileFlag();
 };

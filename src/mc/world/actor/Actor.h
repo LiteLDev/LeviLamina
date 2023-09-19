@@ -36,9 +36,9 @@ public:
 
 public:
     // prevent constructor by default
-    Actor& operator=(Actor const&) = delete;
-    Actor(Actor const&)            = delete;
-    Actor()                        = delete;
+    Actor& operator=(Actor const&);
+    Actor(Actor const&);
+    Actor();
 
 public:
     // NOLINTBEGIN

@@ -13,9 +13,9 @@ namespace mce { class UUID; }
 class BookCloningRecipe : public ::MultiRecipe {
 public:
     // prevent constructor by default
-    BookCloningRecipe& operator=(BookCloningRecipe const&) = delete;
-    BookCloningRecipe(BookCloningRecipe const&)            = delete;
-    BookCloningRecipe()                                    = delete;
+    BookCloningRecipe& operator=(BookCloningRecipe const&);
+    BookCloningRecipe(BookCloningRecipe const&);
+    BookCloningRecipe();
 
 public:
     // NOLINTBEGIN
@@ -46,7 +46,7 @@ public:
     virtual int size() const;
 
     // symbol: ??0BookCloningRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI BookCloningRecipe(std::string_view);
+    MCAPI explicit BookCloningRecipe(std::string_view);
 
     // symbol: ??0BookCloningRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVUUID@mce@@@Z
     MCAPI BookCloningRecipe(std::string_view, class mce::UUID const&);

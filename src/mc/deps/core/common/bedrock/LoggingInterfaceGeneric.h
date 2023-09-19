@@ -16,9 +16,9 @@ namespace Bedrock::Http {
 class LoggingInterfaceGeneric : public ::Bedrock::Http::LoggingInterface {
 public:
     // prevent constructor by default
-    LoggingInterfaceGeneric& operator=(LoggingInterfaceGeneric const&) = delete;
-    LoggingInterfaceGeneric(LoggingInterfaceGeneric const&)            = delete;
-    LoggingInterfaceGeneric()                                          = delete;
+    LoggingInterfaceGeneric& operator=(LoggingInterfaceGeneric const&);
+    LoggingInterfaceGeneric(LoggingInterfaceGeneric const&);
+    LoggingInterfaceGeneric();
 
 public:
     // NOLINTBEGIN

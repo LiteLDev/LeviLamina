@@ -9,9 +9,9 @@
 class MountPathingGoal : public ::Goal {
 public:
     // prevent constructor by default
-    MountPathingGoal& operator=(MountPathingGoal const&) = delete;
-    MountPathingGoal(MountPathingGoal const&)            = delete;
-    MountPathingGoal()                                   = delete;
+    MountPathingGoal& operator=(MountPathingGoal const&);
+    MountPathingGoal(MountPathingGoal const&);
+    MountPathingGoal();
 
 public:
     // NOLINTBEGIN

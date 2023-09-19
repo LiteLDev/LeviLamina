@@ -12,9 +12,9 @@ namespace Core {
 class IFile {
 public:
     // prevent constructor by default
-    IFile& operator=(IFile const&) = delete;
-    IFile(IFile const&)            = delete;
-    IFile()                        = delete;
+    IFile& operator=(IFile const&);
+    IFile(IFile const&);
+    IFile();
 
 public:
     // NOLINTBEGIN

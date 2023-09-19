@@ -8,9 +8,9 @@
 class NetherBrightnessRamp : public ::DimensionBrightnessRamp {
 public:
     // prevent constructor by default
-    NetherBrightnessRamp& operator=(NetherBrightnessRamp const&) = delete;
-    NetherBrightnessRamp(NetherBrightnessRamp const&)            = delete;
-    NetherBrightnessRamp()                                       = delete;
+    NetherBrightnessRamp& operator=(NetherBrightnessRamp const&);
+    NetherBrightnessRamp(NetherBrightnessRamp const&);
+    NetherBrightnessRamp();
 
 public:
     // NOLINTBEGIN

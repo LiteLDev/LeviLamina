@@ -5,9 +5,9 @@
 struct LevelStorageEventingContext {
 public:
     // prevent constructor by default
-    LevelStorageEventingContext& operator=(LevelStorageEventingContext const&) = delete;
-    LevelStorageEventingContext(LevelStorageEventingContext const&)            = delete;
-    LevelStorageEventingContext()                                              = delete;
+    LevelStorageEventingContext& operator=(LevelStorageEventingContext const&);
+    LevelStorageEventingContext(LevelStorageEventingContext const&);
+    LevelStorageEventingContext();
 
 public:
     // NOLINTBEGIN

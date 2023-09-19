@@ -5,7 +5,7 @@
 struct SubChunkRequestTrackingData {
 public:
     // prevent constructor by default
-    SubChunkRequestTrackingData& operator=(SubChunkRequestTrackingData const&) = delete;
-    SubChunkRequestTrackingData(SubChunkRequestTrackingData const&)            = delete;
-    SubChunkRequestTrackingData()                                              = delete;
+    SubChunkRequestTrackingData& operator=(SubChunkRequestTrackingData const&);
+    SubChunkRequestTrackingData(SubChunkRequestTrackingData const&);
+    SubChunkRequestTrackingData();
 };

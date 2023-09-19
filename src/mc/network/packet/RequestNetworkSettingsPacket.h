@@ -10,8 +10,8 @@
 class RequestNetworkSettingsPacket : public ::Packet {
 public:
     // prevent constructor by default
-    RequestNetworkSettingsPacket& operator=(RequestNetworkSettingsPacket const&) = delete;
-    RequestNetworkSettingsPacket(RequestNetworkSettingsPacket const&)            = delete;
+    RequestNetworkSettingsPacket& operator=(RequestNetworkSettingsPacket const&);
+    RequestNetworkSettingsPacket(RequestNetworkSettingsPacket const&);
 
 public:
     // NOLINTBEGIN

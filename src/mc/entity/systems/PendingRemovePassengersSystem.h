@@ -5,9 +5,9 @@
 class PendingRemovePassengersSystem {
 public:
     // prevent constructor by default
-    PendingRemovePassengersSystem& operator=(PendingRemovePassengersSystem const&) = delete;
-    PendingRemovePassengersSystem(PendingRemovePassengersSystem const&)            = delete;
-    PendingRemovePassengersSystem()                                                = delete;
+    PendingRemovePassengersSystem& operator=(PendingRemovePassengersSystem const&);
+    PendingRemovePassengersSystem(PendingRemovePassengersSystem const&);
+    PendingRemovePassengersSystem();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class SimpleContainer : public ::Container {
 public:
     // prevent constructor by default
-    SimpleContainer& operator=(SimpleContainer const&) = delete;
-    SimpleContainer(SimpleContainer const&)            = delete;
-    SimpleContainer()                                  = delete;
+    SimpleContainer& operator=(SimpleContainer const&);
+    SimpleContainer(SimpleContainer const&);
+    SimpleContainer();
 
 public:
     // NOLINTBEGIN

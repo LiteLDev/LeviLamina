@@ -22,9 +22,9 @@ namespace ScriptModuleGameTest {
 class SyncScriptGameTestFunction : public ::ScriptModuleGameTest::BaseScriptGameTestFunction {
 public:
     // prevent constructor by default
-    SyncScriptGameTestFunction& operator=(SyncScriptGameTestFunction const&) = delete;
-    SyncScriptGameTestFunction(SyncScriptGameTestFunction const&)            = delete;
-    SyncScriptGameTestFunction()                                             = delete;
+    SyncScriptGameTestFunction& operator=(SyncScriptGameTestFunction const&);
+    SyncScriptGameTestFunction(SyncScriptGameTestFunction const&);
+    SyncScriptGameTestFunction();
 
 public:
     // NOLINTBEGIN

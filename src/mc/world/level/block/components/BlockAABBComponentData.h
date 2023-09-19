@@ -8,7 +8,7 @@
 class BlockAABBComponentData : public ::BlockComponentBase {
 public:
     // prevent constructor by default
-    BlockAABBComponentData& operator=(BlockAABBComponentData const&) = delete;
-    BlockAABBComponentData(BlockAABBComponentData const&)            = delete;
-    BlockAABBComponentData()                                         = delete;
+    BlockAABBComponentData& operator=(BlockAABBComponentData const&);
+    BlockAABBComponentData(BlockAABBComponentData const&);
+    BlockAABBComponentData();
 };

@@ -10,9 +10,9 @@ namespace Core { class Path; }
 class TradeTables {
 public:
     // prevent constructor by default
-    TradeTables& operator=(TradeTables const&) = delete;
-    TradeTables(TradeTables const&)            = delete;
-    TradeTables()                              = delete;
+    TradeTables& operator=(TradeTables const&);
+    TradeTables(TradeTables const&);
+    TradeTables();
 
 public:
     // NOLINTBEGIN

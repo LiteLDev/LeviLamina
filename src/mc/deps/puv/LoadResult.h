@@ -8,9 +8,9 @@ template <typename T0>
 class LoadResult {
 public:
     // prevent constructor by default
-    LoadResult& operator=(LoadResult const&) = delete;
-    LoadResult(LoadResult const&)            = delete;
-    LoadResult()                             = delete;
+    LoadResult& operator=(LoadResult const&);
+    LoadResult(LoadResult const&);
+    LoadResult();
 };
 
 }; // namespace Puv

@@ -13,9 +13,9 @@ namespace OperationNodeFilters {
 class Shore {
 public:
     // prevent constructor by default
-    Shore& operator=(Shore const&) = delete;
-    Shore(Shore const&)            = delete;
-    Shore()                        = delete;
+    Shore& operator=(Shore const&);
+    Shore(Shore const&);
+    Shore();
 
 public:
     // NOLINTBEGIN

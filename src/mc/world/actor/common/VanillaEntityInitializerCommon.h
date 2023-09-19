@@ -8,9 +8,9 @@
 class VanillaEntityInitializerCommon {
 public:
     // prevent constructor by default
-    VanillaEntityInitializerCommon& operator=(VanillaEntityInitializerCommon const&) = delete;
-    VanillaEntityInitializerCommon(VanillaEntityInitializerCommon const&)            = delete;
-    VanillaEntityInitializerCommon()                                                 = delete;
+    VanillaEntityInitializerCommon& operator=(VanillaEntityInitializerCommon const&);
+    VanillaEntityInitializerCommon(VanillaEntityInitializerCommon const&);
+    VanillaEntityInitializerCommon();
 
 public:
     // NOLINTBEGIN

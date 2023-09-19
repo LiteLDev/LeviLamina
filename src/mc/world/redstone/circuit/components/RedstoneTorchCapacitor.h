@@ -9,8 +9,8 @@
 class RedstoneTorchCapacitor : public ::CapacitorComponent {
 public:
     // prevent constructor by default
-    RedstoneTorchCapacitor& operator=(RedstoneTorchCapacitor const&) = delete;
-    RedstoneTorchCapacitor(RedstoneTorchCapacitor const&)            = delete;
+    RedstoneTorchCapacitor& operator=(RedstoneTorchCapacitor const&);
+    RedstoneTorchCapacitor(RedstoneTorchCapacitor const&);
 
 public:
     // NOLINTBEGIN

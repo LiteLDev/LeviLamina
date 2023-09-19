@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class LegacyDyeItem : public ::DyePowderItem {
 public:
     // prevent constructor by default
-    LegacyDyeItem& operator=(LegacyDyeItem const&) = delete;
-    LegacyDyeItem(LegacyDyeItem const&)            = delete;
-    LegacyDyeItem()                                = delete;
+    LegacyDyeItem& operator=(LegacyDyeItem const&);
+    LegacyDyeItem(LegacyDyeItem const&);
+    LegacyDyeItem();
 
 public:
     // NOLINTBEGIN

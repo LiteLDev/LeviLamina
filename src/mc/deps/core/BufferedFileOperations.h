@@ -14,9 +14,9 @@ namespace Core {
 class BufferedFileOperations {
 public:
     // prevent constructor by default
-    BufferedFileOperations& operator=(BufferedFileOperations const&) = delete;
-    BufferedFileOperations(BufferedFileOperations const&)            = delete;
-    BufferedFileOperations()                                         = delete;
+    BufferedFileOperations& operator=(BufferedFileOperations const&);
+    BufferedFileOperations(BufferedFileOperations const&);
+    BufferedFileOperations();
 
 public:
     // NOLINTBEGIN

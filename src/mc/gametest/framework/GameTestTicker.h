@@ -15,15 +15,15 @@ namespace gametest {
 class GameTestTicker {
 public:
     // prevent constructor by default
-    GameTestTicker& operator=(GameTestTicker const&) = delete;
-    GameTestTicker(GameTestTicker const&)            = delete;
-    GameTestTicker()                                 = delete;
+    GameTestTicker& operator=(GameTestTicker const&);
+    GameTestTicker(GameTestTicker const&);
+    GameTestTicker();
 
 public:
     // NOLINTBEGIN
     // symbol:
     // ??0GameTestTicker@gametest@@QEAA@V?$unique_ptr@VIGameTestRuleHelper@gametest@@U?$default_delete@VIGameTestRuleHelper@gametest@@@std@@@std@@@Z
-    MCAPI GameTestTicker(std::unique_ptr<class gametest::IGameTestRuleHelper>);
+    MCAPI explicit GameTestTicker(std::unique_ptr<class gametest::IGameTestRuleHelper>);
 
     // symbol:
     // ?add@GameTestTicker@gametest@@QEAAXV?$unique_ptr@VBaseGameTestBatchRunner@gametest@@U?$default_delete@VBaseGameTestBatchRunner@gametest@@@std@@@std@@@Z

@@ -5,9 +5,9 @@
 class ResetFrictionModifierSystem {
 public:
     // prevent constructor by default
-    ResetFrictionModifierSystem& operator=(ResetFrictionModifierSystem const&) = delete;
-    ResetFrictionModifierSystem(ResetFrictionModifierSystem const&)            = delete;
-    ResetFrictionModifierSystem()                                              = delete;
+    ResetFrictionModifierSystem& operator=(ResetFrictionModifierSystem const&);
+    ResetFrictionModifierSystem(ResetFrictionModifierSystem const&);
+    ResetFrictionModifierSystem();
 
 public:
     // NOLINTBEGIN

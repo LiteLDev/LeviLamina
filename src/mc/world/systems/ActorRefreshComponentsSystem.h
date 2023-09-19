@@ -5,9 +5,9 @@
 class ActorRefreshComponentsSystem {
 public:
     // prevent constructor by default
-    ActorRefreshComponentsSystem& operator=(ActorRefreshComponentsSystem const&) = delete;
-    ActorRefreshComponentsSystem(ActorRefreshComponentsSystem const&)            = delete;
-    ActorRefreshComponentsSystem()                                               = delete;
+    ActorRefreshComponentsSystem& operator=(ActorRefreshComponentsSystem const&);
+    ActorRefreshComponentsSystem(ActorRefreshComponentsSystem const&);
+    ActorRefreshComponentsSystem();
 
 public:
     // NOLINTBEGIN

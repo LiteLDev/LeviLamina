@@ -5,8 +5,8 @@
 struct NameAction {
 public:
     // prevent constructor by default
-    NameAction& operator=(NameAction const&) = delete;
-    NameAction()                             = delete;
+    NameAction& operator=(NameAction const&);
+    NameAction();
 
 public:
     // NOLINTBEGIN

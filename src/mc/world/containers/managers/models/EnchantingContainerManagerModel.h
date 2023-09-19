@@ -10,9 +10,9 @@
 class EnchantingContainerManagerModel : public ::ContainerManagerModel {
 public:
     // prevent constructor by default
-    EnchantingContainerManagerModel& operator=(EnchantingContainerManagerModel const&) = delete;
-    EnchantingContainerManagerModel(EnchantingContainerManagerModel const&)            = delete;
-    EnchantingContainerManagerModel()                                                  = delete;
+    EnchantingContainerManagerModel& operator=(EnchantingContainerManagerModel const&);
+    EnchantingContainerManagerModel(EnchantingContainerManagerModel const&);
+    EnchantingContainerManagerModel();
 
 public:
     // NOLINTBEGIN

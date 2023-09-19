@@ -7,9 +7,9 @@ namespace RakNet {
 struct NetworkAdapter {
 public:
     // prevent constructor by default
-    NetworkAdapter& operator=(NetworkAdapter const&) = delete;
-    NetworkAdapter(NetworkAdapter const&)            = delete;
-    NetworkAdapter()                                 = delete;
+    NetworkAdapter& operator=(NetworkAdapter const&);
+    NetworkAdapter(NetworkAdapter const&);
+    NetworkAdapter();
 
 public:
     // NOLINTBEGIN

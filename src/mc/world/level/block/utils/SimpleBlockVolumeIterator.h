@@ -8,9 +8,9 @@
 class SimpleBlockVolumeIterator : public ::BaseBlockLocationIterator {
 public:
     // prevent constructor by default
-    SimpleBlockVolumeIterator& operator=(SimpleBlockVolumeIterator const&) = delete;
-    SimpleBlockVolumeIterator(SimpleBlockVolumeIterator const&)            = delete;
-    SimpleBlockVolumeIterator()                                            = delete;
+    SimpleBlockVolumeIterator& operator=(SimpleBlockVolumeIterator const&);
+    SimpleBlockVolumeIterator(SimpleBlockVolumeIterator const&);
+    SimpleBlockVolumeIterator();
 
 public:
     // NOLINTBEGIN

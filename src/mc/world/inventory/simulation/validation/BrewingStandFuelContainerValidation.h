@@ -8,9 +8,9 @@
 class BrewingStandFuelContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    BrewingStandFuelContainerValidation& operator=(BrewingStandFuelContainerValidation const&) = delete;
-    BrewingStandFuelContainerValidation(BrewingStandFuelContainerValidation const&)            = delete;
-    BrewingStandFuelContainerValidation()                                                      = delete;
+    BrewingStandFuelContainerValidation& operator=(BrewingStandFuelContainerValidation const&);
+    BrewingStandFuelContainerValidation(BrewingStandFuelContainerValidation const&);
+    BrewingStandFuelContainerValidation();
 
 public:
     // NOLINTBEGIN

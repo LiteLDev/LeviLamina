@@ -29,9 +29,9 @@ public:
 
 public:
     // prevent constructor by default
-    ExperienceOrb& operator=(ExperienceOrb const&) = delete;
-    ExperienceOrb(ExperienceOrb const&)            = delete;
-    ExperienceOrb()                                = delete;
+    ExperienceOrb& operator=(ExperienceOrb const&);
+    ExperienceOrb(ExperienceOrb const&);
+    ExperienceOrb();
 
 public:
     // NOLINTBEGIN

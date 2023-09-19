@@ -10,9 +10,9 @@ namespace Core { class Path; }
 struct FileInfo {
 public:
     // prevent constructor by default
-    FileInfo& operator=(FileInfo const&) = delete;
-    FileInfo(FileInfo const&)            = delete;
-    FileInfo()                           = delete;
+    FileInfo& operator=(FileInfo const&);
+    FileInfo(FileInfo const&);
+    FileInfo();
 
 public:
     // NOLINTBEGIN

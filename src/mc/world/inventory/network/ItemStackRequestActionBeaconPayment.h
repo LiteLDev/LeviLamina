@@ -9,9 +9,9 @@
 class ItemStackRequestActionBeaconPayment : public ::ItemStackRequestAction {
 public:
     // prevent constructor by default
-    ItemStackRequestActionBeaconPayment& operator=(ItemStackRequestActionBeaconPayment const&) = delete;
-    ItemStackRequestActionBeaconPayment(ItemStackRequestActionBeaconPayment const&)            = delete;
-    ItemStackRequestActionBeaconPayment()                                                      = delete;
+    ItemStackRequestActionBeaconPayment& operator=(ItemStackRequestActionBeaconPayment const&);
+    ItemStackRequestActionBeaconPayment(ItemStackRequestActionBeaconPayment const&);
+    ItemStackRequestActionBeaconPayment();
 
 public:
     // NOLINTBEGIN

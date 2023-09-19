@@ -5,9 +5,9 @@
 class LecternBlockActor {
 public:
     // prevent constructor by default
-    LecternBlockActor& operator=(LecternBlockActor const&) = delete;
-    LecternBlockActor(LecternBlockActor const&)            = delete;
-    LecternBlockActor()                                    = delete;
+    LecternBlockActor& operator=(LecternBlockActor const&);
+    LecternBlockActor(LecternBlockActor const&);
+    LecternBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -55,7 +55,7 @@ public:
     MCVAPI void stopOpen(class Player&);
 
     // symbol: ??0LecternBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI LecternBlockActor(class BlockPos const&);
+    MCAPI explicit LecternBlockActor(class BlockPos const&);
 
     // symbol: ?dropBook@LecternBlockActor@@QEAAXAEAVBlockSource@@@Z
     MCAPI void dropBook(class BlockSource&);

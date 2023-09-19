@@ -24,17 +24,17 @@ public:
     struct DwellerData {
     public:
         // prevent constructor by default
-        DwellerData& operator=(DwellerData const&) = delete;
-        DwellerData(DwellerData const&)            = delete;
-        DwellerData()                              = delete;
+        DwellerData& operator=(DwellerData const&);
+        DwellerData(DwellerData const&);
+        DwellerData();
     };
 
     class StandingModifiers {
     public:
         // prevent constructor by default
-        StandingModifiers& operator=(StandingModifiers const&) = delete;
-        StandingModifiers(StandingModifiers const&)            = delete;
-        StandingModifiers()                                    = delete;
+        StandingModifiers& operator=(StandingModifiers const&);
+        StandingModifiers(StandingModifiers const&);
+        StandingModifiers();
 
     public:
         // NOLINTBEGIN
@@ -61,9 +61,9 @@ public:
 
 public:
     // prevent constructor by default
-    Village& operator=(Village const&) = delete;
-    Village(Village const&)            = delete;
-    Village()                          = delete;
+    Village& operator=(Village const&);
+    Village(Village const&);
+    Village();
 
 public:
     // NOLINTBEGIN

@@ -26,9 +26,9 @@
 class Wolf : public ::Animal {
 public:
     // prevent constructor by default
-    Wolf& operator=(Wolf const&) = delete;
-    Wolf(Wolf const&)            = delete;
-    Wolf()                       = delete;
+    Wolf& operator=(Wolf const&);
+    Wolf(Wolf const&);
+    Wolf();
 
 public:
     // NOLINTBEGIN

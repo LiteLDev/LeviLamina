@@ -8,9 +8,9 @@
 class IntArrayTag : public ::Tag {
 public:
     // prevent constructor by default
-    IntArrayTag& operator=(IntArrayTag const&) = delete;
-    IntArrayTag(IntArrayTag const&)            = delete;
-    IntArrayTag()                              = delete;
+    IntArrayTag& operator=(IntArrayTag const&);
+    IntArrayTag(IntArrayTag const&);
+    IntArrayTag();
 
 public:
     // NOLINTBEGIN

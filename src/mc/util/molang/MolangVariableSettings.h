@@ -5,7 +5,7 @@
 struct MolangVariableSettings {
 public:
     // prevent constructor by default
-    MolangVariableSettings& operator=(MolangVariableSettings const&) = delete;
-    MolangVariableSettings(MolangVariableSettings const&)            = delete;
-    MolangVariableSettings()                                         = delete;
+    MolangVariableSettings& operator=(MolangVariableSettings const&);
+    MolangVariableSettings(MolangVariableSettings const&);
+    MolangVariableSettings();
 };

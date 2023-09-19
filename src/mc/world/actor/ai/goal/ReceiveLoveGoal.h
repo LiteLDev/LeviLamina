@@ -9,9 +9,9 @@
 class ReceiveLoveGoal : public ::Goal {
 public:
     // prevent constructor by default
-    ReceiveLoveGoal& operator=(ReceiveLoveGoal const&) = delete;
-    ReceiveLoveGoal(ReceiveLoveGoal const&)            = delete;
-    ReceiveLoveGoal()                                  = delete;
+    ReceiveLoveGoal& operator=(ReceiveLoveGoal const&);
+    ReceiveLoveGoal(ReceiveLoveGoal const&);
+    ReceiveLoveGoal();
 
 public:
     // NOLINTBEGIN
@@ -32,7 +32,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0ReceiveLoveGoal@@QEAA@AEAVVillagerBase@@@Z
-    MCAPI ReceiveLoveGoal(class VillagerBase&);
+    MCAPI explicit ReceiveLoveGoal(class VillagerBase&);
 
     // NOLINTEND
 };

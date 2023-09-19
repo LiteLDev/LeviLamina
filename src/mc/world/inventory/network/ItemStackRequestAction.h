@@ -10,9 +10,9 @@
 class ItemStackRequestAction {
 public:
     // prevent constructor by default
-    ItemStackRequestAction& operator=(ItemStackRequestAction const&) = delete;
-    ItemStackRequestAction(ItemStackRequestAction const&)            = delete;
-    ItemStackRequestAction()                                         = delete;
+    ItemStackRequestAction& operator=(ItemStackRequestAction const&);
+    ItemStackRequestAction(ItemStackRequestAction const&);
+    ItemStackRequestAction();
 
 public:
     // NOLINTBEGIN
@@ -39,7 +39,7 @@ public:
     MCVAPI ~ItemStackRequestAction();
 
     // symbol: ??0ItemStackRequestAction@@QEAA@W4ItemStackRequestActionType@@@Z
-    MCAPI ItemStackRequestAction(::ItemStackRequestActionType);
+    MCAPI explicit ItemStackRequestAction(::ItemStackRequestActionType);
 
     // symbol: ?getActionType@ItemStackRequestAction@@QEBA?AW4ItemStackRequestActionType@@XZ
     MCAPI ::ItemStackRequestActionType getActionType() const;

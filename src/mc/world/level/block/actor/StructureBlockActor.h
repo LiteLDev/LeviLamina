@@ -13,9 +13,9 @@ namespace mce { class Color; }
 class StructureBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    StructureBlockActor& operator=(StructureBlockActor const&) = delete;
-    StructureBlockActor(StructureBlockActor const&)            = delete;
-    StructureBlockActor()                                      = delete;
+    StructureBlockActor& operator=(StructureBlockActor const&);
+    StructureBlockActor(StructureBlockActor const&);
+    StructureBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -69,7 +69,7 @@ public:
     virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
 
     // symbol: ??0StructureBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI StructureBlockActor(class BlockPos const&);
+    MCAPI explicit StructureBlockActor(class BlockPos const&);
 
     // symbol: ?getStructureData@StructureBlockActor@@QEBAAEBVStructureEditorData@@XZ
     MCAPI class StructureEditorData const& getStructureData() const;

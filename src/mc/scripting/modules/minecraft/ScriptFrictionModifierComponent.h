@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptFrictionModifierComponent {
 public:
     // prevent constructor by default
-    ScriptFrictionModifierComponent& operator=(ScriptFrictionModifierComponent const&) = delete;
-    ScriptFrictionModifierComponent(ScriptFrictionModifierComponent const&)            = delete;
-    ScriptFrictionModifierComponent()                                                  = delete;
+    ScriptFrictionModifierComponent& operator=(ScriptFrictionModifierComponent const&);
+    ScriptFrictionModifierComponent(ScriptFrictionModifierComponent const&);
+    ScriptFrictionModifierComponent();
 
 public:
     // NOLINTBEGIN

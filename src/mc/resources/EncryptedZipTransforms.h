@@ -9,9 +9,9 @@
 class EncryptedZipTransforms : public ::FileAccessTransforms {
 public:
     // prevent constructor by default
-    EncryptedZipTransforms& operator=(EncryptedZipTransforms const&) = delete;
-    EncryptedZipTransforms(EncryptedZipTransforms const&)            = delete;
-    EncryptedZipTransforms()                                         = delete;
+    EncryptedZipTransforms& operator=(EncryptedZipTransforms const&);
+    EncryptedZipTransforms(EncryptedZipTransforms const&);
+    EncryptedZipTransforms();
 
 public:
     // NOLINTBEGIN
@@ -26,7 +26,8 @@ public:
 
     // symbol:
     // ??0EncryptedZipTransforms@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
-    MCAPI EncryptedZipTransforms(gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
+    MCAPI explicit EncryptedZipTransforms(gsl::not_null<
+                                          class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
 
     // NOLINTEND
 };

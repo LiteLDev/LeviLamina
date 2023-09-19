@@ -8,14 +8,14 @@
 struct ItemStackResponseContainerInfo {
 public:
     // prevent constructor by default
-    ItemStackResponseContainerInfo& operator=(ItemStackResponseContainerInfo const&) = delete;
-    ItemStackResponseContainerInfo(ItemStackResponseContainerInfo const&)            = delete;
-    ItemStackResponseContainerInfo()                                                 = delete;
+    ItemStackResponseContainerInfo& operator=(ItemStackResponseContainerInfo const&);
+    ItemStackResponseContainerInfo(ItemStackResponseContainerInfo const&);
+    ItemStackResponseContainerInfo();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ItemStackResponseContainerInfo@@QEAA@W4ContainerEnumName@@@Z
-    MCAPI ItemStackResponseContainerInfo(::ContainerEnumName);
+    MCAPI explicit ItemStackResponseContainerInfo(::ContainerEnumName);
 
     // symbol: ??1ItemStackResponseContainerInfo@@QEAA@XZ
     MCAPI ~ItemStackResponseContainerInfo();

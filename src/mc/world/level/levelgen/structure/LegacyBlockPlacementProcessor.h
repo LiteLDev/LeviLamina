@@ -5,14 +5,14 @@
 class LegacyBlockPlacementProcessor {
 public:
     // prevent constructor by default
-    LegacyBlockPlacementProcessor& operator=(LegacyBlockPlacementProcessor const&) = delete;
-    LegacyBlockPlacementProcessor(LegacyBlockPlacementProcessor const&)            = delete;
-    LegacyBlockPlacementProcessor()                                                = delete;
+    LegacyBlockPlacementProcessor& operator=(LegacyBlockPlacementProcessor const&);
+    LegacyBlockPlacementProcessor(LegacyBlockPlacementProcessor const&);
+    LegacyBlockPlacementProcessor();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0LegacyBlockPlacementProcessor@@QEAA@AEBVLegacyStructureSettings@@@Z
-    MCAPI LegacyBlockPlacementProcessor(class LegacyStructureSettings const&);
+    MCAPI explicit LegacyBlockPlacementProcessor(class LegacyStructureSettings const&);
 
     // symbol:
     // ?applyBlockRules@LegacyBlockPlacementProcessor@@QEAAPEBVBlock@@AEAVBlockSource@@AEAVBlockPos@@PEBV2@AEBV4@@Z

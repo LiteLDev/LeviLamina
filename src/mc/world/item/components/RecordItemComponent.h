@@ -8,9 +8,9 @@
 class RecordItemComponent {
 public:
     // prevent constructor by default
-    RecordItemComponent& operator=(RecordItemComponent const&) = delete;
-    RecordItemComponent(RecordItemComponent const&)            = delete;
-    RecordItemComponent()                                      = delete;
+    RecordItemComponent& operator=(RecordItemComponent const&);
+    RecordItemComponent(RecordItemComponent const&);
+    RecordItemComponent();
 
 public:
     // NOLINTBEGIN

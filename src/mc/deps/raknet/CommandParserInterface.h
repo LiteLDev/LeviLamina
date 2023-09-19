@@ -7,9 +7,9 @@ namespace RakNet {
 class CommandParserInterface {
 public:
     // prevent constructor by default
-    CommandParserInterface& operator=(CommandParserInterface const&) = delete;
-    CommandParserInterface(CommandParserInterface const&)            = delete;
-    CommandParserInterface()                                         = delete;
+    CommandParserInterface& operator=(CommandParserInterface const&);
+    CommandParserInterface(CommandParserInterface const&);
+    CommandParserInterface();
 
 public:
     // NOLINTBEGIN

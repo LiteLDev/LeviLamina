@@ -15,9 +15,9 @@ namespace Json { class Value; }
 class FlatWorldGenerator : public ::WorldGenerator {
 public:
     // prevent constructor by default
-    FlatWorldGenerator& operator=(FlatWorldGenerator const&) = delete;
-    FlatWorldGenerator(FlatWorldGenerator const&)            = delete;
-    FlatWorldGenerator()                                     = delete;
+    FlatWorldGenerator& operator=(FlatWorldGenerator const&);
+    FlatWorldGenerator(FlatWorldGenerator const&);
+    FlatWorldGenerator();
 
 public:
     // NOLINTBEGIN

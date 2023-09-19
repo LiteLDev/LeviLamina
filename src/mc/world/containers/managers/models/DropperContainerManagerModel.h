@@ -10,9 +10,9 @@
 class DropperContainerManagerModel : public ::LevelContainerManagerModel {
 public:
     // prevent constructor by default
-    DropperContainerManagerModel& operator=(DropperContainerManagerModel const&) = delete;
-    DropperContainerManagerModel(DropperContainerManagerModel const&)            = delete;
-    DropperContainerManagerModel()                                               = delete;
+    DropperContainerManagerModel& operator=(DropperContainerManagerModel const&);
+    DropperContainerManagerModel(DropperContainerManagerModel const&);
+    DropperContainerManagerModel();
 
 public:
     // NOLINTBEGIN

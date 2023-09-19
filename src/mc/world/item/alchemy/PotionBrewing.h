@@ -14,14 +14,14 @@ public:
     class Ingredient {
     public:
         // prevent constructor by default
-        Ingredient& operator=(Ingredient const&) = delete;
-        Ingredient(Ingredient const&)            = delete;
-        Ingredient()                             = delete;
+        Ingredient& operator=(Ingredient const&);
+        Ingredient(Ingredient const&);
+        Ingredient();
 
     public:
         // NOLINTBEGIN
         // symbol: ??0Ingredient@PotionBrewing@@QEAA@AEBVItemInstance@@@Z
-        MCAPI Ingredient(class ItemInstance const&);
+        MCAPI explicit Ingredient(class ItemInstance const&);
 
         // symbol: ?equals@Ingredient@PotionBrewing@@QEBA_NAEBVItemDescriptor@@@Z
         MCAPI bool equals(class ItemDescriptor const&) const;
@@ -39,16 +39,16 @@ public:
     class Mix {
     public:
         // prevent constructor by default
-        Mix& operator=(Mix const&) = delete;
-        Mix(Mix const&)            = delete;
-        Mix()                      = delete;
+        Mix& operator=(Mix const&);
+        Mix(Mix const&);
+        Mix();
     };
 
 public:
     // prevent constructor by default
-    PotionBrewing& operator=(PotionBrewing const&) = delete;
-    PotionBrewing(PotionBrewing const&)            = delete;
-    PotionBrewing()                                = delete;
+    PotionBrewing& operator=(PotionBrewing const&);
+    PotionBrewing(PotionBrewing const&);
+    PotionBrewing();
 
 public:
     // NOLINTBEGIN

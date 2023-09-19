@@ -5,9 +5,9 @@
 struct TargetPoint {
 public:
     // prevent constructor by default
-    TargetPoint& operator=(TargetPoint const&) = delete;
-    TargetPoint(TargetPoint const&)            = delete;
-    TargetPoint()                              = delete;
+    TargetPoint& operator=(TargetPoint const&);
+    TargetPoint(TargetPoint const&);
+    TargetPoint();
 
 public:
     // NOLINTBEGIN

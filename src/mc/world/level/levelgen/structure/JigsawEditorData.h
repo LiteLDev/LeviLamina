@@ -8,8 +8,8 @@
 class JigsawEditorData {
 public:
     // prevent constructor by default
-    JigsawEditorData& operator=(JigsawEditorData const&) = delete;
-    JigsawEditorData(JigsawEditorData const&)            = delete;
+    JigsawEditorData& operator=(JigsawEditorData const&);
+    JigsawEditorData(JigsawEditorData const&);
 
 public:
     // NOLINTBEGIN

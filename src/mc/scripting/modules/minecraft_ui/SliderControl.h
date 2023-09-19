@@ -16,9 +16,9 @@ namespace ScriptModuleMinecraftServerUI {
 class SliderControl : public ::ScriptModuleMinecraftServerUI::IControl {
 public:
     // prevent constructor by default
-    SliderControl& operator=(SliderControl const&) = delete;
-    SliderControl(SliderControl const&)            = delete;
-    SliderControl()                                = delete;
+    SliderControl& operator=(SliderControl const&);
+    SliderControl(SliderControl const&);
+    SliderControl();
 
 public:
     // NOLINTBEGIN

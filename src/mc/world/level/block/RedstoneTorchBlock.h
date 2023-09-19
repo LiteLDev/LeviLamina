@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class RedstoneTorchBlock : public ::TorchBlock {
 public:
     // prevent constructor by default
-    RedstoneTorchBlock& operator=(RedstoneTorchBlock const&) = delete;
-    RedstoneTorchBlock(RedstoneTorchBlock const&)            = delete;
-    RedstoneTorchBlock()                                     = delete;
+    RedstoneTorchBlock& operator=(RedstoneTorchBlock const&);
+    RedstoneTorchBlock(RedstoneTorchBlock const&);
+    RedstoneTorchBlock();
 
 public:
     // NOLINTBEGIN

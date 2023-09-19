@@ -10,9 +10,9 @@
 class SleepGoal : public ::MoveToPOIGoal {
 public:
     // prevent constructor by default
-    SleepGoal& operator=(SleepGoal const&) = delete;
-    SleepGoal(SleepGoal const&)            = delete;
-    SleepGoal()                            = delete;
+    SleepGoal& operator=(SleepGoal const&);
+    SleepGoal(SleepGoal const&);
+    SleepGoal();
 
 public:
     // NOLINTBEGIN

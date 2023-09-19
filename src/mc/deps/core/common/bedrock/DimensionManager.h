@@ -19,9 +19,9 @@ namespace Bedrock::PubSub { class Subscription; }
 class DimensionManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    DimensionManager& operator=(DimensionManager const&) = delete;
-    DimensionManager(DimensionManager const&)            = delete;
-    DimensionManager()                                   = delete;
+    DimensionManager& operator=(DimensionManager const&);
+    DimensionManager(DimensionManager const&);
+    DimensionManager();
 
 public:
     // NOLINTBEGIN
@@ -31,7 +31,7 @@ public:
     // symbol:
     // ??0DimensionManager@@QEAA@V?$not_null@V?$NonOwnerPointer@VIDimensionFactory@@@Bedrock@@@gsl@@V?$optional@VDimensionDefinitionGroup@@@std@@@Z
     MCAPI
-    DimensionManager(gsl::not_null<class Bedrock::NonOwnerPointer<class IDimensionFactory>>, std::optional<class DimensionDefinitionGroup>);
+        DimensionManager(gsl::not_null<class Bedrock::NonOwnerPointer<class IDimensionFactory>>, std::optional<class DimensionDefinitionGroup>);
 
     // symbol: ?forEachDimension@DimensionManager@@QEAAXV?$function@$$A6A_NAEAVDimension@@@Z@std@@@Z
     MCAPI void forEachDimension(std::function<bool(class Dimension&)>);

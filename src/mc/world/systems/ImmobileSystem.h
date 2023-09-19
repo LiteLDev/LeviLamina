@@ -11,9 +11,9 @@
 class ImmobileSystem {
 public:
     // prevent constructor by default
-    ImmobileSystem& operator=(ImmobileSystem const&) = delete;
-    ImmobileSystem(ImmobileSystem const&)            = delete;
-    ImmobileSystem()                                 = delete;
+    ImmobileSystem& operator=(ImmobileSystem const&);
+    ImmobileSystem(ImmobileSystem const&);
+    ImmobileSystem();
 
 public:
     // NOLINTBEGIN

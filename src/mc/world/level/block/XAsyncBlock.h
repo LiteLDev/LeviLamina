@@ -5,7 +5,7 @@
 struct XAsyncBlock {
 public:
     // prevent constructor by default
-    XAsyncBlock& operator=(XAsyncBlock const&) = delete;
-    XAsyncBlock(XAsyncBlock const&)            = delete;
-    XAsyncBlock()                              = delete;
+    XAsyncBlock& operator=(XAsyncBlock const&);
+    XAsyncBlock(XAsyncBlock const&);
+    XAsyncBlock();
 };

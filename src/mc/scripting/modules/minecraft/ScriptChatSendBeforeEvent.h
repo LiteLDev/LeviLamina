@@ -10,8 +10,8 @@ namespace ScriptModuleMinecraft {
 struct ScriptChatSendBeforeEvent {
 public:
     // prevent constructor by default
-    ScriptChatSendBeforeEvent& operator=(ScriptChatSendBeforeEvent const&) = delete;
-    ScriptChatSendBeforeEvent()                                            = delete;
+    ScriptChatSendBeforeEvent& operator=(ScriptChatSendBeforeEvent const&);
+    ScriptChatSendBeforeEvent();
 
 public:
     // NOLINTBEGIN

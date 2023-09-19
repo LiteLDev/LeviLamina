@@ -11,8 +11,8 @@
 class PlayerActionPacket : public ::Packet {
 public:
     // prevent constructor by default
-    PlayerActionPacket& operator=(PlayerActionPacket const&) = delete;
-    PlayerActionPacket(PlayerActionPacket const&)            = delete;
+    PlayerActionPacket& operator=(PlayerActionPacket const&);
+    PlayerActionPacket(PlayerActionPacket const&);
 
 public:
     // NOLINTBEGIN

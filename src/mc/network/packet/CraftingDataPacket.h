@@ -10,8 +10,8 @@
 class CraftingDataPacket : public ::Packet {
 public:
     // prevent constructor by default
-    CraftingDataPacket& operator=(CraftingDataPacket const&) = delete;
-    CraftingDataPacket(CraftingDataPacket const&)            = delete;
+    CraftingDataPacket& operator=(CraftingDataPacket const&);
+    CraftingDataPacket(CraftingDataPacket const&);
 
 public:
     // NOLINTBEGIN

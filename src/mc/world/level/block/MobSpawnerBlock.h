@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class MobSpawnerBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    MobSpawnerBlock& operator=(MobSpawnerBlock const&) = delete;
-    MobSpawnerBlock(MobSpawnerBlock const&)            = delete;
-    MobSpawnerBlock()                                  = delete;
+    MobSpawnerBlock& operator=(MobSpawnerBlock const&);
+    MobSpawnerBlock(MobSpawnerBlock const&);
+    MobSpawnerBlock();
 
 public:
     // NOLINTBEGIN

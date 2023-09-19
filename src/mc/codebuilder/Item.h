@@ -7,9 +7,9 @@ namespace CodeBuilder {
 struct Item {
 public:
     // prevent constructor by default
-    Item& operator=(Item const&) = delete;
-    Item(Item const&)            = delete;
-    Item()                       = delete;
+    Item& operator=(Item const&);
+    Item(Item const&);
+    Item();
 
 public:
     // NOLINTBEGIN

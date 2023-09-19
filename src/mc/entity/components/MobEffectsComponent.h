@@ -5,9 +5,9 @@
 struct MobEffectsComponent {
 public:
     // prevent constructor by default
-    MobEffectsComponent& operator=(MobEffectsComponent const&) = delete;
-    MobEffectsComponent(MobEffectsComponent const&)            = delete;
-    MobEffectsComponent()                                      = delete;
+    MobEffectsComponent& operator=(MobEffectsComponent const&);
+    MobEffectsComponent(MobEffectsComponent const&);
+    MobEffectsComponent();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class BaseGoalDefinition {
 public:
     // prevent constructor by default
-    BaseGoalDefinition& operator=(BaseGoalDefinition const&) = delete;
-    BaseGoalDefinition(BaseGoalDefinition const&)            = delete;
-    BaseGoalDefinition()                                     = delete;
+    BaseGoalDefinition& operator=(BaseGoalDefinition const&);
+    BaseGoalDefinition(BaseGoalDefinition const&);
+    BaseGoalDefinition();
 
 public:
     // NOLINTBEGIN

@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class SlimeRandomDirectionDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    SlimeRandomDirectionDefinition& operator=(SlimeRandomDirectionDefinition const&) = delete;
-    SlimeRandomDirectionDefinition(SlimeRandomDirectionDefinition const&)            = delete;
+    SlimeRandomDirectionDefinition& operator=(SlimeRandomDirectionDefinition const&);
+    SlimeRandomDirectionDefinition(SlimeRandomDirectionDefinition const&);
 
 public:
     // NOLINTBEGIN

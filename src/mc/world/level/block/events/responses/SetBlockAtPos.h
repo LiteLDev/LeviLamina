@@ -15,9 +15,9 @@ namespace JsonUtil { class EmptyClass; }
 class SetBlockAtPos : public ::EventResponse {
 public:
     // prevent constructor by default
-    SetBlockAtPos& operator=(SetBlockAtPos const&) = delete;
-    SetBlockAtPos(SetBlockAtPos const&)            = delete;
-    SetBlockAtPos()                                = delete;
+    SetBlockAtPos& operator=(SetBlockAtPos const&);
+    SetBlockAtPos(SetBlockAtPos const&);
+    SetBlockAtPos();
 
 public:
     // NOLINTBEGIN

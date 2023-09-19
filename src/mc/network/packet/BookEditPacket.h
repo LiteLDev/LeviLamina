@@ -10,7 +10,7 @@
 class BookEditPacket : public ::Packet {
 public:
     // prevent constructor by default
-    BookEditPacket& operator=(BookEditPacket const&) = delete;
+    BookEditPacket& operator=(BookEditPacket const&);
 
 public:
     // NOLINTBEGIN

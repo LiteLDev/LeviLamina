@@ -5,9 +5,9 @@
 class ActorStopRidingEventSystem {
 public:
     // prevent constructor by default
-    ActorStopRidingEventSystem& operator=(ActorStopRidingEventSystem const&) = delete;
-    ActorStopRidingEventSystem(ActorStopRidingEventSystem const&)            = delete;
-    ActorStopRidingEventSystem()                                             = delete;
+    ActorStopRidingEventSystem& operator=(ActorStopRidingEventSystem const&);
+    ActorStopRidingEventSystem(ActorStopRidingEventSystem const&);
+    ActorStopRidingEventSystem();
 
 public:
     // NOLINTBEGIN

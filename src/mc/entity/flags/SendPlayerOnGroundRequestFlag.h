@@ -5,7 +5,7 @@
 struct SendPlayerOnGroundRequestFlag {
 public:
     // prevent constructor by default
-    SendPlayerOnGroundRequestFlag& operator=(SendPlayerOnGroundRequestFlag const&) = delete;
-    SendPlayerOnGroundRequestFlag(SendPlayerOnGroundRequestFlag const&)            = delete;
-    SendPlayerOnGroundRequestFlag()                                                = delete;
+    SendPlayerOnGroundRequestFlag& operator=(SendPlayerOnGroundRequestFlag const&);
+    SendPlayerOnGroundRequestFlag(SendPlayerOnGroundRequestFlag const&);
+    SendPlayerOnGroundRequestFlag();
 };

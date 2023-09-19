@@ -5,7 +5,7 @@
 struct JumpTicksComponent {
 public:
     // prevent constructor by default
-    JumpTicksComponent& operator=(JumpTicksComponent const&) = delete;
-    JumpTicksComponent(JumpTicksComponent const&)            = delete;
-    JumpTicksComponent()                                     = delete;
+    JumpTicksComponent& operator=(JumpTicksComponent const&);
+    JumpTicksComponent(JumpTicksComponent const&);
+    JumpTicksComponent();
 };

@@ -12,9 +12,9 @@
 class NormalTickFilterSystem {
 public:
     // prevent constructor by default
-    NormalTickFilterSystem& operator=(NormalTickFilterSystem const&) = delete;
-    NormalTickFilterSystem(NormalTickFilterSystem const&)            = delete;
-    NormalTickFilterSystem()                                         = delete;
+    NormalTickFilterSystem& operator=(NormalTickFilterSystem const&);
+    NormalTickFilterSystem(NormalTickFilterSystem const&);
+    NormalTickFilterSystem();
 
 public:
     // NOLINTBEGIN

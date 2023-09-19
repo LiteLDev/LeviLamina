@@ -5,9 +5,9 @@
 struct ActorTargetFilter {
 public:
     // prevent constructor by default
-    ActorTargetFilter& operator=(ActorTargetFilter const&) = delete;
-    ActorTargetFilter(ActorTargetFilter const&)            = delete;
-    ActorTargetFilter()                                    = delete;
+    ActorTargetFilter& operator=(ActorTargetFilter const&);
+    ActorTargetFilter(ActorTargetFilter const&);
+    ActorTargetFilter();
 
 public:
     // NOLINTBEGIN

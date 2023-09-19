@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class RapidFertilizerItem : public ::FertilizerItem {
 public:
     // prevent constructor by default
-    RapidFertilizerItem& operator=(RapidFertilizerItem const&) = delete;
-    RapidFertilizerItem(RapidFertilizerItem const&)            = delete;
-    RapidFertilizerItem()                                      = delete;
+    RapidFertilizerItem& operator=(RapidFertilizerItem const&);
+    RapidFertilizerItem(RapidFertilizerItem const&);
+    RapidFertilizerItem();
 
 public:
     // NOLINTBEGIN

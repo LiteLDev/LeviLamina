@@ -5,8 +5,8 @@
 class CommandIntegerRange {
 public:
     // prevent constructor by default
-    CommandIntegerRange& operator=(CommandIntegerRange const&) = delete;
-    CommandIntegerRange(CommandIntegerRange const&)            = delete;
+    CommandIntegerRange& operator=(CommandIntegerRange const&);
+    CommandIntegerRange(CommandIntegerRange const&);
 
 public:
     // NOLINTBEGIN

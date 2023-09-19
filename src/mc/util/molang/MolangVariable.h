@@ -8,9 +8,9 @@
 class MolangVariable {
 public:
     // prevent constructor by default
-    MolangVariable& operator=(MolangVariable const&) = delete;
-    MolangVariable(MolangVariable const&)            = delete;
-    MolangVariable()                                 = delete;
+    MolangVariable& operator=(MolangVariable const&);
+    MolangVariable(MolangVariable const&);
+    MolangVariable();
 
 public:
     // NOLINTBEGIN

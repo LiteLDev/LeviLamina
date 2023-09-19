@@ -5,9 +5,9 @@
 struct INpcDialogueData {
 public:
     // prevent constructor by default
-    INpcDialogueData& operator=(INpcDialogueData const&) = delete;
-    INpcDialogueData(INpcDialogueData const&)            = delete;
-    INpcDialogueData()                                   = delete;
+    INpcDialogueData& operator=(INpcDialogueData const&);
+    INpcDialogueData(INpcDialogueData const&);
+    INpcDialogueData();
 
 public:
     // NOLINTBEGIN

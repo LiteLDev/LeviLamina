@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class ExplorationMapFunction : public ::LootItemFunction {
 public:
     // prevent constructor by default
-    ExplorationMapFunction& operator=(ExplorationMapFunction const&) = delete;
-    ExplorationMapFunction(ExplorationMapFunction const&)            = delete;
-    ExplorationMapFunction()                                         = delete;
+    ExplorationMapFunction& operator=(ExplorationMapFunction const&);
+    ExplorationMapFunction(ExplorationMapFunction const&);
+    ExplorationMapFunction();
 
 public:
     // NOLINTBEGIN

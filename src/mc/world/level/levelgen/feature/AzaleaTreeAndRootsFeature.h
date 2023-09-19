@@ -8,9 +8,9 @@
 class AzaleaTreeAndRootsFeature : public ::Feature {
 public:
     // prevent constructor by default
-    AzaleaTreeAndRootsFeature& operator=(AzaleaTreeAndRootsFeature const&) = delete;
-    AzaleaTreeAndRootsFeature(AzaleaTreeAndRootsFeature const&)            = delete;
-    AzaleaTreeAndRootsFeature()                                            = delete;
+    AzaleaTreeAndRootsFeature& operator=(AzaleaTreeAndRootsFeature const&);
+    AzaleaTreeAndRootsFeature(AzaleaTreeAndRootsFeature const&);
+    AzaleaTreeAndRootsFeature();
 
 public:
     // NOLINTBEGIN

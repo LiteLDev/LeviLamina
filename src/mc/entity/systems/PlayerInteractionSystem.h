@@ -13,9 +13,9 @@ public:
     struct InteractionMappingBase {
     public:
         // prevent constructor by default
-        InteractionMappingBase& operator=(InteractionMappingBase const&) = delete;
-        InteractionMappingBase(InteractionMappingBase const&)            = delete;
-        InteractionMappingBase()                                         = delete;
+        InteractionMappingBase& operator=(InteractionMappingBase const&);
+        InteractionMappingBase(InteractionMappingBase const&);
+        InteractionMappingBase();
 
     public:
         // NOLINTBEGIN
@@ -31,9 +31,9 @@ public:
 
 public:
     // prevent constructor by default
-    PlayerInteractionSystem& operator=(PlayerInteractionSystem const&) = delete;
-    PlayerInteractionSystem(PlayerInteractionSystem const&)            = delete;
-    PlayerInteractionSystem()                                          = delete;
+    PlayerInteractionSystem& operator=(PlayerInteractionSystem const&);
+    PlayerInteractionSystem(PlayerInteractionSystem const&);
+    PlayerInteractionSystem();
 
 public:
     // NOLINTBEGIN

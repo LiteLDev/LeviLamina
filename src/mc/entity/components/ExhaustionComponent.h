@@ -5,9 +5,9 @@
 class ExhaustionComponent {
 public:
     // prevent constructor by default
-    ExhaustionComponent& operator=(ExhaustionComponent const&) = delete;
-    ExhaustionComponent(ExhaustionComponent const&)            = delete;
-    ExhaustionComponent()                                      = delete;
+    ExhaustionComponent& operator=(ExhaustionComponent const&);
+    ExhaustionComponent(ExhaustionComponent const&);
+    ExhaustionComponent();
 
 public:
     // NOLINTBEGIN

@@ -13,9 +13,9 @@ namespace mce { class UUID; }
 class DecoratedPotRecipe : public ::MultiRecipe {
 public:
     // prevent constructor by default
-    DecoratedPotRecipe& operator=(DecoratedPotRecipe const&) = delete;
-    DecoratedPotRecipe(DecoratedPotRecipe const&)            = delete;
-    DecoratedPotRecipe()                                     = delete;
+    DecoratedPotRecipe& operator=(DecoratedPotRecipe const&);
+    DecoratedPotRecipe(DecoratedPotRecipe const&);
+    DecoratedPotRecipe();
 
 public:
     // NOLINTBEGIN
@@ -46,7 +46,7 @@ public:
     virtual int size() const;
 
     // symbol: ??0DecoratedPotRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI DecoratedPotRecipe(std::string_view);
+    MCAPI explicit DecoratedPotRecipe(std::string_view);
 
     // symbol: ??0DecoratedPotRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVUUID@mce@@@Z
     MCAPI DecoratedPotRecipe(std::string_view, class mce::UUID const&);

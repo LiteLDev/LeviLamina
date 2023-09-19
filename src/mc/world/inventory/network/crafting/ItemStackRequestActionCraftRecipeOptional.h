@@ -9,8 +9,8 @@
 class ItemStackRequestActionCraftRecipeOptional : public ::ItemStackRequestActionCraftBase {
 public:
     // prevent constructor by default
-    ItemStackRequestActionCraftRecipeOptional& operator=(ItemStackRequestActionCraftRecipeOptional const&) = delete;
-    ItemStackRequestActionCraftRecipeOptional(ItemStackRequestActionCraftRecipeOptional const&)            = delete;
+    ItemStackRequestActionCraftRecipeOptional& operator=(ItemStackRequestActionCraftRecipeOptional const&);
+    ItemStackRequestActionCraftRecipeOptional(ItemStackRequestActionCraftRecipeOptional const&);
 
 public:
     // NOLINTBEGIN

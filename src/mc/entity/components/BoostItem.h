@@ -5,9 +5,9 @@
 struct BoostItem {
 public:
     // prevent constructor by default
-    BoostItem& operator=(BoostItem const&) = delete;
-    BoostItem(BoostItem const&)            = delete;
-    BoostItem()                            = delete;
+    BoostItem& operator=(BoostItem const&);
+    BoostItem(BoostItem const&);
+    BoostItem();
 
 public:
     // NOLINTBEGIN

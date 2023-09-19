@@ -10,8 +10,8 @@
 class MapCreateLockedCopyPacket : public ::Packet {
 public:
     // prevent constructor by default
-    MapCreateLockedCopyPacket& operator=(MapCreateLockedCopyPacket const&) = delete;
-    MapCreateLockedCopyPacket(MapCreateLockedCopyPacket const&)            = delete;
+    MapCreateLockedCopyPacket& operator=(MapCreateLockedCopyPacket const&);
+    MapCreateLockedCopyPacket(MapCreateLockedCopyPacket const&);
 
 public:
     // NOLINTBEGIN

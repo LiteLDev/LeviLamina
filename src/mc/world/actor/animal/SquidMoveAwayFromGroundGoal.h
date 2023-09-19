@@ -9,9 +9,9 @@
 class SquidMoveAwayFromGroundGoal : public ::Goal {
 public:
     // prevent constructor by default
-    SquidMoveAwayFromGroundGoal& operator=(SquidMoveAwayFromGroundGoal const&) = delete;
-    SquidMoveAwayFromGroundGoal(SquidMoveAwayFromGroundGoal const&)            = delete;
-    SquidMoveAwayFromGroundGoal()                                              = delete;
+    SquidMoveAwayFromGroundGoal& operator=(SquidMoveAwayFromGroundGoal const&);
+    SquidMoveAwayFromGroundGoal(SquidMoveAwayFromGroundGoal const&);
+    SquidMoveAwayFromGroundGoal();
 
 public:
     // NOLINTBEGIN

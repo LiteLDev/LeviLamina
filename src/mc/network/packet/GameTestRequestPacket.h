@@ -15,8 +15,8 @@ namespace gametest { struct TestParameters; }
 class GameTestRequestPacket : public ::Packet {
 public:
     // prevent constructor by default
-    GameTestRequestPacket& operator=(GameTestRequestPacket const&) = delete;
-    GameTestRequestPacket(GameTestRequestPacket const&)            = delete;
+    GameTestRequestPacket& operator=(GameTestRequestPacket const&);
+    GameTestRequestPacket(GameTestRequestPacket const&);
 
 public:
     // NOLINTBEGIN

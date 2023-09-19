@@ -8,8 +8,8 @@
 class ByteTag : public ::Tag {
 public:
     // prevent constructor by default
-    ByteTag& operator=(ByteTag const&) = delete;
-    ByteTag(ByteTag const&)            = delete;
+    ByteTag& operator=(ByteTag const&);
+    ByteTag(ByteTag const&);
 
 public:
     // NOLINTBEGIN
@@ -41,7 +41,7 @@ public:
     MCVAPI ~ByteTag();
 
     // symbol: ??0ByteTag@@QEAA@E@Z
-    MCAPI ByteTag(uchar);
+    MCAPI explicit ByteTag(uchar);
 
     // symbol: ??0ByteTag@@QEAA@XZ
     MCAPI ByteTag();

@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class ReinforcedDeepslateBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    ReinforcedDeepslateBlock& operator=(ReinforcedDeepslateBlock const&) = delete;
-    ReinforcedDeepslateBlock(ReinforcedDeepslateBlock const&)            = delete;
-    ReinforcedDeepslateBlock()                                           = delete;
+    ReinforcedDeepslateBlock& operator=(ReinforcedDeepslateBlock const&);
+    ReinforcedDeepslateBlock(ReinforcedDeepslateBlock const&);
+    ReinforcedDeepslateBlock();
 
 public:
     // NOLINTBEGIN

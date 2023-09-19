@@ -5,9 +5,9 @@
 class BarterComponent {
 public:
     // prevent constructor by default
-    BarterComponent& operator=(BarterComponent const&) = delete;
-    BarterComponent(BarterComponent const&)            = delete;
-    BarterComponent()                                  = delete;
+    BarterComponent& operator=(BarterComponent const&);
+    BarterComponent(BarterComponent const&);
+    BarterComponent();
 
 public:
     // NOLINTBEGIN

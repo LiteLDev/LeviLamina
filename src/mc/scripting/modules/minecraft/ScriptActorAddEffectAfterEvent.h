@@ -10,9 +10,9 @@ namespace ScriptModuleMinecraft {
 struct ScriptActorAddEffectAfterEvent {
 public:
     // prevent constructor by default
-    ScriptActorAddEffectAfterEvent& operator=(ScriptActorAddEffectAfterEvent const&) = delete;
-    ScriptActorAddEffectAfterEvent(ScriptActorAddEffectAfterEvent const&)            = delete;
-    ScriptActorAddEffectAfterEvent()                                                 = delete;
+    ScriptActorAddEffectAfterEvent& operator=(ScriptActorAddEffectAfterEvent const&);
+    ScriptActorAddEffectAfterEvent(ScriptActorAddEffectAfterEvent const&);
+    ScriptActorAddEffectAfterEvent();
 
 public:
     // NOLINTBEGIN

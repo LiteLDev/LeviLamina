@@ -21,9 +21,9 @@ namespace mce { class UUID; }
 class ServerInstance {
 public:
     // prevent constructor by default
-    ServerInstance& operator=(ServerInstance const&) = delete;
-    ServerInstance(ServerInstance const&)            = delete;
-    ServerInstance()                                 = delete;
+    ServerInstance& operator=(ServerInstance const&);
+    ServerInstance(ServerInstance const&);
+    ServerInstance();
 
 public:
     // NOLINTBEGIN

@@ -10,8 +10,8 @@
 class EditorNetworkPacket : public ::Packet {
 public:
     // prevent constructor by default
-    EditorNetworkPacket& operator=(EditorNetworkPacket const&) = delete;
-    EditorNetworkPacket(EditorNetworkPacket const&)            = delete;
+    EditorNetworkPacket& operator=(EditorNetworkPacket const&);
+    EditorNetworkPacket(EditorNetworkPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class WoolCarpetBlock : public ::CarpetBlock {
 public:
     // prevent constructor by default
-    WoolCarpetBlock& operator=(WoolCarpetBlock const&) = delete;
-    WoolCarpetBlock(WoolCarpetBlock const&)            = delete;
-    WoolCarpetBlock()                                  = delete;
+    WoolCarpetBlock& operator=(WoolCarpetBlock const&);
+    WoolCarpetBlock(WoolCarpetBlock const&);
+    WoolCarpetBlock();
 
 public:
     // NOLINTBEGIN

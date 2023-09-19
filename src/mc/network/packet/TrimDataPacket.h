@@ -10,8 +10,8 @@
 class TrimDataPacket : public ::Packet {
 public:
     // prevent constructor by default
-    TrimDataPacket& operator=(TrimDataPacket const&) = delete;
-    TrimDataPacket(TrimDataPacket const&)            = delete;
+    TrimDataPacket& operator=(TrimDataPacket const&);
+    TrimDataPacket(TrimDataPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -8,8 +8,8 @@
 class EnderChestContainer : public ::FillingContainer {
 public:
     // prevent constructor by default
-    EnderChestContainer& operator=(EnderChestContainer const&) = delete;
-    EnderChestContainer(EnderChestContainer const&)            = delete;
+    EnderChestContainer& operator=(EnderChestContainer const&);
+    EnderChestContainer(EnderChestContainer const&);
 
 public:
     // NOLINTBEGIN

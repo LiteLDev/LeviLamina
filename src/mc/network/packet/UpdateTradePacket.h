@@ -12,8 +12,8 @@
 class UpdateTradePacket : public ::Packet {
 public:
     // prevent constructor by default
-    UpdateTradePacket& operator=(UpdateTradePacket const&) = delete;
-    UpdateTradePacket(UpdateTradePacket const&)            = delete;
+    UpdateTradePacket& operator=(UpdateTradePacket const&);
+    UpdateTradePacket(UpdateTradePacket const&);
 
 public:
     // NOLINTBEGIN

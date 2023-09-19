@@ -9,9 +9,9 @@
 class ShareItemsGoal : public ::Goal {
 public:
     // prevent constructor by default
-    ShareItemsGoal& operator=(ShareItemsGoal const&) = delete;
-    ShareItemsGoal(ShareItemsGoal const&)            = delete;
-    ShareItemsGoal()                                 = delete;
+    ShareItemsGoal& operator=(ShareItemsGoal const&);
+    ShareItemsGoal(ShareItemsGoal const&);
+    ShareItemsGoal();
 
 public:
     // NOLINTBEGIN

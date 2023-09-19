@@ -31,9 +31,9 @@ namespace mce { class UUID; }
 class PigZombie : public ::Zombie {
 public:
     // prevent constructor by default
-    PigZombie& operator=(PigZombie const&) = delete;
-    PigZombie(PigZombie const&)            = delete;
-    PigZombie()                            = delete;
+    PigZombie& operator=(PigZombie const&);
+    PigZombie(PigZombie const&);
+    PigZombie();
 
 public:
     // NOLINTBEGIN

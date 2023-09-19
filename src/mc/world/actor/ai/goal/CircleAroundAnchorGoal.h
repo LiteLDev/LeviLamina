@@ -9,9 +9,9 @@
 class CircleAroundAnchorGoal : public ::Goal {
 public:
     // prevent constructor by default
-    CircleAroundAnchorGoal& operator=(CircleAroundAnchorGoal const&) = delete;
-    CircleAroundAnchorGoal(CircleAroundAnchorGoal const&)            = delete;
-    CircleAroundAnchorGoal()                                         = delete;
+    CircleAroundAnchorGoal& operator=(CircleAroundAnchorGoal const&);
+    CircleAroundAnchorGoal(CircleAroundAnchorGoal const&);
+    CircleAroundAnchorGoal();
 
 public:
     // NOLINTBEGIN
@@ -35,7 +35,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0CircleAroundAnchorGoal@@QEAA@AEAVMob@@@Z
-    MCAPI CircleAroundAnchorGoal(class Mob&);
+    MCAPI explicit CircleAroundAnchorGoal(class Mob&);
 
     // NOLINTEND
 

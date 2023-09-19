@@ -7,7 +7,7 @@ namespace Bedrock::Http {
 class HeaderCollection {
 public:
     // prevent constructor by default
-    HeaderCollection& operator=(HeaderCollection const&) = delete;
+    HeaderCollection& operator=(HeaderCollection const&);
 
 public:
     // NOLINTBEGIN

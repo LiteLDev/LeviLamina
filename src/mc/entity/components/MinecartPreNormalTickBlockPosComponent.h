@@ -5,7 +5,7 @@
 struct MinecartPreNormalTickBlockPosComponent {
 public:
     // prevent constructor by default
-    MinecartPreNormalTickBlockPosComponent& operator=(MinecartPreNormalTickBlockPosComponent const&) = delete;
-    MinecartPreNormalTickBlockPosComponent(MinecartPreNormalTickBlockPosComponent const&)            = delete;
-    MinecartPreNormalTickBlockPosComponent()                                                         = delete;
+    MinecartPreNormalTickBlockPosComponent& operator=(MinecartPreNormalTickBlockPosComponent const&);
+    MinecartPreNormalTickBlockPosComponent(MinecartPreNormalTickBlockPosComponent const&);
+    MinecartPreNormalTickBlockPosComponent();
 };

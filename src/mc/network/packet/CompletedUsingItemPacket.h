@@ -10,8 +10,8 @@
 class CompletedUsingItemPacket : public ::Packet {
 public:
     // prevent constructor by default
-    CompletedUsingItemPacket& operator=(CompletedUsingItemPacket const&) = delete;
-    CompletedUsingItemPacket(CompletedUsingItemPacket const&)            = delete;
+    CompletedUsingItemPacket& operator=(CompletedUsingItemPacket const&);
+    CompletedUsingItemPacket(CompletedUsingItemPacket const&);
 
 public:
     // NOLINTBEGIN

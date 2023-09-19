@@ -8,9 +8,9 @@
 class DesertWellFeature : public ::Feature {
 public:
     // prevent constructor by default
-    DesertWellFeature& operator=(DesertWellFeature const&) = delete;
-    DesertWellFeature(DesertWellFeature const&)            = delete;
-    DesertWellFeature()                                    = delete;
+    DesertWellFeature& operator=(DesertWellFeature const&);
+    DesertWellFeature(DesertWellFeature const&);
+    DesertWellFeature();
 
 public:
     // NOLINTBEGIN

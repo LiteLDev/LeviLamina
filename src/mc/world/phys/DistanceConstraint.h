@@ -5,9 +5,9 @@
 class DistanceConstraint {
 public:
     // prevent constructor by default
-    DistanceConstraint& operator=(DistanceConstraint const&) = delete;
-    DistanceConstraint(DistanceConstraint const&)            = delete;
-    DistanceConstraint()                                     = delete;
+    DistanceConstraint& operator=(DistanceConstraint const&);
+    DistanceConstraint(DistanceConstraint const&);
+    DistanceConstraint();
 
 public:
     // NOLINTBEGIN

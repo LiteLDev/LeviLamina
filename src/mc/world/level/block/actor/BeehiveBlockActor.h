@@ -16,9 +16,9 @@ public:
     struct Occupant {
     public:
         // prevent constructor by default
-        Occupant& operator=(Occupant const&) = delete;
-        Occupant(Occupant const&)            = delete;
-        Occupant()                           = delete;
+        Occupant& operator=(Occupant const&);
+        Occupant(Occupant const&);
+        Occupant();
 
     public:
         // NOLINTBEGIN
@@ -30,9 +30,9 @@ public:
 
 public:
     // prevent constructor by default
-    BeehiveBlockActor& operator=(BeehiveBlockActor const&) = delete;
-    BeehiveBlockActor(BeehiveBlockActor const&)            = delete;
-    BeehiveBlockActor()                                    = delete;
+    BeehiveBlockActor& operator=(BeehiveBlockActor const&);
+    BeehiveBlockActor(BeehiveBlockActor const&);
+    BeehiveBlockActor();
 
 public:
     // NOLINTBEGIN

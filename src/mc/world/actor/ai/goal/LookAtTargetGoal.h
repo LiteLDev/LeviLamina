@@ -9,9 +9,9 @@
 class LookAtTargetGoal : public ::LookAtActorGoal {
 public:
     // prevent constructor by default
-    LookAtTargetGoal& operator=(LookAtTargetGoal const&) = delete;
-    LookAtTargetGoal(LookAtTargetGoal const&)            = delete;
-    LookAtTargetGoal()                                   = delete;
+    LookAtTargetGoal& operator=(LookAtTargetGoal const&);
+    LookAtTargetGoal(LookAtTargetGoal const&);
+    LookAtTargetGoal();
 
 public:
     // NOLINTBEGIN

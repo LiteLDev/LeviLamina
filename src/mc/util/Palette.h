@@ -13,9 +13,9 @@ namespace mce { class Color; }
 class Palette {
 public:
     // prevent constructor by default
-    Palette& operator=(Palette const&) = delete;
-    Palette(Palette const&)            = delete;
-    Palette()                          = delete;
+    Palette& operator=(Palette const&);
+    Palette(Palette const&);
+    Palette();
 
 public:
     // NOLINTBEGIN

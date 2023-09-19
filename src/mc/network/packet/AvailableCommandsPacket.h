@@ -24,17 +24,17 @@ public:
     struct ChainedSubcommandData {
     public:
         // prevent constructor by default
-        ChainedSubcommandData& operator=(ChainedSubcommandData const&) = delete;
-        ChainedSubcommandData(ChainedSubcommandData const&)            = delete;
-        ChainedSubcommandData()                                        = delete;
+        ChainedSubcommandData& operator=(ChainedSubcommandData const&);
+        ChainedSubcommandData(ChainedSubcommandData const&);
+        ChainedSubcommandData();
     };
 
     struct CommandData {
     public:
         // prevent constructor by default
-        CommandData& operator=(CommandData const&) = delete;
-        CommandData(CommandData const&)            = delete;
-        CommandData()                              = delete;
+        CommandData& operator=(CommandData const&);
+        CommandData(CommandData const&);
+        CommandData();
 
     public:
         // NOLINTBEGIN
@@ -50,9 +50,9 @@ public:
     struct ConstrainedValueData {
     public:
         // prevent constructor by default
-        ConstrainedValueData& operator=(ConstrainedValueData const&) = delete;
-        ConstrainedValueData(ConstrainedValueData const&)            = delete;
-        ConstrainedValueData()                                       = delete;
+        ConstrainedValueData& operator=(ConstrainedValueData const&);
+        ConstrainedValueData(ConstrainedValueData const&);
+        ConstrainedValueData();
 
     public:
         // NOLINTBEGIN
@@ -65,9 +65,9 @@ public:
     struct EnumData {
     public:
         // prevent constructor by default
-        EnumData& operator=(EnumData const&) = delete;
-        EnumData(EnumData const&)            = delete;
-        EnumData()                           = delete;
+        EnumData& operator=(EnumData const&);
+        EnumData(EnumData const&);
+        EnumData();
 
     public:
         // NOLINTBEGIN
@@ -80,9 +80,9 @@ public:
     struct OverloadData {
     public:
         // prevent constructor by default
-        OverloadData& operator=(OverloadData const&) = delete;
-        OverloadData(OverloadData const&)            = delete;
-        OverloadData()                               = delete;
+        OverloadData& operator=(OverloadData const&);
+        OverloadData(OverloadData const&);
+        OverloadData();
 
     public:
         // NOLINTBEGIN
@@ -95,9 +95,9 @@ public:
     struct ParamData {
     public:
         // prevent constructor by default
-        ParamData& operator=(ParamData const&) = delete;
-        ParamData(ParamData const&)            = delete;
-        ParamData()                            = delete;
+        ParamData& operator=(ParamData const&);
+        ParamData(ParamData const&);
+        ParamData();
 
     public:
         // NOLINTBEGIN
@@ -110,9 +110,9 @@ public:
     struct SoftEnumData {
     public:
         // prevent constructor by default
-        SoftEnumData& operator=(SoftEnumData const&) = delete;
-        SoftEnumData(SoftEnumData const&)            = delete;
-        SoftEnumData()                               = delete;
+        SoftEnumData& operator=(SoftEnumData const&);
+        SoftEnumData(SoftEnumData const&);
+        SoftEnumData();
 
     public:
         // NOLINTBEGIN
@@ -124,8 +124,8 @@ public:
 
 public:
     // prevent constructor by default
-    AvailableCommandsPacket& operator=(AvailableCommandsPacket const&) = delete;
-    AvailableCommandsPacket(AvailableCommandsPacket const&)            = delete;
+    AvailableCommandsPacket& operator=(AvailableCommandsPacket const&);
+    AvailableCommandsPacket(AvailableCommandsPacket const&);
 
 public:
     // NOLINTBEGIN

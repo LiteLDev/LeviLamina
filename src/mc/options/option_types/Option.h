@@ -19,9 +19,9 @@ public:
     class Impl {
     public:
         // prevent constructor by default
-        Impl& operator=(Impl const&) = delete;
-        Impl(Impl const&)            = delete;
-        Impl()                       = delete;
+        Impl& operator=(Impl const&);
+        Impl(Impl const&);
+        Impl();
 
     public:
         // NOLINTBEGIN
@@ -33,9 +33,9 @@ public:
 
 public:
     // prevent constructor by default
-    Option& operator=(Option const&) = delete;
-    Option(Option const&)            = delete;
-    Option()                         = delete;
+    Option& operator=(Option const&);
+    Option(Option const&);
+    Option();
 
 public:
     // NOLINTBEGIN

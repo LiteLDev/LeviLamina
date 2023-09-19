@@ -13,8 +13,8 @@ namespace Json { class Value; }
 class SplashPotionEffectSubcomponent : public ::OnHitSubcomponent {
 public:
     // prevent constructor by default
-    SplashPotionEffectSubcomponent& operator=(SplashPotionEffectSubcomponent const&) = delete;
-    SplashPotionEffectSubcomponent(SplashPotionEffectSubcomponent const&)            = delete;
+    SplashPotionEffectSubcomponent& operator=(SplashPotionEffectSubcomponent const&);
+    SplashPotionEffectSubcomponent(SplashPotionEffectSubcomponent const&);
 
 public:
     // NOLINTBEGIN

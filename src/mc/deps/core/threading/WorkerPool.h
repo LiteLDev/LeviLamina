@@ -15,9 +15,9 @@ namespace Bedrock::Threading { class OSThreadPriority; }
 class WorkerPool : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    WorkerPool& operator=(WorkerPool const&) = delete;
-    WorkerPool(WorkerPool const&)            = delete;
-    WorkerPool()                             = delete;
+    WorkerPool& operator=(WorkerPool const&);
+    WorkerPool(WorkerPool const&);
+    WorkerPool();
 
 public:
     // NOLINTBEGIN

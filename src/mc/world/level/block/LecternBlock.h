@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class LecternBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    LecternBlock& operator=(LecternBlock const&) = delete;
-    LecternBlock(LecternBlock const&)            = delete;
-    LecternBlock()                               = delete;
+    LecternBlock& operator=(LecternBlock const&);
+    LecternBlock(LecternBlock const&);
+    LecternBlock();
 
 public:
     // NOLINTBEGIN

@@ -7,9 +7,9 @@ namespace gametest {
 struct TestParameters {
 public:
     // prevent constructor by default
-    TestParameters& operator=(TestParameters const&) = delete;
-    TestParameters(TestParameters const&)            = delete;
-    TestParameters()                                 = delete;
+    TestParameters& operator=(TestParameters const&);
+    TestParameters(TestParameters const&);
+    TestParameters();
 
 public:
     // NOLINTBEGIN

@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class IsOnHotBlockTest : public ::SimpleBoolFilterTest {
 public:
     // prevent constructor by default
-    IsOnHotBlockTest& operator=(IsOnHotBlockTest const&) = delete;
-    IsOnHotBlockTest(IsOnHotBlockTest const&)            = delete;
-    IsOnHotBlockTest()                                   = delete;
+    IsOnHotBlockTest& operator=(IsOnHotBlockTest const&);
+    IsOnHotBlockTest(IsOnHotBlockTest const&);
+    IsOnHotBlockTest();
 
 public:
     // NOLINTBEGIN

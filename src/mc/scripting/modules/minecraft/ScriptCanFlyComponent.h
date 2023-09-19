@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptCanFlyComponent {
 public:
     // prevent constructor by default
-    ScriptCanFlyComponent& operator=(ScriptCanFlyComponent const&) = delete;
-    ScriptCanFlyComponent(ScriptCanFlyComponent const&)            = delete;
-    ScriptCanFlyComponent()                                        = delete;
+    ScriptCanFlyComponent& operator=(ScriptCanFlyComponent const&);
+    ScriptCanFlyComponent(ScriptCanFlyComponent const&);
+    ScriptCanFlyComponent();
 
 public:
     // NOLINTBEGIN

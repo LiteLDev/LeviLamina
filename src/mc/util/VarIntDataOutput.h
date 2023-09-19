@@ -8,9 +8,9 @@
 class VarIntDataOutput : public ::BytesDataOutput {
 public:
     // prevent constructor by default
-    VarIntDataOutput& operator=(VarIntDataOutput const&) = delete;
-    VarIntDataOutput(VarIntDataOutput const&)            = delete;
-    VarIntDataOutput()                                   = delete;
+    VarIntDataOutput& operator=(VarIntDataOutput const&);
+    VarIntDataOutput(VarIntDataOutput const&);
+    VarIntDataOutput();
 
 public:
     // NOLINTBEGIN

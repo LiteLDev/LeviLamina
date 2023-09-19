@@ -26,9 +26,9 @@
 class Minecart : public ::Actor {
 public:
     // prevent constructor by default
-    Minecart& operator=(Minecart const&) = delete;
-    Minecart(Minecart const&)            = delete;
-    Minecart()                           = delete;
+    Minecart& operator=(Minecart const&);
+    Minecart(Minecart const&);
+    Minecart();
 
 public:
     // NOLINTBEGIN

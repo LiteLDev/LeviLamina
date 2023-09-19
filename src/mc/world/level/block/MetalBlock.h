@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class MetalBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    MetalBlock& operator=(MetalBlock const&) = delete;
-    MetalBlock(MetalBlock const&)            = delete;
-    MetalBlock()                             = delete;
+    MetalBlock& operator=(MetalBlock const&);
+    MetalBlock(MetalBlock const&);
+    MetalBlock();
 
 public:
     // NOLINTBEGIN

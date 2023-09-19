@@ -7,9 +7,9 @@ namespace Bedrock::Http::MethodType {
 class PUT {
 public:
     // prevent constructor by default
-    PUT& operator=(PUT const&) = delete;
-    PUT(PUT const&)            = delete;
-    PUT()                      = delete;
+    PUT& operator=(PUT const&);
+    PUT(PUT const&);
+    PUT();
 
 public:
     // NOLINTBEGIN

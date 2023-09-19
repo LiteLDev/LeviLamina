@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class FaceDirectionalActorBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    FaceDirectionalActorBlock& operator=(FaceDirectionalActorBlock const&) = delete;
-    FaceDirectionalActorBlock(FaceDirectionalActorBlock const&)            = delete;
-    FaceDirectionalActorBlock()                                            = delete;
+    FaceDirectionalActorBlock& operator=(FaceDirectionalActorBlock const&);
+    FaceDirectionalActorBlock(FaceDirectionalActorBlock const&);
+    FaceDirectionalActorBlock();
 
 public:
     // NOLINTBEGIN

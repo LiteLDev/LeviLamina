@@ -9,8 +9,8 @@
 class RepeaterCapacitor : public ::SidePoweredComponent {
 public:
     // prevent constructor by default
-    RepeaterCapacitor& operator=(RepeaterCapacitor const&) = delete;
-    RepeaterCapacitor(RepeaterCapacitor const&)            = delete;
+    RepeaterCapacitor& operator=(RepeaterCapacitor const&);
+    RepeaterCapacitor(RepeaterCapacitor const&);
 
 public:
     // NOLINTBEGIN

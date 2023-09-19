@@ -10,9 +10,9 @@ namespace Core { class Path; }
 class InMemoryFileStorage {
 public:
     // prevent constructor by default
-    InMemoryFileStorage& operator=(InMemoryFileStorage const&) = delete;
-    InMemoryFileStorage(InMemoryFileStorage const&)            = delete;
-    InMemoryFileStorage()                                      = delete;
+    InMemoryFileStorage& operator=(InMemoryFileStorage const&);
+    InMemoryFileStorage(InMemoryFileStorage const&);
+    InMemoryFileStorage();
 
 public:
     // NOLINTBEGIN

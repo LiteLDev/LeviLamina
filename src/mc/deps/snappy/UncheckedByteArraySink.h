@@ -7,9 +7,9 @@ namespace snappy {
 class UncheckedByteArraySink {
 public:
     // prevent constructor by default
-    UncheckedByteArraySink& operator=(UncheckedByteArraySink const&) = delete;
-    UncheckedByteArraySink(UncheckedByteArraySink const&)            = delete;
-    UncheckedByteArraySink()                                         = delete;
+    UncheckedByteArraySink& operator=(UncheckedByteArraySink const&);
+    UncheckedByteArraySink(UncheckedByteArraySink const&);
+    UncheckedByteArraySink();
 
 public:
     // NOLINTBEGIN

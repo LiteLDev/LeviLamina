@@ -26,9 +26,9 @@
 class Rabbit : public ::Animal {
 public:
     // prevent constructor by default
-    Rabbit& operator=(Rabbit const&) = delete;
-    Rabbit(Rabbit const&)            = delete;
-    Rabbit()                         = delete;
+    Rabbit& operator=(Rabbit const&);
+    Rabbit(Rabbit const&);
+    Rabbit();
 
 public:
     // NOLINTBEGIN

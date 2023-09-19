@@ -13,9 +13,9 @@ namespace mce {
 class Math {
 public:
     // prevent constructor by default
-    Math& operator=(Math const&) = delete;
-    Math(Math const&)            = delete;
-    Math()                       = delete;
+    Math& operator=(Math const&);
+    Math(Math const&);
+    Math();
 
 public:
     // NOLINTBEGIN

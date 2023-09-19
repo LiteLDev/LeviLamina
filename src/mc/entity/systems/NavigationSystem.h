@@ -8,9 +8,9 @@
 class NavigationSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    NavigationSystem& operator=(NavigationSystem const&) = delete;
-    NavigationSystem(NavigationSystem const&)            = delete;
-    NavigationSystem()                                   = delete;
+    NavigationSystem& operator=(NavigationSystem const&);
+    NavigationSystem(NavigationSystem const&);
+    NavigationSystem();
 
 public:
     // NOLINTBEGIN

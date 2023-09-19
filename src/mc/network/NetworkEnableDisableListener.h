@@ -8,9 +8,9 @@
 class NetworkEnableDisableListener {
 public:
     // prevent constructor by default
-    NetworkEnableDisableListener& operator=(NetworkEnableDisableListener const&) = delete;
-    NetworkEnableDisableListener(NetworkEnableDisableListener const&)            = delete;
-    NetworkEnableDisableListener()                                               = delete;
+    NetworkEnableDisableListener& operator=(NetworkEnableDisableListener const&);
+    NetworkEnableDisableListener(NetworkEnableDisableListener const&);
+    NetworkEnableDisableListener();
 
 public:
     // NOLINTBEGIN
@@ -27,7 +27,7 @@ public:
     MCVAPI ~NetworkEnableDisableListener();
 
     // symbol: ??0NetworkEnableDisableListener@@QEAA@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
-    MCAPI NetworkEnableDisableListener(class Bedrock::NonOwnerPointer<class AppPlatform> const&);
+    MCAPI explicit NetworkEnableDisableListener(class Bedrock::NonOwnerPointer<class AppPlatform> const&);
 
     // symbol: ?disable@NetworkEnableDisableListener@@QEAAXXZ
     MCAPI void disable();

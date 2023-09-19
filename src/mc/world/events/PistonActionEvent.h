@@ -5,9 +5,9 @@
 struct PistonActionEvent {
 public:
     // prevent constructor by default
-    PistonActionEvent& operator=(PistonActionEvent const&) = delete;
-    PistonActionEvent(PistonActionEvent const&)            = delete;
-    PistonActionEvent()                                    = delete;
+    PistonActionEvent& operator=(PistonActionEvent const&);
+    PistonActionEvent(PistonActionEvent const&);
+    PistonActionEvent();
 
 public:
     // NOLINTBEGIN

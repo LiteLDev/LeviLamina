@@ -10,8 +10,8 @@
 class CameraPresetsPacket : public ::Packet {
 public:
     // prevent constructor by default
-    CameraPresetsPacket& operator=(CameraPresetsPacket const&) = delete;
-    CameraPresetsPacket(CameraPresetsPacket const&)            = delete;
+    CameraPresetsPacket& operator=(CameraPresetsPacket const&);
+    CameraPresetsPacket(CameraPresetsPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -43,7 +43,7 @@ public:
     MCAPI CameraPresetsPacket();
 
     // symbol: ??0CameraPresetsPacket@@QEAA@AEBVCameraPresets@@@Z
-    MCAPI CameraPresetsPacket(class CameraPresets const&);
+    MCAPI explicit CameraPresetsPacket(class CameraPresets const&);
 
     // NOLINTEND
 };

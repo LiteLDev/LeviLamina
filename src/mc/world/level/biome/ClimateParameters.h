@@ -10,9 +10,9 @@ namespace ClimateUtils { struct Parameter; }
 struct ClimateParameters {
 public:
     // prevent constructor by default
-    ClimateParameters& operator=(ClimateParameters const&) = delete;
-    ClimateParameters(ClimateParameters const&)            = delete;
-    ClimateParameters()                                    = delete;
+    ClimateParameters& operator=(ClimateParameters const&);
+    ClimateParameters(ClimateParameters const&);
+    ClimateParameters();
 
 public:
     // NOLINTBEGIN

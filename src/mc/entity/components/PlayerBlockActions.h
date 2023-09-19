@@ -9,9 +9,9 @@
 class PlayerBlockActions {
 public:
     // prevent constructor by default
-    PlayerBlockActions& operator=(PlayerBlockActions const&) = delete;
-    PlayerBlockActions(PlayerBlockActions const&)            = delete;
-    PlayerBlockActions()                                     = delete;
+    PlayerBlockActions& operator=(PlayerBlockActions const&);
+    PlayerBlockActions(PlayerBlockActions const&);
+    PlayerBlockActions();
 
 public:
     // NOLINTBEGIN

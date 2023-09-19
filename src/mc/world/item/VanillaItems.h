@@ -5,9 +5,9 @@
 class VanillaItems {
 public:
     // prevent constructor by default
-    VanillaItems& operator=(VanillaItems const&) = delete;
-    VanillaItems(VanillaItems const&)            = delete;
-    VanillaItems()                               = delete;
+    VanillaItems& operator=(VanillaItems const&);
+    VanillaItems(VanillaItems const&);
+    VanillaItems();
 
 public:
     // NOLINTBEGIN

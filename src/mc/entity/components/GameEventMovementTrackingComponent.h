@@ -5,9 +5,9 @@
 class GameEventMovementTrackingComponent {
 public:
     // prevent constructor by default
-    GameEventMovementTrackingComponent& operator=(GameEventMovementTrackingComponent const&) = delete;
-    GameEventMovementTrackingComponent(GameEventMovementTrackingComponent const&)            = delete;
-    GameEventMovementTrackingComponent()                                                     = delete;
+    GameEventMovementTrackingComponent& operator=(GameEventMovementTrackingComponent const&);
+    GameEventMovementTrackingComponent(GameEventMovementTrackingComponent const&);
+    GameEventMovementTrackingComponent();
 
 public:
     // NOLINTBEGIN

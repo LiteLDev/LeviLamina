@@ -9,9 +9,9 @@
 class SHFillerCorridor : public ::StrongholdPiece {
 public:
     // prevent constructor by default
-    SHFillerCorridor& operator=(SHFillerCorridor const&) = delete;
-    SHFillerCorridor(SHFillerCorridor const&)            = delete;
-    SHFillerCorridor()                                   = delete;
+    SHFillerCorridor& operator=(SHFillerCorridor const&);
+    SHFillerCorridor(SHFillerCorridor const&);
+    SHFillerCorridor();
 
 public:
     // NOLINTBEGIN

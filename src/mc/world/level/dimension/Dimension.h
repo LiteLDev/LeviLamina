@@ -26,9 +26,9 @@ public:
     struct PlayerReplicationStructures {
     public:
         // prevent constructor by default
-        PlayerReplicationStructures& operator=(PlayerReplicationStructures const&) = delete;
-        PlayerReplicationStructures(PlayerReplicationStructures const&)            = delete;
-        PlayerReplicationStructures()                                              = delete;
+        PlayerReplicationStructures& operator=(PlayerReplicationStructures const&);
+        PlayerReplicationStructures(PlayerReplicationStructures const&);
+        PlayerReplicationStructures();
 
     public:
         // NOLINTBEGIN
@@ -41,9 +41,9 @@ public:
 
 public:
     // prevent constructor by default
-    Dimension& operator=(Dimension const&) = delete;
-    Dimension(Dimension const&)            = delete;
-    Dimension()                            = delete;
+    Dimension& operator=(Dimension const&);
+    Dimension(Dimension const&);
+    Dimension();
 
 public:
     // NOLINTBEGIN

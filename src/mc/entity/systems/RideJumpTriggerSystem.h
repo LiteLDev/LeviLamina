@@ -11,9 +11,9 @@
 class RideJumpTriggerSystem {
 public:
     // prevent constructor by default
-    RideJumpTriggerSystem& operator=(RideJumpTriggerSystem const&) = delete;
-    RideJumpTriggerSystem(RideJumpTriggerSystem const&)            = delete;
-    RideJumpTriggerSystem()                                        = delete;
+    RideJumpTriggerSystem& operator=(RideJumpTriggerSystem const&);
+    RideJumpTriggerSystem(RideJumpTriggerSystem const&);
+    RideJumpTriggerSystem();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class BossEventSubscriptionManager {
 public:
     // prevent constructor by default
-    BossEventSubscriptionManager& operator=(BossEventSubscriptionManager const&) = delete;
-    BossEventSubscriptionManager(BossEventSubscriptionManager const&)            = delete;
-    BossEventSubscriptionManager()                                               = delete;
+    BossEventSubscriptionManager& operator=(BossEventSubscriptionManager const&);
+    BossEventSubscriptionManager(BossEventSubscriptionManager const&);
+    BossEventSubscriptionManager();
 
 public:
     // NOLINTBEGIN

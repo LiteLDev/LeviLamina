@@ -19,9 +19,9 @@ namespace VanillaBlockDrops {
 class SelfDropsStrategy : public ::IResourceDropsStrategy {
 public:
     // prevent constructor by default
-    SelfDropsStrategy& operator=(SelfDropsStrategy const&) = delete;
-    SelfDropsStrategy(SelfDropsStrategy const&)            = delete;
-    SelfDropsStrategy()                                    = delete;
+    SelfDropsStrategy& operator=(SelfDropsStrategy const&);
+    SelfDropsStrategy(SelfDropsStrategy const&);
+    SelfDropsStrategy();
 
 public:
     // NOLINTBEGIN

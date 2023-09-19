@@ -5,9 +5,9 @@
 class LocalSpatialEntityFetcher {
 public:
     // prevent constructor by default
-    LocalSpatialEntityFetcher& operator=(LocalSpatialEntityFetcher const&) = delete;
-    LocalSpatialEntityFetcher(LocalSpatialEntityFetcher const&)            = delete;
-    LocalSpatialEntityFetcher()                                            = delete;
+    LocalSpatialEntityFetcher& operator=(LocalSpatialEntityFetcher const&);
+    LocalSpatialEntityFetcher(LocalSpatialEntityFetcher const&);
+    LocalSpatialEntityFetcher();
 
 public:
     // NOLINTBEGIN

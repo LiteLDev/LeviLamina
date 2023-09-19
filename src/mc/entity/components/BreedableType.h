@@ -5,8 +5,8 @@
 struct BreedableType {
 public:
     // prevent constructor by default
-    BreedableType& operator=(BreedableType const&) = delete;
-    BreedableType()                                = delete;
+    BreedableType& operator=(BreedableType const&);
+    BreedableType();
 
 public:
     // NOLINTBEGIN

@@ -5,8 +5,8 @@
 class AABB {
 public:
     // prevent constructor by default
-    AABB(AABB const&) = delete;
-    AABB()            = delete;
+    AABB(AABB const&);
+    AABB();
 
 public:
     // NOLINTBEGIN

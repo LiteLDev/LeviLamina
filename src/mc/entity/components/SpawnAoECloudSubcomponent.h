@@ -13,8 +13,8 @@ namespace Json { class Value; }
 class SpawnAoECloudSubcomponent : public ::OnHitSubcomponent {
 public:
     // prevent constructor by default
-    SpawnAoECloudSubcomponent& operator=(SpawnAoECloudSubcomponent const&) = delete;
-    SpawnAoECloudSubcomponent(SpawnAoECloudSubcomponent const&)            = delete;
+    SpawnAoECloudSubcomponent& operator=(SpawnAoECloudSubcomponent const&);
+    SpawnAoECloudSubcomponent(SpawnAoECloudSubcomponent const&);
 
 public:
     // NOLINTBEGIN

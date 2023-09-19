@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class LeavesBlockItem : public ::BlockItem {
 public:
     // prevent constructor by default
-    LeavesBlockItem& operator=(LeavesBlockItem const&) = delete;
-    LeavesBlockItem(LeavesBlockItem const&)            = delete;
-    LeavesBlockItem()                                  = delete;
+    LeavesBlockItem& operator=(LeavesBlockItem const&);
+    LeavesBlockItem(LeavesBlockItem const&);
+    LeavesBlockItem();
 
 public:
     // NOLINTBEGIN

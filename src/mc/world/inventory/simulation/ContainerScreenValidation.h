@@ -10,9 +10,9 @@
 class ContainerScreenValidation {
 public:
     // prevent constructor by default
-    ContainerScreenValidation& operator=(ContainerScreenValidation const&) = delete;
-    ContainerScreenValidation(ContainerScreenValidation const&)            = delete;
-    ContainerScreenValidation()                                            = delete;
+    ContainerScreenValidation& operator=(ContainerScreenValidation const&);
+    ContainerScreenValidation(ContainerScreenValidation const&);
+    ContainerScreenValidation();
 
 public:
     // NOLINTBEGIN

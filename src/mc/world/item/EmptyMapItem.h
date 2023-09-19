@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class EmptyMapItem : public ::ComplexItem {
 public:
     // prevent constructor by default
-    EmptyMapItem& operator=(EmptyMapItem const&) = delete;
-    EmptyMapItem(EmptyMapItem const&)            = delete;
-    EmptyMapItem()                               = delete;
+    EmptyMapItem& operator=(EmptyMapItem const&);
+    EmptyMapItem(EmptyMapItem const&);
+    EmptyMapItem();
 
 public:
     // NOLINTBEGIN

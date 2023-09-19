@@ -5,9 +5,9 @@
 struct DamageCondition {
 public:
     // prevent constructor by default
-    DamageCondition& operator=(DamageCondition const&) = delete;
-    DamageCondition(DamageCondition const&)            = delete;
-    DamageCondition()                                  = delete;
+    DamageCondition& operator=(DamageCondition const&);
+    DamageCondition(DamageCondition const&);
+    DamageCondition();
 
 public:
     // NOLINTBEGIN

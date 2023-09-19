@@ -5,9 +5,9 @@
 class SubscribedObjectives {
 public:
     // prevent constructor by default
-    SubscribedObjectives& operator=(SubscribedObjectives const&) = delete;
-    SubscribedObjectives(SubscribedObjectives const&)            = delete;
-    SubscribedObjectives()                                       = delete;
+    SubscribedObjectives& operator=(SubscribedObjectives const&);
+    SubscribedObjectives(SubscribedObjectives const&);
+    SubscribedObjectives();
 
 public:
     // NOLINTBEGIN

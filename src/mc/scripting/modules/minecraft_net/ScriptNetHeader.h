@@ -10,7 +10,7 @@ namespace ScriptModuleMinecraftNet {
 struct ScriptNetHeader {
 public:
     // prevent constructor by default
-    ScriptNetHeader() = delete;
+    ScriptNetHeader();
 
 public:
     // NOLINTBEGIN

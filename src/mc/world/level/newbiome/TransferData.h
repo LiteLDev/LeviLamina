@@ -8,9 +8,9 @@ template <typename T0>
 class TransferData {
 public:
     // prevent constructor by default
-    TransferData& operator=(TransferData const&) = delete;
-    TransferData(TransferData const&)            = delete;
-    TransferData()                               = delete;
+    TransferData& operator=(TransferData const&);
+    TransferData(TransferData const&);
+    TransferData();
 };
 
 }; // namespace OperationNodeDetails

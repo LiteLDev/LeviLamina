@@ -9,9 +9,9 @@
 class ChargeAttackGoal : public ::Goal {
 public:
     // prevent constructor by default
-    ChargeAttackGoal& operator=(ChargeAttackGoal const&) = delete;
-    ChargeAttackGoal(ChargeAttackGoal const&)            = delete;
-    ChargeAttackGoal()                                   = delete;
+    ChargeAttackGoal& operator=(ChargeAttackGoal const&);
+    ChargeAttackGoal(ChargeAttackGoal const&);
+    ChargeAttackGoal();
 
 public:
     // NOLINTBEGIN
@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0ChargeAttackGoal@@QEAA@AEAVMob@@@Z
-    MCAPI ChargeAttackGoal(class Mob&);
+    MCAPI explicit ChargeAttackGoal(class Mob&);
 
     // NOLINTEND
 };

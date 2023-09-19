@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class TripWireHookBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    TripWireHookBlock& operator=(TripWireHookBlock const&) = delete;
-    TripWireHookBlock(TripWireHookBlock const&)            = delete;
-    TripWireHookBlock()                                    = delete;
+    TripWireHookBlock& operator=(TripWireHookBlock const&);
+    TripWireHookBlock(TripWireHookBlock const&);
+    TripWireHookBlock();
 
 public:
     // NOLINTBEGIN

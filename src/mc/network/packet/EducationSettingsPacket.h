@@ -10,8 +10,8 @@
 class EducationSettingsPacket : public ::Packet {
 public:
     // prevent constructor by default
-    EducationSettingsPacket& operator=(EducationSettingsPacket const&) = delete;
-    EducationSettingsPacket(EducationSettingsPacket const&)            = delete;
+    EducationSettingsPacket& operator=(EducationSettingsPacket const&);
+    EducationSettingsPacket(EducationSettingsPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -39,7 +39,7 @@ public:
     MCAPI EducationSettingsPacket();
 
     // symbol: ??0EducationSettingsPacket@@QEAA@UEducationLevelSettings@@@Z
-    MCAPI EducationSettingsPacket(struct EducationLevelSettings);
+    MCAPI explicit EducationSettingsPacket(struct EducationLevelSettings);
 
     // NOLINTEND
 };

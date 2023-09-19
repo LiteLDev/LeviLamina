@@ -8,9 +8,9 @@
 class KnockbackArmorUpdater {
 public:
     // prevent constructor by default
-    KnockbackArmorUpdater& operator=(KnockbackArmorUpdater const&) = delete;
-    KnockbackArmorUpdater(KnockbackArmorUpdater const&)            = delete;
-    KnockbackArmorUpdater()                                        = delete;
+    KnockbackArmorUpdater& operator=(KnockbackArmorUpdater const&);
+    KnockbackArmorUpdater(KnockbackArmorUpdater const&);
+    KnockbackArmorUpdater();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class WoodlandMansionFeature : public ::StructureFeature {
 public:
     // prevent constructor by default
-    WoodlandMansionFeature& operator=(WoodlandMansionFeature const&) = delete;
-    WoodlandMansionFeature(WoodlandMansionFeature const&)            = delete;
-    WoodlandMansionFeature()                                         = delete;
+    WoodlandMansionFeature& operator=(WoodlandMansionFeature const&);
+    WoodlandMansionFeature(WoodlandMansionFeature const&);
+    WoodlandMansionFeature();
 
 public:
     // NOLINTBEGIN
@@ -42,7 +42,7 @@ public:
     createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
 
     // symbol: ??0WoodlandMansionFeature@@QEAA@I@Z
-    MCAPI WoodlandMansionFeature(uint);
+    MCAPI explicit WoodlandMansionFeature(uint);
 
     // NOLINTEND
 };

@@ -5,9 +5,9 @@
 class OnStepOnTrigger {
 public:
     // prevent constructor by default
-    OnStepOnTrigger& operator=(OnStepOnTrigger const&) = delete;
-    OnStepOnTrigger(OnStepOnTrigger const&)            = delete;
-    OnStepOnTrigger()                                  = delete;
+    OnStepOnTrigger& operator=(OnStepOnTrigger const&);
+    OnStepOnTrigger(OnStepOnTrigger const&);
+    OnStepOnTrigger();
 
 public:
     // NOLINTBEGIN

@@ -7,9 +7,9 @@ namespace AgentComponents::Actions {
 struct InspectItemDetail {
 public:
     // prevent constructor by default
-    InspectItemDetail& operator=(InspectItemDetail const&) = delete;
-    InspectItemDetail(InspectItemDetail const&)            = delete;
-    InspectItemDetail()                                    = delete;
+    InspectItemDetail& operator=(InspectItemDetail const&);
+    InspectItemDetail(InspectItemDetail const&);
+    InspectItemDetail();
 };
 
 }; // namespace AgentComponents::Actions

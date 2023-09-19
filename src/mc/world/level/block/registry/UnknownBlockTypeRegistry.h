@@ -8,9 +8,9 @@
 class UnknownBlockTypeRegistry : public ::IUnknownBlockTypeRegistry {
 public:
     // prevent constructor by default
-    UnknownBlockTypeRegistry& operator=(UnknownBlockTypeRegistry const&) = delete;
-    UnknownBlockTypeRegistry(UnknownBlockTypeRegistry const&)            = delete;
-    UnknownBlockTypeRegistry()                                           = delete;
+    UnknownBlockTypeRegistry& operator=(UnknownBlockTypeRegistry const&);
+    UnknownBlockTypeRegistry(UnknownBlockTypeRegistry const&);
+    UnknownBlockTypeRegistry();
 
 public:
     // NOLINTBEGIN

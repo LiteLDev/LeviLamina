@@ -5,9 +5,9 @@
 class ExpiringTick {
 public:
     // prevent constructor by default
-    ExpiringTick& operator=(ExpiringTick const&) = delete;
-    ExpiringTick(ExpiringTick const&)            = delete;
-    ExpiringTick()                               = delete;
+    ExpiringTick& operator=(ExpiringTick const&);
+    ExpiringTick(ExpiringTick const&);
+    ExpiringTick();
 
 public:
     // NOLINTBEGIN

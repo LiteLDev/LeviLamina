@@ -9,9 +9,9 @@
 class SHRoomCrossing : public ::StrongholdPiece {
 public:
     // prevent constructor by default
-    SHRoomCrossing& operator=(SHRoomCrossing const&) = delete;
-    SHRoomCrossing(SHRoomCrossing const&)            = delete;
-    SHRoomCrossing()                                 = delete;
+    SHRoomCrossing& operator=(SHRoomCrossing const&);
+    SHRoomCrossing(SHRoomCrossing const&);
+    SHRoomCrossing();
 
 public:
     // NOLINTBEGIN

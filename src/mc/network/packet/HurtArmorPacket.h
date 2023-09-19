@@ -11,8 +11,8 @@
 class HurtArmorPacket : public ::Packet {
 public:
     // prevent constructor by default
-    HurtArmorPacket& operator=(HurtArmorPacket const&) = delete;
-    HurtArmorPacket(HurtArmorPacket const&)            = delete;
+    HurtArmorPacket& operator=(HurtArmorPacket const&);
+    HurtArmorPacket(HurtArmorPacket const&);
 
 public:
     // NOLINTBEGIN

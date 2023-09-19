@@ -8,9 +8,9 @@
 class CommandVersion {
 public:
     // prevent constructor by default
-    CommandVersion& operator=(CommandVersion const&) = delete;
-    CommandVersion(CommandVersion const&)            = delete;
-    CommandVersion()                                 = delete;
+    CommandVersion& operator=(CommandVersion const&);
+    CommandVersion(CommandVersion const&);
+    CommandVersion();
 
 public:
     // NOLINTBEGIN

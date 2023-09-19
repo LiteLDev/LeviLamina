@@ -10,9 +10,8 @@ class ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING : public ::
 public:
     // prevent constructor by default
     ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING&
-    operator=(ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING const&) = delete;
-    ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING(ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING const&) =
-        delete;
+    operator=(ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING const&);
+    ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING(ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING const&);
 
 public:
     // NOLINTBEGIN

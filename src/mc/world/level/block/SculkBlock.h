@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class SculkBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    SculkBlock& operator=(SculkBlock const&) = delete;
-    SculkBlock(SculkBlock const&)            = delete;
-    SculkBlock()                             = delete;
+    SculkBlock& operator=(SculkBlock const&);
+    SculkBlock(SculkBlock const&);
+    SculkBlock();
 
 public:
     // NOLINTBEGIN

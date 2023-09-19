@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class StrippedLogBlock : public ::RotatedPillarBlock {
 public:
     // prevent constructor by default
-    StrippedLogBlock& operator=(StrippedLogBlock const&) = delete;
-    StrippedLogBlock(StrippedLogBlock const&)            = delete;
-    StrippedLogBlock()                                   = delete;
+    StrippedLogBlock& operator=(StrippedLogBlock const&);
+    StrippedLogBlock(StrippedLogBlock const&);
+    StrippedLogBlock();
 
 public:
     // NOLINTBEGIN

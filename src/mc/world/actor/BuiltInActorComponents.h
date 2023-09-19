@@ -5,7 +5,7 @@
 struct BuiltInActorComponents {
 public:
     // prevent constructor by default
-    BuiltInActorComponents& operator=(BuiltInActorComponents const&) = delete;
-    BuiltInActorComponents(BuiltInActorComponents const&)            = delete;
-    BuiltInActorComponents()                                         = delete;
+    BuiltInActorComponents& operator=(BuiltInActorComponents const&);
+    BuiltInActorComponents(BuiltInActorComponents const&);
+    BuiltInActorComponents();
 };

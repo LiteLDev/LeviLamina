@@ -15,7 +15,7 @@ public:
 
 public:
     // prevent constructor by default
-    IConnectionEventing& operator=(IConnectionEventing const&) = delete;
-    IConnectionEventing(IConnectionEventing const&)            = delete;
-    IConnectionEventing()                                      = delete;
+    IConnectionEventing& operator=(IConnectionEventing const&);
+    IConnectionEventing(IConnectionEventing const&);
+    IConnectionEventing();
 };

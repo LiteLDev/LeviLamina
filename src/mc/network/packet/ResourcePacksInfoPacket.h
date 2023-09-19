@@ -10,8 +10,8 @@
 class ResourcePacksInfoPacket : public ::Packet {
 public:
     // prevent constructor by default
-    ResourcePacksInfoPacket& operator=(ResourcePacksInfoPacket const&) = delete;
-    ResourcePacksInfoPacket(ResourcePacksInfoPacket const&)            = delete;
+    ResourcePacksInfoPacket& operator=(ResourcePacksInfoPacket const&);
+    ResourcePacksInfoPacket(ResourcePacksInfoPacket const&);
 
 public:
     // NOLINTBEGIN

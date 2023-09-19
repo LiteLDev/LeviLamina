@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class OnPlayerDestroyedTriggerDescription {
 public:
     // prevent constructor by default
-    OnPlayerDestroyedTriggerDescription& operator=(OnPlayerDestroyedTriggerDescription const&) = delete;
-    OnPlayerDestroyedTriggerDescription(OnPlayerDestroyedTriggerDescription const&)            = delete;
-    OnPlayerDestroyedTriggerDescription()                                                      = delete;
+    OnPlayerDestroyedTriggerDescription& operator=(OnPlayerDestroyedTriggerDescription const&);
+    OnPlayerDestroyedTriggerDescription(OnPlayerDestroyedTriggerDescription const&);
+    OnPlayerDestroyedTriggerDescription();
 
 public:
     // NOLINTBEGIN

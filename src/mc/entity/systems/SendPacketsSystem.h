@@ -5,9 +5,9 @@
 class SendPacketsSystem {
 public:
     // prevent constructor by default
-    SendPacketsSystem& operator=(SendPacketsSystem const&) = delete;
-    SendPacketsSystem(SendPacketsSystem const&)            = delete;
-    SendPacketsSystem()                                    = delete;
+    SendPacketsSystem& operator=(SendPacketsSystem const&);
+    SendPacketsSystem(SendPacketsSystem const&);
+    SendPacketsSystem();
 
 public:
     // NOLINTBEGIN

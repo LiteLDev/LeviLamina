@@ -8,9 +8,9 @@
 class ContentTierManager : public ::IContentTierManager {
 public:
     // prevent constructor by default
-    ContentTierManager& operator=(ContentTierManager const&) = delete;
-    ContentTierManager(ContentTierManager const&)            = delete;
-    ContentTierManager()                                     = delete;
+    ContentTierManager& operator=(ContentTierManager const&);
+    ContentTierManager(ContentTierManager const&);
+    ContentTierManager();
 
 public:
     // NOLINTBEGIN
@@ -24,7 +24,7 @@ public:
     MCVAPI ~ContentTierManager();
 
     // symbol: ??0ContentTierManager@@QEAA@V?$function@$$A6A_NXZ@std@@@Z
-    MCAPI ContentTierManager(std::function<bool(void)>);
+    MCAPI explicit ContentTierManager(std::function<bool(void)>);
 
     // NOLINTEND
 };

@@ -10,8 +10,8 @@
 class ChangeMobPropertyPacket : public ::Packet {
 public:
     // prevent constructor by default
-    ChangeMobPropertyPacket& operator=(ChangeMobPropertyPacket const&) = delete;
-    ChangeMobPropertyPacket(ChangeMobPropertyPacket const&)            = delete;
+    ChangeMobPropertyPacket& operator=(ChangeMobPropertyPacket const&);
+    ChangeMobPropertyPacket(ChangeMobPropertyPacket const&);
 
 public:
     // NOLINTBEGIN

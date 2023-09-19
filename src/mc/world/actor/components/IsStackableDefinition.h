@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct IsStackableDefinition {
 public:
     // prevent constructor by default
-    IsStackableDefinition& operator=(IsStackableDefinition const&) = delete;
-    IsStackableDefinition(IsStackableDefinition const&)            = delete;
-    IsStackableDefinition()                                        = delete;
+    IsStackableDefinition& operator=(IsStackableDefinition const&);
+    IsStackableDefinition(IsStackableDefinition const&);
+    IsStackableDefinition();
 
 public:
     // NOLINTBEGIN

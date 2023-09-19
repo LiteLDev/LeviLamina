@@ -18,9 +18,9 @@ public:
     struct PlainData {
     public:
         // prevent constructor by default
-        PlainData& operator=(PlainData const&) = delete;
-        PlainData(PlainData const&)            = delete;
-        PlainData()                            = delete;
+        PlainData& operator=(PlainData const&);
+        PlainData(PlainData const&);
+        PlainData();
 
     public:
         // NOLINTBEGIN
@@ -33,16 +33,16 @@ public:
     struct SynchronizedPlainData {
     public:
         // prevent constructor by default
-        SynchronizedPlainData& operator=(SynchronizedPlainData const&) = delete;
-        SynchronizedPlainData(SynchronizedPlainData const&)            = delete;
-        SynchronizedPlainData()                                        = delete;
+        SynchronizedPlainData& operator=(SynchronizedPlainData const&);
+        SynchronizedPlainData(SynchronizedPlainData const&);
+        SynchronizedPlainData();
     };
 
 public:
     // prevent constructor by default
-    SoundEventRequest& operator=(SoundEventRequest const&) = delete;
-    SoundEventRequest(SoundEventRequest const&)            = delete;
-    SoundEventRequest()                                    = delete;
+    SoundEventRequest& operator=(SoundEventRequest const&);
+    SoundEventRequest(SoundEventRequest const&);
+    SoundEventRequest();
 
 public:
     // NOLINTBEGIN

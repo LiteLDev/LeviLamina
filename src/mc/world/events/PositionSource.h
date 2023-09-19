@@ -18,9 +18,9 @@ namespace GameEvents {
 class PositionSource {
 public:
     // prevent constructor by default
-    PositionSource& operator=(PositionSource const&) = delete;
-    PositionSource(PositionSource const&)            = delete;
-    PositionSource()                                 = delete;
+    PositionSource& operator=(PositionSource const&);
+    PositionSource(PositionSource const&);
+    PositionSource();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 class IndexSet {
 public:
     // prevent constructor by default
-    IndexSet& operator=(IndexSet const&) = delete;
+    IndexSet& operator=(IndexSet const&);
 
 public:
     // NOLINTBEGIN

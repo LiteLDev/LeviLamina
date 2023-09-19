@@ -5,9 +5,9 @@
 class IFoodItemComponent {
 public:
     // prevent constructor by default
-    IFoodItemComponent& operator=(IFoodItemComponent const&) = delete;
-    IFoodItemComponent(IFoodItemComponent const&)            = delete;
-    IFoodItemComponent()                                     = delete;
+    IFoodItemComponent& operator=(IFoodItemComponent const&);
+    IFoodItemComponent(IFoodItemComponent const&);
+    IFoodItemComponent();
 
 public:
     // NOLINTBEGIN

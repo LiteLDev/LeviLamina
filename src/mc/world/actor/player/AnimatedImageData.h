@@ -14,7 +14,7 @@ namespace mce { struct Image; }
 class AnimatedImageData {
 public:
     // prevent constructor by default
-    AnimatedImageData() = delete;
+    AnimatedImageData();
 
 public:
     // NOLINTBEGIN

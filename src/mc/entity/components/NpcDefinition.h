@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class NpcDefinition {
 public:
     // prevent constructor by default
-    NpcDefinition& operator=(NpcDefinition const&) = delete;
-    NpcDefinition(NpcDefinition const&)            = delete;
-    NpcDefinition()                                = delete;
+    NpcDefinition& operator=(NpcDefinition const&);
+    NpcDefinition(NpcDefinition const&);
+    NpcDefinition();
 
 public:
     // NOLINTBEGIN

@@ -13,9 +13,9 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class IPacketObserver : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    IPacketObserver& operator=(IPacketObserver const&) = delete;
-    IPacketObserver(IPacketObserver const&)            = delete;
-    IPacketObserver()                                  = delete;
+    IPacketObserver& operator=(IPacketObserver const&);
+    IPacketObserver(IPacketObserver const&);
+    IPacketObserver();
 
 public:
     // NOLINTBEGIN

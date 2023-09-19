@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class AreaAttackDefinition {
 public:
     // prevent constructor by default
-    AreaAttackDefinition& operator=(AreaAttackDefinition const&) = delete;
-    AreaAttackDefinition(AreaAttackDefinition const&)            = delete;
-    AreaAttackDefinition()                                       = delete;
+    AreaAttackDefinition& operator=(AreaAttackDefinition const&);
+    AreaAttackDefinition(AreaAttackDefinition const&);
+    AreaAttackDefinition();
 
 public:
     // NOLINTBEGIN

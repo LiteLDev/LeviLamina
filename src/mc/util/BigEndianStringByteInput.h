@@ -8,9 +8,9 @@
 class BigEndianStringByteInput : public ::StringByteInput {
 public:
     // prevent constructor by default
-    BigEndianStringByteInput& operator=(BigEndianStringByteInput const&) = delete;
-    BigEndianStringByteInput(BigEndianStringByteInput const&)            = delete;
-    BigEndianStringByteInput()                                           = delete;
+    BigEndianStringByteInput& operator=(BigEndianStringByteInput const&);
+    BigEndianStringByteInput(BigEndianStringByteInput const&);
+    BigEndianStringByteInput();
 
 public:
     // NOLINTBEGIN

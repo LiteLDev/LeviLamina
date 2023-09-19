@@ -7,9 +7,9 @@ namespace Scripting {
 struct ModuleBindingBundle {
 public:
     // prevent constructor by default
-    ModuleBindingBundle& operator=(ModuleBindingBundle const&) = delete;
-    ModuleBindingBundle(ModuleBindingBundle const&)            = delete;
-    ModuleBindingBundle()                                      = delete;
+    ModuleBindingBundle& operator=(ModuleBindingBundle const&);
+    ModuleBindingBundle(ModuleBindingBundle const&);
+    ModuleBindingBundle();
 };
 
 }; // namespace Scripting

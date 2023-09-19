@@ -10,8 +10,8 @@
 class CraftableCompounds {
 public:
     // prevent constructor by default
-    CraftableCompounds& operator=(CraftableCompounds const&) = delete;
-    CraftableCompounds(CraftableCompounds const&)            = delete;
+    CraftableCompounds& operator=(CraftableCompounds const&);
+    CraftableCompounds(CraftableCompounds const&);
 
 public:
     // NOLINTBEGIN

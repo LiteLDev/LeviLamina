@@ -17,9 +17,9 @@ namespace Bedrock::Threading::AsyncResult {
 class ToXAsyncBlock {
 public:
     // prevent constructor by default
-    ToXAsyncBlock& operator=(ToXAsyncBlock const&) = delete;
-    ToXAsyncBlock(ToXAsyncBlock const&)            = delete;
-    ToXAsyncBlock()                                = delete;
+    ToXAsyncBlock& operator=(ToXAsyncBlock const&);
+    ToXAsyncBlock(ToXAsyncBlock const&);
+    ToXAsyncBlock();
 
 public:
     // NOLINTBEGIN

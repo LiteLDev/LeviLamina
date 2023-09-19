@@ -23,8 +23,8 @@ namespace Core {
 class FileSystemInterfaceImpl : public ::Core::IFileSystem {
 public:
     // prevent constructor by default
-    FileSystemInterfaceImpl& operator=(FileSystemInterfaceImpl const&) = delete;
-    FileSystemInterfaceImpl(FileSystemInterfaceImpl const&)            = delete;
+    FileSystemInterfaceImpl& operator=(FileSystemInterfaceImpl const&);
+    FileSystemInterfaceImpl(FileSystemInterfaceImpl const&);
 
 public:
     // NOLINTBEGIN

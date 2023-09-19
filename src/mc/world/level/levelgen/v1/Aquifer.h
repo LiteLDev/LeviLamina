@@ -13,16 +13,16 @@ public:
     struct FluidSample {
     public:
         // prevent constructor by default
-        FluidSample& operator=(FluidSample const&) = delete;
-        FluidSample(FluidSample const&)            = delete;
-        FluidSample()                              = delete;
+        FluidSample& operator=(FluidSample const&);
+        FluidSample(FluidSample const&);
+        FluidSample();
     };
 
 public:
     // prevent constructor by default
-    Aquifer& operator=(Aquifer const&) = delete;
-    Aquifer(Aquifer const&)            = delete;
-    Aquifer()                          = delete;
+    Aquifer& operator=(Aquifer const&);
+    Aquifer(Aquifer const&);
+    Aquifer();
 
 public:
     // NOLINTBEGIN

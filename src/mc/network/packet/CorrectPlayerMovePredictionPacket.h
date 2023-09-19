@@ -10,9 +10,9 @@
 class CorrectPlayerMovePredictionPacket : public ::Packet {
 public:
     // prevent constructor by default
-    CorrectPlayerMovePredictionPacket& operator=(CorrectPlayerMovePredictionPacket const&) = delete;
-    CorrectPlayerMovePredictionPacket(CorrectPlayerMovePredictionPacket const&)            = delete;
-    CorrectPlayerMovePredictionPacket()                                                    = delete;
+    CorrectPlayerMovePredictionPacket& operator=(CorrectPlayerMovePredictionPacket const&);
+    CorrectPlayerMovePredictionPacket(CorrectPlayerMovePredictionPacket const&);
+    CorrectPlayerMovePredictionPacket();
 
 public:
     // NOLINTBEGIN

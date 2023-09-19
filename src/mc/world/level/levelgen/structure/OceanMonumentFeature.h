@@ -8,9 +8,9 @@
 class OceanMonumentFeature : public ::StructureFeature {
 public:
     // prevent constructor by default
-    OceanMonumentFeature& operator=(OceanMonumentFeature const&) = delete;
-    OceanMonumentFeature(OceanMonumentFeature const&)            = delete;
-    OceanMonumentFeature()                                       = delete;
+    OceanMonumentFeature& operator=(OceanMonumentFeature const&);
+    OceanMonumentFeature(OceanMonumentFeature const&);
+    OceanMonumentFeature();
 
 public:
     // NOLINTBEGIN
@@ -48,7 +48,7 @@ public:
     createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
 
     // symbol: ??0OceanMonumentFeature@@QEAA@I@Z
-    MCAPI OceanMonumentFeature(uint);
+    MCAPI explicit OceanMonumentFeature(uint);
 
     // NOLINTEND
 };

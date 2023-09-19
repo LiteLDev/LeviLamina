@@ -10,9 +10,9 @@
 class BlockVolumeTarget : public ::IBlockWorldGenAPI {
 public:
     // prevent constructor by default
-    BlockVolumeTarget& operator=(BlockVolumeTarget const&) = delete;
-    BlockVolumeTarget(BlockVolumeTarget const&)            = delete;
-    BlockVolumeTarget()                                    = delete;
+    BlockVolumeTarget& operator=(BlockVolumeTarget const&);
+    BlockVolumeTarget(BlockVolumeTarget const&);
+    BlockVolumeTarget();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class ExternalRecipeStore {
 public:
     // prevent constructor by default
-    ExternalRecipeStore& operator=(ExternalRecipeStore const&) = delete;
-    ExternalRecipeStore(ExternalRecipeStore const&)            = delete;
-    ExternalRecipeStore()                                      = delete;
+    ExternalRecipeStore& operator=(ExternalRecipeStore const&);
+    ExternalRecipeStore(ExternalRecipeStore const&);
+    ExternalRecipeStore();
 
 public:
     // NOLINTBEGIN

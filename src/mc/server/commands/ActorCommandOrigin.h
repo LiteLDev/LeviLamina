@@ -18,9 +18,9 @@ namespace mce { class UUID; }
 class ActorCommandOrigin : public ::CommandOrigin {
 public:
     // prevent constructor by default
-    ActorCommandOrigin& operator=(ActorCommandOrigin const&) = delete;
-    ActorCommandOrigin(ActorCommandOrigin const&)            = delete;
-    ActorCommandOrigin()                                     = delete;
+    ActorCommandOrigin& operator=(ActorCommandOrigin const&);
+    ActorCommandOrigin(ActorCommandOrigin const&);
+    ActorCommandOrigin();
 
 public:
     // NOLINTBEGIN
@@ -73,7 +73,7 @@ public:
     virtual bool isValid() const;
 
     // symbol: ??0ActorCommandOrigin@@QEAA@AEAVActor@@@Z
-    MCAPI ActorCommandOrigin(class Actor&);
+    MCAPI explicit ActorCommandOrigin(class Actor&);
 
     // NOLINTEND
 };

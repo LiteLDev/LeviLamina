@@ -5,9 +5,9 @@
 class EyeOfEnderPreNormalTickSystem {
 public:
     // prevent constructor by default
-    EyeOfEnderPreNormalTickSystem& operator=(EyeOfEnderPreNormalTickSystem const&) = delete;
-    EyeOfEnderPreNormalTickSystem(EyeOfEnderPreNormalTickSystem const&)            = delete;
-    EyeOfEnderPreNormalTickSystem()                                                = delete;
+    EyeOfEnderPreNormalTickSystem& operator=(EyeOfEnderPreNormalTickSystem const&);
+    EyeOfEnderPreNormalTickSystem(EyeOfEnderPreNormalTickSystem const&);
+    EyeOfEnderPreNormalTickSystem();
 
 public:
     // NOLINTBEGIN

@@ -10,8 +10,8 @@
 class AddPlayerPacket : public ::AddActorBasePacket {
 public:
     // prevent constructor by default
-    AddPlayerPacket& operator=(AddPlayerPacket const&) = delete;
-    AddPlayerPacket(AddPlayerPacket const&)            = delete;
+    AddPlayerPacket& operator=(AddPlayerPacket const&);
+    AddPlayerPacket(AddPlayerPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -46,7 +46,7 @@ public:
     MCVAPI ~AddPlayerPacket();
 
     // symbol: ??0AddPlayerPacket@@QEAA@AEAVPlayer@@@Z
-    MCAPI AddPlayerPacket(class Player&);
+    MCAPI explicit AddPlayerPacket(class Player&);
 
     // symbol: ??0AddPlayerPacket@@QEAA@XZ
     MCAPI AddPlayerPacket();

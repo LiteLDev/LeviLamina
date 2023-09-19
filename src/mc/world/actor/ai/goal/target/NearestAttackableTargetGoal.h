@@ -9,9 +9,9 @@
 class NearestAttackableTargetGoal : public ::TargetGoal {
 public:
     // prevent constructor by default
-    NearestAttackableTargetGoal& operator=(NearestAttackableTargetGoal const&) = delete;
-    NearestAttackableTargetGoal(NearestAttackableTargetGoal const&)            = delete;
-    NearestAttackableTargetGoal()                                              = delete;
+    NearestAttackableTargetGoal& operator=(NearestAttackableTargetGoal const&);
+    NearestAttackableTargetGoal(NearestAttackableTargetGoal const&);
+    NearestAttackableTargetGoal();
 
 public:
     // NOLINTBEGIN
@@ -38,7 +38,7 @@ public:
     MCVAPI ~NearestAttackableTargetGoal();
 
     // symbol: ??0NearestAttackableTargetGoal@@QEAA@AEAVMob@@@Z
-    MCAPI NearestAttackableTargetGoal(class Mob&);
+    MCAPI explicit NearestAttackableTargetGoal(class Mob&);
 
     // NOLINTEND
 

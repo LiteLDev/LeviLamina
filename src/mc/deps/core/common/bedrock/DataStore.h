@@ -30,9 +30,9 @@ public:
     struct CustomFileHandlers {
     public:
         // prevent constructor by default
-        CustomFileHandlers& operator=(CustomFileHandlers const&) = delete;
-        CustomFileHandlers(CustomFileHandlers const&)            = delete;
-        CustomFileHandlers()                                     = delete;
+        CustomFileHandlers& operator=(CustomFileHandlers const&);
+        CustomFileHandlers(CustomFileHandlers const&);
+        CustomFileHandlers();
 
     public:
         // NOLINTBEGIN
@@ -48,9 +48,9 @@ public:
     class EditorImpl {
     public:
         // prevent constructor by default
-        EditorImpl& operator=(EditorImpl const&) = delete;
-        EditorImpl(EditorImpl const&)            = delete;
-        EditorImpl()                             = delete;
+        EditorImpl& operator=(EditorImpl const&);
+        EditorImpl(EditorImpl const&);
+        EditorImpl();
 
     public:
         // NOLINTBEGIN
@@ -84,14 +84,14 @@ public:
     class Impl {
     public:
         // prevent constructor by default
-        Impl& operator=(Impl const&) = delete;
-        Impl(Impl const&)            = delete;
-        Impl()                       = delete;
+        Impl& operator=(Impl const&);
+        Impl(Impl const&);
+        Impl();
 
     public:
         // NOLINTBEGIN
         // symbol: ??0Impl@DataStore@Bedrock@@QEAA@PEAV12@@Z
-        MCAPI Impl(class Bedrock::DataStore*);
+        MCAPI explicit Impl(class Bedrock::DataStore*);
 
         // symbol: ?load@Impl@DataStore@Bedrock@@QEAAXXZ
         MCAPI void load();
@@ -102,9 +102,9 @@ public:
     class Viewer {
     public:
         // prevent constructor by default
-        Viewer& operator=(Viewer const&) = delete;
-        Viewer(Viewer const&)            = delete;
-        Viewer()                         = delete;
+        Viewer& operator=(Viewer const&);
+        Viewer(Viewer const&);
+        Viewer();
 
     public:
         // NOLINTBEGIN
@@ -129,9 +129,9 @@ public:
     class ViewerImpl : public ::Bedrock::DataStore::Viewer {
     public:
         // prevent constructor by default
-        ViewerImpl& operator=(ViewerImpl const&) = delete;
-        ViewerImpl(ViewerImpl const&)            = delete;
-        ViewerImpl()                             = delete;
+        ViewerImpl& operator=(ViewerImpl const&);
+        ViewerImpl(ViewerImpl const&);
+        ViewerImpl();
 
     public:
         // NOLINTBEGIN
@@ -155,8 +155,8 @@ public:
 
 public:
     // prevent constructor by default
-    DataStore& operator=(DataStore const&) = delete;
-    DataStore(DataStore const&)            = delete;
+    DataStore& operator=(DataStore const&);
+    DataStore(DataStore const&);
 
 public:
     // NOLINTBEGIN

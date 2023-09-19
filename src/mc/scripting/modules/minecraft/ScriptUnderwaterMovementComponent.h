@@ -17,9 +17,9 @@ namespace ScriptModuleMinecraft {
 class ScriptUnderwaterMovementComponent : public ::ScriptModuleMinecraft::AttributeScriptActorComponent {
 public:
     // prevent constructor by default
-    ScriptUnderwaterMovementComponent& operator=(ScriptUnderwaterMovementComponent const&) = delete;
-    ScriptUnderwaterMovementComponent(ScriptUnderwaterMovementComponent const&)            = delete;
-    ScriptUnderwaterMovementComponent()                                                    = delete;
+    ScriptUnderwaterMovementComponent& operator=(ScriptUnderwaterMovementComponent const&);
+    ScriptUnderwaterMovementComponent(ScriptUnderwaterMovementComponent const&);
+    ScriptUnderwaterMovementComponent();
 
 public:
     // NOLINTBEGIN

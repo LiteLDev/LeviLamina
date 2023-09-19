@@ -5,7 +5,7 @@
 struct EntityRegistryRefTraits {
 public:
     // prevent constructor by default
-    EntityRegistryRefTraits& operator=(EntityRegistryRefTraits const&) = delete;
-    EntityRegistryRefTraits(EntityRegistryRefTraits const&)            = delete;
-    EntityRegistryRefTraits()                                          = delete;
+    EntityRegistryRefTraits& operator=(EntityRegistryRefTraits const&);
+    EntityRegistryRefTraits(EntityRegistryRefTraits const&);
+    EntityRegistryRefTraits();
 };

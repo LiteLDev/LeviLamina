@@ -8,9 +8,9 @@
 class TripodCameraDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    TripodCameraDescription& operator=(TripodCameraDescription const&) = delete;
-    TripodCameraDescription(TripodCameraDescription const&)            = delete;
-    TripodCameraDescription()                                          = delete;
+    TripodCameraDescription& operator=(TripodCameraDescription const&);
+    TripodCameraDescription(TripodCameraDescription const&);
+    TripodCameraDescription();
 
 public:
     // NOLINTBEGIN

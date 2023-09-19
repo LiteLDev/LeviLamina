@@ -9,9 +9,9 @@
 class ItemStackRequestActionSwap : public ::ItemStackRequestActionTransferBase {
 public:
     // prevent constructor by default
-    ItemStackRequestActionSwap& operator=(ItemStackRequestActionSwap const&) = delete;
-    ItemStackRequestActionSwap(ItemStackRequestActionSwap const&)            = delete;
-    ItemStackRequestActionSwap()                                             = delete;
+    ItemStackRequestActionSwap& operator=(ItemStackRequestActionSwap const&);
+    ItemStackRequestActionSwap(ItemStackRequestActionSwap const&);
+    ItemStackRequestActionSwap();
 
 public:
     // NOLINTBEGIN

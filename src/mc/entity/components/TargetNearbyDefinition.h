@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class TargetNearbyDefinition {
 public:
     // prevent constructor by default
-    TargetNearbyDefinition& operator=(TargetNearbyDefinition const&) = delete;
-    TargetNearbyDefinition(TargetNearbyDefinition const&)            = delete;
-    TargetNearbyDefinition()                                         = delete;
+    TargetNearbyDefinition& operator=(TargetNearbyDefinition const&);
+    TargetNearbyDefinition(TargetNearbyDefinition const&);
+    TargetNearbyDefinition();
 
 public:
     // NOLINTBEGIN

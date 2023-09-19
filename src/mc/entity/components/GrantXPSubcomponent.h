@@ -13,8 +13,8 @@ namespace Json { class Value; }
 class GrantXPSubcomponent : public ::OnHitSubcomponent {
 public:
     // prevent constructor by default
-    GrantXPSubcomponent& operator=(GrantXPSubcomponent const&) = delete;
-    GrantXPSubcomponent(GrantXPSubcomponent const&)            = delete;
+    GrantXPSubcomponent& operator=(GrantXPSubcomponent const&);
+    GrantXPSubcomponent(GrantXPSubcomponent const&);
 
 public:
     // NOLINTBEGIN

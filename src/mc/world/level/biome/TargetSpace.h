@@ -7,9 +7,9 @@ namespace ClimateUtils {
 struct TargetSpace {
 public:
     // prevent constructor by default
-    TargetSpace& operator=(TargetSpace const&) = delete;
-    TargetSpace(TargetSpace const&)            = delete;
-    TargetSpace()                              = delete;
+    TargetSpace& operator=(TargetSpace const&);
+    TargetSpace(TargetSpace const&);
+    TargetSpace();
 };
 
 }; // namespace ClimateUtils

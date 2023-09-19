@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class InteractDefinition {
 public:
     // prevent constructor by default
-    InteractDefinition& operator=(InteractDefinition const&) = delete;
-    InteractDefinition(InteractDefinition const&)            = delete;
-    InteractDefinition()                                     = delete;
+    InteractDefinition& operator=(InteractDefinition const&);
+    InteractDefinition(InteractDefinition const&);
+    InteractDefinition();
 
 public:
     // NOLINTBEGIN

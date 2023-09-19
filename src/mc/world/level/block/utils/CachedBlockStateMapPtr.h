@@ -7,9 +7,9 @@ namespace VanillaStates {
 struct CachedBlockStateMapPtr {
 public:
     // prevent constructor by default
-    CachedBlockStateMapPtr& operator=(CachedBlockStateMapPtr const&) = delete;
-    CachedBlockStateMapPtr(CachedBlockStateMapPtr const&)            = delete;
-    CachedBlockStateMapPtr()                                         = delete;
+    CachedBlockStateMapPtr& operator=(CachedBlockStateMapPtr const&);
+    CachedBlockStateMapPtr(CachedBlockStateMapPtr const&);
+    CachedBlockStateMapPtr();
 };
 
 }; // namespace VanillaStates

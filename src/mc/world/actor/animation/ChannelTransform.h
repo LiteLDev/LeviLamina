@@ -5,9 +5,9 @@
 class ChannelTransform {
 public:
     // prevent constructor by default
-    ChannelTransform& operator=(ChannelTransform const&) = delete;
-    ChannelTransform(ChannelTransform const&)            = delete;
-    ChannelTransform()                                   = delete;
+    ChannelTransform& operator=(ChannelTransform const&);
+    ChannelTransform(ChannelTransform const&);
+    ChannelTransform();
 
 public:
     // NOLINTBEGIN

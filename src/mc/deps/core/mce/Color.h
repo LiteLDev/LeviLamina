@@ -7,9 +7,9 @@ namespace mce {
 class Color {
 public:
     // prevent constructor by default
-    Color& operator=(Color const&) = delete;
-    Color(Color const&)            = delete;
-    Color()                        = delete;
+    Color& operator=(Color const&);
+    Color(Color const&);
+    Color();
 
 public:
     // NOLINTBEGIN

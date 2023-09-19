@@ -10,9 +10,9 @@
 class ServerInstanceEventCoordinator {
 public:
     // prevent constructor by default
-    ServerInstanceEventCoordinator& operator=(ServerInstanceEventCoordinator const&) = delete;
-    ServerInstanceEventCoordinator(ServerInstanceEventCoordinator const&)            = delete;
-    ServerInstanceEventCoordinator()                                                 = delete;
+    ServerInstanceEventCoordinator& operator=(ServerInstanceEventCoordinator const&);
+    ServerInstanceEventCoordinator(ServerInstanceEventCoordinator const&);
+    ServerInstanceEventCoordinator();
 
 public:
     // NOLINTBEGIN

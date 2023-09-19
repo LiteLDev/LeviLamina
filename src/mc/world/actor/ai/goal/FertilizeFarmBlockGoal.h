@@ -9,9 +9,9 @@
 class FertilizeFarmBlockGoal : public ::BaseMoveToBlockGoal {
 public:
     // prevent constructor by default
-    FertilizeFarmBlockGoal& operator=(FertilizeFarmBlockGoal const&) = delete;
-    FertilizeFarmBlockGoal(FertilizeFarmBlockGoal const&)            = delete;
-    FertilizeFarmBlockGoal()                                         = delete;
+    FertilizeFarmBlockGoal& operator=(FertilizeFarmBlockGoal const&);
+    FertilizeFarmBlockGoal(FertilizeFarmBlockGoal const&);
+    FertilizeFarmBlockGoal();
 
 public:
     // NOLINTBEGIN
@@ -41,7 +41,7 @@ public:
     virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
 
     // symbol: ??0FertilizeFarmBlockGoal@@QEAA@AEAVMob@@@Z
-    MCAPI FertilizeFarmBlockGoal(class Mob&);
+    MCAPI explicit FertilizeFarmBlockGoal(class Mob&);
 
     // NOLINTEND
 

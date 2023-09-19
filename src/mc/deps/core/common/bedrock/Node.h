@@ -13,9 +13,9 @@ namespace Bedrock::JSONObject {
 class Node {
 public:
     // prevent constructor by default
-    Node& operator=(Node const&) = delete;
-    Node(Node const&)            = delete;
-    Node()                       = delete;
+    Node& operator=(Node const&);
+    Node(Node const&);
+    Node();
 
 public:
     // NOLINTBEGIN

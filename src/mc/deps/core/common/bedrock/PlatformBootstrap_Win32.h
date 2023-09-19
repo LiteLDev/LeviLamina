@@ -10,9 +10,9 @@ namespace Bedrock {
 class PlatformBootstrap_Win32 {
 public:
     // prevent constructor by default
-    PlatformBootstrap_Win32& operator=(PlatformBootstrap_Win32 const&) = delete;
-    PlatformBootstrap_Win32(PlatformBootstrap_Win32 const&)            = delete;
-    PlatformBootstrap_Win32()                                          = delete;
+    PlatformBootstrap_Win32& operator=(PlatformBootstrap_Win32 const&);
+    PlatformBootstrap_Win32(PlatformBootstrap_Win32 const&);
+    PlatformBootstrap_Win32();
 
 public:
     // NOLINTBEGIN

@@ -15,9 +15,9 @@ namespace JsonUtil { class EmptyClass; }
 class ParticleEffectResponse : public ::EventResponse {
 public:
     // prevent constructor by default
-    ParticleEffectResponse& operator=(ParticleEffectResponse const&) = delete;
-    ParticleEffectResponse(ParticleEffectResponse const&)            = delete;
-    ParticleEffectResponse()                                         = delete;
+    ParticleEffectResponse& operator=(ParticleEffectResponse const&);
+    ParticleEffectResponse(ParticleEffectResponse const&);
+    ParticleEffectResponse();
 
 public:
     // NOLINTBEGIN

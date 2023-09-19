@@ -5,7 +5,7 @@
 struct ProfilerLiteTelemetry {
 public:
     // prevent constructor by default
-    ProfilerLiteTelemetry& operator=(ProfilerLiteTelemetry const&) = delete;
-    ProfilerLiteTelemetry(ProfilerLiteTelemetry const&)            = delete;
-    ProfilerLiteTelemetry()                                        = delete;
+    ProfilerLiteTelemetry& operator=(ProfilerLiteTelemetry const&);
+    ProfilerLiteTelemetry(ProfilerLiteTelemetry const&);
+    ProfilerLiteTelemetry();
 };

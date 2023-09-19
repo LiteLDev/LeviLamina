@@ -5,9 +5,9 @@
 struct RopeAABB {
 public:
     // prevent constructor by default
-    RopeAABB& operator=(RopeAABB const&) = delete;
-    RopeAABB(RopeAABB const&)            = delete;
-    RopeAABB()                           = delete;
+    RopeAABB& operator=(RopeAABB const&);
+    RopeAABB(RopeAABB const&);
+    RopeAABB();
 
 public:
     // NOLINTBEGIN

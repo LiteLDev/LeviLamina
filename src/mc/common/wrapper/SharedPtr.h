@@ -6,7 +6,7 @@ template <typename T0>
 class SharedPtr {
 public:
     // prevent constructor by default
-    SharedPtr& operator=(SharedPtr const&) = delete;
-    SharedPtr(SharedPtr const&)            = delete;
-    SharedPtr()                            = delete;
+    SharedPtr& operator=(SharedPtr const&);
+    SharedPtr(SharedPtr const&);
+    SharedPtr();
 };

@@ -15,16 +15,16 @@ public:
     struct UniqueId {
     public:
         // prevent constructor by default
-        UniqueId& operator=(UniqueId const&) = delete;
-        UniqueId(UniqueId const&)            = delete;
-        UniqueId()                           = delete;
+        UniqueId& operator=(UniqueId const&);
+        UniqueId(UniqueId const&);
+        UniqueId();
     };
 
 public:
     // prevent constructor by default
-    MapItemTrackedActor& operator=(MapItemTrackedActor const&) = delete;
-    MapItemTrackedActor(MapItemTrackedActor const&)            = delete;
-    MapItemTrackedActor()                                      = delete;
+    MapItemTrackedActor& operator=(MapItemTrackedActor const&);
+    MapItemTrackedActor(MapItemTrackedActor const&);
+    MapItemTrackedActor();
 
 public:
     // NOLINTBEGIN

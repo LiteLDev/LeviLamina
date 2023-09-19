@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class SculkShriekerBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    SculkShriekerBlock& operator=(SculkShriekerBlock const&) = delete;
-    SculkShriekerBlock(SculkShriekerBlock const&)            = delete;
-    SculkShriekerBlock()                                     = delete;
+    SculkShriekerBlock& operator=(SculkShriekerBlock const&);
+    SculkShriekerBlock(SculkShriekerBlock const&);
+    SculkShriekerBlock();
 
 public:
     // NOLINTBEGIN

@@ -18,7 +18,7 @@ namespace ScriptModuleMinecraft {
 class ScriptItemCooldownComponent : public ::ScriptModuleMinecraft::ScriptItemComponent {
 public:
     // prevent constructor by default
-    ScriptItemCooldownComponent() = delete;
+    ScriptItemCooldownComponent();
 
 public:
     // NOLINTBEGIN

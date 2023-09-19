@@ -8,9 +8,9 @@
 class PlayerUIContainer : public ::SimpleContainer {
 public:
     // prevent constructor by default
-    PlayerUIContainer& operator=(PlayerUIContainer const&) = delete;
-    PlayerUIContainer(PlayerUIContainer const&)            = delete;
-    PlayerUIContainer()                                    = delete;
+    PlayerUIContainer& operator=(PlayerUIContainer const&);
+    PlayerUIContainer(PlayerUIContainer const&);
+    PlayerUIContainer();
 
 public:
     // NOLINTBEGIN

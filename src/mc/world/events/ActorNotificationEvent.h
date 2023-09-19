@@ -5,9 +5,9 @@
 struct ActorNotificationEvent {
 public:
     // prevent constructor by default
-    ActorNotificationEvent& operator=(ActorNotificationEvent const&) = delete;
-    ActorNotificationEvent(ActorNotificationEvent const&)            = delete;
-    ActorNotificationEvent()                                         = delete;
+    ActorNotificationEvent& operator=(ActorNotificationEvent const&);
+    ActorNotificationEvent(ActorNotificationEvent const&);
+    ActorNotificationEvent();
 
 public:
     // NOLINTBEGIN

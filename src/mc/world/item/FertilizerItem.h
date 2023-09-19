@@ -22,9 +22,9 @@ namespace mce { class Color; }
 class FertilizerItem : public ::Item {
 public:
     // prevent constructor by default
-    FertilizerItem& operator=(FertilizerItem const&) = delete;
-    FertilizerItem(FertilizerItem const&)            = delete;
-    FertilizerItem()                                 = delete;
+    FertilizerItem& operator=(FertilizerItem const&);
+    FertilizerItem(FertilizerItem const&);
+    FertilizerItem();
 
 public:
     // NOLINTBEGIN

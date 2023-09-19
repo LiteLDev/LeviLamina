@@ -10,9 +10,9 @@ namespace Json { class Value; }
 class IJsonSerializable {
 public:
     // prevent constructor by default
-    IJsonSerializable& operator=(IJsonSerializable const&) = delete;
-    IJsonSerializable(IJsonSerializable const&)            = delete;
-    IJsonSerializable()                                    = delete;
+    IJsonSerializable& operator=(IJsonSerializable const&);
+    IJsonSerializable(IJsonSerializable const&);
+    IJsonSerializable();
 
 public:
     // NOLINTBEGIN

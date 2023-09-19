@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class CakeBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    CakeBlock& operator=(CakeBlock const&) = delete;
-    CakeBlock(CakeBlock const&)            = delete;
-    CakeBlock()                            = delete;
+    CakeBlock& operator=(CakeBlock const&);
+    CakeBlock(CakeBlock const&);
+    CakeBlock();
 
 public:
     // NOLINTBEGIN

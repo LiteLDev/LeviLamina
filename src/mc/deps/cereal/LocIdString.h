@@ -7,9 +7,9 @@ namespace CerealHelpers {
 struct LocIdString {
 public:
     // prevent constructor by default
-    LocIdString& operator=(LocIdString const&) = delete;
-    LocIdString(LocIdString const&)            = delete;
-    LocIdString()                              = delete;
+    LocIdString& operator=(LocIdString const&);
+    LocIdString(LocIdString const&);
+    LocIdString();
 
 public:
     // NOLINTBEGIN

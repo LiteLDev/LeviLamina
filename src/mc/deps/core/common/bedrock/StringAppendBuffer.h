@@ -7,9 +7,9 @@ namespace Bedrock {
 class StringAppendBuffer {
 public:
     // prevent constructor by default
-    StringAppendBuffer& operator=(StringAppendBuffer const&) = delete;
-    StringAppendBuffer(StringAppendBuffer const&)            = delete;
-    StringAppendBuffer()                                     = delete;
+    StringAppendBuffer& operator=(StringAppendBuffer const&);
+    StringAppendBuffer(StringAppendBuffer const&);
+    StringAppendBuffer();
 
 public:
     // NOLINTBEGIN

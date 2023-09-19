@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class TurtleEggBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    TurtleEggBlock& operator=(TurtleEggBlock const&) = delete;
-    TurtleEggBlock(TurtleEggBlock const&)            = delete;
-    TurtleEggBlock()                                 = delete;
+    TurtleEggBlock& operator=(TurtleEggBlock const&);
+    TurtleEggBlock(TurtleEggBlock const&);
+    TurtleEggBlock();
 
 public:
     // NOLINTBEGIN

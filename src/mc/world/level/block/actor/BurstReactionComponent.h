@@ -8,9 +8,9 @@
 class BurstReactionComponent : public ::LabTableReactionComponent {
 public:
     // prevent constructor by default
-    BurstReactionComponent& operator=(BurstReactionComponent const&) = delete;
-    BurstReactionComponent(BurstReactionComponent const&)            = delete;
-    BurstReactionComponent()                                         = delete;
+    BurstReactionComponent& operator=(BurstReactionComponent const&);
+    BurstReactionComponent(BurstReactionComponent const&);
+    BurstReactionComponent();
 
 public:
     // NOLINTBEGIN

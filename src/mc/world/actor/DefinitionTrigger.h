@@ -5,9 +5,9 @@
 class DefinitionTrigger {
 public:
     // prevent constructor by default
-    DefinitionTrigger& operator=(DefinitionTrigger const&) = delete;
-    DefinitionTrigger(DefinitionTrigger const&)            = delete;
-    DefinitionTrigger()                                    = delete;
+    DefinitionTrigger& operator=(DefinitionTrigger const&);
+    DefinitionTrigger(DefinitionTrigger const&);
+    DefinitionTrigger();
 
 public:
     // NOLINTBEGIN

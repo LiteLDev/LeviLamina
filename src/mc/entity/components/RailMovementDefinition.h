@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class RailMovementDefinition {
 public:
     // prevent constructor by default
-    RailMovementDefinition& operator=(RailMovementDefinition const&) = delete;
-    RailMovementDefinition(RailMovementDefinition const&)            = delete;
+    RailMovementDefinition& operator=(RailMovementDefinition const&);
+    RailMovementDefinition(RailMovementDefinition const&);
 
 public:
     // NOLINTBEGIN

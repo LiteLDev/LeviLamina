@@ -5,14 +5,14 @@
 struct ItemStackRequestHandlerSlotInfo {
 public:
     // prevent constructor by default
-    ItemStackRequestHandlerSlotInfo& operator=(ItemStackRequestHandlerSlotInfo const&) = delete;
-    ItemStackRequestHandlerSlotInfo(ItemStackRequestHandlerSlotInfo const&)            = delete;
-    ItemStackRequestHandlerSlotInfo()                                                  = delete;
+    ItemStackRequestHandlerSlotInfo& operator=(ItemStackRequestHandlerSlotInfo const&);
+    ItemStackRequestHandlerSlotInfo(ItemStackRequestHandlerSlotInfo const&);
+    ItemStackRequestHandlerSlotInfo();
 
 public:
     // NOLINTBEGIN
     // symbol: ??BItemStackRequestHandlerSlotInfo@@QEBA_NXZ
-    MCAPI operator bool() const;
+    MCAPI explicit operator bool() const;
 
     // symbol: ??1ItemStackRequestHandlerSlotInfo@@QEAA@XZ
     MCAPI ~ItemStackRequestHandlerSlotInfo();

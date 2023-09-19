@@ -5,9 +5,9 @@
 struct FileChunkInfo {
 public:
     // prevent constructor by default
-    FileChunkInfo& operator=(FileChunkInfo const&) = delete;
-    FileChunkInfo(FileChunkInfo const&)            = delete;
-    FileChunkInfo()                                = delete;
+    FileChunkInfo& operator=(FileChunkInfo const&);
+    FileChunkInfo(FileChunkInfo const&);
+    FileChunkInfo();
 
 public:
     // NOLINTBEGIN

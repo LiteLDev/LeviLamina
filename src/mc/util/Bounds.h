@@ -9,9 +9,9 @@ public:
 
 public:
     // prevent constructor by default
-    Bounds& operator=(Bounds const&) = delete;
-    Bounds(Bounds const&)            = delete;
-    Bounds()                         = delete;
+    Bounds& operator=(Bounds const&);
+    Bounds(Bounds const&);
+    Bounds();
 
 public:
     // NOLINTBEGIN

@@ -16,9 +16,9 @@ namespace ScriptModuleMinecraft {
 struct ScriptXYRotation {
 public:
     // prevent constructor by default
-    ScriptXYRotation& operator=(ScriptXYRotation const&) = delete;
-    ScriptXYRotation(ScriptXYRotation const&)            = delete;
-    ScriptXYRotation()                                   = delete;
+    ScriptXYRotation& operator=(ScriptXYRotation const&);
+    ScriptXYRotation(ScriptXYRotation const&);
+    ScriptXYRotation();
 
 public:
     // NOLINTBEGIN

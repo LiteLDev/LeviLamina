@@ -8,9 +8,9 @@
 class PinkPetalsFeature : public ::Feature {
 public:
     // prevent constructor by default
-    PinkPetalsFeature& operator=(PinkPetalsFeature const&) = delete;
-    PinkPetalsFeature(PinkPetalsFeature const&)            = delete;
-    PinkPetalsFeature()                                    = delete;
+    PinkPetalsFeature& operator=(PinkPetalsFeature const&);
+    PinkPetalsFeature(PinkPetalsFeature const&);
+    PinkPetalsFeature();
 
 public:
     // NOLINTBEGIN

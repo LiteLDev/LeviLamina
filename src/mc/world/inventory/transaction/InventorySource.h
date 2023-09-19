@@ -9,9 +9,9 @@ public:
 
 public:
     // prevent constructor by default
-    InventorySource& operator=(InventorySource const&) = delete;
-    InventorySource(InventorySource const&)            = delete;
-    InventorySource()                                  = delete;
+    InventorySource& operator=(InventorySource const&);
+    InventorySource(InventorySource const&);
+    InventorySource();
 
 public:
     // NOLINTBEGIN

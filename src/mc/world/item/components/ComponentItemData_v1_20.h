@@ -5,7 +5,7 @@
 struct ComponentItemData_v1_20 {
 public:
     // prevent constructor by default
-    ComponentItemData_v1_20& operator=(ComponentItemData_v1_20 const&) = delete;
+    ComponentItemData_v1_20& operator=(ComponentItemData_v1_20 const&);
 
 public:
     // NOLINTBEGIN

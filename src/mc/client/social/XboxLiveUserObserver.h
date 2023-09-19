@@ -7,9 +7,9 @@ namespace Social {
 class XboxLiveUserObserver {
 public:
     // prevent constructor by default
-    XboxLiveUserObserver& operator=(XboxLiveUserObserver const&) = delete;
-    XboxLiveUserObserver(XboxLiveUserObserver const&)            = delete;
-    XboxLiveUserObserver()                                       = delete;
+    XboxLiveUserObserver& operator=(XboxLiveUserObserver const&);
+    XboxLiveUserObserver(XboxLiveUserObserver const&);
+    XboxLiveUserObserver();
 
 public:
     // NOLINTBEGIN

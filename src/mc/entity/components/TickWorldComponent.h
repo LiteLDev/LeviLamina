@@ -5,8 +5,8 @@
 class TickWorldComponent {
 public:
     // prevent constructor by default
-    TickWorldComponent& operator=(TickWorldComponent const&) = delete;
-    TickWorldComponent(TickWorldComponent const&)            = delete;
+    TickWorldComponent& operator=(TickWorldComponent const&);
+    TickWorldComponent(TickWorldComponent const&);
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class TakePictureCommand : public ::Command {
 public:
     // prevent constructor by default
-    TakePictureCommand& operator=(TakePictureCommand const&) = delete;
-    TakePictureCommand(TakePictureCommand const&)            = delete;
-    TakePictureCommand()                                     = delete;
+    TakePictureCommand& operator=(TakePictureCommand const&);
+    TakePictureCommand(TakePictureCommand const&);
+    TakePictureCommand();
 
 public:
     // NOLINTBEGIN

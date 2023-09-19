@@ -5,9 +5,9 @@
 class HeightmapWrapper {
 public:
     // prevent constructor by default
-    HeightmapWrapper& operator=(HeightmapWrapper const&) = delete;
-    HeightmapWrapper(HeightmapWrapper const&)            = delete;
-    HeightmapWrapper()                                   = delete;
+    HeightmapWrapper& operator=(HeightmapWrapper const&);
+    HeightmapWrapper(HeightmapWrapper const&);
+    HeightmapWrapper();
 
 public:
     // NOLINTBEGIN

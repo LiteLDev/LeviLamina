@@ -13,9 +13,9 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class IDimensionFactory : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    IDimensionFactory& operator=(IDimensionFactory const&) = delete;
-    IDimensionFactory(IDimensionFactory const&)            = delete;
-    IDimensionFactory()                                    = delete;
+    IDimensionFactory& operator=(IDimensionFactory const&);
+    IDimensionFactory(IDimensionFactory const&);
+    IDimensionFactory();
 
 public:
     // NOLINTBEGIN

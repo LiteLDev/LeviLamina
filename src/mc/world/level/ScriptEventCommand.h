@@ -8,9 +8,9 @@
 class ScriptEventCommand : public ::Command {
 public:
     // prevent constructor by default
-    ScriptEventCommand& operator=(ScriptEventCommand const&) = delete;
-    ScriptEventCommand(ScriptEventCommand const&)            = delete;
-    ScriptEventCommand()                                     = delete;
+    ScriptEventCommand& operator=(ScriptEventCommand const&);
+    ScriptEventCommand(ScriptEventCommand const&);
+    ScriptEventCommand();
 
 public:
     // NOLINTBEGIN

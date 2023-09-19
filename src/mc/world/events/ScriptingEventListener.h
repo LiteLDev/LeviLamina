@@ -8,9 +8,9 @@
 class ScriptingEventListener {
 public:
     // prevent constructor by default
-    ScriptingEventListener& operator=(ScriptingEventListener const&) = delete;
-    ScriptingEventListener(ScriptingEventListener const&)            = delete;
-    ScriptingEventListener()                                         = delete;
+    ScriptingEventListener& operator=(ScriptingEventListener const&);
+    ScriptingEventListener(ScriptingEventListener const&);
+    ScriptingEventListener();
 
 public:
     // NOLINTBEGIN

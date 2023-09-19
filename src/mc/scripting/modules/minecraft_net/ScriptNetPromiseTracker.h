@@ -20,9 +20,9 @@ public:
     struct InProgressRequest {
     public:
         // prevent constructor by default
-        InProgressRequest& operator=(InProgressRequest const&) = delete;
-        InProgressRequest(InProgressRequest const&)            = delete;
-        InProgressRequest()                                    = delete;
+        InProgressRequest& operator=(InProgressRequest const&);
+        InProgressRequest(InProgressRequest const&);
+        InProgressRequest();
 
     public:
         // NOLINTBEGIN
@@ -34,9 +34,9 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptNetPromiseTracker& operator=(ScriptNetPromiseTracker const&) = delete;
-    ScriptNetPromiseTracker(ScriptNetPromiseTracker const&)            = delete;
-    ScriptNetPromiseTracker()                                          = delete;
+    ScriptNetPromiseTracker& operator=(ScriptNetPromiseTracker const&);
+    ScriptNetPromiseTracker(ScriptNetPromiseTracker const&);
+    ScriptNetPromiseTracker();
 
 public:
     // NOLINTBEGIN

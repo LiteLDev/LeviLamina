@@ -5,7 +5,7 @@
 struct AABBShapeComponent {
 public:
     // prevent constructor by default
-    AABBShapeComponent& operator=(AABBShapeComponent const&) = delete;
-    AABBShapeComponent(AABBShapeComponent const&)            = delete;
-    AABBShapeComponent()                                     = delete;
+    AABBShapeComponent& operator=(AABBShapeComponent const&);
+    AABBShapeComponent(AABBShapeComponent const&);
+    AABBShapeComponent();
 };

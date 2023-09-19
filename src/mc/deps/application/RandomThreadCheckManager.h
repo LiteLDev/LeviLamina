@@ -8,9 +8,9 @@
 class RandomThreadCheckManager : public ::AppPlatformListener {
 public:
     // prevent constructor by default
-    RandomThreadCheckManager& operator=(RandomThreadCheckManager const&) = delete;
-    RandomThreadCheckManager(RandomThreadCheckManager const&)            = delete;
-    RandomThreadCheckManager()                                           = delete;
+    RandomThreadCheckManager& operator=(RandomThreadCheckManager const&);
+    RandomThreadCheckManager(RandomThreadCheckManager const&);
+    RandomThreadCheckManager();
 
 public:
     // NOLINTBEGIN

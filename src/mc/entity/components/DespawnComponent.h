@@ -14,9 +14,9 @@ public:
     class IWorldAccessor {
     public:
         // prevent constructor by default
-        IWorldAccessor& operator=(IWorldAccessor const&) = delete;
-        IWorldAccessor(IWorldAccessor const&)            = delete;
-        IWorldAccessor()                                 = delete;
+        IWorldAccessor& operator=(IWorldAccessor const&);
+        IWorldAccessor(IWorldAccessor const&);
+        IWorldAccessor();
 
     public:
         // NOLINTBEGIN
@@ -54,9 +54,9 @@ public:
     class WorldAccessor : public ::DespawnComponent::IWorldAccessor {
     public:
         // prevent constructor by default
-        WorldAccessor& operator=(WorldAccessor const&) = delete;
-        WorldAccessor(WorldAccessor const&)            = delete;
-        WorldAccessor()                                = delete;
+        WorldAccessor& operator=(WorldAccessor const&);
+        WorldAccessor(WorldAccessor const&);
+        WorldAccessor();
 
     public:
         // NOLINTBEGIN
@@ -93,9 +93,9 @@ public:
 
 public:
     // prevent constructor by default
-    DespawnComponent& operator=(DespawnComponent const&) = delete;
-    DespawnComponent(DespawnComponent const&)            = delete;
-    DespawnComponent()                                   = delete;
+    DespawnComponent& operator=(DespawnComponent const&);
+    DespawnComponent(DespawnComponent const&);
+    DespawnComponent();
 
 public:
     // NOLINTBEGIN

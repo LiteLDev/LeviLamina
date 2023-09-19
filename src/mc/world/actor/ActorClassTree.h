@@ -9,9 +9,9 @@
 class ActorClassTree {
 public:
     // prevent constructor by default
-    ActorClassTree& operator=(ActorClassTree const&) = delete;
-    ActorClassTree(ActorClassTree const&)            = delete;
-    ActorClassTree()                                 = delete;
+    ActorClassTree& operator=(ActorClassTree const&);
+    ActorClassTree(ActorClassTree const&);
+    ActorClassTree();
 
 public:
     // NOLINTBEGIN

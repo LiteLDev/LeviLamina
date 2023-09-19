@@ -17,9 +17,9 @@ namespace PlayerCapabilities {
 class PlayerData : public ::PlayerCapabilities::IPlayerData {
 public:
     // prevent constructor by default
-    PlayerData& operator=(PlayerData const&) = delete;
-    PlayerData(PlayerData const&)            = delete;
-    PlayerData()                             = delete;
+    PlayerData& operator=(PlayerData const&);
+    PlayerData(PlayerData const&);
+    PlayerData();
 
 public:
     // NOLINTBEGIN
@@ -36,7 +36,7 @@ public:
     virtual bool isOperator() const;
 
     // symbol: ??0PlayerData@PlayerCapabilities@@QEAA@AEBVPlayer@@@Z
-    MCAPI PlayerData(class Player const&);
+    MCAPI explicit PlayerData(class Player const&);
 
     // NOLINTEND
 };

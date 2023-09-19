@@ -5,8 +5,8 @@
 struct RepairItemEntry {
 public:
     // prevent constructor by default
-    RepairItemEntry(RepairItemEntry const&) = delete;
-    RepairItemEntry()                       = delete;
+    RepairItemEntry(RepairItemEntry const&);
+    RepairItemEntry();
 
 public:
     // NOLINTBEGIN

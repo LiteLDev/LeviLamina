@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class NetherFungusBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    NetherFungusBlock& operator=(NetherFungusBlock const&) = delete;
-    NetherFungusBlock(NetherFungusBlock const&)            = delete;
-    NetherFungusBlock()                                    = delete;
+    NetherFungusBlock& operator=(NetherFungusBlock const&);
+    NetherFungusBlock(NetherFungusBlock const&);
+    NetherFungusBlock();
 
 public:
     // NOLINTBEGIN

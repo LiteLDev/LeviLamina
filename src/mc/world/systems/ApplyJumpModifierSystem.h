@@ -11,9 +11,9 @@
 class ApplyJumpModifierSystem {
 public:
     // prevent constructor by default
-    ApplyJumpModifierSystem& operator=(ApplyJumpModifierSystem const&) = delete;
-    ApplyJumpModifierSystem(ApplyJumpModifierSystem const&)            = delete;
-    ApplyJumpModifierSystem()                                          = delete;
+    ApplyJumpModifierSystem& operator=(ApplyJumpModifierSystem const&);
+    ApplyJumpModifierSystem(ApplyJumpModifierSystem const&);
+    ApplyJumpModifierSystem();
 
 public:
     // NOLINTBEGIN

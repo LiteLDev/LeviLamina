@@ -9,9 +9,9 @@
 class ScreenHandlerBeacon : public ::ScreenHandlerBase {
 public:
     // prevent constructor by default
-    ScreenHandlerBeacon& operator=(ScreenHandlerBeacon const&) = delete;
-    ScreenHandlerBeacon(ScreenHandlerBeacon const&)            = delete;
-    ScreenHandlerBeacon()                                      = delete;
+    ScreenHandlerBeacon& operator=(ScreenHandlerBeacon const&);
+    ScreenHandlerBeacon(ScreenHandlerBeacon const&);
+    ScreenHandlerBeacon();
 
 public:
     // NOLINTBEGIN

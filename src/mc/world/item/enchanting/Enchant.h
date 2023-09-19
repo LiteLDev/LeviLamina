@@ -13,9 +13,9 @@ public:
 
 public:
     // prevent constructor by default
-    Enchant& operator=(Enchant const&) = delete;
-    Enchant(Enchant const&)            = delete;
-    Enchant()                          = delete;
+    Enchant& operator=(Enchant const&);
+    Enchant(Enchant const&);
+    Enchant();
 
 public:
     // NOLINTBEGIN

@@ -9,7 +9,7 @@
 class PermissionsHandler {
 public:
     // prevent constructor by default
-    PermissionsHandler& operator=(PermissionsHandler const&) = delete;
+    PermissionsHandler& operator=(PermissionsHandler const&);
 
 public:
     // NOLINTBEGIN

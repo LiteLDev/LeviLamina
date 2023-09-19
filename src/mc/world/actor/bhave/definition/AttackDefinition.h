@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class AttackDefinition : public ::BehaviorDefinition {
 public:
     // prevent constructor by default
-    AttackDefinition& operator=(AttackDefinition const&) = delete;
-    AttackDefinition(AttackDefinition const&)            = delete;
-    AttackDefinition()                                   = delete;
+    AttackDefinition& operator=(AttackDefinition const&);
+    AttackDefinition(AttackDefinition const&);
+    AttackDefinition();
 
 public:
     // NOLINTBEGIN

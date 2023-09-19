@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct ItemControlDefinition {
 public:
     // prevent constructor by default
-    ItemControlDefinition& operator=(ItemControlDefinition const&) = delete;
-    ItemControlDefinition(ItemControlDefinition const&)            = delete;
-    ItemControlDefinition()                                        = delete;
+    ItemControlDefinition& operator=(ItemControlDefinition const&);
+    ItemControlDefinition(ItemControlDefinition const&);
+    ItemControlDefinition();
 
 public:
     // NOLINTBEGIN

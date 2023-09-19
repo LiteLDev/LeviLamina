@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class UseActorDefinition : public ::BehaviorDefinition {
 public:
     // prevent constructor by default
-    UseActorDefinition& operator=(UseActorDefinition const&) = delete;
-    UseActorDefinition(UseActorDefinition const&)            = delete;
-    UseActorDefinition()                                     = delete;
+    UseActorDefinition& operator=(UseActorDefinition const&);
+    UseActorDefinition(UseActorDefinition const&);
+    UseActorDefinition();
 
 public:
     // NOLINTBEGIN

@@ -10,9 +10,9 @@ namespace Json { class Value; }
 class ServerCommunicationInterface {
 public:
     // prevent constructor by default
-    ServerCommunicationInterface& operator=(ServerCommunicationInterface const&) = delete;
-    ServerCommunicationInterface(ServerCommunicationInterface const&)            = delete;
-    ServerCommunicationInterface()                                               = delete;
+    ServerCommunicationInterface& operator=(ServerCommunicationInterface const&);
+    ServerCommunicationInterface(ServerCommunicationInterface const&);
+    ServerCommunicationInterface();
 
 public:
     // NOLINTBEGIN

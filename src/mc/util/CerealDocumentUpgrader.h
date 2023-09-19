@@ -11,14 +11,14 @@ namespace cereal { struct Schema; }
 class CerealDocumentUpgrader {
 public:
     // prevent constructor by default
-    CerealDocumentUpgrader& operator=(CerealDocumentUpgrader const&) = delete;
-    CerealDocumentUpgrader(CerealDocumentUpgrader const&)            = delete;
-    CerealDocumentUpgrader()                                         = delete;
+    CerealDocumentUpgrader& operator=(CerealDocumentUpgrader const&);
+    CerealDocumentUpgrader(CerealDocumentUpgrader const&);
+    CerealDocumentUpgrader();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0CerealDocumentUpgrader@@QEAA@AEBUSchema@cereal@@@Z
-    MCAPI CerealDocumentUpgrader(struct cereal::Schema const&);
+    MCAPI explicit CerealDocumentUpgrader(struct cereal::Schema const&);
 
     // symbol:
     // ?buildPatchSchemas@CerealDocumentUpgrader@@QEAAXAEBV?$function@$$A6A?BUSchema@cereal@@AEBVSemVersion@@@Z@std@@@Z

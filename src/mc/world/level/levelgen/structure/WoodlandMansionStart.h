@@ -8,9 +8,9 @@
 class WoodlandMansionStart : public ::StructureStart {
 public:
     // prevent constructor by default
-    WoodlandMansionStart& operator=(WoodlandMansionStart const&) = delete;
-    WoodlandMansionStart(WoodlandMansionStart const&)            = delete;
-    WoodlandMansionStart()                                       = delete;
+    WoodlandMansionStart& operator=(WoodlandMansionStart const&);
+    WoodlandMansionStart(WoodlandMansionStart const&);
+    WoodlandMansionStart();
 
 public:
     // NOLINTBEGIN

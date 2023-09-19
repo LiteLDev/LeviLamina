@@ -8,8 +8,8 @@
 class StructureTemplateData {
 public:
     // prevent constructor by default
-    StructureTemplateData& operator=(StructureTemplateData const&) = delete;
-    StructureTemplateData(StructureTemplateData const&)            = delete;
+    StructureTemplateData& operator=(StructureTemplateData const&);
+    StructureTemplateData(StructureTemplateData const&);
 
 public:
     // NOLINTBEGIN

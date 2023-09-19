@@ -8,9 +8,9 @@
 class OffhandContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    OffhandContainerValidation& operator=(OffhandContainerValidation const&) = delete;
-    OffhandContainerValidation(OffhandContainerValidation const&)            = delete;
-    OffhandContainerValidation()                                             = delete;
+    OffhandContainerValidation& operator=(OffhandContainerValidation const&);
+    OffhandContainerValidation(OffhandContainerValidation const&);
+    OffhandContainerValidation();
 
 public:
     // NOLINTBEGIN

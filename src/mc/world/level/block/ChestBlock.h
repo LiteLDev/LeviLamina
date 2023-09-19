@@ -24,9 +24,9 @@ public:
 
 public:
     // prevent constructor by default
-    ChestBlock& operator=(ChestBlock const&) = delete;
-    ChestBlock(ChestBlock const&)            = delete;
-    ChestBlock()                             = delete;
+    ChestBlock& operator=(ChestBlock const&);
+    ChestBlock(ChestBlock const&);
+    ChestBlock();
 
 public:
     // NOLINTBEGIN

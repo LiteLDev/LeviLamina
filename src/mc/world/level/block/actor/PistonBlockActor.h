@@ -8,9 +8,9 @@
 class PistonBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    PistonBlockActor& operator=(PistonBlockActor const&) = delete;
-    PistonBlockActor(PistonBlockActor const&)            = delete;
-    PistonBlockActor()                                   = delete;
+    PistonBlockActor& operator=(PistonBlockActor const&);
+    PistonBlockActor(PistonBlockActor const&);
+    PistonBlockActor();
 
 public:
     // NOLINTBEGIN

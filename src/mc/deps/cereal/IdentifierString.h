@@ -7,9 +7,9 @@ namespace CerealHelpers {
 struct IdentifierString {
 public:
     // prevent constructor by default
-    IdentifierString& operator=(IdentifierString const&) = delete;
-    IdentifierString(IdentifierString const&)            = delete;
-    IdentifierString()                                   = delete;
+    IdentifierString& operator=(IdentifierString const&);
+    IdentifierString(IdentifierString const&);
+    IdentifierString();
 
 public:
     // NOLINTBEGIN

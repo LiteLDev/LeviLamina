@@ -5,9 +5,9 @@
 class SecureStorageKey {
 public:
     // prevent constructor by default
-    SecureStorageKey& operator=(SecureStorageKey const&) = delete;
-    SecureStorageKey(SecureStorageKey const&)            = delete;
-    SecureStorageKey()                                   = delete;
+    SecureStorageKey& operator=(SecureStorageKey const&);
+    SecureStorageKey(SecureStorageKey const&);
+    SecureStorageKey();
 
 public:
     // NOLINTBEGIN

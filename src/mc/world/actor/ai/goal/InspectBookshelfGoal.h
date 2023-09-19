@@ -9,9 +9,9 @@
 class InspectBookshelfGoal : public ::BaseMoveToBlockGoal {
 public:
     // prevent constructor by default
-    InspectBookshelfGoal& operator=(InspectBookshelfGoal const&) = delete;
-    InspectBookshelfGoal(InspectBookshelfGoal const&)            = delete;
-    InspectBookshelfGoal()                                       = delete;
+    InspectBookshelfGoal& operator=(InspectBookshelfGoal const&);
+    InspectBookshelfGoal(InspectBookshelfGoal const&);
+    InspectBookshelfGoal();
 
 public:
     // NOLINTBEGIN

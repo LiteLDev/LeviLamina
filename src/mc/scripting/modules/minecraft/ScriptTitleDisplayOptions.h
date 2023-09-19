@@ -10,7 +10,7 @@ namespace ScriptModuleMinecraft {
 struct ScriptTitleDisplayOptions {
 public:
     // prevent constructor by default
-    ScriptTitleDisplayOptions() = delete;
+    ScriptTitleDisplayOptions();
 
 public:
     // NOLINTBEGIN

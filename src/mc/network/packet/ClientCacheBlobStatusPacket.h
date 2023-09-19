@@ -10,9 +10,9 @@
 class ClientCacheBlobStatusPacket : public ::Packet {
 public:
     // prevent constructor by default
-    ClientCacheBlobStatusPacket& operator=(ClientCacheBlobStatusPacket const&) = delete;
-    ClientCacheBlobStatusPacket(ClientCacheBlobStatusPacket const&)            = delete;
-    ClientCacheBlobStatusPacket()                                              = delete;
+    ClientCacheBlobStatusPacket& operator=(ClientCacheBlobStatusPacket const&);
+    ClientCacheBlobStatusPacket(ClientCacheBlobStatusPacket const&);
+    ClientCacheBlobStatusPacket();
 
 public:
     // NOLINTBEGIN

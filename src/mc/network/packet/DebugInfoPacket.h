@@ -10,8 +10,8 @@
 class DebugInfoPacket : public ::Packet {
 public:
     // prevent constructor by default
-    DebugInfoPacket& operator=(DebugInfoPacket const&) = delete;
-    DebugInfoPacket(DebugInfoPacket const&)            = delete;
+    DebugInfoPacket& operator=(DebugInfoPacket const&);
+    DebugInfoPacket(DebugInfoPacket const&);
 
 public:
     // NOLINTBEGIN

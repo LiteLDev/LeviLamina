@@ -5,9 +5,9 @@
 class PositionPassengerUtility {
 public:
     // prevent constructor by default
-    PositionPassengerUtility& operator=(PositionPassengerUtility const&) = delete;
-    PositionPassengerUtility(PositionPassengerUtility const&)            = delete;
-    PositionPassengerUtility()                                           = delete;
+    PositionPassengerUtility& operator=(PositionPassengerUtility const&);
+    PositionPassengerUtility(PositionPassengerUtility const&);
+    PositionPassengerUtility();
 
 public:
     // NOLINTBEGIN

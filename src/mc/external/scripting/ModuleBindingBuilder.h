@@ -7,9 +7,9 @@ namespace Scripting {
 class ModuleBindingBuilder {
 public:
     // prevent constructor by default
-    ModuleBindingBuilder& operator=(ModuleBindingBuilder const&) = delete;
-    ModuleBindingBuilder(ModuleBindingBuilder const&)            = delete;
-    ModuleBindingBuilder()                                       = delete;
+    ModuleBindingBuilder& operator=(ModuleBindingBuilder const&);
+    ModuleBindingBuilder(ModuleBindingBuilder const&);
+    ModuleBindingBuilder();
 };
 
 }; // namespace Scripting

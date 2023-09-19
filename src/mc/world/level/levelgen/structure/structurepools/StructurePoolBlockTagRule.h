@@ -5,9 +5,9 @@
 class StructurePoolBlockTagRule {
 public:
     // prevent constructor by default
-    StructurePoolBlockTagRule& operator=(StructurePoolBlockTagRule const&) = delete;
-    StructurePoolBlockTagRule(StructurePoolBlockTagRule const&)            = delete;
-    StructurePoolBlockTagRule()                                            = delete;
+    StructurePoolBlockTagRule& operator=(StructurePoolBlockTagRule const&);
+    StructurePoolBlockTagRule(StructurePoolBlockTagRule const&);
+    StructurePoolBlockTagRule();
 
 public:
     // NOLINTBEGIN

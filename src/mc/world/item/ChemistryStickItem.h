@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class ChemistryStickItem : public ::ChemistryItem {
 public:
     // prevent constructor by default
-    ChemistryStickItem& operator=(ChemistryStickItem const&) = delete;
-    ChemistryStickItem(ChemistryStickItem const&)            = delete;
-    ChemistryStickItem()                                     = delete;
+    ChemistryStickItem& operator=(ChemistryStickItem const&);
+    ChemistryStickItem(ChemistryStickItem const&);
+    ChemistryStickItem();
 
 public:
     // NOLINTBEGIN

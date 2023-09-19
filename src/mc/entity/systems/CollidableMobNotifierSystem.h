@@ -13,9 +13,9 @@
 class CollidableMobNotifierSystem {
 public:
     // prevent constructor by default
-    CollidableMobNotifierSystem& operator=(CollidableMobNotifierSystem const&) = delete;
-    CollidableMobNotifierSystem(CollidableMobNotifierSystem const&)            = delete;
-    CollidableMobNotifierSystem()                                              = delete;
+    CollidableMobNotifierSystem& operator=(CollidableMobNotifierSystem const&);
+    CollidableMobNotifierSystem(CollidableMobNotifierSystem const&);
+    CollidableMobNotifierSystem();
 
 public:
     // NOLINTBEGIN

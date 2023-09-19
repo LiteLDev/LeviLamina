@@ -9,9 +9,9 @@
 class ScatteredFeaturePiece : public ::StructurePiece {
 public:
     // prevent constructor by default
-    ScatteredFeaturePiece& operator=(ScatteredFeaturePiece const&) = delete;
-    ScatteredFeaturePiece(ScatteredFeaturePiece const&)            = delete;
-    ScatteredFeaturePiece()                                        = delete;
+    ScatteredFeaturePiece& operator=(ScatteredFeaturePiece const&);
+    ScatteredFeaturePiece(ScatteredFeaturePiece const&);
+    ScatteredFeaturePiece();
 
 public:
     // NOLINTBEGIN

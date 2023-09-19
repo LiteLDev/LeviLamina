@@ -5,7 +5,7 @@
 struct RuntimeIDComponent {
 public:
     // prevent constructor by default
-    RuntimeIDComponent& operator=(RuntimeIDComponent const&) = delete;
-    RuntimeIDComponent(RuntimeIDComponent const&)            = delete;
-    RuntimeIDComponent()                                     = delete;
+    RuntimeIDComponent& operator=(RuntimeIDComponent const&);
+    RuntimeIDComponent(RuntimeIDComponent const&);
+    RuntimeIDComponent();
 };

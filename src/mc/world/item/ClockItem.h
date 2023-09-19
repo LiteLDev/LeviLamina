@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class ClockItem : public ::Item {
 public:
     // prevent constructor by default
-    ClockItem& operator=(ClockItem const&) = delete;
-    ClockItem(ClockItem const&)            = delete;
-    ClockItem()                            = delete;
+    ClockItem& operator=(ClockItem const&);
+    ClockItem(ClockItem const&);
+    ClockItem();
 
 public:
     // NOLINTBEGIN

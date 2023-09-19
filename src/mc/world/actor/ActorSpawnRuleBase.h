@@ -10,9 +10,9 @@ namespace Json { class Value; }
 class ActorSpawnRuleBase {
 public:
     // prevent constructor by default
-    ActorSpawnRuleBase& operator=(ActorSpawnRuleBase const&) = delete;
-    ActorSpawnRuleBase(ActorSpawnRuleBase const&)            = delete;
-    ActorSpawnRuleBase()                                     = delete;
+    ActorSpawnRuleBase& operator=(ActorSpawnRuleBase const&);
+    ActorSpawnRuleBase(ActorSpawnRuleBase const&);
+    ActorSpawnRuleBase();
 
 public:
     // NOLINTBEGIN

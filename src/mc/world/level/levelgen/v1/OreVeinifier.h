@@ -5,14 +5,14 @@
 class OreVeinifier {
 public:
     // prevent constructor by default
-    OreVeinifier& operator=(OreVeinifier const&) = delete;
-    OreVeinifier(OreVeinifier const&)            = delete;
-    OreVeinifier()                               = delete;
+    OreVeinifier& operator=(OreVeinifier const&);
+    OreVeinifier(OreVeinifier const&);
+    OreVeinifier();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0OreVeinifier@@QEAA@AEBVOreVeinifierNoises@@@Z
-    MCAPI OreVeinifier(class OreVeinifierNoises const&);
+    MCAPI explicit OreVeinifier(class OreVeinifierNoises const&);
 
     // symbol: ?fillNoiseAtPos@OreVeinifier@@QEAAXAEBVVec3@@HM@Z
     MCAPI void fillNoiseAtPos(class Vec3 const&, int, float);

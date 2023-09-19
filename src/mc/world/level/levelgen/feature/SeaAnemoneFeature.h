@@ -8,9 +8,9 @@
 class SeaAnemoneFeature : public ::Feature {
 public:
     // prevent constructor by default
-    SeaAnemoneFeature& operator=(SeaAnemoneFeature const&) = delete;
-    SeaAnemoneFeature(SeaAnemoneFeature const&)            = delete;
-    SeaAnemoneFeature()                                    = delete;
+    SeaAnemoneFeature& operator=(SeaAnemoneFeature const&);
+    SeaAnemoneFeature(SeaAnemoneFeature const&);
+    SeaAnemoneFeature();
 
 public:
     // NOLINTBEGIN

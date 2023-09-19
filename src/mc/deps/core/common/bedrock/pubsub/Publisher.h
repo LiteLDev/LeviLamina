@@ -8,9 +8,9 @@ template <typename T0, typename T1>
 class Publisher {
 public:
     // prevent constructor by default
-    Publisher& operator=(Publisher const&) = delete;
-    Publisher(Publisher const&)            = delete;
-    Publisher()                            = delete;
+    Publisher& operator=(Publisher const&);
+    Publisher(Publisher const&);
+    Publisher();
 };
 
 }; // namespace Bedrock::PubSub

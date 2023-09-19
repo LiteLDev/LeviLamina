@@ -8,9 +8,9 @@
 class ITickingAreaView {
 public:
     // prevent constructor by default
-    ITickingAreaView& operator=(ITickingAreaView const&) = delete;
-    ITickingAreaView(ITickingAreaView const&)            = delete;
-    ITickingAreaView()                                   = delete;
+    ITickingAreaView& operator=(ITickingAreaView const&);
+    ITickingAreaView(ITickingAreaView const&);
+    ITickingAreaView();
 
 public:
     // NOLINTBEGIN

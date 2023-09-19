@@ -5,9 +5,9 @@
 class ChunkBlockPos {
 public:
     // prevent constructor by default
-    ChunkBlockPos& operator=(ChunkBlockPos const&) = delete;
-    ChunkBlockPos(ChunkBlockPos const&)            = delete;
-    ChunkBlockPos()                                = delete;
+    ChunkBlockPos& operator=(ChunkBlockPos const&);
+    ChunkBlockPos(ChunkBlockPos const&);
+    ChunkBlockPos();
 
 public:
     // NOLINTBEGIN

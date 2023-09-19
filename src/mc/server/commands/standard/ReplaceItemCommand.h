@@ -13,9 +13,9 @@ namespace Util { struct ReplacementResults; }
 class ReplaceItemCommand : public ::Command {
 public:
     // prevent constructor by default
-    ReplaceItemCommand& operator=(ReplaceItemCommand const&) = delete;
-    ReplaceItemCommand(ReplaceItemCommand const&)            = delete;
-    ReplaceItemCommand()                                     = delete;
+    ReplaceItemCommand& operator=(ReplaceItemCommand const&);
+    ReplaceItemCommand(ReplaceItemCommand const&);
+    ReplaceItemCommand();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 class MockableOwnedBlockSource {
 public:
     // prevent constructor by default
-    MockableOwnedBlockSource& operator=(MockableOwnedBlockSource const&) = delete;
-    MockableOwnedBlockSource(MockableOwnedBlockSource const&)            = delete;
-    MockableOwnedBlockSource()                                           = delete;
+    MockableOwnedBlockSource& operator=(MockableOwnedBlockSource const&);
+    MockableOwnedBlockSource(MockableOwnedBlockSource const&);
+    MockableOwnedBlockSource();
 };

@@ -16,9 +16,9 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class NetEventCallback : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    NetEventCallback& operator=(NetEventCallback const&) = delete;
-    NetEventCallback(NetEventCallback const&)            = delete;
-    NetEventCallback()                                   = delete;
+    NetEventCallback& operator=(NetEventCallback const&);
+    NetEventCallback(NetEventCallback const&);
+    NetEventCallback();
 
 public:
     // NOLINTBEGIN

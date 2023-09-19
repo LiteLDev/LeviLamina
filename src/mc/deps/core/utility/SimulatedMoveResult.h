@@ -7,9 +7,9 @@ namespace Util::Agent {
 struct SimulatedMoveResult {
 public:
     // prevent constructor by default
-    SimulatedMoveResult& operator=(SimulatedMoveResult const&) = delete;
-    SimulatedMoveResult(SimulatedMoveResult const&)            = delete;
-    SimulatedMoveResult()                                      = delete;
+    SimulatedMoveResult& operator=(SimulatedMoveResult const&);
+    SimulatedMoveResult(SimulatedMoveResult const&);
+    SimulatedMoveResult();
 };
 
 }; // namespace Util::Agent

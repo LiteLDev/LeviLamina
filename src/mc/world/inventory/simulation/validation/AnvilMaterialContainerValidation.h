@@ -8,9 +8,9 @@
 class AnvilMaterialContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    AnvilMaterialContainerValidation& operator=(AnvilMaterialContainerValidation const&) = delete;
-    AnvilMaterialContainerValidation(AnvilMaterialContainerValidation const&)            = delete;
-    AnvilMaterialContainerValidation()                                                   = delete;
+    AnvilMaterialContainerValidation& operator=(AnvilMaterialContainerValidation const&);
+    AnvilMaterialContainerValidation(AnvilMaterialContainerValidation const&);
+    AnvilMaterialContainerValidation();
 
 public:
     // NOLINTBEGIN

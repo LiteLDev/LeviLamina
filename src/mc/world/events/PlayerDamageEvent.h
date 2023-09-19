@@ -8,9 +8,9 @@
 struct PlayerDamageEvent {
 public:
     // prevent constructor by default
-    PlayerDamageEvent& operator=(PlayerDamageEvent const&) = delete;
-    PlayerDamageEvent(PlayerDamageEvent const&)            = delete;
-    PlayerDamageEvent()                                    = delete;
+    PlayerDamageEvent& operator=(PlayerDamageEvent const&);
+    PlayerDamageEvent(PlayerDamageEvent const&);
+    PlayerDamageEvent();
 
 public:
     // NOLINTBEGIN

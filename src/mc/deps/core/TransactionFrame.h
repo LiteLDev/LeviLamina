@@ -16,9 +16,9 @@ namespace Core {
 class TransactionFrame {
 public:
     // prevent constructor by default
-    TransactionFrame& operator=(TransactionFrame const&) = delete;
-    TransactionFrame(TransactionFrame const&)            = delete;
-    TransactionFrame()                                   = delete;
+    TransactionFrame& operator=(TransactionFrame const&);
+    TransactionFrame(TransactionFrame const&);
+    TransactionFrame();
 
 public:
     // NOLINTBEGIN

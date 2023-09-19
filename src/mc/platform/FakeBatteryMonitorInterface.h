@@ -9,8 +9,8 @@
 class FakeBatteryMonitorInterface : public ::BatteryMonitorInterface {
 public:
     // prevent constructor by default
-    FakeBatteryMonitorInterface& operator=(FakeBatteryMonitorInterface const&) = delete;
-    FakeBatteryMonitorInterface(FakeBatteryMonitorInterface const&)            = delete;
+    FakeBatteryMonitorInterface& operator=(FakeBatteryMonitorInterface const&);
+    FakeBatteryMonitorInterface(FakeBatteryMonitorInterface const&);
 
 public:
     // NOLINTBEGIN

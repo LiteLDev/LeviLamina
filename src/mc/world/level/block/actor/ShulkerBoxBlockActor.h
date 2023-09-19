@@ -10,9 +10,9 @@
 class ShulkerBoxBlockActor : public ::ChestBlockActor {
 public:
     // prevent constructor by default
-    ShulkerBoxBlockActor& operator=(ShulkerBoxBlockActor const&) = delete;
-    ShulkerBoxBlockActor(ShulkerBoxBlockActor const&)            = delete;
-    ShulkerBoxBlockActor()                                       = delete;
+    ShulkerBoxBlockActor& operator=(ShulkerBoxBlockActor const&);
+    ShulkerBoxBlockActor(ShulkerBoxBlockActor const&);
+    ShulkerBoxBlockActor();
 
 public:
     // NOLINTBEGIN

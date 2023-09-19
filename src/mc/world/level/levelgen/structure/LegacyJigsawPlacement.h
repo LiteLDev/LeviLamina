@@ -9,9 +9,9 @@
 class LegacyJigsawPlacement {
 public:
     // prevent constructor by default
-    LegacyJigsawPlacement& operator=(LegacyJigsawPlacement const&) = delete;
-    LegacyJigsawPlacement(LegacyJigsawPlacement const&)            = delete;
-    LegacyJigsawPlacement()                                        = delete;
+    LegacyJigsawPlacement& operator=(LegacyJigsawPlacement const&);
+    LegacyJigsawPlacement(LegacyJigsawPlacement const&);
+    LegacyJigsawPlacement();
 
 public:
     // NOLINTBEGIN

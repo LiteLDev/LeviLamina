@@ -18,8 +18,8 @@ namespace mce { class UUID; }
 class CommandOrigin {
 public:
     // prevent constructor by default
-    CommandOrigin& operator=(CommandOrigin const&) = delete;
-    CommandOrigin(CommandOrigin const&)            = delete;
+    CommandOrigin& operator=(CommandOrigin const&);
+    CommandOrigin(CommandOrigin const&);
 
 public:
     // NOLINTBEGIN

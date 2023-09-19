@@ -10,9 +10,9 @@ namespace TreeHelper { struct TreeParams; }
 class SimpleTreeTrunk {
 public:
     // prevent constructor by default
-    SimpleTreeTrunk& operator=(SimpleTreeTrunk const&) = delete;
-    SimpleTreeTrunk(SimpleTreeTrunk const&)            = delete;
-    SimpleTreeTrunk()                                  = delete;
+    SimpleTreeTrunk& operator=(SimpleTreeTrunk const&);
+    SimpleTreeTrunk(SimpleTreeTrunk const&);
+    SimpleTreeTrunk();
 
 public:
     // NOLINTBEGIN

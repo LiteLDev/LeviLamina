@@ -5,9 +5,9 @@
 class WorldTemplateManagerProxyCallbacks {
 public:
     // prevent constructor by default
-    WorldTemplateManagerProxyCallbacks& operator=(WorldTemplateManagerProxyCallbacks const&) = delete;
-    WorldTemplateManagerProxyCallbacks(WorldTemplateManagerProxyCallbacks const&)            = delete;
-    WorldTemplateManagerProxyCallbacks()                                                     = delete;
+    WorldTemplateManagerProxyCallbacks& operator=(WorldTemplateManagerProxyCallbacks const&);
+    WorldTemplateManagerProxyCallbacks(WorldTemplateManagerProxyCallbacks const&);
+    WorldTemplateManagerProxyCallbacks();
 
 public:
     // NOLINTBEGIN

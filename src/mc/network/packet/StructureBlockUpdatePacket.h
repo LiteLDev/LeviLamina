@@ -10,7 +10,7 @@
 class StructureBlockUpdatePacket : public ::Packet {
 public:
     // prevent constructor by default
-    StructureBlockUpdatePacket& operator=(StructureBlockUpdatePacket const&) = delete;
+    StructureBlockUpdatePacket& operator=(StructureBlockUpdatePacket const&);
 
 public:
     // NOLINTBEGIN

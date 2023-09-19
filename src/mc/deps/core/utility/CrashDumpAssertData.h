@@ -5,9 +5,9 @@
 class CrashDumpAssertData {
 public:
     // prevent constructor by default
-    CrashDumpAssertData& operator=(CrashDumpAssertData const&) = delete;
-    CrashDumpAssertData(CrashDumpAssertData const&)            = delete;
-    CrashDumpAssertData()                                      = delete;
+    CrashDumpAssertData& operator=(CrashDumpAssertData const&);
+    CrashDumpAssertData(CrashDumpAssertData const&);
+    CrashDumpAssertData();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class ParticlesTeleportTrailEvent {
 public:
     // prevent constructor by default
-    ParticlesTeleportTrailEvent& operator=(ParticlesTeleportTrailEvent const&) = delete;
-    ParticlesTeleportTrailEvent(ParticlesTeleportTrailEvent const&)            = delete;
-    ParticlesTeleportTrailEvent()                                              = delete;
+    ParticlesTeleportTrailEvent& operator=(ParticlesTeleportTrailEvent const&);
+    ParticlesTeleportTrailEvent(ParticlesTeleportTrailEvent const&);
+    ParticlesTeleportTrailEvent();
 
 public:
     // NOLINTBEGIN

@@ -5,8 +5,8 @@
 class BlockListEventMap {
 public:
     // prevent constructor by default
-    BlockListEventMap(BlockListEventMap const&) = delete;
-    BlockListEventMap()                         = delete;
+    BlockListEventMap(BlockListEventMap const&);
+    BlockListEventMap();
 
 public:
     // NOLINTBEGIN

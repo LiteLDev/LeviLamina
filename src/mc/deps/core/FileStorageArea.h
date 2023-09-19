@@ -27,9 +27,9 @@ public:
 
 public:
     // prevent constructor by default
-    FileStorageArea& operator=(FileStorageArea const&) = delete;
-    FileStorageArea(FileStorageArea const&)            = delete;
-    FileStorageArea()                                  = delete;
+    FileStorageArea& operator=(FileStorageArea const&);
+    FileStorageArea(FileStorageArea const&);
+    FileStorageArea();
 
 public:
     // NOLINTBEGIN

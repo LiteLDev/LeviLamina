@@ -16,8 +16,8 @@ namespace Bedrock {
 class AppIsland : public ::Bedrock::IIslandCore {
 public:
     // prevent constructor by default
-    AppIsland& operator=(AppIsland const&) = delete;
-    AppIsland(AppIsland const&)            = delete;
+    AppIsland& operator=(AppIsland const&);
+    AppIsland(AppIsland const&);
 
 public:
     // NOLINTBEGIN
