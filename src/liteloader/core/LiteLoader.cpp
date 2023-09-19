@@ -406,4 +406,4 @@ LL_AUTO_STATIC_HOOK(LiteLoaderMain, HookPriority::Normal, "main", int, int argc,
     return origin(argc, argv);
 }
 
-LL_UNUSED BOOL WINAPI DllMain(HMODULE, DWORD /*ul_reason_for_call*/, LPVOID) { return TRUE; }
+[[maybe_unused]] BOOL WINAPI DllMain(HMODULE, DWORD /*ul_reason_for_call*/, LPVOID) { return TRUE; }
