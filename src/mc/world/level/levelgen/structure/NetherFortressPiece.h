@@ -9,9 +9,9 @@
 class NetherFortressPiece : public ::StructurePiece {
 public:
     // prevent constructor by default
-    NetherFortressPiece& operator=(NetherFortressPiece const&) = delete;
-    NetherFortressPiece(NetherFortressPiece const&)            = delete;
-    NetherFortressPiece()                                      = delete;
+    NetherFortressPiece& operator=(NetherFortressPiece const&);
+    NetherFortressPiece(NetherFortressPiece const&);
+    NetherFortressPiece();
 
 public:
     // NOLINTBEGIN
@@ -28,7 +28,7 @@ public:
     MCVAPI ~NetherFortressPiece();
 
     // symbol: ??0NetherFortressPiece@@QEAA@H@Z
-    MCAPI NetherFortressPiece(int);
+    MCAPI explicit NetherFortressPiece(int);
 
     // symbol:
     // ?findAndCreateBridgePieceFactory@NetherFortressPiece@@QEAA?AV?$unique_ptr@VNetherFortressPiece@@U?$default_delete@VNetherFortressPiece@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@3@AEAVRandom@@HHHHH@Z

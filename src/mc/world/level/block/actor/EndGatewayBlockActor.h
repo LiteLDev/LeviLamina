@@ -8,9 +8,9 @@
 class EndGatewayBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    EndGatewayBlockActor& operator=(EndGatewayBlockActor const&) = delete;
-    EndGatewayBlockActor(EndGatewayBlockActor const&)            = delete;
-    EndGatewayBlockActor()                                       = delete;
+    EndGatewayBlockActor& operator=(EndGatewayBlockActor const&);
+    EndGatewayBlockActor(EndGatewayBlockActor const&);
+    EndGatewayBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -70,7 +70,7 @@ public:
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // symbol: ??0EndGatewayBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI EndGatewayBlockActor(class BlockPos const&);
+    MCAPI explicit EndGatewayBlockActor(class BlockPos const&);
 
     // symbol: ?canTeleport@EndGatewayBlockActor@@QEBA_NPEBVGetCollisionShapeInterface@@AEBVBlockSource@@@Z
     MCAPI bool canTeleport(class GetCollisionShapeInterface const*, class BlockSource const&) const;

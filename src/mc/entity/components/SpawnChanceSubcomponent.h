@@ -13,8 +13,8 @@ namespace Json { class Value; }
 class SpawnChanceSubcomponent : public ::OnHitSubcomponent {
 public:
     // prevent constructor by default
-    SpawnChanceSubcomponent& operator=(SpawnChanceSubcomponent const&) = delete;
-    SpawnChanceSubcomponent(SpawnChanceSubcomponent const&)            = delete;
+    SpawnChanceSubcomponent& operator=(SpawnChanceSubcomponent const&);
+    SpawnChanceSubcomponent(SpawnChanceSubcomponent const&);
 
 public:
     // NOLINTBEGIN

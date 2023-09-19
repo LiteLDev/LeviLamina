@@ -9,8 +9,8 @@
 class CartographyContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // prevent constructor by default
-    CartographyContainerScreenValidator& operator=(CartographyContainerScreenValidator const&) = delete;
-    CartographyContainerScreenValidator(CartographyContainerScreenValidator const&)            = delete;
+    CartographyContainerScreenValidator& operator=(CartographyContainerScreenValidator const&);
+    CartographyContainerScreenValidator(CartographyContainerScreenValidator const&);
 
 public:
     // NOLINTBEGIN

@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class RespawnAnchorBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    RespawnAnchorBlock& operator=(RespawnAnchorBlock const&) = delete;
-    RespawnAnchorBlock(RespawnAnchorBlock const&)            = delete;
-    RespawnAnchorBlock()                                     = delete;
+    RespawnAnchorBlock& operator=(RespawnAnchorBlock const&);
+    RespawnAnchorBlock(RespawnAnchorBlock const&);
+    RespawnAnchorBlock();
 
 public:
     // NOLINTBEGIN

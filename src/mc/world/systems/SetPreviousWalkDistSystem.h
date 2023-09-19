@@ -5,9 +5,9 @@
 class SetPreviousWalkDistSystem {
 public:
     // prevent constructor by default
-    SetPreviousWalkDistSystem& operator=(SetPreviousWalkDistSystem const&) = delete;
-    SetPreviousWalkDistSystem(SetPreviousWalkDistSystem const&)            = delete;
-    SetPreviousWalkDistSystem()                                            = delete;
+    SetPreviousWalkDistSystem& operator=(SetPreviousWalkDistSystem const&);
+    SetPreviousWalkDistSystem(SetPreviousWalkDistSystem const&);
+    SetPreviousWalkDistSystem();
 
 public:
     // NOLINTBEGIN

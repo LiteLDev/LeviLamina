@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct IsIgnitedDefinition {
 public:
     // prevent constructor by default
-    IsIgnitedDefinition& operator=(IsIgnitedDefinition const&) = delete;
-    IsIgnitedDefinition(IsIgnitedDefinition const&)            = delete;
-    IsIgnitedDefinition()                                      = delete;
+    IsIgnitedDefinition& operator=(IsIgnitedDefinition const&);
+    IsIgnitedDefinition(IsIgnitedDefinition const&);
+    IsIgnitedDefinition();
 
 public:
     // NOLINTBEGIN

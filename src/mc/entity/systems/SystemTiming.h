@@ -5,9 +5,9 @@
 struct SystemTiming {
 public:
     // prevent constructor by default
-    SystemTiming& operator=(SystemTiming const&) = delete;
-    SystemTiming(SystemTiming const&)            = delete;
-    SystemTiming()                               = delete;
+    SystemTiming& operator=(SystemTiming const&);
+    SystemTiming(SystemTiming const&);
+    SystemTiming();
 
 public:
     // NOLINTBEGIN

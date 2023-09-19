@@ -27,8 +27,8 @@ public:
     bool          mUsingEconomyTrade; // this+0x89
 
     // prevent constructor by default
-    UpdateTradePacket& operator=(UpdateTradePacket const&) = delete;
-    UpdateTradePacket(UpdateTradePacket const&)            = delete;
+    UpdateTradePacket& operator=(UpdateTradePacket const&);
+    UpdateTradePacket(UpdateTradePacket const&);
 
 public:
     // NOLINTBEGIN

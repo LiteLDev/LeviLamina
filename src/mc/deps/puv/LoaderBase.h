@@ -14,9 +14,9 @@ namespace Puv::internal {
 class LoaderBase {
 public:
     // prevent constructor by default
-    LoaderBase& operator=(LoaderBase const&) = delete;
-    LoaderBase(LoaderBase const&)            = delete;
-    LoaderBase()                             = delete;
+    LoaderBase& operator=(LoaderBase const&);
+    LoaderBase(LoaderBase const&);
+    LoaderBase();
 
 public:
     // NOLINTBEGIN

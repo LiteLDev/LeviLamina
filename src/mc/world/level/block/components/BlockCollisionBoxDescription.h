@@ -14,9 +14,9 @@ namespace JsonUtil { class EmptyClass; }
 struct BlockCollisionBoxDescription : public ::BlockComponentDescription {
 public:
     // prevent constructor by default
-    BlockCollisionBoxDescription& operator=(BlockCollisionBoxDescription const&) = delete;
-    BlockCollisionBoxDescription(BlockCollisionBoxDescription const&)            = delete;
-    BlockCollisionBoxDescription()                                               = delete;
+    BlockCollisionBoxDescription& operator=(BlockCollisionBoxDescription const&);
+    BlockCollisionBoxDescription(BlockCollisionBoxDescription const&);
+    BlockCollisionBoxDescription();
 
 public:
     // NOLINTBEGIN
@@ -50,7 +50,7 @@ public:
     MCAPI BlockCollisionBoxDescription(class Vec3 const&, class Vec3 const&);
 
     // symbol: ??0BlockCollisionBoxDescription@@QEAA@_N@Z
-    MCAPI BlockCollisionBoxDescription(bool);
+    MCAPI explicit BlockCollisionBoxDescription(bool);
 
     // symbol: ?bindType@BlockCollisionBoxDescription@@SAXXZ
     MCAPI static void bindType();

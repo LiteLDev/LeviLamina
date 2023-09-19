@@ -6,7 +6,7 @@ template <int T0>
 class AggregateFeature {
 public:
     // prevent constructor by default
-    AggregateFeature& operator=(AggregateFeature const&) = delete;
-    AggregateFeature(AggregateFeature const&)            = delete;
-    AggregateFeature()                                   = delete;
+    AggregateFeature& operator=(AggregateFeature const&);
+    AggregateFeature(AggregateFeature const&);
+    AggregateFeature();
 };

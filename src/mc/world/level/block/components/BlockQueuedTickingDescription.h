@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 struct BlockQueuedTickingDescription : public ::BlockComponentDescription {
 public:
     // prevent constructor by default
-    BlockQueuedTickingDescription& operator=(BlockQueuedTickingDescription const&) = delete;
-    BlockQueuedTickingDescription(BlockQueuedTickingDescription const&)            = delete;
+    BlockQueuedTickingDescription& operator=(BlockQueuedTickingDescription const&);
+    BlockQueuedTickingDescription(BlockQueuedTickingDescription const&);
 
 public:
     // NOLINTBEGIN

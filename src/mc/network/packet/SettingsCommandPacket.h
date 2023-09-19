@@ -13,8 +13,8 @@ public:
     bool        mSupressOutput; // this+0x50
 
     // prevent constructor by default
-    SettingsCommandPacket& operator=(SettingsCommandPacket const&) = delete;
-    SettingsCommandPacket(SettingsCommandPacket const&)            = delete;
+    SettingsCommandPacket& operator=(SettingsCommandPacket const&);
+    SettingsCommandPacket(SettingsCommandPacket const&);
 
 public:
     // NOLINTBEGIN

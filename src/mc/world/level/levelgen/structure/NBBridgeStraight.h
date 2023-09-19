@@ -9,9 +9,9 @@
 class NBBridgeStraight : public ::NetherFortressPiece {
 public:
     // prevent constructor by default
-    NBBridgeStraight& operator=(NBBridgeStraight const&) = delete;
-    NBBridgeStraight(NBBridgeStraight const&)            = delete;
-    NBBridgeStraight()                                   = delete;
+    NBBridgeStraight& operator=(NBBridgeStraight const&);
+    NBBridgeStraight(NBBridgeStraight const&);
+    NBBridgeStraight();
 
 public:
     // NOLINTBEGIN

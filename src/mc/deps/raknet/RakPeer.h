@@ -45,9 +45,9 @@ public:
     struct BufferedCommandStruct {
     public:
         // prevent constructor by default
-        BufferedCommandStruct& operator=(BufferedCommandStruct const&) = delete;
-        BufferedCommandStruct(BufferedCommandStruct const&)            = delete;
-        BufferedCommandStruct()                                        = delete;
+        BufferedCommandStruct& operator=(BufferedCommandStruct const&);
+        BufferedCommandStruct(BufferedCommandStruct const&);
+        BufferedCommandStruct();
     };
 
     struct RemoteSystemStruct {
@@ -57,8 +57,8 @@ public:
 
     public:
         // prevent constructor by default
-        RemoteSystemStruct& operator=(RemoteSystemStruct const&) = delete;
-        RemoteSystemStruct(RemoteSystemStruct const&)            = delete;
+        RemoteSystemStruct& operator=(RemoteSystemStruct const&);
+        RemoteSystemStruct(RemoteSystemStruct const&);
 
     public:
         // NOLINTBEGIN
@@ -74,23 +74,23 @@ public:
     struct RequestedConnectionStruct {
     public:
         // prevent constructor by default
-        RequestedConnectionStruct& operator=(RequestedConnectionStruct const&) = delete;
-        RequestedConnectionStruct(RequestedConnectionStruct const&)            = delete;
-        RequestedConnectionStruct()                                            = delete;
+        RequestedConnectionStruct& operator=(RequestedConnectionStruct const&);
+        RequestedConnectionStruct(RequestedConnectionStruct const&);
+        RequestedConnectionStruct();
     };
 
     struct SocketQueryOutput {
     public:
         // prevent constructor by default
-        SocketQueryOutput& operator=(SocketQueryOutput const&) = delete;
-        SocketQueryOutput(SocketQueryOutput const&)            = delete;
-        SocketQueryOutput()                                    = delete;
+        SocketQueryOutput& operator=(SocketQueryOutput const&);
+        SocketQueryOutput(SocketQueryOutput const&);
+        SocketQueryOutput();
     };
 
 public:
     // prevent constructor by default
-    RakPeer& operator=(RakPeer const&) = delete;
-    RakPeer(RakPeer const&)            = delete;
+    RakPeer& operator=(RakPeer const&);
+    RakPeer(RakPeer const&);
 
 public:
     // NOLINTBEGIN

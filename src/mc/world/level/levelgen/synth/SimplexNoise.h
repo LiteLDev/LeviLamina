@@ -5,9 +5,9 @@
 class SimplexNoise {
 public:
     // prevent constructor by default
-    SimplexNoise& operator=(SimplexNoise const&) = delete;
-    SimplexNoise(SimplexNoise const&)            = delete;
-    SimplexNoise()                               = delete;
+    SimplexNoise& operator=(SimplexNoise const&);
+    SimplexNoise(SimplexNoise const&);
+    SimplexNoise();
 
 public:
     // NOLINTBEGIN

@@ -23,9 +23,9 @@ public:
     SemVersion           mEngineVersion;  // this+0xc8
 
     // prevent constructor by default
-    AddVolumeEntityPacket& operator=(AddVolumeEntityPacket const&) = delete;
-    AddVolumeEntityPacket(AddVolumeEntityPacket const&)            = delete;
-    AddVolumeEntityPacket()                                        = delete;
+    AddVolumeEntityPacket& operator=(AddVolumeEntityPacket const&);
+    AddVolumeEntityPacket(AddVolumeEntityPacket const&);
+    AddVolumeEntityPacket();
 
 public:
     // NOLINTBEGIN

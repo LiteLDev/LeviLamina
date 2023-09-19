@@ -13,16 +13,16 @@ public:
     struct Gene {
     public:
         // prevent constructor by default
-        Gene& operator=(Gene const&) = delete;
-        Gene(Gene const&)            = delete;
-        Gene()                       = delete;
+        Gene& operator=(Gene const&);
+        Gene(Gene const&);
+        Gene();
     };
 
 public:
     // prevent constructor by default
-    GeneticsComponent& operator=(GeneticsComponent const&) = delete;
-    GeneticsComponent(GeneticsComponent const&)            = delete;
-    GeneticsComponent()                                    = delete;
+    GeneticsComponent& operator=(GeneticsComponent const&);
+    GeneticsComponent(GeneticsComponent const&);
+    GeneticsComponent();
 
 public:
     // NOLINTBEGIN
@@ -78,11 +78,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $GENE_ARRAY() { return GENE_ARRAY; }
+    auto& $GENE_ARRAY() { return GENE_ARRAY; }
 
-    inline auto& $HIDDEN_ALLELE() { return HIDDEN_ALLELE; }
+    auto& $HIDDEN_ALLELE() { return HIDDEN_ALLELE; }
 
-    inline auto& $MAIN_ALLELE() { return MAIN_ALLELE; }
+    auto& $MAIN_ALLELE() { return MAIN_ALLELE; }
 
     // NOLINTEND
 };

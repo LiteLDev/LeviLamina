@@ -20,9 +20,9 @@ namespace ScriptModuleMinecraft {
 class ScriptRideableComponent {
 public:
     // prevent constructor by default
-    ScriptRideableComponent& operator=(ScriptRideableComponent const&) = delete;
-    ScriptRideableComponent(ScriptRideableComponent const&)            = delete;
-    ScriptRideableComponent()                                          = delete;
+    ScriptRideableComponent& operator=(ScriptRideableComponent const&);
+    ScriptRideableComponent(ScriptRideableComponent const&);
+    ScriptRideableComponent();
 
 public:
     // NOLINTBEGIN

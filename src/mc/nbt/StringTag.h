@@ -49,7 +49,7 @@ public:
     MCAPI StringTag();
 
     // symbol: ??0StringTag@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI StringTag(std::string);
+    MCAPI explicit StringTag(std::string);
 
     // NOLINTEND
 };

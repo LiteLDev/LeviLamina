@@ -11,9 +11,9 @@
 class TheEndDimension : public ::Dimension {
 public:
     // prevent constructor by default
-    TheEndDimension& operator=(TheEndDimension const&) = delete;
-    TheEndDimension(TheEndDimension const&)            = delete;
-    TheEndDimension()                                  = delete;
+    TheEndDimension& operator=(TheEndDimension const&);
+    TheEndDimension(TheEndDimension const&);
+    TheEndDimension();
 
 public:
     // NOLINTBEGIN

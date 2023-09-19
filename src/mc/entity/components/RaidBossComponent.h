@@ -9,9 +9,9 @@
 class RaidBossComponent {
 public:
     // prevent constructor by default
-    RaidBossComponent& operator=(RaidBossComponent const&) = delete;
-    RaidBossComponent(RaidBossComponent const&)            = delete;
-    RaidBossComponent()                                    = delete;
+    RaidBossComponent& operator=(RaidBossComponent const&);
+    RaidBossComponent(RaidBossComponent const&);
+    RaidBossComponent();
 
 public:
     // NOLINTBEGIN

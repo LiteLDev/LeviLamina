@@ -7,9 +7,9 @@ namespace Bedrock::Http::MethodType {
 class POST {
 public:
     // prevent constructor by default
-    POST& operator=(POST const&) = delete;
-    POST(POST const&)            = delete;
-    POST()                       = delete;
+    POST& operator=(POST const&);
+    POST(POST const&);
+    POST();
 
 public:
     // NOLINTBEGIN

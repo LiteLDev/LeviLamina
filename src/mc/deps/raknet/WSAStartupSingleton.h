@@ -5,9 +5,9 @@
 class WSAStartupSingleton {
 public:
     // prevent constructor by default
-    WSAStartupSingleton& operator=(WSAStartupSingleton const&) = delete;
-    WSAStartupSingleton(WSAStartupSingleton const&)            = delete;
-    WSAStartupSingleton()                                      = delete;
+    WSAStartupSingleton& operator=(WSAStartupSingleton const&);
+    WSAStartupSingleton(WSAStartupSingleton const&);
+    WSAStartupSingleton();
 
 public:
     // NOLINTBEGIN

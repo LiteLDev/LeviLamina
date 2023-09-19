@@ -5,7 +5,7 @@
 struct IReplayStatePolicy {
 public:
     // prevent constructor by default
-    IReplayStatePolicy& operator=(IReplayStatePolicy const&) = delete;
-    IReplayStatePolicy(IReplayStatePolicy const&)            = delete;
-    IReplayStatePolicy()                                     = delete;
+    IReplayStatePolicy& operator=(IReplayStatePolicy const&);
+    IReplayStatePolicy(IReplayStatePolicy const&);
+    IReplayStatePolicy();
 };

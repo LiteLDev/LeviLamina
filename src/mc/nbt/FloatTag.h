@@ -49,7 +49,7 @@ public:
     MCAPI FloatTag();
 
     // symbol: ??0FloatTag@@QEAA@M@Z
-    MCAPI FloatTag(float);
+    MCAPI explicit FloatTag(float);
 
     // NOLINTEND
 };

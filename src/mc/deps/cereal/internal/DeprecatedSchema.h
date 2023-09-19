@@ -20,9 +20,9 @@ namespace cereal::internal {
 class DeprecatedSchema : public ::cereal::internal::BasicSchema {
 public:
     // prevent constructor by default
-    DeprecatedSchema& operator=(DeprecatedSchema const&) = delete;
-    DeprecatedSchema(DeprecatedSchema const&)            = delete;
-    DeprecatedSchema()                                   = delete;
+    DeprecatedSchema& operator=(DeprecatedSchema const&);
+    DeprecatedSchema(DeprecatedSchema const&);
+    DeprecatedSchema();
 
 public:
     // NOLINTBEGIN

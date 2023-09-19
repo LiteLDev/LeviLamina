@@ -24,8 +24,8 @@ public:
     class Definition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        Definition& operator=(Definition const&) = delete;
-        Definition(Definition const&)            = delete;
+        Definition& operator=(Definition const&);
+        Definition(Definition const&);
 
     public:
         // NOLINTBEGIN
@@ -51,9 +51,9 @@ public:
 
 public:
     // prevent constructor by default
-    StayNearNoteblockGoal& operator=(StayNearNoteblockGoal const&) = delete;
-    StayNearNoteblockGoal(StayNearNoteblockGoal const&)            = delete;
-    StayNearNoteblockGoal()                                        = delete;
+    StayNearNoteblockGoal& operator=(StayNearNoteblockGoal const&);
+    StayNearNoteblockGoal(StayNearNoteblockGoal const&);
+    StayNearNoteblockGoal();
 
 public:
     // NOLINTBEGIN
@@ -80,7 +80,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0StayNearNoteblockGoal@@QEAA@AEAVMob@@@Z
-    MCAPI StayNearNoteblockGoal(class Mob&);
+    MCAPI explicit StayNearNoteblockGoal(class Mob&);
 
     // NOLINTEND
 

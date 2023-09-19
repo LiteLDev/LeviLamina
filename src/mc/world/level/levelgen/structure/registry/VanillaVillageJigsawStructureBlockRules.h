@@ -5,9 +5,9 @@
 class VanillaVillageJigsawStructureBlockRules {
 public:
     // prevent constructor by default
-    VanillaVillageJigsawStructureBlockRules& operator=(VanillaVillageJigsawStructureBlockRules const&) = delete;
-    VanillaVillageJigsawStructureBlockRules(VanillaVillageJigsawStructureBlockRules const&)            = delete;
-    VanillaVillageJigsawStructureBlockRules()                                                          = delete;
+    VanillaVillageJigsawStructureBlockRules& operator=(VanillaVillageJigsawStructureBlockRules const&);
+    VanillaVillageJigsawStructureBlockRules(VanillaVillageJigsawStructureBlockRules const&);
+    VanillaVillageJigsawStructureBlockRules();
 
 public:
     // NOLINTBEGIN

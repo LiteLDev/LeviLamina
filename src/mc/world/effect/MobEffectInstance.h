@@ -14,7 +14,7 @@ namespace mce { class Color; }
 class MobEffectInstance {
 public:
     // prevent constructor by default
-    MobEffectInstance() = delete;
+    MobEffectInstance();
 
     MobEffect::EffectType            mId;                              // this+0x0
     int                              mDuration;                        // this+0x4
@@ -47,7 +47,7 @@ public:
     MCAPI MobEffectInstance(uint type, int duration);
 
     // symbol: ??0MobEffectInstance@@QEAA@I@Z
-    MCAPI MobEffectInstance(uint type);
+    MCAPI explicit MobEffectInstance(uint type);
 
     // symbol: ??0MobEffectInstance@@QEAA@$$QEAV0@@Z
     MCAPI MobEffectInstance(class MobEffectInstance&&);

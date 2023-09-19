@@ -5,7 +5,7 @@
 struct UpdateEntityAfterFallOnInterface {
 public:
     // prevent constructor by default
-    UpdateEntityAfterFallOnInterface& operator=(UpdateEntityAfterFallOnInterface const&) = delete;
-    UpdateEntityAfterFallOnInterface(UpdateEntityAfterFallOnInterface const&)            = delete;
-    UpdateEntityAfterFallOnInterface()                                                   = delete;
+    UpdateEntityAfterFallOnInterface& operator=(UpdateEntityAfterFallOnInterface const&);
+    UpdateEntityAfterFallOnInterface(UpdateEntityAfterFallOnInterface const&);
+    UpdateEntityAfterFallOnInterface();
 };

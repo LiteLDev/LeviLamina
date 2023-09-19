@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ScoreboardIdentityRef@@QEAA@AEBUScoreboardId@@@Z
-    MCAPI ScoreboardIdentityRef(struct ScoreboardId const&);
+    MCAPI explicit ScoreboardIdentityRef(struct ScoreboardId const&);
 
     // symbol: ??0ScoreboardIdentityRef@@QEAA@XZ
     MCAPI ScoreboardIdentityRef();

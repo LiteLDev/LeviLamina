@@ -8,9 +8,9 @@
 class DeltaFeature : public ::Feature {
 public:
     // prevent constructor by default
-    DeltaFeature& operator=(DeltaFeature const&) = delete;
-    DeltaFeature(DeltaFeature const&)            = delete;
-    DeltaFeature()                               = delete;
+    DeltaFeature& operator=(DeltaFeature const&);
+    DeltaFeature(DeltaFeature const&);
+    DeltaFeature();
 
 public:
     // NOLINTBEGIN

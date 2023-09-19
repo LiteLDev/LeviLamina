@@ -13,9 +13,9 @@ namespace mce { class UUID; }
 class MapUpgradingRecipe : public ::MultiRecipe {
 public:
     // prevent constructor by default
-    MapUpgradingRecipe& operator=(MapUpgradingRecipe const&) = delete;
-    MapUpgradingRecipe(MapUpgradingRecipe const&)            = delete;
-    MapUpgradingRecipe()                                     = delete;
+    MapUpgradingRecipe& operator=(MapUpgradingRecipe const&);
+    MapUpgradingRecipe(MapUpgradingRecipe const&);
+    MapUpgradingRecipe();
 
 public:
     // NOLINTBEGIN

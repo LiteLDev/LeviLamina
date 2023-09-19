@@ -41,7 +41,7 @@ public:
     MCVAPI ~ResourcePack();
 
     // symbol: ??0ResourcePack@@QEAA@AEAVPack@@@Z
-    MCAPI ResourcePack(class Pack&);
+    MCAPI explicit ResourcePack(class Pack&);
 
     // symbol: ?areKnownFilesValid@ResourcePack@@QEAA_NXZ
     MCAPI bool areKnownFilesValid();

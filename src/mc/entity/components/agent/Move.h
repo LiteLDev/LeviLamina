@@ -15,9 +15,9 @@ namespace AgentComponents {
 class Move {
 public:
     // prevent constructor by default
-    Move& operator=(Move const&) = delete;
-    Move(Move const&)            = delete;
-    Move()                       = delete;
+    Move& operator=(Move const&);
+    Move(Move const&);
+    Move();
 
 public:
     // NOLINTBEGIN

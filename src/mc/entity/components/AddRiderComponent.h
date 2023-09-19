@@ -5,9 +5,9 @@
 class AddRiderComponent {
 public:
     // prevent constructor by default
-    AddRiderComponent& operator=(AddRiderComponent const&) = delete;
-    AddRiderComponent(AddRiderComponent const&)            = delete;
-    AddRiderComponent()                                    = delete;
+    AddRiderComponent& operator=(AddRiderComponent const&);
+    AddRiderComponent(AddRiderComponent const&);
+    AddRiderComponent();
 
 public:
     // NOLINTBEGIN

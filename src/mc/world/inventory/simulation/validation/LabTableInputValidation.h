@@ -8,9 +8,9 @@
 class LabTableInputValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    LabTableInputValidation& operator=(LabTableInputValidation const&) = delete;
-    LabTableInputValidation(LabTableInputValidation const&)            = delete;
-    LabTableInputValidation()                                          = delete;
+    LabTableInputValidation& operator=(LabTableInputValidation const&);
+    LabTableInputValidation(LabTableInputValidation const&);
+    LabTableInputValidation();
 
 public:
     // NOLINTBEGIN

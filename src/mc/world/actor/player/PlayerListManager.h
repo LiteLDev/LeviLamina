@@ -10,8 +10,8 @@ namespace mce { class UUID; }
 class PlayerListManager {
 public:
     // prevent constructor by default
-    PlayerListManager& operator=(PlayerListManager const&) = delete;
-    PlayerListManager(PlayerListManager const&)            = delete;
+    PlayerListManager& operator=(PlayerListManager const&);
+    PlayerListManager(PlayerListManager const&);
 
 public:
     // NOLINTBEGIN

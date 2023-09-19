@@ -12,9 +12,9 @@ namespace Bedrock::Http {
 class LibHttpClientErrorCatergory {
 public:
     // prevent constructor by default
-    LibHttpClientErrorCatergory& operator=(LibHttpClientErrorCatergory const&) = delete;
-    LibHttpClientErrorCatergory(LibHttpClientErrorCatergory const&)            = delete;
-    LibHttpClientErrorCatergory()                                              = delete;
+    LibHttpClientErrorCatergory& operator=(LibHttpClientErrorCatergory const&);
+    LibHttpClientErrorCatergory(LibHttpClientErrorCatergory const&);
+    LibHttpClientErrorCatergory();
 
 public:
     // NOLINTBEGIN

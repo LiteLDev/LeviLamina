@@ -21,9 +21,9 @@ public:
     class LargeDripstone {
     public:
         // prevent constructor by default
-        LargeDripstone& operator=(LargeDripstone const&) = delete;
-        LargeDripstone(LargeDripstone const&)            = delete;
-        LargeDripstone()                                 = delete;
+        LargeDripstone& operator=(LargeDripstone const&);
+        LargeDripstone(LargeDripstone const&);
+        LargeDripstone();
 
     public:
         // NOLINTBEGIN
@@ -42,9 +42,9 @@ public:
 
 public:
     // prevent constructor by default
-    LargeDripstoneFeature& operator=(LargeDripstoneFeature const&) = delete;
-    LargeDripstoneFeature(LargeDripstoneFeature const&)            = delete;
-    LargeDripstoneFeature()                                        = delete;
+    LargeDripstoneFeature& operator=(LargeDripstoneFeature const&);
+    LargeDripstoneFeature(LargeDripstoneFeature const&);
+    LargeDripstoneFeature();
 
 public:
     // NOLINTBEGIN

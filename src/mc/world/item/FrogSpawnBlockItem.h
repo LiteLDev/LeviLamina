@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class FrogSpawnBlockItem : public ::BlockItem {
 public:
     // prevent constructor by default
-    FrogSpawnBlockItem& operator=(FrogSpawnBlockItem const&) = delete;
-    FrogSpawnBlockItem(FrogSpawnBlockItem const&)            = delete;
-    FrogSpawnBlockItem()                                     = delete;
+    FrogSpawnBlockItem& operator=(FrogSpawnBlockItem const&);
+    FrogSpawnBlockItem(FrogSpawnBlockItem const&);
+    FrogSpawnBlockItem();
 
 public:
     // NOLINTBEGIN

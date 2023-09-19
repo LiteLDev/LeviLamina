@@ -8,8 +8,8 @@
 struct PushableDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    PushableDescription& operator=(PushableDescription const&) = delete;
-    PushableDescription(PushableDescription const&)            = delete;
+    PushableDescription& operator=(PushableDescription const&);
+    PushableDescription(PushableDescription const&);
 
 public:
     // NOLINTBEGIN

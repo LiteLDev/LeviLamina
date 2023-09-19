@@ -8,9 +8,9 @@
 class ActorEventBroadcaster {
 public:
     // prevent constructor by default
-    ActorEventBroadcaster& operator=(ActorEventBroadcaster const&) = delete;
-    ActorEventBroadcaster(ActorEventBroadcaster const&)            = delete;
-    ActorEventBroadcaster()                                        = delete;
+    ActorEventBroadcaster& operator=(ActorEventBroadcaster const&);
+    ActorEventBroadcaster(ActorEventBroadcaster const&);
+    ActorEventBroadcaster();
 
 public:
     // NOLINTBEGIN

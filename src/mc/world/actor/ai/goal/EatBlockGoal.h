@@ -9,9 +9,9 @@
 class EatBlockGoal : public ::Goal {
 public:
     // prevent constructor by default
-    EatBlockGoal& operator=(EatBlockGoal const&) = delete;
-    EatBlockGoal(EatBlockGoal const&)            = delete;
-    EatBlockGoal()                               = delete;
+    EatBlockGoal& operator=(EatBlockGoal const&);
+    EatBlockGoal(EatBlockGoal const&);
+    EatBlockGoal();
 
 public:
     // NOLINTBEGIN
@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0EatBlockGoal@@QEAA@AEAVMob@@@Z
-    MCAPI EatBlockGoal(class Mob&);
+    MCAPI explicit EatBlockGoal(class Mob&);
 
     // symbol: ?getEatSuccessChance@EatBlockGoal@@QEBAMAEAVActor@@@Z
     MCAPI float getEatSuccessChance(class Actor&) const;

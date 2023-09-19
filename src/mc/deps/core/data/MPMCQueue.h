@@ -6,7 +6,7 @@ template <typename T0>
 class MPMCQueue {
 public:
     // prevent constructor by default
-    MPMCQueue& operator=(MPMCQueue const&) = delete;
-    MPMCQueue(MPMCQueue const&)            = delete;
-    MPMCQueue()                            = delete;
+    MPMCQueue& operator=(MPMCQueue const&);
+    MPMCQueue(MPMCQueue const&);
+    MPMCQueue();
 };

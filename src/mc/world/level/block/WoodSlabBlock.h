@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class WoodSlabBlock : public ::SlabBlock {
 public:
     // prevent constructor by default
-    WoodSlabBlock& operator=(WoodSlabBlock const&) = delete;
-    WoodSlabBlock(WoodSlabBlock const&)            = delete;
-    WoodSlabBlock()                                = delete;
+    WoodSlabBlock& operator=(WoodSlabBlock const&);
+    WoodSlabBlock(WoodSlabBlock const&);
+    WoodSlabBlock();
 
 public:
     // NOLINTBEGIN

@@ -28,9 +28,9 @@ public:
     class ConnectContext {
     public:
         // prevent constructor by default
-        ConnectContext& operator=(ConnectContext const&) = delete;
-        ConnectContext(ConnectContext const&)            = delete;
-        ConnectContext()                                 = delete;
+        ConnectContext& operator=(ConnectContext const&);
+        ConnectContext(ConnectContext const&);
+        ConnectContext();
 
     public:
         // NOLINTBEGIN
@@ -43,9 +43,9 @@ public:
 
 public:
     // prevent constructor by default
-    WebSocket& operator=(WebSocket const&) = delete;
-    WebSocket(WebSocket const&)            = delete;
-    WebSocket()                            = delete;
+    WebSocket& operator=(WebSocket const&);
+    WebSocket(WebSocket const&);
+    WebSocket();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class MobEffectChangeDescription {
 public:
     // prevent constructor by default
-    MobEffectChangeDescription& operator=(MobEffectChangeDescription const&) = delete;
-    MobEffectChangeDescription(MobEffectChangeDescription const&)            = delete;
-    MobEffectChangeDescription()                                             = delete;
+    MobEffectChangeDescription& operator=(MobEffectChangeDescription const&);
+    MobEffectChangeDescription(MobEffectChangeDescription const&);
+    MobEffectChangeDescription();
 
 public:
     // NOLINTBEGIN

@@ -16,8 +16,8 @@ namespace BlockSelectionBoxVersioning {
 class BlockAimCollision118Upgrade : public ::CerealSchemaUpgrade {
 public:
     // prevent constructor by default
-    BlockAimCollision118Upgrade& operator=(BlockAimCollision118Upgrade const&) = delete;
-    BlockAimCollision118Upgrade(BlockAimCollision118Upgrade const&)            = delete;
+    BlockAimCollision118Upgrade& operator=(BlockAimCollision118Upgrade const&);
+    BlockAimCollision118Upgrade(BlockAimCollision118Upgrade const&);
 
 public:
     // NOLINTBEGIN

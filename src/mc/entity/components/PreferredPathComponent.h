@@ -5,9 +5,9 @@
 class PreferredPathComponent {
 public:
     // prevent constructor by default
-    PreferredPathComponent& operator=(PreferredPathComponent const&) = delete;
-    PreferredPathComponent(PreferredPathComponent const&)            = delete;
-    PreferredPathComponent()                                         = delete;
+    PreferredPathComponent& operator=(PreferredPathComponent const&);
+    PreferredPathComponent(PreferredPathComponent const&);
+    PreferredPathComponent();
 
 public:
     // NOLINTBEGIN

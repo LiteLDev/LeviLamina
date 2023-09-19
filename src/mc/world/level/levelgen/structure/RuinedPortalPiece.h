@@ -9,9 +9,9 @@
 class RuinedPortalPiece : public ::StructurePiece {
 public:
     // prevent constructor by default
-    RuinedPortalPiece& operator=(RuinedPortalPiece const&) = delete;
-    RuinedPortalPiece(RuinedPortalPiece const&)            = delete;
-    RuinedPortalPiece()                                    = delete;
+    RuinedPortalPiece& operator=(RuinedPortalPiece const&);
+    RuinedPortalPiece(RuinedPortalPiece const&);
+    RuinedPortalPiece();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class SetMaxPlayersCommand : public ::ServerCommand {
 public:
     // prevent constructor by default
-    SetMaxPlayersCommand& operator=(SetMaxPlayersCommand const&) = delete;
-    SetMaxPlayersCommand(SetMaxPlayersCommand const&)            = delete;
-    SetMaxPlayersCommand()                                       = delete;
+    SetMaxPlayersCommand& operator=(SetMaxPlayersCommand const&);
+    SetMaxPlayersCommand(SetMaxPlayersCommand const&);
+    SetMaxPlayersCommand();
 
 public:
     // NOLINTBEGIN

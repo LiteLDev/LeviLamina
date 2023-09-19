@@ -5,8 +5,8 @@
 struct CommandSyntaxInformation {
 public:
     // prevent constructor by default
-    CommandSyntaxInformation& operator=(CommandSyntaxInformation const&) = delete;
-    CommandSyntaxInformation(CommandSyntaxInformation const&)            = delete;
+    CommandSyntaxInformation& operator=(CommandSyntaxInformation const&);
+    CommandSyntaxInformation(CommandSyntaxInformation const&);
 
 public:
     // NOLINTBEGIN

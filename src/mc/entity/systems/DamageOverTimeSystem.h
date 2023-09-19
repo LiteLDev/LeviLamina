@@ -8,9 +8,9 @@
 class DamageOverTimeSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    DamageOverTimeSystem& operator=(DamageOverTimeSystem const&) = delete;
-    DamageOverTimeSystem(DamageOverTimeSystem const&)            = delete;
-    DamageOverTimeSystem()                                       = delete;
+    DamageOverTimeSystem& operator=(DamageOverTimeSystem const&);
+    DamageOverTimeSystem(DamageOverTimeSystem const&);
+    DamageOverTimeSystem();
 
 public:
     // NOLINTBEGIN

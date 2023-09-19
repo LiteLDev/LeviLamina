@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct WASDControlledDefinition {
 public:
     // prevent constructor by default
-    WASDControlledDefinition& operator=(WASDControlledDefinition const&) = delete;
-    WASDControlledDefinition(WASDControlledDefinition const&)            = delete;
-    WASDControlledDefinition()                                           = delete;
+    WASDControlledDefinition& operator=(WASDControlledDefinition const&);
+    WASDControlledDefinition(WASDControlledDefinition const&);
+    WASDControlledDefinition();
 
 public:
     // NOLINTBEGIN

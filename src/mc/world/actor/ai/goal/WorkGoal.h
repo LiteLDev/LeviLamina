@@ -10,9 +10,9 @@
 class WorkGoal : public ::MoveToPOIGoal {
 public:
     // prevent constructor by default
-    WorkGoal& operator=(WorkGoal const&) = delete;
-    WorkGoal(WorkGoal const&)            = delete;
-    WorkGoal()                           = delete;
+    WorkGoal& operator=(WorkGoal const&);
+    WorkGoal(WorkGoal const&);
+    WorkGoal();
 
 public:
     // NOLINTBEGIN
@@ -45,7 +45,7 @@ public:
     MCVAPI ~WorkGoal();
 
     // symbol: ??0WorkGoal@@QEAA@AEAVMob@@@Z
-    MCAPI WorkGoal(class Mob&);
+    MCAPI explicit WorkGoal(class Mob&);
 
     // symbol: ?playPOISoundEvent@WorkGoal@@QEBAXXZ
     MCAPI void playPOISoundEvent() const;
@@ -72,9 +72,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $RAIN_CHECK_MAX_COOLDOWN() { return RAIN_CHECK_MAX_COOLDOWN; }
+    auto& $RAIN_CHECK_MAX_COOLDOWN() { return RAIN_CHECK_MAX_COOLDOWN; }
 
-    inline auto& $WORK_TIMESTAMP_UPDATE_INVERVAL() { return WORK_TIMESTAMP_UPDATE_INVERVAL; }
+    auto& $WORK_TIMESTAMP_UPDATE_INVERVAL() { return WORK_TIMESTAMP_UPDATE_INVERVAL; }
 
     // NOLINTEND
 };

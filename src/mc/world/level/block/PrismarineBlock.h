@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class PrismarineBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    PrismarineBlock& operator=(PrismarineBlock const&) = delete;
-    PrismarineBlock(PrismarineBlock const&)            = delete;
-    PrismarineBlock()                                  = delete;
+    PrismarineBlock& operator=(PrismarineBlock const&);
+    PrismarineBlock(PrismarineBlock const&);
+    PrismarineBlock();
 
 public:
     // NOLINTBEGIN

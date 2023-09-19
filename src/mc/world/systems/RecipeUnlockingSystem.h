@@ -16,16 +16,16 @@ public:
     struct InventoryChangedData {
     public:
         // prevent constructor by default
-        InventoryChangedData& operator=(InventoryChangedData const&) = delete;
-        InventoryChangedData(InventoryChangedData const&)            = delete;
-        InventoryChangedData()                                       = delete;
+        InventoryChangedData& operator=(InventoryChangedData const&);
+        InventoryChangedData(InventoryChangedData const&);
+        InventoryChangedData();
     };
 
 public:
     // prevent constructor by default
-    RecipeUnlockingSystem& operator=(RecipeUnlockingSystem const&) = delete;
-    RecipeUnlockingSystem(RecipeUnlockingSystem const&)            = delete;
-    RecipeUnlockingSystem()                                        = delete;
+    RecipeUnlockingSystem& operator=(RecipeUnlockingSystem const&);
+    RecipeUnlockingSystem(RecipeUnlockingSystem const&);
+    RecipeUnlockingSystem();
 
 public:
     // NOLINTBEGIN

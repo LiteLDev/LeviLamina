@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class CrossbowItem : public ::RangedWeaponItem {
 public:
     // prevent constructor by default
-    CrossbowItem& operator=(CrossbowItem const&) = delete;
-    CrossbowItem(CrossbowItem const&)            = delete;
-    CrossbowItem()                               = delete;
+    CrossbowItem& operator=(CrossbowItem const&);
+    CrossbowItem(CrossbowItem const&);
+    CrossbowItem();
 
 public:
     // NOLINTBEGIN
@@ -141,7 +141,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $DEFAULT_USE_DURATION() { return DEFAULT_USE_DURATION; }
+    auto& $DEFAULT_USE_DURATION() { return DEFAULT_USE_DURATION; }
 
     // NOLINTEND
 };

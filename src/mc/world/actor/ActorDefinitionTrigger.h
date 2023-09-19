@@ -5,8 +5,8 @@
 class ActorDefinitionTrigger {
 public:
     // prevent constructor by default
-    ActorDefinitionTrigger(ActorDefinitionTrigger const&) = delete;
-    ActorDefinitionTrigger()                              = delete;
+    ActorDefinitionTrigger(ActorDefinitionTrigger const&);
+    ActorDefinitionTrigger();
 
 public:
     // NOLINTBEGIN

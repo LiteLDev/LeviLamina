@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class DriedKelpBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    DriedKelpBlock& operator=(DriedKelpBlock const&) = delete;
-    DriedKelpBlock(DriedKelpBlock const&)            = delete;
-    DriedKelpBlock()                                 = delete;
+    DriedKelpBlock& operator=(DriedKelpBlock const&);
+    DriedKelpBlock(DriedKelpBlock const&);
+    DriedKelpBlock();
 
 public:
     // NOLINTBEGIN

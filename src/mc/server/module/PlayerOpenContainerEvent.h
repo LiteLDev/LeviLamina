@@ -5,9 +5,9 @@
 struct PlayerOpenContainerEvent {
 public:
     // prevent constructor by default
-    PlayerOpenContainerEvent& operator=(PlayerOpenContainerEvent const&) = delete;
-    PlayerOpenContainerEvent(PlayerOpenContainerEvent const&)            = delete;
-    PlayerOpenContainerEvent()                                           = delete;
+    PlayerOpenContainerEvent& operator=(PlayerOpenContainerEvent const&);
+    PlayerOpenContainerEvent(PlayerOpenContainerEvent const&);
+    PlayerOpenContainerEvent();
 
 public:
     // NOLINTBEGIN

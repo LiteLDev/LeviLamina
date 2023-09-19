@@ -15,9 +15,9 @@ namespace cg { class ImageBuffer; }
 class LevelListener : public ::BlockSourceListener {
 public:
     // prevent constructor by default
-    LevelListener& operator=(LevelListener const&) = delete;
-    LevelListener(LevelListener const&)            = delete;
-    LevelListener()                                = delete;
+    LevelListener& operator=(LevelListener const&);
+    LevelListener(LevelListener const&);
+    LevelListener();
 
 public:
     // NOLINTBEGIN

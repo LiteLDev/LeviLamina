@@ -5,9 +5,9 @@
 class VanillaFeatures {
 public:
     // prevent constructor by default
-    VanillaFeatures& operator=(VanillaFeatures const&) = delete;
-    VanillaFeatures(VanillaFeatures const&)            = delete;
-    VanillaFeatures()                                  = delete;
+    VanillaFeatures& operator=(VanillaFeatures const&);
+    VanillaFeatures(VanillaFeatures const&);
+    VanillaFeatures();
 
 public:
     // NOLINTBEGIN

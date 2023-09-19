@@ -8,9 +8,9 @@
 class BalloonSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    BalloonSystem& operator=(BalloonSystem const&) = delete;
-    BalloonSystem(BalloonSystem const&)            = delete;
-    BalloonSystem()                                = delete;
+    BalloonSystem& operator=(BalloonSystem const&);
+    BalloonSystem(BalloonSystem const&);
+    BalloonSystem();
 
 public:
     // NOLINTBEGIN

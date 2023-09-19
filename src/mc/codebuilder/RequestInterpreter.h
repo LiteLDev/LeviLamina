@@ -15,9 +15,9 @@ namespace CodeBuilder {
 class RequestInterpreter {
 public:
     // prevent constructor by default
-    RequestInterpreter& operator=(RequestInterpreter const&) = delete;
-    RequestInterpreter(RequestInterpreter const&)            = delete;
-    RequestInterpreter()                                     = delete;
+    RequestInterpreter& operator=(RequestInterpreter const&);
+    RequestInterpreter(RequestInterpreter const&);
+    RequestInterpreter();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 struct GeneDefinition {
 public:
     // prevent constructor by default
-    GeneDefinition& operator=(GeneDefinition const&) = delete;
-    GeneDefinition(GeneDefinition const&)            = delete;
-    GeneDefinition()                                 = delete;
+    GeneDefinition& operator=(GeneDefinition const&);
+    GeneDefinition(GeneDefinition const&);
+    GeneDefinition();
 
 public:
     // NOLINTBEGIN

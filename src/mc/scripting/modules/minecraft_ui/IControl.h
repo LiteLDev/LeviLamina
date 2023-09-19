@@ -12,9 +12,9 @@ namespace ScriptModuleMinecraftServerUI {
 class IControl {
 public:
     // prevent constructor by default
-    IControl& operator=(IControl const&) = delete;
-    IControl(IControl const&)            = delete;
-    IControl()                           = delete;
+    IControl& operator=(IControl const&);
+    IControl(IControl const&);
+    IControl();
 
 public:
     // NOLINTBEGIN

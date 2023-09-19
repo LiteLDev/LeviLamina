@@ -47,8 +47,8 @@ public:
 
 
     // prevent constructor by default
-    StartGamePacket& operator=(StartGamePacket const&) = delete;
-    StartGamePacket(StartGamePacket const&)            = delete;
+    StartGamePacket& operator=(StartGamePacket const&);
+    StartGamePacket(StartGamePacket const&);
 
 public:
     // NOLINTBEGIN

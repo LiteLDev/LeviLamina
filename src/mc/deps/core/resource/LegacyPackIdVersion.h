@@ -5,9 +5,9 @@
 struct LegacyPackIdVersion {
 public:
     // prevent constructor by default
-    LegacyPackIdVersion& operator=(LegacyPackIdVersion const&) = delete;
-    LegacyPackIdVersion(LegacyPackIdVersion const&)            = delete;
-    LegacyPackIdVersion()                                      = delete;
+    LegacyPackIdVersion& operator=(LegacyPackIdVersion const&);
+    LegacyPackIdVersion(LegacyPackIdVersion const&);
+    LegacyPackIdVersion();
 
 public:
     // NOLINTBEGIN

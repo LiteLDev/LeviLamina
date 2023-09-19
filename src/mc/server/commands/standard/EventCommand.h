@@ -8,9 +8,9 @@
 class EventCommand : public ::Command {
 public:
     // prevent constructor by default
-    EventCommand& operator=(EventCommand const&) = delete;
-    EventCommand(EventCommand const&)            = delete;
-    EventCommand()                               = delete;
+    EventCommand& operator=(EventCommand const&);
+    EventCommand(EventCommand const&);
+    EventCommand();
 
 public:
     // NOLINTBEGIN

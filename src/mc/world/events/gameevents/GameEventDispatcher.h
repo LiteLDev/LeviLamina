@@ -5,9 +5,9 @@
 class GameEventDispatcher {
 public:
     // prevent constructor by default
-    GameEventDispatcher& operator=(GameEventDispatcher const&) = delete;
-    GameEventDispatcher(GameEventDispatcher const&)            = delete;
-    GameEventDispatcher()                                      = delete;
+    GameEventDispatcher& operator=(GameEventDispatcher const&);
+    GameEventDispatcher(GameEventDispatcher const&);
+    GameEventDispatcher();
 
 public:
     // NOLINTBEGIN

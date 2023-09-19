@@ -7,9 +7,9 @@ namespace SplitBlockUtils {
 struct BlockNameRefAuxVariant {
 public:
     // prevent constructor by default
-    BlockNameRefAuxVariant& operator=(BlockNameRefAuxVariant const&) = delete;
-    BlockNameRefAuxVariant(BlockNameRefAuxVariant const&)            = delete;
-    BlockNameRefAuxVariant()                                         = delete;
+    BlockNameRefAuxVariant& operator=(BlockNameRefAuxVariant const&);
+    BlockNameRefAuxVariant(BlockNameRefAuxVariant const&);
+    BlockNameRefAuxVariant();
 };
 
 }; // namespace SplitBlockUtils

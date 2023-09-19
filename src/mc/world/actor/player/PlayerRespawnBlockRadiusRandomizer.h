@@ -5,9 +5,9 @@
 class PlayerRespawnBlockRadiusRandomizer {
 public:
     // prevent constructor by default
-    PlayerRespawnBlockRadiusRandomizer& operator=(PlayerRespawnBlockRadiusRandomizer const&) = delete;
-    PlayerRespawnBlockRadiusRandomizer(PlayerRespawnBlockRadiusRandomizer const&)            = delete;
-    PlayerRespawnBlockRadiusRandomizer()                                                     = delete;
+    PlayerRespawnBlockRadiusRandomizer& operator=(PlayerRespawnBlockRadiusRandomizer const&);
+    PlayerRespawnBlockRadiusRandomizer(PlayerRespawnBlockRadiusRandomizer const&);
+    PlayerRespawnBlockRadiusRandomizer();
 
 public:
     // NOLINTBEGIN

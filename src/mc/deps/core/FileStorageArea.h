@@ -27,9 +27,9 @@ public:
 
 public:
     // prevent constructor by default
-    FileStorageArea& operator=(FileStorageArea const&) = delete;
-    FileStorageArea(FileStorageArea const&)            = delete;
-    FileStorageArea()                                  = delete;
+    FileStorageArea& operator=(FileStorageArea const&);
+    FileStorageArea(FileStorageArea const&);
+    FileStorageArea();
 
 public:
     // NOLINTBEGIN
@@ -243,11 +243,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $sStorageAreaFileStats() { return sStorageAreaFileStats; }
+    auto& $sStorageAreaFileStats() { return sStorageAreaFileStats; }
 
-    inline auto& $sStorageAreaLock() { return sStorageAreaLock; }
+    auto& $sStorageAreaLock() { return sStorageAreaLock; }
 
-    inline auto& $sStorageAreas() { return sStorageAreas; }
+    auto& $sStorageAreas() { return sStorageAreas; }
 
     // NOLINTEND
 };

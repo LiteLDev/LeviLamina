@@ -20,8 +20,8 @@ public:
     std::string              mXuid;       // this+0x98
     std::string              mPlatformId; // this+0xB8
     // prevent constructor by default
-    TextPacket& operator=(TextPacket const&) = delete;
-    TextPacket(TextPacket const&)            = delete;
+    TextPacket& operator=(TextPacket const&);
+    TextPacket(TextPacket const&);
 
 public:
     // NOLINTBEGIN

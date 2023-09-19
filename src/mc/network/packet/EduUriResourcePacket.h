@@ -13,8 +13,8 @@ public:
     EduSharedUriResource mEduSharedUriResource; // this+0x30
 
     // prevent constructor by default
-    EduUriResourcePacket& operator=(EduUriResourcePacket const&) = delete;
-    EduUriResourcePacket(EduUriResourcePacket const&)            = delete;
+    EduUriResourcePacket& operator=(EduUriResourcePacket const&);
+    EduUriResourcePacket(EduUriResourcePacket const&);
 
 public:
     // NOLINTBEGIN
@@ -42,7 +42,7 @@ public:
     MCAPI EduUriResourcePacket();
 
     // symbol: ??0EduUriResourcePacket@@QEAA@AEBUEduSharedUriResource@@@Z
-    MCAPI EduUriResourcePacket(struct EduSharedUriResource const&);
+    MCAPI explicit EduUriResourcePacket(struct EduSharedUriResource const&);
 
     // NOLINTEND
 };

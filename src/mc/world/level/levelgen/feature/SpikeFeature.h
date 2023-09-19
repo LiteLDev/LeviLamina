@@ -16,9 +16,9 @@ public:
     class EndSpike {
     public:
         // prevent constructor by default
-        EndSpike& operator=(EndSpike const&) = delete;
-        EndSpike(EndSpike const&)            = delete;
-        EndSpike()                           = delete;
+        EndSpike& operator=(EndSpike const&);
+        EndSpike(EndSpike const&);
+        EndSpike();
 
     public:
         // NOLINTBEGIN
@@ -45,9 +45,9 @@ public:
 
 public:
     // prevent constructor by default
-    SpikeFeature& operator=(SpikeFeature const&) = delete;
-    SpikeFeature(SpikeFeature const&)            = delete;
-    SpikeFeature()                               = delete;
+    SpikeFeature& operator=(SpikeFeature const&);
+    SpikeFeature(SpikeFeature const&);
+    SpikeFeature();
 
 public:
     // NOLINTBEGIN
@@ -61,7 +61,7 @@ public:
     MCVAPI ~SpikeFeature();
 
     // symbol: ??0SpikeFeature@@QEAA@AEBVEndSpike@0@@Z
-    MCAPI SpikeFeature(class SpikeFeature::EndSpike const&);
+    MCAPI explicit SpikeFeature(class SpikeFeature::EndSpike const&);
 
     // symbol: ?placeManually@SpikeFeature@@QEAA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@PEAVActor@@@Z
     MCAPI bool placeManually(class BlockSource&, class BlockPos const&, class Random&, class Actor*);

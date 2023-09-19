@@ -8,8 +8,8 @@
 class ItemStackRequestActionCraftRecipeAuto {
 public:
     // prevent constructor by default
-    ItemStackRequestActionCraftRecipeAuto& operator=(ItemStackRequestActionCraftRecipeAuto const&) = delete;
-    ItemStackRequestActionCraftRecipeAuto(ItemStackRequestActionCraftRecipeAuto const&)            = delete;
+    ItemStackRequestActionCraftRecipeAuto& operator=(ItemStackRequestActionCraftRecipeAuto const&);
+    ItemStackRequestActionCraftRecipeAuto(ItemStackRequestActionCraftRecipeAuto const&);
 
 public:
     // NOLINTBEGIN

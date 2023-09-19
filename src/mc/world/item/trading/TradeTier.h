@@ -5,9 +5,9 @@
 struct TradeTier {
 public:
     // prevent constructor by default
-    TradeTier& operator=(TradeTier const&) = delete;
-    TradeTier(TradeTier const&)            = delete;
-    TradeTier()                            = delete;
+    TradeTier& operator=(TradeTier const&);
+    TradeTier(TradeTier const&);
+    TradeTier();
 
 public:
     // NOLINTBEGIN

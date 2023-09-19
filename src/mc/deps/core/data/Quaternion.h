@@ -5,14 +5,14 @@
 class Quaternion {
 public:
     // prevent constructor by default
-    Quaternion& operator=(Quaternion const&) = delete;
-    Quaternion(Quaternion const&)            = delete;
-    Quaternion()                             = delete;
+    Quaternion& operator=(Quaternion const&);
+    Quaternion(Quaternion const&);
+    Quaternion();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0Quaternion@@QEAA@AEBVMatrix@@@Z
-    MCAPI Quaternion(class Matrix const&);
+    MCAPI explicit Quaternion(class Matrix const&);
 
     // NOLINTEND
 };

@@ -20,14 +20,14 @@ public:
     class ContentLogEndPointData {
     public:
         // prevent constructor by default
-        ContentLogEndPointData& operator=(ContentLogEndPointData const&) = delete;
-        ContentLogEndPointData(ContentLogEndPointData const&)            = delete;
-        ContentLogEndPointData()                                         = delete;
+        ContentLogEndPointData& operator=(ContentLogEndPointData const&);
+        ContentLogEndPointData(ContentLogEndPointData const&);
+        ContentLogEndPointData();
 
     public:
         // NOLINTBEGIN
         // symbol: ??0ContentLogEndPointData@ContentLog@@QEAA@V?$not_null@PEAVContentLogEndPoint@@@gsl@@@Z
-        MCAPI ContentLogEndPointData(gsl::not_null<class ContentLogEndPoint*>);
+        MCAPI explicit ContentLogEndPointData(gsl::not_null<class ContentLogEndPoint*>);
 
         // NOLINTEND
     };
@@ -35,14 +35,14 @@ public:
     class ContentLogScope {
     public:
         // prevent constructor by default
-        ContentLogScope& operator=(ContentLogScope const&) = delete;
-        ContentLogScope(ContentLogScope const&)            = delete;
-        ContentLogScope()                                  = delete;
+        ContentLogScope& operator=(ContentLogScope const&);
+        ContentLogScope(ContentLogScope const&);
+        ContentLogScope();
 
     public:
         // NOLINTBEGIN
         // symbol: ??0ContentLogScope@ContentLog@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-        MCAPI ContentLogScope(std::string);
+        MCAPI explicit ContentLogScope(std::string);
 
         // symbol: ??1ContentLogScope@ContentLog@@QEAA@XZ
         MCAPI ~ContentLogScope();
@@ -53,15 +53,15 @@ public:
     class ThreadSpecificData {
     public:
         // prevent constructor by default
-        ThreadSpecificData& operator=(ThreadSpecificData const&) = delete;
-        ThreadSpecificData(ThreadSpecificData const&)            = delete;
-        ThreadSpecificData()                                     = delete;
+        ThreadSpecificData& operator=(ThreadSpecificData const&);
+        ThreadSpecificData(ThreadSpecificData const&);
+        ThreadSpecificData();
     };
 
 public:
     // prevent constructor by default
-    ContentLog& operator=(ContentLog const&) = delete;
-    ContentLog(ContentLog const&)            = delete;
+    ContentLog& operator=(ContentLog const&);
+    ContentLog(ContentLog const&);
 
 public:
     // NOLINTBEGIN

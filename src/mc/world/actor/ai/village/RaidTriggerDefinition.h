@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class RaidTriggerDefinition {
 public:
     // prevent constructor by default
-    RaidTriggerDefinition& operator=(RaidTriggerDefinition const&) = delete;
-    RaidTriggerDefinition(RaidTriggerDefinition const&)            = delete;
-    RaidTriggerDefinition()                                        = delete;
+    RaidTriggerDefinition& operator=(RaidTriggerDefinition const&);
+    RaidTriggerDefinition(RaidTriggerDefinition const&);
+    RaidTriggerDefinition();
 
 public:
     // NOLINTBEGIN

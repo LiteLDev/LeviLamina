@@ -16,9 +16,9 @@ public:
     std::function<bool(class BlockSource const&, class Block const&, bool)> mShouldCheckBlock; // this+0x20
 
     // prevent constructor by default
-    ClipParameters& operator=(ClipParameters const&) = delete;
-    ClipParameters(ClipParameters const&)            = delete;
-    ClipParameters()                                 = delete;
+    ClipParameters& operator=(ClipParameters const&);
+    ClipParameters(ClipParameters const&);
+    ClipParameters();
 
 public:
     // NOLINTBEGIN

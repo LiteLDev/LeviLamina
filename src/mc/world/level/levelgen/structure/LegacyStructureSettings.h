@@ -10,7 +10,7 @@
 class LegacyStructureSettings {
 public:
     // prevent constructor by default
-    LegacyStructureSettings& operator=(LegacyStructureSettings const&) = delete;
+    LegacyStructureSettings& operator=(LegacyStructureSettings const&);
 
 public:
     // NOLINTBEGIN

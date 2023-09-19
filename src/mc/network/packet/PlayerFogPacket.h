@@ -12,9 +12,9 @@ public:
     std::vector<std::string> mFogStack; // this+0x30
 
     // prevent constructor by default
-    PlayerFogPacket& operator=(PlayerFogPacket const&) = delete;
-    PlayerFogPacket(PlayerFogPacket const&)            = delete;
-    PlayerFogPacket()                                  = delete;
+    PlayerFogPacket& operator=(PlayerFogPacket const&);
+    PlayerFogPacket(PlayerFogPacket const&);
+    PlayerFogPacket();
 
 public:
     // NOLINTBEGIN
@@ -40,7 +40,7 @@ public:
 
     // symbol:
     // ??0PlayerFogPacket@@QEAA@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-    MCAPI PlayerFogPacket(std::vector<std::string>);
+    MCAPI explicit PlayerFogPacket(std::vector<std::string>);
 
     // NOLINTEND
 };

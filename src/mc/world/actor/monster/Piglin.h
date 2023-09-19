@@ -26,9 +26,9 @@
 class Piglin : public ::HumanoidMonster {
 public:
     // prevent constructor by default
-    Piglin& operator=(Piglin const&) = delete;
-    Piglin(Piglin const&)            = delete;
-    Piglin()                         = delete;
+    Piglin& operator=(Piglin const&);
+    Piglin(Piglin const&);
+    Piglin();
 
 public:
     // NOLINTBEGIN

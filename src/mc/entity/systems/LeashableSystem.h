@@ -8,9 +8,9 @@
 class LeashableSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    LeashableSystem& operator=(LeashableSystem const&) = delete;
-    LeashableSystem(LeashableSystem const&)            = delete;
-    LeashableSystem()                                  = delete;
+    LeashableSystem& operator=(LeashableSystem const&);
+    LeashableSystem(LeashableSystem const&);
+    LeashableSystem();
 
 public:
     // NOLINTBEGIN

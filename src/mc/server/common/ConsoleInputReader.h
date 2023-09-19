@@ -5,8 +5,8 @@
 class ConsoleInputReader {
 public:
     // prevent constructor by default
-    ConsoleInputReader& operator=(ConsoleInputReader const&) = delete;
-    ConsoleInputReader(ConsoleInputReader const&)            = delete;
+    ConsoleInputReader& operator=(ConsoleInputReader const&);
+    ConsoleInputReader(ConsoleInputReader const&);
 
 public:
     // NOLINTBEGIN

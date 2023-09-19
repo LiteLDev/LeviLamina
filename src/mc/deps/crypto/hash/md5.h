@@ -7,8 +7,8 @@ namespace Crypto::Hash {
 class md5 {
 public:
     // prevent constructor by default
-    md5& operator=(md5 const&) = delete;
-    md5(md5 const&)            = delete;
+    md5& operator=(md5 const&);
+    md5(md5 const&);
 
 public:
     // NOLINTBEGIN

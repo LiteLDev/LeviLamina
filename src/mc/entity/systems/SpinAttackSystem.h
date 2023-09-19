@@ -10,9 +10,9 @@
 class SpinAttackSystem {
 public:
     // prevent constructor by default
-    SpinAttackSystem& operator=(SpinAttackSystem const&) = delete;
-    SpinAttackSystem(SpinAttackSystem const&)            = delete;
-    SpinAttackSystem()                                   = delete;
+    SpinAttackSystem& operator=(SpinAttackSystem const&);
+    SpinAttackSystem(SpinAttackSystem const&);
+    SpinAttackSystem();
 
 public:
     // NOLINTBEGIN

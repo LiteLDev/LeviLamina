@@ -5,9 +5,9 @@
 struct ItemCompleteUseEvent {
 public:
     // prevent constructor by default
-    ItemCompleteUseEvent& operator=(ItemCompleteUseEvent const&) = delete;
-    ItemCompleteUseEvent(ItemCompleteUseEvent const&)            = delete;
-    ItemCompleteUseEvent()                                       = delete;
+    ItemCompleteUseEvent& operator=(ItemCompleteUseEvent const&);
+    ItemCompleteUseEvent(ItemCompleteUseEvent const&);
+    ItemCompleteUseEvent();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class MusicCommand : public ::Command {
 public:
     // prevent constructor by default
-    MusicCommand& operator=(MusicCommand const&) = delete;
-    MusicCommand(MusicCommand const&)            = delete;
-    MusicCommand()                               = delete;
+    MusicCommand& operator=(MusicCommand const&);
+    MusicCommand(MusicCommand const&);
+    MusicCommand();
 
 public:
     // NOLINTBEGIN

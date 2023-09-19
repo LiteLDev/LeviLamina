@@ -26,9 +26,9 @@ public:
     class MemoryMappedFileReadAccess : public ::IFileReadAccess {
     public:
         // prevent constructor by default
-        MemoryMappedFileReadAccess& operator=(MemoryMappedFileReadAccess const&) = delete;
-        MemoryMappedFileReadAccess(MemoryMappedFileReadAccess const&)            = delete;
-        MemoryMappedFileReadAccess()                                             = delete;
+        MemoryMappedFileReadAccess& operator=(MemoryMappedFileReadAccess const&);
+        MemoryMappedFileReadAccess(MemoryMappedFileReadAccess const&);
+        MemoryMappedFileReadAccess();
 
     public:
         // NOLINTBEGIN
@@ -47,9 +47,9 @@ public:
     class MemoryMappedFileWriteAccess : public ::IFileWriteAccess {
     public:
         // prevent constructor by default
-        MemoryMappedFileWriteAccess& operator=(MemoryMappedFileWriteAccess const&) = delete;
-        MemoryMappedFileWriteAccess(MemoryMappedFileWriteAccess const&)            = delete;
-        MemoryMappedFileWriteAccess()                                              = delete;
+        MemoryMappedFileWriteAccess& operator=(MemoryMappedFileWriteAccess const&);
+        MemoryMappedFileWriteAccess(MemoryMappedFileWriteAccess const&);
+        MemoryMappedFileWriteAccess();
 
     public:
         // NOLINTBEGIN
@@ -68,9 +68,9 @@ public:
     struct StreamDetails {
     public:
         // prevent constructor by default
-        StreamDetails& operator=(StreamDetails const&) = delete;
-        StreamDetails(StreamDetails const&)            = delete;
-        StreamDetails()                                = delete;
+        StreamDetails& operator=(StreamDetails const&);
+        StreamDetails(StreamDetails const&);
+        StreamDetails();
 
     public:
         // NOLINTBEGIN
@@ -82,9 +82,9 @@ public:
 
 public:
     // prevent constructor by default
-    MemoryMappedFileAccess& operator=(MemoryMappedFileAccess const&) = delete;
-    MemoryMappedFileAccess(MemoryMappedFileAccess const&)            = delete;
-    MemoryMappedFileAccess()                                         = delete;
+    MemoryMappedFileAccess& operator=(MemoryMappedFileAccess const&);
+    MemoryMappedFileAccess(MemoryMappedFileAccess const&);
+    MemoryMappedFileAccess();
 
 public:
     // NOLINTBEGIN

@@ -26,9 +26,9 @@
 class FireworksRocketActor : public ::PredictableProjectile {
 public:
     // prevent constructor by default
-    FireworksRocketActor& operator=(FireworksRocketActor const&) = delete;
-    FireworksRocketActor(FireworksRocketActor const&)            = delete;
-    FireworksRocketActor()                                       = delete;
+    FireworksRocketActor& operator=(FireworksRocketActor const&);
+    FireworksRocketActor(FireworksRocketActor const&);
+    FireworksRocketActor();
 
 public:
     // NOLINTBEGIN

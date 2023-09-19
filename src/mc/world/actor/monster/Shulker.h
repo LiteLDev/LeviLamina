@@ -31,9 +31,9 @@ namespace mce { class UUID; }
 class Shulker : public ::Mob {
 public:
     // prevent constructor by default
-    Shulker& operator=(Shulker const&) = delete;
-    Shulker(Shulker const&)            = delete;
-    Shulker()                          = delete;
+    Shulker& operator=(Shulker const&);
+    Shulker(Shulker const&);
+    Shulker();
 
 public:
     // NOLINTBEGIN

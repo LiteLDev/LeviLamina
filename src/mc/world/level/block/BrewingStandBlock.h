@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class BrewingStandBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    BrewingStandBlock& operator=(BrewingStandBlock const&) = delete;
-    BrewingStandBlock(BrewingStandBlock const&)            = delete;
-    BrewingStandBlock()                                    = delete;
+    BrewingStandBlock& operator=(BrewingStandBlock const&);
+    BrewingStandBlock(BrewingStandBlock const&);
+    BrewingStandBlock();
 
 public:
     // NOLINTBEGIN

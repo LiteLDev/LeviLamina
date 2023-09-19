@@ -26,9 +26,9 @@
 class MushroomCow : public ::Animal {
 public:
     // prevent constructor by default
-    MushroomCow& operator=(MushroomCow const&) = delete;
-    MushroomCow(MushroomCow const&)            = delete;
-    MushroomCow()                              = delete;
+    MushroomCow& operator=(MushroomCow const&);
+    MushroomCow(MushroomCow const&);
+    MushroomCow();
 
 public:
     // NOLINTBEGIN

@@ -5,8 +5,8 @@
 struct ChatEvent {
 public:
     // prevent constructor by default
-    ChatEvent& operator=(ChatEvent const&) = delete;
-    ChatEvent()                            = delete;
+    ChatEvent& operator=(ChatEvent const&);
+    ChatEvent();
 
 public:
     // NOLINTBEGIN

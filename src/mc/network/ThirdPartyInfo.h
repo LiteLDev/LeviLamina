@@ -5,7 +5,7 @@
 class ThirdPartyInfo {
 public:
     // prevent constructor by default
-    ThirdPartyInfo& operator=(ThirdPartyInfo const&) = delete;
+    ThirdPartyInfo& operator=(ThirdPartyInfo const&);
 
 public:
     // NOLINTBEGIN

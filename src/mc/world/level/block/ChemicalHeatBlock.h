@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class ChemicalHeatBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    ChemicalHeatBlock& operator=(ChemicalHeatBlock const&) = delete;
-    ChemicalHeatBlock(ChemicalHeatBlock const&)            = delete;
-    ChemicalHeatBlock()                                    = delete;
+    ChemicalHeatBlock& operator=(ChemicalHeatBlock const&);
+    ChemicalHeatBlock(ChemicalHeatBlock const&);
+    ChemicalHeatBlock();
 
 public:
     // NOLINTBEGIN

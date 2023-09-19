@@ -9,9 +9,9 @@
 class DragonHoldingPatternGoal : public ::Goal {
 public:
     // prevent constructor by default
-    DragonHoldingPatternGoal& operator=(DragonHoldingPatternGoal const&) = delete;
-    DragonHoldingPatternGoal(DragonHoldingPatternGoal const&)            = delete;
-    DragonHoldingPatternGoal()                                           = delete;
+    DragonHoldingPatternGoal& operator=(DragonHoldingPatternGoal const&);
+    DragonHoldingPatternGoal(DragonHoldingPatternGoal const&);
+    DragonHoldingPatternGoal();
 
 public:
     // NOLINTBEGIN
@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0DragonHoldingPatternGoal@@QEAA@AEAVEnderDragon@@@Z
-    MCAPI DragonHoldingPatternGoal(class EnderDragon&);
+    MCAPI explicit DragonHoldingPatternGoal(class EnderDragon&);
 
     // NOLINTEND
 

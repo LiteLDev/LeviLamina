@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class AvoidMobTypeDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    AvoidMobTypeDefinition& operator=(AvoidMobTypeDefinition const&) = delete;
-    AvoidMobTypeDefinition(AvoidMobTypeDefinition const&)            = delete;
+    AvoidMobTypeDefinition& operator=(AvoidMobTypeDefinition const&);
+    AvoidMobTypeDefinition(AvoidMobTypeDefinition const&);
 
 public:
     // NOLINTBEGIN

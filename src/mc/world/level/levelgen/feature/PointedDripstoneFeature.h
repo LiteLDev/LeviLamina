@@ -8,9 +8,9 @@
 class PointedDripstoneFeature : public ::IFeature {
 public:
     // prevent constructor by default
-    PointedDripstoneFeature& operator=(PointedDripstoneFeature const&) = delete;
-    PointedDripstoneFeature(PointedDripstoneFeature const&)            = delete;
-    PointedDripstoneFeature()                                          = delete;
+    PointedDripstoneFeature& operator=(PointedDripstoneFeature const&);
+    PointedDripstoneFeature(PointedDripstoneFeature const&);
+    PointedDripstoneFeature();
 
 public:
     // NOLINTBEGIN

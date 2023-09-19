@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class NoteBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    NoteBlock& operator=(NoteBlock const&) = delete;
-    NoteBlock(NoteBlock const&)            = delete;
-    NoteBlock()                            = delete;
+    NoteBlock& operator=(NoteBlock const&);
+    NoteBlock(NoteBlock const&);
+    NoteBlock();
 
 public:
     // NOLINTBEGIN

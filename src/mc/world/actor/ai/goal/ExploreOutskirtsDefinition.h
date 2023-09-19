@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class ExploreOutskirtsDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    ExploreOutskirtsDefinition& operator=(ExploreOutskirtsDefinition const&) = delete;
-    ExploreOutskirtsDefinition(ExploreOutskirtsDefinition const&)            = delete;
+    ExploreOutskirtsDefinition& operator=(ExploreOutskirtsDefinition const&);
+    ExploreOutskirtsDefinition(ExploreOutskirtsDefinition const&);
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 class LoadedChunksComponent {
 public:
     // prevent constructor by default
-    LoadedChunksComponent& operator=(LoadedChunksComponent const&) = delete;
-    LoadedChunksComponent(LoadedChunksComponent const&)            = delete;
-    LoadedChunksComponent()                                        = delete;
+    LoadedChunksComponent& operator=(LoadedChunksComponent const&);
+    LoadedChunksComponent(LoadedChunksComponent const&);
+    LoadedChunksComponent();
 };

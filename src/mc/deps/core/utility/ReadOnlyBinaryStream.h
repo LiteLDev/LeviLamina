@@ -40,9 +40,9 @@ public:
     MCAPI Bedrock::Result<void, class std::error_code> readType(std::vector<std::unique_ptr<class DataItem>>&);
 
     // prevent constructor by default
-    ReadOnlyBinaryStream& operator=(ReadOnlyBinaryStream const&) = delete;
-    ReadOnlyBinaryStream(ReadOnlyBinaryStream const&)            = delete;
-    ReadOnlyBinaryStream()                                       = delete;
+    ReadOnlyBinaryStream& operator=(ReadOnlyBinaryStream const&);
+    ReadOnlyBinaryStream(ReadOnlyBinaryStream const&);
+    ReadOnlyBinaryStream();
 
 public:
     // NOLINTBEGIN
@@ -56,7 +56,7 @@ public:
     MCVAPI ~ReadOnlyBinaryStream();
 
     // symbol: ??0ReadOnlyBinaryStream@@QEAA@$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI ReadOnlyBinaryStream(std::string&&);
+    MCAPI explicit ReadOnlyBinaryStream(std::string&&);
 
     // symbol: ??0ReadOnlyBinaryStream@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     MCAPI ReadOnlyBinaryStream(std::string const&, bool);

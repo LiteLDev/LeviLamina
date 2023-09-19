@@ -19,9 +19,9 @@ namespace FallingBlockSystemOnLand {
 class SystemTickDelegate : public ::ITickDelegate {
 public:
     // prevent constructor by default
-    SystemTickDelegate& operator=(SystemTickDelegate const&) = delete;
-    SystemTickDelegate(SystemTickDelegate const&)            = delete;
-    SystemTickDelegate()                                     = delete;
+    SystemTickDelegate& operator=(SystemTickDelegate const&);
+    SystemTickDelegate(SystemTickDelegate const&);
+    SystemTickDelegate();
 
 public:
     // NOLINTBEGIN

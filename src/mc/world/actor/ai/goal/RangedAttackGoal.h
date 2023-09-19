@@ -9,9 +9,9 @@
 class RangedAttackGoal : public ::Goal {
 public:
     // prevent constructor by default
-    RangedAttackGoal& operator=(RangedAttackGoal const&) = delete;
-    RangedAttackGoal(RangedAttackGoal const&)            = delete;
-    RangedAttackGoal()                                   = delete;
+    RangedAttackGoal& operator=(RangedAttackGoal const&);
+    RangedAttackGoal(RangedAttackGoal const&);
+    RangedAttackGoal();
 
 public:
     // NOLINTBEGIN
@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0RangedAttackGoal@@QEAA@AEAVMob@@@Z
-    MCAPI RangedAttackGoal(class Mob&);
+    MCAPI explicit RangedAttackGoal(class Mob&);
 
     // symbol: ?handleAttackBehavior@RangedAttackGoal@@QEAAXPEAVActor@@AEBVVec3@@M_N@Z
     MCAPI void handleAttackBehavior(class Actor*, class Vec3 const&, float, bool);

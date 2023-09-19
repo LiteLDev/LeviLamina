@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class ActivateToolDefinition : public ::BehaviorDefinition {
 public:
     // prevent constructor by default
-    ActivateToolDefinition& operator=(ActivateToolDefinition const&) = delete;
-    ActivateToolDefinition(ActivateToolDefinition const&)            = delete;
-    ActivateToolDefinition()                                         = delete;
+    ActivateToolDefinition& operator=(ActivateToolDefinition const&);
+    ActivateToolDefinition(ActivateToolDefinition const&);
+    ActivateToolDefinition();
 
 public:
     // NOLINTBEGIN

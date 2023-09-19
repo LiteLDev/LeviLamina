@@ -5,9 +5,9 @@
 struct KnockBackEvent {
 public:
     // prevent constructor by default
-    KnockBackEvent& operator=(KnockBackEvent const&) = delete;
-    KnockBackEvent(KnockBackEvent const&)            = delete;
-    KnockBackEvent()                                 = delete;
+    KnockBackEvent& operator=(KnockBackEvent const&);
+    KnockBackEvent(KnockBackEvent const&);
+    KnockBackEvent();
 
 public:
     // NOLINTBEGIN

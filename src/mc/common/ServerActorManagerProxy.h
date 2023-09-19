@@ -8,9 +8,9 @@
 class ServerActorManagerProxy : public ::IActorManagerProxy {
 public:
     // prevent constructor by default
-    ServerActorManagerProxy& operator=(ServerActorManagerProxy const&) = delete;
-    ServerActorManagerProxy(ServerActorManagerProxy const&)            = delete;
-    ServerActorManagerProxy()                                          = delete;
+    ServerActorManagerProxy& operator=(ServerActorManagerProxy const&);
+    ServerActorManagerProxy(ServerActorManagerProxy const&);
+    ServerActorManagerProxy();
 
 public:
     // NOLINTBEGIN
@@ -30,7 +30,7 @@ public:
     virtual void deleteActorFromWorldInLevelChunk(class Actor const&);
 
     // symbol: ??0ServerActorManagerProxy@@QEAA@AEAVServerLevel@@@Z
-    MCAPI ServerActorManagerProxy(class ServerLevel&);
+    MCAPI explicit ServerActorManagerProxy(class ServerLevel&);
 
     // NOLINTEND
 };

@@ -18,14 +18,14 @@ namespace ScriptModuleMinecraft {
 class ScriptPropertyRegistry {
 public:
     // prevent constructor by default
-    ScriptPropertyRegistry& operator=(ScriptPropertyRegistry const&) = delete;
-    ScriptPropertyRegistry(ScriptPropertyRegistry const&)            = delete;
-    ScriptPropertyRegistry()                                         = delete;
+    ScriptPropertyRegistry& operator=(ScriptPropertyRegistry const&);
+    ScriptPropertyRegistry(ScriptPropertyRegistry const&);
+    ScriptPropertyRegistry();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ScriptPropertyRegistry@ScriptModuleMinecraft@@QEAA@AEAVServerLevel@@@Z
-    MCAPI ScriptPropertyRegistry(class ServerLevel&);
+    MCAPI explicit ScriptPropertyRegistry(class ServerLevel&);
 
     // symbol:
     // ?registerEntityTypeDynamicProperties@ScriptPropertyRegistry@ScriptModuleMinecraft@@QEAA?AV?$Result@X@Scripting@@AEBVScriptDynamicPropertiesDefinition@2@AEAVScriptActorType@2@@Z

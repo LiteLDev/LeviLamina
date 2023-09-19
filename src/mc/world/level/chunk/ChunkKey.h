@@ -8,9 +8,9 @@
 class ChunkKey {
 public:
     // prevent constructor by default
-    ChunkKey& operator=(ChunkKey const&) = delete;
-    ChunkKey(ChunkKey const&)            = delete;
-    ChunkKey()                           = delete;
+    ChunkKey& operator=(ChunkKey const&);
+    ChunkKey(ChunkKey const&);
+    ChunkKey();
 
 public:
     // NOLINTBEGIN
@@ -18,7 +18,7 @@ public:
     MCAPI ChunkKey(class ChunkPos const&, class AutomaticID<class Dimension, int>);
 
     // symbol: ??0ChunkKey@@QEAA@AEBVLevelChunk@@@Z
-    MCAPI ChunkKey(class LevelChunk const&);
+    MCAPI explicit ChunkKey(class LevelChunk const&);
 
     // symbol: ?asSpan@ChunkKey@@QEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
     MCAPI std::string_view asSpan() const;

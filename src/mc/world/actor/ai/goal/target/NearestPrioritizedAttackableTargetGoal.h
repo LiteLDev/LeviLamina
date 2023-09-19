@@ -9,9 +9,9 @@
 class NearestPrioritizedAttackableTargetGoal : public ::NearestAttackableTargetGoal {
 public:
     // prevent constructor by default
-    NearestPrioritizedAttackableTargetGoal& operator=(NearestPrioritizedAttackableTargetGoal const&) = delete;
-    NearestPrioritizedAttackableTargetGoal(NearestPrioritizedAttackableTargetGoal const&)            = delete;
-    NearestPrioritizedAttackableTargetGoal()                                                         = delete;
+    NearestPrioritizedAttackableTargetGoal& operator=(NearestPrioritizedAttackableTargetGoal const&);
+    NearestPrioritizedAttackableTargetGoal(NearestPrioritizedAttackableTargetGoal const&);
+    NearestPrioritizedAttackableTargetGoal();
 
 public:
     // NOLINTBEGIN

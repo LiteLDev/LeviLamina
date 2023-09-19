@@ -9,9 +9,9 @@
 class ParticleTypeMap {
 public:
     // prevent constructor by default
-    ParticleTypeMap& operator=(ParticleTypeMap const&) = delete;
-    ParticleTypeMap(ParticleTypeMap const&)            = delete;
-    ParticleTypeMap()                                  = delete;
+    ParticleTypeMap& operator=(ParticleTypeMap const&);
+    ParticleTypeMap(ParticleTypeMap const&);
+    ParticleTypeMap();
 
 public:
     // NOLINTBEGIN
@@ -36,7 +36,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $map() { return map; }
+    auto& $map() { return map; }
 
     // NOLINTEND
 };

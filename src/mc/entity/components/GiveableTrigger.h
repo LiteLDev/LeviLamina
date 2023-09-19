@@ -5,8 +5,8 @@
 struct GiveableTrigger {
 public:
     // prevent constructor by default
-    GiveableTrigger& operator=(GiveableTrigger const&) = delete;
-    GiveableTrigger()                                  = delete;
+    GiveableTrigger& operator=(GiveableTrigger const&);
+    GiveableTrigger();
 
 public:
     // NOLINTBEGIN

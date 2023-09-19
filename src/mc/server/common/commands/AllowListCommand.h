@@ -8,9 +8,9 @@
 class AllowListCommand : public ::Command {
 public:
     // prevent constructor by default
-    AllowListCommand& operator=(AllowListCommand const&) = delete;
-    AllowListCommand(AllowListCommand const&)            = delete;
-    AllowListCommand()                                   = delete;
+    AllowListCommand& operator=(AllowListCommand const&);
+    AllowListCommand(AllowListCommand const&);
+    AllowListCommand();
 
 public:
     // NOLINTBEGIN
@@ -35,7 +35,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mAllowListFile() { return mAllowListFile; }
+    auto& $mAllowListFile() { return mAllowListFile; }
 
     // NOLINTEND
 };

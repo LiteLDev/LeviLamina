@@ -11,9 +11,9 @@ namespace OperationNodeFilters {
 struct AddOceanEdge {
 public:
     // prevent constructor by default
-    AddOceanEdge& operator=(AddOceanEdge const&) = delete;
-    AddOceanEdge(AddOceanEdge const&)            = delete;
-    AddOceanEdge()                               = delete;
+    AddOceanEdge& operator=(AddOceanEdge const&);
+    AddOceanEdge(AddOceanEdge const&);
+    AddOceanEdge();
 
 public:
     // NOLINTBEGIN

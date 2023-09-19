@@ -44,9 +44,9 @@ public:
     struct AndroidScopedStorageInfo {
     public:
         // prevent constructor by default
-        AndroidScopedStorageInfo& operator=(AndroidScopedStorageInfo const&) = delete;
-        AndroidScopedStorageInfo(AndroidScopedStorageInfo const&)            = delete;
-        AndroidScopedStorageInfo()                                           = delete;
+        AndroidScopedStorageInfo& operator=(AndroidScopedStorageInfo const&);
+        AndroidScopedStorageInfo(AndroidScopedStorageInfo const&);
+        AndroidScopedStorageInfo();
 
     public:
         // NOLINTBEGIN
@@ -58,9 +58,9 @@ public:
 
 public:
     // prevent constructor by default
-    AppPlatform& operator=(AppPlatform const&) = delete;
-    AppPlatform(AppPlatform const&)            = delete;
-    AppPlatform()                              = delete;
+    AppPlatform& operator=(AppPlatform const&);
+    AppPlatform(AppPlatform const&);
+    AppPlatform();
 
 public:
     // NOLINTBEGIN
@@ -758,7 +758,7 @@ public:
     MCVAPI ~AppPlatform();
 
     // symbol: ??0AppPlatform@@QEAA@_N@Z
-    MCAPI AppPlatform(bool);
+    MCAPI explicit AppPlatform(bool);
 
     // symbol: ?_fireAppTerminated@AppPlatform@@QEAAXXZ
     MCAPI void _fireAppTerminated();
@@ -828,7 +828,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mIsInitialized() { return mIsInitialized; }
+    auto& $mIsInitialized() { return mIsInitialized; }
 
     // NOLINTEND
 };

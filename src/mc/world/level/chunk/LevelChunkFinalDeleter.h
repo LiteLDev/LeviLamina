@@ -5,9 +5,9 @@
 struct LevelChunkFinalDeleter {
 public:
     // prevent constructor by default
-    LevelChunkFinalDeleter& operator=(LevelChunkFinalDeleter const&) = delete;
-    LevelChunkFinalDeleter(LevelChunkFinalDeleter const&)            = delete;
-    LevelChunkFinalDeleter()                                         = delete;
+    LevelChunkFinalDeleter& operator=(LevelChunkFinalDeleter const&);
+    LevelChunkFinalDeleter(LevelChunkFinalDeleter const&);
+    LevelChunkFinalDeleter();
 
 public:
     // NOLINTBEGIN

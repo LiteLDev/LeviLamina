@@ -20,9 +20,9 @@ namespace ScriptModuleMinecraft {
 class ScriptBoolBlockProperty : public ::ScriptModuleMinecraft::IScriptBlockProperty {
 public:
     // prevent constructor by default
-    ScriptBoolBlockProperty& operator=(ScriptBoolBlockProperty const&) = delete;
-    ScriptBoolBlockProperty(ScriptBoolBlockProperty const&)            = delete;
-    ScriptBoolBlockProperty()                                          = delete;
+    ScriptBoolBlockProperty& operator=(ScriptBoolBlockProperty const&);
+    ScriptBoolBlockProperty(ScriptBoolBlockProperty const&);
+    ScriptBoolBlockProperty();
 
 public:
     // NOLINTBEGIN

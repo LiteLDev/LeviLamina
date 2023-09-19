@@ -10,9 +10,9 @@
 class CraftHandlerBase {
 public:
     // prevent constructor by default
-    CraftHandlerBase& operator=(CraftHandlerBase const&) = delete;
-    CraftHandlerBase(CraftHandlerBase const&)            = delete;
-    CraftHandlerBase()                                   = delete;
+    CraftHandlerBase& operator=(CraftHandlerBase const&);
+    CraftHandlerBase(CraftHandlerBase const&);
+    CraftHandlerBase();
 
 public:
     // NOLINTBEGIN

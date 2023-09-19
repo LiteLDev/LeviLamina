@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class LootItemActorKilledCondition : public ::LootItemCondition {
 public:
     // prevent constructor by default
-    LootItemActorKilledCondition& operator=(LootItemActorKilledCondition const&) = delete;
-    LootItemActorKilledCondition(LootItemActorKilledCondition const&)            = delete;
-    LootItemActorKilledCondition()                                               = delete;
+    LootItemActorKilledCondition& operator=(LootItemActorKilledCondition const&);
+    LootItemActorKilledCondition(LootItemActorKilledCondition const&);
+    LootItemActorKilledCondition();
 
 public:
     // NOLINTBEGIN

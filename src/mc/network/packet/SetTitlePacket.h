@@ -32,7 +32,7 @@ public:
     std::string mPlatformOnlineId; // this+0x88
 
     // prevent constructor by default
-    SetTitlePacket& operator=(SetTitlePacket const&) = delete;
+    SetTitlePacket& operator=(SetTitlePacket const&);
 
 public:
     // NOLINTBEGIN
@@ -66,7 +66,7 @@ public:
     MCAPI SetTitlePacket(::SetTitlePacket::TitleType, class ResolvedTextObject const&);
 
     // symbol: ??0SetTitlePacket@@QEAA@W4TitleType@0@@Z
-    MCAPI SetTitlePacket(::SetTitlePacket::TitleType);
+    MCAPI explicit SetTitlePacket(::SetTitlePacket::TitleType);
 
     // symbol: ??0SetTitlePacket@@QEAA@HHH@Z
     MCAPI SetTitlePacket(int, int, int);

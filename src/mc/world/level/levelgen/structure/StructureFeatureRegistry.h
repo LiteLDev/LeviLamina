@@ -8,8 +8,8 @@
 class StructureFeatureRegistry {
 public:
     // prevent constructor by default
-    StructureFeatureRegistry& operator=(StructureFeatureRegistry const&) = delete;
-    StructureFeatureRegistry(StructureFeatureRegistry const&)            = delete;
+    StructureFeatureRegistry& operator=(StructureFeatureRegistry const&);
+    StructureFeatureRegistry(StructureFeatureRegistry const&);
 
 public:
     // NOLINTBEGIN

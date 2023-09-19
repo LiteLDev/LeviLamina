@@ -15,8 +15,8 @@ public:
     Vec3           mMotion;    // this+0x38
 
     // prevent constructor by default
-    SetActorMotionPacket& operator=(SetActorMotionPacket const&) = delete;
-    SetActorMotionPacket(SetActorMotionPacket const&)            = delete;
+    SetActorMotionPacket& operator=(SetActorMotionPacket const&);
+    SetActorMotionPacket(SetActorMotionPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -41,7 +41,7 @@ public:
     MCVAPI ~SetActorMotionPacket();
 
     // symbol: ??0SetActorMotionPacket@@QEAA@AEBVActor@@@Z
-    MCAPI SetActorMotionPacket(class Actor const&);
+    MCAPI explicit SetActorMotionPacket(class Actor const&);
 
     // symbol: ??0SetActorMotionPacket@@QEAA@XZ
     MCAPI SetActorMotionPacket();

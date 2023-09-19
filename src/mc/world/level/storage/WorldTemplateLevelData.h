@@ -5,8 +5,8 @@
 class WorldTemplateLevelData {
 public:
     // prevent constructor by default
-    WorldTemplateLevelData& operator=(WorldTemplateLevelData const&) = delete;
-    WorldTemplateLevelData(WorldTemplateLevelData const&)            = delete;
+    WorldTemplateLevelData& operator=(WorldTemplateLevelData const&);
+    WorldTemplateLevelData(WorldTemplateLevelData const&);
 
 public:
     // NOLINTBEGIN

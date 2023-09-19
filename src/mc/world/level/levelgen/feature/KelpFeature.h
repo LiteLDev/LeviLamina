@@ -8,9 +8,9 @@
 class KelpFeature : public ::Feature {
 public:
     // prevent constructor by default
-    KelpFeature& operator=(KelpFeature const&) = delete;
-    KelpFeature(KelpFeature const&)            = delete;
-    KelpFeature()                              = delete;
+    KelpFeature& operator=(KelpFeature const&);
+    KelpFeature(KelpFeature const&);
+    KelpFeature();
 
 public:
     // NOLINTBEGIN

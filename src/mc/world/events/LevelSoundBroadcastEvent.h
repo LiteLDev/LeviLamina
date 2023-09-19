@@ -5,7 +5,7 @@
 struct LevelSoundBroadcastEvent {
 public:
     // prevent constructor by default
-    LevelSoundBroadcastEvent& operator=(LevelSoundBroadcastEvent const&) = delete;
-    LevelSoundBroadcastEvent(LevelSoundBroadcastEvent const&)            = delete;
-    LevelSoundBroadcastEvent()                                           = delete;
+    LevelSoundBroadcastEvent& operator=(LevelSoundBroadcastEvent const&);
+    LevelSoundBroadcastEvent(LevelSoundBroadcastEvent const&);
+    LevelSoundBroadcastEvent();
 };

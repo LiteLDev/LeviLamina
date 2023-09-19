@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct OnStartTakeoffDefinition {
 public:
     // prevent constructor by default
-    OnStartTakeoffDefinition& operator=(OnStartTakeoffDefinition const&) = delete;
-    OnStartTakeoffDefinition(OnStartTakeoffDefinition const&)            = delete;
-    OnStartTakeoffDefinition()                                           = delete;
+    OnStartTakeoffDefinition& operator=(OnStartTakeoffDefinition const&);
+    OnStartTakeoffDefinition(OnStartTakeoffDefinition const&);
+    OnStartTakeoffDefinition();
 
 public:
     // NOLINTBEGIN

@@ -10,9 +10,9 @@ namespace OperationNodeFilters {
 struct River {
 public:
     // prevent constructor by default
-    River& operator=(River const&) = delete;
-    River(River const&)            = delete;
-    River()                        = delete;
+    River& operator=(River const&);
+    River(River const&);
+    River();
 
 public:
     // NOLINTBEGIN

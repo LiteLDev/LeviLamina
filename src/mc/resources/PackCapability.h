@@ -22,9 +22,9 @@ public:
         struct Failed {
         public:
             // prevent constructor by default
-            Failed& operator=(Failed const&) = delete;
-            Failed(Failed const&)            = delete;
-            Failed()                         = delete;
+            Failed& operator=(Failed const&);
+            Failed(Failed const&);
+            Failed();
 
         public:
             // NOLINTBEGIN
@@ -37,9 +37,9 @@ public:
         struct Succeeded {
         public:
             // prevent constructor by default
-            Succeeded& operator=(Succeeded const&) = delete;
-            Succeeded(Succeeded const&)            = delete;
-            Succeeded()                            = delete;
+            Succeeded& operator=(Succeeded const&);
+            Succeeded(Succeeded const&);
+            Succeeded();
 
         public:
             // NOLINTBEGIN
@@ -51,16 +51,16 @@ public:
 
     public:
         // prevent constructor by default
-        ValidationResult& operator=(ValidationResult const&) = delete;
-        ValidationResult(ValidationResult const&)            = delete;
-        ValidationResult()                                   = delete;
+        ValidationResult& operator=(ValidationResult const&);
+        ValidationResult(ValidationResult const&);
+        ValidationResult();
     };
 
 public:
     // prevent constructor by default
-    PackCapability& operator=(PackCapability const&) = delete;
-    PackCapability(PackCapability const&)            = delete;
-    PackCapability()                                 = delete;
+    PackCapability& operator=(PackCapability const&);
+    PackCapability(PackCapability const&);
+    PackCapability();
 
 public:
     // NOLINTBEGIN

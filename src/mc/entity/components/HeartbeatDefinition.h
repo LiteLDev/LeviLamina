@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class HeartbeatDefinition {
 public:
     // prevent constructor by default
-    HeartbeatDefinition& operator=(HeartbeatDefinition const&) = delete;
-    HeartbeatDefinition(HeartbeatDefinition const&)            = delete;
-    HeartbeatDefinition()                                      = delete;
+    HeartbeatDefinition& operator=(HeartbeatDefinition const&);
+    HeartbeatDefinition(HeartbeatDefinition const&);
+    HeartbeatDefinition();
 
 public:
     // NOLINTBEGIN

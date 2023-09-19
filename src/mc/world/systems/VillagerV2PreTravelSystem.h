@@ -9,9 +9,9 @@
 class VillagerV2PreTravelSystem {
 public:
     // prevent constructor by default
-    VillagerV2PreTravelSystem& operator=(VillagerV2PreTravelSystem const&) = delete;
-    VillagerV2PreTravelSystem(VillagerV2PreTravelSystem const&)            = delete;
-    VillagerV2PreTravelSystem()                                            = delete;
+    VillagerV2PreTravelSystem& operator=(VillagerV2PreTravelSystem const&);
+    VillagerV2PreTravelSystem(VillagerV2PreTravelSystem const&);
+    VillagerV2PreTravelSystem();
 
 public:
     // NOLINTBEGIN

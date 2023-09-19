@@ -14,9 +14,9 @@ namespace Json { class Value; }
 struct ItemTagDescriptor : public ::ItemDescriptor::BaseDescriptor {
 public:
     // prevent constructor by default
-    ItemTagDescriptor& operator=(ItemTagDescriptor const&) = delete;
-    ItemTagDescriptor(ItemTagDescriptor const&)            = delete;
-    ItemTagDescriptor()                                    = delete;
+    ItemTagDescriptor& operator=(ItemTagDescriptor const&);
+    ItemTagDescriptor(ItemTagDescriptor const&);
+    ItemTagDescriptor();
 
 public:
     // NOLINTBEGIN

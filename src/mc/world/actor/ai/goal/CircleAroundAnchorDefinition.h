@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class CircleAroundAnchorDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    CircleAroundAnchorDefinition& operator=(CircleAroundAnchorDefinition const&) = delete;
-    CircleAroundAnchorDefinition(CircleAroundAnchorDefinition const&)            = delete;
+    CircleAroundAnchorDefinition& operator=(CircleAroundAnchorDefinition const&);
+    CircleAroundAnchorDefinition(CircleAroundAnchorDefinition const&);
 
 public:
     // NOLINTBEGIN

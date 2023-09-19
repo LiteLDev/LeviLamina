@@ -8,9 +8,9 @@
 class WorldBuilderCommand : public ::Command {
 public:
     // prevent constructor by default
-    WorldBuilderCommand& operator=(WorldBuilderCommand const&) = delete;
-    WorldBuilderCommand(WorldBuilderCommand const&)            = delete;
-    WorldBuilderCommand()                                      = delete;
+    WorldBuilderCommand& operator=(WorldBuilderCommand const&);
+    WorldBuilderCommand(WorldBuilderCommand const&);
+    WorldBuilderCommand();
 
 public:
     // NOLINTBEGIN

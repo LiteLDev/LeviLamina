@@ -8,9 +8,9 @@
 class BowEnchant : public ::Enchant {
 public:
     // prevent constructor by default
-    BowEnchant& operator=(BowEnchant const&) = delete;
-    BowEnchant(BowEnchant const&)            = delete;
-    BowEnchant()                             = delete;
+    BowEnchant& operator=(BowEnchant const&);
+    BowEnchant(BowEnchant const&);
+    BowEnchant();
 
 public:
     // NOLINTBEGIN
@@ -53,7 +53,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $VALID_ENCHANTMENTS() { return VALID_ENCHANTMENTS; }
+    auto& $VALID_ENCHANTMENTS() { return VALID_ENCHANTMENTS; }
 
     // NOLINTEND
 };

@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class FilterTestDistanceToNearestPlayer : public ::SimpleFloatFilterTest {
 public:
     // prevent constructor by default
-    FilterTestDistanceToNearestPlayer& operator=(FilterTestDistanceToNearestPlayer const&) = delete;
-    FilterTestDistanceToNearestPlayer(FilterTestDistanceToNearestPlayer const&)            = delete;
-    FilterTestDistanceToNearestPlayer()                                                    = delete;
+    FilterTestDistanceToNearestPlayer& operator=(FilterTestDistanceToNearestPlayer const&);
+    FilterTestDistanceToNearestPlayer(FilterTestDistanceToNearestPlayer const&);
+    FilterTestDistanceToNearestPlayer();
 
 public:
     // NOLINTBEGIN

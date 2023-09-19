@@ -5,9 +5,9 @@
 class DamageOverTimeComponent {
 public:
     // prevent constructor by default
-    DamageOverTimeComponent& operator=(DamageOverTimeComponent const&) = delete;
-    DamageOverTimeComponent(DamageOverTimeComponent const&)            = delete;
-    DamageOverTimeComponent()                                          = delete;
+    DamageOverTimeComponent& operator=(DamageOverTimeComponent const&);
+    DamageOverTimeComponent(DamageOverTimeComponent const&);
+    DamageOverTimeComponent();
 
 public:
     // NOLINTBEGIN

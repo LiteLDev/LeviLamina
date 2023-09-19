@@ -8,14 +8,14 @@
 class EconomyTradeableComponent {
 public:
     // prevent constructor by default
-    EconomyTradeableComponent& operator=(EconomyTradeableComponent const&) = delete;
-    EconomyTradeableComponent(EconomyTradeableComponent const&)            = delete;
-    EconomyTradeableComponent()                                            = delete;
+    EconomyTradeableComponent& operator=(EconomyTradeableComponent const&);
+    EconomyTradeableComponent(EconomyTradeableComponent const&);
+    EconomyTradeableComponent();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0EconomyTradeableComponent@@QEAA@AEAVActor@@@Z
-    MCAPI EconomyTradeableComponent(class Actor&);
+    MCAPI explicit EconomyTradeableComponent(class Actor&);
 
     // symbol: ?addAdditionalSaveData@EconomyTradeableComponent@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void addAdditionalSaveData(class CompoundTag&) const;

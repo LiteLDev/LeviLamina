@@ -8,9 +8,9 @@
 class DeadBushFeature : public ::Feature {
 public:
     // prevent constructor by default
-    DeadBushFeature& operator=(DeadBushFeature const&) = delete;
-    DeadBushFeature(DeadBushFeature const&)            = delete;
-    DeadBushFeature()                                  = delete;
+    DeadBushFeature& operator=(DeadBushFeature const&);
+    DeadBushFeature(DeadBushFeature const&);
+    DeadBushFeature();
 
 public:
     // NOLINTBEGIN

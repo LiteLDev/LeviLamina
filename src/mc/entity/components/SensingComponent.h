@@ -5,9 +5,9 @@
 class SensingComponent {
 public:
     // prevent constructor by default
-    SensingComponent& operator=(SensingComponent const&) = delete;
-    SensingComponent(SensingComponent const&)            = delete;
-    SensingComponent()                                   = delete;
+    SensingComponent& operator=(SensingComponent const&);
+    SensingComponent(SensingComponent const&);
+    SensingComponent();
 
 public:
     // NOLINTBEGIN

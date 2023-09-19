@@ -9,9 +9,9 @@
 class StompAttackGoal : public ::MeleeAttackGoal {
 public:
     // prevent constructor by default
-    StompAttackGoal& operator=(StompAttackGoal const&) = delete;
-    StompAttackGoal(StompAttackGoal const&)            = delete;
-    StompAttackGoal()                                  = delete;
+    StompAttackGoal& operator=(StompAttackGoal const&);
+    StompAttackGoal(StompAttackGoal const&);
+    StompAttackGoal();
 
 public:
     // NOLINTBEGIN
@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0StompAttackGoal@@QEAA@AEAVMob@@@Z
-    MCAPI StompAttackGoal(class Mob&);
+    MCAPI explicit StompAttackGoal(class Mob&);
 
     // NOLINTEND
 

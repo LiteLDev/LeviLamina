@@ -5,7 +5,7 @@
 struct SkipNormalTick {
 public:
     // prevent constructor by default
-    SkipNormalTick& operator=(SkipNormalTick const&) = delete;
-    SkipNormalTick(SkipNormalTick const&)            = delete;
-    SkipNormalTick()                                 = delete;
+    SkipNormalTick& operator=(SkipNormalTick const&);
+    SkipNormalTick(SkipNormalTick const&);
+    SkipNormalTick();
 };

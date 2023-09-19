@@ -10,8 +10,8 @@ namespace ScriptModuleMinecraft {
 struct ScriptBlockFillOptions {
 public:
     // prevent constructor by default
-    ScriptBlockFillOptions(ScriptBlockFillOptions const&) = delete;
-    ScriptBlockFillOptions()                              = delete;
+    ScriptBlockFillOptions(ScriptBlockFillOptions const&);
+    ScriptBlockFillOptions();
 
 public:
     // NOLINTBEGIN

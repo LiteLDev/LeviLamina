@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class MangrovePropaguleBlock : public ::BushBlock {
 public:
     // prevent constructor by default
-    MangrovePropaguleBlock& operator=(MangrovePropaguleBlock const&) = delete;
-    MangrovePropaguleBlock(MangrovePropaguleBlock const&)            = delete;
-    MangrovePropaguleBlock()                                         = delete;
+    MangrovePropaguleBlock& operator=(MangrovePropaguleBlock const&);
+    MangrovePropaguleBlock(MangrovePropaguleBlock const&);
+    MangrovePropaguleBlock();
 
 public:
     // NOLINTBEGIN

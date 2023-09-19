@@ -8,9 +8,9 @@
 class RuinedPortalStart : public ::StructureStart {
 public:
     // prevent constructor by default
-    RuinedPortalStart& operator=(RuinedPortalStart const&) = delete;
-    RuinedPortalStart(RuinedPortalStart const&)            = delete;
-    RuinedPortalStart()                                    = delete;
+    RuinedPortalStart& operator=(RuinedPortalStart const&);
+    RuinedPortalStart(RuinedPortalStart const&);
+    RuinedPortalStart();
 
 public:
     // NOLINTBEGIN

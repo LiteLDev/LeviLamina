@@ -20,8 +20,8 @@ namespace ScriptModuleMinecraft {
 struct ScriptItemUseBeforeEvent : public ::ScriptModuleMinecraft::ScriptItemUseAfterEvent {
 public:
     // prevent constructor by default
-    ScriptItemUseBeforeEvent& operator=(ScriptItemUseBeforeEvent const&) = delete;
-    ScriptItemUseBeforeEvent()                                           = delete;
+    ScriptItemUseBeforeEvent& operator=(ScriptItemUseBeforeEvent const&);
+    ScriptItemUseBeforeEvent();
 
 public:
     // NOLINTBEGIN

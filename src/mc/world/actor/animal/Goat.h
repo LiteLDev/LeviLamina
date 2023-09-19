@@ -26,9 +26,9 @@
 class Goat : public ::Animal {
 public:
     // prevent constructor by default
-    Goat& operator=(Goat const&) = delete;
-    Goat(Goat const&)            = delete;
-    Goat()                       = delete;
+    Goat& operator=(Goat const&);
+    Goat(Goat const&);
+    Goat();
 
 public:
     // NOLINTBEGIN
@@ -155,9 +155,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $DEFAULT_HORN_COUNT() { return DEFAULT_HORN_COUNT; }
+    auto& $DEFAULT_HORN_COUNT() { return DEFAULT_HORN_COUNT; }
 
-    inline auto& $SCREAMING_GOAT_VARIANT() { return SCREAMING_GOAT_VARIANT; }
+    auto& $SCREAMING_GOAT_VARIANT() { return SCREAMING_GOAT_VARIANT; }
 
     // NOLINTEND
 };

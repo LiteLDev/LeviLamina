@@ -12,8 +12,8 @@ public:
     int mChunkRadius; // this+0x30
 
     // prevent constructor by default
-    ChunkRadiusUpdatedPacket& operator=(ChunkRadiusUpdatedPacket const&) = delete;
-    ChunkRadiusUpdatedPacket(ChunkRadiusUpdatedPacket const&)            = delete;
+    ChunkRadiusUpdatedPacket& operator=(ChunkRadiusUpdatedPacket const&);
+    ChunkRadiusUpdatedPacket(ChunkRadiusUpdatedPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -38,7 +38,7 @@ public:
     MCVAPI ~ChunkRadiusUpdatedPacket();
 
     // symbol: ??0ChunkRadiusUpdatedPacket@@QEAA@H@Z
-    MCAPI ChunkRadiusUpdatedPacket(int);
+    MCAPI explicit ChunkRadiusUpdatedPacket(int);
 
     // symbol: ??0ChunkRadiusUpdatedPacket@@QEAA@XZ
     MCAPI ChunkRadiusUpdatedPacket();

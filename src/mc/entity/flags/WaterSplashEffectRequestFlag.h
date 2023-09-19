@@ -5,7 +5,7 @@
 struct WaterSplashEffectRequestFlag {
 public:
     // prevent constructor by default
-    WaterSplashEffectRequestFlag& operator=(WaterSplashEffectRequestFlag const&) = delete;
-    WaterSplashEffectRequestFlag(WaterSplashEffectRequestFlag const&)            = delete;
-    WaterSplashEffectRequestFlag()                                               = delete;
+    WaterSplashEffectRequestFlag& operator=(WaterSplashEffectRequestFlag const&);
+    WaterSplashEffectRequestFlag(WaterSplashEffectRequestFlag const&);
+    WaterSplashEffectRequestFlag();
 };

@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class SculkVeinBlock : public ::MultifaceBlock {
 public:
     // prevent constructor by default
-    SculkVeinBlock& operator=(SculkVeinBlock const&) = delete;
-    SculkVeinBlock(SculkVeinBlock const&)            = delete;
-    SculkVeinBlock()                                 = delete;
+    SculkVeinBlock& operator=(SculkVeinBlock const&);
+    SculkVeinBlock(SculkVeinBlock const&);
+    SculkVeinBlock();
 
 public:
     // NOLINTBEGIN

@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class GlowItemFrameBlock : public ::ItemFrameBlock {
 public:
     // prevent constructor by default
-    GlowItemFrameBlock& operator=(GlowItemFrameBlock const&) = delete;
-    GlowItemFrameBlock(GlowItemFrameBlock const&)            = delete;
-    GlowItemFrameBlock()                                     = delete;
+    GlowItemFrameBlock& operator=(GlowItemFrameBlock const&);
+    GlowItemFrameBlock(GlowItemFrameBlock const&);
+    GlowItemFrameBlock();
 
 public:
     // NOLINTBEGIN

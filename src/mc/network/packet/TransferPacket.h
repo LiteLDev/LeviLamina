@@ -13,8 +13,8 @@ public:
     int         mServerPort;    // this+0x50
 
     // prevent constructor by default
-    TransferPacket& operator=(TransferPacket const&) = delete;
-    TransferPacket(TransferPacket const&)            = delete;
+    TransferPacket& operator=(TransferPacket const&);
+    TransferPacket(TransferPacket const&);
 
 public:
     // NOLINTBEGIN

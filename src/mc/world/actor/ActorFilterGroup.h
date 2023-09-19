@@ -21,15 +21,15 @@ public:
     struct LegacyMapping {
     public:
         // prevent constructor by default
-        LegacyMapping& operator=(LegacyMapping const&) = delete;
-        LegacyMapping(LegacyMapping const&)            = delete;
-        LegacyMapping()                                = delete;
+        LegacyMapping& operator=(LegacyMapping const&);
+        LegacyMapping(LegacyMapping const&);
+        LegacyMapping();
     };
 
 public:
     // prevent constructor by default
-    ActorFilterGroup(ActorFilterGroup const&) = delete;
-    ActorFilterGroup()                        = delete;
+    ActorFilterGroup(ActorFilterGroup const&);
+    ActorFilterGroup();
 
 public:
     // NOLINTBEGIN

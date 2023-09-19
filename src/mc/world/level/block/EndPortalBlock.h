@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class EndPortalBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    EndPortalBlock& operator=(EndPortalBlock const&) = delete;
-    EndPortalBlock(EndPortalBlock const&)            = delete;
-    EndPortalBlock()                                 = delete;
+    EndPortalBlock& operator=(EndPortalBlock const&);
+    EndPortalBlock(EndPortalBlock const&);
+    EndPortalBlock();
 
 public:
     // NOLINTBEGIN

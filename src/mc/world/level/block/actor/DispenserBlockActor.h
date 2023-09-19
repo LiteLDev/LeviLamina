@@ -9,9 +9,9 @@
 class DispenserBlockActor : public ::RandomizableBlockActorContainer {
 public:
     // prevent constructor by default
-    DispenserBlockActor& operator=(DispenserBlockActor const&) = delete;
-    DispenserBlockActor(DispenserBlockActor const&)            = delete;
-    DispenserBlockActor()                                      = delete;
+    DispenserBlockActor& operator=(DispenserBlockActor const&);
+    DispenserBlockActor(DispenserBlockActor const&);
+    DispenserBlockActor();
 
 public:
     // NOLINTBEGIN

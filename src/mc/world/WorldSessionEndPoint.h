@@ -10,9 +10,9 @@
 class WorldSessionEndPoint : public ::ContentLogEndPoint {
 public:
     // prevent constructor by default
-    WorldSessionEndPoint& operator=(WorldSessionEndPoint const&) = delete;
-    WorldSessionEndPoint(WorldSessionEndPoint const&)            = delete;
-    WorldSessionEndPoint()                                       = delete;
+    WorldSessionEndPoint& operator=(WorldSessionEndPoint const&);
+    WorldSessionEndPoint(WorldSessionEndPoint const&);
+    WorldSessionEndPoint();
 
 public:
     // NOLINTBEGIN
@@ -32,7 +32,7 @@ public:
     MCVAPI void setEnabled(bool);
 
     // symbol: ??0WorldSessionEndPoint@@QEAA@AEAVIMinecraftEventing@@@Z
-    MCAPI WorldSessionEndPoint(class IMinecraftEventing&);
+    MCAPI explicit WorldSessionEndPoint(class IMinecraftEventing&);
 
     // NOLINTEND
 };

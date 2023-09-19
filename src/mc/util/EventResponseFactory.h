@@ -5,8 +5,8 @@
 class EventResponseFactory {
 public:
     // prevent constructor by default
-    EventResponseFactory& operator=(EventResponseFactory const&) = delete;
-    EventResponseFactory(EventResponseFactory const&)            = delete;
+    EventResponseFactory& operator=(EventResponseFactory const&);
+    EventResponseFactory(EventResponseFactory const&);
 
 public:
     // NOLINTBEGIN

@@ -20,8 +20,8 @@ public:
     NetworkBlockPosition mSpawnBlockPos; // this+0x44
 
     // prevent constructor by default
-    SetSpawnPositionPacket& operator=(SetSpawnPositionPacket const&) = delete;
-    SetSpawnPositionPacket(SetSpawnPositionPacket const&)            = delete;
+    SetSpawnPositionPacket& operator=(SetSpawnPositionPacket const&);
+    SetSpawnPositionPacket(SetSpawnPositionPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -7,9 +7,9 @@ namespace Bedrock::JSONObject {
 class ValueWrapper {
 public:
     // prevent constructor by default
-    ValueWrapper& operator=(ValueWrapper const&) = delete;
-    ValueWrapper(ValueWrapper const&)            = delete;
-    ValueWrapper()                               = delete;
+    ValueWrapper& operator=(ValueWrapper const&);
+    ValueWrapper(ValueWrapper const&);
+    ValueWrapper();
 
 public:
     // NOLINTBEGIN

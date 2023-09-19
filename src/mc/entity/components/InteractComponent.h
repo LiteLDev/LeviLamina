@@ -5,9 +5,9 @@
 class InteractComponent {
 public:
     // prevent constructor by default
-    InteractComponent& operator=(InteractComponent const&) = delete;
-    InteractComponent(InteractComponent const&)            = delete;
-    InteractComponent()                                    = delete;
+    InteractComponent& operator=(InteractComponent const&);
+    InteractComponent(InteractComponent const&);
+    InteractComponent();
 
 public:
     // NOLINTBEGIN

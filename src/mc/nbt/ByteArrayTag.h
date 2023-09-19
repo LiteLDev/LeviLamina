@@ -44,7 +44,7 @@ public:
     virtual uint64 hash() const;
 
     // symbol: ??0ByteArrayTag@@QEAA@UTagMemoryChunk@@@Z
-    MCAPI ByteArrayTag(struct TagMemoryChunk);
+    MCAPI explicit ByteArrayTag(struct TagMemoryChunk);
 
     // symbol: ??0ByteArrayTag@@QEAA@XZ
     MCAPI ByteArrayTag();

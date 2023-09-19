@@ -8,9 +8,9 @@
 class GiveCommand : public ::Command {
 public:
     // prevent constructor by default
-    GiveCommand& operator=(GiveCommand const&) = delete;
-    GiveCommand(GiveCommand const&)            = delete;
-    GiveCommand()                              = delete;
+    GiveCommand& operator=(GiveCommand const&);
+    GiveCommand(GiveCommand const&);
+    GiveCommand();
 
 public:
     // NOLINTBEGIN

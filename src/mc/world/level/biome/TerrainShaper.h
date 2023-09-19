@@ -16,9 +16,9 @@ public:
     struct Point {
     public:
         // prevent constructor by default
-        Point& operator=(Point const&) = delete;
-        Point(Point const&)            = delete;
-        Point()                        = delete;
+        Point& operator=(Point const&);
+        Point(Point const&);
+        Point();
 
     public:
         // NOLINTBEGIN
@@ -51,9 +51,9 @@ public:
 
 public:
     // prevent constructor by default
-    TerrainShaper& operator=(TerrainShaper const&) = delete;
-    TerrainShaper(TerrainShaper const&)            = delete;
-    TerrainShaper()                                = delete;
+    TerrainShaper& operator=(TerrainShaper const&);
+    TerrainShaper(TerrainShaper const&);
+    TerrainShaper();
 
 public:
     // NOLINTBEGIN

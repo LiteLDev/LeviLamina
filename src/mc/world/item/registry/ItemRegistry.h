@@ -26,9 +26,9 @@ public:
     struct ComplexAlias {
     public:
         // prevent constructor by default
-        ComplexAlias& operator=(ComplexAlias const&) = delete;
-        ComplexAlias(ComplexAlias const&)            = delete;
-        ComplexAlias()                               = delete;
+        ComplexAlias& operator=(ComplexAlias const&);
+        ComplexAlias(ComplexAlias const&);
+        ComplexAlias();
 
     public:
         // NOLINTBEGIN
@@ -41,9 +41,9 @@ public:
     struct ItemAlias {
     public:
         // prevent constructor by default
-        ItemAlias& operator=(ItemAlias const&) = delete;
-        ItemAlias(ItemAlias const&)            = delete;
-        ItemAlias()                            = delete;
+        ItemAlias& operator=(ItemAlias const&);
+        ItemAlias(ItemAlias const&);
+        ItemAlias();
 
     public:
         // NOLINTBEGIN
@@ -56,9 +56,9 @@ public:
     struct ItemHashAlias {
     public:
         // prevent constructor by default
-        ItemHashAlias& operator=(ItemHashAlias const&) = delete;
-        ItemHashAlias(ItemHashAlias const&)            = delete;
-        ItemHashAlias()                                = delete;
+        ItemHashAlias& operator=(ItemHashAlias const&);
+        ItemHashAlias(ItemHashAlias const&);
+        ItemHashAlias();
 
     public:
         // NOLINTBEGIN
@@ -70,8 +70,8 @@ public:
 
 public:
     // prevent constructor by default
-    ItemRegistry& operator=(ItemRegistry const&) = delete;
-    ItemRegistry(ItemRegistry const&)            = delete;
+    ItemRegistry& operator=(ItemRegistry const&);
+    ItemRegistry(ItemRegistry const&);
 
 public:
     // NOLINTBEGIN

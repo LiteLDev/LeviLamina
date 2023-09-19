@@ -9,9 +9,9 @@
 class InMemoryFile {
 public:
     // prevent constructor by default
-    InMemoryFile& operator=(InMemoryFile const&) = delete;
-    InMemoryFile(InMemoryFile const&)            = delete;
-    InMemoryFile()                               = delete;
+    InMemoryFile& operator=(InMemoryFile const&);
+    InMemoryFile(InMemoryFile const&);
+    InMemoryFile();
 
 public:
     // NOLINTBEGIN

@@ -22,9 +22,9 @@ namespace VanillaSurfaceBuilders {
 class MesaSurfaceBuilder : public ::ISurfaceBuilder {
 public:
     // prevent constructor by default
-    MesaSurfaceBuilder& operator=(MesaSurfaceBuilder const&) = delete;
-    MesaSurfaceBuilder(MesaSurfaceBuilder const&)            = delete;
-    MesaSurfaceBuilder()                                     = delete;
+    MesaSurfaceBuilder& operator=(MesaSurfaceBuilder const&);
+    MesaSurfaceBuilder(MesaSurfaceBuilder const&);
+    MesaSurfaceBuilder();
 
 public:
     // NOLINTBEGIN

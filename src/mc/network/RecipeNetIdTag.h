@@ -5,7 +5,7 @@
 struct RecipeNetIdTag {
 public:
     // prevent constructor by default
-    RecipeNetIdTag& operator=(RecipeNetIdTag const&) = delete;
-    RecipeNetIdTag(RecipeNetIdTag const&)            = delete;
-    RecipeNetIdTag()                                 = delete;
+    RecipeNetIdTag& operator=(RecipeNetIdTag const&);
+    RecipeNetIdTag(RecipeNetIdTag const&);
+    RecipeNetIdTag();
 };

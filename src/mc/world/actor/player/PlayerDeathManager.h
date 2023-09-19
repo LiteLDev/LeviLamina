@@ -10,15 +10,15 @@ namespace Bedrock::PubSub { class Subscription; }
 class PlayerDeathManager {
 public:
     // prevent constructor by default
-    PlayerDeathManager& operator=(PlayerDeathManager const&) = delete;
-    PlayerDeathManager(PlayerDeathManager const&)            = delete;
-    PlayerDeathManager()                                     = delete;
+    PlayerDeathManager& operator=(PlayerDeathManager const&);
+    PlayerDeathManager(PlayerDeathManager const&);
+    PlayerDeathManager();
 
 public:
     // NOLINTBEGIN
     // symbol:
     // ??0PlayerDeathManager@@QEAA@V?$unique_ptr@VIPlayerDeathManagerProxy@@U?$default_delete@VIPlayerDeathManagerProxy@@@std@@@std@@@Z
-    MCAPI PlayerDeathManager(std::unique_ptr<class IPlayerDeathManagerProxy>);
+    MCAPI explicit PlayerDeathManager(std::unique_ptr<class IPlayerDeathManagerProxy>);
 
     // symbol: ?playerDied@PlayerDeathManager@@QEAAXAEAVPlayer@@AEBVActorDamageSource@@@Z
     MCAPI void playerDied(class Player&, class ActorDamageSource const&);

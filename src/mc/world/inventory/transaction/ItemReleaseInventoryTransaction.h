@@ -14,9 +14,9 @@ public:
 
 public:
     // prevent constructor by default
-    ItemReleaseInventoryTransaction& operator=(ItemReleaseInventoryTransaction const&) = delete;
-    ItemReleaseInventoryTransaction(ItemReleaseInventoryTransaction const&)            = delete;
-    ItemReleaseInventoryTransaction()                                                  = delete;
+    ItemReleaseInventoryTransaction& operator=(ItemReleaseInventoryTransaction const&);
+    ItemReleaseInventoryTransaction(ItemReleaseInventoryTransaction const&);
+    ItemReleaseInventoryTransaction();
 
 public:
     // NOLINTBEGIN

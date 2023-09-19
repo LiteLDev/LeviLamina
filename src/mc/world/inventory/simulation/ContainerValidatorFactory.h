@@ -9,9 +9,9 @@
 class ContainerValidatorFactory {
 public:
     // prevent constructor by default
-    ContainerValidatorFactory& operator=(ContainerValidatorFactory const&) = delete;
-    ContainerValidatorFactory(ContainerValidatorFactory const&)            = delete;
-    ContainerValidatorFactory()                                            = delete;
+    ContainerValidatorFactory& operator=(ContainerValidatorFactory const&);
+    ContainerValidatorFactory(ContainerValidatorFactory const&);
+    ContainerValidatorFactory();
 
 public:
     // NOLINTBEGIN

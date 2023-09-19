@@ -5,7 +5,7 @@
 class ITickDelegate {
 public:
     // prevent constructor by default
-    ITickDelegate& operator=(ITickDelegate const&) = delete;
-    ITickDelegate(ITickDelegate const&)            = delete;
-    ITickDelegate()                                = delete;
+    ITickDelegate& operator=(ITickDelegate const&);
+    ITickDelegate(ITickDelegate const&);
+    ITickDelegate();
 };

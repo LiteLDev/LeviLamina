@@ -5,9 +5,9 @@
 struct TaskStartInfoBase {
 public:
     // prevent constructor by default
-    TaskStartInfoBase& operator=(TaskStartInfoBase const&) = delete;
-    TaskStartInfoBase(TaskStartInfoBase const&)            = delete;
-    TaskStartInfoBase()                                    = delete;
+    TaskStartInfoBase& operator=(TaskStartInfoBase const&);
+    TaskStartInfoBase(TaskStartInfoBase const&);
+    TaskStartInfoBase();
 
 public:
     // NOLINTBEGIN

@@ -7,9 +7,9 @@ namespace RakNet {
 class StringCompressor {
 public:
     // prevent constructor by default
-    StringCompressor& operator=(StringCompressor const&) = delete;
-    StringCompressor(StringCompressor const&)            = delete;
-    StringCompressor()                                   = delete;
+    StringCompressor& operator=(StringCompressor const&);
+    StringCompressor(StringCompressor const&);
+    StringCompressor();
 
 public:
     // NOLINTBEGIN
@@ -34,9 +34,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $instance() { return instance; }
+    auto& $instance() { return instance; }
 
-    inline auto& $referenceCount() { return referenceCount; }
+    auto& $referenceCount() { return referenceCount; }
 
     // NOLINTEND
 };

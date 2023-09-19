@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct IsShearedDefinition {
 public:
     // prevent constructor by default
-    IsShearedDefinition& operator=(IsShearedDefinition const&) = delete;
-    IsShearedDefinition(IsShearedDefinition const&)            = delete;
-    IsShearedDefinition()                                      = delete;
+    IsShearedDefinition& operator=(IsShearedDefinition const&);
+    IsShearedDefinition(IsShearedDefinition const&);
+    IsShearedDefinition();
 
 public:
     // NOLINTBEGIN

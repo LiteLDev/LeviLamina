@@ -5,9 +5,9 @@
 struct MolangTextureVariable {
 public:
     // prevent constructor by default
-    MolangTextureVariable& operator=(MolangTextureVariable const&) = delete;
-    MolangTextureVariable(MolangTextureVariable const&)            = delete;
-    MolangTextureVariable()                                        = delete;
+    MolangTextureVariable& operator=(MolangTextureVariable const&);
+    MolangTextureVariable(MolangTextureVariable const&);
+    MolangTextureVariable();
 
 public:
     // NOLINTBEGIN

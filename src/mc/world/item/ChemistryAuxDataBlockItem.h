@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class ChemistryAuxDataBlockItem : public ::AuxDataBlockItem {
 public:
     // prevent constructor by default
-    ChemistryAuxDataBlockItem& operator=(ChemistryAuxDataBlockItem const&) = delete;
-    ChemistryAuxDataBlockItem(ChemistryAuxDataBlockItem const&)            = delete;
-    ChemistryAuxDataBlockItem()                                            = delete;
+    ChemistryAuxDataBlockItem& operator=(ChemistryAuxDataBlockItem const&);
+    ChemistryAuxDataBlockItem(ChemistryAuxDataBlockItem const&);
+    ChemistryAuxDataBlockItem();
 
 public:
     // NOLINTBEGIN

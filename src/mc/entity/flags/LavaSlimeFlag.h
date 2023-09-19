@@ -5,7 +5,7 @@
 struct LavaSlimeFlag {
 public:
     // prevent constructor by default
-    LavaSlimeFlag& operator=(LavaSlimeFlag const&) = delete;
-    LavaSlimeFlag(LavaSlimeFlag const&)            = delete;
-    LavaSlimeFlag()                                = delete;
+    LavaSlimeFlag& operator=(LavaSlimeFlag const&);
+    LavaSlimeFlag(LavaSlimeFlag const&);
+    LavaSlimeFlag();
 };

@@ -22,9 +22,9 @@ namespace ScriptModuleMinecraft {
 class ScriptBlockPistonComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
 public:
     // prevent constructor by default
-    ScriptBlockPistonComponent& operator=(ScriptBlockPistonComponent const&) = delete;
-    ScriptBlockPistonComponent(ScriptBlockPistonComponent const&)            = delete;
-    ScriptBlockPistonComponent()                                             = delete;
+    ScriptBlockPistonComponent& operator=(ScriptBlockPistonComponent const&);
+    ScriptBlockPistonComponent(ScriptBlockPistonComponent const&);
+    ScriptBlockPistonComponent();
 
 public:
     // NOLINTBEGIN

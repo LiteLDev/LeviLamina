@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct EquipmentTableDefinition {
 public:
     // prevent constructor by default
-    EquipmentTableDefinition& operator=(EquipmentTableDefinition const&) = delete;
-    EquipmentTableDefinition(EquipmentTableDefinition const&)            = delete;
-    EquipmentTableDefinition()                                           = delete;
+    EquipmentTableDefinition& operator=(EquipmentTableDefinition const&);
+    EquipmentTableDefinition(EquipmentTableDefinition const&);
+    EquipmentTableDefinition();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class BlockSourceFactoryImpl {
 public:
     // prevent constructor by default
-    BlockSourceFactoryImpl& operator=(BlockSourceFactoryImpl const&) = delete;
-    BlockSourceFactoryImpl(BlockSourceFactoryImpl const&)            = delete;
-    BlockSourceFactoryImpl()                                         = delete;
+    BlockSourceFactoryImpl& operator=(BlockSourceFactoryImpl const&);
+    BlockSourceFactoryImpl(BlockSourceFactoryImpl const&);
+    BlockSourceFactoryImpl();
 
     // protected:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class GroundedConstraint {
 public:
     // prevent constructor by default
-    GroundedConstraint& operator=(GroundedConstraint const&) = delete;
-    GroundedConstraint(GroundedConstraint const&)            = delete;
-    GroundedConstraint()                                     = delete;
+    GroundedConstraint& operator=(GroundedConstraint const&);
+    GroundedConstraint(GroundedConstraint const&);
+    GroundedConstraint();
 
 public:
     // NOLINTBEGIN
@@ -21,7 +21,7 @@ public:
     virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, ::Rotation const&) const;
 
     // symbol: ??0GroundedConstraint@@QEAA@AEAVStructureTemplate@@@Z
-    MCAPI GroundedConstraint(class StructureTemplate&);
+    MCAPI explicit GroundedConstraint(class StructureTemplate&);
 
     // NOLINTEND
 };

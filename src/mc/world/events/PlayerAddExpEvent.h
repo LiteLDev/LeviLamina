@@ -5,9 +5,9 @@
 struct PlayerAddExpEvent {
 public:
     // prevent constructor by default
-    PlayerAddExpEvent& operator=(PlayerAddExpEvent const&) = delete;
-    PlayerAddExpEvent(PlayerAddExpEvent const&)            = delete;
-    PlayerAddExpEvent()                                    = delete;
+    PlayerAddExpEvent& operator=(PlayerAddExpEvent const&);
+    PlayerAddExpEvent(PlayerAddExpEvent const&);
+    PlayerAddExpEvent();
 
 public:
     // NOLINTBEGIN

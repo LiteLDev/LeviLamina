@@ -16,9 +16,9 @@ namespace mce { class UUID; }
 class WorldTemplatePackSource : public ::DirectoryPackSource {
 public:
     // prevent constructor by default
-    WorldTemplatePackSource& operator=(WorldTemplatePackSource const&) = delete;
-    WorldTemplatePackSource(WorldTemplatePackSource const&)            = delete;
-    WorldTemplatePackSource()                                          = delete;
+    WorldTemplatePackSource& operator=(WorldTemplatePackSource const&);
+    WorldTemplatePackSource(WorldTemplatePackSource const&);
+    WorldTemplatePackSource();
 
 public:
     // NOLINTBEGIN

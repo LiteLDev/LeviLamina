@@ -8,9 +8,9 @@
 class CloneCommand : public ::Command {
 public:
     // prevent constructor by default
-    CloneCommand& operator=(CloneCommand const&) = delete;
-    CloneCommand(CloneCommand const&)            = delete;
-    CloneCommand()                               = delete;
+    CloneCommand& operator=(CloneCommand const&);
+    CloneCommand(CloneCommand const&);
+    CloneCommand();
 
 public:
     // NOLINTBEGIN

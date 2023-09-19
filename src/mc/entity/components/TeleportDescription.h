@@ -8,8 +8,8 @@
 class TeleportDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    TeleportDescription& operator=(TeleportDescription const&) = delete;
-    TeleportDescription(TeleportDescription const&)            = delete;
+    TeleportDescription& operator=(TeleportDescription const&);
+    TeleportDescription(TeleportDescription const&);
 
 public:
     // NOLINTBEGIN

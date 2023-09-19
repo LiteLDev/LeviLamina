@@ -16,16 +16,16 @@ namespace ScriptModuleMinecraft {
 class ScriptPlayerIterator {
 public:
     // prevent constructor by default
-    ScriptPlayerIterator& operator=(ScriptPlayerIterator const&) = delete;
-    ScriptPlayerIterator(ScriptPlayerIterator const&)            = delete;
-    ScriptPlayerIterator()                                       = delete;
+    ScriptPlayerIterator& operator=(ScriptPlayerIterator const&);
+    ScriptPlayerIterator(ScriptPlayerIterator const&);
+    ScriptPlayerIterator();
 
 public:
     // NOLINTBEGIN
     // symbol:
     // ??0ScriptPlayerIterator@ScriptModuleMinecraft@@QEAA@$$QEAV?$vector@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@@Z
-    MCAPI ScriptPlayerIterator(std::vector<
-                               class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>>&&);
+    MCAPI explicit ScriptPlayerIterator(std::vector<class Scripting::StrongTypedObjectHandle<
+                                            class ScriptModuleMinecraft::ScriptPlayer>>&&);
 
     // symbol: ??1ScriptPlayerIterator@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptPlayerIterator();

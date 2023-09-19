@@ -12,9 +12,9 @@ namespace CodeBuilder {
 struct ErrorMessage {
 public:
     // prevent constructor by default
-    ErrorMessage& operator=(ErrorMessage const&) = delete;
-    ErrorMessage(ErrorMessage const&)            = delete;
-    ErrorMessage()                               = delete;
+    ErrorMessage& operator=(ErrorMessage const&);
+    ErrorMessage(ErrorMessage const&);
+    ErrorMessage();
 
 public:
     // NOLINTBEGIN

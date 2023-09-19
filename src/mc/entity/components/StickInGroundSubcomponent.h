@@ -13,8 +13,8 @@ namespace Json { class Value; }
 class StickInGroundSubcomponent : public ::OnHitSubcomponent {
 public:
     // prevent constructor by default
-    StickInGroundSubcomponent& operator=(StickInGroundSubcomponent const&) = delete;
-    StickInGroundSubcomponent(StickInGroundSubcomponent const&)            = delete;
+    StickInGroundSubcomponent& operator=(StickInGroundSubcomponent const&);
+    StickInGroundSubcomponent(StickInGroundSubcomponent const&);
 
 public:
     // NOLINTBEGIN

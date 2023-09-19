@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class DetectorRailBlock : public ::BaseRailBlock {
 public:
     // prevent constructor by default
-    DetectorRailBlock& operator=(DetectorRailBlock const&) = delete;
-    DetectorRailBlock(DetectorRailBlock const&)            = delete;
-    DetectorRailBlock()                                    = delete;
+    DetectorRailBlock& operator=(DetectorRailBlock const&);
+    DetectorRailBlock(DetectorRailBlock const&);
+    DetectorRailBlock();
 
 public:
     // NOLINTBEGIN

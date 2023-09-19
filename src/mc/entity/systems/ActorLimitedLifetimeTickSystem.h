@@ -8,9 +8,9 @@
 class ActorLimitedLifetimeTickSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    ActorLimitedLifetimeTickSystem& operator=(ActorLimitedLifetimeTickSystem const&) = delete;
-    ActorLimitedLifetimeTickSystem(ActorLimitedLifetimeTickSystem const&)            = delete;
-    ActorLimitedLifetimeTickSystem()                                                 = delete;
+    ActorLimitedLifetimeTickSystem& operator=(ActorLimitedLifetimeTickSystem const&);
+    ActorLimitedLifetimeTickSystem(ActorLimitedLifetimeTickSystem const&);
+    ActorLimitedLifetimeTickSystem();
 
 public:
     // NOLINTBEGIN

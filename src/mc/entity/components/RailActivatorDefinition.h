@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class RailActivatorDefinition {
 public:
     // prevent constructor by default
-    RailActivatorDefinition& operator=(RailActivatorDefinition const&) = delete;
-    RailActivatorDefinition(RailActivatorDefinition const&)            = delete;
-    RailActivatorDefinition()                                          = delete;
+    RailActivatorDefinition& operator=(RailActivatorDefinition const&);
+    RailActivatorDefinition(RailActivatorDefinition const&);
+    RailActivatorDefinition();
 
 public:
     // NOLINTBEGIN

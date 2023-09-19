@@ -132,19 +132,19 @@ public:
     MCAPI ItemDescriptor(class ItemDescriptor const&);
 
     // symbol: ??0ItemDescriptor@@QEAA@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI ItemDescriptor(class ReadOnlyBinaryStream&);
+    MCAPI explicit ItemDescriptor(class ReadOnlyBinaryStream&);
 
     // symbol: ??0ItemDescriptor@@QEAA@AEBVItem@@H@Z
     MCAPI ItemDescriptor(class Item const&, int);
 
     // symbol: ??0ItemDescriptor@@QEAA@AEBVBlockLegacy@@@Z
-    MCAPI ItemDescriptor(class BlockLegacy const&);
+    MCAPI explicit ItemDescriptor(class BlockLegacy const&);
 
     // symbol: ??0ItemDescriptor@@QEAA@AEBVBlock@@@Z
-    MCAPI ItemDescriptor(class Block const&);
+    MCAPI explicit ItemDescriptor(class Block const&);
 
     // symbol: ??0ItemDescriptor@@QEAA@AEBUItemTag@@@Z
-    MCAPI ItemDescriptor(struct ItemTag const&);
+    MCAPI explicit ItemDescriptor(struct ItemTag const&);
 
     // symbol: ??0ItemDescriptor@@QEAA@$$QEAV0@@Z
     MCAPI ItemDescriptor(class ItemDescriptor&&);

@@ -8,9 +8,9 @@
 class BeaconPaymentContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    BeaconPaymentContainerValidation& operator=(BeaconPaymentContainerValidation const&) = delete;
-    BeaconPaymentContainerValidation(BeaconPaymentContainerValidation const&)            = delete;
-    BeaconPaymentContainerValidation()                                                   = delete;
+    BeaconPaymentContainerValidation& operator=(BeaconPaymentContainerValidation const&);
+    BeaconPaymentContainerValidation(BeaconPaymentContainerValidation const&);
+    BeaconPaymentContainerValidation();
 
 public:
     // NOLINTBEGIN

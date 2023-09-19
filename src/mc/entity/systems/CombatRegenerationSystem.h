@@ -8,9 +8,9 @@
 class CombatRegenerationSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    CombatRegenerationSystem& operator=(CombatRegenerationSystem const&) = delete;
-    CombatRegenerationSystem(CombatRegenerationSystem const&)            = delete;
-    CombatRegenerationSystem()                                           = delete;
+    CombatRegenerationSystem& operator=(CombatRegenerationSystem const&);
+    CombatRegenerationSystem(CombatRegenerationSystem const&);
+    CombatRegenerationSystem();
 
 public:
     // NOLINTBEGIN

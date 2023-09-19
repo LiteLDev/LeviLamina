@@ -5,9 +5,9 @@
 class SheepPreAIStepSystem {
 public:
     // prevent constructor by default
-    SheepPreAIStepSystem& operator=(SheepPreAIStepSystem const&) = delete;
-    SheepPreAIStepSystem(SheepPreAIStepSystem const&)            = delete;
-    SheepPreAIStepSystem()                                       = delete;
+    SheepPreAIStepSystem& operator=(SheepPreAIStepSystem const&);
+    SheepPreAIStepSystem(SheepPreAIStepSystem const&);
+    SheepPreAIStepSystem();
 
 public:
     // NOLINTBEGIN

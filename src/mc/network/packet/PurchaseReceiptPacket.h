@@ -12,8 +12,8 @@ public:
     std::vector<std::string> mPurchaseRecipts; // this+0x30
 
     // prevent constructor by default
-    PurchaseReceiptPacket& operator=(PurchaseReceiptPacket const&) = delete;
-    PurchaseReceiptPacket(PurchaseReceiptPacket const&)            = delete;
+    PurchaseReceiptPacket& operator=(PurchaseReceiptPacket const&);
+    PurchaseReceiptPacket(PurchaseReceiptPacket const&);
 
 public:
     // NOLINTBEGIN

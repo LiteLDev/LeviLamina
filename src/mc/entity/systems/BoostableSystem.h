@@ -8,9 +8,9 @@
 class BoostableSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    BoostableSystem& operator=(BoostableSystem const&) = delete;
-    BoostableSystem(BoostableSystem const&)            = delete;
-    BoostableSystem()                                  = delete;
+    BoostableSystem& operator=(BoostableSystem const&);
+    BoostableSystem(BoostableSystem const&);
+    BoostableSystem();
 
 public:
     // NOLINTBEGIN

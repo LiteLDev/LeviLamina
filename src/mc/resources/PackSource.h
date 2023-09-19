@@ -10,9 +10,9 @@
 class PackSource {
 public:
     // prevent constructor by default
-    PackSource& operator=(PackSource const&) = delete;
-    PackSource(PackSource const&)            = delete;
-    PackSource()                             = delete;
+    PackSource& operator=(PackSource const&);
+    PackSource(PackSource const&);
+    PackSource();
 
 public:
     // NOLINTBEGIN

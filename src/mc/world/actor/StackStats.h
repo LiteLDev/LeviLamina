@@ -5,7 +5,7 @@
 struct StackStats {
 public:
     // prevent constructor by default
-    StackStats& operator=(StackStats const&) = delete;
-    StackStats(StackStats const&)            = delete;
-    StackStats()                             = delete;
+    StackStats& operator=(StackStats const&);
+    StackStats(StackStats const&);
+    StackStats();
 };

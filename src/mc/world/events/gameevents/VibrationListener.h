@@ -17,9 +17,9 @@ public:
 
 public:
     // prevent constructor by default
-    VibrationListener& operator=(VibrationListener const&) = delete;
-    VibrationListener(VibrationListener const&)            = delete;
-    VibrationListener()                                    = delete;
+    VibrationListener& operator=(VibrationListener const&);
+    VibrationListener(VibrationListener const&);
+    VibrationListener();
 
 public:
     // NOLINTBEGIN

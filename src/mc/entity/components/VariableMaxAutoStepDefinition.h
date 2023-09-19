@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class VariableMaxAutoStepDefinition {
 public:
     // prevent constructor by default
-    VariableMaxAutoStepDefinition& operator=(VariableMaxAutoStepDefinition const&) = delete;
-    VariableMaxAutoStepDefinition(VariableMaxAutoStepDefinition const&)            = delete;
-    VariableMaxAutoStepDefinition()                                                = delete;
+    VariableMaxAutoStepDefinition& operator=(VariableMaxAutoStepDefinition const&);
+    VariableMaxAutoStepDefinition(VariableMaxAutoStepDefinition const&);
+    VariableMaxAutoStepDefinition();
 
 public:
     // NOLINTBEGIN

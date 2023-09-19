@@ -8,9 +8,9 @@
 class BiomeManager {
 public:
     // prevent constructor by default
-    BiomeManager& operator=(BiomeManager const&) = delete;
-    BiomeManager(BiomeManager const&)            = delete;
-    BiomeManager()                               = delete;
+    BiomeManager& operator=(BiomeManager const&);
+    BiomeManager(BiomeManager const&);
+    BiomeManager();
 
 public:
     // NOLINTBEGIN

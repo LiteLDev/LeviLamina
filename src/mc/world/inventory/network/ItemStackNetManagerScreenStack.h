@@ -5,9 +5,9 @@
 class ItemStackNetManagerScreenStack {
 public:
     // prevent constructor by default
-    ItemStackNetManagerScreenStack& operator=(ItemStackNetManagerScreenStack const&) = delete;
-    ItemStackNetManagerScreenStack(ItemStackNetManagerScreenStack const&)            = delete;
-    ItemStackNetManagerScreenStack()                                                 = delete;
+    ItemStackNetManagerScreenStack& operator=(ItemStackNetManagerScreenStack const&);
+    ItemStackNetManagerScreenStack(ItemStackNetManagerScreenStack const&);
+    ItemStackNetManagerScreenStack();
 
 public:
     // NOLINTBEGIN

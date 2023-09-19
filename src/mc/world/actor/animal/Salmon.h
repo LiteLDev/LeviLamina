@@ -26,9 +26,9 @@
 class Salmon : public ::Fish {
 public:
     // prevent constructor by default
-    Salmon& operator=(Salmon const&) = delete;
-    Salmon(Salmon const&)            = delete;
-    Salmon()                         = delete;
+    Salmon& operator=(Salmon const&);
+    Salmon(Salmon const&);
+    Salmon();
 
 public:
     // NOLINTBEGIN

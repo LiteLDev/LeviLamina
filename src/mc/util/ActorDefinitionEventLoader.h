@@ -10,9 +10,9 @@ namespace Json { class Value; }
 class ActorDefinitionEventLoader {
 public:
     // prevent constructor by default
-    ActorDefinitionEventLoader& operator=(ActorDefinitionEventLoader const&) = delete;
-    ActorDefinitionEventLoader(ActorDefinitionEventLoader const&)            = delete;
-    ActorDefinitionEventLoader()                                             = delete;
+    ActorDefinitionEventLoader& operator=(ActorDefinitionEventLoader const&);
+    ActorDefinitionEventLoader(ActorDefinitionEventLoader const&);
+    ActorDefinitionEventLoader();
 
 public:
     // NOLINTBEGIN

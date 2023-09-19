@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class NameableDefinition {
 public:
     // prevent constructor by default
-    NameableDefinition& operator=(NameableDefinition const&) = delete;
-    NameableDefinition(NameableDefinition const&)            = delete;
+    NameableDefinition& operator=(NameableDefinition const&);
+    NameableDefinition(NameableDefinition const&);
 
 public:
     // NOLINTBEGIN

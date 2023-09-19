@@ -9,9 +9,9 @@
 class ChargeHeldItemGoal : public ::Goal {
 public:
     // prevent constructor by default
-    ChargeHeldItemGoal& operator=(ChargeHeldItemGoal const&) = delete;
-    ChargeHeldItemGoal(ChargeHeldItemGoal const&)            = delete;
-    ChargeHeldItemGoal()                                     = delete;
+    ChargeHeldItemGoal& operator=(ChargeHeldItemGoal const&);
+    ChargeHeldItemGoal(ChargeHeldItemGoal const&);
+    ChargeHeldItemGoal();
 
 public:
     // NOLINTBEGIN
@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0ChargeHeldItemGoal@@QEAA@AEAVMob@@@Z
-    MCAPI ChargeHeldItemGoal(class Mob&);
+    MCAPI explicit ChargeHeldItemGoal(class Mob&);
 
     // NOLINTEND
 };

@@ -7,9 +7,9 @@ namespace Util::ResourceUri {
 struct ValidationResult {
 public:
     // prevent constructor by default
-    ValidationResult& operator=(ValidationResult const&) = delete;
-    ValidationResult(ValidationResult const&)            = delete;
-    ValidationResult()                                   = delete;
+    ValidationResult& operator=(ValidationResult const&);
+    ValidationResult(ValidationResult const&);
+    ValidationResult();
 
 public:
     // NOLINTBEGIN

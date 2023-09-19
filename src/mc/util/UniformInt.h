@@ -12,9 +12,9 @@ namespace ValueProviders {
 class UniformInt {
 public:
     // prevent constructor by default
-    UniformInt& operator=(UniformInt const&) = delete;
-    UniformInt(UniformInt const&)            = delete;
-    UniformInt()                             = delete;
+    UniformInt& operator=(UniformInt const&);
+    UniformInt(UniformInt const&);
+    UniformInt();
 
 public:
     // NOLINTBEGIN

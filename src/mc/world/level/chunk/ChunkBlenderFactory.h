@@ -18,21 +18,21 @@ public:
     struct IntermediateAttenuationData {
     public:
         // prevent constructor by default
-        IntermediateAttenuationData& operator=(IntermediateAttenuationData const&) = delete;
-        IntermediateAttenuationData(IntermediateAttenuationData const&)            = delete;
-        IntermediateAttenuationData()                                              = delete;
+        IntermediateAttenuationData& operator=(IntermediateAttenuationData const&);
+        IntermediateAttenuationData(IntermediateAttenuationData const&);
+        IntermediateAttenuationData();
     };
 
 public:
     // prevent constructor by default
-    ChunkBlenderFactory& operator=(ChunkBlenderFactory const&) = delete;
-    ChunkBlenderFactory(ChunkBlenderFactory const&)            = delete;
-    ChunkBlenderFactory()                                      = delete;
+    ChunkBlenderFactory& operator=(ChunkBlenderFactory const&);
+    ChunkBlenderFactory(ChunkBlenderFactory const&);
+    ChunkBlenderFactory();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ChunkBlenderFactory@@QEAA@AEAVDimension@@@Z
-    MCAPI ChunkBlenderFactory(class Dimension&);
+    MCAPI explicit ChunkBlenderFactory(class Dimension&);
 
     // symbol: ?getOrCreateChunkBlender@ChunkBlenderFactory@@QEAA?AV?$shared_ptr@VChunkBlender@@@std@@AEBVChunkPos@@@Z
     MCAPI std::shared_ptr<class ChunkBlender> getOrCreateChunkBlender(class ChunkPos const&);

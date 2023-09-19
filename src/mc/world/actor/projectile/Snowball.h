@@ -27,9 +27,9 @@
 class Snowball : public ::Throwable {
 public:
     // prevent constructor by default
-    Snowball& operator=(Snowball const&) = delete;
-    Snowball(Snowball const&)            = delete;
-    Snowball()                           = delete;
+    Snowball& operator=(Snowball const&);
+    Snowball(Snowball const&);
+    Snowball();
 
 public:
     // NOLINTBEGIN

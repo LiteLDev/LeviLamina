@@ -26,9 +26,9 @@
 class Creeper : public ::Monster {
 public:
     // prevent constructor by default
-    Creeper& operator=(Creeper const&) = delete;
-    Creeper(Creeper const&)            = delete;
-    Creeper()                          = delete;
+    Creeper& operator=(Creeper const&);
+    Creeper(Creeper const&);
+    Creeper();
 
 public:
     // NOLINTBEGIN

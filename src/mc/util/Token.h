@@ -5,14 +5,14 @@
 struct Token {
 public:
     // prevent constructor by default
-    Token& operator=(Token const&) = delete;
-    Token(Token const&)            = delete;
-    Token()                        = delete;
+    Token& operator=(Token const&);
+    Token(Token const&);
+    Token();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0Token@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI Token(std::string const&);
+    MCAPI explicit Token(std::string const&);
 
     // symbol: ?getText@Token@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
     MCAPI std::string const& getText(std::string const&) const;

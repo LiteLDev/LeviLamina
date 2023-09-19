@@ -26,9 +26,9 @@
 class Pillager : public ::HumanoidMonster {
 public:
     // prevent constructor by default
-    Pillager& operator=(Pillager const&) = delete;
-    Pillager(Pillager const&)            = delete;
-    Pillager()                           = delete;
+    Pillager& operator=(Pillager const&);
+    Pillager(Pillager const&);
+    Pillager();
 
 public:
     // NOLINTBEGIN

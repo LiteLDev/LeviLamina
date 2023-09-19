@@ -24,8 +24,8 @@ public:
     class Definition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        Definition& operator=(Definition const&) = delete;
-        Definition(Definition const&)            = delete;
+        Definition& operator=(Definition const&);
+        Definition(Definition const&);
 
     public:
         // NOLINTBEGIN
@@ -48,9 +48,9 @@ public:
 
 public:
     // prevent constructor by default
-    RoarGoal& operator=(RoarGoal const&) = delete;
-    RoarGoal(RoarGoal const&)            = delete;
-    RoarGoal()                           = delete;
+    RoarGoal& operator=(RoarGoal const&);
+    RoarGoal(RoarGoal const&);
+    RoarGoal();
 
 public:
     // NOLINTBEGIN
@@ -77,7 +77,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0RoarGoal@@QEAA@AEAVMob@@@Z
-    MCAPI RoarGoal(class Mob&);
+    MCAPI explicit RoarGoal(class Mob&);
 
     // NOLINTEND
 };

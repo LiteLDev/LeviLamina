@@ -14,8 +14,8 @@ public:
     NetworkBlockPosition mPos; // this+0x30
 
     // prevent constructor by default
-    ItemFrameDropItemPacket& operator=(ItemFrameDropItemPacket const&) = delete;
-    ItemFrameDropItemPacket(ItemFrameDropItemPacket const&)            = delete;
+    ItemFrameDropItemPacket& operator=(ItemFrameDropItemPacket const&);
+    ItemFrameDropItemPacket(ItemFrameDropItemPacket const&);
 
 public:
     // NOLINTBEGIN

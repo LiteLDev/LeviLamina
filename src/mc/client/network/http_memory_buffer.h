@@ -7,9 +7,9 @@ namespace xbox::httpclient {
 class http_memory_buffer {
 public:
     // prevent constructor by default
-    http_memory_buffer& operator=(http_memory_buffer const&) = delete;
-    http_memory_buffer(http_memory_buffer const&)            = delete;
-    http_memory_buffer()                                     = delete;
+    http_memory_buffer& operator=(http_memory_buffer const&);
+    http_memory_buffer(http_memory_buffer const&);
+    http_memory_buffer();
 
 public:
     // NOLINTBEGIN

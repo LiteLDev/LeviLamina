@@ -8,9 +8,9 @@
 class Raid {
 public:
     // prevent constructor by default
-    Raid& operator=(Raid const&) = delete;
-    Raid(Raid const&)            = delete;
-    Raid()                       = delete;
+    Raid& operator=(Raid const&);
+    Raid(Raid const&);
+    Raid();
 
 public:
     // NOLINTBEGIN
@@ -77,11 +77,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $NUM_GROUPS_ON_EASY() { return NUM_GROUPS_ON_EASY; }
+    auto& $NUM_GROUPS_ON_EASY() { return NUM_GROUPS_ON_EASY; }
 
-    inline auto& $NUM_GROUPS_ON_HARD() { return NUM_GROUPS_ON_HARD; }
+    auto& $NUM_GROUPS_ON_HARD() { return NUM_GROUPS_ON_HARD; }
 
-    inline auto& $NUM_GROUPS_ON_NORMAL() { return NUM_GROUPS_ON_NORMAL; }
+    auto& $NUM_GROUPS_ON_NORMAL() { return NUM_GROUPS_ON_NORMAL; }
 
     // NOLINTEND
 };

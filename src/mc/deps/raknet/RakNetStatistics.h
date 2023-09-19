@@ -7,9 +7,9 @@ namespace RakNet {
 struct RakNetStatistics {
 public:
     // prevent constructor by default
-    RakNetStatistics& operator=(RakNetStatistics const&) = delete;
-    RakNetStatistics(RakNetStatistics const&)            = delete;
-    RakNetStatistics()                                   = delete;
+    RakNetStatistics& operator=(RakNetStatistics const&);
+    RakNetStatistics(RakNetStatistics const&);
+    RakNetStatistics();
 };
 
 }; // namespace RakNet

@@ -8,8 +8,8 @@
 class ChunkGenerationManager {
 public:
     // prevent constructor by default
-    ChunkGenerationManager& operator=(ChunkGenerationManager const&) = delete;
-    ChunkGenerationManager(ChunkGenerationManager const&)            = delete;
+    ChunkGenerationManager& operator=(ChunkGenerationManager const&);
+    ChunkGenerationManager(ChunkGenerationManager const&);
 
 public:
     // NOLINTBEGIN

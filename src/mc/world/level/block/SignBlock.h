@@ -30,16 +30,16 @@ public:
     struct SignInteractionResult {
     public:
         // prevent constructor by default
-        SignInteractionResult& operator=(SignInteractionResult const&) = delete;
-        SignInteractionResult(SignInteractionResult const&)            = delete;
-        SignInteractionResult()                                        = delete;
+        SignInteractionResult& operator=(SignInteractionResult const&);
+        SignInteractionResult(SignInteractionResult const&);
+        SignInteractionResult();
     };
 
 public:
     // prevent constructor by default
-    SignBlock& operator=(SignBlock const&) = delete;
-    SignBlock(SignBlock const&)            = delete;
-    SignBlock()                            = delete;
+    SignBlock& operator=(SignBlock const&);
+    SignBlock(SignBlock const&);
+    SignBlock();
 
 public:
     // NOLINTBEGIN

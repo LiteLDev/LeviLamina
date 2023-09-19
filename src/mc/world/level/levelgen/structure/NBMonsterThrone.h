@@ -9,9 +9,9 @@
 class NBMonsterThrone : public ::NetherFortressPiece {
 public:
     // prevent constructor by default
-    NBMonsterThrone& operator=(NBMonsterThrone const&) = delete;
-    NBMonsterThrone(NBMonsterThrone const&)            = delete;
-    NBMonsterThrone()                                  = delete;
+    NBMonsterThrone& operator=(NBMonsterThrone const&);
+    NBMonsterThrone(NBMonsterThrone const&);
+    NBMonsterThrone();
 
 public:
     // NOLINTBEGIN

@@ -22,9 +22,9 @@ public:
     struct ErrorLocalization {
     public:
         // prevent constructor by default
-        ErrorLocalization& operator=(ErrorLocalization const&) = delete;
-        ErrorLocalization(ErrorLocalization const&)            = delete;
-        ErrorLocalization()                                    = delete;
+        ErrorLocalization& operator=(ErrorLocalization const&);
+        ErrorLocalization(ErrorLocalization const&);
+        ErrorLocalization();
 
     public:
         // NOLINTBEGIN
@@ -37,9 +37,9 @@ public:
     struct ServerData {
     public:
         // prevent constructor by default
-        ServerData& operator=(ServerData const&) = delete;
-        ServerData(ServerData const&)            = delete;
-        ServerData()                             = delete;
+        ServerData& operator=(ServerData const&);
+        ServerData(ServerData const&);
+        ServerData();
 
     public:
         // NOLINTBEGIN
@@ -52,9 +52,9 @@ public:
 
 public:
     // prevent constructor by default
-    TextObjectParser& operator=(TextObjectParser const&) = delete;
-    TextObjectParser(TextObjectParser const&)            = delete;
-    TextObjectParser()                                   = delete;
+    TextObjectParser& operator=(TextObjectParser const&);
+    TextObjectParser(TextObjectParser const&);
+    TextObjectParser();
 
 public:
     // NOLINTBEGIN

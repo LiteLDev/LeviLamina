@@ -12,9 +12,9 @@
 class LevelContainerModel : public ::ContainerModel {
 public:
     // prevent constructor by default
-    LevelContainerModel& operator=(LevelContainerModel const&) = delete;
-    LevelContainerModel(LevelContainerModel const&)            = delete;
-    LevelContainerModel()                                      = delete;
+    LevelContainerModel& operator=(LevelContainerModel const&);
+    LevelContainerModel(LevelContainerModel const&);
+    LevelContainerModel();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class FlowerPotBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    FlowerPotBlockActor& operator=(FlowerPotBlockActor const&) = delete;
-    FlowerPotBlockActor(FlowerPotBlockActor const&)            = delete;
-    FlowerPotBlockActor()                                      = delete;
+    FlowerPotBlockActor& operator=(FlowerPotBlockActor const&);
+    FlowerPotBlockActor(FlowerPotBlockActor const&);
+    FlowerPotBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -64,7 +64,7 @@ public:
     virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
 
     // symbol: ??0FlowerPotBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI FlowerPotBlockActor(class BlockPos const&);
+    MCAPI explicit FlowerPotBlockActor(class BlockPos const&);
 
     // symbol: ?getPlantItem@FlowerPotBlockActor@@QEBAPEBVBlock@@XZ
     MCAPI class Block const* getPlantItem() const;

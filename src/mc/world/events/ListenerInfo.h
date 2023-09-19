@@ -6,9 +6,9 @@
 class ListenerInfo {
 public:
     // prevent constructor by default
-    ListenerInfo& operator=(ListenerInfo const&) = delete;
-    ListenerInfo(ListenerInfo const&)            = delete;
-    ListenerInfo()                               = delete;
+    ListenerInfo& operator=(ListenerInfo const&);
+    ListenerInfo(ListenerInfo const&);
+    ListenerInfo();
 
 
     std::function<void(class BlockPos const&, uint, class Block const&, class Actor*)> mCallback;  // this+0x0
@@ -25,7 +25,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $SQRT_FLT_MAX() { return SQRT_FLT_MAX; }
+    auto& $SQRT_FLT_MAX() { return SQRT_FLT_MAX; }
 
     // NOLINTEND
 };

@@ -7,9 +7,9 @@ namespace Common {
 struct BuildInfo {
 public:
     // prevent constructor by default
-    BuildInfo& operator=(BuildInfo const&) = delete;
-    BuildInfo(BuildInfo const&)            = delete;
-    BuildInfo()                            = delete;
+    BuildInfo& operator=(BuildInfo const&);
+    BuildInfo(BuildInfo const&);
+    BuildInfo();
 
 public:
     // NOLINTBEGIN

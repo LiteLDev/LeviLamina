@@ -28,9 +28,9 @@ namespace ScriptModuleMinecraft {
 class ScriptScoreboard {
 public:
     // prevent constructor by default
-    ScriptScoreboard& operator=(ScriptScoreboard const&) = delete;
-    ScriptScoreboard(ScriptScoreboard const&)            = delete;
-    ScriptScoreboard()                                   = delete;
+    ScriptScoreboard& operator=(ScriptScoreboard const&);
+    ScriptScoreboard(ScriptScoreboard const&);
+    ScriptScoreboard();
 
 public:
     // NOLINTBEGIN

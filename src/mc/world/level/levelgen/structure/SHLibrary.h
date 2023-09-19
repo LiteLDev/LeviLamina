@@ -9,9 +9,9 @@
 class SHLibrary : public ::StrongholdPiece {
 public:
     // prevent constructor by default
-    SHLibrary& operator=(SHLibrary const&) = delete;
-    SHLibrary(SHLibrary const&)            = delete;
-    SHLibrary()                            = delete;
+    SHLibrary& operator=(SHLibrary const&);
+    SHLibrary(SHLibrary const&);
+    SHLibrary();
 
 public:
     // NOLINTBEGIN

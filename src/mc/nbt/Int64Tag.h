@@ -43,7 +43,7 @@ public:
     virtual uint64 hash() const;
 
     // symbol: ??0Int64Tag@@QEAA@_J@Z
-    MCAPI Int64Tag(int64);
+    MCAPI explicit Int64Tag(int64);
 
     // NOLINTEND
 };

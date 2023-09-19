@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct FamilyTypeDefinition {
 public:
     // prevent constructor by default
-    FamilyTypeDefinition& operator=(FamilyTypeDefinition const&) = delete;
-    FamilyTypeDefinition(FamilyTypeDefinition const&)            = delete;
-    FamilyTypeDefinition()                                       = delete;
+    FamilyTypeDefinition& operator=(FamilyTypeDefinition const&);
+    FamilyTypeDefinition(FamilyTypeDefinition const&);
+    FamilyTypeDefinition();
 
 public:
     // NOLINTBEGIN

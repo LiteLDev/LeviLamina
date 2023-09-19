@@ -8,9 +8,9 @@
 class AgentDestroyCommandSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    AgentDestroyCommandSystem& operator=(AgentDestroyCommandSystem const&) = delete;
-    AgentDestroyCommandSystem(AgentDestroyCommandSystem const&)            = delete;
-    AgentDestroyCommandSystem()                                            = delete;
+    AgentDestroyCommandSystem& operator=(AgentDestroyCommandSystem const&);
+    AgentDestroyCommandSystem(AgentDestroyCommandSystem const&);
+    AgentDestroyCommandSystem();
 
 public:
     // NOLINTBEGIN

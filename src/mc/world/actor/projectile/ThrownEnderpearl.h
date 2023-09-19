@@ -27,9 +27,9 @@
 class ThrownEnderpearl : public ::Throwable {
 public:
     // prevent constructor by default
-    ThrownEnderpearl& operator=(ThrownEnderpearl const&) = delete;
-    ThrownEnderpearl(ThrownEnderpearl const&)            = delete;
-    ThrownEnderpearl()                                   = delete;
+    ThrownEnderpearl& operator=(ThrownEnderpearl const&);
+    ThrownEnderpearl(ThrownEnderpearl const&);
+    ThrownEnderpearl();
 
 public:
     // NOLINTBEGIN

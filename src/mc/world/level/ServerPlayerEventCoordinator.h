@@ -8,9 +8,9 @@
 class ServerPlayerEventCoordinator : public ::PlayerEventCoordinator {
 public:
     // prevent constructor by default
-    ServerPlayerEventCoordinator& operator=(ServerPlayerEventCoordinator const&) = delete;
-    ServerPlayerEventCoordinator(ServerPlayerEventCoordinator const&)            = delete;
-    ServerPlayerEventCoordinator()                                               = delete;
+    ServerPlayerEventCoordinator& operator=(ServerPlayerEventCoordinator const&);
+    ServerPlayerEventCoordinator(ServerPlayerEventCoordinator const&);
+    ServerPlayerEventCoordinator();
 
 public:
     // NOLINTBEGIN

@@ -17,14 +17,14 @@ public:
     class CurrentTaskAutoScope {
     public:
         // prevent constructor by default
-        CurrentTaskAutoScope& operator=(CurrentTaskAutoScope const&) = delete;
-        CurrentTaskAutoScope(CurrentTaskAutoScope const&)            = delete;
-        CurrentTaskAutoScope()                                       = delete;
+        CurrentTaskAutoScope& operator=(CurrentTaskAutoScope const&);
+        CurrentTaskAutoScope(CurrentTaskAutoScope const&);
+        CurrentTaskAutoScope();
 
     public:
         // NOLINTBEGIN
         // symbol: ??0CurrentTaskAutoScope@BackgroundTaskBase@@QEAA@PEAV1@@Z
-        MCAPI CurrentTaskAutoScope(class BackgroundTaskBase*);
+        MCAPI explicit CurrentTaskAutoScope(class BackgroundTaskBase*);
 
         // symbol: ??1CurrentTaskAutoScope@BackgroundTaskBase@@QEAA@XZ
         MCAPI ~CurrentTaskAutoScope();
@@ -35,9 +35,9 @@ public:
     class PendingComparer {
     public:
         // prevent constructor by default
-        PendingComparer& operator=(PendingComparer const&) = delete;
-        PendingComparer(PendingComparer const&)            = delete;
-        PendingComparer()                                  = delete;
+        PendingComparer& operator=(PendingComparer const&);
+        PendingComparer(PendingComparer const&);
+        PendingComparer();
 
     public:
         // NOLINTBEGIN
@@ -51,9 +51,9 @@ public:
 
 public:
     // prevent constructor by default
-    BackgroundTaskBase& operator=(BackgroundTaskBase const&) = delete;
-    BackgroundTaskBase(BackgroundTaskBase const&)            = delete;
-    BackgroundTaskBase()                                     = delete;
+    BackgroundTaskBase& operator=(BackgroundTaskBase const&);
+    BackgroundTaskBase(BackgroundTaskBase const&);
+    BackgroundTaskBase();
 
 public:
     // NOLINTBEGIN
@@ -136,7 +136,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $gCurrentTask() { return gCurrentTask; }
+    auto& $gCurrentTask() { return gCurrentTask; }
 
     // NOLINTEND
 };

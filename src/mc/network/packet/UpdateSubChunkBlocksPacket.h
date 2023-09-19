@@ -44,8 +44,8 @@ public:
         std::vector<NetworkBlockInfo> mExtras;    // this+0x18
 
         // prevent constructor by default
-        BlocksChangedInfo& operator=(BlocksChangedInfo const&) = delete;
-        BlocksChangedInfo(BlocksChangedInfo const&)            = delete;
+        BlocksChangedInfo& operator=(BlocksChangedInfo const&);
+        BlocksChangedInfo(BlocksChangedInfo const&);
 
     public:
         // NOLINTBEGIN
@@ -67,8 +67,8 @@ public:
     NetworkBlockPosition mSubChunkBlockPosition; // this+0x60
 
     // prevent constructor by default
-    UpdateSubChunkBlocksPacket& operator=(UpdateSubChunkBlocksPacket const&) = delete;
-    UpdateSubChunkBlocksPacket(UpdateSubChunkBlocksPacket const&)            = delete;
+    UpdateSubChunkBlocksPacket& operator=(UpdateSubChunkBlocksPacket const&);
+    UpdateSubChunkBlocksPacket(UpdateSubChunkBlocksPacket const&);
 
 public:
     // NOLINTBEGIN

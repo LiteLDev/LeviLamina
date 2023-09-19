@@ -5,9 +5,9 @@
 class StopwatchHandler {
 public:
     // prevent constructor by default
-    StopwatchHandler& operator=(StopwatchHandler const&) = delete;
-    StopwatchHandler(StopwatchHandler const&)            = delete;
-    StopwatchHandler()                                   = delete;
+    StopwatchHandler& operator=(StopwatchHandler const&);
+    StopwatchHandler(StopwatchHandler const&);
+    StopwatchHandler();
 
 public:
     // NOLINTBEGIN

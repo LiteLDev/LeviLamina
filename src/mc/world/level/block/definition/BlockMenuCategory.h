@@ -5,9 +5,9 @@
 struct BlockMenuCategory {
 public:
     // prevent constructor by default
-    BlockMenuCategory& operator=(BlockMenuCategory const&) = delete;
-    BlockMenuCategory(BlockMenuCategory const&)            = delete;
-    BlockMenuCategory()                                    = delete;
+    BlockMenuCategory& operator=(BlockMenuCategory const&);
+    BlockMenuCategory(BlockMenuCategory const&);
+    BlockMenuCategory();
 
 public:
     // NOLINTBEGIN

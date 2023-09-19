@@ -29,9 +29,9 @@ public:
     struct any_version_constructor {
     public:
         // prevent constructor by default
-        any_version_constructor& operator=(any_version_constructor const&) = delete;
-        any_version_constructor(any_version_constructor const&)            = delete;
-        any_version_constructor()                                          = delete;
+        any_version_constructor& operator=(any_version_constructor const&);
+        any_version_constructor(any_version_constructor const&);
+        any_version_constructor();
     };
 
     ushort      mMajor;
@@ -46,7 +46,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0SemVersion@@QEAA@Uany_version_constructor@0@@Z
-    MCAPI SemVersion(struct SemVersion::any_version_constructor);
+    MCAPI explicit SemVersion(struct SemVersion::any_version_constructor);
 
     // symbol: ??0SemVersion@@QEAA@AEBV0@@Z
     MCAPI SemVersion(class SemVersion const&);

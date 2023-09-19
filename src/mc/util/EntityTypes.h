@@ -10,9 +10,9 @@ namespace Json { class Value; }
 class EntityTypes {
 public:
     // prevent constructor by default
-    EntityTypes& operator=(EntityTypes const&) = delete;
-    EntityTypes(EntityTypes const&)            = delete;
-    EntityTypes()                              = delete;
+    EntityTypes& operator=(EntityTypes const&);
+    EntityTypes(EntityTypes const&);
+    EntityTypes();
 
 public:
     // NOLINTBEGIN

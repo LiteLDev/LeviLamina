@@ -5,9 +5,9 @@
 class BlockTypeRegistryReadLock {
 public:
     // prevent constructor by default
-    BlockTypeRegistryReadLock& operator=(BlockTypeRegistryReadLock const&) = delete;
-    BlockTypeRegistryReadLock(BlockTypeRegistryReadLock const&)            = delete;
-    BlockTypeRegistryReadLock()                                            = delete;
+    BlockTypeRegistryReadLock& operator=(BlockTypeRegistryReadLock const&);
+    BlockTypeRegistryReadLock(BlockTypeRegistryReadLock const&);
+    BlockTypeRegistryReadLock();
 
 public:
     // NOLINTBEGIN

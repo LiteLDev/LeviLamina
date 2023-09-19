@@ -24,8 +24,8 @@ public:
     CompoundTag        mData;   // this+0x38
 
     // prevent constructor by default
-    PositionTrackingDBServerBroadcastPacket& operator=(PositionTrackingDBServerBroadcastPacket const&) = delete;
-    PositionTrackingDBServerBroadcastPacket(PositionTrackingDBServerBroadcastPacket const&)            = delete;
+    PositionTrackingDBServerBroadcastPacket& operator=(PositionTrackingDBServerBroadcastPacket const&);
+    PositionTrackingDBServerBroadcastPacket(PositionTrackingDBServerBroadcastPacket const&);
 
 public:
     // NOLINTBEGIN

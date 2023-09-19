@@ -9,9 +9,9 @@
 class RotateAndSetVelocitySystem {
 public:
     // prevent constructor by default
-    RotateAndSetVelocitySystem& operator=(RotateAndSetVelocitySystem const&) = delete;
-    RotateAndSetVelocitySystem(RotateAndSetVelocitySystem const&)            = delete;
-    RotateAndSetVelocitySystem()                                             = delete;
+    RotateAndSetVelocitySystem& operator=(RotateAndSetVelocitySystem const&);
+    RotateAndSetVelocitySystem(RotateAndSetVelocitySystem const&);
+    RotateAndSetVelocitySystem();
 
 public:
     // NOLINTBEGIN

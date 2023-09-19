@@ -5,9 +5,9 @@
 struct PressurePlatePopEvent {
 public:
     // prevent constructor by default
-    PressurePlatePopEvent& operator=(PressurePlatePopEvent const&) = delete;
-    PressurePlatePopEvent(PressurePlatePopEvent const&)            = delete;
-    PressurePlatePopEvent()                                        = delete;
+    PressurePlatePopEvent& operator=(PressurePlatePopEvent const&);
+    PressurePlatePopEvent(PressurePlatePopEvent const&);
+    PressurePlatePopEvent();
 
 public:
     // NOLINTBEGIN

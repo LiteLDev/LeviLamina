@@ -9,9 +9,9 @@
 class BreakDoorGoal : public ::DoorInteractGoal {
 public:
     // prevent constructor by default
-    BreakDoorGoal& operator=(BreakDoorGoal const&) = delete;
-    BreakDoorGoal(BreakDoorGoal const&)            = delete;
-    BreakDoorGoal()                                = delete;
+    BreakDoorGoal& operator=(BreakDoorGoal const&);
+    BreakDoorGoal(BreakDoorGoal const&);
+    BreakDoorGoal();
 
 public:
     // NOLINTBEGIN
@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0BreakDoorGoal@@QEAA@AEAVMob@@@Z
-    MCAPI BreakDoorGoal(class Mob&);
+    MCAPI explicit BreakDoorGoal(class Mob&);
 
     // NOLINTEND
 };

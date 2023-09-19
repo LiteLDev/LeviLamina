@@ -5,9 +5,9 @@
 struct InsideGenericBlockComponent {
 public:
     // prevent constructor by default
-    InsideGenericBlockComponent& operator=(InsideGenericBlockComponent const&) = delete;
-    InsideGenericBlockComponent(InsideGenericBlockComponent const&)            = delete;
-    InsideGenericBlockComponent()                                              = delete;
+    InsideGenericBlockComponent& operator=(InsideGenericBlockComponent const&);
+    InsideGenericBlockComponent(InsideGenericBlockComponent const&);
+    InsideGenericBlockComponent();
 
 public:
     // NOLINTBEGIN

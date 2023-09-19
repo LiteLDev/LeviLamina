@@ -8,9 +8,9 @@
 class SetBlockCommand : public ::Command {
 public:
     // prevent constructor by default
-    SetBlockCommand& operator=(SetBlockCommand const&) = delete;
-    SetBlockCommand(SetBlockCommand const&)            = delete;
-    SetBlockCommand()                                  = delete;
+    SetBlockCommand& operator=(SetBlockCommand const&);
+    SetBlockCommand(SetBlockCommand const&);
+    SetBlockCommand();
 
 public:
     // NOLINTBEGIN

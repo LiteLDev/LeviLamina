@@ -8,9 +8,9 @@
 class WSServerCommand : public ::Command {
 public:
     // prevent constructor by default
-    WSServerCommand& operator=(WSServerCommand const&) = delete;
-    WSServerCommand(WSServerCommand const&)            = delete;
-    WSServerCommand()                                  = delete;
+    WSServerCommand& operator=(WSServerCommand const&);
+    WSServerCommand(WSServerCommand const&);
+    WSServerCommand();
 
 public:
     // NOLINTBEGIN

@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class RangedAttackDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    RangedAttackDefinition& operator=(RangedAttackDefinition const&) = delete;
-    RangedAttackDefinition(RangedAttackDefinition const&)            = delete;
+    RangedAttackDefinition& operator=(RangedAttackDefinition const&);
+    RangedAttackDefinition(RangedAttackDefinition const&);
 
 public:
     // NOLINTBEGIN

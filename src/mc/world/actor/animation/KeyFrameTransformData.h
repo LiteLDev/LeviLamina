@@ -5,8 +5,8 @@
 class KeyFrameTransformData {
 public:
     // prevent constructor by default
-    KeyFrameTransformData& operator=(KeyFrameTransformData const&) = delete;
-    KeyFrameTransformData()                                        = delete;
+    KeyFrameTransformData& operator=(KeyFrameTransformData const&);
+    KeyFrameTransformData();
 
 public:
     // NOLINTBEGIN

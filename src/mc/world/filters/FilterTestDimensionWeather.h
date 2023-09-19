@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class FilterTestDimensionWeather : public ::FilterTest {
 public:
     // prevent constructor by default
-    FilterTestDimensionWeather& operator=(FilterTestDimensionWeather const&) = delete;
-    FilterTestDimensionWeather(FilterTestDimensionWeather const&)            = delete;
-    FilterTestDimensionWeather()                                             = delete;
+    FilterTestDimensionWeather& operator=(FilterTestDimensionWeather const&);
+    FilterTestDimensionWeather(FilterTestDimensionWeather const&);
+    FilterTestDimensionWeather();
 
 public:
     // NOLINTBEGIN

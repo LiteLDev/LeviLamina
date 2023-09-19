@@ -16,8 +16,8 @@ namespace BlockDestroyTimeVersioning {
 class BlockDestructibleByMining11910Upgrade : public ::CerealSchemaUpgrade {
 public:
     // prevent constructor by default
-    BlockDestructibleByMining11910Upgrade& operator=(BlockDestructibleByMining11910Upgrade const&) = delete;
-    BlockDestructibleByMining11910Upgrade(BlockDestructibleByMining11910Upgrade const&)            = delete;
+    BlockDestructibleByMining11910Upgrade& operator=(BlockDestructibleByMining11910Upgrade const&);
+    BlockDestructibleByMining11910Upgrade(BlockDestructibleByMining11910Upgrade const&);
 
 public:
     // NOLINTBEGIN

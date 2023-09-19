@@ -9,9 +9,9 @@ public:
 
 public:
     // prevent constructor by default
-    WeakStorageFeature& operator=(WeakStorageFeature const&) = delete;
-    WeakStorageFeature(WeakStorageFeature const&)            = delete;
-    WeakStorageFeature()                                     = delete;
+    WeakStorageFeature& operator=(WeakStorageFeature const&);
+    WeakStorageFeature(WeakStorageFeature const&);
+    WeakStorageFeature();
 
     // protected:
     // NOLINTBEGIN
@@ -19,10 +19,10 @@ public:
     MCAPI WeakStorageFeature(class WeakStorageFeature&&);
 
     // symbol: ??0WeakStorageFeature@@IEAA@AEBVOwnerStorageFeature@@@Z
-    MCAPI WeakStorageFeature(class OwnerStorageFeature const&);
+    MCAPI explicit WeakStorageFeature(class OwnerStorageFeature const&);
 
     // symbol: ??0WeakStorageFeature@@IEAA@W4EmptyInit@0@@Z
-    MCAPI WeakStorageFeature(::WeakStorageFeature::EmptyInit);
+    MCAPI explicit WeakStorageFeature(::WeakStorageFeature::EmptyInit);
 
     // symbol: ?_isSet@WeakStorageFeature@@IEBA_NXZ
     MCAPI bool _isSet() const;

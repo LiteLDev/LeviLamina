@@ -13,9 +13,9 @@ namespace mce { class UUID; }
 class ShieldRecipe : public ::MultiRecipe {
 public:
     // prevent constructor by default
-    ShieldRecipe& operator=(ShieldRecipe const&) = delete;
-    ShieldRecipe(ShieldRecipe const&)            = delete;
-    ShieldRecipe()                               = delete;
+    ShieldRecipe& operator=(ShieldRecipe const&);
+    ShieldRecipe(ShieldRecipe const&);
+    ShieldRecipe();
 
 public:
     // NOLINTBEGIN

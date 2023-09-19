@@ -18,8 +18,8 @@ public:
     std::string             mViolationContext;  // this+0x40
 
     // prevent constructor by default
-    PacketViolationWarningPacket& operator=(PacketViolationWarningPacket const&) = delete;
-    PacketViolationWarningPacket(PacketViolationWarningPacket const&)            = delete;
+    PacketViolationWarningPacket& operator=(PacketViolationWarningPacket const&);
+    PacketViolationWarningPacket(PacketViolationWarningPacket const&);
 
 public:
     // NOLINTBEGIN

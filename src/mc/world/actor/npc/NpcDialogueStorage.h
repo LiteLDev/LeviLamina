@@ -8,9 +8,9 @@
 class NpcDialogueStorage {
 public:
     // prevent constructor by default
-    NpcDialogueStorage& operator=(NpcDialogueStorage const&) = delete;
-    NpcDialogueStorage(NpcDialogueStorage const&)            = delete;
-    NpcDialogueStorage()                                     = delete;
+    NpcDialogueStorage& operator=(NpcDialogueStorage const&);
+    NpcDialogueStorage(NpcDialogueStorage const&);
+    NpcDialogueStorage();
 
 public:
     // NOLINTBEGIN

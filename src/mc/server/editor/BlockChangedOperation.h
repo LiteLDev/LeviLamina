@@ -7,9 +7,9 @@ namespace Editor::Transactions {
 class BlockChangedOperation {
 public:
     // prevent constructor by default
-    BlockChangedOperation& operator=(BlockChangedOperation const&) = delete;
-    BlockChangedOperation(BlockChangedOperation const&)            = delete;
-    BlockChangedOperation()                                        = delete;
+    BlockChangedOperation& operator=(BlockChangedOperation const&);
+    BlockChangedOperation(BlockChangedOperation const&);
+    BlockChangedOperation();
 
 public:
     // NOLINTBEGIN

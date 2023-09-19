@@ -8,9 +8,9 @@ public:
     std::string mDisplayName;
 
     // prevent constructor by default
-    ExternalLinkSettings& operator=(ExternalLinkSettings const&) = delete;
-    ExternalLinkSettings(ExternalLinkSettings const&)            = delete;
-    ExternalLinkSettings()                                       = delete;
+    ExternalLinkSettings& operator=(ExternalLinkSettings const&);
+    ExternalLinkSettings(ExternalLinkSettings const&);
+    ExternalLinkSettings();
 
 public:
     // NOLINTBEGIN

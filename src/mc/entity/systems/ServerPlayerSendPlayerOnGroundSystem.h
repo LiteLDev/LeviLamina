@@ -5,9 +5,9 @@
 class ServerPlayerSendPlayerOnGroundSystem {
 public:
     // prevent constructor by default
-    ServerPlayerSendPlayerOnGroundSystem& operator=(ServerPlayerSendPlayerOnGroundSystem const&) = delete;
-    ServerPlayerSendPlayerOnGroundSystem(ServerPlayerSendPlayerOnGroundSystem const&)            = delete;
-    ServerPlayerSendPlayerOnGroundSystem()                                                       = delete;
+    ServerPlayerSendPlayerOnGroundSystem& operator=(ServerPlayerSendPlayerOnGroundSystem const&);
+    ServerPlayerSendPlayerOnGroundSystem(ServerPlayerSendPlayerOnGroundSystem const&);
+    ServerPlayerSendPlayerOnGroundSystem();
 
 public:
     // NOLINTBEGIN

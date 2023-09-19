@@ -19,8 +19,8 @@ public:
 
 public:
     // prevent constructor by default
-    DedicatedServer& operator=(DedicatedServer const&) = delete;
-    DedicatedServer(DedicatedServer const&)            = delete;
+    DedicatedServer& operator=(DedicatedServer const&);
+    DedicatedServer(DedicatedServer const&);
 
 public:
     // NOLINTBEGIN

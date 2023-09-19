@@ -5,7 +5,7 @@
 class IActorManagerProxy {
 public:
     // prevent constructor by default
-    IActorManagerProxy& operator=(IActorManagerProxy const&) = delete;
-    IActorManagerProxy(IActorManagerProxy const&)            = delete;
-    IActorManagerProxy()                                     = delete;
+    IActorManagerProxy& operator=(IActorManagerProxy const&);
+    IActorManagerProxy(IActorManagerProxy const&);
+    IActorManagerProxy();
 };

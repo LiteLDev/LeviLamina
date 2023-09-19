@@ -8,7 +8,7 @@
 struct BlockSelectionBoxComponent : public ::BlockAABBComponentData {
 public:
     // prevent constructor by default
-    BlockSelectionBoxComponent& operator=(BlockSelectionBoxComponent const&) = delete;
-    BlockSelectionBoxComponent(BlockSelectionBoxComponent const&)            = delete;
-    BlockSelectionBoxComponent()                                             = delete;
+    BlockSelectionBoxComponent& operator=(BlockSelectionBoxComponent const&);
+    BlockSelectionBoxComponent(BlockSelectionBoxComponent const&);
+    BlockSelectionBoxComponent();
 };

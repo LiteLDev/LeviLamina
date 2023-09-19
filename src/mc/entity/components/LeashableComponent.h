@@ -5,9 +5,9 @@
 class LeashableComponent {
 public:
     // prevent constructor by default
-    LeashableComponent& operator=(LeashableComponent const&) = delete;
-    LeashableComponent(LeashableComponent const&)            = delete;
-    LeashableComponent()                                     = delete;
+    LeashableComponent& operator=(LeashableComponent const&);
+    LeashableComponent(LeashableComponent const&);
+    LeashableComponent();
 
 public:
     // NOLINTBEGIN

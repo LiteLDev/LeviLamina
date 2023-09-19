@@ -5,7 +5,7 @@
 struct ITaskQueuePort {
 public:
     // prevent constructor by default
-    ITaskQueuePort& operator=(ITaskQueuePort const&) = delete;
-    ITaskQueuePort(ITaskQueuePort const&)            = delete;
-    ITaskQueuePort()                                 = delete;
+    ITaskQueuePort& operator=(ITaskQueuePort const&);
+    ITaskQueuePort(ITaskQueuePort const&);
+    ITaskQueuePort();
 };

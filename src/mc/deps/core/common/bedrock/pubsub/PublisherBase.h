@@ -17,8 +17,8 @@ namespace Bedrock::PubSub::Detail {
 class PublisherBase : public ::Bedrock::PubSub::Detail::PublisherDisconnector {
 public:
     // prevent constructor by default
-    PublisherBase& operator=(PublisherBase const&) = delete;
-    PublisherBase(PublisherBase const&)            = delete;
+    PublisherBase& operator=(PublisherBase const&);
+    PublisherBase(PublisherBase const&);
 
 public:
     // NOLINTBEGIN

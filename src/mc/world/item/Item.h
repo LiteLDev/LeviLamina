@@ -32,9 +32,9 @@ public:
     class ScopedCreativeGroup {
     public:
         // prevent constructor by default
-        ScopedCreativeGroup& operator=(ScopedCreativeGroup const&) = delete;
-        ScopedCreativeGroup(ScopedCreativeGroup const&)            = delete;
-        ScopedCreativeGroup()                                      = delete;
+        ScopedCreativeGroup& operator=(ScopedCreativeGroup const&);
+        ScopedCreativeGroup(ScopedCreativeGroup const&);
+        ScopedCreativeGroup();
 
     public:
         // NOLINTBEGIN
@@ -59,9 +59,9 @@ public:
     class Tier {
     public:
         // prevent constructor by default
-        Tier& operator=(Tier const&) = delete;
-        Tier(Tier const&)            = delete;
-        Tier()                       = delete;
+        Tier& operator=(Tier const&);
+        Tier(Tier const&);
+        Tier();
 
     public:
         // NOLINTBEGIN
@@ -88,9 +88,9 @@ public:
 
 public:
     // prevent constructor by default
-    Item& operator=(Item const&) = delete;
-    Item(Item const&)            = delete;
-    Item()                       = delete;
+    Item& operator=(Item const&);
+    Item(Item const&);
+    Item();
 
 public:
     // NOLINTBEGIN
@@ -763,7 +763,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mServerItemsUsedInCreativeItems() { return mServerItemsUsedInCreativeItems; }
+    auto& $mServerItemsUsedInCreativeItems() { return mServerItemsUsedInCreativeItems; }
 
     // NOLINTEND
 };

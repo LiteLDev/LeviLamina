@@ -15,9 +15,9 @@ namespace RakNet { struct RakNetStatistics; }
 class NetworkStatistics : public ::PacketObserver {
 public:
     // prevent constructor by default
-    NetworkStatistics& operator=(NetworkStatistics const&) = delete;
-    NetworkStatistics(NetworkStatistics const&)            = delete;
-    NetworkStatistics()                                    = delete;
+    NetworkStatistics& operator=(NetworkStatistics const&);
+    NetworkStatistics(NetworkStatistics const&);
+    NetworkStatistics();
 
 public:
     // NOLINTBEGIN

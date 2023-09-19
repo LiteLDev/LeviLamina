@@ -5,7 +5,7 @@
 class ITreeTrunkWrapper {
 public:
     // prevent constructor by default
-    ITreeTrunkWrapper& operator=(ITreeTrunkWrapper const&) = delete;
-    ITreeTrunkWrapper(ITreeTrunkWrapper const&)            = delete;
-    ITreeTrunkWrapper()                                    = delete;
+    ITreeTrunkWrapper& operator=(ITreeTrunkWrapper const&);
+    ITreeTrunkWrapper(ITreeTrunkWrapper const&);
+    ITreeTrunkWrapper();
 };

@@ -13,9 +13,9 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class SaveTransactionManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    SaveTransactionManager& operator=(SaveTransactionManager const&) = delete;
-    SaveTransactionManager(SaveTransactionManager const&)            = delete;
-    SaveTransactionManager()                                         = delete;
+    SaveTransactionManager& operator=(SaveTransactionManager const&);
+    SaveTransactionManager(SaveTransactionManager const&);
+    SaveTransactionManager();
 
 public:
     // NOLINTBEGIN

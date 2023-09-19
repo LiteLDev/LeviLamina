@@ -10,9 +10,9 @@ namespace RakNet { class BitStream; }
 class DatagramHeaderFormat {
 public:
     // prevent constructor by default
-    DatagramHeaderFormat& operator=(DatagramHeaderFormat const&) = delete;
-    DatagramHeaderFormat(DatagramHeaderFormat const&)            = delete;
-    DatagramHeaderFormat()                                       = delete;
+    DatagramHeaderFormat& operator=(DatagramHeaderFormat const&);
+    DatagramHeaderFormat(DatagramHeaderFormat const&);
+    DatagramHeaderFormat();
 
 public:
     // NOLINTBEGIN

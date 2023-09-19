@@ -11,9 +11,9 @@
 class CraftHandlerGrindstone : public ::CraftHandlerBase {
 public:
     // prevent constructor by default
-    CraftHandlerGrindstone& operator=(CraftHandlerGrindstone const&) = delete;
-    CraftHandlerGrindstone(CraftHandlerGrindstone const&)            = delete;
-    CraftHandlerGrindstone()                                         = delete;
+    CraftHandlerGrindstone& operator=(CraftHandlerGrindstone const&);
+    CraftHandlerGrindstone(CraftHandlerGrindstone const&);
+    CraftHandlerGrindstone();
 
 public:
     // NOLINTBEGIN

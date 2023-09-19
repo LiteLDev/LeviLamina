@@ -8,9 +8,9 @@
 class CalibratedSculkSensorVibrationConfig : public ::SculkSensorVibrationConfig {
 public:
     // prevent constructor by default
-    CalibratedSculkSensorVibrationConfig& operator=(CalibratedSculkSensorVibrationConfig const&) = delete;
-    CalibratedSculkSensorVibrationConfig(CalibratedSculkSensorVibrationConfig const&)            = delete;
-    CalibratedSculkSensorVibrationConfig()                                                       = delete;
+    CalibratedSculkSensorVibrationConfig& operator=(CalibratedSculkSensorVibrationConfig const&);
+    CalibratedSculkSensorVibrationConfig(CalibratedSculkSensorVibrationConfig const&);
+    CalibratedSculkSensorVibrationConfig();
 
 public:
     // NOLINTBEGIN

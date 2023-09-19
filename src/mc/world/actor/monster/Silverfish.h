@@ -26,9 +26,9 @@
 class Silverfish : public ::Monster {
 public:
     // prevent constructor by default
-    Silverfish& operator=(Silverfish const&) = delete;
-    Silverfish(Silverfish const&)            = delete;
-    Silverfish()                             = delete;
+    Silverfish& operator=(Silverfish const&);
+    Silverfish(Silverfish const&);
+    Silverfish();
 
 public:
     // NOLINTBEGIN

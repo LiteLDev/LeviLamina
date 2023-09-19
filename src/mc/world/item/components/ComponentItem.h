@@ -25,9 +25,9 @@ namespace mce { class Color; }
 class ComponentItem : public ::Item {
 public:
     // prevent constructor by default
-    ComponentItem& operator=(ComponentItem const&) = delete;
-    ComponentItem(ComponentItem const&)            = delete;
-    ComponentItem()                                = delete;
+    ComponentItem& operator=(ComponentItem const&);
+    ComponentItem(ComponentItem const&);
+    ComponentItem();
 
 public:
     // NOLINTBEGIN
@@ -412,7 +412,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mDocumentUpgrader() { return mDocumentUpgrader; }
+    auto& $mDocumentUpgrader() { return mDocumentUpgrader; }
 
     // NOLINTEND
 };

@@ -15,9 +15,9 @@ namespace AgentComponents {
 class DetectRedstone {
 public:
     // prevent constructor by default
-    DetectRedstone& operator=(DetectRedstone const&) = delete;
-    DetectRedstone(DetectRedstone const&)            = delete;
-    DetectRedstone()                                 = delete;
+    DetectRedstone& operator=(DetectRedstone const&);
+    DetectRedstone(DetectRedstone const&);
+    DetectRedstone();
 
 public:
     // NOLINTBEGIN

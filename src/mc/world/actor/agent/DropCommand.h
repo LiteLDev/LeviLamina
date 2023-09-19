@@ -15,9 +15,9 @@ namespace AgentCommands {
 class DropCommand : public ::AgentCommands::Command {
 public:
     // prevent constructor by default
-    DropCommand& operator=(DropCommand const&) = delete;
-    DropCommand(DropCommand const&)            = delete;
-    DropCommand()                              = delete;
+    DropCommand& operator=(DropCommand const&);
+    DropCommand(DropCommand const&);
+    DropCommand();
 
 public:
     // NOLINTBEGIN

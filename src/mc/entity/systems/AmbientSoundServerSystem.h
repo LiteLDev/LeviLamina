@@ -8,9 +8,9 @@
 class AmbientSoundServerSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    AmbientSoundServerSystem& operator=(AmbientSoundServerSystem const&) = delete;
-    AmbientSoundServerSystem(AmbientSoundServerSystem const&)            = delete;
-    AmbientSoundServerSystem()                                           = delete;
+    AmbientSoundServerSystem& operator=(AmbientSoundServerSystem const&);
+    AmbientSoundServerSystem(AmbientSoundServerSystem const&);
+    AmbientSoundServerSystem();
 
 public:
     // NOLINTBEGIN

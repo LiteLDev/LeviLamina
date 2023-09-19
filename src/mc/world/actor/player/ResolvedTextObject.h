@@ -5,9 +5,9 @@
 class ResolvedTextObject {
 public:
     // prevent constructor by default
-    ResolvedTextObject& operator=(ResolvedTextObject const&) = delete;
-    ResolvedTextObject(ResolvedTextObject const&)            = delete;
-    ResolvedTextObject()                                     = delete;
+    ResolvedTextObject& operator=(ResolvedTextObject const&);
+    ResolvedTextObject(ResolvedTextObject const&);
+    ResolvedTextObject();
 
 public:
     // NOLINTBEGIN

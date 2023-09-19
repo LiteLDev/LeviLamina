@@ -7,9 +7,9 @@ namespace Scripting {
 struct ContextId {
 public:
     // prevent constructor by default
-    ContextId& operator=(ContextId const&) = delete;
-    ContextId(ContextId const&)            = delete;
-    ContextId()                            = delete;
+    ContextId& operator=(ContextId const&);
+    ContextId(ContextId const&);
+    ContextId();
 };
 
 }; // namespace Scripting

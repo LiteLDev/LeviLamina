@@ -14,7 +14,7 @@ public:
 
 public:
     // prevent constructor by default
-    PlayerPositionModeComponent& operator=(PlayerPositionModeComponent const&) = delete;
-    PlayerPositionModeComponent(PlayerPositionModeComponent const&)            = delete;
-    PlayerPositionModeComponent()                                              = delete;
+    PlayerPositionModeComponent& operator=(PlayerPositionModeComponent const&);
+    PlayerPositionModeComponent(PlayerPositionModeComponent const&);
+    PlayerPositionModeComponent();
 };

@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class CoralFanBlockItem : public ::BlockItem {
 public:
     // prevent constructor by default
-    CoralFanBlockItem& operator=(CoralFanBlockItem const&) = delete;
-    CoralFanBlockItem(CoralFanBlockItem const&)            = delete;
-    CoralFanBlockItem()                                    = delete;
+    CoralFanBlockItem& operator=(CoralFanBlockItem const&);
+    CoralFanBlockItem(CoralFanBlockItem const&);
+    CoralFanBlockItem();
 
 public:
     // NOLINTBEGIN

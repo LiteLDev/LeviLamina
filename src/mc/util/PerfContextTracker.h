@@ -18,8 +18,8 @@ public:
     class Duration {
     public:
         // prevent constructor by default
-        Duration& operator=(Duration const&) = delete;
-        Duration(Duration const&)            = delete;
+        Duration& operator=(Duration const&);
+        Duration(Duration const&);
 
     public:
         // NOLINTBEGIN
@@ -41,14 +41,14 @@ public:
     class EventScope {
     public:
         // prevent constructor by default
-        EventScope& operator=(EventScope const&) = delete;
-        EventScope(EventScope const&)            = delete;
-        EventScope()                             = delete;
+        EventScope& operator=(EventScope const&);
+        EventScope(EventScope const&);
+        EventScope();
 
     public:
         // NOLINTBEGIN
         // symbol: ??0EventScope@PerfContextTracker@@QEAA@W4PerfContextEvent@@@Z
-        MCAPI EventScope(::PerfContextEvent);
+        MCAPI explicit EventScope(::PerfContextEvent);
 
         // symbol: ??1EventScope@PerfContextTracker@@QEAA@XZ
         MCAPI ~EventScope();
@@ -59,9 +59,9 @@ public:
     class Timer : public ::PerfContextTracker::Duration {
     public:
         // prevent constructor by default
-        Timer& operator=(Timer const&) = delete;
-        Timer(Timer const&)            = delete;
-        Timer()                        = delete;
+        Timer& operator=(Timer const&);
+        Timer(Timer const&);
+        Timer();
 
     public:
         // NOLINTBEGIN
@@ -76,8 +76,8 @@ public:
 
 public:
     // prevent constructor by default
-    PerfContextTracker& operator=(PerfContextTracker const&) = delete;
-    PerfContextTracker(PerfContextTracker const&)            = delete;
+    PerfContextTracker& operator=(PerfContextTracker const&);
+    PerfContextTracker(PerfContextTracker const&);
 
 public:
     // NOLINTBEGIN

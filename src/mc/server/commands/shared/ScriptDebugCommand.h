@@ -16,8 +16,8 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptDebugCommand& operator=(ScriptDebugCommand const&) = delete;
-    ScriptDebugCommand(ScriptDebugCommand const&)            = delete;
+    ScriptDebugCommand& operator=(ScriptDebugCommand const&);
+    ScriptDebugCommand(ScriptDebugCommand const&);
 
 public:
     // NOLINTBEGIN

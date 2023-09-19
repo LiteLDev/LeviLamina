@@ -25,9 +25,9 @@ namespace Core {
 class FlatFileSystemImpl {
 public:
     // prevent constructor by default
-    FlatFileSystemImpl& operator=(FlatFileSystemImpl const&) = delete;
-    FlatFileSystemImpl(FlatFileSystemImpl const&)            = delete;
-    FlatFileSystemImpl()                                     = delete;
+    FlatFileSystemImpl& operator=(FlatFileSystemImpl const&);
+    FlatFileSystemImpl(FlatFileSystemImpl const&);
+    FlatFileSystemImpl();
 
 public:
     // NOLINTBEGIN

@@ -17,8 +17,8 @@ namespace Core {
 class FlatFileManifestInfo {
 public:
     // prevent constructor by default
-    FlatFileManifestInfo& operator=(FlatFileManifestInfo const&) = delete;
-    FlatFileManifestInfo(FlatFileManifestInfo const&)            = delete;
+    FlatFileManifestInfo& operator=(FlatFileManifestInfo const&);
+    FlatFileManifestInfo(FlatFileManifestInfo const&);
 
 public:
     // NOLINTBEGIN

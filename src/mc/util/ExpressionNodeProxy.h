@@ -7,9 +7,9 @@ namespace ExpressionNodeSerializer {
 struct ExpressionNodeProxy {
 public:
     // prevent constructor by default
-    ExpressionNodeProxy& operator=(ExpressionNodeProxy const&) = delete;
-    ExpressionNodeProxy(ExpressionNodeProxy const&)            = delete;
-    ExpressionNodeProxy()                                      = delete;
+    ExpressionNodeProxy& operator=(ExpressionNodeProxy const&);
+    ExpressionNodeProxy(ExpressionNodeProxy const&);
+    ExpressionNodeProxy();
 
 public:
     // NOLINTBEGIN

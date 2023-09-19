@@ -5,9 +5,9 @@
 class GameTestClearTask {
 public:
     // prevent constructor by default
-    GameTestClearTask& operator=(GameTestClearTask const&) = delete;
-    GameTestClearTask(GameTestClearTask const&)            = delete;
-    GameTestClearTask()                                    = delete;
+    GameTestClearTask& operator=(GameTestClearTask const&);
+    GameTestClearTask(GameTestClearTask const&);
+    GameTestClearTask();
 
 public:
     // NOLINTBEGIN

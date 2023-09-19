@@ -13,8 +13,8 @@ public:
     ActorRuntimeID mPlayerID; // this+0x30
 
     // prevent constructor by default
-    SetLocalPlayerAsInitializedPacket& operator=(SetLocalPlayerAsInitializedPacket const&) = delete;
-    SetLocalPlayerAsInitializedPacket(SetLocalPlayerAsInitializedPacket const&)            = delete;
+    SetLocalPlayerAsInitializedPacket& operator=(SetLocalPlayerAsInitializedPacket const&);
+    SetLocalPlayerAsInitializedPacket(SetLocalPlayerAsInitializedPacket const&);
 
 public:
     // NOLINTBEGIN

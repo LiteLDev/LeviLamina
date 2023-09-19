@@ -10,9 +10,9 @@
 class ElementConstructorContainerManagerModel : public ::ContainerManagerModel {
 public:
     // prevent constructor by default
-    ElementConstructorContainerManagerModel& operator=(ElementConstructorContainerManagerModel const&) = delete;
-    ElementConstructorContainerManagerModel(ElementConstructorContainerManagerModel const&)            = delete;
-    ElementConstructorContainerManagerModel()                                                          = delete;
+    ElementConstructorContainerManagerModel& operator=(ElementConstructorContainerManagerModel const&);
+    ElementConstructorContainerManagerModel(ElementConstructorContainerManagerModel const&);
+    ElementConstructorContainerManagerModel();
 
 public:
     // NOLINTBEGIN

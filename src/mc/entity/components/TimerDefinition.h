@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class TimerDefinition {
 public:
     // prevent constructor by default
-    TimerDefinition& operator=(TimerDefinition const&) = delete;
-    TimerDefinition(TimerDefinition const&)            = delete;
+    TimerDefinition& operator=(TimerDefinition const&);
+    TimerDefinition(TimerDefinition const&);
 
 public:
     // NOLINTBEGIN

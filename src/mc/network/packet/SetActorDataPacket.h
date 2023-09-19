@@ -18,8 +18,8 @@ public:
     uint64                                 mTick;
 
     // prevent constructor by default
-    SetActorDataPacket& operator=(SetActorDataPacket const&) = delete;
-    SetActorDataPacket(SetActorDataPacket const&)            = delete;
+    SetActorDataPacket& operator=(SetActorDataPacket const&);
+    SetActorDataPacket(SetActorDataPacket const&);
 
 public:
     // NOLINTBEGIN

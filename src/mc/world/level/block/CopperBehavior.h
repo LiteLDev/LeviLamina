@@ -5,9 +5,9 @@
 class CopperBehavior {
 public:
     // prevent constructor by default
-    CopperBehavior& operator=(CopperBehavior const&) = delete;
-    CopperBehavior(CopperBehavior const&)            = delete;
-    CopperBehavior()                                 = delete;
+    CopperBehavior& operator=(CopperBehavior const&);
+    CopperBehavior(CopperBehavior const&);
+    CopperBehavior();
 
 public:
     // NOLINTBEGIN

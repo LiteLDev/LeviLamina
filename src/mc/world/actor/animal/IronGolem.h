@@ -26,9 +26,9 @@
 class IronGolem : public ::Mob {
 public:
     // prevent constructor by default
-    IronGolem& operator=(IronGolem const&) = delete;
-    IronGolem(IronGolem const&)            = delete;
-    IronGolem()                            = delete;
+    IronGolem& operator=(IronGolem const&);
+    IronGolem(IronGolem const&);
+    IronGolem();
 
 public:
     // NOLINTBEGIN

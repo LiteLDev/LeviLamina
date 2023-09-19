@@ -5,7 +5,7 @@
 struct EditorActorPauseTickNeededFlag {
 public:
     // prevent constructor by default
-    EditorActorPauseTickNeededFlag& operator=(EditorActorPauseTickNeededFlag const&) = delete;
-    EditorActorPauseTickNeededFlag(EditorActorPauseTickNeededFlag const&)            = delete;
-    EditorActorPauseTickNeededFlag()                                                 = delete;
+    EditorActorPauseTickNeededFlag& operator=(EditorActorPauseTickNeededFlag const&);
+    EditorActorPauseTickNeededFlag(EditorActorPauseTickNeededFlag const&);
+    EditorActorPauseTickNeededFlag();
 };

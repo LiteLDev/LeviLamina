@@ -13,8 +13,8 @@ public:
     ActorLink mLink; // this+0x30
 
     // prevent constructor by default
-    SetActorLinkPacket& operator=(SetActorLinkPacket const&) = delete;
-    SetActorLinkPacket(SetActorLinkPacket const&)            = delete;
+    SetActorLinkPacket& operator=(SetActorLinkPacket const&);
+    SetActorLinkPacket(SetActorLinkPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -39,7 +39,7 @@ public:
     MCVAPI ~SetActorLinkPacket();
 
     // symbol: ??0SetActorLinkPacket@@QEAA@AEBUActorLink@@@Z
-    MCAPI SetActorLinkPacket(struct ActorLink const&);
+    MCAPI explicit SetActorLinkPacket(struct ActorLink const&);
 
     // symbol: ??0SetActorLinkPacket@@QEAA@XZ
     MCAPI SetActorLinkPacket();

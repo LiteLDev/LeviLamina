@@ -8,9 +8,9 @@
 class BiomeRegistryMergeStrategy : public ::ResourcePackMergeStrategy {
 public:
     // prevent constructor by default
-    BiomeRegistryMergeStrategy& operator=(BiomeRegistryMergeStrategy const&) = delete;
-    BiomeRegistryMergeStrategy(BiomeRegistryMergeStrategy const&)            = delete;
-    BiomeRegistryMergeStrategy()                                             = delete;
+    BiomeRegistryMergeStrategy& operator=(BiomeRegistryMergeStrategy const&);
+    BiomeRegistryMergeStrategy(BiomeRegistryMergeStrategy const&);
+    BiomeRegistryMergeStrategy();
 
 public:
     // NOLINTBEGIN

@@ -20,7 +20,7 @@ namespace ScriptModuleMinecraft {
 class AttributeScriptActorComponent : public ::ScriptModuleMinecraft::ScriptActorComponent {
 public:
     // prevent constructor by default
-    AttributeScriptActorComponent() = delete;
+    AttributeScriptActorComponent();
 
 public:
     // NOLINTBEGIN

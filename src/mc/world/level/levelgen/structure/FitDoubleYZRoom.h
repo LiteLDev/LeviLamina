@@ -8,9 +8,9 @@
 class FitDoubleYZRoom : public ::MonumentRoomFitter {
 public:
     // prevent constructor by default
-    FitDoubleYZRoom& operator=(FitDoubleYZRoom const&) = delete;
-    FitDoubleYZRoom(FitDoubleYZRoom const&)            = delete;
-    FitDoubleYZRoom()                                  = delete;
+    FitDoubleYZRoom& operator=(FitDoubleYZRoom const&);
+    FitDoubleYZRoom(FitDoubleYZRoom const&);
+    FitDoubleYZRoom();
 
 public:
     // NOLINTBEGIN

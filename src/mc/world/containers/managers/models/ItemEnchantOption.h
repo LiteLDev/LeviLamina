@@ -5,8 +5,8 @@
 class ItemEnchantOption {
 public:
     // prevent constructor by default
-    ItemEnchantOption(ItemEnchantOption const&) = delete;
-    ItemEnchantOption()                         = delete;
+    ItemEnchantOption(ItemEnchantOption const&);
+    ItemEnchantOption();
 
 public:
     // NOLINTBEGIN

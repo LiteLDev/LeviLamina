@@ -28,7 +28,7 @@ public:
     MoveActorAbsoluteData      mPreviousData;
 
     // prevent constructor by default
-    MoveActorDeltaData& operator=(MoveActorDeltaData const&) = delete;
-    MoveActorDeltaData(MoveActorDeltaData const&)            = delete;
-    MoveActorDeltaData()                                     = delete;
+    MoveActorDeltaData& operator=(MoveActorDeltaData const&);
+    MoveActorDeltaData(MoveActorDeltaData const&);
+    MoveActorDeltaData();
 };

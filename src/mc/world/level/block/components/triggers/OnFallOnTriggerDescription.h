@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class OnFallOnTriggerDescription {
 public:
     // prevent constructor by default
-    OnFallOnTriggerDescription& operator=(OnFallOnTriggerDescription const&) = delete;
-    OnFallOnTriggerDescription(OnFallOnTriggerDescription const&)            = delete;
-    OnFallOnTriggerDescription()                                             = delete;
+    OnFallOnTriggerDescription& operator=(OnFallOnTriggerDescription const&);
+    OnFallOnTriggerDescription(OnFallOnTriggerDescription const&);
+    OnFallOnTriggerDescription();
 
 public:
     // NOLINTBEGIN

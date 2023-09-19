@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class BubbleColumnBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    BubbleColumnBlock& operator=(BubbleColumnBlock const&) = delete;
-    BubbleColumnBlock(BubbleColumnBlock const&)            = delete;
-    BubbleColumnBlock()                                    = delete;
+    BubbleColumnBlock& operator=(BubbleColumnBlock const&);
+    BubbleColumnBlock(BubbleColumnBlock const&);
+    BubbleColumnBlock();
 
 public:
     // NOLINTBEGIN

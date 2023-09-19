@@ -8,9 +8,9 @@
 class NetherFossilFeature : public ::Feature {
 public:
     // prevent constructor by default
-    NetherFossilFeature& operator=(NetherFossilFeature const&) = delete;
-    NetherFossilFeature(NetherFossilFeature const&)            = delete;
-    NetherFossilFeature()                                      = delete;
+    NetherFossilFeature& operator=(NetherFossilFeature const&);
+    NetherFossilFeature(NetherFossilFeature const&);
+    NetherFossilFeature();
 
 public:
     // NOLINTBEGIN
@@ -36,7 +36,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $STRUCTURE_LOCATION_FOSSIL() { return STRUCTURE_LOCATION_FOSSIL; }
+    auto& $STRUCTURE_LOCATION_FOSSIL() { return STRUCTURE_LOCATION_FOSSIL; }
 
     // NOLINTEND
 };

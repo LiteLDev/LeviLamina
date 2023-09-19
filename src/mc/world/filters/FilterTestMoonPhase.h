@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class FilterTestMoonPhase : public ::SimpleFloatFilterTest {
 public:
     // prevent constructor by default
-    FilterTestMoonPhase& operator=(FilterTestMoonPhase const&) = delete;
-    FilterTestMoonPhase(FilterTestMoonPhase const&)            = delete;
-    FilterTestMoonPhase()                                      = delete;
+    FilterTestMoonPhase& operator=(FilterTestMoonPhase const&);
+    FilterTestMoonPhase(FilterTestMoonPhase const&);
+    FilterTestMoonPhase();
 
 public:
     // NOLINTBEGIN

@@ -11,9 +11,9 @@
 class PoolElementStructurePiece : public ::StructurePiece {
 public:
     // prevent constructor by default
-    PoolElementStructurePiece& operator=(PoolElementStructurePiece const&) = delete;
-    PoolElementStructurePiece(PoolElementStructurePiece const&)            = delete;
-    PoolElementStructurePiece()                                            = delete;
+    PoolElementStructurePiece& operator=(PoolElementStructurePiece const&);
+    PoolElementStructurePiece(PoolElementStructurePiece const&);
+    PoolElementStructurePiece();
 
 public:
     // NOLINTBEGIN

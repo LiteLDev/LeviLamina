@@ -8,8 +8,8 @@
 class MoveControl : public ::Control {
 public:
     // prevent constructor by default
-    MoveControl& operator=(MoveControl const&) = delete;
-    MoveControl(MoveControl const&)            = delete;
+    MoveControl& operator=(MoveControl const&);
+    MoveControl(MoveControl const&);
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 struct ActorInfo {
 public:
     // prevent constructor by default
-    ActorInfo() = delete;
+    ActorInfo();
 
 public:
     // NOLINTBEGIN

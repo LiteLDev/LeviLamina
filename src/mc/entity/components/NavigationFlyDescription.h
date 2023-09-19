@@ -8,9 +8,9 @@
 class NavigationFlyDescription : public ::NavigationDescription {
 public:
     // prevent constructor by default
-    NavigationFlyDescription& operator=(NavigationFlyDescription const&) = delete;
-    NavigationFlyDescription(NavigationFlyDescription const&)            = delete;
-    NavigationFlyDescription()                                           = delete;
+    NavigationFlyDescription& operator=(NavigationFlyDescription const&);
+    NavigationFlyDescription(NavigationFlyDescription const&);
+    NavigationFlyDescription();
 
 public:
     // NOLINTBEGIN

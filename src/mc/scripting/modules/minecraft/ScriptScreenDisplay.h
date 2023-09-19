@@ -18,9 +18,9 @@ namespace ScriptModuleMinecraft {
 struct ScriptScreenDisplay {
 public:
     // prevent constructor by default
-    ScriptScreenDisplay& operator=(ScriptScreenDisplay const&) = delete;
-    ScriptScreenDisplay(ScriptScreenDisplay const&)            = delete;
-    ScriptScreenDisplay()                                      = delete;
+    ScriptScreenDisplay& operator=(ScriptScreenDisplay const&);
+    ScriptScreenDisplay(ScriptScreenDisplay const&);
+    ScriptScreenDisplay();
 
 public:
     // NOLINTBEGIN

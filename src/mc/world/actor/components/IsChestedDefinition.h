@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct IsChestedDefinition {
 public:
     // prevent constructor by default
-    IsChestedDefinition& operator=(IsChestedDefinition const&) = delete;
-    IsChestedDefinition(IsChestedDefinition const&)            = delete;
-    IsChestedDefinition()                                      = delete;
+    IsChestedDefinition& operator=(IsChestedDefinition const&);
+    IsChestedDefinition(IsChestedDefinition const&);
+    IsChestedDefinition();
 
 public:
     // NOLINTBEGIN

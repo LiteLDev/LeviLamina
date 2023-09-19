@@ -18,9 +18,9 @@ public:
     struct Constructor {
     public:
         // prevent constructor by default
-        Constructor& operator=(Constructor const&) = delete;
-        Constructor(Constructor const&)            = delete;
-        Constructor()                              = delete;
+        Constructor& operator=(Constructor const&);
+        Constructor(Constructor const&);
+        Constructor();
 
     public:
         // NOLINTBEGIN
@@ -36,9 +36,9 @@ public:
 
 public:
     // prevent constructor by default
-    CerealItemComponentFactory& operator=(CerealItemComponentFactory const&) = delete;
-    CerealItemComponentFactory(CerealItemComponentFactory const&)            = delete;
-    CerealItemComponentFactory()                                             = delete;
+    CerealItemComponentFactory& operator=(CerealItemComponentFactory const&);
+    CerealItemComponentFactory(CerealItemComponentFactory const&);
+    CerealItemComponentFactory();
 
 public:
     // NOLINTBEGIN
@@ -103,13 +103,13 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mDeprecatedComponents() { return mDeprecatedComponents; }
+    auto& $mDeprecatedComponents() { return mDeprecatedComponents; }
 
-    inline auto& $mItemContext() { return mItemContext; }
+    auto& $mItemContext() { return mItemContext; }
 
-    inline auto& $mRegisteredComponents() { return mRegisteredComponents; }
+    auto& $mRegisteredComponents() { return mRegisteredComponents; }
 
-    inline auto& $mReleasedMinFormatVersionForAnyComponent() { return mReleasedMinFormatVersionForAnyComponent; }
+    auto& $mReleasedMinFormatVersionForAnyComponent() { return mReleasedMinFormatVersionForAnyComponent; }
 
     // NOLINTEND
 };

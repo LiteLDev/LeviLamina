@@ -9,8 +9,8 @@
 class MaterialReducerContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // prevent constructor by default
-    MaterialReducerContainerScreenValidator& operator=(MaterialReducerContainerScreenValidator const&) = delete;
-    MaterialReducerContainerScreenValidator(MaterialReducerContainerScreenValidator const&)            = delete;
+    MaterialReducerContainerScreenValidator& operator=(MaterialReducerContainerScreenValidator const&);
+    MaterialReducerContainerScreenValidator(MaterialReducerContainerScreenValidator const&);
 
 public:
     // NOLINTBEGIN

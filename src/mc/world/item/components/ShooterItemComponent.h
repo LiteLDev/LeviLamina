@@ -14,9 +14,9 @@ public:
     class DrawDuration {
     public:
         // prevent constructor by default
-        DrawDuration& operator=(DrawDuration const&) = delete;
-        DrawDuration(DrawDuration const&)            = delete;
-        DrawDuration()                               = delete;
+        DrawDuration& operator=(DrawDuration const&);
+        DrawDuration(DrawDuration const&);
+        DrawDuration();
 
     public:
         // NOLINTBEGIN
@@ -29,8 +29,8 @@ public:
     struct ShooterAmmunitionEntry {
     public:
         // prevent constructor by default
-        ShooterAmmunitionEntry(ShooterAmmunitionEntry const&) = delete;
-        ShooterAmmunitionEntry()                              = delete;
+        ShooterAmmunitionEntry(ShooterAmmunitionEntry const&);
+        ShooterAmmunitionEntry();
 
     public:
         // NOLINTBEGIN
@@ -53,9 +53,9 @@ public:
 
 public:
     // prevent constructor by default
-    ShooterItemComponent& operator=(ShooterItemComponent const&) = delete;
-    ShooterItemComponent(ShooterItemComponent const&)            = delete;
-    ShooterItemComponent()                                       = delete;
+    ShooterItemComponent& operator=(ShooterItemComponent const&);
+    ShooterItemComponent(ShooterItemComponent const&);
+    ShooterItemComponent();
 
 public:
     // NOLINTBEGIN

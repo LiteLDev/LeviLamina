@@ -5,8 +5,8 @@
 struct ComponentInfo {
 public:
     // prevent constructor by default
-    ComponentInfo(ComponentInfo const&) = delete;
-    ComponentInfo()                     = delete;
+    ComponentInfo(ComponentInfo const&);
+    ComponentInfo();
 
 public:
     // NOLINTBEGIN

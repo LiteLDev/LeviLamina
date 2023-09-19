@@ -10,9 +10,9 @@
 class LiquidSplashSystem {
 public:
     // prevent constructor by default
-    LiquidSplashSystem& operator=(LiquidSplashSystem const&) = delete;
-    LiquidSplashSystem(LiquidSplashSystem const&)            = delete;
-    LiquidSplashSystem()                                     = delete;
+    LiquidSplashSystem& operator=(LiquidSplashSystem const&);
+    LiquidSplashSystem(LiquidSplashSystem const&);
+    LiquidSplashSystem();
 
 public:
     // NOLINTBEGIN

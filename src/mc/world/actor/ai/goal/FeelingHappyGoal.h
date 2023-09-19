@@ -24,9 +24,9 @@ public:
     class Definition : public ::BaseTimedActorFlagDefinition {
     public:
         // prevent constructor by default
-        Definition& operator=(Definition const&) = delete;
-        Definition(Definition const&)            = delete;
-        Definition()                             = delete;
+        Definition& operator=(Definition const&);
+        Definition(Definition const&);
+        Definition();
 
     public:
         // NOLINTBEGIN
@@ -43,9 +43,9 @@ public:
 
 public:
     // prevent constructor by default
-    FeelingHappyGoal& operator=(FeelingHappyGoal const&) = delete;
-    FeelingHappyGoal(FeelingHappyGoal const&)            = delete;
-    FeelingHappyGoal()                                   = delete;
+    FeelingHappyGoal& operator=(FeelingHappyGoal const&);
+    FeelingHappyGoal(FeelingHappyGoal const&);
+    FeelingHappyGoal();
 
 public:
     // NOLINTBEGIN
@@ -53,7 +53,7 @@ public:
     virtual void __unk_vfn_0();
 
     // symbol: ??0FeelingHappyGoal@@QEAA@AEAVMob@@@Z
-    MCAPI FeelingHappyGoal(class Mob&);
+    MCAPI explicit FeelingHappyGoal(class Mob&);
 
     // NOLINTEND
 };

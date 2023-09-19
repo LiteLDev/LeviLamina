@@ -8,7 +8,7 @@
 class MerchantRecipe {
 public:
     // prevent constructor by default
-    MerchantRecipe() = delete;
+    MerchantRecipe();
 
     class ItemInstance                        mBuyA;             // this+0x0
     class ItemInstance                        mBuyB;             // this+0x88

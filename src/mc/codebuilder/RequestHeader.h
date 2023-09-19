@@ -7,9 +7,9 @@ namespace CodeBuilder {
 struct RequestHeader {
 public:
     // prevent constructor by default
-    RequestHeader& operator=(RequestHeader const&) = delete;
-    RequestHeader(RequestHeader const&)            = delete;
-    RequestHeader()                                = delete;
+    RequestHeader& operator=(RequestHeader const&);
+    RequestHeader(RequestHeader const&);
+    RequestHeader();
 
 public:
     // NOLINTBEGIN

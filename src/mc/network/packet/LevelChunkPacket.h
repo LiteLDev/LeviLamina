@@ -27,8 +27,8 @@ public:
     std::vector<SubChunkMetadata> mCacheMetadata; // this+0x70
 
     // prevent constructor by default
-    LevelChunkPacket& operator=(LevelChunkPacket const&) = delete;
-    LevelChunkPacket(LevelChunkPacket const&)            = delete;
+    LevelChunkPacket& operator=(LevelChunkPacket const&);
+    LevelChunkPacket(LevelChunkPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class LevelSoundEventMap {
 public:
     // prevent constructor by default
-    LevelSoundEventMap& operator=(LevelSoundEventMap const&) = delete;
-    LevelSoundEventMap(LevelSoundEventMap const&)            = delete;
-    LevelSoundEventMap()                                     = delete;
+    LevelSoundEventMap& operator=(LevelSoundEventMap const&);
+    LevelSoundEventMap(LevelSoundEventMap const&);
+    LevelSoundEventMap();
 
 public:
     // NOLINTBEGIN
@@ -40,7 +40,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $map() { return map; }
+    auto& $map() { return map; }
 
     // NOLINTEND
 };

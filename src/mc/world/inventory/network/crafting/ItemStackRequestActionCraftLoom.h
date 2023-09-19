@@ -9,8 +9,8 @@
 class ItemStackRequestActionCraftLoom : public ::ItemStackRequestActionCraftBase {
 public:
     // prevent constructor by default
-    ItemStackRequestActionCraftLoom& operator=(ItemStackRequestActionCraftLoom const&) = delete;
-    ItemStackRequestActionCraftLoom(ItemStackRequestActionCraftLoom const&)            = delete;
+    ItemStackRequestActionCraftLoom& operator=(ItemStackRequestActionCraftLoom const&);
+    ItemStackRequestActionCraftLoom(ItemStackRequestActionCraftLoom const&);
 
 public:
     // NOLINTBEGIN

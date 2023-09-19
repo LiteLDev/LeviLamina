@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class LookAtBlockDefinition : public ::BehaviorDefinition {
 public:
     // prevent constructor by default
-    LookAtBlockDefinition& operator=(LookAtBlockDefinition const&) = delete;
-    LookAtBlockDefinition(LookAtBlockDefinition const&)            = delete;
-    LookAtBlockDefinition()                                        = delete;
+    LookAtBlockDefinition& operator=(LookAtBlockDefinition const&);
+    LookAtBlockDefinition(LookAtBlockDefinition const&);
+    LookAtBlockDefinition();
 
 public:
     // NOLINTBEGIN

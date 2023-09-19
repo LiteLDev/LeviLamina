@@ -5,9 +5,9 @@
 class PetSleepWithOwnerState {
 public:
     // prevent constructor by default
-    PetSleepWithOwnerState& operator=(PetSleepWithOwnerState const&) = delete;
-    PetSleepWithOwnerState(PetSleepWithOwnerState const&)            = delete;
-    PetSleepWithOwnerState()                                         = delete;
+    PetSleepWithOwnerState& operator=(PetSleepWithOwnerState const&);
+    PetSleepWithOwnerState(PetSleepWithOwnerState const&);
+    PetSleepWithOwnerState();
 
 public:
     // NOLINTBEGIN

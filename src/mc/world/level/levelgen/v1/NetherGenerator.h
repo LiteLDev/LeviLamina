@@ -17,16 +17,16 @@ public:
     struct ThreadData {
     public:
         // prevent constructor by default
-        ThreadData& operator=(ThreadData const&) = delete;
-        ThreadData(ThreadData const&)            = delete;
-        ThreadData()                             = delete;
+        ThreadData& operator=(ThreadData const&);
+        ThreadData(ThreadData const&);
+        ThreadData();
     };
 
 public:
     // prevent constructor by default
-    NetherGenerator& operator=(NetherGenerator const&) = delete;
-    NetherGenerator(NetherGenerator const&)            = delete;
-    NetherGenerator()                                  = delete;
+    NetherGenerator& operator=(NetherGenerator const&);
+    NetherGenerator(NetherGenerator const&);
+    NetherGenerator();
 
 public:
     // NOLINTBEGIN

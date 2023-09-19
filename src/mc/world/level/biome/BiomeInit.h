@@ -16,9 +16,9 @@ namespace OperationNodeFilters {
 class BiomeInit {
 public:
     // prevent constructor by default
-    BiomeInit& operator=(BiomeInit const&) = delete;
-    BiomeInit(BiomeInit const&)            = delete;
-    BiomeInit()                            = delete;
+    BiomeInit& operator=(BiomeInit const&);
+    BiomeInit(BiomeInit const&);
+    BiomeInit();
 
 public:
     // NOLINTBEGIN

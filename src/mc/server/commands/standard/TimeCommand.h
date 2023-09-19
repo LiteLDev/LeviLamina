@@ -8,9 +8,9 @@
 class TimeCommand : public ::Command {
 public:
     // prevent constructor by default
-    TimeCommand& operator=(TimeCommand const&) = delete;
-    TimeCommand(TimeCommand const&)            = delete;
-    TimeCommand()                              = delete;
+    TimeCommand& operator=(TimeCommand const&);
+    TimeCommand(TimeCommand const&);
+    TimeCommand();
 
 public:
     // NOLINTBEGIN

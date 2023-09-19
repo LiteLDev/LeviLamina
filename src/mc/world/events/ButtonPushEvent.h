@@ -5,9 +5,9 @@
 struct ButtonPushEvent {
 public:
     // prevent constructor by default
-    ButtonPushEvent& operator=(ButtonPushEvent const&) = delete;
-    ButtonPushEvent(ButtonPushEvent const&)            = delete;
-    ButtonPushEvent()                                  = delete;
+    ButtonPushEvent& operator=(ButtonPushEvent const&);
+    ButtonPushEvent(ButtonPushEvent const&);
+    ButtonPushEvent();
 
 public:
     // NOLINTBEGIN

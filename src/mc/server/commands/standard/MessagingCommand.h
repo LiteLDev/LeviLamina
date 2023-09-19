@@ -9,9 +9,9 @@
 class MessagingCommand : public ::ServerCommand {
 public:
     // prevent constructor by default
-    MessagingCommand& operator=(MessagingCommand const&) = delete;
-    MessagingCommand(MessagingCommand const&)            = delete;
-    MessagingCommand()                                   = delete;
+    MessagingCommand& operator=(MessagingCommand const&);
+    MessagingCommand(MessagingCommand const&);
+    MessagingCommand();
 
 public:
     // NOLINTBEGIN

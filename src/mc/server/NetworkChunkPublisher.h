@@ -22,9 +22,9 @@ public:
     }
 
     // prevent constructor by default
-    NetworkChunkPublisher& operator=(NetworkChunkPublisher const&) = delete;
-    NetworkChunkPublisher(NetworkChunkPublisher const&)            = delete;
-    NetworkChunkPublisher()                                        = delete;
+    NetworkChunkPublisher& operator=(NetworkChunkPublisher const&);
+    NetworkChunkPublisher(NetworkChunkPublisher const&);
+    NetworkChunkPublisher();
 
 public:
     // NOLINTBEGIN

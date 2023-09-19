@@ -8,7 +8,7 @@
 class RenderParams {
 public:
     // prevent constructor by default
-    RenderParams& operator=(RenderParams const&) = delete;
+    RenderParams& operator=(RenderParams const&);
 
 public:
     // NOLINTBEGIN

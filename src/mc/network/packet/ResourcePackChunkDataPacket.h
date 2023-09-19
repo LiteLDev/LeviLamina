@@ -15,8 +15,8 @@ public:
     std::vector<uchar> mData;         // this+0x60
 
     // prevent constructor by default
-    ResourcePackChunkDataPacket& operator=(ResourcePackChunkDataPacket const&) = delete;
-    ResourcePackChunkDataPacket(ResourcePackChunkDataPacket const&)            = delete;
+    ResourcePackChunkDataPacket& operator=(ResourcePackChunkDataPacket const&);
+    ResourcePackChunkDataPacket(ResourcePackChunkDataPacket const&);
 
 public:
     // NOLINTBEGIN

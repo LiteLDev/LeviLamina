@@ -5,8 +5,8 @@
 class DebugAssertException {
 public:
     // prevent constructor by default
-    DebugAssertException& operator=(DebugAssertException const&) = delete;
-    DebugAssertException()                                       = delete;
+    DebugAssertException& operator=(DebugAssertException const&);
+    DebugAssertException();
 
 public:
     // NOLINTBEGIN
@@ -37,7 +37,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $WHAT() { return WHAT; }
+    auto& $WHAT() { return WHAT; }
 
     // NOLINTEND
 };

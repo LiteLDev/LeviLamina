@@ -8,9 +8,9 @@
 class SmokerBlockActor : public ::FurnaceBlockActor {
 public:
     // prevent constructor by default
-    SmokerBlockActor& operator=(SmokerBlockActor const&) = delete;
-    SmokerBlockActor(SmokerBlockActor const&)            = delete;
-    SmokerBlockActor()                                   = delete;
+    SmokerBlockActor& operator=(SmokerBlockActor const&);
+    SmokerBlockActor(SmokerBlockActor const&);
+    SmokerBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -18,7 +18,7 @@ public:
     MCVAPI std::string getName() const;
 
     // symbol: ??0SmokerBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI SmokerBlockActor(class BlockPos const&);
+    MCAPI explicit SmokerBlockActor(class BlockPos const&);
 
     // NOLINTEND
 };

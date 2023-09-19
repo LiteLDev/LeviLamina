@@ -5,9 +5,9 @@
 class MobTravelPlayerOrLocalFilterSystem {
 public:
     // prevent constructor by default
-    MobTravelPlayerOrLocalFilterSystem& operator=(MobTravelPlayerOrLocalFilterSystem const&) = delete;
-    MobTravelPlayerOrLocalFilterSystem(MobTravelPlayerOrLocalFilterSystem const&)            = delete;
-    MobTravelPlayerOrLocalFilterSystem()                                                     = delete;
+    MobTravelPlayerOrLocalFilterSystem& operator=(MobTravelPlayerOrLocalFilterSystem const&);
+    MobTravelPlayerOrLocalFilterSystem(MobTravelPlayerOrLocalFilterSystem const&);
+    MobTravelPlayerOrLocalFilterSystem();
 
 public:
     // NOLINTBEGIN

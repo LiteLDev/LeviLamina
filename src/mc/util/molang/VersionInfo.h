@@ -7,9 +7,9 @@ namespace MolangVersionMap {
 class VersionInfo {
 public:
     // prevent constructor by default
-    VersionInfo& operator=(VersionInfo const&) = delete;
-    VersionInfo(VersionInfo const&)            = delete;
-    VersionInfo()                              = delete;
+    VersionInfo& operator=(VersionInfo const&);
+    VersionInfo(VersionInfo const&);
+    VersionInfo();
 
 public:
     // NOLINTBEGIN

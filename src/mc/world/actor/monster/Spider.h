@@ -30,9 +30,9 @@ public:
 
 public:
     // prevent constructor by default
-    Spider& operator=(Spider const&) = delete;
-    Spider(Spider const&)            = delete;
-    Spider()                         = delete;
+    Spider& operator=(Spider const&);
+    Spider(Spider const&);
+    Spider();
 
 public:
     // NOLINTBEGIN

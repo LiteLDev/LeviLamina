@@ -5,9 +5,9 @@
 class BeaconBlockActor {
 public:
     // prevent constructor by default
-    BeaconBlockActor& operator=(BeaconBlockActor const&) = delete;
-    BeaconBlockActor(BeaconBlockActor const&)            = delete;
-    BeaconBlockActor()                                   = delete;
+    BeaconBlockActor& operator=(BeaconBlockActor const&);
+    BeaconBlockActor(BeaconBlockActor const&);
+    BeaconBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -64,7 +64,7 @@ public:
     MCVAPI void tick(class BlockSource&);
 
     // symbol: ??0BeaconBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI BeaconBlockActor(class BlockPos const&);
+    MCAPI explicit BeaconBlockActor(class BlockPos const&);
 
     // symbol: ?checkShapeAndAchievement@BeaconBlockActor@@QEAAXAEAVBlockSource@@@Z
     MCAPI void checkShapeAndAchievement(class BlockSource&);

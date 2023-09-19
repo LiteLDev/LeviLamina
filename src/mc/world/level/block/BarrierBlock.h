@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class BarrierBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    BarrierBlock& operator=(BarrierBlock const&) = delete;
-    BarrierBlock(BarrierBlock const&)            = delete;
-    BarrierBlock()                               = delete;
+    BarrierBlock& operator=(BarrierBlock const&);
+    BarrierBlock(BarrierBlock const&);
+    BarrierBlock();
 
 public:
     // NOLINTBEGIN

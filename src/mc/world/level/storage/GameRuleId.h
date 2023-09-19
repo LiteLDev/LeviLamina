@@ -9,7 +9,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0GameRuleId@@QEAA@H@Z
-    MCAPI GameRuleId(int);
+    MCAPI explicit GameRuleId(int);
 
     // NOLINTEND
 };

@@ -15,8 +15,8 @@ namespace Core {
 class DiskAccessTracker {
 public:
     // prevent constructor by default
-    DiskAccessTracker& operator=(DiskAccessTracker const&) = delete;
-    DiskAccessTracker(DiskAccessTracker const&)            = delete;
+    DiskAccessTracker& operator=(DiskAccessTracker const&);
+    DiskAccessTracker(DiskAccessTracker const&);
 
 public:
     // NOLINTBEGIN

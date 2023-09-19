@@ -20,9 +20,9 @@ public:
     struct Error {
     public:
         // prevent constructor by default
-        Error& operator=(Error const&) = delete;
-        Error(Error const&)            = delete;
-        Error()                        = delete;
+        Error& operator=(Error const&);
+        Error(Error const&);
+        Error();
 
     public:
         // NOLINTBEGIN
@@ -35,9 +35,9 @@ public:
     struct Info {
     public:
         // prevent constructor by default
-        Info& operator=(Info const&) = delete;
-        Info(Info const&)            = delete;
-        Info()                       = delete;
+        Info& operator=(Info const&);
+        Info(Info const&);
+        Info();
 
     public:
         // NOLINTBEGIN
@@ -50,9 +50,9 @@ public:
     struct Warning {
     public:
         // prevent constructor by default
-        Warning& operator=(Warning const&) = delete;
-        Warning(Warning const&)            = delete;
-        Warning()                          = delete;
+        Warning& operator=(Warning const&);
+        Warning(Warning const&);
+        Warning();
 
     public:
         // NOLINTBEGIN
@@ -64,8 +64,8 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptPluginResult& operator=(ScriptPluginResult const&) = delete;
-    ScriptPluginResult()                                     = delete;
+    ScriptPluginResult& operator=(ScriptPluginResult const&);
+    ScriptPluginResult();
 
 public:
     // NOLINTBEGIN

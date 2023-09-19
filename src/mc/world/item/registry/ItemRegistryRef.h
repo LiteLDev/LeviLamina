@@ -22,14 +22,14 @@ public:
     class LockGuard {
     public:
         // prevent constructor by default
-        LockGuard& operator=(LockGuard const&) = delete;
-        LockGuard(LockGuard const&)            = delete;
-        LockGuard()                            = delete;
+        LockGuard& operator=(LockGuard const&);
+        LockGuard(LockGuard const&);
+        LockGuard();
 
     public:
         // NOLINTBEGIN
         // symbol: ??0LockGuard@ItemRegistryRef@@QEAA@V?$shared_ptr@Vmutex@std@@@std@@@Z
-        MCAPI LockGuard(std::shared_ptr<std::mutex>);
+        MCAPI explicit LockGuard(std::shared_ptr<std::mutex>);
 
         // symbol: ??1LockGuard@ItemRegistryRef@@QEAA@XZ
         MCAPI ~LockGuard();
@@ -39,8 +39,8 @@ public:
 
 public:
     // prevent constructor by default
-    ItemRegistryRef& operator=(ItemRegistryRef const&) = delete;
-    ItemRegistryRef()                                  = delete;
+    ItemRegistryRef& operator=(ItemRegistryRef const&);
+    ItemRegistryRef();
 
 public:
     // NOLINTBEGIN
@@ -220,7 +220,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mCombinedItemRegistryInstance() { return mCombinedItemRegistryInstance; }
+    auto& $mCombinedItemRegistryInstance() { return mCombinedItemRegistryInstance; }
 
     // NOLINTEND
 };

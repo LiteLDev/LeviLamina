@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class SoulSandBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    SoulSandBlock& operator=(SoulSandBlock const&) = delete;
-    SoulSandBlock(SoulSandBlock const&)            = delete;
-    SoulSandBlock()                                = delete;
+    SoulSandBlock& operator=(SoulSandBlock const&);
+    SoulSandBlock(SoulSandBlock const&);
+    SoulSandBlock();
 
 public:
     // NOLINTBEGIN
@@ -186,7 +186,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION() { return SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION; }
+    auto& $SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION() { return SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION; }
 
     // NOLINTEND
 };

@@ -5,9 +5,9 @@
 struct ActorHurtEvent {
 public:
     // prevent constructor by default
-    ActorHurtEvent& operator=(ActorHurtEvent const&) = delete;
-    ActorHurtEvent(ActorHurtEvent const&)            = delete;
-    ActorHurtEvent()                                 = delete;
+    ActorHurtEvent& operator=(ActorHurtEvent const&);
+    ActorHurtEvent(ActorHurtEvent const&);
+    ActorHurtEvent();
 
 public:
     // NOLINTBEGIN

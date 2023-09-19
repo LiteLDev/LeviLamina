@@ -5,7 +5,7 @@
 struct FeatureRefTraits {
 public:
     // prevent constructor by default
-    FeatureRefTraits& operator=(FeatureRefTraits const&) = delete;
-    FeatureRefTraits(FeatureRefTraits const&)            = delete;
-    FeatureRefTraits()                                   = delete;
+    FeatureRefTraits& operator=(FeatureRefTraits const&);
+    FeatureRefTraits(FeatureRefTraits const&);
+    FeatureRefTraits();
 };

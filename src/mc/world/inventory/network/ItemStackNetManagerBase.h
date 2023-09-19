@@ -10,9 +10,9 @@
 class ItemStackNetManagerBase {
 public:
     // prevent constructor by default
-    ItemStackNetManagerBase& operator=(ItemStackNetManagerBase const&) = delete;
-    ItemStackNetManagerBase(ItemStackNetManagerBase const&)            = delete;
-    ItemStackNetManagerBase()                                          = delete;
+    ItemStackNetManagerBase& operator=(ItemStackNetManagerBase const&);
+    ItemStackNetManagerBase(ItemStackNetManagerBase const&);
+    ItemStackNetManagerBase();
 
 public:
     // NOLINTBEGIN

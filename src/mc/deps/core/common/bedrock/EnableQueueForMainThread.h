@@ -10,9 +10,9 @@ namespace Bedrock::Threading {
 class EnableQueueForMainThread {
 public:
     // prevent constructor by default
-    EnableQueueForMainThread& operator=(EnableQueueForMainThread const&) = delete;
-    EnableQueueForMainThread(EnableQueueForMainThread const&)            = delete;
-    EnableQueueForMainThread()                                           = delete;
+    EnableQueueForMainThread& operator=(EnableQueueForMainThread const&);
+    EnableQueueForMainThread(EnableQueueForMainThread const&);
+    EnableQueueForMainThread();
 
 public:
     // NOLINTBEGIN
@@ -21,7 +21,7 @@ public:
 
     // symbol:
     // ??0EnableQueueForMainThread@Threading@Bedrock@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI EnableQueueForMainThread(std::string);
+    MCAPI explicit EnableQueueForMainThread(std::string);
 
     // NOLINTEND
 

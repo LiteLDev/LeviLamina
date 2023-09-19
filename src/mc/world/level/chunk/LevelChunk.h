@@ -51,7 +51,7 @@ public:
         MCAPI Neighbors();
 
         // symbol: ??0Neighbors@LevelChunk@@QEAA@AEAVStringByteInput@@@Z
-        MCAPI Neighbors(class StringByteInput&);
+        MCAPI explicit Neighbors(class StringByteInput&);
 
         // symbol: ?hasNeighbor@Neighbors@LevelChunk@@QEBA_NW4LevelChunkNeighbor@@@Z
         MCAPI bool hasNeighbor(::LevelChunkNeighbor) const;
@@ -73,9 +73,9 @@ public:
 
 public:
     // prevent constructor by default
-    LevelChunk& operator=(LevelChunk const&) = delete;
-    LevelChunk(LevelChunk const&)            = delete;
-    LevelChunk()                             = delete;
+    LevelChunk& operator=(LevelChunk const&);
+    LevelChunk(LevelChunk const&);
+    LevelChunk();
 
 public:
     // NOLINTBEGIN

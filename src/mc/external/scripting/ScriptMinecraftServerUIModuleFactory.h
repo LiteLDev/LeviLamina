@@ -16,8 +16,8 @@ namespace mce { class UUID; }
 class ScriptMinecraftServerUIModuleFactory {
 public:
     // prevent constructor by default
-    ScriptMinecraftServerUIModuleFactory& operator=(ScriptMinecraftServerUIModuleFactory const&) = delete;
-    ScriptMinecraftServerUIModuleFactory(ScriptMinecraftServerUIModuleFactory const&)            = delete;
+    ScriptMinecraftServerUIModuleFactory& operator=(ScriptMinecraftServerUIModuleFactory const&);
+    ScriptMinecraftServerUIModuleFactory(ScriptMinecraftServerUIModuleFactory const&);
 
 public:
     // NOLINTBEGIN
@@ -85,11 +85,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $LegacyModuleName() { return LegacyModuleName; }
+    auto& $LegacyModuleName() { return LegacyModuleName; }
 
-    inline auto& $ModuleName() { return ModuleName; }
+    auto& $ModuleName() { return ModuleName; }
 
-    inline auto& $ModuleUUID() { return ModuleUUID; }
+    auto& $ModuleUUID() { return ModuleUUID; }
 
     // NOLINTEND
 };

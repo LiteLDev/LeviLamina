@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class ActorIsColorTest : public ::SimpleIntFilterTest {
 public:
     // prevent constructor by default
-    ActorIsColorTest& operator=(ActorIsColorTest const&) = delete;
-    ActorIsColorTest(ActorIsColorTest const&)            = delete;
-    ActorIsColorTest()                                   = delete;
+    ActorIsColorTest& operator=(ActorIsColorTest const&);
+    ActorIsColorTest(ActorIsColorTest const&);
+    ActorIsColorTest();
 
 public:
     // NOLINTBEGIN

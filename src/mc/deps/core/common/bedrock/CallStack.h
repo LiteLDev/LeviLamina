@@ -20,9 +20,9 @@ public:
     struct Context {
     public:
         // prevent constructor by default
-        Context& operator=(Context const&) = delete;
-        Context(Context const&)            = delete;
-        Context()                          = delete;
+        Context& operator=(Context const&);
+        Context(Context const&);
+        Context();
 
     public:
         // NOLINTBEGIN
@@ -39,15 +39,21 @@ public:
     struct Frame {
     public:
         // prevent constructor by default
-        Frame& operator=(Frame const&) = delete;
-        Frame(Frame const&)            = delete;
-        Frame()                        = delete;
+        Frame& operator=(Frame const&);
+        Frame(Frame const&);
+        Frame();
     };
 
     struct FrameWithContext {
     public:
         uchar filler[80];
         FrameWithContext() = delete;
+=======
+        // prevent constructor by default
+        FrameWithContext& operator=(FrameWithContext const&);
+        FrameWithContext(FrameWithContext const&);
+        FrameWithContext();
+>>>>>>> upstream/main
 
     public:
         // NOLINTBEGIN
@@ -62,12 +68,13 @@ public:
     };
 
 public:
+<<<<<<< HEAD
     std::vector<Bedrock::CallStack::FrameWithContext> vector;
 
 public:
     // NOLINTBEGIN
     // symbol: ??0CallStack@Bedrock@@QEAA@$$QEAUFrameWithContext@01@@Z
-    MCAPI CallStack(struct Bedrock::CallStack::FrameWithContext&&);
+    MCAPI explicit CallStack(struct Bedrock::CallStack::FrameWithContext&&);
 
     // symbol: ??1CallStack@Bedrock@@QEAA@XZ
     MCAPI ~CallStack();

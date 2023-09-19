@@ -8,9 +8,9 @@
 class LevelEntityContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    LevelEntityContainerValidation& operator=(LevelEntityContainerValidation const&) = delete;
-    LevelEntityContainerValidation(LevelEntityContainerValidation const&)            = delete;
-    LevelEntityContainerValidation()                                                 = delete;
+    LevelEntityContainerValidation& operator=(LevelEntityContainerValidation const&);
+    LevelEntityContainerValidation(LevelEntityContainerValidation const&);
+    LevelEntityContainerValidation();
 
 public:
     // NOLINTBEGIN

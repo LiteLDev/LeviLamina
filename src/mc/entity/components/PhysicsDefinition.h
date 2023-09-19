@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class PhysicsDefinition {
 public:
     // prevent constructor by default
-    PhysicsDefinition& operator=(PhysicsDefinition const&) = delete;
-    PhysicsDefinition(PhysicsDefinition const&)            = delete;
+    PhysicsDefinition& operator=(PhysicsDefinition const&);
+    PhysicsDefinition(PhysicsDefinition const&);
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class RotateState : public ::PetSleepWithOwnerState {
 public:
     // prevent constructor by default
-    RotateState& operator=(RotateState const&) = delete;
-    RotateState(RotateState const&)            = delete;
-    RotateState()                              = delete;
+    RotateState& operator=(RotateState const&);
+    RotateState(RotateState const&);
+    RotateState();
 
 public:
     // NOLINTBEGIN

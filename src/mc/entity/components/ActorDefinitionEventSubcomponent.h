@@ -13,8 +13,8 @@ namespace Json { class Value; }
 class ActorDefinitionEventSubcomponent : public ::OnHitSubcomponent {
 public:
     // prevent constructor by default
-    ActorDefinitionEventSubcomponent& operator=(ActorDefinitionEventSubcomponent const&) = delete;
-    ActorDefinitionEventSubcomponent(ActorDefinitionEventSubcomponent const&)            = delete;
+    ActorDefinitionEventSubcomponent& operator=(ActorDefinitionEventSubcomponent const&);
+    ActorDefinitionEventSubcomponent(ActorDefinitionEventSubcomponent const&);
 
 public:
     // NOLINTBEGIN

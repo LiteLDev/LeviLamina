@@ -5,9 +5,9 @@
 struct NamedMolangScript {
 public:
     // prevent constructor by default
-    NamedMolangScript& operator=(NamedMolangScript const&) = delete;
-    NamedMolangScript(NamedMolangScript const&)            = delete;
-    NamedMolangScript()                                    = delete;
+    NamedMolangScript& operator=(NamedMolangScript const&);
+    NamedMolangScript(NamedMolangScript const&);
+    NamedMolangScript();
 
 public:
     // NOLINTBEGIN

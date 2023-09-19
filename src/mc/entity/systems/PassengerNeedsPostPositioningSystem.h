@@ -12,9 +12,9 @@
 class PassengerNeedsPostPositioningSystem {
 public:
     // prevent constructor by default
-    PassengerNeedsPostPositioningSystem& operator=(PassengerNeedsPostPositioningSystem const&) = delete;
-    PassengerNeedsPostPositioningSystem(PassengerNeedsPostPositioningSystem const&)            = delete;
-    PassengerNeedsPostPositioningSystem()                                                      = delete;
+    PassengerNeedsPostPositioningSystem& operator=(PassengerNeedsPostPositioningSystem const&);
+    PassengerNeedsPostPositioningSystem(PassengerNeedsPostPositioningSystem const&);
+    PassengerNeedsPostPositioningSystem();
 
 public:
     // NOLINTBEGIN

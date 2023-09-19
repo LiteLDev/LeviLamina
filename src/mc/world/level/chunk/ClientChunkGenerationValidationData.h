@@ -5,9 +5,9 @@
 struct ClientChunkGenerationValidationData {
 public:
     // prevent constructor by default
-    ClientChunkGenerationValidationData& operator=(ClientChunkGenerationValidationData const&) = delete;
-    ClientChunkGenerationValidationData(ClientChunkGenerationValidationData const&)            = delete;
-    ClientChunkGenerationValidationData()                                                      = delete;
+    ClientChunkGenerationValidationData& operator=(ClientChunkGenerationValidationData const&);
+    ClientChunkGenerationValidationData(ClientChunkGenerationValidationData const&);
+    ClientChunkGenerationValidationData();
 
 public:
     // NOLINTBEGIN

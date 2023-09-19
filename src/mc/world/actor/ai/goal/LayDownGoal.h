@@ -9,9 +9,9 @@
 class LayDownGoal : public ::Goal {
 public:
     // prevent constructor by default
-    LayDownGoal& operator=(LayDownGoal const&) = delete;
-    LayDownGoal(LayDownGoal const&)            = delete;
-    LayDownGoal()                              = delete;
+    LayDownGoal& operator=(LayDownGoal const&);
+    LayDownGoal(LayDownGoal const&);
+    LayDownGoal();
 
 public:
     // NOLINTBEGIN

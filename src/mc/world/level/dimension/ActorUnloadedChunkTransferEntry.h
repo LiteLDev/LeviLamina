@@ -5,7 +5,7 @@
 struct ActorUnloadedChunkTransferEntry {
 public:
     // prevent constructor by default
-    ActorUnloadedChunkTransferEntry& operator=(ActorUnloadedChunkTransferEntry const&) = delete;
-    ActorUnloadedChunkTransferEntry(ActorUnloadedChunkTransferEntry const&)            = delete;
-    ActorUnloadedChunkTransferEntry()                                                  = delete;
+    ActorUnloadedChunkTransferEntry& operator=(ActorUnloadedChunkTransferEntry const&);
+    ActorUnloadedChunkTransferEntry(ActorUnloadedChunkTransferEntry const&);
+    ActorUnloadedChunkTransferEntry();
 };

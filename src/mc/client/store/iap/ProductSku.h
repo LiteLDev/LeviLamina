@@ -5,7 +5,7 @@
 struct ProductSku {
 public:
     // prevent constructor by default
-    ProductSku& operator=(ProductSku const&) = delete;
-    ProductSku(ProductSku const&)            = delete;
-    ProductSku()                             = delete;
+    ProductSku& operator=(ProductSku const&);
+    ProductSku(ProductSku const&);
+    ProductSku();
 };

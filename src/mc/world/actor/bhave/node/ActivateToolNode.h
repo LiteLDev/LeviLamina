@@ -9,8 +9,8 @@
 class ActivateToolNode : public ::BehaviorNode {
 public:
     // prevent constructor by default
-    ActivateToolNode& operator=(ActivateToolNode const&) = delete;
-    ActivateToolNode(ActivateToolNode const&)            = delete;
+    ActivateToolNode& operator=(ActivateToolNode const&);
+    ActivateToolNode(ActivateToolNode const&);
 
 public:
     // NOLINTBEGIN

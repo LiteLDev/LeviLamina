@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class DelayedAttackDefinition : public ::MeleeAttackDefinition {
 public:
     // prevent constructor by default
-    DelayedAttackDefinition& operator=(DelayedAttackDefinition const&) = delete;
-    DelayedAttackDefinition(DelayedAttackDefinition const&)            = delete;
+    DelayedAttackDefinition& operator=(DelayedAttackDefinition const&);
+    DelayedAttackDefinition(DelayedAttackDefinition const&);
 
 public:
     // NOLINTBEGIN

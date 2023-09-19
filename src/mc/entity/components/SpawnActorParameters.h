@@ -5,7 +5,7 @@
 struct SpawnActorParameters {
 public:
     // prevent constructor by default
-    SpawnActorParameters& operator=(SpawnActorParameters const&) = delete;
+    SpawnActorParameters& operator=(SpawnActorParameters const&);
 
 public:
     // NOLINTBEGIN

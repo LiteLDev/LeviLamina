@@ -7,9 +7,9 @@ namespace Realms {
 struct RealmId {
 public:
     // prevent constructor by default
-    RealmId& operator=(RealmId const&) = delete;
-    RealmId(RealmId const&)            = delete;
-    RealmId()                          = delete;
+    RealmId& operator=(RealmId const&);
+    RealmId(RealmId const&);
+    RealmId();
 };
 
 }; // namespace Realms

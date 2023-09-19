@@ -9,9 +9,9 @@
 class MoveToLavaGoal : public ::MoveToLiquidGoal {
 public:
     // prevent constructor by default
-    MoveToLavaGoal& operator=(MoveToLavaGoal const&) = delete;
-    MoveToLavaGoal(MoveToLavaGoal const&)            = delete;
-    MoveToLavaGoal()                                 = delete;
+    MoveToLavaGoal& operator=(MoveToLavaGoal const&);
+    MoveToLavaGoal(MoveToLavaGoal const&);
+    MoveToLavaGoal();
 
 public:
     // NOLINTBEGIN

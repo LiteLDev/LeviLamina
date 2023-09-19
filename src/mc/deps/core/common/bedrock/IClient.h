@@ -15,9 +15,9 @@ namespace CodeBuilder {
 class IClient : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    IClient& operator=(IClient const&) = delete;
-    IClient(IClient const&)            = delete;
-    IClient()                          = delete;
+    IClient& operator=(IClient const&);
+    IClient(IClient const&);
+    IClient();
 
 public:
     // NOLINTBEGIN

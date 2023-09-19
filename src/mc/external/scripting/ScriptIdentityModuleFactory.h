@@ -10,9 +10,9 @@ namespace mce { class UUID; }
 class ScriptIdentityModuleFactory {
 public:
     // prevent constructor by default
-    ScriptIdentityModuleFactory& operator=(ScriptIdentityModuleFactory const&) = delete;
-    ScriptIdentityModuleFactory(ScriptIdentityModuleFactory const&)            = delete;
-    ScriptIdentityModuleFactory()                                              = delete;
+    ScriptIdentityModuleFactory& operator=(ScriptIdentityModuleFactory const&);
+    ScriptIdentityModuleFactory(ScriptIdentityModuleFactory const&);
+    ScriptIdentityModuleFactory();
 
 private:
     // NOLINTBEGIN
@@ -27,9 +27,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $ModuleName() { return ModuleName; }
+    auto& $ModuleName() { return ModuleName; }
 
-    inline auto& $ModuleUUID() { return ModuleUUID; }
+    auto& $ModuleUUID() { return ModuleUUID; }
 
     // NOLINTEND
 };

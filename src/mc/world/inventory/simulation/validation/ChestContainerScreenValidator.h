@@ -9,8 +9,8 @@
 class ChestContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // prevent constructor by default
-    ChestContainerScreenValidator& operator=(ChestContainerScreenValidator const&) = delete;
-    ChestContainerScreenValidator(ChestContainerScreenValidator const&)            = delete;
+    ChestContainerScreenValidator& operator=(ChestContainerScreenValidator const&);
+    ChestContainerScreenValidator(ChestContainerScreenValidator const&);
 
 public:
     // NOLINTBEGIN

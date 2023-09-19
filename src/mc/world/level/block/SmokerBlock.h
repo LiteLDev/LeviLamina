@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class SmokerBlock : public ::FurnaceBlock {
 public:
     // prevent constructor by default
-    SmokerBlock& operator=(SmokerBlock const&) = delete;
-    SmokerBlock(SmokerBlock const&)            = delete;
-    SmokerBlock()                              = delete;
+    SmokerBlock& operator=(SmokerBlock const&);
+    SmokerBlock(SmokerBlock const&);
+    SmokerBlock();
 
 public:
     // NOLINTBEGIN

@@ -13,8 +13,8 @@ public:
     std::string mContent; // this+0x50
 
     // prevent constructor by default
-    ToastRequestPacket& operator=(ToastRequestPacket const&) = delete;
-    ToastRequestPacket(ToastRequestPacket const&)            = delete;
+    ToastRequestPacket& operator=(ToastRequestPacket const&);
+    ToastRequestPacket(ToastRequestPacket const&);
 
 public:
     // NOLINTBEGIN

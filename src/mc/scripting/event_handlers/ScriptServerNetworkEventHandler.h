@@ -17,9 +17,9 @@ namespace Scripting { class WeakLifetimeScope; }
 class ScriptServerNetworkEventHandler {
 public:
     // prevent constructor by default
-    ScriptServerNetworkEventHandler& operator=(ScriptServerNetworkEventHandler const&) = delete;
-    ScriptServerNetworkEventHandler(ScriptServerNetworkEventHandler const&)            = delete;
-    ScriptServerNetworkEventHandler()                                                  = delete;
+    ScriptServerNetworkEventHandler& operator=(ScriptServerNetworkEventHandler const&);
+    ScriptServerNetworkEventHandler(ScriptServerNetworkEventHandler const&);
+    ScriptServerNetworkEventHandler();
 
 public:
     // NOLINTBEGIN

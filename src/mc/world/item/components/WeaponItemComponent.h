@@ -5,9 +5,9 @@
 class WeaponItemComponent {
 public:
     // prevent constructor by default
-    WeaponItemComponent& operator=(WeaponItemComponent const&) = delete;
-    WeaponItemComponent(WeaponItemComponent const&)            = delete;
-    WeaponItemComponent()                                      = delete;
+    WeaponItemComponent& operator=(WeaponItemComponent const&);
+    WeaponItemComponent(WeaponItemComponent const&);
+    WeaponItemComponent();
 
 public:
     // NOLINTBEGIN

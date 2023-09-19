@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class FilterTestTemperatureValue : public ::SimpleFloatFilterTest {
 public:
     // prevent constructor by default
-    FilterTestTemperatureValue& operator=(FilterTestTemperatureValue const&) = delete;
-    FilterTestTemperatureValue(FilterTestTemperatureValue const&)            = delete;
-    FilterTestTemperatureValue()                                             = delete;
+    FilterTestTemperatureValue& operator=(FilterTestTemperatureValue const&);
+    FilterTestTemperatureValue(FilterTestTemperatureValue const&);
+    FilterTestTemperatureValue();
 
 public:
     // NOLINTBEGIN

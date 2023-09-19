@@ -9,9 +9,9 @@
 class MineshaftCorridor : public ::MineshaftPiece {
 public:
     // prevent constructor by default
-    MineshaftCorridor& operator=(MineshaftCorridor const&) = delete;
-    MineshaftCorridor(MineshaftCorridor const&)            = delete;
-    MineshaftCorridor()                                    = delete;
+    MineshaftCorridor& operator=(MineshaftCorridor const&);
+    MineshaftCorridor(MineshaftCorridor const&);
+    MineshaftCorridor();
 
 public:
     // NOLINTBEGIN

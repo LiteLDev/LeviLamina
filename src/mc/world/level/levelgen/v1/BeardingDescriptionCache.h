@@ -5,9 +5,9 @@
 class BeardingDescriptionCache {
 public:
     // prevent constructor by default
-    BeardingDescriptionCache& operator=(BeardingDescriptionCache const&) = delete;
-    BeardingDescriptionCache(BeardingDescriptionCache const&)            = delete;
-    BeardingDescriptionCache()                                           = delete;
+    BeardingDescriptionCache& operator=(BeardingDescriptionCache const&);
+    BeardingDescriptionCache(BeardingDescriptionCache const&);
+    BeardingDescriptionCache();
 
 public:
     // NOLINTBEGIN

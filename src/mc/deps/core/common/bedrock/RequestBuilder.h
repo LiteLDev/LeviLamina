@@ -13,8 +13,8 @@ namespace Bedrock::Http {
 class RequestBuilder {
 public:
     // prevent constructor by default
-    RequestBuilder& operator=(RequestBuilder const&) = delete;
-    RequestBuilder(RequestBuilder const&)            = delete;
+    RequestBuilder& operator=(RequestBuilder const&);
+    RequestBuilder(RequestBuilder const&);
 
 public:
     // NOLINTBEGIN

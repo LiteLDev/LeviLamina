@@ -13,9 +13,9 @@
 class NewUniqueIdsDataLoadHelper : public ::DataLoadHelper {
 public:
     // prevent constructor by default
-    NewUniqueIdsDataLoadHelper& operator=(NewUniqueIdsDataLoadHelper const&) = delete;
-    NewUniqueIdsDataLoadHelper(NewUniqueIdsDataLoadHelper const&)            = delete;
-    NewUniqueIdsDataLoadHelper()                                             = delete;
+    NewUniqueIdsDataLoadHelper& operator=(NewUniqueIdsDataLoadHelper const&);
+    NewUniqueIdsDataLoadHelper(NewUniqueIdsDataLoadHelper const&);
+    NewUniqueIdsDataLoadHelper();
 
 public:
     // NOLINTBEGIN
@@ -115,7 +115,7 @@ public:
     MCVAPI ~NewUniqueIdsDataLoadHelper();
 
     // symbol: ??0NewUniqueIdsDataLoadHelper@@QEAA@AEAVILevel@@@Z
-    MCAPI NewUniqueIdsDataLoadHelper(class ILevel&);
+    MCAPI explicit NewUniqueIdsDataLoadHelper(class ILevel&);
 
     // NOLINTEND
 };

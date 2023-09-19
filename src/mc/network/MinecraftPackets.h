@@ -9,9 +9,9 @@
 class MinecraftPackets {
 public:
     // prevent constructor by default
-    MinecraftPackets& operator=(MinecraftPackets const&) = delete;
-    MinecraftPackets(MinecraftPackets const&)            = delete;
-    MinecraftPackets()                                   = delete;
+    MinecraftPackets& operator=(MinecraftPackets const&);
+    MinecraftPackets(MinecraftPackets const&);
+    MinecraftPackets();
 
 public:
     // NOLINTBEGIN

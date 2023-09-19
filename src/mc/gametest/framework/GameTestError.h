@@ -11,8 +11,8 @@ namespace gametest {
 struct GameTestError {
 public:
     // prevent constructor by default
-    GameTestError& operator=(GameTestError const&) = delete;
-    GameTestError()                                = delete;
+    GameTestError& operator=(GameTestError const&);
+    GameTestError();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class RailActivatorComponent {
 public:
     // prevent constructor by default
-    RailActivatorComponent& operator=(RailActivatorComponent const&) = delete;
-    RailActivatorComponent(RailActivatorComponent const&)            = delete;
-    RailActivatorComponent()                                         = delete;
+    RailActivatorComponent& operator=(RailActivatorComponent const&);
+    RailActivatorComponent(RailActivatorComponent const&);
+    RailActivatorComponent();
 
 public:
     // NOLINTBEGIN

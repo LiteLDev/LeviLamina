@@ -14,8 +14,8 @@ public:
     gametest::TestParameters mParams;   // this+0x50
 
     // prevent constructor by default
-    GameTestRequestPacket& operator=(GameTestRequestPacket const&) = delete;
-    GameTestRequestPacket(GameTestRequestPacket const&)            = delete;
+    GameTestRequestPacket& operator=(GameTestRequestPacket const&);
+    GameTestRequestPacket(GameTestRequestPacket const&);
 
 public:
     // NOLINTBEGIN

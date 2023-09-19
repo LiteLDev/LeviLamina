@@ -13,9 +13,9 @@ public:
     std::vector<ItemEnchantOption> mOptions; // this+0x30
 
     // prevent constructor by default
-    PlayerEnchantOptionsPacket& operator=(PlayerEnchantOptionsPacket const&) = delete;
-    PlayerEnchantOptionsPacket(PlayerEnchantOptionsPacket const&)            = delete;
-    PlayerEnchantOptionsPacket()                                             = delete;
+    PlayerEnchantOptionsPacket& operator=(PlayerEnchantOptionsPacket const&);
+    PlayerEnchantOptionsPacket(PlayerEnchantOptionsPacket const&);
+    PlayerEnchantOptionsPacket();
 
 public:
     // NOLINTBEGIN

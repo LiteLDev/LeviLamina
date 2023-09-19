@@ -22,9 +22,9 @@ public:
     std::unique_ptr<class Certificate> mCertificate; // this+0xD8
 
     // prevent constructor by default
-    UserEntityIdentifierComponent& operator=(UserEntityIdentifierComponent const&) = delete;
-    UserEntityIdentifierComponent(UserEntityIdentifierComponent const&)            = delete;
-    UserEntityIdentifierComponent()                                                = delete;
+    UserEntityIdentifierComponent& operator=(UserEntityIdentifierComponent const&);
+    UserEntityIdentifierComponent(UserEntityIdentifierComponent const&);
+    UserEntityIdentifierComponent();
 
 public:
     // NOLINTBEGIN

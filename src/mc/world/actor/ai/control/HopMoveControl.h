@@ -8,8 +8,8 @@
 class HopMoveControl : public ::MoveControl {
 public:
     // prevent constructor by default
-    HopMoveControl& operator=(HopMoveControl const&) = delete;
-    HopMoveControl(HopMoveControl const&)            = delete;
+    HopMoveControl& operator=(HopMoveControl const&);
+    HopMoveControl(HopMoveControl const&);
 
 public:
     // NOLINTBEGIN

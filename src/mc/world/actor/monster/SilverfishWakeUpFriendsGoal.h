@@ -9,9 +9,9 @@
 class SilverfishWakeUpFriendsGoal : public ::Goal {
 public:
     // prevent constructor by default
-    SilverfishWakeUpFriendsGoal& operator=(SilverfishWakeUpFriendsGoal const&) = delete;
-    SilverfishWakeUpFriendsGoal(SilverfishWakeUpFriendsGoal const&)            = delete;
-    SilverfishWakeUpFriendsGoal()                                              = delete;
+    SilverfishWakeUpFriendsGoal& operator=(SilverfishWakeUpFriendsGoal const&);
+    SilverfishWakeUpFriendsGoal(SilverfishWakeUpFriendsGoal const&);
+    SilverfishWakeUpFriendsGoal();
 
 public:
     // NOLINTBEGIN
@@ -29,7 +29,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0SilverfishWakeUpFriendsGoal@@QEAA@AEAVSilverfish@@@Z
-    MCAPI SilverfishWakeUpFriendsGoal(class Silverfish&);
+    MCAPI explicit SilverfishWakeUpFriendsGoal(class Silverfish&);
 
     // NOLINTEND
 };

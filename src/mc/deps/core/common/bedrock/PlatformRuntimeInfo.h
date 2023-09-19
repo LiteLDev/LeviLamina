@@ -7,8 +7,8 @@ namespace Bedrock {
 struct PlatformRuntimeInfo {
 public:
     // prevent constructor by default
-    PlatformRuntimeInfo& operator=(PlatformRuntimeInfo const&) = delete;
-    PlatformRuntimeInfo(PlatformRuntimeInfo const&)            = delete;
+    PlatformRuntimeInfo& operator=(PlatformRuntimeInfo const&);
+    PlatformRuntimeInfo(PlatformRuntimeInfo const&);
 
 public:
     // NOLINTBEGIN

@@ -9,14 +9,14 @@
 class ActorTickNeededComponent {
 public:
     // prevent constructor by default
-    ActorTickNeededComponent& operator=(ActorTickNeededComponent const&) = delete;
-    ActorTickNeededComponent(ActorTickNeededComponent const&)            = delete;
-    ActorTickNeededComponent()                                           = delete;
+    ActorTickNeededComponent& operator=(ActorTickNeededComponent const&);
+    ActorTickNeededComponent(ActorTickNeededComponent const&);
+    ActorTickNeededComponent();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ActorTickNeededComponent@@QEAA@AEAVBlockSource@@@Z
-    MCAPI ActorTickNeededComponent(class BlockSource&);
+    MCAPI explicit ActorTickNeededComponent(class BlockSource&);
 
     // symbol: ??0ActorTickNeededComponent@@QEAA@$$QEAV0@@Z
     MCAPI ActorTickNeededComponent(class ActorTickNeededComponent&&);

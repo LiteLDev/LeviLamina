@@ -10,9 +10,9 @@ namespace Json { class Value; }
 class RandomValueBounds {
 public:
     // prevent constructor by default
-    RandomValueBounds& operator=(RandomValueBounds const&) = delete;
-    RandomValueBounds(RandomValueBounds const&)            = delete;
-    RandomValueBounds()                                    = delete;
+    RandomValueBounds& operator=(RandomValueBounds const&);
+    RandomValueBounds(RandomValueBounds const&);
+    RandomValueBounds();
 
 public:
     // NOLINTBEGIN

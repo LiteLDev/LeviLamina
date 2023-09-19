@@ -5,8 +5,8 @@
 class PropertyGroupManager {
 public:
     // prevent constructor by default
-    PropertyGroupManager& operator=(PropertyGroupManager const&) = delete;
-    PropertyGroupManager(PropertyGroupManager const&)            = delete;
+    PropertyGroupManager& operator=(PropertyGroupManager const&);
+    PropertyGroupManager(PropertyGroupManager const&);
 
 public:
     // NOLINTBEGIN

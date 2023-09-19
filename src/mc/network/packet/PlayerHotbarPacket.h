@@ -16,8 +16,8 @@ public:
     ContainerID mContainerId;      // this+0x35
 
     // prevent constructor by default
-    PlayerHotbarPacket& operator=(PlayerHotbarPacket const&) = delete;
-    PlayerHotbarPacket(PlayerHotbarPacket const&)            = delete;
+    PlayerHotbarPacket& operator=(PlayerHotbarPacket const&);
+    PlayerHotbarPacket(PlayerHotbarPacket const&);
 
 public:
     // NOLINTBEGIN

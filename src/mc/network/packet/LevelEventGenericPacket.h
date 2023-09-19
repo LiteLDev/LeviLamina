@@ -15,8 +15,8 @@ public:
     std::unique_ptr<CompoundTag> mData;    // this+0x38
 
     // prevent constructor by default
-    LevelEventGenericPacket& operator=(LevelEventGenericPacket const&) = delete;
-    LevelEventGenericPacket(LevelEventGenericPacket const&)            = delete;
+    LevelEventGenericPacket& operator=(LevelEventGenericPacket const&);
+    LevelEventGenericPacket(LevelEventGenericPacket const&);
 
 public:
     // NOLINTBEGIN

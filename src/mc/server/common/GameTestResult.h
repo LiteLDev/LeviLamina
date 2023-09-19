@@ -5,7 +5,7 @@
 struct GameTestResult {
 public:
     // prevent constructor by default
-    GameTestResult() = delete;
+    GameTestResult();
 
 public:
     // NOLINTBEGIN

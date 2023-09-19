@@ -5,9 +5,9 @@
 class NetworkPacketEventCoordinator {
 public:
     // prevent constructor by default
-    NetworkPacketEventCoordinator& operator=(NetworkPacketEventCoordinator const&) = delete;
-    NetworkPacketEventCoordinator(NetworkPacketEventCoordinator const&)            = delete;
-    NetworkPacketEventCoordinator()                                                = delete;
+    NetworkPacketEventCoordinator& operator=(NetworkPacketEventCoordinator const&);
+    NetworkPacketEventCoordinator(NetworkPacketEventCoordinator const&);
+    NetworkPacketEventCoordinator();
 
 public:
     // NOLINTBEGIN

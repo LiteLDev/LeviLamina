@@ -7,9 +7,9 @@ namespace Bedrock::Threading {
 class AssignedThread {
 public:
     // prevent constructor by default
-    AssignedThread& operator=(AssignedThread const&) = delete;
-    AssignedThread(AssignedThread const&)            = delete;
-    AssignedThread()                                 = delete;
+    AssignedThread& operator=(AssignedThread const&);
+    AssignedThread(AssignedThread const&);
+    AssignedThread();
 
 public:
     // NOLINTBEGIN

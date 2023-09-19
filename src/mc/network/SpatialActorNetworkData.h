@@ -14,9 +14,9 @@ public:
     struct DebugSendRateModifiers {
     public:
         // prevent constructor by default
-        DebugSendRateModifiers& operator=(DebugSendRateModifiers const&) = delete;
-        DebugSendRateModifiers(DebugSendRateModifiers const&)            = delete;
-        DebugSendRateModifiers()                                         = delete;
+        DebugSendRateModifiers& operator=(DebugSendRateModifiers const&);
+        DebugSendRateModifiers(DebugSendRateModifiers const&);
+        DebugSendRateModifiers();
 
     public:
         // NOLINTBEGIN
@@ -44,9 +44,9 @@ public:
     struct DebugSpatialPacketModifiers {
     public:
         // prevent constructor by default
-        DebugSpatialPacketModifiers& operator=(DebugSpatialPacketModifiers const&) = delete;
-        DebugSpatialPacketModifiers(DebugSpatialPacketModifiers const&)            = delete;
-        DebugSpatialPacketModifiers()                                              = delete;
+        DebugSpatialPacketModifiers& operator=(DebugSpatialPacketModifiers const&);
+        DebugSpatialPacketModifiers(DebugSpatialPacketModifiers const&);
+        DebugSpatialPacketModifiers();
 
     public:
         // NOLINTBEGIN
@@ -58,14 +58,14 @@ public:
 
 public:
     // prevent constructor by default
-    SpatialActorNetworkData& operator=(SpatialActorNetworkData const&) = delete;
-    SpatialActorNetworkData(SpatialActorNetworkData const&)            = delete;
-    SpatialActorNetworkData()                                          = delete;
+    SpatialActorNetworkData& operator=(SpatialActorNetworkData const&);
+    SpatialActorNetworkData(SpatialActorNetworkData const&);
+    SpatialActorNetworkData();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0SpatialActorNetworkData@@QEAA@AEAVActor@@@Z
-    MCAPI SpatialActorNetworkData(class Actor&);
+    MCAPI explicit SpatialActorNetworkData(class Actor&);
 
     // symbol: ?enableAutoSend@SpatialActorNetworkData@@QEAAX_N@Z
     MCAPI void enableAutoSend(bool);
@@ -123,9 +123,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mDebugSendRateModifiers() { return mDebugSendRateModifiers; }
+    auto& $mDebugSendRateModifiers() { return mDebugSendRateModifiers; }
 
-    inline auto& $mDebugSpatialPacketModifiers() { return mDebugSpatialPacketModifiers; }
+    auto& $mDebugSpatialPacketModifiers() { return mDebugSpatialPacketModifiers; }
 
     // NOLINTEND
 };

@@ -11,9 +11,9 @@
 class OceanMixerOperationNode {
 public:
     // prevent constructor by default
-    OceanMixerOperationNode& operator=(OceanMixerOperationNode const&) = delete;
-    OceanMixerOperationNode(OceanMixerOperationNode const&)            = delete;
-    OceanMixerOperationNode()                                          = delete;
+    OceanMixerOperationNode& operator=(OceanMixerOperationNode const&);
+    OceanMixerOperationNode(OceanMixerOperationNode const&);
+    OceanMixerOperationNode();
 
 public:
     // NOLINTBEGIN

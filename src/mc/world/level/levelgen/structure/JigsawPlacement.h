@@ -9,9 +9,9 @@
 class JigsawPlacement {
 public:
     // prevent constructor by default
-    JigsawPlacement& operator=(JigsawPlacement const&) = delete;
-    JigsawPlacement(JigsawPlacement const&)            = delete;
-    JigsawPlacement()                                  = delete;
+    JigsawPlacement& operator=(JigsawPlacement const&);
+    JigsawPlacement(JigsawPlacement const&);
+    JigsawPlacement();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class MineshaftCrossing : public ::MineshaftPiece {
 public:
     // prevent constructor by default
-    MineshaftCrossing& operator=(MineshaftCrossing const&) = delete;
-    MineshaftCrossing(MineshaftCrossing const&)            = delete;
-    MineshaftCrossing()                                    = delete;
+    MineshaftCrossing& operator=(MineshaftCrossing const&);
+    MineshaftCrossing(MineshaftCrossing const&);
+    MineshaftCrossing();
 
 public:
     // NOLINTBEGIN

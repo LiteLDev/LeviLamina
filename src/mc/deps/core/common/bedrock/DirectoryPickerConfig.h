@@ -7,9 +7,9 @@ namespace Bedrock {
 class DirectoryPickerConfig {
 public:
     // prevent constructor by default
-    DirectoryPickerConfig& operator=(DirectoryPickerConfig const&) = delete;
-    DirectoryPickerConfig(DirectoryPickerConfig const&)            = delete;
-    DirectoryPickerConfig()                                        = delete;
+    DirectoryPickerConfig& operator=(DirectoryPickerConfig const&);
+    DirectoryPickerConfig(DirectoryPickerConfig const&);
+    DirectoryPickerConfig();
 };
 
 }; // namespace Bedrock

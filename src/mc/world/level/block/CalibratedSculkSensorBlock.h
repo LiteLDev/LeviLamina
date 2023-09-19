@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class CalibratedSculkSensorBlock : public ::SculkSensorBlock {
 public:
     // prevent constructor by default
-    CalibratedSculkSensorBlock& operator=(CalibratedSculkSensorBlock const&) = delete;
-    CalibratedSculkSensorBlock(CalibratedSculkSensorBlock const&)            = delete;
-    CalibratedSculkSensorBlock()                                             = delete;
+    CalibratedSculkSensorBlock& operator=(CalibratedSculkSensorBlock const&);
+    CalibratedSculkSensorBlock(CalibratedSculkSensorBlock const&);
+    CalibratedSculkSensorBlock();
 
 public:
     // NOLINTBEGIN

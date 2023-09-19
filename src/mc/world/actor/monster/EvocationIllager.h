@@ -26,9 +26,9 @@
 class EvocationIllager : public ::HumanoidMonster {
 public:
     // prevent constructor by default
-    EvocationIllager& operator=(EvocationIllager const&) = delete;
-    EvocationIllager(EvocationIllager const&)            = delete;
-    EvocationIllager()                                   = delete;
+    EvocationIllager& operator=(EvocationIllager const&);
+    EvocationIllager(EvocationIllager const&);
+    EvocationIllager();
 
 public:
     // NOLINTBEGIN

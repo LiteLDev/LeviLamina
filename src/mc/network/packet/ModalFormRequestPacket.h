@@ -13,8 +13,8 @@ public:
     std::string mFormJSON; // this+0x38
 
     // prevent constructor by default
-    ModalFormRequestPacket& operator=(ModalFormRequestPacket const&) = delete;
-    ModalFormRequestPacket(ModalFormRequestPacket const&)            = delete;
+    ModalFormRequestPacket& operator=(ModalFormRequestPacket const&);
+    ModalFormRequestPacket(ModalFormRequestPacket const&);
 
 public:
     // NOLINTBEGIN

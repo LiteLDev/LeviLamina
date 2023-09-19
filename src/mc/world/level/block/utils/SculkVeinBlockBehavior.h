@@ -8,9 +8,9 @@
 class SculkVeinBlockBehavior : public ::SculkBehavior {
 public:
     // prevent constructor by default
-    SculkVeinBlockBehavior& operator=(SculkVeinBlockBehavior const&) = delete;
-    SculkVeinBlockBehavior(SculkVeinBlockBehavior const&)            = delete;
-    SculkVeinBlockBehavior()                                         = delete;
+    SculkVeinBlockBehavior& operator=(SculkVeinBlockBehavior const&);
+    SculkVeinBlockBehavior(SculkVeinBlockBehavior const&);
+    SculkVeinBlockBehavior();
 
 public:
     // NOLINTBEGIN

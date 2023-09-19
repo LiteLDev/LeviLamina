@@ -5,9 +5,9 @@
 class DynamicProperties {
 public:
     // prevent constructor by default
-    DynamicProperties& operator=(DynamicProperties const&) = delete;
-    DynamicProperties(DynamicProperties const&)            = delete;
-    DynamicProperties()                                    = delete;
+    DynamicProperties& operator=(DynamicProperties const&);
+    DynamicProperties(DynamicProperties const&);
+    DynamicProperties();
 
 public:
     // NOLINTBEGIN

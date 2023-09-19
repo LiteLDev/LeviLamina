@@ -5,9 +5,9 @@
 class CrashDumpGameplayData {
 public:
     // prevent constructor by default
-    CrashDumpGameplayData& operator=(CrashDumpGameplayData const&) = delete;
-    CrashDumpGameplayData(CrashDumpGameplayData const&)            = delete;
-    CrashDumpGameplayData()                                        = delete;
+    CrashDumpGameplayData& operator=(CrashDumpGameplayData const&);
+    CrashDumpGameplayData(CrashDumpGameplayData const&);
+    CrashDumpGameplayData();
 
 public:
     // NOLINTBEGIN

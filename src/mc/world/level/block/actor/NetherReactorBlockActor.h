@@ -8,9 +8,9 @@
 class NetherReactorBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    NetherReactorBlockActor& operator=(NetherReactorBlockActor const&) = delete;
-    NetherReactorBlockActor(NetherReactorBlockActor const&)            = delete;
-    NetherReactorBlockActor()                                          = delete;
+    NetherReactorBlockActor& operator=(NetherReactorBlockActor const&);
+    NetherReactorBlockActor(NetherReactorBlockActor const&);
+    NetherReactorBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -54,7 +54,7 @@ public:
     virtual void __unk_vfn_39();
 
     // symbol: ??0NetherReactorBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI NetherReactorBlockActor(class BlockPos const&);
+    MCAPI explicit NetherReactorBlockActor(class BlockPos const&);
 
     // NOLINTEND
 };

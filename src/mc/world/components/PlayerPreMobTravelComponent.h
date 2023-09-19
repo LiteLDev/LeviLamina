@@ -5,7 +5,7 @@
 struct PlayerPreMobTravelComponent {
 public:
     // prevent constructor by default
-    PlayerPreMobTravelComponent& operator=(PlayerPreMobTravelComponent const&) = delete;
-    PlayerPreMobTravelComponent(PlayerPreMobTravelComponent const&)            = delete;
-    PlayerPreMobTravelComponent()                                              = delete;
+    PlayerPreMobTravelComponent& operator=(PlayerPreMobTravelComponent const&);
+    PlayerPreMobTravelComponent(PlayerPreMobTravelComponent const&);
+    PlayerPreMobTravelComponent();
 };

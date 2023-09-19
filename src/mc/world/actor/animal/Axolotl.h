@@ -26,9 +26,9 @@
 class Axolotl : public ::Animal {
 public:
     // prevent constructor by default
-    Axolotl& operator=(Axolotl const&) = delete;
-    Axolotl(Axolotl const&)            = delete;
-    Axolotl()                          = delete;
+    Axolotl& operator=(Axolotl const&);
+    Axolotl(Axolotl const&);
+    Axolotl();
 
 public:
     // NOLINTBEGIN

@@ -25,31 +25,31 @@ public:
     struct QueueEntry {
     public:
         // prevent constructor by default
-        QueueEntry& operator=(QueueEntry const&) = delete;
-        QueueEntry(QueueEntry const&)            = delete;
-        QueueEntry()                             = delete;
+        QueueEntry& operator=(QueueEntry const&);
+        QueueEntry(QueueEntry const&);
+        QueueEntry();
     };
 
     struct TerminationEntry {
     public:
         // prevent constructor by default
-        TerminationEntry& operator=(TerminationEntry const&) = delete;
-        TerminationEntry(TerminationEntry const&)            = delete;
-        TerminationEntry()                                   = delete;
+        TerminationEntry& operator=(TerminationEntry const&);
+        TerminationEntry(TerminationEntry const&);
+        TerminationEntry();
     };
 
     struct WaitRegistration {
     public:
         // prevent constructor by default
-        WaitRegistration& operator=(WaitRegistration const&) = delete;
-        WaitRegistration(WaitRegistration const&)            = delete;
-        WaitRegistration()                                   = delete;
+        WaitRegistration& operator=(WaitRegistration const&);
+        WaitRegistration(WaitRegistration const&);
+        WaitRegistration();
     };
 
 public:
     // prevent constructor by default
-    TaskQueuePortImpl& operator=(TaskQueuePortImpl const&) = delete;
-    TaskQueuePortImpl(TaskQueuePortImpl const&)            = delete;
+    TaskQueuePortImpl& operator=(TaskQueuePortImpl const&);
+    TaskQueuePortImpl(TaskQueuePortImpl const&);
 
 public:
     // NOLINTBEGIN

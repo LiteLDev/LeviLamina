@@ -10,9 +10,9 @@ namespace TreeHelper { struct TreeParams; }
 class MangroveTreeTrunk {
 public:
     // prevent constructor by default
-    MangroveTreeTrunk& operator=(MangroveTreeTrunk const&) = delete;
-    MangroveTreeTrunk(MangroveTreeTrunk const&)            = delete;
-    MangroveTreeTrunk()                                    = delete;
+    MangroveTreeTrunk& operator=(MangroveTreeTrunk const&);
+    MangroveTreeTrunk(MangroveTreeTrunk const&);
+    MangroveTreeTrunk();
 
 public:
     // NOLINTBEGIN

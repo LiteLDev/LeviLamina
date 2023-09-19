@@ -5,9 +5,9 @@
 class UpdateServerPlayerInputSystem {
 public:
     // prevent constructor by default
-    UpdateServerPlayerInputSystem& operator=(UpdateServerPlayerInputSystem const&) = delete;
-    UpdateServerPlayerInputSystem(UpdateServerPlayerInputSystem const&)            = delete;
-    UpdateServerPlayerInputSystem()                                                = delete;
+    UpdateServerPlayerInputSystem& operator=(UpdateServerPlayerInputSystem const&);
+    UpdateServerPlayerInputSystem(UpdateServerPlayerInputSystem const&);
+    UpdateServerPlayerInputSystem();
 
 public:
     // NOLINTBEGIN

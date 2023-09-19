@@ -17,9 +17,9 @@ namespace Json { class Value; }
 class CommunitySiftProcessor : public ::TextFilteringProcessor {
 public:
     // prevent constructor by default
-    CommunitySiftProcessor& operator=(CommunitySiftProcessor const&) = delete;
-    CommunitySiftProcessor(CommunitySiftProcessor const&)            = delete;
-    CommunitySiftProcessor()                                         = delete;
+    CommunitySiftProcessor& operator=(CommunitySiftProcessor const&);
+    CommunitySiftProcessor(CommunitySiftProcessor const&);
+    CommunitySiftProcessor();
 
 public:
     // NOLINTBEGIN

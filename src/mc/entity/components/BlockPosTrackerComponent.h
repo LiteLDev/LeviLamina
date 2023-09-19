@@ -5,9 +5,9 @@
 class BlockPosTrackerComponent {
 public:
     // prevent constructor by default
-    BlockPosTrackerComponent& operator=(BlockPosTrackerComponent const&) = delete;
-    BlockPosTrackerComponent(BlockPosTrackerComponent const&)            = delete;
-    BlockPosTrackerComponent()                                           = delete;
+    BlockPosTrackerComponent& operator=(BlockPosTrackerComponent const&);
+    BlockPosTrackerComponent(BlockPosTrackerComponent const&);
+    BlockPosTrackerComponent();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class ActorPostNormalTickSystem {
 public:
     // prevent constructor by default
-    ActorPostNormalTickSystem& operator=(ActorPostNormalTickSystem const&) = delete;
-    ActorPostNormalTickSystem(ActorPostNormalTickSystem const&)            = delete;
-    ActorPostNormalTickSystem()                                            = delete;
+    ActorPostNormalTickSystem& operator=(ActorPostNormalTickSystem const&);
+    ActorPostNormalTickSystem(ActorPostNormalTickSystem const&);
+    ActorPostNormalTickSystem();
 
 public:
     // NOLINTBEGIN

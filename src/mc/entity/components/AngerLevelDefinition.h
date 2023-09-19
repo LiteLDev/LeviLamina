@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class AngerLevelDefinition {
 public:
     // prevent constructor by default
-    AngerLevelDefinition& operator=(AngerLevelDefinition const&) = delete;
-    AngerLevelDefinition(AngerLevelDefinition const&)            = delete;
-    AngerLevelDefinition()                                       = delete;
+    AngerLevelDefinition& operator=(AngerLevelDefinition const&);
+    AngerLevelDefinition(AngerLevelDefinition const&);
+    AngerLevelDefinition();
 
 public:
     // NOLINTBEGIN

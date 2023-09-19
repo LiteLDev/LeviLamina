@@ -23,9 +23,9 @@ namespace ScriptModuleGameTest {
 class ScriptAsyncGameTestFunction : public ::ScriptModuleGameTest::BaseScriptGameTestFunction {
 public:
     // prevent constructor by default
-    ScriptAsyncGameTestFunction& operator=(ScriptAsyncGameTestFunction const&) = delete;
-    ScriptAsyncGameTestFunction(ScriptAsyncGameTestFunction const&)            = delete;
-    ScriptAsyncGameTestFunction()                                              = delete;
+    ScriptAsyncGameTestFunction& operator=(ScriptAsyncGameTestFunction const&);
+    ScriptAsyncGameTestFunction(ScriptAsyncGameTestFunction const&);
+    ScriptAsyncGameTestFunction();
 
 public:
     // NOLINTBEGIN

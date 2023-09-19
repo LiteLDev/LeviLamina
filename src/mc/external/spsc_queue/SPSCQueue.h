@@ -6,7 +6,7 @@ template <typename T0, int T1>
 struct SPSCQueue {
 public:
     // prevent constructor by default
-    SPSCQueue& operator=(SPSCQueue const&) = delete;
-    SPSCQueue(SPSCQueue const&)            = delete;
-    SPSCQueue()                            = delete;
+    SPSCQueue& operator=(SPSCQueue const&);
+    SPSCQueue(SPSCQueue const&);
+    SPSCQueue();
 };

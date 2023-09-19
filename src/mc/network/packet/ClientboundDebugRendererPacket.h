@@ -31,8 +31,8 @@ public:
     std::optional<ClientboundDebugRendererPacket::DebugMarkerData> mDebugMarkerData; // this+0x38
 
     // prevent constructor by default
-    ClientboundDebugRendererPacket& operator=(ClientboundDebugRendererPacket const&) = delete;
-    ClientboundDebugRendererPacket(ClientboundDebugRendererPacket const&)            = delete;
+    ClientboundDebugRendererPacket& operator=(ClientboundDebugRendererPacket const&);
+    ClientboundDebugRendererPacket(ClientboundDebugRendererPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -62,7 +62,7 @@ public:
     ClientboundDebugRendererPacket(std::string, class mce::Color const&, class Vec3 const&, std::chrono::milliseconds);
 
     // symbol: ??0ClientboundDebugRendererPacket@@QEAA@W4Type@0@@Z
-    MCAPI ClientboundDebugRendererPacket(::ClientboundDebugRendererPacket::Type);
+    MCAPI explicit ClientboundDebugRendererPacket(::ClientboundDebugRendererPacket::Type);
 
     // symbol: ??0ClientboundDebugRendererPacket@@QEAA@XZ
     MCAPI ClientboundDebugRendererPacket();

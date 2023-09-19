@@ -8,8 +8,8 @@
 class HardcodedSpawnAreaRegistry {
 public:
     // prevent constructor by default
-    HardcodedSpawnAreaRegistry& operator=(HardcodedSpawnAreaRegistry const&) = delete;
-    HardcodedSpawnAreaRegistry(HardcodedSpawnAreaRegistry const&)            = delete;
+    HardcodedSpawnAreaRegistry& operator=(HardcodedSpawnAreaRegistry const&);
+    HardcodedSpawnAreaRegistry(HardcodedSpawnAreaRegistry const&);
 
 public:
     // NOLINTBEGIN

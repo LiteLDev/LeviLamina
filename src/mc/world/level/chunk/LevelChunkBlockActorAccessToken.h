@@ -5,7 +5,7 @@
 class LevelChunkBlockActorAccessToken {
 public:
     // prevent constructor by default
-    LevelChunkBlockActorAccessToken& operator=(LevelChunkBlockActorAccessToken const&) = delete;
-    LevelChunkBlockActorAccessToken(LevelChunkBlockActorAccessToken const&)            = delete;
-    LevelChunkBlockActorAccessToken()                                                  = delete;
+    LevelChunkBlockActorAccessToken& operator=(LevelChunkBlockActorAccessToken const&);
+    LevelChunkBlockActorAccessToken(LevelChunkBlockActorAccessToken const&);
+    LevelChunkBlockActorAccessToken();
 };

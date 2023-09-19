@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class FlintAndSteelItem : public ::Item {
 public:
     // prevent constructor by default
-    FlintAndSteelItem& operator=(FlintAndSteelItem const&) = delete;
-    FlintAndSteelItem(FlintAndSteelItem const&)            = delete;
-    FlintAndSteelItem()                                    = delete;
+    FlintAndSteelItem& operator=(FlintAndSteelItem const&);
+    FlintAndSteelItem(FlintAndSteelItem const&);
+    FlintAndSteelItem();
 
 public:
     // NOLINTBEGIN

@@ -7,9 +7,9 @@ namespace AgentComponents::Actions {
 struct Drop {
 public:
     // prevent constructor by default
-    Drop& operator=(Drop const&) = delete;
-    Drop(Drop const&)            = delete;
-    Drop()                       = delete;
+    Drop& operator=(Drop const&);
+    Drop(Drop const&);
+    Drop();
 };
 
 }; // namespace AgentComponents::Actions

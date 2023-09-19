@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct FireImmuneDefinition {
 public:
     // prevent constructor by default
-    FireImmuneDefinition& operator=(FireImmuneDefinition const&) = delete;
-    FireImmuneDefinition(FireImmuneDefinition const&)            = delete;
-    FireImmuneDefinition()                                       = delete;
+    FireImmuneDefinition& operator=(FireImmuneDefinition const&);
+    FireImmuneDefinition(FireImmuneDefinition const&);
+    FireImmuneDefinition();
 
 public:
     // NOLINTBEGIN

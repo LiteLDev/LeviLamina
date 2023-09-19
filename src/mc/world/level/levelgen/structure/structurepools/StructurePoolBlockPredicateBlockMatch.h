@@ -8,9 +8,9 @@
 class StructurePoolBlockPredicateBlockMatch : public ::IStructurePoolBlockPredicate {
 public:
     // prevent constructor by default
-    StructurePoolBlockPredicateBlockMatch& operator=(StructurePoolBlockPredicateBlockMatch const&) = delete;
-    StructurePoolBlockPredicateBlockMatch(StructurePoolBlockPredicateBlockMatch const&)            = delete;
-    StructurePoolBlockPredicateBlockMatch()                                                        = delete;
+    StructurePoolBlockPredicateBlockMatch& operator=(StructurePoolBlockPredicateBlockMatch const&);
+    StructurePoolBlockPredicateBlockMatch(StructurePoolBlockPredicateBlockMatch const&);
+    StructurePoolBlockPredicateBlockMatch();
 
 public:
     // NOLINTBEGIN
@@ -28,10 +28,10 @@ public:
 
     // symbol:
     // ??0StructurePoolBlockPredicateBlockMatch@@QEAA@V?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@std@@@Z
-    MCAPI StructurePoolBlockPredicateBlockMatch(std::vector<class HashedString>);
+    MCAPI explicit StructurePoolBlockPredicateBlockMatch(std::vector<class HashedString>);
 
     // symbol: ??0StructurePoolBlockPredicateBlockMatch@@QEAA@AEBVBlock@@@Z
-    MCAPI StructurePoolBlockPredicateBlockMatch(class Block const&);
+    MCAPI explicit StructurePoolBlockPredicateBlockMatch(class Block const&);
 
     // NOLINTEND
 };

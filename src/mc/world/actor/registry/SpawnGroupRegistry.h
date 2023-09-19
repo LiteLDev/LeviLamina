@@ -16,9 +16,9 @@ public:
     std::unordered_map<std::string, class SpawnGroupData*> mSpawnGroupLookupMap; // this+0x60
 
     // prevent constructor by default
-    SpawnGroupRegistry& operator=(SpawnGroupRegistry const&) = delete;
-    SpawnGroupRegistry(SpawnGroupRegistry const&)            = delete;
-    SpawnGroupRegistry()                                     = delete;
+    SpawnGroupRegistry& operator=(SpawnGroupRegistry const&);
+    SpawnGroupRegistry(SpawnGroupRegistry const&);
+    SpawnGroupRegistry();
 
 public:
     // NOLINTBEGIN
@@ -43,7 +43,7 @@ public:
     readResourceFiles(class ResourcePackManager&, std::unordered_map<std::string, struct ActorSpawnRuleDefinition>&);
 
     // symbol: ??0SpawnGroupRegistry@@QEAA@AEAVResourcePackManager@@@Z
-    MCAPI SpawnGroupRegistry(class ResourcePackManager&);
+    MCAPI explicit SpawnGroupRegistry(class ResourcePackManager&);
 
     // symbol:
     // ?getSpawnGroup@SpawnGroupRegistry@@QEBAPEBVSpawnGroupData@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

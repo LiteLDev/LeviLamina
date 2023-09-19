@@ -5,7 +5,7 @@
 class IClientInstance {
 public:
     // prevent constructor by default
-    IClientInstance& operator=(IClientInstance const&) = delete;
-    IClientInstance(IClientInstance const&)            = delete;
-    IClientInstance()                                  = delete;
+    IClientInstance& operator=(IClientInstance const&);
+    IClientInstance(IClientInstance const&);
+    IClientInstance();
 };

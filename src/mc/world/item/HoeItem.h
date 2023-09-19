@@ -22,9 +22,9 @@ namespace mce { class Color; }
 class HoeItem : public ::DiggerItem {
 public:
     // prevent constructor by default
-    HoeItem& operator=(HoeItem const&) = delete;
-    HoeItem(HoeItem const&)            = delete;
-    HoeItem()                          = delete;
+    HoeItem& operator=(HoeItem const&);
+    HoeItem(HoeItem const&);
+    HoeItem();
 
 public:
     // NOLINTBEGIN

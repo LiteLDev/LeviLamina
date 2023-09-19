@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class StairBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    StairBlock& operator=(StairBlock const&) = delete;
-    StairBlock(StairBlock const&)            = delete;
-    StairBlock()                             = delete;
+    StairBlock& operator=(StairBlock const&);
+    StairBlock(StairBlock const&);
+    StairBlock();
 
 public:
     // NOLINTBEGIN

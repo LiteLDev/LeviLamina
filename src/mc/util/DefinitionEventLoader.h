@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class DefinitionEventLoader {
 public:
     // prevent constructor by default
-    DefinitionEventLoader& operator=(DefinitionEventLoader const&) = delete;
-    DefinitionEventLoader(DefinitionEventLoader const&)            = delete;
-    DefinitionEventLoader()                                        = delete;
+    DefinitionEventLoader& operator=(DefinitionEventLoader const&);
+    DefinitionEventLoader(DefinitionEventLoader const&);
+    DefinitionEventLoader();
 
 public:
     // NOLINTBEGIN

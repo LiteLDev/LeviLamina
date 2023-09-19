@@ -5,7 +5,7 @@
 struct PrevPosRotSetThisTickFlag {
 public:
     // prevent constructor by default
-    PrevPosRotSetThisTickFlag& operator=(PrevPosRotSetThisTickFlag const&) = delete;
-    PrevPosRotSetThisTickFlag(PrevPosRotSetThisTickFlag const&)            = delete;
-    PrevPosRotSetThisTickFlag()                                            = delete;
+    PrevPosRotSetThisTickFlag& operator=(PrevPosRotSetThisTickFlag const&);
+    PrevPosRotSetThisTickFlag(PrevPosRotSetThisTickFlag const&);
+    PrevPosRotSetThisTickFlag();
 };

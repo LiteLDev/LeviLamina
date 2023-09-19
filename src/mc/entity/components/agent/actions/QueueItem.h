@@ -7,8 +7,8 @@ namespace AgentComponents::Actions {
 struct QueueItem {
 public:
     // prevent constructor by default
-    QueueItem(QueueItem const&) = delete;
-    QueueItem()                 = delete;
+    QueueItem(QueueItem const&);
+    QueueItem();
 
 public:
     // NOLINTBEGIN

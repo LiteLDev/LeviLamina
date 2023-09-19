@@ -10,8 +10,8 @@ public:
     std::string mText;
 
     // prevent constructor by default
-    ActionValue& operator=(ActionValue const&) = delete;
-    ActionValue(ActionValue const&)            = delete;
+    ActionValue& operator=(ActionValue const&);
+    ActionValue(ActionValue const&);
 
 public:
     // NOLINTBEGIN

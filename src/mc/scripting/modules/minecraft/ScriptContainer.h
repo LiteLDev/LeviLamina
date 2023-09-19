@@ -23,9 +23,9 @@ namespace ScriptModuleMinecraft {
 class ScriptContainer {
 public:
     // prevent constructor by default
-    ScriptContainer& operator=(ScriptContainer const&) = delete;
-    ScriptContainer(ScriptContainer const&)            = delete;
-    ScriptContainer()                                  = delete;
+    ScriptContainer& operator=(ScriptContainer const&);
+    ScriptContainer(ScriptContainer const&);
+    ScriptContainer();
 
 public:
     // NOLINTBEGIN
@@ -94,7 +94,7 @@ public:
     virtual class ItemContext _getItemContext(int) const = 0;
 
     // symbol: ??0ScriptContainer@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@@Z
-    MCAPI ScriptContainer(class Scripting::WeakLifetimeScope const&);
+    MCAPI explicit ScriptContainer(class Scripting::WeakLifetimeScope const&);
 
     // symbol:
     // ?addItem@ScriptContainer@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@Scripting@@AEBVScriptItemStack@2@@Z

@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class FilterTestGameRule : public ::FilterTest {
 public:
     // prevent constructor by default
-    FilterTestGameRule& operator=(FilterTestGameRule const&) = delete;
-    FilterTestGameRule(FilterTestGameRule const&)            = delete;
-    FilterTestGameRule()                                     = delete;
+    FilterTestGameRule& operator=(FilterTestGameRule const&);
+    FilterTestGameRule(FilterTestGameRule const&);
+    FilterTestGameRule();
 
 public:
     // NOLINTBEGIN

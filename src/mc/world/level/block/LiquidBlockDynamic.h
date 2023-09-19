@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class LiquidBlockDynamic : public ::LiquidBlock {
 public:
     // prevent constructor by default
-    LiquidBlockDynamic& operator=(LiquidBlockDynamic const&) = delete;
-    LiquidBlockDynamic(LiquidBlockDynamic const&)            = delete;
-    LiquidBlockDynamic()                                     = delete;
+    LiquidBlockDynamic& operator=(LiquidBlockDynamic const&);
+    LiquidBlockDynamic(LiquidBlockDynamic const&);
+    LiquidBlockDynamic();
 
 public:
     // NOLINTBEGIN

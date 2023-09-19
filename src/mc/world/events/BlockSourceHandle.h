@@ -8,9 +8,9 @@
 class BlockSourceHandle : public ::BlockSourceListener {
 public:
     // prevent constructor by default
-    BlockSourceHandle& operator=(BlockSourceHandle const&) = delete;
-    BlockSourceHandle(BlockSourceHandle const&)            = delete;
-    BlockSourceHandle()                                    = delete;
+    BlockSourceHandle& operator=(BlockSourceHandle const&);
+    BlockSourceHandle(BlockSourceHandle const&);
+    BlockSourceHandle();
 
 public:
     // NOLINTBEGIN

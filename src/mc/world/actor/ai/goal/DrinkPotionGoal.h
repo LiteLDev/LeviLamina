@@ -14,9 +14,9 @@ namespace mce { class UUID; }
 class DrinkPotionGoal : public ::Goal {
 public:
     // prevent constructor by default
-    DrinkPotionGoal& operator=(DrinkPotionGoal const&) = delete;
-    DrinkPotionGoal(DrinkPotionGoal const&)            = delete;
-    DrinkPotionGoal()                                  = delete;
+    DrinkPotionGoal& operator=(DrinkPotionGoal const&);
+    DrinkPotionGoal(DrinkPotionGoal const&);
+    DrinkPotionGoal();
 
 public:
     // NOLINTBEGIN
@@ -61,9 +61,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $SPEED_MODIFIER_DRINKING_UUID() { return SPEED_MODIFIER_DRINKING_UUID; }
+    auto& $SPEED_MODIFIER_DRINKING_UUID() { return SPEED_MODIFIER_DRINKING_UUID; }
 
-    inline auto& $THROTTLE_COOLDOWN() { return THROTTLE_COOLDOWN; }
+    auto& $THROTTLE_COOLDOWN() { return THROTTLE_COOLDOWN; }
 
     // NOLINTEND
 };

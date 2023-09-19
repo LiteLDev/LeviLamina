@@ -13,8 +13,8 @@ public:
     SimulationType mSimType; // this+0x30
 
     // prevent constructor by default
-    SimulationTypePacket& operator=(SimulationTypePacket const&) = delete;
-    SimulationTypePacket(SimulationTypePacket const&)            = delete;
+    SimulationTypePacket& operator=(SimulationTypePacket const&);
+    SimulationTypePacket(SimulationTypePacket const&);
 
 public:
     // NOLINTBEGIN

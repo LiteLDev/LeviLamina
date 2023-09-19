@@ -7,9 +7,9 @@ namespace AgentComponents {
 struct ExecutingFlag {
 public:
     // prevent constructor by default
-    ExecutingFlag& operator=(ExecutingFlag const&) = delete;
-    ExecutingFlag(ExecutingFlag const&)            = delete;
-    ExecutingFlag()                                = delete;
+    ExecutingFlag& operator=(ExecutingFlag const&);
+    ExecutingFlag(ExecutingFlag const&);
+    ExecutingFlag();
 };
 
 }; // namespace AgentComponents

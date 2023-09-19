@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptCanClimbComponent {
 public:
     // prevent constructor by default
-    ScriptCanClimbComponent& operator=(ScriptCanClimbComponent const&) = delete;
-    ScriptCanClimbComponent(ScriptCanClimbComponent const&)            = delete;
-    ScriptCanClimbComponent()                                          = delete;
+    ScriptCanClimbComponent& operator=(ScriptCanClimbComponent const&);
+    ScriptCanClimbComponent(ScriptCanClimbComponent const&);
+    ScriptCanClimbComponent();
 
 public:
     // NOLINTBEGIN

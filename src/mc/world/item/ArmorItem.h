@@ -30,16 +30,16 @@ public:
     class ArmorMaterial {
     public:
         // prevent constructor by default
-        ArmorMaterial& operator=(ArmorMaterial const&) = delete;
-        ArmorMaterial(ArmorMaterial const&)            = delete;
-        ArmorMaterial()                                = delete;
+        ArmorMaterial& operator=(ArmorMaterial const&);
+        ArmorMaterial(ArmorMaterial const&);
+        ArmorMaterial();
     };
 
 public:
     // prevent constructor by default
-    ArmorItem& operator=(ArmorItem const&) = delete;
-    ArmorItem(ArmorItem const&)            = delete;
-    ArmorItem()                            = delete;
+    ArmorItem& operator=(ArmorItem const&);
+    ArmorItem(ArmorItem const&);
+    ArmorItem();
 
 public:
     // NOLINTBEGIN

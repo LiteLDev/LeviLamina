@@ -8,9 +8,9 @@
 class CompactionListenerEnv {
 public:
     // prevent constructor by default
-    CompactionListenerEnv& operator=(CompactionListenerEnv const&) = delete;
-    CompactionListenerEnv(CompactionListenerEnv const&)            = delete;
-    CompactionListenerEnv()                                        = delete;
+    CompactionListenerEnv& operator=(CompactionListenerEnv const&);
+    CompactionListenerEnv(CompactionListenerEnv const&);
+    CompactionListenerEnv();
 
 public:
     // NOLINTBEGIN

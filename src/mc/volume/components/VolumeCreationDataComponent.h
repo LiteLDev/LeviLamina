@@ -5,9 +5,9 @@
 class VolumeCreationDataComponent {
 public:
     // prevent constructor by default
-    VolumeCreationDataComponent& operator=(VolumeCreationDataComponent const&) = delete;
-    VolumeCreationDataComponent(VolumeCreationDataComponent const&)            = delete;
-    VolumeCreationDataComponent()                                              = delete;
+    VolumeCreationDataComponent& operator=(VolumeCreationDataComponent const&);
+    VolumeCreationDataComponent(VolumeCreationDataComponent const&);
+    VolumeCreationDataComponent();
 
 public:
     // NOLINTBEGIN

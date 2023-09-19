@@ -26,9 +26,9 @@
 class Warden : public ::Monster {
 public:
     // prevent constructor by default
-    Warden& operator=(Warden const&) = delete;
-    Warden(Warden const&)            = delete;
-    Warden()                         = delete;
+    Warden& operator=(Warden const&);
+    Warden(Warden const&);
+    Warden();
 
 public:
     // NOLINTBEGIN

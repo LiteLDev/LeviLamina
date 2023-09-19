@@ -12,8 +12,8 @@ public:
     int mTime; // this+0x30
 
     // prevent constructor by default
-    SetTimePacket& operator=(SetTimePacket const&) = delete;
-    SetTimePacket(SetTimePacket const&)            = delete;
+    SetTimePacket& operator=(SetTimePacket const&);
+    SetTimePacket(SetTimePacket const&);
 
 public:
     // NOLINTBEGIN
@@ -39,7 +39,7 @@ public:
     MCAPI SetTimePacket();
 
     // symbol: ??0SetTimePacket@@QEAA@H@Z
-    MCAPI SetTimePacket(int);
+    MCAPI explicit SetTimePacket(int);
 
     // NOLINTEND
 };

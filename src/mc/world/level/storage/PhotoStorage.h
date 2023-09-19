@@ -10,14 +10,14 @@ namespace Core { class Path; }
 class PhotoStorage {
 public:
     // prevent constructor by default
-    PhotoStorage& operator=(PhotoStorage const&) = delete;
-    PhotoStorage(PhotoStorage const&)            = delete;
-    PhotoStorage()                               = delete;
+    PhotoStorage& operator=(PhotoStorage const&);
+    PhotoStorage(PhotoStorage const&);
+    PhotoStorage();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0PhotoStorage@@QEAA@AEBVPath@Core@@@Z
-    MCAPI PhotoStorage(class Core::Path const&);
+    MCAPI explicit PhotoStorage(class Core::Path const&);
 
     // symbol: ??1PhotoStorage@@QEAA@XZ
     MCAPI ~PhotoStorage();

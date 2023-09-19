@@ -7,9 +7,9 @@ namespace NetherNet {
 struct SessionState {
 public:
     // prevent constructor by default
-    SessionState& operator=(SessionState const&) = delete;
-    SessionState(SessionState const&)            = delete;
-    SessionState()                               = delete;
+    SessionState& operator=(SessionState const&);
+    SessionState(SessionState const&);
+    SessionState();
 };
 
 }; // namespace NetherNet

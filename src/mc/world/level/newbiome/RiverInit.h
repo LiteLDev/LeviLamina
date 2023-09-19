@@ -12,14 +12,14 @@ namespace OperationNodeFilters {
 struct RiverInit {
 public:
     // prevent constructor by default
-    RiverInit& operator=(RiverInit const&) = delete;
-    RiverInit(RiverInit const&)            = delete;
-    RiverInit()                            = delete;
+    RiverInit& operator=(RiverInit const&);
+    RiverInit(RiverInit const&);
+    RiverInit();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0RiverInit@OperationNodeFilters@@QEAA@AEBVBiomeRegistry@@@Z
-    MCAPI RiverInit(class BiomeRegistry const&);
+    MCAPI explicit RiverInit(class BiomeRegistry const&);
 
     // NOLINTEND
 };

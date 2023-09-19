@@ -5,9 +5,9 @@
 class GameSpecificNetEventCallback {
 public:
     // prevent constructor by default
-    GameSpecificNetEventCallback& operator=(GameSpecificNetEventCallback const&) = delete;
-    GameSpecificNetEventCallback(GameSpecificNetEventCallback const&)            = delete;
-    GameSpecificNetEventCallback()                                               = delete;
+    GameSpecificNetEventCallback& operator=(GameSpecificNetEventCallback const&);
+    GameSpecificNetEventCallback(GameSpecificNetEventCallback const&);
+    GameSpecificNetEventCallback();
 
 public:
     // NOLINTBEGIN

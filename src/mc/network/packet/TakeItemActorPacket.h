@@ -14,8 +14,8 @@ public:
     ActorRuntimeID mActorId; // this+0x38
 
     // prevent constructor by default
-    TakeItemActorPacket& operator=(TakeItemActorPacket const&) = delete;
-    TakeItemActorPacket(TakeItemActorPacket const&)            = delete;
+    TakeItemActorPacket& operator=(TakeItemActorPacket const&);
+    TakeItemActorPacket(TakeItemActorPacket const&);
 
 public:
     // NOLINTBEGIN

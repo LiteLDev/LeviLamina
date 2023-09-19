@@ -5,9 +5,9 @@
 class WanderingTraderScheduler {
 public:
     // prevent constructor by default
-    WanderingTraderScheduler& operator=(WanderingTraderScheduler const&) = delete;
-    WanderingTraderScheduler(WanderingTraderScheduler const&)            = delete;
-    WanderingTraderScheduler()                                           = delete;
+    WanderingTraderScheduler& operator=(WanderingTraderScheduler const&);
+    WanderingTraderScheduler(WanderingTraderScheduler const&);
+    WanderingTraderScheduler();
 
 public:
     // NOLINTBEGIN
@@ -79,17 +79,17 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $CHANCE_TO_SPAWN_IN_WILDERNESS() { return CHANCE_TO_SPAWN_IN_WILDERNESS; }
+    auto& $CHANCE_TO_SPAWN_IN_WILDERNESS() { return CHANCE_TO_SPAWN_IN_WILDERNESS; }
 
-    inline auto& $CHANCE_TO_SPAWN_PER_DAY() { return CHANCE_TO_SPAWN_PER_DAY; }
+    auto& $CHANCE_TO_SPAWN_PER_DAY() { return CHANCE_TO_SPAWN_PER_DAY; }
 
-    inline auto& $DISTANCE_IN_BLOCKS_FROM_MEETING_AREA() { return DISTANCE_IN_BLOCKS_FROM_MEETING_AREA; }
+    auto& $DISTANCE_IN_BLOCKS_FROM_MEETING_AREA() { return DISTANCE_IN_BLOCKS_FROM_MEETING_AREA; }
 
-    inline auto& $DISTANCE_IN_BLOCKS_FROM_PLAYER() { return DISTANCE_IN_BLOCKS_FROM_PLAYER; }
+    auto& $DISTANCE_IN_BLOCKS_FROM_PLAYER() { return DISTANCE_IN_BLOCKS_FROM_PLAYER; }
 
-    inline auto& $DISTANCE_IN_BLOCKS_FROM_PLAYER_SQUARE() { return DISTANCE_IN_BLOCKS_FROM_PLAYER_SQUARE; }
+    auto& $DISTANCE_IN_BLOCKS_FROM_PLAYER_SQUARE() { return DISTANCE_IN_BLOCKS_FROM_PLAYER_SQUARE; }
 
-    inline auto& $LENGTH_OF_DAY_IN_TICKS() { return LENGTH_OF_DAY_IN_TICKS; }
+    auto& $LENGTH_OF_DAY_IN_TICKS() { return LENGTH_OF_DAY_IN_TICKS; }
 
     // NOLINTEND
 };

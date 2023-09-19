@@ -5,8 +5,8 @@
 class PerlinNoise {
 public:
     // prevent constructor by default
-    PerlinNoise& operator=(PerlinNoise const&) = delete;
-    PerlinNoise()                              = delete;
+    PerlinNoise& operator=(PerlinNoise const&);
+    PerlinNoise();
 
 public:
     // NOLINTBEGIN

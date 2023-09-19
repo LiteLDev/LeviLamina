@@ -10,9 +10,9 @@
 class RegionHillsOperationNode {
 public:
     // prevent constructor by default
-    RegionHillsOperationNode& operator=(RegionHillsOperationNode const&) = delete;
-    RegionHillsOperationNode(RegionHillsOperationNode const&)            = delete;
-    RegionHillsOperationNode()                                           = delete;
+    RegionHillsOperationNode& operator=(RegionHillsOperationNode const&);
+    RegionHillsOperationNode(RegionHillsOperationNode const&);
+    RegionHillsOperationNode();
 
 public:
     // NOLINTBEGIN

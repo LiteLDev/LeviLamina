@@ -8,9 +8,9 @@
 class ReloadCommand : public ::ServerCommand {
 public:
     // prevent constructor by default
-    ReloadCommand& operator=(ReloadCommand const&) = delete;
-    ReloadCommand(ReloadCommand const&)            = delete;
-    ReloadCommand()                                = delete;
+    ReloadCommand& operator=(ReloadCommand const&);
+    ReloadCommand(ReloadCommand const&);
+    ReloadCommand();
 
 public:
     // NOLINTBEGIN

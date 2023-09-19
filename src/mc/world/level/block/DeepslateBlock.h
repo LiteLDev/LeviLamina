@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class DeepslateBlock : public ::RotatedPillarBlock {
 public:
     // prevent constructor by default
-    DeepslateBlock& operator=(DeepslateBlock const&) = delete;
-    DeepslateBlock(DeepslateBlock const&)            = delete;
-    DeepslateBlock()                                 = delete;
+    DeepslateBlock& operator=(DeepslateBlock const&);
+    DeepslateBlock(DeepslateBlock const&);
+    DeepslateBlock();
 
 public:
     // NOLINTBEGIN

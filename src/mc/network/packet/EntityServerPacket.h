@@ -13,8 +13,8 @@ public:
     EntityNetId mEntityNetId; // this+0x30
 
     // prevent constructor by default
-    EntityServerPacket& operator=(EntityServerPacket const&) = delete;
-    EntityServerPacket(EntityServerPacket const&)            = delete;
+    EntityServerPacket& operator=(EntityServerPacket const&);
+    EntityServerPacket(EntityServerPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -32,7 +32,7 @@ public:
     MCVAPI ~EntityServerPacket();
 
     // symbol: ??0EntityServerPacket@@QEAA@AEBVEntityContext@@@Z
-    MCAPI EntityServerPacket(class EntityContext const&);
+    MCAPI explicit EntityServerPacket(class EntityContext const&);
 
     // symbol: ??0EntityServerPacket@@QEAA@XZ
     MCAPI EntityServerPacket();

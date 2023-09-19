@@ -5,7 +5,7 @@
 class IAppConfigData {
 public:
     // prevent constructor by default
-    IAppConfigData& operator=(IAppConfigData const&) = delete;
-    IAppConfigData(IAppConfigData const&)            = delete;
-    IAppConfigData()                                 = delete;
+    IAppConfigData& operator=(IAppConfigData const&);
+    IAppConfigData(IAppConfigData const&);
+    IAppConfigData();
 };

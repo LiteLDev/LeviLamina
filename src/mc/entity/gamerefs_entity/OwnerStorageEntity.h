@@ -38,7 +38,7 @@ public:
     MCAPI OwnerStorageEntity(class OwnerStorageEntity&&);
 
     // symbol: ??0OwnerStorageEntity@@IEAA@W4EmptyInit@0@@Z
-    MCAPI OwnerStorageEntity(::OwnerStorageEntity::EmptyInit);
+    MCAPI explicit OwnerStorageEntity(::OwnerStorageEntity::EmptyInit);
 
     // symbol: ?_getStackRef@OwnerStorageEntity@@IEBAAEAVEntityContext@@XZ
     MCAPI class EntityContext& _getStackRef() const;

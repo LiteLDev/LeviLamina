@@ -17,9 +17,9 @@ namespace Bedrock::PubSub { class Subscription; }
 class LevelSoundManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    LevelSoundManager& operator=(LevelSoundManager const&) = delete;
-    LevelSoundManager(LevelSoundManager const&)            = delete;
-    LevelSoundManager()                                    = delete;
+    LevelSoundManager& operator=(LevelSoundManager const&);
+    LevelSoundManager(LevelSoundManager const&);
+    LevelSoundManager();
 
 public:
     // NOLINTBEGIN

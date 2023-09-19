@@ -9,9 +9,9 @@
 class BlendingData {
 public:
     // prevent constructor by default
-    BlendingData& operator=(BlendingData const&) = delete;
-    BlendingData(BlendingData const&)            = delete;
-    BlendingData()                               = delete;
+    BlendingData& operator=(BlendingData const&);
+    BlendingData(BlendingData const&);
+    BlendingData();
 
 public:
     // NOLINTBEGIN

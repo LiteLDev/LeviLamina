@@ -10,8 +10,8 @@ namespace Json { class Value; }
 class BehaviorFactory {
 public:
     // prevent constructor by default
-    BehaviorFactory& operator=(BehaviorFactory const&) = delete;
-    BehaviorFactory(BehaviorFactory const&)            = delete;
+    BehaviorFactory& operator=(BehaviorFactory const&);
+    BehaviorFactory(BehaviorFactory const&);
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class RecipeCraftInputs {
 public:
     // prevent constructor by default
-    RecipeCraftInputs& operator=(RecipeCraftInputs const&) = delete;
-    RecipeCraftInputs(RecipeCraftInputs const&)            = delete;
-    RecipeCraftInputs()                                    = delete;
+    RecipeCraftInputs& operator=(RecipeCraftInputs const&);
+    RecipeCraftInputs(RecipeCraftInputs const&);
+    RecipeCraftInputs();
 
 public:
     // NOLINTBEGIN

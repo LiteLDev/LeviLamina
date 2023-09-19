@@ -8,9 +8,9 @@
 class VillageFeature : public ::StructureFeature {
 public:
     // prevent constructor by default
-    VillageFeature& operator=(VillageFeature const&) = delete;
-    VillageFeature(VillageFeature const&)            = delete;
-    VillageFeature()                                 = delete;
+    VillageFeature& operator=(VillageFeature const&);
+    VillageFeature(VillageFeature const&);
+    VillageFeature();
 
 public:
     // NOLINTBEGIN

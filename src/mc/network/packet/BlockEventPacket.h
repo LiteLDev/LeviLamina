@@ -15,8 +15,8 @@ public:
     int                  mB1;  // this+0x3c
 
     // prevent constructor by default
-    BlockEventPacket& operator=(BlockEventPacket const&) = delete;
-    BlockEventPacket(BlockEventPacket const&)            = delete;
+    BlockEventPacket& operator=(BlockEventPacket const&);
+    BlockEventPacket(BlockEventPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -13,9 +13,9 @@ namespace Core { class Path; }
 class ScriptPluginPackSource : public ::IScriptPluginSource {
 public:
     // prevent constructor by default
-    ScriptPluginPackSource& operator=(ScriptPluginPackSource const&) = delete;
-    ScriptPluginPackSource(ScriptPluginPackSource const&)            = delete;
-    ScriptPluginPackSource()                                         = delete;
+    ScriptPluginPackSource& operator=(ScriptPluginPackSource const&);
+    ScriptPluginPackSource(ScriptPluginPackSource const&);
+    ScriptPluginPackSource();
 
 public:
     // NOLINTBEGIN

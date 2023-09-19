@@ -12,9 +12,9 @@ namespace ScriptModuleMinecraft {
 class IScriptEventSignalAsync {
 public:
     // prevent constructor by default
-    IScriptEventSignalAsync& operator=(IScriptEventSignalAsync const&) = delete;
-    IScriptEventSignalAsync(IScriptEventSignalAsync const&)            = delete;
-    IScriptEventSignalAsync()                                          = delete;
+    IScriptEventSignalAsync& operator=(IScriptEventSignalAsync const&);
+    IScriptEventSignalAsync(IScriptEventSignalAsync const&);
+    IScriptEventSignalAsync();
 
 public:
     // NOLINTBEGIN

@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class MossBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    MossBlock& operator=(MossBlock const&) = delete;
-    MossBlock(MossBlock const&)            = delete;
-    MossBlock()                            = delete;
+    MossBlock& operator=(MossBlock const&);
+    MossBlock(MossBlock const&);
+    MossBlock();
 
 public:
     // NOLINTBEGIN

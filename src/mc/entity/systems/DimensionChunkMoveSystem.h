@@ -5,9 +5,9 @@
 class DimensionChunkMoveSystem {
 public:
     // prevent constructor by default
-    DimensionChunkMoveSystem& operator=(DimensionChunkMoveSystem const&) = delete;
-    DimensionChunkMoveSystem(DimensionChunkMoveSystem const&)            = delete;
-    DimensionChunkMoveSystem()                                           = delete;
+    DimensionChunkMoveSystem& operator=(DimensionChunkMoveSystem const&);
+    DimensionChunkMoveSystem(DimensionChunkMoveSystem const&);
+    DimensionChunkMoveSystem();
 
 public:
     // NOLINTBEGIN

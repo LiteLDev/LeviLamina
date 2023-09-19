@@ -8,9 +8,9 @@
 class FullPlayerInventoryWrapper {
 public:
     // prevent constructor by default
-    FullPlayerInventoryWrapper& operator=(FullPlayerInventoryWrapper const&) = delete;
-    FullPlayerInventoryWrapper(FullPlayerInventoryWrapper const&)            = delete;
-    FullPlayerInventoryWrapper()                                             = delete;
+    FullPlayerInventoryWrapper& operator=(FullPlayerInventoryWrapper const&);
+    FullPlayerInventoryWrapper(FullPlayerInventoryWrapper const&);
+    FullPlayerInventoryWrapper();
 
 public:
     // NOLINTBEGIN

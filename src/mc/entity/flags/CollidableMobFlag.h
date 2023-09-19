@@ -5,7 +5,7 @@
 struct CollidableMobFlag {
 public:
     // prevent constructor by default
-    CollidableMobFlag& operator=(CollidableMobFlag const&) = delete;
-    CollidableMobFlag(CollidableMobFlag const&)            = delete;
-    CollidableMobFlag()                                    = delete;
+    CollidableMobFlag& operator=(CollidableMobFlag const&);
+    CollidableMobFlag(CollidableMobFlag const&);
+    CollidableMobFlag();
 };

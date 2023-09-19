@@ -9,9 +9,9 @@
 class StrollTowardsVillageGoal : public ::MoveToVillageGoal {
 public:
     // prevent constructor by default
-    StrollTowardsVillageGoal& operator=(StrollTowardsVillageGoal const&) = delete;
-    StrollTowardsVillageGoal(StrollTowardsVillageGoal const&)            = delete;
-    StrollTowardsVillageGoal()                                           = delete;
+    StrollTowardsVillageGoal& operator=(StrollTowardsVillageGoal const&);
+    StrollTowardsVillageGoal(StrollTowardsVillageGoal const&);
+    StrollTowardsVillageGoal();
 
 public:
     // NOLINTBEGIN

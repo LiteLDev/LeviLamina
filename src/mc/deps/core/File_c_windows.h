@@ -20,9 +20,9 @@ namespace Core {
 class File_c_windows {
 public:
     // prevent constructor by default
-    File_c_windows& operator=(File_c_windows const&) = delete;
-    File_c_windows(File_c_windows const&)            = delete;
-    File_c_windows()                                 = delete;
+    File_c_windows& operator=(File_c_windows const&);
+    File_c_windows(File_c_windows const&);
+    File_c_windows();
 
 public:
     // NOLINTBEGIN

@@ -5,8 +5,8 @@
 class SculkSpreader {
 public:
     // prevent constructor by default
-    SculkSpreader& operator=(SculkSpreader const&) = delete;
-    SculkSpreader(SculkSpreader const&)            = delete;
+    SculkSpreader& operator=(SculkSpreader const&);
+    SculkSpreader(SculkSpreader const&);
 
 public:
     // NOLINTBEGIN

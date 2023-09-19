@@ -21,9 +21,9 @@ public:
     struct Effect {
     public:
         // prevent constructor by default
-        Effect& operator=(Effect const&) = delete;
-        Effect(Effect const&)            = delete;
-        Effect()                         = delete;
+        Effect& operator=(Effect const&);
+        Effect(Effect const&);
+        Effect();
 
     public:
         // NOLINTBEGIN
@@ -35,9 +35,9 @@ public:
 
 public:
     // prevent constructor by default
-    FoodItemComponentLegacy& operator=(FoodItemComponentLegacy const&) = delete;
-    FoodItemComponentLegacy(FoodItemComponentLegacy const&)            = delete;
-    FoodItemComponentLegacy()                                          = delete;
+    FoodItemComponentLegacy& operator=(FoodItemComponentLegacy const&);
+    FoodItemComponentLegacy(FoodItemComponentLegacy const&);
+    FoodItemComponentLegacy();
 
 public:
     // NOLINTBEGIN
@@ -64,7 +64,7 @@ public:
     virtual class Item const* useTimeDepleted(class ItemStack&, class Player&, class Level&);
 
     // symbol: ??0FoodItemComponentLegacy@@QEAA@AEAVItem@@@Z
-    MCAPI FoodItemComponentLegacy(class Item&);
+    MCAPI explicit FoodItemComponentLegacy(class Item&);
 
     // symbol:
     // ?buildNetworkTag@FoodItemComponentLegacy@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ

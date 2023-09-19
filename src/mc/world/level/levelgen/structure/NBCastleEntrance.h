@@ -9,9 +9,9 @@
 class NBCastleEntrance : public ::NetherFortressPiece {
 public:
     // prevent constructor by default
-    NBCastleEntrance& operator=(NBCastleEntrance const&) = delete;
-    NBCastleEntrance(NBCastleEntrance const&)            = delete;
-    NBCastleEntrance()                                   = delete;
+    NBCastleEntrance& operator=(NBCastleEntrance const&);
+    NBCastleEntrance(NBCastleEntrance const&);
+    NBCastleEntrance();
 
 public:
     // NOLINTBEGIN

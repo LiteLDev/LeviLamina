@@ -8,9 +8,9 @@
 class GameEventMapping {
 public:
     // prevent constructor by default
-    GameEventMapping& operator=(GameEventMapping const&) = delete;
-    GameEventMapping(GameEventMapping const&)            = delete;
-    GameEventMapping()                                   = delete;
+    GameEventMapping& operator=(GameEventMapping const&);
+    GameEventMapping(GameEventMapping const&);
+    GameEventMapping();
 
 public:
     // NOLINTBEGIN
@@ -33,7 +33,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mGameEventPairs() { return mGameEventPairs; }
+    auto& $mGameEventPairs() { return mGameEventPairs; }
 
     // NOLINTEND
 };

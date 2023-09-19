@@ -13,9 +13,9 @@ public:
     class Definition {
     public:
         // prevent constructor by default
-        Definition& operator=(Definition const&) = delete;
-        Definition(Definition const&)            = delete;
-        Definition()                             = delete;
+        Definition& operator=(Definition const&);
+        Definition(Definition const&);
+        Definition();
 
     public:
         // NOLINTBEGIN
@@ -27,7 +27,7 @@ public:
 
 public:
     // prevent constructor by default
-    TripodCameraActivatedComponent& operator=(TripodCameraActivatedComponent const&) = delete;
-    TripodCameraActivatedComponent(TripodCameraActivatedComponent const&)            = delete;
-    TripodCameraActivatedComponent()                                                 = delete;
+    TripodCameraActivatedComponent& operator=(TripodCameraActivatedComponent const&);
+    TripodCameraActivatedComponent(TripodCameraActivatedComponent const&);
+    TripodCameraActivatedComponent();
 };

@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct FloatsInLiquidDefinition {
 public:
     // prevent constructor by default
-    FloatsInLiquidDefinition& operator=(FloatsInLiquidDefinition const&) = delete;
-    FloatsInLiquidDefinition(FloatsInLiquidDefinition const&)            = delete;
-    FloatsInLiquidDefinition()                                           = delete;
+    FloatsInLiquidDefinition& operator=(FloatsInLiquidDefinition const&);
+    FloatsInLiquidDefinition(FloatsInLiquidDefinition const&);
+    FloatsInLiquidDefinition();
 
 public:
     // NOLINTBEGIN

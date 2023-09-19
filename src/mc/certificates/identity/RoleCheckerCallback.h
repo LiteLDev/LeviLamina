@@ -5,9 +5,9 @@
 class RoleCheckerCallback {
 public:
     // prevent constructor by default
-    RoleCheckerCallback& operator=(RoleCheckerCallback const&) = delete;
-    RoleCheckerCallback(RoleCheckerCallback const&)            = delete;
-    RoleCheckerCallback()                                      = delete;
+    RoleCheckerCallback& operator=(RoleCheckerCallback const&);
+    RoleCheckerCallback(RoleCheckerCallback const&);
+    RoleCheckerCallback();
 
 public:
     // NOLINTBEGIN

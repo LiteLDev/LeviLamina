@@ -10,9 +10,9 @@ namespace cereal { class SchemaFactory; }
 class CerealSchemaUpgrade {
 public:
     // prevent constructor by default
-    CerealSchemaUpgrade& operator=(CerealSchemaUpgrade const&) = delete;
-    CerealSchemaUpgrade(CerealSchemaUpgrade const&)            = delete;
-    CerealSchemaUpgrade()                                      = delete;
+    CerealSchemaUpgrade& operator=(CerealSchemaUpgrade const&);
+    CerealSchemaUpgrade(CerealSchemaUpgrade const&);
+    CerealSchemaUpgrade();
 
 public:
     // NOLINTBEGIN

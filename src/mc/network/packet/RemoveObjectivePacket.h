@@ -12,8 +12,8 @@ public:
     std::string mObjectiveName; // this+0x30
 
     // prevent constructor by default
-    RemoveObjectivePacket& operator=(RemoveObjectivePacket const&) = delete;
-    RemoveObjectivePacket(RemoveObjectivePacket const&)            = delete;
+    RemoveObjectivePacket& operator=(RemoveObjectivePacket const&);
+    RemoveObjectivePacket(RemoveObjectivePacket const&);
 
 public:
     // NOLINTBEGIN
@@ -38,7 +38,7 @@ public:
     MCVAPI ~RemoveObjectivePacket();
 
     // symbol: ??0RemoveObjectivePacket@@QEAA@AEBVObjective@@@Z
-    MCAPI RemoveObjectivePacket(class Objective const&);
+    MCAPI explicit RemoveObjectivePacket(class Objective const&);
 
     // symbol: ??0RemoveObjectivePacket@@QEAA@XZ
     MCAPI RemoveObjectivePacket();

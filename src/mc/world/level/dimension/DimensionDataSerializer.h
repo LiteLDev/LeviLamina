@@ -5,9 +5,9 @@
 class DimensionDataSerializer {
 public:
     // prevent constructor by default
-    DimensionDataSerializer& operator=(DimensionDataSerializer const&) = delete;
-    DimensionDataSerializer(DimensionDataSerializer const&)            = delete;
-    DimensionDataSerializer()                                          = delete;
+    DimensionDataSerializer& operator=(DimensionDataSerializer const&);
+    DimensionDataSerializer(DimensionDataSerializer const&);
+    DimensionDataSerializer();
 
 public:
     // NOLINTBEGIN

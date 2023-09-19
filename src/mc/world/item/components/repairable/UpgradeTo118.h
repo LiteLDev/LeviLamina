@@ -16,8 +16,8 @@ namespace RepairableItemComponentVersioning {
 class UpgradeTo118 : public ::CerealSchemaUpgrade {
 public:
     // prevent constructor by default
-    UpgradeTo118& operator=(UpgradeTo118 const&) = delete;
-    UpgradeTo118(UpgradeTo118 const&)            = delete;
+    UpgradeTo118& operator=(UpgradeTo118 const&);
+    UpgradeTo118(UpgradeTo118 const&);
 
 public:
     // NOLINTBEGIN

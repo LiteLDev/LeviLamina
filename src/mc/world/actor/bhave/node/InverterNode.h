@@ -9,8 +9,8 @@
 class InverterNode : public ::BehaviorNode {
 public:
     // prevent constructor by default
-    InverterNode& operator=(InverterNode const&) = delete;
-    InverterNode(InverterNode const&)            = delete;
+    InverterNode& operator=(InverterNode const&);
+    InverterNode(InverterNode const&);
 
 public:
     // NOLINTBEGIN

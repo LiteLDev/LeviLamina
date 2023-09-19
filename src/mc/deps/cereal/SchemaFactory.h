@@ -16,9 +16,9 @@ namespace cereal {
 class SchemaFactory {
 public:
     // prevent constructor by default
-    SchemaFactory& operator=(SchemaFactory const&) = delete;
-    SchemaFactory(SchemaFactory const&)            = delete;
-    SchemaFactory()                                = delete;
+    SchemaFactory& operator=(SchemaFactory const&);
+    SchemaFactory(SchemaFactory const&);
+    SchemaFactory();
 
 public:
     // NOLINTBEGIN

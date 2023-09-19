@@ -7,9 +7,9 @@ namespace Social {
 struct PlayerIDs {
 public:
     // prevent constructor by default
-    PlayerIDs& operator=(PlayerIDs const&) = delete;
-    PlayerIDs(PlayerIDs const&)            = delete;
-    PlayerIDs()                            = delete;
+    PlayerIDs& operator=(PlayerIDs const&);
+    PlayerIDs(PlayerIDs const&);
+    PlayerIDs();
 
 public:
     // NOLINTBEGIN

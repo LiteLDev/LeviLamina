@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class LeverBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    LeverBlock& operator=(LeverBlock const&) = delete;
-    LeverBlock(LeverBlock const&)            = delete;
-    LeverBlock()                             = delete;
+    LeverBlock& operator=(LeverBlock const&);
+    LeverBlock(LeverBlock const&);
+    LeverBlock();
 
 public:
     // NOLINTBEGIN

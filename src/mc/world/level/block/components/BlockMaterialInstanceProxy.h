@@ -5,8 +5,8 @@
 struct BlockMaterialInstanceProxy {
 public:
     // prevent constructor by default
-    BlockMaterialInstanceProxy& operator=(BlockMaterialInstanceProxy const&) = delete;
-    BlockMaterialInstanceProxy()                                             = delete;
+    BlockMaterialInstanceProxy& operator=(BlockMaterialInstanceProxy const&);
+    BlockMaterialInstanceProxy();
 
 public:
     // NOLINTBEGIN

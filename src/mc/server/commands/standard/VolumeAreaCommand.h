@@ -8,9 +8,9 @@
 class VolumeAreaCommand : public ::Command {
 public:
     // prevent constructor by default
-    VolumeAreaCommand& operator=(VolumeAreaCommand const&) = delete;
-    VolumeAreaCommand(VolumeAreaCommand const&)            = delete;
-    VolumeAreaCommand()                                    = delete;
+    VolumeAreaCommand& operator=(VolumeAreaCommand const&);
+    VolumeAreaCommand(VolumeAreaCommand const&);
+    VolumeAreaCommand();
 
 public:
     // NOLINTBEGIN

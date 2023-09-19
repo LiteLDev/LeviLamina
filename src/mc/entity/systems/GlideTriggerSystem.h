@@ -10,9 +10,9 @@
 class GlideTriggerSystem {
 public:
     // prevent constructor by default
-    GlideTriggerSystem& operator=(GlideTriggerSystem const&) = delete;
-    GlideTriggerSystem(GlideTriggerSystem const&)            = delete;
-    GlideTriggerSystem()                                     = delete;
+    GlideTriggerSystem& operator=(GlideTriggerSystem const&);
+    GlideTriggerSystem(GlideTriggerSystem const&);
+    GlideTriggerSystem();
 
 public:
     // NOLINTBEGIN

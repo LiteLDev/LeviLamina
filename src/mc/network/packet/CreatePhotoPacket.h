@@ -16,8 +16,8 @@ public:
     std::string   mPhotoName; // this+0x58
 
     // prevent constructor by default
-    CreatePhotoPacket& operator=(CreatePhotoPacket const&) = delete;
-    CreatePhotoPacket(CreatePhotoPacket const&)            = delete;
+    CreatePhotoPacket& operator=(CreatePhotoPacket const&);
+    CreatePhotoPacket(CreatePhotoPacket const&);
 
 public:
     // NOLINTBEGIN

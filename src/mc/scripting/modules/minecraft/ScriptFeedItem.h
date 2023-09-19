@@ -15,9 +15,9 @@ namespace ScriptModuleMinecraft {
 class ScriptFeedItem {
 public:
     // prevent constructor by default
-    ScriptFeedItem& operator=(ScriptFeedItem const&) = delete;
-    ScriptFeedItem(ScriptFeedItem const&)            = delete;
-    ScriptFeedItem()                                 = delete;
+    ScriptFeedItem& operator=(ScriptFeedItem const&);
+    ScriptFeedItem(ScriptFeedItem const&);
+    ScriptFeedItem();
 
 public:
     // NOLINTBEGIN

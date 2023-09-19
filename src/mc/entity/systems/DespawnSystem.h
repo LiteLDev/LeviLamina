@@ -8,9 +8,9 @@
 class DespawnSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    DespawnSystem& operator=(DespawnSystem const&) = delete;
-    DespawnSystem(DespawnSystem const&)            = delete;
-    DespawnSystem()                                = delete;
+    DespawnSystem& operator=(DespawnSystem const&);
+    DespawnSystem(DespawnSystem const&);
+    DespawnSystem();
 
 public:
     // NOLINTBEGIN

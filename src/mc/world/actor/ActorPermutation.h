@@ -5,7 +5,7 @@
 class ActorPermutation {
 public:
     // prevent constructor by default
-    ActorPermutation& operator=(ActorPermutation const&) = delete;
-    ActorPermutation(ActorPermutation const&)            = delete;
-    ActorPermutation()                                   = delete;
+    ActorPermutation& operator=(ActorPermutation const&);
+    ActorPermutation(ActorPermutation const&);
+    ActorPermutation();
 };

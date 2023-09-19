@@ -8,9 +8,9 @@
 class RailActivatorSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    RailActivatorSystem& operator=(RailActivatorSystem const&) = delete;
-    RailActivatorSystem(RailActivatorSystem const&)            = delete;
-    RailActivatorSystem()                                      = delete;
+    RailActivatorSystem& operator=(RailActivatorSystem const&);
+    RailActivatorSystem(RailActivatorSystem const&);
+    RailActivatorSystem();
 
 public:
     // NOLINTBEGIN

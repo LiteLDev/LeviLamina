@@ -5,9 +5,9 @@
 class WorldGenCache {
 public:
     // prevent constructor by default
-    WorldGenCache& operator=(WorldGenCache const&) = delete;
-    WorldGenCache(WorldGenCache const&)            = delete;
-    WorldGenCache()                                = delete;
+    WorldGenCache& operator=(WorldGenCache const&);
+    WorldGenCache(WorldGenCache const&);
+    WorldGenCache();
 
 public:
     // NOLINTBEGIN

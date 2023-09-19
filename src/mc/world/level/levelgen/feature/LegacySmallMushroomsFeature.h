@@ -8,9 +8,9 @@
 class LegacySmallMushroomsFeature : public ::Feature {
 public:
     // prevent constructor by default
-    LegacySmallMushroomsFeature& operator=(LegacySmallMushroomsFeature const&) = delete;
-    LegacySmallMushroomsFeature(LegacySmallMushroomsFeature const&)            = delete;
-    LegacySmallMushroomsFeature()                                              = delete;
+    LegacySmallMushroomsFeature& operator=(LegacySmallMushroomsFeature const&);
+    LegacySmallMushroomsFeature(LegacySmallMushroomsFeature const&);
+    LegacySmallMushroomsFeature();
 
 public:
     // NOLINTBEGIN
@@ -21,7 +21,7 @@ public:
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
     // symbol: ??0LegacySmallMushroomsFeature@@QEAA@AEBVFeatureRegistry@@@Z
-    MCAPI LegacySmallMushroomsFeature(class FeatureRegistry const&);
+    MCAPI explicit LegacySmallMushroomsFeature(class FeatureRegistry const&);
 
     // NOLINTEND
 };

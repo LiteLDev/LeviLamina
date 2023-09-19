@@ -13,9 +13,9 @@ namespace OperationNodeFilters {
 struct AddMushroomIsland {
 public:
     // prevent constructor by default
-    AddMushroomIsland& operator=(AddMushroomIsland const&) = delete;
-    AddMushroomIsland(AddMushroomIsland const&)            = delete;
-    AddMushroomIsland()                                    = delete;
+    AddMushroomIsland& operator=(AddMushroomIsland const&);
+    AddMushroomIsland(AddMushroomIsland const&);
+    AddMushroomIsland();
 
 public:
     // NOLINTBEGIN

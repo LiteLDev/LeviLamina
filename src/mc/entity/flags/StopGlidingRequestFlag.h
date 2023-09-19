@@ -5,7 +5,7 @@
 struct StopGlidingRequestFlag {
 public:
     // prevent constructor by default
-    StopGlidingRequestFlag& operator=(StopGlidingRequestFlag const&) = delete;
-    StopGlidingRequestFlag(StopGlidingRequestFlag const&)            = delete;
-    StopGlidingRequestFlag()                                         = delete;
+    StopGlidingRequestFlag& operator=(StopGlidingRequestFlag const&);
+    StopGlidingRequestFlag(StopGlidingRequestFlag const&);
+    StopGlidingRequestFlag();
 };

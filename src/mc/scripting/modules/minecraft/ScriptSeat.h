@@ -15,9 +15,9 @@ namespace ScriptModuleMinecraft {
 class ScriptSeat {
 public:
     // prevent constructor by default
-    ScriptSeat& operator=(ScriptSeat const&) = delete;
-    ScriptSeat(ScriptSeat const&)            = delete;
-    ScriptSeat()                             = delete;
+    ScriptSeat& operator=(ScriptSeat const&);
+    ScriptSeat(ScriptSeat const&);
+    ScriptSeat();
 
 public:
     // NOLINTBEGIN

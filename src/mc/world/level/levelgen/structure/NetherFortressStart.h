@@ -8,9 +8,9 @@
 class NetherFortressStart : public ::StructureStart {
 public:
     // prevent constructor by default
-    NetherFortressStart& operator=(NetherFortressStart const&) = delete;
-    NetherFortressStart(NetherFortressStart const&)            = delete;
-    NetherFortressStart()                                      = delete;
+    NetherFortressStart& operator=(NetherFortressStart const&);
+    NetherFortressStart(NetherFortressStart const&);
+    NetherFortressStart();
 
 public:
     // NOLINTBEGIN

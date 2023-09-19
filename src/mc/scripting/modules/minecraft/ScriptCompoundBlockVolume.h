@@ -12,8 +12,8 @@ namespace ScriptModuleMinecraft {
 class ScriptCompoundBlockVolume {
 public:
     // prevent constructor by default
-    ScriptCompoundBlockVolume(ScriptCompoundBlockVolume const&) = delete;
-    ScriptCompoundBlockVolume()                                 = delete;
+    ScriptCompoundBlockVolume(ScriptCompoundBlockVolume const&);
+    ScriptCompoundBlockVolume();
 
 public:
     // NOLINTBEGIN

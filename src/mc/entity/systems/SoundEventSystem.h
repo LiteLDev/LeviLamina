@@ -9,9 +9,9 @@
 class SoundEventSystem {
 public:
     // prevent constructor by default
-    SoundEventSystem& operator=(SoundEventSystem const&) = delete;
-    SoundEventSystem(SoundEventSystem const&)            = delete;
-    SoundEventSystem()                                   = delete;
+    SoundEventSystem& operator=(SoundEventSystem const&);
+    SoundEventSystem(SoundEventSystem const&);
+    SoundEventSystem();
 
 public:
     // NOLINTBEGIN

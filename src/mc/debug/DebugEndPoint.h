@@ -24,9 +24,9 @@ public:
     class VanillaWorldChecker : public ::ResourcePackListener {
     public:
         // prevent constructor by default
-        VanillaWorldChecker& operator=(VanillaWorldChecker const&) = delete;
-        VanillaWorldChecker(VanillaWorldChecker const&)            = delete;
-        VanillaWorldChecker()                                      = delete;
+        VanillaWorldChecker& operator=(VanillaWorldChecker const&);
+        VanillaWorldChecker(VanillaWorldChecker const&);
+        VanillaWorldChecker();
 
     public:
         // NOLINTBEGIN
@@ -61,9 +61,9 @@ public:
 
 public:
     // prevent constructor by default
-    DebugEndPoint& operator=(DebugEndPoint const&) = delete;
-    DebugEndPoint(DebugEndPoint const&)            = delete;
-    DebugEndPoint()                                = delete;
+    DebugEndPoint& operator=(DebugEndPoint const&);
+    DebugEndPoint(DebugEndPoint const&);
+    DebugEndPoint();
 
 public:
     // NOLINTBEGIN
@@ -86,7 +86,7 @@ public:
     MCVAPI void setEnabled(bool);
 
     // symbol: ??0DebugEndPoint@@QEAA@V?$optional@W4LogLevel@@@std@@@Z
-    MCAPI DebugEndPoint(std::optional<::LogLevel>);
+    MCAPI explicit DebugEndPoint(std::optional<::LogLevel>);
 
     // symbol: ?initializeContentLogging@DebugEndPoint@@QEAAXAEAVResourcePackManager@@AEBVPath@Core@@@Z
     MCAPI void initializeContentLogging(class ResourcePackManager&, class Core::Path const&);
@@ -104,7 +104,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mAssertAreas() { return mAssertAreas; }
+    auto& $mAssertAreas() { return mAssertAreas; }
 
     // NOLINTEND
 };

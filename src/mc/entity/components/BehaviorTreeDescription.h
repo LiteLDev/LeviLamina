@@ -8,9 +8,9 @@
 class BehaviorTreeDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    BehaviorTreeDescription& operator=(BehaviorTreeDescription const&) = delete;
-    BehaviorTreeDescription(BehaviorTreeDescription const&)            = delete;
-    BehaviorTreeDescription()                                          = delete;
+    BehaviorTreeDescription& operator=(BehaviorTreeDescription const&);
+    BehaviorTreeDescription(BehaviorTreeDescription const&);
+    BehaviorTreeDescription();
 
 public:
     // NOLINTBEGIN

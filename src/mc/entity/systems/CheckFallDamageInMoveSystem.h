@@ -5,9 +5,9 @@
 class CheckFallDamageInMoveSystem {
 public:
     // prevent constructor by default
-    CheckFallDamageInMoveSystem& operator=(CheckFallDamageInMoveSystem const&) = delete;
-    CheckFallDamageInMoveSystem(CheckFallDamageInMoveSystem const&)            = delete;
-    CheckFallDamageInMoveSystem()                                              = delete;
+    CheckFallDamageInMoveSystem& operator=(CheckFallDamageInMoveSystem const&);
+    CheckFallDamageInMoveSystem(CheckFallDamageInMoveSystem const&);
+    CheckFallDamageInMoveSystem();
 
 public:
     // NOLINTBEGIN

@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class TntBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    TntBlock& operator=(TntBlock const&) = delete;
-    TntBlock(TntBlock const&)            = delete;
-    TntBlock()                           = delete;
+    TntBlock& operator=(TntBlock const&);
+    TntBlock(TntBlock const&);
+    TntBlock();
 
 public:
     // NOLINTBEGIN

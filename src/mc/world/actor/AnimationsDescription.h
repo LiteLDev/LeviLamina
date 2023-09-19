@@ -8,8 +8,8 @@
 class AnimationsDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    AnimationsDescription& operator=(AnimationsDescription const&) = delete;
-    AnimationsDescription(AnimationsDescription const&)            = delete;
+    AnimationsDescription& operator=(AnimationsDescription const&);
+    AnimationsDescription(AnimationsDescription const&);
 
 public:
     // NOLINTBEGIN

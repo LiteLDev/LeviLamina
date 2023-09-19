@@ -10,9 +10,9 @@ namespace ScriptModuleMinecraft {
 class ScriptScoreboardObjectiveDisplayOptions {
 public:
     // prevent constructor by default
-    ScriptScoreboardObjectiveDisplayOptions& operator=(ScriptScoreboardObjectiveDisplayOptions const&) = delete;
-    ScriptScoreboardObjectiveDisplayOptions(ScriptScoreboardObjectiveDisplayOptions const&)            = delete;
-    ScriptScoreboardObjectiveDisplayOptions()                                                          = delete;
+    ScriptScoreboardObjectiveDisplayOptions& operator=(ScriptScoreboardObjectiveDisplayOptions const&);
+    ScriptScoreboardObjectiveDisplayOptions(ScriptScoreboardObjectiveDisplayOptions const&);
+    ScriptScoreboardObjectiveDisplayOptions();
 
 public:
     // NOLINTBEGIN

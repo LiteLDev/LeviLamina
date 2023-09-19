@@ -13,9 +13,9 @@ namespace mce { class UUID; }
 class Recipe {
 public:
     // prevent constructor by default
-    Recipe& operator=(Recipe const&) = delete;
-    Recipe(Recipe const&)            = delete;
-    Recipe()                         = delete;
+    Recipe& operator=(Recipe const&);
+    Recipe(Recipe const&);
+    Recipe();
 
 public:
     // NOLINTBEGIN

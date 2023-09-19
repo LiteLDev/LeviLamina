@@ -10,9 +10,9 @@ public:
     bool         mIsComponentBased; // this+0x32
 
     // prevent constructor by default
-    ItemData& operator=(ItemData const&) = delete;
-    ItemData(ItemData const&)            = delete;
-    ItemData()                           = delete;
+    ItemData& operator=(ItemData const&);
+    ItemData(ItemData const&);
+    ItemData();
 
 public:
     // NOLINTBEGIN

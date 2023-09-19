@@ -33,10 +33,10 @@ public:
     MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor const&);
 
     // symbol: ??0NetworkItemStackDescriptor@@QEAA@AEBVItemStackDescriptor@@@Z
-    MCAPI NetworkItemStackDescriptor(class ItemStackDescriptor const&);
+    MCAPI explicit NetworkItemStackDescriptor(class ItemStackDescriptor const&);
 
     // symbol: ??0NetworkItemStackDescriptor@@QEAA@AEBVItemStack@@@Z
-    MCAPI NetworkItemStackDescriptor(class ItemStack const&);
+    MCAPI explicit NetworkItemStackDescriptor(class ItemStack const&);
 
     // symbol: ??0NetworkItemStackDescriptor@@QEAA@$$QEAV0@@Z
     MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor&&);

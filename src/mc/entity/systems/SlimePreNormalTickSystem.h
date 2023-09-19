@@ -10,9 +10,9 @@
 class SlimePreNormalTickSystem {
 public:
     // prevent constructor by default
-    SlimePreNormalTickSystem& operator=(SlimePreNormalTickSystem const&) = delete;
-    SlimePreNormalTickSystem(SlimePreNormalTickSystem const&)            = delete;
-    SlimePreNormalTickSystem()                                           = delete;
+    SlimePreNormalTickSystem& operator=(SlimePreNormalTickSystem const&);
+    SlimePreNormalTickSystem(SlimePreNormalTickSystem const&);
+    SlimePreNormalTickSystem();
 
 public:
     // NOLINTBEGIN

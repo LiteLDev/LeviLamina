@@ -8,9 +8,9 @@
 struct IEntitySystemsCollection {
 public:
     // prevent constructor by default
-    IEntitySystemsCollection& operator=(IEntitySystemsCollection const&) = delete;
-    IEntitySystemsCollection(IEntitySystemsCollection const&)            = delete;
-    IEntitySystemsCollection()                                           = delete;
+    IEntitySystemsCollection& operator=(IEntitySystemsCollection const&);
+    IEntitySystemsCollection(IEntitySystemsCollection const&);
+    IEntitySystemsCollection();
 
 public:
     // NOLINTBEGIN

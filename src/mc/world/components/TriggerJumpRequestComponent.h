@@ -5,7 +5,7 @@
 struct TriggerJumpRequestComponent {
 public:
     // prevent constructor by default
-    TriggerJumpRequestComponent& operator=(TriggerJumpRequestComponent const&) = delete;
-    TriggerJumpRequestComponent(TriggerJumpRequestComponent const&)            = delete;
-    TriggerJumpRequestComponent()                                              = delete;
+    TriggerJumpRequestComponent& operator=(TriggerJumpRequestComponent const&);
+    TriggerJumpRequestComponent(TriggerJumpRequestComponent const&);
+    TriggerJumpRequestComponent();
 };

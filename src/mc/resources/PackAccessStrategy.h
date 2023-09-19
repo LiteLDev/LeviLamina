@@ -15,8 +15,8 @@ namespace Core { class Path; }
 class PackAccessStrategy {
 public:
     // prevent constructor by default
-    PackAccessStrategy& operator=(PackAccessStrategy const&) = delete;
-    PackAccessStrategy(PackAccessStrategy const&)            = delete;
+    PackAccessStrategy& operator=(PackAccessStrategy const&);
+    PackAccessStrategy(PackAccessStrategy const&);
 
 public:
     // NOLINTBEGIN

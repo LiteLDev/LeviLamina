@@ -30,22 +30,22 @@ public:
         struct CarveEllipsoidParams {
         public:
             // prevent constructor by default
-            CarveEllipsoidParams& operator=(CarveEllipsoidParams const&) = delete;
-            CarveEllipsoidParams(CarveEllipsoidParams const&)            = delete;
-            CarveEllipsoidParams()                                       = delete;
+            CarveEllipsoidParams& operator=(CarveEllipsoidParams const&);
+            CarveEllipsoidParams(CarveEllipsoidParams const&);
+            CarveEllipsoidParams();
         };
 
     public:
         // prevent constructor by default
-        CachedMetaData& operator=(CachedMetaData const&) = delete;
-        CachedMetaData(CachedMetaData const&)            = delete;
-        CachedMetaData()                                 = delete;
+        CachedMetaData& operator=(CachedMetaData const&);
+        CachedMetaData(CachedMetaData const&);
+        CachedMetaData();
     };
 
 public:
     // prevent constructor by default
-    CaveFeature& operator=(CaveFeature const&) = delete;
-    CaveFeature(CaveFeature const&)            = delete;
+    CaveFeature& operator=(CaveFeature const&);
+    CaveFeature(CaveFeature const&);
 
 public:
     // NOLINTBEGIN

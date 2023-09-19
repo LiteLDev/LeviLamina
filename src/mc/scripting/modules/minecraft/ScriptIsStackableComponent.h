@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptIsStackableComponent {
 public:
     // prevent constructor by default
-    ScriptIsStackableComponent& operator=(ScriptIsStackableComponent const&) = delete;
-    ScriptIsStackableComponent(ScriptIsStackableComponent const&)            = delete;
-    ScriptIsStackableComponent()                                             = delete;
+    ScriptIsStackableComponent& operator=(ScriptIsStackableComponent const&);
+    ScriptIsStackableComponent(ScriptIsStackableComponent const&);
+    ScriptIsStackableComponent();
 
 public:
     // NOLINTBEGIN

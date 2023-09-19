@@ -5,9 +5,9 @@
 class SnapshotWritableFile {
 public:
     // prevent constructor by default
-    SnapshotWritableFile& operator=(SnapshotWritableFile const&) = delete;
-    SnapshotWritableFile(SnapshotWritableFile const&)            = delete;
-    SnapshotWritableFile()                                       = delete;
+    SnapshotWritableFile& operator=(SnapshotWritableFile const&);
+    SnapshotWritableFile(SnapshotWritableFile const&);
+    SnapshotWritableFile();
 
 public:
     // NOLINTBEGIN

@@ -8,7 +8,7 @@
 struct BlockDestructibleByMiningComponent : public ::BlockComponentBase {
 public:
     // prevent constructor by default
-    BlockDestructibleByMiningComponent& operator=(BlockDestructibleByMiningComponent const&) = delete;
-    BlockDestructibleByMiningComponent(BlockDestructibleByMiningComponent const&)            = delete;
-    BlockDestructibleByMiningComponent()                                                     = delete;
+    BlockDestructibleByMiningComponent& operator=(BlockDestructibleByMiningComponent const&);
+    BlockDestructibleByMiningComponent(BlockDestructibleByMiningComponent const&);
+    BlockDestructibleByMiningComponent();
 };

@@ -7,9 +7,9 @@ namespace Scripting {
 class ScriptObjectFactory {
 public:
     // prevent constructor by default
-    ScriptObjectFactory& operator=(ScriptObjectFactory const&) = delete;
-    ScriptObjectFactory(ScriptObjectFactory const&)            = delete;
-    ScriptObjectFactory()                                      = delete;
+    ScriptObjectFactory& operator=(ScriptObjectFactory const&);
+    ScriptObjectFactory(ScriptObjectFactory const&);
+    ScriptObjectFactory();
 };
 
 }; // namespace Scripting

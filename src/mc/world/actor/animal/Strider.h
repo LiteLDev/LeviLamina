@@ -34,10 +34,9 @@ public:
     class PlayerRideInLavaInOverworldAchievementTracker {
     public:
         // prevent constructor by default
-        PlayerRideInLavaInOverworldAchievementTracker&
-        operator=(PlayerRideInLavaInOverworldAchievementTracker const&)                                     = delete;
-        PlayerRideInLavaInOverworldAchievementTracker(PlayerRideInLavaInOverworldAchievementTracker const&) = delete;
-        PlayerRideInLavaInOverworldAchievementTracker()                                                     = delete;
+        PlayerRideInLavaInOverworldAchievementTracker& operator=(PlayerRideInLavaInOverworldAchievementTracker const&);
+        PlayerRideInLavaInOverworldAchievementTracker(PlayerRideInLavaInOverworldAchievementTracker const&);
+        PlayerRideInLavaInOverworldAchievementTracker();
 
     public:
         // NOLINTBEGIN
@@ -49,9 +48,9 @@ public:
 
 public:
     // prevent constructor by default
-    Strider& operator=(Strider const&) = delete;
-    Strider(Strider const&)            = delete;
-    Strider()                          = delete;
+    Strider& operator=(Strider const&);
+    Strider(Strider const&);
+    Strider();
 
 public:
     // NOLINTBEGIN

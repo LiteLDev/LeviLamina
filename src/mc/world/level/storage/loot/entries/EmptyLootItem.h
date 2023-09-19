@@ -8,9 +8,9 @@
 class EmptyLootItem : public ::LootPoolEntry {
 public:
     // prevent constructor by default
-    EmptyLootItem& operator=(EmptyLootItem const&) = delete;
-    EmptyLootItem(EmptyLootItem const&)            = delete;
-    EmptyLootItem()                                = delete;
+    EmptyLootItem& operator=(EmptyLootItem const&);
+    EmptyLootItem(EmptyLootItem const&);
+    EmptyLootItem();
 
 public:
     // NOLINTBEGIN

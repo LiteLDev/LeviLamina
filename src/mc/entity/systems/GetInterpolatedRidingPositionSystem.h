@@ -10,9 +10,9 @@
 class GetInterpolatedRidingPositionSystem {
 public:
     // prevent constructor by default
-    GetInterpolatedRidingPositionSystem& operator=(GetInterpolatedRidingPositionSystem const&) = delete;
-    GetInterpolatedRidingPositionSystem(GetInterpolatedRidingPositionSystem const&)            = delete;
-    GetInterpolatedRidingPositionSystem()                                                      = delete;
+    GetInterpolatedRidingPositionSystem& operator=(GetInterpolatedRidingPositionSystem const&);
+    GetInterpolatedRidingPositionSystem(GetInterpolatedRidingPositionSystem const&);
+    GetInterpolatedRidingPositionSystem();
 
 public:
     // NOLINTBEGIN

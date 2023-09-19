@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class GlazedTerracottaBlock : public ::FaceDirectionalBlock {
 public:
     // prevent constructor by default
-    GlazedTerracottaBlock& operator=(GlazedTerracottaBlock const&) = delete;
-    GlazedTerracottaBlock(GlazedTerracottaBlock const&)            = delete;
-    GlazedTerracottaBlock()                                        = delete;
+    GlazedTerracottaBlock& operator=(GlazedTerracottaBlock const&);
+    GlazedTerracottaBlock(GlazedTerracottaBlock const&);
+    GlazedTerracottaBlock();
 
 public:
     // NOLINTBEGIN

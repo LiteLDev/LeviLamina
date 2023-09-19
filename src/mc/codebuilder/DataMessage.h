@@ -7,9 +7,9 @@ namespace CodeBuilder {
 struct DataMessage {
 public:
     // prevent constructor by default
-    DataMessage& operator=(DataMessage const&) = delete;
-    DataMessage(DataMessage const&)            = delete;
-    DataMessage()                              = delete;
+    DataMessage& operator=(DataMessage const&);
+    DataMessage(DataMessage const&);
+    DataMessage();
 
 public:
     // NOLINTBEGIN

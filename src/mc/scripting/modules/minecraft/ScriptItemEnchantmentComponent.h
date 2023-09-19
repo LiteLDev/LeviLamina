@@ -19,7 +19,7 @@ namespace ScriptModuleMinecraft {
 class ScriptItemEnchantmentComponent : public ::ScriptModuleMinecraft::ScriptItemComponent {
 public:
     // prevent constructor by default
-    ScriptItemEnchantmentComponent() = delete;
+    ScriptItemEnchantmentComponent();
 
 public:
     // NOLINTBEGIN

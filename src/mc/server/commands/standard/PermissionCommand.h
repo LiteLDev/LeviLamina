@@ -8,9 +8,9 @@
 class PermissionCommand : public ::ServerCommand {
 public:
     // prevent constructor by default
-    PermissionCommand& operator=(PermissionCommand const&) = delete;
-    PermissionCommand(PermissionCommand const&)            = delete;
-    PermissionCommand()                                    = delete;
+    PermissionCommand& operator=(PermissionCommand const&);
+    PermissionCommand(PermissionCommand const&);
+    PermissionCommand();
 
 public:
     // NOLINTBEGIN
@@ -51,7 +51,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mPermissionsFile() { return mPermissionsFile; }
+    auto& $mPermissionsFile() { return mPermissionsFile; }
 
     // NOLINTEND
 };

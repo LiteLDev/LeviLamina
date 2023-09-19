@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class LanternBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    LanternBlock& operator=(LanternBlock const&) = delete;
-    LanternBlock(LanternBlock const&)            = delete;
-    LanternBlock()                               = delete;
+    LanternBlock& operator=(LanternBlock const&);
+    LanternBlock(LanternBlock const&);
+    LanternBlock();
 
 public:
     // NOLINTBEGIN

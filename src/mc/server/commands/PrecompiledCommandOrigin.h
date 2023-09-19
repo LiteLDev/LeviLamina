@@ -18,9 +18,9 @@ namespace mce { class UUID; }
 class PrecompiledCommandOrigin : public ::CommandOrigin {
 public:
     // prevent constructor by default
-    PrecompiledCommandOrigin& operator=(PrecompiledCommandOrigin const&) = delete;
-    PrecompiledCommandOrigin(PrecompiledCommandOrigin const&)            = delete;
-    PrecompiledCommandOrigin()                                           = delete;
+    PrecompiledCommandOrigin& operator=(PrecompiledCommandOrigin const&);
+    PrecompiledCommandOrigin(PrecompiledCommandOrigin const&);
+    PrecompiledCommandOrigin();
 
 public:
     // NOLINTBEGIN

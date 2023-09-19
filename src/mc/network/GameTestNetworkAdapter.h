@@ -23,9 +23,9 @@ public:
     class GameTestNetworkListener : public ::gametest::IGameTestListener {
     public:
         // prevent constructor by default
-        GameTestNetworkListener& operator=(GameTestNetworkListener const&) = delete;
-        GameTestNetworkListener(GameTestNetworkListener const&)            = delete;
-        GameTestNetworkListener()                                          = delete;
+        GameTestNetworkListener& operator=(GameTestNetworkListener const&);
+        GameTestNetworkListener(GameTestNetworkListener const&);
+        GameTestNetworkListener();
 
     public:
         // NOLINTBEGIN
@@ -48,14 +48,14 @@ public:
 
 public:
     // prevent constructor by default
-    GameTestNetworkAdapter& operator=(GameTestNetworkAdapter const&) = delete;
-    GameTestNetworkAdapter(GameTestNetworkAdapter const&)            = delete;
-    GameTestNetworkAdapter()                                         = delete;
+    GameTestNetworkAdapter& operator=(GameTestNetworkAdapter const&);
+    GameTestNetworkAdapter(GameTestNetworkAdapter const&);
+    GameTestNetworkAdapter();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0GameTestNetworkAdapter@@QEAA@AEAVMinecraftGameTest@@@Z
-    MCAPI GameTestNetworkAdapter(class MinecraftGameTest&);
+    MCAPI explicit GameTestNetworkAdapter(class MinecraftGameTest&);
 
     // symbol:
     // ?rungametest@GameTestNetworkAdapter@@QEAAXV?$not_null@PEAVPacketSender@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVDimension@@AEBUTestParameters@gametest@@@Z

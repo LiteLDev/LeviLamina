@@ -5,8 +5,8 @@
 class BackgroundTaskQueue {
 public:
     // prevent constructor by default
-    BackgroundTaskQueue& operator=(BackgroundTaskQueue const&) = delete;
-    BackgroundTaskQueue(BackgroundTaskQueue const&)            = delete;
+    BackgroundTaskQueue& operator=(BackgroundTaskQueue const&);
+    BackgroundTaskQueue(BackgroundTaskQueue const&);
 
 public:
     // NOLINTBEGIN

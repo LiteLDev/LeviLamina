@@ -5,9 +5,9 @@
 class IsSpawnableDescription {
 public:
     // prevent constructor by default
-    IsSpawnableDescription& operator=(IsSpawnableDescription const&) = delete;
-    IsSpawnableDescription(IsSpawnableDescription const&)            = delete;
-    IsSpawnableDescription()                                         = delete;
+    IsSpawnableDescription& operator=(IsSpawnableDescription const&);
+    IsSpawnableDescription(IsSpawnableDescription const&);
+    IsSpawnableDescription();
 
 public:
     // NOLINTBEGIN

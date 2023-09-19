@@ -10,9 +10,9 @@
 class LayEggGoal : public ::BaseMoveToBlockGoal {
 public:
     // prevent constructor by default
-    LayEggGoal& operator=(LayEggGoal const&) = delete;
-    LayEggGoal(LayEggGoal const&)            = delete;
-    LayEggGoal()                             = delete;
+    LayEggGoal& operator=(LayEggGoal const&);
+    LayEggGoal(LayEggGoal const&);
+    LayEggGoal();
 
 public:
     // NOLINTBEGIN

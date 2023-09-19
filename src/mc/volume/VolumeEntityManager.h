@@ -16,9 +16,9 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class VolumeEntityManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    VolumeEntityManager& operator=(VolumeEntityManager const&) = delete;
-    VolumeEntityManager(VolumeEntityManager const&)            = delete;
-    VolumeEntityManager()                                      = delete;
+    VolumeEntityManager& operator=(VolumeEntityManager const&);
+    VolumeEntityManager(VolumeEntityManager const&);
+    VolumeEntityManager();
 
 public:
     // NOLINTBEGIN
@@ -44,7 +44,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ??0VolumeEntityManager@@IEAA@V?$StackRefResultT@UEntityRegistryRefTraits@@@@@Z
-    MCAPI VolumeEntityManager(class StackRefResultT<struct EntityRegistryRefTraits>);
+    MCAPI explicit VolumeEntityManager(class StackRefResultT<struct EntityRegistryRefTraits>);
 
     // symbol:
     // ?_createVolumeEntity@VolumeEntityManager@@IEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBVDefinitionInstanceGroup@@@Z

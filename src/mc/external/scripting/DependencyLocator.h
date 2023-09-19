@@ -7,9 +7,9 @@ namespace Scripting {
 class DependencyLocator {
 public:
     // prevent constructor by default
-    DependencyLocator& operator=(DependencyLocator const&) = delete;
-    DependencyLocator(DependencyLocator const&)            = delete;
-    DependencyLocator()                                    = delete;
+    DependencyLocator& operator=(DependencyLocator const&);
+    DependencyLocator(DependencyLocator const&);
+    DependencyLocator();
 };
 
 }; // namespace Scripting

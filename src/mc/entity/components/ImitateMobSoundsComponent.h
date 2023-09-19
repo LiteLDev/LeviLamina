@@ -9,9 +9,9 @@
 class ImitateMobSoundsComponent {
 public:
     // prevent constructor by default
-    ImitateMobSoundsComponent& operator=(ImitateMobSoundsComponent const&) = delete;
-    ImitateMobSoundsComponent(ImitateMobSoundsComponent const&)            = delete;
-    ImitateMobSoundsComponent()                                            = delete;
+    ImitateMobSoundsComponent& operator=(ImitateMobSoundsComponent const&);
+    ImitateMobSoundsComponent(ImitateMobSoundsComponent const&);
+    ImitateMobSoundsComponent();
 
 public:
     // NOLINTBEGIN
@@ -34,7 +34,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $imitateMobMap() { return imitateMobMap; }
+    auto& $imitateMobMap() { return imitateMobMap; }
 
     // NOLINTEND
 };

@@ -7,9 +7,9 @@ namespace CanyonFeatureUtils {
 struct CanyonConfiguration {
 public:
     // prevent constructor by default
-    CanyonConfiguration& operator=(CanyonConfiguration const&) = delete;
-    CanyonConfiguration(CanyonConfiguration const&)            = delete;
-    CanyonConfiguration()                                      = delete;
+    CanyonConfiguration& operator=(CanyonConfiguration const&);
+    CanyonConfiguration(CanyonConfiguration const&);
+    CanyonConfiguration();
 };
 
 }; // namespace CanyonFeatureUtils

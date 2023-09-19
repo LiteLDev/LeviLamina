@@ -5,9 +5,9 @@
 class Amplifier {
 public:
     // prevent constructor by default
-    Amplifier& operator=(Amplifier const&) = delete;
-    Amplifier(Amplifier const&)            = delete;
-    Amplifier()                            = delete;
+    Amplifier& operator=(Amplifier const&);
+    Amplifier(Amplifier const&);
+    Amplifier();
 
 public:
     // NOLINTBEGIN

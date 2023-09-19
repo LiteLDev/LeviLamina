@@ -51,7 +51,7 @@ public:
     MCAPI ExpressionNode(struct MolangScriptArg&, ::ExpressionOp);
 
     // symbol: ??0ExpressionNode@@QEAA@M@Z
-    MCAPI ExpressionNode(float);
+    MCAPI explicit ExpressionNode(float);
 
     // symbol: ??0ExpressionNode@@QEAA@$$QEAV0@@Z
     MCAPI ExpressionNode(class ExpressionNode&&);
@@ -317,15 +317,15 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $_defaultUnknownQueryFunction() { return _defaultUnknownQueryFunction; }
+    auto& $_defaultUnknownQueryFunction() { return _defaultUnknownQueryFunction; }
 
-    inline auto& $mExperiments() { return mExperiments; }
+    auto& $mExperiments() { return mExperiments; }
 
-    inline auto& $mMolangInitialized() { return mMolangInitialized; }
+    auto& $mMolangInitialized() { return mMolangInitialized; }
 
-    inline auto& $mQueryFunctionAccessors() { return mQueryFunctionAccessors; }
+    auto& $mQueryFunctionAccessors() { return mQueryFunctionAccessors; }
 
-    inline auto& $mQuerySets() { return mQuerySets; }
+    auto& $mQuerySets() { return mQuerySets; }
 
     // NOLINTEND
 };

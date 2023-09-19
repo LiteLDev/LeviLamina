@@ -9,9 +9,9 @@
 class LeapAtTargetGoal : public ::Goal {
 public:
     // prevent constructor by default
-    LeapAtTargetGoal& operator=(LeapAtTargetGoal const&) = delete;
-    LeapAtTargetGoal(LeapAtTargetGoal const&)            = delete;
-    LeapAtTargetGoal()                                   = delete;
+    LeapAtTargetGoal& operator=(LeapAtTargetGoal const&);
+    LeapAtTargetGoal(LeapAtTargetGoal const&);
+    LeapAtTargetGoal();
 
 public:
     // NOLINTBEGIN

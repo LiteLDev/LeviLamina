@@ -14,9 +14,9 @@ namespace Util { struct ReplacementResults; }
 class LootCommand : public ::Command {
 public:
     // prevent constructor by default
-    LootCommand& operator=(LootCommand const&) = delete;
-    LootCommand(LootCommand const&)            = delete;
-    LootCommand()                              = delete;
+    LootCommand& operator=(LootCommand const&);
+    LootCommand(LootCommand const&);
+    LootCommand();
 
 public:
     // NOLINTBEGIN

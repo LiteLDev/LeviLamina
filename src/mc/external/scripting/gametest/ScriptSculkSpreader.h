@@ -20,9 +20,9 @@ namespace ScriptModuleGameTest {
 class ScriptSculkSpreader {
 public:
     // prevent constructor by default
-    ScriptSculkSpreader& operator=(ScriptSculkSpreader const&) = delete;
-    ScriptSculkSpreader(ScriptSculkSpreader const&)            = delete;
-    ScriptSculkSpreader()                                      = delete;
+    ScriptSculkSpreader& operator=(ScriptSculkSpreader const&);
+    ScriptSculkSpreader(ScriptSculkSpreader const&);
+    ScriptSculkSpreader();
 
 public:
     // NOLINTBEGIN

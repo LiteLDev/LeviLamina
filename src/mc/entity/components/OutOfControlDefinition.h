@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class OutOfControlDefinition {
 public:
     // prevent constructor by default
-    OutOfControlDefinition& operator=(OutOfControlDefinition const&) = delete;
-    OutOfControlDefinition(OutOfControlDefinition const&)            = delete;
-    OutOfControlDefinition()                                         = delete;
+    OutOfControlDefinition& operator=(OutOfControlDefinition const&);
+    OutOfControlDefinition(OutOfControlDefinition const&);
+    OutOfControlDefinition();
 
 public:
     // NOLINTBEGIN

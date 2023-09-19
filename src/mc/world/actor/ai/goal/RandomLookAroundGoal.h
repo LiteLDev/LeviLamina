@@ -9,9 +9,9 @@
 class RandomLookAroundGoal : public ::Goal {
 public:
     // prevent constructor by default
-    RandomLookAroundGoal& operator=(RandomLookAroundGoal const&) = delete;
-    RandomLookAroundGoal(RandomLookAroundGoal const&)            = delete;
-    RandomLookAroundGoal()                                       = delete;
+    RandomLookAroundGoal& operator=(RandomLookAroundGoal const&);
+    RandomLookAroundGoal(RandomLookAroundGoal const&);
+    RandomLookAroundGoal();
 
 public:
     // NOLINTBEGIN

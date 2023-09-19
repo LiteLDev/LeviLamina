@@ -9,9 +9,9 @@
 class RunAroundLikeCrazyGoal : public ::Goal {
 public:
     // prevent constructor by default
-    RunAroundLikeCrazyGoal& operator=(RunAroundLikeCrazyGoal const&) = delete;
-    RunAroundLikeCrazyGoal(RunAroundLikeCrazyGoal const&)            = delete;
-    RunAroundLikeCrazyGoal()                                         = delete;
+    RunAroundLikeCrazyGoal& operator=(RunAroundLikeCrazyGoal const&);
+    RunAroundLikeCrazyGoal(RunAroundLikeCrazyGoal const&);
+    RunAroundLikeCrazyGoal();
 
 public:
     // NOLINTBEGIN

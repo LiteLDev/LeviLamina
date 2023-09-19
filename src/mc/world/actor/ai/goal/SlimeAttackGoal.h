@@ -9,9 +9,9 @@
 class SlimeAttackGoal : public ::Goal {
 public:
     // prevent constructor by default
-    SlimeAttackGoal& operator=(SlimeAttackGoal const&) = delete;
-    SlimeAttackGoal(SlimeAttackGoal const&)            = delete;
-    SlimeAttackGoal()                                  = delete;
+    SlimeAttackGoal& operator=(SlimeAttackGoal const&);
+    SlimeAttackGoal(SlimeAttackGoal const&);
+    SlimeAttackGoal();
 
 public:
     // NOLINTBEGIN
@@ -35,7 +35,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0SlimeAttackGoal@@QEAA@AEAVMob@@@Z
-    MCAPI SlimeAttackGoal(class Mob&);
+    MCAPI explicit SlimeAttackGoal(class Mob&);
 
     // NOLINTEND
 };

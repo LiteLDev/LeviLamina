@@ -10,9 +10,9 @@
 class PlayerUIContainerModel : public ::PlayerUIContainerModelBase {
 public:
     // prevent constructor by default
-    PlayerUIContainerModel& operator=(PlayerUIContainerModel const&) = delete;
-    PlayerUIContainerModel(PlayerUIContainerModel const&)            = delete;
-    PlayerUIContainerModel()                                         = delete;
+    PlayerUIContainerModel& operator=(PlayerUIContainerModel const&);
+    PlayerUIContainerModel(PlayerUIContainerModel const&);
+    PlayerUIContainerModel();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class WitherRandomAttackPosGoal : public ::RandomStrollGoal {
 public:
     // prevent constructor by default
-    WitherRandomAttackPosGoal& operator=(WitherRandomAttackPosGoal const&) = delete;
-    WitherRandomAttackPosGoal(WitherRandomAttackPosGoal const&)            = delete;
-    WitherRandomAttackPosGoal()                                            = delete;
+    WitherRandomAttackPosGoal& operator=(WitherRandomAttackPosGoal const&);
+    WitherRandomAttackPosGoal(WitherRandomAttackPosGoal const&);
+    WitherRandomAttackPosGoal();
 
 public:
     // NOLINTBEGIN

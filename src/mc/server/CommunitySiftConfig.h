@@ -5,8 +5,8 @@
 struct CommunitySiftConfig {
 public:
     // prevent constructor by default
-    CommunitySiftConfig& operator=(CommunitySiftConfig const&) = delete;
-    CommunitySiftConfig(CommunitySiftConfig const&)            = delete;
+    CommunitySiftConfig& operator=(CommunitySiftConfig const&);
+    CommunitySiftConfig(CommunitySiftConfig const&);
 
 public:
     // NOLINTBEGIN

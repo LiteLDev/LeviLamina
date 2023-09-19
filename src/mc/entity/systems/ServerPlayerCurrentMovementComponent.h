@@ -5,9 +5,9 @@
 struct ServerPlayerCurrentMovementComponent {
 public:
     // prevent constructor by default
-    ServerPlayerCurrentMovementComponent& operator=(ServerPlayerCurrentMovementComponent const&) = delete;
-    ServerPlayerCurrentMovementComponent(ServerPlayerCurrentMovementComponent const&)            = delete;
-    ServerPlayerCurrentMovementComponent()                                                       = delete;
+    ServerPlayerCurrentMovementComponent& operator=(ServerPlayerCurrentMovementComponent const&);
+    ServerPlayerCurrentMovementComponent(ServerPlayerCurrentMovementComponent const&);
+    ServerPlayerCurrentMovementComponent();
 
 public:
     // NOLINTBEGIN

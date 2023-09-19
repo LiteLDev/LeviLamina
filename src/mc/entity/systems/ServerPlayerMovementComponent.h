@@ -5,9 +5,9 @@
 struct ServerPlayerMovementComponent {
 public:
     // prevent constructor by default
-    ServerPlayerMovementComponent& operator=(ServerPlayerMovementComponent const&) = delete;
-    ServerPlayerMovementComponent(ServerPlayerMovementComponent const&)            = delete;
-    ServerPlayerMovementComponent()                                                = delete;
+    ServerPlayerMovementComponent& operator=(ServerPlayerMovementComponent const&);
+    ServerPlayerMovementComponent(ServerPlayerMovementComponent const&);
+    ServerPlayerMovementComponent();
 
 public:
     // NOLINTBEGIN

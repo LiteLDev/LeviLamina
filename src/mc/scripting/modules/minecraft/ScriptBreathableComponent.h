@@ -19,9 +19,9 @@ namespace ScriptModuleMinecraft {
 class ScriptBreathableComponent {
 public:
     // prevent constructor by default
-    ScriptBreathableComponent& operator=(ScriptBreathableComponent const&) = delete;
-    ScriptBreathableComponent(ScriptBreathableComponent const&)            = delete;
-    ScriptBreathableComponent()                                            = delete;
+    ScriptBreathableComponent& operator=(ScriptBreathableComponent const&);
+    ScriptBreathableComponent(ScriptBreathableComponent const&);
+    ScriptBreathableComponent();
 
 public:
     // NOLINTBEGIN

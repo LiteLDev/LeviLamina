@@ -8,9 +8,9 @@
 class QueryTargetCommand : public ::Command {
 public:
     // prevent constructor by default
-    QueryTargetCommand& operator=(QueryTargetCommand const&) = delete;
-    QueryTargetCommand(QueryTargetCommand const&)            = delete;
-    QueryTargetCommand()                                     = delete;
+    QueryTargetCommand& operator=(QueryTargetCommand const&);
+    QueryTargetCommand(QueryTargetCommand const&);
+    QueryTargetCommand();
 
 public:
     // NOLINTBEGIN

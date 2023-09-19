@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class LookAtActorDefinition : public ::BehaviorDefinition {
 public:
     // prevent constructor by default
-    LookAtActorDefinition& operator=(LookAtActorDefinition const&) = delete;
-    LookAtActorDefinition(LookAtActorDefinition const&)            = delete;
-    LookAtActorDefinition()                                        = delete;
+    LookAtActorDefinition& operator=(LookAtActorDefinition const&);
+    LookAtActorDefinition(LookAtActorDefinition const&);
+    LookAtActorDefinition();
 
 public:
     // NOLINTBEGIN

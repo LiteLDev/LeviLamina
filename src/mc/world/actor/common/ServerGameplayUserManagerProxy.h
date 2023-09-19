@@ -8,9 +8,9 @@
 class ServerGameplayUserManagerProxy : public ::GameplayUserManagerProxy {
 public:
     // prevent constructor by default
-    ServerGameplayUserManagerProxy& operator=(ServerGameplayUserManagerProxy const&) = delete;
-    ServerGameplayUserManagerProxy(ServerGameplayUserManagerProxy const&)            = delete;
-    ServerGameplayUserManagerProxy()                                                 = delete;
+    ServerGameplayUserManagerProxy& operator=(ServerGameplayUserManagerProxy const&);
+    ServerGameplayUserManagerProxy(ServerGameplayUserManagerProxy const&);
+    ServerGameplayUserManagerProxy();
 
 public:
     // NOLINTBEGIN

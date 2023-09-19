@@ -5,9 +5,9 @@
 class ColorChannel {
 public:
     // prevent constructor by default
-    ColorChannel& operator=(ColorChannel const&) = delete;
-    ColorChannel(ColorChannel const&)            = delete;
-    ColorChannel()                               = delete;
+    ColorChannel& operator=(ColorChannel const&);
+    ColorChannel(ColorChannel const&);
+    ColorChannel();
 
 public:
     // NOLINTBEGIN

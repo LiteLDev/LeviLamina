@@ -8,9 +8,9 @@
 class MineshaftFeature : public ::StructureFeature {
 public:
     // prevent constructor by default
-    MineshaftFeature& operator=(MineshaftFeature const&) = delete;
-    MineshaftFeature(MineshaftFeature const&)            = delete;
-    MineshaftFeature()                                   = delete;
+    MineshaftFeature& operator=(MineshaftFeature const&);
+    MineshaftFeature(MineshaftFeature const&);
+    MineshaftFeature();
 
 public:
     // NOLINTBEGIN

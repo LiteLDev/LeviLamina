@@ -8,9 +8,9 @@ template <typename T0>
 struct WorkerTaskStats {
 public:
     // prevent constructor by default
-    WorkerTaskStats& operator=(WorkerTaskStats const&) = delete;
-    WorkerTaskStats(WorkerTaskStats const&)            = delete;
-    WorkerTaskStats()                                  = delete;
+    WorkerTaskStats& operator=(WorkerTaskStats const&);
+    WorkerTaskStats(WorkerTaskStats const&);
+    WorkerTaskStats();
 };
 
 }; // namespace Bedrock::Threading::Burst::Details

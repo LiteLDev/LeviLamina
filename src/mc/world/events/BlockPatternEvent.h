@@ -5,8 +5,8 @@
 struct BlockPatternEvent {
 public:
     // prevent constructor by default
-    BlockPatternEvent& operator=(BlockPatternEvent const&) = delete;
-    BlockPatternEvent()                                    = delete;
+    BlockPatternEvent& operator=(BlockPatternEvent const&);
+    BlockPatternEvent();
 
 public:
     // NOLINTBEGIN

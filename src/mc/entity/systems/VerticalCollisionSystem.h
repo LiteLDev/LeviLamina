@@ -16,9 +16,9 @@
 class VerticalCollisionSystem {
 public:
     // prevent constructor by default
-    VerticalCollisionSystem& operator=(VerticalCollisionSystem const&) = delete;
-    VerticalCollisionSystem(VerticalCollisionSystem const&)            = delete;
-    VerticalCollisionSystem()                                          = delete;
+    VerticalCollisionSystem& operator=(VerticalCollisionSystem const&);
+    VerticalCollisionSystem(VerticalCollisionSystem const&);
+    VerticalCollisionSystem();
 
 public:
     // NOLINTBEGIN

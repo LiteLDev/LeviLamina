@@ -5,7 +5,7 @@
 struct NetworkIdentifierWithSubId {
 public:
     // prevent constructor by default
-    NetworkIdentifierWithSubId& operator=(NetworkIdentifierWithSubId const&) = delete;
-    NetworkIdentifierWithSubId(NetworkIdentifierWithSubId const&)            = delete;
-    NetworkIdentifierWithSubId()                                             = delete;
+    NetworkIdentifierWithSubId& operator=(NetworkIdentifierWithSubId const&);
+    NetworkIdentifierWithSubId(NetworkIdentifierWithSubId const&);
+    NetworkIdentifierWithSubId();
 };

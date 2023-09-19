@@ -9,8 +9,8 @@
 class SelectorBehaviorNode : public ::BehaviorNode {
 public:
     // prevent constructor by default
-    SelectorBehaviorNode& operator=(SelectorBehaviorNode const&) = delete;
-    SelectorBehaviorNode(SelectorBehaviorNode const&)            = delete;
+    SelectorBehaviorNode& operator=(SelectorBehaviorNode const&);
+    SelectorBehaviorNode(SelectorBehaviorNode const&);
 
 public:
     // NOLINTBEGIN

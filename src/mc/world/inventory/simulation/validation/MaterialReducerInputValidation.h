@@ -8,9 +8,9 @@
 class MaterialReducerInputValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    MaterialReducerInputValidation& operator=(MaterialReducerInputValidation const&) = delete;
-    MaterialReducerInputValidation(MaterialReducerInputValidation const&)            = delete;
-    MaterialReducerInputValidation()                                                 = delete;
+    MaterialReducerInputValidation& operator=(MaterialReducerInputValidation const&);
+    MaterialReducerInputValidation(MaterialReducerInputValidation const&);
+    MaterialReducerInputValidation();
 
 public:
     // NOLINTBEGIN
@@ -50,7 +50,7 @@ public:
     MCVAPI int getAvailableSetCount(int, class ItemStackBase const&) const;
 
     // symbol: ??0MaterialReducerInputValidation@@QEAA@AEBVContainerScreenContext@@@Z
-    MCAPI MaterialReducerInputValidation(class ContainerScreenContext const&);
+    MCAPI explicit MaterialReducerInputValidation(class ContainerScreenContext const&);
 
     // NOLINTEND
 };

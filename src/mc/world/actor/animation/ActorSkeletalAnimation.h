@@ -9,9 +9,9 @@
 class ActorSkeletalAnimation {
 public:
     // prevent constructor by default
-    ActorSkeletalAnimation& operator=(ActorSkeletalAnimation const&) = delete;
-    ActorSkeletalAnimation(ActorSkeletalAnimation const&)            = delete;
-    ActorSkeletalAnimation()                                         = delete;
+    ActorSkeletalAnimation& operator=(ActorSkeletalAnimation const&);
+    ActorSkeletalAnimation(ActorSkeletalAnimation const&);
+    ActorSkeletalAnimation();
 
 public:
     // NOLINTBEGIN

@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class ActorInWaterTest : public ::SimpleBoolFilterTest {
 public:
     // prevent constructor by default
-    ActorInWaterTest& operator=(ActorInWaterTest const&) = delete;
-    ActorInWaterTest(ActorInWaterTest const&)            = delete;
-    ActorInWaterTest()                                   = delete;
+    ActorInWaterTest& operator=(ActorInWaterTest const&);
+    ActorInWaterTest(ActorInWaterTest const&);
+    ActorInWaterTest();
 
 public:
     // NOLINTBEGIN

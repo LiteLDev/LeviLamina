@@ -5,9 +5,9 @@
 class CompassSpriteCalculator {
 public:
     // prevent constructor by default
-    CompassSpriteCalculator& operator=(CompassSpriteCalculator const&) = delete;
-    CompassSpriteCalculator(CompassSpriteCalculator const&)            = delete;
-    CompassSpriteCalculator()                                          = delete;
+    CompassSpriteCalculator& operator=(CompassSpriteCalculator const&);
+    CompassSpriteCalculator(CompassSpriteCalculator const&);
+    CompassSpriteCalculator();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class InventoryMenu : public ::BaseContainerMenu {
 public:
     // prevent constructor by default
-    InventoryMenu& operator=(InventoryMenu const&) = delete;
-    InventoryMenu(InventoryMenu const&)            = delete;
-    InventoryMenu()                                = delete;
+    InventoryMenu& operator=(InventoryMenu const&);
+    InventoryMenu(InventoryMenu const&);
+    InventoryMenu();
 
 public:
     // NOLINTBEGIN

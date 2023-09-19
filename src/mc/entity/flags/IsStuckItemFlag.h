@@ -5,7 +5,7 @@
 struct IsStuckItemFlag {
 public:
     // prevent constructor by default
-    IsStuckItemFlag& operator=(IsStuckItemFlag const&) = delete;
-    IsStuckItemFlag(IsStuckItemFlag const&)            = delete;
-    IsStuckItemFlag()                                  = delete;
+    IsStuckItemFlag& operator=(IsStuckItemFlag const&);
+    IsStuckItemFlag(IsStuckItemFlag const&);
+    IsStuckItemFlag();
 };

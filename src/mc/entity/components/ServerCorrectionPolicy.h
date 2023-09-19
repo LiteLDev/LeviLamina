@@ -9,9 +9,9 @@
 class ServerCorrectionPolicy : public ::ClientReplayStatePolicy {
 public:
     // prevent constructor by default
-    ServerCorrectionPolicy& operator=(ServerCorrectionPolicy const&) = delete;
-    ServerCorrectionPolicy(ServerCorrectionPolicy const&)            = delete;
-    ServerCorrectionPolicy()                                         = delete;
+    ServerCorrectionPolicy& operator=(ServerCorrectionPolicy const&);
+    ServerCorrectionPolicy(ServerCorrectionPolicy const&);
+    ServerCorrectionPolicy();
 
 public:
     // NOLINTBEGIN

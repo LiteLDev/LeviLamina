@@ -12,9 +12,9 @@ namespace NetherNet { struct NetworkID; }
 class NetherNetTransportFactory {
 public:
     // prevent constructor by default
-    NetherNetTransportFactory& operator=(NetherNetTransportFactory const&) = delete;
-    NetherNetTransportFactory(NetherNetTransportFactory const&)            = delete;
-    NetherNetTransportFactory()                                            = delete;
+    NetherNetTransportFactory& operator=(NetherNetTransportFactory const&);
+    NetherNetTransportFactory(NetherNetTransportFactory const&);
+    NetherNetTransportFactory();
 
 public:
     // NOLINTBEGIN
@@ -32,7 +32,7 @@ public:
     MCVAPI ~NetherNetTransportFactory();
 
     // symbol: ??0NetherNetTransportFactory@@QEAA@AEBUNetworkSystemToggles@@@Z
-    MCAPI NetherNetTransportFactory(struct NetworkSystemToggles const&);
+    MCAPI explicit NetherNetTransportFactory(struct NetworkSystemToggles const&);
 
     // NOLINTEND
 };

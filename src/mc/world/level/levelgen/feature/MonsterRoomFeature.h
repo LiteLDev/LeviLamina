@@ -8,8 +8,8 @@
 class MonsterRoomFeature : public ::Feature {
 public:
     // prevent constructor by default
-    MonsterRoomFeature& operator=(MonsterRoomFeature const&) = delete;
-    MonsterRoomFeature(MonsterRoomFeature const&)            = delete;
+    MonsterRoomFeature& operator=(MonsterRoomFeature const&);
+    MonsterRoomFeature(MonsterRoomFeature const&);
 
 public:
     // NOLINTBEGIN

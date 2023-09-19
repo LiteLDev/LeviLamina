@@ -14,9 +14,9 @@ public:
     std::unordered_map<uint64, std::string>                     mReceivedMissingContent; // this+0x48
 
     // prevent constructor by default
-    ClientCacheMissResponsePacket& operator=(ClientCacheMissResponsePacket const&) = delete;
-    ClientCacheMissResponsePacket(ClientCacheMissResponsePacket const&)            = delete;
-    ClientCacheMissResponsePacket()                                                = delete;
+    ClientCacheMissResponsePacket& operator=(ClientCacheMissResponsePacket const&);
+    ClientCacheMissResponsePacket(ClientCacheMissResponsePacket const&);
+    ClientCacheMissResponsePacket();
 
 public:
     // NOLINTBEGIN

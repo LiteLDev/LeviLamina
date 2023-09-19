@@ -5,7 +5,7 @@
 struct FireworksRocketFlag {
 public:
     // prevent constructor by default
-    FireworksRocketFlag& operator=(FireworksRocketFlag const&) = delete;
-    FireworksRocketFlag(FireworksRocketFlag const&)            = delete;
-    FireworksRocketFlag()                                      = delete;
+    FireworksRocketFlag& operator=(FireworksRocketFlag const&);
+    FireworksRocketFlag(FireworksRocketFlag const&);
+    FireworksRocketFlag();
 };

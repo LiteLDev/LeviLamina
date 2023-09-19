@@ -10,9 +10,9 @@
 class MoveToLiquidGoal : public ::BaseMoveToBlockGoal {
 public:
     // prevent constructor by default
-    MoveToLiquidGoal& operator=(MoveToLiquidGoal const&) = delete;
-    MoveToLiquidGoal(MoveToLiquidGoal const&)            = delete;
-    MoveToLiquidGoal()                                   = delete;
+    MoveToLiquidGoal& operator=(MoveToLiquidGoal const&);
+    MoveToLiquidGoal(MoveToLiquidGoal const&);
+    MoveToLiquidGoal();
 
 public:
     // NOLINTBEGIN

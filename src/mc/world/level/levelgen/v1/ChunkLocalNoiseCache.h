@@ -16,15 +16,15 @@ public:
     struct CacheEntry {
     public:
         // prevent constructor by default
-        CacheEntry& operator=(CacheEntry const&) = delete;
-        CacheEntry(CacheEntry const&)            = delete;
-        CacheEntry()                             = delete;
+        CacheEntry& operator=(CacheEntry const&);
+        CacheEntry(CacheEntry const&);
+        CacheEntry();
     };
 
 public:
     // prevent constructor by default
-    ChunkLocalNoiseCache& operator=(ChunkLocalNoiseCache const&) = delete;
-    ChunkLocalNoiseCache(ChunkLocalNoiseCache const&)            = delete;
+    ChunkLocalNoiseCache& operator=(ChunkLocalNoiseCache const&);
+    ChunkLocalNoiseCache(ChunkLocalNoiseCache const&);
 
 public:
     // NOLINTBEGIN

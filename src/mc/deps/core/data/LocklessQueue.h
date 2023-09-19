@@ -6,7 +6,7 @@ template <typename T0>
 class LocklessQueue {
 public:
     // prevent constructor by default
-    LocklessQueue& operator=(LocklessQueue const&) = delete;
-    LocklessQueue(LocklessQueue const&)            = delete;
-    LocklessQueue()                                = delete;
+    LocklessQueue& operator=(LocklessQueue const&);
+    LocklessQueue(LocklessQueue const&);
+    LocklessQueue();
 };

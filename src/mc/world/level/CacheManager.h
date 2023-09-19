@@ -18,9 +18,9 @@ namespace PositionTrackingDB {
 class CacheManager {
 public:
     // prevent constructor by default
-    CacheManager& operator=(CacheManager const&) = delete;
-    CacheManager(CacheManager const&)            = delete;
-    CacheManager()                               = delete;
+    CacheManager& operator=(CacheManager const&);
+    CacheManager(CacheManager const&);
+    CacheManager();
 
 public:
     // NOLINTBEGIN

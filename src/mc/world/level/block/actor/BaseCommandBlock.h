@@ -5,8 +5,8 @@
 class BaseCommandBlock {
 public:
     // prevent constructor by default
-    BaseCommandBlock& operator=(BaseCommandBlock const&) = delete;
-    BaseCommandBlock(BaseCommandBlock const&)            = delete;
+    BaseCommandBlock& operator=(BaseCommandBlock const&);
+    BaseCommandBlock(BaseCommandBlock const&);
 
 public:
     // NOLINTBEGIN
@@ -97,7 +97,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $DefaultCommandBlockName() { return DefaultCommandBlockName; }
+    auto& $DefaultCommandBlockName() { return DefaultCommandBlockName; }
 
     // NOLINTEND
 };

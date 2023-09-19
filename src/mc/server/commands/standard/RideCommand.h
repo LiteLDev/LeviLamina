@@ -8,9 +8,9 @@
 class RideCommand : public ::Command {
 public:
     // prevent constructor by default
-    RideCommand& operator=(RideCommand const&) = delete;
-    RideCommand(RideCommand const&)            = delete;
-    RideCommand()                              = delete;
+    RideCommand& operator=(RideCommand const&);
+    RideCommand(RideCommand const&);
+    RideCommand();
 
 public:
     // NOLINTBEGIN

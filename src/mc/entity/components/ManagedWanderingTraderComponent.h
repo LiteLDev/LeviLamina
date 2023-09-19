@@ -5,9 +5,9 @@
 class ManagedWanderingTraderComponent {
 public:
     // prevent constructor by default
-    ManagedWanderingTraderComponent& operator=(ManagedWanderingTraderComponent const&) = delete;
-    ManagedWanderingTraderComponent(ManagedWanderingTraderComponent const&)            = delete;
-    ManagedWanderingTraderComponent()                                                  = delete;
+    ManagedWanderingTraderComponent& operator=(ManagedWanderingTraderComponent const&);
+    ManagedWanderingTraderComponent(ManagedWanderingTraderComponent const&);
+    ManagedWanderingTraderComponent();
 
 public:
     // NOLINTBEGIN

@@ -14,8 +14,8 @@ namespace CaveFeatureUtils { struct CarvingParameters; }
 class UnderwaterCaveFeature : public ::CaveFeature {
 public:
     // prevent constructor by default
-    UnderwaterCaveFeature& operator=(UnderwaterCaveFeature const&) = delete;
-    UnderwaterCaveFeature(UnderwaterCaveFeature const&)            = delete;
+    UnderwaterCaveFeature& operator=(UnderwaterCaveFeature const&);
+    UnderwaterCaveFeature(UnderwaterCaveFeature const&);
 
 public:
     // NOLINTBEGIN

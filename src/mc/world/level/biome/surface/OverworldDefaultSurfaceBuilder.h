@@ -16,9 +16,9 @@ namespace VanillaSurfaceBuilders {
 class OverworldDefaultSurfaceBuilder : public ::ISurfaceBuilder {
 public:
     // prevent constructor by default
-    OverworldDefaultSurfaceBuilder& operator=(OverworldDefaultSurfaceBuilder const&) = delete;
-    OverworldDefaultSurfaceBuilder(OverworldDefaultSurfaceBuilder const&)            = delete;
-    OverworldDefaultSurfaceBuilder()                                                 = delete;
+    OverworldDefaultSurfaceBuilder& operator=(OverworldDefaultSurfaceBuilder const&);
+    OverworldDefaultSurfaceBuilder(OverworldDefaultSurfaceBuilder const&);
+    OverworldDefaultSurfaceBuilder();
 
 public:
     // NOLINTBEGIN

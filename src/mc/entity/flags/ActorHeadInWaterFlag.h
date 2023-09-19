@@ -5,7 +5,7 @@
 struct ActorHeadInWaterFlag {
 public:
     // prevent constructor by default
-    ActorHeadInWaterFlag& operator=(ActorHeadInWaterFlag const&) = delete;
-    ActorHeadInWaterFlag(ActorHeadInWaterFlag const&)            = delete;
-    ActorHeadInWaterFlag()                                       = delete;
+    ActorHeadInWaterFlag& operator=(ActorHeadInWaterFlag const&);
+    ActorHeadInWaterFlag(ActorHeadInWaterFlag const&);
+    ActorHeadInWaterFlag();
 };

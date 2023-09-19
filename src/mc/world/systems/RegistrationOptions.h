@@ -14,9 +14,9 @@ namespace VanillaSystemsRegistration {
 struct RegistrationOptions {
 public:
     // prevent constructor by default
-    RegistrationOptions& operator=(RegistrationOptions const&) = delete;
-    RegistrationOptions(RegistrationOptions const&)            = delete;
-    RegistrationOptions()                                      = delete;
+    RegistrationOptions& operator=(RegistrationOptions const&);
+    RegistrationOptions(RegistrationOptions const&);
+    RegistrationOptions();
 
 public:
     // NOLINTBEGIN

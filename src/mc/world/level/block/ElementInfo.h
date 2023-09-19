@@ -5,7 +5,7 @@
 struct ElementInfo {
 public:
     // prevent constructor by default
-    ElementInfo& operator=(ElementInfo const&) = delete;
-    ElementInfo(ElementInfo const&)            = delete;
-    ElementInfo()                              = delete;
+    ElementInfo& operator=(ElementInfo const&);
+    ElementInfo(ElementInfo const&);
+    ElementInfo();
 };

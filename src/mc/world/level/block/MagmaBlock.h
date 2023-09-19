@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class MagmaBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    MagmaBlock& operator=(MagmaBlock const&) = delete;
-    MagmaBlock(MagmaBlock const&)            = delete;
-    MagmaBlock()                             = delete;
+    MagmaBlock& operator=(MagmaBlock const&);
+    MagmaBlock(MagmaBlock const&);
+    MagmaBlock();
 
 public:
     // NOLINTBEGIN

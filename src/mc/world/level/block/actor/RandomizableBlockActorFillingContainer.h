@@ -9,9 +9,9 @@
 class RandomizableBlockActorFillingContainer {
 public:
     // prevent constructor by default
-    RandomizableBlockActorFillingContainer& operator=(RandomizableBlockActorFillingContainer const&) = delete;
-    RandomizableBlockActorFillingContainer(RandomizableBlockActorFillingContainer const&)            = delete;
-    RandomizableBlockActorFillingContainer()                                                         = delete;
+    RandomizableBlockActorFillingContainer& operator=(RandomizableBlockActorFillingContainer const&);
+    RandomizableBlockActorFillingContainer(RandomizableBlockActorFillingContainer const&);
+    RandomizableBlockActorFillingContainer();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class SharedAttributes {
 public:
     // prevent constructor by default
-    SharedAttributes& operator=(SharedAttributes const&) = delete;
-    SharedAttributes(SharedAttributes const&)            = delete;
-    SharedAttributes()                                   = delete;
+    SharedAttributes& operator=(SharedAttributes const&);
+    SharedAttributes(SharedAttributes const&);
+    SharedAttributes();
 
 public:
     // NOLINTBEGIN

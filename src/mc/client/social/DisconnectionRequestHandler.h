@@ -5,7 +5,7 @@
 class DisconnectionRequestHandler {
 public:
     // prevent constructor by default
-    DisconnectionRequestHandler& operator=(DisconnectionRequestHandler const&) = delete;
-    DisconnectionRequestHandler(DisconnectionRequestHandler const&)            = delete;
-    DisconnectionRequestHandler()                                              = delete;
+    DisconnectionRequestHandler& operator=(DisconnectionRequestHandler const&);
+    DisconnectionRequestHandler(DisconnectionRequestHandler const&);
+    DisconnectionRequestHandler();
 };

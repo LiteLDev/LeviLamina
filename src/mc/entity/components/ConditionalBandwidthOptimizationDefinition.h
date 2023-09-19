@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class ConditionalBandwidthOptimizationDefinition {
 public:
     // prevent constructor by default
-    ConditionalBandwidthOptimizationDefinition& operator=(ConditionalBandwidthOptimizationDefinition const&) = delete;
-    ConditionalBandwidthOptimizationDefinition(ConditionalBandwidthOptimizationDefinition const&)            = delete;
-    ConditionalBandwidthOptimizationDefinition()                                                             = delete;
+    ConditionalBandwidthOptimizationDefinition& operator=(ConditionalBandwidthOptimizationDefinition const&);
+    ConditionalBandwidthOptimizationDefinition(ConditionalBandwidthOptimizationDefinition const&);
+    ConditionalBandwidthOptimizationDefinition();
 
 public:
     // NOLINTBEGIN

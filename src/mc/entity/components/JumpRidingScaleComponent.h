@@ -5,7 +5,7 @@
 struct JumpRidingScaleComponent {
 public:
     // prevent constructor by default
-    JumpRidingScaleComponent& operator=(JumpRidingScaleComponent const&) = delete;
-    JumpRidingScaleComponent(JumpRidingScaleComponent const&)            = delete;
-    JumpRidingScaleComponent()                                           = delete;
+    JumpRidingScaleComponent& operator=(JumpRidingScaleComponent const&);
+    JumpRidingScaleComponent(JumpRidingScaleComponent const&);
+    JumpRidingScaleComponent();
 };

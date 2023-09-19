@@ -22,7 +22,7 @@ public:
 
 
     // prevent constructor by default
-    StructureEditorData& operator=(StructureEditorData const&) = delete;
+    StructureEditorData& operator=(StructureEditorData const&);
 
 public:
     // NOLINTBEGIN
@@ -186,7 +186,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $DEFAULT_STRUCTURE_TYPE() { return DEFAULT_STRUCTURE_TYPE; }
+    auto& $DEFAULT_STRUCTURE_TYPE() { return DEFAULT_STRUCTURE_TYPE; }
 
     // NOLINTEND
 };

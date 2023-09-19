@@ -10,9 +10,9 @@
 class ServerNetworkSystem : public ::NetworkSystem {
 public:
     // prevent constructor by default
-    ServerNetworkSystem& operator=(ServerNetworkSystem const&) = delete;
-    ServerNetworkSystem(ServerNetworkSystem const&)            = delete;
-    ServerNetworkSystem()                                      = delete;
+    ServerNetworkSystem& operator=(ServerNetworkSystem const&);
+    ServerNetworkSystem(ServerNetworkSystem const&);
+    ServerNetworkSystem();
 
 public:
     // NOLINTBEGIN

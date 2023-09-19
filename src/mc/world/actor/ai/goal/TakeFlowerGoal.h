@@ -24,9 +24,9 @@ public:
     class TakeFlowerDefinition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        TakeFlowerDefinition& operator=(TakeFlowerDefinition const&) = delete;
-        TakeFlowerDefinition(TakeFlowerDefinition const&)            = delete;
-        TakeFlowerDefinition()                                       = delete;
+        TakeFlowerDefinition& operator=(TakeFlowerDefinition const&);
+        TakeFlowerDefinition(TakeFlowerDefinition const&);
+        TakeFlowerDefinition();
 
     public:
         // NOLINTBEGIN
@@ -43,9 +43,9 @@ public:
 
 public:
     // prevent constructor by default
-    TakeFlowerGoal& operator=(TakeFlowerGoal const&) = delete;
-    TakeFlowerGoal(TakeFlowerGoal const&)            = delete;
-    TakeFlowerGoal()                                 = delete;
+    TakeFlowerGoal& operator=(TakeFlowerGoal const&);
+    TakeFlowerGoal(TakeFlowerGoal const&);
+    TakeFlowerGoal();
 
 public:
     // NOLINTBEGIN
@@ -72,7 +72,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0TakeFlowerGoal@@QEAA@AEAVMob@@@Z
-    MCAPI TakeFlowerGoal(class Mob&);
+    MCAPI explicit TakeFlowerGoal(class Mob&);
 
     // NOLINTEND
 };

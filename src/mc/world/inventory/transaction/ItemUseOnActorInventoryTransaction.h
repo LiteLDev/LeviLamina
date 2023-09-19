@@ -14,9 +14,9 @@ public:
 
 public:
     // prevent constructor by default
-    ItemUseOnActorInventoryTransaction& operator=(ItemUseOnActorInventoryTransaction const&) = delete;
-    ItemUseOnActorInventoryTransaction(ItemUseOnActorInventoryTransaction const&)            = delete;
-    ItemUseOnActorInventoryTransaction()                                                     = delete;
+    ItemUseOnActorInventoryTransaction& operator=(ItemUseOnActorInventoryTransaction const&);
+    ItemUseOnActorInventoryTransaction(ItemUseOnActorInventoryTransaction const&);
+    ItemUseOnActorInventoryTransaction();
 
 public:
     // NOLINTBEGIN

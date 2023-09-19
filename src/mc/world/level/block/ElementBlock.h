@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class ElementBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    ElementBlock& operator=(ElementBlock const&) = delete;
-    ElementBlock(ElementBlock const&)            = delete;
-    ElementBlock()                               = delete;
+    ElementBlock& operator=(ElementBlock const&);
+    ElementBlock(ElementBlock const&);
+    ElementBlock();
 
 public:
     // NOLINTBEGIN
@@ -192,7 +192,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mElements() { return mElements; }
+    auto& $mElements() { return mElements; }
 
     // NOLINTEND
 };

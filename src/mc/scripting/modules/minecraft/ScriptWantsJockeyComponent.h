@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptWantsJockeyComponent {
 public:
     // prevent constructor by default
-    ScriptWantsJockeyComponent& operator=(ScriptWantsJockeyComponent const&) = delete;
-    ScriptWantsJockeyComponent(ScriptWantsJockeyComponent const&)            = delete;
-    ScriptWantsJockeyComponent()                                             = delete;
+    ScriptWantsJockeyComponent& operator=(ScriptWantsJockeyComponent const&);
+    ScriptWantsJockeyComponent(ScriptWantsJockeyComponent const&);
+    ScriptWantsJockeyComponent();
 
 public:
     // NOLINTBEGIN

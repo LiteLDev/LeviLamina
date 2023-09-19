@@ -20,8 +20,8 @@ namespace ScriptModuleMinecraft {
 class ScriptItemEnchantments {
 public:
     // prevent constructor by default
-    ScriptItemEnchantments& operator=(ScriptItemEnchantments const&) = delete;
-    ScriptItemEnchantments()                                         = delete;
+    ScriptItemEnchantments& operator=(ScriptItemEnchantments const&);
+    ScriptItemEnchantments();
 
 public:
     // NOLINTBEGIN

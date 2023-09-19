@@ -5,9 +5,9 @@
 class SuspectTrackingComponent {
 public:
     // prevent constructor by default
-    SuspectTrackingComponent& operator=(SuspectTrackingComponent const&) = delete;
-    SuspectTrackingComponent(SuspectTrackingComponent const&)            = delete;
-    SuspectTrackingComponent()                                           = delete;
+    SuspectTrackingComponent& operator=(SuspectTrackingComponent const&);
+    SuspectTrackingComponent(SuspectTrackingComponent const&);
+    SuspectTrackingComponent();
 
 public:
     // NOLINTBEGIN

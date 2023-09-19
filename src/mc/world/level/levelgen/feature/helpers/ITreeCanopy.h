@@ -5,7 +5,7 @@
 class ITreeCanopy {
 public:
     // prevent constructor by default
-    ITreeCanopy& operator=(ITreeCanopy const&) = delete;
-    ITreeCanopy(ITreeCanopy const&)            = delete;
-    ITreeCanopy()                              = delete;
+    ITreeCanopy& operator=(ITreeCanopy const&);
+    ITreeCanopy(ITreeCanopy const&);
+    ITreeCanopy();
 };

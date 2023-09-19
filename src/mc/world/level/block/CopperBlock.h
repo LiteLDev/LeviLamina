@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class CopperBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    CopperBlock& operator=(CopperBlock const&) = delete;
-    CopperBlock(CopperBlock const&)            = delete;
-    CopperBlock()                              = delete;
+    CopperBlock& operator=(CopperBlock const&);
+    CopperBlock(CopperBlock const&);
+    CopperBlock();
 
 public:
     // NOLINTBEGIN

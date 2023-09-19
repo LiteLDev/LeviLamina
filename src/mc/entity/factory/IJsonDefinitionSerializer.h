@@ -5,7 +5,7 @@
 class IJsonDefinitionSerializer {
 public:
     // prevent constructor by default
-    IJsonDefinitionSerializer& operator=(IJsonDefinitionSerializer const&) = delete;
-    IJsonDefinitionSerializer(IJsonDefinitionSerializer const&)            = delete;
-    IJsonDefinitionSerializer()                                            = delete;
+    IJsonDefinitionSerializer& operator=(IJsonDefinitionSerializer const&);
+    IJsonDefinitionSerializer(IJsonDefinitionSerializer const&);
+    IJsonDefinitionSerializer();
 };

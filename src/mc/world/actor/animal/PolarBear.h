@@ -26,9 +26,9 @@
 class PolarBear : public ::Animal {
 public:
     // prevent constructor by default
-    PolarBear& operator=(PolarBear const&) = delete;
-    PolarBear(PolarBear const&)            = delete;
-    PolarBear()                            = delete;
+    PolarBear& operator=(PolarBear const&);
+    PolarBear(PolarBear const&);
+    PolarBear();
 
 public:
     // NOLINTBEGIN
@@ -128,7 +128,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $STAND_ANIMATION_TICKS() { return STAND_ANIMATION_TICKS; }
+    auto& $STAND_ANIMATION_TICKS() { return STAND_ANIMATION_TICKS; }
 
     // NOLINTEND
 };

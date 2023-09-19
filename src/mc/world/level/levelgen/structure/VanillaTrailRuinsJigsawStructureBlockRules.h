@@ -5,9 +5,9 @@
 class VanillaTrailRuinsJigsawStructureBlockRules {
 public:
     // prevent constructor by default
-    VanillaTrailRuinsJigsawStructureBlockRules& operator=(VanillaTrailRuinsJigsawStructureBlockRules const&) = delete;
-    VanillaTrailRuinsJigsawStructureBlockRules(VanillaTrailRuinsJigsawStructureBlockRules const&)            = delete;
-    VanillaTrailRuinsJigsawStructureBlockRules()                                                             = delete;
+    VanillaTrailRuinsJigsawStructureBlockRules& operator=(VanillaTrailRuinsJigsawStructureBlockRules const&);
+    VanillaTrailRuinsJigsawStructureBlockRules(VanillaTrailRuinsJigsawStructureBlockRules const&);
+    VanillaTrailRuinsJigsawStructureBlockRules();
 
 public:
     // NOLINTBEGIN

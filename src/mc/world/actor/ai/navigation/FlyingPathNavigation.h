@@ -8,9 +8,9 @@
 class FlyingPathNavigation : public ::PathNavigation {
 public:
     // prevent constructor by default
-    FlyingPathNavigation& operator=(FlyingPathNavigation const&) = delete;
-    FlyingPathNavigation(FlyingPathNavigation const&)            = delete;
-    FlyingPathNavigation()                                       = delete;
+    FlyingPathNavigation& operator=(FlyingPathNavigation const&);
+    FlyingPathNavigation(FlyingPathNavigation const&);
+    FlyingPathNavigation();
 
 public:
     // NOLINTBEGIN

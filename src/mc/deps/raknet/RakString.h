@@ -23,14 +23,14 @@ public:
     struct SharedString {
     public:
         // prevent constructor by default
-        SharedString& operator=(SharedString const&) = delete;
-        SharedString(SharedString const&)            = delete;
-        SharedString()                               = delete;
+        SharedString& operator=(SharedString const&);
+        SharedString(SharedString const&);
+        SharedString();
     };
 
 public:
     // prevent constructor by default
-    RakString& operator=(RakString const&) = delete;
+    RakString& operator=(RakString const&);
 
 public:
     // NOLINTBEGIN

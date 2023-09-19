@@ -8,9 +8,9 @@
 class StructurePoolBlockPredicateBlockMatchRandom : public ::IStructurePoolBlockPredicate {
 public:
     // prevent constructor by default
-    StructurePoolBlockPredicateBlockMatchRandom& operator=(StructurePoolBlockPredicateBlockMatchRandom const&) = delete;
-    StructurePoolBlockPredicateBlockMatchRandom(StructurePoolBlockPredicateBlockMatchRandom const&)            = delete;
-    StructurePoolBlockPredicateBlockMatchRandom()                                                              = delete;
+    StructurePoolBlockPredicateBlockMatchRandom& operator=(StructurePoolBlockPredicateBlockMatchRandom const&);
+    StructurePoolBlockPredicateBlockMatchRandom(StructurePoolBlockPredicateBlockMatchRandom const&);
+    StructurePoolBlockPredicateBlockMatchRandom();
 
 public:
     // NOLINTBEGIN

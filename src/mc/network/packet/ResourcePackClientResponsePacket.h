@@ -15,8 +15,8 @@ public:
     ResourcePackResponse  mResponse;         // this+0x40
 
     // prevent constructor by default
-    ResourcePackClientResponsePacket& operator=(ResourcePackClientResponsePacket const&) = delete;
-    ResourcePackClientResponsePacket(ResourcePackClientResponsePacket const&)            = delete;
+    ResourcePackClientResponsePacket& operator=(ResourcePackClientResponsePacket const&);
+    ResourcePackClientResponsePacket(ResourcePackClientResponsePacket const&);
 
 public:
     // NOLINTBEGIN

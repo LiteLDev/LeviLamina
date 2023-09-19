@@ -26,9 +26,9 @@
 class ThrownTrident : public ::AbstractArrow {
 public:
     // prevent constructor by default
-    ThrownTrident& operator=(ThrownTrident const&) = delete;
-    ThrownTrident(ThrownTrident const&)            = delete;
-    ThrownTrident()                                = delete;
+    ThrownTrident& operator=(ThrownTrident const&);
+    ThrownTrident(ThrownTrident const&);
+    ThrownTrident();
 
 public:
     // NOLINTBEGIN

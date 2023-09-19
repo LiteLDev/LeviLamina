@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class WoolBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    WoolBlock& operator=(WoolBlock const&) = delete;
-    WoolBlock(WoolBlock const&)            = delete;
-    WoolBlock()                            = delete;
+    WoolBlock& operator=(WoolBlock const&);
+    WoolBlock(WoolBlock const&);
+    WoolBlock();
 
 public:
     // NOLINTBEGIN

@@ -15,9 +15,9 @@ namespace RideableComponentHelpers {
 class VehicleStateProvider {
 public:
     // prevent constructor by default
-    VehicleStateProvider& operator=(VehicleStateProvider const&) = delete;
-    VehicleStateProvider(VehicleStateProvider const&)            = delete;
-    VehicleStateProvider()                                       = delete;
+    VehicleStateProvider& operator=(VehicleStateProvider const&);
+    VehicleStateProvider(VehicleStateProvider const&);
+    VehicleStateProvider();
 
 public:
     // NOLINTBEGIN

@@ -10,9 +10,9 @@ namespace ScriptModuleMinecraft {
 struct ScriptItemEnchantmentSlot {
 public:
     // prevent constructor by default
-    ScriptItemEnchantmentSlot& operator=(ScriptItemEnchantmentSlot const&) = delete;
-    ScriptItemEnchantmentSlot(ScriptItemEnchantmentSlot const&)            = delete;
-    ScriptItemEnchantmentSlot()                                            = delete;
+    ScriptItemEnchantmentSlot& operator=(ScriptItemEnchantmentSlot const&);
+    ScriptItemEnchantmentSlot(ScriptItemEnchantmentSlot const&);
+    ScriptItemEnchantmentSlot();
 
 public:
     // NOLINTBEGIN

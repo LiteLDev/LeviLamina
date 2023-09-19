@@ -9,9 +9,9 @@
 class DropItemForGoal : public ::BaseMoveToBlockGoal {
 public:
     // prevent constructor by default
-    DropItemForGoal& operator=(DropItemForGoal const&) = delete;
-    DropItemForGoal(DropItemForGoal const&)            = delete;
-    DropItemForGoal()                                  = delete;
+    DropItemForGoal& operator=(DropItemForGoal const&);
+    DropItemForGoal(DropItemForGoal const&);
+    DropItemForGoal();
 
 public:
     // NOLINTBEGIN
@@ -44,7 +44,7 @@ public:
     virtual bool findTargetBlock();
 
     // symbol: ??0DropItemForGoal@@QEAA@AEAVMob@@@Z
-    MCAPI DropItemForGoal(class Mob&);
+    MCAPI explicit DropItemForGoal(class Mob&);
 
     // NOLINTEND
 

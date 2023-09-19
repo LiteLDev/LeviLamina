@@ -9,9 +9,9 @@
 class SlimeFloatGoal : public ::Goal {
 public:
     // prevent constructor by default
-    SlimeFloatGoal& operator=(SlimeFloatGoal const&) = delete;
-    SlimeFloatGoal(SlimeFloatGoal const&)            = delete;
-    SlimeFloatGoal()                                 = delete;
+    SlimeFloatGoal& operator=(SlimeFloatGoal const&);
+    SlimeFloatGoal(SlimeFloatGoal const&);
+    SlimeFloatGoal();
 
 public:
     // NOLINTBEGIN
@@ -29,7 +29,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0SlimeFloatGoal@@QEAA@AEAVMob@@@Z
-    MCAPI SlimeFloatGoal(class Mob&);
+    MCAPI explicit SlimeFloatGoal(class Mob&);
 
     // NOLINTEND
 };

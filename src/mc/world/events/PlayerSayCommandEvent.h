@@ -5,9 +5,9 @@
 struct PlayerSayCommandEvent {
 public:
     // prevent constructor by default
-    PlayerSayCommandEvent& operator=(PlayerSayCommandEvent const&) = delete;
-    PlayerSayCommandEvent(PlayerSayCommandEvent const&)            = delete;
-    PlayerSayCommandEvent()                                        = delete;
+    PlayerSayCommandEvent& operator=(PlayerSayCommandEvent const&);
+    PlayerSayCommandEvent(PlayerSayCommandEvent const&);
+    PlayerSayCommandEvent();
 
 public:
     // NOLINTBEGIN

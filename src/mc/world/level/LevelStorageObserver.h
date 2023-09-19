@@ -5,9 +5,9 @@
 class LevelStorageObserver {
 public:
     // prevent constructor by default
-    LevelStorageObserver& operator=(LevelStorageObserver const&) = delete;
-    LevelStorageObserver(LevelStorageObserver const&)            = delete;
-    LevelStorageObserver()                                       = delete;
+    LevelStorageObserver& operator=(LevelStorageObserver const&);
+    LevelStorageObserver(LevelStorageObserver const&);
+    LevelStorageObserver();
 
 public:
     // NOLINTBEGIN

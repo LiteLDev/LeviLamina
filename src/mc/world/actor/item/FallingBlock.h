@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class FallingBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    FallingBlock& operator=(FallingBlock const&) = delete;
-    FallingBlock(FallingBlock const&)            = delete;
-    FallingBlock()                               = delete;
+    FallingBlock& operator=(FallingBlock const&);
+    FallingBlock(FallingBlock const&);
+    FallingBlock();
 
 public:
     // NOLINTBEGIN

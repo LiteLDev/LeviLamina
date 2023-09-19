@@ -104,9 +104,9 @@ public:
     MCAPI T* tryGetComponent();
 
     // prevent constructor by default
-    Actor& operator=(Actor const&) = delete;
-    Actor(Actor const&)            = delete;
-    Actor()                        = delete;
+    Actor& operator=(Actor const&);
+    Actor(Actor const&);
+    Actor();
 
 public:
     // NOLINTBEGIN
@@ -2308,11 +2308,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $DAMAGE_NEARBY_MOBS_DURATION() { return DAMAGE_NEARBY_MOBS_DURATION; }
+    auto& $DAMAGE_NEARBY_MOBS_DURATION() { return DAMAGE_NEARBY_MOBS_DURATION; }
 
-    inline auto& $DEFAULT_MAX_DISTANCE_OPTIMIZATION() { return DEFAULT_MAX_DISTANCE_OPTIMIZATION; }
+    auto& $DEFAULT_MAX_DISTANCE_OPTIMIZATION() { return DEFAULT_MAX_DISTANCE_OPTIMIZATION; }
 
-    inline auto& $DEFAULT_MAX_TICK_DELAY_OPTIMIZATION() { return DEFAULT_MAX_TICK_DELAY_OPTIMIZATION; }
+    auto& $DEFAULT_MAX_TICK_DELAY_OPTIMIZATION() { return DEFAULT_MAX_TICK_DELAY_OPTIMIZATION; }
 
     // NOLINTEND
 };

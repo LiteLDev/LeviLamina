@@ -5,7 +5,7 @@
 struct SwimAmountComponent {
 public:
     // prevent constructor by default
-    SwimAmountComponent& operator=(SwimAmountComponent const&) = delete;
-    SwimAmountComponent(SwimAmountComponent const&)            = delete;
-    SwimAmountComponent()                                      = delete;
+    SwimAmountComponent& operator=(SwimAmountComponent const&);
+    SwimAmountComponent(SwimAmountComponent const&);
+    SwimAmountComponent();
 };

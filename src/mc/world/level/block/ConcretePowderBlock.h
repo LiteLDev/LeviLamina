@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class ConcretePowderBlock : public ::FallingBlock {
 public:
     // prevent constructor by default
-    ConcretePowderBlock& operator=(ConcretePowderBlock const&) = delete;
-    ConcretePowderBlock(ConcretePowderBlock const&)            = delete;
-    ConcretePowderBlock()                                      = delete;
+    ConcretePowderBlock& operator=(ConcretePowderBlock const&);
+    ConcretePowderBlock(ConcretePowderBlock const&);
+    ConcretePowderBlock();
 
 public:
     // NOLINTBEGIN

@@ -16,8 +16,8 @@ public:
     int  mData;    // this+0x40
 
     // prevent constructor by default
-    LevelEventPacket& operator=(LevelEventPacket const&) = delete;
-    LevelEventPacket(LevelEventPacket const&)            = delete;
+    LevelEventPacket& operator=(LevelEventPacket const&);
+    LevelEventPacket(LevelEventPacket const&);
 
 public:
     // NOLINTBEGIN

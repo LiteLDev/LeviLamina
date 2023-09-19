@@ -5,9 +5,9 @@
 struct PlayerGetExperienceOrbEvent {
 public:
     // prevent constructor by default
-    PlayerGetExperienceOrbEvent& operator=(PlayerGetExperienceOrbEvent const&) = delete;
-    PlayerGetExperienceOrbEvent(PlayerGetExperienceOrbEvent const&)            = delete;
-    PlayerGetExperienceOrbEvent()                                              = delete;
+    PlayerGetExperienceOrbEvent& operator=(PlayerGetExperienceOrbEvent const&);
+    PlayerGetExperienceOrbEvent(PlayerGetExperienceOrbEvent const&);
+    PlayerGetExperienceOrbEvent();
 
 public:
     // NOLINTBEGIN

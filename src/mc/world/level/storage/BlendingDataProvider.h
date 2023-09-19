@@ -5,7 +5,7 @@
 class BlendingDataProvider {
 public:
     // prevent constructor by default
-    BlendingDataProvider& operator=(BlendingDataProvider const&) = delete;
-    BlendingDataProvider(BlendingDataProvider const&)            = delete;
-    BlendingDataProvider()                                       = delete;
+    BlendingDataProvider& operator=(BlendingDataProvider const&);
+    BlendingDataProvider(BlendingDataProvider const&);
+    BlendingDataProvider();
 };

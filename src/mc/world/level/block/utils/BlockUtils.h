@@ -5,9 +5,9 @@
 class BlockUtils {
 public:
     // prevent constructor by default
-    BlockUtils& operator=(BlockUtils const&) = delete;
-    BlockUtils(BlockUtils const&)            = delete;
-    BlockUtils()                             = delete;
+    BlockUtils& operator=(BlockUtils const&);
+    BlockUtils(BlockUtils const&);
+    BlockUtils();
 
 public:
     // NOLINTBEGIN

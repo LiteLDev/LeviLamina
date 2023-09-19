@@ -5,9 +5,9 @@
 class TriggerJumpSystem {
 public:
     // prevent constructor by default
-    TriggerJumpSystem& operator=(TriggerJumpSystem const&) = delete;
-    TriggerJumpSystem(TriggerJumpSystem const&)            = delete;
-    TriggerJumpSystem()                                    = delete;
+    TriggerJumpSystem& operator=(TriggerJumpSystem const&);
+    TriggerJumpSystem(TriggerJumpSystem const&);
+    TriggerJumpSystem();
 
 public:
     // NOLINTBEGIN

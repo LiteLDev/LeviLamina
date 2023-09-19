@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class HopperBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    HopperBlock& operator=(HopperBlock const&) = delete;
-    HopperBlock(HopperBlock const&)            = delete;
-    HopperBlock()                              = delete;
+    HopperBlock& operator=(HopperBlock const&);
+    HopperBlock(HopperBlock const&);
+    HopperBlock();
 
 public:
     // NOLINTBEGIN
@@ -232,7 +232,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
+    auto& $HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
 
     // NOLINTEND
 };

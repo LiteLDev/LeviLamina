@@ -26,9 +26,9 @@
 class Pufferfish : public ::Fish {
 public:
     // prevent constructor by default
-    Pufferfish& operator=(Pufferfish const&) = delete;
-    Pufferfish(Pufferfish const&)            = delete;
-    Pufferfish()                             = delete;
+    Pufferfish& operator=(Pufferfish const&);
+    Pufferfish(Pufferfish const&);
+    Pufferfish();
 
 public:
     // NOLINTBEGIN

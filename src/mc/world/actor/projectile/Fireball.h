@@ -27,9 +27,9 @@
 class Fireball : public ::PredictableProjectile {
 public:
     // prevent constructor by default
-    Fireball& operator=(Fireball const&) = delete;
-    Fireball(Fireball const&)            = delete;
-    Fireball()                           = delete;
+    Fireball& operator=(Fireball const&);
+    Fireball(Fireball const&);
+    Fireball();
 
 public:
     // NOLINTBEGIN

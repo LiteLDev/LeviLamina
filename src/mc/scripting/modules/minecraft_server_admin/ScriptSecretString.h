@@ -10,14 +10,14 @@ namespace ScriptModuleMinecraftServerAdmin {
 class ScriptSecretString {
 public:
     // prevent constructor by default
-    ScriptSecretString(ScriptSecretString const&) = delete;
-    ScriptSecretString()                          = delete;
+    ScriptSecretString(ScriptSecretString const&);
+    ScriptSecretString();
 
 public:
     // NOLINTBEGIN
     // symbol:
     // ??0ScriptSecretString@ScriptModuleMinecraftServerAdmin@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI ScriptSecretString(std::string);
+    MCAPI explicit ScriptSecretString(std::string);
 
     // symbol: ??4ScriptSecretString@ScriptModuleMinecraftServerAdmin@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraftServerAdmin::ScriptSecretString&

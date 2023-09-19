@@ -5,8 +5,8 @@
 class CallbackToken {
 public:
     // prevent constructor by default
-    CallbackToken& operator=(CallbackToken const&) = delete;
-    CallbackToken(CallbackToken const&)            = delete;
+    CallbackToken& operator=(CallbackToken const&);
+    CallbackToken(CallbackToken const&);
 
 public:
     // NOLINTBEGIN
@@ -14,7 +14,7 @@ public:
     MCAPI CallbackToken(class CallbackToken&&);
 
     // symbol: ??0CallbackToken@@QEAA@V?$weak_ptr@VCallbackTokenCancelState@@@std@@@Z
-    MCAPI CallbackToken(std::weak_ptr<class CallbackTokenCancelState>);
+    MCAPI explicit CallbackToken(std::weak_ptr<class CallbackTokenCancelState>);
 
     // symbol: ??0CallbackToken@@QEAA@XZ
     MCAPI CallbackToken();

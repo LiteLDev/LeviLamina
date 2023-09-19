@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class PotatoBlock : public ::CropBlock {
 public:
     // prevent constructor by default
-    PotatoBlock& operator=(PotatoBlock const&) = delete;
-    PotatoBlock(PotatoBlock const&)            = delete;
-    PotatoBlock()                              = delete;
+    PotatoBlock& operator=(PotatoBlock const&);
+    PotatoBlock(PotatoBlock const&);
+    PotatoBlock();
 
 public:
     // NOLINTBEGIN

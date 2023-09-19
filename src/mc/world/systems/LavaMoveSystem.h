@@ -5,9 +5,9 @@
 class LavaMoveSystem {
 public:
     // prevent constructor by default
-    LavaMoveSystem& operator=(LavaMoveSystem const&) = delete;
-    LavaMoveSystem(LavaMoveSystem const&)            = delete;
-    LavaMoveSystem()                                 = delete;
+    LavaMoveSystem& operator=(LavaMoveSystem const&);
+    LavaMoveSystem(LavaMoveSystem const&);
+    LavaMoveSystem();
 
 public:
     // NOLINTBEGIN

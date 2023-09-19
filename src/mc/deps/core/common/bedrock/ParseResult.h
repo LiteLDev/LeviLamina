@@ -7,9 +7,9 @@ namespace Bedrock::JSONObject {
 class ParseResult {
 public:
     // prevent constructor by default
-    ParseResult& operator=(ParseResult const&) = delete;
-    ParseResult(ParseResult const&)            = delete;
-    ParseResult()                              = delete;
+    ParseResult& operator=(ParseResult const&);
+    ParseResult(ParseResult const&);
+    ParseResult();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 struct PlayerDimensionChangeEvent {
 public:
     // prevent constructor by default
-    PlayerDimensionChangeEvent& operator=(PlayerDimensionChangeEvent const&) = delete;
-    PlayerDimensionChangeEvent(PlayerDimensionChangeEvent const&)            = delete;
-    PlayerDimensionChangeEvent()                                             = delete;
+    PlayerDimensionChangeEvent& operator=(PlayerDimensionChangeEvent const&);
+    PlayerDimensionChangeEvent(PlayerDimensionChangeEvent const&);
+    PlayerDimensionChangeEvent();
 };

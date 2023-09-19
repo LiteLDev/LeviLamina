@@ -9,9 +9,9 @@
 class BaseContainerMenu {
 public:
     // prevent constructor by default
-    BaseContainerMenu& operator=(BaseContainerMenu const&) = delete;
-    BaseContainerMenu(BaseContainerMenu const&)            = delete;
-    BaseContainerMenu()                                    = delete;
+    BaseContainerMenu& operator=(BaseContainerMenu const&);
+    BaseContainerMenu(BaseContainerMenu const&);
+    BaseContainerMenu();
 
 public:
     // NOLINTBEGIN

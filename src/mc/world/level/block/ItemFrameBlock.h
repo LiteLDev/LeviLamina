@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class ItemFrameBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    ItemFrameBlock& operator=(ItemFrameBlock const&) = delete;
-    ItemFrameBlock(ItemFrameBlock const&)            = delete;
-    ItemFrameBlock()                                 = delete;
+    ItemFrameBlock& operator=(ItemFrameBlock const&);
+    ItemFrameBlock(ItemFrameBlock const&);
+    ItemFrameBlock();
 
 public:
     // NOLINTBEGIN

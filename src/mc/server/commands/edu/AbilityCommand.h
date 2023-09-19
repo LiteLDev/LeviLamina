@@ -8,9 +8,9 @@
 class AbilityCommand : public ::Command {
 public:
     // prevent constructor by default
-    AbilityCommand& operator=(AbilityCommand const&) = delete;
-    AbilityCommand(AbilityCommand const&)            = delete;
-    AbilityCommand()                                 = delete;
+    AbilityCommand& operator=(AbilityCommand const&);
+    AbilityCommand(AbilityCommand const&);
+    AbilityCommand();
 
 public:
     // NOLINTBEGIN

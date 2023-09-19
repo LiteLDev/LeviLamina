@@ -5,7 +5,7 @@
 struct ITaskQueue {
 public:
     // prevent constructor by default
-    ITaskQueue& operator=(ITaskQueue const&) = delete;
-    ITaskQueue(ITaskQueue const&)            = delete;
-    ITaskQueue()                             = delete;
+    ITaskQueue& operator=(ITaskQueue const&);
+    ITaskQueue(ITaskQueue const&);
+    ITaskQueue();
 };

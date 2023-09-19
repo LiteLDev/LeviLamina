@@ -5,9 +5,9 @@
 struct ImportStructureMetaData {
 public:
     // prevent constructor by default
-    ImportStructureMetaData& operator=(ImportStructureMetaData const&) = delete;
-    ImportStructureMetaData(ImportStructureMetaData const&)            = delete;
-    ImportStructureMetaData()                                          = delete;
+    ImportStructureMetaData& operator=(ImportStructureMetaData const&);
+    ImportStructureMetaData(ImportStructureMetaData const&);
+    ImportStructureMetaData();
 
 public:
     // NOLINTBEGIN

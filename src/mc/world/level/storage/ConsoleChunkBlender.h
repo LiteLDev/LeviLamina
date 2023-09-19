@@ -11,9 +11,9 @@ public:
 
 public:
     // prevent constructor by default
-    ConsoleChunkBlender& operator=(ConsoleChunkBlender const&) = delete;
-    ConsoleChunkBlender(ConsoleChunkBlender const&)            = delete;
-    ConsoleChunkBlender()                                      = delete;
+    ConsoleChunkBlender& operator=(ConsoleChunkBlender const&);
+    ConsoleChunkBlender(ConsoleChunkBlender const&);
+    ConsoleChunkBlender();
 
 public:
     // NOLINTBEGIN

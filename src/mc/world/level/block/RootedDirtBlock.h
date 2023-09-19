@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class RootedDirtBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    RootedDirtBlock& operator=(RootedDirtBlock const&) = delete;
-    RootedDirtBlock(RootedDirtBlock const&)            = delete;
-    RootedDirtBlock()                                  = delete;
+    RootedDirtBlock& operator=(RootedDirtBlock const&);
+    RootedDirtBlock(RootedDirtBlock const&);
+    RootedDirtBlock();
 
 public:
     // NOLINTBEGIN

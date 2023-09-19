@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class SeaPickleBlock : public ::BushBlock {
 public:
     // prevent constructor by default
-    SeaPickleBlock& operator=(SeaPickleBlock const&) = delete;
-    SeaPickleBlock(SeaPickleBlock const&)            = delete;
-    SeaPickleBlock()                                 = delete;
+    SeaPickleBlock& operator=(SeaPickleBlock const&);
+    SeaPickleBlock(SeaPickleBlock const&);
+    SeaPickleBlock();
 
 public:
     // NOLINTBEGIN

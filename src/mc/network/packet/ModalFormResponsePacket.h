@@ -16,8 +16,8 @@ public:
     std::optional<ModalFormCancelReason> mFormCancelReason; // this+0x50
 
     // prevent constructor by default
-    ModalFormResponsePacket& operator=(ModalFormResponsePacket const&) = delete;
-    ModalFormResponsePacket(ModalFormResponsePacket const&)            = delete;
+    ModalFormResponsePacket& operator=(ModalFormResponsePacket const&);
+    ModalFormResponsePacket(ModalFormResponsePacket const&);
 
 public:
     // NOLINTBEGIN

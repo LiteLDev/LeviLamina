@@ -10,8 +10,8 @@ namespace ScriptModuleMinecraft {
 struct ScriptActorApplyDamageByProjectileOptions {
 public:
     // prevent constructor by default
-    ScriptActorApplyDamageByProjectileOptions(ScriptActorApplyDamageByProjectileOptions const&) = delete;
-    ScriptActorApplyDamageByProjectileOptions()                                                 = delete;
+    ScriptActorApplyDamageByProjectileOptions(ScriptActorApplyDamageByProjectileOptions const&);
+    ScriptActorApplyDamageByProjectileOptions();
 
 public:
     // NOLINTBEGIN

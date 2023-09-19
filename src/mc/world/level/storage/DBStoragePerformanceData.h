@@ -13,9 +13,9 @@ public:
     class AtomicAccumulator {
     public:
         // prevent constructor by default
-        AtomicAccumulator& operator=(AtomicAccumulator const&) = delete;
-        AtomicAccumulator(AtomicAccumulator const&)            = delete;
-        AtomicAccumulator()                                    = delete;
+        AtomicAccumulator& operator=(AtomicAccumulator const&);
+        AtomicAccumulator(AtomicAccumulator const&);
+        AtomicAccumulator();
 
     public:
         // NOLINTBEGIN
@@ -27,9 +27,9 @@ public:
 
 public:
     // prevent constructor by default
-    DBStoragePerformanceData& operator=(DBStoragePerformanceData const&) = delete;
-    DBStoragePerformanceData(DBStoragePerformanceData const&)            = delete;
-    DBStoragePerformanceData()                                           = delete;
+    DBStoragePerformanceData& operator=(DBStoragePerformanceData const&);
+    DBStoragePerformanceData(DBStoragePerformanceData const&);
+    DBStoragePerformanceData();
 
 public:
     // NOLINTBEGIN

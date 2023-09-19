@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class InsomniaDefinition {
 public:
     // prevent constructor by default
-    InsomniaDefinition& operator=(InsomniaDefinition const&) = delete;
-    InsomniaDefinition(InsomniaDefinition const&)            = delete;
-    InsomniaDefinition()                                     = delete;
+    InsomniaDefinition& operator=(InsomniaDefinition const&);
+    InsomniaDefinition(InsomniaDefinition const&);
+    InsomniaDefinition();
 
 public:
     // NOLINTBEGIN

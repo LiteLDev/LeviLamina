@@ -9,10 +9,9 @@ class StructurePoolBlockPredicateCappedRandomBlockReplacement : public ::IStruct
 public:
     // prevent constructor by default
     StructurePoolBlockPredicateCappedRandomBlockReplacement&
-    operator=(StructurePoolBlockPredicateCappedRandomBlockReplacement const&) = delete;
-    StructurePoolBlockPredicateCappedRandomBlockReplacement(StructurePoolBlockPredicateCappedRandomBlockReplacement const&) =
-        delete;
-    StructurePoolBlockPredicateCappedRandomBlockReplacement() = delete;
+    operator=(StructurePoolBlockPredicateCappedRandomBlockReplacement const&);
+    StructurePoolBlockPredicateCappedRandomBlockReplacement(StructurePoolBlockPredicateCappedRandomBlockReplacement const&);
+    StructurePoolBlockPredicateCappedRandomBlockReplacement();
 
 public:
     // NOLINTBEGIN

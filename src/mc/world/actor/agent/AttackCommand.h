@@ -15,9 +15,9 @@ namespace AgentCommands {
 class AttackCommand : public ::AgentCommands::Command {
 public:
     // prevent constructor by default
-    AttackCommand& operator=(AttackCommand const&) = delete;
-    AttackCommand(AttackCommand const&)            = delete;
-    AttackCommand()                                = delete;
+    AttackCommand& operator=(AttackCommand const&);
+    AttackCommand(AttackCommand const&);
+    AttackCommand();
 
 public:
     // NOLINTBEGIN

@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class CommandBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    CommandBlock& operator=(CommandBlock const&) = delete;
-    CommandBlock(CommandBlock const&)            = delete;
-    CommandBlock()                               = delete;
+    CommandBlock& operator=(CommandBlock const&);
+    CommandBlock(CommandBlock const&);
+    CommandBlock();
 
 public:
     // NOLINTBEGIN
@@ -230,7 +230,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mCBModeMap() { return mCBModeMap; }
+    auto& $mCBModeMap() { return mCBModeMap; }
 
     // NOLINTEND
 };

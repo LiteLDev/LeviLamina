@@ -7,9 +7,9 @@ namespace Scripting {
 struct ScriptContextResult {
 public:
     // prevent constructor by default
-    ScriptContextResult& operator=(ScriptContextResult const&) = delete;
-    ScriptContextResult(ScriptContextResult const&)            = delete;
-    ScriptContextResult()                                      = delete;
+    ScriptContextResult& operator=(ScriptContextResult const&);
+    ScriptContextResult(ScriptContextResult const&);
+    ScriptContextResult();
 };
 
 }; // namespace Scripting

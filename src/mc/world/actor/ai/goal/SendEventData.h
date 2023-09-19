@@ -5,7 +5,7 @@
 struct SendEventData {
 public:
     // prevent constructor by default
-    SendEventData() = delete;
+    SendEventData();
 
 public:
     // NOLINTBEGIN

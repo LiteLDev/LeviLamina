@@ -8,8 +8,8 @@
 class MossVegetationFeature : public ::Feature {
 public:
     // prevent constructor by default
-    MossVegetationFeature& operator=(MossVegetationFeature const&) = delete;
-    MossVegetationFeature(MossVegetationFeature const&)            = delete;
+    MossVegetationFeature& operator=(MossVegetationFeature const&);
+    MossVegetationFeature(MossVegetationFeature const&);
 
 public:
     // NOLINTBEGIN

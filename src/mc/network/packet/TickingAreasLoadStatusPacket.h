@@ -12,8 +12,8 @@ public:
     bool mWaitingForPreload; // this+0x30
 
     // prevent constructor by default
-    TickingAreasLoadStatusPacket& operator=(TickingAreasLoadStatusPacket const&) = delete;
-    TickingAreasLoadStatusPacket(TickingAreasLoadStatusPacket const&)            = delete;
+    TickingAreasLoadStatusPacket& operator=(TickingAreasLoadStatusPacket const&);
+    TickingAreasLoadStatusPacket(TickingAreasLoadStatusPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -41,7 +41,7 @@ public:
     MCAPI TickingAreasLoadStatusPacket();
 
     // symbol: ??0TickingAreasLoadStatusPacket@@QEAA@_N@Z
-    MCAPI TickingAreasLoadStatusPacket(bool);
+    MCAPI explicit TickingAreasLoadStatusPacket(bool);
 
     // NOLINTEND
 };

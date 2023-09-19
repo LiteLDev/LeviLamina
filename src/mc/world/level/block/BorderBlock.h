@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class BorderBlock : public ::WallBlock {
 public:
     // prevent constructor by default
-    BorderBlock& operator=(BorderBlock const&) = delete;
-    BorderBlock(BorderBlock const&)            = delete;
-    BorderBlock()                              = delete;
+    BorderBlock& operator=(BorderBlock const&);
+    BorderBlock(BorderBlock const&);
+    BorderBlock();
 
 public:
     // NOLINTBEGIN

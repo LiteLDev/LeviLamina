@@ -16,14 +16,14 @@ public:
 
 public:
     // prevent constructor by default
-    VolumeEntityManagerServer& operator=(VolumeEntityManagerServer const&) = delete;
-    VolumeEntityManagerServer(VolumeEntityManagerServer const&)            = delete;
-    VolumeEntityManagerServer()                                            = delete;
+    VolumeEntityManagerServer& operator=(VolumeEntityManagerServer const&);
+    VolumeEntityManagerServer(VolumeEntityManagerServer const&);
+    VolumeEntityManagerServer();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0VolumeEntityManagerServer@@QEAA@V?$StackRefResultT@UEntityRegistryRefTraits@@@@@Z
-    MCAPI VolumeEntityManagerServer(class StackRefResultT<struct EntityRegistryRefTraits>);
+    MCAPI explicit VolumeEntityManagerServer(class StackRefResultT<struct EntityRegistryRefTraits>);
 
     // symbol:
     // ?createVolume@VolumeEntityManagerServer@@QEAA?AU?$pair@W4CreateVolumeResult@VolumeEntityManagerServer@@V?$StackRefResultT@UEntityRefTraits@@@@@std@@AEAVLevelStorage@@AEAVPacketSender@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVBlockPos@@3V?$AutomaticID@VDimension@@H@@2@Z

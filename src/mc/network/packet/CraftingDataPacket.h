@@ -20,8 +20,8 @@ public:
     bool                                  mClearRecipes;           // this+0x90
 
     // prevent constructor by default
-    CraftingDataPacket& operator=(CraftingDataPacket const&) = delete;
-    CraftingDataPacket(CraftingDataPacket const&)            = delete;
+    CraftingDataPacket& operator=(CraftingDataPacket const&);
+    CraftingDataPacket(CraftingDataPacket const&);
 
 public:
     // NOLINTBEGIN

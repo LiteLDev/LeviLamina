@@ -9,9 +9,9 @@
 struct BlockPropertyComponent : public ::BlockComponentBase {
 public:
     // prevent constructor by default
-    BlockPropertyComponent& operator=(BlockPropertyComponent const&) = delete;
-    BlockPropertyComponent(BlockPropertyComponent const&)            = delete;
-    BlockPropertyComponent()                                         = delete;
+    BlockPropertyComponent& operator=(BlockPropertyComponent const&);
+    BlockPropertyComponent(BlockPropertyComponent const&);
+    BlockPropertyComponent();
 
 public:
     // NOLINTBEGIN

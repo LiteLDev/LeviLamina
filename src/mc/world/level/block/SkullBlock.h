@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class SkullBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    SkullBlock& operator=(SkullBlock const&) = delete;
-    SkullBlock(SkullBlock const&)            = delete;
-    SkullBlock()                             = delete;
+    SkullBlock& operator=(SkullBlock const&);
+    SkullBlock(SkullBlock const&);
+    SkullBlock();
 
 public:
     // NOLINTBEGIN

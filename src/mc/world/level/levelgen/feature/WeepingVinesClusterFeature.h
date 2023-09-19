@@ -8,9 +8,9 @@
 class WeepingVinesClusterFeature : public ::Feature {
 public:
     // prevent constructor by default
-    WeepingVinesClusterFeature& operator=(WeepingVinesClusterFeature const&) = delete;
-    WeepingVinesClusterFeature(WeepingVinesClusterFeature const&)            = delete;
-    WeepingVinesClusterFeature()                                             = delete;
+    WeepingVinesClusterFeature& operator=(WeepingVinesClusterFeature const&);
+    WeepingVinesClusterFeature(WeepingVinesClusterFeature const&);
+    WeepingVinesClusterFeature();
 
 public:
     // NOLINTBEGIN

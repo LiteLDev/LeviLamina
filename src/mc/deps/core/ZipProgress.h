@@ -7,8 +7,8 @@ namespace Core::ZipUtils {
 class ZipProgress {
 public:
     // prevent constructor by default
-    ZipProgress& operator=(ZipProgress const&) = delete;
-    ZipProgress(ZipProgress const&)            = delete;
+    ZipProgress& operator=(ZipProgress const&);
+    ZipProgress(ZipProgress const&);
 
 public:
     // NOLINTBEGIN

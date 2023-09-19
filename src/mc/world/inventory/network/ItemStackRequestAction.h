@@ -46,7 +46,7 @@ public:
     MCVAPI ~ItemStackRequestAction();
 
     // symbol: ??0ItemStackRequestAction@@QEAA@W4ItemStackRequestActionType@@@Z
-    MCAPI ItemStackRequestAction(::ItemStackRequestActionType);
+    MCAPI explicit ItemStackRequestAction(::ItemStackRequestActionType);
 
     // symbol: ?getActionType@ItemStackRequestAction@@QEBA?AW4ItemStackRequestActionType@@XZ
     MCAPI ::ItemStackRequestActionType getActionType() const;
@@ -73,7 +73,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $actionTypeMap() { return actionTypeMap; }
+    auto& $actionTypeMap() { return actionTypeMap; }
 
     // NOLINTEND
 };

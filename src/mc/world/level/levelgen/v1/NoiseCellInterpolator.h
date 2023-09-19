@@ -5,9 +5,9 @@
 class NoiseCellInterpolator {
 public:
     // prevent constructor by default
-    NoiseCellInterpolator& operator=(NoiseCellInterpolator const&) = delete;
-    NoiseCellInterpolator(NoiseCellInterpolator const&)            = delete;
-    NoiseCellInterpolator()                                        = delete;
+    NoiseCellInterpolator& operator=(NoiseCellInterpolator const&);
+    NoiseCellInterpolator(NoiseCellInterpolator const&);
+    NoiseCellInterpolator();
 
 public:
     // NOLINTBEGIN
@@ -15,7 +15,7 @@ public:
     MCAPI NoiseCellInterpolator(gsl::span<float const>, int, int);
 
     // symbol: ??0NoiseCellInterpolator@@QEAA@V?$span@$$CBM$0?0@gsl@@@Z
-    MCAPI NoiseCellInterpolator(gsl::span<float const>);
+    MCAPI explicit NoiseCellInterpolator(gsl::span<float const>);
 
     // symbol: ?getLerpedValue@NoiseCellInterpolator@@QEBAMXZ
     MCAPI float getLerpedValue() const;

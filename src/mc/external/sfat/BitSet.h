@@ -7,9 +7,9 @@ namespace SFAT {
 class BitSet {
 public:
     // prevent constructor by default
-    BitSet& operator=(BitSet const&) = delete;
-    BitSet(BitSet const&)            = delete;
-    BitSet()                         = delete;
+    BitSet& operator=(BitSet const&);
+    BitSet(BitSet const&);
+    BitSet();
 
 public:
     // NOLINTBEGIN

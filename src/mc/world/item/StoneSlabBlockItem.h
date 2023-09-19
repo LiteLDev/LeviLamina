@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class StoneSlabBlockItem : public ::DeprecatedSlabBlockItem {
 public:
     // prevent constructor by default
-    StoneSlabBlockItem& operator=(StoneSlabBlockItem const&) = delete;
-    StoneSlabBlockItem(StoneSlabBlockItem const&)            = delete;
-    StoneSlabBlockItem()                                     = delete;
+    StoneSlabBlockItem& operator=(StoneSlabBlockItem const&);
+    StoneSlabBlockItem(StoneSlabBlockItem const&);
+    StoneSlabBlockItem();
 
 public:
     // NOLINTBEGIN

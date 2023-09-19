@@ -5,9 +5,9 @@
 struct RepairItemResult {
 public:
     // prevent constructor by default
-    RepairItemResult& operator=(RepairItemResult const&) = delete;
-    RepairItemResult(RepairItemResult const&)            = delete;
-    RepairItemResult()                                   = delete;
+    RepairItemResult& operator=(RepairItemResult const&);
+    RepairItemResult(RepairItemResult const&);
+    RepairItemResult();
 
 public:
     // NOLINTBEGIN

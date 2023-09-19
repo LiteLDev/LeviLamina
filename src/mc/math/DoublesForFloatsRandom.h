@@ -17,9 +17,9 @@ namespace NoiseUtils {
 class DoublesForFloatsRandom : public ::NoiseUtils::DelegatingRandom {
 public:
     // prevent constructor by default
-    DoublesForFloatsRandom& operator=(DoublesForFloatsRandom const&) = delete;
-    DoublesForFloatsRandom(DoublesForFloatsRandom const&)            = delete;
-    DoublesForFloatsRandom()                                         = delete;
+    DoublesForFloatsRandom& operator=(DoublesForFloatsRandom const&);
+    DoublesForFloatsRandom(DoublesForFloatsRandom const&);
+    DoublesForFloatsRandom();
 
 public:
     // NOLINTBEGIN

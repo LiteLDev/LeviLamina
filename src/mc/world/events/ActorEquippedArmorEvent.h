@@ -5,9 +5,9 @@
 struct ActorEquippedArmorEvent {
 public:
     // prevent constructor by default
-    ActorEquippedArmorEvent& operator=(ActorEquippedArmorEvent const&) = delete;
-    ActorEquippedArmorEvent(ActorEquippedArmorEvent const&)            = delete;
-    ActorEquippedArmorEvent()                                          = delete;
+    ActorEquippedArmorEvent& operator=(ActorEquippedArmorEvent const&);
+    ActorEquippedArmorEvent(ActorEquippedArmorEvent const&);
+    ActorEquippedArmorEvent();
 
 public:
     // NOLINTBEGIN

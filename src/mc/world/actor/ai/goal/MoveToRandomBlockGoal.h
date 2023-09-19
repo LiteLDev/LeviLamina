@@ -9,9 +9,9 @@
 class MoveToRandomBlockGoal : public ::Goal {
 public:
     // prevent constructor by default
-    MoveToRandomBlockGoal& operator=(MoveToRandomBlockGoal const&) = delete;
-    MoveToRandomBlockGoal(MoveToRandomBlockGoal const&)            = delete;
-    MoveToRandomBlockGoal()                                        = delete;
+    MoveToRandomBlockGoal& operator=(MoveToRandomBlockGoal const&);
+    MoveToRandomBlockGoal(MoveToRandomBlockGoal const&);
+    MoveToRandomBlockGoal();
 
 public:
     // NOLINTBEGIN

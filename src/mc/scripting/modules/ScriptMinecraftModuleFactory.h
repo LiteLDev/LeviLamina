@@ -16,9 +16,9 @@ namespace mce { class UUID; }
 class ScriptMinecraftModuleFactory {
 public:
     // prevent constructor by default
-    ScriptMinecraftModuleFactory& operator=(ScriptMinecraftModuleFactory const&) = delete;
-    ScriptMinecraftModuleFactory(ScriptMinecraftModuleFactory const&)            = delete;
-    ScriptMinecraftModuleFactory()                                               = delete;
+    ScriptMinecraftModuleFactory& operator=(ScriptMinecraftModuleFactory const&);
+    ScriptMinecraftModuleFactory(ScriptMinecraftModuleFactory const&);
+    ScriptMinecraftModuleFactory();
 
 public:
     // NOLINTBEGIN
@@ -50,7 +50,7 @@ public:
     createModuleBinding(struct Scripting::Version, std::optional<struct Scripting::ContextConfig> const&);
 
     // symbol: ??0ScriptMinecraftModuleFactory@@QEAA@PEAVServerLevel@@@Z
-    MCAPI ScriptMinecraftModuleFactory(class ServerLevel*);
+    MCAPI explicit ScriptMinecraftModuleFactory(class ServerLevel*);
 
     // symbol:
     // ?getModuleUUIDAsString@ScriptMinecraftModuleFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -89,11 +89,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $LegacyModuleName() { return LegacyModuleName; }
+    auto& $LegacyModuleName() { return LegacyModuleName; }
 
-    inline auto& $ModuleName() { return ModuleName; }
+    auto& $ModuleName() { return ModuleName; }
 
-    inline auto& $ModuleUUID() { return ModuleUUID; }
+    auto& $ModuleUUID() { return ModuleUUID; }
 
     // NOLINTEND
 };

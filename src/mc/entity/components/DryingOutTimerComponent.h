@@ -21,9 +21,9 @@ public:
     class DryingOutTimerDefinition {
     public:
         // prevent constructor by default
-        DryingOutTimerDefinition& operator=(DryingOutTimerDefinition const&) = delete;
-        DryingOutTimerDefinition(DryingOutTimerDefinition const&)            = delete;
-        DryingOutTimerDefinition()                                           = delete;
+        DryingOutTimerDefinition& operator=(DryingOutTimerDefinition const&);
+        DryingOutTimerDefinition(DryingOutTimerDefinition const&);
+        DryingOutTimerDefinition();
 
     public:
         // NOLINTBEGIN
@@ -41,9 +41,9 @@ public:
 
 public:
     // prevent constructor by default
-    DryingOutTimerComponent& operator=(DryingOutTimerComponent const&) = delete;
-    DryingOutTimerComponent(DryingOutTimerComponent const&)            = delete;
-    DryingOutTimerComponent()                                          = delete;
+    DryingOutTimerComponent& operator=(DryingOutTimerComponent const&);
+    DryingOutTimerComponent(DryingOutTimerComponent const&);
+    DryingOutTimerComponent();
 
 public:
     // NOLINTBEGIN

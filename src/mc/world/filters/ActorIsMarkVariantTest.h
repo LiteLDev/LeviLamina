@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class ActorIsMarkVariantTest : public ::SimpleIntFilterTest {
 public:
     // prevent constructor by default
-    ActorIsMarkVariantTest& operator=(ActorIsMarkVariantTest const&) = delete;
-    ActorIsMarkVariantTest(ActorIsMarkVariantTest const&)            = delete;
-    ActorIsMarkVariantTest()                                         = delete;
+    ActorIsMarkVariantTest& operator=(ActorIsMarkVariantTest const&);
+    ActorIsMarkVariantTest(ActorIsMarkVariantTest const&);
+    ActorIsMarkVariantTest();
 
 public:
     // NOLINTBEGIN

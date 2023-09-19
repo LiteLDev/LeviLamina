@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class ExperienceRewardDefinition {
 public:
     // prevent constructor by default
-    ExperienceRewardDefinition& operator=(ExperienceRewardDefinition const&) = delete;
-    ExperienceRewardDefinition(ExperienceRewardDefinition const&)            = delete;
-    ExperienceRewardDefinition()                                             = delete;
+    ExperienceRewardDefinition& operator=(ExperienceRewardDefinition const&);
+    ExperienceRewardDefinition(ExperienceRewardDefinition const&);
+    ExperienceRewardDefinition();
 
 public:
     // NOLINTBEGIN

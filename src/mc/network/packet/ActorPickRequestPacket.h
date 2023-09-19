@@ -14,8 +14,8 @@ public:
     uchar mMaxSlots; // this+0x39
 
     // prevent constructor by default
-    ActorPickRequestPacket& operator=(ActorPickRequestPacket const&) = delete;
-    ActorPickRequestPacket(ActorPickRequestPacket const&)            = delete;
+    ActorPickRequestPacket& operator=(ActorPickRequestPacket const&);
+    ActorPickRequestPacket(ActorPickRequestPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -7,9 +7,9 @@ namespace Editor {
 class IEditorPlayer {
 public:
     // prevent constructor by default
-    IEditorPlayer& operator=(IEditorPlayer const&) = delete;
-    IEditorPlayer(IEditorPlayer const&)            = delete;
-    IEditorPlayer()                                = delete;
+    IEditorPlayer& operator=(IEditorPlayer const&);
+    IEditorPlayer(IEditorPlayer const&);
+    IEditorPlayer();
 };
 
 }; // namespace Editor

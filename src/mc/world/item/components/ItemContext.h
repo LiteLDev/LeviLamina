@@ -9,9 +9,9 @@
 class ItemContext {
 public:
     // prevent constructor by default
-    ItemContext& operator=(ItemContext const&) = delete;
-    ItemContext(ItemContext const&)            = delete;
-    ItemContext()                              = delete;
+    ItemContext& operator=(ItemContext const&);
+    ItemContext(ItemContext const&);
+    ItemContext();
 
 public:
     // NOLINTBEGIN

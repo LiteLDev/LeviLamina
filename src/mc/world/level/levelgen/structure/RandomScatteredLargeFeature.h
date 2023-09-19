@@ -8,9 +8,9 @@
 class RandomScatteredLargeFeature : public ::StructureFeature {
 public:
     // prevent constructor by default
-    RandomScatteredLargeFeature& operator=(RandomScatteredLargeFeature const&) = delete;
-    RandomScatteredLargeFeature(RandomScatteredLargeFeature const&)            = delete;
-    RandomScatteredLargeFeature()                                              = delete;
+    RandomScatteredLargeFeature& operator=(RandomScatteredLargeFeature const&);
+    RandomScatteredLargeFeature(RandomScatteredLargeFeature const&);
+    RandomScatteredLargeFeature();
 
 public:
     // NOLINTBEGIN
@@ -48,7 +48,7 @@ public:
     createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
 
     // symbol: ??0RandomScatteredLargeFeature@@QEAA@I@Z
-    MCAPI RandomScatteredLargeFeature(uint);
+    MCAPI explicit RandomScatteredLargeFeature(uint);
 
     // NOLINTEND
 };

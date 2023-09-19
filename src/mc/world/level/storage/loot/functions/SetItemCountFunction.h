@@ -8,9 +8,9 @@
 class SetItemCountFunction : public ::LootItemFunction {
 public:
     // prevent constructor by default
-    SetItemCountFunction& operator=(SetItemCountFunction const&) = delete;
-    SetItemCountFunction(SetItemCountFunction const&)            = delete;
-    SetItemCountFunction()                                       = delete;
+    SetItemCountFunction& operator=(SetItemCountFunction const&);
+    SetItemCountFunction(SetItemCountFunction const&);
+    SetItemCountFunction();
 
 public:
     // NOLINTBEGIN

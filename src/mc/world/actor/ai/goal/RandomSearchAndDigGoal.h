@@ -26,8 +26,8 @@ public:
     class Definition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        Definition& operator=(Definition const&) = delete;
-        Definition(Definition const&)            = delete;
+        Definition& operator=(Definition const&);
+        Definition(Definition const&);
 
     public:
         // NOLINTBEGIN
@@ -57,9 +57,9 @@ public:
 
 public:
     // prevent constructor by default
-    RandomSearchAndDigGoal& operator=(RandomSearchAndDigGoal const&) = delete;
-    RandomSearchAndDigGoal(RandomSearchAndDigGoal const&)            = delete;
-    RandomSearchAndDigGoal()                                         = delete;
+    RandomSearchAndDigGoal& operator=(RandomSearchAndDigGoal const&);
+    RandomSearchAndDigGoal(RandomSearchAndDigGoal const&);
+    RandomSearchAndDigGoal();
 
 public:
     // NOLINTBEGIN
@@ -86,7 +86,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0RandomSearchAndDigGoal@@QEAA@AEAVMob@@@Z
-    MCAPI RandomSearchAndDigGoal(class Mob&);
+    MCAPI explicit RandomSearchAndDigGoal(class Mob&);
 
     // symbol: ?_canUse@RandomSearchAndDigGoal@@QEAA?AW4CanUseOutcome@1@XZ
     MCAPI ::RandomSearchAndDigGoal::CanUseOutcome _canUse();

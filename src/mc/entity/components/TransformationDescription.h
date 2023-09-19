@@ -8,8 +8,8 @@
 struct TransformationDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    TransformationDescription& operator=(TransformationDescription const&) = delete;
-    TransformationDescription(TransformationDescription const&)            = delete;
+    TransformationDescription& operator=(TransformationDescription const&);
+    TransformationDescription(TransformationDescription const&);
 
 public:
     // NOLINTBEGIN

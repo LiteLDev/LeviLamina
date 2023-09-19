@@ -21,9 +21,9 @@ namespace ScriptModuleMinecraft {
 class IScriptBeforeEvents {
 public:
     // prevent constructor by default
-    IScriptBeforeEvents& operator=(IScriptBeforeEvents const&) = delete;
-    IScriptBeforeEvents(IScriptBeforeEvents const&)            = delete;
-    IScriptBeforeEvents()                                      = delete;
+    IScriptBeforeEvents& operator=(IScriptBeforeEvents const&);
+    IScriptBeforeEvents(IScriptBeforeEvents const&);
+    IScriptBeforeEvents();
 
 public:
     // NOLINTBEGIN

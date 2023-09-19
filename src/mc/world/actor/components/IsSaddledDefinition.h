@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct IsSaddledDefinition {
 public:
     // prevent constructor by default
-    IsSaddledDefinition& operator=(IsSaddledDefinition const&) = delete;
-    IsSaddledDefinition(IsSaddledDefinition const&)            = delete;
-    IsSaddledDefinition()                                      = delete;
+    IsSaddledDefinition& operator=(IsSaddledDefinition const&);
+    IsSaddledDefinition(IsSaddledDefinition const&);
+    IsSaddledDefinition();
 
 public:
     // NOLINTBEGIN

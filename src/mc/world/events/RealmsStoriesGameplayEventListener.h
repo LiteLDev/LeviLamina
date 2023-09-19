@@ -8,9 +8,9 @@
 class RealmsStoriesGameplayEventListener {
 public:
     // prevent constructor by default
-    RealmsStoriesGameplayEventListener& operator=(RealmsStoriesGameplayEventListener const&) = delete;
-    RealmsStoriesGameplayEventListener(RealmsStoriesGameplayEventListener const&)            = delete;
-    RealmsStoriesGameplayEventListener()                                                     = delete;
+    RealmsStoriesGameplayEventListener& operator=(RealmsStoriesGameplayEventListener const&);
+    RealmsStoriesGameplayEventListener(RealmsStoriesGameplayEventListener const&);
+    RealmsStoriesGameplayEventListener();
 
 public:
     // NOLINTBEGIN
@@ -131,7 +131,7 @@ public:
     virtual ::EventResult onEvent(struct ActorAcquiredItemEvent const&);
 
     // symbol: ??0RealmsStoriesGameplayEventListener@@QEAA@AEAVLevelStorage@@@Z
-    MCAPI RealmsStoriesGameplayEventListener(class LevelStorage&);
+    MCAPI explicit RealmsStoriesGameplayEventListener(class LevelStorage&);
 
     // NOLINTEND
 };

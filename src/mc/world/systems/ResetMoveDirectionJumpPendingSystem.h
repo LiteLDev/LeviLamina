@@ -5,9 +5,9 @@
 class ResetMoveDirectionJumpPendingSystem {
 public:
     // prevent constructor by default
-    ResetMoveDirectionJumpPendingSystem& operator=(ResetMoveDirectionJumpPendingSystem const&) = delete;
-    ResetMoveDirectionJumpPendingSystem(ResetMoveDirectionJumpPendingSystem const&)            = delete;
-    ResetMoveDirectionJumpPendingSystem()                                                      = delete;
+    ResetMoveDirectionJumpPendingSystem& operator=(ResetMoveDirectionJumpPendingSystem const&);
+    ResetMoveDirectionJumpPendingSystem(ResetMoveDirectionJumpPendingSystem const&);
+    ResetMoveDirectionJumpPendingSystem();
 
 public:
     // NOLINTBEGIN

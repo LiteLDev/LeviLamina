@@ -16,8 +16,8 @@ namespace BlockCraftingTableVersioning {
 class BlockCraftingTable11910Upgrade : public ::CerealSchemaUpgrade {
 public:
     // prevent constructor by default
-    BlockCraftingTable11910Upgrade& operator=(BlockCraftingTable11910Upgrade const&) = delete;
-    BlockCraftingTable11910Upgrade(BlockCraftingTable11910Upgrade const&)            = delete;
+    BlockCraftingTable11910Upgrade& operator=(BlockCraftingTable11910Upgrade const&);
+    BlockCraftingTable11910Upgrade(BlockCraftingTable11910Upgrade const&);
 
 public:
     // NOLINTBEGIN

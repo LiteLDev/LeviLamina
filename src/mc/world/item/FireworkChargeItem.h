@@ -25,9 +25,9 @@ public:
 
 public:
     // prevent constructor by default
-    FireworkChargeItem& operator=(FireworkChargeItem const&) = delete;
-    FireworkChargeItem(FireworkChargeItem const&)            = delete;
-    FireworkChargeItem()                                     = delete;
+    FireworkChargeItem& operator=(FireworkChargeItem const&);
+    FireworkChargeItem(FireworkChargeItem const&);
+    FireworkChargeItem();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 struct SubChunkLightUpdate {
 public:
     // prevent constructor by default
-    SubChunkLightUpdate& operator=(SubChunkLightUpdate const&) = delete;
-    SubChunkLightUpdate(SubChunkLightUpdate const&)            = delete;
-    SubChunkLightUpdate()                                      = delete;
+    SubChunkLightUpdate& operator=(SubChunkLightUpdate const&);
+    SubChunkLightUpdate(SubChunkLightUpdate const&);
+    SubChunkLightUpdate();
 };

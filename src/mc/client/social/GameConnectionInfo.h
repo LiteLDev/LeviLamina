@@ -14,7 +14,7 @@ namespace Social {
 class GameConnectionInfo {
 public:
     // prevent constructor by default
-    GameConnectionInfo(GameConnectionInfo const&) = delete;
+    GameConnectionInfo(GameConnectionInfo const&);
 
 public:
     // NOLINTBEGIN

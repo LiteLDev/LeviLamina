@@ -8,9 +8,9 @@
 class AgentCommand : public ::Command {
 public:
     // prevent constructor by default
-    AgentCommand& operator=(AgentCommand const&) = delete;
-    AgentCommand(AgentCommand const&)            = delete;
-    AgentCommand()                               = delete;
+    AgentCommand& operator=(AgentCommand const&);
+    AgentCommand(AgentCommand const&);
+    AgentCommand();
 
 public:
     // NOLINTBEGIN

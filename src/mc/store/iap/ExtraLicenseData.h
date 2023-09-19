@@ -5,7 +5,7 @@
 struct ExtraLicenseData {
 public:
     // prevent constructor by default
-    ExtraLicenseData& operator=(ExtraLicenseData const&) = delete;
-    ExtraLicenseData(ExtraLicenseData const&)            = delete;
-    ExtraLicenseData()                                   = delete;
+    ExtraLicenseData& operator=(ExtraLicenseData const&);
+    ExtraLicenseData(ExtraLicenseData const&);
+    ExtraLicenseData();
 };

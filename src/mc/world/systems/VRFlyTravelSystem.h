@@ -9,9 +9,9 @@
 class VRFlyTravelSystem {
 public:
     // prevent constructor by default
-    VRFlyTravelSystem& operator=(VRFlyTravelSystem const&) = delete;
-    VRFlyTravelSystem(VRFlyTravelSystem const&)            = delete;
-    VRFlyTravelSystem()                                    = delete;
+    VRFlyTravelSystem& operator=(VRFlyTravelSystem const&);
+    VRFlyTravelSystem(VRFlyTravelSystem const&);
+    VRFlyTravelSystem();
 
 public:
     // NOLINTBEGIN

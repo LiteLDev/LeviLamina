@@ -5,9 +5,9 @@
 class BrewingStandBlockActor {
 public:
     // prevent constructor by default
-    BrewingStandBlockActor& operator=(BrewingStandBlockActor const&) = delete;
-    BrewingStandBlockActor(BrewingStandBlockActor const&)            = delete;
-    BrewingStandBlockActor()                                         = delete;
+    BrewingStandBlockActor& operator=(BrewingStandBlockActor const&);
+    BrewingStandBlockActor(BrewingStandBlockActor const&);
+    BrewingStandBlockActor();
 
 public:
     // NOLINTBEGIN

@@ -17,9 +17,9 @@ public:
     class Builder {
     public:
         // prevent constructor by default
-        Builder& operator=(Builder const&) = delete;
-        Builder(Builder const&)            = delete;
-        Builder()                          = delete;
+        Builder& operator=(Builder const&);
+        Builder(Builder const&);
+        Builder();
 
     public:
         // NOLINTBEGIN
@@ -58,9 +58,9 @@ public:
 
 public:
     // prevent constructor by default
-    LootTableContext& operator=(LootTableContext const&) = delete;
-    LootTableContext(LootTableContext const&)            = delete;
-    LootTableContext()                                   = delete;
+    LootTableContext& operator=(LootTableContext const&);
+    LootTableContext(LootTableContext const&);
+    LootTableContext();
 
 public:
     // NOLINTBEGIN

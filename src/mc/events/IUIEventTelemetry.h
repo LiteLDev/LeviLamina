@@ -5,7 +5,7 @@
 class IUIEventTelemetry {
 public:
     // prevent constructor by default
-    IUIEventTelemetry& operator=(IUIEventTelemetry const&) = delete;
-    IUIEventTelemetry(IUIEventTelemetry const&)            = delete;
-    IUIEventTelemetry()                                    = delete;
+    IUIEventTelemetry& operator=(IUIEventTelemetry const&);
+    IUIEventTelemetry(IUIEventTelemetry const&);
+    IUIEventTelemetry();
 };

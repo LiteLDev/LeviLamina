@@ -9,9 +9,9 @@
 class ClientReplayStatePolicy : public ::IReplayStatePolicy {
 public:
     // prevent constructor by default
-    ClientReplayStatePolicy& operator=(ClientReplayStatePolicy const&) = delete;
-    ClientReplayStatePolicy(ClientReplayStatePolicy const&)            = delete;
-    ClientReplayStatePolicy()                                          = delete;
+    ClientReplayStatePolicy& operator=(ClientReplayStatePolicy const&);
+    ClientReplayStatePolicy(ClientReplayStatePolicy const&);
+    ClientReplayStatePolicy();
 
 public:
     // NOLINTBEGIN

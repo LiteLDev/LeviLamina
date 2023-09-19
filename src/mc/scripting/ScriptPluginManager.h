@@ -14,9 +14,9 @@ namespace Scripting { struct ScriptContextResult; }
 class ScriptPluginManager {
 public:
     // prevent constructor by default
-    ScriptPluginManager& operator=(ScriptPluginManager const&) = delete;
-    ScriptPluginManager(ScriptPluginManager const&)            = delete;
-    ScriptPluginManager()                                      = delete;
+    ScriptPluginManager& operator=(ScriptPluginManager const&);
+    ScriptPluginManager(ScriptPluginManager const&);
+    ScriptPluginManager();
 
 public:
     // NOLINTBEGIN

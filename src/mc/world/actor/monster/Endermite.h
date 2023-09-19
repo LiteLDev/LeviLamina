@@ -26,9 +26,9 @@
 class Endermite : public ::Monster {
 public:
     // prevent constructor by default
-    Endermite& operator=(Endermite const&) = delete;
-    Endermite(Endermite const&)            = delete;
-    Endermite()                            = delete;
+    Endermite& operator=(Endermite const&);
+    Endermite(Endermite const&);
+    Endermite();
 
 public:
     // NOLINTBEGIN

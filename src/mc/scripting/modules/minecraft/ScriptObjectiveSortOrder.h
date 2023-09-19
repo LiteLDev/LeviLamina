@@ -11,9 +11,9 @@ namespace ScriptModuleMinecraft {
 class ScriptObjectiveSortOrder {
 public:
     // prevent constructor by default
-    ScriptObjectiveSortOrder& operator=(ScriptObjectiveSortOrder const&) = delete;
-    ScriptObjectiveSortOrder(ScriptObjectiveSortOrder const&)            = delete;
-    ScriptObjectiveSortOrder()                                           = delete;
+    ScriptObjectiveSortOrder& operator=(ScriptObjectiveSortOrder const&);
+    ScriptObjectiveSortOrder(ScriptObjectiveSortOrder const&);
+    ScriptObjectiveSortOrder();
 
 public:
     // NOLINTBEGIN

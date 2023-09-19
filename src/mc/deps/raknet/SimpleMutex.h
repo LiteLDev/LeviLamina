@@ -7,8 +7,8 @@ namespace RakNet {
 class SimpleMutex {
 public:
     // prevent constructor by default
-    SimpleMutex& operator=(SimpleMutex const&) = delete;
-    SimpleMutex(SimpleMutex const&)            = delete;
+    SimpleMutex& operator=(SimpleMutex const&);
+    SimpleMutex(SimpleMutex const&);
 
 public:
     // NOLINTBEGIN

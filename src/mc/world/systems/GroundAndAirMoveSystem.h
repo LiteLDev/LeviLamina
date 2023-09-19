@@ -5,9 +5,9 @@
 class GroundAndAirMoveSystem {
 public:
     // prevent constructor by default
-    GroundAndAirMoveSystem& operator=(GroundAndAirMoveSystem const&) = delete;
-    GroundAndAirMoveSystem(GroundAndAirMoveSystem const&)            = delete;
-    GroundAndAirMoveSystem()                                         = delete;
+    GroundAndAirMoveSystem& operator=(GroundAndAirMoveSystem const&);
+    GroundAndAirMoveSystem(GroundAndAirMoveSystem const&);
+    GroundAndAirMoveSystem();
 
 public:
     // NOLINTBEGIN

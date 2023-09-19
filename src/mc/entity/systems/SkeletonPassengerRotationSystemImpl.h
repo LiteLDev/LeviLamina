@@ -9,9 +9,9 @@
 class SkeletonPassengerRotationSystemImpl {
 public:
     // prevent constructor by default
-    SkeletonPassengerRotationSystemImpl& operator=(SkeletonPassengerRotationSystemImpl const&) = delete;
-    SkeletonPassengerRotationSystemImpl(SkeletonPassengerRotationSystemImpl const&)            = delete;
-    SkeletonPassengerRotationSystemImpl()                                                      = delete;
+    SkeletonPassengerRotationSystemImpl& operator=(SkeletonPassengerRotationSystemImpl const&);
+    SkeletonPassengerRotationSystemImpl(SkeletonPassengerRotationSystemImpl const&);
+    SkeletonPassengerRotationSystemImpl();
 
     // private:
     // NOLINTBEGIN

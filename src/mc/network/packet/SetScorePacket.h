@@ -16,9 +16,9 @@ public:
     std::vector<ScorePacketInfo> mScoreInfo; // this+0x38
 
     // prevent constructor by default
-    SetScorePacket& operator=(SetScorePacket const&) = delete;
-    SetScorePacket(SetScorePacket const&)            = delete;
-    SetScorePacket()                                 = delete;
+    SetScorePacket& operator=(SetScorePacket const&);
+    SetScorePacket(SetScorePacket const&);
+    SetScorePacket();
 
 public:
     // NOLINTBEGIN

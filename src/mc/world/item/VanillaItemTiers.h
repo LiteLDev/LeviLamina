@@ -8,9 +8,9 @@
 class VanillaItemTiers {
 public:
     // prevent constructor by default
-    VanillaItemTiers& operator=(VanillaItemTiers const&) = delete;
-    VanillaItemTiers(VanillaItemTiers const&)            = delete;
-    VanillaItemTiers()                                   = delete;
+    VanillaItemTiers& operator=(VanillaItemTiers const&);
+    VanillaItemTiers(VanillaItemTiers const&);
+    VanillaItemTiers();
 
 public:
     // NOLINTBEGIN

@@ -16,9 +16,9 @@ namespace ScriptModuleMinecraft {
 class ScriptNumberRange {
 public:
     // prevent constructor by default
-    ScriptNumberRange& operator=(ScriptNumberRange const&) = delete;
-    ScriptNumberRange(ScriptNumberRange const&)            = delete;
-    ScriptNumberRange()                                    = delete;
+    ScriptNumberRange& operator=(ScriptNumberRange const&);
+    ScriptNumberRange(ScriptNumberRange const&);
+    ScriptNumberRange();
 
 public:
     // NOLINTBEGIN

@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 struct BlockTransformationDescription : public ::BlockComponentDescription {
 public:
     // prevent constructor by default
-    BlockTransformationDescription& operator=(BlockTransformationDescription const&) = delete;
-    BlockTransformationDescription(BlockTransformationDescription const&)            = delete;
+    BlockTransformationDescription& operator=(BlockTransformationDescription const&);
+    BlockTransformationDescription(BlockTransformationDescription const&);
 
 public:
     // NOLINTBEGIN

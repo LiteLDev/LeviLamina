@@ -11,9 +11,9 @@
 class CraftHandlerSmithingTable : public ::CraftHandlerBase {
 public:
     // prevent constructor by default
-    CraftHandlerSmithingTable& operator=(CraftHandlerSmithingTable const&) = delete;
-    CraftHandlerSmithingTable(CraftHandlerSmithingTable const&)            = delete;
-    CraftHandlerSmithingTable()                                            = delete;
+    CraftHandlerSmithingTable& operator=(CraftHandlerSmithingTable const&);
+    CraftHandlerSmithingTable(CraftHandlerSmithingTable const&);
+    CraftHandlerSmithingTable();
 
 public:
     // NOLINTBEGIN

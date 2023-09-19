@@ -8,9 +8,9 @@
 class NavigationHoverDescription : public ::NavigationDescription {
 public:
     // prevent constructor by default
-    NavigationHoverDescription& operator=(NavigationHoverDescription const&) = delete;
-    NavigationHoverDescription(NavigationHoverDescription const&)            = delete;
-    NavigationHoverDescription()                                             = delete;
+    NavigationHoverDescription& operator=(NavigationHoverDescription const&);
+    NavigationHoverDescription(NavigationHoverDescription const&);
+    NavigationHoverDescription();
 
 public:
     // NOLINTBEGIN

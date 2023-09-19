@@ -11,9 +11,9 @@
 class PlayerPreMobTravelSystem {
 public:
     // prevent constructor by default
-    PlayerPreMobTravelSystem& operator=(PlayerPreMobTravelSystem const&) = delete;
-    PlayerPreMobTravelSystem(PlayerPreMobTravelSystem const&)            = delete;
-    PlayerPreMobTravelSystem()                                           = delete;
+    PlayerPreMobTravelSystem& operator=(PlayerPreMobTravelSystem const&);
+    PlayerPreMobTravelSystem(PlayerPreMobTravelSystem const&);
+    PlayerPreMobTravelSystem();
 
 public:
     // NOLINTBEGIN

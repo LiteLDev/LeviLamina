@@ -9,8 +9,8 @@
 class ElementConstructorContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // prevent constructor by default
-    ElementConstructorContainerScreenValidator& operator=(ElementConstructorContainerScreenValidator const&) = delete;
-    ElementConstructorContainerScreenValidator(ElementConstructorContainerScreenValidator const&)            = delete;
+    ElementConstructorContainerScreenValidator& operator=(ElementConstructorContainerScreenValidator const&);
+    ElementConstructorContainerScreenValidator(ElementConstructorContainerScreenValidator const&);
 
 public:
     // NOLINTBEGIN

@@ -41,10 +41,10 @@ public:
     MCVAPI ~ItemStack();
 
     // symbol: ??0ItemStack@@QEAA@AEBVRecipeIngredient@@@Z
-    MCAPI ItemStack(class RecipeIngredient const&);
+    MCAPI explicit ItemStack(class RecipeIngredient const&);
 
     // symbol: ??0ItemStack@@QEAA@AEBVItemInstance@@@Z
-    MCAPI ItemStack(class ItemInstance const&);
+    MCAPI explicit ItemStack(class ItemInstance const&);
 
     // symbol: ??0ItemStack@@QEAA@XZ
     MCAPI ItemStack();

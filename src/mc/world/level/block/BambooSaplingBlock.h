@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class BambooSaplingBlock : public ::SaplingBlock {
 public:
     // prevent constructor by default
-    BambooSaplingBlock& operator=(BambooSaplingBlock const&) = delete;
-    BambooSaplingBlock(BambooSaplingBlock const&)            = delete;
-    BambooSaplingBlock()                                     = delete;
+    BambooSaplingBlock& operator=(BambooSaplingBlock const&);
+    BambooSaplingBlock(BambooSaplingBlock const&);
+    BambooSaplingBlock();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 struct ContainerRuntimeIdTag {
 public:
     // prevent constructor by default
-    ContainerRuntimeIdTag& operator=(ContainerRuntimeIdTag const&) = delete;
-    ContainerRuntimeIdTag(ContainerRuntimeIdTag const&)            = delete;
-    ContainerRuntimeIdTag()                                        = delete;
+    ContainerRuntimeIdTag& operator=(ContainerRuntimeIdTag const&);
+    ContainerRuntimeIdTag(ContainerRuntimeIdTag const&);
+    ContainerRuntimeIdTag();
 };

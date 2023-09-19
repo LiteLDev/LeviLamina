@@ -5,8 +5,8 @@
 class SpinLock {
 public:
     // prevent constructor by default
-    SpinLock& operator=(SpinLock const&) = delete;
-    SpinLock(SpinLock const&)            = delete;
+    SpinLock& operator=(SpinLock const&);
+    SpinLock(SpinLock const&);
 
 public:
     // NOLINTBEGIN

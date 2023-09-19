@@ -8,9 +8,9 @@
 class AgentLookControl : public ::LookControl {
 public:
     // prevent constructor by default
-    AgentLookControl& operator=(AgentLookControl const&) = delete;
-    AgentLookControl(AgentLookControl const&)            = delete;
-    AgentLookControl()                                   = delete;
+    AgentLookControl& operator=(AgentLookControl const&);
+    AgentLookControl(AgentLookControl const&);
+    AgentLookControl();
 
 public:
     // NOLINTBEGIN

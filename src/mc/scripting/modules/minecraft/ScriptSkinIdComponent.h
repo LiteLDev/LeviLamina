@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptSkinIdComponent {
 public:
     // prevent constructor by default
-    ScriptSkinIdComponent& operator=(ScriptSkinIdComponent const&) = delete;
-    ScriptSkinIdComponent(ScriptSkinIdComponent const&)            = delete;
-    ScriptSkinIdComponent()                                        = delete;
+    ScriptSkinIdComponent& operator=(ScriptSkinIdComponent const&);
+    ScriptSkinIdComponent(ScriptSkinIdComponent const&);
+    ScriptSkinIdComponent();
 
 public:
     // NOLINTBEGIN

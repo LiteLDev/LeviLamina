@@ -18,9 +18,9 @@ namespace AgentCommands {
 class Destroy : public ::Command {
 public:
     // prevent constructor by default
-    Destroy& operator=(Destroy const&) = delete;
-    Destroy(Destroy const&)            = delete;
-    Destroy()                          = delete;
+    Destroy& operator=(Destroy const&);
+    Destroy(Destroy const&);
+    Destroy();
 
 public:
     // NOLINTBEGIN

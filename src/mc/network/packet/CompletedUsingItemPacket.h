@@ -13,8 +13,8 @@ public:
     int   mItemUseMethod; // this+0x34
 
     // prevent constructor by default
-    CompletedUsingItemPacket& operator=(CompletedUsingItemPacket const&) = delete;
-    CompletedUsingItemPacket(CompletedUsingItemPacket const&)            = delete;
+    CompletedUsingItemPacket& operator=(CompletedUsingItemPacket const&);
+    CompletedUsingItemPacket(CompletedUsingItemPacket const&);
 
 public:
     // NOLINTBEGIN

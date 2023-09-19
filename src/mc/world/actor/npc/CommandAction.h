@@ -21,9 +21,9 @@ public:
     std::vector<npc::StoredCommand> mCmds;
 
     // prevent constructor by default
-    CommandAction& operator=(CommandAction const&) = delete;
-    CommandAction(CommandAction const&)            = delete;
-    CommandAction()                                = delete;
+    CommandAction& operator=(CommandAction const&);
+    CommandAction(CommandAction const&);
+    CommandAction();
 
 public:
     // NOLINTBEGIN

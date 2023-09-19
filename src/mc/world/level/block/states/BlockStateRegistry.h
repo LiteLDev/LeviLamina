@@ -5,9 +5,9 @@
 class BlockStateRegistry {
 public:
     // prevent constructor by default
-    BlockStateRegistry& operator=(BlockStateRegistry const&) = delete;
-    BlockStateRegistry(BlockStateRegistry const&)            = delete;
-    BlockStateRegistry()                                     = delete;
+    BlockStateRegistry& operator=(BlockStateRegistry const&);
+    BlockStateRegistry(BlockStateRegistry const&);
+    BlockStateRegistry();
 
 public:
     // NOLINTBEGIN

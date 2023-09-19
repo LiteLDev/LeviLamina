@@ -5,9 +5,9 @@
 class AsyncStateRef {
 public:
     // prevent constructor by default
-    AsyncStateRef& operator=(AsyncStateRef const&) = delete;
-    AsyncStateRef(AsyncStateRef const&)            = delete;
-    AsyncStateRef()                                = delete;
+    AsyncStateRef& operator=(AsyncStateRef const&);
+    AsyncStateRef(AsyncStateRef const&);
+    AsyncStateRef();
 
 public:
     // NOLINTBEGIN

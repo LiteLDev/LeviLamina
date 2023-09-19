@@ -16,9 +16,9 @@ namespace cereal {
 class NumericConstraint : public ::cereal::Constraint {
 public:
     // prevent constructor by default
-    NumericConstraint& operator=(NumericConstraint const&) = delete;
-    NumericConstraint(NumericConstraint const&)            = delete;
-    NumericConstraint()                                    = delete;
+    NumericConstraint& operator=(NumericConstraint const&);
+    NumericConstraint(NumericConstraint const&);
+    NumericConstraint();
 
 public:
     // NOLINTBEGIN

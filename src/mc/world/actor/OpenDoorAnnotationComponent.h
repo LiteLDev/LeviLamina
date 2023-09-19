@@ -5,8 +5,8 @@
 class OpenDoorAnnotationComponent {
 public:
     // prevent constructor by default
-    OpenDoorAnnotationComponent& operator=(OpenDoorAnnotationComponent const&) = delete;
-    OpenDoorAnnotationComponent(OpenDoorAnnotationComponent const&)            = delete;
+    OpenDoorAnnotationComponent& operator=(OpenDoorAnnotationComponent const&);
+    OpenDoorAnnotationComponent(OpenDoorAnnotationComponent const&);
 
 public:
     // NOLINTBEGIN

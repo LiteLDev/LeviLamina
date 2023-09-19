@@ -12,8 +12,8 @@ namespace Bedrock::PubSub::Detail {
 class FastDispatchPublisherBase_MultiThreaded {
 public:
     // prevent constructor by default
-    FastDispatchPublisherBase_MultiThreaded& operator=(FastDispatchPublisherBase_MultiThreaded const&) = delete;
-    FastDispatchPublisherBase_MultiThreaded(FastDispatchPublisherBase_MultiThreaded const&)            = delete;
+    FastDispatchPublisherBase_MultiThreaded& operator=(FastDispatchPublisherBase_MultiThreaded const&);
+    FastDispatchPublisherBase_MultiThreaded(FastDispatchPublisherBase_MultiThreaded const&);
 
     // protected:
     // NOLINTBEGIN

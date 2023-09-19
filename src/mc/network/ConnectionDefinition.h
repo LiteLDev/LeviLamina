@@ -5,7 +5,7 @@
 struct ConnectionDefinition {
 public:
     // prevent constructor by default
-    ConnectionDefinition& operator=(ConnectionDefinition const&) = delete;
-    ConnectionDefinition(ConnectionDefinition const&)            = delete;
-    ConnectionDefinition()                                       = delete;
+    ConnectionDefinition& operator=(ConnectionDefinition const&);
+    ConnectionDefinition(ConnectionDefinition const&);
+    ConnectionDefinition();
 };

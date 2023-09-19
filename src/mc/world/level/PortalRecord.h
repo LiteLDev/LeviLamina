@@ -5,7 +5,7 @@
 class PortalRecord {
 public:
     // prevent constructor by default
-    PortalRecord& operator=(PortalRecord const&) = delete;
-    PortalRecord(PortalRecord const&)            = delete;
-    PortalRecord()                               = delete;
+    PortalRecord& operator=(PortalRecord const&);
+    PortalRecord(PortalRecord const&);
+    PortalRecord();
 };

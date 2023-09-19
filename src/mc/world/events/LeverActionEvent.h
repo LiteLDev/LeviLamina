@@ -5,8 +5,8 @@
 struct LeverActionEvent {
 public:
     // prevent constructor by default
-    LeverActionEvent& operator=(LeverActionEvent const&) = delete;
-    LeverActionEvent()                                   = delete;
+    LeverActionEvent& operator=(LeverActionEvent const&);
+    LeverActionEvent();
 
 public:
     // NOLINTBEGIN

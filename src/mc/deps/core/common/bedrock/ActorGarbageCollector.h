@@ -14,8 +14,8 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class ActorGarbageCollector : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    ActorGarbageCollector& operator=(ActorGarbageCollector const&) = delete;
-    ActorGarbageCollector(ActorGarbageCollector const&)            = delete;
+    ActorGarbageCollector& operator=(ActorGarbageCollector const&);
+    ActorGarbageCollector(ActorGarbageCollector const&);
 
 public:
     // NOLINTBEGIN

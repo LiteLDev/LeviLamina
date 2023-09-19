@@ -18,9 +18,9 @@ namespace mce { class UUID; }
 class ClientAutomationCommandOrigin : public ::CommandOrigin {
 public:
     // prevent constructor by default
-    ClientAutomationCommandOrigin& operator=(ClientAutomationCommandOrigin const&) = delete;
-    ClientAutomationCommandOrigin(ClientAutomationCommandOrigin const&)            = delete;
-    ClientAutomationCommandOrigin()                                                = delete;
+    ClientAutomationCommandOrigin& operator=(ClientAutomationCommandOrigin const&);
+    ClientAutomationCommandOrigin(ClientAutomationCommandOrigin const&);
+    ClientAutomationCommandOrigin();
 
 public:
     // NOLINTBEGIN
@@ -80,7 +80,7 @@ public:
 
     // symbol:
     // ??0ClientAutomationCommandOrigin@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI ClientAutomationCommandOrigin(std::string const&);
+    MCAPI explicit ClientAutomationCommandOrigin(std::string const&);
 
     // NOLINTEND
 };

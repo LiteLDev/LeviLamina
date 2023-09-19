@@ -27,9 +27,9 @@ public:
 
 public:
     // prevent constructor by default
-    ArmSize& operator=(ArmSize const&) = delete;
-    ArmSize(ArmSize const&)            = delete;
-    ArmSize()                          = delete;
+    ArmSize& operator=(ArmSize const&);
+    ArmSize(ArmSize const&);
+    ArmSize();
 
     // protected:
     // NOLINTBEGIN
@@ -50,7 +50,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mInfoList() { return mInfoList; }
+    auto& $mInfoList() { return mInfoList; }
     // NOLINTEND
 };
 

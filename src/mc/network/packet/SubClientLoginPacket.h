@@ -13,8 +13,8 @@ public:
     std::unique_ptr<SubClientConnectionRequest> mConnectionRequest; // this+0x30
 
     // prevent constructor by default
-    SubClientLoginPacket& operator=(SubClientLoginPacket const&) = delete;
-    SubClientLoginPacket(SubClientLoginPacket const&)            = delete;
+    SubClientLoginPacket& operator=(SubClientLoginPacket const&);
+    SubClientLoginPacket(SubClientLoginPacket const&);
 
 public:
     // NOLINTBEGIN

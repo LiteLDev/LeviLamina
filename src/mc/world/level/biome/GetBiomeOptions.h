@@ -5,7 +5,7 @@
 struct GetBiomeOptions {
 public:
     // prevent constructor by default
-    GetBiomeOptions& operator=(GetBiomeOptions const&) = delete;
-    GetBiomeOptions(GetBiomeOptions const&)            = delete;
-    GetBiomeOptions()                                  = delete;
+    GetBiomeOptions& operator=(GetBiomeOptions const&);
+    GetBiomeOptions(GetBiomeOptions const&);
+    GetBiomeOptions();
 };

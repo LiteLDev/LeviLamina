@@ -10,9 +10,9 @@
 struct HC_CALL {
 public:
     // prevent constructor by default
-    HC_CALL& operator=(HC_CALL const&) = delete;
-    HC_CALL(HC_CALL const&)            = delete;
-    HC_CALL()                          = delete;
+    HC_CALL& operator=(HC_CALL const&);
+    HC_CALL(HC_CALL const&);
+    HC_CALL();
 
 public:
     // NOLINTBEGIN
@@ -36,7 +36,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ??0HC_CALL@@IEAA@_K@Z
-    MCAPI HC_CALL(uint64);
+    MCAPI explicit HC_CALL(uint64);
 
     // NOLINTEND
 

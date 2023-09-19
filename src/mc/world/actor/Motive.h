@@ -5,9 +5,9 @@
 class Motive {
 public:
     // prevent constructor by default
-    Motive& operator=(Motive const&) = delete;
-    Motive(Motive const&)            = delete;
-    Motive()                         = delete;
+    Motive& operator=(Motive const&);
+    Motive(Motive const&);
+    Motive();
 
 public:
     // NOLINTBEGIN

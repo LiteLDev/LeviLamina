@@ -5,9 +5,9 @@
 class LodestoneCompassComponentCalculator {
 public:
     // prevent constructor by default
-    LodestoneCompassComponentCalculator& operator=(LodestoneCompassComponentCalculator const&) = delete;
-    LodestoneCompassComponentCalculator(LodestoneCompassComponentCalculator const&)            = delete;
-    LodestoneCompassComponentCalculator()                                                      = delete;
+    LodestoneCompassComponentCalculator& operator=(LodestoneCompassComponentCalculator const&);
+    LodestoneCompassComponentCalculator(LodestoneCompassComponentCalculator const&);
+    LodestoneCompassComponentCalculator();
 
 private:
     // NOLINTBEGIN
@@ -19,7 +19,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $COOLDOWN_TIME_SECONDS() { return COOLDOWN_TIME_SECONDS; }
+    auto& $COOLDOWN_TIME_SECONDS() { return COOLDOWN_TIME_SECONDS; }
 
     // NOLINTEND
 };

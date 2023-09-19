@@ -13,9 +13,9 @@ public:
     struct Constructor {
     public:
         // prevent constructor by default
-        Constructor& operator=(Constructor const&) = delete;
-        Constructor(Constructor const&)            = delete;
-        Constructor()                              = delete;
+        Constructor& operator=(Constructor const&);
+        Constructor(Constructor const&);
+        Constructor();
 
     public:
         // NOLINTBEGIN
@@ -27,9 +27,9 @@ public:
 
 public:
     // prevent constructor by default
-    BlockTraitFactory& operator=(BlockTraitFactory const&) = delete;
-    BlockTraitFactory(BlockTraitFactory const&)            = delete;
-    BlockTraitFactory()                                    = delete;
+    BlockTraitFactory& operator=(BlockTraitFactory const&);
+    BlockTraitFactory(BlockTraitFactory const&);
+    BlockTraitFactory();
 
 public:
     // NOLINTBEGIN

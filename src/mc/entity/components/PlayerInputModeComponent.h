@@ -5,7 +5,7 @@
 struct PlayerInputModeComponent {
 public:
     // prevent constructor by default
-    PlayerInputModeComponent& operator=(PlayerInputModeComponent const&) = delete;
-    PlayerInputModeComponent(PlayerInputModeComponent const&)            = delete;
-    PlayerInputModeComponent()                                           = delete;
+    PlayerInputModeComponent& operator=(PlayerInputModeComponent const&);
+    PlayerInputModeComponent(PlayerInputModeComponent const&);
+    PlayerInputModeComponent();
 };

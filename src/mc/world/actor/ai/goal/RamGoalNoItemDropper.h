@@ -16,9 +16,9 @@ namespace RamAttackGoalUtils {
 class RamGoalNoItemDropper : public ::RamAttackGoalUtils::RamGoalItemDropperInterface {
 public:
     // prevent constructor by default
-    RamGoalNoItemDropper& operator=(RamGoalNoItemDropper const&) = delete;
-    RamGoalNoItemDropper(RamGoalNoItemDropper const&)            = delete;
-    RamGoalNoItemDropper()                                       = delete;
+    RamGoalNoItemDropper& operator=(RamGoalNoItemDropper const&);
+    RamGoalNoItemDropper(RamGoalNoItemDropper const&);
+    RamGoalNoItemDropper();
 
 public:
     // NOLINTBEGIN

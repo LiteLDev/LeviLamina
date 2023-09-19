@@ -10,9 +10,9 @@
 class InLavaSensingSystem {
 public:
     // prevent constructor by default
-    InLavaSensingSystem& operator=(InLavaSensingSystem const&) = delete;
-    InLavaSensingSystem(InLavaSensingSystem const&)            = delete;
-    InLavaSensingSystem()                                      = delete;
+    InLavaSensingSystem& operator=(InLavaSensingSystem const&);
+    InLavaSensingSystem(InLavaSensingSystem const&);
+    InLavaSensingSystem();
 
 public:
     // NOLINTBEGIN

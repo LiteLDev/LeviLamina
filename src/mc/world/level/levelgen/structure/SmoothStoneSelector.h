@@ -8,9 +8,9 @@
 class SmoothStoneSelector : public ::BlockSelector {
 public:
     // prevent constructor by default
-    SmoothStoneSelector& operator=(SmoothStoneSelector const&) = delete;
-    SmoothStoneSelector(SmoothStoneSelector const&)            = delete;
-    SmoothStoneSelector()                                      = delete;
+    SmoothStoneSelector& operator=(SmoothStoneSelector const&);
+    SmoothStoneSelector(SmoothStoneSelector const&);
+    SmoothStoneSelector();
 
 public:
     // NOLINTBEGIN

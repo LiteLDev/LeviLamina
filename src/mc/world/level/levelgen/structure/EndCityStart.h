@@ -8,9 +8,9 @@
 class EndCityStart : public ::StructureStart {
 public:
     // prevent constructor by default
-    EndCityStart& operator=(EndCityStart const&) = delete;
-    EndCityStart(EndCityStart const&)            = delete;
-    EndCityStart()                               = delete;
+    EndCityStart& operator=(EndCityStart const&);
+    EndCityStart(EndCityStart const&);
+    EndCityStart();
 
 public:
     // NOLINTBEGIN

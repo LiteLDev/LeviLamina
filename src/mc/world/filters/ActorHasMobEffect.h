@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class ActorHasMobEffect : public ::FilterTest {
 public:
     // prevent constructor by default
-    ActorHasMobEffect& operator=(ActorHasMobEffect const&) = delete;
-    ActorHasMobEffect(ActorHasMobEffect const&)            = delete;
-    ActorHasMobEffect()                                    = delete;
+    ActorHasMobEffect& operator=(ActorHasMobEffect const&);
+    ActorHasMobEffect(ActorHasMobEffect const&);
+    ActorHasMobEffect();
 
 public:
     // NOLINTBEGIN

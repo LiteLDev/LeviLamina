@@ -19,9 +19,9 @@ namespace Core {
 class File {
 public:
     // prevent constructor by default
-    File& operator=(File const&) = delete;
-    File(File const&)            = delete;
-    File()                       = delete;
+    File& operator=(File const&);
+    File(File const&);
+    File();
 
 public:
     // NOLINTBEGIN

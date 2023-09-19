@@ -5,7 +5,7 @@
 class CameraCallbacks {
 public:
     // prevent constructor by default
-    CameraCallbacks& operator=(CameraCallbacks const&) = delete;
-    CameraCallbacks(CameraCallbacks const&)            = delete;
-    CameraCallbacks()                                  = delete;
+    CameraCallbacks& operator=(CameraCallbacks const&);
+    CameraCallbacks(CameraCallbacks const&);
+    CameraCallbacks();
 };

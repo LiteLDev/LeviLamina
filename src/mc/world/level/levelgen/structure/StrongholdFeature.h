@@ -16,16 +16,16 @@ public:
     struct StrongholdResult {
     public:
         // prevent constructor by default
-        StrongholdResult& operator=(StrongholdResult const&) = delete;
-        StrongholdResult(StrongholdResult const&)            = delete;
-        StrongholdResult()                                   = delete;
+        StrongholdResult& operator=(StrongholdResult const&);
+        StrongholdResult(StrongholdResult const&);
+        StrongholdResult();
     };
 
 public:
     // prevent constructor by default
-    StrongholdFeature& operator=(StrongholdFeature const&) = delete;
-    StrongholdFeature(StrongholdFeature const&)            = delete;
-    StrongholdFeature()                                    = delete;
+    StrongholdFeature& operator=(StrongholdFeature const&);
+    StrongholdFeature(StrongholdFeature const&);
+    StrongholdFeature();
 
 public:
     // NOLINTBEGIN

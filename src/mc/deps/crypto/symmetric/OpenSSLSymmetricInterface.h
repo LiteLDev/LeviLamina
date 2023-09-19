@@ -7,9 +7,9 @@ namespace Crypto::Symmetric {
 class OpenSSLSymmetricInterface {
 public:
     // prevent constructor by default
-    OpenSSLSymmetricInterface& operator=(OpenSSLSymmetricInterface const&) = delete;
-    OpenSSLSymmetricInterface(OpenSSLSymmetricInterface const&)            = delete;
-    OpenSSLSymmetricInterface()                                            = delete;
+    OpenSSLSymmetricInterface& operator=(OpenSSLSymmetricInterface const&);
+    OpenSSLSymmetricInterface(OpenSSLSymmetricInterface const&);
+    OpenSSLSymmetricInterface();
 
 public:
     // NOLINTBEGIN

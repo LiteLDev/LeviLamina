@@ -5,9 +5,9 @@
 class OnUseItemComponent {
 public:
     // prevent constructor by default
-    OnUseItemComponent& operator=(OnUseItemComponent const&) = delete;
-    OnUseItemComponent(OnUseItemComponent const&)            = delete;
-    OnUseItemComponent()                                     = delete;
+    OnUseItemComponent& operator=(OnUseItemComponent const&);
+    OnUseItemComponent(OnUseItemComponent const&);
+    OnUseItemComponent();
 
 public:
     // NOLINTBEGIN

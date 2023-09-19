@@ -5,7 +5,7 @@
 struct IGameModeTimer {
 public:
     // prevent constructor by default
-    IGameModeTimer& operator=(IGameModeTimer const&) = delete;
-    IGameModeTimer(IGameModeTimer const&)            = delete;
-    IGameModeTimer()                                 = delete;
+    IGameModeTimer& operator=(IGameModeTimer const&);
+    IGameModeTimer(IGameModeTimer const&);
+    IGameModeTimer();
 };

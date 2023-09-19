@@ -8,9 +8,9 @@
 class CartographyAdditionalContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    CartographyAdditionalContainerValidation& operator=(CartographyAdditionalContainerValidation const&) = delete;
-    CartographyAdditionalContainerValidation(CartographyAdditionalContainerValidation const&)            = delete;
-    CartographyAdditionalContainerValidation()                                                           = delete;
+    CartographyAdditionalContainerValidation& operator=(CartographyAdditionalContainerValidation const&);
+    CartographyAdditionalContainerValidation(CartographyAdditionalContainerValidation const&);
+    CartographyAdditionalContainerValidation();
 
 public:
     // NOLINTBEGIN

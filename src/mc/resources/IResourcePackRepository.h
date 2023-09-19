@@ -18,9 +18,9 @@ namespace mce { class UUID; }
 class IResourcePackRepository {
 public:
     // prevent constructor by default
-    IResourcePackRepository& operator=(IResourcePackRepository const&) = delete;
-    IResourcePackRepository(IResourcePackRepository const&)            = delete;
-    IResourcePackRepository()                                          = delete;
+    IResourcePackRepository& operator=(IResourcePackRepository const&);
+    IResourcePackRepository(IResourcePackRepository const&);
+    IResourcePackRepository();
 
 public:
     // NOLINTBEGIN

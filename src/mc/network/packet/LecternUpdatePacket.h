@@ -16,8 +16,8 @@ public:
     NetworkBlockPosition mPos;            // this+0x3C
 
     // prevent constructor by default
-    LecternUpdatePacket& operator=(LecternUpdatePacket const&) = delete;
-    LecternUpdatePacket(LecternUpdatePacket const&)            = delete;
+    LecternUpdatePacket& operator=(LecternUpdatePacket const&);
+    LecternUpdatePacket(LecternUpdatePacket const&);
 
 public:
     // NOLINTBEGIN

@@ -26,9 +26,9 @@
 class LeashFenceKnotActor : public ::HangingActor {
 public:
     // prevent constructor by default
-    LeashFenceKnotActor& operator=(LeashFenceKnotActor const&) = delete;
-    LeashFenceKnotActor(LeashFenceKnotActor const&)            = delete;
-    LeashFenceKnotActor()                                      = delete;
+    LeashFenceKnotActor& operator=(LeashFenceKnotActor const&);
+    LeashFenceKnotActor(LeashFenceKnotActor const&);
+    LeashFenceKnotActor();
 
 public:
     // NOLINTBEGIN

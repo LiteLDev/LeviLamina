@@ -9,9 +9,9 @@
 class RandomStrollGoal : public ::Goal {
 public:
     // prevent constructor by default
-    RandomStrollGoal& operator=(RandomStrollGoal const&) = delete;
-    RandomStrollGoal(RandomStrollGoal const&)            = delete;
-    RandomStrollGoal()                                   = delete;
+    RandomStrollGoal& operator=(RandomStrollGoal const&);
+    RandomStrollGoal(RandomStrollGoal const&);
+    RandomStrollGoal();
 
 public:
     // NOLINTBEGIN

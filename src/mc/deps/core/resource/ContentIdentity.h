@@ -14,7 +14,7 @@ public:
     bool      valid;
     // NOLINTBEGIN
     // symbol: ??0ContentIdentity@@QEAA@AEBVUUID@mce@@@Z
-    MCAPI ContentIdentity(class mce::UUID const&);
+    MCAPI explicit ContentIdentity(class mce::UUID const&);
 
     // symbol: ??0ContentIdentity@@QEAA@$$QEAV0@@Z
     MCAPI ContentIdentity(class ContentIdentity&&);

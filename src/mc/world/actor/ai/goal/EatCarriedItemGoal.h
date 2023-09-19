@@ -9,9 +9,9 @@
 class EatCarriedItemGoal : public ::Goal {
 public:
     // prevent constructor by default
-    EatCarriedItemGoal& operator=(EatCarriedItemGoal const&) = delete;
-    EatCarriedItemGoal(EatCarriedItemGoal const&)            = delete;
-    EatCarriedItemGoal()                                     = delete;
+    EatCarriedItemGoal& operator=(EatCarriedItemGoal const&);
+    EatCarriedItemGoal(EatCarriedItemGoal const&);
+    EatCarriedItemGoal();
 
 public:
     // NOLINTBEGIN
@@ -55,9 +55,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $CHEW_CHANCE() { return CHEW_CHANCE; }
+    auto& $CHEW_CHANCE() { return CHEW_CHANCE; }
 
-    inline auto& $EATING_TIME() { return EATING_TIME; }
+    auto& $EATING_TIME() { return EATING_TIME; }
 
     // NOLINTEND
 };

@@ -21,8 +21,8 @@ namespace ScriptModuleMinecraft {
 class ScriptContainerSlot {
 public:
     // prevent constructor by default
-    ScriptContainerSlot& operator=(ScriptContainerSlot const&) = delete;
-    ScriptContainerSlot()                                      = delete;
+    ScriptContainerSlot& operator=(ScriptContainerSlot const&);
+    ScriptContainerSlot();
 
 public:
     // NOLINTBEGIN

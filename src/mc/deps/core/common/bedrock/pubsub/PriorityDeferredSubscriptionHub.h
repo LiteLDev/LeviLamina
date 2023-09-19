@@ -28,9 +28,9 @@ public:
     struct DequeuedEntry {
     public:
         // prevent constructor by default
-        DequeuedEntry& operator=(DequeuedEntry const&) = delete;
-        DequeuedEntry(DequeuedEntry const&)            = delete;
-        DequeuedEntry()                                = delete;
+        DequeuedEntry& operator=(DequeuedEntry const&);
+        DequeuedEntry(DequeuedEntry const&);
+        DequeuedEntry();
 
     public:
         // NOLINTBEGIN
@@ -43,9 +43,9 @@ public:
     struct QueueEntry {
     public:
         // prevent constructor by default
-        QueueEntry& operator=(QueueEntry const&) = delete;
-        QueueEntry(QueueEntry const&)            = delete;
-        QueueEntry()                             = delete;
+        QueueEntry& operator=(QueueEntry const&);
+        QueueEntry(QueueEntry const&);
+        QueueEntry();
 
     public:
         // NOLINTBEGIN
@@ -57,8 +57,8 @@ public:
 
 public:
     // prevent constructor by default
-    PriorityDeferredSubscriptionHub& operator=(PriorityDeferredSubscriptionHub const&) = delete;
-    PriorityDeferredSubscriptionHub(PriorityDeferredSubscriptionHub const&)            = delete;
+    PriorityDeferredSubscriptionHub& operator=(PriorityDeferredSubscriptionHub const&);
+    PriorityDeferredSubscriptionHub(PriorityDeferredSubscriptionHub const&);
 
 public:
     // NOLINTBEGIN

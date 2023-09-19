@@ -8,9 +8,9 @@
 class FixedBiomeSource : public ::BiomeSource {
 public:
     // prevent constructor by default
-    FixedBiomeSource& operator=(FixedBiomeSource const&) = delete;
-    FixedBiomeSource(FixedBiomeSource const&)            = delete;
-    FixedBiomeSource()                                   = delete;
+    FixedBiomeSource& operator=(FixedBiomeSource const&);
+    FixedBiomeSource(FixedBiomeSource const&);
+    FixedBiomeSource();
 
 public:
     // NOLINTBEGIN
@@ -39,7 +39,7 @@ public:
     MCVAPI class Biome const* getBiome(int, int, int) const;
 
     // symbol: ??0FixedBiomeSource@@QEAA@AEBVBiome@@@Z
-    MCAPI FixedBiomeSource(class Biome const&);
+    MCAPI explicit FixedBiomeSource(class Biome const&);
 
     // NOLINTEND
 };

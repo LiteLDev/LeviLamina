@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class NetworkItemInstanceDescriptor : public ::ItemDescriptorCount {
 public:
     // prevent constructor by default
-    NetworkItemInstanceDescriptor& operator=(NetworkItemInstanceDescriptor const&) = delete;
-    NetworkItemInstanceDescriptor(NetworkItemInstanceDescriptor const&)            = delete;
-    NetworkItemInstanceDescriptor()                                                = delete;
+    NetworkItemInstanceDescriptor& operator=(NetworkItemInstanceDescriptor const&);
+    NetworkItemInstanceDescriptor(NetworkItemInstanceDescriptor const&);
+    NetworkItemInstanceDescriptor();
 
 public:
     // NOLINTBEGIN
@@ -27,13 +27,13 @@ public:
     MCVAPI ~NetworkItemInstanceDescriptor();
 
     // symbol: ??0NetworkItemInstanceDescriptor@@QEAA@AEBVItemStackDescriptor@@@Z
-    MCAPI NetworkItemInstanceDescriptor(class ItemStackDescriptor const&);
+    MCAPI explicit NetworkItemInstanceDescriptor(class ItemStackDescriptor const&);
 
     // symbol: ??0NetworkItemInstanceDescriptor@@QEAA@$$QEAV0@@Z
     MCAPI NetworkItemInstanceDescriptor(class NetworkItemInstanceDescriptor&&);
 
     // symbol: ??0NetworkItemInstanceDescriptor@@QEAA@AEBVItemInstance@@@Z
-    MCAPI NetworkItemInstanceDescriptor(class ItemInstance const&);
+    MCAPI explicit NetworkItemInstanceDescriptor(class ItemInstance const&);
 
     // symbol: ?getItemInstance@NetworkItemInstanceDescriptor@@QEBA?AVItemInstance@@AEBVBlockPalette@@@Z
     MCAPI class ItemInstance getItemInstance(class BlockPalette const&) const;

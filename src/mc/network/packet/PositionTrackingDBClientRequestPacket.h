@@ -19,8 +19,8 @@ public:
     PositionTrackingId mId;     // this+0x34
 
     // prevent constructor by default
-    PositionTrackingDBClientRequestPacket& operator=(PositionTrackingDBClientRequestPacket const&) = delete;
-    PositionTrackingDBClientRequestPacket(PositionTrackingDBClientRequestPacket const&)            = delete;
+    PositionTrackingDBClientRequestPacket& operator=(PositionTrackingDBClientRequestPacket const&);
+    PositionTrackingDBClientRequestPacket(PositionTrackingDBClientRequestPacket const&);
 
 public:
     // NOLINTBEGIN

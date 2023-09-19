@@ -5,9 +5,9 @@
 class TickNextTickData {
 public:
     // prevent constructor by default
-    TickNextTickData& operator=(TickNextTickData const&) = delete;
-    TickNextTickData(TickNextTickData const&)            = delete;
-    TickNextTickData()                                   = delete;
+    TickNextTickData& operator=(TickNextTickData const&);
+    TickNextTickData(TickNextTickData const&);
+    TickNextTickData();
 
 public:
     // NOLINTBEGIN

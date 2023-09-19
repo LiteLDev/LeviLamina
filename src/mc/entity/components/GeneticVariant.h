@@ -5,8 +5,8 @@
 struct GeneticVariant {
 public:
     // prevent constructor by default
-    GeneticVariant& operator=(GeneticVariant const&) = delete;
-    GeneticVariant()                                 = delete;
+    GeneticVariant& operator=(GeneticVariant const&);
+    GeneticVariant();
 
 public:
     // NOLINTBEGIN

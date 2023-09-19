@@ -12,8 +12,8 @@ namespace Core {
 class FileStream {
 public:
     // prevent constructor by default
-    FileStream& operator=(FileStream const&) = delete;
-    FileStream(FileStream const&)            = delete;
+    FileStream& operator=(FileStream const&);
+    FileStream(FileStream const&);
 
 public:
     // NOLINTBEGIN

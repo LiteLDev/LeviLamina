@@ -14,7 +14,7 @@ public:
 
 public:
     // prevent constructor by default
-    ProjectileComponent& operator=(ProjectileComponent const&) = delete;
+    ProjectileComponent& operator=(ProjectileComponent const&);
 
 public:
     // NOLINTBEGIN

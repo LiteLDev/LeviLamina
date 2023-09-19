@@ -5,8 +5,8 @@
 class HideComponent {
 public:
     // prevent constructor by default
-    HideComponent& operator=(HideComponent const&) = delete;
-    HideComponent(HideComponent const&)            = delete;
+    HideComponent& operator=(HideComponent const&);
+    HideComponent(HideComponent const&);
 
 public:
     // NOLINTBEGIN

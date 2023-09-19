@@ -5,9 +5,9 @@
 class JumpInfo {
 public:
     // prevent constructor by default
-    JumpInfo& operator=(JumpInfo const&) = delete;
-    JumpInfo(JumpInfo const&)            = delete;
-    JumpInfo()                           = delete;
+    JumpInfo& operator=(JumpInfo const&);
+    JumpInfo(JumpInfo const&);
+    JumpInfo();
 
 public:
     // NOLINTBEGIN

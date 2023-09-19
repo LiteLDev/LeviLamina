@@ -14,9 +14,9 @@ namespace GameEvents { class PositionSource; }
 class SculkCatalystBlockActor {
 public:
     // prevent constructor by default
-    SculkCatalystBlockActor& operator=(SculkCatalystBlockActor const&) = delete;
-    SculkCatalystBlockActor(SculkCatalystBlockActor const&)            = delete;
-    SculkCatalystBlockActor()                                          = delete;
+    SculkCatalystBlockActor& operator=(SculkCatalystBlockActor const&);
+    SculkCatalystBlockActor(SculkCatalystBlockActor const&);
+    SculkCatalystBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -45,7 +45,7 @@ public:
     MCVAPI void tick(class BlockSource&);
 
     // symbol: ??0SculkCatalystBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI SculkCatalystBlockActor(class BlockPos const&);
+    MCAPI explicit SculkCatalystBlockActor(class BlockPos const&);
 
     // symbol: ?getSculkSpreader@SculkCatalystBlockActor@@QEAAAEAVSculkSpreader@@XZ
     MCAPI class SculkSpreader& getSculkSpreader();

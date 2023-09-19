@@ -10,9 +10,9 @@ namespace ScriptModuleMinecraftNet {
 struct ScriptNetResponse {
 public:
     // prevent constructor by default
-    ScriptNetResponse& operator=(ScriptNetResponse const&) = delete;
-    ScriptNetResponse(ScriptNetResponse const&)            = delete;
-    ScriptNetResponse()                                    = delete;
+    ScriptNetResponse& operator=(ScriptNetResponse const&);
+    ScriptNetResponse(ScriptNetResponse const&);
+    ScriptNetResponse();
 
 public:
     // NOLINTBEGIN

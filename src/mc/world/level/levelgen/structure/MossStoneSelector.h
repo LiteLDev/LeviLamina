@@ -8,9 +8,9 @@
 class MossStoneSelector : public ::BlockSelector {
 public:
     // prevent constructor by default
-    MossStoneSelector& operator=(MossStoneSelector const&) = delete;
-    MossStoneSelector(MossStoneSelector const&)            = delete;
-    MossStoneSelector()                                    = delete;
+    MossStoneSelector& operator=(MossStoneSelector const&);
+    MossStoneSelector(MossStoneSelector const&);
+    MossStoneSelector();
 
 public:
     // NOLINTBEGIN

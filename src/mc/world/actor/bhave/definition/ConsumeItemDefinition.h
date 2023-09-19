@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class ConsumeItemDefinition : public ::BehaviorDefinition {
 public:
     // prevent constructor by default
-    ConsumeItemDefinition& operator=(ConsumeItemDefinition const&) = delete;
-    ConsumeItemDefinition(ConsumeItemDefinition const&)            = delete;
-    ConsumeItemDefinition()                                        = delete;
+    ConsumeItemDefinition& operator=(ConsumeItemDefinition const&);
+    ConsumeItemDefinition(ConsumeItemDefinition const&);
+    ConsumeItemDefinition();
 
 public:
     // NOLINTBEGIN

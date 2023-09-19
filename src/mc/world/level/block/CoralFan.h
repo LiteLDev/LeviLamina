@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class CoralFan : public ::BushBlock {
 public:
     // prevent constructor by default
-    CoralFan& operator=(CoralFan const&) = delete;
-    CoralFan(CoralFan const&)            = delete;
-    CoralFan()                           = delete;
+    CoralFan& operator=(CoralFan const&);
+    CoralFan(CoralFan const&);
+    CoralFan();
 
 public:
     // NOLINTBEGIN

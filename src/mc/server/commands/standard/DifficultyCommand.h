@@ -8,9 +8,9 @@
 class DifficultyCommand : public ::Command {
 public:
     // prevent constructor by default
-    DifficultyCommand& operator=(DifficultyCommand const&) = delete;
-    DifficultyCommand(DifficultyCommand const&)            = delete;
-    DifficultyCommand()                                    = delete;
+    DifficultyCommand& operator=(DifficultyCommand const&);
+    DifficultyCommand(DifficultyCommand const&);
+    DifficultyCommand();
 
 public:
     // NOLINTBEGIN

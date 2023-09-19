@@ -18,9 +18,9 @@ namespace mce { class UUID; }
 class ActorServerCommandOrigin : public ::ActorCommandOrigin {
 public:
     // prevent constructor by default
-    ActorServerCommandOrigin& operator=(ActorServerCommandOrigin const&) = delete;
-    ActorServerCommandOrigin(ActorServerCommandOrigin const&)            = delete;
-    ActorServerCommandOrigin()                                           = delete;
+    ActorServerCommandOrigin& operator=(ActorServerCommandOrigin const&);
+    ActorServerCommandOrigin(ActorServerCommandOrigin const&);
+    ActorServerCommandOrigin();
 
 public:
     // NOLINTBEGIN

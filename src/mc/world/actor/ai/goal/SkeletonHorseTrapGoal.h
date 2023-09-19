@@ -10,9 +10,9 @@
 class SkeletonHorseTrapGoal : public ::Goal {
 public:
     // prevent constructor by default
-    SkeletonHorseTrapGoal& operator=(SkeletonHorseTrapGoal const&) = delete;
-    SkeletonHorseTrapGoal(SkeletonHorseTrapGoal const&)            = delete;
-    SkeletonHorseTrapGoal()                                        = delete;
+    SkeletonHorseTrapGoal& operator=(SkeletonHorseTrapGoal const&);
+    SkeletonHorseTrapGoal(SkeletonHorseTrapGoal const&);
+    SkeletonHorseTrapGoal();
 
 public:
     // NOLINTBEGIN

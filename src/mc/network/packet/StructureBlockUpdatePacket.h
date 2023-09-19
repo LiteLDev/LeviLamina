@@ -17,7 +17,7 @@ public:
     bool                 mIsWaterlogged; // this+0xF1
 
     // prevent constructor by default
-    StructureBlockUpdatePacket& operator=(StructureBlockUpdatePacket const&) = delete;
+    StructureBlockUpdatePacket& operator=(StructureBlockUpdatePacket const&);
 
 public:
     // NOLINTBEGIN

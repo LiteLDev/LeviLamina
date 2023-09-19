@@ -8,9 +8,9 @@
 class LevelEventListener {
 public:
     // prevent constructor by default
-    LevelEventListener& operator=(LevelEventListener const&) = delete;
-    LevelEventListener(LevelEventListener const&)            = delete;
-    LevelEventListener()                                     = delete;
+    LevelEventListener& operator=(LevelEventListener const&);
+    LevelEventListener(LevelEventListener const&);
+    LevelEventListener();
 
 public:
     // NOLINTBEGIN

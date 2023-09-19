@@ -5,8 +5,8 @@
 class LevelDataWrapper {
 public:
     // prevent constructor by default
-    LevelDataWrapper& operator=(LevelDataWrapper const&) = delete;
-    LevelDataWrapper(LevelDataWrapper const&)            = delete;
+    LevelDataWrapper& operator=(LevelDataWrapper const&);
+    LevelDataWrapper(LevelDataWrapper const&);
 
 public:
     // NOLINTBEGIN

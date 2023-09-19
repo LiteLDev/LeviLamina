@@ -5,9 +5,9 @@
 class ThrowableItemComponent {
 public:
     // prevent constructor by default
-    ThrowableItemComponent& operator=(ThrowableItemComponent const&) = delete;
-    ThrowableItemComponent(ThrowableItemComponent const&)            = delete;
-    ThrowableItemComponent()                                         = delete;
+    ThrowableItemComponent& operator=(ThrowableItemComponent const&);
+    ThrowableItemComponent(ThrowableItemComponent const&);
+    ThrowableItemComponent();
 
 public:
     // NOLINTBEGIN

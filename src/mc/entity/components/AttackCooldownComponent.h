@@ -21,9 +21,9 @@ public:
     class AttackCooldownDefinition {
     public:
         // prevent constructor by default
-        AttackCooldownDefinition& operator=(AttackCooldownDefinition const&) = delete;
-        AttackCooldownDefinition(AttackCooldownDefinition const&)            = delete;
-        AttackCooldownDefinition()                                           = delete;
+        AttackCooldownDefinition& operator=(AttackCooldownDefinition const&);
+        AttackCooldownDefinition(AttackCooldownDefinition const&);
+        AttackCooldownDefinition();
 
     public:
         // NOLINTBEGIN
@@ -41,9 +41,9 @@ public:
 
 public:
     // prevent constructor by default
-    AttackCooldownComponent& operator=(AttackCooldownComponent const&) = delete;
-    AttackCooldownComponent(AttackCooldownComponent const&)            = delete;
-    AttackCooldownComponent()                                          = delete;
+    AttackCooldownComponent& operator=(AttackCooldownComponent const&);
+    AttackCooldownComponent(AttackCooldownComponent const&);
+    AttackCooldownComponent();
 
 public:
     // NOLINTBEGIN

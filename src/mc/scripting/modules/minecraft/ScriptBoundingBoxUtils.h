@@ -16,9 +16,9 @@ namespace ScriptModuleMinecraft {
 class ScriptBoundingBoxUtils {
 public:
     // prevent constructor by default
-    ScriptBoundingBoxUtils& operator=(ScriptBoundingBoxUtils const&) = delete;
-    ScriptBoundingBoxUtils(ScriptBoundingBoxUtils const&)            = delete;
-    ScriptBoundingBoxUtils()                                         = delete;
+    ScriptBoundingBoxUtils& operator=(ScriptBoundingBoxUtils const&);
+    ScriptBoundingBoxUtils(ScriptBoundingBoxUtils const&);
+    ScriptBoundingBoxUtils();
 
 public:
     // NOLINTBEGIN

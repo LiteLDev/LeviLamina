@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class CherryLeavesBlock : public ::LeavesBlock {
 public:
     // prevent constructor by default
-    CherryLeavesBlock& operator=(CherryLeavesBlock const&) = delete;
-    CherryLeavesBlock(CherryLeavesBlock const&)            = delete;
-    CherryLeavesBlock()                                    = delete;
+    CherryLeavesBlock& operator=(CherryLeavesBlock const&);
+    CherryLeavesBlock(CherryLeavesBlock const&);
+    CherryLeavesBlock();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class StoneCutterInputContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    StoneCutterInputContainerValidation& operator=(StoneCutterInputContainerValidation const&) = delete;
-    StoneCutterInputContainerValidation(StoneCutterInputContainerValidation const&)            = delete;
-    StoneCutterInputContainerValidation()                                                      = delete;
+    StoneCutterInputContainerValidation& operator=(StoneCutterInputContainerValidation const&);
+    StoneCutterInputContainerValidation(StoneCutterInputContainerValidation const&);
+    StoneCutterInputContainerValidation();
 
 public:
     // NOLINTBEGIN

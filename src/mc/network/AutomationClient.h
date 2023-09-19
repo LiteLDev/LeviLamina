@@ -21,9 +21,9 @@ namespace Automation {
 class AutomationClient {
 public:
     // prevent constructor by default
-    AutomationClient& operator=(AutomationClient const&) = delete;
-    AutomationClient(AutomationClient const&)            = delete;
-    AutomationClient()                                   = delete;
+    AutomationClient& operator=(AutomationClient const&);
+    AutomationClient(AutomationClient const&);
+    AutomationClient();
 
 public:
     // NOLINTBEGIN
@@ -56,7 +56,7 @@ public:
     MCVAPI void tick();
 
     // symbol: ??0AutomationClient@Automation@@QEAA@AEAVIMinecraftApp@@@Z
-    MCAPI AutomationClient(class IMinecraftApp&);
+    MCAPI explicit AutomationClient(class IMinecraftApp&);
 
     // symbol:
     // ?getDefaultSession@AutomationClient@Automation@@QEAA?AV?$shared_ptr@VAutomationSession@Automation@@@std@@XZ

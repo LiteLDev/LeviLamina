@@ -8,9 +8,9 @@
 class RuinedPortalFeature : public ::StructureFeature {
 public:
     // prevent constructor by default
-    RuinedPortalFeature& operator=(RuinedPortalFeature const&) = delete;
-    RuinedPortalFeature(RuinedPortalFeature const&)            = delete;
-    RuinedPortalFeature()                                      = delete;
+    RuinedPortalFeature& operator=(RuinedPortalFeature const&);
+    RuinedPortalFeature(RuinedPortalFeature const&);
+    RuinedPortalFeature();
 
 public:
     // NOLINTBEGIN

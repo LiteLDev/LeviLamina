@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class ActorEnumPropertyTest : public ::FilterTest {
 public:
     // prevent constructor by default
-    ActorEnumPropertyTest& operator=(ActorEnumPropertyTest const&) = delete;
-    ActorEnumPropertyTest(ActorEnumPropertyTest const&)            = delete;
-    ActorEnumPropertyTest()                                        = delete;
+    ActorEnumPropertyTest& operator=(ActorEnumPropertyTest const&);
+    ActorEnumPropertyTest(ActorEnumPropertyTest const&);
+    ActorEnumPropertyTest();
 
 public:
     // NOLINTBEGIN

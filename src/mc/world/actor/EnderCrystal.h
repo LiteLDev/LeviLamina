@@ -25,9 +25,9 @@
 class EnderCrystal : public ::Actor {
 public:
     // prevent constructor by default
-    EnderCrystal& operator=(EnderCrystal const&) = delete;
-    EnderCrystal(EnderCrystal const&)            = delete;
-    EnderCrystal()                               = delete;
+    EnderCrystal& operator=(EnderCrystal const&);
+    EnderCrystal(EnderCrystal const&);
+    EnderCrystal();
 
 public:
     // NOLINTBEGIN

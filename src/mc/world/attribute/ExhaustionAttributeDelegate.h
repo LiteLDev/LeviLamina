@@ -8,9 +8,9 @@
 class ExhaustionAttributeDelegate : public ::AttributeInstanceDelegate {
 public:
     // prevent constructor by default
-    ExhaustionAttributeDelegate& operator=(ExhaustionAttributeDelegate const&) = delete;
-    ExhaustionAttributeDelegate(ExhaustionAttributeDelegate const&)            = delete;
-    ExhaustionAttributeDelegate()                                              = delete;
+    ExhaustionAttributeDelegate& operator=(ExhaustionAttributeDelegate const&);
+    ExhaustionAttributeDelegate(ExhaustionAttributeDelegate const&);
+    ExhaustionAttributeDelegate();
 
 public:
     // NOLINTBEGIN
@@ -21,7 +21,7 @@ public:
     virtual void tick();
 
     // symbol: ??0ExhaustionAttributeDelegate@@QEAA@AEBVAttributeInstance@@@Z
-    MCAPI ExhaustionAttributeDelegate(class AttributeInstance const&);
+    MCAPI explicit ExhaustionAttributeDelegate(class AttributeInstance const&);
 
     // NOLINTEND
 };

@@ -8,9 +8,9 @@
 class BlockEventResponseFactory : public ::EventResponseFactory {
 public:
     // prevent constructor by default
-    BlockEventResponseFactory& operator=(BlockEventResponseFactory const&) = delete;
-    BlockEventResponseFactory(BlockEventResponseFactory const&)            = delete;
-    BlockEventResponseFactory()                                            = delete;
+    BlockEventResponseFactory& operator=(BlockEventResponseFactory const&);
+    BlockEventResponseFactory(BlockEventResponseFactory const&);
+    BlockEventResponseFactory();
 
 public:
     // NOLINTBEGIN

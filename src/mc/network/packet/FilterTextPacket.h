@@ -13,8 +13,8 @@ public:
     bool        mFromServer; // this+0x50
 
     // prevent constructor by default
-    FilterTextPacket& operator=(FilterTextPacket const&) = delete;
-    FilterTextPacket(FilterTextPacket const&)            = delete;
+    FilterTextPacket& operator=(FilterTextPacket const&);
+    FilterTextPacket(FilterTextPacket const&);
 
 public:
     // NOLINTBEGIN

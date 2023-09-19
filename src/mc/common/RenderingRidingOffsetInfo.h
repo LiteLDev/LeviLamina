@@ -5,9 +5,9 @@
 struct RenderingRidingOffsetInfo {
 public:
     // prevent constructor by default
-    RenderingRidingOffsetInfo& operator=(RenderingRidingOffsetInfo const&) = delete;
-    RenderingRidingOffsetInfo(RenderingRidingOffsetInfo const&)            = delete;
-    RenderingRidingOffsetInfo()                                            = delete;
+    RenderingRidingOffsetInfo& operator=(RenderingRidingOffsetInfo const&);
+    RenderingRidingOffsetInfo(RenderingRidingOffsetInfo const&);
+    RenderingRidingOffsetInfo();
 
 public:
     // NOLINTBEGIN

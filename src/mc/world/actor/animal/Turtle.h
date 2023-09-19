@@ -26,9 +26,9 @@
 class Turtle : public ::Animal {
 public:
     // prevent constructor by default
-    Turtle& operator=(Turtle const&) = delete;
-    Turtle(Turtle const&)            = delete;
-    Turtle()                         = delete;
+    Turtle& operator=(Turtle const&);
+    Turtle(Turtle const&);
+    Turtle();
 
 public:
     // NOLINTBEGIN

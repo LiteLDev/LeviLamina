@@ -8,8 +8,8 @@
 class ChunkBuildOrderPolicy : public ::ChunkBuildOrderPolicyBase {
 public:
     // prevent constructor by default
-    ChunkBuildOrderPolicy& operator=(ChunkBuildOrderPolicy const&) = delete;
-    ChunkBuildOrderPolicy(ChunkBuildOrderPolicy const&)            = delete;
+    ChunkBuildOrderPolicy& operator=(ChunkBuildOrderPolicy const&);
+    ChunkBuildOrderPolicy(ChunkBuildOrderPolicy const&);
 
 public:
     // NOLINTBEGIN

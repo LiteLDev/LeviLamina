@@ -8,9 +8,9 @@
 class BedrockItems {
 public:
     // prevent constructor by default
-    BedrockItems& operator=(BedrockItems const&) = delete;
-    BedrockItems(BedrockItems const&)            = delete;
-    BedrockItems()                               = delete;
+    BedrockItems& operator=(BedrockItems const&);
+    BedrockItems(BedrockItems const&);
+    BedrockItems();
 
 public:
     // NOLINTBEGIN

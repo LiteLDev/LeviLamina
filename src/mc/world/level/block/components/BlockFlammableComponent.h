@@ -8,7 +8,7 @@
 struct BlockFlammableComponent : public ::BlockComponentBase {
 public:
     // prevent constructor by default
-    BlockFlammableComponent& operator=(BlockFlammableComponent const&) = delete;
-    BlockFlammableComponent(BlockFlammableComponent const&)            = delete;
-    BlockFlammableComponent()                                          = delete;
+    BlockFlammableComponent& operator=(BlockFlammableComponent const&);
+    BlockFlammableComponent(BlockFlammableComponent const&);
+    BlockFlammableComponent();
 };

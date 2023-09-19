@@ -7,9 +7,9 @@ namespace Bedrock {
 class SessionInfo {
 public:
     // prevent constructor by default
-    SessionInfo& operator=(SessionInfo const&) = delete;
-    SessionInfo(SessionInfo const&)            = delete;
-    SessionInfo()                              = delete;
+    SessionInfo& operator=(SessionInfo const&);
+    SessionInfo(SessionInfo const&);
+    SessionInfo();
 
 public:
     // NOLINTBEGIN

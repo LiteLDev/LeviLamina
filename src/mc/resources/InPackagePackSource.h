@@ -11,9 +11,9 @@
 class InPackagePackSource : public ::PackSource {
 public:
     // prevent constructor by default
-    InPackagePackSource& operator=(InPackagePackSource const&) = delete;
-    InPackagePackSource(InPackagePackSource const&)            = delete;
-    InPackagePackSource()                                      = delete;
+    InPackagePackSource& operator=(InPackagePackSource const&);
+    InPackagePackSource(InPackagePackSource const&);
+    InPackagePackSource();
 
 public:
     // NOLINTBEGIN

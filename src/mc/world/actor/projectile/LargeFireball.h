@@ -27,9 +27,9 @@
 class LargeFireball : public ::Fireball {
 public:
     // prevent constructor by default
-    LargeFireball& operator=(LargeFireball const&) = delete;
-    LargeFireball(LargeFireball const&)            = delete;
-    LargeFireball()                                = delete;
+    LargeFireball& operator=(LargeFireball const&);
+    LargeFireball(LargeFireball const&);
+    LargeFireball();
 
 public:
     // NOLINTBEGIN

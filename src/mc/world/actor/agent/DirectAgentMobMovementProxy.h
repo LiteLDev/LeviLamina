@@ -5,9 +5,9 @@
 struct DirectAgentMobMovementProxy {
 public:
     // prevent constructor by default
-    DirectAgentMobMovementProxy& operator=(DirectAgentMobMovementProxy const&) = delete;
-    DirectAgentMobMovementProxy(DirectAgentMobMovementProxy const&)            = delete;
-    DirectAgentMobMovementProxy()                                              = delete;
+    DirectAgentMobMovementProxy& operator=(DirectAgentMobMovementProxy const&);
+    DirectAgentMobMovementProxy(DirectAgentMobMovementProxy const&);
+    DirectAgentMobMovementProxy();
 
 public:
     // NOLINTBEGIN

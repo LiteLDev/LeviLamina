@@ -8,9 +8,9 @@
 class VinesSingleFaceFeature : public ::IFeature {
 public:
     // prevent constructor by default
-    VinesSingleFaceFeature& operator=(VinesSingleFaceFeature const&) = delete;
-    VinesSingleFaceFeature(VinesSingleFaceFeature const&)            = delete;
-    VinesSingleFaceFeature()                                         = delete;
+    VinesSingleFaceFeature& operator=(VinesSingleFaceFeature const&);
+    VinesSingleFaceFeature(VinesSingleFaceFeature const&);
+    VinesSingleFaceFeature();
 
 public:
     // NOLINTBEGIN

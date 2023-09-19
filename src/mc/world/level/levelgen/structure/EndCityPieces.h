@@ -26,9 +26,9 @@ public:
     class EndCityPiece : public ::TemplateStructurePiece {
     public:
         // prevent constructor by default
-        EndCityPiece& operator=(EndCityPiece const&) = delete;
-        EndCityPiece(EndCityPiece const&)            = delete;
-        EndCityPiece()                               = delete;
+        EndCityPiece& operator=(EndCityPiece const&);
+        EndCityPiece(EndCityPiece const&);
+        EndCityPiece();
 
     public:
         // NOLINTBEGIN
@@ -70,9 +70,9 @@ public:
     class SectionGenerator {
     public:
         // prevent constructor by default
-        SectionGenerator& operator=(SectionGenerator const&) = delete;
-        SectionGenerator(SectionGenerator const&)            = delete;
-        SectionGenerator()                                   = delete;
+        SectionGenerator& operator=(SectionGenerator const&);
+        SectionGenerator(SectionGenerator const&);
+        SectionGenerator();
 
     public:
         // NOLINTBEGIN
@@ -86,9 +86,9 @@ public:
     class FatTowerGenerator : public ::EndCityPieces::SectionGenerator {
     public:
         // prevent constructor by default
-        FatTowerGenerator& operator=(FatTowerGenerator const&) = delete;
-        FatTowerGenerator(FatTowerGenerator const&)            = delete;
-        FatTowerGenerator()                                    = delete;
+        FatTowerGenerator& operator=(FatTowerGenerator const&);
+        FatTowerGenerator(FatTowerGenerator const&);
+        FatTowerGenerator();
 
     public:
         // NOLINTBEGIN
@@ -103,9 +103,9 @@ public:
     class HouseTowerGenerator : public ::EndCityPieces::SectionGenerator {
     public:
         // prevent constructor by default
-        HouseTowerGenerator& operator=(HouseTowerGenerator const&) = delete;
-        HouseTowerGenerator(HouseTowerGenerator const&)            = delete;
-        HouseTowerGenerator()                                      = delete;
+        HouseTowerGenerator& operator=(HouseTowerGenerator const&);
+        HouseTowerGenerator(HouseTowerGenerator const&);
+        HouseTowerGenerator();
 
     public:
         // NOLINTBEGIN
@@ -120,9 +120,9 @@ public:
     class TowerBridgeGenerator : public ::EndCityPieces::SectionGenerator {
     public:
         // prevent constructor by default
-        TowerBridgeGenerator& operator=(TowerBridgeGenerator const&) = delete;
-        TowerBridgeGenerator(TowerBridgeGenerator const&)            = delete;
-        TowerBridgeGenerator()                                       = delete;
+        TowerBridgeGenerator& operator=(TowerBridgeGenerator const&);
+        TowerBridgeGenerator(TowerBridgeGenerator const&);
+        TowerBridgeGenerator();
 
     public:
         // NOLINTBEGIN
@@ -137,9 +137,9 @@ public:
     class TowerGenerator : public ::EndCityPieces::SectionGenerator {
     public:
         // prevent constructor by default
-        TowerGenerator& operator=(TowerGenerator const&) = delete;
-        TowerGenerator(TowerGenerator const&)            = delete;
-        TowerGenerator()                                 = delete;
+        TowerGenerator& operator=(TowerGenerator const&);
+        TowerGenerator(TowerGenerator const&);
+        TowerGenerator();
 
     public:
         // NOLINTBEGIN
@@ -153,9 +153,9 @@ public:
 
 public:
     // prevent constructor by default
-    EndCityPieces& operator=(EndCityPieces const&) = delete;
-    EndCityPieces(EndCityPieces const&)            = delete;
-    EndCityPieces()                                = delete;
+    EndCityPieces& operator=(EndCityPieces const&);
+    EndCityPieces(EndCityPieces const&);
+    EndCityPieces();
 
 public:
     // NOLINTBEGIN
@@ -203,9 +203,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mInsertSettings() { return mInsertSettings; }
+    auto& $mInsertSettings() { return mInsertSettings; }
 
-    inline auto& $mOverwriteSettings() { return mOverwriteSettings; }
+    auto& $mOverwriteSettings() { return mOverwriteSettings; }
 
     // NOLINTEND
 };

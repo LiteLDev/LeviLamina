@@ -5,8 +5,8 @@
 class TrailComponent {
 public:
     // prevent constructor by default
-    TrailComponent& operator=(TrailComponent const&) = delete;
-    TrailComponent(TrailComponent const&)            = delete;
+    TrailComponent& operator=(TrailComponent const&);
+    TrailComponent(TrailComponent const&);
 
 public:
     // NOLINTBEGIN

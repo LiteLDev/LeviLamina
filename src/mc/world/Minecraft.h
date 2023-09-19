@@ -20,9 +20,9 @@ namespace mce { class UUID; }
 class Minecraft : public ::IEntityRegistryOwner {
 public:
     // prevent constructor by default
-    Minecraft& operator=(Minecraft const&) = delete;
-    Minecraft(Minecraft const&)            = delete;
-    Minecraft()                            = delete;
+    Minecraft& operator=(Minecraft const&);
+    Minecraft(Minecraft const&);
+    Minecraft();
 
 public:
     // NOLINTBEGIN

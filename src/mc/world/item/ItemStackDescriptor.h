@@ -13,8 +13,8 @@ namespace Json { class Value; }
 class ItemStackDescriptor : public ::ItemDescriptorCount {
 public:
     // prevent constructor by default
-    ItemStackDescriptor& operator=(ItemStackDescriptor const&) = delete;
-    ItemStackDescriptor(ItemStackDescriptor const&)            = delete;
+    ItemStackDescriptor& operator=(ItemStackDescriptor const&);
+    ItemStackDescriptor(ItemStackDescriptor const&);
 
     std::unique_ptr<CompoundTag, std::default_delete<CompoundTag>> mUserData; // this+0x18
 public:

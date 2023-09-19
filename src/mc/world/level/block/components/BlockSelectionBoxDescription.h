@@ -14,9 +14,9 @@ namespace JsonUtil { class EmptyClass; }
 struct BlockSelectionBoxDescription : public ::BlockComponentDescription {
 public:
     // prevent constructor by default
-    BlockSelectionBoxDescription& operator=(BlockSelectionBoxDescription const&) = delete;
-    BlockSelectionBoxDescription(BlockSelectionBoxDescription const&)            = delete;
-    BlockSelectionBoxDescription()                                               = delete;
+    BlockSelectionBoxDescription& operator=(BlockSelectionBoxDescription const&);
+    BlockSelectionBoxDescription(BlockSelectionBoxDescription const&);
+    BlockSelectionBoxDescription();
 
 public:
     // NOLINTBEGIN
@@ -50,7 +50,7 @@ public:
     MCAPI BlockSelectionBoxDescription(class Vec3 const&, class Vec3 const&);
 
     // symbol: ??0BlockSelectionBoxDescription@@QEAA@_N@Z
-    MCAPI BlockSelectionBoxDescription(bool);
+    MCAPI explicit BlockSelectionBoxDescription(bool);
 
     // symbol: ?bindType@BlockSelectionBoxDescription@@SAXXZ
     MCAPI static void bindType();

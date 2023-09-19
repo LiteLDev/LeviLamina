@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class DirtBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    DirtBlock& operator=(DirtBlock const&) = delete;
-    DirtBlock(DirtBlock const&)            = delete;
-    DirtBlock()                            = delete;
+    DirtBlock& operator=(DirtBlock const&);
+    DirtBlock(DirtBlock const&);
+    DirtBlock();
 
 public:
     // NOLINTBEGIN

@@ -18,9 +18,9 @@ namespace AgentCommands {
 class Interact : public ::Command {
 public:
     // prevent constructor by default
-    Interact& operator=(Interact const&) = delete;
-    Interact(Interact const&)            = delete;
-    Interact()                           = delete;
+    Interact& operator=(Interact const&);
+    Interact(Interact const&);
+    Interact();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class SoundDefinition {
 public:
     // prevent constructor by default
-    SoundDefinition& operator=(SoundDefinition const&) = delete;
-    SoundDefinition(SoundDefinition const&)            = delete;
-    SoundDefinition()                                  = delete;
+    SoundDefinition& operator=(SoundDefinition const&);
+    SoundDefinition(SoundDefinition const&);
+    SoundDefinition();
 
 public:
     // NOLINTBEGIN

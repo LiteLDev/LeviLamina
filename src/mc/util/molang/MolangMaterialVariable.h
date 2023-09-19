@@ -5,9 +5,9 @@
 struct MolangMaterialVariable {
 public:
     // prevent constructor by default
-    MolangMaterialVariable& operator=(MolangMaterialVariable const&) = delete;
-    MolangMaterialVariable(MolangMaterialVariable const&)            = delete;
-    MolangMaterialVariable()                                         = delete;
+    MolangMaterialVariable& operator=(MolangMaterialVariable const&);
+    MolangMaterialVariable(MolangMaterialVariable const&);
+    MolangMaterialVariable();
 
 public:
     // NOLINTBEGIN

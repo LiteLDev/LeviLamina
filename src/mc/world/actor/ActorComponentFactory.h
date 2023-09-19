@@ -8,9 +8,9 @@
 class ActorComponentFactory : public ::EntityComponentFactoryJson {
 public:
     // prevent constructor by default
-    ActorComponentFactory& operator=(ActorComponentFactory const&) = delete;
-    ActorComponentFactory(ActorComponentFactory const&)            = delete;
-    ActorComponentFactory()                                        = delete;
+    ActorComponentFactory& operator=(ActorComponentFactory const&);
+    ActorComponentFactory(ActorComponentFactory const&);
+    ActorComponentFactory();
 
     // private:
     // NOLINTBEGIN

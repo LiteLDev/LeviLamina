@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class AmethystClusterBlock : public ::AmethystBlock {
 public:
     // prevent constructor by default
-    AmethystClusterBlock& operator=(AmethystClusterBlock const&) = delete;
-    AmethystClusterBlock(AmethystClusterBlock const&)            = delete;
-    AmethystClusterBlock()                                       = delete;
+    AmethystClusterBlock& operator=(AmethystClusterBlock const&);
+    AmethystClusterBlock(AmethystClusterBlock const&);
+    AmethystClusterBlock();
 
 public:
     // NOLINTBEGIN

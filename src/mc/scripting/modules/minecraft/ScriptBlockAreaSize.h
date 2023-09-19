@@ -10,9 +10,9 @@ namespace ScriptModuleMinecraft {
 class ScriptBlockAreaSize {
 public:
     // prevent constructor by default
-    ScriptBlockAreaSize& operator=(ScriptBlockAreaSize const&) = delete;
-    ScriptBlockAreaSize(ScriptBlockAreaSize const&)            = delete;
-    ScriptBlockAreaSize()                                      = delete;
+    ScriptBlockAreaSize& operator=(ScriptBlockAreaSize const&);
+    ScriptBlockAreaSize(ScriptBlockAreaSize const&);
+    ScriptBlockAreaSize();
 
 public:
     // NOLINTBEGIN

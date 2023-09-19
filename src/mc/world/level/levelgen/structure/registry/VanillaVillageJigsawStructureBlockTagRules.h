@@ -5,9 +5,9 @@
 class VanillaVillageJigsawStructureBlockTagRules {
 public:
     // prevent constructor by default
-    VanillaVillageJigsawStructureBlockTagRules& operator=(VanillaVillageJigsawStructureBlockTagRules const&) = delete;
-    VanillaVillageJigsawStructureBlockTagRules(VanillaVillageJigsawStructureBlockTagRules const&)            = delete;
-    VanillaVillageJigsawStructureBlockTagRules()                                                             = delete;
+    VanillaVillageJigsawStructureBlockTagRules& operator=(VanillaVillageJigsawStructureBlockTagRules const&);
+    VanillaVillageJigsawStructureBlockTagRules(VanillaVillageJigsawStructureBlockTagRules const&);
+    VanillaVillageJigsawStructureBlockTagRules();
 
 public:
     // NOLINTBEGIN

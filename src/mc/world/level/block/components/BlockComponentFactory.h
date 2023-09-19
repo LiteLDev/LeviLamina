@@ -18,8 +18,8 @@ public:
     struct Constructor {
     public:
         // prevent constructor by default
-        Constructor(Constructor const&) = delete;
-        Constructor()                   = delete;
+        Constructor(Constructor const&);
+        Constructor();
 
     public:
         // NOLINTBEGIN
@@ -34,14 +34,14 @@ public:
 
 public:
     // prevent constructor by default
-    BlockComponentFactory& operator=(BlockComponentFactory const&) = delete;
-    BlockComponentFactory(BlockComponentFactory const&)            = delete;
-    BlockComponentFactory()                                        = delete;
+    BlockComponentFactory& operator=(BlockComponentFactory const&);
+    BlockComponentFactory(BlockComponentFactory const&);
+    BlockComponentFactory();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0BlockComponentFactory@@QEAA@AEBVExperiments@@@Z
-    MCAPI BlockComponentFactory(class Experiments const&);
+    MCAPI explicit BlockComponentFactory(class Experiments const&);
 
     // symbol: ?initializeFactory@BlockComponentFactory@@QEAAXAEBVExperiments@@@Z
     MCAPI void initializeFactory(class Experiments const&);

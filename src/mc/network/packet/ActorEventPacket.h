@@ -16,8 +16,8 @@ public:
     int            mData;      // this+0x3c
 
     // prevent constructor by default
-    ActorEventPacket& operator=(ActorEventPacket const&) = delete;
-    ActorEventPacket(ActorEventPacket const&)            = delete;
+    ActorEventPacket& operator=(ActorEventPacket const&);
+    ActorEventPacket(ActorEventPacket const&);
 
 public:
     // NOLINTBEGIN

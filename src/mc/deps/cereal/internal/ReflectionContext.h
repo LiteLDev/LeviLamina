@@ -12,9 +12,9 @@ namespace cereal::internal {
 struct ReflectionContext {
 public:
     // prevent constructor by default
-    ReflectionContext& operator=(ReflectionContext const&) = delete;
-    ReflectionContext(ReflectionContext const&)            = delete;
-    ReflectionContext()                                    = delete;
+    ReflectionContext& operator=(ReflectionContext const&);
+    ReflectionContext(ReflectionContext const&);
+    ReflectionContext();
 
 public:
     // NOLINTBEGIN

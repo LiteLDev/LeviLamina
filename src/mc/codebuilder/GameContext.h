@@ -22,9 +22,9 @@ public:
     struct ItemTypeList {
     public:
         // prevent constructor by default
-        ItemTypeList& operator=(ItemTypeList const&) = delete;
-        ItemTypeList(ItemTypeList const&)            = delete;
-        ItemTypeList()                               = delete;
+        ItemTypeList& operator=(ItemTypeList const&);
+        ItemTypeList(ItemTypeList const&);
+        ItemTypeList();
 
     public:
         // NOLINTBEGIN
@@ -40,9 +40,9 @@ public:
     struct ObjectTypeList {
     public:
         // prevent constructor by default
-        ObjectTypeList& operator=(ObjectTypeList const&) = delete;
-        ObjectTypeList(ObjectTypeList const&)            = delete;
-        ObjectTypeList()                                 = delete;
+        ObjectTypeList& operator=(ObjectTypeList const&);
+        ObjectTypeList(ObjectTypeList const&);
+        ObjectTypeList();
 
     public:
         // NOLINTBEGIN
@@ -57,9 +57,9 @@ public:
 
 public:
     // prevent constructor by default
-    GameContext& operator=(GameContext const&) = delete;
-    GameContext(GameContext const&)            = delete;
-    GameContext()                              = delete;
+    GameContext& operator=(GameContext const&);
+    GameContext(GameContext const&);
+    GameContext();
 
 public:
     // NOLINTBEGIN

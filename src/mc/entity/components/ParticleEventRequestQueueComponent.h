@@ -5,9 +5,9 @@
 struct ParticleEventRequestQueueComponent {
 public:
     // prevent constructor by default
-    ParticleEventRequestQueueComponent& operator=(ParticleEventRequestQueueComponent const&) = delete;
-    ParticleEventRequestQueueComponent(ParticleEventRequestQueueComponent const&)            = delete;
-    ParticleEventRequestQueueComponent()                                                     = delete;
+    ParticleEventRequestQueueComponent& operator=(ParticleEventRequestQueueComponent const&);
+    ParticleEventRequestQueueComponent(ParticleEventRequestQueueComponent const&);
+    ParticleEventRequestQueueComponent();
 
 public:
     // NOLINTBEGIN

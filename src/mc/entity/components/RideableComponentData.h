@@ -5,9 +5,9 @@
 struct RideableComponentData {
 public:
     // prevent constructor by default
-    RideableComponentData& operator=(RideableComponentData const&) = delete;
-    RideableComponentData(RideableComponentData const&)            = delete;
-    RideableComponentData()                                        = delete;
+    RideableComponentData& operator=(RideableComponentData const&);
+    RideableComponentData(RideableComponentData const&);
+    RideableComponentData();
 
 public:
     // NOLINTBEGIN

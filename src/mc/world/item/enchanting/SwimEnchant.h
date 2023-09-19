@@ -8,9 +8,9 @@
 class SwimEnchant : public ::Enchant {
 public:
     // prevent constructor by default
-    SwimEnchant& operator=(SwimEnchant const&) = delete;
-    SwimEnchant(SwimEnchant const&)            = delete;
-    SwimEnchant()                              = delete;
+    SwimEnchant& operator=(SwimEnchant const&);
+    SwimEnchant(SwimEnchant const&);
+    SwimEnchant();
 
 public:
     // NOLINTBEGIN
@@ -57,7 +57,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $VALID_ENCHANTMENTS() { return VALID_ENCHANTMENTS; }
+    auto& $VALID_ENCHANTMENTS() { return VALID_ENCHANTMENTS; }
 
     // NOLINTEND
 };

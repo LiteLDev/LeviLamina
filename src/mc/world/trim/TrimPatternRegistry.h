@@ -5,9 +5,9 @@
 class TrimPatternRegistry {
 public:
     // prevent constructor by default
-    TrimPatternRegistry& operator=(TrimPatternRegistry const&) = delete;
-    TrimPatternRegistry(TrimPatternRegistry const&)            = delete;
-    TrimPatternRegistry()                                      = delete;
+    TrimPatternRegistry& operator=(TrimPatternRegistry const&);
+    TrimPatternRegistry(TrimPatternRegistry const&);
+    TrimPatternRegistry();
 
 public:
     // NOLINTBEGIN

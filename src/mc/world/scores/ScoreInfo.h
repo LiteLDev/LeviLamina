@@ -5,7 +5,7 @@
 struct ScoreInfo {
 public:
     // prevent constructor by default
-    ScoreInfo& operator=(ScoreInfo const&) = delete;
-    ScoreInfo(ScoreInfo const&)            = delete;
-    ScoreInfo()                            = delete;
+    ScoreInfo& operator=(ScoreInfo const&);
+    ScoreInfo(ScoreInfo const&);
+    ScoreInfo();
 };

@@ -19,9 +19,9 @@ public:
     std::unique_ptr<struct PlayerCapabilities::ISharedData> mShared;
 
     // prevent constructor by default
-    SharedController& operator=(SharedController const&) = delete;
-    SharedController(SharedController const&)            = delete;
-    SharedController()                                   = delete;
+    SharedController& operator=(SharedController const&);
+    SharedController(SharedController const&);
+    SharedController();
 
 public:
     // NOLINTBEGIN

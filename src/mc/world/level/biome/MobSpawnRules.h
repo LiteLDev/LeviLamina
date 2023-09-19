@@ -8,7 +8,7 @@
 class MobSpawnRules {
 public:
     // prevent constructor by default
-    MobSpawnRules& operator=(MobSpawnRules const&) = delete;
+    MobSpawnRules& operator=(MobSpawnRules const&);
 
 public:
     // NOLINTBEGIN

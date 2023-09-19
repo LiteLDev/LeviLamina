@@ -5,7 +5,7 @@
 class SubChunkRequestManager {
 public:
     // prevent constructor by default
-    SubChunkRequestManager& operator=(SubChunkRequestManager const&) = delete;
-    SubChunkRequestManager(SubChunkRequestManager const&)            = delete;
-    SubChunkRequestManager()                                         = delete;
+    SubChunkRequestManager& operator=(SubChunkRequestManager const&);
+    SubChunkRequestManager(SubChunkRequestManager const&);
+    SubChunkRequestManager();
 };

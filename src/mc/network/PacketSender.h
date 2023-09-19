@@ -14,9 +14,9 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class PacketSender : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    PacketSender& operator=(PacketSender const&) = delete;
-    PacketSender(PacketSender const&)            = delete;
-    PacketSender()                               = delete;
+    PacketSender& operator=(PacketSender const&);
+    PacketSender(PacketSender const&);
+    PacketSender();
 
 public:
     // NOLINTBEGIN

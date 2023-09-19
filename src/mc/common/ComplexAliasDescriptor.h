@@ -14,9 +14,9 @@ namespace Json { class Value; }
 struct ComplexAliasDescriptor : public ::ItemDescriptor::BaseDescriptor {
 public:
     // prevent constructor by default
-    ComplexAliasDescriptor& operator=(ComplexAliasDescriptor const&) = delete;
-    ComplexAliasDescriptor(ComplexAliasDescriptor const&)            = delete;
-    ComplexAliasDescriptor()                                         = delete;
+    ComplexAliasDescriptor& operator=(ComplexAliasDescriptor const&);
+    ComplexAliasDescriptor(ComplexAliasDescriptor const&);
+    ComplexAliasDescriptor();
 
 public:
     // NOLINTBEGIN
@@ -57,7 +57,7 @@ public:
     virtual uint64 getHash() const;
 
     // symbol: ??0ComplexAliasDescriptor@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI ComplexAliasDescriptor(std::string const&);
+    MCAPI explicit ComplexAliasDescriptor(std::string const&);
 
     // symbol:
     // ?deserialize@ComplexAliasDescriptor@@SA?AV?$Result@V?$unique_ptr@UComplexAliasDescriptor@@U?$default_delete@UComplexAliasDescriptor@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z

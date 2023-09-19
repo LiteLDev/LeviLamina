@@ -13,9 +13,9 @@ public:
     struct ScopedData {
     public:
         // prevent constructor by default
-        ScopedData& operator=(ScopedData const&) = delete;
-        ScopedData(ScopedData const&)            = delete;
-        ScopedData()                             = delete;
+        ScopedData& operator=(ScopedData const&);
+        ScopedData(ScopedData const&);
+        ScopedData();
 
     public:
         // NOLINTBEGIN
@@ -27,8 +27,8 @@ public:
 
 public:
     // prevent constructor by default
-    ProfilerLite& operator=(ProfilerLite const&) = delete;
-    ProfilerLite(ProfilerLite const&)            = delete;
+    ProfilerLite& operator=(ProfilerLite const&);
+    ProfilerLite(ProfilerLite const&);
 
 public:
     // NOLINTBEGIN
@@ -64,7 +64,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $gProfilerLiteInstance() { return gProfilerLiteInstance; }
+    auto& $gProfilerLiteInstance() { return gProfilerLiteInstance; }
 
     // NOLINTEND
 };

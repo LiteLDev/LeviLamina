@@ -25,7 +25,7 @@ public:
 
 public:
     // prevent constructor by default
-    IdentityDefinition() = delete;
+    IdentityDefinition();
 
 public:
     // NOLINTBEGIN

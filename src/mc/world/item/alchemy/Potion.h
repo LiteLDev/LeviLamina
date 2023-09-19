@@ -11,8 +11,8 @@ public:
 
 public:
     // prevent constructor by default
-    Potion& operator=(Potion const&) = delete;
-    Potion()                         = delete;
+    Potion& operator=(Potion const&);
+    Potion();
 
 public:
     // NOLINTBEGIN
@@ -266,11 +266,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mLastId() { return mLastId; }
+    auto& $mLastId() { return mLastId; }
 
-    inline auto& $mPotionsById() { return mPotionsById; }
+    auto& $mPotionsById() { return mPotionsById; }
 
-    inline auto& $mPotionsByName() { return mPotionsByName; }
+    auto& $mPotionsByName() { return mPotionsByName; }
 
     // NOLINTEND
 };

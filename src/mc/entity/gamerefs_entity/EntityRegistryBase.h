@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0EntityRegistryBase@@QEAA@AEAV?$basic_registry@VEntityId@@V?$allocator@VEntityId@@@std@@@entt@@@Z
-    MCAPI EntityRegistryBase(entt::basic_registry<class EntityId>&);
+    MCAPI explicit EntityRegistryBase(entt::basic_registry<class EntityId>&);
 
     // symbol: ?isValidEntity@EntityRegistryBase@@QEBA_NAEBVEntityContextBase@@@Z
     MCAPI bool isValidEntity(class EntityContextBase const&) const;

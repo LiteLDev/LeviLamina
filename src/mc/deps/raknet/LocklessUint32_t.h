@@ -7,8 +7,8 @@ namespace RakNet {
 class LocklessUint32_t {
 public:
     // prevent constructor by default
-    LocklessUint32_t& operator=(LocklessUint32_t const&) = delete;
-    LocklessUint32_t(LocklessUint32_t const&)            = delete;
+    LocklessUint32_t& operator=(LocklessUint32_t const&);
+    LocklessUint32_t(LocklessUint32_t const&);
 
 public:
     // NOLINTBEGIN

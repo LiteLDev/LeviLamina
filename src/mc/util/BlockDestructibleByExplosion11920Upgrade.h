@@ -16,8 +16,8 @@ namespace BlockExplosionResistanceVersioning {
 class BlockDestructibleByExplosion11920Upgrade : public ::CerealSchemaUpgrade {
 public:
     // prevent constructor by default
-    BlockDestructibleByExplosion11920Upgrade& operator=(BlockDestructibleByExplosion11920Upgrade const&) = delete;
-    BlockDestructibleByExplosion11920Upgrade(BlockDestructibleByExplosion11920Upgrade const&)            = delete;
+    BlockDestructibleByExplosion11920Upgrade& operator=(BlockDestructibleByExplosion11920Upgrade const&);
+    BlockDestructibleByExplosion11920Upgrade(BlockDestructibleByExplosion11920Upgrade const&);
 
 public:
     // NOLINTBEGIN

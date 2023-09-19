@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class CocoaBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    CocoaBlock& operator=(CocoaBlock const&) = delete;
-    CocoaBlock(CocoaBlock const&)            = delete;
-    CocoaBlock()                             = delete;
+    CocoaBlock& operator=(CocoaBlock const&);
+    CocoaBlock(CocoaBlock const&);
+    CocoaBlock();
 
 public:
     // NOLINTBEGIN

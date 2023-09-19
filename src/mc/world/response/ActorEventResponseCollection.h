@@ -14,9 +14,9 @@ namespace JsonUtil { class EmptyClass; }
 struct ActorEventResponseCollection {
 public:
     // prevent constructor by default
-    ActorEventResponseCollection& operator=(ActorEventResponseCollection const&) = delete;
-    ActorEventResponseCollection(ActorEventResponseCollection const&)            = delete;
-    ActorEventResponseCollection()                                               = delete;
+    ActorEventResponseCollection& operator=(ActorEventResponseCollection const&);
+    ActorEventResponseCollection(ActorEventResponseCollection const&);
+    ActorEventResponseCollection();
 
 public:
     // NOLINTBEGIN

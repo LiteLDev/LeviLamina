@@ -5,9 +5,9 @@
 struct AABBBucket {
 public:
     // prevent constructor by default
-    AABBBucket& operator=(AABBBucket const&) = delete;
-    AABBBucket(AABBBucket const&)            = delete;
-    AABBBucket()                             = delete;
+    AABBBucket& operator=(AABBBucket const&);
+    AABBBucket(AABBBucket const&);
+    AABBBucket();
 
 public:
     // NOLINTBEGIN

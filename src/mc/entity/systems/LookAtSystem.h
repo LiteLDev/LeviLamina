@@ -8,9 +8,9 @@
 class LookAtSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    LookAtSystem& operator=(LookAtSystem const&) = delete;
-    LookAtSystem(LookAtSystem const&)            = delete;
-    LookAtSystem()                               = delete;
+    LookAtSystem& operator=(LookAtSystem const&);
+    LookAtSystem(LookAtSystem const&);
+    LookAtSystem();
 
 public:
     // NOLINTBEGIN

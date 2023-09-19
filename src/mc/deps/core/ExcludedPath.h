@@ -7,9 +7,9 @@ namespace Core {
 struct ExcludedPath {
 public:
     // prevent constructor by default
-    ExcludedPath& operator=(ExcludedPath const&) = delete;
-    ExcludedPath(ExcludedPath const&)            = delete;
-    ExcludedPath()                               = delete;
+    ExcludedPath& operator=(ExcludedPath const&);
+    ExcludedPath(ExcludedPath const&);
+    ExcludedPath();
 };
 
 }; // namespace Core

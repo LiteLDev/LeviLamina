@@ -5,9 +5,9 @@
 class LootTables {
 public:
     // prevent constructor by default
-    LootTables& operator=(LootTables const&) = delete;
-    LootTables(LootTables const&)            = delete;
-    LootTables()                             = delete;
+    LootTables& operator=(LootTables const&);
+    LootTables(LootTables const&);
+    LootTables();
 
 public:
     // NOLINTBEGIN

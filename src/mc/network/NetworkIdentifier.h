@@ -28,16 +28,16 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0NetworkIdentifier@@QEAA@AEBURakNetGUID@RakNet@@@Z
-    MCAPI NetworkIdentifier(struct RakNet::RakNetGUID const&);
+    MCAPI explicit NetworkIdentifier(struct RakNet::RakNetGUID const&);
 
     // symbol: ??0NetworkIdentifier@@QEAA@_K@Z
-    MCAPI NetworkIdentifier(uint64);
+    MCAPI explicit NetworkIdentifier(uint64);
 
     // symbol: ??0NetworkIdentifier@@QEAA@AEBUsockaddr_in6@@@Z
-    MCAPI NetworkIdentifier(struct sockaddr_in6 const&);
+    MCAPI explicit NetworkIdentifier(struct sockaddr_in6 const&);
 
     // symbol: ??0NetworkIdentifier@@QEAA@AEBUsockaddr_in@@@Z
-    MCAPI NetworkIdentifier(struct sockaddr_in const&);
+    MCAPI explicit NetworkIdentifier(struct sockaddr_in const&);
 
     // symbol: ?getAddress@NetworkIdentifier@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getAddress() const;

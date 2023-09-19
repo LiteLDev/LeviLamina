@@ -5,9 +5,9 @@
 class SimulatedPlayerPostAIStepSystem {
 public:
     // prevent constructor by default
-    SimulatedPlayerPostAIStepSystem& operator=(SimulatedPlayerPostAIStepSystem const&) = delete;
-    SimulatedPlayerPostAIStepSystem(SimulatedPlayerPostAIStepSystem const&)            = delete;
-    SimulatedPlayerPostAIStepSystem()                                                  = delete;
+    SimulatedPlayerPostAIStepSystem& operator=(SimulatedPlayerPostAIStepSystem const&);
+    SimulatedPlayerPostAIStepSystem(SimulatedPlayerPostAIStepSystem const&);
+    SimulatedPlayerPostAIStepSystem();
 
 public:
     // NOLINTBEGIN

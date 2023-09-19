@@ -11,10 +11,9 @@
 class CraftHandleNonImplemented_DEPRECATEDASKTYLAING : public ::CraftHandlerBase {
 public:
     // prevent constructor by default
-    CraftHandleNonImplemented_DEPRECATEDASKTYLAING&
-    operator=(CraftHandleNonImplemented_DEPRECATEDASKTYLAING const&)                                      = delete;
-    CraftHandleNonImplemented_DEPRECATEDASKTYLAING(CraftHandleNonImplemented_DEPRECATEDASKTYLAING const&) = delete;
-    CraftHandleNonImplemented_DEPRECATEDASKTYLAING()                                                      = delete;
+    CraftHandleNonImplemented_DEPRECATEDASKTYLAING& operator=(CraftHandleNonImplemented_DEPRECATEDASKTYLAING const&);
+    CraftHandleNonImplemented_DEPRECATEDASKTYLAING(CraftHandleNonImplemented_DEPRECATEDASKTYLAING const&);
+    CraftHandleNonImplemented_DEPRECATEDASKTYLAING();
 
 public:
     // NOLINTBEGIN

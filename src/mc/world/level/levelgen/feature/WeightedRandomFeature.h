@@ -8,8 +8,8 @@
 class WeightedRandomFeature : public ::IFeature {
 public:
     // prevent constructor by default
-    WeightedRandomFeature& operator=(WeightedRandomFeature const&) = delete;
-    WeightedRandomFeature(WeightedRandomFeature const&)            = delete;
+    WeightedRandomFeature& operator=(WeightedRandomFeature const&);
+    WeightedRandomFeature(WeightedRandomFeature const&);
 
 public:
     // NOLINTBEGIN

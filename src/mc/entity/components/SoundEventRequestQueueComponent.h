@@ -5,9 +5,9 @@
 struct SoundEventRequestQueueComponent {
 public:
     // prevent constructor by default
-    SoundEventRequestQueueComponent& operator=(SoundEventRequestQueueComponent const&) = delete;
-    SoundEventRequestQueueComponent(SoundEventRequestQueueComponent const&)            = delete;
-    SoundEventRequestQueueComponent()                                                  = delete;
+    SoundEventRequestQueueComponent& operator=(SoundEventRequestQueueComponent const&);
+    SoundEventRequestQueueComponent(SoundEventRequestQueueComponent const&);
+    SoundEventRequestQueueComponent();
 
 public:
     // NOLINTBEGIN

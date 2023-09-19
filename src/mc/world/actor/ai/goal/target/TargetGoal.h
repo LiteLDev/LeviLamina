@@ -9,9 +9,9 @@
 class TargetGoal : public ::Goal {
 public:
     // prevent constructor by default
-    TargetGoal& operator=(TargetGoal const&) = delete;
-    TargetGoal(TargetGoal const&)            = delete;
-    TargetGoal()                             = delete;
+    TargetGoal& operator=(TargetGoal const&);
+    TargetGoal(TargetGoal const&);
+    TargetGoal();
 
 public:
     // NOLINTBEGIN

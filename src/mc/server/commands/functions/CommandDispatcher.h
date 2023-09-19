@@ -8,8 +8,8 @@
 class CommandDispatcher : public ::ICommandDispatcher {
 public:
     // prevent constructor by default
-    CommandDispatcher& operator=(CommandDispatcher const&) = delete;
-    CommandDispatcher(CommandDispatcher const&)            = delete;
+    CommandDispatcher& operator=(CommandDispatcher const&);
+    CommandDispatcher(CommandDispatcher const&);
 
 public:
     // NOLINTBEGIN

@@ -15,9 +15,9 @@ namespace JsonUtil { class EmptyClass; }
 class SpawnLootEventResponse : public ::EventResponse {
 public:
     // prevent constructor by default
-    SpawnLootEventResponse& operator=(SpawnLootEventResponse const&) = delete;
-    SpawnLootEventResponse(SpawnLootEventResponse const&)            = delete;
-    SpawnLootEventResponse()                                         = delete;
+    SpawnLootEventResponse& operator=(SpawnLootEventResponse const&);
+    SpawnLootEventResponse(SpawnLootEventResponse const&);
+    SpawnLootEventResponse();
 
 public:
     // NOLINTBEGIN

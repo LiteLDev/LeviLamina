@@ -5,9 +5,9 @@
 class PhysicsComponent {
 public:
     // prevent constructor by default
-    PhysicsComponent& operator=(PhysicsComponent const&) = delete;
-    PhysicsComponent(PhysicsComponent const&)            = delete;
-    PhysicsComponent()                                   = delete;
+    PhysicsComponent& operator=(PhysicsComponent const&);
+    PhysicsComponent(PhysicsComponent const&);
+    PhysicsComponent();
 
 public:
     // NOLINTBEGIN

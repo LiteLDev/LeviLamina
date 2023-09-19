@@ -5,9 +5,9 @@
 class BlockCollisionsSystem {
 public:
     // prevent constructor by default
-    BlockCollisionsSystem& operator=(BlockCollisionsSystem const&) = delete;
-    BlockCollisionsSystem(BlockCollisionsSystem const&)            = delete;
-    BlockCollisionsSystem()                                        = delete;
+    BlockCollisionsSystem& operator=(BlockCollisionsSystem const&);
+    BlockCollisionsSystem(BlockCollisionsSystem const&);
+    BlockCollisionsSystem();
 
 public:
     // NOLINTBEGIN

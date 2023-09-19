@@ -5,7 +5,7 @@
 struct IPlayerTickPolicy {
 public:
     // prevent constructor by default
-    IPlayerTickPolicy& operator=(IPlayerTickPolicy const&) = delete;
-    IPlayerTickPolicy(IPlayerTickPolicy const&)            = delete;
-    IPlayerTickPolicy()                                    = delete;
+    IPlayerTickPolicy& operator=(IPlayerTickPolicy const&);
+    IPlayerTickPolicy(IPlayerTickPolicy const&);
+    IPlayerTickPolicy();
 };

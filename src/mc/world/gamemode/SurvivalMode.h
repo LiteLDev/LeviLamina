@@ -9,9 +9,9 @@
 class SurvivalMode : public ::GameMode {
 public:
     // prevent constructor by default
-    SurvivalMode& operator=(SurvivalMode const&) = delete;
-    SurvivalMode(SurvivalMode const&)            = delete;
-    SurvivalMode()                               = delete;
+    SurvivalMode& operator=(SurvivalMode const&);
+    SurvivalMode(SurvivalMode const&);
+    SurvivalMode();
 
 public:
     // NOLINTBEGIN
@@ -57,7 +57,7 @@ public:
     virtual void registerUpsellScreenCallback(std::function<void(bool)>);
 
     // symbol: ??0SurvivalMode@@QEAA@AEAVPlayer@@@Z
-    MCAPI SurvivalMode(class Player&);
+    MCAPI explicit SurvivalMode(class Player&);
 
     // NOLINTEND
 
@@ -81,7 +81,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mTrialHasEnded() { return mTrialHasEnded; }
+    auto& $mTrialHasEnded() { return mTrialHasEnded; }
 
     // NOLINTEND
 };

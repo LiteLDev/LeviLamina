@@ -5,9 +5,9 @@
 class ActorMovementTickFilterSystem {
 public:
     // prevent constructor by default
-    ActorMovementTickFilterSystem& operator=(ActorMovementTickFilterSystem const&) = delete;
-    ActorMovementTickFilterSystem(ActorMovementTickFilterSystem const&)            = delete;
-    ActorMovementTickFilterSystem()                                                = delete;
+    ActorMovementTickFilterSystem& operator=(ActorMovementTickFilterSystem const&);
+    ActorMovementTickFilterSystem(ActorMovementTickFilterSystem const&);
+    ActorMovementTickFilterSystem();
 
 public:
     // NOLINTBEGIN

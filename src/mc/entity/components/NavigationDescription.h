@@ -8,8 +8,8 @@
 struct NavigationDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    NavigationDescription& operator=(NavigationDescription const&) = delete;
-    NavigationDescription(NavigationDescription const&)            = delete;
+    NavigationDescription& operator=(NavigationDescription const&);
+    NavigationDescription(NavigationDescription const&);
 
 public:
     // NOLINTBEGIN

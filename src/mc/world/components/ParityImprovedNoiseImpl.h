@@ -6,7 +6,7 @@ template <int T0>
 class ParityImprovedNoiseImpl {
 public:
     // prevent constructor by default
-    ParityImprovedNoiseImpl& operator=(ParityImprovedNoiseImpl const&) = delete;
-    ParityImprovedNoiseImpl(ParityImprovedNoiseImpl const&)            = delete;
-    ParityImprovedNoiseImpl()                                          = delete;
+    ParityImprovedNoiseImpl& operator=(ParityImprovedNoiseImpl const&);
+    ParityImprovedNoiseImpl(ParityImprovedNoiseImpl const&);
+    ParityImprovedNoiseImpl();
 };

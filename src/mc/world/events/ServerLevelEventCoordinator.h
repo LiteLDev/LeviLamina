@@ -8,9 +8,9 @@
 class ServerLevelEventCoordinator : public ::LevelEventCoordinator {
 public:
     // prevent constructor by default
-    ServerLevelEventCoordinator& operator=(ServerLevelEventCoordinator const&) = delete;
-    ServerLevelEventCoordinator(ServerLevelEventCoordinator const&)            = delete;
-    ServerLevelEventCoordinator()                                              = delete;
+    ServerLevelEventCoordinator& operator=(ServerLevelEventCoordinator const&);
+    ServerLevelEventCoordinator(ServerLevelEventCoordinator const&);
+    ServerLevelEventCoordinator();
 
 public:
     // NOLINTBEGIN

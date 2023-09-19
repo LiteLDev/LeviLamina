@@ -18,9 +18,9 @@ namespace mce { class UUID; }
 class AutomationPlayerCommandOrigin : public ::PlayerCommandOrigin {
 public:
     // prevent constructor by default
-    AutomationPlayerCommandOrigin& operator=(AutomationPlayerCommandOrigin const&) = delete;
-    AutomationPlayerCommandOrigin(AutomationPlayerCommandOrigin const&)            = delete;
-    AutomationPlayerCommandOrigin()                                                = delete;
+    AutomationPlayerCommandOrigin& operator=(AutomationPlayerCommandOrigin const&);
+    AutomationPlayerCommandOrigin(AutomationPlayerCommandOrigin const&);
+    AutomationPlayerCommandOrigin();
 
 public:
     // NOLINTBEGIN

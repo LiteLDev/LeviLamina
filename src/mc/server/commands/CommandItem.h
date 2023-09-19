@@ -28,7 +28,7 @@ public:
     MCAPI int getId() const;
 
     // symbol: ??BCommandItem@@QEBA_NXZ
-    MCAPI operator bool() const;
+    MCAPI explicit operator bool() const;
 
     // NOLINTEND
 };

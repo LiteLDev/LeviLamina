@@ -8,9 +8,9 @@
 class ResourceUriCommand : public ::Command {
 public:
     // prevent constructor by default
-    ResourceUriCommand& operator=(ResourceUriCommand const&) = delete;
-    ResourceUriCommand(ResourceUriCommand const&)            = delete;
-    ResourceUriCommand()                                     = delete;
+    ResourceUriCommand& operator=(ResourceUriCommand const&);
+    ResourceUriCommand(ResourceUriCommand const&);
+    ResourceUriCommand();
 
 public:
     // NOLINTBEGIN

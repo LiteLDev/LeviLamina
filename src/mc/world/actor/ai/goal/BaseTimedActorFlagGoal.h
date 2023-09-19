@@ -10,9 +10,9 @@
 class BaseTimedActorFlagGoal : public ::Goal {
 public:
     // prevent constructor by default
-    BaseTimedActorFlagGoal& operator=(BaseTimedActorFlagGoal const&) = delete;
-    BaseTimedActorFlagGoal(BaseTimedActorFlagGoal const&)            = delete;
-    BaseTimedActorFlagGoal()                                         = delete;
+    BaseTimedActorFlagGoal& operator=(BaseTimedActorFlagGoal const&);
+    BaseTimedActorFlagGoal(BaseTimedActorFlagGoal const&);
+    BaseTimedActorFlagGoal();
 
 public:
     // NOLINTBEGIN

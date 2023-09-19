@@ -18,8 +18,8 @@ namespace ScriptModuleMinecraft {
 class ScriptBlockRaycastHit {
 public:
     // prevent constructor by default
-    ScriptBlockRaycastHit(ScriptBlockRaycastHit const&) = delete;
-    ScriptBlockRaycastHit()                             = delete;
+    ScriptBlockRaycastHit(ScriptBlockRaycastHit const&);
+    ScriptBlockRaycastHit();
 
 public:
     // NOLINTBEGIN

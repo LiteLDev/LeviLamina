@@ -5,8 +5,8 @@
 class LevelDbEnv {
 public:
     // prevent constructor by default
-    LevelDbEnv& operator=(LevelDbEnv const&) = delete;
-    LevelDbEnv(LevelDbEnv const&)            = delete;
+    LevelDbEnv& operator=(LevelDbEnv const&);
+    LevelDbEnv(LevelDbEnv const&);
 
 public:
     // NOLINTBEGIN
@@ -101,7 +101,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $sSingleton() { return sSingleton; }
+    auto& $sSingleton() { return sSingleton; }
 
     // NOLINTEND
 };

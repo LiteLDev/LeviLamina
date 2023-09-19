@@ -5,7 +5,7 @@
 struct SwimSpeedMultiplierComponent {
 public:
     // prevent constructor by default
-    SwimSpeedMultiplierComponent& operator=(SwimSpeedMultiplierComponent const&) = delete;
-    SwimSpeedMultiplierComponent(SwimSpeedMultiplierComponent const&)            = delete;
-    SwimSpeedMultiplierComponent()                                               = delete;
+    SwimSpeedMultiplierComponent& operator=(SwimSpeedMultiplierComponent const&);
+    SwimSpeedMultiplierComponent(SwimSpeedMultiplierComponent const&);
+    SwimSpeedMultiplierComponent();
 };

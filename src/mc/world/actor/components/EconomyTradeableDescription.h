@@ -8,9 +8,9 @@
 class EconomyTradeableDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    EconomyTradeableDescription& operator=(EconomyTradeableDescription const&) = delete;
-    EconomyTradeableDescription(EconomyTradeableDescription const&)            = delete;
-    EconomyTradeableDescription()                                              = delete;
+    EconomyTradeableDescription& operator=(EconomyTradeableDescription const&);
+    EconomyTradeableDescription(EconomyTradeableDescription const&);
+    EconomyTradeableDescription();
 
 public:
     // NOLINTBEGIN

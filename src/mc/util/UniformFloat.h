@@ -12,9 +12,9 @@ namespace ValueProviders {
 struct UniformFloat {
 public:
     // prevent constructor by default
-    UniformFloat& operator=(UniformFloat const&) = delete;
-    UniformFloat(UniformFloat const&)            = delete;
-    UniformFloat()                               = delete;
+    UniformFloat& operator=(UniformFloat const&);
+    UniformFloat(UniformFloat const&);
+    UniformFloat();
 
 public:
     // NOLINTBEGIN

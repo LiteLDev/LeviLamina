@@ -12,8 +12,8 @@ public:
     std::string mData; // this+0x30
 
     // prevent constructor by default
-    ServerToClientHandshakePacket& operator=(ServerToClientHandshakePacket const&) = delete;
-    ServerToClientHandshakePacket(ServerToClientHandshakePacket const&)            = delete;
+    ServerToClientHandshakePacket& operator=(ServerToClientHandshakePacket const&);
+    ServerToClientHandshakePacket(ServerToClientHandshakePacket const&);
 
 public:
     // NOLINTBEGIN
@@ -39,7 +39,7 @@ public:
 
     // symbol:
     // ??0ServerToClientHandshakePacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI ServerToClientHandshakePacket(std::string const&);
+    MCAPI explicit ServerToClientHandshakePacket(std::string const&);
 
     // symbol: ??0ServerToClientHandshakePacket@@QEAA@XZ
     MCAPI ServerToClientHandshakePacket();

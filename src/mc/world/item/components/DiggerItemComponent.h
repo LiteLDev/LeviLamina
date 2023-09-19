@@ -36,9 +36,9 @@ public:
 
 public:
     // prevent constructor by default
-    DiggerItemComponent& operator=(DiggerItemComponent const&) = delete;
-    DiggerItemComponent(DiggerItemComponent const&)            = delete;
-    DiggerItemComponent()                                      = delete;
+    DiggerItemComponent& operator=(DiggerItemComponent const&);
+    DiggerItemComponent(DiggerItemComponent const&);
+    DiggerItemComponent();
 
 public:
     // NOLINTBEGIN

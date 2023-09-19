@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class HoneyBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    HoneyBlock& operator=(HoneyBlock const&) = delete;
-    HoneyBlock(HoneyBlock const&)            = delete;
-    HoneyBlock()                             = delete;
+    HoneyBlock& operator=(HoneyBlock const&);
+    HoneyBlock(HoneyBlock const&);
+    HoneyBlock();
 
 public:
     // NOLINTBEGIN

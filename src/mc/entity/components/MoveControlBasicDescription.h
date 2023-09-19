@@ -8,9 +8,9 @@
 class MoveControlBasicDescription : public ::MoveControlDescription {
 public:
     // prevent constructor by default
-    MoveControlBasicDescription& operator=(MoveControlBasicDescription const&) = delete;
-    MoveControlBasicDescription(MoveControlBasicDescription const&)            = delete;
-    MoveControlBasicDescription()                                              = delete;
+    MoveControlBasicDescription& operator=(MoveControlBasicDescription const&);
+    MoveControlBasicDescription(MoveControlBasicDescription const&);
+    MoveControlBasicDescription();
 
 public:
     // NOLINTBEGIN

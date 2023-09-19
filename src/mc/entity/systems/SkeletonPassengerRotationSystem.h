@@ -5,9 +5,9 @@
 class SkeletonPassengerRotationSystem {
 public:
     // prevent constructor by default
-    SkeletonPassengerRotationSystem& operator=(SkeletonPassengerRotationSystem const&) = delete;
-    SkeletonPassengerRotationSystem(SkeletonPassengerRotationSystem const&)            = delete;
-    SkeletonPassengerRotationSystem()                                                  = delete;
+    SkeletonPassengerRotationSystem& operator=(SkeletonPassengerRotationSystem const&);
+    SkeletonPassengerRotationSystem(SkeletonPassengerRotationSystem const&);
+    SkeletonPassengerRotationSystem();
 
 public:
     // NOLINTBEGIN

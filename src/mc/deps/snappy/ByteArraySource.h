@@ -7,9 +7,9 @@ namespace snappy {
 class ByteArraySource {
 public:
     // prevent constructor by default
-    ByteArraySource& operator=(ByteArraySource const&) = delete;
-    ByteArraySource(ByteArraySource const&)            = delete;
-    ByteArraySource()                                  = delete;
+    ByteArraySource& operator=(ByteArraySource const&);
+    ByteArraySource(ByteArraySource const&);
+    ByteArraySource();
 
 public:
     // NOLINTBEGIN

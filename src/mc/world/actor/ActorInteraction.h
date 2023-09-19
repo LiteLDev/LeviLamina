@@ -5,14 +5,14 @@
 class ActorInteraction {
 public:
     // prevent constructor by default
-    ActorInteraction& operator=(ActorInteraction const&) = delete;
-    ActorInteraction(ActorInteraction const&)            = delete;
-    ActorInteraction()                                   = delete;
+    ActorInteraction& operator=(ActorInteraction const&);
+    ActorInteraction(ActorInteraction const&);
+    ActorInteraction();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ActorInteraction@@QEAA@_N@Z
-    MCAPI ActorInteraction(bool);
+    MCAPI explicit ActorInteraction(bool);
 
     // symbol: ?capture@ActorInteraction@@QEAAXV?$function@$$A6AXXZ@std@@@Z
     MCAPI void capture(std::function<void(void)>);

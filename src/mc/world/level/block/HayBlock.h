@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class HayBlock : public ::RotatedPillarBlock {
 public:
     // prevent constructor by default
-    HayBlock& operator=(HayBlock const&) = delete;
-    HayBlock(HayBlock const&)            = delete;
-    HayBlock()                           = delete;
+    HayBlock& operator=(HayBlock const&);
+    HayBlock(HayBlock const&);
+    HayBlock();
 
 public:
     // NOLINTBEGIN

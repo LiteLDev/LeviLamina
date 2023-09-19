@@ -5,9 +5,9 @@
 class InsideBlockNotifierComponent {
 public:
     // prevent constructor by default
-    InsideBlockNotifierComponent& operator=(InsideBlockNotifierComponent const&) = delete;
-    InsideBlockNotifierComponent(InsideBlockNotifierComponent const&)            = delete;
-    InsideBlockNotifierComponent()                                               = delete;
+    InsideBlockNotifierComponent& operator=(InsideBlockNotifierComponent const&);
+    InsideBlockNotifierComponent(InsideBlockNotifierComponent const&);
+    InsideBlockNotifierComponent();
 
 public:
     // NOLINTBEGIN

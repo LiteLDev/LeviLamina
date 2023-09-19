@@ -10,9 +10,9 @@ namespace Json { class Value; }
 class LootItemFunctions {
 public:
     // prevent constructor by default
-    LootItemFunctions& operator=(LootItemFunctions const&) = delete;
-    LootItemFunctions(LootItemFunctions const&)            = delete;
-    LootItemFunctions()                                    = delete;
+    LootItemFunctions& operator=(LootItemFunctions const&);
+    LootItemFunctions(LootItemFunctions const&);
+    LootItemFunctions();
 
 public:
     // NOLINTBEGIN

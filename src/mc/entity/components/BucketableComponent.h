@@ -5,8 +5,8 @@
 class BucketableComponent {
 public:
     // prevent constructor by default
-    BucketableComponent& operator=(BucketableComponent const&) = delete;
-    BucketableComponent(BucketableComponent const&)            = delete;
+    BucketableComponent& operator=(BucketableComponent const&);
+    BucketableComponent(BucketableComponent const&);
 
 public:
     // NOLINTBEGIN
@@ -34,7 +34,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $WATER_BUCKET_USEABLE_VERSION() { return WATER_BUCKET_USEABLE_VERSION; }
+    auto& $WATER_BUCKET_USEABLE_VERSION() { return WATER_BUCKET_USEABLE_VERSION; }
 
     // NOLINTEND
 };

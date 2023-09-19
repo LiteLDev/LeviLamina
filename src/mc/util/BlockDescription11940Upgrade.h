@@ -16,8 +16,8 @@ namespace BlockDescriptionVersioning {
 class BlockDescription11940Upgrade : public ::CerealSchemaUpgrade {
 public:
     // prevent constructor by default
-    BlockDescription11940Upgrade& operator=(BlockDescription11940Upgrade const&) = delete;
-    BlockDescription11940Upgrade(BlockDescription11940Upgrade const&)            = delete;
+    BlockDescription11940Upgrade& operator=(BlockDescription11940Upgrade const&);
+    BlockDescription11940Upgrade(BlockDescription11940Upgrade const&);
 
 public:
     // NOLINTBEGIN

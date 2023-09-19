@@ -16,9 +16,9 @@ namespace Core { class Path; }
 class LevelListCache {
 public:
     // prevent constructor by default
-    LevelListCache& operator=(LevelListCache const&) = delete;
-    LevelListCache(LevelListCache const&)            = delete;
-    LevelListCache()                                 = delete;
+    LevelListCache& operator=(LevelListCache const&);
+    LevelListCache(LevelListCache const&);
+    LevelListCache();
 
 public:
     // NOLINTBEGIN

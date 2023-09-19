@@ -5,7 +5,7 @@
 struct StateVectorComponent {
 public:
     // prevent constructor by default
-    StateVectorComponent& operator=(StateVectorComponent const&) = delete;
-    StateVectorComponent(StateVectorComponent const&)            = delete;
-    StateVectorComponent()                                       = delete;
+    StateVectorComponent& operator=(StateVectorComponent const&);
+    StateVectorComponent(StateVectorComponent const&);
+    StateVectorComponent();
 };

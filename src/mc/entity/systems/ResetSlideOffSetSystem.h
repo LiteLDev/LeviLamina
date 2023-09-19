@@ -10,9 +10,9 @@
 class ResetSlideOffSetSystem {
 public:
     // prevent constructor by default
-    ResetSlideOffSetSystem& operator=(ResetSlideOffSetSystem const&) = delete;
-    ResetSlideOffSetSystem(ResetSlideOffSetSystem const&)            = delete;
-    ResetSlideOffSetSystem()                                         = delete;
+    ResetSlideOffSetSystem& operator=(ResetSlideOffSetSystem const&);
+    ResetSlideOffSetSystem(ResetSlideOffSetSystem const&);
+    ResetSlideOffSetSystem();
 
 public:
     // NOLINTBEGIN

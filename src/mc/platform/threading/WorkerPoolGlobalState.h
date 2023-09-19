@@ -5,9 +5,9 @@
 class WorkerPoolGlobalState {
 public:
     // prevent constructor by default
-    WorkerPoolGlobalState& operator=(WorkerPoolGlobalState const&) = delete;
-    WorkerPoolGlobalState(WorkerPoolGlobalState const&)            = delete;
-    WorkerPoolGlobalState()                                        = delete;
+    WorkerPoolGlobalState& operator=(WorkerPoolGlobalState const&);
+    WorkerPoolGlobalState(WorkerPoolGlobalState const&);
+    WorkerPoolGlobalState();
 
 public:
     // NOLINTBEGIN

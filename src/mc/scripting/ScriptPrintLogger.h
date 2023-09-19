@@ -10,9 +10,9 @@ namespace Scripting { struct ContextId; }
 class ScriptPrintLogger {
 public:
     // prevent constructor by default
-    ScriptPrintLogger& operator=(ScriptPrintLogger const&) = delete;
-    ScriptPrintLogger(ScriptPrintLogger const&)            = delete;
-    ScriptPrintLogger()                                    = delete;
+    ScriptPrintLogger& operator=(ScriptPrintLogger const&);
+    ScriptPrintLogger(ScriptPrintLogger const&);
+    ScriptPrintLogger();
 
 public:
     // NOLINTBEGIN

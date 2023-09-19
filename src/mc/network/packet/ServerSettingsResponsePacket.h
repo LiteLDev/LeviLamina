@@ -13,8 +13,8 @@ public:
     std::string mFormJSON; // this+0x38
 
     // prevent constructor by default
-    ServerSettingsResponsePacket& operator=(ServerSettingsResponsePacket const&) = delete;
-    ServerSettingsResponsePacket(ServerSettingsResponsePacket const&)            = delete;
+    ServerSettingsResponsePacket& operator=(ServerSettingsResponsePacket const&);
+    ServerSettingsResponsePacket(ServerSettingsResponsePacket const&);
 
 public:
     // NOLINTBEGIN

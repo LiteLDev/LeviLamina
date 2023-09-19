@@ -9,8 +9,8 @@ public:
     bool              mExperimentsEverToggled;
 
     // prevent constructor by default
-    ExperimentStorage(ExperimentStorage const&) = delete;
-    ExperimentStorage()                         = delete;
+    ExperimentStorage(ExperimentStorage const&);
+    ExperimentStorage();
 
 public:
     // NOLINTBEGIN

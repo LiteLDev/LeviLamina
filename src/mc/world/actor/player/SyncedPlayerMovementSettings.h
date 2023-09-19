@@ -10,8 +10,8 @@ public:
     bool                   ServerAuthBlockBreaking;
 
     // prevent constructor by default
-    SyncedPlayerMovementSettings& operator=(SyncedPlayerMovementSettings const&) = delete;
-    SyncedPlayerMovementSettings(SyncedPlayerMovementSettings const&)            = delete;
+    SyncedPlayerMovementSettings& operator=(SyncedPlayerMovementSettings const&);
+    SyncedPlayerMovementSettings(SyncedPlayerMovementSettings const&);
 
 public:
     // NOLINTBEGIN
@@ -19,7 +19,7 @@ public:
     MCAPI SyncedPlayerMovementSettings();
 
     // symbol: ??0SyncedPlayerMovementSettings@@QEAA@AEBUPlayerMovementSettings@@@Z
-    MCAPI SyncedPlayerMovementSettings(struct PlayerMovementSettings const&);
+    MCAPI explicit SyncedPlayerMovementSettings(struct PlayerMovementSettings const&);
 
     // NOLINTEND
 };

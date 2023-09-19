@@ -14,8 +14,8 @@ public:
     bool                 mIsFrontSide;
 
     // prevent constructor by default
-    OpenSignPacket& operator=(OpenSignPacket const&) = delete;
-    OpenSignPacket(OpenSignPacket const&)            = delete;
+    OpenSignPacket& operator=(OpenSignPacket const&);
+    OpenSignPacket(OpenSignPacket const&);
 
 public:
     // NOLINTBEGIN

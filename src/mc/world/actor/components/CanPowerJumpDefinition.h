@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct CanPowerJumpDefinition {
 public:
     // prevent constructor by default
-    CanPowerJumpDefinition& operator=(CanPowerJumpDefinition const&) = delete;
-    CanPowerJumpDefinition(CanPowerJumpDefinition const&)            = delete;
-    CanPowerJumpDefinition()                                         = delete;
+    CanPowerJumpDefinition& operator=(CanPowerJumpDefinition const&);
+    CanPowerJumpDefinition(CanPowerJumpDefinition const&);
+    CanPowerJumpDefinition();
 
 public:
     // NOLINTBEGIN

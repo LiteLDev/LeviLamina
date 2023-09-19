@@ -5,9 +5,9 @@
 class ClientPlayerRewindSystem {
 public:
     // prevent constructor by default
-    ClientPlayerRewindSystem& operator=(ClientPlayerRewindSystem const&) = delete;
-    ClientPlayerRewindSystem(ClientPlayerRewindSystem const&)            = delete;
-    ClientPlayerRewindSystem()                                           = delete;
+    ClientPlayerRewindSystem& operator=(ClientPlayerRewindSystem const&);
+    ClientPlayerRewindSystem(ClientPlayerRewindSystem const&);
+    ClientPlayerRewindSystem();
 
 public:
     // NOLINTBEGIN

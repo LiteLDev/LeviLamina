@@ -7,9 +7,9 @@ namespace AgentComponents::Actions {
 struct TransferItemTo {
 public:
     // prevent constructor by default
-    TransferItemTo& operator=(TransferItemTo const&) = delete;
-    TransferItemTo(TransferItemTo const&)            = delete;
-    TransferItemTo()                                 = delete;
+    TransferItemTo& operator=(TransferItemTo const&);
+    TransferItemTo(TransferItemTo const&);
+    TransferItemTo();
 };
 
 }; // namespace AgentComponents::Actions

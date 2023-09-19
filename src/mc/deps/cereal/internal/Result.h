@@ -7,9 +7,9 @@ namespace cereal::internal {
 struct Result {
 public:
     // prevent constructor by default
-    Result& operator=(Result const&) = delete;
-    Result(Result const&)            = delete;
-    Result()                         = delete;
+    Result& operator=(Result const&);
+    Result(Result const&);
+    Result();
 };
 
 }; // namespace cereal::internal

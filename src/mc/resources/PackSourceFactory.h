@@ -17,9 +17,9 @@ namespace mce { class UUID; }
 class PackSourceFactory {
 public:
     // prevent constructor by default
-    PackSourceFactory& operator=(PackSourceFactory const&) = delete;
-    PackSourceFactory(PackSourceFactory const&)            = delete;
-    PackSourceFactory()                                    = delete;
+    PackSourceFactory& operator=(PackSourceFactory const&);
+    PackSourceFactory(PackSourceFactory const&);
+    PackSourceFactory();
 
 public:
     // NOLINTBEGIN
@@ -88,7 +88,7 @@ public:
     MCVAPI ~PackSourceFactory();
 
     // symbol: ??0PackSourceFactory@@QEAA@AEBV?$shared_ptr@VIInPackagePacks@@@std@@@Z
-    MCAPI PackSourceFactory(std::shared_ptr<class IInPackagePacks> const&);
+    MCAPI explicit PackSourceFactory(std::shared_ptr<class IInPackagePacks> const&);
 
     // NOLINTEND
 };

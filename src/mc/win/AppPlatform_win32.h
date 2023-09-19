@@ -19,9 +19,9 @@ namespace Webview { class PlatformArguments; }
 class AppPlatform_win32 {
 public:
     // prevent constructor by default
-    AppPlatform_win32& operator=(AppPlatform_win32 const&) = delete;
-    AppPlatform_win32(AppPlatform_win32 const&)            = delete;
-    AppPlatform_win32()                                    = delete;
+    AppPlatform_win32& operator=(AppPlatform_win32 const&);
+    AppPlatform_win32(AppPlatform_win32 const&);
+    AppPlatform_win32();
 
 public:
     // NOLINTBEGIN

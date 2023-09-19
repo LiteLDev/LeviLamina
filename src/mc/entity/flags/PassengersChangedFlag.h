@@ -5,7 +5,7 @@
 struct PassengersChangedFlag {
 public:
     // prevent constructor by default
-    PassengersChangedFlag& operator=(PassengersChangedFlag const&) = delete;
-    PassengersChangedFlag(PassengersChangedFlag const&)            = delete;
-    PassengersChangedFlag()                                        = delete;
+    PassengersChangedFlag& operator=(PassengersChangedFlag const&);
+    PassengersChangedFlag(PassengersChangedFlag const&);
+    PassengersChangedFlag();
 };

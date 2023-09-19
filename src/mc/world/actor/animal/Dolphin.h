@@ -26,9 +26,9 @@
 class Dolphin : public ::WaterAnimal {
 public:
     // prevent constructor by default
-    Dolphin& operator=(Dolphin const&) = delete;
-    Dolphin(Dolphin const&)            = delete;
-    Dolphin()                          = delete;
+    Dolphin& operator=(Dolphin const&);
+    Dolphin(Dolphin const&);
+    Dolphin();
 
 public:
     // NOLINTBEGIN

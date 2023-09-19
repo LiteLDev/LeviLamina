@@ -8,9 +8,9 @@
 class Attribute {
 public:
     // prevent constructor by default
-    Attribute& operator=(Attribute const&) = delete;
-    Attribute(Attribute const&)            = delete;
-    Attribute()                            = delete;
+    Attribute& operator=(Attribute const&);
+    Attribute(Attribute const&);
+    Attribute();
 
 public:
     // NOLINTBEGIN

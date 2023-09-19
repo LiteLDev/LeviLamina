@@ -11,9 +11,9 @@
 class CraftHandlerLoom : public ::CraftHandlerBase {
 public:
     // prevent constructor by default
-    CraftHandlerLoom& operator=(CraftHandlerLoom const&) = delete;
-    CraftHandlerLoom(CraftHandlerLoom const&)            = delete;
-    CraftHandlerLoom()                                   = delete;
+    CraftHandlerLoom& operator=(CraftHandlerLoom const&);
+    CraftHandlerLoom(CraftHandlerLoom const&);
+    CraftHandlerLoom();
 
 public:
     // NOLINTBEGIN

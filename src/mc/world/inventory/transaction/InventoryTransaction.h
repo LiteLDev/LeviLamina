@@ -15,8 +15,8 @@ public:
     std::vector<class InventoryTransactionItemGroup>                              items;   // 0x40
 
     // prevent constructor by default
-    InventoryTransaction& operator=(InventoryTransaction const&) = delete;
-    InventoryTransaction()                                       = delete;
+    InventoryTransaction& operator=(InventoryTransaction const&);
+    InventoryTransaction();
 
 public:
     // NOLINTBEGIN
@@ -89,7 +89,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $inventoryTransactionErrorMap() { return inventoryTransactionErrorMap; }
+    auto& $inventoryTransactionErrorMap() { return inventoryTransactionErrorMap; }
 
     // NOLINTEND
 };

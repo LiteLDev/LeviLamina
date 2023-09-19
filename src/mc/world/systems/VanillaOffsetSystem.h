@@ -16,9 +16,9 @@
 struct VanillaOffsetSystem {
 public:
     // prevent constructor by default
-    VanillaOffsetSystem& operator=(VanillaOffsetSystem const&) = delete;
-    VanillaOffsetSystem(VanillaOffsetSystem const&)            = delete;
-    VanillaOffsetSystem()                                      = delete;
+    VanillaOffsetSystem& operator=(VanillaOffsetSystem const&);
+    VanillaOffsetSystem(VanillaOffsetSystem const&);
+    VanillaOffsetSystem();
 
 public:
     // NOLINTBEGIN

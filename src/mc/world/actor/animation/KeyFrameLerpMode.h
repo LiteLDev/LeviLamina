@@ -8,8 +8,8 @@
 class KeyFrameLerpMode {
 public:
     // prevent constructor by default
-    KeyFrameLerpMode(KeyFrameLerpMode const&) = delete;
-    KeyFrameLerpMode()                        = delete;
+    KeyFrameLerpMode(KeyFrameLerpMode const&);
+    KeyFrameLerpMode();
 
 public:
     // NOLINTBEGIN

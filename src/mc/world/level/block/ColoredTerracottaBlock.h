@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class ColoredTerracottaBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    ColoredTerracottaBlock& operator=(ColoredTerracottaBlock const&) = delete;
-    ColoredTerracottaBlock(ColoredTerracottaBlock const&)            = delete;
-    ColoredTerracottaBlock()                                         = delete;
+    ColoredTerracottaBlock& operator=(ColoredTerracottaBlock const&);
+    ColoredTerracottaBlock(ColoredTerracottaBlock const&);
+    ColoredTerracottaBlock();
 
 public:
     // NOLINTBEGIN

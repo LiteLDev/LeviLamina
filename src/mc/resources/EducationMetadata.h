@@ -11,7 +11,7 @@ public:
 
 public:
     // prevent constructor by default
-    EducationMetadata& operator=(EducationMetadata const&) = delete;
+    EducationMetadata& operator=(EducationMetadata const&);
 
 public:
     // NOLINTBEGIN

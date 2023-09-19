@@ -7,9 +7,9 @@ namespace Bedrock::Http {
 class Status {
 public:
     // prevent constructor by default
-    Status& operator=(Status const&) = delete;
-    Status(Status const&)            = delete;
-    Status()                         = delete;
+    Status& operator=(Status const&);
+    Status(Status const&);
+    Status();
 };
 
 }; // namespace Bedrock::Http

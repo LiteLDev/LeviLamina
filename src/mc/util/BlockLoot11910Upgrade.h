@@ -16,8 +16,8 @@ namespace BlockLootVersioning {
 class BlockLoot11910Upgrade : public ::CerealSchemaUpgrade {
 public:
     // prevent constructor by default
-    BlockLoot11910Upgrade& operator=(BlockLoot11910Upgrade const&) = delete;
-    BlockLoot11910Upgrade(BlockLoot11910Upgrade const&)            = delete;
+    BlockLoot11910Upgrade& operator=(BlockLoot11910Upgrade const&);
+    BlockLoot11910Upgrade(BlockLoot11910Upgrade const&);
 
 public:
     // NOLINTBEGIN

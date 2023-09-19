@@ -5,7 +5,7 @@
 struct InsideBlockData {
 public:
     // prevent constructor by default
-    InsideBlockData& operator=(InsideBlockData const&) = delete;
-    InsideBlockData(InsideBlockData const&)            = delete;
-    InsideBlockData()                                  = delete;
+    InsideBlockData& operator=(InsideBlockData const&);
+    InsideBlockData(InsideBlockData const&);
+    InsideBlockData();
 };

@@ -5,9 +5,9 @@
 class ImprovedNoise {
 public:
     // prevent constructor by default
-    ImprovedNoise& operator=(ImprovedNoise const&) = delete;
-    ImprovedNoise(ImprovedNoise const&)            = delete;
-    ImprovedNoise()                                = delete;
+    ImprovedNoise& operator=(ImprovedNoise const&);
+    ImprovedNoise(ImprovedNoise const&);
+    ImprovedNoise();
 
 public:
     // NOLINTBEGIN

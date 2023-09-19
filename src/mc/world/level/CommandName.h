@@ -5,9 +5,9 @@
 struct CommandName {
 public:
     // prevent constructor by default
-    CommandName& operator=(CommandName const&) = delete;
-    CommandName(CommandName const&)            = delete;
-    CommandName()                              = delete;
+    CommandName& operator=(CommandName const&);
+    CommandName(CommandName const&);
+    CommandName();
 
 public:
     // NOLINTBEGIN

@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class CropBlock : public ::BushBlock {
 public:
     // prevent constructor by default
-    CropBlock& operator=(CropBlock const&) = delete;
-    CropBlock(CropBlock const&)            = delete;
-    CropBlock()                            = delete;
+    CropBlock& operator=(CropBlock const&);
+    CropBlock(CropBlock const&);
+    CropBlock();
 
 public:
     // NOLINTBEGIN

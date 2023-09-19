@@ -5,8 +5,8 @@
 class PersonaPiece {
 public:
     // prevent constructor by default
-    PersonaPiece& operator=(PersonaPiece const&) = delete;
-    PersonaPiece(PersonaPiece const&)            = delete;
+    PersonaPiece& operator=(PersonaPiece const&);
+    PersonaPiece(PersonaPiece const&);
 
 public:
     // NOLINTBEGIN

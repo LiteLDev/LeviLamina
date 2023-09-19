@@ -5,7 +5,7 @@
 class ILevelListCache {
 public:
     // prevent constructor by default
-    ILevelListCache& operator=(ILevelListCache const&) = delete;
-    ILevelListCache(ILevelListCache const&)            = delete;
-    ILevelListCache()                                  = delete;
+    ILevelListCache& operator=(ILevelListCache const&);
+    ILevelListCache(ILevelListCache const&);
+    ILevelListCache();
 };

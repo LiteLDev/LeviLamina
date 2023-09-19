@@ -17,8 +17,8 @@ public:
     struct CameraList {
     public:
         // prevent constructor by default
-        CameraList(CameraList const&) = delete;
-        CameraList()                  = delete;
+        CameraList(CameraList const&);
+        CameraList();
 
     public:
         // NOLINTBEGIN
@@ -36,8 +36,8 @@ public:
 
 public:
     // prevent constructor by default
-    CameraPresets& operator=(CameraPresets const&) = delete;
-    CameraPresets(CameraPresets const&)            = delete;
+    CameraPresets& operator=(CameraPresets const&);
+    CameraPresets(CameraPresets const&);
 
 public:
     // NOLINTBEGIN

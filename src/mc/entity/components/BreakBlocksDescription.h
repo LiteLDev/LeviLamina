@@ -8,8 +8,8 @@
 struct BreakBlocksDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    BreakBlocksDescription& operator=(BreakBlocksDescription const&) = delete;
-    BreakBlocksDescription(BreakBlocksDescription const&)            = delete;
+    BreakBlocksDescription& operator=(BreakBlocksDescription const&);
+    BreakBlocksDescription(BreakBlocksDescription const&);
 
 public:
     // NOLINTBEGIN

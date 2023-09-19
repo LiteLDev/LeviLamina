@@ -7,9 +7,9 @@ namespace Bedrock {
 class ScopeExit {
 public:
     // prevent constructor by default
-    ScopeExit& operator=(ScopeExit const&) = delete;
-    ScopeExit(ScopeExit const&)            = delete;
-    ScopeExit()                            = delete;
+    ScopeExit& operator=(ScopeExit const&);
+    ScopeExit(ScopeExit const&);
+    ScopeExit();
 
 public:
     // NOLINTBEGIN

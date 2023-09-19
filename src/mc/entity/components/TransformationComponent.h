@@ -5,8 +5,8 @@
 class TransformationComponent {
 public:
     // prevent constructor by default
-    TransformationComponent& operator=(TransformationComponent const&) = delete;
-    TransformationComponent(TransformationComponent const&)            = delete;
+    TransformationComponent& operator=(TransformationComponent const&);
+    TransformationComponent(TransformationComponent const&);
 
 public:
     // NOLINTBEGIN

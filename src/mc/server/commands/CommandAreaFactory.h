@@ -5,14 +5,14 @@
 class CommandAreaFactory {
 public:
     // prevent constructor by default
-    CommandAreaFactory& operator=(CommandAreaFactory const&) = delete;
-    CommandAreaFactory(CommandAreaFactory const&)            = delete;
-    CommandAreaFactory()                                     = delete;
+    CommandAreaFactory& operator=(CommandAreaFactory const&);
+    CommandAreaFactory(CommandAreaFactory const&);
+    CommandAreaFactory();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0CommandAreaFactory@@QEAA@AEAVDimension@@@Z
-    MCAPI CommandAreaFactory(class Dimension&);
+    MCAPI explicit CommandAreaFactory(class Dimension&);
 
     // symbol:
     // ?findArea@CommandAreaFactory@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@0_N11@Z

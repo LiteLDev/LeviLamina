@@ -5,7 +5,7 @@
 struct CrashDumpFormatEntryImpl {
 public:
     // prevent constructor by default
-    CrashDumpFormatEntryImpl& operator=(CrashDumpFormatEntryImpl const&) = delete;
-    CrashDumpFormatEntryImpl(CrashDumpFormatEntryImpl const&)            = delete;
-    CrashDumpFormatEntryImpl()                                           = delete;
+    CrashDumpFormatEntryImpl& operator=(CrashDumpFormatEntryImpl const&);
+    CrashDumpFormatEntryImpl(CrashDumpFormatEntryImpl const&);
+    CrashDumpFormatEntryImpl();
 };

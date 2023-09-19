@@ -17,9 +17,9 @@ public:
     struct DataCallback {
     public:
         // prevent constructor by default
-        DataCallback& operator=(DataCallback const&) = delete;
-        DataCallback(DataCallback const&)            = delete;
-        DataCallback()                               = delete;
+        DataCallback& operator=(DataCallback const&);
+        DataCallback(DataCallback const&);
+        DataCallback();
 
     public:
         // NOLINTBEGIN
@@ -37,9 +37,9 @@ public:
 
 public:
     // prevent constructor by default
-    BatchedNetworkPeer& operator=(BatchedNetworkPeer const&) = delete;
-    BatchedNetworkPeer(BatchedNetworkPeer const&)            = delete;
-    BatchedNetworkPeer()                                     = delete;
+    BatchedNetworkPeer& operator=(BatchedNetworkPeer const&);
+    BatchedNetworkPeer(BatchedNetworkPeer const&);
+    BatchedNetworkPeer();
 
 public:
     // NOLINTBEGIN

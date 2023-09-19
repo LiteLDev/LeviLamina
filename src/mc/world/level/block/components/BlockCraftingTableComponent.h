@@ -8,9 +8,9 @@
 struct BlockCraftingTableComponent : public ::BlockComponentBase {
 public:
     // prevent constructor by default
-    BlockCraftingTableComponent& operator=(BlockCraftingTableComponent const&) = delete;
-    BlockCraftingTableComponent(BlockCraftingTableComponent const&)            = delete;
-    BlockCraftingTableComponent()                                              = delete;
+    BlockCraftingTableComponent& operator=(BlockCraftingTableComponent const&);
+    BlockCraftingTableComponent(BlockCraftingTableComponent const&);
+    BlockCraftingTableComponent();
 
 public:
     // NOLINTBEGIN

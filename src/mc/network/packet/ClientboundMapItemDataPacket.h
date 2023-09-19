@@ -39,8 +39,8 @@ public:
 
 public:
     // prevent constructor by default
-    ClientboundMapItemDataPacket& operator=(ClientboundMapItemDataPacket const&) = delete;
-    ClientboundMapItemDataPacket(ClientboundMapItemDataPacket const&)            = delete;
+    ClientboundMapItemDataPacket& operator=(ClientboundMapItemDataPacket const&);
+    ClientboundMapItemDataPacket(ClientboundMapItemDataPacket const&);
 
 public:
     // NOLINTBEGIN

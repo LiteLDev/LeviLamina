@@ -28,9 +28,9 @@ namespace Util {
 class LootTableUtils {
 public:
     // prevent constructor by default
-    LootTableUtils& operator=(LootTableUtils const&) = delete;
-    LootTableUtils(LootTableUtils const&)            = delete;
-    LootTableUtils()                                 = delete;
+    LootTableUtils& operator=(LootTableUtils const&);
+    LootTableUtils(LootTableUtils const&);
+    LootTableUtils();
 
 public:
     // NOLINTBEGIN

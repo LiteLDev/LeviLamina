@@ -5,9 +5,9 @@
 class ITextObject {
 public:
     // prevent constructor by default
-    ITextObject& operator=(ITextObject const&) = delete;
-    ITextObject(ITextObject const&)            = delete;
-    ITextObject()                              = delete;
+    ITextObject& operator=(ITextObject const&);
+    ITextObject(ITextObject const&);
+    ITextObject();
 
 public:
     // NOLINTBEGIN

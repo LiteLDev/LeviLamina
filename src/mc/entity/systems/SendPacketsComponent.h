@@ -5,9 +5,9 @@
 struct SendPacketsComponent {
 public:
     // prevent constructor by default
-    SendPacketsComponent& operator=(SendPacketsComponent const&) = delete;
-    SendPacketsComponent(SendPacketsComponent const&)            = delete;
-    SendPacketsComponent()                                       = delete;
+    SendPacketsComponent& operator=(SendPacketsComponent const&);
+    SendPacketsComponent(SendPacketsComponent const&);
+    SendPacketsComponent();
 
 public:
     // NOLINTBEGIN

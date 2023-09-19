@@ -8,9 +8,9 @@
 class KeyManager {
 public:
     // prevent constructor by default
-    KeyManager& operator=(KeyManager const&) = delete;
-    KeyManager(KeyManager const&)            = delete;
-    KeyManager()                             = delete;
+    KeyManager& operator=(KeyManager const&);
+    KeyManager(KeyManager const&);
+    KeyManager();
 
 public:
     // NOLINTBEGIN

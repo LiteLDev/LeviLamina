@@ -5,7 +5,7 @@
 struct PassengerYRotLimitComponent {
 public:
     // prevent constructor by default
-    PassengerYRotLimitComponent& operator=(PassengerYRotLimitComponent const&) = delete;
-    PassengerYRotLimitComponent(PassengerYRotLimitComponent const&)            = delete;
-    PassengerYRotLimitComponent()                                              = delete;
+    PassengerYRotLimitComponent& operator=(PassengerYRotLimitComponent const&);
+    PassengerYRotLimitComponent(PassengerYRotLimitComponent const&);
+    PassengerYRotLimitComponent();
 };

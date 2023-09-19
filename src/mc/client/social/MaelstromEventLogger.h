@@ -21,9 +21,9 @@ namespace Social::Events {
 class MaelstromEventLogger : public ::Social::Events::AggregationEventListener {
 public:
     // prevent constructor by default
-    MaelstromEventLogger& operator=(MaelstromEventLogger const&) = delete;
-    MaelstromEventLogger(MaelstromEventLogger const&)            = delete;
-    MaelstromEventLogger()                                       = delete;
+    MaelstromEventLogger& operator=(MaelstromEventLogger const&);
+    MaelstromEventLogger(MaelstromEventLogger const&);
+    MaelstromEventLogger();
 
 public:
     // NOLINTBEGIN

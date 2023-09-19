@@ -27,9 +27,9 @@
 class ExperiencePotion : public ::Throwable {
 public:
     // prevent constructor by default
-    ExperiencePotion& operator=(ExperiencePotion const&) = delete;
-    ExperiencePotion(ExperiencePotion const&)            = delete;
-    ExperiencePotion()                                   = delete;
+    ExperiencePotion& operator=(ExperiencePotion const&);
+    ExperiencePotion(ExperiencePotion const&);
+    ExperiencePotion();
 
 public:
     // NOLINTBEGIN

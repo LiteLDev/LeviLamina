@@ -8,9 +8,9 @@
 class LoadingProgressTickingSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    LoadingProgressTickingSystem& operator=(LoadingProgressTickingSystem const&) = delete;
-    LoadingProgressTickingSystem(LoadingProgressTickingSystem const&)            = delete;
-    LoadingProgressTickingSystem()                                               = delete;
+    LoadingProgressTickingSystem& operator=(LoadingProgressTickingSystem const&);
+    LoadingProgressTickingSystem(LoadingProgressTickingSystem const&);
+    LoadingProgressTickingSystem();
 
 private:
     // NOLINTBEGIN
@@ -23,7 +23,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mChunksNeededForLoadOffsets() { return mChunksNeededForLoadOffsets; }
+    auto& $mChunksNeededForLoadOffsets() { return mChunksNeededForLoadOffsets; }
 
     // NOLINTEND
 };

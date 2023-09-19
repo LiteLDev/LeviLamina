@@ -8,9 +8,9 @@
 class GenericPathNavigation : public ::PathNavigation {
 public:
     // prevent constructor by default
-    GenericPathNavigation& operator=(GenericPathNavigation const&) = delete;
-    GenericPathNavigation(GenericPathNavigation const&)            = delete;
-    GenericPathNavigation()                                        = delete;
+    GenericPathNavigation& operator=(GenericPathNavigation const&);
+    GenericPathNavigation(GenericPathNavigation const&);
+    GenericPathNavigation();
 
 public:
     // NOLINTBEGIN

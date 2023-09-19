@@ -8,8 +8,8 @@
 class LegacyBodyControl : public ::BodyControl {
 public:
     // prevent constructor by default
-    LegacyBodyControl& operator=(LegacyBodyControl const&) = delete;
-    LegacyBodyControl(LegacyBodyControl const&)            = delete;
+    LegacyBodyControl& operator=(LegacyBodyControl const&);
+    LegacyBodyControl(LegacyBodyControl const&);
 
 public:
     // NOLINTBEGIN

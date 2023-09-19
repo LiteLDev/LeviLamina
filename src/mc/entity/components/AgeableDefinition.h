@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class AgeableDefinition {
 public:
     // prevent constructor by default
-    AgeableDefinition& operator=(AgeableDefinition const&) = delete;
-    AgeableDefinition(AgeableDefinition const&)            = delete;
-    AgeableDefinition()                                    = delete;
+    AgeableDefinition& operator=(AgeableDefinition const&);
+    AgeableDefinition(AgeableDefinition const&);
+    AgeableDefinition();
 
 public:
     // NOLINTBEGIN

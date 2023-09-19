@@ -8,9 +8,9 @@
 class StructurePoolBlockPredicateTrueIfFound : public ::IStructurePoolBlockPredicate {
 public:
     // prevent constructor by default
-    StructurePoolBlockPredicateTrueIfFound& operator=(StructurePoolBlockPredicateTrueIfFound const&) = delete;
-    StructurePoolBlockPredicateTrueIfFound(StructurePoolBlockPredicateTrueIfFound const&)            = delete;
-    StructurePoolBlockPredicateTrueIfFound()                                                         = delete;
+    StructurePoolBlockPredicateTrueIfFound& operator=(StructurePoolBlockPredicateTrueIfFound const&);
+    StructurePoolBlockPredicateTrueIfFound(StructurePoolBlockPredicateTrueIfFound const&);
+    StructurePoolBlockPredicateTrueIfFound();
 
 public:
     // NOLINTBEGIN

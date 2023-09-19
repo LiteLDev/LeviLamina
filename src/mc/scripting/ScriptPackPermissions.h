@@ -5,8 +5,8 @@
 class ScriptPackPermissions {
 public:
     // prevent constructor by default
-    ScriptPackPermissions& operator=(ScriptPackPermissions const&) = delete;
-    ScriptPackPermissions()                                        = delete;
+    ScriptPackPermissions& operator=(ScriptPackPermissions const&);
+    ScriptPackPermissions();
 
 public:
     // NOLINTBEGIN
@@ -26,7 +26,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $sWildCardModuleName() { return sWildCardModuleName; }
+    auto& $sWildCardModuleName() { return sWildCardModuleName; }
 
     // NOLINTEND
 };

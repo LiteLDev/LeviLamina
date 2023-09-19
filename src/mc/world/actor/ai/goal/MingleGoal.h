@@ -10,9 +10,9 @@
 class MingleGoal : public ::MoveToPOIGoal {
 public:
     // prevent constructor by default
-    MingleGoal& operator=(MingleGoal const&) = delete;
-    MingleGoal(MingleGoal const&)            = delete;
-    MingleGoal()                             = delete;
+    MingleGoal& operator=(MingleGoal const&);
+    MingleGoal(MingleGoal const&);
+    MingleGoal();
 
 public:
     // NOLINTBEGIN
@@ -75,11 +75,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $FIND_PARTNER_INTERVAL_TICKS() { return FIND_PARTNER_INTERVAL_TICKS; }
+    auto& $FIND_PARTNER_INTERVAL_TICKS() { return FIND_PARTNER_INTERVAL_TICKS; }
 
-    inline auto& $SPEAK_INTERVAL_TICKS_MAX() { return SPEAK_INTERVAL_TICKS_MAX; }
+    auto& $SPEAK_INTERVAL_TICKS_MAX() { return SPEAK_INTERVAL_TICKS_MAX; }
 
-    inline auto& $SPEAK_INTERVAL_TICKS_MIN() { return SPEAK_INTERVAL_TICKS_MIN; }
+    auto& $SPEAK_INTERVAL_TICKS_MIN() { return SPEAK_INTERVAL_TICKS_MIN; }
 
     // NOLINTEND
 };

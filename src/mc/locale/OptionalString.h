@@ -5,9 +5,9 @@
 struct OptionalString {
 public:
     // prevent constructor by default
-    OptionalString& operator=(OptionalString const&) = delete;
-    OptionalString(OptionalString const&)            = delete;
-    OptionalString()                                 = delete;
+    OptionalString& operator=(OptionalString const&);
+    OptionalString(OptionalString const&);
+    OptionalString();
 
 public:
     // NOLINTBEGIN

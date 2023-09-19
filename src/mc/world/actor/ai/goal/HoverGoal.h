@@ -9,9 +9,9 @@
 class HoverGoal : public ::Goal {
 public:
     // prevent constructor by default
-    HoverGoal& operator=(HoverGoal const&) = delete;
-    HoverGoal(HoverGoal const&)            = delete;
-    HoverGoal()                            = delete;
+    HoverGoal& operator=(HoverGoal const&);
+    HoverGoal(HoverGoal const&);
+    HoverGoal();
 
 public:
     // NOLINTBEGIN

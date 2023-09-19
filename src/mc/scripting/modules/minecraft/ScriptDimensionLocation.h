@@ -10,8 +10,8 @@ namespace ScriptModuleMinecraft {
 struct ScriptDimensionLocation {
 public:
     // prevent constructor by default
-    ScriptDimensionLocation(ScriptDimensionLocation const&) = delete;
-    ScriptDimensionLocation()                               = delete;
+    ScriptDimensionLocation(ScriptDimensionLocation const&);
+    ScriptDimensionLocation();
 
 public:
     // NOLINTBEGIN

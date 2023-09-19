@@ -5,7 +5,7 @@
 struct PlayerSkinLoadedClientEvent {
 public:
     // prevent constructor by default
-    PlayerSkinLoadedClientEvent& operator=(PlayerSkinLoadedClientEvent const&) = delete;
-    PlayerSkinLoadedClientEvent(PlayerSkinLoadedClientEvent const&)            = delete;
-    PlayerSkinLoadedClientEvent()                                              = delete;
+    PlayerSkinLoadedClientEvent& operator=(PlayerSkinLoadedClientEvent const&);
+    PlayerSkinLoadedClientEvent(PlayerSkinLoadedClientEvent const&);
+    PlayerSkinLoadedClientEvent();
 };

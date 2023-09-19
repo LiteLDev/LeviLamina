@@ -5,7 +5,7 @@
 struct AutoStepRequestFlag {
 public:
     // prevent constructor by default
-    AutoStepRequestFlag& operator=(AutoStepRequestFlag const&) = delete;
-    AutoStepRequestFlag(AutoStepRequestFlag const&)            = delete;
-    AutoStepRequestFlag()                                      = delete;
+    AutoStepRequestFlag& operator=(AutoStepRequestFlag const&);
+    AutoStepRequestFlag(AutoStepRequestFlag const&);
+    AutoStepRequestFlag();
 };

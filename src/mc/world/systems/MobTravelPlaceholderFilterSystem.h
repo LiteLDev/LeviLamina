@@ -8,9 +8,9 @@
 class MobTravelPlaceholderFilterSystem {
 public:
     // prevent constructor by default
-    MobTravelPlaceholderFilterSystem& operator=(MobTravelPlaceholderFilterSystem const&) = delete;
-    MobTravelPlaceholderFilterSystem(MobTravelPlaceholderFilterSystem const&)            = delete;
-    MobTravelPlaceholderFilterSystem()                                                   = delete;
+    MobTravelPlaceholderFilterSystem& operator=(MobTravelPlaceholderFilterSystem const&);
+    MobTravelPlaceholderFilterSystem(MobTravelPlaceholderFilterSystem const&);
+    MobTravelPlaceholderFilterSystem();
 
 public:
     // NOLINTBEGIN

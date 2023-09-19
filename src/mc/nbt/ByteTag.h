@@ -46,7 +46,7 @@ public:
     MCVAPI ~ByteTag();
 
     // symbol: ??0ByteTag@@QEAA@E@Z
-    MCAPI ByteTag(uchar);
+    MCAPI explicit ByteTag(uchar);
 
     // symbol: ??0ByteTag@@QEAA@XZ
     MCAPI ByteTag();

@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class ShootBowDefinition : public ::BehaviorDefinition {
 public:
     // prevent constructor by default
-    ShootBowDefinition& operator=(ShootBowDefinition const&) = delete;
-    ShootBowDefinition(ShootBowDefinition const&)            = delete;
-    ShootBowDefinition()                                     = delete;
+    ShootBowDefinition& operator=(ShootBowDefinition const&);
+    ShootBowDefinition(ShootBowDefinition const&);
+    ShootBowDefinition();
 
 public:
     // NOLINTBEGIN

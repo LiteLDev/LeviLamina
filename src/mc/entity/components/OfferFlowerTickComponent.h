@@ -5,7 +5,7 @@
 struct OfferFlowerTickComponent {
 public:
     // prevent constructor by default
-    OfferFlowerTickComponent& operator=(OfferFlowerTickComponent const&) = delete;
-    OfferFlowerTickComponent(OfferFlowerTickComponent const&)            = delete;
-    OfferFlowerTickComponent()                                           = delete;
+    OfferFlowerTickComponent& operator=(OfferFlowerTickComponent const&);
+    OfferFlowerTickComponent(OfferFlowerTickComponent const&);
+    OfferFlowerTickComponent();
 };

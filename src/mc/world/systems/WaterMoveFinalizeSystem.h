@@ -5,9 +5,9 @@
 class WaterMoveFinalizeSystem {
 public:
     // prevent constructor by default
-    WaterMoveFinalizeSystem& operator=(WaterMoveFinalizeSystem const&) = delete;
-    WaterMoveFinalizeSystem(WaterMoveFinalizeSystem const&)            = delete;
-    WaterMoveFinalizeSystem()                                          = delete;
+    WaterMoveFinalizeSystem& operator=(WaterMoveFinalizeSystem const&);
+    WaterMoveFinalizeSystem(WaterMoveFinalizeSystem const&);
+    WaterMoveFinalizeSystem();
 
 public:
     // NOLINTBEGIN

@@ -13,8 +13,8 @@ public:
     WebSocketPacketData mWebSocketData; // this+0x30
 
     // prevent constructor by default
-    AutomationClientConnectPacket& operator=(AutomationClientConnectPacket const&) = delete;
-    AutomationClientConnectPacket(AutomationClientConnectPacket const&)            = delete;
+    AutomationClientConnectPacket& operator=(AutomationClientConnectPacket const&);
+    AutomationClientConnectPacket(AutomationClientConnectPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -42,7 +42,7 @@ public:
     MCAPI AutomationClientConnectPacket();
 
     // symbol: ??0AutomationClientConnectPacket@@QEAA@UWebSocketPacketData@@@Z
-    MCAPI AutomationClientConnectPacket(struct WebSocketPacketData);
+    MCAPI explicit AutomationClientConnectPacket(struct WebSocketPacketData);
 
     // NOLINTEND
 };

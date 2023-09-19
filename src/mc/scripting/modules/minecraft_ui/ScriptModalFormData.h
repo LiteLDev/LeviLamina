@@ -25,8 +25,8 @@ namespace ScriptModuleMinecraftServerUI {
 class ScriptModalFormData {
 public:
     // prevent constructor by default
-    ScriptModalFormData& operator=(ScriptModalFormData const&) = delete;
-    ScriptModalFormData(ScriptModalFormData const&)            = delete;
+    ScriptModalFormData& operator=(ScriptModalFormData const&);
+    ScriptModalFormData(ScriptModalFormData const&);
 
 public:
     // NOLINTBEGIN

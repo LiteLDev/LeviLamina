@@ -11,9 +11,9 @@
 class NetherDimension : public ::Dimension {
 public:
     // prevent constructor by default
-    NetherDimension& operator=(NetherDimension const&) = delete;
-    NetherDimension(NetherDimension const&)            = delete;
-    NetherDimension()                                  = delete;
+    NetherDimension& operator=(NetherDimension const&);
+    NetherDimension(NetherDimension const&);
+    NetherDimension();
 
 public:
     // NOLINTBEGIN

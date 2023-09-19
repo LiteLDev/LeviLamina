@@ -35,9 +35,9 @@ namespace ScriptModuleMinecraft {
 class ScriptWorld {
 public:
     // prevent constructor by default
-    ScriptWorld& operator=(ScriptWorld const&) = delete;
-    ScriptWorld(ScriptWorld const&)            = delete;
-    ScriptWorld()                              = delete;
+    ScriptWorld& operator=(ScriptWorld const&);
+    ScriptWorld(ScriptWorld const&);
+    ScriptWorld();
 
 public:
     // NOLINTBEGIN

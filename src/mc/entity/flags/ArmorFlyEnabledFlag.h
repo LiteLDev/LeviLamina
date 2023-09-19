@@ -5,7 +5,7 @@
 struct ArmorFlyEnabledFlag {
 public:
     // prevent constructor by default
-    ArmorFlyEnabledFlag& operator=(ArmorFlyEnabledFlag const&) = delete;
-    ArmorFlyEnabledFlag(ArmorFlyEnabledFlag const&)            = delete;
-    ArmorFlyEnabledFlag()                                      = delete;
+    ArmorFlyEnabledFlag& operator=(ArmorFlyEnabledFlag const&);
+    ArmorFlyEnabledFlag(ArmorFlyEnabledFlag const&);
+    ArmorFlyEnabledFlag();
 };

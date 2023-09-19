@@ -22,9 +22,9 @@ public:
     class AllowListEntryMatcher {
     public:
         // prevent constructor by default
-        AllowListEntryMatcher& operator=(AllowListEntryMatcher const&) = delete;
-        AllowListEntryMatcher(AllowListEntryMatcher const&)            = delete;
-        AllowListEntryMatcher()                                        = delete;
+        AllowListEntryMatcher& operator=(AllowListEntryMatcher const&);
+        AllowListEntryMatcher(AllowListEntryMatcher const&);
+        AllowListEntryMatcher();
 
     public:
         // NOLINTBEGIN
@@ -43,9 +43,9 @@ public:
 
 public:
     // prevent constructor by default
-    AllowList& operator=(AllowList const&) = delete;
-    AllowList(AllowList const&)            = delete;
-    AllowList()                            = delete;
+    AllowList& operator=(AllowList const&);
+    AllowList(AllowList const&);
+    AllowList();
 
 public:
     // NOLINTBEGIN

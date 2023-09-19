@@ -13,9 +13,9 @@
 class VehicleServerPositionPassengerSystem {
 public:
     // prevent constructor by default
-    VehicleServerPositionPassengerSystem& operator=(VehicleServerPositionPassengerSystem const&) = delete;
-    VehicleServerPositionPassengerSystem(VehicleServerPositionPassengerSystem const&)            = delete;
-    VehicleServerPositionPassengerSystem()                                                       = delete;
+    VehicleServerPositionPassengerSystem& operator=(VehicleServerPositionPassengerSystem const&);
+    VehicleServerPositionPassengerSystem(VehicleServerPositionPassengerSystem const&);
+    VehicleServerPositionPassengerSystem();
 
 public:
     // NOLINTBEGIN

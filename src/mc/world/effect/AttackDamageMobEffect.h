@@ -8,9 +8,9 @@
 class AttackDamageMobEffect : public ::MobEffect {
 public:
     // prevent constructor by default
-    AttackDamageMobEffect& operator=(AttackDamageMobEffect const&) = delete;
-    AttackDamageMobEffect(AttackDamageMobEffect const&)            = delete;
-    AttackDamageMobEffect()                                        = delete;
+    AttackDamageMobEffect& operator=(AttackDamageMobEffect const&);
+    AttackDamageMobEffect(AttackDamageMobEffect const&);
+    AttackDamageMobEffect();
 
 public:
     // NOLINTBEGIN

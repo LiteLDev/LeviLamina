@@ -12,8 +12,8 @@
 struct OverworldNoises3d {
 public:
     // prevent constructor by default
-    OverworldNoises3d& operator=(OverworldNoises3d const&) = delete;
-    OverworldNoises3d()                                    = delete;
+    OverworldNoises3d& operator=(OverworldNoises3d const&);
+    OverworldNoises3d();
 
 public:
     // NOLINTBEGIN

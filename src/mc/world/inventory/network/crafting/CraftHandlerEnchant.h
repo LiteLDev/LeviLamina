@@ -13,9 +13,9 @@
 class CraftHandlerEnchant : public ::CraftHandlerBase {
 public:
     // prevent constructor by default
-    CraftHandlerEnchant& operator=(CraftHandlerEnchant const&) = delete;
-    CraftHandlerEnchant(CraftHandlerEnchant const&)            = delete;
-    CraftHandlerEnchant()                                      = delete;
+    CraftHandlerEnchant& operator=(CraftHandlerEnchant const&);
+    CraftHandlerEnchant(CraftHandlerEnchant const&);
+    CraftHandlerEnchant();
 
 public:
     // NOLINTBEGIN

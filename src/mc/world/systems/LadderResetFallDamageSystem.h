@@ -5,9 +5,9 @@
 class LadderResetFallDamageSystem {
 public:
     // prevent constructor by default
-    LadderResetFallDamageSystem& operator=(LadderResetFallDamageSystem const&) = delete;
-    LadderResetFallDamageSystem(LadderResetFallDamageSystem const&)            = delete;
-    LadderResetFallDamageSystem()                                              = delete;
+    LadderResetFallDamageSystem& operator=(LadderResetFallDamageSystem const&);
+    LadderResetFallDamageSystem(LadderResetFallDamageSystem const&);
+    LadderResetFallDamageSystem();
 
 public:
     // NOLINTBEGIN

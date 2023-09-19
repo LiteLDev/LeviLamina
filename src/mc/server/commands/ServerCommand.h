@@ -10,9 +10,9 @@
 class ServerCommand : public ::Command {
 public:
     // prevent constructor by default
-    ServerCommand& operator=(ServerCommand const&) = delete;
-    ServerCommand(ServerCommand const&)            = delete;
-    ServerCommand()                                = delete;
+    ServerCommand& operator=(ServerCommand const&);
+    ServerCommand(ServerCommand const&);
+    ServerCommand();
 
 public:
     // NOLINTBEGIN

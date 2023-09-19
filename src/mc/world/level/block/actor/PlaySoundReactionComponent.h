@@ -8,9 +8,9 @@
 class PlaySoundReactionComponent : public ::LabTableReactionComponent {
 public:
     // prevent constructor by default
-    PlaySoundReactionComponent& operator=(PlaySoundReactionComponent const&) = delete;
-    PlaySoundReactionComponent(PlaySoundReactionComponent const&)            = delete;
-    PlaySoundReactionComponent()                                             = delete;
+    PlaySoundReactionComponent& operator=(PlaySoundReactionComponent const&);
+    PlaySoundReactionComponent(PlaySoundReactionComponent const&);
+    PlaySoundReactionComponent();
 
 public:
     // NOLINTBEGIN

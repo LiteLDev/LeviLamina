@@ -83,8 +83,8 @@ public:
 
 
     // prevent constructor by default
-    PlayerAuthInputPacket& operator=(PlayerAuthInputPacket const&) = delete;
-    PlayerAuthInputPacket(PlayerAuthInputPacket const&)            = delete;
+    PlayerAuthInputPacket& operator=(PlayerAuthInputPacket const&);
+    PlayerAuthInputPacket(PlayerAuthInputPacket const&);
 
 public:
     // NOLINTBEGIN

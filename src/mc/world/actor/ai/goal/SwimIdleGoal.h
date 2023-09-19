@@ -9,9 +9,9 @@
 class SwimIdleGoal : public ::Goal {
 public:
     // prevent constructor by default
-    SwimIdleGoal& operator=(SwimIdleGoal const&) = delete;
-    SwimIdleGoal(SwimIdleGoal const&)            = delete;
-    SwimIdleGoal()                               = delete;
+    SwimIdleGoal& operator=(SwimIdleGoal const&);
+    SwimIdleGoal(SwimIdleGoal const&);
+    SwimIdleGoal();
 
 public:
     // NOLINTBEGIN

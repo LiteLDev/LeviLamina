@@ -36,9 +36,9 @@ public:
 
 public:
     // prevent constructor by default
-    WitherBoss& operator=(WitherBoss const&) = delete;
-    WitherBoss(WitherBoss const&)            = delete;
-    WitherBoss()                             = delete;
+    WitherBoss& operator=(WitherBoss const&);
+    WitherBoss(WitherBoss const&);
+    WitherBoss();
 
 public:
     // NOLINTBEGIN
@@ -257,7 +257,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $TIME_BEFORE_MOVING() { return TIME_BEFORE_MOVING; }
+    auto& $TIME_BEFORE_MOVING() { return TIME_BEFORE_MOVING; }
 
     // NOLINTEND
 };

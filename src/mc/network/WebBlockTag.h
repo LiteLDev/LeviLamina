@@ -5,7 +5,7 @@
 struct WebBlockTag {
 public:
     // prevent constructor by default
-    WebBlockTag& operator=(WebBlockTag const&) = delete;
-    WebBlockTag(WebBlockTag const&)            = delete;
-    WebBlockTag()                              = delete;
+    WebBlockTag& operator=(WebBlockTag const&);
+    WebBlockTag(WebBlockTag const&);
+    WebBlockTag();
 };

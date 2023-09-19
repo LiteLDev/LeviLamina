@@ -8,9 +8,9 @@
 class SubChunkRelighter {
 public:
     // prevent constructor by default
-    SubChunkRelighter& operator=(SubChunkRelighter const&) = delete;
-    SubChunkRelighter(SubChunkRelighter const&)            = delete;
-    SubChunkRelighter()                                    = delete;
+    SubChunkRelighter& operator=(SubChunkRelighter const&);
+    SubChunkRelighter(SubChunkRelighter const&);
+    SubChunkRelighter();
 
 public:
     // NOLINTBEGIN
@@ -157,19 +157,19 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits() {
+    auto& $mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits() {
         return mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits;
     }
 
-    inline auto& $mOuterEdgeOfComputationBits() { return mOuterEdgeOfComputationBits; }
+    auto& $mOuterEdgeOfComputationBits() { return mOuterEdgeOfComputationBits; }
 
-    inline auto& $sDarkSpinLock() { return sDarkSpinLock; }
+    auto& $sDarkSpinLock() { return sDarkSpinLock; }
 
-    inline auto& $sFullyDarkSubChunk() { return sFullyDarkSubChunk; }
+    auto& $sFullyDarkSubChunk() { return sFullyDarkSubChunk; }
 
-    inline auto& $sFullyLitSubChunk() { return sFullyLitSubChunk; }
+    auto& $sFullyLitSubChunk() { return sFullyLitSubChunk; }
 
-    inline auto& $sLitSpinLock() { return sLitSpinLock; }
+    auto& $sLitSpinLock() { return sLitSpinLock; }
 
     // NOLINTEND
 };

@@ -19,8 +19,8 @@ public:
     bool                                                          mIsClientSide;       // this+0x60
 
     // prevent constructor by default
-    InventoryTransactionPacket& operator=(InventoryTransactionPacket const&) = delete;
-    InventoryTransactionPacket(InventoryTransactionPacket const&)            = delete;
+    InventoryTransactionPacket& operator=(InventoryTransactionPacket const&);
+    InventoryTransactionPacket(InventoryTransactionPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -27,9 +27,9 @@ public:
     class MaterialHelper {
     public:
         // prevent constructor by default
-        MaterialHelper& operator=(MaterialHelper const&) = delete;
-        MaterialHelper(MaterialHelper const&)            = delete;
-        MaterialHelper()                                 = delete;
+        MaterialHelper& operator=(MaterialHelper const&);
+        MaterialHelper(MaterialHelper const&);
+        MaterialHelper();
 
     public:
         // NOLINTBEGIN
@@ -53,8 +53,8 @@ public:
 
 public:
     // prevent constructor by default
-    CappedSurfaceBuilder& operator=(CappedSurfaceBuilder const&) = delete;
-    CappedSurfaceBuilder(CappedSurfaceBuilder const&)            = delete;
+    CappedSurfaceBuilder& operator=(CappedSurfaceBuilder const&);
+    CappedSurfaceBuilder(CappedSurfaceBuilder const&);
 
 public:
     // NOLINTBEGIN

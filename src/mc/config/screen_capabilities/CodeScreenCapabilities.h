@@ -8,9 +8,9 @@
 struct CodeScreenCapabilities {
 public:
     // prevent constructor by default
-    CodeScreenCapabilities& operator=(CodeScreenCapabilities const&) = delete;
-    CodeScreenCapabilities(CodeScreenCapabilities const&)            = delete;
-    CodeScreenCapabilities()                                         = delete;
+    CodeScreenCapabilities& operator=(CodeScreenCapabilities const&);
+    CodeScreenCapabilities(CodeScreenCapabilities const&);
+    CodeScreenCapabilities();
 
 public:
     // NOLINTBEGIN

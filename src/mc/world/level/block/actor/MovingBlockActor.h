@@ -8,9 +8,9 @@
 class MovingBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    MovingBlockActor& operator=(MovingBlockActor const&) = delete;
-    MovingBlockActor(MovingBlockActor const&)            = delete;
-    MovingBlockActor()                                   = delete;
+    MovingBlockActor& operator=(MovingBlockActor const&);
+    MovingBlockActor(MovingBlockActor const&);
+    MovingBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -79,7 +79,7 @@ public:
     MCVAPI class PistonBlockActor const* getOwningPiston(class BlockSource&) const;
 
     // symbol: ??0MovingBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI MovingBlockActor(class BlockPos const&);
+    MCAPI explicit MovingBlockActor(class BlockPos const&);
 
     // symbol: ?_validPistonPos@MovingBlockActor@@QEBA_NAEBVIConstBlockSource@@@Z
     MCAPI bool _validPistonPos(class IConstBlockSource const&) const;

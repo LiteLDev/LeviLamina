@@ -140,8 +140,8 @@ public:
     LLNDAPI std::vector<std::string> getSoftEnumValues(std::string const& name) const;
 
     // prevent constructor by default
-    AvailableCommandsPacket& operator=(AvailableCommandsPacket const&) = delete;
-    AvailableCommandsPacket(AvailableCommandsPacket const&)            = delete;
+    AvailableCommandsPacket& operator=(AvailableCommandsPacket const&);
+    AvailableCommandsPacket(AvailableCommandsPacket const&);
 
 public:
     // NOLINTBEGIN

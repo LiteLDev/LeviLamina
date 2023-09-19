@@ -8,9 +8,9 @@
 class PlaySoundCommand : public ::Command {
 public:
     // prevent constructor by default
-    PlaySoundCommand& operator=(PlaySoundCommand const&) = delete;
-    PlaySoundCommand(PlaySoundCommand const&)            = delete;
-    PlaySoundCommand()                                   = delete;
+    PlaySoundCommand& operator=(PlaySoundCommand const&);
+    PlaySoundCommand(PlaySoundCommand const&);
+    PlaySoundCommand();
 
 public:
     // NOLINTBEGIN

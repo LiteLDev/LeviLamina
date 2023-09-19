@@ -16,9 +16,9 @@ public:
     bool   mOnGround; // this+0x50
 
     // prevent constructor by default
-    CorrectPlayerMovePredictionPacket& operator=(CorrectPlayerMovePredictionPacket const&) = delete;
-    CorrectPlayerMovePredictionPacket(CorrectPlayerMovePredictionPacket const&)            = delete;
-    CorrectPlayerMovePredictionPacket()                                                    = delete;
+    CorrectPlayerMovePredictionPacket& operator=(CorrectPlayerMovePredictionPacket const&);
+    CorrectPlayerMovePredictionPacket(CorrectPlayerMovePredictionPacket const&);
+    CorrectPlayerMovePredictionPacket();
 
 public:
     // NOLINTBEGIN

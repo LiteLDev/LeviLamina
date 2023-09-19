@@ -8,9 +8,9 @@
 class IcePatchFeature : public ::Feature {
 public:
     // prevent constructor by default
-    IcePatchFeature& operator=(IcePatchFeature const&) = delete;
-    IcePatchFeature(IcePatchFeature const&)            = delete;
-    IcePatchFeature()                                  = delete;
+    IcePatchFeature& operator=(IcePatchFeature const&);
+    IcePatchFeature(IcePatchFeature const&);
+    IcePatchFeature();
 
 public:
     // NOLINTBEGIN
@@ -21,7 +21,7 @@ public:
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
     // symbol: ??0IcePatchFeature@@QEAA@H@Z
-    MCAPI IcePatchFeature(int);
+    MCAPI explicit IcePatchFeature(int);
 
     // NOLINTEND
 };

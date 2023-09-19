@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class BribeableDefinition {
 public:
     // prevent constructor by default
-    BribeableDefinition& operator=(BribeableDefinition const&) = delete;
-    BribeableDefinition(BribeableDefinition const&)            = delete;
-    BribeableDefinition()                                      = delete;
+    BribeableDefinition& operator=(BribeableDefinition const&);
+    BribeableDefinition(BribeableDefinition const&);
+    BribeableDefinition();
 
 public:
     // NOLINTBEGIN

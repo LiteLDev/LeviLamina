@@ -49,9 +49,9 @@ public:
         std::string mWarning;
 
         // prevent constructor by default
-        NormalizedRectangularRecipeResults& operator=(NormalizedRectangularRecipeResults const&) = delete;
-        NormalizedRectangularRecipeResults(NormalizedRectangularRecipeResults const&)            = delete;
-        NormalizedRectangularRecipeResults()                                                     = delete;
+        NormalizedRectangularRecipeResults& operator=(NormalizedRectangularRecipeResults const&);
+        NormalizedRectangularRecipeResults(NormalizedRectangularRecipeResults const&);
+        NormalizedRectangularRecipeResults();
 
     public:
         // NOLINTBEGIN
@@ -87,14 +87,14 @@ public:
 
 public:
     // prevent constructor by default
-    Recipes& operator=(Recipes const&) = delete;
-    Recipes(Recipes const&)            = delete;
-    Recipes()                          = delete;
+    Recipes& operator=(Recipes const&);
+    Recipes(Recipes const&);
+    Recipes();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0Recipes@@QEAA@PEAVLevel@@@Z
-    MCAPI Recipes(class Level*);
+    MCAPI explicit Recipes(class Level*);
 
     // symbol:
     // ?addFurnaceRecipeAuxData@Recipes@@QEAAXAEBVItemInstance@@0AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@std@@@Z

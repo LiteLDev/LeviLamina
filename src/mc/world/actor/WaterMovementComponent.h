@@ -5,8 +5,8 @@
 class WaterMovementComponent {
 public:
     // prevent constructor by default
-    WaterMovementComponent& operator=(WaterMovementComponent const&) = delete;
-    WaterMovementComponent(WaterMovementComponent const&)            = delete;
+    WaterMovementComponent& operator=(WaterMovementComponent const&);
+    WaterMovementComponent(WaterMovementComponent const&);
 
 public:
     // NOLINTBEGIN

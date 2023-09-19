@@ -8,9 +8,9 @@ template <typename T0, typename T1>
 class expected {
 public:
     // prevent constructor by default
-    expected& operator=(expected const&) = delete;
-    expected(expected const&)            = delete;
-    expected()                           = delete;
+    expected& operator=(expected const&);
+    expected(expected const&);
+    expected();
 };
 
 }; // namespace nonstd::expected_lite

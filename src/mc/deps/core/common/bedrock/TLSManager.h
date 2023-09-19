@@ -7,9 +7,9 @@ namespace Bedrock::Threading::CustomTLS {
 class TLSManager {
 public:
     // prevent constructor by default
-    TLSManager& operator=(TLSManager const&) = delete;
-    TLSManager(TLSManager const&)            = delete;
-    TLSManager()                             = delete;
+    TLSManager& operator=(TLSManager const&);
+    TLSManager(TLSManager const&);
+    TLSManager();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class VanillaVillageJigsawStructureActorRules {
 public:
     // prevent constructor by default
-    VanillaVillageJigsawStructureActorRules& operator=(VanillaVillageJigsawStructureActorRules const&) = delete;
-    VanillaVillageJigsawStructureActorRules(VanillaVillageJigsawStructureActorRules const&)            = delete;
-    VanillaVillageJigsawStructureActorRules()                                                          = delete;
+    VanillaVillageJigsawStructureActorRules& operator=(VanillaVillageJigsawStructureActorRules const&);
+    VanillaVillageJigsawStructureActorRules(VanillaVillageJigsawStructureActorRules const&);
+    VanillaVillageJigsawStructureActorRules();
 
 public:
     // NOLINTBEGIN

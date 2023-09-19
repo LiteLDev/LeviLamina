@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class SuspiciousStewItem : public ::Item {
 public:
     // prevent constructor by default
-    SuspiciousStewItem& operator=(SuspiciousStewItem const&) = delete;
-    SuspiciousStewItem(SuspiciousStewItem const&)            = delete;
-    SuspiciousStewItem()                                     = delete;
+    SuspiciousStewItem& operator=(SuspiciousStewItem const&);
+    SuspiciousStewItem(SuspiciousStewItem const&);
+    SuspiciousStewItem();
 
 public:
     // NOLINTBEGIN

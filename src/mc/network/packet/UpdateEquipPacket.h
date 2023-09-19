@@ -22,8 +22,8 @@ public:
     CompoundTag   mData;           // this+0x40
 
     // prevent constructor by default
-    UpdateEquipPacket& operator=(UpdateEquipPacket const&) = delete;
-    UpdateEquipPacket(UpdateEquipPacket const&)            = delete;
+    UpdateEquipPacket& operator=(UpdateEquipPacket const&);
+    UpdateEquipPacket(UpdateEquipPacket const&);
 
 public:
     // NOLINTBEGIN

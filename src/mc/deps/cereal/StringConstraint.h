@@ -16,7 +16,7 @@ namespace cereal {
 class StringConstraint : public ::cereal::Constraint {
 public:
     // prevent constructor by default
-    StringConstraint& operator=(StringConstraint const&) = delete;
+    StringConstraint& operator=(StringConstraint const&);
 
 public:
     // NOLINTBEGIN

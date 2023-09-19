@@ -26,9 +26,9 @@
 class Boat : public ::Actor {
 public:
     // prevent constructor by default
-    Boat& operator=(Boat const&) = delete;
-    Boat(Boat const&)            = delete;
-    Boat()                       = delete;
+    Boat& operator=(Boat const&);
+    Boat(Boat const&);
+    Boat();
 
 public:
     // NOLINTBEGIN

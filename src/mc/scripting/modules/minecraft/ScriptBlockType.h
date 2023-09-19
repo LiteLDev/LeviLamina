@@ -19,8 +19,8 @@ namespace ScriptModuleMinecraft {
 class ScriptBlockType {
 public:
     // prevent constructor by default
-    ScriptBlockType& operator=(ScriptBlockType const&) = delete;
-    ScriptBlockType()                                  = delete;
+    ScriptBlockType& operator=(ScriptBlockType const&);
+    ScriptBlockType();
 
 public:
     // NOLINTBEGIN

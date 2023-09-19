@@ -9,9 +9,9 @@
 class TargetWhenPushedGoal : public ::Goal {
 public:
     // prevent constructor by default
-    TargetWhenPushedGoal& operator=(TargetWhenPushedGoal const&) = delete;
-    TargetWhenPushedGoal(TargetWhenPushedGoal const&)            = delete;
-    TargetWhenPushedGoal()                                       = delete;
+    TargetWhenPushedGoal& operator=(TargetWhenPushedGoal const&);
+    TargetWhenPushedGoal(TargetWhenPushedGoal const&);
+    TargetWhenPushedGoal();
 
 public:
     // NOLINTBEGIN

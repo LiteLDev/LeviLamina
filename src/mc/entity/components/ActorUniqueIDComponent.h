@@ -5,7 +5,7 @@
 struct ActorUniqueIDComponent {
 public:
     // prevent constructor by default
-    ActorUniqueIDComponent& operator=(ActorUniqueIDComponent const&) = delete;
-    ActorUniqueIDComponent(ActorUniqueIDComponent const&)            = delete;
-    ActorUniqueIDComponent()                                         = delete;
+    ActorUniqueIDComponent& operator=(ActorUniqueIDComponent const&);
+    ActorUniqueIDComponent(ActorUniqueIDComponent const&);
+    ActorUniqueIDComponent();
 };

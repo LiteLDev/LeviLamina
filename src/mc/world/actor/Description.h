@@ -5,9 +5,9 @@
 struct Description {
 public:
     // prevent constructor by default
-    Description& operator=(Description const&) = delete;
-    Description(Description const&)            = delete;
-    Description()                              = delete;
+    Description& operator=(Description const&);
+    Description(Description const&);
+    Description();
 
 public:
     // NOLINTBEGIN

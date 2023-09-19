@@ -29,8 +29,8 @@ public:
     std::string    mSceneName;   // this+0x68
 
     // prevent constructor by default
-    NpcRequestPacket& operator=(NpcRequestPacket const&) = delete;
-    NpcRequestPacket(NpcRequestPacket const&)            = delete;
+    NpcRequestPacket& operator=(NpcRequestPacket const&);
+    NpcRequestPacket(NpcRequestPacket const&);
 
 public:
     // NOLINTBEGIN

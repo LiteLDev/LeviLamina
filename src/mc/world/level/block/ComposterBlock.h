@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class ComposterBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    ComposterBlock& operator=(ComposterBlock const&) = delete;
-    ComposterBlock(ComposterBlock const&)            = delete;
-    ComposterBlock()                                 = delete;
+    ComposterBlock& operator=(ComposterBlock const&);
+    ComposterBlock(ComposterBlock const&);
+    ComposterBlock();
 
 public:
     // NOLINTBEGIN
@@ -248,11 +248,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION() {
-        return COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
-    }
+    auto& $COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
 
-    inline auto& $PARTICLE_OFFSET() { return PARTICLE_OFFSET; }
+    auto& $PARTICLE_OFFSET() { return PARTICLE_OFFSET; }
 
     // NOLINTEND
 };

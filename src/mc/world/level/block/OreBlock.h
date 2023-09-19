@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class OreBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    OreBlock& operator=(OreBlock const&) = delete;
-    OreBlock(OreBlock const&)            = delete;
-    OreBlock()                           = delete;
+    OreBlock& operator=(OreBlock const&);
+    OreBlock(OreBlock const&);
+    OreBlock();
 
 public:
     // NOLINTBEGIN

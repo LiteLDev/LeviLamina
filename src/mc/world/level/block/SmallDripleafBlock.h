@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class SmallDripleafBlock : public ::BushBlock {
 public:
     // prevent constructor by default
-    SmallDripleafBlock& operator=(SmallDripleafBlock const&) = delete;
-    SmallDripleafBlock(SmallDripleafBlock const&)            = delete;
-    SmallDripleafBlock()                                     = delete;
+    SmallDripleafBlock& operator=(SmallDripleafBlock const&);
+    SmallDripleafBlock(SmallDripleafBlock const&);
+    SmallDripleafBlock();
 
 public:
     // NOLINTBEGIN

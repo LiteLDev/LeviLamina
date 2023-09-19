@@ -8,8 +8,8 @@
 class ChunkViewOwner {
 public:
     // prevent constructor by default
-    ChunkViewOwner& operator=(ChunkViewOwner const&) = delete;
-    ChunkViewOwner()                                 = delete;
+    ChunkViewOwner& operator=(ChunkViewOwner const&);
+    ChunkViewOwner();
 
 public:
     // NOLINTBEGIN

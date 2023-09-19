@@ -15,16 +15,16 @@ public:
     class PoolHandleInterface {
     public:
         // prevent constructor by default
-        PoolHandleInterface& operator=(PoolHandleInterface const&) = delete;
-        PoolHandleInterface(PoolHandleInterface const&)            = delete;
-        PoolHandleInterface()                                      = delete;
+        PoolHandleInterface& operator=(PoolHandleInterface const&);
+        PoolHandleInterface(PoolHandleInterface const&);
+        PoolHandleInterface();
     };
 
 public:
     // prevent constructor by default
-    WorkerPoolManager& operator=(WorkerPoolManager const&) = delete;
-    WorkerPoolManager(WorkerPoolManager const&)            = delete;
-    WorkerPoolManager()                                    = delete;
+    WorkerPoolManager& operator=(WorkerPoolManager const&);
+    WorkerPoolManager(WorkerPoolManager const&);
+    WorkerPoolManager();
 
 public:
     // NOLINTBEGIN

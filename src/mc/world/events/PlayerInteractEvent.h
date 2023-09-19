@@ -5,8 +5,8 @@
 struct PlayerInteractEvent {
 public:
     // prevent constructor by default
-    PlayerInteractEvent& operator=(PlayerInteractEvent const&) = delete;
-    PlayerInteractEvent()                                      = delete;
+    PlayerInteractEvent& operator=(PlayerInteractEvent const&);
+    PlayerInteractEvent();
 
 public:
     // NOLINTBEGIN

@@ -14,9 +14,9 @@
 class DBChunkStorage : public ::ChunkSource {
 public:
     // prevent constructor by default
-    DBChunkStorage& operator=(DBChunkStorage const&) = delete;
-    DBChunkStorage(DBChunkStorage const&)            = delete;
-    DBChunkStorage()                                 = delete;
+    DBChunkStorage& operator=(DBChunkStorage const&);
+    DBChunkStorage(DBChunkStorage const&);
+    DBChunkStorage();
 
 public:
     // NOLINTBEGIN
@@ -193,9 +193,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $threadBatch() { return threadBatch; }
+    auto& $threadBatch() { return threadBatch; }
 
-    inline auto& $threadBuffer() { return threadBuffer; }
+    auto& $threadBuffer() { return threadBuffer; }
 
     // NOLINTEND
 };

@@ -16,8 +16,8 @@ namespace BlockBreathabilityVersioning {
 class BlockBreathability11910Upgrade : public ::CerealSchemaUpgrade {
 public:
     // prevent constructor by default
-    BlockBreathability11910Upgrade& operator=(BlockBreathability11910Upgrade const&) = delete;
-    BlockBreathability11910Upgrade(BlockBreathability11910Upgrade const&)            = delete;
+    BlockBreathability11910Upgrade& operator=(BlockBreathability11910Upgrade const&);
+    BlockBreathability11910Upgrade(BlockBreathability11910Upgrade const&);
 
 public:
     // NOLINTBEGIN

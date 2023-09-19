@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class SimpleIntFilterTest : public ::FilterTest {
 public:
     // prevent constructor by default
-    SimpleIntFilterTest& operator=(SimpleIntFilterTest const&) = delete;
-    SimpleIntFilterTest(SimpleIntFilterTest const&)            = delete;
-    SimpleIntFilterTest()                                      = delete;
+    SimpleIntFilterTest& operator=(SimpleIntFilterTest const&);
+    SimpleIntFilterTest(SimpleIntFilterTest const&);
+    SimpleIntFilterTest();
 
 public:
     // NOLINTBEGIN

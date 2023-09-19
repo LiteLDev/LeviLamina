@@ -10,9 +10,9 @@ namespace Core { class File; }
 class LevelDbWritableFile {
 public:
     // prevent constructor by default
-    LevelDbWritableFile& operator=(LevelDbWritableFile const&) = delete;
-    LevelDbWritableFile(LevelDbWritableFile const&)            = delete;
-    LevelDbWritableFile()                                      = delete;
+    LevelDbWritableFile& operator=(LevelDbWritableFile const&);
+    LevelDbWritableFile(LevelDbWritableFile const&);
+    LevelDbWritableFile();
 
 public:
     // NOLINTBEGIN

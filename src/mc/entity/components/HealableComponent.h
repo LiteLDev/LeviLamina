@@ -5,9 +5,9 @@
 class HealableComponent {
 public:
     // prevent constructor by default
-    HealableComponent& operator=(HealableComponent const&) = delete;
-    HealableComponent(HealableComponent const&)            = delete;
-    HealableComponent()                                    = delete;
+    HealableComponent& operator=(HealableComponent const&);
+    HealableComponent(HealableComponent const&);
+    HealableComponent();
 
 public:
     // NOLINTBEGIN

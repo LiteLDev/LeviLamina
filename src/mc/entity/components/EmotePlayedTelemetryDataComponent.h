@@ -5,7 +5,7 @@
 struct EmotePlayedTelemetryDataComponent {
 public:
     // prevent constructor by default
-    EmotePlayedTelemetryDataComponent& operator=(EmotePlayedTelemetryDataComponent const&) = delete;
-    EmotePlayedTelemetryDataComponent(EmotePlayedTelemetryDataComponent const&)            = delete;
-    EmotePlayedTelemetryDataComponent()                                                    = delete;
+    EmotePlayedTelemetryDataComponent& operator=(EmotePlayedTelemetryDataComponent const&);
+    EmotePlayedTelemetryDataComponent(EmotePlayedTelemetryDataComponent const&);
+    EmotePlayedTelemetryDataComponent();
 };

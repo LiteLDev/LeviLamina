@@ -20,8 +20,8 @@ namespace Bedrock::Http {
 class LibHttpClientImpl : public ::Bedrock::Http::DispatcherProcess {
 public:
     // prevent constructor by default
-    LibHttpClientImpl& operator=(LibHttpClientImpl const&) = delete;
-    LibHttpClientImpl(LibHttpClientImpl const&)            = delete;
+    LibHttpClientImpl& operator=(LibHttpClientImpl const&);
+    LibHttpClientImpl(LibHttpClientImpl const&);
 
 public:
     // NOLINTBEGIN
@@ -104,9 +104,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $sWeakThis() { return sWeakThis; }
+    auto& $sWeakThis() { return sWeakThis; }
 
-    inline auto& $sWeakThisMutex() { return sWeakThisMutex; }
+    auto& $sWeakThisMutex() { return sWeakThisMutex; }
 
     // NOLINTEND
 };

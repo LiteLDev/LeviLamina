@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class ExperiencePotionItem : public ::Item {
 public:
     // prevent constructor by default
-    ExperiencePotionItem& operator=(ExperiencePotionItem const&) = delete;
-    ExperiencePotionItem(ExperiencePotionItem const&)            = delete;
-    ExperiencePotionItem()                                       = delete;
+    ExperiencePotionItem& operator=(ExperiencePotionItem const&);
+    ExperiencePotionItem(ExperiencePotionItem const&);
+    ExperiencePotionItem();
 
 public:
     // NOLINTBEGIN

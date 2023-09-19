@@ -7,9 +7,9 @@ namespace BlockDescriptorSerializer {
 struct CompoundProxy {
 public:
     // prevent constructor by default
-    CompoundProxy& operator=(CompoundProxy const&) = delete;
-    CompoundProxy(CompoundProxy const&)            = delete;
-    CompoundProxy()                                = delete;
+    CompoundProxy& operator=(CompoundProxy const&);
+    CompoundProxy(CompoundProxy const&);
+    CompoundProxy();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class ChunkBuildOrderPolicyBase {
 public:
     // prevent constructor by default
-    ChunkBuildOrderPolicyBase& operator=(ChunkBuildOrderPolicyBase const&) = delete;
-    ChunkBuildOrderPolicyBase(ChunkBuildOrderPolicyBase const&)            = delete;
-    ChunkBuildOrderPolicyBase()                                            = delete;
+    ChunkBuildOrderPolicyBase& operator=(ChunkBuildOrderPolicyBase const&);
+    ChunkBuildOrderPolicyBase(ChunkBuildOrderPolicyBase const&);
+    ChunkBuildOrderPolicyBase();
 
 public:
     // NOLINTBEGIN

@@ -22,9 +22,9 @@ namespace mce { class Color; }
 class HangingActorItem : public ::Item {
 public:
     // prevent constructor by default
-    HangingActorItem& operator=(HangingActorItem const&) = delete;
-    HangingActorItem(HangingActorItem const&)            = delete;
-    HangingActorItem()                                   = delete;
+    HangingActorItem& operator=(HangingActorItem const&);
+    HangingActorItem(HangingActorItem const&);
+    HangingActorItem();
 
 public:
     // NOLINTBEGIN

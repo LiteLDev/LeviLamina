@@ -5,9 +5,9 @@
 class NavigationTravelSystem {
 public:
     // prevent constructor by default
-    NavigationTravelSystem& operator=(NavigationTravelSystem const&) = delete;
-    NavigationTravelSystem(NavigationTravelSystem const&)            = delete;
-    NavigationTravelSystem()                                         = delete;
+    NavigationTravelSystem& operator=(NavigationTravelSystem const&);
+    NavigationTravelSystem(NavigationTravelSystem const&);
+    NavigationTravelSystem();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class SavedDataStorage {
 public:
     // prevent constructor by default
-    SavedDataStorage& operator=(SavedDataStorage const&) = delete;
-    SavedDataStorage(SavedDataStorage const&)            = delete;
-    SavedDataStorage()                                   = delete;
+    SavedDataStorage& operator=(SavedDataStorage const&);
+    SavedDataStorage(SavedDataStorage const&);
+    SavedDataStorage();
 
 public:
     // NOLINTBEGIN
@@ -15,7 +15,7 @@ public:
     MCVAPI ~SavedDataStorage();
 
     // symbol: ??0SavedDataStorage@@QEAA@PEAVLevelStorage@@@Z
-    MCAPI SavedDataStorage(class LevelStorage*);
+    MCAPI explicit SavedDataStorage(class LevelStorage*);
 
     // symbol:
     // ?loadAndSet@SavedDataStorage@@QEAA_NAEAVSavedData@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

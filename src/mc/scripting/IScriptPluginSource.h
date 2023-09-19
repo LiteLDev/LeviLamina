@@ -5,7 +5,7 @@
 class IScriptPluginSource {
 public:
     // prevent constructor by default
-    IScriptPluginSource& operator=(IScriptPluginSource const&) = delete;
-    IScriptPluginSource(IScriptPluginSource const&)            = delete;
-    IScriptPluginSource()                                      = delete;
+    IScriptPluginSource& operator=(IScriptPluginSource const&);
+    IScriptPluginSource(IScriptPluginSource const&);
+    IScriptPluginSource();
 };

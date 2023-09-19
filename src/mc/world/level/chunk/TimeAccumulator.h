@@ -5,9 +5,9 @@
 class TimeAccumulator {
 public:
     // prevent constructor by default
-    TimeAccumulator& operator=(TimeAccumulator const&) = delete;
-    TimeAccumulator(TimeAccumulator const&)            = delete;
-    TimeAccumulator()                                  = delete;
+    TimeAccumulator& operator=(TimeAccumulator const&);
+    TimeAccumulator(TimeAccumulator const&);
+    TimeAccumulator();
 
 public:
     // NOLINTBEGIN

@@ -32,7 +32,7 @@ public:
     struct AnnounceServerData {
     public:
         // prevent constructor by default
-        AnnounceServerData() = delete;
+        AnnounceServerData();
 
     public:
         // NOLINTBEGIN
@@ -52,9 +52,9 @@ public:
     struct StateChangeRequestData {
     public:
         // prevent constructor by default
-        StateChangeRequestData& operator=(StateChangeRequestData const&) = delete;
-        StateChangeRequestData(StateChangeRequestData const&)            = delete;
-        StateChangeRequestData()                                         = delete;
+        StateChangeRequestData& operator=(StateChangeRequestData const&);
+        StateChangeRequestData(StateChangeRequestData const&);
+        StateChangeRequestData();
 
     public:
         // NOLINTBEGIN
@@ -67,9 +67,9 @@ public:
     class SuspendStateData {
     public:
         // prevent constructor by default
-        SuspendStateData& operator=(SuspendStateData const&) = delete;
-        SuspendStateData(SuspendStateData const&)            = delete;
-        SuspendStateData()                                   = delete;
+        SuspendStateData& operator=(SuspendStateData const&);
+        SuspendStateData(SuspendStateData const&);
+        SuspendStateData();
 
     public:
         // NOLINTBEGIN
@@ -81,9 +81,9 @@ public:
 
 public:
     // prevent constructor by default
-    RakNetServerLocator& operator=(RakNetServerLocator const&) = delete;
-    RakNetServerLocator(RakNetServerLocator const&)            = delete;
-    RakNetServerLocator()                                      = delete;
+    RakNetServerLocator& operator=(RakNetServerLocator const&);
+    RakNetServerLocator(RakNetServerLocator const&);
+    RakNetServerLocator();
 
 public:
     // NOLINTBEGIN

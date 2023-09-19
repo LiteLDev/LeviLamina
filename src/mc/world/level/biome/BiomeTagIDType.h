@@ -5,7 +5,7 @@
 struct BiomeTagIDType {
 public:
     // prevent constructor by default
-    BiomeTagIDType& operator=(BiomeTagIDType const&) = delete;
-    BiomeTagIDType(BiomeTagIDType const&)            = delete;
-    BiomeTagIDType()                                 = delete;
+    BiomeTagIDType& operator=(BiomeTagIDType const&);
+    BiomeTagIDType(BiomeTagIDType const&);
+    BiomeTagIDType();
 };

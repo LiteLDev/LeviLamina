@@ -10,9 +10,9 @@ namespace TreeHelper { struct TreeParams; }
 class MegaTreeTrunk {
 public:
     // prevent constructor by default
-    MegaTreeTrunk& operator=(MegaTreeTrunk const&) = delete;
-    MegaTreeTrunk(MegaTreeTrunk const&)            = delete;
-    MegaTreeTrunk()                                = delete;
+    MegaTreeTrunk& operator=(MegaTreeTrunk const&);
+    MegaTreeTrunk(MegaTreeTrunk const&);
+    MegaTreeTrunk();
 
 public:
     // NOLINTBEGIN

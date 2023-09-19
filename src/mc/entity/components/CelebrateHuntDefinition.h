@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class CelebrateHuntDefinition {
 public:
     // prevent constructor by default
-    CelebrateHuntDefinition& operator=(CelebrateHuntDefinition const&) = delete;
-    CelebrateHuntDefinition(CelebrateHuntDefinition const&)            = delete;
-    CelebrateHuntDefinition()                                          = delete;
+    CelebrateHuntDefinition& operator=(CelebrateHuntDefinition const&);
+    CelebrateHuntDefinition(CelebrateHuntDefinition const&);
+    CelebrateHuntDefinition();
 
 public:
     // NOLINTBEGIN

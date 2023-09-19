@@ -7,9 +7,9 @@ namespace Bedrock::Http {
 class HttpInterface {
 public:
     // prevent constructor by default
-    HttpInterface& operator=(HttpInterface const&) = delete;
-    HttpInterface(HttpInterface const&)            = delete;
-    HttpInterface()                                = delete;
+    HttpInterface& operator=(HttpInterface const&);
+    HttpInterface(HttpInterface const&);
+    HttpInterface();
 };
 
 }; // namespace Bedrock::Http

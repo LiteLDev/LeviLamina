@@ -17,7 +17,7 @@ public:
     MCAPI CommandPosition();
 
     // symbol: ??0CommandPosition@@QEAA@AEBVVec3@@@Z
-    MCAPI CommandPosition(class Vec3 const&);
+    MCAPI explicit CommandPosition(class Vec3 const&);
 
     // symbol: ?getBlockPos@CommandPosition@@QEBA?AVBlockPos@@AEBVVec3@@0@Z
     MCAPI class BlockPos getBlockPos(class Vec3 const&, class Vec3 const&) const;

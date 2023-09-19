@@ -14,9 +14,9 @@ namespace Core { class Path; }
 class NullSoundPlayer : public ::SoundPlayerInterface {
 public:
     // prevent constructor by default
-    NullSoundPlayer& operator=(NullSoundPlayer const&) = delete;
-    NullSoundPlayer(NullSoundPlayer const&)            = delete;
-    NullSoundPlayer()                                  = delete;
+    NullSoundPlayer& operator=(NullSoundPlayer const&);
+    NullSoundPlayer(NullSoundPlayer const&);
+    NullSoundPlayer();
 
 public:
     // NOLINTBEGIN

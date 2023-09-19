@@ -5,8 +5,8 @@
 struct BiomeDecorationFeature {
 public:
     // prevent constructor by default
-    BiomeDecorationFeature& operator=(BiomeDecorationFeature const&) = delete;
-    BiomeDecorationFeature()                                         = delete;
+    BiomeDecorationFeature& operator=(BiomeDecorationFeature const&);
+    BiomeDecorationFeature();
 
 public:
     // NOLINTBEGIN

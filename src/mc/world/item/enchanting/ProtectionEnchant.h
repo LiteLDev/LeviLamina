@@ -8,9 +8,9 @@
 class ProtectionEnchant : public ::Enchant {
 public:
     // prevent constructor by default
-    ProtectionEnchant& operator=(ProtectionEnchant const&) = delete;
-    ProtectionEnchant(ProtectionEnchant const&)            = delete;
-    ProtectionEnchant()                                    = delete;
+    ProtectionEnchant& operator=(ProtectionEnchant const&);
+    ProtectionEnchant(ProtectionEnchant const&);
+    ProtectionEnchant();
 
 public:
     // NOLINTBEGIN
@@ -70,9 +70,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $THORNS_CHANCE_PER_LEVEL() { return THORNS_CHANCE_PER_LEVEL; }
+    auto& $THORNS_CHANCE_PER_LEVEL() { return THORNS_CHANCE_PER_LEVEL; }
 
-    inline auto& $VALID_ENCHANTMENTS() { return VALID_ENCHANTMENTS; }
+    auto& $VALID_ENCHANTMENTS() { return VALID_ENCHANTMENTS; }
 
     // NOLINTEND
 };

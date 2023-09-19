@@ -5,9 +5,9 @@
 class MinecraftScheduler {
 public:
     // prevent constructor by default
-    MinecraftScheduler& operator=(MinecraftScheduler const&) = delete;
-    MinecraftScheduler(MinecraftScheduler const&)            = delete;
-    MinecraftScheduler()                                     = delete;
+    MinecraftScheduler& operator=(MinecraftScheduler const&);
+    MinecraftScheduler(MinecraftScheduler const&);
+    MinecraftScheduler();
 
 public:
     // NOLINTBEGIN
@@ -29,7 +29,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mInstance() { return mInstance; }
+    auto& $mInstance() { return mInstance; }
 
     // NOLINTEND
 };

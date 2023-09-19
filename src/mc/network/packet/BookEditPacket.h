@@ -19,7 +19,7 @@ public:
     std::string    mText3;      // this+0x80
 
     // prevent constructor by default
-    BookEditPacket& operator=(BookEditPacket const&) = delete;
+    BookEditPacket& operator=(BookEditPacket const&);
 
 public:
     // NOLINTBEGIN

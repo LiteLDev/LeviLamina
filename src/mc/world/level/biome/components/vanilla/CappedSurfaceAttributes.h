@@ -13,16 +13,16 @@ public:
     struct MaterialLayer {
     public:
         // prevent constructor by default
-        MaterialLayer& operator=(MaterialLayer const&) = delete;
-        MaterialLayer(MaterialLayer const&)            = delete;
-        MaterialLayer()                                = delete;
+        MaterialLayer& operator=(MaterialLayer const&);
+        MaterialLayer(MaterialLayer const&);
+        MaterialLayer();
     };
 
 public:
     // prevent constructor by default
-    CappedSurfaceAttributes& operator=(CappedSurfaceAttributes const&) = delete;
-    CappedSurfaceAttributes(CappedSurfaceAttributes const&)            = delete;
-    CappedSurfaceAttributes()                                          = delete;
+    CappedSurfaceAttributes& operator=(CappedSurfaceAttributes const&);
+    CappedSurfaceAttributes(CappedSurfaceAttributes const&);
+    CappedSurfaceAttributes();
 
 public:
     // NOLINTBEGIN

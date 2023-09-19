@@ -64,9 +64,9 @@ public:
     struct LookupByNameImplReturnType {
     public:
         // prevent constructor by default
-        LookupByNameImplReturnType& operator=(LookupByNameImplReturnType const&) = delete;
-        LookupByNameImplReturnType(LookupByNameImplReturnType const&)            = delete;
-        LookupByNameImplReturnType()                                             = delete;
+        LookupByNameImplReturnType& operator=(LookupByNameImplReturnType const&);
+        LookupByNameImplReturnType(LookupByNameImplReturnType const&);
+        LookupByNameImplReturnType();
 
         class WeakPtr<class BlockLegacy> mBlockLegacy;
         class Block const*               mBlock;
@@ -95,9 +95,9 @@ public:
 
     // prevent constructor by default
     BlockTypeRegistry&
-    operator=(BlockTypeRegistry const&)         = delete;
-    BlockTypeRegistry(BlockTypeRegistry const&) = delete;
-    BlockTypeRegistry()                         = delete;
+    operator=(BlockTypeRegistry const&)         ;
+    BlockTypeRegistry(BlockTypeRegistry const&) ;
+    BlockTypeRegistry()                         ;
 
 public:
     // NOLINTBEGIN
@@ -224,23 +224,21 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mBlockAliasLookupMap() { return mBlockAliasLookupMap; }
+    auto& $mBlockAliasLookupMap() { return mBlockAliasLookupMap; }
 
-    inline auto& $mBlockComplexAliasLookupMap() { return mBlockComplexAliasLookupMap; }
+    auto& $mBlockComplexAliasLookupMap() { return mBlockComplexAliasLookupMap; }
 
-    inline auto& $mBlockComplexAliasPostSplitBlockNamesLookupMap() {
-        return mBlockComplexAliasPostSplitBlockNamesLookupMap;
-    }
+    auto& $mBlockComplexAliasPostSplitBlockNamesLookupMap() { return mBlockComplexAliasPostSplitBlockNamesLookupMap; }
 
-    inline auto& $mBlockLookupMap() { return mBlockLookupMap; }
+    auto& $mBlockLookupMap() { return mBlockLookupMap; }
 
-    inline auto& $mBlockNameHashToStringMap() { return mBlockNameHashToStringMap; }
+    auto& $mBlockNameHashToStringMap() { return mBlockNameHashToStringMap; }
 
-    inline auto& $mEntities() { return mEntities; }
+    auto& $mEntities() { return mEntities; }
 
-    inline auto& $mKnownNamespaces() { return mKnownNamespaces; }
+    auto& $mKnownNamespaces() { return mKnownNamespaces; }
 
-    inline auto& $mRWLock() { return mRWLock; }
+    auto& $mRWLock() { return mRWLock; }
 
     // NOLINTEND
 };

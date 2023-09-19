@@ -26,9 +26,9 @@
 class WaterAnimal : public ::Mob {
 public:
     // prevent constructor by default
-    WaterAnimal& operator=(WaterAnimal const&) = delete;
-    WaterAnimal(WaterAnimal const&)            = delete;
-    WaterAnimal()                              = delete;
+    WaterAnimal& operator=(WaterAnimal const&);
+    WaterAnimal(WaterAnimal const&);
+    WaterAnimal();
 
 public:
     // NOLINTBEGIN

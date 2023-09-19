@@ -9,9 +9,9 @@
 class VexCopyOwnerTargetGoal : public ::TargetGoal {
 public:
     // prevent constructor by default
-    VexCopyOwnerTargetGoal& operator=(VexCopyOwnerTargetGoal const&) = delete;
-    VexCopyOwnerTargetGoal(VexCopyOwnerTargetGoal const&)            = delete;
-    VexCopyOwnerTargetGoal()                                         = delete;
+    VexCopyOwnerTargetGoal& operator=(VexCopyOwnerTargetGoal const&);
+    VexCopyOwnerTargetGoal(VexCopyOwnerTargetGoal const&);
+    VexCopyOwnerTargetGoal();
 
 public:
     // NOLINTBEGIN

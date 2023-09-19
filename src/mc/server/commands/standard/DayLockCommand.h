@@ -8,9 +8,9 @@
 class DayLockCommand : public ::Command {
 public:
     // prevent constructor by default
-    DayLockCommand& operator=(DayLockCommand const&) = delete;
-    DayLockCommand(DayLockCommand const&)            = delete;
-    DayLockCommand()                                 = delete;
+    DayLockCommand& operator=(DayLockCommand const&);
+    DayLockCommand(DayLockCommand const&);
+    DayLockCommand();
 
 public:
     // NOLINTBEGIN

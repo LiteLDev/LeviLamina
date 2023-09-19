@@ -5,7 +5,7 @@
 struct InterpolationPair {
 public:
     // prevent constructor by default
-    InterpolationPair& operator=(InterpolationPair const&) = delete;
-    InterpolationPair(InterpolationPair const&)            = delete;
-    InterpolationPair()                                    = delete;
+    InterpolationPair& operator=(InterpolationPair const&);
+    InterpolationPair(InterpolationPair const&);
+    InterpolationPair();
 };

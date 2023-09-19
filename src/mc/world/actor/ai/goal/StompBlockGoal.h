@@ -9,9 +9,9 @@
 class StompBlockGoal : public ::BaseMoveToBlockGoal {
 public:
     // prevent constructor by default
-    StompBlockGoal& operator=(StompBlockGoal const&) = delete;
-    StompBlockGoal(StompBlockGoal const&)            = delete;
-    StompBlockGoal()                                 = delete;
+    StompBlockGoal& operator=(StompBlockGoal const&);
+    StompBlockGoal(StompBlockGoal const&);
+    StompBlockGoal();
 
 public:
     // NOLINTBEGIN

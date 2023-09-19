@@ -6,7 +6,7 @@ template <typename T0>
 class SelectorIterator {
 public:
     // prevent constructor by default
-    SelectorIterator& operator=(SelectorIterator const&) = delete;
-    SelectorIterator(SelectorIterator const&)            = delete;
-    SelectorIterator()                                   = delete;
+    SelectorIterator& operator=(SelectorIterator const&);
+    SelectorIterator(SelectorIterator const&);
+    SelectorIterator();
 };

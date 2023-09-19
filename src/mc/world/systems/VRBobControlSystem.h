@@ -5,9 +5,9 @@
 class VRBobControlSystem {
 public:
     // prevent constructor by default
-    VRBobControlSystem& operator=(VRBobControlSystem const&) = delete;
-    VRBobControlSystem(VRBobControlSystem const&)            = delete;
-    VRBobControlSystem()                                     = delete;
+    VRBobControlSystem& operator=(VRBobControlSystem const&);
+    VRBobControlSystem(VRBobControlSystem const&);
+    VRBobControlSystem();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class SendPlayerAuthInputReceivedEventSystem {
 public:
     // prevent constructor by default
-    SendPlayerAuthInputReceivedEventSystem& operator=(SendPlayerAuthInputReceivedEventSystem const&) = delete;
-    SendPlayerAuthInputReceivedEventSystem(SendPlayerAuthInputReceivedEventSystem const&)            = delete;
-    SendPlayerAuthInputReceivedEventSystem()                                                         = delete;
+    SendPlayerAuthInputReceivedEventSystem& operator=(SendPlayerAuthInputReceivedEventSystem const&);
+    SendPlayerAuthInputReceivedEventSystem(SendPlayerAuthInputReceivedEventSystem const&);
+    SendPlayerAuthInputReceivedEventSystem();
 
 public:
     // NOLINTBEGIN

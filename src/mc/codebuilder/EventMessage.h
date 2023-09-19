@@ -7,9 +7,9 @@ namespace CodeBuilder {
 struct EventMessage {
 public:
     // prevent constructor by default
-    EventMessage& operator=(EventMessage const&) = delete;
-    EventMessage(EventMessage const&)            = delete;
-    EventMessage()                               = delete;
+    EventMessage& operator=(EventMessage const&);
+    EventMessage(EventMessage const&);
+    EventMessage();
 
 public:
     // NOLINTBEGIN

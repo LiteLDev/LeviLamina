@@ -5,9 +5,9 @@
 class GiveableComponent {
 public:
     // prevent constructor by default
-    GiveableComponent& operator=(GiveableComponent const&) = delete;
-    GiveableComponent(GiveableComponent const&)            = delete;
-    GiveableComponent()                                    = delete;
+    GiveableComponent& operator=(GiveableComponent const&);
+    GiveableComponent(GiveableComponent const&);
+    GiveableComponent();
 
 public:
     // NOLINTBEGIN

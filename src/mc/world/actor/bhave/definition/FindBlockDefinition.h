@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class FindBlockDefinition : public ::BehaviorDefinition {
 public:
     // prevent constructor by default
-    FindBlockDefinition& operator=(FindBlockDefinition const&) = delete;
-    FindBlockDefinition(FindBlockDefinition const&)            = delete;
-    FindBlockDefinition()                                      = delete;
+    FindBlockDefinition& operator=(FindBlockDefinition const&);
+    FindBlockDefinition(FindBlockDefinition const&);
+    FindBlockDefinition();
 
 public:
     // NOLINTBEGIN

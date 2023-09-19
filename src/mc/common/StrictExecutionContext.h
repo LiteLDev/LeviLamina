@@ -6,7 +6,7 @@ template <typename T0, typename T1, typename T2, typename T3, typename T4, typen
 class StrictExecutionContext {
 public:
     // prevent constructor by default
-    StrictExecutionContext& operator=(StrictExecutionContext const&) = delete;
-    StrictExecutionContext(StrictExecutionContext const&)            = delete;
-    StrictExecutionContext()                                         = delete;
+    StrictExecutionContext& operator=(StrictExecutionContext const&);
+    StrictExecutionContext(StrictExecutionContext const&);
+    StrictExecutionContext();
 };

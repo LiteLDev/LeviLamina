@@ -16,9 +16,9 @@ namespace ScriptModuleMinecraftServerUI {
 class TextInputControl : public ::ScriptModuleMinecraftServerUI::IControl {
 public:
     // prevent constructor by default
-    TextInputControl& operator=(TextInputControl const&) = delete;
-    TextInputControl(TextInputControl const&)            = delete;
-    TextInputControl()                                   = delete;
+    TextInputControl& operator=(TextInputControl const&);
+    TextInputControl(TextInputControl const&);
+    TextInputControl();
 
 public:
     // NOLINTBEGIN

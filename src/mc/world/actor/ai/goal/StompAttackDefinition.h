@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class StompAttackDefinition : public ::MeleeAttackDefinition {
 public:
     // prevent constructor by default
-    StompAttackDefinition& operator=(StompAttackDefinition const&) = delete;
-    StompAttackDefinition(StompAttackDefinition const&)            = delete;
+    StompAttackDefinition& operator=(StompAttackDefinition const&);
+    StompAttackDefinition(StompAttackDefinition const&);
 
 public:
     // NOLINTBEGIN

@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class ItemLockHelper {
 public:
     // prevent constructor by default
-    ItemLockHelper& operator=(ItemLockHelper const&) = delete;
-    ItemLockHelper(ItemLockHelper const&)            = delete;
-    ItemLockHelper()                                 = delete;
+    ItemLockHelper& operator=(ItemLockHelper const&);
+    ItemLockHelper(ItemLockHelper const&);
+    ItemLockHelper();
 
 public:
     // NOLINTBEGIN

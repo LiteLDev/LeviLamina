@@ -5,9 +5,9 @@
 struct FilterInputs {
 public:
     // prevent constructor by default
-    FilterInputs& operator=(FilterInputs const&) = delete;
-    FilterInputs(FilterInputs const&)            = delete;
-    FilterInputs()                               = delete;
+    FilterInputs& operator=(FilterInputs const&);
+    FilterInputs(FilterInputs const&);
+    FilterInputs();
 
 public:
     // NOLINTBEGIN

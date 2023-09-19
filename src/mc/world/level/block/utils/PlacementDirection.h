@@ -33,9 +33,9 @@ public:
     struct EnabledStates {
     public:
         // prevent constructor by default
-        EnabledStates& operator=(EnabledStates const&) = delete;
-        EnabledStates(EnabledStates const&)            = delete;
-        EnabledStates()                                = delete;
+        EnabledStates& operator=(EnabledStates const&);
+        EnabledStates(EnabledStates const&);
+        EnabledStates();
 
     public:
         // NOLINTBEGIN
@@ -50,9 +50,9 @@ public:
     class UpdateCardinalGetPlacementBlockCallback : public ::BlockTrait::IGetPlacementBlockCallback {
     public:
         // prevent constructor by default
-        UpdateCardinalGetPlacementBlockCallback& operator=(UpdateCardinalGetPlacementBlockCallback const&) = delete;
-        UpdateCardinalGetPlacementBlockCallback(UpdateCardinalGetPlacementBlockCallback const&)            = delete;
-        UpdateCardinalGetPlacementBlockCallback()                                                          = delete;
+        UpdateCardinalGetPlacementBlockCallback& operator=(UpdateCardinalGetPlacementBlockCallback const&);
+        UpdateCardinalGetPlacementBlockCallback(UpdateCardinalGetPlacementBlockCallback const&);
+        UpdateCardinalGetPlacementBlockCallback();
 
     public:
         // NOLINTBEGIN
@@ -76,9 +76,9 @@ public:
     class UpdateFacingGetPlacementBlockCallback : public ::BlockTrait::IGetPlacementBlockCallback {
     public:
         // prevent constructor by default
-        UpdateFacingGetPlacementBlockCallback& operator=(UpdateFacingGetPlacementBlockCallback const&) = delete;
-        UpdateFacingGetPlacementBlockCallback(UpdateFacingGetPlacementBlockCallback const&)            = delete;
-        UpdateFacingGetPlacementBlockCallback()                                                        = delete;
+        UpdateFacingGetPlacementBlockCallback& operator=(UpdateFacingGetPlacementBlockCallback const&);
+        UpdateFacingGetPlacementBlockCallback(UpdateFacingGetPlacementBlockCallback const&);
+        UpdateFacingGetPlacementBlockCallback();
 
     public:
         // NOLINTBEGIN
@@ -101,9 +101,9 @@ public:
 
 public:
     // prevent constructor by default
-    PlacementDirection& operator=(PlacementDirection const&) = delete;
-    PlacementDirection(PlacementDirection const&)            = delete;
-    PlacementDirection()                                     = delete;
+    PlacementDirection& operator=(PlacementDirection const&);
+    PlacementDirection(PlacementDirection const&);
+    PlacementDirection();
 
 public:
     // NOLINTBEGIN

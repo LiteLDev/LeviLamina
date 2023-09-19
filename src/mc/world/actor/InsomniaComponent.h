@@ -5,9 +5,9 @@
 class InsomniaComponent {
 public:
     // prevent constructor by default
-    InsomniaComponent& operator=(InsomniaComponent const&) = delete;
-    InsomniaComponent(InsomniaComponent const&)            = delete;
-    InsomniaComponent()                                    = delete;
+    InsomniaComponent& operator=(InsomniaComponent const&);
+    InsomniaComponent(InsomniaComponent const&);
+    InsomniaComponent();
 
 public:
     // NOLINTBEGIN

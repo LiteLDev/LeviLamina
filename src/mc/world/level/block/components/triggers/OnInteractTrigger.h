@@ -5,9 +5,9 @@
 class OnInteractTrigger {
 public:
     // prevent constructor by default
-    OnInteractTrigger& operator=(OnInteractTrigger const&) = delete;
-    OnInteractTrigger(OnInteractTrigger const&)            = delete;
-    OnInteractTrigger()                                    = delete;
+    OnInteractTrigger& operator=(OnInteractTrigger const&);
+    OnInteractTrigger(OnInteractTrigger const&);
+    OnInteractTrigger();
 
 public:
     // NOLINTBEGIN

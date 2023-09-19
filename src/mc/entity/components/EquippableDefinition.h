@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class EquippableDefinition {
 public:
     // prevent constructor by default
-    EquippableDefinition& operator=(EquippableDefinition const&) = delete;
-    EquippableDefinition(EquippableDefinition const&)            = delete;
-    EquippableDefinition()                                       = delete;
+    EquippableDefinition& operator=(EquippableDefinition const&);
+    EquippableDefinition(EquippableDefinition const&);
+    EquippableDefinition();
 
 public:
     // NOLINTBEGIN

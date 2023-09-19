@@ -5,9 +5,9 @@
 class BiomeArea {
 public:
     // prevent constructor by default
-    BiomeArea& operator=(BiomeArea const&) = delete;
-    BiomeArea(BiomeArea const&)            = delete;
-    BiomeArea()                            = delete;
+    BiomeArea& operator=(BiomeArea const&);
+    BiomeArea(BiomeArea const&);
+    BiomeArea();
 
 public:
     // NOLINTBEGIN

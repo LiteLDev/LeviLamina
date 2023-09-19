@@ -5,7 +5,7 @@
 class AddMobPacket {
 public:
     // prevent constructor by default
-    AddMobPacket& operator=(AddMobPacket const&) = delete;
-    AddMobPacket(AddMobPacket const&)            = delete;
-    AddMobPacket()                               = delete;
+    AddMobPacket& operator=(AddMobPacket const&);
+    AddMobPacket(AddMobPacket const&);
+    AddMobPacket();
 };

@@ -5,9 +5,9 @@
 class PlanterItemComponent {
 public:
     // prevent constructor by default
-    PlanterItemComponent& operator=(PlanterItemComponent const&) = delete;
-    PlanterItemComponent(PlanterItemComponent const&)            = delete;
-    PlanterItemComponent()                                       = delete;
+    PlanterItemComponent& operator=(PlanterItemComponent const&);
+    PlanterItemComponent(PlanterItemComponent const&);
+    PlanterItemComponent();
 
 public:
     // NOLINTBEGIN

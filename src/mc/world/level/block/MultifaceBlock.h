@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class MultifaceBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    MultifaceBlock& operator=(MultifaceBlock const&) = delete;
-    MultifaceBlock(MultifaceBlock const&)            = delete;
-    MultifaceBlock()                                 = delete;
+    MultifaceBlock& operator=(MultifaceBlock const&);
+    MultifaceBlock(MultifaceBlock const&);
+    MultifaceBlock();
 
 public:
     // NOLINTBEGIN

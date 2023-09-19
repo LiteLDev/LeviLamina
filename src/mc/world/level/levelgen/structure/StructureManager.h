@@ -30,14 +30,14 @@ public:
 
 
     // prevent constructor by default
-    StructureManager& operator=(StructureManager const&) = delete;
-    StructureManager(StructureManager const&)            = delete;
-    StructureManager()                                   = delete;
+    StructureManager& operator=(StructureManager const&);
+    StructureManager(StructureManager const&);
+    StructureManager();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0StructureManager@@QEAA@AEAVResourcePackManager@@@Z
-    MCAPI StructureManager(class ResourcePackManager&);
+    MCAPI explicit StructureManager(class ResourcePackManager&);
 
     // symbol: ?clearAndShutdownStructurePlacement@StructureManager@@QEAAXXZ
     MCAPI void clearAndShutdownStructurePlacement();
@@ -173,9 +173,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $BEHAVIOR_PACK_STRUCTURES_FOLDER() { return BEHAVIOR_PACK_STRUCTURES_FOLDER; }
+    auto& $BEHAVIOR_PACK_STRUCTURES_FOLDER() { return BEHAVIOR_PACK_STRUCTURES_FOLDER; }
 
-    inline auto& $LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX() { return LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX; }
+    auto& $LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX() { return LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX; }
 
     // NOLINTEND
 };

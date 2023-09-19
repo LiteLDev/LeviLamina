@@ -8,8 +8,8 @@
 class TickWorldDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    TickWorldDescription& operator=(TickWorldDescription const&) = delete;
-    TickWorldDescription(TickWorldDescription const&)            = delete;
+    TickWorldDescription& operator=(TickWorldDescription const&);
+    TickWorldDescription(TickWorldDescription const&);
 
 public:
     // NOLINTBEGIN

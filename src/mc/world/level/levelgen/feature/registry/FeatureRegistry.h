@@ -28,8 +28,8 @@ public:
 
 public:
     // prevent constructor by default
-    FeatureRegistry& operator=(FeatureRegistry const&) = delete;
-    FeatureRegistry(FeatureRegistry const&)            = delete;
+    FeatureRegistry& operator=(FeatureRegistry const&);
+    FeatureRegistry(FeatureRegistry const&);
 
 public:
     // NOLINTBEGIN

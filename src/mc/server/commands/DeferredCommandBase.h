@@ -5,9 +5,9 @@
 class DeferredCommandBase {
 public:
     // prevent constructor by default
-    DeferredCommandBase& operator=(DeferredCommandBase const&) = delete;
-    DeferredCommandBase(DeferredCommandBase const&)            = delete;
-    DeferredCommandBase()                                      = delete;
+    DeferredCommandBase& operator=(DeferredCommandBase const&);
+    DeferredCommandBase(DeferredCommandBase const&);
+    DeferredCommandBase();
 
 public:
     // NOLINTBEGIN

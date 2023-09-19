@@ -18,7 +18,7 @@ namespace ScriptModuleMinecraft {
 class ScriptItemDurabilityComponent : public ::ScriptModuleMinecraft::ScriptItemComponent {
 public:
     // prevent constructor by default
-    ScriptItemDurabilityComponent() = delete;
+    ScriptItemDurabilityComponent();
 
 public:
     // NOLINTBEGIN

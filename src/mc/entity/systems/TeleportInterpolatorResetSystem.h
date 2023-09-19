@@ -11,9 +11,9 @@
 class TeleportInterpolatorResetSystem {
 public:
     // prevent constructor by default
-    TeleportInterpolatorResetSystem& operator=(TeleportInterpolatorResetSystem const&) = delete;
-    TeleportInterpolatorResetSystem(TeleportInterpolatorResetSystem const&)            = delete;
-    TeleportInterpolatorResetSystem()                                                  = delete;
+    TeleportInterpolatorResetSystem& operator=(TeleportInterpolatorResetSystem const&);
+    TeleportInterpolatorResetSystem(TeleportInterpolatorResetSystem const&);
+    TeleportInterpolatorResetSystem();
 
 public:
     // NOLINTBEGIN

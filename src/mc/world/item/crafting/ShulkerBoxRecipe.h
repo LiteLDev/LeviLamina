@@ -13,9 +13,9 @@ namespace mce { class UUID; }
 class ShulkerBoxRecipe : public ::ShapelessRecipe {
 public:
     // prevent constructor by default
-    ShulkerBoxRecipe& operator=(ShulkerBoxRecipe const&) = delete;
-    ShulkerBoxRecipe(ShulkerBoxRecipe const&)            = delete;
-    ShulkerBoxRecipe()                                   = delete;
+    ShulkerBoxRecipe& operator=(ShulkerBoxRecipe const&);
+    ShulkerBoxRecipe(ShulkerBoxRecipe const&);
+    ShulkerBoxRecipe();
 
 public:
     // NOLINTBEGIN

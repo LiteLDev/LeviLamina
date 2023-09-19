@@ -8,9 +8,9 @@
 class PlayerContainerSetter : public ::IPlayerContainerSetter {
 public:
     // prevent constructor by default
-    PlayerContainerSetter& operator=(PlayerContainerSetter const&) = delete;
-    PlayerContainerSetter(PlayerContainerSetter const&)            = delete;
-    PlayerContainerSetter()                                        = delete;
+    PlayerContainerSetter& operator=(PlayerContainerSetter const&);
+    PlayerContainerSetter(PlayerContainerSetter const&);
+    PlayerContainerSetter();
 
 public:
     // NOLINTBEGIN
@@ -27,7 +27,7 @@ public:
     virtual void setPlayerUIItem(int, class ItemStack const&);
 
     // symbol: ??0PlayerContainerSetter@@QEAA@AEAVPlayer@@@Z
-    MCAPI PlayerContainerSetter(class Player&);
+    MCAPI explicit PlayerContainerSetter(class Player&);
 
     // NOLINTEND
 };

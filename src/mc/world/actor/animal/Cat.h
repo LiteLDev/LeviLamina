@@ -26,9 +26,9 @@
 class Cat : public ::Animal {
 public:
     // prevent constructor by default
-    Cat& operator=(Cat const&) = delete;
-    Cat(Cat const&)            = delete;
-    Cat()                      = delete;
+    Cat& operator=(Cat const&);
+    Cat(Cat const&);
+    Cat();
 
 public:
     // NOLINTBEGIN

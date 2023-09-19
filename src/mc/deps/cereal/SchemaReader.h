@@ -20,9 +20,9 @@ public:
     struct ScopedPop {
     public:
         // prevent constructor by default
-        ScopedPop& operator=(ScopedPop const&) = delete;
-        ScopedPop(ScopedPop const&)            = delete;
-        ScopedPop()                            = delete;
+        ScopedPop& operator=(ScopedPop const&);
+        ScopedPop(ScopedPop const&);
+        ScopedPop();
 
     public:
         // NOLINTBEGIN
@@ -34,9 +34,9 @@ public:
 
 public:
     // prevent constructor by default
-    SchemaReader& operator=(SchemaReader const&) = delete;
-    SchemaReader(SchemaReader const&)            = delete;
-    SchemaReader()                               = delete;
+    SchemaReader& operator=(SchemaReader const&);
+    SchemaReader(SchemaReader const&);
+    SchemaReader();
 
 public:
     // NOLINTBEGIN

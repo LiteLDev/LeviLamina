@@ -5,7 +5,7 @@
 struct PassengerTickRequestComponent {
 public:
     // prevent constructor by default
-    PassengerTickRequestComponent& operator=(PassengerTickRequestComponent const&) = delete;
-    PassengerTickRequestComponent(PassengerTickRequestComponent const&)            = delete;
-    PassengerTickRequestComponent()                                                = delete;
+    PassengerTickRequestComponent& operator=(PassengerTickRequestComponent const&);
+    PassengerTickRequestComponent(PassengerTickRequestComponent const&);
+    PassengerTickRequestComponent();
 };

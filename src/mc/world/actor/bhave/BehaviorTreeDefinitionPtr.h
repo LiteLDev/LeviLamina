@@ -5,7 +5,7 @@
 class BehaviorTreeDefinitionPtr {
 public:
     // prevent constructor by default
-    BehaviorTreeDefinitionPtr& operator=(BehaviorTreeDefinitionPtr const&) = delete;
+    BehaviorTreeDefinitionPtr& operator=(BehaviorTreeDefinitionPtr const&);
 
 public:
     // NOLINTBEGIN

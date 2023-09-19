@@ -5,9 +5,9 @@
 struct OSInformation {
 public:
     // prevent constructor by default
-    OSInformation& operator=(OSInformation const&) = delete;
-    OSInformation(OSInformation const&)            = delete;
-    OSInformation()                                = delete;
+    OSInformation& operator=(OSInformation const&);
+    OSInformation(OSInformation const&);
+    OSInformation();
 
 public:
     // NOLINTBEGIN

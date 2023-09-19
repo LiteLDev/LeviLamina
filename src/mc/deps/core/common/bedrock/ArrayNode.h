@@ -12,9 +12,9 @@ namespace Bedrock::JSONObject {
 class ArrayNode {
 public:
     // prevent constructor by default
-    ArrayNode& operator=(ArrayNode const&) = delete;
-    ArrayNode(ArrayNode const&)            = delete;
-    ArrayNode()                            = delete;
+    ArrayNode& operator=(ArrayNode const&);
+    ArrayNode(ArrayNode const&);
+    ArrayNode();
 
 public:
     // NOLINTBEGIN

@@ -34,16 +34,16 @@ public:
     struct Pose {
     public:
         // prevent constructor by default
-        Pose& operator=(Pose const&) = delete;
-        Pose(Pose const&)            = delete;
-        Pose()                       = delete;
+        Pose& operator=(Pose const&);
+        Pose(Pose const&);
+        Pose();
     };
 
 public:
     // prevent constructor by default
-    ArmorStand& operator=(ArmorStand const&) = delete;
-    ArmorStand(ArmorStand const&)            = delete;
-    ArmorStand()                             = delete;
+    ArmorStand& operator=(ArmorStand const&);
+    ArmorStand(ArmorStand const&);
+    ArmorStand();
 
 public:
     // NOLINTBEGIN
@@ -234,33 +234,33 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $POSE_ATHENA() { return POSE_ATHENA; }
+    auto& $POSE_ATHENA() { return POSE_ATHENA; }
 
-    inline auto& $POSE_BRANDISH() { return POSE_BRANDISH; }
+    auto& $POSE_BRANDISH() { return POSE_BRANDISH; }
 
-    inline auto& $POSE_CANCAN_A() { return POSE_CANCAN_A; }
+    auto& $POSE_CANCAN_A() { return POSE_CANCAN_A; }
 
-    inline auto& $POSE_CANCAN_B() { return POSE_CANCAN_B; }
+    auto& $POSE_CANCAN_B() { return POSE_CANCAN_B; }
 
-    inline auto& $POSE_DEFAULT() { return POSE_DEFAULT; }
+    auto& $POSE_DEFAULT() { return POSE_DEFAULT; }
 
-    inline auto& $POSE_ENTERTAIN() { return POSE_ENTERTAIN; }
+    auto& $POSE_ENTERTAIN() { return POSE_ENTERTAIN; }
 
-    inline auto& $POSE_HERO() { return POSE_HERO; }
+    auto& $POSE_HERO() { return POSE_HERO; }
 
-    inline auto& $POSE_HONOR() { return POSE_HONOR; }
+    auto& $POSE_HONOR() { return POSE_HONOR; }
 
-    inline auto& $POSE_RIPOSTE() { return POSE_RIPOSTE; }
+    auto& $POSE_RIPOSTE() { return POSE_RIPOSTE; }
 
-    inline auto& $POSE_SALUTE() { return POSE_SALUTE; }
+    auto& $POSE_SALUTE() { return POSE_SALUTE; }
 
-    inline auto& $POSE_SOLEMN() { return POSE_SOLEMN; }
+    auto& $POSE_SOLEMN() { return POSE_SOLEMN; }
 
-    inline auto& $POSE_ZERO_ROTATION() { return POSE_ZERO_ROTATION; }
+    auto& $POSE_ZERO_ROTATION() { return POSE_ZERO_ROTATION; }
 
-    inline auto& $POSE_ZOMBIE() { return POSE_ZOMBIE; }
+    auto& $POSE_ZOMBIE() { return POSE_ZOMBIE; }
 
-    inline auto& $STAND_POSES() { return STAND_POSES; }
+    auto& $STAND_POSES() { return STAND_POSES; }
 
     // NOLINTEND
 };

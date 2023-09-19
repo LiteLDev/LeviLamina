@@ -8,9 +8,9 @@
 class SmithingTableMaterialContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    SmithingTableMaterialContainerValidation& operator=(SmithingTableMaterialContainerValidation const&) = delete;
-    SmithingTableMaterialContainerValidation(SmithingTableMaterialContainerValidation const&)            = delete;
-    SmithingTableMaterialContainerValidation()                                                           = delete;
+    SmithingTableMaterialContainerValidation& operator=(SmithingTableMaterialContainerValidation const&);
+    SmithingTableMaterialContainerValidation(SmithingTableMaterialContainerValidation const&);
+    SmithingTableMaterialContainerValidation();
 
 public:
     // NOLINTBEGIN

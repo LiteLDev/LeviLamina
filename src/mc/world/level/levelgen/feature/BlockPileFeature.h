@@ -8,9 +8,9 @@
 class BlockPileFeature : public ::Feature {
 public:
     // prevent constructor by default
-    BlockPileFeature& operator=(BlockPileFeature const&) = delete;
-    BlockPileFeature(BlockPileFeature const&)            = delete;
-    BlockPileFeature()                                   = delete;
+    BlockPileFeature& operator=(BlockPileFeature const&);
+    BlockPileFeature(BlockPileFeature const&);
+    BlockPileFeature();
 
 public:
     // NOLINTBEGIN
@@ -24,7 +24,7 @@ public:
     virtual class Block const& getBlockToPlace(class Random&) const;
 
     // symbol: ??0BlockPileFeature@@QEAA@AEBVBlock@@@Z
-    MCAPI BlockPileFeature(class Block const&);
+    MCAPI explicit BlockPileFeature(class Block const&);
 
     // NOLINTEND
 };

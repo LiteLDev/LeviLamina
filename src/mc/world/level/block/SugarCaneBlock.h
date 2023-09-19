@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class SugarCaneBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    SugarCaneBlock& operator=(SugarCaneBlock const&) = delete;
-    SugarCaneBlock(SugarCaneBlock const&)            = delete;
-    SugarCaneBlock()                                 = delete;
+    SugarCaneBlock& operator=(SugarCaneBlock const&);
+    SugarCaneBlock(SugarCaneBlock const&);
+    SugarCaneBlock();
 
 public:
     // NOLINTBEGIN

@@ -13,9 +13,9 @@ namespace TreeHelper { struct TreeParams; }
 class FancyTreeCanopy : public ::ITreeCanopy {
 public:
     // prevent constructor by default
-    FancyTreeCanopy& operator=(FancyTreeCanopy const&) = delete;
-    FancyTreeCanopy(FancyTreeCanopy const&)            = delete;
-    FancyTreeCanopy()                                  = delete;
+    FancyTreeCanopy& operator=(FancyTreeCanopy const&);
+    FancyTreeCanopy(FancyTreeCanopy const&);
+    FancyTreeCanopy();
 
 public:
     // NOLINTBEGIN

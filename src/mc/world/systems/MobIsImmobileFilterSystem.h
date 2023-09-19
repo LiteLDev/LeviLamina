@@ -13,9 +13,9 @@
 class MobIsImmobileFilterSystem {
 public:
     // prevent constructor by default
-    MobIsImmobileFilterSystem& operator=(MobIsImmobileFilterSystem const&) = delete;
-    MobIsImmobileFilterSystem(MobIsImmobileFilterSystem const&)            = delete;
-    MobIsImmobileFilterSystem()                                            = delete;
+    MobIsImmobileFilterSystem& operator=(MobIsImmobileFilterSystem const&);
+    MobIsImmobileFilterSystem(MobIsImmobileFilterSystem const&);
+    MobIsImmobileFilterSystem();
 
 public:
     // NOLINTBEGIN

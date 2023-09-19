@@ -9,9 +9,9 @@
 class TextFilteringUtils {
 public:
     // prevent constructor by default
-    TextFilteringUtils& operator=(TextFilteringUtils const&) = delete;
-    TextFilteringUtils(TextFilteringUtils const&)            = delete;
-    TextFilteringUtils()                                     = delete;
+    TextFilteringUtils& operator=(TextFilteringUtils const&);
+    TextFilteringUtils(TextFilteringUtils const&);
+    TextFilteringUtils();
 
 public:
     // NOLINTBEGIN

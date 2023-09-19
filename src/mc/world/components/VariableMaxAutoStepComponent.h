@@ -5,7 +5,7 @@
 struct VariableMaxAutoStepComponent {
 public:
     // prevent constructor by default
-    VariableMaxAutoStepComponent& operator=(VariableMaxAutoStepComponent const&) = delete;
-    VariableMaxAutoStepComponent(VariableMaxAutoStepComponent const&)            = delete;
-    VariableMaxAutoStepComponent()                                               = delete;
+    VariableMaxAutoStepComponent& operator=(VariableMaxAutoStepComponent const&);
+    VariableMaxAutoStepComponent(VariableMaxAutoStepComponent const&);
+    VariableMaxAutoStepComponent();
 };

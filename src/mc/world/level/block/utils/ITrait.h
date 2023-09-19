@@ -13,9 +13,9 @@ namespace BlockTrait {
 class ITrait {
 public:
     // prevent constructor by default
-    ITrait& operator=(ITrait const&) = delete;
-    ITrait(ITrait const&)            = delete;
-    ITrait()                         = delete;
+    ITrait& operator=(ITrait const&);
+    ITrait(ITrait const&);
+    ITrait();
 
 public:
     // NOLINTBEGIN

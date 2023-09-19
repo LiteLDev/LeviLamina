@@ -5,9 +5,9 @@
 struct TickingSystemWithInfo {
 public:
     // prevent constructor by default
-    TickingSystemWithInfo& operator=(TickingSystemWithInfo const&) = delete;
-    TickingSystemWithInfo(TickingSystemWithInfo const&)            = delete;
-    TickingSystemWithInfo()                                        = delete;
+    TickingSystemWithInfo& operator=(TickingSystemWithInfo const&);
+    TickingSystemWithInfo(TickingSystemWithInfo const&);
+    TickingSystemWithInfo();
 
 public:
     // NOLINTBEGIN

@@ -5,8 +5,8 @@
 struct ActorGriefingBlockEvent {
 public:
     // prevent constructor by default
-    ActorGriefingBlockEvent& operator=(ActorGriefingBlockEvent const&) = delete;
-    ActorGriefingBlockEvent()                                          = delete;
+    ActorGriefingBlockEvent& operator=(ActorGriefingBlockEvent const&);
+    ActorGriefingBlockEvent();
 
 public:
     // NOLINTBEGIN

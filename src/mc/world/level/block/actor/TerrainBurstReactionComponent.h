@@ -8,9 +8,9 @@
 class TerrainBurstReactionComponent : public ::LabTableReactionComponent {
 public:
     // prevent constructor by default
-    TerrainBurstReactionComponent& operator=(TerrainBurstReactionComponent const&) = delete;
-    TerrainBurstReactionComponent(TerrainBurstReactionComponent const&)            = delete;
-    TerrainBurstReactionComponent()                                                = delete;
+    TerrainBurstReactionComponent& operator=(TerrainBurstReactionComponent const&);
+    TerrainBurstReactionComponent(TerrainBurstReactionComponent const&);
+    TerrainBurstReactionComponent();
 
 public:
     // NOLINTBEGIN

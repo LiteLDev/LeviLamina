@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class MovingBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    MovingBlock& operator=(MovingBlock const&) = delete;
-    MovingBlock(MovingBlock const&)            = delete;
-    MovingBlock()                              = delete;
+    MovingBlock& operator=(MovingBlock const&);
+    MovingBlock(MovingBlock const&);
+    MovingBlock();
 
 public:
     // NOLINTBEGIN

@@ -5,8 +5,8 @@
 class ScopedAutoreleasePool {
 public:
     // prevent constructor by default
-    ScopedAutoreleasePool& operator=(ScopedAutoreleasePool const&) = delete;
-    ScopedAutoreleasePool(ScopedAutoreleasePool const&)            = delete;
+    ScopedAutoreleasePool& operator=(ScopedAutoreleasePool const&);
+    ScopedAutoreleasePool(ScopedAutoreleasePool const&);
 
 public:
     // NOLINTBEGIN

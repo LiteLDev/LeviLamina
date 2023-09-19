@@ -8,9 +8,9 @@
 class SculkSensorVibrationConfig : public ::VibrationListenerConfig {
 public:
     // prevent constructor by default
-    SculkSensorVibrationConfig& operator=(SculkSensorVibrationConfig const&) = delete;
-    SculkSensorVibrationConfig(SculkSensorVibrationConfig const&)            = delete;
-    SculkSensorVibrationConfig()                                             = delete;
+    SculkSensorVibrationConfig& operator=(SculkSensorVibrationConfig const&);
+    SculkSensorVibrationConfig(SculkSensorVibrationConfig const&);
+    SculkSensorVibrationConfig();
 
 public:
     // NOLINTBEGIN
@@ -33,7 +33,7 @@ public:
     virtual void onSerializableDataChanged(class BlockSource&);
 
     // symbol: ??0SculkSensorVibrationConfig@@QEAA@AEBVBlockPos@@@Z
-    MCAPI SculkSensorVibrationConfig(class BlockPos const&);
+    MCAPI explicit SculkSensorVibrationConfig(class BlockPos const&);
 
     // NOLINTEND
 };

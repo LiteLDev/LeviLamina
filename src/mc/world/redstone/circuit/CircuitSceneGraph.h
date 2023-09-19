@@ -22,6 +22,12 @@ public:
         class BaseCircuitComponent*                 mRawComponentPtr;
         std::unique_ptr<class BaseCircuitComponent> mComponent;
         class BlockPos                              mPos;
+=======
+        // prevent constructor by default
+        PendingEntry& operator=(PendingEntry const&);
+        PendingEntry(PendingEntry const&);
+        PendingEntry();
+>>>>>>> upstream/main
 
     public:
         // NOLINTBEGIN
@@ -38,6 +44,7 @@ public:
     };
 
 public:
+<<<<<<< HEAD
     std::unordered_map<BlockPos, std::unique_ptr<BaseCircuitComponent>> mAllComponents;
     CircuitComponentList                                                mActiveComponents;
     std::unordered_map<BlockPos, CircuitComponentList>                  mActiveComponentsPerChunk;

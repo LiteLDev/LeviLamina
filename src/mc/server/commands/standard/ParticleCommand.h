@@ -8,9 +8,9 @@
 class ParticleCommand : public ::Command {
 public:
     // prevent constructor by default
-    ParticleCommand& operator=(ParticleCommand const&) = delete;
-    ParticleCommand(ParticleCommand const&)            = delete;
-    ParticleCommand()                                  = delete;
+    ParticleCommand& operator=(ParticleCommand const&);
+    ParticleCommand(ParticleCommand const&);
+    ParticleCommand();
 
 public:
     // NOLINTBEGIN

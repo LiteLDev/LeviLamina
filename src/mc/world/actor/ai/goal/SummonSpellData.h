@@ -5,7 +5,7 @@
 struct SummonSpellData {
 public:
     // prevent constructor by default
-    SummonSpellData() = delete;
+    SummonSpellData();
 
 public:
     // NOLINTBEGIN

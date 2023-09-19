@@ -8,9 +8,9 @@
 class ThermalMonitorInterface {
 public:
     // prevent constructor by default
-    ThermalMonitorInterface& operator=(ThermalMonitorInterface const&) = delete;
-    ThermalMonitorInterface(ThermalMonitorInterface const&)            = delete;
-    ThermalMonitorInterface()                                          = delete;
+    ThermalMonitorInterface& operator=(ThermalMonitorInterface const&);
+    ThermalMonitorInterface(ThermalMonitorInterface const&);
+    ThermalMonitorInterface();
 
 public:
     // NOLINTBEGIN

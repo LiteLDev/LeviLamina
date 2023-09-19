@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class CoralPlantBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    CoralPlantBlock& operator=(CoralPlantBlock const&) = delete;
-    CoralPlantBlock(CoralPlantBlock const&)            = delete;
-    CoralPlantBlock()                                  = delete;
+    CoralPlantBlock& operator=(CoralPlantBlock const&);
+    CoralPlantBlock(CoralPlantBlock const&);
+    CoralPlantBlock();
 
 public:
     // NOLINTBEGIN

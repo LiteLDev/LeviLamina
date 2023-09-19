@@ -8,8 +8,8 @@
 class CompoundTagUpdaterContext {
 public:
     // prevent constructor by default
-    CompoundTagUpdaterContext& operator=(CompoundTagUpdaterContext const&) = delete;
-    CompoundTagUpdaterContext(CompoundTagUpdaterContext const&)            = delete;
+    CompoundTagUpdaterContext& operator=(CompoundTagUpdaterContext const&);
+    CompoundTagUpdaterContext(CompoundTagUpdaterContext const&);
 
 public:
     // NOLINTBEGIN

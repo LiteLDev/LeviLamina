@@ -17,9 +17,9 @@
 class MoveCollisionSystem {
 public:
     // prevent constructor by default
-    MoveCollisionSystem& operator=(MoveCollisionSystem const&) = delete;
-    MoveCollisionSystem(MoveCollisionSystem const&)            = delete;
-    MoveCollisionSystem()                                      = delete;
+    MoveCollisionSystem& operator=(MoveCollisionSystem const&);
+    MoveCollisionSystem(MoveCollisionSystem const&);
+    MoveCollisionSystem();
 
 public:
     // NOLINTBEGIN

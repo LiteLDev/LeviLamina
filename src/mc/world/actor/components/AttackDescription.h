@@ -5,9 +5,9 @@
 class AttackDescription {
 public:
     // prevent constructor by default
-    AttackDescription& operator=(AttackDescription const&) = delete;
-    AttackDescription(AttackDescription const&)            = delete;
-    AttackDescription()                                    = delete;
+    AttackDescription& operator=(AttackDescription const&);
+    AttackDescription(AttackDescription const&);
+    AttackDescription();
 
 public:
     // NOLINTBEGIN

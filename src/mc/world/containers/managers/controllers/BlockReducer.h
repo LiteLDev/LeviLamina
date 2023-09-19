@@ -5,8 +5,8 @@
 class BlockReducer {
 public:
     // prevent constructor by default
-    BlockReducer& operator=(BlockReducer const&) = delete;
-    BlockReducer(BlockReducer const&)            = delete;
+    BlockReducer& operator=(BlockReducer const&);
+    BlockReducer(BlockReducer const&);
 
 public:
     // NOLINTBEGIN

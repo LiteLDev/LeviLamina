@@ -5,9 +5,9 @@
 struct BlockPatternPreEvent {
 public:
     // prevent constructor by default
-    BlockPatternPreEvent& operator=(BlockPatternPreEvent const&) = delete;
-    BlockPatternPreEvent(BlockPatternPreEvent const&)            = delete;
-    BlockPatternPreEvent()                                       = delete;
+    BlockPatternPreEvent& operator=(BlockPatternPreEvent const&);
+    BlockPatternPreEvent(BlockPatternPreEvent const&);
+    BlockPatternPreEvent();
 
 public:
     // NOLINTBEGIN

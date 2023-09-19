@@ -5,9 +5,9 @@
 struct PlayerMovementSettings {
 public:
     // prevent constructor by default
-    PlayerMovementSettings& operator=(PlayerMovementSettings const&) = delete;
-    PlayerMovementSettings(PlayerMovementSettings const&)            = delete;
-    PlayerMovementSettings()                                         = delete;
+    PlayerMovementSettings& operator=(PlayerMovementSettings const&);
+    PlayerMovementSettings(PlayerMovementSettings const&);
+    PlayerMovementSettings();
 
 public:
     // NOLINTBEGIN

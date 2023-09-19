@@ -5,9 +5,9 @@
 class PerfContextTrackerReport {
 public:
     // prevent constructor by default
-    PerfContextTrackerReport& operator=(PerfContextTrackerReport const&) = delete;
-    PerfContextTrackerReport(PerfContextTrackerReport const&)            = delete;
-    PerfContextTrackerReport()                                           = delete;
+    PerfContextTrackerReport& operator=(PerfContextTrackerReport const&);
+    PerfContextTrackerReport(PerfContextTrackerReport const&);
+    PerfContextTrackerReport();
 
 public:
     // NOLINTBEGIN

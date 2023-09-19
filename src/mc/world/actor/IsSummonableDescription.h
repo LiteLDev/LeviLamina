@@ -5,9 +5,9 @@
 class IsSummonableDescription {
 public:
     // prevent constructor by default
-    IsSummonableDescription& operator=(IsSummonableDescription const&) = delete;
-    IsSummonableDescription(IsSummonableDescription const&)            = delete;
-    IsSummonableDescription()                                          = delete;
+    IsSummonableDescription& operator=(IsSummonableDescription const&);
+    IsSummonableDescription(IsSummonableDescription const&);
+    IsSummonableDescription();
 
 public:
     // NOLINTBEGIN

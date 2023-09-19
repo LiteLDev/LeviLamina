@@ -8,9 +8,9 @@
 class AngerLevelSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    AngerLevelSystem& operator=(AngerLevelSystem const&) = delete;
-    AngerLevelSystem(AngerLevelSystem const&)            = delete;
-    AngerLevelSystem()                                   = delete;
+    AngerLevelSystem& operator=(AngerLevelSystem const&);
+    AngerLevelSystem(AngerLevelSystem const&);
+    AngerLevelSystem();
 
 public:
     // NOLINTBEGIN

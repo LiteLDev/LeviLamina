@@ -9,9 +9,9 @@
 class WitherTargetHighestDamage : public ::TargetGoal {
 public:
     // prevent constructor by default
-    WitherTargetHighestDamage& operator=(WitherTargetHighestDamage const&) = delete;
-    WitherTargetHighestDamage(WitherTargetHighestDamage const&)            = delete;
-    WitherTargetHighestDamage()                                            = delete;
+    WitherTargetHighestDamage& operator=(WitherTargetHighestDamage const&);
+    WitherTargetHighestDamage(WitherTargetHighestDamage const&);
+    WitherTargetHighestDamage();
 
 public:
     // NOLINTBEGIN

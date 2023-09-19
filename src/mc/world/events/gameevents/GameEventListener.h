@@ -9,9 +9,9 @@ public:
 
 public:
     // prevent constructor by default
-    GameEventListener& operator=(GameEventListener const&) = delete;
-    GameEventListener(GameEventListener const&)            = delete;
-    GameEventListener()                                    = delete;
+    GameEventListener& operator=(GameEventListener const&);
+    GameEventListener(GameEventListener const&);
+    GameEventListener();
 
 public:
     // NOLINTBEGIN

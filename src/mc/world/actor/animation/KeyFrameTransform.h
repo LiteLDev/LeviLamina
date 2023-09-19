@@ -5,14 +5,14 @@
 class KeyFrameTransform {
 public:
     // prevent constructor by default
-    KeyFrameTransform& operator=(KeyFrameTransform const&) = delete;
-    KeyFrameTransform(KeyFrameTransform const&)            = delete;
-    KeyFrameTransform()                                    = delete;
+    KeyFrameTransform& operator=(KeyFrameTransform const&);
+    KeyFrameTransform(KeyFrameTransform const&);
+    KeyFrameTransform();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0KeyFrameTransform@@QEAA@M@Z
-    MCAPI KeyFrameTransform(float);
+    MCAPI explicit KeyFrameTransform(float);
 
     // symbol: ??4KeyFrameTransform@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class KeyFrameTransform& operator=(class KeyFrameTransform&&);

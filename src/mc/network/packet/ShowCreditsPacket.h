@@ -21,8 +21,8 @@ public:
     CreditsState   mCreditsState; // this+0x38
 
     // prevent constructor by default
-    ShowCreditsPacket& operator=(ShowCreditsPacket const&) = delete;
-    ShowCreditsPacket(ShowCreditsPacket const&)            = delete;
+    ShowCreditsPacket& operator=(ShowCreditsPacket const&);
+    ShowCreditsPacket(ShowCreditsPacket const&);
 
 public:
     // NOLINTBEGIN

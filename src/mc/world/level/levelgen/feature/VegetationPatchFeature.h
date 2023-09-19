@@ -8,9 +8,9 @@
 class VegetationPatchFeature : public ::IFeature {
 public:
     // prevent constructor by default
-    VegetationPatchFeature& operator=(VegetationPatchFeature const&) = delete;
-    VegetationPatchFeature(VegetationPatchFeature const&)            = delete;
-    VegetationPatchFeature()                                         = delete;
+    VegetationPatchFeature& operator=(VegetationPatchFeature const&);
+    VegetationPatchFeature(VegetationPatchFeature const&);
+    VegetationPatchFeature();
 
 public:
     // NOLINTBEGIN

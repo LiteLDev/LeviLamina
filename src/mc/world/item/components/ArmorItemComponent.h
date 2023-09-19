@@ -8,9 +8,9 @@
 class ArmorItemComponent {
 public:
     // prevent constructor by default
-    ArmorItemComponent& operator=(ArmorItemComponent const&) = delete;
-    ArmorItemComponent(ArmorItemComponent const&)            = delete;
-    ArmorItemComponent()                                     = delete;
+    ArmorItemComponent& operator=(ArmorItemComponent const&);
+    ArmorItemComponent(ArmorItemComponent const&);
+    ArmorItemComponent();
 
 public:
     // NOLINTBEGIN

@@ -13,9 +13,9 @@ public:
     struct ConstrainedString {
     public:
         // prevent constructor by default
-        ConstrainedString& operator=(ConstrainedString const&) = delete;
-        ConstrainedString(ConstrainedString const&)            = delete;
-        ConstrainedString()                                    = delete;
+        ConstrainedString& operator=(ConstrainedString const&);
+        ConstrainedString(ConstrainedString const&);
+        ConstrainedString();
 
     public:
         // NOLINTBEGIN
@@ -27,9 +27,9 @@ public:
 
 public:
     // prevent constructor by default
-    VolumeIdentifier& operator=(VolumeIdentifier const&) = delete;
-    VolumeIdentifier(VolumeIdentifier const&)            = delete;
-    VolumeIdentifier()                                   = delete;
+    VolumeIdentifier& operator=(VolumeIdentifier const&);
+    VolumeIdentifier(VolumeIdentifier const&);
+    VolumeIdentifier();
 
 public:
     // NOLINTBEGIN

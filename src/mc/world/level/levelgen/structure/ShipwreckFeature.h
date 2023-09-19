@@ -8,9 +8,9 @@
 class ShipwreckFeature : public ::StructureFeature {
 public:
     // prevent constructor by default
-    ShipwreckFeature& operator=(ShipwreckFeature const&) = delete;
-    ShipwreckFeature(ShipwreckFeature const&)            = delete;
-    ShipwreckFeature()                                   = delete;
+    ShipwreckFeature& operator=(ShipwreckFeature const&);
+    ShipwreckFeature(ShipwreckFeature const&);
+    ShipwreckFeature();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class SharedModifiers {
 public:
     // prevent constructor by default
-    SharedModifiers& operator=(SharedModifiers const&) = delete;
-    SharedModifiers(SharedModifiers const&)            = delete;
-    SharedModifiers()                                  = delete;
+    SharedModifiers& operator=(SharedModifiers const&);
+    SharedModifiers(SharedModifiers const&);
+    SharedModifiers();
 
 public:
     // NOLINTBEGIN

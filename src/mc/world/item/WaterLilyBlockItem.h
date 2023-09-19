@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class WaterLilyBlockItem : public ::BlockItem {
 public:
     // prevent constructor by default
-    WaterLilyBlockItem& operator=(WaterLilyBlockItem const&) = delete;
-    WaterLilyBlockItem(WaterLilyBlockItem const&)            = delete;
-    WaterLilyBlockItem()                                     = delete;
+    WaterLilyBlockItem& operator=(WaterLilyBlockItem const&);
+    WaterLilyBlockItem(WaterLilyBlockItem const&);
+    WaterLilyBlockItem();
 
 public:
     // NOLINTBEGIN

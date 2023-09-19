@@ -8,9 +8,9 @@
 class EntityComponentFactoryCereal : public ::EntityComponentFactoryBase {
 public:
     // prevent constructor by default
-    EntityComponentFactoryCereal& operator=(EntityComponentFactoryCereal const&) = delete;
-    EntityComponentFactoryCereal(EntityComponentFactoryCereal const&)            = delete;
-    EntityComponentFactoryCereal()                                               = delete;
+    EntityComponentFactoryCereal& operator=(EntityComponentFactoryCereal const&);
+    EntityComponentFactoryCereal(EntityComponentFactoryCereal const&);
+    EntityComponentFactoryCereal();
 
 public:
     // NOLINTBEGIN

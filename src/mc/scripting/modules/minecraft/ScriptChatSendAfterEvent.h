@@ -16,8 +16,8 @@ namespace ScriptModuleMinecraft {
 struct ScriptChatSendAfterEvent {
 public:
     // prevent constructor by default
-    ScriptChatSendAfterEvent(ScriptChatSendAfterEvent const&) = delete;
-    ScriptChatSendAfterEvent()                                = delete;
+    ScriptChatSendAfterEvent(ScriptChatSendAfterEvent const&);
+    ScriptChatSendAfterEvent();
 
 public:
     // NOLINTBEGIN

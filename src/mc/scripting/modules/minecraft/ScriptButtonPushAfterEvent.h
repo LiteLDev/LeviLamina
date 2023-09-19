@@ -10,9 +10,9 @@ namespace ScriptModuleMinecraft {
 struct ScriptButtonPushAfterEvent {
 public:
     // prevent constructor by default
-    ScriptButtonPushAfterEvent& operator=(ScriptButtonPushAfterEvent const&) = delete;
-    ScriptButtonPushAfterEvent(ScriptButtonPushAfterEvent const&)            = delete;
-    ScriptButtonPushAfterEvent()                                             = delete;
+    ScriptButtonPushAfterEvent& operator=(ScriptButtonPushAfterEvent const&);
+    ScriptButtonPushAfterEvent(ScriptButtonPushAfterEvent const&);
+    ScriptButtonPushAfterEvent();
 
 public:
     // NOLINTBEGIN

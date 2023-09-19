@@ -11,9 +11,9 @@ namespace Scripting { struct ScriptData; }
 class ScriptPlugin {
 public:
     // prevent constructor by default
-    ScriptPlugin& operator=(ScriptPlugin const&) = delete;
-    ScriptPlugin(ScriptPlugin const&)            = delete;
-    ScriptPlugin()                               = delete;
+    ScriptPlugin& operator=(ScriptPlugin const&);
+    ScriptPlugin(ScriptPlugin const&);
+    ScriptPlugin();
 
 public:
     // NOLINTBEGIN

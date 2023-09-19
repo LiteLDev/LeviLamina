@@ -8,8 +8,8 @@
 class VariantParameterList {
 public:
     // prevent constructor by default
-    VariantParameterList& operator=(VariantParameterList const&) = delete;
-    VariantParameterList(VariantParameterList const&)            = delete;
+    VariantParameterList& operator=(VariantParameterList const&);
+    VariantParameterList(VariantParameterList const&);
 
 public:
     // NOLINTBEGIN

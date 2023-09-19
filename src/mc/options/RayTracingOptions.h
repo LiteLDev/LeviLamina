@@ -8,9 +8,9 @@
 class RayTracingOptions {
 public:
     // prevent constructor by default
-    RayTracingOptions& operator=(RayTracingOptions const&) = delete;
-    RayTracingOptions(RayTracingOptions const&)            = delete;
-    RayTracingOptions()                                    = delete;
+    RayTracingOptions& operator=(RayTracingOptions const&);
+    RayTracingOptions(RayTracingOptions const&);
+    RayTracingOptions();
 
 public:
     // NOLINTBEGIN

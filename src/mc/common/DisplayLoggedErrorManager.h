@@ -5,7 +5,7 @@
 class DisplayLoggedErrorManager {
 public:
     // prevent constructor by default
-    DisplayLoggedErrorManager& operator=(DisplayLoggedErrorManager const&) = delete;
-    DisplayLoggedErrorManager(DisplayLoggedErrorManager const&)            = delete;
-    DisplayLoggedErrorManager()                                            = delete;
+    DisplayLoggedErrorManager& operator=(DisplayLoggedErrorManager const&);
+    DisplayLoggedErrorManager(DisplayLoggedErrorManager const&);
+    DisplayLoggedErrorManager();
 };

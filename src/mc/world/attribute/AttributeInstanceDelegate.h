@@ -5,9 +5,9 @@
 class AttributeInstanceDelegate {
 public:
     // prevent constructor by default
-    AttributeInstanceDelegate& operator=(AttributeInstanceDelegate const&) = delete;
-    AttributeInstanceDelegate(AttributeInstanceDelegate const&)            = delete;
-    AttributeInstanceDelegate()                                            = delete;
+    AttributeInstanceDelegate& operator=(AttributeInstanceDelegate const&);
+    AttributeInstanceDelegate(AttributeInstanceDelegate const&);
+    AttributeInstanceDelegate();
 
 public:
     // NOLINTBEGIN

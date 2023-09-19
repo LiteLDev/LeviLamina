@@ -11,9 +11,9 @@
 class TaskGroup {
 public:
     // prevent constructor by default
-    TaskGroup& operator=(TaskGroup const&) = delete;
-    TaskGroup(TaskGroup const&)            = delete;
-    TaskGroup()                            = delete;
+    TaskGroup& operator=(TaskGroup const&);
+    TaskGroup(TaskGroup const&);
+    TaskGroup();
 
 public:
     // NOLINTBEGIN

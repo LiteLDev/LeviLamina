@@ -13,9 +13,9 @@ namespace cereal { class BasicLoader; }
 class NBTLoader : public ::cereal::BasicLoader {
 public:
     // prevent constructor by default
-    NBTLoader& operator=(NBTLoader const&) = delete;
-    NBTLoader(NBTLoader const&)            = delete;
-    NBTLoader()                            = delete;
+    NBTLoader& operator=(NBTLoader const&);
+    NBTLoader(NBTLoader const&);
+    NBTLoader();
 
 public:
     // NOLINTBEGIN
@@ -23,7 +23,7 @@ public:
     MCVAPI ~NBTLoader();
 
     // symbol: ??0NBTLoader@@QEAA@V?$not_null@PEBVCompoundTag@@@gsl@@@Z
-    MCAPI NBTLoader(gsl::not_null<class CompoundTag const*>);
+    MCAPI explicit NBTLoader(gsl::not_null<class CompoundTag const*>);
 
     // NOLINTEND
 };

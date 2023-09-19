@@ -5,8 +5,8 @@
 struct PlayerShootArrowEvent {
 public:
     // prevent constructor by default
-    PlayerShootArrowEvent& operator=(PlayerShootArrowEvent const&) = delete;
-    PlayerShootArrowEvent()                                        = delete;
+    PlayerShootArrowEvent& operator=(PlayerShootArrowEvent const&);
+    PlayerShootArrowEvent();
 
 public:
     // NOLINTBEGIN

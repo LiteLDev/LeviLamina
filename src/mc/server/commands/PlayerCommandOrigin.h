@@ -18,9 +18,9 @@ namespace mce { class UUID; }
 class PlayerCommandOrigin : public ::CommandOrigin {
 public:
     // prevent constructor by default
-    PlayerCommandOrigin& operator=(PlayerCommandOrigin const&) = delete;
-    PlayerCommandOrigin(PlayerCommandOrigin const&)            = delete;
-    PlayerCommandOrigin()                                      = delete;
+    PlayerCommandOrigin& operator=(PlayerCommandOrigin const&);
+    PlayerCommandOrigin(PlayerCommandOrigin const&);
+    PlayerCommandOrigin();
 
 public:
     // NOLINTBEGIN
@@ -91,7 +91,7 @@ public:
     virtual bool isValid() const;
 
     // symbol: ??0PlayerCommandOrigin@@QEAA@AEAVPlayer@@@Z
-    MCAPI PlayerCommandOrigin(class Player&);
+    MCAPI explicit PlayerCommandOrigin(class Player&);
 
     // NOLINTEND
 };

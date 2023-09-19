@@ -18,9 +18,9 @@ namespace ScriptModuleMinecraftServerAdmin {
 class ScriptServerVariables {
 public:
     // prevent constructor by default
-    ScriptServerVariables& operator=(ScriptServerVariables const&) = delete;
-    ScriptServerVariables(ScriptServerVariables const&)            = delete;
-    ScriptServerVariables()                                        = delete;
+    ScriptServerVariables& operator=(ScriptServerVariables const&);
+    ScriptServerVariables(ScriptServerVariables const&);
+    ScriptServerVariables();
 
 public:
     // NOLINTBEGIN

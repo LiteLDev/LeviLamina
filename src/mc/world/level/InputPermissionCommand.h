@@ -8,9 +8,9 @@
 class InputPermissionCommand : public ::Command {
 public:
     // prevent constructor by default
-    InputPermissionCommand& operator=(InputPermissionCommand const&) = delete;
-    InputPermissionCommand(InputPermissionCommand const&)            = delete;
-    InputPermissionCommand()                                         = delete;
+    InputPermissionCommand& operator=(InputPermissionCommand const&);
+    InputPermissionCommand(InputPermissionCommand const&);
+    InputPermissionCommand();
 
 public:
     // NOLINTBEGIN

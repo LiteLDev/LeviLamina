@@ -45,9 +45,9 @@ public:
 
 public:
     // prevent constructor by default
-    Dimension& operator=(Dimension const&) = delete;
-    Dimension(Dimension const&)            = delete;
-    Dimension()                            = delete;
+    Dimension& operator=(Dimension const&);
+    Dimension(Dimension const&);
+    Dimension();
 
 public:
     // NOLINTBEGIN

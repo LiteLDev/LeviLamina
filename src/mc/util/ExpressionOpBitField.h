@@ -8,9 +8,9 @@
 struct ExpressionOpBitField {
 public:
     // prevent constructor by default
-    ExpressionOpBitField& operator=(ExpressionOpBitField const&) = delete;
-    ExpressionOpBitField(ExpressionOpBitField const&)            = delete;
-    ExpressionOpBitField()                                       = delete;
+    ExpressionOpBitField& operator=(ExpressionOpBitField const&);
+    ExpressionOpBitField(ExpressionOpBitField const&);
+    ExpressionOpBitField();
 
 public:
     // NOLINTBEGIN

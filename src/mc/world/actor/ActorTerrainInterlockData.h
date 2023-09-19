@@ -5,9 +5,9 @@
 class ActorTerrainInterlockData {
 public:
     // prevent constructor by default
-    ActorTerrainInterlockData& operator=(ActorTerrainInterlockData const&) = delete;
-    ActorTerrainInterlockData(ActorTerrainInterlockData const&)            = delete;
-    ActorTerrainInterlockData()                                            = delete;
+    ActorTerrainInterlockData& operator=(ActorTerrainInterlockData const&);
+    ActorTerrainInterlockData(ActorTerrainInterlockData const&);
+    ActorTerrainInterlockData();
 
 public:
     // NOLINTBEGIN

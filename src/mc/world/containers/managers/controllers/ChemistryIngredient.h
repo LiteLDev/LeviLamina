@@ -5,9 +5,9 @@
 struct ChemistryIngredient {
 public:
     // prevent constructor by default
-    ChemistryIngredient& operator=(ChemistryIngredient const&) = delete;
-    ChemistryIngredient(ChemistryIngredient const&)            = delete;
-    ChemistryIngredient()                                      = delete;
+    ChemistryIngredient& operator=(ChemistryIngredient const&);
+    ChemistryIngredient(ChemistryIngredient const&);
+    ChemistryIngredient();
 
 public:
     // NOLINTBEGIN

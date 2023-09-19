@@ -5,8 +5,8 @@
 class ActorInfoRegistry {
 public:
     // prevent constructor by default
-    ActorInfoRegistry& operator=(ActorInfoRegistry const&) = delete;
-    ActorInfoRegistry(ActorInfoRegistry const&)            = delete;
+    ActorInfoRegistry& operator=(ActorInfoRegistry const&);
+    ActorInfoRegistry(ActorInfoRegistry const&);
 
 public:
     // NOLINTBEGIN

@@ -13,9 +13,9 @@ namespace SplitBlockUtils {
 struct LegacyBlockInfo {
 public:
     // prevent constructor by default
-    LegacyBlockInfo& operator=(LegacyBlockInfo const&) = delete;
-    LegacyBlockInfo(LegacyBlockInfo const&)            = delete;
-    LegacyBlockInfo()                                  = delete;
+    LegacyBlockInfo& operator=(LegacyBlockInfo const&);
+    LegacyBlockInfo(LegacyBlockInfo const&);
+    LegacyBlockInfo();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class RemoteConnector {
 public:
     // prevent constructor by default
-    RemoteConnector& operator=(RemoteConnector const&) = delete;
-    RemoteConnector(RemoteConnector const&)            = delete;
-    RemoteConnector()                                  = delete;
+    RemoteConnector& operator=(RemoteConnector const&);
+    RemoteConnector(RemoteConnector const&);
+    RemoteConnector();
 
 public:
     // NOLINTBEGIN

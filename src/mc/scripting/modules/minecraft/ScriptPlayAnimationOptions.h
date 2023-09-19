@@ -10,7 +10,7 @@ namespace ScriptModuleMinecraft {
 struct ScriptPlayAnimationOptions {
 public:
     // prevent constructor by default
-    ScriptPlayAnimationOptions() = delete;
+    ScriptPlayAnimationOptions();
 
 public:
     // NOLINTBEGIN

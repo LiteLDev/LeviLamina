@@ -5,9 +5,9 @@
 class FlushableEnv {
 public:
     // prevent constructor by default
-    FlushableEnv& operator=(FlushableEnv const&) = delete;
-    FlushableEnv(FlushableEnv const&)            = delete;
-    FlushableEnv()                               = delete;
+    FlushableEnv& operator=(FlushableEnv const&);
+    FlushableEnv(FlushableEnv const&);
+    FlushableEnv();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class BlockPartVisibilityDescription : public ::BlockComponentDescription {
 public:
     // prevent constructor by default
-    BlockPartVisibilityDescription& operator=(BlockPartVisibilityDescription const&) = delete;
-    BlockPartVisibilityDescription(BlockPartVisibilityDescription const&)            = delete;
-    BlockPartVisibilityDescription()                                                 = delete;
+    BlockPartVisibilityDescription& operator=(BlockPartVisibilityDescription const&);
+    BlockPartVisibilityDescription(BlockPartVisibilityDescription const&);
+    BlockPartVisibilityDescription();
 
 public:
     // NOLINTBEGIN

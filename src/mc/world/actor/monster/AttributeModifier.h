@@ -90,7 +90,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mInvalidUUID() { return mInvalidUUID; }
+    auto& $mInvalidUUID() { return mInvalidUUID; }
 
     // NOLINTEND
 };

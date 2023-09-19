@@ -5,9 +5,9 @@
 class MobSpawnerPermutation {
 public:
     // prevent constructor by default
-    MobSpawnerPermutation& operator=(MobSpawnerPermutation const&) = delete;
-    MobSpawnerPermutation(MobSpawnerPermutation const&)            = delete;
-    MobSpawnerPermutation()                                        = delete;
+    MobSpawnerPermutation& operator=(MobSpawnerPermutation const&);
+    MobSpawnerPermutation(MobSpawnerPermutation const&);
+    MobSpawnerPermutation();
 
 public:
     // NOLINTBEGIN

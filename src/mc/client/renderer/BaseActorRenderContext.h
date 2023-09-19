@@ -5,7 +5,7 @@
 class BaseActorRenderContext {
 public:
     // prevent constructor by default
-    BaseActorRenderContext& operator=(BaseActorRenderContext const&) = delete;
-    BaseActorRenderContext(BaseActorRenderContext const&)            = delete;
-    BaseActorRenderContext()                                         = delete;
+    BaseActorRenderContext& operator=(BaseActorRenderContext const&);
+    BaseActorRenderContext(BaseActorRenderContext const&);
+    BaseActorRenderContext();
 };

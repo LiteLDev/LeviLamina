@@ -24,8 +24,8 @@ public:
     class MoveOutdoorsDefinition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        MoveOutdoorsDefinition& operator=(MoveOutdoorsDefinition const&) = delete;
-        MoveOutdoorsDefinition(MoveOutdoorsDefinition const&)            = delete;
+        MoveOutdoorsDefinition& operator=(MoveOutdoorsDefinition const&);
+        MoveOutdoorsDefinition(MoveOutdoorsDefinition const&);
 
     public:
         // NOLINTBEGIN
@@ -51,9 +51,9 @@ public:
 
 public:
     // prevent constructor by default
-    MoveOutdoorsGoal& operator=(MoveOutdoorsGoal const&) = delete;
-    MoveOutdoorsGoal(MoveOutdoorsGoal const&)            = delete;
-    MoveOutdoorsGoal()                                   = delete;
+    MoveOutdoorsGoal& operator=(MoveOutdoorsGoal const&);
+    MoveOutdoorsGoal(MoveOutdoorsGoal const&);
+    MoveOutdoorsGoal();
 
 public:
     // NOLINTBEGIN
@@ -77,7 +77,7 @@ public:
     virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
 
     // symbol: ??0MoveOutdoorsGoal@@QEAA@AEAVMob@@@Z
-    MCAPI MoveOutdoorsGoal(class Mob&);
+    MCAPI explicit MoveOutdoorsGoal(class Mob&);
 
     // symbol: ?mobHasClearSpaceAbove@MoveOutdoorsGoal@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool mobHasClearSpaceAbove(class BlockSource&, class BlockPos const&);

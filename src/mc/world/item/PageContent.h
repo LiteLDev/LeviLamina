@@ -5,8 +5,8 @@
 struct PageContent {
 public:
     // prevent constructor by default
-    PageContent(PageContent const&) = delete;
-    PageContent()                   = delete;
+    PageContent(PageContent const&);
+    PageContent();
 
 public:
     // NOLINTBEGIN

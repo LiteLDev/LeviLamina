@@ -5,9 +5,9 @@
 class ActorLegacySaveConverter {
 public:
     // prevent constructor by default
-    ActorLegacySaveConverter& operator=(ActorLegacySaveConverter const&) = delete;
-    ActorLegacySaveConverter(ActorLegacySaveConverter const&)            = delete;
-    ActorLegacySaveConverter()                                           = delete;
+    ActorLegacySaveConverter& operator=(ActorLegacySaveConverter const&);
+    ActorLegacySaveConverter(ActorLegacySaveConverter const&);
+    ActorLegacySaveConverter();
 
 public:
     // NOLINTBEGIN

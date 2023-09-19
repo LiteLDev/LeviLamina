@@ -13,9 +13,9 @@
 class CraftHandlerTrade : public ::CraftHandlerBase {
 public:
     // prevent constructor by default
-    CraftHandlerTrade& operator=(CraftHandlerTrade const&) = delete;
-    CraftHandlerTrade(CraftHandlerTrade const&)            = delete;
-    CraftHandlerTrade()                                    = delete;
+    CraftHandlerTrade& operator=(CraftHandlerTrade const&);
+    CraftHandlerTrade(CraftHandlerTrade const&);
+    CraftHandlerTrade();
 
 public:
     // NOLINTBEGIN

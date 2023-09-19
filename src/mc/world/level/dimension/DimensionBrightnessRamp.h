@@ -5,9 +5,9 @@
 class DimensionBrightnessRamp {
 public:
     // prevent constructor by default
-    DimensionBrightnessRamp& operator=(DimensionBrightnessRamp const&) = delete;
-    DimensionBrightnessRamp(DimensionBrightnessRamp const&)            = delete;
-    DimensionBrightnessRamp()                                          = delete;
+    DimensionBrightnessRamp& operator=(DimensionBrightnessRamp const&);
+    DimensionBrightnessRamp(DimensionBrightnessRamp const&);
+    DimensionBrightnessRamp();
 
 public:
     // NOLINTBEGIN

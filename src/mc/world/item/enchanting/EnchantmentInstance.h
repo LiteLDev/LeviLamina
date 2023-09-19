@@ -8,8 +8,8 @@
 class EnchantmentInstance {
 public:
     // prevent constructor by default
-    EnchantmentInstance& operator=(EnchantmentInstance const&) = delete;
-    EnchantmentInstance(EnchantmentInstance const&)            = delete;
+    EnchantmentInstance& operator=(EnchantmentInstance const&);
+    EnchantmentInstance(EnchantmentInstance const&);
 
 public:
     // NOLINTBEGIN

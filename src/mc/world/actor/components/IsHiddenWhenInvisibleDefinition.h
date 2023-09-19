@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct IsHiddenWhenInvisibleDefinition {
 public:
     // prevent constructor by default
-    IsHiddenWhenInvisibleDefinition& operator=(IsHiddenWhenInvisibleDefinition const&) = delete;
-    IsHiddenWhenInvisibleDefinition(IsHiddenWhenInvisibleDefinition const&)            = delete;
-    IsHiddenWhenInvisibleDefinition()                                                  = delete;
+    IsHiddenWhenInvisibleDefinition& operator=(IsHiddenWhenInvisibleDefinition const&);
+    IsHiddenWhenInvisibleDefinition(IsHiddenWhenInvisibleDefinition const&);
+    IsHiddenWhenInvisibleDefinition();
 
 public:
     // NOLINTBEGIN

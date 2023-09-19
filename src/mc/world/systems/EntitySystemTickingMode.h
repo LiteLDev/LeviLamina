@@ -5,7 +5,7 @@
 struct EntitySystemTickingMode {
 public:
     // prevent constructor by default
-    EntitySystemTickingMode& operator=(EntitySystemTickingMode const&) = delete;
-    EntitySystemTickingMode(EntitySystemTickingMode const&)            = delete;
-    EntitySystemTickingMode()                                          = delete;
+    EntitySystemTickingMode& operator=(EntitySystemTickingMode const&);
+    EntitySystemTickingMode(EntitySystemTickingMode const&);
+    EntitySystemTickingMode();
 };

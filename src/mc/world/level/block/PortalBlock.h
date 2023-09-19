@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class PortalBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    PortalBlock& operator=(PortalBlock const&) = delete;
-    PortalBlock(PortalBlock const&)            = delete;
-    PortalBlock()                              = delete;
+    PortalBlock& operator=(PortalBlock const&);
+    PortalBlock(PortalBlock const&);
+    PortalBlock();
 
 public:
     // NOLINTBEGIN

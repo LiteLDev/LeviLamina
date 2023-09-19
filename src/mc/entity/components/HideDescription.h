@@ -8,9 +8,9 @@
 class HideDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    HideDescription& operator=(HideDescription const&) = delete;
-    HideDescription(HideDescription const&)            = delete;
-    HideDescription()                                  = delete;
+    HideDescription& operator=(HideDescription const&);
+    HideDescription(HideDescription const&);
+    HideDescription();
 
 public:
     // NOLINTBEGIN

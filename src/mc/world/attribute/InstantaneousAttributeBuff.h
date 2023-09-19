@@ -9,9 +9,9 @@
 class InstantaneousAttributeBuff : public ::AttributeBuff {
 public:
     // prevent constructor by default
-    InstantaneousAttributeBuff& operator=(InstantaneousAttributeBuff const&) = delete;
-    InstantaneousAttributeBuff(InstantaneousAttributeBuff const&)            = delete;
-    InstantaneousAttributeBuff()                                             = delete;
+    InstantaneousAttributeBuff& operator=(InstantaneousAttributeBuff const&);
+    InstantaneousAttributeBuff(InstantaneousAttributeBuff const&);
+    InstantaneousAttributeBuff();
 
 public:
     // NOLINTBEGIN

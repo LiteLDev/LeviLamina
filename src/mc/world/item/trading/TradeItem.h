@@ -5,9 +5,9 @@
 struct TradeItem {
 public:
     // prevent constructor by default
-    TradeItem& operator=(TradeItem const&) = delete;
-    TradeItem(TradeItem const&)            = delete;
-    TradeItem()                            = delete;
+    TradeItem& operator=(TradeItem const&);
+    TradeItem(TradeItem const&);
+    TradeItem();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class GuardianAttackGoal : public ::Goal {
 public:
     // prevent constructor by default
-    GuardianAttackGoal& operator=(GuardianAttackGoal const&) = delete;
-    GuardianAttackGoal(GuardianAttackGoal const&)            = delete;
-    GuardianAttackGoal()                                     = delete;
+    GuardianAttackGoal& operator=(GuardianAttackGoal const&);
+    GuardianAttackGoal(GuardianAttackGoal const&);
+    GuardianAttackGoal();
 
 public:
     // NOLINTBEGIN
@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0GuardianAttackGoal@@QEAA@AEAVMob@@@Z
-    MCAPI GuardianAttackGoal(class Mob&);
+    MCAPI explicit GuardianAttackGoal(class Mob&);
 
     // NOLINTEND
 };

@@ -5,7 +5,7 @@
 struct MobHurtTimeComponent {
 public:
     // prevent constructor by default
-    MobHurtTimeComponent& operator=(MobHurtTimeComponent const&) = delete;
-    MobHurtTimeComponent(MobHurtTimeComponent const&)            = delete;
-    MobHurtTimeComponent()                                       = delete;
+    MobHurtTimeComponent& operator=(MobHurtTimeComponent const&);
+    MobHurtTimeComponent(MobHurtTimeComponent const&);
+    MobHurtTimeComponent();
 };

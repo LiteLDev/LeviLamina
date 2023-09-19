@@ -16,8 +16,8 @@ public:
     bool           mOnGround;  // this+0x44
 
     // prevent constructor by default
-    MotionPredictionHintsPacket& operator=(MotionPredictionHintsPacket const&) = delete;
-    MotionPredictionHintsPacket(MotionPredictionHintsPacket const&)            = delete;
+    MotionPredictionHintsPacket& operator=(MotionPredictionHintsPacket const&);
+    MotionPredictionHintsPacket(MotionPredictionHintsPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -42,7 +42,7 @@ public:
     MCVAPI ~MotionPredictionHintsPacket();
 
     // symbol: ??0MotionPredictionHintsPacket@@QEAA@AEBVActor@@@Z
-    MCAPI MotionPredictionHintsPacket(class Actor const&);
+    MCAPI explicit MotionPredictionHintsPacket(class Actor const&);
 
     // symbol: ??0MotionPredictionHintsPacket@@QEAA@XZ
     MCAPI MotionPredictionHintsPacket();

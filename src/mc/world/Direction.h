@@ -9,9 +9,9 @@ public:
 
 public:
     // prevent constructor by default
-    Direction& operator=(Direction const&) = delete;
-    Direction(Direction const&)            = delete;
-    Direction()                            = delete;
+    Direction& operator=(Direction const&);
+    Direction(Direction const&);
+    Direction();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class SignalServiceSigninJob {
 public:
     // prevent constructor by default
-    SignalServiceSigninJob& operator=(SignalServiceSigninJob const&) = delete;
-    SignalServiceSigninJob(SignalServiceSigninJob const&)            = delete;
-    SignalServiceSigninJob()                                         = delete;
+    SignalServiceSigninJob& operator=(SignalServiceSigninJob const&);
+    SignalServiceSigninJob(SignalServiceSigninJob const&);
+    SignalServiceSigninJob();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class LootItemActorHasVariantCondition : public ::LootItemCondition {
 public:
     // prevent constructor by default
-    LootItemActorHasVariantCondition& operator=(LootItemActorHasVariantCondition const&) = delete;
-    LootItemActorHasVariantCondition(LootItemActorHasVariantCondition const&)            = delete;
-    LootItemActorHasVariantCondition()                                                   = delete;
+    LootItemActorHasVariantCondition& operator=(LootItemActorHasVariantCondition const&);
+    LootItemActorHasVariantCondition(LootItemActorHasVariantCondition const&);
+    LootItemActorHasVariantCondition();
 
 public:
     // NOLINTBEGIN

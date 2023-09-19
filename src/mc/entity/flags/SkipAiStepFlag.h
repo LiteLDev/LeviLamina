@@ -5,7 +5,7 @@
 struct SkipAiStepFlag {
 public:
     // prevent constructor by default
-    SkipAiStepFlag& operator=(SkipAiStepFlag const&) = delete;
-    SkipAiStepFlag(SkipAiStepFlag const&)            = delete;
-    SkipAiStepFlag()                                 = delete;
+    SkipAiStepFlag& operator=(SkipAiStepFlag const&);
+    SkipAiStepFlag(SkipAiStepFlag const&);
+    SkipAiStepFlag();
 };

@@ -9,9 +9,9 @@
 class GameEvent {
 public:
     // prevent constructor by default
-    GameEvent& operator=(GameEvent const&) = delete;
-    GameEvent(GameEvent const&)            = delete;
-    GameEvent()                            = delete;
+    GameEvent& operator=(GameEvent const&);
+    GameEvent(GameEvent const&);
+    GameEvent();
 
 public:
     // NOLINTBEGIN

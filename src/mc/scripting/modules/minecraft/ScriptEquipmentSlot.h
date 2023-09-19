@@ -11,9 +11,9 @@ namespace ScriptModuleMinecraft {
 class ScriptEquipmentSlot {
 public:
     // prevent constructor by default
-    ScriptEquipmentSlot& operator=(ScriptEquipmentSlot const&) = delete;
-    ScriptEquipmentSlot(ScriptEquipmentSlot const&)            = delete;
-    ScriptEquipmentSlot()                                      = delete;
+    ScriptEquipmentSlot& operator=(ScriptEquipmentSlot const&);
+    ScriptEquipmentSlot(ScriptEquipmentSlot const&);
+    ScriptEquipmentSlot();
 
 public:
     // NOLINTBEGIN

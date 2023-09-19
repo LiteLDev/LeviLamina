@@ -5,7 +5,7 @@
 struct UpdateWaterStateRequestComponent {
 public:
     // prevent constructor by default
-    UpdateWaterStateRequestComponent& operator=(UpdateWaterStateRequestComponent const&) = delete;
-    UpdateWaterStateRequestComponent(UpdateWaterStateRequestComponent const&)            = delete;
-    UpdateWaterStateRequestComponent()                                                   = delete;
+    UpdateWaterStateRequestComponent& operator=(UpdateWaterStateRequestComponent const&);
+    UpdateWaterStateRequestComponent(UpdateWaterStateRequestComponent const&);
+    UpdateWaterStateRequestComponent();
 };

@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptMarkVariantComponent {
 public:
     // prevent constructor by default
-    ScriptMarkVariantComponent& operator=(ScriptMarkVariantComponent const&) = delete;
-    ScriptMarkVariantComponent(ScriptMarkVariantComponent const&)            = delete;
-    ScriptMarkVariantComponent()                                             = delete;
+    ScriptMarkVariantComponent& operator=(ScriptMarkVariantComponent const&);
+    ScriptMarkVariantComponent(ScriptMarkVariantComponent const&);
+    ScriptMarkVariantComponent();
 
 public:
     // NOLINTBEGIN

@@ -12,9 +12,9 @@ public:
 
 public:
     // prevent constructor by default
-    LegacyForestFoliageFeature& operator=(LegacyForestFoliageFeature const&) = delete;
-    LegacyForestFoliageFeature(LegacyForestFoliageFeature const&)            = delete;
-    LegacyForestFoliageFeature()                                             = delete;
+    LegacyForestFoliageFeature& operator=(LegacyForestFoliageFeature const&);
+    LegacyForestFoliageFeature(LegacyForestFoliageFeature const&);
+    LegacyForestFoliageFeature();
 
 public:
     // NOLINTBEGIN

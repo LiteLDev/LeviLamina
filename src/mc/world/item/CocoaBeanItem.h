@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class CocoaBeanItem : public ::Item {
 public:
     // prevent constructor by default
-    CocoaBeanItem& operator=(CocoaBeanItem const&) = delete;
-    CocoaBeanItem(CocoaBeanItem const&)            = delete;
-    CocoaBeanItem()                                = delete;
+    CocoaBeanItem& operator=(CocoaBeanItem const&);
+    CocoaBeanItem(CocoaBeanItem const&);
+    CocoaBeanItem();
 
 public:
     // NOLINTBEGIN

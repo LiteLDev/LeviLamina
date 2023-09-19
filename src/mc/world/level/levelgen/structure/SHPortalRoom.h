@@ -9,9 +9,9 @@
 class SHPortalRoom : public ::StrongholdPiece {
 public:
     // prevent constructor by default
-    SHPortalRoom& operator=(SHPortalRoom const&) = delete;
-    SHPortalRoom(SHPortalRoom const&)            = delete;
-    SHPortalRoom()                               = delete;
+    SHPortalRoom& operator=(SHPortalRoom const&);
+    SHPortalRoom(SHPortalRoom const&);
+    SHPortalRoom();
 
 public:
     // NOLINTBEGIN

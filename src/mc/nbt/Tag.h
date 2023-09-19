@@ -58,8 +58,8 @@ public:
 
 public:
     // prevent constructor by default
-    Tag& operator=(Tag const&) = delete;
-    Tag(Tag const&)            = delete;
+    Tag& operator=(Tag const&);
+    Tag(Tag const&);
 
 public:
     // NOLINTBEGIN

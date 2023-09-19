@@ -5,9 +5,9 @@
 struct PlayerChangeDimensionRequestComponent {
 public:
     // prevent constructor by default
-    PlayerChangeDimensionRequestComponent& operator=(PlayerChangeDimensionRequestComponent const&) = delete;
-    PlayerChangeDimensionRequestComponent(PlayerChangeDimensionRequestComponent const&)            = delete;
-    PlayerChangeDimensionRequestComponent()                                                        = delete;
+    PlayerChangeDimensionRequestComponent& operator=(PlayerChangeDimensionRequestComponent const&);
+    PlayerChangeDimensionRequestComponent(PlayerChangeDimensionRequestComponent const&);
+    PlayerChangeDimensionRequestComponent();
 
 public:
     // NOLINTBEGIN

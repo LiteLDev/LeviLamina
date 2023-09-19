@@ -12,8 +12,8 @@ namespace RakNet {
 class CCRakNetSlidingWindow {
 public:
     // prevent constructor by default
-    CCRakNetSlidingWindow& operator=(CCRakNetSlidingWindow const&) = delete;
-    CCRakNetSlidingWindow(CCRakNetSlidingWindow const&)            = delete;
+    CCRakNetSlidingWindow& operator=(CCRakNetSlidingWindow const&);
+    CCRakNetSlidingWindow(CCRakNetSlidingWindow const&);
 
 public:
     // NOLINTBEGIN

@@ -9,10 +9,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0SubChunkPos@@QEAA@AEBVBlockPos@@@Z
-    MCAPI SubChunkPos(class BlockPos const&);
+    MCAPI explicit SubChunkPos(class BlockPos const&);
 
     // symbol: ??BSubChunkPos@@QEBA?AVBlockPos@@XZ
-    MCAPI operator class BlockPos() const;
+    MCAPI explicit operator class BlockPos() const;
 
     // symbol: ?MAX@SubChunkPos@@2V1@B
     MCAPI static class SubChunkPos const MAX;

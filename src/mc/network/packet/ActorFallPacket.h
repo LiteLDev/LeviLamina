@@ -5,7 +5,7 @@
 class ActorFallPacket {
 public:
     // prevent constructor by default
-    ActorFallPacket& operator=(ActorFallPacket const&) = delete;
-    ActorFallPacket(ActorFallPacket const&)            = delete;
-    ActorFallPacket()                                  = delete;
+    ActorFallPacket& operator=(ActorFallPacket const&);
+    ActorFallPacket(ActorFallPacket const&);
+    ActorFallPacket();
 };

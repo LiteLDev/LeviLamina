@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class FlowerPotBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    FlowerPotBlock& operator=(FlowerPotBlock const&) = delete;
-    FlowerPotBlock(FlowerPotBlock const&)            = delete;
-    FlowerPotBlock()                                 = delete;
+    FlowerPotBlock& operator=(FlowerPotBlock const&);
+    FlowerPotBlock(FlowerPotBlock const&);
+    FlowerPotBlock();
 
 public:
     // NOLINTBEGIN

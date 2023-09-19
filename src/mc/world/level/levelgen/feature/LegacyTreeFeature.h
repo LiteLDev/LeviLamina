@@ -12,9 +12,9 @@ public:
 
 public:
     // prevent constructor by default
-    LegacyTreeFeature& operator=(LegacyTreeFeature const&) = delete;
-    LegacyTreeFeature(LegacyTreeFeature const&)            = delete;
-    LegacyTreeFeature()                                    = delete;
+    LegacyTreeFeature& operator=(LegacyTreeFeature const&);
+    LegacyTreeFeature(LegacyTreeFeature const&);
+    LegacyTreeFeature();
 
 public:
     // NOLINTBEGIN

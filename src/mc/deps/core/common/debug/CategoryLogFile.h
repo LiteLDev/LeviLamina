@@ -10,8 +10,8 @@ namespace BedrockLog {
 struct CategoryLogFile {
 public:
     // prevent constructor by default
-    CategoryLogFile& operator=(CategoryLogFile const&) = delete;
-    CategoryLogFile(CategoryLogFile const&)            = delete;
+    CategoryLogFile& operator=(CategoryLogFile const&);
+    CategoryLogFile(CategoryLogFile const&);
 
 public:
     // NOLINTBEGIN

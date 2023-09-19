@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptGroundOffsetComponent {
 public:
     // prevent constructor by default
-    ScriptGroundOffsetComponent& operator=(ScriptGroundOffsetComponent const&) = delete;
-    ScriptGroundOffsetComponent(ScriptGroundOffsetComponent const&)            = delete;
-    ScriptGroundOffsetComponent()                                              = delete;
+    ScriptGroundOffsetComponent& operator=(ScriptGroundOffsetComponent const&);
+    ScriptGroundOffsetComponent(ScriptGroundOffsetComponent const&);
+    ScriptGroundOffsetComponent();
 
 public:
     // NOLINTBEGIN

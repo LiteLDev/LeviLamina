@@ -26,7 +26,7 @@ public:
     MCVAPI ~ItemDescriptorCount();
 
     // symbol: ??0ItemDescriptorCount@@QEAA@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI ItemDescriptorCount(class ReadOnlyBinaryStream&);
+    MCAPI explicit ItemDescriptorCount(class ReadOnlyBinaryStream&);
 
     // symbol: ??0ItemDescriptorCount@@QEAA@AEBVBlockLegacy@@G@Z
     MCAPI ItemDescriptorCount(class BlockLegacy const&, ushort);

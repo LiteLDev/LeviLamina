@@ -5,8 +5,8 @@
 struct ItemChargeEvent {
 public:
     // prevent constructor by default
-    ItemChargeEvent& operator=(ItemChargeEvent const&) = delete;
-    ItemChargeEvent()                                  = delete;
+    ItemChargeEvent& operator=(ItemChargeEvent const&);
+    ItemChargeEvent();
 
 public:
     // NOLINTBEGIN

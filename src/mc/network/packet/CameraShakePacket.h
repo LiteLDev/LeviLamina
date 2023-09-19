@@ -19,8 +19,8 @@ public:
     CameraShakeAction mShakeAction; // this+0x39
 
     // prevent constructor by default
-    CameraShakePacket& operator=(CameraShakePacket const&) = delete;
-    CameraShakePacket(CameraShakePacket const&)            = delete;
+    CameraShakePacket& operator=(CameraShakePacket const&);
+    CameraShakePacket(CameraShakePacket const&);
 
 public:
     // NOLINTBEGIN
@@ -51,7 +51,7 @@ public:
     MCAPI CameraShakePacket();
 
     // symbol: ??0CameraShakePacket@@QEAA@W4CameraShakeAction@@@Z
-    MCAPI CameraShakePacket(::CameraShakeAction);
+    MCAPI explicit CameraShakePacket(::CameraShakeAction);
 
     // NOLINTEND
 };

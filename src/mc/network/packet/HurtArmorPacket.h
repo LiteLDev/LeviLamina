@@ -16,8 +16,8 @@ public:
     std::bitset<4>   mArmorSlots; // this+0x38
 
     // prevent constructor by default
-    HurtArmorPacket& operator=(HurtArmorPacket const&) = delete;
-    HurtArmorPacket(HurtArmorPacket const&)            = delete;
+    HurtArmorPacket& operator=(HurtArmorPacket const&);
+    HurtArmorPacket(HurtArmorPacket const&);
 
 public:
     // NOLINTBEGIN

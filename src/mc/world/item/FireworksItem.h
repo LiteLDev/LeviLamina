@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class FireworksItem : public ::Item {
 public:
     // prevent constructor by default
-    FireworksItem& operator=(FireworksItem const&) = delete;
-    FireworksItem(FireworksItem const&)            = delete;
-    FireworksItem()                                = delete;
+    FireworksItem& operator=(FireworksItem const&);
+    FireworksItem(FireworksItem const&);
+    FireworksItem();
 
 public:
     // NOLINTBEGIN

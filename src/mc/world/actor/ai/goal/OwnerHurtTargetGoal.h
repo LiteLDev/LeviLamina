@@ -9,9 +9,9 @@
 class OwnerHurtTargetGoal : public ::TargetGoal {
 public:
     // prevent constructor by default
-    OwnerHurtTargetGoal& operator=(OwnerHurtTargetGoal const&) = delete;
-    OwnerHurtTargetGoal(OwnerHurtTargetGoal const&)            = delete;
-    OwnerHurtTargetGoal()                                      = delete;
+    OwnerHurtTargetGoal& operator=(OwnerHurtTargetGoal const&);
+    OwnerHurtTargetGoal(OwnerHurtTargetGoal const&);
+    OwnerHurtTargetGoal();
 
 public:
     // NOLINTBEGIN

@@ -12,9 +12,9 @@
 struct HC_PERFORM_ENV {
 public:
     // prevent constructor by default
-    HC_PERFORM_ENV& operator=(HC_PERFORM_ENV const&) = delete;
-    HC_PERFORM_ENV(HC_PERFORM_ENV const&)            = delete;
-    HC_PERFORM_ENV()                                 = delete;
+    HC_PERFORM_ENV& operator=(HC_PERFORM_ENV const&);
+    HC_PERFORM_ENV(HC_PERFORM_ENV const&);
+    HC_PERFORM_ENV();
 
 public:
     // NOLINTBEGIN

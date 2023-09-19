@@ -10,9 +10,9 @@
 class TitleRawCommand : public ::MessagingCommand {
 public:
     // prevent constructor by default
-    TitleRawCommand& operator=(TitleRawCommand const&) = delete;
-    TitleRawCommand(TitleRawCommand const&)            = delete;
-    TitleRawCommand()                                  = delete;
+    TitleRawCommand& operator=(TitleRawCommand const&);
+    TitleRawCommand(TitleRawCommand const&);
+    TitleRawCommand();
 
 public:
     // NOLINTBEGIN

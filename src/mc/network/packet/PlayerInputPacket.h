@@ -15,8 +15,8 @@ public:
     bool mIsSneaking; // this+0x39
 
     // prevent constructor by default
-    PlayerInputPacket& operator=(PlayerInputPacket const&) = delete;
-    PlayerInputPacket(PlayerInputPacket const&)            = delete;
+    PlayerInputPacket& operator=(PlayerInputPacket const&);
+    PlayerInputPacket(PlayerInputPacket const&);
 
 public:
     // NOLINTBEGIN

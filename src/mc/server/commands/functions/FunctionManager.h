@@ -23,9 +23,9 @@ public:
     struct OriginMapping {
     public:
         // prevent constructor by default
-        OriginMapping& operator=(OriginMapping const&) = delete;
-        OriginMapping(OriginMapping const&)            = delete;
-        OriginMapping()                                = delete;
+        OriginMapping& operator=(OriginMapping const&);
+        OriginMapping(OriginMapping const&);
+        OriginMapping();
 
     public:
         // NOLINTBEGIN
@@ -37,9 +37,9 @@ public:
 
 public:
     // prevent constructor by default
-    FunctionManager& operator=(FunctionManager const&) = delete;
-    FunctionManager(FunctionManager const&)            = delete;
-    FunctionManager()                                  = delete;
+    FunctionManager& operator=(FunctionManager const&);
+    FunctionManager(FunctionManager const&);
+    FunctionManager();
 
 public:
     // NOLINTBEGIN

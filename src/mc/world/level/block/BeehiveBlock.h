@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class BeehiveBlock : public ::FaceDirectionalActorBlock {
 public:
     // prevent constructor by default
-    BeehiveBlock& operator=(BeehiveBlock const&) = delete;
-    BeehiveBlock(BeehiveBlock const&)            = delete;
-    BeehiveBlock()                               = delete;
+    BeehiveBlock& operator=(BeehiveBlock const&);
+    BeehiveBlock(BeehiveBlock const&);
+    BeehiveBlock();
 
 public:
     // NOLINTBEGIN

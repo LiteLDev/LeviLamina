@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class FurnaceBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    FurnaceBlock& operator=(FurnaceBlock const&) = delete;
-    FurnaceBlock(FurnaceBlock const&)            = delete;
-    FurnaceBlock()                               = delete;
+    FurnaceBlock& operator=(FurnaceBlock const&);
+    FurnaceBlock(FurnaceBlock const&);
+    FurnaceBlock();
 
 public:
     // NOLINTBEGIN

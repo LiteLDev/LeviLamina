@@ -11,8 +11,8 @@ public:
     DimensionType  dimension;
 
     // prevent constructor by default
-    SpawnSettings& operator=(SpawnSettings const&) = delete;
-    SpawnSettings()                                = delete;
+    SpawnSettings& operator=(SpawnSettings const&);
+    SpawnSettings();
 
 public:
     // NOLINTBEGIN

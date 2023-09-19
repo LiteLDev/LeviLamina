@@ -5,7 +5,7 @@
 struct SeatDescription {
 public:
     // prevent constructor by default
-    SeatDescription() = delete;
+    SeatDescription();
 
 public:
     // NOLINTBEGIN

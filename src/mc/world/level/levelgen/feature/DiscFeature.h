@@ -8,9 +8,9 @@
 class DiscFeature : public ::Feature {
 public:
     // prevent constructor by default
-    DiscFeature& operator=(DiscFeature const&) = delete;
-    DiscFeature(DiscFeature const&)            = delete;
-    DiscFeature()                              = delete;
+    DiscFeature& operator=(DiscFeature const&);
+    DiscFeature(DiscFeature const&);
+    DiscFeature();
 
 public:
     // NOLINTBEGIN

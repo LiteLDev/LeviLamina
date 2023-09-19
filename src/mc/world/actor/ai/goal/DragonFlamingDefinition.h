@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class DragonFlamingDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    DragonFlamingDefinition& operator=(DragonFlamingDefinition const&) = delete;
-    DragonFlamingDefinition(DragonFlamingDefinition const&)            = delete;
+    DragonFlamingDefinition& operator=(DragonFlamingDefinition const&);
+    DragonFlamingDefinition(DragonFlamingDefinition const&);
 
 public:
     // NOLINTBEGIN

@@ -24,9 +24,9 @@ namespace mce { class Color; }
 struct MolangMemberArray {
 public:
     // prevent constructor by default
-    MolangMemberArray& operator=(MolangMemberArray const&) = delete;
-    MolangMemberArray(MolangMemberArray const&)            = delete;
-    MolangMemberArray()                                    = delete;
+    MolangMemberArray& operator=(MolangMemberArray const&);
+    MolangMemberArray(MolangMemberArray const&);
+    MolangMemberArray();
 
 public:
     // NOLINTBEGIN

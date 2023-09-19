@@ -5,7 +5,7 @@
 struct HoneyBlockFlag {
 public:
     // prevent constructor by default
-    HoneyBlockFlag& operator=(HoneyBlockFlag const&) = delete;
-    HoneyBlockFlag(HoneyBlockFlag const&)            = delete;
-    HoneyBlockFlag()                                 = delete;
+    HoneyBlockFlag& operator=(HoneyBlockFlag const&);
+    HoneyBlockFlag(HoneyBlockFlag const&);
+    HoneyBlockFlag();
 };

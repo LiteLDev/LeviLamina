@@ -19,9 +19,9 @@ namespace ScriptModuleMinecraft {
 class ScriptAgeableComponent {
 public:
     // prevent constructor by default
-    ScriptAgeableComponent& operator=(ScriptAgeableComponent const&) = delete;
-    ScriptAgeableComponent(ScriptAgeableComponent const&)            = delete;
-    ScriptAgeableComponent()                                         = delete;
+    ScriptAgeableComponent& operator=(ScriptAgeableComponent const&);
+    ScriptAgeableComponent(ScriptAgeableComponent const&);
+    ScriptAgeableComponent();
 
 public:
     // NOLINTBEGIN

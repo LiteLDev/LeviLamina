@@ -8,8 +8,8 @@
 class LegacyTradeableComponent {
 public:
     // prevent constructor by default
-    LegacyTradeableComponent& operator=(LegacyTradeableComponent const&) = delete;
-    LegacyTradeableComponent(LegacyTradeableComponent const&)            = delete;
+    LegacyTradeableComponent& operator=(LegacyTradeableComponent const&);
+    LegacyTradeableComponent(LegacyTradeableComponent const&);
 
 public:
     // NOLINTBEGIN

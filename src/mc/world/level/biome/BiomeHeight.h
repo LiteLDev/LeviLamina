@@ -5,9 +5,9 @@
 struct BiomeHeight {
 public:
     // prevent constructor by default
-    BiomeHeight& operator=(BiomeHeight const&) = delete;
-    BiomeHeight(BiomeHeight const&)            = delete;
-    BiomeHeight()                              = delete;
+    BiomeHeight& operator=(BiomeHeight const&);
+    BiomeHeight(BiomeHeight const&);
+    BiomeHeight();
 
 public:
     // NOLINTBEGIN

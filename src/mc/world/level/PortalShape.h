@@ -9,9 +9,9 @@
 class PortalShape {
 public:
     // prevent constructor by default
-    PortalShape& operator=(PortalShape const&) = delete;
-    PortalShape(PortalShape const&)            = delete;
-    PortalShape()                              = delete;
+    PortalShape& operator=(PortalShape const&);
+    PortalShape(PortalShape const&);
+    PortalShape();
 
 public:
     // NOLINTBEGIN

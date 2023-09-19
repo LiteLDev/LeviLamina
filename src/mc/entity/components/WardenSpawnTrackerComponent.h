@@ -8,8 +8,8 @@
 class WardenSpawnTrackerComponent {
 public:
     // prevent constructor by default
-    WardenSpawnTrackerComponent& operator=(WardenSpawnTrackerComponent const&) = delete;
-    WardenSpawnTrackerComponent(WardenSpawnTrackerComponent const&)            = delete;
+    WardenSpawnTrackerComponent& operator=(WardenSpawnTrackerComponent const&);
+    WardenSpawnTrackerComponent(WardenSpawnTrackerComponent const&);
 
 public:
     // NOLINTBEGIN

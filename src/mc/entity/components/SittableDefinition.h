@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class SittableDefinition {
 public:
     // prevent constructor by default
-    SittableDefinition& operator=(SittableDefinition const&) = delete;
-    SittableDefinition(SittableDefinition const&)            = delete;
-    SittableDefinition()                                     = delete;
+    SittableDefinition& operator=(SittableDefinition const&);
+    SittableDefinition(SittableDefinition const&);
+    SittableDefinition();
 
 public:
     // NOLINTBEGIN

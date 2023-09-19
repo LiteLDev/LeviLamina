@@ -8,9 +8,9 @@
 class TestAction : public ::IRequestAction {
 public:
     // prevent constructor by default
-    TestAction& operator=(TestAction const&) = delete;
-    TestAction(TestAction const&)            = delete;
-    TestAction()                             = delete;
+    TestAction& operator=(TestAction const&);
+    TestAction(TestAction const&);
+    TestAction();
 
 public:
     // NOLINTBEGIN

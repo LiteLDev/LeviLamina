@@ -19,8 +19,8 @@ public:
     std::optional<MolangVariableMap> mMolangVariables;    // this+0x70
 
     // prevent constructor by default
-    SpawnParticleEffectPacket& operator=(SpawnParticleEffectPacket const&) = delete;
-    SpawnParticleEffectPacket(SpawnParticleEffectPacket const&)            = delete;
+    SpawnParticleEffectPacket& operator=(SpawnParticleEffectPacket const&);
+    SpawnParticleEffectPacket(SpawnParticleEffectPacket const&);
 
 public:
     // NOLINTBEGIN

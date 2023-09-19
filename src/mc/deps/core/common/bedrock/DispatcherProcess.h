@@ -16,9 +16,9 @@ namespace Bedrock::Http {
 class DispatcherProcess {
 public:
     // prevent constructor by default
-    DispatcherProcess& operator=(DispatcherProcess const&) = delete;
-    DispatcherProcess(DispatcherProcess const&)            = delete;
-    DispatcherProcess()                                    = delete;
+    DispatcherProcess& operator=(DispatcherProcess const&);
+    DispatcherProcess(DispatcherProcess const&);
+    DispatcherProcess();
 
 public:
     // NOLINTBEGIN
@@ -46,7 +46,7 @@ public:
     MCVAPI ~DispatcherProcess();
 
     // symbol: ??0DispatcherProcess@Http@Bedrock@@QEAA@V?$shared_ptr@VDispatcherProcess@Http@Bedrock@@@std@@@Z
-    MCAPI DispatcherProcess(std::shared_ptr<class Bedrock::Http::DispatcherProcess>);
+    MCAPI explicit DispatcherProcess(std::shared_ptr<class Bedrock::Http::DispatcherProcess>);
 
     // NOLINTEND
 };

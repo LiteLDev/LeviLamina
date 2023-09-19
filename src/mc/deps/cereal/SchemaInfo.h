@@ -7,9 +7,9 @@ namespace CerealHelpers {
 struct SchemaInfo {
 public:
     // prevent constructor by default
-    SchemaInfo& operator=(SchemaInfo const&) = delete;
-    SchemaInfo(SchemaInfo const&)            = delete;
-    SchemaInfo()                             = delete;
+    SchemaInfo& operator=(SchemaInfo const&);
+    SchemaInfo(SchemaInfo const&);
+    SchemaInfo();
 
 public:
     // NOLINTBEGIN

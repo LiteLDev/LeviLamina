@@ -5,7 +5,7 @@
 class IScriptPluginSourceEnumerator {
 public:
     // prevent constructor by default
-    IScriptPluginSourceEnumerator& operator=(IScriptPluginSourceEnumerator const&) = delete;
-    IScriptPluginSourceEnumerator(IScriptPluginSourceEnumerator const&)            = delete;
-    IScriptPluginSourceEnumerator()                                                = delete;
+    IScriptPluginSourceEnumerator& operator=(IScriptPluginSourceEnumerator const&);
+    IScriptPluginSourceEnumerator(IScriptPluginSourceEnumerator const&);
+    IScriptPluginSourceEnumerator();
 };

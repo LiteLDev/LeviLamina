@@ -13,9 +13,9 @@ namespace ClientBlockPipeline { struct BlockSchematic; }
 struct BlockUnitCubeComponent : public ::BlockComponentBase {
 public:
     // prevent constructor by default
-    BlockUnitCubeComponent& operator=(BlockUnitCubeComponent const&) = delete;
-    BlockUnitCubeComponent(BlockUnitCubeComponent const&)            = delete;
-    BlockUnitCubeComponent()                                         = delete;
+    BlockUnitCubeComponent& operator=(BlockUnitCubeComponent const&);
+    BlockUnitCubeComponent(BlockUnitCubeComponent const&);
+    BlockUnitCubeComponent();
 
 public:
     // NOLINTBEGIN

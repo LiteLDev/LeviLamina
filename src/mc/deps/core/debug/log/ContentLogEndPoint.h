@@ -5,8 +5,8 @@
 class ContentLogEndPoint {
 public:
     // prevent constructor by default
-    ContentLogEndPoint& operator=(ContentLogEndPoint const&) = delete;
-    ContentLogEndPoint(ContentLogEndPoint const&)            = delete;
+    ContentLogEndPoint& operator=(ContentLogEndPoint const&);
+    ContentLogEndPoint(ContentLogEndPoint const&);
 
 public:
     // NOLINTBEGIN

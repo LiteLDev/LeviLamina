@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft::ScriptRaycasting {
 struct BlockHitInfo {
 public:
     // prevent constructor by default
-    BlockHitInfo& operator=(BlockHitInfo const&) = delete;
-    BlockHitInfo(BlockHitInfo const&)            = delete;
-    BlockHitInfo()                               = delete;
+    BlockHitInfo& operator=(BlockHitInfo const&);
+    BlockHitInfo(BlockHitInfo const&);
+    BlockHitInfo();
 };
 
 }; // namespace ScriptModuleMinecraft::ScriptRaycasting

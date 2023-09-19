@@ -13,8 +13,8 @@ public:
     std::string mMessage;     // this+0x38
 
     // prevent constructor by default
-    DisconnectPacket& operator=(DisconnectPacket const&) = delete;
-    DisconnectPacket(DisconnectPacket const&)            = delete;
+    DisconnectPacket& operator=(DisconnectPacket const&);
+    DisconnectPacket(DisconnectPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class SpawnActorDefinition {
 public:
     // prevent constructor by default
-    SpawnActorDefinition& operator=(SpawnActorDefinition const&) = delete;
-    SpawnActorDefinition(SpawnActorDefinition const&)            = delete;
-    SpawnActorDefinition()                                       = delete;
+    SpawnActorDefinition& operator=(SpawnActorDefinition const&);
+    SpawnActorDefinition(SpawnActorDefinition const&);
+    SpawnActorDefinition();
 
 public:
     // NOLINTBEGIN

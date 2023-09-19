@@ -5,9 +5,9 @@
 struct ArbitraryBiomeComponent {
 public:
     // prevent constructor by default
-    ArbitraryBiomeComponent& operator=(ArbitraryBiomeComponent const&) = delete;
-    ArbitraryBiomeComponent(ArbitraryBiomeComponent const&)            = delete;
-    ArbitraryBiomeComponent()                                          = delete;
+    ArbitraryBiomeComponent& operator=(ArbitraryBiomeComponent const&);
+    ArbitraryBiomeComponent(ArbitraryBiomeComponent const&);
+    ArbitraryBiomeComponent();
 
 public:
     // NOLINTBEGIN

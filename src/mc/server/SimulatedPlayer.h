@@ -63,9 +63,9 @@ public:
     LLAPI bool simulateDestroyLookAt(float handLength = 5.5f);
 
     // prevent constructor by default
-    SimulatedPlayer& operator=(SimulatedPlayer const&) = delete;
-    SimulatedPlayer(SimulatedPlayer const&)            = delete;
-    SimulatedPlayer()                                  = delete;
+    SimulatedPlayer& operator=(SimulatedPlayer const&);
+    SimulatedPlayer(SimulatedPlayer const&);
+    SimulatedPlayer();
 
 public:
     // NOLINTBEGIN

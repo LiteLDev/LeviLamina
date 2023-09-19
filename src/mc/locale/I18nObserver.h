@@ -5,9 +5,9 @@
 class I18nObserver {
 public:
     // prevent constructor by default
-    I18nObserver& operator=(I18nObserver const&) = delete;
-    I18nObserver(I18nObserver const&)            = delete;
-    I18nObserver()                               = delete;
+    I18nObserver& operator=(I18nObserver const&);
+    I18nObserver(I18nObserver const&);
+    I18nObserver();
 
 public:
     // NOLINTBEGIN

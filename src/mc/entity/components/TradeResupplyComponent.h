@@ -5,8 +5,8 @@
 class TradeResupplyComponent {
 public:
     // prevent constructor by default
-    TradeResupplyComponent& operator=(TradeResupplyComponent const&) = delete;
-    TradeResupplyComponent(TradeResupplyComponent const&)            = delete;
+    TradeResupplyComponent& operator=(TradeResupplyComponent const&);
+    TradeResupplyComponent(TradeResupplyComponent const&);
 
 public:
     // NOLINTBEGIN

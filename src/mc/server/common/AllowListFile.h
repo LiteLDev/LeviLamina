@@ -14,14 +14,14 @@ namespace Core { class Path; }
 class AllowListFile {
 public:
     // prevent constructor by default
-    AllowListFile& operator=(AllowListFile const&) = delete;
-    AllowListFile(AllowListFile const&)            = delete;
-    AllowListFile()                                = delete;
+    AllowListFile& operator=(AllowListFile const&);
+    AllowListFile(AllowListFile const&);
+    AllowListFile();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0AllowListFile@@QEAA@AEBVPath@Core@@@Z
-    MCAPI AllowListFile(class Core::Path const&);
+    MCAPI explicit AllowListFile(class Core::Path const&);
 
     // symbol: ?getAllowList@AllowListFile@@QEBAAEAVAllowList@@XZ
     MCAPI class AllowList& getAllowList() const;

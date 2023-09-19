@@ -15,9 +15,9 @@ namespace AgentComponents {
 class DetectObstacle {
 public:
     // prevent constructor by default
-    DetectObstacle& operator=(DetectObstacle const&) = delete;
-    DetectObstacle(DetectObstacle const&)            = delete;
-    DetectObstacle()                                 = delete;
+    DetectObstacle& operator=(DetectObstacle const&);
+    DetectObstacle(DetectObstacle const&);
+    DetectObstacle();
 
 public:
     // NOLINTBEGIN

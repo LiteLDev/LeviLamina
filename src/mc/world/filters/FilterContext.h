@@ -5,7 +5,7 @@
 struct FilterContext {
 public:
     // prevent constructor by default
-    FilterContext& operator=(FilterContext const&) = delete;
-    FilterContext(FilterContext const&)            = delete;
-    FilterContext()                                = delete;
+    FilterContext& operator=(FilterContext const&);
+    FilterContext(FilterContext const&);
+    FilterContext();
 };

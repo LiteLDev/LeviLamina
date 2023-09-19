@@ -26,9 +26,9 @@
 class Bat : public ::Mob {
 public:
     // prevent constructor by default
-    Bat& operator=(Bat const&) = delete;
-    Bat(Bat const&)            = delete;
-    Bat()                      = delete;
+    Bat& operator=(Bat const&);
+    Bat(Bat const&);
+    Bat();
 
 public:
     // NOLINTBEGIN

@@ -16,8 +16,8 @@ namespace BlockCreativeGroupVersioning {
 class BlockCreativeGroup11920Upgrade : public ::CerealSchemaUpgrade {
 public:
     // prevent constructor by default
-    BlockCreativeGroup11920Upgrade& operator=(BlockCreativeGroup11920Upgrade const&) = delete;
-    BlockCreativeGroup11920Upgrade(BlockCreativeGroup11920Upgrade const&)            = delete;
+    BlockCreativeGroup11920Upgrade& operator=(BlockCreativeGroup11920Upgrade const&);
+    BlockCreativeGroup11920Upgrade(BlockCreativeGroup11920Upgrade const&);
 
 public:
     // NOLINTBEGIN

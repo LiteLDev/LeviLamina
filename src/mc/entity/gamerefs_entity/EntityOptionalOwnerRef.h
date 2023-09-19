@@ -10,8 +10,8 @@
 class EntityOptionalOwnerRef {
 public:
     // prevent constructor by default
-    EntityOptionalOwnerRef& operator=(EntityOptionalOwnerRef const&) = delete;
-    EntityOptionalOwnerRef(EntityOptionalOwnerRef const&)            = delete;
+    EntityOptionalOwnerRef& operator=(EntityOptionalOwnerRef const&);
+    EntityOptionalOwnerRef(EntityOptionalOwnerRef const&);
 
 public:
     // NOLINTBEGIN

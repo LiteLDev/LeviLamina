@@ -5,9 +5,9 @@
 class SoulSpeedAttributeSystem {
 public:
     // prevent constructor by default
-    SoulSpeedAttributeSystem& operator=(SoulSpeedAttributeSystem const&) = delete;
-    SoulSpeedAttributeSystem(SoulSpeedAttributeSystem const&)            = delete;
-    SoulSpeedAttributeSystem()                                           = delete;
+    SoulSpeedAttributeSystem& operator=(SoulSpeedAttributeSystem const&);
+    SoulSpeedAttributeSystem(SoulSpeedAttributeSystem const&);
+    SoulSpeedAttributeSystem();
 
 public:
     // NOLINTBEGIN

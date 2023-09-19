@@ -8,9 +8,9 @@
 class ComponentItemDataLoader {
 public:
     // prevent constructor by default
-    ComponentItemDataLoader& operator=(ComponentItemDataLoader const&) = delete;
-    ComponentItemDataLoader(ComponentItemDataLoader const&)            = delete;
-    ComponentItemDataLoader()                                          = delete;
+    ComponentItemDataLoader& operator=(ComponentItemDataLoader const&);
+    ComponentItemDataLoader(ComponentItemDataLoader const&);
+    ComponentItemDataLoader();
 
 public:
     // NOLINTBEGIN

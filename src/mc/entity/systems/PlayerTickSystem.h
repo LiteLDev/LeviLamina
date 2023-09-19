@@ -5,9 +5,9 @@
 class PlayerTickSystem {
 public:
     // prevent constructor by default
-    PlayerTickSystem& operator=(PlayerTickSystem const&) = delete;
-    PlayerTickSystem(PlayerTickSystem const&)            = delete;
-    PlayerTickSystem()                                   = delete;
+    PlayerTickSystem& operator=(PlayerTickSystem const&);
+    PlayerTickSystem(PlayerTickSystem const&);
+    PlayerTickSystem();
 
 public:
     // NOLINTBEGIN

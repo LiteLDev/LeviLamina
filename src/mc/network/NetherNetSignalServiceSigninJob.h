@@ -19,9 +19,9 @@ public:
     struct Token {
     public:
         // prevent constructor by default
-        Token& operator=(Token const&) = delete;
-        Token(Token const&)            = delete;
-        Token()                        = delete;
+        Token& operator=(Token const&);
+        Token(Token const&);
+        Token();
 
     public:
         // NOLINTBEGIN
@@ -34,9 +34,9 @@ public:
     struct Url {
     public:
         // prevent constructor by default
-        Url& operator=(Url const&) = delete;
-        Url(Url const&)            = delete;
-        Url()                      = delete;
+        Url& operator=(Url const&);
+        Url(Url const&);
+        Url();
 
     public:
         // NOLINTBEGIN
@@ -49,9 +49,9 @@ public:
     class ConfigListener {
     public:
         // prevent constructor by default
-        ConfigListener& operator=(ConfigListener const&) = delete;
-        ConfigListener(ConfigListener const&)            = delete;
-        ConfigListener()                                 = delete;
+        ConfigListener& operator=(ConfigListener const&);
+        ConfigListener(ConfigListener const&);
+        ConfigListener();
 
     public:
         // NOLINTBEGIN
@@ -69,9 +69,9 @@ public:
 
 public:
     // prevent constructor by default
-    NetherNetSignalServiceSigninJob& operator=(NetherNetSignalServiceSigninJob const&) = delete;
-    NetherNetSignalServiceSigninJob(NetherNetSignalServiceSigninJob const&)            = delete;
-    NetherNetSignalServiceSigninJob()                                                  = delete;
+    NetherNetSignalServiceSigninJob& operator=(NetherNetSignalServiceSigninJob const&);
+    NetherNetSignalServiceSigninJob(NetherNetSignalServiceSigninJob const&);
+    NetherNetSignalServiceSigninJob();
 
 public:
     // NOLINTBEGIN

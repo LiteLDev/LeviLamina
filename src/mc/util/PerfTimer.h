@@ -9,14 +9,14 @@
 class PerfTimer {
 public:
     // prevent constructor by default
-    PerfTimer& operator=(PerfTimer const&) = delete;
-    PerfTimer(PerfTimer const&)            = delete;
-    PerfTimer()                            = delete;
+    PerfTimer& operator=(PerfTimer const&);
+    PerfTimer(PerfTimer const&);
+    PerfTimer();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0PerfTimer@@QEAA@Vid@thread@std@@@Z
-    MCAPI PerfTimer(std::thread::id);
+    MCAPI explicit PerfTimer(std::thread::id);
 
     // symbol: ??1PerfTimer@@QEAA@XZ
     MCAPI ~PerfTimer();

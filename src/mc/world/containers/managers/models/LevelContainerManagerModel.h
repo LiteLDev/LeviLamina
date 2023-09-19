@@ -11,9 +11,9 @@
 class LevelContainerManagerModel : public ::ContainerManagerModel {
 public:
     // prevent constructor by default
-    LevelContainerManagerModel& operator=(LevelContainerManagerModel const&) = delete;
-    LevelContainerManagerModel(LevelContainerManagerModel const&)            = delete;
-    LevelContainerManagerModel()                                             = delete;
+    LevelContainerManagerModel& operator=(LevelContainerManagerModel const&);
+    LevelContainerManagerModel(LevelContainerManagerModel const&);
+    LevelContainerManagerModel();
 
 public:
     // NOLINTBEGIN

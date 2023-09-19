@@ -7,9 +7,9 @@ namespace Bedrock::PubSub {
 class RawSubscription {
 public:
     // prevent constructor by default
-    RawSubscription& operator=(RawSubscription const&) = delete;
-    RawSubscription(RawSubscription const&)            = delete;
-    RawSubscription()                                  = delete;
+    RawSubscription& operator=(RawSubscription const&);
+    RawSubscription(RawSubscription const&);
+    RawSubscription();
 };
 
 }; // namespace Bedrock::PubSub

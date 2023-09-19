@@ -26,9 +26,9 @@
 class Blaze : public ::Monster {
 public:
     // prevent constructor by default
-    Blaze& operator=(Blaze const&) = delete;
-    Blaze(Blaze const&)            = delete;
-    Blaze()                        = delete;
+    Blaze& operator=(Blaze const&);
+    Blaze(Blaze const&);
+    Blaze();
 
 public:
     // NOLINTBEGIN

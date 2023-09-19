@@ -8,9 +8,9 @@
 class LegacyActorArmorChangedListener : public ::ContainerContentChangeListener {
 public:
     // prevent constructor by default
-    LegacyActorArmorChangedListener& operator=(LegacyActorArmorChangedListener const&) = delete;
-    LegacyActorArmorChangedListener(LegacyActorArmorChangedListener const&)            = delete;
-    LegacyActorArmorChangedListener()                                                  = delete;
+    LegacyActorArmorChangedListener& operator=(LegacyActorArmorChangedListener const&);
+    LegacyActorArmorChangedListener(LegacyActorArmorChangedListener const&);
+    LegacyActorArmorChangedListener();
 
 public:
     // NOLINTBEGIN

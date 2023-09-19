@@ -19,9 +19,9 @@ namespace mce { class UUID; }
 class ServerCommandOrigin : public ::CommandOrigin {
 public:
     // prevent constructor by default
-    ServerCommandOrigin& operator=(ServerCommandOrigin const&) = delete;
-    ServerCommandOrigin(ServerCommandOrigin const&)            = delete;
-    ServerCommandOrigin()                                      = delete;
+    ServerCommandOrigin& operator=(ServerCommandOrigin const&);
+    ServerCommandOrigin(ServerCommandOrigin const&);
+    ServerCommandOrigin();
 
 public:
     // NOLINTBEGIN

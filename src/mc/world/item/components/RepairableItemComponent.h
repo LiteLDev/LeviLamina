@@ -5,9 +5,9 @@
 class RepairableItemComponent {
 public:
     // prevent constructor by default
-    RepairableItemComponent& operator=(RepairableItemComponent const&) = delete;
-    RepairableItemComponent(RepairableItemComponent const&)            = delete;
-    RepairableItemComponent()                                          = delete;
+    RepairableItemComponent& operator=(RepairableItemComponent const&);
+    RepairableItemComponent(RepairableItemComponent const&);
+    RepairableItemComponent();
 
 public:
     // NOLINTBEGIN

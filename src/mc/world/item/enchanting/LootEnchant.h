@@ -8,9 +8,9 @@
 class LootEnchant : public ::Enchant {
 public:
     // prevent constructor by default
-    LootEnchant& operator=(LootEnchant const&) = delete;
-    LootEnchant(LootEnchant const&)            = delete;
-    LootEnchant()                              = delete;
+    LootEnchant& operator=(LootEnchant const&);
+    LootEnchant(LootEnchant const&);
+    LootEnchant();
 
 public:
     // NOLINTBEGIN

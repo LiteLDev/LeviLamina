@@ -31,9 +31,9 @@ public:
     struct RequestProcessor {
     public:
         // prevent constructor by default
-        RequestProcessor& operator=(RequestProcessor const&) = delete;
-        RequestProcessor(RequestProcessor const&)            = delete;
-        RequestProcessor()                                   = delete;
+        RequestProcessor& operator=(RequestProcessor const&);
+        RequestProcessor(RequestProcessor const&);
+        RequestProcessor();
 
     public:
         // NOLINTBEGIN
@@ -54,8 +54,8 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptNetHttpClient(ScriptNetHttpClient const&) = delete;
-    ScriptNetHttpClient()                           = delete;
+    ScriptNetHttpClient(ScriptNetHttpClient const&);
+    ScriptNetHttpClient();
 
 public:
     // NOLINTBEGIN

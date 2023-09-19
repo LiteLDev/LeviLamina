@@ -11,9 +11,9 @@
 class FlagAllPassengersForPositioningSystem {
 public:
     // prevent constructor by default
-    FlagAllPassengersForPositioningSystem& operator=(FlagAllPassengersForPositioningSystem const&) = delete;
-    FlagAllPassengersForPositioningSystem(FlagAllPassengersForPositioningSystem const&)            = delete;
-    FlagAllPassengersForPositioningSystem()                                                        = delete;
+    FlagAllPassengersForPositioningSystem& operator=(FlagAllPassengersForPositioningSystem const&);
+    FlagAllPassengersForPositioningSystem(FlagAllPassengersForPositioningSystem const&);
+    FlagAllPassengersForPositioningSystem();
 
 public:
     // NOLINTBEGIN

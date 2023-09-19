@@ -8,9 +8,9 @@
 class SlimeMoveControlDescription : public ::MoveControlDescription {
 public:
     // prevent constructor by default
-    SlimeMoveControlDescription& operator=(SlimeMoveControlDescription const&) = delete;
-    SlimeMoveControlDescription(SlimeMoveControlDescription const&)            = delete;
-    SlimeMoveControlDescription()                                              = delete;
+    SlimeMoveControlDescription& operator=(SlimeMoveControlDescription const&);
+    SlimeMoveControlDescription(SlimeMoveControlDescription const&);
+    SlimeMoveControlDescription();
 
 public:
     // NOLINTBEGIN

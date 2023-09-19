@@ -14,8 +14,8 @@ namespace VanillaSystemsRegistration { struct RegistrationOptions; }
 class VanillaGameModuleServer : public ::GameModuleServer {
 public:
     // prevent constructor by default
-    VanillaGameModuleServer& operator=(VanillaGameModuleServer const&) = delete;
-    VanillaGameModuleServer(VanillaGameModuleServer const&)            = delete;
+    VanillaGameModuleServer& operator=(VanillaGameModuleServer const&);
+    VanillaGameModuleServer(VanillaGameModuleServer const&);
 
 public:
     // NOLINTBEGIN

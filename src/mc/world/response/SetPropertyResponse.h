@@ -15,9 +15,9 @@ namespace JsonUtil { class EmptyClass; }
 class SetPropertyResponse : public ::ActorEventResponse {
 public:
     // prevent constructor by default
-    SetPropertyResponse& operator=(SetPropertyResponse const&) = delete;
-    SetPropertyResponse(SetPropertyResponse const&)            = delete;
-    SetPropertyResponse()                                      = delete;
+    SetPropertyResponse& operator=(SetPropertyResponse const&);
+    SetPropertyResponse(SetPropertyResponse const&);
+    SetPropertyResponse();
 
 public:
     // NOLINTBEGIN

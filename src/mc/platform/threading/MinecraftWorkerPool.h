@@ -8,9 +8,9 @@
 class MinecraftWorkerPool {
 public:
     // prevent constructor by default
-    MinecraftWorkerPool& operator=(MinecraftWorkerPool const&) = delete;
-    MinecraftWorkerPool(MinecraftWorkerPool const&)            = delete;
-    MinecraftWorkerPool()                                      = delete;
+    MinecraftWorkerPool& operator=(MinecraftWorkerPool const&);
+    MinecraftWorkerPool(MinecraftWorkerPool const&);
+    MinecraftWorkerPool();
 
 public:
     // NOLINTBEGIN

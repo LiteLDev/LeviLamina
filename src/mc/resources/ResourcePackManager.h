@@ -16,9 +16,9 @@ namespace Core { class Path; }
 class ResourcePackManager : public ::ResourceLoader {
 public:
     // prevent constructor by default
-    ResourcePackManager& operator=(ResourcePackManager const&) = delete;
-    ResourcePackManager(ResourcePackManager const&)            = delete;
-    ResourcePackManager()                                      = delete;
+    ResourcePackManager& operator=(ResourcePackManager const&);
+    ResourcePackManager(ResourcePackManager const&);
+    ResourcePackManager();
 
 public:
     // NOLINTBEGIN

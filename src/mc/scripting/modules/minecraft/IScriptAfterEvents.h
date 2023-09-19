@@ -52,9 +52,9 @@ namespace ScriptModuleMinecraft {
 class IScriptAfterEvents {
 public:
     // prevent constructor by default
-    IScriptAfterEvents& operator=(IScriptAfterEvents const&) = delete;
-    IScriptAfterEvents(IScriptAfterEvents const&)            = delete;
-    IScriptAfterEvents()                                     = delete;
+    IScriptAfterEvents& operator=(IScriptAfterEvents const&);
+    IScriptAfterEvents(IScriptAfterEvents const&);
+    IScriptAfterEvents();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class MoveToWaterGoal : public ::MoveToLiquidGoal {
 public:
     // prevent constructor by default
-    MoveToWaterGoal& operator=(MoveToWaterGoal const&) = delete;
-    MoveToWaterGoal(MoveToWaterGoal const&)            = delete;
-    MoveToWaterGoal()                                  = delete;
+    MoveToWaterGoal& operator=(MoveToWaterGoal const&);
+    MoveToWaterGoal(MoveToWaterGoal const&);
+    MoveToWaterGoal();
 
 public:
     // NOLINTBEGIN

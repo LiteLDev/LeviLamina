@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class HoneycombBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    HoneycombBlock& operator=(HoneycombBlock const&) = delete;
-    HoneycombBlock(HoneycombBlock const&)            = delete;
-    HoneycombBlock()                                 = delete;
+    HoneycombBlock& operator=(HoneycombBlock const&);
+    HoneycombBlock(HoneycombBlock const&);
+    HoneycombBlock();
 
 public:
     // NOLINTBEGIN

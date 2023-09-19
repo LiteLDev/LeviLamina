@@ -11,9 +11,9 @@
 class PanicGoal : public ::Goal {
 public:
     // prevent constructor by default
-    PanicGoal& operator=(PanicGoal const&) = delete;
-    PanicGoal(PanicGoal const&)            = delete;
-    PanicGoal()                            = delete;
+    PanicGoal& operator=(PanicGoal const&);
+    PanicGoal(PanicGoal const&);
+    PanicGoal();
 
 public:
     // NOLINTBEGIN

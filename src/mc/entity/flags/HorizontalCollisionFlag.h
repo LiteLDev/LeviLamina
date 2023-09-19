@@ -5,7 +5,7 @@
 struct HorizontalCollisionFlag {
 public:
     // prevent constructor by default
-    HorizontalCollisionFlag& operator=(HorizontalCollisionFlag const&) = delete;
-    HorizontalCollisionFlag(HorizontalCollisionFlag const&)            = delete;
-    HorizontalCollisionFlag()                                          = delete;
+    HorizontalCollisionFlag& operator=(HorizontalCollisionFlag const&);
+    HorizontalCollisionFlag(HorizontalCollisionFlag const&);
+    HorizontalCollisionFlag();
 };

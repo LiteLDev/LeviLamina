@@ -5,7 +5,7 @@
 struct SubBBsComponent {
 public:
     // prevent constructor by default
-    SubBBsComponent& operator=(SubBBsComponent const&) = delete;
-    SubBBsComponent(SubBBsComponent const&)            = delete;
-    SubBBsComponent()                                  = delete;
+    SubBBsComponent& operator=(SubBBsComponent const&);
+    SubBBsComponent(SubBBsComponent const&);
+    SubBBsComponent();
 };

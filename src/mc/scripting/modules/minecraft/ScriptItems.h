@@ -18,9 +18,9 @@ namespace ScriptModuleMinecraft {
 class ScriptItems {
 public:
     // prevent constructor by default
-    ScriptItems& operator=(ScriptItems const&) = delete;
-    ScriptItems(ScriptItems const&)            = delete;
-    ScriptItems()                              = delete;
+    ScriptItems& operator=(ScriptItems const&);
+    ScriptItems(ScriptItems const&);
+    ScriptItems();
 
 public:
     // NOLINTBEGIN

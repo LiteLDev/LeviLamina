@@ -8,9 +8,9 @@
 class OceanRuinStart : public ::StructureStart {
 public:
     // prevent constructor by default
-    OceanRuinStart& operator=(OceanRuinStart const&) = delete;
-    OceanRuinStart(OceanRuinStart const&)            = delete;
-    OceanRuinStart()                                 = delete;
+    OceanRuinStart& operator=(OceanRuinStart const&);
+    OceanRuinStart(OceanRuinStart const&);
+    OceanRuinStart();
 
 public:
     // NOLINTBEGIN

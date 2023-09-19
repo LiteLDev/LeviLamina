@@ -8,9 +8,9 @@
 class UnlockRecipeCommand : public ::Command {
 public:
     // prevent constructor by default
-    UnlockRecipeCommand& operator=(UnlockRecipeCommand const&) = delete;
-    UnlockRecipeCommand(UnlockRecipeCommand const&)            = delete;
-    UnlockRecipeCommand()                                      = delete;
+    UnlockRecipeCommand& operator=(UnlockRecipeCommand const&);
+    UnlockRecipeCommand(UnlockRecipeCommand const&);
+    UnlockRecipeCommand();
 
 public:
     // NOLINTBEGIN

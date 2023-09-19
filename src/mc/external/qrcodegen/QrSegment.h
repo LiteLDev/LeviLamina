@@ -15,9 +15,9 @@ public:
     class Mode {
     public:
         // prevent constructor by default
-        Mode& operator=(Mode const&) = delete;
-        Mode(Mode const&)            = delete;
-        Mode()                       = delete;
+        Mode& operator=(Mode const&);
+        Mode(Mode const&);
+        Mode();
 
     public:
         // NOLINTBEGIN
@@ -41,9 +41,9 @@ public:
 
 public:
     // prevent constructor by default
-    QrSegment& operator=(QrSegment const&) = delete;
-    QrSegment(QrSegment const&)            = delete;
-    QrSegment()                            = delete;
+    QrSegment& operator=(QrSegment const&);
+    QrSegment(QrSegment const&);
+    QrSegment();
 
 private:
     // NOLINTBEGIN
@@ -55,7 +55,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $ALPHANUMERIC_CHARSET() { return ALPHANUMERIC_CHARSET; }
+    auto& $ALPHANUMERIC_CHARSET() { return ALPHANUMERIC_CHARSET; }
 
     // NOLINTEND
 };

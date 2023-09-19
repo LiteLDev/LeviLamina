@@ -22,9 +22,9 @@ namespace Core {
 class FileSystem {
 public:
     // prevent constructor by default
-    FileSystem& operator=(FileSystem const&) = delete;
-    FileSystem(FileSystem const&)            = delete;
-    FileSystem()                             = delete;
+    FileSystem& operator=(FileSystem const&);
+    FileSystem(FileSystem const&);
+    FileSystem();
 
 public:
     // NOLINTBEGIN

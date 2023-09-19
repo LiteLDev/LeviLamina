@@ -10,9 +10,9 @@ namespace mce { class Color; }
 class DyeableComponent {
 public:
     // prevent constructor by default
-    DyeableComponent& operator=(DyeableComponent const&) = delete;
-    DyeableComponent(DyeableComponent const&)            = delete;
-    DyeableComponent()                                   = delete;
+    DyeableComponent& operator=(DyeableComponent const&);
+    DyeableComponent(DyeableComponent const&);
+    DyeableComponent();
 
 public:
     // NOLINTBEGIN

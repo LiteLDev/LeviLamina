@@ -25,9 +25,9 @@ public:
 
 public:
     // prevent constructor by default
-    SmithingTemplateItem& operator=(SmithingTemplateItem const&) = delete;
-    SmithingTemplateItem(SmithingTemplateItem const&)            = delete;
-    SmithingTemplateItem()                                       = delete;
+    SmithingTemplateItem& operator=(SmithingTemplateItem const&);
+    SmithingTemplateItem(SmithingTemplateItem const&);
+    SmithingTemplateItem();
 
 public:
     // NOLINTBEGIN

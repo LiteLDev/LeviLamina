@@ -12,14 +12,14 @@ namespace Json {
 class StyledStreamWriter {
 public:
     // prevent constructor by default
-    StyledStreamWriter& operator=(StyledStreamWriter const&) = delete;
-    StyledStreamWriter(StyledStreamWriter const&)            = delete;
-    StyledStreamWriter()                                     = delete;
+    StyledStreamWriter& operator=(StyledStreamWriter const&);
+    StyledStreamWriter(StyledStreamWriter const&);
+    StyledStreamWriter();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0StyledStreamWriter@Json@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI StyledStreamWriter(std::string);
+    MCAPI explicit StyledStreamWriter(std::string);
 
     // symbol: ?write@StyledStreamWriter@Json@@QEAAXAEAV?$basic_ostream@DU?$char_traits@D@std@@@std@@AEBVValue@2@@Z
     MCAPI void write(std::ostream&, class Json::Value const&);

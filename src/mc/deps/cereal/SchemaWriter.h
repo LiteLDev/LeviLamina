@@ -7,9 +7,9 @@ namespace cereal {
 struct SchemaWriter {
 public:
     // prevent constructor by default
-    SchemaWriter& operator=(SchemaWriter const&) = delete;
-    SchemaWriter(SchemaWriter const&)            = delete;
-    SchemaWriter()                               = delete;
+    SchemaWriter& operator=(SchemaWriter const&);
+    SchemaWriter(SchemaWriter const&);
+    SchemaWriter();
 
 public:
     // NOLINTBEGIN

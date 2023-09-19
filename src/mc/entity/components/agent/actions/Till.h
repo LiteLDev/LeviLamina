@@ -7,9 +7,9 @@ namespace AgentComponents::Actions {
 struct Till {
 public:
     // prevent constructor by default
-    Till& operator=(Till const&) = delete;
-    Till(Till const&)            = delete;
-    Till()                       = delete;
+    Till& operator=(Till const&);
+    Till(Till const&);
+    Till();
 
 public:
     // NOLINTBEGIN

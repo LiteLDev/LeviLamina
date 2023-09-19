@@ -8,9 +8,9 @@
 class VillageStart : public ::StructureStart {
 public:
     // prevent constructor by default
-    VillageStart& operator=(VillageStart const&) = delete;
-    VillageStart(VillageStart const&)            = delete;
-    VillageStart()                               = delete;
+    VillageStart& operator=(VillageStart const&);
+    VillageStart(VillageStart const&);
+    VillageStart();
 
 public:
     // NOLINTBEGIN

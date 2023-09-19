@@ -5,9 +5,9 @@
 class WorldGenClimateMappingAttributes {
 public:
     // prevent constructor by default
-    WorldGenClimateMappingAttributes& operator=(WorldGenClimateMappingAttributes const&) = delete;
-    WorldGenClimateMappingAttributes(WorldGenClimateMappingAttributes const&)            = delete;
-    WorldGenClimateMappingAttributes()                                                   = delete;
+    WorldGenClimateMappingAttributes& operator=(WorldGenClimateMappingAttributes const&);
+    WorldGenClimateMappingAttributes(WorldGenClimateMappingAttributes const&);
+    WorldGenClimateMappingAttributes();
 
 public:
     // NOLINTBEGIN

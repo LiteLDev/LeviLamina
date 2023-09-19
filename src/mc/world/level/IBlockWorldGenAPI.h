@@ -5,9 +5,9 @@
 class IBlockWorldGenAPI {
 public:
     // prevent constructor by default
-    IBlockWorldGenAPI& operator=(IBlockWorldGenAPI const&) = delete;
-    IBlockWorldGenAPI(IBlockWorldGenAPI const&)            = delete;
-    IBlockWorldGenAPI()                                    = delete;
+    IBlockWorldGenAPI& operator=(IBlockWorldGenAPI const&);
+    IBlockWorldGenAPI(IBlockWorldGenAPI const&);
+    IBlockWorldGenAPI();
 
 public:
     // NOLINTBEGIN

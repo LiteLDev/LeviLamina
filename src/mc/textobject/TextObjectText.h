@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class TextObjectText : public ::ITextObject {
 public:
     // prevent constructor by default
-    TextObjectText& operator=(TextObjectText const&) = delete;
-    TextObjectText(TextObjectText const&)            = delete;
-    TextObjectText()                                 = delete;
+    TextObjectText& operator=(TextObjectText const&);
+    TextObjectText(TextObjectText const&);
+    TextObjectText();
 
 public:
     // NOLINTBEGIN
@@ -33,7 +33,7 @@ public:
     virtual class Json::Value resolve(struct ResolveData const&) const;
 
     // symbol: ??0TextObjectText@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI TextObjectText(std::string);
+    MCAPI explicit TextObjectText(std::string);
 
     // symbol:
     // ?asJsonValue@TextObjectText@@SA?AVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

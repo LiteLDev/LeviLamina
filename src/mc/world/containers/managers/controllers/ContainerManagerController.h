@@ -5,9 +5,9 @@
 class ContainerManagerController {
 public:
     // prevent constructor by default
-    ContainerManagerController& operator=(ContainerManagerController const&) = delete;
-    ContainerManagerController(ContainerManagerController const&)            = delete;
-    ContainerManagerController()                                             = delete;
+    ContainerManagerController& operator=(ContainerManagerController const&);
+    ContainerManagerController(ContainerManagerController const&);
+    ContainerManagerController();
 
 public:
     // NOLINTBEGIN

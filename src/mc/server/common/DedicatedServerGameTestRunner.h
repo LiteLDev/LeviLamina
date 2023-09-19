@@ -8,9 +8,9 @@
 class DedicatedServerGameTestRunner {
 public:
     // prevent constructor by default
-    DedicatedServerGameTestRunner& operator=(DedicatedServerGameTestRunner const&) = delete;
-    DedicatedServerGameTestRunner(DedicatedServerGameTestRunner const&)            = delete;
-    DedicatedServerGameTestRunner()                                                = delete;
+    DedicatedServerGameTestRunner& operator=(DedicatedServerGameTestRunner const&);
+    DedicatedServerGameTestRunner(DedicatedServerGameTestRunner const&);
+    DedicatedServerGameTestRunner();
 
 public:
     // NOLINTBEGIN

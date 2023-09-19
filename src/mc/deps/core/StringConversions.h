@@ -7,9 +7,9 @@ namespace Core {
 class StringConversions {
 public:
     // prevent constructor by default
-    StringConversions& operator=(StringConversions const&) = delete;
-    StringConversions(StringConversions const&)            = delete;
-    StringConversions()                                    = delete;
+    StringConversions& operator=(StringConversions const&);
+    StringConversions(StringConversions const&);
+    StringConversions();
 
 public:
     // NOLINTBEGIN

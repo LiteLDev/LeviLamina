@@ -9,9 +9,9 @@
 class RaidGardenGoal : public ::BaseMoveToBlockGoal {
 public:
     // prevent constructor by default
-    RaidGardenGoal& operator=(RaidGardenGoal const&) = delete;
-    RaidGardenGoal(RaidGardenGoal const&)            = delete;
-    RaidGardenGoal()                                 = delete;
+    RaidGardenGoal& operator=(RaidGardenGoal const&);
+    RaidGardenGoal(RaidGardenGoal const&);
+    RaidGardenGoal();
 
 public:
     // NOLINTBEGIN

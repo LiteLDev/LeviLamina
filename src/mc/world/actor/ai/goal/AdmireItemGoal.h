@@ -10,9 +10,9 @@
 class AdmireItemGoal : public ::Goal {
 public:
     // prevent constructor by default
-    AdmireItemGoal& operator=(AdmireItemGoal const&) = delete;
-    AdmireItemGoal(AdmireItemGoal const&)            = delete;
-    AdmireItemGoal()                                 = delete;
+    AdmireItemGoal& operator=(AdmireItemGoal const&);
+    AdmireItemGoal(AdmireItemGoal const&);
+    AdmireItemGoal();
 
 public:
     // NOLINTBEGIN

@@ -10,9 +10,9 @@
 class DefendTrustedTargetGoal : public ::NearestAttackableTargetGoal {
 public:
     // prevent constructor by default
-    DefendTrustedTargetGoal& operator=(DefendTrustedTargetGoal const&) = delete;
-    DefendTrustedTargetGoal(DefendTrustedTargetGoal const&)            = delete;
-    DefendTrustedTargetGoal()                                          = delete;
+    DefendTrustedTargetGoal& operator=(DefendTrustedTargetGoal const&);
+    DefendTrustedTargetGoal(DefendTrustedTargetGoal const&);
+    DefendTrustedTargetGoal();
 
 public:
     // NOLINTBEGIN

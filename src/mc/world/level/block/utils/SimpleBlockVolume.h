@@ -12,7 +12,7 @@ public:
 
 public:
     // prevent constructor by default
-    SimpleBlockVolume() = delete;
+    SimpleBlockVolume();
 
 public:
     // NOLINTBEGIN

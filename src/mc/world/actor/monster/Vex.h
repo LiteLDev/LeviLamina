@@ -26,9 +26,9 @@
 class Vex : public ::Monster {
 public:
     // prevent constructor by default
-    Vex& operator=(Vex const&) = delete;
-    Vex(Vex const&)            = delete;
-    Vex()                      = delete;
+    Vex& operator=(Vex const&);
+    Vex(Vex const&);
+    Vex();
 
 public:
     // NOLINTBEGIN

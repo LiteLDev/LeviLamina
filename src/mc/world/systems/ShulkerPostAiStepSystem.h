@@ -10,9 +10,9 @@
 class ShulkerPostAiStepSystem {
 public:
     // prevent constructor by default
-    ShulkerPostAiStepSystem& operator=(ShulkerPostAiStepSystem const&) = delete;
-    ShulkerPostAiStepSystem(ShulkerPostAiStepSystem const&)            = delete;
-    ShulkerPostAiStepSystem()                                          = delete;
+    ShulkerPostAiStepSystem& operator=(ShulkerPostAiStepSystem const&);
+    ShulkerPostAiStepSystem(ShulkerPostAiStepSystem const&);
+    ShulkerPostAiStepSystem();
 
 public:
     // NOLINTBEGIN

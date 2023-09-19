@@ -17,8 +17,8 @@ public:
     Json::Value     mResponse;  // this+0x50
 
     // prevent constructor by default
-    AgentActionEventPacket& operator=(AgentActionEventPacket const&) = delete;
-    AgentActionEventPacket(AgentActionEventPacket const&)            = delete;
+    AgentActionEventPacket& operator=(AgentActionEventPacket const&);
+    AgentActionEventPacket(AgentActionEventPacket const&);
 
 public:
     // NOLINTBEGIN

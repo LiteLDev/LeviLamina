@@ -8,9 +8,9 @@
 struct LibraryScreenCapabilities {
 public:
     // prevent constructor by default
-    LibraryScreenCapabilities& operator=(LibraryScreenCapabilities const&) = delete;
-    LibraryScreenCapabilities(LibraryScreenCapabilities const&)            = delete;
-    LibraryScreenCapabilities()                                            = delete;
+    LibraryScreenCapabilities& operator=(LibraryScreenCapabilities const&);
+    LibraryScreenCapabilities(LibraryScreenCapabilities const&);
+    LibraryScreenCapabilities();
 
 public:
     // NOLINTBEGIN

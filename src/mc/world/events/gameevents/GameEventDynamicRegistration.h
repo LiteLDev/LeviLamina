@@ -8,14 +8,14 @@
 class GameEventDynamicRegistration {
 public:
     // prevent constructor by default
-    GameEventDynamicRegistration& operator=(GameEventDynamicRegistration const&) = delete;
-    GameEventDynamicRegistration(GameEventDynamicRegistration const&)            = delete;
-    GameEventDynamicRegistration()                                               = delete;
+    GameEventDynamicRegistration& operator=(GameEventDynamicRegistration const&);
+    GameEventDynamicRegistration(GameEventDynamicRegistration const&);
+    GameEventDynamicRegistration();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0GameEventDynamicRegistration@@QEAA@V?$shared_ptr@VGameEventListener@@@std@@@Z
-    MCAPI GameEventDynamicRegistration(std::shared_ptr<class GameEventListener>);
+    MCAPI explicit GameEventDynamicRegistration(std::shared_ptr<class GameEventListener>);
 
     // symbol:
     // ?onActorLoadedIntoChunk@GameEventDynamicRegistration@@QEAAXAEBVBlockSource@@VChunkPos@@V?$AutomaticID@VDimension@@H@@@Z

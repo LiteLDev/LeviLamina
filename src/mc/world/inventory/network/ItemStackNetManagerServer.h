@@ -17,9 +17,9 @@ public:
 
 public:
     // prevent constructor by default
-    ItemStackNetManagerServer& operator=(ItemStackNetManagerServer const&) = delete;
-    ItemStackNetManagerServer(ItemStackNetManagerServer const&)            = delete;
-    ItemStackNetManagerServer()                                            = delete;
+    ItemStackNetManagerServer& operator=(ItemStackNetManagerServer const&);
+    ItemStackNetManagerServer(ItemStackNetManagerServer const&);
+    ItemStackNetManagerServer();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class MainChunkSource : public ::ChunkSource {
 public:
     // prevent constructor by default
-    MainChunkSource& operator=(MainChunkSource const&) = delete;
-    MainChunkSource(MainChunkSource const&)            = delete;
-    MainChunkSource()                                  = delete;
+    MainChunkSource& operator=(MainChunkSource const&);
+    MainChunkSource(MainChunkSource const&);
+    MainChunkSource();
 
 public:
     // NOLINTBEGIN
@@ -52,7 +52,7 @@ public:
     virtual void setLevelChunk(std::shared_ptr<class LevelChunk>);
 
     // symbol: ??0MainChunkSource@@QEAA@V?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@@Z
-    MCAPI MainChunkSource(std::unique_ptr<class ChunkSource>);
+    MCAPI explicit MainChunkSource(std::unique_ptr<class ChunkSource>);
 
     // NOLINTEND
 };

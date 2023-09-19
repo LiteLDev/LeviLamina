@@ -35,9 +35,9 @@ namespace gametest {
 class BaseGameTestHelper : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    BaseGameTestHelper& operator=(BaseGameTestHelper const&) = delete;
-    BaseGameTestHelper(BaseGameTestHelper const&)            = delete;
-    BaseGameTestHelper()                                     = delete;
+    BaseGameTestHelper& operator=(BaseGameTestHelper const&);
+    BaseGameTestHelper(BaseGameTestHelper const&);
+    BaseGameTestHelper();
 
 public:
     // NOLINTBEGIN
@@ -331,7 +331,7 @@ public:
     virtual std::optional<struct gametest::GameTestError> onPlayerJump(class Mob&, int) = 0;
 
     // symbol: ??0BaseGameTestHelper@gametest@@QEAA@AEAVBaseGameTestInstance@1@@Z
-    MCAPI BaseGameTestHelper(class gametest::BaseGameTestInstance&);
+    MCAPI explicit BaseGameTestHelper(class gametest::BaseGameTestInstance&);
 
     // symbol:
     // ?assertCondition@BaseGameTestHelper@gametest@@QEAA?AV?$optional@UGameTestError@gametest@@@std@@_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z

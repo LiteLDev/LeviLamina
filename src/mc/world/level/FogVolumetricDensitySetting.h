@@ -5,9 +5,9 @@
 struct FogVolumetricDensitySetting {
 public:
     // prevent constructor by default
-    FogVolumetricDensitySetting& operator=(FogVolumetricDensitySetting const&) = delete;
-    FogVolumetricDensitySetting(FogVolumetricDensitySetting const&)            = delete;
-    FogVolumetricDensitySetting()                                              = delete;
+    FogVolumetricDensitySetting& operator=(FogVolumetricDensitySetting const&);
+    FogVolumetricDensitySetting(FogVolumetricDensitySetting const&);
+    FogVolumetricDensitySetting();
 
 public:
     // NOLINTBEGIN

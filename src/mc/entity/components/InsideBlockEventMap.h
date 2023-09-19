@@ -5,7 +5,7 @@
 class InsideBlockEventMap {
 public:
     // prevent constructor by default
-    InsideBlockEventMap() = delete;
+    InsideBlockEventMap();
 
 public:
     // NOLINTBEGIN

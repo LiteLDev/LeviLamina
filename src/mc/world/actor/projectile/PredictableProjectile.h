@@ -25,9 +25,9 @@
 class PredictableProjectile : public ::Actor {
 public:
     // prevent constructor by default
-    PredictableProjectile& operator=(PredictableProjectile const&) = delete;
-    PredictableProjectile(PredictableProjectile const&)            = delete;
-    PredictableProjectile()                                        = delete;
+    PredictableProjectile& operator=(PredictableProjectile const&);
+    PredictableProjectile(PredictableProjectile const&);
+    PredictableProjectile();
 
 public:
     // NOLINTBEGIN

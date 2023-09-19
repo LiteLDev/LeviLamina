@@ -7,9 +7,9 @@ namespace RakNet {
 class StringTable {
 public:
     // prevent constructor by default
-    StringTable& operator=(StringTable const&) = delete;
-    StringTable(StringTable const&)            = delete;
-    StringTable()                              = delete;
+    StringTable& operator=(StringTable const&);
+    StringTable(StringTable const&);
+    StringTable();
 
 public:
     // NOLINTBEGIN

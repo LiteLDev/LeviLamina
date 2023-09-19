@@ -27,9 +27,9 @@
 class ThrownPotion : public ::Throwable {
 public:
     // prevent constructor by default
-    ThrownPotion& operator=(ThrownPotion const&) = delete;
-    ThrownPotion(ThrownPotion const&)            = delete;
-    ThrownPotion()                               = delete;
+    ThrownPotion& operator=(ThrownPotion const&);
+    ThrownPotion(ThrownPotion const&);
+    ThrownPotion();
 
 public:
     // NOLINTBEGIN

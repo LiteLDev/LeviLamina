@@ -5,7 +5,7 @@
 struct OceanRuinConfiguration {
 public:
     // prevent constructor by default
-    OceanRuinConfiguration& operator=(OceanRuinConfiguration const&) = delete;
-    OceanRuinConfiguration(OceanRuinConfiguration const&)            = delete;
-    OceanRuinConfiguration()                                         = delete;
+    OceanRuinConfiguration& operator=(OceanRuinConfiguration const&);
+    OceanRuinConfiguration(OceanRuinConfiguration const&);
+    OceanRuinConfiguration();
 };

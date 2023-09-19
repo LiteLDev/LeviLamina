@@ -19,9 +19,9 @@ namespace mce { class UUID; }
 class ScriptMinecraftServerAdminModuleFactory {
 public:
     // prevent constructor by default
-    ScriptMinecraftServerAdminModuleFactory& operator=(ScriptMinecraftServerAdminModuleFactory const&) = delete;
-    ScriptMinecraftServerAdminModuleFactory(ScriptMinecraftServerAdminModuleFactory const&)            = delete;
-    ScriptMinecraftServerAdminModuleFactory()                                                          = delete;
+    ScriptMinecraftServerAdminModuleFactory& operator=(ScriptMinecraftServerAdminModuleFactory const&);
+    ScriptMinecraftServerAdminModuleFactory(ScriptMinecraftServerAdminModuleFactory const&);
+    ScriptMinecraftServerAdminModuleFactory();
 
 public:
     // NOLINTBEGIN
@@ -54,7 +54,8 @@ public:
 
     // symbol:
     // ??0ScriptMinecraftServerAdminModuleFactory@@QEAA@V?$NonOwnerPointer@VScriptPackConfigurationManager@@@Bedrock@@@Z
-    MCAPI ScriptMinecraftServerAdminModuleFactory(class Bedrock::NonOwnerPointer<class ScriptPackConfigurationManager>);
+    MCAPI explicit ScriptMinecraftServerAdminModuleFactory(class Bedrock::NonOwnerPointer<
+                                                           class ScriptPackConfigurationManager>);
 
     // symbol:
     // ?getModuleUUIDAsString@ScriptMinecraftServerAdminModuleFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -84,9 +85,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $ModuleName() { return ModuleName; }
+    auto& $ModuleName() { return ModuleName; }
 
-    inline auto& $ModuleUUID() { return ModuleUUID; }
+    auto& $ModuleUUID() { return ModuleUUID; }
 
     // NOLINTEND
 };

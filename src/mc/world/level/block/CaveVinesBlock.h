@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class CaveVinesBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    CaveVinesBlock& operator=(CaveVinesBlock const&) = delete;
-    CaveVinesBlock(CaveVinesBlock const&)            = delete;
-    CaveVinesBlock()                                 = delete;
+    CaveVinesBlock& operator=(CaveVinesBlock const&);
+    CaveVinesBlock(CaveVinesBlock const&);
+    CaveVinesBlock();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class EnchantRandomEquipmentFunction : public ::LootItemFunction {
 public:
     // prevent constructor by default
-    EnchantRandomEquipmentFunction& operator=(EnchantRandomEquipmentFunction const&) = delete;
-    EnchantRandomEquipmentFunction(EnchantRandomEquipmentFunction const&)            = delete;
-    EnchantRandomEquipmentFunction()                                                 = delete;
+    EnchantRandomEquipmentFunction& operator=(EnchantRandomEquipmentFunction const&);
+    EnchantRandomEquipmentFunction(EnchantRandomEquipmentFunction const&);
+    EnchantRandomEquipmentFunction();
 
 public:
     // NOLINTBEGIN

@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct OnFriendlyAngerDefinition {
 public:
     // prevent constructor by default
-    OnFriendlyAngerDefinition& operator=(OnFriendlyAngerDefinition const&) = delete;
-    OnFriendlyAngerDefinition(OnFriendlyAngerDefinition const&)            = delete;
-    OnFriendlyAngerDefinition()                                            = delete;
+    OnFriendlyAngerDefinition& operator=(OnFriendlyAngerDefinition const&);
+    OnFriendlyAngerDefinition(OnFriendlyAngerDefinition const&);
+    OnFriendlyAngerDefinition();
 
 public:
     // NOLINTBEGIN

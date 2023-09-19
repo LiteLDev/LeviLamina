@@ -13,8 +13,8 @@ public:
     ActorBlockSyncMessage mEntityBlockSyncMessage; // this+0x48
 
     // prevent constructor by default
-    UpdateBlockSyncedPacket& operator=(UpdateBlockSyncedPacket const&) = delete;
-    UpdateBlockSyncedPacket(UpdateBlockSyncedPacket const&)            = delete;
+    UpdateBlockSyncedPacket& operator=(UpdateBlockSyncedPacket const&);
+    UpdateBlockSyncedPacket(UpdateBlockSyncedPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 struct ServerChunkSourceProvider {
 public:
     // prevent constructor by default
-    ServerChunkSourceProvider& operator=(ServerChunkSourceProvider const&) = delete;
-    ServerChunkSourceProvider(ServerChunkSourceProvider const&)            = delete;
-    ServerChunkSourceProvider()                                            = delete;
+    ServerChunkSourceProvider& operator=(ServerChunkSourceProvider const&);
+    ServerChunkSourceProvider(ServerChunkSourceProvider const&);
+    ServerChunkSourceProvider();
 };

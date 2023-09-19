@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class BlockIsNameTest : public ::SimpleHashStringFilterTest {
 public:
     // prevent constructor by default
-    BlockIsNameTest& operator=(BlockIsNameTest const&) = delete;
-    BlockIsNameTest(BlockIsNameTest const&)            = delete;
-    BlockIsNameTest()                                  = delete;
+    BlockIsNameTest& operator=(BlockIsNameTest const&);
+    BlockIsNameTest(BlockIsNameTest const&);
+    BlockIsNameTest();
 
 public:
     // NOLINTBEGIN

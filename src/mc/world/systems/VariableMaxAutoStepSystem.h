@@ -8,9 +8,9 @@
 class VariableMaxAutoStepSystem {
 public:
     // prevent constructor by default
-    VariableMaxAutoStepSystem& operator=(VariableMaxAutoStepSystem const&) = delete;
-    VariableMaxAutoStepSystem(VariableMaxAutoStepSystem const&)            = delete;
-    VariableMaxAutoStepSystem()                                            = delete;
+    VariableMaxAutoStepSystem& operator=(VariableMaxAutoStepSystem const&);
+    VariableMaxAutoStepSystem(VariableMaxAutoStepSystem const&);
+    VariableMaxAutoStepSystem();
 
 public:
     // NOLINTBEGIN

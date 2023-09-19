@@ -8,9 +8,9 @@
 class FossilFeature : public ::Feature {
 public:
     // prevent constructor by default
-    FossilFeature& operator=(FossilFeature const&) = delete;
-    FossilFeature(FossilFeature const&)            = delete;
-    FossilFeature()                                = delete;
+    FossilFeature& operator=(FossilFeature const&);
+    FossilFeature(FossilFeature const&);
+    FossilFeature();
 
 public:
     // NOLINTBEGIN
@@ -33,7 +33,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $STRUCTURE_LOCATION_FOSSIL() { return STRUCTURE_LOCATION_FOSSIL; }
+    auto& $STRUCTURE_LOCATION_FOSSIL() { return STRUCTURE_LOCATION_FOSSIL; }
 
     // NOLINTEND
 };

@@ -8,8 +8,8 @@
 class BehaviorNode {
 public:
     // prevent constructor by default
-    BehaviorNode& operator=(BehaviorNode const&) = delete;
-    BehaviorNode(BehaviorNode const&)            = delete;
+    BehaviorNode& operator=(BehaviorNode const&);
+    BehaviorNode(BehaviorNode const&);
 
 public:
     // NOLINTBEGIN

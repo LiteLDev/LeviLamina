@@ -5,7 +5,7 @@
 struct Interaction {
 public:
     // prevent constructor by default
-    Interaction& operator=(Interaction const&) = delete;
+    Interaction& operator=(Interaction const&);
 
 public:
     // NOLINTBEGIN

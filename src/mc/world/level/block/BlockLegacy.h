@@ -41,9 +41,9 @@ public:
     struct AlteredStateCollection {
     public:
         // prevent constructor by default
-        AlteredStateCollection& operator=(AlteredStateCollection const&) = delete;
-        AlteredStateCollection(AlteredStateCollection const&)            = delete;
-        AlteredStateCollection()                                         = delete;
+        AlteredStateCollection& operator=(AlteredStateCollection const&);
+        AlteredStateCollection(AlteredStateCollection const&);
+        AlteredStateCollection();
 
         // protected:
         // NOLINTBEGIN
@@ -56,9 +56,9 @@ public:
     struct HorizontalDirectionBits {
     public:
         // prevent constructor by default
-        HorizontalDirectionBits& operator=(HorizontalDirectionBits const&) = delete;
-        HorizontalDirectionBits(HorizontalDirectionBits const&)            = delete;
-        HorizontalDirectionBits()                                          = delete;
+        HorizontalDirectionBits& operator=(HorizontalDirectionBits const&);
+        HorizontalDirectionBits(HorizontalDirectionBits const&);
+        HorizontalDirectionBits();
     };
 
     struct NameInfo {
@@ -78,9 +78,9 @@ public:
     struct RearrangedStateCollection : public ::BlockLegacy::AlteredStateCollection {
     public:
         // prevent constructor by default
-        RearrangedStateCollection& operator=(RearrangedStateCollection const&) = delete;
-        RearrangedStateCollection(RearrangedStateCollection const&)            = delete;
-        RearrangedStateCollection()                                            = delete;
+        RearrangedStateCollection& operator=(RearrangedStateCollection const&);
+        RearrangedStateCollection(RearrangedStateCollection const&);
+        RearrangedStateCollection();
 
     public:
         // NOLINTBEGIN
@@ -113,9 +113,9 @@ public:
         struct SplitBlock {
         public:
             // prevent constructor by default
-            SplitBlock& operator=(SplitBlock const&) = delete;
-            SplitBlock(SplitBlock const&)            = delete;
-            SplitBlock()                             = delete;
+            SplitBlock& operator=(SplitBlock const&);
+            SplitBlock(SplitBlock const&);
+            SplitBlock();
 
         public:
             // NOLINTBEGIN
@@ -127,9 +127,9 @@ public:
 
     public:
         // prevent constructor by default
-        RemovedStateCollection& operator=(RemovedStateCollection const&) = delete;
-        RemovedStateCollection(RemovedStateCollection const&)            = delete;
-        RemovedStateCollection()                                         = delete;
+        RemovedStateCollection& operator=(RemovedStateCollection const&);
+        RemovedStateCollection(RemovedStateCollection const&);
+        RemovedStateCollection();
 
     public:
         // NOLINTBEGIN
@@ -156,9 +156,9 @@ public:
     LLNDAPI static optional_ref<BlockLegacy> tryGetFromRegistry(uint legacyBlockID);
 
     // prevent constructor by default
-    BlockLegacy& operator=(BlockLegacy const&) = delete;
-    BlockLegacy(BlockLegacy const&)            = delete;
-    BlockLegacy()                              = delete;
+    BlockLegacy& operator=(BlockLegacy const&);
+    BlockLegacy(BlockLegacy const&);
+    BlockLegacy();
 
 public:
     // NOLINTBEGIN

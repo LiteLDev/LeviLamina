@@ -83,7 +83,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0Reader@Json@@QEAA@AEBVFeatures@1@@Z
-    MCAPI Reader(class Json::Features const&);
+    MCAPI explicit Reader(class Json::Features const&);
 
     // symbol: ??0Reader@Json@@QEAA@XZ
     MCAPI Reader();

@@ -27,17 +27,17 @@ public:
     class IWorldConverter {
     public:
         // prevent constructor by default
-        IWorldConverter& operator=(IWorldConverter const&) = delete;
-        IWorldConverter(IWorldConverter const&)            = delete;
-        IWorldConverter()                                  = delete;
+        IWorldConverter& operator=(IWorldConverter const&);
+        IWorldConverter(IWorldConverter const&);
+        IWorldConverter();
     };
 
     class ProgressReporter {
     public:
         // prevent constructor by default
-        ProgressReporter& operator=(ProgressReporter const&) = delete;
-        ProgressReporter(ProgressReporter const&)            = delete;
-        ProgressReporter()                                   = delete;
+        ProgressReporter& operator=(ProgressReporter const&);
+        ProgressReporter(ProgressReporter const&);
+        ProgressReporter();
 
     public:
         // NOLINTBEGIN
@@ -53,9 +53,9 @@ public:
     struct Result {
     public:
         // prevent constructor by default
-        Result& operator=(Result const&) = delete;
-        Result(Result const&)            = delete;
-        Result()                         = delete;
+        Result& operator=(Result const&);
+        Result(Result const&);
+        Result();
 
     public:
         // NOLINTBEGIN
@@ -67,9 +67,9 @@ public:
 
 public:
     // prevent constructor by default
-    FileArchiver& operator=(FileArchiver const&) = delete;
-    FileArchiver(FileArchiver const&)            = delete;
-    FileArchiver()                               = delete;
+    FileArchiver& operator=(FileArchiver const&);
+    FileArchiver(FileArchiver const&);
+    FileArchiver();
 
 public:
     // NOLINTBEGIN

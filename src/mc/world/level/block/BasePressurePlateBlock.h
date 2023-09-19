@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class BasePressurePlateBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    BasePressurePlateBlock& operator=(BasePressurePlateBlock const&) = delete;
-    BasePressurePlateBlock(BasePressurePlateBlock const&)            = delete;
-    BasePressurePlateBlock()                                         = delete;
+    BasePressurePlateBlock& operator=(BasePressurePlateBlock const&);
+    BasePressurePlateBlock(BasePressurePlateBlock const&);
+    BasePressurePlateBlock();
 
 public:
     // NOLINTBEGIN

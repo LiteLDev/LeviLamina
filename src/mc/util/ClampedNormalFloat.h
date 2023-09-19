@@ -12,9 +12,9 @@ namespace ValueProviders {
 class ClampedNormalFloat {
 public:
     // prevent constructor by default
-    ClampedNormalFloat& operator=(ClampedNormalFloat const&) = delete;
-    ClampedNormalFloat(ClampedNormalFloat const&)            = delete;
-    ClampedNormalFloat()                                     = delete;
+    ClampedNormalFloat& operator=(ClampedNormalFloat const&);
+    ClampedNormalFloat(ClampedNormalFloat const&);
+    ClampedNormalFloat();
 
 public:
     // NOLINTBEGIN

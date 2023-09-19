@@ -8,8 +8,8 @@
 class SurfaceRelativeThresholdFeature : public ::IFeature {
 public:
     // prevent constructor by default
-    SurfaceRelativeThresholdFeature& operator=(SurfaceRelativeThresholdFeature const&) = delete;
-    SurfaceRelativeThresholdFeature(SurfaceRelativeThresholdFeature const&)            = delete;
+    SurfaceRelativeThresholdFeature& operator=(SurfaceRelativeThresholdFeature const&);
+    SurfaceRelativeThresholdFeature(SurfaceRelativeThresholdFeature const&);
 
 public:
     // NOLINTBEGIN

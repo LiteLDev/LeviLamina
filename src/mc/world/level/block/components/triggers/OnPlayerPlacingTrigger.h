@@ -5,9 +5,9 @@
 class OnPlayerPlacingTrigger {
 public:
     // prevent constructor by default
-    OnPlayerPlacingTrigger& operator=(OnPlayerPlacingTrigger const&) = delete;
-    OnPlayerPlacingTrigger(OnPlayerPlacingTrigger const&)            = delete;
-    OnPlayerPlacingTrigger()                                         = delete;
+    OnPlayerPlacingTrigger& operator=(OnPlayerPlacingTrigger const&);
+    OnPlayerPlacingTrigger(OnPlayerPlacingTrigger const&);
+    OnPlayerPlacingTrigger();
 
 public:
     // NOLINTBEGIN

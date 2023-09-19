@@ -10,9 +10,9 @@
 class SmithingTableContainerManagerModel : public ::ContainerManagerModel {
 public:
     // prevent constructor by default
-    SmithingTableContainerManagerModel& operator=(SmithingTableContainerManagerModel const&) = delete;
-    SmithingTableContainerManagerModel(SmithingTableContainerManagerModel const&)            = delete;
-    SmithingTableContainerManagerModel()                                                     = delete;
+    SmithingTableContainerManagerModel& operator=(SmithingTableContainerManagerModel const&);
+    SmithingTableContainerManagerModel(SmithingTableContainerManagerModel const&);
+    SmithingTableContainerManagerModel();
 
 public:
     // NOLINTBEGIN

@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class SlimeFloatDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    SlimeFloatDefinition& operator=(SlimeFloatDefinition const&) = delete;
-    SlimeFloatDefinition(SlimeFloatDefinition const&)            = delete;
+    SlimeFloatDefinition& operator=(SlimeFloatDefinition const&);
+    SlimeFloatDefinition(SlimeFloatDefinition const&);
 
 public:
     // NOLINTBEGIN

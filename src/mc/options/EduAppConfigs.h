@@ -5,9 +5,9 @@
 class EduAppConfigs {
 public:
     // prevent constructor by default
-    EduAppConfigs& operator=(EduAppConfigs const&) = delete;
-    EduAppConfigs(EduAppConfigs const&)            = delete;
-    EduAppConfigs()                                = delete;
+    EduAppConfigs& operator=(EduAppConfigs const&);
+    EduAppConfigs(EduAppConfigs const&);
+    EduAppConfigs();
 
 public:
     // NOLINTBEGIN

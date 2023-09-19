@@ -10,9 +10,9 @@
 class FallingBlockNormalTickSystem {
 public:
     // prevent constructor by default
-    FallingBlockNormalTickSystem& operator=(FallingBlockNormalTickSystem const&) = delete;
-    FallingBlockNormalTickSystem(FallingBlockNormalTickSystem const&)            = delete;
-    FallingBlockNormalTickSystem()                                               = delete;
+    FallingBlockNormalTickSystem& operator=(FallingBlockNormalTickSystem const&);
+    FallingBlockNormalTickSystem(FallingBlockNormalTickSystem const&);
+    FallingBlockNormalTickSystem();
 
 public:
     // NOLINTBEGIN

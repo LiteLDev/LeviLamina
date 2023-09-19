@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class NetherrackBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    NetherrackBlock& operator=(NetherrackBlock const&) = delete;
-    NetherrackBlock(NetherrackBlock const&)            = delete;
-    NetherrackBlock()                                  = delete;
+    NetherrackBlock& operator=(NetherrackBlock const&);
+    NetherrackBlock(NetherrackBlock const&);
+    NetherrackBlock();
 
 public:
     // NOLINTBEGIN

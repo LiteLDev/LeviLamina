@@ -5,9 +5,9 @@
 class ShareableComponent {
 public:
     // prevent constructor by default
-    ShareableComponent& operator=(ShareableComponent const&) = delete;
-    ShareableComponent(ShareableComponent const&)            = delete;
-    ShareableComponent()                                     = delete;
+    ShareableComponent& operator=(ShareableComponent const&);
+    ShareableComponent(ShareableComponent const&);
+    ShareableComponent();
 
 public:
     // NOLINTBEGIN

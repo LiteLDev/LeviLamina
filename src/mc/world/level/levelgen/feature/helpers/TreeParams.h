@@ -13,9 +13,9 @@ namespace TreeHelper {
 struct TreeParams {
 public:
     // prevent constructor by default
-    TreeParams& operator=(TreeParams const&) = delete;
-    TreeParams(TreeParams const&)            = delete;
-    TreeParams()                             = delete;
+    TreeParams& operator=(TreeParams const&);
+    TreeParams(TreeParams const&);
+    TreeParams();
 
     // private:
     // NOLINTBEGIN

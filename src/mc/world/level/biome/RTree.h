@@ -19,16 +19,16 @@ public:
     struct Hint {
     public:
         // prevent constructor by default
-        Hint& operator=(Hint const&) = delete;
-        Hint(Hint const&)            = delete;
-        Hint()                       = delete;
+        Hint& operator=(Hint const&);
+        Hint(Hint const&);
+        Hint();
     };
 
     class Node {
     public:
         // prevent constructor by default
-        Node& operator=(Node const&) = delete;
-        Node()                       = delete;
+        Node& operator=(Node const&);
+        Node();
 
     public:
         // NOLINTBEGIN
@@ -59,9 +59,9 @@ public:
 
 public:
     // prevent constructor by default
-    RTree& operator=(RTree const&) = delete;
-    RTree(RTree const&)            = delete;
-    RTree()                        = delete;
+    RTree& operator=(RTree const&);
+    RTree(RTree const&);
+    RTree();
 
 public:
     // NOLINTBEGIN

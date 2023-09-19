@@ -5,9 +5,9 @@
 class DurabilityItemComponent {
 public:
     // prevent constructor by default
-    DurabilityItemComponent& operator=(DurabilityItemComponent const&) = delete;
-    DurabilityItemComponent(DurabilityItemComponent const&)            = delete;
-    DurabilityItemComponent()                                          = delete;
+    DurabilityItemComponent& operator=(DurabilityItemComponent const&);
+    DurabilityItemComponent(DurabilityItemComponent const&);
+    DurabilityItemComponent();
 
 public:
     // NOLINTBEGIN

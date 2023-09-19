@@ -5,9 +5,9 @@
 struct ScatterParamsMolangVariableIndices {
 public:
     // prevent constructor by default
-    ScatterParamsMolangVariableIndices& operator=(ScatterParamsMolangVariableIndices const&) = delete;
-    ScatterParamsMolangVariableIndices(ScatterParamsMolangVariableIndices const&)            = delete;
-    ScatterParamsMolangVariableIndices()                                                     = delete;
+    ScatterParamsMolangVariableIndices& operator=(ScatterParamsMolangVariableIndices const&);
+    ScatterParamsMolangVariableIndices(ScatterParamsMolangVariableIndices const&);
+    ScatterParamsMolangVariableIndices();
 
 public:
     // NOLINTBEGIN

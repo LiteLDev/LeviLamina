@@ -5,7 +5,7 @@
 class FrameUpdateContextBase {
 public:
     // prevent constructor by default
-    FrameUpdateContextBase& operator=(FrameUpdateContextBase const&) = delete;
-    FrameUpdateContextBase(FrameUpdateContextBase const&)            = delete;
-    FrameUpdateContextBase()                                         = delete;
+    FrameUpdateContextBase& operator=(FrameUpdateContextBase const&);
+    FrameUpdateContextBase(FrameUpdateContextBase const&);
+    FrameUpdateContextBase();
 };

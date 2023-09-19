@@ -5,9 +5,9 @@
 class GroundTravelTypeSystem {
 public:
     // prevent constructor by default
-    GroundTravelTypeSystem& operator=(GroundTravelTypeSystem const&) = delete;
-    GroundTravelTypeSystem(GroundTravelTypeSystem const&)            = delete;
-    GroundTravelTypeSystem()                                         = delete;
+    GroundTravelTypeSystem& operator=(GroundTravelTypeSystem const&);
+    GroundTravelTypeSystem(GroundTravelTypeSystem const&);
+    GroundTravelTypeSystem();
 
 public:
     // NOLINTBEGIN
@@ -29,7 +29,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $FRICTION_FIX_VERSION() { return FRICTION_FIX_VERSION; }
+    auto& $FRICTION_FIX_VERSION() { return FRICTION_FIX_VERSION; }
 
     // NOLINTEND
 };

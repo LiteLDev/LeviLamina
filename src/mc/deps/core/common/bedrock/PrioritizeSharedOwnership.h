@@ -7,9 +7,9 @@ namespace Bedrock::Threading {
 class PrioritizeSharedOwnership {
 public:
     // prevent constructor by default
-    PrioritizeSharedOwnership& operator=(PrioritizeSharedOwnership const&) = delete;
-    PrioritizeSharedOwnership(PrioritizeSharedOwnership const&)            = delete;
-    PrioritizeSharedOwnership()                                            = delete;
+    PrioritizeSharedOwnership& operator=(PrioritizeSharedOwnership const&);
+    PrioritizeSharedOwnership(PrioritizeSharedOwnership const&);
+    PrioritizeSharedOwnership();
 
 public:
     // NOLINTBEGIN

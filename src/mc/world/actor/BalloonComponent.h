@@ -5,8 +5,8 @@
 class BalloonComponent {
 public:
     // prevent constructor by default
-    BalloonComponent& operator=(BalloonComponent const&) = delete;
-    BalloonComponent(BalloonComponent const&)            = delete;
+    BalloonComponent& operator=(BalloonComponent const&);
+    BalloonComponent(BalloonComponent const&);
 
 public:
     // NOLINTBEGIN

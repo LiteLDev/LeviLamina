@@ -8,9 +8,9 @@
 class BasaltPillarFeature : public ::Feature {
 public:
     // prevent constructor by default
-    BasaltPillarFeature& operator=(BasaltPillarFeature const&) = delete;
-    BasaltPillarFeature(BasaltPillarFeature const&)            = delete;
-    BasaltPillarFeature()                                      = delete;
+    BasaltPillarFeature& operator=(BasaltPillarFeature const&);
+    BasaltPillarFeature(BasaltPillarFeature const&);
+    BasaltPillarFeature();
 
 public:
     // NOLINTBEGIN

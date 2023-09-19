@@ -21,9 +21,9 @@ namespace ScriptModuleMinecraft {
 class ScriptBlockSignComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
 public:
     // prevent constructor by default
-    ScriptBlockSignComponent& operator=(ScriptBlockSignComponent const&) = delete;
-    ScriptBlockSignComponent(ScriptBlockSignComponent const&)            = delete;
-    ScriptBlockSignComponent()                                           = delete;
+    ScriptBlockSignComponent& operator=(ScriptBlockSignComponent const&);
+    ScriptBlockSignComponent(ScriptBlockSignComponent const&);
+    ScriptBlockSignComponent();
 
 public:
     // NOLINTBEGIN

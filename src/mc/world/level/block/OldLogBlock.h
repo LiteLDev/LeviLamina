@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class OldLogBlock : public ::LogBlock {
 public:
     // prevent constructor by default
-    OldLogBlock& operator=(OldLogBlock const&) = delete;
-    OldLogBlock(OldLogBlock const&)            = delete;
-    OldLogBlock()                              = delete;
+    OldLogBlock& operator=(OldLogBlock const&);
+    OldLogBlock(OldLogBlock const&);
+    OldLogBlock();
 
 public:
     // NOLINTBEGIN

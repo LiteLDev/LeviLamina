@@ -5,9 +5,9 @@
 class AttributeCollection {
 public:
     // prevent constructor by default
-    AttributeCollection& operator=(AttributeCollection const&) = delete;
-    AttributeCollection(AttributeCollection const&)            = delete;
-    AttributeCollection()                                      = delete;
+    AttributeCollection& operator=(AttributeCollection const&);
+    AttributeCollection(AttributeCollection const&);
+    AttributeCollection();
 
 public:
     // NOLINTBEGIN

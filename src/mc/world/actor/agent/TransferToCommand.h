@@ -15,9 +15,9 @@ namespace AgentCommands {
 class TransferToCommand : public ::AgentCommands::Command {
 public:
     // prevent constructor by default
-    TransferToCommand& operator=(TransferToCommand const&) = delete;
-    TransferToCommand(TransferToCommand const&)            = delete;
-    TransferToCommand()                                    = delete;
+    TransferToCommand& operator=(TransferToCommand const&);
+    TransferToCommand(TransferToCommand const&);
+    TransferToCommand();
 
 public:
     // NOLINTBEGIN

@@ -31,9 +31,9 @@ namespace mce { class UUID; }
 class EnderMan : public ::Monster {
 public:
     // prevent constructor by default
-    EnderMan& operator=(EnderMan const&) = delete;
-    EnderMan(EnderMan const&)            = delete;
-    EnderMan()                           = delete;
+    EnderMan& operator=(EnderMan const&);
+    EnderMan(EnderMan const&);
+    EnderMan();
 
 public:
     // NOLINTBEGIN
@@ -166,7 +166,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mMayTakeIsSetup() { return mMayTakeIsSetup; }
+    auto& $mMayTakeIsSetup() { return mMayTakeIsSetup; }
 
     // NOLINTEND
 };

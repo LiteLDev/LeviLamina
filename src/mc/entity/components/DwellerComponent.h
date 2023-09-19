@@ -17,8 +17,8 @@ public:
 
 public:
     // prevent constructor by default
-    DwellerComponent& operator=(DwellerComponent const&) = delete;
-    DwellerComponent(DwellerComponent const&)            = delete;
+    DwellerComponent& operator=(DwellerComponent const&);
+    DwellerComponent(DwellerComponent const&);
 
 public:
     // NOLINTBEGIN
@@ -157,9 +157,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $DWELLING_ROLES() { return DWELLING_ROLES; }
+    auto& $DWELLING_ROLES() { return DWELLING_ROLES; }
 
-    inline auto& $DWELLING_TYPES() { return DWELLING_TYPES; }
+    auto& $DWELLING_TYPES() { return DWELLING_TYPES; }
 
     // NOLINTEND
 };

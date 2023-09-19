@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class WoodButtonBlock : public ::ButtonBlock {
 public:
     // prevent constructor by default
-    WoodButtonBlock& operator=(WoodButtonBlock const&) = delete;
-    WoodButtonBlock(WoodButtonBlock const&)            = delete;
-    WoodButtonBlock()                                  = delete;
+    WoodButtonBlock& operator=(WoodButtonBlock const&);
+    WoodButtonBlock(WoodButtonBlock const&);
+    WoodButtonBlock();
 
 public:
     // NOLINTBEGIN

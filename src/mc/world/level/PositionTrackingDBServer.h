@@ -22,9 +22,9 @@ namespace PositionTrackingDB {
 class PositionTrackingDBServer {
 public:
     // prevent constructor by default
-    PositionTrackingDBServer& operator=(PositionTrackingDBServer const&) = delete;
-    PositionTrackingDBServer(PositionTrackingDBServer const&)            = delete;
-    PositionTrackingDBServer()                                           = delete;
+    PositionTrackingDBServer& operator=(PositionTrackingDBServer const&);
+    PositionTrackingDBServer(PositionTrackingDBServer const&);
+    PositionTrackingDBServer();
 
 public:
     // NOLINTBEGIN

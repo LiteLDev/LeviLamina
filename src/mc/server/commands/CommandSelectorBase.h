@@ -76,7 +76,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ??0CommandSelectorBase@@IEAA@_N@Z
-    MCAPI CommandSelectorBase(bool);
+    MCAPI explicit CommandSelectorBase(bool);
 
     // symbol:
     // ?newResults@CommandSelectorBase@@IEBA?AV?$shared_ptr@V?$vector@PEAVActor@@V?$allocator@PEAVActor@@@std@@@std@@@std@@AEBVCommandOrigin@@@Z

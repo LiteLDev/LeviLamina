@@ -8,9 +8,9 @@
 class DripstoneClusterFeature : public ::IFeature {
 public:
     // prevent constructor by default
-    DripstoneClusterFeature& operator=(DripstoneClusterFeature const&) = delete;
-    DripstoneClusterFeature(DripstoneClusterFeature const&)            = delete;
-    DripstoneClusterFeature()                                          = delete;
+    DripstoneClusterFeature& operator=(DripstoneClusterFeature const&);
+    DripstoneClusterFeature(DripstoneClusterFeature const&);
+    DripstoneClusterFeature();
 
 public:
     // NOLINTBEGIN

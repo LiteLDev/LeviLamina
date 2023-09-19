@@ -8,9 +8,9 @@
 class PhotoItem : public ::Item {
 public:
     // prevent constructor by default
-    PhotoItem& operator=(PhotoItem const&) = delete;
-    PhotoItem(PhotoItem const&)            = delete;
-    PhotoItem()                            = delete;
+    PhotoItem& operator=(PhotoItem const&);
+    PhotoItem(PhotoItem const&);
+    PhotoItem();
 
 public:
     // NOLINTBEGIN

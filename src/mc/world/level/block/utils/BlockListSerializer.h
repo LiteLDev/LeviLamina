@@ -10,9 +10,9 @@ namespace Json { class Value; }
 class BlockListSerializer {
 public:
     // prevent constructor by default
-    BlockListSerializer& operator=(BlockListSerializer const&) = delete;
-    BlockListSerializer(BlockListSerializer const&)            = delete;
-    BlockListSerializer()                                      = delete;
+    BlockListSerializer& operator=(BlockListSerializer const&);
+    BlockListSerializer(BlockListSerializer const&);
+    BlockListSerializer();
 
 public:
     // NOLINTBEGIN

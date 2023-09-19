@@ -16,9 +16,9 @@ namespace BedrockLog {
 struct LogDetails {
 public:
     // prevent constructor by default
-    LogDetails& operator=(LogDetails const&) = delete;
-    LogDetails(LogDetails const&)            = delete;
-    LogDetails()                             = delete;
+    LogDetails& operator=(LogDetails const&);
+    LogDetails(LogDetails const&);
+    LogDetails();
 
 public:
     // NOLINTBEGIN

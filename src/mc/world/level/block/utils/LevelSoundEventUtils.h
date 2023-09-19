@@ -5,9 +5,9 @@
 class LevelSoundEventUtils {
 public:
     // prevent constructor by default
-    LevelSoundEventUtils& operator=(LevelSoundEventUtils const&) = delete;
-    LevelSoundEventUtils(LevelSoundEventUtils const&)            = delete;
-    LevelSoundEventUtils()                                       = delete;
+    LevelSoundEventUtils& operator=(LevelSoundEventUtils const&);
+    LevelSoundEventUtils(LevelSoundEventUtils const&);
+    LevelSoundEventUtils();
 
 public:
     // NOLINTBEGIN
@@ -26,7 +26,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $MAX_INT_REPRESENTABLE_AS_FLOAT() { return MAX_INT_REPRESENTABLE_AS_FLOAT; }
+    auto& $MAX_INT_REPRESENTABLE_AS_FLOAT() { return MAX_INT_REPRESENTABLE_AS_FLOAT; }
 
     // NOLINTEND
 };

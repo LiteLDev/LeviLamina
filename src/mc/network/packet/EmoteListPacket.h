@@ -15,8 +15,8 @@ public:
     std::vector<mce::UUID> mEmotePieceIds; // this+0x38
 
     // prevent constructor by default
-    EmoteListPacket& operator=(EmoteListPacket const&) = delete;
-    EmoteListPacket(EmoteListPacket const&)            = delete;
+    EmoteListPacket& operator=(EmoteListPacket const&);
+    EmoteListPacket(EmoteListPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -41,7 +41,7 @@ public:
     MCVAPI ~EmoteListPacket();
 
     // symbol: ??0EmoteListPacket@@QEAA@VActorRuntimeID@@@Z
-    MCAPI EmoteListPacket(class ActorRuntimeID);
+    MCAPI explicit EmoteListPacket(class ActorRuntimeID);
 
     // symbol: ??0EmoteListPacket@@QEAA@XZ
     MCAPI EmoteListPacket();

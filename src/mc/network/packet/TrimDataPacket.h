@@ -15,8 +15,8 @@ public:
     std::vector<TrimMaterial> mTrimMaterials; // this+0x48
 
     // prevent constructor by default
-    TrimDataPacket& operator=(TrimDataPacket const&) = delete;
-    TrimDataPacket(TrimDataPacket const&)            = delete;
+    TrimDataPacket& operator=(TrimDataPacket const&);
+    TrimDataPacket(TrimDataPacket const&);
 
 public:
     // NOLINTBEGIN

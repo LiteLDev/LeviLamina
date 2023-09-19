@@ -5,8 +5,8 @@
 struct ProjectileHitEvent {
 public:
     // prevent constructor by default
-    ProjectileHitEvent& operator=(ProjectileHitEvent const&) = delete;
-    ProjectileHitEvent()                                     = delete;
+    ProjectileHitEvent& operator=(ProjectileHitEvent const&);
+    ProjectileHitEvent();
 
 public:
     // NOLINTBEGIN

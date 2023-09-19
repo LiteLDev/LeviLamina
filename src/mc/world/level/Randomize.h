@@ -5,14 +5,14 @@
 class Randomize {
 public:
     // prevent constructor by default
-    Randomize& operator=(Randomize const&) = delete;
-    Randomize(Randomize const&)            = delete;
-    Randomize()                            = delete;
+    Randomize& operator=(Randomize const&);
+    Randomize(Randomize const&);
+    Randomize();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0Randomize@@QEAA@AEAVRandom@@@Z
-    MCAPI Randomize(class Random&);
+    MCAPI explicit Randomize(class Random&);
 
     // symbol: ?chance@Randomize@@QEBA_NHH@Z
     MCAPI bool chance(int, int) const;

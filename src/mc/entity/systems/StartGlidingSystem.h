@@ -16,9 +16,9 @@
 struct StartGlidingSystem {
 public:
     // prevent constructor by default
-    StartGlidingSystem& operator=(StartGlidingSystem const&) = delete;
-    StartGlidingSystem(StartGlidingSystem const&)            = delete;
-    StartGlidingSystem()                                     = delete;
+    StartGlidingSystem& operator=(StartGlidingSystem const&);
+    StartGlidingSystem(StartGlidingSystem const&);
+    StartGlidingSystem();
 
 public:
     // NOLINTBEGIN

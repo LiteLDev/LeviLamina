@@ -18,14 +18,14 @@ namespace Social::Events {
 class EventManager {
 public:
     // prevent constructor by default
-    EventManager& operator=(EventManager const&) = delete;
-    EventManager(EventManager const&)            = delete;
-    EventManager()                               = delete;
+    EventManager& operator=(EventManager const&);
+    EventManager(EventManager const&);
+    EventManager();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0EventManager@Events@Social@@QEAA@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
-    MCAPI EventManager(class Bedrock::NonOwnerPointer<class AppPlatform> const&);
+    MCAPI explicit EventManager(class Bedrock::NonOwnerPointer<class AppPlatform> const&);
 
     // symbol: ?UpdateDnAPlatString@EventManager@Events@Social@@QEAAXXZ
     MCAPI void UpdateDnAPlatString();

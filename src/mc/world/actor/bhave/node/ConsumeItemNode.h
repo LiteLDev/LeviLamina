@@ -9,8 +9,8 @@
 class ConsumeItemNode : public ::BehaviorNode {
 public:
     // prevent constructor by default
-    ConsumeItemNode& operator=(ConsumeItemNode const&) = delete;
-    ConsumeItemNode(ConsumeItemNode const&)            = delete;
+    ConsumeItemNode& operator=(ConsumeItemNode const&);
+    ConsumeItemNode(ConsumeItemNode const&);
 
 public:
     // NOLINTBEGIN

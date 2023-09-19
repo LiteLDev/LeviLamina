@@ -14,14 +14,14 @@ namespace Json { class Value; }
 class ActorDefinition {
 public:
     // prevent constructor by default
-    ActorDefinition& operator=(ActorDefinition const&) = delete;
-    ActorDefinition(ActorDefinition const&)            = delete;
-    ActorDefinition()                                  = delete;
+    ActorDefinition& operator=(ActorDefinition const&);
+    ActorDefinition(ActorDefinition const&);
+    ActorDefinition();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ActorDefinition@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI ActorDefinition(std::string const&);
+    MCAPI explicit ActorDefinition(std::string const&);
 
     // symbol:
     // ?parse@ActorDefinition@@QEAA?AW4ActorDefinitionParseStatus@@UDeserializeDataParams@@AEAVActorDefinitionDescriptor@@AEAVActorFactory@@W4LogArea@@@Z

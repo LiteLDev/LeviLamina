@@ -5,8 +5,8 @@
 class NoodleCavifierNoises {
 public:
     // prevent constructor by default
-    NoodleCavifierNoises& operator=(NoodleCavifierNoises const&) = delete;
-    NoodleCavifierNoises()                                       = delete;
+    NoodleCavifierNoises& operator=(NoodleCavifierNoises const&);
+    NoodleCavifierNoises();
 
 public:
     // NOLINTBEGIN

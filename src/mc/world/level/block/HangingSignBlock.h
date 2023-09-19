@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class HangingSignBlock : public ::SignBlock {
 public:
     // prevent constructor by default
-    HangingSignBlock& operator=(HangingSignBlock const&) = delete;
-    HangingSignBlock(HangingSignBlock const&)            = delete;
-    HangingSignBlock()                                   = delete;
+    HangingSignBlock& operator=(HangingSignBlock const&);
+    HangingSignBlock(HangingSignBlock const&);
+    HangingSignBlock();
 
 public:
     // NOLINTBEGIN

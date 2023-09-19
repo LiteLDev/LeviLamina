@@ -8,9 +8,9 @@
 struct CrashDumpKeyValueData {
 public:
     // prevent constructor by default
-    CrashDumpKeyValueData& operator=(CrashDumpKeyValueData const&) = delete;
-    CrashDumpKeyValueData(CrashDumpKeyValueData const&)            = delete;
-    CrashDumpKeyValueData()                                        = delete;
+    CrashDumpKeyValueData& operator=(CrashDumpKeyValueData const&);
+    CrashDumpKeyValueData(CrashDumpKeyValueData const&);
+    CrashDumpKeyValueData();
 
 public:
     // NOLINTBEGIN

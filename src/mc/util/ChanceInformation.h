@@ -5,9 +5,9 @@
 class ChanceInformation {
 public:
     // prevent constructor by default
-    ChanceInformation& operator=(ChanceInformation const&) = delete;
-    ChanceInformation(ChanceInformation const&)            = delete;
-    ChanceInformation()                                    = delete;
+    ChanceInformation& operator=(ChanceInformation const&);
+    ChanceInformation(ChanceInformation const&);
+    ChanceInformation();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 struct RandomSearchAndDigItemChoiceEntry {
 public:
     // prevent constructor by default
-    RandomSearchAndDigItemChoiceEntry& operator=(RandomSearchAndDigItemChoiceEntry const&) = delete;
-    RandomSearchAndDigItemChoiceEntry(RandomSearchAndDigItemChoiceEntry const&)            = delete;
-    RandomSearchAndDigItemChoiceEntry()                                                    = delete;
+    RandomSearchAndDigItemChoiceEntry& operator=(RandomSearchAndDigItemChoiceEntry const&);
+    RandomSearchAndDigItemChoiceEntry(RandomSearchAndDigItemChoiceEntry const&);
+    RandomSearchAndDigItemChoiceEntry();
 
 public:
     // NOLINTBEGIN

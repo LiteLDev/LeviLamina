@@ -8,9 +8,9 @@
 class GroupSizeSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    GroupSizeSystem& operator=(GroupSizeSystem const&) = delete;
-    GroupSizeSystem(GroupSizeSystem const&)            = delete;
-    GroupSizeSystem()                                  = delete;
+    GroupSizeSystem& operator=(GroupSizeSystem const&);
+    GroupSizeSystem(GroupSizeSystem const&);
+    GroupSizeSystem();
 
 public:
     // NOLINTBEGIN

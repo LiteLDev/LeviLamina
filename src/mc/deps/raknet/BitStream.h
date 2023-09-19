@@ -7,8 +7,8 @@ namespace RakNet {
 class BitStream {
 public:
     // prevent constructor by default
-    BitStream& operator=(BitStream const&) = delete;
-    BitStream(BitStream const&)            = delete;
+    BitStream& operator=(BitStream const&);
+    BitStream(BitStream const&);
 
 public:
     // NOLINTBEGIN
@@ -22,7 +22,7 @@ public:
     MCAPI BitStream(uchar*, uint, bool);
 
     // symbol: ??0BitStream@RakNet@@QEAA@I@Z
-    MCAPI BitStream(uint);
+    MCAPI explicit BitStream(uint);
 
     // symbol: ?IgnoreBits@BitStream@RakNet@@QEAAXI@Z
     MCAPI void IgnoreBits(uint);

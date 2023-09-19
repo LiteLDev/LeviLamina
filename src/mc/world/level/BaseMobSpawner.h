@@ -5,9 +5,9 @@
 class BaseMobSpawner {
 public:
     // prevent constructor by default
-    BaseMobSpawner& operator=(BaseMobSpawner const&) = delete;
-    BaseMobSpawner(BaseMobSpawner const&)            = delete;
-    BaseMobSpawner()                                 = delete;
+    BaseMobSpawner& operator=(BaseMobSpawner const&);
+    BaseMobSpawner(BaseMobSpawner const&);
+    BaseMobSpawner();
 
 public:
     // NOLINTBEGIN
@@ -30,7 +30,7 @@ public:
     MCVAPI ~BaseMobSpawner();
 
     // symbol: ??0BaseMobSpawner@@QEAA@UActorDefinitionIdentifier@@@Z
-    MCAPI BaseMobSpawner(struct ActorDefinitionIdentifier);
+    MCAPI explicit BaseMobSpawner(struct ActorDefinitionIdentifier);
 
     // symbol: ?removeDisplayEntity@BaseMobSpawner@@QEAAXXZ
     MCAPI void removeDisplayEntity();

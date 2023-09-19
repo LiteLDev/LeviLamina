@@ -31,9 +31,9 @@ namespace mce { class Color; }
 class Squid : public ::Mob {
 public:
     // prevent constructor by default
-    Squid& operator=(Squid const&) = delete;
-    Squid(Squid const&)            = delete;
-    Squid()                        = delete;
+    Squid& operator=(Squid const&);
+    Squid(Squid const&);
+    Squid();
 
 public:
     // NOLINTBEGIN

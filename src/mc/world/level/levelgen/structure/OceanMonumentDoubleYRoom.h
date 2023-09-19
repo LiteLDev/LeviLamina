@@ -9,9 +9,9 @@
 class OceanMonumentDoubleYRoom : public ::OceanMonumentPiece {
 public:
     // prevent constructor by default
-    OceanMonumentDoubleYRoom& operator=(OceanMonumentDoubleYRoom const&) = delete;
-    OceanMonumentDoubleYRoom(OceanMonumentDoubleYRoom const&)            = delete;
-    OceanMonumentDoubleYRoom()                                           = delete;
+    OceanMonumentDoubleYRoom& operator=(OceanMonumentDoubleYRoom const&);
+    OceanMonumentDoubleYRoom(OceanMonumentDoubleYRoom const&);
+    OceanMonumentDoubleYRoom();
 
 public:
     // NOLINTBEGIN

@@ -18,9 +18,9 @@ namespace ScriptModuleMinecraft {
 class ScriptActorTypes {
 public:
     // prevent constructor by default
-    ScriptActorTypes& operator=(ScriptActorTypes const&) = delete;
-    ScriptActorTypes(ScriptActorTypes const&)            = delete;
-    ScriptActorTypes()                                   = delete;
+    ScriptActorTypes& operator=(ScriptActorTypes const&);
+    ScriptActorTypes(ScriptActorTypes const&);
+    ScriptActorTypes();
 
 public:
     // NOLINTBEGIN

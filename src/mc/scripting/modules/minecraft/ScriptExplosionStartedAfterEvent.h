@@ -17,7 +17,7 @@ namespace ScriptModuleMinecraft {
 struct ScriptExplosionStartedAfterEvent {
 public:
     // prevent constructor by default
-    ScriptExplosionStartedAfterEvent() = delete;
+    ScriptExplosionStartedAfterEvent();
 
 public:
     // NOLINTBEGIN

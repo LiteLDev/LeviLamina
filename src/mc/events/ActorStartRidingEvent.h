@@ -5,9 +5,9 @@
 struct ActorStartRidingEvent {
 public:
     // prevent constructor by default
-    ActorStartRidingEvent& operator=(ActorStartRidingEvent const&) = delete;
-    ActorStartRidingEvent(ActorStartRidingEvent const&)            = delete;
-    ActorStartRidingEvent()                                        = delete;
+    ActorStartRidingEvent& operator=(ActorStartRidingEvent const&);
+    ActorStartRidingEvent(ActorStartRidingEvent const&);
+    ActorStartRidingEvent();
 
 public:
     // NOLINTBEGIN

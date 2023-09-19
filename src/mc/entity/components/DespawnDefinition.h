@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class DespawnDefinition {
 public:
     // prevent constructor by default
-    DespawnDefinition& operator=(DespawnDefinition const&) = delete;
-    DespawnDefinition(DespawnDefinition const&)            = delete;
-    DespawnDefinition()                                    = delete;
+    DespawnDefinition& operator=(DespawnDefinition const&);
+    DespawnDefinition(DespawnDefinition const&);
+    DespawnDefinition();
 
 public:
     // NOLINTBEGIN

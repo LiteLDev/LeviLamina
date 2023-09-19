@@ -15,13 +15,13 @@ public:
     bool                                      mHasPlayerText;
 
     // prevent constructor by default
-    CommandOutput& operator=(CommandOutput const&) = delete;
-    CommandOutput()                                = delete;
+    CommandOutput& operator=(CommandOutput const&);
+    CommandOutput();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0CommandOutput@@QEAA@W4CommandOutputType@@@Z
-    MCAPI CommandOutput(::CommandOutputType);
+    MCAPI explicit CommandOutput(::CommandOutputType);
 
     // symbol: ??0CommandOutput@@QEAA@AEBV0@@Z
     MCAPI CommandOutput(class CommandOutput const&);

@@ -5,8 +5,8 @@
 class BreakDoorAnnotationComponent {
 public:
     // prevent constructor by default
-    BreakDoorAnnotationComponent& operator=(BreakDoorAnnotationComponent const&) = delete;
-    BreakDoorAnnotationComponent(BreakDoorAnnotationComponent const&)            = delete;
+    BreakDoorAnnotationComponent& operator=(BreakDoorAnnotationComponent const&);
+    BreakDoorAnnotationComponent(BreakDoorAnnotationComponent const&);
 
 public:
     // NOLINTBEGIN

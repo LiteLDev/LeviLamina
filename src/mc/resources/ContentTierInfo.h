@@ -5,7 +5,7 @@
 class ContentTierInfo {
 public:
     // prevent constructor by default
-    ContentTierInfo& operator=(ContentTierInfo const&) = delete;
-    ContentTierInfo(ContentTierInfo const&)            = delete;
-    ContentTierInfo()                                  = delete;
+    ContentTierInfo& operator=(ContentTierInfo const&);
+    ContentTierInfo(ContentTierInfo const&);
+    ContentTierInfo();
 };

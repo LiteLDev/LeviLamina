@@ -13,9 +13,9 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class EditorBootstrapper : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    EditorBootstrapper& operator=(EditorBootstrapper const&) = delete;
-    EditorBootstrapper(EditorBootstrapper const&)            = delete;
-    EditorBootstrapper()                                     = delete;
+    EditorBootstrapper& operator=(EditorBootstrapper const&);
+    EditorBootstrapper(EditorBootstrapper const&);
+    EditorBootstrapper();
 
 public:
     // NOLINTBEGIN

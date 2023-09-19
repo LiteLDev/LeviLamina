@@ -31,9 +31,9 @@ namespace mce { class UUID; }
 class Skeleton : public ::HumanoidMonster {
 public:
     // prevent constructor by default
-    Skeleton& operator=(Skeleton const&) = delete;
-    Skeleton(Skeleton const&)            = delete;
-    Skeleton()                           = delete;
+    Skeleton& operator=(Skeleton const&);
+    Skeleton(Skeleton const&);
+    Skeleton();
 
 public:
     // NOLINTBEGIN
@@ -149,7 +149,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $SPEED_MODIFIER_ATTACK_UUID() { return SPEED_MODIFIER_ATTACK_UUID; }
+    auto& $SPEED_MODIFIER_ATTACK_UUID() { return SPEED_MODIFIER_ATTACK_UUID; }
 
     // NOLINTEND
 };

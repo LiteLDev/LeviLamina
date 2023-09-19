@@ -7,9 +7,9 @@ namespace Bedrock::DataStoreDetail {
 class DataStoreInfo {
 public:
     // prevent constructor by default
-    DataStoreInfo& operator=(DataStoreInfo const&) = delete;
-    DataStoreInfo(DataStoreInfo const&)            = delete;
-    DataStoreInfo()                                = delete;
+    DataStoreInfo& operator=(DataStoreInfo const&);
+    DataStoreInfo(DataStoreInfo const&);
+    DataStoreInfo();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 struct BlockPlacementCondition {
 public:
     // prevent constructor by default
-    BlockPlacementCondition() = delete;
+    BlockPlacementCondition();
 
 public:
     // NOLINTBEGIN

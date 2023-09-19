@@ -5,9 +5,9 @@
 struct OnFireComponent {
 public:
     // prevent constructor by default
-    OnFireComponent& operator=(OnFireComponent const&) = delete;
-    OnFireComponent(OnFireComponent const&)            = delete;
-    OnFireComponent()                                  = delete;
+    OnFireComponent& operator=(OnFireComponent const&);
+    OnFireComponent(OnFireComponent const&);
+    OnFireComponent();
 
 public:
     // NOLINTBEGIN
@@ -38,9 +38,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $LEGACY_FIRE_TAG() { return LEGACY_FIRE_TAG; }
+    auto& $LEGACY_FIRE_TAG() { return LEGACY_FIRE_TAG; }
 
-    inline auto& $ON_FIRE_TAG() { return ON_FIRE_TAG; }
+    auto& $ON_FIRE_TAG() { return ON_FIRE_TAG; }
 
     // NOLINTEND
 };

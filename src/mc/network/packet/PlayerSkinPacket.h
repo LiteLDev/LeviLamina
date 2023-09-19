@@ -17,8 +17,8 @@ public:
     std::string    mLocalizedOldSkinName; // this+0x2C8
 
     // prevent constructor by default
-    PlayerSkinPacket& operator=(PlayerSkinPacket const&) = delete;
-    PlayerSkinPacket(PlayerSkinPacket const&)            = delete;
+    PlayerSkinPacket& operator=(PlayerSkinPacket const&);
+    PlayerSkinPacket(PlayerSkinPacket const&);
 
 public:
     // NOLINTBEGIN

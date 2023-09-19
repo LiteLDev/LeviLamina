@@ -8,9 +8,9 @@
 class ScriptTickListener {
 public:
     // prevent constructor by default
-    ScriptTickListener& operator=(ScriptTickListener const&) = delete;
-    ScriptTickListener(ScriptTickListener const&)            = delete;
-    ScriptTickListener()                                     = delete;
+    ScriptTickListener& operator=(ScriptTickListener const&);
+    ScriptTickListener(ScriptTickListener const&);
+    ScriptTickListener();
 
 public:
     // NOLINTBEGIN

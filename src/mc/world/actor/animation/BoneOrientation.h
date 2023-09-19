@@ -5,8 +5,8 @@
 class BoneOrientation {
 public:
     // prevent constructor by default
-    BoneOrientation& operator=(BoneOrientation const&) = delete;
-    BoneOrientation(BoneOrientation const&)            = delete;
+    BoneOrientation& operator=(BoneOrientation const&);
+    BoneOrientation(BoneOrientation const&);
 
 public:
     // NOLINTBEGIN

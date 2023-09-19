@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class DispenserBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    DispenserBlock& operator=(DispenserBlock const&) = delete;
-    DispenserBlock(DispenserBlock const&)            = delete;
-    DispenserBlock()                                 = delete;
+    DispenserBlock& operator=(DispenserBlock const&);
+    DispenserBlock(DispenserBlock const&);
+    DispenserBlock();
 
 public:
     // NOLINTBEGIN

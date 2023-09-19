@@ -8,9 +8,9 @@
 class CommandBlockSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    CommandBlockSystem& operator=(CommandBlockSystem const&) = delete;
-    CommandBlockSystem(CommandBlockSystem const&)            = delete;
-    CommandBlockSystem()                                     = delete;
+    CommandBlockSystem& operator=(CommandBlockSystem const&);
+    CommandBlockSystem(CommandBlockSystem const&);
+    CommandBlockSystem();
 
 public:
     // NOLINTBEGIN

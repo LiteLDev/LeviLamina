@@ -8,9 +8,9 @@
 class BlockBlobFeature : public ::Feature {
 public:
     // prevent constructor by default
-    BlockBlobFeature& operator=(BlockBlobFeature const&) = delete;
-    BlockBlobFeature(BlockBlobFeature const&)            = delete;
-    BlockBlobFeature()                                   = delete;
+    BlockBlobFeature& operator=(BlockBlobFeature const&);
+    BlockBlobFeature(BlockBlobFeature const&);
+    BlockBlobFeature();
 
 public:
     // NOLINTBEGIN

@@ -11,8 +11,8 @@
 class CompositePackSource : public ::PackSource {
 public:
     // prevent constructor by default
-    CompositePackSource& operator=(CompositePackSource const&) = delete;
-    CompositePackSource(CompositePackSource const&)            = delete;
+    CompositePackSource& operator=(CompositePackSource const&);
+    CompositePackSource(CompositePackSource const&);
 
 public:
     // NOLINTBEGIN
@@ -34,7 +34,7 @@ public:
     MCAPI CompositePackSource();
 
     // symbol: ??0CompositePackSource@@QEAA@$$QEAV?$vector@PEAVPackSource@@V?$allocator@PEAVPackSource@@@std@@@std@@@Z
-    MCAPI CompositePackSource(std::vector<class PackSource*>&&);
+    MCAPI explicit CompositePackSource(std::vector<class PackSource*>&&);
 
     // symbol: ?addPackSource@CompositePackSource@@QEAAXPEAVPackSource@@@Z
     MCAPI void addPackSource(class PackSource*);

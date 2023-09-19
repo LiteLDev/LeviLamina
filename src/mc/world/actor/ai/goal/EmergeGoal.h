@@ -24,8 +24,8 @@ public:
     class Definition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        Definition& operator=(Definition const&) = delete;
-        Definition(Definition const&)            = delete;
+        Definition& operator=(Definition const&);
+        Definition(Definition const&);
 
     public:
         // NOLINTBEGIN
@@ -48,9 +48,9 @@ public:
 
 public:
     // prevent constructor by default
-    EmergeGoal& operator=(EmergeGoal const&) = delete;
-    EmergeGoal(EmergeGoal const&)            = delete;
-    EmergeGoal()                             = delete;
+    EmergeGoal& operator=(EmergeGoal const&);
+    EmergeGoal(EmergeGoal const&);
+    EmergeGoal();
 
 public:
     // NOLINTBEGIN
@@ -77,7 +77,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0EmergeGoal@@QEAA@AEAVMob@@@Z
-    MCAPI EmergeGoal(class Mob&);
+    MCAPI explicit EmergeGoal(class Mob&);
 
     // NOLINTEND
 };

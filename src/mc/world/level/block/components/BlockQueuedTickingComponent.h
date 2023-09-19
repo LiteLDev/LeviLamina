@@ -8,9 +8,9 @@
 struct BlockQueuedTickingComponent : public ::BlockComponentBase {
 public:
     // prevent constructor by default
-    BlockQueuedTickingComponent& operator=(BlockQueuedTickingComponent const&) = delete;
-    BlockQueuedTickingComponent(BlockQueuedTickingComponent const&)            = delete;
-    BlockQueuedTickingComponent()                                              = delete;
+    BlockQueuedTickingComponent& operator=(BlockQueuedTickingComponent const&);
+    BlockQueuedTickingComponent(BlockQueuedTickingComponent const&);
+    BlockQueuedTickingComponent();
 
 public:
     // NOLINTBEGIN

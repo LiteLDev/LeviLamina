@@ -5,7 +5,7 @@
 struct ItemActorFlag {
 public:
     // prevent constructor by default
-    ItemActorFlag& operator=(ItemActorFlag const&) = delete;
-    ItemActorFlag(ItemActorFlag const&)            = delete;
-    ItemActorFlag()                                = delete;
+    ItemActorFlag& operator=(ItemActorFlag const&);
+    ItemActorFlag(ItemActorFlag const&);
+    ItemActorFlag();
 };

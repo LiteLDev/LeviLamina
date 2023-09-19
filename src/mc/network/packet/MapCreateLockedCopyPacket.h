@@ -14,8 +14,8 @@ public:
     ActorUniqueID mNewMapId;      // this+0x38
 
     // prevent constructor by default
-    MapCreateLockedCopyPacket& operator=(MapCreateLockedCopyPacket const&) = delete;
-    MapCreateLockedCopyPacket(MapCreateLockedCopyPacket const&)            = delete;
+    MapCreateLockedCopyPacket& operator=(MapCreateLockedCopyPacket const&);
+    MapCreateLockedCopyPacket(MapCreateLockedCopyPacket const&);
 
 public:
     // NOLINTBEGIN

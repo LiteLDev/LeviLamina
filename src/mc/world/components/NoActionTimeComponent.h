@@ -5,7 +5,7 @@
 struct NoActionTimeComponent {
 public:
     // prevent constructor by default
-    NoActionTimeComponent& operator=(NoActionTimeComponent const&) = delete;
-    NoActionTimeComponent(NoActionTimeComponent const&)            = delete;
-    NoActionTimeComponent()                                        = delete;
+    NoActionTimeComponent& operator=(NoActionTimeComponent const&);
+    NoActionTimeComponent(NoActionTimeComponent const&);
+    NoActionTimeComponent();
 };

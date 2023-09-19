@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct DefaultLookAngleDefinition {
 public:
     // prevent constructor by default
-    DefaultLookAngleDefinition& operator=(DefaultLookAngleDefinition const&) = delete;
-    DefaultLookAngleDefinition(DefaultLookAngleDefinition const&)            = delete;
-    DefaultLookAngleDefinition()                                             = delete;
+    DefaultLookAngleDefinition& operator=(DefaultLookAngleDefinition const&);
+    DefaultLookAngleDefinition(DefaultLookAngleDefinition const&);
+    DefaultLookAngleDefinition();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class FrostWalkSystem {
 public:
     // prevent constructor by default
-    FrostWalkSystem& operator=(FrostWalkSystem const&) = delete;
-    FrostWalkSystem(FrostWalkSystem const&)            = delete;
-    FrostWalkSystem()                                  = delete;
+    FrostWalkSystem& operator=(FrostWalkSystem const&);
+    FrostWalkSystem(FrostWalkSystem const&);
+    FrostWalkSystem();
 
 public:
     // NOLINTBEGIN

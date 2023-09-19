@@ -5,9 +5,9 @@
 struct ExternalDataComponent {
 public:
     // prevent constructor by default
-    ExternalDataComponent& operator=(ExternalDataComponent const&) = delete;
-    ExternalDataComponent(ExternalDataComponent const&)            = delete;
-    ExternalDataComponent()                                        = delete;
+    ExternalDataComponent& operator=(ExternalDataComponent const&);
+    ExternalDataComponent(ExternalDataComponent const&);
+    ExternalDataComponent();
 
 public:
     // NOLINTBEGIN

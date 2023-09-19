@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class SeagrassBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    SeagrassBlock& operator=(SeagrassBlock const&) = delete;
-    SeagrassBlock(SeagrassBlock const&)            = delete;
-    SeagrassBlock()                                = delete;
+    SeagrassBlock& operator=(SeagrassBlock const&);
+    SeagrassBlock(SeagrassBlock const&);
+    SeagrassBlock();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 class ICommandDispatcher {
 public:
     // prevent constructor by default
-    ICommandDispatcher& operator=(ICommandDispatcher const&) = delete;
-    ICommandDispatcher(ICommandDispatcher const&)            = delete;
-    ICommandDispatcher()                                     = delete;
+    ICommandDispatcher& operator=(ICommandDispatcher const&);
+    ICommandDispatcher(ICommandDispatcher const&);
+    ICommandDispatcher();
 };

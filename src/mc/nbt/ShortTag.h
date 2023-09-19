@@ -43,7 +43,7 @@ public:
     virtual uint64 hash() const;
 
     // symbol: ??0ShortTag@@QEAA@F@Z
-    MCAPI ShortTag(short);
+    MCAPI explicit ShortTag(short);
 
     // NOLINTEND
 };

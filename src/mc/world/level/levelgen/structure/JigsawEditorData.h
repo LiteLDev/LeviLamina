@@ -8,8 +8,8 @@
 class JigsawEditorData {
 public:
     // prevent constructor by default
-    JigsawEditorData& operator=(JigsawEditorData const&) = delete;
-    JigsawEditorData(JigsawEditorData const&)            = delete;
+    JigsawEditorData& operator=(JigsawEditorData const&);
+    JigsawEditorData(JigsawEditorData const&);
 
 public:
     // NOLINTBEGIN
@@ -73,7 +73,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $JOINT_TYPE_TO_NAME() { return JOINT_TYPE_TO_NAME; }
+    auto& $JOINT_TYPE_TO_NAME() { return JOINT_TYPE_TO_NAME; }
 
     // NOLINTEND
 };

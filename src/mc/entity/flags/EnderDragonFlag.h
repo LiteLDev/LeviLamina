@@ -5,7 +5,7 @@
 struct EnderDragonFlag {
 public:
     // prevent constructor by default
-    EnderDragonFlag& operator=(EnderDragonFlag const&) = delete;
-    EnderDragonFlag(EnderDragonFlag const&)            = delete;
-    EnderDragonFlag()                                  = delete;
+    EnderDragonFlag& operator=(EnderDragonFlag const&);
+    EnderDragonFlag(EnderDragonFlag const&);
+    EnderDragonFlag();
 };

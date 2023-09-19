@@ -8,9 +8,9 @@
 class ScriptPluginPackSourceEnumerator : public ::IScriptPluginSourceEnumerator {
 public:
     // prevent constructor by default
-    ScriptPluginPackSourceEnumerator& operator=(ScriptPluginPackSourceEnumerator const&) = delete;
-    ScriptPluginPackSourceEnumerator(ScriptPluginPackSourceEnumerator const&)            = delete;
-    ScriptPluginPackSourceEnumerator()                                                   = delete;
+    ScriptPluginPackSourceEnumerator& operator=(ScriptPluginPackSourceEnumerator const&);
+    ScriptPluginPackSourceEnumerator(ScriptPluginPackSourceEnumerator const&);
+    ScriptPluginPackSourceEnumerator();
 
 public:
     // NOLINTBEGIN

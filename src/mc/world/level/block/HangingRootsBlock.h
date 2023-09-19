@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class HangingRootsBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    HangingRootsBlock& operator=(HangingRootsBlock const&) = delete;
-    HangingRootsBlock(HangingRootsBlock const&)            = delete;
-    HangingRootsBlock()                                    = delete;
+    HangingRootsBlock& operator=(HangingRootsBlock const&);
+    HangingRootsBlock(HangingRootsBlock const&);
+    HangingRootsBlock();
 
 public:
     // NOLINTBEGIN

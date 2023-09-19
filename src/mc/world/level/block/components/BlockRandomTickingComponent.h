@@ -8,9 +8,9 @@
 struct BlockRandomTickingComponent : public ::BlockComponentBase {
 public:
     // prevent constructor by default
-    BlockRandomTickingComponent& operator=(BlockRandomTickingComponent const&) = delete;
-    BlockRandomTickingComponent(BlockRandomTickingComponent const&)            = delete;
-    BlockRandomTickingComponent()                                              = delete;
+    BlockRandomTickingComponent& operator=(BlockRandomTickingComponent const&);
+    BlockRandomTickingComponent(BlockRandomTickingComponent const&);
+    BlockRandomTickingComponent();
 
 public:
     // NOLINTBEGIN

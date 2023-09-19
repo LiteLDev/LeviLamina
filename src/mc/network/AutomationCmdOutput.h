@@ -5,7 +5,7 @@
 class AutomationCmdOutput {
 public:
     // prevent constructor by default
-    AutomationCmdOutput& operator=(AutomationCmdOutput const&) = delete;
-    AutomationCmdOutput(AutomationCmdOutput const&)            = delete;
-    AutomationCmdOutput()                                      = delete;
+    AutomationCmdOutput& operator=(AutomationCmdOutput const&);
+    AutomationCmdOutput(AutomationCmdOutput const&);
+    AutomationCmdOutput();
 };

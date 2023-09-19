@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct GroundOffsetDefinition {
 public:
     // prevent constructor by default
-    GroundOffsetDefinition& operator=(GroundOffsetDefinition const&) = delete;
-    GroundOffsetDefinition(GroundOffsetDefinition const&)            = delete;
-    GroundOffsetDefinition()                                         = delete;
+    GroundOffsetDefinition& operator=(GroundOffsetDefinition const&);
+    GroundOffsetDefinition(GroundOffsetDefinition const&);
+    GroundOffsetDefinition();
 
 public:
     // NOLINTBEGIN

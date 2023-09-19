@@ -15,9 +15,9 @@ namespace OperationNodeFilters {
 struct AddEdgeCoolWarm {
 public:
     // prevent constructor by default
-    AddEdgeCoolWarm& operator=(AddEdgeCoolWarm const&) = delete;
-    AddEdgeCoolWarm(AddEdgeCoolWarm const&)            = delete;
-    AddEdgeCoolWarm()                                  = delete;
+    AddEdgeCoolWarm& operator=(AddEdgeCoolWarm const&);
+    AddEdgeCoolWarm(AddEdgeCoolWarm const&);
+    AddEdgeCoolWarm();
 
 public:
     // NOLINTBEGIN

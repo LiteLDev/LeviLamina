@@ -8,9 +8,9 @@
 class IcebergFeature : public ::Feature {
 public:
     // prevent constructor by default
-    IcebergFeature& operator=(IcebergFeature const&) = delete;
-    IcebergFeature(IcebergFeature const&)            = delete;
-    IcebergFeature()                                 = delete;
+    IcebergFeature& operator=(IcebergFeature const&);
+    IcebergFeature(IcebergFeature const&);
+    IcebergFeature();
 
 public:
     // NOLINTBEGIN

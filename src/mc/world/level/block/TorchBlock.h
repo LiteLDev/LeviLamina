@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class TorchBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    TorchBlock& operator=(TorchBlock const&) = delete;
-    TorchBlock(TorchBlock const&)            = delete;
-    TorchBlock()                             = delete;
+    TorchBlock& operator=(TorchBlock const&);
+    TorchBlock(TorchBlock const&);
+    TorchBlock();
 
 public:
     // NOLINTBEGIN
@@ -220,9 +220,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $DATA_FROM_FACING() { return DATA_FROM_FACING; }
+    auto& $DATA_FROM_FACING() { return DATA_FROM_FACING; }
 
-    inline auto& $FACING_FROM_DATA() { return FACING_FROM_DATA; }
+    auto& $FACING_FROM_DATA() { return FACING_FROM_DATA; }
 
     // NOLINTEND
 };

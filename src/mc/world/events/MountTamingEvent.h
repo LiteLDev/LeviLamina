@@ -5,9 +5,9 @@
 struct MountTamingEvent {
 public:
     // prevent constructor by default
-    MountTamingEvent& operator=(MountTamingEvent const&) = delete;
-    MountTamingEvent(MountTamingEvent const&)            = delete;
-    MountTamingEvent()                                   = delete;
+    MountTamingEvent& operator=(MountTamingEvent const&);
+    MountTamingEvent(MountTamingEvent const&);
+    MountTamingEvent();
 
 public:
     // NOLINTBEGIN

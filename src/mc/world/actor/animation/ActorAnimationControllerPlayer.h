@@ -10,9 +10,9 @@
 class ActorAnimationControllerPlayer : public ::ActorAnimationPlayer {
 public:
     // prevent constructor by default
-    ActorAnimationControllerPlayer& operator=(ActorAnimationControllerPlayer const&) = delete;
-    ActorAnimationControllerPlayer(ActorAnimationControllerPlayer const&)            = delete;
-    ActorAnimationControllerPlayer()                                                 = delete;
+    ActorAnimationControllerPlayer& operator=(ActorAnimationControllerPlayer const&);
+    ActorAnimationControllerPlayer(ActorAnimationControllerPlayer const&);
+    ActorAnimationControllerPlayer();
 
 public:
     // NOLINTBEGIN

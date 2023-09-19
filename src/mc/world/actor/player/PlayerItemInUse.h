@@ -8,9 +8,9 @@
 class PlayerItemInUse {
 public:
     // prevent constructor by default
-    PlayerItemInUse& operator=(PlayerItemInUse const&) = delete;
-    PlayerItemInUse(PlayerItemInUse const&)            = delete;
-    PlayerItemInUse()                                  = delete;
+    PlayerItemInUse& operator=(PlayerItemInUse const&);
+    PlayerItemInUse(PlayerItemInUse const&);
+    PlayerItemInUse();
 
 public:
     // NOLINTBEGIN

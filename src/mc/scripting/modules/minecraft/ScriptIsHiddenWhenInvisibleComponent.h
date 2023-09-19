@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptIsHiddenWhenInvisibleComponent {
 public:
     // prevent constructor by default
-    ScriptIsHiddenWhenInvisibleComponent& operator=(ScriptIsHiddenWhenInvisibleComponent const&) = delete;
-    ScriptIsHiddenWhenInvisibleComponent(ScriptIsHiddenWhenInvisibleComponent const&)            = delete;
-    ScriptIsHiddenWhenInvisibleComponent()                                                       = delete;
+    ScriptIsHiddenWhenInvisibleComponent& operator=(ScriptIsHiddenWhenInvisibleComponent const&);
+    ScriptIsHiddenWhenInvisibleComponent(ScriptIsHiddenWhenInvisibleComponent const&);
+    ScriptIsHiddenWhenInvisibleComponent();
 
 public:
     // NOLINTBEGIN

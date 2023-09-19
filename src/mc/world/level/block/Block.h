@@ -34,9 +34,9 @@ public:
     [[nodiscard]] inline short getBlockItemId() const { return getLegacyBlock().getBlockItemId(); }
 
     // prevent constructor by default
-    Block& operator=(Block const&) = delete;
-    Block(Block const&)            = delete;
-    Block()                        = delete;
+    Block& operator=(Block const&);
+    Block(Block const&);
+    Block();
 
 public:
     // NOLINTBEGIN

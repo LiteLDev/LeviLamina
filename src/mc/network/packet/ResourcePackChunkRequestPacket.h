@@ -13,8 +13,8 @@ public:
     int         mChunk;        // this+0x50
 
     // prevent constructor by default
-    ResourcePackChunkRequestPacket& operator=(ResourcePackChunkRequestPacket const&) = delete;
-    ResourcePackChunkRequestPacket(ResourcePackChunkRequestPacket const&)            = delete;
+    ResourcePackChunkRequestPacket& operator=(ResourcePackChunkRequestPacket const&);
+    ResourcePackChunkRequestPacket(ResourcePackChunkRequestPacket const&);
 
 public:
     // NOLINTBEGIN

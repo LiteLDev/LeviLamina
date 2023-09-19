@@ -7,9 +7,9 @@ namespace FeatureLoading {
 struct FeatureRootParseContext {
 public:
     // prevent constructor by default
-    FeatureRootParseContext& operator=(FeatureRootParseContext const&) = delete;
-    FeatureRootParseContext(FeatureRootParseContext const&)            = delete;
-    FeatureRootParseContext()                                          = delete;
+    FeatureRootParseContext& operator=(FeatureRootParseContext const&);
+    FeatureRootParseContext(FeatureRootParseContext const&);
+    FeatureRootParseContext();
 
 public:
     // NOLINTBEGIN

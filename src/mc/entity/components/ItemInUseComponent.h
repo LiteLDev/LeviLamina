@@ -5,7 +5,7 @@
 struct ItemInUseComponent {
 public:
     // prevent constructor by default
-    ItemInUseComponent& operator=(ItemInUseComponent const&) = delete;
-    ItemInUseComponent(ItemInUseComponent const&)            = delete;
-    ItemInUseComponent()                                     = delete;
+    ItemInUseComponent& operator=(ItemInUseComponent const&);
+    ItemInUseComponent(ItemInUseComponent const&);
+    ItemInUseComponent();
 };

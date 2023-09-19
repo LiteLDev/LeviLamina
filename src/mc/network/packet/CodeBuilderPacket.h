@@ -13,9 +13,9 @@ public:
     bool        mShouldOpenCodeBuilder; // this+0x50
 
     // prevent constructor by default
-    CodeBuilderPacket& operator=(CodeBuilderPacket const&) = delete;
-    CodeBuilderPacket(CodeBuilderPacket const&)            = delete;
-    CodeBuilderPacket()                                    = delete;
+    CodeBuilderPacket& operator=(CodeBuilderPacket const&);
+    CodeBuilderPacket(CodeBuilderPacket const&);
+    CodeBuilderPacket();
 
 public:
     // NOLINTBEGIN

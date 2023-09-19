@@ -8,9 +8,9 @@
 class PartiallyExposedBlobFeature : public ::IFeature {
 public:
     // prevent constructor by default
-    PartiallyExposedBlobFeature& operator=(PartiallyExposedBlobFeature const&) = delete;
-    PartiallyExposedBlobFeature(PartiallyExposedBlobFeature const&)            = delete;
-    PartiallyExposedBlobFeature()                                              = delete;
+    PartiallyExposedBlobFeature& operator=(PartiallyExposedBlobFeature const&);
+    PartiallyExposedBlobFeature(PartiallyExposedBlobFeature const&);
+    PartiallyExposedBlobFeature();
 
 public:
     // NOLINTBEGIN

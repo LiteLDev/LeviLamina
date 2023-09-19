@@ -19,9 +19,9 @@ namespace VanillaBlockDrops {
 class NothingDropsStrategy : public ::IResourceDropsStrategy {
 public:
     // prevent constructor by default
-    NothingDropsStrategy& operator=(NothingDropsStrategy const&) = delete;
-    NothingDropsStrategy(NothingDropsStrategy const&)            = delete;
-    NothingDropsStrategy()                                       = delete;
+    NothingDropsStrategy& operator=(NothingDropsStrategy const&);
+    NothingDropsStrategy(NothingDropsStrategy const&);
+    NothingDropsStrategy();
 
 public:
     // NOLINTBEGIN

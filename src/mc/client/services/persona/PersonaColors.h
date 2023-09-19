@@ -12,9 +12,9 @@ namespace persona {
 class PersonaColors {
 public:
     // prevent constructor by default
-    PersonaColors& operator=(PersonaColors const&) = delete;
-    PersonaColors(PersonaColors const&)            = delete;
-    PersonaColors()                                = delete;
+    PersonaColors& operator=(PersonaColors const&);
+    PersonaColors(PersonaColors const&);
+    PersonaColors();
 
 public:
     // NOLINTBEGIN

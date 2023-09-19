@@ -9,9 +9,9 @@
 class AgentCommandExecutionGoal : public ::Goal {
 public:
     // prevent constructor by default
-    AgentCommandExecutionGoal& operator=(AgentCommandExecutionGoal const&) = delete;
-    AgentCommandExecutionGoal(AgentCommandExecutionGoal const&)            = delete;
-    AgentCommandExecutionGoal()                                            = delete;
+    AgentCommandExecutionGoal& operator=(AgentCommandExecutionGoal const&);
+    AgentCommandExecutionGoal(AgentCommandExecutionGoal const&);
+    AgentCommandExecutionGoal();
 
 public:
     // NOLINTBEGIN
@@ -35,7 +35,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0AgentCommandExecutionGoal@@QEAA@AEAVMob@@@Z
-    MCAPI AgentCommandExecutionGoal(class Mob&);
+    MCAPI explicit AgentCommandExecutionGoal(class Mob&);
 
     // NOLINTEND
 };

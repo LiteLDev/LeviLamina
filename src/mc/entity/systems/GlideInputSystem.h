@@ -5,9 +5,9 @@
 class GlideInputSystem {
 public:
     // prevent constructor by default
-    GlideInputSystem& operator=(GlideInputSystem const&) = delete;
-    GlideInputSystem(GlideInputSystem const&)            = delete;
-    GlideInputSystem()                                   = delete;
+    GlideInputSystem& operator=(GlideInputSystem const&);
+    GlideInputSystem(GlideInputSystem const&);
+    GlideInputSystem();
 
 public:
     // NOLINTBEGIN

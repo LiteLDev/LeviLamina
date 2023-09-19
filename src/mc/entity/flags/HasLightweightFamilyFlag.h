@@ -5,7 +5,7 @@
 struct HasLightweightFamilyFlag {
 public:
     // prevent constructor by default
-    HasLightweightFamilyFlag& operator=(HasLightweightFamilyFlag const&) = delete;
-    HasLightweightFamilyFlag(HasLightweightFamilyFlag const&)            = delete;
-    HasLightweightFamilyFlag()                                           = delete;
+    HasLightweightFamilyFlag& operator=(HasLightweightFamilyFlag const&);
+    HasLightweightFamilyFlag(HasLightweightFamilyFlag const&);
+    HasLightweightFamilyFlag();
 };

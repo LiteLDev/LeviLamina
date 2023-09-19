@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class WallBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    WallBlock& operator=(WallBlock const&) = delete;
-    WallBlock(WallBlock const&)            = delete;
-    WallBlock()                            = delete;
+    WallBlock& operator=(WallBlock const&);
+    WallBlock(WallBlock const&);
+    WallBlock();
 
 public:
     // NOLINTBEGIN
@@ -274,7 +274,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
+    auto& $WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
 
     // NOLINTEND
 };

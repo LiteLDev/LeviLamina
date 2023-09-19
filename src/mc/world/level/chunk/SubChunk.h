@@ -32,8 +32,8 @@ public:
 
 public:
     // prevent constructor by default
-    SubChunk& operator=(SubChunk const&) = delete;
-    SubChunk(SubChunk const&)            = delete;
+    SubChunk& operator=(SubChunk const&);
+    SubChunk(SubChunk const&);
 
 public:
     // NOLINTBEGIN

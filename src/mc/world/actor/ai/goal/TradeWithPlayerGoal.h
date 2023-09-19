@@ -24,9 +24,9 @@ public:
     class TradeWithPlayerDefinition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        TradeWithPlayerDefinition& operator=(TradeWithPlayerDefinition const&) = delete;
-        TradeWithPlayerDefinition(TradeWithPlayerDefinition const&)            = delete;
-        TradeWithPlayerDefinition()                                            = delete;
+        TradeWithPlayerDefinition& operator=(TradeWithPlayerDefinition const&);
+        TradeWithPlayerDefinition(TradeWithPlayerDefinition const&);
+        TradeWithPlayerDefinition();
 
     public:
         // NOLINTBEGIN
@@ -43,9 +43,9 @@ public:
 
 public:
     // prevent constructor by default
-    TradeWithPlayerGoal& operator=(TradeWithPlayerGoal const&) = delete;
-    TradeWithPlayerGoal(TradeWithPlayerGoal const&)            = delete;
-    TradeWithPlayerGoal()                                      = delete;
+    TradeWithPlayerGoal& operator=(TradeWithPlayerGoal const&);
+    TradeWithPlayerGoal(TradeWithPlayerGoal const&);
+    TradeWithPlayerGoal();
 
 public:
     // NOLINTBEGIN

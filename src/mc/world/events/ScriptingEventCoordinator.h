@@ -11,9 +11,9 @@
 class ScriptingEventCoordinator {
 public:
     // prevent constructor by default
-    ScriptingEventCoordinator& operator=(ScriptingEventCoordinator const&) = delete;
-    ScriptingEventCoordinator(ScriptingEventCoordinator const&)            = delete;
-    ScriptingEventCoordinator()                                            = delete;
+    ScriptingEventCoordinator& operator=(ScriptingEventCoordinator const&);
+    ScriptingEventCoordinator(ScriptingEventCoordinator const&);
+    ScriptingEventCoordinator();
 
 public:
     // NOLINTBEGIN

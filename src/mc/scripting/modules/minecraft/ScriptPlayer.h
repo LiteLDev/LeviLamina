@@ -30,9 +30,9 @@ namespace ScriptModuleMinecraft {
 class ScriptPlayer : public ::ScriptModuleMinecraft::ScriptActor {
 public:
     // prevent constructor by default
-    ScriptPlayer& operator=(ScriptPlayer const&) = delete;
-    ScriptPlayer(ScriptPlayer const&)            = delete;
-    ScriptPlayer()                               = delete;
+    ScriptPlayer& operator=(ScriptPlayer const&);
+    ScriptPlayer(ScriptPlayer const&);
+    ScriptPlayer();
 
 public:
     // NOLINTBEGIN

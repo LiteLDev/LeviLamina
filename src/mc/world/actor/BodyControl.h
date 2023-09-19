@@ -8,8 +8,8 @@
 class BodyControl : public ::Control {
 public:
     // prevent constructor by default
-    BodyControl& operator=(BodyControl const&) = delete;
-    BodyControl(BodyControl const&)            = delete;
+    BodyControl& operator=(BodyControl const&);
+    BodyControl(BodyControl const&);
 
 public:
     // NOLINTBEGIN
@@ -44,7 +44,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $MAX_CLAMP_ANGLE() { return MAX_CLAMP_ANGLE; }
+    auto& $MAX_CLAMP_ANGLE() { return MAX_CLAMP_ANGLE; }
 
     // NOLINTEND
 };

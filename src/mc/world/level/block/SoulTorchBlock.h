@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class SoulTorchBlock : public ::TorchBlock {
 public:
     // prevent constructor by default
-    SoulTorchBlock& operator=(SoulTorchBlock const&) = delete;
-    SoulTorchBlock(SoulTorchBlock const&)            = delete;
-    SoulTorchBlock()                                 = delete;
+    SoulTorchBlock& operator=(SoulTorchBlock const&);
+    SoulTorchBlock(SoulTorchBlock const&);
+    SoulTorchBlock();
 
 public:
     // NOLINTBEGIN

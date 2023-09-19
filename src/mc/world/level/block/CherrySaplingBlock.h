@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class CherrySaplingBlock : public ::BushBlock {
 public:
     // prevent constructor by default
-    CherrySaplingBlock& operator=(CherrySaplingBlock const&) = delete;
-    CherrySaplingBlock(CherrySaplingBlock const&)            = delete;
-    CherrySaplingBlock()                                     = delete;
+    CherrySaplingBlock& operator=(CherrySaplingBlock const&);
+    CherrySaplingBlock(CherrySaplingBlock const&);
+    CherrySaplingBlock();
 
 public:
     // NOLINTBEGIN

@@ -18,9 +18,9 @@ namespace Core {
 class FilePathManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    FilePathManager& operator=(FilePathManager const&) = delete;
-    FilePathManager(FilePathManager const&)            = delete;
-    FilePathManager()                                  = delete;
+    FilePathManager& operator=(FilePathManager const&);
+    FilePathManager(FilePathManager const&);
+    FilePathManager();
 
 public:
     // NOLINTBEGIN

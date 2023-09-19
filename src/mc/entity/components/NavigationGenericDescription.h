@@ -8,9 +8,9 @@
 class NavigationGenericDescription : public ::NavigationDescription {
 public:
     // prevent constructor by default
-    NavigationGenericDescription& operator=(NavigationGenericDescription const&) = delete;
-    NavigationGenericDescription(NavigationGenericDescription const&)            = delete;
-    NavigationGenericDescription()                                               = delete;
+    NavigationGenericDescription& operator=(NavigationGenericDescription const&);
+    NavigationGenericDescription(NavigationGenericDescription const&);
+    NavigationGenericDescription();
 
 public:
     // NOLINTBEGIN

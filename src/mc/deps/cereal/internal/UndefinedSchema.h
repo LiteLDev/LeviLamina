@@ -20,9 +20,9 @@ namespace cereal::internal {
 class UndefinedSchema : public ::cereal::internal::BasicSchema {
 public:
     // prevent constructor by default
-    UndefinedSchema& operator=(UndefinedSchema const&) = delete;
-    UndefinedSchema(UndefinedSchema const&)            = delete;
-    UndefinedSchema()                                  = delete;
+    UndefinedSchema& operator=(UndefinedSchema const&);
+    UndefinedSchema(UndefinedSchema const&);
+    UndefinedSchema();
 
 public:
     // NOLINTBEGIN

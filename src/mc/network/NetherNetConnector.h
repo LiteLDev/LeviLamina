@@ -20,9 +20,9 @@ namespace Social { class GameConnectionInfo; }
 struct NetherNetConnector {
 public:
     // prevent constructor by default
-    NetherNetConnector& operator=(NetherNetConnector const&) = delete;
-    NetherNetConnector(NetherNetConnector const&)            = delete;
-    NetherNetConnector()                                     = delete;
+    NetherNetConnector& operator=(NetherNetConnector const&);
+    NetherNetConnector(NetherNetConnector const&);
+    NetherNetConnector();
 
 public:
     // NOLINTBEGIN

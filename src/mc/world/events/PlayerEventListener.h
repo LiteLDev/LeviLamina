@@ -11,9 +11,9 @@
 class PlayerEventListener {
 public:
     // prevent constructor by default
-    PlayerEventListener& operator=(PlayerEventListener const&) = delete;
-    PlayerEventListener(PlayerEventListener const&)            = delete;
-    PlayerEventListener()                                      = delete;
+    PlayerEventListener& operator=(PlayerEventListener const&);
+    PlayerEventListener(PlayerEventListener const&);
+    PlayerEventListener();
 
 public:
     // NOLINTBEGIN

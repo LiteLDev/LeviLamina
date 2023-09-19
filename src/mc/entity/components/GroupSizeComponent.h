@@ -5,7 +5,7 @@
 class GroupSizeComponent {
 public:
     // prevent constructor by default
-    GroupSizeComponent& operator=(GroupSizeComponent const&) = delete;
-    GroupSizeComponent(GroupSizeComponent const&)            = delete;
-    GroupSizeComponent()                                     = delete;
+    GroupSizeComponent& operator=(GroupSizeComponent const&);
+    GroupSizeComponent(GroupSizeComponent const&);
+    GroupSizeComponent();
 };

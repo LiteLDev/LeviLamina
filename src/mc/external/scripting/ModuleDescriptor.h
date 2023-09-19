@@ -7,9 +7,9 @@ namespace Scripting {
 struct ModuleDescriptor {
 public:
     // prevent constructor by default
-    ModuleDescriptor& operator=(ModuleDescriptor const&) = delete;
-    ModuleDescriptor(ModuleDescriptor const&)            = delete;
-    ModuleDescriptor()                                   = delete;
+    ModuleDescriptor& operator=(ModuleDescriptor const&);
+    ModuleDescriptor(ModuleDescriptor const&);
+    ModuleDescriptor();
 };
 
 }; // namespace Scripting

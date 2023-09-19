@@ -5,7 +5,7 @@
 struct IReplayableActorInput {
 public:
     // prevent constructor by default
-    IReplayableActorInput& operator=(IReplayableActorInput const&) = delete;
-    IReplayableActorInput(IReplayableActorInput const&)            = delete;
-    IReplayableActorInput()                                        = delete;
+    IReplayableActorInput& operator=(IReplayableActorInput const&);
+    IReplayableActorInput(IReplayableActorInput const&);
+    IReplayableActorInput();
 };

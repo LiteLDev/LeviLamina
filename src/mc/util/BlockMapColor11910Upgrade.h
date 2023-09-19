@@ -16,8 +16,8 @@ namespace BlockMapColorVersioning {
 class BlockMapColor11910Upgrade : public ::CerealSchemaUpgrade {
 public:
     // prevent constructor by default
-    BlockMapColor11910Upgrade& operator=(BlockMapColor11910Upgrade const&) = delete;
-    BlockMapColor11910Upgrade(BlockMapColor11910Upgrade const&)            = delete;
+    BlockMapColor11910Upgrade& operator=(BlockMapColor11910Upgrade const&);
+    BlockMapColor11910Upgrade(BlockMapColor11910Upgrade const&);
 
 public:
     // NOLINTBEGIN

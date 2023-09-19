@@ -15,8 +15,8 @@ public:
     CommandOutput     mOutput;     // this+0x70
 
     // prevent constructor by default
-    CommandOutputPacket& operator=(CommandOutputPacket const&) = delete;
-    CommandOutputPacket(CommandOutputPacket const&)            = delete;
+    CommandOutputPacket& operator=(CommandOutputPacket const&);
+    CommandOutputPacket(CommandOutputPacket const&);
 
 public:
     // NOLINTBEGIN

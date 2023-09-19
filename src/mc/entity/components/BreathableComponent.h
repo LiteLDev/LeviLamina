@@ -9,8 +9,8 @@ public:
 
 public:
     // prevent constructor by default
-    BreathableComponent& operator=(BreathableComponent const&) = delete;
-    BreathableComponent(BreathableComponent const&)            = delete;
+    BreathableComponent& operator=(BreathableComponent const&);
+    BreathableComponent(BreathableComponent const&);
 
 public:
     // NOLINTBEGIN

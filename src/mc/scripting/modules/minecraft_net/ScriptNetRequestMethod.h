@@ -15,9 +15,9 @@ namespace ScriptModuleMinecraftNet {
 class ScriptNetRequestMethod {
 public:
     // prevent constructor by default
-    ScriptNetRequestMethod& operator=(ScriptNetRequestMethod const&) = delete;
-    ScriptNetRequestMethod(ScriptNetRequestMethod const&)            = delete;
-    ScriptNetRequestMethod()                                         = delete;
+    ScriptNetRequestMethod& operator=(ScriptNetRequestMethod const&);
+    ScriptNetRequestMethod(ScriptNetRequestMethod const&);
+    ScriptNetRequestMethod();
 
 public:
     // NOLINTBEGIN

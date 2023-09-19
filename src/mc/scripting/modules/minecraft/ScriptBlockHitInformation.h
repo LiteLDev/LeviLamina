@@ -16,8 +16,8 @@ namespace ScriptModuleMinecraft {
 struct ScriptBlockHitInformation {
 public:
     // prevent constructor by default
-    ScriptBlockHitInformation(ScriptBlockHitInformation const&) = delete;
-    ScriptBlockHitInformation()                                 = delete;
+    ScriptBlockHitInformation(ScriptBlockHitInformation const&);
+    ScriptBlockHitInformation();
 
 public:
     // NOLINTBEGIN

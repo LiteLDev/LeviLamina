@@ -5,8 +5,8 @@
 class BuoyancyComponent {
 public:
     // prevent constructor by default
-    BuoyancyComponent& operator=(BuoyancyComponent const&) = delete;
-    BuoyancyComponent(BuoyancyComponent const&)            = delete;
+    BuoyancyComponent& operator=(BuoyancyComponent const&);
+    BuoyancyComponent(BuoyancyComponent const&);
 
 public:
     // NOLINTBEGIN

@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class MelonBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    MelonBlock& operator=(MelonBlock const&) = delete;
-    MelonBlock(MelonBlock const&)            = delete;
-    MelonBlock()                             = delete;
+    MelonBlock& operator=(MelonBlock const&);
+    MelonBlock(MelonBlock const&);
+    MelonBlock();
 
 public:
     // NOLINTBEGIN

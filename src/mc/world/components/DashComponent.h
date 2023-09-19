@@ -5,9 +5,9 @@
 class DashComponent {
 public:
     // prevent constructor by default
-    DashComponent& operator=(DashComponent const&) = delete;
-    DashComponent(DashComponent const&)            = delete;
-    DashComponent()                                = delete;
+    DashComponent& operator=(DashComponent const&);
+    DashComponent(DashComponent const&);
+    DashComponent();
 
 public:
     // NOLINTBEGIN

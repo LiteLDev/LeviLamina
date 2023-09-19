@@ -10,9 +10,9 @@
 class BeaconContainerManagerModel : public ::LevelContainerManagerModel {
 public:
     // prevent constructor by default
-    BeaconContainerManagerModel& operator=(BeaconContainerManagerModel const&) = delete;
-    BeaconContainerManagerModel(BeaconContainerManagerModel const&)            = delete;
-    BeaconContainerManagerModel()                                              = delete;
+    BeaconContainerManagerModel& operator=(BeaconContainerManagerModel const&);
+    BeaconContainerManagerModel(BeaconContainerManagerModel const&);
+    BeaconContainerManagerModel();
 
 public:
     // NOLINTBEGIN

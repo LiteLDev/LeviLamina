@@ -16,9 +16,9 @@ namespace Scripting { struct ModuleDescriptor; }
 class ServerScriptManager {
 public:
     // prevent constructor by default
-    ServerScriptManager& operator=(ServerScriptManager const&) = delete;
-    ServerScriptManager(ServerScriptManager const&)            = delete;
-    ServerScriptManager()                                      = delete;
+    ServerScriptManager& operator=(ServerScriptManager const&);
+    ServerScriptManager(ServerScriptManager const&);
+    ServerScriptManager();
 
 public:
     // NOLINTBEGIN

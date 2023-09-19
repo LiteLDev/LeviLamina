@@ -7,9 +7,9 @@ namespace Bedrock::Http::MethodType {
 class GET {
 public:
     // prevent constructor by default
-    GET& operator=(GET const&) = delete;
-    GET(GET const&)            = delete;
-    GET()                      = delete;
+    GET& operator=(GET const&);
+    GET(GET const&);
+    GET();
 
 public:
     // NOLINTBEGIN

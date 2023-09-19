@@ -5,9 +5,9 @@
 class BlockLegacyPtr {
 public:
     // prevent constructor by default
-    BlockLegacyPtr& operator=(BlockLegacyPtr const&) = delete;
-    BlockLegacyPtr(BlockLegacyPtr const&)            = delete;
-    BlockLegacyPtr()                                 = delete;
+    BlockLegacyPtr& operator=(BlockLegacyPtr const&);
+    BlockLegacyPtr(BlockLegacyPtr const&);
+    BlockLegacyPtr();
 
 public:
     // NOLINTBEGIN

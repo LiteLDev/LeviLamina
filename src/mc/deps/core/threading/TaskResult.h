@@ -5,8 +5,8 @@
 class TaskResult {
 public:
     // prevent constructor by default
-    TaskResult& operator=(TaskResult const&) = delete;
-    TaskResult(TaskResult const&)            = delete;
+    TaskResult& operator=(TaskResult const&);
+    TaskResult(TaskResult const&);
 
 public:
     // NOLINTBEGIN

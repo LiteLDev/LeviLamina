@@ -8,9 +8,9 @@
 class BarrelBlockActor : public ::ChestBlockActor {
 public:
     // prevent constructor by default
-    BarrelBlockActor& operator=(BarrelBlockActor const&) = delete;
-    BarrelBlockActor(BarrelBlockActor const&)            = delete;
-    BarrelBlockActor()                                   = delete;
+    BarrelBlockActor& operator=(BarrelBlockActor const&);
+    BarrelBlockActor(BarrelBlockActor const&);
+    BarrelBlockActor();
 
 public:
     // NOLINTBEGIN

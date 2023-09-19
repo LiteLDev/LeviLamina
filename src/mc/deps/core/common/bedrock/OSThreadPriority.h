@@ -7,9 +7,9 @@ namespace Bedrock::Threading {
 class OSThreadPriority {
 public:
     // prevent constructor by default
-    OSThreadPriority& operator=(OSThreadPriority const&) = delete;
-    OSThreadPriority(OSThreadPriority const&)            = delete;
-    OSThreadPriority()                                   = delete;
+    OSThreadPriority& operator=(OSThreadPriority const&);
+    OSThreadPriority(OSThreadPriority const&);
+    OSThreadPriority();
 
 public:
     // NOLINTBEGIN

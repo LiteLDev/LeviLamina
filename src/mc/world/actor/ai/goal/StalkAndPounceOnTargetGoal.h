@@ -9,9 +9,9 @@
 class StalkAndPounceOnTargetGoal : public ::Goal {
 public:
     // prevent constructor by default
-    StalkAndPounceOnTargetGoal& operator=(StalkAndPounceOnTargetGoal const&) = delete;
-    StalkAndPounceOnTargetGoal(StalkAndPounceOnTargetGoal const&)            = delete;
-    StalkAndPounceOnTargetGoal()                                             = delete;
+    StalkAndPounceOnTargetGoal& operator=(StalkAndPounceOnTargetGoal const&);
+    StalkAndPounceOnTargetGoal(StalkAndPounceOnTargetGoal const&);
+    StalkAndPounceOnTargetGoal();
 
 public:
     // NOLINTBEGIN

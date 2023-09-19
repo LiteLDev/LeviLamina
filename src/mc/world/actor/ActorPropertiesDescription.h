@@ -5,9 +5,9 @@
 class ActorPropertiesDescription {
 public:
     // prevent constructor by default
-    ActorPropertiesDescription& operator=(ActorPropertiesDescription const&) = delete;
-    ActorPropertiesDescription(ActorPropertiesDescription const&)            = delete;
-    ActorPropertiesDescription()                                             = delete;
+    ActorPropertiesDescription& operator=(ActorPropertiesDescription const&);
+    ActorPropertiesDescription(ActorPropertiesDescription const&);
+    ActorPropertiesDescription();
 
 public:
     // NOLINTBEGIN

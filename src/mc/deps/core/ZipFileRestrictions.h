@@ -12,8 +12,8 @@ namespace Core::ZipUtils {
 class ZipFileRestrictions {
 public:
     // prevent constructor by default
-    ZipFileRestrictions& operator=(ZipFileRestrictions const&) = delete;
-    ZipFileRestrictions(ZipFileRestrictions const&)            = delete;
+    ZipFileRestrictions& operator=(ZipFileRestrictions const&);
+    ZipFileRestrictions(ZipFileRestrictions const&);
 
 public:
     // NOLINTBEGIN

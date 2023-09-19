@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class ShareableDefinition {
 public:
     // prevent constructor by default
-    ShareableDefinition& operator=(ShareableDefinition const&) = delete;
-    ShareableDefinition(ShareableDefinition const&)            = delete;
+    ShareableDefinition& operator=(ShareableDefinition const&);
+    ShareableDefinition(ShareableDefinition const&);
 
 public:
     // NOLINTBEGIN

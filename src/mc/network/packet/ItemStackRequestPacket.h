@@ -13,8 +13,8 @@ public:
     std::unique_ptr<ItemStackRequestBatch> mRequestBatch; // this+0x30
 
     // prevent constructor by default
-    ItemStackRequestPacket& operator=(ItemStackRequestPacket const&) = delete;
-    ItemStackRequestPacket(ItemStackRequestPacket const&)            = delete;
+    ItemStackRequestPacket& operator=(ItemStackRequestPacket const&);
+    ItemStackRequestPacket(ItemStackRequestPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 struct SortItemInstanceIdAux {
 public:
     // prevent constructor by default
-    SortItemInstanceIdAux& operator=(SortItemInstanceIdAux const&) = delete;
-    SortItemInstanceIdAux(SortItemInstanceIdAux const&)            = delete;
-    SortItemInstanceIdAux()                                        = delete;
+    SortItemInstanceIdAux& operator=(SortItemInstanceIdAux const&);
+    SortItemInstanceIdAux(SortItemInstanceIdAux const&);
+    SortItemInstanceIdAux();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class ItemStackRequestActionTakeFromItemContainer : public ::ItemStackRequestActionTransferBase {
 public:
     // prevent constructor by default
-    ItemStackRequestActionTakeFromItemContainer& operator=(ItemStackRequestActionTakeFromItemContainer const&) = delete;
-    ItemStackRequestActionTakeFromItemContainer(ItemStackRequestActionTakeFromItemContainer const&)            = delete;
-    ItemStackRequestActionTakeFromItemContainer()                                                              = delete;
+    ItemStackRequestActionTakeFromItemContainer& operator=(ItemStackRequestActionTakeFromItemContainer const&);
+    ItemStackRequestActionTakeFromItemContainer(ItemStackRequestActionTakeFromItemContainer const&);
+    ItemStackRequestActionTakeFromItemContainer();
 
 public:
     // NOLINTBEGIN

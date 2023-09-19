@@ -5,7 +5,7 @@
 struct LocalPlayerPrePlayerTravelComponent {
 public:
     // prevent constructor by default
-    LocalPlayerPrePlayerTravelComponent& operator=(LocalPlayerPrePlayerTravelComponent const&) = delete;
-    LocalPlayerPrePlayerTravelComponent(LocalPlayerPrePlayerTravelComponent const&)            = delete;
-    LocalPlayerPrePlayerTravelComponent()                                                      = delete;
+    LocalPlayerPrePlayerTravelComponent& operator=(LocalPlayerPrePlayerTravelComponent const&);
+    LocalPlayerPrePlayerTravelComponent(LocalPlayerPrePlayerTravelComponent const&);
+    LocalPlayerPrePlayerTravelComponent();
 };

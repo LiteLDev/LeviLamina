@@ -8,9 +8,9 @@
 class WardenVibrationConfig : public ::VibrationListenerConfig {
 public:
     // prevent constructor by default
-    WardenVibrationConfig& operator=(WardenVibrationConfig const&) = delete;
-    WardenVibrationConfig(WardenVibrationConfig const&)            = delete;
-    WardenVibrationConfig()                                        = delete;
+    WardenVibrationConfig& operator=(WardenVibrationConfig const&);
+    WardenVibrationConfig(WardenVibrationConfig const&);
+    WardenVibrationConfig();
 
 public:
     // NOLINTBEGIN

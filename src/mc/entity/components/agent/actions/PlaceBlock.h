@@ -7,9 +7,9 @@ namespace AgentComponents::Actions {
 struct PlaceBlock {
 public:
     // prevent constructor by default
-    PlaceBlock& operator=(PlaceBlock const&) = delete;
-    PlaceBlock(PlaceBlock const&)            = delete;
-    PlaceBlock()                             = delete;
+    PlaceBlock& operator=(PlaceBlock const&);
+    PlaceBlock(PlaceBlock const&);
+    PlaceBlock();
 
 public:
     // NOLINTBEGIN

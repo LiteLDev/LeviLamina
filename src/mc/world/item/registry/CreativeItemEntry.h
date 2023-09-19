@@ -14,9 +14,9 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class CreativeItemEntry : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    CreativeItemEntry& operator=(CreativeItemEntry const&) = delete;
-    CreativeItemEntry(CreativeItemEntry const&)            = delete;
-    CreativeItemEntry()                                    = delete;
+    CreativeItemEntry& operator=(CreativeItemEntry const&);
+    CreativeItemEntry(CreativeItemEntry const&);
+    CreativeItemEntry();
 
 public:
     // NOLINTBEGIN

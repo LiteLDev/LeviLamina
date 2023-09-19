@@ -8,9 +8,9 @@
 class TitleCommand : public ::MessagingCommand {
 public:
     // prevent constructor by default
-    TitleCommand& operator=(TitleCommand const&) = delete;
-    TitleCommand(TitleCommand const&)            = delete;
-    TitleCommand()                               = delete;
+    TitleCommand& operator=(TitleCommand const&);
+    TitleCommand(TitleCommand const&);
+    TitleCommand();
 
 public:
     // NOLINTBEGIN

@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class BalloonDefinition {
 public:
     // prevent constructor by default
-    BalloonDefinition& operator=(BalloonDefinition const&) = delete;
-    BalloonDefinition(BalloonDefinition const&)            = delete;
-    BalloonDefinition()                                    = delete;
+    BalloonDefinition& operator=(BalloonDefinition const&);
+    BalloonDefinition(BalloonDefinition const&);
+    BalloonDefinition();
 
 public:
     // NOLINTBEGIN

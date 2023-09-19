@@ -8,9 +8,9 @@
 class AddActorEntityProxy : public ::IAddActorEntityProxy {
 public:
     // prevent constructor by default
-    AddActorEntityProxy& operator=(AddActorEntityProxy const&) = delete;
-    AddActorEntityProxy(AddActorEntityProxy const&)            = delete;
-    AddActorEntityProxy()                                      = delete;
+    AddActorEntityProxy& operator=(AddActorEntityProxy const&);
+    AddActorEntityProxy(AddActorEntityProxy const&);
+    AddActorEntityProxy();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 class IScriptDebugger {
 public:
     // prevent constructor by default
-    IScriptDebugger& operator=(IScriptDebugger const&) = delete;
-    IScriptDebugger(IScriptDebugger const&)            = delete;
-    IScriptDebugger()                                  = delete;
+    IScriptDebugger& operator=(IScriptDebugger const&);
+    IScriptDebugger(IScriptDebugger const&);
+    IScriptDebugger();
 };

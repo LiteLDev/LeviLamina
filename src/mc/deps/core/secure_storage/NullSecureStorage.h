@@ -8,9 +8,9 @@
 class NullSecureStorage : public ::SecureStorage {
 public:
     // prevent constructor by default
-    NullSecureStorage& operator=(NullSecureStorage const&) = delete;
-    NullSecureStorage(NullSecureStorage const&)            = delete;
-    NullSecureStorage()                                    = delete;
+    NullSecureStorage& operator=(NullSecureStorage const&);
+    NullSecureStorage(NullSecureStorage const&);
+    NullSecureStorage();
 
 public:
     // NOLINTBEGIN

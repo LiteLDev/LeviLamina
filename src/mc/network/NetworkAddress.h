@@ -5,9 +5,9 @@
 struct NetworkAddress {
 public:
     // prevent constructor by default
-    NetworkAddress& operator=(NetworkAddress const&) = delete;
-    NetworkAddress(NetworkAddress const&)            = delete;
-    NetworkAddress()                                 = delete;
+    NetworkAddress& operator=(NetworkAddress const&);
+    NetworkAddress(NetworkAddress const&);
+    NetworkAddress();
 
 public:
     // NOLINTBEGIN

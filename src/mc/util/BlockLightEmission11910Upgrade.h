@@ -16,8 +16,8 @@ namespace BlockLightEmissionVersioning {
 class BlockLightEmission11910Upgrade : public ::CerealSchemaUpgrade {
 public:
     // prevent constructor by default
-    BlockLightEmission11910Upgrade& operator=(BlockLightEmission11910Upgrade const&) = delete;
-    BlockLightEmission11910Upgrade(BlockLightEmission11910Upgrade const&)            = delete;
+    BlockLightEmission11910Upgrade& operator=(BlockLightEmission11910Upgrade const&);
+    BlockLightEmission11910Upgrade(BlockLightEmission11910Upgrade const&);
 
 public:
     // NOLINTBEGIN

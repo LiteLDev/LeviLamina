@@ -20,14 +20,14 @@ public:
     struct InitProxy {
     public:
         // prevent constructor by default
-        InitProxy& operator=(InitProxy const&) = delete;
-        InitProxy(InitProxy const&)            = delete;
-        InitProxy()                            = delete;
+        InitProxy& operator=(InitProxy const&);
+        InitProxy(InitProxy const&);
+        InitProxy();
 
     public:
         // NOLINTBEGIN
         // symbol: ??0InitProxy@ScoreboardCommand@@QEAA@AEAVServerLevel@@@Z
-        MCAPI InitProxy(class ServerLevel&);
+        MCAPI explicit InitProxy(class ServerLevel&);
 
         // NOLINTEND
     };
@@ -35,9 +35,9 @@ public:
     struct SetScoreOutput {
     public:
         // prevent constructor by default
-        SetScoreOutput& operator=(SetScoreOutput const&) = delete;
-        SetScoreOutput(SetScoreOutput const&)            = delete;
-        SetScoreOutput()                                 = delete;
+        SetScoreOutput& operator=(SetScoreOutput const&);
+        SetScoreOutput(SetScoreOutput const&);
+        SetScoreOutput();
 
     public:
         // NOLINTBEGIN
@@ -49,9 +49,9 @@ public:
 
 public:
     // prevent constructor by default
-    ScoreboardCommand& operator=(ScoreboardCommand const&) = delete;
-    ScoreboardCommand(ScoreboardCommand const&)            = delete;
-    ScoreboardCommand()                                    = delete;
+    ScoreboardCommand& operator=(ScoreboardCommand const&);
+    ScoreboardCommand(ScoreboardCommand const&);
+    ScoreboardCommand();
 
 public:
     // NOLINTBEGIN

@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class CraftingTableBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    CraftingTableBlock& operator=(CraftingTableBlock const&) = delete;
-    CraftingTableBlock(CraftingTableBlock const&)            = delete;
-    CraftingTableBlock()                                     = delete;
+    CraftingTableBlock& operator=(CraftingTableBlock const&);
+    CraftingTableBlock(CraftingTableBlock const&);
+    CraftingTableBlock();
 
 public:
     // NOLINTBEGIN

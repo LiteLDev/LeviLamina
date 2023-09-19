@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class ScaleByAgeDefinition {
 public:
     // prevent constructor by default
-    ScaleByAgeDefinition& operator=(ScaleByAgeDefinition const&) = delete;
-    ScaleByAgeDefinition(ScaleByAgeDefinition const&)            = delete;
+    ScaleByAgeDefinition& operator=(ScaleByAgeDefinition const&);
+    ScaleByAgeDefinition(ScaleByAgeDefinition const&);
 
 public:
     // NOLINTBEGIN

@@ -13,9 +13,9 @@ public:
     bool                                  fromServer; // this+0x38
 
     // prevent constructor by default
-    NetworkStackLatencyPacket& operator=(NetworkStackLatencyPacket const&) = delete;
-    NetworkStackLatencyPacket(NetworkStackLatencyPacket const&)            = delete;
-    NetworkStackLatencyPacket()                                            = delete;
+    NetworkStackLatencyPacket& operator=(NetworkStackLatencyPacket const&);
+    NetworkStackLatencyPacket(NetworkStackLatencyPacket const&);
+    NetworkStackLatencyPacket();
 
 public:
     // NOLINTBEGIN

@@ -17,8 +17,8 @@ public:
     uchar          mFlags;      // this+0x98
 
     // prevent constructor by default
-    EmotePacket& operator=(EmotePacket const&) = delete;
-    EmotePacket(EmotePacket const&)            = delete;
+    EmotePacket& operator=(EmotePacket const&);
+    EmotePacket(EmotePacket const&);
 
 public:
     // NOLINTBEGIN

@@ -5,8 +5,8 @@
 class CallbackTokenCancelState {
 public:
     // prevent constructor by default
-    CallbackTokenCancelState& operator=(CallbackTokenCancelState const&) = delete;
-    CallbackTokenCancelState(CallbackTokenCancelState const&)            = delete;
+    CallbackTokenCancelState& operator=(CallbackTokenCancelState const&);
+    CallbackTokenCancelState(CallbackTokenCancelState const&);
 
 public:
     // NOLINTBEGIN

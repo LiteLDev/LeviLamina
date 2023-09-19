@@ -13,9 +13,9 @@ public:
     std::vector<uint64> mFoundIds;   // this+0x48
 
     // prevent constructor by default
-    ClientCacheBlobStatusPacket& operator=(ClientCacheBlobStatusPacket const&) = delete;
-    ClientCacheBlobStatusPacket(ClientCacheBlobStatusPacket const&)            = delete;
-    ClientCacheBlobStatusPacket()                                              = delete;
+    ClientCacheBlobStatusPacket& operator=(ClientCacheBlobStatusPacket const&);
+    ClientCacheBlobStatusPacket(ClientCacheBlobStatusPacket const&);
+    ClientCacheBlobStatusPacket();
 
 public:
     // NOLINTBEGIN

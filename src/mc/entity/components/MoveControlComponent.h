@@ -5,8 +5,8 @@
 class MoveControlComponent {
 public:
     // prevent constructor by default
-    MoveControlComponent& operator=(MoveControlComponent const&) = delete;
-    MoveControlComponent(MoveControlComponent const&)            = delete;
+    MoveControlComponent& operator=(MoveControlComponent const&);
+    MoveControlComponent(MoveControlComponent const&);
 
 public:
     // NOLINTBEGIN

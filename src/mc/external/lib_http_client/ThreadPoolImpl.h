@@ -25,9 +25,9 @@ public:
     struct ActionStatusImpl : public ::OS::ThreadPoolActionStatus {
     public:
         // prevent constructor by default
-        ActionStatusImpl& operator=(ActionStatusImpl const&) = delete;
-        ActionStatusImpl(ActionStatusImpl const&)            = delete;
-        ActionStatusImpl()                                   = delete;
+        ActionStatusImpl& operator=(ActionStatusImpl const&);
+        ActionStatusImpl(ActionStatusImpl const&);
+        ActionStatusImpl();
 
     public:
         // NOLINTBEGIN
@@ -42,9 +42,9 @@ public:
 
 public:
     // prevent constructor by default
-    ThreadPoolImpl& operator=(ThreadPoolImpl const&) = delete;
-    ThreadPoolImpl(ThreadPoolImpl const&)            = delete;
-    ThreadPoolImpl()                                 = delete;
+    ThreadPoolImpl& operator=(ThreadPoolImpl const&);
+    ThreadPoolImpl(ThreadPoolImpl const&);
+    ThreadPoolImpl();
 
     // private:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 class Offer {
 public:
     // prevent constructor by default
-    Offer& operator=(Offer const&) = delete;
-    Offer(Offer const&)            = delete;
-    Offer()                        = delete;
+    Offer& operator=(Offer const&);
+    Offer(Offer const&);
+    Offer();
 };

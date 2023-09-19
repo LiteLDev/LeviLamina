@@ -15,9 +15,9 @@ public:
     struct Entry {
     public:
         // prevent constructor by default
-        Entry& operator=(Entry const&) = delete;
-        Entry(Entry const&)            = delete;
-        Entry()                        = delete;
+        Entry& operator=(Entry const&);
+        Entry(Entry const&);
+        Entry();
 
     public:
         // NOLINTBEGIN
@@ -29,9 +29,9 @@ public:
 
 public:
     // prevent constructor by default
-    DenyList& operator=(DenyList const&) = delete;
-    DenyList(DenyList const&)            = delete;
-    DenyList()                           = delete;
+    DenyList& operator=(DenyList const&);
+    DenyList(DenyList const&);
+    DenyList();
 
 public:
     // NOLINTBEGIN

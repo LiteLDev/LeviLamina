@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class LootItem : public ::LootPoolEntry {
 public:
     // prevent constructor by default
-    LootItem& operator=(LootItem const&) = delete;
-    LootItem(LootItem const&)            = delete;
-    LootItem()                           = delete;
+    LootItem& operator=(LootItem const&);
+    LootItem(LootItem const&);
+    LootItem();
 
 public:
     // NOLINTBEGIN

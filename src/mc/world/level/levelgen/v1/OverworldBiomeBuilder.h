@@ -10,14 +10,14 @@ namespace ClimateUtils { struct Parameter; }
 class OverworldBiomeBuilder {
 public:
     // prevent constructor by default
-    OverworldBiomeBuilder& operator=(OverworldBiomeBuilder const&) = delete;
-    OverworldBiomeBuilder(OverworldBiomeBuilder const&)            = delete;
-    OverworldBiomeBuilder()                                        = delete;
+    OverworldBiomeBuilder& operator=(OverworldBiomeBuilder const&);
+    OverworldBiomeBuilder(OverworldBiomeBuilder const&);
+    OverworldBiomeBuilder();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0OverworldBiomeBuilder@@QEAA@AEBVBaseGameVersion@@@Z
-    MCAPI OverworldBiomeBuilder(class BaseGameVersion const&);
+    MCAPI explicit OverworldBiomeBuilder(class BaseGameVersion const&);
 
     // symbol:
     // ?addBiomes@OverworldBiomeBuilder@@QEBAXAEAV?$vector@UBiomeNoiseTarget@@V?$allocator@UBiomeNoiseTarget@@@std@@@std@@AEBVBiomeRegistry@@@Z
@@ -139,33 +139,33 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $EROSIONS() { return EROSIONS; }
+    auto& $EROSIONS() { return EROSIONS; }
 
-    inline auto& $FULL_RANGE() { return FULL_RANGE; }
+    auto& $FULL_RANGE() { return FULL_RANGE; }
 
-    inline auto& $HUMIDITIES() { return HUMIDITIES; }
+    auto& $HUMIDITIES() { return HUMIDITIES; }
 
-    inline auto& $TEMPERATURES() { return TEMPERATURES; }
+    auto& $TEMPERATURES() { return TEMPERATURES; }
 
-    inline auto& $coastContinentalness() { return coastContinentalness; }
+    auto& $coastContinentalness() { return coastContinentalness; }
 
-    inline auto& $deepOceanContinentalness() { return deepOceanContinentalness; }
+    auto& $deepOceanContinentalness() { return deepOceanContinentalness; }
 
-    inline auto& $dripstoneCavesContinentalness() { return dripstoneCavesContinentalness; }
+    auto& $dripstoneCavesContinentalness() { return dripstoneCavesContinentalness; }
 
-    inline auto& $farInlandContinentalness() { return farInlandContinentalness; }
+    auto& $farInlandContinentalness() { return farInlandContinentalness; }
 
-    inline auto& $inlandContinentalness() { return inlandContinentalness; }
+    auto& $inlandContinentalness() { return inlandContinentalness; }
 
-    inline auto& $lushCavesHumidity() { return lushCavesHumidity; }
+    auto& $lushCavesHumidity() { return lushCavesHumidity; }
 
-    inline auto& $midInlandContinentalness() { return midInlandContinentalness; }
+    auto& $midInlandContinentalness() { return midInlandContinentalness; }
 
-    inline auto& $mushroomFieldsContinentalness() { return mushroomFieldsContinentalness; }
+    auto& $mushroomFieldsContinentalness() { return mushroomFieldsContinentalness; }
 
-    inline auto& $nearInlandContinentalness() { return nearInlandContinentalness; }
+    auto& $nearInlandContinentalness() { return nearInlandContinentalness; }
 
-    inline auto& $oceanContinentalness() { return oceanContinentalness; }
+    auto& $oceanContinentalness() { return oceanContinentalness; }
 
     // NOLINTEND
 };

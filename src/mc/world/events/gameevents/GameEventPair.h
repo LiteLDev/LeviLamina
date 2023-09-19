@@ -5,9 +5,9 @@
 struct GameEventPair {
 public:
     // prevent constructor by default
-    GameEventPair& operator=(GameEventPair const&) = delete;
-    GameEventPair(GameEventPair const&)            = delete;
-    GameEventPair()                                = delete;
+    GameEventPair& operator=(GameEventPair const&);
+    GameEventPair(GameEventPair const&);
+    GameEventPair();
 
 public:
     // NOLINTBEGIN

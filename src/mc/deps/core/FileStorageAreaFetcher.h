@@ -18,9 +18,9 @@ namespace Core {
 class FileStorageAreaFetcher : public ::Core::IFileStorageAreaFetcher {
 public:
     // prevent constructor by default
-    FileStorageAreaFetcher& operator=(FileStorageAreaFetcher const&) = delete;
-    FileStorageAreaFetcher(FileStorageAreaFetcher const&)            = delete;
-    FileStorageAreaFetcher()                                         = delete;
+    FileStorageAreaFetcher& operator=(FileStorageAreaFetcher const&);
+    FileStorageAreaFetcher(FileStorageAreaFetcher const&);
+    FileStorageAreaFetcher();
 
 public:
     // NOLINTBEGIN

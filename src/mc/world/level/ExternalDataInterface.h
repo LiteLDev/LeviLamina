@@ -5,7 +5,7 @@
 struct ExternalDataInterface {
 public:
     // prevent constructor by default
-    ExternalDataInterface& operator=(ExternalDataInterface const&) = delete;
-    ExternalDataInterface(ExternalDataInterface const&)            = delete;
-    ExternalDataInterface()                                        = delete;
+    ExternalDataInterface& operator=(ExternalDataInterface const&);
+    ExternalDataInterface(ExternalDataInterface const&);
+    ExternalDataInterface();
 };

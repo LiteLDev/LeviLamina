@@ -5,8 +5,8 @@
 class Stopwatch {
 public:
     // prevent constructor by default
-    Stopwatch& operator=(Stopwatch const&) = delete;
-    Stopwatch(Stopwatch const&)            = delete;
+    Stopwatch& operator=(Stopwatch const&);
+    Stopwatch(Stopwatch const&);
 
 public:
     // NOLINTBEGIN

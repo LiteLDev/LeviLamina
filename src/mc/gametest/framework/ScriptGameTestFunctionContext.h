@@ -19,9 +19,9 @@ namespace ScriptModuleGameTest {
 class ScriptGameTestFunctionContext : public ::gametest::IGameTestFunctionContext {
 public:
     // prevent constructor by default
-    ScriptGameTestFunctionContext& operator=(ScriptGameTestFunctionContext const&) = delete;
-    ScriptGameTestFunctionContext(ScriptGameTestFunctionContext const&)            = delete;
-    ScriptGameTestFunctionContext()                                                = delete;
+    ScriptGameTestFunctionContext& operator=(ScriptGameTestFunctionContext const&);
+    ScriptGameTestFunctionContext(ScriptGameTestFunctionContext const&);
+    ScriptGameTestFunctionContext();
 
 public:
     // NOLINTBEGIN

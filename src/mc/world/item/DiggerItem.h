@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class DiggerItem : public ::Item {
 public:
     // prevent constructor by default
-    DiggerItem& operator=(DiggerItem const&) = delete;
-    DiggerItem(DiggerItem const&)            = delete;
-    DiggerItem()                             = delete;
+    DiggerItem& operator=(DiggerItem const&);
+    DiggerItem(DiggerItem const&);
+    DiggerItem();
 
 public:
     // NOLINTBEGIN

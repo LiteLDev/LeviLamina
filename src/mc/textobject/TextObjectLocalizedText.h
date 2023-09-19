@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class TextObjectLocalizedText : public ::ITextObject {
 public:
     // prevent constructor by default
-    TextObjectLocalizedText& operator=(TextObjectLocalizedText const&) = delete;
-    TextObjectLocalizedText(TextObjectLocalizedText const&)            = delete;
-    TextObjectLocalizedText()                                          = delete;
+    TextObjectLocalizedText& operator=(TextObjectLocalizedText const&);
+    TextObjectLocalizedText(TextObjectLocalizedText const&);
+    TextObjectLocalizedText();
 
 public:
     // NOLINTBEGIN
@@ -33,7 +33,7 @@ public:
     virtual class Json::Value resolve(struct ResolveData const&) const;
 
     // symbol: ??0TextObjectLocalizedText@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI TextObjectLocalizedText(std::string);
+    MCAPI explicit TextObjectLocalizedText(std::string);
 
     // NOLINTEND
 };

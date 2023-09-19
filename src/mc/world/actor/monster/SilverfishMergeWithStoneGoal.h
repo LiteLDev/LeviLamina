@@ -9,9 +9,9 @@
 class SilverfishMergeWithStoneGoal : public ::RandomStrollGoal {
 public:
     // prevent constructor by default
-    SilverfishMergeWithStoneGoal& operator=(SilverfishMergeWithStoneGoal const&) = delete;
-    SilverfishMergeWithStoneGoal(SilverfishMergeWithStoneGoal const&)            = delete;
-    SilverfishMergeWithStoneGoal()                                               = delete;
+    SilverfishMergeWithStoneGoal& operator=(SilverfishMergeWithStoneGoal const&);
+    SilverfishMergeWithStoneGoal(SilverfishMergeWithStoneGoal const&);
+    SilverfishMergeWithStoneGoal();
 
 public:
     // NOLINTBEGIN
@@ -32,7 +32,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0SilverfishMergeWithStoneGoal@@QEAA@AEAVSilverfish@@@Z
-    MCAPI SilverfishMergeWithStoneGoal(class Silverfish&);
+    MCAPI explicit SilverfishMergeWithStoneGoal(class Silverfish&);
 
     // NOLINTEND
 };

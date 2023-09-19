@@ -5,9 +5,9 @@
 struct AssertHandlerContext {
 public:
     // prevent constructor by default
-    AssertHandlerContext& operator=(AssertHandlerContext const&) = delete;
-    AssertHandlerContext(AssertHandlerContext const&)            = delete;
-    AssertHandlerContext()                                       = delete;
+    AssertHandlerContext& operator=(AssertHandlerContext const&);
+    AssertHandlerContext(AssertHandlerContext const&);
+    AssertHandlerContext();
 
 public:
     // NOLINTBEGIN

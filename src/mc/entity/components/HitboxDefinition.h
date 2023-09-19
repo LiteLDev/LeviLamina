@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class HitboxDefinition {
 public:
     // prevent constructor by default
-    HitboxDefinition& operator=(HitboxDefinition const&) = delete;
-    HitboxDefinition(HitboxDefinition const&)            = delete;
-    HitboxDefinition()                                   = delete;
+    HitboxDefinition& operator=(HitboxDefinition const&);
+    HitboxDefinition(HitboxDefinition const&);
+    HitboxDefinition();
 
 public:
     // NOLINTBEGIN

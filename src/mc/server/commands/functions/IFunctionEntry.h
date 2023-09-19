@@ -5,7 +5,7 @@
 class IFunctionEntry {
 public:
     // prevent constructor by default
-    IFunctionEntry& operator=(IFunctionEntry const&) = delete;
-    IFunctionEntry(IFunctionEntry const&)            = delete;
-    IFunctionEntry()                                 = delete;
+    IFunctionEntry& operator=(IFunctionEntry const&);
+    IFunctionEntry(IFunctionEntry const&);
+    IFunctionEntry();
 };

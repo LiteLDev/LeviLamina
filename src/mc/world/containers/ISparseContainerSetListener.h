@@ -5,7 +5,7 @@
 class ISparseContainerSetListener {
 public:
     // prevent constructor by default
-    ISparseContainerSetListener& operator=(ISparseContainerSetListener const&) = delete;
-    ISparseContainerSetListener(ISparseContainerSetListener const&)            = delete;
-    ISparseContainerSetListener()                                              = delete;
+    ISparseContainerSetListener& operator=(ISparseContainerSetListener const&);
+    ISparseContainerSetListener(ISparseContainerSetListener const&);
+    ISparseContainerSetListener();
 };

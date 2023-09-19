@@ -8,9 +8,9 @@
 class StructureAnimationData {
 public:
     // prevent constructor by default
-    StructureAnimationData& operator=(StructureAnimationData const&) = delete;
-    StructureAnimationData(StructureAnimationData const&)            = delete;
-    StructureAnimationData()                                         = delete;
+    StructureAnimationData& operator=(StructureAnimationData const&);
+    StructureAnimationData(StructureAnimationData const&);
+    StructureAnimationData();
 
 public:
     // NOLINTBEGIN

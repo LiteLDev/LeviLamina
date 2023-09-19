@@ -5,9 +5,9 @@
 struct DBStorageConfig {
 public:
     // prevent constructor by default
-    DBStorageConfig& operator=(DBStorageConfig const&) = delete;
-    DBStorageConfig(DBStorageConfig const&)            = delete;
-    DBStorageConfig()                                  = delete;
+    DBStorageConfig& operator=(DBStorageConfig const&);
+    DBStorageConfig(DBStorageConfig const&);
+    DBStorageConfig();
 
 public:
     // NOLINTBEGIN

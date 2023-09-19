@@ -22,9 +22,9 @@ namespace mce { class Color; }
 class LingeringPotionItem : public ::PotionItem {
 public:
     // prevent constructor by default
-    LingeringPotionItem& operator=(LingeringPotionItem const&) = delete;
-    LingeringPotionItem(LingeringPotionItem const&)            = delete;
-    LingeringPotionItem()                                      = delete;
+    LingeringPotionItem& operator=(LingeringPotionItem const&);
+    LingeringPotionItem(LingeringPotionItem const&);
+    LingeringPotionItem();
 
 public:
     // NOLINTBEGIN

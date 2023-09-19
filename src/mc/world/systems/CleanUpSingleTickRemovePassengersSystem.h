@@ -5,9 +5,9 @@
 class CleanUpSingleTickRemovePassengersSystem {
 public:
     // prevent constructor by default
-    CleanUpSingleTickRemovePassengersSystem& operator=(CleanUpSingleTickRemovePassengersSystem const&) = delete;
-    CleanUpSingleTickRemovePassengersSystem(CleanUpSingleTickRemovePassengersSystem const&)            = delete;
-    CleanUpSingleTickRemovePassengersSystem()                                                          = delete;
+    CleanUpSingleTickRemovePassengersSystem& operator=(CleanUpSingleTickRemovePassengersSystem const&);
+    CleanUpSingleTickRemovePassengersSystem(CleanUpSingleTickRemovePassengersSystem const&);
+    CleanUpSingleTickRemovePassengersSystem();
 
 public:
     // NOLINTBEGIN

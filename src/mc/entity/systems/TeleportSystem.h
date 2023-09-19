@@ -8,9 +8,9 @@
 class TeleportSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    TeleportSystem& operator=(TeleportSystem const&) = delete;
-    TeleportSystem(TeleportSystem const&)            = delete;
-    TeleportSystem()                                 = delete;
+    TeleportSystem& operator=(TeleportSystem const&);
+    TeleportSystem(TeleportSystem const&);
+    TeleportSystem();
 
 public:
     // NOLINTBEGIN

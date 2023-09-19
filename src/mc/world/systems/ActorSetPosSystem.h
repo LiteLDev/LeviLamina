@@ -16,9 +16,9 @@
 class ActorSetPosSystem {
 public:
     // prevent constructor by default
-    ActorSetPosSystem& operator=(ActorSetPosSystem const&) = delete;
-    ActorSetPosSystem(ActorSetPosSystem const&)            = delete;
-    ActorSetPosSystem()                                    = delete;
+    ActorSetPosSystem& operator=(ActorSetPosSystem const&);
+    ActorSetPosSystem(ActorSetPosSystem const&);
+    ActorSetPosSystem();
 
 public:
     // NOLINTBEGIN

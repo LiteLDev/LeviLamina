@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class EnchantingTableBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    EnchantingTableBlock& operator=(EnchantingTableBlock const&) = delete;
-    EnchantingTableBlock(EnchantingTableBlock const&)            = delete;
-    EnchantingTableBlock()                                       = delete;
+    EnchantingTableBlock& operator=(EnchantingTableBlock const&);
+    EnchantingTableBlock(EnchantingTableBlock const&);
+    EnchantingTableBlock();
 
 public:
     // NOLINTBEGIN

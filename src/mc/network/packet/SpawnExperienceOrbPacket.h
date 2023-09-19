@@ -14,8 +14,8 @@ public:
     int  mCount; // this+0x3C
 
     // prevent constructor by default
-    SpawnExperienceOrbPacket& operator=(SpawnExperienceOrbPacket const&) = delete;
-    SpawnExperienceOrbPacket(SpawnExperienceOrbPacket const&)            = delete;
+    SpawnExperienceOrbPacket& operator=(SpawnExperienceOrbPacket const&);
+    SpawnExperienceOrbPacket(SpawnExperienceOrbPacket const&);
 
 public:
     // NOLINTBEGIN

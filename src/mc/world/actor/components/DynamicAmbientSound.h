@@ -5,9 +5,9 @@
 struct DynamicAmbientSound {
 public:
     // prevent constructor by default
-    DynamicAmbientSound& operator=(DynamicAmbientSound const&) = delete;
-    DynamicAmbientSound(DynamicAmbientSound const&)            = delete;
-    DynamicAmbientSound()                                      = delete;
+    DynamicAmbientSound& operator=(DynamicAmbientSound const&);
+    DynamicAmbientSound(DynamicAmbientSound const&);
+    DynamicAmbientSound();
 
 public:
     // NOLINTBEGIN

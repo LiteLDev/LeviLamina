@@ -5,9 +5,9 @@
 struct SubpackInfo {
 public:
     // prevent constructor by default
-    SubpackInfo& operator=(SubpackInfo const&) = delete;
-    SubpackInfo(SubpackInfo const&)            = delete;
-    SubpackInfo()                              = delete;
+    SubpackInfo& operator=(SubpackInfo const&);
+    SubpackInfo(SubpackInfo const&);
+    SubpackInfo();
 
 public:
     // NOLINTBEGIN

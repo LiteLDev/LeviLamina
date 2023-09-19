@@ -10,8 +10,8 @@
 class TaskQueueImpl {
 public:
     // prevent constructor by default
-    TaskQueueImpl& operator=(TaskQueueImpl const&) = delete;
-    TaskQueueImpl(TaskQueueImpl const&)            = delete;
+    TaskQueueImpl& operator=(TaskQueueImpl const&);
+    TaskQueueImpl(TaskQueueImpl const&);
 
 public:
     // NOLINTBEGIN

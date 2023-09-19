@@ -10,9 +10,9 @@
 class ChestBlockActor : public ::RandomizableBlockActorFillingContainer {
 public:
     // prevent constructor by default
-    ChestBlockActor& operator=(ChestBlockActor const&) = delete;
-    ChestBlockActor(ChestBlockActor const&)            = delete;
-    ChestBlockActor()                                  = delete;
+    ChestBlockActor& operator=(ChestBlockActor const&);
+    ChestBlockActor(ChestBlockActor const&);
+    ChestBlockActor();
 
 public:
     // NOLINTBEGIN

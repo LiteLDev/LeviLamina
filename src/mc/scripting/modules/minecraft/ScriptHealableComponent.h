@@ -19,9 +19,9 @@ namespace ScriptModuleMinecraft {
 class ScriptHealableComponent {
 public:
     // prevent constructor by default
-    ScriptHealableComponent& operator=(ScriptHealableComponent const&) = delete;
-    ScriptHealableComponent(ScriptHealableComponent const&)            = delete;
-    ScriptHealableComponent()                                          = delete;
+    ScriptHealableComponent& operator=(ScriptHealableComponent const&);
+    ScriptHealableComponent(ScriptHealableComponent const&);
+    ScriptHealableComponent();
 
 public:
     // NOLINTBEGIN

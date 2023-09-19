@@ -5,9 +5,9 @@
 class StructureStart {
 public:
     // prevent constructor by default
-    StructureStart& operator=(StructureStart const&) = delete;
-    StructureStart(StructureStart const&)            = delete;
-    StructureStart()                                 = delete;
+    StructureStart& operator=(StructureStart const&);
+    StructureStart(StructureStart const&);
+    StructureStart();
 
 public:
     // NOLINTBEGIN

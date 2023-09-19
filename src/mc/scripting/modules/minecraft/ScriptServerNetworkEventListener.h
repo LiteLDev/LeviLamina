@@ -20,9 +20,9 @@ namespace ScriptModuleMinecraft {
 class ScriptServerNetworkEventListener {
 public:
     // prevent constructor by default
-    ScriptServerNetworkEventListener& operator=(ScriptServerNetworkEventListener const&) = delete;
-    ScriptServerNetworkEventListener(ScriptServerNetworkEventListener const&)            = delete;
-    ScriptServerNetworkEventListener()                                                   = delete;
+    ScriptServerNetworkEventListener& operator=(ScriptServerNetworkEventListener const&);
+    ScriptServerNetworkEventListener(ScriptServerNetworkEventListener const&);
+    ScriptServerNetworkEventListener();
 
 public:
     // NOLINTBEGIN

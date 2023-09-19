@@ -5,9 +5,9 @@
 class LoadedResourceData {
 public:
     // prevent constructor by default
-    LoadedResourceData& operator=(LoadedResourceData const&) = delete;
-    LoadedResourceData(LoadedResourceData const&)            = delete;
-    LoadedResourceData()                                     = delete;
+    LoadedResourceData& operator=(LoadedResourceData const&);
+    LoadedResourceData(LoadedResourceData const&);
+    LoadedResourceData();
 
 public:
     // NOLINTBEGIN

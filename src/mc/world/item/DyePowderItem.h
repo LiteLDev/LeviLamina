@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class DyePowderItem : public ::Item {
 public:
     // prevent constructor by default
-    DyePowderItem& operator=(DyePowderItem const&) = delete;
-    DyePowderItem(DyePowderItem const&)            = delete;
-    DyePowderItem()                                = delete;
+    DyePowderItem& operator=(DyePowderItem const&);
+    DyePowderItem(DyePowderItem const&);
+    DyePowderItem();
 
 public:
     // NOLINTBEGIN

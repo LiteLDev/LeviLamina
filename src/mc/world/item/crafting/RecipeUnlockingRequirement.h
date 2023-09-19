@@ -27,11 +27,11 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0RecipeUnlockingRequirement@@QEAA@W4UnlockingContext@0@@Z
-    MCAPI RecipeUnlockingRequirement(::RecipeUnlockingRequirement::UnlockingContext);
+    MCAPI explicit RecipeUnlockingRequirement(::RecipeUnlockingRequirement::UnlockingContext);
 
     // symbol:
     // ??0RecipeUnlockingRequirement@@QEAA@V?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@std@@@Z
-    MCAPI RecipeUnlockingRequirement(std::vector<class RecipeIngredient>);
+    MCAPI explicit RecipeUnlockingRequirement(std::vector<class RecipeIngredient>);
 
     // symbol: ??0RecipeUnlockingRequirement@@QEAA@XZ
     MCAPI RecipeUnlockingRequirement();

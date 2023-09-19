@@ -5,9 +5,9 @@
 struct MolangDataDrivenGeometry {
 public:
     // prevent constructor by default
-    MolangDataDrivenGeometry& operator=(MolangDataDrivenGeometry const&) = delete;
-    MolangDataDrivenGeometry(MolangDataDrivenGeometry const&)            = delete;
-    MolangDataDrivenGeometry()                                           = delete;
+    MolangDataDrivenGeometry& operator=(MolangDataDrivenGeometry const&);
+    MolangDataDrivenGeometry(MolangDataDrivenGeometry const&);
+    MolangDataDrivenGeometry();
 
 public:
     // NOLINTBEGIN

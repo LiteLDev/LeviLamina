@@ -13,9 +13,9 @@ namespace mce { class UUID; }
 class RepairItemRecipe : public ::MultiRecipe {
 public:
     // prevent constructor by default
-    RepairItemRecipe& operator=(RepairItemRecipe const&) = delete;
-    RepairItemRecipe(RepairItemRecipe const&)            = delete;
-    RepairItemRecipe()                                   = delete;
+    RepairItemRecipe& operator=(RepairItemRecipe const&);
+    RepairItemRecipe(RepairItemRecipe const&);
+    RepairItemRecipe();
 
 public:
     // NOLINTBEGIN

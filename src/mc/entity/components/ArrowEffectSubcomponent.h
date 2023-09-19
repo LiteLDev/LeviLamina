@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class ArrowEffectSubcomponent : public ::MobEffectSubcomponent {
 public:
     // prevent constructor by default
-    ArrowEffectSubcomponent& operator=(ArrowEffectSubcomponent const&) = delete;
-    ArrowEffectSubcomponent(ArrowEffectSubcomponent const&)            = delete;
-    ArrowEffectSubcomponent()                                          = delete;
+    ArrowEffectSubcomponent& operator=(ArrowEffectSubcomponent const&);
+    ArrowEffectSubcomponent(ArrowEffectSubcomponent const&);
+    ArrowEffectSubcomponent();
 
 public:
     // NOLINTBEGIN

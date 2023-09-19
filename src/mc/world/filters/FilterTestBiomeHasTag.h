@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class FilterTestBiomeHasTag : public ::SimpleTagIDFilterTest {
 public:
     // prevent constructor by default
-    FilterTestBiomeHasTag& operator=(FilterTestBiomeHasTag const&) = delete;
-    FilterTestBiomeHasTag(FilterTestBiomeHasTag const&)            = delete;
-    FilterTestBiomeHasTag()                                        = delete;
+    FilterTestBiomeHasTag& operator=(FilterTestBiomeHasTag const&);
+    FilterTestBiomeHasTag(FilterTestBiomeHasTag const&);
+    FilterTestBiomeHasTag();
 
 public:
     // NOLINTBEGIN

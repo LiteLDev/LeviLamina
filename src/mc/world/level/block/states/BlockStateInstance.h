@@ -5,9 +5,9 @@
 class BlockStateInstance {
 public:
     // prevent constructor by default
-    BlockStateInstance& operator=(BlockStateInstance const&) = delete;
-    BlockStateInstance(BlockStateInstance const&)            = delete;
-    BlockStateInstance()                                     = delete;
+    BlockStateInstance& operator=(BlockStateInstance const&);
+    BlockStateInstance(BlockStateInstance const&);
+    BlockStateInstance();
 
 public:
     // NOLINTBEGIN

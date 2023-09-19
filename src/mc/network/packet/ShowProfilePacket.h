@@ -12,8 +12,8 @@ public:
     std::string mPlayerXUID; // this+0x30
 
     // prevent constructor by default
-    ShowProfilePacket& operator=(ShowProfilePacket const&) = delete;
-    ShowProfilePacket(ShowProfilePacket const&)            = delete;
+    ShowProfilePacket& operator=(ShowProfilePacket const&);
+    ShowProfilePacket(ShowProfilePacket const&);
 
 public:
     // NOLINTBEGIN

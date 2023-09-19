@@ -23,9 +23,9 @@ public:
     std::function<void(T0*)> mConstructor; // this+0x8
 
     // prevent constructor by default
-    ThreadLocalObject& operator=(ThreadLocalObject const&) = delete;
-    ThreadLocalObject(ThreadLocalObject const&)            = delete;
-    ThreadLocalObject()                                    = delete;
+    ThreadLocalObject& operator=(ThreadLocalObject const&);
+    ThreadLocalObject(ThreadLocalObject const&);
+    ThreadLocalObject();
 };
 
 }; // namespace Bedrock::Threading

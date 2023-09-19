@@ -28,8 +28,8 @@ public:
         std::vector<StructureBlockPalette::TickingQueueData> mTickData;
 
         // prevent constructor by default
-        BlockPositionData& operator=(BlockPositionData const&) = delete;
-        BlockPositionData()                                    = delete;
+        BlockPositionData& operator=(BlockPositionData const&);
+        BlockPositionData();
 
     public:
         // NOLINTBEGIN
@@ -50,8 +50,8 @@ public:
     std::unordered_map<ulong, StructureBlockPalette::BlockPositionData> mBlockPositionData;
 
     // prevent constructor by default
-    StructureBlockPalette& operator=(StructureBlockPalette const&) = delete;
-    StructureBlockPalette(StructureBlockPalette const&)            = delete;
+    StructureBlockPalette& operator=(StructureBlockPalette const&);
+    StructureBlockPalette(StructureBlockPalette const&);
 
 public:
     // NOLINTBEGIN

@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class ControlledByPlayerDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    ControlledByPlayerDefinition& operator=(ControlledByPlayerDefinition const&) = delete;
-    ControlledByPlayerDefinition(ControlledByPlayerDefinition const&)            = delete;
+    ControlledByPlayerDefinition& operator=(ControlledByPlayerDefinition const&);
+    ControlledByPlayerDefinition(ControlledByPlayerDefinition const&);
 
 public:
     // NOLINTBEGIN

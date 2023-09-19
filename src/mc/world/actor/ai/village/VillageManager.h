@@ -24,9 +24,9 @@ public:
     class DwellerTestVillageInfo {
     public:
         // prevent constructor by default
-        DwellerTestVillageInfo& operator=(DwellerTestVillageInfo const&) = delete;
-        DwellerTestVillageInfo(DwellerTestVillageInfo const&)            = delete;
-        DwellerTestVillageInfo()                                         = delete;
+        DwellerTestVillageInfo& operator=(DwellerTestVillageInfo const&);
+        DwellerTestVillageInfo(DwellerTestVillageInfo const&);
+        DwellerTestVillageInfo();
 
     public:
         // NOLINTBEGIN
@@ -39,9 +39,9 @@ public:
     class VillageInfo {
     public:
         // prevent constructor by default
-        VillageInfo& operator=(VillageInfo const&) = delete;
-        VillageInfo(VillageInfo const&)            = delete;
-        VillageInfo()                              = delete;
+        VillageInfo& operator=(VillageInfo const&);
+        VillageInfo(VillageInfo const&);
+        VillageInfo();
 
     public:
         // NOLINTBEGIN
@@ -53,9 +53,9 @@ public:
 
 public:
     // prevent constructor by default
-    VillageManager& operator=(VillageManager const&) = delete;
-    VillageManager(VillageManager const&)            = delete;
-    VillageManager()                                 = delete;
+    VillageManager& operator=(VillageManager const&);
+    VillageManager(VillageManager const&);
+    VillageManager();
 
 public:
     // NOLINTBEGIN
@@ -69,7 +69,7 @@ public:
     virtual std::weak_ptr<class Village> getVillageByID(class mce::UUID const&) const;
 
     // symbol: ??0VillageManager@@QEAA@AEAVDimension@@@Z
-    MCAPI VillageManager(class Dimension&);
+    MCAPI explicit VillageManager(class Dimension&);
 
     // symbol:
     // ?fetchClosestVillageMostSuitableForDweller@VillageManager@@QEBA?AV?$weak_ptr@VVillage@@@std@@AEBVBlockPos@@HI@Z
@@ -173,11 +173,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $MAX_POI_QUERIES() { return MAX_POI_QUERIES; }
+    auto& $MAX_POI_QUERIES() { return MAX_POI_QUERIES; }
 
-    inline auto& $MAX_QUERY_SCAN_ITERATIONS() { return MAX_QUERY_SCAN_ITERATIONS; }
+    auto& $MAX_QUERY_SCAN_ITERATIONS() { return MAX_QUERY_SCAN_ITERATIONS; }
 
-    inline auto& $VILLAGE_HERO_EFFECT_DURATION() { return VILLAGE_HERO_EFFECT_DURATION; }
+    auto& $VILLAGE_HERO_EFFECT_DURATION() { return VILLAGE_HERO_EFFECT_DURATION; }
 
     // NOLINTEND
 };

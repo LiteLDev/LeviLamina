@@ -26,9 +26,9 @@
 class Guardian : public ::Monster {
 public:
     // prevent constructor by default
-    Guardian& operator=(Guardian const&) = delete;
-    Guardian(Guardian const&)            = delete;
-    Guardian()                           = delete;
+    Guardian& operator=(Guardian const&);
+    Guardian(Guardian const&);
+    Guardian();
 
 public:
     // NOLINTBEGIN
@@ -187,9 +187,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $ATTACK_TIME() { return ATTACK_TIME; }
+    auto& $ATTACK_TIME() { return ATTACK_TIME; }
 
-    inline auto& $FIRST_DAMAGE_TIME() { return FIRST_DAMAGE_TIME; }
+    auto& $FIRST_DAMAGE_TIME() { return FIRST_DAMAGE_TIME; }
 
     // NOLINTEND
 };

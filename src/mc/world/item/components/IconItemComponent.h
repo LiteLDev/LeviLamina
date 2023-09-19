@@ -5,9 +5,9 @@
 class IconItemComponent {
 public:
     // prevent constructor by default
-    IconItemComponent& operator=(IconItemComponent const&) = delete;
-    IconItemComponent(IconItemComponent const&)            = delete;
-    IconItemComponent()                                    = delete;
+    IconItemComponent& operator=(IconItemComponent const&);
+    IconItemComponent(IconItemComponent const&);
+    IconItemComponent();
 
 public:
     // NOLINTBEGIN
@@ -43,7 +43,7 @@ public:
     virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
 
     // symbol: ??0IconItemComponent@@QEAA@PEAVComponentItem@@@Z
-    MCAPI IconItemComponent(class ComponentItem*);
+    MCAPI explicit IconItemComponent(class ComponentItem*);
 
     // symbol: ?setOwnerIcon@IconItemComponent@@QEAAXXZ
     MCAPI void setOwnerIcon();

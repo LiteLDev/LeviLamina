@@ -5,9 +5,9 @@
 class ChunkLoadPriority {
 public:
     // prevent constructor by default
-    ChunkLoadPriority& operator=(ChunkLoadPriority const&) = delete;
-    ChunkLoadPriority(ChunkLoadPriority const&)            = delete;
-    ChunkLoadPriority()                                    = delete;
+    ChunkLoadPriority& operator=(ChunkLoadPriority const&);
+    ChunkLoadPriority(ChunkLoadPriority const&);
+    ChunkLoadPriority();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class VanillaBastionJigsawStructures {
 public:
     // prevent constructor by default
-    VanillaBastionJigsawStructures& operator=(VanillaBastionJigsawStructures const&) = delete;
-    VanillaBastionJigsawStructures(VanillaBastionJigsawStructures const&)            = delete;
-    VanillaBastionJigsawStructures()                                                 = delete;
+    VanillaBastionJigsawStructures& operator=(VanillaBastionJigsawStructures const&);
+    VanillaBastionJigsawStructures(VanillaBastionJigsawStructures const&);
+    VanillaBastionJigsawStructures();
 
 public:
     // NOLINTBEGIN

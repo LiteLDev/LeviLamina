@@ -9,9 +9,9 @@
 class ScreenHandlerHUD : public ::ScreenHandlerBase {
 public:
     // prevent constructor by default
-    ScreenHandlerHUD& operator=(ScreenHandlerHUD const&) = delete;
-    ScreenHandlerHUD(ScreenHandlerHUD const&)            = delete;
-    ScreenHandlerHUD()                                   = delete;
+    ScreenHandlerHUD& operator=(ScreenHandlerHUD const&);
+    ScreenHandlerHUD(ScreenHandlerHUD const&);
+    ScreenHandlerHUD();
 
 public:
     // NOLINTBEGIN

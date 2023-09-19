@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class SelectorDefinition : public ::CompositeDefinition {
 public:
     // prevent constructor by default
-    SelectorDefinition& operator=(SelectorDefinition const&) = delete;
-    SelectorDefinition(SelectorDefinition const&)            = delete;
-    SelectorDefinition()                                     = delete;
+    SelectorDefinition& operator=(SelectorDefinition const&);
+    SelectorDefinition(SelectorDefinition const&);
+    SelectorDefinition();
 
 public:
     // NOLINTBEGIN

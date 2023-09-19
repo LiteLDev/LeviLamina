@@ -8,9 +8,9 @@
 class TellRawCommand : public ::MessagingCommand {
 public:
     // prevent constructor by default
-    TellRawCommand& operator=(TellRawCommand const&) = delete;
-    TellRawCommand(TellRawCommand const&)            = delete;
-    TellRawCommand()                                 = delete;
+    TellRawCommand& operator=(TellRawCommand const&);
+    TellRawCommand(TellRawCommand const&);
+    TellRawCommand();
 
 public:
     // NOLINTBEGIN

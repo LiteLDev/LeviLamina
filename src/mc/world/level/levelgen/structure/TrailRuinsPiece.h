@@ -11,9 +11,9 @@
 class TrailRuinsPiece : public ::PoolElementStructurePiece {
 public:
     // prevent constructor by default
-    TrailRuinsPiece& operator=(TrailRuinsPiece const&) = delete;
-    TrailRuinsPiece(TrailRuinsPiece const&)            = delete;
-    TrailRuinsPiece()                                  = delete;
+    TrailRuinsPiece& operator=(TrailRuinsPiece const&);
+    TrailRuinsPiece(TrailRuinsPiece const&);
+    TrailRuinsPiece();
 
 public:
     // NOLINTBEGIN

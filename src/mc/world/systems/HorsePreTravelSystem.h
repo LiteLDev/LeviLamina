@@ -5,9 +5,9 @@
 class HorsePreTravelSystem {
 public:
     // prevent constructor by default
-    HorsePreTravelSystem& operator=(HorsePreTravelSystem const&) = delete;
-    HorsePreTravelSystem(HorsePreTravelSystem const&)            = delete;
-    HorsePreTravelSystem()                                       = delete;
+    HorsePreTravelSystem& operator=(HorsePreTravelSystem const&);
+    HorsePreTravelSystem(HorsePreTravelSystem const&);
+    HorsePreTravelSystem();
 
 public:
     // NOLINTBEGIN

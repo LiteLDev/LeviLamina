@@ -8,9 +8,9 @@
 class GlobalActorLegacyTickSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    GlobalActorLegacyTickSystem& operator=(GlobalActorLegacyTickSystem const&) = delete;
-    GlobalActorLegacyTickSystem(GlobalActorLegacyTickSystem const&)            = delete;
-    GlobalActorLegacyTickSystem()                                              = delete;
+    GlobalActorLegacyTickSystem& operator=(GlobalActorLegacyTickSystem const&);
+    GlobalActorLegacyTickSystem(GlobalActorLegacyTickSystem const&);
+    GlobalActorLegacyTickSystem();
 
 public:
     // NOLINTBEGIN

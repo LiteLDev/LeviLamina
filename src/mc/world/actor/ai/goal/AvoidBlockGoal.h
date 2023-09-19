@@ -24,8 +24,8 @@ public:
     class Definition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        Definition& operator=(Definition const&) = delete;
-        Definition(Definition const&)            = delete;
+        Definition& operator=(Definition const&);
+        Definition(Definition const&);
 
     public:
         // NOLINTBEGIN
@@ -59,9 +59,9 @@ public:
 
 public:
     // prevent constructor by default
-    AvoidBlockGoal& operator=(AvoidBlockGoal const&) = delete;
-    AvoidBlockGoal(AvoidBlockGoal const&)            = delete;
-    AvoidBlockGoal()                                 = delete;
+    AvoidBlockGoal& operator=(AvoidBlockGoal const&);
+    AvoidBlockGoal(AvoidBlockGoal const&);
+    AvoidBlockGoal();
 
 public:
     // NOLINTBEGIN
@@ -88,7 +88,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0AvoidBlockGoal@@QEAA@AEAVMob@@@Z
-    MCAPI AvoidBlockGoal(class Mob&);
+    MCAPI explicit AvoidBlockGoal(class Mob&);
 
     // NOLINTEND
 

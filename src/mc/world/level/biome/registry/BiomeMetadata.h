@@ -5,9 +5,9 @@
 struct BiomeMetadata {
 public:
     // prevent constructor by default
-    BiomeMetadata& operator=(BiomeMetadata const&) = delete;
-    BiomeMetadata(BiomeMetadata const&)            = delete;
-    BiomeMetadata()                                = delete;
+    BiomeMetadata& operator=(BiomeMetadata const&);
+    BiomeMetadata(BiomeMetadata const&);
+    BiomeMetadata();
 
 public:
     // NOLINTBEGIN

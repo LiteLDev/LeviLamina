@@ -5,7 +5,7 @@
 class NetworkPacketEventListener {
 public:
     // prevent constructor by default
-    NetworkPacketEventListener& operator=(NetworkPacketEventListener const&) = delete;
-    NetworkPacketEventListener(NetworkPacketEventListener const&)            = delete;
-    NetworkPacketEventListener()                                             = delete;
+    NetworkPacketEventListener& operator=(NetworkPacketEventListener const&);
+    NetworkPacketEventListener(NetworkPacketEventListener const&);
+    NetworkPacketEventListener();
 };

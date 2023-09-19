@@ -9,9 +9,9 @@
 class HardcodedAnimationSystem {
 public:
     // prevent constructor by default
-    HardcodedAnimationSystem& operator=(HardcodedAnimationSystem const&) = delete;
-    HardcodedAnimationSystem(HardcodedAnimationSystem const&)            = delete;
-    HardcodedAnimationSystem()                                           = delete;
+    HardcodedAnimationSystem& operator=(HardcodedAnimationSystem const&);
+    HardcodedAnimationSystem(HardcodedAnimationSystem const&);
+    HardcodedAnimationSystem();
 
 public:
     // NOLINTBEGIN

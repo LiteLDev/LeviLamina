@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class SweetBerryBushBlock : public ::BushBlock {
 public:
     // prevent constructor by default
-    SweetBerryBushBlock& operator=(SweetBerryBushBlock const&) = delete;
-    SweetBerryBushBlock(SweetBerryBushBlock const&)            = delete;
-    SweetBerryBushBlock()                                      = delete;
+    SweetBerryBushBlock& operator=(SweetBerryBushBlock const&);
+    SweetBerryBushBlock(SweetBerryBushBlock const&);
+    SweetBerryBushBlock();
 
 public:
     // NOLINTBEGIN

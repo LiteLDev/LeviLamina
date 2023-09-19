@@ -10,9 +10,9 @@
 class FunctionEntry : public ::IFunctionEntry {
 public:
     // prevent constructor by default
-    FunctionEntry& operator=(FunctionEntry const&) = delete;
-    FunctionEntry(FunctionEntry const&)            = delete;
-    FunctionEntry()                                = delete;
+    FunctionEntry& operator=(FunctionEntry const&);
+    FunctionEntry(FunctionEntry const&);
+    FunctionEntry();
 
 public:
     // NOLINTBEGIN

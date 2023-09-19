@@ -10,9 +10,9 @@
 class CartographyContainerManagerModel : public ::ContainerManagerModel {
 public:
     // prevent constructor by default
-    CartographyContainerManagerModel& operator=(CartographyContainerManagerModel const&) = delete;
-    CartographyContainerManagerModel(CartographyContainerManagerModel const&)            = delete;
-    CartographyContainerManagerModel()                                                   = delete;
+    CartographyContainerManagerModel& operator=(CartographyContainerManagerModel const&);
+    CartographyContainerManagerModel(CartographyContainerManagerModel const&);
+    CartographyContainerManagerModel();
 
 public:
     // NOLINTBEGIN

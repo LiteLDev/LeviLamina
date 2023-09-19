@@ -7,9 +7,9 @@ namespace AgentComponents::Actions {
 struct DropAll {
 public:
     // prevent constructor by default
-    DropAll& operator=(DropAll const&) = delete;
-    DropAll(DropAll const&)            = delete;
-    DropAll()                          = delete;
+    DropAll& operator=(DropAll const&);
+    DropAll(DropAll const&);
+    DropAll();
 };
 
 }; // namespace AgentComponents::Actions

@@ -19,9 +19,9 @@ public:
     LLNDAPI static std::shared_ptr<BlockActor> create(class CompoundTag const& nbt, class BlockPos const& pos);
 
     // prevent constructor by default
-    BlockActor& operator=(BlockActor const&) = delete;
-    BlockActor(BlockActor const&)            = delete;
-    BlockActor()                             = delete;
+    BlockActor& operator=(BlockActor const&);
+    BlockActor(BlockActor const&);
+    BlockActor();
 
 public:
     // NOLINTBEGIN
@@ -279,9 +279,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mClassIdMap() { return mClassIdMap; }
+    auto& $mClassIdMap() { return mClassIdMap; }
 
-    inline auto& $mIdClassMap() { return mIdClassMap; }
+    auto& $mIdClassMap() { return mIdClassMap; }
 
     // NOLINTEND
 };

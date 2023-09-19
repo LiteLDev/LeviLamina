@@ -8,9 +8,9 @@
 class ContainerScreenValidationActivate : public ::ContainerScreenValidation {
 public:
     // prevent constructor by default
-    ContainerScreenValidationActivate& operator=(ContainerScreenValidationActivate const&) = delete;
-    ContainerScreenValidationActivate(ContainerScreenValidationActivate const&)            = delete;
-    ContainerScreenValidationActivate()                                                    = delete;
+    ContainerScreenValidationActivate& operator=(ContainerScreenValidationActivate const&);
+    ContainerScreenValidationActivate(ContainerScreenValidationActivate const&);
+    ContainerScreenValidationActivate();
 
 public:
     // NOLINTBEGIN

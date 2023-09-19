@@ -8,9 +8,9 @@
 struct ResourceDropsContext {
 public:
     // prevent constructor by default
-    ResourceDropsContext& operator=(ResourceDropsContext const&) = delete;
-    ResourceDropsContext(ResourceDropsContext const&)            = delete;
-    ResourceDropsContext()                                       = delete;
+    ResourceDropsContext& operator=(ResourceDropsContext const&);
+    ResourceDropsContext(ResourceDropsContext const&);
+    ResourceDropsContext();
 
 public:
     // NOLINTBEGIN

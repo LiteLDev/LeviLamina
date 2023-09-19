@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptFloatsInLiquidComponent {
 public:
     // prevent constructor by default
-    ScriptFloatsInLiquidComponent& operator=(ScriptFloatsInLiquidComponent const&) = delete;
-    ScriptFloatsInLiquidComponent(ScriptFloatsInLiquidComponent const&)            = delete;
-    ScriptFloatsInLiquidComponent()                                                = delete;
+    ScriptFloatsInLiquidComponent& operator=(ScriptFloatsInLiquidComponent const&);
+    ScriptFloatsInLiquidComponent(ScriptFloatsInLiquidComponent const&);
+    ScriptFloatsInLiquidComponent();
 
 public:
     // NOLINTBEGIN

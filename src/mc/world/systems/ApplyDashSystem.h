@@ -8,9 +8,9 @@
 class ApplyDashSystem {
 public:
     // prevent constructor by default
-    ApplyDashSystem& operator=(ApplyDashSystem const&) = delete;
-    ApplyDashSystem(ApplyDashSystem const&)            = delete;
-    ApplyDashSystem()                                  = delete;
+    ApplyDashSystem& operator=(ApplyDashSystem const&);
+    ApplyDashSystem(ApplyDashSystem const&);
+    ApplyDashSystem();
 
 public:
     // NOLINTBEGIN

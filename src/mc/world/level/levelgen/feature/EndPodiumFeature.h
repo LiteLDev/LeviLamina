@@ -8,9 +8,9 @@
 class EndPodiumFeature : public ::Feature {
 public:
     // prevent constructor by default
-    EndPodiumFeature& operator=(EndPodiumFeature const&) = delete;
-    EndPodiumFeature(EndPodiumFeature const&)            = delete;
-    EndPodiumFeature()                                   = delete;
+    EndPodiumFeature& operator=(EndPodiumFeature const&);
+    EndPodiumFeature(EndPodiumFeature const&);
+    EndPodiumFeature();
 
 public:
     // NOLINTBEGIN
@@ -24,7 +24,7 @@ public:
     MCVAPI ~EndPodiumFeature();
 
     // symbol: ??0EndPodiumFeature@@QEAA@_N@Z
-    MCAPI EndPodiumFeature(bool);
+    MCAPI explicit EndPodiumFeature(bool);
 
     // symbol: ?CORNER_ROUNDING@EndPodiumFeature@@2MB
     MCAPI static float const CORNER_ROUNDING;

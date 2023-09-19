@@ -8,9 +8,9 @@
 class InsomniaSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    InsomniaSystem& operator=(InsomniaSystem const&) = delete;
-    InsomniaSystem(InsomniaSystem const&)            = delete;
-    InsomniaSystem()                                 = delete;
+    InsomniaSystem& operator=(InsomniaSystem const&);
+    InsomniaSystem(InsomniaSystem const&);
+    InsomniaSystem();
 
 public:
     // NOLINTBEGIN

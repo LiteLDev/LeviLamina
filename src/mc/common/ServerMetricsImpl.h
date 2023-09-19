@@ -8,9 +8,9 @@
 class ServerMetricsImpl : public ::ServerMetrics {
 public:
     // prevent constructor by default
-    ServerMetricsImpl& operator=(ServerMetricsImpl const&) = delete;
-    ServerMetricsImpl(ServerMetricsImpl const&)            = delete;
-    ServerMetricsImpl()                                    = delete;
+    ServerMetricsImpl& operator=(ServerMetricsImpl const&);
+    ServerMetricsImpl(ServerMetricsImpl const&);
+    ServerMetricsImpl();
 
 public:
     // NOLINTBEGIN
@@ -28,7 +28,7 @@ public:
     virtual void sendChunkLoadTelemetryData();
 
     // symbol: ??0ServerMetricsImpl@@QEAA@PEAVServerCommunicationInterface@@@Z
-    MCAPI ServerMetricsImpl(class ServerCommunicationInterface*);
+    MCAPI explicit ServerMetricsImpl(class ServerCommunicationInterface*);
 
     // NOLINTEND
 

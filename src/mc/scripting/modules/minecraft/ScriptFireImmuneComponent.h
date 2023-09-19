@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptFireImmuneComponent {
 public:
     // prevent constructor by default
-    ScriptFireImmuneComponent& operator=(ScriptFireImmuneComponent const&) = delete;
-    ScriptFireImmuneComponent(ScriptFireImmuneComponent const&)            = delete;
-    ScriptFireImmuneComponent()                                            = delete;
+    ScriptFireImmuneComponent& operator=(ScriptFireImmuneComponent const&);
+    ScriptFireImmuneComponent(ScriptFireImmuneComponent const&);
+    ScriptFireImmuneComponent();
 
 public:
     // NOLINTBEGIN

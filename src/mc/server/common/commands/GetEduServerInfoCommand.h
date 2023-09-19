@@ -8,9 +8,9 @@
 class GetEduServerInfoCommand : public ::Command {
 public:
     // prevent constructor by default
-    GetEduServerInfoCommand& operator=(GetEduServerInfoCommand const&) = delete;
-    GetEduServerInfoCommand(GetEduServerInfoCommand const&)            = delete;
-    GetEduServerInfoCommand()                                          = delete;
+    GetEduServerInfoCommand& operator=(GetEduServerInfoCommand const&);
+    GetEduServerInfoCommand(GetEduServerInfoCommand const&);
+    GetEduServerInfoCommand();
 
 public:
     // NOLINTBEGIN

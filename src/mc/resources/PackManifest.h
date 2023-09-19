@@ -19,8 +19,8 @@ namespace Json { class Value; }
 class PackManifest {
 public:
     // prevent constructor by default
-    PackManifest& operator=(PackManifest const&) = delete;
-    PackManifest()                               = delete;
+    PackManifest& operator=(PackManifest const&);
+    PackManifest();
 
 public:
     // NOLINTBEGIN
@@ -35,7 +35,7 @@ public:
     MCVAPI ~PackManifest();
 
     // symbol: ??0PackManifest@@QEAA@W4ManifestType@@@Z
-    MCAPI PackManifest(::ManifestType);
+    MCAPI explicit PackManifest(::ManifestType);
 
     // symbol: ??0PackManifest@@QEAA@AEBV0@@Z
     MCAPI PackManifest(class PackManifest const&);
@@ -199,7 +199,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $STRING_TO_PACK_SCOPE() { return STRING_TO_PACK_SCOPE; }
+    auto& $STRING_TO_PACK_SCOPE() { return STRING_TO_PACK_SCOPE; }
 
     // NOLINTEND
 };

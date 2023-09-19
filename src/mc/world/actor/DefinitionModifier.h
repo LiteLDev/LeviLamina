@@ -5,8 +5,8 @@
 struct DefinitionModifier {
 public:
     // prevent constructor by default
-    DefinitionModifier& operator=(DefinitionModifier const&) = delete;
-    DefinitionModifier()                                     = delete;
+    DefinitionModifier& operator=(DefinitionModifier const&);
+    DefinitionModifier();
 
 public:
     // NOLINTBEGIN

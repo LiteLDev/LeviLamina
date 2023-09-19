@@ -5,9 +5,9 @@
 class CrashDumpLog {
 public:
     // prevent constructor by default
-    CrashDumpLog& operator=(CrashDumpLog const&) = delete;
-    CrashDumpLog(CrashDumpLog const&)            = delete;
-    CrashDumpLog()                               = delete;
+    CrashDumpLog& operator=(CrashDumpLog const&);
+    CrashDumpLog(CrashDumpLog const&);
+    CrashDumpLog();
 
 public:
     // NOLINTBEGIN
@@ -101,29 +101,29 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mAssertDataMutex() { return mAssertDataMutex; }
+    auto& $mAssertDataMutex() { return mAssertDataMutex; }
 
-    inline auto& $mCrashDumpLog_logThread() { return mCrashDumpLog_logThread; }
+    auto& $mCrashDumpLog_logThread() { return mCrashDumpLog_logThread; }
 
-    inline auto& $mCrashDumpThreadMutex() { return mCrashDumpThreadMutex; }
+    auto& $mCrashDumpThreadMutex() { return mCrashDumpThreadMutex; }
 
-    inline auto& $mCrashDumpThreadMutexCV() { return mCrashDumpThreadMutexCV; }
+    auto& $mCrashDumpThreadMutexCV() { return mCrashDumpThreadMutexCV; }
 
-    inline auto& $mEventDataMutex() { return mEventDataMutex; }
+    auto& $mEventDataMutex() { return mEventDataMutex; }
 
-    inline auto& $mFrameDataMutex() { return mFrameDataMutex; }
+    auto& $mFrameDataMutex() { return mFrameDataMutex; }
 
-    inline auto& $mGameplayDataMutex() { return mGameplayDataMutex; }
+    auto& $mGameplayDataMutex() { return mGameplayDataMutex; }
 
-    inline auto& $mGlobalDataMutex() { return mGlobalDataMutex; }
+    auto& $mGlobalDataMutex() { return mGlobalDataMutex; }
 
-    inline auto& $mIsThreadRunning() { return mIsThreadRunning; }
+    auto& $mIsThreadRunning() { return mIsThreadRunning; }
 
-    inline auto& $mKeyValueDataMutex() { return mKeyValueDataMutex; }
+    auto& $mKeyValueDataMutex() { return mKeyValueDataMutex; }
 
-    inline auto& $mPlayerDataMutex() { return mPlayerDataMutex; }
+    auto& $mPlayerDataMutex() { return mPlayerDataMutex; }
 
-    inline auto& $mRenderDataMutex() { return mRenderDataMutex; }
+    auto& $mRenderDataMutex() { return mRenderDataMutex; }
 
     // NOLINTEND
 };

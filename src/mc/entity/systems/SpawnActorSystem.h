@@ -8,9 +8,9 @@
 class SpawnActorSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    SpawnActorSystem& operator=(SpawnActorSystem const&) = delete;
-    SpawnActorSystem(SpawnActorSystem const&)            = delete;
-    SpawnActorSystem()                                   = delete;
+    SpawnActorSystem& operator=(SpawnActorSystem const&);
+    SpawnActorSystem(SpawnActorSystem const&);
+    SpawnActorSystem();
 
 public:
     // NOLINTBEGIN

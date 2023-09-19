@@ -16,8 +16,8 @@ public:
     bool              mInternalSource; // this+0x90
 
     // prevent constructor by default
-    CommandRequestPacket& operator=(CommandRequestPacket const&) = delete;
-    CommandRequestPacket(CommandRequestPacket const&)            = delete;
+    CommandRequestPacket& operator=(CommandRequestPacket const&);
+    CommandRequestPacket(CommandRequestPacket const&);
 
 public:
     // NOLINTBEGIN

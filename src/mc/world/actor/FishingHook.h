@@ -25,9 +25,9 @@
 class FishingHook : public ::Actor {
 public:
     // prevent constructor by default
-    FishingHook& operator=(FishingHook const&) = delete;
-    FishingHook(FishingHook const&)            = delete;
-    FishingHook()                              = delete;
+    FishingHook& operator=(FishingHook const&);
+    FishingHook(FishingHook const&);
+    FishingHook();
 
 public:
     // NOLINTBEGIN

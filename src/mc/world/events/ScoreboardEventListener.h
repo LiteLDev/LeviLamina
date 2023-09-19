@@ -8,9 +8,9 @@
 class ScoreboardEventListener {
 public:
     // prevent constructor by default
-    ScoreboardEventListener& operator=(ScoreboardEventListener const&) = delete;
-    ScoreboardEventListener(ScoreboardEventListener const&)            = delete;
-    ScoreboardEventListener()                                          = delete;
+    ScoreboardEventListener& operator=(ScoreboardEventListener const&);
+    ScoreboardEventListener(ScoreboardEventListener const&);
+    ScoreboardEventListener();
 
 public:
     // NOLINTBEGIN

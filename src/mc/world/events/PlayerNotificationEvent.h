@@ -5,9 +5,9 @@
 struct PlayerNotificationEvent {
 public:
     // prevent constructor by default
-    PlayerNotificationEvent& operator=(PlayerNotificationEvent const&) = delete;
-    PlayerNotificationEvent(PlayerNotificationEvent const&)            = delete;
-    PlayerNotificationEvent()                                          = delete;
+    PlayerNotificationEvent& operator=(PlayerNotificationEvent const&);
+    PlayerNotificationEvent(PlayerNotificationEvent const&);
+    PlayerNotificationEvent();
 
 public:
     // NOLINTBEGIN

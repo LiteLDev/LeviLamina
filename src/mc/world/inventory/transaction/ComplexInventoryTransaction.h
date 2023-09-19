@@ -24,9 +24,9 @@ public:
 
 public:
     // prevent constructor by default
-    ComplexInventoryTransaction& operator=(ComplexInventoryTransaction const&) = delete;
-    ComplexInventoryTransaction(ComplexInventoryTransaction const&)            = delete;
-    ComplexInventoryTransaction()                                              = delete;
+    ComplexInventoryTransaction& operator=(ComplexInventoryTransaction const&);
+    ComplexInventoryTransaction(ComplexInventoryTransaction const&);
+    ComplexInventoryTransaction();
 
 public:
     // NOLINTBEGIN
@@ -54,7 +54,7 @@ public:
     MCVAPI ~ComplexInventoryTransaction();
 
     // symbol: ??0ComplexInventoryTransaction@@QEAA@W4Type@0@@Z
-    MCAPI ComplexInventoryTransaction(::ComplexInventoryTransaction::Type);
+    MCAPI explicit ComplexInventoryTransaction(::ComplexInventoryTransaction::Type);
 
     // symbol:
     // ?fromType@ComplexInventoryTransaction@@SA?AV?$unique_ptr@VComplexInventoryTransaction@@U?$default_delete@VComplexInventoryTransaction@@@std@@@std@@W4Type@1@AEBVInventoryTransaction@@@Z
@@ -83,7 +83,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $transactionTypeMap() { return transactionTypeMap; }
+    auto& $transactionTypeMap() { return transactionTypeMap; }
 
     // NOLINTEND
 };

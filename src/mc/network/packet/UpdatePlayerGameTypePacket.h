@@ -16,8 +16,8 @@ public:
     ActorUniqueID mTargetPlayer;   // this+0x38
 
     // prevent constructor by default
-    UpdatePlayerGameTypePacket& operator=(UpdatePlayerGameTypePacket const&) = delete;
-    UpdatePlayerGameTypePacket(UpdatePlayerGameTypePacket const&)            = delete;
+    UpdatePlayerGameTypePacket& operator=(UpdatePlayerGameTypePacket const&);
+    UpdatePlayerGameTypePacket(UpdatePlayerGameTypePacket const&);
 
 public:
     // NOLINTBEGIN

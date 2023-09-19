@@ -10,9 +10,9 @@ namespace TreeHelper { struct TreeParams; }
 class MangroveTreeRoots {
 public:
     // prevent constructor by default
-    MangroveTreeRoots& operator=(MangroveTreeRoots const&) = delete;
-    MangroveTreeRoots(MangroveTreeRoots const&)            = delete;
-    MangroveTreeRoots()                                    = delete;
+    MangroveTreeRoots& operator=(MangroveTreeRoots const&);
+    MangroveTreeRoots(MangroveTreeRoots const&);
+    MangroveTreeRoots();
 
 public:
     // NOLINTBEGIN
@@ -58,7 +58,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $RANDOM_SKEW_CHANCE() { return RANDOM_SKEW_CHANCE; }
+    auto& $RANDOM_SKEW_CHANCE() { return RANDOM_SKEW_CHANCE; }
 
     // NOLINTEND
 };

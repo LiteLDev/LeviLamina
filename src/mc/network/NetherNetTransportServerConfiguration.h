@@ -7,9 +7,9 @@ namespace NetherNet {
 struct NetherNetTransportServerConfiguration {
 public:
     // prevent constructor by default
-    NetherNetTransportServerConfiguration& operator=(NetherNetTransportServerConfiguration const&) = delete;
-    NetherNetTransportServerConfiguration(NetherNetTransportServerConfiguration const&)            = delete;
-    NetherNetTransportServerConfiguration()                                                        = delete;
+    NetherNetTransportServerConfiguration& operator=(NetherNetTransportServerConfiguration const&);
+    NetherNetTransportServerConfiguration(NetherNetTransportServerConfiguration const&);
+    NetherNetTransportServerConfiguration();
 };
 
 }; // namespace NetherNet

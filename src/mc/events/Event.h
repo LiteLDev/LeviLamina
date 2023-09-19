@@ -17,8 +17,8 @@ namespace Social::Events {
 class Event {
 public:
     // prevent constructor by default
-    Event& operator=(Event const&) = delete;
-    Event()                        = delete;
+    Event& operator=(Event const&);
+    Event();
 
 public:
     // NOLINTBEGIN

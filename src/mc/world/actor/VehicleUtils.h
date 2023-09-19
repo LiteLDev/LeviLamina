@@ -13,16 +13,16 @@ public:
     struct VehicleDirections {
     public:
         // prevent constructor by default
-        VehicleDirections& operator=(VehicleDirections const&) = delete;
-        VehicleDirections(VehicleDirections const&)            = delete;
-        VehicleDirections()                                    = delete;
+        VehicleDirections& operator=(VehicleDirections const&);
+        VehicleDirections(VehicleDirections const&);
+        VehicleDirections();
     };
 
 public:
     // prevent constructor by default
-    VehicleUtils& operator=(VehicleUtils const&) = delete;
-    VehicleUtils(VehicleUtils const&)            = delete;
-    VehicleUtils()                               = delete;
+    VehicleUtils& operator=(VehicleUtils const&);
+    VehicleUtils(VehicleUtils const&);
+    VehicleUtils();
 
 public:
     // NOLINTBEGIN

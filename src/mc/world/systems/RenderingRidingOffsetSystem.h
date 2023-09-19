@@ -5,9 +5,9 @@
 class RenderingRidingOffsetSystem {
 public:
     // prevent constructor by default
-    RenderingRidingOffsetSystem& operator=(RenderingRidingOffsetSystem const&) = delete;
-    RenderingRidingOffsetSystem(RenderingRidingOffsetSystem const&)            = delete;
-    RenderingRidingOffsetSystem()                                              = delete;
+    RenderingRidingOffsetSystem& operator=(RenderingRidingOffsetSystem const&);
+    RenderingRidingOffsetSystem(RenderingRidingOffsetSystem const&);
+    RenderingRidingOffsetSystem();
 
 public:
     // NOLINTBEGIN

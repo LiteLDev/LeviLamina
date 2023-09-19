@@ -8,9 +8,9 @@
 class GlobalPauseCommand : public ::ServerCommand {
 public:
     // prevent constructor by default
-    GlobalPauseCommand& operator=(GlobalPauseCommand const&) = delete;
-    GlobalPauseCommand(GlobalPauseCommand const&)            = delete;
-    GlobalPauseCommand()                                     = delete;
+    GlobalPauseCommand& operator=(GlobalPauseCommand const&);
+    GlobalPauseCommand(GlobalPauseCommand const&);
+    GlobalPauseCommand();
 
 public:
     // NOLINTBEGIN

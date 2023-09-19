@@ -24,9 +24,9 @@ public:
 
 public:
     // prevent constructor by default
-    DoorBlock& operator=(DoorBlock const&) = delete;
-    DoorBlock(DoorBlock const&)            = delete;
-    DoorBlock()                            = delete;
+    DoorBlock& operator=(DoorBlock const&);
+    DoorBlock(DoorBlock const&);
+    DoorBlock();
 
 public:
     // NOLINTBEGIN

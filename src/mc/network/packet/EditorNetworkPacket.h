@@ -13,8 +13,8 @@ public:
     CompoundTag mBinaryPayload; // this+0x30
 
     // prevent constructor by default
-    EditorNetworkPacket& operator=(EditorNetworkPacket const&) = delete;
-    EditorNetworkPacket(EditorNetworkPacket const&)            = delete;
+    EditorNetworkPacket& operator=(EditorNetworkPacket const&);
+    EditorNetworkPacket(EditorNetworkPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptCanPowerJumpComponent {
 public:
     // prevent constructor by default
-    ScriptCanPowerJumpComponent& operator=(ScriptCanPowerJumpComponent const&) = delete;
-    ScriptCanPowerJumpComponent(ScriptCanPowerJumpComponent const&)            = delete;
-    ScriptCanPowerJumpComponent()                                              = delete;
+    ScriptCanPowerJumpComponent& operator=(ScriptCanPowerJumpComponent const&);
+    ScriptCanPowerJumpComponent(ScriptCanPowerJumpComponent const&);
+    ScriptCanPowerJumpComponent();
 
 public:
     // NOLINTBEGIN

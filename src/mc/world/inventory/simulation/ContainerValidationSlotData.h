@@ -8,9 +8,9 @@
 struct ContainerValidationSlotData {
 public:
     // prevent constructor by default
-    ContainerValidationSlotData& operator=(ContainerValidationSlotData const&) = delete;
-    ContainerValidationSlotData(ContainerValidationSlotData const&)            = delete;
-    ContainerValidationSlotData()                                              = delete;
+    ContainerValidationSlotData& operator=(ContainerValidationSlotData const&);
+    ContainerValidationSlotData(ContainerValidationSlotData const&);
+    ContainerValidationSlotData();
 
 public:
     // NOLINTBEGIN

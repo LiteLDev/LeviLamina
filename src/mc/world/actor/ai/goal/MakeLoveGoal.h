@@ -9,9 +9,9 @@
 class MakeLoveGoal : public ::Goal {
 public:
     // prevent constructor by default
-    MakeLoveGoal& operator=(MakeLoveGoal const&) = delete;
-    MakeLoveGoal(MakeLoveGoal const&)            = delete;
-    MakeLoveGoal()                               = delete;
+    MakeLoveGoal& operator=(MakeLoveGoal const&);
+    MakeLoveGoal(MakeLoveGoal const&);
+    MakeLoveGoal();
 
 public:
     // NOLINTBEGIN
@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0MakeLoveGoal@@QEAA@AEAVVillagerBase@@@Z
-    MCAPI MakeLoveGoal(class VillagerBase&);
+    MCAPI explicit MakeLoveGoal(class VillagerBase&);
 
     // NOLINTEND
 

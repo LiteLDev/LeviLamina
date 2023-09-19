@@ -5,9 +5,9 @@
 struct BlockNotificationEvent {
 public:
     // prevent constructor by default
-    BlockNotificationEvent& operator=(BlockNotificationEvent const&) = delete;
-    BlockNotificationEvent(BlockNotificationEvent const&)            = delete;
-    BlockNotificationEvent()                                         = delete;
+    BlockNotificationEvent& operator=(BlockNotificationEvent const&);
+    BlockNotificationEvent(BlockNotificationEvent const&);
+    BlockNotificationEvent();
 
 public:
     // NOLINTBEGIN

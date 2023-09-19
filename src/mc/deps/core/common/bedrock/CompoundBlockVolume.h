@@ -13,8 +13,8 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class CompoundBlockVolume : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    CompoundBlockVolume(CompoundBlockVolume const&) = delete;
-    CompoundBlockVolume()                           = delete;
+    CompoundBlockVolume(CompoundBlockVolume const&);
+    CompoundBlockVolume();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class SurfaceBuilderRegistry {
 public:
     // prevent constructor by default
-    SurfaceBuilderRegistry& operator=(SurfaceBuilderRegistry const&) = delete;
-    SurfaceBuilderRegistry(SurfaceBuilderRegistry const&)            = delete;
-    SurfaceBuilderRegistry()                                         = delete;
+    SurfaceBuilderRegistry& operator=(SurfaceBuilderRegistry const&);
+    SurfaceBuilderRegistry(SurfaceBuilderRegistry const&);
+    SurfaceBuilderRegistry();
 
 public:
     // NOLINTBEGIN

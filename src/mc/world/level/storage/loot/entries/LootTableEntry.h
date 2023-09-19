@@ -8,9 +8,9 @@
 class LootTableEntry : public ::LootPoolEntry {
 public:
     // prevent constructor by default
-    LootTableEntry& operator=(LootTableEntry const&) = delete;
-    LootTableEntry(LootTableEntry const&)            = delete;
-    LootTableEntry()                                 = delete;
+    LootTableEntry& operator=(LootTableEntry const&);
+    LootTableEntry(LootTableEntry const&);
+    LootTableEntry();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 struct CheckFallDamageRequestComponent {
 public:
     // prevent constructor by default
-    CheckFallDamageRequestComponent& operator=(CheckFallDamageRequestComponent const&) = delete;
-    CheckFallDamageRequestComponent(CheckFallDamageRequestComponent const&)            = delete;
-    CheckFallDamageRequestComponent()                                                  = delete;
+    CheckFallDamageRequestComponent& operator=(CheckFallDamageRequestComponent const&);
+    CheckFallDamageRequestComponent(CheckFallDamageRequestComponent const&);
+    CheckFallDamageRequestComponent();
 };

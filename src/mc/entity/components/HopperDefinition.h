@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct HopperDefinition {
 public:
     // prevent constructor by default
-    HopperDefinition& operator=(HopperDefinition const&) = delete;
-    HopperDefinition(HopperDefinition const&)            = delete;
-    HopperDefinition()                                   = delete;
+    HopperDefinition& operator=(HopperDefinition const&);
+    HopperDefinition(HopperDefinition const&);
+    HopperDefinition();
 
 public:
     // NOLINTBEGIN

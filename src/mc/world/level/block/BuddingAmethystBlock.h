@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class BuddingAmethystBlock : public ::AmethystBlock {
 public:
     // prevent constructor by default
-    BuddingAmethystBlock& operator=(BuddingAmethystBlock const&) = delete;
-    BuddingAmethystBlock(BuddingAmethystBlock const&)            = delete;
-    BuddingAmethystBlock()                                       = delete;
+    BuddingAmethystBlock& operator=(BuddingAmethystBlock const&);
+    BuddingAmethystBlock(BuddingAmethystBlock const&);
+    BuddingAmethystBlock();
 
 public:
     // NOLINTBEGIN

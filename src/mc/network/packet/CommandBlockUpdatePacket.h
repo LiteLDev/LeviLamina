@@ -26,7 +26,7 @@ public:
     bool                 mIsBlock;            // this+0xAE
 
     // prevent constructor by default
-    CommandBlockUpdatePacket& operator=(CommandBlockUpdatePacket const&) = delete;
+    CommandBlockUpdatePacket& operator=(CommandBlockUpdatePacket const&);
 
 public:
     // NOLINTBEGIN

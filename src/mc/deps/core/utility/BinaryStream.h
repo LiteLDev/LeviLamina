@@ -12,8 +12,8 @@ public:
     std::string* mBuffer;
 
     // prevent constructor by default
-    BinaryStream& operator=(BinaryStream const&) = delete;
-    BinaryStream(BinaryStream const&)            = delete;
+    BinaryStream& operator=(BinaryStream const&);
+    BinaryStream(BinaryStream const&);
 
     template <typename T>
     inline void writeType(T const& x) {

@@ -5,7 +5,7 @@
 struct FishFlag {
 public:
     // prevent constructor by default
-    FishFlag& operator=(FishFlag const&) = delete;
-    FishFlag(FishFlag const&)            = delete;
-    FishFlag()                           = delete;
+    FishFlag& operator=(FishFlag const&);
+    FishFlag(FishFlag const&);
+    FishFlag();
 };

@@ -14,9 +14,9 @@ namespace mce { class UUID; }
 struct PendingArea {
 public:
     // prevent constructor by default
-    PendingArea& operator=(PendingArea const&) = delete;
-    PendingArea(PendingArea const&)            = delete;
-    PendingArea()                              = delete;
+    PendingArea& operator=(PendingArea const&);
+    PendingArea(PendingArea const&);
+    PendingArea();
 
 public:
     // NOLINTBEGIN

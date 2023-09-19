@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class RecordItem : public ::ComponentItem {
 public:
     // prevent constructor by default
-    RecordItem& operator=(RecordItem const&) = delete;
-    RecordItem(RecordItem const&)            = delete;
-    RecordItem()                             = delete;
+    RecordItem& operator=(RecordItem const&);
+    RecordItem(RecordItem const&);
+    RecordItem();
 
 public:
     // NOLINTBEGIN

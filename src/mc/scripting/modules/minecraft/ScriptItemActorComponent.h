@@ -19,9 +19,9 @@ namespace ScriptModuleMinecraft {
 class ScriptItemActorComponent : public ::ScriptModuleMinecraft::ScriptActorComponent {
 public:
     // prevent constructor by default
-    ScriptItemActorComponent& operator=(ScriptItemActorComponent const&) = delete;
-    ScriptItemActorComponent(ScriptItemActorComponent const&)            = delete;
-    ScriptItemActorComponent()                                           = delete;
+    ScriptItemActorComponent& operator=(ScriptItemActorComponent const&);
+    ScriptItemActorComponent(ScriptItemActorComponent const&);
+    ScriptItemActorComponent();
 
 public:
     // NOLINTBEGIN

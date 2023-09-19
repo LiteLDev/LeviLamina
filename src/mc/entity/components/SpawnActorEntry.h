@@ -5,9 +5,9 @@
 struct SpawnActorEntry {
 public:
     // prevent constructor by default
-    SpawnActorEntry& operator=(SpawnActorEntry const&) = delete;
-    SpawnActorEntry(SpawnActorEntry const&)            = delete;
-    SpawnActorEntry()                                  = delete;
+    SpawnActorEntry& operator=(SpawnActorEntry const&);
+    SpawnActorEntry(SpawnActorEntry const&);
+    SpawnActorEntry();
 
 public:
     // NOLINTBEGIN

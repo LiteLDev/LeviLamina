@@ -15,9 +15,9 @@ namespace gametest { class IGameTestHelperProvider; }
 class MinecraftGameTestHelperProvider : public ::gametest::IGameTestHelperProvider {
 public:
     // prevent constructor by default
-    MinecraftGameTestHelperProvider& operator=(MinecraftGameTestHelperProvider const&) = delete;
-    MinecraftGameTestHelperProvider(MinecraftGameTestHelperProvider const&)            = delete;
-    MinecraftGameTestHelperProvider()                                                  = delete;
+    MinecraftGameTestHelperProvider& operator=(MinecraftGameTestHelperProvider const&);
+    MinecraftGameTestHelperProvider(MinecraftGameTestHelperProvider const&);
+    MinecraftGameTestHelperProvider();
 
 public:
     // NOLINTBEGIN

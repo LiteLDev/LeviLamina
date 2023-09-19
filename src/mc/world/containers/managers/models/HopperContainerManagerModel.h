@@ -10,9 +10,9 @@
 class HopperContainerManagerModel : public ::LevelContainerManagerModel {
 public:
     // prevent constructor by default
-    HopperContainerManagerModel& operator=(HopperContainerManagerModel const&) = delete;
-    HopperContainerManagerModel(HopperContainerManagerModel const&)            = delete;
-    HopperContainerManagerModel()                                              = delete;
+    HopperContainerManagerModel& operator=(HopperContainerManagerModel const&);
+    HopperContainerManagerModel(HopperContainerManagerModel const&);
+    HopperContainerManagerModel();
 
 public:
     // NOLINTBEGIN

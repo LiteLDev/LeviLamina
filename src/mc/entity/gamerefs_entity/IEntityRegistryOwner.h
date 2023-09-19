@@ -13,9 +13,9 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class IEntityRegistryOwner : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    IEntityRegistryOwner& operator=(IEntityRegistryOwner const&) = delete;
-    IEntityRegistryOwner(IEntityRegistryOwner const&)            = delete;
-    IEntityRegistryOwner()                                       = delete;
+    IEntityRegistryOwner& operator=(IEntityRegistryOwner const&);
+    IEntityRegistryOwner(IEntityRegistryOwner const&);
+    IEntityRegistryOwner();
 
 public:
     // NOLINTBEGIN

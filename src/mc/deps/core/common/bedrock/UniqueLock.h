@@ -8,9 +8,9 @@ template <typename T0>
 class UniqueLock {
 public:
     // prevent constructor by default
-    UniqueLock& operator=(UniqueLock const&) = delete;
-    UniqueLock(UniqueLock const&)            = delete;
-    UniqueLock()                             = delete;
+    UniqueLock& operator=(UniqueLock const&);
+    UniqueLock(UniqueLock const&);
+    UniqueLock();
 };
 
 }; // namespace Bedrock::Threading

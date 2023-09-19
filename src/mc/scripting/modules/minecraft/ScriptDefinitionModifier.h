@@ -15,9 +15,9 @@ namespace ScriptModuleMinecraft {
 class ScriptDefinitionModifier {
 public:
     // prevent constructor by default
-    ScriptDefinitionModifier& operator=(ScriptDefinitionModifier const&) = delete;
-    ScriptDefinitionModifier(ScriptDefinitionModifier const&)            = delete;
-    ScriptDefinitionModifier()                                           = delete;
+    ScriptDefinitionModifier& operator=(ScriptDefinitionModifier const&);
+    ScriptDefinitionModifier(ScriptDefinitionModifier const&);
+    ScriptDefinitionModifier();
 
 public:
     // NOLINTBEGIN

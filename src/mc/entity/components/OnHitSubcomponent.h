@@ -10,8 +10,8 @@ namespace Json { class Value; }
 class OnHitSubcomponent {
 public:
     // prevent constructor by default
-    OnHitSubcomponent& operator=(OnHitSubcomponent const&) = delete;
-    OnHitSubcomponent(OnHitSubcomponent const&)            = delete;
+    OnHitSubcomponent& operator=(OnHitSubcomponent const&);
+    OnHitSubcomponent(OnHitSubcomponent const&);
 
 public:
     // NOLINTBEGIN

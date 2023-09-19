@@ -13,9 +13,9 @@ namespace mce { class UUID; }
 class FireworksRecipe : public ::MultiRecipe {
 public:
     // prevent constructor by default
-    FireworksRecipe& operator=(FireworksRecipe const&) = delete;
-    FireworksRecipe(FireworksRecipe const&)            = delete;
-    FireworksRecipe()                                  = delete;
+    FireworksRecipe& operator=(FireworksRecipe const&);
+    FireworksRecipe(FireworksRecipe const&);
+    FireworksRecipe();
 
 public:
     // NOLINTBEGIN

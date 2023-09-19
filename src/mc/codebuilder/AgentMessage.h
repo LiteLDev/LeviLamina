@@ -7,9 +7,9 @@ namespace CodeBuilder {
 struct AgentMessage {
 public:
     // prevent constructor by default
-    AgentMessage& operator=(AgentMessage const&) = delete;
-    AgentMessage(AgentMessage const&)            = delete;
-    AgentMessage()                               = delete;
+    AgentMessage& operator=(AgentMessage const&);
+    AgentMessage(AgentMessage const&);
+    AgentMessage();
 
 public:
     // NOLINTBEGIN

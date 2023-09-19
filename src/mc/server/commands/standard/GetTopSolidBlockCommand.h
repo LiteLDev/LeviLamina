@@ -8,9 +8,9 @@
 class GetTopSolidBlockCommand : public ::Command {
 public:
     // prevent constructor by default
-    GetTopSolidBlockCommand& operator=(GetTopSolidBlockCommand const&) = delete;
-    GetTopSolidBlockCommand(GetTopSolidBlockCommand const&)            = delete;
-    GetTopSolidBlockCommand()                                          = delete;
+    GetTopSolidBlockCommand& operator=(GetTopSolidBlockCommand const&);
+    GetTopSolidBlockCommand(GetTopSolidBlockCommand const&);
+    GetTopSolidBlockCommand();
 
 public:
     // NOLINTBEGIN

@@ -20,9 +20,9 @@ namespace RandomScatteredLargeFeatureDetails {
 class ScatteredFeatureStart : public ::StructureStart {
 public:
     // prevent constructor by default
-    ScatteredFeatureStart& operator=(ScatteredFeatureStart const&) = delete;
-    ScatteredFeatureStart(ScatteredFeatureStart const&)            = delete;
-    ScatteredFeatureStart()                                        = delete;
+    ScatteredFeatureStart& operator=(ScatteredFeatureStart const&);
+    ScatteredFeatureStart(ScatteredFeatureStart const&);
+    ScatteredFeatureStart();
 
 public:
     // NOLINTBEGIN

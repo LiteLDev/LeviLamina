@@ -8,9 +8,9 @@
 class BucketableDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    BucketableDescription& operator=(BucketableDescription const&) = delete;
-    BucketableDescription(BucketableDescription const&)            = delete;
-    BucketableDescription()                                        = delete;
+    BucketableDescription& operator=(BucketableDescription const&);
+    BucketableDescription(BucketableDescription const&);
+    BucketableDescription();
 
 public:
     // NOLINTBEGIN

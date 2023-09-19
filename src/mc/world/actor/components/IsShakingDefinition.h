@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct IsShakingDefinition {
 public:
     // prevent constructor by default
-    IsShakingDefinition& operator=(IsShakingDefinition const&) = delete;
-    IsShakingDefinition(IsShakingDefinition const&)            = delete;
-    IsShakingDefinition()                                      = delete;
+    IsShakingDefinition& operator=(IsShakingDefinition const&);
+    IsShakingDefinition(IsShakingDefinition const&);
+    IsShakingDefinition();
 
 public:
     // NOLINTBEGIN

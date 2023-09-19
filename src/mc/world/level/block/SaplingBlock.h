@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class SaplingBlock : public ::BushBlock {
 public:
     // prevent constructor by default
-    SaplingBlock& operator=(SaplingBlock const&) = delete;
-    SaplingBlock(SaplingBlock const&)            = delete;
-    SaplingBlock()                               = delete;
+    SaplingBlock& operator=(SaplingBlock const&);
+    SaplingBlock(SaplingBlock const&);
+    SaplingBlock();
 
 public:
     // NOLINTBEGIN

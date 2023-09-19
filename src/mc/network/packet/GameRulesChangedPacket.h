@@ -13,9 +13,9 @@ public:
     GameRulesChangedPacketData mRuleData; // this+0x30
 
     // prevent constructor by default
-    GameRulesChangedPacket& operator=(GameRulesChangedPacket const&) = delete;
-    GameRulesChangedPacket(GameRulesChangedPacket const&)            = delete;
-    GameRulesChangedPacket()                                         = delete;
+    GameRulesChangedPacket& operator=(GameRulesChangedPacket const&);
+    GameRulesChangedPacket(GameRulesChangedPacket const&);
+    GameRulesChangedPacket();
 
 public:
     // NOLINTBEGIN

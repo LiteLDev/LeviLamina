@@ -8,14 +8,14 @@
 struct WorldTemplateInfo {
 public:
     // prevent constructor by default
-    WorldTemplateInfo& operator=(WorldTemplateInfo const&) = delete;
-    WorldTemplateInfo(WorldTemplateInfo const&)            = delete;
-    WorldTemplateInfo()                                    = delete;
+    WorldTemplateInfo& operator=(WorldTemplateInfo const&);
+    WorldTemplateInfo(WorldTemplateInfo const&);
+    WorldTemplateInfo();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0WorldTemplateInfo@@QEAA@AEBVWorldTemplatePackManifest@@@Z
-    MCAPI WorldTemplateInfo(class WorldTemplatePackManifest const&);
+    MCAPI explicit WorldTemplateInfo(class WorldTemplatePackManifest const&);
 
     // symbol: ?addWorldTemplatePackSource@WorldTemplateInfo@@QEAAXAEAVWorldTemplatePackSource@@@Z
     MCAPI void addWorldTemplatePackSource(class WorldTemplatePackSource&);

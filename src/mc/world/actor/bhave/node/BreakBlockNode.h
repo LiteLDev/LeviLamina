@@ -9,8 +9,8 @@
 class BreakBlockNode : public ::BehaviorNode {
 public:
     // prevent constructor by default
-    BreakBlockNode& operator=(BreakBlockNode const&) = delete;
-    BreakBlockNode(BreakBlockNode const&)            = delete;
+    BreakBlockNode& operator=(BreakBlockNode const&);
+    BreakBlockNode(BreakBlockNode const&);
 
 public:
     // NOLINTBEGIN

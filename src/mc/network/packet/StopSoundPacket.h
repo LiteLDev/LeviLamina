@@ -13,8 +13,8 @@ public:
     bool        mStopAll; // this+0x50
 
     // prevent constructor by default
-    StopSoundPacket& operator=(StopSoundPacket const&) = delete;
-    StopSoundPacket(StopSoundPacket const&)            = delete;
+    StopSoundPacket& operator=(StopSoundPacket const&);
+    StopSoundPacket(StopSoundPacket const&);
 
 public:
     // NOLINTBEGIN

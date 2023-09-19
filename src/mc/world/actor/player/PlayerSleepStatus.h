@@ -5,7 +5,7 @@
 struct PlayerSleepStatus {
 public:
     // prevent constructor by default
-    PlayerSleepStatus& operator=(PlayerSleepStatus const&) = delete;
-    PlayerSleepStatus(PlayerSleepStatus const&)            = delete;
-    PlayerSleepStatus()                                    = delete;
+    PlayerSleepStatus& operator=(PlayerSleepStatus const&);
+    PlayerSleepStatus(PlayerSleepStatus const&);
+    PlayerSleepStatus();
 };

@@ -13,9 +13,9 @@ namespace mce { class UUID; }
 class ITickingArea {
 public:
     // prevent constructor by default
-    ITickingArea& operator=(ITickingArea const&) = delete;
-    ITickingArea(ITickingArea const&)            = delete;
-    ITickingArea()                               = delete;
+    ITickingArea& operator=(ITickingArea const&);
+    ITickingArea(ITickingArea const&);
+    ITickingArea();
 
 public:
     // NOLINTBEGIN

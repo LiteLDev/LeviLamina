@@ -5,9 +5,9 @@
 class EcsEventDispatcher {
 public:
     // prevent constructor by default
-    EcsEventDispatcher& operator=(EcsEventDispatcher const&) = delete;
-    EcsEventDispatcher(EcsEventDispatcher const&)            = delete;
-    EcsEventDispatcher()                                     = delete;
+    EcsEventDispatcher& operator=(EcsEventDispatcher const&);
+    EcsEventDispatcher(EcsEventDispatcher const&);
+    EcsEventDispatcher();
 
 public:
     // NOLINTBEGIN

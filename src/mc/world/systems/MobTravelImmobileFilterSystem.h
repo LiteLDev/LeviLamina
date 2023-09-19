@@ -13,9 +13,9 @@
 class MobTravelImmobileFilterSystem {
 public:
     // prevent constructor by default
-    MobTravelImmobileFilterSystem& operator=(MobTravelImmobileFilterSystem const&) = delete;
-    MobTravelImmobileFilterSystem(MobTravelImmobileFilterSystem const&)            = delete;
-    MobTravelImmobileFilterSystem()                                                = delete;
+    MobTravelImmobileFilterSystem& operator=(MobTravelImmobileFilterSystem const&);
+    MobTravelImmobileFilterSystem(MobTravelImmobileFilterSystem const&);
+    MobTravelImmobileFilterSystem();
 
 public:
     // NOLINTBEGIN

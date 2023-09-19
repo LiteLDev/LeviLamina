@@ -16,9 +16,9 @@ namespace VanillaSurfaceBuilders {
 class OceanFrozenSurfaceBuilder : public ::ISurfaceBuilder {
 public:
     // prevent constructor by default
-    OceanFrozenSurfaceBuilder& operator=(OceanFrozenSurfaceBuilder const&) = delete;
-    OceanFrozenSurfaceBuilder(OceanFrozenSurfaceBuilder const&)            = delete;
-    OceanFrozenSurfaceBuilder()                                            = delete;
+    OceanFrozenSurfaceBuilder& operator=(OceanFrozenSurfaceBuilder const&);
+    OceanFrozenSurfaceBuilder(OceanFrozenSurfaceBuilder const&);
+    OceanFrozenSurfaceBuilder();
 
 public:
     // NOLINTBEGIN

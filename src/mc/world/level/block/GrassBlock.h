@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class GrassBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    GrassBlock& operator=(GrassBlock const&) = delete;
-    GrassBlock(GrassBlock const&)            = delete;
-    GrassBlock()                             = delete;
+    GrassBlock& operator=(GrassBlock const&);
+    GrassBlock(GrassBlock const&);
+    GrassBlock();
 
 public:
     // NOLINTBEGIN

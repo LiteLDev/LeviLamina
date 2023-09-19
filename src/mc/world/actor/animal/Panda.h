@@ -26,9 +26,9 @@
 class Panda : public ::Animal {
 public:
     // prevent constructor by default
-    Panda& operator=(Panda const&) = delete;
-    Panda(Panda const&)            = delete;
-    Panda()                        = delete;
+    Panda& operator=(Panda const&);
+    Panda(Panda const&);
+    Panda();
 
 public:
     // NOLINTBEGIN

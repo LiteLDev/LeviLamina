@@ -25,9 +25,9 @@ public:
 
 public:
     // prevent constructor by default
-    HorseArmorItem& operator=(HorseArmorItem const&) = delete;
-    HorseArmorItem(HorseArmorItem const&)            = delete;
-    HorseArmorItem()                                 = delete;
+    HorseArmorItem& operator=(HorseArmorItem const&);
+    HorseArmorItem(HorseArmorItem const&);
+    HorseArmorItem();
 
 public:
     // NOLINTBEGIN

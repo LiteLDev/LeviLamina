@@ -5,9 +5,9 @@
 class ParticlesBlockExplosionEvent {
 public:
     // prevent constructor by default
-    ParticlesBlockExplosionEvent& operator=(ParticlesBlockExplosionEvent const&) = delete;
-    ParticlesBlockExplosionEvent(ParticlesBlockExplosionEvent const&)            = delete;
-    ParticlesBlockExplosionEvent()                                               = delete;
+    ParticlesBlockExplosionEvent& operator=(ParticlesBlockExplosionEvent const&);
+    ParticlesBlockExplosionEvent(ParticlesBlockExplosionEvent const&);
+    ParticlesBlockExplosionEvent();
 
 public:
     // NOLINTBEGIN

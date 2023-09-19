@@ -31,9 +31,9 @@ namespace mce { class Color; }
 class AreaEffectCloud : public ::Actor {
 public:
     // prevent constructor by default
-    AreaEffectCloud& operator=(AreaEffectCloud const&) = delete;
-    AreaEffectCloud(AreaEffectCloud const&)            = delete;
-    AreaEffectCloud()                                  = delete;
+    AreaEffectCloud& operator=(AreaEffectCloud const&);
+    AreaEffectCloud(AreaEffectCloud const&);
+    AreaEffectCloud();
 
 public:
     // NOLINTBEGIN

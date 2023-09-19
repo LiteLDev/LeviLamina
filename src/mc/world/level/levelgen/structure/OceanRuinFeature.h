@@ -8,9 +8,9 @@
 class OceanRuinFeature : public ::StructureFeature {
 public:
     // prevent constructor by default
-    OceanRuinFeature& operator=(OceanRuinFeature const&) = delete;
-    OceanRuinFeature(OceanRuinFeature const&)            = delete;
-    OceanRuinFeature()                                   = delete;
+    OceanRuinFeature& operator=(OceanRuinFeature const&);
+    OceanRuinFeature(OceanRuinFeature const&);
+    OceanRuinFeature();
 
 public:
     // NOLINTBEGIN

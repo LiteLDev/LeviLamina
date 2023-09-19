@@ -9,9 +9,9 @@
 class LegacyChunkStorage : public ::ChunkSource {
 public:
     // prevent constructor by default
-    LegacyChunkStorage& operator=(LegacyChunkStorage const&) = delete;
-    LegacyChunkStorage(LegacyChunkStorage const&)            = delete;
-    LegacyChunkStorage()                                     = delete;
+    LegacyChunkStorage& operator=(LegacyChunkStorage const&);
+    LegacyChunkStorage(LegacyChunkStorage const&);
+    LegacyChunkStorage();
 
 public:
     // NOLINTBEGIN

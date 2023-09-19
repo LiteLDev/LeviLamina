@@ -8,8 +8,8 @@
 struct ResolvedItemIconInfo {
 public:
     // prevent constructor by default
-    ResolvedItemIconInfo& operator=(ResolvedItemIconInfo const&) = delete;
-    ResolvedItemIconInfo(ResolvedItemIconInfo const&)            = delete;
+    ResolvedItemIconInfo& operator=(ResolvedItemIconInfo const&);
+    ResolvedItemIconInfo(ResolvedItemIconInfo const&);
 
 public:
     // NOLINTBEGIN

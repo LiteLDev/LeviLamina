@@ -8,9 +8,9 @@
 class ClayFeature : public ::Feature {
 public:
     // prevent constructor by default
-    ClayFeature& operator=(ClayFeature const&) = delete;
-    ClayFeature(ClayFeature const&)            = delete;
-    ClayFeature()                              = delete;
+    ClayFeature& operator=(ClayFeature const&);
+    ClayFeature(ClayFeature const&);
+    ClayFeature();
 
 public:
     // NOLINTBEGIN
@@ -21,7 +21,7 @@ public:
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
     // symbol: ??0ClayFeature@@QEAA@H@Z
-    MCAPI ClayFeature(int);
+    MCAPI explicit ClayFeature(int);
 
     // NOLINTEND
 };

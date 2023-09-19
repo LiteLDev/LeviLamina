@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class FlyDefinition : public ::BehaviorDefinition {
 public:
     // prevent constructor by default
-    FlyDefinition& operator=(FlyDefinition const&) = delete;
-    FlyDefinition(FlyDefinition const&)            = delete;
-    FlyDefinition()                                = delete;
+    FlyDefinition& operator=(FlyDefinition const&);
+    FlyDefinition(FlyDefinition const&);
+    FlyDefinition();
 
 public:
     // NOLINTBEGIN

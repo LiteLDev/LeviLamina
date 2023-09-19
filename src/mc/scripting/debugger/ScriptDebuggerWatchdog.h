@@ -5,9 +5,9 @@
 class ScriptDebuggerWatchdog {
 public:
     // prevent constructor by default
-    ScriptDebuggerWatchdog& operator=(ScriptDebuggerWatchdog const&) = delete;
-    ScriptDebuggerWatchdog(ScriptDebuggerWatchdog const&)            = delete;
-    ScriptDebuggerWatchdog()                                         = delete;
+    ScriptDebuggerWatchdog& operator=(ScriptDebuggerWatchdog const&);
+    ScriptDebuggerWatchdog(ScriptDebuggerWatchdog const&);
+    ScriptDebuggerWatchdog();
 
 public:
     // NOLINTBEGIN

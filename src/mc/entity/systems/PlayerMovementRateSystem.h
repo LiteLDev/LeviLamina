@@ -8,9 +8,9 @@
 class PlayerMovementRateSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    PlayerMovementRateSystem& operator=(PlayerMovementRateSystem const&) = delete;
-    PlayerMovementRateSystem(PlayerMovementRateSystem const&)            = delete;
-    PlayerMovementRateSystem()                                           = delete;
+    PlayerMovementRateSystem& operator=(PlayerMovementRateSystem const&);
+    PlayerMovementRateSystem(PlayerMovementRateSystem const&);
+    PlayerMovementRateSystem();
 
 public:
     // NOLINTBEGIN

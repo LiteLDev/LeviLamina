@@ -14,9 +14,9 @@ namespace JsonUtil { class EmptyClass; }
 class SwimIdleDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    SwimIdleDefinition& operator=(SwimIdleDefinition const&) = delete;
-    SwimIdleDefinition(SwimIdleDefinition const&)            = delete;
-    SwimIdleDefinition()                                     = delete;
+    SwimIdleDefinition& operator=(SwimIdleDefinition const&);
+    SwimIdleDefinition(SwimIdleDefinition const&);
+    SwimIdleDefinition();
 
 public:
     // NOLINTBEGIN

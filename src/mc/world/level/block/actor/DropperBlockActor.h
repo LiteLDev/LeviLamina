@@ -8,9 +8,9 @@
 class DropperBlockActor : public ::DispenserBlockActor {
 public:
     // prevent constructor by default
-    DropperBlockActor& operator=(DropperBlockActor const&) = delete;
-    DropperBlockActor(DropperBlockActor const&)            = delete;
-    DropperBlockActor()                                    = delete;
+    DropperBlockActor& operator=(DropperBlockActor const&);
+    DropperBlockActor(DropperBlockActor const&);
+    DropperBlockActor();
 
 public:
     // NOLINTBEGIN

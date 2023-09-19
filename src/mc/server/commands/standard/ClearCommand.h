@@ -8,9 +8,9 @@
 class ClearCommand : public ::Command {
 public:
     // prevent constructor by default
-    ClearCommand& operator=(ClearCommand const&) = delete;
-    ClearCommand(ClearCommand const&)            = delete;
-    ClearCommand()                               = delete;
+    ClearCommand& operator=(ClearCommand const&);
+    ClearCommand(ClearCommand const&);
+    ClearCommand();
 
 public:
     // NOLINTBEGIN

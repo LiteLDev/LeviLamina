@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class ThinFenceBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    ThinFenceBlock& operator=(ThinFenceBlock const&) = delete;
-    ThinFenceBlock(ThinFenceBlock const&)            = delete;
-    ThinFenceBlock()                                 = delete;
+    ThinFenceBlock& operator=(ThinFenceBlock const&);
+    ThinFenceBlock(ThinFenceBlock const&);
+    ThinFenceBlock();
 
 public:
     // NOLINTBEGIN
@@ -204,9 +204,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION() {
-        return THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION;
-    }
+    auto& $THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
 
     // NOLINTEND
 };

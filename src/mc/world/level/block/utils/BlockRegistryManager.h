@@ -9,9 +9,9 @@
 class BlockRegistryManager {
 public:
     // prevent constructor by default
-    BlockRegistryManager& operator=(BlockRegistryManager const&) = delete;
-    BlockRegistryManager(BlockRegistryManager const&)            = delete;
-    BlockRegistryManager()                                       = delete;
+    BlockRegistryManager& operator=(BlockRegistryManager const&);
+    BlockRegistryManager(BlockRegistryManager const&);
+    BlockRegistryManager();
 
 private:
     // NOLINTBEGIN
@@ -37,13 +37,13 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mClientIdRegistryMap() { return mClientIdRegistryMap; }
+    auto& $mClientIdRegistryMap() { return mClientIdRegistryMap; }
 
-    inline auto& $mClientRegistry() { return mClientRegistry; }
+    auto& $mClientRegistry() { return mClientRegistry; }
 
-    inline auto& $mServerRegistry() { return mServerRegistry; }
+    auto& $mServerRegistry() { return mServerRegistry; }
 
-    inline auto& $mThreadLocalRegistry() { return mThreadLocalRegistry; }
+    auto& $mThreadLocalRegistry() { return mThreadLocalRegistry; }
 
     // NOLINTEND
 };

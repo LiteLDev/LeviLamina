@@ -38,9 +38,9 @@ public:
 
 public:
     // prevent constructor by default
-    ChunkSource& operator=(ChunkSource const&) = delete;
-    ChunkSource(ChunkSource const&)            = delete;
-    ChunkSource()                              = delete;
+    ChunkSource& operator=(ChunkSource const&);
+    ChunkSource(ChunkSource const&);
+    ChunkSource();
 
 public:
     // NOLINTBEGIN
@@ -156,7 +156,7 @@ public:
     MCAPI ChunkSource(class Dimension*, int);
 
     // symbol: ??0ChunkSource@@QEAA@V?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@@Z
-    MCAPI ChunkSource(std::unique_ptr<class ChunkSource>);
+    MCAPI explicit ChunkSource(std::unique_ptr<class ChunkSource>);
 
     // symbol: ?checkAndLaunchChunkGenerationTasks@ChunkSource@@QEAAX_N@Z
     MCAPI void checkAndLaunchChunkGenerationTasks(bool);

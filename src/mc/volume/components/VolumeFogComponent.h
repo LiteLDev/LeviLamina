@@ -5,9 +5,9 @@
 class VolumeFogComponent {
 public:
     // prevent constructor by default
-    VolumeFogComponent& operator=(VolumeFogComponent const&) = delete;
-    VolumeFogComponent(VolumeFogComponent const&)            = delete;
-    VolumeFogComponent()                                     = delete;
+    VolumeFogComponent& operator=(VolumeFogComponent const&);
+    VolumeFogComponent(VolumeFogComponent const&);
+    VolumeFogComponent();
 
 public:
     // NOLINTBEGIN

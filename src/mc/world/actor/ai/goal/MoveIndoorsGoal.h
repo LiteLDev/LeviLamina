@@ -24,8 +24,8 @@ public:
     class MoveIndoorsDefinition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        MoveIndoorsDefinition& operator=(MoveIndoorsDefinition const&) = delete;
-        MoveIndoorsDefinition(MoveIndoorsDefinition const&)            = delete;
+        MoveIndoorsDefinition& operator=(MoveIndoorsDefinition const&);
+        MoveIndoorsDefinition(MoveIndoorsDefinition const&);
 
     public:
         // NOLINTBEGIN
@@ -51,9 +51,9 @@ public:
 
 public:
     // prevent constructor by default
-    MoveIndoorsGoal& operator=(MoveIndoorsGoal const&) = delete;
-    MoveIndoorsGoal(MoveIndoorsGoal const&)            = delete;
-    MoveIndoorsGoal()                                  = delete;
+    MoveIndoorsGoal& operator=(MoveIndoorsGoal const&);
+    MoveIndoorsGoal(MoveIndoorsGoal const&);
+    MoveIndoorsGoal();
 
 public:
     // NOLINTBEGIN
@@ -80,7 +80,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0MoveIndoorsGoal@@QEAA@AEAVMob@@@Z
-    MCAPI MoveIndoorsGoal(class Mob&);
+    MCAPI explicit MoveIndoorsGoal(class Mob&);
 
     // NOLINTEND
 

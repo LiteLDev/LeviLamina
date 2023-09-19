@@ -8,9 +8,9 @@
 class StrongholdStart : public ::StructureStart {
 public:
     // prevent constructor by default
-    StrongholdStart& operator=(StrongholdStart const&) = delete;
-    StrongholdStart(StrongholdStart const&)            = delete;
-    StrongholdStart()                                  = delete;
+    StrongholdStart& operator=(StrongholdStart const&);
+    StrongholdStart(StrongholdStart const&);
+    StrongholdStart();
 
 public:
     // NOLINTBEGIN

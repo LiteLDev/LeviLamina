@@ -5,9 +5,9 @@
 class ResourcePackListener {
 public:
     // prevent constructor by default
-    ResourcePackListener& operator=(ResourcePackListener const&) = delete;
-    ResourcePackListener(ResourcePackListener const&)            = delete;
-    ResourcePackListener()                                       = delete;
+    ResourcePackListener& operator=(ResourcePackListener const&);
+    ResourcePackListener(ResourcePackListener const&);
+    ResourcePackListener();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class OnActorEnterVolumeComponent {
 public:
     // prevent constructor by default
-    OnActorEnterVolumeComponent& operator=(OnActorEnterVolumeComponent const&) = delete;
-    OnActorEnterVolumeComponent(OnActorEnterVolumeComponent const&)            = delete;
-    OnActorEnterVolumeComponent()                                              = delete;
+    OnActorEnterVolumeComponent& operator=(OnActorEnterVolumeComponent const&);
+    OnActorEnterVolumeComponent(OnActorEnterVolumeComponent const&);
+    OnActorEnterVolumeComponent();
 
 public:
     // NOLINTBEGIN

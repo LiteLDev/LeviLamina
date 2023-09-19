@@ -5,9 +5,9 @@
 class InstantDespawnComponent {
 public:
     // prevent constructor by default
-    InstantDespawnComponent& operator=(InstantDespawnComponent const&) = delete;
-    InstantDespawnComponent(InstantDespawnComponent const&)            = delete;
-    InstantDespawnComponent()                                          = delete;
+    InstantDespawnComponent& operator=(InstantDespawnComponent const&);
+    InstantDespawnComponent(InstantDespawnComponent const&);
+    InstantDespawnComponent();
 
 public:
     // NOLINTBEGIN

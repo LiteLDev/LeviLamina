@@ -8,9 +8,9 @@
 class CursorContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    CursorContainerValidation& operator=(CursorContainerValidation const&) = delete;
-    CursorContainerValidation(CursorContainerValidation const&)            = delete;
-    CursorContainerValidation()                                            = delete;
+    CursorContainerValidation& operator=(CursorContainerValidation const&);
+    CursorContainerValidation(CursorContainerValidation const&);
+    CursorContainerValidation();
 
 public:
     // NOLINTBEGIN

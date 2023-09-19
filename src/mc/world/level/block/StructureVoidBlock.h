@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class StructureVoidBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    StructureVoidBlock& operator=(StructureVoidBlock const&) = delete;
-    StructureVoidBlock(StructureVoidBlock const&)            = delete;
-    StructureVoidBlock()                                     = delete;
+    StructureVoidBlock& operator=(StructureVoidBlock const&);
+    StructureVoidBlock(StructureVoidBlock const&);
+    StructureVoidBlock();
 
 public:
     // NOLINTBEGIN

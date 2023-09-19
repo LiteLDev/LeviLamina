@@ -5,7 +5,7 @@
 struct WitherBossPreAIStepResultComponent {
 public:
     // prevent constructor by default
-    WitherBossPreAIStepResultComponent& operator=(WitherBossPreAIStepResultComponent const&) = delete;
-    WitherBossPreAIStepResultComponent(WitherBossPreAIStepResultComponent const&)            = delete;
-    WitherBossPreAIStepResultComponent()                                                     = delete;
+    WitherBossPreAIStepResultComponent& operator=(WitherBossPreAIStepResultComponent const&);
+    WitherBossPreAIStepResultComponent(WitherBossPreAIStepResultComponent const&);
+    WitherBossPreAIStepResultComponent();
 };

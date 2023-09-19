@@ -13,9 +13,9 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class AppPlatformNetworkSettings : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    AppPlatformNetworkSettings& operator=(AppPlatformNetworkSettings const&) = delete;
-    AppPlatformNetworkSettings(AppPlatformNetworkSettings const&)            = delete;
-    AppPlatformNetworkSettings()                                             = delete;
+    AppPlatformNetworkSettings& operator=(AppPlatformNetworkSettings const&);
+    AppPlatformNetworkSettings(AppPlatformNetworkSettings const&);
+    AppPlatformNetworkSettings();
 
 public:
     // NOLINTBEGIN

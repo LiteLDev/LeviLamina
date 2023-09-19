@@ -8,9 +8,9 @@
 class Material {
 public:
     // prevent constructor by default
-    Material& operator=(Material const&) = delete;
-    Material(Material const&)            = delete;
-    Material()                           = delete;
+    Material& operator=(Material const&);
+    Material(Material const&);
+    Material();
 
 public:
     // NOLINTBEGIN
@@ -85,9 +85,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mInitialized() { return mInitialized; }
+    auto& $mInitialized() { return mInitialized; }
 
-    inline auto& $mMaterials() { return mMaterials; }
+    auto& $mMaterials() { return mMaterials; }
 
     // NOLINTEND
 };

@@ -5,9 +5,9 @@
 struct MolangQueryFunctionPtr {
 public:
     // prevent constructor by default
-    MolangQueryFunctionPtr& operator=(MolangQueryFunctionPtr const&) = delete;
-    MolangQueryFunctionPtr(MolangQueryFunctionPtr const&)            = delete;
-    MolangQueryFunctionPtr()                                         = delete;
+    MolangQueryFunctionPtr& operator=(MolangQueryFunctionPtr const&);
+    MolangQueryFunctionPtr(MolangQueryFunctionPtr const&);
+    MolangQueryFunctionPtr();
 
 public:
     // NOLINTBEGIN

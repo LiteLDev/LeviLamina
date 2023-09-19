@@ -8,9 +8,9 @@
 class NavigationFloatDescription : public ::NavigationDescription {
 public:
     // prevent constructor by default
-    NavigationFloatDescription& operator=(NavigationFloatDescription const&) = delete;
-    NavigationFloatDescription(NavigationFloatDescription const&)            = delete;
-    NavigationFloatDescription()                                             = delete;
+    NavigationFloatDescription& operator=(NavigationFloatDescription const&);
+    NavigationFloatDescription(NavigationFloatDescription const&);
+    NavigationFloatDescription();
 
 public:
     // NOLINTBEGIN

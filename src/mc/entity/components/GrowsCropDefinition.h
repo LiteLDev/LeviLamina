@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class GrowsCropDefinition {
 public:
     // prevent constructor by default
-    GrowsCropDefinition& operator=(GrowsCropDefinition const&) = delete;
-    GrowsCropDefinition(GrowsCropDefinition const&)            = delete;
+    GrowsCropDefinition& operator=(GrowsCropDefinition const&);
+    GrowsCropDefinition(GrowsCropDefinition const&);
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@ template <typename T0, typename T1, typename T2>
 class Promise {
 public:
     // prevent constructor by default
-    Promise& operator=(Promise const&) = delete;
-    Promise(Promise const&)            = delete;
-    Promise()                          = delete;
+    Promise& operator=(Promise const&);
+    Promise(Promise const&);
+    Promise();
 };
 
 }; // namespace Scripting

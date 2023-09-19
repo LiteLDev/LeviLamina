@@ -15,8 +15,8 @@ namespace Core {
 class LoadTimeProfiler : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    LoadTimeProfiler& operator=(LoadTimeProfiler const&) = delete;
-    LoadTimeProfiler(LoadTimeProfiler const&)            = delete;
+    LoadTimeProfiler& operator=(LoadTimeProfiler const&);
+    LoadTimeProfiler(LoadTimeProfiler const&);
 
 public:
     // NOLINTBEGIN

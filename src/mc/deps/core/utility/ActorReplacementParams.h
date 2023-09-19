@@ -7,9 +7,9 @@ namespace Util {
 struct ActorReplacementParams {
 public:
     // prevent constructor by default
-    ActorReplacementParams& operator=(ActorReplacementParams const&) = delete;
-    ActorReplacementParams(ActorReplacementParams const&)            = delete;
-    ActorReplacementParams()                                         = delete;
+    ActorReplacementParams& operator=(ActorReplacementParams const&);
+    ActorReplacementParams(ActorReplacementParams const&);
+    ActorReplacementParams();
 };
 
 }; // namespace Util

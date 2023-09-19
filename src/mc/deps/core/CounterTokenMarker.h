@@ -7,9 +7,9 @@ namespace Core::Profile {
 class CounterTokenMarker {
 public:
     // prevent constructor by default
-    CounterTokenMarker& operator=(CounterTokenMarker const&) = delete;
-    CounterTokenMarker(CounterTokenMarker const&)            = delete;
-    CounterTokenMarker()                                     = delete;
+    CounterTokenMarker& operator=(CounterTokenMarker const&);
+    CounterTokenMarker(CounterTokenMarker const&);
+    CounterTokenMarker();
 };
 
 }; // namespace Core::Profile

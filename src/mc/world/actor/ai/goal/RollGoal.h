@@ -9,9 +9,9 @@
 class RollGoal : public ::Goal {
 public:
     // prevent constructor by default
-    RollGoal& operator=(RollGoal const&) = delete;
-    RollGoal(RollGoal const&)            = delete;
-    RollGoal()                           = delete;
+    RollGoal& operator=(RollGoal const&);
+    RollGoal(RollGoal const&);
+    RollGoal();
 
 public:
     // NOLINTBEGIN

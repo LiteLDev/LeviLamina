@@ -8,9 +8,9 @@
 class SculkPatchFeature : public ::IFeature {
 public:
     // prevent constructor by default
-    SculkPatchFeature& operator=(SculkPatchFeature const&) = delete;
-    SculkPatchFeature(SculkPatchFeature const&)            = delete;
-    SculkPatchFeature()                                    = delete;
+    SculkPatchFeature& operator=(SculkPatchFeature const&);
+    SculkPatchFeature(SculkPatchFeature const&);
+    SculkPatchFeature();
 
 public:
     // NOLINTBEGIN

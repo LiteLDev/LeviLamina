@@ -29,9 +29,9 @@ public:
     struct Dependencies {
     public:
         // prevent constructor by default
-        Dependencies& operator=(Dependencies const&) = delete;
-        Dependencies(Dependencies const&)            = delete;
-        Dependencies()                               = delete;
+        Dependencies& operator=(Dependencies const&);
+        Dependencies(Dependencies const&);
+        Dependencies();
 
     public:
         // NOLINTBEGIN
@@ -43,9 +43,9 @@ public:
 
 public:
     // prevent constructor by default
-    NetworkSystem& operator=(NetworkSystem const&) = delete;
-    NetworkSystem(NetworkSystem const&)            = delete;
-    NetworkSystem()                                = delete;
+    NetworkSystem& operator=(NetworkSystem const&);
+    NetworkSystem(NetworkSystem const&);
+    NetworkSystem();
 
 public:
     // NOLINTBEGIN
@@ -192,7 +192,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ??0NetworkSystem@@IEAA@$$QEAUDependencies@0@@Z
-    MCAPI NetworkSystem(struct NetworkSystem::Dependencies&&);
+    MCAPI explicit NetworkSystem(struct NetworkSystem::Dependencies&&);
 
     // symbol:
     // ?_createNetworkStatistics@NetworkSystem@@IEAAXW4TrackerType@@$$QEAV?$function@$$A6A_NAEAURakNetStatistics@RakNet@@@Z@std@@$$QEAV?$not_null@V?$NonOwnerPointer@VNetworkDebugManager@@@Bedrock@@@gsl@@@Z

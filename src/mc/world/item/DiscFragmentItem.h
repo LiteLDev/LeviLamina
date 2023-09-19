@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class DiscFragmentItem : public ::Item {
 public:
     // prevent constructor by default
-    DiscFragmentItem& operator=(DiscFragmentItem const&) = delete;
-    DiscFragmentItem(DiscFragmentItem const&)            = delete;
-    DiscFragmentItem()                                   = delete;
+    DiscFragmentItem& operator=(DiscFragmentItem const&);
+    DiscFragmentItem(DiscFragmentItem const&);
+    DiscFragmentItem();
 
 public:
     // NOLINTBEGIN

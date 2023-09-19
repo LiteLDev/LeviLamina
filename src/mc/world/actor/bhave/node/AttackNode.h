@@ -9,8 +9,8 @@
 class AttackNode : public ::BehaviorNode {
 public:
     // prevent constructor by default
-    AttackNode& operator=(AttackNode const&) = delete;
-    AttackNode(AttackNode const&)            = delete;
+    AttackNode& operator=(AttackNode const&);
+    AttackNode(AttackNode const&);
 
 public:
     // NOLINTBEGIN

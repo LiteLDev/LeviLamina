@@ -39,9 +39,9 @@ namespace ScriptModuleGameTest {
 class ScriptGameTestHelper {
 public:
     // prevent constructor by default
-    ScriptGameTestHelper& operator=(ScriptGameTestHelper const&) = delete;
-    ScriptGameTestHelper(ScriptGameTestHelper const&)            = delete;
-    ScriptGameTestHelper()                                       = delete;
+    ScriptGameTestHelper& operator=(ScriptGameTestHelper const&);
+    ScriptGameTestHelper(ScriptGameTestHelper const&);
+    ScriptGameTestHelper();
 
 public:
     // NOLINTBEGIN

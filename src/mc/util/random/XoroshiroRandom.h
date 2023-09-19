@@ -8,9 +8,9 @@
 class XoroshiroRandom : public ::IRandom {
 public:
     // prevent constructor by default
-    XoroshiroRandom& operator=(XoroshiroRandom const&) = delete;
-    XoroshiroRandom(XoroshiroRandom const&)            = delete;
-    XoroshiroRandom()                                  = delete;
+    XoroshiroRandom& operator=(XoroshiroRandom const&);
+    XoroshiroRandom(XoroshiroRandom const&);
+    XoroshiroRandom();
 
 public:
     // NOLINTBEGIN

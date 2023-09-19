@@ -17,9 +17,9 @@ namespace ScriptModuleMinecraft {
 class ScriptNavigationGenericComponent : public ::ScriptModuleMinecraft::NavigationScriptActorComponent {
 public:
     // prevent constructor by default
-    ScriptNavigationGenericComponent& operator=(ScriptNavigationGenericComponent const&) = delete;
-    ScriptNavigationGenericComponent(ScriptNavigationGenericComponent const&)            = delete;
-    ScriptNavigationGenericComponent()                                                   = delete;
+    ScriptNavigationGenericComponent& operator=(ScriptNavigationGenericComponent const&);
+    ScriptNavigationGenericComponent(ScriptNavigationGenericComponent const&);
+    ScriptNavigationGenericComponent();
 
 public:
     // NOLINTBEGIN

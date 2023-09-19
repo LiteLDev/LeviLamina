@@ -7,9 +7,9 @@ namespace Util {
 struct ReplacementResults {
 public:
     // prevent constructor by default
-    ReplacementResults& operator=(ReplacementResults const&) = delete;
-    ReplacementResults(ReplacementResults const&)            = delete;
-    ReplacementResults()                                     = delete;
+    ReplacementResults& operator=(ReplacementResults const&);
+    ReplacementResults(ReplacementResults const&);
+    ReplacementResults();
 };
 
 }; // namespace Util

@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct Color2Definition {
 public:
     // prevent constructor by default
-    Color2Definition& operator=(Color2Definition const&) = delete;
-    Color2Definition(Color2Definition const&)            = delete;
-    Color2Definition()                                   = delete;
+    Color2Definition& operator=(Color2Definition const&);
+    Color2Definition(Color2Definition const&);
+    Color2Definition();
 
 public:
     // NOLINTBEGIN

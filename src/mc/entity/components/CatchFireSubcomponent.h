@@ -13,8 +13,8 @@ namespace Json { class Value; }
 class CatchFireSubcomponent : public ::OnHitSubcomponent {
 public:
     // prevent constructor by default
-    CatchFireSubcomponent& operator=(CatchFireSubcomponent const&) = delete;
-    CatchFireSubcomponent(CatchFireSubcomponent const&)            = delete;
+    CatchFireSubcomponent& operator=(CatchFireSubcomponent const&);
+    CatchFireSubcomponent(CatchFireSubcomponent const&);
 
 public:
     // NOLINTBEGIN

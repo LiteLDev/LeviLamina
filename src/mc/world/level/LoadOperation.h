@@ -17,9 +17,9 @@ namespace PositionTrackingDB {
 class LoadOperation : public ::PositionTrackingDB::AsyncOperationBase {
 public:
     // prevent constructor by default
-    LoadOperation& operator=(LoadOperation const&) = delete;
-    LoadOperation(LoadOperation const&)            = delete;
-    LoadOperation()                                = delete;
+    LoadOperation& operator=(LoadOperation const&);
+    LoadOperation(LoadOperation const&);
+    LoadOperation();
 
 public:
     // NOLINTBEGIN

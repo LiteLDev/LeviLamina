@@ -21,8 +21,8 @@ public:
     ActorUniqueID        mEntityUniqueID; // this+0x40
 
     // prevent constructor by default
-    ContainerOpenPacket& operator=(ContainerOpenPacket const&) = delete;
-    ContainerOpenPacket(ContainerOpenPacket const&)            = delete;
+    ContainerOpenPacket& operator=(ContainerOpenPacket const&);
+    ContainerOpenPacket(ContainerOpenPacket const&);
 
 public:
     // NOLINTBEGIN

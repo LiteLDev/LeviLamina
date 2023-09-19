@@ -17,8 +17,8 @@ public:
     bool          mRespawn;     // this+0x40
 
     // prevent constructor by default
-    ChangeDimensionPacket& operator=(ChangeDimensionPacket const&) = delete;
-    ChangeDimensionPacket(ChangeDimensionPacket const&)            = delete;
+    ChangeDimensionPacket& operator=(ChangeDimensionPacket const&);
+    ChangeDimensionPacket(ChangeDimensionPacket const&);
 
 public:
     // NOLINTBEGIN

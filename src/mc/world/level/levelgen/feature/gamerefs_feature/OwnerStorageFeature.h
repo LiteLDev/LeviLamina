@@ -9,9 +9,9 @@ public:
 
 public:
     // prevent constructor by default
-    OwnerStorageFeature& operator=(OwnerStorageFeature const&) = delete;
-    OwnerStorageFeature(OwnerStorageFeature const&)            = delete;
-    OwnerStorageFeature()                                      = delete;
+    OwnerStorageFeature& operator=(OwnerStorageFeature const&);
+    OwnerStorageFeature(OwnerStorageFeature const&);
+    OwnerStorageFeature();
 
     // protected:
     // NOLINTBEGIN

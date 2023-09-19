@@ -39,9 +39,9 @@ public:
     [[nodiscard]] constexpr class Player& getPlayer() const { return *ll::memory::dAccess<Player*>(this, 0x8); }
 
     // prevent constructor by default
-    GameMode& operator=(GameMode const&) = delete;
-    GameMode(GameMode const&)            = delete;
-    GameMode()                           = delete;
+    GameMode& operator=(GameMode const&);
+    GameMode(GameMode const&);
+    GameMode();
 
 public:
     // NOLINTBEGIN

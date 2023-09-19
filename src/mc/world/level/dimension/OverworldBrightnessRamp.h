@@ -8,9 +8,9 @@
 class OverworldBrightnessRamp : public ::DimensionBrightnessRamp {
 public:
     // prevent constructor by default
-    OverworldBrightnessRamp& operator=(OverworldBrightnessRamp const&) = delete;
-    OverworldBrightnessRamp(OverworldBrightnessRamp const&)            = delete;
-    OverworldBrightnessRamp()                                          = delete;
+    OverworldBrightnessRamp& operator=(OverworldBrightnessRamp const&);
+    OverworldBrightnessRamp(OverworldBrightnessRamp const&);
+    OverworldBrightnessRamp();
 
 public:
     // NOLINTBEGIN

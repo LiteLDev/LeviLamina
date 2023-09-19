@@ -54,9 +54,9 @@ namespace EntityInsideSystemImpl {
 struct EntityInside {
 public:
     // prevent constructor by default
-    EntityInside& operator=(EntityInside const&) = delete;
-    EntityInside(EntityInside const&)            = delete;
-    EntityInside()                               = delete;
+    EntityInside& operator=(EntityInside const&);
+    EntityInside(EntityInside const&);
+    EntityInside();
 
 public:
     // NOLINTBEGIN

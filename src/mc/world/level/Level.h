@@ -70,9 +70,9 @@ public:
     // LLAPI bool executeCommand(const std::string& cmd) const;
 
     // prevent constructor by default
-    Level& operator=(Level const&) = delete;
-    Level(Level const&)            = delete;
-    Level()                        = delete;
+    Level& operator=(Level const&);
+    Level(Level const&);
+    Level();
 
 public:
     // NOLINTBEGIN

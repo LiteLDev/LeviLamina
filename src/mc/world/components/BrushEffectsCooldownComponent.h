@@ -5,9 +5,9 @@
 class BrushEffectsCooldownComponent {
 public:
     // prevent constructor by default
-    BrushEffectsCooldownComponent& operator=(BrushEffectsCooldownComponent const&) = delete;
-    BrushEffectsCooldownComponent(BrushEffectsCooldownComponent const&)            = delete;
-    BrushEffectsCooldownComponent()                                                = delete;
+    BrushEffectsCooldownComponent& operator=(BrushEffectsCooldownComponent const&);
+    BrushEffectsCooldownComponent(BrushEffectsCooldownComponent const&);
+    BrushEffectsCooldownComponent();
 
 private:
     // NOLINTBEGIN
@@ -19,7 +19,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $EXPIRED_TICK() { return EXPIRED_TICK; }
+    auto& $EXPIRED_TICK() { return EXPIRED_TICK; }
 
     // NOLINTEND
 };

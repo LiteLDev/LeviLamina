@@ -5,7 +5,7 @@
 struct IgnoresEntityInsideFlagComponent {
 public:
     // prevent constructor by default
-    IgnoresEntityInsideFlagComponent& operator=(IgnoresEntityInsideFlagComponent const&) = delete;
-    IgnoresEntityInsideFlagComponent(IgnoresEntityInsideFlagComponent const&)            = delete;
-    IgnoresEntityInsideFlagComponent()                                                   = delete;
+    IgnoresEntityInsideFlagComponent& operator=(IgnoresEntityInsideFlagComponent const&);
+    IgnoresEntityInsideFlagComponent(IgnoresEntityInsideFlagComponent const&);
+    IgnoresEntityInsideFlagComponent();
 };

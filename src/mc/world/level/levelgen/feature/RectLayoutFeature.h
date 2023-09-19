@@ -16,16 +16,16 @@ public:
     struct FeatureArea {
     public:
         // prevent constructor by default
-        FeatureArea& operator=(FeatureArea const&) = delete;
-        FeatureArea(FeatureArea const&)            = delete;
-        FeatureArea()                              = delete;
+        FeatureArea& operator=(FeatureArea const&);
+        FeatureArea(FeatureArea const&);
+        FeatureArea();
     };
 
 public:
     // prevent constructor by default
-    RectLayoutFeature& operator=(RectLayoutFeature const&) = delete;
-    RectLayoutFeature(RectLayoutFeature const&)            = delete;
-    RectLayoutFeature()                                    = delete;
+    RectLayoutFeature& operator=(RectLayoutFeature const&);
+    RectLayoutFeature(RectLayoutFeature const&);
+    RectLayoutFeature();
 
 public:
     // NOLINTBEGIN

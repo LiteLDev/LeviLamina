@@ -16,8 +16,8 @@ public:
     std::vector<NetworkItemStackDescriptor> mSlots;       // this+0x38
 
     // prevent constructor by default
-    InventoryContentPacket& operator=(InventoryContentPacket const&) = delete;
-    InventoryContentPacket(InventoryContentPacket const&)            = delete;
+    InventoryContentPacket& operator=(InventoryContentPacket const&);
+    InventoryContentPacket(InventoryContentPacket const&);
 
 public:
     // NOLINTBEGIN

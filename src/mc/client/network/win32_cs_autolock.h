@@ -7,9 +7,9 @@ namespace xbox::httpclient {
 class win32_cs_autolock {
 public:
     // prevent constructor by default
-    win32_cs_autolock& operator=(win32_cs_autolock const&) = delete;
-    win32_cs_autolock(win32_cs_autolock const&)            = delete;
-    win32_cs_autolock()                                    = delete;
+    win32_cs_autolock& operator=(win32_cs_autolock const&);
+    win32_cs_autolock(win32_cs_autolock const&);
+    win32_cs_autolock();
 
 public:
     // NOLINTBEGIN

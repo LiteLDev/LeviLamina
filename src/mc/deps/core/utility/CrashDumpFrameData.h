@@ -5,9 +5,9 @@
 struct CrashDumpFrameData {
 public:
     // prevent constructor by default
-    CrashDumpFrameData& operator=(CrashDumpFrameData const&) = delete;
-    CrashDumpFrameData(CrashDumpFrameData const&)            = delete;
-    CrashDumpFrameData()                                     = delete;
+    CrashDumpFrameData& operator=(CrashDumpFrameData const&);
+    CrashDumpFrameData(CrashDumpFrameData const&);
+    CrashDumpFrameData();
 
 public:
     // NOLINTBEGIN

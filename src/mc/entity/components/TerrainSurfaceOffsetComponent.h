@@ -5,7 +5,7 @@
 struct TerrainSurfaceOffsetComponent {
 public:
     // prevent constructor by default
-    TerrainSurfaceOffsetComponent& operator=(TerrainSurfaceOffsetComponent const&) = delete;
-    TerrainSurfaceOffsetComponent(TerrainSurfaceOffsetComponent const&)            = delete;
-    TerrainSurfaceOffsetComponent()                                                = delete;
+    TerrainSurfaceOffsetComponent& operator=(TerrainSurfaceOffsetComponent const&);
+    TerrainSurfaceOffsetComponent(TerrainSurfaceOffsetComponent const&);
+    TerrainSurfaceOffsetComponent();
 };

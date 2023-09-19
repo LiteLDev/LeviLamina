@@ -10,8 +10,8 @@ namespace ScriptModuleMinecraft {
 struct ScriptItemStopUseOnAfterEvent {
 public:
     // prevent constructor by default
-    ScriptItemStopUseOnAfterEvent& operator=(ScriptItemStopUseOnAfterEvent const&) = delete;
-    ScriptItemStopUseOnAfterEvent()                                                = delete;
+    ScriptItemStopUseOnAfterEvent& operator=(ScriptItemStopUseOnAfterEvent const&);
+    ScriptItemStopUseOnAfterEvent();
 
 public:
     // NOLINTBEGIN

@@ -14,9 +14,9 @@ namespace gametest {
 class BaseGameTestFunction {
 public:
     // prevent constructor by default
-    BaseGameTestFunction& operator=(BaseGameTestFunction const&) = delete;
-    BaseGameTestFunction(BaseGameTestFunction const&)            = delete;
-    BaseGameTestFunction()                                       = delete;
+    BaseGameTestFunction& operator=(BaseGameTestFunction const&);
+    BaseGameTestFunction(BaseGameTestFunction const&);
+    BaseGameTestFunction();
 
 public:
     // NOLINTBEGIN

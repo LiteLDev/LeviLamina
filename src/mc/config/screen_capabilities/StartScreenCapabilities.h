@@ -8,9 +8,9 @@
 struct StartScreenCapabilities {
 public:
     // prevent constructor by default
-    StartScreenCapabilities& operator=(StartScreenCapabilities const&) = delete;
-    StartScreenCapabilities(StartScreenCapabilities const&)            = delete;
-    StartScreenCapabilities()                                          = delete;
+    StartScreenCapabilities& operator=(StartScreenCapabilities const&);
+    StartScreenCapabilities(StartScreenCapabilities const&);
+    StartScreenCapabilities();
 
 public:
     // NOLINTBEGIN

@@ -27,9 +27,9 @@
 class SmallFireball : public ::Fireball {
 public:
     // prevent constructor by default
-    SmallFireball& operator=(SmallFireball const&) = delete;
-    SmallFireball(SmallFireball const&)            = delete;
-    SmallFireball()                                = delete;
+    SmallFireball& operator=(SmallFireball const&);
+    SmallFireball(SmallFireball const&);
+    SmallFireball();
 
 public:
     // NOLINTBEGIN

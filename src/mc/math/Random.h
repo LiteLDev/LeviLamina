@@ -110,17 +110,17 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mFixed() { return mFixed; }
+    auto& $mFixed() { return mFixed; }
 
-    inline auto& $mFixedGaussian() { return mFixedGaussian; }
+    auto& $mFixedGaussian() { return mFixedGaussian; }
 
-    inline auto& $mFixedUInt32() { return mFixedUInt32; }
+    auto& $mFixedUInt32() { return mFixedUInt32; }
 
-    inline auto& $mRandomDevice() { return mRandomDevice; }
+    auto& $mRandomDevice() { return mRandomDevice; }
 
-    inline auto& $mThreadLocalRandom() { return mThreadLocalRandom; }
+    auto& $mThreadLocalRandom() { return mThreadLocalRandom; }
 
-    inline auto& $mUnfixed() { return mUnfixed; }
+    auto& $mUnfixed() { return mUnfixed; }
 
     // NOLINTEND
 };

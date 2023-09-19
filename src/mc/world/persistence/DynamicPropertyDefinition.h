@@ -5,9 +5,9 @@
 struct DynamicPropertyDefinition {
 public:
     // prevent constructor by default
-    DynamicPropertyDefinition& operator=(DynamicPropertyDefinition const&) = delete;
-    DynamicPropertyDefinition(DynamicPropertyDefinition const&)            = delete;
-    DynamicPropertyDefinition()                                            = delete;
+    DynamicPropertyDefinition& operator=(DynamicPropertyDefinition const&);
+    DynamicPropertyDefinition(DynamicPropertyDefinition const&);
+    DynamicPropertyDefinition();
 
 public:
     // NOLINTBEGIN

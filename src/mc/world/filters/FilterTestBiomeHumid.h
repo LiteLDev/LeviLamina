@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class FilterTestBiomeHumid : public ::SimpleBoolFilterTest {
 public:
     // prevent constructor by default
-    FilterTestBiomeHumid& operator=(FilterTestBiomeHumid const&) = delete;
-    FilterTestBiomeHumid(FilterTestBiomeHumid const&)            = delete;
-    FilterTestBiomeHumid()                                       = delete;
+    FilterTestBiomeHumid& operator=(FilterTestBiomeHumid const&);
+    FilterTestBiomeHumid(FilterTestBiomeHumid const&);
+    FilterTestBiomeHumid();
 
 public:
     // NOLINTBEGIN

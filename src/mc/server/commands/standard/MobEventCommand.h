@@ -16,23 +16,23 @@ public:
     struct InitProxy {
     public:
         // prevent constructor by default
-        InitProxy& operator=(InitProxy const&) = delete;
-        InitProxy(InitProxy const&)            = delete;
-        InitProxy()                            = delete;
+        InitProxy& operator=(InitProxy const&);
+        InitProxy(InitProxy const&);
+        InitProxy();
 
     public:
         // NOLINTBEGIN
         // symbol: ??0InitProxy@MobEventCommand@@QEAA@AEAVServerLevel@@@Z
-        MCAPI InitProxy(class ServerLevel&);
+        MCAPI explicit InitProxy(class ServerLevel&);
 
         // NOLINTEND
     };
 
 public:
     // prevent constructor by default
-    MobEventCommand& operator=(MobEventCommand const&) = delete;
-    MobEventCommand(MobEventCommand const&)            = delete;
-    MobEventCommand()                                  = delete;
+    MobEventCommand& operator=(MobEventCommand const&);
+    MobEventCommand(MobEventCommand const&);
+    MobEventCommand();
 
 public:
     // NOLINTBEGIN

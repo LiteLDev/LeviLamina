@@ -5,8 +5,8 @@
 class CommandFilePath {
 public:
     // prevent constructor by default
-    CommandFilePath& operator=(CommandFilePath const&) = delete;
-    CommandFilePath(CommandFilePath const&)            = delete;
+    CommandFilePath& operator=(CommandFilePath const&);
+    CommandFilePath(CommandFilePath const&);
 
 public:
     // NOLINTBEGIN

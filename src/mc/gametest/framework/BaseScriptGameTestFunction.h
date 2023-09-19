@@ -19,9 +19,9 @@ namespace ScriptModuleGameTest {
 class BaseScriptGameTestFunction : public ::gametest::BaseGameTestFunction {
 public:
     // prevent constructor by default
-    BaseScriptGameTestFunction& operator=(BaseScriptGameTestFunction const&) = delete;
-    BaseScriptGameTestFunction(BaseScriptGameTestFunction const&)            = delete;
-    BaseScriptGameTestFunction()                                             = delete;
+    BaseScriptGameTestFunction& operator=(BaseScriptGameTestFunction const&);
+    BaseScriptGameTestFunction(BaseScriptGameTestFunction const&);
+    BaseScriptGameTestFunction();
 
 public:
     // NOLINTBEGIN

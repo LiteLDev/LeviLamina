@@ -15,9 +15,9 @@ public:
     struct DataProxy {
     public:
         // prevent constructor by default
-        DataProxy& operator=(DataProxy const&) = delete;
-        DataProxy(DataProxy const&)            = delete;
-        DataProxy()                            = delete;
+        DataProxy& operator=(DataProxy const&);
+        DataProxy(DataProxy const&);
+        DataProxy();
 
     public:
         // NOLINTBEGIN
@@ -29,9 +29,9 @@ public:
 
 public:
     // prevent constructor by default
-    BehaviorData& operator=(BehaviorData const&) = delete;
-    BehaviorData(BehaviorData const&)            = delete;
-    BehaviorData()                               = delete;
+    BehaviorData& operator=(BehaviorData const&);
+    BehaviorData(BehaviorData const&);
+    BehaviorData();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 struct PositionPassengerRequestComponent {
 public:
     // prevent constructor by default
-    PositionPassengerRequestComponent& operator=(PositionPassengerRequestComponent const&) = delete;
-    PositionPassengerRequestComponent(PositionPassengerRequestComponent const&)            = delete;
-    PositionPassengerRequestComponent()                                                    = delete;
+    PositionPassengerRequestComponent& operator=(PositionPassengerRequestComponent const&);
+    PositionPassengerRequestComponent(PositionPassengerRequestComponent const&);
+    PositionPassengerRequestComponent();
 };

@@ -13,10 +13,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ChunkPos@@QEAA@AEBVVec3@@@Z
-    MCAPI ChunkPos(class Vec3 const&);
+    MCAPI explicit ChunkPos(class Vec3 const&);
 
     // symbol: ??0ChunkPos@@QEAA@AEBVBlockPos@@@Z
-    MCAPI ChunkPos(class BlockPos const&);
+    MCAPI explicit ChunkPos(class BlockPos const&);
 
     // symbol: ?isWithinBounds@ChunkPos@@QEBA_NAEBV1@0@Z
     MCAPI bool isWithinBounds(class ChunkPos const&, class ChunkPos const&) const;

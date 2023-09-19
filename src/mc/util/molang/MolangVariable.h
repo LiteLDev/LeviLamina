@@ -8,9 +8,9 @@
 class MolangVariable {
 public:
     // prevent constructor by default
-    MolangVariable& operator=(MolangVariable const&) = delete;
-    MolangVariable(MolangVariable const&)            = delete;
-    MolangVariable()                                 = delete;
+    MolangVariable& operator=(MolangVariable const&);
+    MolangVariable(MolangVariable const&);
+    MolangVariable();
 
 public:
     // NOLINTBEGIN
@@ -70,15 +70,15 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mHasSetWatermark() { return mHasSetWatermark; }
+    auto& $mHasSetWatermark() { return mHasSetWatermark; }
 
-    inline auto& $mIndexToVariableNameMap() { return mIndexToVariableNameMap; }
+    auto& $mIndexToVariableNameMap() { return mIndexToVariableNameMap; }
 
-    inline auto& $mIndexToVariableNameMap_LowWaterMark() { return mIndexToVariableNameMap_LowWaterMark; }
+    auto& $mIndexToVariableNameMap_LowWaterMark() { return mIndexToVariableNameMap_LowWaterMark; }
 
-    inline auto& $mVariableNameToIndexMap() { return mVariableNameToIndexMap; }
+    auto& $mVariableNameToIndexMap() { return mVariableNameToIndexMap; }
 
-    inline auto& $mVariableNameToIndexMap_LowWaterMark() { return mVariableNameToIndexMap_LowWaterMark; }
+    auto& $mVariableNameToIndexMap_LowWaterMark() { return mVariableNameToIndexMap_LowWaterMark; }
 
     // NOLINTEND
 };

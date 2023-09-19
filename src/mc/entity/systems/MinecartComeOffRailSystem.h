@@ -13,9 +13,9 @@
 class MinecartComeOffRailSystem {
 public:
     // prevent constructor by default
-    MinecartComeOffRailSystem& operator=(MinecartComeOffRailSystem const&) = delete;
-    MinecartComeOffRailSystem(MinecartComeOffRailSystem const&)            = delete;
-    MinecartComeOffRailSystem()                                            = delete;
+    MinecartComeOffRailSystem& operator=(MinecartComeOffRailSystem const&);
+    MinecartComeOffRailSystem(MinecartComeOffRailSystem const&);
+    MinecartComeOffRailSystem();
 
 public:
     // NOLINTBEGIN

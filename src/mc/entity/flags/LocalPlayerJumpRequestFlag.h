@@ -5,7 +5,7 @@
 struct LocalPlayerJumpRequestFlag {
 public:
     // prevent constructor by default
-    LocalPlayerJumpRequestFlag& operator=(LocalPlayerJumpRequestFlag const&) = delete;
-    LocalPlayerJumpRequestFlag(LocalPlayerJumpRequestFlag const&)            = delete;
-    LocalPlayerJumpRequestFlag()                                             = delete;
+    LocalPlayerJumpRequestFlag& operator=(LocalPlayerJumpRequestFlag const&);
+    LocalPlayerJumpRequestFlag(LocalPlayerJumpRequestFlag const&);
+    LocalPlayerJumpRequestFlag();
 };

@@ -5,9 +5,9 @@
 class CustomSaveComponent {
 public:
     // prevent constructor by default
-    CustomSaveComponent& operator=(CustomSaveComponent const&) = delete;
-    CustomSaveComponent(CustomSaveComponent const&)            = delete;
-    CustomSaveComponent()                                      = delete;
+    CustomSaveComponent& operator=(CustomSaveComponent const&);
+    CustomSaveComponent(CustomSaveComponent const&);
+    CustomSaveComponent();
 
 public:
     // NOLINTBEGIN

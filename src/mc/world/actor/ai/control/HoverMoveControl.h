@@ -8,8 +8,8 @@
 class HoverMoveControl : public ::MoveControl {
 public:
     // prevent constructor by default
-    HoverMoveControl& operator=(HoverMoveControl const&) = delete;
-    HoverMoveControl(HoverMoveControl const&)            = delete;
+    HoverMoveControl& operator=(HoverMoveControl const&);
+    HoverMoveControl(HoverMoveControl const&);
 
 public:
     // NOLINTBEGIN

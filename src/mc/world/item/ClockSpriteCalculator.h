@@ -5,8 +5,8 @@
 class ClockSpriteCalculator {
 public:
     // prevent constructor by default
-    ClockSpriteCalculator& operator=(ClockSpriteCalculator const&) = delete;
-    ClockSpriteCalculator(ClockSpriteCalculator const&)            = delete;
+    ClockSpriteCalculator& operator=(ClockSpriteCalculator const&);
+    ClockSpriteCalculator(ClockSpriteCalculator const&);
 
 public:
     // NOLINTBEGIN

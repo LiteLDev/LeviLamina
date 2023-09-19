@@ -13,8 +13,8 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class CreativeGroupInfo : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    CreativeGroupInfo& operator=(CreativeGroupInfo const&) = delete;
-    CreativeGroupInfo()                                    = delete;
+    CreativeGroupInfo& operator=(CreativeGroupInfo const&);
+    CreativeGroupInfo();
 
 public:
     // NOLINTBEGIN

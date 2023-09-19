@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct OnStartLandingDefinition {
 public:
     // prevent constructor by default
-    OnStartLandingDefinition& operator=(OnStartLandingDefinition const&) = delete;
-    OnStartLandingDefinition(OnStartLandingDefinition const&)            = delete;
-    OnStartLandingDefinition()                                           = delete;
+    OnStartLandingDefinition& operator=(OnStartLandingDefinition const&);
+    OnStartLandingDefinition(OnStartLandingDefinition const&);
+    OnStartLandingDefinition();
 
 public:
     // NOLINTBEGIN

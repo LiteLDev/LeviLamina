@@ -26,9 +26,9 @@
 class Sniffer : public ::Animal {
 public:
     // prevent constructor by default
-    Sniffer& operator=(Sniffer const&) = delete;
-    Sniffer(Sniffer const&)            = delete;
-    Sniffer()                          = delete;
+    Sniffer& operator=(Sniffer const&);
+    Sniffer(Sniffer const&);
+    Sniffer();
 
 public:
     // NOLINTBEGIN

@@ -5,8 +5,8 @@
 class TrustingComponent {
 public:
     // prevent constructor by default
-    TrustingComponent& operator=(TrustingComponent const&) = delete;
-    TrustingComponent(TrustingComponent const&)            = delete;
+    TrustingComponent& operator=(TrustingComponent const&);
+    TrustingComponent(TrustingComponent const&);
 
 public:
     // NOLINTBEGIN

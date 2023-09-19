@@ -5,8 +5,8 @@
 class MobSpawnerData {
 public:
     // prevent constructor by default
-    MobSpawnerData& operator=(MobSpawnerData const&) = delete;
-    MobSpawnerData()                                 = delete;
+    MobSpawnerData& operator=(MobSpawnerData const&);
+    MobSpawnerData();
 
 public:
     // NOLINTBEGIN

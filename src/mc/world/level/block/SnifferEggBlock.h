@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class SnifferEggBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    SnifferEggBlock& operator=(SnifferEggBlock const&) = delete;
-    SnifferEggBlock(SnifferEggBlock const&)            = delete;
-    SnifferEggBlock()                                  = delete;
+    SnifferEggBlock& operator=(SnifferEggBlock const&);
+    SnifferEggBlock(SnifferEggBlock const&);
+    SnifferEggBlock();
 
 public:
     // NOLINTBEGIN

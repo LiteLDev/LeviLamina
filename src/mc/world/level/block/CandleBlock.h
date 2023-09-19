@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class CandleBlock : public ::AbstractCandleBlock {
 public:
     // prevent constructor by default
-    CandleBlock& operator=(CandleBlock const&) = delete;
-    CandleBlock(CandleBlock const&)            = delete;
-    CandleBlock()                              = delete;
+    CandleBlock& operator=(CandleBlock const&);
+    CandleBlock(CandleBlock const&);
+    CandleBlock();
 
 public:
     // NOLINTBEGIN

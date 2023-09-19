@@ -5,9 +5,9 @@
 class OnPlayerDestroyedTrigger {
 public:
     // prevent constructor by default
-    OnPlayerDestroyedTrigger& operator=(OnPlayerDestroyedTrigger const&) = delete;
-    OnPlayerDestroyedTrigger(OnPlayerDestroyedTrigger const&)            = delete;
-    OnPlayerDestroyedTrigger()                                           = delete;
+    OnPlayerDestroyedTrigger& operator=(OnPlayerDestroyedTrigger const&);
+    OnPlayerDestroyedTrigger(OnPlayerDestroyedTrigger const&);
+    OnPlayerDestroyedTrigger();
 
 public:
     // NOLINTBEGIN

@@ -13,8 +13,8 @@ public:
     NetworkSettingOptions mNetworkSettings; // this+0x30
 
     // prevent constructor by default
-    NetworkSettingsPacket& operator=(NetworkSettingsPacket const&) = delete;
-    NetworkSettingsPacket(NetworkSettingsPacket const&)            = delete;
+    NetworkSettingsPacket& operator=(NetworkSettingsPacket const&);
+    NetworkSettingsPacket(NetworkSettingsPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -39,7 +39,7 @@ public:
     MCVAPI ~NetworkSettingsPacket();
 
     // symbol: ??0NetworkSettingsPacket@@QEAA@AEBUNetworkSettingOptions@@@Z
-    MCAPI NetworkSettingsPacket(struct NetworkSettingOptions const&);
+    MCAPI explicit NetworkSettingsPacket(struct NetworkSettingOptions const&);
 
     // symbol: ??0NetworkSettingsPacket@@QEAA@XZ
     MCAPI NetworkSettingsPacket();

@@ -8,9 +8,9 @@
 struct EDUWorldsScreenCapabilities {
 public:
     // prevent constructor by default
-    EDUWorldsScreenCapabilities& operator=(EDUWorldsScreenCapabilities const&) = delete;
-    EDUWorldsScreenCapabilities(EDUWorldsScreenCapabilities const&)            = delete;
-    EDUWorldsScreenCapabilities()                                              = delete;
+    EDUWorldsScreenCapabilities& operator=(EDUWorldsScreenCapabilities const&);
+    EDUWorldsScreenCapabilities(EDUWorldsScreenCapabilities const&);
+    EDUWorldsScreenCapabilities();
 
 public:
     // NOLINTBEGIN

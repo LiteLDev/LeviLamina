@@ -5,9 +5,9 @@
 class LavaMoveFinalizeSystem {
 public:
     // prevent constructor by default
-    LavaMoveFinalizeSystem& operator=(LavaMoveFinalizeSystem const&) = delete;
-    LavaMoveFinalizeSystem(LavaMoveFinalizeSystem const&)            = delete;
-    LavaMoveFinalizeSystem()                                         = delete;
+    LavaMoveFinalizeSystem& operator=(LavaMoveFinalizeSystem const&);
+    LavaMoveFinalizeSystem(LavaMoveFinalizeSystem const&);
+    LavaMoveFinalizeSystem();
 
 public:
     // NOLINTBEGIN

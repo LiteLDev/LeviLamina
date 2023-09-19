@@ -8,8 +8,8 @@
 class GameModuleServer {
 public:
     // prevent constructor by default
-    GameModuleServer& operator=(GameModuleServer const&) = delete;
-    GameModuleServer(GameModuleServer const&)            = delete;
+    GameModuleServer& operator=(GameModuleServer const&);
+    GameModuleServer(GameModuleServer const&);
 
 public:
     // NOLINTBEGIN

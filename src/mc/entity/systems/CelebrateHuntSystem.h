@@ -8,9 +8,9 @@
 class CelebrateHuntSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    CelebrateHuntSystem& operator=(CelebrateHuntSystem const&) = delete;
-    CelebrateHuntSystem(CelebrateHuntSystem const&)            = delete;
-    CelebrateHuntSystem()                                      = delete;
+    CelebrateHuntSystem& operator=(CelebrateHuntSystem const&);
+    CelebrateHuntSystem(CelebrateHuntSystem const&);
+    CelebrateHuntSystem();
 
 public:
     // NOLINTBEGIN

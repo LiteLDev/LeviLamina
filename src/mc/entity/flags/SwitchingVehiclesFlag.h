@@ -5,7 +5,7 @@
 struct SwitchingVehiclesFlag {
 public:
     // prevent constructor by default
-    SwitchingVehiclesFlag& operator=(SwitchingVehiclesFlag const&) = delete;
-    SwitchingVehiclesFlag(SwitchingVehiclesFlag const&)            = delete;
-    SwitchingVehiclesFlag()                                        = delete;
+    SwitchingVehiclesFlag& operator=(SwitchingVehiclesFlag const&);
+    SwitchingVehiclesFlag(SwitchingVehiclesFlag const&);
+    SwitchingVehiclesFlag();
 };

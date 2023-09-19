@@ -8,9 +8,9 @@
 class CommandBlockDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    CommandBlockDescription& operator=(CommandBlockDescription const&) = delete;
-    CommandBlockDescription(CommandBlockDescription const&)            = delete;
-    CommandBlockDescription()                                          = delete;
+    CommandBlockDescription& operator=(CommandBlockDescription const&);
+    CommandBlockDescription(CommandBlockDescription const&);
+    CommandBlockDescription();
 
 public:
     // NOLINTBEGIN

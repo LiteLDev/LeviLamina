@@ -10,7 +10,7 @@ namespace cereal { struct Schema; }
 struct BlockDefinition {
 public:
     // prevent constructor by default
-    BlockDefinition& operator=(BlockDefinition const&) = delete;
+    BlockDefinition& operator=(BlockDefinition const&);
 
 public:
     // NOLINTBEGIN
@@ -48,7 +48,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mDocumentUpgrader() { return mDocumentUpgrader; }
+    auto& $mDocumentUpgrader() { return mDocumentUpgrader; }
 
     // NOLINTEND
 };

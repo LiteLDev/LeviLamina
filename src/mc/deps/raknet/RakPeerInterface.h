@@ -7,9 +7,9 @@ namespace RakNet {
 class RakPeerInterface {
 public:
     // prevent constructor by default
-    RakPeerInterface& operator=(RakPeerInterface const&) = delete;
-    RakPeerInterface(RakPeerInterface const&)            = delete;
-    RakPeerInterface()                                   = delete;
+    RakPeerInterface& operator=(RakPeerInterface const&);
+    RakPeerInterface(RakPeerInterface const&);
+    RakPeerInterface();
 
 public:
     // NOLINTBEGIN

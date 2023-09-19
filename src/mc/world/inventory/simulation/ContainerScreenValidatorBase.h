@@ -8,8 +8,8 @@
 class ContainerScreenValidatorBase {
 public:
     // prevent constructor by default
-    ContainerScreenValidatorBase& operator=(ContainerScreenValidatorBase const&) = delete;
-    ContainerScreenValidatorBase(ContainerScreenValidatorBase const&)            = delete;
+    ContainerScreenValidatorBase& operator=(ContainerScreenValidatorBase const&);
+    ContainerScreenValidatorBase(ContainerScreenValidatorBase const&);
 
 public:
     // NOLINTBEGIN

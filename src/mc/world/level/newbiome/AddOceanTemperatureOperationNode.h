@@ -9,9 +9,9 @@
 class AddOceanTemperatureOperationNode {
 public:
     // prevent constructor by default
-    AddOceanTemperatureOperationNode& operator=(AddOceanTemperatureOperationNode const&) = delete;
-    AddOceanTemperatureOperationNode(AddOceanTemperatureOperationNode const&)            = delete;
-    AddOceanTemperatureOperationNode()                                                   = delete;
+    AddOceanTemperatureOperationNode& operator=(AddOceanTemperatureOperationNode const&);
+    AddOceanTemperatureOperationNode(AddOceanTemperatureOperationNode const&);
+    AddOceanTemperatureOperationNode();
 
 public:
     // NOLINTBEGIN

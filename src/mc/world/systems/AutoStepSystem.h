@@ -17,9 +17,9 @@
 class AutoStepSystem {
 public:
     // prevent constructor by default
-    AutoStepSystem& operator=(AutoStepSystem const&) = delete;
-    AutoStepSystem(AutoStepSystem const&)            = delete;
-    AutoStepSystem()                                 = delete;
+    AutoStepSystem& operator=(AutoStepSystem const&);
+    AutoStepSystem(AutoStepSystem const&);
+    AutoStepSystem();
 
 public:
     // NOLINTBEGIN

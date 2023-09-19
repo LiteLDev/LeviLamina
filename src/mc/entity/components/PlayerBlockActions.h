@@ -11,9 +11,9 @@ public:
     std::vector<struct PlayerBlockActionData> mActions;
 
     // prevent constructor by default
-    PlayerBlockActions& operator=(PlayerBlockActions const&) = delete;
-    PlayerBlockActions(PlayerBlockActions const&)            = delete;
-    PlayerBlockActions()                                     = delete;
+    PlayerBlockActions& operator=(PlayerBlockActions const&);
+    PlayerBlockActions(PlayerBlockActions const&);
+    PlayerBlockActions();
 
 public:
     // NOLINTBEGIN

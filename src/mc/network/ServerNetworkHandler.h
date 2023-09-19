@@ -32,9 +32,9 @@ public:
     class Client {
     public:
         // prevent constructor by default
-        Client& operator=(Client const&) = delete;
-        Client(Client const&)            = delete;
-        Client()                         = delete;
+        Client& operator=(Client const&);
+        Client(Client const&);
+        Client();
 
     public:
         // NOLINTBEGIN
@@ -54,9 +54,9 @@ public:
     }
 
     // prevent constructor by default
-    ServerNetworkHandler& operator=(ServerNetworkHandler const&) = delete;
-    ServerNetworkHandler(ServerNetworkHandler const&)            = delete;
-    ServerNetworkHandler()                                       = delete;
+    ServerNetworkHandler& operator=(ServerNetworkHandler const&);
+    ServerNetworkHandler(ServerNetworkHandler const&);
+    ServerNetworkHandler();
 
 public:
     // NOLINTBEGIN

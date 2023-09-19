@@ -5,9 +5,9 @@
 class VibrationListenerComponent {
 public:
     // prevent constructor by default
-    VibrationListenerComponent& operator=(VibrationListenerComponent const&) = delete;
-    VibrationListenerComponent(VibrationListenerComponent const&)            = delete;
-    VibrationListenerComponent()                                             = delete;
+    VibrationListenerComponent& operator=(VibrationListenerComponent const&);
+    VibrationListenerComponent(VibrationListenerComponent const&);
+    VibrationListenerComponent();
 
 public:
     // NOLINTBEGIN

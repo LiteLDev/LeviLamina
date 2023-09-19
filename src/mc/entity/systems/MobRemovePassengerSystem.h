@@ -12,9 +12,9 @@
 class MobRemovePassengerSystem {
 public:
     // prevent constructor by default
-    MobRemovePassengerSystem& operator=(MobRemovePassengerSystem const&) = delete;
-    MobRemovePassengerSystem(MobRemovePassengerSystem const&)            = delete;
-    MobRemovePassengerSystem()                                           = delete;
+    MobRemovePassengerSystem& operator=(MobRemovePassengerSystem const&);
+    MobRemovePassengerSystem(MobRemovePassengerSystem const&);
+    MobRemovePassengerSystem();
 
 public:
     // NOLINTBEGIN

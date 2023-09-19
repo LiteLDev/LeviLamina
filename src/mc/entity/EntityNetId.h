@@ -8,9 +8,9 @@
 class EntityNetId {
 public:
     // prevent constructor by default
-    EntityNetId& operator=(EntityNetId const&) = delete;
-    EntityNetId(EntityNetId const&)            = delete;
-    EntityNetId()                              = delete;
+    EntityNetId& operator=(EntityNetId const&);
+    EntityNetId(EntityNetId const&);
+    EntityNetId();
 
 public:
     // NOLINTBEGIN

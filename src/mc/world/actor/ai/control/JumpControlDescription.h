@@ -8,9 +8,9 @@
 struct JumpControlDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    JumpControlDescription& operator=(JumpControlDescription const&) = delete;
-    JumpControlDescription(JumpControlDescription const&)            = delete;
-    JumpControlDescription()                                         = delete;
+    JumpControlDescription& operator=(JumpControlDescription const&);
+    JumpControlDescription(JumpControlDescription const&);
+    JumpControlDescription();
 
 public:
     // NOLINTBEGIN

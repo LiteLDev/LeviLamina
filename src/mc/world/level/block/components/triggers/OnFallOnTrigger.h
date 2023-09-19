@@ -5,9 +5,9 @@
 class OnFallOnTrigger {
 public:
     // prevent constructor by default
-    OnFallOnTrigger& operator=(OnFallOnTrigger const&) = delete;
-    OnFallOnTrigger(OnFallOnTrigger const&)            = delete;
-    OnFallOnTrigger()                                  = delete;
+    OnFallOnTrigger& operator=(OnFallOnTrigger const&);
+    OnFallOnTrigger(OnFallOnTrigger const&);
+    OnFallOnTrigger();
 
 public:
     // NOLINTBEGIN

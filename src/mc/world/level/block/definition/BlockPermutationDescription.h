@@ -5,9 +5,9 @@
 struct BlockPermutationDescription {
 public:
     // prevent constructor by default
-    BlockPermutationDescription& operator=(BlockPermutationDescription const&) = delete;
-    BlockPermutationDescription(BlockPermutationDescription const&)            = delete;
-    BlockPermutationDescription()                                              = delete;
+    BlockPermutationDescription& operator=(BlockPermutationDescription const&);
+    BlockPermutationDescription(BlockPermutationDescription const&);
+    BlockPermutationDescription();
 
 public:
     // NOLINTBEGIN

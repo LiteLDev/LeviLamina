@@ -9,9 +9,9 @@
 class Igloo : public ::ScatteredFeaturePiece {
 public:
     // prevent constructor by default
-    Igloo& operator=(Igloo const&) = delete;
-    Igloo(Igloo const&)            = delete;
-    Igloo()                        = delete;
+    Igloo& operator=(Igloo const&);
+    Igloo(Igloo const&);
+    Igloo();
 
 public:
     // NOLINTBEGIN
@@ -50,13 +50,13 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR() { return STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR; }
+    auto& $STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR() { return STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR; }
 
-    inline auto& $STRUCTURE_LOCATION_IGLOO_TRAPDOOR() { return STRUCTURE_LOCATION_IGLOO_TRAPDOOR; }
+    auto& $STRUCTURE_LOCATION_IGLOO_TRAPDOOR() { return STRUCTURE_LOCATION_IGLOO_TRAPDOOR; }
 
-    inline auto& $STRUCTURE_LOCATION_LABORATORY() { return STRUCTURE_LOCATION_LABORATORY; }
+    auto& $STRUCTURE_LOCATION_LABORATORY() { return STRUCTURE_LOCATION_LABORATORY; }
 
-    inline auto& $STRUCTURE_LOCATION_LADDER() { return STRUCTURE_LOCATION_LADDER; }
+    auto& $STRUCTURE_LOCATION_LADDER() { return STRUCTURE_LOCATION_LADDER; }
 
     // NOLINTEND
 };

@@ -5,8 +5,8 @@
 class TameableComponent {
 public:
     // prevent constructor by default
-    TameableComponent& operator=(TameableComponent const&) = delete;
-    TameableComponent(TameableComponent const&)            = delete;
+    TameableComponent& operator=(TameableComponent const&);
+    TameableComponent(TameableComponent const&);
 
 public:
     // NOLINTBEGIN

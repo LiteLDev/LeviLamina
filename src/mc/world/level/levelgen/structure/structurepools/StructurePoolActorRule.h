@@ -5,9 +5,9 @@
 class StructurePoolActorRule {
 public:
     // prevent constructor by default
-    StructurePoolActorRule& operator=(StructurePoolActorRule const&) = delete;
-    StructurePoolActorRule(StructurePoolActorRule const&)            = delete;
-    StructurePoolActorRule()                                         = delete;
+    StructurePoolActorRule& operator=(StructurePoolActorRule const&);
+    StructurePoolActorRule(StructurePoolActorRule const&);
+    StructurePoolActorRule();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class TridentLoyaltyEnchant : public ::Enchant {
 public:
     // prevent constructor by default
-    TridentLoyaltyEnchant& operator=(TridentLoyaltyEnchant const&) = delete;
-    TridentLoyaltyEnchant(TridentLoyaltyEnchant const&)            = delete;
-    TridentLoyaltyEnchant()                                        = delete;
+    TridentLoyaltyEnchant& operator=(TridentLoyaltyEnchant const&);
+    TridentLoyaltyEnchant(TridentLoyaltyEnchant const&);
+    TridentLoyaltyEnchant();
 
 public:
     // NOLINTBEGIN

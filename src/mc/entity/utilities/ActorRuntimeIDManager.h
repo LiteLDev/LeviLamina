@@ -5,8 +5,8 @@
 class ActorRuntimeIDManager {
 public:
     // prevent constructor by default
-    ActorRuntimeIDManager& operator=(ActorRuntimeIDManager const&) = delete;
-    ActorRuntimeIDManager(ActorRuntimeIDManager const&)            = delete;
+    ActorRuntimeIDManager& operator=(ActorRuntimeIDManager const&);
+    ActorRuntimeIDManager(ActorRuntimeIDManager const&);
 
 public:
     // NOLINTBEGIN

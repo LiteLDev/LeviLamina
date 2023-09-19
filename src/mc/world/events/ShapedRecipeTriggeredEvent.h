@@ -5,7 +5,7 @@
 struct ShapedRecipeTriggeredEvent {
 public:
     // prevent constructor by default
-    ShapedRecipeTriggeredEvent& operator=(ShapedRecipeTriggeredEvent const&) = delete;
-    ShapedRecipeTriggeredEvent(ShapedRecipeTriggeredEvent const&)            = delete;
-    ShapedRecipeTriggeredEvent()                                             = delete;
+    ShapedRecipeTriggeredEvent& operator=(ShapedRecipeTriggeredEvent const&);
+    ShapedRecipeTriggeredEvent(ShapedRecipeTriggeredEvent const&);
+    ShapedRecipeTriggeredEvent();
 };

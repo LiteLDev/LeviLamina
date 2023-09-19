@@ -5,9 +5,9 @@
 class ActorUpdateRidingIDSystem {
 public:
     // prevent constructor by default
-    ActorUpdateRidingIDSystem& operator=(ActorUpdateRidingIDSystem const&) = delete;
-    ActorUpdateRidingIDSystem(ActorUpdateRidingIDSystem const&)            = delete;
-    ActorUpdateRidingIDSystem()                                            = delete;
+    ActorUpdateRidingIDSystem& operator=(ActorUpdateRidingIDSystem const&);
+    ActorUpdateRidingIDSystem(ActorUpdateRidingIDSystem const&);
+    ActorUpdateRidingIDSystem();
 
 public:
     // NOLINTBEGIN

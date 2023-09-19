@@ -5,7 +5,7 @@
 struct CreativeItemNetIdTag {
 public:
     // prevent constructor by default
-    CreativeItemNetIdTag& operator=(CreativeItemNetIdTag const&) = delete;
-    CreativeItemNetIdTag(CreativeItemNetIdTag const&)            = delete;
-    CreativeItemNetIdTag()                                       = delete;
+    CreativeItemNetIdTag& operator=(CreativeItemNetIdTag const&);
+    CreativeItemNetIdTag(CreativeItemNetIdTag const&);
+    CreativeItemNetIdTag();
 };

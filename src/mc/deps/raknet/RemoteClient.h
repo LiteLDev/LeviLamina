@@ -7,8 +7,8 @@ namespace RakNet {
 struct RemoteClient {
 public:
     // prevent constructor by default
-    RemoteClient& operator=(RemoteClient const&) = delete;
-    RemoteClient(RemoteClient const&)            = delete;
+    RemoteClient& operator=(RemoteClient const&);
+    RemoteClient(RemoteClient const&);
 
 public:
     // NOLINTBEGIN

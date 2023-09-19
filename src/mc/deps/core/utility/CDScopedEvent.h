@@ -8,9 +8,9 @@
 class CDScopedEvent {
 public:
     // prevent constructor by default
-    CDScopedEvent& operator=(CDScopedEvent const&) = delete;
-    CDScopedEvent(CDScopedEvent const&)            = delete;
-    CDScopedEvent()                                = delete;
+    CDScopedEvent& operator=(CDScopedEvent const&);
+    CDScopedEvent(CDScopedEvent const&);
+    CDScopedEvent();
 
 public:
     // NOLINTBEGIN

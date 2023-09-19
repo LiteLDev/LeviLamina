@@ -21,32 +21,32 @@ public:
     struct ConnectionCallbacks {
     public:
         // prevent constructor by default
-        ConnectionCallbacks& operator=(ConnectionCallbacks const&) = delete;
-        ConnectionCallbacks(ConnectionCallbacks const&)            = delete;
-        ConnectionCallbacks()                                      = delete;
+        ConnectionCallbacks& operator=(ConnectionCallbacks const&);
+        ConnectionCallbacks(ConnectionCallbacks const&);
+        ConnectionCallbacks();
     };
 
     class ConnectionStateListener {
     public:
         // prevent constructor by default
-        ConnectionStateListener& operator=(ConnectionStateListener const&) = delete;
-        ConnectionStateListener(ConnectionStateListener const&)            = delete;
-        ConnectionStateListener()                                          = delete;
+        ConnectionStateListener& operator=(ConnectionStateListener const&);
+        ConnectionStateListener(ConnectionStateListener const&);
+        ConnectionStateListener();
     };
 
     struct NatPunchInfo {
     public:
         // prevent constructor by default
-        NatPunchInfo& operator=(NatPunchInfo const&) = delete;
-        NatPunchInfo(NatPunchInfo const&)            = delete;
-        NatPunchInfo()                               = delete;
+        NatPunchInfo& operator=(NatPunchInfo const&);
+        NatPunchInfo(NatPunchInfo const&);
+        NatPunchInfo();
     };
 
 public:
     // prevent constructor by default
-    Connector& operator=(Connector const&) = delete;
-    Connector(Connector const&)            = delete;
-    Connector()                            = delete;
+    Connector& operator=(Connector const&);
+    Connector(Connector const&);
+    Connector();
 
 public:
     // NOLINTBEGIN
@@ -114,7 +114,7 @@ public:
     MCVAPI ~Connector();
 
     // symbol: ??0Connector@@QEAA@AEAUConnectionCallbacks@0@@Z
-    MCAPI Connector(struct Connector::ConnectionCallbacks&);
+    MCAPI explicit Connector(struct Connector::ConnectionCallbacks&);
 
     // NOLINTEND
 };

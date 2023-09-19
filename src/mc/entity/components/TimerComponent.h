@@ -5,8 +5,8 @@
 class TimerComponent {
 public:
     // prevent constructor by default
-    TimerComponent& operator=(TimerComponent const&) = delete;
-    TimerComponent(TimerComponent const&)            = delete;
+    TimerComponent& operator=(TimerComponent const&);
+    TimerComponent(TimerComponent const&);
 
 public:
     // NOLINTBEGIN

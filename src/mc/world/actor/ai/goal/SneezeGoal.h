@@ -9,9 +9,9 @@
 class SneezeGoal : public ::Goal {
 public:
     // prevent constructor by default
-    SneezeGoal& operator=(SneezeGoal const&) = delete;
-    SneezeGoal(SneezeGoal const&)            = delete;
-    SneezeGoal()                             = delete;
+    SneezeGoal& operator=(SneezeGoal const&);
+    SneezeGoal(SneezeGoal const&);
+    SneezeGoal();
 
 public:
     // NOLINTBEGIN

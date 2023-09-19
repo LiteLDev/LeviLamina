@@ -31,9 +31,9 @@ public:
         float                    mWalkSpeed;       // this+0x10
 
         // prevent constructor by default
-        SerializedLayer& operator=(SerializedLayer const&) = delete;
-        SerializedLayer(SerializedLayer const&)            = delete;
-        SerializedLayer()                                  = delete;
+        SerializedLayer& operator=(SerializedLayer const&);
+        SerializedLayer(SerializedLayer const&);
+        SerializedLayer();
     };
 
 public:
@@ -43,9 +43,9 @@ public:
     std::vector<SerializedLayer> mLayers;             // this+0x10
 
     // prevent constructor by default
-    SerializedAbilitiesData& operator=(SerializedAbilitiesData const&) = delete;
-    SerializedAbilitiesData(SerializedAbilitiesData const&)            = delete;
-    SerializedAbilitiesData()                                          = delete;
+    SerializedAbilitiesData& operator=(SerializedAbilitiesData const&);
+    SerializedAbilitiesData(SerializedAbilitiesData const&);
+    SerializedAbilitiesData();
 
 public:
     // NOLINTBEGIN
@@ -74,7 +74,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $ABILITIES_LAYER_MAP() { return ABILITIES_LAYER_MAP; }
+    auto& $ABILITIES_LAYER_MAP() { return ABILITIES_LAYER_MAP; }
 
     // NOLINTEND
 };

@@ -23,9 +23,9 @@ public:
 
 public:
     // prevent constructor by default
-    PistonBlock& operator=(PistonBlock const&) = delete;
-    PistonBlock(PistonBlock const&)            = delete;
-    PistonBlock()                              = delete;
+    PistonBlock& operator=(PistonBlock const&);
+    PistonBlock(PistonBlock const&);
+    PistonBlock();
 
 public:
     // NOLINTBEGIN
@@ -216,7 +216,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $ARM_DIRECTION_OFFSETS() { return ARM_DIRECTION_OFFSETS; }
+    auto& $ARM_DIRECTION_OFFSETS() { return ARM_DIRECTION_OFFSETS; }
 
     // NOLINTEND
 };

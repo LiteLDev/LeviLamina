@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class ConduitBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    ConduitBlock& operator=(ConduitBlock const&) = delete;
-    ConduitBlock(ConduitBlock const&)            = delete;
-    ConduitBlock()                               = delete;
+    ConduitBlock& operator=(ConduitBlock const&);
+    ConduitBlock(ConduitBlock const&);
+    ConduitBlock();
 
 public:
     // NOLINTBEGIN

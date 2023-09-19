@@ -26,9 +26,9 @@
 class ZombieVillager : public ::Zombie {
 public:
     // prevent constructor by default
-    ZombieVillager& operator=(ZombieVillager const&) = delete;
-    ZombieVillager(ZombieVillager const&)            = delete;
-    ZombieVillager()                                 = delete;
+    ZombieVillager& operator=(ZombieVillager const&);
+    ZombieVillager(ZombieVillager const&);
+    ZombieVillager();
 
 public:
     // NOLINTBEGIN

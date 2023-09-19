@@ -9,9 +9,9 @@
 class CommandFunctionEntry : public ::IFunctionEntry {
 public:
     // prevent constructor by default
-    CommandFunctionEntry& operator=(CommandFunctionEntry const&) = delete;
-    CommandFunctionEntry(CommandFunctionEntry const&)            = delete;
-    CommandFunctionEntry()                                       = delete;
+    CommandFunctionEntry& operator=(CommandFunctionEntry const&);
+    CommandFunctionEntry(CommandFunctionEntry const&);
+    CommandFunctionEntry();
 
 public:
     // NOLINTBEGIN

@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptIsShearedComponent {
 public:
     // prevent constructor by default
-    ScriptIsShearedComponent& operator=(ScriptIsShearedComponent const&) = delete;
-    ScriptIsShearedComponent(ScriptIsShearedComponent const&)            = delete;
-    ScriptIsShearedComponent()                                           = delete;
+    ScriptIsShearedComponent& operator=(ScriptIsShearedComponent const&);
+    ScriptIsShearedComponent(ScriptIsShearedComponent const&);
+    ScriptIsShearedComponent();
 
 public:
     // NOLINTBEGIN

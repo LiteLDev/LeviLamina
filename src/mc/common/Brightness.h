@@ -5,7 +5,7 @@
 struct Brightness {
 public:
     // prevent constructor by default
-    Brightness() = delete;
+    Brightness();
 
     uchar value;
 
@@ -15,7 +15,7 @@ public:
     MCAPI Brightness(struct Brightness const&);
 
     // symbol: ??0Brightness@@QEAA@AEBE@Z
-    MCAPI Brightness(uchar const&);
+    MCAPI explicit Brightness(uchar const&);
 
     // symbol: ??4Brightness@@QEAAAEAU0@AEBU0@@Z
     MCAPI struct Brightness& operator=(struct Brightness const&);

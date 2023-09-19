@@ -14,8 +14,8 @@ public:
 
 public:
     // prevent constructor by default
-    PlayerScoreboardEventListener& operator=(PlayerScoreboardEventListener const&) = delete;
-    PlayerScoreboardEventListener(PlayerScoreboardEventListener const&)            = delete;
+    PlayerScoreboardEventListener& operator=(PlayerScoreboardEventListener const&);
+    PlayerScoreboardEventListener(PlayerScoreboardEventListener const&);
 
 public:
     // NOLINTBEGIN

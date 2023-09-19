@@ -8,9 +8,9 @@
 class ShieldItemUtils {
 public:
     // prevent constructor by default
-    ShieldItemUtils& operator=(ShieldItemUtils const&) = delete;
-    ShieldItemUtils(ShieldItemUtils const&)            = delete;
-    ShieldItemUtils()                                  = delete;
+    ShieldItemUtils& operator=(ShieldItemUtils const&);
+    ShieldItemUtils(ShieldItemUtils const&);
+    ShieldItemUtils();
 
 public:
     // NOLINTBEGIN
@@ -30,7 +30,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mAlwaysBlockableDamageCauses() { return mAlwaysBlockableDamageCauses; }
+    auto& $mAlwaysBlockableDamageCauses() { return mAlwaysBlockableDamageCauses; }
 
     // NOLINTEND
 };

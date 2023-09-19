@@ -7,9 +7,9 @@ namespace Util::Url {
 struct Components {
 public:
     // prevent constructor by default
-    Components& operator=(Components const&) = delete;
-    Components(Components const&)            = delete;
-    Components()                             = delete;
+    Components& operator=(Components const&);
+    Components(Components const&);
+    Components();
 
 public:
     // NOLINTBEGIN

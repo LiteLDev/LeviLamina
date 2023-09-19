@@ -27,9 +27,9 @@
 class LavaSlime : public ::Slime {
 public:
     // prevent constructor by default
-    LavaSlime& operator=(LavaSlime const&) = delete;
-    LavaSlime(LavaSlime const&)            = delete;
-    LavaSlime()                            = delete;
+    LavaSlime& operator=(LavaSlime const&);
+    LavaSlime(LavaSlime const&);
+    LavaSlime();
 
 public:
     // NOLINTBEGIN

@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0AddressOrGUID@RakNet@@QEAA@AEBUSystemAddress@1@@Z
-    MCAPI AddressOrGUID(struct RakNet::SystemAddress const&);
+    MCAPI explicit AddressOrGUID(struct RakNet::SystemAddress const&);
 
     // symbol: ??0AddressOrGUID@RakNet@@QEAA@AEBU01@@Z
     MCAPI AddressOrGUID(struct RakNet::AddressOrGUID const&);

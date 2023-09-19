@@ -5,7 +5,7 @@
 class DBChunkStorageKey {
 public:
     // prevent constructor by default
-    DBChunkStorageKey& operator=(DBChunkStorageKey const&) = delete;
-    DBChunkStorageKey(DBChunkStorageKey const&)            = delete;
-    DBChunkStorageKey()                                    = delete;
+    DBChunkStorageKey& operator=(DBChunkStorageKey const&);
+    DBChunkStorageKey(DBChunkStorageKey const&);
+    DBChunkStorageKey();
 };

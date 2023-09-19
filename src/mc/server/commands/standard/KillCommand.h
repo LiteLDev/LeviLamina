@@ -8,9 +8,9 @@
 class KillCommand : public ::Command {
 public:
     // prevent constructor by default
-    KillCommand& operator=(KillCommand const&) = delete;
-    KillCommand(KillCommand const&)            = delete;
-    KillCommand()                              = delete;
+    KillCommand& operator=(KillCommand const&);
+    KillCommand(KillCommand const&);
+    KillCommand();
 
 public:
     // NOLINTBEGIN

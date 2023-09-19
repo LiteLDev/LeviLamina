@@ -5,9 +5,9 @@
 struct EntitySystemsInfo {
 public:
     // prevent constructor by default
-    EntitySystemsInfo& operator=(EntitySystemsInfo const&) = delete;
-    EntitySystemsInfo(EntitySystemsInfo const&)            = delete;
-    EntitySystemsInfo()                                    = delete;
+    EntitySystemsInfo& operator=(EntitySystemsInfo const&);
+    EntitySystemsInfo(EntitySystemsInfo const&);
+    EntitySystemsInfo();
 
 public:
     // NOLINTBEGIN

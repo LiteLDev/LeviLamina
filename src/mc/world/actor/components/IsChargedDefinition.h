@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct IsChargedDefinition {
 public:
     // prevent constructor by default
-    IsChargedDefinition& operator=(IsChargedDefinition const&) = delete;
-    IsChargedDefinition(IsChargedDefinition const&)            = delete;
-    IsChargedDefinition()                                      = delete;
+    IsChargedDefinition& operator=(IsChargedDefinition const&);
+    IsChargedDefinition(IsChargedDefinition const&);
+    IsChargedDefinition();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 struct ContainerValidationOperation {
 public:
     // prevent constructor by default
-    ContainerValidationOperation& operator=(ContainerValidationOperation const&) = delete;
-    ContainerValidationOperation(ContainerValidationOperation const&)            = delete;
-    ContainerValidationOperation()                                               = delete;
+    ContainerValidationOperation& operator=(ContainerValidationOperation const&);
+    ContainerValidationOperation(ContainerValidationOperation const&);
+    ContainerValidationOperation();
 };

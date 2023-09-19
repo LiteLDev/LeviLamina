@@ -8,9 +8,9 @@
 class GlideMoveControlDescription : public ::MoveControlDescription {
 public:
     // prevent constructor by default
-    GlideMoveControlDescription& operator=(GlideMoveControlDescription const&) = delete;
-    GlideMoveControlDescription(GlideMoveControlDescription const&)            = delete;
-    GlideMoveControlDescription()                                              = delete;
+    GlideMoveControlDescription& operator=(GlideMoveControlDescription const&);
+    GlideMoveControlDescription(GlideMoveControlDescription const&);
+    GlideMoveControlDescription();
 
 public:
     // NOLINTBEGIN

@@ -20,9 +20,9 @@ namespace gametest { struct TestParameters; }
 class MinecraftGameTest : public ::LevelListener {
 public:
     // prevent constructor by default
-    MinecraftGameTest& operator=(MinecraftGameTest const&) = delete;
-    MinecraftGameTest(MinecraftGameTest const&)            = delete;
-    MinecraftGameTest()                                    = delete;
+    MinecraftGameTest& operator=(MinecraftGameTest const&);
+    MinecraftGameTest(MinecraftGameTest const&);
+    MinecraftGameTest();
 
 public:
     // NOLINTBEGIN
@@ -91,7 +91,7 @@ public:
     virtual void __unk_vfn_24();
 
     // symbol: ??0MinecraftGameTest@@QEAA@AEAVLevel@@@Z
-    MCAPI MinecraftGameTest(class Level&);
+    MCAPI explicit MinecraftGameTest(class Level&);
 
     // symbol: ?clearAllTests@MinecraftGameTest@@QEAAXAEAVBlockSource@@@Z
     MCAPI void clearAllTests(class BlockSource&);

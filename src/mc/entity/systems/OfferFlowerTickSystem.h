@@ -9,9 +9,9 @@
 class OfferFlowerTickSystem {
 public:
     // prevent constructor by default
-    OfferFlowerTickSystem& operator=(OfferFlowerTickSystem const&) = delete;
-    OfferFlowerTickSystem(OfferFlowerTickSystem const&)            = delete;
-    OfferFlowerTickSystem()                                        = delete;
+    OfferFlowerTickSystem& operator=(OfferFlowerTickSystem const&);
+    OfferFlowerTickSystem(OfferFlowerTickSystem const&);
+    OfferFlowerTickSystem();
 
 public:
     // NOLINTBEGIN

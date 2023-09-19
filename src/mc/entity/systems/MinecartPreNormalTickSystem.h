@@ -8,9 +8,9 @@
 class MinecartPreNormalTickSystem {
 public:
     // prevent constructor by default
-    MinecartPreNormalTickSystem& operator=(MinecartPreNormalTickSystem const&) = delete;
-    MinecartPreNormalTickSystem(MinecartPreNormalTickSystem const&)            = delete;
-    MinecartPreNormalTickSystem()                                              = delete;
+    MinecartPreNormalTickSystem& operator=(MinecartPreNormalTickSystem const&);
+    MinecartPreNormalTickSystem(MinecartPreNormalTickSystem const&);
+    MinecartPreNormalTickSystem();
 
 public:
     // NOLINTBEGIN

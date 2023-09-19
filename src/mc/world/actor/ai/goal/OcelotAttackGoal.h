@@ -9,9 +9,9 @@
 class OcelotAttackGoal : public ::Goal {
 public:
     // prevent constructor by default
-    OcelotAttackGoal& operator=(OcelotAttackGoal const&) = delete;
-    OcelotAttackGoal(OcelotAttackGoal const&)            = delete;
-    OcelotAttackGoal()                                   = delete;
+    OcelotAttackGoal& operator=(OcelotAttackGoal const&);
+    OcelotAttackGoal(OcelotAttackGoal const&);
+    OcelotAttackGoal();
 
 public:
     // NOLINTBEGIN
@@ -35,7 +35,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0OcelotAttackGoal@@QEAA@AEAVMob@@@Z
-    MCAPI OcelotAttackGoal(class Mob&);
+    MCAPI explicit OcelotAttackGoal(class Mob&);
 
     // NOLINTEND
 };

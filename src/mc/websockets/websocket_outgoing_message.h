@@ -5,9 +5,9 @@
 struct websocket_outgoing_message {
 public:
     // prevent constructor by default
-    websocket_outgoing_message& operator=(websocket_outgoing_message const&) = delete;
-    websocket_outgoing_message(websocket_outgoing_message const&)            = delete;
-    websocket_outgoing_message()                                             = delete;
+    websocket_outgoing_message& operator=(websocket_outgoing_message const&);
+    websocket_outgoing_message(websocket_outgoing_message const&);
+    websocket_outgoing_message();
 
 public:
     // NOLINTBEGIN

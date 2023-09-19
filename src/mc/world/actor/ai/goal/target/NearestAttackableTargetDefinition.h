@@ -14,9 +14,9 @@ namespace JsonUtil { class EmptyClass; }
 class NearestAttackableTargetDefinition : public ::TargetGoalDefinition {
 public:
     // prevent constructor by default
-    NearestAttackableTargetDefinition& operator=(NearestAttackableTargetDefinition const&) = delete;
-    NearestAttackableTargetDefinition(NearestAttackableTargetDefinition const&)            = delete;
-    NearestAttackableTargetDefinition()                                                    = delete;
+    NearestAttackableTargetDefinition& operator=(NearestAttackableTargetDefinition const&);
+    NearestAttackableTargetDefinition(NearestAttackableTargetDefinition const&);
+    NearestAttackableTargetDefinition();
 
 public:
     // NOLINTBEGIN

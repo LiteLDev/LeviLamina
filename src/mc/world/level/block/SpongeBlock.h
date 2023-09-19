@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class SpongeBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    SpongeBlock& operator=(SpongeBlock const&) = delete;
-    SpongeBlock(SpongeBlock const&)            = delete;
-    SpongeBlock()                              = delete;
+    SpongeBlock& operator=(SpongeBlock const&);
+    SpongeBlock(SpongeBlock const&);
+    SpongeBlock();
 
 public:
     // NOLINTBEGIN

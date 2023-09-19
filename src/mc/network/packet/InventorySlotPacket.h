@@ -17,8 +17,8 @@ public:
     NetworkItemStackDescriptor mItem;        // this+0x38
 
     // prevent constructor by default
-    InventorySlotPacket& operator=(InventorySlotPacket const&) = delete;
-    InventorySlotPacket(InventorySlotPacket const&)            = delete;
+    InventorySlotPacket& operator=(InventorySlotPacket const&);
+    InventorySlotPacket(InventorySlotPacket const&);
 
 public:
     // NOLINTBEGIN

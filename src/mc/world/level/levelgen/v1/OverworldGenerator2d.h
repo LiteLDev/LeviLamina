@@ -11,9 +11,9 @@
 class OverworldGenerator2d : public ::OverworldGenerator {
 public:
     // prevent constructor by default
-    OverworldGenerator2d& operator=(OverworldGenerator2d const&) = delete;
-    OverworldGenerator2d(OverworldGenerator2d const&)            = delete;
-    OverworldGenerator2d()                                       = delete;
+    OverworldGenerator2d& operator=(OverworldGenerator2d const&);
+    OverworldGenerator2d(OverworldGenerator2d const&);
+    OverworldGenerator2d();
 
 public:
     // NOLINTBEGIN

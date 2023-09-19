@@ -7,9 +7,9 @@ namespace Bedrock::Http::MethodType {
 class HEAD {
 public:
     // prevent constructor by default
-    HEAD& operator=(HEAD const&) = delete;
-    HEAD(HEAD const&)            = delete;
-    HEAD()                       = delete;
+    HEAD& operator=(HEAD const&);
+    HEAD(HEAD const&);
+    HEAD();
 
 public:
     // NOLINTBEGIN

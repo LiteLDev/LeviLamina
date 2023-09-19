@@ -12,8 +12,8 @@ public:
 
 public:
     // prevent constructor by default
-    SnapToSurfaceFeature& operator=(SnapToSurfaceFeature const&) = delete;
-    SnapToSurfaceFeature(SnapToSurfaceFeature const&)            = delete;
+    SnapToSurfaceFeature& operator=(SnapToSurfaceFeature const&);
+    SnapToSurfaceFeature(SnapToSurfaceFeature const&);
 
 public:
     // NOLINTBEGIN

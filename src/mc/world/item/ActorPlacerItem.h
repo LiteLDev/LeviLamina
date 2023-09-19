@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class ActorPlacerItem : public ::Item {
 public:
     // prevent constructor by default
-    ActorPlacerItem& operator=(ActorPlacerItem const&) = delete;
-    ActorPlacerItem(ActorPlacerItem const&)            = delete;
-    ActorPlacerItem()                                  = delete;
+    ActorPlacerItem& operator=(ActorPlacerItem const&);
+    ActorPlacerItem(ActorPlacerItem const&);
+    ActorPlacerItem();
 
 public:
     // NOLINTBEGIN
@@ -171,13 +171,13 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $EGG_MASK_ID() { return EGG_MASK_ID; }
+    auto& $EGG_MASK_ID() { return EGG_MASK_ID; }
 
-    inline auto& $NUM_SPAWN_EGG_TEXTURES() { return NUM_SPAWN_EGG_TEXTURES; }
+    auto& $NUM_SPAWN_EGG_TEXTURES() { return NUM_SPAWN_EGG_TEXTURES; }
 
-    inline auto& $mCustomSpawnEggs() { return mCustomSpawnEggs; }
+    auto& $mCustomSpawnEggs() { return mCustomSpawnEggs; }
 
-    inline auto& $mEggTextureInfoMap() { return mEggTextureInfoMap; }
+    auto& $mEggTextureInfoMap() { return mEggTextureInfoMap; }
 
     // NOLINTEND
 };

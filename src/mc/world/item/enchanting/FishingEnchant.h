@@ -8,9 +8,9 @@
 class FishingEnchant : public ::Enchant {
 public:
     // prevent constructor by default
-    FishingEnchant& operator=(FishingEnchant const&) = delete;
-    FishingEnchant(FishingEnchant const&)            = delete;
-    FishingEnchant()                                 = delete;
+    FishingEnchant& operator=(FishingEnchant const&);
+    FishingEnchant(FishingEnchant const&);
+    FishingEnchant();
 
 public:
     // NOLINTBEGIN

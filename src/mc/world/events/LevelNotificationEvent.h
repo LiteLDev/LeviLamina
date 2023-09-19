@@ -5,9 +5,9 @@
 struct LevelNotificationEvent {
 public:
     // prevent constructor by default
-    LevelNotificationEvent& operator=(LevelNotificationEvent const&) = delete;
-    LevelNotificationEvent(LevelNotificationEvent const&)            = delete;
-    LevelNotificationEvent()                                         = delete;
+    LevelNotificationEvent& operator=(LevelNotificationEvent const&);
+    LevelNotificationEvent(LevelNotificationEvent const&);
+    LevelNotificationEvent();
 
 public:
     // NOLINTBEGIN

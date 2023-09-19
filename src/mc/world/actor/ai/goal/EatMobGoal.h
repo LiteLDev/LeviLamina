@@ -24,8 +24,8 @@ public:
     class Definition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        Definition& operator=(Definition const&) = delete;
-        Definition(Definition const&)            = delete;
+        Definition& operator=(Definition const&);
+        Definition(Definition const&);
 
     public:
         // NOLINTBEGIN
@@ -51,9 +51,9 @@ public:
 
 public:
     // prevent constructor by default
-    EatMobGoal& operator=(EatMobGoal const&) = delete;
-    EatMobGoal(EatMobGoal const&)            = delete;
-    EatMobGoal()                             = delete;
+    EatMobGoal& operator=(EatMobGoal const&);
+    EatMobGoal(EatMobGoal const&);
+    EatMobGoal();
 
 public:
     // NOLINTBEGIN
@@ -80,7 +80,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0EatMobGoal@@QEAA@AEAVMob@@@Z
-    MCAPI EatMobGoal(class Mob&);
+    MCAPI explicit EatMobGoal(class Mob&);
 
     // NOLINTEND
 };

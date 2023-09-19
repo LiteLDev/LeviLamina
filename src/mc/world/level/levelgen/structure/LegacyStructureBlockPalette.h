@@ -5,8 +5,8 @@
 class LegacyStructureBlockPalette {
 public:
     // prevent constructor by default
-    LegacyStructureBlockPalette& operator=(LegacyStructureBlockPalette const&) = delete;
-    LegacyStructureBlockPalette(LegacyStructureBlockPalette const&)            = delete;
+    LegacyStructureBlockPalette& operator=(LegacyStructureBlockPalette const&);
+    LegacyStructureBlockPalette(LegacyStructureBlockPalette const&);
 
 public:
     // NOLINTBEGIN

@@ -14,7 +14,7 @@ namespace Bedrock::Http {
 class Response {
 public:
     // prevent constructor by default
-    Response& operator=(Response const&) = delete;
+    Response& operator=(Response const&);
 
 public:
     // NOLINTBEGIN
@@ -25,7 +25,7 @@ public:
     MCAPI Response(class Bedrock::Http::Response&&);
 
     // symbol: ??0Response@Http@Bedrock@@QEAA@VStatus@12@@Z
-    MCAPI Response(class Bedrock::Http::Status);
+    MCAPI explicit Response(class Bedrock::Http::Status);
 
     // symbol: ??0Response@Http@Bedrock@@QEAA@AEBV012@@Z
     MCAPI Response(class Bedrock::Http::Response const&);

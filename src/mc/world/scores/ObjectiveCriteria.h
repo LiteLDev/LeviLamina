@@ -15,9 +15,9 @@ public:
 
 public:
     // prevent constructor by default
-    ObjectiveCriteria& operator=(ObjectiveCriteria const&) = delete;
-    ObjectiveCriteria(ObjectiveCriteria const&)            = delete;
-    ObjectiveCriteria()                                    = delete;
+    ObjectiveCriteria& operator=(ObjectiveCriteria const&);
+    ObjectiveCriteria(ObjectiveCriteria const&);
+    ObjectiveCriteria();
 
 public:
     // NOLINTBEGIN

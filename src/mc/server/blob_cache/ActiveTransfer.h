@@ -7,9 +7,9 @@ namespace ClientBlobCache::Server {
 class ActiveTransfer {
 public:
     // prevent constructor by default
-    ActiveTransfer& operator=(ActiveTransfer const&) = delete;
-    ActiveTransfer(ActiveTransfer const&)            = delete;
-    ActiveTransfer()                                 = delete;
+    ActiveTransfer& operator=(ActiveTransfer const&);
+    ActiveTransfer(ActiveTransfer const&);
+    ActiveTransfer();
 
 public:
     // NOLINTBEGIN

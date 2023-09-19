@@ -41,7 +41,7 @@ public:
     MCAPI RecipeIngredient(class Item const&, int, ushort);
 
     // symbol: ??0RecipeIngredient@@QEAA@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI RecipeIngredient(class ReadOnlyBinaryStream&);
+    MCAPI explicit RecipeIngredient(class ReadOnlyBinaryStream&);
 
     // symbol: ??0RecipeIngredient@@QEAA@$$QEAV0@@Z
     MCAPI RecipeIngredient(class RecipeIngredient&&);

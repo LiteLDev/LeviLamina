@@ -15,9 +15,9 @@ public:
 
 public:
     // prevent constructor by default
-    IRequestAction& operator=(IRequestAction const&) = delete;
-    IRequestAction(IRequestAction const&)            = delete;
-    IRequestAction()                                 = delete;
+    IRequestAction& operator=(IRequestAction const&);
+    IRequestAction(IRequestAction const&);
+    IRequestAction();
 
 public:
     // NOLINTBEGIN
@@ -37,7 +37,7 @@ public:
     MCVAPI ~IRequestAction();
 
     // symbol: ??0IRequestAction@@QEAA@AEBW4RequestActionType@0@@Z
-    MCAPI IRequestAction(::IRequestAction::RequestActionType const&);
+    MCAPI explicit IRequestAction(::IRequestAction::RequestActionType const&);
 
     // symbol: ?isValidTag@IRequestAction@@SA_NAEBVCompoundTag@@@Z
     MCAPI static bool isValidTag(class CompoundTag const&);

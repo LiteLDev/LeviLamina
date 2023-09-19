@@ -5,9 +5,9 @@
 class MolangContextVariableMapWithCleanup {
 public:
     // prevent constructor by default
-    MolangContextVariableMapWithCleanup& operator=(MolangContextVariableMapWithCleanup const&) = delete;
-    MolangContextVariableMapWithCleanup(MolangContextVariableMapWithCleanup const&)            = delete;
-    MolangContextVariableMapWithCleanup()                                                      = delete;
+    MolangContextVariableMapWithCleanup& operator=(MolangContextVariableMapWithCleanup const&);
+    MolangContextVariableMapWithCleanup(MolangContextVariableMapWithCleanup const&);
+    MolangContextVariableMapWithCleanup();
 
 public:
     // NOLINTBEGIN

@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class MoveTowardsDwellingRestrictionDefinition : public ::MoveTowardsRestrictionDefinition {
 public:
     // prevent constructor by default
-    MoveTowardsDwellingRestrictionDefinition& operator=(MoveTowardsDwellingRestrictionDefinition const&) = delete;
-    MoveTowardsDwellingRestrictionDefinition(MoveTowardsDwellingRestrictionDefinition const&)            = delete;
+    MoveTowardsDwellingRestrictionDefinition& operator=(MoveTowardsDwellingRestrictionDefinition const&);
+    MoveTowardsDwellingRestrictionDefinition(MoveTowardsDwellingRestrictionDefinition const&);
 
 public:
     // NOLINTBEGIN

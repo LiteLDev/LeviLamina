@@ -12,9 +12,9 @@
 class ActorEventCoordinator {
 public:
     // prevent constructor by default
-    ActorEventCoordinator& operator=(ActorEventCoordinator const&) = delete;
-    ActorEventCoordinator(ActorEventCoordinator const&)            = delete;
-    ActorEventCoordinator()                                        = delete;
+    ActorEventCoordinator& operator=(ActorEventCoordinator const&);
+    ActorEventCoordinator(ActorEventCoordinator const&);
+    ActorEventCoordinator();
 
 public:
     // NOLINTBEGIN

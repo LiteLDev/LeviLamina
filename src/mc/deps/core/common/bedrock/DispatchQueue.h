@@ -27,9 +27,9 @@ public:
     class AsyncQueueResult {
     public:
         // prevent constructor by default
-        AsyncQueueResult& operator=(AsyncQueueResult const&) = delete;
-        AsyncQueueResult(AsyncQueueResult const&)            = delete;
-        AsyncQueueResult()                                   = delete;
+        AsyncQueueResult& operator=(AsyncQueueResult const&);
+        AsyncQueueResult(AsyncQueueResult const&);
+        AsyncQueueResult();
 
     public:
         // NOLINTBEGIN
@@ -68,9 +68,9 @@ public:
 
 public:
     // prevent constructor by default
-    DispatchQueue& operator=(DispatchQueue const&) = delete;
-    DispatchQueue(DispatchQueue const&)            = delete;
-    DispatchQueue()                                = delete;
+    DispatchQueue& operator=(DispatchQueue const&);
+    DispatchQueue(DispatchQueue const&);
+    DispatchQueue();
 
 public:
     // NOLINTBEGIN
@@ -86,7 +86,7 @@ public:
     MCVAPI ~DispatchQueue();
 
     // symbol: ??0DispatchQueue@Http@Bedrock@@QEAA@V?$shared_ptr@VDispatcherProcess@Http@Bedrock@@@std@@@Z
-    MCAPI DispatchQueue(std::shared_ptr<class Bedrock::Http::DispatcherProcess>);
+    MCAPI explicit DispatchQueue(std::shared_ptr<class Bedrock::Http::DispatcherProcess>);
 
     // NOLINTEND
 

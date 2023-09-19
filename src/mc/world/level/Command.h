@@ -8,8 +8,8 @@
 class Command {
 public:
     // prevent constructor by default
-    Command& operator=(Command const&) = delete;
-    Command(Command const&)            = delete;
+    Command& operator=(Command const&);
+    Command(Command const&);
 
     int                               mVersion;         // this+0x8
     class CommandRegistry const*      mRegistry;        // this+0x10

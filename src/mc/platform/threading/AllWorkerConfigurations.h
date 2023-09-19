@@ -5,8 +5,8 @@
 class AllWorkerConfigurations {
 public:
     // prevent constructor by default
-    AllWorkerConfigurations& operator=(AllWorkerConfigurations const&) = delete;
-    AllWorkerConfigurations(AllWorkerConfigurations const&)            = delete;
+    AllWorkerConfigurations& operator=(AllWorkerConfigurations const&);
+    AllWorkerConfigurations(AllWorkerConfigurations const&);
 
 public:
     // NOLINTBEGIN

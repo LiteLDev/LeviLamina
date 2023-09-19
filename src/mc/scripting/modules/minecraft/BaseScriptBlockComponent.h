@@ -22,7 +22,7 @@ namespace ScriptModuleMinecraft {
 class BaseScriptBlockComponent : public ::ScriptModuleMinecraft::ScriptComponent {
 public:
     // prevent constructor by default
-    BaseScriptBlockComponent() = delete;
+    BaseScriptBlockComponent();
 
 public:
     // NOLINTBEGIN

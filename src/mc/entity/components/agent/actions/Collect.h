@@ -7,9 +7,9 @@ namespace AgentComponents::Actions {
 struct Collect {
 public:
     // prevent constructor by default
-    Collect& operator=(Collect const&) = delete;
-    Collect(Collect const&)            = delete;
-    Collect()                          = delete;
+    Collect& operator=(Collect const&);
+    Collect(Collect const&);
+    Collect();
 };
 
 }; // namespace AgentComponents::Actions

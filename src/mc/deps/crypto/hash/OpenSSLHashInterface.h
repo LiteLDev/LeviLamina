@@ -7,9 +7,9 @@ namespace Crypto::Hash {
 class OpenSSLHashInterface {
 public:
     // prevent constructor by default
-    OpenSSLHashInterface& operator=(OpenSSLHashInterface const&) = delete;
-    OpenSSLHashInterface(OpenSSLHashInterface const&)            = delete;
-    OpenSSLHashInterface()                                       = delete;
+    OpenSSLHashInterface& operator=(OpenSSLHashInterface const&);
+    OpenSSLHashInterface(OpenSSLHashInterface const&);
+    OpenSSLHashInterface();
 
 public:
     // NOLINTBEGIN

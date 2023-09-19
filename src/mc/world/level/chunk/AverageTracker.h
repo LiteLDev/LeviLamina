@@ -5,9 +5,9 @@
 struct AverageTracker {
 public:
     // prevent constructor by default
-    AverageTracker& operator=(AverageTracker const&) = delete;
-    AverageTracker(AverageTracker const&)            = delete;
-    AverageTracker()                                 = delete;
+    AverageTracker& operator=(AverageTracker const&);
+    AverageTracker(AverageTracker const&);
+    AverageTracker();
 
 public:
     // NOLINTBEGIN

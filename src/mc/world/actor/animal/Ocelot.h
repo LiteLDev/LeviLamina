@@ -26,9 +26,9 @@
 class Ocelot : public ::Animal {
 public:
     // prevent constructor by default
-    Ocelot& operator=(Ocelot const&) = delete;
-    Ocelot(Ocelot const&)            = delete;
-    Ocelot()                         = delete;
+    Ocelot& operator=(Ocelot const&);
+    Ocelot(Ocelot const&);
+    Ocelot();
 
 public:
     // NOLINTBEGIN

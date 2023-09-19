@@ -14,7 +14,7 @@ public:
 
     // NOLINTBEGIN
     // symbol: ??0ScoreboardId@@QEAA@_J@Z
-    MCAPI ScoreboardId(int64);
+    MCAPI explicit ScoreboardId(int64);
 
     // symbol: ??0ScoreboardId@@QEAA@AEBU0@@Z
     MCAPI ScoreboardId(struct ScoreboardId const&);
@@ -32,7 +32,7 @@ public:
     MCAPI bool isValid() const;
 
     // symbol: ??BScoreboardId@@QEBA_NXZ
-    MCAPI operator bool() const;
+    MCAPI explicit operator bool() const;
 
     // symbol: ??9ScoreboardId@@QEBA_NAEBU0@@Z
     MCAPI bool operator!=(struct ScoreboardId const&) const;

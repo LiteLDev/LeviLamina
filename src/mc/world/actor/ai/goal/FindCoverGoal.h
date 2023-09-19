@@ -9,9 +9,9 @@
 class FindCoverGoal : public ::Goal {
 public:
     // prevent constructor by default
-    FindCoverGoal& operator=(FindCoverGoal const&) = delete;
-    FindCoverGoal(FindCoverGoal const&)            = delete;
-    FindCoverGoal()                                = delete;
+    FindCoverGoal& operator=(FindCoverGoal const&);
+    FindCoverGoal(FindCoverGoal const&);
+    FindCoverGoal();
 
 public:
     // NOLINTBEGIN

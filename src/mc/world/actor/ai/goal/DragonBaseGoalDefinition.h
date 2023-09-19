@@ -8,8 +8,8 @@
 class DragonBaseGoalDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    DragonBaseGoalDefinition& operator=(DragonBaseGoalDefinition const&) = delete;
-    DragonBaseGoalDefinition(DragonBaseGoalDefinition const&)            = delete;
+    DragonBaseGoalDefinition& operator=(DragonBaseGoalDefinition const&);
+    DragonBaseGoalDefinition(DragonBaseGoalDefinition const&);
 
 public:
     // NOLINTBEGIN

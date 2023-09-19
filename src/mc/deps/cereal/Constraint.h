@@ -12,9 +12,9 @@ namespace cereal {
 class Constraint {
 public:
     // prevent constructor by default
-    Constraint& operator=(Constraint const&) = delete;
-    Constraint(Constraint const&)            = delete;
-    Constraint()                             = delete;
+    Constraint& operator=(Constraint const&);
+    Constraint(Constraint const&);
+    Constraint();
 
 public:
     // NOLINTBEGIN

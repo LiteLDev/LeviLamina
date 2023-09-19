@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class ActorHasComponentTest : public ::SimpleHashStringFilterTest {
 public:
     // prevent constructor by default
-    ActorHasComponentTest& operator=(ActorHasComponentTest const&) = delete;
-    ActorHasComponentTest(ActorHasComponentTest const&)            = delete;
-    ActorHasComponentTest()                                        = delete;
+    ActorHasComponentTest& operator=(ActorHasComponentTest const&);
+    ActorHasComponentTest(ActorHasComponentTest const&);
+    ActorHasComponentTest();
 
 public:
     // NOLINTBEGIN

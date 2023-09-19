@@ -15,9 +15,9 @@ namespace JsonUtil { class EmptyClass; }
 class RemoveMobEffectResponse : public ::EventResponse {
 public:
     // prevent constructor by default
-    RemoveMobEffectResponse& operator=(RemoveMobEffectResponse const&) = delete;
-    RemoveMobEffectResponse(RemoveMobEffectResponse const&)            = delete;
-    RemoveMobEffectResponse()                                          = delete;
+    RemoveMobEffectResponse& operator=(RemoveMobEffectResponse const&);
+    RemoveMobEffectResponse(RemoveMobEffectResponse const&);
+    RemoveMobEffectResponse();
 
 public:
     // NOLINTBEGIN

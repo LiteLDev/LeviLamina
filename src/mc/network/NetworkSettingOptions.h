@@ -12,7 +12,7 @@ public:
     float                      mClientThrottleScalar;
 
     // prevent constructor by default
-    NetworkSettingOptions& operator=(NetworkSettingOptions const&) = delete;
-    NetworkSettingOptions(NetworkSettingOptions const&)            = delete;
-    NetworkSettingOptions()                                        = delete;
+    NetworkSettingOptions& operator=(NetworkSettingOptions const&);
+    NetworkSettingOptions(NetworkSettingOptions const&);
+    NetworkSettingOptions();
 };

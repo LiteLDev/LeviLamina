@@ -9,9 +9,9 @@
 class NBRoomCrossing : public ::NetherFortressPiece {
 public:
     // prevent constructor by default
-    NBRoomCrossing& operator=(NBRoomCrossing const&) = delete;
-    NBRoomCrossing(NBRoomCrossing const&)            = delete;
-    NBRoomCrossing()                                 = delete;
+    NBRoomCrossing& operator=(NBRoomCrossing const&);
+    NBRoomCrossing(NBRoomCrossing const&);
+    NBRoomCrossing();
 
 public:
     // NOLINTBEGIN

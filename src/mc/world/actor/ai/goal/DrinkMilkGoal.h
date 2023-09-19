@@ -24,9 +24,9 @@ public:
     class DrinkMilkDefinition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        DrinkMilkDefinition& operator=(DrinkMilkDefinition const&) = delete;
-        DrinkMilkDefinition(DrinkMilkDefinition const&)            = delete;
-        DrinkMilkDefinition()                                      = delete;
+        DrinkMilkDefinition& operator=(DrinkMilkDefinition const&);
+        DrinkMilkDefinition(DrinkMilkDefinition const&);
+        DrinkMilkDefinition();
 
     public:
         // NOLINTBEGIN
@@ -46,9 +46,9 @@ public:
 
 public:
     // prevent constructor by default
-    DrinkMilkGoal& operator=(DrinkMilkGoal const&) = delete;
-    DrinkMilkGoal(DrinkMilkGoal const&)            = delete;
-    DrinkMilkGoal()                                = delete;
+    DrinkMilkGoal& operator=(DrinkMilkGoal const&);
+    DrinkMilkGoal(DrinkMilkGoal const&);
+    DrinkMilkGoal();
 
 public:
     // NOLINTBEGIN
@@ -75,7 +75,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0DrinkMilkGoal@@QEAA@AEAVMob@@@Z
-    MCAPI DrinkMilkGoal(class Mob&);
+    MCAPI explicit DrinkMilkGoal(class Mob&);
 
     // NOLINTEND
 };

@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct VariantDefinition {
 public:
     // prevent constructor by default
-    VariantDefinition& operator=(VariantDefinition const&) = delete;
-    VariantDefinition(VariantDefinition const&)            = delete;
-    VariantDefinition()                                    = delete;
+    VariantDefinition& operator=(VariantDefinition const&);
+    VariantDefinition(VariantDefinition const&);
+    VariantDefinition();
 
 public:
     // NOLINTBEGIN

@@ -10,9 +10,9 @@
 class TheEndGenerator : public ::WorldGenerator {
 public:
     // prevent constructor by default
-    TheEndGenerator& operator=(TheEndGenerator const&) = delete;
-    TheEndGenerator(TheEndGenerator const&)            = delete;
-    TheEndGenerator()                                  = delete;
+    TheEndGenerator& operator=(TheEndGenerator const&);
+    TheEndGenerator(TheEndGenerator const&);
+    TheEndGenerator();
 
 public:
     // NOLINTBEGIN

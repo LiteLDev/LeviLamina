@@ -8,9 +8,9 @@
 class MobSpawnerBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    MobSpawnerBlockActor& operator=(MobSpawnerBlockActor const&) = delete;
-    MobSpawnerBlockActor(MobSpawnerBlockActor const&)            = delete;
-    MobSpawnerBlockActor()                                       = delete;
+    MobSpawnerBlockActor& operator=(MobSpawnerBlockActor const&);
+    MobSpawnerBlockActor(MobSpawnerBlockActor const&);
+    MobSpawnerBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -67,7 +67,7 @@ public:
     virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
 
     // symbol: ??0MobSpawnerBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI MobSpawnerBlockActor(class BlockPos const&);
+    MCAPI explicit MobSpawnerBlockActor(class BlockPos const&);
 
     // symbol: ?getSpawner@MobSpawnerBlockActor@@QEAAAEAVBaseMobSpawner@@XZ
     MCAPI class BaseMobSpawner& getSpawner();

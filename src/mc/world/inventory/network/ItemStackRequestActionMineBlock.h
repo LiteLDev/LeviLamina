@@ -13,9 +13,9 @@ public:
 
 public:
     // prevent constructor by default
-    ItemStackRequestActionMineBlock& operator=(ItemStackRequestActionMineBlock const&) = delete;
-    ItemStackRequestActionMineBlock(ItemStackRequestActionMineBlock const&)            = delete;
-    ItemStackRequestActionMineBlock()                                                  = delete;
+    ItemStackRequestActionMineBlock& operator=(ItemStackRequestActionMineBlock const&);
+    ItemStackRequestActionMineBlock(ItemStackRequestActionMineBlock const&);
+    ItemStackRequestActionMineBlock();
 
 public:
     // NOLINTBEGIN

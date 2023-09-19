@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class GiveableDefinition {
 public:
     // prevent constructor by default
-    GiveableDefinition& operator=(GiveableDefinition const&) = delete;
-    GiveableDefinition(GiveableDefinition const&)            = delete;
-    GiveableDefinition()                                     = delete;
+    GiveableDefinition& operator=(GiveableDefinition const&);
+    GiveableDefinition(GiveableDefinition const&);
+    GiveableDefinition();
 
 public:
     // NOLINTBEGIN

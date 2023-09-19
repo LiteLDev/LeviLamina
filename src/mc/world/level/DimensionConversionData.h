@@ -5,9 +5,9 @@
 class DimensionConversionData {
 public:
     // prevent constructor by default
-    DimensionConversionData& operator=(DimensionConversionData const&) = delete;
-    DimensionConversionData(DimensionConversionData const&)            = delete;
-    DimensionConversionData()                                          = delete;
+    DimensionConversionData& operator=(DimensionConversionData const&);
+    DimensionConversionData(DimensionConversionData const&);
+    DimensionConversionData();
 
 public:
     // NOLINTBEGIN

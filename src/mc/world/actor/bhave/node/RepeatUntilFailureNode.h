@@ -9,8 +9,8 @@
 class RepeatUntilFailureNode : public ::BehaviorNode {
 public:
     // prevent constructor by default
-    RepeatUntilFailureNode& operator=(RepeatUntilFailureNode const&) = delete;
-    RepeatUntilFailureNode(RepeatUntilFailureNode const&)            = delete;
+    RepeatUntilFailureNode& operator=(RepeatUntilFailureNode const&);
+    RepeatUntilFailureNode(RepeatUntilFailureNode const&);
 
 public:
     // NOLINTBEGIN

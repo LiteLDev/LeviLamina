@@ -8,9 +8,9 @@
 class BatteryMonitorInterface {
 public:
     // prevent constructor by default
-    BatteryMonitorInterface& operator=(BatteryMonitorInterface const&) = delete;
-    BatteryMonitorInterface(BatteryMonitorInterface const&)            = delete;
-    BatteryMonitorInterface()                                          = delete;
+    BatteryMonitorInterface& operator=(BatteryMonitorInterface const&);
+    BatteryMonitorInterface(BatteryMonitorInterface const&);
+    BatteryMonitorInterface();
 
 public:
     // NOLINTBEGIN

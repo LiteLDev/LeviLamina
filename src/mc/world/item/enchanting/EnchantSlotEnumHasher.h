@@ -5,7 +5,7 @@
 struct EnchantSlotEnumHasher {
 public:
     // prevent constructor by default
-    EnchantSlotEnumHasher& operator=(EnchantSlotEnumHasher const&) = delete;
-    EnchantSlotEnumHasher(EnchantSlotEnumHasher const&)            = delete;
-    EnchantSlotEnumHasher()                                        = delete;
+    EnchantSlotEnumHasher& operator=(EnchantSlotEnumHasher const&);
+    EnchantSlotEnumHasher(EnchantSlotEnumHasher const&);
+    EnchantSlotEnumHasher();
 };

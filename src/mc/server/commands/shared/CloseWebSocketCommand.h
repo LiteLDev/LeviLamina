@@ -8,9 +8,9 @@
 class CloseWebSocketCommand : public ::Command {
 public:
     // prevent constructor by default
-    CloseWebSocketCommand& operator=(CloseWebSocketCommand const&) = delete;
-    CloseWebSocketCommand(CloseWebSocketCommand const&)            = delete;
-    CloseWebSocketCommand()                                        = delete;
+    CloseWebSocketCommand& operator=(CloseWebSocketCommand const&);
+    CloseWebSocketCommand(CloseWebSocketCommand const&);
+    CloseWebSocketCommand();
 
 public:
     // NOLINTBEGIN
@@ -35,7 +35,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mApp() { return mApp; }
+    auto& $mApp() { return mApp; }
 
     // NOLINTEND
 };

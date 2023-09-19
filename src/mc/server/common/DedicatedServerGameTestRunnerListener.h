@@ -15,9 +15,9 @@ namespace gametest { struct GameTestError; }
 class DedicatedServerGameTestRunnerListener : public ::gametest::IGameTestListener {
 public:
     // prevent constructor by default
-    DedicatedServerGameTestRunnerListener& operator=(DedicatedServerGameTestRunnerListener const&) = delete;
-    DedicatedServerGameTestRunnerListener(DedicatedServerGameTestRunnerListener const&)            = delete;
-    DedicatedServerGameTestRunnerListener()                                                        = delete;
+    DedicatedServerGameTestRunnerListener& operator=(DedicatedServerGameTestRunnerListener const&);
+    DedicatedServerGameTestRunnerListener(DedicatedServerGameTestRunnerListener const&);
+    DedicatedServerGameTestRunnerListener();
 
 public:
     // NOLINTBEGIN

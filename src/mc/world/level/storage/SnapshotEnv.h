@@ -21,9 +21,9 @@ public:
     class DeleteFileEntry {
     public:
         // prevent constructor by default
-        DeleteFileEntry& operator=(DeleteFileEntry const&) = delete;
-        DeleteFileEntry(DeleteFileEntry const&)            = delete;
-        DeleteFileEntry()                                  = delete;
+        DeleteFileEntry& operator=(DeleteFileEntry const&);
+        DeleteFileEntry(DeleteFileEntry const&);
+        DeleteFileEntry();
 
     public:
         // NOLINTBEGIN
@@ -35,9 +35,9 @@ public:
 
 public:
     // prevent constructor by default
-    SnapshotEnv& operator=(SnapshotEnv const&) = delete;
-    SnapshotEnv(SnapshotEnv const&)            = delete;
-    SnapshotEnv()                              = delete;
+    SnapshotEnv& operator=(SnapshotEnv const&);
+    SnapshotEnv(SnapshotEnv const&);
+    SnapshotEnv();
 
 public:
     // NOLINTBEGIN
@@ -116,7 +116,7 @@ public:
     virtual void SleepForMicroseconds(int);
 
     // symbol: ??0SnapshotEnv@@QEAA@PEAVEnv@leveldb@@@Z
-    MCAPI SnapshotEnv(leveldb::Env*);
+    MCAPI explicit SnapshotEnv(leveldb::Env*);
 
     // symbol:
     // ?createSnapshot@SnapshotEnv@@QEAA?AV?$vector@USnapshotFilenameAndLength@@V?$allocator@USnapshotFilenameAndLength@@@std@@@std@@AEBVPath@Core@@@Z

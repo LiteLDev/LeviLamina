@@ -9,9 +9,9 @@
 class NBCastleStalkRoom : public ::NetherFortressPiece {
 public:
     // prevent constructor by default
-    NBCastleStalkRoom& operator=(NBCastleStalkRoom const&) = delete;
-    NBCastleStalkRoom(NBCastleStalkRoom const&)            = delete;
-    NBCastleStalkRoom()                                    = delete;
+    NBCastleStalkRoom& operator=(NBCastleStalkRoom const&);
+    NBCastleStalkRoom(NBCastleStalkRoom const&);
+    NBCastleStalkRoom();
 
 public:
     // NOLINTBEGIN

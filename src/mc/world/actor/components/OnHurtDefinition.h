@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct OnHurtDefinition {
 public:
     // prevent constructor by default
-    OnHurtDefinition& operator=(OnHurtDefinition const&) = delete;
-    OnHurtDefinition(OnHurtDefinition const&)            = delete;
-    OnHurtDefinition()                                   = delete;
+    OnHurtDefinition& operator=(OnHurtDefinition const&);
+    OnHurtDefinition(OnHurtDefinition const&);
+    OnHurtDefinition();
 
 public:
     // NOLINTBEGIN

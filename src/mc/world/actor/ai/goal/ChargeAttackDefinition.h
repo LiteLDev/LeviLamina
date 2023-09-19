@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class ChargeAttackDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    ChargeAttackDefinition& operator=(ChargeAttackDefinition const&) = delete;
-    ChargeAttackDefinition(ChargeAttackDefinition const&)            = delete;
+    ChargeAttackDefinition& operator=(ChargeAttackDefinition const&);
+    ChargeAttackDefinition(ChargeAttackDefinition const&);
 
 public:
     // NOLINTBEGIN

@@ -14,8 +14,8 @@ public:
     Vec3 mServerPos;              // this+0x34
 
     // prevent constructor by default
-    UpdateClientInputLocksPacket& operator=(UpdateClientInputLocksPacket const&) = delete;
-    UpdateClientInputLocksPacket(UpdateClientInputLocksPacket const&)            = delete;
+    UpdateClientInputLocksPacket& operator=(UpdateClientInputLocksPacket const&);
+    UpdateClientInputLocksPacket(UpdateClientInputLocksPacket const&);
 
 public:
     // NOLINTBEGIN

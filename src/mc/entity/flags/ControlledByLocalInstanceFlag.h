@@ -5,7 +5,7 @@
 struct ControlledByLocalInstanceFlag {
 public:
     // prevent constructor by default
-    ControlledByLocalInstanceFlag& operator=(ControlledByLocalInstanceFlag const&) = delete;
-    ControlledByLocalInstanceFlag(ControlledByLocalInstanceFlag const&)            = delete;
-    ControlledByLocalInstanceFlag()                                                = delete;
+    ControlledByLocalInstanceFlag& operator=(ControlledByLocalInstanceFlag const&);
+    ControlledByLocalInstanceFlag(ControlledByLocalInstanceFlag const&);
+    ControlledByLocalInstanceFlag();
 };

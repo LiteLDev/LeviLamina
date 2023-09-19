@@ -16,9 +16,9 @@ namespace gametest {
 class GameTestRuleHelper : public ::gametest::IGameTestRuleHelper {
 public:
     // prevent constructor by default
-    GameTestRuleHelper& operator=(GameTestRuleHelper const&) = delete;
-    GameTestRuleHelper(GameTestRuleHelper const&)            = delete;
-    GameTestRuleHelper()                                     = delete;
+    GameTestRuleHelper& operator=(GameTestRuleHelper const&);
+    GameTestRuleHelper(GameTestRuleHelper const&);
+    GameTestRuleHelper();
 
 public:
     // NOLINTBEGIN
@@ -35,7 +35,7 @@ public:
     virtual void restoreRules();
 
     // symbol: ??0GameTestRuleHelper@gametest@@QEAA@AEAVILevel@@@Z
-    MCAPI GameTestRuleHelper(class ILevel&);
+    MCAPI explicit GameTestRuleHelper(class ILevel&);
 
     // NOLINTEND
 };

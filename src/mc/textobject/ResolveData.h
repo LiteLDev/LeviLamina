@@ -5,7 +5,7 @@
 struct ResolveData {
 public:
     // prevent constructor by default
-    ResolveData& operator=(ResolveData const&) = delete;
-    ResolveData(ResolveData const&)            = delete;
-    ResolveData()                              = delete;
+    ResolveData& operator=(ResolveData const&);
+    ResolveData(ResolveData const&);
+    ResolveData();
 };

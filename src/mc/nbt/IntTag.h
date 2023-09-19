@@ -46,7 +46,7 @@ public:
     MCVAPI ~IntTag();
 
     // symbol: ??0IntTag@@QEAA@H@Z
-    MCAPI IntTag(int);
+    MCAPI explicit IntTag(int);
 
     // symbol: ??0IntTag@@QEAA@XZ
     MCAPI IntTag();

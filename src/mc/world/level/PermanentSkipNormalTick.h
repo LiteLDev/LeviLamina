@@ -5,7 +5,7 @@
 struct PermanentSkipNormalTick {
 public:
     // prevent constructor by default
-    PermanentSkipNormalTick& operator=(PermanentSkipNormalTick const&) = delete;
-    PermanentSkipNormalTick(PermanentSkipNormalTick const&)            = delete;
-    PermanentSkipNormalTick()                                          = delete;
+    PermanentSkipNormalTick& operator=(PermanentSkipNormalTick const&);
+    PermanentSkipNormalTick(PermanentSkipNormalTick const&);
+    PermanentSkipNormalTick();
 };

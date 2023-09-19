@@ -13,9 +13,9 @@ namespace mce { class UUID; }
 class FreezingSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    FreezingSystem& operator=(FreezingSystem const&) = delete;
-    FreezingSystem(FreezingSystem const&)            = delete;
-    FreezingSystem()                                 = delete;
+    FreezingSystem& operator=(FreezingSystem const&);
+    FreezingSystem(FreezingSystem const&);
+    FreezingSystem();
 
 public:
     // NOLINTBEGIN

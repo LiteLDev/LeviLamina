@@ -9,9 +9,9 @@
 class DragonFlamingGoal : public ::Goal {
 public:
     // prevent constructor by default
-    DragonFlamingGoal& operator=(DragonFlamingGoal const&) = delete;
-    DragonFlamingGoal(DragonFlamingGoal const&)            = delete;
-    DragonFlamingGoal()                                    = delete;
+    DragonFlamingGoal& operator=(DragonFlamingGoal const&);
+    DragonFlamingGoal(DragonFlamingGoal const&);
+    DragonFlamingGoal();
 
 public:
     // NOLINTBEGIN
@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0DragonFlamingGoal@@QEAA@AEAVMob@@@Z
-    MCAPI DragonFlamingGoal(class Mob&);
+    MCAPI explicit DragonFlamingGoal(class Mob&);
 
     // NOLINTEND
 };

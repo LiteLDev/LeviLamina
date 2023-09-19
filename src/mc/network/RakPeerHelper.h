@@ -25,9 +25,9 @@ public:
     class IPSupportInterface {
     public:
         // prevent constructor by default
-        IPSupportInterface& operator=(IPSupportInterface const&) = delete;
-        IPSupportInterface(IPSupportInterface const&)            = delete;
-        IPSupportInterface()                                     = delete;
+        IPSupportInterface& operator=(IPSupportInterface const&);
+        IPSupportInterface(IPSupportInterface const&);
+        IPSupportInterface();
 
     public:
         // NOLINTBEGIN
@@ -39,14 +39,14 @@ public:
 
 public:
     // prevent constructor by default
-    RakPeerHelper& operator=(RakPeerHelper const&) = delete;
-    RakPeerHelper(RakPeerHelper const&)            = delete;
-    RakPeerHelper()                                = delete;
+    RakPeerHelper& operator=(RakPeerHelper const&);
+    RakPeerHelper(RakPeerHelper const&);
+    RakPeerHelper();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0RakPeerHelper@@QEAA@AEAVIPSupportInterface@0@@Z
-    MCAPI RakPeerHelper(class RakPeerHelper::IPSupportInterface&);
+    MCAPI explicit RakPeerHelper(class RakPeerHelper::IPSupportInterface&);
 
     // symbol: ?getConnectionIndex@RakPeerHelper@@QEBAHAEBVGameConnectionInfo@Social@@@Z
     MCAPI int getConnectionIndex(class Social::GameConnectionInfo const&) const;

@@ -5,7 +5,7 @@
 class BlockTypeRegistryRWLock {
 public:
     // prevent constructor by default
-    BlockTypeRegistryRWLock& operator=(BlockTypeRegistryRWLock const&) = delete;
-    BlockTypeRegistryRWLock(BlockTypeRegistryRWLock const&)            = delete;
-    BlockTypeRegistryRWLock()                                          = delete;
+    BlockTypeRegistryRWLock& operator=(BlockTypeRegistryRWLock const&);
+    BlockTypeRegistryRWLock(BlockTypeRegistryRWLock const&);
+    BlockTypeRegistryRWLock();
 };

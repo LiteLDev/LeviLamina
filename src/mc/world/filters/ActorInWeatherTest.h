@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class ActorInWeatherTest : public ::FilterTest {
 public:
     // prevent constructor by default
-    ActorInWeatherTest& operator=(ActorInWeatherTest const&) = delete;
-    ActorInWeatherTest(ActorInWeatherTest const&)            = delete;
-    ActorInWeatherTest()                                     = delete;
+    ActorInWeatherTest& operator=(ActorInWeatherTest const&);
+    ActorInWeatherTest(ActorInWeatherTest const&);
+    ActorInWeatherTest();
 
 public:
     // NOLINTBEGIN

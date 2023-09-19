@@ -5,9 +5,9 @@
 class UpdateEntityAfterFallOnEntityProxyBase {
 public:
     // prevent constructor by default
-    UpdateEntityAfterFallOnEntityProxyBase& operator=(UpdateEntityAfterFallOnEntityProxyBase const&) = delete;
-    UpdateEntityAfterFallOnEntityProxyBase(UpdateEntityAfterFallOnEntityProxyBase const&)            = delete;
-    UpdateEntityAfterFallOnEntityProxyBase()                                                         = delete;
+    UpdateEntityAfterFallOnEntityProxyBase& operator=(UpdateEntityAfterFallOnEntityProxyBase const&);
+    UpdateEntityAfterFallOnEntityProxyBase(UpdateEntityAfterFallOnEntityProxyBase const&);
+    UpdateEntityAfterFallOnEntityProxyBase();
 
 public:
     // NOLINTBEGIN

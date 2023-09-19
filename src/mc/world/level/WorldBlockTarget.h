@@ -9,9 +9,9 @@
 class WorldBlockTarget : public ::IBlockWorldGenAPI {
 public:
     // prevent constructor by default
-    WorldBlockTarget& operator=(WorldBlockTarget const&) = delete;
-    WorldBlockTarget(WorldBlockTarget const&)            = delete;
-    WorldBlockTarget()                                   = delete;
+    WorldBlockTarget& operator=(WorldBlockTarget const&);
+    WorldBlockTarget(WorldBlockTarget const&);
+    WorldBlockTarget();
 
 public:
     // NOLINTBEGIN

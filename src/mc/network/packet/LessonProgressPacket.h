@@ -16,8 +16,8 @@ public:
     std::string  mActivityId; // this+0x38
 
     // prevent constructor by default
-    LessonProgressPacket& operator=(LessonProgressPacket const&) = delete;
-    LessonProgressPacket(LessonProgressPacket const&)            = delete;
+    LessonProgressPacket& operator=(LessonProgressPacket const&);
+    LessonProgressPacket(LessonProgressPacket const&);
 
 public:
     // NOLINTBEGIN

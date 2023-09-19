@@ -26,9 +26,9 @@
 class Painting : public ::HangingActor {
 public:
     // prevent constructor by default
-    Painting& operator=(Painting const&) = delete;
-    Painting(Painting const&)            = delete;
-    Painting()                           = delete;
+    Painting& operator=(Painting const&);
+    Painting(Painting const&);
+    Painting();
 
 public:
     // NOLINTBEGIN

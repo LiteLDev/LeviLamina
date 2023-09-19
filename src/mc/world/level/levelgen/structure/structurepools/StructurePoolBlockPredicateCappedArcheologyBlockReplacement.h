@@ -11,10 +11,9 @@ class StructurePoolBlockPredicateCappedArcheologyBlockReplacement
 public:
     // prevent constructor by default
     StructurePoolBlockPredicateCappedArcheologyBlockReplacement&
-    operator=(StructurePoolBlockPredicateCappedArcheologyBlockReplacement const&) = delete;
-    StructurePoolBlockPredicateCappedArcheologyBlockReplacement(StructurePoolBlockPredicateCappedArcheologyBlockReplacement const&) =
-        delete;
-    StructurePoolBlockPredicateCappedArcheologyBlockReplacement() = delete;
+    operator=(StructurePoolBlockPredicateCappedArcheologyBlockReplacement const&);
+    StructurePoolBlockPredicateCappedArcheologyBlockReplacement(StructurePoolBlockPredicateCappedArcheologyBlockReplacement const&);
+    StructurePoolBlockPredicateCappedArcheologyBlockReplacement();
 
 public:
     // NOLINTBEGIN

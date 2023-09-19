@@ -12,9 +12,9 @@ namespace DebugUtils {
 class ComposedAssertMessage {
 public:
     // prevent constructor by default
-    ComposedAssertMessage& operator=(ComposedAssertMessage const&) = delete;
-    ComposedAssertMessage(ComposedAssertMessage const&)            = delete;
-    ComposedAssertMessage()                                        = delete;
+    ComposedAssertMessage& operator=(ComposedAssertMessage const&);
+    ComposedAssertMessage(ComposedAssertMessage const&);
+    ComposedAssertMessage();
 
 public:
     // NOLINTBEGIN

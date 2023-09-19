@@ -15,9 +15,9 @@ namespace JsonUtil { class EmptyClass; }
 class DieEventResponse : public ::EventResponse {
 public:
     // prevent constructor by default
-    DieEventResponse& operator=(DieEventResponse const&) = delete;
-    DieEventResponse(DieEventResponse const&)            = delete;
-    DieEventResponse()                                   = delete;
+    DieEventResponse& operator=(DieEventResponse const&);
+    DieEventResponse(DieEventResponse const&);
+    DieEventResponse();
 
 public:
     // NOLINTBEGIN

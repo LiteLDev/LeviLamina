@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class BuoyancyDefinition {
 public:
     // prevent constructor by default
-    BuoyancyDefinition& operator=(BuoyancyDefinition const&) = delete;
-    BuoyancyDefinition(BuoyancyDefinition const&)            = delete;
+    BuoyancyDefinition& operator=(BuoyancyDefinition const&);
+    BuoyancyDefinition(BuoyancyDefinition const&);
 
 public:
     // NOLINTBEGIN

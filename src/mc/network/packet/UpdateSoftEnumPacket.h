@@ -17,8 +17,8 @@ public:
     SoftEnumUpdateType       mType;     // this+0x68
 
     // prevent constructor by default
-    UpdateSoftEnumPacket& operator=(UpdateSoftEnumPacket const&) = delete;
-    UpdateSoftEnumPacket(UpdateSoftEnumPacket const&)            = delete;
+    UpdateSoftEnumPacket& operator=(UpdateSoftEnumPacket const&);
+    UpdateSoftEnumPacket(UpdateSoftEnumPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -10,9 +10,9 @@
 class MaterialReducerContainerManagerModel : public ::ContainerManagerModel {
 public:
     // prevent constructor by default
-    MaterialReducerContainerManagerModel& operator=(MaterialReducerContainerManagerModel const&) = delete;
-    MaterialReducerContainerManagerModel(MaterialReducerContainerManagerModel const&)            = delete;
-    MaterialReducerContainerManagerModel()                                                       = delete;
+    MaterialReducerContainerManagerModel& operator=(MaterialReducerContainerManagerModel const&);
+    MaterialReducerContainerManagerModel(MaterialReducerContainerManagerModel const&);
+    MaterialReducerContainerManagerModel();
 
 public:
     // NOLINTBEGIN

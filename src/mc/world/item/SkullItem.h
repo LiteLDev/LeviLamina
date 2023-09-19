@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class SkullItem : public ::Item {
 public:
     // prevent constructor by default
-    SkullItem& operator=(SkullItem const&) = delete;
-    SkullItem(SkullItem const&)            = delete;
-    SkullItem()                            = delete;
+    SkullItem& operator=(SkullItem const&);
+    SkullItem(SkullItem const&);
+    SkullItem();
 
 public:
     // NOLINTBEGIN

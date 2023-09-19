@@ -8,9 +8,9 @@
 class MeleeWeaponEnchant : public ::Enchant {
 public:
     // prevent constructor by default
-    MeleeWeaponEnchant& operator=(MeleeWeaponEnchant const&) = delete;
-    MeleeWeaponEnchant(MeleeWeaponEnchant const&)            = delete;
-    MeleeWeaponEnchant()                                     = delete;
+    MeleeWeaponEnchant& operator=(MeleeWeaponEnchant const&);
+    MeleeWeaponEnchant(MeleeWeaponEnchant const&);
+    MeleeWeaponEnchant();
 
 public:
     // NOLINTBEGIN
@@ -67,7 +67,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $VALID_ENCHANTMENTS() { return VALID_ENCHANTMENTS; }
+    auto& $VALID_ENCHANTMENTS() { return VALID_ENCHANTMENTS; }
 
     // NOLINTEND
 };

@@ -26,9 +26,9 @@
 class HumanoidMonster : public ::Monster {
 public:
     // prevent constructor by default
-    HumanoidMonster& operator=(HumanoidMonster const&) = delete;
-    HumanoidMonster(HumanoidMonster const&)            = delete;
-    HumanoidMonster()                                  = delete;
+    HumanoidMonster& operator=(HumanoidMonster const&);
+    HumanoidMonster(HumanoidMonster const&);
+    HumanoidMonster();
 
 public:
     // NOLINTBEGIN
@@ -146,13 +146,13 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $MAX_ENCHANTED_ARMOR_CHANCE() { return MAX_ENCHANTED_ARMOR_CHANCE; }
+    auto& $MAX_ENCHANTED_ARMOR_CHANCE() { return MAX_ENCHANTED_ARMOR_CHANCE; }
 
-    inline auto& $MAX_ENCHANTED_WEAPON_CHANCE() { return MAX_ENCHANTED_WEAPON_CHANCE; }
+    auto& $MAX_ENCHANTED_WEAPON_CHANCE() { return MAX_ENCHANTED_WEAPON_CHANCE; }
 
-    inline auto& $MAX_PICKUP_LOOT_CHANCE() { return MAX_PICKUP_LOOT_CHANCE; }
+    auto& $MAX_PICKUP_LOOT_CHANCE() { return MAX_PICKUP_LOOT_CHANCE; }
 
-    inline auto& $MAX_WEARING_ARMOR_CHANCE() { return MAX_WEARING_ARMOR_CHANCE; }
+    auto& $MAX_WEARING_ARMOR_CHANCE() { return MAX_WEARING_ARMOR_CHANCE; }
 
     // NOLINTEND
 };

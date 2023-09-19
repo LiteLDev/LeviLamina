@@ -8,9 +8,9 @@
 class BribeableSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    BribeableSystem& operator=(BribeableSystem const&) = delete;
-    BribeableSystem(BribeableSystem const&)            = delete;
-    BribeableSystem()                                  = delete;
+    BribeableSystem& operator=(BribeableSystem const&);
+    BribeableSystem(BribeableSystem const&);
+    BribeableSystem();
 
 public:
     // NOLINTBEGIN

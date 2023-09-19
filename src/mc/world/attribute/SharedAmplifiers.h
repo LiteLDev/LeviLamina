@@ -5,9 +5,9 @@
 class SharedAmplifiers {
 public:
     // prevent constructor by default
-    SharedAmplifiers& operator=(SharedAmplifiers const&) = delete;
-    SharedAmplifiers(SharedAmplifiers const&)            = delete;
-    SharedAmplifiers()                                   = delete;
+    SharedAmplifiers& operator=(SharedAmplifiers const&);
+    SharedAmplifiers(SharedAmplifiers const&);
+    SharedAmplifiers();
 
 public:
     // NOLINTBEGIN

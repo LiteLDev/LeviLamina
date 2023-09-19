@@ -23,9 +23,9 @@ namespace ScriptModuleMinecraft {
 class ScriptBlockPermutation {
 public:
     // prevent constructor by default
-    ScriptBlockPermutation& operator=(ScriptBlockPermutation const&) = delete;
-    ScriptBlockPermutation(ScriptBlockPermutation const&)            = delete;
-    ScriptBlockPermutation()                                         = delete;
+    ScriptBlockPermutation& operator=(ScriptBlockPermutation const&);
+    ScriptBlockPermutation(ScriptBlockPermutation const&);
+    ScriptBlockPermutation();
 
 public:
     // NOLINTBEGIN

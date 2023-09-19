@@ -8,9 +8,9 @@
 class ParticleProvider {
 public:
     // prevent constructor by default
-    ParticleProvider& operator=(ParticleProvider const&) = delete;
-    ParticleProvider(ParticleProvider const&)            = delete;
-    ParticleProvider()                                   = delete;
+    ParticleProvider& operator=(ParticleProvider const&);
+    ParticleProvider(ParticleProvider const&);
+    ParticleProvider();
 
 public:
     // NOLINTBEGIN

@@ -13,8 +13,8 @@
 class ChunkViewSource : public ::ChunkSource {
 public:
     // prevent constructor by default
-    ChunkViewSource& operator=(ChunkViewSource const&) = delete;
-    ChunkViewSource()                                  = delete;
+    ChunkViewSource& operator=(ChunkViewSource const&);
+    ChunkViewSource();
 
 
     enum class ChunkSource::LoadMode      mParentLoadMode;

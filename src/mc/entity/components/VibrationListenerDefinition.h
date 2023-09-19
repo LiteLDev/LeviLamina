@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class VibrationListenerDefinition {
 public:
     // prevent constructor by default
-    VibrationListenerDefinition& operator=(VibrationListenerDefinition const&) = delete;
-    VibrationListenerDefinition(VibrationListenerDefinition const&)            = delete;
-    VibrationListenerDefinition()                                              = delete;
+    VibrationListenerDefinition& operator=(VibrationListenerDefinition const&);
+    VibrationListenerDefinition(VibrationListenerDefinition const&);
+    VibrationListenerDefinition();
 
 public:
     // NOLINTBEGIN

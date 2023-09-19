@@ -9,8 +9,8 @@
 class ShulkerBoxContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // prevent constructor by default
-    ShulkerBoxContainerScreenValidator& operator=(ShulkerBoxContainerScreenValidator const&) = delete;
-    ShulkerBoxContainerScreenValidator(ShulkerBoxContainerScreenValidator const&)            = delete;
+    ShulkerBoxContainerScreenValidator& operator=(ShulkerBoxContainerScreenValidator const&);
+    ShulkerBoxContainerScreenValidator(ShulkerBoxContainerScreenValidator const&);
 
 public:
     // NOLINTBEGIN

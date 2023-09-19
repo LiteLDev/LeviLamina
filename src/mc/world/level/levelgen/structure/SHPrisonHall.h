@@ -9,9 +9,9 @@
 class SHPrisonHall : public ::StrongholdPiece {
 public:
     // prevent constructor by default
-    SHPrisonHall& operator=(SHPrisonHall const&) = delete;
-    SHPrisonHall(SHPrisonHall const&)            = delete;
-    SHPrisonHall()                               = delete;
+    SHPrisonHall& operator=(SHPrisonHall const&);
+    SHPrisonHall(SHPrisonHall const&);
+    SHPrisonHall();
 
 public:
     // NOLINTBEGIN

@@ -16,8 +16,8 @@ namespace BlockFrictionVersioning {
 class BlockFriction11910Upgrade : public ::CerealSchemaUpgrade {
 public:
     // prevent constructor by default
-    BlockFriction11910Upgrade& operator=(BlockFriction11910Upgrade const&) = delete;
-    BlockFriction11910Upgrade(BlockFriction11910Upgrade const&)            = delete;
+    BlockFriction11910Upgrade& operator=(BlockFriction11910Upgrade const&);
+    BlockFriction11910Upgrade(BlockFriction11910Upgrade const&);
 
 public:
     // NOLINTBEGIN

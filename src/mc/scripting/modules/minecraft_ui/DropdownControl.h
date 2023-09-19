@@ -16,9 +16,9 @@ namespace ScriptModuleMinecraftServerUI {
 class DropdownControl : public ::ScriptModuleMinecraftServerUI::IControl {
 public:
     // prevent constructor by default
-    DropdownControl& operator=(DropdownControl const&) = delete;
-    DropdownControl(DropdownControl const&)            = delete;
-    DropdownControl()                                  = delete;
+    DropdownControl& operator=(DropdownControl const&);
+    DropdownControl(DropdownControl const&);
+    DropdownControl();
 
 public:
     // NOLINTBEGIN

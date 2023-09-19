@@ -19,9 +19,9 @@ namespace gametest { struct GameTestError; }
 class MinecraftGameTestHelper : public ::gametest::BaseGameTestHelper {
 public:
     // prevent constructor by default
-    MinecraftGameTestHelper& operator=(MinecraftGameTestHelper const&) = delete;
-    MinecraftGameTestHelper(MinecraftGameTestHelper const&)            = delete;
-    MinecraftGameTestHelper()                                          = delete;
+    MinecraftGameTestHelper& operator=(MinecraftGameTestHelper const&);
+    MinecraftGameTestHelper(MinecraftGameTestHelper const&);
+    MinecraftGameTestHelper();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class MoveControlDolphinDescription : public ::MoveControlDescription {
 public:
     // prevent constructor by default
-    MoveControlDolphinDescription& operator=(MoveControlDolphinDescription const&) = delete;
-    MoveControlDolphinDescription(MoveControlDolphinDescription const&)            = delete;
-    MoveControlDolphinDescription()                                                = delete;
+    MoveControlDolphinDescription& operator=(MoveControlDolphinDescription const&);
+    MoveControlDolphinDescription(MoveControlDolphinDescription const&);
+    MoveControlDolphinDescription();
 
 public:
     // NOLINTBEGIN

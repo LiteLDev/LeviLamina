@@ -17,9 +17,9 @@ namespace Core {
 class UnzipFile {
 public:
     // prevent constructor by default
-    UnzipFile& operator=(UnzipFile const&) = delete;
-    UnzipFile(UnzipFile const&)            = delete;
-    UnzipFile()                            = delete;
+    UnzipFile& operator=(UnzipFile const&);
+    UnzipFile(UnzipFile const&);
+    UnzipFile();
 
 public:
     // NOLINTBEGIN

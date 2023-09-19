@@ -8,9 +8,9 @@
 class HelpCommand : public ::Command {
 public:
     // prevent constructor by default
-    HelpCommand& operator=(HelpCommand const&) = delete;
-    HelpCommand(HelpCommand const&)            = delete;
-    HelpCommand()                              = delete;
+    HelpCommand& operator=(HelpCommand const&);
+    HelpCommand(HelpCommand const&);
+    HelpCommand();
 
 public:
     // NOLINTBEGIN

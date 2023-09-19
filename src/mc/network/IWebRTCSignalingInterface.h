@@ -15,16 +15,16 @@ public:
     struct SignalingConfiguration {
     public:
         // prevent constructor by default
-        SignalingConfiguration& operator=(SignalingConfiguration const&) = delete;
-        SignalingConfiguration(SignalingConfiguration const&)            = delete;
-        SignalingConfiguration()                                         = delete;
+        SignalingConfiguration& operator=(SignalingConfiguration const&);
+        SignalingConfiguration(SignalingConfiguration const&);
+        SignalingConfiguration();
     };
 
 public:
     // prevent constructor by default
-    IWebRTCSignalingInterface& operator=(IWebRTCSignalingInterface const&) = delete;
-    IWebRTCSignalingInterface(IWebRTCSignalingInterface const&)            = delete;
-    IWebRTCSignalingInterface()                                            = delete;
+    IWebRTCSignalingInterface& operator=(IWebRTCSignalingInterface const&);
+    IWebRTCSignalingInterface(IWebRTCSignalingInterface const&);
+    IWebRTCSignalingInterface();
 };
 
 }; // namespace NetherNet

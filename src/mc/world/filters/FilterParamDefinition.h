@@ -10,9 +10,9 @@
 struct FilterParamDefinition {
 public:
     // prevent constructor by default
-    FilterParamDefinition& operator=(FilterParamDefinition const&) = delete;
-    FilterParamDefinition(FilterParamDefinition const&)            = delete;
-    FilterParamDefinition()                                        = delete;
+    FilterParamDefinition& operator=(FilterParamDefinition const&);
+    FilterParamDefinition(FilterParamDefinition const&);
+    FilterParamDefinition();
 
 public:
     // NOLINTBEGIN

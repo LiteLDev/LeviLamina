@@ -21,9 +21,9 @@ namespace gametest {
 class BaseGameTestBatchRunner {
 public:
     // prevent constructor by default
-    BaseGameTestBatchRunner& operator=(BaseGameTestBatchRunner const&) = delete;
-    BaseGameTestBatchRunner(BaseGameTestBatchRunner const&)            = delete;
-    BaseGameTestBatchRunner()                                          = delete;
+    BaseGameTestBatchRunner& operator=(BaseGameTestBatchRunner const&);
+    BaseGameTestBatchRunner(BaseGameTestBatchRunner const&);
+    BaseGameTestBatchRunner();
 
 public:
     // NOLINTBEGIN

@@ -12,9 +12,9 @@ namespace VolumeInstanceData {
 struct VolumeStorageDefinition {
 public:
     // prevent constructor by default
-    VolumeStorageDefinition& operator=(VolumeStorageDefinition const&) = delete;
-    VolumeStorageDefinition(VolumeStorageDefinition const&)            = delete;
-    VolumeStorageDefinition()                                          = delete;
+    VolumeStorageDefinition& operator=(VolumeStorageDefinition const&);
+    VolumeStorageDefinition(VolumeStorageDefinition const&);
+    VolumeStorageDefinition();
 
 public:
     // NOLINTBEGIN

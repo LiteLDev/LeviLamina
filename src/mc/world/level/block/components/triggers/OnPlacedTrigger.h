@@ -5,9 +5,9 @@
 class OnPlacedTrigger {
 public:
     // prevent constructor by default
-    OnPlacedTrigger& operator=(OnPlacedTrigger const&) = delete;
-    OnPlacedTrigger(OnPlacedTrigger const&)            = delete;
-    OnPlacedTrigger()                                  = delete;
+    OnPlacedTrigger& operator=(OnPlacedTrigger const&);
+    OnPlacedTrigger(OnPlacedTrigger const&);
+    OnPlacedTrigger();
 
 public:
     // NOLINTBEGIN

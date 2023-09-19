@@ -14,8 +14,8 @@ public:
     NetworkBlockPosition mPosition; // this+0x30
 
     // prevent constructor by default
-    AnvilDamagePacket& operator=(AnvilDamagePacket const&) = delete;
-    AnvilDamagePacket(AnvilDamagePacket const&)            = delete;
+    AnvilDamagePacket& operator=(AnvilDamagePacket const&);
+    AnvilDamagePacket(AnvilDamagePacket const&);
 
 public:
     // NOLINTBEGIN

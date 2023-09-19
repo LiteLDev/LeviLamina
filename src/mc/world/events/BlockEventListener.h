@@ -9,9 +9,9 @@
 class BlockEventListener {
 public:
     // prevent constructor by default
-    BlockEventListener& operator=(BlockEventListener const&) = delete;
-    BlockEventListener(BlockEventListener const&)            = delete;
-    BlockEventListener()                                     = delete;
+    BlockEventListener& operator=(BlockEventListener const&);
+    BlockEventListener(BlockEventListener const&);
+    BlockEventListener();
 
 public:
     // NOLINTBEGIN

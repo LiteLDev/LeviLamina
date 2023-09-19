@@ -5,7 +5,7 @@
 class BookSignPacket {
 public:
     // prevent constructor by default
-    BookSignPacket& operator=(BookSignPacket const&) = delete;
-    BookSignPacket(BookSignPacket const&)            = delete;
-    BookSignPacket()                                 = delete;
+    BookSignPacket& operator=(BookSignPacket const&);
+    BookSignPacket(BookSignPacket const&);
+    BookSignPacket();
 };

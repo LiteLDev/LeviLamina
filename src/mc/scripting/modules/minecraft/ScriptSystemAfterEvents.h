@@ -30,10 +30,9 @@ public:
     class ScriptSystemAfterEventsDeferredEventListener {
     public:
         // prevent constructor by default
-        ScriptSystemAfterEventsDeferredEventListener&
-        operator=(ScriptSystemAfterEventsDeferredEventListener const&)                                    = delete;
-        ScriptSystemAfterEventsDeferredEventListener(ScriptSystemAfterEventsDeferredEventListener const&) = delete;
-        ScriptSystemAfterEventsDeferredEventListener()                                                    = delete;
+        ScriptSystemAfterEventsDeferredEventListener& operator=(ScriptSystemAfterEventsDeferredEventListener const&);
+        ScriptSystemAfterEventsDeferredEventListener(ScriptSystemAfterEventsDeferredEventListener const&);
+        ScriptSystemAfterEventsDeferredEventListener();
 
     public:
         // NOLINTBEGIN
@@ -66,9 +65,9 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptSystemAfterEvents& operator=(ScriptSystemAfterEvents const&) = delete;
-    ScriptSystemAfterEvents(ScriptSystemAfterEvents const&)            = delete;
-    ScriptSystemAfterEvents()                                          = delete;
+    ScriptSystemAfterEvents& operator=(ScriptSystemAfterEvents const&);
+    ScriptSystemAfterEvents(ScriptSystemAfterEvents const&);
+    ScriptSystemAfterEvents();
 
 public:
     // NOLINTBEGIN

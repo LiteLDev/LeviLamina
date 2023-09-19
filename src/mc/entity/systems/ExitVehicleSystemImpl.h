@@ -19,9 +19,9 @@
 struct ExitVehicleSystemImpl {
 public:
     // prevent constructor by default
-    ExitVehicleSystemImpl& operator=(ExitVehicleSystemImpl const&) = delete;
-    ExitVehicleSystemImpl(ExitVehicleSystemImpl const&)            = delete;
-    ExitVehicleSystemImpl()                                        = delete;
+    ExitVehicleSystemImpl& operator=(ExitVehicleSystemImpl const&);
+    ExitVehicleSystemImpl(ExitVehicleSystemImpl const&);
+    ExitVehicleSystemImpl();
 
 public:
     // NOLINTBEGIN

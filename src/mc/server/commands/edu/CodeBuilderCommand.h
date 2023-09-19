@@ -8,9 +8,9 @@
 class CodeBuilderCommand : public ::Command {
 public:
     // prevent constructor by default
-    CodeBuilderCommand& operator=(CodeBuilderCommand const&) = delete;
-    CodeBuilderCommand(CodeBuilderCommand const&)            = delete;
-    CodeBuilderCommand()                                     = delete;
+    CodeBuilderCommand& operator=(CodeBuilderCommand const&);
+    CodeBuilderCommand(CodeBuilderCommand const&);
+    CodeBuilderCommand();
 
 public:
     // NOLINTBEGIN

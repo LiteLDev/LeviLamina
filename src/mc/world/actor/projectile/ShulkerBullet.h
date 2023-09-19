@@ -26,9 +26,9 @@
 class ShulkerBullet : public ::PredictableProjectile {
 public:
     // prevent constructor by default
-    ShulkerBullet& operator=(ShulkerBullet const&) = delete;
-    ShulkerBullet(ShulkerBullet const&)            = delete;
-    ShulkerBullet()                                = delete;
+    ShulkerBullet& operator=(ShulkerBullet const&);
+    ShulkerBullet(ShulkerBullet const&);
+    ShulkerBullet();
 
 public:
     // NOLINTBEGIN

@@ -10,9 +10,9 @@
 class SmokerContainerManagerModel : public ::FurnaceContainerManagerModel {
 public:
     // prevent constructor by default
-    SmokerContainerManagerModel& operator=(SmokerContainerManagerModel const&) = delete;
-    SmokerContainerManagerModel(SmokerContainerManagerModel const&)            = delete;
-    SmokerContainerManagerModel()                                              = delete;
+    SmokerContainerManagerModel& operator=(SmokerContainerManagerModel const&);
+    SmokerContainerManagerModel(SmokerContainerManagerModel const&);
+    SmokerContainerManagerModel();
 
 public:
     // NOLINTBEGIN

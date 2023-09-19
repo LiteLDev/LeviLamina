@@ -13,8 +13,8 @@ public:
     MoveActorDeltaData mMoveData; // this+0x30
 
     // prevent constructor by default
-    MoveActorDeltaPacket& operator=(MoveActorDeltaPacket const&) = delete;
-    MoveActorDeltaPacket(MoveActorDeltaPacket const&)            = delete;
+    MoveActorDeltaPacket& operator=(MoveActorDeltaPacket const&);
+    MoveActorDeltaPacket(MoveActorDeltaPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -39,7 +39,7 @@ public:
     MCVAPI ~MoveActorDeltaPacket();
 
     // symbol: ??0MoveActorDeltaPacket@@QEAA@AEBVMoveActorDeltaData@@@Z
-    MCAPI MoveActorDeltaPacket(class MoveActorDeltaData const&);
+    MCAPI explicit MoveActorDeltaPacket(class MoveActorDeltaData const&);
 
     // symbol: ??0MoveActorDeltaPacket@@QEAA@XZ
     MCAPI MoveActorDeltaPacket();

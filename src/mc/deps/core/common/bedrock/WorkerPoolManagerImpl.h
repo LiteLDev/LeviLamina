@@ -24,9 +24,9 @@ public:
     struct PoolEntry {
     public:
         // prevent constructor by default
-        PoolEntry& operator=(PoolEntry const&) = delete;
-        PoolEntry(PoolEntry const&)            = delete;
-        PoolEntry()                            = delete;
+        PoolEntry& operator=(PoolEntry const&);
+        PoolEntry(PoolEntry const&);
+        PoolEntry();
 
     public:
         // NOLINTBEGIN
@@ -38,8 +38,8 @@ public:
 
 public:
     // prevent constructor by default
-    WorkerPoolManagerImpl& operator=(WorkerPoolManagerImpl const&) = delete;
-    WorkerPoolManagerImpl(WorkerPoolManagerImpl const&)            = delete;
+    WorkerPoolManagerImpl& operator=(WorkerPoolManagerImpl const&);
+    WorkerPoolManagerImpl(WorkerPoolManagerImpl const&);
 
 public:
     // NOLINTBEGIN

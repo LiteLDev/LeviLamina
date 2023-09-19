@@ -8,9 +8,9 @@
 class SimpleSparseContainer {
 public:
     // prevent constructor by default
-    SimpleSparseContainer& operator=(SimpleSparseContainer const&) = delete;
-    SimpleSparseContainer(SimpleSparseContainer const&)            = delete;
-    SimpleSparseContainer()                                        = delete;
+    SimpleSparseContainer& operator=(SimpleSparseContainer const&);
+    SimpleSparseContainer(SimpleSparseContainer const&);
+    SimpleSparseContainer();
 
 public:
     // NOLINTBEGIN

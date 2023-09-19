@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class WoodSlabBlockItem : public ::DeprecatedSlabBlockItem {
 public:
     // prevent constructor by default
-    WoodSlabBlockItem& operator=(WoodSlabBlockItem const&) = delete;
-    WoodSlabBlockItem(WoodSlabBlockItem const&)            = delete;
-    WoodSlabBlockItem()                                    = delete;
+    WoodSlabBlockItem& operator=(WoodSlabBlockItem const&);
+    WoodSlabBlockItem(WoodSlabBlockItem const&);
+    WoodSlabBlockItem();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 struct HasItemFilter {
 public:
     // prevent constructor by default
-    HasItemFilter& operator=(HasItemFilter const&) = delete;
-    HasItemFilter(HasItemFilter const&)            = delete;
-    HasItemFilter()                                = delete;
+    HasItemFilter& operator=(HasItemFilter const&);
+    HasItemFilter(HasItemFilter const&);
+    HasItemFilter();
 
 public:
     // NOLINTBEGIN

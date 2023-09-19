@@ -8,9 +8,9 @@
 struct BlockLightDampeningComponent : public ::BlockComponentBase {
 public:
     // prevent constructor by default
-    BlockLightDampeningComponent& operator=(BlockLightDampeningComponent const&) = delete;
-    BlockLightDampeningComponent(BlockLightDampeningComponent const&)            = delete;
-    BlockLightDampeningComponent()                                               = delete;
+    BlockLightDampeningComponent& operator=(BlockLightDampeningComponent const&);
+    BlockLightDampeningComponent(BlockLightDampeningComponent const&);
+    BlockLightDampeningComponent();
 
 public:
     // NOLINTBEGIN

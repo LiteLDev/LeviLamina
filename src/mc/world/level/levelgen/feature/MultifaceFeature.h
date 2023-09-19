@@ -8,8 +8,8 @@
 class MultifaceFeature : public ::IFeature {
 public:
     // prevent constructor by default
-    MultifaceFeature& operator=(MultifaceFeature const&) = delete;
-    MultifaceFeature(MultifaceFeature const&)            = delete;
+    MultifaceFeature& operator=(MultifaceFeature const&);
+    MultifaceFeature(MultifaceFeature const&);
 
 public:
     // NOLINTBEGIN

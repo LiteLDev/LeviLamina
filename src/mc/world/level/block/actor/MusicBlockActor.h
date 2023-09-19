@@ -8,9 +8,9 @@
 class MusicBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    MusicBlockActor& operator=(MusicBlockActor const&) = delete;
-    MusicBlockActor(MusicBlockActor const&)            = delete;
-    MusicBlockActor()                                  = delete;
+    MusicBlockActor& operator=(MusicBlockActor const&);
+    MusicBlockActor(MusicBlockActor const&);
+    MusicBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -54,7 +54,7 @@ public:
     virtual void __unk_vfn_39();
 
     // symbol: ??0MusicBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI MusicBlockActor(class BlockPos const&);
+    MCAPI explicit MusicBlockActor(class BlockPos const&);
 
     // symbol: ?playNote@MusicBlockActor@@QEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void playNote(class BlockSource&, class BlockPos const&);

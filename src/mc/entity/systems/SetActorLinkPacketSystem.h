@@ -5,9 +5,9 @@
 class SetActorLinkPacketSystem {
 public:
     // prevent constructor by default
-    SetActorLinkPacketSystem& operator=(SetActorLinkPacketSystem const&) = delete;
-    SetActorLinkPacketSystem(SetActorLinkPacketSystem const&)            = delete;
-    SetActorLinkPacketSystem()                                           = delete;
+    SetActorLinkPacketSystem& operator=(SetActorLinkPacketSystem const&);
+    SetActorLinkPacketSystem(SetActorLinkPacketSystem const&);
+    SetActorLinkPacketSystem();
 
 public:
     // NOLINTBEGIN

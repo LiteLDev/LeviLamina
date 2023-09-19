@@ -10,9 +10,9 @@
 class GameSession {
 public:
     // prevent constructor by default
-    GameSession& operator=(GameSession const&) = delete;
-    GameSession(GameSession const&)            = delete;
-    GameSession()                              = delete;
+    GameSession& operator=(GameSession const&);
+    GameSession(GameSession const&);
+    GameSession();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@ public:
     bool                       mHasQuiz;
 
     // prevent constructor by default
-    EducationLocalLevelSettings& operator=(EducationLocalLevelSettings const&) = delete;
-    EducationLocalLevelSettings(EducationLocalLevelSettings const&)            = delete;
-    EducationLocalLevelSettings()                                              = delete;
+    EducationLocalLevelSettings& operator=(EducationLocalLevelSettings const&);
+    EducationLocalLevelSettings(EducationLocalLevelSettings const&);
+    EducationLocalLevelSettings();
 
 public:
     // NOLINTBEGIN

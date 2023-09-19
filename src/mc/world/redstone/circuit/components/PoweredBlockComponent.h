@@ -47,7 +47,7 @@ public:
     MCVAPI bool hasChildrenSource() const;
 
     // symbol: ??0PoweredBlockComponent@@QEAA@E@Z
-    MCAPI PoweredBlockComponent(uchar);
+    MCAPI explicit PoweredBlockComponent(uchar);
 
     // NOLINTEND
 };

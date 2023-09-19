@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class SnowBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    SnowBlock& operator=(SnowBlock const&) = delete;
-    SnowBlock(SnowBlock const&)            = delete;
-    SnowBlock()                            = delete;
+    SnowBlock& operator=(SnowBlock const&);
+    SnowBlock(SnowBlock const&);
+    SnowBlock();
 
 public:
     // NOLINTBEGIN

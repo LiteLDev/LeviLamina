@@ -23,9 +23,9 @@ namespace ScriptModuleMinecraft {
 class ScriptBlockWaterContainerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent {
 public:
     // prevent constructor by default
-    ScriptBlockWaterContainerComponent& operator=(ScriptBlockWaterContainerComponent const&) = delete;
-    ScriptBlockWaterContainerComponent(ScriptBlockWaterContainerComponent const&)            = delete;
-    ScriptBlockWaterContainerComponent()                                                     = delete;
+    ScriptBlockWaterContainerComponent& operator=(ScriptBlockWaterContainerComponent const&);
+    ScriptBlockWaterContainerComponent(ScriptBlockWaterContainerComponent const&);
+    ScriptBlockWaterContainerComponent();
 
 public:
     // NOLINTBEGIN

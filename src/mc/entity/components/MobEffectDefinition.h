@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class MobEffectDefinition {
 public:
     // prevent constructor by default
-    MobEffectDefinition& operator=(MobEffectDefinition const&) = delete;
-    MobEffectDefinition(MobEffectDefinition const&)            = delete;
+    MobEffectDefinition& operator=(MobEffectDefinition const&);
+    MobEffectDefinition(MobEffectDefinition const&);
 
 public:
     // NOLINTBEGIN

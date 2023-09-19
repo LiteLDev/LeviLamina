@@ -7,9 +7,9 @@ namespace Social {
 class MultiplayerServiceManager {
 public:
     // prevent constructor by default
-    MultiplayerServiceManager& operator=(MultiplayerServiceManager const&) = delete;
-    MultiplayerServiceManager(MultiplayerServiceManager const&)            = delete;
-    MultiplayerServiceManager()                                            = delete;
+    MultiplayerServiceManager& operator=(MultiplayerServiceManager const&);
+    MultiplayerServiceManager(MultiplayerServiceManager const&);
+    MultiplayerServiceManager();
 };
 
 }; // namespace Social

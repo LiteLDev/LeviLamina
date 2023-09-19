@@ -9,9 +9,9 @@
 class FollowCaravanGoal : public ::Goal {
 public:
     // prevent constructor by default
-    FollowCaravanGoal& operator=(FollowCaravanGoal const&) = delete;
-    FollowCaravanGoal(FollowCaravanGoal const&)            = delete;
-    FollowCaravanGoal()                                    = delete;
+    FollowCaravanGoal& operator=(FollowCaravanGoal const&);
+    FollowCaravanGoal(FollowCaravanGoal const&);
+    FollowCaravanGoal();
 
 public:
     // NOLINTBEGIN

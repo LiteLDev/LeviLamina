@@ -5,7 +5,7 @@
 class ModelPartLocator {
 public:
     // prevent constructor by default
-    ModelPartLocator& operator=(ModelPartLocator const&) = delete;
-    ModelPartLocator(ModelPartLocator const&)            = delete;
-    ModelPartLocator()                                   = delete;
+    ModelPartLocator& operator=(ModelPartLocator const&);
+    ModelPartLocator(ModelPartLocator const&);
+    ModelPartLocator();
 };

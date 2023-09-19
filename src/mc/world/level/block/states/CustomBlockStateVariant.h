@@ -8,9 +8,9 @@
 class CustomBlockStateVariant : public ::BlockState {
 public:
     // prevent constructor by default
-    CustomBlockStateVariant& operator=(CustomBlockStateVariant const&) = delete;
-    CustomBlockStateVariant(CustomBlockStateVariant const&)            = delete;
-    CustomBlockStateVariant()                                          = delete;
+    CustomBlockStateVariant& operator=(CustomBlockStateVariant const&);
+    CustomBlockStateVariant(CustomBlockStateVariant const&);
+    CustomBlockStateVariant();
 
 public:
     // NOLINTBEGIN

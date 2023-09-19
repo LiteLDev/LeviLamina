@@ -5,7 +5,7 @@
 struct ContainerValidationCraftInputs {
 public:
     // prevent constructor by default
-    ContainerValidationCraftInputs& operator=(ContainerValidationCraftInputs const&) = delete;
-    ContainerValidationCraftInputs(ContainerValidationCraftInputs const&)            = delete;
-    ContainerValidationCraftInputs()                                                 = delete;
+    ContainerValidationCraftInputs& operator=(ContainerValidationCraftInputs const&);
+    ContainerValidationCraftInputs(ContainerValidationCraftInputs const&);
+    ContainerValidationCraftInputs();
 };

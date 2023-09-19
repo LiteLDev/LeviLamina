@@ -21,9 +21,9 @@ public:
     struct WeightedBlockReference {
     public:
         // prevent constructor by default
-        WeightedBlockReference& operator=(WeightedBlockReference const&) = delete;
-        WeightedBlockReference(WeightedBlockReference const&)            = delete;
-        WeightedBlockReference()                                         = delete;
+        WeightedBlockReference& operator=(WeightedBlockReference const&);
+        WeightedBlockReference(WeightedBlockReference const&);
+        WeightedBlockReference();
 
     public:
         // NOLINTBEGIN
@@ -35,8 +35,8 @@ public:
 
 public:
     // prevent constructor by default
-    MangroveTreeCanopy& operator=(MangroveTreeCanopy const&) = delete;
-    MangroveTreeCanopy(MangroveTreeCanopy const&)            = delete;
+    MangroveTreeCanopy& operator=(MangroveTreeCanopy const&);
+    MangroveTreeCanopy(MangroveTreeCanopy const&);
 
 public:
     // NOLINTBEGIN

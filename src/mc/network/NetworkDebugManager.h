@@ -21,8 +21,8 @@ public:
     class Tracker {
     public:
         // prevent constructor by default
-        Tracker& operator=(Tracker const&) = delete;
-        Tracker(Tracker const&)            = delete;
+        Tracker& operator=(Tracker const&);
+        Tracker(Tracker const&);
 
     public:
         // NOLINTBEGIN
@@ -37,9 +37,9 @@ public:
 
 public:
     // prevent constructor by default
-    NetworkDebugManager& operator=(NetworkDebugManager const&) = delete;
-    NetworkDebugManager(NetworkDebugManager const&)            = delete;
-    NetworkDebugManager()                                      = delete;
+    NetworkDebugManager& operator=(NetworkDebugManager const&);
+    NetworkDebugManager(NetworkDebugManager const&);
+    NetworkDebugManager();
 
 public:
     // NOLINTBEGIN

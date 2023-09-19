@@ -5,9 +5,9 @@
 class PassengerTickSystem {
 public:
     // prevent constructor by default
-    PassengerTickSystem& operator=(PassengerTickSystem const&) = delete;
-    PassengerTickSystem(PassengerTickSystem const&)            = delete;
-    PassengerTickSystem()                                      = delete;
+    PassengerTickSystem& operator=(PassengerTickSystem const&);
+    PassengerTickSystem(PassengerTickSystem const&);
+    PassengerTickSystem();
 
 public:
     // NOLINTBEGIN

@@ -5,8 +5,8 @@
 class LookAtComponent {
 public:
     // prevent constructor by default
-    LookAtComponent& operator=(LookAtComponent const&) = delete;
-    LookAtComponent(LookAtComponent const&)            = delete;
+    LookAtComponent& operator=(LookAtComponent const&);
+    LookAtComponent(LookAtComponent const&);
 
 public:
     // NOLINTBEGIN

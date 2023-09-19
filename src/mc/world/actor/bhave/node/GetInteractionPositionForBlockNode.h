@@ -10,8 +10,8 @@
 class GetInteractionPositionForBlockNode : public ::BehaviorNode {
 public:
     // prevent constructor by default
-    GetInteractionPositionForBlockNode& operator=(GetInteractionPositionForBlockNode const&) = delete;
-    GetInteractionPositionForBlockNode(GetInteractionPositionForBlockNode const&)            = delete;
+    GetInteractionPositionForBlockNode& operator=(GetInteractionPositionForBlockNode const&);
+    GetInteractionPositionForBlockNode(GetInteractionPositionForBlockNode const&);
 
 public:
     // NOLINTBEGIN

@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptColorComponent {
 public:
     // prevent constructor by default
-    ScriptColorComponent& operator=(ScriptColorComponent const&) = delete;
-    ScriptColorComponent(ScriptColorComponent const&)            = delete;
-    ScriptColorComponent()                                       = delete;
+    ScriptColorComponent& operator=(ScriptColorComponent const&);
+    ScriptColorComponent(ScriptColorComponent const&);
+    ScriptColorComponent();
 
 public:
     // NOLINTBEGIN

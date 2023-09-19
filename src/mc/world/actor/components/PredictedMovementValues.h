@@ -5,9 +5,9 @@
 struct PredictedMovementValues {
 public:
     // prevent constructor by default
-    PredictedMovementValues& operator=(PredictedMovementValues const&) = delete;
-    PredictedMovementValues(PredictedMovementValues const&)            = delete;
-    PredictedMovementValues()                                          = delete;
+    PredictedMovementValues& operator=(PredictedMovementValues const&);
+    PredictedMovementValues(PredictedMovementValues const&);
+    PredictedMovementValues();
 
 public:
     // NOLINTBEGIN

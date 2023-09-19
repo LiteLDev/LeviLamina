@@ -8,8 +8,8 @@
 class LookControl : public ::Control {
 public:
     // prevent constructor by default
-    LookControl& operator=(LookControl const&) = delete;
-    LookControl(LookControl const&)            = delete;
+    LookControl& operator=(LookControl const&);
+    LookControl(LookControl const&);
 
 public:
     // NOLINTBEGIN

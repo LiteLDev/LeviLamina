@@ -5,9 +5,9 @@
 class ActorOwnerComponent {
 public:
     // prevent constructor by default
-    ActorOwnerComponent& operator=(ActorOwnerComponent const&) = delete;
-    ActorOwnerComponent(ActorOwnerComponent const&)            = delete;
-    ActorOwnerComponent()                                      = delete;
+    ActorOwnerComponent& operator=(ActorOwnerComponent const&);
+    ActorOwnerComponent(ActorOwnerComponent const&);
+    ActorOwnerComponent();
 
 public:
     // NOLINTBEGIN
@@ -15,7 +15,7 @@ public:
     MCAPI ActorOwnerComponent(class ActorOwnerComponent&&);
 
     // symbol: ??0ActorOwnerComponent@@QEAA@V?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@@Z
-    MCAPI ActorOwnerComponent(std::unique_ptr<class Actor>);
+    MCAPI explicit ActorOwnerComponent(std::unique_ptr<class Actor>);
 
     // symbol: ?getActor@ActorOwnerComponent@@QEBAAEAVActor@@XZ
     MCAPI class Actor& getActor() const;

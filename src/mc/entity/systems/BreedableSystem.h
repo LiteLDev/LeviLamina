@@ -8,9 +8,9 @@
 class BreedableSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    BreedableSystem& operator=(BreedableSystem const&) = delete;
-    BreedableSystem(BreedableSystem const&)            = delete;
-    BreedableSystem()                                  = delete;
+    BreedableSystem& operator=(BreedableSystem const&);
+    BreedableSystem(BreedableSystem const&);
+    BreedableSystem();
 
 public:
     // NOLINTBEGIN

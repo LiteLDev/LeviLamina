@@ -5,9 +5,9 @@
 class MapDataManager {
 public:
     // prevent constructor by default
-    MapDataManager& operator=(MapDataManager const&) = delete;
-    MapDataManager(MapDataManager const&)            = delete;
-    MapDataManager()                                 = delete;
+    MapDataManager& operator=(MapDataManager const&);
+    MapDataManager(MapDataManager const&);
+    MapDataManager();
 
 public:
     // NOLINTBEGIN

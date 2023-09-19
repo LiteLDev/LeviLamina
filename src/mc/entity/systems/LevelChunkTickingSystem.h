@@ -8,9 +8,9 @@
 class LevelChunkTickingSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    LevelChunkTickingSystem& operator=(LevelChunkTickingSystem const&) = delete;
-    LevelChunkTickingSystem(LevelChunkTickingSystem const&)            = delete;
-    LevelChunkTickingSystem()                                          = delete;
+    LevelChunkTickingSystem& operator=(LevelChunkTickingSystem const&);
+    LevelChunkTickingSystem(LevelChunkTickingSystem const&);
+    LevelChunkTickingSystem();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 struct MoveControlDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    MoveControlDescription& operator=(MoveControlDescription const&) = delete;
-    MoveControlDescription(MoveControlDescription const&)            = delete;
-    MoveControlDescription()                                         = delete;
+    MoveControlDescription& operator=(MoveControlDescription const&);
+    MoveControlDescription(MoveControlDescription const&);
+    MoveControlDescription();
 
 public:
     // NOLINTBEGIN

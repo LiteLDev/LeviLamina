@@ -5,7 +5,7 @@
 class ResourcePackMergeStrategy {
 public:
     // prevent constructor by default
-    ResourcePackMergeStrategy& operator=(ResourcePackMergeStrategy const&) = delete;
-    ResourcePackMergeStrategy(ResourcePackMergeStrategy const&)            = delete;
-    ResourcePackMergeStrategy()                                            = delete;
+    ResourcePackMergeStrategy& operator=(ResourcePackMergeStrategy const&);
+    ResourcePackMergeStrategy(ResourcePackMergeStrategy const&);
+    ResourcePackMergeStrategy();
 };

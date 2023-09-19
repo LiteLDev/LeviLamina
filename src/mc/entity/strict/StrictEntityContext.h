@@ -5,9 +5,9 @@
 class StrictEntityContext {
 public:
     // prevent constructor by default
-    StrictEntityContext& operator=(StrictEntityContext const&) = delete;
-    StrictEntityContext(StrictEntityContext const&)            = delete;
-    StrictEntityContext()                                      = delete;
+    StrictEntityContext& operator=(StrictEntityContext const&);
+    StrictEntityContext(StrictEntityContext const&);
+    StrictEntityContext();
 
 public:
     // NOLINTBEGIN
@@ -18,7 +18,7 @@ public:
     MCAPI StrictEntityContext(class StrictEntityContext&&);
 
     // symbol: ??0StrictEntityContext@@QEAA@AEBVEntityContextBase@@@Z
-    MCAPI StrictEntityContext(class EntityContextBase const&);
+    MCAPI explicit StrictEntityContext(class EntityContextBase const&);
 
     // symbol: ?isNull@StrictEntityContext@@QEBA_NXZ
     MCAPI bool isNull() const;

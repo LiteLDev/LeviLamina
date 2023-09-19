@@ -9,9 +9,9 @@
 class MoveToLandGoal : public ::BaseMoveToBlockGoal {
 public:
     // prevent constructor by default
-    MoveToLandGoal& operator=(MoveToLandGoal const&) = delete;
-    MoveToLandGoal(MoveToLandGoal const&)            = delete;
-    MoveToLandGoal()                                 = delete;
+    MoveToLandGoal& operator=(MoveToLandGoal const&);
+    MoveToLandGoal(MoveToLandGoal const&);
+    MoveToLandGoal();
 
 public:
     // NOLINTBEGIN

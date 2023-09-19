@@ -5,9 +5,9 @@
 class VehicleClientPositionPassengerSystem {
 public:
     // prevent constructor by default
-    VehicleClientPositionPassengerSystem& operator=(VehicleClientPositionPassengerSystem const&) = delete;
-    VehicleClientPositionPassengerSystem(VehicleClientPositionPassengerSystem const&)            = delete;
-    VehicleClientPositionPassengerSystem()                                                       = delete;
+    VehicleClientPositionPassengerSystem& operator=(VehicleClientPositionPassengerSystem const&);
+    VehicleClientPositionPassengerSystem(VehicleClientPositionPassengerSystem const&);
+    VehicleClientPositionPassengerSystem();
 
 public:
     // NOLINTBEGIN

@@ -355,7 +355,7 @@ public:
     MCAPI bool matchesItem(class ItemStackBase const&) const;
 
     // symbol: ??BItemStackBase@@QEBA_NXZ
-    MCAPI operator bool() const;
+    MCAPI explicit operator bool() const;
 
     // symbol: ??9ItemStackBase@@QEBA_NAEBV0@@Z
     MCAPI bool operator!=(class ItemStackBase const&) const;
@@ -517,7 +517,7 @@ public:
     MCAPI ItemStackBase(class ItemStackBase const&);
 
     // symbol: ??0ItemStackBase@@IEAA@AEBVRecipeIngredient@@@Z
-    MCAPI ItemStackBase(class RecipeIngredient const&);
+    MCAPI explicit ItemStackBase(class RecipeIngredient const&);
 
     // symbol:
     // ?_getHoverFormattingPrefix@ItemStackBase@@IEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -597,7 +597,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $MAX_STACK_SIZE() { return MAX_STACK_SIZE; }
+    auto& $MAX_STACK_SIZE() { return MAX_STACK_SIZE; }
 
     // NOLINTEND
 };

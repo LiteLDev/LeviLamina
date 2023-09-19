@@ -27,9 +27,9 @@
 class MinecartChest : public ::Minecart {
 public:
     // prevent constructor by default
-    MinecartChest& operator=(MinecartChest const&) = delete;
-    MinecartChest(MinecartChest const&)            = delete;
-    MinecartChest()                                = delete;
+    MinecartChest& operator=(MinecartChest const&);
+    MinecartChest(MinecartChest const&);
+    MinecartChest();
 
 public:
     // NOLINTBEGIN
@@ -126,7 +126,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $ITEMS_SIZE() { return ITEMS_SIZE; }
+    auto& $ITEMS_SIZE() { return ITEMS_SIZE; }
 
     // NOLINTEND
 };

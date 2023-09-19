@@ -8,10 +8,9 @@
 class StructurePoolBlockPredicateAxisAlignedPosition : public ::IStructurePoolBlockPredicate {
 public:
     // prevent constructor by default
-    StructurePoolBlockPredicateAxisAlignedPosition&
-    operator=(StructurePoolBlockPredicateAxisAlignedPosition const&)                                      = delete;
-    StructurePoolBlockPredicateAxisAlignedPosition(StructurePoolBlockPredicateAxisAlignedPosition const&) = delete;
-    StructurePoolBlockPredicateAxisAlignedPosition()                                                      = delete;
+    StructurePoolBlockPredicateAxisAlignedPosition& operator=(StructurePoolBlockPredicateAxisAlignedPosition const&);
+    StructurePoolBlockPredicateAxisAlignedPosition(StructurePoolBlockPredicateAxisAlignedPosition const&);
+    StructurePoolBlockPredicateAxisAlignedPosition();
 
 public:
     // NOLINTBEGIN

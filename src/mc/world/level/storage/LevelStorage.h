@@ -12,9 +12,9 @@
 class LevelStorage {
 public:
     // prevent constructor by default
-    LevelStorage& operator=(LevelStorage const&) = delete;
-    LevelStorage(LevelStorage const&)            = delete;
-    LevelStorage()                               = delete;
+    LevelStorage& operator=(LevelStorage const&);
+    LevelStorage(LevelStorage const&);
+    LevelStorage();
 
 public:
     // NOLINTBEGIN

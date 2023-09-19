@@ -7,9 +7,9 @@ namespace Bedrock::Http {
 class HttpErrorCategory {
 public:
     // prevent constructor by default
-    HttpErrorCategory& operator=(HttpErrorCategory const&) = delete;
-    HttpErrorCategory(HttpErrorCategory const&)            = delete;
-    HttpErrorCategory()                                    = delete;
+    HttpErrorCategory& operator=(HttpErrorCategory const&);
+    HttpErrorCategory(HttpErrorCategory const&);
+    HttpErrorCategory();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class ActorAnimationEvent {
 public:
     // prevent constructor by default
-    ActorAnimationEvent& operator=(ActorAnimationEvent const&) = delete;
-    ActorAnimationEvent(ActorAnimationEvent const&)            = delete;
-    ActorAnimationEvent()                                      = delete;
+    ActorAnimationEvent& operator=(ActorAnimationEvent const&);
+    ActorAnimationEvent(ActorAnimationEvent const&);
+    ActorAnimationEvent();
 
 public:
     // NOLINTBEGIN

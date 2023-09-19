@@ -13,9 +13,9 @@ namespace mce { class Color; }
 class VanillaBiomes {
 public:
     // prevent constructor by default
-    VanillaBiomes& operator=(VanillaBiomes const&) = delete;
-    VanillaBiomes(VanillaBiomes const&)            = delete;
-    VanillaBiomes()                                = delete;
+    VanillaBiomes& operator=(VanillaBiomes const&);
+    VanillaBiomes(VanillaBiomes const&);
+    VanillaBiomes();
 
 public:
     // NOLINTBEGIN

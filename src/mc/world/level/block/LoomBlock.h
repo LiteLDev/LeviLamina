@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class LoomBlock : public ::FaceDirectionalBlock {
 public:
     // prevent constructor by default
-    LoomBlock& operator=(LoomBlock const&) = delete;
-    LoomBlock(LoomBlock const&)            = delete;
-    LoomBlock()                            = delete;
+    LoomBlock& operator=(LoomBlock const&);
+    LoomBlock(LoomBlock const&);
+    LoomBlock();
 
 public:
     // NOLINTBEGIN

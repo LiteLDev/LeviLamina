@@ -5,9 +5,9 @@
 class ISecureStorageKeySystem {
 public:
     // prevent constructor by default
-    ISecureStorageKeySystem& operator=(ISecureStorageKeySystem const&) = delete;
-    ISecureStorageKeySystem(ISecureStorageKeySystem const&)            = delete;
-    ISecureStorageKeySystem()                                          = delete;
+    ISecureStorageKeySystem& operator=(ISecureStorageKeySystem const&);
+    ISecureStorageKeySystem(ISecureStorageKeySystem const&);
+    ISecureStorageKeySystem();
 
 public:
     // NOLINTBEGIN

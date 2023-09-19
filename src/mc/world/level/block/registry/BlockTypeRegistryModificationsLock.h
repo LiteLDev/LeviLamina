@@ -5,9 +5,9 @@
 class BlockTypeRegistryModificationsLock {
 public:
     // prevent constructor by default
-    BlockTypeRegistryModificationsLock& operator=(BlockTypeRegistryModificationsLock const&) = delete;
-    BlockTypeRegistryModificationsLock(BlockTypeRegistryModificationsLock const&)            = delete;
-    BlockTypeRegistryModificationsLock()                                                     = delete;
+    BlockTypeRegistryModificationsLock& operator=(BlockTypeRegistryModificationsLock const&);
+    BlockTypeRegistryModificationsLock(BlockTypeRegistryModificationsLock const&);
+    BlockTypeRegistryModificationsLock();
 
 public:
     // NOLINTBEGIN

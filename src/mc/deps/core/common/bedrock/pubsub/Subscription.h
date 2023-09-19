@@ -7,8 +7,8 @@ namespace Bedrock::PubSub {
 class Subscription {
 public:
     // prevent constructor by default
-    Subscription& operator=(Subscription const&) = delete;
-    Subscription(Subscription const&)            = delete;
+    Subscription& operator=(Subscription const&);
+    Subscription(Subscription const&);
 
 public:
     // NOLINTBEGIN

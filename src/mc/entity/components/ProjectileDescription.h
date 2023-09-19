@@ -8,8 +8,8 @@
 class ProjectileDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    ProjectileDescription& operator=(ProjectileDescription const&) = delete;
-    ProjectileDescription(ProjectileDescription const&)            = delete;
+    ProjectileDescription& operator=(ProjectileDescription const&);
+    ProjectileDescription(ProjectileDescription const&);
 
 public:
     // NOLINTBEGIN

@@ -21,9 +21,9 @@ public:
     struct FromRequest {
     public:
         // prevent constructor by default
-        FromRequest& operator=(FromRequest const&) = delete;
-        FromRequest(FromRequest const&)            = delete;
-        FromRequest()                              = delete;
+        FromRequest& operator=(FromRequest const&);
+        FromRequest(FromRequest const&);
+        FromRequest();
 
     public:
         // NOLINTBEGIN
@@ -35,8 +35,8 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptFormPromiseTracker& operator=(ScriptFormPromiseTracker const&) = delete;
-    ScriptFormPromiseTracker(ScriptFormPromiseTracker const&)            = delete;
+    ScriptFormPromiseTracker& operator=(ScriptFormPromiseTracker const&);
+    ScriptFormPromiseTracker(ScriptFormPromiseTracker const&);
 
 public:
     // NOLINTBEGIN

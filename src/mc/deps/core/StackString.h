@@ -8,9 +8,9 @@ template <typename T0, int T1>
 class StackString {
 public:
     // prevent constructor by default
-    StackString& operator=(StackString const&) = delete;
-    StackString(StackString const&)            = delete;
-    StackString()                              = delete;
+    StackString& operator=(StackString const&);
+    StackString(StackString const&);
+    StackString();
 };
 
 }; // namespace Core

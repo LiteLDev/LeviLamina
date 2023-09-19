@@ -5,9 +5,9 @@
 struct RopeParams {
 public:
     // prevent constructor by default
-    RopeParams& operator=(RopeParams const&) = delete;
-    RopeParams(RopeParams const&)            = delete;
-    RopeParams()                             = delete;
+    RopeParams& operator=(RopeParams const&);
+    RopeParams(RopeParams const&);
+    RopeParams();
 
 public:
     // NOLINTBEGIN

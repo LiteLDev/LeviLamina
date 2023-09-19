@@ -5,9 +5,9 @@
 class BlockComponentDirectData {
 public:
     // prevent constructor by default
-    BlockComponentDirectData& operator=(BlockComponentDirectData const&) = delete;
-    BlockComponentDirectData(BlockComponentDirectData const&)            = delete;
-    BlockComponentDirectData()                                           = delete;
+    BlockComponentDirectData& operator=(BlockComponentDirectData const&);
+    BlockComponentDirectData(BlockComponentDirectData const&);
+    BlockComponentDirectData();
 
 public:
     // NOLINTBEGIN

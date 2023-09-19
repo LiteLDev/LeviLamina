@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct OnDeathDefinition {
 public:
     // prevent constructor by default
-    OnDeathDefinition& operator=(OnDeathDefinition const&) = delete;
-    OnDeathDefinition(OnDeathDefinition const&)            = delete;
-    OnDeathDefinition()                                    = delete;
+    OnDeathDefinition& operator=(OnDeathDefinition const&);
+    OnDeathDefinition(OnDeathDefinition const&);
+    OnDeathDefinition();
 
 public:
     // NOLINTBEGIN

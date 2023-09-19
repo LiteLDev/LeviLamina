@@ -17,9 +17,9 @@ public:
 
 public:
     // prevent constructor by default
-    DateManager& operator=(DateManager const&) = delete;
-    DateManager(DateManager const&)            = delete;
-    DateManager()                              = delete;
+    DateManager& operator=(DateManager const&);
+    DateManager(DateManager const&);
+    DateManager();
 
 public:
     // NOLINTBEGIN

@@ -14,9 +14,9 @@ namespace npc { struct ActionContainer; }
 class NpcSceneDialogueData : public ::INpcDialogueData {
 public:
     // prevent constructor by default
-    NpcSceneDialogueData& operator=(NpcSceneDialogueData const&) = delete;
-    NpcSceneDialogueData(NpcSceneDialogueData const&)            = delete;
-    NpcSceneDialogueData()                                       = delete;
+    NpcSceneDialogueData& operator=(NpcSceneDialogueData const&);
+    NpcSceneDialogueData(NpcSceneDialogueData const&);
+    NpcSceneDialogueData();
 
     WeakEntityRef mOwner;     // this+0x8
     std::string   mSceneName; // this+0x20

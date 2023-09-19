@@ -5,9 +5,9 @@
 class ActorGoalFactory {
 public:
     // prevent constructor by default
-    ActorGoalFactory& operator=(ActorGoalFactory const&) = delete;
-    ActorGoalFactory(ActorGoalFactory const&)            = delete;
-    ActorGoalFactory()                                   = delete;
+    ActorGoalFactory& operator=(ActorGoalFactory const&);
+    ActorGoalFactory(ActorGoalFactory const&);
+    ActorGoalFactory();
 
 public:
     // NOLINTBEGIN

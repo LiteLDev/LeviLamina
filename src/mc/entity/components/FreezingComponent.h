@@ -5,9 +5,9 @@
 class FreezingComponent {
 public:
     // prevent constructor by default
-    FreezingComponent& operator=(FreezingComponent const&) = delete;
-    FreezingComponent(FreezingComponent const&)            = delete;
-    FreezingComponent()                                    = delete;
+    FreezingComponent& operator=(FreezingComponent const&);
+    FreezingComponent(FreezingComponent const&);
+    FreezingComponent();
 
 public:
     // NOLINTBEGIN

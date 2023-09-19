@@ -13,9 +13,9 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class IContentTierManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    IContentTierManager& operator=(IContentTierManager const&) = delete;
-    IContentTierManager(IContentTierManager const&)            = delete;
-    IContentTierManager()                                      = delete;
+    IContentTierManager& operator=(IContentTierManager const&);
+    IContentTierManager(IContentTierManager const&);
+    IContentTierManager();
 
 public:
     // NOLINTBEGIN

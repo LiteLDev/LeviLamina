@@ -27,9 +27,9 @@ public:
     class Rail {
     public:
         // prevent constructor by default
-        Rail& operator=(Rail const&) = delete;
-        Rail(Rail const&)            = delete;
-        Rail()                       = delete;
+        Rail& operator=(Rail const&);
+        Rail(Rail const&);
+        Rail();
 
     public:
         // NOLINTBEGIN
@@ -69,9 +69,9 @@ public:
 
 public:
     // prevent constructor by default
-    BaseRailBlock& operator=(BaseRailBlock const&) = delete;
-    BaseRailBlock(BaseRailBlock const&)            = delete;
-    BaseRailBlock()                                = delete;
+    BaseRailBlock& operator=(BaseRailBlock const&);
+    BaseRailBlock(BaseRailBlock const&);
+    BaseRailBlock();
 
 public:
     // NOLINTBEGIN

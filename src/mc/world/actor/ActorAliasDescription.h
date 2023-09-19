@@ -10,9 +10,9 @@ namespace Json { class Value; }
 class ActorAliasDescription {
 public:
     // prevent constructor by default
-    ActorAliasDescription& operator=(ActorAliasDescription const&) = delete;
-    ActorAliasDescription(ActorAliasDescription const&)            = delete;
-    ActorAliasDescription()                                        = delete;
+    ActorAliasDescription& operator=(ActorAliasDescription const&);
+    ActorAliasDescription(ActorAliasDescription const&);
+    ActorAliasDescription();
 
 public:
     // NOLINTBEGIN

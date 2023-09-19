@@ -5,9 +5,9 @@
 class EntityGoalFactory {
 public:
     // prevent constructor by default
-    EntityGoalFactory& operator=(EntityGoalFactory const&) = delete;
-    EntityGoalFactory(EntityGoalFactory const&)            = delete;
-    EntityGoalFactory()                                    = delete;
+    EntityGoalFactory& operator=(EntityGoalFactory const&);
+    EntityGoalFactory(EntityGoalFactory const&);
+    EntityGoalFactory();
 
 public:
     // NOLINTBEGIN

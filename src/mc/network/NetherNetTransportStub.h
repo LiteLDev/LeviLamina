@@ -21,9 +21,9 @@ namespace NetherNet { struct SessionState; }
 class NetherNetTransportStub : public ::NetherNet::INetherNetTransportInterface {
 public:
     // prevent constructor by default
-    NetherNetTransportStub& operator=(NetherNetTransportStub const&) = delete;
-    NetherNetTransportStub(NetherNetTransportStub const&)            = delete;
-    NetherNetTransportStub()                                         = delete;
+    NetherNetTransportStub& operator=(NetherNetTransportStub const&);
+    NetherNetTransportStub(NetherNetTransportStub const&);
+    NetherNetTransportStub();
 
 public:
     // NOLINTBEGIN

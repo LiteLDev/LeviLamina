@@ -27,9 +27,9 @@ namespace ScriptModuleMinecraft {
 class ScriptItemEventListener {
 public:
     // prevent constructor by default
-    ScriptItemEventListener& operator=(ScriptItemEventListener const&) = delete;
-    ScriptItemEventListener(ScriptItemEventListener const&)            = delete;
-    ScriptItemEventListener()                                          = delete;
+    ScriptItemEventListener& operator=(ScriptItemEventListener const&);
+    ScriptItemEventListener(ScriptItemEventListener const&);
+    ScriptItemEventListener();
 
 public:
     // NOLINTBEGIN

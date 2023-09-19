@@ -14,8 +14,8 @@ public:
 
 public:
     // prevent constructor by default
-    ResourceInformation& operator=(ResourceInformation const&) = delete;
-    ResourceInformation()                                      = delete;
+    ResourceInformation& operator=(ResourceInformation const&);
+    ResourceInformation();
 
 public:
     // NOLINTBEGIN

@@ -24,9 +24,9 @@ public:
     class GoHomeDefinition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        GoHomeDefinition& operator=(GoHomeDefinition const&) = delete;
-        GoHomeDefinition(GoHomeDefinition const&)            = delete;
-        GoHomeDefinition()                                   = delete;
+        GoHomeDefinition& operator=(GoHomeDefinition const&);
+        GoHomeDefinition(GoHomeDefinition const&);
+        GoHomeDefinition();
 
     public:
         // NOLINTBEGIN
@@ -46,9 +46,9 @@ public:
 
 public:
     // prevent constructor by default
-    GoHomeGoal& operator=(GoHomeGoal const&) = delete;
-    GoHomeGoal(GoHomeGoal const&)            = delete;
-    GoHomeGoal()                             = delete;
+    GoHomeGoal& operator=(GoHomeGoal const&);
+    GoHomeGoal(GoHomeGoal const&);
+    GoHomeGoal();
 
 public:
     // NOLINTBEGIN
@@ -75,7 +75,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0GoHomeGoal@@QEAA@AEAVMob@@@Z
-    MCAPI GoHomeGoal(class Mob&);
+    MCAPI explicit GoHomeGoal(class Mob&);
 
     // NOLINTEND
 

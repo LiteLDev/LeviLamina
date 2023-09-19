@@ -9,9 +9,9 @@
 class MoveTowardsHomeRestrictionGoal : public ::MoveTowardsRestrictionGoal {
 public:
     // prevent constructor by default
-    MoveTowardsHomeRestrictionGoal& operator=(MoveTowardsHomeRestrictionGoal const&) = delete;
-    MoveTowardsHomeRestrictionGoal(MoveTowardsHomeRestrictionGoal const&)            = delete;
-    MoveTowardsHomeRestrictionGoal()                                                 = delete;
+    MoveTowardsHomeRestrictionGoal& operator=(MoveTowardsHomeRestrictionGoal const&);
+    MoveTowardsHomeRestrictionGoal(MoveTowardsHomeRestrictionGoal const&);
+    MoveTowardsHomeRestrictionGoal();
 
 public:
     // NOLINTBEGIN
@@ -26,7 +26,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0MoveTowardsHomeRestrictionGoal@@QEAA@AEAVMob@@@Z
-    MCAPI MoveTowardsHomeRestrictionGoal(class Mob&);
+    MCAPI explicit MoveTowardsHomeRestrictionGoal(class Mob&);
 
     // NOLINTEND
 };

@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class ThrownPotionEffectSubcomponent : public ::SplashPotionEffectSubcomponent {
 public:
     // prevent constructor by default
-    ThrownPotionEffectSubcomponent& operator=(ThrownPotionEffectSubcomponent const&) = delete;
-    ThrownPotionEffectSubcomponent(ThrownPotionEffectSubcomponent const&)            = delete;
-    ThrownPotionEffectSubcomponent()                                                 = delete;
+    ThrownPotionEffectSubcomponent& operator=(ThrownPotionEffectSubcomponent const&);
+    ThrownPotionEffectSubcomponent(ThrownPotionEffectSubcomponent const&);
+    ThrownPotionEffectSubcomponent();
 
 public:
     // NOLINTBEGIN

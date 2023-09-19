@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class ChemistryStickItem : public ::ChemistryItem {
 public:
     // prevent constructor by default
-    ChemistryStickItem& operator=(ChemistryStickItem const&) = delete;
-    ChemistryStickItem(ChemistryStickItem const&)            = delete;
-    ChemistryStickItem()                                     = delete;
+    ChemistryStickItem& operator=(ChemistryStickItem const&);
+    ChemistryStickItem(ChemistryStickItem const&);
+    ChemistryStickItem();
 
 public:
     // NOLINTBEGIN
@@ -168,19 +168,19 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $ACTIVATION_TIMESTAMP_TAG() { return ACTIVATION_TIMESTAMP_TAG; }
+    auto& $ACTIVATION_TIMESTAMP_TAG() { return ACTIVATION_TIMESTAMP_TAG; }
 
-    inline auto& $ACTIVE_BIT() { return ACTIVE_BIT; }
+    auto& $ACTIVE_BIT() { return ACTIVE_BIT; }
 
-    inline auto& $COLOR_BITS() { return COLOR_BITS; }
+    auto& $COLOR_BITS() { return COLOR_BITS; }
 
-    inline auto& $COLOR_MASK() { return COLOR_MASK; }
+    auto& $COLOR_MASK() { return COLOR_MASK; }
 
-    inline auto& $DAMAGE_BITS() { return DAMAGE_BITS; }
+    auto& $DAMAGE_BITS() { return DAMAGE_BITS; }
 
-    inline auto& $DAMAGE_MASK() { return DAMAGE_MASK; }
+    auto& $DAMAGE_MASK() { return DAMAGE_MASK; }
 
-    inline auto& $DAMAGE_START_BIT() { return DAMAGE_START_BIT; }
+    auto& $DAMAGE_START_BIT() { return DAMAGE_START_BIT; }
 
     // NOLINTEND
 };

@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class FertilizeFarmBlockDefinition : public ::BaseGoalDefinition {
 public:
     // prevent constructor by default
-    FertilizeFarmBlockDefinition& operator=(FertilizeFarmBlockDefinition const&) = delete;
-    FertilizeFarmBlockDefinition(FertilizeFarmBlockDefinition const&)            = delete;
+    FertilizeFarmBlockDefinition& operator=(FertilizeFarmBlockDefinition const&);
+    FertilizeFarmBlockDefinition(FertilizeFarmBlockDefinition const&);
 
 public:
     // NOLINTBEGIN

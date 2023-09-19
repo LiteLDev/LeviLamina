@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct CanFlyDefinition {
 public:
     // prevent constructor by default
-    CanFlyDefinition& operator=(CanFlyDefinition const&) = delete;
-    CanFlyDefinition(CanFlyDefinition const&)            = delete;
-    CanFlyDefinition()                                   = delete;
+    CanFlyDefinition& operator=(CanFlyDefinition const&);
+    CanFlyDefinition(CanFlyDefinition const&);
+    CanFlyDefinition();
 
 public:
     // NOLINTBEGIN

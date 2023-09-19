@@ -5,9 +5,9 @@
 class HeartbeatServerComponent {
 public:
     // prevent constructor by default
-    HeartbeatServerComponent& operator=(HeartbeatServerComponent const&) = delete;
-    HeartbeatServerComponent(HeartbeatServerComponent const&)            = delete;
-    HeartbeatServerComponent()                                           = delete;
+    HeartbeatServerComponent& operator=(HeartbeatServerComponent const&);
+    HeartbeatServerComponent(HeartbeatServerComponent const&);
+    HeartbeatServerComponent();
 
 public:
     // NOLINTBEGIN

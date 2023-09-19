@@ -8,9 +8,9 @@
 class HoldBlockSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    HoldBlockSystem& operator=(HoldBlockSystem const&) = delete;
-    HoldBlockSystem(HoldBlockSystem const&)            = delete;
-    HoldBlockSystem()                                  = delete;
+    HoldBlockSystem& operator=(HoldBlockSystem const&);
+    HoldBlockSystem(HoldBlockSystem const&);
+    HoldBlockSystem();
 
 public:
     // NOLINTBEGIN

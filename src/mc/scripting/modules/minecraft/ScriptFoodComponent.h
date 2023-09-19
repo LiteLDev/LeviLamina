@@ -20,7 +20,7 @@ namespace ScriptModuleMinecraft {
 class ScriptFoodComponent : public ::ScriptModuleMinecraft::ScriptItemComponent {
 public:
     // prevent constructor by default
-    ScriptFoodComponent() = delete;
+    ScriptFoodComponent();
 
 public:
     // NOLINTBEGIN

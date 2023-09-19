@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct DyeableDefinition {
 public:
     // prevent constructor by default
-    DyeableDefinition& operator=(DyeableDefinition const&) = delete;
-    DyeableDefinition(DyeableDefinition const&)            = delete;
-    DyeableDefinition()                                    = delete;
+    DyeableDefinition& operator=(DyeableDefinition const&);
+    DyeableDefinition(DyeableDefinition const&);
+    DyeableDefinition();
 
 public:
     // NOLINTBEGIN

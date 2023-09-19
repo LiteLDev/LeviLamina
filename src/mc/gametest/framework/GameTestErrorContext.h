@@ -10,9 +10,9 @@ namespace gametest {
 struct GameTestErrorContext {
 public:
     // prevent constructor by default
-    GameTestErrorContext& operator=(GameTestErrorContext const&) = delete;
-    GameTestErrorContext(GameTestErrorContext const&)            = delete;
-    GameTestErrorContext()                                       = delete;
+    GameTestErrorContext& operator=(GameTestErrorContext const&);
+    GameTestErrorContext(GameTestErrorContext const&);
+    GameTestErrorContext();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 class SoundItem {
 public:
     // prevent constructor by default
-    SoundItem& operator=(SoundItem const&) = delete;
-    SoundItem(SoundItem const&)            = delete;
-    SoundItem()                            = delete;
+    SoundItem& operator=(SoundItem const&);
+    SoundItem(SoundItem const&);
+    SoundItem();
 };

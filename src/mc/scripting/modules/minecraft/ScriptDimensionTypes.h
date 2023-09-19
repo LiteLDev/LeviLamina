@@ -16,9 +16,9 @@ namespace ScriptModuleMinecraft {
 class ScriptDimensionTypes {
 public:
     // prevent constructor by default
-    ScriptDimensionTypes& operator=(ScriptDimensionTypes const&) = delete;
-    ScriptDimensionTypes(ScriptDimensionTypes const&)            = delete;
-    ScriptDimensionTypes()                                       = delete;
+    ScriptDimensionTypes& operator=(ScriptDimensionTypes const&);
+    ScriptDimensionTypes(ScriptDimensionTypes const&);
+    ScriptDimensionTypes();
 
 public:
     // NOLINTBEGIN
@@ -43,7 +43,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $sMinecraftNamespace() { return sMinecraftNamespace; }
+    auto& $sMinecraftNamespace() { return sMinecraftNamespace; }
 
     // NOLINTEND
 };

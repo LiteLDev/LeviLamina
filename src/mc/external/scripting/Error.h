@@ -7,9 +7,9 @@ namespace Scripting {
 struct Error {
 public:
     // prevent constructor by default
-    Error& operator=(Error const&) = delete;
-    Error(Error const&)            = delete;
-    Error()                        = delete;
+    Error& operator=(Error const&);
+    Error(Error const&);
+    Error();
 };
 
 }; // namespace Scripting

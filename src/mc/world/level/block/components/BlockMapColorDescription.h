@@ -14,9 +14,9 @@ namespace JsonUtil { class EmptyClass; }
 struct BlockMapColorDescription : public ::BlockComponentDescription {
 public:
     // prevent constructor by default
-    BlockMapColorDescription& operator=(BlockMapColorDescription const&) = delete;
-    BlockMapColorDescription(BlockMapColorDescription const&)            = delete;
-    BlockMapColorDescription()                                           = delete;
+    BlockMapColorDescription& operator=(BlockMapColorDescription const&);
+    BlockMapColorDescription(BlockMapColorDescription const&);
+    BlockMapColorDescription();
 
 public:
     // NOLINTBEGIN

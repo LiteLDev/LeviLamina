@@ -22,9 +22,9 @@ namespace mce { class Color; }
 class SplashPotionItem : public ::PotionItem {
 public:
     // prevent constructor by default
-    SplashPotionItem& operator=(SplashPotionItem const&) = delete;
-    SplashPotionItem(SplashPotionItem const&)            = delete;
-    SplashPotionItem()                                   = delete;
+    SplashPotionItem& operator=(SplashPotionItem const&);
+    SplashPotionItem(SplashPotionItem const&);
+    SplashPotionItem();
 
 public:
     // NOLINTBEGIN

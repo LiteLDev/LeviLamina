@@ -19,7 +19,7 @@ namespace cereal {
 struct Schema {
 public:
     // prevent constructor by default
-    Schema(Schema const&) = delete;
+    Schema(Schema const&);
 
 public:
     // NOLINTBEGIN

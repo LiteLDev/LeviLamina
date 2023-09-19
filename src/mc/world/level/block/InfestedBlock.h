@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class InfestedBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    InfestedBlock& operator=(InfestedBlock const&) = delete;
-    InfestedBlock(InfestedBlock const&)            = delete;
-    InfestedBlock()                                = delete;
+    InfestedBlock& operator=(InfestedBlock const&);
+    InfestedBlock(InfestedBlock const&);
+    InfestedBlock();
 
 public:
     // NOLINTBEGIN

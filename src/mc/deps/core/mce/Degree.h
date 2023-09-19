@@ -12,14 +12,14 @@ namespace mce {
 struct Degree {
 public:
     // prevent constructor by default
-    Degree& operator=(Degree const&) = delete;
-    Degree(Degree const&)            = delete;
-    Degree()                         = delete;
+    Degree& operator=(Degree const&);
+    Degree(Degree const&);
+    Degree();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0Degree@mce@@QEAA@URadian@1@@Z
-    MCAPI Degree(struct mce::Radian);
+    MCAPI explicit Degree(struct mce::Radian);
 
     // symbol: ?asFloat@Degree@mce@@QEBAAEBMXZ
     MCAPI float const& asFloat() const;

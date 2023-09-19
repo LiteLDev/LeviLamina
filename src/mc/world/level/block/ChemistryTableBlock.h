@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class ChemistryTableBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    ChemistryTableBlock& operator=(ChemistryTableBlock const&) = delete;
-    ChemistryTableBlock(ChemistryTableBlock const&)            = delete;
-    ChemistryTableBlock()                                      = delete;
+    ChemistryTableBlock& operator=(ChemistryTableBlock const&);
+    ChemistryTableBlock(ChemistryTableBlock const&);
+    ChemistryTableBlock();
 
 public:
     // NOLINTBEGIN

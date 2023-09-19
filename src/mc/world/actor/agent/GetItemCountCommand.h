@@ -15,9 +15,9 @@ namespace AgentCommands {
 class GetItemCountCommand : public ::AgentCommands::Command {
 public:
     // prevent constructor by default
-    GetItemCountCommand& operator=(GetItemCountCommand const&) = delete;
-    GetItemCountCommand(GetItemCountCommand const&)            = delete;
-    GetItemCountCommand()                                      = delete;
+    GetItemCountCommand& operator=(GetItemCountCommand const&);
+    GetItemCountCommand(GetItemCountCommand const&);
+    GetItemCountCommand();
 
 public:
     // NOLINTBEGIN

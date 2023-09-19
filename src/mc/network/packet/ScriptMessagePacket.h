@@ -13,8 +13,8 @@ public:
     std::string mMessageValue; // this+0x50
 
     // prevent constructor by default
-    ScriptMessagePacket& operator=(ScriptMessagePacket const&) = delete;
-    ScriptMessagePacket(ScriptMessagePacket const&)            = delete;
+    ScriptMessagePacket& operator=(ScriptMessagePacket const&);
+    ScriptMessagePacket(ScriptMessagePacket const&);
 
 public:
     // NOLINTBEGIN

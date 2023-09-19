@@ -5,9 +5,9 @@
 class CodeBuilderServerCommands {
 public:
     // prevent constructor by default
-    CodeBuilderServerCommands& operator=(CodeBuilderServerCommands const&) = delete;
-    CodeBuilderServerCommands(CodeBuilderServerCommands const&)            = delete;
-    CodeBuilderServerCommands()                                            = delete;
+    CodeBuilderServerCommands& operator=(CodeBuilderServerCommands const&);
+    CodeBuilderServerCommands(CodeBuilderServerCommands const&);
+    CodeBuilderServerCommands();
 
 public:
     // NOLINTBEGIN

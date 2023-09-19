@@ -8,8 +8,8 @@
 class GlideMoveControl : public ::MoveControl {
 public:
     // prevent constructor by default
-    GlideMoveControl& operator=(GlideMoveControl const&) = delete;
-    GlideMoveControl(GlideMoveControl const&)            = delete;
+    GlideMoveControl& operator=(GlideMoveControl const&);
+    GlideMoveControl(GlideMoveControl const&);
 
 public:
     // NOLINTBEGIN

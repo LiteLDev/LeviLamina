@@ -7,9 +7,9 @@ namespace BlockSerializationUtils {
 struct NbtToBlockCache {
 public:
     // prevent constructor by default
-    NbtToBlockCache& operator=(NbtToBlockCache const&) = delete;
-    NbtToBlockCache(NbtToBlockCache const&)            = delete;
-    NbtToBlockCache()                                  = delete;
+    NbtToBlockCache& operator=(NbtToBlockCache const&);
+    NbtToBlockCache(NbtToBlockCache const&);
+    NbtToBlockCache();
 
 public:
     // NOLINTBEGIN

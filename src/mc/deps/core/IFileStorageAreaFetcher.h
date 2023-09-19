@@ -7,9 +7,9 @@ namespace Core {
 class IFileStorageAreaFetcher {
 public:
     // prevent constructor by default
-    IFileStorageAreaFetcher& operator=(IFileStorageAreaFetcher const&) = delete;
-    IFileStorageAreaFetcher(IFileStorageAreaFetcher const&)            = delete;
-    IFileStorageAreaFetcher()                                          = delete;
+    IFileStorageAreaFetcher& operator=(IFileStorageAreaFetcher const&);
+    IFileStorageAreaFetcher(IFileStorageAreaFetcher const&);
+    IFileStorageAreaFetcher();
 };
 
 }; // namespace Core

@@ -5,8 +5,8 @@
 class ExplodeComponent {
 public:
     // prevent constructor by default
-    ExplodeComponent& operator=(ExplodeComponent const&) = delete;
-    ExplodeComponent(ExplodeComponent const&)            = delete;
+    ExplodeComponent& operator=(ExplodeComponent const&);
+    ExplodeComponent(ExplodeComponent const&);
 
 public:
     // NOLINTBEGIN

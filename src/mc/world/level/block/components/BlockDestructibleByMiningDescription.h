@@ -14,9 +14,9 @@ namespace JsonUtil { class EmptyClass; }
 struct BlockDestructibleByMiningDescription : public ::BlockComponentDescription {
 public:
     // prevent constructor by default
-    BlockDestructibleByMiningDescription& operator=(BlockDestructibleByMiningDescription const&) = delete;
-    BlockDestructibleByMiningDescription(BlockDestructibleByMiningDescription const&)            = delete;
-    BlockDestructibleByMiningDescription()                                                       = delete;
+    BlockDestructibleByMiningDescription& operator=(BlockDestructibleByMiningDescription const&);
+    BlockDestructibleByMiningDescription(BlockDestructibleByMiningDescription const&);
+    BlockDestructibleByMiningDescription();
 
 public:
     // NOLINTBEGIN

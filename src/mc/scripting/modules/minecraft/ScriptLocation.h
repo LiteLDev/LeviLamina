@@ -16,9 +16,9 @@ namespace ScriptModuleMinecraft {
 class ScriptLocation {
 public:
     // prevent constructor by default
-    ScriptLocation& operator=(ScriptLocation const&) = delete;
-    ScriptLocation(ScriptLocation const&)            = delete;
-    ScriptLocation()                                 = delete;
+    ScriptLocation& operator=(ScriptLocation const&);
+    ScriptLocation(ScriptLocation const&);
+    ScriptLocation();
 
 public:
     // NOLINTBEGIN

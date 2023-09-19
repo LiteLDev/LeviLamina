@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class BeetrootBlock : public ::CropBlock {
 public:
     // prevent constructor by default
-    BeetrootBlock& operator=(BeetrootBlock const&) = delete;
-    BeetrootBlock(BeetrootBlock const&)            = delete;
-    BeetrootBlock()                                = delete;
+    BeetrootBlock& operator=(BeetrootBlock const&);
+    BeetrootBlock(BeetrootBlock const&);
+    BeetrootBlock();
 
 public:
     // NOLINTBEGIN

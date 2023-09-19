@@ -11,7 +11,7 @@ namespace ScriptModuleMinecraft {
 struct ScriptActorQueryOptions {
 public:
     // prevent constructor by default
-    ScriptActorQueryOptions() = delete;
+    ScriptActorQueryOptions();
 
 public:
     // NOLINTBEGIN

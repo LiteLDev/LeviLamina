@@ -5,7 +5,7 @@
 struct PassengerRenderingRidingOffsetComponent {
 public:
     // prevent constructor by default
-    PassengerRenderingRidingOffsetComponent& operator=(PassengerRenderingRidingOffsetComponent const&) = delete;
-    PassengerRenderingRidingOffsetComponent(PassengerRenderingRidingOffsetComponent const&)            = delete;
-    PassengerRenderingRidingOffsetComponent()                                                          = delete;
+    PassengerRenderingRidingOffsetComponent& operator=(PassengerRenderingRidingOffsetComponent const&);
+    PassengerRenderingRidingOffsetComponent(PassengerRenderingRidingOffsetComponent const&);
+    PassengerRenderingRidingOffsetComponent();
 };

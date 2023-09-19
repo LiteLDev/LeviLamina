@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class LegacyTradeableDefinition {
 public:
     // prevent constructor by default
-    LegacyTradeableDefinition& operator=(LegacyTradeableDefinition const&) = delete;
-    LegacyTradeableDefinition(LegacyTradeableDefinition const&)            = delete;
+    LegacyTradeableDefinition& operator=(LegacyTradeableDefinition const&);
+    LegacyTradeableDefinition(LegacyTradeableDefinition const&);
 
 public:
     // NOLINTBEGIN

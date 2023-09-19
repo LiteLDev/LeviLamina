@@ -5,8 +5,8 @@
 struct Dependencies {
 public:
     // prevent constructor by default
-    Dependencies(Dependencies const&) = delete;
-    Dependencies()                    = delete;
+    Dependencies(Dependencies const&);
+    Dependencies();
 
 public:
     // NOLINTBEGIN

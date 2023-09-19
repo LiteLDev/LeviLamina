@@ -5,7 +5,7 @@
 struct IMovementProxyStateProvider {
 public:
     // prevent constructor by default
-    IMovementProxyStateProvider& operator=(IMovementProxyStateProvider const&) = delete;
-    IMovementProxyStateProvider(IMovementProxyStateProvider const&)            = delete;
-    IMovementProxyStateProvider()                                              = delete;
+    IMovementProxyStateProvider& operator=(IMovementProxyStateProvider const&);
+    IMovementProxyStateProvider(IMovementProxyStateProvider const&);
+    IMovementProxyStateProvider();
 };

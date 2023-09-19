@@ -8,9 +8,9 @@
 class ScaleByAgeSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    ScaleByAgeSystem& operator=(ScaleByAgeSystem const&) = delete;
-    ScaleByAgeSystem(ScaleByAgeSystem const&)            = delete;
-    ScaleByAgeSystem()                                   = delete;
+    ScaleByAgeSystem& operator=(ScaleByAgeSystem const&);
+    ScaleByAgeSystem(ScaleByAgeSystem const&);
+    ScaleByAgeSystem();
 
 public:
     // NOLINTBEGIN

@@ -8,8 +8,8 @@
 struct WaterMovementDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    WaterMovementDescription& operator=(WaterMovementDescription const&) = delete;
-    WaterMovementDescription(WaterMovementDescription const&)            = delete;
+    WaterMovementDescription& operator=(WaterMovementDescription const&);
+    WaterMovementDescription(WaterMovementDescription const&);
 
 public:
     // NOLINTBEGIN

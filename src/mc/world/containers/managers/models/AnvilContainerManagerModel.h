@@ -10,9 +10,9 @@
 class AnvilContainerManagerModel : public ::ContainerManagerModel {
 public:
     // prevent constructor by default
-    AnvilContainerManagerModel& operator=(AnvilContainerManagerModel const&) = delete;
-    AnvilContainerManagerModel(AnvilContainerManagerModel const&)            = delete;
-    AnvilContainerManagerModel()                                             = delete;
+    AnvilContainerManagerModel& operator=(AnvilContainerManagerModel const&);
+    AnvilContainerManagerModel(AnvilContainerManagerModel const&);
+    AnvilContainerManagerModel();
 
 public:
     // NOLINTBEGIN

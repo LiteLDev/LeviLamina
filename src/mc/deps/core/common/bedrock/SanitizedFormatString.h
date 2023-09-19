@@ -7,14 +7,14 @@ namespace Bedrock {
 class SanitizedFormatString {
 public:
     // prevent constructor by default
-    SanitizedFormatString& operator=(SanitizedFormatString const&) = delete;
-    SanitizedFormatString(SanitizedFormatString const&)            = delete;
-    SanitizedFormatString()                                        = delete;
+    SanitizedFormatString& operator=(SanitizedFormatString const&);
+    SanitizedFormatString(SanitizedFormatString const&);
+    SanitizedFormatString();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0SanitizedFormatString@Bedrock@@QEAA@PEBD@Z
-    MCAPI SanitizedFormatString(char const*);
+    MCAPI explicit SanitizedFormatString(char const*);
 
     // symbol: ?getOriginalWithoutFlag@SanitizedFormatString@Bedrock@@QEBAPEBDXZ
     MCAPI char const* getOriginalWithoutFlag() const;

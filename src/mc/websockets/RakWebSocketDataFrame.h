@@ -13,9 +13,9 @@ namespace RakNet { class BitStream; }
 class RakWebSocketDataFrame {
 public:
     // prevent constructor by default
-    RakWebSocketDataFrame& operator=(RakWebSocketDataFrame const&) = delete;
-    RakWebSocketDataFrame(RakWebSocketDataFrame const&)            = delete;
-    RakWebSocketDataFrame()                                        = delete;
+    RakWebSocketDataFrame& operator=(RakWebSocketDataFrame const&);
+    RakWebSocketDataFrame(RakWebSocketDataFrame const&);
+    RakWebSocketDataFrame();
 
 public:
     // NOLINTBEGIN

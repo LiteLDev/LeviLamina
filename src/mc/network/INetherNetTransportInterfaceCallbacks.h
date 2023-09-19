@@ -7,9 +7,9 @@ namespace NetherNet {
 class INetherNetTransportInterfaceCallbacks {
 public:
     // prevent constructor by default
-    INetherNetTransportInterfaceCallbacks& operator=(INetherNetTransportInterfaceCallbacks const&) = delete;
-    INetherNetTransportInterfaceCallbacks(INetherNetTransportInterfaceCallbacks const&)            = delete;
-    INetherNetTransportInterfaceCallbacks()                                                        = delete;
+    INetherNetTransportInterfaceCallbacks& operator=(INetherNetTransportInterfaceCallbacks const&);
+    INetherNetTransportInterfaceCallbacks(INetherNetTransportInterfaceCallbacks const&);
+    INetherNetTransportInterfaceCallbacks();
 };
 
 }; // namespace NetherNet

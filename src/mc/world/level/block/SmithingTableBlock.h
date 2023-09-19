@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class SmithingTableBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    SmithingTableBlock& operator=(SmithingTableBlock const&) = delete;
-    SmithingTableBlock(SmithingTableBlock const&)            = delete;
-    SmithingTableBlock()                                     = delete;
+    SmithingTableBlock& operator=(SmithingTableBlock const&);
+    SmithingTableBlock(SmithingTableBlock const&);
+    SmithingTableBlock();
 
 public:
     // NOLINTBEGIN

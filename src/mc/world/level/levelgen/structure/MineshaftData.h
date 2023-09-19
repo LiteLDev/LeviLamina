@@ -5,7 +5,7 @@
 struct MineshaftData {
 public:
     // prevent constructor by default
-    MineshaftData& operator=(MineshaftData const&) = delete;
-    MineshaftData(MineshaftData const&)            = delete;
-    MineshaftData()                                = delete;
+    MineshaftData& operator=(MineshaftData const&);
+    MineshaftData(MineshaftData const&);
+    MineshaftData();
 };

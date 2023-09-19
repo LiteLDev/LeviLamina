@@ -13,9 +13,9 @@ public:
     float mNetworkTime; // this+0x34
 
     // prevent constructor by default
-    ServerStatsPacket& operator=(ServerStatsPacket const&) = delete;
-    ServerStatsPacket(ServerStatsPacket const&)            = delete;
-    ServerStatsPacket()                                    = delete;
+    ServerStatsPacket& operator=(ServerStatsPacket const&);
+    ServerStatsPacket(ServerStatsPacket const&);
+    ServerStatsPacket();
 
 public:
     // NOLINTBEGIN

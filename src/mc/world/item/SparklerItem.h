@@ -29,16 +29,16 @@ public:
     struct ColorInfo {
     public:
         // prevent constructor by default
-        ColorInfo& operator=(ColorInfo const&) = delete;
-        ColorInfo(ColorInfo const&)            = delete;
-        ColorInfo()                            = delete;
+        ColorInfo& operator=(ColorInfo const&);
+        ColorInfo(ColorInfo const&);
+        ColorInfo();
     };
 
 public:
     // prevent constructor by default
-    SparklerItem& operator=(SparklerItem const&) = delete;
-    SparklerItem(SparklerItem const&)            = delete;
-    SparklerItem()                               = delete;
+    SparklerItem& operator=(SparklerItem const&);
+    SparklerItem(SparklerItem const&);
+    SparklerItem();
 
 public:
     // NOLINTBEGIN

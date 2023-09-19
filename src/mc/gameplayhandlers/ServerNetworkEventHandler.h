@@ -5,7 +5,7 @@
 class ServerNetworkEventHandler {
 public:
     // prevent constructor by default
-    ServerNetworkEventHandler& operator=(ServerNetworkEventHandler const&) = delete;
-    ServerNetworkEventHandler(ServerNetworkEventHandler const&)            = delete;
-    ServerNetworkEventHandler()                                            = delete;
+    ServerNetworkEventHandler& operator=(ServerNetworkEventHandler const&);
+    ServerNetworkEventHandler(ServerNetworkEventHandler const&);
+    ServerNetworkEventHandler();
 };

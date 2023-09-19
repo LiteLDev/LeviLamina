@@ -22,9 +22,9 @@ namespace mce { class Color; }
 class CompoundItem : public ::ChemistryItem {
 public:
     // prevent constructor by default
-    CompoundItem& operator=(CompoundItem const&) = delete;
-    CompoundItem(CompoundItem const&)            = delete;
-    CompoundItem()                               = delete;
+    CompoundItem& operator=(CompoundItem const&);
+    CompoundItem(CompoundItem const&);
+    CompoundItem();
 
 public:
     // NOLINTBEGIN
@@ -137,9 +137,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mIdToSpecialCompound() { return mIdToSpecialCompound; }
+    auto& $mIdToSpecialCompound() { return mIdToSpecialCompound; }
 
-    inline auto& $mTypeToSpecialCompound() { return mTypeToSpecialCompound; }
+    auto& $mTypeToSpecialCompound() { return mTypeToSpecialCompound; }
 
     // NOLINTEND
 };

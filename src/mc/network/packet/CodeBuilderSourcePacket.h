@@ -16,8 +16,8 @@ public:
     std::string                               mValue;     // this+0x38
 
     // prevent constructor by default
-    CodeBuilderSourcePacket& operator=(CodeBuilderSourcePacket const&) = delete;
-    CodeBuilderSourcePacket(CodeBuilderSourcePacket const&)            = delete;
+    CodeBuilderSourcePacket& operator=(CodeBuilderSourcePacket const&);
+    CodeBuilderSourcePacket(CodeBuilderSourcePacket const&);
 
 public:
     // NOLINTBEGIN

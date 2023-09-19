@@ -10,9 +10,9 @@ namespace Json { class Value; }
 class LootItemFunction {
 public:
     // prevent constructor by default
-    LootItemFunction& operator=(LootItemFunction const&) = delete;
-    LootItemFunction(LootItemFunction const&)            = delete;
-    LootItemFunction()                                   = delete;
+    LootItemFunction& operator=(LootItemFunction const&);
+    LootItemFunction(LootItemFunction const&);
+    LootItemFunction();
 
 public:
     // NOLINTBEGIN
@@ -56,7 +56,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mLootingFunctions() { return mLootingFunctions; }
+    auto& $mLootingFunctions() { return mLootingFunctions; }
 
     // NOLINTEND
 };

@@ -5,9 +5,9 @@
 class PlayerMoveSystems {
 public:
     // prevent constructor by default
-    PlayerMoveSystems& operator=(PlayerMoveSystems const&) = delete;
-    PlayerMoveSystems(PlayerMoveSystems const&)            = delete;
-    PlayerMoveSystems()                                    = delete;
+    PlayerMoveSystems& operator=(PlayerMoveSystems const&);
+    PlayerMoveSystems(PlayerMoveSystems const&);
+    PlayerMoveSystems();
 
 public:
     // NOLINTBEGIN

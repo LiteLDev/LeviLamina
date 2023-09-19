@@ -8,9 +8,9 @@
 class FrostWalkerEnchant : public ::Enchant {
 public:
     // prevent constructor by default
-    FrostWalkerEnchant& operator=(FrostWalkerEnchant const&) = delete;
-    FrostWalkerEnchant(FrostWalkerEnchant const&)            = delete;
-    FrostWalkerEnchant()                                     = delete;
+    FrostWalkerEnchant& operator=(FrostWalkerEnchant const&);
+    FrostWalkerEnchant(FrostWalkerEnchant const&);
+    FrostWalkerEnchant();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class SaveSurroundingChunksSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    SaveSurroundingChunksSystem& operator=(SaveSurroundingChunksSystem const&) = delete;
-    SaveSurroundingChunksSystem(SaveSurroundingChunksSystem const&)            = delete;
-    SaveSurroundingChunksSystem()                                              = delete;
+    SaveSurroundingChunksSystem& operator=(SaveSurroundingChunksSystem const&);
+    SaveSurroundingChunksSystem(SaveSurroundingChunksSystem const&);
+    SaveSurroundingChunksSystem();
 
 public:
     // NOLINTBEGIN

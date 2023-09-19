@@ -22,9 +22,9 @@ public:
     struct ConstructorToken {
     public:
         // prevent constructor by default
-        ConstructorToken& operator=(ConstructorToken const&) = delete;
-        ConstructorToken(ConstructorToken const&)            = delete;
-        ConstructorToken()                                   = delete;
+        ConstructorToken& operator=(ConstructorToken const&);
+        ConstructorToken(ConstructorToken const&);
+        ConstructorToken();
     };
 
     std::mutex                                      mLegacyBlockStatesConversionWarningMutex;
@@ -35,9 +35,9 @@ public:
 
 public:
     // prevent constructor by default
-    BlockPalette& operator=(BlockPalette const&) = delete;
-    BlockPalette(BlockPalette const&)            = delete;
-    BlockPalette()                               = delete;
+    BlockPalette& operator=(BlockPalette const&);
+    BlockPalette(BlockPalette const&);
+    BlockPalette();
 
 public:
     // NOLINTBEGIN
@@ -60,10 +60,10 @@ public:
     MCVAPI ~BlockPalette();
 
     // symbol: ??0BlockPalette@@QEAA@UConstructorToken@0@@Z
-    MCAPI BlockPalette(struct BlockPalette::ConstructorToken);
+    MCAPI explicit BlockPalette(struct BlockPalette::ConstructorToken);
 
     // symbol: ??0BlockPalette@@QEAA@AEAVLevel@@@Z
-    MCAPI BlockPalette(class Level&);
+    MCAPI explicit BlockPalette(class Level&);
 
     // symbol: ?cacheBlockComponentData@BlockPalette@@QEAAXXZ
     MCAPI void cacheBlockComponentData();

@@ -19,9 +19,9 @@ namespace Scripting { class WeakLifetimeScope; }
 class ScriptActorGameplayHandler {
 public:
     // prevent constructor by default
-    ScriptActorGameplayHandler& operator=(ScriptActorGameplayHandler const&) = delete;
-    ScriptActorGameplayHandler(ScriptActorGameplayHandler const&)            = delete;
-    ScriptActorGameplayHandler()                                             = delete;
+    ScriptActorGameplayHandler& operator=(ScriptActorGameplayHandler const&);
+    ScriptActorGameplayHandler(ScriptActorGameplayHandler const&);
+    ScriptActorGameplayHandler();
 
 public:
     // NOLINTBEGIN

@@ -11,9 +11,9 @@
 class AgentAbilitiesSyncSystem {
 public:
     // prevent constructor by default
-    AgentAbilitiesSyncSystem& operator=(AgentAbilitiesSyncSystem const&) = delete;
-    AgentAbilitiesSyncSystem(AgentAbilitiesSyncSystem const&)            = delete;
-    AgentAbilitiesSyncSystem()                                           = delete;
+    AgentAbilitiesSyncSystem& operator=(AgentAbilitiesSyncSystem const&);
+    AgentAbilitiesSyncSystem(AgentAbilitiesSyncSystem const&);
+    AgentAbilitiesSyncSystem();
 
 public:
     // NOLINTBEGIN

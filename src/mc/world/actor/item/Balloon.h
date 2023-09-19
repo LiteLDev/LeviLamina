@@ -26,9 +26,9 @@
 class Balloon : public ::PredictableProjectile {
 public:
     // prevent constructor by default
-    Balloon& operator=(Balloon const&) = delete;
-    Balloon(Balloon const&)            = delete;
-    Balloon()                          = delete;
+    Balloon& operator=(Balloon const&);
+    Balloon(Balloon const&);
+    Balloon();
 
 public:
     // NOLINTBEGIN

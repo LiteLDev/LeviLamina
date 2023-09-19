@@ -5,7 +5,7 @@
 struct BatFlag {
 public:
     // prevent constructor by default
-    BatFlag& operator=(BatFlag const&) = delete;
-    BatFlag(BatFlag const&)            = delete;
-    BatFlag()                          = delete;
+    BatFlag& operator=(BatFlag const&);
+    BatFlag(BatFlag const&);
+    BatFlag();
 };

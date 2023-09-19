@@ -10,9 +10,9 @@
 class ServerNetworkEventCoordinator {
 public:
     // prevent constructor by default
-    ServerNetworkEventCoordinator& operator=(ServerNetworkEventCoordinator const&) = delete;
-    ServerNetworkEventCoordinator(ServerNetworkEventCoordinator const&)            = delete;
-    ServerNetworkEventCoordinator()                                                = delete;
+    ServerNetworkEventCoordinator& operator=(ServerNetworkEventCoordinator const&);
+    ServerNetworkEventCoordinator(ServerNetworkEventCoordinator const&);
+    ServerNetworkEventCoordinator();
 
 public:
     // NOLINTBEGIN

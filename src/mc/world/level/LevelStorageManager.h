@@ -14,16 +14,16 @@ namespace Bedrock::PubSub { class Subscription; }
 class LevelStorageManager {
 public:
     // prevent constructor by default
-    LevelStorageManager& operator=(LevelStorageManager const&) = delete;
-    LevelStorageManager(LevelStorageManager const&)            = delete;
-    LevelStorageManager()                                      = delete;
+    LevelStorageManager& operator=(LevelStorageManager const&);
+    LevelStorageManager(LevelStorageManager const&);
+    LevelStorageManager();
 
 public:
     // NOLINTBEGIN
     // symbol:
     // ??0LevelStorageManager@@QEAA@V?$OwnerPtrT@U?$SharePtrRefTraits@VLevelStorage@@@@@@V?$unique_ptr@VGameDataSaveTimer@@U?$default_delete@VGameDataSaveTimer@@@std@@@std@@V?$unique_ptr@VUserStorageChecker@@U?$default_delete@VUserStorageChecker@@@std@@@3@@Z
     MCAPI
-    LevelStorageManager(class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>, std::unique_ptr<class GameDataSaveTimer>, std::unique_ptr<class UserStorageChecker>);
+        LevelStorageManager(class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>, std::unique_ptr<class GameDataSaveTimer>, std::unique_ptr<class UserStorageChecker>);
 
     // symbol: ?getLevelStorage@LevelStorageManager@@QEAAAEAVLevelStorage@@XZ
     MCAPI class LevelStorage& getLevelStorage();

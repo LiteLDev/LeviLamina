@@ -16,9 +16,9 @@ public:
     class ReplaceRulesAccelerator {
     public:
         // prevent constructor by default
-        ReplaceRulesAccelerator& operator=(ReplaceRulesAccelerator const&) = delete;
-        ReplaceRulesAccelerator(ReplaceRulesAccelerator const&)            = delete;
-        ReplaceRulesAccelerator()                                          = delete;
+        ReplaceRulesAccelerator& operator=(ReplaceRulesAccelerator const&);
+        ReplaceRulesAccelerator(ReplaceRulesAccelerator const&);
+        ReplaceRulesAccelerator();
 
     public:
         // NOLINTBEGIN
@@ -31,8 +31,8 @@ public:
 
 public:
     // prevent constructor by default
-    OreFeature& operator=(OreFeature const&) = delete;
-    OreFeature(OreFeature const&)            = delete;
+    OreFeature& operator=(OreFeature const&);
+    OreFeature(OreFeature const&);
 
 public:
     // NOLINTBEGIN

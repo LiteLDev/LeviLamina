@@ -9,8 +9,8 @@
 class UseActorNode : public ::BehaviorNode {
 public:
     // prevent constructor by default
-    UseActorNode& operator=(UseActorNode const&) = delete;
-    UseActorNode(UseActorNode const&)            = delete;
+    UseActorNode& operator=(UseActorNode const&);
+    UseActorNode(UseActorNode const&);
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class CanDestroyInCreativeItemComponent {
 public:
     // prevent constructor by default
-    CanDestroyInCreativeItemComponent& operator=(CanDestroyInCreativeItemComponent const&) = delete;
-    CanDestroyInCreativeItemComponent(CanDestroyInCreativeItemComponent const&)            = delete;
-    CanDestroyInCreativeItemComponent()                                                    = delete;
+    CanDestroyInCreativeItemComponent& operator=(CanDestroyInCreativeItemComponent const&);
+    CanDestroyInCreativeItemComponent(CanDestroyInCreativeItemComponent const&);
+    CanDestroyInCreativeItemComponent();
 
 public:
     // NOLINTBEGIN

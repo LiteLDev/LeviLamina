@@ -13,9 +13,9 @@ public:
     struct ComponentInfo {
     public:
         // prevent constructor by default
-        ComponentInfo& operator=(ComponentInfo const&) = delete;
-        ComponentInfo(ComponentInfo const&)            = delete;
-        ComponentInfo()                                = delete;
+        ComponentInfo& operator=(ComponentInfo const&);
+        ComponentInfo(ComponentInfo const&);
+        ComponentInfo();
 
     public:
         // NOLINTBEGIN
@@ -31,9 +31,9 @@ public:
 
 public:
     // prevent constructor by default
-    InternalComponentRegistry& operator=(InternalComponentRegistry const&) = delete;
-    InternalComponentRegistry(InternalComponentRegistry const&)            = delete;
-    InternalComponentRegistry()                                            = delete;
+    InternalComponentRegistry& operator=(InternalComponentRegistry const&);
+    InternalComponentRegistry(InternalComponentRegistry const&);
+    InternalComponentRegistry();
 
 public:
     // NOLINTBEGIN

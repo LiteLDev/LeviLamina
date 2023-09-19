@@ -5,8 +5,8 @@
 struct PlayerUseNameTagEvent {
 public:
     // prevent constructor by default
-    PlayerUseNameTagEvent& operator=(PlayerUseNameTagEvent const&) = delete;
-    PlayerUseNameTagEvent()                                        = delete;
+    PlayerUseNameTagEvent& operator=(PlayerUseNameTagEvent const&);
+    PlayerUseNameTagEvent();
 
 public:
     // NOLINTBEGIN

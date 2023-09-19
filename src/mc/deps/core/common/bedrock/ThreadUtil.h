@@ -12,9 +12,9 @@ namespace Bedrock::Threading {
 class ThreadUtil {
 public:
     // prevent constructor by default
-    ThreadUtil& operator=(ThreadUtil const&) = delete;
-    ThreadUtil(ThreadUtil const&)            = delete;
-    ThreadUtil()                             = delete;
+    ThreadUtil& operator=(ThreadUtil const&);
+    ThreadUtil(ThreadUtil const&);
+    ThreadUtil();
 
 public:
     // NOLINTBEGIN

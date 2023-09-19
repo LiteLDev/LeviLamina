@@ -25,8 +25,8 @@ public:
     LabTableReactionType mReaction; // this+0x40
 
     // prevent constructor by default
-    LabTablePacket& operator=(LabTablePacket const&) = delete;
-    LabTablePacket(LabTablePacket const&)            = delete;
+    LabTablePacket& operator=(LabTablePacket const&);
+    LabTablePacket(LabTablePacket const&);
 
 public:
     // NOLINTBEGIN

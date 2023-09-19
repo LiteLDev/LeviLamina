@@ -5,9 +5,9 @@
 struct FogCommandSettings {
 public:
     // prevent constructor by default
-    FogCommandSettings& operator=(FogCommandSettings const&) = delete;
-    FogCommandSettings(FogCommandSettings const&)            = delete;
-    FogCommandSettings()                                     = delete;
+    FogCommandSettings& operator=(FogCommandSettings const&);
+    FogCommandSettings(FogCommandSettings const&);
+    FogCommandSettings();
 
 public:
     // NOLINTBEGIN

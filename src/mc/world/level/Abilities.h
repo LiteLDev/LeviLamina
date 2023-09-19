@@ -11,7 +11,7 @@ class Abilities {
 public:
     std::array<Ability, 19> mAbilities;
     // prevent constructor by default
-    Abilities() = delete;
+    Abilities();
 
 public:
     // NOLINTBEGIN
@@ -19,7 +19,7 @@ public:
     MCAPI Abilities(class Abilities const&);
 
     // symbol: ??0Abilities@@QEAA@_N@Z
-    MCAPI Abilities(bool);
+    MCAPI explicit Abilities(bool);
 
     // symbol: ?addSaveData@Abilities@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void addSaveData(class CompoundTag&) const;
@@ -97,7 +97,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $ABILITY_NAMES() { return ABILITY_NAMES; }
+    auto& $ABILITY_NAMES() { return ABILITY_NAMES; }
 
     // NOLINTEND
 };

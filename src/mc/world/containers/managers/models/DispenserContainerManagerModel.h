@@ -10,9 +10,9 @@
 class DispenserContainerManagerModel : public ::LevelContainerManagerModel {
 public:
     // prevent constructor by default
-    DispenserContainerManagerModel& operator=(DispenserContainerManagerModel const&) = delete;
-    DispenserContainerManagerModel(DispenserContainerManagerModel const&)            = delete;
-    DispenserContainerManagerModel()                                                 = delete;
+    DispenserContainerManagerModel& operator=(DispenserContainerManagerModel const&);
+    DispenserContainerManagerModel(DispenserContainerManagerModel const&);
+    DispenserContainerManagerModel();
 
 public:
     // NOLINTBEGIN

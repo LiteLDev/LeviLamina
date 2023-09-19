@@ -10,9 +10,9 @@
 class ActorUpdatePreviousPositionSystem {
 public:
     // prevent constructor by default
-    ActorUpdatePreviousPositionSystem& operator=(ActorUpdatePreviousPositionSystem const&) = delete;
-    ActorUpdatePreviousPositionSystem(ActorUpdatePreviousPositionSystem const&)            = delete;
-    ActorUpdatePreviousPositionSystem()                                                    = delete;
+    ActorUpdatePreviousPositionSystem& operator=(ActorUpdatePreviousPositionSystem const&);
+    ActorUpdatePreviousPositionSystem(ActorUpdatePreviousPositionSystem const&);
+    ActorUpdatePreviousPositionSystem();
 
 public:
     // NOLINTBEGIN

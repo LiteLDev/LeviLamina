@@ -13,8 +13,8 @@ public:
     CompoundTag mPropertyData; // this+0x30
 
     // prevent constructor by default
-    SyncActorPropertyPacket& operator=(SyncActorPropertyPacket const&) = delete;
-    SyncActorPropertyPacket(SyncActorPropertyPacket const&)            = delete;
+    SyncActorPropertyPacket& operator=(SyncActorPropertyPacket const&);
+    SyncActorPropertyPacket(SyncActorPropertyPacket const&);
 
 public:
     // NOLINTBEGIN

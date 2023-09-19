@@ -16,8 +16,8 @@ public:
     float                mPitch;  // this+0x60
 
     // prevent constructor by default
-    PlaySoundPacket& operator=(PlaySoundPacket const&) = delete;
-    PlaySoundPacket(PlaySoundPacket const&)            = delete;
+    PlaySoundPacket& operator=(PlaySoundPacket const&);
+    PlaySoundPacket(PlaySoundPacket const&);
 
 public:
     // NOLINTBEGIN

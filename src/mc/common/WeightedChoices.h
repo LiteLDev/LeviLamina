@@ -6,7 +6,7 @@ template <typename T0>
 class WeightedChoices {
 public:
     // prevent constructor by default
-    WeightedChoices& operator=(WeightedChoices const&) = delete;
-    WeightedChoices(WeightedChoices const&)            = delete;
-    WeightedChoices()                                  = delete;
+    WeightedChoices& operator=(WeightedChoices const&);
+    WeightedChoices(WeightedChoices const&);
+    WeightedChoices();
 };

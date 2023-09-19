@@ -10,9 +10,9 @@
 class ClassroomModeListener : public ::LevelListener {
 public:
     // prevent constructor by default
-    ClassroomModeListener& operator=(ClassroomModeListener const&) = delete;
-    ClassroomModeListener(ClassroomModeListener const&)            = delete;
-    ClassroomModeListener()                                        = delete;
+    ClassroomModeListener& operator=(ClassroomModeListener const&);
+    ClassroomModeListener(ClassroomModeListener const&);
+    ClassroomModeListener();
 
 public:
     // NOLINTBEGIN
@@ -97,7 +97,7 @@ public:
     MCVAPI void onEntityRemoved(class Actor&);
 
     // symbol: ??0ClassroomModeListener@@QEAA@AEAVIMinecraftEventing@@@Z
-    MCAPI ClassroomModeListener(class IMinecraftEventing&);
+    MCAPI explicit ClassroomModeListener(class IMinecraftEventing&);
 
     // NOLINTEND
 };

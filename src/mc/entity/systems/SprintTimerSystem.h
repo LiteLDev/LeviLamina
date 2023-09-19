@@ -10,9 +10,9 @@
 class SprintTimerSystem {
 public:
     // prevent constructor by default
-    SprintTimerSystem& operator=(SprintTimerSystem const&) = delete;
-    SprintTimerSystem(SprintTimerSystem const&)            = delete;
-    SprintTimerSystem()                                    = delete;
+    SprintTimerSystem& operator=(SprintTimerSystem const&);
+    SprintTimerSystem(SprintTimerSystem const&);
+    SprintTimerSystem();
 
 public:
     // NOLINTBEGIN

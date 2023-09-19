@@ -5,9 +5,9 @@
 class UpdateWaterStateRequestSystem {
 public:
     // prevent constructor by default
-    UpdateWaterStateRequestSystem& operator=(UpdateWaterStateRequestSystem const&) = delete;
-    UpdateWaterStateRequestSystem(UpdateWaterStateRequestSystem const&)            = delete;
-    UpdateWaterStateRequestSystem()                                                = delete;
+    UpdateWaterStateRequestSystem& operator=(UpdateWaterStateRequestSystem const&);
+    UpdateWaterStateRequestSystem(UpdateWaterStateRequestSystem const&);
+    UpdateWaterStateRequestSystem();
 
 public:
     // NOLINTBEGIN

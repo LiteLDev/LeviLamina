@@ -10,9 +10,9 @@
 class ScreenHandlerLabTable : public ::ScreenHandlerBase {
 public:
     // prevent constructor by default
-    ScreenHandlerLabTable& operator=(ScreenHandlerLabTable const&) = delete;
-    ScreenHandlerLabTable(ScreenHandlerLabTable const&)            = delete;
-    ScreenHandlerLabTable()                                        = delete;
+    ScreenHandlerLabTable& operator=(ScreenHandlerLabTable const&);
+    ScreenHandlerLabTable(ScreenHandlerLabTable const&);
+    ScreenHandlerLabTable();
 
 public:
     // NOLINTBEGIN

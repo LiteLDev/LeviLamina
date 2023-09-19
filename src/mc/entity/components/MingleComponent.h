@@ -9,8 +9,8 @@ public:
 
 public:
     // prevent constructor by default
-    MingleComponent& operator=(MingleComponent const&) = delete;
-    MingleComponent(MingleComponent const&)            = delete;
+    MingleComponent& operator=(MingleComponent const&);
+    MingleComponent(MingleComponent const&);
 
 public:
     // NOLINTBEGIN

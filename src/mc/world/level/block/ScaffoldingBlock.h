@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class ScaffoldingBlock : public ::FallingBlock {
 public:
     // prevent constructor by default
-    ScaffoldingBlock& operator=(ScaffoldingBlock const&) = delete;
-    ScaffoldingBlock(ScaffoldingBlock const&)            = delete;
-    ScaffoldingBlock()                                   = delete;
+    ScaffoldingBlock& operator=(ScaffoldingBlock const&);
+    ScaffoldingBlock(ScaffoldingBlock const&);
+    ScaffoldingBlock();
 
 public:
     // NOLINTBEGIN

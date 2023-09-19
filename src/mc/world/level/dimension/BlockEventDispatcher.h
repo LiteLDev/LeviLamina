@@ -6,9 +6,9 @@
 class BlockEventDispatcher {
 public:
     // prevent constructor by default
-    BlockEventDispatcher& operator=(BlockEventDispatcher const&) = delete;
-    BlockEventDispatcher(BlockEventDispatcher const&)            = delete;
-    BlockEventDispatcher()                                       = delete;
+    BlockEventDispatcher& operator=(BlockEventDispatcher const&);
+    BlockEventDispatcher(BlockEventDispatcher const&);
+    BlockEventDispatcher();
 
     std::unordered_map<int, std::unique_ptr<class ListenerInfo>> mRegisteredListeners;
     int                                                          mHandleCounter;

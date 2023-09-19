@@ -5,8 +5,8 @@
 class EntitySensorComponent {
 public:
     // prevent constructor by default
-    EntitySensorComponent& operator=(EntitySensorComponent const&) = delete;
-    EntitySensorComponent(EntitySensorComponent const&)            = delete;
+    EntitySensorComponent& operator=(EntitySensorComponent const&);
+    EntitySensorComponent(EntitySensorComponent const&);
 
 public:
     // NOLINTBEGIN
@@ -37,7 +37,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $NO_MAX_COUNT() { return NO_MAX_COUNT; }
+    auto& $NO_MAX_COUNT() { return NO_MAX_COUNT; }
 
     // NOLINTEND
 };

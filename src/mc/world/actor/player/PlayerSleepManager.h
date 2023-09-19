@@ -5,8 +5,8 @@
 class PlayerSleepManager {
 public:
     // prevent constructor by default
-    PlayerSleepManager& operator=(PlayerSleepManager const&) = delete;
-    PlayerSleepManager(PlayerSleepManager const&)            = delete;
+    PlayerSleepManager& operator=(PlayerSleepManager const&);
+    PlayerSleepManager(PlayerSleepManager const&);
 
 public:
     // NOLINTBEGIN

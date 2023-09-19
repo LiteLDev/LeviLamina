@@ -5,7 +5,7 @@
 struct JumpFromGroundRequestFlag {
 public:
     // prevent constructor by default
-    JumpFromGroundRequestFlag& operator=(JumpFromGroundRequestFlag const&) = delete;
-    JumpFromGroundRequestFlag(JumpFromGroundRequestFlag const&)            = delete;
-    JumpFromGroundRequestFlag()                                            = delete;
+    JumpFromGroundRequestFlag& operator=(JumpFromGroundRequestFlag const&);
+    JumpFromGroundRequestFlag(JumpFromGroundRequestFlag const&);
+    JumpFromGroundRequestFlag();
 };

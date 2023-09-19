@@ -8,9 +8,9 @@
 class IPreliminarySurfaceProvider {
 public:
     // prevent constructor by default
-    IPreliminarySurfaceProvider& operator=(IPreliminarySurfaceProvider const&) = delete;
-    IPreliminarySurfaceProvider(IPreliminarySurfaceProvider const&)            = delete;
-    IPreliminarySurfaceProvider()                                              = delete;
+    IPreliminarySurfaceProvider& operator=(IPreliminarySurfaceProvider const&);
+    IPreliminarySurfaceProvider(IPreliminarySurfaceProvider const&);
+    IPreliminarySurfaceProvider();
 
 public:
     // NOLINTBEGIN

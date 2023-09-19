@@ -5,9 +5,9 @@
 struct ActorUseItemEvent {
 public:
     // prevent constructor by default
-    ActorUseItemEvent& operator=(ActorUseItemEvent const&) = delete;
-    ActorUseItemEvent(ActorUseItemEvent const&)            = delete;
-    ActorUseItemEvent()                                    = delete;
+    ActorUseItemEvent& operator=(ActorUseItemEvent const&);
+    ActorUseItemEvent(ActorUseItemEvent const&);
+    ActorUseItemEvent();
 
 public:
     // NOLINTBEGIN

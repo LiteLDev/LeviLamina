@@ -27,9 +27,9 @@ public:
     class TransferTracker {
     public:
         // prevent constructor by default
-        TransferTracker& operator=(TransferTracker const&) = delete;
-        TransferTracker(TransferTracker const&)            = delete;
-        TransferTracker()                                  = delete;
+        TransferTracker& operator=(TransferTracker const&);
+        TransferTracker(TransferTracker const&);
+        TransferTracker();
 
     public:
         // NOLINTBEGIN
@@ -44,8 +44,8 @@ public:
 
 public:
     // prevent constructor by default
-    ActiveTransfersManager& operator=(ActiveTransfersManager const&) = delete;
-    ActiveTransfersManager(ActiveTransfersManager const&)            = delete;
+    ActiveTransfersManager& operator=(ActiveTransfersManager const&);
+    ActiveTransfersManager(ActiveTransfersManager const&);
 
 public:
     // NOLINTBEGIN

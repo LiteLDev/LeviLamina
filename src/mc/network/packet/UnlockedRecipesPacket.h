@@ -23,8 +23,8 @@ public:
     std::vector<std::string> mUnlockedRecipes; // this+0x38
 
     // prevent constructor by default
-    UnlockedRecipesPacket& operator=(UnlockedRecipesPacket const&) = delete;
-    UnlockedRecipesPacket(UnlockedRecipesPacket const&)            = delete;
+    UnlockedRecipesPacket& operator=(UnlockedRecipesPacket const&);
+    UnlockedRecipesPacket(UnlockedRecipesPacket const&);
 
 public:
     // NOLINTBEGIN

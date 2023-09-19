@@ -5,13 +5,13 @@
 class FilterInput {
 public:
     // prevent constructor by default
-    FilterInput(FilterInput const&) = delete;
-    FilterInput()                   = delete;
+    FilterInput(FilterInput const&);
+    FilterInput();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0FilterInput@@QEAA@H@Z
-    MCAPI FilterInput(int);
+    MCAPI explicit FilterInput(int);
 
     // symbol: ??4FilterInput@@QEAAAEAV0@AEBV0@@Z
     MCAPI class FilterInput& operator=(class FilterInput const&);

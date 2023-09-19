@@ -8,9 +8,9 @@
 class EndPortalBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    EndPortalBlockActor& operator=(EndPortalBlockActor const&) = delete;
-    EndPortalBlockActor(EndPortalBlockActor const&)            = delete;
-    EndPortalBlockActor()                                      = delete;
+    EndPortalBlockActor& operator=(EndPortalBlockActor const&);
+    EndPortalBlockActor(EndPortalBlockActor const&);
+    EndPortalBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -48,7 +48,7 @@ public:
     virtual void __unk_vfn_39();
 
     // symbol: ??0EndPortalBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI EndPortalBlockActor(class BlockPos const&);
+    MCAPI explicit EndPortalBlockActor(class BlockPos const&);
 
     // NOLINTEND
 };

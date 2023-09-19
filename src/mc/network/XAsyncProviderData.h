@@ -5,7 +5,7 @@
 struct XAsyncProviderData {
 public:
     // prevent constructor by default
-    XAsyncProviderData& operator=(XAsyncProviderData const&) = delete;
-    XAsyncProviderData(XAsyncProviderData const&)            = delete;
-    XAsyncProviderData()                                     = delete;
+    XAsyncProviderData& operator=(XAsyncProviderData const&);
+    XAsyncProviderData(XAsyncProviderData const&);
+    XAsyncProviderData();
 };

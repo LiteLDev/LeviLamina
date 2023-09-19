@@ -9,9 +9,9 @@
 class AnimationComponent {
 public:
     // prevent constructor by default
-    AnimationComponent& operator=(AnimationComponent const&) = delete;
-    AnimationComponent(AnimationComponent const&)            = delete;
-    AnimationComponent()                                     = delete;
+    AnimationComponent& operator=(AnimationComponent const&);
+    AnimationComponent(AnimationComponent const&);
+    AnimationComponent();
 
 public:
     // NOLINTBEGIN
@@ -109,11 +109,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mClientFrameIndex() { return mClientFrameIndex; }
+    auto& $mClientFrameIndex() { return mClientFrameIndex; }
 
-    inline auto& $mReloadTimeStampClient() { return mReloadTimeStampClient; }
+    auto& $mReloadTimeStampClient() { return mReloadTimeStampClient; }
 
-    inline auto& $mServerFrameIndex() { return mServerFrameIndex; }
+    auto& $mServerFrameIndex() { return mServerFrameIndex; }
 
     // NOLINTEND
 };

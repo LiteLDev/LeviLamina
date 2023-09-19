@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class InstantDespawnDefinition {
 public:
     // prevent constructor by default
-    InstantDespawnDefinition& operator=(InstantDespawnDefinition const&) = delete;
-    InstantDespawnDefinition(InstantDespawnDefinition const&)            = delete;
-    InstantDespawnDefinition()                                           = delete;
+    InstantDespawnDefinition& operator=(InstantDespawnDefinition const&);
+    InstantDespawnDefinition(InstantDespawnDefinition const&);
+    InstantDespawnDefinition();
 
 public:
     // NOLINTBEGIN

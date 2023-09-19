@@ -5,8 +5,8 @@
 struct ActorInsideBlockEvent {
 public:
     // prevent constructor by default
-    ActorInsideBlockEvent& operator=(ActorInsideBlockEvent const&) = delete;
-    ActorInsideBlockEvent()                                        = delete;
+    ActorInsideBlockEvent& operator=(ActorInsideBlockEvent const&);
+    ActorInsideBlockEvent();
 
 public:
     // NOLINTBEGIN

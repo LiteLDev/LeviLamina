@@ -12,8 +12,8 @@ public:
     bool mEnabled; // this+0x30
 
     // prevent constructor by default
-    ClientCacheStatusPacket& operator=(ClientCacheStatusPacket const&) = delete;
-    ClientCacheStatusPacket(ClientCacheStatusPacket const&)            = delete;
+    ClientCacheStatusPacket& operator=(ClientCacheStatusPacket const&);
+    ClientCacheStatusPacket(ClientCacheStatusPacket const&);
 
 public:
     // NOLINTBEGIN

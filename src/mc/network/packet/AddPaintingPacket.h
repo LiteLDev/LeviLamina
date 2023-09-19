@@ -19,8 +19,8 @@ public:
     std::string    mMotive;    // this+0x50
 
     // prevent constructor by default
-    AddPaintingPacket& operator=(AddPaintingPacket const&) = delete;
-    AddPaintingPacket(AddPaintingPacket const&)            = delete;
+    AddPaintingPacket& operator=(AddPaintingPacket const&);
+    AddPaintingPacket(AddPaintingPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -52,7 +52,7 @@ public:
     virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
 
     // symbol: ??0AddPaintingPacket@@QEAA@AEBVPainting@@@Z
-    MCAPI AddPaintingPacket(class Painting const&);
+    MCAPI explicit AddPaintingPacket(class Painting const&);
 
     // symbol: ??0AddPaintingPacket@@QEAA@XZ
     MCAPI AddPaintingPacket();

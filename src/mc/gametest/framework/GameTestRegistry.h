@@ -12,8 +12,8 @@ namespace gametest {
 class GameTestRegistry {
 public:
     // prevent constructor by default
-    GameTestRegistry& operator=(GameTestRegistry const&) = delete;
-    GameTestRegistry(GameTestRegistry const&)            = delete;
+    GameTestRegistry& operator=(GameTestRegistry const&);
+    GameTestRegistry(GameTestRegistry const&);
 
 public:
     // NOLINTBEGIN

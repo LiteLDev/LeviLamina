@@ -23,9 +23,9 @@ public:
         std::vector<AttributeModifier> mModifiers;    // this+0x40
 
         // prevent constructor by default
-        AttributeData& operator=(AttributeData const&) = delete;
-        AttributeData(AttributeData const&)            = delete;
-        AttributeData()                                = delete;
+        AttributeData& operator=(AttributeData const&);
+        AttributeData(AttributeData const&);
+        AttributeData();
 
     public:
         // NOLINTBEGIN
@@ -48,8 +48,8 @@ public:
     uint64                     mTick;          // this+0x50
 
     // prevent constructor by default
-    UpdateAttributesPacket& operator=(UpdateAttributesPacket const&) = delete;
-    UpdateAttributesPacket(UpdateAttributesPacket const&)            = delete;
+    UpdateAttributesPacket& operator=(UpdateAttributesPacket const&);
+    UpdateAttributesPacket(UpdateAttributesPacket const&);
 
 public:
     // NOLINTBEGIN

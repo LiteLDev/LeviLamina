@@ -62,9 +62,9 @@ public:
     class PlayerSpawnPoint {
     public:
         // prevent constructor by default
-        PlayerSpawnPoint& operator=(PlayerSpawnPoint const&) = delete;
-        PlayerSpawnPoint(PlayerSpawnPoint const&)            = delete;
-        PlayerSpawnPoint()                                   = delete;
+        PlayerSpawnPoint& operator=(PlayerSpawnPoint const&);
+        PlayerSpawnPoint(PlayerSpawnPoint const&);
+        PlayerSpawnPoint();
 
     public:
         // NOLINTBEGIN
@@ -123,9 +123,9 @@ public:
     LLNDAPI std::optional<NetworkPeer::NetworkStatus> getNetworkStatus() const;
 
     // prevent constructor by default
-    Player& operator=(Player const&) = delete;
-    Player(Player const&)            = delete;
-    Player()                         = delete;
+    Player& operator=(Player const&);
+    Player(Player const&);
+    Player();
 
 public:
     // NOLINTBEGIN

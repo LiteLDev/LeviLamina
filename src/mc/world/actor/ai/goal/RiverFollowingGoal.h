@@ -9,9 +9,9 @@
 class RiverFollowingGoal : public ::Goal {
 public:
     // prevent constructor by default
-    RiverFollowingGoal& operator=(RiverFollowingGoal const&) = delete;
-    RiverFollowingGoal(RiverFollowingGoal const&)            = delete;
-    RiverFollowingGoal()                                     = delete;
+    RiverFollowingGoal& operator=(RiverFollowingGoal const&);
+    RiverFollowingGoal(RiverFollowingGoal const&);
+    RiverFollowingGoal();
 
 public:
     // NOLINTBEGIN

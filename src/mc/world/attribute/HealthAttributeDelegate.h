@@ -8,9 +8,9 @@
 class HealthAttributeDelegate : public ::AttributeInstanceDelegate {
 public:
     // prevent constructor by default
-    HealthAttributeDelegate& operator=(HealthAttributeDelegate const&) = delete;
-    HealthAttributeDelegate(HealthAttributeDelegate const&)            = delete;
-    HealthAttributeDelegate()                                          = delete;
+    HealthAttributeDelegate& operator=(HealthAttributeDelegate const&);
+    HealthAttributeDelegate(HealthAttributeDelegate const&);
+    HealthAttributeDelegate();
 
 public:
     // NOLINTBEGIN

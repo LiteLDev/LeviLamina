@@ -5,7 +5,7 @@
 class LevelGameplayHandler {
 public:
     // prevent constructor by default
-    LevelGameplayHandler& operator=(LevelGameplayHandler const&) = delete;
-    LevelGameplayHandler(LevelGameplayHandler const&)            = delete;
-    LevelGameplayHandler()                                       = delete;
+    LevelGameplayHandler& operator=(LevelGameplayHandler const&);
+    LevelGameplayHandler(LevelGameplayHandler const&);
+    LevelGameplayHandler();
 };

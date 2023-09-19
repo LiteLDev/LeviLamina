@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class StainedGlassPaneBlock : public ::ThinFenceBlock {
 public:
     // prevent constructor by default
-    StainedGlassPaneBlock& operator=(StainedGlassPaneBlock const&) = delete;
-    StainedGlassPaneBlock(StainedGlassPaneBlock const&)            = delete;
-    StainedGlassPaneBlock()                                        = delete;
+    StainedGlassPaneBlock& operator=(StainedGlassPaneBlock const&);
+    StainedGlassPaneBlock(StainedGlassPaneBlock const&);
+    StainedGlassPaneBlock();
 
 public:
     // NOLINTBEGIN

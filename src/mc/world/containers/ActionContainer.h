@@ -13,9 +13,9 @@ namespace npc {
 struct ActionContainer {
 public:
     // prevent constructor by default
-    ActionContainer& operator=(ActionContainer const&) = delete;
-    ActionContainer(ActionContainer const&)            = delete;
-    ActionContainer()                                  = delete;
+    ActionContainer& operator=(ActionContainer const&);
+    ActionContainer(ActionContainer const&);
+    ActionContainer();
 
 public:
     // NOLINTBEGIN

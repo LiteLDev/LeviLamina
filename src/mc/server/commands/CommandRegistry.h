@@ -41,9 +41,9 @@ public:
     struct ChainedSubcommand {
     public:
         // prevent constructor by default
-        ChainedSubcommand& operator=(ChainedSubcommand const&) = delete;
-        ChainedSubcommand(ChainedSubcommand const&)            = delete;
-        ChainedSubcommand()                                    = delete;
+        ChainedSubcommand& operator=(ChainedSubcommand const&);
+        ChainedSubcommand(ChainedSubcommand const&);
+        ChainedSubcommand();
 
     public:
         // NOLINTBEGIN
@@ -56,9 +56,9 @@ public:
     struct Enum {
     public:
         // prevent constructor by default
-        Enum& operator=(Enum const&) = delete;
-        Enum(Enum const&)            = delete;
-        Enum()                       = delete;
+        Enum& operator=(Enum const&);
+        Enum(Enum const&);
+        Enum();
 
     public:
         // NOLINTBEGIN
@@ -71,9 +71,9 @@ public:
     struct LexicalToken {
     public:
         // prevent constructor by default
-        LexicalToken& operator=(LexicalToken const&) = delete;
-        LexicalToken(LexicalToken const&)            = delete;
-        LexicalToken()                               = delete;
+        LexicalToken& operator=(LexicalToken const&);
+        LexicalToken(LexicalToken const&);
+        LexicalToken();
 
     public:
         // NOLINTBEGIN
@@ -86,9 +86,9 @@ public:
     struct Overload {
     public:
         // prevent constructor by default
-        Overload& operator=(Overload const&) = delete;
-        Overload(Overload const&)            = delete;
-        Overload()                           = delete;
+        Overload& operator=(Overload const&);
+        Overload(Overload const&);
+        Overload();
 
     public:
         // NOLINTBEGIN
@@ -102,8 +102,8 @@ public:
     class ParamSymbols {
     public:
         // prevent constructor by default
-        ParamSymbols& operator=(ParamSymbols const&) = delete;
-        ParamSymbols(ParamSymbols const&)            = delete;
+        ParamSymbols& operator=(ParamSymbols const&);
+        ParamSymbols(ParamSymbols const&);
 
     public:
         // NOLINTBEGIN
@@ -116,9 +116,9 @@ public:
     struct ParseRule {
     public:
         // prevent constructor by default
-        ParseRule& operator=(ParseRule const&) = delete;
-        ParseRule(ParseRule const&)            = delete;
-        ParseRule()                            = delete;
+        ParseRule& operator=(ParseRule const&);
+        ParseRule(ParseRule const&);
+        ParseRule();
 
     public:
         // NOLINTBEGIN
@@ -131,8 +131,8 @@ public:
     struct ParseTable {
     public:
         // prevent constructor by default
-        ParseTable& operator=(ParseTable const&) = delete;
-        ParseTable(ParseTable const&)            = delete;
+        ParseTable& operator=(ParseTable const&);
+        ParseTable(ParseTable const&);
 
     public:
         // NOLINTBEGIN
@@ -145,9 +145,9 @@ public:
     struct ParseToken {
     public:
         // prevent constructor by default
-        ParseToken& operator=(ParseToken const&) = delete;
-        ParseToken(ParseToken const&)            = delete;
-        ParseToken()                             = delete;
+        ParseToken& operator=(ParseToken const&);
+        ParseToken(ParseToken const&);
+        ParseToken();
 
     public:
         // NOLINTBEGIN
@@ -161,9 +161,9 @@ public:
     struct Signature {
     public:
         // prevent constructor by default
-        Signature& operator=(Signature const&) = delete;
-        Signature(Signature const&)            = delete;
-        Signature()                            = delete;
+        Signature& operator=(Signature const&);
+        Signature(Signature const&);
+        Signature();
 
     public:
         // NOLINTBEGIN
@@ -179,9 +179,9 @@ public:
     class Symbol {
     public:
         // prevent constructor by default
-        Symbol& operator=(Symbol const&) = delete;
-        Symbol(Symbol const&)            = delete;
-        Symbol()                         = delete;
+        Symbol& operator=(Symbol const&);
+        Symbol(Symbol const&);
+        Symbol();
 
     public:
         // NOLINTBEGIN
@@ -197,9 +197,9 @@ public:
     class Parser {
     public:
         // prevent constructor by default
-        Parser& operator=(Parser const&) = delete;
-        Parser(Parser const&)            = delete;
-        Parser()                         = delete;
+        Parser& operator=(Parser const&);
+        Parser(Parser const&);
+        Parser();
 
     public:
         // NOLINTBEGIN
@@ -255,9 +255,9 @@ public:
     struct RegistryState {
     public:
         // prevent constructor by default
-        RegistryState& operator=(RegistryState const&) = delete;
-        RegistryState(RegistryState const&)            = delete;
-        RegistryState()                                = delete;
+        RegistryState& operator=(RegistryState const&);
+        RegistryState(RegistryState const&);
+        RegistryState();
 
     public:
         // NOLINTBEGIN
@@ -270,9 +270,9 @@ public:
     struct SoftEnum {
     public:
         // prevent constructor by default
-        SoftEnum& operator=(SoftEnum const&) = delete;
-        SoftEnum(SoftEnum const&)            = delete;
-        SoftEnum()                           = delete;
+        SoftEnum& operator=(SoftEnum const&);
+        SoftEnum(SoftEnum const&);
+        SoftEnum();
 
     public:
         // NOLINTBEGIN
@@ -286,15 +286,15 @@ public:
     struct SymbolHasher {
     public:
         // prevent constructor by default
-        SymbolHasher& operator=(SymbolHasher const&) = delete;
-        SymbolHasher(SymbolHasher const&)            = delete;
-        SymbolHasher()                               = delete;
+        SymbolHasher& operator=(SymbolHasher const&);
+        SymbolHasher(SymbolHasher const&);
+        SymbolHasher();
     };
 
 public:
     // prevent constructor by default
-    CommandRegistry& operator=(CommandRegistry const&) = delete;
-    CommandRegistry(CommandRegistry const&)            = delete;
+    CommandRegistry& operator=(CommandRegistry const&);
+    CommandRegistry(CommandRegistry const&);
 
 public:
     // NOLINTBEGIN
@@ -714,7 +714,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $ParseRuleSymbols() { return ParseRuleSymbols; }
+    auto& $ParseRuleSymbols() { return ParseRuleSymbols; }
 
     // NOLINTEND
 };

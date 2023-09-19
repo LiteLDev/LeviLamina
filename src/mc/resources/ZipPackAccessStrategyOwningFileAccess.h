@@ -16,9 +16,9 @@ namespace Core { class Path; }
 class ZipPackAccessStrategyOwningFileAccess : public ::ZipPackAccessStrategy {
 public:
     // prevent constructor by default
-    ZipPackAccessStrategyOwningFileAccess& operator=(ZipPackAccessStrategyOwningFileAccess const&) = delete;
-    ZipPackAccessStrategyOwningFileAccess(ZipPackAccessStrategyOwningFileAccess const&)            = delete;
-    ZipPackAccessStrategyOwningFileAccess()                                                        = delete;
+    ZipPackAccessStrategyOwningFileAccess& operator=(ZipPackAccessStrategyOwningFileAccess const&);
+    ZipPackAccessStrategyOwningFileAccess(ZipPackAccessStrategyOwningFileAccess const&);
+    ZipPackAccessStrategyOwningFileAccess();
 
 public:
     // NOLINTBEGIN

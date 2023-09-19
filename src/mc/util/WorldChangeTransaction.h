@@ -5,14 +5,14 @@
 class WorldChangeTransaction {
 public:
     // prevent constructor by default
-    WorldChangeTransaction& operator=(WorldChangeTransaction const&) = delete;
-    WorldChangeTransaction(WorldChangeTransaction const&)            = delete;
-    WorldChangeTransaction()                                         = delete;
+    WorldChangeTransaction& operator=(WorldChangeTransaction const&);
+    WorldChangeTransaction(WorldChangeTransaction const&);
+    WorldChangeTransaction();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0WorldChangeTransaction@@QEAA@AEAVIBlockWorldGenAPI@@@Z
-    MCAPI WorldChangeTransaction(class IBlockWorldGenAPI&);
+    MCAPI explicit WorldChangeTransaction(class IBlockWorldGenAPI&);
 
     // symbol: ?apply@WorldChangeTransaction@@QEBA_NXZ
     MCAPI bool apply() const;

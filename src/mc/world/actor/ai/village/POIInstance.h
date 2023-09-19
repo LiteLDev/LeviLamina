@@ -8,9 +8,9 @@
 class POIInstance {
 public:
     // prevent constructor by default
-    POIInstance& operator=(POIInstance const&) = delete;
-    POIInstance(POIInstance const&)            = delete;
-    POIInstance()                              = delete;
+    POIInstance& operator=(POIInstance const&);
+    POIInstance(POIInstance const&);
+    POIInstance();
 
 public:
     // NOLINTBEGIN

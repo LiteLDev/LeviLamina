@@ -26,8 +26,8 @@ public:
     uchar                          mCreateWorldFog; // this+0x7D
 
     // prevent constructor by default
-    BossEventPacket& operator=(BossEventPacket const&) = delete;
-    BossEventPacket(BossEventPacket const&)            = delete;
+    BossEventPacket& operator=(BossEventPacket const&);
+    BossEventPacket(BossEventPacket const&);
 
 public:
     // NOLINTBEGIN

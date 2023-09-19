@@ -9,9 +9,9 @@
 class SHFiveCrossing : public ::StrongholdPiece {
 public:
     // prevent constructor by default
-    SHFiveCrossing& operator=(SHFiveCrossing const&) = delete;
-    SHFiveCrossing(SHFiveCrossing const&)            = delete;
-    SHFiveCrossing()                                 = delete;
+    SHFiveCrossing& operator=(SHFiveCrossing const&);
+    SHFiveCrossing(SHFiveCrossing const&);
+    SHFiveCrossing();
 
 public:
     // NOLINTBEGIN

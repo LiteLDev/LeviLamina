@@ -13,9 +13,9 @@ namespace Crypto::Asymmetric {
 class Asymmetric {
 public:
     // prevent constructor by default
-    Asymmetric& operator=(Asymmetric const&) = delete;
-    Asymmetric(Asymmetric const&)            = delete;
-    Asymmetric()                             = delete;
+    Asymmetric& operator=(Asymmetric const&);
+    Asymmetric(Asymmetric const&);
+    Asymmetric();
 
 public:
     // NOLINTBEGIN
@@ -52,7 +52,7 @@ public:
     virtual std::string computeSharedSecret(std::string const&, std::string const&);
 
     // symbol: ??0Asymmetric@0Crypto@@QEAA@W4System@01@@Z
-    MCAPI Asymmetric(::Crypto::Asymmetric::System);
+    MCAPI explicit Asymmetric(::Crypto::Asymmetric::System);
 
     // symbol: ?canComputeSecret@Asymmetric@1Crypto@@QEAA_NXZ
     MCAPI bool canComputeSecret();

@@ -20,14 +20,14 @@ namespace Bedrock::JSONObject {
 class Document {
 public:
     // prevent constructor by default
-    Document& operator=(Document const&) = delete;
-    Document(Document const&)            = delete;
-    Document()                           = delete;
+    Document& operator=(Document const&);
+    Document(Document const&);
+    Document();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0Document@JSONObject@Bedrock@@QEAA@AEBVDocumentOptions@12@@Z
-    MCAPI Document(class Bedrock::JSONObject::DocumentOptions const&);
+    MCAPI explicit Document(class Bedrock::JSONObject::DocumentOptions const&);
 
     // symbol:
     // ?loadString@Document@JSONObject@Bedrock@@QEAAAEBVParseResult@23@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z

@@ -20,9 +20,9 @@ public:
 
 public:
     // prevent constructor by default
-    SetItemDataFunction& operator=(SetItemDataFunction const&) = delete;
-    SetItemDataFunction(SetItemDataFunction const&)            = delete;
-    SetItemDataFunction()                                      = delete;
+    SetItemDataFunction& operator=(SetItemDataFunction const&);
+    SetItemDataFunction(SetItemDataFunction const&);
+    SetItemDataFunction();
 
 public:
     // NOLINTBEGIN

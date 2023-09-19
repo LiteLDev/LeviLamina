@@ -5,9 +5,9 @@
 class ServerPlayerMovementCorrectionSystem {
 public:
     // prevent constructor by default
-    ServerPlayerMovementCorrectionSystem& operator=(ServerPlayerMovementCorrectionSystem const&) = delete;
-    ServerPlayerMovementCorrectionSystem(ServerPlayerMovementCorrectionSystem const&)            = delete;
-    ServerPlayerMovementCorrectionSystem()                                                       = delete;
+    ServerPlayerMovementCorrectionSystem& operator=(ServerPlayerMovementCorrectionSystem const&);
+    ServerPlayerMovementCorrectionSystem(ServerPlayerMovementCorrectionSystem const&);
+    ServerPlayerMovementCorrectionSystem();
 
 public:
     // NOLINTBEGIN

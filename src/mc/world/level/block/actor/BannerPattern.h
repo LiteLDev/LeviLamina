@@ -13,9 +13,9 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class BannerPattern : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    BannerPattern& operator=(BannerPattern const&) = delete;
-    BannerPattern(BannerPattern const&)            = delete;
-    BannerPattern()                                = delete;
+    BannerPattern& operator=(BannerPattern const&);
+    BannerPattern(BannerPattern const&);
+    BannerPattern();
 
 public:
     // NOLINTBEGIN

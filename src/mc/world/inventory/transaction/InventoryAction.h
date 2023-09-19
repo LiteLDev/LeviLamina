@@ -8,7 +8,7 @@
 class InventoryAction {
 public:
     // prevent constructor by default
-    InventoryAction() = delete;
+    InventoryAction();
 
     InventorySource            mSource;             // this+0x0
     uint                       mSlot;               // this+0xC

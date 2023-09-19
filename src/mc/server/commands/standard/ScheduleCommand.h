@@ -16,9 +16,9 @@ public:
     struct FunctionInfo {
     public:
         // prevent constructor by default
-        FunctionInfo& operator=(FunctionInfo const&) = delete;
-        FunctionInfo(FunctionInfo const&)            = delete;
-        FunctionInfo()                               = delete;
+        FunctionInfo& operator=(FunctionInfo const&);
+        FunctionInfo(FunctionInfo const&);
+        FunctionInfo();
 
     public:
         // NOLINTBEGIN
@@ -30,9 +30,9 @@ public:
 
 public:
     // prevent constructor by default
-    ScheduleCommand& operator=(ScheduleCommand const&) = delete;
-    ScheduleCommand(ScheduleCommand const&)            = delete;
-    ScheduleCommand()                                  = delete;
+    ScheduleCommand& operator=(ScheduleCommand const&);
+    ScheduleCommand(ScheduleCommand const&);
+    ScheduleCommand();
 
 public:
     // NOLINTBEGIN

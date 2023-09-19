@@ -16,9 +16,9 @@ public:
     class HistoryCache {
     public:
         // prevent constructor by default
-        HistoryCache& operator=(HistoryCache const&) = delete;
-        HistoryCache(HistoryCache const&)            = delete;
-        HistoryCache()                               = delete;
+        HistoryCache& operator=(HistoryCache const&);
+        HistoryCache(HistoryCache const&);
+        HistoryCache();
 
     public:
         // NOLINTBEGIN
@@ -39,9 +39,9 @@ public:
     class HistoryTimestampData {
     public:
         // prevent constructor by default
-        HistoryTimestampData& operator=(HistoryTimestampData const&) = delete;
-        HistoryTimestampData(HistoryTimestampData const&)            = delete;
-        HistoryTimestampData()                                       = delete;
+        HistoryTimestampData& operator=(HistoryTimestampData const&);
+        HistoryTimestampData(HistoryTimestampData const&);
+        HistoryTimestampData();
 
     private:
         // NOLINTBEGIN
@@ -53,7 +53,7 @@ public:
         // member accessor
     public:
         // NOLINTBEGIN
-        inline auto& $mSequenceIdGenerator() { return mSequenceIdGenerator; }
+        auto& $mSequenceIdGenerator() { return mSequenceIdGenerator; }
 
         // NOLINTEND
     };
@@ -61,9 +61,9 @@ public:
     struct PredictionDbgData {
     public:
         // prevent constructor by default
-        PredictionDbgData& operator=(PredictionDbgData const&) = delete;
-        PredictionDbgData(PredictionDbgData const&)            = delete;
-        PredictionDbgData()                                    = delete;
+        PredictionDbgData& operator=(PredictionDbgData const&);
+        PredictionDbgData(PredictionDbgData const&);
+        PredictionDbgData();
 
     public:
         // NOLINTBEGIN
@@ -88,9 +88,9 @@ public:
         class LerpedInterval {
         public:
             // prevent constructor by default
-            LerpedInterval& operator=(LerpedInterval const&) = delete;
-            LerpedInterval(LerpedInterval const&)            = delete;
-            LerpedInterval()                                 = delete;
+            LerpedInterval& operator=(LerpedInterval const&);
+            LerpedInterval(LerpedInterval const&);
+            LerpedInterval();
 
         private:
             // NOLINTBEGIN
@@ -102,15 +102,15 @@ public:
             // member accessor
         public:
             // NOLINTBEGIN
-            inline auto& $mMaxTicks() { return mMaxTicks; }
+            auto& $mMaxTicks() { return mMaxTicks; }
 
             // NOLINTEND
         };
 
     public:
         // prevent constructor by default
-        RuntimePredictionData& operator=(RuntimePredictionData const&) = delete;
-        RuntimePredictionData(RuntimePredictionData const&)            = delete;
+        RuntimePredictionData& operator=(RuntimePredictionData const&);
+        RuntimePredictionData(RuntimePredictionData const&);
 
     public:
         // NOLINTBEGIN
@@ -125,14 +125,14 @@ public:
 
 public:
     // prevent constructor by default
-    PredictedMovementComponent& operator=(PredictedMovementComponent const&) = delete;
-    PredictedMovementComponent(PredictedMovementComponent const&)            = delete;
-    PredictedMovementComponent()                                             = delete;
+    PredictedMovementComponent& operator=(PredictedMovementComponent const&);
+    PredictedMovementComponent(PredictedMovementComponent const&);
+    PredictedMovementComponent();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0PredictedMovementComponent@@QEAA@AEAVActor@@@Z
-    MCAPI PredictedMovementComponent(class Actor&);
+    MCAPI explicit PredictedMovementComponent(class Actor&);
 
     // symbol: ?isEnabled@PredictedMovementComponent@@QEBA_NXZ
     MCAPI bool isEnabled() const;
@@ -181,9 +181,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $LERP_STEP_SIZE() { return LERP_STEP_SIZE; }
+    auto& $LERP_STEP_SIZE() { return LERP_STEP_SIZE; }
 
-    inline auto& $mGlobalRuntimePredictionData() { return mGlobalRuntimePredictionData; }
+    auto& $mGlobalRuntimePredictionData() { return mGlobalRuntimePredictionData; }
 
     // NOLINTEND
 };

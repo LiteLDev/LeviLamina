@@ -13,7 +13,7 @@ public:
     std::shared_ptr<ControlBlock> mControlBlock; // this+0x8
 
     // prevent constructor by default
-    EnableNonOwnerReferences& operator=(EnableNonOwnerReferences const&) = delete;
+    EnableNonOwnerReferences& operator=(EnableNonOwnerReferences const&);
 
 public:
     // NOLINTBEGIN

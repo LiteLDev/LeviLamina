@@ -20,9 +20,9 @@ namespace ScriptModuleMinecraft {
 class ScriptSystem {
 public:
     // prevent constructor by default
-    ScriptSystem& operator=(ScriptSystem const&) = delete;
-    ScriptSystem(ScriptSystem const&)            = delete;
-    ScriptSystem()                               = delete;
+    ScriptSystem& operator=(ScriptSystem const&);
+    ScriptSystem(ScriptSystem const&);
+    ScriptSystem();
 
 public:
     // NOLINTBEGIN

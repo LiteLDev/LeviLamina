@@ -5,7 +5,7 @@
 struct ActorWalkAnimationComponent {
 public:
     // prevent constructor by default
-    ActorWalkAnimationComponent& operator=(ActorWalkAnimationComponent const&) = delete;
-    ActorWalkAnimationComponent(ActorWalkAnimationComponent const&)            = delete;
-    ActorWalkAnimationComponent()                                              = delete;
+    ActorWalkAnimationComponent& operator=(ActorWalkAnimationComponent const&);
+    ActorWalkAnimationComponent(ActorWalkAnimationComponent const&);
+    ActorWalkAnimationComponent();
 };

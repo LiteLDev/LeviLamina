@@ -5,9 +5,9 @@
 class IFeature {
 public:
     // prevent constructor by default
-    IFeature& operator=(IFeature const&) = delete;
-    IFeature(IFeature const&)            = delete;
-    IFeature()                           = delete;
+    IFeature& operator=(IFeature const&);
+    IFeature(IFeature const&);
+    IFeature();
 
 public:
     // NOLINTBEGIN

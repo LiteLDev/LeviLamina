@@ -5,9 +5,9 @@
 class BlockSelectionBoxProcessor {
 public:
     // prevent constructor by default
-    BlockSelectionBoxProcessor& operator=(BlockSelectionBoxProcessor const&) = delete;
-    BlockSelectionBoxProcessor(BlockSelectionBoxProcessor const&)            = delete;
-    BlockSelectionBoxProcessor()                                             = delete;
+    BlockSelectionBoxProcessor& operator=(BlockSelectionBoxProcessor const&);
+    BlockSelectionBoxProcessor(BlockSelectionBoxProcessor const&);
+    BlockSelectionBoxProcessor();
 
 public:
     // NOLINTBEGIN

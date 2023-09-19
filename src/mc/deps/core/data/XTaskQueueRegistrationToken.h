@@ -5,7 +5,7 @@
 struct XTaskQueueRegistrationToken {
 public:
     // prevent constructor by default
-    XTaskQueueRegistrationToken& operator=(XTaskQueueRegistrationToken const&) = delete;
-    XTaskQueueRegistrationToken(XTaskQueueRegistrationToken const&)            = delete;
-    XTaskQueueRegistrationToken()                                              = delete;
+    XTaskQueueRegistrationToken& operator=(XTaskQueueRegistrationToken const&);
+    XTaskQueueRegistrationToken(XTaskQueueRegistrationToken const&);
+    XTaskQueueRegistrationToken();
 };

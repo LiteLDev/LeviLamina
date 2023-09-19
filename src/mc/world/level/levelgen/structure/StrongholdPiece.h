@@ -12,9 +12,9 @@ public:
 
 public:
     // prevent constructor by default
-    StrongholdPiece& operator=(StrongholdPiece const&) = delete;
-    StrongholdPiece(StrongholdPiece const&)            = delete;
-    StrongholdPiece()                                  = delete;
+    StrongholdPiece& operator=(StrongholdPiece const&);
+    StrongholdPiece(StrongholdPiece const&);
+    StrongholdPiece();
 
 public:
     // NOLINTBEGIN

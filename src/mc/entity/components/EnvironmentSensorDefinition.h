@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class EnvironmentSensorDefinition {
 public:
     // prevent constructor by default
-    EnvironmentSensorDefinition& operator=(EnvironmentSensorDefinition const&) = delete;
-    EnvironmentSensorDefinition(EnvironmentSensorDefinition const&)            = delete;
-    EnvironmentSensorDefinition()                                              = delete;
+    EnvironmentSensorDefinition& operator=(EnvironmentSensorDefinition const&);
+    EnvironmentSensorDefinition(EnvironmentSensorDefinition const&);
+    EnvironmentSensorDefinition();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 struct LoopingSoundAttributes {
 public:
     // prevent constructor by default
-    LoopingSoundAttributes& operator=(LoopingSoundAttributes const&) = delete;
-    LoopingSoundAttributes(LoopingSoundAttributes const&)            = delete;
-    LoopingSoundAttributes()                                         = delete;
+    LoopingSoundAttributes& operator=(LoopingSoundAttributes const&);
+    LoopingSoundAttributes(LoopingSoundAttributes const&);
+    LoopingSoundAttributes();
 };

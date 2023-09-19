@@ -13,8 +13,8 @@ public:
     Bedrock::Application::ThreadOwner<Core::Random> mRandom; // this+0x20
 
     // prevent constructor by default
-    Random& operator=(Random const&) = delete;
-    Random(Random const&)            = delete;
+    Random& operator=(Random const&);
+    Random(Random const&);
 
 public:
     // NOLINTBEGIN
@@ -83,7 +83,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mThreadLocalRandom() { return mThreadLocalRandom; }
+    auto& $mThreadLocalRandom() { return mThreadLocalRandom; }
 
     // NOLINTEND
 };

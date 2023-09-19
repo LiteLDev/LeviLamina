@@ -8,9 +8,9 @@
 class NetherFireFeature : public ::Feature {
 public:
     // prevent constructor by default
-    NetherFireFeature& operator=(NetherFireFeature const&) = delete;
-    NetherFireFeature(NetherFireFeature const&)            = delete;
-    NetherFireFeature()                                    = delete;
+    NetherFireFeature& operator=(NetherFireFeature const&);
+    NetherFireFeature(NetherFireFeature const&);
+    NetherFireFeature();
 
 public:
     // NOLINTBEGIN

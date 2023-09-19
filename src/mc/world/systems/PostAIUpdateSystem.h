@@ -10,9 +10,9 @@
 class PostAIUpdateSystem {
 public:
     // prevent constructor by default
-    PostAIUpdateSystem& operator=(PostAIUpdateSystem const&) = delete;
-    PostAIUpdateSystem(PostAIUpdateSystem const&)            = delete;
-    PostAIUpdateSystem()                                     = delete;
+    PostAIUpdateSystem& operator=(PostAIUpdateSystem const&);
+    PostAIUpdateSystem(PostAIUpdateSystem const&);
+    PostAIUpdateSystem();
 
 public:
     // NOLINTBEGIN

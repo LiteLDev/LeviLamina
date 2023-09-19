@@ -15,9 +15,9 @@ namespace Bedrock {
 class ResultLogger {
 public:
     // prevent constructor by default
-    ResultLogger& operator=(ResultLogger const&) = delete;
-    ResultLogger(ResultLogger const&)            = delete;
-    ResultLogger()                               = delete;
+    ResultLogger& operator=(ResultLogger const&);
+    ResultLogger(ResultLogger const&);
+    ResultLogger();
 
     // private:
     // NOLINTBEGIN

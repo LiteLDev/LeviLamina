@@ -24,8 +24,8 @@ public:
     uchar mContainerIdByte;  // this+0xA3
 
     // prevent constructor by default
-    MobEquipmentPacket& operator=(MobEquipmentPacket const&) = delete;
-    MobEquipmentPacket(MobEquipmentPacket const&)            = delete;
+    MobEquipmentPacket& operator=(MobEquipmentPacket const&);
+    MobEquipmentPacket(MobEquipmentPacket const&);
 
 public:
     // NOLINTBEGIN

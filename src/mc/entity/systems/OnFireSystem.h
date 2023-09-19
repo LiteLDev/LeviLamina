@@ -8,9 +8,9 @@
 class OnFireSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    OnFireSystem& operator=(OnFireSystem const&) = delete;
-    OnFireSystem(OnFireSystem const&)            = delete;
-    OnFireSystem()                               = delete;
+    OnFireSystem& operator=(OnFireSystem const&);
+    OnFireSystem(OnFireSystem const&);
+    OnFireSystem();
 
 public:
     // NOLINTBEGIN

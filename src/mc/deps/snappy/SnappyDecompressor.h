@@ -7,9 +7,9 @@ namespace snappy {
 class SnappyDecompressor {
 public:
     // prevent constructor by default
-    SnappyDecompressor& operator=(SnappyDecompressor const&) = delete;
-    SnappyDecompressor(SnappyDecompressor const&)            = delete;
-    SnappyDecompressor()                                     = delete;
+    SnappyDecompressor& operator=(SnappyDecompressor const&);
+    SnappyDecompressor(SnappyDecompressor const&);
+    SnappyDecompressor();
 
     // private:
     // NOLINTBEGIN

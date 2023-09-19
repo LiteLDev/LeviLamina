@@ -7,8 +7,8 @@ namespace npc {
 struct Button {
 public:
     // prevent constructor by default
-    Button& operator=(Button const&) = delete;
-    Button(Button const&)            = delete;
+    Button& operator=(Button const&);
+    Button(Button const&);
 
 public:
     // NOLINTBEGIN

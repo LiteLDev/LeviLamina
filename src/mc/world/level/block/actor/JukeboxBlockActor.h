@@ -8,9 +8,9 @@
 class JukeboxBlockActor : public ::RandomizableBlockActorContainer {
 public:
     // prevent constructor by default
-    JukeboxBlockActor& operator=(JukeboxBlockActor const&) = delete;
-    JukeboxBlockActor(JukeboxBlockActor const&)            = delete;
-    JukeboxBlockActor()                                    = delete;
+    JukeboxBlockActor& operator=(JukeboxBlockActor const&);
+    JukeboxBlockActor(JukeboxBlockActor const&);
+    JukeboxBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -67,7 +67,7 @@ public:
     MCVAPI void tick(class BlockSource&);
 
     // symbol: ??0JukeboxBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI JukeboxBlockActor(class BlockPos const&);
+    MCAPI explicit JukeboxBlockActor(class BlockPos const&);
 
     // symbol: ?getRecord@JukeboxBlockActor@@QEBAAEBVItemStack@@XZ
     MCAPI class ItemStack const& getRecord() const;

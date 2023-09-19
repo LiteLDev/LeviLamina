@@ -7,9 +7,9 @@ namespace Bedrock::Http {
 class LibHttpClientInstance {
 public:
     // prevent constructor by default
-    LibHttpClientInstance& operator=(LibHttpClientInstance const&) = delete;
-    LibHttpClientInstance(LibHttpClientInstance const&)            = delete;
-    LibHttpClientInstance()                                        = delete;
+    LibHttpClientInstance& operator=(LibHttpClientInstance const&);
+    LibHttpClientInstance(LibHttpClientInstance const&);
+    LibHttpClientInstance();
 
 public:
     // NOLINTBEGIN
@@ -40,9 +40,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $sMutex() { return sMutex; }
+    auto& $sMutex() { return sMutex; }
 
-    inline auto& $sWeakInstance() { return sWeakInstance; }
+    auto& $sWeakInstance() { return sWeakInstance; }
 
     // NOLINTEND
 };

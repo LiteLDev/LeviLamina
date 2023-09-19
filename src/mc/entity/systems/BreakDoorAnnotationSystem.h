@@ -8,9 +8,9 @@
 class BreakDoorAnnotationSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    BreakDoorAnnotationSystem& operator=(BreakDoorAnnotationSystem const&) = delete;
-    BreakDoorAnnotationSystem(BreakDoorAnnotationSystem const&)            = delete;
-    BreakDoorAnnotationSystem()                                            = delete;
+    BreakDoorAnnotationSystem& operator=(BreakDoorAnnotationSystem const&);
+    BreakDoorAnnotationSystem(BreakDoorAnnotationSystem const&);
+    BreakDoorAnnotationSystem();
 
 public:
     // NOLINTBEGIN

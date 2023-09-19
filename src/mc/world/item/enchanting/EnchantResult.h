@@ -5,7 +5,7 @@
 struct EnchantResult {
 public:
     // prevent constructor by default
-    EnchantResult& operator=(EnchantResult const&) = delete;
-    EnchantResult(EnchantResult const&)            = delete;
-    EnchantResult()                                = delete;
+    EnchantResult& operator=(EnchantResult const&);
+    EnchantResult(EnchantResult const&);
+    EnchantResult();
 };

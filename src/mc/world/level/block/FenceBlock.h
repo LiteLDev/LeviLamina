@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class FenceBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    FenceBlock& operator=(FenceBlock const&) = delete;
-    FenceBlock(FenceBlock const&)            = delete;
-    FenceBlock()                             = delete;
+    FenceBlock& operator=(FenceBlock const&);
+    FenceBlock(FenceBlock const&);
+    FenceBlock();
 
 public:
     // NOLINTBEGIN
@@ -216,7 +216,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
+    auto& $FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
 
     // NOLINTEND
 };

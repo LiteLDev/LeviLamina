@@ -14,9 +14,9 @@ namespace JsonUtil { class EmptyClass; }
 class ActorCommandResponse {
 public:
     // prevent constructor by default
-    ActorCommandResponse& operator=(ActorCommandResponse const&) = delete;
-    ActorCommandResponse(ActorCommandResponse const&)            = delete;
-    ActorCommandResponse()                                       = delete;
+    ActorCommandResponse& operator=(ActorCommandResponse const&);
+    ActorCommandResponse(ActorCommandResponse const&);
+    ActorCommandResponse();
 
 public:
     // NOLINTBEGIN

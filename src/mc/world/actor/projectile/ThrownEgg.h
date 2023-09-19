@@ -27,9 +27,9 @@
 class ThrownEgg : public ::Throwable {
 public:
     // prevent constructor by default
-    ThrownEgg& operator=(ThrownEgg const&) = delete;
-    ThrownEgg(ThrownEgg const&)            = delete;
-    ThrownEgg()                            = delete;
+    ThrownEgg& operator=(ThrownEgg const&);
+    ThrownEgg(ThrownEgg const&);
+    ThrownEgg();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class AreaAttackComponent {
 public:
     // prevent constructor by default
-    AreaAttackComponent& operator=(AreaAttackComponent const&) = delete;
-    AreaAttackComponent(AreaAttackComponent const&)            = delete;
-    AreaAttackComponent()                                      = delete;
+    AreaAttackComponent& operator=(AreaAttackComponent const&);
+    AreaAttackComponent(AreaAttackComponent const&);
+    AreaAttackComponent();
 
 public:
     // NOLINTBEGIN

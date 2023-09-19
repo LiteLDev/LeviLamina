@@ -5,9 +5,9 @@
 struct ServerInstanceNotificationEvent {
 public:
     // prevent constructor by default
-    ServerInstanceNotificationEvent& operator=(ServerInstanceNotificationEvent const&) = delete;
-    ServerInstanceNotificationEvent(ServerInstanceNotificationEvent const&)            = delete;
-    ServerInstanceNotificationEvent()                                                  = delete;
+    ServerInstanceNotificationEvent& operator=(ServerInstanceNotificationEvent const&);
+    ServerInstanceNotificationEvent(ServerInstanceNotificationEvent const&);
+    ServerInstanceNotificationEvent();
 
 public:
     // NOLINTBEGIN

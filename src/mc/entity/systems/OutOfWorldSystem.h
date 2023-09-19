@@ -8,9 +8,9 @@
 class OutOfWorldSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    OutOfWorldSystem& operator=(OutOfWorldSystem const&) = delete;
-    OutOfWorldSystem(OutOfWorldSystem const&)            = delete;
-    OutOfWorldSystem()                                   = delete;
+    OutOfWorldSystem& operator=(OutOfWorldSystem const&);
+    OutOfWorldSystem(OutOfWorldSystem const&);
+    OutOfWorldSystem();
 
 public:
     // NOLINTBEGIN

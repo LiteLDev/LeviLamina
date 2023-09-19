@@ -5,8 +5,8 @@
 struct ContainerValidationCraftResult {
 public:
     // prevent constructor by default
-    ContainerValidationCraftResult& operator=(ContainerValidationCraftResult const&) = delete;
-    ContainerValidationCraftResult(ContainerValidationCraftResult const&)            = delete;
+    ContainerValidationCraftResult& operator=(ContainerValidationCraftResult const&);
+    ContainerValidationCraftResult(ContainerValidationCraftResult const&);
 
 public:
     // NOLINTBEGIN

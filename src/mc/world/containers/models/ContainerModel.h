@@ -11,9 +11,9 @@
 class ContainerModel : public ::ContainerContentChangeListener {
 public:
     // prevent constructor by default
-    ContainerModel& operator=(ContainerModel const&) = delete;
-    ContainerModel(ContainerModel const&)            = delete;
-    ContainerModel()                                 = delete;
+    ContainerModel& operator=(ContainerModel const&);
+    ContainerModel(ContainerModel const&);
+    ContainerModel();
 
 public:
     // NOLINTBEGIN

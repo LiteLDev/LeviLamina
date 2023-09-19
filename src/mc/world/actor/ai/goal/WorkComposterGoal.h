@@ -10,9 +10,9 @@
 class WorkComposterGoal : public ::WorkGoal {
 public:
     // prevent constructor by default
-    WorkComposterGoal& operator=(WorkComposterGoal const&) = delete;
-    WorkComposterGoal(WorkComposterGoal const&)            = delete;
-    WorkComposterGoal()                                    = delete;
+    WorkComposterGoal& operator=(WorkComposterGoal const&);
+    WorkComposterGoal(WorkComposterGoal const&);
+    WorkComposterGoal();
 
 public:
     // NOLINTBEGIN

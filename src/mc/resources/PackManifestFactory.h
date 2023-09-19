@@ -9,9 +9,9 @@
 class PackManifestFactory : public ::IPackManifestFactory {
 public:
     // prevent constructor by default
-    PackManifestFactory& operator=(PackManifestFactory const&) = delete;
-    PackManifestFactory(PackManifestFactory const&)            = delete;
-    PackManifestFactory()                                      = delete;
+    PackManifestFactory& operator=(PackManifestFactory const&);
+    PackManifestFactory(PackManifestFactory const&);
+    PackManifestFactory();
 
 public:
     // NOLINTBEGIN

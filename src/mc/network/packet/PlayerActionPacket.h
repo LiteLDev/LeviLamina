@@ -21,8 +21,8 @@ public:
     bool                 unk88;      // this+0x58
 
     // prevent constructor by default
-    PlayerActionPacket& operator=(PlayerActionPacket const&) = delete;
-    PlayerActionPacket(PlayerActionPacket const&)            = delete;
+    PlayerActionPacket& operator=(PlayerActionPacket const&);
+    PlayerActionPacket(PlayerActionPacket const&);
 
 public:
     // NOLINTBEGIN

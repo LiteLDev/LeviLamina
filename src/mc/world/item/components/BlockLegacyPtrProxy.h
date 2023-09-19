@@ -5,9 +5,9 @@
 struct BlockLegacyPtrProxy {
 public:
     // prevent constructor by default
-    BlockLegacyPtrProxy& operator=(BlockLegacyPtrProxy const&) = delete;
-    BlockLegacyPtrProxy(BlockLegacyPtrProxy const&)            = delete;
-    BlockLegacyPtrProxy()                                      = delete;
+    BlockLegacyPtrProxy& operator=(BlockLegacyPtrProxy const&);
+    BlockLegacyPtrProxy(BlockLegacyPtrProxy const&);
+    BlockLegacyPtrProxy();
 
 public:
     // NOLINTBEGIN

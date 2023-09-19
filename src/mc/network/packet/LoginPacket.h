@@ -14,8 +14,8 @@ public:
     std::unique_ptr<ConnectionRequest> mConnectionRequest;    // this+0x38
 
     // prevent constructor by default
-    LoginPacket& operator=(LoginPacket const&) = delete;
-    LoginPacket(LoginPacket const&)            = delete;
+    LoginPacket& operator=(LoginPacket const&);
+    LoginPacket(LoginPacket const&);
 
 public:
     // NOLINTBEGIN

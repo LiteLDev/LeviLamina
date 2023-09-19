@@ -15,8 +15,8 @@ public:
     bool        mServerInitiatedClose; // this+0x31
 
     // prevent constructor by default
-    ContainerClosePacket& operator=(ContainerClosePacket const&) = delete;
-    ContainerClosePacket(ContainerClosePacket const&)            = delete;
+    ContainerClosePacket& operator=(ContainerClosePacket const&);
+    ContainerClosePacket(ContainerClosePacket const&);
 
 public:
     // NOLINTBEGIN

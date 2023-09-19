@@ -18,8 +18,8 @@ public:
     ActorRuntimeID     mRuntimeId; // this+0x40
 
     // prevent constructor by default
-    RespawnPacket& operator=(RespawnPacket const&) = delete;
-    RespawnPacket(RespawnPacket const&)            = delete;
+    RespawnPacket& operator=(RespawnPacket const&);
+    RespawnPacket(RespawnPacket const&);
 
 public:
     // NOLINTBEGIN

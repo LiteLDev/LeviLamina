@@ -24,9 +24,9 @@ namespace ScriptModuleMinecraft {
 class ScriptWorldBeforeEvents {
 public:
     // prevent constructor by default
-    ScriptWorldBeforeEvents& operator=(ScriptWorldBeforeEvents const&) = delete;
-    ScriptWorldBeforeEvents(ScriptWorldBeforeEvents const&)            = delete;
-    ScriptWorldBeforeEvents()                                          = delete;
+    ScriptWorldBeforeEvents& operator=(ScriptWorldBeforeEvents const&);
+    ScriptWorldBeforeEvents(ScriptWorldBeforeEvents const&);
+    ScriptWorldBeforeEvents();
 
 public:
     // NOLINTBEGIN

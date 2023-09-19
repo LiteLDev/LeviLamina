@@ -5,7 +5,7 @@
 class IPlayerContainerSetter {
 public:
     // prevent constructor by default
-    IPlayerContainerSetter& operator=(IPlayerContainerSetter const&) = delete;
-    IPlayerContainerSetter(IPlayerContainerSetter const&)            = delete;
-    IPlayerContainerSetter()                                         = delete;
+    IPlayerContainerSetter& operator=(IPlayerContainerSetter const&);
+    IPlayerContainerSetter(IPlayerContainerSetter const&);
+    IPlayerContainerSetter();
 };

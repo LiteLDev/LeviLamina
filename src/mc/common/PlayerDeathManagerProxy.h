@@ -8,9 +8,9 @@
 class PlayerDeathManagerProxy : public ::IPlayerDeathManagerProxy {
 public:
     // prevent constructor by default
-    PlayerDeathManagerProxy& operator=(PlayerDeathManagerProxy const&) = delete;
-    PlayerDeathManagerProxy(PlayerDeathManagerProxy const&)            = delete;
-    PlayerDeathManagerProxy()                                          = delete;
+    PlayerDeathManagerProxy& operator=(PlayerDeathManagerProxy const&);
+    PlayerDeathManagerProxy(PlayerDeathManagerProxy const&);
+    PlayerDeathManagerProxy();
 
 public:
     // NOLINTBEGIN
@@ -24,7 +24,7 @@ public:
     virtual bool shouldShowDeathMessages() const;
 
     // symbol: ??0PlayerDeathManagerProxy@@QEAA@AEAVServerLevel@@@Z
-    MCAPI PlayerDeathManagerProxy(class ServerLevel&);
+    MCAPI explicit PlayerDeathManagerProxy(class ServerLevel&);
 
     // NOLINTEND
 };

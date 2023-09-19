@@ -7,9 +7,9 @@ namespace SFAT {
 class CRC24 {
 public:
     // prevent constructor by default
-    CRC24& operator=(CRC24 const&) = delete;
-    CRC24(CRC24 const&)            = delete;
-    CRC24()                        = delete;
+    CRC24& operator=(CRC24 const&);
+    CRC24(CRC24 const&);
+    CRC24();
 
 private:
     // NOLINTBEGIN
@@ -21,7 +21,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $table() { return table; }
+    auto& $table() { return table; }
 
     // NOLINTEND
 };

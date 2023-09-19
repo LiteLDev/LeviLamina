@@ -5,7 +5,7 @@
 struct PowerJump {
 public:
     // prevent constructor by default
-    PowerJump& operator=(PowerJump const&) = delete;
-    PowerJump(PowerJump const&)            = delete;
-    PowerJump()                            = delete;
+    PowerJump& operator=(PowerJump const&);
+    PowerJump(PowerJump const&);
+    PowerJump();
 };

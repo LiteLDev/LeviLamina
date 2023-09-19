@@ -15,9 +15,9 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class TextFilteringProcessor : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    TextFilteringProcessor& operator=(TextFilteringProcessor const&) = delete;
-    TextFilteringProcessor(TextFilteringProcessor const&)            = delete;
-    TextFilteringProcessor()                                         = delete;
+    TextFilteringProcessor& operator=(TextFilteringProcessor const&);
+    TextFilteringProcessor(TextFilteringProcessor const&);
+    TextFilteringProcessor();
 
 public:
     // NOLINTBEGIN

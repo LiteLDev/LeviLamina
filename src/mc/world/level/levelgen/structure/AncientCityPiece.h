@@ -11,9 +11,9 @@
 class AncientCityPiece : public ::PoolElementStructurePiece {
 public:
     // prevent constructor by default
-    AncientCityPiece& operator=(AncientCityPiece const&) = delete;
-    AncientCityPiece(AncientCityPiece const&)            = delete;
-    AncientCityPiece()                                   = delete;
+    AncientCityPiece& operator=(AncientCityPiece const&);
+    AncientCityPiece(AncientCityPiece const&);
+    AncientCityPiece();
 
 public:
     // NOLINTBEGIN

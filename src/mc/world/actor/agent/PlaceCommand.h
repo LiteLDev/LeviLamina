@@ -15,9 +15,9 @@ namespace AgentCommands {
 class PlaceCommand : public ::AgentCommands::Command {
 public:
     // prevent constructor by default
-    PlaceCommand& operator=(PlaceCommand const&) = delete;
-    PlaceCommand(PlaceCommand const&)            = delete;
-    PlaceCommand()                               = delete;
+    PlaceCommand& operator=(PlaceCommand const&);
+    PlaceCommand(PlaceCommand const&);
+    PlaceCommand();
 
 public:
     // NOLINTBEGIN

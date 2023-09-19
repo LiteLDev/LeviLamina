@@ -5,9 +5,9 @@
 struct SlotDropChance {
 public:
     // prevent constructor by default
-    SlotDropChance& operator=(SlotDropChance const&) = delete;
-    SlotDropChance(SlotDropChance const&)            = delete;
-    SlotDropChance()                                 = delete;
+    SlotDropChance& operator=(SlotDropChance const&);
+    SlotDropChance(SlotDropChance const&);
+    SlotDropChance();
 
 public:
     // NOLINTBEGIN

@@ -22,9 +22,9 @@ namespace mce { class Color; }
 class SignItem : public ::Item {
 public:
     // prevent constructor by default
-    SignItem& operator=(SignItem const&) = delete;
-    SignItem(SignItem const&)            = delete;
-    SignItem()                           = delete;
+    SignItem& operator=(SignItem const&);
+    SignItem(SignItem const&);
+    SignItem();
 
 public:
     // NOLINTBEGIN

@@ -23,9 +23,9 @@ public:
     struct FeatureToggle {
     public:
         // prevent constructor by default
-        FeatureToggle& operator=(FeatureToggle const&) = delete;
-        FeatureToggle(FeatureToggle const&)            = delete;
-        FeatureToggle()                                = delete;
+        FeatureToggle& operator=(FeatureToggle const&);
+        FeatureToggle(FeatureToggle const&);
+        FeatureToggle();
 
     public:
         // NOLINTBEGIN
@@ -43,9 +43,9 @@ public:
 
 public:
     // prevent constructor by default
-    FeatureToggles& operator=(FeatureToggles const&) = delete;
-    FeatureToggles(FeatureToggles const&)            = delete;
-    FeatureToggles()                                 = delete;
+    FeatureToggles& operator=(FeatureToggles const&);
+    FeatureToggles(FeatureToggles const&);
+    FeatureToggles();
 
 public:
     // NOLINTBEGIN
@@ -53,7 +53,7 @@ public:
     MCVAPI ~FeatureToggles();
 
     // symbol: ??0FeatureToggles@@QEAA@AEAVAppPlatform@@@Z
-    MCAPI FeatureToggles(class AppPlatform&);
+    MCAPI explicit FeatureToggles(class AppPlatform&);
 
     // symbol: ?get@FeatureToggles@@QEAAPEAVOption@@W4FeatureOptionID@@@Z
     MCAPI class Option* get(::FeatureOptionID);
@@ -102,7 +102,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mFeatureToggles() { return mFeatureToggles; }
+    auto& $mFeatureToggles() { return mFeatureToggles; }
 
     // NOLINTEND
 };

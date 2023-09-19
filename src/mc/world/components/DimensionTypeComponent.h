@@ -5,7 +5,7 @@
 struct DimensionTypeComponent {
 public:
     // prevent constructor by default
-    DimensionTypeComponent& operator=(DimensionTypeComponent const&) = delete;
-    DimensionTypeComponent(DimensionTypeComponent const&)            = delete;
-    DimensionTypeComponent()                                         = delete;
+    DimensionTypeComponent& operator=(DimensionTypeComponent const&);
+    DimensionTypeComponent(DimensionTypeComponent const&);
+    DimensionTypeComponent();
 };

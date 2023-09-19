@@ -45,9 +45,9 @@ public:
     );
 
     // prevent constructor by default
-    BlockSource& operator=(BlockSource const&) = delete;
-    BlockSource(BlockSource const&)            = delete;
-    BlockSource()                              = delete;
+    BlockSource& operator=(BlockSource const&);
+    BlockSource(BlockSource const&);
+    BlockSource();
 
 public:
     // NOLINTBEGIN

@@ -13,9 +13,9 @@ namespace gametest { class GameTestTicker; }
 class GameTestLevelListener {
 public:
     // prevent constructor by default
-    GameTestLevelListener& operator=(GameTestLevelListener const&) = delete;
-    GameTestLevelListener(GameTestLevelListener const&)            = delete;
-    GameTestLevelListener()                                        = delete;
+    GameTestLevelListener& operator=(GameTestLevelListener const&);
+    GameTestLevelListener(GameTestLevelListener const&);
+    GameTestLevelListener();
 
 public:
     // NOLINTBEGIN
@@ -26,7 +26,7 @@ public:
     MCVAPI void onLevelTickEnd();
 
     // symbol: ??0GameTestLevelListener@@QEAA@AEAVGameTestTicker@gametest@@@Z
-    MCAPI GameTestLevelListener(class gametest::GameTestTicker&);
+    MCAPI explicit GameTestLevelListener(class gametest::GameTestTicker&);
 
     // NOLINTEND
 };

@@ -13,8 +13,8 @@ namespace ClientBlobCache::Server {
 class TransferBuilder {
 public:
     // prevent constructor by default
-    TransferBuilder& operator=(TransferBuilder const&) = delete;
-    TransferBuilder(TransferBuilder const&)            = delete;
+    TransferBuilder& operator=(TransferBuilder const&);
+    TransferBuilder(TransferBuilder const&);
 
 public:
     // NOLINTBEGIN

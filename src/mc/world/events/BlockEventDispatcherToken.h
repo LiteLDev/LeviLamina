@@ -6,9 +6,9 @@
 class BlockEventDispatcherToken {
 public:
     // prevent constructor by default
-    BlockEventDispatcherToken& operator=(BlockEventDispatcherToken const&) = delete;
-    BlockEventDispatcherToken(BlockEventDispatcherToken const&)            = delete;
-    BlockEventDispatcherToken()                                            = delete;
+    BlockEventDispatcherToken& operator=(BlockEventDispatcherToken const&);
+    BlockEventDispatcherToken(BlockEventDispatcherToken const&);
+    BlockEventDispatcherToken();
 
     int                         mHandle;     // this+0x0
     class BlockEventDispatcher* mDispatcher; // this+0x8

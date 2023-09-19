@@ -13,9 +13,9 @@ public:
     int64 mServerReceptionResponseTimestamp; // this+0x38
 
     // prevent constructor by default
-    TickSyncPacket& operator=(TickSyncPacket const&) = delete;
-    TickSyncPacket(TickSyncPacket const&)            = delete;
-    TickSyncPacket()                                 = delete;
+    TickSyncPacket& operator=(TickSyncPacket const&);
+    TickSyncPacket(TickSyncPacket const&);
+    TickSyncPacket();
 
 public:
     // NOLINTBEGIN

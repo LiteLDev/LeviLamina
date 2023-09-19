@@ -14,9 +14,9 @@ public:
     class FromCenter {
     public:
         // prevent constructor by default
-        FromCenter& operator=(FromCenter const&) = delete;
-        FromCenter(FromCenter const&)            = delete;
-        FromCenter()                             = delete;
+        FromCenter& operator=(FromCenter const&);
+        FromCenter(FromCenter const&);
+        FromCenter();
 
     public:
         // NOLINTBEGIN
@@ -44,9 +44,9 @@ public:
     class ManhattanDistance {
     public:
         // prevent constructor by default
-        ManhattanDistance& operator=(ManhattanDistance const&) = delete;
-        ManhattanDistance(ManhattanDistance const&)            = delete;
-        ManhattanDistance()                                    = delete;
+        ManhattanDistance& operator=(ManhattanDistance const&);
+        ManhattanDistance(ManhattanDistance const&);
+        ManhattanDistance();
 
     public:
         // NOLINTBEGIN
@@ -73,9 +73,9 @@ public:
 
 public:
     // prevent constructor by default
-    BlockPosIterator& operator=(BlockPosIterator const&) = delete;
-    BlockPosIterator(BlockPosIterator const&)            = delete;
-    BlockPosIterator()                                   = delete;
+    BlockPosIterator& operator=(BlockPosIterator const&);
+    BlockPosIterator(BlockPosIterator const&);
+    BlockPosIterator();
 
 public:
     // NOLINTBEGIN

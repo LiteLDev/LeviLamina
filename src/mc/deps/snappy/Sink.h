@@ -7,9 +7,9 @@ namespace snappy {
 class Sink {
 public:
     // prevent constructor by default
-    Sink& operator=(Sink const&) = delete;
-    Sink(Sink const&)            = delete;
-    Sink()                       = delete;
+    Sink& operator=(Sink const&);
+    Sink(Sink const&);
+    Sink();
 
 public:
     // NOLINTBEGIN

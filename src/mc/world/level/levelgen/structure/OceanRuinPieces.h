@@ -20,9 +20,9 @@ public:
     class OceanRuinPiece : public ::TemplateStructurePiece {
     public:
         // prevent constructor by default
-        OceanRuinPiece& operator=(OceanRuinPiece const&) = delete;
-        OceanRuinPiece(OceanRuinPiece const&)            = delete;
-        OceanRuinPiece()                                 = delete;
+        OceanRuinPiece& operator=(OceanRuinPiece const&);
+        OceanRuinPiece(OceanRuinPiece const&);
+        OceanRuinPiece();
 
     public:
         // NOLINTBEGIN
@@ -58,9 +58,9 @@ public:
 
 public:
     // prevent constructor by default
-    OceanRuinPieces& operator=(OceanRuinPieces const&) = delete;
-    OceanRuinPieces(OceanRuinPieces const&)            = delete;
-    OceanRuinPieces()                                  = delete;
+    OceanRuinPieces& operator=(OceanRuinPieces const&);
+    OceanRuinPieces(OceanRuinPieces const&);
+    OceanRuinPieces();
 
     // private:
     // NOLINTBEGIN
@@ -140,35 +140,35 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $BIG_RUIN_LOOT() { return BIG_RUIN_LOOT; }
+    auto& $BIG_RUIN_LOOT() { return BIG_RUIN_LOOT; }
 
-    inline auto& $RUIN_LOOT() { return RUIN_LOOT; }
+    auto& $RUIN_LOOT() { return RUIN_LOOT; }
 
-    inline auto& $STRUCTURE_BIG_RUIN1_BRICK() { return STRUCTURE_BIG_RUIN1_BRICK; }
+    auto& $STRUCTURE_BIG_RUIN1_BRICK() { return STRUCTURE_BIG_RUIN1_BRICK; }
 
-    inline auto& $STRUCTURE_BIG_RUIN8_BRICK() { return STRUCTURE_BIG_RUIN8_BRICK; }
+    auto& $STRUCTURE_BIG_RUIN8_BRICK() { return STRUCTURE_BIG_RUIN8_BRICK; }
 
-    inline auto& $STRUCTURE_RUIN_2_BRICK() { return STRUCTURE_RUIN_2_BRICK; }
+    auto& $STRUCTURE_RUIN_2_BRICK() { return STRUCTURE_RUIN_2_BRICK; }
 
-    inline auto& $STRUCTURE_RUIN_3_BRICK() { return STRUCTURE_RUIN_3_BRICK; }
+    auto& $STRUCTURE_RUIN_3_BRICK() { return STRUCTURE_RUIN_3_BRICK; }
 
-    inline auto& $bigRuinsBrick() { return bigRuinsBrick; }
+    auto& $bigRuinsBrick() { return bigRuinsBrick; }
 
-    inline auto& $bigRuinsCracked() { return bigRuinsCracked; }
+    auto& $bigRuinsCracked() { return bigRuinsCracked; }
 
-    inline auto& $bigRuinsMossy() { return bigRuinsMossy; }
+    auto& $bigRuinsMossy() { return bigRuinsMossy; }
 
-    inline auto& $bigWarmRuins() { return bigWarmRuins; }
+    auto& $bigWarmRuins() { return bigWarmRuins; }
 
-    inline auto& $mSettings() { return mSettings; }
+    auto& $mSettings() { return mSettings; }
 
-    inline auto& $ruinsBrick() { return ruinsBrick; }
+    auto& $ruinsBrick() { return ruinsBrick; }
 
-    inline auto& $ruinsCracked() { return ruinsCracked; }
+    auto& $ruinsCracked() { return ruinsCracked; }
 
-    inline auto& $ruinsMossy() { return ruinsMossy; }
+    auto& $ruinsMossy() { return ruinsMossy; }
 
-    inline auto& $warmRuins() { return warmRuins; }
+    auto& $warmRuins() { return warmRuins; }
 
     // NOLINTEND
 };

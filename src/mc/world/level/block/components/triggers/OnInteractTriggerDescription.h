@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class OnInteractTriggerDescription {
 public:
     // prevent constructor by default
-    OnInteractTriggerDescription& operator=(OnInteractTriggerDescription const&) = delete;
-    OnInteractTriggerDescription(OnInteractTriggerDescription const&)            = delete;
-    OnInteractTriggerDescription()                                               = delete;
+    OnInteractTriggerDescription& operator=(OnInteractTriggerDescription const&);
+    OnInteractTriggerDescription(OnInteractTriggerDescription const&);
+    OnInteractTriggerDescription();
 
 public:
     // NOLINTBEGIN

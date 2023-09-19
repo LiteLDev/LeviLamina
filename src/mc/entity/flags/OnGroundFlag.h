@@ -5,7 +5,7 @@
 struct OnGroundFlag {
 public:
     // prevent constructor by default
-    OnGroundFlag& operator=(OnGroundFlag const&) = delete;
-    OnGroundFlag(OnGroundFlag const&)            = delete;
-    OnGroundFlag()                               = delete;
+    OnGroundFlag& operator=(OnGroundFlag const&);
+    OnGroundFlag(OnGroundFlag const&);
+    OnGroundFlag();
 };

@@ -10,9 +10,9 @@
 class LabTableContainerManagerModel : public ::LevelContainerManagerModel {
 public:
     // prevent constructor by default
-    LabTableContainerManagerModel& operator=(LabTableContainerManagerModel const&) = delete;
-    LabTableContainerManagerModel(LabTableContainerManagerModel const&)            = delete;
-    LabTableContainerManagerModel()                                                = delete;
+    LabTableContainerManagerModel& operator=(LabTableContainerManagerModel const&);
+    LabTableContainerManagerModel(LabTableContainerManagerModel const&);
+    LabTableContainerManagerModel();
 
 public:
     // NOLINTBEGIN

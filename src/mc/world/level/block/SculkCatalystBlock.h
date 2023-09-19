@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class SculkCatalystBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    SculkCatalystBlock& operator=(SculkCatalystBlock const&) = delete;
-    SculkCatalystBlock(SculkCatalystBlock const&)            = delete;
-    SculkCatalystBlock()                                     = delete;
+    SculkCatalystBlock& operator=(SculkCatalystBlock const&);
+    SculkCatalystBlock(SculkCatalystBlock const&);
+    SculkCatalystBlock();
 
 public:
     // NOLINTBEGIN

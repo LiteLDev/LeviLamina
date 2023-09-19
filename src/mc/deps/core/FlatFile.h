@@ -20,9 +20,9 @@ namespace Core {
 class FlatFile : public ::Core::FileImpl {
 public:
     // prevent constructor by default
-    FlatFile& operator=(FlatFile const&) = delete;
-    FlatFile(FlatFile const&)            = delete;
-    FlatFile()                           = delete;
+    FlatFile& operator=(FlatFile const&);
+    FlatFile(FlatFile const&);
+    FlatFile();
 
 public:
     // NOLINTBEGIN

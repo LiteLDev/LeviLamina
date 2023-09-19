@@ -8,9 +8,9 @@ template <typename T0>
 class Closure {
 public:
     // prevent constructor by default
-    Closure& operator=(Closure const&) = delete;
-    Closure(Closure const&)            = delete;
-    Closure()                          = delete;
+    Closure& operator=(Closure const&);
+    Closure(Closure const&);
+    Closure();
 };
 
 }; // namespace Scripting

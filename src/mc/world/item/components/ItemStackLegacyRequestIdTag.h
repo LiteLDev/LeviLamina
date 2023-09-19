@@ -5,7 +5,7 @@
 struct ItemStackLegacyRequestIdTag {
 public:
     // prevent constructor by default
-    ItemStackLegacyRequestIdTag& operator=(ItemStackLegacyRequestIdTag const&) = delete;
-    ItemStackLegacyRequestIdTag(ItemStackLegacyRequestIdTag const&)            = delete;
-    ItemStackLegacyRequestIdTag()                                              = delete;
+    ItemStackLegacyRequestIdTag& operator=(ItemStackLegacyRequestIdTag const&);
+    ItemStackLegacyRequestIdTag(ItemStackLegacyRequestIdTag const&);
+    ItemStackLegacyRequestIdTag();
 };

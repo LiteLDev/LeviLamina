@@ -26,9 +26,9 @@
 class IllagerBeast : public ::Monster {
 public:
     // prevent constructor by default
-    IllagerBeast& operator=(IllagerBeast const&) = delete;
-    IllagerBeast(IllagerBeast const&)            = delete;
-    IllagerBeast()                               = delete;
+    IllagerBeast& operator=(IllagerBeast const&);
+    IllagerBeast(IllagerBeast const&);
+    IllagerBeast();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class EndPortalShape {
 public:
     // prevent constructor by default
-    EndPortalShape& operator=(EndPortalShape const&) = delete;
-    EndPortalShape(EndPortalShape const&)            = delete;
-    EndPortalShape()                                 = delete;
+    EndPortalShape& operator=(EndPortalShape const&);
+    EndPortalShape(EndPortalShape const&);
+    EndPortalShape();
 
 public:
     // NOLINTBEGIN

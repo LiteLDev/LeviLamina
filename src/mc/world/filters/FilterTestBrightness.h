@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class FilterTestBrightness : public ::SimpleFloatFilterTest {
 public:
     // prevent constructor by default
-    FilterTestBrightness& operator=(FilterTestBrightness const&) = delete;
-    FilterTestBrightness(FilterTestBrightness const&)            = delete;
-    FilterTestBrightness()                                       = delete;
+    FilterTestBrightness& operator=(FilterTestBrightness const&);
+    FilterTestBrightness(FilterTestBrightness const&);
+    FilterTestBrightness();
 
 public:
     // NOLINTBEGIN

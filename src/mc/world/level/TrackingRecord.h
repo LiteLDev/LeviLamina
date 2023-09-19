@@ -20,9 +20,9 @@ public:
 
 public:
     // prevent constructor by default
-    TrackingRecord& operator=(TrackingRecord const&) = delete;
-    TrackingRecord(TrackingRecord const&)            = delete;
-    TrackingRecord()                                 = delete;
+    TrackingRecord& operator=(TrackingRecord const&);
+    TrackingRecord(TrackingRecord const&);
+    TrackingRecord();
 
 public:
     // NOLINTBEGIN

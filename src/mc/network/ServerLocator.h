@@ -10,9 +10,9 @@
 class ServerLocator : public ::NetworkEnableDisableListener {
 public:
     // prevent constructor by default
-    ServerLocator& operator=(ServerLocator const&) = delete;
-    ServerLocator(ServerLocator const&)            = delete;
-    ServerLocator()                                = delete;
+    ServerLocator& operator=(ServerLocator const&);
+    ServerLocator(ServerLocator const&);
+    ServerLocator();
 
 public:
     // NOLINTBEGIN

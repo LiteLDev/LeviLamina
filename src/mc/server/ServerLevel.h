@@ -22,9 +22,9 @@ namespace PositionTrackingDB { class PositionTrackingDBServer; }
 class ServerLevel : public ::Level {
 public:
     // prevent constructor by default
-    ServerLevel& operator=(ServerLevel const&) = delete;
-    ServerLevel(ServerLevel const&)            = delete;
-    ServerLevel()                              = delete;
+    ServerLevel& operator=(ServerLevel const&);
+    ServerLevel(ServerLevel const&);
+    ServerLevel();
 
 public:
     // NOLINTBEGIN

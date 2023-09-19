@@ -7,9 +7,9 @@ namespace RakNet {
 class RakNetSocket2 {
 public:
     // prevent constructor by default
-    RakNetSocket2& operator=(RakNetSocket2 const&) = delete;
-    RakNetSocket2(RakNetSocket2 const&)            = delete;
-    RakNetSocket2()                                = delete;
+    RakNetSocket2& operator=(RakNetSocket2 const&);
+    RakNetSocket2(RakNetSocket2 const&);
+    RakNetSocket2();
 
 public:
     // NOLINTBEGIN

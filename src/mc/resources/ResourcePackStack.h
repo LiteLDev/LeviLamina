@@ -12,9 +12,9 @@ public:
     std::unique_ptr<class PackSourceReport> mPackSourceReport; // this+0x20
 
     // prevent constructor by default
-    ResourcePackStack& operator=(ResourcePackStack const&) = delete;
-    ResourcePackStack(ResourcePackStack const&)            = delete;
-    ResourcePackStack()                                    = delete;
+    ResourcePackStack& operator=(ResourcePackStack const&);
+    ResourcePackStack(ResourcePackStack const&);
+    ResourcePackStack();
 
 public:
     // NOLINTBEGIN
@@ -90,7 +90,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mUpgradePathMap() { return mUpgradePathMap; }
+    auto& $mUpgradePathMap() { return mUpgradePathMap; }
 
     // NOLINTEND
 };

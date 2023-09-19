@@ -9,8 +9,8 @@
 class TemptGoal : public ::Goal {
 public:
     // prevent constructor by default
-    TemptGoal& operator=(TemptGoal const&) = delete;
-    TemptGoal()                            = delete;
+    TemptGoal& operator=(TemptGoal const&);
+    TemptGoal();
 
 public:
     // NOLINTBEGIN

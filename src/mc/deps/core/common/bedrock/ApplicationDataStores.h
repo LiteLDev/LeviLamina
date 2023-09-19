@@ -17,9 +17,9 @@ namespace Bedrock {
 class ApplicationDataStores : public ::Bedrock::IApplicationDataStores {
 public:
     // prevent constructor by default
-    ApplicationDataStores& operator=(ApplicationDataStores const&) = delete;
-    ApplicationDataStores(ApplicationDataStores const&)            = delete;
-    ApplicationDataStores()                                        = delete;
+    ApplicationDataStores& operator=(ApplicationDataStores const&);
+    ApplicationDataStores(ApplicationDataStores const&);
+    ApplicationDataStores();
 
 public:
     // NOLINTBEGIN

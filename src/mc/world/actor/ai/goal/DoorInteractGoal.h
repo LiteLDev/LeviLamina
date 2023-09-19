@@ -10,9 +10,9 @@
 class DoorInteractGoal : public ::Goal {
 public:
     // prevent constructor by default
-    DoorInteractGoal& operator=(DoorInteractGoal const&) = delete;
-    DoorInteractGoal(DoorInteractGoal const&)            = delete;
-    DoorInteractGoal()                                   = delete;
+    DoorInteractGoal& operator=(DoorInteractGoal const&);
+    DoorInteractGoal(DoorInteractGoal const&);
+    DoorInteractGoal();
 
 public:
     // NOLINTBEGIN
@@ -39,7 +39,7 @@ public:
     MCVAPI ~DoorInteractGoal();
 
     // symbol: ??0DoorInteractGoal@@QEAA@AEAVMob@@@Z
-    MCAPI DoorInteractGoal(class Mob&);
+    MCAPI explicit DoorInteractGoal(class Mob&);
 
     // NOLINTEND
 

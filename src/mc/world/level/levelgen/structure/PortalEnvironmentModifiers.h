@@ -5,7 +5,7 @@
 struct PortalEnvironmentModifiers {
 public:
     // prevent constructor by default
-    PortalEnvironmentModifiers& operator=(PortalEnvironmentModifiers const&) = delete;
-    PortalEnvironmentModifiers(PortalEnvironmentModifiers const&)            = delete;
-    PortalEnvironmentModifiers()                                             = delete;
+    PortalEnvironmentModifiers& operator=(PortalEnvironmentModifiers const&);
+    PortalEnvironmentModifiers(PortalEnvironmentModifiers const&);
+    PortalEnvironmentModifiers();
 };

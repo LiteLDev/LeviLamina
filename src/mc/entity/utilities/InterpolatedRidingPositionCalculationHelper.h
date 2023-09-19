@@ -10,9 +10,9 @@
 struct InterpolatedRidingPositionCalculationHelper {
 public:
     // prevent constructor by default
-    InterpolatedRidingPositionCalculationHelper& operator=(InterpolatedRidingPositionCalculationHelper const&) = delete;
-    InterpolatedRidingPositionCalculationHelper(InterpolatedRidingPositionCalculationHelper const&)            = delete;
-    InterpolatedRidingPositionCalculationHelper()                                                              = delete;
+    InterpolatedRidingPositionCalculationHelper& operator=(InterpolatedRidingPositionCalculationHelper const&);
+    InterpolatedRidingPositionCalculationHelper(InterpolatedRidingPositionCalculationHelper const&);
+    InterpolatedRidingPositionCalculationHelper();
 
 public:
     // NOLINTBEGIN

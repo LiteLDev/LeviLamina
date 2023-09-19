@@ -5,9 +5,9 @@
 struct ServerInstanceRequestResourceReload {
 public:
     // prevent constructor by default
-    ServerInstanceRequestResourceReload& operator=(ServerInstanceRequestResourceReload const&) = delete;
-    ServerInstanceRequestResourceReload(ServerInstanceRequestResourceReload const&)            = delete;
-    ServerInstanceRequestResourceReload()                                                      = delete;
+    ServerInstanceRequestResourceReload& operator=(ServerInstanceRequestResourceReload const&);
+    ServerInstanceRequestResourceReload(ServerInstanceRequestResourceReload const&);
+    ServerInstanceRequestResourceReload();
 
 public:
     // NOLINTBEGIN

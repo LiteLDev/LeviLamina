@@ -7,17 +7,17 @@ namespace Core {
 class FileOpenMode {
 public:
     // prevent constructor by default
-    FileOpenMode& operator=(FileOpenMode const&) = delete;
-    FileOpenMode(FileOpenMode const&)            = delete;
-    FileOpenMode()                               = delete;
+    FileOpenMode& operator=(FileOpenMode const&);
+    FileOpenMode(FileOpenMode const&);
+    FileOpenMode();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0FileOpenMode@Core@@QEAA@PEBD@Z
-    MCAPI FileOpenMode(char const*);
+    MCAPI explicit FileOpenMode(char const*);
 
     // symbol: ??0FileOpenMode@Core@@QEAA@H@Z
-    MCAPI FileOpenMode(int);
+    MCAPI explicit FileOpenMode(int);
 
     // symbol: ?cModeWide@FileOpenMode@Core@@QEAAPEB_WXZ
     MCAPI wchar_t const* cModeWide();

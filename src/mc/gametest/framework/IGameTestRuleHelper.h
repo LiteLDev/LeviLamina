@@ -7,9 +7,9 @@ namespace gametest {
 class IGameTestRuleHelper {
 public:
     // prevent constructor by default
-    IGameTestRuleHelper& operator=(IGameTestRuleHelper const&) = delete;
-    IGameTestRuleHelper(IGameTestRuleHelper const&)            = delete;
-    IGameTestRuleHelper()                                      = delete;
+    IGameTestRuleHelper& operator=(IGameTestRuleHelper const&);
+    IGameTestRuleHelper(IGameTestRuleHelper const&);
+    IGameTestRuleHelper();
 };
 
 }; // namespace gametest

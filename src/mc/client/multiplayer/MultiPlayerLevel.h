@@ -5,7 +5,7 @@
 class MultiPlayerLevel {
 public:
     // prevent constructor by default
-    MultiPlayerLevel& operator=(MultiPlayerLevel const&) = delete;
-    MultiPlayerLevel(MultiPlayerLevel const&)            = delete;
-    MultiPlayerLevel()                                   = delete;
+    MultiPlayerLevel& operator=(MultiPlayerLevel const&);
+    MultiPlayerLevel(MultiPlayerLevel const&);
+    MultiPlayerLevel();
 };

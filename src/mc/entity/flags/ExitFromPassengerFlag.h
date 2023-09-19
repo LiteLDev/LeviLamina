@@ -5,7 +5,7 @@
 struct ExitFromPassengerFlag {
 public:
     // prevent constructor by default
-    ExitFromPassengerFlag& operator=(ExitFromPassengerFlag const&) = delete;
-    ExitFromPassengerFlag(ExitFromPassengerFlag const&)            = delete;
-    ExitFromPassengerFlag()                                        = delete;
+    ExitFromPassengerFlag& operator=(ExitFromPassengerFlag const&);
+    ExitFromPassengerFlag(ExitFromPassengerFlag const&);
+    ExitFromPassengerFlag();
 };

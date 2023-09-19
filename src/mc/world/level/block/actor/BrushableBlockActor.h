@@ -14,9 +14,9 @@ public:
 
 public:
     // prevent constructor by default
-    BrushableBlockActor& operator=(BrushableBlockActor const&) = delete;
-    BrushableBlockActor(BrushableBlockActor const&)            = delete;
-    BrushableBlockActor()                                      = delete;
+    BrushableBlockActor& operator=(BrushableBlockActor const&);
+    BrushableBlockActor(BrushableBlockActor const&);
+    BrushableBlockActor();
 
 public:
     // NOLINTBEGIN

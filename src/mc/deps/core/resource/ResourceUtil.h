@@ -8,9 +8,9 @@
 class ResourceUtil {
 public:
     // prevent constructor by default
-    ResourceUtil& operator=(ResourceUtil const&) = delete;
-    ResourceUtil(ResourceUtil const&)            = delete;
-    ResourceUtil()                               = delete;
+    ResourceUtil& operator=(ResourceUtil const&);
+    ResourceUtil(ResourceUtil const&);
+    ResourceUtil();
 
 public:
     // NOLINTBEGIN

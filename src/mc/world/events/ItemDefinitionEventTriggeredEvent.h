@@ -5,8 +5,8 @@
 struct ItemDefinitionEventTriggeredEvent {
 public:
     // prevent constructor by default
-    ItemDefinitionEventTriggeredEvent& operator=(ItemDefinitionEventTriggeredEvent const&) = delete;
-    ItemDefinitionEventTriggeredEvent()                                                    = delete;
+    ItemDefinitionEventTriggeredEvent& operator=(ItemDefinitionEventTriggeredEvent const&);
+    ItemDefinitionEventTriggeredEvent();
 
 public:
     // NOLINTBEGIN

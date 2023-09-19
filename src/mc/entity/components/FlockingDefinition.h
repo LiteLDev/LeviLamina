@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class FlockingDefinition {
 public:
     // prevent constructor by default
-    FlockingDefinition& operator=(FlockingDefinition const&) = delete;
-    FlockingDefinition(FlockingDefinition const&)            = delete;
+    FlockingDefinition& operator=(FlockingDefinition const&);
+    FlockingDefinition(FlockingDefinition const&);
 
 public:
     // NOLINTBEGIN

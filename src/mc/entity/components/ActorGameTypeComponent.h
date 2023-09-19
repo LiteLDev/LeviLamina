@@ -5,7 +5,7 @@
 struct ActorGameTypeComponent {
 public:
     // prevent constructor by default
-    ActorGameTypeComponent& operator=(ActorGameTypeComponent const&) = delete;
-    ActorGameTypeComponent(ActorGameTypeComponent const&)            = delete;
-    ActorGameTypeComponent()                                         = delete;
+    ActorGameTypeComponent& operator=(ActorGameTypeComponent const&);
+    ActorGameTypeComponent(ActorGameTypeComponent const&);
+    ActorGameTypeComponent();
 };

@@ -9,9 +9,9 @@
 class GetCollisionShapeActorProxy : public ::GetCollisionShapeInterface {
 public:
     // prevent constructor by default
-    GetCollisionShapeActorProxy& operator=(GetCollisionShapeActorProxy const&) = delete;
-    GetCollisionShapeActorProxy(GetCollisionShapeActorProxy const&)            = delete;
-    GetCollisionShapeActorProxy()                                              = delete;
+    GetCollisionShapeActorProxy& operator=(GetCollisionShapeActorProxy const&);
+    GetCollisionShapeActorProxy(GetCollisionShapeActorProxy const&);
+    GetCollisionShapeActorProxy();
 
 public:
     // NOLINTBEGIN
@@ -49,7 +49,7 @@ public:
     virtual bool hasPassenger() const;
 
     // symbol: ??0GetCollisionShapeActorProxy@@QEAA@AEBUIActorMovementProxy@@@Z
-    MCAPI GetCollisionShapeActorProxy(struct IActorMovementProxy const&);
+    MCAPI explicit GetCollisionShapeActorProxy(struct IActorMovementProxy const&);
 
     // NOLINTEND
 };

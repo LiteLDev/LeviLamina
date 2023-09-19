@@ -14,8 +14,8 @@ namespace JsonUtil { class EmptyClass; }
 class WorkComposterDefinition : public ::WorkDefinition {
 public:
     // prevent constructor by default
-    WorkComposterDefinition& operator=(WorkComposterDefinition const&) = delete;
-    WorkComposterDefinition(WorkComposterDefinition const&)            = delete;
+    WorkComposterDefinition& operator=(WorkComposterDefinition const&);
+    WorkComposterDefinition(WorkComposterDefinition const&);
 
 public:
     // NOLINTBEGIN

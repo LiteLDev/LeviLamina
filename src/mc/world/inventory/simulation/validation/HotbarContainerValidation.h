@@ -8,9 +8,9 @@
 class HotbarContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    HotbarContainerValidation& operator=(HotbarContainerValidation const&) = delete;
-    HotbarContainerValidation(HotbarContainerValidation const&)            = delete;
-    HotbarContainerValidation()                                            = delete;
+    HotbarContainerValidation& operator=(HotbarContainerValidation const&);
+    HotbarContainerValidation(HotbarContainerValidation const&);
+    HotbarContainerValidation();
 
 public:
     // NOLINTBEGIN

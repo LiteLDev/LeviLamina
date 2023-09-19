@@ -36,9 +36,9 @@ public:
     bool      mIsFromFishing; // this+Actor+185
 
     // prevent constructor by default
-    ItemActor& operator=(ItemActor const&) = delete;
-    ItemActor(ItemActor const&)            = delete;
-    ItemActor()                            = delete;
+    ItemActor& operator=(ItemActor const&);
+    ItemActor(ItemActor const&);
+    ItemActor();
 
 public:
     // NOLINTBEGIN
@@ -188,7 +188,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $LIFETIME() { return LIFETIME; }
+    auto& $LIFETIME() { return LIFETIME; }
 
     // NOLINTEND
 };

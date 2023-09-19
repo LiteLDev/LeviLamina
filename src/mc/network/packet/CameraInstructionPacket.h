@@ -13,8 +13,8 @@ public:
     CompoundTag mData; // this+0x30
 
     // prevent constructor by default
-    CameraInstructionPacket& operator=(CameraInstructionPacket const&) = delete;
-    CameraInstructionPacket(CameraInstructionPacket const&)            = delete;
+    CameraInstructionPacket& operator=(CameraInstructionPacket const&);
+    CameraInstructionPacket(CameraInstructionPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -46,7 +46,7 @@ public:
     MCAPI CameraInstructionPacket();
 
     // symbol: ??0CameraInstructionPacket@@QEAA@AEBUCameraInstruction@@@Z
-    MCAPI CameraInstructionPacket(struct CameraInstruction const&);
+    MCAPI explicit CameraInstructionPacket(struct CameraInstruction const&);
 
     // NOLINTEND
 };

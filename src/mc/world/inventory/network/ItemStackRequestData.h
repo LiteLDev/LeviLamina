@@ -9,9 +9,9 @@
 class ItemStackRequestData {
 public:
     // prevent constructor by default
-    ItemStackRequestData& operator=(ItemStackRequestData const&) = delete;
-    ItemStackRequestData(ItemStackRequestData const&)            = delete;
-    ItemStackRequestData()                                       = delete;
+    ItemStackRequestData& operator=(ItemStackRequestData const&);
+    ItemStackRequestData(ItemStackRequestData const&);
+    ItemStackRequestData();
 
 public:
     // NOLINTBEGIN

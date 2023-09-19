@@ -15,9 +15,9 @@ namespace cereal {
 class JsonLoader : public ::cereal::BasicLoader {
 public:
     // prevent constructor by default
-    JsonLoader& operator=(JsonLoader const&) = delete;
-    JsonLoader(JsonLoader const&)            = delete;
-    JsonLoader()                             = delete;
+    JsonLoader& operator=(JsonLoader const&);
+    JsonLoader(JsonLoader const&);
+    JsonLoader();
 
 public:
     // NOLINTBEGIN

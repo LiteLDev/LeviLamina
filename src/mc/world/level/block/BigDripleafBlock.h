@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class BigDripleafBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    BigDripleafBlock& operator=(BigDripleafBlock const&) = delete;
-    BigDripleafBlock(BigDripleafBlock const&)            = delete;
-    BigDripleafBlock()                                   = delete;
+    BigDripleafBlock& operator=(BigDripleafBlock const&);
+    BigDripleafBlock(BigDripleafBlock const&);
+    BigDripleafBlock();
 
 public:
     // NOLINTBEGIN

@@ -7,9 +7,9 @@ namespace Scripting {
 class WeakLifetimeScope {
 public:
     // prevent constructor by default
-    WeakLifetimeScope& operator=(WeakLifetimeScope const&) = delete;
-    WeakLifetimeScope(WeakLifetimeScope const&)            = delete;
-    WeakLifetimeScope()                                    = delete;
+    WeakLifetimeScope& operator=(WeakLifetimeScope const&);
+    WeakLifetimeScope(WeakLifetimeScope const&);
+    WeakLifetimeScope();
 };
 
 }; // namespace Scripting

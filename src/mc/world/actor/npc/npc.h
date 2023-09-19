@@ -26,9 +26,9 @@
 class Npc : public ::Mob {
 public:
     // prevent constructor by default
-    Npc& operator=(Npc const&) = delete;
-    Npc(Npc const&)            = delete;
-    Npc()                      = delete;
+    Npc& operator=(Npc const&);
+    Npc(Npc const&);
+    Npc();
 
 public:
     // NOLINTBEGIN

@@ -24,8 +24,8 @@ public:
     std::variant<bool, float> mValue;     // this+0x34
 
     // prevent constructor by default
-    RequestAbilityPacket& operator=(RequestAbilityPacket const&) = delete;
-    RequestAbilityPacket(RequestAbilityPacket const&)            = delete;
+    RequestAbilityPacket& operator=(RequestAbilityPacket const&);
+    RequestAbilityPacket(RequestAbilityPacket const&);
 
 public:
     // NOLINTBEGIN

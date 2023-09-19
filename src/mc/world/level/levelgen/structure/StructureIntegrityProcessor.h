@@ -5,9 +5,9 @@
 class StructureIntegrityProcessor {
 public:
     // prevent constructor by default
-    StructureIntegrityProcessor& operator=(StructureIntegrityProcessor const&) = delete;
-    StructureIntegrityProcessor(StructureIntegrityProcessor const&)            = delete;
-    StructureIntegrityProcessor()                                              = delete;
+    StructureIntegrityProcessor& operator=(StructureIntegrityProcessor const&);
+    StructureIntegrityProcessor(StructureIntegrityProcessor const&);
+    StructureIntegrityProcessor();
 
 public:
     // NOLINTBEGIN

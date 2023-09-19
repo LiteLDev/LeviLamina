@@ -5,9 +5,9 @@
 class InsideWaterlilyBlockSystem {
 public:
     // prevent constructor by default
-    InsideWaterlilyBlockSystem& operator=(InsideWaterlilyBlockSystem const&) = delete;
-    InsideWaterlilyBlockSystem(InsideWaterlilyBlockSystem const&)            = delete;
-    InsideWaterlilyBlockSystem()                                             = delete;
+    InsideWaterlilyBlockSystem& operator=(InsideWaterlilyBlockSystem const&);
+    InsideWaterlilyBlockSystem(InsideWaterlilyBlockSystem const&);
+    InsideWaterlilyBlockSystem();
 
 public:
     // NOLINTBEGIN

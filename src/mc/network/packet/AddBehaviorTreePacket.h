@@ -12,8 +12,8 @@ public:
     std::string mJsonInput; // this+0x30
 
     // prevent constructor by default
-    AddBehaviorTreePacket& operator=(AddBehaviorTreePacket const&) = delete;
-    AddBehaviorTreePacket(AddBehaviorTreePacket const&)            = delete;
+    AddBehaviorTreePacket& operator=(AddBehaviorTreePacket const&);
+    AddBehaviorTreePacket(AddBehaviorTreePacket const&);
 
 public:
     // NOLINTBEGIN

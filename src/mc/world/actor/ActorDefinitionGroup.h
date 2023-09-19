@@ -26,9 +26,9 @@ public:
     struct LoadActorResult {
     public:
         // prevent constructor by default
-        LoadActorResult& operator=(LoadActorResult const&) = delete;
-        LoadActorResult(LoadActorResult const&)            = delete;
-        LoadActorResult()                                  = delete;
+        LoadActorResult& operator=(LoadActorResult const&);
+        LoadActorResult(LoadActorResult const&);
+        LoadActorResult();
 
     public:
         // NOLINTBEGIN
@@ -40,9 +40,9 @@ public:
 
 public:
     // prevent constructor by default
-    ActorDefinitionGroup& operator=(ActorDefinitionGroup const&) = delete;
-    ActorDefinitionGroup(ActorDefinitionGroup const&)            = delete;
-    ActorDefinitionGroup()                                       = delete;
+    ActorDefinitionGroup& operator=(ActorDefinitionGroup const&);
+    ActorDefinitionGroup(ActorDefinitionGroup const&);
+    ActorDefinitionGroup();
 
 public:
     // NOLINTBEGIN

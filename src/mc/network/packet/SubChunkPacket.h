@@ -42,9 +42,9 @@ public:
         HeightMapDataType                         mHeightMapType;
         std::array<std::array<schar, 16UL>, 16UL> mSubchunkHeightMap;
         // prevent constructor by default
-        HeightmapData& operator=(HeightmapData const&) = delete;
-        HeightmapData(HeightmapData const&)            = delete;
-        HeightmapData()                                = delete;
+        HeightmapData& operator=(HeightmapData const&);
+        HeightmapData(HeightmapData const&);
+        HeightmapData();
 
     public:
         // NOLINTBEGIN
@@ -63,9 +63,9 @@ public:
         schar mY;
         schar mZ;
         // prevent constructor by default
-        SubChunkPosOffset& operator=(SubChunkPosOffset const&) = delete;
-        SubChunkPosOffset(SubChunkPosOffset const&)            = delete;
-        SubChunkPosOffset()                                    = delete;
+        SubChunkPosOffset& operator=(SubChunkPosOffset const&);
+        SubChunkPosOffset(SubChunkPosOffset const&);
+        SubChunkPosOffset();
     };
 
     struct SubChunkPacketData {
@@ -76,9 +76,9 @@ public:
         HeightmapData           mHeightMapData;
         uint64                  mBlobId;
         // prevent constructor by default
-        SubChunkPacketData& operator=(SubChunkPacketData const&) = delete;
-        SubChunkPacketData(SubChunkPacketData const&)            = delete;
-        SubChunkPacketData()                                     = delete;
+        SubChunkPacketData& operator=(SubChunkPacketData const&);
+        SubChunkPacketData(SubChunkPacketData const&);
+        SubChunkPacketData();
 
     public:
         // NOLINTBEGIN
@@ -102,8 +102,8 @@ public:
     SubChunkPos                     mCenterPos;     // this+0x50
 
     // prevent constructor by default
-    SubChunkPacket& operator=(SubChunkPacket const&) = delete;
-    SubChunkPacket(SubChunkPacket const&)            = delete;
+    SubChunkPacket& operator=(SubChunkPacket const&);
+    SubChunkPacket(SubChunkPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class InteractActionDefinition : public ::BehaviorDefinition {
 public:
     // prevent constructor by default
-    InteractActionDefinition& operator=(InteractActionDefinition const&) = delete;
-    InteractActionDefinition(InteractActionDefinition const&)            = delete;
-    InteractActionDefinition()                                           = delete;
+    InteractActionDefinition& operator=(InteractActionDefinition const&);
+    InteractActionDefinition(InteractActionDefinition const&);
+    InteractActionDefinition();
 
 public:
     // NOLINTBEGIN

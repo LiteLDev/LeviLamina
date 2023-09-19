@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class GetInteractionPositionForBlockDefinition : public ::BehaviorDefinition {
 public:
     // prevent constructor by default
-    GetInteractionPositionForBlockDefinition& operator=(GetInteractionPositionForBlockDefinition const&) = delete;
-    GetInteractionPositionForBlockDefinition(GetInteractionPositionForBlockDefinition const&)            = delete;
-    GetInteractionPositionForBlockDefinition()                                                           = delete;
+    GetInteractionPositionForBlockDefinition& operator=(GetInteractionPositionForBlockDefinition const&);
+    GetInteractionPositionForBlockDefinition(GetInteractionPositionForBlockDefinition const&);
+    GetInteractionPositionForBlockDefinition();
 
 public:
     // NOLINTBEGIN

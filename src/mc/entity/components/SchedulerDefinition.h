@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 class SchedulerDefinition {
 public:
     // prevent constructor by default
-    SchedulerDefinition& operator=(SchedulerDefinition const&) = delete;
-    SchedulerDefinition(SchedulerDefinition const&)            = delete;
+    SchedulerDefinition& operator=(SchedulerDefinition const&);
+    SchedulerDefinition(SchedulerDefinition const&);
 
 public:
     // NOLINTBEGIN

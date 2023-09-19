@@ -5,14 +5,14 @@
 class AsynchronousIPResolver {
 public:
     // prevent constructor by default
-    AsynchronousIPResolver& operator=(AsynchronousIPResolver const&) = delete;
-    AsynchronousIPResolver(AsynchronousIPResolver const&)            = delete;
-    AsynchronousIPResolver()                                         = delete;
+    AsynchronousIPResolver& operator=(AsynchronousIPResolver const&);
+    AsynchronousIPResolver(AsynchronousIPResolver const&);
+    AsynchronousIPResolver();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0AsynchronousIPResolver@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI AsynchronousIPResolver(std::string);
+    MCAPI explicit AsynchronousIPResolver(std::string);
 
     // symbol: ?getIp@AsynchronousIPResolver@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getIp() const;

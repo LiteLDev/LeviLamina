@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class ShearsItem : public ::Item {
 public:
     // prevent constructor by default
-    ShearsItem& operator=(ShearsItem const&) = delete;
-    ShearsItem(ShearsItem const&)            = delete;
-    ShearsItem()                             = delete;
+    ShearsItem& operator=(ShearsItem const&);
+    ShearsItem(ShearsItem const&);
+    ShearsItem();
 
 public:
     // NOLINTBEGIN

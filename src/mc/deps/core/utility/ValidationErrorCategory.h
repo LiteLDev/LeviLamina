@@ -7,9 +7,9 @@ namespace Util::ResourceUri {
 class ValidationErrorCategory {
 public:
     // prevent constructor by default
-    ValidationErrorCategory& operator=(ValidationErrorCategory const&) = delete;
-    ValidationErrorCategory(ValidationErrorCategory const&)            = delete;
-    ValidationErrorCategory()                                          = delete;
+    ValidationErrorCategory& operator=(ValidationErrorCategory const&);
+    ValidationErrorCategory(ValidationErrorCategory const&);
+    ValidationErrorCategory();
 
 public:
     // NOLINTBEGIN

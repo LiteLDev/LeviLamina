@@ -28,9 +28,9 @@ namespace CodeBuilder {
 class Messenger : public ::CodeBuilder::IMessenger {
 public:
     // prevent constructor by default
-    Messenger& operator=(Messenger const&) = delete;
-    Messenger(Messenger const&)            = delete;
-    Messenger()                            = delete;
+    Messenger& operator=(Messenger const&);
+    Messenger(Messenger const&);
+    Messenger();
 
 public:
     // NOLINTBEGIN
@@ -147,7 +147,7 @@ public:
     ) const;
 
     // symbol: ??0Messenger@CodeBuilder@@QEAA@V?$NonOwnerPointer@VIClient@CodeBuilder@@@Bedrock@@@Z
-    MCAPI Messenger(class Bedrock::NonOwnerPointer<class CodeBuilder::IClient>);
+    MCAPI explicit Messenger(class Bedrock::NonOwnerPointer<class CodeBuilder::IClient>);
 
     // NOLINTEND
 };

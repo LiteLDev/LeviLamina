@@ -5,7 +5,7 @@
 class ScriptingEventHandler {
 public:
     // prevent constructor by default
-    ScriptingEventHandler& operator=(ScriptingEventHandler const&) = delete;
-    ScriptingEventHandler(ScriptingEventHandler const&)            = delete;
-    ScriptingEventHandler()                                        = delete;
+    ScriptingEventHandler& operator=(ScriptingEventHandler const&);
+    ScriptingEventHandler(ScriptingEventHandler const&);
+    ScriptingEventHandler();
 };

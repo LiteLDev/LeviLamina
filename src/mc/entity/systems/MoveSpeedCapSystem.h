@@ -12,9 +12,9 @@
 class MoveSpeedCapSystem {
 public:
     // prevent constructor by default
-    MoveSpeedCapSystem& operator=(MoveSpeedCapSystem const&) = delete;
-    MoveSpeedCapSystem(MoveSpeedCapSystem const&)            = delete;
-    MoveSpeedCapSystem()                                     = delete;
+    MoveSpeedCapSystem& operator=(MoveSpeedCapSystem const&);
+    MoveSpeedCapSystem(MoveSpeedCapSystem const&);
+    MoveSpeedCapSystem();
 
 public:
     // NOLINTBEGIN

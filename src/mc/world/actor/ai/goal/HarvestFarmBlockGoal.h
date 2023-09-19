@@ -9,9 +9,9 @@
 class HarvestFarmBlockGoal : public ::BaseMoveToBlockGoal {
 public:
     // prevent constructor by default
-    HarvestFarmBlockGoal& operator=(HarvestFarmBlockGoal const&) = delete;
-    HarvestFarmBlockGoal(HarvestFarmBlockGoal const&)            = delete;
-    HarvestFarmBlockGoal()                                       = delete;
+    HarvestFarmBlockGoal& operator=(HarvestFarmBlockGoal const&);
+    HarvestFarmBlockGoal(HarvestFarmBlockGoal const&);
+    HarvestFarmBlockGoal();
 
 public:
     // NOLINTBEGIN
@@ -41,7 +41,7 @@ public:
     virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
 
     // symbol: ??0HarvestFarmBlockGoal@@QEAA@AEAVMob@@@Z
-    MCAPI HarvestFarmBlockGoal(class Mob&);
+    MCAPI explicit HarvestFarmBlockGoal(class Mob&);
 
     // NOLINTEND
 

@@ -8,9 +8,9 @@
 class StructurePiece {
 public:
     // prevent constructor by default
-    StructurePiece& operator=(StructurePiece const&) = delete;
-    StructurePiece(StructurePiece const&)            = delete;
-    StructurePiece()                                 = delete;
+    StructurePiece& operator=(StructurePiece const&);
+    StructurePiece(StructurePiece const&);
+    StructurePiece();
 
 public:
     // NOLINTBEGIN

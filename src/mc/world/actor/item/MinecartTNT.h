@@ -27,9 +27,9 @@
 class MinecartTNT : public ::Minecart {
 public:
     // prevent constructor by default
-    MinecartTNT& operator=(MinecartTNT const&) = delete;
-    MinecartTNT(MinecartTNT const&)            = delete;
-    MinecartTNT()                              = delete;
+    MinecartTNT& operator=(MinecartTNT const&);
+    MinecartTNT(MinecartTNT const&);
+    MinecartTNT();
 
 public:
     // NOLINTBEGIN
@@ -138,7 +138,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $DEFAULT_FUSE_LENGTH() { return DEFAULT_FUSE_LENGTH; }
+    auto& $DEFAULT_FUSE_LENGTH() { return DEFAULT_FUSE_LENGTH; }
 
     // NOLINTEND
 };

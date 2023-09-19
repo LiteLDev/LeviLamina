@@ -9,9 +9,9 @@
 class DragonChargePlayerGoal : public ::DragonBaseGoal {
 public:
     // prevent constructor by default
-    DragonChargePlayerGoal& operator=(DragonChargePlayerGoal const&) = delete;
-    DragonChargePlayerGoal(DragonChargePlayerGoal const&)            = delete;
-    DragonChargePlayerGoal()                                         = delete;
+    DragonChargePlayerGoal& operator=(DragonChargePlayerGoal const&);
+    DragonChargePlayerGoal(DragonChargePlayerGoal const&);
+    DragonChargePlayerGoal();
 
 public:
     // NOLINTBEGIN
@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0DragonChargePlayerGoal@@QEAA@AEAVMob@@@Z
-    MCAPI DragonChargePlayerGoal(class Mob&);
+    MCAPI explicit DragonChargePlayerGoal(class Mob&);
 
     // NOLINTEND
 };

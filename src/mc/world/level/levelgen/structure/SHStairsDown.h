@@ -9,9 +9,9 @@
 class SHStairsDown : public ::StrongholdPiece {
 public:
     // prevent constructor by default
-    SHStairsDown& operator=(SHStairsDown const&) = delete;
-    SHStairsDown(SHStairsDown const&)            = delete;
-    SHStairsDown()                               = delete;
+    SHStairsDown& operator=(SHStairsDown const&);
+    SHStairsDown(SHStairsDown const&);
+    SHStairsDown();
 
 public:
     // NOLINTBEGIN

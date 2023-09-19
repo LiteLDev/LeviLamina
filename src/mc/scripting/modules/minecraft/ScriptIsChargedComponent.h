@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptIsChargedComponent {
 public:
     // prevent constructor by default
-    ScriptIsChargedComponent& operator=(ScriptIsChargedComponent const&) = delete;
-    ScriptIsChargedComponent(ScriptIsChargedComponent const&)            = delete;
-    ScriptIsChargedComponent()                                           = delete;
+    ScriptIsChargedComponent& operator=(ScriptIsChargedComponent const&);
+    ScriptIsChargedComponent(ScriptIsChargedComponent const&);
+    ScriptIsChargedComponent();
 
 public:
     // NOLINTBEGIN

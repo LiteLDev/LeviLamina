@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class CoralFanHang : public ::CoralFan {
 public:
     // prevent constructor by default
-    CoralFanHang& operator=(CoralFanHang const&) = delete;
-    CoralFanHang(CoralFanHang const&)            = delete;
-    CoralFanHang()                               = delete;
+    CoralFanHang& operator=(CoralFanHang const&);
+    CoralFanHang(CoralFanHang const&);
+    CoralFanHang();
 
 public:
     // NOLINTBEGIN

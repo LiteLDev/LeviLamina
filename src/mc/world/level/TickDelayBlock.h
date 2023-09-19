@@ -5,7 +5,7 @@
 struct TickDelayBlock {
 public:
     // prevent constructor by default
-    TickDelayBlock& operator=(TickDelayBlock const&) = delete;
-    TickDelayBlock(TickDelayBlock const&)            = delete;
-    TickDelayBlock()                                 = delete;
+    TickDelayBlock& operator=(TickDelayBlock const&);
+    TickDelayBlock(TickDelayBlock const&);
+    TickDelayBlock();
 };

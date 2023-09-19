@@ -5,8 +5,8 @@
 class NameableComponent {
 public:
     // prevent constructor by default
-    NameableComponent& operator=(NameableComponent const&) = delete;
-    NameableComponent(NameableComponent const&)            = delete;
+    NameableComponent& operator=(NameableComponent const&);
+    NameableComponent(NameableComponent const&);
 
 public:
     // NOLINTBEGIN

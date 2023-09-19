@@ -12,9 +12,9 @@ namespace OperationNodeFilters {
 class RareBiomeSpot {
 public:
     // prevent constructor by default
-    RareBiomeSpot& operator=(RareBiomeSpot const&) = delete;
-    RareBiomeSpot(RareBiomeSpot const&)            = delete;
-    RareBiomeSpot()                                = delete;
+    RareBiomeSpot& operator=(RareBiomeSpot const&);
+    RareBiomeSpot(RareBiomeSpot const&);
+    RareBiomeSpot();
 
 public:
     // NOLINTBEGIN

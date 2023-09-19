@@ -5,9 +5,9 @@
 class PieceWeight {
 public:
     // prevent constructor by default
-    PieceWeight& operator=(PieceWeight const&) = delete;
-    PieceWeight(PieceWeight const&)            = delete;
-    PieceWeight()                              = delete;
+    PieceWeight& operator=(PieceWeight const&);
+    PieceWeight(PieceWeight const&);
+    PieceWeight();
 
 public:
     // NOLINTBEGIN

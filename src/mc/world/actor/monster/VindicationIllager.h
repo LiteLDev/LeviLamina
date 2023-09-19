@@ -26,9 +26,9 @@
 class VindicationIllager : public ::HumanoidMonster {
 public:
     // prevent constructor by default
-    VindicationIllager& operator=(VindicationIllager const&) = delete;
-    VindicationIllager(VindicationIllager const&)            = delete;
-    VindicationIllager()                                     = delete;
+    VindicationIllager& operator=(VindicationIllager const&);
+    VindicationIllager(VindicationIllager const&);
+    VindicationIllager();
 
 public:
     // NOLINTBEGIN

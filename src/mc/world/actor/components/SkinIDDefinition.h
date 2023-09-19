@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct SkinIDDefinition {
 public:
     // prevent constructor by default
-    SkinIDDefinition& operator=(SkinIDDefinition const&) = delete;
-    SkinIDDefinition(SkinIDDefinition const&)            = delete;
-    SkinIDDefinition()                                   = delete;
+    SkinIDDefinition& operator=(SkinIDDefinition const&);
+    SkinIDDefinition(SkinIDDefinition const&);
+    SkinIDDefinition();
 
 public:
     // NOLINTBEGIN

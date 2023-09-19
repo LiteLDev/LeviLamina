@@ -9,9 +9,9 @@
 class DamageCommand : public ::Command {
 public:
     // prevent constructor by default
-    DamageCommand& operator=(DamageCommand const&) = delete;
-    DamageCommand(DamageCommand const&)            = delete;
-    DamageCommand()                                = delete;
+    DamageCommand& operator=(DamageCommand const&);
+    DamageCommand(DamageCommand const&);
+    DamageCommand();
 
 public:
     // NOLINTBEGIN

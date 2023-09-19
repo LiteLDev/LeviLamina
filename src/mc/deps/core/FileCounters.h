@@ -7,9 +7,9 @@ namespace Core::Profile {
 struct FileCounters {
 public:
     // prevent constructor by default
-    FileCounters& operator=(FileCounters const&) = delete;
-    FileCounters(FileCounters const&)            = delete;
-    FileCounters()                               = delete;
+    FileCounters& operator=(FileCounters const&);
+    FileCounters(FileCounters const&);
+    FileCounters();
 };
 
 }; // namespace Core::Profile

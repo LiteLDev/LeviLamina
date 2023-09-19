@@ -18,9 +18,9 @@
 struct MonsterAiStepSystem {
 public:
     // prevent constructor by default
-    MonsterAiStepSystem& operator=(MonsterAiStepSystem const&) = delete;
-    MonsterAiStepSystem(MonsterAiStepSystem const&)            = delete;
-    MonsterAiStepSystem()                                      = delete;
+    MonsterAiStepSystem& operator=(MonsterAiStepSystem const&);
+    MonsterAiStepSystem(MonsterAiStepSystem const&);
+    MonsterAiStepSystem();
 
 public:
     // NOLINTBEGIN

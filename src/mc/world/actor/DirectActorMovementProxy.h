@@ -5,7 +5,7 @@
 class DirectActorMovementProxy {
 public:
     // prevent constructor by default
-    DirectActorMovementProxy& operator=(DirectActorMovementProxy const&) = delete;
-    DirectActorMovementProxy(DirectActorMovementProxy const&)            = delete;
-    DirectActorMovementProxy()                                           = delete;
+    DirectActorMovementProxy& operator=(DirectActorMovementProxy const&);
+    DirectActorMovementProxy(DirectActorMovementProxy const&);
+    DirectActorMovementProxy();
 };

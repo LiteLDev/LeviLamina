@@ -5,9 +5,9 @@
 class InMemoryWritableFile {
 public:
     // prevent constructor by default
-    InMemoryWritableFile& operator=(InMemoryWritableFile const&) = delete;
-    InMemoryWritableFile(InMemoryWritableFile const&)            = delete;
-    InMemoryWritableFile()                                       = delete;
+    InMemoryWritableFile& operator=(InMemoryWritableFile const&);
+    InMemoryWritableFile(InMemoryWritableFile const&);
+    InMemoryWritableFile();
 
 public:
     // NOLINTBEGIN
@@ -27,7 +27,7 @@ public:
     virtual leveldb::Status Sync();
 
     // symbol: ??0InMemoryWritableFile@@QEAA@V?$shared_ptr@VInMemoryFile@@@std@@@Z
-    MCAPI InMemoryWritableFile(std::shared_ptr<class InMemoryFile>);
+    MCAPI explicit InMemoryWritableFile(std::shared_ptr<class InMemoryFile>);
 
     // NOLINTEND
 };

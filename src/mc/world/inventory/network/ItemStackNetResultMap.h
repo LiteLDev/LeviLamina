@@ -10,9 +10,9 @@
 class ItemStackNetResultMap {
 public:
     // prevent constructor by default
-    ItemStackNetResultMap& operator=(ItemStackNetResultMap const&) = delete;
-    ItemStackNetResultMap(ItemStackNetResultMap const&)            = delete;
-    ItemStackNetResultMap()                                        = delete;
+    ItemStackNetResultMap& operator=(ItemStackNetResultMap const&);
+    ItemStackNetResultMap(ItemStackNetResultMap const&);
+    ItemStackNetResultMap();
 
     static constexpr BidirectionalUnorderedMap<enum class ItemStackNetResult, std::string> const& getMap() {
         return mMap;
@@ -37,7 +37,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mMap() { return mMap; }
+    auto& $mMap() { return mMap; }
 
     // NOLINTEND
 };

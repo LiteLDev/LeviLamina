@@ -8,9 +8,9 @@
 class GetSpawnPointCommand : public ::Command {
 public:
     // prevent constructor by default
-    GetSpawnPointCommand& operator=(GetSpawnPointCommand const&) = delete;
-    GetSpawnPointCommand(GetSpawnPointCommand const&)            = delete;
-    GetSpawnPointCommand()                                       = delete;
+    GetSpawnPointCommand& operator=(GetSpawnPointCommand const&);
+    GetSpawnPointCommand(GetSpawnPointCommand const&);
+    GetSpawnPointCommand();
 
 public:
     // NOLINTBEGIN

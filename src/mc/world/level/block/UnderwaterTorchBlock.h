@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class UnderwaterTorchBlock : public ::TorchBlock {
 public:
     // prevent constructor by default
-    UnderwaterTorchBlock& operator=(UnderwaterTorchBlock const&) = delete;
-    UnderwaterTorchBlock(UnderwaterTorchBlock const&)            = delete;
-    UnderwaterTorchBlock()                                       = delete;
+    UnderwaterTorchBlock& operator=(UnderwaterTorchBlock const&);
+    UnderwaterTorchBlock(UnderwaterTorchBlock const&);
+    UnderwaterTorchBlock();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 class EntitiesEnteredVolumeComponent {
 public:
     // prevent constructor by default
-    EntitiesEnteredVolumeComponent& operator=(EntitiesEnteredVolumeComponent const&) = delete;
-    EntitiesEnteredVolumeComponent(EntitiesEnteredVolumeComponent const&)            = delete;
-    EntitiesEnteredVolumeComponent()                                                 = delete;
+    EntitiesEnteredVolumeComponent& operator=(EntitiesEnteredVolumeComponent const&);
+    EntitiesEnteredVolumeComponent(EntitiesEnteredVolumeComponent const&);
+    EntitiesEnteredVolumeComponent();
 };

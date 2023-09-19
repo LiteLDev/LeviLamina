@@ -5,8 +5,8 @@
 struct ExplosionStartedEvent {
 public:
     // prevent constructor by default
-    ExplosionStartedEvent& operator=(ExplosionStartedEvent const&) = delete;
-    ExplosionStartedEvent()                                        = delete;
+    ExplosionStartedEvent& operator=(ExplosionStartedEvent const&);
+    ExplosionStartedEvent();
 
 public:
     // NOLINTBEGIN

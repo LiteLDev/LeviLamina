@@ -16,14 +16,14 @@ namespace ScriptModuleMinecraft {
 class ScriptColor {
 public:
     // prevent constructor by default
-    ScriptColor& operator=(ScriptColor const&) = delete;
-    ScriptColor(ScriptColor const&)            = delete;
-    ScriptColor()                              = delete;
+    ScriptColor& operator=(ScriptColor const&);
+    ScriptColor(ScriptColor const&);
+    ScriptColor();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ScriptColor@ScriptModuleMinecraft@@QEAA@AEBVColor@mce@@@Z
-    MCAPI ScriptColor(class mce::Color const&);
+    MCAPI explicit ScriptColor(class mce::Color const&);
 
     // symbol: ?getColor@ScriptColor@ScriptModuleMinecraft@@QEBAAEBVColor@mce@@XZ
     MCAPI class mce::Color const& getColor() const;

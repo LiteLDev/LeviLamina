@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class DaylightDetectorBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    DaylightDetectorBlock& operator=(DaylightDetectorBlock const&) = delete;
-    DaylightDetectorBlock(DaylightDetectorBlock const&)            = delete;
-    DaylightDetectorBlock()                                        = delete;
+    DaylightDetectorBlock& operator=(DaylightDetectorBlock const&);
+    DaylightDetectorBlock(DaylightDetectorBlock const&);
+    DaylightDetectorBlock();
 
 public:
     // NOLINTBEGIN

@@ -53,7 +53,7 @@ public:
 
 public:
     // prevent constructor by default
-    GameRule() = delete;
+    GameRule();
 
 public:
     // NOLINTBEGIN

@@ -18,9 +18,9 @@ namespace mce { class UUID; }
 class MinecartBlockCommandOrigin : public ::BlockCommandOrigin {
 public:
     // prevent constructor by default
-    MinecartBlockCommandOrigin& operator=(MinecartBlockCommandOrigin const&) = delete;
-    MinecartBlockCommandOrigin(MinecartBlockCommandOrigin const&)            = delete;
-    MinecartBlockCommandOrigin()                                             = delete;
+    MinecartBlockCommandOrigin& operator=(MinecartBlockCommandOrigin const&);
+    MinecartBlockCommandOrigin(MinecartBlockCommandOrigin const&);
+    MinecartBlockCommandOrigin();
 
 public:
     // NOLINTBEGIN

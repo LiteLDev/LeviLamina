@@ -33,9 +33,9 @@ public:
     struct EnabledStates {
     public:
         // prevent constructor by default
-        EnabledStates& operator=(EnabledStates const&) = delete;
-        EnabledStates(EnabledStates const&)            = delete;
-        EnabledStates()                                = delete;
+        EnabledStates& operator=(EnabledStates const&);
+        EnabledStates(EnabledStates const&);
+        EnabledStates();
 
     public:
         // NOLINTBEGIN
@@ -50,9 +50,9 @@ public:
     class UpdateBlockFaceGetPlacementBlockCallback : public ::BlockTrait::IGetPlacementBlockCallback {
     public:
         // prevent constructor by default
-        UpdateBlockFaceGetPlacementBlockCallback& operator=(UpdateBlockFaceGetPlacementBlockCallback const&) = delete;
-        UpdateBlockFaceGetPlacementBlockCallback(UpdateBlockFaceGetPlacementBlockCallback const&)            = delete;
-        UpdateBlockFaceGetPlacementBlockCallback()                                                           = delete;
+        UpdateBlockFaceGetPlacementBlockCallback& operator=(UpdateBlockFaceGetPlacementBlockCallback const&);
+        UpdateBlockFaceGetPlacementBlockCallback(UpdateBlockFaceGetPlacementBlockCallback const&);
+        UpdateBlockFaceGetPlacementBlockCallback();
 
     public:
         // NOLINTBEGIN
@@ -76,10 +76,9 @@ public:
     class UpdateVerticalHalfGetPlacementBlockCallback : public ::BlockTrait::IGetPlacementBlockCallback {
     public:
         // prevent constructor by default
-        UpdateVerticalHalfGetPlacementBlockCallback&
-        operator=(UpdateVerticalHalfGetPlacementBlockCallback const&)                                   = delete;
-        UpdateVerticalHalfGetPlacementBlockCallback(UpdateVerticalHalfGetPlacementBlockCallback const&) = delete;
-        UpdateVerticalHalfGetPlacementBlockCallback()                                                   = delete;
+        UpdateVerticalHalfGetPlacementBlockCallback& operator=(UpdateVerticalHalfGetPlacementBlockCallback const&);
+        UpdateVerticalHalfGetPlacementBlockCallback(UpdateVerticalHalfGetPlacementBlockCallback const&);
+        UpdateVerticalHalfGetPlacementBlockCallback();
 
     public:
         // NOLINTBEGIN
@@ -102,9 +101,9 @@ public:
 
 public:
     // prevent constructor by default
-    PlacementPosition& operator=(PlacementPosition const&) = delete;
-    PlacementPosition(PlacementPosition const&)            = delete;
-    PlacementPosition()                                    = delete;
+    PlacementPosition& operator=(PlacementPosition const&);
+    PlacementPosition(PlacementPosition const&);
+    PlacementPosition();
 
 public:
     // NOLINTBEGIN

@@ -68,9 +68,9 @@ public:
 
 public:
     // prevent constructor by default
-    JsonValidator& operator=(JsonValidator const&) = delete;
-    JsonValidator(JsonValidator const&)            = delete;
-    JsonValidator()                                = delete;
+    JsonValidator& operator=(JsonValidator const&);
+    JsonValidator(JsonValidator const&);
+    JsonValidator();
 
 public:
     // NOLINTBEGIN

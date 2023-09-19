@@ -24,8 +24,8 @@ public:
     class RaiderCelebrationDefinition : public ::BaseGoalDefinition {
     public:
         // prevent constructor by default
-        RaiderCelebrationDefinition& operator=(RaiderCelebrationDefinition const&) = delete;
-        RaiderCelebrationDefinition(RaiderCelebrationDefinition const&)            = delete;
+        RaiderCelebrationDefinition& operator=(RaiderCelebrationDefinition const&);
+        RaiderCelebrationDefinition(RaiderCelebrationDefinition const&);
 
     public:
         // NOLINTBEGIN
@@ -52,9 +52,9 @@ public:
 
 public:
     // prevent constructor by default
-    RaiderCelebrationGoal& operator=(RaiderCelebrationGoal const&) = delete;
-    RaiderCelebrationGoal(RaiderCelebrationGoal const&)            = delete;
-    RaiderCelebrationGoal()                                        = delete;
+    RaiderCelebrationGoal& operator=(RaiderCelebrationGoal const&);
+    RaiderCelebrationGoal(RaiderCelebrationGoal const&);
+    RaiderCelebrationGoal();
 
 public:
     // NOLINTBEGIN
@@ -81,7 +81,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0RaiderCelebrationGoal@@QEAA@AEAVMob@@@Z
-    MCAPI RaiderCelebrationGoal(class Mob&);
+    MCAPI explicit RaiderCelebrationGoal(class Mob&);
 
     // NOLINTEND
 };

@@ -5,9 +5,9 @@
 class PlayerSetWalkOrSprintFlySpeedSystem {
 public:
     // prevent constructor by default
-    PlayerSetWalkOrSprintFlySpeedSystem& operator=(PlayerSetWalkOrSprintFlySpeedSystem const&) = delete;
-    PlayerSetWalkOrSprintFlySpeedSystem(PlayerSetWalkOrSprintFlySpeedSystem const&)            = delete;
-    PlayerSetWalkOrSprintFlySpeedSystem()                                                      = delete;
+    PlayerSetWalkOrSprintFlySpeedSystem& operator=(PlayerSetWalkOrSprintFlySpeedSystem const&);
+    PlayerSetWalkOrSprintFlySpeedSystem(PlayerSetWalkOrSprintFlySpeedSystem const&);
+    PlayerSetWalkOrSprintFlySpeedSystem();
 
 public:
     // NOLINTBEGIN

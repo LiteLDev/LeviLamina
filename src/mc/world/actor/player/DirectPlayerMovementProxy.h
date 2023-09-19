@@ -10,9 +10,9 @@
 class DirectPlayerMovementProxy {
 public:
     // prevent constructor by default
-    DirectPlayerMovementProxy& operator=(DirectPlayerMovementProxy const&) = delete;
-    DirectPlayerMovementProxy(DirectPlayerMovementProxy const&)            = delete;
-    DirectPlayerMovementProxy()                                            = delete;
+    DirectPlayerMovementProxy& operator=(DirectPlayerMovementProxy const&);
+    DirectPlayerMovementProxy(DirectPlayerMovementProxy const&);
+    DirectPlayerMovementProxy();
 
 public:
     // NOLINTBEGIN

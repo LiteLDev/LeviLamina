@@ -14,8 +14,8 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class ScriptPackConfigurationManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    ScriptPackConfigurationManager& operator=(ScriptPackConfigurationManager const&) = delete;
-    ScriptPackConfigurationManager()                                                 = delete;
+    ScriptPackConfigurationManager& operator=(ScriptPackConfigurationManager const&);
+    ScriptPackConfigurationManager();
 
 public:
     // NOLINTBEGIN
@@ -30,7 +30,7 @@ public:
 
     // symbol:
     // ??0ScriptPackConfigurationManager@@QEAA@V?$optional@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@std@@@Z
-    MCAPI ScriptPackConfigurationManager(std::optional<class Core::PathBuffer<std::string>>);
+    MCAPI explicit ScriptPackConfigurationManager(std::optional<class Core::PathBuffer<std::string>>);
 
     // symbol:
     // ?getConfigPath@ScriptPackConfigurationManager@@QEBAAEBV?$optional@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@std@@XZ
@@ -56,7 +56,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $sDefaultConfigurationName() { return sDefaultConfigurationName; }
+    auto& $sDefaultConfigurationName() { return sDefaultConfigurationName; }
 
     // NOLINTEND
 };

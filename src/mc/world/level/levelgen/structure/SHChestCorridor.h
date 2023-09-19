@@ -9,9 +9,9 @@
 class SHChestCorridor : public ::StrongholdPiece {
 public:
     // prevent constructor by default
-    SHChestCorridor& operator=(SHChestCorridor const&) = delete;
-    SHChestCorridor(SHChestCorridor const&)            = delete;
-    SHChestCorridor()                                  = delete;
+    SHChestCorridor& operator=(SHChestCorridor const&);
+    SHChestCorridor(SHChestCorridor const&);
+    SHChestCorridor();
 
 public:
     // NOLINTBEGIN

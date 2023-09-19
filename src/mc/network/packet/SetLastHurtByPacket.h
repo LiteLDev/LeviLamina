@@ -14,8 +14,8 @@ public:
     ActorType mLastHurtBy; // this+0x30
 
     // prevent constructor by default
-    SetLastHurtByPacket& operator=(SetLastHurtByPacket const&) = delete;
-    SetLastHurtByPacket(SetLastHurtByPacket const&)            = delete;
+    SetLastHurtByPacket& operator=(SetLastHurtByPacket const&);
+    SetLastHurtByPacket(SetLastHurtByPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -40,7 +40,7 @@ public:
     MCVAPI ~SetLastHurtByPacket();
 
     // symbol: ??0SetLastHurtByPacket@@QEAA@W4ActorType@@@Z
-    MCAPI SetLastHurtByPacket(::ActorType);
+    MCAPI explicit SetLastHurtByPacket(::ActorType);
 
     // symbol: ??0SetLastHurtByPacket@@QEAA@XZ
     MCAPI SetLastHurtByPacket();

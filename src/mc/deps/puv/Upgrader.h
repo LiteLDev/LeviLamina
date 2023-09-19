@@ -13,9 +13,9 @@ namespace Puv {
 class Upgrader {
 public:
     // prevent constructor by default
-    Upgrader& operator=(Upgrader const&) = delete;
-    Upgrader(Upgrader const&)            = delete;
-    Upgrader()                           = delete;
+    Upgrader& operator=(Upgrader const&);
+    Upgrader(Upgrader const&);
+    Upgrader();
 
 public:
     // NOLINTBEGIN

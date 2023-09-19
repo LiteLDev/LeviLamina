@@ -10,9 +10,9 @@
 class VanillaDimensions {
 public:
     // prevent constructor by default
-    VanillaDimensions& operator=(VanillaDimensions const&) = delete;
-    VanillaDimensions(VanillaDimensions const&)            = delete;
-    VanillaDimensions()                                    = delete;
+    VanillaDimensions& operator=(VanillaDimensions const&);
+    VanillaDimensions(VanillaDimensions const&);
+    VanillaDimensions();
 
 public:
     // NOLINTBEGIN

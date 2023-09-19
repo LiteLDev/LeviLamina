@@ -16,9 +16,9 @@
 struct ClientStopGlidingSystem {
 public:
     // prevent constructor by default
-    ClientStopGlidingSystem& operator=(ClientStopGlidingSystem const&) = delete;
-    ClientStopGlidingSystem(ClientStopGlidingSystem const&)            = delete;
-    ClientStopGlidingSystem()                                          = delete;
+    ClientStopGlidingSystem& operator=(ClientStopGlidingSystem const&);
+    ClientStopGlidingSystem(ClientStopGlidingSystem const&);
+    ClientStopGlidingSystem();
 
 public:
     // NOLINTBEGIN

@@ -15,13 +15,13 @@ namespace ScriptModuleMinecraft {
 struct ScriptItemEnchantmentInstance {
 public:
     // prevent constructor by default
-    ScriptItemEnchantmentInstance(ScriptItemEnchantmentInstance const&) = delete;
-    ScriptItemEnchantmentInstance()                                     = delete;
+    ScriptItemEnchantmentInstance(ScriptItemEnchantmentInstance const&);
+    ScriptItemEnchantmentInstance();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ScriptItemEnchantmentInstance@ScriptModuleMinecraft@@QEAA@AEBVEnchantmentInstance@@@Z
-    MCAPI ScriptItemEnchantmentInstance(class EnchantmentInstance const&);
+    MCAPI explicit ScriptItemEnchantmentInstance(class EnchantmentInstance const&);
 
     // symbol: ??4ScriptItemEnchantmentInstance@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance&

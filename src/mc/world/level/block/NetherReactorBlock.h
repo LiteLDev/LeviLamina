@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class NetherReactorBlock : public ::ActorBlock {
 public:
     // prevent constructor by default
-    NetherReactorBlock& operator=(NetherReactorBlock const&) = delete;
-    NetherReactorBlock(NetherReactorBlock const&)            = delete;
-    NetherReactorBlock()                                     = delete;
+    NetherReactorBlock& operator=(NetherReactorBlock const&);
+    NetherReactorBlock(NetherReactorBlock const&);
+    NetherReactorBlock();
 
 public:
     // NOLINTBEGIN

@@ -9,8 +9,8 @@
 class DynamicJumpControl : public ::JumpControl {
 public:
     // prevent constructor by default
-    DynamicJumpControl& operator=(DynamicJumpControl const&) = delete;
-    DynamicJumpControl(DynamicJumpControl const&)            = delete;
+    DynamicJumpControl& operator=(DynamicJumpControl const&);
+    DynamicJumpControl(DynamicJumpControl const&);
 
 public:
     // NOLINTBEGIN

@@ -9,7 +9,7 @@
 class NavigationComponent {
 public:
     // prevent constructor by default
-    NavigationComponent& operator=(NavigationComponent const&) = delete;
+    NavigationComponent& operator=(NavigationComponent const&);
 
 public:
     // NOLINTBEGIN

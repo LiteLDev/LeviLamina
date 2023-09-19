@@ -8,9 +8,9 @@
 class OpCommand : public ::ServerCommand {
 public:
     // prevent constructor by default
-    OpCommand& operator=(OpCommand const&) = delete;
-    OpCommand(OpCommand const&)            = delete;
-    OpCommand()                            = delete;
+    OpCommand& operator=(OpCommand const&);
+    OpCommand(OpCommand const&);
+    OpCommand();
 
 public:
     // NOLINTBEGIN

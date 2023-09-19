@@ -12,10 +12,9 @@
 class PopulateGlobalPassengersToPositionListSystem {
 public:
     // prevent constructor by default
-    PopulateGlobalPassengersToPositionListSystem&
-    operator=(PopulateGlobalPassengersToPositionListSystem const&)                                    = delete;
-    PopulateGlobalPassengersToPositionListSystem(PopulateGlobalPassengersToPositionListSystem const&) = delete;
-    PopulateGlobalPassengersToPositionListSystem()                                                    = delete;
+    PopulateGlobalPassengersToPositionListSystem& operator=(PopulateGlobalPassengersToPositionListSystem const&);
+    PopulateGlobalPassengersToPositionListSystem(PopulateGlobalPassengersToPositionListSystem const&);
+    PopulateGlobalPassengersToPositionListSystem();
 
 public:
     // NOLINTBEGIN

@@ -13,8 +13,8 @@ namespace Json { class Value; }
 class HurtOwnerSubcomponent : public ::OnHitSubcomponent {
 public:
     // prevent constructor by default
-    HurtOwnerSubcomponent& operator=(HurtOwnerSubcomponent const&) = delete;
-    HurtOwnerSubcomponent(HurtOwnerSubcomponent const&)            = delete;
+    HurtOwnerSubcomponent& operator=(HurtOwnerSubcomponent const&);
+    HurtOwnerSubcomponent(HurtOwnerSubcomponent const&);
 
 public:
     // NOLINTBEGIN

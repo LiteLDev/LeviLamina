@@ -14,8 +14,8 @@ public:
     ActorRuntimeID mEntityRuntimeID;
 
     // prevent constructor by default
-    AgentAnimationPacket& operator=(AgentAnimationPacket const&) = delete;
-    AgentAnimationPacket(AgentAnimationPacket const&)            = delete;
+    AgentAnimationPacket& operator=(AgentAnimationPacket const&);
+    AgentAnimationPacket(AgentAnimationPacket const&);
 
 public:
     // NOLINTBEGIN

@@ -18,9 +18,9 @@ namespace ScriptModuleMinecraft {
 class ScriptMobEffectInstance {
 public:
     // prevent constructor by default
-    ScriptMobEffectInstance& operator=(ScriptMobEffectInstance const&) = delete;
-    ScriptMobEffectInstance(ScriptMobEffectInstance const&)            = delete;
-    ScriptMobEffectInstance()                                          = delete;
+    ScriptMobEffectInstance& operator=(ScriptMobEffectInstance const&);
+    ScriptMobEffectInstance(ScriptMobEffectInstance const&);
+    ScriptMobEffectInstance();
 
 public:
     // NOLINTBEGIN

@@ -16,9 +16,9 @@ namespace Core { class Path; }
 class DirectoryPackAccessStrategy : public ::PackAccessStrategy {
 public:
     // prevent constructor by default
-    DirectoryPackAccessStrategy& operator=(DirectoryPackAccessStrategy const&) = delete;
-    DirectoryPackAccessStrategy(DirectoryPackAccessStrategy const&)            = delete;
-    DirectoryPackAccessStrategy()                                              = delete;
+    DirectoryPackAccessStrategy& operator=(DirectoryPackAccessStrategy const&);
+    DirectoryPackAccessStrategy(DirectoryPackAccessStrategy const&);
+    DirectoryPackAccessStrategy();
 
 public:
     // NOLINTBEGIN

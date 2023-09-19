@@ -5,9 +5,9 @@
 class CombatRegenerationComponent {
 public:
     // prevent constructor by default
-    CombatRegenerationComponent& operator=(CombatRegenerationComponent const&) = delete;
-    CombatRegenerationComponent(CombatRegenerationComponent const&)            = delete;
-    CombatRegenerationComponent()                                              = delete;
+    CombatRegenerationComponent& operator=(CombatRegenerationComponent const&);
+    CombatRegenerationComponent(CombatRegenerationComponent const&);
+    CombatRegenerationComponent();
 
 public:
     // NOLINTBEGIN

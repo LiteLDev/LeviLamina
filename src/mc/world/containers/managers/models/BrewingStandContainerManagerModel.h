@@ -10,9 +10,9 @@
 class BrewingStandContainerManagerModel : public ::ContainerManagerModel {
 public:
     // prevent constructor by default
-    BrewingStandContainerManagerModel& operator=(BrewingStandContainerManagerModel const&) = delete;
-    BrewingStandContainerManagerModel(BrewingStandContainerManagerModel const&)            = delete;
-    BrewingStandContainerManagerModel()                                                    = delete;
+    BrewingStandContainerManagerModel& operator=(BrewingStandContainerManagerModel const&);
+    BrewingStandContainerManagerModel(BrewingStandContainerManagerModel const&);
+    BrewingStandContainerManagerModel();
 
 public:
     // NOLINTBEGIN

@@ -14,8 +14,8 @@ public:
     bool        mSucceeded; // this+0x70
 
     // prevent constructor by default
-    GameTestResultsPacket& operator=(GameTestResultsPacket const&) = delete;
-    GameTestResultsPacket(GameTestResultsPacket const&)            = delete;
+    GameTestResultsPacket& operator=(GameTestResultsPacket const&);
+    GameTestResultsPacket(GameTestResultsPacket const&);
 
 public:
     // NOLINTBEGIN

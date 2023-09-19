@@ -12,9 +12,9 @@
 class JumpEndSystem {
 public:
     // prevent constructor by default
-    JumpEndSystem& operator=(JumpEndSystem const&) = delete;
-    JumpEndSystem(JumpEndSystem const&)            = delete;
-    JumpEndSystem()                                = delete;
+    JumpEndSystem& operator=(JumpEndSystem const&);
+    JumpEndSystem(JumpEndSystem const&);
+    JumpEndSystem();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class AvoidMobTypeGoal : public ::Goal {
 public:
     // prevent constructor by default
-    AvoidMobTypeGoal& operator=(AvoidMobTypeGoal const&) = delete;
-    AvoidMobTypeGoal(AvoidMobTypeGoal const&)            = delete;
-    AvoidMobTypeGoal()                                   = delete;
+    AvoidMobTypeGoal& operator=(AvoidMobTypeGoal const&);
+    AvoidMobTypeGoal(AvoidMobTypeGoal const&);
+    AvoidMobTypeGoal();
 
 public:
     // NOLINTBEGIN
@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0AvoidMobTypeGoal@@QEAA@AEAVMob@@@Z
-    MCAPI AvoidMobTypeGoal(class Mob&);
+    MCAPI explicit AvoidMobTypeGoal(class Mob&);
 
     // symbol: ?canFindAvoidPath@AvoidMobTypeGoal@@QEAA_NPEAVActor@@@Z
     MCAPI bool canFindAvoidPath(class Actor*);

@@ -5,9 +5,9 @@
 class VanillaBlockUpdater {
 public:
     // prevent constructor by default
-    VanillaBlockUpdater& operator=(VanillaBlockUpdater const&) = delete;
-    VanillaBlockUpdater(VanillaBlockUpdater const&)            = delete;
-    VanillaBlockUpdater()                                      = delete;
+    VanillaBlockUpdater& operator=(VanillaBlockUpdater const&);
+    VanillaBlockUpdater(VanillaBlockUpdater const&);
+    VanillaBlockUpdater();
 
 public:
     // NOLINTBEGIN
@@ -80,7 +80,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mContext() { return mContext; }
+    auto& $mContext() { return mContext; }
 
     // NOLINTEND
 };

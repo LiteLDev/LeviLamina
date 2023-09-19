@@ -8,9 +8,9 @@
 class ShulkerBoxContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
-    ShulkerBoxContainerValidation& operator=(ShulkerBoxContainerValidation const&) = delete;
-    ShulkerBoxContainerValidation(ShulkerBoxContainerValidation const&)            = delete;
-    ShulkerBoxContainerValidation()                                                = delete;
+    ShulkerBoxContainerValidation& operator=(ShulkerBoxContainerValidation const&);
+    ShulkerBoxContainerValidation(ShulkerBoxContainerValidation const&);
+    ShulkerBoxContainerValidation();
 
 public:
     // NOLINTBEGIN

@@ -15,8 +15,8 @@ public:
     uchar    mMaxSlots; // this+0x3D
 
     // prevent constructor by default
-    BlockPickRequestPacket& operator=(BlockPickRequestPacket const&) = delete;
-    BlockPickRequestPacket(BlockPickRequestPacket const&)            = delete;
+    BlockPickRequestPacket& operator=(BlockPickRequestPacket const&);
+    BlockPickRequestPacket(BlockPickRequestPacket const&);
 
 public:
     // NOLINTBEGIN

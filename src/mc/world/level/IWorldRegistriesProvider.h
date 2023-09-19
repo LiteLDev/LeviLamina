@@ -5,7 +5,7 @@
 class IWorldRegistriesProvider {
 public:
     // prevent constructor by default
-    IWorldRegistriesProvider& operator=(IWorldRegistriesProvider const&) = delete;
-    IWorldRegistriesProvider(IWorldRegistriesProvider const&)            = delete;
-    IWorldRegistriesProvider()                                           = delete;
+    IWorldRegistriesProvider& operator=(IWorldRegistriesProvider const&);
+    IWorldRegistriesProvider(IWorldRegistriesProvider const&);
+    IWorldRegistriesProvider();
 };

@@ -9,9 +9,9 @@
 class EnchantUtils {
 public:
     // prevent constructor by default
-    EnchantUtils& operator=(EnchantUtils const&) = delete;
-    EnchantUtils(EnchantUtils const&)            = delete;
-    EnchantUtils()                               = delete;
+    EnchantUtils& operator=(EnchantUtils const&);
+    EnchantUtils(EnchantUtils const&);
+    EnchantUtils();
 
 public:
     // NOLINTBEGIN
@@ -156,7 +156,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mEnchantmentNames() { return mEnchantmentNames; }
+    auto& $mEnchantmentNames() { return mEnchantmentNames; }
 
     // NOLINTEND
 };

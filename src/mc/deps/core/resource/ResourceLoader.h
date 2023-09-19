@@ -14,9 +14,9 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class ResourceLoader : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    ResourceLoader& operator=(ResourceLoader const&) = delete;
-    ResourceLoader(ResourceLoader const&)            = delete;
-    ResourceLoader()                                 = delete;
+    ResourceLoader& operator=(ResourceLoader const&);
+    ResourceLoader(ResourceLoader const&);
+    ResourceLoader();
 
 public:
     // NOLINTBEGIN

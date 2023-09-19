@@ -5,9 +5,9 @@
 struct ServerInstanceLeaveGameDoneEvent {
 public:
     // prevent constructor by default
-    ServerInstanceLeaveGameDoneEvent& operator=(ServerInstanceLeaveGameDoneEvent const&) = delete;
-    ServerInstanceLeaveGameDoneEvent(ServerInstanceLeaveGameDoneEvent const&)            = delete;
-    ServerInstanceLeaveGameDoneEvent()                                                   = delete;
+    ServerInstanceLeaveGameDoneEvent& operator=(ServerInstanceLeaveGameDoneEvent const&);
+    ServerInstanceLeaveGameDoneEvent(ServerInstanceLeaveGameDoneEvent const&);
+    ServerInstanceLeaveGameDoneEvent();
 
 public:
     // NOLINTBEGIN

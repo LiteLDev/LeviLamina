@@ -7,9 +7,9 @@ namespace ScriptModuleMinecraft {
 class ScriptIsSaddledComponent {
 public:
     // prevent constructor by default
-    ScriptIsSaddledComponent& operator=(ScriptIsSaddledComponent const&) = delete;
-    ScriptIsSaddledComponent(ScriptIsSaddledComponent const&)            = delete;
-    ScriptIsSaddledComponent()                                           = delete;
+    ScriptIsSaddledComponent& operator=(ScriptIsSaddledComponent const&);
+    ScriptIsSaddledComponent(ScriptIsSaddledComponent const&);
+    ScriptIsSaddledComponent();
 
 public:
     // NOLINTBEGIN

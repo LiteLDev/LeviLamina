@@ -8,9 +8,9 @@
 class SculkVeinMultifaceSpreader : public ::MultifaceSpreader {
 public:
     // prevent constructor by default
-    SculkVeinMultifaceSpreader& operator=(SculkVeinMultifaceSpreader const&) = delete;
-    SculkVeinMultifaceSpreader(SculkVeinMultifaceSpreader const&)            = delete;
-    SculkVeinMultifaceSpreader()                                             = delete;
+    SculkVeinMultifaceSpreader& operator=(SculkVeinMultifaceSpreader const&);
+    SculkVeinMultifaceSpreader(SculkVeinMultifaceSpreader const&);
+    SculkVeinMultifaceSpreader();
 
 public:
     // NOLINTBEGIN

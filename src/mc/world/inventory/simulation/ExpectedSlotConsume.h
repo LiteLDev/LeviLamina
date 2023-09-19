@@ -8,9 +8,9 @@
 struct ExpectedSlotConsume {
 public:
     // prevent constructor by default
-    ExpectedSlotConsume& operator=(ExpectedSlotConsume const&) = delete;
-    ExpectedSlotConsume(ExpectedSlotConsume const&)            = delete;
-    ExpectedSlotConsume()                                      = delete;
+    ExpectedSlotConsume& operator=(ExpectedSlotConsume const&);
+    ExpectedSlotConsume(ExpectedSlotConsume const&);
+    ExpectedSlotConsume();
 
 public:
     // NOLINTBEGIN

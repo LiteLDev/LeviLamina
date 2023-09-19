@@ -16,16 +16,16 @@ public:
     struct SlotData {
     public:
         // prevent constructor by default
-        SlotData& operator=(SlotData const&) = delete;
-        SlotData(SlotData const&)            = delete;
-        SlotData()                           = delete;
+        SlotData& operator=(SlotData const&);
+        SlotData(SlotData const&);
+        SlotData();
     };
 
 public:
     // prevent constructor by default
-    PlayerInventory& operator=(PlayerInventory const&) = delete;
-    PlayerInventory(PlayerInventory const&)            = delete;
-    PlayerInventory()                                  = delete;
+    PlayerInventory& operator=(PlayerInventory const&);
+    PlayerInventory(PlayerInventory const&);
+    PlayerInventory();
 
 public:
     // NOLINTBEGIN

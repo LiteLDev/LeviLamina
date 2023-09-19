@@ -5,14 +5,14 @@
 class SculkChargeCursor {
 public:
     // prevent constructor by default
-    SculkChargeCursor& operator=(SculkChargeCursor const&) = delete;
-    SculkChargeCursor(SculkChargeCursor const&)            = delete;
-    SculkChargeCursor()                                    = delete;
+    SculkChargeCursor& operator=(SculkChargeCursor const&);
+    SculkChargeCursor(SculkChargeCursor const&);
+    SculkChargeCursor();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0SculkChargeCursor@@QEAA@AEBVCompoundTag@@@Z
-    MCAPI SculkChargeCursor(class CompoundTag const&);
+    MCAPI explicit SculkChargeCursor(class CompoundTag const&);
 
     // symbol:
     // ?update@SculkChargeCursor@@QEAAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@AEAVSculkSpreader@@_N@Z
@@ -61,11 +61,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $sDefaultSculkBehavior() { return sDefaultSculkBehavior; }
+    auto& $sDefaultSculkBehavior() { return sDefaultSculkBehavior; }
 
-    inline auto& $sSculkBlockBehavior() { return sSculkBlockBehavior; }
+    auto& $sSculkBlockBehavior() { return sSculkBlockBehavior; }
 
-    inline auto& $sSculkVeinBlockBehavior() { return sSculkVeinBlockBehavior; }
+    auto& $sSculkVeinBlockBehavior() { return sSculkVeinBlockBehavior; }
 
     // NOLINTEND
 };

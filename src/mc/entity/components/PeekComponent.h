@@ -5,9 +5,9 @@
 class PeekComponent {
 public:
     // prevent constructor by default
-    PeekComponent& operator=(PeekComponent const&) = delete;
-    PeekComponent(PeekComponent const&)            = delete;
-    PeekComponent()                                = delete;
+    PeekComponent& operator=(PeekComponent const&);
+    PeekComponent(PeekComponent const&);
+    PeekComponent();
 
 public:
     // NOLINTBEGIN

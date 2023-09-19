@@ -15,7 +15,7 @@ public:
 
 public:
     // prevent constructor by default
-    ItemUseInventoryTransaction() = delete;
+    ItemUseInventoryTransaction();
 
 public:
     // NOLINTBEGIN
@@ -71,7 +71,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $actionTypeMap() { return actionTypeMap; }
+    auto& $actionTypeMap() { return actionTypeMap; }
 
     // NOLINTEND
 };

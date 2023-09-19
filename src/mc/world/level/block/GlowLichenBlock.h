@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class GlowLichenBlock : public ::MultifaceBlock {
 public:
     // prevent constructor by default
-    GlowLichenBlock& operator=(GlowLichenBlock const&) = delete;
-    GlowLichenBlock(GlowLichenBlock const&)            = delete;
-    GlowLichenBlock()                                  = delete;
+    GlowLichenBlock& operator=(GlowLichenBlock const&);
+    GlowLichenBlock(GlowLichenBlock const&);
+    GlowLichenBlock();
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class EnchantingTableBlockActor : public ::BlockActor {
 public:
     // prevent constructor by default
-    EnchantingTableBlockActor& operator=(EnchantingTableBlockActor const&) = delete;
-    EnchantingTableBlockActor(EnchantingTableBlockActor const&)            = delete;
-    EnchantingTableBlockActor()                                            = delete;
+    EnchantingTableBlockActor& operator=(EnchantingTableBlockActor const&);
+    EnchantingTableBlockActor(EnchantingTableBlockActor const&);
+    EnchantingTableBlockActor();
 
 public:
     // NOLINTBEGIN
@@ -68,7 +68,7 @@ public:
     virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
 
     // symbol: ??0EnchantingTableBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI EnchantingTableBlockActor(class BlockPos const&);
+    MCAPI explicit EnchantingTableBlockActor(class BlockPos const&);
 
     // NOLINTEND
 };

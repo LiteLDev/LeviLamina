@@ -5,9 +5,9 @@
 struct MolangMemberVariable {
 public:
     // prevent constructor by default
-    MolangMemberVariable& operator=(MolangMemberVariable const&) = delete;
-    MolangMemberVariable(MolangMemberVariable const&)            = delete;
-    MolangMemberVariable()                                       = delete;
+    MolangMemberVariable& operator=(MolangMemberVariable const&);
+    MolangMemberVariable(MolangMemberVariable const&);
+    MolangMemberVariable();
 
 public:
     // NOLINTBEGIN

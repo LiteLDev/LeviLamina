@@ -20,8 +20,8 @@ public:
     bool        mIsPremium;    // this+0x81
 
     // prevent constructor by default
-    ResourcePackDataInfoPacket& operator=(ResourcePackDataInfoPacket const&) = delete;
-    ResourcePackDataInfoPacket(ResourcePackDataInfoPacket const&)            = delete;
+    ResourcePackDataInfoPacket& operator=(ResourcePackDataInfoPacket const&);
+    ResourcePackDataInfoPacket(ResourcePackDataInfoPacket const&);
 
 public:
     // NOLINTBEGIN

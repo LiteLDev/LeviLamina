@@ -5,7 +5,7 @@
 class IGameModuleDocumentation {
 public:
     // prevent constructor by default
-    IGameModuleDocumentation& operator=(IGameModuleDocumentation const&) = delete;
-    IGameModuleDocumentation(IGameModuleDocumentation const&)            = delete;
-    IGameModuleDocumentation()                                           = delete;
+    IGameModuleDocumentation& operator=(IGameModuleDocumentation const&);
+    IGameModuleDocumentation(IGameModuleDocumentation const&);
+    IGameModuleDocumentation();
 };

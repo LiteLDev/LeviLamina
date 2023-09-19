@@ -5,9 +5,9 @@
 class UpdateAISystem {
 public:
     // prevent constructor by default
-    UpdateAISystem& operator=(UpdateAISystem const&) = delete;
-    UpdateAISystem(UpdateAISystem const&)            = delete;
-    UpdateAISystem()                                 = delete;
+    UpdateAISystem& operator=(UpdateAISystem const&);
+    UpdateAISystem(UpdateAISystem const&);
+    UpdateAISystem();
 
 public:
     // NOLINTBEGIN

@@ -9,9 +9,9 @@
 class ItemStackRequestActionDrop : public ::ItemStackRequestActionTransferBase {
 public:
     // prevent constructor by default
-    ItemStackRequestActionDrop& operator=(ItemStackRequestActionDrop const&) = delete;
-    ItemStackRequestActionDrop(ItemStackRequestActionDrop const&)            = delete;
-    ItemStackRequestActionDrop()                                             = delete;
+    ItemStackRequestActionDrop& operator=(ItemStackRequestActionDrop const&);
+    ItemStackRequestActionDrop(ItemStackRequestActionDrop const&);
+    ItemStackRequestActionDrop();
 
 public:
     // NOLINTBEGIN

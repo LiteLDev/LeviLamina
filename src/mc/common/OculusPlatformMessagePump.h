@@ -5,9 +5,9 @@
 class OculusPlatformMessagePump {
 public:
     // prevent constructor by default
-    OculusPlatformMessagePump& operator=(OculusPlatformMessagePump const&) = delete;
-    OculusPlatformMessagePump(OculusPlatformMessagePump const&)            = delete;
-    OculusPlatformMessagePump()                                            = delete;
+    OculusPlatformMessagePump& operator=(OculusPlatformMessagePump const&);
+    OculusPlatformMessagePump(OculusPlatformMessagePump const&);
+    OculusPlatformMessagePump();
 
 public:
     // NOLINTBEGIN

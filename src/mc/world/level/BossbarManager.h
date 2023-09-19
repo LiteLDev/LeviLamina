@@ -5,9 +5,9 @@
 class BossbarManager {
 public:
     // prevent constructor by default
-    BossbarManager& operator=(BossbarManager const&) = delete;
-    BossbarManager(BossbarManager const&)            = delete;
-    BossbarManager()                                 = delete;
+    BossbarManager& operator=(BossbarManager const&);
+    BossbarManager(BossbarManager const&);
+    BossbarManager();
 
 public:
     // NOLINTBEGIN

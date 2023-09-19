@@ -5,9 +5,9 @@
 class IStructurePoolBlockPredicate {
 public:
     // prevent constructor by default
-    IStructurePoolBlockPredicate& operator=(IStructurePoolBlockPredicate const&) = delete;
-    IStructurePoolBlockPredicate(IStructurePoolBlockPredicate const&)            = delete;
-    IStructurePoolBlockPredicate()                                               = delete;
+    IStructurePoolBlockPredicate& operator=(IStructurePoolBlockPredicate const&);
+    IStructurePoolBlockPredicate(IStructurePoolBlockPredicate const&);
+    IStructurePoolBlockPredicate();
 
 public:
     // NOLINTBEGIN

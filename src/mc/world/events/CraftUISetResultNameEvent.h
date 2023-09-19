@@ -5,9 +5,9 @@
 struct CraftUISetResultNameEvent {
 public:
     // prevent constructor by default
-    CraftUISetResultNameEvent& operator=(CraftUISetResultNameEvent const&) = delete;
-    CraftUISetResultNameEvent(CraftUISetResultNameEvent const&)            = delete;
-    CraftUISetResultNameEvent()                                            = delete;
+    CraftUISetResultNameEvent& operator=(CraftUISetResultNameEvent const&);
+    CraftUISetResultNameEvent(CraftUISetResultNameEvent const&);
+    CraftUISetResultNameEvent();
 
 public:
     // NOLINTBEGIN

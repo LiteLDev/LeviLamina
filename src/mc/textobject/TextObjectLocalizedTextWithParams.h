@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class TextObjectLocalizedTextWithParams : public ::ITextObject {
 public:
     // prevent constructor by default
-    TextObjectLocalizedTextWithParams& operator=(TextObjectLocalizedTextWithParams const&) = delete;
-    TextObjectLocalizedTextWithParams(TextObjectLocalizedTextWithParams const&)            = delete;
-    TextObjectLocalizedTextWithParams()                                                    = delete;
+    TextObjectLocalizedTextWithParams& operator=(TextObjectLocalizedTextWithParams const&);
+    TextObjectLocalizedTextWithParams(TextObjectLocalizedTextWithParams const&);
+    TextObjectLocalizedTextWithParams();
 
 public:
     // NOLINTBEGIN

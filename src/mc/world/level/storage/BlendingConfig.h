@@ -5,7 +5,7 @@
 struct BlendingConfig {
 public:
     // prevent constructor by default
-    BlendingConfig& operator=(BlendingConfig const&) = delete;
-    BlendingConfig(BlendingConfig const&)            = delete;
-    BlendingConfig()                                 = delete;
+    BlendingConfig& operator=(BlendingConfig const&);
+    BlendingConfig(BlendingConfig const&);
+    BlendingConfig();
 };

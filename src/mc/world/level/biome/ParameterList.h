@@ -5,9 +5,9 @@
 class ParameterList {
 public:
     // prevent constructor by default
-    ParameterList& operator=(ParameterList const&) = delete;
-    ParameterList(ParameterList const&)            = delete;
-    ParameterList()                                = delete;
+    ParameterList& operator=(ParameterList const&);
+    ParameterList(ParameterList const&);
+    ParameterList();
 
 public:
     // NOLINTBEGIN
@@ -15,7 +15,7 @@ public:
     MCAPI ParameterList(class ParameterList&&);
 
     // symbol: ??0ParameterList@@QEAA@AEBV?$vector@UBiomeNoiseTarget@@V?$allocator@UBiomeNoiseTarget@@@std@@@std@@@Z
-    MCAPI ParameterList(std::vector<struct BiomeNoiseTarget> const&);
+    MCAPI explicit ParameterList(std::vector<struct BiomeNoiseTarget> const&);
 
     // symbol: ??1ParameterList@@QEAA@XZ
     MCAPI ~ParameterList();

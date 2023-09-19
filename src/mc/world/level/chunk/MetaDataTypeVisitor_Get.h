@@ -5,9 +5,9 @@
 class MetaDataTypeVisitor_Get {
 public:
     // prevent constructor by default
-    MetaDataTypeVisitor_Get& operator=(MetaDataTypeVisitor_Get const&) = delete;
-    MetaDataTypeVisitor_Get(MetaDataTypeVisitor_Get const&)            = delete;
-    MetaDataTypeVisitor_Get()                                          = delete;
+    MetaDataTypeVisitor_Get& operator=(MetaDataTypeVisitor_Get const&);
+    MetaDataTypeVisitor_Get(MetaDataTypeVisitor_Get const&);
+    MetaDataTypeVisitor_Get();
 
 public:
     // NOLINTBEGIN

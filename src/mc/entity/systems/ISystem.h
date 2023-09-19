@@ -5,9 +5,9 @@
 struct ISystem {
 public:
     // prevent constructor by default
-    ISystem& operator=(ISystem const&) = delete;
-    ISystem(ISystem const&)            = delete;
-    ISystem()                          = delete;
+    ISystem& operator=(ISystem const&);
+    ISystem(ISystem const&);
+    ISystem();
 
 public:
     // NOLINTBEGIN

@@ -21,23 +21,23 @@ public:
     struct InitProxy {
     public:
         // prevent constructor by default
-        InitProxy& operator=(InitProxy const&) = delete;
-        InitProxy(InitProxy const&)            = delete;
-        InitProxy()                            = delete;
+        InitProxy& operator=(InitProxy const&);
+        InitProxy(InitProxy const&);
+        InitProxy();
 
     public:
         // NOLINTBEGIN
         // symbol: ??0InitProxy@GameRuleCommand@@QEAA@AEAVLevel@@@Z
-        MCAPI InitProxy(class Level&);
+        MCAPI explicit InitProxy(class Level&);
 
         // NOLINTEND
     };
 
 public:
     // prevent constructor by default
-    GameRuleCommand& operator=(GameRuleCommand const&) = delete;
-    GameRuleCommand(GameRuleCommand const&)            = delete;
-    GameRuleCommand()                                  = delete;
+    GameRuleCommand& operator=(GameRuleCommand const&);
+    GameRuleCommand(GameRuleCommand const&);
+    GameRuleCommand();
 
 public:
     // NOLINTBEGIN

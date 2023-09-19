@@ -7,9 +7,9 @@ namespace SFAT {
 class PathString {
 public:
     // prevent constructor by default
-    PathString& operator=(PathString const&) = delete;
-    PathString(PathString const&)            = delete;
-    PathString()                             = delete;
+    PathString& operator=(PathString const&);
+    PathString(PathString const&);
+    PathString();
 
 private:
     // NOLINTBEGIN
@@ -21,7 +21,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mPreferedSeparator() { return mPreferedSeparator; }
+    auto& $mPreferedSeparator() { return mPreferedSeparator; }
 
     // NOLINTEND
 };

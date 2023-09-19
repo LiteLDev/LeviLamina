@@ -13,9 +13,9 @@ public:
     std::array<short, 4> mDamages; // this+0x34
 
     // prevent constructor by default
-    PlayerArmorDamagePacket& operator=(PlayerArmorDamagePacket const&) = delete;
-    PlayerArmorDamagePacket(PlayerArmorDamagePacket const&)            = delete;
-    PlayerArmorDamagePacket()                                          = delete;
+    PlayerArmorDamagePacket& operator=(PlayerArmorDamagePacket const&);
+    PlayerArmorDamagePacket(PlayerArmorDamagePacket const&);
+    PlayerArmorDamagePacket();
 
 public:
     // NOLINTBEGIN

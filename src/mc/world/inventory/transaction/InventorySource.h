@@ -12,7 +12,6 @@ public:
         WorldInteraction_Random = 0x1,
     };
 
-
     InventorySourceType  mType        = InventorySourceType::InvalidInventory; // this+0x0
     ContainerID          mContainerId = ContainerID::None;                     // this+0x4
     InventorySourceFlags mFlags       = InventorySourceFlags::NoFlag;          // this+0x8

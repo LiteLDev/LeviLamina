@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct AmbientSoundIntervalDefinition {
 public:
     // prevent constructor by default
-    AmbientSoundIntervalDefinition& operator=(AmbientSoundIntervalDefinition const&) = delete;
-    AmbientSoundIntervalDefinition(AmbientSoundIntervalDefinition const&)            = delete;
-    AmbientSoundIntervalDefinition()                                                 = delete;
+    AmbientSoundIntervalDefinition& operator=(AmbientSoundIntervalDefinition const&);
+    AmbientSoundIntervalDefinition(AmbientSoundIntervalDefinition const&);
+    AmbientSoundIntervalDefinition();
 
 public:
     // NOLINTBEGIN

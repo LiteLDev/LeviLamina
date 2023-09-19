@@ -20,9 +20,9 @@ namespace mce { class Color; }
 class ColoredTorchBlock : public ::TorchBlock {
 public:
     // prevent constructor by default
-    ColoredTorchBlock& operator=(ColoredTorchBlock const&) = delete;
-    ColoredTorchBlock(ColoredTorchBlock const&)            = delete;
-    ColoredTorchBlock()                                    = delete;
+    ColoredTorchBlock& operator=(ColoredTorchBlock const&);
+    ColoredTorchBlock(ColoredTorchBlock const&);
+    ColoredTorchBlock();
 
 public:
     // NOLINTBEGIN

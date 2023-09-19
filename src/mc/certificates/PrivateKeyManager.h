@@ -9,9 +9,9 @@
 class PrivateKeyManager : public ::KeyManager {
 public:
     // prevent constructor by default
-    PrivateKeyManager& operator=(PrivateKeyManager const&) = delete;
-    PrivateKeyManager(PrivateKeyManager const&)            = delete;
-    PrivateKeyManager()                                    = delete;
+    PrivateKeyManager& operator=(PrivateKeyManager const&);
+    PrivateKeyManager(PrivateKeyManager const&);
+    PrivateKeyManager();
 
 public:
     // NOLINTBEGIN
@@ -25,7 +25,7 @@ public:
     MCVAPI ~PrivateKeyManager();
 
     // symbol: ??0PrivateKeyManager@@QEAA@W4System@Asymmetric@Crypto@@@Z
-    MCAPI PrivateKeyManager(::Crypto::Asymmetric::System);
+    MCAPI explicit PrivateKeyManager(::Crypto::Asymmetric::System);
 
     // symbol:
     // ?computeSecret@PrivateKeyManager@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVKeyManager@@@Z

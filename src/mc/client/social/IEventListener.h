@@ -17,9 +17,9 @@ namespace Social::Events {
 class IEventListener {
 public:
     // prevent constructor by default
-    IEventListener& operator=(IEventListener const&) = delete;
-    IEventListener(IEventListener const&)            = delete;
-    IEventListener()                                 = delete;
+    IEventListener& operator=(IEventListener const&);
+    IEventListener(IEventListener const&);
+    IEventListener();
 
 public:
     // NOLINTBEGIN

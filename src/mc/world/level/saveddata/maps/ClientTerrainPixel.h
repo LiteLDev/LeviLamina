@@ -5,7 +5,7 @@
 struct ClientTerrainPixel {
 public:
     // prevent constructor by default
-    ClientTerrainPixel& operator=(ClientTerrainPixel const&) = delete;
-    ClientTerrainPixel(ClientTerrainPixel const&)            = delete;
-    ClientTerrainPixel()                                     = delete;
+    ClientTerrainPixel& operator=(ClientTerrainPixel const&);
+    ClientTerrainPixel(ClientTerrainPixel const&);
+    ClientTerrainPixel();
 };

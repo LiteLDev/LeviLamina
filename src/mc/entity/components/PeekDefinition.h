@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class PeekDefinition {
 public:
     // prevent constructor by default
-    PeekDefinition& operator=(PeekDefinition const&) = delete;
-    PeekDefinition(PeekDefinition const&)            = delete;
-    PeekDefinition()                                 = delete;
+    PeekDefinition& operator=(PeekDefinition const&);
+    PeekDefinition(PeekDefinition const&);
+    PeekDefinition();
 
 public:
     // NOLINTBEGIN

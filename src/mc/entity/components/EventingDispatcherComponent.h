@@ -5,7 +5,7 @@
 struct EventingDispatcherComponent {
 public:
     // prevent constructor by default
-    EventingDispatcherComponent& operator=(EventingDispatcherComponent const&) = delete;
-    EventingDispatcherComponent(EventingDispatcherComponent const&)            = delete;
-    EventingDispatcherComponent()                                              = delete;
+    EventingDispatcherComponent& operator=(EventingDispatcherComponent const&);
+    EventingDispatcherComponent(EventingDispatcherComponent const&);
+    EventingDispatcherComponent();
 };

@@ -5,8 +5,8 @@
 class MountTamingComponent {
 public:
     // prevent constructor by default
-    MountTamingComponent& operator=(MountTamingComponent const&) = delete;
-    MountTamingComponent(MountTamingComponent const&)            = delete;
+    MountTamingComponent& operator=(MountTamingComponent const&);
+    MountTamingComponent(MountTamingComponent const&);
 
 public:
     // NOLINTBEGIN

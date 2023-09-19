@@ -8,9 +8,9 @@
 class ServerContentKeyProvider : public ::IContentAccessibilityProvider {
 public:
     // prevent constructor by default
-    ServerContentKeyProvider& operator=(ServerContentKeyProvider const&) = delete;
-    ServerContentKeyProvider(ServerContentKeyProvider const&)            = delete;
-    ServerContentKeyProvider()                                           = delete;
+    ServerContentKeyProvider& operator=(ServerContentKeyProvider const&);
+    ServerContentKeyProvider(ServerContentKeyProvider const&);
+    ServerContentKeyProvider();
 
 public:
     // NOLINTBEGIN

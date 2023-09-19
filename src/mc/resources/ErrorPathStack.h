@@ -5,9 +5,9 @@
 class ErrorPathStack {
 public:
     // prevent constructor by default
-    ErrorPathStack& operator=(ErrorPathStack const&) = delete;
-    ErrorPathStack(ErrorPathStack const&)            = delete;
-    ErrorPathStack()                                 = delete;
+    ErrorPathStack& operator=(ErrorPathStack const&);
+    ErrorPathStack(ErrorPathStack const&);
+    ErrorPathStack();
 
 public:
     // NOLINTBEGIN

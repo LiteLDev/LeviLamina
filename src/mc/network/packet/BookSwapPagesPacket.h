@@ -5,7 +5,7 @@
 class BookSwapPagesPacket {
 public:
     // prevent constructor by default
-    BookSwapPagesPacket& operator=(BookSwapPagesPacket const&) = delete;
-    BookSwapPagesPacket(BookSwapPagesPacket const&)            = delete;
-    BookSwapPagesPacket()                                      = delete;
+    BookSwapPagesPacket& operator=(BookSwapPagesPacket const&);
+    BookSwapPagesPacket(BookSwapPagesPacket const&);
+    BookSwapPagesPacket();
 };

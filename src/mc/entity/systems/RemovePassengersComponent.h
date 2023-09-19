@@ -5,9 +5,9 @@
 struct RemovePassengersComponent {
 public:
     // prevent constructor by default
-    RemovePassengersComponent& operator=(RemovePassengersComponent const&) = delete;
-    RemovePassengersComponent(RemovePassengersComponent const&)            = delete;
-    RemovePassengersComponent()                                            = delete;
+    RemovePassengersComponent& operator=(RemovePassengersComponent const&);
+    RemovePassengersComponent(RemovePassengersComponent const&);
+    RemovePassengersComponent();
 
 public:
     // NOLINTBEGIN

@@ -5,7 +5,7 @@
 class WebviewInterface {
 public:
     // prevent constructor by default
-    WebviewInterface& operator=(WebviewInterface const&) = delete;
-    WebviewInterface(WebviewInterface const&)            = delete;
-    WebviewInterface()                                   = delete;
+    WebviewInterface& operator=(WebviewInterface const&);
+    WebviewInterface(WebviewInterface const&);
+    WebviewInterface();
 };

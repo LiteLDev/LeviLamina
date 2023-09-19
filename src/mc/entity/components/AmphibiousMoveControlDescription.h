@@ -8,9 +8,9 @@
 class AmphibiousMoveControlDescription : public ::MoveControlDescription {
 public:
     // prevent constructor by default
-    AmphibiousMoveControlDescription& operator=(AmphibiousMoveControlDescription const&) = delete;
-    AmphibiousMoveControlDescription(AmphibiousMoveControlDescription const&)            = delete;
-    AmphibiousMoveControlDescription()                                                   = delete;
+    AmphibiousMoveControlDescription& operator=(AmphibiousMoveControlDescription const&);
+    AmphibiousMoveControlDescription(AmphibiousMoveControlDescription const&);
+    AmphibiousMoveControlDescription();
 
 public:
     // NOLINTBEGIN

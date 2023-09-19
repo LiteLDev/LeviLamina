@@ -26,9 +26,9 @@
 class Sheep : public ::Animal {
 public:
     // prevent constructor by default
-    Sheep& operator=(Sheep const&) = delete;
-    Sheep(Sheep const&)            = delete;
-    Sheep()                        = delete;
+    Sheep& operator=(Sheep const&);
+    Sheep(Sheep const&);
+    Sheep();
 
 public:
     // NOLINTBEGIN
@@ -128,7 +128,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $EAT_ANIMATION_TICKS() { return EAT_ANIMATION_TICKS; }
+    auto& $EAT_ANIMATION_TICKS() { return EAT_ANIMATION_TICKS; }
 
     // NOLINTEND
 };

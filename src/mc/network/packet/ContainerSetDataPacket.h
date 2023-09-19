@@ -16,8 +16,8 @@ public:
     ContainerID mContainerId; // this+0x38
 
     // prevent constructor by default
-    ContainerSetDataPacket& operator=(ContainerSetDataPacket const&) = delete;
-    ContainerSetDataPacket(ContainerSetDataPacket const&)            = delete;
+    ContainerSetDataPacket& operator=(ContainerSetDataPacket const&);
+    ContainerSetDataPacket(ContainerSetDataPacket const&);
 
 public:
     // NOLINTBEGIN

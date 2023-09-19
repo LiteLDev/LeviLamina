@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class TorchflowerBlock : public ::FlowerBlock {
 public:
     // prevent constructor by default
-    TorchflowerBlock& operator=(TorchflowerBlock const&) = delete;
-    TorchflowerBlock(TorchflowerBlock const&)            = delete;
-    TorchflowerBlock()                                   = delete;
+    TorchflowerBlock& operator=(TorchflowerBlock const&);
+    TorchflowerBlock(TorchflowerBlock const&);
+    TorchflowerBlock();
 
 public:
     // NOLINTBEGIN

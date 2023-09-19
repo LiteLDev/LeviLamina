@@ -21,8 +21,8 @@ public:
     float                       mBlendOutTime;          // this+0xd0
 
     // prevent constructor by default
-    AnimateEntityPacket& operator=(AnimateEntityPacket const&) = delete;
-    AnimateEntityPacket(AnimateEntityPacket const&)            = delete;
+    AnimateEntityPacket& operator=(AnimateEntityPacket const&);
+    AnimateEntityPacket(AnimateEntityPacket const&);
 
 public:
     // NOLINTBEGIN

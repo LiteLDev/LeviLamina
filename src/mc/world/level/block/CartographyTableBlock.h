@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class CartographyTableBlock : public ::BlockLegacy {
 public:
     // prevent constructor by default
-    CartographyTableBlock& operator=(CartographyTableBlock const&) = delete;
-    CartographyTableBlock(CartographyTableBlock const&)            = delete;
-    CartographyTableBlock()                                        = delete;
+    CartographyTableBlock& operator=(CartographyTableBlock const&);
+    CartographyTableBlock(CartographyTableBlock const&);
+    CartographyTableBlock();
 
 public:
     // NOLINTBEGIN

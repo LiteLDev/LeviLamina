@@ -13,8 +13,8 @@ namespace JsonUtil { class EmptyClass; }
 struct BlockGeometryDescription {
 public:
     // prevent constructor by default
-    BlockGeometryDescription& operator=(BlockGeometryDescription const&) = delete;
-    BlockGeometryDescription(BlockGeometryDescription const&)            = delete;
+    BlockGeometryDescription& operator=(BlockGeometryDescription const&);
+    BlockGeometryDescription(BlockGeometryDescription const&);
 
 public:
     // NOLINTBEGIN
@@ -57,7 +57,7 @@ public:
     MCVAPI ~BlockGeometryDescription();
 
     // symbol: ??0BlockGeometryDescription@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI BlockGeometryDescription(std::string const&);
+    MCAPI explicit BlockGeometryDescription(std::string const&);
 
     // symbol: ??0BlockGeometryDescription@@QEAA@XZ
     MCAPI BlockGeometryDescription();

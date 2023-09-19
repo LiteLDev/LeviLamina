@@ -8,9 +8,9 @@
 class FlockingSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
-    FlockingSystem& operator=(FlockingSystem const&) = delete;
-    FlockingSystem(FlockingSystem const&)            = delete;
-    FlockingSystem()                                 = delete;
+    FlockingSystem& operator=(FlockingSystem const&);
+    FlockingSystem(FlockingSystem const&);
+    FlockingSystem();
 
 public:
     // NOLINTBEGIN

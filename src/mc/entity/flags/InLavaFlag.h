@@ -5,7 +5,7 @@
 struct InLavaFlag {
 public:
     // prevent constructor by default
-    InLavaFlag& operator=(InLavaFlag const&) = delete;
-    InLavaFlag(InLavaFlag const&)            = delete;
-    InLavaFlag()                             = delete;
+    InLavaFlag& operator=(InLavaFlag const&);
+    InLavaFlag(InLavaFlag const&);
+    InLavaFlag();
 };

@@ -5,7 +5,7 @@
 struct WitherBossFlag {
 public:
     // prevent constructor by default
-    WitherBossFlag& operator=(WitherBossFlag const&) = delete;
-    WitherBossFlag(WitherBossFlag const&)            = delete;
-    WitherBossFlag()                                 = delete;
+    WitherBossFlag& operator=(WitherBossFlag const&);
+    WitherBossFlag(WitherBossFlag const&);
+    WitherBossFlag();
 };

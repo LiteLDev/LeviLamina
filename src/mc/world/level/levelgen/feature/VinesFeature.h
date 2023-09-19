@@ -8,9 +8,9 @@
 class VinesFeature : public ::Feature {
 public:
     // prevent constructor by default
-    VinesFeature& operator=(VinesFeature const&) = delete;
-    VinesFeature(VinesFeature const&)            = delete;
-    VinesFeature()                               = delete;
+    VinesFeature& operator=(VinesFeature const&);
+    VinesFeature(VinesFeature const&);
+    VinesFeature();
 
 public:
     // NOLINTBEGIN

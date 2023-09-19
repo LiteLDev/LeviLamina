@@ -8,9 +8,9 @@
 class DripleafFeature : public ::Feature {
 public:
     // prevent constructor by default
-    DripleafFeature& operator=(DripleafFeature const&) = delete;
-    DripleafFeature(DripleafFeature const&)            = delete;
-    DripleafFeature()                                  = delete;
+    DripleafFeature& operator=(DripleafFeature const&);
+    DripleafFeature(DripleafFeature const&);
+    DripleafFeature();
 
 public:
     // NOLINTBEGIN

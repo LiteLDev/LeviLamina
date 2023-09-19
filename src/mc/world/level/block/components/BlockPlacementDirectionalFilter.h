@@ -5,9 +5,9 @@
 struct BlockPlacementDirectionalFilter {
 public:
     // prevent constructor by default
-    BlockPlacementDirectionalFilter& operator=(BlockPlacementDirectionalFilter const&) = delete;
-    BlockPlacementDirectionalFilter(BlockPlacementDirectionalFilter const&)            = delete;
-    BlockPlacementDirectionalFilter()                                                  = delete;
+    BlockPlacementDirectionalFilter& operator=(BlockPlacementDirectionalFilter const&);
+    BlockPlacementDirectionalFilter(BlockPlacementDirectionalFilter const&);
+    BlockPlacementDirectionalFilter();
 
 public:
     // NOLINTBEGIN

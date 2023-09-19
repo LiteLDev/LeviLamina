@@ -5,9 +5,9 @@
 class ReplayStateSystem {
 public:
     // prevent constructor by default
-    ReplayStateSystem& operator=(ReplayStateSystem const&) = delete;
-    ReplayStateSystem(ReplayStateSystem const&)            = delete;
-    ReplayStateSystem()                                    = delete;
+    ReplayStateSystem& operator=(ReplayStateSystem const&);
+    ReplayStateSystem(ReplayStateSystem const&);
+    ReplayStateSystem();
 
 public:
     // NOLINTBEGIN

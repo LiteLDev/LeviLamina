@@ -5,9 +5,9 @@
 struct ActorDefinitionFeedItem {
 public:
     // prevent constructor by default
-    ActorDefinitionFeedItem& operator=(ActorDefinitionFeedItem const&) = delete;
-    ActorDefinitionFeedItem(ActorDefinitionFeedItem const&)            = delete;
-    ActorDefinitionFeedItem()                                          = delete;
+    ActorDefinitionFeedItem& operator=(ActorDefinitionFeedItem const&);
+    ActorDefinitionFeedItem(ActorDefinitionFeedItem const&);
+    ActorDefinitionFeedItem();
 
 public:
     // NOLINTBEGIN

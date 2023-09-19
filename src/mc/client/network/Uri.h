@@ -10,7 +10,7 @@ namespace xbox::httpclient {
 class Uri {
 public:
     // prevent constructor by default
-    Uri& operator=(Uri const&) = delete;
+    Uri& operator=(Uri const&);
 
 public:
     // NOLINTBEGIN
@@ -43,7 +43,7 @@ public:
     MCAPI Uri();
 
     // symbol: ??0Uri@httpclient@xbox@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$http_stl_allocator@D@@@std@@@Z
-    MCAPI Uri(http_string const&);
+    MCAPI explicit Uri(http_string const&);
 
     // symbol: ??4Uri@httpclient@xbox@@QEAAAEAV012@$$QEAV012@@Z
     MCAPI class xbox::httpclient::Uri& operator=(class xbox::httpclient::Uri&&);

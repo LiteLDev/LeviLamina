@@ -13,9 +13,9 @@ namespace Json { class Value; }
 class FindActorDefinition : public ::BehaviorDefinition {
 public:
     // prevent constructor by default
-    FindActorDefinition& operator=(FindActorDefinition const&) = delete;
-    FindActorDefinition(FindActorDefinition const&)            = delete;
-    FindActorDefinition()                                      = delete;
+    FindActorDefinition& operator=(FindActorDefinition const&);
+    FindActorDefinition(FindActorDefinition const&);
+    FindActorDefinition();
 
 public:
     // NOLINTBEGIN

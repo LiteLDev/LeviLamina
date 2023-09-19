@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class FishingRodItem : public ::Item {
 public:
     // prevent constructor by default
-    FishingRodItem& operator=(FishingRodItem const&) = delete;
-    FishingRodItem(FishingRodItem const&)            = delete;
-    FishingRodItem()                                 = delete;
+    FishingRodItem& operator=(FishingRodItem const&);
+    FishingRodItem(FishingRodItem const&);
+    FishingRodItem();
 
 public:
     // NOLINTBEGIN

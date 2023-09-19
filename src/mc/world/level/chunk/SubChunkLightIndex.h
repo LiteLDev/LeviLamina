@@ -5,7 +5,7 @@
 struct SubChunkLightIndex {
 public:
     // prevent constructor by default
-    SubChunkLightIndex& operator=(SubChunkLightIndex const&) = delete;
-    SubChunkLightIndex(SubChunkLightIndex const&)            = delete;
-    SubChunkLightIndex()                                     = delete;
+    SubChunkLightIndex& operator=(SubChunkLightIndex const&);
+    SubChunkLightIndex(SubChunkLightIndex const&);
+    SubChunkLightIndex();
 };

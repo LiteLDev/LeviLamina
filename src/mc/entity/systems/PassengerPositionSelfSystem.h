@@ -11,9 +11,9 @@
 class PassengerPositionSelfSystem {
 public:
     // prevent constructor by default
-    PassengerPositionSelfSystem& operator=(PassengerPositionSelfSystem const&) = delete;
-    PassengerPositionSelfSystem(PassengerPositionSelfSystem const&)            = delete;
-    PassengerPositionSelfSystem()                                              = delete;
+    PassengerPositionSelfSystem& operator=(PassengerPositionSelfSystem const&);
+    PassengerPositionSelfSystem(PassengerPositionSelfSystem const&);
+    PassengerPositionSelfSystem();
 
 public:
     // NOLINTBEGIN

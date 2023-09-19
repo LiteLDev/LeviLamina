@@ -26,9 +26,9 @@
 class Monster : public ::Mob {
 public:
     // prevent constructor by default
-    Monster& operator=(Monster const&) = delete;
-    Monster(Monster const&)            = delete;
-    Monster()                          = delete;
+    Monster& operator=(Monster const&);
+    Monster(Monster const&);
+    Monster();
 
 public:
     // NOLINTBEGIN

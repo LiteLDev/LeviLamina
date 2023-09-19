@@ -8,9 +8,9 @@
 class TwistingVinesClusterFeature : public ::Feature {
 public:
     // prevent constructor by default
-    TwistingVinesClusterFeature& operator=(TwistingVinesClusterFeature const&) = delete;
-    TwistingVinesClusterFeature(TwistingVinesClusterFeature const&)            = delete;
-    TwistingVinesClusterFeature()                                              = delete;
+    TwistingVinesClusterFeature& operator=(TwistingVinesClusterFeature const&);
+    TwistingVinesClusterFeature(TwistingVinesClusterFeature const&);
+    TwistingVinesClusterFeature();
 
 public:
     // NOLINTBEGIN

@@ -24,8 +24,8 @@ public:
     bool                                   mIsFromFishing;
 
     // prevent constructor by default
-    AddItemActorPacket& operator=(AddItemActorPacket const&) = delete;
-    AddItemActorPacket(AddItemActorPacket const&)            = delete;
+    AddItemActorPacket& operator=(AddItemActorPacket const&);
+    AddItemActorPacket(AddItemActorPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -57,7 +57,7 @@ public:
     virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
 
     // symbol: ??0AddItemActorPacket@@QEAA@AEAVItemActor@@@Z
-    MCAPI AddItemActorPacket(class ItemActor&);
+    MCAPI explicit AddItemActorPacket(class ItemActor&);
 
     // symbol: ??0AddItemActorPacket@@QEAA@XZ
     MCAPI AddItemActorPacket();

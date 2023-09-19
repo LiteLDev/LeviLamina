@@ -23,7 +23,7 @@ namespace ScriptModuleMinecraft {
 class ScriptItemStack {
 public:
     // prevent constructor by default
-    ScriptItemStack() = delete;
+    ScriptItemStack();
 
 public:
     // NOLINTBEGIN

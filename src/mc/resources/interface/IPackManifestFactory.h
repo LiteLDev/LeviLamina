@@ -5,9 +5,9 @@
 class IPackManifestFactory {
 public:
     // prevent constructor by default
-    IPackManifestFactory& operator=(IPackManifestFactory const&) = delete;
-    IPackManifestFactory(IPackManifestFactory const&)            = delete;
-    IPackManifestFactory()                                       = delete;
+    IPackManifestFactory& operator=(IPackManifestFactory const&);
+    IPackManifestFactory(IPackManifestFactory const&);
+    IPackManifestFactory();
 
 public:
     // NOLINTBEGIN

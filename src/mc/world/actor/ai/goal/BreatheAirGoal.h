@@ -9,9 +9,9 @@
 class BreatheAirGoal : public ::Goal {
 public:
     // prevent constructor by default
-    BreatheAirGoal& operator=(BreatheAirGoal const&) = delete;
-    BreatheAirGoal(BreatheAirGoal const&)            = delete;
-    BreatheAirGoal()                                 = delete;
+    BreatheAirGoal& operator=(BreatheAirGoal const&);
+    BreatheAirGoal(BreatheAirGoal const&);
+    BreatheAirGoal();
 
 public:
     // NOLINTBEGIN
@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol: ??0BreatheAirGoal@@QEAA@AEAVMob@@@Z
-    MCAPI BreatheAirGoal(class Mob&);
+    MCAPI explicit BreatheAirGoal(class Mob&);
 
     // NOLINTEND
 

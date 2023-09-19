@@ -5,9 +5,9 @@
 class AttributeInstanceHandle {
 public:
     // prevent constructor by default
-    AttributeInstanceHandle& operator=(AttributeInstanceHandle const&) = delete;
-    AttributeInstanceHandle(AttributeInstanceHandle const&)            = delete;
-    AttributeInstanceHandle()                                          = delete;
+    AttributeInstanceHandle& operator=(AttributeInstanceHandle const&);
+    AttributeInstanceHandle(AttributeInstanceHandle const&);
+    AttributeInstanceHandle();
 
 public:
     // NOLINTBEGIN

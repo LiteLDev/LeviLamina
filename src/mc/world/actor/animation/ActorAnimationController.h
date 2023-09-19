@@ -5,9 +5,9 @@
 class ActorAnimationController {
 public:
     // prevent constructor by default
-    ActorAnimationController& operator=(ActorAnimationController const&) = delete;
-    ActorAnimationController(ActorAnimationController const&)            = delete;
-    ActorAnimationController()                                           = delete;
+    ActorAnimationController& operator=(ActorAnimationController const&);
+    ActorAnimationController(ActorAnimationController const&);
+    ActorAnimationController();
 
 public:
     // NOLINTBEGIN

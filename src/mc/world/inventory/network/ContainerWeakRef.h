@@ -9,8 +9,8 @@
 class ContainerWeakRef {
 public:
     // prevent constructor by default
-    ContainerWeakRef& operator=(ContainerWeakRef const&) = delete;
-    ContainerWeakRef(ContainerWeakRef const&)            = delete;
+    ContainerWeakRef& operator=(ContainerWeakRef const&);
+    ContainerWeakRef(ContainerWeakRef const&);
 
 public:
     // NOLINTBEGIN
@@ -26,7 +26,7 @@ public:
     MCAPI ContainerWeakRef();
 
     // symbol: ??BContainerWeakRef@@QEBA_NXZ
-    MCAPI operator bool() const;
+    MCAPI explicit operator bool() const;
 
     // symbol: ??1ContainerWeakRef@@QEAA@XZ
     MCAPI ~ContainerWeakRef();

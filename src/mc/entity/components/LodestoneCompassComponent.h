@@ -8,9 +8,9 @@
 class LodestoneCompassComponent {
 public:
     // prevent constructor by default
-    LodestoneCompassComponent& operator=(LodestoneCompassComponent const&) = delete;
-    LodestoneCompassComponent(LodestoneCompassComponent const&)            = delete;
-    LodestoneCompassComponent()                                            = delete;
+    LodestoneCompassComponent& operator=(LodestoneCompassComponent const&);
+    LodestoneCompassComponent(LodestoneCompassComponent const&);
+    LodestoneCompassComponent();
 
 public:
     // NOLINTBEGIN
@@ -69,7 +69,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mSpinningLodestone() { return mSpinningLodestone; }
+    auto& $mSpinningLodestone() { return mSpinningLodestone; }
 
     // NOLINTEND
 };

@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class EnderpearlItem : public ::Item {
 public:
     // prevent constructor by default
-    EnderpearlItem& operator=(EnderpearlItem const&) = delete;
-    EnderpearlItem(EnderpearlItem const&)            = delete;
-    EnderpearlItem()                                 = delete;
+    EnderpearlItem& operator=(EnderpearlItem const&);
+    EnderpearlItem(EnderpearlItem const&);
+    EnderpearlItem();
 
 public:
     // NOLINTBEGIN

@@ -5,9 +5,9 @@
 class ActorPostAiStepTickSystem {
 public:
     // prevent constructor by default
-    ActorPostAiStepTickSystem& operator=(ActorPostAiStepTickSystem const&) = delete;
-    ActorPostAiStepTickSystem(ActorPostAiStepTickSystem const&)            = delete;
-    ActorPostAiStepTickSystem()                                            = delete;
+    ActorPostAiStepTickSystem& operator=(ActorPostAiStepTickSystem const&);
+    ActorPostAiStepTickSystem(ActorPostAiStepTickSystem const&);
+    ActorPostAiStepTickSystem();
 
 public:
     // NOLINTBEGIN

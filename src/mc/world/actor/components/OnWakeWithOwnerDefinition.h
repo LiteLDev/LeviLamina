@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 struct OnWakeWithOwnerDefinition {
 public:
     // prevent constructor by default
-    OnWakeWithOwnerDefinition& operator=(OnWakeWithOwnerDefinition const&) = delete;
-    OnWakeWithOwnerDefinition(OnWakeWithOwnerDefinition const&)            = delete;
-    OnWakeWithOwnerDefinition()                                            = delete;
+    OnWakeWithOwnerDefinition& operator=(OnWakeWithOwnerDefinition const&);
+    OnWakeWithOwnerDefinition(OnWakeWithOwnerDefinition const&);
+    OnWakeWithOwnerDefinition();
 
 public:
     // NOLINTBEGIN

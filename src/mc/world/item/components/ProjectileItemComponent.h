@@ -8,9 +8,9 @@
 class ProjectileItemComponent {
 public:
     // prevent constructor by default
-    ProjectileItemComponent& operator=(ProjectileItemComponent const&) = delete;
-    ProjectileItemComponent(ProjectileItemComponent const&)            = delete;
-    ProjectileItemComponent()                                          = delete;
+    ProjectileItemComponent& operator=(ProjectileItemComponent const&);
+    ProjectileItemComponent(ProjectileItemComponent const&);
+    ProjectileItemComponent();
 
 public:
     // NOLINTBEGIN

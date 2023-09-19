@@ -5,9 +5,9 @@
 class InsideBubbleColumnSystem {
 public:
     // prevent constructor by default
-    InsideBubbleColumnSystem& operator=(InsideBubbleColumnSystem const&) = delete;
-    InsideBubbleColumnSystem(InsideBubbleColumnSystem const&)            = delete;
-    InsideBubbleColumnSystem()                                           = delete;
+    InsideBubbleColumnSystem& operator=(InsideBubbleColumnSystem const&);
+    InsideBubbleColumnSystem(InsideBubbleColumnSystem const&);
+    InsideBubbleColumnSystem();
 
 public:
     // NOLINTBEGIN

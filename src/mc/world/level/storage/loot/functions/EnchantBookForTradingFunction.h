@@ -8,9 +8,9 @@
 class EnchantBookForTradingFunction : public ::LootItemFunction {
 public:
     // prevent constructor by default
-    EnchantBookForTradingFunction& operator=(EnchantBookForTradingFunction const&) = delete;
-    EnchantBookForTradingFunction(EnchantBookForTradingFunction const&)            = delete;
-    EnchantBookForTradingFunction()                                                = delete;
+    EnchantBookForTradingFunction& operator=(EnchantBookForTradingFunction const&);
+    EnchantBookForTradingFunction(EnchantBookForTradingFunction const&);
+    EnchantBookForTradingFunction();
 
 public:
     // NOLINTBEGIN

@@ -13,9 +13,9 @@ public:
     struct VolumeDescription {
     public:
         // prevent constructor by default
-        VolumeDescription& operator=(VolumeDescription const&) = delete;
-        VolumeDescription(VolumeDescription const&)            = delete;
-        VolumeDescription()                                    = delete;
+        VolumeDescription& operator=(VolumeDescription const&);
+        VolumeDescription(VolumeDescription const&);
+        VolumeDescription();
 
     public:
         // NOLINTBEGIN
@@ -30,8 +30,8 @@ public:
 
 public:
     // prevent constructor by default
-    VolumeDefinition& operator=(VolumeDefinition const&) = delete;
-    VolumeDefinition(VolumeDefinition const&)            = delete;
+    VolumeDefinition& operator=(VolumeDefinition const&);
+    VolumeDefinition(VolumeDefinition const&);
 
 public:
     // NOLINTBEGIN

@@ -5,8 +5,8 @@
 class ResourceMetadata {
 public:
     // prevent constructor by default
-    ResourceMetadata& operator=(ResourceMetadata const&) = delete;
-    ResourceMetadata(ResourceMetadata const&)            = delete;
+    ResourceMetadata& operator=(ResourceMetadata const&);
+    ResourceMetadata(ResourceMetadata const&);
 
 public:
     // NOLINTBEGIN

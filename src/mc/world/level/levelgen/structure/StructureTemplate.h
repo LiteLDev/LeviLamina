@@ -46,9 +46,9 @@ public:
     );
 
     // prevent constructor by default
-    StructureTemplate& operator=(StructureTemplate const&) = delete;
-    StructureTemplate(StructureTemplate const&)            = delete;
-    StructureTemplate()                                    = delete;
+    StructureTemplate& operator=(StructureTemplate const&);
+    StructureTemplate(StructureTemplate const&);
+    StructureTemplate();
 
 public:
     // NOLINTBEGIN

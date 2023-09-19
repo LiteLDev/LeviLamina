@@ -5,7 +5,7 @@
 struct LocalPlayerLastPosComponent {
 public:
     // prevent constructor by default
-    LocalPlayerLastPosComponent& operator=(LocalPlayerLastPosComponent const&) = delete;
-    LocalPlayerLastPosComponent(LocalPlayerLastPosComponent const&)            = delete;
-    LocalPlayerLastPosComponent()                                              = delete;
+    LocalPlayerLastPosComponent& operator=(LocalPlayerLastPosComponent const&);
+    LocalPlayerLastPosComponent(LocalPlayerLastPosComponent const&);
+    LocalPlayerLastPosComponent();
 };

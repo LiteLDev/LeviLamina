@@ -14,9 +14,9 @@ namespace Json { class Value; }
 class I18n {
 public:
     // prevent constructor by default
-    I18n& operator=(I18n const&) = delete;
-    I18n(I18n const&)            = delete;
-    I18n()                       = delete;
+    I18n& operator=(I18n const&);
+    I18n(I18n const&);
+    I18n();
 
 public:
     // NOLINTBEGIN
@@ -175,33 +175,33 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $mAdditionalTranslationsBackup() { return mAdditionalTranslationsBackup; }
+    auto& $mAdditionalTranslationsBackup() { return mAdditionalTranslationsBackup; }
 
-    inline auto& $mAdditionalTranslationsBackupMutex() { return mAdditionalTranslationsBackupMutex; }
+    auto& $mAdditionalTranslationsBackupMutex() { return mAdditionalTranslationsBackupMutex; }
 
-    inline auto& $mCurrentLanguage() { return mCurrentLanguage; }
+    auto& $mCurrentLanguage() { return mCurrentLanguage; }
 
-    inline auto& $mCurrentPackMetaLanguage() { return mCurrentPackMetaLanguage; }
+    auto& $mCurrentPackMetaLanguage() { return mCurrentPackMetaLanguage; }
 
-    inline auto& $mEmptyLanguage() { return mEmptyLanguage; }
+    auto& $mEmptyLanguage() { return mEmptyLanguage; }
 
-    inline auto& $mFormatDictionary() { return mFormatDictionary; }
+    auto& $mFormatDictionary() { return mFormatDictionary; }
 
-    inline auto& $mLanguageCodes() { return mLanguageCodes; }
+    auto& $mLanguageCodes() { return mLanguageCodes; }
 
-    inline auto& $mLanguageNames() { return mLanguageNames; }
+    auto& $mLanguageNames() { return mLanguageNames; }
 
-    inline auto& $mLanguageSupportsHypenSplitting() { return mLanguageSupportsHypenSplitting; }
+    auto& $mLanguageSupportsHypenSplitting() { return mLanguageSupportsHypenSplitting; }
 
-    inline auto& $mLanguages() { return mLanguages; }
+    auto& $mLanguages() { return mLanguages; }
 
-    inline auto& $mPackKeywordLanguages() { return mPackKeywordLanguages; }
+    auto& $mPackKeywordLanguages() { return mPackKeywordLanguages; }
 
-    inline auto& $mPackReservedKeys() { return mPackReservedKeys; }
+    auto& $mPackReservedKeys() { return mPackReservedKeys; }
 
-    inline auto& $mResourcePackManager() { return mResourcePackManager; }
+    auto& $mResourcePackManager() { return mResourcePackManager; }
 
-    inline auto& $mSubject() { return mSubject; }
+    auto& $mSubject() { return mSubject; }
 
     // NOLINTEND
 };

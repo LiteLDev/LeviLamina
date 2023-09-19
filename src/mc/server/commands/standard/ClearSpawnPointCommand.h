@@ -8,9 +8,9 @@
 class ClearSpawnPointCommand : public ::Command {
 public:
     // prevent constructor by default
-    ClearSpawnPointCommand& operator=(ClearSpawnPointCommand const&) = delete;
-    ClearSpawnPointCommand(ClearSpawnPointCommand const&)            = delete;
-    ClearSpawnPointCommand()                                         = delete;
+    ClearSpawnPointCommand& operator=(ClearSpawnPointCommand const&);
+    ClearSpawnPointCommand(ClearSpawnPointCommand const&);
+    ClearSpawnPointCommand();
 
 public:
     // NOLINTBEGIN

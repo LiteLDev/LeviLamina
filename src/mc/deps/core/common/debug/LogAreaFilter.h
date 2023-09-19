@@ -10,9 +10,9 @@ namespace BedrockLog {
 class LogAreaFilter {
 public:
     // prevent constructor by default
-    LogAreaFilter& operator=(LogAreaFilter const&) = delete;
-    LogAreaFilter(LogAreaFilter const&)            = delete;
-    LogAreaFilter()                                = delete;
+    LogAreaFilter& operator=(LogAreaFilter const&);
+    LogAreaFilter(LogAreaFilter const&);
+    LogAreaFilter();
 
 public:
     // NOLINTBEGIN

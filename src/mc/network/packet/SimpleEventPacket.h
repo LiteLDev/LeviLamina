@@ -21,8 +21,8 @@ public:
     Subtype mSubtype; // this+0x30
 
     // prevent constructor by default
-    SimpleEventPacket& operator=(SimpleEventPacket const&) = delete;
-    SimpleEventPacket(SimpleEventPacket const&)            = delete;
+    SimpleEventPacket& operator=(SimpleEventPacket const&);
+    SimpleEventPacket(SimpleEventPacket const&);
 
 public:
     // NOLINTBEGIN
@@ -50,7 +50,7 @@ public:
     MCAPI SimpleEventPacket();
 
     // symbol: ??0SimpleEventPacket@@QEAA@AEBW4Subtype@0@@Z
-    MCAPI SimpleEventPacket(::SimpleEventPacket::Subtype const&);
+    MCAPI explicit SimpleEventPacket(::SimpleEventPacket::Subtype const&);
 
     // symbol: ?getSubtype@SimpleEventPacket@@QEBAAEBW4Subtype@1@XZ
     MCAPI ::SimpleEventPacket::Subtype const& getSubtype() const;

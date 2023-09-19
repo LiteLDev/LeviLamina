@@ -5,8 +5,8 @@
 struct ItemStackResponseInfo {
 public:
     // prevent constructor by default
-    ItemStackResponseInfo& operator=(ItemStackResponseInfo const&) = delete;
-    ItemStackResponseInfo(ItemStackResponseInfo const&)            = delete;
+    ItemStackResponseInfo& operator=(ItemStackResponseInfo const&);
+    ItemStackResponseInfo(ItemStackResponseInfo const&);
 
 public:
     // NOLINTBEGIN

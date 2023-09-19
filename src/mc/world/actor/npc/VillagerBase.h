@@ -31,9 +31,9 @@ public:
 
 public:
     // prevent constructor by default
-    VillagerBase& operator=(VillagerBase const&) = delete;
-    VillagerBase(VillagerBase const&)            = delete;
-    VillagerBase()                               = delete;
+    VillagerBase& operator=(VillagerBase const&);
+    VillagerBase(VillagerBase const&);
+    VillagerBase();
 
 public:
     // NOLINTBEGIN

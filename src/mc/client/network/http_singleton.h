@@ -23,9 +23,9 @@ public:
 
 public:
     // prevent constructor by default
-    http_singleton& operator=(http_singleton const&) = delete;
-    http_singleton(http_singleton const&)            = delete;
-    http_singleton()                                 = delete;
+    http_singleton& operator=(http_singleton const&);
+    http_singleton(http_singleton const&);
+    http_singleton();
 
 public:
     // NOLINTBEGIN

@@ -13,9 +13,9 @@ namespace JsonUtil { class EmptyClass; }
 class HurtOnConditionDefinition {
 public:
     // prevent constructor by default
-    HurtOnConditionDefinition& operator=(HurtOnConditionDefinition const&) = delete;
-    HurtOnConditionDefinition(HurtOnConditionDefinition const&)            = delete;
-    HurtOnConditionDefinition()                                            = delete;
+    HurtOnConditionDefinition& operator=(HurtOnConditionDefinition const&);
+    HurtOnConditionDefinition(HurtOnConditionDefinition const&);
+    HurtOnConditionDefinition();
 
 public:
     // NOLINTBEGIN

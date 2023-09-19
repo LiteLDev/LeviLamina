@@ -9,9 +9,9 @@
 class BrewingStandContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // prevent constructor by default
-    BrewingStandContainerScreenValidator& operator=(BrewingStandContainerScreenValidator const&) = delete;
-    BrewingStandContainerScreenValidator(BrewingStandContainerScreenValidator const&)            = delete;
-    BrewingStandContainerScreenValidator()                                                       = delete;
+    BrewingStandContainerScreenValidator& operator=(BrewingStandContainerScreenValidator const&);
+    BrewingStandContainerScreenValidator(BrewingStandContainerScreenValidator const&);
+    BrewingStandContainerScreenValidator();
 
 public:
     // NOLINTBEGIN

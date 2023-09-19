@@ -5,9 +5,9 @@
 class NullLogger {
 public:
     // prevent constructor by default
-    NullLogger& operator=(NullLogger const&) = delete;
-    NullLogger(NullLogger const&)            = delete;
-    NullLogger()                             = delete;
+    NullLogger& operator=(NullLogger const&);
+    NullLogger(NullLogger const&);
+    NullLogger();
 
 public:
     // NOLINTBEGIN

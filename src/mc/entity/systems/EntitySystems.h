@@ -8,9 +8,9 @@
 class EntitySystems {
 public:
     // prevent constructor by default
-    EntitySystems& operator=(EntitySystems const&) = delete;
-    EntitySystems(EntitySystems const&)            = delete;
-    EntitySystems()                                = delete;
+    EntitySystems& operator=(EntitySystems const&);
+    EntitySystems(EntitySystems const&);
+    EntitySystems();
 
 public:
     // NOLINTBEGIN
@@ -34,7 +34,7 @@ public:
     MCAPI EntitySystems(std::unique_ptr<struct IEntitySystemsCollection>, std::string);
 
     // symbol: ??0EntitySystems@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI EntitySystems(std::string);
+    MCAPI explicit EntitySystems(std::string);
 
     // symbol: ?getPlayerInteractionSystem@EntitySystems@@QEAAAEAVPlayerInteractionSystem@@XZ
     MCAPI class PlayerInteractionSystem& getPlayerInteractionSystem();

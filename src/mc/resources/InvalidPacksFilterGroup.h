@@ -5,7 +5,7 @@
 struct InvalidPacksFilterGroup {
 public:
     // prevent constructor by default
-    InvalidPacksFilterGroup& operator=(InvalidPacksFilterGroup const&) = delete;
-    InvalidPacksFilterGroup(InvalidPacksFilterGroup const&)            = delete;
-    InvalidPacksFilterGroup()                                          = delete;
+    InvalidPacksFilterGroup& operator=(InvalidPacksFilterGroup const&);
+    InvalidPacksFilterGroup(InvalidPacksFilterGroup const&);
+    InvalidPacksFilterGroup();
 };

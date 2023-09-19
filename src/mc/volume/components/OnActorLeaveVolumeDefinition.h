@@ -5,9 +5,9 @@
 struct OnActorLeaveVolumeDefinition {
 public:
     // prevent constructor by default
-    OnActorLeaveVolumeDefinition& operator=(OnActorLeaveVolumeDefinition const&) = delete;
-    OnActorLeaveVolumeDefinition(OnActorLeaveVolumeDefinition const&)            = delete;
-    OnActorLeaveVolumeDefinition()                                               = delete;
+    OnActorLeaveVolumeDefinition& operator=(OnActorLeaveVolumeDefinition const&);
+    OnActorLeaveVolumeDefinition(OnActorLeaveVolumeDefinition const&);
+    OnActorLeaveVolumeDefinition();
 
 public:
     // NOLINTBEGIN

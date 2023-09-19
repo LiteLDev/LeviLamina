@@ -5,7 +5,7 @@
 struct Hitbox {
 public:
     // prevent constructor by default
-    Hitbox& operator=(Hitbox const&) = delete;
-    Hitbox(Hitbox const&)            = delete;
-    Hitbox()                         = delete;
+    Hitbox& operator=(Hitbox const&);
+    Hitbox(Hitbox const&);
+    Hitbox();
 };

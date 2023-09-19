@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class QuartzBlock : public ::RotatedPillarBlock {
 public:
     // prevent constructor by default
-    QuartzBlock& operator=(QuartzBlock const&) = delete;
-    QuartzBlock(QuartzBlock const&)            = delete;
-    QuartzBlock()                              = delete;
+    QuartzBlock& operator=(QuartzBlock const&);
+    QuartzBlock(QuartzBlock const&);
+    QuartzBlock();
 
 public:
     // NOLINTBEGIN

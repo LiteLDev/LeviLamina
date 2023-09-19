@@ -19,15 +19,15 @@ namespace ScriptModuleMinecraft {
 class ScriptContainerWrapper {
 public:
     // prevent constructor by default
-    ScriptContainerWrapper& operator=(ScriptContainerWrapper const&) = delete;
-    ScriptContainerWrapper(ScriptContainerWrapper const&)            = delete;
-    ScriptContainerWrapper()                                         = delete;
+    ScriptContainerWrapper& operator=(ScriptContainerWrapper const&);
+    ScriptContainerWrapper(ScriptContainerWrapper const&);
+    ScriptContainerWrapper();
 
 public:
     // NOLINTBEGIN
     // symbol:
     // ??0ScriptContainerWrapper@ScriptModuleMinecraft@@QEAA@V?$unique_ptr@VScriptContainer@ScriptModuleMinecraft@@U?$default_delete@VScriptContainer@ScriptModuleMinecraft@@@std@@@std@@@Z
-    MCAPI ScriptContainerWrapper(std::unique_ptr<class ScriptModuleMinecraft::ScriptContainer>);
+    MCAPI explicit ScriptContainerWrapper(std::unique_ptr<class ScriptModuleMinecraft::ScriptContainer>);
 
     // symbol:
     // ?addItem@ScriptContainerWrapper@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@Scripting@@AEBVScriptItemStack@2@@Z

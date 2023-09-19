@@ -15,9 +15,9 @@ namespace JsonUtil { class EmptyClass; }
 class PlaySoundResponse : public ::EventResponse {
 public:
     // prevent constructor by default
-    PlaySoundResponse& operator=(PlaySoundResponse const&) = delete;
-    PlaySoundResponse(PlaySoundResponse const&)            = delete;
-    PlaySoundResponse()                                    = delete;
+    PlaySoundResponse& operator=(PlaySoundResponse const&);
+    PlaySoundResponse(PlaySoundResponse const&);
+    PlaySoundResponse();
 
 public:
     // NOLINTBEGIN

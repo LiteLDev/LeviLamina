@@ -5,9 +5,9 @@
 class DelayRequest {
 public:
     // prevent constructor by default
-    DelayRequest& operator=(DelayRequest const&) = delete;
-    DelayRequest(DelayRequest const&)            = delete;
-    DelayRequest()                               = delete;
+    DelayRequest& operator=(DelayRequest const&);
+    DelayRequest(DelayRequest const&);
+    DelayRequest();
 
 public:
     // NOLINTBEGIN

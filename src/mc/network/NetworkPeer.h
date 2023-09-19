@@ -53,9 +53,9 @@ public:
 
 public:
     // prevent constructor by default
-    NetworkPeer& operator=(NetworkPeer const&) = delete;
-    NetworkPeer(NetworkPeer const&)            = delete;
-    NetworkPeer()                              = delete;
+    NetworkPeer& operator=(NetworkPeer const&);
+    NetworkPeer(NetworkPeer const&);
+    NetworkPeer();
 
     std::shared_ptr<NetworkPeer> mPeer; // this+0x8
 

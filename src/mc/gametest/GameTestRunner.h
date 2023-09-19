@@ -17,9 +17,9 @@ namespace gametest { struct TestParameters; }
 class GameTestRunner {
 public:
     // prevent constructor by default
-    GameTestRunner& operator=(GameTestRunner const&) = delete;
-    GameTestRunner(GameTestRunner const&)            = delete;
-    GameTestRunner()                                 = delete;
+    GameTestRunner& operator=(GameTestRunner const&);
+    GameTestRunner(GameTestRunner const&);
+    GameTestRunner();
 
 public:
     // NOLINTBEGIN

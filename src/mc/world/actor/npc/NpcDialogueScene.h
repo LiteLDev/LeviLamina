@@ -10,9 +10,9 @@ namespace Json { class Value; }
 struct NpcDialogueScene {
 public:
     // prevent constructor by default
-    NpcDialogueScene& operator=(NpcDialogueScene const&) = delete;
-    NpcDialogueScene(NpcDialogueScene const&)            = delete;
-    NpcDialogueScene()                                   = delete;
+    NpcDialogueScene& operator=(NpcDialogueScene const&);
+    NpcDialogueScene(NpcDialogueScene const&);
+    NpcDialogueScene();
 
 public:
     // NOLINTBEGIN

@@ -5,8 +5,8 @@
 class ScaleByAgeComponent {
 public:
     // prevent constructor by default
-    ScaleByAgeComponent& operator=(ScaleByAgeComponent const&) = delete;
-    ScaleByAgeComponent(ScaleByAgeComponent const&)            = delete;
+    ScaleByAgeComponent& operator=(ScaleByAgeComponent const&);
+    ScaleByAgeComponent(ScaleByAgeComponent const&);
 
 public:
     // NOLINTBEGIN

@@ -8,9 +8,9 @@
 class AbsorptionMobEffect : public ::MobEffect {
 public:
     // prevent constructor by default
-    AbsorptionMobEffect& operator=(AbsorptionMobEffect const&) = delete;
-    AbsorptionMobEffect(AbsorptionMobEffect const&)            = delete;
-    AbsorptionMobEffect()                                      = delete;
+    AbsorptionMobEffect& operator=(AbsorptionMobEffect const&);
+    AbsorptionMobEffect(AbsorptionMobEffect const&);
+    AbsorptionMobEffect();
 
 public:
     // NOLINTBEGIN

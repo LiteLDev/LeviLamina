@@ -7,9 +7,9 @@ namespace RakNet {
 struct SocketDescriptor {
 public:
     // prevent constructor by default
-    SocketDescriptor& operator=(SocketDescriptor const&) = delete;
-    SocketDescriptor(SocketDescriptor const&)            = delete;
-    SocketDescriptor()                                   = delete;
+    SocketDescriptor& operator=(SocketDescriptor const&);
+    SocketDescriptor(SocketDescriptor const&);
+    SocketDescriptor();
 
 public:
     // NOLINTBEGIN

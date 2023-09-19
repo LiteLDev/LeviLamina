@@ -18,14 +18,14 @@ namespace Core {
 struct DirectoryIterationItem {
 public:
     // prevent constructor by default
-    DirectoryIterationItem& operator=(DirectoryIterationItem const&) = delete;
-    DirectoryIterationItem(DirectoryIterationItem const&)            = delete;
-    DirectoryIterationItem()                                         = delete;
+    DirectoryIterationItem& operator=(DirectoryIterationItem const&);
+    DirectoryIterationItem(DirectoryIterationItem const&);
+    DirectoryIterationItem();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0DirectoryIterationItem@Core@@QEAA@W4DirectoryIterationFlags@1@@Z
-    MCAPI DirectoryIterationItem(::Core::DirectoryIterationFlags);
+    MCAPI explicit DirectoryIterationItem(::Core::DirectoryIterationFlags);
 
     // symbol: ?getFileSize@DirectoryIterationItem@Core@@QEBA_KXZ
     MCAPI uint64 getFileSize() const;

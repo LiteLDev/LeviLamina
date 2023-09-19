@@ -16,9 +16,9 @@ public:
 
 public:
     // prevent constructor by default
-    PathFinder& operator=(PathFinder const&) = delete;
-    PathFinder(PathFinder const&)            = delete;
-    PathFinder()                             = delete;
+    PathFinder& operator=(PathFinder const&);
+    PathFinder(PathFinder const&);
+    PathFinder();
 
 public:
     // NOLINTBEGIN

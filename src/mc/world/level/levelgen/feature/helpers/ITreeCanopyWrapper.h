@@ -5,9 +5,9 @@
 class ITreeCanopyWrapper {
 public:
     // prevent constructor by default
-    ITreeCanopyWrapper& operator=(ITreeCanopyWrapper const&) = delete;
-    ITreeCanopyWrapper(ITreeCanopyWrapper const&)            = delete;
-    ITreeCanopyWrapper()                                     = delete;
+    ITreeCanopyWrapper& operator=(ITreeCanopyWrapper const&);
+    ITreeCanopyWrapper(ITreeCanopyWrapper const&);
+    ITreeCanopyWrapper();
 
 public:
     // NOLINTBEGIN

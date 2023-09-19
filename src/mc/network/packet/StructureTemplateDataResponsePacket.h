@@ -17,8 +17,8 @@ public:
     StructureTemplateResponseType mResponseType;  // this+0x58
 
     // prevent constructor by default
-    StructureTemplateDataResponsePacket& operator=(StructureTemplateDataResponsePacket const&) = delete;
-    StructureTemplateDataResponsePacket(StructureTemplateDataResponsePacket const&)            = delete;
+    StructureTemplateDataResponsePacket& operator=(StructureTemplateDataResponsePacket const&);
+    StructureTemplateDataResponsePacket(StructureTemplateDataResponsePacket const&);
 
 public:
     // NOLINTBEGIN

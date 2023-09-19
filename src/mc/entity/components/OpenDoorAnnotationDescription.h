@@ -8,9 +8,9 @@
 class OpenDoorAnnotationDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
-    OpenDoorAnnotationDescription& operator=(OpenDoorAnnotationDescription const&) = delete;
-    OpenDoorAnnotationDescription(OpenDoorAnnotationDescription const&)            = delete;
-    OpenDoorAnnotationDescription()                                                = delete;
+    OpenDoorAnnotationDescription& operator=(OpenDoorAnnotationDescription const&);
+    OpenDoorAnnotationDescription(OpenDoorAnnotationDescription const&);
+    OpenDoorAnnotationDescription();
 
 public:
     // NOLINTBEGIN

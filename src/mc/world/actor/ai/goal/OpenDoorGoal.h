@@ -9,9 +9,9 @@
 class OpenDoorGoal : public ::DoorInteractGoal {
 public:
     // prevent constructor by default
-    OpenDoorGoal& operator=(OpenDoorGoal const&) = delete;
-    OpenDoorGoal(OpenDoorGoal const&)            = delete;
-    OpenDoorGoal()                               = delete;
+    OpenDoorGoal& operator=(OpenDoorGoal const&);
+    OpenDoorGoal(OpenDoorGoal const&);
+    OpenDoorGoal();
 
 public:
     // NOLINTBEGIN

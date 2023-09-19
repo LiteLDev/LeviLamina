@@ -11,9 +11,9 @@ namespace ScriptModuleMinecraft {
 struct ScriptEntityRaycastOptions {
 public:
     // prevent constructor by default
-    ScriptEntityRaycastOptions& operator=(ScriptEntityRaycastOptions const&) = delete;
-    ScriptEntityRaycastOptions(ScriptEntityRaycastOptions const&)            = delete;
-    ScriptEntityRaycastOptions()                                             = delete;
+    ScriptEntityRaycastOptions& operator=(ScriptEntityRaycastOptions const&);
+    ScriptEntityRaycastOptions(ScriptEntityRaycastOptions const&);
+    ScriptEntityRaycastOptions();
 
 public:
     // NOLINTBEGIN

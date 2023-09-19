@@ -19,9 +19,9 @@ namespace mce { class Color; }
 class RepeaterBlock : public ::DiodeBlock {
 public:
     // prevent constructor by default
-    RepeaterBlock& operator=(RepeaterBlock const&) = delete;
-    RepeaterBlock(RepeaterBlock const&)            = delete;
-    RepeaterBlock()                                = delete;
+    RepeaterBlock& operator=(RepeaterBlock const&);
+    RepeaterBlock(RepeaterBlock const&);
+    RepeaterBlock();
 
 public:
     // NOLINTBEGIN
@@ -220,7 +220,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $DELAYS() { return DELAYS; }
+    auto& $DELAYS() { return DELAYS; }
 
     // NOLINTEND
 };

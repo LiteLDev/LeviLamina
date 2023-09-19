@@ -22,9 +22,9 @@ namespace mce { class Color; }
 class ShovelItem : public ::DiggerItem {
 public:
     // prevent constructor by default
-    ShovelItem& operator=(ShovelItem const&) = delete;
-    ShovelItem(ShovelItem const&)            = delete;
-    ShovelItem()                             = delete;
+    ShovelItem& operator=(ShovelItem const&);
+    ShovelItem(ShovelItem const&);
+    ShovelItem();
 
 public:
     // NOLINTBEGIN

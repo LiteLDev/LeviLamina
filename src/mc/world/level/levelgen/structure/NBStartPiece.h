@@ -9,9 +9,9 @@
 class NBStartPiece : public ::NBBridgeCrossing {
 public:
     // prevent constructor by default
-    NBStartPiece& operator=(NBStartPiece const&) = delete;
-    NBStartPiece(NBStartPiece const&)            = delete;
-    NBStartPiece()                               = delete;
+    NBStartPiece& operator=(NBStartPiece const&);
+    NBStartPiece(NBStartPiece const&);
+    NBStartPiece();
 
 public:
     // NOLINTBEGIN

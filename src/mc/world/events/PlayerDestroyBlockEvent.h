@@ -5,9 +5,9 @@
 struct PlayerDestroyBlockEvent {
 public:
     // prevent constructor by default
-    PlayerDestroyBlockEvent& operator=(PlayerDestroyBlockEvent const&) = delete;
-    PlayerDestroyBlockEvent(PlayerDestroyBlockEvent const&)            = delete;
-    PlayerDestroyBlockEvent()                                          = delete;
+    PlayerDestroyBlockEvent& operator=(PlayerDestroyBlockEvent const&);
+    PlayerDestroyBlockEvent(PlayerDestroyBlockEvent const&);
+    PlayerDestroyBlockEvent();
 
 public:
     // NOLINTBEGIN

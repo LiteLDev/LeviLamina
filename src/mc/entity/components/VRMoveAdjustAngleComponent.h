@@ -5,7 +5,7 @@
 struct VRMoveAdjustAngleComponent {
 public:
     // prevent constructor by default
-    VRMoveAdjustAngleComponent& operator=(VRMoveAdjustAngleComponent const&) = delete;
-    VRMoveAdjustAngleComponent(VRMoveAdjustAngleComponent const&)            = delete;
-    VRMoveAdjustAngleComponent()                                             = delete;
+    VRMoveAdjustAngleComponent& operator=(VRMoveAdjustAngleComponent const&);
+    VRMoveAdjustAngleComponent(VRMoveAdjustAngleComponent const&);
+    VRMoveAdjustAngleComponent();
 };

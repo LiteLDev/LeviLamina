@@ -28,8 +28,8 @@ public:
     std::unordered_map<mce::UUID, int>    mPlayerParty;       // this+0x48
 
     // prevent constructor by default
-    BossComponent& operator=(BossComponent const&) = delete;
-    BossComponent(BossComponent const&)            = delete;
+    BossComponent& operator=(BossComponent const&);
+    BossComponent(BossComponent const&);
 
 public:
     // NOLINTBEGIN

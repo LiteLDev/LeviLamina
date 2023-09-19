@@ -8,8 +8,8 @@
 class ScatterFeature : public ::IFeature {
 public:
     // prevent constructor by default
-    ScatterFeature& operator=(ScatterFeature const&) = delete;
-    ScatterFeature(ScatterFeature const&)            = delete;
+    ScatterFeature& operator=(ScatterFeature const&);
+    ScatterFeature(ScatterFeature const&);
 
 public:
     // NOLINTBEGIN

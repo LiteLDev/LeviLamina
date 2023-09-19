@@ -9,8 +9,8 @@
 class FillingContainer : public ::Container {
 public:
     // prevent constructor by default
-    FillingContainer(FillingContainer const&) = delete;
-    FillingContainer()                        = delete;
+    FillingContainer(FillingContainer const&);
+    FillingContainer();
 
 public:
     // NOLINTBEGIN

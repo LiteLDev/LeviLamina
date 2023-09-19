@@ -21,9 +21,9 @@ namespace mce { class Color; }
 class MedicineItem : public ::ChemistryItem {
 public:
     // prevent constructor by default
-    MedicineItem& operator=(MedicineItem const&) = delete;
-    MedicineItem(MedicineItem const&)            = delete;
-    MedicineItem()                               = delete;
+    MedicineItem& operator=(MedicineItem const&);
+    MedicineItem(MedicineItem const&);
+    MedicineItem();
 
 public:
     // NOLINTBEGIN

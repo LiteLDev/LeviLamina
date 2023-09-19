@@ -8,8 +8,8 @@
 class MeadowFlowerFeature : public ::Feature {
 public:
     // prevent constructor by default
-    MeadowFlowerFeature& operator=(MeadowFlowerFeature const&) = delete;
-    MeadowFlowerFeature(MeadowFlowerFeature const&)            = delete;
+    MeadowFlowerFeature& operator=(MeadowFlowerFeature const&);
+    MeadowFlowerFeature(MeadowFlowerFeature const&);
 
 public:
     // NOLINTBEGIN

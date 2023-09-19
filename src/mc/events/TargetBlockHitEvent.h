@@ -5,8 +5,8 @@
 struct TargetBlockHitEvent {
 public:
     // prevent constructor by default
-    TargetBlockHitEvent& operator=(TargetBlockHitEvent const&) = delete;
-    TargetBlockHitEvent()                                      = delete;
+    TargetBlockHitEvent& operator=(TargetBlockHitEvent const&);
+    TargetBlockHitEvent();
 
 public:
     // NOLINTBEGIN

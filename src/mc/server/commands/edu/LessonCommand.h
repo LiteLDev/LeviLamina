@@ -8,9 +8,9 @@
 class LessonCommand : public ::Command {
 public:
     // prevent constructor by default
-    LessonCommand& operator=(LessonCommand const&) = delete;
-    LessonCommand(LessonCommand const&)            = delete;
-    LessonCommand()                                = delete;
+    LessonCommand& operator=(LessonCommand const&);
+    LessonCommand(LessonCommand const&);
+    LessonCommand();
 
 public:
     // NOLINTBEGIN
