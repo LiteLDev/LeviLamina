@@ -269,34 +269,36 @@ public:
     using CommandOverrideFunctor = std::function<void __cdecl(struct CommandFlag&, class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>> const&)>;
     using ParamSymbols = std::array<Symbol, 23>;
 
-    std::function<void(const class Packet&)> mGetScoreForObjective;//0
-    std::function<void(const class Packet&)> mNetworkUpdateCallback;//64
-    std::vector<ParseRule> mRules;//128
-    std::map<unsigned int, ParseTable> mParseTableMap;//152
-    std::vector<OptionalParameterChain> mOptionals; //168
-    std::vector<std::string> mEnumValues;//192
-    std::vector<CommandRegistry::Enum> mEnums;//216
-    char filler48[48];
-    std::vector<CommandRegistry::Factorization> mFactorizations;//288
-    std::vector<std::string> mPostfixes;//312
-    std::map<std::string,unsigned int> mEnumLookup;//336
-    std::map<std::string,unsigned long> mEnumValueLookup;//352
-    std::vector<CommandRegistry::Symbol> mCommandSymbols;//368
-    char filler32[32];
-    std::map<std::string,CommandRegistry::Signature> mSignatures;//424
-    std::map<Bedrock::typeid_t<CommandRegistry>,int> mTypeLookup;//440
-    std::map<std::string,std::string> mAliases;//456
-    std::vector<SemanticConstraint> mSemanticConstraints;//472
-    std::map<SemanticConstraint, unsigned char> mSemanticConstraintLookup;//496
-    std::vector<ConstrainedValue> mConstrainedValues;//512
-    std::map<std::pair<unsigned long, unsigned int>, unsigned int> mConstrainedValueLookup;//536
-    std::vector<CommandRegistry::SoftEnum> mSoftEnums;//552
-    std::map<std::string,unsigned int> mSoftEnumLookup;//576
-    std::vector<RegistryState> mStateStack; //592
-    ParamSymbols mArgs;//616
-    char filler[64];
-    CommandOverrideFunctor mCommandOverrideFunctor;//712
-    //840
+    std::function<void(class Packet const&)> mNetworkUpdateCallback;                        // this+0x0
+    std::function<int(bool&, std::string const&, Actor const&)> mGetScoreForObjective;      // this+0x40
+    std::vector<ParseRule> mRules;                                                          // this+0x80
+    std::map<unsigned int, ParseTable> mParseTables;                                        // this+0x98
+    std::vector<OptionalParameterChain> mOptionals;                                         // this+0xA8
+    std::vector<std::string> mEnumValues;                                                   // this+0xC0
+    std::vector<Enum> mEnums;                                                               // this+0xD8
+    std::vector<int> mUnknow_1;                                                             // this+0xF0
+    std::vector<int> mUnknow_2;                                                             // this+0x108
+    std::vector<Factorization> mFactorizations;                                             // this+0x120
+    std::vector<std::string> mPostfixes;                                                    // this+0x138
+    std::map<std::string, unsigned int> mEnumLookup;                                        // this+0x150
+    std::map<std::string, unsigned long> mEnumValueLookup;                                  // this+0x160
+    std::map<std::string, int> mUnknow_3;                                                   // this+0x170
+    std::map<std::string, int> mChainedSubcommandLookUp;                                    // this+0x180
+    std::vector<Symbol> mCommandSymbols;                                                    // this+0x190
+    std::map<std::string, Signature> mSignatures;                                           // this+0x1A8
+    std::map<Bedrock::typeid_t<CommandRegistry>, int> mTypeLookup;                          // this+0x1B8
+    std::map<std::string, std::string> mAliases;                                            // this+0x1C8
+    std::vector<SemanticConstraint> mSemanticConstraints;                                   // this+0x1D8
+    std::map<SemanticConstraint, unsigned char> mSemanticConstraintLookup;                  // this+0x1F0
+    std::vector<ConstrainedValue> mConstrainedValues;                                       // this+0x200
+    std::map<std::pair<unsigned long, unsigned int>, unsigned int> mConstrainedValueLookup; // this+0x218
+    std::vector<SoftEnum> mSoftEnums;                                                       // this+0x228
+    std::map<std::string, unsigned int> mSoftEnumLookup;                                    // this+0x240
+    std::vector<RegistryState> mStateStack;                                                 // this+0x250
+    ParamSymbols mArgs;                                                                     // this+0x268
+    std::unordered_map<unsigned char, unsigned char> mSkipOnEpsAutocompleteSymbols;         // this+0x2C8
+    std::unordered_map<unsigned char, unsigned char> mAllowEmptySymbols;                    // this+0x308
+    std::function<void(CommandFlag&, std::string const&)> mCommandOverrideFunctor;          // this+0x348
 
 
 
@@ -306,13 +308,9 @@ public:
     void test() {
         constexpr auto size = sizeof(CommandRegistry);
 
-        static_assert(size == 840);
+        static_assert(size == 904);
         static_assert(sizeof(Enum) == 72);
-        static_assert(offsetof(CommandRegistry, mEnumValues) == 192);
-        static_assert(offsetof(CommandRegistry, mEnums) == 216);
-        static_assert(offsetof(CommandRegistry, mCommandSymbols) == 368);
-        static_assert(offsetof(CommandRegistry, mSignatures) == 424);
-        static_assert(offsetof(CommandRegistry, mSoftEnumLookup) == 576);
+
     }
 #endif // COMMAND_REGISTRY_EXTRA
 

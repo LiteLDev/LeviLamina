@@ -163,7 +163,7 @@ inline void CommandRegistry::printAll() const {
         logger.warn("{}", rule.toDebugString());
     }
     logger.error("mParseTableMap");
-    for (auto& [key, table] : mParseTableMap) {
+    for (auto& [key, table] : mParseTables) {
         logger.warn("{}: {}", key, table.toDebugString());
     }
     logger.error("mOptionals");
@@ -232,7 +232,7 @@ inline void CommandRegistry::printSize() const {
         return size;
     })();
     log["mRules                   "].append(fmt::format(", {:4}", mRules.size()));
-    log["mParseTableMap           "].append(fmt::format(", {:4}", mParseTableMap.size()));
+    log["mParseTableMap           "].append(fmt::format(", {:4}", mParseTables.size()));
     log["mOptionals               "].append(fmt::format(", {:4}", mOptionals.size()));
     log["mEnumValues              "].append(fmt::format(", {:4}", mEnumValues.size()));
     log["mEnums                   "].append(fmt::format(", {:4}", mEnums.size()));
