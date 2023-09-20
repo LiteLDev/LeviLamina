@@ -2,6 +2,9 @@
 #include "liteloader/core/LiteLoader.h"
 #include <liteloader/api/form/CustomForm.h>
 #include <liteloader/api/form/SimpleForm.h>
+#include <liteloader/api/memory/Hook.h>
+#include <mc/deps/json/Value.h>
+#include <mc/network/ServerNetworkHandler.h>
 
 namespace ll::form::handler {
 
@@ -81,6 +84,36 @@ void handleFormPacket(Player* player, uint formId, const std::string& data) {
     }
     it->second->handle(*player, data);
     formHandlers.erase(it);
+}
+
+LL_AUTO_INSTANCE_HOOK(
+    FormResponseHandler,
+    ll::memory::HookPriority::Lowest,
+    "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@"
+    "AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
+    void,
+    NetworkIdentifier&       id,
+    ServerNetworkHandler&    handler,
+    std::shared_ptr<Packet>& packet
+) {
+    auto optionalPlayer = handler.getServerPlayer(id, SubClientId::PrimaryClient);
+    if (!optionalPlayer.has_value()) {
+        ll::logger.error("Failed to get player by NetworkIdentifier for FormResponseHandler");
+    }
+    auto& player = optionalPlayer.value();
+
+    std::string data   = "null";
+    auto        formId = ll::memory::dAccess<uint>(packet.get(), 48);
+    if (!ll::memory::dAccess<bool>(packet.get(), 81) && ll::memory::dAccess<bool>(packet.get(), 72)) {
+        auto json = ll::memory::dAccess<Json::Value>(packet.get(), 56);
+        data      = json.toStyledString();
+    }
+
+    if (data.back() == '\n') {
+        data.pop_back();
+    }
+
+    handleFormPacket(&player, formId, data);
 }
 
 } // namespace ll::form::handler
