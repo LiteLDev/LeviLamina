@@ -16,11 +16,8 @@ LIAPI const ScoreboardId& Scoreboard::nextScoreboardId() {
 }
 
 bool Scoreboard::createScoreboardId(PlayerScoreboardId const& pid) {
-    ScoreboardId newsid = nextScoreboardId();
-    ScoreboardId* (Scoreboard::*rv)(ScoreboardId, PlayerScoreboardId const&) = nullptr;
-    *((void**)&rv) = SYM("??$_createScoreboardId@UPlayerScoreboardId@@@Scoreboard@@IEAAAEBUScoreboardId@@U1@"
-                         "AEBUPlayerScoreboardId@@@Z");
-    return (this->*rv)(newsid, pid)->isValid();
+
+    return 1;
 }
 
 LIAPI bool Scoreboard::createScoreboardId(mce::UUID const& uuid) {

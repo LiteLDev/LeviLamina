@@ -119,6 +119,10 @@ public:
      */
     MCAPI void registerLevelStorageManagerListener(class LevelStorageManager &);
     /**
+     * @symbol ?registerMapDataManagerListener\@GameplayUserManager\@\@QEAAXAEAVMapDataManager\@\@\@Z
+     */
+    MCAPI void registerMapDataManagerListener(class MapDataManager &);
+    /**
      * @symbol ?shouldStartGameSaveTimer\@GameplayUserManager\@\@QEBA_NXZ
      */
     MCAPI bool shouldStartGameSaveTimer() const;
@@ -136,6 +140,10 @@ public:
     MCAPI void tickSuspensions();
 
 //private:
+    /**
+     * @symbol ?_addTrackedMapPlayers\@GameplayUserManager\@\@AEAAXAEAVMapItemSavedData\@\@\@Z
+     */
+    MCAPI void _addTrackedMapPlayers(class MapItemSavedData &);
     /**
      * @symbol ?_forEachActivePlayer\@GameplayUserManager\@\@AEBAXV?$function\@$$A6A_NAEAVPlayer\@\@\@Z\@std\@\@_N\@Z
      */

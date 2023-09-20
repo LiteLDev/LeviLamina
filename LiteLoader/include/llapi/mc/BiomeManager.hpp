@@ -26,9 +26,9 @@ public:
 
 public:
     /**
-     * @symbol ??0BiomeManager\@\@QEAA\@V?$unique_ptr\@VBiomeRegistry\@\@U?$default_delete\@VBiomeRegistry\@\@\@std\@\@\@std\@\@W4FactoryScope\@BiomeComponentFactory\@\@_NV?$unique_ptr\@VAutomaticFeatureRules\@\@U?$default_delete\@VAutomaticFeatureRules\@\@\@std\@\@\@2\@\@Z
+     * @symbol ??0BiomeManager\@\@QEAA\@V?$OwnerPtrT\@U?$SharePtrRefTraits\@VBiomeRegistry\@\@\@\@\@\@W4FactoryScope\@BiomeComponentFactory\@\@_NV?$unique_ptr\@VAutomaticFeatureRules\@\@U?$default_delete\@VAutomaticFeatureRules\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI BiomeManager(std::unique_ptr<class BiomeRegistry>, enum class BiomeComponentFactory::FactoryScope, bool, std::unique_ptr<class AutomaticFeatureRules>);
+    MCAPI BiomeManager(class OwnerPtrT<struct SharePtrRefTraits<class BiomeRegistry>>, enum class BiomeComponentFactory::FactoryScope, bool, std::unique_ptr<class AutomaticFeatureRules>);
     /**
      * @symbol ?getBiomeComponentFactory\@BiomeManager\@\@QEAAAEAVBiomeComponentFactory\@\@XZ
      */
@@ -65,5 +65,13 @@ public:
      * @symbol ?use3DBiomeMaps\@BiomeManager\@\@SA_NAEBVBaseGameVersion\@\@\@Z
      */
     MCAPI static bool use3DBiomeMaps(class BaseGameVersion const &);
+
+//private:
+    /**
+     * @symbol ?_initializeServerBiomeRegistry\@BiomeManager\@\@AEAAXAEBVExperiments\@\@AEAVIWorldRegistriesProvider\@\@AEAVResourcePackManager\@\@VLevelSeed64\@\@\@Z
+     */
+    MCAPI void _initializeServerBiomeRegistry(class Experiments const &, class IWorldRegistriesProvider &, class ResourcePackManager &, class LevelSeed64);
+
+private:
 
 };

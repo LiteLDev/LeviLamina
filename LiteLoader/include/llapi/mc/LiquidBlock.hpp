@@ -36,10 +36,10 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 8
-     * @symbol ?getAABB\@LiquidBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
+     * @vftbl 6
+     * @symbol ?getCollisionShape\@LiquidBlock\@\@UEBA?AVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
-    virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
+    virtual class AABB getCollisionShape(class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
      * @vftbl 22
      * @symbol __unk_vfn_22
@@ -136,10 +136,15 @@ public:
      */
     virtual void __unk_vfn_51();
     /**
-     * @vftbl 56
-     * @symbol __unk_vfn_56
+     * @vftbl 55
+     * @symbol __unk_vfn_55
      */
-    virtual void __unk_vfn_56();
+    virtual void __unk_vfn_55();
+    /**
+     * @vftbl 61
+     * @symbol __unk_vfn_61
+     */
+    virtual void __unk_vfn_61();
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
@@ -147,44 +152,44 @@ public:
     virtual void __unk_vfn_62();
     /**
      * @vftbl 63
-     * @symbol __unk_vfn_63
-     */
-    virtual void __unk_vfn_63();
-    /**
-     * @vftbl 64
      * @symbol ?canContainLiquid\@LiquidBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @vftbl 71
+     * @vftbl 70
      * @symbol ?checkIsPathable\@LiquidBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @vftbl 77
-     * @symbol __unk_vfn_77
+     * @vftbl 76
+     * @symbol __unk_vfn_76
      */
-    virtual void __unk_vfn_77();
+    virtual void __unk_vfn_76();
     /**
-     * @vftbl 84
-     * @symbol __unk_vfn_84
+     * @vftbl 83
+     * @symbol __unk_vfn_83
      */
-    virtual void __unk_vfn_84();
+    virtual void __unk_vfn_83();
     /**
-     * @vftbl 92
+     * @vftbl 91
      * @symbol ?mayPick\@LiquidBlock\@\@UEBA_NAEBVBlockSource\@\@AEBVBlock\@\@_N\@Z
      */
     virtual bool mayPick(class BlockSource const &, class Block const &, bool) const;
     /**
-     * @vftbl 101
+     * @vftbl 100
      * @symbol ?neighborChanged\@LiquidBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @vftbl 107
-     * @symbol __unk_vfn_107
+     * @vftbl 106
+     * @symbol __unk_vfn_106
      */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_106();
+    /**
+     * @vftbl 122
+     * @symbol __unk_vfn_122
+     */
+    virtual void __unk_vfn_122();
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -196,40 +201,35 @@ public:
      */
     virtual void __unk_vfn_124();
     /**
-     * @vftbl 125
-     * @symbol __unk_vfn_125
+     * @vftbl 127
+     * @symbol __unk_vfn_127
      */
-    virtual void __unk_vfn_125();
+    virtual void __unk_vfn_127();
     /**
-     * @vftbl 128
-     * @symbol __unk_vfn_128
+     * @vftbl 130
+     * @symbol __unk_vfn_130
      */
-    virtual void __unk_vfn_128();
+    virtual void __unk_vfn_130();
     /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
-     */
-    virtual void __unk_vfn_131();
-    /**
-     * @vftbl 135
+     * @vftbl 134
      * @symbol ?getColor\@LiquidBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getColor(class Block const &) const;
     /**
-     * @vftbl 137
+     * @vftbl 136
      * @symbol ?getColorAtPos\@LiquidBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual int getColorAtPos(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 140
+     * @vftbl 139
      * @symbol ?onGraphicsModeChanged\@LiquidBlock\@\@UEAAXAEBUBlockGraphicsModeChangeContext\@\@\@Z
      */
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
     /**
-     * @vftbl 148
-     * @symbol ?animateTick\@LiquidBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 147
+     * @symbol ?animateTickBedrockLegacy\@LiquidBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
+    virtual void animateTickBedrockLegacy(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153

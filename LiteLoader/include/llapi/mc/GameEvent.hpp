@@ -33,9 +33,5 @@ public:
      * @symbol ?getType\@GameEvent\@\@QEBA?BW4GameEventType\@GameEventConfig\@\@XZ
      */
     MCAPI enum class GameEventConfig::GameEventType const getType() const;
-    /**
-     * @symbol ?isCategory\@GameEvent\@\@QEBA_NW4GameEventCategory\@GameEventConfig\@\@\@Z
-     */
-    MCAPI bool isCategory(enum class GameEventConfig::GameEventCategory) const;
 
 };

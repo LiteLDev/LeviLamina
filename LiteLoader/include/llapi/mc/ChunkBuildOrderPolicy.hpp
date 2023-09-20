@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "ChunkBuildOrderPolicyBase.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class ChunkBuildOrderPolicy.
  *
  */
-class ChunkBuildOrderPolicy {
+class ChunkBuildOrderPolicy : public ChunkBuildOrderPolicyBase {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -25,6 +26,7 @@ class ChunkBuildOrderPolicy {
 public:
     class ChunkBuildOrderPolicy& operator=(class ChunkBuildOrderPolicy const &) = delete;
     ChunkBuildOrderPolicy(class ChunkBuildOrderPolicy const &) = delete;
+    ChunkBuildOrderPolicy() = delete;
 #endif
 
 public:
@@ -63,9 +65,5 @@ public:
      * @symbol ?updateInfluences\@ChunkBuildOrderPolicy\@\@UEAAXXZ
      */
     virtual void updateInfluences();
-    /**
-     * @symbol ??0ChunkBuildOrderPolicy\@\@QEAA\@XZ
-     */
-    MCAPI ChunkBuildOrderPolicy();
 
 };

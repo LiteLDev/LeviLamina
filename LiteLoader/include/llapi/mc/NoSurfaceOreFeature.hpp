@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "IFeature.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class NoSurfaceOreFeature.
  *
  */
-class NoSurfaceOreFeature {
+class NoSurfaceOreFeature : public IFeature {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -40,8 +41,9 @@ public:
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /**
-     * @symbol ??0NoSurfaceOreFeature\@\@QEAA\@UIntRange\@\@AEBVBlockDescriptor\@\@11\@Z
+     * @vftbl 2
+     * @symbol ?isValidPlacement\@IFeature\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI NoSurfaceOreFeature(struct IntRange, class BlockDescriptor const &, class BlockDescriptor const &, class BlockDescriptor const &);
+    virtual bool isValidPlacement(std::string const &);
 
 };

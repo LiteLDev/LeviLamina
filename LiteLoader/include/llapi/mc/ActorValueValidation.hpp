@@ -40,9 +40,9 @@ namespace ActorValueValidation {
      */
     MCAPI bool validateBlockPos(class BlockPos const &, char const *);
     /**
-     * @symbol ?validateFloatValue\@ActorValueValidation\@\@YA_NMPEBD\@Z
+     * @symbol ?validateHeadRotationFloatValue\@ActorValueValidation\@\@YA_NMPEBD\@Z
      */
-    MCAPI bool validateFloatValue(float, char const *);
+    MCAPI bool validateHeadRotationFloatValue(float, char const *);
     /**
      * @symbol ?validateVec2Position\@ActorValueValidation\@\@YA_NAEBVVec2\@\@PEBD\@Z
      */

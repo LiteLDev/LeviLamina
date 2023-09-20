@@ -40,9 +40,9 @@ public:
      */
     MCAPI MolangScriptArg(float);
     /**
-     * @symbol ?getAsNonConstMolangMemberArray\@MolangScriptArg\@\@QEAAPEAUMolangMemberArray\@\@XZ
+     * @symbol ?clear\@MolangScriptArg\@\@QEAAXXZ
      */
-    MCAPI struct MolangMemberArray * getAsNonConstMolangMemberArray();
+    MCAPI void clear();
     /**
      * @symbol ??4MolangScriptArg\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */

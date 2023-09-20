@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "PetSleepWithOwnerState.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class SleepState.
  *
  */
-class SleepState {
+class SleepState : public PetSleepWithOwnerState {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -36,9 +37,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?tick\@SleepState\@\@UEAAXXZ
+     * @symbol __unk_vfn_1
      */
-    virtual void tick();
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
@@ -49,5 +50,11 @@ public:
      * @symbol ?stop\@SleepState\@\@UEAAXXZ
      */
     virtual void stop();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLEEPSTATE
+    /**
+     * @symbol ?tick\@SleepState\@\@UEAAXXZ
+     */
+    MCVAPI void tick();
+#endif
 
 };

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 
@@ -35,8 +36,8 @@ public:
      */
     MCAPI ~BlockMaterialInstanceProxy();
     /**
-     * @symbol ?bindType\@BlockMaterialInstanceProxy\@\@SAXXZ
+     * @symbol ?bindType\@BlockMaterialInstanceProxy\@\@SAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(struct cereal::ReflectionCtx &);
 
 };

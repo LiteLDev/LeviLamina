@@ -934,7 +934,7 @@ void assignBlocks() {
     INIT_BLOCK(ColoredTorchRg);
     INIT_BLOCK(CommandBlock);
     INIT_BLOCK(Composter);
-    INIT_BLOCK(ConcretePowder);
+    //INIT_BLOCK(ConcretePowder);
     INIT_BLOCK(Conduit);
     INIT_BLOCK(CopperBlock);
     INIT_BLOCK(CopperOre);
@@ -1389,9 +1389,9 @@ void assignBlocks() {
     INIT_BLOCK(SpruceStandingSign);
     INIT_BLOCK(SpruceTrapdoor);
     INIT_BLOCK(SpruceWallSign);
-    INIT_BLOCK(StainedGlass);
-    INIT_BLOCK(StainedGlassPane);
-    INIT_BLOCK(StainedHardenedClay);
+    //INIT_BLOCK(StainedGlass);
+    //INIT_BLOCK(StainedGlassPane);
+    //INIT_BLOCK(StainedHardenedClay);
     INIT_BLOCK(StandingBanner);
     INIT_BLOCK(StandingSign);
     INIT_BLOCK(StickyPiston);

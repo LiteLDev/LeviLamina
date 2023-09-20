@@ -24,11 +24,14 @@ class CompassSpriteCalculator {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPASSSPRITECALCULATOR
 public:
     class CompassSpriteCalculator& operator=(class CompassSpriteCalculator const &) = delete;
-    CompassSpriteCalculator(class CompassSpriteCalculator const &) = delete;
     CompassSpriteCalculator() = delete;
 #endif
 
 public:
+    /**
+     * @symbol ??0CompassSpriteCalculator\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI CompassSpriteCalculator(class CompassSpriteCalculator const &);
     /**
      * @symbol ??0CompassSpriteCalculator\@\@QEAA\@V?$function\@$$A6A?AVBlockPos\@\@PEBVBlockSource\@\@PEAVActor\@\@\@Z\@std\@\@V?$function\@$$A6A_NPEBVBlockSource\@\@PEAVActor\@\@\@Z\@2\@MM\@Z
      */

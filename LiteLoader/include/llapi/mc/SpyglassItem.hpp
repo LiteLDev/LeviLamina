@@ -131,5 +131,9 @@ public:
      * @symbol __unk_vfn_116
      */
     virtual void __unk_vfn_116();
+    /**
+     * @symbol ??0SpyglassItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@F\@Z
+     */
+    MCAPI SpyglassItem(std::string const &, short);
 
 };

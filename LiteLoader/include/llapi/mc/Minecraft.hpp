@@ -7,6 +7,7 @@
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
 #include "Core.hpp"
+#include "IEntityRegistryOwner.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +18,7 @@
  * @brief MC class Minecraft.
  *
  */
-class Minecraft {
+class Minecraft : public IEntityRegistryOwner {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -176,6 +177,10 @@ public:
      * @symbol ?update\@Minecraft\@\@QEAA_NXZ
      */
     MCAPI bool update();
+    /**
+     * @symbol ?_tryCatchupMovementTicks\@Minecraft\@\@SAXAEAVEntitySystems\@\@AEAVEntityRegistry\@\@\@Z
+     */
+    MCAPI static void _tryCatchupMovementTicks(class EntitySystems &, class EntityRegistry &);
 
 //private:
     /**

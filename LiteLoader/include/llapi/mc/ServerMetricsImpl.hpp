@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "ServerMetrics.hpp"
 
 #define BEFORE_EXTRA
 
@@ -14,7 +15,7 @@
  * @brief MC class ServerMetricsImpl.
  *
  */
-class ServerMetricsImpl {
+class ServerMetricsImpl : public ServerMetrics {
 
 #define AFTER_EXTRA
 

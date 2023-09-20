@@ -5,7 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "ProducerComponent.hpp"
+#include "CapacitorComponent.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +16,7 @@
  * @brief MC class RedstoneTorchCapacitor.
  *
  */
-class RedstoneTorchCapacitor : public ProducerComponent {
+class RedstoneTorchCapacitor : public CapacitorComponent {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -122,9 +122,9 @@ public:
 
 //private:
     /**
-     * @symbol ?FindStrongestStrength\@RedstoneTorchCapacitor\@\@AEAAHAEBVBlockPos\@\@AEAVCircuitSystem\@\@AEA_N\@Z
+     * @symbol ?_findStrongestStrength\@RedstoneTorchCapacitor\@\@AEAAHAEBVBlockPos\@\@AEAVCircuitSystem\@\@AEA_N\@Z
      */
-    MCAPI int FindStrongestStrength(class BlockPos const &, class CircuitSystem &, bool &);
+    MCAPI int _findStrongestStrength(class BlockPos const &, class CircuitSystem &, bool &);
 
 private:
 

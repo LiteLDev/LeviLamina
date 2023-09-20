@@ -25,10 +25,13 @@ struct PlayerTickComponent {
 public:
     struct PlayerTickComponent& operator=(struct PlayerTickComponent const &) = delete;
     PlayerTickComponent(struct PlayerTickComponent const &) = delete;
-    PlayerTickComponent() = delete;
 #endif
 
 public:
+    /**
+     * @symbol ??0PlayerTickComponent\@\@QEAA\@XZ
+     */
+    MCAPI PlayerTickComponent();
     /**
      * @symbol ??0PlayerTickComponent\@\@QEAA\@V?$unique_ptr\@UIPlayerTickPolicy\@\@U?$default_delete\@UIPlayerTickPolicy\@\@\@std\@\@\@std\@\@\@Z
      */

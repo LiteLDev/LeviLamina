@@ -46,16 +46,8 @@ public:
      */
     MCAPI enum class Enchant::Type getEnchantType() const;
     /**
-     * @symbol ??8EnchantmentInstance\@\@QEBA_NAEBV0\@\@Z
-     */
-    MCAPI bool operator==(class EnchantmentInstance const &) const;
-    /**
      * @symbol ?setEnchantLevel\@EnchantmentInstance\@\@QEAAXH\@Z
      */
     MCAPI void setEnchantLevel(int);
-    /**
-     * @symbol ?setEnchantType\@EnchantmentInstance\@\@QEAAXW4Type\@Enchant\@\@\@Z
-     */
-    MCAPI void setEnchantType(enum class Enchant::Type);
 
 };

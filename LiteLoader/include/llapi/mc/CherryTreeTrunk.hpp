@@ -46,6 +46,10 @@ public:
      * @symbol ?_generateBranch\@CherryTreeTrunk\@\@AEBA?AVBlockPos\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlock\@\@1AEAVRandom\@\@HV2\@AEBUTreeParams\@TreeHelper\@\@3H_N\@Z
      */
     MCAPI class BlockPos _generateBranch(class IBlockWorldGenAPI &, class Block const &, class Block const &, class Random &, int, class BlockPos, struct TreeHelper::TreeParams const &, class BlockPos, int, bool) const;
+    /**
+     * @symbol ?_tryPlaceBlock\@CherryTreeTrunk\@\@AEBA_NAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEBUTreeParams\@TreeHelper\@\@\@Z
+     */
+    MCAPI bool _tryPlaceBlock(class IBlockWorldGenAPI &, class BlockPos const &, class Block const &, struct TreeHelper::TreeParams const &) const;
 
 private:
 

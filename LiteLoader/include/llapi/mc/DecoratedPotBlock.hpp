@@ -5,14 +5,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "ActorBlock.hpp"
+#include "FaceDirectionalActorBlock.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
 
-class DecoratedPotBlock : public ActorBlock {
+class DecoratedPotBlock : public FaceDirectionalActorBlock {
 
 #define AFTER_EXTRA
 
@@ -131,10 +131,15 @@ public:
      */
     virtual void __unk_vfn_51();
     /**
-     * @vftbl 56
-     * @symbol __unk_vfn_56
+     * @vftbl 55
+     * @symbol __unk_vfn_55
      */
-    virtual void __unk_vfn_56();
+    virtual void __unk_vfn_55();
+    /**
+     * @vftbl 61
+     * @symbol __unk_vfn_61
+     */
+    virtual void __unk_vfn_61();
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
@@ -142,54 +147,54 @@ public:
     virtual void __unk_vfn_62();
     /**
      * @vftbl 63
-     * @symbol __unk_vfn_63
-     */
-    virtual void __unk_vfn_63();
-    /**
-     * @vftbl 64
      * @symbol ?canContainLiquid\@DecoratedPotBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @vftbl 71
+     * @vftbl 70
      * @symbol ?checkIsPathable\@DecoratedPotBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @vftbl 77
-     * @symbol __unk_vfn_77
+     * @vftbl 76
+     * @symbol __unk_vfn_76
      */
-    virtual void __unk_vfn_77();
+    virtual void __unk_vfn_76();
     /**
-     * @vftbl 84
-     * @symbol __unk_vfn_84
+     * @vftbl 83
+     * @symbol __unk_vfn_83
      */
-    virtual void __unk_vfn_84();
+    virtual void __unk_vfn_83();
     /**
-     * @vftbl 103
+     * @vftbl 102
      * @symbol ?playerWillDestroy\@DecoratedPotBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @vftbl 104
+     * @vftbl 103
      * @symbol ?spawnResources\@DecoratedPotBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAVRandomize\@\@AEBUResourceDropsContext\@\@\@Z
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &) const;
     /**
-     * @vftbl 105
+     * @vftbl 104
      * @symbol ?asItemInstance\@DecoratedPotBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
-     * @vftbl 106
+     * @vftbl 105
      * @symbol ?trySpawnResourcesOnExplosion\@DecoratedPotBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAVRandomize\@\@M\@Z
      */
     virtual void trySpawnResourcesOnExplosion(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, float) const;
     /**
-     * @vftbl 107
-     * @symbol __unk_vfn_107
+     * @vftbl 106
+     * @symbol __unk_vfn_106
      */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_106();
+    /**
+     * @vftbl 122
+     * @symbol __unk_vfn_122
+     */
+    virtual void __unk_vfn_122();
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -201,20 +206,15 @@ public:
      */
     virtual void __unk_vfn_124();
     /**
-     * @vftbl 125
-     * @symbol __unk_vfn_125
+     * @vftbl 127
+     * @symbol __unk_vfn_127
      */
-    virtual void __unk_vfn_125();
+    virtual void __unk_vfn_127();
     /**
-     * @vftbl 128
-     * @symbol __unk_vfn_128
+     * @vftbl 130
+     * @symbol __unk_vfn_130
      */
-    virtual void __unk_vfn_128();
-    /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
-     */
-    virtual void __unk_vfn_131();
+    virtual void __unk_vfn_130();
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153

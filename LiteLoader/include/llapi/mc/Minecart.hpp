@@ -56,187 +56,187 @@ public:
      */
     virtual void __unk_vfn_35();
     /**
-     * @vftbl 55
-     * @symbol __unk_vfn_55
+     * @vftbl 54
+     * @symbol __unk_vfn_54
      */
-    virtual void __unk_vfn_55();
+    virtual void __unk_vfn_54();
     /**
-     * @vftbl 62
-     * @symbol __unk_vfn_62
+     * @vftbl 61
+     * @symbol __unk_vfn_61
      */
-    virtual void __unk_vfn_62();
+    virtual void __unk_vfn_61();
     /**
-     * @vftbl 68
+     * @vftbl 67
      * @symbol ?getShadowHeightOffs\@Minecart\@\@UEAAMXZ
      */
     virtual float getShadowHeightOffs();
     /**
-     * @vftbl 69
+     * @vftbl 68
      * @symbol ?getShadowRadius\@Minecart\@\@UEBAMXZ
      */
     virtual float getShadowRadius() const;
     /**
-     * @vftbl 71
-     * @symbol __unk_vfn_71
+     * @vftbl 70
+     * @symbol __unk_vfn_70
      */
-    virtual void __unk_vfn_71();
+    virtual void __unk_vfn_70();
     /**
-     * @vftbl 77
-     * @symbol __unk_vfn_77
+     * @vftbl 76
+     * @symbol __unk_vfn_76
      */
-    virtual void __unk_vfn_77();
+    virtual void __unk_vfn_76();
     /**
-     * @vftbl 82
+     * @vftbl 81
      * @symbol ?isPickable\@Minecart\@\@UEAA_NXZ
      */
     virtual bool isPickable();
     /**
-     * @vftbl 83
-     * @symbol __unk_vfn_83
+     * @vftbl 82
+     * @symbol __unk_vfn_82
      */
-    virtual void __unk_vfn_83();
+    virtual void __unk_vfn_82();
     /**
-     * @vftbl 86
-     * @symbol __unk_vfn_86
+     * @vftbl 85
+     * @symbol __unk_vfn_85
      */
-    virtual void __unk_vfn_86();
+    virtual void __unk_vfn_85();
     /**
-     * @vftbl 93
-     * @symbol __unk_vfn_93
+     * @vftbl 92
+     * @symbol __unk_vfn_92
      */
-    virtual void __unk_vfn_93();
+    virtual void __unk_vfn_92();
+    /**
+     * @vftbl 94
+     * @symbol __unk_vfn_94
+     */
+    virtual void __unk_vfn_94();
     /**
      * @vftbl 95
      * @symbol __unk_vfn_95
      */
     virtual void __unk_vfn_95();
     /**
-     * @vftbl 96
-     * @symbol __unk_vfn_96
+     * @vftbl 97
+     * @symbol __unk_vfn_97
      */
-    virtual void __unk_vfn_96();
+    virtual void __unk_vfn_97();
     /**
-     * @vftbl 98
-     * @symbol __unk_vfn_98
-     */
-    virtual void __unk_vfn_98();
-    /**
-     * @vftbl 120
+     * @vftbl 119
      * @symbol ?isInvulnerableTo\@Minecart\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
-     * @vftbl 125
+     * @vftbl 123
      * @symbol ?onBounceStarted\@Minecart\@\@UEAAXAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual void onBounceStarted(class BlockPos const &, class Block const &);
     /**
-     * @vftbl 164
-     * @symbol __unk_vfn_164
+     * @vftbl 162
+     * @symbol __unk_vfn_162
      */
-    virtual void __unk_vfn_164();
+    virtual void __unk_vfn_162();
     /**
-     * @vftbl 166
+     * @vftbl 164
      * @symbol ?getControllingPlayer\@Minecart\@\@UEBA?AUActorUniqueID\@\@XZ
      */
     virtual struct ActorUniqueID getControllingPlayer() const;
     /**
-     * @vftbl 178
-     * @symbol __unk_vfn_178
+     * @vftbl 174
+     * @symbol __unk_vfn_174
      */
-    virtual void __unk_vfn_178();
+    virtual void __unk_vfn_174();
     /**
-     * @vftbl 202
-     * @symbol __unk_vfn_202
+     * @vftbl 198
+     * @symbol __unk_vfn_198
      */
-    virtual void __unk_vfn_202();
+    virtual void __unk_vfn_198();
     /**
-     * @vftbl 203
-     * @symbol __unk_vfn_203
+     * @vftbl 199
+     * @symbol __unk_vfn_199
      */
-    virtual void __unk_vfn_203();
+    virtual void __unk_vfn_199();
+    /**
+     * @vftbl 215
+     * @symbol __unk_vfn_215
+     */
+    virtual void __unk_vfn_215();
+    /**
+     * @vftbl 218
+     * @symbol __unk_vfn_218
+     */
+    virtual void __unk_vfn_218();
     /**
      * @vftbl 219
-     * @symbol __unk_vfn_219
-     */
-    virtual void __unk_vfn_219();
-    /**
-     * @vftbl 222
-     * @symbol __unk_vfn_222
-     */
-    virtual void __unk_vfn_222();
-    /**
-     * @vftbl 223
      * @symbol ?kill\@Minecart\@\@MEAAXXZ
      */
     virtual void kill();
     /**
-     * @vftbl 239
-     * @symbol __unk_vfn_239
+     * @vftbl 235
+     * @symbol __unk_vfn_235
      */
-    virtual void __unk_vfn_239();
+    virtual void __unk_vfn_235();
     /**
-     * @vftbl 240
+     * @vftbl 236
      * @symbol ?_hurt\@Minecart\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl 243
+     * @vftbl 239
      * @symbol ?readAdditionalSaveData\@Minecart\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vftbl 244
+     * @vftbl 240
      * @symbol ?addAdditionalSaveData\@Minecart\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vftbl 247
-     * @symbol __unk_vfn_247
+     * @vftbl 243
+     * @symbol __unk_vfn_243
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_243();
     /**
-     * @vftbl 252
+     * @vftbl 247
      * @symbol ?_onSizeUpdated\@Minecart\@\@EEAAXXZ
      */
     virtual void _onSizeUpdated();
     /**
-     * @vftbl 253
-     * @symbol __unk_vfn_253
+     * @vftbl 248
+     * @symbol __unk_vfn_248
      */
-    virtual void __unk_vfn_253();
+    virtual void __unk_vfn_248();
     /**
-     * @vftbl 254
+     * @vftbl 249
      * @symbol ?destroy\@Minecart\@\@UEAAXAEBVActorDamageSource\@\@_N\@Z
      */
     virtual void destroy(class ActorDamageSource const &, bool);
     /**
-     * @vftbl 255
+     * @vftbl 250
      * @symbol ?getType\@MinecartChest\@\@UEAA?AW4MinecartType\@\@XZ
      */
     virtual enum class MinecartType getType() = 0;
     /**
-     * @vftbl 256
+     * @vftbl 251
      * @symbol ?getDefaultDisplayBlock\@Minecart\@\@UEBAPEBVBlock\@\@XZ
      */
     virtual class Block const * getDefaultDisplayBlock() const;
     /**
-     * @vftbl 257
-     * @symbol __unk_vfn_257
+     * @vftbl 252
+     * @symbol __unk_vfn_252
      */
-    virtual void __unk_vfn_257();
+    virtual void __unk_vfn_252();
     /**
-     * @vftbl 258
+     * @vftbl 253
      * @symbol ?getDefaultDisplayOffset\@Minecart\@\@UEBAHXZ
      */
     virtual int getDefaultDisplayOffset() const;
     /**
-     * @vftbl 259
+     * @vftbl 254
      * @symbol ?applyNaturalSlowdown\@Minecart\@\@MEAAXAEAVBlockSource\@\@\@Z
      */
     virtual void applyNaturalSlowdown(class BlockSource &);
     /**
-     * @vftbl 260
+     * @vftbl 255
      * @symbol ?_lazyInitDisplayBlock\@Minecart\@\@EEAAXXZ
      */
     virtual void _lazyInitDisplayBlock();

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "ScreenHandlerBase.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class ScreenHandlerBeacon.
  *
  */
-class ScreenHandlerBeacon {
+class ScreenHandlerBeacon : public ScreenHandlerBase {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -45,15 +46,14 @@ public:
      */
     virtual enum class ItemStackNetResult endRequest();
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @vftbl 4
      * @symbol ?postRequest\@ScreenHandlerBeacon\@\@MEAAX_N\@Z
      */
     virtual void postRequest(bool);
+    /**
+     * @symbol ??0ScreenHandlerBeacon\@\@QEAA\@AEBVContainerScreenContext\@\@AEAVItemStackRequestActionHandler\@\@\@Z
+     */
+    MCAPI ScreenHandlerBeacon(class ContainerScreenContext const &, class ItemStackRequestActionHandler &);
 
 //private:
     /**

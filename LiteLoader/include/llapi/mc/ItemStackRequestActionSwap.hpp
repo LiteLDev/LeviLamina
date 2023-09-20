@@ -27,7 +27,6 @@ class ItemStackRequestActionSwap : public ItemStackRequestActionTransferBase {
 public:
     class ItemStackRequestActionSwap& operator=(class ItemStackRequestActionSwap const &) = delete;
     ItemStackRequestActionSwap(class ItemStackRequestActionSwap const &) = delete;
-    ItemStackRequestActionSwap() = delete;
 #endif
 
 public:
@@ -37,29 +36,8 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ??0ItemStackRequestActionSwap\@\@QEAA\@XZ
      */
-    virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol ?_write\@ItemStackRequestActionTransferBase\@\@MEBAXAEAVBinaryStream\@\@\@Z
-     */
-    virtual void _write(class BinaryStream &) const;
-    /**
-     * @vftbl 5
-     * @symbol ?_read\@ItemStackRequestActionTransferBase\@\@MEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
-     */
-    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
+    MCAPI ItemStackRequestActionSwap();
 
 };

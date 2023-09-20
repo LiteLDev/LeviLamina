@@ -63,17 +63,13 @@ public:
     MCVAPI ~SetTitlePacket();
 #endif
     /**
-     * @symbol ??0SetTitlePacket\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI SetTitlePacket(class SetTitlePacket const &);
-    /**
      * @symbol ??0SetTitlePacket\@\@QEAA\@XZ
      */
     MCAPI SetTitlePacket();
     /**
-     * @symbol ??0SetTitlePacket\@\@QEAA\@W4TitleType\@0\@\@Z
+     * @symbol ??0SetTitlePacket\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType);
+    MCAPI SetTitlePacket(class SetTitlePacket const &);
     /**
      * @symbol ??0SetTitlePacket\@\@QEAA\@HHH\@Z
      */
@@ -86,6 +82,10 @@ public:
      * @symbol ??0SetTitlePacket\@\@QEAA\@W4TitleType\@0\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType, std::string const &);
+    /**
+     * @symbol ??0SetTitlePacket\@\@QEAA\@W4TitleType\@0\@\@Z
+     */
+    MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType);
     /**
      * @symbol ??4SetTitlePacket\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */

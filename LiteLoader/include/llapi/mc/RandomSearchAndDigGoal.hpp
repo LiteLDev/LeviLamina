@@ -5,13 +5,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Goal.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
 
-class RandomSearchAndDigGoal {
+class RandomSearchAndDigGoal : public Goal {
 
 #define AFTER_EXTRA
 
@@ -39,11 +40,6 @@ public:
      * @symbol ?canContinueToUse\@RandomSearchAndDigGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol ?start\@RandomSearchAndDigGoal\@\@UEAAXXZ

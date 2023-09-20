@@ -38,10 +38,15 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 8
-     * @symbol ?getAABB\@SignBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
+     * @vftbl 6
+     * @symbol ?getCollisionShape\@SignBlock\@\@UEBA?AVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
-    virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
+    virtual class AABB getCollisionShape(class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
+    /**
+     * @vftbl 10
+     * @symbol ?getOutline\@SignBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEAV2\@\@Z
+     */
+    virtual class AABB const & getOutline(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &) const;
     /**
      * @vftbl 12
      * @symbol ?getVisualShape\@SignBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@\@Z
@@ -143,55 +148,60 @@ public:
      */
     virtual void __unk_vfn_51();
     /**
-     * @vftbl 56
-     * @symbol __unk_vfn_56
+     * @vftbl 55
+     * @symbol __unk_vfn_55
      */
-    virtual void __unk_vfn_56();
+    virtual void __unk_vfn_55();
+    /**
+     * @vftbl 61
+     * @symbol __unk_vfn_61
+     */
+    virtual void __unk_vfn_61();
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
      */
     virtual void __unk_vfn_62();
     /**
-     * @vftbl 63
-     * @symbol __unk_vfn_63
-     */
-    virtual void __unk_vfn_63();
-    /**
-     * @vftbl 71
+     * @vftbl 70
      * @symbol ?checkIsPathable\@SignBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @vftbl 77
-     * @symbol __unk_vfn_77
+     * @vftbl 76
+     * @symbol __unk_vfn_76
      */
-    virtual void __unk_vfn_77();
+    virtual void __unk_vfn_76();
     /**
-     * @vftbl 84
-     * @symbol __unk_vfn_84
+     * @vftbl 83
+     * @symbol __unk_vfn_83
      */
-    virtual void __unk_vfn_84();
+    virtual void __unk_vfn_83();
     /**
-     * @vftbl 93
+     * @vftbl 92
      * @symbol ?mayPlace\@SignBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @vftbl 101
+     * @vftbl 100
      * @symbol ?neighborChanged\@SignBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @vftbl 105
+     * @vftbl 104
      * @symbol ?asItemInstance\@SignBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
-     * @vftbl 107
-     * @symbol __unk_vfn_107
+     * @vftbl 106
+     * @symbol __unk_vfn_106
      */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_106();
+    /**
+     * @vftbl 122
+     * @symbol __unk_vfn_122
+     */
+    virtual void __unk_vfn_122();
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -203,20 +213,15 @@ public:
      */
     virtual void __unk_vfn_124();
     /**
-     * @vftbl 125
-     * @symbol __unk_vfn_125
+     * @vftbl 127
+     * @symbol __unk_vfn_127
      */
-    virtual void __unk_vfn_125();
+    virtual void __unk_vfn_127();
     /**
-     * @vftbl 128
-     * @symbol __unk_vfn_128
+     * @vftbl 130
+     * @symbol __unk_vfn_130
      */
-    virtual void __unk_vfn_128();
-    /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
-     */
-    virtual void __unk_vfn_131();
+    virtual void __unk_vfn_130();
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -297,11 +302,6 @@ public:
      * @symbol ?_getItemInstance\@SignBlock\@\@MEBA?AVItemInstance\@\@XZ
      */
     virtual class ItemInstance _getItemInstance() const;
-    /**
-     * @vftbl 196
-     * @symbol ?_getShape\@SignBlock\@\@MEBAXHAEAVAABB\@\@\@Z
-     */
-    virtual void _getShape(int, class AABB &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIGNBLOCK
     /**
      * @symbol ?isInteractiveBlock\@SignBlock\@\@UEBA_NXZ
@@ -326,6 +326,10 @@ public:
      * @symbol ?_getInteractResult\@SignBlock\@\@CA?AUSignInteractionResult\@1\@AEAVSignBlockActor\@\@W4SignTextSide\@\@AEAVItemStack\@\@AEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
     MCAPI static struct SignBlock::SignInteractionResult _getInteractResult(class SignBlockActor &, enum class SignTextSide, class ItemStack &, class Player &, class BlockPos const &, unsigned char);
+    /**
+     * @symbol ?_getShape\@SignBlock\@\@CAXHAEAVAABB\@\@\@Z
+     */
+    MCAPI static void _getShape(int, class AABB &);
 
 private:
 

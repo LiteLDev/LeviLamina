@@ -29,5 +29,15 @@ public:
 #endif
 
 public:
+    /**
+     * @vftbl 0
+     * @symbol __unk_vfn_0
+     */
+    virtual void __unk_vfn_0();
+    /**
+     * @vftbl 1
+     * @symbol ?fwrite\@MemoryMappedFileWriteAccess\@MemoryMappedFileAccess\@\@UEAA_KPEBX_K1PEAX\@Z
+     */
+    virtual unsigned __int64 fwrite(void const *, unsigned __int64, unsigned __int64, void *) = 0;
 
 };

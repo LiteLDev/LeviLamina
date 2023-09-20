@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Goal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class VexRandomMoveGoal.
  *
  */
-class VexRandomMoveGoal {
+class VexRandomMoveGoal : public Goal {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -44,21 +45,6 @@ public:
      * @symbol ?canContinueToUse\@VexRandomMoveGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5();
     /**
      * @vftbl 6
      * @symbol ?tick\@VexRandomMoveGoal\@\@UEAAXXZ

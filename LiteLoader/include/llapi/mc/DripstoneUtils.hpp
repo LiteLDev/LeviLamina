@@ -39,10 +39,6 @@ struct PointedDripstoneBasePos {
      */
     MCAPI bool canPlacePool(class IBlockWorldGenAPI &, class BlockPos const &);
     /**
-     * @symbol ?getDripstoneHeight\@DripstoneUtils\@\@YAMMMMM\@Z
-     */
-    MCAPI float getDripstoneHeight(float, float, float, float);
-    /**
      * @symbol ?getPlacementBlock\@DripstoneUtils\@\@YAAEBVBlock\@\@EAEBW4DripstoneThickness\@\@\@Z
      */
     MCAPI class Block const & getPlacementBlock(unsigned char, enum class DripstoneThickness const &);
@@ -50,10 +46,6 @@ struct PointedDripstoneBasePos {
      * @symbol ?getPointedDripstoneBasePos\@DripstoneUtils\@\@YA?AV?$optional\@UPointedDripstoneBasePos\@DripstoneUtils\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     MCAPI class std::optional<struct DripstoneUtils::PointedDripstoneBasePos> getPointedDripstoneBasePos(class IBlockWorldGenAPI &, class BlockPos const &, class Random &);
-    /**
-     * @symbol ?isCircleMostlyEmbeddedInStone\@DripstoneUtils\@\@YA_NAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@H\@Z
-     */
-    MCAPI bool isCircleMostlyEmbeddedInStone(class IBlockWorldGenAPI &, class BlockPos const &, int);
     /**
      * @symbol ?isDripstoneBaseOrLava\@DripstoneUtils\@\@YA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
      */

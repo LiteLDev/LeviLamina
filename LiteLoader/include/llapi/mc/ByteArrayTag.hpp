@@ -37,6 +37,7 @@ public:
 public:
     class ByteArrayTag& operator=(class ByteArrayTag const &) = delete;
     ByteArrayTag(class ByteArrayTag const &) = delete;
+    ByteArrayTag() = delete;
 #endif
 
 public:
@@ -80,13 +81,5 @@ public:
      * @symbol ?hash\@ByteArrayTag\@\@UEBA_KXZ
      */
     virtual unsigned __int64 hash() const;
-    /**
-     * @symbol ??0ByteArrayTag\@\@QEAA\@UTagMemoryChunk\@\@\@Z
-     */
-    MCAPI ByteArrayTag(struct TagMemoryChunk);
-    /**
-     * @symbol ??0ByteArrayTag\@\@QEAA\@XZ
-     */
-    MCAPI ByteArrayTag();
 
 };

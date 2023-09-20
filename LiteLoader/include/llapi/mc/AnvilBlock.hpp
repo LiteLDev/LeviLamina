@@ -36,10 +36,15 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 8
-     * @symbol ?getAABB\@AnvilBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
+     * @vftbl 6
+     * @symbol ?getCollisionShape\@AnvilBlock\@\@UEBA?AVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
-    virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
+    virtual class AABB getCollisionShape(class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
+    /**
+     * @vftbl 10
+     * @symbol ?getOutline\@AnvilBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEAV2\@\@Z
+     */
+    virtual class AABB const & getOutline(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &) const;
     /**
      * @vftbl 14
      * @symbol ?getLiquidClipVolume\@AnvilBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVAABB\@\@\@Z
@@ -146,10 +151,15 @@ public:
      */
     virtual void __unk_vfn_51();
     /**
-     * @vftbl 56
-     * @symbol __unk_vfn_56
+     * @vftbl 55
+     * @symbol __unk_vfn_55
      */
-    virtual void __unk_vfn_56();
+    virtual void __unk_vfn_55();
+    /**
+     * @vftbl 61
+     * @symbol __unk_vfn_61
+     */
+    virtual void __unk_vfn_61();
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
@@ -157,44 +167,39 @@ public:
     virtual void __unk_vfn_62();
     /**
      * @vftbl 63
-     * @symbol __unk_vfn_63
-     */
-    virtual void __unk_vfn_63();
-    /**
-     * @vftbl 64
      * @symbol ?canContainLiquid\@AnvilBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @vftbl 77
-     * @symbol __unk_vfn_77
+     * @vftbl 76
+     * @symbol __unk_vfn_76
      */
-    virtual void __unk_vfn_77();
+    virtual void __unk_vfn_76();
     /**
-     * @vftbl 84
-     * @symbol __unk_vfn_84
+     * @vftbl 83
+     * @symbol __unk_vfn_83
      */
-    virtual void __unk_vfn_84();
+    virtual void __unk_vfn_83();
     /**
-     * @vftbl 98
+     * @vftbl 97
      * @symbol ?breaksFallingBlocks\@AnvilBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
-     * @vftbl 105
+     * @vftbl 104
      * @symbol ?asItemInstance\@AnvilBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
-     * @vftbl 107
-     * @symbol __unk_vfn_107
+     * @vftbl 106
+     * @symbol __unk_vfn_106
      */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_106();
     /**
-     * @vftbl 108
-     * @symbol ?getPlacementBlock\@AnvilBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
+     * @vftbl 122
+     * @symbol __unk_vfn_122
      */
-    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
+    virtual void __unk_vfn_122();
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -206,32 +211,27 @@ public:
      */
     virtual void __unk_vfn_124();
     /**
-     * @vftbl 125
-     * @symbol __unk_vfn_125
+     * @vftbl 127
+     * @symbol __unk_vfn_127
      */
-    virtual void __unk_vfn_125();
+    virtual void __unk_vfn_127();
     /**
-     * @vftbl 128
-     * @symbol __unk_vfn_128
+     * @vftbl 130
+     * @symbol __unk_vfn_130
      */
-    virtual void __unk_vfn_128();
+    virtual void __unk_vfn_130();
     /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
-     */
-    virtual void __unk_vfn_131();
-    /**
-     * @vftbl 133
+     * @vftbl 132
      * @symbol ?buildDescriptionId\@AnvilBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @vftbl 134
+     * @vftbl 133
      * @symbol ?isAuxValueRelevantForPicking\@AnvilBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @vftbl 143
+     * @vftbl 142
      * @symbol ?getVariant\@AnvilBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
@@ -286,16 +286,6 @@ public:
      */
     virtual void __unk_vfn_183();
     /**
-     * @vftbl 185
-     * @symbol ?getResourceItem\@AnvilBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
-     */
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
-    /**
-     * @vftbl 187
-     * @symbol ?getSilkTouchItemInstance\@AnvilBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
-     */
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
-    /**
      * @vftbl 192
      * @symbol ?getDustColor\@AnvilBlock\@\@UEBA?AVColor\@mce\@\@AEBVBlock\@\@\@Z
      */
@@ -337,5 +327,13 @@ public:
      * @symbol ??0AnvilBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI AnvilBlock(std::string const &, int);
+
+//private:
+    /**
+     * @symbol ?_getShape\@AnvilBlock\@\@CAAEBVAABB\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@\@Z
+     */
+    MCAPI static class AABB const & _getShape(class BlockPos const &, class Block const &, class AABB &);
+
+private:
 
 };

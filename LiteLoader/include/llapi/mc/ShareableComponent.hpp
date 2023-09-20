@@ -71,10 +71,6 @@ public:
      * @symbol ?_shouldReplaceItem\@ShareableComponent\@\@AEBA_NAEBVItemStack\@\@0AEBVShareableDefinition\@\@_N\@Z
      */
     MCAPI bool _shouldReplaceItem(class ItemStack const &, class ItemStack const &, class ShareableDefinition const &, bool) const;
-    /**
-     * @symbol ?_useLegacySurplusRules\@ShareableComponent\@\@CA_NAEBVLevel\@\@\@Z
-     */
-    MCAPI static bool _useLegacySurplusRules(class Level const &);
 
 private:
 

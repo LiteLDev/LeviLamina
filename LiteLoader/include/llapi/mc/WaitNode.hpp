@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "BehaviorNode.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class WaitNode.
  *
  */
-class WaitNode {
+class WaitNode : public BehaviorNode {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -25,6 +26,7 @@ class WaitNode {
 public:
     class WaitNode& operator=(class WaitNode const &) = delete;
     WaitNode(class WaitNode const &) = delete;
+    WaitNode() = delete;
 #endif
 
 public:
@@ -43,9 +45,5 @@ public:
      * @symbol ?initializeFromDefinition\@WaitNode\@\@EEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
-    /**
-     * @symbol ??0WaitNode\@\@QEAA\@XZ
-     */
-    MCAPI WaitNode();
 
 };

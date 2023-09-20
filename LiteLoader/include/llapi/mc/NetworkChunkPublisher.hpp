@@ -48,10 +48,6 @@ public:
      */
     MCAPI void destroyRegion();
     /**
-     * @symbol ?getChunksSentSinceStart\@NetworkChunkPublisher\@\@QEBAHXZ
-     */
-    MCAPI int getChunksSentSinceStart() const;
-    /**
      * @symbol ?is2DPositionRelevant\@NetworkChunkPublisher\@\@QEBA_NAEBVBlockPos\@\@\@Z
      */
     MCAPI bool is2DPositionRelevant(class BlockPos const &) const;
@@ -71,10 +67,6 @@ public:
      * @symbol ?sendQueuedChunks\@NetworkChunkPublisher\@\@QEAAXXZ
      */
     MCAPI void sendQueuedChunks();
-    /**
-     * @symbol ?setServerSettings\@NetworkChunkPublisher\@\@QEAAXAEAVNetworkSystem\@\@AEAVActiveTransfersManager\@Server\@ClientBlobCache\@\@\@Z
-     */
-    MCAPI void setServerSettings(class NetworkSystem &, class ClientBlobCache::Server::ActiveTransfersManager &);
 
 //private:
     /**

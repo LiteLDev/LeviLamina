@@ -37,11 +37,11 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 5
-     * @symbol ?clip\@HopperBlock\@\@UEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_N\@Z
+     * @symbol ?clip\@HopperBlock\@\@UEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2W4ShapeType\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
-    virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
+    virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, enum class ShapeType, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @vftbl 7
+     * @vftbl 8
      * @symbol ?addCollisionShapes\@HopperBlock\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -151,65 +151,70 @@ public:
      */
     virtual void __unk_vfn_51();
     /**
-     * @vftbl 56
-     * @symbol __unk_vfn_56
+     * @vftbl 55
+     * @symbol __unk_vfn_55
      */
-    virtual void __unk_vfn_56();
+    virtual void __unk_vfn_55();
+    /**
+     * @vftbl 61
+     * @symbol __unk_vfn_61
+     */
+    virtual void __unk_vfn_61();
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
      */
     virtual void __unk_vfn_62();
     /**
-     * @vftbl 63
-     * @symbol __unk_vfn_63
-     */
-    virtual void __unk_vfn_63();
-    /**
-     * @vftbl 75
+     * @vftbl 74
      * @symbol ?onRedstoneUpdate\@HopperBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
-     * @vftbl 77
-     * @symbol __unk_vfn_77
+     * @vftbl 76
+     * @symbol __unk_vfn_76
      */
-    virtual void __unk_vfn_77();
+    virtual void __unk_vfn_76();
     /**
-     * @vftbl 81
+     * @vftbl 80
      * @symbol ?setupRedstoneComponent\@HopperBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 82
+     * @vftbl 81
      * @symbol ?getRedstoneProperty\@HopperBlock\@\@UEBA?AW4BlockProperty\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual enum class BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 84
-     * @symbol __unk_vfn_84
+     * @vftbl 83
+     * @symbol __unk_vfn_83
      */
-    virtual void __unk_vfn_84();
+    virtual void __unk_vfn_83();
     /**
-     * @vftbl 98
+     * @vftbl 97
      * @symbol ?breaksFallingBlocks\@HopperBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
-     * @vftbl 105
+     * @vftbl 104
      * @symbol ?asItemInstance\@HopperBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
-     * @vftbl 107
-     * @symbol __unk_vfn_107
+     * @vftbl 106
+     * @symbol __unk_vfn_106
      */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_106();
     /**
-     * @vftbl 108
+     * @vftbl 107
      * @symbol ?getPlacementBlock\@HopperBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
+    /**
+     * @vftbl 122
+     * @symbol __unk_vfn_122
+     */
+    virtual void __unk_vfn_122();
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -222,24 +227,19 @@ public:
     virtual void __unk_vfn_124();
     /**
      * @vftbl 125
-     * @symbol __unk_vfn_125
-     */
-    virtual void __unk_vfn_125();
-    /**
-     * @vftbl 126
      * @symbol ?getComparatorSignal\@HopperBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
-     * @vftbl 128
-     * @symbol __unk_vfn_128
+     * @vftbl 127
+     * @symbol __unk_vfn_127
      */
-    virtual void __unk_vfn_128();
+    virtual void __unk_vfn_127();
     /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
+     * @vftbl 130
+     * @symbol __unk_vfn_130
      */
-    virtual void __unk_vfn_131();
+    virtual void __unk_vfn_130();
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -328,10 +328,6 @@ public:
      * @symbol ?_getSpoutAABB\@HopperBlock\@\@AEBA?AVAABB\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI class AABB _getSpoutAABB(class BlockSource const &, class BlockPos const &) const;
-    /**
-     * @symbol ?_installCircuit\@HopperBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI void _installCircuit(class BlockSource &, class BlockPos const &) const;
 
 private:
     /**

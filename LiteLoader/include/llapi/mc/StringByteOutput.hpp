@@ -46,12 +46,12 @@ public:
     virtual void writeLongString(class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
      * @vftbl 3
-     * @symbol ?writeFloat\@BigEndianStringByteOutput\@\@UEAAXM\@Z
+     * @symbol ?writeFloat\@BytesDataOutput\@\@UEAAXM\@Z
      */
     virtual void writeFloat(float);
     /**
      * @vftbl 4
-     * @symbol ?writeDouble\@BigEndianStringByteOutput\@\@UEAAXN\@Z
+     * @symbol ?writeDouble\@BytesDataOutput\@\@UEAAXN\@Z
      */
     virtual void writeDouble(double);
     /**
@@ -61,17 +61,17 @@ public:
     virtual void writeByte(char);
     /**
      * @vftbl 6
-     * @symbol ?writeShort\@BigEndianStringByteOutput\@\@UEAAXF\@Z
+     * @symbol ?writeShort\@BytesDataOutput\@\@UEAAXF\@Z
      */
     virtual void writeShort(short);
     /**
      * @vftbl 7
-     * @symbol ?writeInt\@BigEndianStringByteOutput\@\@UEAAXH\@Z
+     * @symbol ?writeInt\@BytesDataOutput\@\@UEAAXH\@Z
      */
     virtual void writeInt(int);
     /**
      * @vftbl 8
-     * @symbol ?writeLongLong\@BigEndianStringByteOutput\@\@UEAAX_J\@Z
+     * @symbol ?writeLongLong\@BytesDataOutput\@\@UEAAX_J\@Z
      */
     virtual void writeLongLong(__int64);
     /**

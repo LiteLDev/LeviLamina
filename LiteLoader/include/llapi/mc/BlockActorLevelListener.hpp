@@ -5,7 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "BlockSourceListener.hpp"
+#include "LevelListener.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +16,7 @@
  * @brief MC class BlockActorLevelListener.
  *
  */
-class BlockActorLevelListener : public BlockSourceListener {
+class BlockActorLevelListener : public LevelListener {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -134,6 +134,11 @@ public:
      * @symbol ?onChunkUnloaded\@BlockActorLevelListener\@\@UEAAXAEAVLevelChunk\@\@\@Z
      */
     virtual void onChunkUnloaded(class LevelChunk &);
+    /**
+     * @vftbl 24
+     * @symbol __unk_vfn_24
+     */
+    virtual void __unk_vfn_24();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKACTORLEVELLISTENER
     /**
      * @symbol __unk_destructor_-1

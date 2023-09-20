@@ -44,15 +44,25 @@ public:
      * @symbol ?endRequest\@ScreenHandlerBase\@\@UEAA?AW4ItemStackNetResult\@\@XZ
      */
     virtual enum class ItemStackNetResult endRequest();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCREENHANDLERBASE
     /**
+     * @vftbl 3
      * @symbol ?endRequestBatch\@ScreenHandlerBase\@\@UEAAXXZ
      */
-    MCVAPI void endRequestBatch();
+    virtual void endRequestBatch();
     /**
+     * @vftbl 4
      * @symbol ?postRequest\@ScreenHandlerBase\@\@UEAAX_N\@Z
      */
-    MCVAPI void postRequest(bool);
+    virtual void postRequest(bool);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCREENHANDLERBASE
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~ScreenHandlerBase();
 #endif
+    /**
+     * @symbol ??0ScreenHandlerBase\@\@QEAA\@AEAVItemStackRequestActionHandler\@\@\@Z
+     */
+    MCAPI ScreenHandlerBase(class ItemStackRequestActionHandler &);
 
 };

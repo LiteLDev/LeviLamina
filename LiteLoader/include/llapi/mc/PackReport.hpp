@@ -29,6 +29,10 @@ public:
 
 public:
     /**
+     * @symbol ??0PackReport\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI PackReport(class PackReport &&);
+    /**
      * @symbol ??0PackReport\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI PackReport(class PackReport const &);
@@ -36,10 +40,6 @@ public:
      * @symbol ??0PackReport\@\@QEAA\@XZ
      */
     MCAPI PackReport();
-    /**
-     * @symbol ??0PackReport\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI PackReport(class PackReport &&);
     /**
      * @symbol ?getErrors\@PackReport\@\@QEBAAEBV?$vector\@V?$shared_ptr\@VPackError\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VPackError\@\@\@std\@\@\@2\@\@std\@\@XZ
      */
@@ -68,6 +68,10 @@ public:
      * @symbol ?hasErrors\@PackReport\@\@QEBA_NXZ
      */
     MCAPI bool hasErrors() const;
+    /**
+     * @symbol ??4PackReport\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     */
+    MCAPI class PackReport & operator=(class PackReport &&);
     /**
      * @symbol ?serialize\@PackReport\@\@QEAAXAEAVValue\@Json\@\@\@Z
      */

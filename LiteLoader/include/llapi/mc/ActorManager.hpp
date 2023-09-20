@@ -87,9 +87,9 @@ public:
      */
     MCAPI class Bedrock::PubSub::Subscription registerOnRemoveActorEntityReferences(class std::function<void (class Actor &)>);
     /**
-     * @symbol ?registerPostReloadActor\@ActorManager\@\@QEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXAEAVActor\@\@\@Z\@std\@\@\@Z
+     * @symbol ?registerPostReloadActor\@ActorManager\@\@QEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXAEAVActor\@\@W4InitializationMethod\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI class Bedrock::PubSub::Subscription registerPostReloadActor(class std::function<void (class Actor &)>);
+    MCAPI class Bedrock::PubSub::Subscription registerPostReloadActor(class std::function<void (class Actor &, enum class InitializationMethod)>);
     /**
      * @symbol ?removeActorEntityAndTakeEntity\@ActorManager\@\@QEAA?AV?$OwnerPtrT\@UEntityRefTraits\@\@\@\@VWeakEntityRef\@\@\@Z
      */

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 
@@ -32,12 +33,16 @@ public:
      */
     MCAPI ~ComponentItemDescriptionData_v1_20();
     /**
-     * @symbol ?VERSION\@ComponentItemDescriptionData_v1_20\@\@2VSemVersion\@\@B
+     * @symbol ?FIRST_VERSION\@ComponentItemDescriptionData_v1_20\@\@2VSemVersion\@\@B
      */
-    MCAPI static class SemVersion const VERSION;
+    MCAPI static class SemVersion const FIRST_VERSION;
     /**
-     * @symbol ?bindType\@ComponentItemDescriptionData_v1_20\@\@SAXXZ
+     * @symbol ?LAST_VERSION\@ComponentItemDescriptionData_v1_20\@\@2VSemVersion\@\@B
      */
-    MCAPI static void bindType();
+    MCAPI static class SemVersion const LAST_VERSION;
+    /**
+     * @symbol ?bindType\@ComponentItemDescriptionData_v1_20\@\@SAXAEAUReflectionCtx\@cereal\@\@\@Z
+     */
+    MCAPI static void bindType(struct cereal::ReflectionCtx &);
 
 };

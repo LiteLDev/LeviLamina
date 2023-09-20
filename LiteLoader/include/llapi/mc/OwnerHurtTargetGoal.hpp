@@ -46,16 +46,6 @@ public:
      */
     virtual void start();
     /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
-    /**
      * @symbol ??0OwnerHurtTargetGoal\@\@QEAA\@AEAVMob\@\@AEBV?$vector\@UMobDescriptor\@\@V?$allocator\@UMobDescriptor\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI OwnerHurtTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &);

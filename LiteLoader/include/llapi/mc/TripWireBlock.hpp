@@ -36,10 +36,10 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 8
-     * @symbol ?getAABB\@TripWireBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
+     * @vftbl 6
+     * @symbol ?getCollisionShape\@TripWireBlock\@\@UEBA?AVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
-    virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
+    virtual class AABB getCollisionShape(class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
      * @vftbl 12
      * @symbol ?getVisualShape\@TripWireBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@\@Z
@@ -141,50 +141,55 @@ public:
      */
     virtual void __unk_vfn_51();
     /**
-     * @vftbl 56
-     * @symbol __unk_vfn_56
+     * @vftbl 55
+     * @symbol __unk_vfn_55
      */
-    virtual void __unk_vfn_56();
+    virtual void __unk_vfn_55();
+    /**
+     * @vftbl 61
+     * @symbol __unk_vfn_61
+     */
+    virtual void __unk_vfn_61();
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
      */
     virtual void __unk_vfn_62();
     /**
-     * @vftbl 63
-     * @symbol __unk_vfn_63
+     * @vftbl 76
+     * @symbol __unk_vfn_76
      */
-    virtual void __unk_vfn_63();
+    virtual void __unk_vfn_76();
     /**
-     * @vftbl 77
-     * @symbol __unk_vfn_77
+     * @vftbl 83
+     * @symbol __unk_vfn_83
      */
-    virtual void __unk_vfn_77();
+    virtual void __unk_vfn_83();
     /**
-     * @vftbl 84
-     * @symbol __unk_vfn_84
-     */
-    virtual void __unk_vfn_84();
-    /**
-     * @vftbl 103
+     * @vftbl 102
      * @symbol ?playerWillDestroy\@TripWireBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @vftbl 105
+     * @vftbl 104
      * @symbol ?asItemInstance\@TripWireBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
-     * @vftbl 107
-     * @symbol __unk_vfn_107
+     * @vftbl 106
+     * @symbol __unk_vfn_106
      */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_106();
     /**
-     * @vftbl 113
+     * @vftbl 112
      * @symbol ?shouldTriggerEntityInside\@TripWireBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
     virtual bool shouldTriggerEntityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
+    /**
+     * @vftbl 122
+     * @symbol __unk_vfn_122
+     */
+    virtual void __unk_vfn_122();
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -196,20 +201,15 @@ public:
      */
     virtual void __unk_vfn_124();
     /**
-     * @vftbl 125
-     * @symbol __unk_vfn_125
+     * @vftbl 127
+     * @symbol __unk_vfn_127
      */
-    virtual void __unk_vfn_125();
+    virtual void __unk_vfn_127();
     /**
-     * @vftbl 128
-     * @symbol __unk_vfn_128
+     * @vftbl 130
+     * @symbol __unk_vfn_130
      */
-    virtual void __unk_vfn_128();
-    /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
-     */
-    virtual void __unk_vfn_131();
+    virtual void __unk_vfn_130();
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -266,16 +266,6 @@ public:
      */
     virtual void __unk_vfn_183();
     /**
-     * @vftbl 185
-     * @symbol ?getResourceItem\@TripWireBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
-     */
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
-    /**
-     * @vftbl 187
-     * @symbol ?getSilkTouchItemInstance\@TripWireBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
-     */
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
-    /**
      * @vftbl 188
      * @symbol ?entityInside\@TripWireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
@@ -287,17 +277,17 @@ public:
 
 //private:
     /**
-     * @symbol ?checkPressed\@TripWireBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     * @symbol ?_checkPressed\@TripWireBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI void checkPressed(class BlockSource &, class BlockPos const &) const;
+    MCAPI void _checkPressed(class BlockSource &, class BlockPos const &) const;
     /**
-     * @symbol ?isEntityInsideTriggerable\@TripWireBlock\@\@AEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
+     * @symbol ?_isEntityInsideTriggerable\@TripWireBlock\@\@AEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
-    MCAPI bool isEntityInsideTriggerable(class BlockSource const &, class BlockPos const &, class Actor &) const;
+    MCAPI bool _isEntityInsideTriggerable(class BlockSource const &, class BlockPos const &, class Actor &) const;
     /**
-     * @symbol ?updateSource\@TripWireBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
+     * @symbol ?_updateSource\@TripWireBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI void updateSource(class BlockSource &, class BlockPos const &, class Block const &) const;
+    MCAPI void _updateSource(class BlockSource &, class BlockPos const &) const;
 
 private:
 

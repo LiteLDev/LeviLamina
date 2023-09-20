@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Editor.hpp"
 #include "Json.hpp"
 #include "Social.hpp"
 #include "RakNet.hpp"
@@ -33,17 +34,17 @@ public:
 
 public:
     /**
-     * @symbol ??0LevelData\@\@QEAA\@_N\@Z
+     * @symbol ??0LevelData\@\@QEAA\@AEBVLevelSettings\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4GeneratorType\@\@AEBVBlockPos\@\@_NW4EducationEditionOffer\@\@MM\@Z
      */
-    MCAPI LevelData(bool);
+    MCAPI LevelData(class LevelSettings const &, std::string const &, enum class GeneratorType, class BlockPos const &, bool, enum class EducationEditionOffer, float, float);
     /**
      * @symbol ??0LevelData\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI LevelData(class LevelData &&);
     /**
-     * @symbol ??0LevelData\@\@QEAA\@AEBVLevelSettings\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4GeneratorType\@\@AEBVBlockPos\@\@_NW4EducationEditionOffer\@\@MM\@Z
+     * @symbol ??0LevelData\@\@QEAA\@_N\@Z
      */
-    MCAPI LevelData(class LevelSettings const &, std::string const &, enum class GeneratorType, class BlockPos const &, bool, enum class EducationEditionOffer, float, float);
+    MCAPI LevelData(bool);
     /**
      * @symbol ?achievementsWillBeDisabledOnLoad\@LevelData\@\@QEBA_NXZ
      */
@@ -65,13 +66,13 @@ public:
      */
     MCAPI bool getAdventureModeOverridesEnabled() const;
     /**
-     * @symbol ?getAdventureSettings\@LevelData\@\@QEAAAEAUAdventureSettings\@\@XZ
-     */
-    MCAPI struct AdventureSettings & getAdventureSettings();
-    /**
      * @symbol ?getAdventureSettings\@LevelData\@\@QEBAAEBUAdventureSettings\@\@XZ
      */
     MCAPI struct AdventureSettings const & getAdventureSettings() const;
+    /**
+     * @symbol ?getAdventureSettings\@LevelData\@\@QEAAAEAUAdventureSettings\@\@XZ
+     */
+    MCAPI struct AdventureSettings & getAdventureSettings();
     /**
      * @symbol ?getBaseGameVersion\@LevelData\@\@QEBAAEBVBaseGameVersion\@\@XZ
      */
@@ -113,6 +114,10 @@ public:
      */
     MCAPI class PermissionsHandler & getDefaultPermissions();
     /**
+     * @symbol ?getEditorWorldType\@LevelData\@\@QEBA?AW4WorldType\@Editor\@\@XZ
+     */
+    //MCAPI enum class Editor::WorldType getEditorWorldType() const;
+    /**
      * @symbol ?getEduSharedUriResource\@LevelData\@\@QEBAAEBVCompoundTag\@\@XZ
      */
     MCAPI class CompoundTag const & getEduSharedUriResource() const;
@@ -133,13 +138,13 @@ public:
      */
     MCAPI bool getEmoteChatMuted() const;
     /**
-     * @symbol ?getExperiments\@LevelData\@\@QEBAAEBVExperiments\@\@XZ
-     */
-    MCAPI class Experiments const & getExperiments() const;
-    /**
      * @symbol ?getExperiments\@LevelData\@\@QEAAAEAVExperiments\@\@XZ
      */
     MCAPI class Experiments & getExperiments();
+    /**
+     * @symbol ?getExperiments\@LevelData\@\@QEBAAEBVExperiments\@\@XZ
+     */
+    MCAPI class Experiments const & getExperiments() const;
     /**
      * @symbol ?getFlatWorldGeneratorOptions\@LevelData\@\@QEBAAEBVValue\@Json\@\@XZ
      */

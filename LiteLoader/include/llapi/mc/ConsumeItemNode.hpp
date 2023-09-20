@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "BehaviorNode.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class ConsumeItemNode.
  *
  */
-class ConsumeItemNode {
+class ConsumeItemNode : public BehaviorNode {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -25,6 +26,7 @@ class ConsumeItemNode {
 public:
     class ConsumeItemNode& operator=(class ConsumeItemNode const &) = delete;
     ConsumeItemNode(class ConsumeItemNode const &) = delete;
+    ConsumeItemNode() = delete;
 #endif
 
 public:
@@ -38,9 +40,5 @@ public:
      * @symbol ?tick\@ConsumeItemNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
-    /**
-     * @symbol ??0ConsumeItemNode\@\@QEAA\@XZ
-     */
-    MCAPI ConsumeItemNode();
 
 };

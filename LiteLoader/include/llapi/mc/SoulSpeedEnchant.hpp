@@ -81,10 +81,6 @@ public:
     MCVAPI bool isTreasureOnly() const;
 #endif
     /**
-     * @symbol ??0SoulSpeedEnchant\@\@QEAA\@W4Type\@Enchant\@\@W4Frequency\@2\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@2HH\@Z
-     */
-    MCAPI SoulSpeedEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class std::basic_string_view<char, struct std::char_traits<char>>, class std::basic_string_view<char, struct std::char_traits<char>>, int, int);
-    /**
      * @symbol ?SOUL_SPEED_BOOST_UUID\@SoulSpeedEnchant\@\@2VUUID\@mce\@\@B
      */
     MCAPI static class mce::UUID const SOUL_SPEED_BOOST_UUID;

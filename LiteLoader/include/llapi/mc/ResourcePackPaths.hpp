@@ -59,6 +59,10 @@ namespace ResourcePackPaths {
      */
     MCAPI extern std::string const SKIN_PACKS_PATH;
     /**
+     * @symbol ?SYSTEM_SERVICE_PACK_PATH\@ResourcePackPaths\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     */
+    MCAPI extern std::string const SYSTEM_SERVICE_PACK_PATH;
+    /**
      * @symbol ?TREATMENT_PACK_PATH\@ResourcePackPaths\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const TREATMENT_PACK_PATH;
@@ -74,10 +78,6 @@ namespace ResourcePackPaths {
      * @symbol ?getPremiumPackPath\@ResourcePackPaths\@\@YA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     MCAPI class Core::PathBuffer<std::string> getPremiumPackPath();
-    /**
-     * @symbol ?getPremiumWorldTemplatePath\@ResourcePackPaths\@\@YA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
-     */
-    MCAPI class Core::PathBuffer<std::string> getPremiumWorldTemplatePath();
     /**
      * @symbol ?getTemporaryPremiumBehaviorPacksPath\@ResourcePackPaths\@\@YA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */

@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "JsonUtil.hpp"
+#include "EventResponse.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class ShootEventResponse.
  *
  */
-class ShootEventResponse {
+class ShootEventResponse : public EventResponse {
 
 #define AFTER_EXTRA
 // Add Member There

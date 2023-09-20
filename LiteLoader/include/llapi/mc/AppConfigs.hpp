@@ -26,7 +26,6 @@ class AppConfigs {
 public:
     class AppConfigs& operator=(class AppConfigs const &) = delete;
     AppConfigs(class AppConfigs const &) = delete;
-    AppConfigs() = delete;
 #endif
 
 public:
@@ -332,5 +331,9 @@ public:
      */
     MCVAPI ~AppConfigs();
 #endif
+    /**
+     * @symbol ??0AppConfigs\@\@QEAA\@XZ
+     */
+    MCAPI AppConfigs();
 
 };

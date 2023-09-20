@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Goal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class DragonDeathGoal.
  *
  */
-class DragonDeathGoal {
+class DragonDeathGoal : public Goal {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -36,19 +37,14 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?canUse\@DragonDeathGoal\@\@UEAA_NXZ
      */
-    virtual void __unk_vfn_1();
+    virtual bool canUse();
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?canContinueToUse\@DragonDeathGoal\@\@UEAA_NXZ
      */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
+    virtual bool canContinueToUse();
     /**
      * @vftbl 4
      * @symbol ?start\@DragonDeathGoal\@\@UEAAXXZ
@@ -69,16 +65,6 @@ public:
      * @symbol ?appendDebugInfo\@DragonDeathGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONDEATHGOAL
-    /**
-     * @symbol ?canContinueToUse\@DragonDeathGoal\@\@UEAA_NXZ
-     */
-    MCVAPI bool canContinueToUse();
-    /**
-     * @symbol ?canUse\@DragonDeathGoal\@\@UEAA_NXZ
-     */
-    MCVAPI bool canUse();
-#endif
     /**
      * @symbol ??0DragonDeathGoal\@\@QEAA\@AEAVEnderDragon\@\@\@Z
      */

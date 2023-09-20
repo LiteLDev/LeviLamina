@@ -28,16 +28,16 @@ public:
 
 public:
     /**
-     * @symbol ?createSystem\@ClientPlayerRewindSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?accumulateHistoryChangesSystem\@ClientPlayerRewindSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-//private:
+    MCAPI static struct TickingSystemWithInfo accumulateHistoryChangesSystem();
     /**
-     * @symbol ?_doClientPlayerRewindSystem\@ClientPlayerRewindSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@AEAVReplayStateComponent\@\@\@Z
+     * @symbol ?applyHistoryChangesToLiveEntity\@ClientPlayerRewindSystem\@\@SAXAEBUReplayStateTrackerComponent\@\@AEAUSynchedActorDataComponent\@\@\@Z
      */
-    MCAPI static void _doClientPlayerRewindSystem(class StrictEntityContext const &, class ActorOwnerComponent &, class ReplayStateComponent &);
-
-private:
+    MCAPI static void applyHistoryChangesToLiveEntity(struct ReplayStateTrackerComponent const &, struct SynchedActorDataComponent &);
+    /**
+     * @symbol ?discardHistoryChangesSystem\@ClientPlayerRewindSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     */
+    MCAPI static struct TickingSystemWithInfo discardHistoryChangesSystem();
 
 };

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Control.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class MoveControl.
  *
  */
-class MoveControl {
+class MoveControl : public Control {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -48,12 +49,6 @@ public:
      * @symbol ?setWantedPosition\@MoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@AEBVVec3\@\@M\@Z
      */
     virtual void setWantedPosition(class MoveControlComponent &, class Mob &, class Vec3 const &, float);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROL
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~MoveControl();
-#endif
     /**
      * @symbol ??0MoveControl\@\@QEAA\@XZ
      */

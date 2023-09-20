@@ -58,6 +58,10 @@ public:
      */
     MCAPI void onStartLeaveGame();
     /**
+     * @symbol ?registerOnAppSuspendCallback\@LevelStorageManager\@\@QEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXXZ\@std\@\@\@Z
+     */
+    MCAPI class Bedrock::PubSub::Subscription registerOnAppSuspendCallback(class std::function<void (void)>);
+    /**
      * @symbol ?registerOnCanStartGameSaveTimerCheckCallback\@LevelStorageManager\@\@QEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6A_NXZ\@std\@\@\@Z
      */
     MCAPI class Bedrock::PubSub::Subscription registerOnCanStartGameSaveTimerCheckCallback(class std::function<bool (void)>);

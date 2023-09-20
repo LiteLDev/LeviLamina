@@ -11,11 +11,8 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC class BlockPosTrackerComponent.
- *
- */
-class BlockPosTrackerComponent {
+
+struct BlockPosTrackerComponent {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -23,8 +20,8 @@ class BlockPosTrackerComponent {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPOSTRACKERCOMPONENT
 public:
-    class BlockPosTrackerComponent& operator=(class BlockPosTrackerComponent const &) = delete;
-    BlockPosTrackerComponent(class BlockPosTrackerComponent const &) = delete;
+    struct BlockPosTrackerComponent& operator=(struct BlockPosTrackerComponent const &) = delete;
+    BlockPosTrackerComponent(struct BlockPosTrackerComponent const &) = delete;
     BlockPosTrackerComponent() = delete;
 #endif
 

@@ -5,6 +5,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 
@@ -25,12 +27,16 @@ public:
 
 public:
     /**
-     * @symbol ??8CameraInstruction\@\@QEBA_NAEBU0\@\@Z
+     * @symbol ?write\@CameraInstruction\@\@QEBAXAEAVBinaryStream\@\@\@Z
      */
-    MCAPI bool operator==(struct CameraInstruction const &) const;
+    MCAPI void write(class BinaryStream &) const;
     /**
-     * @symbol ?bindType\@CameraInstruction\@\@SAXXZ
+     * @symbol ?bindType\@CameraInstruction\@\@SAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(struct cereal::ReflectionCtx &);
+    /**
+     * @symbol ?read\@CameraInstruction\@\@SA?AV?$Result\@UCameraInstruction\@\@Verror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     */
+    MCAPI static class Bedrock::Result<struct CameraInstruction, class std::error_code> read(class ReadOnlyBinaryStream &);
 
 };

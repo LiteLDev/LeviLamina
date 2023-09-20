@@ -81,9 +81,9 @@ public:
     virtual bool getAsset(class Core::Path const &, std::string &, bool) const = 0;
     /**
      * @vftbl 10
-     * @symbol ?deleteAsset\@ZipPackAccessStrategy\@\@UEAA_NAEBV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@\@Z
+     * @symbol ?deleteAsset\@ZipPackAccessStrategy\@\@UEAA_NAEBVPath\@Core\@\@\@Z
      */
-    virtual bool deleteAsset(class Core::PathBuffer<std::string> const &) = 0;
+    virtual bool deleteAsset(class Core::Path const &) = 0;
     /**
      * @vftbl 11
      * @symbol ?writeAsset\@ZipPackAccessStrategy\@\@UEAA_NAEBVPath\@Core\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -164,9 +164,9 @@ public:
      */
     MCAPI void _addToAssetSet(class Core::Path const &);
     /**
-     * @symbol ?_deleteFromAssetSet\@PackAccessStrategy\@\@IEAAXAEBV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@\@Z
+     * @symbol ?_deleteFromAssetSet\@PackAccessStrategy\@\@IEAAXAEBVPath\@Core\@\@\@Z
      */
-    MCAPI void _deleteFromAssetSet(class Core::PathBuffer<std::string> const &);
+    MCAPI void _deleteFromAssetSet(class Core::Path const &);
     /**
      * @symbol ?_isInAssetSet\@PackAccessStrategy\@\@IEBA_NAEBVPath\@Core\@\@\@Z
      */

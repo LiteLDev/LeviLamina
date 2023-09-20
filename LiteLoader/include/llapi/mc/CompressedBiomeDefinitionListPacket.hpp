@@ -6,19 +6,18 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
-#include "Packet.hpp"
+#include "BiomeDefinitionListPacket.hpp"
 
 #define BEFORE_EXTRA
 #include "CompoundTag.hpp"
 #undef BEFORE_EXTRA
 
 
-class CompressedBiomeDefinitionListPacket : public Packet {
+class CompressedBiomeDefinitionListPacket : public BiomeDefinitionListPacket {
 
 #define AFTER_EXTRA
 public:
-    CompoundTag mBiomeData;
-    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&);
+
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPRESSEDBIOMEDEFINITIONLISTPACKET
 public:

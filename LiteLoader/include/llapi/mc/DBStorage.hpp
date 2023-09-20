@@ -222,10 +222,6 @@ public:
      */
     MCAPI void _handleErrorStatus(class leveldb::Status const &);
     /**
-     * @symbol ?_mergeIntoDeleteCache\@DBStorage\@\@IEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4Category\@DBHelpers\@\@\@Z
-     */
-    MCAPI void _mergeIntoDeleteCache(std::string const &, enum class DBHelpers::Category);
-    /**
      * @symbol ?_mergeIntoWriteCache\@DBStorage\@\@IEAAXAEBVLevelStorageWriteBatch\@\@\@Z
      */
     MCAPI void _mergeIntoWriteCache(class LevelStorageWriteBatch const &);

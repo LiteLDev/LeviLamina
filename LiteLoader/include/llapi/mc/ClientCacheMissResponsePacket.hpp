@@ -27,7 +27,6 @@ class ClientCacheMissResponsePacket : public Packet {
 public:
     class ClientCacheMissResponsePacket& operator=(class ClientCacheMissResponsePacket const &) = delete;
     ClientCacheMissResponsePacket(class ClientCacheMissResponsePacket const &) = delete;
-    ClientCacheMissResponsePacket() = delete;
 #endif
 
 public:
@@ -62,5 +61,9 @@ public:
      */
     MCVAPI ~ClientCacheMissResponsePacket();
 #endif
+    /**
+     * @symbol ??0ClientCacheMissResponsePacket\@\@QEAA\@XZ
+     */
+    MCAPI ClientCacheMissResponsePacket();
 
 };

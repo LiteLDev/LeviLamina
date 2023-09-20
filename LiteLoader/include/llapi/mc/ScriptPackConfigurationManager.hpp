@@ -34,13 +34,13 @@ public:
     MCVAPI ~ScriptPackConfigurationManager();
 #endif
     /**
-     * @symbol ??0ScriptPackConfigurationManager\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI ScriptPackConfigurationManager(class ScriptPackConfigurationManager const &);
-    /**
      * @symbol ??0ScriptPackConfigurationManager\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI ScriptPackConfigurationManager(class ScriptPackConfigurationManager &&);
+    /**
+     * @symbol ??0ScriptPackConfigurationManager\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI ScriptPackConfigurationManager(class ScriptPackConfigurationManager const &);
     /**
      * @symbol ??0ScriptPackConfigurationManager\@\@QEAA\@V?$optional\@V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@\@std\@\@\@Z
      */

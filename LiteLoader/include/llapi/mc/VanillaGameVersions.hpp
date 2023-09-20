@@ -74,6 +74,14 @@ namespace VanillaGameVersions {
      */
     MCAPI extern class BaseGameVersion const TrailsAndTalesVersion_U1;
     /**
+     * @symbol ?TrailsAndTalesVersion_U2\@VanillaGameVersions\@\@3VBaseGameVersion\@\@B
+     */
+    MCAPI extern class BaseGameVersion const TrailsAndTalesVersion_U2;
+    /**
+     * @symbol ?TrailsAndTalesVersion_U3\@VanillaGameVersions\@\@3VBaseGameVersion\@\@B
+     */
+    MCAPI extern class BaseGameVersion const TrailsAndTalesVersion_U3;
+    /**
      * @symbol ?WildUpdateVersion\@VanillaGameVersions\@\@3VBaseGameVersion\@\@B
      */
     MCAPI extern class BaseGameVersion const WildUpdateVersion;

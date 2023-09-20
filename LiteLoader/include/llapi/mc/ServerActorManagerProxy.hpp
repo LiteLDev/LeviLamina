@@ -49,9 +49,5 @@ public:
      * @symbol ?deleteActorFromWorldInLevelChunk\@ServerActorManagerProxy\@\@UEAAXAEBVActor\@\@\@Z
      */
     virtual void deleteActorFromWorldInLevelChunk(class Actor const &);
-    /**
-     * @symbol ??0ServerActorManagerProxy\@\@QEAA\@AEAVServerLevel\@\@\@Z
-     */
-    MCAPI ServerActorManagerProxy(class ServerLevel &);
 
 };

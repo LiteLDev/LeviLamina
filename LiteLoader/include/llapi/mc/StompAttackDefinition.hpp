@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "JsonUtil.hpp"
+#include "MeleeAttackDefinition.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class StompAttackDefinition.
  *
  */
-class StompAttackDefinition {
+class StompAttackDefinition : public MeleeAttackDefinition {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -26,17 +27,15 @@ class StompAttackDefinition {
 public:
     class StompAttackDefinition& operator=(class StompAttackDefinition const &) = delete;
     StompAttackDefinition(class StompAttackDefinition const &) = delete;
+    StompAttackDefinition() = delete;
 #endif
 
 public:
     /**
-     * @symbol ??0StompAttackDefinition\@\@QEAA\@XZ
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    MCAPI StompAttackDefinition();
-    /**
-     * @symbol ?initialize\@StompAttackDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVStompAttackGoal\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext &, class StompAttackGoal &) const;
+    virtual void __unk_vfn_0();
     /**
      * @symbol ?buildSchema\@StompAttackDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VStompAttackDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */

@@ -28,13 +28,13 @@ public:
      */
     MCAPI UnlockedRecipesServerComponent();
     /**
-     * @symbol ??0UnlockedRecipesServerComponent\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI UnlockedRecipesServerComponent(class UnlockedRecipesServerComponent const &);
-    /**
      * @symbol ??0UnlockedRecipesServerComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI UnlockedRecipesServerComponent(class UnlockedRecipesServerComponent &&);
+    /**
+     * @symbol ??0UnlockedRecipesServerComponent\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI UnlockedRecipesServerComponent(class UnlockedRecipesServerComponent const &);
     /**
      * @symbol ?addAdditionalSaveData\@UnlockedRecipesServerComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */

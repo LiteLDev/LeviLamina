@@ -46,11 +46,6 @@ public:
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @vftbl 4
      * @symbol ?start\@WorkGoal\@\@UEAAXXZ
      */
@@ -70,16 +65,6 @@ public:
      * @symbol ?appendDebugInfo\@WorkGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
     /**
      * @vftbl 18
      * @symbol ?useWorkstation\@WorkGoal\@\@UEAAXXZ

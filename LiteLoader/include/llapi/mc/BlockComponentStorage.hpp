@@ -35,6 +35,10 @@ public:
      */
     MCAPI void allowComponentReplacement();
     /**
+     * @symbol ?allowTryGetComponentBeforeFinalization\@BlockComponentStorage\@\@QEAAXXZ
+     */
+    MCAPI void allowTryGetComponentBeforeFinalization();
+    /**
      * @symbol ?finalizeComponents\@BlockComponentStorage\@\@QEAAXXZ
      */
     MCAPI void finalizeComponents();

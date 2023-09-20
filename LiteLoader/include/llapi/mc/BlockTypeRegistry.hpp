@@ -64,9 +64,9 @@ public:
      */
     MCAPI static class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
     /**
-     * @symbol ?initBlockEntities\@BlockTypeRegistry\@\@SAXPEAVBlockDefinitionGroup\@\@AEBVExperiments\@\@\@Z
+     * @symbol ?initBlockEntities\@BlockTypeRegistry\@\@SAXAEBVExperiments\@\@\@Z
      */
-    MCAPI static void initBlockEntities(class BlockDefinitionGroup *, class Experiments const &);
+    MCAPI static void initBlockEntities(class Experiments const &);
     /**
      * @symbol ?initEntityRegistry\@BlockTypeRegistry\@\@SAXXZ
      */
@@ -88,13 +88,13 @@ public:
      */
     MCAPI static class WeakPtr<class BlockLegacy> lookupByName(class HashedString const &, bool);
     /**
-     * @symbol ?lookupByName\@BlockTypeRegistry\@\@SAPEBVBlock\@\@AEBVHashedString\@\@AEBV?$vector\@UBlockComplexAliasBlockState\@BlockTypeRegistry\@\@V?$allocator\@UBlockComplexAliasBlockState\@BlockTypeRegistry\@\@\@std\@\@\@std\@\@_N\@Z
-     */
-    MCAPI static class Block const * lookupByName(class HashedString const &, std::vector<struct BlockTypeRegistry::BlockComplexAliasBlockState> const &, bool);
-    /**
      * @symbol ?lookupByName\@BlockTypeRegistry\@\@SAPEBVBlock\@\@AEBVHashedString\@\@H_N\@Z
      */
     MCAPI static class Block const * lookupByName(class HashedString const &, int, bool);
+    /**
+     * @symbol ?lookupByName\@BlockTypeRegistry\@\@SAPEBVBlock\@\@AEBVHashedString\@\@AEBV?$vector\@UBlockComplexAliasBlockState\@BlockTypeRegistry\@\@V?$allocator\@UBlockComplexAliasBlockState\@BlockTypeRegistry\@\@\@std\@\@\@std\@\@_N\@Z
+     */
+    MCAPI static class Block const * lookupByName(class HashedString const &, std::vector<struct BlockTypeRegistry::BlockComplexAliasBlockState> const &, bool);
     /**
      * @symbol ?prepareBlocks\@BlockTypeRegistry\@\@SAXI\@Z
      */

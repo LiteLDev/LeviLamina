@@ -16,7 +16,7 @@
  * @brief MC class ActorBoolPropertyTest.
  *
  */
-class ActorBoolPropertyTest {
+class ActorBoolPropertyTest : public FilterTest {
 
 #define AFTER_EXTRA
 
@@ -44,11 +44,6 @@ public:
      * @symbol ?evaluate\@ActorBoolPropertyTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol ?getName\@ActorBoolPropertyTest\@\@UEBA?AV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@XZ

@@ -50,5 +50,9 @@ public:
      * @symbol ?read\@InMemoryFile\@\@QEBA?AVStatus\@leveldb\@\@_K0PEAVSlice\@3\@PEADAEA_K\@Z
      */
     MCAPI class leveldb::Status read(unsigned __int64, unsigned __int64, class leveldb::Slice *, char *, unsigned __int64 &) const;
+    /**
+     * @symbol ?rename\@InMemoryFile\@\@QEAAXAEBVPath\@Core\@\@\@Z
+     */
+    MCAPI void rename(class Core::Path const &);
 
 };

@@ -36,7 +36,7 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 1
+     * @vftbl 2
      * @symbol ?execute\@TestForBlocksCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;

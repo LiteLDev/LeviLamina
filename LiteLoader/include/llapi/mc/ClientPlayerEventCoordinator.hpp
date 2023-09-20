@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "PlayerEventCoordinator.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class ClientPlayerEventCoordinator.
  *
  */
-class ClientPlayerEventCoordinator {
+class ClientPlayerEventCoordinator : public PlayerEventCoordinator {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -33,10 +34,6 @@ public:
      * @symbol ?sendPlayerDestroyedBlock\@ClientPlayerEventCoordinator\@\@QEAAXAEAVPlayer\@\@AEBVBlock\@\@\@Z
      */
     MCAPI void sendPlayerDestroyedBlock(class Player &, class Block const &);
-    /**
-     * @symbol ?sendPlayerInput\@ClientPlayerEventCoordinator\@\@QEAAXAEAUIPlayerMovementProxy\@\@\@Z
-     */
-    MCAPI void sendPlayerInput(struct IPlayerMovementProxy &);
     /**
      * @symbol ?sendStartDestroyBlock\@ClientPlayerEventCoordinator\@\@QEAAXAEAVPlayer\@\@AEBVBlockPos\@\@AEAE\@Z
      */

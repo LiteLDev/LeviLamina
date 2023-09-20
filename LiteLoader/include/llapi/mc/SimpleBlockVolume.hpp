@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 
@@ -95,17 +96,17 @@ public:
      */
     MCAPI bool operator==(class SimpleBlockVolume const &) const;
     /**
-     * @symbol ?translate\@SimpleBlockVolume\@\@QEAAAEAV1\@AEBU?$vec\@$02H$0A\@\@glm\@\@\@Z
+     * @symbol ?translate\@SimpleBlockVolume\@\@QEAAAEAV1\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI class SimpleBlockVolume & translate(struct glm::vec<3, int, 0> const &);
+    MCAPI class SimpleBlockVolume & translate(class BlockPos const &);
     /**
      * @symbol ?translated\@SimpleBlockVolume\@\@QEBA?AV1\@AEBU?$vec\@$02H$0A\@\@glm\@\@\@Z
      */
     MCAPI class SimpleBlockVolume translated(struct glm::vec<3, int, 0> const &) const;
     /**
-     * @symbol ?cerealBindTypes\@SimpleBlockVolume\@\@SAXXZ
+     * @symbol ?cerealBindTypes\@SimpleBlockVolume\@\@SAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI static void cerealBindTypes();
+    MCAPI static void cerealBindTypes(struct cereal::ReflectionCtx &);
 
 //protected:
     /**

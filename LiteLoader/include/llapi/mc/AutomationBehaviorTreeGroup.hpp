@@ -39,10 +39,6 @@ public:
 
 //private:
     /**
-     * @symbol ?_addRef\@AutomationBehaviorTreeGroup\@\@AEAAXAEAVBehaviorTreeDefinitionPtr\@\@\@Z
-     */
-    MCAPI void _addRef(class BehaviorTreeDefinitionPtr &);
-    /**
      * @symbol ?_removeRef\@AutomationBehaviorTreeGroup\@\@AEAAXAEAVBehaviorTreeDefinitionPtr\@\@\@Z
      */
     MCAPI void _removeRef(class BehaviorTreeDefinitionPtr &);

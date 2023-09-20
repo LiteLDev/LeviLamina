@@ -5,13 +5,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "BaseBlockLocationIterator.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
 
-class CompoundBlockVolumeIterator {
+class CompoundBlockVolumeIterator : public BaseBlockLocationIterator {
 
 #define AFTER_EXTRA
 

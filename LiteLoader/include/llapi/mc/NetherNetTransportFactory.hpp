@@ -40,9 +40,5 @@ public:
      */
     MCVAPI ~NetherNetTransportFactory();
 #endif
-    /**
-     * @symbol ??0NetherNetTransportFactory\@\@QEAA\@AEBUNetworkSystemToggles\@\@\@Z
-     */
-    MCAPI NetherNetTransportFactory(struct NetworkSystemToggles const &);
 
 };

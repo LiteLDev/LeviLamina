@@ -5,7 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "BlockSourceListener.hpp"
+#include "LevelListener.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +16,7 @@
  * @brief MC class Weather.
  *
  */
-class Weather : public BlockSourceListener {
+class Weather : public LevelListener {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -116,11 +116,6 @@ public:
      */
     virtual void __unk_vfn_18();
     /**
-     * @vftbl 19
-     * @symbol __unk_vfn_19
-     */
-    virtual void __unk_vfn_19();
-    /**
      * @vftbl 20
      * @symbol __unk_vfn_20
      */
@@ -130,16 +125,6 @@ public:
      * @symbol __unk_vfn_21
      */
     virtual void __unk_vfn_21();
-    /**
-     * @vftbl 22
-     * @symbol __unk_vfn_22
-     */
-    virtual void __unk_vfn_22();
-    /**
-     * @vftbl 23
-     * @symbol __unk_vfn_23
-     */
-    virtual void __unk_vfn_23();
     /**
      * @vftbl 24
      * @symbol __unk_vfn_24

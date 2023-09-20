@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "ITickingSystem.hpp"
 
 #define BEFORE_EXTRA
 
@@ -14,7 +15,7 @@
  * @brief MC class AmbientSoundServerSystem.
  *
  */
-class AmbientSoundServerSystem {
+class AmbientSoundServerSystem : public ITickingSystem {
 
 #define AFTER_EXTRA
 

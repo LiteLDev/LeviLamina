@@ -224,19 +224,15 @@ public:
      */
     MCAPI static bool isValidRegisteredPOI(class BlockSource &, class BlockPos const &);
     /**
-     * @symbol ?isVillagePOI\@Village\@\@SA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI static bool isVillagePOI(class BlockSource const &, class BlockPos const &);
-    /**
      * @symbol ?isVillagePOI\@Village\@\@SA_NAEBVVillageManager\@\@AEBVBlock\@\@\@Z
      */
     MCAPI static bool isVillagePOI(class VillageManager const &, class Block const &);
+    /**
+     * @symbol ?isVillagePOI\@Village\@\@SA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI static bool isVillagePOI(class BlockSource const &, class BlockPos const &);
 
 //private:
-    /**
-     * @symbol ?_addPoiToVillage\@Village\@\@AEAAXAEBUActorUniqueID\@\@V?$weak_ptr\@VPOIInstance\@\@\@std\@\@\@Z
-     */
-    MCAPI void _addPoiToVillage(struct ActorUniqueID const &, class std::weak_ptr<class POIInstance>);
     /**
      * @symbol ?_calcPOIDist\@Village\@\@AEAAXXZ
      */
@@ -333,6 +329,10 @@ public:
      * @symbol ?_spawnRaidGroup\@Village\@\@AEBA_NVVec3\@\@EAEAV?$unordered_set\@UActorUniqueID\@\@U?$hash\@UActorUniqueID\@\@\@std\@\@U?$equal_to\@UActorUniqueID\@\@\@3\@V?$allocator\@UActorUniqueID\@\@\@3\@\@std\@\@\@Z
      */
     MCAPI bool _spawnRaidGroup(class Vec3, unsigned char, class std::unordered_set<struct ActorUniqueID, struct std::hash<struct ActorUniqueID>, struct std::equal_to<struct ActorUniqueID>, class std::allocator<struct ActorUniqueID>> &) const;
+    /**
+     * @symbol ?_tryAddPoiToVillage\@Village\@\@AEAAXAEBUActorUniqueID\@\@V?$weak_ptr\@VPOIInstance\@\@\@std\@\@\@Z
+     */
+    MCAPI void _tryAddPoiToVillage(struct ActorUniqueID const &, class std::weak_ptr<class POIInstance>);
     /**
      * @symbol ?_tryShiftStandingsTowardNeutral\@Village\@\@AEAAXAEAUTick\@\@_K_N\@Z
      */

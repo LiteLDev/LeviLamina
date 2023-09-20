@@ -37,34 +37,34 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
+     * @symbol ?load\@ResourcePackManager\@\@UEBA_NAEBVResourceLocation\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    virtual bool load(class ResourceLocation const &, std::string &) const = 0;
+    /**
+     * @vftbl 2
+     * @symbol ?load\@ResourcePackManager\@\@UEBA_NAEBVResourceLocation\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@4\@\@Z
+     */
+    virtual bool load(class ResourceLocation const &, std::string &, std::vector<std::string> const &) const = 0;
+    /**
+     * @vftbl 3
      * @symbol ?load\@ResourceLoader\@\@UEBA_NAEBVResourceLocationPair\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@4\@\@Z
      */
     virtual bool load(class ResourceLocationPair const &, std::string &, std::vector<std::string> const &) const;
     /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @vftbl 4
-     * @symbol __unk_vfn_4
+     * @symbol ?loadAllVersionsOf\@ResourcePackManager\@\@UEBA?AV?$vector\@VLoadedResourceData\@\@V?$allocator\@VLoadedResourceData\@\@\@std\@\@\@std\@\@AEBVResourceLocation\@\@\@Z
      */
-    virtual void __unk_vfn_4() = 0;
+    virtual std::vector<class LoadedResourceData> loadAllVersionsOf(class ResourceLocation const &) const = 0;
     /**
      * @vftbl 5
-     * @symbol __unk_vfn_5
+     * @symbol ?isInStreamableLocation\@ResourceLoader\@\@UEBA_NAEBVResourceLocation\@\@\@Z
      */
-    virtual void __unk_vfn_5() = 0;
+    virtual bool isInStreamableLocation(class ResourceLocation const &) const;
     /**
      * @vftbl 6
-     * @symbol __unk_vfn_6
+     * @symbol ?isInStreamableLocation\@ResourceLoader\@\@UEBA_NAEBVResourceLocation\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
      */
-    virtual void __unk_vfn_6() = 0;
+    virtual bool isInStreamableLocation(class ResourceLocation const &, std::vector<std::string> const &) const;
     /**
      * @vftbl 7
      * @symbol ?getPath\@ResourceLoader\@\@UEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@AEBVResourceLocation\@\@\@Z
@@ -91,14 +91,6 @@ public:
      */
     virtual struct std::pair<int, std::string const &> getPackStackIndexOfResource(class ResourceLocation const &, std::vector<std::string> const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCELOADER
-    /**
-     * @symbol ?isInStreamableLocation\@ResourceLoader\@\@UEBA_NAEBVResourceLocation\@\@\@Z
-     */
-    MCVAPI bool isInStreamableLocation(class ResourceLocation const &) const;
-    /**
-     * @symbol ?isInStreamableLocation\@ResourceLoader\@\@UEBA_NAEBVResourceLocation\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
-     */
-    MCVAPI bool isInStreamableLocation(class ResourceLocation const &, std::vector<std::string> const &) const;
     /**
      * @symbol __unk_destructor_-1
      */

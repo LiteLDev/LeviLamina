@@ -46,13 +46,18 @@ public:
     virtual void __unk_vfn_3();
     /**
      * @vftbl 4
-     * @symbol ?tick\@VanillaOffsetSystem\@\@UEAAXAEAV?$StrictExecutionContext\@U?$Filter\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@\@\@U?$Read\@UOffsetsComponent\@\@USynchedActorDataComponent\@\@U2\@V?$FlagComponent\@UPlayerIsSleepingFlag\@\@\@\@UIsHorizontalPoseFlagComponent\@\@\@\@U?$Write\@UVanillaOffsetComponent\@\@\@\@U?$AddRemove\@$$V\@\@U?$GlobalRead\@UBaseGameVersionComponent\@\@\@\@U?$GlobalWrite\@$$V\@\@U?$EntityFactoryT\@$$V\@\@\@\@\@Z
+     * @symbol __unk_vfn_4
      */
-    virtual void tick(class StrictExecutionContext<struct Filter<class FlagComponent<struct PlayerComponentFlag>>, struct Read<struct OffsetsComponent, struct SynchedActorDataComponent, struct SynchedActorDataComponent, class FlagComponent<struct PlayerIsSleepingFlag>, struct IsHorizontalPoseFlagComponent>, struct Write<struct VanillaOffsetComponent>, struct AddRemove<>, struct GlobalRead<struct BaseGameVersionComponent>, struct GlobalWrite<>, struct EntityFactoryT<>> &);
+    virtual void __unk_vfn_4();
     /**
-     * @symbol ?createSystem\@VanillaOffsetSystem\@\@SA?AUTickingSystemWithInfo\@\@_N0\@Z
+     * @vftbl 5
+     * @symbol ?tick\@VanillaOffsetSystem\@\@UEAAXAEAV?$StrictExecutionContext\@U?$Filter\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@\@\@U?$Read\@UOffsetsComponent\@\@USynchedActorDataComponent\@\@V?$FlagComponent\@UPlayerIsSleepingFlag\@\@\@\@\@\@U?$Write\@UVanillaOffsetComponent\@\@\@\@U?$AddRemove\@UIsHorizontalPoseFlagComponent\@\@\@\@U?$GlobalRead\@UBaseGameVersionComponent\@\@\@\@U?$GlobalWrite\@$$V\@\@U?$EntityFactoryT\@$$V\@\@\@\@\@Z
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(bool, bool);
+    virtual void tick(class StrictExecutionContext<struct Filter<class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct ActorMovementTickNeededFlag>>, struct Read<struct OffsetsComponent, struct SynchedActorDataComponent, class FlagComponent<struct PlayerIsSleepingFlag>>, struct Write<struct VanillaOffsetComponent>, struct AddRemove<struct IsHorizontalPoseFlagComponent>, struct GlobalRead<struct BaseGameVersionComponent>, struct GlobalWrite<>, struct EntityFactoryT<>> &);
+    /**
+     * @symbol ?createSystem\@VanillaOffsetSystem\@\@SA?AUTickingSystemWithInfo\@\@_N\@Z
+     */
+    MCAPI static struct TickingSystemWithInfo createSystem(bool);
     /**
      * @symbol ?getCameraPosition\@VanillaOffsetSystem\@\@SA?AVVec3\@\@AEBV2\@PEBUPassengerRenderingRidingOffsetComponent\@\@PEBUVanillaOffsetComponent\@\@M\@Z
      */

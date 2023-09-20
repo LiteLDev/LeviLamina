@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "BehaviorNode.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class SubtreeNode.
  *
  */
-class SubtreeNode {
+class SubtreeNode : public BehaviorNode {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -25,6 +26,7 @@ class SubtreeNode {
 public:
     class SubtreeNode& operator=(class SubtreeNode const &) = delete;
     SubtreeNode(class SubtreeNode const &) = delete;
+    SubtreeNode() = delete;
 #endif
 
 public:
@@ -43,9 +45,5 @@ public:
      * @symbol ?initializeFromDefinition\@SubtreeNode\@\@MEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
-    /**
-     * @symbol ??0SubtreeNode\@\@QEAA\@XZ
-     */
-    MCAPI SubtreeNode();
 
 };

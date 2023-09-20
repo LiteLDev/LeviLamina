@@ -34,6 +34,10 @@ public:
      */
     MCAPI KeyFrameTransform(float);
     /**
+     * @symbol ?getLerpMode\@KeyFrameTransform\@\@QEAAAEAVKeyFrameLerpMode\@\@XZ
+     */
+    MCAPI class KeyFrameLerpMode & getLerpMode();
+    /**
      * @symbol ??4KeyFrameTransform\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class KeyFrameTransform & operator=(class KeyFrameTransform &&);
@@ -46,9 +50,21 @@ public:
      */
     MCAPI void set(class ExpressionNode const &, int);
     /**
+     * @symbol ?set\@KeyFrameTransform\@\@QEAAXAEBVExpressionNode\@\@AEBVVec3\@\@\@Z
+     */
+    MCAPI void set(class ExpressionNode const &, class Vec3 const &);
+    /**
      * @symbol ?set\@KeyFrameTransform\@\@QEAAXAEBVExpressionNode\@\@\@Z
      */
     MCAPI void set(class ExpressionNode const &);
+    /**
+     * @symbol ?setPost\@KeyFrameTransform\@\@QEAAXAEBVExpressionNode\@\@H\@Z
+     */
+    MCAPI void setPost(class ExpressionNode const &, int);
+    /**
+     * @symbol ?setPre\@KeyFrameTransform\@\@QEAAXAEBVExpressionNode\@\@H\@Z
+     */
+    MCAPI void setPre(class ExpressionNode const &, int);
     /**
      * @symbol ??1KeyFrameTransform\@\@QEAA\@XZ
      */

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "RandomizableBlockActorContainer.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class DispenserBlockActor.
  *
  */
-class DispenserBlockActor {
+class DispenserBlockActor : public RandomizableBlockActorContainer {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -91,6 +92,10 @@ public:
      */
     MCVAPI void stopOpen(class Player &);
 #endif
+    /**
+     * @symbol ??0DispenserBlockActor\@\@QEAA\@VBlockPos\@\@\@Z
+     */
+    MCAPI DispenserBlockActor(class BlockPos);
     /**
      * @symbol ??0DispenserBlockActor\@\@QEAA\@VBlockPos\@\@W4BlockActorType\@\@\@Z
      */

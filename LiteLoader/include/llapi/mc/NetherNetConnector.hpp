@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Connector.hpp"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 
@@ -94,10 +95,6 @@ public:
      * @symbol ?tick\@NetherNetConnector\@\@UEAAXXZ
      */
     MCVAPI void tick();
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~NetherNetConnector();
 #endif
     /**
      * @symbol ??0NetherNetConnector\@\@QEAA\@AEBVNetherNetTransportFactory\@\@AEAUConnectionCallbacks\@Connector\@\@\@Z
@@ -112,25 +109,9 @@ public:
      */
     MCAPI bool closeSessionWithUser(struct NetherNet::NetworkID) const;
     /**
-     * @symbol ?disableBroadcastDiscovery\@NetherNetConnector\@\@QEBAXXZ
-     */
-    MCAPI void disableBroadcastDiscovery() const;
-    /**
-     * @symbol ?enableBroadcastDiscovery\@NetherNetConnector\@\@QEBAXXZ
-     */
-    MCAPI void enableBroadcastDiscovery() const;
-    /**
-     * @symbol ?getNetworkID\@NetherNetConnector\@\@QEBAAEBUNetworkID\@NetherNet\@\@XZ
-     */
-    MCAPI struct NetherNet::NetworkID const & getNetworkID() const;
-    /**
      * @symbol ?getSessionState\@NetherNetConnector\@\@QEBA_NUNetworkID\@NetherNet\@\@PEAUSessionState\@3\@\@Z
      */
     MCAPI bool getSessionState(struct NetherNet::NetworkID, struct NetherNet::SessionState *) const;
-    /**
-     * @symbol ?isBroadcastDiscoveryEnabled\@NetherNetConnector\@\@QEBA_NXZ
-     */
-    MCAPI bool isBroadcastDiscoveryEnabled() const;
     /**
      * @symbol ?isPacketAvailable\@NetherNetConnector\@\@QEBA_NUNetworkID\@NetherNet\@\@PEAI\@Z
      */
@@ -139,10 +120,6 @@ public:
      * @symbol ?readPacket\@NetherNetConnector\@\@QEBA_NUNetworkID\@NetherNet\@\@PEAXIPEAI\@Z
      */
     MCAPI bool readPacket(struct NetherNet::NetworkID, void *, unsigned int, unsigned int *) const;
-    /**
-     * @symbol ?registerRelayServerCredentialsReadyCallback\@NetherNetConnector\@\@QEBAX$$QEAV?$function\@$$A6AXW4ERelayServerConfigurationResult\@NetherNet\@\@\@Z\@std\@\@\@Z
-     */
-    MCAPI void registerRelayServerCredentialsReadyCallback(class std::function<void (enum class NetherNet::ERelayServerConfigurationResult)> &&) const;
     /**
      * @symbol ?sendPacket\@NetherNetConnector\@\@QEBA_NUNetworkID\@NetherNet\@\@PEBDIW4ESendType\@3\@\@Z
      */
@@ -155,13 +132,11 @@ public:
      * @symbol ?setBroadcastResponseCallback\@NetherNetConnector\@\@QEAAX$$QEAV?$function\@$$A6AXAEBUNetworkID\@NetherNet\@\@PEBXH\@Z\@std\@\@\@Z
      */
     MCAPI void setBroadcastResponseCallback(class std::function<void (struct NetherNet::NetworkID const &, void const *, int)> &&);
+
+//private:
     /**
-     * @symbol ?signIntoSignalingService\@NetherNetConnector\@\@QEBAX$$QEAV?$function\@$$A6AXVerror_code\@std\@\@\@Z\@std\@\@$$QEAV?$function\@$$A6AXW4SignalingHostConnectionStatus\@NetherNet\@\@I\@Z\@3\@$$QEAUSignalingConfiguration\@IWebRTCSignalingInterface\@NetherNet\@\@\@Z
+     * @symbol ?_getOrCreatePeer\@NetherNetConnector\@\@AEAA?AV?$not_null\@V?$shared_ptr\@VWebRTCNetworkPeer\@\@\@std\@\@\@gsl\@\@_KAEBV?$UniqueLock\@Vmutex\@std\@\@\@Threading\@Bedrock\@\@\@Z
      */
-    MCAPI void signIntoSignalingService(class std::function<void (class std::error_code)> &&, class std::function<void (enum class NetherNet::SignalingHostConnectionStatus, unsigned int)> &&, struct NetherNet::IWebRTCSignalingInterface::SignalingConfiguration &&) const;
-    /**
-     * @symbol ?signOutFromSignalingService\@NetherNetConnector\@\@QEBAXXZ
-     */
-    MCAPI void signOutFromSignalingService() const;
+    MCAPI class gsl::not_null<class std::shared_ptr<class WebRTCNetworkPeer>> _getOrCreatePeer(unsigned __int64, class Bedrock::Threading::UniqueLock<class std::mutex> const &);
 
 };

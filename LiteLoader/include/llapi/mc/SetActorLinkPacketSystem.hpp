@@ -28,8 +28,12 @@ public:
 
 public:
     /**
-     * @symbol ?createSetActorLinkPacketSystem\@SetActorLinkPacketSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createPassengerSystem\@SetActorLinkPacketSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSetActorLinkPacketSystem();
+    MCAPI static struct TickingSystemWithInfo createPassengerSystem();
+    /**
+     * @symbol ?createVehicleSystem\@SetActorLinkPacketSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     */
+    MCAPI static struct TickingSystemWithInfo createVehicleSystem();
 
 };

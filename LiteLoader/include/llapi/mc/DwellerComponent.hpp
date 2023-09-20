@@ -35,13 +35,13 @@ public:
      */
     MCAPI void DecrementDwellingUpdateInterval();
     /**
-     * @symbol ??0DwellerComponent\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI DwellerComponent(class DwellerComponent &&);
-    /**
      * @symbol ??0DwellerComponent\@\@QEAA\@XZ
      */
     MCAPI DwellerComponent();
+    /**
+     * @symbol ??0DwellerComponent\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI DwellerComponent(class DwellerComponent &&);
     /**
      * @symbol ?addAdditionalSaveData\@DwellerComponent\@\@QEBAXAEAVCompoundTag\@\@AEBVActor\@\@\@Z
      */

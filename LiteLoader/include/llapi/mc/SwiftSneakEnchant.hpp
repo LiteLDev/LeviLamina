@@ -79,10 +79,6 @@ public:
     MCVAPI bool isTreasureOnly() const;
 #endif
     /**
-     * @symbol ??0SwiftSneakEnchant\@\@QEAA\@W4Type\@Enchant\@\@W4Frequency\@2\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@2HH\@Z
-     */
-    MCAPI SwiftSneakEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class std::basic_string_view<char, struct std::char_traits<char>>, class std::basic_string_view<char, struct std::char_traits<char>>, int, int);
-    /**
      * @symbol ?getExtraSneakingMovementFactor\@SwiftSneakEnchant\@\@SAMAEBVActor\@\@\@Z
      */
     MCAPI static float getExtraSneakingMovementFactor(class Actor const &);

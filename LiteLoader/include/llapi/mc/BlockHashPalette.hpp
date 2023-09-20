@@ -12,7 +12,7 @@
 #undef BEFORE_EXTRA
 
 
-class BlockHashPalette {
+class BlockHashPalette : public BlockPalette {
 
 #define AFTER_EXTRA
 

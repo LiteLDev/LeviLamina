@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -32,22 +33,22 @@ public:
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0() = 0;
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?readfromJSON\@SpawnAoECloudSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
-    virtual void __unk_vfn_1() = 0;
+    virtual void readfromJSON(class Json::Value &, class SemVersion const &) = 0;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?writetoJSON\@SpawnAoECloudSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
-    virtual void __unk_vfn_2() = 0;
+    virtual void writetoJSON(class Json::Value &) const = 0;
     /**
      * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @symbol ?doOnHitEffect\@SpawnAoECloudSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
      */
-    virtual void __unk_vfn_3();
+    virtual void doOnHitEffect(class Actor &, class ProjectileComponent &) = 0;
     /**
      * @vftbl 4
      * @symbol ?getName\@OnHitSubcomponent\@\@UEAAPEBDXZ

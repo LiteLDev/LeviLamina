@@ -53,10 +53,6 @@ public:
      */
     MCAPI bool isValid() const;
     /**
-     * @symbol ??BScoreboardId\@\@QEBA_NXZ
-     */
-    MCAPI operator bool() const;
-    /**
      * @symbol ??9ScoreboardId\@\@QEBA_NAEBU0\@\@Z
      */
     MCAPI bool operator!=(struct ScoreboardId const &) const;

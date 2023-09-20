@@ -6,21 +6,20 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
-#include "Packet.hpp"
-#include "DataItem.hpp"
-#include "SynchedActorDataEntityWrapper.hpp"
-#include "NetworkItemStackDescriptor.hpp"
+#include "AddActorBasePacket.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+#include "DataItem.hpp"
+#include "SynchedActorDataEntityWrapper.hpp"
+#include "NetworkItemStackDescriptor.hpp"
 #undef BEFORE_EXTRA
 
 /**
  * @brief MC class AddItemActorPacket.
  *
  */
-class AddItemActorPacket : public Packet {
+class AddItemActorPacket : public AddActorBasePacket {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -62,6 +61,21 @@ public:
      * @symbol ?write\@AddItemActorPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
+    /**
+     * @vftbl 4
+     * @symbol ?read\@AvailableActorIdentifiersPacket\@\@UEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     */
+    virtual class Bedrock::Result<void, class std::error_code> read(class ReadOnlyBinaryStream &);
+    /**
+     * @vftbl 5
+     * @symbol ?disallowBatching\@Packet\@\@UEBA_NXZ
+     */
+    virtual bool disallowBatching() const;
+    /**
+     * @vftbl 6
+     * @symbol ?isValid\@Packet\@\@UEBA_NXZ
+     */
+    virtual bool isValid() const;
     /**
      * @vftbl 7
      * @symbol ?_read\@AddItemActorPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z

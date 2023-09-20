@@ -87,13 +87,13 @@ public:
     MCVAPI ~ReadOnlyBinaryStream();
 #endif
     /**
-     * @symbol ??0ReadOnlyBinaryStream\@\@QEAA\@$$QEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI ReadOnlyBinaryStream(std::string &&);
-    /**
      * @symbol ??0ReadOnlyBinaryStream\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
     MCAPI ReadOnlyBinaryStream(std::string const &, bool);
+    /**
+     * @symbol ??0ReadOnlyBinaryStream\@\@QEAA\@$$QEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI ReadOnlyBinaryStream(std::string &&);
     /**
      * @symbol ?canReadBool\@ReadOnlyBinaryStream\@\@QEBA_NXZ
      */
@@ -135,13 +135,13 @@ public:
      */
     MCAPI class Bedrock::Result<short, class std::error_code> getSignedShort();
     /**
-     * @symbol ?getString\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI class Bedrock::Result<void, class std::error_code> getString(std::string &);
-    /**
      * @symbol ?getString\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@Verror_code\@2\@\@Bedrock\@\@XZ
      */
     MCAPI class Bedrock::Result<std::string, class std::error_code> getString();
+    /**
+     * @symbol ?getString\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI class Bedrock::Result<void, class std::error_code> getString(std::string &);
     /**
      * @symbol ?getUnsignedChar\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@EVerror_code\@std\@\@\@Bedrock\@\@XZ
      */

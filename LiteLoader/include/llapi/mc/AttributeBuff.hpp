@@ -24,7 +24,6 @@ class AttributeBuff {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTEBUFF
 public:
     class AttributeBuff& operator=(class AttributeBuff const &) = delete;
-    AttributeBuff(class AttributeBuff const &) = delete;
     AttributeBuff() = delete;
 #endif
 
@@ -55,6 +54,10 @@ public:
      */
     MCVAPI ~AttributeBuff();
 #endif
+    /**
+     * @symbol ??0AttributeBuff\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI AttributeBuff(class AttributeBuff const &);
     /**
      * @symbol ?getAmount\@AttributeBuff\@\@QEBAMXZ
      */

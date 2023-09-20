@@ -6,6 +6,8 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
+#include "cereal.hpp"
+#include "Core.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -65,13 +67,13 @@ public:
      */
     MCAPI void _loadItemData(class ResourcePackManager &, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &, bool, class Experiments const &)>, class Experiments const &, enum class ItemVersion);
     /**
-     * @symbol ?_loadItemDefinition\@ItemRegistry\@\@AEAAXAEAVValue\@Json\@\@_NV?$function\@$$A6AXAEAV?$WeakPtr\@VItem\@\@\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z\@std\@\@AEBVExperiments\@\@W4ItemVersion\@\@W4PackType\@\@\@Z
+     * @symbol ?_loadItemDefinition\@ItemRegistry\@\@AEAAXAEAVValue\@Json\@\@_NV?$function\@$$A6AXAEAV?$WeakPtr\@VItem\@\@\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z\@std\@\@AEBVExperiments\@\@W4ItemVersion\@\@W4PackType\@\@AEBVSemVersion\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI void _loadItemDefinition(class Json::Value &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &, bool, class Experiments const &)>, class Experiments const &, enum class ItemVersion, enum class PackType);
+    MCAPI void _loadItemDefinition(class Json::Value &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &, bool, class Experiments const &)>, class Experiments const &, enum class ItemVersion, enum class PackType, class SemVersion const &, struct cereal::ReflectionCtx &);
     /**
-     * @symbol ?_parseItemDefinition\@ItemRegistry\@\@AEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@_NV?$function\@$$A6AXAEAV?$WeakPtr\@VItem\@\@\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z\@3\@AEBVExperiments\@\@W4ItemVersion\@\@W4PackType\@\@\@Z
+     * @symbol ?_parseItemDefinition\@ItemRegistry\@\@AEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@_NV?$function\@$$A6AXAEAV?$WeakPtr\@VItem\@\@\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z\@3\@AEBVExperiments\@\@W4ItemVersion\@\@W4PackType\@\@AEBVPath\@Core\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI std::string _parseItemDefinition(std::string const &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &, bool, class Experiments const &)>, class Experiments const &, enum class ItemVersion, enum class PackType);
+    MCAPI std::string _parseItemDefinition(std::string const &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &, bool, class Experiments const &)>, class Experiments const &, enum class ItemVersion, enum class PackType, class Core::Path const &, struct cereal::ReflectionCtx &);
     /**
      * @symbol ?addItemToTagMap\@ItemRegistry\@\@AEAAXAEBVItem\@\@\@Z
      */
@@ -88,6 +90,10 @@ public:
      * @symbol ?finishedRegistration\@ItemRegistry\@\@AEAAXXZ
      */
     MCAPI void finishedRegistration();
+    /**
+     * @symbol ?getComplexAliasSplitNames\@ItemRegistry\@\@AEBAAEBV?$vector\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@\@2\@\@std\@\@AEBVHashedString\@\@\@Z
+     */
+    MCAPI std::vector<class std::reference_wrapper<class HashedString const>> const & getComplexAliasSplitNames(class HashedString const &) const;
     /**
      * @symbol ?getItem\@ItemRegistry\@\@AEAA?AV?$WeakPtr\@VItem\@\@\@\@F\@Z
      */
@@ -116,10 +122,6 @@ public:
      * @symbol ?initServerData\@ItemRegistry\@\@AEAAXAEAVResourcePackManager\@\@AEBVExperiments\@\@W4ItemVersion\@\@\@Z
      */
     MCAPI void initServerData(class ResourcePackManager &, class Experiments const &, enum class ItemVersion);
-    /**
-     * @symbol ?isComponentBasedItemSchema\@ItemRegistry\@\@AEAA_NAEBVSemVersion\@\@AEBVValue\@Json\@\@\@Z
-     */
-    MCAPI bool isComponentBasedItemSchema(class SemVersion const &, class Json::Value const &);
     /**
      * @symbol ?lookupByName\@ItemRegistry\@\@AEBA?AV?$WeakPtr\@VItem\@\@\@\@AEBVHashedString\@\@\@Z
      */

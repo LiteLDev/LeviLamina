@@ -26,17 +26,10 @@ class ScoreboardIdentityRef {
 public:
     class ScoreboardIdentityRef& operator=(class ScoreboardIdentityRef const &) = delete;
     ScoreboardIdentityRef(class ScoreboardIdentityRef const &) = delete;
+    ScoreboardIdentityRef() = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0ScoreboardIdentityRef\@\@QEAA\@AEBUScoreboardId\@\@\@Z
-     */
-    MCAPI ScoreboardIdentityRef(struct ScoreboardId const &);
-    /**
-     * @symbol ??0ScoreboardIdentityRef\@\@QEAA\@XZ
-     */
-    MCAPI ScoreboardIdentityRef();
     /**
      * @symbol ?getEntityId\@ScoreboardIdentityRef\@\@QEBAAEBUActorUniqueID\@\@XZ
      */
@@ -57,10 +50,6 @@ public:
      * @symbol ?getScoreboardId\@ScoreboardIdentityRef\@\@QEBAAEBUScoreboardId\@\@XZ
      */
     MCAPI struct ScoreboardId const & getScoreboardId() const;
-    /**
-     * @symbol ?isPlayerType\@ScoreboardIdentityRef\@\@QEBA_NXZ
-     */
-    MCAPI bool isPlayerType() const;
     /**
      * @symbol ?modifyScoreInObjective\@ScoreboardIdentityRef\@\@QEAA_NAEAHAEAVObjective\@\@HW4PlayerScoreSetFunction\@\@\@Z
      */

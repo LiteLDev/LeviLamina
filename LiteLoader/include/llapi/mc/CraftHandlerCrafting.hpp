@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "CraftHandlerBase.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class CraftHandlerCrafting.
  *
  */
-class CraftHandlerCrafting {
+class CraftHandlerCrafting : public CraftHandlerBase {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -45,20 +46,10 @@ public:
      */
     virtual enum class ItemStackNetResult preHandleAction(enum class ItemStackRequestActionType);
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @vftbl 4
      * @symbol ?_handleCraftAction\@CraftHandlerCrafting\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@\@Z
      */
     virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5();
     /**
      * @vftbl 6
      * @symbol ?_getLevelRecipes\@CraftHandlerCrafting\@\@EEBAPEBVRecipes\@\@XZ

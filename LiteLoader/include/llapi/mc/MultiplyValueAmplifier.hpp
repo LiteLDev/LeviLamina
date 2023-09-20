@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Amplifier.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class MultiplyValueAmplifier.
  *
  */
-class MultiplyValueAmplifier {
+class MultiplyValueAmplifier : public Amplifier {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -39,9 +40,5 @@ public:
      * @symbol ?getAmount\@MultiplyValueAmplifier\@\@UEBAMHM\@Z
      */
     virtual float getAmount(int, float) const;
-    /**
-     * @symbol ??0MultiplyValueAmplifier\@\@QEAA\@M\@Z
-     */
-    MCAPI MultiplyValueAmplifier(float);
 
 };

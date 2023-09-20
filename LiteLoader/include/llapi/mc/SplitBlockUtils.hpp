@@ -29,6 +29,10 @@ namespace SplitBlockUtils {
      */
     MCAPI extern struct SplitBlockUtils::LegacyBlockInfo const LegacyConcreteInfo;
     /**
+     * @symbol ?LegacyConcretePowderInfo\@SplitBlockUtils\@\@3ULegacyBlockInfo\@1\@B
+     */
+    MCAPI extern struct SplitBlockUtils::LegacyBlockInfo const LegacyConcretePowderInfo;
+    /**
      * @symbol ?LegacyCoralInfo\@SplitBlockUtils\@\@3ULegacyBlockInfo\@1\@B
      */
     MCAPI extern struct SplitBlockUtils::LegacyBlockInfo const LegacyCoralInfo;
@@ -52,6 +56,18 @@ namespace SplitBlockUtils {
      * @symbol ?LegacyShulkerBoxInfo\@SplitBlockUtils\@\@3ULegacyBlockInfo\@1\@B
      */
     MCAPI extern struct SplitBlockUtils::LegacyBlockInfo const LegacyShulkerBoxInfo;
+    /**
+     * @symbol ?LegacyStainedGlassInfo\@SplitBlockUtils\@\@3ULegacyBlockInfo\@1\@B
+     */
+    MCAPI extern struct SplitBlockUtils::LegacyBlockInfo const LegacyStainedGlassInfo;
+    /**
+     * @symbol ?LegacyStainedGlassPaneInfo\@SplitBlockUtils\@\@3ULegacyBlockInfo\@1\@B
+     */
+    MCAPI extern struct SplitBlockUtils::LegacyBlockInfo const LegacyStainedGlassPaneInfo;
+    /**
+     * @symbol ?LegacyTerracottaInfo\@SplitBlockUtils\@\@3ULegacyBlockInfo\@1\@B
+     */
+    MCAPI extern struct SplitBlockUtils::LegacyBlockInfo const LegacyTerracottaInfo;
     /**
      * @symbol ?LegacyWoolInfo\@SplitBlockUtils\@\@3ULegacyBlockInfo\@1\@B
      */

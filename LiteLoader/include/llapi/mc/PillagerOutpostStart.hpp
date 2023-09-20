@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "StructureStart.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class PillagerOutpostStart.
  *
  */
-class PillagerOutpostStart {
+class PillagerOutpostStart : public StructureStart {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -39,5 +40,9 @@ public:
      * @symbol ?postProcess\@PillagerOutpostStart\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
+    /**
+     * @symbol ??0PillagerOutpostStart\@\@QEAA\@AEAVDimension\@\@AEAVRandom\@\@HH\@Z
+     */
+    MCAPI PillagerOutpostStart(class Dimension &, class Random &, int, int);
 
 };

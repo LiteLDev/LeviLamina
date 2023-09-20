@@ -29,6 +29,11 @@ public:
 #endif
 
 public:
+    /**
+     * @vftbl 0
+     * @symbol ?containerContentChanged\@HudContainerModel\@\@UEAAXH\@Z
+     */
+    virtual void containerContentChanged(int) = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERCONTENTCHANGELISTENER
     /**
      * @symbol __unk_destructor_-1

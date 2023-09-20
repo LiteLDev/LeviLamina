@@ -32,21 +32,14 @@ public:
 public:
     class RecipeUnlockingRequirement& operator=(class RecipeUnlockingRequirement const &) = delete;
     RecipeUnlockingRequirement(class RecipeUnlockingRequirement const &) = delete;
+    RecipeUnlockingRequirement() = delete;
 #endif
 
 public:
     /**
-     * @symbol ??0RecipeUnlockingRequirement\@\@QEAA\@W4UnlockingContext\@0\@\@Z
-     */
-    MCAPI RecipeUnlockingRequirement(enum class RecipeUnlockingRequirement::UnlockingContext);
-    /**
      * @symbol ??0RecipeUnlockingRequirement\@\@QEAA\@V?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI RecipeUnlockingRequirement(std::vector<class RecipeIngredient>);
-    /**
-     * @symbol ??0RecipeUnlockingRequirement\@\@QEAA\@XZ
-     */
-    MCAPI RecipeUnlockingRequirement();
     /**
      * @symbol ?canBeUnlockedByContext\@RecipeUnlockingRequirement\@\@QEBA_NW4UnlockingContext\@1\@\@Z
      */

@@ -5,13 +5,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Packet.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
 
-class AddActorBasePacket {
+class AddActorBasePacket : public Packet {
 
 #define AFTER_EXTRA
 

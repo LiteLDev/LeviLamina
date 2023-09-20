@@ -5,7 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "StructurePiece.hpp"
+#include "ScatteredFeaturePiece.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +16,7 @@
  * @brief MC class Igloo.
  *
  */
-class Igloo : public StructurePiece {
+class Igloo : public ScatteredFeaturePiece {
 
 #define AFTER_EXTRA
 // Add Member There

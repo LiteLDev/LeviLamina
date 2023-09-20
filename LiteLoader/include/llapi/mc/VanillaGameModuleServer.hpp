@@ -7,6 +7,7 @@
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
 #include "VanillaSystemsRegistration.hpp"
+#include "GameModuleServer.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +18,7 @@
  * @brief MC class VanillaGameModuleServer.
  *
  */
-class VanillaGameModuleServer {
+class VanillaGameModuleServer : public GameModuleServer {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -42,9 +43,9 @@ public:
     virtual void init(class ServerInstance &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Level>> const &);
     /**
      * @vftbl 2
-     * @symbol ?initializeBehaviorStack\@VanillaGameModuleServer\@\@UEAAXAEBVExperiments\@\@AEAVIResourcePackRepository\@\@AEAVResourcePackStack\@\@AEBVBaseGameVersion\@\@\@Z
+     * @symbol ?initializeBehaviorStack\@VanillaGameModuleServer\@\@UEAAXAEBVExperiments\@\@AEBV?$not_null\@V?$NonOwnerPointer\@VIResourcePackRepository\@\@\@Bedrock\@\@\@gsl\@\@AEAVResourcePackStack\@\@AEBVBaseGameVersion\@\@\@Z
      */
-    virtual void initializeBehaviorStack(class Experiments const &, class IResourcePackRepository &, class ResourcePackStack &, class BaseGameVersion const &);
+    virtual void initializeBehaviorStack(class Experiments const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IResourcePackRepository>> const &, class ResourcePackStack &, class BaseGameVersion const &);
     /**
      * @vftbl 3
      * @symbol ?configureLevel\@VanillaGameModuleServer\@\@UEAAXAEBV?$not_null\@V?$NonOwnerPointer\@VLevel\@\@\@Bedrock\@\@\@gsl\@\@AEBVExperiments\@\@AEAVResourcePackManager\@\@AEBVBaseGameVersion\@\@\@Z

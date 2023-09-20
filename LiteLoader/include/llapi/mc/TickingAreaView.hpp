@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "ITickingAreaView.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class TickingAreaView.
  *
  */
-class TickingAreaView {
+class TickingAreaView : public ITickingAreaView {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -100,14 +101,6 @@ public:
      */
     MCVAPI ~TickingAreaView();
 #endif
-    /**
-     * @symbol ??0TickingAreaView\@\@QEAA\@AEAVChunkSource\@\@\@Z
-     */
-    MCAPI TickingAreaView(class ChunkSource &);
-    /**
-     * @symbol ?unregisterChunkBuildOrderPolicy\@TickingAreaView\@\@QEAAXAEAVChunkBuildOrderPolicyBase\@\@\@Z
-     */
-    MCAPI void unregisterChunkBuildOrderPolicy(class ChunkBuildOrderPolicyBase &);
 
 //private:
     /**

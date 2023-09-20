@@ -37,19 +37,14 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 6
-     * @symbol ?getCollisionShape\@BubbleColumnBlock\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
+     * @symbol ?getCollisionShape\@BubbleColumnBlock\@\@UEBA?AVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
-    virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
+    virtual class AABB getCollisionShape(class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @vftbl 7
+     * @vftbl 8
      * @symbol ?addCollisionShapes\@BubbleColumnBlock\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
-    /**
-     * @vftbl 8
-     * @symbol ?getAABB\@BubbleColumnBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
-     */
-    virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
      * @vftbl 9
      * @symbol ?addAABBs\@BubbleColumnBlock\@\@UEBAXAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@\@Z
@@ -151,10 +146,15 @@ public:
      */
     virtual void __unk_vfn_51();
     /**
-     * @vftbl 56
-     * @symbol __unk_vfn_56
+     * @vftbl 55
+     * @symbol __unk_vfn_55
      */
-    virtual void __unk_vfn_56();
+    virtual void __unk_vfn_55();
+    /**
+     * @vftbl 61
+     * @symbol __unk_vfn_61
+     */
+    virtual void __unk_vfn_61();
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
@@ -162,54 +162,54 @@ public:
     virtual void __unk_vfn_62();
     /**
      * @vftbl 63
-     * @symbol __unk_vfn_63
-     */
-    virtual void __unk_vfn_63();
-    /**
-     * @vftbl 64
      * @symbol ?canContainLiquid\@BubbleColumnBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @vftbl 65
+     * @vftbl 64
      * @symbol ?getRequiredMedium\@BubbleColumnBlock\@\@UEBA?AV?$optional\@VHashedString\@\@\@std\@\@XZ
      */
     virtual class std::optional<class HashedString> getRequiredMedium() const;
     /**
-     * @vftbl 71
+     * @vftbl 70
      * @symbol ?checkIsPathable\@BubbleColumnBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @vftbl 77
-     * @symbol __unk_vfn_77
+     * @vftbl 76
+     * @symbol __unk_vfn_76
      */
-    virtual void __unk_vfn_77();
+    virtual void __unk_vfn_76();
     /**
-     * @vftbl 84
-     * @symbol __unk_vfn_84
+     * @vftbl 83
+     * @symbol __unk_vfn_83
      */
-    virtual void __unk_vfn_84();
+    virtual void __unk_vfn_83();
     /**
-     * @vftbl 86
+     * @vftbl 85
      * @symbol ?isPreservingMediumWhenPlaced\@BubbleColumnBlock\@\@UEBA_NPEBVBlockLegacy\@\@\@Z
      */
     virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const *) const;
     /**
-     * @vftbl 92
+     * @vftbl 91
      * @symbol ?mayPick\@BubbleColumnBlock\@\@UEBA_NAEBVBlockSource\@\@AEBVBlock\@\@_N\@Z
      */
     virtual bool mayPick(class BlockSource const &, class Block const &, bool) const;
     /**
-     * @vftbl 101
+     * @vftbl 100
      * @symbol ?neighborChanged\@BubbleColumnBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @vftbl 107
-     * @symbol __unk_vfn_107
+     * @vftbl 106
+     * @symbol __unk_vfn_106
      */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_106();
+    /**
+     * @vftbl 122
+     * @symbol __unk_vfn_122
+     */
+    virtual void __unk_vfn_122();
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -221,30 +221,25 @@ public:
      */
     virtual void __unk_vfn_124();
     /**
-     * @vftbl 125
-     * @symbol __unk_vfn_125
+     * @vftbl 127
+     * @symbol __unk_vfn_127
      */
-    virtual void __unk_vfn_125();
+    virtual void __unk_vfn_127();
     /**
-     * @vftbl 128
-     * @symbol __unk_vfn_128
+     * @vftbl 130
+     * @symbol __unk_vfn_130
      */
-    virtual void __unk_vfn_128();
+    virtual void __unk_vfn_130();
     /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
-     */
-    virtual void __unk_vfn_131();
-    /**
-     * @vftbl 140
+     * @vftbl 139
      * @symbol ?onGraphicsModeChanged\@BubbleColumnBlock\@\@UEAAXAEBUBlockGraphicsModeChangeContext\@\@\@Z
      */
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
     /**
-     * @vftbl 148
-     * @symbol ?animateTick\@BubbleColumnBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 147
+     * @symbol ?animateTickBedrockLegacy\@BubbleColumnBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
+    virtual void animateTickBedrockLegacy(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -330,13 +325,13 @@ public:
 
 //private:
     /**
-     * @symbol ?createParticles\@BubbleColumnBlock\@\@CAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@_N\@Z
+     * @symbol ?_createParticles\@BubbleColumnBlock\@\@CAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@_N\@Z
      */
-    MCAPI static void createParticles(class BlockSource &, class BlockPos const &, class Random &, bool);
+    MCAPI static void _createParticles(class BlockSource &, class BlockPos const &, class Random &, bool);
     /**
-     * @symbol ?getFlowDownward\@BubbleColumnBlock\@\@CA_NAEBVBlock\@\@\@Z
+     * @symbol ?_getFlowDownward\@BubbleColumnBlock\@\@CA_NAEBVBlock\@\@\@Z
      */
-    MCAPI static bool getFlowDownward(class Block const &);
+    MCAPI static bool _getFlowDownward(class Block const &);
 
 private:
 

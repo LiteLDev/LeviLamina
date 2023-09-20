@@ -5,6 +5,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "JsonUtil.hpp"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here

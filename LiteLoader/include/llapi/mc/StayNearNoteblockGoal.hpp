@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Goal.hpp"
 
 #define BEFORE_EXTRA
 
@@ -14,7 +15,7 @@
  * @brief MC class StayNearNoteblockGoal.
  *
  */
-class StayNearNoteblockGoal {
+class StayNearNoteblockGoal : public Goal {
 
 #define AFTER_EXTRA
 
@@ -42,11 +43,6 @@ public:
      * @symbol ?canContinueToUse\@StayNearNoteblockGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol ?start\@StayNearNoteblockGoal\@\@UEAAXXZ

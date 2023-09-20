@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
+#include "IFoodItemComponent.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class FoodItemComponentLegacy.
  *
  */
-class FoodItemComponentLegacy {
+class FoodItemComponentLegacy : public IFoodItemComponent {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -65,10 +66,6 @@ public:
      * @symbol ?useTimeDepleted\@FoodItemComponentLegacy\@\@UEAAPEBVItem\@\@AEAVItemStack\@\@AEAVPlayer\@\@AEAVLevel\@\@\@Z
      */
     virtual class Item const * useTimeDepleted(class ItemStack &, class Player &, class Level &);
-    /**
-     * @symbol ??0FoodItemComponentLegacy\@\@QEAA\@AEAVItem\@\@\@Z
-     */
-    MCAPI FoodItemComponentLegacy(class Item &);
     /**
      * @symbol ?buildNetworkTag\@FoodItemComponentLegacy\@\@QEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */

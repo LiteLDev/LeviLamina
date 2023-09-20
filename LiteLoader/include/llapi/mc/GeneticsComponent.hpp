@@ -31,10 +31,13 @@ struct Gene {
 public:
     class GeneticsComponent& operator=(class GeneticsComponent const &) = delete;
     GeneticsComponent(class GeneticsComponent const &) = delete;
-    GeneticsComponent() = delete;
 #endif
 
 public:
+    /**
+     * @symbol ??0GeneticsComponent\@\@QEAA\@XZ
+     */
+    MCAPI GeneticsComponent();
     /**
      * @symbol ?addAdditionalSaveData\@GeneticsComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */

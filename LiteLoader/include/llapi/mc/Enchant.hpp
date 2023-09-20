@@ -208,21 +208,9 @@ public:
     MCVAPI ~Enchant();
 #endif
     /**
-     * @symbol ??0Enchant\@\@QEAA\@W4Type\@0\@W4Frequency\@0\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@2HH\@Z
-     */
-    MCAPI Enchant(enum class Enchant::Type, enum class Enchant::Frequency, class std::basic_string_view<char, struct std::char_traits<char>>, class std::basic_string_view<char, struct std::char_traits<char>>, int, int);
-    /**
      * @symbol ??0Enchant\@\@QEAA\@W4Type\@0\@W4Frequency\@0\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@2HH_N\@Z
      */
     MCAPI Enchant(enum class Enchant::Type, enum class Enchant::Frequency, class std::basic_string_view<char, struct std::char_traits<char>>, class std::basic_string_view<char, struct std::char_traits<char>>, int, int, bool);
-    /**
-     * @symbol ?canEnchant\@Enchant\@\@QEBA_NH_N\@Z
-     */
-    MCAPI bool canEnchant(int, bool) const;
-    /**
-     * @symbol ?getDescription\@Enchant\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string getDescription() const;
     /**
      * @symbol ?getDescriptionId\@Enchant\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
@@ -231,10 +219,6 @@ public:
      * @symbol ?getEnchantType\@Enchant\@\@QEBA?AW4Type\@1\@XZ
      */
     MCAPI enum class Enchant::Type getEnchantType() const;
-    /**
-     * @symbol ?getFrequency\@Enchant\@\@QEBA?AW4Frequency\@1\@XZ
-     */
-    MCAPI enum class Enchant::Frequency getFrequency() const;
     /**
      * @symbol ?getStringId\@Enchant\@\@QEBAAEBVHashedString\@\@XZ
      */
@@ -248,10 +232,6 @@ public:
      */
     MCAPI bool isDisabled() const;
     /**
-     * @symbol ?isLootable\@Enchant\@\@QEBA_NXZ
-     */
-    MCAPI bool isLootable() const;
-    /**
      * @symbol ?enchantSlotFromString\@Enchant\@\@SA?AW4Slot\@1\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
     MCAPI static enum class Enchant::Slot enchantSlotFromString(class std::basic_string_view<char, struct std::char_traits<char>>);
@@ -259,6 +239,10 @@ public:
      * @symbol ?getEnchant\@Enchant\@\@SAPEBV1\@AEBW4Type\@1\@\@Z
      */
     MCAPI static class Enchant const * getEnchant(enum class Enchant::Type const &);
+    /**
+     * @symbol ?getEnchantFromName\@Enchant\@\@SAPEBV1\@AEBVHashedString\@\@\@Z
+     */
+    MCAPI static class Enchant const * getEnchantFromName(class HashedString const &);
     /**
      * @symbol ?getEnchantTypeFromName\@Enchant\@\@SA?AW4Type\@1\@AEBVHashedString\@\@\@Z
      */

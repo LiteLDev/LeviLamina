@@ -138,4 +138,12 @@ public:
     MCVAPI bool useInterruptedByAttacking() const;
 #endif
 
+//protected:
+    /**
+     * @symbol ?_spawnDustParticles\@BrushItem\@\@KAXAEAVLevel\@\@VVec3\@\@AEBVBlock\@\@AEBVBlockPos\@\@E\@Z
+     */
+    MCAPI static void _spawnDustParticles(class Level &, class Vec3, class Block const &, class BlockPos const &, unsigned char);
+
+protected:
+
 };

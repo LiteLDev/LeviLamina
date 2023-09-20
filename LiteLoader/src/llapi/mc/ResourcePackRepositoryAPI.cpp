@@ -8,7 +8,7 @@ void ResourcePackRepository::setCustomResourcePackPath(PackType type, const std:
     auto CompositePack = dAccess<CompositePackSource*>(this, 48);
     auto& PackSourceFactory = getPackSourceFactory();
     auto& DirectoryPackSource =
-        PackSourceFactory.createDirectoryPackSource(Core::Path(path), type, PackOrigin::PackOrigin_Dev, 0);
+        PackSourceFactory.createDirectoryPackSource(Core::Path(path), type, PackOrigin::Dev, 0);
     CompositePack->addPackSource((PackSource*)&DirectoryPackSource);
     refreshPacks();
 }

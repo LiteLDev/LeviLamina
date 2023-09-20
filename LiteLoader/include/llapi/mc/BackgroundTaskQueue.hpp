@@ -37,17 +37,9 @@ public:
      */
     MCAPI void flush();
     /**
-     * @symbol ?getApproximateTaskCount\@BackgroundTaskQueue\@\@QEBA_KXZ
-     */
-    MCAPI unsigned __int64 getApproximateTaskCount() const;
-    /**
      * @symbol ?queue\@BackgroundTaskQueue\@\@QEAAXV?$shared_ptr\@VBackgroundTaskBase\@\@\@std\@\@_N\@Z
      */
     MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>, bool);
-    /**
-     * @symbol ?resortPriorityQueue\@BackgroundTaskQueue\@\@QEAAXXZ
-     */
-    MCAPI void resortPriorityQueue();
     /**
      * @symbol ?tryPop\@BackgroundTaskQueue\@\@QEAA?AV?$shared_ptr\@VBackgroundTaskBase\@\@\@std\@\@H\@Z
      */

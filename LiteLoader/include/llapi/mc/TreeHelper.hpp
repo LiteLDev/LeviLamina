@@ -27,21 +27,13 @@ struct TreeParams {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?isValidTreePosition\@TreeHelper\@\@YA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEBUTreeParams\@1\@\@Z
-     */
-    MCAPI bool isValidTreePosition(class IBlockWorldGenAPI const &, class BlockPos const &, struct TreeHelper::TreeParams const &);
-    /**
      * @symbol ?isValidTreePosition\@TreeHelper\@\@YA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool isValidTreePosition(class IBlockWorldGenAPI const &, class BlockPos const &);
     /**
-     * @symbol ?placeBaseBlock\@TreeHelper\@\@YA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEBV?$vector\@VBlockDescriptor\@\@V?$allocator\@VBlockDescriptor\@\@\@std\@\@\@3\@\@Z
+     * @symbol ?isValidTreePosition\@TreeHelper\@\@YA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEBUTreeParams\@1\@\@Z
      */
-    MCAPI class std::optional<class BlockPos> placeBaseBlock(class IBlockWorldGenAPI &, class BlockPos const &, std::vector<class BlockDescriptor> const &);
-    /**
-     * @symbol ?placeDecoratedBlock\@TreeHelper\@\@YA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEBVBlock\@\@AEBUAttachableDecoration\@1\@AEBUDirectionMask\@81\@\@Z
-     */
-    MCAPI class std::optional<class BlockPos> placeDecoratedBlock(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class Block const &, struct TreeHelper::AttachableDecoration const &, struct TreeHelper::AttachableDecoration::DirectionMask const &);
+    MCAPI bool isValidTreePosition(class IBlockWorldGenAPI const &, class BlockPos const &, struct TreeHelper::TreeParams const &);
     /**
      * @symbol ?placeRadialBlockGroup\@TreeHelper\@\@YA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEBVBlock\@\@HH_NAEBV?$vector\@VBlockDescriptor\@\@V?$allocator\@VBlockDescriptor\@\@\@std\@\@\@3\@\@Z
      */

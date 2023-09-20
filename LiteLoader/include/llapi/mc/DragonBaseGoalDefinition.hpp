@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "BaseGoalDefinition.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class DragonBaseGoalDefinition.
  *
  */
-class DragonBaseGoalDefinition {
+class DragonBaseGoalDefinition : public BaseGoalDefinition {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -25,6 +26,7 @@ class DragonBaseGoalDefinition {
 public:
     class DragonBaseGoalDefinition& operator=(class DragonBaseGoalDefinition const &) = delete;
     DragonBaseGoalDefinition(class DragonBaseGoalDefinition const &) = delete;
+    DragonBaseGoalDefinition() = delete;
 #endif
 
 public:
@@ -38,19 +40,5 @@ public:
      * @symbol ?validateMobType\@DragonBaseGoalDefinition\@\@UEBA_NAEAVMob\@\@\@Z
      */
     virtual bool validateMobType(class Mob &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONBASEGOALDEFINITION
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~DragonBaseGoalDefinition();
-#endif
-    /**
-     * @symbol ??0DragonBaseGoalDefinition\@\@QEAA\@XZ
-     */
-    MCAPI DragonBaseGoalDefinition();
-    /**
-     * @symbol ?initialize\@DragonBaseGoalDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDragonBaseGoal\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext &, class DragonBaseGoal &) const;
 
 };

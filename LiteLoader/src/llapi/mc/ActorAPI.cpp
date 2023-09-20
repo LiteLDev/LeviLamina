@@ -207,6 +207,8 @@ Tick* Actor::getLastTick() const {
     return (Tick*)&lc->getLastTick();
 }
 
+enum class ShapeType;
+
 BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bool solidOnly, float maxDistance,
                                             bool ignoreBorderBlocks, bool fullOnly) const {
     auto& bs = getRegion();
@@ -215,7 +217,8 @@ BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bo
     auto viewPos = pos + (viewVec * maxDistance);
     auto player = isPlayer() ? (Player*)this : nullptr;
     int maxDisManhattan = (int)((maxDistance + 1) * 2);
-    HitResult result = bs.clip(pos, viewPos, includeLiquid, solidOnly, maxDisManhattan, ignoreBorderBlocks, fullOnly,
+    HitResult result = bs.clip(pos, viewPos, includeLiquid, (ShapeType)solidOnly, maxDisManhattan, ignoreBorderBlocks,
+                               fullOnly,
                                nullptr, ClipDefaults::CHECK_ALL_PICKABLE_BLOCKS);
     if (result.isHit() || (includeLiquid && result.isHitLiquid())) {
         BlockPos bpos{};

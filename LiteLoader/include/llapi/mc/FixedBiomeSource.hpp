@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "BiomeSource.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class FixedBiomeSource.
  *
  */
-class FixedBiomeSource {
+class FixedBiomeSource : public BiomeSource {
 
 #define AFTER_EXTRA
 // Add Member There

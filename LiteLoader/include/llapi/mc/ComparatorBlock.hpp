@@ -136,80 +136,85 @@ public:
      */
     virtual bool isSignalSource() const;
     /**
-     * @vftbl 56
-     * @symbol __unk_vfn_56
+     * @vftbl 55
+     * @symbol __unk_vfn_55
      */
-    virtual void __unk_vfn_56();
+    virtual void __unk_vfn_55();
     /**
-     * @vftbl 61
+     * @vftbl 60
      * @symbol ?getDirectSignal\@ComparatorBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     virtual int getDirectSignal(class BlockSource &, class BlockPos const &, int) const;
+    /**
+     * @vftbl 61
+     * @symbol __unk_vfn_61
+     */
+    virtual void __unk_vfn_61();
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
      */
     virtual void __unk_vfn_62();
     /**
-     * @vftbl 63
-     * @symbol __unk_vfn_63
-     */
-    virtual void __unk_vfn_63();
-    /**
-     * @vftbl 66
+     * @vftbl 65
      * @symbol ?shouldConnectToRedstone\@ComparatorBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
-     * @vftbl 75
+     * @vftbl 74
      * @symbol ?onRedstoneUpdate\@ComparatorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
-     * @vftbl 77
-     * @symbol __unk_vfn_77
+     * @vftbl 76
+     * @symbol __unk_vfn_76
      */
-    virtual void __unk_vfn_77();
+    virtual void __unk_vfn_76();
     /**
-     * @vftbl 81
+     * @vftbl 80
      * @symbol ?setupRedstoneComponent\@ComparatorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 84
-     * @symbol __unk_vfn_84
+     * @vftbl 83
+     * @symbol __unk_vfn_83
      */
-    virtual void __unk_vfn_84();
+    virtual void __unk_vfn_83();
     /**
-     * @vftbl 94
+     * @vftbl 85
+     * @symbol ?isPreservingMediumWhenPlaced\@ComparatorBlock\@\@UEBA_NPEBVBlockLegacy\@\@\@Z
+     */
+    virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const *) const;
+    /**
+     * @vftbl 93
      * @symbol ?mayPlace\@ComparatorBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 101
+     * @vftbl 100
      * @symbol ?neighborChanged\@ComparatorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @vftbl 105
+     * @vftbl 104
      * @symbol ?asItemInstance\@ComparatorBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
-     * @vftbl 107
-     * @symbol __unk_vfn_107
+     * @vftbl 106
+     * @symbol __unk_vfn_106
      */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_106();
     /**
-     * @vftbl 108
-     * @symbol ?getPlacementBlock\@ComparatorBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
-     */
-    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
-    /**
-     * @vftbl 116
+     * @vftbl 115
      * @symbol ?triggerEvent\@ComparatorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@HH\@Z
      */
     virtual void triggerEvent(class BlockSource &, class BlockPos const &, int, int) const;
+    /**
+     * @vftbl 122
+     * @symbol __unk_vfn_122
+     */
+    virtual void __unk_vfn_122();
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -221,27 +226,22 @@ public:
      */
     virtual void __unk_vfn_124();
     /**
-     * @vftbl 125
-     * @symbol __unk_vfn_125
+     * @vftbl 127
+     * @symbol __unk_vfn_127
      */
-    virtual void __unk_vfn_125();
+    virtual void __unk_vfn_127();
     /**
-     * @vftbl 128
-     * @symbol __unk_vfn_128
+     * @vftbl 130
+     * @symbol __unk_vfn_130
      */
-    virtual void __unk_vfn_128();
+    virtual void __unk_vfn_130();
     /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
-     */
-    virtual void __unk_vfn_131();
-    /**
-     * @vftbl 143
+     * @vftbl 142
      * @symbol ?getVariant\@ComparatorBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @vftbl 144
+     * @vftbl 143
      * @symbol ?canSpawnOn\@ComparatorBlock\@\@UEBA_NPEAVActor\@\@\@Z
      */
     virtual bool canSpawnOn(class Actor *) const;

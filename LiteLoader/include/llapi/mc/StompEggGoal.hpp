@@ -36,25 +36,10 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @vftbl 7
      * @symbol ?appendDebugInfo\@StompEggGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
     /**
      * @vftbl 18
      * @symbol ?_createBreakProgressParticles\@StompEggGoal\@\@MEAAXAEAVLevel\@\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
@@ -75,5 +60,9 @@ public:
      * @symbol ?_playDestroySound\@StompEggGoal\@\@MEAAXAEAVLevel\@\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
      */
     virtual void _playDestroySound(class Level &, class BlockSource &, class BlockPos);
+    /**
+     * @symbol ??0StompEggGoal\@\@QEAA\@AEAVMob\@\@MHHMH\@Z
+     */
+    MCAPI StompEggGoal(class Mob &, float, int, int, float, int);
 
 };

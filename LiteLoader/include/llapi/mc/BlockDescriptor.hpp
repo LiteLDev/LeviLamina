@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -32,10 +33,6 @@ public:
      */
     MCAPI BlockDescriptor(class BlockDescriptor const &);
     /**
-     * @symbol ??0BlockDescriptor\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEBV?$vector\@VState\@BlockDescriptor\@\@V?$allocator\@VState\@BlockDescriptor\@\@\@std\@\@\@2\@\@Z
-     */
-    MCAPI BlockDescriptor(std::string const &, std::vector<class BlockDescriptor::State> const &&);
-    /**
      * @symbol ??0BlockDescriptor\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI BlockDescriptor(class BlockDescriptor &&);
@@ -43,6 +40,10 @@ public:
      * @symbol ??0BlockDescriptor\@\@QEAA\@XZ
      */
     MCAPI BlockDescriptor();
+    /**
+     * @symbol ??0BlockDescriptor\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAV?$vector\@UState\@BlockDescriptor\@\@V?$allocator\@UState\@BlockDescriptor\@\@\@std\@\@\@2\@\@Z
+     */
+    MCAPI BlockDescriptor(std::string const &, std::vector<struct BlockDescriptor::State> &&);
     /**
      * @symbol ??0BlockDescriptor\@\@QEAA\@AEBVHashedString\@\@\@Z
      */
@@ -60,9 +61,9 @@ public:
      */
     MCAPI std::string const & getFullName() const;
     /**
-     * @symbol ?getStates\@BlockDescriptor\@\@QEBAAEBV?$vector\@VState\@BlockDescriptor\@\@V?$allocator\@VState\@BlockDescriptor\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?getStates\@BlockDescriptor\@\@QEBAAEBV?$vector\@UState\@BlockDescriptor\@\@V?$allocator\@UState\@BlockDescriptor\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<class BlockDescriptor::State> const & getStates() const;
+    MCAPI std::vector<struct BlockDescriptor::State> const & getStates() const;
     /**
      * @symbol ?getTagExpression\@BlockDescriptor\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
@@ -120,17 +121,17 @@ public:
      */
     MCAPI static char const JSON_TAGS_FIELD[];
     /**
-     * @symbol ?anyMatch\@BlockDescriptor\@\@SA_NAEBV?$vector\@VBlockDescriptor\@\@V?$allocator\@VBlockDescriptor\@\@\@std\@\@\@std\@\@AEBV1\@\@Z
-     */
-    MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const &, class BlockDescriptor const &);
-    /**
      * @symbol ?anyMatch\@BlockDescriptor\@\@SA_NAEBV?$vector\@VBlockDescriptor\@\@V?$allocator\@VBlockDescriptor\@\@\@std\@\@\@std\@\@AEBVBlock\@\@\@Z
      */
     MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const &, class Block const &);
     /**
-     * @symbol ?bindType\@BlockDescriptor\@\@SAXXZ
+     * @symbol ?anyMatch\@BlockDescriptor\@\@SA_NAEBV?$vector\@VBlockDescriptor\@\@V?$allocator\@VBlockDescriptor\@\@\@std\@\@\@std\@\@AEBV1\@\@Z
      */
-    MCAPI static void bindType();
+    MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const &, class BlockDescriptor const &);
+    /**
+     * @symbol ?bindType\@BlockDescriptor\@\@SAXAEAUReflectionCtx\@cereal\@\@\@Z
+     */
+    MCAPI static void bindType(struct cereal::ReflectionCtx &);
     /**
      * @symbol ?fromCompoundTag\@BlockDescriptor\@\@SA?AV1\@AEBVCompoundTag\@\@\@Z
      */
@@ -139,13 +140,5 @@ public:
      * @symbol ?fromTagExpression\@BlockDescriptor\@\@SA?AV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4MolangVersion\@\@\@Z
      */
     MCAPI static class BlockDescriptor fromTagExpression(std::string const &, enum class MolangVersion);
-
-//private:
-    /**
-     * @symbol ?_resolve\@BlockDescriptor\@\@AEBAX_N\@Z
-     */
-    MCAPI void _resolve(bool) const;
-
-private:
 
 };

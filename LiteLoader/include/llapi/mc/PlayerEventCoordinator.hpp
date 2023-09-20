@@ -79,6 +79,10 @@ public:
      */
     MCAPI void sendPlayerTeleported(class Player &);
     /**
+     * @symbol ?sendPlayerTeleported\@PlayerEventCoordinator\@\@QEAAXAEAVPlayer\@\@M\@Z
+     */
+    MCAPI void sendPlayerTeleported(class Player &, float);
+    /**
      * @symbol ?sendPlayerTick\@PlayerEventCoordinator\@\@QEAAXAEAVPlayer\@\@\@Z
      */
     MCAPI void sendPlayerTick(class Player &);

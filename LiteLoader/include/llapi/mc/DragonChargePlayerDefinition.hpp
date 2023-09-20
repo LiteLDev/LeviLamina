@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "JsonUtil.hpp"
+#include "DragonBaseGoalDefinition.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class DragonChargePlayerDefinition.
  *
  */
-class DragonChargePlayerDefinition {
+class DragonChargePlayerDefinition : public DragonBaseGoalDefinition {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -29,6 +30,11 @@ public:
 #endif
 
 public:
+    /**
+     * @vftbl 0
+     * @symbol __unk_vfn_0
+     */
+    virtual void __unk_vfn_0();
     /**
      * @symbol ??0DragonChargePlayerDefinition\@\@QEAA\@XZ
      */

@@ -27,6 +27,7 @@ class UnderwaterCaveFeature : public CaveFeature {
 public:
     class UnderwaterCaveFeature& operator=(class UnderwaterCaveFeature const &) = delete;
     UnderwaterCaveFeature(class UnderwaterCaveFeature const &) = delete;
+    UnderwaterCaveFeature() = delete;
 #endif
 
 public:
@@ -40,10 +41,6 @@ public:
      * @symbol ?carveEllipsoidVolume\@UnderwaterCaveFeature\@\@MEBA_NAEAVIBlockWorldGenAPI\@\@AEBUCarverConfiguration\@CaveFeatureUtils\@\@AEAVRandom\@\@AEBVChunkPos\@\@AEBVVec3\@\@AEBVBoundingBox\@\@MMAEBUCarvingParameters\@4\@\@Z
      */
     virtual bool carveEllipsoidVolume(class IBlockWorldGenAPI &, struct CaveFeatureUtils::CarverConfiguration const &, class Random &, class ChunkPos const &, class Vec3 const &, class BoundingBox const &, float, float, struct CaveFeatureUtils::CarvingParameters const &) const;
-    /**
-     * @symbol ??0UnderwaterCaveFeature\@\@QEAA\@XZ
-     */
-    MCAPI UnderwaterCaveFeature();
     /**
      * @symbol ?isDiggable\@UnderwaterCaveFeature\@\@SA_NAEBVBlock\@\@\@Z
      */

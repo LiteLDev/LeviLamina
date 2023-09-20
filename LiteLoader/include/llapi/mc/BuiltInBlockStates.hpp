@@ -34,10 +34,6 @@ namespace BuiltInBlockStates {
      */
     MCAPI extern class BuiltInBlockStateVariant<enum class VerticalHalfEnum> const VerticalHalf;
     /**
-     * @symbol ?getNumStates\@BuiltInBlockStates\@\@YA_KXZ
-     */
-    MCAPI unsigned __int64 getNumStates();
-    /**
      * @symbol ?registerBlockStates\@BuiltInBlockStates\@\@YAXXZ
      */
     MCAPI void registerBlockStates();

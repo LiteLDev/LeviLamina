@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "ITickingSystem.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class LootSystem.
  *
  */
-class LootSystem {
+class LootSystem : public ITickingSystem {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -39,10 +40,11 @@ public:
      * @symbol ?registerEvents\@LootSystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
      */
     virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTSYSTEM
     /**
-     * @vftbl 2
      * @symbol ?tick\@LootSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
-    virtual void tick(class EntityRegistry &);
+    MCVAPI void tick(class EntityRegistry &);
+#endif
 
 };

@@ -6,7 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
-#include "Packet.hpp"
+#include "AddEntityPacket.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +17,7 @@
  * @brief MC class AddVolumeEntityPacket.
  *
  */
-class AddVolumeEntityPacket : public Packet {
+class AddVolumeEntityPacket : public AddEntityPacket {
 
 #define AFTER_EXTRA
 // Add Member There

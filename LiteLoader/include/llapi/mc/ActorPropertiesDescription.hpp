@@ -12,7 +12,7 @@
 #undef BEFORE_EXTRA
 
 
-class ActorPropertiesDescription {
+struct ActorPropertiesDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,8 +20,7 @@ class ActorPropertiesDescription {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORPROPERTIESDESCRIPTION
 public:
-    class ActorPropertiesDescription& operator=(class ActorPropertiesDescription const &) = delete;
-    ActorPropertiesDescription(class ActorPropertiesDescription const &) = delete;
+    ActorPropertiesDescription(struct ActorPropertiesDescription const &) = delete;
     ActorPropertiesDescription() = delete;
 #endif
 
@@ -42,5 +41,9 @@ public:
      */
     MCVAPI ~ActorPropertiesDescription();
 #endif
+    /**
+     * @symbol ??4ActorPropertiesDescription\@\@QEAAAEAU0\@AEBU0\@\@Z
+     */
+    MCAPI struct ActorPropertiesDescription & operator=(struct ActorPropertiesDescription const &);
 
 };

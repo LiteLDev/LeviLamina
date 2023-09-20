@@ -5,13 +5,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "BlockState.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
 
-class CustomBlockStateVariant {
+class CustomBlockStateVariant : public BlockState {
 
 #define AFTER_EXTRA
 

@@ -40,9 +40,9 @@ public:
      */
     MCAPI static enum class Direction::Type const DIRECTION_COUNTER_CLOCKWISE[];
     /**
-     * @symbol ?DIRECTION_FACING\@Direction\@\@2QBEB
+     * @symbol ?DIRECTION_FACING\@Direction\@\@2V?$array\@E$03\@std\@\@B
      */
-    MCAPI static unsigned char const DIRECTION_FACING[];
+    MCAPI static class std::array<unsigned char, 4> const DIRECTION_FACING;
     /**
      * @symbol ?DIRECTION_OPPOSITE\@Direction\@\@2QBW4Type\@1\@B
      */

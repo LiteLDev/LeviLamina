@@ -90,41 +90,46 @@ public:
     virtual void writeEntityChunkTransfersToUnloadedChunk(class ChunkKey const &, std::vector<struct ActorUnloadedChunkTransferEntry> const &);
     /**
      * @vftbl 16
+     * @symbol ?deserializeActorStorageToLevelChunk\@DBChunkStorage\@\@UEAAXAEAVLevelChunk\@\@\@Z
+     */
+    virtual void deserializeActorStorageToLevelChunk(class LevelChunk &);
+    /**
+     * @vftbl 17
      * @symbol ?hintDiscardBatchBegin\@DBChunkStorage\@\@UEAAXXZ
      */
     virtual void hintDiscardBatchBegin();
     /**
-     * @vftbl 17
+     * @vftbl 18
      * @symbol ?hintDiscardBatchEnd\@DBChunkStorage\@\@UEAAXXZ
      */
     virtual void hintDiscardBatchEnd();
     /**
-     * @vftbl 18
+     * @vftbl 19
      * @symbol ?acquireDiscarded\@DBChunkStorage\@\@UEAAXV?$unique_ptr\@VLevelChunk\@\@ULevelChunkFinalDeleter\@\@\@std\@\@\@Z
      */
     virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /**
-     * @vftbl 20
+     * @vftbl 21
      * @symbol ?flushPendingDiscardedChunkWrites\@DBChunkStorage\@\@UEAAXXZ
      */
     virtual void flushPendingDiscardedChunkWrites();
     /**
-     * @vftbl 21
+     * @vftbl 22
      * @symbol ?flushThreadBatch\@DBChunkStorage\@\@UEAAXXZ
      */
     virtual void flushThreadBatch();
     /**
-     * @vftbl 27
+     * @vftbl 28
      * @symbol ?tryGetBlendingDataProvider\@DBChunkStorage\@\@UEAA?AV?$unique_ptr\@VBlendingDataProvider\@\@U?$default_delete\@VBlendingDataProvider\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class BlendingDataProvider> tryGetBlendingDataProvider();
     /**
-     * @vftbl 28
+     * @vftbl 29
      * @symbol ?loadLevelChunkMetaDataDictionary\@DBChunkStorage\@\@UEAA?AV?$shared_ptr\@VLevelChunkMetaDataDictionary\@\@\@std\@\@XZ
      */
     virtual class std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();
     /**
-     * @vftbl 31
+     * @vftbl 32
      * @symbol ?chunkPosNeedsBlending\@DBChunkStorage\@\@UEAA_NAEBVChunkPos\@\@\@Z
      */
     virtual bool chunkPosNeedsBlending(class ChunkPos const &);

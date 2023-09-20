@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Core.hpp"
+#include "SecureStorage.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class FileSecureStorage.
  *
  */
-class FileSecureStorage {
+class FileSecureStorage : public SecureStorage {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -56,15 +57,15 @@ public:
      */
     virtual bool get(std::string const &, std::string &);
     /**
-     * @symbol ??0FileSecureStorage\@\@QEAA\@AEBV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@AEBV?$PathBuffer\@V?$StackString\@D$0EAA\@\@Core\@\@\@2\@PEAVISecureStorageKeySystem\@\@AEBVPath\@2\@PEAVStorageSystem\@0\@\@Z
+     * @symbol ??0FileSecureStorage\@\@QEAA\@AEBV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@AEBV?$PathBuffer\@V?$StackString\@D$0EAA\@\@Core\@\@\@2\@PEAVISecureStorageKeySystem\@\@AEBVPath\@2\@_NPEAVStorageSystem\@0\@\@Z
      */
-    MCAPI FileSecureStorage(class Core::PathBuffer<std::string> const &, class Core::PathBuffer<class Core::StackString<char, 1024>> const &, class ISecureStorageKeySystem *, class Core::Path const &, class FileSecureStorage::StorageSystem *);
+    MCAPI FileSecureStorage(class Core::PathBuffer<std::string> const &, class Core::PathBuffer<class Core::StackString<char, 1024>> const &, class ISecureStorageKeySystem *, class Core::Path const &, bool, class FileSecureStorage::StorageSystem *);
 
 //protected:
     /**
-     * @symbol ?_init\@FileSecureStorage\@\@IEAA_N_N\@Z
+     * @symbol ?_init\@FileSecureStorage\@\@IEAA_NXZ
      */
-    MCAPI bool _init(bool);
+    MCAPI bool _init();
 
 //private:
     /**

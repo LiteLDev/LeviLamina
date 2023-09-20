@@ -44,12 +44,6 @@ public:
      * @symbol ?tick\@GenericMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENERICMOVECONTROL
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~GenericMoveControl();
-#endif
     /**
      * @symbol ??0GenericMoveControl\@\@QEAA\@XZ
      */

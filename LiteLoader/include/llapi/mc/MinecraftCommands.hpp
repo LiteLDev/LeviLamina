@@ -97,29 +97,29 @@ public:
      */
     MCAPI void initCoreEnums(class ItemRegistryRef, class IWorldRegistriesProvider const &, class ActorFactory const &, class Experiments const &, class BaseGameVersion const &);
     /**
-     * @symbol ?initCoreEnumsServer\@MinecraftCommands\@\@QEAAXAEBVActorDefinitionGroup\@\@AEBVCameraPresets\@\@\@Z
+     * @symbol ?initCoreEnumsServer\@MinecraftCommands\@\@QEAAXAEBVActorDefinitionGroup\@\@AEBVCameraPresets\@\@AEBVRecipes\@\@\@Z
      */
-    MCAPI void initCoreEnumsServer(class ActorDefinitionGroup const &, class CameraPresets const &);
+    MCAPI void initCoreEnumsServer(class ActorDefinitionGroup const &, class CameraPresets const &, class Recipes const &);
     /**
      * @symbol ?requestCommandExecution\@MinecraftCommands\@\@QEAA?AUMCRESULT\@\@AEAVCommandContext\@\@_N\@Z
      */
     MCAPI struct MCRESULT requestCommandExecution(class CommandContext &, bool);
     /**
-     * @symbol ?runCommand\@MinecraftCommands\@\@QEAAXAEAVCommand\@\@AEAVCommandOrigin\@\@\@Z
-     */
-    MCAPI void runCommand(class Command &, class CommandOrigin &);
-    /**
      * @symbol ?runCommand\@MinecraftCommands\@\@QEAAXAEBVHashedString\@\@AEAVCommandOrigin\@\@W4CurrentCmdVersion\@\@\@Z
      */
     MCAPI void runCommand(class HashedString const &, class CommandOrigin &, enum class CurrentCmdVersion);
     /**
-     * @symbol ?runOrDeferCommand\@MinecraftCommands\@\@QEAAXAEBVHashedString\@\@AEAVCommandOrigin\@\@W4CurrentCmdVersion\@\@\@Z
+     * @symbol ?runCommand\@MinecraftCommands\@\@QEAAXAEAVCommand\@\@AEAVCommandOrigin\@\@\@Z
      */
-    MCAPI void runOrDeferCommand(class HashedString const &, class CommandOrigin &, enum class CurrentCmdVersion);
+    MCAPI void runCommand(class Command &, class CommandOrigin &);
     /**
      * @symbol ?runOrDeferCommand\@MinecraftCommands\@\@QEAAXV?$not_null\@PEAVCommand\@\@\@gsl\@\@AEAVCommandOrigin\@\@W4CurrentCmdVersion\@\@\@Z
      */
     MCAPI void runOrDeferCommand(class gsl::not_null<class Command *>, class CommandOrigin &, enum class CurrentCmdVersion);
+    /**
+     * @symbol ?runOrDeferCommand\@MinecraftCommands\@\@QEAAXAEBVHashedString\@\@AEAVCommandOrigin\@\@W4CurrentCmdVersion\@\@\@Z
+     */
+    MCAPI void runOrDeferCommand(class HashedString const &, class CommandOrigin &, enum class CurrentCmdVersion);
     /**
      * @symbol ?setRegistryNetworkUpdateCallback\@MinecraftCommands\@\@QEBAXV?$function\@$$A6AXAEBVPacket\@\@\@Z\@std\@\@\@Z
      */
@@ -156,6 +156,10 @@ public:
      * @symbol ?initStructureFeatureEnum\@MinecraftCommands\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void initStructureFeatureEnum(class CommandRegistry &);
+    /**
+     * @symbol ?initUnlockableRecipesEnum\@MinecraftCommands\@\@SAXAEAVCommandRegistry\@\@AEBVRecipes\@\@\@Z
+     */
+    MCAPI static void initUnlockableRecipesEnum(class CommandRegistry &, class Recipes const &);
     /**
      * @symbol ?registerSharedClientServerEnums\@MinecraftCommands\@\@SAXAEAVCommandRegistry\@\@\@Z
      */

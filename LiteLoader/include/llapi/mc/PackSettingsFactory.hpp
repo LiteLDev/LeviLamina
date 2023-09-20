@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -34,9 +33,5 @@ public:
      * @symbol ?getPackSettings\@PackSettingsFactory\@\@QEAAPEAVPackSettings\@\@AEBVPackManifest\@\@\@Z
      */
     MCAPI class PackSettings * getPackSettings(class PackManifest const &);
-    /**
-     * @symbol ?loadPackSettings\@PackSettingsFactory\@\@QEAAPEAVPackSettings\@\@AEBUPackIdVersion\@\@AEBVValue\@Json\@\@\@Z
-     */
-    MCAPI class PackSettings * loadPackSettings(struct PackIdVersion const &, class Json::Value const &);
 
 };

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "BodyControl.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class AgentBodyControl.
  *
  */
-class AgentBodyControl {
+class AgentBodyControl : public BodyControl {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -25,7 +26,6 @@ class AgentBodyControl {
 public:
     class AgentBodyControl& operator=(class AgentBodyControl const &) = delete;
     AgentBodyControl(class AgentBodyControl const &) = delete;
-    AgentBodyControl() = delete;
 #endif
 
 public:
@@ -39,5 +39,9 @@ public:
      * @symbol ?clientTick\@AgentBodyControl\@\@UEAAXAEAVMob\@\@\@Z
      */
     virtual void clientTick(class Mob &);
+    /**
+     * @symbol ??0AgentBodyControl\@\@QEAA\@XZ
+     */
+    MCAPI AgentBodyControl();
 
 };

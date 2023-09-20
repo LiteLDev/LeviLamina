@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Goal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class RandomStrollGoal.
  *
  */
-class RandomStrollGoal {
+class RandomStrollGoal : public Goal {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -45,11 +46,6 @@ public:
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl 3
-     * @symbol ?canBeInterrupted\@RandomBreachingGoal\@\@UEAA_NXZ
-     */
-    virtual bool canBeInterrupted();
-    /**
      * @vftbl 4
      * @symbol ?start\@RandomStrollGoal\@\@UEAAXXZ
      */
@@ -69,16 +65,6 @@ public:
      * @symbol ?appendDebugInfo\@RandomStrollGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
     /**
      * @vftbl 10
      * @symbol ?_setWantedPosition\@RandomStrollGoal\@\@MEAA_NXZ

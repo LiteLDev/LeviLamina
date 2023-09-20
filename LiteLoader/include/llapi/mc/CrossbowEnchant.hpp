@@ -16,7 +16,7 @@
  * @brief MC class CrossbowEnchant.
  *
  */
-class CrossbowEnchant {
+class CrossbowEnchant : public Enchant {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -51,35 +51,10 @@ public:
      */
     virtual int getMaxCost(int) const;
     /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
      * @vftbl 5
      * @symbol ?getMaxLevel\@CrossbowEnchant\@\@UEBAHXZ
      */
     virtual int getMaxLevel() const;
-    /**
-     * @vftbl 6
-     * @symbol __unk_vfn_6
-     */
-    virtual void __unk_vfn_6();
-    /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
     /**
      * @vftbl 10
      * @symbol __unk_vfn_10
@@ -105,10 +80,6 @@ public:
      * @symbol ?_isValidEnchantmentTypeForCategory\@CrossbowEnchant\@\@EEBA_NW4Type\@Enchant\@\@\@Z
      */
     virtual bool _isValidEnchantmentTypeForCategory(enum class Enchant::Type) const;
-    /**
-     * @symbol ??0CrossbowEnchant\@\@QEAA\@W4Type\@Enchant\@\@W4Frequency\@2\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@2H_NH\@Z
-     */
-    MCAPI CrossbowEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class std::basic_string_view<char, struct std::char_traits<char>>, class std::basic_string_view<char, struct std::char_traits<char>>, int, bool, int);
 
 //private:
 

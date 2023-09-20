@@ -29,5 +29,15 @@ public:
 #endif
 
 public:
+    /**
+     * @vftbl 0
+     * @symbol __unk_vfn_0
+     */
+    virtual void __unk_vfn_0();
+    /**
+     * @vftbl 1
+     * @symbol ?fread\@MemoryMappedFileReadAccess\@MemoryMappedFileAccess\@\@UEBA_KPEAX_K10\@Z
+     */
+    virtual unsigned __int64 fread(void *, unsigned __int64, unsigned __int64, void *) const = 0;
 
 };

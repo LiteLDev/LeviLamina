@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -21,13 +22,6 @@ class EntityPlacerItemComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYPLACERITEMCOMPONENT
-public:
-    class EntityPlacerItemComponent& operator=(class EntityPlacerItemComponent const &) = delete;
-    EntityPlacerItemComponent(class EntityPlacerItemComponent const &) = delete;
-    EntityPlacerItemComponent() = delete;
-#endif
-
 public:
     /**
      * @vftbl 0
@@ -36,29 +30,29 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?checkComponentDataForContentErrors\@ItemComponent\@\@UEBA_NXZ
      */
-    virtual void __unk_vfn_1();
+    virtual bool checkComponentDataForContentErrors() const;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?writeSettings\@ItemComponent\@\@UEAAXXZ
      */
-    virtual void __unk_vfn_2();
+    virtual void writeSettings();
     /**
      * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @symbol ?isNetworkComponent\@InteractButtonItemComponent\@\@UEBA_NXZ
      */
-    virtual void __unk_vfn_3();
+    virtual bool isNetworkComponent() const;
     /**
      * @vftbl 4
-     * @symbol ?buildNetworkTag\@?$NetworkedItemComponent\@VEntityPlacerItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?buildNetworkTag\@ItemComponent\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx &) const;
     /**
      * @vftbl 5
-     * @symbol ?initializeFromNetwork\@?$NetworkedItemComponent\@VEntityPlacerItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
+     * @symbol ?initializeFromNetwork\@ItemComponent\@\@UEAA_NAEBVCompoundTag\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    virtual bool initializeFromNetwork(class CompoundTag const &);
+    virtual bool initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx &);
     /**
      * @vftbl 6
      * @symbol ?handleVersionBasedInitialization\@EntityPlacerItemComponent\@\@UEAAXAEBVSemVersion\@\@\@Z
@@ -66,33 +60,49 @@ public:
     virtual void handleVersionBasedInitialization(class SemVersion const &);
     /**
      * @vftbl 7
-     * @symbol __unk_vfn_7
+     * @symbol ?_canUseOn\@EntityPlacerItemComponent\@\@MEBA_NAEBVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual void __unk_vfn_7();
+    virtual bool _canUseOn(class ItemStack const &, class Actor &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
      * @symbol ?_useOn\@EntityPlacerItemComponent\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
+    /**
+     * @vftbl 9
+     * @symbol ?_initializeComponent\@EntityPlacerItemComponent\@\@UEBAXXZ
+     */
+    virtual void _initializeComponent() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYPLACERITEMCOMPONENT
     /**
-     * @symbol ?_canUseOn\@EntityPlacerItemComponent\@\@MEBA_NAEBVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@E\@Z
+     * @symbol __unk_destructor_-1
      */
-    MCVAPI bool _canUseOn(class ItemStack const &, class Actor &, class BlockPos const &, unsigned char) const;
+    MCVAPI ~EntityPlacerItemComponent();
 #endif
+    /**
+     * @symbol ??0EntityPlacerItemComponent\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI EntityPlacerItemComponent(class EntityPlacerItemComponent const &);
+    /**
+     * @symbol ??0EntityPlacerItemComponent\@\@QEAA\@XZ
+     */
+    MCAPI EntityPlacerItemComponent();
     /**
      * @symbol ?dispense\@EntityPlacerItemComponent\@\@QEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
     MCAPI bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
-     * @symbol ?bindType\@EntityPlacerItemComponent\@\@SAXXZ
+     * @symbol ??4EntityPlacerItemComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI static void bindType();
+    MCAPI class EntityPlacerItemComponent & operator=(class EntityPlacerItemComponent &&);
+    /**
+     * @symbol ??4EntityPlacerItemComponent\@\@QEAAAEAV0\@AEBV0\@\@Z
+     */
+    MCAPI class EntityPlacerItemComponent & operator=(class EntityPlacerItemComponent const &);
+    /**
+     * @symbol ?bindType\@EntityPlacerItemComponent\@\@SAXAEAUReflectionCtx\@cereal\@\@AEBV?$vector\@W4AllExperiments\@\@V?$allocator\@W4AllExperiments\@\@\@std\@\@\@std\@\@V?$optional\@VSemVersion\@\@\@5\@\@Z
+     */
+    MCAPI static void bindType(struct cereal::ReflectionCtx &, std::vector<enum class AllExperiments> const &, class std::optional<class SemVersion>);
     /**
      * @symbol ?getIdentifier\@EntityPlacerItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
@@ -103,6 +113,10 @@ public:
      * @symbol ?_setActorCustomName\@EntityPlacerItemComponent\@\@AEBAXAEAVActor\@\@AEBVItemStack\@\@\@Z
      */
     MCAPI void _setActorCustomName(class Actor &, class ItemStack const &) const;
+    /**
+     * @symbol ?_validateBlocks\@EntityPlacerItemComponent\@\@AEBAXAEBV?$vector\@VBlockDescriptor\@\@V?$allocator\@VBlockDescriptor\@\@\@std\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
+     */
+    MCAPI void _validateBlocks(std::vector<class BlockDescriptor> const &, std::string const &) const;
 
 private:
 

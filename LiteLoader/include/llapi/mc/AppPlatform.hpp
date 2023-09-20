@@ -295,6 +295,10 @@ public:
      */
     MCVAPI unsigned __int64 getLowPhysicalMemoryThreshold() const;
     /**
+     * @symbol ?getMaxClubsRequests\@AppPlatform\@\@UEBAIXZ
+     */
+    MCVAPI unsigned int getMaxClubsRequests() const;
+    /**
      * @symbol ?getMaxLDBFilesOpen\@AppPlatform\@\@UEBAHXZ
      */
     MCVAPI int getMaxLDBFilesOpen() const;
@@ -317,7 +321,7 @@ public:
     /**
      * @symbol ?getModalErrorMessageProc\@AppPlatform\@\@UEAAP6A?AW4AssertDialogResponse\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@ZXZ
      */
-    MCVAPI enum class AssertDialogResponse ( *)(std::string const &, std::string const &) getModalErrorMessageProc();
+    MCVAPI enum class AssertDialogResponse (__cdecl *)(std::string const &, std::string const &) getModalErrorMessageProc();
     /**
      * @symbol ?getModelName\@AppPlatform\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
@@ -366,10 +370,6 @@ public:
      * @symbol ?getPackagedShaderCachePath\@AppPlatform\@\@UEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     MCVAPI class Core::PathBuffer<std::string> getPackagedShaderCachePath();
-    /**
-     * @symbol ?getPixelsPerMillimeter\@AppPlatform\@\@UEAAMXZ
-     */
-    MCVAPI float getPixelsPerMillimeter();
     /**
      * @symbol ?getPlatformDpi\@AppPlatform\@\@EEBAHXZ
      */
@@ -707,6 +707,10 @@ public:
      */
     MCVAPI void removeListener(class AppPlatformListener *);
     /**
+     * @symbol ?requestIntegrityToken\@AppPlatform\@\@UEAA?AV?$shared_ptr\@V?$IAsyncResult\@UIntegrityTokenResult\@\@\@Threading\@Bedrock\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
+     */
+    MCVAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<struct IntegrityTokenResult>> requestIntegrityToken(std::string const &);
+    /**
      * @symbol ?requestMulticastReceivePermission\@AppPlatform\@\@UEAAXXZ
      */
     MCVAPI void requestMulticastReceivePermission();
@@ -735,10 +739,6 @@ public:
      */
     MCVAPI bool restartRequested();
     /**
-     * @symbol ?sendIntegrityCheckTelemetry\@AppPlatform\@\@UEAAXAEAVIMinecraftEventing\@\@\@Z
-     */
-    MCVAPI void sendIntegrityCheckTelemetry(class IMinecraftEventing &);
-    /**
      * @symbol ?setARVRPlatform\@AppPlatform\@\@UEAAXW4ARVRPlatform\@\@\@Z
      */
     MCVAPI void setARVRPlatform(enum class ARVRPlatform);
@@ -750,6 +750,14 @@ public:
      * @symbol ?setFullscreenMode\@AppPlatform\@\@UEAAXW4FullscreenMode\@\@\@Z
      */
     MCVAPI void setFullscreenMode(enum class FullscreenMode);
+    /**
+     * @symbol ?setIntegrityToken\@AppPlatform\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCVAPI void setIntegrityToken(std::string const &);
+    /**
+     * @symbol ?setIntegrityTokenErrorMessage\@AppPlatform\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCVAPI void setIntegrityTokenErrorMessage(std::string const &);
     /**
      * @symbol ?setKeepScreenOnFlag\@AppPlatform\@\@UEAAX_N\@Z
      */
@@ -878,10 +886,6 @@ public:
      * @symbol ?updateLocalization\@AppPlatform\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCVAPI void updateLocalization(std::string const &);
-    /**
-     * @symbol ?updateTextBoxText\@AppPlatform\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCVAPI void updateTextBoxText(std::string const &);
     /**
      * @symbol ?useAppPlatformForTelemetryIPAddress\@AppPlatform\@\@UEAA_NXZ
      */

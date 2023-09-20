@@ -5,7 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Command.hpp"
+#include "ScriptDebugCommand.hpp"
 
 #define BEFORE_EXTRA
 
@@ -15,7 +15,7 @@
  * @brief MC class ServerScriptDebugCommand.
  *
  */
-class ServerScriptDebugCommand : public Command {
+class ServerScriptDebugCommand : public ScriptDebugCommand {
 
 #define AFTER_EXTRA
 
@@ -34,7 +34,7 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 1
+     * @vftbl 2
      * @symbol ?execute\@ServerScriptDebugCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;

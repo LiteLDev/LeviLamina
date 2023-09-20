@@ -1490,7 +1490,7 @@ struct BucketPlayerAndActor {
 };
 
 // 也许这个结构体可以用偏移获取替代？
-THook(void, "<lambda_6afa751f7d1669ccd67230f07aadabb7>::operator()", BucketPlayerAndActor* a1) {
+THook(void, "<lambda_17580ed4559a1a4a43d5c754be154bb2>::operator()", BucketPlayerAndActor* a1) {
     IF_LISTENED(PlayerUseBucketEvent) {
         BucketPlayerAndActor mBucketPlayerAndActor = *a1;
         if (mBucketPlayerAndActor.owner->getTypeName() == "minecraft:cow" ||

@@ -131,7 +131,7 @@ int telemetryText = 0;
 std::mutex mtx;
 std::string cmdstr;
 
-THook(void, "?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4ZZ",
+THook(void, "?log@Diagnostics@Bedrock@@YAXW4LogCategory@BedrockLog@@V?$bitset@$02@std@@W4LogRule@4@W4LogAreaID@@IPEBDH4ZZ",
       enum BedrockLog::LogCategory a1, class std::bitset<3> a2, enum BedrockLog::LogRule a3, enum LogAreaID a4,
       unsigned int a5, char const* a6, int a7, char const* a8, ...) {
     va_list va;

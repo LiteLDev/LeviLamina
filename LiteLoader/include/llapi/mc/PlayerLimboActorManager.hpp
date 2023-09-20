@@ -44,10 +44,6 @@ public:
      */
     MCAPI void saveOwnedLimboActorsForPlayer(struct ActorUniqueID, class LevelStorage &) const;
     /**
-     * @symbol ??1PlayerLimboActorManager\@\@QEAA\@XZ
-     */
-    MCAPI ~PlayerLimboActorManager();
-    /**
      * @symbol ?getOwnedEntityLimboStorageKeyForPlayer\@PlayerLimboActorManager\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UActorUniqueID\@\@\@Z
      */
     MCAPI static std::string getOwnedEntityLimboStorageKeyForPlayer(struct ActorUniqueID);

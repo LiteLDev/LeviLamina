@@ -5,7 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "ContainerManagerModel.hpp"
+#include "LevelContainerManagerModel.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +16,7 @@
  * @brief MC class TradeContainerManagerModel.
  *
  */
-class TradeContainerManagerModel : public ContainerManagerModel {
+class TradeContainerManagerModel : public LevelContainerManagerModel {
 
 #define AFTER_EXTRA
 // Add Member There

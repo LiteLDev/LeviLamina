@@ -91,10 +91,6 @@ public:
      */
     MCVAPI bool isMeleeDamageEnchant() const;
 #endif
-    /**
-     * @symbol ??0MeleeWeaponEnchant\@\@QEAA\@W4Type\@Enchant\@\@W4Frequency\@2\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@2HH\@Z
-     */
-    MCAPI MeleeWeaponEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class std::basic_string_view<char, struct std::char_traits<char>>, class std::basic_string_view<char, struct std::char_traits<char>>, int, int);
 
 //private:
 

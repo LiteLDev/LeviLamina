@@ -66,145 +66,155 @@ public:
      */
     virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
     /**
-     * @vftbl 55
-     * @symbol __unk_vfn_55
+     * @vftbl 54
+     * @symbol __unk_vfn_54
      */
-    virtual void __unk_vfn_55();
+    virtual void __unk_vfn_54();
     /**
-     * @vftbl 62
-     * @symbol __unk_vfn_62
+     * @vftbl 61
+     * @symbol __unk_vfn_61
      */
-    virtual void __unk_vfn_62();
+    virtual void __unk_vfn_61();
     /**
-     * @vftbl 71
-     * @symbol __unk_vfn_71
+     * @vftbl 70
+     * @symbol __unk_vfn_70
      */
-    virtual void __unk_vfn_71();
+    virtual void __unk_vfn_70();
     /**
-     * @vftbl 77
-     * @symbol __unk_vfn_77
+     * @vftbl 76
+     * @symbol __unk_vfn_76
      */
-    virtual void __unk_vfn_77();
+    virtual void __unk_vfn_76();
     /**
-     * @vftbl 83
-     * @symbol __unk_vfn_83
+     * @vftbl 82
+     * @symbol __unk_vfn_82
      */
-    virtual void __unk_vfn_83();
+    virtual void __unk_vfn_82();
     /**
-     * @vftbl 86
-     * @symbol __unk_vfn_86
+     * @vftbl 85
+     * @symbol __unk_vfn_85
      */
-    virtual void __unk_vfn_86();
+    virtual void __unk_vfn_85();
     /**
-     * @vftbl 93
-     * @symbol __unk_vfn_93
+     * @vftbl 92
+     * @symbol __unk_vfn_92
      */
-    virtual void __unk_vfn_93();
+    virtual void __unk_vfn_92();
+    /**
+     * @vftbl 94
+     * @symbol __unk_vfn_94
+     */
+    virtual void __unk_vfn_94();
     /**
      * @vftbl 95
      * @symbol __unk_vfn_95
      */
     virtual void __unk_vfn_95();
     /**
-     * @vftbl 96
-     * @symbol __unk_vfn_96
+     * @vftbl 97
+     * @symbol __unk_vfn_97
      */
-    virtual void __unk_vfn_96();
+    virtual void __unk_vfn_97();
     /**
-     * @vftbl 98
-     * @symbol __unk_vfn_98
+     * @vftbl 162
+     * @symbol __unk_vfn_162
      */
-    virtual void __unk_vfn_98();
+    virtual void __unk_vfn_162();
     /**
-     * @vftbl 164
-     * @symbol __unk_vfn_164
+     * @vftbl 174
+     * @symbol __unk_vfn_174
      */
-    virtual void __unk_vfn_164();
+    virtual void __unk_vfn_174();
     /**
-     * @vftbl 178
-     * @symbol __unk_vfn_178
+     * @vftbl 198
+     * @symbol __unk_vfn_198
      */
-    virtual void __unk_vfn_178();
+    virtual void __unk_vfn_198();
     /**
-     * @vftbl 202
-     * @symbol __unk_vfn_202
+     * @vftbl 199
+     * @symbol __unk_vfn_199
      */
-    virtual void __unk_vfn_202();
+    virtual void __unk_vfn_199();
     /**
-     * @vftbl 203
-     * @symbol __unk_vfn_203
+     * @vftbl 215
+     * @symbol __unk_vfn_215
      */
-    virtual void __unk_vfn_203();
+    virtual void __unk_vfn_215();
     /**
-     * @vftbl 219
-     * @symbol __unk_vfn_219
+     * @vftbl 218
+     * @symbol __unk_vfn_218
      */
-    virtual void __unk_vfn_219();
+    virtual void __unk_vfn_218();
     /**
-     * @vftbl 222
-     * @symbol __unk_vfn_222
+     * @vftbl 235
+     * @symbol __unk_vfn_235
      */
-    virtual void __unk_vfn_222();
+    virtual void __unk_vfn_235();
     /**
-     * @vftbl 239
-     * @symbol __unk_vfn_239
+     * @vftbl 243
+     * @symbol __unk_vfn_243
      */
-    virtual void __unk_vfn_239();
+    virtual void __unk_vfn_243();
     /**
-     * @vftbl 247
-     * @symbol __unk_vfn_247
+     * @vftbl 248
+     * @symbol __unk_vfn_248
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_248();
     /**
-     * @vftbl 253
-     * @symbol __unk_vfn_253
-     */
-    virtual void __unk_vfn_253();
-    /**
-     * @vftbl 264
+     * @vftbl 259
      * @symbol ?aiStep\@SimulatedPlayer\@\@UEAAXXZ
      */
     virtual void aiStep();
     /**
-     * @vftbl 276
-     * @symbol __unk_vfn_276
+     * @vftbl 270
+     * @symbol __unk_vfn_270
      */
-    virtual void __unk_vfn_276();
+    virtual void __unk_vfn_270();
     /**
-     * @vftbl 280
-     * @symbol __unk_vfn_280
+     * @vftbl 274
+     * @symbol __unk_vfn_274
      */
-    virtual void __unk_vfn_280();
+    virtual void __unk_vfn_274();
     /**
-     * @vftbl 323
-     * @symbol __unk_vfn_323
+     * @vftbl 326
+     * @symbol __unk_vfn_326
      */
-    virtual void __unk_vfn_323();
+    virtual void __unk_vfn_326();
     /**
      * @vftbl 333
      * @symbol __unk_vfn_333
      */
     virtual void __unk_vfn_333();
     /**
-     * @vftbl 340
-     * @symbol __unk_vfn_340
+     * @vftbl 334
+     * @symbol __unk_vfn_334
      */
-    virtual void __unk_vfn_340();
+    virtual void __unk_vfn_334();
     /**
-     * @vftbl 341
-     * @symbol __unk_vfn_341
+     * @vftbl 336
+     * @symbol __unk_vfn_336
      */
-    virtual void __unk_vfn_341();
+    virtual void __unk_vfn_336();
+    /**
+     * @vftbl 337
+     * @symbol __unk_vfn_337
+     */
+    virtual void __unk_vfn_337();
+    /**
+     * @vftbl 342
+     * @symbol __unk_vfn_342
+     */
+    virtual void __unk_vfn_342();
     /**
      * @vftbl 343
      * @symbol __unk_vfn_343
      */
     virtual void __unk_vfn_343();
     /**
-     * @vftbl 344
-     * @symbol __unk_vfn_344
+     * @vftbl 346
+     * @symbol __unk_vfn_346
      */
-    virtual void __unk_vfn_344();
+    virtual void __unk_vfn_346();
     /**
      * @vftbl 349
      * @symbol __unk_vfn_349
@@ -216,72 +226,57 @@ public:
      */
     virtual void __unk_vfn_350();
     /**
-     * @vftbl 353
-     * @symbol __unk_vfn_353
+     * @vftbl 361
+     * @symbol __unk_vfn_361
      */
-    virtual void __unk_vfn_353();
+    virtual void __unk_vfn_361();
     /**
-     * @vftbl 356
-     * @symbol __unk_vfn_356
-     */
-    virtual void __unk_vfn_356();
-    /**
-     * @vftbl 357
-     * @symbol __unk_vfn_357
-     */
-    virtual void __unk_vfn_357();
-    /**
-     * @vftbl 368
-     * @symbol __unk_vfn_368
-     */
-    virtual void __unk_vfn_368();
-    /**
-     * @vftbl 369
+     * @vftbl 362
      * @symbol ?isHostingPlayer\@SimulatedPlayer\@\@UEBA_NXZ
      */
     virtual bool isHostingPlayer() const;
+    /**
+     * @vftbl 365
+     * @symbol __unk_vfn_365
+     */
+    virtual void __unk_vfn_365();
     /**
      * @vftbl 372
      * @symbol __unk_vfn_372
      */
     virtual void __unk_vfn_372();
     /**
-     * @vftbl 379
-     * @symbol __unk_vfn_379
+     * @vftbl 395
+     * @symbol __unk_vfn_395
      */
-    virtual void __unk_vfn_379();
+    virtual void __unk_vfn_395();
     /**
-     * @vftbl 402
-     * @symbol __unk_vfn_402
-     */
-    virtual void __unk_vfn_402();
-    /**
-     * @vftbl 403
+     * @vftbl 396
      * @symbol ?getXuid\@SimulatedPlayer\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getXuid() const;
     /**
-     * @vftbl 404
+     * @vftbl 397
      * @symbol ?getMovementSettings\@SimulatedPlayer\@\@UEBAAEBUPlayerMovementSettings\@\@XZ
      */
     virtual struct PlayerMovementSettings const & getMovementSettings() const;
     /**
-     * @vftbl 405
-     * @symbol __unk_vfn_405
+     * @vftbl 398
+     * @symbol __unk_vfn_398
      */
-    virtual void __unk_vfn_405();
+    virtual void __unk_vfn_398();
     /**
-     * @vftbl 408
+     * @vftbl 401
      * @symbol ?_createChunkSource\@SimulatedPlayer\@\@MEAA?AV?$shared_ptr\@VChunkViewSource\@\@\@std\@\@AEAVChunkSource\@\@\@Z
      */
     virtual class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource &);
     /**
-     * @vftbl 412
+     * @vftbl 405
      * @symbol ?_getSpawnChunkLimit\@SimulatedPlayer\@\@MEBAHXZ
      */
     virtual int _getSpawnChunkLimit() const;
     /**
-     * @vftbl 413
+     * @vftbl 406
      * @symbol ?_updateChunkPublisherView\@SimulatedPlayer\@\@MEAAXAEBVVec3\@\@M\@Z
      */
     virtual void _updateChunkPublisherView(class Vec3 const &, float);
@@ -316,13 +311,13 @@ public:
      */
     MCAPI void setXuid(std::string const &);
     /**
-     * @symbol ?simulateAttack\@SimulatedPlayer\@\@QEAA_NXZ
-     */
-    MCAPI bool simulateAttack();
-    /**
      * @symbol ?simulateAttack\@SimulatedPlayer\@\@QEAA_NPEAVActor\@\@\@Z
      */
     MCAPI bool simulateAttack(class Actor *);
+    /**
+     * @symbol ?simulateAttack\@SimulatedPlayer\@\@QEAA_NXZ
+     */
+    MCAPI bool simulateAttack();
     /**
      * @symbol ?simulateDestroyBlock\@SimulatedPlayer\@\@QEAA_NAEBVBlockPos\@\@W4ScriptFacing\@ScriptModuleMinecraft\@\@\@Z
      */
@@ -332,6 +327,10 @@ public:
      */
     MCAPI void simulateDisconnect();
     /**
+     * @symbol ?simulateDropSelectedItem\@SimulatedPlayer\@\@QEAA_NXZ
+     */
+    MCAPI bool simulateDropSelectedItem();
+    /**
      * @symbol ?simulateFly\@SimulatedPlayer\@\@QEAAXXZ
      */
     MCAPI void simulateFly();
@@ -340,17 +339,17 @@ public:
      */
     MCAPI bool simulateGiveItem(class ItemStack &, bool);
     /**
-     * @symbol ?simulateInteract\@SimulatedPlayer\@\@QEAA_NAEBVBlockPos\@\@W4ScriptFacing\@ScriptModuleMinecraft\@\@\@Z
+     * @symbol ?simulateInteract\@SimulatedPlayer\@\@QEAA_NAEAVActor\@\@\@Z
      */
-    MCAPI bool simulateInteract(class BlockPos const &, enum class ScriptModuleMinecraft::ScriptFacing);
+    MCAPI bool simulateInteract(class Actor &);
     /**
      * @symbol ?simulateInteract\@SimulatedPlayer\@\@QEAA_NXZ
      */
     MCAPI bool simulateInteract();
     /**
-     * @symbol ?simulateInteract\@SimulatedPlayer\@\@QEAA_NAEAVActor\@\@\@Z
+     * @symbol ?simulateInteract\@SimulatedPlayer\@\@QEAA_NAEBVBlockPos\@\@W4ScriptFacing\@ScriptModuleMinecraft\@\@\@Z
      */
-    MCAPI bool simulateInteract(class Actor &);
+    MCAPI bool simulateInteract(class BlockPos const &, enum class ScriptModuleMinecraft::ScriptFacing);
     /**
      * @symbol ?simulateJump\@SimulatedPlayer\@\@QEAA_NXZ
      */
@@ -360,6 +359,10 @@ public:
      */
     MCAPI void simulateLocalMove(class Vec3 const &, float);
     /**
+     * @symbol ?simulateLookAt\@SimulatedPlayer\@\@QEAAXAEBVBlockPos\@\@\@Z
+     */
+    MCAPI void simulateLookAt(class BlockPos const &);
+    /**
      * @symbol ?simulateLookAt\@SimulatedPlayer\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void simulateLookAt(class Actor &);
@@ -367,10 +370,6 @@ public:
      * @symbol ?simulateLookAt\@SimulatedPlayer\@\@QEAAXAEBVVec3\@\@\@Z
      */
     MCAPI void simulateLookAt(class Vec3 const &);
-    /**
-     * @symbol ?simulateLookAt\@SimulatedPlayer\@\@QEAAXAEBVBlockPos\@\@\@Z
-     */
-    MCAPI void simulateLookAt(class BlockPos const &);
     /**
      * @symbol ?simulateMoveToLocation\@SimulatedPlayer\@\@QEAAXAEBVVec3\@\@M\@Z
      */

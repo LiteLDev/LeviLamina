@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -30,9 +31,9 @@ public:
 
 public:
     /**
-     * @symbol ??4OnActorEnterVolumeDefinition\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     * @symbol ?initialize\@OnActorEnterVolumeDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVOnActorEnterVolumeComponent\@\@\@Z
      */
-    MCAPI struct OnActorEnterVolumeDefinition & operator=(struct OnActorEnterVolumeDefinition &&);
+    MCAPI void initialize(class EntityContext &, class OnActorEnterVolumeComponent &) const;
     /**
      * @symbol ??1OnActorEnterVolumeDefinition\@\@QEAA\@XZ
      */
@@ -42,8 +43,8 @@ public:
      */
     MCAPI static std::string const NAME;
     /**
-     * @symbol ?bindType\@OnActorEnterVolumeDefinition\@\@SAXXZ
+     * @symbol ?bindType\@OnActorEnterVolumeDefinition\@\@SAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(struct cereal::ReflectionCtx &);
 
 };

@@ -94,7 +94,7 @@ public:
     virtual bool addItemToFirstEmptySlot(class ItemStack const &);
     /**
      * @vftbl 10
-     * @symbol ?setItem\@SimplePlayerContainer\@\@UEAAXHAEBVItemStack\@\@\@Z
+     * @symbol ?setItem\@Inventory\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
     virtual void setItem(int, class ItemStack const &) = 0;
     /**
@@ -129,7 +129,7 @@ public:
     virtual int getContainerSize() const = 0;
     /**
      * @vftbl 17
-     * @symbol ?getMaxStackSize\@SimpleContainer\@\@UEBAHXZ
+     * @symbol ?getMaxStackSize\@FillingContainer\@\@UEBAHXZ
      */
     virtual int getMaxStackSize() const = 0;
     /**
@@ -237,17 +237,13 @@ public:
     MCVAPI ~Container();
 #endif
     /**
-     * @symbol ??0Container\@\@QEAA\@W4ContainerType\@\@\@Z
-     */
-    MCAPI Container(enum class ContainerType);
-    /**
      * @symbol ??0Container\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI Container(class Container const &);
     /**
-     * @symbol ??0Container\@\@QEAA\@W4ContainerType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
+     * @symbol ??0Container\@\@QEAA\@W4ContainerType\@\@\@Z
      */
-    MCAPI Container(enum class ContainerType, std::string const &, bool);
+    MCAPI Container(enum class ContainerType);
     /**
      * @symbol ?getContainerType\@Container\@\@QEBA?AW4ContainerType\@\@XZ
      */

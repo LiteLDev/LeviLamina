@@ -42,9 +42,9 @@ public:
     virtual std::string const & getName() const;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?executeAction\@PlaySoundResponse\@\@UEBAXAEAVRenderParams\@\@\@Z
      */
-    virtual void __unk_vfn_2() = 0;
+    virtual void executeAction(class RenderParams &) const = 0;
     /**
      * @vftbl 3
      * @symbol ?buildSchema\@EventResponse\@\@UEBAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UEventResponseCollection\@\@\@JsonUtil\@\@\@std\@\@AEBV?$Factory\@VEventResponse\@\@$$V\@\@\@Z

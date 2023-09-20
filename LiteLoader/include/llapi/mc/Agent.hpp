@@ -57,195 +57,190 @@ public:
      */
     virtual void normalTick();
     /**
-     * @vftbl 53
+     * @vftbl 52
      * @symbol ?isInvisible\@Agent\@\@UEBA_NXZ
      */
     virtual bool isInvisible() const;
     /**
-     * @vftbl 54
+     * @vftbl 53
      * @symbol ?canShowNameTag\@Agent\@\@UEBA_NXZ
      */
     virtual bool canShowNameTag() const;
     /**
-     * @vftbl 55
-     * @symbol __unk_vfn_55
+     * @vftbl 54
+     * @symbol __unk_vfn_54
      */
-    virtual void __unk_vfn_55();
+    virtual void __unk_vfn_54();
     /**
-     * @vftbl 59
+     * @vftbl 58
      * @symbol ?getFormattedNameTag\@Agent\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getFormattedNameTag() const;
     /**
-     * @vftbl 62
-     * @symbol __unk_vfn_62
+     * @vftbl 61
+     * @symbol __unk_vfn_61
      */
-    virtual void __unk_vfn_62();
+    virtual void __unk_vfn_61();
     /**
-     * @vftbl 71
-     * @symbol __unk_vfn_71
+     * @vftbl 70
+     * @symbol __unk_vfn_70
      */
-    virtual void __unk_vfn_71();
+    virtual void __unk_vfn_70();
     /**
-     * @vftbl 77
-     * @symbol __unk_vfn_77
+     * @vftbl 76
+     * @symbol __unk_vfn_76
      */
-    virtual void __unk_vfn_77();
+    virtual void __unk_vfn_76();
     /**
-     * @vftbl 82
+     * @vftbl 81
      * @symbol ?isPickable\@Agent\@\@UEAA_NXZ
      */
     virtual bool isPickable();
     /**
-     * @vftbl 83
-     * @symbol __unk_vfn_83
+     * @vftbl 82
+     * @symbol __unk_vfn_82
      */
-    virtual void __unk_vfn_83();
+    virtual void __unk_vfn_82();
     /**
-     * @vftbl 86
-     * @symbol __unk_vfn_86
+     * @vftbl 85
+     * @symbol __unk_vfn_85
      */
-    virtual void __unk_vfn_86();
+    virtual void __unk_vfn_85();
     /**
-     * @vftbl 93
-     * @symbol __unk_vfn_93
+     * @vftbl 92
+     * @symbol __unk_vfn_92
      */
-    virtual void __unk_vfn_93();
+    virtual void __unk_vfn_92();
+    /**
+     * @vftbl 94
+     * @symbol __unk_vfn_94
+     */
+    virtual void __unk_vfn_94();
     /**
      * @vftbl 95
      * @symbol __unk_vfn_95
      */
     virtual void __unk_vfn_95();
     /**
-     * @vftbl 96
-     * @symbol __unk_vfn_96
+     * @vftbl 97
+     * @symbol __unk_vfn_97
      */
-    virtual void __unk_vfn_96();
+    virtual void __unk_vfn_97();
     /**
-     * @vftbl 98
-     * @symbol __unk_vfn_98
-     */
-    virtual void __unk_vfn_98();
-    /**
-     * @vftbl 106
+     * @vftbl 105
      * @symbol ?setOwner\@Agent\@\@UEAAXUActorUniqueID\@\@\@Z
      */
     virtual void setOwner(struct ActorUniqueID);
     /**
-     * @vftbl 127
+     * @vftbl 125
      * @symbol ?handleEntityEvent\@Agent\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
-     * @vftbl 144
+     * @vftbl 142
      * @symbol ?setCarriedItem\@Agent\@\@UEAAXAEBVItemStack\@\@\@Z
      */
     virtual void setCarriedItem(class ItemStack const &);
     /**
-     * @vftbl 164
-     * @symbol __unk_vfn_164
+     * @vftbl 162
+     * @symbol __unk_vfn_162
      */
-    virtual void __unk_vfn_164();
+    virtual void __unk_vfn_162();
     /**
-     * @vftbl 176
+     * @vftbl 172
      * @symbol ?canBePulledIntoVehicle\@Agent\@\@UEBA_NXZ
      */
     virtual bool canBePulledIntoVehicle() const;
     /**
-     * @vftbl 178
-     * @symbol __unk_vfn_178
+     * @vftbl 174
+     * @symbol __unk_vfn_174
      */
-    virtual void __unk_vfn_178();
+    virtual void __unk_vfn_174();
     /**
-     * @vftbl 192
+     * @vftbl 188
      * @symbol ?canBeAffected\@Agent\@\@UEBA_NI\@Z
      */
     virtual bool canBeAffected(unsigned int) const;
     /**
-     * @vftbl 202
-     * @symbol __unk_vfn_202
+     * @vftbl 198
+     * @symbol __unk_vfn_198
      */
-    virtual void __unk_vfn_202();
+    virtual void __unk_vfn_198();
     /**
-     * @vftbl 203
-     * @symbol __unk_vfn_203
+     * @vftbl 199
+     * @symbol __unk_vfn_199
      */
-    virtual void __unk_vfn_203();
+    virtual void __unk_vfn_199();
+    /**
+     * @vftbl 215
+     * @symbol __unk_vfn_215
+     */
+    virtual void __unk_vfn_215();
+    /**
+     * @vftbl 218
+     * @symbol __unk_vfn_218
+     */
+    virtual void __unk_vfn_218();
     /**
      * @vftbl 219
-     * @symbol __unk_vfn_219
-     */
-    virtual void __unk_vfn_219();
-    /**
-     * @vftbl 222
-     * @symbol __unk_vfn_222
-     */
-    virtual void __unk_vfn_222();
-    /**
-     * @vftbl 223
      * @symbol ?kill\@Agent\@\@UEAAXXZ
      */
     virtual void kill();
     /**
-     * @vftbl 237
+     * @vftbl 233
      * @symbol ?updateEntitySpecificMolangVariables\@Agent\@\@UEAAXAEAVRenderParams\@\@\@Z
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
-     * @vftbl 239
-     * @symbol __unk_vfn_239
+     * @vftbl 235
+     * @symbol __unk_vfn_235
      */
-    virtual void __unk_vfn_239();
+    virtual void __unk_vfn_235();
     /**
-     * @vftbl 240
+     * @vftbl 236
      * @symbol ?_hurt\@Agent\@\@EEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl 247
-     * @symbol __unk_vfn_247
+     * @vftbl 243
+     * @symbol __unk_vfn_243
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_243();
     /**
-     * @vftbl 253
-     * @symbol __unk_vfn_253
+     * @vftbl 248
+     * @symbol __unk_vfn_248
      */
-    virtual void __unk_vfn_253();
+    virtual void __unk_vfn_248();
     /**
-     * @vftbl 254
+     * @vftbl 249
      * @symbol ?knockback\@Agent\@\@UEAAXPEAVActor\@\@HMMMMM\@Z
      */
     virtual void knockback(class Actor *, int, float, float, float, float, float);
     /**
-     * @vftbl 276
-     * @symbol __unk_vfn_276
+     * @vftbl 270
+     * @symbol __unk_vfn_270
      */
-    virtual void __unk_vfn_276();
+    virtual void __unk_vfn_270();
     /**
-     * @vftbl 280
-     * @symbol __unk_vfn_280
+     * @vftbl 274
+     * @symbol __unk_vfn_274
      */
-    virtual void __unk_vfn_280();
+    virtual void __unk_vfn_274();
     /**
-     * @vftbl 306
+     * @vftbl 300
      * @symbol ?createAIGoals\@Agent\@\@UEAA_NXZ
      */
     virtual bool createAIGoals();
     /**
-     * @vftbl 313
+     * @vftbl 307
      * @symbol ?canExistWhenDisallowMob\@Agent\@\@UEBA_NXZ
      */
     virtual bool canExistWhenDisallowMob() const;
     /**
-     * @vftbl 317
+     * @vftbl 311
      * @symbol ?initBodyControl\@Agent\@\@EEAA?AV?$unique_ptr\@VBodyControl\@\@U?$default_delete\@VBodyControl\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class BodyControl> initBodyControl();
-    /**
-     * @vftbl 323
-     * @symbol __unk_vfn_323
-     */
-    virtual void __unk_vfn_323();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENT
     /**
      * @symbol ?breaksFallingBlocks\@Agent\@\@UEBA_NXZ

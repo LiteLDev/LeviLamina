@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -21,13 +22,6 @@ class DiggerItemComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIGGERITEMCOMPONENT
-public:
-    class DiggerItemComponent& operator=(class DiggerItemComponent const &) = delete;
-    DiggerItemComponent(class DiggerItemComponent const &) = delete;
-    DiggerItemComponent() = delete;
-#endif
-
 public:
     /**
      * @vftbl 0
@@ -36,37 +30,75 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?isNetworkComponent\@?$NetworkedItemComponent\@VDiggerItemComponent\@\@\@\@UEBA_NXZ
+     * @symbol ?checkComponentDataForContentErrors\@ItemComponent\@\@UEBA_NXZ
+     */
+    virtual bool checkComponentDataForContentErrors() const;
+    /**
+     * @vftbl 2
+     * @symbol ?writeSettings\@ItemComponent\@\@UEAAXXZ
+     */
+    virtual void writeSettings();
+    /**
+     * @vftbl 3
+     * @symbol ?isNetworkComponent\@InteractButtonItemComponent\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @vftbl 4
-     * @symbol ?buildNetworkTag\@?$NetworkedItemComponent\@VDiggerItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?buildNetworkTag\@ItemComponent\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx &) const;
     /**
      * @vftbl 5
-     * @symbol ?initializeFromNetwork\@?$NetworkedItemComponent\@VDiggerItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
+     * @symbol ?initializeFromNetwork\@ItemComponent\@\@UEAA_NAEBVCompoundTag\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    virtual bool initializeFromNetwork(class CompoundTag const &);
+    virtual bool initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx &);
     /**
-     * @symbol ?mineBlock\@DiggerItemComponent\@\@QEAA_NAEAVItemStack\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
+     * @vftbl 6
+     * @symbol ?handleVersionBasedInitialization\@DiggerItemComponent\@\@UEAAXAEBVSemVersion\@\@\@Z
      */
-    MCAPI bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *);
+    virtual void handleVersionBasedInitialization(class SemVersion const &);
     /**
-     * @symbol ?bindType\@DiggerItemComponent\@\@SAXXZ
+     * @vftbl 7
+     * @symbol ?_canUseOn\@ItemComponent\@\@MEBA_NAEBVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@E\@Z
      */
-    MCAPI static void bindType();
+    virtual bool _canUseOn(class ItemStack const &, class Actor &, class BlockPos const &, unsigned char) const;
+    /**
+     * @vftbl 8
+     * @symbol ?_useOn\@ItemComponent\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
+     */
+    virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
+    /**
+     * @vftbl 9
+     * @symbol ?_initializeComponent\@ItemComponent\@\@MEBAXXZ
+     */
+    virtual void _initializeComponent() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIGGERITEMCOMPONENT
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~DiggerItemComponent();
+#endif
+    /**
+     * @symbol ??0DiggerItemComponent\@\@QEAA\@XZ
+     */
+    MCAPI DiggerItemComponent();
+    /**
+     * @symbol ??0DiggerItemComponent\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI DiggerItemComponent(class DiggerItemComponent const &);
+    /**
+     * @symbol ??4DiggerItemComponent\@\@QEAAAEAV0\@AEBV0\@\@Z
+     */
+    MCAPI class DiggerItemComponent & operator=(class DiggerItemComponent const &);
+    /**
+     * @symbol ??4DiggerItemComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     */
+    MCAPI class DiggerItemComponent & operator=(class DiggerItemComponent &&);
+    /**
+     * @symbol ?bindType\@DiggerItemComponent\@\@SAXAEAUReflectionCtx\@cereal\@\@AEBV?$vector\@W4AllExperiments\@\@V?$allocator\@W4AllExperiments\@\@\@std\@\@\@std\@\@V?$optional\@VSemVersion\@\@\@5\@\@Z
+     */
+    MCAPI static void bindType(struct cereal::ReflectionCtx &, std::vector<enum class AllExperiments> const &, class std::optional<class SemVersion>);
     /**
      * @symbol ?getIdentifier\@DiggerItemComponent\@\@SAAEBVHashedString\@\@XZ
      */

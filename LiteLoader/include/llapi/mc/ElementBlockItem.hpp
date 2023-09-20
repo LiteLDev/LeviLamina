@@ -6,7 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
-#include "AuxDataBlockItem.hpp"
+#include "ChemistryAuxDataBlockItem.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +17,7 @@
  * @brief MC class ElementBlockItem.
  *
  */
-class ElementBlockItem : public AuxDataBlockItem {
+class ElementBlockItem : public ChemistryAuxDataBlockItem {
 
 #define AFTER_EXTRA
 // Add Member There

@@ -17,12 +17,8 @@ namespace PlayJumpSoundSystem {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?createPlayJumpSoundSystem\@PlayJumpSoundSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@PlayJumpSoundSystem\@\@YA?AUTickingSystemWithInfo\@\@W4SoundType\@1\@\@Z
      */
-    MCAPI struct TickingSystemWithInfo createPlayJumpSoundSystem();
-    /**
-     * @symbol ?createPlayPowerJumpSoundSystem\@PlayJumpSoundSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI struct TickingSystemWithInfo createPlayPowerJumpSoundSystem();
+    MCAPI struct TickingSystemWithInfo createSystem(enum class PlayJumpSoundSystem::SoundType);
 
 };

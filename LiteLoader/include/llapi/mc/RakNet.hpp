@@ -33,7 +33,7 @@ namespace RakNet {
 
     struct SystemAddress {
         char filler[17 * 8]; // uncertain?
-        MCAPI const char* ToString(bool, char) const;
+        MCAPI std::string ToString(char) const;
     };
 
     struct RakNetGUID {

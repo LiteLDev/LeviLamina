@@ -68,10 +68,6 @@ public:
      * @symbol ?tryRespawn\@EndDragonFight\@\@QEAAXXZ
      */
     MCAPI void tryRespawn();
-    /**
-     * @symbol ?verifyExitPositions\@EndDragonFight\@\@QEAAXAEAVEndGatewayBlockActor\@\@\@Z
-     */
-    MCAPI void verifyExitPositions(class EndGatewayBlockActor &);
 
 //private:
     /**

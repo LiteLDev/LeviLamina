@@ -5,7 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Command.hpp"
+#include "DeferredCommandBase.hpp"
 
 #define BEFORE_EXTRA
 
@@ -15,7 +15,7 @@
  * @brief MC class DeferredCommandBlockCommand.
  *
  */
-class DeferredCommandBlockCommand : public Command {
+class DeferredCommandBlockCommand : public DeferredCommandBase {
 
 #define AFTER_EXTRA
 

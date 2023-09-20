@@ -47,9 +47,9 @@ public:
      */
     MCAPI class std::optional<class BlockPos> _findSurface(class BlockSource &, class BlockPos, int, int) const;
     /**
-     * @symbol ?_placeColumnCluster\@BasaltColumnsFeature\@\@AEBA_NAEAVBlockSource\@\@VBlockPos\@\@HH\@Z
+     * @symbol ?_placeColumnCluster\@BasaltColumnsFeature\@\@AEBAXAEAVBlockSource\@\@VBlockPos\@\@HH\@Z
      */
-    MCAPI bool _placeColumnCluster(class BlockSource &, class BlockPos, int, int) const;
+    MCAPI void _placeColumnCluster(class BlockSource &, class BlockPos, int, int) const;
 
 private:
 

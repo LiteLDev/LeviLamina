@@ -10,30 +10,15 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC class FrostWalkSystem.
- *
- */
-class FrostWalkSystem {
+
+namespace FrostWalkSystem {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FROSTWALKSYSTEM
-public:
-    class FrostWalkSystem& operator=(class FrostWalkSystem const &) = delete;
-    FrostWalkSystem(class FrostWalkSystem const &) = delete;
-    FrostWalkSystem() = delete;
-#endif
-
-public:
     /**
-     * @symbol ?_tryFrostWalk\@FrostWalkSystem\@\@SAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
+     * @symbol ?createSystem\@FrostWalkSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static void _tryFrostWalk(class StrictEntityContext &, class ActorOwnerComponent &);
-    /**
-     * @symbol ?createSystem\@FrostWalkSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI struct TickingSystemWithInfo createSystem();
 
 };

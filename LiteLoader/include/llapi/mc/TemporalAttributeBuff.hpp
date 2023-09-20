@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "AttributeBuff.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class TemporalAttributeBuff.
  *
  */
-class TemporalAttributeBuff {
+class TemporalAttributeBuff : public AttributeBuff {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -76,20 +77,8 @@ public:
      */
     MCAPI float getBaseAmount() const;
     /**
-     * @symbol ?getDuration\@TemporalAttributeBuff\@\@QEBAHXZ
-     */
-    MCAPI int getDuration() const;
-    /**
-     * @symbol ?getLifeTimer\@TemporalAttributeBuff\@\@QEBAHXZ
-     */
-    MCAPI int getLifeTimer() const;
-    /**
      * @symbol ??4TemporalAttributeBuff\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
     MCAPI class TemporalAttributeBuff & operator=(class TemporalAttributeBuff const &);
-    /**
-     * @symbol ?serializationSetLifeTime\@TemporalAttributeBuff\@\@QEAAXH\@Z
-     */
-    MCAPI void serializationSetLifeTime(int);
 
 };

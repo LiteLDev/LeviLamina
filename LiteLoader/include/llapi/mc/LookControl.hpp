@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Control.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class LookControl.
  *
  */
-class LookControl {
+class LookControl : public Control {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -43,12 +44,6 @@ public:
      * @symbol ?tick\@LookControl\@\@UEAAXAEAVMob\@\@\@Z
      */
     virtual void tick(class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKCONTROL
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~LookControl();
-#endif
     /**
      * @symbol ??0LookControl\@\@QEAA\@XZ
      */

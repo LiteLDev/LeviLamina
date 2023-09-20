@@ -7,6 +7,7 @@
 #include "llapi/Global.h"
 #include "Core.hpp"
 #include "Bedrock.hpp"
+#include "LevelStorageSource.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +18,7 @@
  * @brief MC class ExternalFileLevelStorageSource.
  *
  */
-class ExternalFileLevelStorageSource {
+class ExternalFileLevelStorageSource : public LevelStorageSource {
 
 #define AFTER_EXTRA
 // Add Member There

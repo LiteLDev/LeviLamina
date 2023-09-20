@@ -57,147 +57,147 @@ public:
      */
     virtual void lerpMotion(class Vec3 const &);
     /**
-     * @vftbl 55
-     * @symbol __unk_vfn_55
+     * @vftbl 54
+     * @symbol __unk_vfn_54
      */
-    virtual void __unk_vfn_55();
+    virtual void __unk_vfn_54();
     /**
-     * @vftbl 62
-     * @symbol __unk_vfn_62
+     * @vftbl 61
+     * @symbol __unk_vfn_61
      */
-    virtual void __unk_vfn_62();
+    virtual void __unk_vfn_61();
     /**
-     * @vftbl 68
+     * @vftbl 67
      * @symbol ?getShadowHeightOffs\@AbstractArrow\@\@UEAAMXZ
      */
     virtual float getShadowHeightOffs();
     /**
-     * @vftbl 69
+     * @vftbl 68
      * @symbol ?getShadowRadius\@AbstractArrow\@\@UEBAMXZ
      */
     virtual float getShadowRadius() const;
     /**
-     * @vftbl 71
-     * @symbol __unk_vfn_71
+     * @vftbl 70
+     * @symbol __unk_vfn_70
      */
-    virtual void __unk_vfn_71();
+    virtual void __unk_vfn_70();
+    /**
+     * @vftbl 76
+     * @symbol __unk_vfn_76
+     */
+    virtual void __unk_vfn_76();
     /**
      * @vftbl 77
-     * @symbol __unk_vfn_77
-     */
-    virtual void __unk_vfn_77();
-    /**
-     * @vftbl 78
      * @symbol ?playerTouch\@AbstractArrow\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     virtual void playerTouch(class Player &);
     /**
-     * @vftbl 83
-     * @symbol __unk_vfn_83
+     * @vftbl 82
+     * @symbol __unk_vfn_82
      */
-    virtual void __unk_vfn_83();
+    virtual void __unk_vfn_82();
     /**
-     * @vftbl 86
-     * @symbol __unk_vfn_86
+     * @vftbl 85
+     * @symbol __unk_vfn_85
      */
-    virtual void __unk_vfn_86();
+    virtual void __unk_vfn_85();
     /**
-     * @vftbl 93
-     * @symbol __unk_vfn_93
+     * @vftbl 92
+     * @symbol __unk_vfn_92
      */
-    virtual void __unk_vfn_93();
+    virtual void __unk_vfn_92();
+    /**
+     * @vftbl 94
+     * @symbol __unk_vfn_94
+     */
+    virtual void __unk_vfn_94();
     /**
      * @vftbl 95
      * @symbol __unk_vfn_95
      */
     virtual void __unk_vfn_95();
     /**
-     * @vftbl 96
-     * @symbol __unk_vfn_96
+     * @vftbl 97
+     * @symbol __unk_vfn_97
      */
-    virtual void __unk_vfn_96();
+    virtual void __unk_vfn_97();
     /**
-     * @vftbl 98
-     * @symbol __unk_vfn_98
-     */
-    virtual void __unk_vfn_98();
-    /**
-     * @vftbl 155
+     * @vftbl 153
      * @symbol ?getSourceUniqueID\@AbstractArrow\@\@MEBA?AUActorUniqueID\@\@XZ
      */
     virtual struct ActorUniqueID getSourceUniqueID() const;
     /**
-     * @vftbl 163
+     * @vftbl 161
      * @symbol ?canChangeDimensionsUsingPortal\@AbstractArrow\@\@UEBA_NXZ
      */
     virtual bool canChangeDimensionsUsingPortal() const;
     /**
-     * @vftbl 164
-     * @symbol __unk_vfn_164
+     * @vftbl 162
+     * @symbol __unk_vfn_162
      */
-    virtual void __unk_vfn_164();
+    virtual void __unk_vfn_162();
     /**
-     * @vftbl 178
-     * @symbol __unk_vfn_178
+     * @vftbl 174
+     * @symbol __unk_vfn_174
      */
-    virtual void __unk_vfn_178();
+    virtual void __unk_vfn_174();
     /**
-     * @vftbl 202
-     * @symbol __unk_vfn_202
+     * @vftbl 198
+     * @symbol __unk_vfn_198
      */
-    virtual void __unk_vfn_202();
+    virtual void __unk_vfn_198();
     /**
-     * @vftbl 203
-     * @symbol __unk_vfn_203
+     * @vftbl 199
+     * @symbol __unk_vfn_199
      */
-    virtual void __unk_vfn_203();
+    virtual void __unk_vfn_199();
     /**
-     * @vftbl 219
-     * @symbol __unk_vfn_219
+     * @vftbl 215
+     * @symbol __unk_vfn_215
      */
-    virtual void __unk_vfn_219();
+    virtual void __unk_vfn_215();
     /**
-     * @vftbl 222
-     * @symbol __unk_vfn_222
+     * @vftbl 218
+     * @symbol __unk_vfn_218
      */
-    virtual void __unk_vfn_222();
+    virtual void __unk_vfn_218();
+    /**
+     * @vftbl 235
+     * @symbol __unk_vfn_235
+     */
+    virtual void __unk_vfn_235();
     /**
      * @vftbl 239
-     * @symbol __unk_vfn_239
-     */
-    virtual void __unk_vfn_239();
-    /**
-     * @vftbl 243
      * @symbol ?readAdditionalSaveData\@AbstractArrow\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vftbl 244
+     * @vftbl 240
      * @symbol ?addAdditionalSaveData\@AbstractArrow\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vftbl 247
-     * @symbol __unk_vfn_247
+     * @vftbl 243
+     * @symbol __unk_vfn_243
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_243();
     /**
-     * @vftbl 253
-     * @symbol __unk_vfn_253
+     * @vftbl 248
+     * @symbol __unk_vfn_248
      */
-    virtual void __unk_vfn_253();
+    virtual void __unk_vfn_248();
     /**
-     * @vftbl 254
+     * @vftbl 249
      * @symbol ?shoot\@AbstractArrow\@\@UEAAXAEBVVec3\@\@MM0\@Z
      */
     virtual void shoot(class Vec3 const &, float, float, class Vec3 const &);
     /**
-     * @vftbl 255
+     * @vftbl 250
      * @symbol ?_playPickupSound\@AbstractArrow\@\@MEAAXXZ
      */
     virtual void _playPickupSound();
     /**
-     * @vftbl 256
+     * @vftbl 251
      * @symbol ?_getPickupItem\@ThrownTrident\@\@MEBA?AVItemStack\@\@XZ
      */
     virtual class ItemStack _getPickupItem() const = 0;

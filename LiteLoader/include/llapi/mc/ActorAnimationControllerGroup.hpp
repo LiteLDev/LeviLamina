@@ -48,10 +48,6 @@ public:
      */
     MCAPI void loadActorAnimationControllersSync(class ResourcePackManager &);
     /**
-     * @symbol ??1ActorAnimationControllerGroup\@\@QEAA\@XZ
-     */
-    MCAPI ~ActorAnimationControllerGroup();
-    /**
      * @symbol ?loadFormatVersion\@ActorAnimationControllerGroup\@\@SA_NAEBVValue\@Json\@\@AEAVSemVersion\@\@\@Z
      */
     MCAPI static bool loadFormatVersion(class Json::Value const &, class SemVersion &);

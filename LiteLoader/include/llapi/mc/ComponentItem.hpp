@@ -7,6 +7,8 @@
 #include "llapi/Global.h"
 #include "Json.hpp"
 #include "JsonUtil.hpp"
+#include "cereal.hpp"
+#include "Enchant.hpp"
 #include "Core.hpp"
 #include "Item.hpp"
 
@@ -210,9 +212,9 @@ public:
     virtual bool isDestructive(int) const;
     /**
      * @vftbl 57
-     * @symbol ?isLiquidClipItem\@ComponentItem\@\@UEBA_NH\@Z
+     * @symbol ?isLiquidClipItem\@ComponentItem\@\@UEBA_NXZ
      */
-    virtual bool isLiquidClipItem(int) const;
+    virtual bool isLiquidClipItem() const;
     /**
      * @vftbl 59
      * @symbol ?requiresInteract\@ComponentItem\@\@UEBA_NXZ
@@ -379,6 +381,16 @@ public:
      */
     virtual int getCooldownTime() const;
     /**
+     * @vftbl 113
+     * @symbol ?getEquipLocation\@ComponentItem\@\@UEBA?AW4ActorLocation\@\@XZ
+     */
+    virtual enum class ActorLocation getEquipLocation() const;
+    /**
+     * @vftbl 114
+     * @symbol ?getEquipSound\@ComponentItem\@\@UEBA?AW4LevelSoundEvent\@\@XZ
+     */
+    virtual enum class LevelSoundEvent getEquipSound() const;
+    /**
      * @vftbl 115
      * @symbol __unk_vfn_115
      */
@@ -479,17 +491,17 @@ public:
      */
     MCAPI void _addCerealItemsToMap();
     /**
-     * @symbol ?_buildItemsFileSchema\@ComponentItem\@\@QEAA?AV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VComponentItem\@\@\@JsonUtil\@\@\@std\@\@AEAV23\@_NVSemVersion\@\@\@Z
+     * @symbol ?_buildItemsFileSchema\@ComponentItem\@\@QEAA?AV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VComponentItem\@\@\@JsonUtil\@\@\@std\@\@AEAV23\@_NAEBVSemVersion\@\@\@Z
      */
-    MCAPI class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ComponentItem>> _buildItemsFileSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ComponentItem>> &, bool, class SemVersion);
+    MCAPI class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ComponentItem>> _buildItemsFileSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ComponentItem>> &, bool, class SemVersion const &);
     /**
-     * @symbol ?_validateClientSchemaAndInitItem\@ComponentItem\@\@QEAA_NAEAVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z
+     * @symbol ?_validateClientSchemaAndInitItem\@ComponentItem\@\@QEAA_NAEAVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI bool _validateClientSchemaAndInitItem(class Json::Value &, class SemVersion const &, bool, class Experiments const &);
+    MCAPI bool _validateClientSchemaAndInitItem(class Json::Value &, class SemVersion const &, bool, class Experiments const &, struct cereal::ReflectionCtx &);
     /**
-     * @symbol ?_validateServerSchemaAndInitItem\@ComponentItem\@\@QEAA_NAEAVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z
+     * @symbol ?_validateServerSchemaAndInitItem\@ComponentItem\@\@QEAA_NAEAVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI bool _validateServerSchemaAndInitItem(class Json::Value &, class SemVersion const &, bool, class Experiments const &);
+    MCAPI bool _validateServerSchemaAndInitItem(class Json::Value &, class SemVersion const &, bool, class Experiments const &, struct cereal::ReflectionCtx &);
     /**
      * @symbol ?checkComponentDataForContentErrors\@ComponentItem\@\@QEBA_NXZ
      */
@@ -503,31 +515,57 @@ public:
      */
     MCAPI bool parseJsonEvents(class Json::Value const &, class SemVersion const &);
     /**
+     * @symbol ?setAttackDamage\@ComponentItem\@\@QEAAXH\@Z
+     */
+    MCAPI void setAttackDamage(int);
+    /**
      * @symbol ?setCanDestroyInCreative\@ComponentItem\@\@QEAAX_N\@Z
      */
     MCAPI void setCanDestroyInCreative(bool);
     /**
-     * @symbol ?buildAllPatchSchemas\@ComponentItem\@\@SAXAEAVCerealDocumentUpgrader\@\@\@Z
+     * @symbol ?setEnchantSlot\@ComponentItem\@\@QEAAXW4Slot\@Enchant\@\@\@Z
      */
-    MCAPI static void buildAllPatchSchemas(class CerealDocumentUpgrader &);
+    MCAPI void setEnchantSlot(enum class Enchant::Slot);
     /**
-     * @symbol ?createItemAbstractCerealSchema\@ComponentItem\@\@SA?AUSchema\@cereal\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?setEnchantValue\@ComponentItem\@\@QEAAXH\@Z
      */
-    MCAPI static struct cereal::Schema createItemAbstractCerealSchema(std::string const &);
+    MCAPI void setEnchantValue(int);
     /**
-     * @symbol ?registerItemComponentTypes\@ComponentItem\@\@SAXXZ
+     * @symbol ?setIsLiquidClipped\@ComponentItem\@\@QEAAX_N\@Z
      */
-    MCAPI static void registerItemComponentTypes();
+    MCAPI void setIsLiquidClipped(bool);
     /**
-     * @symbol ?upgradeJson\@ComponentItem\@\@SA_NAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPath\@Core\@\@V?$optional\@VSemVersion\@\@\@3\@\@Z
+     * @symbol ?setRequiresInteract\@ComponentItem\@\@QEAAX_N\@Z
      */
-    MCAPI static bool upgradeJson(std::string &, class Core::Path const &, class std::optional<class SemVersion>);
+    MCAPI void setRequiresInteract(bool);
+    /**
+     * @symbol ?createItemAbstractCerealSchema\@ComponentItem\@\@SA?AUSchema\@cereal\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAUReflectionCtx\@3\@\@Z
+     */
+    MCAPI static struct cereal::Schema createItemAbstractCerealSchema(std::string const &, struct cereal::ReflectionCtx &);
+    /**
+     * @symbol ?initializeJsonUpgrades\@ComponentItem\@\@SAXAEAUReflectionCtx\@cereal\@\@\@Z
+     */
+    MCAPI static void initializeJsonUpgrades(struct cereal::ReflectionCtx &);
+    /**
+     * @symbol ?registerItemComponentTypes\@ComponentItem\@\@SAXAEAUReflectionCtx\@cereal\@\@\@Z
+     */
+    MCAPI static void registerItemComponentTypes(struct cereal::ReflectionCtx &);
+    /**
+     * @symbol ?upgradeJson\@ComponentItem\@\@SA?AU?$pair\@_NVSemVersion\@\@\@std\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@AEBVPath\@Core\@\@V?$optional\@VSemVersion\@\@\@3\@AEAUReflectionCtx\@cereal\@\@\@Z
+     */
+    MCAPI static struct std::pair<bool, class SemVersion> upgradeJson(std::string &, class Core::Path const &, class std::optional<class SemVersion>, struct cereal::ReflectionCtx &);
+
+//protected:
+    /**
+     * @symbol ?_initializeLoadedComponents\@ComponentItem\@\@IEAAXAEBVSemVersion\@\@\@Z
+     */
+    MCAPI void _initializeLoadedComponents(class SemVersion const &);
 
 //private:
     /**
-     * @symbol ?_buildItemPropertiesNetworkTag\@ComponentItem\@\@AEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?_buildItemPropertiesNetworkTag\@ComponentItem\@\@AEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI std::unique_ptr<class CompoundTag> _buildItemPropertiesNetworkTag() const;
+    MCAPI std::unique_ptr<class CompoundTag> _buildItemPropertiesNetworkTag(struct cereal::ReflectionCtx &) const;
     /**
      * @symbol ?_executeEvent\@ComponentItem\@\@AEBAXAEAVItemStackBase\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$CBV12\@\@std\@\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$CBV12\@\@std\@\@\@2\@\@4\@AEAVRenderParams\@\@\@Z
      */
@@ -537,30 +575,36 @@ public:
      */
     MCAPI bool _forceExecuteTrigger(class ItemStackBase &, class DefinitionTrigger const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;
     /**
-     * @symbol ?_loadComponentsFromNetworkTag\@ComponentItem\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVCompoundTag\@\@\@Z
+     * @symbol ?_loadComponentsFromNetworkTag\@ComponentItem\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVCompoundTag\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI void _loadComponentsFromNetworkTag(std::string const &, class CompoundTag const &);
+    MCAPI void _loadComponentsFromNetworkTag(std::string const &, class CompoundTag const &, struct cereal::ReflectionCtx &);
     /**
-     * @symbol ?_loadItemPropertiesNetworkTag\@ComponentItem\@\@AEAAXAEBVCompoundTag\@\@\@Z
+     * @symbol ?_loadItemPropertiesNetworkTag\@ComponentItem\@\@AEAAXAEBVCompoundTag\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI void _loadItemPropertiesNetworkTag(class CompoundTag const &);
+    MCAPI void _loadItemPropertiesNetworkTag(class CompoundTag const &, struct cereal::ReflectionCtx &);
     /**
      * @symbol ?_loadItemTagsNetworkTag\@ComponentItem\@\@AEAAXAEBVListTag\@\@\@Z
      */
     MCAPI void _loadItemTagsNetworkTag(class ListTag const &);
     /**
-     * @symbol ?_parseCereal\@ComponentItem\@\@AEAA_NAEBVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z
+     * @symbol ?_parseCereal\@ComponentItem\@\@AEAA_NAEBVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI bool _parseCereal(class Json::Value const &, class SemVersion const &, bool, class Experiments const &);
+    MCAPI bool _parseCereal(class Json::Value const &, class SemVersion const &, bool, class Experiments const &, struct cereal::ReflectionCtx &);
     /**
-     * @symbol ?_validateCerealComponent\@ComponentItem\@\@AEAA_NV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z
+     * @symbol ?_validateCerealComponent\@ComponentItem\@\@AEAA_NV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI bool _validateCerealComponent(std::string, class SemVersion const &, bool, class Experiments const &);
+    MCAPI bool _validateCerealComponent(std::string, class SemVersion const &, bool, class Experiments const &, struct cereal::ReflectionCtx &);
+    /**
+     * @symbol ?getEnTTMetaType\@ComponentItem\@\@CA?AVmeta_type\@entt\@\@AEAUReflectionCtx\@cereal\@\@\@Z
+     */
+    MCAPI static class entt::meta_type getEnTTMetaType(struct cereal::ReflectionCtx &);
+    /**
+     * @symbol ?getPropCerealDocumentUpgrader\@ComponentItem\@\@CAAEAVCerealDocumentUpgrader\@\@AEAUReflectionCtx\@cereal\@\@\@Z
+     */
+    MCAPI static class CerealDocumentUpgrader & getPropCerealDocumentUpgrader(struct cereal::ReflectionCtx &);
+
+protected:
 
 private:
-    /**
-     * @symbol ?mDocumentUpgrader\@ComponentItem\@\@0VCerealDocumentUpgrader\@\@A
-     */
-    MCAPI static class CerealDocumentUpgrader mDocumentUpgrader;
 
 };

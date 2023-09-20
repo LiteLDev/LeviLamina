@@ -328,7 +328,7 @@ TInstanceHook(LevelData*,
 // Disable 'Running AutoCompaction...' log.
 bool pauseBLogging = false;
 
-THook(__int64, "std::_Func_impl_no_alloc<<lambda_9b9237010867a1f09dca3a15f1f59320>,TaskResult>::_Do_call", __int64 a1,
+THook(__int64, "std::_Func_impl_no_alloc<<lambda_28d2f27be1c12a76f40c284f13e1c6c2>,TaskResult>::_Do_call", __int64 a1,
       __int64 a2) {
     if (ll::globalConfig.disableAutoCompactionLog) {
         pauseBLogging = true;

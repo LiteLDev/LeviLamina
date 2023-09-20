@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
+#include "PackSource.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,16 +17,27 @@
  * @brief MC class CompositePackSource.
  *
  */
-class CompositePackSource {
+class CompositePackSource : public PackSource {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
+public:
+    std::vector<PackSource*> mPackSources;
+
+    void addPackSource(PackSource* a2) {
+        if (mPackSources.size() == mPackSources.capacity()) {
+            mPackSources.reserve(mPackSources.size() + 1);
+        }
+        mPackSources.push_back(a2);
+    }
+
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOSITEPACKSOURCE
 public:
     class CompositePackSource& operator=(class CompositePackSource const &) = delete;
     CompositePackSource(class CompositePackSource const &) = delete;
+    CompositePackSource() = delete;
 #endif
 
 public:
@@ -45,35 +57,9 @@ public:
      */
     virtual void forEachPack(class std::function<void (class Pack &)>);
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
      * @vftbl 5
      * @symbol ?load\@CompositePackSource\@\@UEAA?AVPackSourceReport\@\@AEAVIPackManifestFactory\@\@AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentKeyProvider\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     virtual class PackSourceReport load(class IPackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
-    /**
-     * @symbol ??0CompositePackSource\@\@QEAA\@XZ
-     */
-    MCAPI CompositePackSource();
-    /**
-     * @symbol ??0CompositePackSource\@\@QEAA\@$$QEAV?$vector\@PEAVPackSource\@\@V?$allocator\@PEAVPackSource\@\@\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI CompositePackSource(std::vector<class PackSource *> &&);
-    /**
-     * @symbol ?addPackSource\@CompositePackSource\@\@QEAAXPEAVPackSource\@\@\@Z
-     */
-    MCAPI void addPackSource(class PackSource *);
-    /**
-     * @symbol ?clear\@CompositePackSource\@\@QEAAXXZ
-     */
-    MCAPI void clear();
 
 };

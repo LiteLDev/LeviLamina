@@ -73,6 +73,10 @@ public:
     MCAPI static int getMapGrassColor(class BlockSource &, class BlockPos const &);
 
 //private:
+    /**
+     * @symbol ?calculateMapGrassColorHelper\@FoliageColor\@\@CAXAEAVBlockSource\@\@AEBVBlockPos\@\@1AEAH22\@Z
+     */
+    MCAPI static void calculateMapGrassColorHelper(class BlockSource &, class BlockPos const &, class BlockPos const &, int &, int &, int &);
 
 private:
     /**

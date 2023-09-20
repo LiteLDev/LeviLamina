@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Goal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class EquipItemGoal.
  *
  */
-class EquipItemGoal {
+class EquipItemGoal : public Goal {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -45,21 +46,6 @@ public:
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5();
-    /**
      * @vftbl 6
      * @symbol ?tick\@EquipItemGoal\@\@UEAAXXZ
      */
@@ -79,6 +65,10 @@ public:
      * @symbol ?_dropItem\@EquipItemGoal\@\@AEBAXAEBVItemStack\@\@\@Z
      */
     MCAPI void _dropItem(class ItemStack const &) const;
+    /**
+     * @symbol ?_sendMobEquipmentPacket\@EquipItemGoal\@\@AEBAXVMobEquipmentPacket\@\@\@Z
+     */
+    MCAPI void _sendMobEquipmentPacket(class MobEquipmentPacket) const;
 
 private:
 

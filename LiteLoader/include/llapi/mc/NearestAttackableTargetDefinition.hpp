@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "JsonUtil.hpp"
+#include "TargetGoalDefinition.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class NearestAttackableTargetDefinition.
  *
  */
-class NearestAttackableTargetDefinition {
+class NearestAttackableTargetDefinition : public TargetGoalDefinition {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -35,11 +36,6 @@ public:
      * @symbol __unk_vfn_0
      */
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
-    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol ?validate\@NearestAttackableTargetDefinition\@\@UEBA_NAEAVMob\@\@\@Z

@@ -97,17 +97,17 @@ public:
 
 //private:
     /**
-     * @symbol ?_handleItemDefinitionEventTriggered\@ScriptItemGameplayHandler\@\@AEAA_NAEAUItemDefinitionEventTriggeredEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VIScriptBeforeEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
+     * @symbol ?_handleItemDefinitionEventTriggered\@ScriptItemGameplayHandler\@\@AEAA_NAEAUItemDefinitionEventTriggeredEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VIScriptWorldBeforeEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
      */
-    MCAPI bool _handleItemDefinitionEventTriggered(struct ItemDefinitionEventTriggeredEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptBeforeEvents>);
+    MCAPI bool _handleItemDefinitionEventTriggered(struct ItemDefinitionEventTriggeredEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>);
     /**
-     * @symbol ?_handleItemUseEvent\@ScriptItemGameplayHandler\@\@AEAA_NAEAUItemUseEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VIScriptBeforeEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
+     * @symbol ?_handleItemUseEvent\@ScriptItemGameplayHandler\@\@AEAA_NAEAUItemUseEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VIScriptWorldBeforeEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
      */
-    MCAPI bool _handleItemUseEvent(struct ItemUseEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptBeforeEvents>);
+    MCAPI bool _handleItemUseEvent(struct ItemUseEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>);
     /**
-     * @symbol ?_handleItemUseOnEvent\@ScriptItemGameplayHandler\@\@AEAA_NAEAUItemUseOnEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VIScriptBeforeEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
+     * @symbol ?_handleItemUseOnEvent\@ScriptItemGameplayHandler\@\@AEAA_NAEAUItemUseOnEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VIScriptWorldBeforeEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
      */
-    MCAPI bool _handleItemUseOnEvent(struct ItemUseOnEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptBeforeEvents>);
+    MCAPI bool _handleItemUseOnEvent(struct ItemUseOnEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>);
 
 private:
 

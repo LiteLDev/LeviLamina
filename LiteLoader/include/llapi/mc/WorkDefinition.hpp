@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "BaseGoalDefinition.hpp"
 
 #define BEFORE_EXTRA
 
@@ -14,7 +15,7 @@
  * @brief MC class WorkDefinition.
  *
  */
-class WorkDefinition {
+class WorkDefinition : public BaseGoalDefinition {
 
 #define AFTER_EXTRA
 
@@ -25,6 +26,11 @@ public:
 #endif
 
 public:
+    /**
+     * @vftbl 0
+     * @symbol __unk_vfn_0
+     */
+    virtual void __unk_vfn_0();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKDEFINITION
     /**
      * @symbol __unk_destructor_-1

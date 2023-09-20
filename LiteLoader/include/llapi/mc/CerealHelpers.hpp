@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -22,53 +23,53 @@ namespace CerealHelpers {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?bindBoundingBox\@CerealHelpers\@\@YAXXZ
+     * @symbol ?bindBoundingBox\@CerealHelpers\@\@YAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI void bindBoundingBox();
+    MCAPI void bindBoundingBox(struct cereal::ReflectionCtx &);
     /**
-     * @symbol ?bindBrightness\@CerealHelpers\@\@YAXXZ
+     * @symbol ?bindBrightness\@CerealHelpers\@\@YAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI void bindBrightness();
+    MCAPI void bindBrightness(struct cereal::ReflectionCtx &);
     /**
-     * @symbol ?bindColor\@CerealHelpers\@\@YAXXZ
+     * @symbol ?bindColor\@CerealHelpers\@\@YAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI void bindColor();
+    MCAPI void bindColor(struct cereal::ReflectionCtx &);
     /**
-     * @symbol ?bindGlmVec2\@CerealHelpers\@\@YAXXZ
+     * @symbol ?bindGlmVec2\@CerealHelpers\@\@YAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI void bindGlmVec2();
+    MCAPI void bindGlmVec2(struct cereal::ReflectionCtx &);
     /**
-     * @symbol ?bindHelpers\@CerealHelpers\@\@YAXXZ
+     * @symbol ?bindHelpers\@CerealHelpers\@\@YAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI void bindHelpers();
+    MCAPI void bindHelpers(struct cereal::ReflectionCtx &);
     /**
-     * @symbol ?bindIdentifierString\@CerealHelpers\@\@YAXXZ
+     * @symbol ?bindIdentifierString\@CerealHelpers\@\@YAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI void bindIdentifierString();
+    MCAPI void bindIdentifierString(struct cereal::ReflectionCtx &);
     /**
-     * @symbol ?bindIntRange\@CerealHelpers\@\@YAXXZ
+     * @symbol ?bindIntRange\@CerealHelpers\@\@YAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI void bindIntRange();
+    MCAPI void bindIntRange(struct cereal::ReflectionCtx &);
     /**
-     * @symbol ?bindLocIdString\@CerealHelpers\@\@YAXXZ
+     * @symbol ?bindLocIdString\@CerealHelpers\@\@YAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI void bindLocIdString();
+    MCAPI void bindLocIdString(struct cereal::ReflectionCtx &);
     /**
-     * @symbol ?bindMceUUID\@CerealHelpers\@\@YAXXZ
+     * @symbol ?bindMceUUID\@CerealHelpers\@\@YAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI void bindMceUUID();
+    MCAPI void bindMceUUID(struct cereal::ReflectionCtx &);
     /**
-     * @symbol ?bindResourcePath\@CerealHelpers\@\@YAXXZ
+     * @symbol ?bindResourcePath\@CerealHelpers\@\@YAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI void bindResourcePath();
+    MCAPI void bindResourcePath(struct cereal::ReflectionCtx &);
     /**
-     * @symbol ?bindVec2\@CerealHelpers\@\@YAXXZ
+     * @symbol ?bindVec2\@CerealHelpers\@\@YAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI void bindVec2();
+    MCAPI void bindVec2(struct cereal::ReflectionCtx &);
     /**
-     * @symbol ?bindVec3\@CerealHelpers\@\@YAXXZ
+     * @symbol ?bindVec3\@CerealHelpers\@\@YAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI void bindVec3();
+    MCAPI void bindVec3(struct cereal::ReflectionCtx &);
     /**
      * @symbol ?blockPosAsArray\@CerealHelpers\@\@YA?AV?$array\@H$02\@std\@\@AEBVBlockPos\@\@\@Z
      */
@@ -118,17 +119,13 @@ namespace CerealHelpers {
      */
     MCAPI void glmVec2FromArray(struct glm::vec<2, float, 0> &, class std::array<float, 2>);
     /**
-     * @symbol ?hashedStringFromString\@CerealHelpers\@\@YAXAEAVHashedString\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI void hashedStringFromString(class HashedString &, std::string const &);
-    /**
      * @symbol ?identifierStringFromString\@CerealHelpers\@\@YAXAEAUIdentifierString\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void identifierStringFromString(struct CerealHelpers::IdentifierString &, std::string const &);
     /**
-     * @symbol ?initialize\@CerealHelpers\@\@YAXXZ
+     * @symbol ?initialize\@CerealHelpers\@\@YAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI void initialize();
+    MCAPI void initialize(struct cereal::ReflectionCtx &);
     /**
      * @symbol ?vec2FromArray\@CerealHelpers\@\@YAXAEAVVec2\@\@V?$array\@M$01\@std\@\@\@Z
      */

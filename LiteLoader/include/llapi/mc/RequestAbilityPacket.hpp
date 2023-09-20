@@ -53,20 +53,10 @@ public:
      * @symbol ?_read\@RequestAbilityPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REQUESTABILITYPACKET
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~RequestAbilityPacket();
-#endif
     /**
      * @symbol ??0RequestAbilityPacket\@\@QEAA\@XZ
      */
     MCAPI RequestAbilityPacket();
-    /**
-     * @symbol ??0RequestAbilityPacket\@\@QEAA\@W4AbilitiesIndex\@\@_N\@Z
-     */
-    MCAPI RequestAbilityPacket(enum class AbilitiesIndex, bool);
     /**
      * @symbol ?getAbility\@RequestAbilityPacket\@\@QEBA?AW4AbilitiesIndex\@\@XZ
      */

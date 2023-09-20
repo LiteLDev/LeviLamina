@@ -5,7 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Recipe.hpp"
+#include "MultiRecipe.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +16,7 @@
  * @brief MC class MapExtendingRecipe.
  *
  */
-class MapExtendingRecipe : public Recipe {
+class MapExtendingRecipe : public MultiRecipe {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -82,5 +82,13 @@ public:
      * @symbol ?CraftingTableID\@MapExtendingRecipe\@\@2VUUID\@mce\@\@B
      */
     MCAPI static class mce::UUID const CraftingTableID;
+
+//private:
+    /**
+     * @symbol ?_updateMapInstance\@MapExtendingRecipe\@\@AEBAXAEAVItemInstance\@\@AEAVCraftingContext\@\@\@Z
+     */
+    MCAPI void _updateMapInstance(class ItemInstance &, class CraftingContext &) const;
+
+private:
 
 };

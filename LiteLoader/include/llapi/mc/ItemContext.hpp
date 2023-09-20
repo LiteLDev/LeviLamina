@@ -125,9 +125,9 @@ public:
      */
     MCAPI ~ItemContext();
     /**
-     * @symbol ?setEquipment\@ItemContext\@\@SAXAEBVItemStack\@\@W4EquipmentSlot\@\@AEAVMob\@\@\@Z
+     * @symbol ?setEquipment\@ItemContext\@\@SA_NAEBVItemStack\@\@W4EquipmentSlot\@\@AEAVMob\@\@\@Z
      */
-    MCAPI static void setEquipment(class ItemStack const &, enum class EquipmentSlot, class Mob &);
+    MCAPI static bool setEquipment(class ItemStack const &, enum class EquipmentSlot, class Mob &);
 
 //private:
     /**

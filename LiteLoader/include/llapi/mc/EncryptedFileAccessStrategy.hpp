@@ -59,9 +59,9 @@ public:
     virtual bool getAsset(class Core::Path const &, std::string &, bool) const;
     /**
      * @vftbl 10
-     * @symbol ?deleteAsset\@EncryptedFileAccessStrategy\@\@UEAA_NAEBV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@\@Z
+     * @symbol ?deleteAsset\@EncryptedFileAccessStrategy\@\@UEAA_NAEBVPath\@Core\@\@\@Z
      */
-    virtual bool deleteAsset(class Core::PathBuffer<std::string> const &);
+    virtual bool deleteAsset(class Core::Path const &);
     /**
      * @vftbl 11
      * @symbol ?writeAsset\@EncryptedFileAccessStrategy\@\@UEAA_NAEBVPath\@Core\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z

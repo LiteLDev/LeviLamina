@@ -24,5 +24,9 @@ namespace RemovePassengersSystemImpl {
      * @symbol ?singleTickRemovePassenger\@RemovePassengersSystemImpl\@\@YAXAEBVStrictEntityContext\@\@AEBUPassengerComponent\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBURemovePassengersComponent\@\@UVehicleComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UVehicleComponent\@\@V?$FlagComponent\@URecalculateControlledByLocalInstanceRequestFlag\@\@\@\@V?$FlagComponent\@UPassengersChangedFlag\@\@\@\@\@\@\@Z
      */
     MCAPI void singleTickRemovePassenger(class StrictEntityContext const &, struct PassengerComponent const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct RemovePassengersComponent const, struct VehicleComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct VehicleComponent, class FlagComponent<struct RecalculateControlledByLocalInstanceRequestFlag>, class FlagComponent<struct PassengersChangedFlag>>);
+    /**
+     * @symbol ?tickRemovePassengersSystem\@RemovePassengersSystemImpl\@\@YAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@URemovePassengersComponent\@\@UVehicleComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UVehicleComponent\@\@V?$FlagComponent\@URecalculateControlledByLocalInstanceRequestFlag\@\@\@\@V?$FlagComponent\@UPassengersChangedFlag\@\@\@\@\@\@\@Z
+     */
+    MCAPI void tickRemovePassengersSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct RemovePassengersComponent, struct VehicleComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct VehicleComponent, class FlagComponent<struct RecalculateControlledByLocalInstanceRequestFlag>, class FlagComponent<struct PassengersChangedFlag>>);
 
 };

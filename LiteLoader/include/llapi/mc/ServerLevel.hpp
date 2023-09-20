@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
+#include "Level.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class ServerLevel.
  *
  */
-class ServerLevel {
+class ServerLevel : public Level {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -32,9 +33,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERLEVEL
     /**
+     * @symbol ?_getMapDataManager\@ServerLevel\@\@MEAAAEAVMapDataManager\@\@XZ
+     */
+    MCVAPI class MapDataManager & _getMapDataManager();
+    /**
      * @symbol ?_getPlayerDeathManager\@ServerLevel\@\@MEAAPEAVPlayerDeathManager\@\@XZ
      */
     MCVAPI class PlayerDeathManager * _getPlayerDeathManager();
+    /**
+     * @symbol ?_initializeMapDataManager\@ServerLevel\@\@MEAAXXZ
+     */
+    MCVAPI void _initializeMapDataManager();
     /**
      * @symbol ?_subTick\@ServerLevel\@\@MEAAXXZ
      */
@@ -129,10 +138,6 @@ public:
      */
     MCAPI ServerLevel(class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> const &, class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>, class IMinecraftEventing &, class ResourcePackManager &, class ResourcePackManager &, class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class MinecraftCommands &, class Scheduler &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner>> const &, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>, class ItemRegistryRef, bool, bool, struct NetworkPermissions const &, class std::weak_ptr<class BlockTypeRegistry>);
     /**
-     * @symbol ?addServerChunksToPacket\@ServerLevel\@\@QEAAXAEBVNetworkIdentifier\@\@W4SubClientId\@\@AEAVNetworkChunkPublisherUpdatePacket\@\@\@Z
-     */
-    MCAPI void addServerChunksToPacket(class NetworkIdentifier const &, enum class SubClientId, class NetworkChunkPublisherUpdatePacket &);
-    /**
      * @symbol ?clearAllGenerationRequests\@ServerLevel\@\@QEAAXAEBVNetworkIdentifier\@\@W4SubClientId\@\@\@Z
      */
     MCAPI void clearAllGenerationRequests(class NetworkIdentifier const &, enum class SubClientId);
@@ -156,14 +161,6 @@ public:
      * @symbol ?getOrAddDynamicProperties\@ServerLevel\@\@QEAAAEAVDynamicProperties\@\@XZ
      */
     MCAPI class DynamicProperties & getOrAddDynamicProperties();
-    /**
-     * @symbol ?hasPendingGenerationRequests\@ServerLevel\@\@QEAA_NAEBVNetworkIdentifier\@\@W4SubClientId\@\@\@Z
-     */
-    MCAPI bool hasPendingGenerationRequests(class NetworkIdentifier const &, enum class SubClientId);
-    /**
-     * @symbol ?queueChunkGenerationRequest\@ServerLevel\@\@QEAAXAEBVNetworkIdentifier\@\@W4SubClientId\@\@AEBVChunkPos\@\@\@Z
-     */
-    MCAPI void queueChunkGenerationRequest(class NetworkIdentifier const &, enum class SubClientId, class ChunkPos const &);
     /**
      * @symbol ?setShouldSendSleepMessage\@ServerLevel\@\@QEAAX_N\@Z
      */
@@ -194,10 +191,6 @@ public:
      * @symbol ?_initializePlayerSleepManager\@ServerLevel\@\@AEAAXXZ
      */
     MCAPI void _initializePlayerSleepManager();
-    /**
-     * @symbol ?_initializeScoreboard\@ServerLevel\@\@AEAAXXZ
-     */
-    MCAPI void _initializeScoreboard();
     /**
      * @symbol ?_onActorEntityAdded\@ServerLevel\@\@AEAAXAEAVActor\@\@\@Z
      */
@@ -231,9 +224,9 @@ public:
      */
     MCAPI void _onWakeUpAllPlayers();
     /**
-     * @symbol ?_postReloadActorAdded\@ServerLevel\@\@AEAAXAEAVActor\@\@\@Z
+     * @symbol ?_postReloadActorAdded\@ServerLevel\@\@AEAAXAEAVActor\@\@W4InitializationMethod\@\@\@Z
      */
-    MCAPI void _postReloadActorAdded(class Actor &);
+    MCAPI void _postReloadActorAdded(class Actor &, enum class InitializationMethod);
 
 private:
 

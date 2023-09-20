@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -36,8 +37,8 @@ public:
     MCVAPI ~NBTLoader();
 #endif
     /**
-     * @symbol ??0NBTLoader\@\@QEAA\@V?$not_null\@PEBVCompoundTag\@\@\@gsl\@\@\@Z
+     * @symbol ??0NBTLoader\@\@QEAA\@V?$not_null\@PEBVCompoundTag\@\@\@gsl\@\@AEBUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI NBTLoader(class gsl::not_null<class CompoundTag const *>);
+    MCAPI NBTLoader(class gsl::not_null<class CompoundTag const *>, struct cereal::ReflectionCtx const &);
 
 };

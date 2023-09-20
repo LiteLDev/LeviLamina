@@ -62,12 +62,12 @@ public:
     MCVAPI ~SpawnParticleEffectPacket();
 #endif
     /**
-     * @symbol ??0SpawnParticleEffectPacket\@\@QEAA\@AEBVVec3\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@EV?$optional\@VMolangVariableMap\@\@\@3\@\@Z
-     */
-    MCAPI SpawnParticleEffectPacket(class Vec3 const &, std::string const &, unsigned char, class std::optional<class MolangVariableMap>);
-    /**
      * @symbol ??0SpawnParticleEffectPacket\@\@QEAA\@XZ
      */
     MCAPI SpawnParticleEffectPacket();
+    /**
+     * @symbol ??0SpawnParticleEffectPacket\@\@QEAA\@AEBVVec3\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@EV?$optional\@VMolangVariableMap\@\@\@3\@\@Z
+     */
+    MCAPI SpawnParticleEffectPacket(class Vec3 const &, std::string const &, unsigned char, class std::optional<class MolangVariableMap>);
 
 };

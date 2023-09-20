@@ -109,6 +109,7 @@ public:
 public:
     class Tag& operator=(class Tag const &) = delete;
     Tag(class Tag const &) = delete;
+    Tag() = delete;
 #endif
 
 public:
@@ -124,22 +125,22 @@ public:
     virtual void deleteChildren();
     /**
      * @vftbl 2
-     * @symbol ?write\@StringTag\@\@UEBAXAEAVIDataOutput\@\@\@Z
+     * @symbol ?write\@Int64Tag\@\@UEBAXAEAVIDataOutput\@\@\@Z
      */
     virtual void write(class IDataOutput &) const = 0;
     /**
      * @vftbl 3
-     * @symbol ?load\@StringTag\@\@UEAAXAEAVIDataInput\@\@\@Z
+     * @symbol ?load\@Int64Tag\@\@UEAAXAEAVIDataInput\@\@\@Z
      */
     virtual void load(class IDataInput &) = 0;
     /**
      * @vftbl 4
-     * @symbol ?toString\@StringTag\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?toString\@Int64Tag\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string toString() const = 0;
     /**
      * @vftbl 5
-     * @symbol ?getId\@StringTag\@\@UEBA?AW4Type\@Tag\@\@XZ
+     * @symbol ?getId\@Int64Tag\@\@UEBA?AW4Type\@Tag\@\@XZ
      */
     virtual enum class Tag::Type getId() const = 0;
     /**
@@ -159,12 +160,12 @@ public:
     virtual void print(std::string const &, class PrintStream &) const;
     /**
      * @vftbl 9
-     * @symbol ?copy\@StringTag\@\@UEBA?AV?$unique_ptr\@VTag\@\@U?$default_delete\@VTag\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?copy\@Int64Tag\@\@UEBA?AV?$unique_ptr\@VTag\@\@U?$default_delete\@VTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class Tag> copy() const = 0;
     /**
      * @vftbl 10
-     * @symbol ?hash\@StringTag\@\@UEBA_KXZ
+     * @symbol ?hash\@Int64Tag\@\@UEBA_KXZ
      */
     virtual unsigned __int64 hash() const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAG
@@ -193,13 +194,5 @@ public:
      * @symbol ?writeNamedTag\@Tag\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV1\@AEAVIDataOutput\@\@\@Z
      */
     MCAPI static void writeNamedTag(std::string const &, class Tag const &, class IDataOutput &);
-
-//protected:
-    /**
-     * @symbol ??0Tag\@\@IEAA\@XZ
-     */
-    MCAPI Tag();
-
-protected:
 
 };

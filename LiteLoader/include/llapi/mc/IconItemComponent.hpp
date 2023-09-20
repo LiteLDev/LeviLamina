@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -23,9 +24,7 @@ class IconItemComponent {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICONITEMCOMPONENT
 public:
-    class IconItemComponent& operator=(class IconItemComponent const &) = delete;
     IconItemComponent(class IconItemComponent const &) = delete;
-    IconItemComponent() = delete;
 #endif
 
 public:
@@ -36,45 +35,71 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?isNetworkComponent\@?$NetworkedItemComponent\@VIconItemComponent\@\@\@\@UEBA_NXZ
+     * @symbol ?checkComponentDataForContentErrors\@ItemComponent\@\@UEBA_NXZ
+     */
+    virtual bool checkComponentDataForContentErrors() const;
+    /**
+     * @vftbl 2
+     * @symbol ?writeSettings\@ItemComponent\@\@UEAAXXZ
+     */
+    virtual void writeSettings();
+    /**
+     * @vftbl 3
+     * @symbol ?isNetworkComponent\@InteractButtonItemComponent\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @vftbl 4
-     * @symbol ?buildNetworkTag\@?$NetworkedItemComponent\@VIconItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?buildNetworkTag\@ItemComponent\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx &) const;
     /**
      * @vftbl 5
-     * @symbol ?initializeFromNetwork\@?$NetworkedItemComponent\@VIconItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
+     * @symbol ?initializeFromNetwork\@ItemComponent\@\@UEAA_NAEBVCompoundTag\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    virtual bool initializeFromNetwork(class CompoundTag const &);
+    virtual bool initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx &);
     /**
-     * @symbol ??0IconItemComponent\@\@QEAA\@PEAVComponentItem\@\@\@Z
+     * @vftbl 6
+     * @symbol ?handleVersionBasedInitialization\@ItemComponent\@\@UEAAXAEBVSemVersion\@\@\@Z
      */
-    MCAPI IconItemComponent(class ComponentItem *);
+    virtual void handleVersionBasedInitialization(class SemVersion const &);
     /**
-     * @symbol ?setOwnerIcon\@IconItemComponent\@\@QEAAXXZ
+     * @vftbl 7
+     * @symbol ?_canUseOn\@ItemComponent\@\@MEBA_NAEBVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@E\@Z
      */
-    MCAPI void setOwnerIcon();
+    virtual bool _canUseOn(class ItemStack const &, class Actor &, class BlockPos const &, unsigned char) const;
+    /**
+     * @vftbl 8
+     * @symbol ?_useOn\@ItemComponent\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
+     */
+    virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
+    /**
+     * @vftbl 9
+     * @symbol ?_initializeComponent\@ItemComponent\@\@MEBAXXZ
+     */
+    virtual void _initializeComponent() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONITEMCOMPONENT
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~IconItemComponent();
+#endif
+    /**
+     * @symbol ??0IconItemComponent\@\@QEAA\@XZ
+     */
+    MCAPI IconItemComponent();
+    /**
+     * @symbol ??4IconItemComponent\@\@QEAAAEAV0\@AEBV0\@\@Z
+     */
+    MCAPI class IconItemComponent & operator=(class IconItemComponent const &);
     /**
      * @symbol ?setTexturePath\@IconItemComponent\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void setTexturePath(std::string const &);
     /**
-     * @symbol ?bindType\@IconItemComponent\@\@SAXXZ
+     * @symbol ?bindType\@IconItemComponent\@\@SAXAEAUReflectionCtx\@cereal\@\@AEBV?$vector\@W4AllExperiments\@\@V?$allocator\@W4AllExperiments\@\@\@std\@\@\@std\@\@V?$optional\@VSemVersion\@\@\@5\@\@Z
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(struct cereal::ReflectionCtx &, std::vector<enum class AllExperiments> const &, class std::optional<class SemVersion>);
     /**
      * @symbol ?getIdentifier\@IconItemComponent\@\@SAAEBVHashedString\@\@XZ
      */

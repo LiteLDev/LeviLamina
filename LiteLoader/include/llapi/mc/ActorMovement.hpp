@@ -21,13 +21,9 @@ namespace ActorMovement {
      */
     MCAPI bool getHasTeleported(class EntityContext const &);
     /**
-     * @symbol ?getWalkDist\@ActorMovement\@\@YAMAEBVEntityContext\@\@\@Z
+     * @symbol ?getPredictedWalkDist\@ActorMovement\@\@YAMAEBVEntityContext\@\@M\@Z
      */
-    MCAPI float getWalkDist(class EntityContext const &);
-    /**
-     * @symbol ?getWalkDistPrev\@ActorMovement\@\@YAMAEBVEntityContext\@\@\@Z
-     */
-    MCAPI float getWalkDistPrev(class EntityContext const &);
+    MCAPI float getPredictedWalkDist(class EntityContext const &, float);
     /**
      * @symbol ?initializeActor\@ActorMovement\@\@YAXAEAVEntityContext\@\@\@Z
      */
@@ -44,9 +40,5 @@ namespace ActorMovement {
      * @symbol ?setIsImmobile\@ActorMovement\@\@YAXAEAVEntityContext\@\@_N\@Z
      */
     MCAPI void setIsImmobile(class EntityContext &, bool);
-    /**
-     * @symbol ?setWalkDist\@ActorMovement\@\@YAXAEAVEntityContext\@\@M\@Z
-     */
-    MCAPI void setWalkDist(class EntityContext &, float);
 
 };

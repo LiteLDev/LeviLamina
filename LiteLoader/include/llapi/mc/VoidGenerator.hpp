@@ -5,13 +5,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "WorldGenerator.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
 
-class VoidGenerator {
+class VoidGenerator : public WorldGenerator {
 
 #define AFTER_EXTRA
 

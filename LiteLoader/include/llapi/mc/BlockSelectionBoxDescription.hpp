@@ -5,6 +5,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "JsonUtil.hpp"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 
@@ -35,40 +37,30 @@ public:
      */
     virtual std::string const & getName() const;
     /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
      * @vftbl 3
-     * @symbol ?initializeComponent\@BlockSelectionBoxDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
+     * @symbol ?initializeComponent\@BlockSelectionBoxDescription\@\@UEBAXAEAVBlockComponentStorage\@\@\@Z
      */
-    virtual void initializeComponent(class EntityContext &) const;
-    /**
-     * @vftbl 4
-     * @symbol ?initializeComponentFromCode\@BlockSelectionBoxDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
-     */
-    virtual void initializeComponentFromCode(class EntityContext &) const;
+    virtual void initializeComponent(class BlockComponentStorage &) const;
     /**
      * @vftbl 5
-     * @symbol __unk_vfn_5
+     * @symbol ?initializeComponentFromCode\@BlockSelectionBoxDescription\@\@UEBAXAEAVBlockComponentStorage\@\@\@Z
      */
-    virtual void __unk_vfn_5();
+    virtual void initializeComponentFromCode(class BlockComponentStorage &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?isNetworkComponent\@BlockSelectionBoxDescription\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl 7
-     * @symbol ?buildNetworkTag\@BlockSelectionBoxDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
-     */
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /**
      * @vftbl 8
-     * @symbol ?initializeFromNetwork\@BlockSelectionBoxDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
+     * @symbol ?buildNetworkTag\@BlockSelectionBoxDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    virtual void initializeFromNetwork(class CompoundTag const &);
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx &) const;
+    /**
+     * @vftbl 9
+     * @symbol ?initializeFromNetwork\@BlockSelectionBoxDescription\@\@UEAAXAEBVCompoundTag\@\@AEAUReflectionCtx\@cereal\@\@\@Z
+     */
+    virtual void initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSELECTIONBOXDESCRIPTION
     /**
      * @symbol __unk_destructor_-1
@@ -88,12 +80,8 @@ public:
      */
     MCAPI static std::string const NameID;
     /**
-     * @symbol ?bindType\@BlockSelectionBoxDescription\@\@SAXXZ
+     * @symbol ?bindType\@BlockSelectionBoxDescription\@\@SAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI static void bindType();
-    /**
-     * @symbol ?registerVersionUpgrades\@BlockSelectionBoxDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
-     */
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
+    MCAPI static void bindType(struct cereal::ReflectionCtx &);
 
 };

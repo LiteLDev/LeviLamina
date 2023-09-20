@@ -56,6 +56,16 @@ public:
      * @symbol ?postLoadItems_DEPRECATEDASKTYLAING\@ItemStackRequestAction\@\@UEAAXAEAVBlockPalette\@\@_N\@Z
      */
     virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette &, bool);
+    /**
+     * @vftbl 4
+     * @symbol ?_write\@ItemStackRequestActionCraftRecipeAuto\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     */
+    virtual void _write(class BinaryStream &) const = 0;
+    /**
+     * @vftbl 5
+     * @symbol ?_read\@ItemStackRequestActionCraftRecipeAuto\@\@UEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     */
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &) = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTION
     /**
      * @symbol __unk_destructor_-1
@@ -70,6 +80,10 @@ public:
      * @symbol ?getActionType\@ItemStackRequestAction\@\@QEBA?AW4ItemStackRequestActionType\@\@XZ
      */
     MCAPI enum class ItemStackRequestActionType getActionType() const;
+    /**
+     * @symbol ?write\@ItemStackRequestAction\@\@QEBAXAEAVBinaryStream\@\@\@Z
+     */
+    MCAPI void write(class BinaryStream &) const;
     /**
      * @symbol ?getActionTypeName\@ItemStackRequestAction\@\@SA?BV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ItemStackRequestActionType\@\@\@Z
      */

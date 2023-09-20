@@ -28,10 +28,6 @@ public:
 
 public:
     /**
-     * @symbol ??0MobSpawnRules\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI MobSpawnRules(class MobSpawnRules const &);
-    /**
      * @symbol ??0MobSpawnRules\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI MobSpawnRules(class MobSpawnRules &&);
@@ -39,6 +35,10 @@ public:
      * @symbol ??0MobSpawnRules\@\@QEAA\@XZ
      */
     MCAPI MobSpawnRules();
+    /**
+     * @symbol ??0MobSpawnRules\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI MobSpawnRules(class MobSpawnRules const &);
     /**
      * @symbol ?addHerd\@MobSpawnRules\@\@QEAAAEAV1\@HHAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -52,21 +52,9 @@ public:
      */
     MCAPI bool canSpawnInConditions(class SpawnConditions const &, class BlockSource &) const;
     /**
-     * @symbol ?getAboveBlockDistance\@MobSpawnRules\@\@QEBAHXZ
-     */
-    MCAPI int getAboveBlockDistance() const;
-    /**
      * @symbol ?getDelayRange\@MobSpawnRules\@\@QEBA?BU?$pair\@HH\@std\@\@XZ
      */
     MCAPI struct std::pair<int, int> const getDelayRange() const;
-    /**
-     * @symbol ?getDelaySpawnChance\@MobSpawnRules\@\@QEBAHXZ
-     */
-    MCAPI int getDelaySpawnChance() const;
-    /**
-     * @symbol ?getGuaranteedPermutations\@MobSpawnRules\@\@QEBAAEBV?$vector\@VMobSpawnerPermutation\@\@V?$allocator\@VMobSpawnerPermutation\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::vector<class MobSpawnerPermutation> const & getGuaranteedPermutations() const;
     /**
      * @symbol ?getHerdListMutable\@MobSpawnRules\@\@QEAAAEAV?$vector\@UMobSpawnHerdInfo\@\@V?$allocator\@UMobSpawnHerdInfo\@\@\@std\@\@\@std\@\@XZ
      */
@@ -76,22 +64,6 @@ public:
      */
     MCAPI std::string const getMobToDelayId() const;
     /**
-     * @symbol ?getPermutations\@MobSpawnRules\@\@QEBAAEBV?$vector\@VMobSpawnerPermutation\@\@V?$allocator\@VMobSpawnerPermutation\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::vector<class MobSpawnerPermutation> const & getPermutations() const;
-    /**
-     * @symbol ?getPersistence\@MobSpawnRules\@\@QEBA_NXZ
-     */
-    MCAPI bool getPersistence() const;
-    /**
-     * @symbol ?getPopulationCap\@MobSpawnRules\@\@QEBAHAEBVSpawnConditions\@\@\@Z
-     */
-    MCAPI int getPopulationCap(class SpawnConditions const &) const;
-    /**
-     * @symbol ?getSpawnAboveBlockList\@MobSpawnRules\@\@QEBAAEBV?$unordered_set\@PEBVBlockLegacy\@\@U?$hash\@PEBVBlockLegacy\@\@\@std\@\@U?$equal_to\@PEBVBlockLegacy\@\@\@3\@V?$allocator\@PEBVBlockLegacy\@\@\@3\@\@std\@\@XZ
-     */
-    MCAPI class std::unordered_set<class BlockLegacy const *, struct std::hash<class BlockLegacy const *>, struct std::equal_to<class BlockLegacy const *>, class std::allocator<class BlockLegacy const *>> const & getSpawnAboveBlockList() const;
-    /**
      * @symbol ?getSpawnAboveBlockListMutable\@MobSpawnRules\@\@QEAAAEAV?$unordered_set\@PEBVBlockLegacy\@\@U?$hash\@PEBVBlockLegacy\@\@\@std\@\@U?$equal_to\@PEBVBlockLegacy\@\@\@3\@V?$allocator\@PEBVBlockLegacy\@\@\@3\@\@std\@\@XZ
      */
     MCAPI class std::unordered_set<class BlockLegacy const *, struct std::hash<class BlockLegacy const *>, struct std::equal_to<class BlockLegacy const *>, class std::allocator<class BlockLegacy const *>> & getSpawnAboveBlockListMutable();
@@ -100,29 +72,13 @@ public:
      */
     MCAPI int getSpawnCount(class SpawnConditions const &, class BlockSource &, class Random &, struct MobSpawnHerdInfo const &) const;
     /**
-     * @symbol ?getSpawnOnBlockList\@MobSpawnRules\@\@QEBAAEBV?$unordered_set\@PEBVBlockLegacy\@\@U?$hash\@PEBVBlockLegacy\@\@\@std\@\@U?$equal_to\@PEBVBlockLegacy\@\@\@3\@V?$allocator\@PEBVBlockLegacy\@\@\@3\@\@std\@\@XZ
-     */
-    MCAPI class std::unordered_set<class BlockLegacy const *, struct std::hash<class BlockLegacy const *>, struct std::equal_to<class BlockLegacy const *>, class std::allocator<class BlockLegacy const *>> const & getSpawnOnBlockList() const;
-    /**
      * @symbol ?getSpawnOnBlockListMutable\@MobSpawnRules\@\@QEAAAEAV?$unordered_set\@PEBVBlockLegacy\@\@U?$hash\@PEBVBlockLegacy\@\@\@std\@\@U?$equal_to\@PEBVBlockLegacy\@\@\@3\@V?$allocator\@PEBVBlockLegacy\@\@\@3\@\@std\@\@XZ
      */
     MCAPI class std::unordered_set<class BlockLegacy const *, struct std::hash<class BlockLegacy const *>, struct std::equal_to<class BlockLegacy const *>, class std::allocator<class BlockLegacy const *>> & getSpawnOnBlockListMutable();
     /**
-     * @symbol ?getSpawnOnBlockPreventedList\@MobSpawnRules\@\@QEBAAEBV?$unordered_set\@PEBVBlockLegacy\@\@U?$hash\@PEBVBlockLegacy\@\@\@std\@\@U?$equal_to\@PEBVBlockLegacy\@\@\@3\@V?$allocator\@PEBVBlockLegacy\@\@\@3\@\@std\@\@XZ
-     */
-    MCAPI class std::unordered_set<class BlockLegacy const *, struct std::hash<class BlockLegacy const *>, struct std::equal_to<class BlockLegacy const *>, class std::allocator<class BlockLegacy const *>> const & getSpawnOnBlockPreventedList() const;
-    /**
      * @symbol ?getSpawnOnBlockPreventedListMutable\@MobSpawnRules\@\@QEAAAEAV?$unordered_set\@PEBVBlockLegacy\@\@U?$hash\@PEBVBlockLegacy\@\@\@std\@\@U?$equal_to\@PEBVBlockLegacy\@\@\@3\@V?$allocator\@PEBVBlockLegacy\@\@\@3\@\@std\@\@XZ
      */
     MCAPI class std::unordered_set<class BlockLegacy const *, struct std::hash<class BlockLegacy const *>, struct std::equal_to<class BlockLegacy const *>, class std::allocator<class BlockLegacy const *>> & getSpawnOnBlockPreventedListMutable();
-    /**
-     * @symbol ?isLavaSpawner\@MobSpawnRules\@\@QEBA_NXZ
-     */
-    MCAPI bool isLavaSpawner() const;
-    /**
-     * @symbol ?isUnderwaterSpawner\@MobSpawnRules\@\@QEBA_NXZ
-     */
-    MCAPI bool isUnderwaterSpawner() const;
     /**
      * @symbol ?selectRandomHerd\@MobSpawnRules\@\@QEBAAEBUMobSpawnHerdInfo\@\@AEAVRandom\@\@\@Z
      */

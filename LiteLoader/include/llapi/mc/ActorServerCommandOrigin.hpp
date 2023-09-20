@@ -62,10 +62,6 @@ public:
      */
     virtual class CompoundTag serialize() const;
     /**
-     * @symbol ?getTargetOther\@ActorServerCommandOrigin\@\@QEBA?AUActorUniqueID\@\@XZ
-     */
-    MCAPI struct ActorUniqueID getTargetOther() const;
-    /**
      * @symbol ?setTargetOther\@ActorServerCommandOrigin\@\@QEAAXUActorUniqueID\@\@\@Z
      */
     MCAPI void setTargetOther(struct ActorUniqueID);

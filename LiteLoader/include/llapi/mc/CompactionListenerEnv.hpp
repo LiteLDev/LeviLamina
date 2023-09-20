@@ -36,22 +36,22 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?NewSequentialFile\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVSequentialFile\@2\@\@Z
+     * @symbol ?NewSequentialFile\@EncryptedProxyEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVSequentialFile\@3\@\@Z
      */
     virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
     /**
      * @vftbl 2
-     * @symbol ?NewRandomAccessFile\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVRandomAccessFile\@2\@\@Z
+     * @symbol ?NewRandomAccessFile\@EncryptedProxyEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVRandomAccessFile\@3\@\@Z
      */
     virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
     /**
      * @vftbl 3
-     * @symbol ?NewWritableFile\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVWritableFile\@2\@\@Z
+     * @symbol ?NewWritableFile\@EncryptedProxyEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVWritableFile\@3\@\@Z
      */
     virtual class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
     /**
      * @vftbl 4
-     * @symbol ?NewAppendableFile\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVWritableFile\@2\@\@Z
+     * @symbol ?NewAppendableFile\@Env\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVWritableFile\@2\@\@Z
      */
     virtual class leveldb::Status NewAppendableFile(std::string const &, class leveldb::WritableFile **);
     /**
@@ -66,7 +66,7 @@ public:
     virtual class leveldb::Status GetChildren(std::string const &, std::vector<std::string> *);
     /**
      * @vftbl 7
-     * @symbol ?DeleteFileA\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?DeleteFileA\@EncryptedProxyEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual class leveldb::Status DeleteFileA(std::string const &);
     /**
@@ -86,7 +86,7 @@ public:
     virtual class leveldb::Status GetFileSize(std::string const &, unsigned __int64 *);
     /**
      * @vftbl 11
-     * @symbol ?RenameFile\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
+     * @symbol ?RenameFile\@EncryptedProxyEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
     virtual class leveldb::Status RenameFile(std::string const &, std::string const &);
     /**
@@ -103,12 +103,12 @@ public:
      * @vftbl 14
      * @symbol ?Schedule\@CompactionListenerEnv\@\@UEAAXP6AXPEAX\@Z0\@Z
      */
-    virtual void Schedule(void ( *)(void *), void *);
+    virtual void Schedule(void (__cdecl *)(void *), void *);
     /**
      * @vftbl 15
      * @symbol ?StartThread\@EnvWrapper\@leveldb\@\@UEAAXP6AXPEAX\@Z0\@Z
      */
-    virtual void StartThread(void ( *)(void *), void *);
+    virtual void StartThread(void (__cdecl *)(void *), void *);
     /**
      * @vftbl 16
      * @symbol ?GetTestDirectory\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@PEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z

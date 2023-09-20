@@ -29,13 +29,9 @@ namespace MobJump {
      */
     MCAPI void initializeMob(class EntityContext &);
     /**
-     * @symbol ?isAutoJumping\@MobJump\@\@YA_NAEBVEntityContext\@\@\@Z
+     * @symbol ?isJumping\@MobJump\@\@YA_NAEBVEntityContext\@\@\@Z
      */
-    MCAPI bool isAutoJumping(class EntityContext const &);
-    /**
-     * @symbol ?setIsAutoJumping\@MobJump\@\@YAXAEAVEntityContext\@\@_N\@Z
-     */
-    MCAPI void setIsAutoJumping(class EntityContext &, bool);
+    MCAPI bool isJumping(class EntityContext const &);
     /**
      * @symbol ?setJumpPendingScale\@MobJump\@\@YAXAEAVEntityContext\@\@M\@Z
      */

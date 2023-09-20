@@ -38,6 +38,10 @@ public:
      */
     MCAPI ReplayStateComponent(std::unique_ptr<class ActorHistory>, std::unique_ptr<struct IReplayStatePolicy>);
     /**
+     * @symbol ?addInputToFrontOfCurrentFrame\@ReplayStateComponent\@\@QEBAXV?$shared_ptr\@UIReplayableActorInput\@\@\@std\@\@\@Z
+     */
+    MCAPI void addInputToFrontOfCurrentFrame(class std::shared_ptr<struct IReplayableActorInput>) const;
+    /**
      * @symbol ?getCurrentTick\@ReplayStateComponent\@\@QEBA_KXZ
      */
     MCAPI unsigned __int64 getCurrentTick() const;
@@ -46,9 +50,9 @@ public:
      */
     MCAPI class ReplayStateComponent & operator=(class ReplayStateComponent &&);
     /**
-     * @symbol ?shouldSendCorrectionToClient\@ReplayStateComponent\@\@QEBA?AUMovementCorrection\@\@AEAUIActorMovementProxy\@\@AEBVPlayerAuthInputPacket\@\@\@Z
+     * @symbol ?shouldSendCorrectionToClient\@ReplayStateComponent\@\@QEBA?AUMovementCorrection\@\@AEAVEntityContext\@\@AEBVIConstBlockSource\@\@AEBVPlayerAuthInputPacket\@\@\@Z
      */
-    MCAPI struct MovementCorrection shouldSendCorrectionToClient(struct IActorMovementProxy &, class PlayerAuthInputPacket const &) const;
+    MCAPI struct MovementCorrection shouldSendCorrectionToClient(class EntityContext &, class IConstBlockSource const &, class PlayerAuthInputPacket const &) const;
     /**
      * @symbol ?tick\@ReplayStateComponent\@\@QEAAXPEAUIActorMovementProxy\@\@_KPEAVEntityRegistry\@\@\@Z
      */

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "ContainerContentChangeListener.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class ContainerModel.
  *
  */
-class ContainerModel {
+class ContainerModel : public ContainerContentChangeListener {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -175,6 +176,18 @@ public:
      */
     MCAPI ContainerModel(enum class ContainerEnumName, int, enum class ContainerCategory, bool);
     /**
+     * @symbol ?getContainerEnumName\@ContainerModel\@\@QEBA?AW4ContainerEnumName\@\@XZ
+     */
+    MCAPI enum class ContainerEnumName getContainerEnumName() const;
+    /**
+     * @symbol ?getContainerStringName\@ContainerModel\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     */
+    MCAPI std::string const & getContainerStringName() const;
+    /**
+     * @symbol ?initContainerRuntimeId\@ContainerModel\@\@QEAAXXZ
+     */
+    MCAPI void initContainerRuntimeId();
+    /**
      * @symbol ?isContainerSlotInRange\@ContainerModel\@\@QEBA_NH\@Z
      */
     MCAPI bool isContainerSlotInRange(int) const;
@@ -183,9 +196,21 @@ public:
      */
     MCAPI void networkUpdateItem(int, class ItemStack const &, class ItemStack const &);
     /**
+     * @symbol ?registerOnContainerChangedCallback\@ContainerModel\@\@QEAAXV?$function\@$$A6AXHAEBVItemStack\@\@0\@Z\@std\@\@\@Z
+     */
+    MCAPI void registerOnContainerChangedCallback(class std::function<void (int, class ItemStack const &, class ItemStack const &)>);
+    /**
      * @symbol ?registerPlayerNotificationCallback\@ContainerModel\@\@QEAAXV?$function\@$$A6AXHAEBVItemStack\@\@0\@Z\@std\@\@\@Z
      */
     MCAPI void registerPlayerNotificationCallback(class std::function<void (int, class ItemStack const &, class ItemStack const &)>);
+    /**
+     * @symbol ?serverInitItemStackIds\@ContainerModel\@\@QEAAXXZ
+     */
+    MCAPI void serverInitItemStackIds();
+    /**
+     * @symbol ?setClientUIContainer\@ContainerModel\@\@QEAAXPEAVSparseContainerClient\@\@\@Z
+     */
+    MCAPI void setClientUIContainer(class SparseContainerClient *);
 
 //protected:
     /**

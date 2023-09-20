@@ -146,45 +146,50 @@ public:
      */
     virtual bool isSignalSource() const;
     /**
-     * @vftbl 56
-     * @symbol __unk_vfn_56
+     * @vftbl 55
+     * @symbol __unk_vfn_55
      */
-    virtual void __unk_vfn_56();
+    virtual void __unk_vfn_55();
+    /**
+     * @vftbl 61
+     * @symbol __unk_vfn_61
+     */
+    virtual void __unk_vfn_61();
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
      */
     virtual void __unk_vfn_62();
     /**
-     * @vftbl 63
-     * @symbol __unk_vfn_63
-     */
-    virtual void __unk_vfn_63();
-    /**
-     * @vftbl 66
+     * @vftbl 65
      * @symbol ?shouldConnectToRedstone\@SculkSensorBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
-     * @vftbl 77
-     * @symbol __unk_vfn_77
+     * @vftbl 76
+     * @symbol __unk_vfn_76
      */
-    virtual void __unk_vfn_77();
+    virtual void __unk_vfn_76();
     /**
-     * @vftbl 81
+     * @vftbl 80
      * @symbol ?setupRedstoneComponent\@SculkSensorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 84
-     * @symbol __unk_vfn_84
+     * @vftbl 83
+     * @symbol __unk_vfn_83
      */
-    virtual void __unk_vfn_84();
+    virtual void __unk_vfn_83();
     /**
-     * @vftbl 107
-     * @symbol __unk_vfn_107
+     * @vftbl 106
+     * @symbol __unk_vfn_106
      */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_106();
+    /**
+     * @vftbl 122
+     * @symbol __unk_vfn_122
+     */
+    virtual void __unk_vfn_122();
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -197,29 +202,24 @@ public:
     virtual void __unk_vfn_124();
     /**
      * @vftbl 125
-     * @symbol __unk_vfn_125
-     */
-    virtual void __unk_vfn_125();
-    /**
-     * @vftbl 126
      * @symbol ?getComparatorSignal\@SculkSensorBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
-     * @vftbl 128
-     * @symbol __unk_vfn_128
+     * @vftbl 127
+     * @symbol __unk_vfn_127
      */
-    virtual void __unk_vfn_128();
+    virtual void __unk_vfn_127();
     /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
+     * @vftbl 130
+     * @symbol __unk_vfn_130
      */
-    virtual void __unk_vfn_131();
+    virtual void __unk_vfn_130();
     /**
-     * @vftbl 148
-     * @symbol ?animateTick\@SculkSensorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 147
+     * @symbol ?animateTickBedrockLegacy\@SculkSensorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
+    virtual void animateTickBedrockLegacy(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl 150
      * @symbol ?getLightEmission\@SculkSensorBlock\@\@UEBA?AUBrightness\@\@AEBVBlock\@\@\@Z
@@ -311,13 +311,13 @@ public:
     MCVAPI bool hasComparatorSignal() const;
 #endif
     /**
-     * @symbol ??0SculkSensorBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
-     */
-    MCAPI SculkSensorBlock(std::string const &, int);
-    /**
      * @symbol ??0SculkSensorBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4BlockActorType\@\@H\@Z
      */
     MCAPI SculkSensorBlock(std::string const &, int, enum class BlockActorType, int);
+    /**
+     * @symbol ??0SculkSensorBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
+     */
+    MCAPI SculkSensorBlock(std::string const &, int);
     /**
      * @symbol ?isActive\@SculkSensorBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */

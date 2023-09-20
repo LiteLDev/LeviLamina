@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "BehaviorNode.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class InverterNode.
  *
  */
-class InverterNode {
+class InverterNode : public BehaviorNode {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -25,6 +26,7 @@ class InverterNode {
 public:
     class InverterNode& operator=(class InverterNode const &) = delete;
     InverterNode(class InverterNode const &) = delete;
+    InverterNode() = delete;
 #endif
 
 public:
@@ -43,9 +45,5 @@ public:
      * @symbol ?initializeFromDefinition\@InverterNode\@\@MEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
-    /**
-     * @symbol ??0InverterNode\@\@QEAA\@XZ
-     */
-    MCAPI InverterNode();
 
 };

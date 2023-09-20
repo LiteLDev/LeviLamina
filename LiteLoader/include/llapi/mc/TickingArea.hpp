@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "ITickingArea.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class TickingArea.
  *
  */
-class TickingArea {
+class TickingArea : public ITickingArea {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -187,17 +188,9 @@ public:
     MCVAPI ~TickingArea();
 #endif
     /**
-     * @symbol ??0TickingArea\@\@QEAA\@AEAVDimension\@\@VUUID\@mce\@\@AEBUBounds\@\@UActorUniqueID\@\@M\@Z
-     */
-    MCAPI TickingArea(class Dimension &, class mce::UUID, struct Bounds const &, struct ActorUniqueID, float);
-    /**
      * @symbol ??0TickingArea\@\@QEAA\@AEAVDimension\@\@VUUID\@mce\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUBounds\@\@_NW4TickingAreaLoadMode\@\@\@Z
      */
     MCAPI TickingArea(class Dimension &, class mce::UUID, std::string const &, struct Bounds const &, bool, enum class TickingAreaLoadMode);
-    /**
-     * @symbol ??0TickingArea\@\@QEAA\@AEAVDimension\@\@VUUID\@mce\@\@AEBUBounds\@\@UActorUniqueID\@\@\@Z
-     */
-    MCAPI TickingArea(class Dimension &, class mce::UUID, struct Bounds const &, struct ActorUniqueID);
 
 //private:
     /**

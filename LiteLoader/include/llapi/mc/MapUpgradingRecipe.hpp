@@ -5,7 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Recipe.hpp"
+#include "MultiRecipe.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +16,7 @@
  * @brief MC class MapUpgradingRecipe.
  *
  */
-class MapUpgradingRecipe : public Recipe {
+class MapUpgradingRecipe : public MultiRecipe {
 
 #define AFTER_EXTRA
 // Add Member There

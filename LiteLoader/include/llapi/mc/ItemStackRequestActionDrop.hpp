@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
+#include "ItemStackRequestActionTransferBase.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class ItemStackRequestActionDrop.
  *
  */
-class ItemStackRequestActionDrop {
+class ItemStackRequestActionDrop : public ItemStackRequestActionTransferBase {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -26,7 +27,6 @@ class ItemStackRequestActionDrop {
 public:
     class ItemStackRequestActionDrop& operator=(class ItemStackRequestActionDrop const &) = delete;
     ItemStackRequestActionDrop(class ItemStackRequestActionDrop const &) = delete;
-    ItemStackRequestActionDrop() = delete;
 #endif
 
 public:
@@ -35,21 +35,6 @@ public:
      * @symbol __unk_vfn_0
      */
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
-    virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol ?_write\@ItemStackRequestActionDrop\@\@MEBAXAEAVBinaryStream\@\@\@Z
@@ -60,5 +45,13 @@ public:
      * @symbol ?_read\@ItemStackRequestActionDrop\@\@MEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
+    /**
+     * @symbol ??0ItemStackRequestActionDrop\@\@QEAA\@XZ
+     */
+    MCAPI ItemStackRequestActionDrop();
+    /**
+     * @symbol ?getRandomly\@ItemStackRequestActionDrop\@\@QEBA_NXZ
+     */
+    MCAPI bool getRandomly() const;
 
 };

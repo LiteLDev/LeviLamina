@@ -75,10 +75,6 @@ public:
      */
     MCAPI static int determineActivation(enum class Enchant::Type);
     /**
-     * @symbol ?determineCompatibility\@EnchantUtils\@\@SAHW4Type\@Enchant\@\@\@Z
-     */
-    MCAPI static int determineCompatibility(enum class Enchant::Type);
-    /**
      * @symbol ?doPostDamageEffects\@EnchantUtils\@\@SAXAEAVActor\@\@0\@Z
      */
     MCAPI static void doPostDamageEffects(class Actor &, class Actor &);

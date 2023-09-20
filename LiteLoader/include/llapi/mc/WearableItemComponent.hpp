@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -36,29 +37,57 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?isNetworkComponent\@?$NetworkedItemComponent\@VWearableItemComponent\@\@\@\@UEBA_NXZ
+     * @symbol ?checkComponentDataForContentErrors\@ItemComponent\@\@UEBA_NXZ
+     */
+    virtual bool checkComponentDataForContentErrors() const;
+    /**
+     * @vftbl 2
+     * @symbol ?writeSettings\@ItemComponent\@\@UEAAXXZ
+     */
+    virtual void writeSettings();
+    /**
+     * @vftbl 3
+     * @symbol ?isNetworkComponent\@InteractButtonItemComponent\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @vftbl 4
-     * @symbol ?buildNetworkTag\@?$NetworkedItemComponent\@VWearableItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?buildNetworkTag\@ItemComponent\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx &) const;
     /**
      * @vftbl 5
-     * @symbol ?initializeFromNetwork\@?$NetworkedItemComponent\@VWearableItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
+     * @symbol ?initializeFromNetwork\@ItemComponent\@\@UEAA_NAEBVCompoundTag\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    virtual bool initializeFromNetwork(class CompoundTag const &);
+    virtual bool initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx &);
+    /**
+     * @vftbl 6
+     * @symbol ?handleVersionBasedInitialization\@ItemComponent\@\@UEAAXAEBVSemVersion\@\@\@Z
+     */
+    virtual void handleVersionBasedInitialization(class SemVersion const &);
+    /**
+     * @vftbl 7
+     * @symbol ?_canUseOn\@ItemComponent\@\@MEBA_NAEBVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@E\@Z
+     */
+    virtual bool _canUseOn(class ItemStack const &, class Actor &, class BlockPos const &, unsigned char) const;
+    /**
+     * @vftbl 8
+     * @symbol ?_useOn\@ItemComponent\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
+     */
+    virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
+    /**
+     * @vftbl 9
+     * @symbol ?_initializeComponent\@WearableItemComponent\@\@UEBAXXZ
+     */
+    virtual void _initializeComponent() const;
+    /**
+     * @symbol ??0WearableItemComponent\@\@QEAA\@W4EquipmentSlot\@\@H\@Z
+     */
+    MCAPI WearableItemComponent(enum class EquipmentSlot, int);
+    /**
+     * @symbol ?dispense\@WearableItemComponent\@\@QEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
+     */
+    MCAPI bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
      * @symbol ?getSlot\@WearableItemComponent\@\@QEBA?AW4EquipmentSlot\@\@XZ
      */
@@ -68,9 +97,9 @@ public:
      */
     MCAPI bool use(class ItemStack &, class Player &) const;
     /**
-     * @symbol ?bindType\@WearableItemComponent\@\@SAXXZ
+     * @symbol ?bindType\@WearableItemComponent\@\@SAXAEAUReflectionCtx\@cereal\@\@AEBV?$vector\@W4AllExperiments\@\@V?$allocator\@W4AllExperiments\@\@\@std\@\@\@std\@\@V?$optional\@VSemVersion\@\@\@5\@\@Z
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(struct cereal::ReflectionCtx &, std::vector<enum class AllExperiments> const &, class std::optional<class SemVersion>);
     /**
      * @symbol ?getIdentifier\@WearableItemComponent\@\@SAAEBVHashedString\@\@XZ
      */

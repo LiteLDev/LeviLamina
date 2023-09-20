@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Facing.hpp"
+#include "BehaviorNode.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class GetInteractionPositionForBlockNode.
  *
  */
-class GetInteractionPositionForBlockNode {
+class GetInteractionPositionForBlockNode : public BehaviorNode {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -26,6 +27,7 @@ class GetInteractionPositionForBlockNode {
 public:
     class GetInteractionPositionForBlockNode& operator=(class GetInteractionPositionForBlockNode const &) = delete;
     GetInteractionPositionForBlockNode(class GetInteractionPositionForBlockNode const &) = delete;
+    GetInteractionPositionForBlockNode() = delete;
 #endif
 
 public:
@@ -44,10 +46,6 @@ public:
      * @symbol ?initializeFromDefinition\@GetInteractionPositionForBlockNode\@\@EEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
-    /**
-     * @symbol ??0GetInteractionPositionForBlockNode\@\@QEAA\@XZ
-     */
-    MCAPI GetInteractionPositionForBlockNode();
 
 //private:
     /**

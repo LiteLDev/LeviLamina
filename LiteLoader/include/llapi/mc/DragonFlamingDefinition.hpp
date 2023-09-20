@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "JsonUtil.hpp"
+#include "BaseGoalDefinition.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class DragonFlamingDefinition.
  *
  */
-class DragonFlamingDefinition {
+class DragonFlamingDefinition : public BaseGoalDefinition {
 
 #define AFTER_EXTRA
 // Add Member There

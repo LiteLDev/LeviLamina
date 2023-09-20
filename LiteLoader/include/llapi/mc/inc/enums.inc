@@ -1177,6 +1177,51 @@ enum class BlockProperty : int64_t {
     CanHaltWhenClimbing          = 0x1000000000000,
 };
 
+enum class CommandOutputType : __int32
+{
+  None = 0x0,
+  LastOutput = 0x1,
+  Silent = 0x2,
+  AllOutput = 0x3,
+  DataSet = 0x4,
+};
+
+enum class PackType : char {
+    Invalid = 0x0,
+    Addon = 0x1,
+    Cached = 0x2,
+    CopyProtected = 0x3,
+    Behavior = 0x4,
+    PersonaPiece = 0x5,
+    Resources = 0x6,
+    Skins = 0x7,
+    WorldTemplate = 0x8,
+};
+
+enum class PackOrigin : int {
+   Unknown = 0x0,
+    RealmsUnknown = 0x1,
+    Package = 0x2,
+    Treatment = 0x3,
+    Dev = 0x4,
+    World = 0x5,
+    User = 0x6,
+    TempCache = 0x7,
+    PremiumCache = 0x8,
+    PremiumTempCache = 0x9,
+};
+
+
+enum class PackCategory : int {
+    Unknown = 0x0,
+    RealmsUnknown = 0x1,
+    Standard = 0x2,
+    Premium = 0x3,
+    Custom = 0x4,
+    Subpack = 0x5,
+};
+
+
 #include <type_traits>
 class InteractionResult {
 public:

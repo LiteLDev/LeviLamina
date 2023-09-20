@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
+#include "ITickingSystem.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class EntityEnterVolumeSystem.
  *
  */
-class EntityEnterVolumeSystem {
+class EntityEnterVolumeSystem : public ITickingSystem {
 
 #define AFTER_EXTRA
 // Add Member There

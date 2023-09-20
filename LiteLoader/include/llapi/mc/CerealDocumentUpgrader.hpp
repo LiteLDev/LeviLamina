@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 #include "Core.hpp"
 
 #define BEFORE_EXTRA
@@ -45,9 +46,13 @@ public:
      */
     MCAPI void registerUpgrade(class std::shared_ptr<class CerealSchemaUpgrade>);
     /**
-     * @symbol ?upgradeJson\@CerealDocumentUpgrader\@\@QEAA_NAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPath\@Core\@\@V?$optional\@VSemVersion\@\@\@3\@V?$function\@$$A6A_NAEBVSemVersion\@\@\@Z\@3\@\@Z
+     * @symbol ?upgradeJson\@CerealDocumentUpgrader\@\@QEAA_NAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVSemVersion\@\@AEBVPath\@Core\@\@V?$optional\@VSemVersion\@\@\@3\@V?$function\@$$A6A_NAEBVSemVersion\@\@\@Z\@3\@\@Z
      */
-    MCAPI bool upgradeJson(std::string &, class Core::Path const &, class std::optional<class SemVersion>, class std::function<bool (class SemVersion const &)>);
+    MCAPI bool upgradeJson(std::string &, class SemVersion &, class Core::Path const &, class std::optional<class SemVersion>, class std::function<bool (class SemVersion const &)>);
+    /**
+     * @symbol ??1CerealDocumentUpgrader\@\@QEAA\@XZ
+     */
+    MCAPI ~CerealDocumentUpgrader();
 
 //private:
     /**

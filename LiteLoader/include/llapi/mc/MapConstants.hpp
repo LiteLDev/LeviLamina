@@ -74,14 +74,6 @@ namespace MapConstants {
      */
     MCAPI extern float const MAP_HEIGHT;
     /**
-     * @symbol ?MAP_LEFTHAND_POS\@MapConstants\@\@3VVec3\@\@B
-     */
-    MCAPI extern class Vec3 const MAP_LEFTHAND_POS;
-    /**
-     * @symbol ?MAP_LEFTHAND_ROT\@MapConstants\@\@3VVec3\@\@B
-     */
-    MCAPI extern class Vec3 const MAP_LEFTHAND_ROT;
-    /**
      * @symbol ?MAP_NORMAL\@MapConstants\@\@3VVec3\@\@B
      */
     MCAPI extern class Vec3 const MAP_NORMAL;
@@ -93,14 +85,6 @@ namespace MapConstants {
      * @symbol ?MAP_PRE_ROT_SCALE\@MapConstants\@\@3MB
      */
     MCAPI extern float const MAP_PRE_ROT_SCALE;
-    /**
-     * @symbol ?MAP_RIGHTHAND_POS\@MapConstants\@\@3VVec3\@\@B
-     */
-    MCAPI extern class Vec3 const MAP_RIGHTHAND_POS;
-    /**
-     * @symbol ?MAP_RIGHTHAND_ROT\@MapConstants\@\@3VVec3\@\@B
-     */
-    MCAPI extern class Vec3 const MAP_RIGHTHAND_ROT;
     /**
      * @symbol ?MAP_SIZE\@MapConstants\@\@3HB
      */
@@ -122,37 +106,9 @@ namespace MapConstants {
      */
     MCAPI extern int const MAX_SCALE;
     /**
-     * @symbol ?MINI_MAP_BORDER\@MapConstants\@\@3MB
-     */
-    MCAPI extern float const MINI_MAP_BORDER;
-    /**
      * @symbol ?MINI_MAP_FINAL_SCALE\@MapConstants\@\@3MB
      */
     MCAPI extern float const MINI_MAP_FINAL_SCALE;
-    /**
-     * @symbol ?MINI_MAP_HANDS_HEIGHT_SCALE\@MapConstants\@\@3MB
-     */
-    MCAPI extern float const MINI_MAP_HANDS_HEIGHT_SCALE;
-    /**
-     * @symbol ?MINI_MAP_HANDS_POS\@MapConstants\@\@3VVec3\@\@B
-     */
-    MCAPI extern class Vec3 const MINI_MAP_HANDS_POS;
-    /**
-     * @symbol ?MINI_MAP_HANDS_ROT\@MapConstants\@\@3VVec3\@\@B
-     */
-    MCAPI extern class Vec3 const MINI_MAP_HANDS_ROT;
-    /**
-     * @symbol ?MINI_MAP_HANDS_TILT_SCALE\@MapConstants\@\@3MB
-     */
-    MCAPI extern float const MINI_MAP_HANDS_TILT_SCALE;
-    /**
-     * @symbol ?MINI_MAP_HEIGHT\@MapConstants\@\@3MB
-     */
-    MCAPI extern float const MINI_MAP_HEIGHT;
-    /**
-     * @symbol ?MINI_MAP_LEFTHAND_POS\@MapConstants\@\@3VVec3\@\@B
-     */
-    MCAPI extern class Vec3 const MINI_MAP_LEFTHAND_POS;
     /**
      * @symbol ?MINI_MAP_LEFTHAND_ROT\@MapConstants\@\@3VVec3\@\@B
      */
@@ -162,17 +118,9 @@ namespace MapConstants {
      */
     MCAPI extern class Vec3 const MINI_MAP_MAINHAND_POS;
     /**
-     * @symbol ?MINI_MAP_NORMAL\@MapConstants\@\@3VVec3\@\@B
-     */
-    MCAPI extern class Vec3 const MINI_MAP_NORMAL;
-    /**
      * @symbol ?MINI_MAP_OFFHAND_POS\@MapConstants\@\@3VVec3\@\@B
      */
     MCAPI extern class Vec3 const MINI_MAP_OFFHAND_POS;
-    /**
-     * @symbol ?MINI_MAP_PLAYER_PITCH_SCALE\@MapConstants\@\@3MB
-     */
-    MCAPI extern float const MINI_MAP_PLAYER_PITCH_SCALE;
     /**
      * @symbol ?MINI_MAP_RIGHTHAND_POS\@MapConstants\@\@3VVec3\@\@B
      */
@@ -185,37 +133,5 @@ namespace MapConstants {
      * @symbol ?MINI_MAP_SWING_POS_SCALE\@MapConstants\@\@3VVec3\@\@B
      */
     MCAPI extern class Vec3 const MINI_MAP_SWING_POS_SCALE;
-    /**
-     * @symbol ?MINI_MAP_WIDTH\@MapConstants\@\@3MB
-     */
-    MCAPI extern float const MINI_MAP_WIDTH;
-    /**
-     * @symbol ?SPLIT_SCREEN_ADJUST\@MapConstants\@\@3VVec3\@\@B
-     */
-    MCAPI extern class Vec3 const SPLIT_SCREEN_ADJUST;
-    /**
-     * @symbol ?VERT_MAINHAND_MAP_POS\@MapConstants\@\@3VVec3\@\@B
-     */
-    MCAPI extern class Vec3 const VERT_MAINHAND_MAP_POS;
-    /**
-     * @symbol ?VERT_MAP_LEFTHAND_POS\@MapConstants\@\@3VVec3\@\@B
-     */
-    MCAPI extern class Vec3 const VERT_MAP_LEFTHAND_POS;
-    /**
-     * @symbol ?VERT_MAP_RIGHTHAND_POS\@MapConstants\@\@3VVec3\@\@B
-     */
-    MCAPI extern class Vec3 const VERT_MAP_RIGHTHAND_POS;
-    /**
-     * @symbol ?VERT_MINI_MAP_OFFHAND_POS\@MapConstants\@\@3VVec3\@\@B
-     */
-    MCAPI extern class Vec3 const VERT_MINI_MAP_OFFHAND_POS;
-    /**
-     * @symbol ?VERT_OFFHAND_MAP_POS\@MapConstants\@\@3VVec3\@\@B
-     */
-    MCAPI extern class Vec3 const VERT_OFFHAND_MAP_POS;
-    /**
-     * @symbol ?VERT_SPLIT_SCREEN_OFFSET\@MapConstants\@\@3VVec3\@\@B
-     */
-    MCAPI extern class Vec3 const VERT_SPLIT_SCREEN_OFFSET;
 
 };

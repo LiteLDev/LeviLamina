@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 
@@ -130,6 +131,14 @@ public:
      */
     MCVAPI bool write(double, struct cereal::SerializerTraits const &);
     /**
+     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NGAEBUSerializerTraits\@cereal\@\@\@Z
+     */
+    MCVAPI bool write(unsigned short, struct cereal::SerializerTraits const &);
+    /**
+     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NFAEBUSerializerTraits\@cereal\@\@\@Z
+     */
+    MCVAPI bool write(short, struct cereal::SerializerTraits const &);
+    /**
      * @symbol ?write\@NBTSchemaWriter\@\@UEAA_N_NAEBUSerializerTraits\@cereal\@\@\@Z
      */
     MCVAPI bool write(bool, struct cereal::SerializerTraits const &);
@@ -141,14 +150,6 @@ public:
      * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NEAEBUSerializerTraits\@cereal\@\@\@Z
      */
     MCVAPI bool write(unsigned char, struct cereal::SerializerTraits const &);
-    /**
-     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NGAEBUSerializerTraits\@cereal\@\@\@Z
-     */
-    MCVAPI bool write(unsigned short, struct cereal::SerializerTraits const &);
-    /**
-     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NFAEBUSerializerTraits\@cereal\@\@\@Z
-     */
-    MCVAPI bool write(short, struct cereal::SerializerTraits const &);
     /**
      * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NIAEBUSerializerTraits\@cereal\@\@\@Z
      */

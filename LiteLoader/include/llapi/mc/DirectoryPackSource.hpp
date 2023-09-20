@@ -7,6 +7,7 @@
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
 #include "Core.hpp"
+#include "PackSource.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +18,7 @@
  * @brief MC class DirectoryPackSource.
  *
  */
-class DirectoryPackSource {
+class DirectoryPackSource : public PackSource {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -38,14 +39,14 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?forEachPackConst\@DirectoryPackSource\@\@UEBAXV?$function\@$$A6AXAEBVPack\@\@\@Z\@std\@\@\@Z
      */
-    virtual void __unk_vfn_1();
+    virtual void forEachPackConst(class std::function<void (class Pack const &)>) const;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?forEachPack\@DirectoryPackSource\@\@UEAAXV?$function\@$$A6AXAEAVPack\@\@\@Z\@std\@\@\@Z
      */
-    virtual void __unk_vfn_2();
+    virtual void forEachPack(class std::function<void (class Pack &)>);
     /**
      * @vftbl 3
      * @symbol ?getPackOrigin\@DirectoryPackSource\@\@UEBA?AW4PackOrigin\@\@XZ
@@ -63,14 +64,6 @@ public:
     virtual class PackSourceReport load(class IPackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTORYPACKSOURCE
     /**
-     * @symbol ?forEachPack\@DirectoryPackSource\@\@UEAAXV?$function\@$$A6AXAEAVPack\@\@\@Z\@std\@\@\@Z
-     */
-    MCVAPI void forEachPack(class std::function<void (class Pack &)>);
-    /**
-     * @symbol ?forEachPackConst\@DirectoryPackSource\@\@UEBAXV?$function\@$$A6AXAEBVPack\@\@\@Z\@std\@\@\@Z
-     */
-    MCVAPI void forEachPackConst(class std::function<void (class Pack const &)>) const;
-    /**
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~DirectoryPackSource();
@@ -79,14 +72,6 @@ public:
      * @symbol ??0DirectoryPackSource\@\@QEAA\@AEBVPath\@Core\@\@W4PackType\@\@W4PackOrigin\@\@_N\@Z
      */
     MCAPI DirectoryPackSource(class Core::Path const &, enum class PackType, enum class PackOrigin, bool);
-    /**
-     * @symbol ?getPath\@DirectoryPackSource\@\@QEBAAEBV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
-     */
-    MCAPI class Core::PathBuffer<std::string> const & getPath() const;
-    /**
-     * @symbol ?removePack\@DirectoryPackSource\@\@QEAA_NAEBVPath\@Core\@\@\@Z
-     */
-    MCAPI bool removePack(class Core::Path const &);
     /**
      * @symbol ?checkAndRemoveIncompletePacks\@DirectoryPackSource\@\@SAXAEBVPath\@Core\@\@\@Z
      */

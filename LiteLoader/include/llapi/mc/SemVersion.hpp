@@ -42,10 +42,6 @@ bool mValidVersion, mAnyVersion;                      // 104, 105
 #undef AFTER_EXTRA
 public:
     /**
-     * @symbol ??0SemVersion\@\@QEAA\@GGGAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
-     */
-    MCAPI SemVersion(unsigned short, unsigned short, unsigned short, std::string const &, std::string const &);
-    /**
      * @symbol ??0SemVersion\@\@QEAA\@XZ
      */
     MCAPI SemVersion();
@@ -57,6 +53,10 @@ public:
      * @symbol ??0SemVersion\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI SemVersion(class SemVersion const &);
+    /**
+     * @symbol ??0SemVersion\@\@QEAA\@GGGAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
+     */
+    MCAPI SemVersion(unsigned short, unsigned short, unsigned short, std::string const &, std::string const &);
     /**
      * @symbol ?asString\@SemVersion\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */

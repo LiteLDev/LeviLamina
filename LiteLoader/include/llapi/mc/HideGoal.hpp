@@ -46,11 +46,6 @@ public:
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @vftbl 4
      * @symbol ?start\@HideGoal\@\@UEAAXXZ
      */
@@ -66,16 +61,6 @@ public:
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
-    /**
      * @vftbl 16
      * @symbol ?_getRepathTime\@HideGoal\@\@MEBA_KXZ
      */
@@ -89,5 +74,13 @@ public:
      * @symbol ??0HideGoal\@\@QEAA\@AEAVMob\@\@MMMW4POIType\@\@\@Z
      */
     MCAPI HideGoal(class Mob &, float, float, float, enum class POIType);
+
+//private:
+    /**
+     * @symbol ?_sendSoundTheAlarmAchievement\@HideGoal\@\@AEBAXXZ
+     */
+    MCAPI void _sendSoundTheAlarmAchievement() const;
+
+private:
 
 };

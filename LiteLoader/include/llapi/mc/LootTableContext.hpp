@@ -62,10 +62,6 @@ public:
      */
     MCAPI class Level * getLevel() const;
     /**
-     * @symbol ?getLuck\@LootTableContext\@\@QEBAMXZ
-     */
-    MCAPI float getLuck() const;
-    /**
      * @symbol ?getOriginalItemName\@LootTableContext\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string getOriginalItemName() const;

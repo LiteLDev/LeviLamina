@@ -26,7 +26,6 @@ class TestAction : public IRequestAction {
 public:
     class TestAction& operator=(class TestAction const &) = delete;
     TestAction(class TestAction const &) = delete;
-    TestAction() = delete;
 #endif
 
 public:
@@ -45,5 +44,9 @@ public:
      * @symbol ??8TestAction\@\@UEBA_NAEAVIRequestAction\@\@\@Z
      */
     virtual bool operator==(class IRequestAction &) const;
+    /**
+     * @symbol ??0TestAction\@\@QEAA\@XZ
+     */
+    MCAPI TestAction();
 
 };

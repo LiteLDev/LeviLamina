@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "GameEventListener.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class VibrationListener.
  *
  */
-class VibrationListener {
+class VibrationListener : public GameEventListener {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -50,6 +51,11 @@ public:
      */
     virtual unsigned int getRange() const;
     /**
+     * @vftbl 4
+     * @symbol ?getDeliveryMode\@GameEventListener\@\@UEBA?AW4DeliveryMode\@1\@XZ
+     */
+    virtual enum class GameEventListener::DeliveryMode getDeliveryMode() const;
+    /**
      * @symbol ??0VibrationListener\@\@QEAA\@$$QEAV?$unique_ptr\@VVibrationListenerConfig\@\@U?$default_delete\@VVibrationListenerConfig\@\@\@std\@\@\@std\@\@VPositionSource\@GameEvents\@\@IW4OwnerType\@0\@\@Z
      */
     MCAPI VibrationListener(std::unique_ptr<class VibrationListenerConfig> &&, class GameEvents::PositionSource, unsigned int, enum class VibrationListener::OwnerType);
@@ -76,9 +82,9 @@ public:
      */
     MCAPI void _requestVibrationParticle(class BlockSource &, class BlockPos const &, float);
     /**
-     * @symbol ?_tickInternal\@VibrationListener\@\@AEAAXAEAVBlockSource\@\@\@Z
+     * @symbol ?_tryAdvanceInFlightVibration\@VibrationListener\@\@AEAA_NAEAVBlockSource\@\@\@Z
      */
-    MCAPI void _tickInternal(class BlockSource &);
+    MCAPI bool _tryAdvanceInFlightVibration(class BlockSource &);
     /**
      * @symbol ?_trySendSneakCloseToSculkSensorEventPacket\@VibrationListener\@\@AEAAXAEAVBlockSource\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@AEBVVec3\@\@\@Z
      */

@@ -37,8 +37,8 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 3
-     * @symbol ?shouldCorrectMovement\@ServerCorrectionPolicy\@\@UEAA?AUMovementCorrection\@\@AEAUIActorMovementProxy\@\@AEBVPlayerAuthInputPacket\@\@_K\@Z
+     * @symbol ?shouldCorrectMovement\@ServerCorrectionPolicy\@\@UEAA?AUMovementCorrection\@\@AEAVEntityContext\@\@AEBVIConstBlockSource\@\@AEBVPlayerAuthInputPacket\@\@_K\@Z
      */
-    virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy &, class PlayerAuthInputPacket const &, unsigned __int64);
+    virtual struct MovementCorrection shouldCorrectMovement(class EntityContext &, class IConstBlockSource const &, class PlayerAuthInputPacket const &, unsigned __int64);
 
 };

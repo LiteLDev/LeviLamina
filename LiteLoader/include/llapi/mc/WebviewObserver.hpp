@@ -29,19 +29,57 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBVIEWOBSERVER
     /**
+     * @vftbl 0
+     * @symbol __unk_vfn_0
+     */
+    virtual void __unk_vfn_0();
+    /**
+     * @vftbl 1
+     * @symbol __unk_vfn_1
+     */
+    virtual void __unk_vfn_1();
+    /**
+     * @vftbl 2
+     * @symbol __unk_vfn_2
+     */
+    virtual void __unk_vfn_2();
+    /**
+     * @vftbl 3
+     * @symbol __unk_vfn_3
+     */
+    virtual void __unk_vfn_3();
+    /**
+     * @vftbl 4
+     * @symbol __unk_vfn_4
+     */
+    virtual void __unk_vfn_4();
+    /**
+     * @vftbl 5
+     * @symbol __unk_vfn_5
+     */
+    virtual void __unk_vfn_5();
+    /**
+     * @vftbl 6
      * @symbol ?onDownloadBegin\@WebviewObserver\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
      */
-    MCVAPI void onDownloadBegin(struct WebviewDownloadInfo const &);
+    virtual void onDownloadBegin(struct WebviewDownloadInfo const &);
     /**
-     * @symbol ?onDownloadCanceled\@WebviewObserver\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
+     * @vftbl 7
+     * @symbol __unk_vfn_7
      */
-    MCVAPI void onDownloadCanceled(struct WebviewDownloadInfo const &);
+    virtual void __unk_vfn_7();
     /**
+     * @vftbl 8
      * @symbol ?onDownloadComplete\@WebviewObserver\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
      */
-    MCVAPI void onDownloadComplete(struct WebviewDownloadInfo const &);
+    virtual void onDownloadComplete(struct WebviewDownloadInfo const &);
+    /**
+     * @vftbl 9
+     * @symbol ?onDownloadCanceled\@WebviewObserver\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
+     */
+    virtual void onDownloadCanceled(struct WebviewDownloadInfo const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBVIEWOBSERVER
     /**
      * @symbol ?onDownloadUpdate\@WebviewObserver\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
      */

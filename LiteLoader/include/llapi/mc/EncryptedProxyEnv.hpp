@@ -51,7 +51,7 @@ public:
     virtual class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
     /**
      * @vftbl 4
-     * @symbol ?NewAppendableFile\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVWritableFile\@2\@\@Z
+     * @symbol ?NewAppendableFile\@Env\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVWritableFile\@2\@\@Z
      */
     virtual class leveldb::Status NewAppendableFile(std::string const &, class leveldb::WritableFile **);
     /**
@@ -103,12 +103,12 @@ public:
      * @vftbl 14
      * @symbol ?Schedule\@EnvWrapper\@leveldb\@\@UEAAXP6AXPEAX\@Z0\@Z
      */
-    virtual void Schedule(void ( *)(void *), void *);
+    virtual void Schedule(void (__cdecl *)(void *), void *);
     /**
      * @vftbl 15
      * @symbol ?StartThread\@EnvWrapper\@leveldb\@\@UEAAXP6AXPEAX\@Z0\@Z
      */
-    virtual void StartThread(void ( *)(void *), void *);
+    virtual void StartThread(void (__cdecl *)(void *), void *);
     /**
      * @vftbl 16
      * @symbol ?GetTestDirectory\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@PEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -129,5 +129,9 @@ public:
      * @symbol ?SleepForMicroseconds\@EnvWrapper\@leveldb\@\@UEAAXH\@Z
      */
     virtual void SleepForMicroseconds(int);
+    /**
+     * @symbol ??0EncryptedProxyEnv\@\@QEAA\@PEAVEnv\@leveldb\@\@AEBVContentIdentity\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4EncryptedProxyReadMode\@\@\@Z
+     */
+    MCAPI EncryptedProxyEnv(class leveldb::Env *, class ContentIdentity const &, std::string const &, enum class EncryptedProxyReadMode);
 
 };

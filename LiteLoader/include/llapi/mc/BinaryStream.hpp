@@ -31,7 +31,14 @@ public:
     template <>
     MCAPI void writeType(struct CommandOriginData const&);
     template <>
-    MCAPI void writeType(std::vector<std::unique_ptr<class DataItem>> const&);
+    void writeType(std::vector<std::unique_ptr<class DataItem>> const& dataItems) {
+        SymCall("?write@?$serialize@V?$vector@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@V?$"
+                "allocator@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@@2@@std@@@@SAXAEBV?$"
+                "vector@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@V?$allocator@V?$unique_ptr@"
+                "VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@@2@@std@@AEAVBinaryStream@@@Z",
+                void, std::vector<std::unique_ptr<class DataItem>> const&, class BinaryStream&)(dataItems, *this);
+    }
+
     template <>
     MCAPI void writeType(class NetworkItemStackDescriptor const&);
     template <>

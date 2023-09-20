@@ -85,12 +85,12 @@ public:
     MCVAPI ~StringTag();
 #endif
     /**
-     * @symbol ??0StringTag\@\@QEAA\@XZ
-     */
-    MCAPI StringTag();
-    /**
      * @symbol ??0StringTag\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI StringTag(std::string);
+    /**
+     * @symbol ??0StringTag\@\@QEAA\@XZ
+     */
+    MCAPI StringTag();
 
 };

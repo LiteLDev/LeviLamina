@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "AppPlatformListener.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class RandomThreadCheckManager.
  *
  */
-class RandomThreadCheckManager {
+class RandomThreadCheckManager : public AppPlatformListener {
 
 #define AFTER_EXTRA
 // Add Member There

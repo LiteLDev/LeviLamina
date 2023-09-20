@@ -48,10 +48,6 @@ public:
 
 public:
     /**
-     * @symbol ??0MerchantRecipe\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI MerchantRecipe(class MerchantRecipe const &);
-    /**
      * @symbol ??0MerchantRecipe\@\@QEAA\@AEBVItemInstance\@\@00\@Z
      */
     MCAPI MerchantRecipe(class ItemInstance const &, class ItemInstance const &, class ItemInstance const &);
@@ -60,9 +56,17 @@ public:
      */
     MCAPI MerchantRecipe(class ItemInstance const &, class ItemInstance const &);
     /**
-     * @symbol ?calculateDemandPrices\@MerchantRecipe\@\@QEAAXHHH_N\@Z
+     * @symbol ??0MerchantRecipe\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI void calculateDemandPrices(int, int, int, bool);
+    MCAPI MerchantRecipe(class MerchantRecipe const &);
+    /**
+     * @symbol ?calculateDemandPrices\@MerchantRecipe\@\@QEAAXHHHH_NVBaseGameVersion\@\@\@Z
+     */
+    MCAPI void calculateDemandPrices(int, int, int, int, bool, class BaseGameVersion);
+    /**
+     * @symbol ?calculateDemandPricesDefaults\@MerchantRecipe\@\@QEAAXXZ
+     */
+    MCAPI void calculateDemandPricesDefaults();
     /**
      * @symbol ?createTag\@MerchantRecipe\@\@QEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@_N\@Z
      */

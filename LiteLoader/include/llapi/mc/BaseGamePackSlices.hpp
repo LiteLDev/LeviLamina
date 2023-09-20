@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -33,13 +34,13 @@ public:
      */
     MCAPI BaseGamePackSlices();
     /**
-     * @symbol ?addFromVersions\@BaseGamePackSlices\@\@QEAAXAEBV?$vector\@VBaseGameVersion\@\@V?$allocator\@VBaseGameVersion\@\@\@std\@\@\@std\@\@AEBVIResourcePackRepository\@\@AEBVUUID\@mce\@\@\@Z
+     * @symbol ?addFromVersions\@BaseGamePackSlices\@\@QEAAXAEBV?$vector\@VBaseGameVersion\@\@V?$allocator\@VBaseGameVersion\@\@\@std\@\@\@std\@\@AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVIResourcePackRepository\@\@\@Bedrock\@\@\@gsl\@\@AEBVUUID\@mce\@\@\@Z
      */
-    MCAPI void addFromVersions(std::vector<class BaseGameVersion> const &, class IResourcePackRepository const &, class mce::UUID const &);
+    MCAPI void addFromVersions(std::vector<class BaseGameVersion> const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IResourcePackRepository const>> const &, class mce::UUID const &);
     /**
-     * @symbol ?applyPackSlices\@BaseGamePackSlices\@\@QEBAXAEBVBaseGameVersion\@\@AEBVIResourcePackRepository\@\@AEAVResourcePackStack\@\@\@Z
+     * @symbol ?applyPackSlices\@BaseGamePackSlices\@\@QEBAXAEBVBaseGameVersion\@\@AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVIResourcePackRepository\@\@\@Bedrock\@\@\@gsl\@\@AEAVResourcePackStack\@\@\@Z
      */
-    MCAPI void applyPackSlices(class BaseGameVersion const &, class IResourcePackRepository const &, class ResourcePackStack &) const;
+    MCAPI void applyPackSlices(class BaseGameVersion const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IResourcePackRepository const>> const &, class ResourcePackStack &) const;
     /**
      * @symbol ??1BaseGamePackSlices\@\@QEAA\@XZ
      */

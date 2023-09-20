@@ -68,9 +68,9 @@ public:
     virtual void __unk_vfn_53();
     /**
      * @vftbl 57
-     * @symbol ?isLiquidClipItem\@BottleItem\@\@UEBA_NH\@Z
+     * @symbol ?isLiquidClipItem\@BottleItem\@\@UEBA_NXZ
      */
-    virtual bool isLiquidClipItem(int) const;
+    virtual bool isLiquidClipItem() const;
     /**
      * @vftbl 66
      * @symbol __unk_vfn_66

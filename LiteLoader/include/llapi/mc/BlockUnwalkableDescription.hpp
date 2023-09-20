@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "JsonUtil.hpp"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -42,39 +43,29 @@ public:
     virtual std::string const & getName() const;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
      * @symbol ?initializeComponent\@BlockUnwalkableDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
-     * @vftbl 5
+     * @vftbl 6
      * @symbol ?buildSchema\@BlockUnwalkableDescription\@\@UEBAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UBlockComponentGroupDescription\@\@\@JsonUtil\@\@\@std\@\@AEBVBlockComponentFactory\@\@\@Z
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?isNetworkComponent\@BlockUnwalkableDescription\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl 7
-     * @symbol ?buildNetworkTag\@BlockUnwalkableDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
-     */
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /**
      * @vftbl 8
-     * @symbol ?initializeFromNetwork\@BlockUnwalkableDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
+     * @symbol ?buildNetworkTag\@BlockUnwalkableDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    virtual void initializeFromNetwork(class CompoundTag const &);
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx &) const;
+    /**
+     * @vftbl 9
+     * @symbol ?initializeFromNetwork\@BlockUnwalkableDescription\@\@UEAAXAEBVCompoundTag\@\@AEAUReflectionCtx\@cereal\@\@\@Z
+     */
+    virtual void initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx &);
     /**
      * @symbol ?NameID\@BlockUnwalkableDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */

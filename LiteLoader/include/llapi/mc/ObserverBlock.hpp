@@ -136,70 +136,75 @@ public:
      */
     virtual bool isSignalSource() const;
     /**
-     * @vftbl 56
-     * @symbol __unk_vfn_56
+     * @vftbl 55
+     * @symbol __unk_vfn_55
      */
-    virtual void __unk_vfn_56();
+    virtual void __unk_vfn_55();
     /**
-     * @vftbl 57
+     * @vftbl 56
      * @symbol ?isValidAuxValue\@ObserverBlock\@\@UEBA_NH\@Z
      */
     virtual bool isValidAuxValue(int) const;
+    /**
+     * @vftbl 61
+     * @symbol __unk_vfn_61
+     */
+    virtual void __unk_vfn_61();
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
      */
     virtual void __unk_vfn_62();
     /**
-     * @vftbl 63
-     * @symbol __unk_vfn_63
-     */
-    virtual void __unk_vfn_63();
-    /**
-     * @vftbl 66
+     * @vftbl 65
      * @symbol ?shouldConnectToRedstone\@ObserverBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
-     * @vftbl 75
+     * @vftbl 74
      * @symbol ?onRedstoneUpdate\@ObserverBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
-     * @vftbl 77
-     * @symbol __unk_vfn_77
+     * @vftbl 76
+     * @symbol __unk_vfn_76
      */
-    virtual void __unk_vfn_77();
+    virtual void __unk_vfn_76();
     /**
-     * @vftbl 78
+     * @vftbl 77
      * @symbol ?movedByPiston\@ObserverBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void movedByPiston(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 81
+     * @vftbl 80
      * @symbol ?setupRedstoneComponent\@ObserverBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 84
-     * @symbol __unk_vfn_84
+     * @vftbl 83
+     * @symbol __unk_vfn_83
      */
-    virtual void __unk_vfn_84();
+    virtual void __unk_vfn_83();
     /**
-     * @vftbl 101
+     * @vftbl 100
      * @symbol ?neighborChanged\@ObserverBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @vftbl 104
+     * @vftbl 103
      * @symbol ?spawnResources\@ObserverBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAVRandomize\@\@AEBUResourceDropsContext\@\@\@Z
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &) const;
     /**
-     * @vftbl 107
-     * @symbol __unk_vfn_107
+     * @vftbl 106
+     * @symbol __unk_vfn_106
      */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_106();
+    /**
+     * @vftbl 122
+     * @symbol __unk_vfn_122
+     */
+    virtual void __unk_vfn_122();
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -211,37 +216,32 @@ public:
      */
     virtual void __unk_vfn_124();
     /**
-     * @vftbl 125
-     * @symbol __unk_vfn_125
+     * @vftbl 127
+     * @symbol __unk_vfn_127
      */
-    virtual void __unk_vfn_125();
+    virtual void __unk_vfn_127();
     /**
-     * @vftbl 128
-     * @symbol __unk_vfn_128
+     * @vftbl 130
+     * @symbol __unk_vfn_130
      */
-    virtual void __unk_vfn_128();
+    virtual void __unk_vfn_130();
     /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
-     */
-    virtual void __unk_vfn_131();
-    /**
-     * @vftbl 143
+     * @vftbl 142
      * @symbol ?getVariant\@ObserverBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @vftbl 145
+     * @vftbl 144
      * @symbol ?getRenderBlock\@ObserverBlock\@\@UEBAAEBVBlock\@\@XZ
      */
     virtual class Block const & getRenderBlock() const;
     /**
-     * @vftbl 146
+     * @vftbl 145
      * @symbol ?getMappedFace\@ObserverBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
-     * @vftbl 147
+     * @vftbl 146
      * @symbol ?getFaceFlip\@ObserverBlock\@\@UEBA?AW4Flip\@\@EAEBVBlock\@\@\@Z
      */
     virtual enum class Flip getFaceFlip(unsigned char, class Block const &) const;

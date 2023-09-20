@@ -17,7 +17,7 @@
  * @brief MC class LocalConnector.
  *
  */
-class LocalConnector {
+class LocalConnector : public Connector {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -118,21 +118,9 @@ public:
     MCVAPI void startNatPunchingClient(std::string const &, unsigned short);
 #endif
     /**
-     * @symbol ??0LocalConnector\@\@QEAA\@AEAUConnectionCallbacks\@Connector\@\@AEBVNetworkIdentifier\@\@\@Z
-     */
-    MCAPI LocalConnector(struct Connector::ConnectionCallbacks &, class NetworkIdentifier const &);
-    /**
      * @symbol ?disconnect\@LocalConnector\@\@QEAAXXZ
      */
     MCAPI void disconnect();
-    /**
-     * @symbol ?host\@LocalConnector\@\@QEAAXAEBVNetworkIdentifier\@\@\@Z
-     */
-    MCAPI void host(class NetworkIdentifier const &);
-    /**
-     * @symbol ?runEvents\@LocalConnector\@\@QEAAXXZ
-     */
-    MCAPI void runEvents();
 
 //private:
 

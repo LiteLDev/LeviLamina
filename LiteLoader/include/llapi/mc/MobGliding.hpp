@@ -17,10 +17,6 @@ namespace MobGliding {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?getArmorFlyEnabled\@MobGliding\@\@YA_NAEBVEntityContext\@\@\@Z
-     */
-    MCAPI bool getArmorFlyEnabled(class EntityContext const &);
-    /**
      * @symbol ?getFallFlyTicks\@MobGliding\@\@YAHAEBVEntityContext\@\@\@Z
      */
     MCAPI int getFallFlyTicks(class EntityContext const &);

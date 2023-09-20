@@ -123,10 +123,6 @@ public:
      */
     MCAPI void clearDirtyTickCounters();
     /**
-     * @symbol ?clearPreservedEntities\@LevelChunk\@\@QEAAXXZ
-     */
-    MCAPI void clearPreservedEntities();
-    /**
      * @symbol ?clientSubChunkRequestGenerateLightingForSubChunk\@LevelChunk\@\@QEAAXAEAVChunkViewSource\@\@F\@Z
      */
     MCAPI void clientSubChunkRequestGenerateLightingForSubChunk(class ChunkViewSource &, short);
@@ -351,13 +347,13 @@ public:
      */
     MCAPI class ChunkPos const & getPosition() const;
     /**
-     * @symbol ?getPreWorldGenHeightmap\@LevelChunk\@\@QEBA?AVChunkLocalHeight\@\@AEBVChunkBlockPos\@\@\@Z
-     */
-    MCAPI class ChunkLocalHeight getPreWorldGenHeightmap(class ChunkBlockPos const &) const;
-    /**
      * @symbol ?getPreWorldGenHeightmap\@LevelChunk\@\@QEBA?AVHeightmapWrapper\@\@XZ
      */
     MCAPI class HeightmapWrapper getPreWorldGenHeightmap() const;
+    /**
+     * @symbol ?getPreWorldGenHeightmap\@LevelChunk\@\@QEBA?AVChunkLocalHeight\@\@AEBVChunkBlockPos\@\@\@Z
+     */
+    MCAPI class ChunkLocalHeight getPreWorldGenHeightmap(class ChunkBlockPos const &) const;
     /**
      * @symbol ?getPreservedBlockEntities\@LevelChunk\@\@QEBAAEBV?$vector\@V?$shared_ptr\@VBlockActor\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VBlockActor\@\@\@std\@\@\@2\@\@std\@\@XZ
      */
@@ -379,13 +375,13 @@ public:
      */
     MCAPI struct std::atomic<enum class ChunkState> const & getState() const;
     /**
-     * @symbol ?getSubChunk\@LevelChunk\@\@QEBAPEBUSubChunk\@\@F\@Z
-     */
-    MCAPI struct SubChunk const * getSubChunk(short) const;
-    /**
      * @symbol ?getSubChunk\@LevelChunk\@\@QEAAPEAUSubChunk\@\@F\@Z
      */
     MCAPI struct SubChunk * getSubChunk(short);
+    /**
+     * @symbol ?getSubChunk\@LevelChunk\@\@QEBAPEBUSubChunk\@\@F\@Z
+     */
+    MCAPI struct SubChunk const * getSubChunk(short) const;
     /**
      * @symbol ?getSurfaceBiome\@LevelChunk\@\@QEBAAEBVBiome\@\@VChunkBlockPos\@\@\@Z
      */
@@ -723,10 +719,6 @@ public:
      */
     MCAPI static bool borderBlocksAreEnabled();
     /**
-     * @symbol ?createNew\@LevelChunk\@\@SA?AV?$unique_ptr\@VLevelChunk\@\@ULevelChunkPhase1Deleter\@\@\@std\@\@AEAVDimension\@\@VChunkPos\@\@_NW4SubChunkInitMode\@\@\@Z
-     */
-    MCAPI static class std::unique_ptr<class LevelChunk, struct LevelChunkPhase1Deleter> createNew(class Dimension &, class ChunkPos, bool, enum class SubChunkInitMode);
-    /**
      * @symbol ?deserialize2DData\@LevelChunk\@\@SA?AV?$tuple\@V?$array\@VChunkLocalHeight\@\@$0BAA\@\@std\@\@V?$array\@UBiomeChunkData\@\@$0BAA\@\@2\@\@std\@\@AEAVIDataInput\@\@\@Z
      */
     MCAPI static class std::tuple<class std::array<class ChunkLocalHeight, 256>, class std::array<struct BiomeChunkData, 256>> deserialize2DData(class IDataInput &);
@@ -756,6 +748,10 @@ public:
     MCAPI static void serializeEntities(std::vector<class WeakEntityRef> const &, std::string const &, std::string &, bool, class std::function<void (std::string const &)>, class std::function<void (std::string const &)>, class std::function<void (std::string const &)>);
 
 //protected:
+    /**
+     * @symbol ?_createBlockEntity\@LevelChunk\@\@IEAA?AV?$shared_ptr\@VBlockActor\@\@\@std\@\@AEBVBlockPos\@\@PEAVBlockSource\@\@AEBVBlock\@\@2\@Z
+     */
+    MCAPI class std::shared_ptr<class BlockActor> _createBlockEntity(class BlockPos const &, class BlockSource *, class Block const &, class Block const &);
     /**
      * @symbol ?_deserializeBlockEntities\@LevelChunk\@\@IEAAXAEAVIDataInput\@\@AEAV?$unordered_map\@VChunkBlockPos\@\@V?$shared_ptr\@VBlockActor\@\@\@std\@\@U?$hash\@VChunkBlockPos\@\@\@3\@U?$equal_to\@VChunkBlockPos\@\@\@3\@V?$allocator\@U?$pair\@$$CBVChunkBlockPos\@\@V?$shared_ptr\@VBlockActor\@\@\@std\@\@\@std\@\@\@3\@\@std\@\@\@Z
      */
@@ -838,6 +834,10 @@ public:
      * @symbol ?_setBiome\@LevelChunk\@\@AEAAXAEBVBiome\@\@AEBVChunkBlockPos\@\@_N\@Z
      */
     MCAPI void _setBiome(class Biome const &, class ChunkBlockPos const &, bool);
+    /**
+     * @symbol ?_tickSnowAndIce\@LevelChunk\@\@AEAAXAEAVBlockSource\@\@AEAVRandom\@\@HHAEAVWeather\@\@\@Z
+     */
+    MCAPI void _tickSnowAndIce(class BlockSource &, class Random &, int, int, class Weather &);
 
 protected:
     /**

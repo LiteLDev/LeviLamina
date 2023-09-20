@@ -23,13 +23,13 @@ class ActorDefinitionDescriptor {
 #undef AFTER_EXTRA
 public:
     /**
-     * @symbol ??0ActorDefinitionDescriptor\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI ActorDefinitionDescriptor(class ActorDefinitionDescriptor const &);
-    /**
      * @symbol ??0ActorDefinitionDescriptor\@\@QEAA\@XZ
      */
     MCAPI ActorDefinitionDescriptor();
+    /**
+     * @symbol ??0ActorDefinitionDescriptor\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI ActorDefinitionDescriptor(class ActorDefinitionDescriptor const &);
     /**
      * @symbol ??0ActorDefinitionDescriptor\@\@QEAA\@$$QEAV0\@\@Z
      */
@@ -63,13 +63,13 @@ public:
      */
     MCAPI bool hasNavigationSubComponent();
     /**
-     * @symbol ??4ActorDefinitionDescriptor\@\@QEAAAEAV0\@AEBV0\@\@Z
-     */
-    MCAPI class ActorDefinitionDescriptor & operator=(class ActorDefinitionDescriptor const &);
-    /**
      * @symbol ??4ActorDefinitionDescriptor\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class ActorDefinitionDescriptor & operator=(class ActorDefinitionDescriptor &&);
+    /**
+     * @symbol ??4ActorDefinitionDescriptor\@\@QEAAAEAV0\@AEBV0\@\@Z
+     */
+    MCAPI class ActorDefinitionDescriptor & operator=(class ActorDefinitionDescriptor const &);
     /**
      * @symbol ?overlaps\@ActorDefinitionDescriptor\@\@QEBA_NAEBV1\@\@Z
      */
@@ -98,6 +98,10 @@ public:
      * @symbol ?forceExecuteTriggerChain\@ActorDefinitionDescriptor\@\@SAXAEAVActor\@\@AEBVActorDefinitionTrigger\@\@AEAV?$vector\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$CBV12\@\@std\@\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$CBV12\@\@std\@\@\@2\@\@std\@\@AEBVVariantParameterList\@\@\@Z
      */
     MCAPI static void forceExecuteTriggerChain(class Actor &, class ActorDefinitionTrigger const &, std::vector<struct std::pair<std::string const, std::string const>> &, class VariantParameterList const &);
+    /**
+     * @symbol ?hasEvent\@ActorDefinitionDescriptor\@\@SA_NAEBVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static bool hasEvent(class Actor const &, std::string const &);
 
 //private:
     /**

@@ -64,9 +64,9 @@ public:
      */
     MCAPI void playSoundForPlayerInDimension(class AutomaticID<class Dimension, int>, enum class LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool, class Player *);
     /**
-     * @symbol ?playSynchronizedSound\@LevelSoundManager\@\@QEAAXAEAVIDimension\@\@W4LevelSoundEvent\@\@AEBVVec3\@\@PEAVPlayer\@\@HAEBUActorDefinitionIdentifier\@\@_N5\@Z
+     * @symbol ?playSynchronizedSound_DEPRECATED\@LevelSoundManager\@\@QEAAXAEAVIDimension\@\@W4LevelSoundEvent\@\@AEBVVec3\@\@PEAVPlayer\@\@HAEBUActorDefinitionIdentifier\@\@_N5\@Z
      */
-    MCAPI void playSynchronizedSound(class IDimension &, enum class LevelSoundEvent, class Vec3 const &, class Player *, int, struct ActorDefinitionIdentifier const &, bool, bool);
+    MCAPI void playSynchronizedSound_DEPRECATED(class IDimension &, enum class LevelSoundEvent, class Vec3 const &, class Player *, int, struct ActorDefinitionIdentifier const &, bool, bool);
     /**
      * @symbol ?registerOnLevelSoundEventCallback\@LevelSoundManager\@\@QEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXW4LevelSoundEvent\@\@AEBVVec3\@\@HAEBUActorDefinitionIdentifier\@\@_N3\@Z\@std\@\@\@Z
      */

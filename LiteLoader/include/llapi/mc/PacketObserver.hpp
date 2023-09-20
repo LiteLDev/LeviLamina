@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "IPacketObserver.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class PacketObserver.
  *
  */
-class PacketObserver {
+class PacketObserver : public IPacketObserver {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -46,28 +47,20 @@ public:
     virtual void packetReceivedFrom(class NetworkIdentifier const &, class Packet const &, unsigned int);
     /**
      * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @symbol ?dataSentTo\@PacketObserver\@\@UEAAXAEBVNetworkIdentifier\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    virtual void __unk_vfn_3();
+    virtual void dataSentTo(class NetworkIdentifier const &, class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
      * @vftbl 4
-     * @symbol __unk_vfn_4
+     * @symbol ?dataReceivedFrom\@PacketObserver\@\@UEAAXAEBVNetworkIdentifier\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void __unk_vfn_4();
+    virtual void dataReceivedFrom(class NetworkIdentifier const &, std::string const &);
     /**
      * @vftbl 5
      * @symbol ?reset\@PacketObserver\@\@UEAAXXZ
      */
     virtual void reset();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKETOBSERVER
-    /**
-     * @symbol ?dataReceivedFrom\@PacketObserver\@\@UEAAXAEBVNetworkIdentifier\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCVAPI void dataReceivedFrom(class NetworkIdentifier const &, std::string const &);
-    /**
-     * @symbol ?dataSentTo\@PacketObserver\@\@UEAAXAEBVNetworkIdentifier\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
-     */
-    MCVAPI void dataSentTo(class NetworkIdentifier const &, class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
      * @symbol __unk_destructor_-1
      */

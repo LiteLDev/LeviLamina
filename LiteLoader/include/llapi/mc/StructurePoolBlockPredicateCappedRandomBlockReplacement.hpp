@@ -5,13 +5,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "IStructurePoolBlockPredicate.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
 
-class StructurePoolBlockPredicateCappedRandomBlockReplacement {
+class StructurePoolBlockPredicateCappedRandomBlockReplacement : public IStructurePoolBlockPredicate {
 
 #define AFTER_EXTRA
 
@@ -44,12 +45,6 @@ public:
      * @symbol ?finalize\@StructurePoolBlockPredicateCappedRandomBlockReplacement\@\@UEAA_NAEAVBlockSource\@\@AEAVIRandom\@\@\@Z
      */
     virtual bool finalize(class BlockSource &, class IRandom &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLBLOCKPREDICATECAPPEDRANDOMBLOCKREPLACEMENT
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~StructurePoolBlockPredicateCappedRandomBlockReplacement();
-#endif
     /**
      * @symbol ??0StructurePoolBlockPredicateCappedRandomBlockReplacement\@\@QEAA\@AEBV?$map\@VHashedString\@\@V1\@U?$less\@VHashedString\@\@\@std\@\@V?$allocator\@U?$pair\@$$CBVHashedString\@\@V1\@\@std\@\@\@3\@\@std\@\@_K\@Z
      */

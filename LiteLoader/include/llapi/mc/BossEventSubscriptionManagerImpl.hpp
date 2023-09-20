@@ -5,13 +5,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "BossEventSubscriptionManager.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
 
-class BossEventSubscriptionManagerImpl {
+class BossEventSubscriptionManagerImpl : public BossEventSubscriptionManager {
 
 #define AFTER_EXTRA
 
@@ -29,13 +30,13 @@ public:
      */
     MCVAPI bool areBossEventSubscribersReady() const;
     /**
-     * @symbol ?broadcastBossEvent\@BossEventSubscriptionManagerImpl\@\@UEAAXW4BossEventUpdateType\@\@\@Z
-     */
-    MCVAPI void broadcastBossEvent(enum class BossEventUpdateType);
-    /**
      * @symbol ?broadcastBossEvent\@BossEventSubscriptionManagerImpl\@\@UEAAXW4BossEventUpdateType\@\@AEBUActorUniqueID\@\@AEBVBossEventPacket\@\@\@Z
      */
     MCVAPI void broadcastBossEvent(enum class BossEventUpdateType, struct ActorUniqueID const &, class BossEventPacket const &);
+    /**
+     * @symbol ?broadcastBossEvent\@BossEventSubscriptionManagerImpl\@\@UEAAXW4BossEventUpdateType\@\@\@Z
+     */
+    MCVAPI void broadcastBossEvent(enum class BossEventUpdateType);
     /**
      * @symbol ?subscribeToBossEvent\@BossEventSubscriptionManagerImpl\@\@UEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXW4BossEventUpdateType\@\@\@Z\@std\@\@\@Z
      */

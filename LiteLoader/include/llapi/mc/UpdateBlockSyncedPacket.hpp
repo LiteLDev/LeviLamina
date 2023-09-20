@@ -6,7 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
-#include "Packet.hpp"
+#include "UpdateBlockPacket.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,11 +17,11 @@
  * @brief MC class UpdateBlockSyncedPacket.
  *
  */
-class UpdateBlockSyncedPacket : public Packet {
+class UpdateBlockSyncedPacket : public UpdateBlockPacket {
 
 #define AFTER_EXTRA
 // Add Member There
-
+    char filler[16];
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATEBLOCKSYNCEDPACKET
 public:

@@ -30,6 +30,10 @@ public:
 
 public:
     /**
+     * @symbol ?_createCheckCheatingSystem\@ServerPlayerMovementSystem\@\@SA?AUTickingSystemWithInfo\@\@_N\@Z
+     */
+    MCAPI static struct TickingSystemWithInfo _createCheckCheatingSystem(bool);
+    /**
      * @symbol ?_updateFallDistance\@ServerPlayerMovementSystem\@\@SAXAEBUServerPlayerCurrentMovementComponent\@\@AEBUStateVectorComponent\@\@AEAUFallDistanceComponent\@\@\@Z
      */
     MCAPI static void _updateFallDistance(struct ServerPlayerCurrentMovementComponent const &, struct StateVectorComponent const &, struct FallDistanceComponent &);
@@ -38,9 +42,9 @@ public:
      */
     MCAPI static class std::array<struct TickingSystemWithInfo, 2> createPostInputSystems();
     /**
-     * @symbol ?createPostTravelSystems\@ServerPlayerMovementSystem\@\@SA?AV?$array\@UTickingSystemWithInfo\@\@$03\@std\@\@XZ
+     * @symbol ?createPostTravelSystems\@ServerPlayerMovementSystem\@\@SA?AV?$array\@UTickingSystemWithInfo\@\@$03\@std\@\@_N\@Z
      */
-    MCAPI static class std::array<struct TickingSystemWithInfo, 4> createPostTravelSystems();
+    MCAPI static class std::array<struct TickingSystemWithInfo, 4> createPostTravelSystems(bool);
     /**
      * @symbol ?createPreInputSystems\@ServerPlayerMovementSystem\@\@SA?AV?$array\@UTickingSystemWithInfo\@\@$02\@std\@\@XZ
      */

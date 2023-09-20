@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
+#include "ActorSpawnRuleBase.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class ActorSpawnRuleGroup.
  *
  */
-class ActorSpawnRuleGroup {
+class ActorSpawnRuleGroup : public ActorSpawnRuleBase {
 
 #define AFTER_EXTRA
 // Add Member There

@@ -31,13 +31,13 @@ public:
 
 public:
     /**
-     * @symbol ??0SkinData\@\@QEAA\@AEBVActor\@\@\@Z
-     */
-    MCAPI SkinData(class Actor const &);
-    /**
      * @symbol ??0SkinData\@\@QEAA\@AEBVValue\@Json\@\@\@Z
      */
     MCAPI SkinData(class Json::Value const &);
+    /**
+     * @symbol ??0SkinData\@\@QEAA\@AEBVActor\@\@\@Z
+     */
+    MCAPI SkinData(class Actor const &);
     /**
      * @symbol ?applyToActor\@SkinData\@\@QEBAXAEAVActor\@\@\@Z
      */

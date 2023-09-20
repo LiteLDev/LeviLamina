@@ -24,13 +24,13 @@ namespace ScriptResultUtil {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?GametestResultToScriptingValueResult\@ScriptResultUtil\@\@YA?AV?$Result\@VVec3\@\@\@Scripting\@\@AEBV?$variant\@UGameTestError\@gametest\@\@VBlockPos\@\@\@std\@\@\@Z
+     * @symbol ?GametestResultToScriptingValueResult\@ScriptResultUtil\@\@YA?AV?$Result\@VVec3\@\@UGameTestError\@gametest\@\@\@Scripting\@\@AEBV?$variant\@UGameTestError\@gametest\@\@VVec3\@\@\@std\@\@\@Z
      */
-    MCAPI class Scripting::Result<class Vec3> GametestResultToScriptingValueResult(class std::variant<struct gametest::GameTestError, class BlockPos> const &);
+    MCAPI class Scripting::Result<class Vec3, struct gametest::GameTestError> GametestResultToScriptingValueResult(class std::variant<struct gametest::GameTestError, class Vec3> const &);
     /**
-     * @symbol ?GametestResultToScriptingValueResult\@ScriptResultUtil\@\@YA?AV?$Result\@VVec3\@\@\@Scripting\@\@AEBV?$variant\@UGameTestError\@gametest\@\@VVec3\@\@\@std\@\@\@Z
+     * @symbol ?GametestResultToScriptingValueResult\@ScriptResultUtil\@\@YA?AV?$Result\@VVec3\@\@UGameTestError\@gametest\@\@\@Scripting\@\@AEBV?$variant\@UGameTestError\@gametest\@\@VBlockPos\@\@\@std\@\@\@Z
      */
-    MCAPI class Scripting::Result<class Vec3> GametestResultToScriptingValueResult(class std::variant<struct gametest::GameTestError, class Vec3> const &);
+    MCAPI class Scripting::Result<class Vec3, struct gametest::GameTestError> GametestResultToScriptingValueResult(class std::variant<struct gametest::GameTestError, class BlockPos> const &);
     /**
      * @symbol ?ScriptingResultToGameTestResult\@ScriptResultUtil\@\@YA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@AEBVResultAny\@Scripting\@\@\@Z
      */

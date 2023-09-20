@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -23,8 +24,6 @@ class ShooterItemComponent {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHOOTERITEMCOMPONENT
 public:
-    class ShooterItemComponent& operator=(class ShooterItemComponent const &) = delete;
-    ShooterItemComponent(class ShooterItemComponent const &) = delete;
     ShooterItemComponent() = delete;
 #endif
 
@@ -41,40 +40,64 @@ public:
     virtual bool checkComponentDataForContentErrors() const;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?writeSettings\@ItemComponent\@\@UEAAXXZ
      */
-    virtual void __unk_vfn_2();
+    virtual void writeSettings();
     /**
      * @vftbl 3
-     * @symbol ?isNetworkComponent\@?$NetworkedItemComponent\@VShooterItemComponent\@\@\@\@UEBA_NXZ
+     * @symbol ?isNetworkComponent\@InteractButtonItemComponent\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl 4
-     * @symbol ?buildNetworkTag\@?$NetworkedItemComponent\@VShooterItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?buildNetworkTag\@ItemComponent\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx &) const;
     /**
      * @vftbl 5
-     * @symbol ?initializeFromNetwork\@?$NetworkedItemComponent\@VShooterItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
+     * @symbol ?initializeFromNetwork\@ItemComponent\@\@UEAA_NAEBVCompoundTag\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    virtual bool initializeFromNetwork(class CompoundTag const &);
+    virtual bool initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx &);
+    /**
+     * @vftbl 6
+     * @symbol ?handleVersionBasedInitialization\@ItemComponent\@\@UEAAXAEBVSemVersion\@\@\@Z
+     */
+    virtual void handleVersionBasedInitialization(class SemVersion const &);
+    /**
+     * @vftbl 7
+     * @symbol ?_canUseOn\@ItemComponent\@\@MEBA_NAEBVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@E\@Z
+     */
+    virtual bool _canUseOn(class ItemStack const &, class Actor &, class BlockPos const &, unsigned char) const;
+    /**
+     * @vftbl 8
+     * @symbol ?_useOn\@ItemComponent\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
+     */
+    virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
+    /**
+     * @vftbl 9
+     * @symbol ?_initializeComponent\@ItemComponent\@\@MEBAXXZ
+     */
+    virtual void _initializeComponent() const;
+    /**
+     * @symbol ??0ShooterItemComponent\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI ShooterItemComponent(class ShooterItemComponent const &);
+    /**
+     * @symbol ??4ShooterItemComponent\@\@QEAAAEAV0\@AEBV0\@\@Z
+     */
+    MCAPI class ShooterItemComponent & operator=(class ShooterItemComponent const &);
+    /**
+     * @symbol ??4ShooterItemComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     */
+    MCAPI class ShooterItemComponent & operator=(class ShooterItemComponent &&);
     /**
      * @symbol ?releaseUsing\@ShooterItemComponent\@\@QEBA_NAEAVItemStack\@\@PEAVPlayer\@\@H\@Z
      */
     MCAPI bool releaseUsing(class ItemStack &, class Player *, int) const;
     /**
-     * @symbol ?use\@ShooterItemComponent\@\@QEBA_NAEAVItemStack\@\@AEAVPlayer\@\@\@Z
+     * @symbol ?bindType\@ShooterItemComponent\@\@SAXAEAUReflectionCtx\@cereal\@\@AEBV?$vector\@W4AllExperiments\@\@V?$allocator\@W4AllExperiments\@\@\@std\@\@\@std\@\@V?$optional\@VSemVersion\@\@\@5\@\@Z
      */
-    MCAPI bool use(class ItemStack &, class Player &) const;
-    /**
-     * @symbol ?useTimeDepleted\@ShooterItemComponent\@\@QEBAXAEAVItemStack\@\@AEAVPlayer\@\@\@Z
-     */
-    MCAPI void useTimeDepleted(class ItemStack &, class Player &) const;
-    /**
-     * @symbol ?bindType\@ShooterItemComponent\@\@SAXXZ
-     */
-    MCAPI static void bindType();
+    MCAPI static void bindType(struct cereal::ReflectionCtx &, std::vector<enum class AllExperiments> const &, class std::optional<class SemVersion>);
     /**
      * @symbol ?getIdentifier\@ShooterItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
@@ -89,6 +112,10 @@ public:
      * @symbol ?_getAmmunition\@ShooterItemComponent\@\@AEBAHPEBVPlayer\@\@_NAEAVItemStack\@\@AEA_N\@Z
      */
     MCAPI int _getAmmunition(class Player const *, bool, class ItemStack &, bool &) const;
+    /**
+     * @symbol ?_getMaxUseDuration\@ShooterItemComponent\@\@AEBAHAEBVItemStack\@\@\@Z
+     */
+    MCAPI int _getMaxUseDuration(class ItemStack const &) const;
     /**
      * @symbol ?_shootProjectiles\@ShooterItemComponent\@\@AEBAXAEAVItemStack\@\@PEAVPlayer\@\@H\@Z
      */

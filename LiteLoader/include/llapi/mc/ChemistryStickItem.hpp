@@ -6,7 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
-#include "Item.hpp"
+#include "ChemistryItem.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +17,7 @@
  * @brief MC class ChemistryStickItem.
  *
  */
-class ChemistryStickItem : public Item {
+class ChemistryStickItem : public ChemistryItem {
 
 #define AFTER_EXTRA
 // Add Member There

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "IBlockWorldGenAPI.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class BlockVolumeTarget.
  *
  */
-class BlockVolumeTarget {
+class BlockVolumeTarget : public IBlockWorldGenAPI {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -41,9 +42,9 @@ public:
     virtual void __unk_vfn_1();
     /**
      * @vftbl 2
-     * @symbol ?getMinHeight\@BlockVolumeTarget\@\@UEBAFXZ
+     * @symbol __unk_vfn_2
      */
-    virtual short getMinHeight() const;
+    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol ?tryGetLiquidBlock\@BlockVolumeTarget\@\@UEBAPEBVBlock\@\@AEBVBlockPos\@\@\@Z
@@ -185,6 +186,10 @@ public:
      * @symbol ?getBlockNoBoundsCheck\@BlockVolumeTarget\@\@UEBAAEBVBlock\@\@AEBVBlockPos\@\@\@Z
      */
     MCVAPI class Block const & getBlockNoBoundsCheck(class BlockPos const &) const;
+    /**
+     * @symbol ?getMinHeight\@BlockVolumeTarget\@\@UEBAFXZ
+     */
+    MCVAPI short getMinHeight() const;
     /**
      * @symbol ?mayPlace\@BlockVolumeTarget\@\@UEBA_NAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */

@@ -26,6 +26,7 @@ class CommandOutputSender {
 public:
     class CommandOutputSender& operator=(class CommandOutputSender const &) = delete;
     CommandOutputSender(class CommandOutputSender const &) = delete;
+    CommandOutputSender() = delete;
 #endif
 
 public:
@@ -44,10 +45,6 @@ public:
      * @symbol ?registerOutputCallback\@CommandOutputSender\@\@UEAAXAEBV?$function\@$$A6AXAEAVAutomationCmdOutput\@\@\@Z\@std\@\@\@Z
      */
     virtual void registerOutputCallback(class std::function<void (class AutomationCmdOutput &)> const &);
-    /**
-     * @symbol ??0CommandOutputSender\@\@QEAA\@XZ
-     */
-    MCAPI CommandOutputSender();
     /**
      * @symbol ?sendToAdmins\@CommandOutputSender\@\@QEAAXAEBVCommandOrigin\@\@AEBVCommandOutput\@\@W4CommandPermissionLevel\@\@\@Z
      */

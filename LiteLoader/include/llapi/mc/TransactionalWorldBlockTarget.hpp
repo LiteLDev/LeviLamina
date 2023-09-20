@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "IBlockWorldGenAPI.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class TransactionalWorldBlockTarget.
  *
  */
-class TransactionalWorldBlockTarget {
+class TransactionalWorldBlockTarget : public IBlockWorldGenAPI {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -36,14 +37,14 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?shimPlaceForOldFeatures\@TransactionalWorldBlockTarget\@\@UEBA_NAEBVFeature\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @symbol __unk_vfn_1
      */
-    virtual bool shimPlaceForOldFeatures(class Feature const &, class BlockPos const &, class Random &) const;
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?getChunk\@IBlockWorldGenAPI\@\@UEAAPEAVLevelChunk\@\@AEBVChunkPos\@\@\@Z
      */
-    virtual void __unk_vfn_2();
+    virtual class LevelChunk * getChunk(class ChunkPos const &);
     /**
      * @vftbl 3
      * @symbol ?tryGetLiquidBlock\@TransactionalWorldBlockTarget\@\@UEBAPEBVBlock\@\@AEBVBlockPos\@\@\@Z
@@ -165,6 +166,10 @@ public:
      */
     virtual void disableBlockSimple();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRANSACTIONALWORLDBLOCKTARGET
+    /**
+     * @symbol ?shimPlaceForOldFeatures\@TransactionalWorldBlockTarget\@\@UEBA_NAEBVFeature\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     */
+    MCVAPI bool shimPlaceForOldFeatures(class Feature const &, class BlockPos const &, class Random &) const;
     /**
      * @symbol __unk_destructor_-1
      */

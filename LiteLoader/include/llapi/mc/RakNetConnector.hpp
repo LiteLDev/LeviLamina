@@ -8,13 +8,14 @@
 #include "RakPeerHelper.hpp"
 #include "Bedrock.hpp"
 #include "RakNet.hpp"
+#include "RemoteConnector.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
 
-class RakNetConnector {
+class RakNetConnector : public RemoteConnector {
 
 #define AFTER_EXTRA
 

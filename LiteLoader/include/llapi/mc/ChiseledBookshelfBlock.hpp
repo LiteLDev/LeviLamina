@@ -5,7 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "ActorBlock.hpp"
+#include "FaceDirectionalActorBlock.hpp"
 
 #define BEFORE_EXTRA
 
@@ -15,7 +15,7 @@
  * @brief MC class ChiseledBookshelfBlock.
  *
  */
-class ChiseledBookshelfBlock : public ActorBlock {
+class ChiseledBookshelfBlock : public FaceDirectionalActorBlock {
 
 #define AFTER_EXTRA
 
@@ -129,40 +129,45 @@ public:
      */
     virtual void __unk_vfn_51();
     /**
-     * @vftbl 56
-     * @symbol __unk_vfn_56
+     * @vftbl 55
+     * @symbol __unk_vfn_55
      */
-    virtual void __unk_vfn_56();
+    virtual void __unk_vfn_55();
+    /**
+     * @vftbl 61
+     * @symbol __unk_vfn_61
+     */
+    virtual void __unk_vfn_61();
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
      */
     virtual void __unk_vfn_62();
     /**
-     * @vftbl 63
-     * @symbol __unk_vfn_63
+     * @vftbl 76
+     * @symbol __unk_vfn_76
      */
-    virtual void __unk_vfn_63();
+    virtual void __unk_vfn_76();
     /**
-     * @vftbl 77
-     * @symbol __unk_vfn_77
+     * @vftbl 83
+     * @symbol __unk_vfn_83
      */
-    virtual void __unk_vfn_77();
+    virtual void __unk_vfn_83();
     /**
-     * @vftbl 84
-     * @symbol __unk_vfn_84
-     */
-    virtual void __unk_vfn_84();
-    /**
-     * @vftbl 105
+     * @vftbl 104
      * @symbol ?asItemInstance\@ChiseledBookshelfBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
-     * @vftbl 107
-     * @symbol __unk_vfn_107
+     * @vftbl 106
+     * @symbol __unk_vfn_106
      */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_106();
+    /**
+     * @vftbl 122
+     * @symbol __unk_vfn_122
+     */
+    virtual void __unk_vfn_122();
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -175,24 +180,19 @@ public:
     virtual void __unk_vfn_124();
     /**
      * @vftbl 125
-     * @symbol __unk_vfn_125
-     */
-    virtual void __unk_vfn_125();
-    /**
-     * @vftbl 126
      * @symbol ?getComparatorSignal\@ChiseledBookshelfBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
-     * @vftbl 128
-     * @symbol __unk_vfn_128
+     * @vftbl 127
+     * @symbol __unk_vfn_127
      */
-    virtual void __unk_vfn_128();
+    virtual void __unk_vfn_127();
     /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
+     * @vftbl 130
+     * @symbol __unk_vfn_130
      */
-    virtual void __unk_vfn_131();
+    virtual void __unk_vfn_130();
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -276,13 +276,5 @@ public:
      * @symbol ??0ChiseledBookshelfBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI ChiseledBookshelfBlock(std::string const &, int);
-
-//private:
-    /**
-     * @symbol ?_updateBlockEvents\@ChiseledBookshelfBlock\@\@AEBAXAEAVBlockSource\@\@AEAVPlayer\@\@AEBVBlockPos\@\@W4LevelSoundEvent\@\@\@Z
-     */
-    MCAPI void _updateBlockEvents(class BlockSource &, class Player &, class BlockPos const &, enum class LevelSoundEvent) const;
-
-private:
 
 };

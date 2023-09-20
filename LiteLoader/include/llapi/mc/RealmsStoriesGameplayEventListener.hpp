@@ -31,14 +31,14 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?onEvent\@ScriptActorEventListener\@ScriptModuleMinecraft\@\@UEAA?AW4EventResult\@\@AEBUActorRemoveEffectEvent\@\@\@Z
-     */
-    virtual enum class EventResult onEvent(struct ActorRemoveEffectEvent const &);
-    /**
-     * @vftbl 2
      * @symbol ?onEvent\@?$EventListenerDispatcher\@VActorEventListener\@\@\@\@MEAA?AW4EventResult\@\@AEBUActorNotificationEvent\@\@\@Z
      */
     virtual enum class EventResult onEvent(struct ActorNotificationEvent const &);
+    /**
+     * @vftbl 2
+     * @symbol __unk_vfn_2
+     */
+    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
@@ -151,9 +151,9 @@ public:
     virtual void __unk_vfn_24();
     /**
      * @vftbl 25
-     * @symbol __unk_vfn_25
+     * @symbol ?onEvent\@RealmsStoriesGameplayEventListener\@\@UEAA?AW4EventResult\@\@AEBUActorKilledEvent\@\@\@Z
      */
-    virtual void __unk_vfn_25();
+    virtual enum class EventResult onEvent(struct ActorKilledEvent const &);
     /**
      * @vftbl 26
      * @symbol __unk_vfn_26
@@ -214,9 +214,5 @@ public:
      * @symbol ?onEvent\@RealmsStoriesGameplayEventListener\@\@UEAA?AW4EventResult\@\@AEBUActorAcquiredItemEvent\@\@\@Z
      */
     virtual enum class EventResult onEvent(struct ActorAcquiredItemEvent const &);
-    /**
-     * @symbol ??0RealmsStoriesGameplayEventListener\@\@QEAA\@AEAVLevelStorage\@\@\@Z
-     */
-    MCAPI RealmsStoriesGameplayEventListener(class LevelStorage &);
 
 };

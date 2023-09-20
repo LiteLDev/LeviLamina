@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
+#include "IEntityRegistryOwner.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class BiomeRegistry.
  *
  */
-class BiomeRegistry {
+class BiomeRegistry : public IEntityRegistryOwner {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -66,10 +67,6 @@ public:
      */
     MCAPI class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const & getTagRegistry() const;
     /**
-     * @symbol ?initServerFromPacks\@BiomeRegistry\@\@QEAAXAEAVResourcePackManager\@\@AEAVIWorldRegistriesProvider\@\@\@Z
-     */
-    MCAPI void initServerFromPacks(class ResourcePackManager &, class IWorldRegistriesProvider &);
-    /**
      * @symbol ?initializeWithLevelStorageManager\@BiomeRegistry\@\@QEAAXAEAVLevelStorageManager\@\@\@Z
      */
     MCAPI void initializeWithLevelStorageManager(class LevelStorageManager &);
@@ -93,10 +90,6 @@ public:
      * @symbol ?registerBiome\@BiomeRegistry\@\@QEAAAEAVBiome\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class Biome & registerBiome(std::string const &);
-    /**
-     * @symbol ?registrationFinished\@BiomeRegistry\@\@QEAAXXZ
-     */
-    MCAPI void registrationFinished();
 
 //private:
     /**

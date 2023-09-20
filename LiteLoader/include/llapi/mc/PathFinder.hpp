@@ -96,25 +96,17 @@ public:
      */
     MCAPI std::unique_ptr<class Path> _findPath(struct ActorPathingData const &, class PathfinderNode *, class PathfinderNode *, class PathfinderNode const &, float);
     /**
-     * @symbol ?_getAABBForHeightComputation\@PathFinder\@\@AEBAAEAVAABB\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@\@Z
+     * @symbol ?_getAABBForPathfinding\@PathFinder\@\@AEBA?AVAABB\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    MCAPI class AABB & _getAABBForHeightComputation(class BlockPos const &, class Block const &, class AABB &) const;
-    /**
-     * @symbol ?_getAABBForPathfinding\@PathFinder\@\@AEBAAEAVAABB\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@\@Z
-     */
-    MCAPI class AABB & _getAABBForPathfinding(class BlockPos const &, class Block const &, class AABB &) const;
-    /**
-     * @symbol ?_getHeightAboveBlock\@PathFinder\@\@AEBAMAEBVBlockPos\@\@M\@Z
-     */
-    MCAPI float _getHeightAboveBlock(class BlockPos const &, float) const;
-    /**
-     * @symbol ?_getHeightBelowBlock\@PathFinder\@\@AEBAMAEBVBlockPos\@\@M\@Z
-     */
-    MCAPI float _getHeightBelowBlock(class BlockPos const &, float) const;
+    MCAPI class AABB _getAABBForPathfinding(class BlockPos const &, class Block const &) const;
     /**
      * @symbol ?_getHighestReachablePosByJumping\@PathFinder\@\@AEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEBVBlockPos\@\@M0\@Z
      */
     MCAPI class std::optional<class BlockPos> _getHighestReachablePosByJumping(class BlockPos const &, float, class BlockPos const &) const;
+    /**
+     * @symbol ?_getMinAndMaxHeightAroundBlock\@PathFinder\@\@AEBA?AU?$pair\@MM\@std\@\@AEBVBlockPos\@\@M\@Z
+     */
+    MCAPI struct std::pair<float, float> _getMinAndMaxHeightAroundBlock(class BlockPos const &, float) const;
     /**
      * @symbol ?_getNeighbors\@PathFinder\@\@AEAAHAEBUActorPathingData\@\@AEAVPathfinderNode\@\@AEBV3\@2I\@Z
      */

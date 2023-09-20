@@ -41,16 +41,6 @@ public:
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
-    /**
      * @vftbl 11
      * @symbol ?_findTarget\@NearestPrioritizedAttackableTargetGoal\@\@EEAA?AUActorUniqueID\@\@PEAPEBUMobDescriptor\@\@\@Z
      */

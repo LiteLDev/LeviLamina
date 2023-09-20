@@ -41,14 +41,14 @@ public:
     virtual bool isReplayNeeded(enum class AdvanceFrameResult) const;
     /**
      * @vftbl 2
-     * @symbol ?canRewindToFrame\@ClientReplayStatePolicy\@\@UEAA_NAEAUIActorMovementProxy\@\@_K1\@Z
+     * @symbol ?canRewindToFrame\@ClientReplayStatePolicy\@\@UEAA_NAEAVEntityContext\@\@_K1\@Z
      */
-    virtual bool canRewindToFrame(struct IActorMovementProxy &, unsigned __int64, unsigned __int64);
+    virtual bool canRewindToFrame(class EntityContext &, unsigned __int64, unsigned __int64);
     /**
      * @vftbl 3
-     * @symbol ?shouldCorrectMovement\@ClientReplayStatePolicy\@\@UEAA?AUMovementCorrection\@\@AEAUIActorMovementProxy\@\@AEBVPlayerAuthInputPacket\@\@_K\@Z
+     * @symbol ?shouldCorrectMovement\@ClientReplayStatePolicy\@\@UEAA?AUMovementCorrection\@\@AEAVEntityContext\@\@AEBVIConstBlockSource\@\@AEBVPlayerAuthInputPacket\@\@_K\@Z
      */
-    virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy &, class PlayerAuthInputPacket const &, unsigned __int64);
+    virtual struct MovementCorrection shouldCorrectMovement(class EntityContext &, class IConstBlockSource const &, class PlayerAuthInputPacket const &, unsigned __int64);
     /**
      * @vftbl 4
      * @symbol ?flagUnsupportedMovement\@ClientReplayStatePolicy\@\@UEAAX_K\@Z
@@ -56,16 +56,12 @@ public:
     virtual void flagUnsupportedMovement(unsigned __int64);
     /**
      * @vftbl 5
-     * @symbol ?storeCurrentFrameSupported\@ClientReplayStatePolicy\@\@UEAAX_KAEAUIActorMovementProxy\@\@\@Z
+     * @symbol ?storeCurrentFrameSupported\@ClientReplayStatePolicy\@\@UEAAX_KAEAVEntityContext\@\@AEBVIConstBlockSource\@\@\@Z
      */
-    virtual void storeCurrentFrameSupported(unsigned __int64, struct IActorMovementProxy &);
+    virtual void storeCurrentFrameSupported(unsigned __int64, class EntityContext &, class IConstBlockSource const &);
     /**
-     * @symbol ?_checkSupportedFrame\@ClientReplayStatePolicy\@\@QEBA_NAEAUIActorMovementProxy\@\@\@Z
+     * @symbol ?_checkSupportedFrame\@ClientReplayStatePolicy\@\@QEBA_NAEAVEntityContext\@\@AEBVIConstBlockSource\@\@\@Z
      */
-    MCAPI bool _checkSupportedFrame(struct IActorMovementProxy &) const;
-    /**
-     * @symbol ?_isSupportedMovementMode\@ClientReplayStatePolicy\@\@QEBA_NAEBUIMobMovementProxy\@\@\@Z
-     */
-    MCAPI bool _isSupportedMovementMode(struct IMobMovementProxy const &) const;
+    MCAPI bool _checkSupportedFrame(class EntityContext &, class IConstBlockSource const &) const;
 
 };

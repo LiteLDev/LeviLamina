@@ -7,6 +7,7 @@
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
 #include "RakNet.hpp"
+#include "PacketObserver.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +18,7 @@
  * @brief MC class NetworkStatistics.
  *
  */
-class NetworkStatistics {
+class NetworkStatistics : public PacketObserver {
 
 #define AFTER_EXTRA
 // Add Member There

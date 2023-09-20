@@ -65,6 +65,10 @@ public:
      */
     MCAPI bool getBool() const;
     /**
+     * @symbol ?hasOverrideSource\@Option\@\@QEBA_NXZ
+     */
+    MCAPI bool hasOverrideSource() const;
+    /**
      * @symbol ?notifyOptionValueChanged\@Option\@\@QEAAX_N\@Z
      */
     MCAPI void notifyOptionValueChanged(bool);
@@ -76,6 +80,10 @@ public:
      * @symbol ?registerObserver\@Option\@\@QEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXAEBVOption\@\@\@Z\@std\@\@\@Z
      */
     MCAPI class Bedrock::PubSub::Subscription registerObserver(class std::function<void (class Option const &)>);
+    /**
+     * @symbol ?setRequestSaveCallback\@Option\@\@QEAAXV?$function\@$$A6AX_N\@Z\@std\@\@\@Z
+     */
+    MCAPI void setRequestSaveCallback(class std::function<void (bool)>);
     /**
      * @symbol ?read\@Option\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEA_N\@Z
      */

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 
@@ -19,18 +20,21 @@ class CompoundBlockVolume {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDBLOCKVOLUME
 public:
     CompoundBlockVolume(class CompoundBlockVolume const &) = delete;
-    CompoundBlockVolume() = delete;
 #endif
 
 public:
+    /**
+     * @symbol ??0CompoundBlockVolume\@\@QEAA\@XZ
+     */
+    MCAPI CompoundBlockVolume();
     /**
      * @symbol ?capacity\@CompoundBlockVolume\@\@QEBA_KXZ
      */
     MCAPI unsigned __int64 capacity() const;
     /**
-     * @symbol ?clear\@CompoundBlockVolume\@\@QEAAXXZ
+     * @symbol ?clear\@CompoundBlockVolume\@\@QEAAX_N\@Z
      */
-    MCAPI void clear();
+    MCAPI void clear(bool);
     /**
      * @symbol ?getBoundingBox\@CompoundBlockVolume\@\@QEBA?AVBoundingBox\@\@XZ
      */
@@ -44,6 +48,14 @@ public:
      */
     MCAPI class BlockPos getMin() const;
     /**
+     * @symbol ?getOrigin\@CompoundBlockVolume\@\@QEBAAEBVBlockPos\@\@XZ
+     */
+    MCAPI class BlockPos const & getOrigin() const;
+    /**
+     * @symbol ?isEmpty\@CompoundBlockVolume\@\@QEBA_NXZ
+     */
+    MCAPI bool isEmpty() const;
+    /**
      * @symbol ?isInside\@CompoundBlockVolume\@\@QEBA_NAEBVBlockPos\@\@\@Z
      */
     MCAPI bool isInside(class BlockPos const &) const;
@@ -56,33 +68,33 @@ public:
      */
     MCAPI bool operator==(class CompoundBlockVolume const &) const;
     /**
-     * @symbol ?peekLastVolume\@CompoundBlockVolume\@\@QEBA?AV?$optional\@VCompoundBlockVolumeItem\@\@\@std\@\@XZ
+     * @symbol ?peekLastVolume\@CompoundBlockVolume\@\@QEBA?AV?$optional\@VCompoundBlockVolumeItem\@\@\@std\@\@V?$optional\@W4CompoundBlockVolumePositionRelativity\@\@\@3\@\@Z
      */
-    MCAPI class std::optional<class CompoundBlockVolumeItem> peekLastVolume() const;
+    MCAPI class std::optional<class CompoundBlockVolumeItem> peekLastVolume(class std::optional<enum class CompoundBlockVolumePositionRelativity>) const;
     /**
-     * @symbol ?popLastVolume\@CompoundBlockVolume\@\@QEAA_NXZ
+     * @symbol ?popVolume\@CompoundBlockVolume\@\@QEAA_NXZ
      */
-    MCAPI bool popLastVolume();
+    MCAPI bool popVolume();
     /**
-     * @symbol ?pushVolume\@CompoundBlockVolume\@\@QEAAXAEBVCompoundBlockVolumeItem\@\@\@Z
+     * @symbol ?pushVolume\@CompoundBlockVolume\@\@QEAAX$$QEAVCompoundBlockVolumeItem\@\@\@Z
      */
-    MCAPI void pushVolume(class CompoundBlockVolumeItem const &);
+    MCAPI void pushVolume(class CompoundBlockVolumeItem &&);
     /**
-     * @symbol ?replaceOrAddLastVolume\@CompoundBlockVolume\@\@QEAA_NAEBVCompoundBlockVolumeItem\@\@\@Z
+     * @symbol ?setOrigin\@CompoundBlockVolume\@\@QEAAXAEBVBlockPos\@\@_N\@Z
      */
-    MCAPI bool replaceOrAddLastVolume(class CompoundBlockVolumeItem const &);
+    MCAPI void setOrigin(class BlockPos const &, bool);
     /**
-     * @symbol ?translate\@CompoundBlockVolume\@\@QEAAXHHH\@Z
+     * @symbol ?translateOrigin\@CompoundBlockVolume\@\@QEAAXAEBVBlockPos\@\@_N\@Z
      */
-    MCAPI void translate(int, int, int);
+    MCAPI void translateOrigin(class BlockPos const &, bool);
     /**
      * @symbol ?volumeCount\@CompoundBlockVolume\@\@QEBA_KXZ
      */
     MCAPI unsigned __int64 volumeCount() const;
     /**
-     * @symbol ?bindType\@CompoundBlockVolume\@\@SAXXZ
+     * @symbol ?bindType\@CompoundBlockVolume\@\@SAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(struct cereal::ReflectionCtx &);
 
 //protected:
     /**

@@ -554,10 +554,6 @@ namespace VanillaStates {
      */
     MCAPI class BlockState const * getState(class HashedString const &);
     /**
-     * @symbol ?getState\@VanillaStates\@\@YAPEBVBlockState\@\@AEBVHashedString\@\@AEAUCachedBlockStateMapPtr\@1\@\@Z
-     */
-    MCAPI class BlockState const * getState(class HashedString const &, struct VanillaStates::CachedBlockStateMapPtr &);
-    /**
      * @symbol ?registerStates\@VanillaStates\@\@YAXXZ
      */
     MCAPI void registerStates();
