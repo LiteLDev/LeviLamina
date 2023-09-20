@@ -52,6 +52,6 @@ public:
 
 uint addFormHandler(std::unique_ptr<FormHandler>&& data);
 
-void handleFormPacket(Player* player, uint formId, const std::string& data);
+void handleFormPacket(Player& player, uint formId, const std::string& data);
 
 } // namespace ll::form::handler

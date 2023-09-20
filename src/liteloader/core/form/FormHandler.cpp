@@ -76,13 +76,13 @@ uint addFormHandler(std::unique_ptr<FormHandler>&& data) {
     return currentId;
 }
 
-void handleFormPacket(Player* player, uint formId, const std::string& data) {
+void handleFormPacket(Player& player, uint formId, const std::string& data) {
     auto it = formHandlers.find(formId);
     if (it == formHandlers.end()) {
         ll::logger.error("Failed to find form handler for form id {}", formId);
         return;
     }
-    it->second->handle(*player, data);
+    it->second->handle(player, data);
     formHandlers.erase(it);
 }
 
@@ -113,7 +113,7 @@ LL_AUTO_INSTANCE_HOOK(
         data.pop_back();
     }
 
-    handleFormPacket(&player, formId, data);
+    handleFormPacket(player, formId, data);
 }
 
 } // namespace ll::form::handler
