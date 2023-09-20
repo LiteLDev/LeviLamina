@@ -1526,9 +1526,6 @@ Local<Value> EntityClass::getAllEffects() {
         if (!actor) {
             return Local<Value>();
         }
-        if (!actor->getActiveEffectCount()) {
-            return Local<Value>();
-        }
         Local<Array> effectList = Array::newArray();
         for (unsigned int i = 0; i <= 30; i++) {
             if (actor->getEffect(i)) {

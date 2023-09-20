@@ -25,7 +25,9 @@
 class CommandOutput {
 
 #define AFTER_EXTRA
+
 public:
+    char fillers[48];
     /**
      * @brief Output a normal message.
      *
@@ -46,6 +48,10 @@ public:
      * @param str The message
      */
     LIAPI void error(const string& str);
+
+    bool empty() const {
+        return *((__int64*)this + 2) == *((__int64*)this + 3) && *(__int64*)this != 4;
+    }
 
     inline void setLanguageCode(const std::string& code = "") {
         PluginOwnData::set<std::string>(POD_COMMANDOUTPUT_LANGCODE, code);

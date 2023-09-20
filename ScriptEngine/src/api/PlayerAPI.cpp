@@ -3179,9 +3179,6 @@ Local<Value> PlayerClass::getAllEffects() {
         if (!player) {
             return Local<Value>();
         }
-        if (!player->getActiveEffectCount()) {
-            return Local<Value>();
-        }
         Local<Array> effectList = Array::newArray();
         for (unsigned int i = 0; i <= 30; i++) {
             if (player->getEffect(i)) {
