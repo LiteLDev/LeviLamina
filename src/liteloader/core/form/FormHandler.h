@@ -28,7 +28,6 @@ public:
     [[nodiscard]] FormType getType() const override { return FormType::SimpleForm; }
 };
 
-
 class CustomFormHandler : public FormHandler {
 public:
     CustomForm::Callback                            mCallback;
