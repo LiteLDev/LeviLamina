@@ -11,10 +11,10 @@
 #include "liteloader/core/Config.h"
 #include "liteloader/core/LiteLoader.h"
 
-#include <Psapi.h>
-#include <windows.h>
+#include "Psapi.h"
+#include "windows.h"
 
-#include <dbghelp.h>
+#include "dbghelp.h"
 
 #pragma comment(lib, "dbghelp.lib")
 

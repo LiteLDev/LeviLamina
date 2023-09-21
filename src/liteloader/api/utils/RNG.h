@@ -8,8 +8,8 @@
  */
 #pragma once
 
-#include <mc/_HeaderOutputPredefine.h>
-#include <pcg_cpp/pcg_random.hpp>
+#include "liteloader/api/base/StdInt.h"
+#include "pcg_cpp/pcg_random.hpp"
 #include <random>
 
 

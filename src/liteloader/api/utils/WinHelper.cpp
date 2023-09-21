@@ -10,8 +10,8 @@
 #include "liteloader/core/Config.h"
 #include "liteloader/core/LiteLoader.h"
 
-#include <Psapi.h>
-#include <Windows.h>
+#include "Psapi.h"
+#include "Windows.h"
 
 using namespace ll::StringUtils;
 

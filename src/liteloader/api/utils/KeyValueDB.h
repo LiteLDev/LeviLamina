@@ -6,7 +6,7 @@
 #include <string_view>
 #include <unordered_map>
 
-#include <leveldb/db.h>
+#include "leveldb/db.h"
 
 #include "liteloader/api/base/Macro.h"
 

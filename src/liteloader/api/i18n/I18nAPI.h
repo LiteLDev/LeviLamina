@@ -38,9 +38,9 @@
 #include "liteloader/api/utils/FileHelper.h"
 #include "liteloader/api/utils/PluginOwnData.h"
 #include "liteloader/api/utils/StringUtils.h"
-#include <FMT/core.h>
-#include <FMT/os.h>
-#include <Nlohmann/json.hpp>
+#include "FMT/core.h"
+#include "FMT/os.h"
+#include "Nlohmann/json.hpp"
 #include <string>
 
 
@@ -176,10 +176,10 @@ public:
 };
 
 #ifdef UNICODE
-#include <compact_enc_det/util/encodings/encodings.h>
+#include "compact_enc_det/util/encodings/encodings.h"
 #define UNICODE
 #else
-#include <compact_enc_det/util/encodings/encodings.h>
+#include "compact_enc_det/util/encodings/encodings.h"
 #endif
 
 namespace Translation {

@@ -43,14 +43,3 @@ std::string Player::getRealName() const {
     }
     return ExtendedCertificate::getIdentityName(*certificate);
 }
-
-void Player::sendRawFormPacket(uint formId, const std::string& data) const {
-    BinaryStream wp;
-    wp.reserve(8 + data.size());
-    wp.writeUnsignedVarInt(formId);
-    wp.writeString(data);
-
-    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::ShowModalForm);
-    pkt->read(wp);
-    this->sendNetworkPacket(*pkt);
-}

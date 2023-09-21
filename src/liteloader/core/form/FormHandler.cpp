@@ -1,10 +1,10 @@
 #include "FormHandler.h"
 #include "liteloader/core/LiteLoader.h"
-#include <liteloader/api/form/CustomForm.h>
-#include <liteloader/api/form/SimpleForm.h>
-#include <liteloader/api/memory/Hook.h>
-#include <mc/deps/json/Value.h>
-#include <mc/network/ServerNetworkHandler.h>
+#include "liteloader/api/form/CustomForm.h"
+#include "liteloader/api/form/SimpleForm.h"
+#include "liteloader/api/memory/Hook.h"
+#include "mc/deps/json/Value.h"
+#include "mc/network/ServerNetworkHandler.h"
 
 namespace ll::form::handler {
 

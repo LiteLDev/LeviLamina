@@ -93,7 +93,7 @@ public:
      * ...
      * if (!role.expired()) {
      *     auto rolePtr = role.lock();
-     *     rolePtr->addMember("1145141919810");
+     *     rolePtr->addMember("hello");
      *     api.saveData();
      * }
      * @endcode
@@ -292,7 +292,7 @@ public:
      * ...
      * if (!role.expired()) {
      *     auto rolePtr = role.lock();
-     *     rolePtr->addMember("1145141919810");
+     *     rolePtr->addMember("hello");
      *     api.saveData();
      * }
      * @endcode
@@ -313,7 +313,7 @@ public:
      * ...
      * if (!role.expired()) {
      *     auto rolePtr = role.lock();
-     *     rolePtr->addMember("1145141919810");
+     *     rolePtr->addMember("hello");
      *     api.saveData();
      * }
      * @endcode

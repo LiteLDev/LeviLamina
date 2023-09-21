@@ -7,7 +7,7 @@
 #endif
 
 #ifdef SEH_TRANS_INFO_STRUCT
-#include <minwindef.h>
+#include "minwindef.h"
 #define SEH_EXP_INFO_POINTER struct _EXCEPTION_POINTERS*
 #else
 #define SEH_EXP_INFO_POINTER void*

@@ -1,7 +1,7 @@
 #include "liteloader/api/utils/CryptoUtils.h"
 
-#include <openssl/md5.h>
-#include <openssl/sha.h>
+#include "openssl/md5.h"
+#include "openssl/sha.h"
 
 #include "liteloader/api/base/StdInt.h"
 

@@ -19,7 +19,7 @@
 #include "liteloader/core/PluginManager.h"
 #include "liteloader/core/Version.h"
 
-#include <windows.h>
+#include "windows.h"
 
 using namespace std;
 using namespace ll::StringUtils;

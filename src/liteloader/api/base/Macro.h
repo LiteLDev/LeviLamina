@@ -4,7 +4,7 @@
 #ifdef LITELOADER_EXPORTS
 #define LLAPI [[maybe_unused]] __declspec(dllexport)
 #else
-#define LLAPI LLDLL_UNUSED __declspec(dllimport)
+#define LLAPI [[maybe_unused]] __declspec(dllimport)
 #endif
 #endif
 

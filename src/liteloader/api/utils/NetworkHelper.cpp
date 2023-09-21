@@ -1,6 +1,6 @@
 #include "liteloader/api/utils/NetworkHelper.h"
 
-#include <httplib.h>
+#include "httplib.h"
 #include <thread>
 
 #include "liteloader/api/utils/DbgHelper.h"

@@ -5,7 +5,7 @@
 #include "liteloader/api/form/FormBase.h"
 #include "liteloader/api/form/SimpleForm.h"
 #include "mc/world/actor/player/Player.h"
-#include <liteloader/api/form/ModalForm.h>
+#include "liteloader/api/form/ModalForm.h"
 
 namespace ll::form::handler {
 

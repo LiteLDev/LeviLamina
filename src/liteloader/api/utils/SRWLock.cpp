@@ -1,6 +1,6 @@
 #include "liteloader/api/utils/SRWLock.h"
 
-#include <Windows.h>
+#include "Windows.h"
 
 SRWLock::SRWLock() {
     if (!inited) {

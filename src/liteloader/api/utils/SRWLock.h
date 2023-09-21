@@ -1,6 +1,6 @@
 #pragma once
 #include "liteloader/api/base/Global.h"
-#include <synchapi.h>
+#include "synchapi.h"
 
 class SRWLock {
     bool    inited = false;

@@ -25,11 +25,11 @@
 
 #include "mc/world/Minecraft.h"
 
-#include <Psapi.h>
-#include <TlHelp32.h>
-#include <minwindef.h>
-#include <processenv.h>
-#include <windows.h>
+#include "Psapi.h"
+#include "TlHelp32.h"
+#include "minwindef.h"
+#include "processenv.h"
+#include "windows.h"
 
 
 Logger ll::logger("LiteLoader");

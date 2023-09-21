@@ -12,7 +12,7 @@
 #include "liteloader/api/utils/WinHelper.h"
 #include "liteloader/core/LiteLoader.h"
 
-#include <windows.h>
+#include "windows.h"
 
 using namespace std;
 using namespace ll::StringUtils;

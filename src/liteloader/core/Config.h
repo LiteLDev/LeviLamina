@@ -1,10 +1,10 @@
 #pragma once
 
-#include <Nlohmann/json.hpp>
-
-#include "liteloader/api/LLAPI.h"
 #include <string>
 #include <thread>
+
+#include "Nlohmann/json.hpp"
+#include "liteloader/api/LLAPI.h"
 
 /////////////////////// LL Configs ///////////////////////
 #define LITELOADER_CONFIG_FILE "plugins/LiteLoader/LiteLoader.json"

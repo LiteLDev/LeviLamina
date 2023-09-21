@@ -11,14 +11,14 @@
 #endif // NOMINMAX
 
 // windows types
-#include <minwindef.h>
+#include "minwindef.h"
 
-#include <FMT/chrono.h>
-#include <FMT/color.h>
-#include <FMT/core.h>
-#include <FMT/os.h>
-#include <FMT/printf.h>
-#include <gsl/gsl>
+#include "FMT/chrono.h"
+#include "FMT/color.h"
+#include "FMT/core.h"
+#include "FMT/os.h"
+#include "FMT/printf.h"
+#include "gsl/gsl"
 
 #include "liteloader/api/utils/SehTranslator.h"
 

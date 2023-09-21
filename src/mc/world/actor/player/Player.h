@@ -119,17 +119,9 @@ public:
      * @return player's real in-game nickname
      */
     LLNDAPI std::string getRealName() const;
+
     LLNDAPI std::string getDeviceId() const;
     LLNDAPI std::optional<NetworkPeer::NetworkStatus> getNetworkStatus() const;
-
-    /**
-     * @brief Send a form by raw form json string
-     * @param formId Form id
-     * @param data Raw form json string
-     * @warning This function is not recommended for use, please use the form API provided by LiteLoader.
-     * @see ll::form::Form
-     */
-    LLAPI void sendRawFormPacket(uint formId, const std::string& data) const;
 
     // prevent constructor by default
     Player& operator=(Player const&);

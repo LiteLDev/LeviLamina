@@ -18,7 +18,7 @@
 
 #include "WinHelper.h"
 #include "liteloader/api/base/Global.h"
-#include <minwindef.h>
+#include "minwindef.h"
 #include <string_view>
 #include <unordered_map>
 

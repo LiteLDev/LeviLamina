@@ -3,7 +3,7 @@
 #include "liteloader/api/utils/StringUtils.h"
 #include "liteloader/core/LiteLoader.h"
 
-#include <stringapiset.h>
+#include "stringapiset.h"
 
 using namespace std;
 
@@ -252,10 +252,10 @@ I18nBase* loadFromImpl(HMODULE hPlugin, HMODULE hTarget) {
 // Encoding-CodePage Map
 #ifdef UNICODE
 #undef UNICODE
-#include <compact_enc_det/compact_enc_det.h>
+#include "compact_enc_det/compact_enc_det.h"
 #define UNICODE
 #else
-#include <compact_enc_det/compact_enc_det.h>
+#include "compact_enc_det/compact_enc_det.h"
 #endif
 
 namespace TextEncoding {

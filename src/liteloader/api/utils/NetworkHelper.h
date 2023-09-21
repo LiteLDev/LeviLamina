@@ -2,7 +2,7 @@
 
 #include "liteloader/api/base/Global.h"
 #include <functional>
-#include <httplib.h>
+#include "httplib.h"
 #include <string>
 
 // "http(s)://www.aaa.com/bbb/c.html"    ->    ""http(s)://www.aaa.com"  &  "/bbb/c.html"

@@ -1,6 +1,7 @@
 #include "SimpleForm.h"
-#include <liteloader/core/LiteLoader.h>
-#include <liteloader/core/form/FormHandler.h>
+#include "mc/network/packet/ModalFormRequestPacket.h"
+#include "liteloader/core/LiteLoader.h"
+#include "liteloader/core/form/FormHandler.h"
 
 namespace ll::form {
 
@@ -92,7 +93,8 @@ public:
         if (json.is_null()) {
             return false;
         }
-        player.sendRawFormPacket(id, json.dump());
+        auto formPacket = ModalFormRequestPacket(id, json.dump());
+        player.sendNetworkPacket(formPacket);
         return true;
     }
 

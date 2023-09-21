@@ -6,7 +6,7 @@
 #include "liteloader/api/utils/WinHelper.h"
 #include "liteloader/core/Config.h"
 
-#include <io.h>
+#include "io.h"
 
 using namespace std;
 using namespace ll::StringUtils;

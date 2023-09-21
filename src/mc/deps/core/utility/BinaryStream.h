@@ -11,9 +11,6 @@ public:
     std::string  mOwnedBuffer;
     std::string* mBuffer;
 
-    LLAPI void reserve(size_t size);
-    LLAPI std::string& getRaw();
-
     // prevent constructor by default
     BinaryStream& operator=(BinaryStream const&);
     BinaryStream(BinaryStream const&);

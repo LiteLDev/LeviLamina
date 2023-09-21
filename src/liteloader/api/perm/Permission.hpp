@@ -7,7 +7,7 @@
  * 
  */
 #pragma once
-#include <Nlohmann/json.hpp>
+#include "Nlohmann/json.hpp"
 #include "liteloader/api/perm/Foundation.hpp"
 
 namespace ll::perm {

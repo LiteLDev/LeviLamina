@@ -3,7 +3,7 @@
 #include <filesystem>
 #include <fstream>
 
-#include <Nlohmann/json.hpp>
+#include "Nlohmann/json.hpp"
 
 #include "liteloader/api/LoggerAPI.h"
 #include "liteloader/api/utils/FileHelper.h"

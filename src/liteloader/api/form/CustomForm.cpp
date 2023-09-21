@@ -1,8 +1,10 @@
+
+#include <utility>
+
 #include "liteloader/api/form/CustomForm.h"
 #include "liteloader/core/LiteLoader.h"
-
-#include <liteloader/core/form/FormHandler.h>
-#include <utility>
+#include "mc/network/packet/ModalFormRequestPacket.h"
+#include "liteloader/core/form/FormHandler.h"
 
 namespace ll::form {
 
@@ -64,7 +66,9 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(const fifo_json& data) const override { return data.get<std::string>(); }
+    [[nodiscard]] FormElementResult parseResult(const fifo_json& data) const override {
+        return data.get<std::string>();
+    }
 };
 
 class Toggle : public CustomFormElement {
@@ -122,7 +126,9 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(const fifo_json& data) const override { return mOptions[data.get<int>()]; }
+    [[nodiscard]] FormElementResult parseResult(const fifo_json& data) const override {
+        return mOptions[data.get<int>()];
+    }
 };
 
 class Slider : public CustomFormElement {
@@ -223,7 +229,9 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(const fifo_json& data) const override { return mSteps[data.get<int>()]; }
+    [[nodiscard]] FormElementResult parseResult(const fifo_json& data) const override {
+        return mSteps[data.get<int>()];
+    }
 };
 
 class CustomForm::CustomFormImpl : public FormImpl {
@@ -291,12 +299,13 @@ public:
             ll::logger.error("CustomForm callback is null");
             return false;
         }
-        int id = handler::addFormHandler(std::make_unique<handler::CustomFormHandler>(std::move(callback), mElements));
+        int  id = handler::addFormHandler(std::make_unique<handler::CustomFormHandler>(std::move(callback), mElements));
         auto json = serialize();
         if (json.is_null()) {
             return false;
         }
-        player.sendRawFormPacket(id, json.dump());
+        auto formPacket = ModalFormRequestPacket(id, json.dump());
+        player.sendNetworkPacket(formPacket);
         return true;
     }
 

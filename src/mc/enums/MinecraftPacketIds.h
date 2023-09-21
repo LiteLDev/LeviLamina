@@ -103,7 +103,7 @@ enum class MinecraftPacketIds : int {
     BookEdit                            = 0x61,
     NPCRequest                          = 0x62,
     PhotoTransfer                       = 0x63,
-    ShowModalForm                       = 0x64, // ModalFormRequest before
+    ShowModalForm                       = 0x64, // ModalFormRequest
     ModalFormResponse                   = 0x65,
     ServerSettingsRequest               = 0x66,
     ServerSettingsResponse              = 0x67,
