@@ -31,11 +31,15 @@ inline std::vector<std::string_view> splitByPattern(const std::string* str, cons
 
 /**
  * @brief Replace all founded sub std::string and modify input str
+ * @param str       The input std::string
+ * @param oldValue  The sub string to be replaced
+ * @param newValue  The string to replace with
+ * @return std::string  The modified input std::string
  */
-inline std::string replaceAll(std::string str, const std::string& old_value, const std::string& new_value) {
-    for (std::string::size_type pos(0); pos != std::string::npos; pos += new_value.length()) {
-        if ((pos = str.find(old_value, pos)) != std::string::npos)
-            str.replace(pos, old_value.length(), new_value);
+inline std::string replaceAll(std::string str, const std::string& oldValue, const std::string& newValue) {
+    for (std::string::size_type pos(0); pos != std::string::npos; pos += newValue.length()) {
+        if ((pos = str.find(oldValue, pos)) != std::string::npos)
+            str.replace(pos, oldValue.length(), newValue);
         else
             break;
     }
@@ -65,7 +69,6 @@ inline std::string escapeCurlyBracket(std::string str) {
  * IntToHexStr(16, true, true, false); // "0000000F"
  * @endcode
  */
-
 template <typename T>
     requires std::is_integral_v<T>
 inline std::string intToHexStr(T value, bool upperCase = true, bool no0x = true, bool noLeadingZero = true) {

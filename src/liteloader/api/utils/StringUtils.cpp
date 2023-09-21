@@ -1,8 +1,7 @@
 #include "liteloader/api/utils/StringUtils.h"
 
-#include <Windows.h>
-
 namespace ll::StringUtils {
+
 std::wstring str2wstr(std::string_view str, uint codePage) {
     int len = MultiByteToWideChar(codePage, 0, str.data(), (int)str.size(), nullptr, 0);
     if (len == 0) {
@@ -25,6 +24,6 @@ std::string wstr2str(std::wstring_view str, uint codePage) {
 
 std::string str2str(std::string_view str, uint fromCodePage, uint toCodePage) {
     return wstr2str(str2wstr(str, fromCodePage), toCodePage);
-};
+}
 
 } // namespace ll::StringUtils
