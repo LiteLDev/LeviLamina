@@ -25,9 +25,6 @@ public:
     std::vector<PackSource*> mPackSources;
 
     void addPackSource(PackSource* a2) {
-        if (mPackSources.size() == mPackSources.capacity()) {
-            mPackSources.reserve(mPackSources.size() + 1);
-        }
         mPackSources.push_back(a2);
     }
 
