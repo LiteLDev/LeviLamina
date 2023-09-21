@@ -1,6 +1,6 @@
 #pragma once
-#include "liteloader/api/base/Global.h"
 #include "liteloader/api/LoggerAPI.h"
+#include "liteloader/api/base/Global.h"
 #include <fstream>
 #include <optional>
 #include <string>

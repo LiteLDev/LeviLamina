@@ -4,7 +4,7 @@
 
 class ObjectiveCriteria {
 public:
-    enum class ObjectiveRenderType : unsigned char {
+    enum class ObjectiveRenderType : uchar {
         Integer = 0x0,
         Hearts  = 0x1,
     };

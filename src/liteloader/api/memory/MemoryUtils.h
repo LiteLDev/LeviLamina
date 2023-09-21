@@ -1,8 +1,8 @@
 #pragma once
 
+#include "vcruntime.h"
 #include <string>
 #include <type_traits>
-#include "vcruntime.h"
 
 #include "liteloader/api/base/Macro.h"
 #include "liteloader/api/utils/FixedString.h"

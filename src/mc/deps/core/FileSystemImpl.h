@@ -217,7 +217,7 @@ public:
     // symbol:
     // ??0FileSystemImpl@Core@@QEAA@W4FileAccessType@1@V?$shared_ptr@VFileStorageArea@Core@@@std@@W4TransactionFlags@1@V?$shared_ptr@VFlatFileManifestTracker@Core@@@4@@Z
     MCAPI
-        FileSystemImpl(::Core::FileAccessType, std::shared_ptr<class Core::FileStorageArea>, ::Core::TransactionFlags, std::shared_ptr<class Core::FlatFileManifestTracker>);
+    FileSystemImpl(::Core::FileAccessType, std::shared_ptr<class Core::FileStorageArea>, ::Core::TransactionFlags, std::shared_ptr<class Core::FlatFileManifestTracker>);
 
     // symbol: ?commit@FileSystemImpl@Core@@QEAA?AVResult@2@XZ
     MCAPI class Core::Result commit();

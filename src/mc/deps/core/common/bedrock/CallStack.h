@@ -48,12 +48,11 @@ public:
     public:
         uchar filler[80];
         FrameWithContext() = delete;
-=======
+
         // prevent constructor by default
         FrameWithContext& operator=(FrameWithContext const&);
         FrameWithContext(FrameWithContext const&);
         FrameWithContext();
->>>>>>> upstream/main
 
     public:
         // NOLINTBEGIN

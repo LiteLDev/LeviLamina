@@ -4,9 +4,10 @@
 
 class NbtIo {
 public:
-
-    LLNDAPI static std::string nbtListToBinary(std::vector<std::unique_ptr<CompoundTag>> const& tags, bool isLittleEndian = true);
-    LLNDAPI static std::vector<std::unique_ptr<CompoundTag>> nbtListFromBinary(std::string_view data, bool isLittleEndian = true);
+    LLNDAPI static std::string
+    nbtListToBinary(std::vector<std::unique_ptr<CompoundTag>> const& tags, bool isLittleEndian = true);
+    LLNDAPI static std::vector<std::unique_ptr<CompoundTag>>
+                               nbtListFromBinary(std::string_view data, bool isLittleEndian = true);
     LLNDAPI static std::string nbtListToNetwork(std::vector<std::unique_ptr<CompoundTag>> const& tags);
     LLNDAPI static std::vector<std::unique_ptr<CompoundTag>> nbtListFromNetwork(std::string_view data);
 

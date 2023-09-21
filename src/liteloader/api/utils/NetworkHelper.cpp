@@ -5,8 +5,8 @@
 
 #include "liteloader/api/utils/DbgHelper.h"
 
-#include "liteloader/api/i18n/I18nAPI.h"
 #include "liteloader/api/LoggerAPI.h"
+#include "liteloader/api/i18n/I18nAPI.h"
 
 #include "liteloader/core/Config.h"
 #include "liteloader/core/LiteLoader.h"

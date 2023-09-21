@@ -95,9 +95,9 @@ public:
 
     // prevent constructor by default
     BlockTypeRegistry&
-    operator=(BlockTypeRegistry const&)         ;
-    BlockTypeRegistry(BlockTypeRegistry const&) ;
-    BlockTypeRegistry()                         ;
+    operator=(BlockTypeRegistry const&);
+    BlockTypeRegistry(BlockTypeRegistry const&);
+    BlockTypeRegistry();
 
 public:
     // NOLINTBEGIN

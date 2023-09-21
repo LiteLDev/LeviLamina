@@ -1,7 +1,7 @@
 #include "ModalForm.h"
-#include "mc/network/packet/ModalFormRequestPacket.h"
 #include "liteloader/core/LiteLoader.h"
 #include "liteloader/core/form/FormHandler.h"
+#include "mc/network/packet/ModalFormRequestPacket.h"
 
 namespace ll::form {
 
@@ -42,7 +42,7 @@ public:
             ll::logger.error("ModalForm callback is null");
             return false;
         }
-        int id = handler::addFormHandler(std::make_unique<handler::ModalFormHandler>(std::move(callback)));
+        int  id   = handler::addFormHandler(std::make_unique<handler::ModalFormHandler>(std::move(callback)));
         auto json = serialize();
         if (json.is_null()) {
             return false;
@@ -111,8 +111,6 @@ ModalForm& ModalForm::setCallback(Callback callback) {
     return *this;
 }
 
-bool ModalForm::sendTo(Player& player, Callback callback) {
-    return impl->sendTo(player, std::move(callback));
-}
+bool ModalForm::sendTo(Player& player, Callback callback) { return impl->sendTo(player, std::move(callback)); }
 
 } // namespace ll::form

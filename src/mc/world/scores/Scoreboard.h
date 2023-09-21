@@ -1,13 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/CommandSoftEnumRegistry.h"
 #include "mc/world/events/PlayerScoreboardEventListener.h"
 #include "mc/world/events/ScoreboardEventCoordinator.h"
 #include "mc/world/scores/DisplayObjective.h"
 #include "mc/world/scores/IdentityDictionary.h"
 #include "mc/world/scores/ObjectiveCriteria.h"
 #include "mc/world/scores/ScoreboardIdentityRef.h"
-#include "mc/server/commands/CommandSoftEnumRegistry.h"
 
 // auto generated inclusion list
 #include "mc/enums/ObjectiveSortOrder.h"

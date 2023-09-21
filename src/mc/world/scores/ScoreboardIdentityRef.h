@@ -8,7 +8,7 @@
 
 class ScoreboardIdentityRef {
 public:
-    unsigned int mObjectiveReferences; // this+0x0
+    uint         mObjectiveReferences; // this+0x0
     ScoreboardId mScoreboardId;        // this+0x8
 
 public:

@@ -1,7 +1,7 @@
 #include "SimpleForm.h"
-#include "mc/network/packet/ModalFormRequestPacket.h"
 #include "liteloader/core/LiteLoader.h"
 #include "liteloader/core/form/FormHandler.h"
+#include "mc/network/packet/ModalFormRequestPacket.h"
 
 namespace ll::form {
 
@@ -88,7 +88,8 @@ public:
             // Currently, SimpleFormElement can only be Button
             buttonCallbacks.push_back(((Button*)e.get())->mCallback);
         }
-        uint id = handler::addFormHandler(std::make_unique<handler::SimpleFormHandler>(std::move(callback), buttonCallbacks));
+        uint id =
+            handler::addFormHandler(std::make_unique<handler::SimpleFormHandler>(std::move(callback), buttonCallbacks));
         auto json = serialize();
         if (json.is_null()) {
             return false;

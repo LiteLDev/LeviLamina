@@ -1,8 +1,8 @@
 #pragma once
 
-#include <string>
-#include <any>
 #include "liteloader/api/base/StdInt.h"
+#include <any>
+#include <string>
 
 namespace ll::form {
 
@@ -135,9 +135,8 @@ public:
     bool isString() const { return type == Type::String; }
 
     bool isNull() const { return type == Type::Null; }
-
 };
 
 using CustomFormResult = std::unordered_map<std::string, FormElementResult>;
 
-}
+} // namespace ll::form

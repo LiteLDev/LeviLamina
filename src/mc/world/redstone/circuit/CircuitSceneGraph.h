@@ -22,12 +22,11 @@ public:
         class BaseCircuitComponent*                 mRawComponentPtr;
         std::unique_ptr<class BaseCircuitComponent> mComponent;
         class BlockPos                              mPos;
-=======
+
         // prevent constructor by default
         PendingEntry& operator=(PendingEntry const&);
         PendingEntry(PendingEntry const&);
         PendingEntry();
->>>>>>> upstream/main
 
     public:
         // NOLINTBEGIN

@@ -105,8 +105,7 @@ private:
     KeyValueDBImpl() = default;
 };
 
-std::unique_ptr<KeyValueDB>
-KeyValueDB::create(const std::string& path, bool readCache, int cacheSize, int filterBit) {
+std::unique_ptr<KeyValueDB> KeyValueDB::create(const std::string& path, bool readCache, int cacheSize, int filterBit) {
     CreateDirs(path);
     auto db  = std::unique_ptr<KeyValueDB>(new KeyValueDB());
     db->impl = std::make_unique<KeyValueDBImpl>(path.c_str(), true, readCache, cacheSize, filterBit);
@@ -129,9 +128,7 @@ bool KeyValueDB::set(std::string_view key, std::string_view val) { return impl->
 
 bool KeyValueDB::del(std::string_view key) { return impl->del(key); }
 
-void KeyValueDB::iter(std::function<bool(std::string_view, std::string_view)> const& fn) const {
-    impl->iter(fn);
-}
+void KeyValueDB::iter(std::function<bool(std::string_view, std::string_view)> const& fn) const { impl->iter(fn); }
 
 std::vector<std::string> KeyValueDB::getAllKeys() const { return impl->getAllKeys(); }
 
