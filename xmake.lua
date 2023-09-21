@@ -70,6 +70,12 @@ target("LiteLoader")
         add_packages("bdslibrary")
     end
 
+    on_load(function (target)
+        local commit = os.iorun("git rev-parse --short HEAD")
+        commit = commit:sub(1, #commit - 1) -- remove the last newline
+        target:add("defines", "LITELOADER_VERSION_COMMIT_SHA=" .. commit)
+    end)
+
 task("bds-lib")
     on_run(function ()
         import("core.base.option")

@@ -5,7 +5,6 @@
 #include <string>
 #include <utility>
 
-
 #include "liteloader/api/LLAPI.h"
 #include "liteloader/api/utils/StringUtils.h"
 #include "liteloader/api/utils/WinHelper.h"
@@ -37,15 +36,6 @@ std::string ll::getDataPath(const std::string& pluginName) {
 
 std::string ll::getLoaderVersionString() { return getLoaderVersion().toString(); }
 
-ll::Version ll::getLoaderVersion() {
-    return Version(
-        LITELOADER_VERSION_MAJOR,
-        LITELOADER_VERSION_MINOR,
-        LITELOADER_VERSION_REVISION,
-        (ll::Version::Status)LITELOADER_VERSION_STATUS
-    );
-}
-
 bool ll::isDebugMode() { return ll::globalConfig.debugMode; }
 
 ll::Plugin* ll::getPlugin(std::string name) { return PluginManager::getPlugin(std::move(name)); }
@@ -58,61 +48,73 @@ std::unordered_map<std::string, ll::Plugin*> ll::getAllPlugins() { return Plugin
 
 HMODULE ll::getLoaderHandle() { return GetCurrentModule(); }
 
-// Version
-ll::Version::Version(int major, int minor, int revision, Status status)
-: major(major), minor(minor), revision(revision), status(status) {}
+namespace ll {
 
-bool ll::Version::operator<(const ll::Version& b) const {
-    return major < b.major || (major == b.major && minor < b.minor) ||
-           (major == b.major && minor == b.minor && revision < b.revision);
+// region ### Version ###
+Version::Version(int major, int minor, int patch, PreRelease preRelease)
+: mMajor(major), mMinor(minor), mPatch(patch), mPreRelease(preRelease) {}
+
+bool Version::operator<(const Version& other) const {
+    return mMajor < other.mMajor || (mMajor == other.mMajor && mMinor < other.mMinor) ||
+           (mMajor == other.mMajor && mMinor == other.mMinor && mPatch < other.mPatch) ||
+           (mMajor == other.mMajor && mMinor == other.mMinor && mPatch == other.mPatch &&
+            mPreRelease < other.mPreRelease);
 }
 
-bool ll::Version::operator==(const ll::Version& b) const {
-    return major == b.major && minor == b.minor && revision == b.revision;
+bool Version::operator==(const Version& other) const {
+    return mMajor == other.mMajor && mMinor == other.mMinor && mPatch == other.mPatch &&
+           mPreRelease == other.mPreRelease;
 }
 
-std::string ll::Version::toString(bool needStatus) const {
-    std::string res = to_string(major) + "." + to_string(minor) + "." + to_string(revision);
-    if (needStatus) {
-        if (status == Status::Beta)
-            res += " - Beta";
-        else if (status == Status::Dev)
-            res += " - Dev";
-        else
-            res += " - Release";
-    }
-    return res;
+std::string Version::toString() const { return fmt::format("{}.{}.{}", mMajor, mMinor, mPatch); }
+
+std::string Version::toFullString() const {
+    if (mPreRelease == PreRelease::None)
+        return toString();
+    return fmt::format("{}-{}", toString(), PRE_RELEASE_STRINGS[(uchar)mPreRelease]);
 }
 
-
-ll::Version ll::Version::parse(const std::string& str) {
-    Version     ver;
-    std::string a = str;
-    std::string status;
+Version Version::parse(const std::string& str) {
+    Version     result;
+    std::string basic = str;
+    std::string suffix;
     size_t      pos = 0;
     if ((pos = str.find_last_of('-')) != std::string::npos) {
-        a      = str.substr(0, pos);
-        status = str.substr(pos + 1);
-        std::transform(status.begin(), status.end(), status.begin(), ::tolower);
+        basic  = str.substr(0, pos);
+        suffix = str.substr(pos + 1);
+        std::transform(suffix.begin(), suffix.end(), suffix.begin(), ::tolower);
     }
-    if (status == "beta")
-        ver.status = Status::Beta;
-    else if (status == "dev" || status == "alpha")
-        ver.status = Status::Dev;
-    else
-        ver.status = Status::Release;
 
-    auto res = ll::StringUtils::splitByPattern(&a, ".");
+    for (int i = 0; i < PRE_RELEASE_STRINGS.size(); ++i) {
+        if (suffix == PRE_RELEASE_STRINGS[i]) {
+            result.mPreRelease = static_cast<PreRelease>((uchar)i);
+            break;
+        }
+    }
+
+    auto res = ll::StringUtils::splitByPattern(&basic, ".");
 
     if (!res.empty())
-        ver.major = stoi(res[0]);
+        result.mMajor = stoi(res[0]);
     if (res.size() >= 2)
-        ver.minor = stoi(res[1]);
+        result.mMinor = stoi(res[1]);
     if (res.size() >= 3)
-        ver.revision = stoi(res[2]);
+        result.mPatch = stoi(res[2]);
 
-    return ver;
+    return result;
 }
+// endregion
+
+Version getLoaderVersion() {
+    return {
+        LITELOADER_VERSION_MAJOR,
+        LITELOADER_VERSION_MINOR,
+        LITELOADER_VERSION_PATCH,
+        (Version::PreRelease)LITELOADER_VERSION_PRE_RELEASE
+    };
+}
+
+} // namespace ll
 
 ll::ServerStatus ll::getServerStatus() { return (ll::ServerStatus)(ll::globalRuntimeConfig.serverStatus); }
 

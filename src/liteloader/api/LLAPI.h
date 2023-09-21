@@ -13,27 +13,49 @@
 #endif
 
 #include "liteloader/api/base/Global.h"
-#include "liteloader/api/utils/PluginOwnData.h"
 #include "liteloader/api/utils/WinHelper.h"
 #include "liteloader/core/PluginManager.h"
 
-// LL types
 namespace ll {
+
+/**
+ * @brief Version struct
+ * @see  https://semver.org/
+ */
 struct Version {
-    enum Status { Dev, Beta, Release };
+    enum class PreRelease : uchar { None = 255, Alpha = 0, Beta = 1 };
 
-    int    major;
-    int    minor;
-    int    revision;
-    Status status;
+    int        mMajor      = 0;
+    int        mMinor      = 0;
+    int        mPatch      = 0;
+    PreRelease mPreRelease = PreRelease::None;
 
-    LLAPI explicit Version(int major = 0, int minor = 0, int revision = 0, Status status = Status::Release);
+    explicit Version() = default;
+    LLAPI Version(int major, int minor, int patch, PreRelease preRelease = PreRelease::None);
 
-    LLAPI bool operator<(const Version& b) const;
-    LLAPI bool operator==(const Version& b) const;
+    LLAPI bool operator<(const Version& other) const;
+    LLAPI bool operator==(const Version& other) const;
 
-    LLNDAPI std::string  toString(bool needStatus = false) const;
+    /**
+     * @brief Convert the version to a string
+     * @return std::string The version string like `1.0.0`
+     */
+    LLNDAPI std::string toString() const;
+    /**
+     * @brief Convert the version to string with pre-release information(if not `None`)
+     * @return std::string The version string like `1.0.0-alpha`
+     */
+    LLNDAPI std::string toFullString() const;
+
+    /**
+     * @brief Parse a string to a version
+     * @param str The string to parse
+     * @return Version The version instance
+     */
     LLAPI static Version parse(const std::string& str);
+
+private:
+    static constexpr std::array<std::string_view, 2> PRE_RELEASE_STRINGS = {"alpha", "beta"};
 };
 
 struct Plugin {
@@ -145,7 +167,7 @@ inline bool registerPlugin(
  *
  * @par Example
  * @code
- * ll::registerPlugin("Test", "A test plugin", Version(0, 0, 1, Version::Dev), {{"Note","This is Note"}});
+ * ll::registerPlugin("Test", "A test plugin", Version(0, 0, 1, Version::Alpha), {{"Note","This is Note"}});
  * @endcode
  */
 inline bool

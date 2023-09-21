@@ -1,6 +1,6 @@
 // Microsoft Visual C++ generated resource script.
 //
-#include "resource.h"
+#include "Resource.h"
 
 #define APSTUDIO_READONLY_SYMBOLS
 /////////////////////////////////////////////////////////////////////////////
@@ -8,7 +8,7 @@
 // Generated from the TEXTINCLUDE 2 resource.
 //
 #include "winres.h"
-#include "liteloader/core/version.h"
+#include "liteloader/core/Version.h"
 
 /////////////////////////////////////////////////////////////////////////////
 #undef APSTUDIO_READONLY_SYMBOLS
@@ -50,8 +50,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION LITELOADER_VERSION_MAJOR,LITELOADER_VERSION_MINOR,LITELOADER_VERSION_REVISION,LITELOADER_VERSION_STATUS_VERSION
- PRODUCTVERSION LITELOADER_VERSION_MAJOR,LITELOADER_VERSION_MINOR,LITELOADER_VERSION_REVISION,LITELOADER_VERSION_STATUS_VERSION
+ FILEVERSION LITELOADER_VERSION_MAJOR,LITELOADER_VERSION_MINOR,LITELOADER_VERSION_PATCH,LITELOADER_VERSION_PRE_RELEASE_ID
+ PRODUCTVERSION LITELOADER_VERSION_MAJOR,LITELOADER_VERSION_MINOR,LITELOADER_VERSION_PATCH,LITELOADER_VERSION_PRE_RELEASE_ID
  FILEFLAGSMASK 0x3fL
  FILEFLAGS LITELOADER_FILE_VERSION_FLAG
  FILEOS 0x40004L
@@ -62,13 +62,13 @@ BEGIN
     BEGIN
         BLOCK "080404b0"
         BEGIN
-            VALUE "CompanyName", "LiteLoaderDev"
+            VALUE "CompanyName", "LiteLDev"
             VALUE "FileDescription", "A Light-Weight Plugin Loader for Bedrock Dedicated Server"
             VALUE "FileVersion", LITELOADER_FILE_VERSION_STRING
             VALUE "InternalName", "LiteLoader.dll"
-            VALUE "LegalCopyright", "LiteLoader Developer"
+            VALUE "LegalCopyright", "Copyright (c) 2021-present LiteLDev. Distributed under LGPL-3.0."
             VALUE "OriginalFilename", "LiteLoader.dll"
-            VALUE "ProductName", "LiteLoader For BDS"
+            VALUE "ProductName", "LiteLoader for BDS"
             VALUE "ProductVersion", LITELOADER_FILE_VERSION_STRING
         END
     END

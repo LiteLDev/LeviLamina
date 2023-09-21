@@ -225,7 +225,7 @@ void checkDevMode() {
 }
 
 void checkBetaVersion() {
-    if constexpr (LITELOADER_VERSION_STATUS != ll::Version::Release) {
+    if (ll::getLoaderVersion().mPreRelease != ll::Version::PreRelease::None) {
         logger.warn(tr("ll.main.warning.betaVersion"));
         logger.warn(tr("ll.main.warning.productionEnv"));
     }
