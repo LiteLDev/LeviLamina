@@ -70,10 +70,20 @@ target("LiteLoader")
         add_packages("bdslibrary")
     end
 
+    local VERSION_H = "src/liteloader/core/Version.h"
+    local VERSION_H_BAK = "src/liteloader/core/Version.h.bak"
     on_load(function (target)
         local commit = os.iorun("git rev-parse --short HEAD")
         commit = commit:sub(1, #commit - 1) -- remove the last newline
-        target:add("defines", "LITELOADER_VERSION_COMMIT_SHA=" .. commit)
+        -- target:add("defines", "LITELOADER_VERSION_COMMIT_SHA=" .. commit) -- deprecated because it will cause full rebuild
+        os.cp(VERSION_H, VERSION_H_BAK)
+        local content = io.readfile(VERSION_H)
+        content = content:gsub("LITELOADER_VERSION_COMMIT_SHA 00000000", "LITELOADER_VERSION_COMMIT_SHA " .. commit)
+        io.writefile(VERSION_H, content)
+    end)
+    after_build(function (target)
+        os.cp(VERSION_H_BAK, VERSION_H)
+        os.rm(VERSION_H_BAK)
     end)
 
 task("bds-lib")
