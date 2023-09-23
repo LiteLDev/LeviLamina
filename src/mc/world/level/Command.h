@@ -18,17 +18,14 @@ public:
     struct CommandFlag                mFlags;           // this+0x1E
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1Command@@UEAA@XZ
+    virtual ~Command();
 
     // vIndex: 1, symbol: ?collectOptionalArguments@Command@@MEAA_NXZ
     virtual bool collectOptionalArguments();
 
     // vIndex: 2, symbol: ?execute@TakePictureCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const = 0;
-
-    // symbol: ??1Command@@UEAA@XZ
-    MCVAPI ~Command();
 
     // symbol: ??0Command@@QEAA@XZ
     MCAPI Command();

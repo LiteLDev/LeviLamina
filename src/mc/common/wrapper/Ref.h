@@ -162,6 +162,6 @@ public:
 
 private:
     T*               ptr;
-    std::atomic<int> share_count;
-    std::atomic<int> weak_count;
+    std::atomic_int share_count;
+    std::atomic_int weak_count;
 };

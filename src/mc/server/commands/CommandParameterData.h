@@ -1,18 +1,16 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/CommandRegistry.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/typeid_t.h"
 #include "mc/server/commands/CommandParameterDataType.h"
 #include "mc/server/commands/CommandParameterOption.h"
-#include "mc/server/commands/CommandRegistry.h"
 
 class CommandParameterData {
 public:
-    using ParseFn =
-        bool (CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-            const;
+    using ParseFn = typename CommandRegistry::ParseFn;
 
     Bedrock::typeid_t<CommandRegistry> mTypeIndex;     // this+0x0
     ParseFn                            mParse;         // this+0x8
@@ -26,6 +24,20 @@ public:
     int                                mSetOffset;     // this+0x54
     bool                               mIsOptional;    // this+0x58
     CommandParameterOption             mOptions;       // this+0x59
+
+    CommandParameterData(
+        Bedrock::typeid_t<CommandRegistry> typeIndex,
+        ParseFn                            parser,
+        std::string_view                   name,
+        ::CommandParameterDataType         type,
+        char const*                        enumName,
+        int                                offset,
+        bool                               optional,
+        int                                flag_offset
+    )
+    : mTypeIndex(typeIndex), mParse(parser), mName(name), mEnumName(enumName), mEnumSymbol(-1), mPostfix(nullptr),
+      mPostfixSymbol(-1), mParamType(type), mOffset(offset), mSetOffset(flag_offset), mIsOptional(optional),
+      mOptions(CommandParameterOption::None){};
 
 public:
     // NOLINTBEGIN

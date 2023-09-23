@@ -10,6 +10,7 @@
 #include "liteloader/api/utils/FileHelper.h"
 #include "liteloader/api/utils/SehTranslator.h"
 #include "liteloader/api/utils/StringUtils.h"
+#include "mc/server/commands/MinecraftCommands.h"
 
 // #include "liteloader/api/ServerAPI.h"
 // #include "liteloader/api/event/LegacyEvents.h"
@@ -365,6 +366,7 @@ void liteloaderMain() {
 
     // Register built-in commands
     // RegisterCommands();
+
 
     // Register simple server logger
     // ll::SimpleServerLogger::registerSimpleServerLogger();

@@ -31,7 +31,7 @@ public:
     // ChunkSource*                 mParent;                // this+0x30
     // std::unique_ptr<ChunkSource> mOwnedParent;           // this+0x38
     // LevelChunkBuilderData*       mLevelChunkBuilderData; // this+0x40
-    // std::atomic<bool>            mShuttingDown;          // this+0x48
+    // std::atomic_bool             mShuttingDown;          // this+0x48
     // void*                        unknownPtr              // this+0x50
 
     uchar filler[0x58 - sizeof(Bedrock::EnableNonOwnerReferences)];

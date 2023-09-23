@@ -15,7 +15,7 @@ public:
     bool                      mHasPendingRegistrations;
     std::thread::id           mThreadId;
     bool                      mThreadIdInitialized;
-    unsigned int              mThreadCheckIndex;
+    uint                      mThreadCheckIndex;
 
     // // ServerInstanceEventListener
     // virtual ~EventCoordinatorPimpl();

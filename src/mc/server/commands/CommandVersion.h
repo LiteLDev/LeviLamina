@@ -8,7 +8,7 @@
 class CommandVersion {
 public:
     int mFrom = 1, mTo = 0x7FFFFFFF;
-
+    CommandVersion(){};
 public:
     // NOLINTBEGIN
     // symbol: ??0CommandVersion@@QEAA@HH@Z

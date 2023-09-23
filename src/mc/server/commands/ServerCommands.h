@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+class PermissionsFile;
+class Minecraft;
+class CommandRegistry;
+
 namespace ServerCommands {
 // NOLINTBEGIN
 // symbol: ?setupCommonEnums@ServerCommands@@YAXAEAVCommandRegistry@@@Z
