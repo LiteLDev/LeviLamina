@@ -112,14 +112,16 @@ public:
 
     class Symbol {
     public:
-        int mValue; // this+0x0
+        int mValue{}; // this+0x0
+
+        Symbol() = default;
 
         inline bool operator==(Symbol const& right) const { return mValue == right.mValue; }
 
     public:
         // NOLINTBEGIN
         // symbol: ??0Symbol@CommandRegistry@@QEAA@_K@Z
-        MCAPI explicit Symbol(uint64);
+        MCAPI Symbol(uint64);
 
         // symbol: ?toIndex@Symbol@CommandRegistry@@QEBA_KXZ
         MCAPI uint64 toIndex() const;
@@ -261,24 +263,6 @@ public:
         // NOLINTEND
     };
 
-    class Symbol {
-    public:
-        // prevent constructor by default
-        Symbol& operator=(Symbol const&);
-        Symbol(Symbol const&);
-        Symbol();
-
-    public:
-        // NOLINTBEGIN
-        // symbol: ?toIndex@Symbol@CommandRegistry@@QEBA_KXZ
-        MCAPI uint64 toIndex() const;
-
-        // symbol: ?value@Symbol@CommandRegistry@@QEBAHXZ
-        MCAPI int value() const;
-
-        // NOLINTEND
-    };
-
     class Parser {
     public:
         const CommandRegistry&                     mRegistry;                 // this+0x0
@@ -363,10 +347,8 @@ public:
 
     struct SoftEnum {
     public:
-        // prevent constructor by default
-        SoftEnum& operator=(SoftEnum const&);
-        SoftEnum(SoftEnum const&);
-        SoftEnum();
+        std::string              mName;   // this+0x0
+        std::vector<std::string> mValues; // this+0x20
 
     public:
         // NOLINTBEGIN

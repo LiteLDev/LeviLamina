@@ -10,15 +10,18 @@
 
 class CompositePackSource : public ::PackSource {
 public:
+    std::vector<PackSource*> mPackSources;
     // prevent constructor by default
     CompositePackSource& operator=(CompositePackSource const&);
     CompositePackSource(CompositePackSource const&);
     CompositePackSource();
 
-public:
-    // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    void addPackSource(PackSource& source) { mPackSources.push_back(&source);}
+
+        public :
+        // NOLINTBEGIN
+        // vIndex: 0, symbol: __unk_vfn_0
+        virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?forEachPackConst@CompositePackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z
     virtual void forEachPackConst(std::function<void(class Pack const&)>) const;

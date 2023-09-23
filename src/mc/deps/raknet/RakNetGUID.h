@@ -9,7 +9,7 @@ public:
     uint64 g;
     ushort systemIndex;
 
-    bool operator!=(const RakNetGUID& a1) const { return !(*this == a1); }
+    // bool operator!=(const RakNetGUID& a1) const { return !(*this == a1); }
 
 public:
     // NOLINTBEGIN

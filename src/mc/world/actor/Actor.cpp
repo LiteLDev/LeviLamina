@@ -36,7 +36,7 @@ class Vec3 Actor::getFeetPos() const { return CommandUtils::getFeetPos(this); }
 
 class Vec3 Actor::getHeadPos() const { return getAttachPos(ActorLocation::Head); }
 
-class BlockPos Actor::getFeetBlockPos() const { return CommandUtils::getFeetBlockPos(this); }
+class BlockPos Actor::getFeetBlockPos() const { return {CommandUtils::getFeetPos(this)}; }
 
 bool Actor::isSimulatedPlayer() const { return dynamic_cast<SimulatedPlayer const*>(this) != nullptr; }
 
@@ -106,7 +106,7 @@ class HitResult Actor::traceRay(
             origin,
             origin + rayDir * tMax,
             true,
-            false,
+            ShapeType::All,
             ((static_cast<int>(tMax) + 1) * 2),
             false,
             false,

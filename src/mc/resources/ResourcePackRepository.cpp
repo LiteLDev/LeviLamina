@@ -10,7 +10,7 @@ void ResourcePackRepository::setCustomResourcePackPath(const std::string& path, 
     auto& DirectoryPackSource =
         getPackSourceFactory().createDirectoryPackSource(Core::Path(path), type, PackOrigin::Dev);
 
-    ll::memory::dAccess<CompositePackSource*>(this, 48)->addPackSource(&DirectoryPackSource);
+    ll::memory::dAccess<CompositePackSource*>(this, 96)->addPackSource(DirectoryPackSource);
 
     refreshPacks();
 }

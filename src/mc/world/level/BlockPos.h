@@ -28,13 +28,13 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0BlockPos@@QEAA@AEBVVec3@@@Z
-    MCAPI explicit BlockPos(class Vec3 const&);
+    MCAPI BlockPos(class Vec3 const&);
 
     // symbol: ??0BlockPos@@QEAA@MMM@Z
     MCAPI BlockPos(float, float, float);
 
     // symbol: ??0BlockPos@@QEAA@AEBVSubChunkPos@@@Z
-    MCAPI explicit BlockPos(class SubChunkPos const&);
+    MCAPI BlockPos(class SubChunkPos const&);
 
     // symbol: ??0BlockPos@@QEAA@AEBVChunkPos@@H@Z
     MCAPI BlockPos(class ChunkPos const&, int);
@@ -45,14 +45,11 @@ public:
     // symbol: ?above@BlockPos@@QEBA?AV1@XZ
     MCAPI class BlockPos above() const;
 
-    // symbol: ?center@BlockPos@@QEBA?AVVec3@@XZ
-    MCAPI class Vec3 center() const;
-
     // symbol: ?neighbor@BlockPos@@QEBA?AV1@E@Z
     MCAPI class BlockPos neighbor(uchar) const;
 
     // symbol: ??BBlockPos@@QEBA?AVVec3@@XZ
-    MCAPI explicit operator class Vec3() const;
+    MCAPI operator class Vec3() const;
 
     // symbol: ?randomSeed@BlockPos@@QEBAHXZ
     MCAPI int randomSeed() const;

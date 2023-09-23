@@ -16,10 +16,8 @@ public:
     // CommandMessage inner types define
     struct MessageComponent {
     public:
-        // prevent constructor by default
-        MessageComponent& operator=(MessageComponent const&);
-        MessageComponent(MessageComponent const&);
-        MessageComponent();
+        std::string                                   string;
+        std::unique_ptr<CommandSelector<class Actor>> selection;
 
     public:
         // NOLINTBEGIN
@@ -38,10 +36,6 @@ public:
     };
 
 public:
-    struct MessageComponent {
-        std::string                                   string;
-        std::unique_ptr<CommandSelector<class Actor>> selection;
-    };
     std::vector<MessageComponent> components;
 
 public:
