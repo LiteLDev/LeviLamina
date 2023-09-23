@@ -34,7 +34,7 @@ public:
     // symbol:
     // ??0DimensionFactory@@QEAA@V?$not_null@V?$NonOwnerPointer@VILevel@@@Bedrock@@@gsl@@V?$not_null@V?$NonOwnerPointer@VScheduler@@@Bedrock@@@2@@Z
     MCAPI
-        DimensionFactory(gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel>>, gsl::not_null<class Bedrock::NonOwnerPointer<class Scheduler>>);
+    DimensionFactory(gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel>>, gsl::not_null<class Bedrock::NonOwnerPointer<class Scheduler>>);
 
     // symbol:
     // ?getDimensionOwnerPtrFactory@DimensionFactory@@QEAAAEAV?$OwnerPtrFactory@VDimension@@AEAVILevel@@AEAVScheduler@@@@XZ

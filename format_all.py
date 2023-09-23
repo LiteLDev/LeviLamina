@@ -8,6 +8,7 @@ import multiprocessing
 def format_file(file):
     print("formatting {0}".format(file))
     subprocess.run(["clang-format", "-i", file])
+    subprocess.run(["clang-format", "-i", file]) # not bug, for extra spaces
     # change file from LF to CRLF
     with open(file, "rb") as f:
         content = f.read()

@@ -50,14 +50,14 @@ public:
     // symbol:
     // ?clearObjectiveAtDisplaySlot@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$optional@V?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@@std@@W4ScriptDisplayObjectiveSlotId@2@@Z
     MCAPI
-        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>>
-            clearObjectiveAtDisplaySlot(::ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId);
+    std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>>
+        clearObjectiveAtDisplaySlot(::ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId);
 
     // symbol:
     // ?getObjective@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$optional@V?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
     MCAPI
-        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>>
-        getObjective(std::string const&);
+    std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>>
+    getObjective(std::string const&);
 
     // symbol:
     // ?getObjectiveAtDisplaySlot@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$optional@VScriptScoreboardObjectiveDisplayOptions@ScriptModuleMinecraft@@@std@@W4ScriptDisplayObjectiveSlotId@2@@Z
