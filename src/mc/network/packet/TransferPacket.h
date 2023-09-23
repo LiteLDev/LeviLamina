@@ -35,11 +35,11 @@ public:
     // symbol: ??1TransferPacket@@UEAA@XZ
     MCVAPI ~TransferPacket();
 
-    // symbol: ??0TransferPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI TransferPacket(std::string const&, int);
-
     // symbol: ??0TransferPacket@@QEAA@XZ
     MCAPI TransferPacket();
+
+    // symbol: ??0TransferPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+    MCAPI TransferPacket(std::string const&, int);
 
     // NOLINTEND
 };

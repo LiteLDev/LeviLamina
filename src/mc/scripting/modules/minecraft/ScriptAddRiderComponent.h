@@ -26,7 +26,7 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol: ?_isValid@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    // vIndex: 1, symbol: ?_isValid@ScriptItemComponent@ScriptModuleMinecraft@@MEBA_NXZ
     virtual bool _isValid() const;
 
     // symbol: ??1ScriptAddRiderComponent@ScriptModuleMinecraft@@UEAA@XZ
@@ -38,11 +38,11 @@ public:
     ScriptAddRiderComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
 
     // symbol:
-    // ?getEntityType@ScriptAddRiderComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Scripting@@XZ
+    // ?getEntityType@ScriptAddRiderComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::string> getEntityType() const;
 
     // symbol:
-    // ?getSpawnEvent@ScriptAddRiderComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Scripting@@XZ
+    // ?getSpawnEvent@ScriptAddRiderComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::string> getSpawnEvent() const;
 
     // symbol:

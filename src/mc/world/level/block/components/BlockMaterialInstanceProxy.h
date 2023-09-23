@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 struct BlockMaterialInstanceProxy {
 public:
     // prevent constructor by default
@@ -16,8 +21,8 @@ public:
     // symbol: ??1BlockMaterialInstanceProxy@@QEAA@XZ
     MCAPI ~BlockMaterialInstanceProxy();
 
-    // symbol: ?bindType@BlockMaterialInstanceProxy@@SAXXZ
-    MCAPI static void bindType();
+    // symbol: ?bindType@BlockMaterialInstanceProxy@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND
 };

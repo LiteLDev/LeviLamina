@@ -59,9 +59,6 @@ public:
             std::vector<std::pair<::cereal::SerializerContext::ContextType, std::string>>,
             std::string);
 
-    // symbol: ??4Logger@Puv@@QEAAAEAU01@$$QEAU01@@Z
-    MCAPI struct Puv::Logger& operator=(struct Puv::Logger&&);
-
     // symbol: ??1Logger@Puv@@QEAA@XZ
     MCAPI ~Logger();
 

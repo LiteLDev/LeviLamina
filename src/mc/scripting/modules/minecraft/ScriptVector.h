@@ -48,7 +48,7 @@ public:
     MCAPI static float distance(class Vec3 const&, class Vec3 const&);
 
     // symbol:
-    // ?divide@ScriptVector@ScriptModuleMinecraft@@SA?AV?$Result@VScriptVector@ScriptModuleMinecraft@@@Scripting@@AEBVVec3@@AEBV?$variant@MVVec3@@@std@@@Z
+    // ?divide@ScriptVector@ScriptModuleMinecraft@@SA?AV?$Result@VScriptVector@ScriptModuleMinecraft@@$$V@Scripting@@AEBVVec3@@AEBV?$variant@MVVec3@@@std@@@Z
     MCAPI static class Scripting::Result<class ScriptModuleMinecraft::ScriptVector>
     divide(class Vec3 const&, std::variant<float, class Vec3> const&);
 

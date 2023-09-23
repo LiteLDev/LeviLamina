@@ -60,6 +60,9 @@ public:
     // symbol: ?getPlayerPermissions@LayeredAbilities@@QEBA?AW4PlayerPermissionLevel@@XZ
     MCAPI ::PlayerPermissionLevel getPlayerPermissions() const;
 
+    // symbol: ?loadSaveData@LayeredAbilities@@QEAA_NAEBVCompoundTag@@@Z
+    MCAPI bool loadSaveData(class CompoundTag const&);
+
     // symbol: ??4LayeredAbilities@@QEAAAEAV0@AEBV0@@Z
     MCAPI class LayeredAbilities& operator=(class LayeredAbilities const&);
 
@@ -71,6 +74,9 @@ public:
 
     // symbol: ?setCommandPermissions@LayeredAbilities@@QEAAXW4CommandPermissionLevel@@@Z
     MCAPI void setCommandPermissions(::CommandPermissionLevel);
+
+    // symbol: ?setPermissions@LayeredAbilities@@QEAAXAEBVPermissionsHandler@@@Z
+    MCAPI void setPermissions(class PermissionsHandler const&);
 
     // symbol: ?setPlayerPermissions@LayeredAbilities@@QEAAXW4PlayerPermissionLevel@@@Z
     MCAPI void setPlayerPermissions(::PlayerPermissionLevel);

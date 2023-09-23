@@ -55,4 +55,11 @@ public:
     MCAPI static class mce::UUID const CraftingTableID;
 
     // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_updateMapInstance@MapExtendingRecipe@@AEBAXAEAVItemInstance@@AEAVCraftingContext@@@Z
+    MCAPI void _updateMapInstance(class ItemInstance&, class CraftingContext&) const;
+
+    // NOLINTEND
 };

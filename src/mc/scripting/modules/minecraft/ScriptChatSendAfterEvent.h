@@ -16,11 +16,13 @@ namespace ScriptModuleMinecraft {
 struct ScriptChatSendAfterEvent {
 public:
     // prevent constructor by default
-    ScriptChatSendAfterEvent(ScriptChatSendAfterEvent const&);
     ScriptChatSendAfterEvent();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0ScriptChatSendAfterEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
+    MCAPI ScriptChatSendAfterEvent(struct ScriptModuleMinecraft::ScriptChatSendAfterEvent const&);
+
     // symbol:
     // ??0ScriptChatSendAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUChatEvent@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI ScriptChatSendAfterEvent(struct ChatEvent const&, class Scripting::WeakLifetimeScope const&);
@@ -32,13 +34,13 @@ public:
     // ?copyTo@ScriptChatSendAfterEvent@ScriptModuleMinecraft@@QEBAXAEAUChatEvent@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI void copyTo(struct ChatEvent&, class Scripting::WeakLifetimeScope const&) const;
 
-    // symbol: ??4ScriptChatSendAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptChatSendAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptChatSendAfterEvent const&);
-
     // symbol: ??4ScriptChatSendAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptChatSendAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptChatSendAfterEvent&&);
+
+    // symbol: ??4ScriptChatSendAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptChatSendAfterEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptChatSendAfterEvent const&);
 
     // symbol: ??1ScriptChatSendAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptChatSendAfterEvent();

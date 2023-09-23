@@ -10,19 +10,12 @@ namespace ScriptModuleMinecraft {
 struct ScriptDimensionLocation {
 public:
     // prevent constructor by default
+    ScriptDimensionLocation& operator=(ScriptDimensionLocation const&);
     ScriptDimensionLocation(ScriptDimensionLocation const&);
     ScriptDimensionLocation();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ScriptDimensionLocation@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptDimensionLocation&
-    operator=(struct ScriptModuleMinecraft::ScriptDimensionLocation const&);
-
-    // symbol: ??4ScriptDimensionLocation@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptDimensionLocation&
-    operator=(struct ScriptModuleMinecraft::ScriptDimensionLocation&&);
-
     // symbol: ??1ScriptDimensionLocation@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptDimensionLocation();
 

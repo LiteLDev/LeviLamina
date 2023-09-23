@@ -8,4 +8,11 @@ public:
     IScreenChangedEventing& operator=(IScreenChangedEventing const&);
     IScreenChangedEventing(IScreenChangedEventing const&);
     IScreenChangedEventing();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ??1IScreenChangedEventing@@UEAA@XZ
+    MCVAPI ~IScreenChangedEventing();
+
+    // NOLINTEND
 };

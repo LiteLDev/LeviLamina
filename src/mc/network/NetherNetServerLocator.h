@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/ServerConnectivityTestResult.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/enums/GameType.h"
@@ -39,6 +40,7 @@ public:
     // prevent constructor by default
     NetherNetServerLocator& operator=(NetherNetServerLocator const&);
     NetherNetServerLocator(NetherNetServerLocator const&);
+    NetherNetServerLocator();
 
 public:
     // NOLINTBEGIN
@@ -78,9 +80,6 @@ public:
     // vIndex: 11, symbol: ?update@NetherNetServerLocator@@UEAAXXZ
     virtual void update();
 
-    // symbol: ??0NetherNetServerLocator@@QEAA@XZ
-    MCAPI NetherNetServerLocator();
-
     // symbol:
     // ?setNetherNetConnector@NetherNetServerLocator@@QEAAX$$QEAV?$NonOwnerPointer@UNetherNetConnector@@@Bedrock@@@Z
     MCAPI void setNetherNetConnector(class Bedrock::NonOwnerPointer<struct NetherNetConnector>&&);
@@ -91,9 +90,6 @@ public:
     // NOLINTBEGIN
     // symbol: ?_cacheDiscoveryResponseData@NetherNetServerLocator@@AEAAXAEBUServerData@1@@Z
     MCAPI void _cacheDiscoveryResponseData(struct NetherNetServerLocator::ServerData const&);
-
-    // symbol: ?_isNetherNetOverLANAllowed@NetherNetServerLocator@@AEBA_NXZ
-    MCAPI bool _isNetherNetOverLANAllowed() const;
 
     // symbol: ?_onDiscoveryResponse@NetherNetServerLocator@@AEAAX_KV?$span@$$CBD$0?0@gsl@@@Z
     MCAPI void _onDiscoveryResponse(uint64, gsl::span<char const>);

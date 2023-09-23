@@ -39,12 +39,12 @@ public:
     public:
         // NOLINTBEGIN
         // symbol:
-        // ??0ScopedCreativeGroup@Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@@Z
-        MCAPI ScopedCreativeGroup(std::string const&, class ItemInstance const&);
-
-        // symbol:
         // ??0ScopedCreativeGroup@Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVBlock@@PEBVCompoundTag@@@Z
         MCAPI ScopedCreativeGroup(std::string const&, class Block const*, class CompoundTag const*);
+
+        // symbol:
+        // ??0ScopedCreativeGroup@Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@@Z
+        MCAPI ScopedCreativeGroup(std::string const&, class ItemInstance const&);
 
         // symbol:
         // ??0ScopedCreativeGroup@Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV1@FPEBVCompoundTag@@@Z
@@ -270,8 +270,8 @@ public:
     // vIndex: 56, symbol: ?isDestructive@Item@@UEBA_NH@Z
     virtual bool isDestructive(int) const;
 
-    // vIndex: 57, symbol: ?isLiquidClipItem@Item@@UEBA_NH@Z
-    virtual bool isLiquidClipItem(int) const;
+    // vIndex: 57, symbol: ?isLiquidClipItem@Item@@UEBA_NXZ
+    virtual bool isLiquidClipItem() const;
 
     // vIndex: 58, symbol: ?shouldInteractionWithBlockBypassLiquid@Item@@UEBA_NAEBVBlock@@@Z
     virtual bool shouldInteractionWithBlockBypassLiquid(class Block const&) const;
@@ -582,6 +582,9 @@ public:
     // symbol: ?addTags@Item@@QEAAAEAV1@V?$initializer_list@V?$reference_wrapper@$$CBUItemTag@@@std@@@std@@@Z
     MCAPI class Item& addTags(std::initializer_list<std::reference_wrapper<struct ItemTag const>>);
 
+    // symbol: ?allowOffhand@Item@@QEBA_NXZ
+    MCAPI bool allowOffhand() const;
+
     // symbol: ?buildDescriptor@Item@@QEBA?AVItemDescriptor@@FPEBVCompoundTag@@@Z
     MCAPI class ItemDescriptor buildDescriptor(short, class CompoundTag const*) const;
 
@@ -593,6 +596,12 @@ public:
 
     // symbol: ?destroySpeedBonus@Item@@QEBAMAEBVItemStackBase@@@Z
     MCAPI float destroySpeedBonus(class ItemStackBase const&) const;
+
+    // symbol: ?fixupOnLoad@Item@@QEBAXAEAVItemStackBase@@@Z
+    MCAPI void fixupOnLoad(class ItemStackBase&) const;
+
+    // symbol: ?fixupOnLoad@Item@@QEBAXAEAVItemStackBase@@AEAVLevel@@@Z
+    MCAPI void fixupOnLoad(class ItemStackBase&, class Level&) const;
 
     // symbol: ?getCommandNames@Item@@QEBA?AV?$vector@UCommandName@@V?$allocator@UCommandName@@@std@@@std@@XZ
     MCAPI std::vector<struct CommandName> getCommandNames() const;
@@ -633,11 +642,26 @@ public:
     // symbol: ?getSerializedName@Item@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getSerializedName() const;
 
+    // symbol: ?getUseAnimation@Item@@QEBA?AW4UseAnimation@@XZ
+    MCAPI ::UseAnimation getUseAnimation() const;
+
+    // symbol: ?hasDamageValue@Item@@QEBA_NPEBVCompoundTag@@@Z
+    MCAPI bool hasDamageValue(class CompoundTag const*) const;
+
+    // symbol: ?hasTag@Item@@QEBA_NAEB_K@Z
+    MCAPI bool hasTag(uint64 const&) const;
+
     // symbol: ?isCommandOnly@Item@@QEBA_NAEBVBaseGameVersion@@@Z
     MCAPI bool isCommandOnly(class BaseGameVersion const&) const;
 
     // symbol: ?isElytra@Item@@QEBA_NXZ
     MCAPI bool isElytra() const;
+
+    // symbol: ?isExplodable@Item@@QEBA_NXZ
+    MCAPI bool isExplodable() const;
+
+    // symbol: ?isFireResistant@Item@@QEBA_NXZ
+    MCAPI bool isFireResistant() const;
 
     // symbol: ?isNameTag@Item@@QEBA_NXZ
     MCAPI bool isNameTag() const;
@@ -647,6 +671,9 @@ public:
 
     // symbol: ??8Item@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class Item const&) const;
+
+    // symbol: ?removeDamageValue@Item@@QEBAXAEAVItemStackBase@@@Z
+    MCAPI void removeDamageValue(class ItemStackBase&) const;
 
     // symbol: ?setAllowOffhand@Item@@QEAAAEAV1@_N@Z
     MCAPI class Item& setAllowOffhand(bool);
@@ -684,11 +711,11 @@ public:
     // symbol: ?addCreativeItem@Item@@SAXVItemRegistryRef@@AEBVBlock@@@Z
     MCAPI static void addCreativeItem(class ItemRegistryRef, class Block const&);
 
-    // symbol: ?addCreativeItem@Item@@SAXVItemRegistryRef@@AEBVItemStack@@@Z
-    MCAPI static void addCreativeItem(class ItemRegistryRef, class ItemStack const&);
-
     // symbol: ?addCreativeItem@Item@@SAXVItemRegistryRef@@AEBVItemInstance@@@Z
     MCAPI static void addCreativeItem(class ItemRegistryRef, class ItemInstance const&);
+
+    // symbol: ?addCreativeItem@Item@@SAXVItemRegistryRef@@AEBVItemStack@@@Z
+    MCAPI static void addCreativeItem(class ItemRegistryRef, class ItemStack const&);
 
     // symbol: ?addLooseCreativeItems@Item@@SAX_NAEBVBaseGameVersion@@VItemRegistryRef@@@Z
     MCAPI static void addLooseCreativeItems(bool, class BaseGameVersion const&, class ItemRegistryRef);

@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace ExpressionNodeSerializer { struct ExpressionNodeProxy; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace ExpressionNodeSerializer {

@@ -66,8 +66,37 @@ public:
     // symbol: ??1LegacyTelemetryEventPacket@@UEAA@XZ
     MCVAPI ~LegacyTelemetryEventPacket();
 
+    // symbol: ??0LegacyTelemetryEventPacket@@QEAA@XZ
+    MCAPI LegacyTelemetryEventPacket();
+
+    // symbol: ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@HV?$not_null@PEBVActor@@@gsl@@@Z
+    MCAPI LegacyTelemetryEventPacket(class Player const*, int, gsl::not_null<class Actor const*>);
+
+    // symbol:
+    // ??0LegacyTelemetryEventPacket@@QEAA@AEBVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+    MCAPI LegacyTelemetryEventPacket(class Player const&, std::string const&, int);
+
+    // symbol: ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@FIF@Z
+    MCAPI LegacyTelemetryEventPacket(class Player const*, short, uint, short);
+
+    // symbol:
+    // ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH1@Z
+    MCAPI LegacyTelemetryEventPacket(class Player const*, std::string const&, int, int, std::string const&);
+
     // symbol: ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@W4AchievementIds@MinecraftEventing@@_N@Z
     MCAPI LegacyTelemetryEventPacket(class Player const*, ::MinecraftEventing::AchievementIds, bool);
+
+    // symbol: ??0LegacyTelemetryEventPacket@@QEAA@AEBVPlayer@@W4MovementEventType@@MMMMM@Z
+    MCAPI LegacyTelemetryEventPacket(class Player const&, ::MovementEventType, float, float, float, float, float);
+
+    // symbol: ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@AEBUData@0@@Z
+    MCAPI LegacyTelemetryEventPacket(class Player const*, struct LegacyTelemetryEventPacket::Data const&);
+
+    // symbol: ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@V?$not_null@PEBVMob@@@gsl@@@Z
+    MCAPI LegacyTelemetryEventPacket(class Player const*, gsl::not_null<class Mob const*>);
+
+    // symbol: ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@AEBVRaid@@_N@Z
+    MCAPI LegacyTelemetryEventPacket(class Player const*, class Raid const&, bool);
 
     // symbol:
     // ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@PEBVActor@@V?$not_null@PEBVMob@@@gsl@@W4ActorDamageCause@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ActorType@@@Z
@@ -81,36 +110,6 @@ public:
         ::ActorType
     );
 
-    // symbol: ??0LegacyTelemetryEventPacket@@QEAA@XZ
-    MCAPI LegacyTelemetryEventPacket();
-
-    // symbol:
-    // ??0LegacyTelemetryEventPacket@@QEAA@AEBVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI LegacyTelemetryEventPacket(class Player const&, std::string const&, int);
-
-    // symbol: ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@FIF@Z
-    MCAPI LegacyTelemetryEventPacket(class Player const*, short, uint, short);
-
-    // symbol: ??0LegacyTelemetryEventPacket@@QEAA@AEBVPlayer@@W4MovementEventType@@MMMMM@Z
-    MCAPI LegacyTelemetryEventPacket(class Player const&, ::MovementEventType, float, float, float, float, float);
-
-    // symbol:
-    // ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH1@Z
-    MCAPI LegacyTelemetryEventPacket(class Player const*, std::string const&, int, int, std::string const&);
-
-    // symbol: ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@AEBUData@0@@Z
-    MCAPI LegacyTelemetryEventPacket(class Player const*, struct LegacyTelemetryEventPacket::Data const&);
-
-    // symbol: ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@V?$not_null@PEBVMob@@@gsl@@@Z
-    MCAPI LegacyTelemetryEventPacket(class Player const*, gsl::not_null<class Mob const*>);
-
-    // symbol: ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@HV?$not_null@PEBVActor@@@gsl@@@Z
-    MCAPI LegacyTelemetryEventPacket(class Player const*, int, gsl::not_null<class Actor const*>);
-
-    // symbol:
-    // ??0LegacyTelemetryEventPacket@@QEAA@AEBVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI LegacyTelemetryEventPacket(class Player const&, std::string const&);
-
     // symbol:
     // ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@V?$not_null@PEBVActor@@@gsl@@W4InteractionType@MinecraftEventing@@@Z
     MCAPI LegacyTelemetryEventPacket(
@@ -119,18 +118,12 @@ public:
         ::MinecraftEventing::InteractionType
     );
 
-    // symbol: ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@AEBVRaid@@_N@Z
-    MCAPI LegacyTelemetryEventPacket(class Player const*, class Raid const&, bool);
-
-    // symbol: ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
-    MCAPI
-    LegacyTelemetryEventPacket(class Player const*, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
-
     // symbol: ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI LegacyTelemetryEventPacket(class Player const*, class AutomaticID<class Dimension, int>);
+    MCAPI LegacyTelemetryEventPacket(class Player const*, DimensionType);
 
-    // symbol: ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@HHW4ActorDamageCause@@_N@Z
-    MCAPI LegacyTelemetryEventPacket(class Player const*, int, int, ::ActorDamageCause, bool);
+    // symbol:
+    // ??0LegacyTelemetryEventPacket@@QEAA@AEBVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI LegacyTelemetryEventPacket(class Player const&, std::string const&);
 
     // symbol:
     // ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@PEBVActor@@V?$not_null@PEBVMob@@@gsl@@W4ActorDamageCause@@W4ActorType@@@Z
@@ -141,6 +134,12 @@ public:
         ::ActorDamageCause,
         ::ActorType
     );
+
+    // symbol: ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@HHW4ActorDamageCause@@_N@Z
+    MCAPI LegacyTelemetryEventPacket(class Player const*, int, int, ::ActorDamageCause, bool);
+
+    // symbol: ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
+    MCAPI LegacyTelemetryEventPacket(class Player const*, DimensionType, DimensionType);
 
     // symbol: ??4LegacyTelemetryEventPacket@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class LegacyTelemetryEventPacket& operator=(class LegacyTelemetryEventPacket&&);

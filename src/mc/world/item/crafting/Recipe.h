@@ -26,7 +26,7 @@ public:
     // ?assemble@ShulkerBoxRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@AEAVCraftingContext@@@Z
     virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&, class CraftingContext&) const = 0;
 
-    // vIndex: 2, symbol: ?getCraftingSize@BannerAddPatternRecipe@@UEBAHXZ
+    // vIndex: 2, symbol: ?getCraftingSize@DecoratedPotRecipe@@UEBAHXZ
     virtual int getCraftingSize() const = 0;
 
     // vIndex: 3, symbol: ?getIngredient@ShapelessRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
@@ -42,7 +42,7 @@ public:
     // vIndex: 6, symbol: ?matches@ShapedChemistryRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
     virtual bool matches(class CraftingContainer const&, class CraftingContext const&) const = 0;
 
-    // vIndex: 7, symbol: ?size@BannerAddPatternRecipe@@UEBAHXZ
+    // vIndex: 7, symbol: ?size@DecoratedPotRecipe@@UEBAHXZ
     virtual int size() const = 0;
 
     // vIndex: 8, symbol: ?getId@Recipe@@UEBAAEBVUUID@mce@@XZ

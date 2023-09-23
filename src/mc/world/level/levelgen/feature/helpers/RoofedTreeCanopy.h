@@ -29,4 +29,13 @@ public:
         const;
 
     // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol:
+    // ?_placeLeafAt@RoofedTreeCanopy@@AEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@V?$not_null@PEBVBlock@@@gsl@@@Z
+    MCAPI std::optional<class BlockPos>
+          _placeLeafAt(class IBlockWorldGenAPI&, class BlockPos const&, gsl::not_null<class Block const*>) const;
+
+    // NOLINTEND
 };

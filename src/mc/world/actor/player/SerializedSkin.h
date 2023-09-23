@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/services/persona/AnimatedTextureType.h"
 #include "mc/deps/core/common/bedrock/Result.h"
 
 class SerializedSkin {
@@ -11,17 +12,20 @@ public:
     // symbol: ??0SerializedSkin@@QEAA@AEBVSubClientConnectionRequest@@@Z
     MCAPI explicit SerializedSkin(class SubClientConnectionRequest const&);
 
-    // symbol: ??0SerializedSkin@@QEAA@XZ
-    MCAPI SerializedSkin();
-
     // symbol: ??0SerializedSkin@@QEAA@AEBV0@@Z
     MCAPI SerializedSkin(class SerializedSkin const&);
+
+    // symbol: ??0SerializedSkin@@QEAA@XZ
+    MCAPI SerializedSkin();
 
     // symbol: ??0SerializedSkin@@QEAA@$$QEAV0@@Z
     MCAPI SerializedSkin(class SerializedSkin&&);
 
     // symbol: ??0SerializedSkin@@QEAA@AEBVConnectionRequest@@@Z
     MCAPI explicit SerializedSkin(class ConnectionRequest const&);
+
+    // symbol: ?getAnimationFrames@SerializedSkin@@QEBAMW4AnimatedTextureType@persona@@@Z
+    MCAPI float getAnimationFrames(::persona::AnimatedTextureType) const;
 
     // symbol: ?getName@SerializedSkin@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getName() const;
@@ -44,6 +48,9 @@ public:
 
     // symbol: ?updateGeometryName@SerializedSkin@@QEAAXXZ
     MCAPI void updateGeometryName();
+
+    // symbol: ?useBlinkingAnimation@SerializedSkin@@QEBA_NXZ
+    MCAPI bool useBlinkingAnimation() const;
 
     // symbol: ?write@SerializedSkin@@QEBAXAEAVBinaryStream@@@Z
     MCAPI void write(class BinaryStream&) const;

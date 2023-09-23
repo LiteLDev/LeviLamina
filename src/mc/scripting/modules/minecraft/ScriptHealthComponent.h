@@ -26,17 +26,20 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 3, symbol: ?setCurrent@ScriptHealthComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N@Scripting@@AEBM@Z
+    // vIndex: 3, symbol:
+    // ?setCurrent@ScriptHealthComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@AEBM@Z
     virtual class Scripting::Result<bool> setCurrent(float const&) const;
 
-    // vIndex: 7, symbol: ?resetToMinValue@ScriptHealthComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@X@Scripting@@XZ
+    // vIndex: 7, symbol:
+    // ?resetToMinValue@ScriptHealthComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@X$$V@Scripting@@XZ
     virtual class Scripting::Result<void> resetToMinValue() const;
 
-    // vIndex: 8, symbol: ?resetToMaxValue@ScriptHealthComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@X@Scripting@@XZ
+    // vIndex: 8, symbol:
+    // ?resetToMaxValue@ScriptHealthComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@X$$V@Scripting@@XZ
     virtual class Scripting::Result<void> resetToMaxValue() const;
 
     // vIndex: 9, symbol:
-    // ?resetToDefaultValue@ScriptHealthComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@X@Scripting@@XZ
+    // ?resetToDefaultValue@ScriptHealthComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@X$$V@Scripting@@XZ
     virtual class Scripting::Result<void> resetToDefaultValue() const;
 
     // symbol: ??1ScriptHealthComponent@ScriptModuleMinecraft@@UEAA@XZ

@@ -35,9 +35,6 @@ public:
     // symbol: ??1SetActorDataPacket@@UEAA@XZ
     MCVAPI ~SetActorDataPacket();
 
-    // symbol: ??0SetActorDataPacket@@QEAA@XZ
-    MCAPI SetActorDataPacket();
-
     // symbol:
     // ??0SetActorDataPacket@@QEAA@VActorRuntimeID@@AEAVSynchedActorDataEntityWrapper@@PEAVPropertyComponent@@_K_N@Z
     MCAPI SetActorDataPacket(
@@ -47,6 +44,9 @@ public:
         uint64,
         bool
     );
+
+    // symbol: ??0SetActorDataPacket@@QEAA@XZ
+    MCAPI SetActorDataPacket();
 
     // NOLINTEND
 };

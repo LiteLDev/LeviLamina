@@ -12,6 +12,7 @@ public:
     // prevent constructor by default
     GetInteractionPositionForBlockNode& operator=(GetInteractionPositionForBlockNode const&);
     GetInteractionPositionForBlockNode(GetInteractionPositionForBlockNode const&);
+    GetInteractionPositionForBlockNode();
 
 public:
     // NOLINTBEGIN
@@ -23,9 +24,6 @@ public:
 
     // vIndex: 2, symbol: ?initializeFromDefinition@GetInteractionPositionForBlockNode@@EEAAXAEAVActor@@@Z
     virtual void initializeFromDefinition(class Actor&);
-
-    // symbol: ??0GetInteractionPositionForBlockNode@@QEAA@XZ
-    MCAPI GetInteractionPositionForBlockNode();
 
     // NOLINTEND
 

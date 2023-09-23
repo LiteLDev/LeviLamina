@@ -10,6 +10,10 @@ public:
     // clang-format on
 
     // IMinecraftEventing inner types define
+    enum class CDNDownloadEventOrigin {};
+
+    enum class CDNDownloadResult {};
+
     enum class ClubsEngagementAction {};
 
     enum class ClubsEngagementTargetType {};
@@ -19,8 +23,6 @@ public:
     enum class DayOneExperienceState {};
 
     enum class DeviceAccountFailurePhase {};
-
-    enum class EduSignInStage {};
 
     enum class EducationLessonAction {};
 

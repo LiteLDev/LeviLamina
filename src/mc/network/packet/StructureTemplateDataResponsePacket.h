@@ -36,6 +36,9 @@ public:
     // symbol: ??1StructureTemplateDataResponsePacket@@UEAA@XZ
     MCVAPI ~StructureTemplateDataResponsePacket();
 
+    // symbol: ??0StructureTemplateDataResponsePacket@@QEAA@XZ
+    MCAPI StructureTemplateDataResponsePacket();
+
     // symbol:
     // ??0StructureTemplateDataResponsePacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@2@W4StructureTemplateResponseType@@@Z
     MCAPI StructureTemplateDataResponsePacket(
@@ -43,9 +46,6 @@ public:
         std::unique_ptr<class CompoundTag>,
         ::StructureTemplateResponseType
     );
-
-    // symbol: ??0StructureTemplateDataResponsePacket@@QEAA@XZ
-    MCAPI StructureTemplateDataResponsePacket();
 
     // symbol: ??4StructureTemplateDataResponsePacket@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class StructureTemplateDataResponsePacket& operator=(class StructureTemplateDataResponsePacket&&);

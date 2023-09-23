@@ -19,10 +19,6 @@ public:
     // ?getTrimMaterialByItemName@TrimMaterialRegistry@@QEBA?AV?$optional@UTrimMaterial@@@std@@AEBVHashedString@@@Z
     MCAPI std::optional<struct TrimMaterial> getTrimMaterialByItemName(class HashedString const&) const;
 
-    // symbol:
-    // ?getTrimMaterialByMaterialId@TrimMaterialRegistry@@QEBA?AV?$optional@UTrimMaterial@@@std@@AEBVHashedString@@@Z
-    MCAPI std::optional<struct TrimMaterial> getTrimMaterialByMaterialId(class HashedString const&) const;
-
     // symbol: ?initializeServer@TrimMaterialRegistry@@QEAAXXZ
     MCAPI void initializeServer();
 

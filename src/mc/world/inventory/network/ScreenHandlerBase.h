@@ -29,5 +29,11 @@ public:
     // vIndex: 4, symbol: ?postRequest@ScreenHandlerBase@@UEAAX_N@Z
     virtual void postRequest(bool);
 
+    // symbol: ??1ScreenHandlerBase@@UEAA@XZ
+    MCVAPI ~ScreenHandlerBase();
+
+    // symbol: ??0ScreenHandlerBase@@QEAA@AEAVItemStackRequestActionHandler@@@Z
+    MCAPI explicit ScreenHandlerBase(class ItemStackRequestActionHandler&);
+
     // NOLINTEND
 };

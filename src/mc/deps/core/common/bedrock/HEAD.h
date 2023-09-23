@@ -4,7 +4,7 @@
 
 namespace Bedrock::Http::MethodType {
 
-class HEAD {
+struct HEAD {
 public:
     // prevent constructor by default
     HEAD& operator=(HEAD const&);

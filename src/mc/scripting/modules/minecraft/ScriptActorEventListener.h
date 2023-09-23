@@ -3,13 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/InitializationMethod.h"
 #include "mc/external/scripting/TypedObjectHandle.h"
 #include "mc/world/events/EventResult.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-namespace ScriptModuleMinecraft { class IScriptAfterEvents; }
+namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
 namespace Scripting { class WeakLifetimeScope; }
 struct ActorAddEffectEvent;
 struct ActorAttackEvent;
@@ -61,8 +62,8 @@ public:
     virtual void __unk_vfn_7();
 
     // vIndex: 8, symbol:
-    // ?onActorCreated@ScriptActorEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEAVActor@@@Z
-    virtual ::EventResult onActorCreated(class Actor&);
+    // ?onActorCreated@ScriptActorEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEAVActor@@W4InitializationMethod@@@Z
+    virtual ::EventResult onActorCreated(class Actor&, ::InitializationMethod);
 
     // vIndex: 9, symbol: __unk_vfn_9
     virtual void __unk_vfn_9();
@@ -157,10 +158,10 @@ public:
     virtual ::EventResult onEvent(struct ActorAddEffectEvent const&);
 
     // symbol:
-    // ??0ScriptActorEventListener@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptAfterEvents@ScriptModuleMinecraft@@@3@_N@Z
+    // ??0ScriptActorEventListener@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptWorldAfterEvents@ScriptModuleMinecraft@@@3@_N@Z
     MCAPI ScriptActorEventListener(
         class Scripting::WeakLifetimeScope const&,
-        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptAfterEvents>,
+        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldAfterEvents>,
         bool
     );
 

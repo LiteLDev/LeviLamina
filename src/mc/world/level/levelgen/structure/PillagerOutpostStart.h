@@ -20,5 +20,8 @@ public:
     // vIndex: 1, symbol: ?postProcess@PillagerOutpostStart@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
     virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
 
+    // symbol: ??0PillagerOutpostStart@@QEAA@AEAVDimension@@AEAVRandom@@HH@Z
+    MCAPI PillagerOutpostStart(class Dimension&, class Random&, int, int);
+
     // NOLINTEND
 };

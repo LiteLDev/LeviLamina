@@ -32,6 +32,9 @@ public:
     // vIndex: 4, symbol: ?onSerializableDataChanged@VibrationListenerConfig@@UEAAXAEAVBlockSource@@@Z
     virtual void onSerializableDataChanged(class BlockSource&);
 
+    // vIndex: 5, symbol: ?canReceiveOnlyIfAdjacentChunksAreTicking@VibrationListenerConfig@@UEBA_NXZ
+    virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const;
+
     // symbol: ??0AllayVibrationConfig@@QEAA@AEAVActor@@G@Z
     MCAPI AllayVibrationConfig(class Actor&, ushort);
 

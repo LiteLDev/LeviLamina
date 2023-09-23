@@ -11,6 +11,7 @@ public:
     // prevent constructor by default
     WaitNode& operator=(WaitNode const&);
     WaitNode(WaitNode const&);
+    WaitNode();
 
 public:
     // NOLINTBEGIN
@@ -22,9 +23,6 @@ public:
 
     // vIndex: 2, symbol: ?initializeFromDefinition@WaitNode@@EEAAXAEAVActor@@@Z
     virtual void initializeFromDefinition(class Actor&);
-
-    // symbol: ??0WaitNode@@QEAA@XZ
-    MCAPI WaitNode();
 
     // NOLINTEND
 };

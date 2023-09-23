@@ -15,7 +15,6 @@ class WeakEntityRef;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptComponent; }
 namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -36,13 +35,13 @@ public:
     // symbol: ??1ScriptActorComponent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptActorComponent();
 
-    // symbol: ??0ScriptActorComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
-    MCAPI ScriptActorComponent(class ScriptModuleMinecraft::ScriptActorComponent const&);
-
     // symbol:
     // ??0ScriptActorComponent@ScriptModuleMinecraft@@QEAA@AEBVWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI
     ScriptActorComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
+
+    // symbol: ??0ScriptActorComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
+    MCAPI ScriptActorComponent(class ScriptModuleMinecraft::ScriptActorComponent const&);
 
     // symbol:
     // ?getEntity@ScriptActorComponent@ScriptModuleMinecraft@@QEBA?AV?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@XZ
@@ -64,10 +63,6 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol:
-    // ?_getPropertyError@ScriptActorComponent@ScriptModuleMinecraft@@IEBA?AUError@Scripting@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI struct Scripting::Error _getPropertyError(std::string_view) const;
-
     // symbol: ?_tryGetOwner@ScriptActorComponent@ScriptModuleMinecraft@@IEBAPEAVActor@@XZ
     MCAPI class Actor* _tryGetOwner() const;
 

@@ -11,7 +11,6 @@ public:
     // prevent constructor by default
     AnvilContainerScreenValidator& operator=(AnvilContainerScreenValidator const&);
     AnvilContainerScreenValidator(AnvilContainerScreenValidator const&);
-    AnvilContainerScreenValidator();
 
 public:
     // NOLINTBEGIN
@@ -25,6 +24,9 @@ public:
     // ?getCraftResult@AnvilContainerScreenValidator@@UEAA?AUContainerValidationCraftResult@@AEBVContainerScreenContext@@AEAVContainerScreenValidation@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z
     virtual struct ContainerValidationCraftResult
     getCraftResult(class ContainerScreenContext const&, class ContainerScreenValidation&, std::unique_ptr<struct ContainerValidationCraftInputs>);
+
+    // symbol: ??0AnvilContainerScreenValidator@@QEAA@XZ
+    MCAPI AnvilContainerScreenValidator();
 
     // NOLINTEND
 };

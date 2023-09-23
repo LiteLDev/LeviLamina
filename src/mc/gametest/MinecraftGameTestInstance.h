@@ -48,7 +48,7 @@ public:
     virtual class BoundingBox getStructureBoundingBox() const;
 
     // vIndex: 9, symbol: ?getStructureDimension@MinecraftGameTestInstance@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ
-    virtual class AutomaticID<class Dimension, int> getStructureDimension() const;
+    virtual DimensionType getStructureDimension() const;
 
     // vIndex: 10, symbol: ?_getLevelTick@MinecraftGameTestInstance@@MEBAHXZ
     virtual int _getLevelTick() const;

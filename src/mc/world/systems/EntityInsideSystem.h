@@ -17,9 +17,6 @@ MCAPI struct TickingSystemWithInfo createCleanupSystem();
 // symbol: ?createSystem@EntityInsideSystem@@YA?AUTickingSystemWithInfo@@_N@Z
 MCAPI struct TickingSystemWithInfo createSystem(bool);
 
-// symbol: ?isSlidingDown@EntityInsideSystem@@YA_NAEBVBlockPos@@AEBVVec3@@1AEBVVec2@@@Z
-MCAPI bool isSlidingDown(class BlockPos const&, class Vec3 const&, class Vec3 const&, class Vec2 const&);
-
 // symbol: ?onBoatAboveBubbleColumn@EntityInsideSystem@@YAXAEAVActor@@@Z
 MCAPI void onBoatAboveBubbleColumn(class Actor&);
 

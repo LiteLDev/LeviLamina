@@ -73,9 +73,6 @@ public:
     // symbol: ?setLastReloadInitTimeStampClient@AnimationComponent@@QEAAX_K@Z
     MCAPI void setLastReloadInitTimeStampClient(uint64);
 
-    // symbol: ?setupDeltaTimeAndLifeTimeParams@AnimationComponent@@QEAAX_N@Z
-    MCAPI void setupDeltaTimeAndLifeTimeParams(bool);
-
     // symbol: ?shouldReloadBasedOnLastReloadInitTimeStamp@AnimationComponent@@QEBA_NXZ
     MCAPI bool shouldReloadBasedOnLastReloadInitTimeStamp() const;
 

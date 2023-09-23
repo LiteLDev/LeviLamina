@@ -17,15 +17,23 @@ public:
     // symbol: ??0RealmsStoriesData@@QEAA@AEAVLevelStorage@@@Z
     MCAPI explicit RealmsStoriesData(class LevelStorage&);
 
-    // symbol: ?didRealmsEventAlreadyHappen@RealmsStoriesData@@QEBA_NW4RealmsEventId@@@Z
-    MCAPI bool didRealmsEventAlreadyHappen(::RealmsEventId) const;
-
     // symbol:
     // ?getRealmsEventInternalName@RealmsStoriesData@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4RealmsEventId@@@Z
     MCAPI std::string const& getRealmsEventInternalName(::RealmsEventId) const;
 
-    // symbol: ?setRealmsEventHappenedAndSave@RealmsStoriesData@@QEAAXW4RealmsEventId@@@Z
-    MCAPI void setRealmsEventHappenedAndSave(::RealmsEventId);
+    // symbol:
+    // ?setPlayerRealmsEventPublished@RealmsStoriesData@@QEAAXW4RealmsEventId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI void setPlayerRealmsEventPublished(::RealmsEventId, std::string const&);
+
+    // symbol: ?setWorldRealmsEventPublished@RealmsStoriesData@@QEAAXW4RealmsEventId@@@Z
+    MCAPI void setWorldRealmsEventPublished(::RealmsEventId);
+
+    // symbol:
+    // ?wasPlayerRealmsEventPublished@RealmsStoriesData@@QEBA_NW4RealmsEventId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI bool wasPlayerRealmsEventPublished(::RealmsEventId, std::string const&) const;
+
+    // symbol: ?wasWorldRealmsEventPublished@RealmsStoriesData@@QEBA_NW4RealmsEventId@@@Z
+    MCAPI bool wasWorldRealmsEventPublished(::RealmsEventId) const;
 
     // symbol:
     // ?REALMS_STORIES_PREFIX@RealmsStoriesData@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B

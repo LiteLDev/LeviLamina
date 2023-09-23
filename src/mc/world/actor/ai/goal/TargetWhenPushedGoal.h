@@ -37,5 +37,9 @@ public:
     // ?appendDebugInfo@TargetWhenPushedGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
 
+    // symbol:
+    // ??0TargetWhenPushedGoal@@QEAA@AEAVMob@@V?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@M@Z
+    MCAPI TargetWhenPushedGoal(class Mob&, std::vector<struct MobDescriptor>, float);
+
     // NOLINTEND
 };

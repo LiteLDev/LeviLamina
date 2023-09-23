@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/external/glm/vec.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 class SimpleBlockVolume {
 public:
     // SimpleBlockVolume inner types define
@@ -70,14 +75,14 @@ public:
     // symbol: ??8SimpleBlockVolume@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class SimpleBlockVolume const&) const;
 
-    // symbol: ?translate@SimpleBlockVolume@@QEAAAEAV1@AEBU?$vec@$02H$0A@@glm@@@Z
-    MCAPI class SimpleBlockVolume& translate(struct glm::vec<3, int, 0> const&);
+    // symbol: ?translate@SimpleBlockVolume@@QEAAAEAV1@AEBVBlockPos@@@Z
+    MCAPI class SimpleBlockVolume& translate(class BlockPos const&);
 
     // symbol: ?translated@SimpleBlockVolume@@QEBA?AV1@AEBU?$vec@$02H$0A@@glm@@@Z
     MCAPI class SimpleBlockVolume translated(struct glm::vec<3, int, 0> const&) const;
 
-    // symbol: ?cerealBindTypes@SimpleBlockVolume@@SAXXZ
-    MCAPI static void cerealBindTypes();
+    // symbol: ?cerealBindTypes@SimpleBlockVolume@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void cerealBindTypes(struct cereal::ReflectionCtx&);
 
     // NOLINTEND
 

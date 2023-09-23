@@ -32,10 +32,10 @@ public:
     MCAPI ScriptItemCooldownComponent(class ScriptModuleMinecraft::ScriptItemCooldownComponent const&);
 
     // symbol:
-    // ?getCooldownCategory@ScriptItemCooldownComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Scripting@@XZ
+    // ?getCooldownCategory@ScriptItemCooldownComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::string> getCooldownCategory();
 
-    // symbol: ?getCooldownTicks@ScriptItemCooldownComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H@Scripting@@XZ
+    // symbol: ?getCooldownTicks@ScriptItemCooldownComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getCooldownTicks();
 
     // symbol: ??4ScriptItemCooldownComponent@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
@@ -43,7 +43,7 @@ public:
     operator=(class ScriptModuleMinecraft::ScriptItemCooldownComponent const&);
 
     // symbol:
-    // ?startCooldown@ScriptItemCooldownComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X@Scripting@@AEAVScriptPlayer@2@@Z
+    // ?startCooldown@ScriptItemCooldownComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEAVScriptPlayer@2@@Z
     MCAPI class Scripting::Result<void> startCooldown(class ScriptModuleMinecraft::ScriptPlayer&);
 
     // symbol:

@@ -23,11 +23,11 @@ public:
     // symbol: ??0FileStream@Core@@QEAA@XZ
     MCAPI FileStream();
 
+    // symbol: ?close@FileStream@Core@@QEAAXXZ
+    MCAPI void close();
+
     // symbol: ?open@FileStream@Core@@QEAAXAEBVPath@2@H@Z
     MCAPI void open(class Core::Path const&, int);
-
-    // symbol: ?setLoggingEnabled@FileStream@Core@@QEAAX_N@Z
-    MCAPI void setLoggingEnabled(bool);
 
     // NOLINTEND
 };

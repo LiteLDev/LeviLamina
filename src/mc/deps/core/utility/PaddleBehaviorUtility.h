@@ -5,10 +5,15 @@
 // auto generated inclusion list
 #include "mc/enums/Side.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace PaddleBehaviorUtility { struct PaddleForces; }
+// clang-format on
+
 namespace PaddleBehaviorUtility {
 // NOLINTBEGIN
-// symbol: ?computePaddleForcesBasedOnGaze@PaddleBehaviorUtility@@YAXAEAVVec3@@AEAM1MMM@Z
-MCAPI void computePaddleForcesBasedOnGaze(class Vec3&, float&, float&, float, float, float);
+// symbol: ?computePaddleForcesBasedOnGaze@PaddleBehaviorUtility@@YA?AUPaddleForces@1@AEAVVec3@@MMM@Z
+MCAPI struct PaddleBehaviorUtility::PaddleForces computePaddleForcesBasedOnGaze(class Vec3&, float, float, float);
 
 // symbol: ?setPaddleForce@PaddleBehaviorUtility@@YA_NAEAUPaddle@@AEBUTick@@M@Z
 MCAPI bool setPaddleForce(struct Paddle&, struct Tick const&, float);

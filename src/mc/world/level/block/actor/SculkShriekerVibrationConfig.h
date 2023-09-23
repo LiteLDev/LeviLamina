@@ -32,5 +32,8 @@ public:
     // vIndex: 4, symbol: ?onSerializableDataChanged@SculkShriekerVibrationConfig@@UEAAXAEAVBlockSource@@@Z
     virtual void onSerializableDataChanged(class BlockSource&);
 
+    // vIndex: 5, symbol: ?canReceiveOnlyIfAdjacentChunksAreTicking@SculkShriekerVibrationConfig@@UEBA_NXZ
+    virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const;
+
     // NOLINTEND
 };

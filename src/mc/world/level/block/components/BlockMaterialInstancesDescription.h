@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace JsonUtil { class EmptyClass; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockMaterialInstancesDescription : public ::BlockComponentDescription {
@@ -34,15 +35,16 @@ public:
     // vIndex: 4, symbol: ?initializeComponentFromCode@BlockMaterialInstancesDescription@@UEBAXAEAVEntityContext@@@Z
     virtual void initializeComponentFromCode(class EntityContext&) const;
 
-    // vIndex: 6, symbol: ?isNetworkComponent@BlockMaterialInstancesDescription@@UEBA_NXZ
+    // vIndex: 7, symbol: ?isNetworkComponent@BlockMaterialInstancesDescription@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
-    // vIndex: 7, symbol:
-    // ?buildNetworkTag@BlockMaterialInstancesDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    // vIndex: 8, symbol:
+    // ?buildNetworkTag@BlockMaterialInstancesDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAUReflectionCtx@cereal@@@Z
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx&) const;
 
-    // vIndex: 8, symbol: ?initializeFromNetwork@BlockMaterialInstancesDescription@@UEAAXAEBVCompoundTag@@@Z
-    virtual void initializeFromNetwork(class CompoundTag const&);
+    // vIndex: 9, symbol:
+    // ?initializeFromNetwork@BlockMaterialInstancesDescription@@UEAAXAEBVCompoundTag@@AEAUReflectionCtx@cereal@@@Z
+    virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx&);
 
     // symbol: ??1BlockMaterialInstancesDescription@@UEAA@XZ
     MCVAPI ~BlockMaterialInstancesDescription();
@@ -51,8 +53,8 @@ public:
     // ??0BlockMaterialInstancesDescription@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockRenderLayer@@_N2@Z
     MCAPI BlockMaterialInstancesDescription(std::string const&, ::BlockRenderLayer, bool, bool);
 
-    // symbol: ?bindType@BlockMaterialInstancesDescription@@SAXXZ
-    MCAPI static void bindType();
+    // symbol: ?bindType@BlockMaterialInstancesDescription@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // symbol:
     // ?NameID@BlockMaterialInstancesDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B

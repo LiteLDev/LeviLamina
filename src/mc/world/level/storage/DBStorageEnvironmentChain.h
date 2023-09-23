@@ -26,8 +26,23 @@ public:
     MCAPI
     DBStorageEnvironmentChain(struct DBStorageConfig const&, class Core::Path const&, gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>);
 
+    // symbol: ?getCompactionListenerEnv@DBStorageEnvironmentChain@@QEBAPEAVCompactionListenerEnv@@XZ
+    MCAPI class CompactionListenerEnv* getCompactionListenerEnv() const;
+
+    // symbol: ?getFlushableEnv@DBStorageEnvironmentChain@@QEBAPEAVFlushableEnv@@XZ
+    MCAPI class FlushableEnv* getFlushableEnv() const;
+
+    // symbol: ?getRootEnv@DBStorageEnvironmentChain@@QEBAPEAVEnv@leveldb@@XZ
+    MCAPI leveldb::Env* getRootEnv() const;
+
+    // symbol: ?getSnapshotEnv@DBStorageEnvironmentChain@@QEBAPEAVSnapshotEnv@@XZ
+    MCAPI class SnapshotEnv* getSnapshotEnv() const;
+
     // symbol: ?isChainValid@DBStorageEnvironmentChain@@QEBA?AVResult@Core@@_N@Z
     MCAPI class Core::Result isChainValid(bool) const;
+
+    // symbol: ?onFlush@DBStorageEnvironmentChain@@QEAAXXZ
+    MCAPI void onFlush();
 
     // symbol: ??1DBStorageEnvironmentChain@@QEAA@XZ
     MCAPI ~DBStorageEnvironmentChain();

@@ -36,11 +36,11 @@ public:
     // symbol: ??1ActorEventPacket@@UEAA@XZ
     MCVAPI ~ActorEventPacket();
 
-    // symbol: ??0ActorEventPacket@@QEAA@VActorRuntimeID@@W4ActorEvent@@H@Z
-    MCAPI ActorEventPacket(class ActorRuntimeID, ::ActorEvent, int);
-
     // symbol: ??0ActorEventPacket@@QEAA@XZ
     MCAPI ActorEventPacket();
+
+    // symbol: ??0ActorEventPacket@@QEAA@VActorRuntimeID@@W4ActorEvent@@H@Z
+    MCAPI ActorEventPacket(class ActorRuntimeID, ::ActorEvent, int);
 
     // NOLINTEND
 };

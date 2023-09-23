@@ -16,7 +16,6 @@ namespace PlayerCapabilities { struct ISharedController; }
 class TextPacket : public ::Packet {
 public:
     // prevent constructor by default
-    TextPacket& operator=(TextPacket const&);
     TextPacket(TextPacket const&);
 
 public:
@@ -41,6 +40,9 @@ public:
 
     // symbol: ??0TextPacket@@QEAA@XZ
     MCAPI TextPacket();
+
+    // symbol: ??4TextPacket@@QEAAAEAV0@AEBV0@@Z
+    MCAPI class TextPacket& operator=(class TextPacket const&);
 
     // symbol:
     // ?_shouldHandleTextPacketForPlayer@TextPacket@@SA?B_NAEBV1@AEAUIPlayerData@PlayerCapabilities@@AEBUISharedController@3@@Z
@@ -73,14 +75,14 @@ public:
     MCAPI static class TextPacket createTextObjectMessage(class ResolvedTextObject const&, std::string, std::string);
 
     // symbol:
-    // ?createTextObjectWhisperMessage@TextPacket@@SA?AV1@AEBVResolvedTextObject@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-    MCAPI static class TextPacket
-    createTextObjectWhisperMessage(class ResolvedTextObject const&, std::string const&, std::string const&);
-
-    // symbol:
     // ?createTextObjectWhisperMessage@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
     MCAPI static class TextPacket
     createTextObjectWhisperMessage(std::string const&, std::string const&, std::string const&);
+
+    // symbol:
+    // ?createTextObjectWhisperMessage@TextPacket@@SA?AV1@AEBVResolvedTextObject@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
+    MCAPI static class TextPacket
+    createTextObjectWhisperMessage(class ResolvedTextObject const&, std::string const&, std::string const&);
 
     // symbol:
     // ?createTranslated@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z

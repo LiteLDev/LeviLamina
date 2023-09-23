@@ -35,11 +35,11 @@ public:
     // symbol: ??1SetActorLinkPacket@@UEAA@XZ
     MCVAPI ~SetActorLinkPacket();
 
-    // symbol: ??0SetActorLinkPacket@@QEAA@AEBUActorLink@@@Z
-    MCAPI explicit SetActorLinkPacket(struct ActorLink const&);
-
     // symbol: ??0SetActorLinkPacket@@QEAA@XZ
     MCAPI SetActorLinkPacket();
+
+    // symbol: ??0SetActorLinkPacket@@QEAA@AEBUActorLink@@@Z
+    MCAPI explicit SetActorLinkPacket(struct ActorLink const&);
 
     // NOLINTEND
 };

@@ -9,17 +9,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0MerchantRecipe@@QEAA@AEBV0@@Z
-    MCAPI MerchantRecipe(class MerchantRecipe const&);
+    // symbol: ??0MerchantRecipe@@QEAA@AEBVItemInstance@@00@Z
+    MCAPI MerchantRecipe(class ItemInstance const&, class ItemInstance const&, class ItemInstance const&);
 
     // symbol: ??0MerchantRecipe@@QEAA@AEBVItemInstance@@0@Z
     MCAPI MerchantRecipe(class ItemInstance const&, class ItemInstance const&);
 
-    // symbol: ??0MerchantRecipe@@QEAA@AEBVItemInstance@@00@Z
-    MCAPI MerchantRecipe(class ItemInstance const&, class ItemInstance const&, class ItemInstance const&);
+    // symbol: ??0MerchantRecipe@@QEAA@AEBV0@@Z
+    MCAPI MerchantRecipe(class MerchantRecipe const&);
 
-    // symbol: ?calculateDemandPrices@MerchantRecipe@@QEAAXHHH_N@Z
-    MCAPI void calculateDemandPrices(int, int, int, bool);
+    // symbol: ?calculateDemandPrices@MerchantRecipe@@QEAAXHHHH_NVBaseGameVersion@@@Z
+    MCAPI void calculateDemandPrices(int, int, int, int, bool, class BaseGameVersion);
+
+    // symbol: ?calculateDemandPricesDefaults@MerchantRecipe@@QEAAXXZ
+    MCAPI void calculateDemandPricesDefaults();
 
     // symbol:
     // ?createTag@MerchantRecipe@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@_N@Z

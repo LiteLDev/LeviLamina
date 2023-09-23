@@ -42,9 +42,6 @@ public:
     // ?getErrorParameters@PackError@@QEBAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
     MCAPI std::vector<std::string> const& getErrorParameters() const;
 
-    // symbol: ?getEventErrorMessage@PackError@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string getEventErrorMessage() const;
-
     // symbol: ?serialize@PackError@@QEAAXAEAVValue@Json@@@Z
     MCAPI void serialize(class Json::Value&);
 

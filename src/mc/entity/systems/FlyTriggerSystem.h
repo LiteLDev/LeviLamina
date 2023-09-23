@@ -2,28 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/common/wrapper/Include.h"
-#include "mc/common/wrapper/Optional.h"
-#include "mc/common/wrapper/ViewT.h"
-#include "mc/entity/EntityModifierT.h"
+namespace FlyTriggerSystem {
+// NOLINTBEGIN
+// symbol: ?createActionSystem@FlyTriggerSystem@@YA?AUTickingSystemWithInfo@@XZ
+MCAPI struct TickingSystemWithInfo createActionSystem();
 
-class FlyTriggerSystem {
-public:
-    // prevent constructor by default
-    FlyTriggerSystem& operator=(FlyTriggerSystem const&);
-    FlyTriggerSystem(FlyTriggerSystem const&);
-    FlyTriggerSystem();
+// symbol: ?createIntentSystem@FlyTriggerSystem@@YA?AUTickingSystemWithInfo@@XZ
+MCAPI struct TickingSystemWithInfo createIntentSystem();
 
-public:
-    // NOLINTBEGIN
-    // symbol: ?createSystem@FlyTriggerSystem@@SA?AUTickingSystemWithInfo@@XZ
-    MCAPI static struct TickingSystemWithInfo createSystem();
+// symbol: ?createRemovePermissionFlyFlagSystem@FlyTriggerSystem@@YA?AUTickingSystemWithInfo@@XZ
+MCAPI struct TickingSystemWithInfo createRemovePermissionFlyFlagSystem();
+// NOLINTEND
 
-    // symbol:
-    // ?tickEntity@FlyTriggerSystem@@SAXAEBVStrictEntityContext@@AEBUActorUniqueIDComponent@@AEBUMoveInputComponent@@V?$Optional@$$CBUPassengerComponent@@@@AEAUAbilitiesComponent@@AEAUFallDistanceComponent@@AEAUPlayerInputRequestComponent@@AEAUVanillaClientGameplayComponent@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@UVehicleComponent@@@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@USendPacketsComponent@@@@@Z
-    MCAPI static void
-    tickEntity(class StrictEntityContext const&, struct ActorUniqueIDComponent const&, struct MoveInputComponent const&, class Optional<struct PassengerComponent const>, struct AbilitiesComponent&, struct FallDistanceComponent&, struct PlayerInputRequestComponent&, struct VanillaClientGameplayComponent&, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct VehicleComponent>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct SendPacketsComponent>);
-
-    // NOLINTEND
-};
+}; // namespace FlyTriggerSystem

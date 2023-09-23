@@ -16,6 +16,7 @@ class CompoundTag;
 class Vec3;
 namespace BlockTrait { class IGetPlacementBlockCallback; }
 namespace BlockTrait { class ITrait; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace BlockTrait {
@@ -120,8 +121,14 @@ public:
     // vIndex: 3, symbol: ?initializeFromNetwork@PlacementPosition@BlockTrait@@UEAAXAEBVCompoundTag@@@Z
     virtual void initializeFromNetwork(class CompoundTag const&);
 
-    // symbol: ?bindType@PlacementPosition@BlockTrait@@SAXXZ
-    MCAPI static void bindType();
+    // symbol: ??1PlacementPosition@BlockTrait@@UEAA@XZ
+    MCVAPI ~PlacementPosition();
+
+    // symbol: ??0PlacementPosition@BlockTrait@@QEAA@_N0@Z
+    MCAPI PlacementPosition(bool, bool);
+
+    // symbol: ?bindType@PlacementPosition@BlockTrait@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // symbol:
     // ?getName@PlacementPosition@BlockTrait@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

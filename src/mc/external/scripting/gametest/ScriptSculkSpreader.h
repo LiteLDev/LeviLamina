@@ -29,20 +29,17 @@ public:
     // symbol: ?addCursorsWithOffset@ScriptSculkSpreader@ScriptModuleGameTest@@QEAAXAEBVVec3@@H@Z
     MCAPI void addCursorsWithOffset(class Vec3 const&, int);
 
-    // symbol: ?getCursorPosition@ScriptSculkSpreader@ScriptModuleGameTest@@QEBA?AV?$Result@VVec3@@@Scripting@@H@Z
+    // symbol: ?getCursorPosition@ScriptSculkSpreader@ScriptModuleGameTest@@QEBA?AV?$Result@VVec3@@$$V@Scripting@@H@Z
     MCAPI class Scripting::Result<class Vec3> getCursorPosition(int) const;
 
-    // symbol: ?getMaxCharge@ScriptSculkSpreader@ScriptModuleGameTest@@QEBA?AV?$Result@H@Scripting@@XZ
+    // symbol: ?getMaxCharge@ScriptSculkSpreader@ScriptModuleGameTest@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getMaxCharge() const;
 
-    // symbol: ?getNumberOfCursors@ScriptSculkSpreader@ScriptModuleGameTest@@QEBA?AV?$Result@H@Scripting@@XZ
+    // symbol: ?getNumberOfCursors@ScriptSculkSpreader@ScriptModuleGameTest@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getNumberOfCursors() const;
 
-    // symbol: ?getTotalCharge@ScriptSculkSpreader@ScriptModuleGameTest@@QEBA?AV?$Result@H@Scripting@@XZ
+    // symbol: ?getTotalCharge@ScriptSculkSpreader@ScriptModuleGameTest@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getTotalCharge() const;
-
-    // symbol: ??4ScriptSculkSpreader@ScriptModuleGameTest@@QEAAAEAV01@$$QEAV01@@Z
-    MCAPI class ScriptModuleGameTest::ScriptSculkSpreader& operator=(class ScriptModuleGameTest::ScriptSculkSpreader&&);
 
     // symbol: ??1ScriptSculkSpreader@ScriptModuleGameTest@@QEAA@XZ
     MCAPI ~ScriptSculkSpreader();

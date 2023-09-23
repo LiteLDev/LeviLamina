@@ -55,14 +55,8 @@ public:
     // ?isFeaturePassDefined@FeatureRegistry@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI bool isFeaturePassDefined(std::string const&) const;
 
-    // symbol:
-    // ?loadFromDefinitions@FeatureRegistry@@QEAAXAEAVIWorldRegistriesProvider@@AEBVResourcePackManager@@AEBVExperiments@@_N@Z
-    MCAPI void loadFromDefinitions(
-        class IWorldRegistriesProvider&,
-        class ResourcePackManager const&,
-        class Experiments const&,
-        bool
-    );
+    // symbol: ?loadFromDefinitions@FeatureRegistry@@QEAAXAEAVIWorldRegistriesProvider@@AEBVResourcePackManager@@_N@Z
+    MCAPI void loadFromDefinitions(class IWorldRegistriesProvider&, class ResourcePackManager const&, bool);
 
     // symbol:
     // ?lookupByName@FeatureRegistry@@QEBA?AV?$WeakRefT@UFeatureRefTraits@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -138,9 +132,16 @@ public:
     MCAPI void _registerFeature(std::string const&, std::unique_ptr<class IFeature>);
 
     // symbol:
-    // ?_setupFeature@FeatureRegistry@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVIWorldRegistriesProvider@@AEBVResourcePackManager@@AEBV23@2AEBVSemVersion@@@Z
-    MCAPI std::string
-    _setupFeature(class IWorldRegistriesProvider&, class ResourcePackManager const&, std::string const&, std::string const&, class SemVersion const&);
+    // ?_setupFeature@FeatureRegistry@@AEAA_NAEAVIWorldRegistriesProvider@@_NAEBVResourcePackManager@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@3AEBVSemVersion@@1@Z
+    MCAPI bool _setupFeature(
+        class IWorldRegistriesProvider&,
+        bool,
+        class ResourcePackManager const&,
+        std::string const&,
+        std::string const&,
+        class SemVersion const&,
+        bool
+    );
 
     // NOLINTEND
 };

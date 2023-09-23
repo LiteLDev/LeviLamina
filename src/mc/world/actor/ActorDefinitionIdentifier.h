@@ -8,6 +8,9 @@
 struct ActorDefinitionIdentifier {
 public:
     // NOLINTBEGIN
+    // symbol: ??0ActorDefinitionIdentifier@@QEAA@W4ActorType@@@Z
+    MCAPI explicit ActorDefinitionIdentifier(::ActorType);
+
     // symbol: ??0ActorDefinitionIdentifier@@QEAA@AEBU0@@Z
     MCAPI ActorDefinitionIdentifier(struct ActorDefinitionIdentifier const&);
 
@@ -17,17 +20,14 @@ public:
     // symbol: ??0ActorDefinitionIdentifier@@QEAA@PEBD@Z
     MCAPI explicit ActorDefinitionIdentifier(char const*);
 
+    // symbol: ??0ActorDefinitionIdentifier@@QEAA@$$QEAU0@@Z
+    MCAPI ActorDefinitionIdentifier(struct ActorDefinitionIdentifier&&);
+
     // symbol: ??0ActorDefinitionIdentifier@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
     MCAPI ActorDefinitionIdentifier(std::string, std::string, std::string);
 
     // symbol: ??0ActorDefinitionIdentifier@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI explicit ActorDefinitionIdentifier(std::string const&);
-
-    // symbol: ??0ActorDefinitionIdentifier@@QEAA@$$QEAU0@@Z
-    MCAPI ActorDefinitionIdentifier(struct ActorDefinitionIdentifier&&);
-
-    // symbol: ??0ActorDefinitionIdentifier@@QEAA@W4ActorType@@@Z
-    MCAPI explicit ActorDefinitionIdentifier(::ActorType);
 
     // symbol: ?_getLegacyActorType@ActorDefinitionIdentifier@@QEBA?AW4ActorType@@XZ
     MCAPI ::ActorType _getLegacyActorType() const;

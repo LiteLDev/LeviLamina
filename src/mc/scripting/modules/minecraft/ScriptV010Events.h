@@ -14,7 +14,7 @@ namespace ScriptModuleMinecraft { struct ScriptActorCreateEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorHitBlockAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorHitEntityAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorHurtAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptActorRemovedAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptActorRemoveAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptChatSendBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptDataDrivenActorTriggerAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemCompleteUseAfterEvent; }
@@ -63,9 +63,9 @@ public:
     onActorHurt(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptActorHurtAfterEvent>&);
 
     // symbol:
-    // ?onActorRemoved@ScriptV010Events@ScriptModuleMinecraft@@UEAAXAEBV?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@AEAV?$StrongTypedObjectHandle@UScriptActorRemovedAfterEvent@ScriptModuleMinecraft@@@4@@Z
+    // ?onActorRemoved@ScriptV010Events@ScriptModuleMinecraft@@UEAAXAEBV?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@AEAV?$StrongTypedObjectHandle@UScriptActorRemoveAfterEvent@ScriptModuleMinecraft@@@4@@Z
     MCVAPI void
-    onActorRemoved(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor> const&, class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptActorRemovedAfterEvent>&);
+    onActorRemoved(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor> const&, class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptActorRemoveAfterEvent>&);
 
     // symbol:
     // ?onBeforeChat@ScriptV010Events@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptChatSendBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z

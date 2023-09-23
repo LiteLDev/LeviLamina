@@ -38,7 +38,7 @@ public:
     MCAPI ScriptStringBlockProperty(class ScriptModuleMinecraft::ScriptStringBlockProperty&&);
 
     // symbol:
-    // ?getState@ScriptStringBlockProperty@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Scripting@@XZ
+    // ?getState@ScriptStringBlockProperty@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::string> getState() const;
 
     // symbol: ??4ScriptStringBlockProperty@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
@@ -46,7 +46,7 @@ public:
     operator=(class ScriptModuleMinecraft::ScriptStringBlockProperty&&);
 
     // symbol:
-    // ?setState@ScriptStringBlockProperty@ScriptModuleMinecraft@@QEAA?AV?$Result@X@Scripting@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // ?setState@ScriptStringBlockProperty@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::Result<void> setState(std::string);
 
     // symbol:

@@ -16,10 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ScriptLeverActionAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptLeverActionAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptLeverActionAfterEvent&&);
-
     // symbol: ??1ScriptLeverActionAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptLeverActionAfterEvent();
 

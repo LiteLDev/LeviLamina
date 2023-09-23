@@ -10,6 +10,7 @@ public:
     // prevent constructor by default
     ChunkBuildOrderPolicy& operator=(ChunkBuildOrderPolicy const&);
     ChunkBuildOrderPolicy(ChunkBuildOrderPolicy const&);
+    ChunkBuildOrderPolicy();
 
 public:
     // NOLINTBEGIN
@@ -33,9 +34,6 @@ public:
 
     // vIndex: 6, symbol: ?updateInfluences@ChunkBuildOrderPolicy@@UEAAXXZ
     virtual void updateInfluences();
-
-    // symbol: ??0ChunkBuildOrderPolicy@@QEAA@XZ
-    MCAPI ChunkBuildOrderPolicy();
 
     // NOLINTEND
 };

@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/item/components/ItemComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 class StorageItemComponent : public ::ItemComponent {
 public:
     // prevent constructor by default
@@ -14,6 +19,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual void __unk_vfn_0();
+
     // symbol: ?calculateAddableCount@StorageItemComponent@@QEBAIAEBVItemStack@@AEBVItemStackBase@@@Z
     MCAPI uint calculateAddableCount(class ItemStack const&, class ItemStackBase const&) const;
 
@@ -28,9 +36,6 @@ public:
 
     // symbol: ?tryRemoveOneFromItemStack@StorageItemComponent@@QEBA?AVItemStack@@AEAV2@@Z
     MCAPI class ItemStack tryRemoveOneFromItemStack(class ItemStack&) const;
-
-    // symbol: ?use@StorageItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
-    MCAPI bool use(class ItemStack&, class Player&) const;
 
     // symbol: ?getIdentifier@StorageItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();

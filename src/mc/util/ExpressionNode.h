@@ -12,27 +12,28 @@
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class ExpressionNode {
 public:
     // NOLINTBEGIN
-    // symbol: ??0ExpressionNode@@QEAA@XZ
-    MCAPI ExpressionNode();
-
     // symbol:
     // ??0ExpressionNode@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
     MCAPI ExpressionNode(std::string const&, ::MolangVersion, gsl::span<class HashedString const>);
-
-    // symbol: ??0ExpressionNode@@QEAA@AEBVValue@Json@@W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
-    MCAPI ExpressionNode(class Json::Value const&, ::MolangVersion, gsl::span<class HashedString const>);
 
     // symbol:
     // ??0ExpressionNode@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
     MCAPI ExpressionNode(std::string const&, class SemVersion const&, gsl::span<class HashedString const>);
 
+    // symbol: ??0ExpressionNode@@QEAA@AEBVValue@Json@@W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
+    MCAPI ExpressionNode(class Json::Value const&, ::MolangVersion, gsl::span<class HashedString const>);
+
     // symbol: ??0ExpressionNode@@QEAA@AEBV0@@Z
     MCAPI ExpressionNode(class ExpressionNode const&);
+
+    // symbol: ??0ExpressionNode@@QEAA@XZ
+    MCAPI ExpressionNode();
 
     // symbol: ??0ExpressionNode@@QEAA@AEAUMolangScriptArg@@W4ExpressionOp@@@Z
     MCAPI ExpressionNode(struct MolangScriptArg&, ::ExpressionOp);
@@ -56,12 +57,12 @@ public:
     MCAPI struct MolangScriptArg const& evalGeneric(class RenderParams&) const;
 
     // symbol:
-    // ?getExpressionString@ExpressionNode@@QEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string const& getExpressionString();
-
-    // symbol:
     // ?getExpressionString@ExpressionNode@@QEBA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const getExpressionString() const;
+
+    // symbol:
+    // ?getExpressionString@ExpressionNode@@QEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string const& getExpressionString();
 
     // symbol: ?getMolangVersion@ExpressionNode@@QEBA?BW4MolangVersion@@XZ
     MCAPI ::MolangVersion const getMolangVersion() const;
@@ -89,11 +90,11 @@ public:
     // symbol: ?isValid@ExpressionNode@@QEBA_NXZ
     MCAPI bool isValid() const;
 
-    // symbol: ?link@ExpressionNode@@QEBA?AW4MolangCompileResult@@XZ
-    MCAPI ::MolangCompileResult link() const;
-
     // symbol: ?link@ExpressionNode@@QEBA?AW4MolangCompileResult@@W4MolangVersion@@@Z
     MCAPI ::MolangCompileResult link(::MolangVersion) const;
+
+    // symbol: ?link@ExpressionNode@@QEBA?AW4MolangCompileResult@@XZ
+    MCAPI ::MolangCompileResult link() const;
 
     // symbol: ?moveConstantChildToValueIfFloatOrHashType@ExpressionNode@@QEAAXH@Z
     MCAPI void moveConstantChildToValueIfFloatOrHashType(int);
@@ -114,14 +115,17 @@ public:
     // symbol: ??1ExpressionNode@@QEAA@XZ
     MCAPI ~ExpressionNode();
 
-    // symbol: ?bindType@ExpressionNode@@SAXXZ
-    MCAPI static void bindType();
+    // symbol: ?bindType@ExpressionNode@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // symbol: ?buildExpressionOpTable@ExpressionNode@@SAXXZ
     MCAPI static void buildExpressionOpTable();
 
     // symbol: ?fast_atof_positiveOnly@ExpressionNode@@SAMAEAPEBD@Z
     MCAPI static float fast_atof_positiveOnly(char const*&);
+
+    // symbol: ?getExperiments@ExpressionNode@@SAAEAVExperiments@@XZ
+    MCAPI static class Experiments& getExperiments();
 
     // symbol: ?getOpFriendlyName@ExpressionNode@@SAPEBDW4ExpressionOp@@@Z
     MCAPI static char const* getOpFriendlyName(::ExpressionOp);
@@ -199,9 +203,6 @@ public:
 
     // symbol: ?_validateChildrenAreNumerical@ExpressionNode@@AEBA_NW4MolangVersion@@@Z
     MCAPI bool _validateChildrenAreNumerical(::MolangVersion) const;
-
-    // symbol: ?executeMolangProgram@ExpressionNode@@AEBAAEBUMolangScriptArg@@AEAVRenderParams@@AEAUMolangEvalParams@@@Z
-    MCAPI struct MolangScriptArg const& executeMolangProgram(class RenderParams&, struct MolangEvalParams&) const;
 
     // symbol: ?findClosingOp@ExpressionNode@@AEBA_NAEA_KW4ExpressionOp@@@Z
     MCAPI bool findClosingOp(uint64&, ::ExpressionOp) const;

@@ -27,4 +27,12 @@ public:
     virtual bool isValidPlacement(std::string const&);
 
     // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol:
+    // ?_createBaseDripstonePatch@PointedDripstoneFeature@@CAXAEAVIBlockWorldGenAPI@@AEAVRandom@@AEBVBlockPos@@@Z
+    MCAPI static void _createBaseDripstonePatch(class IBlockWorldGenAPI&, class Random&, class BlockPos const&);
+
+    // NOLINTEND
 };

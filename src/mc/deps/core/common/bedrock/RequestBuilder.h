@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::Http { class Request; }
-namespace Json { class Value; }
 // clang-format on
 
 namespace Bedrock::Http {
@@ -31,9 +30,6 @@ public:
     // symbol:
     // ?body@RequestBuilder@Http@Bedrock@@QEAAAEAV123@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Bedrock::Http::RequestBuilder& body(std::string const&);
-
-    // symbol: ?body@RequestBuilder@Http@Bedrock@@QEAAAEAV123@AEBVValue@Json@@@Z
-    MCAPI class Bedrock::Http::RequestBuilder& body(class Json::Value const&);
 
     // symbol: ?build@RequestBuilder@Http@Bedrock@@QEAAAEAVRequest@23@XZ
     MCAPI class Bedrock::Http::Request& build();

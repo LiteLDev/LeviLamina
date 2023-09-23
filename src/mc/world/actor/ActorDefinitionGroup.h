@@ -55,6 +55,12 @@ public:
     // ?buildActorEventList@ActorDefinitionGroup@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
     MCAPI std::vector<std::string> buildActorEventList() const;
 
+    // symbol: ?getComponentFactory@ActorDefinitionGroup@@QEAAPEAVActorComponentFactory@@XZ
+    MCAPI class ActorComponentFactory* getComponentFactory();
+
+    // symbol: ?setComponentFactory@ActorDefinitionGroup@@QEAAXPEAVActorComponentFactory@@@Z
+    MCAPI void setComponentFactory(class ActorComponentFactory*);
+
     // symbol:
     // ?tryGetDefinition@ActorDefinitionGroup@@QEAA?AVActorDefinitionPtr@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class ActorDefinitionPtr tryGetDefinition(std::string const&);

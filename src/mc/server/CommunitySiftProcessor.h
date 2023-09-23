@@ -64,7 +64,11 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?_createRequest@CommunitySiftProcessor@@AEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@0PEAVIMinecraftEventing@@0W4TextProcessingEventOrigin@@V?$shared_ptr@V?$vector@U?$pair@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@V?$allocator@U?$pair@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@@3@V?$shared_ptr@V?$vector@VValue@Json@@V?$allocator@VValue@Json@@@std@@@std@@@3@_N0H@Z
+    // ?_bootCheck@CommunitySiftProcessor@@AEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> _bootCheck(std::string const&);
+
+    // symbol:
+    // ?_createRequest@CommunitySiftProcessor@@AEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@0PEAVIMinecraftEventing@@0W4TextProcessingEventOrigin@@V?$shared_ptr@V?$vector@U?$pair@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@V?$allocator@U?$pair@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@@3@V?$shared_ptr@V?$vector@W4TextFilteringEvent@Safety@@V?$allocator@W4TextFilteringEvent@Safety@@@std@@@std@@@3@_N0H@Z
     MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> _createRequest(
         std::string const&,
         std::string const&,
@@ -72,7 +76,7 @@ public:
         std::string const&,
         ::TextProcessingEventOrigin,
         std::shared_ptr<std::vector<std::pair<int, std::string>>>,
-        std::shared_ptr<std::vector<class Json::Value>>,
+        std::shared_ptr<std::vector<::Safety::TextFilteringEvent>>,
         bool,
         std::string const&,
         int

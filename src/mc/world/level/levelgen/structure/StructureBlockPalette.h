@@ -25,9 +25,6 @@ public:
         // symbol: ??0BlockPositionData@StructureBlockPalette@@QEAA@AEBU01@@Z
         MCAPI BlockPositionData(struct StructureBlockPalette::BlockPositionData const&);
 
-        // symbol: ?isValid@BlockPositionData@StructureBlockPalette@@QEBA_NXZ
-        MCAPI bool isValid() const;
-
         // symbol: ??1BlockPositionData@StructureBlockPalette@@QEAA@XZ
         MCAPI ~BlockPositionData();
 
@@ -47,17 +44,9 @@ public:
     // symbol: ??0StructureBlockPalette@@QEAA@$$QEAV0@@Z
     MCAPI StructureBlockPalette(class StructureBlockPalette&&);
 
-    // symbol: ?addBlockPositionData@StructureBlockPalette@@QEAAX_KUBlockPositionData@1@@Z
-    MCAPI void addBlockPositionData(uint64, struct StructureBlockPalette::BlockPositionData);
-
     // symbol:
     // ?addMapping@StructureBlockPalette@@QEAA_KV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@@Z
     MCAPI uint64 addMapping(std::unique_ptr<class CompoundTag>);
-
-    // symbol:
-    // ?getAllBlockPositionData@StructureBlockPalette@@QEBAAEBV?$unordered_map@_KUBlockPositionData@StructureBlockPalette@@U?$hash@_K@std@@U?$equal_to@_K@4@V?$allocator@U?$pair@$$CB_KUBlockPositionData@StructureBlockPalette@@@std@@@4@@std@@XZ
-    MCAPI std::unordered_map<uint64, struct StructureBlockPalette::BlockPositionData> const&
-          getAllBlockPositionData() const;
 
     // symbol:
     // ?getBlock@StructureBlockPalette@@QEBAAEBVBlock@@AEBVBlockPalette@@_KV?$NonOwnerPointer@VIUnknownBlockTypeRegistry@@@Bedrock@@@Z
@@ -66,12 +55,6 @@ public:
 
     // symbol: ?getBlockPositionData@StructureBlockPalette@@QEBAPEBUBlockPositionData@1@_K@Z
     MCAPI struct StructureBlockPalette::BlockPositionData const* getBlockPositionData(uint64) const;
-
-    // symbol: ?getSize@StructureBlockPalette@@QEBA_KXZ
-    MCAPI uint64 getSize() const;
-
-    // symbol: ?load@StructureBlockPalette@@QEAA_NAEBVCompoundTag@@H@Z
-    MCAPI bool load(class CompoundTag const&, int);
 
     // symbol:
     // ?save@StructureBlockPalette@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
@@ -84,9 +67,6 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_parseBlockPalette@StructureBlockPalette@@IEAA?AW4StructureBlockPaletteLoadResult@@AEBVCompoundTag@@@Z
-    MCAPI ::StructureBlockPaletteLoadResult _parseBlockPalette(class CompoundTag const&);
-
     // symbol:
     // ?_parseBlockPositionData@StructureBlockPalette@@IEAA?AW4StructureBlockPaletteLoadResult@@AEBVCompoundTag@@H@Z
     MCAPI ::StructureBlockPaletteLoadResult _parseBlockPositionData(class CompoundTag const&, int);

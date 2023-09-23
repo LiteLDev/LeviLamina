@@ -13,14 +13,14 @@ public:
     // symbol: ??0PerlinNoise@@QEAA@AEBV0@@Z
     MCAPI PerlinNoise(class PerlinNoise const&);
 
-    // symbol: ??0PerlinNoise@@QEAA@IHH@Z
-    MCAPI PerlinNoise(uint, int, int);
-
     // symbol: ??0PerlinNoise@@QEAA@AEAVIRandom@@UYBlendingBugSettings@@HH@Z
     MCAPI PerlinNoise(class IRandom&, struct YBlendingBugSettings, int, int);
 
     // symbol: ??0PerlinNoise@@QEAA@AEAVIRandom@@HH@Z
     MCAPI PerlinNoise(class IRandom&, int, int);
+
+    // symbol: ??0PerlinNoise@@QEAA@IHH@Z
+    MCAPI PerlinNoise(uint, int, int);
 
     // symbol: ?getRegion@PerlinNoise@@QEBAXPEAMAEBVVec3@@HHH1@Z
     MCAPI void getRegion(float*, class Vec3 const&, int, int, int, class Vec3 const&) const;

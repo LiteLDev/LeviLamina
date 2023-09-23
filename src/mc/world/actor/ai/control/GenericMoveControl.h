@@ -22,9 +22,6 @@ public:
     // vIndex: 2, symbol: ?tick@GenericMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
     virtual void tick(class MoveControlComponent&, class Mob&);
 
-    // symbol: ??1GenericMoveControl@@UEAA@XZ
-    MCVAPI ~GenericMoveControl();
-
     // symbol: ??0GenericMoveControl@@QEAA@XZ
     MCAPI GenericMoveControl();
 

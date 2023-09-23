@@ -18,21 +18,6 @@ public:
     // symbol: ??0OreVeinifierNoises@@QEAA@AEBV0@@Z
     MCAPI OreVeinifierNoises(class OreVeinifierNoises const&);
 
-    // symbol: ?getPositionalRandomFactory@OreVeinifierNoises@@QEBAAEBVXoroshiroPositionalRandomFactory@@XZ
-    MCAPI class XoroshiroPositionalRandomFactory const& getPositionalRandomFactory() const;
-
-    // symbol: ?sampleGapNoise@OreVeinifierNoises@@QEBAMMMM@Z
-    MCAPI float sampleGapNoise(float, float, float) const;
-
-    // symbol: ?sampleVeinNoiseA@OreVeinifierNoises@@QEBAMMMM@Z
-    MCAPI float sampleVeinNoiseA(float, float, float) const;
-
-    // symbol: ?sampleVeinNoiseB@OreVeinifierNoises@@QEBAMMMM@Z
-    MCAPI float sampleVeinNoiseB(float, float, float) const;
-
-    // symbol: ?sampleVeininessNoise@OreVeinifierNoises@@QEBAMMMM@Z
-    MCAPI float sampleVeininessNoise(float, float, float) const;
-
     // symbol: ??1OreVeinifierNoises@@QEAA@XZ
     MCAPI ~OreVeinifierNoises();
 

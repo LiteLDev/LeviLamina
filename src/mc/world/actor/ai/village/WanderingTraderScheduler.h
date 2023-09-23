@@ -11,6 +11,12 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0WanderingTraderScheduler@@QEAA@AEAVLevel@@@Z
+    MCAPI explicit WanderingTraderScheduler(class Level&);
+
+    // symbol: ?isWanderingTraderCurrentlyManaged@WanderingTraderScheduler@@QEAA_NAEBVActor@@@Z
+    MCAPI bool isWanderingTraderCurrentlyManaged(class Actor const&);
+
     // symbol: ?readSaveData@WanderingTraderScheduler@@QEAAXXZ
     MCAPI void readSaveData();
 
@@ -19,6 +25,9 @@ public:
 
     // symbol: ?writeSaveData@WanderingTraderScheduler@@QEBAXXZ
     MCAPI void writeSaveData() const;
+
+    // symbol: ??1WanderingTraderScheduler@@QEAA@XZ
+    MCAPI ~WanderingTraderScheduler();
 
     // NOLINTEND
 

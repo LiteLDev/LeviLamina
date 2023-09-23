@@ -47,6 +47,9 @@ public:
     // vIndex: 8, symbol: ?_checkAgainstEventAllowlist@OneDSEventListener@Events@Social@@MEBA_NAEBVEvent@23@@Z
     virtual bool _checkAgainstEventAllowlist(class Social::Events::Event const&) const;
 
+    // symbol: ??1OneDSEventListener@Events@Social@@UEAA@XZ
+    MCVAPI ~OneDSEventListener();
+
     // symbol: ??0OneDSEventListener@Events@Social@@QEAA@VPath@Core@@@Z
     MCAPI explicit OneDSEventListener(class Core::Path);
 
@@ -57,6 +60,9 @@ public:
     // symbol:
     // ?AddPartA@OneDSEventListener@Events@Social@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVValue@Json@@_N@Z
     MCAPI void AddPartA(std::string const&, class Json::Value&, bool);
+
+    // symbol: ?AddPartAExtensions@OneDSEventListener@Events@Social@@AEAAXAEAVValue@Json@@@Z
+    MCAPI void AddPartAExtensions(class Json::Value&);
 
     // symbol: ?AddPartC@OneDSEventListener@Events@Social@@AEAAXAEBVSummaryEvent@23@AEAVValue@Json@@@Z
     MCAPI void AddPartC(class Social::Events::SummaryEvent const&, class Json::Value&);

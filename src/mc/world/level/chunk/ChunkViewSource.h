@@ -31,18 +31,21 @@ public:
     // ?createNewChunk@ChunkViewSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@W4LoadMode@ChunkSource@@_N@Z
     virtual std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const&, ::ChunkSource::LoadMode, bool);
 
-    // vIndex: 18, symbol:
+    // vIndex: 19, symbol:
     // ?acquireDiscarded@ChunkViewSource@@UEAAXV?$unique_ptr@VLevelChunk@@ULevelChunkFinalDeleter@@@std@@@Z
     virtual void acquireDiscarded(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
 
-    // vIndex: 22, symbol: ?isWithinWorldLimit@ChunkViewSource@@UEBA_NAEBVChunkPos@@@Z
+    // vIndex: 23, symbol: ?isWithinWorldLimit@ChunkViewSource@@UEBA_NAEBVChunkPos@@@Z
     virtual bool isWithinWorldLimit(class ChunkPos const&) const;
 
-    // vIndex: 29, symbol: ?setLevelChunk@ChunkViewSource@@UEAAXV?$shared_ptr@VLevelChunk@@@std@@@Z
+    // vIndex: 30, symbol: ?setLevelChunk@ChunkViewSource@@UEAAXV?$shared_ptr@VLevelChunk@@@std@@@Z
     virtual void setLevelChunk(std::shared_ptr<class LevelChunk>);
 
     // symbol: ??1ChunkViewSource@@UEAA@XZ
     MCVAPI ~ChunkViewSource();
+
+    // symbol: ??0ChunkViewSource@@QEAA@AEBV0@@Z
+    MCAPI ChunkViewSource(class ChunkViewSource const&);
 
     // symbol: ??0ChunkViewSource@@QEAA@AEAVChunkSource@@W4LoadMode@1@@Z
     MCAPI ChunkViewSource(class ChunkSource&, ::ChunkSource::LoadMode);
@@ -51,9 +54,6 @@ public:
     // ??0ChunkViewSource@@QEAA@AEAVChunkSource@@AEAV?$LevelChunkGridAreaElement@V?$weak_ptr@VLevelChunk@@@std@@@@AEBUBounds@@@Z
     MCAPI
     ChunkViewSource(class ChunkSource&, class LevelChunkGridAreaElement<std::weak_ptr<class LevelChunk>>&, struct Bounds const&);
-
-    // symbol: ??0ChunkViewSource@@QEAA@AEBV0@@Z
-    MCAPI ChunkViewSource(class ChunkViewSource const&);
 
     // symbol: ?clear@ChunkViewSource@@QEAAXXZ
     MCAPI void clear();
@@ -69,14 +69,14 @@ public:
     MCAPI class GridArea<std::shared_ptr<class LevelChunk>>& getArea();
 
     // symbol:
-    // ?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@@V?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@PEBM@Z
-    MCAPI void
-    move(class BlockPos const&, int, bool, ::ChunkSourceViewGenerateMode, std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint>)>, float const*);
-
-    // symbol:
     // ?move@ChunkViewSource@@QEAAXAEBVBlockPos@@0_NW4ChunkSourceViewGenerateMode@@V?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@PEBM@Z
     MCAPI void
     move(class BlockPos const&, class BlockPos const&, bool, ::ChunkSourceViewGenerateMode, std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint>)>, float const*);
+
+    // symbol:
+    // ?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@@V?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@PEBM@Z
+    MCAPI void
+    move(class BlockPos const&, int, bool, ::ChunkSourceViewGenerateMode, std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint>)>, float const*);
 
     // symbol:
     // ?move@ChunkViewSource@@QEAAXAEBUBounds@@_NW4ChunkSourceViewGenerateMode@@V?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@PEBM@Z

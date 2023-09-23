@@ -34,7 +34,10 @@ public:
     // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();
 
-    // vIndex: 4, symbol:
+    // vIndex: 4, symbol: __unk_vfn_4
+    virtual void __unk_vfn_4();
+
+    // vIndex: 5, symbol:
     // ?tick@SneakingSystem@@EEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorTickedFlag@@@@@@U?$Read@V?$FlagComponent@UPlayerComponentFlag@@@@@@U?$Write@USneakingComponent@@VActorOwnerComponent@@@@U?$AddRemove@$$V@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
     virtual void tick(class StrictExecutionContext<
                       struct Filter<class FlagComponent<struct ActorTickedFlag>>,
@@ -49,6 +52,9 @@ public:
     // ?_tickSneakingSystem@SneakingSystem@@SAXAEAVStrictEntityContext@@AEBV?$FlagComponent@UPlayerComponentFlag@@@@AEAUSneakingComponent@@AEAVActorOwnerComponent@@@Z
     MCAPI static void
     _tickSneakingSystem(class StrictEntityContext&, class FlagComponent<struct PlayerComponentFlag> const&, struct SneakingComponent&, class ActorOwnerComponent&);
+
+    // symbol: ?createSystem@SneakingSystem@@SA?AUTickingSystemWithInfo@@XZ
+    MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 };

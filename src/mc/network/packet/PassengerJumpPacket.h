@@ -32,11 +32,11 @@ public:
     // ?_read@PassengerJumpPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
 
-    // symbol: ??0PassengerJumpPacket@@QEAA@XZ
-    MCAPI PassengerJumpPacket();
-
     // symbol: ??0PassengerJumpPacket@@QEAA@H@Z
     MCAPI explicit PassengerJumpPacket(int);
+
+    // symbol: ??0PassengerJumpPacket@@QEAA@XZ
+    MCAPI PassengerJumpPacket();
 
     // NOLINTEND
 };

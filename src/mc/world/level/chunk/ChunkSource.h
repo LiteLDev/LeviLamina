@@ -81,57 +81,60 @@ public:
     virtual void
     writeEntityChunkTransfersToUnloadedChunk(class ChunkKey const&, std::vector<struct ActorUnloadedChunkTransferEntry> const&);
 
-    // vIndex: 16, symbol: ?hintDiscardBatchBegin@ChunkSource@@UEAAXXZ
+    // vIndex: 16, symbol: ?deserializeActorStorageToLevelChunk@ChunkSource@@UEAAXAEAVLevelChunk@@@Z
+    virtual void deserializeActorStorageToLevelChunk(class LevelChunk&);
+
+    // vIndex: 17, symbol: ?hintDiscardBatchBegin@ChunkSource@@UEAAXXZ
     virtual void hintDiscardBatchBegin();
 
-    // vIndex: 17, symbol: ?hintDiscardBatchEnd@ChunkSource@@UEAAXXZ
+    // vIndex: 18, symbol: ?hintDiscardBatchEnd@ChunkSource@@UEAAXXZ
     virtual void hintDiscardBatchEnd();
 
-    // vIndex: 18, symbol:
+    // vIndex: 19, symbol:
     // ?acquireDiscarded@ChunkSource@@UEAAXV?$unique_ptr@VLevelChunk@@ULevelChunkFinalDeleter@@@std@@@Z
     virtual void acquireDiscarded(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
 
-    // vIndex: 19, symbol: ?compact@ChunkSource@@UEAAXXZ
+    // vIndex: 20, symbol: ?compact@ChunkSource@@UEAAXXZ
     virtual void compact();
 
-    // vIndex: 20, symbol: ?flushPendingDiscardedChunkWrites@ChunkSource@@UEAAXXZ
+    // vIndex: 21, symbol: ?flushPendingDiscardedChunkWrites@ChunkSource@@UEAAXXZ
     virtual void flushPendingDiscardedChunkWrites();
 
-    // vIndex: 21, symbol: ?flushThreadBatch@ChunkSource@@UEAAXXZ
+    // vIndex: 22, symbol: ?flushThreadBatch@ChunkSource@@UEAAXXZ
     virtual void flushThreadBatch();
 
-    // vIndex: 22, symbol: ?isWithinWorldLimit@ChunkSource@@UEBA_NAEBVChunkPos@@@Z
+    // vIndex: 23, symbol: ?isWithinWorldLimit@ChunkSource@@UEBA_NAEBVChunkPos@@@Z
     virtual bool isWithinWorldLimit(class ChunkPos const&) const;
 
-    // vIndex: 23, symbol:
+    // vIndex: 24, symbol:
     // ?getChunkMap@ChunkSource@@UEAAPEBV?$unordered_map@VChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@U?$hash@VChunkPos@@@3@U?$equal_to@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@@std@@@3@@std@@XZ
     virtual std::unordered_map<class ChunkPos, std::weak_ptr<class LevelChunk>> const* getChunkMap();
 
-    // vIndex: 24, symbol:
+    // vIndex: 25, symbol:
     // ?getStorage@ChunkSource@@UEBAAEBV?$unordered_map@VChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@U?$hash@VChunkPos@@@3@U?$equal_to@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@@std@@@3@@std@@XZ
     virtual std::unordered_map<class ChunkPos, std::weak_ptr<class LevelChunk>> const& getStorage() const;
 
-    // vIndex: 25, symbol: ?clearDeletedEntities@ChunkSource@@UEAAXXZ
+    // vIndex: 26, symbol: ?clearDeletedEntities@ChunkSource@@UEAAXXZ
     virtual void clearDeletedEntities();
 
-    // vIndex: 26, symbol: ?canCreateViews@ChunkSource@@UEBA_NXZ
+    // vIndex: 27, symbol: ?canCreateViews@ChunkSource@@UEBA_NXZ
     virtual bool canCreateViews() const;
 
-    // vIndex: 27, symbol:
+    // vIndex: 28, symbol:
     // ?tryGetBlendingDataProvider@ChunkSource@@UEAA?AV?$unique_ptr@VBlendingDataProvider@@U?$default_delete@VBlendingDataProvider@@@std@@@std@@XZ
     virtual std::unique_ptr<class BlendingDataProvider> tryGetBlendingDataProvider();
 
-    // vIndex: 28, symbol:
+    // vIndex: 29, symbol:
     // ?loadLevelChunkMetaDataDictionary@ChunkSource@@UEAA?AV?$shared_ptr@VLevelChunkMetaDataDictionary@@@std@@XZ
     virtual std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();
 
-    // vIndex: 29, symbol: ?setLevelChunk@ChunkSource@@UEAAXV?$shared_ptr@VLevelChunk@@@std@@@Z
+    // vIndex: 30, symbol: ?setLevelChunk@ChunkSource@@UEAAXV?$shared_ptr@VLevelChunk@@@std@@@Z
     virtual void setLevelChunk(std::shared_ptr<class LevelChunk>);
 
-    // vIndex: 30, symbol: ?canLaunchTasks@ChunkSource@@UEBA_NXZ
+    // vIndex: 31, symbol: ?canLaunchTasks@ChunkSource@@UEBA_NXZ
     virtual bool canLaunchTasks() const;
 
-    // vIndex: 31, symbol: ?chunkPosNeedsBlending@ChunkSource@@UEAA_NAEBVChunkPos@@@Z
+    // vIndex: 32, symbol: ?chunkPosNeedsBlending@ChunkSource@@UEAA_NAEBVChunkPos@@@Z
     virtual bool chunkPosNeedsBlending(class ChunkPos const&);
 
     // symbol: ??1ChunkSource@@UEAA@XZ

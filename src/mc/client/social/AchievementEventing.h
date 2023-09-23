@@ -49,8 +49,8 @@ public:
     // symbol: ?PlayerBounced@AchievementEventing@Events@Social@@QEAAXAEBVPlayer@@AEBVBlock@@HH@Z
     MCAPI void PlayerBounced(class Player const&, class Block const&, int, int);
 
-    // symbol: ?PlayerTeleported@AchievementEventing@Events@Social@@QEAAXAEBVPlayer@@MHH@Z
-    MCAPI void PlayerTeleported(class Player const&, float, int, int);
+    // symbol: ?PlayerTeleported@AchievementEventing@Events@Social@@QEAAXAEAVPlayer@@MHH@Z
+    MCAPI void PlayerTeleported(class Player&, float, int, int);
 
     // symbol: ?PlayerTravelled@AchievementEventing@Events@Social@@QEAAXAEBVPlayer@@MHH@Z
     MCAPI void PlayerTravelled(class Player const&, float, int, int);

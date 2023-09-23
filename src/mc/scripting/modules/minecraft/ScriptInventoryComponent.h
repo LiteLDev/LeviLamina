@@ -34,35 +34,35 @@ public:
     MCVAPI ~ScriptInventoryComponent();
 
     // symbol:
-    // ?getAdditionalSlotsPerStrength@ScriptInventoryComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@H@Scripting@@XZ
+    // ?getAdditionalSlotsPerStrength@ScriptInventoryComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getAdditionalSlotsPerStrength() const;
 
-    // symbol: ?getCanBeSiphonedFrom@ScriptInventoryComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N@Scripting@@XZ
+    // symbol: ?getCanBeSiphonedFrom@ScriptInventoryComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> getCanBeSiphonedFrom() const;
 
     // symbol:
-    // ?getContainerType@ScriptInventoryComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Scripting@@XZ
+    // ?getContainerType@ScriptInventoryComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::string> getContainerType() const;
 
-    // symbol: ?getInventorySize@ScriptInventoryComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@H@Scripting@@XZ
+    // symbol: ?getInventorySize@ScriptInventoryComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getInventorySize() const;
 
     // symbol:
-    // ?getOrCreateContainer@ScriptInventoryComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptContainerWrapper@ScriptModuleMinecraft@@@Scripting@@@Scripting@@XZ
+    // ?getOrCreateContainer@ScriptInventoryComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptContainerWrapper@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptContainerWrapper>>
     getOrCreateContainer();
 
     // symbol:
-    // ?getOrCreateContainerV010@ScriptInventoryComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$WeakTypedObjectHandle@VScriptInventoryComponentContainer@ScriptModuleMinecraft@@@Scripting@@@Scripting@@XZ
+    // ?getOrCreateContainerV010@ScriptInventoryComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$WeakTypedObjectHandle@VScriptInventoryComponentContainer@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<
         class Scripting::WeakTypedObjectHandle<class ScriptModuleMinecraft::ScriptInventoryComponentContainer>>
     getOrCreateContainerV010();
 
-    // symbol: ?getPrivate@ScriptInventoryComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N@Scripting@@XZ
+    // symbol: ?getPrivate@ScriptInventoryComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> getPrivate() const;
 
-    // symbol: ?getRestrictToOwner@ScriptInventoryComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N@Scripting@@XZ
+    // symbol: ?getRestrictToOwner@ScriptInventoryComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> getRestrictToOwner() const;
 
     // symbol: ??4ScriptInventoryComponent@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z

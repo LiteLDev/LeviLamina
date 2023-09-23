@@ -10,13 +10,6 @@ public:
     PublisherDisconnector& operator=(PublisherDisconnector const&);
     PublisherDisconnector(PublisherDisconnector const&);
     PublisherDisconnector();
-
-public:
-    // NOLINTBEGIN
-    // symbol: ??1PublisherDisconnector@Detail@PubSub@Bedrock@@UEAA@XZ
-    MCVAPI ~PublisherDisconnector();
-
-    // NOLINTEND
 };
 
 }; // namespace Bedrock::PubSub::Detail

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/StackString.h"
+#include "mc/deps/core/common/bedrock/Result.h"
 
 class CameraPresets {
 public:
@@ -52,18 +53,31 @@ public:
     // ?getCameraPresetIndex@CameraPresets@@QEBA?AV?$optional@I@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
     MCAPI std::optional<uint> getCameraPresetIndex(std::string const&) const;
 
+    // symbol: ?getPresets@CameraPresets@@QEBAAEBV?$vector@UCameraPreset@@V?$allocator@UCameraPreset@@@std@@@std@@XZ
+    MCAPI std::vector<struct CameraPreset> const& getPresets() const;
+
     // symbol: ?isEmpty@CameraPresets@@QEBA_NXZ
     MCAPI bool isEmpty() const;
 
     // symbol: ?loadPresets@CameraPresets@@QEAAXAEAVResourcePackManager@@@Z
     MCAPI void loadPresets(class ResourcePackManager&);
 
-    // symbol: ??4CameraPresets@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class CameraPresets& operator=(class CameraPresets&&);
+    // symbol: ?write@CameraPresets@@QEBAXAEAVBinaryStream@@@Z
+    MCAPI void write(class BinaryStream&) const;
+
+    // symbol: ??1CameraPresets@@QEAA@XZ
+    MCAPI ~CameraPresets();
+
+    // symbol: ?bindType@CameraPresets@@SAXXZ
+    MCAPI static void bindType();
 
     // symbol:
     // ?isAllowedEaseTarget@CameraPresets@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static bool isAllowedEaseTarget(std::string const&);
+
+    // symbol:
+    // ?read@CameraPresets@@SA?AV?$Result@VCameraPresets@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    MCAPI static class Bedrock::Result<class CameraPresets, std::error_code> read(class ReadOnlyBinaryStream&);
 
     // NOLINTEND
 
@@ -84,9 +98,6 @@ public:
     // ?_loadJsonFiles@CameraPresets@@CAXAEAVResourcePackManager@@AEBV?$PathBuffer@V?$StackString@D$0EAA@@Core@@@Core@@V?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@0@Z@std@@@Z
     MCAPI static void
     _loadJsonFiles(class ResourcePackManager&, class Core::PathBuffer<class Core::StackString<char, 1024>> const&, std::function<void(std::string const&, class SemVersion const&, std::string const&)>);
-
-    // symbol: ?_setupBindings@CameraPresets@@CAXXZ
-    MCAPI static void _setupBindings();
 
     // NOLINTEND
 };

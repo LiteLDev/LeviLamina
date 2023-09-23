@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/codebuilder/EncryptionCipherMode.h"
 #include "mc/codebuilder/GameContext.h"
 #include "mc/codebuilder/RequestPurpose.h"
 #include "mc/codebuilder/ResponsePurpose.h"
@@ -15,7 +14,6 @@
 namespace Automation { class AutomationClient; }
 namespace Bedrock { class EnableNonOwnerReferences; }
 namespace CodeBuilder { class GameContext; }
-namespace CodeBuilder { class IClient; }
 namespace CodeBuilder { class IManager; }
 namespace CodeBuilder { class IMessenger; }
 namespace CodeBuilder { class IRequestHandler; }
@@ -40,10 +38,6 @@ MCAPI struct MCRESULT deserialize(class Json::Value const&, struct CodeBuilder::
 // symbol:
 // ?fromString@CodeBuilder@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAW4RequestPurpose@1@@Z
 MCAPI bool fromString(std::string const&, ::CodeBuilder::RequestPurpose&);
-
-// symbol:
-// ?fromString@CodeBuilder@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAW4EncryptionCipherMode@1@@Z
-MCAPI bool fromString(std::string const&, ::CodeBuilder::EncryptionCipherMode&);
 
 // symbol:
 // ?serialize@CodeBuilder@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUChatMessage@1@@Z

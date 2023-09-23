@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/ServerConnectivityTestResult.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/deps/raknet/RakNetServerLANVisibility.h"
 #include "mc/enums/GameType.h"
@@ -146,8 +147,9 @@ public:
     virtual float getPingTimeForGUID(std::string const&);
 
     // vIndex: 15, symbol:
-    // ?checkCanConnectToCustomServerAsync@RakNetServerLocator@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6AX_N@Z@3@@Z
-    virtual void checkCanConnectToCustomServerAsync(std::string, int, std::function<void(bool)>);
+    // ?checkCanConnectToCustomServerAsync@RakNetServerLocator@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6AXW4ServerConnectivityTestResult@@@Z@3@@Z
+    virtual void
+    checkCanConnectToCustomServerAsync(std::string, int, std::function<void(::ServerConnectivityTestResult)>);
 
     // symbol: ??1RakNetServerLocator@@UEAA@XZ
     MCVAPI ~RakNetServerLocator();
@@ -209,6 +211,10 @@ public:
     // symbol:
     // ?_pingServerV4@RakNetServerLocator@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI bool _pingServerV4(std::string const&, int);
+
+    // symbol:
+    // ?_pingServerV6@RakNetServerLocator@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+    MCAPI bool _pingServerV6(std::string const&, int);
 
     // symbol: ?_setPingResponder@RakNetServerLocator@@AEAAXAEBUAnnounceServerData@1@@Z
     MCAPI void _setPingResponder(struct RakNetServerLocator::AnnounceServerData const&);

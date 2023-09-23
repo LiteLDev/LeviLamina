@@ -9,7 +9,6 @@
 // clang-format off
 namespace gametest { class BaseGameTestInstance; }
 namespace gametest { class IGameTestListener; }
-namespace gametest { class MultipleTestTracker; }
 // clang-format on
 
 class TestSummaryDisplayer : public ::gametest::IGameTestListener {
@@ -26,9 +25,6 @@ public:
 
     // symbol: ?onTestPassed@TestSummaryDisplayer@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
     MCVAPI void onTestPassed(class gametest::BaseGameTestInstance&);
-
-    // symbol: ??0TestSummaryDisplayer@@QEAA@AEAVLevel@@AEAVMultipleTestTracker@gametest@@@Z
-    MCAPI TestSummaryDisplayer(class Level&, class gametest::MultipleTestTracker&);
 
     // NOLINTEND
 

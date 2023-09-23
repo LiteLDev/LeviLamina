@@ -66,6 +66,9 @@ public:
     // vIndex: 41, symbol: ?_onUpdatePacket@ConduitBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
     virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
 
+    // symbol: ??0ConduitBlockActor@@QEAA@AEBVBlockPos@@@Z
+    MCAPI explicit ConduitBlockActor(class BlockPos const&);
+
     // NOLINTEND
 
     // private:

@@ -11,4 +11,11 @@ public:
     BlockSelectionBoxComponent& operator=(BlockSelectionBoxComponent const&);
     BlockSelectionBoxComponent(BlockSelectionBoxComponent const&);
     BlockSelectionBoxComponent();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ?usesNewComponentStorage@BlockSelectionBoxComponent@@SA_NXZ
+    MCAPI static bool usesNewComponentStorage();
+
+    // NOLINTEND
 };

@@ -4,7 +4,7 @@
 
 namespace Bedrock::Http::MethodType {
 
-class PUT {
+struct PUT {
 public:
     // prevent constructor by default
     PUT& operator=(PUT const&);

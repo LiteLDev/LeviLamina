@@ -12,7 +12,6 @@ namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
 namespace cereal { struct SerializerTraits; }
 namespace cereal::internal { class BasicSchema; }
-namespace cereal::internal { struct Result; }
 // clang-format on
 
 namespace cereal::internal {
@@ -34,27 +33,27 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol:
-    // ?doLoadWithSchema@BasicGenericTypeSchema@internal@cereal@@IEBA?AUResult@23@AEBVmeta_type@entt@@AEAUSchemaReader@3@AEAVmeta_any@6@AEBUSerializerTraits@3@AEBV86@AEAVSerializerContext@3@AEBUtype_info@6@@Z
-    MCAPI struct cereal::internal::Result
+    // ?doLoadWithSchema@BasicGenericTypeSchema@internal@cereal@@IEBAXAEBVmeta_type@entt@@AEAUSchemaReader@3@AEAVmeta_any@5@AEBUSerializerTraits@3@AEBV75@AEAVSerializerContext@3@AEBUtype_info@5@@Z
+    MCAPI void
     doLoadWithSchema(entt::meta_type const&, struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&, entt::type_info const&)
         const;
 
     // symbol:
-    // ?doSaveWithSchema@BasicGenericTypeSchema@internal@cereal@@IEBA?AUResult@23@AEAUSchemaWriter@3@AEBVmeta_any@entt@@AEBUSerializerTraits@3@AEAVSerializerContext@3@AEBU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@Z
-    MCAPI struct cereal::internal::Result
+    // ?doSaveWithSchema@BasicGenericTypeSchema@internal@cereal@@IEBAXAEAUSchemaWriter@3@AEBVmeta_any@entt@@AEBUSerializerTraits@3@AEAVSerializerContext@3@AEBU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@Z
+    MCAPI void
     doSaveWithSchema(struct cereal::SchemaWriter&, entt::meta_any const&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&, std::pair<std::string, std::string> const&)
         const;
 
     // symbol:
-    // ?doValidateWithSchema@BasicGenericTypeSchema@internal@cereal@@IEBA?AUResult@23@AEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEAVSerializerContext@3@AEBUtype_info@7@@Z
-    MCAPI struct cereal::internal::Result
+    // ?doValidateWithSchema@BasicGenericTypeSchema@internal@cereal@@IEBAXAEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEAVSerializerContext@3@AEBUtype_info@6@@Z
+    MCAPI void
     doValidateWithSchema(struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&, entt::type_info const&)
         const;
 
     // symbol:
-    // ?lookupSchema@BasicGenericTypeSchema@internal@cereal@@IEBA?AU?$pair@UResult@internal@cereal@@PEBVBasicSchema@23@@std@@AEAVSerializerContext@3@AEBU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@5@@Z
-    MCAPI std::pair<struct cereal::internal::Result, class cereal::internal::BasicSchema const*>
-          lookupSchema(class cereal::SerializerContext&, std::pair<std::string, std::string> const&) const;
+    // ?lookupSchema@BasicGenericTypeSchema@internal@cereal@@IEBAPEBVBasicSchema@23@AEAVSerializerContext@3@AEBU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@Z
+    MCAPI class cereal::internal::BasicSchema const*
+    lookupSchema(class cereal::SerializerContext&, std::pair<std::string, std::string> const&) const;
 
     // symbol:
     // ?unpackWithInfo@BasicGenericTypeSchema@internal@cereal@@IEBAXAEBUtype_info@entt@@AEAV?$vector@V?$reference_wrapper@$$CBVBasicSchema@internal@cereal@@@std@@V?$allocator@V?$reference_wrapper@$$CBVBasicSchema@internal@cereal@@@std@@@2@@std@@AEAV?$dense_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$reference_wrapper@$$CBUMemberDescriptor@BasicSchema@internal@cereal@@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$reference_wrapper@$$CBUMemberDescriptor@BasicSchema@internal@cereal@@@2@@std@@@2@@5@@Z

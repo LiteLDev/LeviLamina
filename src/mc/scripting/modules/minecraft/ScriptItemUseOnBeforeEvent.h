@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Player;
 namespace ScriptModuleMinecraft { struct ScriptItemUseOnAfterEvent; }
 namespace Scripting { class WeakLifetimeScope; }
 struct ItemUseOnEvent;
@@ -26,12 +27,12 @@ public:
     // symbol: ??1ScriptItemUseOnBeforeEvent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptItemUseOnBeforeEvent();
 
+    // symbol:
+    // ??0ScriptItemUseOnBeforeEvent@ScriptModuleMinecraft@@QEAA@AEAUItemUseOnEvent@@PEAVPlayer@@AEBVWeakLifetimeScope@Scripting@@@Z
+    MCAPI ScriptItemUseOnBeforeEvent(struct ItemUseOnEvent&, class Player*, class Scripting::WeakLifetimeScope const&);
+
     // symbol: ??0ScriptItemUseOnBeforeEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
     MCAPI ScriptItemUseOnBeforeEvent(struct ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent&&);
-
-    // symbol:
-    // ??0ScriptItemUseOnBeforeEvent@ScriptModuleMinecraft@@QEAA@AEAUItemUseOnEvent@@AEBVWeakLifetimeScope@Scripting@@@Z
-    MCAPI ScriptItemUseOnBeforeEvent(struct ItemUseOnEvent&, class Scripting::WeakLifetimeScope const&);
 
     // symbol: ??0ScriptItemUseOnBeforeEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptItemUseOnBeforeEvent(struct ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent const&);

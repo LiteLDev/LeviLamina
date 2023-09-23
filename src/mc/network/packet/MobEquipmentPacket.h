@@ -36,6 +36,9 @@ public:
     // symbol: ??1MobEquipmentPacket@@UEAA@XZ
     MCVAPI ~MobEquipmentPacket();
 
+    // symbol: ??0MobEquipmentPacket@@QEAA@$$QEAV0@@Z
+    MCAPI MobEquipmentPacket(class MobEquipmentPacket&&);
+
     // symbol: ??0MobEquipmentPacket@@QEAA@VActorRuntimeID@@AEBVItemStack@@HHW4ContainerID@@@Z
     MCAPI MobEquipmentPacket(class ActorRuntimeID, class ItemStack const&, int, int, ::ContainerID);
 

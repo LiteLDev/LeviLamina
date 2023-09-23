@@ -65,9 +65,6 @@ public:
     // ?getFunctionNameFromPath@FunctionManager@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@@Z
     MCAPI static std::string getFunctionNameFromPath(class Core::Path const&);
 
-    // symbol: ?getQueueOrderForCommandVersion@FunctionManager@@SA?AW4FunctionQueueOrder@@W4CurrentCmdVersion@@@Z
-    MCAPI static ::FunctionQueueOrder getQueueOrderForCommandVersion(::CurrentCmdVersion);
-
     // NOLINTEND
 
     // protected:

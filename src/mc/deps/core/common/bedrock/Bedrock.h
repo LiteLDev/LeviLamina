@@ -7,7 +7,6 @@
 #include "mc/deps/core/common/bedrock/AsyncErrc.h"
 #include "mc/deps/core/common/bedrock/AsyncStatus.h"
 #include "mc/deps/core/common/bedrock/CallStack.h"
-#include "mc/deps/core/common/bedrock/ClientErrorCode.h"
 #include "mc/deps/core/common/bedrock/DataStore.h"
 #include "mc/deps/core/common/bedrock/ErrorInfoBuilder.h"
 #include "mc/deps/core/common/bedrock/FilePickerManager.h"
@@ -27,6 +26,9 @@
 #include "mc/deps/core/common/bedrock/pubsub/ConnectPosition.h"
 #include "mc/deps/core/common/bedrock/pubsub/DeferredSubscriptionHub.h"
 #include "mc/deps/core/common/bedrock/pubsub/PriorityDeferredSubscriptionHub.h"
+#include "mc/deps/core/common/debug/LogCategory.h"
+#include "mc/deps/core/common/debug/LogRule.h"
+#include "mc/enums/LogAreaID.h"
 #include "mc/network/HCTraceLevel.h"
 #include "mc/network/HCWebSocketCloseStatus.h"
 
@@ -42,7 +44,6 @@ namespace Bedrock { class IIslandCore; }
 namespace Bedrock { class PlatformBootstrap; }
 namespace Bedrock { class WorkerPoolManager; }
 namespace Bedrock { struct CallStack; }
-namespace Bedrock::Http { class BufferedResponseBody; }
 namespace Bedrock::Http { class DispatcherProcess; }
 namespace Bedrock::Http { class HeaderCollection; }
 namespace Bedrock::Http { class HttpInterface; }
@@ -85,9 +86,7 @@ namespace Bedrock::Threading { class AssignedThread; }
 namespace Bedrock::Threading { class OSThreadPriority; }
 namespace Bedrock::Threading { class SharedRecursiveMutexBase; }
 namespace Bedrock::Threading::AsyncResult { class ToXAsyncBlock; }
-namespace Bedrock::Threading::CustomTLS { class TLSManager; }
 namespace Core { class Path; }
-namespace Json { class Value; }
 // clang-format on
 
 namespace Bedrock {

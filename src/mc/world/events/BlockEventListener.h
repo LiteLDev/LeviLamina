@@ -23,8 +23,9 @@ public:
     virtual ::EventResult onBlockPlacedByPlayer(class Player&, class Block const&, class BlockPos const&, bool);
 
     // vIndex: 2, symbol:
-    // ?onBlockDestroyedByPlayer@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlock@@AEBVBlockPos@@@Z
-    virtual ::EventResult onBlockDestroyedByPlayer(class Player&, class Block const&, class BlockPos const&);
+    // ?onBlockDestroyedByPlayer@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlock@@AEBVBlockPos@@AEBVItemStackBase@@3@Z
+    virtual ::EventResult
+    onBlockDestroyedByPlayer(class Player&, class Block const&, class BlockPos const&, class ItemStackBase const&, class ItemStackBase const&);
 
     // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();

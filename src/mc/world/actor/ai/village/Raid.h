@@ -34,9 +34,6 @@ public:
     // symbol: ?getRemainingRaiders@Raid@@QEBA_KXZ
     MCAPI uint64 getRemainingRaiders() const;
 
-    // symbol: ?isRaider@Raid@@QEBA_NUActorUniqueID@@@Z
-    MCAPI bool isRaider(struct ActorUniqueID) const;
-
     // symbol: ?readAdditionalSaveData@Raid@@QEAAXAEBVCompoundTag@@@Z
     MCAPI void readAdditionalSaveData(class CompoundTag const&);
 
@@ -53,6 +50,12 @@ public:
 
     // private:
     // NOLINTBEGIN
+    // symbol: ?_calcBossBarUsingHealth@Raid@@AEBAMXZ
+    MCAPI float _calcBossBarUsingHealth() const;
+
+    // symbol: ?_calcBossBarUsingMobs@Raid@@AEBAMXZ
+    MCAPI float _calcBossBarUsingMobs() const;
+
     // symbol: ?_getTotalRaiderHealth@Raid@@AEBAMXZ
     MCAPI float _getTotalRaiderHealth() const;
 

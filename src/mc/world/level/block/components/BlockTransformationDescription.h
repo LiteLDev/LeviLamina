@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace JsonUtil { class EmptyClass; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockTransformationDescription : public ::BlockComponentDescription {
@@ -26,27 +27,25 @@ public:
     // ?getName@BlockTransformationDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const& getName() const;
 
-    // vIndex: 2, symbol: ?initializeComponent@BlockTransformationDescription@@UEBAXAEAVEntityContext@@@Z
-    virtual void initializeComponent(class EntityContext&) const;
+    // vIndex: 3, symbol: ?initializeComponent@BlockTransformationDescription@@UEBAXAEAVBlockComponentStorage@@@Z
+    virtual void initializeComponent(class BlockComponentStorage&) const;
 
-    // vIndex: 6, symbol: ?isNetworkComponent@BlockTransformationDescription@@UEBA_NXZ
+    // vIndex: 7, symbol: ?isNetworkComponent@BlockTransformationDescription@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
-    // vIndex: 7, symbol:
-    // ?buildNetworkTag@BlockTransformationDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    // vIndex: 8, symbol:
+    // ?buildNetworkTag@BlockTransformationDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAUReflectionCtx@cereal@@@Z
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx&) const;
 
-    // vIndex: 8, symbol: ?initializeFromNetwork@BlockTransformationDescription@@UEAAXAEBVCompoundTag@@@Z
-    virtual void initializeFromNetwork(class CompoundTag const&);
+    // vIndex: 9, symbol:
+    // ?initializeFromNetwork@BlockTransformationDescription@@UEAAXAEBVCompoundTag@@AEAUReflectionCtx@cereal@@@Z
+    virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx&);
 
     // symbol: ??0BlockTransformationDescription@@QEAA@XZ
     MCAPI BlockTransformationDescription();
 
-    // symbol: ?bindType@BlockTransformationDescription@@SAXXZ
-    MCAPI static void bindType();
-
-    // symbol: ?registerVersionUpgrades@BlockTransformationDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet&);
+    // symbol: ?bindType@BlockTransformationDescription@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // symbol: ?NameID@BlockTransformationDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const NameID;

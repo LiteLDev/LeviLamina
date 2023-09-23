@@ -29,8 +29,8 @@ public:
     MCAPI bool getIsBoosting() const;
 
     // symbol:
-    // ?itemUseText@BoostableComponent@@QEAA_NAEBVPlayer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool itemUseText(class Player const&, std::string&);
+    // ?itemUseText@BoostableComponent@@QEAA_NAEBVActor@@AEBVItemStack@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI bool itemUseText(class Actor const&, class ItemStack const&, std::string&);
 
     // symbol: ?onItemInteract@BoostableComponent@@QEAA_NAEAVActor@@AEAVItemStack@@AEAVPlayer@@@Z
     MCAPI bool onItemInteract(class Actor&, class ItemStack&, class Player&);
@@ -43,6 +43,13 @@ public:
 
     // symbol: ?getSpeedModifierUUID@BoostableComponent@@SA?AVUUID@mce@@XZ
     MCAPI static class mce::UUID getSpeedModifierUUID();
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_canUseItem@BoostableComponent@@AEAA_NAEBVActor@@AEBVItemStack@@@Z
+    MCAPI bool _canUseItem(class Actor const&, class ItemStack const&);
 
     // NOLINTEND
 

@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace DripstoneUtils { struct PointedDripstoneBasePos; }
-namespace ValueProviders { struct UniformFloat; }
 // clang-format on
 
 namespace DripstoneUtils {
@@ -22,9 +21,6 @@ MCAPI bool canBeAdjacentToWater(class IBlockWorldGenAPI&, class BlockPos const&)
 // symbol: ?canPlacePool@DripstoneUtils@@YA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
 MCAPI bool canPlacePool(class IBlockWorldGenAPI&, class BlockPos const&);
 
-// symbol: ?getDripstoneHeight@DripstoneUtils@@YAMMMMM@Z
-MCAPI float getDripstoneHeight(float, float, float, float);
-
 // symbol: ?getPlacementBlock@DripstoneUtils@@YAAEBVBlock@@EAEBW4DripstoneThickness@@@Z
 MCAPI class Block const& getPlacementBlock(uchar, ::DripstoneThickness const&);
 
@@ -32,9 +28,6 @@ MCAPI class Block const& getPlacementBlock(uchar, ::DripstoneThickness const&);
 // ?getPointedDripstoneBasePos@DripstoneUtils@@YA?AV?$optional@UPointedDripstoneBasePos@DripstoneUtils@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@@Z
 MCAPI std::optional<struct DripstoneUtils::PointedDripstoneBasePos>
       getPointedDripstoneBasePos(class IBlockWorldGenAPI&, class BlockPos const&, class Random&);
-
-// symbol: ?isCircleMostlyEmbeddedInStone@DripstoneUtils@@YA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@H@Z
-MCAPI bool isCircleMostlyEmbeddedInStone(class IBlockWorldGenAPI&, class BlockPos const&, int);
 
 // symbol: ?isDripstoneBaseOrLava@DripstoneUtils@@YA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
 MCAPI bool isDripstoneBaseOrLava(class IBlockWorldGenAPI const&, class BlockPos const&);

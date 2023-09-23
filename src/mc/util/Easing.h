@@ -14,9 +14,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?bindType@Easing@@SAXXZ
-    MCAPI static void bindType();
-
     // symbol:
     // ?getStringFromEasingType@Easing@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4EasingType@@@Z
     MCAPI static std::string const& getStringFromEasingType(::EasingType);

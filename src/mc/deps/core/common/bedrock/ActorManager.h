@@ -6,6 +6,7 @@
 #include "mc/common/wrapper/OwnerPtrT.h"
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/enums/InitializationMethod.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -75,8 +76,9 @@ public:
     MCAPI class Bedrock::PubSub::Subscription registerOnRemoveActorEntityReferences(std::function<void(class Actor&)>);
 
     // symbol:
-    // ?registerPostReloadActor@ActorManager@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEAVActor@@@Z@std@@@Z
-    MCAPI class Bedrock::PubSub::Subscription registerPostReloadActor(std::function<void(class Actor&)>);
+    // ?registerPostReloadActor@ActorManager@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEAVActor@@W4InitializationMethod@@@Z@std@@@Z
+    MCAPI class Bedrock::PubSub::Subscription
+        registerPostReloadActor(std::function<void(class Actor&, ::InitializationMethod)>);
 
     // symbol: ?removeActorEntityAndTakeEntity@ActorManager@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@VWeakEntityRef@@@Z
     MCAPI class OwnerPtrT<struct EntityRefTraits> removeActorEntityAndTakeEntity(class WeakEntityRef);

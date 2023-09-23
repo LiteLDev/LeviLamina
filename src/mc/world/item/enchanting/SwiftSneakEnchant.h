@@ -44,10 +44,6 @@ public:
     // symbol: ?isTreasureOnly@SwiftSneakEnchant@@UEBA_NXZ
     MCVAPI bool isTreasureOnly() const;
 
-    // symbol:
-    // ??0SwiftSneakEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2HH@Z
-    MCAPI SwiftSneakEnchant(::Enchant::Type, ::Enchant::Frequency, std::string_view, std::string_view, int, int);
-
     // symbol: ?getExtraSneakingMovementFactor@SwiftSneakEnchant@@SAMAEBVActor@@@Z
     MCAPI static float getExtraSneakingMovementFactor(class Actor const&);
 

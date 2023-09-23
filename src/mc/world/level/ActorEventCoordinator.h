@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/CoordinatorResult.h"
+#include "mc/enums/InitializationMethod.h"
 #include "mc/enums/MovePredictionType.h"
 #include "mc/events/ActorGameplayEvent.h"
 #include "mc/events/MutableActorGameplayEvent.h"
@@ -25,8 +26,8 @@ public:
     // ?registerActorGameplayHandler@ActorEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VActorGameplayHandler@@U?$default_delete@VActorGameplayHandler@@@std@@@std@@@Z
     MCAPI void registerActorGameplayHandler(std::unique_ptr<class ActorGameplayHandler>&&);
 
-    // symbol: ?sendActorCreated@ActorEventCoordinator@@QEAAXAEAVActor@@@Z
-    MCAPI void sendActorCreated(class Actor&);
+    // symbol: ?sendActorCreated@ActorEventCoordinator@@QEAAXAEAVActor@@W4InitializationMethod@@@Z
+    MCAPI void sendActorCreated(class Actor&, ::InitializationMethod);
 
     // symbol:
     // ?sendActorCreationAttemptFailed@ActorEventCoordinator@@QEAAXAEAVActor@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
@@ -54,15 +55,15 @@ public:
     MCAPI void sendActorTick(class Actor&);
 
     // symbol:
+    // ?sendEvent@ActorEventCoordinator@@QEAA?AW4CoordinatorResult@@AEBV?$EventRef@U?$ActorGameplayEvent@W4CoordinatorResult@@@@@@@Z
+    MCAPI ::CoordinatorResult sendEvent(class EventRef<struct ActorGameplayEvent<::CoordinatorResult>> const&);
+
+    // symbol:
     // ?sendEvent@ActorEventCoordinator@@QEAA?AW4CoordinatorResult@@V?$EventRef@U?$MutableActorGameplayEvent@W4CoordinatorResult@@@@@@@Z
     MCAPI ::CoordinatorResult sendEvent(class EventRef<struct MutableActorGameplayEvent<::CoordinatorResult>>);
 
     // symbol: ?sendEvent@ActorEventCoordinator@@QEAAXAEBV?$EventRef@U?$ActorGameplayEvent@X@@@@@Z
     MCAPI void sendEvent(class EventRef<struct ActorGameplayEvent<void>> const&);
-
-    // symbol:
-    // ?sendEvent@ActorEventCoordinator@@QEAA?AW4CoordinatorResult@@AEBV?$EventRef@U?$ActorGameplayEvent@W4CoordinatorResult@@@@@@@Z
-    MCAPI ::CoordinatorResult sendEvent(class EventRef<struct ActorGameplayEvent<::CoordinatorResult>> const&);
 
     // NOLINTEND
 };

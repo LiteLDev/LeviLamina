@@ -9,10 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class IdentityDefinition;
-class Level;
 namespace ScriptModuleMinecraft { class ScriptActor; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -27,13 +24,9 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ??0ScriptScoreboardIdentity@ScriptModuleMinecraft@@QEAA@AEBVIdentityDefinition@@AEBVLevel@@AEBVWeakLifetimeScope@Scripting@@@Z
-    MCAPI
-    ScriptScoreboardIdentity(class IdentityDefinition const&, class Level const&, class Scripting::WeakLifetimeScope const&);
-
-    // symbol:
-    // ?getActor@ScriptScoreboardIdentity@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@Scripting@@XZ
-    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>
+    // ?getActor@ScriptScoreboardIdentity@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<
+        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>>
     getActor() const;
 
     // symbol:
@@ -42,10 +35,6 @@ public:
 
     // symbol: ?isValid@ScriptScoreboardIdentity@ScriptModuleMinecraft@@QEBA_NXZ
     MCAPI bool isValid() const;
-
-    // symbol: ??4ScriptScoreboardIdentity@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
-    MCAPI class ScriptModuleMinecraft::ScriptScoreboardIdentity&
-    operator=(class ScriptModuleMinecraft::ScriptScoreboardIdentity&&);
 
     // symbol: ??1ScriptScoreboardIdentity@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptScoreboardIdentity();

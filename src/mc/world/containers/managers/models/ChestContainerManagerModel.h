@@ -26,11 +26,11 @@ public:
     // vIndex: 17, symbol: ?_postInit@ChestContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
     virtual class ContainerScreenContext _postInit();
 
-    // symbol: ??0ChestContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@UActorUniqueID@@@Z
-    MCAPI ChestContainerManagerModel(::ContainerID, class Player&, struct ActorUniqueID);
-
     // symbol: ??0ChestContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@W4BlockActorType@@@Z
     MCAPI ChestContainerManagerModel(::ContainerID, class Player&, class BlockPos const&, ::BlockActorType);
+
+    // symbol: ??0ChestContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@UActorUniqueID@@@Z
+    MCAPI ChestContainerManagerModel(::ContainerID, class Player&, struct ActorUniqueID);
 
     // NOLINTEND
 };

@@ -40,11 +40,11 @@ public:
     // symbol: ??1StringTag@@UEAA@XZ
     MCVAPI ~StringTag();
 
-    // symbol: ??0StringTag@@QEAA@XZ
-    MCAPI StringTag();
-
     // symbol: ??0StringTag@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI explicit StringTag(std::string);
+
+    // symbol: ??0StringTag@@QEAA@XZ
+    MCAPI StringTag();
 
     // NOLINTEND
 };

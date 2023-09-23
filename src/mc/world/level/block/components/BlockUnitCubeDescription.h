@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace JsonUtil { class EmptyClass; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockUnitCubeDescription : public ::BlockComponentDescription {
@@ -30,18 +31,19 @@ public:
     // vIndex: 2, symbol: ?initializeComponent@BlockUnitCubeDescription@@UEBAXAEAVEntityContext@@@Z
     virtual void initializeComponent(class EntityContext&) const;
 
-    // vIndex: 6, symbol: ?isNetworkComponent@BlockUnitCubeDescription@@UEBA_NXZ
+    // vIndex: 7, symbol: ?isNetworkComponent@BlockUnitCubeDescription@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
-    // vIndex: 7, symbol:
-    // ?buildNetworkTag@BlockUnitCubeDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    // vIndex: 8, symbol:
+    // ?buildNetworkTag@BlockUnitCubeDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAUReflectionCtx@cereal@@@Z
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx&) const;
 
-    // vIndex: 8, symbol: ?initializeFromNetwork@BlockUnitCubeDescription@@UEAAXAEBVCompoundTag@@@Z
-    virtual void initializeFromNetwork(class CompoundTag const&);
+    // vIndex: 9, symbol:
+    // ?initializeFromNetwork@BlockUnitCubeDescription@@UEAAXAEBVCompoundTag@@AEAUReflectionCtx@cereal@@@Z
+    virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx&);
 
-    // symbol: ?bindType@BlockUnitCubeDescription@@SAXXZ
-    MCAPI static void bindType();
+    // symbol: ?bindType@BlockUnitCubeDescription@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // symbol: ?NameID@BlockUnitCubeDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const NameID;

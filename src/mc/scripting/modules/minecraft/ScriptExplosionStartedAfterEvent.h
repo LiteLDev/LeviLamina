@@ -21,16 +21,16 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol:
+    // ??0ScriptExplosionStartedAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUExplosionStartedEvent@@AEBVWeakLifetimeScope@Scripting@@@Z
+    MCAPI
+    ScriptExplosionStartedAfterEvent(struct ExplosionStartedEvent const&, class Scripting::WeakLifetimeScope const&);
+
     // symbol: ??0ScriptExplosionStartedAfterEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptExplosionStartedAfterEvent(struct ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent const&);
 
     // symbol: ??0ScriptExplosionStartedAfterEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
     MCAPI ScriptExplosionStartedAfterEvent(struct ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent&&);
-
-    // symbol:
-    // ??0ScriptExplosionStartedAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUExplosionStartedEvent@@AEBVWeakLifetimeScope@Scripting@@@Z
-    MCAPI
-    ScriptExplosionStartedAfterEvent(struct ExplosionStartedEvent const&, class Scripting::WeakLifetimeScope const&);
 
     // symbol: ?copyTo@ScriptExplosionStartedAfterEvent@ScriptModuleMinecraft@@QEBAXAEAUExplosionStartedEvent@@@Z
     MCAPI void copyTo(struct ExplosionStartedEvent&) const;

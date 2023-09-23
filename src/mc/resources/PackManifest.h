@@ -34,17 +34,20 @@ public:
     // symbol: ??1PackManifest@@UEAA@XZ
     MCVAPI ~PackManifest();
 
-    // symbol: ??0PackManifest@@QEAA@W4ManifestType@@@Z
-    MCAPI explicit PackManifest(::ManifestType);
-
     // symbol: ??0PackManifest@@QEAA@AEBV0@@Z
     MCAPI PackManifest(class PackManifest const&);
+
+    // symbol: ??0PackManifest@@QEAA@W4ManifestType@@@Z
+    MCAPI explicit PackManifest(::ManifestType);
 
     // symbol: ?addModule@PackManifest@@QEAAXAEBVResourceInformation@@@Z
     MCAPI void addModule(class ResourceInformation const&);
 
     // symbol: ?addPackDependency@PackManifest@@QEAAXAEBUPackIdVersion@@@Z
     MCAPI void addPackDependency(struct PackIdVersion const&);
+
+    // symbol: ?clearLegacyModuleDependencies@PackManifest@@QEAAXXZ
+    MCAPI void clearLegacyModuleDependencies();
 
     // symbol: ?getContentIdentity@PackManifest@@QEBAAEBVContentIdentity@@XZ
     MCAPI class ContentIdentity const& getContentIdentity() const;
@@ -61,6 +64,10 @@ public:
 
     // symbol: ?getIdentity@PackManifest@@QEBAAEBUPackIdVersion@@XZ
     MCAPI struct PackIdVersion const& getIdentity() const;
+
+    // symbol:
+    // ?getLegacyModuleDependencies@PackManifest@@QEBAAEBV?$vector@ULegacyPackIdVersion@@V?$allocator@ULegacyPackIdVersion@@@std@@@std@@XZ
+    MCAPI std::vector<struct LegacyPackIdVersion> const& getLegacyModuleDependencies() const;
 
     // symbol: ?getLocation@PackManifest@@QEBAAEBVResourceLocation@@XZ
     MCAPI class ResourceLocation const& getLocation() const;
@@ -109,6 +116,9 @@ public:
     // symbol: ?hasClientScript@PackManifest@@QEBA_NXZ
     MCAPI bool hasClientScript() const;
 
+    // symbol: ?hasLegacyModuleDependencies@PackManifest@@QEBA_NXZ
+    MCAPI bool hasLegacyModuleDependencies() const;
+
     // symbol: ?hasModule@PackManifest@@QEBA_NAEBUPackIdVersion@@@Z
     MCAPI bool hasModule(struct PackIdVersion const&) const;
 
@@ -139,6 +149,9 @@ public:
     // symbol: ?setDescription@PackManifest@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setDescription(std::string const&);
 
+    // symbol: ?setHidden@PackManifest@@QEAAX_N@Z
+    MCAPI void setHidden(bool);
+
     // symbol: ?setIdentity@PackManifest@@QEAAXAEBUPackIdVersion@@@Z
     MCAPI void setIdentity(struct PackIdVersion const&);
 
@@ -160,6 +173,9 @@ public:
 
     // symbol: ?setPackCategory@PackManifest@@QEAAXW4PackCategory@@@Z
     MCAPI void setPackCategory(::PackCategory);
+
+    // symbol: ?setPackOrigin@PackManifest@@QEAAXW4PackOrigin@@@Z
+    MCAPI void setPackOrigin(::PackOrigin);
 
     // symbol: ?setPackType@PackManifest@@QEAAXW4PackType@@@Z
     MCAPI void setPackType(::PackType);

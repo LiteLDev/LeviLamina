@@ -5,14 +5,11 @@
 // auto generated inclusion list
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
-#include "mc/external/scripting/WeakTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/ScriptItemComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptItemComponent; }
-namespace ScriptModuleMinecraft { class ScriptItemStack; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -30,25 +27,20 @@ public:
     // symbol: ??1ScriptFoodComponent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptFoodComponent();
 
-    // symbol:
-    // ??0ScriptFoodComponent@ScriptModuleMinecraft@@QEAA@V?$WeakTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEBVWeakLifetimeScope@3@@Z
-    MCAPI
-    ScriptFoodComponent(class Scripting::WeakTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, class Scripting::WeakLifetimeScope const&);
-
     // symbol: ??0ScriptFoodComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI ScriptFoodComponent(class ScriptModuleMinecraft::ScriptFoodComponent const&);
 
-    // symbol: ?getCanAlwaysEat@ScriptFoodComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@_N@Scripting@@XZ
+    // symbol: ?getCanAlwaysEat@ScriptFoodComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> getCanAlwaysEat();
 
-    // symbol: ?getNutrition@ScriptFoodComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H@Scripting@@XZ
+    // symbol: ?getNutrition@ScriptFoodComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getNutrition();
 
-    // symbol: ?getSaturationModifier@ScriptFoodComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@M@Scripting@@XZ
+    // symbol: ?getSaturationModifier@ScriptFoodComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@M$$V@Scripting@@XZ
     MCAPI class Scripting::Result<float> getSaturationModifier();
 
     // symbol:
-    // ?getUsingConvertsToItem@ScriptFoodComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Scripting@@XZ
+    // ?getUsingConvertsToItem@ScriptFoodComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::string> getUsingConvertsToItem();
 
     // symbol: ??4ScriptFoodComponent@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
@@ -58,10 +50,6 @@ public:
     // symbol:
     // ?bind@ScriptFoodComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptFoodComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptFoodComponent> bind();
-
-    // symbol:
-    // ?getTypeName@ScriptFoodComponent@ScriptModuleMinecraft@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI static std::string const& getTypeName();
 
     // NOLINTEND
 };

@@ -17,7 +17,13 @@ public:
     // prevent constructor by default
     OutputFileStream& operator=(OutputFileStream const&);
     OutputFileStream(OutputFileStream const&);
-    OutputFileStream();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ??0OutputFileStream@Core@@QEAA@XZ
+    MCAPI OutputFileStream();
+
+    // NOLINTEND
 };
 
 }; // namespace Core

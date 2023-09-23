@@ -2,8 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/puv/LoadResult.h"
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
 
 class ComponentItemDataLoader {
 public:
@@ -14,12 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ComponentItemDataLoader@@QEAA@PEAVComponentItem@@VSemVersion@@@Z
-    MCAPI ComponentItemDataLoader(class ComponentItem*, class SemVersion);
-
-    // symbol:
-    // ?load@ComponentItemDataLoader@@QEBA?AV?$LoadResult@UComponentItemData_v1_20@@@Puv@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Puv::LoadResult<struct ComponentItemData_v1_20> load(std::string const&) const;
+    // symbol: ??0ComponentItemDataLoader@@QEAA@PEAVComponentItem@@VSemVersion@@AEAUReflectionCtx@cereal@@@Z
+    MCAPI ComponentItemDataLoader(class ComponentItem*, class SemVersion, struct cereal::ReflectionCtx&);
 
     // symbol: ??1ComponentItemDataLoader@@QEAA@XZ
     MCAPI ~ComponentItemDataLoader();

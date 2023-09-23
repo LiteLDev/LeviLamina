@@ -28,7 +28,7 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol: ?_isValid@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    // vIndex: 1, symbol: ?_isValid@ScriptItemComponent@ScriptModuleMinecraft@@MEBA_NXZ
     virtual bool _isValid() const;
 
     // symbol: ??1ScriptBreathableComponent@ScriptModuleMinecraft@@UEAA@XZ
@@ -40,42 +40,42 @@ public:
     ScriptBreathableComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
 
     // symbol:
-    // ?getBreatheBlocks@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@@Scripting@@XZ
+    // ?getBreatheBlocks@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<
         std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>>>
     getBreatheBlocks() const;
 
-    // symbol: ?getBreathesAir@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N@Scripting@@XZ
+    // symbol: ?getBreathesAir@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> getBreathesAir() const;
 
-    // symbol: ?getBreathesLava@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N@Scripting@@XZ
+    // symbol: ?getBreathesLava@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> getBreathesLava() const;
 
-    // symbol: ?getBreathesSolids@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N@Scripting@@XZ
+    // symbol: ?getBreathesSolids@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> getBreathesSolids() const;
 
-    // symbol: ?getBreathesWater@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N@Scripting@@XZ
+    // symbol: ?getBreathesWater@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> getBreathesWater() const;
 
-    // symbol: ?getGeneratesBubbles@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N@Scripting@@XZ
+    // symbol: ?getGeneratesBubbles@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> getGeneratesBubbles() const;
 
-    // symbol: ?getInhaleTime@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M@Scripting@@XZ
+    // symbol: ?getInhaleTime@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M$$V@Scripting@@XZ
     MCAPI class Scripting::Result<float> getInhaleTime() const;
 
     // symbol:
-    // ?getNonBreatheBlocks@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@@Scripting@@XZ
+    // ?getNonBreatheBlocks@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<
         std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>>>
     getNonBreatheBlocks() const;
 
-    // symbol: ?getSuffocateTime@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@H@Scripting@@XZ
+    // symbol: ?getSuffocateTime@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getSuffocateTime() const;
 
-    // symbol: ?getTotalSupply@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@H@Scripting@@XZ
+    // symbol: ?getTotalSupply@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getTotalSupply() const;
 
-    // symbol: ?setAirSupply@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@X@Scripting@@F@Z
+    // symbol: ?setAirSupply@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@X$$V@Scripting@@F@Z
     MCAPI class Scripting::Result<void> setAirSupply(short) const;
 
     // symbol:

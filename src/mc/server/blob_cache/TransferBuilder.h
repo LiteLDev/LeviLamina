@@ -15,14 +15,12 @@ public:
     // prevent constructor by default
     TransferBuilder& operator=(TransferBuilder const&);
     TransferBuilder(TransferBuilder const&);
+    TransferBuilder();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0TransferBuilder@Server@ClientBlobCache@@QEAA@AEAVActiveTransfersManager@12@AEBVNetworkIdentifier@@@Z
     MCAPI TransferBuilder(class ClientBlobCache::Server::ActiveTransfersManager&, class NetworkIdentifier const&);
-
-    // symbol: ??0TransferBuilder@Server@ClientBlobCache@@QEAA@XZ
-    MCAPI TransferBuilder();
 
     // symbol:
     // ?add@TransferBuilder@Server@ClientBlobCache@@QEAAX_KAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z

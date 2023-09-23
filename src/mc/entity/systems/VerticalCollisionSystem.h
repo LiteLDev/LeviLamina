@@ -34,7 +34,10 @@ public:
     // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();
 
-    // vIndex: 4, symbol:
+    // vIndex: 4, symbol: __unk_vfn_4
+    virtual void __unk_vfn_4();
+
+    // vIndex: 5, symbol:
     // ?tick@VerticalCollisionSystem@@EEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UMinecartFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UVerticalCollisionFlag@@@@@@U?$Read@USynchedActorDataComponent@@UMoveRequestComponent@@UAABBShapeComponent@@UDimensionTypeComponent@@UStateVectorComponent@@@@U?$Write@UStateVectorComponent@@UWalkDistComponent@@@@U?$AddRemove@UBounceComponent@@@@U?$GlobalRead@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
     virtual void tick(class StrictExecutionContext<
                       struct Filter<
@@ -53,7 +56,7 @@ public:
                       struct GlobalWrite<>,
                       struct EntityFactoryT<>>&);
 
-    // vIndex: 5, symbol:
+    // vIndex: 6, symbol:
     // ?singleTick@VerticalCollisionSystem@@EEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UMinecartFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UVerticalCollisionFlag@@@@@@U?$Read@USynchedActorDataComponent@@UMoveRequestComponent@@UAABBShapeComponent@@UDimensionTypeComponent@@UStateVectorComponent@@@@U?$Write@UStateVectorComponent@@UWalkDistComponent@@@@U?$AddRemove@UBounceComponent@@@@U?$GlobalRead@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEAVStrictEntityContext@@@Z
     virtual void singleTick(class StrictExecutionContext<struct Filter<class FlagComponent<struct MinecartFlag>, class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct VerticalCollisionFlag>>, struct Read<struct SynchedActorDataComponent, struct MoveRequestComponent, struct AABBShapeComponent, struct DimensionTypeComponent, struct StateVectorComponent>, struct Write<struct StateVectorComponent, struct WalkDistComponent>, struct AddRemove<struct BounceComponent>, struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>, struct GlobalWrite<>, struct EntityFactoryT<>>&, class StrictEntityContext&);
 
@@ -61,9 +64,9 @@ public:
     MCAPI static struct TickingSystemWithInfo create();
 
     // symbol:
-    // ?tickVerticalCollisionSystem@VerticalCollisionSystem@@SAXAEBVStrictEntityContext@@AEBUMoveRequestComponent@@AEBUAABBShapeComponent@@AEBUStateVectorComponent@@AEAUWalkDistComponent@@AEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UMinecartFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UVerticalCollisionFlag@@@@@@U?$Read@USynchedActorDataComponent@@UMoveRequestComponent@@UAABBShapeComponent@@UDimensionTypeComponent@@UStateVectorComponent@@@@U?$Write@UStateVectorComponent@@UWalkDistComponent@@@@U?$AddRemove@UBounceComponent@@@@U?$GlobalRead@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEBVIConstBlockSource@@@Z
+    // ?tickVerticalCollisionSystem@VerticalCollisionSystem@@SAXAEBVStrictEntityContext@@AEBUAABBShapeComponent@@AEBUStateVectorComponent@@AEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UMinecartFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UVerticalCollisionFlag@@@@@@U?$Read@USynchedActorDataComponent@@UMoveRequestComponent@@UAABBShapeComponent@@UDimensionTypeComponent@@UStateVectorComponent@@@@U?$Write@UStateVectorComponent@@UWalkDistComponent@@@@U?$AddRemove@UBounceComponent@@@@U?$GlobalRead@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEBVIConstBlockSource@@@Z
     MCAPI static void
-    tickVerticalCollisionSystem(class StrictEntityContext const&, struct MoveRequestComponent const&, struct AABBShapeComponent const&, struct StateVectorComponent const&, struct WalkDistComponent&, class StrictExecutionContext<struct Filter<class FlagComponent<struct MinecartFlag>, class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct VerticalCollisionFlag>>, struct Read<struct SynchedActorDataComponent, struct MoveRequestComponent, struct AABBShapeComponent, struct DimensionTypeComponent, struct StateVectorComponent>, struct Write<struct StateVectorComponent, struct WalkDistComponent>, struct AddRemove<struct BounceComponent>, struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>, struct GlobalWrite<>, struct EntityFactoryT<>>&, class IConstBlockSource const&);
+    tickVerticalCollisionSystem(class StrictEntityContext const&, struct AABBShapeComponent const&, struct StateVectorComponent const&, class StrictExecutionContext<struct Filter<class FlagComponent<struct MinecartFlag>, class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct VerticalCollisionFlag>>, struct Read<struct SynchedActorDataComponent, struct MoveRequestComponent, struct AABBShapeComponent, struct DimensionTypeComponent, struct StateVectorComponent>, struct Write<struct StateVectorComponent, struct WalkDistComponent>, struct AddRemove<struct BounceComponent>, struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>, struct GlobalWrite<>, struct EntityFactoryT<>>&, class IConstBlockSource const&);
 
     // NOLINTEND
 };

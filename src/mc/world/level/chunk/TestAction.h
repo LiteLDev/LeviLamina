@@ -10,7 +10,6 @@ public:
     // prevent constructor by default
     TestAction& operator=(TestAction const&);
     TestAction(TestAction const&);
-    TestAction();
 
 public:
     // NOLINTBEGIN
@@ -22,6 +21,9 @@ public:
 
     // vIndex: 3, symbol: ??8TestAction@@UEBA_NAEAVIRequestAction@@@Z
     virtual bool operator==(class IRequestAction&) const;
+
+    // symbol: ??0TestAction@@QEAA@XZ
+    MCAPI TestAction();
 
     // NOLINTEND
 };

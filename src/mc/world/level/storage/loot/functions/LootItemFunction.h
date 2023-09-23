@@ -19,13 +19,13 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol: ?apply@SetItemDamageFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 1, symbol: ?apply@SetItemCountFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual void apply(class ItemStack&, class Random&, class LootTableContext&) = 0;
 
     // vIndex: 2, symbol: ?apply@LootItemFunction@@UEAAHAEAVItemStack@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z
     virtual int apply(class ItemStack&, class Random&, struct Trade const&, class LootTableContext&);
 
-    // vIndex: 3, symbol: ?apply@SetItemDamageFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 3, symbol: ?apply@SetItemCountFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual void apply(class ItemInstance&, class Random&, class LootTableContext&) = 0;
 
     // vIndex: 4, symbol:
@@ -34,6 +34,10 @@ public:
 
     // symbol: ??1LootItemFunction@@UEAA@XZ
     MCVAPI ~LootItemFunction();
+
+    // symbol:
+    // ?getConditions@LootItemFunction@@QEBAAEBV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@std@@XZ
+    MCAPI std::vector<std::unique_ptr<class LootItemCondition>> const& getConditions() const;
 
     // symbol:
     // ?deserialize@LootItemFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@@Z

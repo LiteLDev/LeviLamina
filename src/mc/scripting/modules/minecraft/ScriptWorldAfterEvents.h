@@ -17,11 +17,10 @@ namespace ScriptModuleMinecraft { struct ScriptActorHealthChangedAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorHitBlockAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorHitEntityAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorHurtAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptActorRemovedAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptActorLoadAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptActorRemoveAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorSpawnAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptBlockBreakAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptBlockExplodedAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptBlockPlaceAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptButtonPushAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptChatSendAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptDataDrivenActorTriggerAfterEvent; }
@@ -37,12 +36,15 @@ namespace ScriptModuleMinecraft { struct ScriptItemUseAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemUseOnAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptLeverActionAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPistonActionAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerBreakBlockAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerJoinAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerLeaveAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerPlaceBlockAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerSpawnAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPressurePlatePopAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPressurePlatePushAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptProjectileHitAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptProjectileHitBlockAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptProjectileHitEntityAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptServerMessageAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptTargetBlockHitAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptTripWireTripAfterEvent; }
@@ -160,169 +162,179 @@ public:
     onChat(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptChatSendAfterEvent>&);
 
     // vIndex: 8, symbol:
+    // ?onActorLoad@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptActorLoadAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
+    virtual void
+    onActorLoad(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptActorLoadAfterEvent>&);
+
+    // vIndex: 9, symbol:
     // ?onActorSpawn@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptActorSpawnAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void
     onActorSpawn(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptActorSpawnAfterEvent>&);
 
-    // vIndex: 9, symbol:
-    // ?onActorRemoved@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEBV?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@AEAV?$StrongTypedObjectHandle@UScriptActorRemovedAfterEvent@ScriptModuleMinecraft@@@4@@Z
-    virtual void
-    onActorRemoved(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor> const&, class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptActorRemovedAfterEvent>&);
-
     // vIndex: 10, symbol:
+    // ?onActorRemoved@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEBV?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@AEAV?$StrongTypedObjectHandle@UScriptActorRemoveAfterEvent@ScriptModuleMinecraft@@@4@@Z
+    virtual void
+    onActorRemoved(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor> const&, class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptActorRemoveAfterEvent>&);
+
+    // vIndex: 11, symbol:
     // ?onActorHitEntity@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptActorHitEntityAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onActorHitEntity(class Scripting::StrongTypedObjectHandle<
                                   struct ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent>&);
 
-    // vIndex: 11, symbol:
+    // vIndex: 12, symbol:
     // ?onActorHitBlock@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptActorHitBlockAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onActorHitBlock(class Scripting::StrongTypedObjectHandle<
                                  struct ScriptModuleMinecraft::ScriptActorHitBlockAfterEvent>&);
 
-    // vIndex: 12, symbol:
+    // vIndex: 13, symbol:
     // ?onServerMessage@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptServerMessageAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onServerMessage(class Scripting::StrongTypedObjectHandle<
                                  struct ScriptModuleMinecraft::ScriptServerMessageAfterEvent>&);
 
-    // vIndex: 13, symbol:
+    // vIndex: 14, symbol:
     // ?onDataDrivenActorEventSend@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptDataDrivenActorTriggerAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onDataDrivenActorEventSend(class Scripting::StrongTypedObjectHandle<
                                             struct ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent>&);
 
-    // vIndex: 14, symbol:
+    // vIndex: 15, symbol:
     // ?onActorHurt@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptActorHurtAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void
     onActorHurt(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptActorHurtAfterEvent>&);
 
-    // vIndex: 15, symbol:
+    // vIndex: 16, symbol:
     // ?onActorHealthChanged@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptActorHealthChangedAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onActorHealthChanged(class Scripting::StrongTypedObjectHandle<
                                       struct ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent>&);
 
-    // vIndex: 16, symbol:
+    // vIndex: 17, symbol:
     // ?onActorDie@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptActorDieAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void
     onActorDie(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptActorDieAfterEvent>&);
 
-    // vIndex: 17, symbol:
+    // vIndex: 18, symbol:
     // ?onPlayerSpawn@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptPlayerSpawnAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void
     onPlayerSpawn(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptPlayerSpawnAfterEvent>&);
 
-    // vIndex: 18, symbol:
+    // vIndex: 19, symbol:
     // ?onActivatePiston@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptPistonActionAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onActivatePiston(class Scripting::StrongTypedObjectHandle<
                                   struct ScriptModuleMinecraft::ScriptPistonActionAfterEvent>&);
 
-    // vIndex: 19, symbol:
+    // vIndex: 20, symbol:
     // ?onActivateLever@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptLeverActionAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onActivateLever(class Scripting::StrongTypedObjectHandle<
                                  struct ScriptModuleMinecraft::ScriptLeverActionAfterEvent>&);
 
-    // vIndex: 20, symbol:
+    // vIndex: 21, symbol:
     // ?onPushButton@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptButtonPushAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void
     onPushButton(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptButtonPushAfterEvent>&);
 
-    // vIndex: 21, symbol:
+    // vIndex: 22, symbol:
     // ?onExplosion@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptExplosionStartedAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onExplosion(class Scripting::StrongTypedObjectHandle<
                              struct ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent>&);
 
-    // vIndex: 22, symbol:
+    // vIndex: 23, symbol:
     // ?onExplodeBlock@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptBlockExplodedAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onExplodeBlock(class Scripting::StrongTypedObjectHandle<
                                 struct ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent>&);
 
-    // vIndex: 23, symbol:
-    // ?onBlockPlace@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptBlockPlaceAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
-    virtual void
-    onBlockPlace(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptBlockPlaceAfterEvent>&);
-
     // vIndex: 24, symbol:
-    // ?onBlockBreak@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptBlockBreakAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
-    virtual void
-    onBlockBreak(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptBlockBreakAfterEvent>&);
+    // ?onPlayerPlaceBlock@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptPlayerPlaceBlockAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
+    virtual void onPlayerPlaceBlock(class Scripting::StrongTypedObjectHandle<
+                                    struct ScriptModuleMinecraft::ScriptPlayerPlaceBlockAfterEvent>&);
 
     // vIndex: 25, symbol:
+    // ?onPlayerBreakBlock@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptPlayerBreakBlockAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
+    virtual void onPlayerBreakBlock(class Scripting::StrongTypedObjectHandle<
+                                    struct ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent>&);
+
+    // vIndex: 26, symbol:
     // ?onPushPressurePlate@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptPressurePlatePushAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onPushPressurePlate(class Scripting::StrongTypedObjectHandle<
                                      struct ScriptModuleMinecraft::ScriptPressurePlatePushAfterEvent>&);
 
-    // vIndex: 26, symbol:
+    // vIndex: 27, symbol:
     // ?onPopPressurePlate@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptPressurePlatePopAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onPopPressurePlate(class Scripting::StrongTypedObjectHandle<
                                     struct ScriptModuleMinecraft::ScriptPressurePlatePopAfterEvent>&);
 
-    // vIndex: 27, symbol:
+    // vIndex: 28, symbol:
     // ?onHitTargetBlock@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptTargetBlockHitAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onHitTargetBlock(class Scripting::StrongTypedObjectHandle<
                                   struct ScriptModuleMinecraft::ScriptTargetBlockHitAfterEvent>&);
 
-    // vIndex: 28, symbol:
+    // vIndex: 29, symbol:
     // ?onTripTripWire@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptTripWireTripAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onTripTripWire(class Scripting::StrongTypedObjectHandle<
                                 struct ScriptModuleMinecraft::ScriptTripWireTripAfterEvent>&);
 
-    // vIndex: 29, symbol:
+    // vIndex: 30, symbol:
     // ?onItemDefinitionEventTriggered@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptItemDefinitionAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onItemDefinitionEventTriggered(class Scripting::StrongTypedObjectHandle<
                                                 struct ScriptModuleMinecraft::ScriptItemDefinitionAfterEvent>&);
 
-    // vIndex: 30, symbol:
+    // vIndex: 31, symbol:
     // ?onItemUse@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptItemUseAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void
     onItemUse(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemUseAfterEvent>&);
 
-    // vIndex: 31, symbol:
+    // vIndex: 32, symbol:
     // ?onItemUseOn@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void
     onItemUseOn(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent>&);
 
-    // vIndex: 32, symbol:
+    // vIndex: 33, symbol:
     // ?onItemStartUseOn@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptItemStartUseOnAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onItemStartUseOn(class Scripting::StrongTypedObjectHandle<
                                   struct ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent>&);
 
-    // vIndex: 33, symbol:
+    // vIndex: 34, symbol:
     // ?onItemStopUseOn@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptItemStopUseOnAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onItemStopUseOn(class Scripting::StrongTypedObjectHandle<
                                  struct ScriptModuleMinecraft::ScriptItemStopUseOnAfterEvent>&);
 
-    // vIndex: 34, symbol:
+    // vIndex: 35, symbol:
     // ?onItemStartUse@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptItemStartUseAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onItemStartUse(class Scripting::StrongTypedObjectHandle<
                                 struct ScriptModuleMinecraft::ScriptItemStartUseAfterEvent>&);
 
-    // vIndex: 35, symbol:
+    // vIndex: 36, symbol:
     // ?onItemCompleteUse@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptItemCompleteUseAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onItemCompleteUse(class Scripting::StrongTypedObjectHandle<
                                    struct ScriptModuleMinecraft::ScriptItemCompleteUseAfterEvent>&);
 
-    // vIndex: 36, symbol:
+    // vIndex: 37, symbol:
     // ?onItemReleaseUse@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptItemReleaseUseAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onItemReleaseUse(class Scripting::StrongTypedObjectHandle<
                                   struct ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent>&);
 
-    // vIndex: 37, symbol:
+    // vIndex: 38, symbol:
     // ?onItemStopUse@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptItemStopUseAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void
     onItemStopUse(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemStopUseAfterEvent>&);
 
-    // vIndex: 38, symbol:
-    // ?onProjectileHit@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptProjectileHitAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
-    virtual void onProjectileHit(class Scripting::StrongTypedObjectHandle<
-                                 struct ScriptModuleMinecraft::ScriptProjectileHitAfterEvent>&);
+    // vIndex: 39, symbol:
+    // ?onProjectileHitEntity@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptProjectileHitEntityAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
+    virtual void onProjectileHitEntity(class Scripting::StrongTypedObjectHandle<
+                                       struct ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent>&);
+
+    // vIndex: 40, symbol:
+    // ?onProjectileHitBlock@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptProjectileHitBlockAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
+    virtual void onProjectileHitBlock(class Scripting::StrongTypedObjectHandle<
+                                      struct ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent>&);
 
     // symbol: ??1ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptWorldAfterEvents();
 
-    // symbol: ??0ScriptWorldAfterEvents@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
-    MCAPI ScriptWorldAfterEvents(class ScriptModuleMinecraft::ScriptWorldAfterEvents&&);
-
     // symbol:
     // ??0ScriptWorldAfterEvents@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@V?$not_null@PEAVLevel@@@gsl@@@Z
     MCAPI ScriptWorldAfterEvents(class Scripting::WeakLifetimeScope const&, gsl::not_null<class Level*>);
+
+    // symbol: ??0ScriptWorldAfterEvents@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
+    MCAPI ScriptWorldAfterEvents(class ScriptModuleMinecraft::ScriptWorldAfterEvents&&);
 
     // symbol: ??4ScriptWorldAfterEvents@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptWorldAfterEvents&

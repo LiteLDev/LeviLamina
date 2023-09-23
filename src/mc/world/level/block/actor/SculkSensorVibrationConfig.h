@@ -32,6 +32,9 @@ public:
     // vIndex: 4, symbol: ?onSerializableDataChanged@SculkSensorVibrationConfig@@UEAAXAEAVBlockSource@@@Z
     virtual void onSerializableDataChanged(class BlockSource&);
 
+    // vIndex: 5, symbol: ?canReceiveOnlyIfAdjacentChunksAreTicking@SculkSensorVibrationConfig@@UEBA_NXZ
+    virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const;
+
     // symbol: ??0SculkSensorVibrationConfig@@QEAA@AEBVBlockPos@@@Z
     MCAPI explicit SculkSensorVibrationConfig(class BlockPos const&);
 

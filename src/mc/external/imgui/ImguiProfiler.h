@@ -106,6 +106,13 @@ public:
         Timer& operator=(Timer const&);
         Timer(Timer const&);
         Timer();
+
+    public:
+        // NOLINTBEGIN
+        // symbol: ??1Timer@ImguiProfiler@@UEAA@XZ
+        MCVAPI ~Timer();
+
+        // NOLINTEND
     };
 
     class ManualTimer : public ::ImguiProfiler::Timer {
@@ -119,6 +126,9 @@ public:
         // NOLINTBEGIN
         // symbol: ??1ManualTimer@ImguiProfiler@@UEAA@XZ
         MCVAPI ~ManualTimer();
+
+        // symbol: ??0ManualTimer@ImguiProfiler@@QEAA@PEBD0_N@Z
+        MCAPI ManualTimer(char const*, char const*, bool);
 
         // symbol: ?mark@ManualTimer@ImguiProfiler@@QEAAXXZ
         MCAPI void mark();
@@ -148,13 +158,18 @@ public:
     // prevent constructor by default
     ImguiProfiler& operator=(ImguiProfiler const&);
     ImguiProfiler(ImguiProfiler const&);
-    ImguiProfiler();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0ImguiProfiler@@QEAA@XZ
+    MCAPI ImguiProfiler();
+
     // symbol:
     // ?getTimeAccumulator@ImguiProfiler@@QEAA?AVTimeAccumulator@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
     MCAPI class TimeAccumulator getTimeAccumulator(std::string const&, std::string const&, bool);
+
+    // symbol: ?update@ImguiProfiler@@QEAAXXZ
+    MCAPI void update();
 
     // NOLINTEND
 
@@ -163,6 +178,9 @@ private:
     // symbol:
     // ?sPendingRecords@ImguiProfiler@@0V?$vector@URecord@ImguiProfiler@@V?$allocator@URecord@ImguiProfiler@@@std@@@std@@A
     MCAPI static std::vector<struct ImguiProfiler::Record> sPendingRecords;
+
+    // symbol: ?sProduceRecords@ImguiProfiler@@0HA
+    MCAPI static int sProduceRecords;
 
     // symbol: ?sRecordMutex@ImguiProfiler@@0Vmutex@std@@A
     MCAPI static std::mutex sRecordMutex;
@@ -173,6 +191,8 @@ private:
 public:
     // NOLINTBEGIN
     auto& $sPendingRecords() { return sPendingRecords; }
+
+    auto& $sProduceRecords() { return sProduceRecords; }
 
     auto& $sRecordMutex() { return sRecordMutex; }
 

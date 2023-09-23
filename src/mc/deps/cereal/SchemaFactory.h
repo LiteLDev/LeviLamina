@@ -27,8 +27,9 @@ public:
     MCAPI
     SchemaFactory(struct cereal::SerializerTraits, struct cereal::ReflectionCtx&, std::string const&, std::string const&);
 
-    // symbol: ??0SchemaFactory@cereal@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCAPI SchemaFactory(std::string const&, std::string const&);
+    // symbol:
+    // ??0SchemaFactory@cereal@@QEAA@AEAUReflectionCtx@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
+    MCAPI SchemaFactory(struct cereal::ReflectionCtx&, std::string const&, std::string const&);
 
     // symbol:
     // ?bind@SchemaFactory@cereal@@QEAAAEAV12@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
@@ -37,6 +38,9 @@ public:
     // symbol:
     // ?bindRequired@SchemaFactory@cereal@@QEAAAEAV12@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
     MCAPI class cereal::SchemaFactory& bindRequired(std::string const&, std::string const&, std::string const&);
+
+    // symbol: ?context@SchemaFactory@cereal@@QEBAAEAUReflectionCtx@2@XZ
+    MCAPI struct cereal::ReflectionCtx& context() const;
 
     // symbol:
     // ?deprecatedMember@SchemaFactory@cereal@@QEAAAEAV12@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z

@@ -14,6 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVStrictEntityContext@@@Z
+    MCVAPI void singleTick(class EntityRegistry&, class StrictEntityContext&);
+
     // symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVEntityContext@@@Z
     MCVAPI void singleTick(class EntityRegistry&, class EntityContext&);
 

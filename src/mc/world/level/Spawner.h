@@ -16,8 +16,14 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0Spawner@@QEAA@AEAVLevel@@@Z
+    MCAPI explicit Spawner(class Level&);
+
     // symbol: ?getSpawnRules@Spawner@@QEBAPEBVActorSpawnRuleGroup@@XZ
     MCAPI class ActorSpawnRuleGroup const* getSpawnRules() const;
+
+    // symbol: ?getSpawnRulesMutable@Spawner@@QEBAPEAVActorSpawnRuleGroup@@XZ
+    MCAPI class ActorSpawnRuleGroup* getSpawnRulesMutable() const;
 
     // symbol: ?getSpawnSettings@Spawner@@QEBAAEBUSpawnSettings@@XZ
     MCAPI struct SpawnSettings const& getSpawnSettings() const;
@@ -58,6 +64,9 @@ public:
 
     // symbol: ?tick@Spawner@@QEAAXAEAVBlockSource@@AEBVLevelChunk@@@Z
     MCAPI void tick(class BlockSource&, class LevelChunk const&);
+
+    // symbol: ??1Spawner@@QEAA@XZ
+    MCAPI ~Spawner();
 
     // symbol:
     // ?findNextSpawnBlockUnder@Spawner@@SA_NAEBVBlockSource@@AEAVBlockPos@@W4MaterialType@@W4SpawnBlockRequirements@@@Z

@@ -8,11 +8,11 @@ public:
     // symbol: ??0ScoreboardId@@QEAA@_J@Z
     MCAPI explicit ScoreboardId(int64);
 
-    // symbol: ??0ScoreboardId@@QEAA@AEBU0@@Z
-    MCAPI ScoreboardId(struct ScoreboardId const&);
-
     // symbol: ??0ScoreboardId@@QEAA@XZ
     MCAPI ScoreboardId();
+
+    // symbol: ??0ScoreboardId@@QEAA@AEBU0@@Z
+    MCAPI ScoreboardId(struct ScoreboardId const&);
 
     // symbol: ?getHash@ScoreboardId@@QEBA_KXZ
     MCAPI uint64 getHash() const;
@@ -22,9 +22,6 @@ public:
 
     // symbol: ?isValid@ScoreboardId@@QEBA_NXZ
     MCAPI bool isValid() const;
-
-    // symbol: ??BScoreboardId@@QEBA_NXZ
-    MCAPI explicit operator bool() const;
 
     // symbol: ??9ScoreboardId@@QEBA_NAEBU0@@Z
     MCAPI bool operator!=(struct ScoreboardId const&) const;

@@ -42,33 +42,32 @@ public:
     MCAPI ScriptScoreboard(class Scoreboard&, class Level&, class Scripting::WeakLifetimeScope const&);
 
     // symbol:
-    // ?addObjective@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+    // ?addObjective@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>>
     addObjective(std::string const&, std::string const&);
 
     // symbol:
-    // ?clearObjectiveAtDisplaySlot@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@@Scripting@@W4ScriptDisplayObjectiveSlotId@2@@Z
-    MCAPI class Scripting::Result<
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>>
-        clearObjectiveAtDisplaySlot(::ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId);
+    // ?clearObjectiveAtDisplaySlot@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$optional@V?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@@std@@W4ScriptDisplayObjectiveSlotId@2@@Z
+    MCAPI
+        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>>
+            clearObjectiveAtDisplaySlot(::ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId);
 
     // symbol:
-    // ?getObjective@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Scripting::Result<
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>>
-    getObjective(std::string const&);
+    // ?getObjective@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$optional@V?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
+    MCAPI
+        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>>
+        getObjective(std::string const&);
 
     // symbol:
-    // ?getObjectiveAtDisplaySlot@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$Result@VScriptScoreboardObjectiveDisplayOptions@ScriptModuleMinecraft@@@Scripting@@W4ScriptDisplayObjectiveSlotId@2@@Z
-    MCAPI class Scripting::Result<class ScriptModuleMinecraft::ScriptScoreboardObjectiveDisplayOptions>
-        getObjectiveAtDisplaySlot(::ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId);
+    // ?getObjectiveAtDisplaySlot@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$optional@VScriptScoreboardObjectiveDisplayOptions@ScriptModuleMinecraft@@@std@@W4ScriptDisplayObjectiveSlotId@2@@Z
+    MCAPI std::optional<class ScriptModuleMinecraft::ScriptScoreboardObjectiveDisplayOptions>
+          getObjectiveAtDisplaySlot(::ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId);
 
     // symbol:
-    // ?getObjectives@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@@Scripting@@XZ
-    MCAPI class Scripting::Result<
-        std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>>>
-    getObjectives();
+    // ?getObjectives@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$vector@V?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@XZ
+    MCAPI std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>>
+          getObjectives();
 
     // symbol:
     // ?getOrCreateScoreboardIdentity@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$StrongTypedObjectHandle@VScriptScoreboardIdentity@ScriptModuleMinecraft@@@Scripting@@AEBVIdentityDefinition@@@Z
@@ -76,29 +75,21 @@ public:
     getOrCreateScoreboardIdentity(class IdentityDefinition const&);
 
     // symbol:
-    // ?getParticipants@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptScoreboardIdentity@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptScoreboardIdentity@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@@Scripting@@XZ
-    MCAPI class Scripting::Result<
-        std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>>>
-    getParticipants();
-
-    // symbol: ?removeIdentityById@ScriptScoreboard@ScriptModuleMinecraft@@QEAAXAEBUScoreboardId@@@Z
-    MCAPI void removeIdentityById(struct ScoreboardId const&);
+    // ?getParticipants@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$vector@V?$StrongTypedObjectHandle@VScriptScoreboardIdentity@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptScoreboardIdentity@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@XZ
+    MCAPI std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>>
+          getParticipants();
 
     // symbol:
-    // ?removeObjective@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$Result@_N@Scripting@@AEBV?$variant@V?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
+    // ?removeObjective@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@AEBV?$variant@V?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
     MCAPI class Scripting::Result<bool>
     removeObjective(std::variant<
                     class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>,
                     std::string> const&);
 
     // symbol:
-    // ?removeObjectiveByName@ScriptScoreboard@ScriptModuleMinecraft@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void removeObjectiveByName(std::string const&);
-
-    // symbol:
-    // ?setObjectiveAtDisplaySlot@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@@Scripting@@W4ScriptDisplayObjectiveSlotId@2@AEBVScriptScoreboardObjectiveDisplayOptions@2@@Z
+    // ?setObjectiveAtDisplaySlot@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@W4ScriptDisplayObjectiveSlotId@2@AEBVScriptScoreboardObjectiveDisplayOptions@2@@Z
     MCAPI class Scripting::Result<
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>>
+        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>>>
     setObjectiveAtDisplaySlot(::ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId, class ScriptModuleMinecraft::ScriptScoreboardObjectiveDisplayOptions const&);
 
     // symbol:

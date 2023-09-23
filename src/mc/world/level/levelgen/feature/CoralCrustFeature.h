@@ -24,9 +24,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_canOverwrite@CoralCrustFeature@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool _canOverwrite(class BlockSource const&, class BlockPos const&) const;
-
     // symbol: ?_getCropOffsetFromRot@CoralCrustFeature@@AEBA?AVBlockPos@@HH@Z
     MCAPI class BlockPos _getCropOffsetFromRot(int, int) const;
 

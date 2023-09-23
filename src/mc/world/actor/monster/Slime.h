@@ -45,115 +45,112 @@ public:
     // vIndex: 35, symbol: __unk_vfn_35
     virtual void __unk_vfn_35();
 
-    // vIndex: 55, symbol: __unk_vfn_55
-    virtual void __unk_vfn_55();
+    // vIndex: 54, symbol: __unk_vfn_54
+    virtual void __unk_vfn_54();
 
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
+    // vIndex: 61, symbol: __unk_vfn_61
+    virtual void __unk_vfn_61();
 
-    // vIndex: 69, symbol: ?getShadowRadius@Slime@@UEBAMXZ
+    // vIndex: 68, symbol: ?getShadowRadius@Slime@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 71, symbol: __unk_vfn_71
-    virtual void __unk_vfn_71();
+    // vIndex: 70, symbol: __unk_vfn_70
+    virtual void __unk_vfn_70();
 
-    // vIndex: 77, symbol: __unk_vfn_77
-    virtual void __unk_vfn_77();
+    // vIndex: 76, symbol: __unk_vfn_76
+    virtual void __unk_vfn_76();
 
-    // vIndex: 83, symbol: __unk_vfn_83
-    virtual void __unk_vfn_83();
+    // vIndex: 82, symbol: __unk_vfn_82
+    virtual void __unk_vfn_82();
 
-    // vIndex: 86, symbol: __unk_vfn_86
-    virtual void __unk_vfn_86();
+    // vIndex: 85, symbol: __unk_vfn_85
+    virtual void __unk_vfn_85();
 
-    // vIndex: 93, symbol: __unk_vfn_93
-    virtual void __unk_vfn_93();
+    // vIndex: 92, symbol: __unk_vfn_92
+    virtual void __unk_vfn_92();
+
+    // vIndex: 94, symbol: __unk_vfn_94
+    virtual void __unk_vfn_94();
 
     // vIndex: 95, symbol: __unk_vfn_95
     virtual void __unk_vfn_95();
 
-    // vIndex: 96, symbol: __unk_vfn_96
-    virtual void __unk_vfn_96();
+    // vIndex: 97, symbol: __unk_vfn_97
+    virtual void __unk_vfn_97();
 
-    // vIndex: 98, symbol: __unk_vfn_98
-    virtual void __unk_vfn_98();
+    // vIndex: 162, symbol: __unk_vfn_162
+    virtual void __unk_vfn_162();
 
-    // vIndex: 164, symbol: __unk_vfn_164
-    virtual void __unk_vfn_164();
-
-    // vIndex: 173, symbol: ?onSynchedDataUpdate@Slime@@UEAAXH@Z
+    // vIndex: 169, symbol: ?onSynchedDataUpdate@Slime@@UEAAXH@Z
     virtual void onSynchedDataUpdate(int);
 
-    // vIndex: 178, symbol: __unk_vfn_178
-    virtual void __unk_vfn_178();
+    // vIndex: 174, symbol: __unk_vfn_174
+    virtual void __unk_vfn_174();
 
-    // vIndex: 202, symbol: __unk_vfn_202
-    virtual void __unk_vfn_202();
+    // vIndex: 198, symbol: __unk_vfn_198
+    virtual void __unk_vfn_198();
 
-    // vIndex: 203, symbol: __unk_vfn_203
-    virtual void __unk_vfn_203();
+    // vIndex: 199, symbol: __unk_vfn_199
+    virtual void __unk_vfn_199();
 
-    // vIndex: 219, symbol: __unk_vfn_219
-    virtual void __unk_vfn_219();
+    // vIndex: 215, symbol: __unk_vfn_215
+    virtual void __unk_vfn_215();
 
-    // vIndex: 222, symbol: __unk_vfn_222
-    virtual void __unk_vfn_222();
+    // vIndex: 218, symbol: __unk_vfn_218
+    virtual void __unk_vfn_218();
 
-    // vIndex: 239, symbol: __unk_vfn_239
-    virtual void __unk_vfn_239();
+    // vIndex: 235, symbol: __unk_vfn_235
+    virtual void __unk_vfn_235();
 
-    // vIndex: 243, symbol: ?readAdditionalSaveData@Slime@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 239, symbol: ?readAdditionalSaveData@Slime@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
 
-    // vIndex: 244, symbol: ?addAdditionalSaveData@Slime@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 240, symbol: ?addAdditionalSaveData@Slime@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag&) const;
 
-    // vIndex: 247, symbol: __unk_vfn_247
-    virtual void __unk_vfn_247();
+    // vIndex: 243, symbol: __unk_vfn_243
+    virtual void __unk_vfn_243();
 
-    // vIndex: 253, symbol: __unk_vfn_253
-    virtual void __unk_vfn_253();
+    // vIndex: 248, symbol: __unk_vfn_248
+    virtual void __unk_vfn_248();
 
-    // vIndex: 264, symbol: ?aiStep@Slime@@UEAAXXZ
+    // vIndex: 259, symbol: ?aiStep@Slime@@UEAAXXZ
     virtual void aiStep();
 
-    // vIndex: 268, symbol: ?checkSpawnRules@Slime@@UEAA_N_N@Z
+    // vIndex: 262, symbol: ?checkSpawnRules@Slime@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool);
 
-    // vIndex: 276, symbol: __unk_vfn_276
-    virtual void __unk_vfn_276();
+    // vIndex: 270, symbol: __unk_vfn_270
+    virtual void __unk_vfn_270();
 
-    // vIndex: 280, symbol: __unk_vfn_280
-    virtual void __unk_vfn_280();
+    // vIndex: 274, symbol: __unk_vfn_274
+    virtual void __unk_vfn_274();
 
-    // vIndex: 312, symbol: ?_getWalkTargetValue@Slime@@MEAAMAEBVBlockPos@@@Z
+    // vIndex: 306, symbol: ?_getWalkTargetValue@Slime@@MEAAMAEBVBlockPos@@@Z
     virtual float _getWalkTargetValue(class BlockPos const&);
 
-    // vIndex: 323, symbol: __unk_vfn_323
-    virtual void __unk_vfn_323();
-
-    // vIndex: 326, symbol: ?getSquishSound@Slime@@UEAA?AW4LevelSoundEvent@@XZ
+    // vIndex: 319, symbol: ?getSquishSound@Slime@@UEAA?AW4LevelSoundEvent@@XZ
     virtual ::LevelSoundEvent getSquishSound();
 
-    // vIndex: 327, symbol: ?setSlimeSize@Slime@@MEAAXH@Z
+    // vIndex: 320, symbol: ?setSlimeSize@Slime@@MEAAXH@Z
     virtual void setSlimeSize(int);
 
-    // vIndex: 328, symbol: ?doPlayJumpSound@Slime@@MEAA_NXZ
+    // vIndex: 321, symbol: ?doPlayJumpSound@Slime@@MEAA_NXZ
     virtual bool doPlayJumpSound();
 
-    // vIndex: 329, symbol: ?doPlayLandSound@Slime@@MEAA_NXZ
+    // vIndex: 322, symbol: ?doPlayLandSound@Slime@@MEAA_NXZ
     virtual bool doPlayLandSound();
 
-    // vIndex: 330, symbol: ?playJumpSound@Slime@@MEAAXXZ
+    // vIndex: 323, symbol: ?playJumpSound@Slime@@MEAAXXZ
     virtual void playJumpSound();
 
-    // vIndex: 331, symbol: ?playLandSound@Slime@@MEAAXXZ
+    // vIndex: 324, symbol: ?playLandSound@Slime@@MEAAXXZ
     virtual void playLandSound();
 
-    // vIndex: 332, symbol: ?decreaseSquish@Slime@@MEAAXXZ
+    // vIndex: 325, symbol: ?decreaseSquish@Slime@@MEAAXXZ
     virtual void decreaseSquish();
 
-    // vIndex: 333, symbol: ?createChild@Slime@@MEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@H@Z
+    // vIndex: 326, symbol: ?createChild@Slime@@MEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@H@Z
     virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
 
     // symbol: ??1Slime@@UEAA@XZ

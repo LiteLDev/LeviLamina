@@ -31,9 +31,6 @@ public:
     // symbol: ?registerExistingBlockState@BlockStateGroup@@QEAAXAEBVBlockState@@@Z
     MCAPI void registerExistingBlockState(class BlockState const&);
 
-    // symbol: ?registerToBlock@BlockStateGroup@@QEAAXAEAVBlockLegacy@@@Z
-    MCAPI void registerToBlock(class BlockLegacy&);
-
     // symbol:
     // ?loadBlockStateFromJson@BlockStateGroup@@SA_NAEAUBlockStateDefinition@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@@Z
     MCAPI static bool

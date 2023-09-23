@@ -44,9 +44,6 @@ public:
     MCVAPI long
         sendMessage(gsl::not_null<struct HC_WEBSOCKET_OBSERVER*>, std::string_view, gsl::not_null<struct XAsyncBlock*>);
 
-    // symbol: ??1WebSocketInterfaceInternal@Http@Bedrock@@UEAA@XZ
-    MCVAPI ~WebSocketInterfaceInternal();
-
     // NOLINTEND
 };
 

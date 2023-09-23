@@ -51,8 +51,8 @@ public:
     // vIndex: 53, symbol: __unk_vfn_53
     virtual void __unk_vfn_53();
 
-    // vIndex: 57, symbol: ?isLiquidClipItem@ActorPlacerItem@@UEBA_NH@Z
-    virtual bool isLiquidClipItem(int) const;
+    // vIndex: 57, symbol: ?isLiquidClipItem@ActorPlacerItem@@UEBA_NXZ
+    virtual bool isLiquidClipItem() const;
 
     // vIndex: 58, symbol: ?shouldInteractionWithBlockBypassLiquid@ActorPlacerItem@@UEBA_NAEBVBlock@@@Z
     virtual bool shouldInteractionWithBlockBypassLiquid(class Block const&) const;

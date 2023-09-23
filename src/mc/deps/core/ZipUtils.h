@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
+namespace Core { class Result; }
 namespace Core::ZipUtils { class UnzipSettings; }
 namespace Core::ZipUtils { class ZipProgress; }
 namespace Core::ZipUtils { class ZipSettings; }
@@ -29,6 +30,9 @@ MCAPI ::Core::ZipUtils::UnzipResult getTranslatedUnzipResult(int);
 
 // symbol: ?getTranslatedZipResult@ZipUtils@Core@@YA?AW4ZipResult@12@H@Z
 MCAPI ::Core::ZipUtils::ZipResult getTranslatedZipResult(int);
+
+// symbol: ?isFolderDepthValid@ZipUtils@Core@@YA?AVResult@2@AEBV?$PathBuffer@V?$StackString@D$0EAA@@Core@@@2@_K@Z
+MCAPI class Core::Result isFolderDepthValid(class Core::PathBuffer<class Core::StackString<char, 1024>> const&, uint64);
 
 // symbol:
 // ?unzipInTransaction@ZipUtils@Core@@YA?AW4UnzipResult@12@AEBVPath@2@0AEAVZipProgress@12@_NAEBVUnzipSettings@12@@Z

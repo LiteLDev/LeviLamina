@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BlockPosTrackerComponent {
+struct BlockPosTrackerComponent {
 public:
     // prevent constructor by default
     BlockPosTrackerComponent& operator=(BlockPosTrackerComponent const&);

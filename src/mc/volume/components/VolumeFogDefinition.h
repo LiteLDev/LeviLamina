@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 struct VolumeFogDefinition {
 public:
     // prevent constructor by default
@@ -17,8 +22,8 @@ public:
     // symbol: ??1VolumeFogDefinition@@QEAA@XZ
     MCAPI ~VolumeFogDefinition();
 
-    // symbol: ?bindType@VolumeFogDefinition@@SAXXZ
-    MCAPI static void bindType();
+    // symbol: ?bindType@VolumeFogDefinition@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // symbol: ?NAME@VolumeFogDefinition@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const NAME;

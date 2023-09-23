@@ -15,10 +15,12 @@ public:
     // prevent constructor by default
     FlatFileManifestTracker& operator=(FlatFileManifestTracker const&);
     FlatFileManifestTracker(FlatFileManifestTracker const&);
-    FlatFileManifestTracker();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0FlatFileManifestTracker@Core@@QEAA@XZ
+    MCAPI FlatFileManifestTracker();
+
     // symbol:
     // ?loadManifest@FlatFileManifestTracker@Core@@QEAA?AV?$shared_ptr@$$CBVFlatFileManifest@Core@@@std@@AEBVPath@2@@Z
     MCAPI std::shared_ptr<class Core::FlatFileManifest const> loadManifest(class Core::Path const&);
@@ -28,6 +30,9 @@ public:
 
     // symbol: ?tryUnloadManifest@FlatFileManifestTracker@Core@@QEAA_NAEBVPath@2@@Z
     MCAPI bool tryUnloadManifest(class Core::Path const&);
+
+    // symbol: ?unloadAllManifests@FlatFileManifestTracker@Core@@QEAAXXZ
+    MCAPI void unloadAllManifests();
 
     // symbol: ?updateManifest@FlatFileManifestTracker@Core@@QEAAXV?$shared_ptr@VFlatFileManifest@Core@@@std@@_N@Z
     MCAPI void updateManifest(std::shared_ptr<class Core::FlatFileManifest>, bool);

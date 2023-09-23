@@ -25,17 +25,6 @@ public:
     // ??0SubscriptionBodyBase@Detail@PubSub@Bedrock@@QEAA@$$QEAV?$unique_ptr@VSubscriptionContext@PubSub@Bedrock@@U?$default_delete@VSubscriptionContext@PubSub@Bedrock@@@std@@@std@@@Z
     MCAPI explicit SubscriptionBodyBase(std::unique_ptr<class Bedrock::PubSub::SubscriptionContext>&&);
 
-    // symbol:
-    // ?getStrongSelf@SubscriptionBodyBase@Detail@PubSub@Bedrock@@QEAAAEAV?$shared_ptr@VSubscriptionBodyBase@Detail@PubSub@Bedrock@@@std@@XZ
-    MCAPI std::shared_ptr<class Bedrock::PubSub::Detail::SubscriptionBodyBase>& getStrongSelf();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol: ?_disconnect@SubscriptionBodyBase@Detail@PubSub@Bedrock@@AEAAXXZ
-    MCAPI void _disconnect();
-
     // NOLINTEND
 };
 

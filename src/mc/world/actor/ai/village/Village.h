@@ -194,11 +194,11 @@ public:
     // symbol: ?isValidRegisteredPOI@Village@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool isValidRegisteredPOI(class BlockSource&, class BlockPos const&);
 
-    // symbol: ?isVillagePOI@Village@@SA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static bool isVillagePOI(class BlockSource const&, class BlockPos const&);
-
     // symbol: ?isVillagePOI@Village@@SA_NAEBVVillageManager@@AEBVBlock@@@Z
     MCAPI static bool isVillagePOI(class VillageManager const&, class Block const&);
+
+    // symbol: ?isVillagePOI@Village@@SA_NAEBVBlockSource@@AEBVBlockPos@@@Z
+    MCAPI static bool isVillagePOI(class BlockSource const&, class BlockPos const&);
 
     // symbol: ?DEBUG_DRAWING@Village@@2_NA
     MCAPI static bool DEBUG_DRAWING;
@@ -222,9 +222,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_addPoiToVillage@Village@@AEAAXAEBUActorUniqueID@@V?$weak_ptr@VPOIInstance@@@std@@@Z
-    MCAPI void _addPoiToVillage(struct ActorUniqueID const&, std::weak_ptr<class POIInstance>);
-
     // symbol: ?_calcPOIDist@Village@@AEAAXXZ
     MCAPI void _calcPOIDist();
 
@@ -301,6 +298,9 @@ public:
     // symbol:
     // ?_spawnRaidGroup@Village@@AEBA_NVVec3@@EAEAV?$unordered_set@UActorUniqueID@@U?$hash@UActorUniqueID@@@std@@U?$equal_to@UActorUniqueID@@@3@V?$allocator@UActorUniqueID@@@3@@std@@@Z
     MCAPI bool _spawnRaidGroup(class Vec3, uchar, std::unordered_set<struct ActorUniqueID>&) const;
+
+    // symbol: ?_tryAddPoiToVillage@Village@@AEAAXAEBUActorUniqueID@@V?$weak_ptr@VPOIInstance@@@std@@@Z
+    MCAPI void _tryAddPoiToVillage(struct ActorUniqueID const&, std::weak_ptr<class POIInstance>);
 
     // symbol: ?_tryShiftStandingsTowardNeutral@Village@@AEAAXAEAUTick@@_K_N@Z
     MCAPI void _tryShiftStandingsTowardNeutral(struct Tick&, uint64, bool);

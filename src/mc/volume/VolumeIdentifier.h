@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 struct VolumeIdentifier {
 public:
     // VolumeIdentifier inner types declare
@@ -19,8 +24,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ?bindType@ConstrainedString@VolumeIdentifier@@SAXXZ
-        MCAPI static void bindType();
+        // symbol: ?bindType@ConstrainedString@VolumeIdentifier@@SAXAEAUReflectionCtx@cereal@@@Z
+        MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
         // NOLINTEND
     };
@@ -36,8 +41,8 @@ public:
     // symbol: ??8VolumeIdentifier@@QEBA_NAEBU0@@Z
     MCAPI bool operator==(struct VolumeIdentifier const&) const;
 
-    // symbol: ?bindType@VolumeIdentifier@@SAXXZ
-    MCAPI static void bindType();
+    // symbol: ?bindType@VolumeIdentifier@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND
 };

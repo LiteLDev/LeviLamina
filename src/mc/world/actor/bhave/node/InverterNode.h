@@ -11,6 +11,7 @@ public:
     // prevent constructor by default
     InverterNode& operator=(InverterNode const&);
     InverterNode(InverterNode const&);
+    InverterNode();
 
 public:
     // NOLINTBEGIN
@@ -22,9 +23,6 @@ public:
 
     // vIndex: 2, symbol: ?initializeFromDefinition@InverterNode@@MEAAXAEAVActor@@@Z
     virtual void initializeFromDefinition(class Actor&);
-
-    // symbol: ??0InverterNode@@QEAA@XZ
-    MCAPI InverterNode();
 
     // NOLINTEND
 };

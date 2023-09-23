@@ -90,12 +90,12 @@ public:
     MCAPI explicit AutomationSession(class Automation::AutomationClient&);
 
     // symbol:
-    // ?connect@AutomationSession@Automation@@QEAA?AW4WSConnectionResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI ::WSConnectionResult connect(std::string const&);
-
-    // symbol:
     // ?connect@AutomationSession@Automation@@QEAA?AW4WSConnectionResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@Z
     MCAPI ::WSConnectionResult connect(std::string const&, std::vector<std::string> const&);
+
+    // symbol:
+    // ?connect@AutomationSession@Automation@@QEAA?AW4WSConnectionResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI ::WSConnectionResult connect(std::string const&);
 
     // symbol:
     // ?dhKeyExchange@AutomationSession@Automation@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00W4EncryptionCipherMode@CodeBuilder@@AEAV34@@Z

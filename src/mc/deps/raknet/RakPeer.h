@@ -484,15 +484,15 @@ public:
     // symbol: ?GetRemoteSystem@RakPeer@RakNet@@IEBAPEAURemoteSystemStruct@12@UAddressOrGUID@2@_N1@Z
     MCAPI struct RakNet::RakPeer::RemoteSystemStruct* GetRemoteSystem(struct RakNet::AddressOrGUID, bool, bool) const;
 
+    // symbol: ?GetRemoteSystemFromGUID@RakPeer@RakNet@@IEBAPEAURemoteSystemStruct@12@URakNetGUID@2@_N@Z
+    MCAPI struct RakNet::RakPeer::RemoteSystemStruct* GetRemoteSystemFromGUID(struct RakNet::RakNetGUID, bool) const;
+
     // symbol: ?GetRemoteSystemFromSystemAddress@RakPeer@RakNet@@IEBAPEAURemoteSystemStruct@12@USystemAddress@2@_N1@Z
     MCAPI struct RakNet::RakPeer::RemoteSystemStruct*
     GetRemoteSystemFromSystemAddress(struct RakNet::SystemAddress, bool, bool) const;
 
     // symbol: ?GetRemoteSystemIndex@RakPeer@RakNet@@IEBAIAEBUSystemAddress@2@@Z
     MCAPI uint GetRemoteSystemIndex(struct RakNet::SystemAddress const&) const;
-
-    // symbol: ?IsLoopbackAddress@RakPeer@RakNet@@IEBA_NAEBUAddressOrGUID@2@_N@Z
-    MCAPI bool IsLoopbackAddress(struct RakNet::AddressOrGUID const&, bool) const;
 
     // symbol: ?NotifyAndFlagForShutdown@RakPeer@RakNet@@IEAAXUSystemAddress@2@_NEW4PacketPriority@@@Z
     MCAPI void NotifyAndFlagForShutdown(struct RakNet::SystemAddress, bool, uchar, ::PacketPriority);

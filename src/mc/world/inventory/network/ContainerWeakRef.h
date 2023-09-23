@@ -14,16 +14,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0ContainerWeakRef@@QEAA@AEBUActorUniqueID@@W4ActorContainerType@@AEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@@Z
-    MCAPI
-    ContainerWeakRef(struct ActorUniqueID const&, ::ActorContainerType, class TypedRuntimeId<struct ContainerRuntimeIdTag, uint, 0> const&);
+    // symbol: ??0ContainerWeakRef@@QEAA@XZ
+    MCAPI ContainerWeakRef();
 
     // symbol: ??0ContainerWeakRef@@QEAA@AEBVBlockPos@@AEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@@Z
     MCAPI ContainerWeakRef(class BlockPos const&, class TypedRuntimeId<struct ContainerRuntimeIdTag, uint, 0> const&);
 
-    // symbol: ??0ContainerWeakRef@@QEAA@XZ
-    MCAPI ContainerWeakRef();
+    // symbol:
+    // ??0ContainerWeakRef@@QEAA@AEBUActorUniqueID@@W4ActorContainerType@@AEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@@Z
+    MCAPI
+    ContainerWeakRef(struct ActorUniqueID const&, ::ActorContainerType, class TypedRuntimeId<struct ContainerRuntimeIdTag, uint, 0> const&);
 
     // symbol: ??BContainerWeakRef@@QEBA_NXZ
     MCAPI explicit operator bool() const;

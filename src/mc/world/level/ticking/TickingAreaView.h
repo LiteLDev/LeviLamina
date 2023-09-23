@@ -28,7 +28,7 @@ public:
     virtual void tickSeasons(class BlockSource&, class Random&);
 
     // vIndex: 4, symbol: ?getDimensionId@TickingAreaView@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ
-    virtual class AutomaticID<class Dimension, int> getDimensionId() const;
+    virtual DimensionType getDimensionId() const;
 
     // vIndex: 5, symbol: ?getBounds@TickingAreaView@@UEBAAEBUBounds@@XZ
     virtual struct Bounds const& getBounds() const;
@@ -57,12 +57,6 @@ public:
 
     // symbol: ??1TickingAreaView@@UEAA@XZ
     MCVAPI ~TickingAreaView();
-
-    // symbol: ??0TickingAreaView@@QEAA@AEAVChunkSource@@@Z
-    MCAPI explicit TickingAreaView(class ChunkSource&);
-
-    // symbol: ?unregisterChunkBuildOrderPolicy@TickingAreaView@@QEAAXAEAVChunkBuildOrderPolicyBase@@@Z
-    MCAPI void unregisterChunkBuildOrderPolicy(class ChunkBuildOrderPolicyBase&);
 
     // NOLINTEND
 

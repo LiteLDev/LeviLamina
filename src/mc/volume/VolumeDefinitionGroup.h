@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 class VolumeDefinitionGroup {
 public:
     // prevent constructor by default
@@ -29,8 +34,8 @@ public:
     // symbol: ??1VolumeDefinitionGroup@@QEAA@XZ
     MCAPI ~VolumeDefinitionGroup();
 
-    // symbol: ?bindVolumeDefinitions@VolumeDefinitionGroup@@SAXXZ
-    MCAPI static void bindVolumeDefinitions();
+    // symbol: ?bindVolumeDefinitions@VolumeDefinitionGroup@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindVolumeDefinitions(struct cereal::ReflectionCtx&);
 
     // NOLINTEND
 

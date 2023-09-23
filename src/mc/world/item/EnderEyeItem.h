@@ -85,4 +85,11 @@ public:
     MCAPI EnderEyeItem(std::string const&, int);
 
     // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_tryToThrow@EnderEyeItem@@CAXAEAVLevel@@AEAVItemStack@@AEAVPlayer@@@Z
+    MCAPI static void _tryToThrow(class Level&, class ItemStack&, class Player&);
+
+    // NOLINTEND
 };

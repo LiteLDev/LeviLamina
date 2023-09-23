@@ -28,20 +28,17 @@ public:
     // symbol: ?applyEnchant@EnchantUtils@@SA_NAEAVItemStackBase@@W4Type@Enchant@@H_N@Z
     MCAPI static bool applyEnchant(class ItemStackBase&, ::Enchant::Type, int, bool);
 
-    // symbol: ?canEnchant@EnchantUtils@@SA?AUEnchantResult@@AEBVItemStackBase@@AEBVEnchantmentInstance@@_N@Z
-    MCAPI static struct EnchantResult canEnchant(class ItemStackBase const&, class EnchantmentInstance const&, bool);
-
     // symbol: ?canEnchant@EnchantUtils@@SA?AUEnchantResult@@AEBVItemStackBase@@W4Type@Enchant@@H_N@Z
     MCAPI static struct EnchantResult canEnchant(class ItemStackBase const&, ::Enchant::Type, int, bool);
+
+    // symbol: ?canEnchant@EnchantUtils@@SA?AUEnchantResult@@AEBVItemStackBase@@AEBVEnchantmentInstance@@_N@Z
+    MCAPI static struct EnchantResult canEnchant(class ItemStackBase const&, class EnchantmentInstance const&, bool);
 
     // symbol: ?combineEnchantedItems@EnchantUtils@@SAHAEBVItemStack@@0AEAV2@_N@Z
     MCAPI static int combineEnchantedItems(class ItemStack const&, class ItemStack const&, class ItemStack&, bool);
 
     // symbol: ?determineActivation@EnchantUtils@@SAHW4Type@Enchant@@@Z
     MCAPI static int determineActivation(::Enchant::Type);
-
-    // symbol: ?determineCompatibility@EnchantUtils@@SAHW4Type@Enchant@@@Z
-    MCAPI static int determineCompatibility(::Enchant::Type);
 
     // symbol: ?doPostDamageEffects@EnchantUtils@@SAXAEAVActor@@0@Z
     MCAPI static void doPostDamageEffects(class Actor&, class Actor&);
@@ -115,11 +112,11 @@ public:
     // symbol: ?isCurse@EnchantUtils@@SA_NW4Type@Enchant@@@Z
     MCAPI static bool isCurse(::Enchant::Type);
 
-    // symbol: ?randomlyEnchant@EnchantUtils@@SAXAEAVItemInstance@@HH_N@Z
-    MCAPI static void randomlyEnchant(class ItemInstance&, int, int, bool);
-
     // symbol: ?randomlyEnchant@EnchantUtils@@SAXAEAVItemStack@@HH_N@Z
     MCAPI static void randomlyEnchant(class ItemStack&, int, int, bool);
+
+    // symbol: ?randomlyEnchant@EnchantUtils@@SAXAEAVItemInstance@@HH_N@Z
+    MCAPI static void randomlyEnchant(class ItemInstance&, int, int, bool);
 
     // symbol: ?removeEnchants@EnchantUtils@@SAXAEAVItemStack@@@Z
     MCAPI static void removeEnchants(class ItemStack&);

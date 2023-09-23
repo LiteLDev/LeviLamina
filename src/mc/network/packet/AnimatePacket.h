@@ -37,9 +37,6 @@ public:
     // symbol: ??1AnimatePacket@@UEAA@XZ
     MCVAPI ~AnimatePacket();
 
-    // symbol: ??0AnimatePacket@@QEAA@W4Action@0@AEAVActor@@@Z
-    MCAPI AnimatePacket(::AnimatePacket::Action, class Actor&);
-
     // symbol: ??0AnimatePacket@@QEAA@XZ
     MCAPI AnimatePacket();
 
@@ -48,6 +45,9 @@ public:
 
     // symbol: ??0AnimatePacket@@QEAA@W4Action@0@VActorRuntimeID@@@Z
     MCAPI AnimatePacket(::AnimatePacket::Action, class ActorRuntimeID);
+
+    // symbol: ??0AnimatePacket@@QEAA@W4Action@0@AEAVActor@@@Z
+    MCAPI AnimatePacket(::AnimatePacket::Action, class Actor&);
 
     // NOLINTEND
 };

@@ -110,9 +110,6 @@ public:
     // vIndex: 124, symbol: ?getLightEmission@SparklerItem@@UEBA?AUBrightness@@H@Z
     virtual struct Brightness getLightEmission(int) const;
 
-    // symbol: ??0SparklerItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SparklerItem(std::string const&, int);
-
     // symbol: ?COLORS@SparklerItem@@2QBUColorInfo@1@B
     MCAPI static struct SparklerItem::ColorInfo const COLORS[];
 

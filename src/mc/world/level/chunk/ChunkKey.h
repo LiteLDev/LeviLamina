@@ -14,11 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ChunkKey@@QEAA@AEBVChunkPos@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI ChunkKey(class ChunkPos const&, class AutomaticID<class Dimension, int>);
-
     // symbol: ??0ChunkKey@@QEAA@AEBVLevelChunk@@@Z
     MCAPI explicit ChunkKey(class LevelChunk const&);
+
+    // symbol: ??0ChunkKey@@QEAA@AEBVChunkPos@@V?$AutomaticID@VDimension@@H@@@Z
+    MCAPI ChunkKey(class ChunkPos const&, DimensionType);
 
     // symbol: ?asSpan@ChunkKey@@QEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
     MCAPI std::string_view asSpan() const;

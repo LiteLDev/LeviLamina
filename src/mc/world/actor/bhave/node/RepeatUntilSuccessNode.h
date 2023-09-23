@@ -11,6 +11,7 @@ public:
     // prevent constructor by default
     RepeatUntilSuccessNode& operator=(RepeatUntilSuccessNode const&);
     RepeatUntilSuccessNode(RepeatUntilSuccessNode const&);
+    RepeatUntilSuccessNode();
 
 public:
     // NOLINTBEGIN
@@ -22,9 +23,6 @@ public:
 
     // vIndex: 2, symbol: ?initializeFromDefinition@RepeatUntilSuccessNode@@MEAAXAEAVActor@@@Z
     virtual void initializeFromDefinition(class Actor&);
-
-    // symbol: ??0RepeatUntilSuccessNode@@QEAA@XZ
-    MCAPI RepeatUntilSuccessNode();
 
     // NOLINTEND
 };

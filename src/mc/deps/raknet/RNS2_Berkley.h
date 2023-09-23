@@ -36,6 +36,18 @@ public:
     // symbol: ??1RNS2_Berkley@RakNet@@UEAA@XZ
     MCVAPI ~RNS2_Berkley();
 
+    // symbol: ?BlockOnStopRecvPollingThread@RNS2_Berkley@RakNet@@QEAAXXZ
+    MCAPI void BlockOnStopRecvPollingThread();
+
+    // symbol: ?CreateRecvPollingThread@RNS2_Berkley@RakNet@@QEAAHH@Z
+    MCAPI int CreateRecvPollingThread(int);
+
+    // symbol: ?SetDoNotFragment@RNS2_Berkley@RakNet@@QEAAXH@Z
+    MCAPI void SetDoNotFragment(int);
+
+    // symbol: ?SignalStopRecvPollingThread@RNS2_Berkley@RakNet@@QEAAXXZ
+    MCAPI void SignalStopRecvPollingThread();
+
     // NOLINTEND
 
     // protected:

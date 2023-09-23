@@ -31,8 +31,5 @@ public:
     // symbol: ??1NetherNetTransportFactory@@UEAA@XZ
     MCVAPI ~NetherNetTransportFactory();
 
-    // symbol: ??0NetherNetTransportFactory@@QEAA@AEBUNetworkSystemToggles@@@Z
-    MCAPI explicit NetherNetTransportFactory(struct NetworkSystemToggles const&);
-
     // NOLINTEND
 };

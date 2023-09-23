@@ -76,7 +76,7 @@ public:
     MCVAPI class HashedString getDefaultBiome() const;
 
     // symbol: ?getDimensionId@Dimension@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ
-    MCVAPI class AutomaticID<class Dimension, int> getDimensionId() const;
+    MCVAPI DimensionType getDimensionId() const;
 
     // symbol: ?getLightTextureImageBuilder@Dimension@@UEBAPEAVBaseLightTextureImageBuilder@@XZ
     MCVAPI class BaseLightTextureImageBuilder* getLightTextureImageBuilder() const;
@@ -169,18 +169,12 @@ public:
 
     // symbol:
     // ??0Dimension@@QEAA@AEAVILevel@@V?$AutomaticID@VDimension@@H@@VDimensionHeightRange@@AEAVScheduler@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI Dimension(
-        class ILevel&,
-        class AutomaticID<class Dimension, int>,
-        class DimensionHeightRange,
-        class Scheduler&,
-        std::string
-    );
+    MCAPI Dimension(class ILevel&, DimensionType, class DimensionHeightRange, class Scheduler&, std::string);
 
     // symbol:
     // ?addActorUnloadedChunkTransferToQueue@Dimension@@QEAAXAEBVChunkPos@@0V?$AutomaticID@VDimension@@H@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@5@@Z
     MCAPI void
-    addActorUnloadedChunkTransferToQueue(class ChunkPos const&, class ChunkPos const&, class AutomaticID<class Dimension, int>, std::string&, std::unique_ptr<class CompoundTag>);
+    addActorUnloadedChunkTransferToQueue(class ChunkPos const&, class ChunkPos const&, DimensionType, std::string&, std::unique_ptr<class CompoundTag>);
 
     // symbol: ?addPlayerToReplication@Dimension@@QEAAXAEBVWeakEntityRef@@@Z
     MCAPI void addPlayerToReplication(class WeakEntityRef const&);
@@ -387,13 +381,13 @@ public:
     // ?transferEntity@Dimension@@QEAAXAEBVChunkPos@@AEBVVec3@@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@_N@Z
     MCAPI void transferEntity(class ChunkPos const&, class Vec3 const&, std::unique_ptr<class CompoundTag>, bool);
 
-    // symbol: ?transferEntityToUnloadedChunk@Dimension@@QEAAXAEAVActor@@PEAVLevelChunk@@@Z
-    MCAPI void transferEntityToUnloadedChunk(class Actor&, class LevelChunk*);
-
     // symbol:
     // ?transferEntityToUnloadedChunk@Dimension@@QEAAXAEBVChunkPos@@0V?$AutomaticID@VDimension@@H@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@5@@Z
     MCAPI void
-    transferEntityToUnloadedChunk(class ChunkPos const&, class ChunkPos const&, class AutomaticID<class Dimension, int>, std::string&, std::unique_ptr<class CompoundTag>);
+    transferEntityToUnloadedChunk(class ChunkPos const&, class ChunkPos const&, DimensionType, std::string&, std::unique_ptr<class CompoundTag>);
+
+    // symbol: ?transferEntityToUnloadedChunk@Dimension@@QEAAXAEAVActor@@PEAVLevelChunk@@@Z
+    MCAPI void transferEntityToUnloadedChunk(class Actor&, class LevelChunk*);
 
     // symbol: ?tryGarbageCollectStructures@Dimension@@QEAAXXZ
     MCAPI void tryGarbageCollectStructures();

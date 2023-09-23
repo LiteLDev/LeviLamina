@@ -2,13 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/systems/SoundType.h"
+
 namespace PlayJumpSoundSystem {
 // NOLINTBEGIN
-// symbol: ?createPlayJumpSoundSystem@PlayJumpSoundSystem@@YA?AUTickingSystemWithInfo@@XZ
-MCAPI struct TickingSystemWithInfo createPlayJumpSoundSystem();
-
-// symbol: ?createPlayPowerJumpSoundSystem@PlayJumpSoundSystem@@YA?AUTickingSystemWithInfo@@XZ
-MCAPI struct TickingSystemWithInfo createPlayPowerJumpSoundSystem();
+// symbol: ?createSystem@PlayJumpSoundSystem@@YA?AUTickingSystemWithInfo@@W4SoundType@1@@Z
+MCAPI struct TickingSystemWithInfo createSystem(::PlayJumpSoundSystem::SoundType);
 // NOLINTEND
 
 }; // namespace PlayJumpSoundSystem

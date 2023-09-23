@@ -29,10 +29,10 @@ public:
     // symbol: ??1ScriptMovementSwayComponent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptMovementSwayComponent();
 
-    // symbol: ?getSwayAmplitude@ScriptMovementSwayComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M@Scripting@@XZ
+    // symbol: ?getSwayAmplitude@ScriptMovementSwayComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M$$V@Scripting@@XZ
     MCAPI class Scripting::Result<float> getSwayAmplitude() const;
 
-    // symbol: ?getSwayFrequency@ScriptMovementSwayComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M@Scripting@@XZ
+    // symbol: ?getSwayFrequency@ScriptMovementSwayComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M$$V@Scripting@@XZ
     MCAPI class Scripting::Result<float> getSwayFrequency() const;
 
     // symbol:

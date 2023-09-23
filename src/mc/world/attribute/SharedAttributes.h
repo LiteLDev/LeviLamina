@@ -15,6 +15,9 @@ public:
     // ?checkIsDeprecated@SharedAttributes@@SA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static bool checkIsDeprecated(std::string&);
 
+    // symbol: ?loadAttributeModifier@SharedAttributes@@SA?AV?$shared_ptr@VAttributeModifier@@@std@@AEBVCompoundTag@@@Z
+    MCAPI static std::shared_ptr<class AttributeModifier> loadAttributeModifier(class CompoundTag const&);
+
     // symbol: ?loadAttributes@SharedAttributes@@SAXPEAVBaseAttributeMap@@PEBVListTag@@@Z
     MCAPI static void loadAttributes(class BaseAttributeMap*, class ListTag const*);
 

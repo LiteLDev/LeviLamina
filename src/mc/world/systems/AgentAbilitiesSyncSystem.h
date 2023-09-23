@@ -17,9 +17,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createAgentAbilitiesSyncSystem@AgentAbilitiesSyncSystem@@SA?AUTickingSystemWithInfo@@XZ
-    MCAPI static struct TickingSystemWithInfo createAgentAbilitiesSyncSystem();
-
     // symbol:
     // ?tick@AgentAbilitiesSyncSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@VActorOwnerComponent@@V?$FlagComponent@UPlayerComponentFlag@@@@U?$Include@$$CBV?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UAbilitiesDirtyFlag@@@@@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@VLevelComponent@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UAbilitiesDirtyFlag@@@@@@@Z
     MCAPI static void

@@ -35,11 +35,11 @@ public:
     // symbol: ??1UpdateClientInputLocksPacket@@UEAA@XZ
     MCVAPI ~UpdateClientInputLocksPacket();
 
-    // symbol: ??0UpdateClientInputLocksPacket@@QEAA@AEBUClientInputLockComponent@@AEBVVec3@@@Z
-    MCAPI UpdateClientInputLocksPacket(struct ClientInputLockComponent const&, class Vec3 const&);
-
     // symbol: ??0UpdateClientInputLocksPacket@@QEAA@XZ
     MCAPI UpdateClientInputLocksPacket();
+
+    // symbol: ??0UpdateClientInputLocksPacket@@QEAA@AEBUClientInputLockComponent@@AEBVVec3@@@Z
+    MCAPI UpdateClientInputLocksPacket(struct ClientInputLockComponent const&, class Vec3 const&);
 
     // NOLINTEND
 };

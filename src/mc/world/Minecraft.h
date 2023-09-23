@@ -134,6 +134,9 @@ public:
     // symbol: ?update@Minecraft@@QEAA_NXZ
     MCAPI bool update();
 
+    // symbol: ?_tryCatchupMovementTicks@Minecraft@@SAXAEAVEntitySystems@@AEAVEntityRegistry@@@Z
+    MCAPI static void _tryCatchupMovementTicks(class EntitySystems&, class EntityRegistry&);
+
     // NOLINTEND
 
     // private:

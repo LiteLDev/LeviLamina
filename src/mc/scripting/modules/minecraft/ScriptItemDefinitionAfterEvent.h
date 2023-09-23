@@ -27,24 +27,24 @@ public:
     // symbol: ??1ScriptItemDefinitionAfterEvent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptItemDefinitionAfterEvent();
 
+    // symbol: ??0ScriptItemDefinitionAfterEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
+    MCAPI ScriptItemDefinitionAfterEvent(struct ScriptModuleMinecraft::ScriptItemDefinitionAfterEvent const&);
+
+    // symbol: ??0ScriptItemDefinitionAfterEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
+    MCAPI ScriptItemDefinitionAfterEvent(struct ScriptModuleMinecraft::ScriptItemDefinitionAfterEvent&&);
+
     // symbol:
     // ??0ScriptItemDefinitionAfterEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEBUItemDefinitionEventTriggeredEvent@@AEBVWeakLifetimeScope@3@@Z
     MCAPI
     ScriptItemDefinitionAfterEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, struct ItemDefinitionEventTriggeredEvent const&, class Scripting::WeakLifetimeScope const&);
 
-    // symbol: ??0ScriptItemDefinitionAfterEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
-    MCAPI ScriptItemDefinitionAfterEvent(struct ScriptModuleMinecraft::ScriptItemDefinitionAfterEvent&&);
-
-    // symbol: ??0ScriptItemDefinitionAfterEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
-    MCAPI ScriptItemDefinitionAfterEvent(struct ScriptModuleMinecraft::ScriptItemDefinitionAfterEvent const&);
+    // symbol: ??4ScriptItemDefinitionAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptItemDefinitionAfterEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptItemDefinitionAfterEvent&&);
 
     // symbol: ??4ScriptItemDefinitionAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptItemDefinitionAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptItemDefinitionAfterEvent const&);
-
-    // symbol: ??4ScriptItemDefinitionAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptItemDefinitionAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemDefinitionAfterEvent&&);
 
     // symbol:
     // ?bind@ScriptItemDefinitionAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptItemDefinitionAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ

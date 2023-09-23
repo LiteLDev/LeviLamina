@@ -52,6 +52,14 @@ public:
 
     // NOLINTEND
 
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?calculateMapGrassColorHelper@FoliageColor@@CAXAEAVBlockSource@@AEBVBlockPos@@1AEAH22@Z
+    MCAPI static void
+    calculateMapGrassColorHelper(class BlockSource&, class BlockPos const&, class BlockPos const&, int&, int&, int&);
+
+    // NOLINTEND
+
 private:
     // NOLINTBEGIN
     // symbol: ?FOLIAGE_BOTTOM_LEFT@FoliageColor@@0VColor@mce@@B

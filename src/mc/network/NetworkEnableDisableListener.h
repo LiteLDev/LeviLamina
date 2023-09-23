@@ -38,17 +38,8 @@ public:
     // symbol: ?isEnabled@NetworkEnableDisableListener@@QEBA_NXZ
     MCAPI bool isEnabled() const;
 
-    // symbol: ?isNetworkAllowed@NetworkEnableDisableListener@@QEBA_NXZ
-    MCAPI bool isNetworkAllowed() const;
-
-    // symbol: ?isUninitialized@NetworkEnableDisableListener@@QEBA_NXZ
-    MCAPI bool isUninitialized() const;
-
     // symbol: ?tryEnable@NetworkEnableDisableListener@@QEAAXXZ
     MCAPI void tryEnable();
-
-    // symbol: ?uninitialize@NetworkEnableDisableListener@@QEAAXXZ
-    MCAPI void uninitialize();
 
     // NOLINTEND
 };

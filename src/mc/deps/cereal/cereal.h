@@ -28,7 +28,12 @@ namespace cereal::internal { class BasicCompositeSchema; }
 namespace cereal::internal { class BasicSchema; }
 namespace cereal::internal { class UndefinedSchema; }
 namespace cereal::internal { struct ReflectionContext; }
-namespace cereal::internal { struct Result; }
 // clang-format on
 
-namespace cereal {};
+namespace cereal {
+// NOLINTBEGIN
+// symbol: ?resolve@cereal@@YA?AVmeta_type@entt@@AEBUReflectionCtx@1@AEBUtype_info@3@@Z
+MCAPI entt::meta_type resolve(struct cereal::ReflectionCtx const&, entt::type_info const&);
+// NOLINTEND
+
+}; // namespace cereal

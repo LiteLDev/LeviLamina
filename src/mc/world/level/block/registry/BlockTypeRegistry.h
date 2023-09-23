@@ -108,8 +108,8 @@ public:
     // symbol: ?getEntityRegistry@BlockTypeRegistry@@SA?AV?$StackRefResultT@UEntityRegistryRefTraits@@@@XZ
     MCAPI static class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
 
-    // symbol: ?initBlockEntities@BlockTypeRegistry@@SAXPEAVBlockDefinitionGroup@@AEBVExperiments@@@Z
-    MCAPI static void initBlockEntities(class BlockDefinitionGroup*, class Experiments const&);
+    // symbol: ?initBlockEntities@BlockTypeRegistry@@SAXAEBVExperiments@@@Z
+    MCAPI static void initBlockEntities(class Experiments const&);
 
     // symbol: ?initEntityRegistry@BlockTypeRegistry@@SAXXZ
     MCAPI static void initEntityRegistry();

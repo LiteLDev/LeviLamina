@@ -8,4 +8,11 @@ public:
     StateAnimationVariable& operator=(StateAnimationVariable const&);
     StateAnimationVariable(StateAnimationVariable const&);
     StateAnimationVariable();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ?addKeyFrame@StateAnimationVariable@@QEAAXMM@Z
+    MCAPI void addKeyFrame(float, float);
+
+    // NOLINTEND
 };

@@ -12,20 +12,20 @@ public:
     // symbol: ??0HashedString@@QEAA@$$T@Z
     MCAPI explicit HashedString(std::nullptr_t);
 
-    // symbol: ??0HashedString@@QEAA@AEBV0@@Z
-    MCAPI HashedString(class HashedString const&);
+    // symbol: ??0HashedString@@QEAA@_KPEBD@Z
+    MCAPI HashedString(uint64, char const*);
 
     // symbol: ??0HashedString@@QEAA@$$QEAV0@@Z
     MCAPI HashedString(class HashedString&&);
 
-    // symbol: ??0HashedString@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI explicit HashedString(std::string const&);
+    // symbol: ??0HashedString@@QEAA@AEBV0@@Z
+    MCAPI HashedString(class HashedString const&);
 
     // symbol: ??0HashedString@@QEAA@PEBD@Z
     MCAPI explicit HashedString(char const*);
 
-    // symbol: ??0HashedString@@QEAA@_KPEBD@Z
-    MCAPI HashedString(uint64, char const*);
+    // symbol: ??0HashedString@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI explicit HashedString(std::string const&);
 
     // symbol: ?c_str@HashedString@@QEBAPEBDXZ
     MCAPI char const* c_str() const;
@@ -54,20 +54,17 @@ public:
     // symbol: ??MHashedString@@QEBA_NAEBV0@@Z
     MCAPI bool operator<(class HashedString const&) const;
 
-    // symbol: ??4HashedString@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class HashedString& operator=(class HashedString const&);
-
     // symbol: ??4HashedString@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class HashedString& operator=(class HashedString&&);
+
+    // symbol: ??4HashedString@@QEAAAEAV0@AEBV0@@Z
+    MCAPI class HashedString& operator=(class HashedString const&);
 
     // symbol: ??8HashedString@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class HashedString const&) const;
 
     // symbol: ??1HashedString@@QEAA@XZ
     MCAPI ~HashedString();
-
-    // symbol: ?bindType@HashedString@@SAXXZ
-    MCAPI static void bindType();
 
     // symbol: ?computeHash@HashedString@@SA_KPEBD@Z
     MCAPI static uint64 computeHash(char const*);

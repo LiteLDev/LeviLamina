@@ -16,6 +16,7 @@ public:
     // prevent constructor by default
     UnderwaterCaveFeature& operator=(UnderwaterCaveFeature const&);
     UnderwaterCaveFeature(UnderwaterCaveFeature const&);
+    UnderwaterCaveFeature();
 
 public:
     // NOLINTBEGIN
@@ -27,9 +28,6 @@ public:
     virtual bool
     carveEllipsoidVolume(class IBlockWorldGenAPI&, struct CaveFeatureUtils::CarverConfiguration const&, class Random&, class ChunkPos const&, class Vec3 const&, class BoundingBox const&, float, float, struct CaveFeatureUtils::CarvingParameters const&)
         const;
-
-    // symbol: ??0UnderwaterCaveFeature@@QEAA@XZ
-    MCAPI UnderwaterCaveFeature();
 
     // symbol: ?isDiggable@UnderwaterCaveFeature@@SA_NAEBVBlock@@@Z
     MCAPI static bool isDiggable(class Block const&);

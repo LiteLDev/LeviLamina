@@ -29,10 +29,10 @@ public:
     // symbol: ??1ScriptStrengthComponent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptStrengthComponent();
 
-    // symbol: ?getMax@ScriptStrengthComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@H@Scripting@@XZ
+    // symbol: ?getMax@ScriptStrengthComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getMax() const;
 
-    // symbol: ?getValue@ScriptStrengthComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@H@Scripting@@XZ
+    // symbol: ?getValue@ScriptStrengthComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getValue() const;
 
     // symbol:

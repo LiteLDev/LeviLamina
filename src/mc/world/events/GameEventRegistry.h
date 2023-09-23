@@ -58,8 +58,14 @@ MCAPI extern class GameEvent const entityDamage;
 // symbol: ?entityDie@GameEventRegistry@@3VGameEvent@@B
 MCAPI extern class GameEvent const entityDie;
 
+// symbol: ?entityDismount@GameEventRegistry@@3VGameEvent@@B
+MCAPI extern class GameEvent const entityDismount;
+
 // symbol: ?entityInteract@GameEventRegistry@@3VGameEvent@@B
 MCAPI extern class GameEvent const entityInteract;
+
+// symbol: ?entityMount@GameEventRegistry@@3VGameEvent@@B
+MCAPI extern class GameEvent const entityMount;
 
 // symbol: ?entityMove@GameEventRegistry@@3VGameEvent@@B
 MCAPI extern class GameEvent const entityMove;
@@ -183,6 +189,9 @@ MCAPI extern class GameEvent const swim;
 
 // symbol: ?teleport@GameEventRegistry@@3VGameEvent@@B
 MCAPI extern class GameEvent const teleport;
+
+// symbol: ?unequip@GameEventRegistry@@3VGameEvent@@B
+MCAPI extern class GameEvent const unequip;
 // NOLINTEND
 
 }; // namespace GameEventRegistry

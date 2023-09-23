@@ -7,6 +7,7 @@
 #include "mc/deps/core/FileAccessType.h"
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/StackString.h"
+#include "mc/deps/core/common/bedrock/IAsyncResult.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/enums/ARVRPlatform.h"
 #include "mc/enums/AppFocusState.h"
@@ -137,11 +138,11 @@ public:
     MCVAPI std::shared_ptr<class Core::FileStorageArea>
            createLoggingStorageArea(::Core::FileAccessType, class Core::Path const&);
 
-    // symbol: ?createUserInput@AppPlatform@@UEAAXH@Z
-    MCVAPI void createUserInput(int);
-
     // symbol: ?createUserInput@AppPlatform@@UEAAXXZ
     MCVAPI void createUserInput();
+
+    // symbol: ?createUserInput@AppPlatform@@UEAAXH@Z
+    MCVAPI void createUserInput(int);
 
     // symbol:
     // ?createWebview@AppPlatform@@UEBA?AV?$shared_ptr@VWebviewInterface@@@std@@$$QEAVPlatformArguments@Webview@@@Z
@@ -272,6 +273,9 @@ public:
     // symbol: ?getLowPhysicalMemoryThreshold@AppPlatform@@UEBA_KXZ
     MCVAPI uint64 getLowPhysicalMemoryThreshold() const;
 
+    // symbol: ?getMaxClubsRequests@AppPlatform@@UEBAIXZ
+    MCVAPI uint getMaxClubsRequests() const;
+
     // symbol: ?getMaxLDBFilesOpen@AppPlatform@@UEBAHXZ
     MCVAPI int getMaxLDBFilesOpen() const;
 
@@ -330,9 +334,6 @@ public:
     // symbol:
     // ?getPackagedShaderCachePath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
     MCVAPI class Core::PathBuffer<std::string> getPackagedShaderCachePath();
-
-    // symbol: ?getPixelsPerMillimeter@AppPlatform@@UEAAMXZ
-    MCVAPI float getPixelsPerMillimeter();
 
     // symbol: ?getPlatformDpi@AppPlatform@@EEBAHXZ
     MCVAPI int getPlatformDpi() const;
@@ -598,6 +599,11 @@ public:
     // symbol: ?removeListener@AppPlatform@@UEAAXPEAVAppPlatformListener@@@Z
     MCVAPI void removeListener(class AppPlatformListener*);
 
+    // symbol:
+    // ?requestIntegrityToken@AppPlatform@@UEAA?AV?$shared_ptr@V?$IAsyncResult@UIntegrityTokenResult@@@Threading@Bedrock@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+    MCVAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<struct IntegrityTokenResult>>
+           requestIntegrityToken(std::string const&);
+
     // symbol: ?requestMulticastReceivePermission@AppPlatform@@UEAAXXZ
     MCVAPI void requestMulticastReceivePermission();
 
@@ -619,9 +625,6 @@ public:
     // symbol: ?restartRequested@AppPlatform@@UEAA_NXZ
     MCVAPI bool restartRequested();
 
-    // symbol: ?sendIntegrityCheckTelemetry@AppPlatform@@UEAAXAEAVIMinecraftEventing@@@Z
-    MCVAPI void sendIntegrityCheckTelemetry(class IMinecraftEventing&);
-
     // symbol: ?setARVRPlatform@AppPlatform@@UEAAXW4ARVRPlatform@@@Z
     MCVAPI void setARVRPlatform(::ARVRPlatform);
 
@@ -630,6 +633,13 @@ public:
 
     // symbol: ?setFullscreenMode@AppPlatform@@UEAAXW4FullscreenMode@@@Z
     MCVAPI void setFullscreenMode(::FullscreenMode);
+
+    // symbol: ?setIntegrityToken@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCVAPI void setIntegrityToken(std::string const&);
+
+    // symbol:
+    // ?setIntegrityTokenErrorMessage@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCVAPI void setIntegrityTokenErrorMessage(std::string const&);
 
     // symbol: ?setKeepScreenOnFlag@AppPlatform@@UEAAX_N@Z
     MCVAPI void setKeepScreenOnFlag(bool);
@@ -729,9 +739,6 @@ public:
 
     // symbol: ?updateLocalization@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void updateLocalization(std::string const&);
-
-    // symbol: ?updateTextBoxText@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void updateTextBoxText(std::string const&);
 
     // symbol: ?useAppPlatformForTelemetryIPAddress@AppPlatform@@UEAA_NXZ
     MCVAPI bool useAppPlatformForTelemetryIPAddress();

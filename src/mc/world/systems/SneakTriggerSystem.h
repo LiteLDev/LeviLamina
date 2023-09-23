@@ -2,37 +2,39 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SneakTriggerSystem {
-public:
-    // SneakTriggerSystem inner types declare
-    // clang-format off
-    struct PlayerPoseTransitions;
-    // clang-format on
+// auto generated inclusion list
+#include "mc/common/wrapper/Include.h"
+#include "mc/common/wrapper/Optional.h"
+#include "mc/common/wrapper/OptionalGlobalT.h"
+#include "mc/entity/EntityModifierT.h"
+#include "mc/world/components/FlagComponent.h"
 
-    // SneakTriggerSystem inner types define
-    struct PlayerPoseTransitions {
-    public:
-        // prevent constructor by default
-        PlayerPoseTransitions& operator=(PlayerPoseTransitions const&);
-        PlayerPoseTransitions(PlayerPoseTransitions const&);
-        PlayerPoseTransitions();
-    };
+// auto generated forward declare list
+// clang-format off
+namespace SneakTriggerSystem { struct DetermineStatusArgs; }
+namespace SneakTriggerSystem { struct PlayerStatusTransitions; }
+// clang-format on
 
-public:
-    // prevent constructor by default
-    SneakTriggerSystem& operator=(SneakTriggerSystem const&);
-    SneakTriggerSystem(SneakTriggerSystem const&);
-    SneakTriggerSystem();
+namespace SneakTriggerSystem {
+// NOLINTBEGIN
+// symbol: ?createActionSystem@SneakTriggerSystem@@YA?AUTickingSystemWithInfo@@XZ
+MCAPI struct TickingSystemWithInfo createActionSystem();
 
-public:
-    // NOLINTBEGIN
-    // symbol: ?createTriggerSystem@SneakTriggerSystem@@SA?AUTickingSystemWithInfo@@_N@Z
-    MCAPI static struct TickingSystemWithInfo createTriggerSystem(bool);
+// symbol: ?createIntentSystem@SneakTriggerSystem@@YA?AUTickingSystemWithInfo@@XZ
+MCAPI struct TickingSystemWithInfo createIntentSystem();
 
-    // symbol:
-    // ?updatePlayerState@SneakTriggerSystem@@SA?AUPlayerPoseTransitions@1@AEBVGetCollisionShapeInterface@@AEBVAABB@@AEBVVec2@@_N3333333MAEBVIConstBlockSource@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-    MCAPI static struct SneakTriggerSystem::PlayerPoseTransitions
-    updatePlayerState(class GetCollisionShapeInterface const&, class AABB const&, class Vec2 const&, bool, bool, bool, bool, bool, bool, bool, bool, float, class IConstBlockSource const&, std::vector<class AABB>&);
+// symbol: ?determineStatus@SneakTriggerSystem@@YA?AUPlayerStatusTransitions@1@AEBUDetermineStatusArgs@1@@Z
+MCAPI struct SneakTriggerSystem::PlayerStatusTransitions
+determineStatus(struct SneakTriggerSystem::DetermineStatusArgs const&);
 
-    // NOLINTEND
-};
+// symbol:
+// ?doActionTick@SneakTriggerSystem@@YAXU?$type_list@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@@entt@@AEBVStrictEntityContext@@AEBUPlayerActionComponent@@AEAUSynchedActorDataComponent@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UShouldUpdateBoundingBoxRequestComponent@@@@@Z
+MCAPI void
+doActionTick(entt::type_list<struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>>, class StrictEntityContext const&, struct PlayerActionComponent const&, struct SynchedActorDataComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct ShouldUpdateBoundingBoxRequestComponent>&);
+
+// symbol:
+// ?doIntentTick@SneakTriggerSystem@@YAXAEBVStrictEntityContext@@AEBUMoveInputComponent@@AEBUAbilitiesComponent@@AEBUActorGameTypeComponent@@AEBUPlayerInputRequestComponent@@AEBUSynchedActorDataComponent@@AEAUPlayerActionComponent@@V?$Optional@$$CBV?$FlagComponent@UInWaterFlag@@@@@@V?$Optional@$$CBUPassengerComponent@@@@V?$OptionalGlobalT@$$CBUBaseGameVersionComponent@@VEntityRegistryBase@@@@AEBUExternalDataInterface@@@Z
+MCAPI void doIntentTick(class StrictEntityContext const&, struct MoveInputComponent const&, struct AbilitiesComponent const&, struct ActorGameTypeComponent const&, struct PlayerInputRequestComponent const&, struct SynchedActorDataComponent const&, struct PlayerActionComponent&, class Optional<class FlagComponent<struct InWaterFlag> const>, class Optional<struct PassengerComponent const>, class OptionalGlobalT<struct BaseGameVersionComponent const, class EntityRegistryBase>, struct ExternalDataInterface const&);
+// NOLINTEND
+
+}; // namespace SneakTriggerSystem

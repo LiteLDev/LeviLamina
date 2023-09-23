@@ -37,14 +37,8 @@ public:
     // ?_read@RequestAbilityPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
 
-    // symbol: ??1RequestAbilityPacket@@UEAA@XZ
-    MCVAPI ~RequestAbilityPacket();
-
     // symbol: ??0RequestAbilityPacket@@QEAA@XZ
     MCAPI RequestAbilityPacket();
-
-    // symbol: ??0RequestAbilityPacket@@QEAA@W4AbilitiesIndex@@_N@Z
-    MCAPI RequestAbilityPacket(::AbilitiesIndex, bool);
 
     // symbol: ?getAbility@RequestAbilityPacket@@QEBA?AW4AbilitiesIndex@@XZ
     MCAPI ::AbilitiesIndex getAbility() const;

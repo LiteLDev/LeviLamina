@@ -17,16 +17,6 @@ public:
     CompositeDefinition(CompositeDefinition const&);
     CompositeDefinition();
 
-public:
-    // NOLINTBEGIN
-    // symbol: ?get@CompositeDefinition@@QEBAPEBVBehaviorDefinition@@_K@Z
-    MCAPI class BehaviorDefinition const* get(uint64) const;
-
-    // symbol: ?getCount@CompositeDefinition@@QEBA_KXZ
-    MCAPI uint64 getCount() const;
-
-    // NOLINTEND
-
     // protected:
     // NOLINTBEGIN
     // symbol:

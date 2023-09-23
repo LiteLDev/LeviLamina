@@ -16,13 +16,14 @@ public:
     // prevent constructor by default
     ActorInCloudsTest& operator=(ActorInCloudsTest const&);
     ActorInCloudsTest(ActorInCloudsTest const&);
+    ActorInCloudsTest();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol: ?setup@ActorHasEquipmentTest@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
+    // vIndex: 1, symbol: ?setup@ActorBoolPropertyTest@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
     virtual bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);
 
     // vIndex: 2, symbol: ?evaluate@ActorInCloudsTest@@UEBA_NAEBUFilterContext@@@Z
@@ -34,7 +35,7 @@ public:
     // vIndex: 4, symbol: ?getName@ActorInCloudsTest@@UEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
     virtual std::string_view getName() const;
 
-    // vIndex: 5, symbol: ?_serializeDomain@ActorHasEquipmentTest@@MEBA?AVValue@Json@@XZ
+    // vIndex: 5, symbol: ?_serializeDomain@ActorBoolPropertyTest@@MEBA?AVValue@Json@@XZ
     virtual class Json::Value _serializeDomain() const;
 
     // vIndex: 6, symbol: ?_serializeValue@ActorBoolPropertyTest@@MEBA?AVValue@Json@@XZ
@@ -42,9 +43,6 @@ public:
 
     // symbol: ??1ActorInCloudsTest@@UEAA@XZ
     MCVAPI ~ActorInCloudsTest();
-
-    // symbol: ??0ActorInCloudsTest@@QEAA@XZ
-    MCAPI ActorInCloudsTest();
 
     // NOLINTEND
 };

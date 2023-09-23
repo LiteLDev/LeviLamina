@@ -31,9 +31,6 @@ public:
     // symbol: ?open@File@Core@@QEAA?AVResult@2@AEBVPath@2@VFileOpenMode@2@W4FileBufferingMode@2@@Z
     MCAPI class Core::Result open(class Core::Path const&, class Core::FileOpenMode, ::Core::FileBufferingMode);
 
-    // symbol: ?setLoggingEnabled@File@Core@@QEAAX_N@Z
-    MCAPI void setLoggingEnabled(bool);
-
     // symbol: ?write@File@Core@@QEAA?AVResult@2@PEBX_K@Z
     MCAPI class Core::Result write(void const*, uint64);
 

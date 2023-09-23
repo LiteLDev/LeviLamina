@@ -10,11 +10,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0SyncedPlayerMovementSettings@@QEAA@XZ
-    MCAPI SyncedPlayerMovementSettings();
-
     // symbol: ??0SyncedPlayerMovementSettings@@QEAA@AEBUPlayerMovementSettings@@@Z
     MCAPI explicit SyncedPlayerMovementSettings(struct PlayerMovementSettings const&);
+
+    // symbol: ??0SyncedPlayerMovementSettings@@QEAA@XZ
+    MCAPI SyncedPlayerMovementSettings();
 
     // NOLINTEND
 };

@@ -20,7 +20,7 @@ public:
     // symbol:
     // ?getAnimationFrame@LodestoneCompassComponent@@QEAAHAEBV?$variant@UActorUniqueID@@U?$pair@VBlockPos@@V?$AutomaticID@VDimension@@H@@@std@@@std@@AEBVBlockPos@@AEBV?$AutomaticID@VDimension@@H@@@Z
     MCAPI int
-    getAnimationFrame(std::variant<struct ActorUniqueID, std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> const&, class BlockPos const&, class AutomaticID<class Dimension, int> const&);
+    getAnimationFrame(std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>> const&, class BlockPos const&, DimensionType const&);
 
     // symbol: ?initialize@LodestoneCompassComponent@@QEAAXAEBVPositionTrackingId@@@Z
     MCAPI void initialize(class PositionTrackingId const&);
@@ -31,7 +31,7 @@ public:
     // symbol:
     // ?setTrackOnlyInSameDimension@LodestoneCompassComponent@@QEAAXAEBV?$variant@UActorUniqueID@@U?$pair@VBlockPos@@V?$AutomaticID@VDimension@@H@@@std@@@std@@_N@Z
     MCAPI void setTrackOnlyInSameDimension(
-        std::variant<struct ActorUniqueID, std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> const&,
+        std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>> const&,
         bool
     );
 
@@ -43,7 +43,7 @@ public:
 
     // symbol:
     // ?makeCalculatorId@LodestoneCompassComponent@@SA?AV?$variant@UActorUniqueID@@U?$pair@VBlockPos@@V?$AutomaticID@VDimension@@H@@@std@@@std@@AEBUActorUniqueID@@@Z
-    MCAPI static std::variant<struct ActorUniqueID, std::pair<class BlockPos, class AutomaticID<class Dimension, int>>>
+    MCAPI static std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>>
     makeCalculatorId(struct ActorUniqueID const&);
 
     // NOLINTEND
@@ -52,10 +52,8 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_findCalculator@LodestoneCompassComponent@@AEAAPEAVLodestoneCompassComponentCalculator@@AEBV?$variant@UActorUniqueID@@U?$pair@VBlockPos@@V?$AutomaticID@VDimension@@H@@@std@@@std@@_N@Z
-    MCAPI class LodestoneCompassComponentCalculator* _findCalculator(
-        std::variant<struct ActorUniqueID, std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> const&,
-        bool
-    );
+    MCAPI class LodestoneCompassComponentCalculator*
+    _findCalculator(std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>> const&, bool);
 
     // NOLINTEND
 

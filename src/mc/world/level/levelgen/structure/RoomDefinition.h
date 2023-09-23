@@ -10,11 +10,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0RoomDefinition@@QEAA@AEBV0@@Z
-    MCAPI RoomDefinition(class RoomDefinition const&);
-
     // symbol: ??0RoomDefinition@@QEAA@H@Z
     MCAPI explicit RoomDefinition(int);
+
+    // symbol: ??0RoomDefinition@@QEAA@AEBV0@@Z
+    MCAPI RoomDefinition(class RoomDefinition const&);
 
     // symbol: ?findSource@RoomDefinition@@QEAA_NH@Z
     MCAPI bool findSource(int);

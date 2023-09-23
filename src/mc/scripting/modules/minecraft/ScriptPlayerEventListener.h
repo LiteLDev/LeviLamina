@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class IScriptAfterEvents; }
+namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
 namespace Scripting { class WeakLifetimeScope; }
 struct PlayerInitialSpawnEvent;
 struct PlayerNotificationEvent;
@@ -152,12 +152,12 @@ public:
     // vIndex: 41, symbol: __unk_vfn_41
     virtual void __unk_vfn_41();
 
-    // vIndex: 42, symbol:
+    // vIndex: 42, symbol: __unk_vfn_42
+    virtual void __unk_vfn_42();
+
+    // vIndex: 43, symbol:
     // ?onEvent@?$EventListenerDispatcher@VPlayerEventListener@@@@MEAA?AW4EventResult@@AEBUPlayerNotificationEvent@@@Z
     virtual ::EventResult onEvent(struct PlayerNotificationEvent const&);
-
-    // vIndex: 43, symbol: __unk_vfn_43
-    virtual void __unk_vfn_43();
 
     // vIndex: 44, symbol: __unk_vfn_44
     virtual void __unk_vfn_44();
@@ -177,24 +177,27 @@ public:
     // vIndex: 49, symbol: __unk_vfn_49
     virtual void __unk_vfn_49();
 
-    // vIndex: 50, symbol:
+    // vIndex: 50, symbol: __unk_vfn_50
+    virtual void __unk_vfn_50();
+
+    // vIndex: 51, symbol:
     // ?onEvent@ScriptPlayerEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUPlayerRespawnEvent@@@Z
     virtual ::EventResult onEvent(struct PlayerRespawnEvent const&);
-
-    // vIndex: 51, symbol: __unk_vfn_51
-    virtual void __unk_vfn_51();
 
     // vIndex: 52, symbol: __unk_vfn_52
     virtual void __unk_vfn_52();
 
-    // vIndex: 53, symbol:
+    // vIndex: 53, symbol: __unk_vfn_53
+    virtual void __unk_vfn_53();
+
+    // vIndex: 54, symbol:
     // ?onEvent@ScriptPlayerEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUPlayerInitialSpawnEvent@@@Z
     virtual ::EventResult onEvent(struct PlayerInitialSpawnEvent const&);
 
     // symbol:
-    // ??0ScriptPlayerEventListener@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptAfterEvents@ScriptModuleMinecraft@@@3@@Z
+    // ??0ScriptPlayerEventListener@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptWorldAfterEvents@ScriptModuleMinecraft@@@3@@Z
     MCAPI
-    ScriptPlayerEventListener(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptAfterEvents>);
+    ScriptPlayerEventListener(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldAfterEvents>);
 
     // NOLINTEND
 };

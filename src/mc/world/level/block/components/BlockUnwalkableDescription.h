@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace JsonUtil { class EmptyClass; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class BlockUnwalkableDescription : public ::BlockComponentDescription {
@@ -30,21 +31,22 @@ public:
     // vIndex: 2, symbol: ?initializeComponent@BlockUnwalkableDescription@@UEBAXAEAVEntityContext@@@Z
     virtual void initializeComponent(class EntityContext&) const;
 
-    // vIndex: 5, symbol:
+    // vIndex: 6, symbol:
     // ?buildSchema@BlockUnwalkableDescription@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UBlockComponentGroupDescription@@@JsonUtil@@@std@@AEBVBlockComponentFactory@@@Z
     virtual void
     buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&, class BlockComponentFactory const&)
         const;
 
-    // vIndex: 6, symbol: ?isNetworkComponent@BlockUnwalkableDescription@@UEBA_NXZ
+    // vIndex: 7, symbol: ?isNetworkComponent@BlockUnwalkableDescription@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
-    // vIndex: 7, symbol:
-    // ?buildNetworkTag@BlockUnwalkableDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    // vIndex: 8, symbol:
+    // ?buildNetworkTag@BlockUnwalkableDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAUReflectionCtx@cereal@@@Z
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx&) const;
 
-    // vIndex: 8, symbol: ?initializeFromNetwork@BlockUnwalkableDescription@@UEAAXAEBVCompoundTag@@@Z
-    virtual void initializeFromNetwork(class CompoundTag const&);
+    // vIndex: 9, symbol:
+    // ?initializeFromNetwork@BlockUnwalkableDescription@@UEAAXAEBVCompoundTag@@AEAUReflectionCtx@cereal@@@Z
+    virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx&);
 
     // symbol: ?NameID@BlockUnwalkableDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const NameID;

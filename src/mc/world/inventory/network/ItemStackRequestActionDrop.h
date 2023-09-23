@@ -11,22 +11,11 @@ public:
     // prevent constructor by default
     ItemStackRequestActionDrop& operator=(ItemStackRequestActionDrop const&);
     ItemStackRequestActionDrop(ItemStackRequestActionDrop const&);
-    ItemStackRequestActionDrop();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-
-    // vIndex: 1, symbol: ?getCraftAction@ItemStackRequestAction@@UEBAPEBVItemStackRequestActionCraftBase@@XZ
-    virtual class ItemStackRequestActionCraftBase const* getCraftAction() const;
-
-    // vIndex: 2, symbol: ?getFilteredStringIndex@ItemStackRequestAction@@UEBAHXZ
-    virtual int getFilteredStringIndex() const;
-
-    // vIndex: 3, symbol:
-    // ?postLoadItems_DEPRECATEDASKTYLAING@ItemStackRequestActionCraftBase@@UEAAXAEAVBlockPalette@@_N@Z
-    virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
 
     // vIndex: 4, symbol: ?_write@ItemStackRequestActionDrop@@MEBAXAEAVBinaryStream@@@Z
     virtual void _write(class BinaryStream&) const;
@@ -34,6 +23,12 @@ public:
     // vIndex: 5, symbol:
     // ?_read@ItemStackRequestActionDrop@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
+
+    // symbol: ??0ItemStackRequestActionDrop@@QEAA@XZ
+    MCAPI ItemStackRequestActionDrop();
+
+    // symbol: ?getRandomly@ItemStackRequestActionDrop@@QEBA_NXZ
+    MCAPI bool getRandomly() const;
 
     // NOLINTEND
 };

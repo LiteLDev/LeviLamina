@@ -10,6 +10,7 @@
 #include "mc/common/wrapper/WeakRefT.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/enums/CurrentCmdVersion.h"
+#include "mc/enums/InitializationMethod.h"
 #include "mc/enums/SubClientId.h"
 #include "mc/world/level/Level.h"
 #include "mc/world/systems/CommandOriginSystem.h"
@@ -28,8 +29,14 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ?_getMapDataManager@ServerLevel@@MEAAAEAVMapDataManager@@XZ
+    MCVAPI class MapDataManager& _getMapDataManager();
+
     // symbol: ?_getPlayerDeathManager@ServerLevel@@MEAAPEAVPlayerDeathManager@@XZ
     MCVAPI class PlayerDeathManager* _getPlayerDeathManager();
+
+    // symbol: ?_initializeMapDataManager@ServerLevel@@MEAAXXZ
+    MCVAPI void _initializeMapDataManager();
 
     // symbol: ?_subTick@ServerLevel@@MEAAXXZ
     MCVAPI void _subTick();
@@ -108,11 +115,6 @@ public:
     // ??0ServerLevel@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VSoundPlayerInterface@@@Bedrock@@@gsl@@V?$OwnerPtrT@U?$SharePtrRefTraits@VLevelStorage@@@@@@AEAVIMinecraftEventing@@AEAVResourcePackManager@@3V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@2@AEAVMinecraftCommands@@AEAVScheduler@@AEBV?$not_null@V?$NonOwnerPointer@VIEntityRegistryOwner@@@Bedrock@@@2@V?$WeakRefT@UEntityRefTraits@@@@V?$unique_ptr@VBlockComponentFactory@@U?$default_delete@VBlockComponentFactory@@@std@@@std@@V?$unique_ptr@VBlockDefinitionGroup@@U?$default_delete@VBlockDefinitionGroup@@@std@@@std@@VItemRegistryRef@@_N_NAEBUNetworkPermissions@@V?$weak_ptr@VBlockTypeRegistry@@@std@@@Z
     MCAPI ServerLevel(gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> const&, class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>, class IMinecraftEventing&, class ResourcePackManager&, class ResourcePackManager&, gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class MinecraftCommands&, class Scheduler&, gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner>> const&, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>, class ItemRegistryRef, bool, bool, struct NetworkPermissions const&, std::weak_ptr<class BlockTypeRegistry>);
 
-    // symbol:
-    // ?addServerChunksToPacket@ServerLevel@@QEAAXAEBVNetworkIdentifier@@W4SubClientId@@AEAVNetworkChunkPublisherUpdatePacket@@@Z
-    MCAPI void
-    addServerChunksToPacket(class NetworkIdentifier const&, ::SubClientId, class NetworkChunkPublisherUpdatePacket&);
-
     // symbol: ?clearAllGenerationRequests@ServerLevel@@QEAAXAEBVNetworkIdentifier@@W4SubClientId@@@Z
     MCAPI void clearAllGenerationRequests(class NetworkIdentifier const&, ::SubClientId);
 
@@ -130,12 +132,6 @@ public:
 
     // symbol: ?getOrAddDynamicProperties@ServerLevel@@QEAAAEAVDynamicProperties@@XZ
     MCAPI class DynamicProperties& getOrAddDynamicProperties();
-
-    // symbol: ?hasPendingGenerationRequests@ServerLevel@@QEAA_NAEBVNetworkIdentifier@@W4SubClientId@@@Z
-    MCAPI bool hasPendingGenerationRequests(class NetworkIdentifier const&, ::SubClientId);
-
-    // symbol: ?queueChunkGenerationRequest@ServerLevel@@QEAAXAEBVNetworkIdentifier@@W4SubClientId@@AEBVChunkPos@@@Z
-    MCAPI void queueChunkGenerationRequest(class NetworkIdentifier const&, ::SubClientId, class ChunkPos const&);
 
     // symbol: ?setShouldSendSleepMessage@ServerLevel@@QEAAX_N@Z
     MCAPI void setShouldSendSleepMessage(bool);
@@ -162,9 +158,6 @@ public:
     // symbol: ?_initializePlayerSleepManager@ServerLevel@@AEAAXXZ
     MCAPI void _initializePlayerSleepManager();
 
-    // symbol: ?_initializeScoreboard@ServerLevel@@AEAAXXZ
-    MCAPI void _initializeScoreboard();
-
     // symbol: ?_onActorEntityAdded@ServerLevel@@AEAAXAEAVActor@@@Z
     MCAPI void _onActorEntityAdded(class Actor&);
 
@@ -189,8 +182,8 @@ public:
     // symbol: ?_onWakeUpAllPlayers@ServerLevel@@AEAAXXZ
     MCAPI void _onWakeUpAllPlayers();
 
-    // symbol: ?_postReloadActorAdded@ServerLevel@@AEAAXAEAVActor@@@Z
-    MCAPI void _postReloadActorAdded(class Actor&);
+    // symbol: ?_postReloadActorAdded@ServerLevel@@AEAAXAEAVActor@@W4InitializationMethod@@@Z
+    MCAPI void _postReloadActorAdded(class Actor&, ::InitializationMethod);
 
     // NOLINTEND
 };

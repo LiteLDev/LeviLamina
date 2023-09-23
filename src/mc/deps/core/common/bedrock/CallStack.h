@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/LogLevel.h"
+#include "mc/enums/LogAreaID.h"
 
 namespace Bedrock {
 
@@ -27,8 +28,8 @@ public:
     public:
         // NOLINTBEGIN
         // symbol:
-        // ??0Context@CallStack@Bedrock@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@W4LogLevel@Bedrock@@@4@V?$optional@I@4@@Z
-        MCAPI Context(std::string, std::optional<::Bedrock::LogLevel>, std::optional<uint>);
+        // ??0Context@CallStack@Bedrock@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@W4LogLevel@Bedrock@@@4@V?$optional@W4LogAreaID@@@4@@Z
+        MCAPI Context(std::string, std::optional<::Bedrock::LogLevel>, std::optional<::LogAreaID>);
 
         // symbol: ??1Context@CallStack@Bedrock@@QEAA@XZ
         MCAPI ~Context();

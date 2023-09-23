@@ -13,11 +13,8 @@ public:
     // symbol: ??0CommandItem@@QEAA@XZ
     MCAPI CommandItem();
 
-    // symbol: ??0CommandItem@@QEAA@HF_N@Z
-    MCAPI CommandItem(int, short, bool);
-
-    // symbol: ?createInstance@CommandItem@@QEBA?AV?$optional@VItemInstance@@@std@@HHPEAVCommandOutput@@_N@Z
-    MCAPI std::optional<class ItemInstance> createInstance(int, int, class CommandOutput*, bool) const;
+    // symbol: ?createInstance@CommandItem@@QEBA?AV?$optional@VItemInstance@@@std@@HHAEAVCommandOutput@@_N@Z
+    MCAPI std::optional<class ItemInstance> createInstance(int, int, class CommandOutput&, bool) const;
 
     // symbol: ?getId@CommandItem@@QEBAHXZ
     MCAPI int getId() const;

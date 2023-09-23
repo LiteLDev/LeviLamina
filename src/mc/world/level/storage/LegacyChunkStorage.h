@@ -24,7 +24,7 @@ public:
     // vIndex: 13, symbol: ?saveLiveChunk@LegacyChunkStorage@@UEAA_NAEAVLevelChunk@@@Z
     virtual bool saveLiveChunk(class LevelChunk&);
 
-    // vIndex: 18, symbol:
+    // vIndex: 19, symbol:
     // ?acquireDiscarded@LegacyChunkStorage@@UEAAXV?$unique_ptr@VLevelChunk@@ULevelChunkFinalDeleter@@@std@@@Z
     virtual void acquireDiscarded(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
 

@@ -3,14 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/WeakTypedObjectHandle.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/ScoreboardEventListener.h"
 
 // auto generated forward declare list
 // clang-format off
 class ScoreboardEventListener;
-namespace ScriptModuleMinecraft { class ScriptScoreboard; }
 struct ScoreboardId;
 // clang-format on
 
@@ -35,11 +33,6 @@ public:
     // vIndex: 3, symbol:
     // ?onScoreboardIdentityRemoved@ScriptScoreboardListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUScoreboardId@@@Z
     virtual ::EventResult onScoreboardIdentityRemoved(struct ScoreboardId const&);
-
-    // symbol:
-    // ??0ScriptScoreboardListener@ScriptModuleMinecraft@@QEAA@V?$WeakTypedObjectHandle@VScriptScoreboard@ScriptModuleMinecraft@@@Scripting@@@Z
-    MCAPI explicit ScriptScoreboardListener(class Scripting::WeakTypedObjectHandle<
-                                            class ScriptModuleMinecraft::ScriptScoreboard>);
 
     // NOLINTEND
 };

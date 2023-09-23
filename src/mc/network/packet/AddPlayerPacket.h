@@ -45,11 +45,11 @@ public:
     // symbol: ??1AddPlayerPacket@@UEAA@XZ
     MCVAPI ~AddPlayerPacket();
 
-    // symbol: ??0AddPlayerPacket@@QEAA@AEAVPlayer@@@Z
-    MCAPI explicit AddPlayerPacket(class Player&);
-
     // symbol: ??0AddPlayerPacket@@QEAA@XZ
     MCAPI AddPlayerPacket();
+
+    // symbol: ??0AddPlayerPacket@@QEAA@AEAVPlayer@@@Z
+    MCAPI explicit AddPlayerPacket(class Player&);
 
     // NOLINTEND
 };

@@ -18,7 +18,7 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol: ?moveBoundingBox@TemplateStructurePiece@@UEAAXHHH@Z
+    // vIndex: 1, symbol: ?moveBoundingBox@MineshaftRoom@@UEAAXHHH@Z
     virtual void moveBoundingBox(int, int, int);
 
     // vIndex: 2, symbol: ?getType@SHLeftTurn@@UEBA?AW4StructurePieceType@@XZ
@@ -34,7 +34,7 @@ public:
     // vIndex: 5, symbol: ?postProcessMobsAt@StructurePiece@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
     virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
 
-    // vIndex: 6, symbol: ?isInInvalidLocation@StructurePiece@@UEAA_NAEAVBlockSource@@AEBVBoundingBox@@@Z
+    // vIndex: 6, symbol: ?isInInvalidLocation@MineshaftPiece@@UEAA_NAEAVBlockSource@@AEBVBoundingBox@@@Z
     virtual bool isInInvalidLocation(class BlockSource&, class BoundingBox const&);
 
     // vIndex: 7, symbol: ?getWorldX@OceanMonumentPiece@@UEAAHHH@Z

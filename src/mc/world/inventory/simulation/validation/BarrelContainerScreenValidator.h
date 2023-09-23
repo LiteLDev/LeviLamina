@@ -11,12 +11,14 @@ public:
     // prevent constructor by default
     BarrelContainerScreenValidator& operator=(BarrelContainerScreenValidator const&);
     BarrelContainerScreenValidator(BarrelContainerScreenValidator const&);
-    BarrelContainerScreenValidator();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
+
+    // symbol: ??0BarrelContainerScreenValidator@@QEAA@XZ
+    MCAPI BarrelContainerScreenValidator();
 
     // NOLINTEND
 };

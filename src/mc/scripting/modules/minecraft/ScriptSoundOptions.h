@@ -23,12 +23,6 @@ public:
     // symbol: ?getLocation@ScriptSoundOptions@ScriptModuleMinecraft@@QEBA?AVVec3@@XZ
     MCAPI class Vec3 getLocation() const;
 
-    // symbol: ?getPitch@ScriptSoundOptions@ScriptModuleMinecraft@@QEBAMXZ
-    MCAPI float getPitch() const;
-
-    // symbol: ?getVolume@ScriptSoundOptions@ScriptModuleMinecraft@@QEBAMXZ
-    MCAPI float getVolume() const;
-
     // symbol: ??4ScriptSoundOptions@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptSoundOptions&
     operator=(struct ScriptModuleMinecraft::ScriptSoundOptions&&);

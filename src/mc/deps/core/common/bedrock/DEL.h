@@ -4,7 +4,7 @@
 
 namespace Bedrock::Http::MethodType {
 
-class DEL {
+struct DEL {
 public:
     // prevent constructor by default
     DEL& operator=(DEL const&);

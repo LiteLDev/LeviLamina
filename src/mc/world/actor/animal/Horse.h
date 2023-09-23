@@ -46,155 +46,152 @@ public:
     // vIndex: 35, symbol: __unk_vfn_35
     virtual void __unk_vfn_35();
 
-    // vIndex: 55, symbol: __unk_vfn_55
-    virtual void __unk_vfn_55();
+    // vIndex: 54, symbol: __unk_vfn_54
+    virtual void __unk_vfn_54();
 
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
+    // vIndex: 61, symbol: __unk_vfn_61
+    virtual void __unk_vfn_61();
 
-    // vIndex: 69, symbol: ?getShadowRadius@Horse@@UEBAMXZ
+    // vIndex: 68, symbol: ?getShadowRadius@Horse@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 71, symbol: __unk_vfn_71
-    virtual void __unk_vfn_71();
+    // vIndex: 70, symbol: __unk_vfn_70
+    virtual void __unk_vfn_70();
 
-    // vIndex: 77, symbol: __unk_vfn_77
-    virtual void __unk_vfn_77();
+    // vIndex: 76, symbol: __unk_vfn_76
+    virtual void __unk_vfn_76();
 
-    // vIndex: 79, symbol: ?isImmobile@Horse@@MEBA_NXZ
+    // vIndex: 78, symbol: ?isImmobile@Horse@@UEBA_NXZ
     virtual bool isImmobile() const;
 
-    // vIndex: 83, symbol: __unk_vfn_83
-    virtual void __unk_vfn_83();
+    // vIndex: 82, symbol: __unk_vfn_82
+    virtual void __unk_vfn_82();
 
-    // vIndex: 86, symbol: __unk_vfn_86
-    virtual void __unk_vfn_86();
+    // vIndex: 85, symbol: __unk_vfn_85
+    virtual void __unk_vfn_85();
 
-    // vIndex: 93, symbol: __unk_vfn_93
-    virtual void __unk_vfn_93();
+    // vIndex: 92, symbol: __unk_vfn_92
+    virtual void __unk_vfn_92();
+
+    // vIndex: 94, symbol: __unk_vfn_94
+    virtual void __unk_vfn_94();
 
     // vIndex: 95, symbol: __unk_vfn_95
     virtual void __unk_vfn_95();
 
-    // vIndex: 96, symbol: __unk_vfn_96
-    virtual void __unk_vfn_96();
+    // vIndex: 97, symbol: __unk_vfn_97
+    virtual void __unk_vfn_97();
 
-    // vIndex: 98, symbol: __unk_vfn_98
-    virtual void __unk_vfn_98();
-
-    // vIndex: 109, symbol: ?onFailedTame@Horse@@UEAAXXZ
+    // vIndex: 108, symbol: ?onFailedTame@Horse@@UEAAXXZ
     virtual void onFailedTame();
 
-    // vIndex: 113, symbol: ?setStanding@Horse@@UEAAX_N@Z
+    // vIndex: 112, symbol: ?setStanding@Horse@@UEAAX_N@Z
     virtual void setStanding(bool);
 
-    // vIndex: 126, symbol: ?feed@Horse@@UEAAXH@Z
+    // vIndex: 124, symbol: ?feed@Horse@@UEAAXH@Z
     virtual void feed(int);
 
-    // vIndex: 127, symbol: ?handleEntityEvent@Horse@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 125, symbol: ?handleEntityEvent@Horse@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent, int);
 
-    // vIndex: 157, symbol: ?canFreeze@Horse@@UEBA_NXZ
+    // vIndex: 155, symbol: ?canFreeze@Horse@@UEBA_NXZ
     virtual bool canFreeze() const;
 
-    // vIndex: 164, symbol: __unk_vfn_164
-    virtual void __unk_vfn_164();
+    // vIndex: 162, symbol: __unk_vfn_162
+    virtual void __unk_vfn_162();
 
-    // vIndex: 166, symbol: ?getControllingPlayer@Horse@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 164, symbol: ?getControllingPlayer@Horse@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getControllingPlayer() const;
 
-    // vIndex: 168, symbol: ?causeFallDamage@Horse@@MEAAXMMVActorDamageSource@@@Z
+    // vIndex: 166, symbol: ?causeFallDamage@Horse@@MEAAXMMVActorDamageSource@@@Z
     virtual void causeFallDamage(float, float, class ActorDamageSource);
 
-    // vIndex: 169, symbol: ?handleFallDistanceOnServer@Horse@@MEAAXMM_N@Z
+    // vIndex: 167, symbol: ?handleFallDistanceOnServer@Horse@@MEAAXMM_N@Z
     virtual void handleFallDistanceOnServer(float, float, bool);
 
-    // vIndex: 173, symbol: ?onSynchedDataUpdate@Horse@@UEAAXH@Z
+    // vIndex: 169, symbol: ?onSynchedDataUpdate@Horse@@UEAAXH@Z
     virtual void onSynchedDataUpdate(int);
 
-    // vIndex: 178, symbol: __unk_vfn_178
-    virtual void __unk_vfn_178();
+    // vIndex: 174, symbol: __unk_vfn_174
+    virtual void __unk_vfn_174();
 
-    // vIndex: 199, symbol: ?openContainerComponent@Horse@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 195, symbol: ?openContainerComponent@Horse@@UEAAXAEAVPlayer@@@Z
     virtual void openContainerComponent(class Player&);
 
-    // vIndex: 202, symbol: __unk_vfn_202
-    virtual void __unk_vfn_202();
+    // vIndex: 198, symbol: __unk_vfn_198
+    virtual void __unk_vfn_198();
 
-    // vIndex: 203, symbol: __unk_vfn_203
-    virtual void __unk_vfn_203();
+    // vIndex: 199, symbol: __unk_vfn_199
+    virtual void __unk_vfn_199();
 
-    // vIndex: 219, symbol: __unk_vfn_219
-    virtual void __unk_vfn_219();
+    // vIndex: 215, symbol: __unk_vfn_215
+    virtual void __unk_vfn_215();
 
-    // vIndex: 222, symbol: __unk_vfn_222
-    virtual void __unk_vfn_222();
+    // vIndex: 218, symbol: __unk_vfn_218
+    virtual void __unk_vfn_218();
 
-    // vIndex: 224, symbol: ?die@Horse@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 220, symbol: ?die@Horse@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const&);
 
-    // vIndex: 237, symbol: ?updateEntitySpecificMolangVariables@Horse@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 233, symbol: ?updateEntitySpecificMolangVariables@Horse@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams&);
 
-    // vIndex: 239, symbol: __unk_vfn_239
-    virtual void __unk_vfn_239();
+    // vIndex: 235, symbol: __unk_vfn_235
+    virtual void __unk_vfn_235();
 
-    // vIndex: 240, symbol: ?_hurt@Horse@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 236, symbol: ?_hurt@Horse@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
 
-    // vIndex: 245, symbol: ?_playStepSound@Horse@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 241, symbol: ?_playStepSound@Horse@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
     virtual void _playStepSound(class BlockPos const&, class Block const&);
 
-    // vIndex: 247, symbol: __unk_vfn_247
-    virtual void __unk_vfn_247();
+    // vIndex: 243, symbol: __unk_vfn_243
+    virtual void __unk_vfn_243();
 
-    // vIndex: 253, symbol: __unk_vfn_253
-    virtual void __unk_vfn_253();
+    // vIndex: 248, symbol: __unk_vfn_248
+    virtual void __unk_vfn_248();
 
-    // vIndex: 276, symbol: __unk_vfn_276
-    virtual void __unk_vfn_276();
+    // vIndex: 270, symbol: __unk_vfn_270
+    virtual void __unk_vfn_270();
 
-    // vIndex: 280, symbol: __unk_vfn_280
-    virtual void __unk_vfn_280();
+    // vIndex: 274, symbol: __unk_vfn_274
+    virtual void __unk_vfn_274();
 
-    // vIndex: 285, symbol: ?getArmorValue@Horse@@UEBAHXZ
+    // vIndex: 279, symbol: ?getArmorValue@Horse@@UEBAHXZ
     virtual int getArmorValue() const;
 
-    // vIndex: 323, symbol: __unk_vfn_323
-    virtual void __unk_vfn_323();
-
-    // vIndex: 325, symbol: ?setType@Horse@@UEAAXH@Z
+    // vIndex: 318, symbol: ?setType@Horse@@UEAAXH@Z
     virtual void setType(int);
 
-    // vIndex: 326, symbol: ?getType@Horse@@UEBAHXZ
+    // vIndex: 319, symbol: ?getType@Horse@@UEBAHXZ
     virtual int getType() const;
 
-    // vIndex: 327, symbol: ?setHorseEating@Horse@@UEAAX_N@Z
+    // vIndex: 320, symbol: ?setHorseEating@Horse@@UEAAX_N@Z
     virtual void setHorseEating(bool);
 
-    // vIndex: 328, symbol: ?getStandAnim@Horse@@UEBAMM@Z
+    // vIndex: 321, symbol: ?getStandAnim@Horse@@UEBAMM@Z
     virtual float getStandAnim(float) const;
 
-    // vIndex: 329, symbol: ?isAdult@Horse@@UEBA_NXZ
+    // vIndex: 322, symbol: ?isAdult@Horse@@UEBA_NXZ
     virtual bool isAdult() const;
 
-    // vIndex: 330, symbol: ?isHorseEating@Horse@@UEBA_NXZ
+    // vIndex: 323, symbol: ?isHorseEating@Horse@@UEBA_NXZ
     virtual bool isHorseEating() const;
 
-    // vIndex: 331, symbol: ?isMouthOpen@Horse@@UEBA_NXZ
+    // vIndex: 324, symbol: ?isMouthOpen@Horse@@UEBA_NXZ
     virtual bool isMouthOpen() const;
 
-    // vIndex: 332, symbol: ?makeMad@Horse@@UEAAXXZ
+    // vIndex: 325, symbol: ?makeMad@Horse@@UEAAXXZ
     virtual void makeMad();
 
-    // vIndex: 333, symbol: ?tameToPlayer@Horse@@UEAA_NAEAVPlayer@@_N@Z
+    // vIndex: 326, symbol: ?tameToPlayer@Horse@@UEAA_NAEAVPlayer@@_N@Z
     virtual bool tameToPlayer(class Player&, bool);
 
     // symbol: ??0Horse@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Horse(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 
-    // symbol: ?getPostTravelType@Horse@@QEAA?AW4HorsePostTravelType@@PEAVActor@@@Z
-    MCAPI ::HorsePostTravelType getPostTravelType(class Actor*);
+    // symbol: ?getPostTravelType@Horse@@QEAA?AW4HorsePostTravelType@@PEBVActor@@@Z
+    MCAPI ::HorsePostTravelType getPostTravelType(class Actor const*);
 
     // symbol: ?postAiStep@Horse@@QEAAXXZ
     MCAPI void postAiStep();
@@ -202,8 +199,8 @@ public:
     // symbol: ?postNormalTick@Horse@@QEAAXXZ
     MCAPI void postNormalTick();
 
-    // symbol: ?postTravel@Horse@@QEAAXPEAVActor@@_NW4HorsePostTravelType@@@Z
-    MCAPI void postTravel(class Actor*, bool, ::HorsePostTravelType);
+    // symbol: ?postTravel@Horse@@QEAAX_NW4HorsePostTravelType@@@Z
+    MCAPI void postTravel(bool, ::HorsePostTravelType);
 
     // symbol:
     // ?getInterpolatedRidingOffset@Horse@@SA?AVVec3@@AEBURenderRotationComponent@@AEBUStandAnimationComponent@@M@Z

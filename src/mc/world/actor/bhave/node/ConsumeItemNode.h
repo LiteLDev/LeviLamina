@@ -11,6 +11,7 @@ public:
     // prevent constructor by default
     ConsumeItemNode& operator=(ConsumeItemNode const&);
     ConsumeItemNode(ConsumeItemNode const&);
+    ConsumeItemNode();
 
 public:
     // NOLINTBEGIN
@@ -19,9 +20,6 @@ public:
 
     // vIndex: 1, symbol: ?tick@ConsumeItemNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
     virtual ::BehaviorStatus tick(class Actor&);
-
-    // symbol: ??0ConsumeItemNode@@QEAA@XZ
-    MCAPI ConsumeItemNode();
 
     // NOLINTEND
 };

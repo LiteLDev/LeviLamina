@@ -26,9 +26,5 @@ public:
     // ?isValidPlacement@IFeature@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual bool isValidPlacement(std::string const&);
 
-    // symbol: ??0NoSurfaceOreFeature@@QEAA@UIntRange@@AEBVBlockDescriptor@@11@Z
-    MCAPI
-    NoSurfaceOreFeature(struct IntRange, class BlockDescriptor const&, class BlockDescriptor const&, class BlockDescriptor const&);
-
     // NOLINTEND
 };

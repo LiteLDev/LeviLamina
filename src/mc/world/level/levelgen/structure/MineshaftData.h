@@ -8,4 +8,11 @@ public:
     MineshaftData& operator=(MineshaftData const&);
     MineshaftData(MineshaftData const&);
     MineshaftData();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ??0MineshaftData@@QEAA@_N@Z
+    MCAPI explicit MineshaftData(bool);
+
+    // NOLINTEND
 };

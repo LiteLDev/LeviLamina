@@ -36,7 +36,10 @@ public:
     // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();
 
-    // vIndex: 4, symbol:
+    // vIndex: 4, symbol: __unk_vfn_4
+    virtual void __unk_vfn_4();
+
+    // vIndex: 5, symbol:
     // ?tick@MonsterAiStepSystem@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UBlazeFlag@@@@V?$FlagComponent@ULavaSlimeFlag@@@@V?$FlagComponent@UMonsterFlag@@@@@@U?$Read@UAABBShapeComponent@@UDimensionTypeComponent@@UOffsetsComponent@@UStateVectorComponent@@@@U?$Write@UNoActionTimeComponent@@@@U?$AddRemove@$$V@@U?$GlobalRead@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
     virtual void tick(class StrictExecutionContext<
                       struct Filter<

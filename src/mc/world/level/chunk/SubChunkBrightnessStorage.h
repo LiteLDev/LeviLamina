@@ -22,5 +22,14 @@ public:
     // prevent constructor by default
     SubChunkBrightnessStorage& operator=(SubChunkBrightnessStorage const&);
     SubChunkBrightnessStorage(SubChunkBrightnessStorage const&);
-    SubChunkBrightnessStorage();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ??0SubChunkBrightnessStorage@@QEAA@XZ
+    MCAPI SubChunkBrightnessStorage();
+
+    // symbol: ?reset@SubChunkBrightnessStorage@@QEAAX_N@Z
+    MCAPI void reset(bool);
+
+    // NOLINTEND
 };

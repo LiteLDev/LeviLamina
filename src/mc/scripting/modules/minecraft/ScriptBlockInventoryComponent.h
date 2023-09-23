@@ -33,13 +33,13 @@ public:
     MCVAPI ~ScriptBlockInventoryComponent();
 
     // symbol:
-    // ?getOrCreateContainer@ScriptBlockInventoryComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptContainerWrapper@ScriptModuleMinecraft@@@Scripting@@@Scripting@@XZ
+    // ?getOrCreateContainer@ScriptBlockInventoryComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptContainerWrapper@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptContainerWrapper>>
     getOrCreateContainer();
 
     // symbol:
-    // ?getOrCreateContainerV010@ScriptBlockInventoryComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@@Scripting@@@Scripting@@XZ
+    // ?getOrCreateContainerV010@ScriptBlockInventoryComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockInventoryComponentContainer>>
     getOrCreateContainerV010();

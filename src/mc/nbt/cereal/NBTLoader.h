@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace cereal { class BasicLoader; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class NBTLoader : public ::cereal::BasicLoader {
@@ -22,8 +23,8 @@ public:
     // symbol: ??1NBTLoader@@UEAA@XZ
     MCVAPI ~NBTLoader();
 
-    // symbol: ??0NBTLoader@@QEAA@V?$not_null@PEBVCompoundTag@@@gsl@@@Z
-    MCAPI explicit NBTLoader(gsl::not_null<class CompoundTag const*>);
+    // symbol: ??0NBTLoader@@QEAA@V?$not_null@PEBVCompoundTag@@@gsl@@AEBUReflectionCtx@cereal@@@Z
+    MCAPI NBTLoader(gsl::not_null<class CompoundTag const*>, struct cereal::ReflectionCtx const&);
 
     // NOLINTEND
 };

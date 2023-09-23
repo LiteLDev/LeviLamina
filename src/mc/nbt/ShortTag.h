@@ -38,8 +38,5 @@ public:
     // vIndex: 10, symbol: ?hash@ShortTag@@UEBA_KXZ
     virtual uint64 hash() const;
 
-    // symbol: ??0ShortTag@@QEAA@F@Z
-    MCAPI explicit ShortTag(short);
-
     // NOLINTEND
 };

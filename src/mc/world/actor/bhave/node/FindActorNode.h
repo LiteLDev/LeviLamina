@@ -11,6 +11,7 @@ public:
     // prevent constructor by default
     FindActorNode& operator=(FindActorNode const&);
     FindActorNode(FindActorNode const&);
+    FindActorNode();
 
 public:
     // NOLINTBEGIN
@@ -22,9 +23,6 @@ public:
 
     // vIndex: 2, symbol: ?initializeFromDefinition@FindActorNode@@EEAAXAEAVActor@@@Z
     virtual void initializeFromDefinition(class Actor&);
-
-    // symbol: ??0FindActorNode@@QEAA@XZ
-    MCAPI FindActorNode();
 
     // NOLINTEND
 };

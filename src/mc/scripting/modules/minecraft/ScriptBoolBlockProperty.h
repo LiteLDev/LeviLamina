@@ -37,14 +37,14 @@ public:
     MCAPI
     ScriptBoolBlockProperty(std::string, class BlockState const&, std::vector<bool>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>);
 
-    // symbol: ?getState@ScriptBoolBlockProperty@ScriptModuleMinecraft@@QEBA?AV?$Result@_N@Scripting@@XZ
+    // symbol: ?getState@ScriptBoolBlockProperty@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> getState() const;
 
     // symbol: ??4ScriptBoolBlockProperty@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptBoolBlockProperty&
     operator=(class ScriptModuleMinecraft::ScriptBoolBlockProperty&&);
 
-    // symbol: ?setState@ScriptBoolBlockProperty@ScriptModuleMinecraft@@QEAA?AV?$Result@X@Scripting@@_N@Z
+    // symbol: ?setState@ScriptBoolBlockProperty@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@_N@Z
     MCAPI class Scripting::Result<void> setState(bool);
 
     // symbol:

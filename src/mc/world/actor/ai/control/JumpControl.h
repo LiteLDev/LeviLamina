@@ -42,9 +42,6 @@ public:
     // vIndex: 8, symbol: ?resetSpeedModifier@JumpControl@@MEAAXAEBVJumpControlComponent@@AEAVMob@@@Z
     virtual void resetSpeedModifier(class JumpControlComponent const&, class Mob&);
 
-    // symbol: ??1JumpControl@@UEAA@XZ
-    MCVAPI ~JumpControl();
-
     // symbol: ??0JumpControl@@QEAA@XZ
     MCAPI JumpControl();
 

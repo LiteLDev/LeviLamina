@@ -81,11 +81,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_getHomeDimension@GoHomeGoal@@AEBA?AV?$AutomaticID@VDimension@@H@@XZ
-    MCAPI class AutomaticID<class Dimension, int> _getHomeDimension() const;
-
-    // symbol: ?_getHomePos@GoHomeGoal@@AEBA?AVBlockPos@@XZ
-    MCAPI class BlockPos _getHomePos() const;
+    // symbol: ?_hasReachedHome@GoHomeGoal@@AEBA_NXZ
+    MCAPI bool _hasReachedHome() const;
 
     // symbol: ?_hasRequiredComponents@GoHomeGoal@@AEBA_NXZ
     MCAPI bool _hasRequiredComponents() const;

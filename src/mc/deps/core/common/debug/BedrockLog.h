@@ -82,18 +82,6 @@ MCAPI class Bedrock::ScopeExit initialize();
 // symbol: ?initializeLogExtensions@BedrockLog@@YAXXZ
 MCAPI void initializeLogExtensions();
 
-// symbol: ?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4ZZ
-MCAPI void
-log(::BedrockLog::LogCategory,
-    std::bitset<3>,
-    ::BedrockLog::LogRule,
-    ::LogAreaID,
-    uint,
-    char const*,
-    int,
-    char const*,
-    ...);
-
 // symbol: ?log_va@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4PEAD@Z
 MCAPI void
 log_va(::BedrockLog::LogCategory, std::bitset<3>, ::BedrockLog::LogRule, ::LogAreaID, uint, char const*, int, char const*, char*);

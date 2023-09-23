@@ -5,9 +5,6 @@
 class HitResult {
 public:
     // NOLINTBEGIN
-    // symbol: ??0HitResult@@QEAA@AEBVVec3@@0AEAVActor@@@Z
-    MCAPI HitResult(class Vec3 const&, class Vec3 const&, class Actor&);
-
     // symbol: ??0HitResult@@QEAA@AEBVVec3@@0AEAVActor@@0@Z
     MCAPI HitResult(class Vec3 const&, class Vec3 const&, class Actor&, class Vec3 const&);
 
@@ -19,6 +16,9 @@ public:
 
     // symbol: ??0HitResult@@QEAA@AEBVVec3@@00@Z
     MCAPI HitResult(class Vec3 const&, class Vec3 const&, class Vec3 const&);
+
+    // symbol: ??0HitResult@@QEAA@AEBVVec3@@0AEAVActor@@@Z
+    MCAPI HitResult(class Vec3 const&, class Vec3 const&, class Actor&);
 
     // symbol: ??0HitResult@@QEAA@AEBVVec3@@0AEBVBlockPos@@E0@Z
     MCAPI HitResult(class Vec3 const&, class Vec3 const&, class BlockPos const&, uchar, class Vec3 const&);
@@ -37,6 +37,9 @@ public:
 
     // symbol: ??4HitResult@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class HitResult& operator=(class HitResult&&);
+
+    // symbol: ?setIsHitLiquid@HitResult@@QEAAX_NAEBV1@@Z
+    MCAPI void setIsHitLiquid(bool, class HitResult const&);
 
     // symbol: ??1HitResult@@QEAA@XZ
     MCAPI ~HitResult();

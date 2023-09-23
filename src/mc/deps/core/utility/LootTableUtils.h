@@ -46,7 +46,7 @@ public:
     // symbol:
     // ?fillContainer@LootTableUtils@Util@@SAXAEAVLevel@@AEAVContainer@@AEAVRandom@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$AutomaticID@VDimension@@H@@PEAVActor@@@Z
     MCAPI static void
-    fillContainer(class Level&, class Container&, class Random&, std::string const&, class AutomaticID<class Dimension, int>, class Actor*);
+    fillContainer(class Level&, class Container&, class Random&, std::string const&, DimensionType, class Actor*);
 
     // symbol:
     // ?generateRandomDeathLoot@LootTableUtils@Util@@SA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVLootTable@@AEAVActor@@PEBVActorDamageSource@@PEBVItemStack@@PEAVPlayer@@M@Z
@@ -60,14 +60,14 @@ public:
     );
 
     // symbol:
-    // ?getRandomItems@LootTableUtils@Util@@SA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@AEAVRandom@@AEAVLootTableContext@@@Z
-    MCAPI static std::vector<class ItemStack>
-    getRandomItems(std::string const&, class Random&, class LootTableContext&);
-
-    // symbol:
     // ?getRandomItems@LootTableUtils@Util@@SA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVLootTable@@AEAVRandom@@AEAVLootTableContext@@@Z
     MCAPI static std::vector<class ItemStack>
     getRandomItems(class LootTable const&, class Random&, class LootTableContext&);
+
+    // symbol:
+    // ?getRandomItems@LootTableUtils@Util@@SA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@AEAVRandom@@AEAVLootTableContext@@@Z
+    MCAPI static std::vector<class ItemStack>
+    getRandomItems(std::string const&, class Random&, class LootTableContext&);
 
     // symbol:
     // ?givePlayer@LootTableUtils@Util@@SAHAEAVPlayer@@AEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@_N@Z

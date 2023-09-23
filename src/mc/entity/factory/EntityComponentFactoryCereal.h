@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/entity/factory/EntityComponentFactoryBase.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 class EntityComponentFactoryCereal : public ::EntityComponentFactoryBase {
 public:
     // prevent constructor by default
@@ -14,6 +19,15 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??1EntityComponentFactoryCereal@@UEAA@XZ
+    MCVAPI ~EntityComponentFactoryCereal();
+
+    // symbol: ??0EntityComponentFactoryCereal@@QEAA@AEAUReflectionCtx@cereal@@@Z
+    MCAPI explicit EntityComponentFactoryCereal(struct cereal::ReflectionCtx&);
+
+    // symbol: ?cerealContext@EntityComponentFactoryCereal@@QEBAAEBUReflectionCtx@cereal@@XZ
+    MCAPI struct cereal::ReflectionCtx const& cerealContext() const;
+
     // symbol:
     // ?serializeComponentDefinitions@EntityComponentFactoryCereal@@QEBAXAEAVDefinitionInstanceGroup@@AEBV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@AEBVSemVersion@@@Z
     MCAPI void

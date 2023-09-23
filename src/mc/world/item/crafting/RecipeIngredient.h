@@ -24,9 +24,6 @@ public:
     // symbol: ??1RecipeIngredient@@UEAA@XZ
     MCVAPI ~RecipeIngredient();
 
-    // symbol: ??0RecipeIngredient@@QEAA@AEBVItemDescriptor@@G@Z
-    MCAPI RecipeIngredient(class ItemDescriptor const&, ushort);
-
     // symbol: ??0RecipeIngredient@@QEAA@AEBVBlock@@G@Z
     MCAPI RecipeIngredient(class Block const&, ushort);
 
@@ -42,17 +39,17 @@ public:
     // symbol: ??0RecipeIngredient@@QEAA@AEBVItem@@HG@Z
     MCAPI RecipeIngredient(class Item const&, int, ushort);
 
-    // symbol: ??0RecipeIngredient@@QEAA@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI explicit RecipeIngredient(class ReadOnlyBinaryStream&);
+    // symbol: ??0RecipeIngredient@@QEAA@AEBVItemDescriptor@@G@Z
+    MCAPI RecipeIngredient(class ItemDescriptor const&, ushort);
 
     // symbol: ??0RecipeIngredient@@QEAA@$$QEAV0@@Z
     MCAPI RecipeIngredient(class RecipeIngredient&&);
 
+    // symbol: ??0RecipeIngredient@@QEAA@AEAVReadOnlyBinaryStream@@@Z
+    MCAPI explicit RecipeIngredient(class ReadOnlyBinaryStream&);
+
     // symbol: ??0RecipeIngredient@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HG@Z
     MCAPI RecipeIngredient(std::string_view, int, ushort);
-
-    // symbol: ?isEmpty@RecipeIngredient@@QEBA_NXZ
-    MCAPI bool isEmpty() const;
 
     // symbol: ?EMPTY_INGREDIENT@RecipeIngredient@@2V1@A
     MCAPI static class RecipeIngredient EMPTY_INGREDIENT;

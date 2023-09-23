@@ -26,9 +26,6 @@ public:
     // symbol: ?getInt@BlockStateMeta@@QEBA?BHH@Z
     MCAPI int const getInt(int) const;
 
-    // symbol: ?getName@BlockStateMeta@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string const& getName() const;
-
     // symbol: ?getState@BlockStateMeta@@QEBAAEBVBlockState@@XZ
     MCAPI class BlockState const& getState() const;
 
@@ -37,9 +34,6 @@ public:
 
     // symbol: ?getType@BlockStateMeta@@QEBA?BW4Type@Tag@@XZ
     MCAPI ::Tag::Type const getType() const;
-
-    // symbol: ?indexOf@BlockStateMeta@@QEBAHAEB_K@Z
-    MCAPI int indexOf(uint64 const&) const;
 
     // NOLINTEND
 };

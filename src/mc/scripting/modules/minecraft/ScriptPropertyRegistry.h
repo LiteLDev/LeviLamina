@@ -11,6 +11,7 @@
 class ServerLevel;
 namespace ScriptModuleMinecraft { class ScriptActorType; }
 namespace ScriptModuleMinecraft { class ScriptDynamicPropertiesDefinition; }
+namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -28,12 +29,12 @@ public:
     MCAPI explicit ScriptPropertyRegistry(class ServerLevel&);
 
     // symbol:
-    // ?registerEntityTypeDynamicProperties@ScriptPropertyRegistry@ScriptModuleMinecraft@@QEAA?AV?$Result@X@Scripting@@AEBVScriptDynamicPropertiesDefinition@2@AEAVScriptActorType@2@@Z
+    // ?registerEntityTypeDynamicProperties@ScriptPropertyRegistry@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@VWeakLifetimeScope@4@AEBVScriptDynamicPropertiesDefinition@2@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VScriptActorType@ScriptModuleMinecraft@@@std@@@Z
     MCAPI class Scripting::Result<void>
-    registerEntityTypeDynamicProperties(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&, class ScriptModuleMinecraft::ScriptActorType&);
+    registerEntityTypeDynamicProperties(class Scripting::WeakLifetimeScope, class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&, std::variant<std::string, class ScriptModuleMinecraft::ScriptActorType>);
 
     // symbol:
-    // ?registerWorldDynamicProperties@ScriptPropertyRegistry@ScriptModuleMinecraft@@QEAA?AV?$Result@X@Scripting@@AEBVScriptDynamicPropertiesDefinition@2@@Z
+    // ?registerWorldDynamicProperties@ScriptPropertyRegistry@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBVScriptDynamicPropertiesDefinition@2@@Z
     MCAPI class Scripting::Result<void>
     registerWorldDynamicProperties(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&);
 

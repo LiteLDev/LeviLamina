@@ -18,8 +18,11 @@ public:
     // symbol: ??0RakNetGUID@RakNet@@QEAA@XZ
     MCAPI RakNetGUID();
 
-    // symbol: ?ToString@RakNetGUID@RakNet@@QEBAPEBDXZ
-    MCAPI char const* ToString() const;
+    // symbol: ?ToString@RakNetGUID@RakNet@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string ToString() const;
+
+    // symbol: ??9RakNetGUID@RakNet@@QEBA_NAEBU01@@Z
+    MCAPI bool operator!=(struct RakNet::RakNetGUID const&) const;
 
     // symbol: ??8RakNetGUID@RakNet@@QEBA_NAEBU01@@Z
     MCAPI bool operator==(struct RakNet::RakNetGUID const&) const;

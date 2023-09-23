@@ -13,9 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0Event@CodeBuilder@Util@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI explicit Event(std::string const&);
-
     // symbol: ??1Event@CodeBuilder@Util@@QEAA@XZ
     MCAPI ~Event();
 

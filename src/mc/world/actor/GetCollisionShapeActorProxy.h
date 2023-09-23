@@ -48,8 +48,8 @@ public:
     // vIndex: 10, symbol: ?hasPassenger@GetCollisionShapeActorProxy@@UEBA_NXZ
     virtual bool hasPassenger() const;
 
-    // symbol: ??0GetCollisionShapeActorProxy@@QEAA@AEBUIActorMovementProxy@@@Z
-    MCAPI explicit GetCollisionShapeActorProxy(struct IActorMovementProxy const&);
+    // symbol: ??0GetCollisionShapeActorProxy@@QEAA@AEBVActor@@@Z
+    MCAPI explicit GetCollisionShapeActorProxy(class Actor const&);
 
     // NOLINTEND
 };

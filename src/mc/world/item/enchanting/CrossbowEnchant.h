@@ -44,10 +44,6 @@ public:
     // vIndex: 14, symbol: ?_isValidEnchantmentTypeForCategory@CrossbowEnchant@@EEBA_NW4Type@Enchant@@@Z
     virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type) const;
 
-    // symbol:
-    // ??0CrossbowEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2H_NH@Z
-    MCAPI CrossbowEnchant(::Enchant::Type, ::Enchant::Frequency, std::string_view, std::string_view, int, bool, int);
-
     // NOLINTEND
 
 private:

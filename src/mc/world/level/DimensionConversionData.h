@@ -11,6 +11,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0DimensionConversionData@@QEAA@AEBVVec3@@H@Z
+    MCAPI DimensionConversionData(class Vec3 const&, int);
+
     // symbol: ?getNetherScale@DimensionConversionData@@QEBAHXZ
     MCAPI int getNetherScale() const;
 

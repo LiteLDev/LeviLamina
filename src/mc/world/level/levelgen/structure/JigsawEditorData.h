@@ -16,13 +16,13 @@ public:
     // symbol: ??0JigsawEditorData@@QEAA@XZ
     MCAPI JigsawEditorData();
 
-    // symbol: ??0JigsawEditorData@@QEAA@$$QEAV0@@Z
-    MCAPI JigsawEditorData(class JigsawEditorData&&);
-
     // symbol:
     // ??0JigsawEditorData@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000W4JigsawJointType@@@Z
     MCAPI
     JigsawEditorData(std::string const&, std::string const&, std::string const&, std::string const&, ::JigsawJointType);
+
+    // symbol: ??0JigsawEditorData@@QEAA@$$QEAV0@@Z
+    MCAPI JigsawEditorData(class JigsawEditorData&&);
 
     // symbol: ?getFinalBlock@JigsawEditorData@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getFinalBlock() const;

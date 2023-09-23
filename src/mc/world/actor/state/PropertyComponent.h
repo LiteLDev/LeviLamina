@@ -14,11 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0PropertyComponent@@QEAA@$$QEAV0@@Z
-    MCAPI PropertyComponent(class PropertyComponent&&);
-
     // symbol: ??0PropertyComponent@@QEAA@V?$not_null@V?$shared_ptr@$$CBVPropertyGroup@@@std@@@gsl@@AEAVRenderParams@@@Z
     MCAPI PropertyComponent(gsl::not_null<std::shared_ptr<class PropertyGroup const>>, class RenderParams&);
+
+    // symbol: ??0PropertyComponent@@QEAA@$$QEAV0@@Z
+    MCAPI PropertyComponent(class PropertyComponent&&);
 
     // symbol: ?addAdditionalSaveData@PropertyComponent@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void addAdditionalSaveData(class CompoundTag&) const;
@@ -27,14 +27,29 @@ public:
     // ?applyPendingChanges@PropertyComponent@@QEAAXAEBV?$unordered_map@_KV?$variant@HM_N_K@std@@U?$hash@_K@2@U?$equal_to@_K@2@V?$allocator@U?$pair@$$CB_KV?$variant@HM_N_K@std@@@std@@@2@@std@@@Z
     MCAPI void applyPendingChanges(std::unordered_map<uint64, std::variant<int, float, bool, uint64>> const&);
 
+    // symbol: ?getBool@PropertyComponent@@QEBA_N_K@Z
+    MCAPI bool getBool(uint64) const;
+
+    // symbol: ?getFloat@PropertyComponent@@QEBAM_K@Z
+    MCAPI float getFloat(uint64) const;
+
+    // symbol: ?getInt@PropertyComponent@@QEBAH_K@Z
+    MCAPI int getInt(uint64) const;
+
     // symbol: ?getMolangValue@PropertyComponent@@QEBA_N_KAEAUMolangScriptArg@@@Z
     MCAPI bool getMolangValue(uint64, struct MolangScriptArg&) const;
 
     // symbol: ?getPropertyType@PropertyComponent@@QEBA?AW4ContainedType@PropertyMetadata@@_K@Z
     MCAPI ::PropertyMetadata::ContainedType getPropertyType(uint64) const;
 
+    // symbol: ?getString@PropertyComponent@@QEBAAEBVHashedString@@_K@Z
+    MCAPI class HashedString const& getString(uint64) const;
+
     // symbol: ?hasDirtyProperties@PropertyComponent@@QEBA_NXZ
     MCAPI bool hasDirtyProperties() const;
+
+    // symbol: ??4PropertyComponent@@QEAAAEAV0@$$QEAV0@@Z
+    MCAPI class PropertyComponent& operator=(class PropertyComponent&&);
 
     // symbol: ?packAllSyncData@PropertyComponent@@QEBA?AUPropertySyncData@@XZ
     MCAPI struct PropertySyncData packAllSyncData() const;

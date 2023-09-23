@@ -8,11 +8,6 @@
 #include "mc/resources/PackType.h"
 #include "mc/resources/interface/DirectoryPackSource.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace mce { class UUID; }
-// clang-format on
-
 class WorldTemplatePackSource : public ::DirectoryPackSource {
 public:
     // prevent constructor by default
@@ -29,18 +24,6 @@ public:
     // ?load@WorldTemplatePackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
     virtual class PackSourceReport
     load(class IPackManifestFactory&, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
-
-    // symbol:
-    // ??0WorldTemplatePackSource@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@$$CBVWorldTemplateManager@@@Bedrock@@@gsl@@AEBVUUID@mce@@W4PackType@@W4PackOrigin@@@Z
-    MCAPI WorldTemplatePackSource(
-        gsl::not_null<class Bedrock::NonOwnerPointer<class WorldTemplateManager const>> const&,
-        class mce::UUID const&,
-        ::PackType,
-        ::PackOrigin
-    );
-
-    // symbol: ?getWorldTemplateId@WorldTemplatePackSource@@QEBAAEBVUUID@mce@@XZ
-    MCAPI class mce::UUID const& getWorldTemplateId() const;
 
     // NOLINTEND
 };

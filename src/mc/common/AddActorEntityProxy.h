@@ -23,5 +23,8 @@ public:
     // vIndex: 2, symbol: ?reloadActor@AddActorEntityProxy@@UEAAXAEAVActor@@@Z
     virtual void reloadActor(class Actor&);
 
+    // symbol: ??0AddActorEntityProxy@@QEAA@AEAVDimension@@@Z
+    MCAPI explicit AddActorEntityProxy(class Dimension&);
+
     // NOLINTEND
 };

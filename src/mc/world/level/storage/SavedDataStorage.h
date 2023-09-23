@@ -14,9 +14,6 @@ public:
     // symbol: ??1SavedDataStorage@@UEAA@XZ
     MCVAPI ~SavedDataStorage();
 
-    // symbol: ??0SavedDataStorage@@QEAA@PEAVLevelStorage@@@Z
-    MCAPI explicit SavedDataStorage(class LevelStorage*);
-
     // symbol:
     // ?loadAndSet@SavedDataStorage@@QEAA_NAEAVSavedData@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI bool loadAndSet(class SavedData&, std::string const&);

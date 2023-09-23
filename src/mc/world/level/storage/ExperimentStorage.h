@@ -16,6 +16,9 @@ public:
     // symbol: ??4ExperimentStorage@@QEAAAEAV0@AEBV0@@Z
     MCAPI class ExperimentStorage& operator=(class ExperimentStorage const&);
 
+    // symbol: ?wereAnyExperimentsEverToggled@ExperimentStorage@@QEBA_NXZ
+    MCAPI bool wereAnyExperimentsEverToggled() const;
+
     // symbol: ??1ExperimentStorage@@QEAA@XZ
     MCAPI ~ExperimentStorage();
 

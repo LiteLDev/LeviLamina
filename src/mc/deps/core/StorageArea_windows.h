@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/FileAccessType.h"
+#include "mc/deps/core/FileStorageArea.h"
 #include "mc/deps/core/WriteOperation.h"
 
 // auto generated forward declare list
@@ -79,11 +80,11 @@ public:
     // vIndex: 17, symbol: ?preemptiveExtendSize@StorageArea_windows@Core@@UEAAX_KV?$function@$$A6AXXZ@std@@1@Z
     virtual void preemptiveExtendSize(uint64, std::function<void(void)>, std::function<void(void)>);
 
-    // vIndex: 18, symbol: ?unloadFlatFileManifests@FileStorageArea@Core@@UEAAX_N@Z
-    virtual void unloadFlatFileManifests(bool);
+    // vIndex: 18, symbol: ?getAvailableUserStorageSize@StorageArea_windows@Core@@UEAA_KXZ
+    virtual uint64 getAvailableUserStorageSize();
 
-    // vIndex: 19, symbol: __unk_vfn_19
-    virtual void __unk_vfn_19();
+    // vIndex: 19, symbol: ?unloadFlatFileManifests@FileStorageArea@Core@@UEAAX_N@Z
+    virtual void unloadFlatFileManifests(bool);
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
@@ -100,17 +101,27 @@ public:
     // vIndex: 24, symbol: __unk_vfn_24
     virtual void __unk_vfn_24();
 
-    // vIndex: 25, symbol: ?setSaveDataIcon@FileStorageArea@Core@@UEAA?AVResult@2@AEBVPath@2@@Z
+    // vIndex: 25, symbol: __unk_vfn_25
+    virtual void __unk_vfn_25();
+
+    // vIndex: 26, symbol: ?setSaveDataIcon@FileStorageArea@Core@@UEAA?AVResult@2@AEBVPath@2@@Z
     virtual class Core::Result setSaveDataIcon(class Core::Path const&);
 
-    // vIndex: 26, symbol: ?shouldAllowCommit@FileStorageArea@Core@@UEBA_NXZ
+    // vIndex: 27, symbol: ?shouldAllowCommit@FileStorageArea@Core@@UEBA_NXZ
     virtual bool shouldAllowCommit() const;
 
-    // vIndex: 27, symbol: ?trackBytesWritten@FileStorageArea@Core@@UEAAXAEBVPath@2@_KW4WriteOperation@2@@Z
+    // vIndex: 28, symbol: ?trackBytesWritten@FileStorageArea@Core@@UEAAXAEBVPath@2@_KW4WriteOperation@2@@Z
     virtual void trackBytesWritten(class Core::Path const&, uint64, ::Core::WriteOperation);
 
-    // vIndex: 28, symbol: ?trackWriteOperation@FileStorageArea@Core@@UEAAXAEBVPath@2@W4WriteOperation@2@@Z
+    // vIndex: 29, symbol: ?trackWriteOperation@FileStorageArea@Core@@UEAAXAEBVPath@2@W4WriteOperation@2@@Z
     virtual void trackWriteOperation(class Core::Path const&, ::Core::WriteOperation);
+
+    // vIndex: 30, symbol: __unk_vfn_30
+    virtual void __unk_vfn_30();
+
+    // vIndex: 31, symbol:
+    // ?getStorageAreaSpaceInfo@StorageArea_windows@Core@@UEAA?AUStorageAreaSpaceInfo@FileStorageArea@2@XZ
+    virtual struct Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo();
 
     // symbol: ??0StorageArea_windows@Core@@QEAA@W4FileAccessType@1@AEBVPath@1@_N@Z
     MCAPI StorageArea_windows(::Core::FileAccessType, class Core::Path const&, bool);

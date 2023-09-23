@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct Schema; }
 // clang-format on
 
@@ -14,11 +15,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0BlockDefinition@@QEAA@$$QEAU0@@Z
-    MCAPI BlockDefinition(struct BlockDefinition&&);
-
     // symbol: ??0BlockDefinition@@QEAA@XZ
     MCAPI BlockDefinition();
+
+    // symbol: ??0BlockDefinition@@QEAA@$$QEAU0@@Z
+    MCAPI BlockDefinition(struct BlockDefinition&&);
 
     // symbol: ??0BlockDefinition@@QEAA@AEBU0@@Z
     MCAPI BlockDefinition(struct BlockDefinition const&);
@@ -30,25 +31,23 @@ public:
     MCAPI ~BlockDefinition();
 
     // symbol:
-    // ?createBlockAbstractCerealSchema@BlockDefinition@@SA?AUSchema@cereal@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static struct cereal::Schema createBlockAbstractCerealSchema(std::string const&);
+    // ?createBlockAbstractCerealSchema@BlockDefinition@@SA?AUSchema@cereal@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAUReflectionCtx@3@@Z
+    MCAPI static struct cereal::Schema
+    createBlockAbstractCerealSchema(std::string const&, struct cereal::ReflectionCtx&);
 
-    // symbol: ?registerBlockDefinitionTypes@BlockDefinition@@SAXXZ
-    MCAPI static void registerBlockDefinitionTypes();
-
-    // NOLINTEND
-
-private:
-    // NOLINTBEGIN
-    // symbol: ?mDocumentUpgrader@BlockDefinition@@0VCerealDocumentUpgrader@@A
-    MCAPI static class CerealDocumentUpgrader mDocumentUpgrader;
+    // symbol: ?registerBlockDefinitionTypes@BlockDefinition@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void registerBlockDefinitionTypes(struct cereal::ReflectionCtx&);
 
     // NOLINTEND
 
-    // member accessor
-public:
+    // private:
     // NOLINTBEGIN
-    auto& $mDocumentUpgrader() { return mDocumentUpgrader; }
+    // symbol: ?getEnTTMetaType@BlockDefinition@@CA?AVmeta_type@entt@@AEAUReflectionCtx@cereal@@@Z
+    MCAPI static entt::meta_type getEnTTMetaType(struct cereal::ReflectionCtx&);
+
+    // symbol:
+    // ?getPropCerealDocumentUpgrader@BlockDefinition@@CAAEAVCerealDocumentUpgrader@@AEAUReflectionCtx@cereal@@@Z
+    MCAPI static class CerealDocumentUpgrader& getPropCerealDocumentUpgrader(struct cereal::ReflectionCtx&);
 
     // NOLINTEND
 };

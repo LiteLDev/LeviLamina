@@ -62,5 +62,8 @@ public:
     // vIndex: 44, symbol: ?setOutputSignal@ComparatorBlockActor@@UEAAXH@Z
     virtual void setOutputSignal(int);
 
+    // symbol: ??0ComparatorBlockActor@@QEAA@AEBVBlockPos@@@Z
+    MCAPI explicit ComparatorBlockActor(class BlockPos const&);
+
     // NOLINTEND
 };

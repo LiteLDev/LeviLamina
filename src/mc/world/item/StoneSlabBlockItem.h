@@ -78,5 +78,8 @@ public:
     // vIndex: 116, symbol: __unk_vfn_116
     virtual void __unk_vfn_116();
 
+    // symbol: ??0StoneSlabBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+    MCAPI StoneSlabBlockItem(std::string const&, int);
+
     // NOLINTEND
 };

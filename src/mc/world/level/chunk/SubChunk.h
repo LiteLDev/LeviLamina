@@ -21,14 +21,14 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0SubChunk@@QEAA@PEBVBlock@@_N1AEAVSpinLock@@C@Z
+    MCAPI SubChunk(class Block const*, bool, bool, class SpinLock&, schar);
+
     // symbol: ??0SubChunk@@QEAA@$$QEAU0@@Z
     MCAPI SubChunk(struct SubChunk&&);
 
     // symbol: ??0SubChunk@@QEAA@XZ
     MCAPI SubChunk();
-
-    // symbol: ??0SubChunk@@QEAA@PEBVBlock@@_N1AEAVSpinLock@@C@Z
-    MCAPI SubChunk(class Block const*, bool, bool, class SpinLock&, schar);
 
     // symbol:
     // ?deserialize@SubChunk@@QEAAXAEAVIDataInput@@AEBVBlockPalette@@AEBVSubChunkPos@@V?$optional@PEAUDeserializationChanges@@@std@@@Z
@@ -117,18 +117,12 @@ public:
     // symbol: ??1SubChunk@@QEAA@XZ
     MCAPI ~SubChunk();
 
-    // symbol: ?flushGarbageCollectors@SubChunk@@SAXXZ
-    MCAPI static void flushGarbageCollectors();
-
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?_createBlockLightStorage@SubChunk@@IEAAXXZ
     MCAPI void _createBlockLightStorage();
-
-    // symbol: ?_createSkyLightStorage@SubChunk@@IEAAXXZ
-    MCAPI void _createSkyLightStorage();
 
     // symbol:
     // ?_replaceBlocks@SubChunk@@IEAAXEV?$unique_ptr@V?$SubChunkStorage@VBlock@@@@U?$default_delete@V?$SubChunkStorage@VBlock@@@@@std@@@std@@AEAV?$LockGuard@VSpinLock@@@Threading@Bedrock@@@Z

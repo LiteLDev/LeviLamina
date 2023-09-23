@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/wrapper/optional_ref.h"
 #include "mc/enums/FertilizerType.h"
+#include "mc/enums/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/utils/BlockActorType.h"
 #include "mc/world/level/block/utils/BlockOcclusionType.h"
@@ -35,6 +36,9 @@ public:
     // symbol: ??0Block@@QEAA@GV?$not_null@PEAVBlockLegacy@@@gsl@@VCompoundTag@@AEBI@Z
     MCAPI Block(ushort, gsl::not_null<class BlockLegacy*>, class CompoundTag, uint const&);
 
+    // symbol: ??0Block@@QEAA@GV?$not_null@PEAVBlockLegacy@@@gsl@@@Z
+    MCAPI Block(ushort, gsl::not_null<class BlockLegacy*>);
+
     // symbol:
     // ?addAABBs@Block@@QEBAXAEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
     MCAPI void
@@ -52,14 +56,11 @@ public:
     // symbol: ?allowStateMismatchOnPlacement@Block@@QEBA_NAEBV1@@Z
     MCAPI bool allowStateMismatchOnPlacement(class Block const&) const;
 
-    // symbol: ?animateTick@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    MCAPI void animateTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    // symbol: ?asItemInstance@Block@@QEBA?AVItemInstance@@AEAVBlockSource@@AEBVBlockPos@@_N@Z
+    MCAPI class ItemInstance asItemInstance(class BlockSource&, class BlockPos const&, bool) const;
 
     // symbol: ?asItemInstance@Block@@QEBA?AVItemInstance@@AEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI class ItemInstance asItemInstance(class BlockSource&, class BlockPos const&) const;
-
-    // symbol: ?asItemInstance@Block@@QEBA?AVItemInstance@@AEAVBlockSource@@AEBVBlockPos@@_N@Z
-    MCAPI class ItemInstance asItemInstance(class BlockSource&, class BlockPos const&, bool) const;
 
     // symbol: ?attack@Block@@QEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI bool attack(class Player*, class BlockPos const&) const;
@@ -82,11 +83,11 @@ public:
     // symbol: ?canBeBrokenFromFalling@Block@@QEBA_NXZ
     MCAPI bool canBeBrokenFromFalling() const;
 
-    // symbol: ?canBeBuiltOver@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool canBeBuiltOver(class BlockSource&, class BlockPos const&) const;
-
     // symbol: ?canBeBuiltOver@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlockItem@@@Z
     MCAPI bool canBeBuiltOver(class BlockSource&, class BlockPos const&, class BlockItem const&) const;
+
+    // symbol: ?canBeBuiltOver@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    MCAPI bool canBeBuiltOver(class BlockSource&, class BlockPos const&) const;
 
     // symbol: ?canBeFertilized@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBV1@@Z
     MCAPI bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
@@ -136,14 +137,16 @@ public:
     // symbol: ?checkIsPathable@Block@@QEBA_NAEAVActor@@AEBVBlockPos@@1@Z
     MCAPI bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
 
-    // symbol: ?clip@Block@@QEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2_NAEBVAABB@@@Z
+    // symbol: ?clip@Block@@QEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2W4ShapeType@@AEBVAABB@@@Z
     MCAPI class HitResult
-    clip(class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, bool, class AABB const&)
+    clip(class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, ::ShapeType, class AABB const&)
         const;
 
-    // symbol: ?clip@Block@@QEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2_N@Z
+    // symbol:
+    // ?clip@Block@@QEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
     MCAPI class HitResult
-    clip(class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, bool) const;
+    clip(class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
 
     // symbol: ?computeRawSerializationIdHashForNetwork@Block@@QEBAIXZ
     MCAPI uint computeRawSerializationIdHashForNetwork() const;
@@ -170,8 +173,11 @@ public:
     // symbol: ?executeTrigger@Block@@QEBA_NAEBVDefinitionTrigger@@AEAVRenderParams@@@Z
     MCAPI bool executeTrigger(class DefinitionTrigger const&, class RenderParams&) const;
 
-    // symbol: ?getAABB@Block@@QEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@_N@Z
-    MCAPI class AABB const& getAABB(class IConstBlockSource const&, class BlockPos const&, class AABB&, bool) const;
+    // symbol: ?finalizeBlockComponentStorage@Block@@QEAAXXZ
+    MCAPI void finalizeBlockComponentStorage();
+
+    // symbol: ?forEachState@Block@@QEBAXV?$function@$$A6A_NAEBVBlockState@@H@Z@std@@@Z
+    MCAPI void forEachState(std::function<bool(class BlockState const&, int)>) const;
 
     // symbol: ?getAllowsRunes@Block@@QEBA_NXZ
     MCAPI bool getAllowsRunes() const;
@@ -188,11 +194,14 @@ public:
     getCollisionShape(class AABB&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // symbol: ?getColor@Block@@QEBAHXZ
-    MCAPI int getColor() const;
+    // symbol: ?getCollisionShapeForCamera@Block@@QEBA_NAEAVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@@Z
+    MCAPI bool getCollisionShapeForCamera(class AABB&, class IConstBlockSource const&, class BlockPos const&) const;
 
     // symbol: ?getColor@Block@@QEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI int getColor(class BlockSource&, class BlockPos const&) const;
+
+    // symbol: ?getColor@Block@@QEBAHXZ
+    MCAPI int getColor() const;
 
     // symbol: ?getComparatorSignal@Block@@QEBAHAEAVBlockSource@@AEBVBlockPos@@E@Z
     MCAPI int getComparatorSignal(class BlockSource&, class BlockPos const&, uchar) const;
@@ -254,6 +263,9 @@ public:
     // symbol: ?getName@Block@@QEBAAEBVHashedString@@XZ
     MCAPI class HashedString const& getName() const;
 
+    // symbol: ?getOutline@Block@@QEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    MCAPI class AABB const& getOutline(class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
+
     // symbol: ?getPlacementBlock@Block@@QEBAAEBV1@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
     MCAPI class Block const&
     getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
@@ -279,8 +291,9 @@ public:
     // symbol: ?getVisualShape@Block@@QEBAAEBVAABB@@AEAV2@@Z
     MCAPI class AABB const& getVisualShape(class AABB&) const;
 
-    // symbol: ?getVisualShapeInWorld@Block@@QEBAAEBVAABB@@AEAVBlockSource@@AEBVBlockPos@@AEAV2@@Z
-    MCAPI class AABB const& getVisualShapeInWorld(class BlockSource&, class BlockPos const&, class AABB&) const;
+    // symbol: ?getVisualShapeInWorld@Block@@QEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    MCAPI class AABB const&
+    getVisualShapeInWorld(class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
     // symbol: ?hasBlockEntity@Block@@QEBA_NXZ
     MCAPI bool hasBlockEntity() const;
@@ -321,8 +334,8 @@ public:
     // symbol: ?isButtonBlock@Block@@QEBA_NXZ
     MCAPI bool isButtonBlock() const;
 
-    // symbol: ?isClimbable@Block@@QEBA_NAEBUIActorMovementProxy@@@Z
-    MCAPI bool isClimbable(struct IActorMovementProxy const&) const;
+    // symbol: ?isClimbable@Block@@QEBA_NAEBVActor@@@Z
+    MCAPI bool isClimbable(class Actor const&) const;
 
     // symbol: ?isContainerBlock@Block@@QEBA_NXZ
     MCAPI bool isContainerBlock() const;
@@ -414,20 +427,23 @@ public:
     // symbol: ?keepState@Block@@QEBAAEBV1@AEBVBlockState@@@Z
     MCAPI class Block const& keepState(class BlockState const&) const;
 
+    // symbol: ?keepStates@Block@@QEBAAEBV1@AEBV?$vector@PEBVBlockState@@V?$allocator@PEBVBlockState@@@std@@@std@@@Z
+    MCAPI class Block const& keepStates(std::vector<class BlockState const*> const&) const;
+
     // symbol: ?mayConsumeFertilizer@Block@@QEBA_NAEAVBlockSource@@@Z
     MCAPI bool mayConsumeFertilizer(class BlockSource&) const;
-
-    // symbol: ?mayPick@Block@@QEBA_NXZ
-    MCAPI bool mayPick() const;
 
     // symbol: ?mayPick@Block@@QEBA_NAEBVBlockSource@@_N@Z
     MCAPI bool mayPick(class BlockSource const&, bool) const;
 
-    // symbol: ?mayPlace@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    MCAPI bool mayPlace(class BlockSource&, class BlockPos const&, uchar) const;
+    // symbol: ?mayPick@Block@@QEBA_NXZ
+    MCAPI bool mayPick() const;
 
     // symbol: ?mayPlace@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool mayPlace(class BlockSource&, class BlockPos const&) const;
+
+    // symbol: ?mayPlace@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
+    MCAPI bool mayPlace(class BlockSource&, class BlockPos const&, uchar) const;
 
     // symbol: ?mayPlaceOn@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool mayPlaceOn(class BlockSource&, class BlockPos const&) const;
@@ -585,15 +601,11 @@ public:
     // symbol: ?_getBlockOcclusionType@Block@@AEBA?AW4BlockOcclusionType@@XZ
     MCAPI ::BlockOcclusionType _getBlockOcclusionType() const;
 
-    // symbol: ?_isSolid@Block@@AEBA_NXZ
-    MCAPI bool _isSolid() const;
+    // symbol: ?_isUnitCube@Block@@AEBA_NXZ
+    MCAPI bool _isUnitCube() const;
 
     // symbol: ?_lockRegistryForRead@Block@@AEBA?AVBlockTypeRegistryReadLock@@XZ
     MCAPI class BlockTypeRegistryReadLock _lockRegistryForRead() const;
-
-    // symbol:
-    // ?_tryGetTransformThenRotationMatrix@Block@@AEBA?AV?$unique_ptr@VMatrix@@U?$default_delete@VMatrix@@@std@@@std@@XZ
-    MCAPI std::unique_ptr<class Matrix> _tryGetTransformThenRotationMatrix() const;
 
     // symbol: ?_tryInitEntityIfNotInitialized@Block@@AEAAXXZ
     MCAPI void _tryInitEntityIfNotInitialized();

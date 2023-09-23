@@ -22,10 +22,12 @@ public:
     // prevent constructor by default
     GeneticsComponent& operator=(GeneticsComponent const&);
     GeneticsComponent(GeneticsComponent const&);
-    GeneticsComponent();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0GeneticsComponent@@QEAA@XZ
+    MCAPI GeneticsComponent();
+
     // symbol: ?addAdditionalSaveData@GeneticsComponent@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void addAdditionalSaveData(class CompoundTag&) const;
 

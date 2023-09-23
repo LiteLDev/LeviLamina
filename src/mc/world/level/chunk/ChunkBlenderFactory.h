@@ -31,9 +31,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ChunkBlenderFactory@@QEAA@AEAVDimension@@@Z
-    MCAPI explicit ChunkBlenderFactory(class Dimension&);
-
     // symbol: ?getOrCreateChunkBlender@ChunkBlenderFactory@@QEAA?AV?$shared_ptr@VChunkBlender@@@std@@AEBVChunkPos@@@Z
     MCAPI std::shared_ptr<class ChunkBlender> getOrCreateChunkBlender(class ChunkPos const&);
 

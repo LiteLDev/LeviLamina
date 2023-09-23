@@ -11,6 +11,7 @@ public:
     // prevent constructor by default
     SelectorBehaviorNode& operator=(SelectorBehaviorNode const&);
     SelectorBehaviorNode(SelectorBehaviorNode const&);
+    SelectorBehaviorNode();
 
 public:
     // NOLINTBEGIN
@@ -22,9 +23,6 @@ public:
 
     // vIndex: 2, symbol: ?initializeFromDefinition@SelectorBehaviorNode@@MEAAXAEAVActor@@@Z
     virtual void initializeFromDefinition(class Actor&);
-
-    // symbol: ??0SelectorBehaviorNode@@QEAA@XZ
-    MCAPI SelectorBehaviorNode();
 
     // NOLINTEND
 };

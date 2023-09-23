@@ -13,12 +13,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?toUtf8@StringConversions@Core@@SAHPEB_WHPEADH@Z
-    MCAPI static int toUtf8(wchar_t const*, int, char*, int);
-
     // symbol:
     // ?toUtf8@StringConversions@Core@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@4@@Z
     MCAPI static std::string toUtf8(std::wstring const&);
+
+    // symbol: ?toUtf8@StringConversions@Core@@SAHPEB_WHPEADH@Z
+    MCAPI static int toUtf8(wchar_t const*, int, char*, int);
 
     // symbol:
     // ?toUtf8@StringConversions@Core@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEB_WH@Z

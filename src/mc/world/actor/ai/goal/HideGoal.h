@@ -45,4 +45,11 @@ public:
     MCAPI HideGoal(class Mob&, float, float, float, ::POIType);
 
     // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_sendSoundTheAlarmAchievement@HideGoal@@AEBAXXZ
+    MCAPI void _sendSoundTheAlarmAchievement() const;
+
+    // NOLINTEND
 };

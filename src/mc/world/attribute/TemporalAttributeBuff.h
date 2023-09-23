@@ -44,17 +44,8 @@ public:
     // symbol: ?getBaseAmount@TemporalAttributeBuff@@QEBAMXZ
     MCAPI float getBaseAmount() const;
 
-    // symbol: ?getDuration@TemporalAttributeBuff@@QEBAHXZ
-    MCAPI int getDuration() const;
-
-    // symbol: ?getLifeTimer@TemporalAttributeBuff@@QEBAHXZ
-    MCAPI int getLifeTimer() const;
-
     // symbol: ??4TemporalAttributeBuff@@QEAAAEAV0@AEBV0@@Z
     MCAPI class TemporalAttributeBuff& operator=(class TemporalAttributeBuff const&);
-
-    // symbol: ?serializationSetLifeTime@TemporalAttributeBuff@@QEAAXH@Z
-    MCAPI void serializationSetLifeTime(int);
 
     // NOLINTEND
 };

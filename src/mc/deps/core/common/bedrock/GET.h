@@ -4,7 +4,7 @@
 
 namespace Bedrock::Http::MethodType {
 
-class GET {
+struct GET {
 public:
     // prevent constructor by default
     GET& operator=(GET const&);

@@ -62,6 +62,15 @@ public:
     OceanRuinPieces(OceanRuinPieces const&);
     OceanRuinPieces();
 
+public:
+    // NOLINTBEGIN
+    // symbol:
+    // ?addPieces@OceanRuinPieces@@SAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBVBlockPos@@AEBW4Rotation@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@AEBUOceanRuinConfiguration@@@Z
+    MCAPI static void
+    addPieces(gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class BlockPos const&, ::Rotation const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, struct OceanRuinConfiguration const&);
+
+    // NOLINTEND
+
     // private:
     // NOLINTBEGIN
     // symbol:

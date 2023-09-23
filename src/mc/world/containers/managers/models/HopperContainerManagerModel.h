@@ -22,11 +22,11 @@ public:
     // vIndex: 17, symbol: ?_postInit@HopperContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
     virtual class ContainerScreenContext _postInit();
 
-    // symbol: ??0HopperContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBUActorUniqueID@@@Z
-    MCAPI HopperContainerManagerModel(::ContainerID, class Player&, struct ActorUniqueID const&);
-
     // symbol: ??0HopperContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI HopperContainerManagerModel(::ContainerID, class Player&, class BlockPos const&);
+
+    // symbol: ??0HopperContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBUActorUniqueID@@@Z
+    MCAPI HopperContainerManagerModel(::ContainerID, class Player&, struct ActorUniqueID const&);
 
     // NOLINTEND
 };

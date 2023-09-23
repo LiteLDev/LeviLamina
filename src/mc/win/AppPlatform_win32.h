@@ -48,6 +48,9 @@ public:
     // symbol: ?getBuildPlatform@AppPlatform_win32@@UEBA?AW4BuildPlatform@@XZ
     MCVAPI ::BuildPlatform getBuildPlatform() const;
 
+    // symbol: ?getCaretPosition@AppPlatform_win32@@UEBAHXZ
+    MCVAPI int getCaretPosition() const;
+
     // symbol: ?getDisplayHeight@AppPlatform_win32@@UEAAHXZ
     MCVAPI int getDisplayHeight();
 
@@ -81,8 +84,8 @@ public:
     // ?getPackagePath@AppPlatform_win32@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
     MCVAPI class Core::PathBuffer<std::string> getPackagePath() const;
 
-    // symbol: ?getPixelsPerMillimeter@AppPlatform_win32@@UEAAMXZ
-    MCVAPI float getPixelsPerMillimeter();
+    // symbol: ?getPlatformDpi@AppPlatform_win32@@EEBAHXZ
+    MCVAPI int getPlatformDpi() const;
 
     // symbol:
     // ?getPlatformString@AppPlatform_win32@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -117,6 +120,10 @@ public:
     // symbol:
     // ?getSubPlatformString@AppPlatform_win32@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCVAPI std::string getSubPlatformString() const;
+
+    // symbol:
+    // ?getTextBoxBackend@AppPlatform_win32@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCVAPI std::string getTextBoxBackend() const;
 
     // symbol: ?getTotalPhysicalMemory@AppPlatform_win32@@UEBA_KXZ
     MCVAPI uint64 getTotalPhysicalMemory() const;
@@ -154,6 +161,9 @@ public:
     // ?readAssetFile@AppPlatform_win32@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@@Z
     MCVAPI std::string readAssetFile(class Core::Path const&);
 
+    // symbol: ?setCaretPosition@AppPlatform_win32@@UEAAXH@Z
+    MCVAPI void setCaretPosition(int);
+
     // symbol: ?setFullscreenMode@AppPlatform_win32@@UEAAXW4FullscreenMode@@@Z
     MCVAPI void setFullscreenMode(::FullscreenMode);
 
@@ -163,6 +173,10 @@ public:
     // symbol:
     // ?setSecureStorageKey@AppPlatform_win32@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSecureStorageKey@@@Z
     MCVAPI void setSecureStorageKey(std::string const&, class SecureStorageKey const&);
+
+    // symbol:
+    // ?setTextBoxBackend@AppPlatform_win32@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCVAPI void setTextBoxBackend(std::string const&);
 
     // symbol: ?setWindowSize@AppPlatform_win32@@UEAAXHH@Z
     MCVAPI void setWindowSize(int, int);
@@ -176,10 +190,6 @@ public:
 
     // symbol: ?supportsVibration@AppPlatform_win32@@UEBA_NXZ
     MCVAPI bool supportsVibration() const;
-
-    // symbol:
-    // ?updateTextBoxText@AppPlatform_win32@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void updateTextBoxText(std::string const&);
 
     // symbol: ??1AppPlatform_win32@@UEAA@XZ
     MCVAPI ~AppPlatform_win32();

@@ -14,11 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptRawMessageScoreInterface@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
-    MCAPI ScriptRawMessageScoreInterface(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&);
-
     // symbol: ??0ScriptRawMessageScoreInterface@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
     MCAPI ScriptRawMessageScoreInterface(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&&);
+
+    // symbol: ??0ScriptRawMessageScoreInterface@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
+    MCAPI ScriptRawMessageScoreInterface(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&);
 
     // symbol: ??4ScriptRawMessageScoreInterface@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&

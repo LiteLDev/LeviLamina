@@ -69,14 +69,14 @@ public:
         ::SolidityCheckType
     );
 
+    // symbol: ?snapToGround@RandomPos@@CA_NAEAVBlockPos@@HHV?$function@$$A6A_NAEAVBlockPos@@@Z@std@@@Z
+    MCAPI static bool snapToGround(class BlockPos&, int, int, std::function<bool(class BlockPos&)>);
+
     // symbol: ?snapToGround@RandomPos@@CA_NAEAVBlockPos@@HHHV?$function@$$A6A_NAEAVBlockPos@@@Z@std@@@Z
     MCAPI static bool snapToGround(class BlockPos&, int, int, int, std::function<bool(class BlockPos&)>);
 
     // symbol: ?snapToGround@RandomPos@@CA_NAEAVBlockPos@@AEAVMob@@HAEBUIntRange@@W4SolidityCheckType@@@Z
     MCAPI static bool snapToGround(class BlockPos&, class Mob&, int, struct IntRange const&, ::SolidityCheckType);
-
-    // symbol: ?snapToGround@RandomPos@@CA_NAEAVBlockPos@@HHV?$function@$$A6A_NAEAVBlockPos@@@Z@std@@@Z
-    MCAPI static bool snapToGround(class BlockPos&, int, int, std::function<bool(class BlockPos&)>);
 
     // symbol: ?spawnSnapToGround@RandomPos@@CA_NAEAVBlockSource@@AEAVBlockPos@@MH@Z
     MCAPI static bool spawnSnapToGround(class BlockSource&, class BlockPos&, float, int);

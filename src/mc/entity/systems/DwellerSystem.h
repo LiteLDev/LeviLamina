@@ -23,8 +23,5 @@ public:
     // vIndex: 2, symbol: ?tick@DwellerSystem@@UEAAXAEAVEntityRegistry@@@Z
     virtual void tick(class EntityRegistry&);
 
-    // vIndex: 3, symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVEntityContext@@@Z
-    virtual void singleTick(class EntityRegistry&, class EntityContext&);
-
     // NOLINTEND
 };

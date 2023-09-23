@@ -6,11 +6,13 @@ class CompassSpriteCalculator {
 public:
     // prevent constructor by default
     CompassSpriteCalculator& operator=(CompassSpriteCalculator const&);
-    CompassSpriteCalculator(CompassSpriteCalculator const&);
     CompassSpriteCalculator();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0CompassSpriteCalculator@@QEAA@AEBV0@@Z
+    MCAPI CompassSpriteCalculator(class CompassSpriteCalculator const&);
+
     // symbol:
     // ??0CompassSpriteCalculator@@QEAA@V?$function@$$A6A?AVBlockPos@@PEBVBlockSource@@PEAVActor@@@Z@std@@V?$function@$$A6A_NPEBVBlockSource@@PEAVActor@@@Z@2@MM@Z
     MCAPI CompassSpriteCalculator(

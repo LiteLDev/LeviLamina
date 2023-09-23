@@ -95,8 +95,8 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?buildContainedItemList@ShulkerBoxBlockItem@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVCompoundTag@@@Z
-    MCAPI std::string buildContainedItemList(class CompoundTag const*) const;
+    // ?_buildContainedItemList@ShulkerBoxBlockItem@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVCompoundTag@@@Z
+    MCAPI std::string _buildContainedItemList(class CompoundTag const*) const;
 
     // NOLINTEND
 };

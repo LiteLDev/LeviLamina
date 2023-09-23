@@ -27,8 +27,5 @@ public:
     // vIndex: 4, symbol: ?onDebuggerConnect@MinecraftScriptTelemetryLogger@@UEAAXXZ
     virtual void onDebuggerConnect();
 
-    // symbol: ??0MinecraftScriptTelemetryLogger@@QEAA@AEAVIMinecraftEventing@@_N@Z
-    MCAPI MinecraftScriptTelemetryLogger(class IMinecraftEventing&, bool);
-
     // NOLINTEND
 };

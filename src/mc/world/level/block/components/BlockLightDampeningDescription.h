@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace JsonUtil { class EmptyClass; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockLightDampeningDescription : public ::BlockComponentDescription {
@@ -30,18 +31,19 @@ public:
     // vIndex: 3, symbol: ?initializeComponent@BlockLightDampeningDescription@@UEBAXAEAVBlockComponentStorage@@@Z
     virtual void initializeComponent(class BlockComponentStorage&) const;
 
-    // vIndex: 6, symbol: ?isNetworkComponent@BlockLightDampeningDescription@@UEBA_NXZ
+    // vIndex: 7, symbol: ?isNetworkComponent@BlockLightDampeningDescription@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
-    // vIndex: 7, symbol:
-    // ?buildNetworkTag@BlockLightDampeningDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    // vIndex: 8, symbol:
+    // ?buildNetworkTag@BlockLightDampeningDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAUReflectionCtx@cereal@@@Z
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx&) const;
 
-    // vIndex: 8, symbol: ?initializeFromNetwork@BlockLightDampeningDescription@@UEAAXAEBVCompoundTag@@@Z
-    virtual void initializeFromNetwork(class CompoundTag const&);
+    // vIndex: 9, symbol:
+    // ?initializeFromNetwork@BlockLightDampeningDescription@@UEAAXAEBVCompoundTag@@AEAUReflectionCtx@cereal@@@Z
+    virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx&);
 
-    // symbol: ?bindType@BlockLightDampeningDescription@@SAXXZ
-    MCAPI static void bindType();
+    // symbol: ?bindType@BlockLightDampeningDescription@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // symbol: ?NameID@BlockLightDampeningDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const NameID;

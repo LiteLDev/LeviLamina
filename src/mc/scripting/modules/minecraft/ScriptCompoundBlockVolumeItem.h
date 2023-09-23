@@ -15,15 +15,30 @@ namespace ScriptModuleMinecraft {
 class ScriptCompoundBlockVolumeItem {
 public:
     // prevent constructor by default
-    ScriptCompoundBlockVolumeItem& operator=(ScriptCompoundBlockVolumeItem const&);
     ScriptCompoundBlockVolumeItem(ScriptCompoundBlockVolumeItem const&);
     ScriptCompoundBlockVolumeItem();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0ScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@QEAA@AEBVCompoundBlockVolumeItem@@@Z
+    MCAPI explicit ScriptCompoundBlockVolumeItem(class CompoundBlockVolumeItem const&);
+
+    // symbol: ??4ScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
+    MCAPI class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem&
+    operator=(class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem&&);
+
+    // symbol: ??4ScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
+    MCAPI class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem&
+    operator=(class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const&);
+
     // symbol:
-    // ?bindInterface@ScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@VCompoundBlockVolumeItem@@@Scripting@@XZ
-    MCAPI static class Scripting::InterfaceBindingBuilder<class CompoundBlockVolumeItem> bindInterface();
+    // ?toCompoundBlockVolumeItem@ScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@QEBA?AVCompoundBlockVolumeItem@@XZ
+    MCAPI class CompoundBlockVolumeItem toCompoundBlockVolumeItem() const;
+
+    // symbol:
+    // ?bindInterface@ScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@VScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@@Scripting@@XZ
+    MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem>
+    bindInterface();
 
     // NOLINTEND
 };

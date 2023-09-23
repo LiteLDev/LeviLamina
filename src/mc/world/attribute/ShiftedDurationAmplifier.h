@@ -23,8 +23,5 @@ public:
     // vIndex: 3, symbol: ?getTickInterval@ShiftedDurationAmplifier@@UEBAHH@Z
     virtual int getTickInterval(int) const;
 
-    // symbol: ??0ShiftedDurationAmplifier@@QEAA@H@Z
-    MCAPI explicit ShiftedDurationAmplifier(int);
-
     // NOLINTEND
 };

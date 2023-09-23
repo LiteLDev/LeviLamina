@@ -2,17 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class DesiredMoveDirectionSystem {
-public:
-    // prevent constructor by default
-    DesiredMoveDirectionSystem& operator=(DesiredMoveDirectionSystem const&);
-    DesiredMoveDirectionSystem(DesiredMoveDirectionSystem const&);
-    DesiredMoveDirectionSystem();
+namespace DesiredMoveDirectionSystem {
+// NOLINTBEGIN
+// symbol: ?createSystem@DesiredMoveDirectionSystem@@YA?AUTickingSystemWithInfo@@XZ
+MCAPI struct TickingSystemWithInfo createSystem();
+// NOLINTEND
 
-public:
-    // NOLINTBEGIN
-    // symbol: ?createDesiredMoveDirectionSystem@DesiredMoveDirectionSystem@@SA?AUTickingSystemWithInfo@@XZ
-    MCAPI static struct TickingSystemWithInfo createDesiredMoveDirectionSystem();
-
-    // NOLINTEND
-};
+}; // namespace DesiredMoveDirectionSystem

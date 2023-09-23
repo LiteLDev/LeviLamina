@@ -20,9 +20,6 @@ public:
     // vIndex: 3, symbol: ?place@SpringFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // symbol: ??0SpringFeature@@QEAA@AEBVBlock@@@Z
-    MCAPI explicit SpringFeature(class Block const&);
-
     // NOLINTEND
 
     // private:

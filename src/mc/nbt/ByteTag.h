@@ -40,11 +40,11 @@ public:
     // symbol: ??1ByteTag@@UEAA@XZ
     MCVAPI ~ByteTag();
 
-    // symbol: ??0ByteTag@@QEAA@E@Z
-    MCAPI explicit ByteTag(uchar);
-
     // symbol: ??0ByteTag@@QEAA@XZ
     MCAPI ByteTag();
+
+    // symbol: ??0ByteTag@@QEAA@E@Z
+    MCAPI explicit ByteTag(uchar);
 
     // NOLINTEND
 };

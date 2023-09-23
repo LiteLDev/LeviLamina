@@ -20,8 +20,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?doValidate@SemVersionConstraint@@EEBA_NAEBVmeta_any@entt@@AEAVSerializerContext@cereal@@@Z
-    virtual bool doValidate(entt::meta_any const&, class cereal::SerializerContext&) const;
+    // vIndex: 0, symbol: ?doValidate@SemVersionConstraint@@EEBAXAEBVmeta_any@entt@@AEAVSerializerContext@cereal@@@Z
+    virtual void doValidate(entt::meta_any const&, class cereal::SerializerContext&) const;
 
     // symbol: ??1SemVersionConstraint@@UEAA@XZ
     MCVAPI ~SemVersionConstraint();

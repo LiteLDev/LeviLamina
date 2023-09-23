@@ -104,7 +104,6 @@ template <typename T0, typename T1>
 class AutomaticID;
 class Dimension;
 using DimensionType = AutomaticID<Dimension, int>;
-// union GameRule::Value;
 template <typename T0>
 class http_stl_allocator;
 using http_string  = std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>>;

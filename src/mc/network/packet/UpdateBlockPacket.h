@@ -35,11 +35,11 @@ public:
     // symbol: ??1UpdateBlockPacket@@UEAA@XZ
     MCVAPI ~UpdateBlockPacket();
 
-    // symbol: ??0UpdateBlockPacket@@QEAA@AEBVBlockPos@@IIE@Z
-    MCAPI UpdateBlockPacket(class BlockPos const&, uint, uint, uchar);
-
     // symbol: ??0UpdateBlockPacket@@QEAA@XZ
     MCAPI UpdateBlockPacket();
+
+    // symbol: ??0UpdateBlockPacket@@QEAA@AEBVBlockPos@@IIE@Z
+    MCAPI UpdateBlockPacket(class BlockPos const&, uint, uint, uchar);
 
     // NOLINTEND
 };

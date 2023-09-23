@@ -21,8 +21,5 @@ public:
     // symbol: ??1DragonBaseGoal@@UEAA@XZ
     MCVAPI ~DragonBaseGoal();
 
-    // symbol: ??0DragonBaseGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit DragonBaseGoal(class Mob&);
-
     // NOLINTEND
 };

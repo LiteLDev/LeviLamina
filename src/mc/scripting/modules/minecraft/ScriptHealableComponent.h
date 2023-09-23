@@ -28,7 +28,7 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol: ?_isValid@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    // vIndex: 1, symbol: ?_isValid@ScriptItemComponent@ScriptModuleMinecraft@@MEBA_NXZ
     virtual bool _isValid() const;
 
     // symbol: ??1ScriptHealableComponent@ScriptModuleMinecraft@@UEAA@XZ
@@ -40,14 +40,14 @@ public:
     ScriptHealableComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
 
     // symbol:
-    // ?getFilters@ScriptHealableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@VActorFilterGroup@@@Scripting@@XZ
+    // ?getFilters@ScriptHealableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@VActorFilterGroup@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<class ActorFilterGroup> getFilters() const;
 
-    // symbol: ?getForceUse@ScriptHealableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N@Scripting@@XZ
+    // symbol: ?getForceUse@ScriptHealableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> getForceUse() const;
 
     // symbol:
-    // ?getItems@ScriptHealableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@UFeedItem@@V?$allocator@UFeedItem@@@std@@@std@@@Scripting@@XZ
+    // ?getItems@ScriptHealableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@UFeedItem@@V?$allocator@UFeedItem@@@std@@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::vector<struct FeedItem>> getItems() const;
 
     // symbol:

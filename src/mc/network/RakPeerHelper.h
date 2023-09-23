@@ -9,7 +9,6 @@
 // clang-format off
 namespace RakNet { class RakPeerInterface; }
 namespace RakNet { struct SocketDescriptor; }
-namespace Social { class GameConnectionInfo; }
 // clang-format on
 
 class RakPeerHelper {
@@ -48,17 +47,11 @@ public:
     // symbol: ??0RakPeerHelper@@QEAA@AEAVIPSupportInterface@0@@Z
     MCAPI explicit RakPeerHelper(class RakPeerHelper::IPSupportInterface&);
 
-    // symbol: ?getConnectionIndex@RakPeerHelper@@QEBAHAEBVGameConnectionInfo@Social@@@Z
-    MCAPI int getConnectionIndex(class Social::GameConnectionInfo const&) const;
-
-    // symbol: ?getIPv4BoundPort@RakPeerHelper@@QEBAGXZ
-    MCAPI ushort getIPv4BoundPort() const;
-
     // symbol: ?getIPv4ConnectionIndex@RakPeerHelper@@QEBAHXZ
     MCAPI int getIPv4ConnectionIndex() const;
 
-    // symbol: ?getIPv6BoundPort@RakPeerHelper@@QEBAGXZ
-    MCAPI ushort getIPv6BoundPort() const;
+    // symbol: ?getIPv6ConnectionIndex@RakPeerHelper@@QEBAHXZ
+    MCAPI int getIPv6ConnectionIndex() const;
 
     // symbol: ?isIPv4Supported@RakPeerHelper@@QEBA_NXZ
     MCAPI bool isIPv4Supported() const;
@@ -70,6 +63,9 @@ public:
     // ?peerStartup@RakPeerHelper@@QEAA?AW4StartupResult@RakNet@@PEAVRakPeerInterface@3@AEBUConnectionDefinition@@W4PeerPurpose@1@@Z
     MCAPI ::RakNet::StartupResult
     peerStartup(class RakNet::RakPeerInterface*, struct ConnectionDefinition const&, ::RakPeerHelper::PeerPurpose);
+
+    // symbol: ?reset@RakPeerHelper@@QEAAXXZ
+    MCAPI void reset();
 
     // NOLINTEND
 

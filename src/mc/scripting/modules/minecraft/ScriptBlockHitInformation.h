@@ -5,12 +5,6 @@
 // auto generated inclusion list
 #include "mc/external/scripting/InterfaceBindingBuilder.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { class WeakLifetimeScope; }
-struct ProjectileHitEvent;
-// clang-format on
-
 namespace ScriptModuleMinecraft {
 
 struct ScriptBlockHitInformation {
@@ -21,17 +15,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0ScriptBlockHitInformation@ScriptModuleMinecraft@@QEAA@AEBUProjectileHitEvent@@AEBVWeakLifetimeScope@Scripting@@@Z
-    MCAPI ScriptBlockHitInformation(struct ProjectileHitEvent const&, class Scripting::WeakLifetimeScope const&);
+    // symbol: ??4ScriptBlockHitInformation@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptBlockHitInformation&
+    operator=(struct ScriptModuleMinecraft::ScriptBlockHitInformation&&);
 
     // symbol: ??4ScriptBlockHitInformation@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptBlockHitInformation&
     operator=(struct ScriptModuleMinecraft::ScriptBlockHitInformation const&);
-
-    // symbol: ??4ScriptBlockHitInformation@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptBlockHitInformation&
-    operator=(struct ScriptModuleMinecraft::ScriptBlockHitInformation&&);
 
     // symbol: ??1ScriptBlockHitInformation@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptBlockHitInformation();

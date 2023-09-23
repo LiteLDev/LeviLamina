@@ -36,11 +36,14 @@ namespace ScriptModuleMinecraft { struct ScriptCommandError; }
 namespace ScriptModuleMinecraft { struct ScriptCommandResult; }
 namespace ScriptModuleMinecraft { struct ScriptEntityRaycastOptions; }
 namespace ScriptModuleMinecraft { struct ScriptExplosionOptions; }
+namespace ScriptModuleMinecraft { struct ScriptLocationInUnloadedChunkError; }
+namespace ScriptModuleMinecraft { struct ScriptLocationOutOfWorldBoundsError; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct JSON; }
+struct FloatRange;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -53,6 +56,7 @@ public:
 public:
     // prevent constructor by default
     ScriptDimension& operator=(ScriptDimension const&);
+    ScriptDimension(ScriptDimension const&);
     ScriptDimension();
 
 public:
@@ -60,30 +64,34 @@ public:
     // symbol: ??1ScriptDimension@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptDimension();
 
-    // symbol: ??0ScriptDimension@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
-    MCAPI ScriptDimension(class ScriptModuleMinecraft::ScriptDimension const&);
-
     // symbol:
-    // ?createExplosion@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@X@Scripting@@AEBVVec3@@MV?$optional@UScriptExplosionOptions@ScriptModuleMinecraft@@@std@@@Z
-    MCAPI class Scripting::Result<void>
+    // ?createExplosion@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@XUScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@UScriptLocationOutOfWorldBoundsError@2@@Scripting@@AEBVVec3@@MV?$optional@UScriptExplosionOptions@ScriptModuleMinecraft@@@std@@@Z
+    MCAPI class Scripting::Result<
+        void,
+        struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     createExplosion(class Vec3 const&, float, std::optional<struct ScriptModuleMinecraft::ScriptExplosionOptions>)
         const;
 
     // symbol:
-    // ?createExplosion_V010@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@X@Scripting@@AEBVVec3@@MU?$TypedObjectHandle@UScriptExplosionOptions@ScriptModuleMinecraft@@@4@@Z
+    // ?createExplosion_V010@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@X$$V@Scripting@@AEBVVec3@@MU?$TypedObjectHandle@UScriptExplosionOptions@ScriptModuleMinecraft@@@4@@Z
     MCAPI class Scripting::Result<void>
     createExplosion_V010(class Vec3 const&, float, struct Scripting::TypedObjectHandle<struct ScriptModuleMinecraft::ScriptExplosionOptions>)
         const;
 
     // symbol:
-    // ?fillBlocks@ScriptDimension@ScriptModuleMinecraft@@QEAA?AV?$Result@I@Scripting@@AEBVVec3@@0AEBV?$variant@V?$StrongTypedObjectHandle@VScriptBlockType@ScriptModuleMinecraft@@@Scripting@@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@2@@std@@AEBV?$optional@UScriptBlockFillOptions@ScriptModuleMinecraft@@@7@@Z
-    MCAPI class Scripting::Result<uint>
-    fillBlocks(class Vec3 const&, class Vec3 const&, std::variant<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockType>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>> const&, std::optional<struct ScriptModuleMinecraft::ScriptBlockFillOptions> const&);
+    // ?fillBlocks@ScriptDimension@ScriptModuleMinecraft@@QEAA?AV?$Result@I$$V@Scripting@@AEBVVec3@@0AEBV?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$StrongTypedObjectHandle@VScriptBlockType@ScriptModuleMinecraft@@@Scripting@@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@4@@std@@AEBV?$optional@UScriptBlockFillOptions@ScriptModuleMinecraft@@@7@@Z
+    MCAPI class
+        Scripting::
+            Result<uint>
+            fillBlocks(class Vec3 const&, class Vec3 const&, std::variant<std::string, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockType>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>> const&, std::optional<struct ScriptModuleMinecraft::ScriptBlockFillOptions> const&);
 
     // symbol:
-    // ?getBlock@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@@std@@@Scripting@@VWeakLifetimeScope@4@AEBVVec3@@@Z
+    // ?getBlock@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@@std@@UScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@UScriptLocationOutOfWorldBoundsError@4@@Scripting@@VWeakLifetimeScope@4@AEBVVec3@@@Z
     MCAPI class Scripting::Result<
-        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>>
+        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>,
+        struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     getBlock(class Scripting::WeakLifetimeScope, class Vec3 const&) const;
 
     // symbol:
@@ -93,7 +101,7 @@ public:
         const;
 
     // symbol:
-    // ?getBlockFromRay_V010@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@@Scripting@@VWeakLifetimeScope@4@AEBVVec3@@AEBVScriptVector@2@AEBV?$optional@UScriptBlockRaycastOptions@ScriptModuleMinecraft@@@std@@@Z
+    // ?getBlockFromRay_V010@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@VWeakLifetimeScope@4@AEBVVec3@@AEBVScriptVector@2@AEBV?$optional@UScriptBlockRaycastOptions@ScriptModuleMinecraft@@@std@@@Z
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>
     getBlockFromRay_V010(class Scripting::WeakLifetimeScope, class Vec3 const&, class ScriptModuleMinecraft::ScriptVector const&, std::optional<struct ScriptModuleMinecraft::ScriptBlockRaycastOptions> const&)
         const;
@@ -107,7 +115,7 @@ public:
     MCAPI class Dimension& getDimension() const;
 
     // symbol:
-    // ?getEntities@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@@Scripting@@V?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@@Z
+    // ?getEntities@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@$$V@Scripting@@V?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@@Z
     MCAPI class Scripting::Result<
         std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>>
         getEntities(std::optional<struct ScriptModuleMinecraft::ScriptActorQueryOptions>) const;
@@ -129,30 +137,33 @@ public:
         const;
 
     // symbol:
-    // ?getEntitiesFromRay_V010@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@@Scripting@@VWeakLifetimeScope@4@AEBVVec3@@AEBVScriptVector@2@AEBV?$optional@UScriptEntityRaycastOptions@ScriptModuleMinecraft@@@std@@@Z
+    // ?getEntitiesFromRay_V010@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@$$V@Scripting@@VWeakLifetimeScope@4@AEBVVec3@@AEBVScriptVector@2@AEBV?$optional@UScriptEntityRaycastOptions@ScriptModuleMinecraft@@@std@@@Z
     MCAPI class Scripting::Result<
         std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>>
     getEntitiesFromRay_V010(class Scripting::WeakLifetimeScope, class Vec3 const&, class ScriptModuleMinecraft::ScriptVector const&, std::optional<struct ScriptModuleMinecraft::ScriptEntityRaycastOptions> const&)
         const;
 
     // symbol:
-    // ?getEntities_V010@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActorIterator@ScriptModuleMinecraft@@@Scripting@@@Scripting@@V?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@@Z
+    // ?getEntities_V010@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActorIterator@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@V?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@@Z
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActorIterator>>
         getEntities_V010(std::optional<struct ScriptModuleMinecraft::ScriptActorQueryOptions>) const;
 
-    // symbol:
-    // ?getId@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Scripting@@XZ
-    MCAPI class Scripting::Result<std::string> getId() const;
+    // symbol: ?getHeightRange@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@UFloatRange@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<struct FloatRange> getHeightRange() const;
 
     // symbol:
-    // ?getPlayers@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@@Scripting@@V?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@@Z
+    // ?getId@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string getId() const;
+
+    // symbol:
+    // ?getPlayers@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@$$V@Scripting@@V?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@@Z
     MCAPI class Scripting::Result<
         std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>>>
         getPlayers(std::optional<struct ScriptModuleMinecraft::ScriptActorQueryOptions>) const;
 
     // symbol:
-    // ?getPlayers_V010@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptPlayerIterator@ScriptModuleMinecraft@@@Scripting@@@Scripting@@V?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@@Z
+    // ?getPlayers_V010@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptPlayerIterator@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@V?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@@Z
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayerIterator>>
         getPlayers_V010(std::optional<struct ScriptModuleMinecraft::ScriptActorQueryOptions>) const;
@@ -164,13 +175,14 @@ public:
     MCAPI class ScriptModuleMinecraft::ScriptDimension& operator=(class ScriptModuleMinecraft::ScriptDimension&&);
 
     // symbol:
-    // ?runCommand@ScriptDimension@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@UScriptCommandResult@ScriptModuleMinecraft@@@Scripting@@@Scripting@@AEAVDependencyLocator@4@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // ?runCommand@ScriptDimension@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@UScriptCommandResult@ScriptModuleMinecraft@@@Scripting@@UScriptCommandError@ScriptModuleMinecraft@@@Scripting@@AEAVDependencyLocator@4@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::Result<
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptCommandResult>>
+        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptCommandResult>,
+        struct ScriptModuleMinecraft::ScriptCommandError>
     runCommand(class Scripting::DependencyLocator&, struct Scripting::ContextConfig const&, std::string const&);
 
     // symbol:
-    // ?runCommandAsync@ScriptDimension@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$Promise@V?$StrongTypedObjectHandle@UScriptCommandResult@ScriptModuleMinecraft@@@Scripting@@UScriptCommandError@ScriptModuleMinecraft@@X@Scripting@@@Scripting@@AEAVDependencyLocator@4@AEBUContextConfig@4@AEAVScriptObjectFactory@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // ?runCommandAsync@ScriptDimension@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$Promise@V?$StrongTypedObjectHandle@UScriptCommandResult@ScriptModuleMinecraft@@@Scripting@@UScriptCommandError@ScriptModuleMinecraft@@X@Scripting@@$$V@Scripting@@AEAVDependencyLocator@4@AEBUContextConfig@4@AEAVScriptObjectFactory@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::Result<class Scripting::Promise<
         class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptCommandResult>,
         struct ScriptModuleMinecraft::ScriptCommandError,
@@ -178,38 +190,49 @@ public:
     runCommandAsync(class Scripting::DependencyLocator&, struct Scripting::ContextConfig const&, class Scripting::ScriptObjectFactory&, std::string const&);
 
     // symbol:
-    // ?runCommand_V010@ScriptDimension@ScriptModuleMinecraft@@QEAA?AV?$Result@UJSON@Scripting@@@Scripting@@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // ?runCommand_V010@ScriptDimension@ScriptModuleMinecraft@@QEAA?AV?$Result@UJSON@Scripting@@$$V@Scripting@@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::Result<struct Scripting::JSON>
     runCommand_V010(struct Scripting::ContextConfig const&, std::string const&);
 
-    // symbol: ?setWeather@ScriptDimension@ScriptModuleMinecraft@@QEAAXW4ScriptWeatherType@12@@Z
-    MCAPI void setWeather(::ScriptModuleMinecraft::ScriptDimension::ScriptWeatherType);
+    // symbol:
+    // ?setWeather@ScriptDimension@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@W4ScriptWeatherType@12@V?$optional@H@std@@@Z
+    MCAPI class Scripting::Result<void>
+        setWeather(::ScriptModuleMinecraft::ScriptDimension::ScriptWeatherType, std::optional<int>);
 
     // symbol:
-    // ?spawnEntity@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@@Z
-    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>
+    // ?spawnEntity@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@UScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@UScriptLocationOutOfWorldBoundsError@4@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@@Z
+    MCAPI class Scripting::Result<
+        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
+        struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     spawnEntity(std::string const&, class Vec3 const&) const;
 
     // symbol:
-    // ?spawnEntity_V010@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$variant@VBlockPos@@VVec3@@@6@@Z
+    // ?spawnEntity_V010@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$variant@VBlockPos@@VVec3@@@6@@Z
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>
     spawnEntity_V010(std::string const&, std::variant<class BlockPos, class Vec3> const&) const;
 
     // symbol:
-    // ?spawnItem@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@Scripting@@AEBVScriptItemStack@2@AEBVVec3@@@Z
-    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>
+    // ?spawnItem@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@UScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@UScriptLocationOutOfWorldBoundsError@4@@Scripting@@AEBVScriptItemStack@2@AEBVVec3@@@Z
+    MCAPI class Scripting::Result<
+        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
+        struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     spawnItem(class ScriptModuleMinecraft::ScriptItemStack const&, class Vec3 const&) const;
 
     // symbol:
-    // ?spawnItem_V010@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@Scripting@@AEBVScriptItemStack@2@AEBV?$variant@VBlockPos@@VVec3@@@std@@@Z
+    // ?spawnItem_V010@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@AEBVScriptItemStack@2@AEBV?$variant@VBlockPos@@VVec3@@@std@@@Z
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>
     spawnItem_V010(class ScriptModuleMinecraft::ScriptItemStack const&, std::variant<class BlockPos, class Vec3> const&)
         const;
 
     // symbol:
-    // ?spawnParticle@ScriptDimension@ScriptModuleMinecraft@@QEAA?AV?$Result@X@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@V?$StrongTypedObjectHandle@VScriptMolangVariableMap@ScriptModuleMinecraft@@@4@@Z
-    MCAPI class Scripting::Result<void>
-    spawnParticle(std::string const&, class Vec3 const&, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMolangVariableMap>);
+    // ?spawnParticle@ScriptDimension@ScriptModuleMinecraft@@QEAA?AV?$Result@XUScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@UScriptLocationOutOfWorldBoundsError@2@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@V?$optional@V?$StrongTypedObjectHandle@VScriptMolangVariableMap@ScriptModuleMinecraft@@@Scripting@@@6@@Z
+    MCAPI class Scripting::Result<
+        void,
+        struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
+    spawnParticle(std::string const&, class Vec3 const&, std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMolangVariableMap>>);
 
     // symbol:
     // ?spawnParticle_V010@ScriptDimension@ScriptModuleMinecraft@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@V?$StrongTypedObjectHandle@VScriptMolangVariableMap@ScriptModuleMinecraft@@@Scripting@@@Z
@@ -229,7 +252,7 @@ public:
     // symbol:
     // ?getOrCreateHandle@ScriptDimension@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptDimension@ScriptModuleMinecraft@@@Scripting@@V?$AutomaticID@VDimension@@H@@AEAVLevel@@AEBVWeakLifetimeScope@4@@Z
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDimension>
-    getOrCreateHandle(class AutomaticID<class Dimension, int>, class Level&, class Scripting::WeakLifetimeScope const&);
+    getOrCreateHandle(DimensionType, class Level&, class Scripting::WeakLifetimeScope const&);
 
     // symbol:
     // ?getOrCreateHandle@ScriptDimension@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptDimension@ScriptModuleMinecraft@@@Scripting@@AEAVDimension@@AEBVWeakLifetimeScope@4@@Z

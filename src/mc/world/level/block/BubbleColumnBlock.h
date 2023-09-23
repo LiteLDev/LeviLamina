@@ -6,6 +6,7 @@
 #include "mc/common/wrapper/optional_ref.h"
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
+#include "mc/enums/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -29,21 +30,16 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 6, symbol:
-    // ?getCollisionShape@BubbleColumnBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-    virtual bool
-    getCollisionShape(class AABB&, class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+    // ?getCollisionShape@BubbleColumnBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    virtual class AABB
+    getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 7, symbol:
+    // vIndex: 8, symbol:
     // ?addCollisionShapes@BubbleColumnBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
     virtual bool
     addCollisionShapes(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
-
-    // vIndex: 8, symbol:
-    // ?getAABB@BubbleColumnBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-    virtual class AABB const&
-    getAABB(class IConstBlockSource const&, class BlockPos const&, class Block const&, class AABB&, bool) const;
 
     // vIndex: 9, symbol:
     // ?addAABBs@BubbleColumnBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
@@ -108,41 +104,44 @@ public:
     // vIndex: 51, symbol: __unk_vfn_51
     virtual void __unk_vfn_51();
 
-    // vIndex: 56, symbol: __unk_vfn_56
-    virtual void __unk_vfn_56();
+    // vIndex: 55, symbol: __unk_vfn_55
+    virtual void __unk_vfn_55();
+
+    // vIndex: 61, symbol: __unk_vfn_61
+    virtual void __unk_vfn_61();
 
     // vIndex: 62, symbol: __unk_vfn_62
     virtual void __unk_vfn_62();
 
-    // vIndex: 63, symbol: __unk_vfn_63
-    virtual void __unk_vfn_63();
-
-    // vIndex: 64, symbol: ?canContainLiquid@BubbleColumnBlock@@UEBA_NXZ
+    // vIndex: 63, symbol: ?canContainLiquid@BubbleColumnBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
-    // vIndex: 65, symbol: ?getRequiredMedium@BubbleColumnBlock@@UEBA?AV?$optional@VHashedString@@@std@@XZ
+    // vIndex: 64, symbol: ?getRequiredMedium@BubbleColumnBlock@@UEBA?AV?$optional@VHashedString@@@std@@XZ
     virtual std::optional<class HashedString> getRequiredMedium() const;
 
-    // vIndex: 71, symbol: ?checkIsPathable@BubbleColumnBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 70, symbol: ?checkIsPathable@BubbleColumnBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
     virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
 
-    // vIndex: 77, symbol: __unk_vfn_77
-    virtual void __unk_vfn_77();
+    // vIndex: 76, symbol: __unk_vfn_76
+    virtual void __unk_vfn_76();
 
-    // vIndex: 84, symbol: __unk_vfn_84
-    virtual void __unk_vfn_84();
+    // vIndex: 83, symbol: __unk_vfn_83
+    virtual void __unk_vfn_83();
 
-    // vIndex: 86, symbol: ?isPreservingMediumWhenPlaced@BubbleColumnBlock@@UEBA_NPEBVBlockLegacy@@@Z
+    // vIndex: 85, symbol: ?isPreservingMediumWhenPlaced@BubbleColumnBlock@@UEBA_NPEBVBlockLegacy@@@Z
     virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const*) const;
 
-    // vIndex: 92, symbol: ?mayPick@BubbleColumnBlock@@UEBA_NAEBVBlockSource@@AEBVBlock@@_N@Z
+    // vIndex: 91, symbol: ?mayPick@BubbleColumnBlock@@UEBA_NAEBVBlockSource@@AEBVBlock@@_N@Z
     virtual bool mayPick(class BlockSource const&, class Block const&, bool) const;
 
-    // vIndex: 101, symbol: ?neighborChanged@BubbleColumnBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 100, symbol: ?neighborChanged@BubbleColumnBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
 
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
+    // vIndex: 106, symbol: __unk_vfn_106
+    virtual void __unk_vfn_106();
+
+    // vIndex: 122, symbol: __unk_vfn_122
+    virtual void __unk_vfn_122();
 
     // vIndex: 123, symbol: __unk_vfn_123
     virtual void __unk_vfn_123();
@@ -150,20 +149,18 @@ public:
     // vIndex: 124, symbol: __unk_vfn_124
     virtual void __unk_vfn_124();
 
-    // vIndex: 125, symbol: __unk_vfn_125
-    virtual void __unk_vfn_125();
+    // vIndex: 127, symbol: __unk_vfn_127
+    virtual void __unk_vfn_127();
 
-    // vIndex: 128, symbol: __unk_vfn_128
-    virtual void __unk_vfn_128();
+    // vIndex: 130, symbol: __unk_vfn_130
+    virtual void __unk_vfn_130();
 
-    // vIndex: 131, symbol: __unk_vfn_131
-    virtual void __unk_vfn_131();
-
-    // vIndex: 140, symbol: ?onGraphicsModeChanged@BubbleColumnBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
+    // vIndex: 139, symbol: ?onGraphicsModeChanged@BubbleColumnBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const&);
 
-    // vIndex: 148, symbol: ?animateTick@BubbleColumnBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void animateTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    // vIndex: 147, symbol:
+    // ?animateTickBedrockLegacy@BubbleColumnBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -220,11 +217,11 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?createParticles@BubbleColumnBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z
-    MCAPI static void createParticles(class BlockSource&, class BlockPos const&, class Random&, bool);
+    // symbol: ?_createParticles@BubbleColumnBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z
+    MCAPI static void _createParticles(class BlockSource&, class BlockPos const&, class Random&, bool);
 
-    // symbol: ?getFlowDownward@BubbleColumnBlock@@CA_NAEBVBlock@@@Z
-    MCAPI static bool getFlowDownward(class Block const&);
+    // symbol: ?_getFlowDownward@BubbleColumnBlock@@CA_NAEBVBlock@@@Z
+    MCAPI static bool _getFlowDownward(class Block const&);
 
     // NOLINTEND
 };

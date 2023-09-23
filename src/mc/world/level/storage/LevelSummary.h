@@ -9,6 +9,7 @@
 #include "mc/enums/EducationEditionOffer.h"
 #include "mc/enums/GameType.h"
 #include "mc/enums/StorageVersion.h"
+#include "mc/server/editor/WorldType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,8 +19,19 @@ namespace Core { class Path; }
 struct LevelSummary {
 public:
     // NOLINTBEGIN
+    // symbol: ??0LevelSummary@@QEAA@AEBU0@@Z
+    MCAPI LevelSummary(struct LevelSummary const&);
+
     // symbol:
-    // ??0LevelSummary@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_JW4GameType@@W4Difficulty@@VLevelSeed64@@H_K_N6W4GamePublishSetting@Social@@6W4EducationEditionOffer@@AEBVGameVersion@@9W4StorageVersion@@AEBVPath@Core@@AEBVContentIdentity@@0_NAEBUEduSharedUriResource@@AEBVExperiments@@AEBVBaseGameVersion@@6@Z
+    // ??0LevelSummary@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVLevelData@@AEBVPath@Core@@2_N@Z
+    MCAPI
+    LevelSummary(std::string const&, class LevelData const&, class Core::Path const&, class Core::Path const&, bool);
+
+    // symbol: ??0LevelSummary@@QEAA@XZ
+    MCAPI LevelSummary();
+
+    // symbol:
+    // ??0LevelSummary@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_JW4GameType@@W4Difficulty@@VLevelSeed64@@H_K_N6W4GamePublishSetting@Social@@6W4EducationEditionOffer@@AEBVGameVersion@@9W4StorageVersion@@AEBVPath@Core@@AEBVContentIdentity@@0_NAEBUEduSharedUriResource@@AEBVExperiments@@AEBVBaseGameVersion@@W4WorldType@Editor@@@Z
     MCAPI LevelSummary(
         std::string const&,
         std::string const&,
@@ -44,25 +56,14 @@ public:
         struct EduSharedUriResource const&,
         class Experiments const&,
         class BaseGameVersion const&,
-        bool
+        ::Editor::WorldType
     );
-
-    // symbol: ??0LevelSummary@@QEAA@AEBU0@@Z
-    MCAPI LevelSummary(struct LevelSummary const&);
-
-    // symbol:
-    // ??0LevelSummary@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVLevelData@@AEBVPath@Core@@2_N@Z
-    MCAPI
-    LevelSummary(std::string const&, class LevelData const&, class Core::Path const&, class Core::Path const&, bool);
-
-    // symbol: ??0LevelSummary@@QEAA@XZ
-    MCAPI LevelSummary();
 
     // symbol: ??4LevelSummary@@QEAAAEAU0@AEBU0@@Z
     MCAPI struct LevelSummary& operator=(struct LevelSummary const&);
 
-    // symbol: ?setName@LevelSummary@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void setName(std::string);
+    // symbol: ?setName@LevelSummary@@QEAAAEAU1@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI struct LevelSummary& setName(std::string);
 
     // symbol: ??1LevelSummary@@QEAA@XZ
     MCAPI ~LevelSummary();

@@ -38,9 +38,6 @@ public:
     // symbol: ?isCodeBuilderEnabled@EducationOptions@@SA_NXZ
     MCAPI static bool isCodeBuilderEnabled();
 
-    // symbol: ?isEducationEnabled@EducationOptions@@SA_NXZ
-    MCAPI static bool isEducationEnabled();
-
     // NOLINTEND
 
     // private:

@@ -12,9 +12,9 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?_afterMovementSimulation@ServerPlayerMovementCorrectionSystem@@SAXAEAVPlayer@@AEBVPlayerAuthInputPacket@@AEBVReplayStateComponent@@@Z
+    // ?_afterMovementSimulation@ServerPlayerMovementCorrectionSystem@@SAXAEAVPlayer@@AEBVPlayerAuthInputPacket@@AEBVReplayStateComponent@@AEAUStateVectorComponent@@@Z
     MCAPI static void
-    _afterMovementSimulation(class Player&, class PlayerAuthInputPacket const&, class ReplayStateComponent const&);
+    _afterMovementSimulation(class Player&, class PlayerAuthInputPacket const&, class ReplayStateComponent const&, struct StateVectorComponent&);
 
     // symbol: ?create@ServerPlayerMovementCorrectionSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo create();

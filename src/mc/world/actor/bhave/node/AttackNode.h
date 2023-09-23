@@ -11,6 +11,7 @@ public:
     // prevent constructor by default
     AttackNode& operator=(AttackNode const&);
     AttackNode(AttackNode const&);
+    AttackNode();
 
 public:
     // NOLINTBEGIN
@@ -22,9 +23,6 @@ public:
 
     // vIndex: 2, symbol: ?initializeFromDefinition@AttackNode@@EEAAXAEAVActor@@@Z
     virtual void initializeFromDefinition(class Actor&);
-
-    // symbol: ??0AttackNode@@QEAA@XZ
-    MCAPI AttackNode();
 
     // NOLINTEND
 };

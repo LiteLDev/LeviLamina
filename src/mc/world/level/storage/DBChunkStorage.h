@@ -55,31 +55,34 @@ public:
     virtual void
     writeEntityChunkTransfersToUnloadedChunk(class ChunkKey const&, std::vector<struct ActorUnloadedChunkTransferEntry> const&);
 
-    // vIndex: 16, symbol: ?hintDiscardBatchBegin@DBChunkStorage@@UEAAXXZ
+    // vIndex: 16, symbol: ?deserializeActorStorageToLevelChunk@DBChunkStorage@@UEAAXAEAVLevelChunk@@@Z
+    virtual void deserializeActorStorageToLevelChunk(class LevelChunk&);
+
+    // vIndex: 17, symbol: ?hintDiscardBatchBegin@DBChunkStorage@@UEAAXXZ
     virtual void hintDiscardBatchBegin();
 
-    // vIndex: 17, symbol: ?hintDiscardBatchEnd@DBChunkStorage@@UEAAXXZ
+    // vIndex: 18, symbol: ?hintDiscardBatchEnd@DBChunkStorage@@UEAAXXZ
     virtual void hintDiscardBatchEnd();
 
-    // vIndex: 18, symbol:
+    // vIndex: 19, symbol:
     // ?acquireDiscarded@DBChunkStorage@@UEAAXV?$unique_ptr@VLevelChunk@@ULevelChunkFinalDeleter@@@std@@@Z
     virtual void acquireDiscarded(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
 
-    // vIndex: 20, symbol: ?flushPendingDiscardedChunkWrites@DBChunkStorage@@UEAAXXZ
+    // vIndex: 21, symbol: ?flushPendingDiscardedChunkWrites@DBChunkStorage@@UEAAXXZ
     virtual void flushPendingDiscardedChunkWrites();
 
-    // vIndex: 21, symbol: ?flushThreadBatch@DBChunkStorage@@UEAAXXZ
+    // vIndex: 22, symbol: ?flushThreadBatch@DBChunkStorage@@UEAAXXZ
     virtual void flushThreadBatch();
 
-    // vIndex: 27, symbol:
+    // vIndex: 28, symbol:
     // ?tryGetBlendingDataProvider@DBChunkStorage@@UEAA?AV?$unique_ptr@VBlendingDataProvider@@U?$default_delete@VBlendingDataProvider@@@std@@@std@@XZ
     virtual std::unique_ptr<class BlendingDataProvider> tryGetBlendingDataProvider();
 
-    // vIndex: 28, symbol:
+    // vIndex: 29, symbol:
     // ?loadLevelChunkMetaDataDictionary@DBChunkStorage@@UEAA?AV?$shared_ptr@VLevelChunkMetaDataDictionary@@@std@@XZ
     virtual std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();
 
-    // vIndex: 31, symbol: ?chunkPosNeedsBlending@DBChunkStorage@@UEAA_NAEBVChunkPos@@@Z
+    // vIndex: 32, symbol: ?chunkPosNeedsBlending@DBChunkStorage@@UEAA_NAEBVChunkPos@@@Z
     virtual bool chunkPosNeedsBlending(class ChunkPos const&);
 
     // symbol:
@@ -114,7 +117,7 @@ public:
 
     // symbol:
     // ?_getChunkNeighbors@DBChunkStorage@@AEAA?AVNeighbors@LevelChunk@@VChunkPos@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI class LevelChunk::Neighbors _getChunkNeighbors(class ChunkPos, class AutomaticID<class Dimension, int>);
+    MCAPI class LevelChunk::Neighbors _getChunkNeighbors(class ChunkPos, DimensionType);
 
     // symbol:
     // ?_getLevelChunkFormat@DBChunkStorage@@AEAA?AV?$optional@W4LevelChunkFormat@@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z

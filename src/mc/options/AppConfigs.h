@@ -21,7 +21,6 @@ public:
     // prevent constructor by default
     AppConfigs& operator=(AppConfigs const&);
     AppConfigs(AppConfigs const&);
-    AppConfigs();
 
 public:
     // NOLINTBEGIN
@@ -227,6 +226,9 @@ public:
 
     // symbol: ??1AppConfigs@@UEAA@XZ
     MCVAPI ~AppConfigs();
+
+    // symbol: ??0AppConfigs@@QEAA@XZ
+    MCAPI AppConfigs();
 
     // NOLINTEND
 };

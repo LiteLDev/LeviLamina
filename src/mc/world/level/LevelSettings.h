@@ -11,6 +11,7 @@
 #include "mc/enums/GameType.h"
 #include "mc/enums/WorldVersion.h"
 #include "mc/network/NetherWorldType.h"
+#include "mc/server/editor/WorldType.h"
 #include "mc/world/AutomaticID.h"
 #include "mc/world/actor/player/PlayerPermissionLevel.h"
 #include "mc/world/level/levelgen/GeneratorType.h"
@@ -22,17 +23,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0LevelSettings@@QEAA@$$QEAV0@@Z
-    MCAPI LevelSettings(class LevelSettings&&);
+    // symbol: ??0LevelSettings@@QEAA@AEBVLevelData@@V?$AutomaticID@VDimension@@H@@@Z
+    MCAPI LevelSettings(class LevelData const&, DimensionType);
 
     // symbol: ??0LevelSettings@@QEAA@XZ
     MCAPI LevelSettings();
 
-    // symbol: ??0LevelSettings@@QEAA@AEBVLevelData@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI LevelSettings(class LevelData const&, class AutomaticID<class Dimension, int>);
-
     // symbol: ??0LevelSettings@@QEAA@AEBV0@@Z
     MCAPI LevelSettings(class LevelSettings const&);
+
+    // symbol: ??0LevelSettings@@QEAA@$$QEAV0@@Z
+    MCAPI LevelSettings(class LevelSettings&&);
 
     // symbol: ?achievementsWillBeDisabledOnLoad@LevelSettings@@QEBA_NXZ
     MCAPI bool achievementsWillBeDisabledOnLoad() const;
@@ -70,6 +71,9 @@ public:
 
     // symbol: ?getDisablePlayerInteractions@LevelSettings@@QEBA_NXZ
     MCAPI bool getDisablePlayerInteractions() const;
+
+    // symbol: ?getEditorWorldType@LevelSettings@@QEBA?AW4WorldType@Editor@@XZ
+    MCAPI ::Editor::WorldType getEditorWorldType() const;
 
     // symbol: ?getEduSharedUriResource@LevelSettings@@QEBAAEBUEduSharedUriResource@@XZ
     MCAPI struct EduSharedUriResource const& getEduSharedUriResource() const;
@@ -184,6 +188,9 @@ public:
 
     // symbol: ??4LevelSettings@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class LevelSettings& operator=(class LevelSettings&&);
+
+    // symbol: ?overrideSavedSettings@LevelSettings@@QEBAXAEAVLevelData@@@Z
+    MCAPI void overrideSavedSettings(class LevelData&) const;
 
     // symbol: ?setAdventureModeOverridesEnabled@LevelSettings@@QEAAAEAV1@_N@Z
     MCAPI class LevelSettings& setAdventureModeOverridesEnabled(bool);

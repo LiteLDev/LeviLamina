@@ -18,4 +18,11 @@ public:
     IConnectionEventing& operator=(IConnectionEventing const&);
     IConnectionEventing(IConnectionEventing const&);
     IConnectionEventing();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ??1IConnectionEventing@@UEAA@XZ
+    MCVAPI ~IConnectionEventing();
+
+    // NOLINTEND
 };

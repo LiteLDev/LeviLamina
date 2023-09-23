@@ -39,11 +39,11 @@ public:
     // symbol: ??1MovePlayerPacket@@UEAA@XZ
     MCVAPI ~MovePlayerPacket();
 
-    // symbol: ??0MovePlayerPacket@@QEAA@AEBVPlayer@@W4PositionMode@PlayerPositionModeComponent@@HH@Z
-    MCAPI MovePlayerPacket(class Player const&, ::PlayerPositionModeComponent::PositionMode, int, int);
-
     // symbol: ??0MovePlayerPacket@@QEAA@XZ
     MCAPI MovePlayerPacket();
+
+    // symbol: ??0MovePlayerPacket@@QEAA@AEBVPlayer@@W4PositionMode@PlayerPositionModeComponent@@HH@Z
+    MCAPI MovePlayerPacket(class Player const&, ::PlayerPositionModeComponent::PositionMode, int, int);
 
     // symbol: ??0MovePlayerPacket@@QEAA@AEBVPlayer@@AEBVVec3@@@Z
     MCAPI MovePlayerPacket(class Player const&, class Vec3 const&);

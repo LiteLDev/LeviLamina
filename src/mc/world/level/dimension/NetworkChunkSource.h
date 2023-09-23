@@ -28,22 +28,22 @@ public:
     // ?getOrLoadChunk@NetworkChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@W4LoadMode@ChunkSource@@_N@Z
     virtual std::shared_ptr<class LevelChunk> getOrLoadChunk(class ChunkPos const&, ::ChunkSource::LoadMode, bool);
 
-    // vIndex: 18, symbol:
+    // vIndex: 19, symbol:
     // ?acquireDiscarded@NetworkChunkSource@@UEAAXV?$unique_ptr@VLevelChunk@@ULevelChunkFinalDeleter@@@std@@@Z
     virtual void acquireDiscarded(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
 
-    // vIndex: 23, symbol:
+    // vIndex: 24, symbol:
     // ?getChunkMap@NetworkChunkSource@@UEAAPEBV?$unordered_map@VChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@U?$hash@VChunkPos@@@3@U?$equal_to@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@@std@@@3@@std@@XZ
     virtual std::unordered_map<class ChunkPos, std::weak_ptr<class LevelChunk>> const* getChunkMap();
 
-    // vIndex: 24, symbol:
+    // vIndex: 25, symbol:
     // ?getStorage@NetworkChunkSource@@UEBAAEBV?$unordered_map@VChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@U?$hash@VChunkPos@@@3@U?$equal_to@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@@std@@@3@@std@@XZ
     virtual std::unordered_map<class ChunkPos, std::weak_ptr<class LevelChunk>> const& getStorage() const;
 
-    // vIndex: 26, symbol: ?canCreateViews@NetworkChunkSource@@UEBA_NXZ
+    // vIndex: 27, symbol: ?canCreateViews@NetworkChunkSource@@UEBA_NXZ
     virtual bool canCreateViews() const;
 
-    // vIndex: 30, symbol: ?canLaunchTasks@NetworkChunkSource@@UEBA_NXZ
+    // vIndex: 31, symbol: ?canLaunchTasks@NetworkChunkSource@@UEBA_NXZ
     virtual bool canLaunchTasks() const;
 
     // symbol: ??0NetworkChunkSource@@QEAA@AEAVDimension@@@Z
