@@ -9,10 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class WeakEntityRef;
 namespace ScriptModuleMinecraft { class ScriptActorComponent; }
-namespace Scripting { class WeakLifetimeScope; }
-struct Description;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -30,85 +27,80 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 2, symbol:
-    // ?getIsAmphibious@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N@Scripting@@XZ
+    // ?getIsAmphibious@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@XZ
     virtual class Scripting::Result<bool> getIsAmphibious() const;
 
     // vIndex: 3, symbol:
-    // ?getAvoidSun@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N@Scripting@@XZ
+    // ?getAvoidSun@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@XZ
     virtual class Scripting::Result<bool> getAvoidSun() const;
 
     // vIndex: 4, symbol:
-    // ?getCanPassDoors@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N@Scripting@@XZ
+    // ?getCanPassDoors@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@XZ
     virtual class Scripting::Result<bool> getCanPassDoors() const;
 
     // vIndex: 5, symbol:
-    // ?getCanOpenDoors@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N@Scripting@@XZ
+    // ?getCanOpenDoors@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@XZ
     virtual class Scripting::Result<bool> getCanOpenDoors() const;
 
     // vIndex: 6, symbol:
-    // ?getCanOpenIronDoors@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N@Scripting@@XZ
+    // ?getCanOpenIronDoors@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@XZ
     virtual class Scripting::Result<bool> getCanOpenIronDoors() const;
 
     // vIndex: 7, symbol:
-    // ?getCanBreakDoors@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N@Scripting@@XZ
+    // ?getCanBreakDoors@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@XZ
     virtual class Scripting::Result<bool> getCanBreakDoors() const;
 
     // vIndex: 8, symbol:
-    // ?getAvoidWater@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N@Scripting@@XZ
+    // ?getAvoidWater@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@XZ
     virtual class Scripting::Result<bool> getAvoidWater() const;
 
     // vIndex: 9, symbol:
-    // ?getAvoidDamageBlocks@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N@Scripting@@XZ
+    // ?getAvoidDamageBlocks@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@XZ
     virtual class Scripting::Result<bool> getAvoidDamageBlocks() const;
 
     // vIndex: 10, symbol:
-    // ?getCanFloat@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N@Scripting@@XZ
+    // ?getCanFloat@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@XZ
     virtual class Scripting::Result<bool> getCanFloat() const;
 
     // vIndex: 11, symbol:
-    // ?getCanSink@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N@Scripting@@XZ
+    // ?getCanSink@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@XZ
     virtual class Scripting::Result<bool> getCanSink() const;
 
     // vIndex: 12, symbol:
-    // ?getCanPathOverWater@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N@Scripting@@XZ
+    // ?getCanPathOverWater@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@XZ
     virtual class Scripting::Result<bool> getCanPathOverWater() const;
 
     // vIndex: 13, symbol:
-    // ?getCanPathOverLava@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N@Scripting@@XZ
+    // ?getCanPathOverLava@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@XZ
     virtual class Scripting::Result<bool> getCanPathOverLava() const;
 
     // vIndex: 14, symbol:
-    // ?getCanWalkInLava@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N@Scripting@@XZ
+    // ?getCanWalkInLava@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@XZ
     virtual class Scripting::Result<bool> getCanWalkInLava() const;
 
     // vIndex: 15, symbol:
-    // ?getAvoidPortals@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N@Scripting@@XZ
+    // ?getAvoidPortals@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@XZ
     virtual class Scripting::Result<bool> getAvoidPortals() const;
 
     // vIndex: 16, symbol:
-    // ?getCanWalk@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N@Scripting@@XZ
+    // ?getCanWalk@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@XZ
     virtual class Scripting::Result<bool> getCanWalk() const;
 
     // vIndex: 17, symbol:
-    // ?getCanSwim@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N@Scripting@@XZ
+    // ?getCanSwim@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@XZ
     virtual class Scripting::Result<bool> getCanSwim() const;
 
     // vIndex: 18, symbol:
-    // ?getCanBreach@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N@Scripting@@XZ
+    // ?getCanBreach@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@XZ
     virtual class Scripting::Result<bool> getCanBreach() const;
 
     // vIndex: 19, symbol:
-    // ?getCanJump@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N@Scripting@@XZ
+    // ?getCanJump@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@XZ
     virtual class Scripting::Result<bool> getCanJump() const;
 
     // vIndex: 20, symbol:
-    // ?getCanPathFromAir@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N@Scripting@@XZ
+    // ?getCanPathFromAir@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@XZ
     virtual class Scripting::Result<bool> getCanPathFromAir() const;
-
-    // symbol:
-    // ??0NavigationScriptActorComponent@ScriptModuleMinecraft@@QEAA@AEBVWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEQActorDefinitionDescriptor@@PEAUDescription@@@Z
-    MCAPI
-    NavigationScriptActorComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&, struct Description* ActorDefinitionDescriptor::*);
 
     // symbol:
     // ?bind@NavigationScriptActorComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VNavigationScriptActorComponent@ScriptModuleMinecraft@@@Scripting@@XZ

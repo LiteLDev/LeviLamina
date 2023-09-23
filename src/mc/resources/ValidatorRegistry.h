@@ -15,10 +15,19 @@ class ValidatorRegistry : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // ValidatorRegistry inner types declare
     // clang-format off
+    struct ValidatorRegisterer;
     class ValidatorRegistryValidators;
     // clang-format on
 
     // ValidatorRegistry inner types define
+    struct ValidatorRegisterer {
+    public:
+        // prevent constructor by default
+        ValidatorRegisterer& operator=(ValidatorRegisterer const&);
+        ValidatorRegisterer(ValidatorRegisterer const&);
+        ValidatorRegisterer();
+    };
+
     class ValidatorRegistryValidators {
     public:
         // prevent constructor by default

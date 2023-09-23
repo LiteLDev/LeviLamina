@@ -19,9 +19,9 @@ public:
     MCAPI FeatureTypeFactory();
 
     // symbol:
-    // ?processFeature@FeatureTypeFactory@@QEBAXAEAVIWorldRegistriesProvider@@AEBVResourcePackManager@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVValue@Json@@AEBVSemVersion@@@Z
-    MCAPI void
-    processFeature(class IWorldRegistriesProvider&, class ResourcePackManager const&, std::string const&, class Json::Value&, class SemVersion const&)
+    // ?processFeature@FeatureTypeFactory@@QEBA_NAEAVIWorldRegistriesProvider@@_NAEBVResourcePackManager@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@AEBVSemVersion@@@Z
+    MCAPI bool
+    processFeature(class IWorldRegistriesProvider&, bool, class ResourcePackManager const&, std::string const&, class Json::Value const&, class SemVersion const&)
         const;
 
     // NOLINTEND

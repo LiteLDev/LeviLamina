@@ -6,6 +6,7 @@
 #include "mc/common/wrapper/optional_ref.h"
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
+#include "mc/enums/ShapeType.h"
 #include "mc/world/actor/item/FallingBlock.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -28,9 +29,16 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 8, symbol: ?getAABB@AnvilBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
+    // vIndex: 6, symbol:
+    // ?getCollisionShape@AnvilBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    virtual class AABB
+    getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    // vIndex: 10, symbol:
+    // ?getOutline@AnvilBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
     virtual class AABB const&
-    getAABB(class IConstBlockSource const&, class BlockPos const&, class Block const&, class AABB&, bool) const;
+    getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
     // vIndex: 14, symbol: ?getLiquidClipVolume@AnvilBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z
     virtual bool getLiquidClipVolume(class BlockSource&, class BlockPos const&, class AABB&) const;
@@ -95,36 +103,35 @@ public:
     // vIndex: 51, symbol: __unk_vfn_51
     virtual void __unk_vfn_51();
 
-    // vIndex: 56, symbol: __unk_vfn_56
-    virtual void __unk_vfn_56();
+    // vIndex: 55, symbol: __unk_vfn_55
+    virtual void __unk_vfn_55();
+
+    // vIndex: 61, symbol: __unk_vfn_61
+    virtual void __unk_vfn_61();
 
     // vIndex: 62, symbol: __unk_vfn_62
     virtual void __unk_vfn_62();
 
-    // vIndex: 63, symbol: __unk_vfn_63
-    virtual void __unk_vfn_63();
-
-    // vIndex: 64, symbol: ?canContainLiquid@AnvilBlock@@UEBA_NXZ
+    // vIndex: 63, symbol: ?canContainLiquid@AnvilBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
-    // vIndex: 77, symbol: __unk_vfn_77
-    virtual void __unk_vfn_77();
+    // vIndex: 76, symbol: __unk_vfn_76
+    virtual void __unk_vfn_76();
 
-    // vIndex: 84, symbol: __unk_vfn_84
-    virtual void __unk_vfn_84();
+    // vIndex: 83, symbol: __unk_vfn_83
+    virtual void __unk_vfn_83();
 
-    // vIndex: 98, symbol: ?breaksFallingBlocks@AnvilBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+    // vIndex: 97, symbol: ?breaksFallingBlocks@AnvilBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
     virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
 
-    // vIndex: 105, symbol: ?asItemInstance@AnvilBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 104, symbol: ?asItemInstance@AnvilBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
+    // vIndex: 106, symbol: __unk_vfn_106
+    virtual void __unk_vfn_106();
 
-    // vIndex: 108, symbol: ?getPlacementBlock@AnvilBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
+    // vIndex: 122, symbol: __unk_vfn_122
+    virtual void __unk_vfn_122();
 
     // vIndex: 123, symbol: __unk_vfn_123
     virtual void __unk_vfn_123();
@@ -132,23 +139,20 @@ public:
     // vIndex: 124, symbol: __unk_vfn_124
     virtual void __unk_vfn_124();
 
-    // vIndex: 125, symbol: __unk_vfn_125
-    virtual void __unk_vfn_125();
+    // vIndex: 127, symbol: __unk_vfn_127
+    virtual void __unk_vfn_127();
 
-    // vIndex: 128, symbol: __unk_vfn_128
-    virtual void __unk_vfn_128();
+    // vIndex: 130, symbol: __unk_vfn_130
+    virtual void __unk_vfn_130();
 
-    // vIndex: 131, symbol: __unk_vfn_131
-    virtual void __unk_vfn_131();
-
-    // vIndex: 133, symbol:
+    // vIndex: 132, symbol:
     // ?buildDescriptionId@AnvilBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 134, symbol: ?isAuxValueRelevantForPicking@AnvilBlock@@UEBA_NXZ
+    // vIndex: 133, symbol: ?isAuxValueRelevantForPicking@AnvilBlock@@UEBA_NXZ
     virtual bool isAuxValueRelevantForPicking() const;
 
-    // vIndex: 143, symbol: ?getVariant@AnvilBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 142, symbol: ?getVariant@AnvilBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const&) const;
 
     // vIndex: 148, symbol: ?animateTick@AnvilBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
@@ -181,12 +185,6 @@ public:
     // vIndex: 183, symbol: __unk_vfn_183
     virtual void __unk_vfn_183();
 
-    // vIndex: 185, symbol: ?getResourceItem@AnvilBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
-
-    // vIndex: 187, symbol: ?getSilkTouchItemInstance@AnvilBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
-
     // vIndex: 192, symbol: ?getDustColor@AnvilBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
     virtual class mce::Color getDustColor(class Block const&) const;
 
@@ -214,6 +212,13 @@ public:
 
     // symbol: ??0AnvilBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI AnvilBlock(std::string const&, int);
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_getShape@AnvilBlock@@CAAEBVAABB@@AEBVBlockPos@@AEBVBlock@@AEAV2@@Z
+    MCAPI static class AABB const& _getShape(class BlockPos const&, class Block const&, class AABB&);
 
     // NOLINTEND
 };

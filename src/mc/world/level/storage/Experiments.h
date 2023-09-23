@@ -28,14 +28,11 @@ public:
     // symbol: ?Gametest@Experiments@@QEBA_NXZ
     MCAPI bool Gametest() const;
 
-    // symbol: ?RecipeUnlocking@Experiments@@QEBA_NXZ
-    MCAPI bool RecipeUnlocking() const;
-
-    // symbol: ?ShortSneaking@Experiments@@QEBA_NXZ
-    MCAPI bool ShortSneaking() const;
-
     // symbol: ?UpcomingCreatorFeatures@Experiments@@QEBA_NXZ
     MCAPI bool UpcomingCreatorFeatures() const;
+
+    // symbol: ?VillagerTradesRebalance@Experiments@@QEBA_NXZ
+    MCAPI bool VillagerTradesRebalance() const;
 
     // symbol:
     // ?getExperimentsActiveAsJSONList@Experiments@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -62,9 +59,6 @@ public:
 
     // symbol: ??1Experiments@@QEAA@XZ
     MCAPI ~Experiments();
-
-    // symbol: ?MinecraftExplorer@Experiments@@SA_NXZ
-    MCAPI static bool MinecraftExplorer();
 
     // symbol:
     // ?getExperimentTextID@Experiments@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4AllExperiments@@@Z

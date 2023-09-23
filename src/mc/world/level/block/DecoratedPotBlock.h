@@ -6,6 +6,7 @@
 #include "mc/common/wrapper/optional_ref.h"
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
+#include "mc/enums/ShapeType.h"
 #include "mc/world/level/block/FaceDirectionalActorBlock.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -88,47 +89,50 @@ public:
     // vIndex: 51, symbol: __unk_vfn_51
     virtual void __unk_vfn_51();
 
-    // vIndex: 56, symbol: __unk_vfn_56
-    virtual void __unk_vfn_56();
+    // vIndex: 55, symbol: __unk_vfn_55
+    virtual void __unk_vfn_55();
+
+    // vIndex: 61, symbol: __unk_vfn_61
+    virtual void __unk_vfn_61();
 
     // vIndex: 62, symbol: __unk_vfn_62
     virtual void __unk_vfn_62();
 
-    // vIndex: 63, symbol: __unk_vfn_63
-    virtual void __unk_vfn_63();
-
-    // vIndex: 64, symbol: ?canContainLiquid@DecoratedPotBlock@@UEBA_NXZ
+    // vIndex: 63, symbol: ?canContainLiquid@DecoratedPotBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
-    // vIndex: 71, symbol: ?checkIsPathable@DecoratedPotBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 70, symbol: ?checkIsPathable@DecoratedPotBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
     virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
 
-    // vIndex: 77, symbol: __unk_vfn_77
-    virtual void __unk_vfn_77();
+    // vIndex: 76, symbol: __unk_vfn_76
+    virtual void __unk_vfn_76();
 
-    // vIndex: 84, symbol: __unk_vfn_84
-    virtual void __unk_vfn_84();
+    // vIndex: 83, symbol: __unk_vfn_83
+    virtual void __unk_vfn_83();
 
-    // vIndex: 103, symbol: ?playerWillDestroy@DecoratedPotBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 102, symbol: ?playerWillDestroy@DecoratedPotBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual bool playerWillDestroy(class Player&, class BlockPos const&, class Block const&) const;
 
-    // vIndex: 104, symbol:
+    // vIndex: 103, symbol:
     // ?spawnResources@DecoratedPotBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
     virtual void
     spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&)
         const;
 
-    // vIndex: 105, symbol: ?asItemInstance@DecoratedPotBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 104, symbol: ?asItemInstance@DecoratedPotBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 106, symbol:
+    // vIndex: 105, symbol:
     // ?trySpawnResourcesOnExplosion@DecoratedPotBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@M@Z
     virtual void
     trySpawnResourcesOnExplosion(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, float)
         const;
 
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
+    // vIndex: 106, symbol: __unk_vfn_106
+    virtual void __unk_vfn_106();
+
+    // vIndex: 122, symbol: __unk_vfn_122
+    virtual void __unk_vfn_122();
 
     // vIndex: 123, symbol: __unk_vfn_123
     virtual void __unk_vfn_123();
@@ -136,14 +140,11 @@ public:
     // vIndex: 124, symbol: __unk_vfn_124
     virtual void __unk_vfn_124();
 
-    // vIndex: 125, symbol: __unk_vfn_125
-    virtual void __unk_vfn_125();
+    // vIndex: 127, symbol: __unk_vfn_127
+    virtual void __unk_vfn_127();
 
-    // vIndex: 128, symbol: __unk_vfn_128
-    virtual void __unk_vfn_128();
-
-    // vIndex: 131, symbol: __unk_vfn_131
-    virtual void __unk_vfn_131();
+    // vIndex: 130, symbol: __unk_vfn_130
+    virtual void __unk_vfn_130();
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();

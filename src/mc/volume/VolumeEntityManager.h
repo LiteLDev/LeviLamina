@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { class EnableNonOwnerReferences; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class VolumeEntityManager : public ::Bedrock::EnableNonOwnerReferences {
@@ -30,11 +31,12 @@ public:
 
     // symbol:
     // ?getVolumeInstances@VolumeEntityManager@@QEBAAEBV?$vector@V?$OwnerPtrT@UEntityRefTraits@@@@V?$allocator@V?$OwnerPtrT@UEntityRefTraits@@@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const&
-          getVolumeInstances(class AutomaticID<class Dimension, int>) const;
+    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const& getVolumeInstances(DimensionType) const;
 
-    // symbol: ?registerComponentNetRelevancy@VolumeEntityManager@@SAXAEAVComponentNetRelevancyRegistry@@@Z
-    MCAPI static void registerComponentNetRelevancy(class ComponentNetRelevancyRegistry&);
+    // symbol:
+    // ?registerComponentNetRelevancy@VolumeEntityManager@@SAXAEAVComponentNetRelevancyRegistry@@AEBUReflectionCtx@cereal@@@Z
+    MCAPI static void
+    registerComponentNetRelevancy(class ComponentNetRelevancyRegistry&, struct cereal::ReflectionCtx const&);
 
     // symbol: ?isTriggerVolumesEnabled@VolumeEntityManager@@2_NA
     MCAPI static bool isTriggerVolumesEnabled;
@@ -43,8 +45,8 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ??0VolumeEntityManager@@IEAA@V?$StackRefResultT@UEntityRegistryRefTraits@@@@@Z
-    MCAPI explicit VolumeEntityManager(class StackRefResultT<struct EntityRegistryRefTraits>);
+    // symbol: ??0VolumeEntityManager@@IEAA@V?$StackRefResultT@UEntityRegistryRefTraits@@@@AEAUReflectionCtx@cereal@@@Z
+    MCAPI VolumeEntityManager(class StackRefResultT<struct EntityRegistryRefTraits>, struct cereal::ReflectionCtx&);
 
     // symbol:
     // ?_createVolumeEntity@VolumeEntityManager@@IEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBVDefinitionInstanceGroup@@@Z

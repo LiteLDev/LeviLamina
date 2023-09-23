@@ -50,10 +50,6 @@ public:
     // symbol: ?isMeleeDamageEnchant@MeleeWeaponEnchant@@UEBA_NXZ
     MCVAPI bool isMeleeDamageEnchant() const;
 
-    // symbol:
-    // ??0MeleeWeaponEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2HH@Z
-    MCAPI MeleeWeaponEnchant(::Enchant::Type, ::Enchant::Frequency, std::string_view, std::string_view, int, int);
-
     // NOLINTEND
 
 private:

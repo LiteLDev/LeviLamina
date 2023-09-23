@@ -66,11 +66,11 @@ public:
     // symbol:
     // ?playSoundForPlayerInDimension@LevelSoundManager@@QEAAXV?$AutomaticID@VDimension@@H@@W4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4PEAVPlayer@@@Z
     MCAPI void
-    playSoundForPlayerInDimension(class AutomaticID<class Dimension, int>, ::LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool, class Player*);
+    playSoundForPlayerInDimension(DimensionType, ::LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool, class Player*);
 
     // symbol:
-    // ?playSynchronizedSound@LevelSoundManager@@QEAAXAEAVIDimension@@W4LevelSoundEvent@@AEBVVec3@@PEAVPlayer@@HAEBUActorDefinitionIdentifier@@_N5@Z
-    MCAPI void playSynchronizedSound(
+    // ?playSynchronizedSound_DEPRECATED@LevelSoundManager@@QEAAXAEAVIDimension@@W4LevelSoundEvent@@AEBVVec3@@PEAVPlayer@@HAEBUActorDefinitionIdentifier@@_N5@Z
+    MCAPI void playSynchronizedSound_DEPRECATED(
         class IDimension&,
         ::LevelSoundEvent,
         class Vec3 const&,

@@ -46,11 +46,11 @@ public:
     // symbol: ??1ShowCreditsPacket@@UEAA@XZ
     MCVAPI ~ShowCreditsPacket();
 
-    // symbol: ??0ShowCreditsPacket@@QEAA@VActorRuntimeID@@W4CreditsState@0@@Z
-    MCAPI ShowCreditsPacket(class ActorRuntimeID, ::ShowCreditsPacket::CreditsState);
-
     // symbol: ??0ShowCreditsPacket@@QEAA@XZ
     MCAPI ShowCreditsPacket();
+
+    // symbol: ??0ShowCreditsPacket@@QEAA@VActorRuntimeID@@W4CreditsState@0@@Z
+    MCAPI ShowCreditsPacket(class ActorRuntimeID, ::ShowCreditsPacket::CreditsState);
 
     // NOLINTEND
 };

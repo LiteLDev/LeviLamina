@@ -43,9 +43,6 @@ public:
     // vIndex: 29, symbol: ?serialize@ActorServerCommandOrigin@@UEBA?AVCompoundTag@@XZ
     virtual class CompoundTag serialize() const;
 
-    // symbol: ?getTargetOther@ActorServerCommandOrigin@@QEBA?AUActorUniqueID@@XZ
-    MCAPI struct ActorUniqueID getTargetOther() const;
-
     // symbol: ?setTargetOther@ActorServerCommandOrigin@@QEAAXUActorUniqueID@@@Z
     MCAPI void setTargetOther(struct ActorUniqueID);
 

@@ -11,17 +11,15 @@ struct ScriptActorHurtAfterEvent {
 public:
     // prevent constructor by default
     ScriptActorHurtAfterEvent& operator=(ScriptActorHurtAfterEvent const&);
+    ScriptActorHurtAfterEvent();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptActorHurtAfterEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
-    MCAPI ScriptActorHurtAfterEvent(struct ScriptModuleMinecraft::ScriptActorHurtAfterEvent const&);
-
     // symbol: ??0ScriptActorHurtAfterEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
     MCAPI ScriptActorHurtAfterEvent(struct ScriptModuleMinecraft::ScriptActorHurtAfterEvent&&);
 
-    // symbol: ??0ScriptActorHurtAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ScriptActorHurtAfterEvent();
+    // symbol: ??0ScriptActorHurtAfterEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
+    MCAPI ScriptActorHurtAfterEvent(struct ScriptModuleMinecraft::ScriptActorHurtAfterEvent const&);
 
     // symbol: ??4ScriptActorHurtAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptActorHurtAfterEvent&

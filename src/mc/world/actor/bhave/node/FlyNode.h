@@ -11,6 +11,7 @@ public:
     // prevent constructor by default
     FlyNode& operator=(FlyNode const&);
     FlyNode(FlyNode const&);
+    FlyNode();
 
 public:
     // NOLINTBEGIN
@@ -22,9 +23,6 @@ public:
 
     // vIndex: 2, symbol: ?initializeFromDefinition@FlyNode@@EEAAXAEAVActor@@@Z
     virtual void initializeFromDefinition(class Actor&);
-
-    // symbol: ??0FlyNode@@QEAA@XZ
-    MCAPI FlyNode();
 
     // NOLINTEND
 };

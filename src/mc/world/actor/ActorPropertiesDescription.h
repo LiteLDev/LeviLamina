@@ -2,10 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ActorPropertiesDescription {
+struct ActorPropertiesDescription {
 public:
     // prevent constructor by default
-    ActorPropertiesDescription& operator=(ActorPropertiesDescription const&);
     ActorPropertiesDescription(ActorPropertiesDescription const&);
     ActorPropertiesDescription();
 
@@ -19,6 +18,9 @@ public:
 
     // symbol: ??1ActorPropertiesDescription@@UEAA@XZ
     MCVAPI ~ActorPropertiesDescription();
+
+    // symbol: ??4ActorPropertiesDescription@@QEAAAEAU0@AEBU0@@Z
+    MCAPI struct ActorPropertiesDescription& operator=(struct ActorPropertiesDescription const&);
 
     // NOLINTEND
 };

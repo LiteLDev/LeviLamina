@@ -25,9 +25,6 @@ public:
     // vIndex: 3, symbol: ?setWantedPosition@MoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@AEBVVec3@@M@Z
     virtual void setWantedPosition(class MoveControlComponent&, class Mob&, class Vec3 const&, float);
 
-    // symbol: ??1MoveControl@@UEAA@XZ
-    MCVAPI ~MoveControl();
-
     // symbol: ??0MoveControl@@QEAA@XZ
     MCAPI MoveControl();
 

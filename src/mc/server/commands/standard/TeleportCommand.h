@@ -54,7 +54,7 @@ public:
         class Actor&,
         class Vec3,
         class Vec3*,
-        class AutomaticID<class Dimension, int>,
+        DimensionType,
         std::optional<class RotationCommandUtils::RotationData> const&,
         int
     );

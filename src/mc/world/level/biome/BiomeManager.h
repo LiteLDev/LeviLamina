@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/OwnerPtrT.h"
+#include "mc/common/wrapper/SharePtrRefTraits.h"
 #include "mc/world/level/biome/registry/BiomeComponentFactory.h"
 
 class BiomeManager {
@@ -15,9 +17,9 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ??0BiomeManager@@QEAA@V?$unique_ptr@VBiomeRegistry@@U?$default_delete@VBiomeRegistry@@@std@@@std@@W4FactoryScope@BiomeComponentFactory@@_NV?$unique_ptr@VAutomaticFeatureRules@@U?$default_delete@VAutomaticFeatureRules@@@std@@@2@@Z
+    // ??0BiomeManager@@QEAA@V?$OwnerPtrT@U?$SharePtrRefTraits@VBiomeRegistry@@@@@@W4FactoryScope@BiomeComponentFactory@@_NV?$unique_ptr@VAutomaticFeatureRules@@U?$default_delete@VAutomaticFeatureRules@@@std@@@std@@@Z
     MCAPI
-    BiomeManager(std::unique_ptr<class BiomeRegistry>, ::BiomeComponentFactory::FactoryScope, bool, std::unique_ptr<class AutomaticFeatureRules>);
+    BiomeManager(class OwnerPtrT<struct SharePtrRefTraits<class BiomeRegistry>>, ::BiomeComponentFactory::FactoryScope, bool, std::unique_ptr<class AutomaticFeatureRules>);
 
     // symbol: ?getBiomeComponentFactory@BiomeManager@@QEAAAEAVBiomeComponentFactory@@XZ
     MCAPI class BiomeComponentFactory& getBiomeComponentFactory();
@@ -51,6 +53,19 @@ public:
 
     // symbol: ?use3DBiomeMaps@BiomeManager@@SA_NAEBVBaseGameVersion@@@Z
     MCAPI static bool use3DBiomeMaps(class BaseGameVersion const&);
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol:
+    // ?_initializeServerBiomeRegistry@BiomeManager@@AEAAXAEBVExperiments@@AEAVIWorldRegistriesProvider@@AEAVResourcePackManager@@VLevelSeed64@@@Z
+    MCAPI void _initializeServerBiomeRegistry(
+        class Experiments const&,
+        class IWorldRegistriesProvider&,
+        class ResourcePackManager&,
+        class LevelSeed64
+    );
 
     // NOLINTEND
 };

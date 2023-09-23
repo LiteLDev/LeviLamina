@@ -11,17 +11,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@ClientPlayerRewindSystem@@SA?AUTickingSystemWithInfo@@XZ
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    // symbol: ?accumulateHistoryChangesSystem@ClientPlayerRewindSystem@@SA?AUTickingSystemWithInfo@@XZ
+    MCAPI static struct TickingSystemWithInfo accumulateHistoryChangesSystem();
 
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
     // symbol:
-    // ?_doClientPlayerRewindSystem@ClientPlayerRewindSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@AEAVReplayStateComponent@@@Z
+    // ?applyHistoryChangesToLiveEntity@ClientPlayerRewindSystem@@SAXAEBUReplayStateTrackerComponent@@AEAUSynchedActorDataComponent@@@Z
     MCAPI static void
-    _doClientPlayerRewindSystem(class StrictEntityContext const&, class ActorOwnerComponent&, class ReplayStateComponent&);
+    applyHistoryChangesToLiveEntity(struct ReplayStateTrackerComponent const&, struct SynchedActorDataComponent&);
+
+    // symbol: ?discardHistoryChangesSystem@ClientPlayerRewindSystem@@SA?AUTickingSystemWithInfo@@XZ
+    MCAPI static struct TickingSystemWithInfo discardHistoryChangesSystem();
 
     // NOLINTEND
 };

@@ -22,9 +22,6 @@ public:
     // vIndex: 2, symbol: ?tick@LookControl@@UEAAXAEAVMob@@@Z
     virtual void tick(class Mob&);
 
-    // symbol: ??1LookControl@@UEAA@XZ
-    MCVAPI ~LookControl();
-
     // symbol: ??0LookControl@@QEAA@XZ
     MCAPI LookControl();
 

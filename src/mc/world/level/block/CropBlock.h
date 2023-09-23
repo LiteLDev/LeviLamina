@@ -6,6 +6,7 @@
 #include "mc/common/wrapper/optional_ref.h"
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
+#include "mc/enums/ShapeType.h"
 #include "mc/world/level/block/BushBlock.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -32,9 +33,15 @@ public:
     // ?hasTag@CropBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual bool hasTag(class BlockSource&, class BlockPos const&, class Block const&, std::string const&) const;
 
-    // vIndex: 8, symbol: ?getAABB@CropBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
+    // vIndex: 6, symbol:
+    // ?getCollisionShape@CropBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    virtual class AABB
+    getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    // vIndex: 10, symbol: ?getOutline@CropBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
     virtual class AABB const&
-    getAABB(class IConstBlockSource const&, class BlockPos const&, class Block const&, class AABB&, bool) const;
+    getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
     // vIndex: 22, symbol: __unk_vfn_22
     virtual void __unk_vfn_22();
@@ -93,52 +100,55 @@ public:
     // vIndex: 51, symbol: __unk_vfn_51
     virtual void __unk_vfn_51();
 
-    // vIndex: 56, symbol: __unk_vfn_56
-    virtual void __unk_vfn_56();
+    // vIndex: 55, symbol: __unk_vfn_55
+    virtual void __unk_vfn_55();
+
+    // vIndex: 61, symbol: __unk_vfn_61
+    virtual void __unk_vfn_61();
 
     // vIndex: 62, symbol: __unk_vfn_62
     virtual void __unk_vfn_62();
 
-    // vIndex: 63, symbol: __unk_vfn_63
-    virtual void __unk_vfn_63();
-
-    // vIndex: 64, symbol: ?canContainLiquid@CropBlock@@UEBA_NXZ
+    // vIndex: 63, symbol: ?canContainLiquid@CropBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
-    // vIndex: 77, symbol: __unk_vfn_77
-    virtual void __unk_vfn_77();
+    // vIndex: 76, symbol: __unk_vfn_76
+    virtual void __unk_vfn_76();
 
-    // vIndex: 84, symbol: __unk_vfn_84
-    virtual void __unk_vfn_84();
+    // vIndex: 83, symbol: __unk_vfn_83
+    virtual void __unk_vfn_83();
 
-    // vIndex: 88, symbol: ?onFertilized@CropBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
+    // vIndex: 87, symbol: ?onFertilized@CropBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
     virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
 
-    // vIndex: 90, symbol: ?canBeFertilized@CropBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 89, symbol: ?canBeFertilized@CropBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
 
-    // vIndex: 95, symbol: ?mayPlaceOn@CropBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 94, symbol: ?mayPlaceOn@CropBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlaceOn(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 101, symbol: ?neighborChanged@CropBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 100, symbol: ?neighborChanged@CropBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
 
-    // vIndex: 104, symbol:
+    // vIndex: 103, symbol:
     // ?spawnResources@CropBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
     virtual void
     spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&)
         const;
 
-    // vIndex: 105, symbol: ?asItemInstance@CropBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 104, symbol: ?asItemInstance@CropBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
+    // vIndex: 106, symbol: __unk_vfn_106
+    virtual void __unk_vfn_106();
 
-    // vIndex: 118, symbol:
+    // vIndex: 117, symbol:
     // ?executeEvent@CropBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVActor@@@Z
     virtual void
     executeEvent(class BlockSource&, class BlockPos const&, class Block const&, std::string const&, class Actor&) const;
+
+    // vIndex: 122, symbol: __unk_vfn_122
+    virtual void __unk_vfn_122();
 
     // vIndex: 123, symbol: __unk_vfn_123
     virtual void __unk_vfn_123();
@@ -146,16 +156,13 @@ public:
     // vIndex: 124, symbol: __unk_vfn_124
     virtual void __unk_vfn_124();
 
-    // vIndex: 125, symbol: __unk_vfn_125
-    virtual void __unk_vfn_125();
+    // vIndex: 127, symbol: __unk_vfn_127
+    virtual void __unk_vfn_127();
 
-    // vIndex: 128, symbol: __unk_vfn_128
-    virtual void __unk_vfn_128();
+    // vIndex: 130, symbol: __unk_vfn_130
+    virtual void __unk_vfn_130();
 
-    // vIndex: 131, symbol: __unk_vfn_131
-    virtual void __unk_vfn_131();
-
-    // vIndex: 143, symbol: ?getVariant@CropBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 142, symbol: ?getVariant@CropBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const&) const;
 
     // vIndex: 153, symbol: __unk_vfn_153

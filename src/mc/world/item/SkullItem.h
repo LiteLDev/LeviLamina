@@ -115,8 +115,5 @@ public:
     virtual class InteractionResult
     _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
 
-    // symbol: ??0SkullItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SkullItem(std::string const&, int);
-
     // NOLINTEND
 };

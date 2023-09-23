@@ -40,11 +40,11 @@ public:
     // symbol: ??1SetActorMotionPacket@@UEAA@XZ
     MCVAPI ~SetActorMotionPacket();
 
-    // symbol: ??0SetActorMotionPacket@@QEAA@AEBVActor@@@Z
-    MCAPI explicit SetActorMotionPacket(class Actor const&);
-
     // symbol: ??0SetActorMotionPacket@@QEAA@XZ
     MCAPI SetActorMotionPacket();
+
+    // symbol: ??0SetActorMotionPacket@@QEAA@AEBVActor@@@Z
+    MCAPI explicit SetActorMotionPacket(class Actor const&);
 
     // NOLINTEND
 };

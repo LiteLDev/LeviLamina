@@ -68,7 +68,7 @@ public:
     // vIndex: 16, symbol: ?getContainerSize@FillingContainer@@UEBAHXZ
     virtual int getContainerSize() const = 0;
 
-    // vIndex: 17, symbol: ?getMaxStackSize@SimpleContainer@@UEBAHXZ
+    // vIndex: 17, symbol: ?getMaxStackSize@FillingContainer@@UEBAHXZ
     virtual int getMaxStackSize() const = 0;
 
     // vIndex: 18, symbol: ?startOpen@FillingContainer@@UEAAXAEAVPlayer@@@Z
@@ -138,14 +138,11 @@ public:
     // symbol: ??1Container@@UEAA@XZ
     MCVAPI ~Container();
 
-    // symbol: ??0Container@@QEAA@W4ContainerType@@@Z
-    MCAPI explicit Container(::ContainerType);
-
-    // symbol: ??0Container@@QEAA@W4ContainerType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    MCAPI Container(::ContainerType, std::string const&, bool);
-
     // symbol: ??0Container@@QEAA@AEBV0@@Z
     MCAPI Container(class Container const&);
+
+    // symbol: ??0Container@@QEAA@W4ContainerType@@@Z
+    MCAPI explicit Container(::ContainerType);
 
     // symbol: ?getContainerType@Container@@QEBA?AW4ContainerType@@XZ
     MCAPI ::ContainerType getContainerType() const;

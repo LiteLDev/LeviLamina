@@ -38,6 +38,9 @@ public:
 
     public:
         // NOLINTBEGIN
+        // symbol: ??0ButtonData@ScriptActionFormData@ScriptModuleMinecraftServerUI@@QEAA@$$QEAU012@@Z
+        MCAPI ButtonData(struct ScriptModuleMinecraftServerUI::ScriptActionFormData::ButtonData&&);
+
         // symbol: ??4ButtonData@ScriptActionFormData@ScriptModuleMinecraftServerUI@@QEAAAEAU012@AEBU012@@Z
         MCAPI struct ScriptModuleMinecraftServerUI::ScriptActionFormData::ButtonData&
         operator=(struct ScriptModuleMinecraftServerUI::ScriptActionFormData::ButtonData const&);
@@ -51,17 +54,12 @@ public:
 public:
     // prevent constructor by default
     ScriptActionFormData& operator=(ScriptActionFormData const&);
+    ScriptActionFormData(ScriptActionFormData const&);
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ScriptActionFormData@ScriptModuleMinecraftServerUI@@QEAA@XZ
     MCAPI ScriptActionFormData();
-
-    // symbol: ??0ScriptActionFormData@ScriptModuleMinecraftServerUI@@QEAA@$$QEAV01@@Z
-    MCAPI ScriptActionFormData(class ScriptModuleMinecraftServerUI::ScriptActionFormData&&);
-
-    // symbol: ??0ScriptActionFormData@ScriptModuleMinecraftServerUI@@QEAA@AEBV01@@Z
-    MCAPI ScriptActionFormData(class ScriptModuleMinecraftServerUI::ScriptActionFormData const&);
 
     // symbol:
     // ?body@ScriptActionFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$StrongTypedObjectHandle@VScriptActionFormData@ScriptModuleMinecraftServerUI@@@Scripting@@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@@Z
@@ -91,7 +89,7 @@ public:
     operator=(class ScriptModuleMinecraftServerUI::ScriptActionFormData&&);
 
     // symbol:
-    // ?show@ScriptActionFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$Result@V?$Promise@V?$StrongTypedObjectHandle@VScriptActionFormResponse@ScriptModuleMinecraftServerUI@@@Scripting@@VScriptFormRejectError@ScriptModuleMinecraftServerUI@@X@Scripting@@@Scripting@@AEBVWeakLifetimeScope@4@AEAVScriptObjectFactory@4@AEAVDependencyLocator@4@AEAVScriptPlayer@ScriptModuleMinecraft@@@Z
+    // ?show@ScriptActionFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$Result@V?$Promise@V?$StrongTypedObjectHandle@VScriptActionFormResponse@ScriptModuleMinecraftServerUI@@@Scripting@@VScriptFormRejectError@ScriptModuleMinecraftServerUI@@X@Scripting@@$$V@Scripting@@AEBVWeakLifetimeScope@4@AEAVScriptObjectFactory@4@AEAVDependencyLocator@4@AEAVScriptPlayer@ScriptModuleMinecraft@@@Z
     MCAPI class Scripting::Result<class Scripting::Promise<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptActionFormResponse>,
         class ScriptModuleMinecraftServerUI::ScriptFormRejectError,

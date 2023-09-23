@@ -17,19 +17,13 @@ struct ScriptItemStartUseOnAfterEvent : public ::ScriptModuleMinecraft::ScriptIt
 public:
     // prevent constructor by default
     ScriptItemStartUseOnAfterEvent& operator=(ScriptItemStartUseOnAfterEvent const&);
+    ScriptItemStartUseOnAfterEvent(ScriptItemStartUseOnAfterEvent const&);
     ScriptItemStartUseOnAfterEvent();
 
 public:
     // NOLINTBEGIN
     // symbol: ??1ScriptItemStartUseOnAfterEvent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptItemStartUseOnAfterEvent();
-
-    // symbol: ??0ScriptItemStartUseOnAfterEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
-    MCAPI ScriptItemStartUseOnAfterEvent(struct ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent const&);
-
-    // symbol: ??4ScriptItemStartUseOnAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent&&);
 
     // symbol:
     // ?bind@ScriptItemStartUseOnAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptItemStartUseOnAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ

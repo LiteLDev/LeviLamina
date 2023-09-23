@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/entity/systems/ITickingSystem.h"
-
-class BlockClimberSystem : public ::ITickingSystem {
+class BlockClimberSystem {
 public:
     // prevent constructor by default
     BlockClimberSystem& operator=(BlockClimberSystem const&);
@@ -14,14 +11,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // symbol:
+    // ?canBlockBeAscendedByJumping@BlockClimberSystem@@SA_NAEBVBlockLegacy@@AEBVIConstBlockSource@@AEBVBlockPos@@_N33@Z
+    MCAPI static bool canBlockBeAscendedByJumping(
+        class BlockLegacy const&,
+        class IConstBlockSource const&,
+        class BlockPos const&,
+        bool,
+        bool,
+        bool
+    );
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
-
-    // vIndex: 2, symbol: ?tick@BlockClimberSystem@@UEAAXAEAVEntityRegistry@@@Z
-    virtual void tick(class EntityRegistry&);
+    // symbol: ?createSystem@BlockClimberSystem@@SA?AUTickingSystemWithInfo@@XZ
+    MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 };

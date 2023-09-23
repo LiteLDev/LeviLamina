@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace gametest { class BaseGameTestInstance; }
 namespace gametest { class IGameTestListener; }
 // clang-format on
 
@@ -19,10 +18,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0MultipleTestTracker@gametest@@QEAA@AEBV?$vector@V?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@@2@@std@@@Z
-    MCAPI explicit MultipleTestTracker(std::vector<std::shared_ptr<class gametest::BaseGameTestInstance>> const&);
-
     // symbol: ?addListener@MultipleTestTracker@gametest@@QEAAXV?$shared_ptr@VIGameTestListener@gametest@@@std@@@Z
     MCAPI void addListener(std::shared_ptr<class gametest::IGameTestListener>);
 

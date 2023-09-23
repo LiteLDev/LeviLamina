@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace JsonUtil { class EmptyClass; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockQueuedTickingDescription : public ::BlockComponentDescription {
@@ -32,11 +33,8 @@ public:
     // symbol: ??0BlockQueuedTickingDescription@@QEAA@XZ
     MCAPI BlockQueuedTickingDescription();
 
-    // symbol: ?bindType@BlockQueuedTickingDescription@@SAXXZ
-    MCAPI static void bindType();
-
-    // symbol: ?registerVersionUpgrades@BlockQueuedTickingDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet&);
+    // symbol: ?bindType@BlockQueuedTickingDescription@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // symbol: ?NameID@BlockQueuedTickingDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const NameID;

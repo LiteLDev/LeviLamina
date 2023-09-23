@@ -3,12 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/UniqueLock.h"
 #include "mc/network/Connector.h"
-#include "mc/network/ERelayServerConfigurationResult.h"
 #include "mc/network/ESendType.h"
 #include "mc/network/ESessionError.h"
-#include "mc/network/IWebRTCSignalingInterface.h"
-#include "mc/network/SignalingHostConnectionStatus.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,6 +16,44 @@ namespace Social { class GameConnectionInfo; }
 // clang-format on
 
 struct NetherNetConnector {
+public:
+    // NetherNetConnector inner types declare
+    // clang-format off
+    struct NewIncomingConnectionEvent;
+    struct NewOutgoingConnectionEvent;
+    // clang-format on
+
+    // NetherNetConnector inner types define
+    struct NewIncomingConnectionEvent {
+    public:
+        // prevent constructor by default
+        NewIncomingConnectionEvent& operator=(NewIncomingConnectionEvent const&);
+        NewIncomingConnectionEvent(NewIncomingConnectionEvent const&);
+        NewIncomingConnectionEvent();
+
+    public:
+        // NOLINTBEGIN
+        // symbol: ??1NewIncomingConnectionEvent@NetherNetConnector@@QEAA@XZ
+        MCAPI ~NewIncomingConnectionEvent();
+
+        // NOLINTEND
+    };
+
+    struct NewOutgoingConnectionEvent {
+    public:
+        // prevent constructor by default
+        NewOutgoingConnectionEvent& operator=(NewOutgoingConnectionEvent const&);
+        NewOutgoingConnectionEvent(NewOutgoingConnectionEvent const&);
+        NewOutgoingConnectionEvent();
+
+    public:
+        // NOLINTBEGIN
+        // symbol: ??1NewOutgoingConnectionEvent@NetherNetConnector@@QEAA@XZ
+        MCAPI ~NewOutgoingConnectionEvent();
+
+        // NOLINTEND
+    };
+
 public:
     // prevent constructor by default
     NetherNetConnector& operator=(NetherNetConnector const&);
@@ -77,9 +113,6 @@ public:
     // symbol: ?tick@NetherNetConnector@@UEAAXXZ
     MCVAPI void tick();
 
-    // symbol: ??1NetherNetConnector@@UEAA@XZ
-    MCVAPI ~NetherNetConnector();
-
     // symbol: ??0NetherNetConnector@@QEAA@AEBVNetherNetTransportFactory@@AEAUConnectionCallbacks@Connector@@@Z
     MCAPI NetherNetConnector(class NetherNetTransportFactory const&, struct Connector::ConnectionCallbacks&);
 
@@ -89,32 +122,14 @@ public:
     // symbol: ?closeSessionWithUser@NetherNetConnector@@QEBA_NUNetworkID@NetherNet@@@Z
     MCAPI bool closeSessionWithUser(struct NetherNet::NetworkID) const;
 
-    // symbol: ?disableBroadcastDiscovery@NetherNetConnector@@QEBAXXZ
-    MCAPI void disableBroadcastDiscovery() const;
-
-    // symbol: ?enableBroadcastDiscovery@NetherNetConnector@@QEBAXXZ
-    MCAPI void enableBroadcastDiscovery() const;
-
-    // symbol: ?getNetworkID@NetherNetConnector@@QEBAAEBUNetworkID@NetherNet@@XZ
-    MCAPI struct NetherNet::NetworkID const& getNetworkID() const;
-
     // symbol: ?getSessionState@NetherNetConnector@@QEBA_NUNetworkID@NetherNet@@PEAUSessionState@3@@Z
     MCAPI bool getSessionState(struct NetherNet::NetworkID, struct NetherNet::SessionState*) const;
-
-    // symbol: ?isBroadcastDiscoveryEnabled@NetherNetConnector@@QEBA_NXZ
-    MCAPI bool isBroadcastDiscoveryEnabled() const;
 
     // symbol: ?isPacketAvailable@NetherNetConnector@@QEBA_NUNetworkID@NetherNet@@PEAI@Z
     MCAPI bool isPacketAvailable(struct NetherNet::NetworkID, uint*) const;
 
     // symbol: ?readPacket@NetherNetConnector@@QEBA_NUNetworkID@NetherNet@@PEAXIPEAI@Z
     MCAPI bool readPacket(struct NetherNet::NetworkID, void*, uint, uint*) const;
-
-    // symbol:
-    // ?registerRelayServerCredentialsReadyCallback@NetherNetConnector@@QEBAX$$QEAV?$function@$$A6AXW4ERelayServerConfigurationResult@NetherNet@@@Z@std@@@Z
-    MCAPI void
-    registerRelayServerCredentialsReadyCallback(std::function<void(::NetherNet::ERelayServerConfigurationResult)>&&)
-        const;
 
     // symbol: ?sendPacket@NetherNetConnector@@QEBA_NUNetworkID@NetherNet@@PEBDIW4ESendType@3@@Z
     MCAPI bool sendPacket(struct NetherNet::NetworkID, char const*, uint, ::NetherNet::ESendType) const;
@@ -127,14 +142,14 @@ public:
     MCAPI void
     setBroadcastResponseCallback(std::function<void(struct NetherNet::NetworkID const&, void const*, int)>&&);
 
-    // symbol:
-    // ?signIntoSignalingService@NetherNetConnector@@QEBAX$$QEAV?$function@$$A6AXVerror_code@std@@@Z@std@@$$QEAV?$function@$$A6AXW4SignalingHostConnectionStatus@NetherNet@@I@Z@3@$$QEAUSignalingConfiguration@IWebRTCSignalingInterface@NetherNet@@@Z
-    MCAPI void
-    signIntoSignalingService(std::function<void(std::error_code)>&&, std::function<void(::NetherNet::SignalingHostConnectionStatus, uint)>&&, struct NetherNet::IWebRTCSignalingInterface::SignalingConfiguration&&)
-        const;
+    // NOLINTEND
 
-    // symbol: ?signOutFromSignalingService@NetherNetConnector@@QEBAXXZ
-    MCAPI void signOutFromSignalingService() const;
+    // private:
+    // NOLINTBEGIN
+    // symbol:
+    // ?_getOrCreatePeer@NetherNetConnector@@AEAA?AV?$not_null@V?$shared_ptr@VWebRTCNetworkPeer@@@std@@@gsl@@_KAEBV?$UniqueLock@Vmutex@std@@@Threading@Bedrock@@@Z
+    MCAPI gsl::not_null<std::shared_ptr<class WebRTCNetworkPeer>>
+          _getOrCreatePeer(uint64, class Bedrock::Threading::UniqueLock<std::mutex> const&);
 
     // NOLINTEND
 };

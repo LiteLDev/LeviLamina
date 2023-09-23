@@ -48,16 +48,6 @@ public:
     MCAPI void setData(gsl::span<uchar const>);
 
     // NOLINTEND
-
-    // protected:
-    // NOLINTBEGIN
-    // symbol: ??0BinaryRequestBody@Http@Bedrock@@IEAA@V?$span@$$CBE$0?0@gsl@@@Z
-    MCAPI explicit BinaryRequestBody(gsl::span<uchar const>);
-
-    // symbol: ?_getData@BinaryRequestBody@Http@Bedrock@@IEBA?AV?$span@$$CBE$0?0@gsl@@XZ
-    MCAPI gsl::span<uchar const> _getData() const;
-
-    // NOLINTEND
 };
 
 }; // namespace Bedrock::Http

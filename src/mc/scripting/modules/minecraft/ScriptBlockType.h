@@ -20,28 +20,20 @@ class ScriptBlockType {
 public:
     // prevent constructor by default
     ScriptBlockType& operator=(ScriptBlockType const&);
+    ScriptBlockType(ScriptBlockType const&);
     ScriptBlockType();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptBlockType@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
-    MCAPI ScriptBlockType(class ScriptModuleMinecraft::ScriptBlockType const&);
-
     // symbol:
-    // ?createDefaultBlockPermutationV010@ScriptBlockType@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@@Scripting@@XZ
+    // ?createDefaultBlockPermutationV010@ScriptBlockType@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>>
     createDefaultBlockPermutationV010() const;
 
-    // symbol: ?getBlock@ScriptBlockType@ScriptModuleMinecraft@@QEBAAEBVBlockLegacy@@XZ
-    MCAPI class BlockLegacy const& getBlock() const;
-
     // symbol:
     // ?getId@ScriptBlockType@ScriptModuleMinecraft@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getId() const;
-
-    // symbol: ??4ScriptBlockType@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
-    MCAPI class ScriptModuleMinecraft::ScriptBlockType& operator=(class ScriptModuleMinecraft::ScriptBlockType&&);
 
     // symbol: ??1ScriptBlockType@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptBlockType();

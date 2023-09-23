@@ -6,6 +6,7 @@
 #include "mc/common/wrapper/optional_ref.h"
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
+#include "mc/enums/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -88,36 +89,35 @@ public:
     // vIndex: 53, symbol: ?isSignalSource@DiodeBlock@@UEBA_NXZ
     virtual bool isSignalSource() const;
 
-    // vIndex: 56, symbol: __unk_vfn_56
-    virtual void __unk_vfn_56();
+    // vIndex: 55, symbol: __unk_vfn_55
+    virtual void __unk_vfn_55();
 
-    // vIndex: 61, symbol: ?getDirectSignal@DiodeBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
+    // vIndex: 60, symbol: ?getDirectSignal@DiodeBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
     virtual int getDirectSignal(class BlockSource&, class BlockPos const&, int) const;
+
+    // vIndex: 61, symbol: __unk_vfn_61
+    virtual void __unk_vfn_61();
 
     // vIndex: 62, symbol: __unk_vfn_62
     virtual void __unk_vfn_62();
 
-    // vIndex: 63, symbol: __unk_vfn_63
-    virtual void __unk_vfn_63();
-
-    // vIndex: 75, symbol: ?onRedstoneUpdate@DiodeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
+    // vIndex: 74, symbol: ?onRedstoneUpdate@DiodeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
     virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
 
-    // vIndex: 77, symbol: __unk_vfn_77
-    virtual void __unk_vfn_77();
+    // vIndex: 76, symbol: __unk_vfn_76
+    virtual void __unk_vfn_76();
 
-    // vIndex: 84, symbol: __unk_vfn_84
-    virtual void __unk_vfn_84();
+    // vIndex: 83, symbol: __unk_vfn_83
+    virtual void __unk_vfn_83();
 
-    // vIndex: 94, symbol: ?mayPlace@DiodeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 93, symbol: ?mayPlace@DiodeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
+    // vIndex: 106, symbol: __unk_vfn_106
+    virtual void __unk_vfn_106();
 
-    // vIndex: 108, symbol: ?getPlacementBlock@DiodeBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
+    // vIndex: 122, symbol: __unk_vfn_122
+    virtual void __unk_vfn_122();
 
     // vIndex: 123, symbol: __unk_vfn_123
     virtual void __unk_vfn_123();
@@ -125,19 +125,16 @@ public:
     // vIndex: 124, symbol: __unk_vfn_124
     virtual void __unk_vfn_124();
 
-    // vIndex: 125, symbol: __unk_vfn_125
-    virtual void __unk_vfn_125();
+    // vIndex: 127, symbol: __unk_vfn_127
+    virtual void __unk_vfn_127();
 
-    // vIndex: 128, symbol: __unk_vfn_128
-    virtual void __unk_vfn_128();
+    // vIndex: 130, symbol: __unk_vfn_130
+    virtual void __unk_vfn_130();
 
-    // vIndex: 131, symbol: __unk_vfn_131
-    virtual void __unk_vfn_131();
-
-    // vIndex: 143, symbol: ?getVariant@DiodeBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 142, symbol: ?getVariant@DiodeBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const&) const;
 
-    // vIndex: 144, symbol: ?canSpawnOn@DiodeBlock@@UEBA_NPEAVActor@@@Z
+    // vIndex: 143, symbol: ?canSpawnOn@DiodeBlock@@UEBA_NPEAVActor@@@Z
     virtual bool canSpawnOn(class Actor*) const;
 
     // vIndex: 153, symbol: __unk_vfn_153

@@ -48,8 +48,8 @@ public:
     // vIndex: 53, symbol: __unk_vfn_53
     virtual void __unk_vfn_53();
 
-    // vIndex: 57, symbol: ?isLiquidClipItem@WaterLilyBlockItem@@UEBA_NH@Z
-    virtual bool isLiquidClipItem(int) const;
+    // vIndex: 57, symbol: ?isLiquidClipItem@WaterLilyBlockItem@@UEBA_NXZ
+    virtual bool isLiquidClipItem() const;
 
     // vIndex: 66, symbol: __unk_vfn_66
     virtual void __unk_vfn_66();

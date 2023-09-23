@@ -6,6 +6,7 @@
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/EnumBindingBuilder.h"
 #include "mc/world/level/block/utils/CompoundBlockVolumeAction.h"
+#include "mc/world/level/block/utils/CompoundBlockVolumePositionRelativity.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -25,14 +26,20 @@ public:
     MCAPI ~ScriptCompoundBlockVolume();
 
     // symbol:
+    // ?bindActionEnums@ScriptCompoundBlockVolume@ScriptModuleMinecraft@@SA?AV?$EnumBindingBuilder@W4CompoundBlockVolumeAction@@W41@@Scripting@@XZ
+    MCAPI static class Scripting::EnumBindingBuilder<::CompoundBlockVolumeAction, ::CompoundBlockVolumeAction>
+    bindActionEnums();
+
+    // symbol:
     // ?bindClass@ScriptCompoundBlockVolume@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptCompoundBlockVolume@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptCompoundBlockVolume>
     bindClass();
 
     // symbol:
-    // ?bindEnums@ScriptCompoundBlockVolume@ScriptModuleMinecraft@@SA?AV?$EnumBindingBuilder@W4CompoundBlockVolumeAction@@W41@@Scripting@@XZ
-    MCAPI static class Scripting::EnumBindingBuilder<::CompoundBlockVolumeAction, ::CompoundBlockVolumeAction>
-    bindEnums();
+    // ?bindRelativeEnums@ScriptCompoundBlockVolume@ScriptModuleMinecraft@@SA?AV?$EnumBindingBuilder@W4CompoundBlockVolumePositionRelativity@@W41@@Scripting@@XZ
+    MCAPI static class Scripting::
+        EnumBindingBuilder<::CompoundBlockVolumePositionRelativity, ::CompoundBlockVolumePositionRelativity>
+        bindRelativeEnums();
 
     // NOLINTEND
 };

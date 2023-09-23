@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class DynamicPropertiesDefinition;
+class Vec3;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -22,29 +23,35 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptDynamicPropertiesDefinition@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
-    MCAPI ScriptDynamicPropertiesDefinition(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&);
-
     // symbol: ??0ScriptDynamicPropertiesDefinition@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
     MCAPI ScriptDynamicPropertiesDefinition(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&);
 
+    // symbol: ??0ScriptDynamicPropertiesDefinition@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
+    MCAPI ScriptDynamicPropertiesDefinition(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&);
+
     // symbol:
-    // ?defineBoolean@ScriptDynamicPropertiesDefinition@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptDynamicPropertiesDefinition@ScriptModuleMinecraft@@@Scripting@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@_N@6@@Z
+    // ?defineBoolean@ScriptDynamicPropertiesDefinition@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptDynamicPropertiesDefinition@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@_N@6@@Z
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>>
     defineBoolean(std::string const&, std::optional<bool>);
 
     // symbol:
-    // ?defineNumber@ScriptDynamicPropertiesDefinition@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptDynamicPropertiesDefinition@ScriptModuleMinecraft@@@Scripting@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@M@6@@Z
+    // ?defineNumber@ScriptDynamicPropertiesDefinition@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptDynamicPropertiesDefinition@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@M@6@@Z
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>>
     defineNumber(std::string const&, std::optional<float>);
 
     // symbol:
-    // ?defineString@ScriptDynamicPropertiesDefinition@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptDynamicPropertiesDefinition@ScriptModuleMinecraft@@@Scripting@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@IV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@6@@Z
+    // ?defineString@ScriptDynamicPropertiesDefinition@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptDynamicPropertiesDefinition@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@IV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@6@@Z
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>>
     defineString(std::string const&, uint, std::optional<std::string>);
+
+    // symbol:
+    // ?defineVector3@ScriptDynamicPropertiesDefinition@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptDynamicPropertiesDefinition@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@VVec3@@@6@@Z
+    MCAPI class Scripting::Result<
+        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>>
+    defineVector3(std::string const&, std::optional<class Vec3>);
 
     // symbol:
     // ?getDefinition@ScriptDynamicPropertiesDefinition@ScriptModuleMinecraft@@QEBAAEBVDynamicPropertiesDefinition@@XZ

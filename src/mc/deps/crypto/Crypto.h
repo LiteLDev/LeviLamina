@@ -12,6 +12,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Crypto::Hash { class IHash; }
 namespace mce { class UUID; }
 // clang-format on
 

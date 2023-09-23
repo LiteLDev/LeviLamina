@@ -108,15 +108,35 @@ public:
     // symbol: ??0ContainerModel@@QEAA@W4ContainerEnumName@@HW4ContainerCategory@@_N@Z
     MCAPI ContainerModel(::ContainerEnumName, int, ::ContainerCategory, bool);
 
+    // symbol: ?getContainerEnumName@ContainerModel@@QEBA?AW4ContainerEnumName@@XZ
+    MCAPI ::ContainerEnumName getContainerEnumName() const;
+
+    // symbol:
+    // ?getContainerStringName@ContainerModel@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string const& getContainerStringName() const;
+
+    // symbol: ?initContainerRuntimeId@ContainerModel@@QEAAXXZ
+    MCAPI void initContainerRuntimeId();
+
     // symbol: ?isContainerSlotInRange@ContainerModel@@QEBA_NH@Z
     MCAPI bool isContainerSlotInRange(int) const;
 
     // symbol: ?networkUpdateItem@ContainerModel@@QEAAXHAEBVItemStack@@0@Z
     MCAPI void networkUpdateItem(int, class ItemStack const&, class ItemStack const&);
 
+    // symbol: ?registerOnContainerChangedCallback@ContainerModel@@QEAAXV?$function@$$A6AXHAEBVItemStack@@0@Z@std@@@Z
+    MCAPI void
+        registerOnContainerChangedCallback(std::function<void(int, class ItemStack const&, class ItemStack const&)>);
+
     // symbol: ?registerPlayerNotificationCallback@ContainerModel@@QEAAXV?$function@$$A6AXHAEBVItemStack@@0@Z@std@@@Z
     MCAPI void
         registerPlayerNotificationCallback(std::function<void(int, class ItemStack const&, class ItemStack const&)>);
+
+    // symbol: ?serverInitItemStackIds@ContainerModel@@QEAAXXZ
+    MCAPI void serverInitItemStackIds();
+
+    // symbol: ?setClientUIContainer@ContainerModel@@QEAAXPEAVSparseContainerClient@@@Z
+    MCAPI void setClientUIContainer(class SparseContainerClient*);
 
     // NOLINTEND
 

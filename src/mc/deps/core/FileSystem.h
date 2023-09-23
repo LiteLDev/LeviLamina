@@ -74,6 +74,11 @@ public:
     MCAPI static class Core::Result
     getDirectoryFiles(std::vector<class Core::PathBuffer<std::string>>&, class Core::Path const&);
 
+    // symbol:
+    // ?getDirectoryFilesRecursively@FileSystem@Core@@SA?AVResult@2@AEAV?$vector@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@V?$allocator@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@std@@@std@@AEBVPath@2@@Z
+    MCAPI static class Core::Result
+    getDirectoryFilesRecursively(std::vector<class Core::PathBuffer<std::string>>&, class Core::Path const&);
+
     // symbol: ?getFileOrDirectorySize@FileSystem@Core@@SA?AVResult@2@AEBVPath@2@PEA_K@Z
     MCAPI static class Core::Result getFileOrDirectorySize(class Core::Path const&, uint64*);
 

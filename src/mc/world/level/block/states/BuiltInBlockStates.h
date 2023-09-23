@@ -21,9 +21,6 @@ MCAPI extern class BuiltInBlockStateVariant<uchar> const FacingDirection;
 // symbol: ?VerticalHalf@BuiltInBlockStates@@3V?$BuiltInBlockStateVariant@W4VerticalHalfEnum@@@@B
 MCAPI extern class BuiltInBlockStateVariant<::VerticalHalfEnum> const VerticalHalf;
 
-// symbol: ?getNumStates@BuiltInBlockStates@@YA_KXZ
-MCAPI uint64 getNumStates();
-
 // symbol: ?registerBlockStates@BuiltInBlockStates@@YAXXZ
 MCAPI void registerBlockStates();
 

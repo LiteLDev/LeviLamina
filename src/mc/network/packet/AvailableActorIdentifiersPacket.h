@@ -42,11 +42,11 @@ public:
     // symbol: ??1AvailableActorIdentifiersPacket@@UEAA@XZ
     MCVAPI ~AvailableActorIdentifiersPacket();
 
-    // symbol: ??0AvailableActorIdentifiersPacket@@QEAA@AEBV?$vector@UActorInfo@@V?$allocator@UActorInfo@@@std@@@std@@@Z
-    MCAPI explicit AvailableActorIdentifiersPacket(std::vector<struct ActorInfo> const&);
-
     // symbol: ??0AvailableActorIdentifiersPacket@@QEAA@XZ
     MCAPI AvailableActorIdentifiersPacket();
+
+    // symbol: ??0AvailableActorIdentifiersPacket@@QEAA@AEBV?$vector@UActorInfo@@V?$allocator@UActorInfo@@@std@@@std@@@Z
+    MCAPI explicit AvailableActorIdentifiersPacket(std::vector<struct ActorInfo> const&);
 
     // NOLINTEND
 };

@@ -42,7 +42,10 @@ public:
     // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();
 
-    // vIndex: 4, symbol:
+    // vIndex: 4, symbol: __unk_vfn_4
+    virtual void __unk_vfn_4();
+
+    // vIndex: 5, symbol:
     // ?tick@SystemImpl@ServerStandInCauldronSystem@@MEAAXAEAV?$StrictExecutionContext@U?$Filter@UUpdateWaterStateRequestComponent@@@@U?$Read@VActorOwnerComponent@@@@U?$Write@$$V@@U?$AddRemove@$$V@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
     virtual void tick(class StrictExecutionContext<
                       struct Filter<struct UpdateWaterStateRequestComponent>,
@@ -53,7 +56,7 @@ public:
                       struct GlobalWrite<>,
                       struct EntityFactoryT<>>&);
 
-    // vIndex: 5, symbol:
+    // vIndex: 6, symbol:
     // ?singleTick@SystemImpl@ServerStandInCauldronSystem@@MEAAXAEAV?$StrictExecutionContext@U?$Filter@UUpdateWaterStateRequestComponent@@@@U?$Read@VActorOwnerComponent@@@@U?$Write@$$V@@U?$AddRemove@$$V@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEAVStrictEntityContext@@@Z
     virtual void
     singleTick(class StrictExecutionContext<struct Filter<struct UpdateWaterStateRequestComponent>, struct Read<class ActorOwnerComponent>, struct Write<>, struct AddRemove<>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>>&, class StrictEntityContext&);

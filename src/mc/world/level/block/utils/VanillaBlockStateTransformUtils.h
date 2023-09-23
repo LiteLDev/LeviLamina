@@ -26,6 +26,10 @@ public:
     // symbol: ?transformBlock@VanillaBlockStateTransformUtils@@SAPEBVBlock@@AEBV2@W4Rotation@@W4Mirror@@@Z
     MCAPI static class Block const* transformBlock(class Block const&, ::Rotation, ::Mirror);
 
+    // symbol:
+    // ?transformMultiFaceDirectionBits@VanillaBlockStateTransformUtils@@SAPEBVBlock@@AEBV2@W4Rotation@@W4Mirror@@@Z
+    MCAPI static class Block const* transformMultiFaceDirectionBits(class Block const&, ::Rotation, ::Mirror);
+
     // NOLINTEND
 
     // private:

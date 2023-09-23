@@ -121,6 +121,9 @@ public:
     virtual ::InHandUpdateType
     getInHandUpdateType(class Player const&, class ItemStack const&, class ItemStack const&, bool, bool) const;
 
+    // vIndex: 114, symbol: ?getEquipSound@ShieldItem@@UEBA?AW4LevelSoundEvent@@XZ
+    virtual ::LevelSoundEvent getEquipSound() const;
+
     // vIndex: 115, symbol: __unk_vfn_115
     virtual void __unk_vfn_115();
 

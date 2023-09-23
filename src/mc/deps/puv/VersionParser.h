@@ -34,8 +34,9 @@ public:
     // symbol: ??1VersionParser@Puv@@UEAA@XZ
     MCVAPI ~VersionParser();
 
-    // symbol: ??0VersionParser@Puv@@QEAA@V?$initializer_list@U?$pair@VSemVersion@@V1@@std@@@std@@@Z
-    MCAPI explicit VersionParser(std::initializer_list<std::pair<class SemVersion, class SemVersion>>);
+    // symbol:
+    // ??0VersionParser@Puv@@QEAA@V?$vector@U?$pair@VSemVersion@@V1@@std@@V?$allocator@U?$pair@VSemVersion@@V1@@std@@@2@@std@@@Z
+    MCAPI explicit VersionParser(std::vector<std::pair<class SemVersion, class SemVersion>>);
 
     // symbol: ?maxSupportedVersion@VersionParser@Puv@@QEBA?AVSemVersion@@XZ
     MCAPI class SemVersion maxSupportedVersion() const;

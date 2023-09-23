@@ -14,15 +14,12 @@ namespace AgentComponents { class DetectRedstone; }
 namespace AgentComponents { class Move; }
 namespace AgentComponents::Actions { struct Attack; }
 namespace AgentComponents::Actions { struct Collect; }
-namespace AgentComponents::Actions { struct Destroy; }
 namespace AgentComponents::Actions { struct Drop; }
 namespace AgentComponents::Actions { struct DropAll; }
-namespace AgentComponents::Actions { struct Inspect; }
 namespace AgentComponents::Actions { struct InspectData; }
 namespace AgentComponents::Actions { struct InspectItemCount; }
 namespace AgentComponents::Actions { struct InspectItemDetail; }
 namespace AgentComponents::Actions { struct InspectItemSpace; }
-namespace AgentComponents::Actions { struct Interact; }
 namespace AgentComponents::Actions { struct PlaceBlock; }
 namespace AgentComponents::Actions { struct QueueItem; }
 namespace AgentComponents::Actions { struct Till; }

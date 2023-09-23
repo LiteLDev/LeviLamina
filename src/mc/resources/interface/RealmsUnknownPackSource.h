@@ -37,8 +37,5 @@ public:
     virtual class PackSourceReport
     load(class IPackManifestFactory&, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
 
-    // symbol: ??0RealmsUnknownPackSource@@QEAA@W4PackType@@W4PackOrigin@@@Z
-    MCAPI RealmsUnknownPackSource(::PackType, ::PackOrigin);
-
     // NOLINTEND
 };

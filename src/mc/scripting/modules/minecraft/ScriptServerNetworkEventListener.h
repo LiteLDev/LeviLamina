@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class IScriptAfterEvents; }
+namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
 namespace Scripting { class WeakLifetimeScope; }
 struct ChatEvent;
 struct MessageEvent;
@@ -42,9 +42,9 @@ public:
     virtual ::EventResult onEvent(struct ChatEvent const&);
 
     // symbol:
-    // ??0ScriptServerNetworkEventListener@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptAfterEvents@ScriptModuleMinecraft@@@3@@Z
+    // ??0ScriptServerNetworkEventListener@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptWorldAfterEvents@ScriptModuleMinecraft@@@3@@Z
     MCAPI
-    ScriptServerNetworkEventListener(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptAfterEvents>);
+    ScriptServerNetworkEventListener(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldAfterEvents>);
 
     // NOLINTEND
 };

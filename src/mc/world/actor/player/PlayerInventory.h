@@ -40,6 +40,12 @@ public:
     MCVAPI void
         createTransactionContext(std::function<void(class Container&, int, class ItemStack const&, class ItemStack const&)>, std::function<void(void)>);
 
+    // symbol: ??0PlayerInventory@@QEAA@V?$unique_ptr@VInventory@@U?$default_delete@VInventory@@@std@@@std@@@Z
+    MCAPI explicit PlayerInventory(std::unique_ptr<class Inventory>);
+
+    // symbol: ?_getHudContainerManagerModel@PlayerInventory@@QEAA?AV?$weak_ptr@VHudContainerManagerModel@@@std@@XZ
+    MCAPI std::weak_ptr<class HudContainerManagerModel> _getHudContainerManagerModel();
+
     // symbol: ?add@PlayerInventory@@QEAA_NAEAVItemStack@@_N@Z
     MCAPI bool add(class ItemStack&, bool);
 
@@ -49,6 +55,9 @@ public:
     // symbol: ?canAdd@PlayerInventory@@QEBA_NAEBVItemStack@@@Z
     MCAPI bool canAdd(class ItemStack const&) const;
 
+    // symbol: ?clearInventory@PlayerInventory@@QEAAHH@Z
+    MCAPI int clearInventory(int);
+
     // symbol: ?clearSlot@PlayerInventory@@QEAAXHW4ContainerID@@@Z
     MCAPI void clearSlot(int, ::ContainerID);
 
@@ -57,6 +66,17 @@ public:
 
     // symbol: ?dropAllOnDeath@PlayerInventory@@QEAAX_N@Z
     MCAPI void dropAllOnDeath(bool);
+
+    // symbol:
+    // ?getAllContainerIds@PlayerInventory@@QEAAAEBV?$vector@W4ContainerID@@V?$allocator@W4ContainerID@@@std@@@std@@XZ
+    MCAPI std::vector<::ContainerID> const& getAllContainerIds();
+
+    // symbol:
+    // ?getComplexItems@PlayerInventory@@QEBAAEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@W4ContainerID@@@Z
+    MCAPI std::vector<class ItemStack> const& getComplexItems(::ContainerID) const;
+
+    // symbol: ?getContainer@PlayerInventory@@QEAAAEAVContainer@@XZ
+    MCAPI class Container& getContainer();
 
     // symbol: ?getContainerSize@PlayerInventory@@QEBAHW4ContainerID@@@Z
     MCAPI int getContainerSize(::ContainerID) const;
@@ -88,6 +108,15 @@ public:
     // symbol: ?getSlots@PlayerInventory@@QEBA?AV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ
     MCAPI std::vector<class ItemStack const*> getSlots() const;
 
+    // symbol: ?hasResource@PlayerInventory@@QEAA_NH@Z
+    MCAPI bool hasResource(int);
+
+    // symbol: ?init@PlayerInventory@@QEAAXV?$weak_ptr@VHudContainerManagerModel@@@std@@@Z
+    MCAPI void init(std::weak_ptr<class HudContainerManagerModel>);
+
+    // symbol: ?load@PlayerInventory@@QEAAXAEBVListTag@@AEBVSemVersion@@AEAVLevel@@@Z
+    MCAPI void load(class ListTag const&, class SemVersion const&, class Level&);
+
     // symbol: ?removeItem@PlayerInventory@@QEAAXHHW4ContainerID@@@Z
     MCAPI void removeItem(int, int, ::ContainerID);
 
@@ -96,6 +125,12 @@ public:
 
     // symbol: ?removeResource@PlayerInventory@@QEAA_NH@Z
     MCAPI bool removeResource(int);
+
+    // symbol: ?removeResource@PlayerInventory@@QEAAHAEBVItemStack@@_N1H@Z
+    MCAPI int removeResource(class ItemStack const&, bool, bool, int);
+
+    // symbol: ?save@PlayerInventory@@QEAA?AV?$unique_ptr@VListTag@@U?$default_delete@VListTag@@@std@@@std@@XZ
+    MCAPI std::unique_ptr<class ListTag> save();
 
     // symbol: ?selectSlot@PlayerInventory@@QEAA_NHW4ContainerID@@@Z
     MCAPI bool selectSlot(int, ::ContainerID);
@@ -117,6 +152,9 @@ public:
 
     // symbol: ?swapSlots@PlayerInventory@@QEAAXHH@Z
     MCAPI void swapSlots(int, int);
+
+    // symbol: ?tick@PlayerInventory@@QEAAXXZ
+    MCAPI void tick();
 
     // NOLINTEND
 };

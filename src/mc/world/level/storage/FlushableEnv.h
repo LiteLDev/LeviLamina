@@ -15,15 +15,15 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol:
-    // ?NewSequentialFile@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVSequentialFile@3@@Z
+    // ?NewSequentialFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVSequentialFile@3@@Z
     virtual leveldb::Status NewSequentialFile(std::string const&, leveldb::SequentialFile**);
 
     // vIndex: 2, symbol:
-    // ?NewRandomAccessFile@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVRandomAccessFile@3@@Z
+    // ?NewRandomAccessFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVRandomAccessFile@3@@Z
     virtual leveldb::Status NewRandomAccessFile(std::string const&, leveldb::RandomAccessFile**);
 
     // vIndex: 3, symbol:
-    // ?NewWritableFile@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z
+    // ?NewWritableFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z
     virtual leveldb::Status NewWritableFile(std::string const&, leveldb::WritableFile**);
 
     // vIndex: 4, symbol:
@@ -35,11 +35,11 @@ public:
     virtual bool FileExists(std::string const&);
 
     // vIndex: 6, symbol:
-    // ?GetChildren@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@Z
+    // ?GetChildren@EnvWrapper@leveldb@@UEAA?AVStatus@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@Z
     virtual leveldb::Status GetChildren(std::string const&, std::vector<std::string>*);
 
     // vIndex: 7, symbol:
-    // ?DeleteFileA@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // ?DeleteFileA@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual leveldb::Status DeleteFileA(std::string const&);
 
     // vIndex: 8, symbol:
@@ -55,7 +55,7 @@ public:
     virtual leveldb::Status GetFileSize(std::string const&, uint64*);
 
     // vIndex: 11, symbol:
-    // ?RenameFile@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+    // ?RenameFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     virtual leveldb::Status RenameFile(std::string const&, std::string const&);
 
     // vIndex: 12, symbol:
@@ -85,11 +85,14 @@ public:
     // vIndex: 19, symbol: ?SleepForMicroseconds@EnvWrapper@leveldb@@UEAAXH@Z
     virtual void SleepForMicroseconds(int);
 
-    // vIndex: 20, symbol: ?flushToPermanentStorage@InMemoryEnv@@UEAAXXZ
+    // vIndex: 20, symbol: ?flushToPermanentStorage@FlushableStorageAreaEnv@@UEAAXXZ
     virtual void flushToPermanentStorage() = 0;
 
     // symbol: ??1FlushableEnv@@UEAA@XZ
     MCVAPI ~FlushableEnv();
+
+    // symbol: ??0FlushableEnv@@QEAA@PEAVEnv@leveldb@@@Z
+    MCAPI explicit FlushableEnv(leveldb::Env*);
 
     // NOLINTEND
 };

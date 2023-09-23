@@ -57,6 +57,15 @@ public:
     MCAPI std::string _getCompoundId(std::vector<class ItemStack> const&);
 
     // symbol:
+    // ?_registerCompound@CraftableCompounds@@IEAAXAEBV?$vector@UChemistryIngredient@@V?$allocator@UChemistryIngredient@@@std@@@std@@AEBVItemStack@@W4LabTableReactionType@@W4CompoundContainerType@@@Z
+    MCAPI void _registerCompound(
+        std::vector<struct ChemistryIngredient> const&,
+        class ItemStack const&,
+        ::LabTableReactionType,
+        ::CompoundContainerType
+    );
+
+    // symbol:
     // ?_registerCompound@CraftableCompounds@@IEAAXAEBV?$vector@UChemistryIngredient@@V?$allocator@UChemistryIngredient@@@std@@@std@@W4CompoundType@@W4LabTableReactionType@@W4CompoundContainerType@@H@Z
     MCAPI void _registerCompound(
         std::vector<struct ChemistryIngredient> const&,
@@ -64,15 +73,6 @@ public:
         ::LabTableReactionType,
         ::CompoundContainerType,
         int
-    );
-
-    // symbol:
-    // ?_registerCompound@CraftableCompounds@@IEAAXAEBV?$vector@UChemistryIngredient@@V?$allocator@UChemistryIngredient@@@std@@@std@@AEBVItemStack@@W4LabTableReactionType@@W4CompoundContainerType@@@Z
-    MCAPI void _registerCompound(
-        std::vector<struct ChemistryIngredient> const&,
-        class ItemStack const&,
-        ::LabTableReactionType,
-        ::CompoundContainerType
     );
 
     // NOLINTEND

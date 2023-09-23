@@ -33,7 +33,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 2, symbol:
-    // ?getEmptySlotsCount@ScriptInventoryComponentContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@H@Scripting@@XZ
+    // ?getEmptySlotsCount@ScriptInventoryComponentContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@H$$V@Scripting@@XZ
     virtual class Scripting::Result<int> getEmptySlotsCount() const;
 
     // vIndex: 13, symbol:
@@ -47,12 +47,12 @@ public:
     // symbol: ??1ScriptInventoryComponentContainer@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptInventoryComponentContainer();
 
+    // symbol: ??0ScriptInventoryComponentContainer@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
+    MCAPI ScriptInventoryComponentContainer(class ScriptModuleMinecraft::ScriptInventoryComponentContainer const&);
+
     // symbol:
     // ??0ScriptInventoryComponentContainer@ScriptModuleMinecraft@@QEAA@AEBVWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI ScriptInventoryComponentContainer(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&);
-
-    // symbol: ??0ScriptInventoryComponentContainer@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
-    MCAPI ScriptInventoryComponentContainer(class ScriptModuleMinecraft::ScriptInventoryComponentContainer const&);
 
     // symbol: ??4ScriptInventoryComponentContainer@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptInventoryComponentContainer&

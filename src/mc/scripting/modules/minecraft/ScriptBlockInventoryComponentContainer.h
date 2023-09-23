@@ -32,7 +32,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 2, symbol:
-    // ?getEmptySlotsCount@ScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@H@Scripting@@XZ
+    // ?getEmptySlotsCount@ScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@H$$V@Scripting@@XZ
     virtual class Scripting::Result<int> getEmptySlotsCount() const;
 
     // vIndex: 13, symbol:

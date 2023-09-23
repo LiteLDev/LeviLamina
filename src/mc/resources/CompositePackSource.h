@@ -13,6 +13,7 @@ public:
     // prevent constructor by default
     CompositePackSource& operator=(CompositePackSource const&);
     CompositePackSource(CompositePackSource const&);
+    CompositePackSource();
 
 public:
     // NOLINTBEGIN
@@ -29,18 +30,6 @@ public:
     // ?load@CompositePackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
     virtual class PackSourceReport
     load(class IPackManifestFactory&, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
-
-    // symbol: ??0CompositePackSource@@QEAA@XZ
-    MCAPI CompositePackSource();
-
-    // symbol: ??0CompositePackSource@@QEAA@$$QEAV?$vector@PEAVPackSource@@V?$allocator@PEAVPackSource@@@std@@@std@@@Z
-    MCAPI explicit CompositePackSource(std::vector<class PackSource*>&&);
-
-    // symbol: ?addPackSource@CompositePackSource@@QEAAXPEAVPackSource@@@Z
-    MCAPI void addPackSource(class PackSource*);
-
-    // symbol: ?clear@CompositePackSource@@QEAAXXZ
-    MCAPI void clear();
 
     // NOLINTEND
 };

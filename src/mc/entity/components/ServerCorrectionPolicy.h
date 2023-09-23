@@ -19,9 +19,13 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 3, symbol:
-    // ?shouldCorrectMovement@ServerCorrectionPolicy@@UEAA?AUMovementCorrection@@AEAUIActorMovementProxy@@AEBVPlayerAuthInputPacket@@_K@Z
-    virtual struct MovementCorrection
-    shouldCorrectMovement(struct IActorMovementProxy&, class PlayerAuthInputPacket const&, uint64);
+    // ?shouldCorrectMovement@ServerCorrectionPolicy@@UEAA?AUMovementCorrection@@AEAVEntityContext@@AEBVIConstBlockSource@@AEBVPlayerAuthInputPacket@@_K@Z
+    virtual struct MovementCorrection shouldCorrectMovement(
+        class EntityContext&,
+        class IConstBlockSource const&,
+        class PlayerAuthInputPacket const&,
+        uint64
+    );
 
     // NOLINTEND
 };

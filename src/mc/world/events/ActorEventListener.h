@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/entity/utilities/ActorType.h"
+#include "mc/enums/InitializationMethod.h"
 #include "mc/enums/MovePredictionType.h"
 #include "mc/events/MinecraftEventing.h"
 #include "mc/world/events/EventResult.h"
@@ -26,8 +27,8 @@ public:
     // symbol: ?onActorAttackedActor@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@0@Z
     MCVAPI ::EventResult onActorAttackedActor(class Actor&, class Actor&);
 
-    // symbol: ?onActorCreated@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z
-    MCVAPI ::EventResult onActorCreated(class Actor&);
+    // symbol: ?onActorCreated@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@W4InitializationMethod@@@Z
+    MCVAPI ::EventResult onActorCreated(class Actor&, ::InitializationMethod);
 
     // symbol:
     // ?onActorCreationAttemptFailed@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z

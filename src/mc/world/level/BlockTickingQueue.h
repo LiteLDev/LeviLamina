@@ -94,14 +94,29 @@ public:
         std::allocator<std::pair<class BlockPos const, struct TickDelayBlock>>>
     getTickDelaysInArea(class BoundingBox const&) const;
 
+    // symbol: ?hasTickInCurrentTick@BlockTickingQueue@@QEBA_NAEBVBlockPos@@@Z
+    MCAPI bool hasTickInCurrentTick(class BlockPos const&) const;
+
     // symbol: ?hasTickInPendingTicks@BlockTickingQueue@@QEBA_NAEBVBlockPos@@@Z
     MCAPI bool hasTickInPendingTicks(class BlockPos const&) const;
+
+    // symbol: ?isBlockInPendingTick@BlockTickingQueue@@QEBA_NAEBVBlockPos@@AEBVBlock@@@Z
+    MCAPI bool isBlockInPendingTick(class BlockPos const&, class Block const&) const;
+
+    // symbol: ?isBlockTypeInPendingTick@BlockTickingQueue@@QEBA_NAEBVBlockPos@@AEBVBlockLegacy@@@Z
+    MCAPI bool isBlockTypeInPendingTick(class BlockPos const&, class BlockLegacy const&) const;
 
     // symbol: ?isEmpty@BlockTickingQueue@@QEBA_NXZ
     MCAPI bool isEmpty() const;
 
+    // symbol: ?isInstaticking@BlockTickingQueue@@QEBA_NXZ
+    MCAPI bool isInstaticking() const;
+
     // symbol: ?load@BlockTickingQueue@@QEAAXAEBVCompoundTag@@AEBVBlockPalette@@@Z
     MCAPI void load(class CompoundTag const&, class BlockPalette const&);
+
+    // symbol: ?remove@BlockTickingQueue@@QEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    MCAPI void remove(class BlockPos const&, class Block const&);
 
     // symbol: ?remove@BlockTickingQueue@@QEAAXAEBV?$function@$$A6A_NAEBVTickNextTickData@@@Z@std@@@Z
     MCAPI void remove(std::function<bool(class TickNextTickData const&)> const&);

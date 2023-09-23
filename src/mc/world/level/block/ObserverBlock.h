@@ -6,6 +6,7 @@
 #include "mc/common/wrapper/optional_ref.h"
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
+#include "mc/enums/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -88,47 +89,50 @@ public:
     // vIndex: 53, symbol: ?isSignalSource@ObserverBlock@@UEBA_NXZ
     virtual bool isSignalSource() const;
 
-    // vIndex: 56, symbol: __unk_vfn_56
-    virtual void __unk_vfn_56();
+    // vIndex: 55, symbol: __unk_vfn_55
+    virtual void __unk_vfn_55();
 
-    // vIndex: 57, symbol: ?isValidAuxValue@ObserverBlock@@UEBA_NH@Z
+    // vIndex: 56, symbol: ?isValidAuxValue@ObserverBlock@@UEBA_NH@Z
     virtual bool isValidAuxValue(int) const;
+
+    // vIndex: 61, symbol: __unk_vfn_61
+    virtual void __unk_vfn_61();
 
     // vIndex: 62, symbol: __unk_vfn_62
     virtual void __unk_vfn_62();
 
-    // vIndex: 63, symbol: __unk_vfn_63
-    virtual void __unk_vfn_63();
-
-    // vIndex: 66, symbol: ?shouldConnectToRedstone@ObserverBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
+    // vIndex: 65, symbol: ?shouldConnectToRedstone@ObserverBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
     virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
 
-    // vIndex: 75, symbol: ?onRedstoneUpdate@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
+    // vIndex: 74, symbol: ?onRedstoneUpdate@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
     virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
 
-    // vIndex: 77, symbol: __unk_vfn_77
-    virtual void __unk_vfn_77();
+    // vIndex: 76, symbol: __unk_vfn_76
+    virtual void __unk_vfn_76();
 
-    // vIndex: 78, symbol: ?movedByPiston@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 77, symbol: ?movedByPiston@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void movedByPiston(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 81, symbol: ?setupRedstoneComponent@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 80, symbol: ?setupRedstoneComponent@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 84, symbol: __unk_vfn_84
-    virtual void __unk_vfn_84();
+    // vIndex: 83, symbol: __unk_vfn_83
+    virtual void __unk_vfn_83();
 
-    // vIndex: 101, symbol: ?neighborChanged@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 100, symbol: ?neighborChanged@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
 
-    // vIndex: 104, symbol:
+    // vIndex: 103, symbol:
     // ?spawnResources@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
     virtual void
     spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&)
         const;
 
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
+    // vIndex: 106, symbol: __unk_vfn_106
+    virtual void __unk_vfn_106();
+
+    // vIndex: 122, symbol: __unk_vfn_122
+    virtual void __unk_vfn_122();
 
     // vIndex: 123, symbol: __unk_vfn_123
     virtual void __unk_vfn_123();
@@ -136,25 +140,22 @@ public:
     // vIndex: 124, symbol: __unk_vfn_124
     virtual void __unk_vfn_124();
 
-    // vIndex: 125, symbol: __unk_vfn_125
-    virtual void __unk_vfn_125();
+    // vIndex: 127, symbol: __unk_vfn_127
+    virtual void __unk_vfn_127();
 
-    // vIndex: 128, symbol: __unk_vfn_128
-    virtual void __unk_vfn_128();
+    // vIndex: 130, symbol: __unk_vfn_130
+    virtual void __unk_vfn_130();
 
-    // vIndex: 131, symbol: __unk_vfn_131
-    virtual void __unk_vfn_131();
-
-    // vIndex: 143, symbol: ?getVariant@ObserverBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 142, symbol: ?getVariant@ObserverBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const&) const;
 
-    // vIndex: 145, symbol: ?getRenderBlock@ObserverBlock@@UEBAAEBVBlock@@XZ
+    // vIndex: 144, symbol: ?getRenderBlock@ObserverBlock@@UEBAAEBVBlock@@XZ
     virtual class Block const& getRenderBlock() const;
 
-    // vIndex: 146, symbol: ?getMappedFace@ObserverBlock@@UEBAEEAEBVBlock@@@Z
+    // vIndex: 145, symbol: ?getMappedFace@ObserverBlock@@UEBAEEAEBVBlock@@@Z
     virtual uchar getMappedFace(uchar, class Block const&) const;
 
-    // vIndex: 147, symbol: ?getFaceFlip@ObserverBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
+    // vIndex: 146, symbol: ?getFaceFlip@ObserverBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
     virtual ::Flip getFaceFlip(uchar, class Block const&) const;
 
     // vIndex: 153, symbol: __unk_vfn_153

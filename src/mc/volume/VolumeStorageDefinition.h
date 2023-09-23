@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace VolumeInstanceData {
@@ -24,8 +25,8 @@ public:
     // symbol: ??1VolumeStorageDefinition@VolumeInstanceData@@QEAA@XZ
     MCAPI ~VolumeStorageDefinition();
 
-    // symbol: ?bindType@VolumeStorageDefinition@VolumeInstanceData@@SAXXZ
-    MCAPI static void bindType();
+    // symbol: ?bindType@VolumeStorageDefinition@VolumeInstanceData@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // symbol: ?fromEntity@VolumeStorageDefinition@VolumeInstanceData@@SA?AU12@AEBVEntityContext@@@Z
     MCAPI static struct VolumeInstanceData::VolumeStorageDefinition fromEntity(class EntityContext const&);

@@ -8,11 +8,11 @@
 struct GoalDefinition {
 public:
     // NOLINTBEGIN
-    // symbol: ??0GoalDefinition@@QEAA@XZ
-    MCAPI GoalDefinition();
-
     // symbol: ??0GoalDefinition@@QEAA@AEBU0@@Z
     MCAPI GoalDefinition(struct GoalDefinition const&);
+
+    // symbol: ??0GoalDefinition@@QEAA@XZ
+    MCAPI GoalDefinition();
 
     // symbol: ??0GoalDefinition@@QEAA@$$QEAU0@@Z
     MCAPI GoalDefinition(struct GoalDefinition&&);

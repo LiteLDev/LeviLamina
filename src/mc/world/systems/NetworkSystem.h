@@ -65,6 +65,10 @@ public:
     MCVAPI ushort getDefaultGamePortv6() const;
 
     // symbol:
+    // ?getMultiplayerCorrelationId@NetworkSystem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCVAPI std::string getMultiplayerCorrelationId() const;
+
+    // symbol:
     // ?onAllConnectionsClosed@NetworkSystem@@EEAAXW4DisconnectFailReason@Connection@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     MCVAPI void onAllConnectionsClosed(::Connection::DisconnectFailReason, std::string const&, bool);
 
@@ -78,12 +82,12 @@ public:
     onConnectionClosed(class NetworkIdentifier const&, ::Connection::DisconnectFailReason, std::string const&, bool);
 
     // symbol:
-    // ?onNewIncomingConnection@NetworkSystem@@EEAAXAEBVNetworkIdentifier@@$$QEAV?$shared_ptr@VNetworkPeer@@@std@@@Z
-    MCVAPI void onNewIncomingConnection(class NetworkIdentifier const&, std::shared_ptr<class NetworkPeer>&&);
+    // ?onNewIncomingConnection@NetworkSystem@@EEAA_NAEBVNetworkIdentifier@@$$QEAV?$shared_ptr@VNetworkPeer@@@std@@@Z
+    MCVAPI bool onNewIncomingConnection(class NetworkIdentifier const&, std::shared_ptr<class NetworkPeer>&&);
 
     // symbol:
-    // ?onNewOutgoingConnection@NetworkSystem@@EEAAXAEBVNetworkIdentifier@@$$QEAV?$shared_ptr@VNetworkPeer@@@std@@@Z
-    MCVAPI void onNewOutgoingConnection(class NetworkIdentifier const&, std::shared_ptr<class NetworkPeer>&&);
+    // ?onNewOutgoingConnection@NetworkSystem@@EEAA_NAEBVNetworkIdentifier@@$$QEAV?$shared_ptr@VNetworkPeer@@@std@@@Z
+    MCVAPI bool onNewOutgoingConnection(class NetworkIdentifier const&, std::shared_ptr<class NetworkPeer>&&);
 
     // symbol: ?onOutgoingConnectionFailed@NetworkSystem@@EEAAXXZ
     MCVAPI void onOutgoingConnectionFailed();
@@ -106,9 +110,6 @@ public:
 
     // symbol: ?enableAsyncFlush@NetworkSystem@@QEAAXAEBVNetworkIdentifier@@@Z
     MCAPI void enableAsyncFlush(class NetworkIdentifier const&);
-
-    // symbol: ?flush@NetworkSystem@@QEAAXAEBVNetworkIdentifier@@$$QEAV?$function@$$A6AXXZ@std@@@Z
-    MCAPI void flush(class NetworkIdentifier const&, std::function<void(void)>&&);
 
     // symbol:
     // ?getCompressedPeerForUser@NetworkSystem@@QEAA?AV?$weak_ptr@VCompressedNetworkPeer@@@std@@AEBVNetworkIdentifier@@@Z
@@ -171,10 +172,6 @@ public:
     // symbol: ?send@NetworkSystem@@QEAAXAEBVNetworkIdentifier@@AEBVPacket@@W4SubClientId@@@Z
     MCAPI void send(class NetworkIdentifier const&, class Packet const&, ::SubClientId);
 
-    // symbol:
-    // ?sendToMultiple@NetworkSystem@@QEAAXAEBV?$vector@UNetworkIdentifierWithSubId@@V?$allocator@UNetworkIdentifierWithSubId@@@std@@@std@@AEBVPacket@@@Z
-    MCAPI void sendToMultiple(std::vector<struct NetworkIdentifierWithSubId> const&, class Packet const&);
-
     // symbol: ?setClientUpdateAndRenderThrottle@NetworkSystem@@QEAAX_NHM@Z
     MCAPI void setClientUpdateAndRenderThrottle(bool, int, float);
 
@@ -219,9 +216,6 @@ public:
         class NetworkConnection&,
         ::SubClientId
     );
-
-    // symbol: ?_isUsingNetherNetTransportLayer@NetworkSystem@@AEBA_NXZ
-    MCAPI bool _isUsingNetherNetTransportLayer() const;
 
     // symbol:
     // ?_sendInternal@NetworkSystem@@AEAAXAEBVNetworkIdentifier@@AEBVPacket@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

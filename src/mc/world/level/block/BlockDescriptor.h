@@ -5,16 +5,49 @@
 // auto generated inclusion list
 #include "mc/util/molang/MolangVersion.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 class BlockDescriptor {
 public:
     // BlockDescriptor inner types declare
     // clang-format off
+    struct CompoundProxy;
     class ResolveHelper;
-    class State;
+    struct State;
     // clang-format on
 
     // BlockDescriptor inner types define
     enum class CompareType {};
+
+    struct CompoundProxy {
+    public:
+        // prevent constructor by default
+        CompoundProxy(CompoundProxy const&);
+        CompoundProxy();
+
+    public:
+        // NOLINTBEGIN
+        // symbol: ?fromInt@CompoundProxy@BlockDescriptor@@QEAAXH@Z
+        MCAPI void fromInt(int);
+
+        // symbol:
+        // ?fromString@CompoundProxy@BlockDescriptor@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+        MCAPI void fromString(std::string);
+
+        // symbol: ??4CompoundProxy@BlockDescriptor@@QEAAAEAU01@AEBU01@@Z
+        MCAPI struct BlockDescriptor::CompoundProxy& operator=(struct BlockDescriptor::CompoundProxy const&);
+
+        // symbol: ??1CompoundProxy@BlockDescriptor@@QEAA@XZ
+        MCAPI ~CompoundProxy();
+
+        // symbol: ?bindType@CompoundProxy@BlockDescriptor@@SAXAEAUReflectionCtx@cereal@@@Z
+        MCAPI static void bindType(struct cereal::ReflectionCtx&);
+
+        // NOLINTEND
+    };
 
     class ResolveHelper {
     public:
@@ -31,7 +64,7 @@ public:
         // NOLINTEND
     };
 
-    class State {
+    struct State {
     public:
         // prevent constructor by default
         State& operator=(State const&);
@@ -40,8 +73,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ?getBlockState@State@BlockDescriptor@@QEBAPEBVBlockState@@XZ
-        MCAPI class BlockState const* getBlockState() const;
+        // symbol: ??0State@BlockDescriptor@@QEAA@VHashedString@@UCompoundProxy@1@@Z
+        MCAPI State(class HashedString, struct BlockDescriptor::CompoundProxy);
 
         // symbol: ??1State@BlockDescriptor@@QEAA@XZ
         MCAPI ~State();
@@ -54,18 +87,18 @@ public:
     // symbol: ??0BlockDescriptor@@QEAA@AEBV0@@Z
     MCAPI BlockDescriptor(class BlockDescriptor const&);
 
-    // symbol:
-    // ??0BlockDescriptor@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEBV?$vector@VState@BlockDescriptor@@V?$allocator@VState@BlockDescriptor@@@std@@@2@@Z
-    MCAPI BlockDescriptor(std::string const&, std::vector<class BlockDescriptor::State> const&&);
-
     // symbol: ??0BlockDescriptor@@QEAA@$$QEAV0@@Z
     MCAPI BlockDescriptor(class BlockDescriptor&&);
 
-    // symbol: ??0BlockDescriptor@@QEAA@AEBVHashedString@@@Z
-    MCAPI explicit BlockDescriptor(class HashedString const&);
-
     // symbol: ??0BlockDescriptor@@QEAA@XZ
     MCAPI BlockDescriptor();
+
+    // symbol:
+    // ??0BlockDescriptor@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$vector@UState@BlockDescriptor@@V?$allocator@UState@BlockDescriptor@@@std@@@2@@Z
+    MCAPI BlockDescriptor(std::string const&, std::vector<struct BlockDescriptor::State>&&);
+
+    // symbol: ??0BlockDescriptor@@QEAA@AEBVHashedString@@@Z
+    MCAPI explicit BlockDescriptor(class HashedString const&);
 
     // symbol: ?getBlockOrUnknownBlock@BlockDescriptor@@QEBAAEBVBlock@@XZ
     MCAPI class Block const& getBlockOrUnknownBlock() const;
@@ -77,8 +110,8 @@ public:
     MCAPI std::string const& getFullName() const;
 
     // symbol:
-    // ?getStates@BlockDescriptor@@QEBAAEBV?$vector@VState@BlockDescriptor@@V?$allocator@VState@BlockDescriptor@@@std@@@std@@XZ
-    MCAPI std::vector<class BlockDescriptor::State> const& getStates() const;
+    // ?getStates@BlockDescriptor@@QEBAAEBV?$vector@UState@BlockDescriptor@@V?$allocator@UState@BlockDescriptor@@@std@@@std@@XZ
+    MCAPI std::vector<struct BlockDescriptor::State> const& getStates() const;
 
     // symbol:
     // ?getTagExpression@BlockDescriptor@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -116,15 +149,15 @@ public:
     MCAPI ~BlockDescriptor();
 
     // symbol:
-    // ?anyMatch@BlockDescriptor@@SA_NAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@AEBV1@@Z
-    MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const&, class BlockDescriptor const&);
-
-    // symbol:
     // ?anyMatch@BlockDescriptor@@SA_NAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@AEBVBlock@@@Z
     MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const&, class Block const&);
 
-    // symbol: ?bindType@BlockDescriptor@@SAXXZ
-    MCAPI static void bindType();
+    // symbol:
+    // ?anyMatch@BlockDescriptor@@SA_NAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@AEBV1@@Z
+    MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const&, class BlockDescriptor const&);
+
+    // symbol: ?bindType@BlockDescriptor@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // symbol: ?fromCompoundTag@BlockDescriptor@@SA?AV1@AEBVCompoundTag@@@Z
     MCAPI static class BlockDescriptor fromCompoundTag(class CompoundTag const&);
@@ -141,13 +174,6 @@ public:
 
     // symbol: ?JSON_TAGS_FIELD@BlockDescriptor@@2QBDB
     MCAPI static char const JSON_TAGS_FIELD[];
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol: ?_resolve@BlockDescriptor@@AEBAX_N@Z
-    MCAPI void _resolve(bool) const;
 
     // NOLINTEND
 };

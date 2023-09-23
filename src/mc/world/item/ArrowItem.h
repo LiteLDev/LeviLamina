@@ -7,7 +7,7 @@
 #include "mc/enums/InHandUpdateType.h"
 #include "mc/enums/UseAnimation.h"
 #include "mc/events/LevelSoundEvent.h"
-#include "mc/world/item/Item.h"
+#include "mc/world/item/components/ComponentItem.h"
 #include "mc/world/item/components/ItemColor.h"
 #include "mc/world/item/components/ItemUseMethod.h"
 #include "mc/world/level/block/utils/BlockShape.h"
@@ -18,7 +18,7 @@ namespace Json { class Value; }
 namespace mce { class Color; }
 // clang-format on
 
-class ArrowItem : public ::Item {
+class ArrowItem : public ::ComponentItem {
 public:
     // prevent constructor by default
     ArrowItem& operator=(ArrowItem const&);

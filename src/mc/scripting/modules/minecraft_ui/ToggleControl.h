@@ -28,9 +28,6 @@ public:
     // vIndex: 1, symbol: ?getJson@ToggleControl@ScriptModuleMinecraftServerUI@@UEBA?AVValue@Json@@XZ
     virtual class Json::Value getJson() const;
 
-    // symbol: ??0ToggleControl@ScriptModuleMinecraftServerUI@@QEAA@VValue@Json@@V?$optional@_N@std@@@Z
-    MCAPI ToggleControl(class Json::Value, std::optional<bool>);
-
     // NOLINTEND
 };
 

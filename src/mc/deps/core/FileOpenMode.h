@@ -16,9 +16,6 @@ public:
     // symbol: ??0FileOpenMode@Core@@QEAA@PEBD@Z
     MCAPI explicit FileOpenMode(char const*);
 
-    // symbol: ??0FileOpenMode@Core@@QEAA@H@Z
-    MCAPI explicit FileOpenMode(int);
-
     // symbol: ?cModeWide@FileOpenMode@Core@@QEAAPEB_WXZ
     MCAPI wchar_t const* cModeWide();
 

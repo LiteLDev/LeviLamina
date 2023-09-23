@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/ReplayCorrectionResult.h"
 #include "mc/events/MinecraftEventing.h"
 #include "mc/world/AutomaticID.h"
 #include "mc/world/actor/player/PlayerActionType.h"
@@ -77,8 +78,8 @@ public:
     // symbol: ?onPlayerEquippedArmor@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemDescriptor@@@Z
     MCVAPI ::EventResult onPlayerEquippedArmor(class Player&, class ItemDescriptor const&);
 
-    // symbol: ?onPlayerInput@PlayerEventListener@@UEAA?AW4EventResult@@AEAUIPlayerMovementProxy@@@Z
-    MCVAPI ::EventResult onPlayerInput(struct IPlayerMovementProxy&);
+    // symbol: ?onPlayerInput@PlayerEventListener@@UEAA?AW4EventResult@@AEAVEntityContext@@@Z
+    MCVAPI ::EventResult onPlayerInput(class EntityContext&);
 
     // symbol: ?onPlayerItemEquipped@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemInstance@@H@Z
     MCVAPI ::EventResult onPlayerItemEquipped(class Player&, class ItemInstance const&, int);
@@ -98,8 +99,9 @@ public:
     // symbol: ?onPlayerMovementCorrected@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z
     MCVAPI ::EventResult onPlayerMovementCorrected(class Player&, class Vec3 const&, float, float);
 
-    // symbol: ?onPlayerMovementRewindCorrected@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@_K@Z
-    MCVAPI ::EventResult onPlayerMovementRewindCorrected(class Player&, uint64);
+    // symbol:
+    // ?onPlayerMovementRewindCorrected@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@_KW4ReplayCorrectionResult@@@Z
+    MCVAPI ::EventResult onPlayerMovementRewindCorrected(class Player&, uint64, ::ReplayCorrectionResult);
 
     // symbol: ?onPlayerNamedItem@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemDescriptor@@@Z
     MCVAPI ::EventResult onPlayerNamedItem(class Player&, class ItemDescriptor const&);
@@ -113,12 +115,11 @@ public:
 
     // symbol:
     // ?onPlayerPortalBuilt@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@V?$AutomaticID@VDimension@@H@@@Z
-    MCVAPI ::EventResult onPlayerPortalBuilt(class Player&, class AutomaticID<class Dimension, int>);
+    MCVAPI ::EventResult onPlayerPortalBuilt(class Player&, DimensionType);
 
     // symbol:
     // ?onPlayerPortalUsed@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
-    MCVAPI ::EventResult
-    onPlayerPortalUsed(class Player&, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
+    MCVAPI ::EventResult onPlayerPortalUsed(class Player&, DimensionType, DimensionType);
 
     // symbol: ?onPlayerSaved@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
     MCVAPI ::EventResult onPlayerSaved(class Player&);
@@ -140,6 +141,9 @@ public:
 
     // symbol: ?onPlayerTeleported@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
     MCVAPI ::EventResult onPlayerTeleported(class Player&);
+
+    // symbol: ?onPlayerTeleported@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@M@Z
+    MCVAPI ::EventResult onPlayerTeleported(class Player&, float);
 
     // symbol: ?onPlayerTick@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
     MCVAPI ::EventResult onPlayerTick(class Player&);

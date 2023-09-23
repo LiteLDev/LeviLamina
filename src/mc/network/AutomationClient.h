@@ -40,6 +40,9 @@ public:
     // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUErrorMessage@CodeBuilder@@@Z
     MCVAPI void send(struct CodeBuilder::ErrorMessage const&);
 
+    // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUAgentMessage@CodeBuilder@@@Z
+    MCVAPI void send(struct CodeBuilder::AgentMessage const&);
+
     // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUCommandMessage@CodeBuilder@@@Z
     MCVAPI void send(struct CodeBuilder::CommandMessage const&);
 
@@ -48,9 +51,6 @@ public:
 
     // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUEventMessage@CodeBuilder@@@Z
     MCVAPI void send(struct CodeBuilder::EventMessage const&);
-
-    // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUAgentMessage@CodeBuilder@@@Z
-    MCVAPI void send(struct CodeBuilder::AgentMessage const&);
 
     // symbol: ?tick@AutomationClient@Automation@@UEAAXXZ
     MCVAPI void tick();

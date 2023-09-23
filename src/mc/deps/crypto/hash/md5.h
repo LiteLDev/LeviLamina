@@ -2,9 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/crypto/hash/IHash.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Crypto::Hash { class IHash; }
+// clang-format on
+
 namespace Crypto::Hash {
 
-class md5 {
+class md5 : public ::Crypto::Hash::IHash {
 public:
     // prevent constructor by default
     md5& operator=(md5 const&);

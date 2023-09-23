@@ -24,22 +24,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getAmplifier@ScriptMobEffectInstance@ScriptModuleMinecraft@@QEBA?AV?$Result@H@Scripting@@XZ
+    // symbol: ?getAmplifier@ScriptMobEffectInstance@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getAmplifier() const;
 
     // symbol:
-    // ?getDisplayName@ScriptMobEffectInstance@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Scripting@@XZ
+    // ?getDisplayName@ScriptMobEffectInstance@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::string> getDisplayName() const;
 
     // symbol:
     // ?getDisplayName_010@ScriptMobEffectInstance@ScriptModuleMinecraft@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getDisplayName_010() const;
 
-    // symbol: ?getDuration@ScriptMobEffectInstance@ScriptModuleMinecraft@@QEBA?AV?$Result@H@Scripting@@XZ
+    // symbol: ?getDuration@ScriptMobEffectInstance@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getDuration() const;
 
     // symbol:
-    // ?getTypeId@ScriptMobEffectInstance@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Scripting@@XZ
+    // ?getTypeId@ScriptMobEffectInstance@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::string> getTypeId() const;
 
     // symbol: ??4ScriptMobEffectInstance@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z

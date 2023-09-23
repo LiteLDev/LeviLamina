@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { struct ScriptSoundOptions; }
 namespace Scripting { struct Error; }
 // clang-format on
 
@@ -21,15 +20,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptPlayerSoundOptions@ScriptModuleMinecraft@@QEAA@AEBUScriptSoundOptions@1@@Z
-    MCAPI explicit ScriptPlayerSoundOptions(struct ScriptModuleMinecraft::ScriptSoundOptions const&);
-
-    // symbol: ?getPitch@ScriptPlayerSoundOptions@ScriptModuleMinecraft@@QEBAMXZ
-    MCAPI float getPitch() const;
-
-    // symbol: ?getVolume@ScriptPlayerSoundOptions@ScriptModuleMinecraft@@QEBAMXZ
-    MCAPI float getVolume() const;
-
     // symbol: ??4ScriptPlayerSoundOptions@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptPlayerSoundOptions&
     operator=(struct ScriptModuleMinecraft::ScriptPlayerSoundOptions const&);

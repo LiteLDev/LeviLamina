@@ -3,8 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
 #include "mc/resources/interface/IPackManifestFactory.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Core { class Path; }
+// clang-format on
 
 class PackManifestFactory : public ::IPackManifestFactory {
 public:
@@ -38,25 +42,21 @@ public:
     // ?contentKeyLookup@PackManifestFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
     MCAPI static std::string contentKeyLookup(std::string const&);
 
-    // symbol:
-    // ?MANIFEST_LOG_PATH@PackManifestFactory@@2V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
-    MCAPI static class Core::PathBuffer<std::string> const MANIFEST_LOG_PATH;
+    // symbol: ?MANIFEST_LOG_PATH@PackManifestFactory@@2VPath@Core@@B
+    MCAPI static class Core::Path const MANIFEST_LOG_PATH;
 
     // symbol:
     // ?MANIFEST_PACK_UUID_UPGRADE_SALT@PackManifestFactory@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const MANIFEST_PACK_UUID_UPGRADE_SALT;
 
-    // symbol:
-    // ?MANIFEST_PATH@PackManifestFactory@@2V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
-    MCAPI static class Core::PathBuffer<std::string> const MANIFEST_PATH;
+    // symbol: ?MANIFEST_PATH@PackManifestFactory@@2VPath@Core@@B
+    MCAPI static class Core::Path const MANIFEST_PATH;
 
-    // symbol:
-    // ?MANIFEST_PATH_OLD@PackManifestFactory@@2V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
-    MCAPI static class Core::PathBuffer<std::string> const MANIFEST_PATH_OLD;
+    // symbol: ?MANIFEST_PATH_OLD@PackManifestFactory@@2VPath@Core@@B
+    MCAPI static class Core::Path const MANIFEST_PATH_OLD;
 
-    // symbol:
-    // ?MANIFEST_PATH_OLD_BACKUP@PackManifestFactory@@2V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
-    MCAPI static class Core::PathBuffer<std::string> const MANIFEST_PATH_OLD_BACKUP;
+    // symbol: ?MANIFEST_PATH_OLD_BACKUP@PackManifestFactory@@2VPath@Core@@B
+    MCAPI static class Core::Path const MANIFEST_PATH_OLD_BACKUP;
 
     // symbol: ?REQUIRED_VANILLA_FOR_OLD_PACKS@PackManifestFactory@@2VSemVersion@@B
     MCAPI static class SemVersion const REQUIRED_VANILLA_FOR_OLD_PACKS;

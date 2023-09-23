@@ -20,8 +20,5 @@ public:
     // vIndex: 3, symbol: ?place@SandFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // symbol: ??0SandFeature@@QEAA@AEBVBlock@@H@Z
-    MCAPI SandFeature(class Block const&, int);
-
     // NOLINTEND
 };

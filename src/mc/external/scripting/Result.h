@@ -4,7 +4,7 @@
 
 namespace Scripting {
 
-template <typename T0>
+template <typename... T0>
 class Result {
 public:
     // prevent constructor by default

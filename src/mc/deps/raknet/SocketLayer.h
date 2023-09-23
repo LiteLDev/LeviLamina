@@ -25,6 +25,9 @@ public:
     // symbol: ?GetSubNetForSocketAndIp@SocketLayer@RakNet@@SA?AVRakString@2@V32@@Z
     MCAPI static class RakNet::RakString GetSubNetForSocketAndIp(class RakNet::RakString);
 
+    // symbol: ?SetSocketOptions@SocketLayer@RakNet@@SAX_K_N1@Z
+    MCAPI static void SetSocketOptions(uint64, bool, bool);
+
     // NOLINTEND
 
 private:

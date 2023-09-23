@@ -17,11 +17,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0UnverifiedCertificate@@QEAA@AEBV0@@Z
-    MCAPI UnverifiedCertificate(class UnverifiedCertificate const&);
-
     // symbol: ??0UnverifiedCertificate@@QEAA@$$QEAV0@@Z
     MCAPI UnverifiedCertificate(class UnverifiedCertificate&&);
+
+    // symbol: ??0UnverifiedCertificate@@QEAA@AEBV0@@Z
+    MCAPI UnverifiedCertificate(class UnverifiedCertificate const&);
 
     // symbol:
     // ?getIdentityPublicKey@UnverifiedCertificate@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

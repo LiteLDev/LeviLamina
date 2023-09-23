@@ -11,6 +11,7 @@ public:
     // prevent constructor by default
     ActivateToolNode& operator=(ActivateToolNode const&);
     ActivateToolNode(ActivateToolNode const&);
+    ActivateToolNode();
 
 public:
     // NOLINTBEGIN
@@ -22,9 +23,6 @@ public:
 
     // vIndex: 2, symbol: ?initializeFromDefinition@ActivateToolNode@@EEAAXAEAVActor@@@Z
     virtual void initializeFromDefinition(class Actor&);
-
-    // symbol: ??0ActivateToolNode@@QEAA@XZ
-    MCAPI ActivateToolNode();
 
     // NOLINTEND
 };

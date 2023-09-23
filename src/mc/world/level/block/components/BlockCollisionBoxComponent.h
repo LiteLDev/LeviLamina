@@ -11,4 +11,11 @@ public:
     BlockCollisionBoxComponent& operator=(BlockCollisionBoxComponent const&);
     BlockCollisionBoxComponent(BlockCollisionBoxComponent const&);
     BlockCollisionBoxComponent();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ?usesNewComponentStorage@BlockCollisionBoxComponent@@SA_NXZ
+    MCAPI static bool usesNewComponentStorage();
+
+    // NOLINTEND
 };

@@ -4,7 +4,7 @@
 
 namespace Bedrock::Http::MethodType {
 
-class POST {
+struct POST {
 public:
     // prevent constructor by default
     POST& operator=(POST const&);

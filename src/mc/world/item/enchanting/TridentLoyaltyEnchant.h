@@ -38,10 +38,5 @@ public:
     // vIndex: 13, symbol: __unk_vfn_13
     virtual void __unk_vfn_13();
 
-    // symbol:
-    // ??0TridentLoyaltyEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2H_NH@Z
-    MCAPI
-    TridentLoyaltyEnchant(::Enchant::Type, ::Enchant::Frequency, std::string_view, std::string_view, int, bool, int);
-
     // NOLINTEND
 };

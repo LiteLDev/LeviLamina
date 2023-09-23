@@ -35,7 +35,7 @@ public:
     // vIndex: 4, symbol: ?getName@FilterTestHourlyClock@@UEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
     virtual std::string_view getName() const;
 
-    // vIndex: 5, symbol: ?_serializeDomain@ActorHasEquipmentTest@@MEBA?AVValue@Json@@XZ
+    // vIndex: 5, symbol: ?_serializeDomain@ActorBoolPropertyTest@@MEBA?AVValue@Json@@XZ
     virtual class Json::Value _serializeDomain() const;
 
     // vIndex: 6, symbol: ?_serializeValue@ActorHasAllSlotsEmptyTest@@MEBA?AVValue@Json@@XZ

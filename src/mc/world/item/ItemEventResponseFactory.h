@@ -23,5 +23,8 @@ public:
     // vIndex: 2, symbol: ?initSchema@ItemEventResponseFactory@@UEAAXXZ
     virtual void initSchema();
 
+    // symbol: ??1ItemEventResponseFactory@@UEAA@XZ
+    MCVAPI ~ItemEventResponseFactory();
+
     // NOLINTEND
 };

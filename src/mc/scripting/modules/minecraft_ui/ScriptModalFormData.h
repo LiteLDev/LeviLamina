@@ -30,11 +30,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptModalFormData@ScriptModuleMinecraftServerUI@@QEAA@XZ
-    MCAPI ScriptModalFormData();
-
     // symbol: ??0ScriptModalFormData@ScriptModuleMinecraftServerUI@@QEAA@$$QEAV01@@Z
     MCAPI ScriptModalFormData(class ScriptModuleMinecraftServerUI::ScriptModalFormData&&);
+
+    // symbol: ??0ScriptModalFormData@ScriptModuleMinecraftServerUI@@QEAA@XZ
+    MCAPI ScriptModalFormData();
 
     // symbol: ?buildJson@ScriptModalFormData@ScriptModuleMinecraftServerUI@@QEBA?AVValue@Json@@XZ
     MCAPI class Json::Value buildJson() const;
@@ -59,7 +59,7 @@ public:
     operator=(class ScriptModuleMinecraftServerUI::ScriptModalFormData&&);
 
     // symbol:
-    // ?show@ScriptModalFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$Result@V?$Promise@V?$StrongTypedObjectHandle@VScriptModalFormResponse@ScriptModuleMinecraftServerUI@@@Scripting@@VScriptFormRejectError@ScriptModuleMinecraftServerUI@@X@Scripting@@@Scripting@@AEBVWeakLifetimeScope@4@AEAVScriptObjectFactory@4@AEAVDependencyLocator@4@AEAVScriptPlayer@ScriptModuleMinecraft@@@Z
+    // ?show@ScriptModalFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$Result@V?$Promise@V?$StrongTypedObjectHandle@VScriptModalFormResponse@ScriptModuleMinecraftServerUI@@@Scripting@@VScriptFormRejectError@ScriptModuleMinecraftServerUI@@X@Scripting@@$$V@Scripting@@AEBVWeakLifetimeScope@4@AEAVScriptObjectFactory@4@AEAVDependencyLocator@4@AEAVScriptPlayer@ScriptModuleMinecraft@@@Z
     MCAPI class Scripting::Result<class Scripting::Promise<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptModalFormResponse>,
         class ScriptModuleMinecraftServerUI::ScriptFormRejectError,

@@ -17,8 +17,11 @@ public:
     // symbol: ??1ComponentItemData_v1_19_83@@QEAA@XZ
     MCAPI ~ComponentItemData_v1_19_83();
 
-    // symbol: ?VERSION@ComponentItemData_v1_19_83@@2VSemVersion@@B
-    MCAPI static class SemVersion const VERSION;
+    // symbol: ?FIRST_VERSION@ComponentItemData_v1_19_83@@2VSemVersion@@B
+    MCAPI static class SemVersion const FIRST_VERSION;
+
+    // symbol: ?LAST_VERSION@ComponentItemData_v1_19_83@@2VSemVersion@@B
+    MCAPI static class SemVersion const LAST_VERSION;
 
     // NOLINTEND
 };

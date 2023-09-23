@@ -55,9 +55,8 @@ public:
     // ?getAsset@ZipPackAccessStrategy@@UEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     virtual bool getAsset(class Core::Path const&, std::string&, bool) const;
 
-    // vIndex: 10, symbol:
-    // ?deleteAsset@ZipPackAccessStrategy@@UEAA_NAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@Z
-    virtual bool deleteAsset(class Core::PathBuffer<std::string> const&);
+    // vIndex: 10, symbol: ?deleteAsset@ZipPackAccessStrategy@@UEAA_NAEBVPath@Core@@@Z
+    virtual bool deleteAsset(class Core::Path const&);
 
     // vIndex: 11, symbol:
     // ?writeAsset@ZipPackAccessStrategy@@UEAA_NAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

@@ -16,10 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ScriptButtonPushAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptButtonPushAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptButtonPushAfterEvent&&);
-
     // symbol: ??1ScriptButtonPushAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptButtonPushAfterEvent();
 

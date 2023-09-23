@@ -29,8 +29,5 @@ public:
     // vIndex: 4, symbol: ?deleteActorFromWorldInLevelChunk@ServerActorManagerProxy@@UEAAXAEBVActor@@@Z
     virtual void deleteActorFromWorldInLevelChunk(class Actor const&);
 
-    // symbol: ??0ServerActorManagerProxy@@QEAA@AEAVServerLevel@@@Z
-    MCAPI explicit ServerActorManagerProxy(class ServerLevel&);
-
     // NOLINTEND
 };

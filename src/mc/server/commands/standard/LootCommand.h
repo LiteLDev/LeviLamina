@@ -38,9 +38,13 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_getItemsFromSource@LootCommand@@AEBA?AV?$optional@V?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@std@@AEBVCommandOrigin@@AEAVCommandOutput@@AEBVItemStack@@AEAVLevel@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI std::optional<std::vector<class ItemStack>>
-    _getItemsFromSource(class CommandOrigin const&, class CommandOutput&, class ItemStack const&, class Level&, class AutomaticID<class Dimension, int>)
-        const;
+    MCAPI std::optional<std::vector<class ItemStack>> _getItemsFromSource(
+        class CommandOrigin const&,
+        class CommandOutput&,
+        class ItemStack const&,
+        class Level&,
+        DimensionType
+    ) const;
 
     // symbol: ?_outputError@LootCommand@@AEBAXAEAVCommandOutput@@UReplacementResults@Util@@PEBVActor@@@Z
     MCAPI void _outputError(class CommandOutput&, struct Util::ReplacementResults, class Actor const*) const;

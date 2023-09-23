@@ -16,11 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0SerializerTraits@cereal@@QEAA@$$QEAU01@@Z
-    MCAPI SerializerTraits(struct cereal::SerializerTraits&&);
-
     // symbol: ??0SerializerTraits@cereal@@QEAA@AEBU01@@Z
     MCAPI SerializerTraits(struct cereal::SerializerTraits const&);
+
+    // symbol: ??0SerializerTraits@cereal@@QEAA@$$QEAU01@@Z
+    MCAPI SerializerTraits(struct cereal::SerializerTraits&&);
 
     // symbol: ??0SerializerTraits@cereal@@QEAA@XZ
     MCAPI SerializerTraits();

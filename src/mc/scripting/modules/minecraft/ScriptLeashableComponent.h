@@ -27,7 +27,7 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol: ?_isValid@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    // vIndex: 1, symbol: ?_isValid@ScriptItemComponent@ScriptModuleMinecraft@@MEBA_NXZ
     virtual bool _isValid() const;
 
     // symbol: ??1ScriptLeashableComponent@ScriptModuleMinecraft@@UEAA@XZ
@@ -38,13 +38,14 @@ public:
     MCAPI
     ScriptLeashableComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
 
-    // symbol: ?getSoftDistance@ScriptLeashableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M@Scripting@@XZ
+    // symbol: ?getSoftDistance@ScriptLeashableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M$$V@Scripting@@XZ
     MCAPI class Scripting::Result<float> getSoftDistance() const;
 
-    // symbol: ?leash@ScriptLeashableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@X@Scripting@@AEAVScriptActor@2@@Z
+    // symbol:
+    // ?leash@ScriptLeashableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@X$$V@Scripting@@AEAVScriptActor@2@@Z
     MCAPI class Scripting::Result<void> leash(class ScriptModuleMinecraft::ScriptActor&) const;
 
-    // symbol: ?unleash@ScriptLeashableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@X@Scripting@@XZ
+    // symbol: ?unleash@ScriptLeashableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@X$$V@Scripting@@XZ
     MCAPI class Scripting::Result<void> unleash() const;
 
     // symbol:

@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class SemVersion;
 namespace Puv { class LoadResultAny; }
 namespace Puv { class ParserBase; }
 namespace Puv { class Upgrader; }

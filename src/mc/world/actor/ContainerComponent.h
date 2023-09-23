@@ -33,11 +33,11 @@ public:
     // symbol: ?addAdditionalSaveData@ContainerComponent@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void addAdditionalSaveData(class CompoundTag&) const;
 
-    // symbol: ?addItem@ContainerComponent@@QEAA_NAEAVItemActor@@@Z
-    MCAPI bool addItem(class ItemActor&);
-
     // symbol: ?addItem@ContainerComponent@@QEAA_NAEAVItemStack@@HH@Z
     MCAPI bool addItem(class ItemStack&, int, int);
+
+    // symbol: ?addItem@ContainerComponent@@QEAA_NAEAVItemActor@@@Z
+    MCAPI bool addItem(class ItemActor&);
 
     // symbol: ?addItem@ContainerComponent@@QEAA_NAEAVItemStack@@@Z
     MCAPI bool addItem(class ItemStack&);
@@ -117,7 +117,7 @@ public:
     MCAPI void setLootTable(std::string const&, int);
 
     // symbol: ?unpackLootTable@ContainerComponent@@QEAAXAEAVLevel@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI void unpackLootTable(class Level&, class AutomaticID<class Dimension, int>);
+    MCAPI void unpackLootTable(class Level&, DimensionType);
 
     // NOLINTEND
 };

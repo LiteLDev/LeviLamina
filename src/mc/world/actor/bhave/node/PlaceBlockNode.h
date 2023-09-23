@@ -11,6 +11,7 @@ public:
     // prevent constructor by default
     PlaceBlockNode& operator=(PlaceBlockNode const&);
     PlaceBlockNode(PlaceBlockNode const&);
+    PlaceBlockNode();
 
 public:
     // NOLINTBEGIN
@@ -19,9 +20,6 @@ public:
 
     // vIndex: 1, symbol: ?tick@PlaceBlockNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
     virtual ::BehaviorStatus tick(class Actor&);
-
-    // symbol: ??0PlaceBlockNode@@QEAA@XZ
-    MCAPI PlaceBlockNode();
 
     // NOLINTEND
 };

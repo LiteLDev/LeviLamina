@@ -16,10 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ScriptTripWireTripAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptTripWireTripAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptTripWireTripAfterEvent&&);
-
     // symbol: ??1ScriptTripWireTripAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptTripWireTripAfterEvent();
 

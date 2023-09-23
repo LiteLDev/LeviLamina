@@ -11,6 +11,7 @@ public:
     // prevent constructor by default
     BreakBlockNode& operator=(BreakBlockNode const&);
     BreakBlockNode(BreakBlockNode const&);
+    BreakBlockNode();
 
 public:
     // NOLINTBEGIN
@@ -22,9 +23,6 @@ public:
 
     // vIndex: 2, symbol: ?initializeFromDefinition@BreakBlockNode@@EEAAXAEAVActor@@@Z
     virtual void initializeFromDefinition(class Actor&);
-
-    // symbol: ??0BreakBlockNode@@QEAA@XZ
-    MCAPI BreakBlockNode();
 
     // NOLINTEND
 };

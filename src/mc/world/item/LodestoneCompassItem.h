@@ -98,7 +98,7 @@ public:
     // symbol:
     // ?_tryGetOrAddComponent@LodestoneCompassItem@@CAPEAVLodestoneCompassComponent@@PEAVTrackingRecord@PositionTrackingDB@@AEBV?$variant@UActorUniqueID@@U?$pair@VBlockPos@@V?$AutomaticID@VDimension@@H@@@std@@@std@@@Z
     MCAPI static class LodestoneCompassComponent*
-    _tryGetOrAddComponent(class PositionTrackingDB::TrackingRecord*, std::variant<struct ActorUniqueID, std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> const&);
+    _tryGetOrAddComponent(class PositionTrackingDB::TrackingRecord*, std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>> const&);
 
     // NOLINTEND
 };

@@ -48,9 +48,6 @@ public:
     // symbol: ?get@CompoundTagVariant@@QEBAPEBVTag@@XZ
     MCAPI class Tag const* get() const;
 
-    // symbol: ??CCompoundTagVariant@@QEBAPEBVTag@@XZ
-    MCAPI class Tag const* operator->() const;
-
     // symbol: ??1CompoundTagVariant@@QEAA@XZ
     MCAPI ~CompoundTagVariant();
 

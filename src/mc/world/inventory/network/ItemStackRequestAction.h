@@ -51,6 +51,9 @@ public:
     // symbol: ?getActionType@ItemStackRequestAction@@QEBA?AW4ItemStackRequestActionType@@XZ
     MCAPI ::ItemStackRequestActionType getActionType() const;
 
+    // symbol: ?write@ItemStackRequestAction@@QEBAXAEAVBinaryStream@@@Z
+    MCAPI void write(class BinaryStream&) const;
+
     // symbol:
     // ?getActionTypeName@ItemStackRequestAction@@SA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ItemStackRequestActionType@@@Z
     MCAPI static std::string const getActionTypeName(::ItemStackRequestActionType);

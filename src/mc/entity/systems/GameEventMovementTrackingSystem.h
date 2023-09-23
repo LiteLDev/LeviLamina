@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/Optional.h"
 #include "mc/entity/systems/ITickingSystem.h"
 
 class GameEventMovementTrackingSystem : public ::ITickingSystem {
@@ -28,12 +29,14 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?_tickGameEventMovementTrackingComponent@GameEventMovementTrackingSystem@@CAXAEAVActorOwnerComponent@@AEAVGameEventMovementTrackingComponent@@@Z
+    // ?_tickGameEventMovementTrackingComponent@GameEventMovementTrackingSystem@@CAXAEAVActorOwnerComponent@@AEAVGameEventMovementTrackingComponent@@V?$Optional@$$CBVRailMovementComponent@@@@@Z
     MCAPI static void
-    _tickGameEventMovementTrackingComponent(class ActorOwnerComponent&, class GameEventMovementTrackingComponent&);
+    _tickGameEventMovementTrackingComponent(class ActorOwnerComponent&, class GameEventMovementTrackingComponent&, class Optional<class RailMovementComponent const>);
 
-    // symbol: ?_trackMovement@GameEventMovementTrackingSystem@@CAXAEAVActor@@AEAVGameEventMovementTrackingComponent@@@Z
-    MCAPI static void _trackMovement(class Actor&, class GameEventMovementTrackingComponent&);
+    // symbol:
+    // ?_trackMovement@GameEventMovementTrackingSystem@@CAXAEAVActor@@AEAVGameEventMovementTrackingComponent@@V?$Optional@$$CBVRailMovementComponent@@@@@Z
+    MCAPI static void
+    _trackMovement(class Actor&, class GameEventMovementTrackingComponent&, class Optional<class RailMovementComponent const>);
 
     // NOLINTEND
 };

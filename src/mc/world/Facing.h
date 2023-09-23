@@ -119,11 +119,11 @@ public:
     // symbol: ?getRotationMatrix@Facing@@SA?AU?$mat@$02$02M$0A@@glm@@EW4Rotation@1@@Z
     MCAPI static struct glm::mat<3, 3, float, 0> getRotationMatrix(uchar, ::Facing::Rotation);
 
-    // symbol: ?getShuffledDirections@Facing@@SA?AV?$vector@EV?$allocator@E@std@@@std@@AEAVRandom@@@Z
-    MCAPI static std::vector<uchar> getShuffledDirections(class Random&);
-
     // symbol: ?getShuffledDirections@Facing@@SA?AV?$vector@EV?$allocator@E@std@@@std@@XZ
     MCAPI static std::vector<uchar> getShuffledDirections();
+
+    // symbol: ?getShuffledDirections@Facing@@SA?AV?$vector@EV?$allocator@E@std@@@std@@AEAVRandom@@@Z
+    MCAPI static std::vector<uchar> getShuffledDirections(class Random&);
 
     // symbol: ?getStepX@Facing@@SAHE@Z
     MCAPI static int getStepX(uchar);

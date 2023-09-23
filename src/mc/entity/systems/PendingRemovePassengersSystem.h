@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createPendingRemovePassengersSystem@PendingRemovePassengersSystem@@SA?AUTickingSystemWithInfo@@XZ
-    MCAPI static struct TickingSystemWithInfo createPendingRemovePassengersSystem();
+    // symbol: ?createSystem@PendingRemovePassengersSystem@@SA?AUTickingSystemWithInfo@@XZ
+    MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 };

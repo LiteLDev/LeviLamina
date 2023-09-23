@@ -18,9 +18,6 @@ public:
     // symbol: ?summarize@SummaryEvent@Events@Social@@QEAAXAEBV123@@Z
     MCAPI void summarize(class Social::Events::SummaryEvent const&);
 
-    // symbol: ??1SummaryEvent@Events@Social@@QEAA@XZ
-    MCAPI ~SummaryEvent();
-
     // NOLINTEND
 };
 

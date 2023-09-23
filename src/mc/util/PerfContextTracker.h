@@ -78,12 +78,10 @@ public:
     // prevent constructor by default
     PerfContextTracker& operator=(PerfContextTracker const&);
     PerfContextTracker(PerfContextTracker const&);
+    PerfContextTracker();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0PerfContextTracker@@QEAA@XZ
-    MCAPI PerfContextTracker();
-
     // symbol: ?incrementPacketReceivedInfo@PerfContextTracker@@QEAAXI@Z
     MCAPI void incrementPacketReceivedInfo(uint);
 
@@ -92,13 +90,6 @@ public:
 
     // symbol: ?getInstance@PerfContextTracker@@SAAEAV1@XZ
     MCAPI static class PerfContextTracker& getInstance();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol: ?_resetStats@PerfContextTracker@@AEAAXXZ
-    MCAPI void _resetStats();
 
     // NOLINTEND
 };

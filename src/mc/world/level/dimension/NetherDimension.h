@@ -63,7 +63,7 @@ public:
     MCVAPI bool showSky() const;
 
     // symbol: ?translatePosAcrossDimension@NetherDimension@@UEBA?AVVec3@@AEBV2@V?$AutomaticID@VDimension@@H@@@Z
-    MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const&, class AutomaticID<class Dimension, int>) const;
+    MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const&, DimensionType) const;
 
     // symbol: ?upgradeLevelChunk@NetherDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z
     MCVAPI void upgradeLevelChunk(class ChunkSource&, class LevelChunk&, class LevelChunk&);

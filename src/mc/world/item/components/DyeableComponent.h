@@ -23,9 +23,6 @@ public:
     // symbol: ?clearColor@DyeableComponent@@QEBAXAEAVItemStackBase@@@Z
     MCAPI void clearColor(class ItemStackBase&) const;
 
-    // symbol: ?getColor@DyeableComponent@@QEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
-    MCAPI class mce::Color getColor(class CompoundTag const*, class ItemDescriptor const&) const;
-
     // symbol: ?hasCustomColor@DyeableComponent@@QEBA_NAEBVItemStackBase@@@Z
     MCAPI bool hasCustomColor(class ItemStackBase const&) const;
 

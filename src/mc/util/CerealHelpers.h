@@ -8,46 +8,47 @@
 // auto generated forward declare list
 // clang-format off
 namespace CerealHelpers { struct IdentifierString; }
+namespace cereal { struct ReflectionCtx; }
 namespace mce { class Color; }
 // clang-format on
 
 namespace CerealHelpers {
 // NOLINTBEGIN
-// symbol: ?bindBoundingBox@CerealHelpers@@YAXXZ
-MCAPI void bindBoundingBox();
+// symbol: ?bindBoundingBox@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
+MCAPI void bindBoundingBox(struct cereal::ReflectionCtx&);
 
-// symbol: ?bindBrightness@CerealHelpers@@YAXXZ
-MCAPI void bindBrightness();
+// symbol: ?bindBrightness@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
+MCAPI void bindBrightness(struct cereal::ReflectionCtx&);
 
-// symbol: ?bindColor@CerealHelpers@@YAXXZ
-MCAPI void bindColor();
+// symbol: ?bindColor@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
+MCAPI void bindColor(struct cereal::ReflectionCtx&);
 
-// symbol: ?bindGlmVec2@CerealHelpers@@YAXXZ
-MCAPI void bindGlmVec2();
+// symbol: ?bindGlmVec2@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
+MCAPI void bindGlmVec2(struct cereal::ReflectionCtx&);
 
-// symbol: ?bindHelpers@CerealHelpers@@YAXXZ
-MCAPI void bindHelpers();
+// symbol: ?bindHelpers@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
+MCAPI void bindHelpers(struct cereal::ReflectionCtx&);
 
-// symbol: ?bindIdentifierString@CerealHelpers@@YAXXZ
-MCAPI void bindIdentifierString();
+// symbol: ?bindIdentifierString@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
+MCAPI void bindIdentifierString(struct cereal::ReflectionCtx&);
 
-// symbol: ?bindIntRange@CerealHelpers@@YAXXZ
-MCAPI void bindIntRange();
+// symbol: ?bindIntRange@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
+MCAPI void bindIntRange(struct cereal::ReflectionCtx&);
 
-// symbol: ?bindLocIdString@CerealHelpers@@YAXXZ
-MCAPI void bindLocIdString();
+// symbol: ?bindLocIdString@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
+MCAPI void bindLocIdString(struct cereal::ReflectionCtx&);
 
-// symbol: ?bindMceUUID@CerealHelpers@@YAXXZ
-MCAPI void bindMceUUID();
+// symbol: ?bindMceUUID@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
+MCAPI void bindMceUUID(struct cereal::ReflectionCtx&);
 
-// symbol: ?bindResourcePath@CerealHelpers@@YAXXZ
-MCAPI void bindResourcePath();
+// symbol: ?bindResourcePath@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
+MCAPI void bindResourcePath(struct cereal::ReflectionCtx&);
 
-// symbol: ?bindVec2@CerealHelpers@@YAXXZ
-MCAPI void bindVec2();
+// symbol: ?bindVec2@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
+MCAPI void bindVec2(struct cereal::ReflectionCtx&);
 
-// symbol: ?bindVec3@CerealHelpers@@YAXXZ
-MCAPI void bindVec3();
+// symbol: ?bindVec3@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
+MCAPI void bindVec3(struct cereal::ReflectionCtx&);
 
 // symbol: ?blockPosAsArray@CerealHelpers@@YA?AV?$array@H$02@std@@AEBVBlockPos@@@Z
 MCAPI std::array<int, 3> blockPosAsArray(class BlockPos const&);
@@ -87,15 +88,11 @@ MCAPI std::array<int, 4> colorToIntArray4(class mce::Color const&);
 MCAPI void glmVec2FromArray(struct glm::vec<2, float, 0>&, std::array<float, 2>);
 
 // symbol:
-// ?hashedStringFromString@CerealHelpers@@YAXAEAVHashedString@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI void hashedStringFromString(class HashedString&, std::string const&);
-
-// symbol:
 // ?identifierStringFromString@CerealHelpers@@YAXAEAUIdentifierString@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 MCAPI void identifierStringFromString(struct CerealHelpers::IdentifierString&, std::string const&);
 
-// symbol: ?initialize@CerealHelpers@@YAXXZ
-MCAPI void initialize();
+// symbol: ?initialize@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
+MCAPI void initialize(struct cereal::ReflectionCtx&);
 
 // symbol: ?vec2FromArray@CerealHelpers@@YAXAEAVVec2@@V?$array@M$01@std@@@Z
 MCAPI void vec2FromArray(class Vec2&, std::array<float, 2>);

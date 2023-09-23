@@ -20,11 +20,11 @@ public:
     // ??0ResolvedItemIconInfo@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ItemIconInfoType@@@Z
     MCAPI ResolvedItemIconInfo(std::string const&, int, ::ItemIconInfoType);
 
-    // symbol: ??0ResolvedItemIconInfo@@QEAA@XZ
-    MCAPI ResolvedItemIconInfo();
-
     // symbol: ??0ResolvedItemIconInfo@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MMMMGG@Z
     MCAPI ResolvedItemIconInfo(std::string const&, float, float, float, float, ushort, ushort);
+
+    // symbol: ??0ResolvedItemIconInfo@@QEAA@XZ
+    MCAPI ResolvedItemIconInfo();
 
     // symbol: ??1ResolvedItemIconInfo@@QEAA@XZ
     MCAPI ~ResolvedItemIconInfo();

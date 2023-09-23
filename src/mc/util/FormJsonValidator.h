@@ -24,9 +24,6 @@ public:
     // symbol: ?getDropdownProperty@FormJsonValidator@@SA?AVProperty@JsonValidator@@_N@Z
     MCAPI static class JsonValidator::Property getDropdownProperty(bool);
 
-    // symbol: ?getLabelProperty@FormJsonValidator@@SA?AVProperty@JsonValidator@@XZ
-    MCAPI static class JsonValidator::Property getLabelProperty();
-
     // symbol: ?getSliderProperty@FormJsonValidator@@SA?AVProperty@JsonValidator@@_N@Z
     MCAPI static class JsonValidator::Property getSliderProperty(bool);
 

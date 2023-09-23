@@ -13,6 +13,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class CauldronBlock;
 class CauldronBlockActor;
 namespace ScriptModuleMinecraft { class BaseScriptBlockComponent; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -35,7 +36,7 @@ public:
     virtual bool _isValid() const;
 
     // vIndex: 2, symbol:
-    // ?setFillLevel@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@UEAA?AV?$Result@X@Scripting@@H@Z
+    // ?setFillLevel@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@UEAA?AV?$Result@X$$V@Scripting@@H@Z
     virtual class Scripting::Result<void> setFillLevel(int);
 
     // symbol:
@@ -50,7 +51,7 @@ public:
     );
 
     // symbol:
-    // ?getFillLevel@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H@Scripting@@XZ
+    // ?getFillLevel@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getFillLevel();
 
     // symbol: ??4BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
@@ -73,6 +74,10 @@ public:
     // NOLINTBEGIN
     // symbol: ?_isValidLiquid@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@IEBA_NXZ
     MCAPI bool _isValidLiquid() const;
+
+    // symbol:
+    // ?_tryGetCauldronBlock@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@IEBAPEBVCauldronBlock@@XZ
+    MCAPI class CauldronBlock const* _tryGetCauldronBlock() const;
 
     // symbol:
     // ?_tryGetCauldronBlockActor@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@IEAAPEAVCauldronBlockActor@@XZ

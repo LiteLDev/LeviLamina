@@ -19,10 +19,10 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0() = 0;
 
-    // vIndex: 1, symbol: ?forEachPackConst@RealmsUnknownPackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z
+    // vIndex: 1, symbol: ?forEachPackConst@DirectoryPackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z
     virtual void forEachPackConst(std::function<void(class Pack const&)>) const = 0;
 
-    // vIndex: 2, symbol: ?forEachPack@RealmsUnknownPackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z
+    // vIndex: 2, symbol: ?forEachPack@DirectoryPackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z
     virtual void forEachPack(std::function<void(class Pack&)>) = 0;
 
     // vIndex: 3, symbol: ?getPackOrigin@PackSource@@UEBA?AW4PackOrigin@@XZ
@@ -32,7 +32,7 @@ public:
     virtual ::PackType getPackType() const;
 
     // vIndex: 5, symbol:
-    // ?load@RealmsUnknownPackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
+    // ?load@WorldTemplatePackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
     virtual class PackSourceReport
     load(class IPackManifestFactory&, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&) = 0;
 

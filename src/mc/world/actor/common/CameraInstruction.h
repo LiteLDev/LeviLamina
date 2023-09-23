@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/Result.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 struct CameraInstruction {
 public:
     // CameraInstruction inner types declare
@@ -29,8 +37,13 @@ public:
 
         public:
             // NOLINTBEGIN
-            // symbol: ?bindType@ColorOption@FadeInstruction@CameraInstruction@@SAXXZ
-            MCAPI static void bindType();
+            // symbol: ?bindType@ColorOption@FadeInstruction@CameraInstruction@@SAXAEAUReflectionCtx@cereal@@@Z
+            MCAPI static void bindType(struct cereal::ReflectionCtx&);
+
+            // symbol:
+            // ?read@ColorOption@FadeInstruction@CameraInstruction@@SA?AV?$Result@UColorOption@FadeInstruction@CameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+            MCAPI static class Bedrock::Result<struct CameraInstruction::FadeInstruction::ColorOption, std::error_code>
+            read(class ReadOnlyBinaryStream&);
 
             // NOLINTEND
         };
@@ -44,8 +57,13 @@ public:
 
         public:
             // NOLINTBEGIN
-            // symbol: ?bindType@TimeOption@FadeInstruction@CameraInstruction@@SAXXZ
-            MCAPI static void bindType();
+            // symbol: ?bindType@TimeOption@FadeInstruction@CameraInstruction@@SAXAEAUReflectionCtx@cereal@@@Z
+            MCAPI static void bindType(struct cereal::ReflectionCtx&);
+
+            // symbol:
+            // ?read@TimeOption@FadeInstruction@CameraInstruction@@SA?AV?$Result@UTimeOption@FadeInstruction@CameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+            MCAPI static class Bedrock::Result<struct CameraInstruction::FadeInstruction::TimeOption, std::error_code>
+            read(class ReadOnlyBinaryStream&);
 
             // NOLINTEND
         };
@@ -61,8 +79,13 @@ public:
         // symbol: ??8FadeInstruction@CameraInstruction@@QEBA_NAEBU01@@Z
         MCAPI bool operator==(struct CameraInstruction::FadeInstruction const&) const;
 
-        // symbol: ?bindType@FadeInstruction@CameraInstruction@@SAXXZ
-        MCAPI static void bindType();
+        // symbol: ?bindType@FadeInstruction@CameraInstruction@@SAXAEAUReflectionCtx@cereal@@@Z
+        MCAPI static void bindType(struct cereal::ReflectionCtx&);
+
+        // symbol:
+        // ?read@FadeInstruction@CameraInstruction@@SA?AV?$Result@UFadeInstruction@CameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+        MCAPI static class Bedrock::Result<struct CameraInstruction::FadeInstruction, std::error_code>
+        read(class ReadOnlyBinaryStream&);
 
         // NOLINTEND
     };
@@ -72,6 +95,8 @@ public:
         // SetInstruction inner types declare
         // clang-format off
         struct EaseOption;
+        struct FacingOption;
+        struct PosOption;
         struct RotOption;
         // clang-format on
 
@@ -85,8 +110,47 @@ public:
 
         public:
             // NOLINTBEGIN
-            // symbol: ?bindType@EaseOption@SetInstruction@CameraInstruction@@SAXXZ
-            MCAPI static void bindType();
+            // symbol: ?bindType@EaseOption@SetInstruction@CameraInstruction@@SAXAEAUReflectionCtx@cereal@@@Z
+            MCAPI static void bindType(struct cereal::ReflectionCtx&);
+
+            // symbol:
+            // ?read@EaseOption@SetInstruction@CameraInstruction@@SA?AV?$Result@UEaseOption@SetInstruction@CameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+            MCAPI static class Bedrock::Result<struct CameraInstruction::SetInstruction::EaseOption, std::error_code>
+            read(class ReadOnlyBinaryStream&);
+
+            // NOLINTEND
+        };
+
+        struct FacingOption {
+        public:
+            // prevent constructor by default
+            FacingOption& operator=(FacingOption const&);
+            FacingOption(FacingOption const&);
+            FacingOption();
+
+        public:
+            // NOLINTBEGIN
+            // symbol:
+            // ?read@FacingOption@SetInstruction@CameraInstruction@@SA?AV?$Result@UFacingOption@SetInstruction@CameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+            MCAPI static class Bedrock::Result<struct CameraInstruction::SetInstruction::FacingOption, std::error_code>
+            read(class ReadOnlyBinaryStream&);
+
+            // NOLINTEND
+        };
+
+        struct PosOption {
+        public:
+            // prevent constructor by default
+            PosOption& operator=(PosOption const&);
+            PosOption(PosOption const&);
+            PosOption();
+
+        public:
+            // NOLINTBEGIN
+            // symbol:
+            // ?read@PosOption@SetInstruction@CameraInstruction@@SA?AV?$Result@UPosOption@SetInstruction@CameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+            MCAPI static class Bedrock::Result<struct CameraInstruction::SetInstruction::PosOption, std::error_code>
+            read(class ReadOnlyBinaryStream&);
 
             // NOLINTEND
         };
@@ -100,8 +164,13 @@ public:
 
         public:
             // NOLINTBEGIN
-            // symbol: ?bindType@RotOption@SetInstruction@CameraInstruction@@SAXXZ
-            MCAPI static void bindType();
+            // symbol: ?bindType@RotOption@SetInstruction@CameraInstruction@@SAXAEAUReflectionCtx@cereal@@@Z
+            MCAPI static void bindType(struct cereal::ReflectionCtx&);
+
+            // symbol:
+            // ?read@RotOption@SetInstruction@CameraInstruction@@SA?AV?$Result@URotOption@SetInstruction@CameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+            MCAPI static class Bedrock::Result<struct CameraInstruction::SetInstruction::RotOption, std::error_code>
+            read(class ReadOnlyBinaryStream&);
 
             // NOLINTEND
         };
@@ -122,8 +191,13 @@ public:
         // symbol: ??8SetInstruction@CameraInstruction@@QEBA_NAEBU01@@Z
         MCAPI bool operator==(struct CameraInstruction::SetInstruction const&) const;
 
-        // symbol: ?bindType@SetInstruction@CameraInstruction@@SAXXZ
-        MCAPI static void bindType();
+        // symbol: ?bindType@SetInstruction@CameraInstruction@@SAXAEAUReflectionCtx@cereal@@@Z
+        MCAPI static void bindType(struct cereal::ReflectionCtx&);
+
+        // symbol:
+        // ?read@SetInstruction@CameraInstruction@@SA?AV?$Result@USetInstruction@CameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+        MCAPI static class Bedrock::Result<struct CameraInstruction::SetInstruction, std::error_code>
+        read(class ReadOnlyBinaryStream&);
 
         // NOLINTEND
     };
@@ -136,11 +210,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??8CameraInstruction@@QEBA_NAEBU0@@Z
-    MCAPI bool operator==(struct CameraInstruction const&) const;
+    // symbol: ?write@CameraInstruction@@QEBAXAEAVBinaryStream@@@Z
+    MCAPI void write(class BinaryStream&) const;
 
-    // symbol: ?bindType@CameraInstruction@@SAXXZ
-    MCAPI static void bindType();
+    // symbol: ?bindType@CameraInstruction@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+
+    // symbol:
+    // ?read@CameraInstruction@@SA?AV?$Result@UCameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    MCAPI static class Bedrock::Result<struct CameraInstruction, std::error_code> read(class ReadOnlyBinaryStream&);
 
     // NOLINTEND
 };

@@ -12,7 +12,6 @@ namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
 namespace cereal { struct SerializerTraits; }
 namespace cereal::internal { class BasicSchema; }
-namespace cereal::internal { struct Result; }
 // clang-format on
 
 namespace cereal::internal {
@@ -27,14 +26,14 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol:
-    // ?doValidate@UndefinedSchema@internal@cereal@@MEBA?AUResult@23@AEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEAVSerializerContext@3@@Z
-    virtual struct cereal::internal::Result
+    // ?doValidate@UndefinedSchema@internal@cereal@@EEBAXAEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEAVSerializerContext@3@@Z
+    virtual void
     doValidate(struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
         const;
 
     // vIndex: 1, symbol:
-    // ?doLoad@UndefinedSchema@internal@cereal@@MEBA?AUResult@23@AEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEBV67@AEAVSerializerContext@3@@Z
-    virtual struct cereal::internal::Result
+    // ?doLoad@UndefinedSchema@internal@cereal@@EEBAXAEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEBV56@AEAVSerializerContext@3@@Z
+    virtual void
     doLoad(struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&)
         const;
 

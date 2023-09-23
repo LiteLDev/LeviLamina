@@ -95,11 +95,6 @@ public:
     MCAPI void setMarketplaceOverrides();
 
     // symbol:
-    // ?setRule@GameRules@@QEAA?AV?$unique_ptr@VGameRulesChangedPacket@@U?$default_delete@VGameRulesChangedPacket@@@std@@@std@@UGameRuleId@@H_NPEA_N2PEAVValidationError@GameRule@@@Z
-    MCAPI std::unique_ptr<class GameRulesChangedPacket>
-          setRule(struct GameRuleId, int, bool, bool*, bool*, class GameRule::ValidationError*);
-
-    // symbol:
     // ?setRule@GameRules@@QEAA?AV?$unique_ptr@VGameRulesChangedPacket@@U?$default_delete@VGameRulesChangedPacket@@@std@@@std@@UGameRuleId@@_N1PEA_N2PEAVValidationError@GameRule@@@Z
     MCAPI std::unique_ptr<class GameRulesChangedPacket>
           setRule(struct GameRuleId, bool, bool, bool*, bool*, class GameRule::ValidationError*);
@@ -108,6 +103,11 @@ public:
     // ?setRule@GameRules@@QEAA?AV?$unique_ptr@VGameRulesChangedPacket@@U?$default_delete@VGameRulesChangedPacket@@@std@@@std@@UGameRuleId@@M_NPEA_N2PEAVValidationError@GameRule@@@Z
     MCAPI std::unique_ptr<class GameRulesChangedPacket>
           setRule(struct GameRuleId, float, bool, bool*, bool*, class GameRule::ValidationError*);
+
+    // symbol:
+    // ?setRule@GameRules@@QEAA?AV?$unique_ptr@VGameRulesChangedPacket@@U?$default_delete@VGameRulesChangedPacket@@@std@@@std@@UGameRuleId@@H_NPEA_N2PEAVValidationError@GameRule@@@Z
+    MCAPI std::unique_ptr<class GameRulesChangedPacket>
+          setRule(struct GameRuleId, int, bool, bool*, bool*, class GameRule::ValidationError*);
 
     // symbol: ?setTagData@GameRules@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void setTagData(class CompoundTag&) const;

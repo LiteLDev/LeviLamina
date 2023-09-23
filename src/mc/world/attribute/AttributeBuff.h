@@ -10,7 +10,6 @@ class AttributeBuff {
 public:
     // prevent constructor by default
     AttributeBuff& operator=(AttributeBuff const&);
-    AttributeBuff(AttributeBuff const&);
     AttributeBuff();
 
 public:
@@ -18,10 +17,10 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol: ?isInstantaneous@TemporalAttributeBuff@@UEBA_NXZ
+    // vIndex: 1, symbol: ?isInstantaneous@InstantaneousAttributeBuff@@UEBA_NXZ
     virtual bool isInstantaneous() const = 0;
 
-    // vIndex: 2, symbol: ?isSerializable@TemporalAttributeBuff@@UEBA_NXZ
+    // vIndex: 2, symbol: ?isSerializable@InstantaneousAttributeBuff@@UEBA_NXZ
     virtual bool isSerializable() const = 0;
 
     // vIndex: 3, symbol: ?setDurationAmplifier@AttributeBuff@@UEAAXV?$shared_ptr@VAmplifier@@@std@@@Z
@@ -29,6 +28,9 @@ public:
 
     // symbol: ??1AttributeBuff@@UEAA@XZ
     MCVAPI ~AttributeBuff();
+
+    // symbol: ??0AttributeBuff@@QEAA@AEBV0@@Z
+    MCAPI AttributeBuff(class AttributeBuff const&);
 
     // symbol: ?getAmount@AttributeBuff@@QEBAMXZ
     MCAPI float getAmount() const;

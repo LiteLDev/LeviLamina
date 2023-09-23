@@ -49,8 +49,8 @@ public:
     MCAPI void
     initCoreEnums(class ItemRegistryRef, class IWorldRegistriesProvider const&, class ActorFactory const&, class Experiments const&, class BaseGameVersion const&);
 
-    // symbol: ?initCoreEnumsServer@MinecraftCommands@@QEAAXAEBVActorDefinitionGroup@@AEBVCameraPresets@@@Z
-    MCAPI void initCoreEnumsServer(class ActorDefinitionGroup const&, class CameraPresets const&);
+    // symbol: ?initCoreEnumsServer@MinecraftCommands@@QEAAXAEBVActorDefinitionGroup@@AEBVCameraPresets@@AEBVRecipes@@@Z
+    MCAPI void initCoreEnumsServer(class ActorDefinitionGroup const&, class CameraPresets const&, class Recipes const&);
 
     // symbol: ?requestCommandExecution@MinecraftCommands@@QEAA?AUMCRESULT@@AEAVCommandContext@@_N@Z
     MCAPI struct MCRESULT requestCommandExecution(class CommandContext&, bool);
@@ -94,6 +94,9 @@ public:
 
     // symbol: ?initStructureFeatureEnum@MinecraftCommands@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void initStructureFeatureEnum(class CommandRegistry&);
+
+    // symbol: ?initUnlockableRecipesEnum@MinecraftCommands@@SAXAEAVCommandRegistry@@AEBVRecipes@@@Z
+    MCAPI static void initUnlockableRecipesEnum(class CommandRegistry&, class Recipes const&);
 
     // symbol: ?registerSharedClientServerEnums@MinecraftCommands@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void registerSharedClientServerEnums(class CommandRegistry&);

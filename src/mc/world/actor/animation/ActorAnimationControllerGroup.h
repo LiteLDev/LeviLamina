@@ -3,17 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/deps/json/JsonSchemaObjectNode.h"
 #include "mc/enums/CurrentCmdVersion.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
 namespace Core { class Path; }
 namespace Json { class Value; }
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class ActorAnimationControllerGroup {
+class ActorAnimationControllerGroup : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
     ActorAnimationControllerGroup& operator=(ActorAnimationControllerGroup const&);
@@ -35,9 +37,6 @@ public:
 
     // symbol: ?loadActorAnimationControllersSync@ActorAnimationControllerGroup@@QEAAXAEAVResourcePackManager@@@Z
     MCAPI void loadActorAnimationControllersSync(class ResourcePackManager&);
-
-    // symbol: ??1ActorAnimationControllerGroup@@QEAA@XZ
-    MCAPI ~ActorAnimationControllerGroup();
 
     // symbol: ?loadFormatVersion@ActorAnimationControllerGroup@@SA_NAEBVValue@Json@@AEAVSemVersion@@@Z
     MCAPI static bool loadFormatVersion(class Json::Value const&, class SemVersion&);

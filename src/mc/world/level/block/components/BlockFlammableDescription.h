@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace JsonUtil { class EmptyClass; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockFlammableDescription : public ::BlockComponentDescription {
@@ -30,8 +31,8 @@ public:
     // vIndex: 2, symbol: ?initializeComponent@BlockFlammableDescription@@UEBAXAEAVEntityContext@@@Z
     virtual void initializeComponent(class EntityContext&) const;
 
-    // symbol: ?bindType@BlockFlammableDescription@@SAXXZ
-    MCAPI static void bindType();
+    // symbol: ?bindType@BlockFlammableDescription@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // symbol: ?CATCH_CHANCE_DEFAULT@BlockFlammableDescription@@2HB
     MCAPI static int const CATCH_CHANCE_DEFAULT;

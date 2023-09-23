@@ -6,6 +6,7 @@
 #include "mc/deps/core/data/BidirectionalUnorderedMap.h"
 #include "mc/deps/core/utility/NumberConversionResult.h"
 #include "mc/entity/components/agent/Direction.h"
+#include "mc/enums/BoneTransformType.h"
 #include "mc/enums/EquipmentSlot.h"
 #include "mc/enums/LogArea.h"
 #include "mc/world/AutomaticID.h"
@@ -57,11 +58,11 @@ MCAPI struct Util::FormattedString allocateVFormat(char const*, char*);
 // symbol: ?base64_decode@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
 MCAPI std::string base64_decode(std::string const&);
 
-// symbol: ?base64_encode@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@_N@Z
-MCAPI std::string base64_encode(std::string const&, bool);
-
 // symbol: ?base64_encode@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBE_K_N@Z
 MCAPI std::string base64_encode(uchar const*, uint64, bool);
+
+// symbol: ?base64_encode@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@_N@Z
+MCAPI std::string base64_encode(std::string const&, bool);
 
 // symbol: ?base64url_decode@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V23@@Z
 MCAPI std::string base64url_decode(std::string);
@@ -132,9 +133,6 @@ MCAPI std::string getNameWithoutNamespace(std::string const&);
 // symbol: ?getNamespace@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
 MCAPI std::string getNamespace(std::string const&);
 
-// symbol: ?hashCode@Util@@YAIV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-MCAPI uint hashCode(std::string_view);
-
 // symbol: ?hashCodeAsUtf16@Util@@YAIV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
 MCAPI uint hashCodeAsUtf16(std::string_view);
 
@@ -152,6 +150,9 @@ MCAPI bool isIdentifierChar(char);
 
 // symbol: ?isIntegral@Util@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
 MCAPI bool isIntegral(std::string const&, bool);
+
+// symbol: ?isNumber@Util@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+MCAPI bool isNumber(std::string const&);
 
 // symbol: ?isStartIdentifierChar@Util@@YA_ND@Z
 MCAPI bool isStartIdentifierChar(char);
@@ -174,10 +175,6 @@ MCAPI bool isWhiteSpace(char);
 // symbol: ?loadGameVersion@Util@@YAXAEAVSemVersion@@AEBVValue@Json@@@Z
 MCAPI void loadGameVersion(class SemVersion&, class Json::Value const&);
 
-// symbol:
-// ?loadGameVersionFromJsonString@Util@@YA?AVSemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI class SemVersion loadGameVersionFromJsonString(std::string const&);
-
 // symbol: ?removeChars@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V23@AEBV23@@Z
 MCAPI std::string removeChars(std::string, std::string const&);
 
@@ -192,8 +189,8 @@ MCAPI std::string removeTrailingSpaces(std::string const&);
 MCAPI std::istream& safeGetline(std::istream&, std::string&);
 
 // symbol:
-// ?simpleFormat@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-MCAPI std::string simpleFormat(std::string const&, std::vector<std::string> const&);
+// ?split@Util@@YA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@D@Z
+MCAPI std::vector<std::string> split(std::string_view, char);
 
 // symbol:
 // ?splitAndDiscardEmpty@Util@@YA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@D@Z
@@ -226,11 +223,11 @@ MCAPI bool stringContains(std::string const&, char);
 // symbol: ?stringReplace@Util@@YAAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV23@AEBV23@1H@Z
 MCAPI std::string& stringReplace(std::string&, std::string const&, std::string const&, int);
 
-// symbol: ?stringTrim@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@0@Z
-MCAPI std::string stringTrim(std::string const&, std::string const&);
-
 // symbol: ?stringTrim@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
 MCAPI std::string stringTrim(std::string const&);
+
+// symbol: ?stringTrim@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@0@Z
+MCAPI std::string stringTrim(std::string const&, std::string const&);
 
 // symbol: ?stripBOM@Util@@YAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 MCAPI void stripBOM(std::string&);
@@ -265,15 +262,18 @@ MCAPI void toLowerInPlace(std::string&);
 // symbol: ?toPascalCase@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@D@Z
 MCAPI std::string toPascalCase(std::string const&, char);
 
-// symbol: ?toString@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-MCAPI std::string toString(std::string const&);
-
 // symbol: ?toString@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MH@Z
 MCAPI std::string toString(float, int);
+
+// symbol: ?toString@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
+MCAPI std::string toString(std::string const&);
 
 // symbol:
 // ?toString@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@3@@Z
 MCAPI std::string toString(std::wstring const&);
+
+// symbol: ?toString@Util@@YAPEBDW4BoneTransformType@@@Z
+MCAPI char const* toString(::BoneTransformType);
 
 // symbol: ?toStringWithPaddedZeroes@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@IE@Z
 MCAPI std::string toStringWithPaddedZeroes(uint, uchar);

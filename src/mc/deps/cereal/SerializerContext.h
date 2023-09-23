@@ -53,20 +53,13 @@ public:
 public:
     // prevent constructor by default
     SerializerContext& operator=(SerializerContext const&);
+    SerializerContext(SerializerContext const&);
+    SerializerContext();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0SerializerContext@cereal@@QEAA@AEBV01@@Z
-    MCAPI SerializerContext(class cereal::SerializerContext const&);
-
-    // symbol: ??0SerializerContext@cereal@@QEAA@XZ
-    MCAPI SerializerContext();
-
-    // symbol: ?clear@SerializerContext@cereal@@QEAAXXZ
-    MCAPI void clear();
-
-    // symbol: ?consumeContext@SerializerContext@cereal@@QEAAX$$QEAV12@@Z
-    MCAPI void consumeContext(class cereal::SerializerContext&&);
+    // symbol: ?consumeContext@SerializerContext@cereal@@QEAAXAEBV12@@Z
+    MCAPI void consumeContext(class cereal::SerializerContext const&);
 
     // symbol: ?detachContext@SerializerContext@cereal@@QEAA?AV12@XZ
     MCAPI class cereal::SerializerContext detachContext();
@@ -79,17 +72,25 @@ public:
     // ?getLog@SerializerContext@cereal@@QEBAAEBV?$vector@ULogEntry@SerializerContext@cereal@@V?$allocator@ULogEntry@SerializerContext@cereal@@@std@@@std@@XZ
     MCAPI std::vector<struct cereal::SerializerContext::LogEntry> const& getLog() const;
 
+    // symbol: ?getStatus@SerializerContext@cereal@@QEBA?AW4ResultCode@internal@2@XZ
+    MCAPI ::cereal::internal::ResultCode getStatus() const;
+
     // symbol:
-    // ?log@SerializerContext@cereal@@QEAA?AW4ResultCode@internal@2@W4342@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI ::cereal::internal::ResultCode log(::cereal::internal::ResultCode, std::string);
+    // ?log@SerializerContext@cereal@@QEAAXW4ResultCode@internal@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI void log(::cereal::internal::ResultCode, std::string);
+
+    // symbol: ??BSerializerContext@cereal@@QEBA_NXZ
+    MCAPI explicit operator bool() const;
+
+    // symbol: ??4SerializerContext@cereal@@QEAAAEAV01@$$QEAV01@@Z
+    MCAPI class cereal::SerializerContext& operator=(class cereal::SerializerContext&&);
 
     // symbol: ?popContext@SerializerContext@cereal@@QEAAXXZ
     MCAPI void popContext();
 
     // symbol:
-    // ?pushContext@SerializerContext@cereal@@QEAAAEAV12@U?$pair@W4ContextType@SerializerContext@cereal@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
-    MCAPI class cereal::SerializerContext&
-        pushContext(std::pair<::cereal::SerializerContext::ContextType, std::string>);
+    // ?pushContext@SerializerContext@cereal@@QEAAAEAV12@W4ContextType@12@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI class cereal::SerializerContext& pushContext(::cereal::SerializerContext::ContextType, std::string);
 
     // symbol: ??1SerializerContext@cereal@@QEAA@XZ
     MCAPI ~SerializerContext();

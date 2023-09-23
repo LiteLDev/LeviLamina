@@ -20,8 +20,8 @@ MCAPI bool isLegalPlayerPosition(class Vec3 const&, char const*);
 // symbol: ?validateBlockPos@ActorValueValidation@@YA_NAEBVBlockPos@@PEBD@Z
 MCAPI bool validateBlockPos(class BlockPos const&, char const*);
 
-// symbol: ?validateFloatValue@ActorValueValidation@@YA_NMPEBD@Z
-MCAPI bool validateFloatValue(float, char const*);
+// symbol: ?validateHeadRotationFloatValue@ActorValueValidation@@YA_NMPEBD@Z
+MCAPI bool validateHeadRotationFloatValue(float, char const*);
 
 // symbol: ?validateVec2Position@ActorValueValidation@@YA_NAEBVVec2@@PEBD@Z
 MCAPI bool validateVec2Position(class Vec2 const&, char const*);

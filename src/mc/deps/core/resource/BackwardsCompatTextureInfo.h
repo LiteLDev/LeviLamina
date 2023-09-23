@@ -8,4 +8,11 @@ public:
     BackwardsCompatTextureInfo& operator=(BackwardsCompatTextureInfo const&);
     BackwardsCompatTextureInfo(BackwardsCompatTextureInfo const&);
     BackwardsCompatTextureInfo();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ??1BackwardsCompatTextureInfo@@QEAA@XZ
+    MCAPI ~BackwardsCompatTextureInfo();
+
+    // NOLINTEND
 };

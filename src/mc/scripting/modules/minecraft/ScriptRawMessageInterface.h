@@ -40,7 +40,7 @@ public:
     MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptRawMessageInterface const&) const;
 
     // symbol:
-    // ?resolveAsJsonString@ScriptRawMessageInterface@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Scripting@@AEAVActor@@W4CurrentCmdVersion@@@Z
+    // ?resolveAsJsonString@ScriptRawMessageInterface@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$V@Scripting@@AEAVActor@@W4CurrentCmdVersion@@@Z
     MCAPI class Scripting::Result<std::string> resolveAsJsonString(class Actor&, ::CurrentCmdVersion) const;
 
     // symbol: ?toJson@ScriptRawMessageInterface@ScriptModuleMinecraft@@QEBA?AVValue@Json@@XZ

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/ServerConnectivityTestResult.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/enums/GameType.h"
 #include "mc/network/NetworkEnableDisableListener.h"
@@ -76,8 +77,9 @@ public:
     virtual float getPingTimeForGUID(std::string const&) = 0;
 
     // vIndex: 15, symbol:
-    // ?checkCanConnectToCustomServerAsync@StubServerLocator@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6AX_N@Z@3@@Z
-    virtual void checkCanConnectToCustomServerAsync(std::string, int, std::function<void(bool)>) = 0;
+    // ?checkCanConnectToCustomServerAsync@StubServerLocator@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6AXW4ServerConnectivityTestResult@@@Z@3@@Z
+    virtual void
+    checkCanConnectToCustomServerAsync(std::string, int, std::function<void(::ServerConnectivityTestResult)>) = 0;
 
     // symbol: ??1ServerLocator@@UEAA@XZ
     MCVAPI ~ServerLocator();

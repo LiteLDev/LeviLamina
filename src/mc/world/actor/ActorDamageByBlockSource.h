@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/entity/utilities/ActorCategory.h"
+#include "mc/entity/utilities/ActorDamageCause.h"
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/world/actor/ActorDamageSource.h"
 
@@ -26,6 +27,9 @@ public:
     // vIndex: 21, symbol:
     // ?clone@ActorDamageByBlockSource@@UEBA?AV?$unique_ptr@VActorDamageSource@@U?$default_delete@VActorDamageSource@@@std@@@std@@XZ
     virtual std::unique_ptr<class ActorDamageSource> clone() const;
+
+    // symbol: ??0ActorDamageByBlockSource@@QEAA@AEBVBlock@@W4ActorDamageCause@@@Z
+    MCAPI ActorDamageByBlockSource(class Block const&, ::ActorDamageCause);
 
     // NOLINTEND
 };

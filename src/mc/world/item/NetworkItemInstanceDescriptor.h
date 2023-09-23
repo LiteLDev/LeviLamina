@@ -26,14 +26,14 @@ public:
     // symbol: ??1NetworkItemInstanceDescriptor@@UEAA@XZ
     MCVAPI ~NetworkItemInstanceDescriptor();
 
-    // symbol: ??0NetworkItemInstanceDescriptor@@QEAA@AEBVItemStackDescriptor@@@Z
-    MCAPI explicit NetworkItemInstanceDescriptor(class ItemStackDescriptor const&);
+    // symbol: ??0NetworkItemInstanceDescriptor@@QEAA@AEBVItemInstance@@@Z
+    MCAPI explicit NetworkItemInstanceDescriptor(class ItemInstance const&);
 
     // symbol: ??0NetworkItemInstanceDescriptor@@QEAA@$$QEAV0@@Z
     MCAPI NetworkItemInstanceDescriptor(class NetworkItemInstanceDescriptor&&);
 
-    // symbol: ??0NetworkItemInstanceDescriptor@@QEAA@AEBVItemInstance@@@Z
-    MCAPI explicit NetworkItemInstanceDescriptor(class ItemInstance const&);
+    // symbol: ??0NetworkItemInstanceDescriptor@@QEAA@AEBVItemStackDescriptor@@@Z
+    MCAPI explicit NetworkItemInstanceDescriptor(class ItemStackDescriptor const&);
 
     // symbol: ?getItemInstance@NetworkItemInstanceDescriptor@@QEBA?AVItemInstance@@AEBVBlockPalette@@@Z
     MCAPI class ItemInstance getItemInstance(class BlockPalette const&) const;

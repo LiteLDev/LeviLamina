@@ -97,8 +97,8 @@ public:
     // symbol: ??1ItemContext@@QEAA@XZ
     MCAPI ~ItemContext();
 
-    // symbol: ?setEquipment@ItemContext@@SAXAEBVItemStack@@W4EquipmentSlot@@AEAVMob@@@Z
-    MCAPI static void setEquipment(class ItemStack const&, ::EquipmentSlot, class Mob&);
+    // symbol: ?setEquipment@ItemContext@@SA_NAEBVItemStack@@W4EquipmentSlot@@AEAVMob@@@Z
+    MCAPI static bool setEquipment(class ItemStack const&, ::EquipmentSlot, class Mob&);
 
     // NOLINTEND
 

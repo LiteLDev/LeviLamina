@@ -4,9 +4,6 @@
 
 namespace MobGliding {
 // NOLINTBEGIN
-// symbol: ?getArmorFlyEnabled@MobGliding@@YA_NAEBVEntityContext@@@Z
-MCAPI bool getArmorFlyEnabled(class EntityContext const&);
-
 // symbol: ?getFallFlyTicks@MobGliding@@YAHAEBVEntityContext@@@Z
 MCAPI int getFallFlyTicks(class EntityContext const&);
 

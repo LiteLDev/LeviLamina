@@ -3,9 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/scores/ObjectiveCriteria.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/player/PlayerScoreSetFunction.h"
-
 class Objective {
 public:
     std::unordered_map<ScoreboardId, int> mScores;
@@ -35,6 +32,9 @@ public:
     // symbol: ?getPlayerScore@Objective@@QEBA?AUScoreInfo@@AEBUScoreboardId@@@Z
     MCAPI struct ScoreInfo getPlayerScore(struct ScoreboardId const&) const;
 
+    // symbol: ?getPlayerScoreRef@Objective@@QEAA_NAEBUScoreboardId@@AEAUScoreInfoRef@@@Z
+    MCAPI bool getPlayerScoreRef(struct ScoreboardId const&, struct ScoreInfoRef&);
+
     // symbol: ?getPlayers@Objective@@QEBA?AV?$vector@UScoreboardId@@V?$allocator@UScoreboardId@@@std@@@std@@XZ
     MCAPI std::vector<struct ScoreboardId> getPlayers() const;
 
@@ -45,12 +45,6 @@ public:
     // symbol: ?hasScore@Objective@@QEBA_NAEBUScoreboardId@@@Z
     MCAPI bool hasScore(struct ScoreboardId const&) const;
 
-    // symbol: ?hasScores@Objective@@QEBA_NXZ
-    MCAPI bool hasScores() const;
-
-    // symbol: ??1Objective@@QEAA@XZ
-    MCAPI ~Objective();
-
     // symbol:
     // ?deserialize@Objective@@SA?AV?$unique_ptr@VObjective@@U?$default_delete@VObjective@@@std@@@std@@AEBVCompoundTag@@AEAVScoreboard@@@Z
     MCAPI static std::unique_ptr<class Objective> deserialize(class CompoundTag const&, class Scoreboard&);
@@ -58,16 +52,6 @@ public:
     // symbol:
     // ?serialize@Objective@@SA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBV1@@Z
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class Objective const&);
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol: ?_modifyPlayerScore@Objective@@AEAA_NAEAHAEBUScoreboardId@@HW4PlayerScoreSetFunction@@@Z
-    MCAPI bool _modifyPlayerScore(int&, struct ScoreboardId const&, int, ::PlayerScoreSetFunction);
-
-    // symbol: ?_resetPlayer@Objective@@AEAAXAEBUScoreboardId@@@Z
-    MCAPI void _resetPlayer(struct ScoreboardId const&);
 
     // NOLINTEND
 };

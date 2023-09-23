@@ -17,19 +17,13 @@ struct ScriptItemReleaseUseAfterEvent : public ::ScriptModuleMinecraft::ScriptIt
 public:
     // prevent constructor by default
     ScriptItemReleaseUseAfterEvent& operator=(ScriptItemReleaseUseAfterEvent const&);
+    ScriptItemReleaseUseAfterEvent(ScriptItemReleaseUseAfterEvent const&);
     ScriptItemReleaseUseAfterEvent();
 
 public:
     // NOLINTBEGIN
     // symbol: ??1ScriptItemReleaseUseAfterEvent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptItemReleaseUseAfterEvent();
-
-    // symbol: ??0ScriptItemReleaseUseAfterEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
-    MCAPI ScriptItemReleaseUseAfterEvent(struct ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent const&);
-
-    // symbol: ??4ScriptItemReleaseUseAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent&&);
 
     // symbol:
     // ?bind@ScriptItemReleaseUseAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptItemReleaseUseAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ

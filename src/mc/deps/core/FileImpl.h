@@ -84,6 +84,16 @@ public:
     // symbol: ?flush@FileImpl@Core@@QEAA?AVResult@2@XZ
     MCAPI class Core::Result flush();
 
+    // symbol: ?getBlockSize@FileImpl@Core@@QEBA_KXZ
+    MCAPI uint64 getBlockSize() const;
+
+    // symbol: ?getOpenMode@FileImpl@Core@@QEBAAEBVFileOpenMode@2@XZ
+    MCAPI class Core::FileOpenMode const& getOpenMode() const;
+
+    // symbol:
+    // ?getPath@FileImpl@Core@@QEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@XZ
+    MCAPI class Core::PathBuffer<std::string> getPath() const;
+
     // symbol: ?getPosition@FileImpl@Core@@QEAA?AVResult@2@PEA_K@Z
     MCAPI class Core::Result getPosition(uint64*);
 

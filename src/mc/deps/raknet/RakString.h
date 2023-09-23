@@ -29,16 +29,15 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    RakString& operator=(RakString const&);
-
-public:
     // NOLINTBEGIN
     // symbol: ?Deserialize@RakString@RakNet@@QEAA_NPEAVBitStream@2@@Z
     MCAPI bool Deserialize(class RakNet::BitStream*);
 
     // symbol: ?GetLength@RakString@RakNet@@QEBA_KXZ
     MCAPI uint64 GetLength() const;
+
+    // symbol: ?IPAddressMatch@RakString@RakNet@@QEAA_NPEBD@Z
+    MCAPI bool IPAddressMatch(char const*);
 
     // symbol: ?IsEmpty@RakString@RakNet@@QEBA_NXZ
     MCAPI bool IsEmpty() const;
@@ -51,6 +50,9 @@ public:
 
     // symbol: ??0RakString@RakNet@@QEAA@XZ
     MCAPI RakString();
+
+    // symbol: ??4RakString@RakNet@@QEAAAEAV01@AEBV01@@Z
+    MCAPI class RakNet::RakString& operator=(class RakNet::RakString const&);
 
     // symbol: ??4RakString@RakNet@@QEAAAEAV01@PEBD@Z
     MCAPI class RakNet::RakString& operator=(char const*);

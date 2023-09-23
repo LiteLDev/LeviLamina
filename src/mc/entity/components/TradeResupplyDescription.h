@@ -20,7 +20,7 @@ public:
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
 
-    // vIndex: 2, symbol: ?deserializeData@Description@@UEAAXUDeserializeDataParams@@@Z
+    // vIndex: 2, symbol: ?deserializeData@MobEffectChangeDescription@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);
 
     // symbol: ??1TradeResupplyDescription@@UEAA@XZ

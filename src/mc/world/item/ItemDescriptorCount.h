@@ -37,17 +37,17 @@ public:
     // symbol: ??0ItemDescriptorCount@@QEAA@AEBVBlock@@G@Z
     MCAPI ItemDescriptorCount(class Block const&, ushort);
 
-    // symbol: ??0ItemDescriptorCount@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HG@Z
-    MCAPI ItemDescriptorCount(std::string_view, int, ushort);
+    // symbol: ??0ItemDescriptorCount@@QEAA@AEBVItem@@HG@Z
+    MCAPI ItemDescriptorCount(class Item const&, int, ushort);
 
     // symbol: ??0ItemDescriptorCount@@QEAA@AEBUItemTag@@G@Z
     MCAPI ItemDescriptorCount(struct ItemTag const&, ushort);
 
+    // symbol: ??0ItemDescriptorCount@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HG@Z
+    MCAPI ItemDescriptorCount(std::string_view, int, ushort);
+
     // symbol: ??0ItemDescriptorCount@@QEAA@XZ
     MCAPI ItemDescriptorCount();
-
-    // symbol: ??0ItemDescriptorCount@@QEAA@AEBVItem@@HG@Z
-    MCAPI ItemDescriptorCount(class Item const&, int, ushort);
 
     // symbol: ??0ItemDescriptorCount@@QEAA@AEBVItemDescriptor@@G@Z
     MCAPI ItemDescriptorCount(class ItemDescriptor const&, ushort);

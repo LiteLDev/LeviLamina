@@ -4,15 +4,17 @@
 
 // auto generated inclusion list
 #include "mc/deps/crypto/hash/HashType.h"
+#include "mc/deps/crypto/hash/IHash.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Crypto::Hash { class IHash; }
 namespace mce { class UUID; }
 // clang-format on
 
 namespace Crypto::Hash {
 
-class Hash {
+class Hash : public ::Crypto::Hash::IHash {
 public:
     // prevent constructor by default
     Hash& operator=(Hash const&);

@@ -64,9 +64,6 @@ MCAPI void displayLocalizableMessage(bool, class Player&, std::string const&, st
 // symbol: ?getActorName@CommandUtils@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVActor@@@Z
 MCAPI std::string getActorName(class Actor const&);
 
-// symbol: ?getFeetBlockPos@CommandUtils@@YA?AVBlockPos@@PEBVActor@@@Z
-MCAPI class BlockPos getFeetBlockPos(class Actor const*);
-
 // symbol: ?getFeetPos@CommandUtils@@YA?AVVec3@@PEBVActor@@@Z
 MCAPI class Vec3 getFeetPos(class Actor const*);
 
@@ -77,18 +74,15 @@ MCAPI std::vector<::ActorType> getInvalidCommandEntities(bool, bool);
 // symbol: ?getInvalidCommandEntities@CommandUtils@@YA?AV?$vector@W4ActorType@@V?$allocator@W4ActorType@@@std@@@std@@XZ
 MCAPI std::vector<::ActorType> getInvalidCommandEntities();
 
-// symbol: ?getOriginPlayer@CommandUtils@@YAPEBVPlayer@@AEBVCommandOrigin@@@Z
-MCAPI class Player const* getOriginPlayer(class CommandOrigin const&);
-
 // symbol:
 // ?getTelemetryErrorList@CommandUtils@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCommandOutput@@@Z
 MCAPI std::string getTelemetryErrorList(class CommandOutput const&);
 
-// symbol: ?isActiveTickingChunk@CommandUtils@@YA_NUTick@@0@Z
-MCAPI bool isActiveTickingChunk(struct Tick, struct Tick);
-
 // symbol: ?isActiveTickingChunk@CommandUtils@@YA_NAEBVLevelChunk@@@Z
 MCAPI bool isActiveTickingChunk(class LevelChunk const&);
+
+// symbol: ?isActiveTickingChunk@CommandUtils@@YA_NUTick@@0@Z
+MCAPI bool isActiveTickingChunk(struct Tick, struct Tick);
 
 // symbol:
 // ?isFunctionValid@CommandUtils@@YA_NAEAVCommandOutput@@AEAVFunctionEntry@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

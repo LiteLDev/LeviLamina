@@ -6,6 +6,11 @@
 #include "mc/enums/Mirror.h"
 #include "mc/enums/Rotation.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 class AABB;
 class BoundingBox;
 class Vec3;
@@ -40,6 +45,9 @@ public:
     // symbol: ?above@BlockPos@@QEBA?AV1@XZ
     MCAPI class BlockPos above() const;
 
+    // symbol: ?center@BlockPos@@QEBA?AVVec3@@XZ
+    MCAPI class Vec3 center() const;
+
     // symbol: ?neighbor@BlockPos@@QEBA?AV1@E@Z
     MCAPI class BlockPos neighbor(uchar) const;
 
@@ -55,8 +63,8 @@ public:
     // symbol: ?transform@BlockPos@@QEBA?AV1@W4Rotation@@W4Mirror@@AEBVVec3@@@Z
     MCAPI class BlockPos transform(::Rotation, ::Mirror, class Vec3 const&) const;
 
-    // symbol: ?bindType@BlockPos@@SAXXZ
-    MCAPI static void bindType();
+    // symbol: ?bindType@BlockPos@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // symbol: ?MAX@BlockPos@@2V1@B
     MCAPI static class BlockPos const MAX;

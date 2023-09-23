@@ -81,17 +81,8 @@ public:
     // ?startNatPunchingClient@LocalConnector@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
     MCVAPI void startNatPunchingClient(std::string const&, ushort);
 
-    // symbol: ??0LocalConnector@@QEAA@AEAUConnectionCallbacks@Connector@@AEBVNetworkIdentifier@@@Z
-    MCAPI LocalConnector(struct Connector::ConnectionCallbacks&, class NetworkIdentifier const&);
-
     // symbol: ?disconnect@LocalConnector@@QEAAXXZ
     MCAPI void disconnect();
-
-    // symbol: ?host@LocalConnector@@QEAAXAEBVNetworkIdentifier@@@Z
-    MCAPI void host(class NetworkIdentifier const&);
-
-    // symbol: ?runEvents@LocalConnector@@QEAAXXZ
-    MCAPI void runEvents();
 
     // NOLINTEND
 

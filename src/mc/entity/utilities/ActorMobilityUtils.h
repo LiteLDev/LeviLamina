@@ -23,9 +23,6 @@ MCAPI void _playerOnSizeUpdated(class optional_ref<struct OffsetsComponent>);
 MCAPI ::ActorShouldCallOnSetSize
 actorSetSize(class StrictEntityContext const&, class Vec2 const&, struct SynchedActorDataComponent&, struct AABBShapeComponent&, struct StateVectorComponent const&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct WasPenetratingLastFrameFlag>>&, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PlayerComponentFlag>>, struct OffsetsComponent>);
 
-// symbol: ?allowAscendingScaffolding@ActorMobilityUtils@@YA_NPEBV?$FlagComponent@UWasAutoJumpingFlag@@@@@Z
-MCAPI bool allowAscendingScaffolding(class FlagComponent<struct WasAutoJumpingFlag> const*);
-
 // symbol:
 // ?applyFinalFriction@ActorMobilityUtils@@YAXPEBUCurrentLocalMoveVelocityComponent@@PEBV?$FlagComponent@UVexFlag@@@@PEBUAbilitiesComponent@@AEBUSynchedActorDataComponent@@AEAUStateVectorComponent@@M_N5@Z
 MCAPI void applyFinalFriction(
@@ -40,6 +37,11 @@ MCAPI void applyFinalFriction(
 );
 
 // symbol:
+// ?canActivateElytra@ActorMobilityUtils@@YA_NAEBUMoveInputComponent@@AEBUVanillaClientGameplayComponent@@AEBUSynchedActorDataComponent@@AEBUAbilitiesComponent@@@Z
+MCAPI bool
+canActivateElytra(struct MoveInputComponent const&, struct VanillaClientGameplayComponent const&, struct SynchedActorDataComponent const&, struct AbilitiesComponent const&);
+
+// symbol:
 // ?canBeginOrContinueClimbingLadder@ActorMobilityUtils@@YA_NAEBUAABBShapeComponent@@AEBVIConstBlockSource@@AEBUStateVectorComponent@@AEBUSynchedActorDataComponent@@_N4@Z
 MCAPI bool canBeginOrContinueClimbingLadder(
     struct AABBShapeComponent const&,
@@ -50,16 +52,10 @@ MCAPI bool canBeginOrContinueClimbingLadder(
     bool
 );
 
-// symbol: ?canDash@ActorMobilityUtils@@YA_NAEBUSynchedActorDataComponent@@@Z
-MCAPI bool canDash(struct SynchedActorDataComponent const&);
-
 // symbol:
 // ?canJump@ActorMobilityUtils@@YA_NAEBUSynchedActorDataComponent@@AEBVIConstBlockSource@@AEBUStateVectorComponent@@AEBUAABBShapeComponent@@AEBVGetCollisionShapeInterface@@@Z
 MCAPI bool
 canJump(struct SynchedActorDataComponent const&, class IConstBlockSource const&, struct StateVectorComponent const&, struct AABBShapeComponent const&, class GetCollisionShapeInterface const&);
-
-// symbol: ?canPowerJump@ActorMobilityUtils@@YA_NAEBUSynchedActorDataComponent@@PEBUAttributesComponent@@_N@Z
-MCAPI bool canPowerJump(struct SynchedActorDataComponent const&, struct AttributesComponent const*, bool);
 
 // symbol:
 // ?endJump@ActorMobilityUtils@@YAXAEBVStrictEntityContext@@AEBUStateVectorComponent@@AEAUMobJumpComponent@@AEAUSynchedActorDataComponent@@PEBUVehicleComponent@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UParrotFlag@@@@@@$$CBUPassengerComponent@@@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UExitFromPassengerFlag@@@@V?$FlagComponent@UStopRidingRequestFlag@@@@V?$FlagComponent@UMobIsJumpingFlag@@@@@@@Z
@@ -118,9 +114,6 @@ MCAPI bool isInLava(class IConstBlockSource const&, struct AABBShapeComponent co
 MCAPI bool
 isOnFire(struct SynchedActorDataComponent const&, struct OnFireComponent const*, class FlagComponent<struct LavaSlimeFlag> const*, class FlagComponent<struct ShulkerBulletFlag> const*, class FlagComponent<struct WitherSkullFlag> const*, class FlagComponent<struct BlazeFlag> const*);
 
-// symbol: ?isSneaking@ActorMobilityUtils@@YA_NAEBUSynchedActorDataComponent@@@Z
-MCAPI bool isSneaking(struct SynchedActorDataComponent const&);
-
 // symbol: ?isSprinting@ActorMobilityUtils@@YA_NAEBUSynchedActorDataComponent@@@Z
 MCAPI bool isSprinting(struct SynchedActorDataComponent const&);
 
@@ -151,14 +144,8 @@ MCAPI bool onHoverableBlock(class IConstBlockSource const&, class Vec3 const&, c
 MCAPI void
 setSpeed(class StrictEntityContext const&, float, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct MovementSpeedComponent, struct LocalMoveVelocityComponent> const&, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PlayerComponentFlag>>> const&);
 
-// symbol:
-// ?setSprinting@ActorMobilityUtils@@YAXAEAUAttributesComponent@@AEAUSynchedActorDataComponent@@V?$optional_ref@UPlayerActionComponent@@@@_N@Z
-MCAPI void setSprinting(
-    struct AttributesComponent&,
-    struct SynchedActorDataComponent&,
-    class optional_ref<struct PlayerActionComponent>,
-    bool
-);
+// symbol: ?setSprinting@ActorMobilityUtils@@YAXAEAUAttributesComponent@@AEAUSynchedActorDataComponent@@_N@Z
+MCAPI void setSprinting(struct AttributesComponent&, struct SynchedActorDataComponent&, bool);
 
 // symbol: ?setStanding@ActorMobilityUtils@@YAXVSynchedActorDataWriter@@_NPEAUHorseStandCounterComponent@@1@Z
 MCAPI void setStanding(class SynchedActorDataWriter, bool, struct HorseStandCounterComponent*, bool);

@@ -48,9 +48,6 @@ public:
     // symbol: ?hasMeasurements@Event@Events@Social@@QEBA_NXZ
     MCAPI bool hasMeasurements() const;
 
-    // symbol: ?measurementsAsJsonValue@Event@Events@Social@@QEBA?AVValue@Json@@XZ
-    MCAPI class Json::Value measurementsAsJsonValue() const;
-
     // symbol: ??8Event@Events@Social@@QEBA_NAEBV012@@Z
     MCAPI bool operator==(class Social::Events::Event const&) const;
 

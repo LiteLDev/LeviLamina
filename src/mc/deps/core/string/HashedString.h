@@ -98,9 +98,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?bindType@HashedString@@SAXXZ
-    MCAPI static void bindType();
-
     // symbol: ?getEmptyString@HashedString@@SAAEBV1@XZ
     MCAPI static class HashedString const& getEmptyString();
 

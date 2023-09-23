@@ -10,6 +10,7 @@ public:
     // prevent constructor by default
     DragonBaseGoalDefinition& operator=(DragonBaseGoalDefinition const&);
     DragonBaseGoalDefinition(DragonBaseGoalDefinition const&);
+    DragonBaseGoalDefinition();
 
 public:
     // NOLINTBEGIN
@@ -18,15 +19,6 @@ public:
 
     // vIndex: 1, symbol: ?validateMobType@DragonBaseGoalDefinition@@UEBA_NAEAVMob@@@Z
     virtual bool validateMobType(class Mob&) const;
-
-    // symbol: ??1DragonBaseGoalDefinition@@UEAA@XZ
-    MCVAPI ~DragonBaseGoalDefinition();
-
-    // symbol: ??0DragonBaseGoalDefinition@@QEAA@XZ
-    MCAPI DragonBaseGoalDefinition();
-
-    // symbol: ?initialize@DragonBaseGoalDefinition@@QEBAXAEAVEntityContext@@AEAVDragonBaseGoal@@@Z
-    MCAPI void initialize(class EntityContext&, class DragonBaseGoal&) const;
 
     // NOLINTEND
 };

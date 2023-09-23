@@ -37,14 +37,14 @@ public:
     // symbol: ??0ScriptIntBlockProperty@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
     MCAPI ScriptIntBlockProperty(class ScriptModuleMinecraft::ScriptIntBlockProperty&&);
 
-    // symbol: ?getState@ScriptIntBlockProperty@ScriptModuleMinecraft@@QEBA?AV?$Result@H@Scripting@@XZ
+    // symbol: ?getState@ScriptIntBlockProperty@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getState() const;
 
     // symbol: ??4ScriptIntBlockProperty@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptIntBlockProperty&
     operator=(class ScriptModuleMinecraft::ScriptIntBlockProperty&&);
 
-    // symbol: ?setState@ScriptIntBlockProperty@ScriptModuleMinecraft@@QEAA?AV?$Result@X@Scripting@@H@Z
+    // symbol: ?setState@ScriptIntBlockProperty@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@H@Z
     MCAPI class Scripting::Result<void> setState(int);
 
     // symbol:

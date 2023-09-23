@@ -92,15 +92,15 @@ public:
     // ?getFormattedErrorMessages@Reader@Json@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getFormattedErrorMessages() const;
 
-    // symbol: ?parse@Reader@Json@@QEAA_NAEAV?$basic_istream@DU?$char_traits@D@std@@@std@@AEAVValue@2@_N@Z
-    MCAPI bool parse(std::istream&, class Json::Value&, bool);
-
     // symbol: ?parse@Reader@Json@@QEAA_NPEBD_KAEAVValue@2@_N@Z
     MCAPI bool parse(char const*, uint64, class Json::Value&, bool);
 
     // symbol:
     // ?parse@Reader@Json@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVValue@2@_N@Z
     MCAPI bool parse(std::string const&, class Json::Value&, bool);
+
+    // symbol: ?parse@Reader@Json@@QEAA_NAEAV?$basic_istream@DU?$char_traits@D@std@@@std@@AEAVValue@2@_N@Z
+    MCAPI bool parse(std::istream&, class Json::Value&, bool);
 
     // symbol: ??1Reader@Json@@QEAA@XZ
     MCAPI ~Reader();

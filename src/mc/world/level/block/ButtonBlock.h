@@ -6,6 +6,7 @@
 #include "mc/common/wrapper/optional_ref.h"
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
+#include "mc/enums/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -29,10 +30,15 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 6, symbol:
-    // ?getCollisionShape@ButtonBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-    virtual bool
-    getCollisionShape(class AABB&, class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+    // ?getCollisionShape@ButtonBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    virtual class AABB
+    getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
+
+    // vIndex: 10, symbol:
+    // ?getOutline@ButtonBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    virtual class AABB const&
+    getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
     // vIndex: 12, symbol: ?getVisualShape@ButtonBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
@@ -100,51 +106,51 @@ public:
     // vIndex: 53, symbol: ?isSignalSource@ButtonBlock@@UEBA_NXZ
     virtual bool isSignalSource() const;
 
-    // vIndex: 56, symbol: __unk_vfn_56
-    virtual void __unk_vfn_56();
+    // vIndex: 55, symbol: __unk_vfn_55
+    virtual void __unk_vfn_55();
+
+    // vIndex: 61, symbol: __unk_vfn_61
+    virtual void __unk_vfn_61();
 
     // vIndex: 62, symbol: __unk_vfn_62
     virtual void __unk_vfn_62();
 
-    // vIndex: 63, symbol: __unk_vfn_63
-    virtual void __unk_vfn_63();
-
-    // vIndex: 66, symbol: ?shouldConnectToRedstone@ButtonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
+    // vIndex: 65, symbol: ?shouldConnectToRedstone@ButtonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
     virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
 
-    // vIndex: 71, symbol: ?checkIsPathable@ButtonBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 70, symbol: ?checkIsPathable@ButtonBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
     virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
 
-    // vIndex: 75, symbol: ?onRedstoneUpdate@ButtonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
+    // vIndex: 76, symbol: __unk_vfn_76
+    virtual void __unk_vfn_76();
 
-    // vIndex: 77, symbol: __unk_vfn_77
-    virtual void __unk_vfn_77();
-
-    // vIndex: 81, symbol: ?setupRedstoneComponent@ButtonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 80, symbol: ?setupRedstoneComponent@ButtonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 84, symbol: __unk_vfn_84
-    virtual void __unk_vfn_84();
+    // vIndex: 83, symbol: __unk_vfn_83
+    virtual void __unk_vfn_83();
 
-    // vIndex: 93, symbol: ?mayPlace@ButtonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
+    // vIndex: 92, symbol: ?mayPlace@ButtonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
     virtual bool mayPlace(class BlockSource&, class BlockPos const&, uchar) const;
 
-    // vIndex: 94, symbol: ?mayPlace@ButtonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 93, symbol: ?mayPlace@ButtonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 101, symbol: ?neighborChanged@ButtonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 100, symbol: ?neighborChanged@ButtonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
 
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
+    // vIndex: 106, symbol: __unk_vfn_106
+    virtual void __unk_vfn_106();
 
-    // vIndex: 108, symbol: ?getPlacementBlock@ButtonBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 107, symbol: ?getPlacementBlock@ButtonBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
     virtual class Block const&
     getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
 
-    // vIndex: 110, symbol: ?isAttachedTo@ButtonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAV3@@Z
+    // vIndex: 109, symbol: ?isAttachedTo@ButtonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAV3@@Z
     virtual bool isAttachedTo(class BlockSource&, class BlockPos const&, class BlockPos&) const;
+
+    // vIndex: 122, symbol: __unk_vfn_122
+    virtual void __unk_vfn_122();
 
     // vIndex: 123, symbol: __unk_vfn_123
     virtual void __unk_vfn_123();
@@ -152,19 +158,16 @@ public:
     // vIndex: 124, symbol: __unk_vfn_124
     virtual void __unk_vfn_124();
 
-    // vIndex: 125, symbol: __unk_vfn_125
-    virtual void __unk_vfn_125();
+    // vIndex: 127, symbol: __unk_vfn_127
+    virtual void __unk_vfn_127();
 
-    // vIndex: 128, symbol: __unk_vfn_128
-    virtual void __unk_vfn_128();
+    // vIndex: 130, symbol: __unk_vfn_130
+    virtual void __unk_vfn_130();
 
-    // vIndex: 131, symbol: __unk_vfn_131
-    virtual void __unk_vfn_131();
-
-    // vIndex: 143, symbol: ?getVariant@ButtonBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 142, symbol: ?getVariant@ButtonBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const&) const;
 
-    // vIndex: 144, symbol: ?canSpawnOn@ButtonBlock@@UEBA_NPEAVActor@@@Z
+    // vIndex: 143, symbol: ?canSpawnOn@ButtonBlock@@UEBA_NPEAVActor@@@Z
     virtual bool canSpawnOn(class Actor*) const;
 
     // vIndex: 153, symbol: __unk_vfn_153

@@ -103,8 +103,5 @@ public:
     // vIndex: 136, symbol: ?getPotionType@SplashPotionItem@@UEBA?AW4PotionType@Potion@@XZ
     virtual ::Potion::PotionType getPotionType() const;
 
-    // symbol: ??0SplashPotionItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SplashPotionItem(std::string const&, int);
-
     // NOLINTEND
 };

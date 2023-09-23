@@ -11,6 +11,7 @@ public:
     // prevent constructor by default
     SequenceBehaviorNode& operator=(SequenceBehaviorNode const&);
     SequenceBehaviorNode(SequenceBehaviorNode const&);
+    SequenceBehaviorNode();
 
 public:
     // NOLINTBEGIN
@@ -22,9 +23,6 @@ public:
 
     // vIndex: 2, symbol: ?initializeFromDefinition@SequenceBehaviorNode@@MEAAXAEAVActor@@@Z
     virtual void initializeFromDefinition(class Actor&);
-
-    // symbol: ??0SequenceBehaviorNode@@QEAA@XZ
-    MCAPI SequenceBehaviorNode();
 
     // NOLINTEND
 };

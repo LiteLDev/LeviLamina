@@ -13,8 +13,8 @@
 class BlockPos;
 class BlockSource;
 namespace ScriptModuleMinecraft { class BaseScriptBlockLiquidContainerComponent; }
-namespace ScriptModuleMinecraft { class ScriptColor; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
+namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
@@ -36,20 +36,20 @@ public:
     MCVAPI ~ScriptBlockWaterContainerComponent();
 
     // symbol:
-    // ?addDye@ScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X@Scripting@@AEBVScriptItemType@2@@Z
+    // ?addDye@ScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBVScriptItemType@2@@Z
     MCAPI class Scripting::Result<void> addDye(class ScriptModuleMinecraft::ScriptItemType const&);
 
     // symbol:
-    // ?getCustomColor@ScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@VScriptColor@ScriptModuleMinecraft@@@Scripting@@XZ
-    MCAPI class Scripting::Result<class ScriptModuleMinecraft::ScriptColor> getCustomColor();
+    // ?getCustomColor@ScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@VScriptRGBA@ScriptModuleMinecraft@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<class ScriptModuleMinecraft::ScriptRGBA> getCustomColor();
 
     // symbol: ??4ScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptBlockWaterContainerComponent&
     operator=(class ScriptModuleMinecraft::ScriptBlockWaterContainerComponent&&);
 
     // symbol:
-    // ?setCustomColor@ScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X@Scripting@@AEBVScriptColor@2@@Z
-    MCAPI class Scripting::Result<void> setCustomColor(class ScriptModuleMinecraft::ScriptColor const&);
+    // ?setCustomColor@ScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBVScriptRGBA@2@@Z
+    MCAPI class Scripting::Result<void> setCustomColor(class ScriptModuleMinecraft::ScriptRGBA const&);
 
     // symbol:
     // ?bind@ScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@@Scripting@@XZ

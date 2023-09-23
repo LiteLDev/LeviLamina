@@ -29,14 +29,14 @@ public:
     // symbol: ??1NetworkItemStackDescriptor@@UEAA@XZ
     MCVAPI ~NetworkItemStackDescriptor();
 
+    // symbol: ??0NetworkItemStackDescriptor@@QEAA@AEBVItemStack@@@Z
+    MCAPI explicit NetworkItemStackDescriptor(class ItemStack const&);
+
     // symbol: ??0NetworkItemStackDescriptor@@QEAA@AEBV0@@Z
     MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor const&);
 
     // symbol: ??0NetworkItemStackDescriptor@@QEAA@AEBVItemStackDescriptor@@@Z
     MCAPI explicit NetworkItemStackDescriptor(class ItemStackDescriptor const&);
-
-    // symbol: ??0NetworkItemStackDescriptor@@QEAA@AEBVItemStack@@@Z
-    MCAPI explicit NetworkItemStackDescriptor(class ItemStack const&);
 
     // symbol: ??0NetworkItemStackDescriptor@@QEAA@$$QEAV0@@Z
     MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor&&);
@@ -53,13 +53,6 @@ public:
 
     // symbol: ?write@NetworkItemStackDescriptor@@QEBAXAEAVBinaryStream@@@Z
     MCAPI void write(class BinaryStream&) const;
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol: ?getItemStack@NetworkItemStackDescriptor@@AEBA?AVItemStack@@AEBVBlockPalette@@@Z
-    MCAPI class ItemStack getItemStack(class BlockPalette const&) const;
 
     // NOLINTEND
 };

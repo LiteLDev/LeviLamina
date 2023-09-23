@@ -51,11 +51,11 @@ public:
     // ?_read@AddPaintingPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
 
-    // symbol: ??0AddPaintingPacket@@QEAA@AEBVPainting@@@Z
-    MCAPI explicit AddPaintingPacket(class Painting const&);
-
     // symbol: ??0AddPaintingPacket@@QEAA@XZ
     MCAPI AddPaintingPacket();
+
+    // symbol: ??0AddPaintingPacket@@QEAA@AEBVPainting@@@Z
+    MCAPI explicit AddPaintingPacket(class Painting const&);
 
     // NOLINTEND
 };

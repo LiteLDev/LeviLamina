@@ -9,7 +9,7 @@ class Random;
 
 namespace ValueProviders {
 
-struct UniformFloat {
+class UniformFloat {
 public:
     // prevent constructor by default
     UniformFloat& operator=(UniformFloat const&);

@@ -16,10 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ScriptPressurePlatePushAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptPressurePlatePushAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptPressurePlatePushAfterEvent&&);
-
     // symbol: ??1ScriptPressurePlatePushAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptPressurePlatePushAfterEvent();
 

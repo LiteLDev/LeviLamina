@@ -15,6 +15,7 @@ public:
     // prevent constructor by default
     CommandOutputSender& operator=(CommandOutputSender const&);
     CommandOutputSender(CommandOutputSender const&);
+    CommandOutputSender();
 
 public:
     // NOLINTBEGIN
@@ -27,9 +28,6 @@ public:
     // vIndex: 2, symbol:
     // ?registerOutputCallback@CommandOutputSender@@UEAAXAEBV?$function@$$A6AXAEAVAutomationCmdOutput@@@Z@std@@@Z
     virtual void registerOutputCallback(std::function<void(class AutomationCmdOutput&)> const&);
-
-    // symbol: ??0CommandOutputSender@@QEAA@XZ
-    MCAPI CommandOutputSender();
 
     // symbol:
     // ?sendToAdmins@CommandOutputSender@@QEAAXAEBVCommandOrigin@@AEBVCommandOutput@@W4CommandPermissionLevel@@@Z

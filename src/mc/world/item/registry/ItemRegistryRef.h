@@ -6,11 +6,6 @@
 #include "mc/common/wrapper/WeakPtr.h"
 #include "mc/world/item/registry/ItemRegistry.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 class ItemRegistryRef {
 public:
     // ItemRegistryRef inner types declare
@@ -105,9 +100,6 @@ public:
     // symbol: ?isComplexAlias@ItemRegistryRef@@QEBA_NAEBVHashedString@@@Z
     MCAPI bool isComplexAlias(class HashedString const&) const;
 
-    // symbol: ?isComponentBasedItemSchema@ItemRegistryRef@@QEBA_NAEBVSemVersion@@AEBVValue@Json@@@Z
-    MCAPI bool isComponentBasedItemSchema(class SemVersion const&, class Json::Value const&) const;
-
     // symbol: ?isCreativeItem@ItemRegistryRef@@QEBA_NAEBVItemInstance@@@Z
     MCAPI bool isCreativeItem(class ItemInstance const&) const;
 
@@ -121,12 +113,12 @@ public:
     // ?lookupByName@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEAHV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI class WeakPtr<class Item> lookupByName(int&, std::string_view) const;
 
+    // symbol: ?lookupByName@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
+    MCAPI class WeakPtr<class Item> lookupByName(class HashedString const&) const;
+
     // symbol:
     // ?lookupByName@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEAH0V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI class WeakPtr<class Item> lookupByName(int&, int&, std::string_view) const;
-
-    // symbol: ?lookupByName@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
-    MCAPI class WeakPtr<class Item> lookupByName(class HashedString const&) const;
 
     // symbol:
     // ?lookupByNameNoAlias@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z

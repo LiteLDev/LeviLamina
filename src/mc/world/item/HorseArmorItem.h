@@ -114,11 +114,4 @@ public:
     MCAPI static int const mHealthPerTier[];
 
     // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol: ?_tryEquipHorseArmor@HorseArmorItem@@CA_NPEAVActor@@AEBVItemStack@@@Z
-    MCAPI static bool _tryEquipHorseArmor(class Actor*, class ItemStack const&);
-
-    // NOLINTEND
 };

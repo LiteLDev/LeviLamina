@@ -53,8 +53,8 @@ public:
     // vIndex: 56, symbol: ?isDestructive@BucketItem@@UEBA_NH@Z
     virtual bool isDestructive(int) const;
 
-    // vIndex: 57, symbol: ?isLiquidClipItem@BucketItem@@UEBA_NH@Z
-    virtual bool isLiquidClipItem(int) const;
+    // vIndex: 57, symbol: ?isLiquidClipItem@BucketItem@@UEBA_NXZ
+    virtual bool isLiquidClipItem() const;
 
     // vIndex: 66, symbol: __unk_vfn_66
     virtual void __unk_vfn_66();
@@ -147,9 +147,9 @@ public:
     // symbol: ?addBucketEntitySaveData@BucketItem@@IEBAXAEAVActor@@AEAVItemStack@@@Z
     MCAPI void addBucketEntitySaveData(class Actor&, class ItemStack&) const;
 
-    // symbol: ?readBucketEntitySaveData@BucketItem@@IEBA_NAEAVBlockSource@@PEAVActor@@EVBlockPos@@AEBVItemInstance@@@Z
+    // symbol: ?readBucketEntitySaveData@BucketItem@@IEBA_NAEAVBlockSource@@PEAVActor@@VBlockPos@@AEBVItemInstance@@@Z
     MCAPI bool
-    readBucketEntitySaveData(class BlockSource&, class Actor*, uchar, class BlockPos, class ItemInstance const&) const;
+    readBucketEntitySaveData(class BlockSource&, class Actor*, class BlockPos, class ItemInstance const&) const;
 
     // NOLINTEND
 

@@ -48,11 +48,6 @@
 #include "mc/world/level/levelgen/structure/StructureBlockType.h"
 #include "mc/world/level/levelgen/structure/StructureVoidType.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace VanillaStates { struct CachedBlockStateMapPtr; }
-// clang-format on
-
 namespace VanillaStates {
 // NOLINTBEGIN
 // symbol: ?Active@VanillaStates@@3V?$BlockStateVariant@_N@@B
@@ -441,9 +436,6 @@ MCAPI extern class BlockStateVariant<int> const WeirdoDirection;
 
 // symbol: ?WoodType@VanillaStates@@3V?$BlockStateVariant@W4WoodType@@@@B
 MCAPI extern class BlockStateVariant<::WoodType> const WoodType;
-
-// symbol: ?getState@VanillaStates@@YAPEBVBlockState@@AEBVHashedString@@AEAUCachedBlockStateMapPtr@1@@Z
-MCAPI class BlockState const* getState(class HashedString const&, struct VanillaStates::CachedBlockStateMapPtr&);
 
 // symbol: ?getState@VanillaStates@@YAPEBVBlockState@@AEBVHashedString@@@Z
 MCAPI class BlockState const* getState(class HashedString const&);

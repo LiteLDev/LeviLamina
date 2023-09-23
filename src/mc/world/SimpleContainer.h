@@ -45,6 +45,9 @@ public:
     // vIndex: 26, symbol: __unk_vfn_26
     virtual void __unk_vfn_26();
 
+    // symbol: ??1SimpleContainer@@UEAA@XZ
+    MCVAPI ~SimpleContainer();
+
     // symbol:
     // ??0SimpleContainer@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NHW4ContainerType@@@Z
     MCAPI SimpleContainer(std::string const&, bool, int, ::ContainerType);

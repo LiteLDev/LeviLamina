@@ -11,6 +11,7 @@
 // clang-format off
 namespace Json { class Value; }
 namespace JsonUtil { class EmptyClass; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class BlockDefinitionGroup {
@@ -43,6 +44,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0BlockDefinitionGroup@@QEAA@AEAUReflectionCtx@cereal@@@Z
+    MCAPI explicit BlockDefinitionGroup(struct cereal::ReflectionCtx&);
+
     // symbol: ??0BlockDefinitionGroup@@QEAA@XZ
     MCAPI BlockDefinitionGroup();
 
@@ -79,9 +83,6 @@ public:
     MCAPI void
     loadResources(class ResourcePackManager const&, class BlockComponentFactory const&, class Experiments const&);
 
-    // symbol: ?postProcessComponents@BlockDefinitionGroup@@QEAAXAEAVBlockLegacy@@@Z
-    MCAPI void postProcessComponents(class BlockLegacy&);
-
     // symbol:
     // ?registerBlockDefinition@BlockDefinitionGroup@@QEAAXV?$unique_ptr@UBlockDefinition@@U?$default_delete@UBlockDefinition@@@std@@@std@@@Z
     MCAPI void registerBlockDefinition(std::unique_ptr<struct BlockDefinition>);
@@ -116,13 +117,10 @@ public:
                                                  class JsonUtil::EmptyClass,
                                                  struct BlockDescription>>&);
 
-    // symbol: ?_initializeComponentPostProcessors@BlockDefinitionGroup@@AEAAXXZ
-    MCAPI void _initializeComponentPostProcessors();
-
     // symbol:
-    // ?_loadBlockDescription@BlockDefinitionGroup@@AEAA_NAEBVValue@Json@@AEAUBlockDescription@@AEBVSemVersion@@AEBVExperiments@@@Z
+    // ?_loadBlockDescription@BlockDefinitionGroup@@AEAA_NAEBVValue@Json@@AEAUBlockDescription@@AEBVSemVersion@@2AEBVExperiments@@@Z
     MCAPI bool
-    _loadBlockDescription(class Json::Value const&, struct BlockDescription&, class SemVersion const&, class Experiments const&);
+    _loadBlockDescription(class Json::Value const&, struct BlockDescription&, class SemVersion const&, class SemVersion const&, class Experiments const&);
 
     // symbol: ?_loadComponents@BlockDefinitionGroup@@AEAA_NAEBVValue@Json@@AEAUBlockDefinition@@AEBVExperiments@@@Z
     MCAPI bool _loadComponents(class Json::Value const&, struct BlockDefinition&, class Experiments const&);

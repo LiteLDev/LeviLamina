@@ -11,7 +11,7 @@
 class Actor;
 class Level;
 class Player;
-namespace ScriptModuleMinecraft { class IScriptAfterEvents; }
+namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
 namespace Scripting { class WeakLifetimeScope; }
 struct LevelNotificationEvent;
 struct LevelStartLeaveGameEvent;
@@ -71,10 +71,10 @@ public:
     virtual ::EventResult onEvent(struct LevelNotificationEvent const&);
 
     // symbol:
-    // ??0ScriptLevelEventListener@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptAfterEvents@ScriptModuleMinecraft@@@3@_N@Z
+    // ??0ScriptLevelEventListener@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptWorldAfterEvents@ScriptModuleMinecraft@@@3@_N@Z
     MCAPI ScriptLevelEventListener(
         class Scripting::WeakLifetimeScope const&,
-        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptAfterEvents>,
+        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldAfterEvents>,
         bool
     );
 

@@ -41,10 +41,6 @@ public:
     // vIndex: 14, symbol: ?_isValidEnchantmentTypeForCategory@SwimEnchant@@EEBA_NW4Type@Enchant@@@Z
     virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type) const;
 
-    // symbol:
-    // ??0SwimEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2HH@Z
-    MCAPI SwimEnchant(::Enchant::Type, ::Enchant::Frequency, std::string_view, std::string_view, int, int);
-
     // NOLINTEND
 
 private:

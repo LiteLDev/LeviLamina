@@ -26,36 +26,36 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol:
-    // ?getRequestId@VirtualCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // ?getRequestId@ActorCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const& getRequestId() const = 0;
 
     // vIndex: 2, symbol:
-    // ?getName@VirtualCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // ?getName@ActorCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const = 0;
 
-    // vIndex: 3, symbol: ?getBlockPosition@VirtualCommandOrigin@@UEBA?AVBlockPos@@XZ
+    // vIndex: 3, symbol: ?getBlockPosition@ActorCommandOrigin@@UEBA?AVBlockPos@@XZ
     virtual class BlockPos getBlockPosition() const = 0;
 
-    // vIndex: 4, symbol: ?getWorldPosition@VirtualCommandOrigin@@UEBA?AVVec3@@XZ
+    // vIndex: 4, symbol: ?getWorldPosition@ActorCommandOrigin@@UEBA?AVVec3@@XZ
     virtual class Vec3 getWorldPosition() const = 0;
 
-    // vIndex: 5, symbol: ?getRotation@VirtualCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
+    // vIndex: 5, symbol: ?getRotation@ActorCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
     virtual std::optional<class Vec2> getRotation() const = 0;
 
-    // vIndex: 6, symbol: ?getLevel@VirtualCommandOrigin@@UEBAPEAVLevel@@XZ
+    // vIndex: 6, symbol: ?getLevel@ActorCommandOrigin@@UEBAPEAVLevel@@XZ
     virtual class Level* getLevel() const = 0;
 
-    // vIndex: 7, symbol: ?getDimension@VirtualCommandOrigin@@UEBAPEAVDimension@@XZ
+    // vIndex: 7, symbol: ?getDimension@ActorCommandOrigin@@UEBAPEAVDimension@@XZ
     virtual class Dimension* getDimension() const = 0;
 
-    // vIndex: 8, symbol: ?getEntity@VirtualCommandOrigin@@UEBAPEAVActor@@XZ
+    // vIndex: 8, symbol: ?getEntity@ActorCommandOrigin@@UEBAPEAVActor@@XZ
     virtual class Actor* getEntity() const = 0;
 
-    // vIndex: 9, symbol: ?getPermissionsLevel@VirtualCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
+    // vIndex: 9, symbol: ?getPermissionsLevel@ActorCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
     virtual ::CommandPermissionLevel getPermissionsLevel() const = 0;
 
     // vIndex: 10, symbol:
-    // ?clone@VirtualCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
+    // ?clone@ActorCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
     virtual std::unique_ptr<class CommandOrigin> clone() const = 0;
 
     // vIndex: 11, symbol: ?getCursorHitBlockPos@CommandOrigin@@UEBA?AV?$optional@VBlockPos@@@std@@XZ
@@ -94,7 +94,7 @@ public:
     // vIndex: 22, symbol: ?getIdentity@CommandOrigin@@UEBA?AUCommandOriginIdentity@@XZ
     virtual struct CommandOriginIdentity getIdentity() const;
 
-    // vIndex: 23, symbol: ?getOriginType@VirtualCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+    // vIndex: 23, symbol: ?getOriginType@ActorCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
     virtual ::CommandOriginType getOriginType() const = 0;
 
     // vIndex: 24, symbol: ?toCommandOriginData@CommandOrigin@@UEBA?AUCommandOriginData@@XZ
@@ -116,7 +116,7 @@ public:
     // vIndex: 29, symbol: ?serialize@CommandOrigin@@UEBA?AVCompoundTag@@XZ
     virtual class CompoundTag serialize() const;
 
-    // vIndex: 30, symbol: ?isValid@VirtualCommandOrigin@@UEBA_NXZ
+    // vIndex: 30, symbol: ?isValid@ActorCommandOrigin@@UEBA_NXZ
     virtual bool isValid() const = 0;
 
     // vIndex: 31, symbol: ?_setUUID@CommandOrigin@@MEAAXAEBVUUID@mce@@@Z
@@ -134,13 +134,13 @@ public:
     MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const&, int) const;
 
     // symbol:
-    // ?getAreaAtWithBuffer@CommandOrigin@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@H@Z
-    MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const&, int) const;
-
-    // symbol:
     // ?getAreaAtWithBuffer@CommandOrigin@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@0H_N@Z
     MCAPI std::unique_ptr<class CommandArea>
           getAreaAtWithBuffer(class BlockPos const&, class BlockPos const&, int, bool) const;
+
+    // symbol:
+    // ?getAreaAtWithBuffer@CommandOrigin@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@H@Z
+    MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const&, int) const;
 
     // symbol:
     // ?fromCommandOriginData@CommandOrigin@@SA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@AEBUCommandOriginData@@AEBV?$NonOwnerPointer@VILevel@@@Bedrock@@AEBVNetworkIdentifier@@W4SubClientId@@@Z

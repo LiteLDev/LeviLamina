@@ -49,10 +49,6 @@ public:
     // symbol: ?isTreasureOnly@SoulSpeedEnchant@@UEBA_NXZ
     MCVAPI bool isTreasureOnly() const;
 
-    // symbol:
-    // ??0SoulSpeedEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2HH@Z
-    MCAPI SoulSpeedEnchant(::Enchant::Type, ::Enchant::Frequency, std::string_view, std::string_view, int, int);
-
     // symbol: ?getLevel@SoulSpeedEnchant@@SAHAEBVActor@@@Z
     MCAPI static int getLevel(class Actor const&);
 

@@ -72,37 +72,15 @@ public:
         // symbol: ??0Text@SignBlockActor@@QEAA@XZ
         MCAPI Text();
 
-        // symbol: ?getColor@Text@SignBlockActor@@QEBAAEBVColor@mce@@XZ
-        MCAPI class mce::Color const& getColor() const;
-
         // symbol:
         // ?getMessage@Text@SignBlockActor@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
         MCAPI std::string const& getMessage() const;
-
-        // symbol: ?getTextObject@Text@SignBlockActor@@QEBAAEBVTextObjectRoot@@XZ
-        MCAPI class TextObjectRoot const& getTextObject() const;
-
-        // symbol: ?isGlowing@Text@SignBlockActor@@QEBA?B_NXZ
-        MCAPI bool const isGlowing() const;
 
         // symbol: ?load@Text@SignBlockActor@@QEAAXAEBVCompoundTag@@W4LoadMode@12@@Z
         MCAPI void load(class CompoundTag const&, ::SignBlockActor::Text::LoadMode);
 
         // symbol: ?save@Text@SignBlockActor@@QEBA_NAEAVCompoundTag@@@Z
         MCAPI bool save(class CompoundTag&) const;
-
-        // symbol: ?setColor@Text@SignBlockActor@@QEAAXAEBVColor@mce@@@Z
-        MCAPI void setColor(class mce::Color const&);
-
-        // symbol:
-        // ?setEditedBy@Text@SignBlockActor@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-        MCAPI void setEditedBy(std::string const&);
-
-        // symbol: ?setGlowing@Text@SignBlockActor@@QEAAX_N@Z
-        MCAPI void setGlowing(bool);
-
-        // symbol: ?setHideGlowOutline@Text@SignBlockActor@@QEAAX_N@Z
-        MCAPI void setHideGlowOutline(bool);
 
         // symbol: ?setMessage@Text@SignBlockActor@@QEAAXVTextObjectRoot@@@Z
         MCAPI void setMessage(class TextObjectRoot);
@@ -126,9 +104,6 @@ public:
 
         // symbol: ?_parseOtherAttributes@Text@SignBlockActor@@AEAAXAEBVCompoundTag@@@Z
         MCAPI void _parseOtherAttributes(class CompoundTag const&);
-
-        // symbol: ?_parseText@Text@SignBlockActor@@AEAAXAEBVCompoundTag@@@Z
-        MCAPI void _parseText(class CompoundTag const&);
 
         // NOLINTEND
     };
@@ -253,12 +228,12 @@ public:
     MCAPI void setIsGlowing(::SignTextSide, bool);
 
     // symbol:
-    // ?setMessageForServerScripingOnly@SignBlockActor@@QEAAXW4SignTextSide@@VTextObjectRoot@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void setMessageForServerScripingOnly(::SignTextSide, class TextObjectRoot, std::string);
-
-    // symbol:
     // ?setMessageForServerScripingOnly@SignBlockActor@@QEAAXW4SignTextSide@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
     MCAPI void setMessageForServerScripingOnly(::SignTextSide, std::string, std::string);
+
+    // symbol:
+    // ?setMessageForServerScripingOnly@SignBlockActor@@QEAAXW4SignTextSide@@VTextObjectRoot@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI void setMessageForServerScripingOnly(::SignTextSide, class TextObjectRoot, std::string);
 
     // symbol: ?setSignTextColor@SignBlockActor@@QEAAXW4SignTextSide@@AEBVColor@mce@@@Z
     MCAPI void setSignTextColor(::SignTextSide, class mce::Color const&);

@@ -14,5 +14,9 @@ public:
     // symbol: ?getCommand@CommandChainedSubcommand@@QEBAPEBVCommand@@XZ
     MCAPI class Command const* getCommand() const;
 
+    // symbol:
+    // ?setCommand@CommandChainedSubcommand@@QEAAXV?$unique_ptr@VCommand@@U?$default_delete@VCommand@@@std@@@std@@@Z
+    MCAPI void setCommand(std::unique_ptr<class Command>);
+
     // NOLINTEND
 };

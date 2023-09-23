@@ -9,6 +9,20 @@
 namespace GetAttachPositionUtility {
 // NOLINTBEGIN
 // symbol:
+// ?_getBaseAttachPoint@GetAttachPositionUtility@@YA?AVVec3@@W4ActorLocation@@AEBV2@AEBUAABBShapeComponent@@AEBUActorRotationComponent@@AEBUOffsetsComponent@@V?$optional_ref@$$CBUPassengerRenderingRidingOffsetComponent@@@@V?$optional_ref@$$CBUVanillaOffsetComponent@@@@MM@Z
+MCAPI class Vec3 _getBaseAttachPoint(
+    ::ActorLocation,
+    class Vec3 const&,
+    struct AABBShapeComponent const&,
+    struct ActorRotationComponent const&,
+    struct OffsetsComponent const&,
+    class optional_ref<struct PassengerRenderingRidingOffsetComponent const>,
+    class optional_ref<struct VanillaOffsetComponent const>,
+    float,
+    float
+);
+
+// symbol:
 // ?getAttachPosition@GetAttachPositionUtility@@YA?AV?$optional@VVec3@@@std@@AEBVStrictEntityContext@@AEBUGetAttachPositionViews@@W4ActorLocation@@AEBVVec3@@@Z
 MCAPI std::optional<class Vec3>
 getAttachPosition(class StrictEntityContext const&, struct GetAttachPositionViews const&, ::ActorLocation, class Vec3 const&);

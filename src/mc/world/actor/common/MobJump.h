@@ -13,11 +13,8 @@ MCAPI int getNoJumpDelay(class EntityContext const&);
 // symbol: ?initializeMob@MobJump@@YAXAEAVEntityContext@@@Z
 MCAPI void initializeMob(class EntityContext&);
 
-// symbol: ?isAutoJumping@MobJump@@YA_NAEBVEntityContext@@@Z
-MCAPI bool isAutoJumping(class EntityContext const&);
-
-// symbol: ?setIsAutoJumping@MobJump@@YAXAEAVEntityContext@@_N@Z
-MCAPI void setIsAutoJumping(class EntityContext&, bool);
+// symbol: ?isJumping@MobJump@@YA_NAEBVEntityContext@@@Z
+MCAPI bool isJumping(class EntityContext const&);
 
 // symbol: ?setJumpPendingScale@MobJump@@YAXAEAVEntityContext@@M@Z
 MCAPI void setJumpPendingScale(class EntityContext&, float);

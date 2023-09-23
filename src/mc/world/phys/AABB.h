@@ -138,6 +138,9 @@ public:
     // symbol: ?set@AABB@@QEAAAEAV1@AEBVVec3@@0@Z
     MCAPI class AABB& set(class Vec3 const&, class Vec3 const&);
 
+    // symbol: ?shrink@AABB@@QEAAAEAV1@AEBVVec3@@@Z
+    MCAPI class AABB& shrink(class Vec3 const&);
+
     // symbol: ?translateCenterTo@AABB@@QEAAAEAV1@AEBVVec3@@@Z
     MCAPI class AABB& translateCenterTo(class Vec3 const&);
 

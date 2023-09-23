@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 struct VolumeDefinition {
 public:
     // VolumeDefinition inner types declare
@@ -41,8 +46,8 @@ public:
     // symbol: ??1VolumeDefinition@@QEAA@XZ
     MCAPI ~VolumeDefinition();
 
-    // symbol: ?bindType@VolumeDefinition@@SAXXZ
-    MCAPI static void bindType();
+    // symbol: ?bindType@VolumeDefinition@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // symbol: ?getMaxSupportedVersion@VolumeDefinition@@SAAEBVSemVersion@@XZ
     MCAPI static class SemVersion const& getMaxSupportedVersion();

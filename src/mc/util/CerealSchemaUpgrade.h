@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace cereal { class SchemaFactory; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class CerealSchemaUpgrade {
@@ -45,8 +46,8 @@ public:
     MCAPI class SemVersion const& getTargetVersion() const;
 
     // symbol:
-    // ?registerLegacySchema@CerealSchemaUpgrade@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void registerLegacySchema(std::string const&);
+    // ?registerLegacySchema@CerealSchemaUpgrade@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAUReflectionCtx@cereal@@@Z
+    MCAPI void registerLegacySchema(std::string const&, struct cereal::ReflectionCtx&);
 
     // NOLINTEND
 };

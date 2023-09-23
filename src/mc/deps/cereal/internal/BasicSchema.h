@@ -10,7 +10,6 @@ namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
 namespace cereal { struct SerializerTraits; }
-namespace cereal::internal { struct Result; }
 // clang-format on
 
 namespace cereal::internal {
@@ -51,24 +50,24 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol:
-    // ?doValidate@BasicSchema@internal@cereal@@MEBA?AUResult@23@AEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEAVSerializerContext@3@@Z
-    virtual struct cereal::internal::Result
+    // ?doValidate@BasicSchema@internal@cereal@@EEBAXAEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEAVSerializerContext@3@@Z
+    virtual void
     doValidate(struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
         const;
 
     // vIndex: 1, symbol:
-    // ?doLoad@BasicSchema@internal@cereal@@MEBA?AUResult@23@AEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEBV67@AEAVSerializerContext@3@@Z
-    virtual struct cereal::internal::Result
+    // ?doLoad@BasicSchema@internal@cereal@@EEBAXAEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEBV56@AEAVSerializerContext@3@@Z
+    virtual void
     doLoad(struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&)
         const;
 
     // vIndex: 2, symbol:
-    // ?doSave@BasicSchema@internal@cereal@@MEBA?AUResult@23@AEAUSchemaWriter@3@AEBVmeta_any@entt@@AEBUSerializerTraits@3@AEAVSerializerContext@3@@Z
-    virtual struct cereal::internal::Result
+    // ?doSave@BasicSchema@internal@cereal@@EEBAXAEAUSchemaWriter@3@AEBVmeta_any@entt@@AEBUSerializerTraits@3@AEAVSerializerContext@3@@Z
+    virtual void
     doSave(struct cereal::SchemaWriter&, entt::meta_any const&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
         const;
 
-    // vIndex: 3, symbol: ?doVerifyInitialization@BasicSchema@internal@cereal@@MEBA_NAEBVmeta_any@entt@@@Z
+    // vIndex: 3, symbol: ?doVerifyInitialization@BasicSchema@internal@cereal@@EEBA_NAEBVmeta_any@entt@@@Z
     virtual bool doVerifyInitialization(entt::meta_any const&) const;
 
     // vIndex: 4, symbol: __unk_vfn_4
@@ -86,16 +85,19 @@ public:
     MCAPI explicit BasicSchema(struct cereal::ReflectionCtx const&);
 
     // symbol:
-    // ??0BasicSchema@internal@cereal@@QEAA@AEBUReflectionCtx@2@V?$unique_ptr@VConstraint@cereal@@U?$default_delete@VConstraint@cereal@@@std@@@std@@@Z
-    MCAPI BasicSchema(struct cereal::ReflectionCtx const&, std::unique_ptr<class cereal::Constraint>);
-
-    // symbol:
     // ??0BasicSchema@internal@cereal@@QEAA@USerializerTraits@2@AEBUReflectionCtx@2@V?$unique_ptr@VConstraint@cereal@@U?$default_delete@VConstraint@cereal@@@std@@@std@@@Z
     MCAPI
     BasicSchema(struct cereal::SerializerTraits, struct cereal::ReflectionCtx const&, std::unique_ptr<class cereal::Constraint>);
 
+    // symbol:
+    // ??0BasicSchema@internal@cereal@@QEAA@AEBUReflectionCtx@2@V?$unique_ptr@VConstraint@cereal@@U?$default_delete@VConstraint@cereal@@@std@@@std@@@Z
+    MCAPI BasicSchema(struct cereal::ReflectionCtx const&, std::unique_ptr<class cereal::Constraint>);
+
     // symbol: ??0BasicSchema@internal@cereal@@QEAA@USerializerTraits@2@AEBUReflectionCtx@2@@Z
     MCAPI BasicSchema(struct cereal::SerializerTraits, struct cereal::ReflectionCtx const&);
+
+    // symbol: ?ctx@BasicSchema@internal@cereal@@QEBAAEBUReflectionCtx@3@XZ
+    MCAPI struct cereal::ReflectionCtx const& ctx() const;
 
     // symbol:
     // ?customError@BasicSchema@internal@cereal@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -105,14 +107,14 @@ public:
     MCAPI bool isProperlyInitialized(entt::meta_any const&) const;
 
     // symbol:
-    // ?load@BasicSchema@internal@cereal@@QEBA?AUResult@23@AEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEBV67@AEAVSerializerContext@3@@Z
-    MCAPI struct cereal::internal::Result
+    // ?load@BasicSchema@internal@cereal@@QEBAXAEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEBV56@AEAVSerializerContext@3@@Z
+    MCAPI void
     load(struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&)
         const;
 
     // symbol:
-    // ?save@BasicSchema@internal@cereal@@QEBA?AUResult@23@AEAUSchemaWriter@3@AEBVmeta_any@entt@@AEBUSerializerTraits@3@AEAVSerializerContext@3@@Z
-    MCAPI struct cereal::internal::Result
+    // ?save@BasicSchema@internal@cereal@@QEBAXAEAUSchemaWriter@3@AEBVmeta_any@entt@@AEBUSerializerTraits@3@AEAVSerializerContext@3@@Z
+    MCAPI void
     save(struct cereal::SchemaWriter&, entt::meta_any const&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
         const;
 
@@ -120,8 +122,8 @@ public:
     MCAPI struct cereal::SerializerTraits const& traits() const;
 
     // symbol:
-    // ?validate@BasicSchema@internal@cereal@@QEBA?AUResult@23@AEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEAVSerializerContext@3@@Z
-    MCAPI struct cereal::internal::Result
+    // ?validate@BasicSchema@internal@cereal@@QEBAXAEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEAVSerializerContext@3@@Z
+    MCAPI void
     validate(struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
         const;
 
@@ -129,13 +131,6 @@ public:
     // ?lookup@BasicSchema@internal@cereal@@SAAEBV123@AEBUReflectionCtx@3@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
     MCAPI static class cereal::internal::BasicSchema const&
     lookup(struct cereal::ReflectionCtx const&, std::string const&, std::string const&);
-
-    // NOLINTEND
-
-    // protected:
-    // NOLINTBEGIN
-    // symbol: ?ctx@BasicSchema@internal@cereal@@IEBAAEBUReflectionCtx@3@XZ
-    MCAPI struct cereal::ReflectionCtx const& ctx() const;
 
     // NOLINTEND
 };

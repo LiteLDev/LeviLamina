@@ -90,8 +90,8 @@ public:
     // vIndex: 24, symbol: __unk_vfn_24
     virtual void __unk_vfn_24();
 
-    // vIndex: 25, symbol: __unk_vfn_25
-    virtual void __unk_vfn_25();
+    // vIndex: 25, symbol: ?onEvent@RealmsStoriesGameplayEventListener@@UEAA?AW4EventResult@@AEBUActorKilledEvent@@@Z
+    virtual ::EventResult onEvent(struct ActorKilledEvent const&);
 
     // vIndex: 26, symbol: __unk_vfn_26
     virtual void __unk_vfn_26();
@@ -129,9 +129,6 @@ public:
     // vIndex: 37, symbol:
     // ?onEvent@RealmsStoriesGameplayEventListener@@UEAA?AW4EventResult@@AEBUActorAcquiredItemEvent@@@Z
     virtual ::EventResult onEvent(struct ActorAcquiredItemEvent const&);
-
-    // symbol: ??0RealmsStoriesGameplayEventListener@@QEAA@AEAVLevelStorage@@@Z
-    MCAPI explicit RealmsStoriesGameplayEventListener(class LevelStorage&);
 
     // NOLINTEND
 };

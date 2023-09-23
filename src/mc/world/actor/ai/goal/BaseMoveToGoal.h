@@ -36,7 +36,7 @@ public:
     // vIndex: 10, symbol: ?hasReachedTarget@BaseMoveToGoal@@UEBA_NXZ
     virtual bool hasReachedTarget() const;
 
-    // vIndex: 11, symbol: ?isValidTarget@DropItemForGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 11, symbol: ?isValidTarget@RaidGardenGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool isValidTarget(class BlockSource&, class BlockPos const&) = 0;
 
     // vIndex: 12, symbol: ?_nextStartTick@BaseMoveToGoal@@MEAAHXZ

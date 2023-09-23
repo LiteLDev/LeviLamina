@@ -47,6 +47,9 @@ public:
     // symbol: ?_canStartSearching@NearestAttackableTargetGoal@@IEAA_NXZ
     MCAPI bool _canStartSearching();
 
+    // symbol: ?_isTargetInCooldown@NearestAttackableTargetGoal@@IEBA_NAEBUMobDescriptor@@@Z
+    MCAPI bool _isTargetInCooldown(struct MobDescriptor const&) const;
+
     // symbol: ?_isTargetVisible@NearestAttackableTargetGoal@@IEBA_NAEBVMob@@MM@Z
     MCAPI bool _isTargetVisible(class Mob const&, float, float) const;
 

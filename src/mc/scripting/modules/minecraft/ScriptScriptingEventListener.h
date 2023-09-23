@@ -3,10 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/scripting/TypedObjectHandle.h"
 #include "mc/world/events/EventResult.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptSystemAfterEvents; }
+namespace Scripting { class WeakLifetimeScope; }
 struct ScriptCommandMessageEvent;
 struct ScriptingNotificationEvent;
 // clang-format on
@@ -31,6 +34,11 @@ public:
 
     // vIndex: 2, symbol: ?onEvent@ScriptingEventListener@@UEAA?AW4EventResult@@AEBUScriptingNotificationEvent@@@Z
     virtual ::EventResult onEvent(struct ScriptingNotificationEvent const&);
+
+    // symbol:
+    // ??0ScriptScriptingEventListener@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VScriptSystemAfterEvents@ScriptModuleMinecraft@@@3@@Z
+    MCAPI
+    ScriptScriptingEventListener(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptSystemAfterEvents>);
 
     // NOLINTEND
 };

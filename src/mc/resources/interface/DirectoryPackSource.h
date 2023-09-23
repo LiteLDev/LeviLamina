@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/resources/PackOrigin.h"
 #include "mc/resources/PackSource.h"
@@ -48,13 +47,6 @@ public:
 
     // symbol: ??0DirectoryPackSource@@QEAA@AEBVPath@Core@@W4PackType@@W4PackOrigin@@_N@Z
     MCAPI DirectoryPackSource(class Core::Path const&, ::PackType, ::PackOrigin, bool);
-
-    // symbol:
-    // ?getPath@DirectoryPackSource@@QEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-    MCAPI class Core::PathBuffer<std::string> const& getPath() const;
-
-    // symbol: ?removePack@DirectoryPackSource@@QEAA_NAEBVPath@Core@@@Z
-    MCAPI bool removePack(class Core::Path const&);
 
     // symbol: ?checkAndRemoveIncompletePacks@DirectoryPackSource@@SAXAEBVPath@Core@@@Z
     MCAPI static void checkAndRemoveIncompletePacks(class Core::Path const&);

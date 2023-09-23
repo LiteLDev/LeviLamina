@@ -17,13 +17,13 @@ public:
     // symbol: ??0ScriptNetHeader@ScriptModuleMinecraftNet@@QEAA@AEBU01@@Z
     MCAPI ScriptNetHeader(struct ScriptModuleMinecraftNet::ScriptNetHeader const&);
 
-    // symbol: ??4ScriptNetHeader@ScriptModuleMinecraftNet@@QEAAAEAU01@$$QEAU01@@Z
-    MCAPI struct ScriptModuleMinecraftNet::ScriptNetHeader&
-    operator=(struct ScriptModuleMinecraftNet::ScriptNetHeader&&);
-
     // symbol: ??4ScriptNetHeader@ScriptModuleMinecraftNet@@QEAAAEAU01@AEBU01@@Z
     MCAPI struct ScriptModuleMinecraftNet::ScriptNetHeader&
     operator=(struct ScriptModuleMinecraftNet::ScriptNetHeader const&);
+
+    // symbol: ??4ScriptNetHeader@ScriptModuleMinecraftNet@@QEAAAEAU01@$$QEAU01@@Z
+    MCAPI struct ScriptModuleMinecraftNet::ScriptNetHeader&
+    operator=(struct ScriptModuleMinecraftNet::ScriptNetHeader&&);
 
     // symbol: ??1ScriptNetHeader@ScriptModuleMinecraftNet@@QEAA@XZ
     MCAPI ~ScriptNetHeader();

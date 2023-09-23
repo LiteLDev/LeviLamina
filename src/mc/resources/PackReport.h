@@ -60,6 +60,9 @@ public:
     // symbol: ?hasErrors@PackReport@@QEBA_NXZ
     MCAPI bool hasErrors() const;
 
+    // symbol: ??4PackReport@@QEAAAEAV0@$$QEAV0@@Z
+    MCAPI class PackReport& operator=(class PackReport&&);
+
     // symbol: ?serialize@PackReport@@QEAAXAEAVValue@Json@@@Z
     MCAPI void serialize(class Json::Value&);
 

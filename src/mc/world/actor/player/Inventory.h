@@ -47,6 +47,9 @@ public:
     // vIndex: 42, symbol: ?setContainerSize@Inventory@@UEAAXH@Z
     virtual void setContainerSize(int);
 
+    // symbol: ??0Inventory@@QEAA@PEAVPlayer@@@Z
+    MCAPI explicit Inventory(class Player*);
+
     // symbol: ?dropSlot@Inventory@@QEAAXH_N00@Z
     MCAPI void dropSlot(int, bool, bool, bool);
 

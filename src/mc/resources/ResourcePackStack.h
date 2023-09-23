@@ -5,6 +5,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
+#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
 class ResourcePackStack {
 public:
@@ -38,8 +39,12 @@ public:
     // symbol: ??1ResourcePackStack@@UEAA@XZ
     MCVAPI ~ResourcePackStack();
 
-    // symbol: ?add@ResourcePackStack@@QEAAXVPackInstance@@AEBVIResourcePackRepository@@_N@Z
-    MCAPI void add(class PackInstance, class IResourcePackRepository const&, bool);
+    // symbol:
+    // ?add@ResourcePackStack@@QEAAXVPackInstance@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIResourcePackRepository@@@Bedrock@@@gsl@@_N@Z
+    MCAPI void
+    add(class PackInstance,
+        gsl::not_null<class Bedrock::NonOwnerPointer<class IResourcePackRepository const>> const&,
+        bool);
 
     // symbol: ?getSplitStacks@ResourcePackStack@@QEBAXAEAV1@0@Z
     MCAPI void getSplitStacks(class ResourcePackStack&, class ResourcePackStack&) const;
@@ -60,20 +65,20 @@ public:
     MCAPI void removeInvalidPacks();
 
     // symbol:
-    // ?deserialize@ResourcePackStack@@SA?AV?$unique_ptr@VResourcePackStack@@U?$default_delete@VResourcePackStack@@@std@@@std@@AEAV?$basic_istream@DU?$char_traits@D@std@@@3@AEBVIResourcePackRepository@@@Z
+    // ?deserialize@ResourcePackStack@@SA?AV?$unique_ptr@VResourcePackStack@@U?$default_delete@VResourcePackStack@@@std@@@std@@AEAV?$basic_istream@DU?$char_traits@D@std@@@3@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIResourcePackRepository@@@Bedrock@@@gsl@@@Z
     MCAPI static std::unique_ptr<class ResourcePackStack>
-    deserialize(std::istream&, class IResourcePackRepository const&);
+    deserialize(std::istream&, gsl::not_null<class Bedrock::NonOwnerPointer<class IResourcePackRepository const>> const&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?_populateDependencies@ResourcePackStack@@CAXAEAV?$vector@VPackInstance@@V?$allocator@VPackInstance@@@std@@@std@@AEAVPackInstance@@AEBVIResourcePackRepository@@_N@Z
+    // ?_populateDependencies@ResourcePackStack@@CAXAEAV?$vector@VPackInstance@@V?$allocator@VPackInstance@@@std@@@std@@AEAVPackInstance@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIResourcePackRepository@@@Bedrock@@@gsl@@_N@Z
     MCAPI static void _populateDependencies(
         std::vector<class PackInstance>&,
         class PackInstance&,
-        class IResourcePackRepository const&,
+        gsl::not_null<class Bedrock::NonOwnerPointer<class IResourcePackRepository const>> const&,
         bool
     );
 

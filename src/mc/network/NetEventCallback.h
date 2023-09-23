@@ -67,6 +67,9 @@ public:
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVActorFallPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class ActorFallPacket const&);
 
+    // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVRefreshEntitlementsPacket@@@Z
+    MCVAPI void handle(class NetworkIdentifier const&, class RefreshEntitlementsPacket const&);
+
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVShowProfilePacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class ShowProfilePacket const&);
 

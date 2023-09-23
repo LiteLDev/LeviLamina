@@ -101,6 +101,9 @@ public:
     // symbol: ?registerLevelStorageManagerListener@GameplayUserManager@@QEAAXAEAVLevelStorageManager@@@Z
     MCAPI void registerLevelStorageManagerListener(class LevelStorageManager&);
 
+    // symbol: ?registerMapDataManagerListener@GameplayUserManager@@QEAAXAEAVMapDataManager@@@Z
+    MCAPI void registerMapDataManagerListener(class MapDataManager&);
+
     // symbol: ?shouldStartGameSaveTimer@GameplayUserManager@@QEBA_NXZ
     MCAPI bool shouldStartGameSaveTimer() const;
 
@@ -117,6 +120,9 @@ public:
 
     // private:
     // NOLINTBEGIN
+    // symbol: ?_addTrackedMapPlayers@GameplayUserManager@@AEAAXAEAVMapItemSavedData@@@Z
+    MCAPI void _addTrackedMapPlayers(class MapItemSavedData&);
+
     // symbol: ?_forEachActivePlayer@GameplayUserManager@@AEBAXV?$function@$$A6A_NAEAVPlayer@@@Z@std@@_N@Z
     MCAPI void _forEachActivePlayer(std::function<bool(class Player&)>, bool) const;
 

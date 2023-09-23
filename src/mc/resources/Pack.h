@@ -56,6 +56,9 @@ public:
     // symbol: ?notifyDeleted@Pack@@QEAAXXZ
     MCAPI void notifyDeleted();
 
+    // symbol: ?notifyUpdated@Pack@@QEAAXXZ
+    MCAPI void notifyUpdated();
+
     // symbol: ?registerPackDeletedCallback@Pack@@QEAAXPEAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z
     MCAPI void registerPackDeletedCallback(void*, std::function<void(class Pack&)>);
 

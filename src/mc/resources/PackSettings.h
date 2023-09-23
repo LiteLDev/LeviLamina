@@ -11,13 +11,14 @@ namespace Json { class Value; }
 
 class PackSettings {
 public:
-    PackSettings() = delete;
-
     Json::Value                                  mSettings;     // this+0x0
     std::unordered_map<std::string, PackSetting> mPackSettings; // this+0x10
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0PackSettings@@QEAA@XZ
+    MCAPI PackSettings();
+
     // symbol: ?getAllSettings@PackSettings@@QEBAAEBVValue@Json@@XZ
     MCAPI class Json::Value const& getAllSettings() const;
 

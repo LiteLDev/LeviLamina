@@ -31,24 +31,25 @@ public:
     // symbol: ??0ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI ScriptItemDurabilityComponent(class ScriptModuleMinecraft::ScriptItemDurabilityComponent const&);
 
-    // symbol: ?getCurrentDamage@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H@Scripting@@XZ
+    // symbol: ?getCurrentDamage@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getCurrentDamage();
 
-    // symbol: ?getDamageChance@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H@Scripting@@H@Z
+    // symbol: ?getDamageChance@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H$$V@Scripting@@H@Z
     MCAPI class Scripting::Result<int> getDamageChance(int);
 
     // symbol:
-    // ?getDamageRange@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@UFloatRange@@@Scripting@@XZ
+    // ?getDamageRange@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@UFloatRange@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<struct FloatRange> getDamageRange();
 
-    // symbol: ?getMaxDurability@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H@Scripting@@XZ
+    // symbol: ?getMaxDurability@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getMaxDurability();
 
     // symbol: ??4ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptItemDurabilityComponent&
     operator=(class ScriptModuleMinecraft::ScriptItemDurabilityComponent const&);
 
-    // symbol: ?setCurrentDamage@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X@Scripting@@H@Z
+    // symbol:
+    // ?setCurrentDamage@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@H@Z
     MCAPI class Scripting::Result<void> setCurrentDamage(int);
 
     // symbol:

@@ -9,11 +9,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0EntitySet@@QEAA@$$QEAV0@@Z
-    MCAPI EntitySet(class EntitySet&&);
-
     // symbol: ??0EntitySet@@QEAA@XZ
     MCAPI EntitySet();
+
+    // symbol: ??0EntitySet@@QEAA@$$QEAV0@@Z
+    MCAPI EntitySet(class EntitySet&&);
 
     // symbol: ??0EntitySet@@QEAA@AEBV0@@Z
     MCAPI EntitySet(class EntitySet const&);

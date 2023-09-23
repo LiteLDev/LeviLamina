@@ -38,12 +38,13 @@ public:
     // symbol: ??1ResourcePacksInfoPacket@@UEAA@XZ
     MCVAPI ~ResourcePacksInfoPacket();
 
-    // symbol:
-    // ??0ResourcePacksInfoPacket@@QEAA@_NAEAV?$vector@UPackInfoData@@V?$allocator@UPackInfoData@@@std@@@std@@10@Z
-    MCAPI ResourcePacksInfoPacket(bool, std::vector<struct PackInfoData>&, std::vector<struct PackInfoData>&, bool);
-
     // symbol: ??0ResourcePacksInfoPacket@@QEAA@XZ
     MCAPI ResourcePacksInfoPacket();
+
+    // symbol:
+    // ??0ResourcePacksInfoPacket@@QEAA@_NAEAV?$vector@UPackInfoData@@V?$allocator@UPackInfoData@@@std@@@std@@10$$QEAV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@2@@Z
+    MCAPI
+    ResourcePacksInfoPacket(bool, std::vector<struct PackInfoData>&, std::vector<struct PackInfoData>&, bool, std::vector<std::pair<std::string, std::string>>&&);
 
     // NOLINTEND
 };

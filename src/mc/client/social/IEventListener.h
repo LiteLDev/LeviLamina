@@ -39,7 +39,7 @@ public:
     // vIndex: 3, symbol: ?sendEvents@AggregationEventListener@Events@Social@@UEAAX_N@Z
     virtual void sendEvents(bool) = 0;
 
-    // vIndex: 4, symbol: ?getEventTagsFilter@MaelstromEventLogger@Events@Social@@UEBAHXZ
+    // vIndex: 4, symbol: ?getEventTagsFilter@OneDSEventListener@Events@Social@@UEBAHXZ
     virtual int getEventTagsFilter() const = 0;
 
     // vIndex: 5, symbol: ?stopDebugEventLogging@AggregationEventListener@Events@Social@@UEAAXXZ

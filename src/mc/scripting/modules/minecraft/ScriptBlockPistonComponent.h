@@ -35,26 +35,26 @@ public:
     MCVAPI ~ScriptBlockPistonComponent();
 
     // symbol:
-    // ?getAttachedBlocks@ScriptBlockPistonComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@@Scripting@@XZ
+    // ?getAttachedBlocks@ScriptBlockPistonComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::vector<class Vec3>> getAttachedBlocks();
 
     // symbol:
-    // ?getAttachedBlocks_V010@ScriptBlockPistonComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@@Scripting@@XZ
+    // ?getAttachedBlocks_V010@ScriptBlockPistonComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::vector<class BlockPos>> getAttachedBlocks_V010();
 
-    // symbol: ?isExpanded@ScriptBlockPistonComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@_N@Scripting@@XZ
+    // symbol: ?isExpanded@ScriptBlockPistonComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> isExpanded();
 
-    // symbol: ?isExpanding@ScriptBlockPistonComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@_N@Scripting@@XZ
+    // symbol: ?isExpanding@ScriptBlockPistonComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> isExpanding();
 
-    // symbol: ?isMoving@ScriptBlockPistonComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@_N@Scripting@@XZ
+    // symbol: ?isMoving@ScriptBlockPistonComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> isMoving();
 
-    // symbol: ?isRetracted@ScriptBlockPistonComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@_N@Scripting@@XZ
+    // symbol: ?isRetracted@ScriptBlockPistonComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> isRetracted();
 
-    // symbol: ?isRetracting@ScriptBlockPistonComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@_N@Scripting@@XZ
+    // symbol: ?isRetracting@ScriptBlockPistonComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> isRetracting();
 
     // symbol:

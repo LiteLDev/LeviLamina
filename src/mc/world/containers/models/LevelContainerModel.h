@@ -74,6 +74,9 @@ public:
     // symbol: ??0LevelContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@UActorUniqueID@@W4ContainerCategory@@@Z
     MCAPI LevelContainerModel(::ContainerEnumName, int, class Player&, struct ActorUniqueID, ::ContainerCategory);
 
+    // symbol: ?getContainerHelper@LevelContainerModel@@SAPEAVContainer@@AEAVPlayer@@AEBUActorUniqueID@@@Z
+    MCAPI static class Container* getContainerHelper(class Player&, struct ActorUniqueID const&);
+
     // symbol: ?getContainerHelper@LevelContainerModel@@SAPEAVContainer@@AEAVPlayer@@W4BlockActorType@@AEBVBlockPos@@@Z
     MCAPI static class Container* getContainerHelper(class Player&, ::BlockActorType, class BlockPos const&);
 

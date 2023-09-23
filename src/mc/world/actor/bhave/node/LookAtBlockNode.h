@@ -11,6 +11,7 @@ public:
     // prevent constructor by default
     LookAtBlockNode& operator=(LookAtBlockNode const&);
     LookAtBlockNode(LookAtBlockNode const&);
+    LookAtBlockNode();
 
 public:
     // NOLINTBEGIN
@@ -22,9 +23,6 @@ public:
 
     // vIndex: 2, symbol: ?initializeFromDefinition@LookAtBlockNode@@EEAAXAEAVActor@@@Z
     virtual void initializeFromDefinition(class Actor&);
-
-    // symbol: ??0LookAtBlockNode@@QEAA@XZ
-    MCAPI LookAtBlockNode();
 
     // NOLINTEND
 };

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace mce { class UUID; }
@@ -41,14 +44,15 @@ public:
     MCAPI BaseGamePackSlices();
 
     // symbol:
-    // ?addFromVersions@BaseGamePackSlices@@QEAAXAEBV?$vector@VBaseGameVersion@@V?$allocator@VBaseGameVersion@@@std@@@std@@AEBVIResourcePackRepository@@AEBVUUID@mce@@@Z
+    // ?addFromVersions@BaseGamePackSlices@@QEAAXAEBV?$vector@VBaseGameVersion@@V?$allocator@VBaseGameVersion@@@std@@@std@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIResourcePackRepository@@@Bedrock@@@gsl@@AEBVUUID@mce@@@Z
     MCAPI void
-    addFromVersions(std::vector<class BaseGameVersion> const&, class IResourcePackRepository const&, class mce::UUID const&);
+    addFromVersions(std::vector<class BaseGameVersion> const&, gsl::not_null<class Bedrock::NonOwnerPointer<class IResourcePackRepository const>> const&, class mce::UUID const&);
 
     // symbol:
-    // ?applyPackSlices@BaseGamePackSlices@@QEBAXAEBVBaseGameVersion@@AEBVIResourcePackRepository@@AEAVResourcePackStack@@@Z
+    // ?applyPackSlices@BaseGamePackSlices@@QEBAXAEBVBaseGameVersion@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIResourcePackRepository@@@Bedrock@@@gsl@@AEAVResourcePackStack@@@Z
     MCAPI void
-    applyPackSlices(class BaseGameVersion const&, class IResourcePackRepository const&, class ResourcePackStack&) const;
+    applyPackSlices(class BaseGameVersion const&, gsl::not_null<class Bedrock::NonOwnerPointer<class IResourcePackRepository const>> const&, class ResourcePackStack&)
+        const;
 
     // symbol: ??1BaseGamePackSlices@@QEAA@XZ
     MCAPI ~BaseGamePackSlices();

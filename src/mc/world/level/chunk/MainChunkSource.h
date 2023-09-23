@@ -30,25 +30,25 @@ public:
     // ?createNewChunk@MainChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@W4LoadMode@ChunkSource@@_N@Z
     virtual std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const&, ::ChunkSource::LoadMode, bool);
 
-    // vIndex: 18, symbol:
+    // vIndex: 19, symbol:
     // ?acquireDiscarded@MainChunkSource@@UEAAXV?$unique_ptr@VLevelChunk@@ULevelChunkFinalDeleter@@@std@@@Z
     virtual void acquireDiscarded(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
 
-    // vIndex: 23, symbol:
+    // vIndex: 24, symbol:
     // ?getChunkMap@MainChunkSource@@UEAAPEBV?$unordered_map@VChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@U?$hash@VChunkPos@@@3@U?$equal_to@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@@std@@@3@@std@@XZ
     virtual std::unordered_map<class ChunkPos, std::weak_ptr<class LevelChunk>> const* getChunkMap();
 
-    // vIndex: 24, symbol:
+    // vIndex: 25, symbol:
     // ?getStorage@MainChunkSource@@UEBAAEBV?$unordered_map@VChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@U?$hash@VChunkPos@@@3@U?$equal_to@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@@std@@@3@@std@@XZ
     virtual std::unordered_map<class ChunkPos, std::weak_ptr<class LevelChunk>> const& getStorage() const;
 
-    // vIndex: 25, symbol: ?clearDeletedEntities@MainChunkSource@@UEAAXXZ
+    // vIndex: 26, symbol: ?clearDeletedEntities@MainChunkSource@@UEAAXXZ
     virtual void clearDeletedEntities();
 
-    // vIndex: 26, symbol: ?canCreateViews@MainChunkSource@@UEBA_NXZ
+    // vIndex: 27, symbol: ?canCreateViews@MainChunkSource@@UEBA_NXZ
     virtual bool canCreateViews() const;
 
-    // vIndex: 29, symbol: ?setLevelChunk@MainChunkSource@@UEAAXV?$shared_ptr@VLevelChunk@@@std@@@Z
+    // vIndex: 30, symbol: ?setLevelChunk@MainChunkSource@@UEAAXV?$shared_ptr@VLevelChunk@@@std@@@Z
     virtual void setLevelChunk(std::shared_ptr<class LevelChunk>);
 
     // symbol: ??0MainChunkSource@@QEAA@V?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@@Z

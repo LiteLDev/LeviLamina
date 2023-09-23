@@ -10,7 +10,6 @@ namespace ScriptModuleMinecraft {
 struct ScriptEventCommandMessageAfterEvent {
 public:
     // prevent constructor by default
-    ScriptEventCommandMessageAfterEvent& operator=(ScriptEventCommandMessageAfterEvent const&);
     ScriptEventCommandMessageAfterEvent();
 
 public:
@@ -20,6 +19,10 @@ public:
 
     // symbol: ??0ScriptEventCommandMessageAfterEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptEventCommandMessageAfterEvent(struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent const&);
+
+    // symbol: ??4ScriptEventCommandMessageAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent const&);
 
     // symbol: ??4ScriptEventCommandMessageAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&

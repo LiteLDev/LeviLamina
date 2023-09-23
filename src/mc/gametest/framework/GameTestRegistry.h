@@ -14,12 +14,10 @@ public:
     // prevent constructor by default
     GameTestRegistry& operator=(GameTestRegistry const&);
     GameTestRegistry(GameTestRegistry const&);
+    GameTestRegistry();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0GameTestRegistry@gametest@@QEAA@XZ
-    MCAPI GameTestRegistry();
-
     // symbol: ?clearAllTestMethods@GameTestRegistry@gametest@@QEAAXXZ
     MCAPI void clearAllTestMethods();
 

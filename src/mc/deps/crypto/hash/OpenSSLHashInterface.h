@@ -2,9 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/crypto/hash/IHash.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Crypto::Hash { class IHash; }
+// clang-format on
+
 namespace Crypto::Hash {
 
-class OpenSSLHashInterface {
+class OpenSSLHashInterface : public ::Crypto::Hash::IHash {
 public:
     // prevent constructor by default
     OpenSSLHashInterface& operator=(OpenSSLHashInterface const&);

@@ -40,7 +40,7 @@ public:
     // vIndex: 5, symbol: ?stopDebugEventLogging@AggregationEventListener@Events@Social@@UEAAXXZ
     virtual void stopDebugEventLogging();
 
-    // vIndex: 6, symbol: ?sendEvent@MaelstromEventLogger@Events@Social@@UEAAXAEBVEvent@23@@Z
+    // vIndex: 6, symbol: ?sendEvent@OneDSEventListener@Events@Social@@UEAAXAEBVEvent@23@@Z
     virtual void sendEvent(class Social::Events::Event const&) = 0;
 
     // vIndex: 7, symbol: ?_flushEventQueue@AggregationEventListener@Events@Social@@MEAAXXZ
@@ -59,9 +59,6 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ??0AggregationEventListener@Events@Social@@IEAA@IIIAEBVPath@Core@@@Z
-    MCAPI AggregationEventListener(uint, uint, uint, class Core::Path const&);
-
     // symbol: ??0AggregationEventListener@Events@Social@@IEAA@AEBVPath@Core@@@Z
     MCAPI explicit AggregationEventListener(class Core::Path const&);
 

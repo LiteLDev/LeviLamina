@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/EncryptedProxyReadMode.h"
+
 class EncryptedProxyEnv {
 public:
     // prevent constructor by default
@@ -35,7 +38,7 @@ public:
     virtual bool FileExists(std::string const&);
 
     // vIndex: 6, symbol:
-    // ?GetChildren@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@Z
+    // ?GetChildren@EnvWrapper@leveldb@@UEAA?AVStatus@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@Z
     virtual leveldb::Status GetChildren(std::string const&, std::vector<std::string>*);
 
     // vIndex: 7, symbol:
@@ -84,6 +87,10 @@ public:
 
     // vIndex: 19, symbol: ?SleepForMicroseconds@EnvWrapper@leveldb@@UEAAXH@Z
     virtual void SleepForMicroseconds(int);
+
+    // symbol:
+    // ??0EncryptedProxyEnv@@QEAA@PEAVEnv@leveldb@@AEBVContentIdentity@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4EncryptedProxyReadMode@@@Z
+    MCAPI EncryptedProxyEnv(leveldb::Env*, class ContentIdentity const&, std::string const&, ::EncryptedProxyReadMode);
 
     // NOLINTEND
 };

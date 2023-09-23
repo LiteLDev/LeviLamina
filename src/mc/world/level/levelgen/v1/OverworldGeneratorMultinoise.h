@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/data/DividedPos2d.h"
 #include "mc/deps/core/utility/MultidimensionalArray.h"
+#include "mc/world/level/levelgen/v1/FeatureTerrainAdjustments.h"
 #include "mc/world/level/levelgen/v1/OverworldGenerator.h"
 
 class OverworldGeneratorMultinoise : public ::OverworldGenerator {
@@ -134,6 +135,12 @@ public:
     // ?_makeBiomeSource@OverworldGeneratorMultinoise@@AEAA?AV?$unique_ptr@VBiomeSource@@U?$default_delete@VBiomeSource@@@std@@@std@@AEBVXoroshiroPositionalRandomFactory@@AEBVBiomeRegistry@@PEBVBiome@@@Z
     MCAPI std::unique_ptr<class BiomeSource>
     _makeBiomeSource(class XoroshiroPositionalRandomFactory const&, class BiomeRegistry const&, class Biome const*);
+
+    // symbol:
+    // ?_updateNoiseAndGenerateBaseBlock@OverworldGeneratorMultinoise@@AEBA?BUBlockGenerationResult@1@MAEBUDescriptions@FeatureTerrainAdjustments@@AEBVBlockPos@@FPEAVAquifer@@_N3PEBVChunkBlender@@AEBVBlock@@PEAVNoodleCavifier@@PEAVOreVeinifier@@@Z
+    MCAPI struct OverworldGeneratorMultinoise::BlockGenerationResult const
+    _updateNoiseAndGenerateBaseBlock(float, struct FeatureTerrainAdjustments::Descriptions const&, class BlockPos const&, short, class Aquifer*, bool, bool, class ChunkBlender const*, class Block const&, class NoodleCavifier*, class OreVeinifier*)
+        const;
 
     // NOLINTEND
 };

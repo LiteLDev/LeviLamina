@@ -10,6 +10,8 @@
 // clang-format off
 namespace ScriptModuleMinecraft { struct ScriptActorDataDrivenTriggerEventSignalOptions; }
 namespace ScriptModuleMinecraft { struct ScriptActorEventSignalOptions; }
+namespace ScriptModuleMinecraft { struct ScriptBlockEventSignalOptions; }
+namespace ScriptModuleMinecraft { struct ScriptEventMessageFilterOptions; }
 namespace Scripting { class ModuleBindingBuilder; }
 // clang-format on
 
@@ -35,6 +37,16 @@ bindActorEventOptionsInterface();
 // ?bindActorEventOptions_V010@ScriptSignals@ScriptModuleMinecraft@@YA?AV?$ClassBindingBuilder@UScriptActorEventSignalOptions@ScriptModuleMinecraft@@@Scripting@@XZ
 MCAPI class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorEventSignalOptions>
 bindActorEventOptions_V010();
+
+// symbol:
+// ?bindBlockEventOptionsInterface@ScriptSignals@ScriptModuleMinecraft@@YA?AV?$InterfaceBindingBuilder@UScriptBlockEventSignalOptions@ScriptModuleMinecraft@@@Scripting@@XZ
+MCAPI class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptBlockEventSignalOptions>
+bindBlockEventOptionsInterface();
+
+// symbol:
+// ?bindScriptEventMessageFilterOptions@ScriptSignals@ScriptModuleMinecraft@@YA?AV?$InterfaceBindingBuilder@UScriptEventMessageFilterOptions@ScriptModuleMinecraft@@@Scripting@@XZ
+MCAPI class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptEventMessageFilterOptions>
+bindScriptEventMessageFilterOptions();
 
 // symbol: ?bindSignalsUtils@ScriptSignals@ScriptModuleMinecraft@@YAXAEAVModuleBindingBuilder@Scripting@@@Z
 MCAPI void bindSignalsUtils(class Scripting::ModuleBindingBuilder&);

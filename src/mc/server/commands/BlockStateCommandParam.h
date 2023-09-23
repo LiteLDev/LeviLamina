@@ -4,6 +4,10 @@
 
 class BlockStateCommandParam {
 public:
+    // BlockStateCommandParam inner types define
+    enum class Type {};
+
+public:
     enum class Type : int {
         Integer = 0x0,
         Float   = 0x1,
@@ -17,6 +21,10 @@ public:
     enum class Type mType;       // this+0x40
 public:
     // NOLINTBEGIN
+    // symbol:
+    // ??0BlockStateCommandParam@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4Type@0@@Z
+    MCAPI BlockStateCommandParam(std::string, std::string, ::BlockStateCommandParam::Type);
+
     // symbol:
     // ?getNameAndValue@BlockStateCommandParam@@QEBA?AV?$optional@U?$pair@VHashedString@@H@std@@@std@@AEAVCommandOutput@@AEBVBlock@@@Z
     MCAPI std::optional<std::pair<class HashedString, int>>

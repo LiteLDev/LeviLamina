@@ -92,5 +92,8 @@ public:
     // symbol: ?_numberOfBooksStored@ChiseledBookshelfBlockActor@@AEBAIXZ
     MCAPI uint _numberOfBooksStored() const;
 
+    // symbol: ?_setItemInternal@ChiseledBookshelfBlockActor@@AEAAXHAEBVItemStack@@_N@Z
+    MCAPI void _setItemInternal(int, class ItemStack const&, bool);
+
     // NOLINTEND
 };

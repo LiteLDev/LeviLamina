@@ -24,7 +24,7 @@ public:
     // vIndex: 1, symbol: ?collectOptionalArguments@Command@@MEAA_NXZ
     virtual bool collectOptionalArguments();
 
-    // vIndex: 2, symbol: ?execute@TakePictureCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2, symbol: ?execute@CloneCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const = 0;
 
     // symbol: ??0Command@@QEAA@XZ
@@ -45,11 +45,11 @@ public:
     // symbol: ?shouldUseCommandOriginRotation@Command@@SA_NAEBVCommandOrigin@@H@Z
     MCAPI static bool shouldUseCommandOriginRotation(class CommandOrigin const&, int);
 
-    // symbol: ?validRange@Command@@SA_NMMMAEAVCommandOutput@@@Z
-    MCAPI static bool validRange(float, float, float, class CommandOutput&);
-
     // symbol: ?validRange@Command@@SA_NHHHAEAVCommandOutput@@@Z
     MCAPI static bool validRange(int, int, int, class CommandOutput&);
+
+    // symbol: ?validRange@Command@@SA_NMMMAEAVCommandOutput@@@Z
+    MCAPI static bool validRange(float, float, float, class CommandOutput&);
 
     // symbol: ?WILDCARD_TOKEN@Command@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const WILDCARD_TOKEN;

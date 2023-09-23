@@ -31,9 +31,6 @@ public:
     // ?send@HttpInterfaceInternal@Http@Bedrock@@UEAAXV?$not_null@PEAUHC_CALL@@@gsl@@V?$not_null@PEAUXAsyncBlock@@@5@PEAUHC_PERFORM_ENV@@@Z
     virtual void send(gsl::not_null<struct HC_CALL*>, gsl::not_null<struct XAsyncBlock*>, struct HC_PERFORM_ENV*);
 
-    // symbol: ??1HttpInterfaceInternal@Http@Bedrock@@UEAA@XZ
-    MCVAPI ~HttpInterfaceInternal();
-
     // NOLINTEND
 };
 

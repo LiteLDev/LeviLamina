@@ -35,8 +35,7 @@ public:
     MCAPI std::vector<std::pair<ushort, class PrioritizedGoal>>& getGoalMap();
 
     // symbol: ?onPlayerDimensionChanged@GoalSelectorComponent@@QEAAXPEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
-    MCAPI void
-    onPlayerDimensionChanged(class Player*, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
+    MCAPI void onPlayerDimensionChanged(class Player*, DimensionType, DimensionType);
 
     // symbol: ?removeGoal@GoalSelectorComponent@@QEAA_NG@Z
     MCAPI bool removeGoal(ushort);

@@ -63,5 +63,14 @@ public:
         class BlockPos
     );
 
+    // symbol: ?getElement@PoolElementStructurePiece@@QEBAAEBVStructurePoolElement@@XZ
+    MCAPI class StructurePoolElement const& getElement() const;
+
+    // symbol: ?getPosition@PoolElementStructurePiece@@QEBAAEBVBlockPos@@XZ
+    MCAPI class BlockPos const& getPosition() const;
+
+    // symbol: ?setReferencePosition@PoolElementStructurePiece@@QEAAXAEBVBlockPos@@@Z
+    MCAPI void setReferencePosition(class BlockPos const&);
+
     // NOLINTEND
 };

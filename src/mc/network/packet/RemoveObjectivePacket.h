@@ -37,11 +37,11 @@ public:
     // symbol: ??1RemoveObjectivePacket@@UEAA@XZ
     MCVAPI ~RemoveObjectivePacket();
 
-    // symbol: ??0RemoveObjectivePacket@@QEAA@AEBVObjective@@@Z
-    MCAPI explicit RemoveObjectivePacket(class Objective const&);
-
     // symbol: ??0RemoveObjectivePacket@@QEAA@XZ
     MCAPI RemoveObjectivePacket();
+
+    // symbol: ??0RemoveObjectivePacket@@QEAA@AEBVObjective@@@Z
+    MCAPI explicit RemoveObjectivePacket(class Objective const&);
 
     // NOLINTEND
 };

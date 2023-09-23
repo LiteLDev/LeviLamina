@@ -13,8 +13,8 @@ public:
     mce::UUID uuid;
     bool      valid;
     // NOLINTBEGIN
-    // symbol: ??0ContentIdentity@@QEAA@AEBVUUID@mce@@@Z
-    MCAPI explicit ContentIdentity(class mce::UUID const&);
+    // symbol: ??0ContentIdentity@@QEAA@XZ
+    MCAPI ContentIdentity();
 
     // symbol: ??0ContentIdentity@@QEAA@$$QEAV0@@Z
     MCAPI ContentIdentity(class ContentIdentity&&);
@@ -22,8 +22,8 @@ public:
     // symbol: ??0ContentIdentity@@QEAA@AEBV0@@Z
     MCAPI ContentIdentity(class ContentIdentity const&);
 
-    // symbol: ??0ContentIdentity@@QEAA@XZ
-    MCAPI ContentIdentity();
+    // symbol: ??0ContentIdentity@@QEAA@AEBVUUID@mce@@@Z
+    MCAPI explicit ContentIdentity(class mce::UUID const&);
 
     // symbol: ?asString@ContentIdentity@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string asString() const;

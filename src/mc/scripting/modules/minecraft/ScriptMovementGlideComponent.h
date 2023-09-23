@@ -29,10 +29,11 @@ public:
     // symbol: ??1ScriptMovementGlideComponent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptMovementGlideComponent();
 
-    // symbol: ?getSpeedWhenTurning@ScriptMovementGlideComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M@Scripting@@XZ
+    // symbol:
+    // ?getSpeedWhenTurning@ScriptMovementGlideComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M$$V@Scripting@@XZ
     MCAPI class Scripting::Result<float> getSpeedWhenTurning() const;
 
-    // symbol: ?getStartSpeed@ScriptMovementGlideComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M@Scripting@@XZ
+    // symbol: ?getStartSpeed@ScriptMovementGlideComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M$$V@Scripting@@XZ
     MCAPI class Scripting::Result<float> getStartSpeed() const;
 
     // symbol:

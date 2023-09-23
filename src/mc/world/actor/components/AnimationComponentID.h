@@ -17,5 +17,11 @@ public:
     // symbol: ??0AnimationComponentID@@QEAA@AEBUActorUniqueID@@GW4AttachableSlotIndex@@@Z
     MCAPI AnimationComponentID(struct ActorUniqueID const&, ushort, ::AttachableSlotIndex);
 
+    // symbol: ?getHash@AnimationComponentID@@QEBA_KXZ
+    MCAPI uint64 getHash() const;
+
+    // symbol: ??8AnimationComponentID@@QEBA_NAEBV0@@Z
+    MCAPI bool operator==(class AnimationComponentID const&) const;
+
     // NOLINTEND
 };

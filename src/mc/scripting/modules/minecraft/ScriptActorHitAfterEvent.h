@@ -15,11 +15,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptActorHitAfterEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
-    MCAPI ScriptActorHitAfterEvent(struct ScriptModuleMinecraft::ScriptActorHitAfterEvent const&);
-
     // symbol: ??0ScriptActorHitAfterEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
     MCAPI ScriptActorHitAfterEvent(struct ScriptModuleMinecraft::ScriptActorHitAfterEvent&&);
+
+    // symbol: ??0ScriptActorHitAfterEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
+    MCAPI ScriptActorHitAfterEvent(struct ScriptModuleMinecraft::ScriptActorHitAfterEvent const&);
 
     // symbol: ??4ScriptActorHitAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptActorHitAfterEvent&

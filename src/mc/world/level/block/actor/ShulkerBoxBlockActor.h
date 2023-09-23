@@ -53,6 +53,12 @@ public:
     // symbol: ?save@ShulkerBoxBlockActor@@UEBA_NAEAVCompoundTag@@@Z
     MCVAPI bool save(class CompoundTag&) const;
 
+    // symbol: ?startOpen@ShulkerBoxBlockActor@@UEAAXAEAVPlayer@@@Z
+    MCVAPI void startOpen(class Player&);
+
+    // symbol: ?stopOpen@ShulkerBoxBlockActor@@UEAAXAEAVPlayer@@@Z
+    MCVAPI void stopOpen(class Player&);
+
     // symbol: ?tick@ShulkerBoxBlockActor@@UEAAXAEAVBlockSource@@@Z
     MCVAPI void tick(class BlockSource&);
 
@@ -63,6 +69,9 @@ public:
     // symbol: ?setFacingDir@ShulkerBoxBlockActor@@QEAAXE@Z
     MCAPI void setFacingDir(uchar);
 
+    // symbol: ?setupRedstoneComponent@ShulkerBoxBlockActor@@QEBAXAEAVBlockSource@@@Z
+    MCAPI void setupRedstoneComponent(class BlockSource&) const;
+
     // symbol: ?itemAllowedInSlot@ShulkerBoxBlockActor@@SA_NHAEBVItemStackBase@@H@Z
     MCAPI static bool itemAllowedInSlot(int, class ItemStackBase const&, int);
 
@@ -70,6 +79,9 @@ public:
 
     // private:
     // NOLINTBEGIN
+    // symbol: ?_addRedstoneComponent@ShulkerBoxBlockActor@@AEBAXAEAVBlockSource@@@Z
+    MCAPI void _addRedstoneComponent(class BlockSource&) const;
+
     // symbol: ?_calculateBB@ShulkerBoxBlockActor@@AEAAXXZ
     MCAPI void _calculateBB();
 

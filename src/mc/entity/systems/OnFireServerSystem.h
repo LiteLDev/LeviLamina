@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/Optional.h"
+#include "mc/common/wrapper/optional_ref.h"
 #include "mc/entity/systems/OnFireSystem.h"
 
 class OnFireServerSystem : public ::OnFireSystem {
@@ -27,8 +29,15 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_tickServer@OnFireServerSystem@@CAXAEAVEntityContext@@AEAVActorOwnerComponent@@AEAUOnFireComponent@@@Z
-    MCAPI static void _tickServer(class EntityContext&, class ActorOwnerComponent&, struct OnFireComponent&);
+    // symbol:
+    // ?_tickServer@OnFireServerSystem@@CAXAEAVEntityContext@@AEAVActorOwnerComponent@@AEAUOnFireComponent@@V?$Optional@$$CBUAbilitiesComponent@@@@@Z
+    MCAPI static void
+    _tickServer(class EntityContext&, class ActorOwnerComponent&, struct OnFireComponent&, class Optional<struct AbilitiesComponent const>);
+
+    // symbol:
+    // ?_tickServerImpl@OnFireServerSystem@@CAX_NAEAVEntityContext@@AEAVActor@@AEAUOnFireComponent@@V?$optional_ref@$$CBUAbilitiesComponent@@@@@Z
+    MCAPI static void
+    _tickServerImpl(bool, class EntityContext&, class Actor&, struct OnFireComponent&, class optional_ref<struct AbilitiesComponent const>);
 
     // NOLINTEND
 };

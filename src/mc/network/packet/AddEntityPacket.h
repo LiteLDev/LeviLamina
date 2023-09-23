@@ -12,6 +12,7 @@ public:
     // prevent constructor by default
     AddEntityPacket& operator=(AddEntityPacket const&);
     AddEntityPacket(AddEntityPacket const&);
+    AddEntityPacket();
 
 public:
     // NOLINTBEGIN
@@ -28,8 +29,8 @@ public:
     // symbol: ??1AddEntityPacket@@UEAA@XZ
     MCVAPI ~AddEntityPacket();
 
-    // symbol: ??0AddEntityPacket@@QEAA@XZ
-    MCAPI AddEntityPacket();
+    // symbol: ??0AddEntityPacket@@QEAA@AEBVEntityContext@@@Z
+    MCAPI explicit AddEntityPacket(class EntityContext const&);
 
     // NOLINTEND
 };

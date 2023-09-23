@@ -135,7 +135,7 @@ public:
     MCAPI void setMapSection(class buffer_span<uint>, struct MapItemSavedData::ChunkBounds);
 
     // symbol: ?setOrigin@MapItemSavedData@@QEAAXVVec3@@HV?$AutomaticID@VDimension@@H@@_N2AEBVBlockPos@@@Z
-    MCAPI void setOrigin(class Vec3, int, class AutomaticID<class Dimension, int>, bool, bool, class BlockPos const&);
+    MCAPI void setOrigin(class Vec3, int, DimensionType, bool, bool, class BlockPos const&);
 
     // symbol: ?setPixel@MapItemSavedData@@QEAA_NIII@Z
     MCAPI bool setPixel(uint, uint, uint);
@@ -198,7 +198,7 @@ public:
     // symbol:
     // ?_updateTrackedPlayerDecorations@MapItemSavedData@@AEAAXAEAVBlockSource@@AEAVPlayer@@AEAVVec3@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVColor@mce@@V?$AutomaticID@VDimension@@H@@AEAW4Type@MapDecoration@@@Z
     MCAPI void
-    _updateTrackedPlayerDecorations(class BlockSource&, class Player&, class Vec3&, std::string&, class mce::Color&, class AutomaticID<class Dimension, int>, ::MapDecoration::Type&);
+    _updateTrackedPlayerDecorations(class BlockSource&, class Player&, class Vec3&, std::string&, class mce::Color&, DimensionType, ::MapDecoration::Type&);
 
     // NOLINTEND
 };

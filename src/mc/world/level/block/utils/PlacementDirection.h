@@ -16,6 +16,7 @@ class CompoundTag;
 class Vec3;
 namespace BlockTrait { class IGetPlacementBlockCallback; }
 namespace BlockTrait { class ITrait; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace BlockTrait {
@@ -129,8 +130,8 @@ public:
     // symbol: ?setRotationOffset@PlacementDirection@BlockTrait@@QEAAXAEBM@Z
     MCAPI void setRotationOffset(float const&);
 
-    // symbol: ?bindType@PlacementDirection@BlockTrait@@SAXXZ
-    MCAPI static void bindType();
+    // symbol: ?bindType@PlacementDirection@BlockTrait@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // symbol:
     // ?getName@PlacementDirection@BlockTrait@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

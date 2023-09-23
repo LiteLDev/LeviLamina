@@ -2,17 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class PlayerPostTravelSystem {
-public:
-    // prevent constructor by default
-    PlayerPostTravelSystem& operator=(PlayerPostTravelSystem const&);
-    PlayerPostTravelSystem(PlayerPostTravelSystem const&);
-    PlayerPostTravelSystem();
+namespace PlayerPostTravelSystem {
+// NOLINTBEGIN
+// symbol: ?createCommonPostTravelSystem@PlayerPostTravelSystem@@YA?AUTickingSystemWithInfo@@XZ
+MCAPI struct TickingSystemWithInfo createCommonPostTravelSystem();
 
-public:
-    // NOLINTBEGIN
-    // symbol: ?create@PlayerPostTravelSystem@@SA?AUTickingSystemWithInfo@@XZ
-    MCAPI static struct TickingSystemWithInfo create();
+// symbol: ?createServerSystem@PlayerPostTravelSystem@@YA?AUTickingSystemWithInfo@@XZ
+MCAPI struct TickingSystemWithInfo createServerSystem();
 
-    // NOLINTEND
-};
+// symbol:
+// ?doServerPlayerPostTravel@PlayerPostTravelSystem@@YAXAEBUSynchedActorDataComponent@@AEBUElytraFlightTimeTicksComponent@@AEBUStateVectorComponent@@AEAVActorOwnerComponent@@AEBUCurrentTickComponent@@@Z
+MCAPI void
+doServerPlayerPostTravel(struct SynchedActorDataComponent const&, struct ElytraFlightTimeTicksComponent const&, struct StateVectorComponent const&, class ActorOwnerComponent&, struct CurrentTickComponent const&);
+// NOLINTEND
+
+}; // namespace PlayerPostTravelSystem

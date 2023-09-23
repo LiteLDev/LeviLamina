@@ -26,9 +26,6 @@ public:
     // symbol: ??0ItemInstance@@QEAA@XZ
     MCAPI ItemInstance();
 
-    // symbol: ??0ItemInstance@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HHPEBVCompoundTag@@@Z
-    MCAPI ItemInstance(std::string_view, int, int, class CompoundTag const*);
-
     // symbol: ??0ItemInstance@@QEAA@AEBV0@@Z
     MCAPI ItemInstance(class ItemInstance const&);
 
@@ -40,6 +37,9 @@ public:
 
     // symbol: ??0ItemInstance@@QEAA@AEBVBlockLegacy@@H@Z
     MCAPI ItemInstance(class BlockLegacy const&, int);
+
+    // symbol: ??0ItemInstance@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HHPEBVCompoundTag@@@Z
+    MCAPI ItemInstance(std::string_view, int, int, class CompoundTag const*);
 
     // symbol: ??0ItemInstance@@QEAA@AEBVItem@@HHPEBVCompoundTag@@@Z
     MCAPI ItemInstance(class Item const&, int, int, class CompoundTag const*);

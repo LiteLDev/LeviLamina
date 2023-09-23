@@ -11,6 +11,7 @@ public:
     // prevent constructor by default
     RepeatUntilFailureNode& operator=(RepeatUntilFailureNode const&);
     RepeatUntilFailureNode(RepeatUntilFailureNode const&);
+    RepeatUntilFailureNode();
 
 public:
     // NOLINTBEGIN
@@ -22,9 +23,6 @@ public:
 
     // vIndex: 2, symbol: ?initializeFromDefinition@RepeatUntilFailureNode@@MEAAXAEAVActor@@@Z
     virtual void initializeFromDefinition(class Actor&);
-
-    // symbol: ??0RepeatUntilFailureNode@@QEAA@XZ
-    MCAPI RepeatUntilFailureNode();
 
     // NOLINTEND
 };

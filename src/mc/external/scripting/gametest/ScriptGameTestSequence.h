@@ -28,6 +28,11 @@ public:
     MCAPI ScriptGameTestSequence(class gametest::GameTestSequence&, class Scripting::WeakLifetimeScope);
 
     // symbol:
+    // ?getScriptObjectHandle@ScriptGameTestSequence@ScriptModuleGameTest@@QEBA?AV?$WeakTypedObjectHandle@VScriptGameTestSequence@ScriptModuleGameTest@@@Scripting@@XZ
+    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence>
+    getScriptObjectHandle() const;
+
+    // symbol:
     // ?thenExecute@ScriptGameTestSequence@ScriptModuleGameTest@@QEAA?AV?$WeakTypedObjectHandle@VScriptGameTestSequence@ScriptModuleGameTest@@@Scripting@@V?$Closure@$$A6AXXZ$$V@4@@Z
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence>
         thenExecute(class Scripting::Closure<void(void)>);
@@ -49,9 +54,6 @@ public:
     // symbol:
     // ?thenIdle@ScriptGameTestSequence@ScriptModuleGameTest@@QEAA?AV?$WeakTypedObjectHandle@VScriptGameTestSequence@ScriptModuleGameTest@@@Scripting@@H@Z
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence> thenIdle(int);
-
-    // symbol: ?thenSucceed@ScriptGameTestSequence@ScriptModuleGameTest@@QEAAXXZ
-    MCAPI void thenSucceed();
 
     // symbol:
     // ?thenWait@ScriptGameTestSequence@ScriptModuleGameTest@@QEAA?AV?$WeakTypedObjectHandle@VScriptGameTestSequence@ScriptModuleGameTest@@@Scripting@@V?$Closure@$$A6AXXZ$$V@4@@Z

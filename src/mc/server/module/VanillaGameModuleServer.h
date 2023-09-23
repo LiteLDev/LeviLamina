@@ -27,9 +27,9 @@ public:
     virtual void init(class ServerInstance&, gsl::not_null<class Bedrock::NonOwnerPointer<class Level>> const&);
 
     // vIndex: 2, symbol:
-    // ?initializeBehaviorStack@VanillaGameModuleServer@@UEAAXAEBVExperiments@@AEAVIResourcePackRepository@@AEAVResourcePackStack@@AEBVBaseGameVersion@@@Z
+    // ?initializeBehaviorStack@VanillaGameModuleServer@@UEAAXAEBVExperiments@@AEBV?$not_null@V?$NonOwnerPointer@VIResourcePackRepository@@@Bedrock@@@gsl@@AEAVResourcePackStack@@AEBVBaseGameVersion@@@Z
     virtual void
-    initializeBehaviorStack(class Experiments const&, class IResourcePackRepository&, class ResourcePackStack&, class BaseGameVersion const&);
+    initializeBehaviorStack(class Experiments const&, gsl::not_null<class Bedrock::NonOwnerPointer<class IResourcePackRepository>> const&, class ResourcePackStack&, class BaseGameVersion const&);
 
     // vIndex: 3, symbol:
     // ?configureLevel@VanillaGameModuleServer@@UEAAXAEBV?$not_null@V?$NonOwnerPointer@VLevel@@@Bedrock@@@gsl@@AEBVExperiments@@AEAVResourcePackManager@@AEBVBaseGameVersion@@@Z

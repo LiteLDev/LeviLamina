@@ -75,8 +75,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?FindStrongestStrength@RedstoneTorchCapacitor@@AEAAHAEBVBlockPos@@AEAVCircuitSystem@@AEA_N@Z
-    MCAPI int FindStrongestStrength(class BlockPos const&, class CircuitSystem&, bool&);
+    // symbol: ?_findStrongestStrength@RedstoneTorchCapacitor@@AEAAHAEBVBlockPos@@AEAVCircuitSystem@@AEA_N@Z
+    MCAPI int _findStrongestStrength(class BlockPos const&, class CircuitSystem&, bool&);
 
     // NOLINTEND
 };

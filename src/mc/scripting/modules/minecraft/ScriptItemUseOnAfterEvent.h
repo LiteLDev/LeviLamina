@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class Player;
 namespace ScriptModuleMinecraft { class ScriptItemEvent; }
 namespace Scripting { class WeakLifetimeScope; }
 struct ItemUseOnEvent;
@@ -30,15 +31,16 @@ public:
     // symbol: ??0ScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
     MCAPI ScriptItemUseOnAfterEvent(struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent&&);
 
-    // symbol:
-    // ??0ScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUItemUseOnEvent@@AEBVWeakLifetimeScope@Scripting@@@Z
-    MCAPI ScriptItemUseOnAfterEvent(struct ItemUseOnEvent const&, class Scripting::WeakLifetimeScope const&);
-
     // symbol: ??0ScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptItemUseOnAfterEvent(struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent const&);
 
     // symbol:
-    // ?getBlockLocation_V010@ScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@QEBA?AV?$Result@VBlockPos@@@Scripting@@XZ
+    // ??0ScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUItemUseOnEvent@@PEAVPlayer@@AEBVWeakLifetimeScope@Scripting@@@Z
+    MCAPI
+    ScriptItemUseOnAfterEvent(struct ItemUseOnEvent const&, class Player*, class Scripting::WeakLifetimeScope const&);
+
+    // symbol:
+    // ?getBlockLocation_V010@ScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@QEBA?AV?$Result@VBlockPos@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<class BlockPos> getBlockLocation_V010() const;
 
     // symbol: ??4ScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z

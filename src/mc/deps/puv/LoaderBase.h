@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class SemVersion;
 namespace Puv { class LoadResultAny; }
 namespace Puv { class ParserBase; }
 namespace Puv { class Upgrader; }
@@ -36,8 +37,8 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol:
-    // ?doLoad@LoaderBase@internal@Puv@@IEBA?AVLoadResultAny@3@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Puv::LoadResultAny doLoad(std::string const&) const;
+    // ?doLoad@LoaderBase@internal@Puv@@IEBA?AVLoadResultAny@3@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@@Z
+    MCAPI class Puv::LoadResultAny doLoad(std::string const&, class SemVersion const&) const;
 
     // NOLINTEND
 };

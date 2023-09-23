@@ -43,11 +43,5 @@ public:
     // vIndex: 10, symbol: ?hash@ByteArrayTag@@UEBA_KXZ
     virtual uint64 hash() const;
 
-    // symbol: ??0ByteArrayTag@@QEAA@UTagMemoryChunk@@@Z
-    MCAPI explicit ByteArrayTag(struct TagMemoryChunk);
-
-    // symbol: ??0ByteArrayTag@@QEAA@XZ
-    MCAPI ByteArrayTag();
-
     // NOLINTEND
 };

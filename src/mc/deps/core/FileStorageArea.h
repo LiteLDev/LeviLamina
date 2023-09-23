@@ -14,7 +14,6 @@ namespace Core { class FileStats; }
 namespace Core { class FileSystemImpl; }
 namespace Core { class Path; }
 namespace Core { class Result; }
-namespace Core { class StorageAreaStateListener; }
 namespace Core { class StorageAreasTree; }
 // clang-format on
 
@@ -22,8 +21,21 @@ namespace Core {
 
 class FileStorageArea {
 public:
+    // FileStorageArea inner types declare
+    // clang-format off
+    struct StorageAreaSpaceInfo;
+    // clang-format on
+
     // FileStorageArea inner types define
     enum class FlushableLevelDbEnvType {};
+
+    struct StorageAreaSpaceInfo {
+    public:
+        // prevent constructor by default
+        StorageAreaSpaceInfo& operator=(StorageAreaSpaceInfo const&);
+        StorageAreaSpaceInfo(StorageAreaSpaceInfo const&);
+        StorageAreaSpaceInfo();
+    };
 
 public:
     // prevent constructor by default
@@ -89,11 +101,11 @@ public:
     // vIndex: 17, symbol: ?preemptiveExtendSize@FileStorageArea@Core@@UEAAX_KV?$function@$$A6AXXZ@std@@1@Z
     virtual void preemptiveExtendSize(uint64, std::function<void(void)>, std::function<void(void)>);
 
-    // vIndex: 18, symbol: ?unloadFlatFileManifests@FileStorageArea@Core@@UEAAX_N@Z
-    virtual void unloadFlatFileManifests(bool);
+    // vIndex: 18, symbol: ?getAvailableUserStorageSize@FileStorageArea@Core@@UEAA_KXZ
+    virtual uint64 getAvailableUserStorageSize();
 
-    // vIndex: 19, symbol: __unk_vfn_19
-    virtual void __unk_vfn_19();
+    // vIndex: 19, symbol: ?unloadFlatFileManifests@FileStorageArea@Core@@UEAAX_N@Z
+    virtual void unloadFlatFileManifests(bool);
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
@@ -104,23 +116,32 @@ public:
     // vIndex: 22, symbol: __unk_vfn_22
     virtual void __unk_vfn_22();
 
-    // vIndex: 23, symbol: ?getFlushableLevelDbEnvType@FileStorageArea@Core@@UEBA?AW4FlushableLevelDbEnvType@12@XZ
+    // vIndex: 23, symbol: __unk_vfn_23
+    virtual void __unk_vfn_23();
+
+    // vIndex: 24, symbol: ?getFlushableLevelDbEnvType@FileStorageArea@Core@@UEBA?AW4FlushableLevelDbEnvType@12@XZ
     virtual ::Core::FileStorageArea::FlushableLevelDbEnvType getFlushableLevelDbEnvType() const;
 
-    // vIndex: 24, symbol: ?getTransactionWriteSizeLimit@FileStorageArea@Core@@UEBA_KXZ
+    // vIndex: 25, symbol: ?getTransactionWriteSizeLimit@FileStorageArea@Core@@UEBA_KXZ
     virtual uint64 getTransactionWriteSizeLimit() const;
 
-    // vIndex: 25, symbol: ?setSaveDataIcon@FileStorageArea@Core@@UEAA?AVResult@2@AEBVPath@2@@Z
+    // vIndex: 26, symbol: ?setSaveDataIcon@FileStorageArea@Core@@UEAA?AVResult@2@AEBVPath@2@@Z
     virtual class Core::Result setSaveDataIcon(class Core::Path const&);
 
-    // vIndex: 26, symbol: ?shouldAllowCommit@FileStorageArea@Core@@UEBA_NXZ
+    // vIndex: 27, symbol: ?shouldAllowCommit@FileStorageArea@Core@@UEBA_NXZ
     virtual bool shouldAllowCommit() const;
 
-    // vIndex: 27, symbol: ?trackBytesWritten@FileStorageArea@Core@@UEAAXAEBVPath@2@_KW4WriteOperation@2@@Z
+    // vIndex: 28, symbol: ?trackBytesWritten@FileStorageArea@Core@@UEAAXAEBVPath@2@_KW4WriteOperation@2@@Z
     virtual void trackBytesWritten(class Core::Path const&, uint64, ::Core::WriteOperation);
 
-    // vIndex: 28, symbol: ?trackWriteOperation@FileStorageArea@Core@@UEAAXAEBVPath@2@W4WriteOperation@2@@Z
+    // vIndex: 29, symbol: ?trackWriteOperation@FileStorageArea@Core@@UEAAXAEBVPath@2@W4WriteOperation@2@@Z
     virtual void trackWriteOperation(class Core::Path const&, ::Core::WriteOperation);
+
+    // vIndex: 30, symbol: __unk_vfn_30
+    virtual void __unk_vfn_30();
+
+    // vIndex: 31, symbol: ?getStorageAreaSpaceInfo@FileStorageArea@Core@@UEAA?AUStorageAreaSpaceInfo@12@XZ
+    virtual struct Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo();
 
     // symbol: ?_commit@FileStorageArea@Core@@MEAA?AVResult@2@XZ
     MCVAPI class Core::Result _commit();
@@ -177,9 +198,6 @@ public:
     // ?getRootPath@FileStorageArea@Core@@QEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@XZ
     MCAPI class Core::PathBuffer<std::string> const& getRootPath() const;
 
-    // symbol: ?removeStateListener@FileStorageArea@Core@@QEAAXPEAVStorageAreaStateListener@2@@Z
-    MCAPI void removeStateListener(class Core::StorageAreaStateListener*);
-
     // symbol:
     // ?getStorageAreaForPath@FileStorageArea@Core@@SA?AVResult@2@AEAV?$shared_ptr@VFileStorageArea@Core@@@std@@AEBVPath@2@@Z
     MCAPI static class Core::Result
@@ -203,6 +221,9 @@ public:
     // NOLINTBEGIN
     // symbol: ?_addReadOperation@FileStorageArea@Core@@AEAAX_N_K@Z
     MCAPI void _addReadOperation(bool, uint64);
+
+    // symbol: ?_addReadWriteOperation@FileStorageArea@Core@@AEAAX_N_K1@Z
+    MCAPI void _addReadWriteOperation(bool, uint64, uint64);
 
     // symbol: ?_addWriteOperation@FileStorageArea@Core@@AEAAX_N_K@Z
     MCAPI void _addWriteOperation(bool, uint64);

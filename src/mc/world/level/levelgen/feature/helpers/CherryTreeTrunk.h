@@ -47,5 +47,11 @@ public:
         bool
     ) const;
 
+    // symbol:
+    // ?_tryPlaceBlock@CherryTreeTrunk@@AEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@AEBUTreeParams@TreeHelper@@@Z
+    MCAPI bool
+    _tryPlaceBlock(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&, struct TreeHelper::TreeParams const&)
+        const;
+
     // NOLINTEND
 };

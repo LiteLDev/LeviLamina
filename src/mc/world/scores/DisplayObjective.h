@@ -27,18 +27,8 @@ public:
     // symbol: ?getSortOrder@DisplayObjective@@QEBA?AW4ObjectiveSortOrder@@XZ
     MCAPI ::ObjectiveSortOrder getSortOrder() const;
 
-    // symbol: ?isDisplaying@DisplayObjective@@QEBA_NAEBVObjective@@@Z
-    MCAPI bool isDisplaying(class Objective const&) const;
-
     // symbol: ?isValid@DisplayObjective@@QEBA_NXZ
     MCAPI bool isValid() const;
-
-    // symbol: ?deserialize@DisplayObjective@@SA?AV1@AEBVCompoundTag@@AEBVScoreboard@@@Z
-    MCAPI static class DisplayObjective deserialize(class CompoundTag const&, class Scoreboard const&);
-
-    // symbol:
-    // ?serialize@DisplayObjective@@SA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBV1@@Z
-    MCAPI static std::unique_ptr<class CompoundTag> serialize(class DisplayObjective const&);
 
     // NOLINTEND
 };

@@ -27,8 +27,8 @@ public:
     // symbol: ?DIRECTION_COUNTER_CLOCKWISE@Direction@@2QBW4Type@1@B
     MCAPI static ::Direction::Type const DIRECTION_COUNTER_CLOCKWISE[];
 
-    // symbol: ?DIRECTION_FACING@Direction@@2QBEB
-    MCAPI static uchar const DIRECTION_FACING[];
+    // symbol: ?DIRECTION_FACING@Direction@@2V?$array@E$03@std@@B
+    MCAPI static std::array<uchar, 4> const DIRECTION_FACING;
 
     // symbol: ?DIRECTION_OPPOSITE@Direction@@2QBW4Type@1@B
     MCAPI static ::Direction::Type const DIRECTION_OPPOSITE[];

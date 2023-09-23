@@ -19,6 +19,7 @@ public:
     // prevent constructor by default
     PublisherBase& operator=(PublisherBase const&);
     PublisherBase(PublisherBase const&);
+    PublisherBase();
 
 public:
     // NOLINTBEGIN
@@ -29,9 +30,6 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ??0PublisherBase@Detail@PubSub@Bedrock@@IEAA@XZ
-    MCAPI PublisherBase();
-
     // symbol: ?_clear@PublisherBase@Detail@PubSub@Bedrock@@IEAAXXZ
     MCAPI void _clear();
 

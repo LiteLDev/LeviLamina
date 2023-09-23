@@ -9,17 +9,17 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0GameVersion@@QEAA@XZ
+    MCAPI GameVersion();
+
     // symbol: ??0GameVersion@@QEAA@AEBV0@@Z
     MCAPI GameVersion(class GameVersion const&);
-
-    // symbol: ??0GameVersion@@QEAA@IIIII@Z
-    MCAPI GameVersion(uint, uint, uint, uint, uint);
 
     // symbol: ??0GameVersion@@QEAA@AEBVListTag@@@Z
     MCAPI explicit GameVersion(class ListTag const&);
 
-    // symbol: ??0GameVersion@@QEAA@XZ
-    MCAPI GameVersion();
+    // symbol: ??0GameVersion@@QEAA@IIIII@Z
+    MCAPI GameVersion(uint, uint, uint, uint, uint);
 
     // symbol: ?asString@GameVersion@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& asString() const;

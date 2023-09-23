@@ -11,6 +11,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ?clear@MoveInputState@@QEAAX_N@Z
+    MCAPI void clear(bool);
+
     // symbol: ?wantsSneak@MoveInputState@@QEBA_NXZ
     MCAPI bool wantsSneak() const;
 

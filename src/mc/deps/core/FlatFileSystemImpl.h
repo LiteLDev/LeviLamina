@@ -11,13 +11,10 @@
 // clang-format off
 namespace Core { class FileImpl; }
 namespace Core { class FileOpenMode; }
-namespace Core { class FileSystemImpl; }
-namespace Core { class FlatFileManifestTracker; }
 namespace Core { class FlatFileSearchResult; }
 namespace Core { class Path; }
 namespace Core { class Result; }
 namespace Core { struct DirectoryIterationItem; }
-namespace Core { struct ExcludedPath; }
 // clang-format on
 
 namespace Core {
@@ -31,32 +28,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0FlatFileSystemImpl@Core@@QEAA@AEAVFileSystemImpl@1@V?$shared_ptr@VFlatFileManifestTracker@Core@@@std@@@Z
-    MCAPI FlatFileSystemImpl(class Core::FileSystemImpl&, std::shared_ptr<class Core::FlatFileManifestTracker>);
-
-    // symbol:
-    // ?copyFlatFile@FlatFileSystemImpl@Core@@QEAA?AVResult@2@AEBVPath@2@0AEBV?$vector@UExcludedPath@Core@@V?$allocator@UExcludedPath@Core@@@std@@@std@@1@Z
-    MCAPI class Core::Result
-    copyFlatFile(class Core::Path const&, class Core::Path const&, std::vector<struct Core::ExcludedPath> const&, std::vector<struct Core::ExcludedPath> const&);
-
-    // symbol: ?createFlatFile@FlatFileSystemImpl@Core@@QEAA?AVResult@2@AEBVPath@2@0@Z
-    MCAPI class Core::Result createFlatFile(class Core::Path const&, class Core::Path const&);
-
     // symbol: ?deleteFileOrDirectory@FlatFileSystemImpl@Core@@QEAA?AVResult@2@AEBVPath@2@0_N1@Z
     MCAPI class Core::Result deleteFileOrDirectory(class Core::Path const&, class Core::Path const&, bool, bool);
 
-    // symbol: ?directoryExists@FlatFileSystemImpl@Core@@QEAA_NAEBVPath@2@0@Z
-    MCAPI bool directoryExists(class Core::Path const&, class Core::Path const&);
-
-    // symbol: ?fileExists@FlatFileSystemImpl@Core@@QEAA_NAEBVPath@2@0@Z
-    MCAPI bool fileExists(class Core::Path const&, class Core::Path const&);
-
     // symbol: ?fileOrDirectoryExists@FlatFileSystemImpl@Core@@QEAA_NAEBVPath@2@0@Z
     MCAPI bool fileOrDirectoryExists(class Core::Path const&, class Core::Path const&);
-
-    // symbol: ?getFileSize@FlatFileSystemImpl@Core@@QEAA?AVResult@2@AEBVPath@2@0PEA_K@Z
-    MCAPI class Core::Result getFileSize(class Core::Path const&, class Core::Path const&, uint64*);
 
     // symbol: ?isDirectoryPathAFlatFile@FlatFileSystemImpl@Core@@QEAA_NAEBVPath@2@@Z
     MCAPI bool isDirectoryPathAFlatFile(class Core::Path const&);

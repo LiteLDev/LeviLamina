@@ -6,6 +6,11 @@
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/enums/InMemoryAccessMode.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Core { class Path; }
+// clang-format on
+
 class InMemoryFile {
 public:
     // prevent constructor by default
@@ -30,6 +35,9 @@ public:
 
     // symbol: ?read@InMemoryFile@@QEBA?AVStatus@leveldb@@_K0PEAVSlice@3@PEADAEA_K@Z
     MCAPI leveldb::Status read(uint64, uint64, leveldb::Slice*, char*, uint64&) const;
+
+    // symbol: ?rename@InMemoryFile@@QEAAXAEBVPath@Core@@@Z
+    MCAPI void rename(class Core::Path const&);
 
     // NOLINTEND
 };

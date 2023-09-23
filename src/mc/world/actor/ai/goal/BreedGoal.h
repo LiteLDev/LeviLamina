@@ -41,6 +41,9 @@ public:
 
     // private:
     // NOLINTBEGIN
+    // symbol: ?_breed@BreedGoal@@AEAAXXZ
+    MCAPI void _breed();
+
     // symbol: ?_isCloseEnoughToBreed@BreedGoal@@AEBA_NVVec3@@VVec2@@01@Z
     MCAPI bool _isCloseEnoughToBreed(class Vec3, class Vec2, class Vec3, class Vec2) const;
 

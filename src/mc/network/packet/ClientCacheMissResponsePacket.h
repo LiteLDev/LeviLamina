@@ -16,7 +16,6 @@ public:
     // prevent constructor by default
     ClientCacheMissResponsePacket& operator=(ClientCacheMissResponsePacket const&);
     ClientCacheMissResponsePacket(ClientCacheMissResponsePacket const&);
-    ClientCacheMissResponsePacket();
 
 public:
     // NOLINTBEGIN
@@ -39,6 +38,9 @@ public:
 
     // symbol: ??1ClientCacheMissResponsePacket@@UEAA@XZ
     MCVAPI ~ClientCacheMissResponsePacket();
+
+    // symbol: ??0ClientCacheMissResponsePacket@@QEAA@XZ
+    MCAPI ClientCacheMissResponsePacket();
 
     // NOLINTEND
 };

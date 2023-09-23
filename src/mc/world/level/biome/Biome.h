@@ -83,9 +83,6 @@ public:
     // symbol: ?getBirchFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z
     MCAPI int getBirchFoliageColor(class BlockPos const&) const;
 
-    // symbol: ?getDefaultBiomeTemperature@Biome@@QEBAMXZ
-    MCAPI float getDefaultBiomeTemperature() const;
-
     // symbol: ?getDownfall@Biome@@QEBAMXZ
     MCAPI float getDownfall() const;
 

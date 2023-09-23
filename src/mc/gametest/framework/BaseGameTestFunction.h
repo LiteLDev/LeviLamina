@@ -41,16 +41,8 @@ public:
     MCAPI
     BaseGameTestFunction(std::string, std::string, std::string, int, int, int, bool, bool, int, int, std::vector<std::string>);
 
-    // symbol:
-    // ?getBatchName@BaseGameTestFunction@gametest@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string const& getBatchName() const;
-
     // symbol: ?getRotate@BaseGameTestFunction@gametest@@QEBA_NXZ
     MCAPI bool getRotate() const;
-
-    // symbol:
-    // ?getStructureName@BaseGameTestFunction@gametest@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string const& getStructureName() const;
 
     // symbol:
     // ?getTestName@BaseGameTestFunction@gametest@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

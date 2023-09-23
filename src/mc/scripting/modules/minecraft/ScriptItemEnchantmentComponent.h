@@ -33,7 +33,7 @@ public:
     MCAPI ScriptItemEnchantmentComponent(class ScriptModuleMinecraft::ScriptItemEnchantmentComponent const&);
 
     // symbol:
-    // ?getEnchantments@ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptItemEnchantments@ScriptModuleMinecraft@@@Scripting@@@Scripting@@XZ
+    // ?getEnchantments@ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptItemEnchantments@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemEnchantments>>
     getEnchantments() const;
@@ -43,11 +43,11 @@ public:
     operator=(class ScriptModuleMinecraft::ScriptItemEnchantmentComponent const&);
 
     // symbol:
-    // ?removeAllEnchantments@ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X@Scripting@@XZ
+    // ?removeAllEnchantments@ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@XZ
     MCAPI class Scripting::Result<void> removeAllEnchantments();
 
     // symbol:
-    // ?setEnchantments@ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X@Scripting@@AEBVScriptItemEnchantments@2@@Z
+    // ?setEnchantments@ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBVScriptItemEnchantments@2@@Z
     MCAPI class Scripting::Result<void> setEnchantments(class ScriptModuleMinecraft::ScriptItemEnchantments const&);
 
     // symbol:

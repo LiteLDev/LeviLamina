@@ -20,9 +20,6 @@ public:
     // ?getFallback@StructureTemplatePool@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getFallback() const;
 
-    // symbol: ?getName@StructureTemplatePool@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string const& getName() const;
-
     // symbol: ?getRandomTemplate@StructureTemplatePool@@QEBAPEBVStructurePoolElement@@AEAVRandom@@@Z
     MCAPI class StructurePoolElement const* getRandomTemplate(class Random&) const;
 

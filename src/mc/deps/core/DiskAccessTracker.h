@@ -26,12 +26,6 @@ public:
     // symbol: ?addIgnoredPath@DiskAccessTracker@Core@@QEAAXAEBVPath@2@@Z
     MCAPI void addIgnoredPath(class Core::Path const&);
 
-    // symbol: ?trackWriteAmount@DiskAccessTracker@Core@@QEAAXAEBVPath@2@_KW4WriteOperation@2@@Z
-    MCAPI void trackWriteAmount(class Core::Path const&, uint64, ::Core::WriteOperation);
-
-    // symbol: ?trackWriteOperation@DiskAccessTracker@Core@@QEAAXAEBVPath@2@W4WriteOperation@2@@Z
-    MCAPI void trackWriteOperation(class Core::Path const&, ::Core::WriteOperation);
-
     // symbol: ?getDiskAccessTracker@DiskAccessTracker@Core@@SAAEAV12@XZ
     MCAPI static class Core::DiskAccessTracker& getDiskAccessTracker();
 

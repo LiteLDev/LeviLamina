@@ -37,9 +37,6 @@ public:
     // ?appendDebugInfo@StompAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
 
-    // symbol: ??0StompAttackGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit StompAttackGoal(class Mob&);
-
     // NOLINTEND
 
     // protected:

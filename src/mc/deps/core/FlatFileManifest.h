@@ -26,12 +26,6 @@ public:
     // symbol: ?findFileOrDirectoryEntry@FlatFileManifest@Core@@QEBAPEBVFlatFileManifestInfo@2@AEBVPath@2@_N@Z
     MCAPI class Core::FlatFileManifestInfo const* findFileOrDirectoryEntry(class Core::Path const&, bool) const;
 
-    // symbol: ?getByIndex@FlatFileManifest@Core@@QEBAAEBVFlatFileManifestInfo@2@_K@Z
-    MCAPI class Core::FlatFileManifestInfo const& getByIndex(uint64) const;
-
-    // symbol: ?getEntriesCount@FlatFileManifest@Core@@QEBA_KXZ
-    MCAPI uint64 getEntriesCount() const;
-
     // symbol:
     // ?readFromStream@FlatFileManifest@Core@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@2@_N@Z
     MCAPI class Bedrock::Result<void, std::error_code>

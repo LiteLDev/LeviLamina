@@ -15,6 +15,7 @@ class Level;
 namespace ScriptModuleMinecraft { class ScriptItemComponent; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct Error; }
 namespace Scripting { struct Version; }
 // clang-format on
 
@@ -37,6 +38,14 @@ public:
     // ?clone@ScriptItemStack@ScriptModuleMinecraft@@QEBA?AV?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@VWeakLifetimeScope@4@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>
         clone(class Scripting::WeakLifetimeScope) const;
+
+    // symbol:
+    // ?getCanDestroy@ScriptItemStack@ScriptModuleMinecraft@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
+    MCAPI std::vector<std::string> getCanDestroy() const;
+
+    // symbol:
+    // ?getCanPlaceOn@ScriptItemStack@ScriptModuleMinecraft@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
+    MCAPI std::vector<std::string> getCanPlaceOn() const;
 
     // symbol:
     // ?getComponent@ScriptItemStack@ScriptModuleMinecraft@@QEAA?AV?$optional@V?$StrongTypedObjectHandle@VScriptItemComponent@ScriptModuleMinecraft@@@Scripting@@@std@@VWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
@@ -91,23 +100,27 @@ public:
     // symbol: ??4ScriptItemStack@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptItemStack& operator=(class ScriptModuleMinecraft::ScriptItemStack const&);
 
-    // symbol: ?setAmount@ScriptItemStack@ScriptModuleMinecraft@@QEAA?AV?$Result@X@Scripting@@H@Z
+    // symbol: ?setAmount@ScriptItemStack@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@H@Z
     MCAPI class Scripting::Result<void> setAmount(int);
 
     // symbol:
-    // ?setCanDestroy@ScriptItemStack@ScriptModuleMinecraft@@QEAA?AV?$Result@X@Scripting@@AEBV?$optional@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@std@@@Z
+    // ?setCanDestroy@ScriptItemStack@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$optional@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@std@@@Z
     MCAPI class Scripting::Result<void> setCanDestroy(std::optional<std::vector<std::string>> const&);
 
     // symbol:
-    // ?setCanPlaceOn@ScriptItemStack@ScriptModuleMinecraft@@QEAA?AV?$Result@X@Scripting@@AEBV?$optional@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@std@@@Z
+    // ?setCanPlaceOn@ScriptItemStack@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$optional@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@std@@@Z
     MCAPI class Scripting::Result<void> setCanPlaceOn(std::optional<std::vector<std::string>> const&);
 
     // symbol:
-    // ?setLore@ScriptItemStack@ScriptModuleMinecraft@@QEAAXAEBV?$optional@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@std@@@Z
-    MCAPI void setLore(std::optional<std::vector<std::string>> const&);
+    // ?setLore@ScriptItemStack@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$optional@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@std@@@Z
+    MCAPI class Scripting::Result<void> setLore(std::optional<std::vector<std::string>> const&);
 
     // symbol:
-    // ?setNameTag@ScriptItemStack@ScriptModuleMinecraft@@QEAA?AV?$Result@X@Scripting@@V?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
+    // ?setLoreV010@ScriptItemStack@ScriptModuleMinecraft@@QEAAXAEBV?$optional@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@std@@@Z
+    MCAPI void setLoreV010(std::optional<std::vector<std::string>> const&);
+
+    // symbol:
+    // ?setNameTag@ScriptItemStack@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@V?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
     MCAPI class Scripting::Result<void> setNameTag(std::optional<std::string>);
 
     // symbol:
@@ -131,6 +144,10 @@ public:
     // ?createOptionalHandle@ScriptItemStack@ScriptModuleMinecraft@@SA?AV?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@VWeakLifetimeScope@Scripting@@AEBVItemStackBase@@@Z
     MCAPI static std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>
     createOptionalHandle(class Scripting::WeakLifetimeScope, class ItemStackBase const&);
+
+    // symbol:
+    // ?validateLoreLength@ScriptItemStack@ScriptModuleMinecraft@@SA?AV?$optional@UError@Scripting@@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
+    MCAPI static std::optional<struct Scripting::Error> validateLoreLength(std::vector<std::string> const&);
 
     // NOLINTEND
 };

@@ -32,7 +32,7 @@ public:
     MCVAPI ~ScriptItemActorComponent();
 
     // symbol:
-    // ?getItemStack@ScriptItemActorComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@Scripting@@XZ
+    // ?getItemStack@ScriptItemActorComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>
     getItemStack() const;

@@ -8,11 +8,4 @@ public:
     PlayerScore& operator=(PlayerScore const&);
     PlayerScore(PlayerScore const&);
     PlayerScore();
-
-public:
-    // NOLINTBEGIN
-    // symbol: ?getId@PlayerScore@@QEBAAEBUScoreboardId@@XZ
-    MCAPI struct ScoreboardId const& getId() const;
-
-    // NOLINTEND
 };

@@ -26,7 +26,7 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol: ?_isValid@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    // vIndex: 1, symbol: ?_isValid@ScriptItemComponent@ScriptModuleMinecraft@@MEBA_NXZ
     virtual bool _isValid() const;
 
     // symbol: ??1ScriptMountTamingComponent@ScriptModuleMinecraft@@UEAA@XZ
@@ -37,7 +37,7 @@ public:
     MCAPI
     ScriptMountTamingComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
 
-    // symbol: ?setTamed@ScriptMountTamingComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@X@Scripting@@_N@Z
+    // symbol: ?setTamed@ScriptMountTamingComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@X$$V@Scripting@@_N@Z
     MCAPI class Scripting::Result<void> setTamed(bool) const;
 
     // symbol:

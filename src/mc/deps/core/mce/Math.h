@@ -37,11 +37,11 @@ public:
     // symbol: ?ceil@Math@mce@@SAHM@Z
     MCAPI static int ceil(float);
 
-    // symbol: ?clamp@Math@mce@@SAMMMM@Z
-    MCAPI static float clamp(float, float, float);
-
     // symbol: ?clamp@Math@mce@@SAHHHH@Z
     MCAPI static int clamp(int, int, int);
+
+    // symbol: ?clamp@Math@mce@@SAMMMM@Z
+    MCAPI static float clamp(float, float, float);
 
     // symbol: ?clampRotate@Math@mce@@SAMMMM@Z
     MCAPI static float clampRotate(float, float, float);
@@ -52,11 +52,11 @@ public:
     // symbol: ?clampedMap@Math@mce@@SAMMMMMM@Z
     MCAPI static float clampedMap(float, float, float, float, float);
 
-    // symbol: ?cos@Math@mce@@SAMM@Z
-    MCAPI static float cos(float);
-
     // symbol: ?cos@Math@mce@@SAMURadian@2@@Z
     MCAPI static float cos(struct mce::Radian);
+
+    // symbol: ?cos@Math@mce@@SAMM@Z
+    MCAPI static float cos(float);
 
     // symbol: ?degreesDifferenceAbs@Math@mce@@SAMMM@Z
     MCAPI static float degreesDifferenceAbs(float, float);
@@ -85,11 +85,11 @@ public:
     // symbol: ?inverseLerp@Math@mce@@SAMMMM@Z
     MCAPI static float inverseLerp(float, float, float);
 
-    // symbol: ?isNan@Math@mce@@SA_NN@Z
-    MCAPI static bool isNan(double);
-
     // symbol: ?isNan@Math@mce@@SA_NM@Z
     MCAPI static bool isNan(float);
+
+    // symbol: ?isNan@Math@mce@@SA_NN@Z
+    MCAPI static bool isNan(double);
 
     // symbol: ?lerpRotate@Math@mce@@SAMMMM@Z
     MCAPI static float lerpRotate(float, float, float);
@@ -103,11 +103,11 @@ public:
     // symbol: ?signum@Math@mce@@SAMM@Z
     MCAPI static float signum(float);
 
-    // symbol: ?sin@Math@mce@@SAMM@Z
-    MCAPI static float sin(float);
-
     // symbol: ?sin@Math@mce@@SAMURadian@2@@Z
     MCAPI static float sin(struct mce::Radian);
+
+    // symbol: ?sin@Math@mce@@SAMM@Z
+    MCAPI static float sin(float);
 
     // symbol: ?snapRotationToCardinal@Math@mce@@SAMM@Z
     MCAPI static float snapRotationToCardinal(float);
@@ -115,11 +115,11 @@ public:
     // symbol: ?sqrt@Math@mce@@SAMM@Z
     MCAPI static float sqrt(float);
 
-    // symbol: ?wrapDegrees@Math@mce@@SA?AUDegree@2@U32@@Z
-    MCAPI static struct mce::Degree wrapDegrees(struct mce::Degree);
-
     // symbol: ?wrapDegrees@Math@mce@@SAMM@Z
     MCAPI static float wrapDegrees(float);
+
+    // symbol: ?wrapDegrees@Math@mce@@SA?AUDegree@2@U32@@Z
+    MCAPI static struct mce::Degree wrapDegrees(struct mce::Degree);
 
     // symbol: ?wrapRadians@Math@mce@@SAMM@Z
     MCAPI static float wrapRadians(float);

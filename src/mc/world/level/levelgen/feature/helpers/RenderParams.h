@@ -15,11 +15,11 @@ public:
     // symbol: ??0RenderParams@@QEAA@AEBV0@@Z
     MCAPI RenderParams(class RenderParams const&);
 
-    // symbol: ??0RenderParams@@QEAA@$$QEAV0@@Z
-    MCAPI RenderParams(class RenderParams&&);
-
     // symbol: ??0RenderParams@@QEAA@XZ
     MCAPI RenderParams();
+
+    // symbol: ??0RenderParams@@QEAA@$$QEAV0@@Z
+    MCAPI RenderParams(class RenderParams&&);
 
     // symbol: ?getActorTarget@RenderParams@@QEBAPEAVActor@@W4FilterSubject@@@Z
     MCAPI class Actor* getActorTarget(::FilterSubject) const;

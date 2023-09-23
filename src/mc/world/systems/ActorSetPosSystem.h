@@ -34,7 +34,10 @@ public:
     // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();
 
-    // vIndex: 4, symbol:
+    // vIndex: 4, symbol: __unk_vfn_4
+    virtual void __unk_vfn_4();
+
+    // vIndex: 5, symbol:
     // ?tick@ActorSetPosSystem@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorAddedFlag@@@@V?$FlagComponent@UActorRemovedFlag@@@@V?$FlagComponent@ULocalPlayerComponentFlag@@@@V?$FlagComponent@UPaintingFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UShulkerFlag@@@@@@U?$Read@VActorOwnerComponent@@UChunkPositionComponent@@UOffsetsComponent@@USlideOffsetComponent@@@@U?$Write@UAABBShapeComponent@@UActorSetPositionRequestComponent@@VHitboxComponent@@UStateVectorComponent@@USynchedActorDataComponent@@@@U?$AddRemove@V?$FlagComponent@UActorChunkMoveFlag@@@@V?$FlagComponent@UActorLocalPlayerEntityMovedFlag@@@@UActorSetPositionRequestComponent@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
     virtual void tick(class StrictExecutionContext<
                       struct Filter<
@@ -63,7 +66,7 @@ public:
                       struct GlobalWrite<>,
                       struct EntityFactoryT<>>&);
 
-    // vIndex: 5, symbol:
+    // vIndex: 6, symbol:
     // ?singleTick@ActorSetPosSystem@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorAddedFlag@@@@V?$FlagComponent@UActorRemovedFlag@@@@V?$FlagComponent@ULocalPlayerComponentFlag@@@@V?$FlagComponent@UPaintingFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UShulkerFlag@@@@@@U?$Read@VActorOwnerComponent@@UChunkPositionComponent@@UOffsetsComponent@@USlideOffsetComponent@@@@U?$Write@UAABBShapeComponent@@UActorSetPositionRequestComponent@@VHitboxComponent@@UStateVectorComponent@@USynchedActorDataComponent@@@@U?$AddRemove@V?$FlagComponent@UActorChunkMoveFlag@@@@V?$FlagComponent@UActorLocalPlayerEntityMovedFlag@@@@UActorSetPositionRequestComponent@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEAVStrictEntityContext@@@Z
     virtual void
     singleTick(class StrictExecutionContext<struct Filter<class FlagComponent<struct ActorAddedFlag>, class FlagComponent<struct ActorRemovedFlag>, class FlagComponent<struct LocalPlayerComponentFlag>, class FlagComponent<struct PaintingFlag>, class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct ShulkerFlag>>, struct Read<class ActorOwnerComponent, struct ChunkPositionComponent, struct OffsetsComponent, struct SlideOffsetComponent>, struct Write<struct AABBShapeComponent, struct ActorSetPositionRequestComponent, class HitboxComponent, struct StateVectorComponent, struct SynchedActorDataComponent>, struct AddRemove<class FlagComponent<struct ActorChunkMoveFlag>, class FlagComponent<struct ActorLocalPlayerEntityMovedFlag>, struct ActorSetPositionRequestComponent>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>>&, class StrictEntityContext&);

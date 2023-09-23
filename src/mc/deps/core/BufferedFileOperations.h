@@ -20,14 +20,17 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ?copyDirectory@BufferedFileOperations@Core@@SA?AVResult@2@PEAVFileSystemImpl@2@AEBVPath@2@01@Z
+    MCAPI static class Core::Result
+    copyDirectory(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&);
+
     // symbol: ?copyFile@BufferedFileOperations@Core@@SA?AVResult@2@PEAVFileSystemImpl@2@AEBVPath@2@01@Z
     MCAPI static class Core::Result
     copyFile(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&);
 
-    // symbol:
-    // ?copyFileWithLimit@BufferedFileOperations@Core@@SA?AVResult@2@PEAVFileSystemImpl@2@AEBVPath@2@01_KAEA_K3@Z
+    // symbol: ?moveFile@BufferedFileOperations@Core@@SA?AVResult@2@PEAVFileSystemImpl@2@AEBVPath@2@01@Z
     MCAPI static class Core::Result
-    copyFileWithLimit(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&, uint64, uint64&, uint64&);
+    moveFile(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&);
 
     // NOLINTEND
 };

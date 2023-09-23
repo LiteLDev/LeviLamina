@@ -249,11 +249,30 @@ public:
     // symbol: ?directoryExists@FileSystemImpl@Core@@QEAA_NAEBVPath@2@@Z
     MCAPI bool directoryExists(class Core::Path const&);
 
+    // symbol: ?enumerateFiles@FileSystemImpl@Core@@QEAAXAEBV?$function@$$A6AXPEAVFileImpl@Core@@@Z@std@@@Z
+    MCAPI void enumerateFiles(std::function<void(class Core::FileImpl*)> const&);
+
     // symbol: ?fileExists@FileSystemImpl@Core@@QEAA_NAEBVPath@2@@Z
     MCAPI bool fileExists(class Core::Path const&);
 
     // symbol: ?fileOrDirectoryExists@FileSystemImpl@Core@@QEAA_NAEBVPath@2@@Z
     MCAPI bool fileOrDirectoryExists(class Core::Path const&);
+
+    // symbol: ?getAccessType@FileSystemImpl@Core@@QEBA?AW4FileAccessType@2@XZ
+    MCAPI ::Core::FileAccessType getAccessType() const;
+
+    // symbol:
+    // ?getDirectoryFiles@FileSystemImpl@Core@@QEAA?AVResult@2@AEAV?$vector@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@V?$allocator@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@std@@@std@@AEBVPath@2@@Z
+    MCAPI class Core::Result
+    getDirectoryFiles(std::vector<class Core::PathBuffer<std::string>>&, class Core::Path const&);
+
+    // symbol:
+    // ?getDirectoryFilesRecursively@FileSystemImpl@Core@@QEAA?AVResult@2@AEAV?$vector@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@V?$allocator@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@std@@@std@@AEBVPath@2@@Z
+    MCAPI class Core::Result
+    getDirectoryFilesRecursively(std::vector<class Core::PathBuffer<std::string>>&, class Core::Path const&);
+
+    // symbol: ?getFileOrDirectorySize@FileSystemImpl@Core@@QEAA?AVResult@2@AEBVPath@2@PEA_K@Z
+    MCAPI class Core::Result getFileOrDirectorySize(class Core::Path const&, uint64*);
 
     // symbol: ?getFileSize@FileSystemImpl@Core@@QEAA?AVResult@2@AEBVPath@2@PEA_K@Z
     MCAPI class Core::Result getFileSize(class Core::Path const&, uint64*);
@@ -277,6 +296,12 @@ public:
         class Core::FileOpenMode,
         ::Core::FileBufferingMode
     );
+
+    // symbol: ?readFileData@FileSystemImpl@Core@@QEAA?AVResult@2@AEBVPath@2@AEAV?$vector@EV?$allocator@E@std@@@std@@@Z
+    MCAPI class Core::Result readFileData(class Core::Path const&, std::vector<uchar>&);
+
+    // symbol: ?removeIgnoredThrottlePath@FileSystemImpl@Core@@QEAA?AVResult@2@AEBVPath@2@@Z
+    MCAPI class Core::Result removeIgnoredThrottlePath(class Core::Path const&);
 
     // symbol: ?renameFile@FileSystemImpl@Core@@QEAA?AVResult@2@AEBVPath@2@0@Z
     MCAPI class Core::Result renameFile(class Core::Path const&, class Core::Path const&);

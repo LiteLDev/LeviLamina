@@ -6,6 +6,7 @@
 #include "mc/deps/raknet/ConnectionAttemptResult.h"
 #include "mc/deps/raknet/ConnectionState.h"
 #include "mc/deps/raknet/RNS2BindResult.h"
+#include "mc/deps/raknet/RNS2Type.h"
 #include "mc/deps/raknet/RakPeer.h"
 #include "mc/deps/raknet/RakString.h"
 #include "mc/deps/raknet/ReliabilityLayer.h"
@@ -25,6 +26,7 @@ namespace RakNet { class RakNetSocket2; }
 namespace RakNet { class RakPeer; }
 namespace RakNet { class RakPeerInterface; }
 namespace RakNet { class RakString; }
+namespace RakNet { class SocketLayerOverride; }
 namespace RakNet { class StringCompressor; }
 namespace RakNet { class StringTable; }
 namespace RakNet { struct AddressOrGUID; }

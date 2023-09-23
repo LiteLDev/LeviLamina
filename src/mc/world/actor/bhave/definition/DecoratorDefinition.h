@@ -17,13 +17,6 @@ public:
     DecoratorDefinition(DecoratorDefinition const&);
     DecoratorDefinition();
 
-public:
-    // NOLINTBEGIN
-    // symbol: ?get@DecoratorDefinition@@QEBAPEBVBehaviorDefinition@@XZ
-    MCAPI class BehaviorDefinition const* get() const;
-
-    // NOLINTEND
-
     // protected:
     // NOLINTBEGIN
     // symbol:

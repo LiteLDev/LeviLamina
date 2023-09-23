@@ -61,6 +61,9 @@ public:
     // symbol: ?stopOpen@DispenserBlockActor@@UEAAXAEAVPlayer@@@Z
     MCVAPI void stopOpen(class Player&);
 
+    // symbol: ??0DispenserBlockActor@@QEAA@VBlockPos@@@Z
+    MCAPI explicit DispenserBlockActor(class BlockPos);
+
     // symbol: ??0DispenserBlockActor@@QEAA@VBlockPos@@W4BlockActorType@@@Z
     MCAPI DispenserBlockActor(class BlockPos, ::BlockActorType);
 

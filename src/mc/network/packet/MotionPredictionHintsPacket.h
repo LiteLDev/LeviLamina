@@ -41,11 +41,11 @@ public:
     // symbol: ??1MotionPredictionHintsPacket@@UEAA@XZ
     MCVAPI ~MotionPredictionHintsPacket();
 
-    // symbol: ??0MotionPredictionHintsPacket@@QEAA@AEBVActor@@@Z
-    MCAPI explicit MotionPredictionHintsPacket(class Actor const&);
-
     // symbol: ??0MotionPredictionHintsPacket@@QEAA@XZ
     MCAPI MotionPredictionHintsPacket();
+
+    // symbol: ??0MotionPredictionHintsPacket@@QEAA@AEBVActor@@@Z
+    MCAPI explicit MotionPredictionHintsPacket(class Actor const&);
 
     // NOLINTEND
 };

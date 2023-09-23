@@ -20,8 +20,5 @@ public:
     // vIndex: 1, symbol: ?getAmount@MultiplyValueAmplifier@@UEBAMHM@Z
     virtual float getAmount(int, float) const;
 
-    // symbol: ??0MultiplyValueAmplifier@@QEAA@M@Z
-    MCAPI explicit MultiplyValueAmplifier(float);
-
     // NOLINTEND
 };

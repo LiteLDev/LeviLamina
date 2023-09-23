@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/enums/PaletteColor.h"
-#include "mc/world/level/block/utils/BlockColor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -240,9 +239,6 @@ MCAPI extern class mce::Color const WOOL;
 
 // symbol: ?getColorFromPaletteColor@VanillaMapColor@@YA?AVColor@mce@@W4PaletteColor@@@Z
 MCAPI class mce::Color getColorFromPaletteColor(::PaletteColor);
-
-// symbol: ?getColorFromTerracottaColor@VanillaMapColor@@YA?AVColor@mce@@W4BlockColor@@@Z
-MCAPI class mce::Color getColorFromTerracottaColor(::BlockColor);
 // NOLINTEND
 
 }; // namespace VanillaMapColor

@@ -45,10 +45,9 @@ public:
     struct ParseTable;
     struct ParseToken;
     struct Signature;
+    struct SoftEnum;
     class Symbol;
     class Parser;
-    struct RegistryState;
-    struct SoftEnum;
     struct SymbolHasher;
     // clang-format on
 
@@ -119,6 +118,9 @@ public:
 
     public:
         // NOLINTBEGIN
+        // symbol: ??0Symbol@CommandRegistry@@QEAA@_K@Z
+        MCAPI explicit Symbol(uint64);
+
         // symbol: ?toIndex@Symbol@CommandRegistry@@QEBA_KXZ
         MCAPI uint64 toIndex() const;
 
@@ -259,6 +261,24 @@ public:
         // NOLINTEND
     };
 
+    class Symbol {
+    public:
+        // prevent constructor by default
+        Symbol& operator=(Symbol const&);
+        Symbol(Symbol const&);
+        Symbol();
+
+    public:
+        // NOLINTBEGIN
+        // symbol: ?toIndex@Symbol@CommandRegistry@@QEBA_KXZ
+        MCAPI uint64 toIndex() const;
+
+        // symbol: ?value@Symbol@CommandRegistry@@QEBAHXZ
+        MCAPI int value() const;
+
+        // NOLINTEND
+    };
+
     class Parser {
     public:
         const CommandRegistry&                     mRegistry;                 // this+0x0
@@ -328,17 +348,10 @@ public:
 
     struct RegistryState {
     public:
-        uint              signatureCount;        // this+0x0
-        uint              enumValueCount;        // this+0x4
-        uint              postfixCount;          // this+0x8
-        uint              enumCount;             // this+0xC
-        uint              factorizationCount;    // this+0x10
-        uint              optionalCount;         // this+0x14
-        uint              ruleCount;             // this+0x18
-        uint              softEnumCount;         // this+0x1C
-        uint              constraintCount;       // this+0x20
-        std::vector<uint> constrainedValueCount; // this+0x28
-        std::vector<uint> softEnumValuesCount;   // this+0x40
+        // prevent constructor by default
+        RegistryState& operator=(RegistryState const&);
+        RegistryState(RegistryState const&);
+        RegistryState();
 
     public:
         // NOLINTBEGIN
@@ -350,8 +363,10 @@ public:
 
     struct SoftEnum {
     public:
-        std::string              mName;   // this+0x0
-        std::vector<std::string> mValues; // this+0x20
+        // prevent constructor by default
+        SoftEnum& operator=(SoftEnum const&);
+        SoftEnum(SoftEnum const&);
+        SoftEnum();
 
     public:
         // NOLINTBEGIN
@@ -648,6 +663,10 @@ public:
     // ?buildSelector@CommandRegistry@@QEBA_NAEBUActorSelectorArgs@@PEAVCommandSelectorBase@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI bool buildSelector(struct ActorSelectorArgs const&, class CommandSelectorBase*, std::string&) const;
 
+    // symbol:
+    // ?enabledInEditor@CommandRegistry@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI bool enabledInEditor(std::string const&) const;
+
     // symbol: ?finalizeChainedSubcommandOverloadRules@CommandRegistry@@QEAAXPEBD@Z
     MCAPI void finalizeChainedSubcommandOverloadRules(char const*);
 
@@ -758,6 +777,9 @@ public:
 
     // symbol: ?TAG_VALUES_SOFTENUM_NAME@CommandRegistry@@2PEBDEB
     MCAPI static char const* TAG_VALUES_SOFTENUM_NAME;
+
+    // symbol: ?UNLOCKABLE_RECIPES_SOFTENUM_NAME@CommandRegistry@@2PEBDEB
+    MCAPI static char const* UNLOCKABLE_RECIPES_SOFTENUM_NAME;
 
     // NOLINTEND
 
@@ -893,6 +915,10 @@ public:
         const;
 
     // symbol:
+    // ?describe@CommandRegistry@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCommandParameterData@@@Z
+    MCAPI std::string describe(class CommandParameterData const&) const;
+
+    // symbol:
     // ?describe@CommandRegistry@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUSignature@1@AEBV23@AEBUOverload@1@IPEAI3@Z
     MCAPI std::string
     describe(struct CommandRegistry::Signature const&, std::string const&, struct CommandRegistry::Overload const&, uint, uint*, uint*)
@@ -901,10 +927,6 @@ public:
     // symbol:
     // ?describe@CommandRegistry@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VSymbol@1@@Z
     MCAPI std::string describe(class CommandRegistry::Symbol) const;
-
-    // symbol:
-    // ?describe@CommandRegistry@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCommandParameterData@@@Z
-    MCAPI std::string describe(class CommandParameterData const&) const;
 
     // symbol:
     // ?findCommand@CommandRegistry@@AEBAPEBUSignature@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -939,11 +961,11 @@ public:
     // symbol: ?isValid@CommandRegistry@@AEBA_NVSymbol@1@@Z
     MCAPI bool isValid(class CommandRegistry::Symbol) const;
 
-    // symbol: ?originCanRun@CommandRegistry@@AEBA_NAEBVCommandOrigin@@AEBUOverload@1@@Z
-    MCAPI bool originCanRun(class CommandOrigin const&, struct CommandRegistry::Overload const&) const;
-
     // symbol: ?originCanRun@CommandRegistry@@AEBA_NAEBVCommandOrigin@@AEBUSignature@1@@Z
     MCAPI bool originCanRun(class CommandOrigin const&, struct CommandRegistry::Signature const&) const;
+
+    // symbol: ?originCanRun@CommandRegistry@@AEBA_NAEBVCommandOrigin@@AEBUOverload@1@@Z
+    MCAPI bool originCanRun(class CommandOrigin const&, struct CommandRegistry::Overload const&) const;
 
     // symbol:
     // ?parseSelector@CommandRegistry@@AEBA_NAEAUActorSelectorArgs@@AEBUParseToken@1@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@6@@Z

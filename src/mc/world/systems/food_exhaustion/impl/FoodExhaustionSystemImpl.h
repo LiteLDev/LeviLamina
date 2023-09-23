@@ -7,7 +7,6 @@
 #include "mc/common/GlobalWrite.h"
 #include "mc/common/StrictExecutionContext.h"
 #include "mc/common/wrapper/AddRemove.h"
-#include "mc/common/wrapper/Optional.h"
 #include "mc/deps/core/data/Filter.h"
 #include "mc/deps/core/data/Read.h"
 #include "mc/deps/core/data/Write.h"
@@ -68,8 +67,11 @@ public:
     // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();
 
-    // vIndex: 4, symbol:
-    // ?tick@FoodExhaustionSystemImpl@1@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorMovementTickNeededFlag@@@@UPassengerComponent@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@@@U?$Read@UDimensionTypeComponent@@VExhaustionComponent@@V?$FlagComponent@UOnGroundFlag@@@@UActorGameTypeComponent@@UServerPlayerCurrentMovementComponent@@V?$FlagComponent@UInWaterFlag@@@@UMobBodyRotationComponent@@UPassengerComponent@@URenderRotationComponent@@UStandAnimationComponent@@UStateVectorComponent@@USynchedActorDataComponent@@UAABBShapeComponent@@UActorRotationComponent@@UOffsetsComponent@@V?$Optional@UVanillaOffsetComponent@@@@V?$Optional@UPassengerRenderingRidingOffsetComponent@@@@@@U?$Write@UAttributesComponent@@@@U?$AddRemove@$$V@@U?$GlobalRead@ULocalConstBlockSourceFactoryComponent@@UExternalDataComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
+    // vIndex: 4, symbol: __unk_vfn_4
+    virtual void __unk_vfn_4();
+
+    // vIndex: 5, symbol:
+    // ?tick@FoodExhaustionSystemImpl@1@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorMovementTickNeededFlag@@@@UPassengerComponent@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@@@U?$Read@UDimensionTypeComponent@@VExhaustionComponent@@V?$FlagComponent@UOnGroundFlag@@@@UActorGameTypeComponent@@UServerPlayerCurrentMovementComponent@@V?$FlagComponent@UInWaterFlag@@@@UMobBodyRotationComponent@@UPassengerComponent@@URenderRotationComponent@@UStandAnimationComponent@@UStateVectorComponent@@USynchedActorDataComponent@@UAABBShapeComponent@@UActorRotationComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@@@U?$Write@UAttributesComponent@@@@U?$AddRemove@$$V@@U?$GlobalRead@ULocalConstBlockSourceFactoryComponent@@UExternalDataComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
     virtual void tick(class StrictExecutionContext<
                       struct Filter<
                           class FlagComponent<struct ActorMovementTickNeededFlag>,
@@ -96,8 +98,8 @@ public:
                           struct AABBShapeComponent,
                           struct ActorRotationComponent,
                           struct OffsetsComponent,
-                          class Optional<struct VanillaOffsetComponent>,
-                          class Optional<struct PassengerRenderingRidingOffsetComponent>>,
+                          struct VanillaOffsetComponent,
+                          struct PassengerRenderingRidingOffsetComponent>,
                       struct Write<struct AttributesComponent>,
                       struct AddRemove<>,
                       struct GlobalRead<struct LocalConstBlockSourceFactoryComponent, struct ExternalDataComponent>,

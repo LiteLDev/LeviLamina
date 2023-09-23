@@ -75,9 +75,6 @@ public:
     MCAPI std::function<void(bool&)>
         _getLockIfInGameOrOptionExpectationsNotMetLockCallback(std::vector<::FeatureOptionID>, std::vector<::FeatureOptionID>);
 
-    // symbol: ?_initialize@FeatureToggles@@AEAAXAEAVAppPlatform@@@Z
-    MCAPI void _initialize(class AppPlatform&);
-
     // symbol:
     // ?_registerFeature@FeatureToggles@@AEAAXW4FeatureOptionTabID@@W4FeatureOptionID@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@2_N1V?$function@$$A6AXAEAVOption@@@Z@5@V?$function@$$A6AXAEA_N@Z@5@@Z
     MCAPI void

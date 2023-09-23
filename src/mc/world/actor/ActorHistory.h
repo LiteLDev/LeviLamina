@@ -36,8 +36,14 @@ public:
     // symbol: ?addFrame@ActorHistory@@QEAA_NAEAUIActorMovementProxy@@_KAEAVEntityRegistry@@@Z
     MCAPI bool addFrame(struct IActorMovementProxy&, uint64, class EntityRegistry&);
 
+    // symbol: ?addInputToFrontOfFrame@ActorHistory@@QEAAXV?$shared_ptr@UIReplayableActorInput@@@std@@_K@Z
+    MCAPI void addInputToFrontOfFrame(std::shared_ptr<struct IReplayableActorInput>, uint64);
+
     // symbol: ?createSnapshot@ActorHistory@@QEBA?AUSnapshot@1@AEAUIActorMovementProxy@@AEAVEntityRegistry@@@Z
     MCAPI struct ActorHistory::Snapshot createSnapshot(struct IActorMovementProxy&, class EntityRegistry&) const;
+
+    // symbol: ?getFrame@ActorHistory@@QEBAPEBUSnapshot@1@_K@Z
+    MCAPI struct ActorHistory::Snapshot const* getFrame(uint64) const;
 
     // symbol: ??1ActorHistory@@QEAA@XZ
     MCAPI ~ActorHistory();

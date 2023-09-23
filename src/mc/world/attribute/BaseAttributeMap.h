@@ -48,14 +48,14 @@ public:
     // symbol: ?getInstance@BaseAttributeMap@@QEBAAEBVAttributeInstance@@I@Z
     MCAPI class AttributeInstance const& getInstance(uint) const;
 
-    // symbol: ?getMutableInstance@BaseAttributeMap@@QEAAPEAVAttributeInstance@@I@Z
-    MCAPI class AttributeInstance* getMutableInstance(uint);
-
     // symbol: ?getMutableInstance@BaseAttributeMap@@QEAAPEAVAttributeInstance@@AEBVAttribute@@@Z
     MCAPI class AttributeInstance* getMutableInstance(class Attribute const&);
 
     // symbol: ?getMutableInstance@BaseAttributeMap@@QEAAPEAVAttributeInstance@@AEBVHashedString@@@Z
     MCAPI class AttributeInstance* getMutableInstance(class HashedString const&);
+
+    // symbol: ?getMutableInstance@BaseAttributeMap@@QEAAPEAVAttributeInstance@@I@Z
+    MCAPI class AttributeInstance* getMutableInstance(uint);
 
     // symbol:
     // ?getSyncableAttributes@BaseAttributeMap@@QEBA?AV?$vector@VAttributeInstanceHandle@@V?$allocator@VAttributeInstanceHandle@@@std@@@std@@XZ

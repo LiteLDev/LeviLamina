@@ -16,7 +16,7 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol: ?canUse@BaseMoveToBlockGoal@@UEAA_NXZ
+    // vIndex: 1, symbol: ?canUse@OwnerHurtTargetGoal@@UEAA_NXZ
     virtual bool canUse() = 0;
 
     // vIndex: 2, symbol: ?canContinueToUse@Goal@@UEAA_NXZ
@@ -35,15 +35,14 @@ public:
     virtual void tick();
 
     // vIndex: 7, symbol:
-    // ?appendDebugInfo@ScaredGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // ?appendDebugInfo@DefendTrustedTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const = 0;
 
     // vIndex: 8, symbol: ?isTargetGoal@Goal@@UEBA_NXZ
     virtual bool isTargetGoal() const;
 
     // vIndex: 9, symbol: ?onPlayerDimensionChanged@Goal@@UEAAXPEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
-    virtual void
-    onPlayerDimensionChanged(class Player*, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
+    virtual void onPlayerDimensionChanged(class Player*, DimensionType, DimensionType);
 
     // symbol: ??1Goal@@UEAA@XZ
     MCVAPI ~Goal();

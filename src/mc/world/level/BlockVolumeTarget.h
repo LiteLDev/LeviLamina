@@ -132,7 +132,7 @@ public:
     // symbol:
     // ??0BlockVolumeTarget@@QEAA@AEAVBlockVolume@@AEAVLevel@@AEBVBiomeSource@@V?$AutomaticID@VDimension@@H@@AEBUWorldGenContext@@@Z
     MCAPI
-    BlockVolumeTarget(class BlockVolume&, class Level&, class BiomeSource const&, class AutomaticID<class Dimension, int>, struct WorldGenContext const&);
+    BlockVolumeTarget(class BlockVolume&, class Level&, class BiomeSource const&, DimensionType, struct WorldGenContext const&);
 
     // NOLINTEND
 };

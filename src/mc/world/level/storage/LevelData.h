@@ -12,6 +12,7 @@
 #include "mc/enums/StorageVersion.h"
 #include "mc/enums/WorldVersion.h"
 #include "mc/network/NetherWorldType.h"
+#include "mc/server/editor/WorldType.h"
 #include "mc/world/level/levelgen/GeneratorType.h"
 
 // auto generated forward declare list
@@ -63,11 +64,11 @@ public:
     // symbol: ?getAdventureModeOverridesEnabled@LevelData@@QEBA_NXZ
     MCAPI bool getAdventureModeOverridesEnabled() const;
 
-    // symbol: ?getAdventureSettings@LevelData@@QEAAAEAUAdventureSettings@@XZ
-    MCAPI struct AdventureSettings& getAdventureSettings();
-
     // symbol: ?getAdventureSettings@LevelData@@QEBAAEBUAdventureSettings@@XZ
     MCAPI struct AdventureSettings const& getAdventureSettings() const;
+
+    // symbol: ?getAdventureSettings@LevelData@@QEAAAEAUAdventureSettings@@XZ
+    MCAPI struct AdventureSettings& getAdventureSettings();
 
     // symbol: ?getBaseGameVersion@LevelData@@QEBAAEBVBaseGameVersion@@XZ
     MCAPI class BaseGameVersion const& getBaseGameVersion() const;
@@ -93,11 +94,14 @@ public:
     // symbol: ?getDefaultAbilities@LevelData@@QEAAAEAVAbilities@@XZ
     MCAPI class Abilities& getDefaultAbilities();
 
+    // symbol: ?getDefaultPermissions@LevelData@@QEBAAEBVPermissionsHandler@@XZ
+    MCAPI class PermissionsHandler const& getDefaultPermissions() const;
+
     // symbol: ?getDefaultPermissions@LevelData@@QEAAAEAVPermissionsHandler@@XZ
     MCAPI class PermissionsHandler& getDefaultPermissions();
 
-    // symbol: ?getDefaultPermissions@LevelData@@QEBAAEBVPermissionsHandler@@XZ
-    MCAPI class PermissionsHandler const& getDefaultPermissions() const;
+    // symbol: ?getEditorWorldType@LevelData@@QEBA?AW4WorldType@Editor@@XZ
+    MCAPI ::Editor::WorldType getEditorWorldType() const;
 
     // symbol: ?getEduSharedUriResource@LevelData@@QEBAAEBVCompoundTag@@XZ
     MCAPI class CompoundTag const& getEduSharedUriResource() const;
@@ -129,11 +133,11 @@ public:
     // symbol: ?getGameDifficulty@LevelData@@QEBA?AW4Difficulty@@XZ
     MCAPI ::Difficulty getGameDifficulty() const;
 
-    // symbol: ?getGameRules@LevelData@@QEAAAEAVGameRules@@XZ
-    MCAPI class GameRules& getGameRules();
-
     // symbol: ?getGameRules@LevelData@@QEBAAEBVGameRules@@XZ
     MCAPI class GameRules const& getGameRules() const;
+
+    // symbol: ?getGameRules@LevelData@@QEAAAEAVGameRules@@XZ
+    MCAPI class GameRules& getGameRules();
 
     // symbol: ?getGameType@LevelData@@QEBA?AW4GameType@@XZ
     MCAPI ::GameType getGameType() const;

@@ -86,7 +86,7 @@ public:
         struct ActorUniqueID,
         struct ActorUniqueID,
         ::ActorLocation,
-        class AutomaticID<class Dimension, int>,
+        DimensionType,
         class Level&,
         int
     );
@@ -95,7 +95,7 @@ public:
     MCAPI class Actor const* getPositionEntity();
 
     // symbol: ?setDimension@ExecuteContextCommandOrigin@@QEAAXAEBV?$AutomaticID@VDimension@@H@@@Z
-    MCAPI void setDimension(class AutomaticID<class Dimension, int> const&);
+    MCAPI void setDimension(DimensionType const&);
 
     // symbol: ?setDimension@ExecuteContextCommandOrigin@@QEAAXAEBVDimension@@@Z
     MCAPI void setDimension(class Dimension const&);

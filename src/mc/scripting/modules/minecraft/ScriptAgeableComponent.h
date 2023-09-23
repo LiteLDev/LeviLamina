@@ -28,7 +28,7 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol: ?_isValid@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    // vIndex: 1, symbol: ?_isValid@ScriptItemComponent@ScriptModuleMinecraft@@MEBA_NXZ
     virtual bool _isValid() const;
 
     // symbol: ??1ScriptAgeableComponent@ScriptModuleMinecraft@@UEAA@XZ
@@ -40,18 +40,18 @@ public:
     ScriptAgeableComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
 
     // symbol:
-    // ?getDropItems@ScriptAgeableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Scripting@@XZ
+    // ?getDropItems@ScriptAgeableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::vector<std::string>> getDropItems() const;
 
-    // symbol: ?getDuration@ScriptAgeableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M@Scripting@@XZ
+    // symbol: ?getDuration@ScriptAgeableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M$$V@Scripting@@XZ
     MCAPI class Scripting::Result<float> getDuration() const;
 
     // symbol:
-    // ?getFeedItems@ScriptAgeableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@UActorDefinitionFeedItem@@V?$allocator@UActorDefinitionFeedItem@@@std@@@std@@@Scripting@@XZ
+    // ?getFeedItems@ScriptAgeableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@UActorDefinitionFeedItem@@V?$allocator@UActorDefinitionFeedItem@@@std@@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::vector<struct ActorDefinitionFeedItem>> getFeedItems() const;
 
     // symbol:
-    // ?getGrowUp@ScriptAgeableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@VActorDefinitionTrigger@@@Scripting@@XZ
+    // ?getGrowUp@ScriptAgeableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@VActorDefinitionTrigger@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<class ActorDefinitionTrigger> getGrowUp() const;
 
     // symbol:

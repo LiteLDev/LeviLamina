@@ -49,117 +49,114 @@ public:
     // vIndex: 35, symbol: __unk_vfn_35
     virtual void __unk_vfn_35();
 
-    // vIndex: 52, symbol: ?isInWall@Shulker@@UEBA_NXZ
+    // vIndex: 51, symbol: ?isInWall@Shulker@@UEBA_NXZ
     virtual bool isInWall() const;
 
-    // vIndex: 55, symbol: __unk_vfn_55
-    virtual void __unk_vfn_55();
+    // vIndex: 54, symbol: __unk_vfn_54
+    virtual void __unk_vfn_54();
 
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
+    // vIndex: 61, symbol: __unk_vfn_61
+    virtual void __unk_vfn_61();
 
-    // vIndex: 69, symbol: ?getShadowRadius@Shulker@@UEBAMXZ
+    // vIndex: 68, symbol: ?getShadowRadius@Shulker@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 71, symbol: __unk_vfn_71
-    virtual void __unk_vfn_71();
+    // vIndex: 70, symbol: __unk_vfn_70
+    virtual void __unk_vfn_70();
 
-    // vIndex: 77, symbol: __unk_vfn_77
-    virtual void __unk_vfn_77();
+    // vIndex: 76, symbol: __unk_vfn_76
+    virtual void __unk_vfn_76();
 
-    // vIndex: 83, symbol: __unk_vfn_83
-    virtual void __unk_vfn_83();
+    // vIndex: 82, symbol: __unk_vfn_82
+    virtual void __unk_vfn_82();
 
-    // vIndex: 86, symbol: __unk_vfn_86
-    virtual void __unk_vfn_86();
+    // vIndex: 85, symbol: __unk_vfn_85
+    virtual void __unk_vfn_85();
 
-    // vIndex: 93, symbol: __unk_vfn_93
-    virtual void __unk_vfn_93();
+    // vIndex: 92, symbol: __unk_vfn_92
+    virtual void __unk_vfn_92();
+
+    // vIndex: 94, symbol: __unk_vfn_94
+    virtual void __unk_vfn_94();
 
     // vIndex: 95, symbol: __unk_vfn_95
     virtual void __unk_vfn_95();
 
-    // vIndex: 96, symbol: __unk_vfn_96
-    virtual void __unk_vfn_96();
+    // vIndex: 97, symbol: __unk_vfn_97
+    virtual void __unk_vfn_97();
 
-    // vIndex: 98, symbol: __unk_vfn_98
-    virtual void __unk_vfn_98();
-
-    // vIndex: 100, symbol: ?canAttack@Shulker@@UEBA_NPEAVActor@@_N@Z
+    // vIndex: 99, symbol: ?canAttack@Shulker@@UEBA_NPEAVActor@@_N@Z
     virtual bool canAttack(class Actor*, bool) const;
 
-    // vIndex: 117, symbol: ?shouldRender@Shulker@@UEBA_NXZ
+    // vIndex: 116, symbol: ?shouldRender@Shulker@@UEBA_NXZ
     virtual bool shouldRender() const;
 
-    // vIndex: 120, symbol: ?isInvulnerableTo@Shulker@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 119, symbol: ?isInvulnerableTo@Shulker@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
 
-    // vIndex: 128, symbol: ?getPickRadius@Shulker@@UEAAMXZ
+    // vIndex: 126, symbol: ?getPickRadius@Shulker@@UEAAMXZ
     virtual float getPickRadius();
 
-    // vIndex: 164, symbol: __unk_vfn_164
-    virtual void __unk_vfn_164();
+    // vIndex: 162, symbol: __unk_vfn_162
+    virtual void __unk_vfn_162();
 
-    // vIndex: 178, symbol: __unk_vfn_178
-    virtual void __unk_vfn_178();
+    // vIndex: 174, symbol: __unk_vfn_174
+    virtual void __unk_vfn_174();
 
-    // vIndex: 202, symbol: __unk_vfn_202
-    virtual void __unk_vfn_202();
+    // vIndex: 198, symbol: __unk_vfn_198
+    virtual void __unk_vfn_198();
 
-    // vIndex: 203, symbol: __unk_vfn_203
-    virtual void __unk_vfn_203();
+    // vIndex: 199, symbol: __unk_vfn_199
+    virtual void __unk_vfn_199();
 
-    // vIndex: 219, symbol: __unk_vfn_219
-    virtual void __unk_vfn_219();
+    // vIndex: 215, symbol: __unk_vfn_215
+    virtual void __unk_vfn_215();
 
-    // vIndex: 222, symbol: __unk_vfn_222
-    virtual void __unk_vfn_222();
+    // vIndex: 218, symbol: __unk_vfn_218
+    virtual void __unk_vfn_218();
 
-    // vIndex: 237, symbol: ?updateEntitySpecificMolangVariables@Shulker@@MEAAXAEAVRenderParams@@@Z
+    // vIndex: 233, symbol: ?updateEntitySpecificMolangVariables@Shulker@@MEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams&);
 
-    // vIndex: 239, symbol: __unk_vfn_239
-    virtual void __unk_vfn_239();
+    // vIndex: 235, symbol: __unk_vfn_235
+    virtual void __unk_vfn_235();
 
-    // vIndex: 240, symbol: ?_hurt@Shulker@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 236, symbol: ?_hurt@Shulker@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
 
-    // vIndex: 243, symbol: ?readAdditionalSaveData@Shulker@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 239, symbol: ?readAdditionalSaveData@Shulker@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
 
-    // vIndex: 244, symbol: ?addAdditionalSaveData@Shulker@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 240, symbol: ?addAdditionalSaveData@Shulker@@UEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag&) const;
 
-    // vIndex: 247, symbol: __unk_vfn_247
-    virtual void __unk_vfn_247();
+    // vIndex: 243, symbol: __unk_vfn_243
+    virtual void __unk_vfn_243();
 
-    // vIndex: 252, symbol: ?_onSizeUpdated@Shulker@@EEAAXXZ
+    // vIndex: 247, symbol: ?_onSizeUpdated@Shulker@@EEAAXXZ
     virtual void _onSizeUpdated();
 
-    // vIndex: 253, symbol: __unk_vfn_253
-    virtual void __unk_vfn_253();
+    // vIndex: 248, symbol: __unk_vfn_248
+    virtual void __unk_vfn_248();
 
-    // vIndex: 268, symbol: ?checkSpawnRules@Shulker@@UEAA_N_N@Z
+    // vIndex: 262, symbol: ?checkSpawnRules@Shulker@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool);
 
-    // vIndex: 276, symbol: __unk_vfn_276
-    virtual void __unk_vfn_276();
+    // vIndex: 270, symbol: __unk_vfn_270
+    virtual void __unk_vfn_270();
 
-    // vIndex: 277, symbol: ?getMaxHeadXRot@Shulker@@UEAAMXZ
+    // vIndex: 271, symbol: ?getMaxHeadXRot@Shulker@@UEAAMXZ
     virtual float getMaxHeadXRot();
 
-    // vIndex: 280, symbol: __unk_vfn_280
-    virtual void __unk_vfn_280();
+    // vIndex: 274, symbol: __unk_vfn_274
+    virtual void __unk_vfn_274();
 
-    // vIndex: 285, symbol: ?getArmorValue@Shulker@@UEBAHXZ
+    // vIndex: 279, symbol: ?getArmorValue@Shulker@@UEBAHXZ
     virtual int getArmorValue() const;
 
-    // vIndex: 317, symbol:
+    // vIndex: 311, symbol:
     // ?initBodyControl@Shulker@@UEAA?AV?$unique_ptr@VBodyControl@@U?$default_delete@VBodyControl@@@std@@@std@@XZ
     virtual std::unique_ptr<class BodyControl> initBodyControl();
-
-    // vIndex: 323, symbol: __unk_vfn_323
-    virtual void __unk_vfn_323();
 
     // symbol: ?breaksFallingBlocks@Shulker@@UEBA_NXZ
     MCVAPI bool breaksFallingBlocks() const;

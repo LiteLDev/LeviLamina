@@ -78,5 +78,8 @@ public:
     // symbol: ?_dropItem@EquipItemGoal@@AEBAXAEBVItemStack@@@Z
     MCAPI void _dropItem(class ItemStack const&) const;
 
+    // symbol: ?_sendMobEquipmentPacket@EquipItemGoal@@AEBAXVMobEquipmentPacket@@@Z
+    MCAPI void _sendMobEquipmentPacket(class MobEquipmentPacket) const;
+
     // NOLINTEND
 };

@@ -12,12 +12,32 @@ public:
     // prevent constructor by default
     PlayerRespawnTelemetryData& operator=(PlayerRespawnTelemetryData const&);
     PlayerRespawnTelemetryData(PlayerRespawnTelemetryData const&);
-    PlayerRespawnTelemetryData();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0PlayerRespawnTelemetryData@@QEAA@XZ
+    MCAPI PlayerRespawnTelemetryData();
+
     // symbol: ?WriteEventData@PlayerRespawnTelemetryData@@QEBAXAEAVEvent@Events@Social@@@Z
     MCAPI void WriteEventData(class Social::Events::Event&) const;
+
+    // symbol: ?setChangedDimension@PlayerRespawnTelemetryData@@QEAAX_N@Z
+    MCAPI void setChangedDimension(bool);
+
+    // symbol: ?setJumpDistance@PlayerRespawnTelemetryData@@QEAAXN@Z
+    MCAPI void setJumpDistance(double);
+
+    // symbol: ?setLongJumpCount@PlayerRespawnTelemetryData@@QEAAXI@Z
+    MCAPI void setLongJumpCount(uint);
+
+    // symbol: ?setPositionSourceType@PlayerRespawnTelemetryData@@QEAAXI@Z
+    MCAPI void setPositionSourceType(uint);
+
+    // symbol: ?setSearchTime@PlayerRespawnTelemetryData@@QEAAXN@Z
+    MCAPI void setSearchTime(double);
+
+    // symbol: ?setShortJumpCount@PlayerRespawnTelemetryData@@QEAAXI@Z
+    MCAPI void setShortJumpCount(uint);
 
     // NOLINTEND
 

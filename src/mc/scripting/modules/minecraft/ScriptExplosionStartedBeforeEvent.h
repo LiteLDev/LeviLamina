@@ -20,11 +20,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptExplosionStartedBeforeEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
-    MCAPI ScriptExplosionStartedBeforeEvent(struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent&&);
-
     // symbol: ??0ScriptExplosionStartedBeforeEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptExplosionStartedBeforeEvent(struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent const&);
+
+    // symbol: ??0ScriptExplosionStartedBeforeEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
+    MCAPI ScriptExplosionStartedBeforeEvent(struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent&&);
 
     // symbol: ??4ScriptExplosionStartedBeforeEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent&

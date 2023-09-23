@@ -5,11 +5,15 @@
 // auto generated inclusion list
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
+#include "mc/external/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/BaseScriptBlockLiquidContainerComponent.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
+class BlockSource;
 namespace ScriptModuleMinecraft { class BaseScriptBlockLiquidContainerComponent; }
+namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -37,6 +41,12 @@ public:
     // ?bind@ScriptBlockSnowContainerComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockSnowContainerComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockSnowContainerComponent>
     bind();
+
+    // symbol:
+    // ?tryCreate@ScriptBlockSnowContainerComponent@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptBlockSnowContainerComponent@ScriptModuleMinecraft@@@Scripting@@AEAVBlockSource@@VBlockPos@@AEBVWeakLifetimeScope@4@@Z
+    MCAPI static class Scripting::StrongTypedObjectHandle<
+        class ScriptModuleMinecraft::ScriptBlockSnowContainerComponent>
+    tryCreate(class BlockSource&, class BlockPos, class Scripting::WeakLifetimeScope const&);
 
     // symbol: ?ComponentId@ScriptBlockSnowContainerComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;

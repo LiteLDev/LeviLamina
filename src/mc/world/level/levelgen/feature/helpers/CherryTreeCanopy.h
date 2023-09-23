@@ -44,5 +44,11 @@ public:
     _placeLayerOfLeavesWithHangingLeavesBelow(class IBlockWorldGenAPI&, class Random&, class BlockPos const&, int, class Block const&, int, struct TreeHelper::TreeParams const&)
         const;
 
+    // symbol:
+    // ?_tryPlaceBlock@CherryTreeCanopy@@AEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@AEBUTreeParams@TreeHelper@@@Z
+    MCAPI bool
+    _tryPlaceBlock(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&, struct TreeHelper::TreeParams const&)
+        const;
+
     // NOLINTEND
 };

@@ -13,12 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScoreboardIdentityRef@@QEAA@AEBUScoreboardId@@@Z
-    MCAPI explicit ScoreboardIdentityRef(struct ScoreboardId const&);
-
-    // symbol: ??0ScoreboardIdentityRef@@QEAA@XZ
-    MCAPI ScoreboardIdentityRef();
-
     // symbol: ?getEntityId@ScoreboardIdentityRef@@QEBAAEBUActorUniqueID@@XZ
     MCAPI struct ActorUniqueID const& getEntityId() const;
 
@@ -34,9 +28,6 @@ public:
 
     // symbol: ?getScoreboardId@ScoreboardIdentityRef@@QEBAAEBUScoreboardId@@XZ
     MCAPI struct ScoreboardId const& getScoreboardId() const;
-
-    // symbol: ?isPlayerType@ScoreboardIdentityRef@@QEBA_NXZ
-    MCAPI bool isPlayerType() const;
 
     // symbol: ?modifyScoreInObjective@ScoreboardIdentityRef@@QEAA_NAEAHAEAVObjective@@HW4PlayerScoreSetFunction@@@Z
     MCAPI bool modifyScoreInObjective(int&, class Objective&, int, ::PlayerScoreSetFunction);

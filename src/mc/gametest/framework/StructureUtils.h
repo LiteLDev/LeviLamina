@@ -34,9 +34,6 @@ MCAPI void ClearSpaceForStructure(class BoundingBox const&, int, class BlockSour
 MCAPI void
 CreateNewEmptyStructureBlock(std::string const&, class BlockPos const&, class BlockPos const&, ::Rotation, class BlockSource&);
 
-// symbol: ?DoesStructureContain@StructureUtils@gametest@@YA_NAEBVBlockPos@@0AEAVBlockSource@@@Z
-MCAPI bool DoesStructureContain(class BlockPos const&, class BlockPos const&, class BlockSource&);
-
 // symbol:
 // ?FindNearestStructureBlock@StructureUtils@gametest@@YAPEAVStructureBlockActor@@AEBVBlockPos@@HAEAVBlockSource@@@Z
 MCAPI class StructureBlockActor* FindNearestStructureBlock(class BlockPos const&, int, class BlockSource&);
@@ -51,10 +48,6 @@ MCAPI std::vector<class BlockPos> FindStructureBlocks(class BlockPos const&, int
 
 // symbol: ?GetRotationForRotationSteps@StructureUtils@gametest@@YA?AW4Rotation@@H@Z
 MCAPI ::Rotation GetRotationForRotationSteps(int);
-
-// symbol:
-// ?GetStructureBoundingBox@StructureUtils@gametest@@YA?AVBoundingBox@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVLevel@@AEBW4Rotation@@VBlockPos@@@Z
-MCAPI class BoundingBox GetStructureBoundingBox(std::string const&, class Level&, ::Rotation const&, class BlockPos);
 
 // symbol: ?GetStructureBoundingBox@StructureUtils@gametest@@YA?AVBoundingBox@@AEBVStructureBlockActor@@@Z
 MCAPI class BoundingBox GetStructureBoundingBox(class StructureBlockActor const&);
