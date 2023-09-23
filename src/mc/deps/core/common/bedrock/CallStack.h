@@ -67,7 +67,6 @@ public:
     };
 
 public:
-<<<<<<< HEAD
     std::vector<Bedrock::CallStack::FrameWithContext> vector;
 
 public:

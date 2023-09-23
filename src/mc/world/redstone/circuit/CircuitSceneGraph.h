@@ -43,7 +43,6 @@ public:
     };
 
 public:
-<<<<<<< HEAD
     std::unordered_map<BlockPos, std::unique_ptr<BaseCircuitComponent>> mAllComponents;
     CircuitComponentList                                                mActiveComponents;
     std::unordered_map<BlockPos, CircuitComponentList>                  mActiveComponentsPerChunk;
