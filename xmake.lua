@@ -50,8 +50,10 @@ target("LiteLoader")
     set_symbols("debug")
     set_exceptions("none")
     set_pcxxheader("src/liteloader/api/base/Global.h")
+    set_configdir("$(buildir)/config")
+    add_configfiles("src/(**.in)")
     add_headerfiles("src/(**.h)", "src/(**.hpp)")
-    add_includedirs("./src")
+    add_includedirs("./src", "$(buildir)/config")
     add_cxflags("/utf-8", "/permissive-", "/EHa", "/W4")
     add_defines(
         "UNICODE", "LITELOADER_EXPORTS", "WIN32_LEAN_AND_MEAN",
@@ -70,20 +72,16 @@ target("LiteLoader")
         add_packages("bdslibrary")
     end
 
-    local VERSION_H = "src/liteloader/core/Version.h"
-    local VERSION_H_BAK = "src/liteloader/core/Version.h.bak"
     on_load(function (target)
-        local commit = os.iorun("git rev-parse --short HEAD")
-        commit = commit:sub(1, #commit - 1) -- remove the last newline
-        -- target:add("defines", "LITELOADER_VERSION_COMMIT_SHA=" .. commit) -- deprecated because it will cause full rebuild
-        os.cp(VERSION_H, VERSION_H_BAK)
-        local content = io.readfile(VERSION_H)
-        content = content:gsub("LITELOADER_VERSION_COMMIT_SHA 00000000", "LITELOADER_VERSION_COMMIT_SHA " .. commit)
-        io.writefile(VERSION_H, content)
-    end)
-    after_build(function (target)
-        os.cp(VERSION_H_BAK, VERSION_H)
-        os.rm(VERSION_H_BAK)
+        local tag = os.iorun("git describe --tags --abbrev=0 --always")
+        local major, minor, patch = tag:match("v(%d+)%.(%d+)%.(%d+)")
+        if not major then
+            print("Failed to parse version tag, using 0.0.0")
+            major, minor, patch = 0, 0, 0
+        end
+        target:set("configvar", "LITELOADER_VERSION_MAJOR", major)
+        target:set("configvar", "LITELOADER_VERSION_MINOR", minor)
+        target:set("configvar", "LITELOADER_VERSION_PATCH", patch)
     end)
 
 task("bds-lib")
