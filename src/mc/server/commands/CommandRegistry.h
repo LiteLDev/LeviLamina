@@ -32,6 +32,7 @@ class CommandWildcardInt;
 class BlockStateCommandParam;
 class Packet;
 class RelativeFloat;
+
 class CommandRegistry {
 public:
     // CommandRegistry inner types declare
@@ -332,10 +333,17 @@ public:
 
     struct RegistryState {
     public:
-        // prevent constructor by default
-        RegistryState& operator=(RegistryState const&);
-        RegistryState(RegistryState const&);
-        RegistryState();
+        uint              signatureCount;        // this+0x0
+        uint              enumValueCount;        // this+0x4
+        uint              postfixCount;          // this+0x8
+        uint              enumCount;             // this+0xC
+        uint              factorizationCount;    // this+0x10
+        uint              optionalCount;         // this+0x14
+        uint              ruleCount;             // this+0x18
+        uint              softEnumCount;         // this+0x1C
+        uint              constraintCount;       // this+0x20
+        std::vector<uint> constrainedValueCount; // this+0x28
+        std::vector<uint> softEnumValuesCount;   // this+0x40
 
     public:
         // NOLINTBEGIN
@@ -413,7 +421,7 @@ public:
     std::unordered_map<uchar, uchar>                            mAllowEmptySymbols;            // this+0x308
     std::function<void(CommandFlag&, std::string const&)>       mCommandOverrideFunctor;       // this+0x348
 
-    // 以下为指令参数重载部分
+    // following is the command parameter overloading
 
     template <typename T>
     inline static std::unique_ptr<Command> allocateCommand() {
@@ -428,7 +436,7 @@ public:
         registerOverload(name, &allocateCommand<T>, {params...});
     };
 
-    // 以下部分为指令参数枚举添加部分
+    // following sections add sections for directive parameter enumeration
 
     template <typename Type>
     struct DefaultIdConverter {
@@ -505,7 +513,7 @@ public:
         return this;
     }
 
-    // 以下为CommandParameterData的ParseFunction需要的函数
+    // following are the functions required by CommandParameterData's ParseFunction
     template <typename T>
     bool
     parse(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
@@ -606,12 +614,12 @@ public:
         BlockStateCommandParam>>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
         const;
 
-    // 其余LLAPI部分
-    LLAPI std::vector<std::string> getEnumNames();
-    LLAPI std::vector<std::string> getSoftEnumNames();
-    LLAPI std::vector<std::string> getEnumValues(std::string const& name);
-    LLAPI std::vector<std::string> getSoftEnumValues(std::string const& name);
-    LLAPI std::string getCommandFullName(std::string const& name);
+    // API
+    LLNDAPI std::vector<std::string> getEnumNames();
+    LLNDAPI std::vector<std::string> getSoftEnumNames();
+    LLNDAPI std::vector<std::string> getEnumValues(std::string const& name);
+    LLNDAPI std::vector<std::string> getSoftEnumValues(std::string const& name);
+    LLNDAPI std::string getCommandFullName(std::string const& name);
     // Experiment
     LLAPI bool unregisterCommand(std::string const& name);
 
