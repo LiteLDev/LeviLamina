@@ -47,8 +47,7 @@ public:
         if (json.is_null()) {
             return false;
         }
-        auto formPacket = ModalFormRequestPacket(id, json.dump());
-        player.sendNetworkPacket(formPacket);
+        player.send<ModalFormRequestPacket>(id, json.dump());
         return true;
     }
 
