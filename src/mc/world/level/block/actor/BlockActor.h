@@ -1,10 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/block/utils/BlockActorType.h"
 
 // auto generated inclusion list
 #include "mc/world/level/block/utils/BlockActorType.h"
+
+class CompoundTag;
+class BlockSource;
+class BlockPos;
 
 class BlockActor {
 public:

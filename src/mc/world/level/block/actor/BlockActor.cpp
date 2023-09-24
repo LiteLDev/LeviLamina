@@ -31,9 +31,9 @@ void BlockActor::refresh(optional_ref<class BlockSource> blockSourceRef) {
         return;
     }
 
-    auto chest = dynamic_cast<ChestBlockActor*>(this);
+    auto chest = (ChestBlockActor*)(this);
 
-    if (chest == nullptr || !chest->isLargeChest()) {
+    if (!chest->isLargeChest()) {
         return;
     }
     auto pairChest = blockSource.getBlockEntity(chest->getPairedChestPosition());
@@ -41,7 +41,6 @@ void BlockActor::refresh(optional_ref<class BlockSource> blockSourceRef) {
     if (pairChest == nullptr) {
         return;
     }
-
     auto subPacket{pairChest->getServerUpdatePacket(blockSource)};
 
     if (subPacket != nullptr) {
