@@ -10,7 +10,8 @@
 
 class ResourcePacksInfoPacket : public ::Packet {
 public:
-    PacksInfoData mData; // this+0x30
+    PacksInfoData mData;
+    std::vector<std::pair<std::string, std::string>> mCDNUrls;
 
     // prevent constructor by default
     ResourcePacksInfoPacket& operator=(ResourcePacksInfoPacket const&);

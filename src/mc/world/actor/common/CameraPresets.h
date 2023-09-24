@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world//actor/common/CameraPreset.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
@@ -36,6 +37,8 @@ public:
     };
 
 public:
+    std::vector<CameraPreset> mList;
+
     // prevent constructor by default
     CameraPresets& operator=(CameraPresets const&);
     CameraPresets(CameraPresets const&);

@@ -8,9 +8,20 @@
 struct CameraPreset {
 public:
     // CameraPreset inner types define
-    enum class AudioListener {};
+    enum class AudioListener : uchar {
+        CAMERA = 0x0,
+        PLAYER = 0x1,
+    };
 
 public:
+    std::string mIdentifier;
+    std::string mParentPreset;
+    std::optional<Vec3> mPos;
+    std::optional<float> mYaw;
+    std::optional<float> mPitch;
+    std::optional<AudioListener> mListener;
+    std::optional<bool> playEffect;
+
     // prevent constructor by default
     CameraPreset();
 

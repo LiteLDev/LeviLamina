@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/nbt/CompoundTag.h"
+#include "mc/world/actor/common/CameraPresets.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -10,7 +10,8 @@
 
 class CameraPresetsPacket : public ::Packet {
 public:
-    CompoundTag mData; // this+0x30
+    CameraPresets mData;
+    std::vector<CameraPresets::CameraList> mList;
 
     // prevent constructor by default
     CameraPresetsPacket& operator=(CameraPresetsPacket const&);

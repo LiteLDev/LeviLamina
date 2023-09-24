@@ -30,6 +30,10 @@ public:
         // FadeInstruction inner types define
         struct ColorOption {
         public:
+            float r;
+            float g;
+            float b;
+
             // prevent constructor by default
             ColorOption& operator=(ColorOption const&);
             ColorOption(ColorOption const&);
@@ -50,6 +54,10 @@ public:
 
         struct TimeOption {
         public:
+            float mFadeInTime;
+            float mWaitTime;
+            float mFadeOutTime;
+
             // prevent constructor by default
             TimeOption& operator=(TimeOption const&);
             TimeOption(TimeOption const&);
@@ -69,6 +77,9 @@ public:
         };
 
     public:
+        std::optional<TimeOption> mTimeData;
+        std::optional<ColorOption> mColor;
+
         // prevent constructor by default
         FadeInstruction& operator=(FadeInstruction const&);
         FadeInstruction(FadeInstruction const&);
@@ -103,6 +114,9 @@ public:
         // SetInstruction inner types define
         struct EaseOption {
         public:
+            uchar mType;
+            float mTime;
+
             // prevent constructor by default
             EaseOption& operator=(EaseOption const&);
             EaseOption(EaseOption const&);
@@ -123,6 +137,8 @@ public:
 
         struct FacingOption {
         public:
+            Vec3 mFacing;
+
             // prevent constructor by default
             FacingOption& operator=(FacingOption const&);
             FacingOption(FacingOption const&);
@@ -140,6 +156,8 @@ public:
 
         struct PosOption {
         public:
+            Vec3 mPos;
+
             // prevent constructor by default
             PosOption& operator=(PosOption const&);
             PosOption(PosOption const&);
@@ -157,6 +175,8 @@ public:
 
         struct RotOption {
         public:
+            Vec2 mRot;
+
             // prevent constructor by default
             RotOption& operator=(RotOption const&);
             RotOption(RotOption const&);
@@ -176,6 +196,13 @@ public:
         };
 
     public:
+        std::optional<uint>        mPreset;
+        std::optional<EaseOption>   mEase;
+        std::optional<PosOption>    mPos;
+        std::optional<RotOption>    mRot;
+        std::optional<FacingOption> mFacing;
+        std::optional<bool>         mDefaul;
+
         // prevent constructor by default
         SetInstruction(SetInstruction const&);
         SetInstruction();
@@ -203,6 +230,9 @@ public:
     };
 
 public:
+    std::optional<SetInstruction> mSetInstruction;
+    std::optional<FadeInstruction> mFadeInstruction;
+
     // prevent constructor by default
     CameraInstruction& operator=(CameraInstruction const&);
     CameraInstruction(CameraInstruction const&);
