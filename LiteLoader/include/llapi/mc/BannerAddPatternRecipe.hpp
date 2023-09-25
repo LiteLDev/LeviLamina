@@ -6,7 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
-#include "Recipe.hpp"
+#include "MultiRecipe.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +17,7 @@
  * @brief MC class BannerAddPatternRecipe.
  *
  */
-class BannerAddPatternRecipe : public Recipe {
+class BannerAddPatternRecipe : public MultiRecipe {
 
 #define AFTER_EXTRA
 // Add Member There

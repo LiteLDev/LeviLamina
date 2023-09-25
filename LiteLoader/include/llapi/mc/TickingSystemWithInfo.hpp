@@ -28,10 +28,6 @@ public:
 
 public:
     /**
-     * @symbol ??0TickingSystemWithInfo\@\@QEAA\@$$QEAU0\@\@Z
-     */
-    MCAPI TickingSystemWithInfo(struct TickingSystemWithInfo &&);
-    /**
      * @symbol ??1TickingSystemWithInfo\@\@QEAA\@XZ
      */
     MCAPI ~TickingSystemWithInfo();

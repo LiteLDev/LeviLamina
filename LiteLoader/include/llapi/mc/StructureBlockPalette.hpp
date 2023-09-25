@@ -44,17 +44,9 @@ public:
      */
     MCAPI StructureBlockPalette(class StructureBlockPalette &&);
     /**
-     * @symbol ?addBlockPositionData\@StructureBlockPalette\@\@QEAAX_KUBlockPositionData\@1\@\@Z
-     */
-    MCAPI void addBlockPositionData(unsigned __int64, struct StructureBlockPalette::BlockPositionData);
-    /**
      * @symbol ?addMapping\@StructureBlockPalette\@\@QEAA_KV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI unsigned __int64 addMapping(std::unique_ptr<class CompoundTag>);
-    /**
-     * @symbol ?getAllBlockPositionData\@StructureBlockPalette\@\@QEBAAEBV?$unordered_map\@_KUBlockPositionData\@StructureBlockPalette\@\@U?$hash\@_K\@std\@\@U?$equal_to\@_K\@4\@V?$allocator\@U?$pair\@$$CB_KUBlockPositionData\@StructureBlockPalette\@\@\@std\@\@\@4\@\@std\@\@XZ
-     */
-    MCAPI class std::unordered_map<unsigned __int64, struct StructureBlockPalette::BlockPositionData, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, struct StructureBlockPalette::BlockPositionData>>> const & getAllBlockPositionData() const;
     /**
      * @symbol ?getBlock\@StructureBlockPalette\@\@QEBAAEBVBlock\@\@AEBVBlockPalette\@\@_KV?$NonOwnerPointer\@VIUnknownBlockTypeRegistry\@\@\@Bedrock\@\@\@Z
      */
@@ -63,14 +55,6 @@ public:
      * @symbol ?getBlockPositionData\@StructureBlockPalette\@\@QEBAPEBUBlockPositionData\@1\@_K\@Z
      */
     MCAPI struct StructureBlockPalette::BlockPositionData const * getBlockPositionData(unsigned __int64) const;
-    /**
-     * @symbol ?getSize\@StructureBlockPalette\@\@QEBA_KXZ
-     */
-    MCAPI unsigned __int64 getSize() const;
-    /**
-     * @symbol ?load\@StructureBlockPalette\@\@QEAA_NAEBVCompoundTag\@\@H\@Z
-     */
-    MCAPI bool load(class CompoundTag const &, int);
     /**
      * @symbol ?save\@StructureBlockPalette\@\@QEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
@@ -81,10 +65,6 @@ public:
     MCAPI ~StructureBlockPalette();
 
 //protected:
-    /**
-     * @symbol ?_parseBlockPalette\@StructureBlockPalette\@\@IEAA?AW4StructureBlockPaletteLoadResult\@\@AEBVCompoundTag\@\@\@Z
-     */
-    MCAPI enum class StructureBlockPaletteLoadResult _parseBlockPalette(class CompoundTag const &);
     /**
      * @symbol ?_parseBlockPositionData\@StructureBlockPalette\@\@IEAA?AW4StructureBlockPaletteLoadResult\@\@AEBVCompoundTag\@\@H\@Z
      */

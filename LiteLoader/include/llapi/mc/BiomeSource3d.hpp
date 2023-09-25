@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "BiomeSource.hpp"
 
 #define BEFORE_EXTRA
 
@@ -14,7 +15,7 @@
  * @brief MC class BiomeSource3d.
  *
  */
-class BiomeSource3d {
+class BiomeSource3d : public BiomeSource {
 
 #define AFTER_EXTRA
 

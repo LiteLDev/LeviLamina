@@ -79,12 +79,4 @@ public:
      */
     MCAPI void write(class BinaryStream &) const;
 
-//private:
-    /**
-     * @symbol ?getItemStack\@NetworkItemStackDescriptor\@\@AEBA?AVItemStack\@\@AEBVBlockPalette\@\@\@Z
-     */
-    MCAPI class ItemStack getItemStack(class BlockPalette const &) const;
-
-private:
-
 };

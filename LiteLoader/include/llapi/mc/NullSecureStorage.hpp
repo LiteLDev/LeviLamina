@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "SecureStorage.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class NullSecureStorage.
  *
  */
-class NullSecureStorage {
+class NullSecureStorage : public SecureStorage {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -29,23 +30,30 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NULLSECURESTORAGE
     /**
+     * @vftbl 0
+     * @symbol __unk_vfn_0
+     */
+    virtual void __unk_vfn_0();
+    /**
+     * @vftbl 1
      * @symbol ?add\@NullSecureStorage\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
-    MCVAPI bool add(std::string const &, std::string const &);
+    virtual bool add(std::string const &, std::string const &);
     /**
+     * @vftbl 2
      * @symbol ?addOrUpdate\@NullSecureStorage\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
-    MCVAPI bool addOrUpdate(std::string const &, std::string const &);
+    virtual bool addOrUpdate(std::string const &, std::string const &);
     /**
-     * @symbol ?get\@NullSecureStorage\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV23\@\@Z
-     */
-    MCVAPI bool get(std::string const &, std::string &);
-    /**
+     * @vftbl 3
      * @symbol ?remove\@NullSecureStorage\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI bool remove(std::string const &);
-#endif
+    virtual bool remove(std::string const &);
+    /**
+     * @vftbl 4
+     * @symbol ?get\@NullSecureStorage\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV23\@\@Z
+     */
+    virtual bool get(std::string const &, std::string &);
 
 };

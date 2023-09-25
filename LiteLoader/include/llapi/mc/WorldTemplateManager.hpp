@@ -7,6 +7,7 @@
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
 #include "Core.hpp"
+#include "IWorldTemplateManager.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +18,7 @@
  * @brief MC class WorldTemplateManager.
  *
  */
-class WorldTemplateManager {
+class WorldTemplateManager : public IWorldTemplateManager {
 
 #define AFTER_EXTRA
 // Add Member There

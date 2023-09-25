@@ -5,6 +5,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Json.hpp"
+#include "OnHitSubcomponent.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +17,7 @@
  * @brief MC class RemoveOnHitSubcomponent.
  *
  */
-class RemoveOnHitSubcomponent {
+class RemoveOnHitSubcomponent : public OnHitSubcomponent {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -35,14 +37,14 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?readfromJSON\@RemoveOnHitSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
-    virtual void __unk_vfn_1();
+    virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?writetoJSON\@RemoveOnHitSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
-    virtual void __unk_vfn_2();
+    virtual void writetoJSON(class Json::Value &) const;
     /**
      * @vftbl 3
      * @symbol ?doOnHitEffect\@RemoveOnHitSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
@@ -53,16 +55,6 @@ public:
      * @symbol ?getName\@RemoveOnHitSubcomponent\@\@UEAAPEBDXZ
      */
     virtual char const * getName();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEONHITSUBCOMPONENT
-    /**
-     * @symbol ?readfromJSON\@RemoveOnHitSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
-     */
-    MCVAPI void readfromJSON(class Json::Value &, class SemVersion const &);
-    /**
-     * @symbol ?writetoJSON\@RemoveOnHitSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
-     */
-    MCVAPI void writetoJSON(class Json::Value &) const;
-#endif
     /**
      * @symbol ??0RemoveOnHitSubcomponent\@\@QEAA\@XZ
      */

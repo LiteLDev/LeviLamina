@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 
@@ -25,16 +26,12 @@ public:
 
 public:
     /**
-     * @symbol ??9CompoundBlockVolumeItem\@\@QEBA_NAEBV0\@\@Z
-     */
-    MCAPI bool operator!=(class CompoundBlockVolumeItem const &) const;
-    /**
      * @symbol ??8CompoundBlockVolumeItem\@\@QEBA_NAEBV0\@\@Z
      */
     MCAPI bool operator==(class CompoundBlockVolumeItem const &) const;
     /**
-     * @symbol ?bindType\@CompoundBlockVolumeItem\@\@SAXXZ
+     * @symbol ?bindType\@CompoundBlockVolumeItem\@\@SAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(struct cereal::ReflectionCtx &);
 
 };

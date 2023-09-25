@@ -30,13 +30,13 @@ public:
 
 public:
     /**
-     * @symbol ?isAffectedByGravity\@PhysicsComponent\@\@QEBA_NAEBUIActorMovementProxy\@\@\@Z
+     * @symbol ?isAffectedByGravity\@PhysicsComponent\@\@QEBA_NAEBUSynchedActorDataComponent\@\@\@Z
      */
-    MCAPI bool isAffectedByGravity(struct IActorMovementProxy const &) const;
+    MCAPI bool isAffectedByGravity(struct SynchedActorDataComponent const &) const;
     /**
-     * @symbol ?setAffectedByGravity\@PhysicsComponent\@\@QEBAXAEAUIActorMovementProxy\@\@_N\@Z
+     * @symbol ?setAffectedByGravity\@PhysicsComponent\@\@QEBAXAEAUSynchedActorDataComponent\@\@_N\@Z
      */
-    MCAPI void setAffectedByGravity(struct IActorMovementProxy &, bool) const;
+    MCAPI void setAffectedByGravity(struct SynchedActorDataComponent &, bool) const;
     /**
      * @symbol ?setHasCollision\@PhysicsComponent\@\@QEAAXAEAVActor\@\@_N\@Z
      */

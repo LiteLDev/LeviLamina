@@ -73,9 +73,9 @@ public:
     virtual bool isDestructive(int) const;
     /**
      * @vftbl 57
-     * @symbol ?isLiquidClipItem\@BucketItem\@\@UEBA_NH\@Z
+     * @symbol ?isLiquidClipItem\@BucketItem\@\@UEBA_NXZ
      */
-    virtual bool isLiquidClipItem(int) const;
+    virtual bool isLiquidClipItem() const;
     /**
      * @vftbl 66
      * @symbol __unk_vfn_66
@@ -211,9 +211,9 @@ public:
      */
     MCAPI void addBucketEntitySaveData(class Actor &, class ItemStack &) const;
     /**
-     * @symbol ?readBucketEntitySaveData\@BucketItem\@\@IEBA_NAEAVBlockSource\@\@PEAVActor\@\@EVBlockPos\@\@AEBVItemInstance\@\@\@Z
+     * @symbol ?readBucketEntitySaveData\@BucketItem\@\@IEBA_NAEAVBlockSource\@\@PEAVActor\@\@VBlockPos\@\@AEBVItemInstance\@\@\@Z
      */
-    MCAPI bool readBucketEntitySaveData(class BlockSource &, class Actor *, unsigned char, class BlockPos, class ItemInstance const &) const;
+    MCAPI bool readBucketEntitySaveData(class BlockSource &, class Actor *, class BlockPos, class ItemInstance const &) const;
 
 //private:
     /**

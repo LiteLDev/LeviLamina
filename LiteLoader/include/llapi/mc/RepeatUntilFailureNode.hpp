@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "BehaviorNode.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class RepeatUntilFailureNode.
  *
  */
-class RepeatUntilFailureNode {
+class RepeatUntilFailureNode : public BehaviorNode {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -25,6 +26,7 @@ class RepeatUntilFailureNode {
 public:
     class RepeatUntilFailureNode& operator=(class RepeatUntilFailureNode const &) = delete;
     RepeatUntilFailureNode(class RepeatUntilFailureNode const &) = delete;
+    RepeatUntilFailureNode() = delete;
 #endif
 
 public:
@@ -43,9 +45,5 @@ public:
      * @symbol ?initializeFromDefinition\@RepeatUntilFailureNode\@\@MEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
-    /**
-     * @symbol ??0RepeatUntilFailureNode\@\@QEAA\@XZ
-     */
-    MCAPI RepeatUntilFailureNode();
 
 };

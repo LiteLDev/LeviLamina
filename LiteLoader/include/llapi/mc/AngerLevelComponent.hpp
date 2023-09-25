@@ -27,13 +27,13 @@ public:
 
 public:
     /**
-     * @symbol ??0AngerLevelComponent\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI AngerLevelComponent(class AngerLevelComponent const &);
-    /**
      * @symbol ??0AngerLevelComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI AngerLevelComponent(class AngerLevelComponent &&);
+    /**
+     * @symbol ??0AngerLevelComponent\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI AngerLevelComponent(class AngerLevelComponent const &);
     /**
      * @symbol ?addAdditionalSaveData\@AngerLevelComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */

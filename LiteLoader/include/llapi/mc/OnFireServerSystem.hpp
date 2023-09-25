@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "OnFireSystem.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class OnFireServerSystem.
  *
  */
-class OnFireServerSystem {
+class OnFireServerSystem : public OnFireSystem {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -47,9 +48,13 @@ public:
 
 //private:
     /**
-     * @symbol ?_tickServer\@OnFireServerSystem\@\@CAXAEAVEntityContext\@\@AEAVActorOwnerComponent\@\@AEAUOnFireComponent\@\@\@Z
+     * @symbol ?_tickServer\@OnFireServerSystem\@\@CAXAEAVEntityContext\@\@AEAVActorOwnerComponent\@\@AEAUOnFireComponent\@\@V?$Optional\@$$CBUAbilitiesComponent\@\@\@\@\@Z
      */
-    MCAPI static void _tickServer(class EntityContext &, class ActorOwnerComponent &, struct OnFireComponent &);
+    MCAPI static void _tickServer(class EntityContext &, class ActorOwnerComponent &, struct OnFireComponent &, class Optional<struct AbilitiesComponent const>);
+    /**
+     * @symbol ?_tickServerImpl\@OnFireServerSystem\@\@CAX_NAEAVEntityContext\@\@AEAVActor\@\@AEAUOnFireComponent\@\@V?$optional_ref\@$$CBUAbilitiesComponent\@\@\@\@\@Z
+     */
+    MCAPI static void _tickServerImpl(bool, class EntityContext &, class Actor &, struct OnFireComponent &, class optional_ref<struct AbilitiesComponent const>);
 
 private:
 

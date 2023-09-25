@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "EventResponseFactory.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class ItemEventResponseFactory.
  *
  */
-class ItemEventResponseFactory {
+class ItemEventResponseFactory : public EventResponseFactory {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -44,5 +45,11 @@ public:
      * @symbol ?initSchema\@ItemEventResponseFactory\@\@UEAAXXZ
      */
     virtual void initSchema();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMEVENTRESPONSEFACTORY
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~ItemEventResponseFactory();
+#endif
 
 };

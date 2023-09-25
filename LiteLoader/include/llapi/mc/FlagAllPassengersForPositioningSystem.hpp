@@ -25,12 +25,8 @@ public:
 
 public:
     /**
-     * @symbol ?_tick\@FlagAllPassengersForPositioningSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@UPassengerComponent\@\@\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UPositionPassengerRequestComponent\@\@\@\@\@Z
+     * @symbol ?createSystem\@FlagAllPassengersForPositioningSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static void _tick(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, struct PassengerComponent>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct PositionPassengerRequestComponent>);
-    /**
-     * @symbol ?create\@FlagAllPassengersForPositioningSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI static struct TickingSystemWithInfo create();
+    MCAPI static struct TickingSystemWithInfo createSystem();
 
 };

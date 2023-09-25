@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -72,10 +73,6 @@ public:
      */
     MCAPI ItemDescriptor(struct ItemTag const &);
     /**
-     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVItem\@\@H\@Z
-     */
-    MCAPI ItemDescriptor(class Item const &, int);
-    /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVBlockLegacy\@\@\@Z
      */
     MCAPI ItemDescriptor(class BlockLegacy const &);
@@ -91,6 +88,10 @@ public:
      * @symbol ??0ItemDescriptor\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI ItemDescriptor(class ItemDescriptor &&);
+    /**
+     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVItem\@\@H\@Z
+     */
+    MCAPI ItemDescriptor(class Item const &, int);
     /**
      * @symbol ?forEachItemUntil\@ItemDescriptor\@\@QEBA_NV?$function\@$$A6A_NAEBVItem\@\@F\@Z\@std\@\@\@Z
      */
@@ -148,13 +149,13 @@ public:
      */
     MCAPI bool isValid(bool) const;
     /**
-     * @symbol ??4ItemDescriptor\@\@QEAAXAEBV0\@\@Z
-     */
-    MCAPI void operator=(class ItemDescriptor const &);
-    /**
      * @symbol ??4ItemDescriptor\@\@QEAAX$$QEAV0\@\@Z
      */
     MCAPI void operator=(class ItemDescriptor &&);
+    /**
+     * @symbol ??4ItemDescriptor\@\@QEAAXAEBV0\@\@Z
+     */
+    MCAPI void operator=(class ItemDescriptor const &);
     /**
      * @symbol ??8ItemDescriptor\@\@QEBA_NAEBV0\@\@Z
      */
@@ -172,9 +173,9 @@ public:
      */
     MCAPI class std::optional<class CompoundTag> save() const;
     /**
-     * @symbol ?bindType\@ItemDescriptor\@\@SAXXZ
+     * @symbol ?bindType\@ItemDescriptor\@\@SAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(struct cereal::ReflectionCtx &);
 
 //private:
     /**

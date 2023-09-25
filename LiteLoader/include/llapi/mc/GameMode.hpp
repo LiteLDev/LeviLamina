@@ -227,6 +227,10 @@ public:
      * @symbol ?_enableBlockBreakDelay\@GameMode\@\@AEBA_NXZ
      */
     MCAPI bool _enableBlockBreakDelay() const;
+    /**
+     * @symbol ?_sendTryUseItemOnEvent\@GameMode\@\@AEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEBVBlockPos\@\@EAEBVVec3\@\@PEBVBlock\@\@_N\@Z
+     */
+    MCAPI class InteractionResult _sendTryUseItemOnEvent(class ItemStack &, class BlockPos const &, unsigned char, class Vec3 const &, class Block const *, bool) const;
 
 private:
 

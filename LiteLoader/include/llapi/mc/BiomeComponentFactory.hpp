@@ -30,10 +30,6 @@ public:
 
 public:
     /**
-     * @symbol ??0BiomeComponentFactory\@\@QEAA\@W4FactoryScope\@0\@\@Z
-     */
-    MCAPI BiomeComponentFactory(enum class BiomeComponentFactory::FactoryScope);
-    /**
      * @symbol ?processDataComponents\@BiomeComponentFactory\@\@QEBAXAEAVBiome\@\@AEAVIWorldRegistriesProvider\@\@AEAVCompoundTag\@\@\@Z
      */
     MCAPI void processDataComponents(class Biome &, class IWorldRegistriesProvider &, class CompoundTag &) const;

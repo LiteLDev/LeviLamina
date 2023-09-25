@@ -39,13 +39,13 @@ public:
      */
     MCAPI CreativeItemRegistry();
     /**
-     * @symbol ?findCreativeItemEntry\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemEntry\@\@AEBVItemInstance\@\@\@Z
-     */
-    MCAPI class CreativeItemEntry * findCreativeItemEntry(class ItemInstance const &);
-    /**
      * @symbol ?findCreativeItemEntry\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemEntry\@\@AEBV?$TypedServerNetId\@UCreativeItemNetIdTag\@\@I$0A\@\@\@\@Z
      */
     MCAPI class CreativeItemEntry * findCreativeItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const &);
+    /**
+     * @symbol ?findCreativeItemEntry\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemEntry\@\@AEBVItemInstance\@\@\@Z
+     */
+    MCAPI class CreativeItemEntry * findCreativeItemEntry(class ItemInstance const &);
     /**
      * @symbol ?getCreativeCategory\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemGroupCategory\@\@W4CreativeItemCategory\@\@\@Z
      */
@@ -94,6 +94,10 @@ public:
      * @symbol ?mCreativeListMutex\@CreativeItemRegistry\@\@2Vmutex\@std\@\@A
      */
     MCAPI static class std::mutex mCreativeListMutex;
+    /**
+     * @symbol ?reset\@CreativeItemRegistry\@\@SAXXZ
+     */
+    MCAPI static void reset();
     /**
      * @symbol ?setCurrentRegistry\@CreativeItemRegistry\@\@SAX$$QEAV?$unique_ptr\@VCreativeItemRegistry\@\@U?$default_delete\@VCreativeItemRegistry\@\@\@std\@\@\@std\@\@\@Z
      */

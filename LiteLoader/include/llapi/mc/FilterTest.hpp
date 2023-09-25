@@ -48,7 +48,7 @@ public:
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
      * @vftbl 2
-     * @symbol ?evaluate\@ActorHealthTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
+     * @symbol ?evaluate\@FilterTestLightLevel\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const = 0;
     /**
@@ -58,7 +58,7 @@ public:
     virtual void finalizeParsedValue(class IWorldRegistriesProvider &);
     /**
      * @vftbl 4
-     * @symbol ?getName\@ActorHealthTest\@\@UEBA?AV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@XZ
+     * @symbol ?getName\@FilterTestLightLevel\@\@UEBA?AV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@XZ
      */
     virtual class std::basic_string_view<char, struct std::char_traits<char>> getName() const = 0;
     /**
@@ -95,6 +95,10 @@ public:
      * @symbol ?_testValuesWithOperator\@FilterTest\@\@IEBA_NHH\@Z
      */
     MCAPI bool _testValuesWithOperator(int, int) const;
+    /**
+     * @symbol ?_testValuesWithOperator\@FilterTest\@\@IEBA_NAEBVHashedString\@\@0\@Z
+     */
+    MCAPI bool _testValuesWithOperator(class HashedString const &, class HashedString const &) const;
 
 protected:
 

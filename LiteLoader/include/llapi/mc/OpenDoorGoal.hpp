@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "DoorInteractGoal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class OpenDoorGoal.
  *
  */
-class OpenDoorGoal {
+class OpenDoorGoal : public DoorInteractGoal {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -44,11 +45,6 @@ public:
      * @symbol ?canContinueToUse\@OpenDoorGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol ?start\@OpenDoorGoal\@\@UEAAXXZ

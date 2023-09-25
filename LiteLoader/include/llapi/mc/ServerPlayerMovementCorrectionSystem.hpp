@@ -28,9 +28,9 @@ public:
 
 public:
     /**
-     * @symbol ?_afterMovementSimulation\@ServerPlayerMovementCorrectionSystem\@\@SAXAEAVPlayer\@\@AEBVPlayerAuthInputPacket\@\@AEBVReplayStateComponent\@\@\@Z
+     * @symbol ?_afterMovementSimulation\@ServerPlayerMovementCorrectionSystem\@\@SAXAEAVPlayer\@\@AEBVPlayerAuthInputPacket\@\@AEBVReplayStateComponent\@\@AEAUStateVectorComponent\@\@\@Z
      */
-    MCAPI static void _afterMovementSimulation(class Player &, class PlayerAuthInputPacket const &, class ReplayStateComponent const &);
+    MCAPI static void _afterMovementSimulation(class Player &, class PlayerAuthInputPacket const &, class ReplayStateComponent const &, struct StateVectorComponent &);
     /**
      * @symbol ?create\@ServerPlayerMovementCorrectionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */

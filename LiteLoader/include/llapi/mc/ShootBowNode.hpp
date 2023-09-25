@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "BehaviorNode.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class ShootBowNode.
  *
  */
-class ShootBowNode {
+class ShootBowNode : public BehaviorNode {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -25,6 +26,7 @@ class ShootBowNode {
 public:
     class ShootBowNode& operator=(class ShootBowNode const &) = delete;
     ShootBowNode(class ShootBowNode const &) = delete;
+    ShootBowNode() = delete;
 #endif
 
 public:
@@ -43,9 +45,5 @@ public:
      * @symbol ?initializeFromDefinition\@ShootBowNode\@\@EEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
-    /**
-     * @symbol ??0ShootBowNode\@\@QEAA\@XZ
-     */
-    MCAPI ShootBowNode();
 
 };

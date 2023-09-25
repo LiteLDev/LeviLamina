@@ -10,30 +10,23 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC class FlyTriggerSystem.
- *
- */
-class FlyTriggerSystem {
+
+namespace FlyTriggerSystem {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLYTRIGGERSYSTEM
-public:
-    class FlyTriggerSystem& operator=(class FlyTriggerSystem const &) = delete;
-    FlyTriggerSystem(class FlyTriggerSystem const &) = delete;
-    FlyTriggerSystem() = delete;
-#endif
-
-public:
     /**
-     * @symbol ?createSystem\@FlyTriggerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createActionSystem\@FlyTriggerSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI struct TickingSystemWithInfo createActionSystem();
     /**
-     * @symbol ?tickEntity\@FlyTriggerSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUActorUniqueIDComponent\@\@AEBUMoveInputComponent\@\@V?$Optional\@$$CBUPassengerComponent\@\@\@\@AEAUAbilitiesComponent\@\@AEAUFallDistanceComponent\@\@AEAUPlayerInputRequestComponent\@\@AEAUVanillaClientGameplayComponent\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@UVehicleComponent\@\@\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@USendPacketsComponent\@\@\@\@\@Z
+     * @symbol ?createIntentSystem\@FlyTriggerSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static void tickEntity(class StrictEntityContext const &, struct ActorUniqueIDComponent const &, struct MoveInputComponent const &, class Optional<struct PassengerComponent const>, struct AbilitiesComponent &, struct FallDistanceComponent &, struct PlayerInputRequestComponent &, struct VanillaClientGameplayComponent &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct VehicleComponent>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct SendPacketsComponent>);
+    MCAPI struct TickingSystemWithInfo createIntentSystem();
+    /**
+     * @symbol ?createRemovePermissionFlyFlagSystem\@FlyTriggerSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
+     */
+    MCAPI struct TickingSystemWithInfo createRemovePermissionFlyFlagSystem();
 
 };

@@ -26,6 +26,10 @@ namespace LevelUtils {
      */
     MCAPI int getDay(int);
     /**
+     * @symbol ?getMoonPhase\@LevelUtils\@\@YA?AW4MoonPhases\@\@AEBVILevel\@\@\@Z
+     */
+    MCAPI enum class MoonPhases getMoonPhase(class ILevel const &);
+    /**
      * @symbol ?getTimeOfDay\@LevelUtils\@\@YAHH\@Z
      */
     MCAPI int getTimeOfDay(int);

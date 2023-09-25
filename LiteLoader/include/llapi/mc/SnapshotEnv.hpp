@@ -104,12 +104,12 @@ public:
      * @vftbl 14
      * @symbol ?Schedule\@EnvWrapper\@leveldb\@\@UEAAXP6AXPEAX\@Z0\@Z
      */
-    virtual void Schedule(void ( *)(void *), void *);
+    virtual void Schedule(void (__cdecl *)(void *), void *);
     /**
      * @vftbl 15
      * @symbol ?StartThread\@EnvWrapper\@leveldb\@\@UEAAXP6AXPEAX\@Z0\@Z
      */
-    virtual void StartThread(void ( *)(void *), void *);
+    virtual void StartThread(void (__cdecl *)(void *), void *);
     /**
      * @vftbl 16
      * @symbol ?GetTestDirectory\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@PEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z

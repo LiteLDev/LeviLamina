@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "RakNet.hpp"
+#include "TcpProxy.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class RakTcpProxy.
  *
  */
-class RakTcpProxy {
+class RakTcpProxy : public TcpProxy {
 
 #define AFTER_EXTRA
 // Add Member There

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Json.hpp"
 #include "LootItemFunction.hpp"
 
 #define BEFORE_EXTRA
@@ -45,5 +46,38 @@ public:
      * @symbol ?apply\@LootingEnchantFunction\@\@UEAAXAEAVItemInstance\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
+    /**
+     * @vftbl 5
+     * @symbol __unk_vfn_5
+     */
+    virtual void __unk_vfn_5();
+    /**
+     * @vftbl 6
+     * @symbol __unk_vfn_6
+     */
+    virtual void __unk_vfn_6();
+    /**
+     * @vftbl 7
+     * @symbol __unk_vfn_7
+     */
+    virtual void __unk_vfn_7();
+    /**
+     * @vftbl 8
+     * @symbol __unk_vfn_8
+     */
+    virtual void __unk_vfn_8();
+    /**
+     * @vftbl 9
+     * @symbol __unk_vfn_9
+     */
+    virtual void __unk_vfn_9();
+    /**
+     * @symbol ?getConditions\@LootItemFunction\@\@QEBAAEBV?$vector\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@XZ
+     */
+    MCAPI std::vector<std::unique_ptr<class LootItemCondition>> const & getConditions() const;
+    /**
+     * @symbol ?deserialize\@LootingEnchantFunction\@\@SA?AV?$unique_ptr\@VLootItemFunction\@\@U?$default_delete\@VLootItemFunction\@\@\@std\@\@\@std\@\@VValue\@Json\@\@AEAV?$vector\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@\@2\@\@3\@\@Z
+     */
+    MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 };

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "ContainerScreenValidation.hpp"
 
 #define BEFORE_EXTRA
 
@@ -14,7 +15,7 @@
  * @brief MC class ContainerScreenValidationCrafting.
  *
  */
-class ContainerScreenValidationCrafting {
+class ContainerScreenValidationCrafting : public ContainerScreenValidation {
 
 #define AFTER_EXTRA
 

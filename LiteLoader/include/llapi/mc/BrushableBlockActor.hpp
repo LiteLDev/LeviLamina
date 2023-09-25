@@ -5,13 +5,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "RandomizableBlockActorContainer.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
 
-class BrushableBlockActor {
+class BrushableBlockActor : public RandomizableBlockActorContainer {
 
 #define AFTER_EXTRA
 

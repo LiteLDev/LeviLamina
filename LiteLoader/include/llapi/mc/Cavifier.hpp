@@ -30,10 +30,6 @@ public:
 
 public:
     /**
-     * @symbol ??0Cavifier\@\@QEAA\@AEBVCavifierNoises\@\@MM\@Z
-     */
-    MCAPI Cavifier(class CavifierNoises const &, float, float);
-    /**
      * @symbol ?cavify\@Cavifier\@\@QEBAMVVec3\@\@HM\@Z
      */
     MCAPI float cavify(class Vec3, int, float) const;

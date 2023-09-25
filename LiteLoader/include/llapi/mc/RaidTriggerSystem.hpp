@@ -24,10 +24,6 @@ public:
 #endif
 
 public:
-    /**
-     * @symbol ?createSystem\@RaidTriggerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "ContainerValidationCommitObject.hpp"
 
 #define BEFORE_EXTRA
 
@@ -14,7 +15,7 @@
  * @brief MC class ExperienceRewardCommitObject.
  *
  */
-class ExperienceRewardCommitObject {
+class ExperienceRewardCommitObject : public ContainerValidationCommitObject {
 
 #define AFTER_EXTRA
 

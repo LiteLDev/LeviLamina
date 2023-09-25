@@ -48,14 +48,14 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?writeString\@VarIntDataOutput\@\@UEAAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    virtual void __unk_vfn_1();
+    virtual void writeString(class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?writeLongString\@VarIntDataOutput\@\@UEAAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    virtual void __unk_vfn_2();
+    virtual void writeLongString(class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
      * @vftbl 3
      * @symbol ?writeFloat\@VarIntDataOutput\@\@UEAAXM\@Z
@@ -92,14 +92,6 @@ public:
      */
     virtual void writeBytes(void const *, unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VARINTDATAOUTPUT
-    /**
-     * @symbol ?writeLongString\@VarIntDataOutput\@\@UEAAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
-     */
-    MCVAPI void writeLongString(class std::basic_string_view<char, struct std::char_traits<char>>);
-    /**
-     * @symbol ?writeString\@VarIntDataOutput\@\@UEAAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
-     */
-    MCVAPI void writeString(class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
      * @symbol __unk_destructor_-1
      */

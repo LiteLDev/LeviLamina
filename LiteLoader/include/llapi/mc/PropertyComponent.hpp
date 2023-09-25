@@ -47,6 +47,18 @@ public:
      */
     MCAPI void applyPendingChanges(class std::unordered_map<unsigned __int64, class std::variant<int, float, bool, unsigned __int64>, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, class std::variant<int, float, bool, unsigned __int64>>>> const &);
     /**
+     * @symbol ?getBool\@PropertyComponent\@\@QEBA_N_K\@Z
+     */
+    MCAPI bool getBool(unsigned __int64) const;
+    /**
+     * @symbol ?getFloat\@PropertyComponent\@\@QEBAM_K\@Z
+     */
+    MCAPI float getFloat(unsigned __int64) const;
+    /**
+     * @symbol ?getInt\@PropertyComponent\@\@QEBAH_K\@Z
+     */
+    MCAPI int getInt(unsigned __int64) const;
+    /**
      * @symbol ?getMolangValue\@PropertyComponent\@\@QEBA_N_KAEAUMolangScriptArg\@\@\@Z
      */
     MCAPI bool getMolangValue(unsigned __int64, struct MolangScriptArg &) const;
@@ -55,9 +67,17 @@ public:
      */
     MCAPI enum class PropertyMetadata::ContainedType getPropertyType(unsigned __int64) const;
     /**
+     * @symbol ?getString\@PropertyComponent\@\@QEBAAEBVHashedString\@\@_K\@Z
+     */
+    MCAPI class HashedString const & getString(unsigned __int64) const;
+    /**
      * @symbol ?hasDirtyProperties\@PropertyComponent\@\@QEBA_NXZ
      */
     MCAPI bool hasDirtyProperties() const;
+    /**
+     * @symbol ??4PropertyComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     */
+    MCAPI class PropertyComponent & operator=(class PropertyComponent &&);
     /**
      * @symbol ?packAllSyncData\@PropertyComponent\@\@QEBA?AUPropertySyncData\@\@XZ
      */

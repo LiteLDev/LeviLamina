@@ -22,18 +22,11 @@ class LevelChunkMetaData {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCHUNKMETADATA
 public:
     class LevelChunkMetaData& operator=(class LevelChunkMetaData const &) = delete;
+    LevelChunkMetaData(class LevelChunkMetaData const &) = delete;
     LevelChunkMetaData() = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0LevelChunkMetaData\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI LevelChunkMetaData(class LevelChunkMetaData const &);
-    /**
-     * @symbol ?getCurrentHash\@LevelChunkMetaData\@\@QEBA_KXZ
-     */
-    MCAPI unsigned __int64 getCurrentHash() const;
     /**
      * @symbol ??1LevelChunkMetaData\@\@QEAA\@XZ
      */

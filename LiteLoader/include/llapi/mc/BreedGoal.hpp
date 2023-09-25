@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Goal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class BreedGoal.
  *
  */
-class BreedGoal {
+class BreedGoal : public Goal {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -45,16 +46,6 @@ public:
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
      * @vftbl 5
      * @symbol ?stop\@BreedGoal\@\@UEAAXXZ
      */
@@ -75,6 +66,10 @@ public:
     MCAPI BreedGoal(class Mob &, float);
 
 //private:
+    /**
+     * @symbol ?_breed\@BreedGoal\@\@AEAAXXZ
+     */
+    MCAPI void _breed();
     /**
      * @symbol ?_isCloseEnoughToBreed\@BreedGoal\@\@AEBA_NVVec3\@\@VVec2\@\@01\@Z
      */

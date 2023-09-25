@@ -46,17 +46,17 @@ public:
      */
     virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum class ChunkSource::LoadMode, bool);
     /**
-     * @vftbl 22
+     * @vftbl 23
      * @symbol ?isWithinWorldLimit\@WorldLimitChunkSource\@\@UEBA_NAEBVChunkPos\@\@\@Z
      */
     virtual bool isWithinWorldLimit(class ChunkPos const &) const;
     /**
-     * @vftbl 23
+     * @vftbl 24
      * @symbol ?getChunkMap\@WorldLimitChunkSource\@\@UEAAPEBV?$unordered_map\@VChunkPos\@\@V?$weak_ptr\@VLevelChunk\@\@\@std\@\@U?$hash\@VChunkPos\@\@\@3\@U?$equal_to\@VChunkPos\@\@\@3\@V?$allocator\@U?$pair\@$$CBVChunkPos\@\@V?$weak_ptr\@VLevelChunk\@\@\@std\@\@\@std\@\@\@3\@\@std\@\@XZ
      */
     virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const * getChunkMap();
     /**
-     * @vftbl 26
+     * @vftbl 27
      * @symbol ?canCreateViews\@WorldLimitChunkSource\@\@UEBA_NXZ
      */
     virtual bool canCreateViews() const;

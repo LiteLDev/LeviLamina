@@ -129,10 +129,6 @@ public:
      */
     MCAPI bool canTeleport(class GetCollisionShapeInterface const *, class BlockSource const &) const;
     /**
-     * @symbol ?getExitPosition\@EndGatewayBlockActor\@\@QEBA?AVBlockPos\@\@XZ
-     */
-    MCAPI class BlockPos getExitPosition() const;
-    /**
      * @symbol ?setExitPosition\@EndGatewayBlockActor\@\@QEAAXAEBVBlockPos\@\@\@Z
      */
     MCAPI void setExitPosition(class BlockPos const &);
@@ -156,10 +152,6 @@ public:
      * @symbol ?findExitPortal\@EndGatewayBlockActor\@\@SA?AVBlockPos\@\@AEAVWorldGenerator\@\@AEBV2\@\@Z
      */
     MCAPI static class BlockPos findExitPortal(class WorldGenerator &, class BlockPos const &);
-    /**
-     * @symbol ?findTallestBlock\@EndGatewayBlockActor\@\@SA?AVBlockPos\@\@AEAVBlockSource\@\@AEBV2\@H_N\@Z
-     */
-    MCAPI static class BlockPos findTallestBlock(class BlockSource &, class BlockPos const &, int, bool);
     /**
      * @symbol ?findValidSpawnAround\@EndGatewayBlockActor\@\@SA?AVBlockPos\@\@AEAVBlockSource\@\@AEBV2\@_NH\@Z
      */

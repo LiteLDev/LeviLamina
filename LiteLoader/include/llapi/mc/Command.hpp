@@ -52,6 +52,7 @@ public:
     Command(class Command const &) = delete;
 #endif
 
+
 public:
     /**
      * @vftbl 0

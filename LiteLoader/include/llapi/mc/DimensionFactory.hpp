@@ -6,13 +6,14 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
+#include "IDimensionFactory.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
 
-class DimensionFactory {
+class DimensionFactory : public IDimensionFactory {
 
 #define AFTER_EXTRA
 

@@ -65,13 +65,13 @@ public:
      */
     MCAPI AttributeModifier(class mce::UUID, std::string const &, float, enum class AttributeModifierOperation, enum class AttributeOperands, bool);
     /**
-     * @symbol ??0AttributeModifier\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI AttributeModifier(class AttributeModifier const &);
-    /**
      * @symbol ??0AttributeModifier\@\@QEAA\@XZ
      */
     MCAPI AttributeModifier();
+    /**
+     * @symbol ??0AttributeModifier\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI AttributeModifier(class AttributeModifier const &);
     /**
      * @symbol ??0AttributeModifier\@\@QEAA\@VUUID\@mce\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@MHH_N\@Z
      */

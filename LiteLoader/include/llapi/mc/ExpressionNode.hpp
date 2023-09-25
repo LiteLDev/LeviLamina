@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -46,33 +47,33 @@ class ExpressionNode {
 #undef AFTER_EXTRA
 public:
     /**
-     * @symbol ??0ExpressionNode\@\@QEAA\@XZ
-     */
-    MCAPI ExpressionNode();
-    /**
      * @symbol ??0ExpressionNode\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4MolangVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
      */
     MCAPI ExpressionNode(std::string const &, enum class MolangVersion, class gsl::span<class HashedString const, -1>);
-    /**
-     * @symbol ??0ExpressionNode\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI ExpressionNode(class ExpressionNode const &);
-    /**
-     * @symbol ??0ExpressionNode\@\@QEAA\@AEBVValue\@Json\@\@W4MolangVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
-     */
-    MCAPI ExpressionNode(class Json::Value const &, enum class MolangVersion, class gsl::span<class HashedString const, -1>);
     /**
      * @symbol ??0ExpressionNode\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSemVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
      */
     MCAPI ExpressionNode(std::string const &, class SemVersion const &, class gsl::span<class HashedString const, -1>);
     /**
-     * @symbol ??0ExpressionNode\@\@QEAA\@M\@Z
+     * @symbol ??0ExpressionNode\@\@QEAA\@AEBVValue\@Json\@\@W4MolangVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
      */
-    MCAPI ExpressionNode(float);
+    MCAPI ExpressionNode(class Json::Value const &, enum class MolangVersion, class gsl::span<class HashedString const, -1>);
+    /**
+     * @symbol ??0ExpressionNode\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI ExpressionNode(class ExpressionNode const &);
+    /**
+     * @symbol ??0ExpressionNode\@\@QEAA\@XZ
+     */
+    MCAPI ExpressionNode();
     /**
      * @symbol ??0ExpressionNode\@\@QEAA\@AEAUMolangScriptArg\@\@W4ExpressionOp\@\@\@Z
      */
     MCAPI ExpressionNode(struct MolangScriptArg &, enum class ExpressionOp);
+    /**
+     * @symbol ??0ExpressionNode\@\@QEAA\@M\@Z
+     */
+    MCAPI ExpressionNode(float);
     /**
      * @symbol ??0ExpressionNode\@\@QEAA\@$$QEAV0\@\@Z
      */
@@ -166,9 +167,9 @@ public:
      */
     MCAPI ~ExpressionNode();
     /**
-     * @symbol ?bindType\@ExpressionNode\@\@SAXXZ
+     * @symbol ?bindType\@ExpressionNode\@\@SAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(struct cereal::ReflectionCtx &);
     /**
      * @symbol ?buildExpressionOpTable\@ExpressionNode\@\@SAXXZ
      */
@@ -177,6 +178,10 @@ public:
      * @symbol ?fast_atof_positiveOnly\@ExpressionNode\@\@SAMAEAPEBD\@Z
      */
     MCAPI static float fast_atof_positiveOnly(char const *&);
+    /**
+     * @symbol ?getExperiments\@ExpressionNode\@\@SAAEAVExperiments\@\@XZ
+     */
+    MCAPI static class Experiments & getExperiments();
     /**
      * @symbol ?getOpFriendlyName\@ExpressionNode\@\@SAPEBDW4ExpressionOp\@\@\@Z
      */
@@ -255,10 +260,6 @@ public:
      * @symbol ?_validateChildrenAreNumerical\@ExpressionNode\@\@AEBA_NW4MolangVersion\@\@\@Z
      */
     MCAPI bool _validateChildrenAreNumerical(enum class MolangVersion) const;
-    /**
-     * @symbol ?executeMolangProgram\@ExpressionNode\@\@AEBAAEBUMolangScriptArg\@\@AEAVRenderParams\@\@AEAUMolangEvalParams\@\@\@Z
-     */
-    MCAPI struct MolangScriptArg const & executeMolangProgram(class RenderParams &, struct MolangEvalParams &) const;
     /**
      * @symbol ?findClosingOp\@ExpressionNode\@\@AEBA_NAEA_KW4ExpressionOp\@\@\@Z
      */

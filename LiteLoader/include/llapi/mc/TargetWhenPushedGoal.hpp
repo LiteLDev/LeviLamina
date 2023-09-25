@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Goal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class TargetWhenPushedGoal.
  *
  */
-class TargetWhenPushedGoal {
+class TargetWhenPushedGoal : public Goal {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -41,14 +42,14 @@ public:
     virtual bool canUse();
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?canContinueToUse\@TargetWhenPushedGoal\@\@UEAA_NXZ
      */
-    virtual void __unk_vfn_2();
+    virtual bool canContinueToUse();
     /**
      * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @symbol ?canBeInterrupted\@TargetWhenPushedGoal\@\@UEAA_NXZ
      */
-    virtual void __unk_vfn_3();
+    virtual bool canBeInterrupted();
     /**
      * @vftbl 4
      * @symbol ?start\@TargetWhenPushedGoal\@\@UEAAXXZ
@@ -60,19 +61,13 @@ public:
      */
     virtual void stop();
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?appendDebugInfo\@TargetWhenPushedGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETWHENPUSHEDGOAL
     /**
-     * @symbol ?canBeInterrupted\@TargetWhenPushedGoal\@\@UEAA_NXZ
+     * @symbol ??0TargetWhenPushedGoal\@\@QEAA\@AEAVMob\@\@V?$vector\@UMobDescriptor\@\@V?$allocator\@UMobDescriptor\@\@\@std\@\@\@std\@\@M\@Z
      */
-    MCVAPI bool canBeInterrupted();
-    /**
-     * @symbol ?canContinueToUse\@TargetWhenPushedGoal\@\@UEAA_NXZ
-     */
-    MCVAPI bool canContinueToUse();
-#endif
+    MCAPI TargetWhenPushedGoal(class Mob &, std::vector<struct MobDescriptor>, float);
 
 };

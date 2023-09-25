@@ -46,7 +46,7 @@ public:
      */
     virtual bool saveLiveChunk(class LevelChunk &);
     /**
-     * @vftbl 18
+     * @vftbl 19
      * @symbol ?acquireDiscarded\@LegacyChunkStorage\@\@UEAAXV?$unique_ptr\@VLevelChunk\@\@ULevelChunkFinalDeleter\@\@\@std\@\@\@Z
      */
     virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);

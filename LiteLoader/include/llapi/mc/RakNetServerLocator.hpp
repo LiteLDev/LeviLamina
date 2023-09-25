@@ -8,6 +8,7 @@
 #include "Bedrock.hpp"
 #include "RakPeerHelper.hpp"
 #include "RakNet.hpp"
+#include "ServerLocator.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -18,7 +19,7 @@
  * @brief MC class RakNetServerLocator.
  *
  */
-class RakNetServerLocator {
+class RakNetServerLocator : public ServerLocator {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -115,9 +116,9 @@ public:
     virtual float getPingTimeForGUID(std::string const &);
     /**
      * @vftbl 15
-     * @symbol ?checkCanConnectToCustomServerAsync\@RakNetServerLocator\@\@UEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HV?$function\@$$A6AX_N\@Z\@3\@\@Z
+     * @symbol ?checkCanConnectToCustomServerAsync\@RakNetServerLocator\@\@UEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HV?$function\@$$A6AXW4ServerConnectivityTestResult\@\@\@Z\@3\@\@Z
      */
-    virtual void checkCanConnectToCustomServerAsync(std::string, int, class std::function<void (bool)>);
+    virtual void checkCanConnectToCustomServerAsync(std::string, int, class std::function<void (enum class ServerConnectivityTestResult)>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKNETSERVERLOCATOR
     /**
      * @symbol __unk_destructor_-1
@@ -127,7 +128,7 @@ public:
     /**
      * @symbol ??0RakNetServerLocator\@\@QEAA\@AEAVRakNetConnector\@\@AEAVIPSupportInterface\@RakPeerHelper\@\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@_NW4RakNetServerLANVisibility\@\@W4PermissionLAN\@\@W4PermissionIPv6\@\@AEBV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@V?$function\@$$A6A?AV?$unique_ptr\@VRakPeerInterface\@RakNet\@\@P6AXPEAV12\@\@Z\@std\@\@XZ\@5\@\@Z
      */
-    MCAPI RakNetServerLocator(class RakNetConnector &, class RakPeerHelper::IPSupportInterface &, std::vector<std::string>, bool, enum class RakNetServerLANVisibility, enum class PermissionLAN, enum class PermissionIPv6, class Bedrock::NonOwnerPointer<class AppPlatform> const &, class std::function<class std::unique_ptr<class RakNet::RakPeerInterface, void ( *)(class RakNet::RakPeerInterface *)> (void)>);
+    MCAPI RakNetServerLocator(class RakNetConnector &, class RakPeerHelper::IPSupportInterface &, std::vector<std::string>, bool, enum class RakNetServerLANVisibility, enum class PermissionLAN, enum class PermissionIPv6, class Bedrock::NonOwnerPointer<class AppPlatform> const &, class std::function<class std::unique_ptr<class RakNet::RakPeerInterface, void (__cdecl *)(class RakNet::RakPeerInterface *)> (void)>);
     /**
      * @symbol ?parseUnconnectedPongPacketData\@RakNetServerLocator\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z
      */
@@ -182,6 +183,10 @@ public:
      * @symbol ?_pingServerV4\@RakNetServerLocator\@\@AEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI bool _pingServerV4(std::string const &, int);
+    /**
+     * @symbol ?_pingServerV6\@RakNetServerLocator\@\@AEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
+     */
+    MCAPI bool _pingServerV6(std::string const &, int);
     /**
      * @symbol ?_setPingResponder\@RakNetServerLocator\@\@AEAAXAEBUAnnounceServerData\@1\@\@Z
      */

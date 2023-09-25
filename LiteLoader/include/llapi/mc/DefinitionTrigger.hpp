@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -23,7 +24,6 @@ class DefinitionTrigger {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFINITIONTRIGGER
 public:
-    class DefinitionTrigger& operator=(class DefinitionTrigger const &) = delete;
     DefinitionTrigger(class DefinitionTrigger const &) = delete;
     DefinitionTrigger() = delete;
 #endif
@@ -34,12 +34,20 @@ public:
      */
     MCAPI bool canTrigger(class RenderParams &) const;
     /**
+     * @symbol ??4DefinitionTrigger\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     */
+    MCAPI class DefinitionTrigger & operator=(class DefinitionTrigger &&);
+    /**
+     * @symbol ??4DefinitionTrigger\@\@QEAAAEAV0\@AEBV0\@\@Z
+     */
+    MCAPI class DefinitionTrigger & operator=(class DefinitionTrigger const &);
+    /**
      * @symbol ??1DefinitionTrigger\@\@QEAA\@XZ
      */
     MCAPI ~DefinitionTrigger();
     /**
-     * @symbol ?bindType\@DefinitionTrigger\@\@SAXXZ
+     * @symbol ?bindType\@DefinitionTrigger\@\@SAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(struct cereal::ReflectionCtx &);
 
 };

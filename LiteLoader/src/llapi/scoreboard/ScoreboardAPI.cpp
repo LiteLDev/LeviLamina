@@ -15,12 +15,26 @@ LIAPI const ScoreboardId& Scoreboard::nextScoreboardId() {
     return ++*(ScoreboardId*)((char*)this + 1072);
 }
 
+namespace std {
+template <>
+class hash<ScoreboardId> {
+public:
+    std::size_t operator()(const struct ScoreboardId& id) const {
+        return id.getHash();
+    }
+};
+} // namespace std
+
+
 bool Scoreboard::createScoreboardId(PlayerScoreboardId const& pid) {
-    ScoreboardId newsid = nextScoreboardId();
-    ScoreboardId* (Scoreboard::*rv)(ScoreboardId, PlayerScoreboardId const&) = nullptr;
-    *((void**)&rv) = SYM("??$_createScoreboardId@UPlayerScoreboardId@@@Scoreboard@@IEAAAEBUScoreboardId@@U1@"
-                         "AEBUPlayerScoreboardId@@@Z");
-    return (this->*rv)(newsid, pid)->isValid();
+    auto& nextid = nextScoreboardId();
+    std::unordered_map<ScoreboardId, ScoreboardIdentityRef>& mIdentityRefs =
+        dAccess<std::unordered_map<ScoreboardId, ScoreboardIdentityRef>, 0x150>(this);
+    auto idIter = mIdentityRefs.find(nextid.getHash());
+    if (idIter != mIdentityRefs.end())
+        return idIter->second.getScoreboardId().isValid();
+    auto& v5 = registerScoreboardIdentity(nextid, pid);
+    return v5.getScoreboardId().isValid();
 }
 
 LIAPI bool Scoreboard::createScoreboardId(mce::UUID const& uuid) {

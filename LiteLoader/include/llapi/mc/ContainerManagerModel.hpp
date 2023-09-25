@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "IContainerManager.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class ContainerManagerModel.
  *
  */
-class ContainerManagerModel {
+class ContainerManagerModel : public IContainerManager {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -59,31 +60,6 @@ public:
      * @symbol ?serverInitItemStackIds\@ContainerManagerModel\@\@UEAAXXZ
      */
     virtual void serverInitItemStackIds();
-    /**
-     * @vftbl 6
-     * @symbol ?getItemCopies\@FurnaceContainerManagerModel\@\@UEBA?AV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@XZ
-     */
-    virtual std::vector<class ItemStack> getItemCopies() const = 0;
-    /**
-     * @vftbl 7
-     * @symbol ?setSlot\@FurnaceContainerManagerModel\@\@UEAAXHAEBVItemStack\@\@_N\@Z
-     */
-    virtual void setSlot(int, class ItemStack const &, bool) = 0;
-    /**
-     * @vftbl 8
-     * @symbol ?getSlot\@FurnaceContainerManagerModel\@\@UEBAAEBVItemStack\@\@H\@Z
-     */
-    virtual class ItemStack const & getSlot(int) const = 0;
-    /**
-     * @vftbl 9
-     * @symbol ?setData\@ElementConstructorContainerManagerModel\@\@UEAAXHH\@Z
-     */
-    virtual void setData(int, int) = 0;
-    /**
-     * @vftbl 10
-     * @symbol ?broadcastChanges\@FurnaceContainerManagerModel\@\@UEAAXXZ
-     */
-    virtual void broadcastChanges() = 0;
     /**
      * @vftbl 11
      * @symbol ?tick\@ContainerManagerModel\@\@MEAA_NXZ
@@ -144,13 +120,13 @@ public:
      */
     MCAPI void _addContainer(class std::shared_ptr<class ContainerModel>);
     /**
-     * @symbol ?_containerScreenContext\@ContainerManagerModel\@\@IEAA?AVContainerScreenContext\@\@UActorUniqueID\@\@\@Z
-     */
-    MCAPI class ContainerScreenContext _containerScreenContext(struct ActorUniqueID);
-    /**
      * @symbol ?_containerScreenContext\@ContainerManagerModel\@\@IEAA?AVContainerScreenContext\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI class ContainerScreenContext _containerScreenContext(class BlockPos const &);
+    /**
+     * @symbol ?_containerScreenContext\@ContainerManagerModel\@\@IEAA?AVContainerScreenContext\@\@UActorUniqueID\@\@\@Z
+     */
+    MCAPI class ContainerScreenContext _containerScreenContext(struct ActorUniqueID);
     /**
      * @symbol ?_getContainer\@ContainerManagerModel\@\@IEBA?AV?$shared_ptr\@VContainerModel\@\@\@std\@\@W4ContainerEnumName\@\@\@Z
      */

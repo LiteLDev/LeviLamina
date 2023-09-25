@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
+#include "ItemStackRequestAction.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class ItemStackRequestActionCreate.
  *
  */
-class ItemStackRequestActionCreate {
+class ItemStackRequestActionCreate : public ItemStackRequestAction {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -26,7 +27,6 @@ class ItemStackRequestActionCreate {
 public:
     class ItemStackRequestActionCreate& operator=(class ItemStackRequestActionCreate const &) = delete;
     ItemStackRequestActionCreate(class ItemStackRequestActionCreate const &) = delete;
-    ItemStackRequestActionCreate() = delete;
 #endif
 
 public:
@@ -35,21 +35,6 @@ public:
      * @symbol __unk_vfn_0
      */
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
-    virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol ?_write\@ItemStackRequestActionCreate\@\@MEBAXAEAVBinaryStream\@\@\@Z
@@ -61,8 +46,8 @@ public:
      */
     virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
     /**
-     * @symbol ?getResultsIndex\@ItemStackRequestActionCreate\@\@QEBAEXZ
+     * @symbol ??0ItemStackRequestActionCreate\@\@QEAA\@XZ
      */
-    MCAPI unsigned char getResultsIndex() const;
+    MCAPI ItemStackRequestActionCreate();
 
 };

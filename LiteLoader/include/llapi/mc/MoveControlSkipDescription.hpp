@@ -41,7 +41,7 @@ public:
     virtual void __unk_vfn_1();
     /**
      * @vftbl 2
-     * @symbol ?deserializeData\@MoveControlDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
+     * @symbol ?deserializeData\@MobEffectChangeDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROLSKIPDESCRIPTION

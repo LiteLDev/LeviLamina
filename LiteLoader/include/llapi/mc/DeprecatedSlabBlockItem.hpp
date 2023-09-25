@@ -137,6 +137,10 @@ public:
      * @symbol ?_findSlabType\@DeprecatedSlabBlockItem\@\@AEBAHAEBVBlock\@\@\@Z
      */
     MCAPI int _findSlabType(class Block const &) const;
+    /**
+     * @symbol ?_trySetDoubleBlock\@DeprecatedSlabBlockItem\@\@AEBA_NAEAVBlockSource\@\@AEAVLevel\@\@AEBVBlockPos\@\@AEAVActor\@\@AEAVItemStack\@\@AEBVBlock\@\@V?$not_null\@PEBVBlock\@\@\@gsl\@\@\@Z
+     */
+    MCAPI bool _trySetDoubleBlock(class BlockSource &, class Level &, class BlockPos const &, class Actor &, class ItemStack &, class Block const &, class gsl::not_null<class Block const *>) const;
 
 private:
 

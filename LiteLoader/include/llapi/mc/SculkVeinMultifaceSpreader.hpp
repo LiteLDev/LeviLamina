@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "MultifaceSpreader.hpp"
 
 #define BEFORE_EXTRA
 
@@ -14,7 +15,7 @@
  * @brief MC class SculkVeinMultifaceSpreader.
  *
  */
-class SculkVeinMultifaceSpreader {
+class SculkVeinMultifaceSpreader : public MultifaceSpreader {
 
 #define AFTER_EXTRA
 

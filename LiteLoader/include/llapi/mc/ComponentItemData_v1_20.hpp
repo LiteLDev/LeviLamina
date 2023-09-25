@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 
@@ -19,13 +20,10 @@ struct ComponentItemData_v1_20 {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPONENTITEMDATA_V1_20
 public:
     struct ComponentItemData_v1_20& operator=(struct ComponentItemData_v1_20 const &) = delete;
+    ComponentItemData_v1_20(struct ComponentItemData_v1_20 const &) = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0ComponentItemData_v1_20\@\@QEAA\@AEBU0\@\@Z
-     */
-    MCAPI ComponentItemData_v1_20(struct ComponentItemData_v1_20 const &);
     /**
      * @symbol ??0ComponentItemData_v1_20\@\@QEAA\@XZ
      */
@@ -39,16 +37,16 @@ public:
      */
     MCAPI ~ComponentItemData_v1_20();
     /**
-     * @symbol ?VERSION\@ComponentItemData_v1_20\@\@2VSemVersion\@\@B
+     * @symbol ?FIRST_VERSION\@ComponentItemData_v1_20\@\@2VSemVersion\@\@B
      */
-    MCAPI static class SemVersion const VERSION;
+    MCAPI static class SemVersion const FIRST_VERSION;
     /**
-     * @symbol ?bindType\@ComponentItemData_v1_20\@\@SAXXZ
+     * @symbol ?LAST_VERSION\@ComponentItemData_v1_20\@\@2VSemVersion\@\@B
      */
-    MCAPI static void bindType();
+    MCAPI static class SemVersion const LAST_VERSION;
     /**
-     * @symbol ?upgrade\@ComponentItemData_v1_20\@\@SA?AU1\@AEAUComponentItemData_v1_19_83\@\@\@Z
+     * @symbol ?bindType\@ComponentItemData_v1_20\@\@SAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI static struct ComponentItemData_v1_20 upgrade(struct ComponentItemData_v1_19_83 &);
+    MCAPI static void bindType(struct cereal::ReflectionCtx &);
 
 };

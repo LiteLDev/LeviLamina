@@ -80,9 +80,5 @@ public:
      * @symbol __unk_vfn_39
      */
     virtual void __unk_vfn_39();
-    /**
-     * @symbol ??0CalibratedSculkSensorBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI CalibratedSculkSensorBlockActor(class BlockPos const &);
 
 };

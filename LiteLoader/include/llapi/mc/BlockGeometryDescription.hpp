@@ -5,6 +5,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "JsonUtil.hpp"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -37,14 +39,14 @@ public:
     virtual std::string const & getName() const;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
      * @symbol ?initializeComponent\@BlockGeometryDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
     virtual void initializeComponent(class EntityContext &) const;
+    /**
+     * @vftbl 3
+     * @symbol ?initializeComponent\@BlockComponentDescription\@\@UEBAXAEAVBlockComponentStorage\@\@\@Z
+     */
+    virtual void initializeComponent(class BlockComponentStorage &) const;
     /**
      * @vftbl 4
      * @symbol ?initializeComponentFromCode\@BlockGeometryDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
@@ -52,26 +54,31 @@ public:
     virtual void initializeComponentFromCode(class EntityContext &) const;
     /**
      * @vftbl 5
-     * @symbol __unk_vfn_5
+     * @symbol ?initializeComponentFromCode\@BlockComponentDescription\@\@UEBAXAEAVBlockComponentStorage\@\@\@Z
      */
-    virtual void __unk_vfn_5();
+    virtual void initializeComponentFromCode(class BlockComponentStorage &) const;
     /**
      * @vftbl 6
-     * @symbol ?isNetworkComponent\@?$NetworkedBlockComponentDescription\@UBlockGeometryDescription\@\@\@\@UEBA_NXZ
+     * @symbol ?buildSchema\@BlockComponentDescription\@\@UEBAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UBlockComponentGroupDescription\@\@\@JsonUtil\@\@\@std\@\@AEBVBlockComponentFactory\@\@\@Z
+     */
+    virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &) const;
+    /**
+     * @vftbl 7
+     * @symbol ?isNetworkComponent\@BlockCollisionBoxDescription\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl 7
-     * @symbol ?buildNetworkTag\@?$NetworkedBlockComponentDescription\@UBlockGeometryDescription\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
-     */
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /**
      * @vftbl 8
-     * @symbol ?initializeFromNetwork\@?$NetworkedBlockComponentDescription\@UBlockGeometryDescription\@\@\@\@UEAAXAEBVCompoundTag\@\@\@Z
+     * @symbol ?buildNetworkTag\@BlockComponentDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    virtual void initializeFromNetwork(class CompoundTag const &);
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx &) const;
     /**
      * @vftbl 9
+     * @symbol ?initializeFromNetwork\@BlockComponentDescription\@\@UEAAXAEBVCompoundTag\@\@AEAUReflectionCtx\@cereal\@\@\@Z
+     */
+    virtual void initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx &);
+    /**
+     * @vftbl 10
      * @symbol ?handleVersionBasedInitialization\@BlockGeometryDescription\@\@UEAAXAEBVSemVersion\@\@\@Z
      */
     virtual void handleVersionBasedInitialization(class SemVersion const &);
@@ -94,8 +101,8 @@ public:
      */
     MCAPI static std::string const NameID;
     /**
-     * @symbol ?bindType\@BlockGeometryDescription\@\@SAXXZ
+     * @symbol ?bindType\@BlockGeometryDescription\@\@SAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(struct cereal::ReflectionCtx &);
 
 };

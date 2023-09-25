@@ -30,19 +30,12 @@ public:
 
 public:
     /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol ?canBlockBeAscendedByJumping\@BlockClimberSystem\@\@SA_NAEBVBlockLegacy\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@_N33\@Z
      */
-    virtual void __unk_vfn_0();
+    MCAPI static bool canBlockBeAscendedByJumping(class BlockLegacy const &, class IConstBlockSource const &, class BlockPos const &, bool, bool, bool);
     /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?createSystem\@BlockClimberSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol ?tick\@BlockClimberSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
-     */
-    virtual void tick(class EntityRegistry &);
+    MCAPI static struct TickingSystemWithInfo createSystem();
 
 };

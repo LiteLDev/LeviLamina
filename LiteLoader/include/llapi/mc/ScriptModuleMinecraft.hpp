@@ -87,6 +87,10 @@ public:
      */
     MCAPI class Scripting::EnumBindingBuilder<std::string, enum class ItemLockMode> bindItemLockMode();
     /**
+     * @symbol ?bindMoonPhases\@ScriptModuleMinecraft\@\@YAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
+     */
+    MCAPI void bindMoonPhases(class Scripting::ModuleBindingBuilder &);
+    /**
      * @symbol ?bindScriptDisplayObjectiveSlotId\@ScriptModuleMinecraft\@\@YA?AV?$EnumBindingBuilder\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ScriptDisplayObjectiveSlotId\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::EnumBindingBuilder<std::string, enum class ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId> bindScriptDisplayObjectiveSlotId();

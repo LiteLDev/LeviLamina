@@ -24,5 +24,9 @@ public:
 #endif
 
 public:
+    /**
+     * @symbol ?usesNewComponentStorage\@BlockSelectionBoxComponent\@\@SA_NXZ
+     */
+    MCAPI static bool usesNewComponentStorage();
 
 };

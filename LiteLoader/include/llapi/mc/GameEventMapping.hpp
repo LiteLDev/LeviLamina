@@ -31,10 +31,6 @@ public:
      * @symbol ?nameToEvent\@GameEventMapping\@\@SAAEBVGameEvent\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static class GameEvent const & nameToEvent(std::string const &);
-    /**
-     * @symbol ?typeToEvent\@GameEventMapping\@\@SAAEBVGameEvent\@\@W4GameEventType\@GameEventConfig\@\@\@Z
-     */
-    MCAPI static class GameEvent const & typeToEvent(enum class GameEventConfig::GameEventType);
 
 //private:
 

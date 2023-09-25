@@ -94,10 +94,6 @@ public:
      */
     MCAPI void setLastReloadInitTimeStampClient(unsigned __int64);
     /**
-     * @symbol ?setupDeltaTimeAndLifeTimeParams\@AnimationComponent\@\@QEAAX_N\@Z
-     */
-    MCAPI void setupDeltaTimeAndLifeTimeParams(bool);
-    /**
      * @symbol ?shouldReloadBasedOnLastReloadInitTimeStamp\@AnimationComponent\@\@QEBA_NXZ
      */
     MCAPI bool shouldReloadBasedOnLastReloadInitTimeStamp() const;

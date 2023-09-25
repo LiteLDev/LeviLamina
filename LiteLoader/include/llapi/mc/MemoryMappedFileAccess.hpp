@@ -7,6 +7,7 @@
 #include "llapi/Global.h"
 #include "Core.hpp"
 #include "Bedrock.hpp"
+#include "IFileAccess.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +18,7 @@
  * @brief MC class MemoryMappedFileAccess.
  *
  */
-class MemoryMappedFileAccess {
+class MemoryMappedFileAccess : public IFileAccess {
 
 #define AFTER_EXTRA
 // Add Member There

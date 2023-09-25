@@ -16,7 +16,7 @@
  * @brief MC class TridentChannelingEnchant.
  *
  */
-class TridentChannelingEnchant {
+class TridentChannelingEnchant : public Enchant {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -51,13 +51,29 @@ public:
      */
     virtual int getMaxCost(int) const;
     /**
-     * @vftbl 4
+     * @vftbl 5
      * @symbol ?getMaxLevel\@TridentChannelingEnchant\@\@UEBAHXZ
      */
     virtual int getMaxLevel() const;
     /**
-     * @symbol ??0TridentChannelingEnchant\@\@QEAA\@W4Type\@Enchant\@\@W4Frequency\@2\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@2H_NH\@Z
+     * @vftbl 10
+     * @symbol __unk_vfn_10
      */
-    MCAPI TridentChannelingEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class std::basic_string_view<char, struct std::char_traits<char>>, class std::basic_string_view<char, struct std::char_traits<char>>, int, bool, int);
+    virtual void __unk_vfn_10();
+    /**
+     * @vftbl 11
+     * @symbol __unk_vfn_11
+     */
+    virtual void __unk_vfn_11();
+    /**
+     * @vftbl 12
+     * @symbol __unk_vfn_12
+     */
+    virtual void __unk_vfn_12();
+    /**
+     * @vftbl 13
+     * @symbol __unk_vfn_13
+     */
+    virtual void __unk_vfn_13();
 
 };

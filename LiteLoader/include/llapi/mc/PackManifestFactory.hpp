@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Core.hpp"
+#include "IPackManifestFactory.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class PackManifestFactory.
  *
  */
-class PackManifestFactory {
+class PackManifestFactory : public IPackManifestFactory {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -55,25 +56,25 @@ public:
      */
     MCAPI std::unique_ptr<class PackManifest> create(class PackAccessStrategy &, std::string const &, class PackReport &, std::unique_ptr<class PackManifest>, class SubpackInfoCollection *);
     /**
-     * @symbol ?MANIFEST_LOG_PATH\@PackManifestFactory\@\@2V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@B
+     * @symbol ?MANIFEST_LOG_PATH\@PackManifestFactory\@\@2VPath\@Core\@\@B
      */
-    MCAPI static class Core::PathBuffer<std::string> const MANIFEST_LOG_PATH;
+    MCAPI static class Core::Path const MANIFEST_LOG_PATH;
     /**
      * @symbol ?MANIFEST_PACK_UUID_UPGRADE_SALT\@PackManifestFactory\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const MANIFEST_PACK_UUID_UPGRADE_SALT;
     /**
-     * @symbol ?MANIFEST_PATH\@PackManifestFactory\@\@2V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@B
+     * @symbol ?MANIFEST_PATH\@PackManifestFactory\@\@2VPath\@Core\@\@B
      */
-    MCAPI static class Core::PathBuffer<std::string> const MANIFEST_PATH;
+    MCAPI static class Core::Path const MANIFEST_PATH;
     /**
-     * @symbol ?MANIFEST_PATH_OLD\@PackManifestFactory\@\@2V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@B
+     * @symbol ?MANIFEST_PATH_OLD\@PackManifestFactory\@\@2VPath\@Core\@\@B
      */
-    MCAPI static class Core::PathBuffer<std::string> const MANIFEST_PATH_OLD;
+    MCAPI static class Core::Path const MANIFEST_PATH_OLD;
     /**
-     * @symbol ?MANIFEST_PATH_OLD_BACKUP\@PackManifestFactory\@\@2V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@B
+     * @symbol ?MANIFEST_PATH_OLD_BACKUP\@PackManifestFactory\@\@2VPath\@Core\@\@B
      */
-    MCAPI static class Core::PathBuffer<std::string> const MANIFEST_PATH_OLD_BACKUP;
+    MCAPI static class Core::Path const MANIFEST_PATH_OLD_BACKUP;
     /**
      * @symbol ?REQUIRED_VANILLA_FOR_OLD_PACKS\@PackManifestFactory\@\@2VSemVersion\@\@B
      */

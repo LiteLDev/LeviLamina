@@ -6,7 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "gametest.hpp"
-#include "BlockSourceListener.hpp"
+#include "LevelListener.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +17,7 @@
  * @brief MC class MinecraftGameTest.
  *
  */
-class MinecraftGameTest : public BlockSourceListener {
+class MinecraftGameTest : public LevelListener {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -117,11 +117,6 @@ public:
      */
     virtual void __unk_vfn_18();
     /**
-     * @vftbl 19
-     * @symbol __unk_vfn_19
-     */
-    virtual void __unk_vfn_19();
-    /**
      * @vftbl 20
      * @symbol __unk_vfn_20
      */
@@ -132,15 +127,21 @@ public:
      */
     virtual void __unk_vfn_21();
     /**
-     * @vftbl 22
-     * @symbol __unk_vfn_22
-     */
-    virtual void __unk_vfn_22();
-    /**
      * @vftbl 23
      * @symbol ?onLevelDestruction\@MinecraftGameTest\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void onLevelDestruction(std::string const &);
+    /**
+     * @vftbl 24
+     * @symbol __unk_vfn_24
+     */
+    virtual void __unk_vfn_24();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTGAMETEST
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~MinecraftGameTest();
+#endif
     /**
      * @symbol ??0MinecraftGameTest\@\@QEAA\@AEAVLevel\@\@\@Z
      */

@@ -126,35 +126,40 @@ public:
      */
     virtual void __unk_vfn_51();
     /**
-     * @vftbl 56
-     * @symbol __unk_vfn_56
+     * @vftbl 55
+     * @symbol __unk_vfn_55
      */
-    virtual void __unk_vfn_56();
+    virtual void __unk_vfn_55();
+    /**
+     * @vftbl 61
+     * @symbol __unk_vfn_61
+     */
+    virtual void __unk_vfn_61();
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
      */
     virtual void __unk_vfn_62();
     /**
-     * @vftbl 63
-     * @symbol __unk_vfn_63
+     * @vftbl 76
+     * @symbol __unk_vfn_76
      */
-    virtual void __unk_vfn_63();
+    virtual void __unk_vfn_76();
     /**
-     * @vftbl 77
-     * @symbol __unk_vfn_77
+     * @vftbl 83
+     * @symbol __unk_vfn_83
      */
-    virtual void __unk_vfn_77();
+    virtual void __unk_vfn_83();
     /**
-     * @vftbl 84
-     * @symbol __unk_vfn_84
+     * @vftbl 106
+     * @symbol __unk_vfn_106
      */
-    virtual void __unk_vfn_84();
+    virtual void __unk_vfn_106();
     /**
-     * @vftbl 107
-     * @symbol __unk_vfn_107
+     * @vftbl 122
+     * @symbol __unk_vfn_122
      */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_122();
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -166,32 +171,27 @@ public:
      */
     virtual void __unk_vfn_124();
     /**
-     * @vftbl 125
-     * @symbol __unk_vfn_125
+     * @vftbl 127
+     * @symbol __unk_vfn_127
      */
-    virtual void __unk_vfn_125();
+    virtual void __unk_vfn_127();
     /**
-     * @vftbl 128
-     * @symbol __unk_vfn_128
+     * @vftbl 130
+     * @symbol __unk_vfn_130
      */
-    virtual void __unk_vfn_128();
+    virtual void __unk_vfn_130();
     /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
-     */
-    virtual void __unk_vfn_131();
-    /**
-     * @vftbl 136
+     * @vftbl 135
      * @symbol ?getColor\@AzaleaLeavesBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @vftbl 140
+     * @vftbl 139
      * @symbol ?onGraphicsModeChanged\@AzaleaLeavesBlock\@\@UEAAXAEBUBlockGraphicsModeChangeContext\@\@\@Z
      */
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
     /**
-     * @vftbl 143
+     * @vftbl 142
      * @symbol ?getVariant\@AzaleaLeavesBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;

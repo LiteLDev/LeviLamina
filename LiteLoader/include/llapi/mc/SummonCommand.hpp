@@ -6,7 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "RotationCommandUtils.hpp"
-#include "Command.hpp"
+#include "ServerCommand.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +17,7 @@
  * @brief MC class SummonCommand.
  *
  */
-class SummonCommand : public Command {
+class SummonCommand : public ServerCommand {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -38,6 +38,11 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
+     * @symbol ?collectOptionalArguments\@Command\@\@MEAA_NXZ
+     */
+    virtual bool collectOptionalArguments();
+    /**
+     * @vftbl 2
      * @symbol ?execute\@SummonCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;

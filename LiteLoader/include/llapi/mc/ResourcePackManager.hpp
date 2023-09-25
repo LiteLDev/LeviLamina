@@ -7,6 +7,7 @@
 #include "llapi/Global.h"
 #include "Core.hpp"
 #include "Bedrock.hpp"
+#include "ResourceLoader.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +18,7 @@
  * @brief MC class ResourcePackManager.
  *
  */
-class ResourcePackManager {
+class ResourcePackManager : public ResourceLoader {
 
 #define AFTER_EXTRA
 // Add Member There

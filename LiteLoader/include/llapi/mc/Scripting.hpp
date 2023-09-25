@@ -18,6 +18,9 @@ namespace Scripting {
 
 #define AFTER_EXTRA
 
+class ModuleBindingBuilder;
+
+
 template <typename T>
 class ClassBindingBuilder {
     ClassBindingBuilder() = delete;

@@ -119,81 +119,86 @@ public:
     virtual void writeEntityChunkTransfersToUnloadedChunk(class ChunkKey const &, std::vector<struct ActorUnloadedChunkTransferEntry> const &);
     /**
      * @vftbl 16
+     * @symbol ?deserializeActorStorageToLevelChunk\@ChunkSource\@\@UEAAXAEAVLevelChunk\@\@\@Z
+     */
+    virtual void deserializeActorStorageToLevelChunk(class LevelChunk &);
+    /**
+     * @vftbl 17
      * @symbol ?hintDiscardBatchBegin\@ChunkSource\@\@UEAAXXZ
      */
     virtual void hintDiscardBatchBegin();
     /**
-     * @vftbl 17
+     * @vftbl 18
      * @symbol ?hintDiscardBatchEnd\@ChunkSource\@\@UEAAXXZ
      */
     virtual void hintDiscardBatchEnd();
     /**
-     * @vftbl 18
+     * @vftbl 19
      * @symbol ?acquireDiscarded\@ChunkSource\@\@UEAAXV?$unique_ptr\@VLevelChunk\@\@ULevelChunkFinalDeleter\@\@\@std\@\@\@Z
      */
     virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /**
-     * @vftbl 19
+     * @vftbl 20
      * @symbol ?compact\@ChunkSource\@\@UEAAXXZ
      */
     virtual void compact();
     /**
-     * @vftbl 20
+     * @vftbl 21
      * @symbol ?flushPendingDiscardedChunkWrites\@ChunkSource\@\@UEAAXXZ
      */
     virtual void flushPendingDiscardedChunkWrites();
     /**
-     * @vftbl 21
+     * @vftbl 22
      * @symbol ?flushThreadBatch\@ChunkSource\@\@UEAAXXZ
      */
     virtual void flushThreadBatch();
     /**
-     * @vftbl 22
+     * @vftbl 23
      * @symbol ?isWithinWorldLimit\@ChunkSource\@\@UEBA_NAEBVChunkPos\@\@\@Z
      */
     virtual bool isWithinWorldLimit(class ChunkPos const &) const;
     /**
-     * @vftbl 23
+     * @vftbl 24
      * @symbol ?getChunkMap\@ChunkSource\@\@UEAAPEBV?$unordered_map\@VChunkPos\@\@V?$weak_ptr\@VLevelChunk\@\@\@std\@\@U?$hash\@VChunkPos\@\@\@3\@U?$equal_to\@VChunkPos\@\@\@3\@V?$allocator\@U?$pair\@$$CBVChunkPos\@\@V?$weak_ptr\@VLevelChunk\@\@\@std\@\@\@std\@\@\@3\@\@std\@\@XZ
      */
     virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const * getChunkMap();
     /**
-     * @vftbl 24
+     * @vftbl 25
      * @symbol ?getStorage\@ChunkSource\@\@UEBAAEBV?$unordered_map\@VChunkPos\@\@V?$weak_ptr\@VLevelChunk\@\@\@std\@\@U?$hash\@VChunkPos\@\@\@3\@U?$equal_to\@VChunkPos\@\@\@3\@V?$allocator\@U?$pair\@$$CBVChunkPos\@\@V?$weak_ptr\@VLevelChunk\@\@\@std\@\@\@std\@\@\@3\@\@std\@\@XZ
      */
     virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const & getStorage() const;
     /**
-     * @vftbl 25
+     * @vftbl 26
      * @symbol ?clearDeletedEntities\@ChunkSource\@\@UEAAXXZ
      */
     virtual void clearDeletedEntities();
     /**
-     * @vftbl 26
+     * @vftbl 27
      * @symbol ?canCreateViews\@ChunkSource\@\@UEBA_NXZ
      */
     virtual bool canCreateViews() const;
     /**
-     * @vftbl 27
+     * @vftbl 28
      * @symbol ?tryGetBlendingDataProvider\@ChunkSource\@\@UEAA?AV?$unique_ptr\@VBlendingDataProvider\@\@U?$default_delete\@VBlendingDataProvider\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class BlendingDataProvider> tryGetBlendingDataProvider();
     /**
-     * @vftbl 28
+     * @vftbl 29
      * @symbol ?loadLevelChunkMetaDataDictionary\@ChunkSource\@\@UEAA?AV?$shared_ptr\@VLevelChunkMetaDataDictionary\@\@\@std\@\@XZ
      */
     virtual class std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();
     /**
-     * @vftbl 29
+     * @vftbl 30
      * @symbol ?setLevelChunk\@ChunkSource\@\@UEAAXV?$shared_ptr\@VLevelChunk\@\@\@std\@\@\@Z
      */
     virtual void setLevelChunk(class std::shared_ptr<class LevelChunk>);
     /**
-     * @vftbl 30
+     * @vftbl 31
      * @symbol ?canLaunchTasks\@ChunkSource\@\@UEBA_NXZ
      */
     virtual bool canLaunchTasks() const;
     /**
-     * @vftbl 31
+     * @vftbl 32
      * @symbol ?chunkPosNeedsBlending\@ChunkSource\@\@UEAA_NAEBVChunkPos\@\@\@Z
      */
     virtual bool chunkPosNeedsBlending(class ChunkPos const &);

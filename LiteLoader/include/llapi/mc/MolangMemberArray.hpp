@@ -38,13 +38,9 @@ public:
      */
     MCAPI MolangMemberArray(enum class MolangStruct_BaseAndPattern, int, int);
     /**
-     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_RGB\@\@AEBVColor\@mce\@\@\@Z
+     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_MinAndMax\@\@$$QEAU0\@1\@Z
      */
-    MCAPI MolangMemberArray(enum class MolangStruct_RGB, class mce::Color const &);
-    /**
-     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_XYZ\@\@AEBVVec3\@\@\@Z
-     */
-    MCAPI MolangMemberArray(enum class MolangStruct_XYZ, class Vec3 const &);
+    MCAPI MolangMemberArray(enum class MolangStruct_MinAndMax, struct MolangMemberArray &&, struct MolangMemberArray &&);
     /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_RGBA\@\@AEBVColor\@mce\@\@\@Z
      */
@@ -54,29 +50,33 @@ public:
      */
     MCAPI MolangMemberArray(enum class MolangStruct_SpeedAndDirection, float, class Vec3 const &);
     /**
-     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_RotYAndPosY\@\@MM\@Z
-     */
-    MCAPI MolangMemberArray(enum class MolangStruct_RotYAndPosY, float, float);
-    /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_TRS\@\@$$QEAU0\@11\@Z
      */
     MCAPI MolangMemberArray(enum class MolangStruct_TRS, struct MolangMemberArray &&, struct MolangMemberArray &&, struct MolangMemberArray &&);
-    /**
-     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_XY\@\@AEBVVec2\@\@\@Z
-     */
-    MCAPI MolangMemberArray(enum class MolangStruct_XY, class Vec2 const &);
-    /**
-     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_MinAndMax\@\@$$QEAU0\@1\@Z
-     */
-    MCAPI MolangMemberArray(enum class MolangStruct_MinAndMax, struct MolangMemberArray &&, struct MolangMemberArray &&);
     /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_PoseIndexAndHurtTime\@\@HH\@Z
      */
     MCAPI MolangMemberArray(enum class MolangStruct_PoseIndexAndHurtTime, int, int);
     /**
+     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_RotYAndPosY\@\@MM\@Z
+     */
+    MCAPI MolangMemberArray(enum class MolangStruct_RotYAndPosY, float, float);
+    /**
+     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_XY\@\@AEBVVec2\@\@\@Z
+     */
+    MCAPI MolangMemberArray(enum class MolangStruct_XY, class Vec2 const &);
+    /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_UV\@\@MM\@Z
      */
     MCAPI MolangMemberArray(enum class MolangStruct_UV, float, float);
+    /**
+     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_RGB\@\@AEBVColor\@mce\@\@\@Z
+     */
+    MCAPI MolangMemberArray(enum class MolangStruct_RGB, class mce::Color const &);
+    /**
+     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_XYZ\@\@AEBVVec3\@\@\@Z
+     */
+    MCAPI MolangMemberArray(enum class MolangStruct_XYZ, class Vec3 const &);
     /**
      * @symbol ?add\@MolangMemberArray\@\@QEAAXAEBVHashedString\@\@AEBUMolangScriptArg\@\@\@Z
      */

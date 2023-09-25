@@ -28,6 +28,10 @@ public:
 
 public:
     /**
+     * @symbol ??0CommandArea\@\@QEAA\@V?$unique_ptr\@VChunkViewSource\@\@U?$default_delete\@VChunkViewSource\@\@\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI CommandArea(std::unique_ptr<class ChunkViewSource>);
+    /**
      * @symbol ?getDimensionBlockSource\@CommandArea\@\@QEAAAEAVBlockSource\@\@XZ
      */
     MCAPI class BlockSource & getDimensionBlockSource();

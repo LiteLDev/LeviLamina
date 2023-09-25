@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "ChestBlockActor.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class ShulkerBoxBlockActor.
  *
  */
-class ShulkerBoxBlockActor {
+class ShulkerBoxBlockActor : public ChestBlockActor {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -79,6 +80,14 @@ public:
      */
     MCVAPI bool save(class CompoundTag &) const;
     /**
+     * @symbol ?startOpen\@ShulkerBoxBlockActor\@\@UEAAXAEAVPlayer\@\@\@Z
+     */
+    MCVAPI void startOpen(class Player &);
+    /**
+     * @symbol ?stopOpen\@ShulkerBoxBlockActor\@\@UEAAXAEAVPlayer\@\@\@Z
+     */
+    MCVAPI void stopOpen(class Player &);
+    /**
      * @symbol ?tick\@ShulkerBoxBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
     MCVAPI void tick(class BlockSource &);
@@ -92,11 +101,19 @@ public:
      */
     MCAPI void setFacingDir(unsigned char);
     /**
+     * @symbol ?setupRedstoneComponent\@ShulkerBoxBlockActor\@\@QEBAXAEAVBlockSource\@\@\@Z
+     */
+    MCAPI void setupRedstoneComponent(class BlockSource &) const;
+    /**
      * @symbol ?itemAllowedInSlot\@ShulkerBoxBlockActor\@\@SA_NHAEBVItemStackBase\@\@H\@Z
      */
     MCAPI static bool itemAllowedInSlot(int, class ItemStackBase const &, int);
 
 //private:
+    /**
+     * @symbol ?_addRedstoneComponent\@ShulkerBoxBlockActor\@\@AEBAXAEAVBlockSource\@\@\@Z
+     */
+    MCAPI void _addRedstoneComponent(class BlockSource &) const;
     /**
      * @symbol ?_calculateBB\@ShulkerBoxBlockActor\@\@AEAAXXZ
      */

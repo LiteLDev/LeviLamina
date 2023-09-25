@@ -20,9 +20,9 @@ namespace PaddleBehaviorUtility {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?computePaddleForcesBasedOnGaze\@PaddleBehaviorUtility\@\@YAXAEAVVec3\@\@AEAM1MMM\@Z
+     * @symbol ?computePaddleForcesBasedOnGaze\@PaddleBehaviorUtility\@\@YA?AUPaddleForces\@1\@AEAVVec3\@\@MMM\@Z
      */
-    MCAPI void computePaddleForcesBasedOnGaze(class Vec3 &, float &, float &, float, float, float);
+    MCAPI struct PaddleBehaviorUtility::PaddleForces computePaddleForcesBasedOnGaze(class Vec3 &, float, float, float);
     /**
      * @symbol ?setPaddleForce\@PaddleBehaviorUtility\@\@YA_NAEAUPaddle\@\@AEBUTick\@\@M\@Z
      */

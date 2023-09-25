@@ -36,16 +36,6 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 8
-     * @symbol ?getAABB\@StonecutterBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
-     */
-    virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
-    /**
-     * @vftbl 12
-     * @symbol ?getVisualShape\@StonecutterBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@\@Z
-     */
-    virtual class AABB const & getVisualShape(class Block const &, class AABB &) const;
-    /**
      * @vftbl 22
      * @symbol __unk_vfn_22
      */
@@ -146,10 +136,15 @@ public:
      */
     virtual void __unk_vfn_51();
     /**
-     * @vftbl 56
-     * @symbol __unk_vfn_56
+     * @vftbl 55
+     * @symbol __unk_vfn_55
      */
-    virtual void __unk_vfn_56();
+    virtual void __unk_vfn_55();
+    /**
+     * @vftbl 61
+     * @symbol __unk_vfn_61
+     */
+    virtual void __unk_vfn_61();
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
@@ -157,39 +152,34 @@ public:
     virtual void __unk_vfn_62();
     /**
      * @vftbl 63
-     * @symbol __unk_vfn_63
-     */
-    virtual void __unk_vfn_63();
-    /**
-     * @vftbl 64
      * @symbol ?canContainLiquid\@StonecutterBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @vftbl 77
-     * @symbol __unk_vfn_77
+     * @vftbl 76
+     * @symbol __unk_vfn_76
      */
-    virtual void __unk_vfn_77();
+    virtual void __unk_vfn_76();
     /**
-     * @vftbl 84
-     * @symbol __unk_vfn_84
+     * @vftbl 83
+     * @symbol __unk_vfn_83
      */
-    virtual void __unk_vfn_84();
+    virtual void __unk_vfn_83();
     /**
-     * @vftbl 103
-     * @symbol ?playerWillDestroy\@StonecutterBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
+     * @vftbl 106
+     * @symbol __unk_vfn_106
      */
-    virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
+    virtual void __unk_vfn_106();
     /**
      * @vftbl 107
-     * @symbol __unk_vfn_107
-     */
-    virtual void __unk_vfn_107();
-    /**
-     * @vftbl 108
      * @symbol ?getPlacementBlock\@StonecutterBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
+    /**
+     * @vftbl 122
+     * @symbol __unk_vfn_122
+     */
+    virtual void __unk_vfn_122();
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -201,20 +191,15 @@ public:
      */
     virtual void __unk_vfn_124();
     /**
-     * @vftbl 125
-     * @symbol __unk_vfn_125
+     * @vftbl 127
+     * @symbol __unk_vfn_127
      */
-    virtual void __unk_vfn_125();
+    virtual void __unk_vfn_127();
     /**
-     * @vftbl 128
-     * @symbol __unk_vfn_128
+     * @vftbl 130
+     * @symbol __unk_vfn_130
      */
-    virtual void __unk_vfn_128();
-    /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
-     */
-    virtual void __unk_vfn_131();
+    virtual void __unk_vfn_130();
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
@@ -260,16 +245,6 @@ public:
      * @symbol __unk_vfn_183
      */
     virtual void __unk_vfn_183();
-    /**
-     * @vftbl 184
-     * @symbol ?playerDestroy\@StonecutterBlock\@\@UEBAXAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
-     */
-    virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
-    /**
-     * @vftbl 187
-     * @symbol ?getSilkTouchItemInstance\@StonecutterBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
-     */
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STONECUTTERBLOCK
     /**
      * @symbol ?isCraftingBlock\@StonecutterBlock\@\@UEBA_NXZ

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Editor.hpp"
 #include "Social.hpp"
 
 #define BEFORE_EXTRA
@@ -29,21 +30,21 @@ public:
 
 public:
     /**
-     * @symbol ??0LevelSettings\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0LevelSettings\@\@QEAA\@AEBVLevelData\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI LevelSettings(class LevelSettings const &);
+    MCAPI LevelSettings(class LevelData const &, class AutomaticID<class Dimension, int>);
     /**
      * @symbol ??0LevelSettings\@\@QEAA\@XZ
      */
     MCAPI LevelSettings();
     /**
+     * @symbol ??0LevelSettings\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI LevelSettings(class LevelSettings const &);
+    /**
      * @symbol ??0LevelSettings\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI LevelSettings(class LevelSettings &&);
-    /**
-     * @symbol ??0LevelSettings\@\@QEAA\@AEBVLevelData\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
-     */
-    MCAPI LevelSettings(class LevelData const &, class AutomaticID<class Dimension, int>);
     /**
      * @symbol ?achievementsWillBeDisabledOnLoad\@LevelSettings\@\@QEBA_NXZ
      */
@@ -92,6 +93,10 @@ public:
      * @symbol ?getDisablePlayerInteractions\@LevelSettings\@\@QEBA_NXZ
      */
     MCAPI bool getDisablePlayerInteractions() const;
+    /**
+     * @symbol ?getEditorWorldType\@LevelSettings\@\@QEBA?AW4WorldType\@Editor\@\@XZ
+     */
+    MCAPI enum class Editor::WorldType getEditorWorldType() const;
     /**
      * @symbol ?getEduSharedUriResource\@LevelSettings\@\@QEBAAEBUEduSharedUriResource\@\@XZ
      */
@@ -244,6 +249,10 @@ public:
      * @symbol ??4LevelSettings\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class LevelSettings & operator=(class LevelSettings &&);
+    /**
+     * @symbol ?overrideSavedSettings\@LevelSettings\@\@QEBAXAEAVLevelData\@\@\@Z
+     */
+    MCAPI void overrideSavedSettings(class LevelData &) const;
     /**
      * @symbol ?setAdventureModeOverridesEnabled\@LevelSettings\@\@QEAAAEAV1\@_N\@Z
      */

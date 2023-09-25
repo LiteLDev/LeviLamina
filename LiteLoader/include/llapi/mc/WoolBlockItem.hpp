@@ -111,9 +111,5 @@ public:
      * @symbol __unk_vfn_116
      */
     virtual void __unk_vfn_116();
-    /**
-     * @symbol ??0WoolBlockItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
-     */
-    MCAPI WoolBlockItem(std::string const &, int, bool);
 
 };

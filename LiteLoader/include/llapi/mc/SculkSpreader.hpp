@@ -27,13 +27,13 @@ public:
 
 public:
     /**
-     * @symbol ??0SculkSpreader\@\@QEAA\@_NHHHH\@Z
-     */
-    MCAPI SculkSpreader(bool, int, int, int, int);
-    /**
      * @symbol ??0SculkSpreader\@\@QEAA\@XZ
      */
     MCAPI SculkSpreader();
+    /**
+     * @symbol ??0SculkSpreader\@\@QEAA\@_NHHHH\@Z
+     */
+    MCAPI SculkSpreader(bool, int, int, int, int);
     /**
      * @symbol ?addCursors\@SculkSpreader\@\@QEAAXAEBVBlockPos\@\@H\@Z
      */

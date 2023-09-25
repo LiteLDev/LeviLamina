@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "AttributeInstanceDelegate.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class HealthAttributeDelegate.
  *
  */
-class HealthAttributeDelegate {
+class HealthAttributeDelegate : public AttributeInstanceDelegate {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -39,11 +40,6 @@ public:
      * @symbol ?tick\@HealthAttributeDelegate\@\@UEAAXXZ
      */
     virtual void tick();
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol ?willChange\@HealthAttributeDelegate\@\@UEAA_NMMAEBVAttributeBuff\@\@\@Z

@@ -177,6 +177,11 @@ public:
      */
     virtual enum class InHandUpdateType getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
     /**
+     * @vftbl 114
+     * @symbol ?getEquipSound\@ShieldItem\@\@UEBA?AW4LevelSoundEvent\@\@XZ
+     */
+    virtual enum class LevelSoundEvent getEquipSound() const;
+    /**
      * @vftbl 115
      * @symbol __unk_vfn_115
      */

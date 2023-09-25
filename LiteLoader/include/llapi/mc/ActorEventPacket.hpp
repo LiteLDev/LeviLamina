@@ -65,12 +65,12 @@ public:
     MCVAPI ~ActorEventPacket();
 #endif
     /**
-     * @symbol ??0ActorEventPacket\@\@QEAA\@VActorRuntimeID\@\@W4ActorEvent\@\@H\@Z
-     */
-    MCAPI ActorEventPacket(class ActorRuntimeID, enum class ActorEvent, int);
-    /**
      * @symbol ??0ActorEventPacket\@\@QEAA\@XZ
      */
     MCAPI ActorEventPacket();
+    /**
+     * @symbol ??0ActorEventPacket\@\@QEAA\@VActorRuntimeID\@\@W4ActorEvent\@\@H\@Z
+     */
+    MCAPI ActorEventPacket(class ActorRuntimeID, enum class ActorEvent, int);
 
 };

@@ -31,7 +31,7 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 1
+     * @vftbl 2
      * @symbol ?execute\@UnlockRecipeCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -39,5 +39,17 @@ public:
      * @symbol ?setup\@UnlockRecipeCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);
+
+//private:
+    /**
+     * @symbol ?_handleAllRecipes\@UnlockRecipeCommand\@\@AEBAXAEAVCommandOutput\@\@AEBV?$CommandSelectorResults\@VPlayer\@\@\@\@\@Z
+     */
+    MCAPI void _handleAllRecipes(class CommandOutput &, class CommandSelectorResults<class Player> const &) const;
+    /**
+     * @symbol ?_handleSpecificRecipe\@UnlockRecipeCommand\@\@AEBAXAEAVCommandOutput\@\@AEBV?$CommandSelectorResults\@VPlayer\@\@\@\@AEBVRecipes\@\@\@Z
+     */
+    MCAPI void _handleSpecificRecipe(class CommandOutput &, class CommandSelectorResults<class Player> const &, class Recipes const &) const;
+
+private:
 
 };

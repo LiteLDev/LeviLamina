@@ -5,10 +5,10 @@
 #include "llapi/mc/PackSource.hpp"
 
 void ResourcePackRepository::setCustomResourcePackPath(PackType type, const std::string& path) {
-    auto CompositePack = dAccess<CompositePackSource*>(this, 48);
+    auto CompositePack = dAccess<CompositePackSource*>(this, 96);
     auto& PackSourceFactory = getPackSourceFactory();
     auto& DirectoryPackSource =
-        PackSourceFactory.createDirectoryPackSource(Core::Path(path), type, PackOrigin::PackOrigin_Dev, 0);
+        PackSourceFactory.createDirectoryPackSource(Core::Path(path), type, PackOrigin::Dev, 0);
     CompositePack->addPackSource((PackSource*)&DirectoryPackSource);
     refreshPacks();
 }

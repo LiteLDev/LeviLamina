@@ -25,10 +25,6 @@ public:
 
 public:
     /**
-     * @symbol ??0ChunkBlenderFactory\@\@QEAA\@AEAVDimension\@\@\@Z
-     */
-    MCAPI ChunkBlenderFactory(class Dimension &);
-    /**
      * @symbol ?getOrCreateChunkBlender\@ChunkBlenderFactory\@\@QEAA?AV?$shared_ptr\@VChunkBlender\@\@\@std\@\@AEBVChunkPos\@\@\@Z
      */
     MCAPI class std::shared_ptr<class ChunkBlender> getOrCreateChunkBlender(class ChunkPos const &);

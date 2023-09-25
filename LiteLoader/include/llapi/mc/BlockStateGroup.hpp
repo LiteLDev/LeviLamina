@@ -50,10 +50,6 @@ public:
      */
     MCAPI void registerExistingBlockState(class BlockState const &);
     /**
-     * @symbol ?registerToBlock\@BlockStateGroup\@\@QEAAXAEAVBlockLegacy\@\@\@Z
-     */
-    MCAPI void registerToBlock(class BlockLegacy &);
-    /**
      * @symbol ?MAX_ENUM_SIZE\@BlockStateGroup\@\@2HB
      */
     MCAPI static int const MAX_ENUM_SIZE;

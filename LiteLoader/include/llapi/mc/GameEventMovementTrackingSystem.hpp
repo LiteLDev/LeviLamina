@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "ITickingSystem.hpp"
 
 #define BEFORE_EXTRA
 
@@ -14,7 +15,7 @@
  * @brief MC class GameEventMovementTrackingSystem.
  *
  */
-class GameEventMovementTrackingSystem {
+class GameEventMovementTrackingSystem : public ITickingSystem {
 
 #define AFTER_EXTRA
 
@@ -45,13 +46,13 @@ public:
 
 //private:
     /**
-     * @symbol ?_tickGameEventMovementTrackingComponent\@GameEventMovementTrackingSystem\@\@CAXAEAVActorOwnerComponent\@\@AEAVGameEventMovementTrackingComponent\@\@\@Z
+     * @symbol ?_tickGameEventMovementTrackingComponent\@GameEventMovementTrackingSystem\@\@CAXAEAVActorOwnerComponent\@\@AEAVGameEventMovementTrackingComponent\@\@V?$Optional\@$$CBVRailMovementComponent\@\@\@\@\@Z
      */
-    MCAPI static void _tickGameEventMovementTrackingComponent(class ActorOwnerComponent &, class GameEventMovementTrackingComponent &);
+    MCAPI static void _tickGameEventMovementTrackingComponent(class ActorOwnerComponent &, class GameEventMovementTrackingComponent &, class Optional<class RailMovementComponent const>);
     /**
-     * @symbol ?_trackMovement\@GameEventMovementTrackingSystem\@\@CAXAEAVActor\@\@AEAVGameEventMovementTrackingComponent\@\@\@Z
+     * @symbol ?_trackMovement\@GameEventMovementTrackingSystem\@\@CAXAEAVActor\@\@AEAVGameEventMovementTrackingComponent\@\@V?$Optional\@$$CBVRailMovementComponent\@\@\@\@\@Z
      */
-    MCAPI static void _trackMovement(class Actor &, class GameEventMovementTrackingComponent &);
+    MCAPI static void _trackMovement(class Actor &, class GameEventMovementTrackingComponent &, class Optional<class RailMovementComponent const>);
 
 private:
 

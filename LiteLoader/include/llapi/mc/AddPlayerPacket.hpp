@@ -6,7 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
-#include "Packet.hpp"
+#include "AddActorBasePacket.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +17,7 @@
  * @brief MC class AddPlayerPacket.
  *
  */
-class AddPlayerPacket : public Packet {
+class AddPlayerPacket : public AddActorBasePacket {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -51,6 +51,21 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
+     * @vftbl 4
+     * @symbol ?read\@AvailableActorIdentifiersPacket\@\@UEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     */
+    virtual class Bedrock::Result<void, class std::error_code> read(class ReadOnlyBinaryStream &);
+    /**
+     * @vftbl 5
+     * @symbol ?disallowBatching\@Packet\@\@UEBA_NXZ
+     */
+    virtual bool disallowBatching() const;
+    /**
+     * @vftbl 6
+     * @symbol ?isValid\@Packet\@\@UEBA_NXZ
+     */
+    virtual bool isValid() const;
+    /**
      * @vftbl 7
      * @symbol ?_read\@AddPlayerPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
@@ -62,12 +77,12 @@ public:
     MCVAPI ~AddPlayerPacket();
 #endif
     /**
-     * @symbol ??0AddPlayerPacket\@\@QEAA\@AEAVPlayer\@\@\@Z
-     */
-    MCAPI AddPlayerPacket(class Player &);
-    /**
      * @symbol ??0AddPlayerPacket\@\@QEAA\@XZ
      */
     MCAPI AddPlayerPacket();
+    /**
+     * @symbol ??0AddPlayerPacket\@\@QEAA\@AEAVPlayer\@\@\@Z
+     */
+    MCAPI AddPlayerPacket(class Player &);
 
 };

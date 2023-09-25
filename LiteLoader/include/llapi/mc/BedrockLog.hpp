@@ -95,10 +95,6 @@ struct LogDetails {
      */
     MCAPI void initializeLogExtensions();
     /**
-     * @symbol ?log\@BedrockLog\@\@YAXW4LogCategory\@1\@V?$bitset\@$02\@std\@\@W4LogRule\@1\@W4LogAreaID\@\@IPEBDH4ZZ
-     */
-    MCAPI void log(enum class BedrockLog::LogCategory, class std::bitset<3>, enum class BedrockLog::LogRule, enum class LogAreaID, unsigned int, char const *, int, char const *, ...);
-    /**
      * @symbol ?log_va\@BedrockLog\@\@YAXW4LogCategory\@1\@V?$bitset\@$02\@std\@\@W4LogRule\@1\@W4LogAreaID\@\@IPEBDH4PEAD\@Z
      */
     MCAPI void log_va(enum class BedrockLog::LogCategory, class std::bitset<3>, enum class BedrockLog::LogRule, enum class LogAreaID, unsigned int, char const *, int, char const *, char *);

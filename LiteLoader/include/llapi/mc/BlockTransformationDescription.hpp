@@ -5,6 +5,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "JsonUtil.hpp"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 
@@ -34,40 +36,25 @@ public:
      */
     virtual std::string const & getName() const;
     /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
      * @vftbl 3
-     * @symbol ?initializeComponent\@BlockTransformationDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
+     * @symbol ?initializeComponent\@BlockTransformationDescription\@\@UEBAXAEAVBlockComponentStorage\@\@\@Z
      */
-    virtual void initializeComponent(class EntityContext &) const;
+    virtual void initializeComponent(class BlockComponentStorage &) const;
     /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5();
-    /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?isNetworkComponent\@BlockTransformationDescription\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl 7
-     * @symbol ?buildNetworkTag\@BlockTransformationDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
-     */
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /**
      * @vftbl 8
-     * @symbol ?initializeFromNetwork\@BlockTransformationDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
+     * @symbol ?buildNetworkTag\@BlockTransformationDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    virtual void initializeFromNetwork(class CompoundTag const &);
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx &) const;
+    /**
+     * @vftbl 9
+     * @symbol ?initializeFromNetwork\@BlockTransformationDescription\@\@UEAAXAEBVCompoundTag\@\@AEAUReflectionCtx\@cereal\@\@\@Z
+     */
+    virtual void initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx &);
     /**
      * @symbol ??0BlockTransformationDescription\@\@QEAA\@XZ
      */
@@ -77,12 +64,8 @@ public:
      */
     MCAPI static std::string const NameID;
     /**
-     * @symbol ?bindType\@BlockTransformationDescription\@\@SAXXZ
+     * @symbol ?bindType\@BlockTransformationDescription\@\@SAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI static void bindType();
-    /**
-     * @symbol ?registerVersionUpgrades\@BlockTransformationDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
-     */
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
+    MCAPI static void bindType(struct cereal::ReflectionCtx &);
 
 };

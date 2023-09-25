@@ -34,12 +34,12 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo create();
     /**
+     * @symbol ?createAddMovementTickNeededForCatchupSystem\@PlayerTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     */
+    MCAPI static struct TickingSystemWithInfo createAddMovementTickNeededForCatchupSystem();
+    /**
      * @symbol ?onTickAdded\@PlayerTickSystem\@\@SAXAEAUPlayerTickComponent\@\@_K\@Z
      */
     MCAPI static void onTickAdded(struct PlayerTickComponent &, unsigned __int64);
-    /**
-     * @symbol ?shouldTickMovementSystemOnEntity\@PlayerTickSystem\@\@SA_NAEBVEntityContext\@\@\@Z
-     */
-    MCAPI static bool shouldTickMovementSystemOnEntity(class EntityContext const &);
 
 };

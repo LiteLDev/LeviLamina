@@ -88,9 +88,5 @@ public:
      * @symbol __unk_vfn_39
      */
     virtual void __unk_vfn_39();
-    /**
-     * @symbol ??0HangingSignBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI HangingSignBlockActor(class BlockPos const &);
 
 };

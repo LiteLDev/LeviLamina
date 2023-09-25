@@ -5,6 +5,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "JsonUtil.hpp"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 
@@ -35,47 +37,32 @@ public:
      */
     virtual std::string const & getName() const;
     /**
-     * @vftbl 2
+     * @vftbl 3
      * @symbol ?initializeComponent\@BlockLightDampeningDescription\@\@UEBAXAEAVBlockComponentStorage\@\@\@Z
      */
     virtual void initializeComponent(class BlockComponentStorage &) const;
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5();
-    /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?isNetworkComponent\@BlockLightDampeningDescription\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl 7
-     * @symbol ?buildNetworkTag\@BlockLightDampeningDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
-     */
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /**
      * @vftbl 8
-     * @symbol ?initializeFromNetwork\@BlockLightDampeningDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
+     * @symbol ?buildNetworkTag\@BlockLightDampeningDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    virtual void initializeFromNetwork(class CompoundTag const &);
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx &) const;
+    /**
+     * @vftbl 9
+     * @symbol ?initializeFromNetwork\@BlockLightDampeningDescription\@\@UEAAXAEBVCompoundTag\@\@AEAUReflectionCtx\@cereal\@\@\@Z
+     */
+    virtual void initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx &);
     /**
      * @symbol ?NameID\@BlockLightDampeningDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NameID;
     /**
-     * @symbol ?bindType\@BlockLightDampeningDescription\@\@SAXXZ
+     * @symbol ?bindType\@BlockLightDampeningDescription\@\@SAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(struct cereal::ReflectionCtx &);
 
 };

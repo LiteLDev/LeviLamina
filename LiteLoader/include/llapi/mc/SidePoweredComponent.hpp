@@ -6,7 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "CircuitComponentList.hpp"
-#include "ProducerComponent.hpp"
+#include "CapacitorComponent.hpp"
 
 #define BEFORE_EXTRA
 
@@ -16,7 +16,7 @@
  * @brief MC class SidePoweredComponent.
  *
  */
-class SidePoweredComponent : public ProducerComponent {
+class SidePoweredComponent : public CapacitorComponent {
 
 #define AFTER_EXTRA
 public:

@@ -74,6 +74,10 @@ public:
      */
     MCAPI static bool checkIsDeprecated(std::string &);
     /**
+     * @symbol ?loadAttributeModifier\@SharedAttributes\@\@SA?AV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@AEBVCompoundTag\@\@\@Z
+     */
+    MCAPI static class std::shared_ptr<class AttributeModifier> loadAttributeModifier(class CompoundTag const &);
+    /**
      * @symbol ?loadAttributes\@SharedAttributes\@\@SAXPEAVBaseAttributeMap\@\@PEBVListTag\@\@\@Z
      */
     MCAPI static void loadAttributes(class BaseAttributeMap *, class ListTag const *);

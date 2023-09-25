@@ -54,6 +54,11 @@ public:
      */
     virtual void onSerializableDataChanged(class BlockSource &);
     /**
+     * @vftbl 5
+     * @symbol ?canReceiveOnlyIfAdjacentChunksAreTicking\@SculkSensorVibrationConfig\@\@UEBA_NXZ
+     */
+    virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const;
+    /**
      * @symbol ??0SculkSensorVibrationConfig\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
     MCAPI SculkSensorVibrationConfig(class BlockPos const &);

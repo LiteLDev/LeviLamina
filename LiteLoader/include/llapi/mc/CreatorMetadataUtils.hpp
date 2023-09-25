@@ -32,6 +32,10 @@ namespace CreatorMetadataUtils {
      */
     MCAPI class Json::Value _generateBlocksMetadataJson();
     /**
+     * @symbol ?_generateCameraMetadataJson\@CreatorMetadataUtils\@\@YA?AVValue\@Json\@\@AEBVCameraPresets\@\@\@Z
+     */
+    MCAPI class Json::Value _generateCameraMetadataJson(class CameraPresets const &);
+    /**
      * @symbol ?_generateDimensionsMetadataJson\@CreatorMetadataUtils\@\@YA?AVValue\@Json\@\@XZ
      */
     MCAPI class Json::Value _generateDimensionsMetadataJson();
@@ -56,21 +60,17 @@ namespace CreatorMetadataUtils {
      */
     MCAPI class Json::Value _generateScriptingModuleMetadataJson(struct Scripting::ModuleBinding const &, struct Scripting::SupportedBindingModule const &, struct Scripting::ModuleBindingBundle const &);
     /**
-     * @symbol ?_getDimensionStringNames\@CreatorMetadataUtils\@\@YA?AV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@\@std\@\@\@2\@\@std\@\@XZ
-     */
-    MCAPI class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> _getDimensionStringNames();
-    /**
      * @symbol ?_getPropertyToEntityNameMap\@CreatorMetadataUtils\@\@YA?AV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@\@std\@\@\@2\@\@std\@\@AEBV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VActorDefinition\@\@U?$default_delete\@VActorDefinition\@\@\@std\@\@\@2\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VActorDefinition\@\@U?$default_delete\@VActorDefinition\@\@\@std\@\@\@2\@\@std\@\@\@2\@\@3\@\@Z
      */
     MCAPI class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> _getPropertyToEntityNameMap(class std::unordered_map<std::string, std::unique_ptr<class ActorDefinition>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class ActorDefinition>>>> const &);
     /**
-     * @symbol ?_getPropertyToItemNameMap\@CreatorMetadataUtils\@\@YA?AV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$tuple\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@2\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$tuple\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@2\@\@std\@\@\@2\@\@std\@\@VItemRegistryRef\@\@\@Z
-     */
-    MCAPI class std::unordered_map<std::string, class std::tuple<std::string, bool>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, class std::tuple<std::string, bool>>>> _getPropertyToItemNameMap(class ItemRegistryRef);
-    /**
      * @symbol ?generateBlocksDocumentation\@CreatorMetadataUtils\@\@YAXAEBVPath\@Core\@\@\@Z
      */
     MCAPI void generateBlocksDocumentation(class Core::Path const &);
+    /**
+     * @symbol ?generateCameraPresetDocumentation\@CreatorMetadataUtils\@\@YAXAEBVPath\@Core\@\@AEBVCameraPresets\@\@\@Z
+     */
+    MCAPI void generateCameraPresetDocumentation(class Core::Path const &, class CameraPresets const &);
     /**
      * @symbol ?generateCommandsDocumentation\@CreatorMetadataUtils\@\@YAXAEAVCommandRegistry\@\@AEBVPath\@Core\@\@\@Z
      */
@@ -100,9 +100,9 @@ namespace CreatorMetadataUtils {
      */
     MCAPI void generateScriptingDocumentation(class Scripting::ScriptEngine &, class Core::Path const &);
     /**
-     * @symbol ?generateVanillaDataDocumentation\@CreatorMetadataUtils\@\@YAXAEBVPath\@Core\@\@VItemRegistryRef\@\@AEBV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VActorDefinition\@\@U?$default_delete\@VActorDefinition\@\@\@std\@\@\@2\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VActorDefinition\@\@U?$default_delete\@VActorDefinition\@\@\@std\@\@\@2\@\@std\@\@\@2\@\@std\@\@\@Z
+     * @symbol ?generateVanillaDataDocumentation\@CreatorMetadataUtils\@\@YAXAEBVPath\@Core\@\@VItemRegistryRef\@\@AEBV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VActorDefinition\@\@U?$default_delete\@VActorDefinition\@\@\@std\@\@\@2\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VActorDefinition\@\@U?$default_delete\@VActorDefinition\@\@\@std\@\@\@2\@\@std\@\@\@2\@\@std\@\@AEBVCameraPresets\@\@\@Z
      */
-    MCAPI void generateVanillaDataDocumentation(class Core::Path const &, class ItemRegistryRef, class std::unordered_map<std::string, std::unique_ptr<class ActorDefinition>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class ActorDefinition>>>> const &);
+    MCAPI void generateVanillaDataDocumentation(class Core::Path const &, class ItemRegistryRef, class std::unordered_map<std::string, std::unique_ptr<class ActorDefinition>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class ActorDefinition>>>> const &, class CameraPresets const &);
     /**
      * @symbol ?getGameSemVersionAsString\@CreatorMetadataUtils\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */

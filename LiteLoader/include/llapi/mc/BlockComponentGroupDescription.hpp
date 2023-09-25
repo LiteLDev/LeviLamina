@@ -21,19 +21,20 @@ struct BlockComponentGroupDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCOMPONENTGROUPDESCRIPTION
 public:
-    /**
-     * @symbol ??0BlockComponentGroupDescription\@\@QEAA\@XZ
-     */
-    MCAPI BlockComponentGroupDescription();
-    /**
-     * @symbol ??0BlockComponentGroupDescription\@\@QEAA\@$$QEAU0\@\@Z
-     */
-    MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription &&);
+    BlockComponentGroupDescription() = delete;
+#endif
+
+public:
     /**
      * @symbol ??0BlockComponentGroupDescription\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription const &);
+    /**
+     * @symbol ??0BlockComponentGroupDescription\@\@QEAA\@$$QEAU0\@\@Z
+     */
+    MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription &&);
     /**
      * @symbol ?foreachDescription\@BlockComponentGroupDescription\@\@QEBAXV?$function\@$$A6AXAEBUBlockComponentDescription\@\@\@Z\@std\@\@\@Z
      */

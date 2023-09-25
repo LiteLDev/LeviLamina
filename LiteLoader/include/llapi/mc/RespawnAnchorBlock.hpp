@@ -131,35 +131,40 @@ public:
      */
     virtual void __unk_vfn_51();
     /**
-     * @vftbl 56
-     * @symbol __unk_vfn_56
+     * @vftbl 55
+     * @symbol __unk_vfn_55
      */
-    virtual void __unk_vfn_56();
+    virtual void __unk_vfn_55();
+    /**
+     * @vftbl 61
+     * @symbol __unk_vfn_61
+     */
+    virtual void __unk_vfn_61();
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
      */
     virtual void __unk_vfn_62();
     /**
-     * @vftbl 63
-     * @symbol __unk_vfn_63
+     * @vftbl 76
+     * @symbol __unk_vfn_76
      */
-    virtual void __unk_vfn_63();
+    virtual void __unk_vfn_76();
     /**
-     * @vftbl 77
-     * @symbol __unk_vfn_77
+     * @vftbl 83
+     * @symbol __unk_vfn_83
      */
-    virtual void __unk_vfn_77();
+    virtual void __unk_vfn_83();
     /**
-     * @vftbl 84
-     * @symbol __unk_vfn_84
+     * @vftbl 106
+     * @symbol __unk_vfn_106
      */
-    virtual void __unk_vfn_84();
+    virtual void __unk_vfn_106();
     /**
-     * @vftbl 107
-     * @symbol __unk_vfn_107
+     * @vftbl 122
+     * @symbol __unk_vfn_122
      */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_122();
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -172,44 +177,39 @@ public:
     virtual void __unk_vfn_124();
     /**
      * @vftbl 125
-     * @symbol __unk_vfn_125
-     */
-    virtual void __unk_vfn_125();
-    /**
-     * @vftbl 126
      * @symbol ?getComparatorSignal\@RespawnAnchorBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
-     * @vftbl 128
-     * @symbol __unk_vfn_128
+     * @vftbl 127
+     * @symbol __unk_vfn_127
      */
-    virtual void __unk_vfn_128();
+    virtual void __unk_vfn_127();
     /**
-     * @vftbl 129
+     * @vftbl 128
      * @symbol ?canSpawnAt\@RespawnAnchorBlock\@\@UEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool canSpawnAt(class BlockSource const &, class BlockPos const &) const;
     /**
-     * @vftbl 130
+     * @vftbl 129
      * @symbol ?notifySpawnedAt\@RespawnAnchorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void notifySpawnedAt(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
+     * @vftbl 130
+     * @symbol __unk_vfn_130
      */
-    virtual void __unk_vfn_131();
+    virtual void __unk_vfn_130();
     /**
-     * @vftbl 143
+     * @vftbl 142
      * @symbol ?getVariant\@RespawnAnchorBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @vftbl 148
-     * @symbol ?animateTick\@RespawnAnchorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 147
+     * @symbol ?animateTickBedrockLegacy\@RespawnAnchorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
+    virtual void animateTickBedrockLegacy(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl 150
      * @symbol ?getLightEmission\@RespawnAnchorBlock\@\@UEBA?AUBrightness\@\@AEBVBlock\@\@\@Z
@@ -265,21 +265,7 @@ public:
      * @symbol __unk_vfn_183
      */
     virtual void __unk_vfn_183();
-    /**
-     * @vftbl 184
-     * @symbol ?playerDestroy\@RespawnAnchorBlock\@\@UEBAXAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
-     */
-    virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
-    /**
-     * @vftbl 185
-     * @symbol ?getResourceItem\@RespawnAnchorBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
-     */
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESPAWNANCHORBLOCK
-    /**
-     * @symbol ?canBeSilkTouched\@RespawnAnchorBlock\@\@UEBA_NXZ
-     */
-    MCVAPI bool canBeSilkTouched() const;
     /**
      * @symbol ?hasComparatorSignal\@RespawnAnchorBlock\@\@UEBA_NXZ
      */

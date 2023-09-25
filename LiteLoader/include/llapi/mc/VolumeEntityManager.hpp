@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -54,15 +55,15 @@ public:
      */
     MCAPI static bool isTriggerVolumesEnabled;
     /**
-     * @symbol ?registerComponentNetRelevancy\@VolumeEntityManager\@\@SAXAEAVComponentNetRelevancyRegistry\@\@\@Z
+     * @symbol ?registerComponentNetRelevancy\@VolumeEntityManager\@\@SAXAEAVComponentNetRelevancyRegistry\@\@AEBUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI static void registerComponentNetRelevancy(class ComponentNetRelevancyRegistry &);
+    MCAPI static void registerComponentNetRelevancy(class ComponentNetRelevancyRegistry &, struct cereal::ReflectionCtx const &);
 
 //protected:
     /**
-     * @symbol ??0VolumeEntityManager\@\@IEAA\@V?$StackRefResultT\@UEntityRegistryRefTraits\@\@\@\@\@Z
+     * @symbol ??0VolumeEntityManager\@\@IEAA\@V?$StackRefResultT\@UEntityRegistryRefTraits\@\@\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI VolumeEntityManager(class StackRefResultT<struct EntityRegistryRefTraits>);
+    MCAPI VolumeEntityManager(class StackRefResultT<struct EntityRegistryRefTraits>, struct cereal::ReflectionCtx &);
     /**
      * @symbol ?_createVolumeEntity\@VolumeEntityManager\@\@IEAA?AV?$OwnerPtrT\@UEntityRefTraits\@\@\@\@AEBVDefinitionInstanceGroup\@\@\@Z
      */

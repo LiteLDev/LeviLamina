@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "DispenserBlockActor.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class DropperBlockActor.
  *
  */
-class DropperBlockActor {
+class DropperBlockActor : public DispenserBlockActor {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -44,6 +45,10 @@ public:
      */
     MCVAPI std::string getName() const;
 #endif
+    /**
+     * @symbol ??0DropperBlockActor\@\@QEAA\@VBlockPos\@\@\@Z
+     */
+    MCAPI DropperBlockActor(class BlockPos);
     /**
      * @symbol ?pushOutItems\@DropperBlockActor\@\@QEAA_NAEAVBlockSource\@\@\@Z
      */

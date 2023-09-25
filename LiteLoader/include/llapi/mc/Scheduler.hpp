@@ -46,10 +46,6 @@ public:
      */
     MCAPI void processCoroutines(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
     /**
-     * @symbol ?queueCallback\@Scheduler\@\@QEAAXV?$shared_ptr\@VBackgroundTaskBase\@\@\@std\@\@\@Z
-     */
-    MCAPI void queueCallback(class std::shared_ptr<class BackgroundTaskBase>);
-    /**
      * @symbol ?setTargetFPS\@Scheduler\@\@QEAAXI\@Z
      */
     MCAPI void setTargetFPS(unsigned int);

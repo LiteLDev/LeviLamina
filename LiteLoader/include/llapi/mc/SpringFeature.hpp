@@ -40,10 +40,6 @@ public:
      * @symbol ?place\@SpringFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-    /**
-     * @symbol ??0SpringFeature\@\@QEAA\@AEBVBlock\@\@\@Z
-     */
-    MCAPI SpringFeature(class Block const &);
 
 //private:
     /**

@@ -34,9 +34,9 @@ namespace BedrockBlockTypes {
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mUnknown;
     /**
-     * @symbol ?registerBlocks\@BedrockBlockTypes\@\@YAXXZ
+     * @symbol ?registerBlocks\@BedrockBlockTypes\@\@YAXAEBVBaseGameVersion\@\@\@Z
      */
-    MCAPI void registerBlocks();
+    MCAPI void registerBlocks(class BaseGameVersion const &);
     /**
      * @symbol ?unregisterBlocks\@BedrockBlockTypes\@\@YAXXZ
      */

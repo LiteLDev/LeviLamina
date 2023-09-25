@@ -205,7 +205,7 @@ inline static const char getParticleColorType(ColorPalette const& p) {
 
 enum class ImageFormat : __int32
 {
-  Unknown_17 = 0x0,
+  Unknown = 0x0,
   R8Unorm = 0x1,
   RGB8Unorm = 0x2,
   RGBA8Unorm = 0x3,
@@ -218,37 +218,147 @@ enum class ImageUsage : unsigned char {
 };
 
 
-struct Blob
-{
-    typedef std::size_t size_type;
-    typedef uint8_t value_type;
-    typedef void (*delete_function)(value_type *);
-    class Deleter
-    {
-        public:
-        delete_function m_func;
-        void operator()(value_type* ptr) const
-        {
-            if (m_func)
-                m_func(ptr);
-            else
-                delete[] ptr;
+class Blob {
+public:
+    void* unk0;
+    std::unique_ptr<unsigned char[]> mBlob;
+    size_t mSize = 0;
+
+    inline Blob() {}
+
+    inline Blob(Blob&& rhs) : mBlob(std::move(rhs.mBlob)), mSize(rhs.mSize) {
+        rhs.mSize = 0;
+    }
+
+    inline Blob(size_t input_length) : mBlob(std::make_unique<unsigned char[]>(input_length)), mSize(input_length) {}
+
+    inline Blob(unsigned char const* input, size_t input_length) : Blob(input_length) {
+        memcpy(mBlob.get(), input, input_length);
+    }
+
+    inline Blob& operator=(Blob&& rhs) {
+        if (&rhs != this) {
+            mBlob = std::move(rhs.mBlob);
+            mSize = rhs.mSize;
+            rhs.mSize = 0;
         }
-    };
-    typedef std::unique_ptr<unsigned char[],Deleter> pointer_type;
-  pointer_type mBlob;
-  size_type mSize;
+        return *this;
+    }
+
+    inline Blob clone() const {
+        return {data(), size()};
+    }
+
+    inline unsigned char* begin() {
+        return mBlob.get();
+    }
+
+    inline unsigned char* end() {
+        return mBlob.get() + mSize;
+    }
+
+    inline unsigned char const* cbegin() const {
+        return mBlob.get();
+    }
+
+    inline unsigned char const* cend() const {
+        return mBlob.get() + mSize;
+    }
+
+    inline unsigned char* data() {
+        return mBlob.get();
+    }
+
+    inline unsigned char const* data() const {
+        return mBlob.get();
+    }
+
+    inline bool empty() const {
+        return mSize == 0;
+    }
+
+    inline size_t size() const {
+        return mSize;
+    }
+
+    inline auto getSpan() const {
+        return gsl::make_span(data(), size());
+    }
 };
 
+inline unsigned numChannels(ImageFormat format) {
+    switch (format) {
+    case ImageFormat::R8Unorm:
+        return 3;
+    case ImageFormat::RGB8Unorm:
+        return 4;
+    default:
+        return 0;
+    }
+}
 
 
-struct Image
-{
-    mce::ImageFormat imageFormat;
-    uint32_t mWidth;
-    uint32_t mHeight;
-    mce::ImageUsage mUsage;
-    mce::Blob mImageBytes;
+struct Image {
+    inline Image(ImageFormat format, unsigned width, unsigned height, ImageUsage usage, Blob&& data)
+        : imageFormat(format), mWidth(width), mHeight(height), mUsage(usage), mImageBytes(std::move(data)) {}
+
+public:
+    ImageFormat imageFormat{};       // 0x0
+    uint32_t mWidth{}, mHeight{}; // 0x4, 0x8
+    ImageUsage mUsage{};         // 0xC
+    Blob mImageBytes;                  // 0x10
+   
+
+    inline Image(Blob&& data) : mImageBytes(std::move(data)) {}
+
+    inline Image(unsigned width, unsigned height, ImageFormat format, ImageUsage usage)
+        : imageFormat(format), mWidth(width), mHeight(height), mUsage(usage) {}
+
+    inline Image() {}
+
+    inline Image& operator=(Image&& rhs) {
+        imageFormat = rhs.imageFormat;
+        mWidth = rhs.mWidth;
+        mHeight = rhs.mHeight;
+        mUsage = rhs.mUsage;
+        mImageBytes = std::move(rhs.mImageBytes);
+        return *this;
+    }
+
+    inline Image clone() const {
+        return { imageFormat, mWidth, mHeight, mUsage, mImageBytes.clone() };
+    }
+
+    inline void copyRawImage(Blob const& blob) {
+        mImageBytes = blob.clone();
+    }
+
+    inline bool isEmpty() const {
+        return mImageBytes.empty();
+    }
+
+    inline void resizeImageBytesToFitImageDescription() {
+        mImageBytes = Blob{ mWidth * mHeight * numChannels(imageFormat) };
+    }
+
+    inline void setImageDescription(unsigned width, unsigned height, ImageFormat format, ImageUsage usage) {
+        this->mWidth = width;
+        this->mHeight = height;
+        this->imageFormat = format;
+        this->mUsage = usage;
+    }
+
+    inline void setRawImage(Blob&& buffer) {
+        mImageBytes = std::move(buffer);
+    }
+
+    Image(const Image& a1) {
+        imageFormat = a1.imageFormat;
+        mWidth = a1.mWidth;
+        mHeight = a1.mHeight;
+        mUsage = a1.mUsage;
+        mImageBytes = a1.mImageBytes.clone();
+    }
 };
 
 

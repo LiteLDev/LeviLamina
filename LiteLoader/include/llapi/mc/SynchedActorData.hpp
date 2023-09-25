@@ -178,14 +178,6 @@ public:
      */
     MCAPI class SynchedActorData _clone() const;
     /**
-     * @symbol ?assignValues\@SynchedActorData\@\@QEAA_NAEBV?$vector\@V?$unique_ptr\@VDataItem\@\@U?$default_delete\@VDataItem\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VDataItem\@\@U?$default_delete\@VDataItem\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@PEAVActor\@\@\@Z
-     */
-    MCAPI bool assignValues(std::vector<std::unique_ptr<class DataItem>> const &, class Actor *);
-    /**
-     * @symbol ?forEachDataItem\@SynchedActorData\@\@QEBAXAEBV?$function\@$$A6AXAEBV?$unique_ptr\@VDataItem\@\@U?$default_delete\@VDataItem\@\@\@std\@\@\@std\@\@\@Z\@std\@\@\@Z
-     */
-    MCAPI void forEachDataItem(class std::function<void (std::unique_ptr<class DataItem> const &)> const &) const;
-    /**
      * @symbol ?getFloat\@SynchedActorData\@\@QEBAMG\@Z
      */
     MCAPI float getFloat(unsigned short) const;
@@ -206,13 +198,13 @@ public:
      */
     MCAPI bool getStatusFlag(enum class ActorFlags) const;
     /**
-     * @symbol ?getValidDataItemCount\@SynchedActorData\@\@QEBA_KXZ
-     */
-    MCAPI unsigned __int64 getValidDataItemCount() const;
-    /**
      * @symbol ?getVec3\@SynchedActorData\@\@QEBA?AVVec3\@\@G\@Z
      */
     MCAPI class Vec3 getVec3(unsigned short) const;
+    /**
+     * @symbol ?hasData\@SynchedActorData\@\@QEBA_NG\@Z
+     */
+    MCAPI bool hasData(unsigned short) const;
     /**
      * @symbol ?markDirty\@SynchedActorData\@\@QEAAXG\@Z
      */

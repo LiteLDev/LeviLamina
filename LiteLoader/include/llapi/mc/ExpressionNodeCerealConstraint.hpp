@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 
@@ -26,9 +27,9 @@ public:
 public:
     /**
      * @vftbl 0
-     * @symbol ?doValidate\@ExpressionNodeCerealConstraint\@\@EEBA_NAEBVmeta_any\@entt\@\@AEAVSerializerContext\@cereal\@\@\@Z
+     * @symbol ?doValidate\@ExpressionNodeCerealConstraint\@\@EEBAXAEBVmeta_any\@entt\@\@AEAVSerializerContext\@cereal\@\@\@Z
      */
-    virtual bool doValidate(class entt::meta_any const &, class cereal::SerializerContext &) const;
+    virtual void doValidate(class entt::meta_any const &, class cereal::SerializerContext &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPRESSIONNODECEREALCONSTRAINT
     /**
      * @symbol __unk_destructor_-1

@@ -79,10 +79,6 @@ public:
      */
     MCVAPI float getAbilityFloat(enum class AbilitiesIndex) const;
     /**
-     * @symbol ?getBob\@DirectPlayerMovementProxy\@\@UEBAMXZ
-     */
-    MCVAPI float getBob() const;
-    /**
      * @symbol ?getClientInstance\@DirectPlayerMovementProxy\@\@UEAAPEAUIClientInstanceProxy\@\@XZ
      */
     MCVAPI struct IClientInstanceProxy * getClientInstance();
@@ -107,10 +103,6 @@ public:
      */
     MCVAPI float getJumpRidingScale();
     /**
-     * @symbol ?getLastBob\@DirectPlayerMovementProxy\@\@UEBAMXZ
-     */
-    MCVAPI float getLastBob() const;
-    /**
      * @symbol ?getLastDelta\@DirectPlayerMovementProxy\@\@UEBA?AVVec3\@\@XZ
      */
     MCVAPI class Vec3 getLastDelta() const;
@@ -122,10 +114,6 @@ public:
      * @symbol ?getLoadingState\@DirectPlayerMovementProxy\@\@UEBA?AW4LoadingState\@\@XZ
      */
     MCVAPI enum class LoadingState getLoadingState() const;
-    /**
-     * @symbol ?getPlayerPaddleForce\@DirectPlayerMovementProxy\@\@UEBAMW4Side\@\@\@Z
-     */
-    MCVAPI float getPlayerPaddleForce(enum class Side) const;
     /**
      * @symbol ?getSneakHeight\@DirectPlayerMovementProxy\@\@UEBAMXZ
      */
@@ -143,10 +131,6 @@ public:
      */
     MCVAPI bool isAutoJumpEnabled() const;
     /**
-     * @symbol ?isAutoJumping\@DirectPlayerMovementProxy\@\@UEBA_NXZ
-     */
-    MCVAPI bool isAutoJumping() const;
-    /**
      * @symbol ?isEmoting\@DirectPlayerMovementProxy\@\@UEAA_NXZ
      */
     MCVAPI bool isEmoting();
@@ -163,10 +147,6 @@ public:
      */
     MCVAPI bool isPaddling(enum class Side) const;
     /**
-     * @symbol ?isServerAuthoritativeMovement\@DirectPlayerMovementProxy\@\@UEBA_NXZ
-     */
-    MCVAPI bool isServerAuthoritativeMovement() const;
-    /**
      * @symbol ?isSleeping\@DirectPlayerMovementProxy\@\@UEBA_NXZ
      */
     MCVAPI bool isSleeping() const;
@@ -174,6 +154,10 @@ public:
      * @symbol ?isSlowedByItemUse\@DirectPlayerMovementProxy\@\@UEBA_NXZ
      */
     MCVAPI bool isSlowedByItemUse() const;
+    /**
+     * @symbol ?isSpawned\@DirectPlayerMovementProxy\@\@UEBA_NXZ
+     */
+    MCVAPI bool isSpawned() const;
     /**
      * @symbol ?isSpectator\@DirectPlayerMovementProxy\@\@UEBA_NXZ
      */
@@ -195,17 +179,13 @@ public:
      */
     MCVAPI void sendInput();
     /**
-     * @symbol ?sendPacket\@DirectPlayerMovementProxy\@\@UEAAXAEAVPassengerJumpPacket\@\@\@Z
-     */
-    MCVAPI void sendPacket(class PassengerJumpPacket &);
-    /**
      * @symbol ?sendPacket\@DirectPlayerMovementProxy\@\@UEAAXAEAVPlayerActionPacket\@\@\@Z
      */
     MCVAPI void sendPacket(class PlayerActionPacket &);
     /**
-     * @symbol ?sendPlayerInput\@DirectPlayerMovementProxy\@\@UEAAXXZ
+     * @symbol ?sendPacket\@DirectPlayerMovementProxy\@\@UEAAXAEAVPassengerJumpPacket\@\@\@Z
      */
-    MCVAPI void sendPlayerInput();
+    MCVAPI void sendPacket(class PassengerJumpPacket &);
     /**
      * @symbol ?sendPlayerMove\@DirectPlayerMovementProxy\@\@UEAAXXZ
      */
@@ -215,25 +195,9 @@ public:
      */
     MCVAPI void sendPosition();
     /**
-     * @symbol ?sendRequestAbilityPacket\@DirectPlayerMovementProxy\@\@UEAAXW4AbilitiesIndex\@\@_N\@Z
-     */
-    MCVAPI void sendRequestAbilityPacket(enum class AbilitiesIndex, bool);
-    /**
-     * @symbol ?setAbilityBool\@DirectPlayerMovementProxy\@\@UEAAXW4AbilitiesIndex\@\@_N\@Z
-     */
-    MCVAPI void setAbilityBool(enum class AbilitiesIndex, bool);
-    /**
      * @symbol ?setAbilityFloat\@DirectPlayerMovementProxy\@\@UEAAXW4AbilitiesIndex\@\@M\@Z
      */
     MCVAPI void setAbilityFloat(enum class AbilitiesIndex, float);
-    /**
-     * @symbol ?setAutoJumping\@DirectPlayerMovementProxy\@\@UEAAX_N\@Z
-     */
-    MCVAPI void setAutoJumping(bool);
-    /**
-     * @symbol ?setBob\@DirectPlayerMovementProxy\@\@UEAAXM\@Z
-     */
-    MCVAPI void setBob(float);
     /**
      * @symbol ?setCurrentLocalMoveVelocity\@DirectPlayerMovementProxy\@\@UEAAXAEBVVec2\@\@\@Z
      */
@@ -251,10 +215,6 @@ public:
      */
     MCVAPI void setJumpRidingScale(float);
     /**
-     * @symbol ?setLastBob\@DirectPlayerMovementProxy\@\@UEAAXM\@Z
-     */
-    MCVAPI void setLastBob(float);
-    /**
      * @symbol ?setLastDelta\@DirectPlayerMovementProxy\@\@UEAAXAEBVVec3\@\@\@Z
      */
     MCVAPI void setLastDelta(class Vec3 const &);
@@ -262,10 +222,6 @@ public:
      * @symbol ?setLastPos\@DirectPlayerMovementProxy\@\@UEAAXAEBVVec3\@\@\@Z
      */
     MCVAPI void setLastPos(class Vec3 const &);
-    /**
-     * @symbol ?setPlayerPaddleForce\@DirectPlayerMovementProxy\@\@UEAAXW4Side\@\@M\@Z
-     */
-    MCVAPI void setPlayerPaddleForce(enum class Side, float);
     /**
      * @symbol ?setWasAutoJumping\@DirectPlayerMovementProxy\@\@UEAAX_N\@Z
      */
@@ -283,25 +239,17 @@ public:
      */
     MCVAPI void stopGliding();
     /**
-     * @symbol ?tryAsPlayer\@DirectPlayerMovementProxy\@\@UEAAPEAUIPlayerMovementProxy\@\@XZ
-     */
-    MCVAPI struct IPlayerMovementProxy * tryAsPlayer();
-    /**
      * @symbol ?tryAsPlayer\@DirectPlayerMovementProxy\@\@UEBAPEBUIPlayerMovementProxy\@\@XZ
      */
     MCVAPI struct IPlayerMovementProxy const * tryAsPlayer() const;
     /**
+     * @symbol ?tryAsPlayer\@DirectPlayerMovementProxy\@\@UEAAPEAUIPlayerMovementProxy\@\@XZ
+     */
+    MCVAPI struct IPlayerMovementProxy * tryAsPlayer();
+    /**
      * @symbol ?tryGetPlayerActionComponent\@DirectPlayerMovementProxy\@\@UEAAPEAUPlayerActionComponent\@\@XZ
      */
     MCVAPI struct PlayerActionComponent * tryGetPlayerActionComponent();
-    /**
-     * @symbol ?updateClientPlayerInputState\@DirectPlayerMovementProxy\@\@UEAAXXZ
-     */
-    MCVAPI void updateClientPlayerInputState();
-    /**
-     * @symbol ?updateTouch\@DirectPlayerMovementProxy\@\@UEAAXXZ
-     */
-    MCVAPI void updateTouch();
     /**
      * @symbol ?wasAutoJumping\@DirectPlayerMovementProxy\@\@UEBA_NXZ
      */

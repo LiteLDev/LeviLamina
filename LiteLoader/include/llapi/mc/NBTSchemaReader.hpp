@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 
@@ -137,6 +138,11 @@ public:
      * @symbol ?pop\@NBTSchemaReader\@\@UEAAXAEBUSerializerTraits\@cereal\@\@\@Z
      */
     virtual void pop(struct cereal::SerializerTraits const &);
+    /**
+     * @vftbl 22
+     * @symbol ?isSequenceReader\@SchemaReader\@cereal\@\@UEBA_NXZ
+     */
+    virtual bool isSequenceReader() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTSCHEMAREADER
     /**
      * @symbol ?asInt16\@NBTSchemaReader\@\@UEAA?AV?$optional\@F\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z

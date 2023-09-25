@@ -36,10 +36,6 @@ public:
      */
     MCAPI void deserialize(class IDataInput &);
     /**
-     * @symbol ?getMetaData\@LevelChunkMetaDataDictionary\@\@QEBA?AV?$shared_ptr\@$$CBVLevelChunkMetaData\@\@\@std\@\@_K\@Z
-     */
-    MCAPI class std::shared_ptr<class LevelChunkMetaData const> getMetaData(unsigned __int64) const;
-    /**
      * @symbol ?registerMetaData\@LevelChunkMetaDataDictionary\@\@QEAA?AV?$shared_ptr\@VLevelChunkMetaData\@\@\@std\@\@AEBVLevelChunkMetaData\@\@\@Z
      */
     MCAPI class std::shared_ptr<class LevelChunkMetaData> registerMetaData(class LevelChunkMetaData const &);

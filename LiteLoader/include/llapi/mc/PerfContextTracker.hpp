@@ -25,13 +25,10 @@ class PerfContextTracker {
 public:
     class PerfContextTracker& operator=(class PerfContextTracker const &) = delete;
     PerfContextTracker(class PerfContextTracker const &) = delete;
+    PerfContextTracker() = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0PerfContextTracker\@\@QEAA\@XZ
-     */
-    MCAPI PerfContextTracker();
     /**
      * @symbol ?incrementPacketReceivedInfo\@PerfContextTracker\@\@QEAAXI\@Z
      */
@@ -44,13 +41,5 @@ public:
      * @symbol ?getInstance\@PerfContextTracker\@\@SAAEAV1\@XZ
      */
     MCAPI static class PerfContextTracker & getInstance();
-
-//private:
-    /**
-     * @symbol ?_resetStats\@PerfContextTracker\@\@AEAAXXZ
-     */
-    MCAPI void _resetStats();
-
-private:
 
 };

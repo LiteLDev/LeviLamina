@@ -48,34 +48,34 @@ public:
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ExplosionStartedEvent &);
     /**
      * @vftbl 3
+     * @symbol ?handleEvent\@ScriptBlockGameplayHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAUBlockTryDestroyByPlayerEvent\@\@\@Z
+     */
+    virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct BlockTryDestroyByPlayerEvent &);
+    /**
+     * @vftbl 4
+     * @symbol ?handleEvent\@ScriptBlockGameplayHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAUBlockTryPlaceByPlayerEvent\@\@\@Z
+     */
+    virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct BlockTryPlaceByPlayerEvent &);
+    /**
+     * @vftbl 5
      * @symbol ?handleEvent\@?$Impl\@U?$type_list\@$$CBU?$BlockGameplayEvent\@X\@\@$$CBU?$BlockGameplayEvent\@W4CoordinatorResult\@\@\@\@$$CBU?$BlockGameplayEvent\@V?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@\@U?$MutableBlockGameplayEvent\@W4CoordinatorResult\@\@\@\@\@entt\@\@\@?$EventHandlerDispatcher\@VBlockGameplayHandler\@\@\@Details\@\@MEAA?AW4HandlerResult\@\@AEBU?$BlockGameplayEvent\@X\@\@\@Z
      */
     virtual enum class HandlerResult handleEvent(struct BlockGameplayEvent<void> const &);
     /**
-     * @vftbl 4
+     * @vftbl 6
      * @symbol ?handleEvent\@?$Impl\@U?$type_list\@$$CBU?$BlockGameplayEvent\@W4CoordinatorResult\@\@\@\@$$CBU?$BlockGameplayEvent\@V?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@\@U?$MutableBlockGameplayEvent\@W4CoordinatorResult\@\@\@\@\@entt\@\@\@?$EventHandlerDispatcher\@VBlockGameplayHandler\@\@\@Details\@\@MEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEBU?$BlockGameplayEvent\@W4CoordinatorResult\@\@\@\@\@Z
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct BlockGameplayEvent<enum class CoordinatorResult> const &);
     /**
-     * @vftbl 5
+     * @vftbl 7
      * @symbol ?handleEvent\@?$Impl\@U?$type_list\@$$CBU?$BlockGameplayEvent\@V?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@\@U?$MutableBlockGameplayEvent\@W4CoordinatorResult\@\@\@\@\@entt\@\@\@?$EventHandlerDispatcher\@VBlockGameplayHandler\@\@\@Details\@\@MEAA?AU?$GameplayHandlerResult\@V?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@\@AEBU?$BlockGameplayEvent\@V?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@\@\@Z
      */
     virtual struct GameplayHandlerResult<class std::optional<std::string>> handleEvent(struct BlockGameplayEvent<class std::optional<std::string>> const &);
     /**
-     * @vftbl 6
+     * @vftbl 8
      * @symbol ?handleEvent\@?$Impl\@U?$type_list\@U?$MutableBlockGameplayEvent\@W4CoordinatorResult\@\@\@\@\@entt\@\@\@?$EventHandlerDispatcher\@VBlockGameplayHandler\@\@\@Details\@\@MEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAU?$MutableBlockGameplayEvent\@W4CoordinatorResult\@\@\@\@\@Z
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct MutableBlockGameplayEvent<enum class CoordinatorResult> &);
-    /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
     /**
      * @vftbl 9
      * @symbol __unk_vfn_9
@@ -98,19 +98,37 @@ public:
     virtual void __unk_vfn_12();
     /**
      * @vftbl 13
+     * @symbol __unk_vfn_13
+     */
+    virtual void __unk_vfn_13();
+    /**
+     * @vftbl 14
+     * @symbol __unk_vfn_14
+     */
+    virtual void __unk_vfn_14();
+    /**
+     * @vftbl 15
      * @symbol ?handleEvent\@ScriptBlockGameplayHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEBUPistonActionEvent\@\@\@Z
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct PistonActionEvent const &);
 
 //private:
     /**
-     * @symbol ?_handleExplosionStartedEvent\@ScriptBlockGameplayHandler\@\@AEBA_NAEAUExplosionStartedEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VIScriptBeforeEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
+     * @symbol ?_handleBlockTryDestroyByPlayerEvent\@ScriptBlockGameplayHandler\@\@AEBA_NAEAUBlockTryDestroyByPlayerEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VIScriptWorldBeforeEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
      */
-    MCAPI bool _handleExplosionStartedEvent(struct ExplosionStartedEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptBeforeEvents>) const;
+    MCAPI bool _handleBlockTryDestroyByPlayerEvent(struct BlockTryDestroyByPlayerEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>) const;
     /**
-     * @symbol ?_handlePistonActionEvent\@ScriptBlockGameplayHandler\@\@AEBA_NAEBUPistonActionEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VIScriptBeforeEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
+     * @symbol ?_handleBlockTryPlaceByPlayerEvent\@ScriptBlockGameplayHandler\@\@AEBA_NAEAUBlockTryPlaceByPlayerEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VIScriptWorldBeforeEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
      */
-    MCAPI bool _handlePistonActionEvent(struct PistonActionEvent const &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptBeforeEvents>) const;
+    MCAPI bool _handleBlockTryPlaceByPlayerEvent(struct BlockTryPlaceByPlayerEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>) const;
+    /**
+     * @symbol ?_handleExplosionStartedEvent\@ScriptBlockGameplayHandler\@\@AEBA_NAEAUExplosionStartedEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VIScriptWorldBeforeEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
+     */
+    MCAPI bool _handleExplosionStartedEvent(struct ExplosionStartedEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>) const;
+    /**
+     * @symbol ?_handlePistonActionEvent\@ScriptBlockGameplayHandler\@\@AEBA_NAEBUPistonActionEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VIScriptWorldBeforeEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
+     */
+    MCAPI bool _handlePistonActionEvent(struct PistonActionEvent const &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>) const;
 
 private:
 

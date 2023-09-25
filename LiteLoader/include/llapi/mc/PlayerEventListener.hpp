@@ -103,9 +103,9 @@ public:
      */
     MCVAPI enum class EventResult onPlayerEquippedArmor(class Player &, class ItemDescriptor const &);
     /**
-     * @symbol ?onPlayerInput\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAUIPlayerMovementProxy\@\@\@Z
+     * @symbol ?onPlayerInput\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVEntityContext\@\@\@Z
      */
-    MCVAPI enum class EventResult onPlayerInput(struct IPlayerMovementProxy &);
+    MCVAPI enum class EventResult onPlayerInput(class EntityContext &);
     /**
      * @symbol ?onPlayerItemEquipped\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@AEBVItemInstance\@\@H\@Z
      */
@@ -131,9 +131,9 @@ public:
      */
     MCVAPI enum class EventResult onPlayerMovementCorrected(class Player &, class Vec3 const &, float, float);
     /**
-     * @symbol ?onPlayerMovementRewindCorrected\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@_K\@Z
+     * @symbol ?onPlayerMovementRewindCorrected\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@_KW4ReplayCorrectionResult\@\@\@Z
      */
-    MCVAPI enum class EventResult onPlayerMovementRewindCorrected(class Player &, unsigned __int64);
+    MCVAPI enum class EventResult onPlayerMovementRewindCorrected(class Player &, unsigned __int64, enum class ReplayCorrectionResult);
     /**
      * @symbol ?onPlayerNamedItem\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@AEBVItemDescriptor\@\@\@Z
      */
@@ -182,6 +182,10 @@ public:
      * @symbol ?onPlayerTeleported\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@\@Z
      */
     MCVAPI enum class EventResult onPlayerTeleported(class Player &);
+    /**
+     * @symbol ?onPlayerTeleported\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@M\@Z
+     */
+    MCVAPI enum class EventResult onPlayerTeleported(class Player &, float);
     /**
      * @symbol ?onPlayerTick\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@\@Z
      */

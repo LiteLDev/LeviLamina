@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "SubChunkBrightnessStorage.hpp"
 #include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
@@ -165,20 +166,12 @@ public:
      * @symbol ??1SubChunk\@\@QEAA\@XZ
      */
     MCAPI ~SubChunk();
-    /**
-     * @symbol ?flushGarbageCollectors\@SubChunk\@\@SAXXZ
-     */
-    MCAPI static void flushGarbageCollectors();
 
 //protected:
     /**
      * @symbol ?_createBlockLightStorage\@SubChunk\@\@IEAAXXZ
      */
     MCAPI void _createBlockLightStorage();
-    /**
-     * @symbol ?_createSkyLightStorage\@SubChunk\@\@IEAAXXZ
-     */
-    MCAPI void _createSkyLightStorage();
     /**
      * @symbol ?_replaceBlocks\@SubChunk\@\@IEAAXEV?$unique_ptr\@V?$SubChunkStorage\@VBlock\@\@\@\@U?$default_delete\@V?$SubChunkStorage\@VBlock\@\@\@\@\@std\@\@\@std\@\@AEAV?$LockGuard\@VSpinLock\@\@\@Threading\@Bedrock\@\@\@Z
      */

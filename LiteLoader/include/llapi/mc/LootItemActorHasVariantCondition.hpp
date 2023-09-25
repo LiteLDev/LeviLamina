@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "LootItemCondition.hpp"
 
 #define BEFORE_EXTRA
 
@@ -14,7 +15,7 @@
  * @brief MC class LootItemActorHasVariantCondition.
  *
  */
-class LootItemActorHasVariantCondition {
+class LootItemActorHasVariantCondition : public LootItemCondition {
 
 #define AFTER_EXTRA
 

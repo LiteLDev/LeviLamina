@@ -55,6 +55,10 @@ public:
      */
     MCVAPI enum class BuildPlatform getBuildPlatform() const;
     /**
+     * @symbol ?getCaretPosition\@AppPlatform_win32\@\@UEBAHXZ
+     */
+    MCVAPI int getCaretPosition() const;
+    /**
      * @symbol ?getDisplayHeight\@AppPlatform_win32\@\@UEAAHXZ
      */
     MCVAPI int getDisplayHeight();
@@ -95,9 +99,9 @@ public:
      */
     MCVAPI class Core::PathBuffer<std::string> getPackagePath() const;
     /**
-     * @symbol ?getPixelsPerMillimeter\@AppPlatform_win32\@\@UEAAMXZ
+     * @symbol ?getPlatformDpi\@AppPlatform_win32\@\@EEBAHXZ
      */
-    MCVAPI float getPixelsPerMillimeter();
+    MCVAPI int getPlatformDpi() const;
     /**
      * @symbol ?getPlatformString\@AppPlatform_win32\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
@@ -138,6 +142,10 @@ public:
      * @symbol ?getSubPlatformString\@AppPlatform_win32\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCVAPI std::string getSubPlatformString() const;
+    /**
+     * @symbol ?getTextBoxBackend\@AppPlatform_win32\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     */
+    MCVAPI std::string getTextBoxBackend() const;
     /**
      * @symbol ?getTotalPhysicalMemory\@AppPlatform_win32\@\@UEBA_KXZ
      */
@@ -183,6 +191,10 @@ public:
      */
     MCVAPI std::string readAssetFile(class Core::Path const &);
     /**
+     * @symbol ?setCaretPosition\@AppPlatform_win32\@\@UEAAXH\@Z
+     */
+    MCVAPI void setCaretPosition(int);
+    /**
      * @symbol ?setFullscreenMode\@AppPlatform_win32\@\@UEAAXW4FullscreenMode\@\@\@Z
      */
     MCVAPI void setFullscreenMode(enum class FullscreenMode);
@@ -194,6 +206,10 @@ public:
      * @symbol ?setSecureStorageKey\@AppPlatform_win32\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSecureStorageKey\@\@\@Z
      */
     MCVAPI void setSecureStorageKey(std::string const &, class SecureStorageKey const &);
+    /**
+     * @symbol ?setTextBoxBackend\@AppPlatform_win32\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCVAPI void setTextBoxBackend(std::string const &);
     /**
      * @symbol ?setWindowSize\@AppPlatform_win32\@\@UEAAXHH\@Z
      */
@@ -210,10 +226,6 @@ public:
      * @symbol ?supportsVibration\@AppPlatform_win32\@\@UEBA_NXZ
      */
     MCVAPI bool supportsVibration() const;
-    /**
-     * @symbol ?updateTextBoxText\@AppPlatform_win32\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCVAPI void updateTextBoxText(std::string const &);
     /**
      * @symbol __unk_destructor_-1
      */

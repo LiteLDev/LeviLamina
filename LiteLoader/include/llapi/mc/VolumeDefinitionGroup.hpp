@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 
@@ -45,9 +46,9 @@ public:
      */
     MCAPI ~VolumeDefinitionGroup();
     /**
-     * @symbol ?bindVolumeDefinitions\@VolumeDefinitionGroup\@\@SAXXZ
+     * @symbol ?bindVolumeDefinitions\@VolumeDefinitionGroup\@\@SAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI static void bindVolumeDefinitions();
+    MCAPI static void bindVolumeDefinitions(struct cereal::ReflectionCtx &);
 
 //private:
     /**

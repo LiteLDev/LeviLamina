@@ -29,15 +29,25 @@ public:
 #endif
 
 public:
+    /**
+     * @vftbl 0
+     * @symbol __unk_vfn_0
+     */
+    virtual void __unk_vfn_0();
+    /**
+     * @vftbl 1
+     * @symbol ?onEvent\@ActorEventListener\@\@UEAA?AW4EventResult\@\@AEBUActorNotificationEvent\@\@\@Z
+     */
+    virtual enum class EventResult onEvent(struct ActorNotificationEvent const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTLISTENER
     /**
      * @symbol ?onActorAttackedActor\@ActorEventListener\@\@UEAA?AW4EventResult\@\@AEAVActor\@\@0\@Z
      */
     MCVAPI enum class EventResult onActorAttackedActor(class Actor &, class Actor &);
     /**
-     * @symbol ?onActorCreated\@ActorEventListener\@\@UEAA?AW4EventResult\@\@AEAVActor\@\@\@Z
+     * @symbol ?onActorCreated\@ActorEventListener\@\@UEAA?AW4EventResult\@\@AEAVActor\@\@W4InitializationMethod\@\@\@Z
      */
-    MCVAPI enum class EventResult onActorCreated(class Actor &);
+    MCVAPI enum class EventResult onActorCreated(class Actor &, enum class InitializationMethod);
     /**
      * @symbol ?onActorCreationAttemptFailed\@ActorEventListener\@\@UEAA?AW4EventResult\@\@AEAVActor\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
@@ -78,10 +88,6 @@ public:
      * @symbol ?onActorTick\@ActorEventListener\@\@UEAA?AW4EventResult\@\@AEAVActor\@\@\@Z
      */
     MCVAPI enum class EventResult onActorTick(class Actor &);
-    /**
-     * @symbol ?onEvent\@ActorEventListener\@\@UEAA?AW4EventResult\@\@AEBUActorNotificationEvent\@\@\@Z
-     */
-    MCVAPI enum class EventResult onEvent(struct ActorNotificationEvent const &);
     /**
      * @symbol __unk_destructor_-1
      */

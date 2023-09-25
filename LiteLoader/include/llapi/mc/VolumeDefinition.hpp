@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -41,9 +42,9 @@ public:
      */
     MCAPI static std::string const NAME;
     /**
-     * @symbol ?bindType\@VolumeDefinition\@\@SAXXZ
+     * @symbol ?bindType\@VolumeDefinition\@\@SAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(struct cereal::ReflectionCtx &);
     /**
      * @symbol ?getMaxSupportedVersion\@VolumeDefinition\@\@SAAEBVSemVersion\@\@XZ
      */

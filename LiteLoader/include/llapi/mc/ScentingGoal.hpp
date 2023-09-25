@@ -31,11 +31,6 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @symbol ??0ScentingGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI ScentingGoal(class Mob &);

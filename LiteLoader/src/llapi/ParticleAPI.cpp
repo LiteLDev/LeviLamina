@@ -11,7 +11,7 @@
 #include "llapi/mc/ResourcePackRepository.hpp"
 void InitParticle() {
     Event::ResourcePackInitEvent::subscribe([](const Event::ResourcePackInitEvent& ev) {
-        ev.mRepo->setCustomResourcePackPath(PackType::PackType_Resources, R"(plugins/LiteLoader/ResourcePacks)");
+        ev.mRepo->setCustomResourcePackPath(PackType(6), R"(plugins/LiteLoader/ResourcePacks)");
         return true;
     });
 }

@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
+#include "LootItemCondition.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class LootItemKilledByActorCondition.
  *
  */
-class LootItemKilledByActorCondition {
+class LootItemKilledByActorCondition : public LootItemCondition {
 
 #define AFTER_EXTRA
 // Add Member There

@@ -5,14 +5,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Recipe.hpp"
+#include "MultiRecipe.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
 
-class DecoratedPotRecipe : public Recipe {
+class DecoratedPotRecipe : public MultiRecipe {
 
 #define AFTER_EXTRA
 

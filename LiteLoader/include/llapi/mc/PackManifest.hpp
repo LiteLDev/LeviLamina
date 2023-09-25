@@ -52,13 +52,13 @@ public:
     MCVAPI ~PackManifest();
 #endif
     /**
-     * @symbol ??0PackManifest\@\@QEAA\@W4ManifestType\@\@\@Z
-     */
-    MCAPI PackManifest(enum class ManifestType);
-    /**
      * @symbol ??0PackManifest\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI PackManifest(class PackManifest const &);
+    /**
+     * @symbol ??0PackManifest\@\@QEAA\@W4ManifestType\@\@\@Z
+     */
+    MCAPI PackManifest(enum class ManifestType);
     /**
      * @symbol ?addModule\@PackManifest\@\@QEAAXAEBVResourceInformation\@\@\@Z
      */
@@ -67,6 +67,10 @@ public:
      * @symbol ?addPackDependency\@PackManifest\@\@QEAAXAEBUPackIdVersion\@\@\@Z
      */
     MCAPI void addPackDependency(struct PackIdVersion const &);
+    /**
+     * @symbol ?clearLegacyModuleDependencies\@PackManifest\@\@QEAAXXZ
+     */
+    MCAPI void clearLegacyModuleDependencies();
     /**
      * @symbol ?getContentIdentity\@PackManifest\@\@QEBAAEBVContentIdentity\@\@XZ
      */
@@ -87,6 +91,10 @@ public:
      * @symbol ?getIdentity\@PackManifest\@\@QEBAAEBUPackIdVersion\@\@XZ
      */
     MCAPI struct PackIdVersion const & getIdentity() const;
+    /**
+     * @symbol ?getLegacyModuleDependencies\@PackManifest\@\@QEBAAEBV?$vector\@ULegacyPackIdVersion\@\@V?$allocator\@ULegacyPackIdVersion\@\@\@std\@\@\@std\@\@XZ
+     */
+    MCAPI std::vector<struct LegacyPackIdVersion> const & getLegacyModuleDependencies() const;
     /**
      * @symbol ?getLocation\@PackManifest\@\@QEBAAEBVResourceLocation\@\@XZ
      */
@@ -148,6 +156,10 @@ public:
      */
     MCAPI bool hasClientScript() const;
     /**
+     * @symbol ?hasLegacyModuleDependencies\@PackManifest\@\@QEBA_NXZ
+     */
+    MCAPI bool hasLegacyModuleDependencies() const;
+    /**
      * @symbol ?hasModule\@PackManifest\@\@QEBA_NAEBUPackIdVersion\@\@\@Z
      */
     MCAPI bool hasModule(struct PackIdVersion const &) const;
@@ -188,6 +200,10 @@ public:
      */
     MCAPI void setDescription(std::string const &);
     /**
+     * @symbol ?setHidden\@PackManifest\@\@QEAAX_N\@Z
+     */
+    MCAPI void setHidden(bool);
+    /**
      * @symbol ?setIdentity\@PackManifest\@\@QEAAXAEBUPackIdVersion\@\@\@Z
      */
     MCAPI void setIdentity(struct PackIdVersion const &);
@@ -215,6 +231,10 @@ public:
      * @symbol ?setPackCategory\@PackManifest\@\@QEAAXW4PackCategory\@\@\@Z
      */
     MCAPI void setPackCategory(enum class PackCategory);
+    /**
+     * @symbol ?setPackOrigin\@PackManifest\@\@QEAAXW4PackOrigin\@\@\@Z
+     */
+    MCAPI void setPackOrigin(enum class PackOrigin);
     /**
      * @symbol ?setPackType\@PackManifest\@\@QEAAXW4PackType\@\@\@Z
      */

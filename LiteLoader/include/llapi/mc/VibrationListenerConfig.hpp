@@ -26,6 +26,10 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONLISTENERCONFIG
     /**
+     * @symbol ?canReceiveOnlyIfAdjacentChunksAreTicking\@VibrationListenerConfig\@\@UEBA_NXZ
+     */
+    MCVAPI bool canReceiveOnlyIfAdjacentChunksAreTicking() const;
+    /**
      * @symbol ?isValidVibration\@VibrationListenerConfig\@\@UEAA_NAEBVGameEvent\@\@\@Z
      */
     MCVAPI bool isValidVibration(class GameEvent const &);

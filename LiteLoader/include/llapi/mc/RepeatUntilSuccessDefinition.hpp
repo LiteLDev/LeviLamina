@@ -6,7 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
-#include "BehaviorDefinition.hpp"
+#include "DecoratorDefinition.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +17,7 @@
  * @brief MC class RepeatUntilSuccessDefinition.
  *
  */
-class RepeatUntilSuccessDefinition : public BehaviorDefinition {
+class RepeatUntilSuccessDefinition : public DecoratorDefinition {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -41,5 +41,10 @@ public:
      * @symbol ?load\@RepeatUntilSuccessDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
+    /**
+     * @vftbl 2
+     * @symbol ?createNode\@BehaviorDefinition\@\@UEBA?AV?$unique_ptr\@VBehaviorNode\@\@U?$default_delete\@VBehaviorNode\@\@\@std\@\@\@std\@\@AEAVActor\@\@AEBVBehaviorFactory\@\@PEAVBehaviorNode\@\@PEAVBehaviorData\@\@\@Z
+     */
+    virtual std::unique_ptr<class BehaviorNode> createNode(class Actor &, class BehaviorFactory const &, class BehaviorNode *, class BehaviorData *) const;
 
 };

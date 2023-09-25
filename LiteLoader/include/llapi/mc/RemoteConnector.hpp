@@ -5,6 +5,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Connector.hpp"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 
@@ -30,5 +32,9 @@ public:
      */
     MCVAPI ~RemoteConnector();
 #endif
+    /**
+     * @symbol ??0RemoteConnector\@\@QEAA\@AEAUConnectionCallbacks\@Connector\@\@AEBV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@\@Z
+     */
+    MCAPI RemoteConnector(struct Connector::ConnectionCallbacks &, class Bedrock::NonOwnerPointer<class AppPlatform> const &);
 
 };

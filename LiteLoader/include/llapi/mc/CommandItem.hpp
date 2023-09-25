@@ -36,13 +36,9 @@ public:
      */
     MCAPI CommandItem();
     /**
-     * @symbol ??0CommandItem\@\@QEAA\@HF_N\@Z
+     * @symbol ?createInstance\@CommandItem\@\@QEBA?AV?$optional\@VItemInstance\@\@\@std\@\@HHAEAVCommandOutput\@\@_N\@Z
      */
-    MCAPI CommandItem(int, short, bool);
-    /**
-     * @symbol ?createInstance\@CommandItem\@\@QEBA?AV?$optional\@VItemInstance\@\@\@std\@\@HHPEAVCommandOutput\@\@_N\@Z
-     */
-    MCAPI class std::optional<class ItemInstance> createInstance(int, int, class CommandOutput *, bool) const;
+    MCAPI class std::optional<class ItemInstance> createInstance(int, int, class CommandOutput &, bool) const;
     /**
      * @symbol ?getId\@CommandItem\@\@QEBAHXZ
      */

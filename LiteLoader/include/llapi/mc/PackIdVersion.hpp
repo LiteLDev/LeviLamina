@@ -28,6 +28,7 @@ public:
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKIDVERSION
 public:
     struct PackIdVersion& operator=(struct PackIdVersion const &) = delete;
+    PackIdVersion(struct PackIdVersion const &) = delete;
 #endif
 
 public:
@@ -35,10 +36,6 @@ public:
      * @symbol ??0PackIdVersion\@\@QEAA\@AEBVUUID\@mce\@\@AEBVSemVersion\@\@W4PackType\@\@\@Z
      */
     MCAPI PackIdVersion(class mce::UUID const &, class SemVersion const &, enum class PackType);
-    /**
-     * @symbol ??0PackIdVersion\@\@QEAA\@AEBU0\@\@Z
-     */
-    MCAPI PackIdVersion(struct PackIdVersion const &);
     /**
      * @symbol ??0PackIdVersion\@\@QEAA\@XZ
      */
@@ -67,5 +64,9 @@ public:
      * @symbol ??1PackIdVersion\@\@QEAA\@XZ
      */
     MCAPI ~PackIdVersion();
+    /**
+     * @symbol ?fromString\@PackIdVersion\@\@SA?AU1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static struct PackIdVersion fromString(std::string const &);
 
 };

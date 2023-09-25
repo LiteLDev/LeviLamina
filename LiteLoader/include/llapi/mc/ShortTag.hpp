@@ -79,9 +79,5 @@ public:
      * @symbol ?hash\@ShortTag\@\@UEBA_KXZ
      */
     virtual unsigned __int64 hash() const;
-    /**
-     * @symbol ??0ShortTag\@\@QEAA\@F\@Z
-     */
-    MCAPI ShortTag(short);
 
 };

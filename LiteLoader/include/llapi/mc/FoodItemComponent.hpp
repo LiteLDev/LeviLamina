@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -24,7 +25,6 @@ class FoodItemComponent {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOODITEMCOMPONENT
 public:
     FoodItemComponent(class FoodItemComponent const &) = delete;
-    FoodItemComponent() = delete;
 #endif
 
 public:
@@ -55,6 +55,10 @@ public:
     MCVAPI class Item const * useTimeDepleted(class ItemStack &, class Player &, class Level &);
 #endif
     /**
+     * @symbol ??0FoodItemComponent\@\@QEAA\@XZ
+     */
+    MCAPI FoodItemComponent();
+    /**
      * @symbol ?getUsingConvertsToItemDescriptor\@FoodItemComponent\@\@QEBA?AVItemDescriptor\@\@XZ
      */
     MCAPI class ItemDescriptor getUsingConvertsToItemDescriptor() const;
@@ -63,16 +67,12 @@ public:
      */
     MCAPI class FoodItemComponent & operator=(class FoodItemComponent const &);
     /**
-     * @symbol ?bindType\@FoodItemComponent\@\@SAXXZ
+     * @symbol ?bindType\@FoodItemComponent\@\@SAXAEAUReflectionCtx\@cereal\@\@AEBV?$vector\@W4AllExperiments\@\@V?$allocator\@W4AllExperiments\@\@\@std\@\@\@std\@\@V?$optional\@VSemVersion\@\@\@5\@\@Z
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(struct cereal::ReflectionCtx &, std::vector<enum class AllExperiments> const &, class std::optional<class SemVersion>);
     /**
      * @symbol ?getIdentifier\@FoodItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
     MCAPI static class HashedString const & getIdentifier();
-    /**
-     * @symbol ?registerVersionUpgrades\@FoodItemComponent\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
-     */
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

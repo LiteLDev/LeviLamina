@@ -110,5 +110,9 @@ public:
      * @symbol ?setOutputSignal\@ComparatorBlockActor\@\@UEAAXH\@Z
      */
     virtual void setOutputSignal(int);
+    /**
+     * @symbol ??0ComparatorBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI ComparatorBlockActor(class BlockPos const &);
 
 };

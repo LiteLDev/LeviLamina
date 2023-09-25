@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "BehaviorNode.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class SelectorBehaviorNode.
  *
  */
-class SelectorBehaviorNode {
+class SelectorBehaviorNode : public BehaviorNode {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -25,6 +26,7 @@ class SelectorBehaviorNode {
 public:
     class SelectorBehaviorNode& operator=(class SelectorBehaviorNode const &) = delete;
     SelectorBehaviorNode(class SelectorBehaviorNode const &) = delete;
+    SelectorBehaviorNode() = delete;
 #endif
 
 public:
@@ -43,9 +45,5 @@ public:
      * @symbol ?initializeFromDefinition\@SelectorBehaviorNode\@\@MEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
-    /**
-     * @symbol ??0SelectorBehaviorNode\@\@QEAA\@XZ
-     */
-    MCAPI SelectorBehaviorNode();
 
 };

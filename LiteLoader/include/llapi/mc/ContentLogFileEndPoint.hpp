@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Core.hpp"
+#include "ContentLogEndPoint.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class ContentLogFileEndPoint.
  *
  */
-class ContentLogFileEndPoint {
+class ContentLogFileEndPoint : public ContentLogEndPoint {
 
 #define AFTER_EXTRA
 // Add Member There

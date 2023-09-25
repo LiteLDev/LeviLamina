@@ -152,9 +152,5 @@ public:
      * @symbol ?getPotionType\@SplashPotionItem\@\@UEBA?AW4PotionType\@Potion\@\@XZ
      */
     virtual enum class Potion::PotionType getPotionType() const;
-    /**
-     * @symbol ??0SplashPotionItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
-     */
-    MCAPI SplashPotionItem(std::string const &, int);
 
 };

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Scoreboard.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class ServerScoreboard.
  *
  */
-class ServerScoreboard {
+class ServerScoreboard : public Scoreboard {
 
 #define AFTER_EXTRA
 // Add Member There

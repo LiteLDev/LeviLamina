@@ -52,17 +52,17 @@ public:
      */
     virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum class ChunkSource::LoadMode, bool);
     /**
-     * @vftbl 18
+     * @vftbl 19
      * @symbol ?acquireDiscarded\@ChunkViewSource\@\@UEAAXV?$unique_ptr\@VLevelChunk\@\@ULevelChunkFinalDeleter\@\@\@std\@\@\@Z
      */
     virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /**
-     * @vftbl 22
+     * @vftbl 23
      * @symbol ?isWithinWorldLimit\@ChunkViewSource\@\@UEBA_NAEBVChunkPos\@\@\@Z
      */
     virtual bool isWithinWorldLimit(class ChunkPos const &) const;
     /**
-     * @vftbl 29
+     * @vftbl 30
      * @symbol ?setLevelChunk\@ChunkViewSource\@\@UEAAXV?$shared_ptr\@VLevelChunk\@\@\@std\@\@\@Z
      */
     virtual void setLevelChunk(class std::shared_ptr<class LevelChunk>);
@@ -101,13 +101,13 @@ public:
      */
     MCAPI class GridArea<class std::shared_ptr<class LevelChunk>> & getArea();
     /**
-     * @symbol ?move\@ChunkViewSource\@\@QEAAXAEBVBlockPos\@\@H_NW4ChunkSourceViewGenerateMode\@\@V?$function\@$$A6AXV?$buffer_span_mut\@V?$shared_ptr\@VLevelChunk\@\@\@std\@\@\@\@V?$buffer_span\@I\@\@\@Z\@std\@\@PEBM\@Z
-     */
-    MCAPI void move(class BlockPos const &, int, bool, enum class ChunkSourceViewGenerateMode, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>, float const *);
-    /**
      * @symbol ?move\@ChunkViewSource\@\@QEAAXAEBVBlockPos\@\@0_NW4ChunkSourceViewGenerateMode\@\@V?$function\@$$A6AXV?$buffer_span_mut\@V?$shared_ptr\@VLevelChunk\@\@\@std\@\@\@\@V?$buffer_span\@I\@\@\@Z\@std\@\@PEBM\@Z
      */
     MCAPI void move(class BlockPos const &, class BlockPos const &, bool, enum class ChunkSourceViewGenerateMode, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>, float const *);
+    /**
+     * @symbol ?move\@ChunkViewSource\@\@QEAAXAEBVBlockPos\@\@H_NW4ChunkSourceViewGenerateMode\@\@V?$function\@$$A6AXV?$buffer_span_mut\@V?$shared_ptr\@VLevelChunk\@\@\@std\@\@\@\@V?$buffer_span\@I\@\@\@Z\@std\@\@PEBM\@Z
+     */
+    MCAPI void move(class BlockPos const &, int, bool, enum class ChunkSourceViewGenerateMode, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>, float const *);
     /**
      * @symbol ?move\@ChunkViewSource\@\@QEAAXAEBUBounds\@\@_NW4ChunkSourceViewGenerateMode\@\@V?$function\@$$A6AXV?$buffer_span_mut\@V?$shared_ptr\@VLevelChunk\@\@\@std\@\@\@\@V?$buffer_span\@I\@\@\@Z\@std\@\@PEBM\@Z
      */

@@ -28,6 +28,10 @@ public:
 
 public:
     /**
+     * @symbol ?reset\@PerfContextTrackerReport\@\@QEAAXXZ
+     */
+    MCAPI void reset();
+    /**
      * @symbol ??1PerfContextTrackerReport\@\@QEAA\@XZ
      */
     MCAPI ~PerfContextTrackerReport();

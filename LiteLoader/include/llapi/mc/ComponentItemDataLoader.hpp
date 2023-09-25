@@ -5,7 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Puv.hpp"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 
@@ -26,13 +26,9 @@ public:
 
 public:
     /**
-     * @symbol ??0ComponentItemDataLoader\@\@QEAA\@PEAVComponentItem\@\@VSemVersion\@\@\@Z
+     * @symbol ??0ComponentItemDataLoader\@\@QEAA\@PEAVComponentItem\@\@VSemVersion\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI ComponentItemDataLoader(class ComponentItem *, class SemVersion);
-    /**
-     * @symbol ?load\@ComponentItemDataLoader\@\@QEBA?AV?$LoadResult\@UComponentItemData_v1_20\@\@\@Puv\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI class Puv::LoadResult<struct ComponentItemData_v1_20> load(std::string const &) const;
+    MCAPI ComponentItemDataLoader(class ComponentItem *, class SemVersion, struct cereal::ReflectionCtx &);
     /**
      * @symbol ??1ComponentItemDataLoader\@\@QEAA\@XZ
      */

@@ -5,6 +5,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "JsonUtil.hpp"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 
@@ -35,40 +37,30 @@ public:
      */
     virtual std::string const & getName() const;
     /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
      * @vftbl 3
-     * @symbol ?initializeComponent\@BlockCollisionBoxDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
+     * @symbol ?initializeComponent\@BlockCollisionBoxDescription\@\@UEBAXAEAVBlockComponentStorage\@\@\@Z
      */
-    virtual void initializeComponent(class EntityContext &) const;
-    /**
-     * @vftbl 4
-     * @symbol ?initializeComponentFromCode\@BlockCollisionBoxDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
-     */
-    virtual void initializeComponentFromCode(class EntityContext &) const;
+    virtual void initializeComponent(class BlockComponentStorage &) const;
     /**
      * @vftbl 5
-     * @symbol __unk_vfn_5
+     * @symbol ?initializeComponentFromCode\@BlockCollisionBoxDescription\@\@UEBAXAEAVBlockComponentStorage\@\@\@Z
      */
-    virtual void __unk_vfn_5();
+    virtual void initializeComponentFromCode(class BlockComponentStorage &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?isNetworkComponent\@BlockCollisionBoxDescription\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl 7
-     * @symbol ?buildNetworkTag\@BlockCollisionBoxDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
-     */
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /**
      * @vftbl 8
-     * @symbol ?initializeFromNetwork\@BlockCollisionBoxDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
+     * @symbol ?buildNetworkTag\@BlockCollisionBoxDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    virtual void initializeFromNetwork(class CompoundTag const &);
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx &) const;
+    /**
+     * @vftbl 9
+     * @symbol ?initializeFromNetwork\@BlockCollisionBoxDescription\@\@UEAAXAEBVCompoundTag\@\@AEAUReflectionCtx\@cereal\@\@\@Z
+     */
+    virtual void initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOLLISIONBOXDESCRIPTION
     /**
      * @symbol __unk_destructor_-1
@@ -76,20 +68,20 @@ public:
     MCVAPI ~BlockCollisionBoxDescription();
 #endif
     /**
-     * @symbol ??0BlockCollisionBoxDescription\@\@QEAA\@AEBVVec3\@\@0\@Z
-     */
-    MCAPI BlockCollisionBoxDescription(class Vec3 const &, class Vec3 const &);
-    /**
      * @symbol ??0BlockCollisionBoxDescription\@\@QEAA\@_N\@Z
      */
     MCAPI BlockCollisionBoxDescription(bool);
+    /**
+     * @symbol ??0BlockCollisionBoxDescription\@\@QEAA\@AEBVVec3\@\@0\@Z
+     */
+    MCAPI BlockCollisionBoxDescription(class Vec3 const &, class Vec3 const &);
     /**
      * @symbol ?NameID\@BlockCollisionBoxDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NameID;
     /**
-     * @symbol ?bindType\@BlockCollisionBoxDescription\@\@SAXXZ
+     * @symbol ?bindType\@BlockCollisionBoxDescription\@\@SAXAEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(struct cereal::ReflectionCtx &);
 
 };

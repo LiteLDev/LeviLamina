@@ -31,5 +31,9 @@ public:
      * @symbol ?createRemovePassengersSystem\@RemovePassengersSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createRemovePassengersSystem();
+    /**
+     * @symbol ?createVehicleRemovePassengersSystem\@RemovePassengersSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     */
+    MCAPI static struct TickingSystemWithInfo createVehicleRemovePassengersSystem();
 
 };

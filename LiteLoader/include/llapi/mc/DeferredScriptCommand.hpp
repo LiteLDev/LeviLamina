@@ -7,7 +7,7 @@
 #include "llapi/Global.h"
 #include "Scripting.hpp"
 #include "ScriptModuleMinecraft.hpp"
-#include "Command.hpp"
+#include "DeferredCommandBase.hpp"
 
 #define BEFORE_EXTRA
 
@@ -17,7 +17,7 @@
  * @brief MC class DeferredScriptCommand.
  *
  */
-class DeferredScriptCommand : public Command {
+class DeferredScriptCommand : public DeferredCommandBase {
 
 #define AFTER_EXTRA
 

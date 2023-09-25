@@ -5,6 +5,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
+#include "ItemComponent.hpp"
 
 #define BEFORE_EXTRA
 
@@ -14,7 +16,7 @@
  * @brief MC class StorageItemComponent.
  *
  */
-class StorageItemComponent {
+class StorageItemComponent : public ItemComponent {
 
 #define AFTER_EXTRA
 
@@ -27,6 +29,11 @@ public:
 #endif
 
 public:
+    /**
+     * @vftbl 0
+     * @symbol __unk_vfn_0
+     */
+    virtual void __unk_vfn_0();
     /**
      * @symbol ?calculateAddableCount\@StorageItemComponent\@\@QEBAIAEBVItemStack\@\@AEBVItemStackBase\@\@\@Z
      */
@@ -47,10 +54,6 @@ public:
      * @symbol ?tryRemoveOneFromItemStack\@StorageItemComponent\@\@QEBA?AVItemStack\@\@AEAV2\@\@Z
      */
     MCAPI class ItemStack tryRemoveOneFromItemStack(class ItemStack &) const;
-    /**
-     * @symbol ?use\@StorageItemComponent\@\@QEBA_NAEAVItemStack\@\@AEAVPlayer\@\@\@Z
-     */
-    MCAPI bool use(class ItemStack &, class Player &) const;
     /**
      * @symbol ?DEFAULT_MAX_CARRY_WEIGHT\@StorageItemComponent\@\@2IB
      */

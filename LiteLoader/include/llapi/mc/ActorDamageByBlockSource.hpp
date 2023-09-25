@@ -50,5 +50,9 @@ public:
      * @symbol ?clone\@ActorDamageByBlockSource\@\@UEBA?AV?$unique_ptr\@VActorDamageSource\@\@U?$default_delete\@VActorDamageSource\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class ActorDamageSource> clone() const;
+    /**
+     * @symbol ??0ActorDamageByBlockSource\@\@QEAA\@AEBVBlock\@\@W4ActorDamageCause\@\@\@Z
+     */
+    MCAPI ActorDamageByBlockSource(class Block const &, enum class ActorDamageCause);
 
 };

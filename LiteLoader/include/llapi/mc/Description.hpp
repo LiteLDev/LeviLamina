@@ -31,7 +31,7 @@ public:
 public:
     /**
      * @vftbl 0
-     * @symbol ?getJsonName\@BehaviorTreeDescription\@\@UEBAPEBDXZ
+     * @symbol ?getJsonName\@MobEffectChangeDescription\@\@UEBAPEBDXZ
      */
     virtual char const * getJsonName() const = 0;
     /**

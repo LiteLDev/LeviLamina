@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 
 #define BEFORE_EXTRA
 
@@ -27,6 +28,10 @@ public:
 #endif
 
 public:
+    /**
+     * @symbol ??0CerealSchemaUpgradeSet\@\@QEAA\@AEAUReflectionCtx\@cereal\@\@\@Z
+     */
+    MCAPI CerealSchemaUpgradeSet(struct cereal::ReflectionCtx &);
     /**
      * @symbol ?findNext\@CerealSchemaUpgradeSet\@\@QEBA?AU?$pair\@V?$shared_ptr\@VCerealSchemaUpgrade\@\@\@std\@\@VSemVersion\@\@\@std\@\@AEBVSemVersion\@\@\@Z
      */

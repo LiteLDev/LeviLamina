@@ -5,7 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "BaseMoveToGoal.hpp"
+#include "BaseMoveToBlockGoal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +16,7 @@
  * @brief MC class LayEggGoal.
  *
  */
-class LayEggGoal : public BaseMoveToGoal {
+class LayEggGoal : public BaseMoveToBlockGoal {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -46,11 +46,6 @@ public:
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @vftbl 4
      * @symbol ?start\@LayEggGoal\@\@UEAAXXZ
      */
@@ -65,16 +60,6 @@ public:
      * @symbol ?appendDebugInfo\@LayEggGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
     /**
      * @vftbl 11
      * @symbol ?isValidTarget\@LayEggGoal\@\@UEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z

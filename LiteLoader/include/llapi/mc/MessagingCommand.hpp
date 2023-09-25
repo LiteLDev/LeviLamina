@@ -5,7 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Command.hpp"
+#include "ServerCommand.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +16,7 @@
  * @brief MC class MessagingCommand.
  *
  */
-class MessagingCommand : public Command {
+class MessagingCommand : public ServerCommand {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -35,6 +35,16 @@ public:
      * @symbol __unk_vfn_0
      */
     virtual void __unk_vfn_0();
+    /**
+     * @vftbl 1
+     * @symbol ?collectOptionalArguments\@Command\@\@MEAA_NXZ
+     */
+    virtual bool collectOptionalArguments();
+    /**
+     * @vftbl 2
+     * @symbol ?execute\@CloneCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     */
+    virtual void execute(class CommandOrigin const &, class CommandOutput &) const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MESSAGINGCOMMAND
     /**
      * @symbol __unk_destructor_-1

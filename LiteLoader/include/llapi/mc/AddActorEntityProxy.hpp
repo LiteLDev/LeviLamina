@@ -39,5 +39,9 @@ public:
      * @symbol ?reloadActor\@AddActorEntityProxy\@\@UEAAXAEAVActor\@\@\@Z
      */
     virtual void reloadActor(class Actor &);
+    /**
+     * @symbol ??0AddActorEntityProxy\@\@QEAA\@AEAVDimension\@\@\@Z
+     */
+    MCAPI AddActorEntityProxy(class Dimension &);
 
 };

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "ITickingSystem.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class HoldBlockSystem.
  *
  */
-class HoldBlockSystem {
+class HoldBlockSystem : public ITickingSystem {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -39,11 +40,12 @@ public:
      * @symbol ?registerEvents\@HoldBlockSystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
      */
     virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOLDBLOCKSYSTEM
     /**
-     * @vftbl 2
      * @symbol ?tick\@HoldBlockSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
-    virtual void tick(class EntityRegistry &);
+    MCVAPI void tick(class EntityRegistry &);
+#endif
 
 //private:
     /**

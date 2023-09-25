@@ -37,9 +37,9 @@ namespace ActorRiding {
      */
     MCAPI class StrictEntityContext getVehiclePrevEntity(class EntityContext const &);
     /**
-     * @symbol ?removePassengerFromList\@ActorRiding\@\@YAXAEAVEntityContext\@\@AEBUActorUniqueID\@\@\@Z
+     * @symbol ?isPassenger\@ActorRiding\@\@YA_NAEBVEntityContext\@\@\@Z
      */
-    MCAPI void removePassengerFromList(class EntityContext &, struct ActorUniqueID const &);
+    MCAPI bool isPassenger(class EntityContext const &);
     /**
      * @symbol ?setPassengersChanged\@ActorRiding\@\@YAXAEAVEntityContext\@\@_N\@Z
      */
@@ -48,9 +48,5 @@ namespace ActorRiding {
      * @symbol ?setVehicle\@ActorRiding\@\@YAXAEAVEntityContext\@\@VStrictEntityContext\@\@AEBUActorUniqueID\@\@\@Z
      */
     MCAPI void setVehicle(class EntityContext &, class StrictEntityContext, struct ActorUniqueID const &);
-    /**
-     * @symbol ?tryRemoveLastPendingPassenger\@ActorRiding\@\@YA?AUStrictActorIDEntityContextPair\@\@AEAVEntityContext\@\@\@Z
-     */
-    MCAPI struct StrictActorIDEntityContextPair tryRemoveLastPendingPassenger(class EntityContext &);
 
 };

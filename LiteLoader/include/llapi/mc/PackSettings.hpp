@@ -26,10 +26,13 @@ class PackSettings {
 public:
     class PackSettings& operator=(class PackSettings const &) = delete;
     PackSettings(class PackSettings const &) = delete;
-    PackSettings() = delete;
 #endif
 
 public:
+    /**
+     * @symbol ??0PackSettings\@\@QEAA\@XZ
+     */
+    MCAPI PackSettings();
     /**
      * @symbol ?getAllSettings\@PackSettings\@\@QEBAAEBVValue\@Json\@\@XZ
      */

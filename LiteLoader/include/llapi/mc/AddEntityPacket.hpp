@@ -27,6 +27,7 @@ class AddEntityPacket : public EntityServerPacket {
 public:
     class AddEntityPacket& operator=(class AddEntityPacket const &) = delete;
     AddEntityPacket(class AddEntityPacket const &) = delete;
+    AddEntityPacket() = delete;
 #endif
 
 public:
@@ -52,8 +53,8 @@ public:
     MCVAPI ~AddEntityPacket();
 #endif
     /**
-     * @symbol ??0AddEntityPacket\@\@QEAA\@XZ
+     * @symbol ??0AddEntityPacket\@\@QEAA\@AEBVEntityContext\@\@\@Z
      */
-    MCAPI AddEntityPacket();
+    MCAPI AddEntityPacket(class EntityContext const &);
 
 };

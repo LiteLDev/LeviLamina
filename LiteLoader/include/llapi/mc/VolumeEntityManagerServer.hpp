@@ -5,6 +5,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
+#include "VolumeEntityManager.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +17,7 @@
  * @brief MC class VolumeEntityManagerServer.
  *
  */
-class VolumeEntityManagerServer {
+class VolumeEntityManagerServer : public VolumeEntityManager {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -30,9 +32,9 @@ public:
 
 public:
     /**
-     * @symbol ??0VolumeEntityManagerServer\@\@QEAA\@V?$StackRefResultT\@UEntityRegistryRefTraits\@\@\@\@\@Z
+     * @symbol ??0VolumeEntityManagerServer\@\@QEAA\@V?$StackRefResultT\@UEntityRegistryRefTraits\@\@\@\@AEAUReflectionCtx\@cereal\@\@\@Z
      */
-    MCAPI VolumeEntityManagerServer(class StackRefResultT<struct EntityRegistryRefTraits>);
+    MCAPI VolumeEntityManagerServer(class StackRefResultT<struct EntityRegistryRefTraits>, struct cereal::ReflectionCtx &);
     /**
      * @symbol ?createVolume\@VolumeEntityManagerServer\@\@QEAA?AU?$pair\@W4CreateVolumeResult\@VolumeEntityManagerServer\@\@V?$StackRefResultT\@UEntityRefTraits\@\@\@\@\@std\@\@AEAVLevelStorage\@\@AEAVPacketSender\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@AEBVBlockPos\@\@3V?$AutomaticID\@VDimension\@\@H\@\@2\@Z
      */

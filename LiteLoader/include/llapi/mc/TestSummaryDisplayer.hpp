@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "gametest.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -40,10 +39,6 @@ public:
      */
     MCVAPI void onTestPassed(class gametest::BaseGameTestInstance &);
 #endif
-    /**
-     * @symbol ??0TestSummaryDisplayer\@\@QEAA\@AEAVLevel\@\@AEAVMultipleTestTracker\@gametest\@\@\@Z
-     */
-    MCAPI TestSummaryDisplayer(class Level &, class gametest::MultipleTestTracker &);
 
 //private:
     /**

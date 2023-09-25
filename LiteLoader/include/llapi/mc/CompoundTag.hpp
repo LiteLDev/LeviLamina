@@ -159,13 +159,13 @@ public:
     MCVAPI ~CompoundTag();
 #endif
     /**
-     * @symbol ??0CompoundTag\@\@QEAA\@XZ
-     */
-    MCAPI CompoundTag();
-    /**
      * @symbol ??0CompoundTag\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI CompoundTag(class CompoundTag &&);
+    /**
+     * @symbol ??0CompoundTag\@\@QEAA\@XZ
+     */
+    MCAPI CompoundTag();
     /**
      * @symbol ?append\@CompoundTag\@\@QEAAXAEBV1\@\@Z
      */
@@ -192,6 +192,7 @@ public:
     MCAPI bool contains(class std::basic_string_view<char, struct std::char_traits<char>>) const;
     /**
      * @symbol ?deepCopy\@CompoundTag\@\@QEAAXAEBV1\@\@Z
+     *
      *
      *
      *
@@ -250,13 +251,13 @@ public:
      */
     MCAPI __int64 getInt64(class std::basic_string_view<char, struct std::char_traits<char>>) const;
     /**
-     * @symbol ?getInt64Tag\@CompoundTag\@\@QEAAPEAVInt64Tag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI class Int64Tag * getInt64Tag(class std::basic_string_view<char, struct std::char_traits<char>>);
-    /**
      * @symbol ?getInt64Tag\@CompoundTag\@\@QEBAPEBVInt64Tag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
     MCAPI class Int64Tag const * getInt64Tag(class std::basic_string_view<char, struct std::char_traits<char>>) const;
+    /**
+     * @symbol ?getInt64Tag\@CompoundTag\@\@QEAAPEAVInt64Tag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI class Int64Tag * getInt64Tag(class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
      * @symbol ?getIntTag\@CompoundTag\@\@QEAAPEAVIntTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */

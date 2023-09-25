@@ -124,6 +124,10 @@ public:
      * @symbol ?_getJsonPropertyType\@PropertyGroup\@\@CA?AW4ContainedType\@PropertyMetadata\@\@AEBVValue\@Json\@\@\@Z
      */
     MCAPI static enum class PropertyMetadata::ContainedType _getJsonPropertyType(class Json::Value const &);
+    /**
+     * @symbol ?_tryGetClientSync\@PropertyGroup\@\@CA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVValue\@Json\@\@AEA_N\@Z
+     */
+    MCAPI static bool _tryGetClientSync(std::string const &, class Json::Value const &, bool &);
 
 private:
 

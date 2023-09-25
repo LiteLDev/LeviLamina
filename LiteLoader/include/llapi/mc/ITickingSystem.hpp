@@ -26,6 +26,10 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITICKINGSYSTEM
     /**
+     * @symbol ?singleTick\@ITickingSystem\@\@UEAAXAEAVEntityRegistry\@\@AEAVStrictEntityContext\@\@\@Z
+     */
+    MCVAPI void singleTick(class EntityRegistry &, class StrictEntityContext &);
+    /**
      * @symbol ?singleTick\@ITickingSystem\@\@UEAAXAEAVEntityRegistry\@\@AEAVEntityContext\@\@\@Z
      */
     MCVAPI void singleTick(class EntityRegistry &, class EntityContext &);

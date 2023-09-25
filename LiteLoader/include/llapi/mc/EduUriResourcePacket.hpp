@@ -62,12 +62,12 @@ public:
     MCVAPI ~EduUriResourcePacket();
 #endif
     /**
-     * @symbol ??0EduUriResourcePacket\@\@QEAA\@XZ
-     */
-    MCAPI EduUriResourcePacket();
-    /**
      * @symbol ??0EduUriResourcePacket\@\@QEAA\@AEBUEduSharedUriResource\@\@\@Z
      */
     MCAPI EduUriResourcePacket(struct EduSharedUriResource const &);
+    /**
+     * @symbol ??0EduUriResourcePacket\@\@QEAA\@XZ
+     */
+    MCAPI EduUriResourcePacket();
 
 };

@@ -5,6 +5,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Json.hpp"
+#include "LootItemFunction.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +17,7 @@
  * @brief MC class EnchantWithLevelsFunction.
  *
  */
-class EnchantWithLevelsFunction {
+class EnchantWithLevelsFunction : public LootItemFunction {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -29,23 +31,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTWITHLEVELSFUNCTION
     /**
+     * @vftbl 0
+     * @symbol __unk_vfn_0
+     */
+    virtual void __unk_vfn_0();
+    /**
+     * @vftbl 1
      * @symbol ?apply\@EnchantWithLevelsFunction\@\@UEAAXAEAVItemStack\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    MCVAPI void apply(class ItemStack &, class Random &, class LootTableContext &);
+    virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /**
-     * @symbol ?apply\@EnchantWithLevelsFunction\@\@UEAAXAEAVItemInstance\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
-     */
-    MCVAPI void apply(class ItemInstance &, class Random &, class LootTableContext &);
-    /**
+     * @vftbl 2
      * @symbol ?apply\@EnchantWithLevelsFunction\@\@UEAAHAEAVItemStack\@\@AEAVRandom\@\@AEBUTrade\@\@AEAVLootTableContext\@\@\@Z
      */
-    MCVAPI int apply(class ItemStack &, class Random &, struct Trade const &, class LootTableContext &);
+    virtual int apply(class ItemStack &, class Random &, struct Trade const &, class LootTableContext &);
     /**
+     * @vftbl 3
+     * @symbol ?apply\@EnchantWithLevelsFunction\@\@UEAAXAEAVItemInstance\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
+     */
+    virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
+    /**
+     * @vftbl 4
      * @symbol ?apply\@EnchantWithLevelsFunction\@\@UEAAHAEAVItemInstance\@\@AEAVRandom\@\@AEBUTrade\@\@AEAVLootTableContext\@\@\@Z
      */
-    MCVAPI int apply(class ItemInstance &, class Random &, struct Trade const &, class LootTableContext &);
-#endif
+    virtual int apply(class ItemInstance &, class Random &, struct Trade const &, class LootTableContext &);
+    /**
+     * @symbol ?deserialize\@EnchantWithLevelsFunction\@\@SA?AV?$unique_ptr\@VLootItemFunction\@\@U?$default_delete\@VLootItemFunction\@\@\@std\@\@\@std\@\@VValue\@Json\@\@AEAV?$vector\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@\@2\@\@3\@\@Z
+     */
+    MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 };

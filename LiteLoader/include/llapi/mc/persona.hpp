@@ -18,26 +18,25 @@
 namespace persona {
 
 #define AFTER_EXTRA
+
 // Add Member There
 
-    struct SizeInfo {
-        std::string_view mSizeName;
-        std::string_view mSizeTexturePath;
-    };
+struct SizeInfo {
+    std::string_view mSizeName;
+    std::string_view mSizeTexturePath;
+};
 
-    enum class AnimationExpression : __int32
-    {
-    Linear_0 = 0x0,
+enum class AnimationExpression : __int32 {
+    Linear = 0x0,
     Blinking = 0x1,
-    };
-
+};
 
 struct ArmSize {
     enum class Type : int64_t {
         Slim = 0,
         Wide = 1,
-        Count_15 = 2,
-        Unknown_18 = 3,
+        Count = 2,
+        Unknown = 3,
     };
 
     struct Proxy {
@@ -45,11 +44,48 @@ struct ArmSize {
     };
 
     using SizeInfoList = std::unordered_map<ArmSize::Type, SizeInfo>;
-    };
+};
 
+enum class AnimatedTextureType : __int32 {
+    None = 0x0,
+    Face = 0x1,
+    Body32x32 = 0x2,
+    Body128x128 = 0x3,
+};
 
-enum class AnimatedTextureType;
-enum class PieceType;
+enum class PieceType : __int32 {
+    Unknown = 0x0,
+    Skeleton = 0x1,
+    Body = 0x2,
+    Skin = 0x3,
+    Bottom = 0x4,
+    Feet = 0x5,
+    Dress = 0x6,
+    Top = 0x7,
+    High_Pants = 0x8,
+    Hands = 0x9,
+    Outerwear = 0xA,
+    FacialHair = 0xB,
+    Mouth = 0xC,
+    Eyes = 0xD,
+    Hair = 0xE,
+    Hood = 0xF,
+    Back = 0x10,
+    FaceAccessory = 0x11,
+    Head = 0x12,
+    Legs = 0x13,
+    LeftLeg = 0x14,
+    RightLeg = 0x15,
+    Arms = 0x16,
+    LeftArm = 0x17,
+    RightArm = 0x18,
+    Capes = 0x19,
+    ClassicSkin = 0x1A,
+    Emote = 0x1B,
+    Unsupported = 0x1C,
+    Count = 0x1D,
+};
+
 
 #undef AFTER_EXTRA
     /**

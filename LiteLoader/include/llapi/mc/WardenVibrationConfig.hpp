@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "VibrationListenerConfig.hpp"
 
 #define BEFORE_EXTRA
 
@@ -14,7 +15,7 @@
  * @brief MC class WardenVibrationConfig.
  *
  */
-class WardenVibrationConfig {
+class WardenVibrationConfig : public VibrationListenerConfig {
 
 #define AFTER_EXTRA
 
@@ -47,6 +48,16 @@ public:
      * @symbol ?shouldListen\@WardenVibrationConfig\@\@UEAA_NAEAVBlockSource\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@\@Z
      */
     virtual bool shouldListen(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
+    /**
+     * @vftbl 4
+     * @symbol ?onSerializableDataChanged\@VibrationListenerConfig\@\@UEAAXAEAVBlockSource\@\@\@Z
+     */
+    virtual void onSerializableDataChanged(class BlockSource &);
+    /**
+     * @vftbl 5
+     * @symbol ?canReceiveOnlyIfAdjacentChunksAreTicking\@VibrationListenerConfig\@\@UEBA_NXZ
+     */
+    virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const;
     /**
      * @symbol ??0WardenVibrationConfig\@\@QEAA\@AEAVActor\@\@G\@Z
      */

@@ -75,17 +75,17 @@ public:
     virtual ~Packet();
     /**
      * @vftbl 1
-     * @symbol ?getId\@ServerStatsPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @symbol ?getId\@AddPaintingPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const = 0;
     /**
      * @vftbl 2
-     * @symbol ?getName\@ServerStatsPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getName\@AddPaintingPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const = 0;
     /**
      * @vftbl 3
-     * @symbol ?write\@ServerStatsPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @symbol ?write\@AddPaintingPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const = 0;
     /**
@@ -105,7 +105,7 @@ public:
     virtual bool isValid() const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@ServerStatsPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@AddPaintingPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &) = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKET

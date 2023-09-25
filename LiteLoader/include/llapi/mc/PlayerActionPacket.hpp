@@ -110,18 +110,6 @@ public:
      */
     MCAPI PlayerActionPacket(enum class PlayerActionType, class BlockPos const &, class BlockPos const &, int, class ActorRuntimeID);
     /**
-     * @symbol ??0PlayerActionPacket\@\@QEAA\@W4PlayerActionType\@\@AEBVBlockPos\@\@VActorRuntimeID\@\@\@Z
-     */
-    MCAPI PlayerActionPacket(enum class PlayerActionType, class BlockPos const &, class ActorRuntimeID);
-    /**
-     * @symbol ??0PlayerActionPacket\@\@QEAA\@XZ
-     */
-    MCAPI PlayerActionPacket();
-    /**
-     * @symbol ??0PlayerActionPacket\@\@QEAA\@W4PlayerActionType\@\@VActorRuntimeID\@\@\@Z
-     */
-    MCAPI PlayerActionPacket(enum class PlayerActionType, class ActorRuntimeID);
-    /**
      * @symbol ??0PlayerActionPacket\@\@QEAA\@W4PlayerActionType\@\@AEBVBlockPos\@\@EVActorRuntimeID\@\@\@Z
      */
     MCAPI PlayerActionPacket(enum class PlayerActionType, class BlockPos const &, unsigned char, class ActorRuntimeID);
@@ -129,6 +117,18 @@ public:
      * @symbol ??0PlayerActionPacket\@\@QEAA\@W4PlayerActionType\@\@AEBVBlockPos\@\@HVActorRuntimeID\@\@\@Z
      */
     MCAPI PlayerActionPacket(enum class PlayerActionType, class BlockPos const &, int, class ActorRuntimeID);
+    /**
+     * @symbol ??0PlayerActionPacket\@\@QEAA\@XZ
+     */
+    MCAPI PlayerActionPacket();
+    /**
+     * @symbol ??0PlayerActionPacket\@\@QEAA\@W4PlayerActionType\@\@AEBVBlockPos\@\@VActorRuntimeID\@\@\@Z
+     */
+    MCAPI PlayerActionPacket(enum class PlayerActionType, class BlockPos const &, class ActorRuntimeID);
+    /**
+     * @symbol ??0PlayerActionPacket\@\@QEAA\@W4PlayerActionType\@\@VActorRuntimeID\@\@\@Z
+     */
+    MCAPI PlayerActionPacket(enum class PlayerActionType, class ActorRuntimeID);
     /**
      * @symbol ?getIsFromServerPlayerMovementSystem\@PlayerActionPacket\@\@QEBA_NXZ
      */

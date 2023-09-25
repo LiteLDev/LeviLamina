@@ -56,12 +56,12 @@ public:
      */
     virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
     /**
-     * @symbol ??0PassengerJumpPacket\@\@QEAA\@XZ
-     */
-    MCAPI PassengerJumpPacket();
-    /**
      * @symbol ??0PassengerJumpPacket\@\@QEAA\@H\@Z
      */
     MCAPI PassengerJumpPacket(int);
+    /**
+     * @symbol ??0PassengerJumpPacket\@\@QEAA\@XZ
+     */
+    MCAPI PassengerJumpPacket();
 
 };

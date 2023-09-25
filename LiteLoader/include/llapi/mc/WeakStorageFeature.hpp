@@ -40,14 +40,6 @@ public:
      */
     MCAPI WeakStorageFeature(class WeakStorageFeature &&);
     /**
-     * @symbol ??0WeakStorageFeature\@\@IEAA\@AEBVOwnerStorageFeature\@\@\@Z
-     */
-    MCAPI WeakStorageFeature(class OwnerStorageFeature const &);
-    /**
-     * @symbol ?_isSet\@WeakStorageFeature\@\@IEBA_NXZ
-     */
-    MCAPI bool _isSet() const;
-    /**
      * @symbol ??4WeakStorageFeature\@\@IEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class WeakStorageFeature & operator=(class WeakStorageFeature &&);

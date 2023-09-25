@@ -323,9 +323,5 @@ namespace VanillaMapColor {
      * @symbol ?getColorFromPaletteColor\@VanillaMapColor\@\@YA?AVColor\@mce\@\@W4PaletteColor\@\@\@Z
      */
     MCAPI class mce::Color getColorFromPaletteColor(enum class PaletteColor);
-    /**
-     * @symbol ?getColorFromTerracottaColor\@VanillaMapColor\@\@YA?AVColor\@mce\@\@W4BlockColor\@\@\@Z
-     */
-    MCAPI class mce::Color getColorFromTerracottaColor(enum class BlockColor);
 
 };

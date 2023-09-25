@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Goal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class ReceiveLoveGoal.
  *
  */
-class ReceiveLoveGoal {
+class ReceiveLoveGoal : public Goal {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -36,29 +37,14 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?canUse\@ReceiveLoveGoal\@\@UEAA_NXZ
      */
-    virtual void __unk_vfn_1();
+    virtual bool canUse();
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?canContinueToUse\@ReceiveLoveGoal\@\@UEAA_NXZ
      */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5();
+    virtual bool canContinueToUse();
     /**
      * @vftbl 6
      * @symbol ?tick\@ReceiveLoveGoal\@\@UEAAXXZ
@@ -69,16 +55,6 @@ public:
      * @symbol ?appendDebugInfo\@ReceiveLoveGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECEIVELOVEGOAL
-    /**
-     * @symbol ?canContinueToUse\@ReceiveLoveGoal\@\@UEAA_NXZ
-     */
-    MCVAPI bool canContinueToUse();
-    /**
-     * @symbol ?canUse\@ReceiveLoveGoal\@\@UEAA_NXZ
-     */
-    MCVAPI bool canUse();
-#endif
     /**
      * @symbol ??0ReceiveLoveGoal\@\@QEAA\@AEAVVillagerBase\@\@\@Z
      */

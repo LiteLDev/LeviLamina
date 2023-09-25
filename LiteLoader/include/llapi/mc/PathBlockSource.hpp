@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "IPathBlockSource.hpp"
 
 #define BEFORE_EXTRA
 
@@ -14,7 +15,7 @@
  * @brief MC class PathBlockSource.
  *
  */
-class PathBlockSource {
+class PathBlockSource : public IPathBlockSource {
 
 #define AFTER_EXTRA
 

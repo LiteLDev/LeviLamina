@@ -28,8 +28,8 @@ public:
 
 public:
     /**
-     * @symbol ?createPendingRemovePassengersSystem\@PendingRemovePassengersSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@PendingRemovePassengersSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createPendingRemovePassengersSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem();
 
 };

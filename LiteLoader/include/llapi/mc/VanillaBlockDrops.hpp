@@ -25,8 +25,16 @@ namespace VanillaBlockDrops {
      */
     MCAPI void configureBlockDrops(class BaseGameVersion const &, class Experiments const &);
     /**
-     * @symbol ?dropSelf\@VanillaBlockDrops\@\@YAXAEBVHashedString\@\@\@Z
+     * @symbol ?dropOther\@VanillaBlockDrops\@\@YAXAEBVHashedString\@\@0\@Z
      */
-    MCAPI void dropSelf(class HashedString const &);
+    MCAPI void dropOther(class HashedString const &, class HashedString const &);
+    /**
+     * @symbol ?dropSelf\@VanillaBlockDrops\@\@YAXAEBVHashedString\@\@V?$vector\@PEBVBlockState\@\@V?$allocator\@PEBVBlockState\@\@\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI void dropSelf(class HashedString const &, std::vector<class BlockState const *>);
+    /**
+     * @symbol ?dropSelfOnlyWhenSilkTouched\@VanillaBlockDrops\@\@YAXAEBVHashedString\@\@\@Z
+     */
+    MCAPI void dropSelfOnlyWhenSilkTouched(class HashedString const &);
 
 };

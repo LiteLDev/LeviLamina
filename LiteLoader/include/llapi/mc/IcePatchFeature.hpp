@@ -40,9 +40,5 @@ public:
      * @symbol ?place\@IcePatchFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-    /**
-     * @symbol ??0IcePatchFeature\@\@QEAA\@H\@Z
-     */
-    MCAPI IcePatchFeature(int);
 
 };

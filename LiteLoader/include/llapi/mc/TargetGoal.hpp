@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Goal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class TargetGoal.
  *
  */
-class TargetGoal {
+class TargetGoal : public Goal {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -35,20 +36,10 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 1
-     * @symbol ?canUse\@OwnerHurtByTargetGoal\@\@UEAA_NXZ
-     */
-    virtual bool canUse() = 0;
-    /**
      * @vftbl 2
      * @symbol ?canContinueToUse\@TargetGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 3
-     * @symbol ?isTargetGoal\@TargetGoal\@\@UEBA_NXZ
-     */
-    virtual bool isTargetGoal() const;
     /**
      * @vftbl 4
      * @symbol ?start\@TargetGoal\@\@UEAAXXZ
@@ -71,14 +62,9 @@ public:
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl 8
-     * @symbol __unk_vfn_8
+     * @symbol ?isTargetGoal\@TargetGoal\@\@UEBA_NXZ
      */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
+    virtual bool isTargetGoal() const;
     /**
      * @vftbl 10
      * @symbol ?_canAttack\@TargetGoal\@\@MEAA_NPEAVMob\@\@PEAVActor\@\@_N2PEAPEBUMobDescriptor\@\@\@Z
@@ -91,13 +77,13 @@ public:
     MCVAPI ~TargetGoal();
 #endif
     /**
-     * @symbol ??0TargetGoal\@\@QEAA\@AEAVMob\@\@AEBV?$vector\@UMobDescriptor\@\@V?$allocator\@UMobDescriptor\@\@\@std\@\@\@std\@\@_NH2M2H\@Z
-     */
-    MCAPI TargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, bool, int, bool, float, bool, int);
-    /**
      * @symbol ??0TargetGoal\@\@QEAA\@AEAVMob\@\@_NH1M1H\@Z
      */
     MCAPI TargetGoal(class Mob &, bool, int, bool, float, bool, int);
+    /**
+     * @symbol ??0TargetGoal\@\@QEAA\@AEAVMob\@\@AEBV?$vector\@UMobDescriptor\@\@V?$allocator\@UMobDescriptor\@\@\@std\@\@\@std\@\@_NH2M2H\@Z
+     */
+    MCAPI TargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, bool, int, bool, float, bool, int);
 
 //protected:
     /**

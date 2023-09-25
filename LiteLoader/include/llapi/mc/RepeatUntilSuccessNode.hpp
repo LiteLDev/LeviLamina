@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "BehaviorNode.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class RepeatUntilSuccessNode.
  *
  */
-class RepeatUntilSuccessNode {
+class RepeatUntilSuccessNode : public BehaviorNode {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -25,6 +26,7 @@ class RepeatUntilSuccessNode {
 public:
     class RepeatUntilSuccessNode& operator=(class RepeatUntilSuccessNode const &) = delete;
     RepeatUntilSuccessNode(class RepeatUntilSuccessNode const &) = delete;
+    RepeatUntilSuccessNode() = delete;
 #endif
 
 public:
@@ -43,9 +45,5 @@ public:
      * @symbol ?initializeFromDefinition\@RepeatUntilSuccessNode\@\@MEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
-    /**
-     * @symbol ??0RepeatUntilSuccessNode\@\@QEAA\@XZ
-     */
-    MCAPI RepeatUntilSuccessNode();
 
 };

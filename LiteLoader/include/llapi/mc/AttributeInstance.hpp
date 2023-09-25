@@ -65,10 +65,6 @@ public:
      */
     MCAPI class Attribute const * getAttribute() const;
     /**
-     * @symbol ?getBuffs\@AttributeInstance\@\@QEBAAEBV?$vector\@VTemporalAttributeBuff\@\@V?$allocator\@VTemporalAttributeBuff\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::vector<class TemporalAttributeBuff> const & getBuffs() const;
-    /**
      * @symbol ?getCurrentValue\@AttributeInstance\@\@QEBAMXZ
      */
     MCAPI float getCurrentValue() const;
@@ -105,13 +101,13 @@ public:
      */
     MCAPI bool hasModifier(class AttributeModifier const &) const;
     /**
-     * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NAEBVUUID\@mce\@\@\@Z
-     */
-    MCAPI bool hasModifier(class mce::UUID const &) const;
-    /**
      * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
      */
     MCAPI bool hasModifier(class std::shared_ptr<class AttributeModifier>) const;
+    /**
+     * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NAEBVUUID\@mce\@\@\@Z
+     */
+    MCAPI bool hasModifier(class mce::UUID const &) const;
     /**
      * @symbol ?hasModifiers\@AttributeInstance\@\@QEBA_NXZ
      */
@@ -120,6 +116,10 @@ public:
      * @symbol ?hasTemporalBuffs\@AttributeInstance\@\@QEBA_NXZ
      */
     MCAPI bool hasTemporalBuffs() const;
+    /**
+     * @symbol ?inheritFrom\@AttributeInstance\@\@QEAAXAEBV1\@PEAVBaseAttributeMap\@\@\@Z
+     */
+    MCAPI void inheritFrom(class AttributeInstance const &, class BaseAttributeMap *);
     /**
      * @symbol ?isValid\@AttributeInstance\@\@QEBA_NXZ
      */

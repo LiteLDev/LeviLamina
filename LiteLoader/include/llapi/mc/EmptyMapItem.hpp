@@ -6,7 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
-#include "Item.hpp"
+#include "ComplexItem.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +17,7 @@
  * @brief MC class EmptyMapItem.
  *
  */
-class EmptyMapItem : public Item {
+class EmptyMapItem : public ComplexItem {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -131,11 +131,6 @@ public:
      * @symbol ?getInteractText\@EmptyMapItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPlayer\@\@\@Z
      */
     virtual std::string getInteractText(class Player const &) const;
-    /**
-     * @vftbl 136
-     * @symbol ?getUpdatePacket\@ComplexItem\@\@UEBA?AV?$unique_ptr\@VPacket\@\@U?$default_delete\@VPacket\@\@\@std\@\@\@std\@\@AEBVItemStack\@\@AEAVLevel\@\@AEAVActor\@\@\@Z
-     */
-    virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
     /**
      * @symbol ??0EmptyMapItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@F\@Z
      */

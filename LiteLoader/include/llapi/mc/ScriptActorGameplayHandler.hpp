@@ -56,12 +56,61 @@ public:
      * @symbol ?handleEvent\@?$Impl\@U?$type_list\@U?$MutableActorGameplayEvent\@W4CoordinatorResult\@\@\@\@\@entt\@\@\@?$EventHandlerDispatcher\@VActorGameplayHandler\@\@\@Details\@\@MEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAU?$MutableActorGameplayEvent\@W4CoordinatorResult\@\@\@\@\@Z
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct MutableActorGameplayEvent<enum class CoordinatorResult> &);
+    /**
+     * @vftbl 5
+     * @symbol __unk_vfn_5
+     */
+    virtual void __unk_vfn_5();
+    /**
+     * @vftbl 6
+     * @symbol __unk_vfn_6
+     */
+    virtual void __unk_vfn_6();
+    /**
+     * @vftbl 7
+     * @symbol __unk_vfn_7
+     */
+    virtual void __unk_vfn_7();
+    /**
+     * @vftbl 8
+     * @symbol __unk_vfn_8
+     */
+    virtual void __unk_vfn_8();
+    /**
+     * @vftbl 9
+     * @symbol __unk_vfn_9
+     */
+    virtual void __unk_vfn_9();
+    /**
+     * @vftbl 10
+     * @symbol __unk_vfn_10
+     */
+    virtual void __unk_vfn_10();
+    /**
+     * @vftbl 11
+     * @symbol __unk_vfn_11
+     */
+    virtual void __unk_vfn_11();
+    /**
+     * @vftbl 12
+     * @symbol __unk_vfn_12
+     */
+    virtual void __unk_vfn_12();
+    /**
+     * @vftbl 13
+     * @symbol ?handleEvent\@ScriptActorGameplayHandler\@\@UEAA?AW4HandlerResult\@\@AEBUActorRemovedEvent\@\@\@Z
+     */
+    virtual enum class HandlerResult handleEvent(struct ActorRemovedEvent const &);
 
 //private:
     /**
-     * @symbol ?_handleActorDefinitionStartedEvent\@ScriptActorGameplayHandler\@\@AEBA_NAEAUActorDefinitionStartedEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VIScriptBeforeEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
+     * @symbol ?_handleActorDefinitionStartedEvent\@ScriptActorGameplayHandler\@\@AEBA_NAEAUActorDefinitionStartedEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VIScriptWorldBeforeEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
      */
-    MCAPI bool _handleActorDefinitionStartedEvent(struct ActorDefinitionStartedEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptBeforeEvents>) const;
+    MCAPI bool _handleActorDefinitionStartedEvent(struct ActorDefinitionStartedEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>) const;
+    /**
+     * @symbol ?_handleActorRemoveEvent\@ScriptActorGameplayHandler\@\@AEBA_NAEBUActorRemovedEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VIScriptWorldBeforeEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
+     */
+    MCAPI bool _handleActorRemoveEvent(struct ActorRemovedEvent const &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>) const;
 
 private:
 

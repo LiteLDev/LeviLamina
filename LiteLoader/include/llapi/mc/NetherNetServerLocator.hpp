@@ -33,6 +33,7 @@ struct ServerData {
 public:
     class NetherNetServerLocator& operator=(class NetherNetServerLocator const &) = delete;
     NetherNetServerLocator(class NetherNetServerLocator const &) = delete;
+    NetherNetServerLocator() = delete;
 #endif
 
 public:
@@ -41,16 +42,6 @@ public:
      * @symbol __unk_vfn_0
      */
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
-    virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol ?startAnnouncingServer\@NetherNetServerLocator\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0V?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@W4GameType\@\@HH_N3\@Z
@@ -72,16 +63,6 @@ public:
      */
     virtual void stopServerDiscovery();
     /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
      * @vftbl 9
      * @symbol ?getServerList\@NetherNetServerLocator\@\@UEBA?AV?$vector\@UPingedCompatibleServer\@\@V?$allocator\@UPingedCompatibleServer\@\@\@std\@\@\@std\@\@XZ
      */
@@ -97,20 +78,6 @@ public:
      */
     virtual void update();
     /**
-     * @vftbl 12
-     * @symbol __unk_vfn_12
-     */
-    virtual void __unk_vfn_12();
-    /**
-     * @vftbl 13
-     * @symbol __unk_vfn_13
-     */
-    virtual void __unk_vfn_13();
-    /**
-     * @symbol ??0NetherNetServerLocator\@\@QEAA\@XZ
-     */
-    MCAPI NetherNetServerLocator();
-    /**
      * @symbol ?setNetherNetConnector\@NetherNetServerLocator\@\@QEAAX$$QEAV?$NonOwnerPointer\@UNetherNetConnector\@\@\@Bedrock\@\@\@Z
      */
     MCAPI void setNetherNetConnector(class Bedrock::NonOwnerPointer<struct NetherNetConnector> &&);
@@ -120,10 +87,6 @@ public:
      * @symbol ?_cacheDiscoveryResponseData\@NetherNetServerLocator\@\@AEAAXAEBUServerData\@1\@\@Z
      */
     MCAPI void _cacheDiscoveryResponseData(struct NetherNetServerLocator::ServerData const &);
-    /**
-     * @symbol ?_isNetherNetOverLANAllowed\@NetherNetServerLocator\@\@AEBA_NXZ
-     */
-    MCAPI bool _isNetherNetOverLANAllowed() const;
     /**
      * @symbol ?_onDiscoveryResponse\@NetherNetServerLocator\@\@AEAAX_KV?$span\@$$CBD$0?0\@gsl\@\@\@Z
      */

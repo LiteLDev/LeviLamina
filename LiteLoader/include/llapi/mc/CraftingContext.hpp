@@ -30,25 +30,9 @@ public:
      */
     MCAPI CraftingContext(class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel>>);
     /**
-     * @symbol ?copyAndLockMap\@CraftingContext\@\@QEAA_NUActorUniqueID\@\@0\@Z
-     */
-    MCAPI bool copyAndLockMap(struct ActorUniqueID, struct ActorUniqueID);
-    /**
-     * @symbol ?expandMapById\@CraftingContext\@\@QEAA?AUActorUniqueID\@\@U2\@_N\@Z
-     */
-    MCAPI struct ActorUniqueID expandMapById(struct ActorUniqueID, bool);
-    /**
      * @symbol ?getBaseGameVersion\@CraftingContext\@\@QEBA?AVBaseGameVersion\@\@XZ
      */
     MCAPI class BaseGameVersion getBaseGameVersion() const;
-    /**
-     * @symbol ?getMapSavedData\@CraftingContext\@\@QEBAPEAVMapItemSavedData\@\@UActorUniqueID\@\@\@Z
-     */
-    MCAPI class MapItemSavedData * getMapSavedData(struct ActorUniqueID) const;
-    /**
-     * @symbol ?getMapSavedData\@CraftingContext\@\@QEBAPEAVMapItemSavedData\@\@PEBVCompoundTag\@\@\@Z
-     */
-    MCAPI class MapItemSavedData * getMapSavedData(class CompoundTag const *) const;
     /**
      * @symbol ?getTrimMaterialRegistry\@CraftingContext\@\@QEBA?BV?$weak_ptr\@$$CBVTrimMaterialRegistry\@\@\@std\@\@XZ
      */

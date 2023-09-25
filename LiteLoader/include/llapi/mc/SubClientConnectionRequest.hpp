@@ -58,10 +58,6 @@ public:
      */
     MCAPI unsigned short getCapeImageWidth() const;
     /**
-     * @symbol ?getCertificate\@SubClientConnectionRequest\@\@QEBAPEBVCertificate\@\@XZ
-     */
-    MCAPI class Certificate const * getCertificate() const;
-    /**
      * @symbol ?getClientRandomId\@SubClientConnectionRequest\@\@QEBA_KXZ
      */
     MCAPI unsigned __int64 getClientRandomId() const;
@@ -69,10 +65,6 @@ public:
      * @symbol ?getDeviceId\@SubClientConnectionRequest\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string getDeviceId() const;
-    /**
-     * @symbol ?getDeviceOS\@SubClientConnectionRequest\@\@QEBA?AW4BuildPlatform\@\@XZ
-     */
-    MCAPI enum class BuildPlatform getDeviceOS() const;
     /**
      * @symbol ?getPersonaPieces\@SubClientConnectionRequest\@\@QEBA?AV?$vector\@VSerializedPersonaPieceHandle\@\@V?$allocator\@VSerializedPersonaPieceHandle\@\@\@std\@\@\@std\@\@XZ
      */
@@ -146,10 +138,6 @@ public:
      */
     MCAPI bool isCapeOnClassicSkin() const;
     /**
-     * @symbol ?isCompatibleWithClientSideChunkGen\@SubClientConnectionRequest\@\@QEBA_NXZ
-     */
-    MCAPI bool isCompatibleWithClientSideChunkGen() const;
-    /**
      * @symbol ?isOverrideSkin\@SubClientConnectionRequest\@\@QEBA_NXZ
      */
     MCAPI bool isOverrideSkin() const;
@@ -165,10 +153,6 @@ public:
      * @symbol ?isPrimaryUser\@SubClientConnectionRequest\@\@QEBA_NXZ
      */
     MCAPI bool isPrimaryUser() const;
-    /**
-     * @symbol ?isThirdPartyNameOnly\@SubClientConnectionRequest\@\@QEBA_NXZ
-     */
-    MCAPI bool isThirdPartyNameOnly() const;
     /**
      * @symbol ?isTrustedSkin\@SubClientConnectionRequest\@\@QEBA_NXZ
      */

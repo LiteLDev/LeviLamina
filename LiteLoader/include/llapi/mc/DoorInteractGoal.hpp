@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Direction.hpp"
+#include "Goal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class DoorInteractGoal.
  *
  */
-class DoorInteractGoal {
+class DoorInteractGoal : public Goal {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -46,20 +47,10 @@ public:
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @vftbl 4
      * @symbol ?start\@DoorInteractGoal\@\@UEAAXXZ
      */
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5();
     /**
      * @vftbl 6
      * @symbol ?tick\@DoorInteractGoal\@\@UEAAXXZ

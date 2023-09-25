@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "ContainerContentChangeListener.hpp"
 
 #define BEFORE_EXTRA
 
@@ -14,7 +15,7 @@
  * @brief MC class LegacyActorArmorChangedListener.
  *
  */
-class LegacyActorArmorChangedListener {
+class LegacyActorArmorChangedListener : public ContainerContentChangeListener {
 
 #define AFTER_EXTRA
 

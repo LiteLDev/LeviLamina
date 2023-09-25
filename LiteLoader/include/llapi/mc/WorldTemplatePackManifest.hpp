@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "PackManifest.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class WorldTemplatePackManifest.
  *
  */
-class WorldTemplatePackManifest {
+class WorldTemplatePackManifest : public PackManifest {
 
 #define AFTER_EXTRA
 // Add Member There

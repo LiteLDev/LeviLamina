@@ -35,6 +35,16 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
+     * @vftbl 1
+     * @symbol ?init\@OperationNodeBase\@OperationNodeDetails\@\@UEAAX_J\@Z
+     */
+    virtual void init(__int64);
+    /**
+     * @vftbl 2
+     * @symbol ?_allocateAndFill\@?$MixerOperationNode\@PEAVBiome\@\@VPos2d\@\@PEAV1\@$$V\@\@MEBA?AV?$TransferData\@PEAVBiome\@\@\@OperationNodeDetails\@\@_KAEBVPos2d\@\@1\@Z
+     */
+    virtual class OperationNodeDetails::TransferData<class Biome *> _allocateAndFill(unsigned __int64, class Pos2d const &, class Pos2d const &) const;
+    /**
      * @vftbl 3
      * @symbol ?_fillArea\@RegionHillsOperationNode\@\@MEBAXAEAV?$WorkingData\@PEAVBiome\@\@PEAV1\@\@OperationNodeDetails\@\@AEBVPos2d\@\@1H\@Z
      */

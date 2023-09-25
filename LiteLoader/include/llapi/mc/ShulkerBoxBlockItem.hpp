@@ -133,9 +133,9 @@ public:
 
 //private:
     /**
-     * @symbol ?buildContainedItemList\@ShulkerBoxBlockItem\@\@AEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEBVCompoundTag\@\@\@Z
+     * @symbol ?_buildContainedItemList\@ShulkerBoxBlockItem\@\@AEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEBVCompoundTag\@\@\@Z
      */
-    MCAPI std::string buildContainedItemList(class CompoundTag const *) const;
+    MCAPI std::string _buildContainedItemList(class CompoundTag const *) const;
 
 private:
 

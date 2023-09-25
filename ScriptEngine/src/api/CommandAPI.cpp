@@ -106,7 +106,9 @@ Local<Value> convertResult(DynamicCommand::Result const& result) {
         case DynamicCommand::ParameterType::JsonValue:
             return String::newString(JsonHelpers::serialize(result.getRaw<Json::Value>()));
         case DynamicCommand::ParameterType::Item:
-            return ItemClass::newItem(new ItemStack(result.getRaw<CommandItem>().createInstance(1, 1, nullptr, true).value_or(ItemInstance::EMPTY_ITEM)));
+            return ItemClass::newItem(new ItemStack(result.getRaw<CommandItem>()
+                                                        .createInstance(1, 1, *new CommandOutput(CommandOutputType::None), true)
+                                                        .value_or(ItemInstance::EMPTY_ITEM)));
         case DynamicCommand::ParameterType::Block:
             return BlockClass::newBlock(const_cast<Block*>(result.getRaw<CommandBlockName>().resolveBlock(0).getBlock()),const_cast<BlockPos*>(&BlockPos::MIN), -1);
         case DynamicCommand::ParameterType::Effect:

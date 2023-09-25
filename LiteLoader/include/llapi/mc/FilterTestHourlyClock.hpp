@@ -17,7 +17,7 @@
  * @brief MC class FilterTestHourlyClock.
  *
  */
-class FilterTestHourlyClock : public FilterTest {
+class FilterTestHourlyClock {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -47,10 +47,25 @@ public:
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
+     * @vftbl 3
+     * @symbol ?finalizeParsedValue\@FilterTest\@\@UEAAXAEAVIWorldRegistriesProvider\@\@\@Z
+     */
+    virtual void finalizeParsedValue(class IWorldRegistriesProvider &);
+    /**
      * @vftbl 4
      * @symbol ?getName\@FilterTestHourlyClock\@\@UEBA?AV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@XZ
      */
     virtual class std::basic_string_view<char, struct std::char_traits<char>> getName() const;
+    /**
+     * @vftbl 5
+     * @symbol ?_serializeDomain\@ActorBoolPropertyTest\@\@MEBA?AVValue\@Json\@\@XZ
+     */
+    virtual class Json::Value _serializeDomain() const;
+    /**
+     * @vftbl 6
+     * @symbol ?_serializeValue\@ActorHasAllSlotsEmptyTest\@\@MEBA?AVValue\@Json\@\@XZ
+     */
+    virtual class Json::Value _serializeValue() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTHOURLYCLOCK
     /**
      * @symbol __unk_destructor_-1

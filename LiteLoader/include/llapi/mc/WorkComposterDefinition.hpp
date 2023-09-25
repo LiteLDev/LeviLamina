@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "JsonUtil.hpp"
+#include "WorkDefinition.hpp"
 
 #define BEFORE_EXTRA
 
@@ -15,7 +16,7 @@
  * @brief MC class WorkComposterDefinition.
  *
  */
-class WorkComposterDefinition {
+class WorkComposterDefinition : public WorkDefinition {
 
 #define AFTER_EXTRA
 
@@ -27,6 +28,11 @@ public:
 #endif
 
 public:
+    /**
+     * @vftbl 0
+     * @symbol __unk_vfn_0
+     */
+    virtual void __unk_vfn_0();
     /**
      * @symbol ??0WorkComposterDefinition\@\@QEAA\@XZ
      */

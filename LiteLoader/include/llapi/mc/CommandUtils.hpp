@@ -79,10 +79,6 @@ namespace CommandUtils {
      */
     MCAPI std::string getActorName(class Actor const &);
     /**
-     * @symbol ?getFeetBlockPos\@CommandUtils\@\@YA?AVBlockPos\@\@PEBVActor\@\@\@Z
-     */
-    MCAPI class BlockPos getFeetBlockPos(class Actor const *);
-    /**
      * @symbol ?getFeetPos\@CommandUtils\@\@YA?AVVec3\@\@PEBVActor\@\@\@Z
      */
     MCAPI class Vec3 getFeetPos(class Actor const *);
@@ -95,21 +91,17 @@ namespace CommandUtils {
      */
     MCAPI std::vector<enum class ActorType> getInvalidCommandEntities();
     /**
-     * @symbol ?getOriginPlayer\@CommandUtils\@\@YAPEBVPlayer\@\@AEBVCommandOrigin\@\@\@Z
-     */
-    MCAPI class Player const * getOriginPlayer(class CommandOrigin const &);
-    /**
      * @symbol ?getTelemetryErrorList\@CommandUtils\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVCommandOutput\@\@\@Z
      */
     MCAPI std::string getTelemetryErrorList(class CommandOutput const &);
     /**
-     * @symbol ?isActiveTickingChunk\@CommandUtils\@\@YA_NUTick\@\@0\@Z
-     */
-    MCAPI bool isActiveTickingChunk(struct Tick, struct Tick);
-    /**
      * @symbol ?isActiveTickingChunk\@CommandUtils\@\@YA_NAEBVLevelChunk\@\@\@Z
      */
     MCAPI bool isActiveTickingChunk(class LevelChunk const &);
+    /**
+     * @symbol ?isActiveTickingChunk\@CommandUtils\@\@YA_NUTick\@\@0\@Z
+     */
+    MCAPI bool isActiveTickingChunk(struct Tick, struct Tick);
     /**
      * @symbol ?isFunctionValid\@CommandUtils\@\@YA_NAEAVCommandOutput\@\@AEAVFunctionEntry\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */

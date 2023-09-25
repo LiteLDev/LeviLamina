@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "RakNet.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -29,18 +28,9 @@ public:
 public:
     class NetworkIdentifier& operator=(class NetworkIdentifier const &) = delete;
     NetworkIdentifier(class NetworkIdentifier const &) = delete;
-    NetworkIdentifier() = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0NetworkIdentifier\@\@QEAA\@AEBURakNetGUID\@RakNet\@\@\@Z
-     */
-    MCAPI NetworkIdentifier(struct RakNet::RakNetGUID const &);
-    /**
-     * @symbol ??0NetworkIdentifier\@\@QEAA\@_K\@Z
-     */
-    MCAPI NetworkIdentifier(unsigned __int64);
     /**
      * @symbol ??0NetworkIdentifier\@\@QEAA\@AEBUsockaddr_in6\@\@\@Z
      */
@@ -50,9 +40,17 @@ public:
      */
     MCAPI NetworkIdentifier(struct sockaddr_in const &);
     /**
+     * @symbol ??0NetworkIdentifier\@\@QEAA\@XZ
+     */
+    MCAPI NetworkIdentifier();
+    /**
      * @symbol ?getAddress\@NetworkIdentifier\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string getAddress() const;
+    /**
+     * @symbol ?getCorrelationId\@NetworkIdentifier\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     */
+    MCAPI std::string getCorrelationId() const;
     /**
      * @symbol ?getHash\@NetworkIdentifier\@\@QEBA_KXZ
      */
@@ -73,6 +71,10 @@ public:
      * @symbol ?INVALID_ID\@NetworkIdentifier\@\@2V1\@A
      */
     MCAPI static class NetworkIdentifier INVALID_ID;
+    /**
+     * @symbol ?hyphenateId\@NetworkIdentifier\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_K\@Z
+     */
+    MCAPI static std::string hyphenateId(unsigned __int64);
 
 //private:
     /**

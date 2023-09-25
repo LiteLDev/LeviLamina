@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "IStructurePoolBlockPredicate.hpp"
 
 #define BEFORE_EXTRA
 
@@ -14,7 +15,7 @@
  * @brief MC class StructurePoolBlockPredicateAlwaysTrueExcept.
  *
  */
-class StructurePoolBlockPredicateAlwaysTrueExcept {
+class StructurePoolBlockPredicateAlwaysTrueExcept : public IStructurePoolBlockPredicate {
 
 #define AFTER_EXTRA
 
@@ -42,6 +43,11 @@ public:
      * @symbol ?test\@StructurePoolBlockPredicateAlwaysTrueExcept\@\@UEBA_NAEBVBlockPos\@\@0AEAVRandomize\@\@\@Z
      */
     virtual bool test(class BlockPos const &, class BlockPos const &, class Randomize &) const;
+    /**
+     * @vftbl 3
+     * @symbol ?finalize\@IStructurePoolBlockPredicate\@\@UEAA_NAEAVBlockSource\@\@AEAVIRandom\@\@\@Z
+     */
+    virtual bool finalize(class BlockSource &, class IRandom &);
     /**
      * @symbol ??0StructurePoolBlockPredicateAlwaysTrueExcept\@\@QEAA\@AEBV?$set\@PEBVBlock\@\@U?$less\@PEBVBlock\@\@\@std\@\@V?$allocator\@PEBVBlock\@\@\@3\@\@std\@\@M\@Z
      */

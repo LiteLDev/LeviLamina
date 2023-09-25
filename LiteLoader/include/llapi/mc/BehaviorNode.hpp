@@ -25,6 +25,7 @@ class BehaviorNode {
 public:
     class BehaviorNode& operator=(class BehaviorNode const &) = delete;
     BehaviorNode(class BehaviorNode const &) = delete;
+    BehaviorNode() = delete;
 #endif
 
 public:
@@ -32,12 +33,12 @@ public:
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0() = 0;
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?tick\@FindActorNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
-    virtual void __unk_vfn_1();
+    virtual enum class BehaviorStatus tick(class Actor &) = 0;
     /**
      * @vftbl 2
      * @symbol ?initializeFromDefinition\@BehaviorNode\@\@MEAAXAEAVActor\@\@\@Z
@@ -49,13 +50,5 @@ public:
      */
     MCVAPI ~BehaviorNode();
 #endif
-    /**
-     * @symbol ??0BehaviorNode\@\@QEAA\@XZ
-     */
-    MCAPI BehaviorNode();
-    /**
-     * @symbol ?getBehaviorData\@BehaviorNode\@\@QEAAAEAVBehaviorData\@\@XZ
-     */
-    MCAPI class BehaviorData & getBehaviorData();
 
 };

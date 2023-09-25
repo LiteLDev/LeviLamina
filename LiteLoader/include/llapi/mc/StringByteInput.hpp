@@ -46,12 +46,12 @@ public:
     virtual std::string readLongString();
     /**
      * @vftbl 3
-     * @symbol ?readFloat\@BigEndianStringByteInput\@\@UEAAMXZ
+     * @symbol ?readFloat\@BytesDataInput\@\@UEAAMXZ
      */
     virtual float readFloat();
     /**
      * @vftbl 4
-     * @symbol ?readDouble\@BigEndianStringByteInput\@\@UEAANXZ
+     * @symbol ?readDouble\@BytesDataInput\@\@UEAANXZ
      */
     virtual double readDouble();
     /**
@@ -61,17 +61,17 @@ public:
     virtual char readByte();
     /**
      * @vftbl 6
-     * @symbol ?readShort\@BigEndianStringByteInput\@\@UEAAFXZ
+     * @symbol ?readShort\@BytesDataInput\@\@UEAAFXZ
      */
     virtual short readShort();
     /**
      * @vftbl 7
-     * @symbol ?readInt\@BigEndianStringByteInput\@\@UEAAHXZ
+     * @symbol ?readInt\@BytesDataInput\@\@UEAAHXZ
      */
     virtual int readInt();
     /**
      * @vftbl 8
-     * @symbol ?readLongLong\@BigEndianStringByteInput\@\@UEAA_JXZ
+     * @symbol ?readLongLong\@BytesDataInput\@\@UEAA_JXZ
      */
     virtual __int64 readLongLong();
     /**

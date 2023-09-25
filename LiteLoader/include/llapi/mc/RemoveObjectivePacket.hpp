@@ -62,12 +62,12 @@ public:
     MCVAPI ~RemoveObjectivePacket();
 #endif
     /**
-     * @symbol ??0RemoveObjectivePacket\@\@QEAA\@AEBVObjective\@\@\@Z
-     */
-    MCAPI RemoveObjectivePacket(class Objective const &);
-    /**
      * @symbol ??0RemoveObjectivePacket\@\@QEAA\@XZ
      */
     MCAPI RemoveObjectivePacket();
+    /**
+     * @symbol ??0RemoveObjectivePacket\@\@QEAA\@AEBVObjective\@\@\@Z
+     */
+    MCAPI RemoveObjectivePacket(class Objective const &);
 
 };

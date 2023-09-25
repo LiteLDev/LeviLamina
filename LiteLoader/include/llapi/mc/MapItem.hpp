@@ -7,7 +7,7 @@
 #include "llapi/Global.h"
 #include "Json.hpp"
 #include "MapItemSavedData.hpp"
-#include "Item.hpp"
+#include "ComplexItem.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -18,7 +18,7 @@
  * @brief MC class MapItem.
  *
  */
-class MapItem : public Item {
+class MapItem : public ComplexItem {
 
 #define AFTER_EXTRA
 // Add Member There

@@ -65,6 +65,10 @@ public:
      */
     MCAPI bool needToResurface(class Actor const &) const;
     /**
+     * @symbol ??4BuoyancyComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     */
+    MCAPI class BuoyancyComponent & operator=(class BuoyancyComponent &&);
+    /**
      * @symbol ?shouldApplyGravity\@BuoyancyComponent\@\@QEBA_NXZ
      */
     MCAPI bool shouldApplyGravity() const;

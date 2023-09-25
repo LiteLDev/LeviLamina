@@ -30,10 +30,6 @@ namespace PlayerMovement {
      */
     MCAPI class Vec2 calculateMoveVector(struct MoveInputState const &, class LayeredAbilities const &, class SynchedActorData const &, bool, struct SneakingComponent const *);
     /**
-     * @symbol ?calculateMoveVector\@PlayerMovement\@\@YA?AVVec2\@\@AEBUMoveInputState\@\@AEAUIPlayerMovementProxy\@\@\@Z
-     */
-    MCAPI class Vec2 calculateMoveVector(struct MoveInputState const &, struct IPlayerMovementProxy &);
-    /**
      * @symbol ?clearInputState\@PlayerMovement\@\@YAXAEAUMoveInputComponent\@\@\@Z
      */
     MCAPI void clearInputState(struct MoveInputComponent &);
@@ -54,6 +50,14 @@ namespace PlayerMovement {
      */
     MCAPI void initializePlayer(class EntityContext &);
     /**
+     * @symbol ?isGamepadOrMotionController\@PlayerMovement\@\@YA_NAEBUPlayerInputModeComponent\@\@\@Z
+     */
+    MCAPI bool isGamepadOrMotionController(struct PlayerInputModeComponent const &);
+    /**
+     * @symbol ?isHoloRealityMode\@PlayerMovement\@\@YA_NAEBUPlayerInputModeComponent\@\@\@Z
+     */
+    MCAPI bool isHoloRealityMode(struct PlayerInputModeComponent const &);
+    /**
      * @symbol ?setElytraFlightTimeTicks\@PlayerMovement\@\@YAXAEAVEntityContext\@\@AEBUTick\@\@\@Z
      */
     MCAPI void setElytraFlightTimeTicks(class EntityContext &, struct Tick const &);
@@ -61,5 +65,9 @@ namespace PlayerMovement {
      * @symbol ?setPositionMode\@PlayerMovement\@\@YAXAEAVEntityContext\@\@W4PositionMode\@PlayerPositionModeComponent\@\@\@Z
      */
     MCAPI void setPositionMode(class EntityContext &, enum class PlayerPositionModeComponent::PositionMode);
+    /**
+     * @symbol ?shouldStopEmoting\@PlayerMovement\@\@YA_NVVec2\@\@AEAUSynchedActorDataComponent\@\@AEAUClientInputLockComponent\@\@AEAUVanillaClientGameplayComponent\@\@\@Z
+     */
+    MCAPI bool shouldStopEmoting(class Vec2, struct SynchedActorDataComponent &, struct ClientInputLockComponent &, struct VanillaClientGameplayComponent &);
 
 };

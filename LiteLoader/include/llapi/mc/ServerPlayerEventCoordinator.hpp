@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "PlayerEventCoordinator.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class ServerPlayerEventCoordinator.
  *
  */
-class ServerPlayerEventCoordinator {
+class ServerPlayerEventCoordinator : public PlayerEventCoordinator {
 
 #define AFTER_EXTRA
 // Add Member There

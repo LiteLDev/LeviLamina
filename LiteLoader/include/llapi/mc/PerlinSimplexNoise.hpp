@@ -45,13 +45,13 @@ public:
      */
     MCAPI float * getRegion(float *, class Vec2 const &, int, int, class Vec2 const &, float, float) const;
     /**
-     * @symbol ?getValue\@PerlinSimplexNoise\@\@QEBAMAEBVVec3\@\@\@Z
-     */
-    MCAPI float getValue(class Vec3 const &) const;
-    /**
      * @symbol ?getValue\@PerlinSimplexNoise\@\@QEBAMMM\@Z
      */
     MCAPI float getValue(float, float) const;
+    /**
+     * @symbol ?getValue\@PerlinSimplexNoise\@\@QEBAMAEBVVec3\@\@\@Z
+     */
+    MCAPI float getValue(class Vec3 const &) const;
     /**
      * @symbol ?getValueNormalized\@PerlinSimplexNoise\@\@QEBAMMM\@Z
      */

@@ -5,6 +5,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
+#include "EntityComponentFactoryBase.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +17,7 @@
  * @brief MC class EntityComponentFactoryCereal.
  *
  */
-class EntityComponentFactoryCereal {
+class EntityComponentFactoryCereal : public EntityComponentFactoryBase {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -29,6 +31,20 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCOMPONENTFACTORYCEREAL
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~EntityComponentFactoryCereal();
+#endif
+    /**
+     * @symbol ??0EntityComponentFactoryCereal\@\@QEAA\@AEAUReflectionCtx\@cereal\@\@\@Z
+     */
+    MCAPI EntityComponentFactoryCereal(struct cereal::ReflectionCtx &);
+    /**
+     * @symbol ?cerealContext\@EntityComponentFactoryCereal\@\@QEBAAEBUReflectionCtx\@cereal\@\@XZ
+     */
+    MCAPI struct cereal::ReflectionCtx const & cerealContext() const;
     /**
      * @symbol ?serializeComponentDefinitions\@EntityComponentFactoryCereal\@\@QEBAXAEAVDefinitionInstanceGroup\@\@AEBV?$GenericValue\@U?$UTF8\@D\@rapidjson\@\@V?$MemoryPoolAllocator\@VCrtAllocator\@rapidjson\@\@\@2\@\@rapidjson\@\@AEBVSemVersion\@\@\@Z
      */

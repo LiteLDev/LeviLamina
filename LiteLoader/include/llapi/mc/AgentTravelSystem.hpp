@@ -17,12 +17,8 @@ namespace AgentTravelSystem {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?createClientSystem\@AgentTravelSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@AgentTravelSystem\@\@YA?AUTickingSystemWithInfo\@\@_N\@Z
      */
-    MCAPI struct TickingSystemWithInfo createClientSystem();
-    /**
-     * @symbol ?createServerSystem\@AgentTravelSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI struct TickingSystemWithInfo createServerSystem();
+    MCAPI struct TickingSystemWithInfo createSystem(bool);
 
 };

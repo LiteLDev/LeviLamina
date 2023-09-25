@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
+#include "PackSource.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class RealmsUnknownPackSource.
  *
  */
-class RealmsUnknownPackSource {
+class RealmsUnknownPackSource : public PackSource {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -37,14 +38,14 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?forEachPackConst\@RealmsUnknownPackSource\@\@UEBAXV?$function\@$$A6AXAEBVPack\@\@\@Z\@std\@\@\@Z
      */
-    virtual void __unk_vfn_1();
+    virtual void forEachPackConst(class std::function<void (class Pack const &)>) const;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?forEachPack\@RealmsUnknownPackSource\@\@UEAAXV?$function\@$$A6AXAEAVPack\@\@\@Z\@std\@\@\@Z
      */
-    virtual void __unk_vfn_2();
+    virtual void forEachPack(class std::function<void (class Pack &)>);
     /**
      * @vftbl 3
      * @symbol ?getPackOrigin\@RealmsUnknownPackSource\@\@UEBA?AW4PackOrigin\@\@XZ
@@ -60,19 +61,5 @@ public:
      * @symbol ?load\@RealmsUnknownPackSource\@\@UEAA?AVPackSourceReport\@\@AEAVIPackManifestFactory\@\@AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentKeyProvider\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     virtual class PackSourceReport load(class IPackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REALMSUNKNOWNPACKSOURCE
-    /**
-     * @symbol ?forEachPack\@RealmsUnknownPackSource\@\@UEAAXV?$function\@$$A6AXAEAVPack\@\@\@Z\@std\@\@\@Z
-     */
-    MCVAPI void forEachPack(class std::function<void (class Pack &)>);
-    /**
-     * @symbol ?forEachPackConst\@RealmsUnknownPackSource\@\@UEBAXV?$function\@$$A6AXAEBVPack\@\@\@Z\@std\@\@\@Z
-     */
-    MCVAPI void forEachPackConst(class std::function<void (class Pack const &)>) const;
-#endif
-    /**
-     * @symbol ??0RealmsUnknownPackSource\@\@QEAA\@W4PackType\@\@W4PackOrigin\@\@\@Z
-     */
-    MCAPI RealmsUnknownPackSource(enum class PackType, enum class PackOrigin);
 
 };

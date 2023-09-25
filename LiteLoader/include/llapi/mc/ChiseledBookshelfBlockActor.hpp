@@ -131,6 +131,10 @@ public:
      * @symbol ?_numberOfBooksStored\@ChiseledBookshelfBlockActor\@\@AEBAIXZ
      */
     MCAPI unsigned int _numberOfBooksStored() const;
+    /**
+     * @symbol ?_setItemInternal\@ChiseledBookshelfBlockActor\@\@AEAAXHAEBVItemStack\@\@_N\@Z
+     */
+    MCAPI void _setItemInternal(int, class ItemStack const &, bool);
 
 private:
 

@@ -38,9 +38,9 @@ public:
      */
     MCAPI void registerActorGameplayHandler(std::unique_ptr<class ActorGameplayHandler> &&);
     /**
-     * @symbol ?sendActorCreated\@ActorEventCoordinator\@\@QEAAXAEAVActor\@\@\@Z
+     * @symbol ?sendActorCreated\@ActorEventCoordinator\@\@QEAAXAEAVActor\@\@W4InitializationMethod\@\@\@Z
      */
-    MCAPI void sendActorCreated(class Actor &);
+    MCAPI void sendActorCreated(class Actor &, enum class InitializationMethod);
     /**
      * @symbol ?sendActorCreationAttemptFailed\@ActorEventCoordinator\@\@QEAAXAEAVActor\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
@@ -74,6 +74,10 @@ public:
      */
     MCAPI void sendActorTick(class Actor &);
     /**
+     * @symbol ?sendEvent\@ActorEventCoordinator\@\@QEAA?AW4CoordinatorResult\@\@AEBV?$EventRef\@U?$ActorGameplayEvent\@W4CoordinatorResult\@\@\@\@\@\@\@Z
+     */
+    MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct ActorGameplayEvent<enum class CoordinatorResult>> const &);
+    /**
      * @symbol ?sendEvent\@ActorEventCoordinator\@\@QEAA?AW4CoordinatorResult\@\@V?$EventRef\@U?$MutableActorGameplayEvent\@W4CoordinatorResult\@\@\@\@\@\@\@Z
      */
     MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct MutableActorGameplayEvent<enum class CoordinatorResult>>);
@@ -81,9 +85,5 @@ public:
      * @symbol ?sendEvent\@ActorEventCoordinator\@\@QEAAXAEBV?$EventRef\@U?$ActorGameplayEvent\@X\@\@\@\@\@Z
      */
     MCAPI void sendEvent(class EventRef<struct ActorGameplayEvent<void>> const &);
-    /**
-     * @symbol ?sendEvent\@ActorEventCoordinator\@\@QEAA?AW4CoordinatorResult\@\@AEBV?$EventRef\@U?$ActorGameplayEvent\@W4CoordinatorResult\@\@\@\@\@\@\@Z
-     */
-    MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct ActorGameplayEvent<enum class CoordinatorResult>> const &);
 
 };

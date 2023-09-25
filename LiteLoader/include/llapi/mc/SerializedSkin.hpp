@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "persona.hpp"
 #include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
@@ -73,13 +74,17 @@ public:
      */
     MCAPI SerializedSkin();
     /**
+     * @symbol ??0SerializedSkin\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI SerializedSkin(class SerializedSkin &&);
+    /**
      * @symbol ??0SerializedSkin\@\@QEAA\@AEBVConnectionRequest\@\@\@Z
      */
     MCAPI SerializedSkin(class ConnectionRequest const &);
     /**
-     * @symbol ??0SerializedSkin\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ?getAnimationFrames\@SerializedSkin\@\@QEBAMW4AnimatedTextureType\@persona\@\@\@Z
      */
-    MCAPI SerializedSkin(class SerializedSkin &&);
+    MCAPI float getAnimationFrames(enum class persona::AnimatedTextureType) const;
     /**
      * @symbol ?getName\@SerializedSkin\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
@@ -108,6 +113,10 @@ public:
      * @symbol ?updateGeometryName\@SerializedSkin\@\@QEAAXXZ
      */
     MCAPI void updateGeometryName();
+    /**
+     * @symbol ?useBlinkingAnimation\@SerializedSkin\@\@QEBA_NXZ
+     */
+    MCAPI bool useBlinkingAnimation() const;
     /**
      * @symbol ?write\@SerializedSkin\@\@QEBAXAEAVBinaryStream\@\@\@Z
      */

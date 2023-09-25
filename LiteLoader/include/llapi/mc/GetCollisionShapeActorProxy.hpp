@@ -83,8 +83,8 @@ public:
      */
     virtual bool hasPassenger() const;
     /**
-     * @symbol ??0GetCollisionShapeActorProxy\@\@QEAA\@AEBUIActorMovementProxy\@\@\@Z
+     * @symbol ??0GetCollisionShapeActorProxy\@\@QEAA\@AEBVActor\@\@\@Z
      */
-    MCAPI GetCollisionShapeActorProxy(struct IActorMovementProxy const &);
+    MCAPI GetCollisionShapeActorProxy(class Actor const &);
 
 };

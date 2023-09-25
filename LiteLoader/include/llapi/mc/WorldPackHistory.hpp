@@ -29,13 +29,17 @@ public:
 
 public:
     /**
-     * @symbol ??0WorldPackHistory\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0WorldPackHistory\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI WorldPackHistory(class WorldPackHistory const &);
+    MCAPI WorldPackHistory(class WorldPackHistory &&);
     /**
      * @symbol ??0WorldPackHistory\@\@QEAA\@XZ
      */
     MCAPI WorldPackHistory();
+    /**
+     * @symbol ??0WorldPackHistory\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI WorldPackHistory(class WorldPackHistory const &);
     /**
      * @symbol ?initializeFromJson\@WorldPackHistory\@\@QEAA_NAEBVValue\@Json\@\@\@Z
      */

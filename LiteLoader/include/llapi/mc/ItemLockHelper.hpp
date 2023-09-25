@@ -31,6 +31,10 @@ public:
 
 public:
     /**
+     * @symbol ?addItemLockMode\@ItemLockHelper\@\@SA_NAEAVItemStackBase\@\@AEBVValue\@Json\@\@\@Z
+     */
+    MCAPI static bool addItemLockMode(class ItemStackBase &, class Json::Value const &);
+    /**
      * @symbol ?addKeepOnDeath\@ItemLockHelper\@\@SA_NAEAVItemStackBase\@\@AEBVValue\@Json\@\@\@Z
      */
     MCAPI static bool addKeepOnDeath(class ItemStackBase &, class Json::Value const &);
@@ -59,13 +63,13 @@ public:
      */
     MCAPI static void setKeepOnDeath(class ItemStackBase &, bool);
     /**
-     * @symbol ?shouldKeepOnDeath\@ItemLockHelper\@\@SA_NAEBVItemStackBase\@\@\@Z
-     */
-    MCAPI static bool shouldKeepOnDeath(class ItemStackBase const &);
-    /**
      * @symbol ?shouldKeepOnDeath\@ItemLockHelper\@\@SA_NAEBVActor\@\@AEBVItemStackBase\@\@\@Z
      */
     MCAPI static bool shouldKeepOnDeath(class Actor const &, class ItemStackBase const &);
+    /**
+     * @symbol ?shouldKeepOnDeath\@ItemLockHelper\@\@SA_NAEBVItemStackBase\@\@\@Z
+     */
+    MCAPI static bool shouldKeepOnDeath(class ItemStackBase const &);
 
 //private:
     /**

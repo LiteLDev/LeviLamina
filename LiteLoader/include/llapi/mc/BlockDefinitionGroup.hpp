@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "cereal.hpp"
 #include "Core.hpp"
 #include "JsonUtil.hpp"
 #include "Json.hpp"
@@ -37,6 +38,10 @@ public:
 #endif
 
 public:
+    /**
+     * @symbol ??0BlockDefinitionGroup\@\@QEAA\@AEAUReflectionCtx\@cereal\@\@\@Z
+     */
+    MCAPI BlockDefinitionGroup(struct cereal::ReflectionCtx &);
     /**
      * @symbol ??0BlockDefinitionGroup\@\@QEAA\@XZ
      */
@@ -74,10 +79,6 @@ public:
      */
     MCAPI void loadResources(class ResourcePackManager const &, class BlockComponentFactory const &, class Experiments const &);
     /**
-     * @symbol ?postProcessComponents\@BlockDefinitionGroup\@\@QEAAXAEAVBlockLegacy\@\@\@Z
-     */
-    MCAPI void postProcessComponents(class BlockLegacy &);
-    /**
      * @symbol ?registerBlockDefinition\@BlockDefinitionGroup\@\@QEAAXV?$unique_ptr\@UBlockDefinition\@\@U?$default_delete\@UBlockDefinition\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI void registerBlockDefinition(std::unique_ptr<struct BlockDefinition>);
@@ -108,13 +109,9 @@ public:
      */
     MCAPI void _buildBlockMenuCategorySchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockDescription>> &);
     /**
-     * @symbol ?_initializeComponentPostProcessors\@BlockDefinitionGroup\@\@AEAAXXZ
+     * @symbol ?_loadBlockDescription\@BlockDefinitionGroup\@\@AEAA_NAEBVValue\@Json\@\@AEAUBlockDescription\@\@AEBVSemVersion\@\@2AEBVExperiments\@\@\@Z
      */
-    MCAPI void _initializeComponentPostProcessors();
-    /**
-     * @symbol ?_loadBlockDescription\@BlockDefinitionGroup\@\@AEAA_NAEBVValue\@Json\@\@AEAUBlockDescription\@\@AEBVSemVersion\@\@AEBVExperiments\@\@\@Z
-     */
-    MCAPI bool _loadBlockDescription(class Json::Value const &, struct BlockDescription &, class SemVersion const &, class Experiments const &);
+    MCAPI bool _loadBlockDescription(class Json::Value const &, struct BlockDescription &, class SemVersion const &, class SemVersion const &, class Experiments const &);
     /**
      * @symbol ?_loadComponents\@BlockDefinitionGroup\@\@AEAA_NAEBVValue\@Json\@\@AEAUBlockDefinition\@\@AEBVExperiments\@\@\@Z
      */

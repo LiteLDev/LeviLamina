@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
+#include "BehaviorDefinition.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class DecoratorDefinition.
  *
  */
-class DecoratorDefinition {
+class DecoratorDefinition : public BehaviorDefinition {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -30,10 +31,6 @@ public:
 #endif
 
 public:
-    /**
-     * @symbol ?get\@DecoratorDefinition\@\@QEBAPEBVBehaviorDefinition\@\@XZ
-     */
-    MCAPI class BehaviorDefinition const * get() const;
 
 //protected:
     /**

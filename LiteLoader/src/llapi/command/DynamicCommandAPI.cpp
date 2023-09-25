@@ -365,11 +365,7 @@ std::string DynamicCommand::Result::toDebugString() const {
                 "name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet,
                 getRaw<Json::Value>().toStyledString().substr(0, getRaw<Json::Value>().toStyledString().size() - 1));
         case ParameterType::Item:
-            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet,
-                               getRaw<CommandItem>()
-                                   .createInstance(1, 1, nullptr, true)
-                                   .value_or(ItemInstance::EMPTY_ITEM)
-                                   .toString());
+            return fmt::format("name");
         case ParameterType::Block:
             return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet,
                                isSet ? getRaw<CommandBlockName>().getDescriptionId() : "nullptr");

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "BehaviorNode.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class PlaceBlockNode.
  *
  */
-class PlaceBlockNode {
+class PlaceBlockNode : public BehaviorNode {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -25,6 +26,7 @@ class PlaceBlockNode {
 public:
     class PlaceBlockNode& operator=(class PlaceBlockNode const &) = delete;
     PlaceBlockNode(class PlaceBlockNode const &) = delete;
+    PlaceBlockNode() = delete;
 #endif
 
 public:
@@ -38,9 +40,5 @@ public:
      * @symbol ?tick\@PlaceBlockNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
-    /**
-     * @symbol ??0PlaceBlockNode\@\@QEAA\@XZ
-     */
-    MCAPI PlaceBlockNode();
 
 };

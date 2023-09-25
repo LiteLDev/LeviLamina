@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "FurnaceBlockActor.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class SmokerBlockActor.
  *
  */
-class SmokerBlockActor {
+class SmokerBlockActor : public FurnaceBlockActor {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -35,9 +36,5 @@ public:
      */
     MCVAPI std::string getName() const;
 #endif
-    /**
-     * @symbol ??0SmokerBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI SmokerBlockActor(class BlockPos const &);
 
 };

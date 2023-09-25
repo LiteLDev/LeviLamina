@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Util.hpp"
+#include "OverworldGenerator.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class OverworldGenerator2d.
  *
  */
-class OverworldGenerator2d {
+class OverworldGenerator2d : public OverworldGenerator {
 
 #define AFTER_EXTRA
 // Add Member There

@@ -40,6 +40,10 @@ public:
      */
     MCVAPI void tickMovementCatchup(class EntityRegistry &);
     /**
+     * @symbol ?tickMovementCorrectionReplay\@EntitySystems\@\@UEAAXAEAVEntityRegistry\@\@\@Z
+     */
+    MCVAPI void tickMovementCorrectionReplay(class EntityRegistry &);
+    /**
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~EntitySystems();
@@ -90,6 +94,10 @@ public:
      * @symbol ?_hasSingleTickCategory\@EntitySystems\@\@AEBA_NV?$typeid_t\@USystemCategory\@\@\@Bedrock\@\@\@Z
      */
     MCAPI bool _hasSingleTickCategory(class Bedrock::typeid_t<struct SystemCategory>) const;
+    /**
+     * @symbol ?_singleTickCategory\@EntitySystems\@\@AEAAXV?$typeid_t\@USystemCategory\@\@\@Bedrock\@\@AEAVStrictEntityContext\@\@AEAVEntityRegistry\@\@\@Z
+     */
+    MCAPI void _singleTickCategory(class Bedrock::typeid_t<struct SystemCategory>, class StrictEntityContext &, class EntityRegistry &);
     /**
      * @symbol ?_singleTickCategory\@EntitySystems\@\@AEAAXV?$typeid_t\@USystemCategory\@\@\@Bedrock\@\@AEAVEntityContext\@\@\@Z
      */

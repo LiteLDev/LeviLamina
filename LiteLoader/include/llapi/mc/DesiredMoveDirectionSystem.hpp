@@ -10,26 +10,15 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC class DesiredMoveDirectionSystem.
- *
- */
-class DesiredMoveDirectionSystem {
+
+namespace DesiredMoveDirectionSystem {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DESIREDMOVEDIRECTIONSYSTEM
-public:
-    class DesiredMoveDirectionSystem& operator=(class DesiredMoveDirectionSystem const &) = delete;
-    DesiredMoveDirectionSystem(class DesiredMoveDirectionSystem const &) = delete;
-    DesiredMoveDirectionSystem() = delete;
-#endif
-
-public:
     /**
-     * @symbol ?createDesiredMoveDirectionSystem\@DesiredMoveDirectionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@DesiredMoveDirectionSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createDesiredMoveDirectionSystem();
+    MCAPI struct TickingSystemWithInfo createSystem();
 
 };

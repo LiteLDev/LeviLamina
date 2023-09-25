@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "ActorAnimationPlayer.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class ActorAnimationControllerPlayer.
  *
  */
-class ActorAnimationControllerPlayer {
+class ActorAnimationControllerPlayer : public ActorAnimationPlayer {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -44,11 +45,6 @@ public:
      * @symbol ?resetAnimation\@ActorAnimationControllerPlayer\@\@UEAAXXZ
      */
     virtual void resetAnimation();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol ?bindParticleEffects\@ActorAnimationControllerPlayer\@\@UEAAXAEBV?$unordered_map\@VHashedString\@\@V1\@U?$hash\@VHashedString\@\@\@std\@\@U?$equal_to\@VHashedString\@\@\@3\@V?$allocator\@U?$pair\@$$CBVHashedString\@\@V1\@\@std\@\@\@3\@\@std\@\@\@Z

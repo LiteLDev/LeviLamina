@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "ContainerScreenValidatorBase.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class AnvilContainerScreenValidator.
  *
  */
-class AnvilContainerScreenValidator {
+class AnvilContainerScreenValidator : public ContainerScreenValidatorBase {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -25,7 +26,6 @@ class AnvilContainerScreenValidator {
 public:
     class AnvilContainerScreenValidator& operator=(class AnvilContainerScreenValidator const &) = delete;
     AnvilContainerScreenValidator(class AnvilContainerScreenValidator const &) = delete;
-    AnvilContainerScreenValidator() = delete;
 #endif
 
 public:
@@ -34,11 +34,6 @@ public:
      * @symbol __unk_vfn_0
      */
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
-    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol ?isCraftingImplemented\@AnvilContainerScreenValidator\@\@UEAA_NXZ
@@ -49,5 +44,9 @@ public:
      * @symbol ?getCraftResult\@AnvilContainerScreenValidator\@\@UEAA?AUContainerValidationCraftResult\@\@AEBVContainerScreenContext\@\@AEAVContainerScreenValidation\@\@V?$unique_ptr\@UContainerValidationCraftInputs\@\@U?$default_delete\@UContainerValidationCraftInputs\@\@\@std\@\@\@std\@\@\@Z
      */
     virtual struct ContainerValidationCraftResult getCraftResult(class ContainerScreenContext const &, class ContainerScreenValidation &, std::unique_ptr<struct ContainerValidationCraftInputs>);
+    /**
+     * @symbol ??0AnvilContainerScreenValidator\@\@QEAA\@XZ
+     */
+    MCAPI AnvilContainerScreenValidator();
 
 };

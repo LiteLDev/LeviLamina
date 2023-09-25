@@ -5,7 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "BaseMoveToGoal.hpp"
+#include "BaseMoveToBlockGoal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +16,7 @@
  * @brief MC class StompBlockGoal.
  *
  */
-class StompBlockGoal : public BaseMoveToGoal {
+class StompBlockGoal : public BaseMoveToBlockGoal {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -46,11 +46,6 @@ public:
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @vftbl 4
      * @symbol ?start\@StompBlockGoal\@\@UEAAXXZ
      */
@@ -70,16 +65,6 @@ public:
      * @symbol ?appendDebugInfo\@StompBlockGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
     /**
      * @vftbl 11
      * @symbol ?isValidTarget\@StompBlockGoal\@\@UEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
@@ -120,5 +105,9 @@ public:
      * @symbol ?_playDestroySound\@StompBlockGoal\@\@MEAAXAEAVLevel\@\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
      */
     virtual void _playDestroySound(class Level &, class BlockSource &, class BlockPos);
+    /**
+     * @symbol ??0StompBlockGoal\@\@QEAA\@PEBVBlock\@\@AEAVMob\@\@MHHMH\@Z
+     */
+    MCAPI StompBlockGoal(class Block const *, class Mob &, float, int, int, float, int);
 
 };

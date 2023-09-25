@@ -20,14 +20,21 @@ struct ImguiProfiler {
 public:
     struct ImguiProfiler& operator=(struct ImguiProfiler const &) = delete;
     ImguiProfiler(struct ImguiProfiler const &) = delete;
-    ImguiProfiler() = delete;
 #endif
 
 public:
     /**
+     * @symbol ??0ImguiProfiler\@\@QEAA\@XZ
+     */
+    MCAPI ImguiProfiler();
+    /**
      * @symbol ?getTimeAccumulator\@ImguiProfiler\@\@QEAA?AVTimeAccumulator\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0_N\@Z
      */
     MCAPI class TimeAccumulator getTimeAccumulator(std::string const &, std::string const &, bool);
+    /**
+     * @symbol ?update\@ImguiProfiler\@\@QEAAXXZ
+     */
+    MCAPI void update();
 
 //private:
 

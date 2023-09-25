@@ -55,15 +55,5 @@ public:
      * @symbol ?stop\@WitherRandomAttackPosGoal\@\@UEAAXXZ
      */
     virtual void stop();
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
 
 };

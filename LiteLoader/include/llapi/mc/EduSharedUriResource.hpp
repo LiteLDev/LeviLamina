@@ -33,13 +33,13 @@ public:
      */
     MCAPI EduSharedUriResource(struct EduSharedUriResource &&);
     /**
-     * @symbol ??0EduSharedUriResource\@\@QEAA\@AEBVCompoundTag\@\@\@Z
-     */
-    MCAPI EduSharedUriResource(class CompoundTag const &);
-    /**
      * @symbol ??0EduSharedUriResource\@\@QEAA\@XZ
      */
     MCAPI EduSharedUriResource();
+    /**
+     * @symbol ??0EduSharedUriResource\@\@QEAA\@AEBVCompoundTag\@\@\@Z
+     */
+    MCAPI EduSharedUriResource(class CompoundTag const &);
     /**
      * @symbol ??1EduSharedUriResource\@\@QEAA\@XZ
      */

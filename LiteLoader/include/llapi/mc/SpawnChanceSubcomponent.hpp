@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
+#include "OnHitSubcomponent.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class SpawnChanceSubcomponent.
  *
  */
-class SpawnChanceSubcomponent {
+class SpawnChanceSubcomponent : public OnHitSubcomponent {
 
 #define AFTER_EXTRA
 // Add Member There

@@ -30,6 +30,10 @@ public:
 
 public:
     /**
+     * @symbol ??0BlockStateCommandParam\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0W4Type\@0\@\@Z
+     */
+    MCAPI BlockStateCommandParam(std::string, std::string, enum class BlockStateCommandParam::Type);
+    /**
      * @symbol ?getNameAndValue\@BlockStateCommandParam\@\@QEBA?AV?$optional\@U?$pair\@VHashedString\@\@H\@std\@\@\@std\@\@AEAVCommandOutput\@\@AEBVBlock\@\@\@Z
      */
     MCAPI class std::optional<struct std::pair<class HashedString, int>> getNameAndValue(class CommandOutput &, class Block const &) const;

@@ -12,6 +12,10 @@ QQ Group: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ Group
 
 ##### English | [简体中文](README_zh-cn.md)
 
+## ⚠️ Warning
+### We are currently working on 3.0 to ensure minimal impact on users. Until version 3.0 is completed, we will continue to adapt and support 2.0 (without fixing any bugs, only ensuring normal functionality).
+
+
 ![LiteLoaderBDS](https://socialify.git.ci/LiteLDev/LiteLoaderBDS/image?description=1&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fgithub.com%2FLiteLDev%2Fdocs%2Fraw%2Fmain%2Fassets%2FLogo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
 `LiteLoaderBDS` is an unofficial plugin loader that provides basic API support for `Bedrock Dedicated Server`, with a

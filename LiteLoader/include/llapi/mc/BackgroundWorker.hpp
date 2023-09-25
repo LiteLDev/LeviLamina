@@ -58,29 +58,9 @@ public:
      */
     MCAPI BackgroundWorker(std::string, bool, class Bedrock::Threading::OSThreadPriority const &, class std::optional<unsigned __int64>, class std::optional<int>, class WorkerPool &, bool);
     /**
-     * @symbol ?getApproximateTaskCount\@BackgroundWorker\@\@QEBA_KXZ
-     */
-    MCAPI unsigned __int64 getApproximateTaskCount() const;
-    /**
-     * @symbol ?getThreadId\@BackgroundWorker\@\@QEBA?AVid\@thread\@std\@\@XZ
-     */
-    MCAPI class std::thread::id getThreadId() const;
-    /**
-     * @symbol ?isIdle\@BackgroundWorker\@\@QEBA_NXZ
-     */
-    MCAPI bool isIdle() const;
-    /**
      * @symbol ?queue\@BackgroundWorker\@\@QEAAXV?$shared_ptr\@VBackgroundTaskBase\@\@\@std\@\@\@Z
      */
     MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>);
-    /**
-     * @symbol ?requestStop\@BackgroundWorker\@\@QEAAX_N\@Z
-     */
-    MCAPI void requestStop(bool);
-    /**
-     * @symbol ?resortPriorityQueue\@BackgroundWorker\@\@QEAAXXZ
-     */
-    MCAPI void resortPriorityQueue();
     /**
      * @symbol ?start\@BackgroundWorker\@\@QEAAXXZ
      */
@@ -89,10 +69,6 @@ public:
      * @symbol ?wake\@BackgroundWorker\@\@QEAAXXZ
      */
     MCAPI void wake();
-    /**
-     * @symbol ?getLocal\@BackgroundWorker\@\@SAPEAV1\@XZ
-     */
-    MCAPI static class BackgroundWorker * getLocal();
 
 //private:
     /**

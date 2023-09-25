@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Goal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class GoHomeGoal.
  *
  */
-class GoHomeGoal {
+class GoHomeGoal : public Goal {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -45,11 +46,6 @@ public:
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @vftbl 4
      * @symbol ?start\@GoHomeGoal\@\@UEAAXXZ
      */
@@ -76,13 +72,9 @@ public:
 
 //private:
     /**
-     * @symbol ?_getHomeDimension\@GoHomeGoal\@\@AEBA?AV?$AutomaticID\@VDimension\@\@H\@\@XZ
+     * @symbol ?_hasReachedHome\@GoHomeGoal\@\@AEBA_NXZ
      */
-    MCAPI class AutomaticID<class Dimension, int> _getHomeDimension() const;
-    /**
-     * @symbol ?_getHomePos\@GoHomeGoal\@\@AEBA?AVBlockPos\@\@XZ
-     */
-    MCAPI class BlockPos _getHomePos() const;
+    MCAPI bool _hasReachedHome() const;
     /**
      * @symbol ?_hasRequiredComponents\@GoHomeGoal\@\@AEBA_NXZ
      */

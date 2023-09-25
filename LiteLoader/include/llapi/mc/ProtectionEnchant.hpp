@@ -91,10 +91,6 @@ public:
      */
     MCVAPI bool isProtectionEnchant() const;
 #endif
-    /**
-     * @symbol ??0ProtectionEnchant\@\@QEAA\@W4Type\@Enchant\@\@W4Frequency\@2\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@2HH\@Z
-     */
-    MCAPI ProtectionEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class std::basic_string_view<char, struct std::char_traits<char>>, class std::basic_string_view<char, struct std::char_traits<char>>, int, int);
 
 //private:
 
