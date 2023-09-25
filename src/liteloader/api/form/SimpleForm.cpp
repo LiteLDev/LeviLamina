@@ -94,7 +94,7 @@ public:
         if (json.is_null()) {
             return false;
         }
-        player.send<ModalFormRequestPacket>(id, json.dump());
+        ModalFormRequestPacket(id,json.dump()).sendTo(player);
         return true;
     }
 

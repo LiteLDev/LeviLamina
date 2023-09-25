@@ -580,7 +580,6 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     ServerInstance,  ll::memory::HookPriority::Normal, "?startServerThread@ServerInstance@@QEAAXXZ",
     void
 ) {
-    std::cout << &ServerInstance::startServerThread << std::endl;
     origin();
     autoGenerate();
 }

@@ -41,7 +41,7 @@ public:
      *
      * @param player The server player to send the packet to.
      */
-    LLAPI void sendTo(class ServerPlayer const&);
+    LLAPI void sendTo(class Player&);
 
     /**
      * Send the packet to all relevant players in a 2D plane at a position in a given dimension.
@@ -57,7 +57,7 @@ public:
      * @param actor The actor to send the packet to.
      * @param except exclude this player.
      */
-    LLAPI void sendTo(class Actor const&,optional_ref<class Player>) const;
+    LLAPI void sendTo(class Actor&,optional_ref<class Player>) const;
 
     /**
      * Send the packet to a specific client identified by network identifier and sub-client ID.
