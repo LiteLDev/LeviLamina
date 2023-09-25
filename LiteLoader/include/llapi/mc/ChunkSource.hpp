@@ -20,7 +20,7 @@ class ChunkSource {
 #define AFTER_EXTRA
 // Add Member There
 public:
-char filler[0x58];
+char filler[0x68];
 
 enum class LoadMode : int {
     None = 0x0,
