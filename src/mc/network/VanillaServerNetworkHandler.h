@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/network/ServerNetworkHandler.h"
+#include "mc/server/ServerInstance.h"
 
 // auto generated inclusion list
 #include "mc/network/GameSpecificNetEventCallback.h"
@@ -11,6 +14,9 @@ public:
     VanillaServerNetworkHandler& operator=(VanillaServerNetworkHandler const&);
     VanillaServerNetworkHandler(VanillaServerNetworkHandler const&);
     VanillaServerNetworkHandler();
+
+    gsl::not_null<Bedrock::NonOwnerPointer<ServerNetworkHandler>> mBedrockHandler; // this+0x8
+    ServerInstance&                                               mServer;         // this+0x18
 
 public:
     // NOLINTBEGIN

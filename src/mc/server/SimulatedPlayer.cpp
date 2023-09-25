@@ -29,7 +29,7 @@ optional_ref<SimulatedPlayer> SimulatedPlayer::create(
         return player;
     }
 
-    player->setRespawnReady(Vec3(0, 32768, 0));
+    player->setRespawnReady(pos + Vec3{0, 1.62001, 0});
 
     player->setRespawnPosition(pos, dimID);
 

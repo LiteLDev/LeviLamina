@@ -122,12 +122,6 @@ public:
     LLNDAPI std::string getDeviceId() const;
     LLNDAPI std::optional<NetworkPeer::NetworkStatus> getNetworkStatus() const;
 
-    template <std::derived_from<Packet> Pkt, typename... Args>
-    void send(Args&&... args) {
-        auto packet = Pkt(std::forward<Args>(args)...);
-        sendNetworkPacket(packet);
-    }
-
     // prevent constructor by default
     Player& operator=(Player const&);
     Player(Player const&);
