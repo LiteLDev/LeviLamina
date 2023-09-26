@@ -12,10 +12,10 @@
 
 class StructureTemplateDataRequestPacket : public ::Packet {
 public:
-    std::basic_string<char, std::char_traits<char>, std::allocator<char>> mStructureName;     // this+0x30
-    NetworkBlockPosition                                                  mStructureBlockPos; // this+0x50
-    StructureSettings                                                     mStructureSettings; // this+0x60
-    StructureTemplateRequestOperation                                     mRequestOperation;  // this+0xC8
+    std::string                       mStructureName;     // this+0x30
+    NetworkBlockPosition              mStructureBlockPos; // this+0x50
+    StructureSettings                 mStructureSettings; // this+0x60
+    StructureTemplateRequestOperation mRequestOperation;  // this+0xC8
 
 
     // prevent constructor by default

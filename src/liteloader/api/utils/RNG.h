@@ -51,7 +51,7 @@ inline int rand() {
 
 template <>
 inline int rand(int min, int max) {
-    return (static_cast<int64>(min) + GolbalRandom32(static_cast<uint>(static_cast<int64>(max) - min + 1)));
+    return (static_cast<int>(min) + GolbalRandom32(static_cast<uint>(static_cast<int>(max) - min + 1)));
 }
 
 template <>

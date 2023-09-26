@@ -49,7 +49,7 @@ public:
 
     // WeakRefT<SharePtrRefTraits<FogDefinition const>> mFogDefinition;   // this+0x90
     // OceanRuinConfiguration                           mOceanRuinConfig; // this+0xA0
-    // std::vector<MobSpawnerData, std::allocator<MobSpawnerData>> mMobs; // this+0xB0
+    // std::vector<MobSpawnerData>                      mMobs; // this+0xB0
 
     // PerlinSimplexNoise         mTemperatureNoise;       // this+0xC8
     // PerlinSimplexNoise         mFrozenTemperatureNoise; // this+0xF0

@@ -4,7 +4,7 @@
 
 namespace Bedrock {
 
-template <typename E>
+template <typename E = std::error_code>
 struct ErrorInfo {
 public:
     ErrorInfo() = default;

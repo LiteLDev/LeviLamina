@@ -4,8 +4,8 @@
 
 class GameVersion {
 public:
-    // prevent constructor by default
-    GameVersion& operator=(GameVersion const&);
+    uint        mDigit[5]; // this+0x0
+    std::string mString;   // this+0x18
 
 public:
     // NOLINTBEGIN

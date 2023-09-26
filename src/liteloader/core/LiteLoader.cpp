@@ -217,7 +217,7 @@ void printLogo() {
                                                                        
        --------   Light-Weight BDS Plugin Loader   ----------          
                                                                        
-    )" << endl;
+)" << endl;
 }
 
 void checkDevMode() {

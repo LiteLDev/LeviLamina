@@ -83,20 +83,20 @@ bool checkLogLevel(int level, int outLevel) {
         return true;
     return false;
 }
-#define H do_hash
+
 fmt::text_style getModeColor(const std::string& a1) {
     if (!ll::globalConfig.colorLog)
         return {};
-    switch (H(a1.c_str())) {
-    case H("INFO"):
+    switch (do_hash(a1.c_str())) {
+    case do_hash("INFO"):
         return fmt::fg(fmt::color::light_sea_green);
-    case H("WARN"):
+    case do_hash("WARN"):
         return fmt::fg(fmt::color::yellow);
-    case H("DEBUG"):
+    case do_hash("DEBUG"):
         return fmt::fg(fmt::color::white);
-    case H("ERROR"):
+    case do_hash("ERROR"):
         return fmt::fg(fmt::terminal_color::bright_red);
-    case H("FATAL"):
+    case do_hash("FATAL"):
         return fmt::fg(fmt::color::red);
     }
     return fmt::fg(fmt::color::white);

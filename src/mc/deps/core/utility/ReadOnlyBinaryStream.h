@@ -14,7 +14,7 @@ public:
     const std::string* mBuffer;        // this+0x38
 
     template <typename T>
-    inline Bedrock::Result<void, class std::error_code> readType(T& x) {
+    inline Bedrock::Result<void> readType(T& x) {
         auto res = serialize<T>::read(*this);
         if (res.has_value()) {
             x = res.value();
@@ -23,21 +23,21 @@ public:
         return res;
     }
     template <>
-    MCAPI Bedrock::Result<void, class std::error_code> readType(class CompoundTag&);
+    MCAPI Bedrock::Result<void> readType(class CompoundTag&);
     template <>
-    MCAPI Bedrock::Result<void, class std::error_code> readType(struct CommandOriginData&);
+    MCAPI Bedrock::Result<void> readType(struct CommandOriginData&);
     template <>
-    MCAPI Bedrock::Result<void, class std::error_code> readType(class Experiments&);
+    MCAPI Bedrock::Result<void> readType(class Experiments&);
     template <>
-    MCAPI Bedrock::Result<void, class std::error_code> readType(struct ItemStackRequestSlotInfo&);
+    MCAPI Bedrock::Result<void> readType(struct ItemStackRequestSlotInfo&);
     template <>
-    MCAPI Bedrock::Result<void, class std::error_code> readType(class MoveActorAbsoluteData&);
+    MCAPI Bedrock::Result<void> readType(class MoveActorAbsoluteData&);
     template <>
-    MCAPI Bedrock::Result<void, class std::error_code> readType(class NetworkItemStackDescriptor&);
+    MCAPI Bedrock::Result<void> readType(class NetworkItemStackDescriptor&);
     template <>
-    MCAPI Bedrock::Result<void, class std::error_code> readType(class StructureSettings&);
+    MCAPI Bedrock::Result<void> readType(class StructureSettings&);
     template <>
-    MCAPI Bedrock::Result<void, class std::error_code> readType(std::vector<std::unique_ptr<class DataItem>>&);
+    MCAPI Bedrock::Result<void> readType(std::vector<std::unique_ptr<class DataItem>>&);
 
     // prevent constructor by default
     ReadOnlyBinaryStream& operator=(ReadOnlyBinaryStream const&);

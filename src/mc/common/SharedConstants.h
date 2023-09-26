@@ -10,6 +10,9 @@
 #include "mc/world/level/LevelChunkFormat.h"
 #include "mc/world/level/chunk/SubChunkFormat.h"
 
+class SemVersion;
+class GameVersion;
+
 namespace SharedConstants {
 // NOLINTBEGIN
 // symbol: ?CodeBuilderProtocolVersion@SharedConstants@@3W4ProtocolVersion@CodeBuilder@@B
