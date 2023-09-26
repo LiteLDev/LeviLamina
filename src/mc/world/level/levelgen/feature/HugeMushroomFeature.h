@@ -22,11 +22,11 @@ public:
     // symbol: ??1HugeMushroomFeature@@UEAA@XZ
     MCVAPI ~HugeMushroomFeature();
 
-    // symbol: ??0HugeMushroomFeature@@QEAA@XZ
-    MCAPI HugeMushroomFeature();
-
     // symbol: ??0HugeMushroomFeature@@QEAA@H@Z
     MCAPI explicit HugeMushroomFeature(int);
+
+    // symbol: ??0HugeMushroomFeature@@QEAA@XZ
+    MCAPI HugeMushroomFeature();
 
     // symbol: ?placeFixed@HugeMushroomFeature@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@HH@Z
     MCAPI bool placeFixed(class BlockSource&, class BlockPos const&, int, int) const;

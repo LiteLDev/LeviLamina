@@ -30,6 +30,12 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0LevelData@@QEAA@_N@Z
+    MCAPI explicit LevelData(bool);
+
+    // symbol: ??0LevelData@@QEAA@$$QEAV0@@Z
+    MCAPI LevelData(class LevelData&&);
+
     // symbol:
     // ??0LevelData@@QEAA@AEBVLevelSettings@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4GeneratorType@@AEBVBlockPos@@_NW4EducationEditionOffer@@MM@Z
     MCAPI LevelData(
@@ -42,12 +48,6 @@ public:
         float,
         float
     );
-
-    // symbol: ??0LevelData@@QEAA@$$QEAV0@@Z
-    MCAPI LevelData(class LevelData&&);
-
-    // symbol: ??0LevelData@@QEAA@_N@Z
-    MCAPI explicit LevelData(bool);
 
     // symbol: ?achievementsWillBeDisabledOnLoad@LevelData@@QEBA_NXZ
     MCAPI bool achievementsWillBeDisabledOnLoad() const;
@@ -64,11 +64,11 @@ public:
     // symbol: ?getAdventureModeOverridesEnabled@LevelData@@QEBA_NXZ
     MCAPI bool getAdventureModeOverridesEnabled() const;
 
-    // symbol: ?getAdventureSettings@LevelData@@QEBAAEBUAdventureSettings@@XZ
-    MCAPI struct AdventureSettings const& getAdventureSettings() const;
-
     // symbol: ?getAdventureSettings@LevelData@@QEAAAEAUAdventureSettings@@XZ
     MCAPI struct AdventureSettings& getAdventureSettings();
+
+    // symbol: ?getAdventureSettings@LevelData@@QEBAAEBUAdventureSettings@@XZ
+    MCAPI struct AdventureSettings const& getAdventureSettings() const;
 
     // symbol: ?getBaseGameVersion@LevelData@@QEBAAEBVBaseGameVersion@@XZ
     MCAPI class BaseGameVersion const& getBaseGameVersion() const;
@@ -94,11 +94,11 @@ public:
     // symbol: ?getDefaultAbilities@LevelData@@QEAAAEAVAbilities@@XZ
     MCAPI class Abilities& getDefaultAbilities();
 
-    // symbol: ?getDefaultPermissions@LevelData@@QEBAAEBVPermissionsHandler@@XZ
-    MCAPI class PermissionsHandler const& getDefaultPermissions() const;
-
     // symbol: ?getDefaultPermissions@LevelData@@QEAAAEAVPermissionsHandler@@XZ
     MCAPI class PermissionsHandler& getDefaultPermissions();
+
+    // symbol: ?getDefaultPermissions@LevelData@@QEBAAEBVPermissionsHandler@@XZ
+    MCAPI class PermissionsHandler const& getDefaultPermissions() const;
 
     // symbol: ?getEditorWorldType@LevelData@@QEBA?AW4WorldType@Editor@@XZ
     MCAPI ::Editor::WorldType getEditorWorldType() const;
@@ -133,11 +133,11 @@ public:
     // symbol: ?getGameDifficulty@LevelData@@QEBA?AW4Difficulty@@XZ
     MCAPI ::Difficulty getGameDifficulty() const;
 
-    // symbol: ?getGameRules@LevelData@@QEBAAEBVGameRules@@XZ
-    MCAPI class GameRules const& getGameRules() const;
-
     // symbol: ?getGameRules@LevelData@@QEAAAEAVGameRules@@XZ
     MCAPI class GameRules& getGameRules();
+
+    // symbol: ?getGameRules@LevelData@@QEBAAEBVGameRules@@XZ
+    MCAPI class GameRules const& getGameRules() const;
 
     // symbol: ?getGameType@LevelData@@QEBA?AW4GameType@@XZ
     MCAPI ::GameType getGameType() const;

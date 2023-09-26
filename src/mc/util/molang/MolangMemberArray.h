@@ -45,15 +45,15 @@ public:
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_SpeedAndDirection@@MAEBVVec3@@@Z
     MCAPI MolangMemberArray(::MolangStruct_SpeedAndDirection, float, class Vec3 const&);
 
+    // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_RotYAndPosY@@MM@Z
+    MCAPI MolangMemberArray(::MolangStruct_RotYAndPosY, float, float);
+
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_TRS@@$$QEAU0@11@Z
     MCAPI
     MolangMemberArray(::MolangStruct_TRS, struct MolangMemberArray&&, struct MolangMemberArray&&, struct MolangMemberArray&&);
 
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_PoseIndexAndHurtTime@@HH@Z
     MCAPI MolangMemberArray(::MolangStruct_PoseIndexAndHurtTime, int, int);
-
-    // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_RotYAndPosY@@MM@Z
-    MCAPI MolangMemberArray(::MolangStruct_RotYAndPosY, float, float);
 
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_XY@@AEBVVec2@@@Z
     MCAPI MolangMemberArray(::MolangStruct_XY, class Vec2 const&);

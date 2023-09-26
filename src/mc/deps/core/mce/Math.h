@@ -52,11 +52,11 @@ public:
     // symbol: ?clampedMap@Math@mce@@SAMMMMMM@Z
     MCAPI static float clampedMap(float, float, float, float, float);
 
-    // symbol: ?cos@Math@mce@@SAMURadian@2@@Z
-    MCAPI static float cos(struct mce::Radian);
-
     // symbol: ?cos@Math@mce@@SAMM@Z
     MCAPI static float cos(float);
+
+    // symbol: ?cos@Math@mce@@SAMURadian@2@@Z
+    MCAPI static float cos(struct mce::Radian);
 
     // symbol: ?degreesDifferenceAbs@Math@mce@@SAMMM@Z
     MCAPI static float degreesDifferenceAbs(float, float);
@@ -85,11 +85,11 @@ public:
     // symbol: ?inverseLerp@Math@mce@@SAMMMM@Z
     MCAPI static float inverseLerp(float, float, float);
 
-    // symbol: ?isNan@Math@mce@@SA_NM@Z
-    MCAPI static bool isNan(float);
-
     // symbol: ?isNan@Math@mce@@SA_NN@Z
     MCAPI static bool isNan(double);
+
+    // symbol: ?isNan@Math@mce@@SA_NM@Z
+    MCAPI static bool isNan(float);
 
     // symbol: ?lerpRotate@Math@mce@@SAMMMM@Z
     MCAPI static float lerpRotate(float, float, float);

@@ -88,12 +88,12 @@ public:
     MCAPI std::shared_ptr<class MapItemTrackedActor> getTrackedMapEntity(class Actor&);
 
     // symbol:
-    // ?getUpdatePacket@MapItemSavedData@@QEBA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@AEBVItemStack@@AEAVLevel@@AEAVActor@@@Z
-    MCAPI std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const&, class Level&, class Actor&) const;
-
-    // symbol:
     // ?getUpdatePacket@MapItemSavedData@@QEBA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@AEAVLevel@@AEBVBlockPos@@@Z
     MCAPI std::unique_ptr<class Packet> getUpdatePacket(class Level&, class BlockPos const&) const;
+
+    // symbol:
+    // ?getUpdatePacket@MapItemSavedData@@QEBA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@AEBVItemStack@@AEAVLevel@@AEAVActor@@@Z
+    MCAPI std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const&, class Level&, class Actor&) const;
 
     // symbol: ?hasParentMap@MapItemSavedData@@QEBA_NXZ
     MCAPI bool hasParentMap() const;

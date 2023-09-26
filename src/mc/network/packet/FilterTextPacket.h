@@ -30,16 +30,16 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@FilterTextPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
     // symbol: ??1FilterTextPacket@@UEAA@XZ
     MCVAPI ~FilterTextPacket();
 
-    // symbol: ??0FilterTextPacket@@QEAA@XZ
-    MCAPI FilterTextPacket();
-
     // symbol: ??0FilterTextPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     MCAPI FilterTextPacket(std::string const&, bool);
+
+    // symbol: ??0FilterTextPacket@@QEAA@XZ
+    MCAPI FilterTextPacket();
 
     // NOLINTEND
 };

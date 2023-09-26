@@ -19,14 +19,14 @@ namespace cereal {
 struct Schema {
 public:
     // NOLINTBEGIN
-    // symbol: ??0Schema@cereal@@QEAA@AEBUReflectionCtx@1@PEBVBasicSchema@internal@1@@Z
-    MCAPI Schema(struct cereal::ReflectionCtx const&, class cereal::internal::BasicSchema const*);
-
     // symbol: ??0Schema@cereal@@QEAA@XZ
     MCAPI Schema();
 
     // symbol: ??0Schema@cereal@@QEAA@AEBU01@@Z
     MCAPI Schema(struct cereal::Schema const&);
+
+    // symbol: ??0Schema@cereal@@QEAA@AEBUReflectionCtx@1@PEBVBasicSchema@internal@1@@Z
+    MCAPI Schema(struct cereal::ReflectionCtx const&, class cereal::internal::BasicSchema const*);
 
     // symbol:
     // ?getErrors@Schema@cereal@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ

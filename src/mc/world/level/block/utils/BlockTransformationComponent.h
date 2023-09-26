@@ -44,12 +44,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0BlockTransformationComponent@@QEAA@$$QEAV0@@Z
-    MCAPI BlockTransformationComponent(class BlockTransformationComponent&&);
-
     // symbol: ??0BlockTransformationComponent@@QEAA@AEBVVec3@@AEBURotationType@0@0@Z
     MCAPI
     BlockTransformationComponent(class Vec3 const&, struct BlockTransformationComponent::RotationType const&, class Vec3 const&);
+
+    // symbol: ??0BlockTransformationComponent@@QEAA@$$QEAV0@@Z
+    MCAPI BlockTransformationComponent(class BlockTransformationComponent&&);
 
     // symbol: ?getTransformationMatrix@BlockTransformationComponent@@QEBAAEBVMatrix@@XZ
     MCAPI class Matrix const& getTransformationMatrix() const;

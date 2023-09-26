@@ -36,10 +36,13 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@StartGamePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
     // symbol: ??1StartGamePacket@@UEAA@XZ
     MCVAPI ~StartGamePacket();
+
+    // symbol: ??0StartGamePacket@@QEAA@XZ
+    MCAPI StartGamePacket();
 
     // symbol:
     // ??0StartGamePacket@@QEAA@VItemRegistryRef@@AEBVLevelSettings@@UActorUniqueID@@VActorRuntimeID@@W4GameType@@_NAEBVVec3@@AEBVVec2@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@8AEBVContentIdentity@@8AEBVBlockDefinitionGroup@@5VCompoundTag@@AEBUPlayerMovementSettings@@8AEBVUUID@mce@@_KH_K@Z
@@ -66,9 +69,6 @@ public:
         int,
         uint64
     );
-
-    // symbol: ??0StartGamePacket@@QEAA@XZ
-    MCAPI StartGamePacket();
 
     // NOLINTEND
 };

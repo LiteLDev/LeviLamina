@@ -68,11 +68,11 @@ public:
     // symbol: ?clamp@Vec3@@SA?AV1@AEBV1@00@Z
     MCAPI static class Vec3 clamp(class Vec3 const&, class Vec3 const&, class Vec3 const&);
 
-    // symbol: ?directionFromRotation@Vec3@@SA?AV1@MM@Z
-    MCAPI static class Vec3 directionFromRotation(float, float);
-
     // symbol: ?directionFromRotation@Vec3@@SA?AV1@AEBVVec2@@@Z
     MCAPI static class Vec3 directionFromRotation(class Vec2 const&);
+
+    // symbol: ?directionFromRotation@Vec3@@SA?AV1@MM@Z
+    MCAPI static class Vec3 directionFromRotation(float, float);
 
     // symbol: ?fromXZ@Vec3@@SA?AV1@AEBVVec2@@M@Z
     MCAPI static class Vec3 fromXZ(class Vec2 const&, float);

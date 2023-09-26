@@ -12,14 +12,14 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ??0StructurePoolBlockRule@@QEAA@$$QEAV?$unique_ptr@VIStructurePoolBlockPredicate@@U?$default_delete@VIStructurePoolBlockPredicate@@@std@@@std@@0PEBVBlock@@@Z
-    MCAPI
-    StructurePoolBlockRule(std::unique_ptr<class IStructurePoolBlockPredicate>&&, std::unique_ptr<class IStructurePoolBlockPredicate>&&, class Block const*);
-
-    // symbol:
     // ??0StructurePoolBlockRule@@QEAA@$$QEAV?$unique_ptr@VIStructurePoolBlockPredicate@@U?$default_delete@VIStructurePoolBlockPredicate@@@std@@@std@@00PEBVBlock@@@Z
     MCAPI
     StructurePoolBlockRule(std::unique_ptr<class IStructurePoolBlockPredicate>&&, std::unique_ptr<class IStructurePoolBlockPredicate>&&, std::unique_ptr<class IStructurePoolBlockPredicate>&&, class Block const*);
+
+    // symbol:
+    // ??0StructurePoolBlockRule@@QEAA@$$QEAV?$unique_ptr@VIStructurePoolBlockPredicate@@U?$default_delete@VIStructurePoolBlockPredicate@@@std@@@std@@0PEBVBlock@@@Z
+    MCAPI
+    StructurePoolBlockRule(std::unique_ptr<class IStructurePoolBlockPredicate>&&, std::unique_ptr<class IStructurePoolBlockPredicate>&&, class Block const*);
 
     // symbol: ?finalizeRule@StructurePoolBlockRule@@QEAA_NAEAVBlockSource@@AEAVIRandom@@@Z
     MCAPI bool finalizeRule(class BlockSource&, class IRandom&);

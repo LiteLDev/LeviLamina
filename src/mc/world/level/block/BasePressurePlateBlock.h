@@ -201,13 +201,13 @@ public:
     // vIndex: 192, symbol: ?getTickDelay@BasePressurePlateBlock@@UEBAHXZ
     virtual int getTickDelay() const;
 
-    // vIndex: 193, symbol: ?getSignalStrength@WeightedPressurePlateBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 193, symbol: ?getSignalStrength@PressurePlateBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual int getSignalStrength(class BlockSource&, class BlockPos const&) const = 0;
 
-    // vIndex: 194, symbol: ?getSignalForData@WeightedPressurePlateBlock@@MEBAHH@Z
+    // vIndex: 194, symbol: ?getSignalForData@PressurePlateBlock@@MEBAHH@Z
     virtual int getSignalForData(int) const = 0;
 
-    // vIndex: 195, symbol: ?getRedstoneSignal@WeightedPressurePlateBlock@@MEBAHH@Z
+    // vIndex: 195, symbol: ?getRedstoneSignal@PressurePlateBlock@@MEBAHH@Z
     virtual int getRedstoneSignal(int) const = 0;
 
     // vIndex: 196, symbol: ?getSensitiveAABB@BasePressurePlateBlock@@MEBA?BVAABB@@AEBVBlockPos@@@Z

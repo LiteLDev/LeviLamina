@@ -63,12 +63,12 @@ MCAPI std::string getActorName(class Actor const&);
 // symbol: ?getFeetPos@CommandUtils@@YA?AVVec3@@PEBVActor@@@Z
 MCAPI class Vec3 getFeetPos(class Actor const*);
 
+// symbol: ?getInvalidCommandEntities@CommandUtils@@YA?AV?$vector@W4ActorType@@V?$allocator@W4ActorType@@@std@@@std@@XZ
+MCAPI std::vector<::ActorType> getInvalidCommandEntities();
+
 // symbol:
 // ?getInvalidCommandEntities@CommandUtils@@YA?AV?$vector@W4ActorType@@V?$allocator@W4ActorType@@@std@@@std@@_N0@Z
 MCAPI std::vector<::ActorType> getInvalidCommandEntities(bool, bool);
-
-// symbol: ?getInvalidCommandEntities@CommandUtils@@YA?AV?$vector@W4ActorType@@V?$allocator@W4ActorType@@@std@@@std@@XZ
-MCAPI std::vector<::ActorType> getInvalidCommandEntities();
 
 // symbol:
 // ?getTelemetryErrorList@CommandUtils@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCommandOutput@@@Z

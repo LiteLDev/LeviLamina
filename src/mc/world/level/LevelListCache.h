@@ -121,12 +121,12 @@ public:
     // symbol: ?_addOrReplaceCache@LevelListCache@@AEAAPEAVLevelCache@@AEBVPath@Core@@@Z
     MCAPI class LevelCache* _addOrReplaceCache(class Core::Path const&);
 
+    // symbol: ?_addToCache@LevelListCache@@AEAAPEAVLevelCache@@AEBVPath@Core@@@Z
+    MCAPI class LevelCache* _addToCache(class Core::Path const&);
+
     // symbol:
     // ?_addToCache@LevelListCache@@AEAAPEAVLevelCache@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV2@@Z
     MCAPI class LevelCache* _addToCache(std::string const&, class LevelCache&&);
-
-    // symbol: ?_addToCache@LevelListCache@@AEAAPEAVLevelCache@@AEBVPath@Core@@@Z
-    MCAPI class LevelCache* _addToCache(class Core::Path const&);
 
     // symbol:
     // ?_createAndAddToCache@LevelListCache@@AEAAPEAVLevelCache@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@@Z

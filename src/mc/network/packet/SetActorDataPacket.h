@@ -30,10 +30,13 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@SetActorDataPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
     // symbol: ??1SetActorDataPacket@@UEAA@XZ
     MCVAPI ~SetActorDataPacket();
+
+    // symbol: ??0SetActorDataPacket@@QEAA@XZ
+    MCAPI SetActorDataPacket();
 
     // symbol:
     // ??0SetActorDataPacket@@QEAA@VActorRuntimeID@@AEAVSynchedActorDataEntityWrapper@@PEAVPropertyComponent@@_K_N@Z
@@ -44,9 +47,6 @@ public:
         uint64,
         bool
     );
-
-    // symbol: ??0SetActorDataPacket@@QEAA@XZ
-    MCAPI SetActorDataPacket();
 
     // NOLINTEND
 };

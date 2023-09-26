@@ -48,11 +48,11 @@ public:
     // symbol: ??1BlockCollisionBoxDescription@@UEAA@XZ
     MCVAPI ~BlockCollisionBoxDescription();
 
-    // symbol: ??0BlockCollisionBoxDescription@@QEAA@_N@Z
-    MCAPI explicit BlockCollisionBoxDescription(bool);
-
     // symbol: ??0BlockCollisionBoxDescription@@QEAA@AEBVVec3@@0@Z
     MCAPI BlockCollisionBoxDescription(class Vec3 const&, class Vec3 const&);
+
+    // symbol: ??0BlockCollisionBoxDescription@@QEAA@_N@Z
+    MCAPI explicit BlockCollisionBoxDescription(bool);
 
     // symbol: ?bindType@BlockCollisionBoxDescription@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);

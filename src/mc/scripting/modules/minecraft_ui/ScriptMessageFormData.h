@@ -29,11 +29,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA@AEBV01@@Z
-    MCAPI ScriptMessageFormData(class ScriptModuleMinecraftServerUI::ScriptMessageFormData const&);
-
     // symbol: ??0ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA@XZ
     MCAPI ScriptMessageFormData();
+
+    // symbol: ??0ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA@AEBV01@@Z
+    MCAPI ScriptMessageFormData(class ScriptModuleMinecraftServerUI::ScriptMessageFormData const&);
 
     // symbol:
     // ?body@ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$StrongTypedObjectHandle@VScriptMessageFormData@ScriptModuleMinecraftServerUI@@@Scripting@@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@@Z

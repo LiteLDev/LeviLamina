@@ -15,11 +15,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ComponentItemData_v1_20@@QEAA@XZ
-    MCAPI ComponentItemData_v1_20();
-
     // symbol: ??0ComponentItemData_v1_20@@QEAA@$$QEAU0@@Z
     MCAPI ComponentItemData_v1_20(struct ComponentItemData_v1_20&&);
+
+    // symbol: ??0ComponentItemData_v1_20@@QEAA@XZ
+    MCAPI ComponentItemData_v1_20();
 
     // symbol: ??1ComponentItemData_v1_20@@QEAA@XZ
     MCAPI ~ComponentItemData_v1_20();

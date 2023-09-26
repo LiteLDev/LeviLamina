@@ -18,14 +18,14 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??0Tag@LevelDataValue@@QEAA@$$QEAU01@@Z
-        MCAPI Tag(struct LevelDataValue::Tag&&);
+        // symbol: ??0Tag@LevelDataValue@@QEAA@$$QEAVCompoundTag@@@Z
+        MCAPI explicit Tag(class CompoundTag&&);
 
         // symbol: ??0Tag@LevelDataValue@@QEAA@XZ
         MCAPI Tag();
 
-        // symbol: ??0Tag@LevelDataValue@@QEAA@$$QEAVCompoundTag@@@Z
-        MCAPI explicit Tag(class CompoundTag&&);
+        // symbol: ??0Tag@LevelDataValue@@QEAA@$$QEAU01@@Z
+        MCAPI Tag(struct LevelDataValue::Tag&&);
 
         // symbol: ??4Tag@LevelDataValue@@QEAAAEAU01@$$QEAU01@@Z
         MCAPI struct LevelDataValue::Tag& operator=(struct LevelDataValue::Tag&&);

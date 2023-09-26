@@ -21,11 +21,11 @@ public:
     // symbol: ??0HashedString@@QEAA@AEBV0@@Z
     MCAPI HashedString(class HashedString const&);
 
-    // symbol: ??0HashedString@@QEAA@PEBD@Z
-    MCAPI explicit HashedString(char const*);
-
     // symbol: ??0HashedString@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI explicit HashedString(std::string const&);
+
+    // symbol: ??0HashedString@@QEAA@PEBD@Z
+    MCAPI explicit HashedString(char const*);
 
     // symbol: ?c_str@HashedString@@QEBAPEBDXZ
     MCAPI char const* c_str() const;

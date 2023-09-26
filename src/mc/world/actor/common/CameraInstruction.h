@@ -42,7 +42,7 @@ public:
 
             // symbol:
             // ?read@ColorOption@FadeInstruction@CameraInstruction@@SA?AV?$Result@UColorOption@FadeInstruction@CameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-            MCAPI static class Bedrock::Result<struct CameraInstruction::FadeInstruction::ColorOption, std::error_code>
+            MCAPI static class Bedrock::Result<struct CameraInstruction::FadeInstruction::ColorOption>
             read(class ReadOnlyBinaryStream&);
 
             // NOLINTEND
@@ -62,7 +62,7 @@ public:
 
             // symbol:
             // ?read@TimeOption@FadeInstruction@CameraInstruction@@SA?AV?$Result@UTimeOption@FadeInstruction@CameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-            MCAPI static class Bedrock::Result<struct CameraInstruction::FadeInstruction::TimeOption, std::error_code>
+            MCAPI static class Bedrock::Result<struct CameraInstruction::FadeInstruction::TimeOption>
             read(class ReadOnlyBinaryStream&);
 
             // NOLINTEND
@@ -84,8 +84,7 @@ public:
 
         // symbol:
         // ?read@FadeInstruction@CameraInstruction@@SA?AV?$Result@UFadeInstruction@CameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-        MCAPI static class Bedrock::Result<struct CameraInstruction::FadeInstruction, std::error_code>
-        read(class ReadOnlyBinaryStream&);
+        MCAPI static class Bedrock::Result<struct CameraInstruction::FadeInstruction> read(class ReadOnlyBinaryStream&);
 
         // NOLINTEND
     };
@@ -115,7 +114,7 @@ public:
 
             // symbol:
             // ?read@EaseOption@SetInstruction@CameraInstruction@@SA?AV?$Result@UEaseOption@SetInstruction@CameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-            MCAPI static class Bedrock::Result<struct CameraInstruction::SetInstruction::EaseOption, std::error_code>
+            MCAPI static class Bedrock::Result<struct CameraInstruction::SetInstruction::EaseOption>
             read(class ReadOnlyBinaryStream&);
 
             // NOLINTEND
@@ -132,7 +131,7 @@ public:
             // NOLINTBEGIN
             // symbol:
             // ?read@FacingOption@SetInstruction@CameraInstruction@@SA?AV?$Result@UFacingOption@SetInstruction@CameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-            MCAPI static class Bedrock::Result<struct CameraInstruction::SetInstruction::FacingOption, std::error_code>
+            MCAPI static class Bedrock::Result<struct CameraInstruction::SetInstruction::FacingOption>
             read(class ReadOnlyBinaryStream&);
 
             // NOLINTEND
@@ -149,7 +148,7 @@ public:
             // NOLINTBEGIN
             // symbol:
             // ?read@PosOption@SetInstruction@CameraInstruction@@SA?AV?$Result@UPosOption@SetInstruction@CameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-            MCAPI static class Bedrock::Result<struct CameraInstruction::SetInstruction::PosOption, std::error_code>
+            MCAPI static class Bedrock::Result<struct CameraInstruction::SetInstruction::PosOption>
             read(class ReadOnlyBinaryStream&);
 
             // NOLINTEND
@@ -169,7 +168,7 @@ public:
 
             // symbol:
             // ?read@RotOption@SetInstruction@CameraInstruction@@SA?AV?$Result@URotOption@SetInstruction@CameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-            MCAPI static class Bedrock::Result<struct CameraInstruction::SetInstruction::RotOption, std::error_code>
+            MCAPI static class Bedrock::Result<struct CameraInstruction::SetInstruction::RotOption>
             read(class ReadOnlyBinaryStream&);
 
             // NOLINTEND
@@ -196,8 +195,7 @@ public:
 
         // symbol:
         // ?read@SetInstruction@CameraInstruction@@SA?AV?$Result@USetInstruction@CameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-        MCAPI static class Bedrock::Result<struct CameraInstruction::SetInstruction, std::error_code>
-        read(class ReadOnlyBinaryStream&);
+        MCAPI static class Bedrock::Result<struct CameraInstruction::SetInstruction> read(class ReadOnlyBinaryStream&);
 
         // NOLINTEND
     };
@@ -218,7 +216,7 @@ public:
 
     // symbol:
     // ?read@CameraInstruction@@SA?AV?$Result@UCameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<struct CameraInstruction, std::error_code> read(class ReadOnlyBinaryStream&);
+    MCAPI static class Bedrock::Result<struct CameraInstruction> read(class ReadOnlyBinaryStream&);
 
     // NOLINTEND
 };

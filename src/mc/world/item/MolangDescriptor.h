@@ -56,7 +56,7 @@ public:
 
     // symbol:
     // ?deserialize@MolangDescriptor@@SA?AV?$Result@V?$unique_ptr@UMolangDescriptor@@U?$default_delete@UMolangDescriptor@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<std::unique_ptr<struct MolangDescriptor>, std::error_code>
+    MCAPI static class Bedrock::Result<std::unique_ptr<struct MolangDescriptor>>
     deserialize(class ReadOnlyBinaryStream&);
 
     // symbol:

@@ -26,8 +26,7 @@ public:
 
     // symbol:
     // ?fromSerializedInt@VanillaDimensions@@SA?AV?$Result@V?$AutomaticID@VDimension@@H@@Verror_code@std@@@Bedrock@@$$QEAV?$Result@HVerror_code@std@@@3@@Z
-    MCAPI static class Bedrock::Result<DimensionType, std::error_code>
-    fromSerializedInt(class Bedrock::Result<int, std::error_code>&&);
+    MCAPI static class Bedrock::Result<DimensionType, std::error_code> fromSerializedInt(class Bedrock::Result<int>&&);
 
     // symbol:
     // ?fromString@VanillaDimensions@@SA?AV?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

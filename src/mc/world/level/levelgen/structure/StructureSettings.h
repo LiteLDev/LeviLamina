@@ -65,11 +65,11 @@ public:
     // symbol: ?isAnimated@StructureSettings@@QEBA_NXZ
     MCAPI bool isAnimated() const;
 
-    // symbol: ??4StructureSettings@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class StructureSettings& operator=(class StructureSettings const&);
-
     // symbol: ??4StructureSettings@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class StructureSettings& operator=(class StructureSettings&&);
+
+    // symbol: ??4StructureSettings@@QEAAAEAV0@AEBV0@@Z
+    MCAPI class StructureSettings& operator=(class StructureSettings const&);
 
     // symbol: ?setAllowNonTickingPlayerAndTickingAreaChunks@StructureSettings@@QEAAX_N@Z
     MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool);

@@ -52,7 +52,7 @@ public:
 
     // symbol:
     // ?deserialize@InternalItemDescriptor@@SA?AV?$Result@V?$unique_ptr@UInternalItemDescriptor@@U?$default_delete@UInternalItemDescriptor@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<std::unique_ptr<struct InternalItemDescriptor>, std::error_code>
+    MCAPI static class Bedrock::Result<std::unique_ptr<struct InternalItemDescriptor>>
     deserialize(class ReadOnlyBinaryStream&);
 
     // NOLINTEND

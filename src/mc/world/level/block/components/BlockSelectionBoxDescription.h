@@ -48,11 +48,11 @@ public:
     // symbol: ??1BlockSelectionBoxDescription@@UEAA@XZ
     MCVAPI ~BlockSelectionBoxDescription();
 
-    // symbol: ??0BlockSelectionBoxDescription@@QEAA@_N@Z
-    MCAPI explicit BlockSelectionBoxDescription(bool);
-
     // symbol: ??0BlockSelectionBoxDescription@@QEAA@AEBVVec3@@0@Z
     MCAPI BlockSelectionBoxDescription(class Vec3 const&, class Vec3 const&);
+
+    // symbol: ??0BlockSelectionBoxDescription@@QEAA@_N@Z
+    MCAPI explicit BlockSelectionBoxDescription(bool);
 
     // symbol: ?bindType@BlockSelectionBoxDescription@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);

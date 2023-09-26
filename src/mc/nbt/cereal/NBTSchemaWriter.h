@@ -106,12 +106,6 @@ public:
     // symbol: ?write@NBTSchemaWriter@@UEAA_NNAEBUSerializerTraits@cereal@@@Z
     MCVAPI bool write(double, struct cereal::SerializerTraits const&);
 
-    // symbol: ?write@NBTSchemaWriter@@UEAA_NGAEBUSerializerTraits@cereal@@@Z
-    MCVAPI bool write(ushort, struct cereal::SerializerTraits const&);
-
-    // symbol: ?write@NBTSchemaWriter@@UEAA_NFAEBUSerializerTraits@cereal@@@Z
-    MCVAPI bool write(short, struct cereal::SerializerTraits const&);
-
     // symbol: ?write@NBTSchemaWriter@@UEAA_N_NAEBUSerializerTraits@cereal@@@Z
     MCVAPI bool write(bool, struct cereal::SerializerTraits const&);
 
@@ -120,6 +114,12 @@ public:
 
     // symbol: ?write@NBTSchemaWriter@@UEAA_NEAEBUSerializerTraits@cereal@@@Z
     MCVAPI bool write(uchar, struct cereal::SerializerTraits const&);
+
+    // symbol: ?write@NBTSchemaWriter@@UEAA_NGAEBUSerializerTraits@cereal@@@Z
+    MCVAPI bool write(ushort, struct cereal::SerializerTraits const&);
+
+    // symbol: ?write@NBTSchemaWriter@@UEAA_NFAEBUSerializerTraits@cereal@@@Z
+    MCVAPI bool write(short, struct cereal::SerializerTraits const&);
 
     // symbol: ?write@NBTSchemaWriter@@UEAA_NIAEBUSerializerTraits@cereal@@@Z
     MCVAPI bool write(uint, struct cereal::SerializerTraits const&);

@@ -16,11 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0CameraPreset@@QEAA@AEBU0@@Z
-    MCAPI CameraPreset(struct CameraPreset const&);
-
     // symbol: ??0CameraPreset@@QEAA@$$QEAU0@@Z
     MCAPI CameraPreset(struct CameraPreset&&);
+
+    // symbol: ??0CameraPreset@@QEAA@AEBU0@@Z
+    MCAPI CameraPreset(struct CameraPreset const&);
 
     // symbol: ??4CameraPreset@@QEAAAEAU0@AEBU0@@Z
     MCAPI struct CameraPreset& operator=(struct CameraPreset const&);
@@ -38,7 +38,7 @@ public:
     MCAPI static void bindType();
 
     // symbol: ?read@CameraPreset@@SA?AV?$Result@UCameraPreset@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<struct CameraPreset, std::error_code> read(class ReadOnlyBinaryStream&);
+    MCAPI static class Bedrock::Result<struct CameraPreset> read(class ReadOnlyBinaryStream&);
 
     // NOLINTEND
 };

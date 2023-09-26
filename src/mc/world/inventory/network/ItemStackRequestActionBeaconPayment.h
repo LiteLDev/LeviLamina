@@ -22,7 +22,7 @@ public:
 
     // vIndex: 5, symbol:
     // ?_read@ItemStackRequestActionBeaconPayment@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
     // symbol: ??0ItemStackRequestActionBeaconPayment@@QEAA@XZ
     MCAPI ItemStackRequestActionBeaconPayment();

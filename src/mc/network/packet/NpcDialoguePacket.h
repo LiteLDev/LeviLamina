@@ -34,7 +34,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@NpcDialoguePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
     // symbol: ??1NpcDialoguePacket@@UEAA@XZ
     MCVAPI ~NpcDialoguePacket();
@@ -55,7 +55,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_verifyJson@NpcDialoguePacket@@AEBA?AV?$Result@XVerror_code@std@@@Bedrock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Bedrock::Result<void, std::error_code> _verifyJson(std::string const&) const;
+    MCAPI class Bedrock::Result<void> _verifyJson(std::string const&) const;
 
     // NOLINTEND
 };

@@ -34,7 +34,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@InteractPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
     // symbol: ??1InteractPacket@@UEAA@XZ
     MCVAPI ~InteractPacket();

@@ -66,11 +66,11 @@ public:
     MCAPI std::vector<std::reference_wrapper<class HashedString const>> const&
           getComplexAliasSplitNames(class HashedString const&) const;
 
-    // symbol: ?getItem@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
-    MCAPI class WeakPtr<class Item> getItem(class HashedString const&) const;
-
     // symbol: ?getItem@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@F@Z
     MCAPI class WeakPtr<class Item> getItem(short) const;
+
+    // symbol: ?getItem@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
+    MCAPI class WeakPtr<class Item> getItem(class HashedString const&) const;
 
     // symbol: ?getItemCount@ItemRegistryRef@@QEBAHXZ
     MCAPI int getItemCount() const;

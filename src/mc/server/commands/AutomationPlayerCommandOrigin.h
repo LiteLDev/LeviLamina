@@ -55,13 +55,13 @@ public:
     virtual bool isValid() const;
 
     // symbol:
+    // ??0AutomationPlayerCommandOrigin@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVPlayer@@@Z
+    MCAPI AutomationPlayerCommandOrigin(std::string const&, class Player&);
+
+    // symbol:
     // ??0AutomationPlayerCommandOrigin@@QEAA@UActorUniqueID@@AEAVLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVNetworkIdentifier@@@Z
     MCAPI
     AutomationPlayerCommandOrigin(struct ActorUniqueID, class Level&, std::string const&, class NetworkIdentifier const&);
-
-    // symbol:
-    // ??0AutomationPlayerCommandOrigin@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVPlayer@@@Z
-    MCAPI AutomationPlayerCommandOrigin(std::string const&, class Player&);
 
     // NOLINTEND
 };

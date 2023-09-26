@@ -18,11 +18,11 @@ public:
     // symbol: ??0BitStream@RakNet@@QEAA@XZ
     MCAPI BitStream();
 
-    // symbol: ??0BitStream@RakNet@@QEAA@PEAEI_N@Z
-    MCAPI BitStream(uchar*, uint, bool);
-
     // symbol: ??0BitStream@RakNet@@QEAA@I@Z
     MCAPI explicit BitStream(uint);
+
+    // symbol: ??0BitStream@RakNet@@QEAA@PEAEI_N@Z
+    MCAPI BitStream(uchar*, uint, bool);
 
     // symbol: ?IgnoreBits@BitStream@RakNet@@QEAAXI@Z
     MCAPI void IgnoreBits(uint);
@@ -63,14 +63,14 @@ public:
     // symbol: ?SetWriteOffset@BitStream@RakNet@@QEAAXI@Z
     MCAPI void SetWriteOffset(uint);
 
-    // symbol: ?Write@BitStream@RakNet@@QEAAXPEAV12@I@Z
-    MCAPI void Write(class RakNet::BitStream*, uint);
-
     // symbol: ?Write@BitStream@RakNet@@QEAAXPEBDI@Z
     MCAPI void Write(char const*, uint);
 
     // symbol: ?Write@BitStream@RakNet@@QEAAXAEAV12@I@Z
     MCAPI void Write(class RakNet::BitStream&, uint);
+
+    // symbol: ?Write@BitStream@RakNet@@QEAAXPEAV12@I@Z
+    MCAPI void Write(class RakNet::BitStream*, uint);
 
     // symbol: ?Write0@BitStream@RakNet@@QEAAXXZ
     MCAPI void Write0();

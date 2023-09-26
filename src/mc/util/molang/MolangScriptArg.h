@@ -21,11 +21,11 @@ public:
     // symbol: ?clear@MolangScriptArg@@QEAAXXZ
     MCAPI void clear();
 
-    // symbol: ??4MolangScriptArg@@QEAAAEAU0@$$QEAU0@@Z
-    MCAPI struct MolangScriptArg& operator=(struct MolangScriptArg&&);
-
     // symbol: ??4MolangScriptArg@@QEAAAEAU0@AEBU0@@Z
     MCAPI struct MolangScriptArg& operator=(struct MolangScriptArg const&);
+
+    // symbol: ??4MolangScriptArg@@QEAAAEAU0@$$QEAU0@@Z
+    MCAPI struct MolangScriptArg& operator=(struct MolangScriptArg&&);
 
     // symbol: ??1MolangScriptArg@@QEAA@XZ
     MCAPI ~MolangScriptArg();

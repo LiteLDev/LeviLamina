@@ -43,12 +43,12 @@ public:
     // symbol: ??1TargetGoal@@UEAA@XZ
     MCVAPI ~TargetGoal();
 
-    // symbol: ??0TargetGoal@@QEAA@AEAVMob@@_NH1M1H@Z
-    MCAPI TargetGoal(class Mob&, bool, int, bool, float, bool, int);
-
     // symbol:
     // ??0TargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@_NH2M2H@Z
     MCAPI TargetGoal(class Mob&, std::vector<struct MobDescriptor> const&, bool, int, bool, float, bool, int);
+
+    // symbol: ??0TargetGoal@@QEAA@AEAVMob@@_NH1M1H@Z
+    MCAPI TargetGoal(class Mob&, bool, int, bool, float, bool, int);
 
     // NOLINTEND
 

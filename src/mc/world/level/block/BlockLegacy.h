@@ -926,12 +926,12 @@ public:
     // symbol: ?addTrait@BlockLegacy@@QEAAAEAV1@AEBVITrait@BlockTrait@@@Z
     MCAPI class BlockLegacy& addTrait(class BlockTrait::ITrait const&);
 
-    // symbol: ?anyOf@BlockLegacy@@QEBA_NV?$initializer_list@$$CBVHashedString@@@std@@@Z
-    MCAPI bool anyOf(std::initializer_list<class HashedString const>) const;
-
     // symbol:
     // ?anyOf@BlockLegacy@@QEBA_NAEBV?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@@Z
     MCAPI bool anyOf(std::vector<std::reference_wrapper<class HashedString const>> const&) const;
+
+    // symbol: ?anyOf@BlockLegacy@@QEBA_NV?$initializer_list@$$CBVHashedString@@@std@@@Z
+    MCAPI bool anyOf(std::initializer_list<class HashedString const>) const;
 
     // symbol:
     // ?buildDescriptionName@BlockLegacy@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
@@ -1032,17 +1032,17 @@ public:
     // symbol: ?hasProperty@BlockLegacy@@QEBA_NW4BlockProperty@@@Z
     MCAPI bool hasProperty(::BlockProperty) const;
 
-    // symbol: ?hasState@BlockLegacy@@QEBA_NAEBVHashedString@@@Z
-    MCAPI bool hasState(class HashedString const&) const;
-
     // symbol: ?hasState@BlockLegacy@@QEBA_NAEBVBlockState@@@Z
     MCAPI bool hasState(class BlockState const&) const;
 
-    // symbol: ?hasTag@BlockLegacy@@QEBA_NAEB_K@Z
-    MCAPI bool hasTag(uint64 const&) const;
+    // symbol: ?hasState@BlockLegacy@@QEBA_NAEBVHashedString@@@Z
+    MCAPI bool hasState(class HashedString const&) const;
 
     // symbol: ?hasTag@BlockLegacy@@QEBA_NAEBVHashedString@@@Z
     MCAPI bool hasTag(class HashedString const&) const;
+
+    // symbol: ?hasTag@BlockLegacy@@QEBA_NAEB_K@Z
+    MCAPI bool hasTag(uint64 const&) const;
 
     // symbol: ?initEntity@BlockLegacy@@QEAAXAEAVEntityRegistry@@@Z
     MCAPI void initEntity(class EntityRegistry&);
@@ -1167,11 +1167,11 @@ public:
     // symbol: ?setSolid@BlockLegacy@@QEAAX_N@Z
     MCAPI void setSolid(bool);
 
-    // symbol: ?setVisualShape@BlockLegacy@@QEAAXAEBVVec3@@0@Z
-    MCAPI void setVisualShape(class Vec3 const&, class Vec3 const&);
-
     // symbol: ?setVisualShape@BlockLegacy@@QEAAXAEBVAABB@@@Z
     MCAPI void setVisualShape(class AABB const&);
+
+    // symbol: ?setVisualShape@BlockLegacy@@QEAAXAEBVVec3@@0@Z
+    MCAPI void setVisualShape(class Vec3 const&, class Vec3 const&);
 
     // symbol: ?tryGetStateFromLegacyData@BlockLegacy@@QEBAPEBVBlock@@G@Z
     MCAPI class Block const* tryGetStateFromLegacyData(ushort) const;

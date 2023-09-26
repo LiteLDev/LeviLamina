@@ -84,11 +84,11 @@ public:
     // symbol: ??9MobEffectInstance@@QEBA_NAEBV0@@Z
     MCAPI bool operator!=(class MobEffectInstance const&) const;
 
-    // symbol: ??4MobEffectInstance@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class MobEffectInstance& operator=(class MobEffectInstance&&);
-
     // symbol: ??4MobEffectInstance@@QEAAAEAV0@AEBV0@@Z
     MCAPI class MobEffectInstance& operator=(class MobEffectInstance const&);
+
+    // symbol: ??4MobEffectInstance@@QEAAAEAV0@$$QEAV0@@Z
+    MCAPI class MobEffectInstance& operator=(class MobEffectInstance&&);
 
     // symbol: ??8MobEffectInstance@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class MobEffectInstance const&) const;

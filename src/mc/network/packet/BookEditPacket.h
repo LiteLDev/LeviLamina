@@ -29,7 +29,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@BookEditPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
     // symbol: ??1BookEditPacket@@UEAA@XZ
     MCVAPI ~BookEditPacket();
@@ -48,7 +48,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_readPage@BookEditPacket@@AEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI class Bedrock::Result<void, std::error_code> _readPage(class ReadOnlyBinaryStream&);
+    MCAPI class Bedrock::Result<void> _readPage(class ReadOnlyBinaryStream&);
 
     // symbol: ?_writePage@BookEditPacket@@AEBAXAEAVBinaryStream@@@Z
     MCAPI void _writePage(class BinaryStream&) const;

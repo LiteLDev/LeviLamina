@@ -28,8 +28,7 @@ public:
 
     // symbol:
     // ?readFromStream@FlatFileManifest@Core@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@2@_N@Z
-    MCAPI class Bedrock::Result<void, std::error_code>
-    readFromStream(std::string const&, class Core::Path const&, bool);
+    MCAPI class Bedrock::Result<void> readFromStream(std::string const&, class Core::Path const&, bool);
 
     // NOLINTEND
 
@@ -48,7 +47,7 @@ public:
 
     // symbol:
     // ?_readHeaderFromStream@FlatFileManifest@Core@@AEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI class Bedrock::Result<void, std::error_code> _readHeaderFromStream(class ReadOnlyBinaryStream&);
+    MCAPI class Bedrock::Result<void> _readHeaderFromStream(class ReadOnlyBinaryStream&);
 
     // NOLINTEND
 };

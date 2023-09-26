@@ -37,7 +37,7 @@ public:
     MCAPI class SerializedSkin& operator=(class SerializedSkin const&);
 
     // symbol: ?read@SerializedSkin@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI class Bedrock::Result<void, std::error_code> read(class ReadOnlyBinaryStream&);
+    MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream&);
 
     // symbol:
     // ?setArmSizeFromString@SerializedSkin@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
