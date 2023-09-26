@@ -43,7 +43,7 @@ public:
 
     // symbol:
     // ?read@NetworkItemStackDescriptor@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI class Bedrock::Result<void, std::error_code> read(class ReadOnlyBinaryStream&);
+    MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream&);
 
     // symbol: ?setIncludeNetIds@NetworkItemStackDescriptor@@QEBAX_N@Z
     MCAPI void setIncludeNetIds(bool) const;

@@ -28,11 +28,11 @@ public:
     // symbol: ?applyEnchant@EnchantUtils@@SA_NAEAVItemStackBase@@W4Type@Enchant@@H_N@Z
     MCAPI static bool applyEnchant(class ItemStackBase&, ::Enchant::Type, int, bool);
 
-    // symbol: ?canEnchant@EnchantUtils@@SA?AUEnchantResult@@AEBVItemStackBase@@W4Type@Enchant@@H_N@Z
-    MCAPI static struct EnchantResult canEnchant(class ItemStackBase const&, ::Enchant::Type, int, bool);
-
     // symbol: ?canEnchant@EnchantUtils@@SA?AUEnchantResult@@AEBVItemStackBase@@AEBVEnchantmentInstance@@_N@Z
     MCAPI static struct EnchantResult canEnchant(class ItemStackBase const&, class EnchantmentInstance const&, bool);
+
+    // symbol: ?canEnchant@EnchantUtils@@SA?AUEnchantResult@@AEBVItemStackBase@@W4Type@Enchant@@H_N@Z
+    MCAPI static struct EnchantResult canEnchant(class ItemStackBase const&, ::Enchant::Type, int, bool);
 
     // symbol: ?combineEnchantedItems@EnchantUtils@@SAHAEBVItemStack@@0AEAV2@_N@Z
     MCAPI static int combineEnchantedItems(class ItemStack const&, class ItemStack const&, class ItemStack&, bool);

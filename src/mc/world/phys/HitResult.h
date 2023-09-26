@@ -23,11 +23,11 @@ public:
     bool          mIndirectHit;  // this+0x6C
 
     // NOLINTBEGIN
+    // symbol: ??0HitResult@@QEAA@AEBVVec3@@0AEAVActor@@@Z
+    MCAPI HitResult(class Vec3 const& startPos, class Vec3 const& rayDir, class Actor& actor);
+
     // symbol: ??0HitResult@@QEAA@AEBVVec3@@0AEAVActor@@0@Z
     MCAPI HitResult(class Vec3 const& startPos, class Vec3 const& rayDir, class Actor& actor, class Vec3 const& hitPos);
-
-    // symbol: ??0HitResult@@QEAA@AEBV0@@Z
-    MCAPI HitResult(class HitResult const&);
 
     // symbol: ??0HitResult@@QEAA@XZ
     MCAPI HitResult();
@@ -35,11 +35,11 @@ public:
     // symbol: ??0HitResult@@QEAA@AEBVVec3@@00@Z
     MCAPI HitResult(class Vec3 const& startPos, class Vec3 const& rayDir, class Vec3 const& hitPos);
 
-    // symbol: ??0HitResult@@QEAA@AEBVVec3@@0AEAVActor@@@Z
-    MCAPI HitResult(class Vec3 const& startPos, class Vec3 const& rayDir, class Actor& actor);
-
     // symbol: ??0HitResult@@QEAA@AEBVVec3@@0AEBVBlockPos@@E0@Z
     MCAPI HitResult(class Vec3 const&, class Vec3 const&, class BlockPos const&, uchar, class Vec3 const&);
+
+    // symbol: ??0HitResult@@QEAA@AEBV0@@Z
+    MCAPI HitResult(class HitResult const&);
 
     // symbol: ??0HitResult@@QEAA@$$QEAV0@@Z
     MCAPI HitResult(class HitResult&&);

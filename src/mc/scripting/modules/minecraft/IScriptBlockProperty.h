@@ -26,13 +26,13 @@ public:
     // symbol: ??1IScriptBlockProperty@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~IScriptBlockProperty();
 
+    // symbol: ??0IScriptBlockProperty@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
+    MCAPI IScriptBlockProperty(class ScriptModuleMinecraft::IScriptBlockProperty&&);
+
     // symbol:
     // ??0IScriptBlockProperty@ScriptModuleMinecraft@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockState@@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@@Z
     MCAPI
     IScriptBlockProperty(std::string, class BlockState const&, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>);
-
-    // symbol: ??0IScriptBlockProperty@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
-    MCAPI IScriptBlockProperty(class ScriptModuleMinecraft::IScriptBlockProperty&&);
 
     // symbol: ??4IScriptBlockProperty@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::IScriptBlockProperty&

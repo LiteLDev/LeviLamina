@@ -18,11 +18,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0Response@Http@Bedrock@@QEAA@XZ
-    MCAPI Response();
-
     // symbol: ??0Response@Http@Bedrock@@QEAA@$$QEAV012@@Z
     MCAPI Response(class Bedrock::Http::Response&&);
+
+    // symbol: ??0Response@Http@Bedrock@@QEAA@XZ
+    MCAPI Response();
 
     // symbol: ??0Response@Http@Bedrock@@QEAA@VStatus@12@@Z
     MCAPI explicit Response(class Bedrock::Http::Status);

@@ -32,11 +32,11 @@ public:
     // symbol: ?_propagateSkyLight@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@E@Z
     MCAPI void _propagateSkyLight(struct SubChunkLightIndex, uchar);
 
-    // symbol: ?_propagateSubtractiveBlockLight@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@E@Z
-    MCAPI void _propagateSubtractiveBlockLight(struct SubChunkLightIndex, uchar);
-
     // symbol: ?_propagateSubtractiveBlockLight@SubChunkRelighter@@QEAAXXZ
     MCAPI void _propagateSubtractiveBlockLight();
+
+    // symbol: ?_propagateSubtractiveBlockLight@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@E@Z
+    MCAPI void _propagateSubtractiveBlockLight(struct SubChunkLightIndex, uchar);
 
     // symbol: ?_propagateSubtractiveSkyLight@SubChunkRelighter@@QEAAXXZ
     MCAPI void _propagateSubtractiveSkyLight();

@@ -124,23 +124,17 @@ public:
     // symbol: ??0Value@Json@@QEAA@AEBV01@@Z
     MCAPI Value(class Json::Value const&);
 
-    // symbol: ??0Value@Json@@QEAA@_K@Z
-    MCAPI explicit Value(uint64);
-
-    // symbol: ??0Value@Json@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI explicit Value(std::string const&);
+    // symbol: ??0Value@Json@@QEAA@PEBD@Z
+    MCAPI explicit Value(char const*);
 
     // symbol: ??0Value@Json@@QEAA@_J@Z
     MCAPI explicit Value(int64);
 
-    // symbol: ??0Value@Json@@QEAA@PEBD@Z
-    MCAPI explicit Value(char const*);
+    // symbol: ??0Value@Json@@QEAA@W4ValueType@1@@Z
+    MCAPI explicit Value(::Json::ValueType);
 
-    // symbol: ??0Value@Json@@QEAA@$$QEAV01@@Z
-    MCAPI Value(class Json::Value&&);
-
-    // symbol: ??0Value@Json@@QEAA@_N@Z
-    MCAPI explicit Value(bool);
+    // symbol: ??0Value@Json@@QEAA@N@Z
+    MCAPI explicit Value(double);
 
     // symbol: ??0Value@Json@@QEAA@H@Z
     MCAPI explicit Value(int);
@@ -148,11 +142,17 @@ public:
     // symbol: ??0Value@Json@@QEAA@I@Z
     MCAPI explicit Value(uint);
 
-    // symbol: ??0Value@Json@@QEAA@N@Z
-    MCAPI explicit Value(double);
+    // symbol: ??0Value@Json@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI explicit Value(std::string const&);
 
-    // symbol: ??0Value@Json@@QEAA@W4ValueType@1@@Z
-    MCAPI explicit Value(::Json::ValueType);
+    // symbol: ??0Value@Json@@QEAA@_K@Z
+    MCAPI explicit Value(uint64);
+
+    // symbol: ??0Value@Json@@QEAA@_N@Z
+    MCAPI explicit Value(bool);
+
+    // symbol: ??0Value@Json@@QEAA@$$QEAV01@@Z
+    MCAPI Value(class Json::Value&&);
 
     // symbol: ?append@Value@Json@@QEAAAEAV12@AEBV12@@Z
     MCAPI class Json::Value& append(class Json::Value const&);
@@ -190,11 +190,11 @@ public:
     // symbol: ?asUInt64@Value@Json@@QEBA_K_K@Z
     MCAPI uint64 asUInt64(uint64) const;
 
-    // symbol: ?begin@Value@Json@@QEAA?AVValueIterator@2@XZ
-    MCAPI class Json::ValueIterator begin();
-
     // symbol: ?begin@Value@Json@@QEBA?AVValueConstIterator@2@XZ
     MCAPI class Json::ValueConstIterator begin() const;
+
+    // symbol: ?begin@Value@Json@@QEAA?AVValueIterator@2@XZ
+    MCAPI class Json::ValueIterator begin();
 
     // symbol: ?clear@Value@Json@@QEAAXXZ
     MCAPI void clear();
@@ -246,11 +246,11 @@ public:
     // symbol: ?isIntegral@Value@Json@@QEBA_NXZ
     MCAPI bool isIntegral() const;
 
-    // symbol: ?isMember@Value@Json@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool isMember(std::string const&) const;
-
     // symbol: ?isMember@Value@Json@@QEBA_NPEBD@Z
     MCAPI bool isMember(char const*) const;
+
+    // symbol: ?isMember@Value@Json@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI bool isMember(std::string const&) const;
 
     // symbol: ?isNull@Value@Json@@QEBA_NXZ
     MCAPI bool isNull() const;
@@ -279,11 +279,11 @@ public:
     // symbol: ??8Value@Json@@QEBA_NAEBV01@@Z
     MCAPI bool operator==(class Json::Value const&) const;
 
-    // symbol: ??AValue@Json@@QEBAAEBV01@PEBD@Z
-    MCAPI class Json::Value const& operator[](char const*) const;
+    // symbol: ??AValue@Json@@QEAAAEAV01@I@Z
+    MCAPI class Json::Value& operator[](uint);
 
-    // symbol: ??AValue@Json@@QEAAAEAV01@PEBD@Z
-    MCAPI class Json::Value& operator[](char const*);
+    // symbol: ??AValue@Json@@QEAAAEAV01@H@Z
+    MCAPI class Json::Value& operator[](int);
 
     // symbol: ??AValue@Json@@QEAAAEAV01@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Json::Value& operator[](std::string const&);
@@ -291,17 +291,17 @@ public:
     // symbol: ??AValue@Json@@QEBAAEBV01@I@Z
     MCAPI class Json::Value const& operator[](uint) const;
 
-    // symbol: ??AValue@Json@@QEBAAEBV01@H@Z
-    MCAPI class Json::Value const& operator[](int) const;
-
-    // symbol: ??AValue@Json@@QEAAAEAV01@H@Z
-    MCAPI class Json::Value& operator[](int);
+    // symbol: ??AValue@Json@@QEAAAEAV01@PEBD@Z
+    MCAPI class Json::Value& operator[](char const*);
 
     // symbol: ??AValue@Json@@QEBAAEBV01@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Json::Value const& operator[](std::string const&) const;
 
-    // symbol: ??AValue@Json@@QEAAAEAV01@I@Z
-    MCAPI class Json::Value& operator[](uint);
+    // symbol: ??AValue@Json@@QEBAAEBV01@H@Z
+    MCAPI class Json::Value const& operator[](int) const;
+
+    // symbol: ??AValue@Json@@QEBAAEBV01@PEBD@Z
+    MCAPI class Json::Value const& operator[](char const*) const;
 
     // symbol: ?removeMember@Value@Json@@QEAA?AV12@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Json::Value removeMember(std::string const&);

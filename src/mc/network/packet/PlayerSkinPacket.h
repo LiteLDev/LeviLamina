@@ -37,11 +37,11 @@ public:
 
     // vIndex: 4, symbol:
     // ?read@PlayerSkinPacket@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream&);
 
     // vIndex: 7, symbol:
     // ?_read@PlayerSkinPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
     // symbol: ??1PlayerSkinPacket@@UEAA@XZ
     MCVAPI ~PlayerSkinPacket();

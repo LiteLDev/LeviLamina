@@ -58,11 +58,11 @@ MCAPI struct Util::FormattedString allocateVFormat(char const*, char*);
 // symbol: ?base64_decode@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
 MCAPI std::string base64_decode(std::string const&);
 
-// symbol: ?base64_encode@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBE_K_N@Z
-MCAPI std::string base64_encode(uchar const*, uint64, bool);
-
 // symbol: ?base64_encode@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@_N@Z
 MCAPI std::string base64_encode(std::string const&, bool);
+
+// symbol: ?base64_encode@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBE_K_N@Z
+MCAPI std::string base64_encode(uchar const*, uint64, bool);
 
 // symbol: ?base64url_decode@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V23@@Z
 MCAPI std::string base64url_decode(std::string);
@@ -249,12 +249,12 @@ MCAPI std::string toHex(std::string_view);
 // ?toIntWithMinMax@Util@@YA?AW4NumberConversionResult@1@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEAHHH@Z
 MCAPI ::Util::NumberConversionResult toIntWithMinMax(std::string_view, int&, int, int);
 
-// symbol: ?toLower@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBD@Z
-MCAPI std::string toLower(char const*);
-
 // symbol:
 // ?toLower@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$basic_string_view@DU?$char_traits@D@std@@@3@@Z
 MCAPI std::string toLower(std::string_view const&);
+
+// symbol: ?toLower@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBD@Z
+MCAPI std::string toLower(char const*);
 
 // symbol: ?toLowerInPlace@Util@@YAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 MCAPI void toLowerInPlace(std::string&);
@@ -262,18 +262,18 @@ MCAPI void toLowerInPlace(std::string&);
 // symbol: ?toPascalCase@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@D@Z
 MCAPI std::string toPascalCase(std::string const&, char);
 
-// symbol: ?toString@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MH@Z
-MCAPI std::string toString(float, int);
-
-// symbol: ?toString@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-MCAPI std::string toString(std::string const&);
-
 // symbol:
 // ?toString@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@3@@Z
 MCAPI std::string toString(std::wstring const&);
 
 // symbol: ?toString@Util@@YAPEBDW4BoneTransformType@@@Z
 MCAPI char const* toString(::BoneTransformType);
+
+// symbol: ?toString@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
+MCAPI std::string toString(std::string const&);
+
+// symbol: ?toString@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MH@Z
+MCAPI std::string toString(float, int);
 
 // symbol: ?toStringWithPaddedZeroes@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@IE@Z
 MCAPI std::string toStringWithPaddedZeroes(uint, uchar);

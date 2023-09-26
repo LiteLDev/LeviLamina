@@ -224,6 +224,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
+    // ??0Potion@@AEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@0AEBVMobEffectInstance@@W4PotionVariant@0@@Z
+    MCAPI Potion(std::string_view, std::string_view, class MobEffectInstance const&, ::Potion::PotionVariant);
+
+    // symbol:
     // ??0Potion@@AEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@V?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@2@W4PotionVariant@0@@Z
     MCAPI Potion(
         std::string_view,
@@ -231,10 +235,6 @@ public:
         std::vector<class MobEffectInstance>,
         ::Potion::PotionVariant
     );
-
-    // symbol:
-    // ??0Potion@@AEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@0AEBVMobEffectInstance@@W4PotionVariant@0@@Z
-    MCAPI Potion(std::string_view, std::string_view, class MobEffectInstance const&, ::Potion::PotionVariant);
 
     // symbol:
     // ?_getDescriptionIdCombiningStrings@Potion@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@@Z

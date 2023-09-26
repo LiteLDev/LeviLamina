@@ -21,11 +21,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0PackIdVersion@@QEAA@AEBVUUID@mce@@AEBVSemVersion@@W4PackType@@@Z
-    MCAPI PackIdVersion(class mce::UUID const&, class SemVersion const&, ::PackType);
-
     // symbol: ??0PackIdVersion@@QEAA@XZ
     MCAPI PackIdVersion();
+
+    // symbol: ??0PackIdVersion@@QEAA@AEBVUUID@mce@@AEBVSemVersion@@W4PackType@@@Z
+    MCAPI PackIdVersion(class mce::UUID const&, class SemVersion const&, ::PackType);
 
     // symbol: ?asString@PackIdVersion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string asString() const;

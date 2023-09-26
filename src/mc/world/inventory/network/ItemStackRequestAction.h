@@ -40,7 +40,7 @@ public:
 
     // vIndex: 5, symbol:
     // ?_read@ItemStackRequestActionCraftRecipeAuto@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&) = 0;
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&) = 0;
 
     // symbol: ??1ItemStackRequestAction@@UEAA@XZ
     MCVAPI ~ItemStackRequestAction();
@@ -60,8 +60,7 @@ public:
 
     // symbol:
     // ?read@ItemStackRequestAction@@SA?AV?$Result@V?$unique_ptr@VItemStackRequestAction@@U?$default_delete@VItemStackRequestAction@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestAction>, std::error_code>
-    read(class ReadOnlyBinaryStream&);
+    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestAction>> read(class ReadOnlyBinaryStream&);
 
     // NOLINTEND
 

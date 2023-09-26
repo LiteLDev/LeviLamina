@@ -125,17 +125,17 @@ public:
     // symbol: ?isStuck@NavigationComponent@@QEBA_NH@Z
     MCAPI bool isStuck(int) const;
 
-    // symbol: ?moveTo@NavigationComponent@@QEAA_NAEAVMob@@AEBVVec3@@M1@Z
-    MCAPI bool moveTo(class Mob&, class Vec3 const&, float, class Vec3 const&);
+    // symbol: ?moveTo@NavigationComponent@@QEAA_NAEAVMob@@AEBVVec3@@M@Z
+    MCAPI bool moveTo(class Mob&, class Vec3 const&, float);
 
     // symbol: ?moveTo@NavigationComponent@@QEAA_NAEAVMob@@AEAVActor@@M@Z
     MCAPI bool moveTo(class Mob&, class Actor&, float);
 
+    // symbol: ?moveTo@NavigationComponent@@QEAA_NAEAVMob@@AEBVVec3@@M1@Z
+    MCAPI bool moveTo(class Mob&, class Vec3 const&, float, class Vec3 const&);
+
     // symbol: ?moveTo@NavigationComponent@@QEAA_NAEAVMob@@V?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@M@Z
     MCAPI bool moveTo(class Mob&, std::unique_ptr<class Path>, float);
-
-    // symbol: ?moveTo@NavigationComponent@@QEAA_NAEAVMob@@AEBVVec3@@M@Z
-    MCAPI bool moveTo(class Mob&, class Vec3 const&, float);
 
     // symbol: ??4NavigationComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class NavigationComponent& operator=(class NavigationComponent&&);

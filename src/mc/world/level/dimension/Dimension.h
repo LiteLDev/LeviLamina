@@ -204,11 +204,11 @@ public:
     // symbol: ?fetchNearestAttackablePlayer@Dimension@@QEAAPEAVPlayer@@AEAVActor@@M@Z
     MCAPI class Player* fetchNearestAttackablePlayer(class Actor&, float);
 
-    // symbol: ?fetchNearestInteractablePlayer@Dimension@@QEBAPEAVPlayer@@AEAVActor@@M@Z
-    MCAPI class Player* fetchNearestInteractablePlayer(class Actor&, float) const;
-
     // symbol: ?fetchNearestInteractablePlayer@Dimension@@QEBAPEAVPlayer@@AEBVVec3@@M@Z
     MCAPI class Player* fetchNearestInteractablePlayer(class Vec3 const&, float) const;
+
+    // symbol: ?fetchNearestInteractablePlayer@Dimension@@QEBAPEAVPlayer@@AEAVActor@@M@Z
+    MCAPI class Player* fetchNearestInteractablePlayer(class Actor&, float) const;
 
     // symbol: ?fetchNearestPlayer@Dimension@@QEBAPEAVPlayer@@AEBVVec3@@M_NV?$function@$$A6A_NAEBVPlayer@@@Z@std@@@Z
     MCAPI class Player*
@@ -385,13 +385,13 @@ public:
     // ?transferEntity@Dimension@@QEAAXAEBVChunkPos@@AEBVVec3@@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@_N@Z
     MCAPI void transferEntity(class ChunkPos const&, class Vec3 const&, std::unique_ptr<class CompoundTag>, bool);
 
+    // symbol: ?transferEntityToUnloadedChunk@Dimension@@QEAAXAEAVActor@@PEAVLevelChunk@@@Z
+    MCAPI void transferEntityToUnloadedChunk(class Actor&, class LevelChunk*);
+
     // symbol:
     // ?transferEntityToUnloadedChunk@Dimension@@QEAAXAEBVChunkPos@@0V?$AutomaticID@VDimension@@H@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@5@@Z
     MCAPI void
     transferEntityToUnloadedChunk(class ChunkPos const&, class ChunkPos const&, DimensionType, std::string&, std::unique_ptr<class CompoundTag>);
-
-    // symbol: ?transferEntityToUnloadedChunk@Dimension@@QEAAXAEAVActor@@PEAVLevelChunk@@@Z
-    MCAPI void transferEntityToUnloadedChunk(class Actor&, class LevelChunk*);
 
     // symbol: ?tryGarbageCollectStructures@Dimension@@QEAAXXZ
     MCAPI void tryGarbageCollectStructures();

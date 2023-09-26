@@ -41,7 +41,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@PlayerActionPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
     // symbol: ??1PlayerActionPacket@@UEAA@XZ
     MCVAPI ~PlayerActionPacket();
@@ -49,6 +49,9 @@ public:
     // symbol: ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@1HVActorRuntimeID@@@Z
     MCAPI
     PlayerActionPacket(::PlayerActionType, class BlockPos const&, class BlockPos const&, int, class ActorRuntimeID);
+
+    // symbol: ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@VActorRuntimeID@@@Z
+    MCAPI PlayerActionPacket(::PlayerActionType, class BlockPos const&, class ActorRuntimeID);
 
     // symbol: ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@EVActorRuntimeID@@@Z
     MCAPI PlayerActionPacket(::PlayerActionType, class BlockPos const&, uchar, class ActorRuntimeID);
@@ -58,9 +61,6 @@ public:
 
     // symbol: ??0PlayerActionPacket@@QEAA@XZ
     MCAPI PlayerActionPacket();
-
-    // symbol: ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@VActorRuntimeID@@@Z
-    MCAPI PlayerActionPacket(::PlayerActionType, class BlockPos const&, class ActorRuntimeID);
 
     // symbol: ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@VActorRuntimeID@@@Z
     MCAPI PlayerActionPacket(::PlayerActionType, class ActorRuntimeID);

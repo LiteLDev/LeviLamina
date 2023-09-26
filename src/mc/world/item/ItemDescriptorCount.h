@@ -28,9 +28,6 @@ public:
     // symbol: ??0ItemDescriptorCount@@QEAA@AEAVReadOnlyBinaryStream@@@Z
     MCAPI explicit ItemDescriptorCount(class ReadOnlyBinaryStream&);
 
-    // symbol: ??0ItemDescriptorCount@@QEAA@AEBVBlockLegacy@@G@Z
-    MCAPI ItemDescriptorCount(class BlockLegacy const&, ushort);
-
     // symbol: ??0ItemDescriptorCount@@QEAA@AEBV0@@Z
     MCAPI ItemDescriptorCount(class ItemDescriptorCount const&);
 
@@ -51,6 +48,9 @@ public:
 
     // symbol: ??0ItemDescriptorCount@@QEAA@AEBVItemDescriptor@@G@Z
     MCAPI ItemDescriptorCount(class ItemDescriptor const&, ushort);
+
+    // symbol: ??0ItemDescriptorCount@@QEAA@AEBVBlockLegacy@@G@Z
+    MCAPI ItemDescriptorCount(class BlockLegacy const&, ushort);
 
     // symbol: ?getStackSize@ItemDescriptorCount@@QEBAFXZ
     MCAPI short getStackSize() const;

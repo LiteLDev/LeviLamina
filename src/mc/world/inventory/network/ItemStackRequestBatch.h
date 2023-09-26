@@ -30,8 +30,7 @@ public:
 
     // symbol:
     // ?read@ItemStackRequestBatch@@SA?AV?$Result@V?$unique_ptr@VItemStackRequestBatch@@U?$default_delete@VItemStackRequestBatch@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestBatch>, std::error_code>
-    read(class ReadOnlyBinaryStream&);
+    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestBatch>> read(class ReadOnlyBinaryStream&);
 
     // NOLINTEND
 };

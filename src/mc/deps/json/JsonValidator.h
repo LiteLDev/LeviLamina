@@ -21,14 +21,14 @@ public:
     class Property {
     public:
         // NOLINTBEGIN
-        // symbol: ??0Property@JsonValidator@@QEAA@$$QEAV01@@Z
-        MCAPI Property(class JsonValidator::Property&&);
+        // symbol: ??0Property@JsonValidator@@QEAA@XZ
+        MCAPI Property();
 
         // symbol: ??0Property@JsonValidator@@QEAA@AEBV01@@Z
         MCAPI Property(class JsonValidator::Property const&);
 
-        // symbol: ??0Property@JsonValidator@@QEAA@XZ
-        MCAPI Property();
+        // symbol: ??0Property@JsonValidator@@QEAA@$$QEAV01@@Z
+        MCAPI Property(class JsonValidator::Property&&);
 
         // symbol: ?addChildProperty@Property@JsonValidator@@QEAAAEAV12@AEBV12@@Z
         MCAPI class JsonValidator::Property& addChildProperty(class JsonValidator::Property const&);

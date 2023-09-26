@@ -149,12 +149,12 @@ public:
     MCAPI ~BlockDescriptor();
 
     // symbol:
-    // ?anyMatch@BlockDescriptor@@SA_NAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@AEBVBlock@@@Z
-    MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const&, class Block const&);
-
-    // symbol:
     // ?anyMatch@BlockDescriptor@@SA_NAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@AEBV1@@Z
     MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const&, class BlockDescriptor const&);
+
+    // symbol:
+    // ?anyMatch@BlockDescriptor@@SA_NAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@AEBVBlock@@@Z
+    MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const&, class Block const&);
 
     // symbol: ?bindType@BlockDescriptor@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);

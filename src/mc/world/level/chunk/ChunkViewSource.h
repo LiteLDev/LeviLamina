@@ -52,13 +52,13 @@ public:
     // symbol: ??0ChunkViewSource@@QEAA@AEBV0@@Z
     MCAPI ChunkViewSource(class ChunkViewSource const&);
 
-    // symbol: ??0ChunkViewSource@@QEAA@AEAVChunkSource@@W4LoadMode@1@@Z
-    MCAPI ChunkViewSource(class ChunkSource&, ::ChunkSource::LoadMode);
-
     // symbol:
     // ??0ChunkViewSource@@QEAA@AEAVChunkSource@@AEAV?$LevelChunkGridAreaElement@V?$weak_ptr@VLevelChunk@@@std@@@@AEBUBounds@@@Z
     MCAPI
     ChunkViewSource(class ChunkSource&, class LevelChunkGridAreaElement<std::weak_ptr<class LevelChunk>>&, struct Bounds const&);
+
+    // symbol: ??0ChunkViewSource@@QEAA@AEAVChunkSource@@W4LoadMode@1@@Z
+    MCAPI ChunkViewSource(class ChunkSource&, ::ChunkSource::LoadMode);
 
     // symbol: ?clear@ChunkViewSource@@QEAAXXZ
     MCAPI void clear();

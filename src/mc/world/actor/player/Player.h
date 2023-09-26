@@ -816,11 +816,11 @@ public:
     // symbol: ?dropCursorSelectedItemOnDeath@Player@@QEAAXXZ
     MCAPI void dropCursorSelectedItemOnDeath();
 
-    // symbol: ?eat@Player@@QEAAXAEBVItemStack@@@Z
-    MCAPI void eat(class ItemStack const&);
-
     // symbol: ?eat@Player@@QEAAXHM@Z
     MCAPI void eat(int, float);
+
+    // symbol: ?eat@Player@@QEAAXAEBVItemStack@@@Z
+    MCAPI void eat(class ItemStack const&);
 
     // symbol: ?equippedArmorItemCanBeMoved@Player@@QEBA_NAEBVItemStack@@@Z
     MCAPI bool equippedArmorItemCanBeMoved(class ItemStack const&) const;
@@ -831,11 +831,11 @@ public:
     // symbol: ?forceAllowEating@Player@@QEBA_NXZ
     MCAPI bool forceAllowEating() const;
 
-    // symbol: ?getAbilities@Player@@QEAAAEAVLayeredAbilities@@XZ
-    MCAPI class LayeredAbilities& getAbilities();
-
     // symbol: ?getAbilities@Player@@QEBAAEBVLayeredAbilities@@XZ
     MCAPI class LayeredAbilities const& getAbilities() const;
+
+    // symbol: ?getAbilities@Player@@QEAAAEAVLayeredAbilities@@XZ
+    MCAPI class LayeredAbilities& getAbilities();
 
     // symbol: ?getAgent@Player@@QEBAPEAVAgent@@XZ
     MCAPI class Agent* getAgent() const;
@@ -973,11 +973,11 @@ public:
     // symbol: ?getSpawnPosition@Player@@QEBAAEBVBlockPos@@XZ
     MCAPI class BlockPos const& getSpawnPosition() const;
 
-    // symbol: ?getSupplies@Player@@QEBAAEBVPlayerInventory@@XZ
-    MCAPI class PlayerInventory const& getSupplies() const;
-
     // symbol: ?getSupplies@Player@@QEAAAEAVPlayerInventory@@XZ
     MCAPI class PlayerInventory& getSupplies();
+
+    // symbol: ?getSupplies@Player@@QEBAAEBVPlayerInventory@@XZ
+    MCAPI class PlayerInventory const& getSupplies() const;
 
     // symbol: ?getTrackedBosses@Player@@QEAAAEBV?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@XZ
     MCAPI std::vector<struct ActorUniqueID> const& getTrackedBosses();
@@ -1067,22 +1067,22 @@ public:
     MCAPI void passengerCheckMovementStats();
 
     // symbol:
-    // ?playPredictiveSynchronizedSound@Player@@QEAAXW4LevelSoundEvent@@AEBVVec3@@AEBUActorDefinitionIdentifier@@H_N@Z
-    MCAPI void playPredictiveSynchronizedSound(
-        ::LevelSoundEvent,
-        class Vec3 const&,
-        struct ActorDefinitionIdentifier const&,
-        int,
-        bool
-    );
-
-    // symbol:
     // ?playPredictiveSynchronizedSound@Player@@QEAAXW4LevelSoundEvent@@AEBVVec3@@AEBVBlock@@AEBUActorDefinitionIdentifier@@_N@Z
     MCAPI void playPredictiveSynchronizedSound(
         ::LevelSoundEvent,
         class Vec3 const&,
         class Block const&,
         struct ActorDefinitionIdentifier const&,
+        bool
+    );
+
+    // symbol:
+    // ?playPredictiveSynchronizedSound@Player@@QEAAXW4LevelSoundEvent@@AEBVVec3@@AEBUActorDefinitionIdentifier@@H_N@Z
+    MCAPI void playPredictiveSynchronizedSound(
+        ::LevelSoundEvent,
+        class Vec3 const&,
+        struct ActorDefinitionIdentifier const&,
+        int,
         bool
     );
 
@@ -1272,14 +1272,14 @@ public:
     MCAPI static class Player*
     tryGetFromComponent(class FlagComponent<struct PlayerComponentFlag> const&, class ActorOwnerComponent&, bool);
 
+    // symbol: ?tryGetFromEntity@Player@@SAPEAV1@V?$StackRefResultT@UEntityRefTraits@@@@_N@Z
+    MCAPI static class Player* tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
+
     // symbol: ?tryGetFromEntity@Player@@SAPEAV1@AEAVEntityContext@@_N@Z
     MCAPI static class Player* tryGetFromEntity(class EntityContext&, bool);
 
     // symbol: ?tryGetFromEntity@Player@@SAPEBV1@AEBVEntityContext@@_N@Z
     MCAPI static class Player const* tryGetFromEntity(class EntityContext const&, bool);
-
-    // symbol: ?tryGetFromEntity@Player@@SAPEAV1@V?$StackRefResultT@UEntityRefTraits@@@@_N@Z
-    MCAPI static class Player* tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
 
     // symbol: ?DEFAULT_BB_HEIGHT@Player@@2MB
     MCAPI static float const DEFAULT_BB_HEIGHT;

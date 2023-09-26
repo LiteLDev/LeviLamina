@@ -28,13 +28,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0UserEntityIdentifierComponent@@QEAA@$$QEAV0@@Z
-    MCAPI UserEntityIdentifierComponent(class UserEntityIdentifierComponent&&);
-
     // symbol:
     // ??0UserEntityIdentifierComponent@@QEAA@AEBVNetworkIdentifier@@W4SubClientId@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@6@@Z
     MCAPI
     UserEntityIdentifierComponent(class NetworkIdentifier const&, ::SubClientId, class mce::UUID, std::string const&, std::unique_ptr<class Certificate>);
+
+    // symbol: ??0UserEntityIdentifierComponent@@QEAA@$$QEAV0@@Z
+    MCAPI UserEntityIdentifierComponent(class UserEntityIdentifierComponent&&);
 
     // symbol: ?isPrimaryClient@UserEntityIdentifierComponent@@QEBA_NXZ
     MCAPI bool isPrimaryClient() const;

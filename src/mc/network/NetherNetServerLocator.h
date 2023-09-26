@@ -28,7 +28,7 @@ public:
         // NOLINTBEGIN
         // symbol:
         // ?read@ServerData@NetherNetServerLocator@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-        MCAPI class Bedrock::Result<void, std::error_code> read(class ReadOnlyBinaryStream&);
+        MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream&);
 
         // symbol: ??1ServerData@NetherNetServerLocator@@QEAA@XZ
         MCAPI ~ServerData();

@@ -16,11 +16,11 @@ public:
     // symbol: ??0FoodItemComponentData_v1_20_30@@QEAA@AEBU0@@Z
     MCAPI FoodItemComponentData_v1_20_30(struct FoodItemComponentData_v1_20_30 const&);
 
-    // symbol: ??0FoodItemComponentData_v1_20_30@@QEAA@XZ
-    MCAPI FoodItemComponentData_v1_20_30();
-
     // symbol: ??0FoodItemComponentData_v1_20_30@@QEAA@$$QEAU0@@Z
     MCAPI FoodItemComponentData_v1_20_30(struct FoodItemComponentData_v1_20_30&&);
+
+    // symbol: ??0FoodItemComponentData_v1_20_30@@QEAA@XZ
+    MCAPI FoodItemComponentData_v1_20_30();
 
     // symbol: ??4FoodItemComponentData_v1_20_30@@QEAAAEAU0@AEBU0@@Z
     MCAPI struct FoodItemComponentData_v1_20_30& operator=(struct FoodItemComponentData_v1_20_30 const&);

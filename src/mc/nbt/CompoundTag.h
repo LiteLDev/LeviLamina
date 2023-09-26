@@ -176,12 +176,12 @@ public:
     // symbol: ??4CompoundTag@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class CompoundTag& operator=(class CompoundTag&&);
 
+    // symbol: ?put@CompoundTag@@QEAAAEAVTag@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV2@@Z
+    MCAPI class Tag& put(std::string, class Tag&&);
+
     // symbol:
     // ?put@CompoundTag@@QEAAPEAVTag@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@4@@Z
     MCAPI class Tag* put(std::string, std::unique_ptr<class Tag>);
-
-    // symbol: ?put@CompoundTag@@QEAAAEAVTag@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV2@@Z
-    MCAPI class Tag& put(std::string, class Tag&&);
 
     // symbol: ?putBoolean@CompoundTag@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     MCAPI void putBoolean(std::string, bool);

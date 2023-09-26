@@ -35,7 +35,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@BlockActorDataPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
     // symbol: ??0BlockActorDataPacket@@QEAA@AEBVBlockPos@@VCompoundTag@@@Z
     MCAPI BlockActorDataPacket(class BlockPos const&, class CompoundTag);

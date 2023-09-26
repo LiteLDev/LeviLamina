@@ -59,11 +59,11 @@ public:
     // symbol: ?SetToLoopback@SystemAddress@RakNet@@QEAAXE@Z
     MCAPI void SetToLoopback(uchar);
 
-    // symbol: ??0SystemAddress@RakNet@@QEAA@PEBDG@Z
-    MCAPI SystemAddress(char const*, ushort);
-
     // symbol: ??0SystemAddress@RakNet@@QEAA@XZ
     MCAPI SystemAddress();
+
+    // symbol: ??0SystemAddress@RakNet@@QEAA@PEBDG@Z
+    MCAPI SystemAddress(char const*, ushort);
 
     // symbol: ?ToString@SystemAddress@RakNet@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@D@Z
     MCAPI std::string ToString(char) const;

@@ -31,20 +31,20 @@ public:
     // symbol: ??1ChargeableItemComponent@@UEAA@XZ
     MCVAPI ~ChargeableItemComponent();
 
-    // symbol: ??0ChargeableItemComponent@@QEAA@AEBV0@@Z
-    MCAPI ChargeableItemComponent(class ChargeableItemComponent const&);
-
     // symbol: ??0ChargeableItemComponent@@QEAA@XZ
     MCAPI ChargeableItemComponent();
+
+    // symbol: ??0ChargeableItemComponent@@QEAA@AEBV0@@Z
+    MCAPI ChargeableItemComponent(class ChargeableItemComponent const&);
 
     // symbol: ?getMovementModifier@ChargeableItemComponent@@QEBAMXZ
     MCAPI float getMovementModifier() const;
 
-    // symbol: ??4ChargeableItemComponent@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class ChargeableItemComponent& operator=(class ChargeableItemComponent&&);
-
     // symbol: ??4ChargeableItemComponent@@QEAAAEAV0@AEBV0@@Z
     MCAPI class ChargeableItemComponent& operator=(class ChargeableItemComponent const&);
+
+    // symbol: ??4ChargeableItemComponent@@QEAAAEAV0@$$QEAV0@@Z
+    MCAPI class ChargeableItemComponent& operator=(class ChargeableItemComponent&&);
 
     // symbol: ?use@ChargeableItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
     MCAPI bool use(class ItemStack&, class Player&) const;

@@ -20,13 +20,13 @@ public:
     // symbol: ??0ScriptRawMessageScoreInterface@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptRawMessageScoreInterface(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&);
 
-    // symbol: ??4ScriptRawMessageScoreInterface@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
-    operator=(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&);
-
     // symbol: ??4ScriptRawMessageScoreInterface@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
     operator=(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&&);
+
+    // symbol: ??4ScriptRawMessageScoreInterface@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
+    operator=(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&);
 
     // symbol: ??8ScriptRawMessageScoreInterface@ScriptModuleMinecraft@@QEBA_NAEBU01@@Z
     MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&) const;

@@ -229,11 +229,11 @@ public:
     // symbol: ?getUseAnimation@ItemStackBase@@QEBA?AW4UseAnimation@@XZ
     MCAPI ::UseAnimation getUseAnimation() const;
 
-    // symbol: ?getUserData@ItemStackBase@@QEBAPEBVCompoundTag@@XZ
-    MCAPI class CompoundTag const* getUserData() const;
-
     // symbol: ?getUserData@ItemStackBase@@QEAAPEAVCompoundTag@@XZ
     MCAPI class CompoundTag* getUserData();
+
+    // symbol: ?getUserData@ItemStackBase@@QEBAPEBVCompoundTag@@XZ
+    MCAPI class CompoundTag const* getUserData() const;
 
     // symbol: ?getWasPickedUp@ItemStackBase@@QEBA_NXZ
     MCAPI bool getWasPickedUp() const;
@@ -256,11 +256,11 @@ public:
     // symbol: ?hasSameUserData@ItemStackBase@@QEBA_NAEBV1@@Z
     MCAPI bool hasSameUserData(class ItemStackBase const&) const;
 
-    // symbol: ?hasTag@ItemStackBase@@QEBA_NAEB_K@Z
-    MCAPI bool hasTag(uint64 const&) const;
-
     // symbol: ?hasTag@ItemStackBase@@QEBA_NAEBUItemTag@@@Z
     MCAPI bool hasTag(struct ItemTag const&) const;
+
+    // symbol: ?hasTag@ItemStackBase@@QEBA_NAEB_K@Z
+    MCAPI bool hasTag(uint64 const&) const;
 
     // symbol: ?hasUserData@ItemStackBase@@QEBA_NXZ
     MCAPI bool hasUserData() const;
@@ -322,12 +322,12 @@ public:
     // symbol: ?isOffhandItem@ItemStackBase@@QEBA_NXZ
     MCAPI bool isOffhandItem() const;
 
-    // symbol: ?isOneOfBlockInstances@ItemStackBase@@QEBA_NV?$initializer_list@$$CBVHashedString@@@std@@@Z
-    MCAPI bool isOneOfBlockInstances(std::initializer_list<class HashedString const>) const;
-
     // symbol:
     // ?isOneOfBlockInstances@ItemStackBase@@QEBA_NAEBV?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@@Z
     MCAPI bool isOneOfBlockInstances(std::vector<std::reference_wrapper<class HashedString const>> const&) const;
+
+    // symbol: ?isOneOfBlockInstances@ItemStackBase@@QEBA_NV?$initializer_list@$$CBVHashedString@@@std@@@Z
+    MCAPI bool isOneOfBlockInstances(std::initializer_list<class HashedString const>) const;
 
     // symbol: ?isOneOfInstances@ItemStackBase@@QEBA_NV?$initializer_list@$$CBVHashedString@@@std@@_N@Z
     MCAPI bool isOneOfInstances(std::initializer_list<class HashedString const>, bool) const;
@@ -338,11 +338,11 @@ public:
     // symbol: ?isPotionItem@ItemStackBase@@QEBA_NXZ
     MCAPI bool isPotionItem() const;
 
-    // symbol: ?isStackable@ItemStackBase@@QEBA_NAEBV1@@Z
-    MCAPI bool isStackable(class ItemStackBase const&) const;
-
     // symbol: ?isStackable@ItemStackBase@@QEBA_NXZ
     MCAPI bool isStackable() const;
+
+    // symbol: ?isStackable@ItemStackBase@@QEBA_NAEBV1@@Z
+    MCAPI bool isStackable(class ItemStackBase const&) const;
 
     // symbol: ?isStackedByData@ItemStackBase@@QEBA_NXZ
     MCAPI bool isStackedByData() const;
@@ -353,11 +353,11 @@ public:
     // symbol: ?isWearableItem@ItemStackBase@@QEBA_NXZ
     MCAPI bool isWearableItem() const;
 
-    // symbol: ?load@ItemStackBase@@QEAAXAEBVCompoundTag@@AEAVLevel@@@Z
-    MCAPI void load(class CompoundTag const&, class Level&);
-
     // symbol: ?load@ItemStackBase@@QEAAXAEBVCompoundTag@@@Z
     MCAPI void load(class CompoundTag const&);
+
+    // symbol: ?load@ItemStackBase@@QEAAXAEBVCompoundTag@@AEAVLevel@@@Z
+    MCAPI void load(class CompoundTag const&, class Level&);
 
     // symbol: ?matches@ItemStackBase@@QEBA_NAEBV1@@Z
     MCAPI bool matches(class ItemStackBase const&) const;

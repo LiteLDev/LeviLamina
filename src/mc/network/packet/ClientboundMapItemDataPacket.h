@@ -59,13 +59,10 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@ClientboundMapItemDataPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
     // symbol: ??1ClientboundMapItemDataPacket@@UEAA@XZ
     MCVAPI ~ClientboundMapItemDataPacket();
-
-    // symbol: ??0ClientboundMapItemDataPacket@@QEAA@V?$not_null@PEAVMapItemSavedData@@@gsl@@AEAVLevel@@@Z
-    MCAPI ClientboundMapItemDataPacket(gsl::not_null<class MapItemSavedData*>, class Level&);
 
     // symbol: ??0ClientboundMapItemDataPacket@@QEAA@XZ
     MCAPI ClientboundMapItemDataPacket();
@@ -74,6 +71,9 @@ public:
     // ??0ClientboundMapItemDataPacket@@QEAA@UActorUniqueID@@CAEBV?$vector@U?$pair@UUniqueId@MapItemTrackedActor@@V?$shared_ptr@VMapDecoration@@@std@@@std@@V?$allocator@U?$pair@UUniqueId@MapItemTrackedActor@@V?$shared_ptr@VMapDecoration@@@std@@@std@@@2@@std@@V?$buffer_span@I@@HHHHV?$AutomaticID@VDimension@@H@@_NAEBVBlockPos@@@Z
     MCAPI
     ClientboundMapItemDataPacket(struct ActorUniqueID, schar, std::vector<std::pair<struct MapItemTrackedActor::UniqueId, std::shared_ptr<class MapDecoration>>> const&, class buffer_span<uint>, int, int, int, int, DimensionType, bool, class BlockPos const&);
+
+    // symbol: ??0ClientboundMapItemDataPacket@@QEAA@V?$not_null@PEAVMapItemSavedData@@@gsl@@AEAVLevel@@@Z
+    MCAPI ClientboundMapItemDataPacket(gsl::not_null<class MapItemSavedData*>, class Level&);
 
     // NOLINTEND
 };

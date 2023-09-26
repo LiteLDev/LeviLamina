@@ -56,11 +56,11 @@ public:
     // symbol: ?dispense@EntityPlacerItemComponent@@QEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
     MCAPI bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
 
-    // symbol: ??4EntityPlacerItemComponent@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class EntityPlacerItemComponent& operator=(class EntityPlacerItemComponent&&);
-
     // symbol: ??4EntityPlacerItemComponent@@QEAAAEAV0@AEBV0@@Z
     MCAPI class EntityPlacerItemComponent& operator=(class EntityPlacerItemComponent const&);
+
+    // symbol: ??4EntityPlacerItemComponent@@QEAAAEAV0@$$QEAV0@@Z
+    MCAPI class EntityPlacerItemComponent& operator=(class EntityPlacerItemComponent&&);
 
     // symbol:
     // ?bindType@EntityPlacerItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z

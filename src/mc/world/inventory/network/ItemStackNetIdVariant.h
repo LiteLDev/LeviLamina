@@ -30,7 +30,7 @@ public:
 
     // symbol:
     // ?deserialize@ItemStackNetIdVariant@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI class Bedrock::Result<void, std::error_code> deserialize(class ReadOnlyBinaryStream&);
+    MCAPI class Bedrock::Result<void> deserialize(class ReadOnlyBinaryStream&);
 
     // symbol: ?hasServerNetId@ItemStackNetIdVariant@@QEBA_NXZ
     MCAPI bool hasServerNetId() const;

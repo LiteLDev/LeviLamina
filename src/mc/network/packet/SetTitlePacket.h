@@ -51,13 +51,16 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@SetTitlePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
     // symbol: ??1SetTitlePacket@@UEAA@XZ
     MCVAPI ~SetTitlePacket();
 
     // symbol: ??0SetTitlePacket@@QEAA@XZ
     MCAPI SetTitlePacket();
+
+    // symbol: ??0SetTitlePacket@@QEAA@W4TitleType@0@@Z
+    MCAPI explicit SetTitlePacket(::SetTitlePacket::TitleType);
 
     // symbol: ??0SetTitlePacket@@QEAA@AEBV0@@Z
     MCAPI SetTitlePacket(class SetTitlePacket const&);
@@ -70,9 +73,6 @@ public:
 
     // symbol: ??0SetTitlePacket@@QEAA@W4TitleType@0@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI SetTitlePacket(::SetTitlePacket::TitleType, std::string const&);
-
-    // symbol: ??0SetTitlePacket@@QEAA@W4TitleType@0@@Z
-    MCAPI explicit SetTitlePacket(::SetTitlePacket::TitleType);
 
     // symbol: ??4SetTitlePacket@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class SetTitlePacket& operator=(class SetTitlePacket&&);

@@ -31,7 +31,7 @@ public:
 
     // symbol:
     // ?read@PlayerBlockActions@@SA?AV?$Result@VPlayerBlockActions@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<class PlayerBlockActions, std::error_code> read(class ReadOnlyBinaryStream&);
+    MCAPI static class Bedrock::Result<class PlayerBlockActions> read(class ReadOnlyBinaryStream&);
 
     // symbol: ?write@PlayerBlockActions@@SAXAEBV1@AEAVBinaryStream@@@Z
     MCAPI static void write(class PlayerBlockActions const&, class BinaryStream&);

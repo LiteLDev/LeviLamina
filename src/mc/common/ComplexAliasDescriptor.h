@@ -61,7 +61,7 @@ public:
 
     // symbol:
     // ?deserialize@ComplexAliasDescriptor@@SA?AV?$Result@V?$unique_ptr@UComplexAliasDescriptor@@U?$default_delete@UComplexAliasDescriptor@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<std::unique_ptr<struct ComplexAliasDescriptor>, std::error_code>
+    MCAPI static class Bedrock::Result<std::unique_ptr<struct ComplexAliasDescriptor>>
     deserialize(class ReadOnlyBinaryStream&);
 
     // NOLINTEND

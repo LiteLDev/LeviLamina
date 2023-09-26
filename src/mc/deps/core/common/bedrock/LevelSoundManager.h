@@ -56,12 +56,12 @@ public:
     MCAPI void
     playSound(::LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
 
-    // symbol: ?playSound@LevelSoundManager@@QEAAXW4LevelSoundEvent@@AEBVVec3@@MM@Z
-    MCAPI void playSound(::LevelSoundEvent, class Vec3 const&, float, float);
-
     // symbol:
     // ?playSound@LevelSoundManager@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
     MCAPI void playSound(std::string const&, class Vec3 const&, float, float);
+
+    // symbol: ?playSound@LevelSoundManager@@QEAAXW4LevelSoundEvent@@AEBVVec3@@MM@Z
+    MCAPI void playSound(::LevelSoundEvent, class Vec3 const&, float, float);
 
     // symbol:
     // ?playSoundForPlayerInDimension@LevelSoundManager@@QEAAXV?$AutomaticID@VDimension@@H@@W4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4PEAVPlayer@@@Z

@@ -54,11 +54,11 @@ public:
     // symbol: ??0OnUseOnItemComponent@@QEAA@AEBV0@@Z
     MCAPI OnUseOnItemComponent(class OnUseOnItemComponent const&);
 
-    // symbol: ??4OnUseOnItemComponent@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class OnUseOnItemComponent& operator=(class OnUseOnItemComponent&&);
-
     // symbol: ??4OnUseOnItemComponent@@QEAAAEAV0@AEBV0@@Z
     MCAPI class OnUseOnItemComponent& operator=(class OnUseOnItemComponent const&);
+
+    // symbol: ??4OnUseOnItemComponent@@QEAAAEAV0@$$QEAV0@@Z
+    MCAPI class OnUseOnItemComponent& operator=(class OnUseOnItemComponent&&);
 
     // symbol:
     // ?bindType@OnUseOnItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z

@@ -45,8 +45,7 @@ public:
 
     // symbol:
     // ?read@ItemStackRequestData@@SA?AV?$Result@V?$unique_ptr@VItemStackRequestData@@U?$default_delete@VItemStackRequestData@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestData>, std::error_code>
-    read(class ReadOnlyBinaryStream&);
+    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestData>> read(class ReadOnlyBinaryStream&);
 
     // NOLINTEND
 };

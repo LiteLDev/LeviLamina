@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_read@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCVAPI class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
+    MCVAPI class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
     // symbol: ?_write@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@MEBAXAEAVBinaryStream@@@Z
     MCVAPI void _write(class BinaryStream&) const;

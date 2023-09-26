@@ -43,12 +43,15 @@ public:
     // symbol: ??0ItemStack@@QEAA@AEBVItemInstance@@@Z
     MCAPI explicit ItemStack(class ItemInstance const&);
 
-    // symbol: ??0ItemStack@@QEAA@XZ
-    MCAPI ItemStack();
+    // symbol: ??0ItemStack@@QEAA@AEBVRecipeIngredient@@@Z
+    MCAPI explicit ItemStack(class RecipeIngredient const&);
 
     // symbol: ??0ItemStack@@QEAA@AEBVItem@@HHPEBVCompoundTag@@@Z
     MCAPI
     ItemStack(class Item const& item, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
+
+    // symbol: ??0ItemStack@@QEAA@XZ
+    MCAPI ItemStack();
 
     // symbol: ??0ItemStack@@QEAA@AEBV0@@Z
     MCAPI ItemStack(class ItemStack const&);
@@ -62,9 +65,6 @@ public:
 
     // symbol: ??0ItemStack@@QEAA@AEBVBlock@@HPEBVCompoundTag@@@Z
     MCAPI ItemStack(class Block const& block, int count = 1, class CompoundTag const* userData = nullptr);
-
-    // symbol: ??0ItemStack@@QEAA@AEBVRecipeIngredient@@@Z
-    MCAPI explicit ItemStack(class RecipeIngredient const&);
 
     // symbol: ?_assignNetIdVariant@ItemStack@@QEBAXAEBV1@@Z
     MCAPI void _assignNetIdVariant(class ItemStack const&) const;

@@ -29,11 +29,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0IdentityDefinition@@QEAA@AEBV0@@Z
-    MCAPI IdentityDefinition(class IdentityDefinition const&);
-
     // symbol: ??0IdentityDefinition@@QEAA@$$QEAV0@@Z
     MCAPI IdentityDefinition(class IdentityDefinition&&);
+
+    // symbol: ??0IdentityDefinition@@QEAA@AEBV0@@Z
+    MCAPI IdentityDefinition(class IdentityDefinition const&);
 
     // symbol: ?getEntityId@IdentityDefinition@@QEBAAEBUActorUniqueID@@XZ
     MCAPI struct ActorUniqueID const& getEntityId() const;
@@ -64,11 +64,11 @@ public:
     // symbol: ?isValid@IdentityDefinition@@QEBA_NXZ
     MCAPI bool isValid() const;
 
-    // symbol: ??4IdentityDefinition@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class IdentityDefinition& operator=(class IdentityDefinition&&);
-
     // symbol: ??4IdentityDefinition@@QEAAAEAV0@AEBV0@@Z
     MCAPI class IdentityDefinition& operator=(class IdentityDefinition const&);
+
+    // symbol: ??4IdentityDefinition@@QEAAAEAV0@$$QEAV0@@Z
+    MCAPI class IdentityDefinition& operator=(class IdentityDefinition&&);
 
     // symbol: ??1IdentityDefinition@@QEAA@XZ
     MCAPI ~IdentityDefinition();
