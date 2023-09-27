@@ -15,8 +15,8 @@ public:
     VanillaServerNetworkHandler(VanillaServerNetworkHandler const&);
     VanillaServerNetworkHandler();
 
-    gsl::not_null<Bedrock::NonOwnerPointer<ServerNetworkHandler>> mBedrockHandler; // this+0x8
-    ServerInstance&                                               mServer;         // this+0x18
+    Bedrock::NotNullNonOwnerPtr<ServerNetworkHandler> mBedrockHandler; // this+0x8
+    ServerInstance&                                   mServer;         // this+0x18
 
 public:
     // NOLINTBEGIN

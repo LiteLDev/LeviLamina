@@ -13,9 +13,9 @@ class CreativeContentPacket : public ::Packet {
 public:
     // CreativeContentPacket inner types define
     struct CreativeItemEntryDescription {
-        TypedServerNetId<CreativeItemNetIdTag, uint, 0> mCreativeItemNetId; // this+0x0
-        NetworkItemInstanceDescriptor                   mItemDescriptor;    // this+0x8
-        uint                                            mIndex;             // this+0x48
+        CreativeItemNetId             mCreativeItemNetId; // this+0x0
+        NetworkItemInstanceDescriptor mItemDescriptor;    // this+0x8
+        uint                          mIndex;             // this+0x48
     };
 
 public:

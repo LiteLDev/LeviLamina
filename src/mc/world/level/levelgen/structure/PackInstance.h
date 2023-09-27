@@ -18,11 +18,11 @@ namespace mce { class UUID; }
 
 class PackInstance {
 public:
-    PackReport                                                        mPackReport;   // this+0x0
-    class PackSettings*                                               mPackSettings; // this+0x1B0
-    class gsl::not_null<Bedrock::NonOwnerPointer<class ResourcePack>> mPack;         // this+0x1B8
-    PackStats                                                         mStats;        // this+0x1C8
-    int                                                               mSubpackIndex; // this+0x1D8
+    PackReport                                      mPackReport;   // this+0x0
+    class PackSettings*                             mPackSettings; // this+0x1B0
+    Bedrock::NotNullNonOwnerPtr<class ResourcePack> mPack;         // this+0x1B8
+    PackStats                                       mStats;        // this+0x1C8
+    int                                             mSubpackIndex; // this+0x1D8
 
 public:
     // NOLINTBEGIN

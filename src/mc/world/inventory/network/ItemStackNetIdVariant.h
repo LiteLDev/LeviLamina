@@ -12,11 +12,7 @@
 
 struct ItemStackNetIdVariant {
 public:
-    std::variant<
-        TypedServerNetId<struct ItemStackNetIdTag, int, 0>,
-        TypedClientNetId<struct ItemStackRequestIdTag, int, 0>,
-        TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0>>
-        id;
+    std::variant<ItemStackNetId, ItemStackRequestId, ItemStackLegacyRequestId> id;
 
     // NOLINTBEGIN
     // symbol: ??0ItemStackNetIdVariant@@QEAA@$$QEAU0@@Z
