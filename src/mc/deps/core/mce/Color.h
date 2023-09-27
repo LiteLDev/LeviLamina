@@ -57,12 +57,12 @@ public:
 
     [[nodiscard]] [[maybe_unused]] constexpr class mce::Color sRGBToLinear() const noexcept {
         auto color{toVec3()};
-        return {select(color.gt(0.04045f), pow(color / 1.055f + 0.055f, {2.4f}), color / 12.92f), a};
+        return {select(color.gt(0.04045f), ::pow(color / 1.055f + 0.055f, {2.4f}), color / 12.92f), a};
     }
 
     [[nodiscard]] [[maybe_unused]] constexpr class mce::Color LinearTosRGB() const noexcept {
         auto color{toVec3()};
-        return {select(color.gt(0.0031308f), pow(color, {1.0f / 2.4f}) * 1.055f - 0.055f, color * 12.92f), a};
+        return {select(color.gt(0.0031308f), ::pow(color, {1.0f / 2.4f}) * 1.055f - 0.055f, color * 12.92f), a};
     }
 
     [[nodiscard]] [[maybe_unused]] constexpr class mce::Color LinearToXYZ() const noexcept {
@@ -90,7 +90,7 @@ public:
         constexpr float delta2 = delta * delta;
         constexpr float delta3 = delta2 * delta;
 
-        color = select(color.gt(delta3), pow(color, {1.0f / 3.0f}), color / (3.0f * delta2) + 4.0f / 29.0f);
+        color = select(color.gt(delta3), ::pow(color, {1.0f / 3.0f}), color / (3.0f * delta2) + 4.0f / 29.0f);
         return {116.0f * color.y - 16.0f, 500.0f * (color.x - color.y), 200.0f * (color.y - color.z), a};
     }
 
@@ -101,7 +101,7 @@ public:
         constexpr float delta  = 6.0f / 29.0f;
         constexpr float delta2 = delta * delta;
 
-        color = select(color.gt(delta), pow(color, {3.0f}), (color - 4.0f / 29.0f) * (3.0f * delta2));
+        color = select(color.gt(delta), ::pow(color, {3.0f}), (color - 4.0f / 29.0f) * (3.0f * delta2));
         return {
             color * Vec3{0.950489f, 1.0f, 1.08884f},
               a

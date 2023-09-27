@@ -2,6 +2,7 @@
 
 #pragma warning(disable : 4099)
 #pragma warning(disable : 4201)
+#pragma warning(error : 4834)
 
 #define MCAPI  __declspec(dllimport)
 #define MCVAPI __declspec(dllimport)
