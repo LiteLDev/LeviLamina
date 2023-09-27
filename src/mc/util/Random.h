@@ -70,8 +70,7 @@ private:
     // NOLINTBEGIN
     // symbol:
     // ?mThreadLocalRandom@Random@@0V?$ThreadLocalObject@VRandom@@V?$allocator@VRandom@@@std@@@Threading@Bedrock@@A
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random, std::allocator<class Random>>
-        mThreadLocalRandom;
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random> mThreadLocalRandom;
 
     // NOLINTEND
 

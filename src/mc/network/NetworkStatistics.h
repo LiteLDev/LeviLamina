@@ -47,7 +47,7 @@ public:
     // symbol:
     // ??0NetworkStatistics@@QEAA@V?$not_null@V?$NonOwnerPointer@VNetworkSystem@@@Bedrock@@@gsl@@W4TrackerType@@$$QEAV?$function@$$A6A_NAEAURakNetStatistics@RakNet@@@Z@std@@V?$not_null@V?$NonOwnerPointer@VNetworkDebugManager@@@Bedrock@@@2@@Z
     MCAPI
-    NetworkStatistics(gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkSystem>>, ::TrackerType, std::function<bool(struct RakNet::RakNetStatistics&)>&&, gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkDebugManager>>);
+    NetworkStatistics(Bedrock::NotNullNonOwnerPtr<class NetworkSystem>, ::TrackerType, std::function<bool(struct RakNet::RakNetStatistics&)>&&, Bedrock::NotNullNonOwnerPtr<class NetworkDebugManager>);
 
     // symbol: ?getVerboseInfo@NetworkStatistics@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getVerboseInfo() const;

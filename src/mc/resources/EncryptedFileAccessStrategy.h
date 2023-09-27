@@ -59,7 +59,7 @@ public:
     // symbol:
     // ??0EncryptedFileAccessStrategy@@QEAA@AEBVResourceLocation@@AEBVContentIdentity@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@_NV?$optional@V?$unordered_map@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@4@U?$equal_to@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@4@V?$allocator@U?$pair@$$CBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@4@@std@@@std@@@Z
     MCAPI
-    EncryptedFileAccessStrategy(class ResourceLocation const&, class ContentIdentity const&, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&, bool, std::optional<std::unordered_map<class Core::PathBuffer<std::string>, std::string>>);
+    EncryptedFileAccessStrategy(class ResourceLocation const&, class ContentIdentity const&, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&, bool, std::optional<std::unordered_map<class Core::PathBuffer<std::string>, std::string>>);
 
     // symbol: ?isValidEncryptedPack@EncryptedFileAccessStrategy@@SA_NAEBVPath@Core@@AEAVContentIdentity@@@Z
     MCAPI static bool isValidEncryptedPack(class Core::Path const&, class ContentIdentity&);

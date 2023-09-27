@@ -136,7 +136,7 @@ public:
     MCAPI uint getNumberOfUnlockableRecipes() const;
 
     // symbol: ?getRecipeByNetId@Recipes@@QEBAPEBVRecipe@@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-    MCAPI class Recipe const* getRecipeByNetId(class TypedServerNetId<struct RecipeNetIdTag, uint, 0> const&) const;
+    MCAPI class Recipe const* getRecipeByNetId(class RecipeNetId const&) const;
 
     // symbol: ?getRecipeFor@Recipes@@QEBAPEAVRecipe@@AEBVItemInstance@@AEBVHashedString@@@Z
     MCAPI class Recipe* getRecipeFor(class ItemInstance const&, class HashedString const&) const;

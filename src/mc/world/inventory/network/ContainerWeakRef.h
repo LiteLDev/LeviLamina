@@ -18,12 +18,11 @@ public:
     MCAPI ContainerWeakRef();
 
     // symbol: ??0ContainerWeakRef@@QEAA@AEBVBlockPos@@AEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@@Z
-    MCAPI ContainerWeakRef(class BlockPos const&, class TypedRuntimeId<struct ContainerRuntimeIdTag, uint, 0> const&);
+    MCAPI ContainerWeakRef(class BlockPos const&, class ContainerRuntimeId const&);
 
     // symbol:
     // ??0ContainerWeakRef@@QEAA@AEBUActorUniqueID@@W4ActorContainerType@@AEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@@Z
-    MCAPI
-    ContainerWeakRef(struct ActorUniqueID const&, ::ActorContainerType, class TypedRuntimeId<struct ContainerRuntimeIdTag, uint, 0> const&);
+    MCAPI ContainerWeakRef(struct ActorUniqueID const&, ::ActorContainerType, class ContainerRuntimeId const&);
 
     // symbol: ??BContainerWeakRef@@QEBA_NXZ
     MCAPI explicit operator bool() const;

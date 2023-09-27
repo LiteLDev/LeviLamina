@@ -75,9 +75,7 @@ private:
     // NOLINTBEGIN
     // symbol:
     // ?mThreadLocalMolangEvalParams@MolangEvalParams@@0V?$ThreadLocalObject@UMolangEvalParams@@V?$allocator@UMolangEvalParams@@@std@@@Threading@Bedrock@@A
-    MCAPI static class Bedrock::Threading::
-        ThreadLocalObject<struct MolangEvalParams, std::allocator<struct MolangEvalParams>>
-            mThreadLocalMolangEvalParams;
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<struct MolangEvalParams> mThreadLocalMolangEvalParams;
 
     // NOLINTEND
 

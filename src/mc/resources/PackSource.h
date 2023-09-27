@@ -34,7 +34,7 @@ public:
     // vIndex: 5, symbol:
     // ?load@WorldTemplatePackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
     virtual class PackSourceReport
-    load(class IPackManifestFactory&, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&) = 0;
+    load(class IPackManifestFactory&, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&) = 0;
 
     // symbol: ??1PackSource@@UEAA@XZ
     MCVAPI ~PackSource();
@@ -45,7 +45,7 @@ public:
     // symbol:
     // ?resolveUpgradeDependencies@PackSource@@QEAAXAEAVPack@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
     MCAPI void
-    resolveUpgradeDependencies(class Pack&, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
+    resolveUpgradeDependencies(class Pack&, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&);
 
     // NOLINTEND
 };

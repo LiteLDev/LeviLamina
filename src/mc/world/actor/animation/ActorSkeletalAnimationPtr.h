@@ -17,7 +17,7 @@ public:
     // symbol:
     // ??0ActorSkeletalAnimationPtr@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VActorAnimationGroup@@@Bedrock@@@gsl@@AEBVHashedString@@@Z
     MCAPI
-    ActorSkeletalAnimationPtr(gsl::not_null<class Bedrock::NonOwnerPointer<class ActorAnimationGroup>> const&, class HashedString const&);
+    ActorSkeletalAnimationPtr(Bedrock::NotNullNonOwnerPtr<class ActorAnimationGroup> const&, class HashedString const&);
 
     // symbol: ?isNull@ActorSkeletalAnimationPtr@@QEBA_NXZ
     MCAPI bool isNull() const;

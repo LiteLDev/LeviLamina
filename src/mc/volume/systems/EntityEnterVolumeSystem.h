@@ -25,7 +25,7 @@ public:
     virtual void tick(class EntityRegistry&);
 
     // symbol: ??0EntityEnterVolumeSystem@@QEAA@V?$not_null@V?$NonOwnerPointer@$$CBVILevel@@@Bedrock@@@gsl@@@Z
-    MCAPI explicit EntityEnterVolumeSystem(gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>);
+    MCAPI explicit EntityEnterVolumeSystem(Bedrock::NotNullNonOwnerPtr<class ILevel const>);
 
     // NOLINTEND
 

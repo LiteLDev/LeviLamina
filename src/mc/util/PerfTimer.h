@@ -25,7 +25,7 @@ public:
     MCAPI static bool mEnabled;
 
     // symbol: ?test@PerfTimer@@2V?$ThreadLocalObject@VPerfTimer@@V?$allocator@VPerfTimer@@@std@@@Threading@Bedrock@@A
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<class PerfTimer, std::allocator<class PerfTimer>> test;
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<class PerfTimer> test;
 
     // NOLINTEND
 

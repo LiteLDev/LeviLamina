@@ -649,7 +649,8 @@ public:
 
     // symbol:
     // ?addNonEpsilonSymbols@CommandRegistry@@CAXAEAV?$dense_set@VSymbol@CommandRegistry@@USymbolHasher@2@U?$equal_to@VSymbol@CommandRegistry@@@std@@V?$allocator@VSymbol@CommandRegistry@@@5@@entt@@AEBV23@@Z
-    MCAPI static void addNonEpsilonSymbols(entt::dense_set<class CommandRegistry::Symbol, struct CommandRegistry::SymbolHasher, std::equal_to<class CommandRegistry::Symbol>, std::allocator<class CommandRegistry::Symbol>>&, entt::dense_set<class CommandRegistry::Symbol, struct CommandRegistry::SymbolHasher, std::equal_to<class CommandRegistry::Symbol>, std::allocator<class CommandRegistry::Symbol>> const&);
+    MCAPI static void
+    addNonEpsilonSymbols(entt::dense_set<class CommandRegistry::Symbol, struct CommandRegistry::SymbolHasher>&, entt::dense_set<class CommandRegistry::Symbol, struct CommandRegistry::SymbolHasher> const&);
 
     // symbol: ?buildOverload@CommandRegistry@@CAXAEAUOverload@1@@Z
     MCAPI static void buildOverload(struct CommandRegistry::Overload&);

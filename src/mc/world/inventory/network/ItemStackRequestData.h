@@ -22,7 +22,7 @@ public:
     MCAPI std::vector<std::unique_ptr<class ItemStackRequestAction>> const& getActions() const;
 
     // symbol: ?getRequestId@ItemStackRequestData@@QEBAAEBV?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@XZ
-    MCAPI class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> const& getRequestId() const;
+    MCAPI class ItemStackRequestId const& getRequestId() const;
 
     // symbol:
     // ?getStringsToFilter@ItemStackRequestData@@QEBAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ

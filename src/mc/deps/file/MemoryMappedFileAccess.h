@@ -116,7 +116,7 @@ public:
     // symbol:
     // ??0MemoryMappedFileAccess@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@V?$unique_ptr@VFileAccessTransforms@@U?$default_delete@VFileAccessTransforms@@@std@@@std@@@Z
     MCAPI
-    MemoryMappedFileAccess(gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const&, std::unique_ptr<class FileAccessTransforms>);
+    MemoryMappedFileAccess(Bedrock::NotNullNonOwnerPtr<class IFileAccess> const&, std::unique_ptr<class FileAccessTransforms>);
 
     // symbol: ?EMPTY_TRANSFORMS@MemoryMappedFileAccess@@2VFileAccessTransforms@@B
     MCAPI static class FileAccessTransforms const EMPTY_TRANSFORMS;

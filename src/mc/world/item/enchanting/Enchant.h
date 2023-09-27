@@ -125,12 +125,7 @@ public:
 
     // symbol:
     // ?mEnchantSlotTypeEnumToStringMap@Enchant@@2V?$unordered_map@W4Slot@Enchant@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UEnchantSlotEnumHasher@@U?$equal_to@W4Slot@Enchant@@@4@V?$allocator@U?$pair@$$CBW4Slot@Enchant@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@4@@std@@A
-    MCAPI static std::unordered_map<
-        ::Enchant::Slot,
-        std::string,
-        struct EnchantSlotEnumHasher,
-        std::equal_to<::Enchant::Slot>,
-        std::allocator<std::pair<::Enchant::Slot const, std::string>>>
+    MCAPI static std::unordered_map<::Enchant::Slot, std::string, struct EnchantSlotEnumHasher>
         mEnchantSlotTypeEnumToStringMap;
 
     // symbol:

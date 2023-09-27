@@ -24,7 +24,7 @@ public:
     // symbol:
     // ??0DBStorageEnvironmentChain@@QEAA@AEBUDBStorageConfig@@AEBVPath@Core@@V?$not_null@V?$NonOwnerPointer@VLevelDbEnv@@@Bedrock@@@gsl@@@Z
     MCAPI
-    DBStorageEnvironmentChain(struct DBStorageConfig const&, class Core::Path const&, gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>);
+    DBStorageEnvironmentChain(struct DBStorageConfig const&, class Core::Path const&, Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>);
 
     // symbol: ?getCompactionListenerEnv@DBStorageEnvironmentChain@@QEBAPEAVCompactionListenerEnv@@XZ
     MCAPI class CompactionListenerEnv* getCompactionListenerEnv() const;

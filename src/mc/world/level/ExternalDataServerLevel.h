@@ -46,7 +46,7 @@ public:
     MCVAPI ::ClientPlayMode getPlayMode() const;
 
     // symbol: ??0ExternalDataServerLevel@@QEAA@V?$not_null@V?$NonOwnerPointer@$$CBVILevel@@@Bedrock@@@gsl@@@Z
-    MCAPI explicit ExternalDataServerLevel(gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>);
+    MCAPI explicit ExternalDataServerLevel(Bedrock::NotNullNonOwnerPtr<class ILevel const>);
 
     // NOLINTEND
 };

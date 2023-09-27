@@ -44,7 +44,7 @@ public:
         // symbol:
         // ??0OceanRuinPiece@OceanRuinPieces@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@W4Rotation@@M_NW4OceanTempCategory@@@Z
         MCAPI OceanRuinPiece(
-            gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>,
+            Bedrock::NotNullNonOwnerPtr<class StructureManager>,
             std::string,
             class BlockPos const&,
             ::Rotation,
@@ -67,7 +67,7 @@ public:
     // symbol:
     // ?addPieces@OceanRuinPieces@@SAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBVBlockPos@@AEBW4Rotation@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@AEBUOceanRuinConfiguration@@@Z
     MCAPI static void
-    addPieces(gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class BlockPos const&, ::Rotation const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, struct OceanRuinConfiguration const&);
+    addPieces(Bedrock::NotNullNonOwnerPtr<class StructureManager>, class BlockPos const&, ::Rotation const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, struct OceanRuinConfiguration const&);
 
     // NOLINTEND
 
@@ -76,12 +76,12 @@ public:
     // symbol:
     // ?_addClusterRuins@OceanRuinPieces@@CAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEAVRandom@@AEBW4Rotation@@AEBVBlockPos@@AEBUOceanRuinConfiguration@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@@Z
     MCAPI static void
-    _addClusterRuins(gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class Random&, ::Rotation const&, class BlockPos const&, struct OceanRuinConfiguration const&, std::vector<std::unique_ptr<class StructurePiece>>&);
+    _addClusterRuins(Bedrock::NotNullNonOwnerPtr<class StructureManager>, class Random&, ::Rotation const&, class BlockPos const&, struct OceanRuinConfiguration const&, std::vector<std::unique_ptr<class StructurePiece>>&);
 
     // symbol:
     // ?_addPiece@OceanRuinPieces@@CAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBVBlockPos@@AEBW4Rotation@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@AEBUOceanRuinConfiguration@@_NM@Z
     MCAPI static void _addPiece(
-        gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>,
+        Bedrock::NotNullNonOwnerPtr<class StructureManager>,
         class BlockPos const&,
         ::Rotation const&,
         std::vector<std::unique_ptr<class StructurePiece>>&,

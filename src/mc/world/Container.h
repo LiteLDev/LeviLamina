@@ -155,7 +155,7 @@ public:
     MCAPI int getRedstoneSignalFromContainer(class BlockSource&);
 
     // symbol: ?getRuntimeId@Container@@QEBAAEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@XZ
-    MCAPI class TypedRuntimeId<struct ContainerRuntimeIdTag, uint, 0> const& getRuntimeId() const;
+    MCAPI class ContainerRuntimeId const& getRuntimeId() const;
 
     // symbol: ?initRuntimeId@Container@@QEAAXXZ
     MCAPI void initRuntimeId();
@@ -185,7 +185,7 @@ public:
     MCAPI int _getEmptySlotsCount(int, int) const;
 
     // symbol: ?_initRuntimeId@Container@@IEAAXAEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@@Z
-    MCAPI void _initRuntimeId(class TypedRuntimeId<struct ContainerRuntimeIdTag, uint, 0> const&);
+    MCAPI void _initRuntimeId(class ContainerRuntimeId const&);
 
     // symbol: ?_serverInitId@Container@@IEAAXHAEAVItemStack@@V?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
     MCAPI void _serverInitId(int, class ItemStack&, std::function<void(int, class ItemStack const&)>);

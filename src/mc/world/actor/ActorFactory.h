@@ -20,7 +20,7 @@ public:
     MCVAPI ~ActorFactory();
 
     // symbol: ??0ActorFactory@@QEAA@V?$not_null@V?$NonOwnerPointer@VLevel@@@Bedrock@@@gsl@@@Z
-    MCAPI explicit ActorFactory(gsl::not_null<class Bedrock::NonOwnerPointer<class Level>>);
+    MCAPI explicit ActorFactory(Bedrock::NotNullNonOwnerPtr<class Level>);
 
     // symbol:
     // ?applyEntityInitializer@ActorFactory@@QEBAXV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@AEAVEntityContext@@@Z

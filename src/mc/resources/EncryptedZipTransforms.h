@@ -26,8 +26,7 @@ public:
 
     // symbol:
     // ??0EncryptedZipTransforms@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
-    MCAPI explicit EncryptedZipTransforms(gsl::not_null<
-                                          class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
+    MCAPI explicit EncryptedZipTransforms(Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&);
 
     // NOLINTEND
 };

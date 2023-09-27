@@ -77,7 +77,8 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0FileArchiver@@QEAA@AEAVScheduler@@AEAVILevelListCache@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@gsl@@AEBV?$not_null@V?$NonOwnerPointer@VIResourcePackRepository@@@Bedrock@@@4@_NV?$unique_ptr@VIWorldConverter@FileArchiver@@U?$default_delete@VIWorldConverter@FileArchiver@@@std@@@std@@V?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@4@V?$not_null@V?$NonOwnerPointer@VLevelDbEnv@@@Bedrock@@@4@V?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@7@@Z
-    MCAPI FileArchiver(class Scheduler&, class ILevelListCache&, gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const&, gsl::not_null<class Bedrock::NonOwnerPointer<class IResourcePackRepository>> const&, bool, std::unique_ptr<class FileArchiver::IWorldConverter>, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>>, gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>, std::function<void(std::string const&)>);
+    MCAPI
+    FileArchiver(class Scheduler&, class ILevelListCache&, Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&, Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository> const&, bool, std::unique_ptr<class FileArchiver::IWorldConverter>, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const>, Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>, std::function<void(std::string const&)>);
 
     // symbol:
     // ?exportPack@FileArchiver@@QEAA?AV?$shared_ptr@V?$IAsyncResult@UResult@FileArchiver@@@Threading@Bedrock@@@std@@AEBVPath@Core@@0@Z

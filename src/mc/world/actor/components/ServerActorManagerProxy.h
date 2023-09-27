@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/IActorManagerProxy.h"
+#include "mc/world/actor/components/IActorManagerProxy.h"
 
 class ServerActorManagerProxy : public ::IActorManagerProxy {
 public:

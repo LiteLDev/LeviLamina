@@ -49,9 +49,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_subdivideBatch@GameTestRunner@@CA?AV?$vector@V?$vector@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@@2@@std@@V?$allocator@V?$vector@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@@2@@std@@@2@@std@@AEAV?$vector@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@@2@@3@H@Z
-    MCAPI static std::vector<std::vector<
-        std::shared_ptr<class gametest::BaseGameTestFunction>,
-        std::allocator<std::shared_ptr<class gametest::BaseGameTestFunction>>>>
+    MCAPI static std::vector<std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>>>
     _subdivideBatch(std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>>&, int);
 
     // NOLINTEND

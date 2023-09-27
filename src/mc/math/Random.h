@@ -93,8 +93,7 @@ private:
 
     // symbol:
     // ?mThreadLocalRandom@Random@Core@@0V?$ThreadLocalObject@VRandom@Core@@V?$allocator@VRandom@Core@@@std@@@Threading@Bedrock@@A
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<class Core::Random, std::allocator<class Core::Random>>
-        mThreadLocalRandom;
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<class Core::Random> mThreadLocalRandom;
 
     // symbol: ?mUnfixed@Random@Core@@0U?$atomic@I@std@@A
     MCAPI static std::atomic<uint> mUnfixed;

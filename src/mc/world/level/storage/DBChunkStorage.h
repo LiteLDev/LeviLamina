@@ -183,13 +183,11 @@ private:
     // NOLINTBEGIN
     // symbol:
     // ?threadBatch@DBChunkStorage@@0V?$ThreadLocalObject@VLevelStorageWriteBatch@@V?$allocator@VLevelStorageWriteBatch@@@std@@@Threading@Bedrock@@A
-    MCAPI static class Bedrock::Threading::
-        ThreadLocalObject<class LevelStorageWriteBatch, std::allocator<class LevelStorageWriteBatch>>
-            threadBatch;
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<class LevelStorageWriteBatch> threadBatch;
 
     // symbol:
     // ?threadBuffer@DBChunkStorage@@0V?$ThreadLocalObject@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@Threading@Bedrock@@A
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<std::string, std::allocator<std::string>> threadBuffer;
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<std::string> threadBuffer;
 
     // NOLINTEND
 

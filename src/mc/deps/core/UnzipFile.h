@@ -24,7 +24,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0UnzipFile@Core@@QEAA@V?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@AEBVPath@1@@Z
-    MCAPI UnzipFile(gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>>, class Core::Path const&);
+    MCAPI UnzipFile(Bedrock::NotNullNonOwnerPtr<class IFileAccess>, class Core::Path const&);
 
     // symbol:
     // ?appendCurrentFileContents@UnzipFile@Core@@QEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_KV?$function@$$A6AXHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@4@@Z

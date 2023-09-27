@@ -337,7 +337,7 @@ public:
         // symbol:
         // ??0WoodlandMansionPiece@WoodlandMansionPieces@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@W4Rotation@@W4Mirror@@@Z
         MCAPI WoodlandMansionPiece(
-            gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>,
+            Bedrock::NotNullNonOwnerPtr<class StructureManager>,
             std::string const&,
             class BlockPos const&,
             ::Rotation,
@@ -347,7 +347,7 @@ public:
         // symbol:
         // ??0WoodlandMansionPiece@WoodlandMansionPieces@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@W4Rotation@@@Z
         MCAPI WoodlandMansionPiece(
-            gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>,
+            Bedrock::NotNullNonOwnerPtr<class StructureManager>,
             std::string const&,
             class BlockPos const&,
             ::Rotation
@@ -379,7 +379,7 @@ public:
     // symbol:
     // ?generateMansion@WoodlandMansionPieces@@SAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBVBlockPos@@W4Rotation@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z
     MCAPI static void
-    generateMansion(gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class BlockPos const&, ::Rotation, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
+    generateMansion(Bedrock::NotNullNonOwnerPtr<class StructureManager>, class BlockPos const&, ::Rotation, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
 
     // NOLINTEND
 };

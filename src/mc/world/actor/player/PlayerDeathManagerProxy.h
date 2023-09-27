@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/IPlayerDeathManagerProxy.h"
+#include "mc/world/actor/player/IPlayerDeathManagerProxy.h"
 
 class PlayerDeathManagerProxy : public ::IPlayerDeathManagerProxy {
 public:

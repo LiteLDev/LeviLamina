@@ -300,7 +300,7 @@ public:
 
     // symbol:
     // ?getActorAnimationGroup@Level@@UEBA?AV?$not_null@V?$NonOwnerPointer@VActorAnimationGroup@@@Bedrock@@@gsl@@XZ
-    MCVAPI gsl::not_null<class Bedrock::NonOwnerPointer<class ActorAnimationGroup>> getActorAnimationGroup() const;
+    MCVAPI Bedrock::NotNullNonOwnerPtr<class ActorAnimationGroup> getActorAnimationGroup() const;
 
     // symbol: ?getActorEventCoordinator@Level@@UEAAAEAVActorEventCoordinator@@XZ
     MCVAPI class ActorEventCoordinator& getActorEventCoordinator();
@@ -376,8 +376,7 @@ public:
 
     // symbol:
     // ?getBossEventSubscriptionManager@Level@@UEAA?AV?$not_null@V?$NonOwnerPointer@VBossEventSubscriptionManager@@@Bedrock@@@gsl@@XZ
-    MCVAPI gsl::not_null<class Bedrock::NonOwnerPointer<class BossEventSubscriptionManager>>
-           getBossEventSubscriptionManager();
+    MCVAPI Bedrock::NotNullNonOwnerPtr<class BossEventSubscriptionManager> getBossEventSubscriptionManager();
 
     // symbol: ?getCameraPresets@Level@@UEAAAEAVCameraPresets@@XZ
     MCVAPI class CameraPresets& getCameraPresets();
@@ -541,7 +540,7 @@ public:
     MCVAPI std::string getLevelId() const;
 
     // symbol: ?getLevelSoundManager@Level@@UEAA?AV?$not_null@V?$NonOwnerPointer@VLevelSoundManager@@@Bedrock@@@gsl@@XZ
-    MCVAPI gsl::not_null<class Bedrock::NonOwnerPointer<class LevelSoundManager>> getLevelSoundManager();
+    MCVAPI Bedrock::NotNullNonOwnerPtr<class LevelSoundManager> getLevelSoundManager();
 
     // symbol: ?getLevelStorage@Level@@UEBAAEBVLevelStorage@@XZ
     MCVAPI class LevelStorage const& getLevelStorage() const;
@@ -740,7 +739,7 @@ public:
     MCVAPI struct PlayerSleepStatus getSleepStatus() const;
 
     // symbol: ?getSoundPlayer@Level@@UEBA?AV?$not_null@V?$NonOwnerPointer@VSoundPlayerInterface@@@Bedrock@@@gsl@@XZ
-    MCVAPI gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> getSoundPlayer() const;
+    MCVAPI Bedrock::NotNullNonOwnerPtr<class SoundPlayerInterface> getSoundPlayer() const;
 
     // symbol: ?getSpawnableTickedMobCountPrevious@Level@@UEBAIXZ
     MCVAPI uint getSpawnableTickedMobCountPrevious() const;
@@ -752,10 +751,10 @@ public:
     MCVAPI float getSpecialMultiplier(DimensionType) const;
 
     // symbol: ?getStructureManager@Level@@UEBA?BV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@XZ
-    MCVAPI gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>> const getStructureManager() const;
+    MCVAPI Bedrock::NotNullNonOwnerPtr<class StructureManager> const getStructureManager() const;
 
     // symbol: ?getStructureManager@Level@@UEAA?AV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@XZ
-    MCVAPI gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>> getStructureManager();
+    MCVAPI Bedrock::NotNullNonOwnerPtr<class StructureManager> getStructureManager();
 
     // symbol: ?getSubChunkRequestManager@Level@@UEAAPEAVSubChunkRequestManager@@XZ
     MCVAPI class SubChunkRequestManager* getSubChunkRequestManager();
@@ -1220,8 +1219,7 @@ public:
 
     // symbol:
     // ??0Level@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VSoundPlayerInterface@@@Bedrock@@@gsl@@V?$OwnerPtrT@U?$SharePtrRefTraits@VLevelStorage@@@@@@AEAVIMinecraftEventing@@_NW4SubClientId@@AEAVScheduler@@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@2@AEAVResourcePackManager@@AEBV?$not_null@V?$NonOwnerPointer@VIEntityRegistryOwner@@@Bedrock@@@2@V?$WeakRefT@UEntityRefTraits@@@@V?$unique_ptr@VBlockComponentFactory@@U?$default_delete@VBlockComponentFactory@@@std@@@std@@V?$unique_ptr@VBlockDefinitionGroup@@U?$default_delete@VBlockDefinitionGroup@@@std@@@std@@VItemRegistryRef@@V?$weak_ptr@VBlockTypeRegistry@@@std@@33AEBUNetworkPermissions@@V?$optional@VDimensionDefinitionGroup@@@std@@@Z
-    MCAPI
-    Level(gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> const&, class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>, class IMinecraftEventing&, bool, ::SubClientId, class Scheduler&, gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class ResourcePackManager&, gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner>> const&, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>, class ItemRegistryRef, std::weak_ptr<class BlockTypeRegistry>, bool, bool, struct NetworkPermissions const&, std::optional<class DimensionDefinitionGroup>);
+    MCAPI Level(Bedrock::NotNullNonOwnerPtr<class SoundPlayerInterface> const&, class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>, class IMinecraftEventing&, bool, ::SubClientId, class Scheduler&, Bedrock::NotNullNonOwnerPtr<class StructureManager>, class ResourcePackManager&, Bedrock::NotNullNonOwnerPtr<class IEntityRegistryOwner> const&, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>, class ItemRegistryRef, std::weak_ptr<class BlockTypeRegistry>, bool, bool, struct NetworkPermissions const&, std::optional<class DimensionDefinitionGroup>);
 
     // symbol: ?canChangeDimension@Level@@QEAA_NAEAVActor@@V?$AutomaticID@VDimension@@H@@@Z
     MCAPI bool canChangeDimension(class Actor&, DimensionType);

@@ -46,7 +46,7 @@ public:
     MCAPI void setIncludeNetIds(bool) const;
 
     // symbol: ?tryGetServerNetId@NetworkItemStackDescriptor@@QEBAPEBV?$TypedServerNetId@UItemStackNetIdTag@@H$0A@@@XZ
-    MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const* tryGetServerNetId() const;
+    MCAPI class ItemStackNetId const* tryGetServerNetId() const;
 
     // symbol: ?write@NetworkItemStackDescriptor@@QEBAXAEAVBinaryStream@@@Z
     MCAPI void write(class BinaryStream&) const;

@@ -29,7 +29,7 @@ public:
     // vIndex: 1, symbol:
     // ?createWorldTemplatePackSource@PackSourceFactory@@UEAAAEAVWorldTemplatePackSource@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVWorldTemplateManager@@@Bedrock@@@gsl@@AEBVUUID@mce@@W4PackType@@W4PackOrigin@@@Z
     virtual class WorldTemplatePackSource& createWorldTemplatePackSource(
-        gsl::not_null<class Bedrock::NonOwnerPointer<class WorldTemplateManager const>> const&,
+        Bedrock::NotNullNonOwnerPtr<class WorldTemplateManager const> const&,
         class mce::UUID const&,
         ::PackType,
         ::PackOrigin

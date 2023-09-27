@@ -57,8 +57,7 @@ public:
 
     // symbol:
     // ?initializeWithActorGarbageCollector@ActorManager@@QEAAXV?$not_null@V?$NonOwnerPointer@VActorGarbageCollector@@@Bedrock@@@gsl@@@Z
-    MCAPI void
-        initializeWithActorGarbageCollector(gsl::not_null<class Bedrock::NonOwnerPointer<class ActorGarbageCollector>>);
+    MCAPI void initializeWithActorGarbageCollector(Bedrock::NotNullNonOwnerPtr<class ActorGarbageCollector>);
 
     // symbol:
     // ?initializeWithProxy@ActorManager@@QEAAXV?$unique_ptr@VIActorManagerProxy@@U?$default_delete@VIActorManagerProxy@@@std@@@std@@@Z

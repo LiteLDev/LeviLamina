@@ -50,12 +50,13 @@ public:
 
     // vIndex: 6, symbol:
     // ?createLevelStorage@ExternalFileLevelStorageSource@@UEAA?AV?$OwnerPtrT@U?$SharePtrRefTraits@VLevelStorage@@@@@@AEAVScheduler@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVContentIdentity@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@5@V?$not_null@V?$NonOwnerPointer@VLevelDbEnv@@@Bedrock@@@8@V?$unique_ptr@VLevelStorageEventing@@U?$default_delete@VLevelStorageEventing@@@std@@@5@@Z
-    virtual class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>> createLevelStorage(class Scheduler&, std::string const&, class ContentIdentity const&, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&, std::chrono::nanoseconds const&, gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>, std::unique_ptr<class LevelStorageEventing>);
+    virtual class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>
+    createLevelStorage(class Scheduler&, std::string const&, class ContentIdentity const&, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&, std::chrono::nanoseconds const&, Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>, std::unique_ptr<class LevelStorageEventing>);
 
     // vIndex: 7, symbol:
     // ?createLevelLooseStorage@ExternalFileLevelStorageSource@@UEAA?AV?$unique_ptr@VLevelLooseFileStorage@@U?$default_delete@VLevelLooseFileStorage@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVContentIdentity@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
     virtual std::unique_ptr<class LevelLooseFileStorage>
-    createLevelLooseStorage(std::string const&, class ContentIdentity const&, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
+    createLevelLooseStorage(std::string const&, class ContentIdentity const&, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&);
 
     // vIndex: 8, symbol:
     // ?isNewLevelIdAcceptable@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -130,7 +131,7 @@ public:
     // symbol:
     // ??0ExternalFileLevelStorageSource@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@gsl@@AEBV?$not_null@V?$NonOwnerPointer@VSaveTransactionManager@@@Bedrock@@@2@@Z
     MCAPI
-    ExternalFileLevelStorageSource(gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const&, gsl::not_null<class Bedrock::NonOwnerPointer<class SaveTransactionManager>> const&);
+    ExternalFileLevelStorageSource(Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&, Bedrock::NotNullNonOwnerPtr<class SaveTransactionManager> const&);
 
     // NOLINTEND
 };

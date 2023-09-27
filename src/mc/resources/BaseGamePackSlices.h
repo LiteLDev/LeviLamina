@@ -46,12 +46,12 @@ public:
     // symbol:
     // ?addFromVersions@BaseGamePackSlices@@QEAAXAEBV?$vector@VBaseGameVersion@@V?$allocator@VBaseGameVersion@@@std@@@std@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIResourcePackRepository@@@Bedrock@@@gsl@@AEBVUUID@mce@@@Z
     MCAPI void
-    addFromVersions(std::vector<class BaseGameVersion> const&, gsl::not_null<class Bedrock::NonOwnerPointer<class IResourcePackRepository const>> const&, class mce::UUID const&);
+    addFromVersions(std::vector<class BaseGameVersion> const&, Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository const> const&, class mce::UUID const&);
 
     // symbol:
     // ?applyPackSlices@BaseGamePackSlices@@QEBAXAEBVBaseGameVersion@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIResourcePackRepository@@@Bedrock@@@gsl@@AEAVResourcePackStack@@@Z
     MCAPI void
-    applyPackSlices(class BaseGameVersion const&, gsl::not_null<class Bedrock::NonOwnerPointer<class IResourcePackRepository const>> const&, class ResourcePackStack&)
+    applyPackSlices(class BaseGameVersion const&, Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository const> const&, class ResourcePackStack&)
         const;
 
     // symbol: ??1BaseGamePackSlices@@QEAA@XZ

@@ -1,6 +1,7 @@
 #pragma once
 
 #pragma warning(disable : 4099)
+#pragma warning(disable : 4201)
 
 #define MCAPI  __declspec(dllimport)
 #define MCVAPI __declspec(dllimport)
@@ -104,7 +105,42 @@ template <typename T0, typename T1>
 class AutomaticID;
 class Dimension;
 using DimensionType = AutomaticID<Dimension, int>;
-namespace Bedrock {template <typename T, typename Err = std::error_code> class Result;}
+
+struct RecipeNetIdTag;
+struct CreativeItemNetIdTag;
+struct ContainerRuntimeIdTag;
+struct ItemStackNetIdTag;
+struct ItemStackRequestIdTag;
+struct ItemStackLegacyRequestIdTag;
+
+template <typename T0, typename T1 = uint, int T2 = 0>
+class TypedClientNetId;
+template <typename T0, typename T1 = uint, int T2 = 0>
+class TypedServerNetId;
+template <typename T0, typename T1 = uint, int T2 = 0>
+class TypedRuntimeId;
+
+using RecipeNetId              = TypedServerNetId<RecipeNetIdTag>;
+using CreativeItemNetId        = TypedServerNetId<CreativeItemNetIdTag>;
+using ContainerRuntimeId       = TypedRuntimeId<ContainerRuntimeIdTag>;
+using ItemStackNetId           = TypedServerNetId<ItemStackNetIdTag, int>;
+using ItemStackRequestId       = TypedClientNetId<ItemStackRequestIdTag, int>;
+using ItemStackLegacyRequestId = TypedClientNetId<ItemStackLegacyRequestIdTag, int>;
+
+namespace Bedrock {
+template <typename T, typename Err = std::error_code>
+class Result;
+template <typename T>
+class NonOwnerPointer;
+template <typename T>
+using NotNullNonOwnerPtr = gsl::not_null<NonOwnerPointer<T>>;
+
+namespace Threading {
+template <typename T, typename Alloc = std::allocator<T>>
+class ThreadLocalObject;
+};
+};
+
 template <typename T0>
 class http_stl_allocator;
 using http_string  = std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>>;

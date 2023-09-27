@@ -32,7 +32,7 @@ public:
 
     // symbol:
     // ?initializeWithActorManager@AutonomousActorManager@@QEAAXV?$not_null@V?$NonOwnerPointer@VActorManager@@@Bedrock@@@gsl@@@Z
-    MCAPI void initializeWithActorManager(gsl::not_null<class Bedrock::NonOwnerPointer<class ActorManager>>);
+    MCAPI void initializeWithActorManager(Bedrock::NotNullNonOwnerPtr<class ActorManager>);
 
     // symbol: ?loadAutonomousActorsFromDisk@AutonomousActorManager@@QEAAXAEAVLevelStorage@@AEAVActorFactory@@@Z
     MCAPI void loadAutonomousActorsFromDisk(class LevelStorage&, class ActorFactory&);

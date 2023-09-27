@@ -191,12 +191,7 @@ public:
 
     // symbol:
     // ?rawView@CompoundTag@@QEBAAEBV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTagVariant@@U?$less@X@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTagVariant@@@std@@@2@@std@@XZ
-    MCAPI std::map<
-        std::string,
-        class CompoundTagVariant,
-        std::less<void>,
-        std::allocator<std::pair<std::string const, class CompoundTagVariant>>> const&
-    rawView() const;
+    MCAPI std::map<std::string, class CompoundTagVariant, std::less<void>> const& rawView() const;
 
     // symbol: ?remove@CompoundTag@@QEAA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI bool remove(std::string_view);

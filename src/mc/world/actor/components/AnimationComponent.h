@@ -24,7 +24,7 @@ public:
     // symbol:
     // ?createAnimationPlayer@AnimationComponent@@QEAA?AV?$shared_ptr@VActorAnimationPlayer@@@std@@AEBVHashedString@@AEBVExpressionNode@@AEAV?$set@VHashedString@@U?$hash@VHashedString@@@std@@V?$allocator@VHashedString@@@3@@3@@Z
     MCAPI std::shared_ptr<class ActorAnimationPlayer>
-    createAnimationPlayer(class HashedString const&, class ExpressionNode const&, std::set<class HashedString, std::hash<class HashedString>, std::allocator<class HashedString>>&);
+    createAnimationPlayer(class HashedString const&, class ExpressionNode const&, std::set<class HashedString, std::hash<class HashedString>>&);
 
     // symbol:
     // ?getAllBoneOrientations@AnimationComponent@@QEAAAEAV?$unordered_map@W4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@U?$hash@W4SkeletalHierarchyIndex@@@3@U?$equal_to@W4SkeletalHierarchyIndex@@@3@V?$allocator@U?$pair@$$CBW4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@@std@@@3@@std@@XZ

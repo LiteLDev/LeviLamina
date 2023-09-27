@@ -24,7 +24,7 @@ public:
     MCAPI CreativeItemEntry(class CreativeItemEntry&&);
 
     // symbol: ?getCreativeNetId@CreativeItemEntry@@QEBAAEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@XZ
-    MCAPI class TypedServerNetId<struct CreativeItemNetIdTag, uint, 0> const& getCreativeNetId() const;
+    MCAPI class CreativeItemNetId const& getCreativeNetId() const;
 
     // symbol: ?getGroup@CreativeItemEntry@@QEBAPEAVCreativeGroupInfo@@XZ
     MCAPI class CreativeGroupInfo* getGroup() const;
