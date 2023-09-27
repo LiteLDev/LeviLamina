@@ -26,17 +26,16 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?getAutomationClient@DedicatedServer@@EEBA?AV?$not_null@V?$NonOwnerPointer@VAutomationClient@Automation@@@Bedrock@@@gsl@@XZ
-    MCVAPI gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient>>
-           getAutomationClient() const;
+    MCVAPI Bedrock::NotNullNonOwnerPtr<class Automation::AutomationClient> getAutomationClient() const;
 
     // symbol: ?getFileArchiver@DedicatedServer@@UEBA?AV?$not_null@V?$NonOwnerPointer@VFileArchiver@@@Bedrock@@@gsl@@XZ
-    MCVAPI gsl::not_null<class Bedrock::NonOwnerPointer<class FileArchiver>> getFileArchiver() const;
+    MCVAPI Bedrock::NotNullNonOwnerPtr<class FileArchiver> getFileArchiver() const;
 
     // symbol: ?getGameModuleShared@DedicatedServer@@EEAAAEAVIGameModuleShared@@XZ
     MCVAPI class IGameModuleShared& getGameModuleShared();
 
     // symbol: ?getPrimaryMinecraft@DedicatedServer@@EEAA?AV?$not_null@V?$NonOwnerPointer@VMinecraft@@@Bedrock@@@gsl@@XZ
-    MCVAPI gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> getPrimaryMinecraft();
+    MCVAPI Bedrock::NotNullNonOwnerPtr<class Minecraft> getPrimaryMinecraft();
 
     // symbol: ?isDedicatedServer@DedicatedServer@@EEBA_NXZ
     MCVAPI bool isDedicatedServer() const;

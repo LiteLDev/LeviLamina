@@ -86,13 +86,8 @@ public:
 
     // symbol:
     // ?getTickDelaysInArea@BlockTickingQueue@@QEBA?AV?$unordered_multimap@VBlockPos@@UTickDelayBlock@@U?$hash@VBlockPos@@@std@@U?$equal_to@VBlockPos@@@4@V?$allocator@U?$pair@$$CBVBlockPos@@UTickDelayBlock@@@std@@@4@@std@@AEBVBoundingBox@@@Z
-    MCAPI std::unordered_multimap<
-        class BlockPos,
-        struct TickDelayBlock,
-        std::hash<class BlockPos>,
-        std::equal_to<class BlockPos>,
-        std::allocator<std::pair<class BlockPos const, struct TickDelayBlock>>>
-    getTickDelaysInArea(class BoundingBox const&) const;
+    MCAPI std::unordered_multimap<class BlockPos, struct TickDelayBlock>
+          getTickDelaysInArea(class BoundingBox const&) const;
 
     // symbol: ?hasTickInCurrentTick@BlockTickingQueue@@QEBA_NAEBVBlockPos@@@Z
     MCAPI bool hasTickInCurrentTick(class BlockPos const&) const;

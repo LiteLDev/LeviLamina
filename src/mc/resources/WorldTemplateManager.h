@@ -36,9 +36,9 @@ public:
     // ??0WorldTemplateManager@@QEAA@AEAVPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@AEAVPackSourceFactory@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@3@_N@Z
     MCAPI WorldTemplateManager(
         class PackManifestFactory&,
-        gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&,
         class PackSourceFactory&,
-        gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const&,
+        Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&,
         bool
     );
 

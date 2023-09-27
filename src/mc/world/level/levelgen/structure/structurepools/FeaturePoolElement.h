@@ -42,7 +42,7 @@ public:
     // symbol:
     // ??0FeaturePoolElement@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@V?$WeakRefT@UFeatureRefTraits@@@@@Z
     MCAPI
-    FeaturePoolElement(gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class WeakRefT<struct FeatureRefTraits>);
+    FeaturePoolElement(Bedrock::NotNullNonOwnerPtr<class StructureManager>, class WeakRefT<struct FeatureRefTraits>);
 
     // NOLINTEND
 };

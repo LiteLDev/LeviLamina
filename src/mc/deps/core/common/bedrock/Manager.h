@@ -30,12 +30,11 @@ public:
 
     // vIndex: 1, symbol:
     // ?getAutomationClient@Manager@CodeBuilder@@UEBA?AV?$not_null@V?$NonOwnerPointer@VAutomationClient@Automation@@@Bedrock@@@gsl@@XZ
-    virtual gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient>>
-    getAutomationClient() const;
+    virtual Bedrock::NotNullNonOwnerPtr<class Automation::AutomationClient> getAutomationClient() const;
 
     // vIndex: 2, symbol:
     // ?getEventing@Manager@CodeBuilder@@UEBA?AV?$not_null@V?$NonOwnerPointer@VIMessenger@CodeBuilder@@@Bedrock@@@gsl@@XZ
-    virtual gsl::not_null<class Bedrock::NonOwnerPointer<class CodeBuilder::IMessenger>> getEventing() const;
+    virtual Bedrock::NotNullNonOwnerPtr<class CodeBuilder::IMessenger> getEventing() const;
 
     // symbol: ??0Manager@CodeBuilder@@QEAA@AEAVIMinecraftApp@@@Z
     MCAPI explicit Manager(class IMinecraftApp&);

@@ -16,7 +16,7 @@ private:
 
     // symbol:
     // ?mPleaseLeakMemory@LowMemoryWatcher@@0V?$list@V?$vector@DV?$allocator@D@std@@@std@@V?$allocator@V?$vector@DV?$allocator@D@std@@@std@@@2@@std@@A
-    MCAPI static std::list<std::vector<char, std::allocator<char>>> mPleaseLeakMemory;
+    MCAPI static std::list<std::vector<char>> mPleaseLeakMemory;
 
     // symbol:
     // ?mTimeToResetWarning@LowMemoryWatcher@@0V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@A

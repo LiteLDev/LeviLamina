@@ -41,10 +41,7 @@ public:
 
     // symbol:
     // ?add@ResourcePackStack@@QEAAXVPackInstance@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIResourcePackRepository@@@Bedrock@@@gsl@@_N@Z
-    MCAPI void
-    add(class PackInstance,
-        gsl::not_null<class Bedrock::NonOwnerPointer<class IResourcePackRepository const>> const&,
-        bool);
+    MCAPI void add(class PackInstance, Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository const> const&, bool);
 
     // symbol: ?getSplitStacks@ResourcePackStack@@QEBAXAEAV1@0@Z
     MCAPI void getSplitStacks(class ResourcePackStack&, class ResourcePackStack&) const;
@@ -67,7 +64,7 @@ public:
     // symbol:
     // ?deserialize@ResourcePackStack@@SA?AV?$unique_ptr@VResourcePackStack@@U?$default_delete@VResourcePackStack@@@std@@@std@@AEAV?$basic_istream@DU?$char_traits@D@std@@@3@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIResourcePackRepository@@@Bedrock@@@gsl@@@Z
     MCAPI static std::unique_ptr<class ResourcePackStack>
-    deserialize(std::istream&, gsl::not_null<class Bedrock::NonOwnerPointer<class IResourcePackRepository const>> const&);
+    deserialize(std::istream&, Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository const> const&);
 
     // NOLINTEND
 
@@ -78,7 +75,7 @@ public:
     MCAPI static void _populateDependencies(
         std::vector<class PackInstance>&,
         class PackInstance&,
-        gsl::not_null<class Bedrock::NonOwnerPointer<class IResourcePackRepository const>> const&,
+        Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository const> const&,
         bool
     );
 

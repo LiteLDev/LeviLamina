@@ -23,7 +23,7 @@ MCAPI bool _writeLevelDat(class Core::Path const&, class LevelData const&);
 // symbol:
 // ?getAccessStrategy@ExternalFileLevelStorage@@YA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVPath@Core@@AEBVContentIdentity@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
 MCAPI std::unique_ptr<class PackAccessStrategy>
-getAccessStrategy(class Core::Path const&, class ContentIdentity const&, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
+getAccessStrategy(class Core::Path const&, class ContentIdentity const&, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&);
 
 // symbol:
 // ?getImportantFiles@ExternalFileLevelStorage@@YA?BV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ

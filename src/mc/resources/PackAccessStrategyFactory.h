@@ -18,7 +18,7 @@ public:
     // ?create@PackAccessStrategyFactory@@SA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEAVResourceLocation@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@AEAVPackReport@@_N@Z
     MCAPI static std::unique_ptr<class PackAccessStrategy> create(
         class ResourceLocation&,
-        gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&,
         class PackReport&,
         bool
     );
@@ -32,14 +32,14 @@ public:
     MCAPI static std::unique_ptr<class PackAccessStrategy> createForEncrypted(
         class ResourceLocation const&,
         class ContentIdentity const&,
-        gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&,
         bool
     );
 
     // symbol:
     // ?createForEncryptedZip@PackAccessStrategyFactory@@SA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVResourceLocation@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
     MCAPI static std::unique_ptr<class PackAccessStrategy>
-    createForEncryptedZip(class ResourceLocation const&, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
+    createForEncryptedZip(class ResourceLocation const&, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&);
 
     // symbol:
     // ?createForZip@PackAccessStrategyFactory@@SA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVResourceLocation@@_N@Z

@@ -60,9 +60,7 @@ private:
     // NOLINTBEGIN
     // symbol:
     // ?mThreadLocalRegistry@ItemRegistryManager@@0V?$ThreadLocalObject@V?$weak_ptr@VItemRegistry@@@std@@V?$allocator@V?$weak_ptr@VItemRegistry@@@std@@@2@@Threading@Bedrock@@A
-    MCAPI static class Bedrock::Threading::
-        ThreadLocalObject<std::weak_ptr<class ItemRegistry>, std::allocator<std::weak_ptr<class ItemRegistry>>>
-            mThreadLocalRegistry;
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<std::weak_ptr<class ItemRegistry>> mThreadLocalRegistry;
 
     // NOLINTEND
 

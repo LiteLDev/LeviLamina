@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/IResourceDropsStrategy.h"
+#include "mc/world/level/block/utils/IResourceDropsStrategy.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,12 +16,12 @@ struct ResourceDropsContext;
 
 namespace VanillaBlockDrops {
 
-class ItemDropsStrategy : public ::IResourceDropsStrategy {
+class SilkTouchOnlySelfDropsStrategy : public ::IResourceDropsStrategy {
 public:
     // prevent constructor by default
-    ItemDropsStrategy& operator=(ItemDropsStrategy const&);
-    ItemDropsStrategy(ItemDropsStrategy const&);
-    ItemDropsStrategy();
+    SilkTouchOnlySelfDropsStrategy& operator=(SilkTouchOnlySelfDropsStrategy const&);
+    SilkTouchOnlySelfDropsStrategy(SilkTouchOnlySelfDropsStrategy const&);
+    SilkTouchOnlySelfDropsStrategy();
 
 public:
     // NOLINTBEGIN
@@ -29,7 +29,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol:
-    // ?getResourceDrops@ItemDropsStrategy@VanillaBlockDrops@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
+    // ?getResourceDrops@SilkTouchOnlySelfDropsStrategy@VanillaBlockDrops@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
     virtual std::vector<class ItemStack>
     getResourceDrops(class Block const&, class Randomize&, struct ResourceDropsContext const&) const;
 

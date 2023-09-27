@@ -28,7 +28,7 @@ public:
         // symbol:
         // ??0LazyTemplate@StructurePoolElement@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBV?$vector@V?$unique_ptr@VStructurePoolBlockTagRule@@U?$default_delete@VStructurePoolBlockTagRule@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePoolBlockTagRule@@U?$default_delete@VStructurePoolBlockTagRule@@@std@@@std@@@2@@5@@Z
         MCAPI
-        LazyTemplate(gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::string const&, std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const*);
+        LazyTemplate(Bedrock::NotNullNonOwnerPtr<class StructureManager>, std::string const&, std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const*);
 
         // NOLINTEND
 
@@ -108,7 +108,7 @@ public:
     // symbol:
     // ??0StructurePoolElement@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Projection@@W4PostProcessSettings@@@Z
     MCAPI StructurePoolElement(
-        gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>,
+        Bedrock::NotNullNonOwnerPtr<class StructureManager>,
         std::string const&,
         ::Projection,
         ::PostProcessSettings
@@ -117,7 +117,7 @@ public:
     // symbol:
     // ??0StructurePoolElement@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UStructurePoolElementSettings@@@Z
     MCAPI StructurePoolElement(
-        gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>,
+        Bedrock::NotNullNonOwnerPtr<class StructureManager>,
         std::string const&,
         struct StructurePoolElementSettings
     );
@@ -125,7 +125,7 @@ public:
     // symbol:
     // ??0StructurePoolElement@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBV?$vector@V?$unique_ptr@VStructurePoolBlockRule@@U?$default_delete@VStructurePoolBlockRule@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePoolBlockRule@@U?$default_delete@VStructurePoolBlockRule@@@std@@@std@@@2@@4@PEBV?$vector@V?$unique_ptr@VStructurePoolBlockTagRule@@U?$default_delete@VStructurePoolBlockTagRule@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePoolBlockTagRule@@U?$default_delete@VStructurePoolBlockTagRule@@@std@@@std@@@2@@4@PEBV?$vector@V?$unique_ptr@VStructurePoolActorRule@@U?$default_delete@VStructurePoolActorRule@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePoolActorRule@@U?$default_delete@VStructurePoolActorRule@@@std@@@std@@@2@@4@W4Projection@@W4PostProcessSettings@@@Z
     MCAPI StructurePoolElement(
-        gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>,
+        Bedrock::NotNullNonOwnerPtr<class StructureManager>,
         std::string const&,
         std::vector<std::unique_ptr<class StructurePoolBlockRule>> const*,
         std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const*,

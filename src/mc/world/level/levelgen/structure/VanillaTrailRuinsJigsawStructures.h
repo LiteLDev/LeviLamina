@@ -16,8 +16,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?initialize@VanillaTrailRuinsJigsawStructures@@SAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEAVJigsawStructureRegistry@@@Z
-    MCAPI static void
-    initialize(gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class JigsawStructureRegistry&);
+    MCAPI static void initialize(Bedrock::NotNullNonOwnerPtr<class StructureManager>, class JigsawStructureRegistry&);
 
     // NOLINTEND
 };

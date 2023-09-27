@@ -240,7 +240,7 @@ public:
 
     // symbol:
     // ?getFileAccess@AppPlatform@@UEAA?AV?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@W4ResourceFileSystem@@@Z
-    MCVAPI gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> getFileAccess(::ResourceFileSystem);
+    MCVAPI Bedrock::NotNullNonOwnerPtr<class IFileAccess> getFileAccess(::ResourceFileSystem);
 
     // symbol: ?getFocusState@AppPlatform@@UEAA?AW4AppFocusState@@XZ
     MCVAPI ::AppFocusState getFocusState();

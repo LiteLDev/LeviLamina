@@ -85,12 +85,11 @@ public:
     // symbol:
     // ?_cacheLegacySlotIdAssignment@ItemStackRequestActionHandler@@QEAAXW4ContainerEnumName@@EAEBV?$TypedClientNetId@UItemStackLegacyRequestIdTag@@H$0A@@@AEBV?$TypedServerNetId@UItemStackNetIdTag@@H$0A@@@@Z
     MCAPI void
-    _cacheLegacySlotIdAssignment(::ContainerEnumName, uchar, class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const&, class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const&);
+    _cacheLegacySlotIdAssignment(::ContainerEnumName, uchar, class ItemStackLegacyRequestId const&, class ItemStackNetId const&);
 
     // symbol:
     // ?_cacheSlotIdAssigment@ItemStackRequestActionHandler@@QEAAXAEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@EEAEBV?$TypedServerNetId@UItemStackNetIdTag@@H$0A@@@@Z
-    MCAPI void
-    _cacheSlotIdAssigment(class TypedRuntimeId<struct ContainerRuntimeIdTag, uint, 0> const&, uchar, uchar, class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const&);
+    MCAPI void _cacheSlotIdAssigment(class ContainerRuntimeId const&, uchar, uchar, class ItemStackNetId const&);
 
     // symbol:
     // ?_getOrInitSparseContainer@ItemStackRequestActionHandler@@QEAA?AV?$shared_ptr@VSimpleSparseContainer@@@std@@W4ContainerEnumName@@@Z
@@ -114,8 +113,7 @@ public:
 
     // symbol:
     // ?addFilteredStrings@ItemStackRequestActionHandler@@QEAAXV?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-    MCAPI void
-        addFilteredStrings(class TypedClientNetId<struct ItemStackRequestIdTag, int, 0>, std::vector<std::string>);
+    MCAPI void addFilteredStrings(class ItemStackRequestId, std::vector<std::string>);
 
     // symbol:
     // ?endRequest@ItemStackRequestActionHandler@@QEAA?AV?$tuple@W4ItemStackNetResult@@V?$vector@UItemStackResponseContainerInfo@@V?$allocator@UItemStackResponseContainerInfo@@@std@@@std@@@std@@W4ItemStackNetResult@@@Z
@@ -124,11 +122,10 @@ public:
 
     // symbol:
     // ?getFilteredStrings@ItemStackRequestActionHandler@@QEBAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@@Z
-    MCAPI std::vector<std::string> const&
-          getFilteredStrings(class TypedClientNetId<struct ItemStackRequestIdTag, int, 0>) const;
+    MCAPI std::vector<std::string> const& getFilteredStrings(class ItemStackRequestId) const;
 
     // symbol: ?getRequestId@ItemStackRequestActionHandler@@QEBAAEBV?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@XZ
-    MCAPI class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> const& getRequestId() const;
+    MCAPI class ItemStackRequestId const& getRequestId() const;
 
     // symbol: ?getScreenContext@ItemStackRequestActionHandler@@QEBAAEBVContainerScreenContext@@XZ
     MCAPI class ContainerScreenContext const& getScreenContext() const;
@@ -167,7 +164,7 @@ public:
     // symbol:
     // ?_resolveSlotIdAssignment@ItemStackRequestActionHandler@@AEAA?AV?$optional@URequestSlotIdAssignment@ItemStackRequestActionHandler@@@std@@AEBUItemStackRequestSlotInfo@@AEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@@Z
     MCAPI std::optional<struct ItemStackRequestActionHandler::RequestSlotIdAssignment>
-    _resolveSlotIdAssignment(struct ItemStackRequestSlotInfo const&, class TypedRuntimeId<struct ContainerRuntimeIdTag, uint, 0> const&);
+          _resolveSlotIdAssignment(struct ItemStackRequestSlotInfo const&, class ContainerRuntimeId const&);
 
     // symbol: ?_tryGetCurrentScreenData@ItemStackRequestActionHandler@@AEBAPEAUScreenData@1@XZ
     MCAPI struct ItemStackRequestActionHandler::ScreenData* _tryGetCurrentScreenData() const;

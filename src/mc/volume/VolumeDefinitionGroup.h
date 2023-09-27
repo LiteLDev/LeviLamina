@@ -21,8 +21,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0VolumeDefinitionGroup@@QEAA@V?$not_null@V?$NonOwnerPointer@$$CBVVolumeComponentFactory@@@Bedrock@@@gsl@@@Z
-    MCAPI explicit VolumeDefinitionGroup(gsl::not_null<
-                                         class Bedrock::NonOwnerPointer<class VolumeComponentFactory const>>);
+    MCAPI explicit VolumeDefinitionGroup(Bedrock::NotNullNonOwnerPtr<class VolumeComponentFactory const>);
 
     // symbol: ?loadDefinitions@VolumeDefinitionGroup@@QEAAXAEBVResourcePackManager@@_N@Z
     MCAPI void loadDefinitions(class ResourcePackManager const&, bool);

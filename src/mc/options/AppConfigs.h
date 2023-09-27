@@ -131,7 +131,7 @@ public:
     // vIndex: 34, symbol:
     // ?createContentAccessibility@AppConfigs@@UEBA?AV?$unique_ptr@VIContentAccessibilityProvider@@U?$default_delete@VIContentAccessibilityProvider@@@std@@@std@@V?$not_null@V?$NonOwnerPointer@VIEntitlementManager@@@Bedrock@@@gsl@@@Z
     virtual std::unique_ptr<class IContentAccessibilityProvider>
-        createContentAccessibility(gsl::not_null<class Bedrock::NonOwnerPointer<class IEntitlementManager>>) const;
+        createContentAccessibility(Bedrock::NotNullNonOwnerPtr<class IEntitlementManager>) const;
 
     // vIndex: 35, symbol:
     // ?getFeedbackURL@AppConfigs@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

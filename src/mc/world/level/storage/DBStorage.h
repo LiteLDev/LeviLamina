@@ -198,7 +198,7 @@ public:
     MCVAPI ~DBStorage();
 
     // symbol: ??0DBStorage@@QEAA@UDBStorageConfig@@V?$not_null@V?$NonOwnerPointer@VLevelDbEnv@@@Bedrock@@@gsl@@@Z
-    MCAPI DBStorage(struct DBStorageConfig, gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>);
+    MCAPI DBStorage(struct DBStorageConfig, Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>);
 
     // symbol: ?tryRepair@DBStorage@@QEBA_NAEBVPath@Core@@@Z
     MCAPI bool tryRepair(class Core::Path const&) const;

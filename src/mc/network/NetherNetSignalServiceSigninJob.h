@@ -96,12 +96,12 @@ public:
     // symbol:
     // ??0NetherNetSignalServiceSigninJob@Network@@QEAA@$$QEAV?$not_null@V?$NonOwnerPointer@UNetherNetConnector@@@Bedrock@@@gsl@@$$QEAV?$function@$$A6AX_N@Z@std@@$$QEAV?$function@$$A6AXXZ@5@V?$not_null@V?$NonOwnerPointer@VDisconnectionRequestHandler@@@Bedrock@@@3@V?$not_null@V?$NonOwnerPointer@VServicesManager@@@Bedrock@@@3@V?$not_null@V?$NonOwnerPointer@VIMinecraftEventing@@@Bedrock@@@3@_N@Z
     MCAPI NetherNetSignalServiceSigninJob(
-        gsl::not_null<class Bedrock::NonOwnerPointer<struct NetherNetConnector>>&&,
+        Bedrock::NotNullNonOwnerPtr<struct NetherNetConnector>&&,
         std::function<void(bool)>&&,
         std::function<void(void)>&&,
-        gsl::not_null<class Bedrock::NonOwnerPointer<class DisconnectionRequestHandler>>,
-        gsl::not_null<class Bedrock::NonOwnerPointer<class ServicesManager>>,
-        gsl::not_null<class Bedrock::NonOwnerPointer<class IMinecraftEventing>>,
+        Bedrock::NotNullNonOwnerPtr<class DisconnectionRequestHandler>,
+        Bedrock::NotNullNonOwnerPtr<class ServicesManager>,
+        Bedrock::NotNullNonOwnerPtr<class IMinecraftEventing>,
         bool
     );
 

@@ -183,7 +183,7 @@ public:
     MCAPI bool
     _hasDisallowedQueryPtrs(std::vector<std::function<
                                 struct
-                                MolangScriptArg const&(class RenderParams&, std::vector<class ExpressionNode, std::allocator<class ExpressionNode>> const&)> const*> const&)
+                                MolangScriptArg const&(class RenderParams&, std::vector<class ExpressionNode> const&)> const*> const&)
         const;
 
     // symbol: ?_optimize@ExpressionNode@@AEAA_NW4MolangVersion@@AEAVRenderParams@@H@Z
@@ -297,13 +297,7 @@ private:
 
     // symbol:
     // ?mQueryFunctionAccessors@ExpressionNode@@0V?$unordered_multimap@VHashedString@@UMolangQueryFunction@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@4@V?$allocator@U?$pair@$$CBVHashedString@@UMolangQueryFunction@@@std@@@4@@std@@A
-    MCAPI static std::unordered_multimap<
-        class HashedString,
-        struct MolangQueryFunction,
-        std::hash<class HashedString>,
-        std::equal_to<class HashedString>,
-        std::allocator<std::pair<class HashedString const, struct MolangQueryFunction>>>
-        mQueryFunctionAccessors;
+    MCAPI static std::unordered_multimap<class HashedString, struct MolangQueryFunction> mQueryFunctionAccessors;
 
     // symbol:
     // ?mQuerySets@ExpressionNode@@0V?$unordered_map@VHashedString@@V?$unordered_set@VHashedString@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@3@V?$allocator@VHashedString@@@3@@std@@U?$hash@VHashedString@@@3@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V?$unordered_set@VHashedString@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@3@V?$allocator@VHashedString@@@3@@std@@@std@@@3@@std@@A

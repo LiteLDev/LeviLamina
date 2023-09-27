@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/IAddActorEntityProxy.h"
+#include "mc/world/actor/components/IAddActorEntityProxy.h"
 
 class AddActorEntityProxy : public ::IAddActorEntityProxy {
 public:

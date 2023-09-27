@@ -23,7 +23,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ??0Impl@CraftingContext@@QEAA@V?$not_null@V?$NonOwnerPointer@VILevel@@@Bedrock@@@gsl@@@Z
-        MCAPI explicit Impl(gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel>>);
+        MCAPI explicit Impl(Bedrock::NotNullNonOwnerPtr<class ILevel>);
 
         // NOLINTEND
     };
@@ -37,7 +37,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0CraftingContext@@QEAA@V?$not_null@V?$NonOwnerPointer@VILevel@@@Bedrock@@@gsl@@@Z
-    MCAPI explicit CraftingContext(gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel>>);
+    MCAPI explicit CraftingContext(Bedrock::NotNullNonOwnerPtr<class ILevel>);
 
     // symbol: ?getBaseGameVersion@CraftingContext@@QEBA?AVBaseGameVersion@@XZ
     MCAPI class BaseGameVersion getBaseGameVersion() const;
