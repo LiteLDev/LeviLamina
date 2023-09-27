@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/utilities/ActorDamageCause.h"
 
 // auto generated inclusion list
 #include "mc/entity/utilities/ActorCategory.h"
@@ -10,7 +9,7 @@
 
 class ActorDamageSource {
 public:
-    enum class ActorDamageCause mCause;
+    ::ActorDamageCause mCause;
 
 public:
     // NOLINTBEGIN

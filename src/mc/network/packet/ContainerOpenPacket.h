@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../NetworkBlockPosition.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/NetworkBlockPosition.h"
 #include "mc/world/ActorUniqueID.h"
 #include "mc/world/containers/ContainerID.h"
 #include "mc/world/containers/ContainerType.h"

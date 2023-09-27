@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../NetworkBlockPosition.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/NetworkBlockPosition.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"

@@ -8,9 +8,9 @@
 
 class PulseCapacitor : public ::CapacitorComponent {
 public:
-    bool                                  mPowered;
-    bool                                  mNewPowered;
-    const enum class CircuitComponentType mCircuitComponentType = CircuitComponentType::PulseCapacitor;
+    bool                         mPowered;
+    bool                         mNewPowered;
+    ::CircuitComponentType const mCircuitComponentType = CircuitComponentType::PulseCapacitor;
 
 public:
     // NOLINTBEGIN

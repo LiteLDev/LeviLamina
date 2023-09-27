@@ -6,7 +6,7 @@ template <typename T0, typename T1, int T2>
 class TypedRuntimeId {
 public:
     T1        mRawId;
-    static T1 sNextRawId;
+    MCAPI static T1 sNextRawId;
 
     constexpr explicit operator T1() { return mRawId; }
 };

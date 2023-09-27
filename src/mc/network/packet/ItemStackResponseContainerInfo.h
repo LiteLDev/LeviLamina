@@ -1,7 +1,7 @@
 #pragma once
 
-#include "ItemStackResponseSlotInfo.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/packet/ItemStackResponseSlotInfo.h"
 #include "mc/world/containers/ContainerEnumName.h"
 
 // auto generated inclusion list

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "ItemData.h"
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/mce/UUID.h"
 #include "mc/deps/core/resource/ContentIdentity.h"
@@ -8,6 +7,7 @@
 #include "mc/math/Vec2.h"
 #include "mc/math/Vec3.h"
 #include "mc/nbt/CompoundTag.h"
+#include "mc/network/packet/ItemData.h"
 #include "mc/world/ActorRuntimeID.h"
 #include "mc/world/ActorUniqueID.h"
 #include "mc/world/actor/player/SyncedPlayerMovementSettings.h"

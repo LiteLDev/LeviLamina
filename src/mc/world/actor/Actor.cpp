@@ -28,7 +28,7 @@ class EntityContext const& Actor::getEntityContext() const { return ll::memory::
 
 void Actor::refresh() { _sendDirtyActorData(); }
 
-bool Actor::isInstanceOf(enum class ActorType type) const { return ActorClassTree::isInstanceOf(*this, type); }
+bool Actor::isInstanceOf(ActorType type) const { return ActorClassTree::isInstanceOf(*this, type); }
 
 std::string const& Actor::getTypeName() const { return getActorIdentifier().getCanonicalName(); }
 

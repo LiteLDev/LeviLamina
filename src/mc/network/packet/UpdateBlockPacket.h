@@ -27,8 +27,8 @@ public:
 
     static const bool          SHARE_WITH_HANDLER = true; // constant
     class NetworkBlockPosition mPos;                      // this+0x30
-    enum class Layer           mLayer;                    // this+0x3C
-    enum class Flags           mUpdateFlags;              // this+0x40
+    Layer                      mLayer;                    // this+0x3C
+    Flags                      mUpdateFlags;              // this+0x40
     uint                       mRuntimeId;                // this+0x44
 
 public:

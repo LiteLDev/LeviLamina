@@ -2,7 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/mce/UUID.h"
-#include "mc/enums/SubClientId.h"
 #include "mc/network/NetworkIdentifier.h"
 
 // auto generated inclusion list
@@ -16,7 +15,7 @@ namespace mce { class UUID; }
 class UserEntityIdentifierComponent {
 public:
     class NetworkIdentifier            mNetworkId;   // this+0x0
-    enum class SubClientId             mClientSubId; // this+0xA0
+    ::SubClientId                      mClientSubId; // this+0xA0
     mce::UUID                          mClientUUID;  // this+0xA8
     std::string                        mPlayFabId;   // this+0xB8
     std::unique_ptr<class Certificate> mCertificate; // this+0xD8

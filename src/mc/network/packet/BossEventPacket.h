@@ -13,17 +13,17 @@
 
 class BossEventPacket : public ::Packet {
 public:
-    int                            FLAG_DARKEN;     // this+0x30
-    int                            FLAG_FOG;        // this+0x34
-    struct ActorUniqueID           mBossID;         // this+0x38
-    struct ActorUniqueID           mPlayerID;       // this+0x40
-    enum class BossEventUpdateType mEventType;      // this+0x48
-    std::string                    mName;           // this+0x50
-    float                          mHealthPercent;  // this+0x70
-    enum class BossBarColor        mColor;          // this+0x74
-    enum class BossBarOverlay      mOverlay;        // this+0x78
-    uchar                          mDarkenScreen;   // this+0x7C
-    uchar                          mCreateWorldFog; // this+0x7D
+    int                   FLAG_DARKEN;     // this+0x30
+    int                   FLAG_FOG;        // this+0x34
+    ActorUniqueID         mBossID;         // this+0x38
+    ActorUniqueID         mPlayerID;       // this+0x40
+    ::BossEventUpdateType mEventType;      // this+0x48
+    std::string           mName;           // this+0x50
+    float                 mHealthPercent;  // this+0x70
+    ::BossBarColor        mColor;          // this+0x74
+    ::BossBarOverlay      mOverlay;        // this+0x78
+    uchar                 mDarkenScreen;   // this+0x7C
+    uchar                 mCreateWorldFog; // this+0x7D
 
     // prevent constructor by default
     BossEventPacket& operator=(BossEventPacket const&);

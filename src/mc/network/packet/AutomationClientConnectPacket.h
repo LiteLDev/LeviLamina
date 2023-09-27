@@ -1,7 +1,7 @@
 #pragma once
 
-#include "WebSocketPacketData.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/packet/WebSocketPacketData.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"

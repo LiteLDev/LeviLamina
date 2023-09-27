@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../NetworkBlockPosition.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/NetworkBlockPosition.h"
 #include "mc/world/level/levelgen/structure/StructureEditorData.h"
 
 // auto generated inclusion list

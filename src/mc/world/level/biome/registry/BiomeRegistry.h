@@ -39,8 +39,6 @@ public:
     };
 
 public:
-    LLNDAPI std::vector<class Biome*> lookupByType(enum class VanillaBiomeTypes type) const;
-
     // prevent constructor by default
     BiomeRegistry& operator=(BiomeRegistry const&);
     BiomeRegistry(BiomeRegistry const&);

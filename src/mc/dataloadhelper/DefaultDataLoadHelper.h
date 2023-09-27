@@ -16,49 +16,49 @@ public:
 
 public:
     // NOLINTBEGIN
-    // @vftbl 0, symbol: __unk_destructor_-1
+    // vIndex: 0, symbol: __unk_destructor_-1
     virtual ~DefaultDataLoadHelper() = default;
 
-    // @vftbl 1, symbol: ?loadPosition\@DefaultDataLoadHelper\@\@UEAA?AVVec3\@\@AEBV2\@\@Z
+    // vIndex: 1, symbol: ?loadPosition\@DefaultDataLoadHelper\@\@UEAA?AVVec3\@\@AEBV2\@\@Z
     virtual class Vec3 loadPosition(class Vec3 const&);
 
-    // @vftbl 2, symbol: ?loadBlockPosition\@DefaultDataLoadHelper\@\@UEAA?AVBlockPos\@\@AEBV2\@\@Z
+    // vIndex: 2, symbol: ?loadBlockPosition\@DefaultDataLoadHelper\@\@UEAA?AVBlockPos\@\@AEBV2\@\@Z
     virtual class BlockPos loadBlockPosition(class BlockPos const&);
 
-    // @vftbl 3, symbol: ?loadBlockPositionOffset\@DefaultDataLoadHelper\@\@UEAA?AVBlockPos\@\@AEBV2\@\@Z
+    // vIndex: 3, symbol: ?loadBlockPositionOffset\@DefaultDataLoadHelper\@\@UEAA?AVBlockPos\@\@AEBV2\@\@Z
     virtual class BlockPos loadBlockPositionOffset(class BlockPos const&);
 
-    // @vftbl 4, symbol: ?loadRotationDegreesX\@DefaultDataLoadHelper\@\@UEAAMM\@Z
+    // vIndex: 4, symbol: ?loadRotationDegreesX\@DefaultDataLoadHelper\@\@UEAAMM\@Z
     virtual float loadRotationDegreesX(float);
 
-    // @vftbl 5, symbol: ?loadRotationDegreesY\@DefaultDataLoadHelper\@\@UEAAMM\@Z
+    // vIndex: 5, symbol: ?loadRotationDegreesY\@DefaultDataLoadHelper\@\@UEAAMM\@Z
     virtual float loadRotationDegreesY(float);
 
-    // @vftbl 6, symbol: ?loadRotationRadiansX\@DefaultDataLoadHelper\@\@UEAAMM\@Z
+    // vIndex: 6, symbol: ?loadRotationRadiansX\@DefaultDataLoadHelper\@\@UEAAMM\@Z
     virtual float loadRotationRadiansX(float);
 
-    // @vftbl 7, symbol: ?loadRotationRadiansY\@DefaultDataLoadHelper\@\@UEAAMM\@Z
+    // vIndex: 7, symbol: ?loadRotationRadiansY\@DefaultDataLoadHelper\@\@UEAAMM\@Z
     virtual float loadRotationRadiansY(float);
 
-    // @vftbl 8, symbol: ?loadFacingID\@DefaultDataLoadHelper\@\@UEAAEE\@Z
+    // vIndex: 8, symbol: ?loadFacingID\@DefaultDataLoadHelper\@\@UEAAEE\@Z
     virtual uchar loadFacingID(uchar);
 
-    // @vftbl 9, symbol: ?loadDirection\@DefaultDataLoadHelper\@\@UEAA?AVVec3\@\@AEBV2\@\@Z
+    // vIndex: 9, symbol: ?loadDirection\@DefaultDataLoadHelper\@\@UEAA?AVVec3\@\@AEBV2\@\@Z
     virtual class Vec3 loadDirection(class Vec3 const&);
 
-    // @vftbl 10, symbol: ?loadDirection\@DefaultDataLoadHelper\@\@UEAA?AW4Type\@Direction\@\@W423\@\@Z
-    virtual enum class Direction::Type loadDirection(enum class Direction::Type);
+    // vIndex: 10, symbol: ?loadDirection\@DefaultDataLoadHelper\@\@UEAA?AW4Type\@Direction\@\@W423\@\@Z
+    virtual ::Direction::Type loadDirection(::Direction::Type);
 
-    // @vftbl 11, symbol: ?loadRotation\@DefaultDataLoadHelper\@\@UEAA?AW4Rotation\@\@W42\@\@Z
-    virtual enum class Rotation loadRotation(enum class Rotation);
+    // vIndex: 11, symbol: ?loadRotation\@DefaultDataLoadHelper\@\@UEAA?AW4Rotation\@\@W42\@\@Z
+    virtual ::Rotation loadRotation(::Rotation);
 
-    // @vftbl 12, symbol: ?loadMirror\@DefaultDataLoadHelper\@\@UEAA?AW4Mirror\@\@W42\@\@Z
-    virtual enum class Mirror loadMirror(enum class Mirror);
+    // vIndex: 12, symbol: ?loadMirror\@DefaultDataLoadHelper\@\@UEAA?AW4Mirror\@\@W42\@\@Z
+    virtual ::Mirror loadMirror(::Mirror);
 
-    // @vftbl 13, symbol: ?loadActorUniqueID\@DefaultDataLoadHelper\@\@UEAA?AUActorUniqueID\@\@U2\@\@Z
+    // vIndex: 13, symbol: ?loadActorUniqueID\@DefaultDataLoadHelper\@\@UEAA?AUActorUniqueID\@\@U2\@\@Z
     virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
 
-    // @vftbl 14, symbol: ?loadOwnerID\@DefaultDataLoadHelper\@\@UEAA?AUActorUniqueID\@\@U2\@\@Z
+    // vIndex: 14, symbol: ?loadOwnerID\@DefaultDataLoadHelper\@\@UEAA?AUActorUniqueID\@\@U2\@\@Z
     virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
 
     // vIndex: 15, symbol:

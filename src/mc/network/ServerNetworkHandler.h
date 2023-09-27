@@ -57,7 +57,7 @@ public:
     // Do not use _getServerPlayer directly
     // Please get SubID from the packet
     inline optional_ref<ServerPlayer>
-    getServerPlayer(class NetworkIdentifier const& source, enum class SubClientId subId) {
+    getServerPlayer(class NetworkIdentifier const& source, ::SubClientId subId) {
         auto& handler = ll::memory::dAccess<ServerNetworkHandler>(this, -16);
         return {handler._getServerPlayer(source, subId)};
     }

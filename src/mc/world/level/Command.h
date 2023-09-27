@@ -11,11 +11,11 @@ public:
     Command& operator=(Command const&);
     Command(Command const&);
 
-    int                               mVersion;         // this+0x8
-    class CommandRegistry const*      mRegistry;        // this+0x10
-    int                               mCommandSymbol;   // this+0x18
-    enum class CommandPermissionLevel mPermissionLevel; // this+0x1C
-    struct CommandFlag                mFlags;           // this+0x1E
+    int                          mVersion;         // this+0x8
+    class CommandRegistry const* mRegistry;        // this+0x10
+    int                          mCommandSymbol;   // this+0x18
+    ::CommandPermissionLevel     mPermissionLevel; // this+0x1C
+    struct CommandFlag           mFlags;           // this+0x1E
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1Command@@UEAA@XZ

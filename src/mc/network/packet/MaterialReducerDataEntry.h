@@ -1,7 +1,7 @@
 #pragma once
 
-#include "MaterialReducerEntryOutput.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/packet/MaterialReducerEntryOutput.h"
 
 
 struct MaterialReducerDataEntry {

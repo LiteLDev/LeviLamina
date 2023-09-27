@@ -8,7 +8,16 @@
 class TaskStatus {
 public:
     // TaskStatus inner types define
-    enum class Value {};
+    enum class Value : int {
+        WaitingForPredecessor = 0x0,
+        Pending               = 0x1,
+        Running               = 0x2,
+        CancelPending         = 0x3,
+        Canceled              = 0x4,
+        Error                 = 0x5,
+        Done                  = 0x6,
+    };
+    Value mValue; // this+0x0
 
 public:
     // prevent constructor by default
@@ -24,7 +33,7 @@ public:
     MCAPI bool isComplete() const;
 
     // symbol: ??BTaskStatus@@QEBA?AW4Value@0@XZ
-    MCAPI explicit operator enum class TaskStatus::Value() const;
+    MCAPI explicit operator Value() const;
 
     // symbol: ?toAsyncStatus@TaskStatus@@QEBA?AW4AsyncStatus@Threading@Bedrock@@XZ
     MCAPI ::Bedrock::Threading::AsyncStatus toAsyncStatus() const;

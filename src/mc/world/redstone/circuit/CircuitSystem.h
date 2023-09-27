@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/CircuitComponentType.h"
+#include "mc/enums/FacingID.h"
 #include "mc/world/redstone/circuit/CircuitSceneGraph.h"
 #include "mc/world/redstone/circuit/components/BaseCircuitComponent.h"
 
@@ -19,8 +21,8 @@ public:
     Component* create(
         class BlockPos const&           pos,
         class BlockSource*              pSource,
-        enum class CircuitComponentType type,
-        enum class FacingID             direction
+        ::CircuitComponentType type,
+        ::FacingID             direction
     ) {
         if (mLockGraph) {
             if (!mSceneGraph.getComponent(pos, type))

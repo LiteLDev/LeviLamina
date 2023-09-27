@@ -15,7 +15,7 @@ public:
     };
 
 public:
-    enum class Result         mResult;
+    Result                    mResult;
     bool                      mIsComplexAlias;
     Block const*              mBlock;
     std::vector<Block const*> mComplexAliasPostSplitBlocks;

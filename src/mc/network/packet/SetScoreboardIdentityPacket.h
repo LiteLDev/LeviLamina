@@ -1,8 +1,8 @@
 #pragma once
 
-#include "ScoreboardIdentityPacketInfo.h"
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/enums/ScoreboardIdentityPacketType.h"
+#include "mc/network/packet/ScoreboardIdentityPacketInfo.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"

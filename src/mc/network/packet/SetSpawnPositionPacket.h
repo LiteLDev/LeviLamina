@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../NetworkBlockPosition.h"
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/enums/SpawnPositionType.h"
+#include "mc/network/NetworkBlockPosition.h"
 #include "mc/world/level/dimension/Dimension.h"
 
 // auto generated inclusion list

@@ -17,8 +17,8 @@ public:
     bool                     mIsWorldBuilder;   // this+0x18
     bool                     mIsCreative;       // this+0x19
     ActorUniqueID            mEntityID;         // this+0x20
-    enum class ActorType     mEntityType;       // this+0x28
-    enum class ActorCategory mEntityCategories; // this+0x2C
+    ::ActorType              mEntityType;       // this+0x28
+    ::ActorCategory          mEntityCategories; // this+0x2C
     std::string              mEntityNameTag;    // this+0x30
 
 public:

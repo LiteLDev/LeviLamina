@@ -16,9 +16,9 @@ public:
         Invalid = 0x4,
     };
 
-    std::string     mBlockState; // this+0x0
-    std::string     mValue;      // this+0x20
-    enum class Type mType;       // this+0x40
+    std::string mBlockState; // this+0x0
+    std::string mValue;      // this+0x20
+    Type        mType;       // this+0x40
 public:
     // NOLINTBEGIN
     // symbol:

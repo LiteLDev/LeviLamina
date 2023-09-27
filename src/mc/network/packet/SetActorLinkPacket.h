@@ -1,7 +1,7 @@
 #pragma once
 
-#include "ActorLink.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/packet/ActorLink.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"

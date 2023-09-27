@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../SubClientConnectionRequest.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/SubClientConnectionRequest.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"

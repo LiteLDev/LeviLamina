@@ -2,8 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/mce/UUID.h"
-#include "mc/enums/AttributeModifierOperation.h"
-#include "mc/enums/AttributeOperands.h"
 
 // auto generated inclusion list
 #include "mc/enums/AttributeModifierOperation.h"
@@ -16,12 +14,12 @@ namespace mce { class UUID; }
 
 class AttributeModifier {
 public:
-    float                                 mAmount;
-    enum class AttributeModifierOperation mOperation;
-    enum class AttributeOperands          mOperand;
-    std::string                           mName;
-    mce::UUID                             mId;
-    bool                                  mSerialize;
+    float                        mAmount;
+    ::AttributeModifierOperation mOperation;
+    ::AttributeOperands          mOperand;
+    std::string                  mName;
+    mce::UUID                    mId;
+    bool                         mSerialize;
 
     // NOLINTBEGIN
     // vIndex: 0, symbol: __unk_vfn_0

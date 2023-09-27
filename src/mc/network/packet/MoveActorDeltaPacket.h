@@ -1,7 +1,7 @@
 #pragma once
 
-#include "MoveActorDeltaData.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/packet/MoveActorDeltaData.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"

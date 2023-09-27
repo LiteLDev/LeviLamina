@@ -1,12 +1,12 @@
 #pragma once
 
-#include "ActorLink.h"
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/mce/UUID.h"
 #include "mc/enums/BuildPlatform.h"
 #include "mc/enums/GameType.h"
 #include "mc/math/Vec2.h"
 #include "mc/math/Vec3.h"
+#include "mc/network/packet/ActorLink.h"
 #include "mc/world/ActorRuntimeID.h"
 #include "mc/world/ActorUniqueID.h"
 #include "mc/world/actor/DataItem.h"

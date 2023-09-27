@@ -14,10 +14,6 @@ public:
     ItemStackNetResultMap(ItemStackNetResultMap const&);
     ItemStackNetResultMap();
 
-    static constexpr BidirectionalUnorderedMap<enum class ItemStackNetResult, std::string> const& getMap() {
-        return mMap;
-    }
-
 public:
     // NOLINTBEGIN
     // symbol:

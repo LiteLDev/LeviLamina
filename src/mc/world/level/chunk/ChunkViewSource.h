@@ -17,7 +17,7 @@ public:
     ChunkViewSource();
 
 
-    enum class ChunkSource::LoadMode      mParentLoadMode;
+    ::ChunkSource::LoadMode               mParentLoadMode;
     GridArea<std::shared_ptr<LevelChunk>> mArea;
     ChunkSource&                          mMainSource;
 

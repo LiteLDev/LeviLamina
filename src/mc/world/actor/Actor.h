@@ -55,7 +55,7 @@ public:
 
     LLAPI void refresh();
 
-    LLNDAPI bool isInstanceOf(enum class ActorType type) const;
+    LLNDAPI bool isInstanceOf(::ActorType type) const;
 
     LLNDAPI std::string const& getTypeName() const;
 

@@ -65,7 +65,7 @@ public:
      * @param id The network identifier of the client to send the packet to.
      * @param clientId The sub-client ID of the client to send the packet to.
      */
-    LLAPI void sendToClient(class NetworkIdentifier const&,enum class SubClientId) const;
+    LLAPI void sendToClient(class NetworkIdentifier const&, ::SubClientId) const;
 
     /**
      * Send the packet to all clients connected to the server.

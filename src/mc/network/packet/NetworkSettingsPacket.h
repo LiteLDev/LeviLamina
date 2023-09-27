@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../NetworkSettingOptions.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/NetworkSettingOptions.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"

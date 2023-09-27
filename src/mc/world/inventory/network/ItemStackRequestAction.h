@@ -1,8 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/item/components/ItemStackRequestActionType.h"
-
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -14,12 +12,8 @@ public:
     // prevent constructor by default
     ItemStackRequestAction() = delete;
 
-    enum class ItemStackRequestActionType mActionType; // this+0x8
+    ::ItemStackRequestActionType mActionType; // this+0x8
 
-    static constexpr BidirectionalUnorderedMap<enum class ItemStackRequestActionType, std::string> const&
-    getActionTypeMap() {
-        return actionTypeMap;
-    }
 
 public:
     // NOLINTBEGIN

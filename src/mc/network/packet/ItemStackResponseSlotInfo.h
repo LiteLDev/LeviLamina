@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../network/TypedServerNetId.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/TypedServerNetId.h"
 #include "mc/world/item/components/ItemStackNetIdTag.h"
 
 struct ItemStackResponseSlotInfo {

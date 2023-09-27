@@ -13,19 +13,19 @@ class BaseCircuitComponent {
 public:
     CircuitComponentList mSources;
     // Core::RefCountedSet<BaseCircuitComponent*> mDestinations; // DEBUG
-    bool                            mIgnoreFirstUpdate;
-    bool                            mIsFirstTime;
-    bool                            mNeedsUpdate;
-    class BlockPos                  mPos;
-    class BlockPos                  mChunkPosition;
-    bool                            mShouldEvaluate;
-    int                             mStrength;
-    enum class FacingID             mDirection;
-    bool                            mAllowPowerUp;
-    bool                            mAllowPowerDown;
-    bool                            mRemoved;
-    bool                            mConsumePowerAnyDirection;
-    enum class CircuitComponentType mCircuitComponentType;
+    bool                   mIgnoreFirstUpdate;
+    bool                   mIsFirstTime;
+    bool                   mNeedsUpdate;
+    class BlockPos         mPos;
+    class BlockPos         mChunkPosition;
+    bool                   mShouldEvaluate;
+    int                    mStrength;
+    ::FacingID             mDirection;
+    bool                   mAllowPowerUp;
+    bool                   mAllowPowerDown;
+    bool                   mRemoved;
+    bool                   mConsumePowerAnyDirection;
+    ::CircuitComponentType mCircuitComponentType;
 
 public:
     // NOLINTBEGIN

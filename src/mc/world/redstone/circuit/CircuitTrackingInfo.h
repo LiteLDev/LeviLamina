@@ -10,10 +10,10 @@ class CircuitTrackingInfo {
 public:
     class Entry {
     public:
-        class BaseCircuitComponent*     mComponent;
-        class BlockPos                  mPos;
-        enum class FacingID             mDirection;
-        enum class CircuitComponentType mTypeID;
+        class BaseCircuitComponent* mComponent;
+        class BlockPos              mPos;
+        ::FacingID                  mDirection;
+        ::CircuitComponentType      mTypeID;
 
         constexpr Entry(class BaseCircuitComponent* component, const BlockPos& pos) {
             mComponent = component;

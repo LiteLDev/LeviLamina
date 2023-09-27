@@ -1,10 +1,10 @@
 #pragma once
 
-#include "ActorLink.h"
-#include "SyncedAttribute.h"
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/math/Vec2.h"
 #include "mc/math/Vec3.h"
+#include "mc/network/packet/ActorLink.h"
+#include "mc/network/packet/SyncedAttribute.h"
 #include "mc/world/ActorRuntimeID.h"
 #include "mc/world/ActorUniqueID.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"

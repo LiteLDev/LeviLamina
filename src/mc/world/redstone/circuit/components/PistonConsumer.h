@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/FacingID.h"
 
 // auto generated inclusion list
 #include "mc/enums/CircuitComponentType.h"
@@ -8,7 +9,7 @@
 
 class PistonConsumer : public ::ConsumerComponent {
 public:
-    enum class FacingID        mBlockedFace;
+    ::FacingID                 mBlockedFace;
     const CircuitComponentType mCircuitComponentType = CircuitComponentType::PistonConsumer;
 
 public:

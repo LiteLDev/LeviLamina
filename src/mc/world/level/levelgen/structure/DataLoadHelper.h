@@ -1,98 +1,67 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/DataLoadHelperType.h"
+#include "mc/enums/Mirror.h"
+#include "mc/enums/Rotation.h"
+#include "mc/world/Direction.h"
 
 class DataLoadHelper {
 public:
-    /**
-     * @vftbl 0
-
-     */
+    // NOLINTBEGIN
+    // vIndex: 0
     virtual ~DataLoadHelper() = default;
-    /**
-     * @vftbl 1
 
-     */
+    // vIndex: 1
     virtual class Vec3 loadPosition(class Vec3 const&) = 0;
-    /**
-     * @vftbl 2
 
-     */
+    // vIndex: 2
     virtual class BlockPos loadBlockPosition(class BlockPos const&) = 0;
-    /**
-     * @vftbl 3
 
-     */
+    // vIndex: 3
     virtual class BlockPos loadBlockPositionOffset(class BlockPos const&) = 0;
-    /**
-     * @vftbl 4
 
-     */
+    // vIndex: 4
     virtual float loadRotationDegreesX(float) = 0;
-    /**
-     * @vftbl 5
 
-     */
+    // vIndex: 5
     virtual float loadRotationDegreesY(float) = 0;
-    /**
-     * @vftbl 6
 
-     */
+    // vIndex: 6
     virtual float loadRotationRadiansX(float) = 0;
-    /**
-     * @vftbl 7
 
-     */
+    // vIndex: 7
     virtual float loadRotationRadiansY(float) = 0;
-    /**
-     * @vftbl 8
 
-     */
+    // vIndex: 8
     virtual uchar loadFacingID(uchar) = 0;
-    /**
-     * @vftbl 9
 
-     */
+    // vIndex: 9
     virtual class Vec3 loadDirection(class Vec3 const&) = 0;
-    /**
-     * @vftbl 10
 
-     */
-    virtual enum class Direction::Type loadDirection(enum class Direction::Type) = 0;
-    /**
-     * @vftbl 11
+    // vIndex: 10
+    virtual ::Direction::Type loadDirection(::Direction::Type) = 0;
 
-     */
-    virtual enum class Rotation loadRotation(enum class Rotation) = 0;
-    /**
-     * @vftbl 12
+    // vIndex: 11
+    virtual ::Rotation loadRotation(::Rotation) = 0;
 
-     */
-    virtual enum class Mirror loadMirror(enum class Mirror) = 0;
-    /**
-     * @vftbl 13
+    // vIndex: 12
+    virtual ::Mirror loadMirror(::Mirror) = 0;
 
-     */
+    // vIndex: 13
     virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID) = 0;
-    /**
-     * @vftbl 14
 
-     */
+    // vIndex: 14
     virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID) = 0;
-    /**
-     * @vftbl 15
 
-     */
+    // vIndex: 15
     virtual struct InternalComponentRegistry::ComponentInfo const*
     loadActorInternalComponentInfo(std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo> const&, std::string const&) = 0;
-    /**
-     * @vftbl 16
 
-     */
-    virtual enum class DataLoadHelperType getType() const = 0;
-    /**
-     * @vftbl 17
+    // vIndex: 16
+    virtual ::DataLoadHelperType getType() const = 0;
 
-     */
+    // vIndex: 17
     virtual bool shouldResetTime() = 0;
+    // NOLINTEND
 };

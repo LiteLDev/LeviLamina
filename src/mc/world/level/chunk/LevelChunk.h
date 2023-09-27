@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/HardcodedSpawnAreaType.h"
 #include "mc/world/level/levelgen/structure/BoundingBox.h"
 
 // auto generated inclusion list
@@ -37,8 +36,8 @@ public:
 
     struct HardcodedSpawningArea {
     public:
-        class BoundingBox                 aabb;
-        enum class HardcodedSpawnAreaType type;
+        class BoundingBox        aabb;
+        ::HardcodedSpawnAreaType type;
     };
 
     class Neighbors {

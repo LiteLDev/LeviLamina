@@ -12,7 +12,7 @@
 
 class DataItem {
 public:
-    enum class DataItemType mType;
+    ::DataItemType mType;
     ushort                  mId;
     bool                    mDirty = true;
 
@@ -29,7 +29,7 @@ public:
     inline static std::unique_ptr<DataItem> create(ushort key, T const& value);
 
     template <typename T>
-    inline static std::unique_ptr<DataItem> create(enum class ActorDataIDs key, T const& value);
+    inline static std::unique_ptr<DataItem> create(::ActorDataIDs key, T const& value);
 
 public:
     // NOLINTBEGIN

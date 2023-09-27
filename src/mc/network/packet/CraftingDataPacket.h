@@ -1,10 +1,10 @@
 #pragma once
 
-#include "ContainerMixDataEntry.h"
-#include "CraftingDataEntry.h"
-#include "MaterialReducerDataEntry.h"
-#include "PotionMixDataEntry.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/packet/ContainerMixDataEntry.h"
+#include "mc/network/packet/CraftingDataEntry.h"
+#include "mc/network/packet/MaterialReducerDataEntry.h"
+#include "mc/network/packet/PotionMixDataEntry.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
