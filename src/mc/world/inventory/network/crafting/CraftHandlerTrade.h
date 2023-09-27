@@ -39,16 +39,15 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_getMerchantRecipeFromNetId@CraftHandlerTrade@@AEAA?AV?$tuple@W4ItemStackNetResult@@PEBVMerchantRecipe@@@std@@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-    MCAPI std::tuple<::ItemStackNetResult, class MerchantRecipe const*>
-          _getMerchantRecipeFromNetId(class RecipeNetId const&);
+    MCAPI std::tuple<::ItemStackNetResult, class MerchantRecipe const*> _getMerchantRecipeFromNetId(RecipeNetId const&);
 
     // symbol:
     // ?_handleTrade1@CraftHandlerTrade@@AEAA?AW4ItemStackNetResult@@AEBV?$ItemStackRequestActionCraft@V?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@$0M@@@@Z
-    MCAPI ::ItemStackNetResult _handleTrade1(class ItemStackRequestActionCraft<class RecipeNetId, 12> const&);
+    MCAPI ::ItemStackNetResult _handleTrade1(class ItemStackRequestActionCraft<RecipeNetId, 12> const&);
 
     // symbol:
     // ?_initResultItem@CraftHandlerTrade@@AEAA?AW4ItemStackNetResult@@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-    MCAPI ::ItemStackNetResult _initResultItem(class RecipeNetId const&);
+    MCAPI ::ItemStackNetResult _initResultItem(RecipeNetId const&);
 
     // symbol: ?_initTrade2Consumes@CraftHandlerTrade@@AEAA?AW4ItemStackNetResult@@XZ
     MCAPI ::ItemStackNetResult _initTrade2Consumes();

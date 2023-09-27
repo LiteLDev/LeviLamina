@@ -28,7 +28,7 @@ public:
 
     // vIndex: 2, symbol:
     // ?getRequestId@ItemStackNetManagerServer@@UEBA?AV?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@XZ
-    virtual class ItemStackRequestId getRequestId() const;
+    virtual ItemStackRequestId getRequestId() const;
 
     // vIndex: 3, symbol: ?retainSetItemStackNetIdVariant@ItemStackNetManagerServer@@UEBA_NXZ
     virtual bool retainSetItemStackNetIdVariant() const;
@@ -48,7 +48,7 @@ public:
     // symbol:
     // ?_handleLegacyTransactionRequest@ItemStackNetManagerServer@@QEAAXAEBV?$TypedClientNetId@UItemStackLegacyRequestIdTag@@H$0A@@@AEBV?$vector@U?$pair@W4ContainerEnumName@@V?$vector@EV?$allocator@E@std@@@std@@@std@@V?$allocator@U?$pair@W4ContainerEnumName@@V?$vector@EV?$allocator@E@std@@@std@@@std@@@2@@std@@@Z
     MCAPI void
-    _handleLegacyTransactionRequest(class ItemStackLegacyRequestId const&, std::vector<std::pair<::ContainerEnumName, std::vector<uchar>>> const&);
+    _handleLegacyTransactionRequest(ItemStackLegacyRequestId const&, std::vector<std::pair<::ContainerEnumName, std::vector<uchar>>> const&);
 
     // symbol:
     // ?_retainSetItemStackNetIdVariantScope@ItemStackNetManagerServer@@QEAA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@XZ
@@ -82,8 +82,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_filterStrings@ItemStackNetManagerServer@@AEAAXV?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBW4TextProcessingEventOrigin@@@Z
-    MCAPI void
-    _filterStrings(class ItemStackRequestId, std::vector<std::string> const&, ::TextProcessingEventOrigin const&);
+    MCAPI void _filterStrings(ItemStackRequestId, std::vector<std::string> const&, ::TextProcessingEventOrigin const&);
 
     // symbol:
     // ?_handleRequestData@ItemStackNetManagerServer@@AEAAXAEAV?$vector@UItemStackResponseInfo@@V?$allocator@UItemStackResponseInfo@@@std@@@std@@PEBVItemStackRequestData@@@Z

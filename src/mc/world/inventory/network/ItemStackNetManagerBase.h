@@ -24,7 +24,7 @@ public:
 
     // vIndex: 2, symbol:
     // ?getRequestId@ItemStackNetManagerServer@@UEBA?AV?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@XZ
-    virtual class ItemStackRequestId getRequestId() const = 0;
+    virtual ItemStackRequestId getRequestId() const = 0;
 
     // vIndex: 3, symbol: ?retainSetItemStackNetIdVariant@ItemStackNetManagerBase@@UEBA_NXZ
     virtual bool retainSetItemStackNetIdVariant() const;

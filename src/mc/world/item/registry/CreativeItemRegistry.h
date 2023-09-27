@@ -28,7 +28,7 @@ public:
 
     // symbol:
     // ?findCreativeItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@@Z
-    MCAPI class CreativeItemEntry* findCreativeItemEntry(class CreativeItemNetId const&);
+    MCAPI class CreativeItemEntry* findCreativeItemEntry(CreativeItemNetId const&);
 
     // symbol: ?findCreativeItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBVItemInstance@@@Z
     MCAPI class CreativeItemEntry* findCreativeItemEntry(class ItemInstance const&);
@@ -54,7 +54,7 @@ public:
 
     // symbol:
     // ?newItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@AEBVItemInstance@@@Z
-    MCAPI class CreativeItemEntry* newItemEntry(class CreativeItemNetId const&, class ItemInstance const&);
+    MCAPI class CreativeItemEntry* newItemEntry(CreativeItemNetId const&, class ItemInstance const&);
 
     // symbol: ?resetGroups@CreativeItemRegistry@@QEAAXXZ
     MCAPI void resetGroups();
