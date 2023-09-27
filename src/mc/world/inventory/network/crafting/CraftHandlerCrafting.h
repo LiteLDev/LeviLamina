@@ -50,7 +50,7 @@ public:
 
     // symbol:
     // ?_handleCraftOutput@CraftHandlerCrafting@@AEAA?AW4ItemStackNetResult@@AEBV?$ItemStackRequestActionCraft@V?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@$0M@@@@Z
-    MCAPI ::ItemStackNetResult _handleCraftOutput(class ItemStackRequestActionCraft<class RecipeNetId, 12> const&);
+    MCAPI ::ItemStackNetResult _handleCraftOutput(class ItemStackRequestActionCraft<RecipeNetId, 12> const&);
 
     // NOLINTEND
 };

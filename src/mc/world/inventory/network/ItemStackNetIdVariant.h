@@ -30,7 +30,7 @@ public:
     MCAPI bool isValid() const;
 
     // symbol: ??4ItemStackNetIdVariant@@QEAAAEAU0@AEBV?$TypedClientNetId@UItemStackLegacyRequestIdTag@@H$0A@@@@Z
-    MCAPI struct ItemStackNetIdVariant& operator=(class ItemStackLegacyRequestId const&);
+    MCAPI struct ItemStackNetIdVariant& operator=(ItemStackLegacyRequestId const&);
 
     // symbol: ??4ItemStackNetIdVariant@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct ItemStackNetIdVariant& operator=(struct ItemStackNetIdVariant&&);
@@ -39,7 +39,7 @@ public:
     MCAPI struct ItemStackNetIdVariant& operator=(struct ItemStackNetIdVariant const&);
 
     // symbol: ??4ItemStackNetIdVariant@@QEAAAEAU0@AEBV?$TypedServerNetId@UItemStackNetIdTag@@H$0A@@@@Z
-    MCAPI struct ItemStackNetIdVariant& operator=(class ItemStackNetId const&);
+    MCAPI struct ItemStackNetIdVariant& operator=(ItemStackNetId const&);
 
     // symbol: ??8ItemStackNetIdVariant@@QEBA_NAEBU0@@Z
     MCAPI bool operator==(struct ItemStackNetIdVariant const&) const;
@@ -51,7 +51,7 @@ public:
     MCAPI std::string toString() const;
 
     // symbol: ?tryGetServerNetId@ItemStackNetIdVariant@@QEBAPEBV?$TypedServerNetId@UItemStackNetIdTag@@H$0A@@@XZ
-    MCAPI class ItemStackNetId const* tryGetServerNetId() const;
+    MCAPI ItemStackNetId const* tryGetServerNetId() const;
 
     // symbol: ??1ItemStackNetIdVariant@@QEAA@XZ
     MCAPI ~ItemStackNetIdVariant();

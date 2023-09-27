@@ -41,7 +41,7 @@ public:
 
     // symbol:
     // ?_handleEnchant@CraftHandlerEnchant@@AEAA?AW4ItemStackNetResult@@AEBV?$ItemStackRequestActionCraft@V?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@$0M@@@@Z
-    MCAPI ::ItemStackNetResult _handleEnchant(class ItemStackRequestActionCraft<class RecipeNetId, 12> const&);
+    MCAPI ::ItemStackNetResult _handleEnchant(class ItemStackRequestActionCraft<RecipeNetId, 12> const&);
 
     // NOLINTEND
 };

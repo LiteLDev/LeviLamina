@@ -83,7 +83,7 @@ public:
     MCAPI std::vector<class RecipeIngredient> const& getIngredients() const;
 
     // symbol: ?getNetId@Recipe@@QEBAAEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@XZ
-    MCAPI class RecipeNetId const& getNetId() const;
+    MCAPI RecipeNetId const& getNetId() const;
 
     // symbol: ?getPriority@Recipe@@QEBAHXZ
     MCAPI int getPriority() const;
@@ -101,7 +101,7 @@ public:
     MCAPI int getWidth() const;
 
     // symbol: ?setNetId@Recipe@@QEAAXAEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-    MCAPI void setNetId(class RecipeNetId const&);
+    MCAPI void setNetId(RecipeNetId const&);
 
     // symbol: ?isAnyAuxValue@Recipe@@SA_NAEBVItemDescriptor@@@Z
     MCAPI static bool isAnyAuxValue(class ItemDescriptor const&);
