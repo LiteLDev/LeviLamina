@@ -22,18 +22,15 @@ add_requires("fmt 9.1.0")
 add_requires("gsl v3.1.0")
 add_requires("gtest 1.12.1")
 add_requires("leveldb 1.23")
-add_requires("openssl 1.1.1-t") -- should be installed before mariadb-connector-c
-add_requires("mariadb-connector-c 3.3.4")
+add_requires("openssl 1.1.1-t")
 add_requires("magic_enum v0.8.2")
 add_requires("nlohmann_json v3.11.2")
 add_requires("rapidjson v1.1.0")
 
 -- liteldev-repo
-add_requires("dyncall 1.4")
 add_requires("compact_enc_det v1.0.1")
 add_requires("fifo_map v1.0.0")
 add_requires("pcg_cpp v1.0.0")
-add_requires("nbt_cpp v1.0.1")
 add_requires("preloader v1.1.0")
 add_requires("symbolprovider v1.1.0")
 
@@ -63,9 +60,9 @@ target("LiteLoader")
     add_shflags("/DELAYLOAD:bedrock_server.dll")
     add_files("src/**.cpp","src/**.rc")
     -- xmake-repo
-    add_packages("asio", "cpp-httplib", "entt", "fmt", "gsl", "gtest", "leveldb", "mariadb-connector-c", "magic_enum", "nlohmann_json", "openssl", "rapidjson")
+    add_packages("asio", "cpp-httplib", "entt", "fmt", "gsl", "gtest", "leveldb", "magic_enum", "nlohmann_json", "openssl", "rapidjson")
     -- liteldev-repo
-    add_packages("fifo_map", "pcg_cpp", "nbt_cpp", "dyncall", "compact_enc_det", "preloader", "symbolprovider")
+    add_packages("fifo_map", "pcg_cpp", "compact_enc_det", "preloader", "symbolprovider")
     if has_config("localbdslibrary") then
         add_packages("localbdslibrary")
     else
