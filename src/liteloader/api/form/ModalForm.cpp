@@ -22,8 +22,11 @@ public:
         std::string buttonRight,
         Callback    callback = Callback()
     )
-    : mTitle(std::move(title)), mContent(std::move(content)), mButtonLeft(std::move(buttonLeft)),
-      mButtonRight(std::move(buttonRight)), mCallback(std::move(callback)) {}
+    : mTitle(std::move(title)),
+      mContent(std::move(content)),
+      mButtonLeft(std::move(buttonLeft)),
+      mButtonRight(std::move(buttonRight)),
+      mCallback(std::move(callback)) {}
     ~ModalFormImpl() override = default;
 
     void setTitle(const std::string& title) { mTitle = title; }
@@ -44,9 +47,7 @@ public:
         }
         int  id   = handler::addFormHandler(std::make_unique<handler::ModalFormHandler>(std::move(callback)));
         auto json = serialize();
-        if (json.is_null()) {
-            return false;
-        }
+        if (json.is_null()) { return false; }
         ModalFormRequestPacket(id, json.dump()).sendTo(player);
         return true;
     }
@@ -78,12 +79,12 @@ ModalForm::ModalForm(
     Callback    callback
 )
 : impl(std::make_unique<ModalFormImpl>(
-      std::move(title),
-      std::move(content),
-      std::move(buttonLeft),
-      std::move(buttonRight),
-      std::move(callback)
-  )) {}
+    std::move(title),
+    std::move(content),
+    std::move(buttonLeft),
+    std::move(buttonRight),
+    std::move(callback)
+)) {}
 
 ModalForm& ModalForm::setTitle(const std::string& title) {
     impl->setTitle(title);

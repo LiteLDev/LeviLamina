@@ -33,17 +33,12 @@ inline vector<std::string> getPreloadList() {
         if (preloadConf) {
             std::string preloadName;
             while (getline(preloadConf, preloadName)) {
-                if (preloadName.back() == '\n')
-                    preloadName.pop_back();
-                if (preloadName.back() == '\r')
-                    preloadName.pop_back();
+                if (preloadName.back() == '\n') preloadName.pop_back();
+                if (preloadName.back() == '\r') preloadName.pop_back();
 
-                if (preloadName.empty() || preloadName.front() == '#')
-                    continue;
-                if (preloadName.find("LiteLoader.dll") != std::string::npos)
-                    continue;
-                if (preloadName.find("LiteXLoader.dll") != std::string::npos)
-                    continue;
+                if (preloadName.empty() || preloadName.front() == '#') continue;
+                if (preloadName.find("LiteLoader.dll") != std::string::npos) continue;
+                if (preloadName.find("LiteXLoader.dll") != std::string::npos) continue;
 
                 preloadList.emplace_back(preloadName);
             }
@@ -63,17 +58,13 @@ void ll::LoadMain() {
     filesystem::directory_iterator ent("plugins");
     for (auto& file : ent) {
 
-        if (!file.is_regular_file()) {
-            continue;
-        }
+        if (!file.is_regular_file()) { continue; }
         const filesystem::path& path = file.path();
 
         auto ext = path.extension().u8string();
 
         // Check is dll
-        if (ext != u8".dll") {
-            continue;
-        }
+        if (ext != u8".dll") { continue; }
 
         // Avoid preloaded plugin
         auto pluginFileName = u8str2str(path.filename().u8string());
@@ -83,8 +74,7 @@ void ll::LoadMain() {
                 loaded = true;
                 break;
             }
-        if (loaded)
-            continue;
+        if (loaded) continue;
 
         // Do load
         auto lib = LoadLibraryW(path.wstring().c_str());
@@ -103,9 +93,7 @@ void ll::LoadMain() {
             DWORD       lastError   = GetLastError();
             std::string fileVersion = GetFileVersionString(u8str2str(path.u8string()), true);
             std::string info        = pluginFileName;
-            if (!fileVersion.empty()) {
-                info += " [" + fileVersion + "]";
-            }
+            if (!fileVersion.empty()) { info += " [" + fileVersion + "]"; }
             ll::logger.error("Fail to load plugin <{}>!", info);
             ll::logger.error("Error: Code[{}] {}", lastError, GetLastErrorMessage(lastError));
         }

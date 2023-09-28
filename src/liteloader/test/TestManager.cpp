@@ -1,7 +1,7 @@
 #include "TestManager.h"
 
-#include "fmt/color.h"
-#include "fmt/format.h"
+#include "FMT/color.h"
+#include "FMT/format.h"
 
 namespace ll::test {
 
@@ -15,12 +15,13 @@ void TestManager::initAllTests() {
             failed++;
             fmt::print("Test {0} init failed: {1}\n", test->getName(), result.message);
         }
-        if (status == TestStatus::NotStarted) {
-            status = result.isPassed ? TestStatus::Running : TestStatus::Failed;
-        }
+        if (status == TestStatus::NotStarted) { status = result.isPassed ? TestStatus::Running : TestStatus::Failed; }
     }
     fmt::print(
-        "Initialized {0} tests, success {1}, failed {2}\n", testStatus.size(), testStatus.size() - failed, failed
+        "Initialized {0} tests, success {1}, failed {2}\n",
+        testStatus.size(),
+        testStatus.size() - failed,
+        failed
     );
 }
 

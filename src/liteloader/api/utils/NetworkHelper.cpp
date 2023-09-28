@@ -45,20 +45,16 @@ bool HttpGet(
         delete cli;
         return false;
     }
-    if (timeout > 0)
-        cli->set_connection_timeout(timeout, 0);
+    if (timeout > 0) cli->set_connection_timeout(timeout, 0);
 
     std::thread([cli, headers, callback, path{std::move(path)}]() {
-        if (!ll::isDebugMode())
-            _set_se_translator(seh_exception::TranslateSEHtoCE);
+        if (!ll::isDebugMode()) _set_se_translator(seh_exception::TranslateSEHtoCE);
         try {
             auto response = cli->Get(path.c_str(), headers);
             delete cli;
 
-            if (!response)
-                callback(-1, "");
-            else
-                callback(response->status, response->body);
+            if (!response) callback(-1, "");
+            else callback(response->status, response->body);
         } catch (const seh_exception& e) {
             ll::logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
             ll::logger.error("In HttpGet callback");
@@ -102,19 +98,15 @@ bool HttpPost(
         delete cli;
         return false;
     }
-    if (timeout > 0)
-        cli->set_connection_timeout(timeout, 0);
+    if (timeout > 0) cli->set_connection_timeout(timeout, 0);
 
     std::thread([cli, headers, data, type, callback, path{std::move(path)}]() {
-        if (!ll::isDebugMode())
-            _set_se_translator(seh_exception::TranslateSEHtoCE);
+        if (!ll::isDebugMode()) _set_se_translator(seh_exception::TranslateSEHtoCE);
         try {
             auto response = cli->Post(path.c_str(), headers, data, type.c_str());
             delete cli;
-            if (!response)
-                callback(-1, "");
-            else
-                callback(response->status, response->body);
+            if (!response) callback(-1, "");
+            else callback(response->status, response->body);
         } catch (const seh_exception& e) {
             ll::logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
             ll::logger.error("In HttpPost callback");
@@ -137,21 +129,15 @@ bool HttpGetSync(const std::string& url, int* statusRtn, std::string* dataRtn, i
     SplitHttpUrl(url, host, path);
 
     httplib::Client cli(host.c_str());
-    if (!cli.is_valid()) {
-        return false;
-    }
-    if (timeout > 0)
-        cli.set_connection_timeout(timeout, 0);
+    if (!cli.is_valid()) { return false; }
+    if (timeout > 0) cli.set_connection_timeout(timeout, 0);
 
     auto response = cli.Get(path.c_str());
 
-    if (!response)
-        return false;
+    if (!response) return false;
     else {
-        if (statusRtn)
-            *statusRtn = response->status;
-        if (dataRtn)
-            *dataRtn = response->body;
+        if (statusRtn) *statusRtn = response->status;
+        if (dataRtn) *dataRtn = response->body;
     }
     return true;
 }

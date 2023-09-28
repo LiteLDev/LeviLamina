@@ -209,13 +209,9 @@ inline std::string trlImpl(HMODULE hPlugin, const std::string& localeName, const
                         continue;
                     }
                 }
-                if (lastIsBracket) {
-                    lastIsBracket = false;
-                }
+                if (lastIsBracket) { lastIsBracket = false; }
             }
-            if (cnt != argSz) {
-                return formatStr;
-            }
+            if (cnt != argSz) { return formatStr; }
         }
     }
     // realFormatStr = FixCurlyBracket(realFormatStr);
@@ -309,8 +305,7 @@ inline I18nBase* load(Args&&... args) {
     try {
         I18nBase* res = new T(std::forward<Args>(args)...);
         return &PluginOwnData::setWithoutNewImpl<I18nBase>(GetCurrentModule(), I18nBase::POD_KEY, res);
-    } catch (...) {
-    }
+    } catch (...) {}
     return nullptr;
 }
 
@@ -323,9 +318,7 @@ inline I18nBase* load(Args&&... args) {
 inline I18nBase* loadFrom(const std::string& plugin) {
     if (ll::hasPlugin(plugin)) {
         auto p = ll::getPlugin(plugin);
-        if (p) {
-            return loadFromImpl(GetCurrentModule(), p->handle);
-        }
+        if (p) { return loadFromImpl(GetCurrentModule(), p->handle); }
     }
     return nullptr;
 }

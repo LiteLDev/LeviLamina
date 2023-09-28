@@ -14,8 +14,7 @@ namespace ll::StringUtils {
 // for lifetime reason, use pointer instead of reference
 inline std::vector<std::string_view> splitByPattern(const std::string* str, const std::string& pattern) {
     std::string_view s = *str;
-    if (s.empty())
-        return {};
+    if (s.empty()) return {};
     size_t pos  = s.find(pattern);
     size_t size = s.size();
 
@@ -38,10 +37,8 @@ inline std::vector<std::string_view> splitByPattern(const std::string* str, cons
  */
 inline std::string replaceAll(std::string str, const std::string& oldValue, const std::string& newValue) {
     for (std::string::size_type pos(0); pos != std::string::npos; pos += newValue.length()) {
-        if ((pos = str.find(oldValue, pos)) != std::string::npos)
-            str.replace(pos, oldValue.length(), newValue);
-        else
-            break;
+        if ((pos = str.find(oldValue, pos)) != std::string::npos) str.replace(pos, oldValue.length(), newValue);
+        else break;
     }
     return str;
 }
@@ -73,16 +70,13 @@ template <typename T>
     requires std::is_integral_v<T>
 inline std::string intToHexStr(T value, bool upperCase = true, bool no0x = true, bool noLeadingZero = true) {
     std::string result;
-    if (value < 0)
-        result += '-';
-    if (!no0x)
-        result += "0x";
+    if (value < 0) result += '-';
+    if (!no0x) result += "0x";
     auto hexStr      = upperCase ? "0123456789ABCDEF" : "0123456789abcdef";
     bool leadingZero = true;
     for (int i = sizeof(T) * 2; i > 0; --i) {
         auto hex = (value >> (i - 1) * 4) & 0xF;
-        if (noLeadingZero && leadingZero && hex == 0)
-            continue;
+        if (noLeadingZero && leadingZero && hex == 0) continue;
         leadingZero  = false;
         result      += hexStr[hex];
     }

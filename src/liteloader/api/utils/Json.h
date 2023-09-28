@@ -71,25 +71,20 @@ public:
             return *this;
         }
         bool operator<(CZString const& other) const {
-            if (!cstr_)
-                return index_ < other.index_;
+            if (!cstr_) return index_ < other.index_;
             uint this_len  = this->storage_.length_;
             uint other_len = other.storage_.length_;
             uint min_len   = std::min<uint>(this_len, other_len);
             int  comp      = memcmp(this->cstr_, other.cstr_, min_len);
-            if (comp < 0)
-                return true;
-            if (comp > 0)
-                return false;
+            if (comp < 0) return true;
+            if (comp > 0) return false;
             return (this_len < other_len);
         }
         bool operator==(CZString const& other) const {
-            if (!cstr_)
-                return index_ == other.index_;
+            if (!cstr_) return index_ == other.index_;
             uint this_len  = this->storage_.length_;
             uint other_len = other.storage_.length_;
-            if (this_len != other_len)
-                return false;
+            if (this_len != other_len) return false;
             int comp = memcmp(this->cstr_, other.cstr_, this_len);
             return comp == 0;
         }
@@ -177,9 +172,7 @@ public:
     MCAPI ArrayIndex size() const;
     MCAPI bool       empty() const;
     void             clear() {
-        if (type() == arrayValue || type() == objectValue) {
-            value_.map_->clear();
-        }
+        if (type() == arrayValue || type() == objectValue) { value_.map_->clear(); }
     }
     MCAPI void         resize(ArrayIndex newSize);
     MCAPI Value&       operator[](ArrayIndex index);
@@ -216,7 +209,7 @@ public:
     } value_;
     struct {
         ValueType value_type_ : 8;
-        bool      allocated_ : 1;
+        bool      allocated_  : 1;
     } bits_;
 
 private:
@@ -240,8 +233,7 @@ protected:
     MCAPI class Json::Value& deref(void) const;
 
     bool isEqual(const SelfType& other) const {
-        if (isNull_)
-            return other.isNull_;
+        if (isNull_) return other.isNull_;
         return current_ == other.current_;
     }
 

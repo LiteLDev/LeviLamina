@@ -59,10 +59,8 @@ void inline to_json(nlohmann::json& j, const LLConfig& conf) {
 
 void inline from_json(const nlohmann::json& j, LLConfig& conf) {
     conf.debugMode = j.value("DebugMode", false);
-    if (ll::commandLineOption.noColorOption)
-        conf.colorLog = false;
-    else
-        conf.colorLog = j.value("ColorLog", true);
+    if (ll::commandLineOption.noColorOption) conf.colorLog = false;
+    else conf.colorLog = j.value("ColorLog", true);
     conf.version                   = j.value("Version", 1);
     conf.logLevel                  = j.value("LogLevel", 4);
     conf.language                  = j.value("Language", "system");

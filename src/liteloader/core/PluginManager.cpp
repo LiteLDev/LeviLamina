@@ -6,8 +6,6 @@
 
 #include "liteloader/api/LLAPI.h"
 #include "liteloader/api/LoggerAPI.h"
-#include "liteloader/api/ScheduleAPI.h"
-#include "liteloader/api/i18n/I18nAPI.h"
 #include "liteloader/api/utils/StringUtils.h"
 #include "liteloader/api/utils/WinHelper.h"
 #include "liteloader/core/LiteLoader.h"
@@ -47,17 +45,14 @@ bool ll::PluginManager::registerPlugin(
         plugin.type = others.at("PluginType") == "Script Plugin" ? Plugin::PluginType::ScriptPlugin
                                                                  : Plugin::PluginType::DllPlugin;
         others.erase("PluginType");
-    } catch (...) {
-        plugin.type = handle ? Plugin::PluginType::DllPlugin : Plugin::PluginType::ScriptPlugin;
-    }
+    } catch (...) { plugin.type = handle ? Plugin::PluginType::DllPlugin : Plugin::PluginType::ScriptPlugin; }
 
     try {
         plugin.filePath =
             u8str2str(filesystem::path(str2wstr(others.at("PluginFilePath"))).lexically_normal().u8string());
         others.erase("PluginFilePath");
     } catch (...) {
-        if (handle)
-            plugin.filePath = GetModulePath(handle);
+        if (handle) plugin.filePath = GetModulePath(handle);
     }
 
     plugins.emplace(name, plugin);
@@ -77,10 +72,9 @@ bool ll::PluginManager::unRegisterPlugin(std::string name) {
 // Helper
 ll::Plugin* GetPlugin_Raw(const std::string& name, bool includeScriptPlugin) {
     for (auto& it : plugins) {
-        if (it.second.name == name ||
-            u8str2str(filesystem::path(str2wstr(it.second.filePath)).filename().u8string()) == name) {
-            if (!includeScriptPlugin && it.second.type == ll::Plugin::PluginType::ScriptPlugin)
-                continue;
+        if (it.second.name == name
+            || u8str2str(filesystem::path(str2wstr(it.second.filePath)).filename().u8string()) == name) {
+            if (!includeScriptPlugin && it.second.type == ll::Plugin::PluginType::ScriptPlugin) continue;
             return &it.second;
         }
     }
@@ -89,8 +83,7 @@ ll::Plugin* GetPlugin_Raw(const std::string& name, bool includeScriptPlugin) {
 
 ll::Plugin* ll::PluginManager::getPlugin(std::string name, bool includeScriptPlugin) {
     auto res = GetPlugin_Raw(std::move(name), includeScriptPlugin);
-    if (res)
-        return res;
+    if (res) return res;
     /* issue #510
     try
     {
@@ -104,13 +97,10 @@ ll::Plugin* ll::PluginManager::getPlugin(std::string name, bool includeScriptPlu
 }
 
 ll::Plugin* ll::PluginManager::getPlugin(HMODULE handle) {
-    if (!handle)
-        return nullptr;
+    if (!handle) return nullptr;
 
     for (auto& it : plugins) {
-        if (it.second.handle == handle) {
-            return &it.second;
-        }
+        if (it.second.handle == handle) { return &it.second; }
     }
     return nullptr;
 }
@@ -122,8 +112,7 @@ bool ll::PluginManager::hasPlugin(std::string name, bool includeScriptPlugin) {
 std::unordered_map<std::string, ll::Plugin*> ll::PluginManager::getAllPlugins(bool includeScriptPlugin) {
     std::unordered_map<std::string, ll::Plugin*> res;
     for (auto& [k, v] : plugins) {
-        if (!includeScriptPlugin && v.type == Plugin::PluginType::ScriptPlugin)
-            continue;
+        if (!includeScriptPlugin && v.type == Plugin::PluginType::ScriptPlugin) continue;
         res[k] = &v;
     }
     return res;

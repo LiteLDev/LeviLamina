@@ -22,13 +22,13 @@ public:
     ButtonCallback mCallback;
 
     explicit Button(std::string text, std::string image = "", ButtonCallback callback = ButtonCallback())
-    : mText(std::move(text)), mImage(std::move(image)), mCallback(std::move(callback)) {}
+    : mText(std::move(text)),
+      mImage(std::move(image)),
+      mCallback(std::move(callback)) {}
     ~Button() override = default;
 
     void callback(Player& player) {
-        if (mCallback) {
-            mCallback(player);
-        }
+        if (mCallback) { mCallback(player); }
     }
 
 protected:
@@ -61,7 +61,8 @@ public:
     Callback                                        mCallback;
 
     explicit SimpleFormImpl(std::string title, std::string content = "")
-    : mTitle(std::move(title)), mContent(std::move(content)) {}
+    : mTitle(std::move(title)),
+      mContent(std::move(content)) {}
 
     void setTitle(const std::string& title) { mTitle = title; }
 
@@ -91,10 +92,8 @@ public:
         uint id =
             handler::addFormHandler(std::make_unique<handler::SimpleFormHandler>(std::move(callback), buttonCallbacks));
         auto json = serialize();
-        if (json.is_null()) {
-            return false;
-        }
-        ModalFormRequestPacket(id,json.dump()).sendTo(player);
+        if (json.is_null()) { return false; }
+        ModalFormRequestPacket(id, json.dump()).sendTo(player);
         return true;
     }
 
@@ -111,9 +110,7 @@ protected:
             };
             for (auto& e : mElements) {
                 fifo_json element = e->serialize();
-                if (!element.empty()) {
-                    form["buttons"].push_back(element);
-                }
+                if (!element.empty()) { form["buttons"].push_back(element); }
             }
             return form.dump();
         } catch (const fifo_json::exception&) {

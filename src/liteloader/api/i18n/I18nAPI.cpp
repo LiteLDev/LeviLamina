@@ -26,13 +26,9 @@ std::string I18nBase::get(const std::string& key, const std::string& langCode) {
     }
     // Search for the similar language in langData
     for (auto& [lc, ld] : langData) {
-        if (lc.length() < 2) {
-            continue;
-        }
+        if (lc.length() < 2) { continue; }
         if (lc.substr(0, 2) == langType) {
-            if (ld.count(key)) {
-                return ld[key];
-            }
+            if (ld.count(key)) { return ld[key]; }
         }
     }
     if (!defaultLangData.empty()) {
@@ -45,26 +41,18 @@ std::string I18nBase::get(const std::string& key, const std::string& langCode) {
         }
         // Search for the similar language
         for (auto& [lc, ld] : defaultLangData) {
-            if (lc.length() < 2) {
-                continue;
-            }
+            if (lc.length() < 2) { continue; }
             if (lc.substr(0, 2) == langType) {
-                if (ld.count(key)) {
-                    return ld[key];
-                }
+                if (ld.count(key)) { return ld[key]; }
             }
         }
     }
     // Try finding general languages
     for (auto& lang : GeneralLanguages) {
         for (auto& [lc, ld] : langData) {
-            if (lc.length() < 2) {
-                continue;
-            }
+            if (lc.length() < 2) { continue; }
             if (lc.substr(0, 2) == lang) {
-                if (ld.count(key)) {
-                    return ld[key];
-                }
+                if (ld.count(key)) { return ld[key]; }
             }
         }
     }
@@ -105,9 +93,7 @@ void SingleFileI18N::load(const std::string& fileName) {
     for (auto& [lang, dat] : langData) {
         if (defaultLangData.count(lang)) {
             for (auto& [k, v] : defaultLangData[lang]) {
-                if (!dat.count(k)) {
-                    dat[k] = v;
-                }
+                if (!dat.count(k)) { dat[k] = v; }
             }
         }
     }
@@ -116,10 +102,8 @@ void SingleFileI18N::load(const std::string& fileName) {
 
 void SingleFileI18N::save() {
     std::fstream file;
-    if (fs::exists(filePath))
-        file.open(filePath, std::ios::out | std::ios::ate);
-    else
-        file.open(filePath, std::ios::out | std::ios::app);
+    if (fs::exists(filePath)) file.open(filePath, std::ios::out | std::ios::ate);
+    else file.open(filePath, std::ios::out | std::ios::app);
     nlohmann::json j = langData;
     file << std::setw(4) << j;
     file.close();
@@ -161,9 +145,7 @@ void MultiFileI18N::load(const std::string& dirName) {
         return;
     }
     for (auto& f : fs::directory_iterator(dirName)) {
-        if (!f.is_regular_file() || f.path().extension() != ".json") {
-            continue;
-        }
+        if (!f.is_regular_file() || f.path().extension() != ".json") { continue; }
         auto           langName = f.path().stem().string();
         std::fstream   file(f.path().wstring(), std::ios::in);
         nlohmann::json j;
@@ -227,9 +209,7 @@ I18nBase* loadI18nImpl(
     } catch (const std::exception& e) {
         ll::logger.error("Fail to load translation file <{}> !", path);
         ll::logger.error("- {}", TextEncoding::toUTF8(e.what()));
-    } catch (...) {
-        ll::logger.error("Fail to load translation file <{}> !", path);
-    }
+    } catch (...) { ll::logger.error("Fail to load translation file <{}> !", path); }
     return nullptr;
 }
 
@@ -240,9 +220,7 @@ I18nBase* loadFromImpl(HMODULE hPlugin, HMODULE hTarget) {
     } catch (const std::exception& e) {
         ll::logger.error("Fail to load translation from another plugin!", e.what());
         ll::logger.error("- {}", e.what());
-    } catch (...) {
-        ll::logger.error("Fail to load translation from another plugin!");
-    }
+    } catch (...) { ll::logger.error("Fail to load translation from another plugin!"); }
     return nullptr;
 }
 
@@ -341,8 +319,7 @@ namespace TextEncoding {
 Encoding getLocalEncoding() {
     UINT page = GetACP();
     for (auto& [k, v] : Encoding_CodePage_Map) {
-        if (v == page)
-            return k;
+        if (v == page) return k;
     }
     return default_encoding();
 }
@@ -369,17 +346,13 @@ Encoding detectEncoding(const std::string& text, bool* isReliable) {
 std::string fromUnicode(const std::wstring& text, Encoding encoding) {
     try {
         return wstr2str(text, Encoding_CodePage_Map.at(encoding));
-    } catch (...) {
-        return "";
-    }
+    } catch (...) { return ""; }
 }
 
 std::wstring toUnicode(const std::string& text, Encoding encoding) {
     try {
         return str2wstr(text, Encoding_CodePage_Map.at(encoding));
-    } catch (...) {
-        return L"";
-    }
+    } catch (...) { return L""; }
 }
 
 std::string toUTF8(const std::string& text) { return convert(text, detectEncoding(text), Encoding::UTF8); }
@@ -387,12 +360,10 @@ std::string toUTF8(const std::string& text) { return convert(text, detectEncodin
 std::string toUTF8(const std::string& text, Encoding from) { return convert(text, from, Encoding::UTF8); }
 
 std::string convert(const std::string& text, Encoding from, Encoding to) {
-    if (text.empty() || from == to)
-        return text;
+    if (text.empty() || from == to) return text;
 
     wstring uni = toUnicode(text, from);
-    if (uni.empty())
-        return "";
+    if (uni.empty()) return "";
 
     return fromUnicode(uni, to);
 }

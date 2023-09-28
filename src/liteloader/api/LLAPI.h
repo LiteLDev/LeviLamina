@@ -84,8 +84,7 @@ struct Plugin {
     template <typename ReturnType = void, typename... Args>
     inline ReturnType callFunction(const char* sym, Args... args) {
         void* address = reinterpret_cast<void*>(GetProcAddress(handle, sym));
-        if (!address)
-            throw std::runtime_error("ll::Plugin::callFunction: The symbol is not found!");
+        if (!address) throw std::runtime_error("ll::Plugin::callFunction: The symbol is not found!");
         return reinterpret_cast<ReturnType (*)(Args...)>(address)(std::forward<Args>(args)...);
     }
 };
@@ -146,12 +145,9 @@ inline bool registerPlugin(
     std::string website = ""
 ) {
     std::map<std::string, std::string> others;
-    if (!git.empty())
-        others.emplace("Git", git);
-    if (!license.empty())
-        others.emplace("License", license);
-    if (!website.empty())
-        others.emplace("Website", website);
+    if (!git.empty()) others.emplace("Git", git);
+    if (!license.empty()) others.emplace("License", license);
+    if (!website.empty()) others.emplace("Website", website);
     return PluginManager::registerPlugin(GetCurrentModule(), name, desc, version, others);
 }
 

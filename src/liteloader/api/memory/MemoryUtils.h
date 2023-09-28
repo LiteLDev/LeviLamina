@@ -1,6 +1,5 @@
 #pragma once
 
-#include "vcruntime.h"
 #include <string>
 #include <type_traits>
 

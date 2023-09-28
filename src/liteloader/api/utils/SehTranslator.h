@@ -59,8 +59,8 @@ public:
     [[nodiscard]] const char* what() const noexcept override {
 
         ulong messageLength = WinAPI::FormatMessageA(
-            WinAPI::FormatMessageFlags::ALLOCATE_BUFFER | WinAPI::FormatMessageFlags::FROM_SYSTEM |
-                WinAPI::FormatMessageFlags::FROM_HMODULE,
+            WinAPI::FormatMessageFlags::ALLOCATE_BUFFER | WinAPI::FormatMessageFlags::FROM_SYSTEM
+                | WinAPI::FormatMessageFlags::FROM_HMODULE,
             nullptr,
             WinAPI::RtlNtStatusToDosError((long)_expCode),
             0,
@@ -69,9 +69,7 @@ public:
             nullptr
         );
 
-        if (messageLength) {
-            return _expMsg;
-        }
+        if (messageLength) { return _expMsg; }
 
         return "SEH_UNKNOW_ERROR";
     }

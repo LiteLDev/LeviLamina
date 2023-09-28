@@ -46,16 +46,13 @@ LL_AUTO_STATIC_HOOK(
     va_start(va, pszFormat);
     auto v1 = vsprintf(Buffer, pszFormat, va);
     va_end(va);
-    if (v1 < 0 || v1 >= BUFFER_SIZE)
-        return origin(priority, pszFormat, va);
+    if (v1 < 0 || v1 >= BUFFER_SIZE) return origin(priority, pszFormat, va);
 
     std::istringstream iss(Buffer);
     std::string        line;
 
     while (std::getline(iss, line)) {
-        if (!line.empty() && line.back() == '\n') {
-            line.pop_back();
-        }
+        if (!line.empty() && line.back() == '\n') { line.pop_back(); }
         auto  loggerIter = loggerMap.find(priority);
         auto& logger     = (loggerIter != loggerMap.end()) ? loggerIter->second : serverLogger.info;
         logger << line << Logger::endl;

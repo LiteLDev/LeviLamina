@@ -107,11 +107,12 @@ struct HookAutoRegister {
                                                                                                                        \
         static int hook() {                                                                                            \
             target = ll::memory::resolveIdentifier<OriginFuncType>(IDENTIFIER);                                        \
-            if (target == nullptr) {                                                                                   \
-                return -1;                                                                                             \
-            }                                                                                                          \
+            if (target == nullptr) { return -1; }                                                                      \
             return ll::memory::hook(                                                                                   \
-                target, ll::memory::toFuncPtr(&DEF_TYPE::detour), reinterpret_cast<FuncPtr*>(&originFunc), PRIORITY    \
+                target,                                                                                                \
+                ll::memory::toFuncPtr(&DEF_TYPE::detour),                                                              \
+                reinterpret_cast<FuncPtr*>(&originFunc),                                                               \
+                PRIORITY                                                                                               \
             );                                                                                                         \
         }                                                                                                              \
                                                                                                                        \

@@ -22,7 +22,8 @@ public:
     std::vector<SimpleForm::ButtonCallback> mButtonCallbacks;
 
     SimpleFormHandler(SimpleForm::Callback callback, std::vector<SimpleForm::ButtonCallback> buttonCallbacks)
-    : mCallback(std::move(callback)), mButtonCallbacks(std::move(buttonCallbacks)) {}
+    : mCallback(std::move(callback)),
+      mButtonCallbacks(std::move(buttonCallbacks)) {}
 
     void                   handle(Player& player, const std::string& data) const override;
     [[nodiscard]] FormType getType() const override { return FormType::SimpleForm; }
@@ -34,7 +35,8 @@ public:
     std::vector<std::shared_ptr<CustomFormElement>> mFormElements;
 
     CustomFormHandler(CustomForm::Callback callback, std::vector<std::shared_ptr<CustomFormElement>> formElements)
-    : mCallback(std::move(callback)), mFormElements(std::move(formElements)) {}
+    : mCallback(std::move(callback)),
+      mFormElements(std::move(formElements)) {}
 
     void                   handle(Player& player, const std::string& data) const override;
     [[nodiscard]] FormType getType() const override { return FormType::CustomForm; }

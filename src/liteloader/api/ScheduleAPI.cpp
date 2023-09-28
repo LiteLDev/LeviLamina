@@ -36,8 +36,13 @@ public:
         int                       count,
         HMODULE                   handle
     )
-    : taskId(++nextTaskId), type(type), leftTime((int64)delay), interval((int64)interval), count(count),
-      task(std::move(task)), handle(handle){};
+    : taskId(++nextTaskId),
+      type(type),
+      leftTime((int64)delay),
+      interval((int64)interval),
+      count(count),
+      task(std::move(task)),
+      handle(handle){};
 
     [[nodiscard]] inline uint getTaskId() const { return taskId; }
 
@@ -81,40 +86,30 @@ public:
             locker.lock();
             tmpList.swap(pendingTaskList);
             locker.unlock();
-            for (auto& task : tmpList) {
-                push(std::move(task));
-            }
+            for (auto& task : tmpList) { push(std::move(task)); }
             tmpList.clear();
         }
-        if (c.empty()) {
-            return;
-        }
+        if (c.empty()) { return; }
         if (!pendingCancelList.empty()) {
             std::vector<uint> tmpList;
             locker.lock();
             // ScheduleTaskData destructor may trigger ScriptX's lock
             tmpList.swap(pendingCancelList);
             locker.unlock();
-            for (auto& tid : tmpList) {
-                remove(tid);
-            }
+            for (auto& tid : tmpList) { remove(tid); }
             tmpList.clear();
         }
         try {
-            for (auto& i : c)
-                --i.leftTime;
+            for (auto& i : c) --i.leftTime;
 
             while (true) {
-                if (empty())
-                    break;
+                if (empty()) break;
                 const ScheduleTaskData& t = top();
-                if (t.leftTime > 0)
-                    break;
+                if (t.leftTime > 0) break;
 
                 // timeout
                 try {
-                    if (!t.task)
-                        continue;
+                    if (!t.task) continue;
                     t.task();
 
                     switch (t.type) {
@@ -156,9 +151,7 @@ public:
                 }
                 pop();
             }
-        } catch (...) {
-            ll::logger.error("Exception occurred in ScheduleTask!");
-        }
+        } catch (...) { ll::logger.error("Exception occurred in ScheduleTask!"); }
     }
 
     bool has(uint taskId) {
@@ -172,8 +165,7 @@ ScheduleTaskQueueType taskQueue;
 
 namespace Schedule {
 ScheduleTask delay(std::function<void(void)> task, uint64 tickDelay, HMODULE handle) {
-    if (ll::globalRuntimeConfig.serverStatus >= ll::LLServerStatus::Stopping)
-        return {(uint)-1};
+    if (ll::globalRuntimeConfig.serverStatus >= ll::LLServerStatus::Stopping) return {(uint)-1};
     ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, std::move(task), tickDelay, -1, -1, handle);
     locker.lock();
     pendingTaskList.push_back(sche);
@@ -182,13 +174,11 @@ ScheduleTask delay(std::function<void(void)> task, uint64 tickDelay, HMODULE han
 }
 
 ScheduleTask repeat(std::function<void(void)> task, uint64 tickRepeat, int maxCount, HMODULE handle) {
-    if (ll::globalRuntimeConfig.serverStatus >= ll::LLServerStatus::Stopping)
-        return {(uint)-1};
+    if (ll::globalRuntimeConfig.serverStatus >= ll::LLServerStatus::Stopping) return {(uint)-1};
     ScheduleTaskData::TaskType type =
         maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat : ScheduleTaskData::TaskType::Repeat;
-    ScheduleTaskData sche(
-        type, std::move(task), std::max(tickRepeat, 1ull), std::max(tickRepeat, 1ull), maxCount, handle
-    );
+    ScheduleTaskData
+        sche(type, std::move(task), std::max(tickRepeat, 1ull), std::max(tickRepeat, 1ull), maxCount, handle);
     locker.lock();
     pendingTaskList.push_back(sche);
     locker.unlock();
@@ -197,8 +187,7 @@ ScheduleTask repeat(std::function<void(void)> task, uint64 tickRepeat, int maxCo
 
 ScheduleTask
 delayRepeat(std::function<void(void)> task, uint64 tickDelay, uint64 tickRepeat, int maxCount, HMODULE handle) {
-    if (ll::globalRuntimeConfig.serverStatus >= ll::LLServerStatus::Stopping)
-        return {(uint)-1};
+    if (ll::globalRuntimeConfig.serverStatus >= ll::LLServerStatus::Stopping) return {(uint)-1};
     ScheduleTaskData::TaskType type =
         maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat : ScheduleTaskData::TaskType::Repeat;
     ScheduleTaskData sche(type, std::move(task), tickDelay, std::max(tickRepeat, 1ull), maxCount, handle);
@@ -209,8 +198,7 @@ delayRepeat(std::function<void(void)> task, uint64 tickDelay, uint64 tickRepeat,
 }
 
 ScheduleTask nextTick(std::function<void(void)> task, HMODULE handle) {
-    if (ll::globalRuntimeConfig.serverStatus >= ll::LLServerStatus::Stopping)
-        return {(uint)-1};
+    if (ll::globalRuntimeConfig.serverStatus >= ll::LLServerStatus::Stopping) return {(uint)-1};
     ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, std::move(task), 1, -1, -1, handle);
     locker.lock();
     pendingTaskList.push_back(sche);

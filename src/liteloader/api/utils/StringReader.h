@@ -62,9 +62,7 @@ public:
     template <typename T>
     inline T readInteger() {
         T result = 0;
-        while (isValid() && isdigit(read())) {
-            result = result * 10 + (read() - '0');
-        }
+        while (isValid() && isdigit(read())) { result = result * 10 + (read() - '0'); }
         return result;
     }
 };

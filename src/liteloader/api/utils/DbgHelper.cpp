@@ -50,8 +50,7 @@ void FindSymbols(wstring& collection, const std::string& nowPath, bool recursion
 }
 
 bool LoadSymbols() {
-    if (symbolsLoaded)
-        return true;
+    if (symbolsLoaded) return true;
 
     loadedSymbolDir.clear();
     wstring symbolPath{L"srv*C:\\Windows\\symbols*http://msdl.microsoft.com/download/symbols"};
@@ -83,10 +82,8 @@ PSYMBOL_INFOW GetSymbolInfo(HANDLE hProcess, void* address) {
     pSymbol->MaxNameLen   = MAX_SYM_NAME;
 
     DWORD64 displacement = 0;
-    if (SymFromAddrW(hProcess, (DWORD64)address, &displacement, pSymbol))
-        return pSymbol;
-    else
-        return nullptr;
+    if (SymFromAddrW(hProcess, (DWORD64)address, &displacement, pSymbol)) return pSymbol;
+    else return nullptr;
 }
 
 void CleanSymbolInfo(PSYMBOL_INFOW pSymbol) { delete[] ((char*)pSymbol); }
@@ -136,8 +133,7 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
 
         PCONTEXT pContext;
         CONTEXT  context{};
-        if (e)
-            pContext = e->ContextRecord;
+        if (e) pContext = e->ContextRecord;
         else {
             HANDLE ohThread = OpenThread(THREAD_ALL_ACCESS, TRUE, threadId);
             if (ohThread == nullptr) {
@@ -196,13 +192,11 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
                 if (SymGetLineFromAddrW64(hProcess, address, &displacement, &line))
                     debugLogger.error("(in File {} : Line {})", wstr2str(line.FileName), line.LineNumber);
                 delete info;
-            } else
-                debugLogger.error("at ???????? (0x{:X})  [{}]", address, moduleName);
+            } else debugLogger.error("at ???????? (0x{:X})  [{}]", address, moduleName);
         }
         cout << endl;
 
-        if (!cacheSymbol)
-            CleanupSymbols();
+        if (!cacheSymbol) CleanupSymbols();
         res = true;
     });
 
@@ -235,13 +229,9 @@ std::string GetCallerModuleFileName(ulong FramesToSkip) { return GetModuleName(G
 bool GetFileVersion(const wchar_t* filePath, ushort* ver1, ushort* ver2, ushort* ver3, ushort* ver4, uint* flag) {
 
     DWORD dwLen = GetFileVersionInfoSizeW(filePath, nullptr);
-    if (!dwLen) {
-        return false;
-    }
+    if (!dwLen) { return false; }
     auto* pBlock = new (std::nothrow) wchar_t[dwLen];
-    if (nullptr == pBlock) {
-        return false;
-    }
+    if (nullptr == pBlock) { return false; }
     if (!GetFileVersionInfoW(filePath, 0, dwLen, pBlock)) {
         delete[] pBlock;
         return false;
@@ -254,16 +244,11 @@ bool GetFileVersion(const wchar_t* filePath, ushort* ver1, ushort* ver2, ushort*
         return false;
     }
 
-    if (ver1)
-        *ver1 = (lpBuffer->dwFileVersionMS >> 16) & 0x0000FFFF;
-    if (ver2)
-        *ver2 = lpBuffer->dwFileVersionMS & 0x0000FFFF;
-    if (ver3)
-        *ver3 = (lpBuffer->dwFileVersionLS >> 16) & 0x0000FFFF;
-    if (ver4)
-        *ver4 = lpBuffer->dwFileVersionLS & 0x0000FFFF;
-    if (flag)
-        *flag = lpBuffer->dwFileFlags;
+    if (ver1) *ver1 = (lpBuffer->dwFileVersionMS >> 16) & 0x0000FFFF;
+    if (ver2) *ver2 = lpBuffer->dwFileVersionMS & 0x0000FFFF;
+    if (ver3) *ver3 = (lpBuffer->dwFileVersionLS >> 16) & 0x0000FFFF;
+    if (ver4) *ver4 = lpBuffer->dwFileVersionLS & 0x0000FFFF;
+    if (flag) *flag = lpBuffer->dwFileFlags;
 
     delete[] pBlock;
     return true;
@@ -272,18 +257,12 @@ bool GetFileVersion(const wchar_t* filePath, ushort* ver1, ushort* ver2, ushort*
 inline std::string
 VersionToString(ushort major_ver, ushort minor_ver, ushort revision_ver, ushort build_ver, uint flag = 0) {
     std::string flagStr;
-    if (flag & VS_FF_DEBUG)
-        flagStr += " DEBUG";
-    if (flag & VS_FF_PRERELEASE)
-        flagStr += " PRERELEASE";
-    if (flag & VS_FF_PATCHED)
-        flagStr += " PATCHED";
-    if (flag & VS_FF_PRIVATEBUILD)
-        flagStr += " PRIVATEBUILD";
-    if (flag & VS_FF_INFOINFERRED)
-        flagStr += " INFOINFERRED";
-    if (flag & VS_FF_SPECIALBUILD)
-        flagStr += " SPECIALBUILD";
+    if (flag & VS_FF_DEBUG) flagStr += " DEBUG";
+    if (flag & VS_FF_PRERELEASE) flagStr += " PRERELEASE";
+    if (flag & VS_FF_PATCHED) flagStr += " PATCHED";
+    if (flag & VS_FF_PRIVATEBUILD) flagStr += " PRIVATEBUILD";
+    if (flag & VS_FF_INFOINFERRED) flagStr += " INFOINFERRED";
+    if (flag & VS_FF_SPECIALBUILD) flagStr += " SPECIALBUILD";
     return fmt::format("{}.{}.{}.{}{}", major_ver, minor_ver, revision_ver, build_ver, flagStr);
 }
 

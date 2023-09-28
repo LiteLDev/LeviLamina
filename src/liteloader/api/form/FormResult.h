@@ -19,10 +19,12 @@ public:
     FormElementResult() = default;
     template <typename T>
         requires std::is_integral_v<T>
-    FormElementResult(T value) : type(Type::Int), intVal(value) {}
+    FormElementResult(T value) : type(Type::Int),
+                                 intVal(value) {}
     template <typename T>
         requires std::is_floating_point_v<T>
-    FormElementResult(T value) : type(Type::Double), doubleVal(value) {}
+    FormElementResult(T value) : type(Type::Double),
+                                 doubleVal(value) {}
     FormElementResult(std::string value) : type(Type::String), stringVal(std::move(value)) {}
 
     void clear() {
@@ -52,8 +54,8 @@ public:
     }
 
     template <typename T>
-        requires std::is_integral_v<T> || std::is_floating_point_v<T> || std::is_convertible_v<T, std::string> ||
-                 std::is_null_pointer_v<T>
+        requires std::is_integral_v<T> || std::is_floating_point_v<T> || std::is_convertible_v<T, std::string>
+              || std::is_null_pointer_v<T>
     void set(T value) {
         if constexpr (std::is_integral_v<T>) {
             type   = Type::Int;
@@ -70,8 +72,8 @@ public:
     }
 
     template <typename T>
-        requires std::is_integral_v<T> || std::is_floating_point_v<T> || std::is_convertible_v<T, std::string> ||
-                 std::is_null_pointer_v<T>
+        requires std::is_integral_v<T> || std::is_floating_point_v<T> || std::is_convertible_v<T, std::string>
+              || std::is_null_pointer_v<T>
     FormElementResult& operator=(T value) {
         set(value);
         return *this;
@@ -80,25 +82,19 @@ public:
     template <typename T = int>
         requires std::is_integral_v<T> || std::is_convertible_v<T, uint64>
     T asInt() const {
-        if (type == Type::Int || type == Type::Double) {
-            return static_cast<T>(intVal);
-        }
+        if (type == Type::Int || type == Type::Double) { return static_cast<T>(intVal); }
         throw std::bad_cast();
     }
 
     template <typename T = double>
         requires std::is_floating_point_v<T> || std::is_convertible_v<T, double>
     T asDouble() const {
-        if (type == Type::Double || type == Type::Int) {
-            return static_cast<T>(doubleVal);
-        }
+        if (type == Type::Double || type == Type::Int) { return static_cast<T>(doubleVal); }
         throw std::bad_cast();
     }
 
     std::string asString() const {
-        if (type == Type::String) {
-            return stringVal;
-        }
+        if (type == Type::String) { return stringVal; }
         throw std::bad_cast();
     }
 

@@ -41,7 +41,9 @@ public:
     std::string mDefault{};
 
     Input(std::string name, std::string text, std::string placeholder = "", std::string defaultVal = "")
-    : CustomFormElement(std::move(name)), mText(std::move(text)), mPlaceholder(std::move(placeholder)),
+    : CustomFormElement(std::move(name)),
+      mText(std::move(text)),
+      mPlaceholder(std::move(placeholder)),
       mDefault(std::move(defaultVal)) {}
     ~Input() override = default;
 
@@ -53,12 +55,8 @@ public:
                 {"type", "input"},
                 {"text", mText  }
             };
-            if (!mPlaceholder.empty()) {
-                input["placeholder"] = mPlaceholder;
-            }
-            if (!mDefault.empty()) {
-                input["default"] = mDefault;
-            }
+            if (!mPlaceholder.empty()) { input["placeholder"] = mPlaceholder; }
+            if (!mDefault.empty()) { input["default"] = mDefault; }
             return input;
         } catch (...) {
             ll::logger.error("Failed to serialize Input");
@@ -78,7 +76,9 @@ public:
     bool        mDefault = false;
 
     Toggle(std::string name, std::string text, bool defaultVal = false)
-    : CustomFormElement(std::move(name)), mText(std::move(text)), mDefault(defaultVal) {}
+    : CustomFormElement(std::move(name)),
+      mText(std::move(text)),
+      mDefault(defaultVal) {}
     ~Toggle() override = default;
 
     [[nodiscard]] Type getType() const override { return Type::Toggle; }
@@ -107,7 +107,10 @@ public:
     size_t                   mDefault{};
 
     Dropdown(std::string name, std::string text, std::vector<std::string> options, size_t defaultVal = 0)
-    : CustomFormElement(std::move(name)), mText(std::move(text)), mOptions(std::move(options)), mDefault(defaultVal) {}
+    : CustomFormElement(std::move(name)),
+      mText(std::move(text)),
+      mOptions(std::move(options)),
+      mDefault(defaultVal) {}
     ~Dropdown() override = default;
 
     [[nodiscard]] Type getType() const override { return Type::Dropdown; }
@@ -143,12 +146,8 @@ public:
     [[nodiscard]] bool isValid() const { return mMin <= mMax && mStep > 0.0 && mDefault >= mMin && mDefault <= mMax; }
 
     void validate() {
-        if (mMin > mMax) {
-            std::swap(mMin, mMax);
-        }
-        if (mStep <= 0.0) {
-            mStep = 1.0;
-        }
+        if (mMin > mMax) { std::swap(mMin, mMax); }
+        if (mStep <= 0.0) { mStep = 1.0; }
         if (mDefault < mMin) {
             mDefault = mMin;
         } else if (mDefault > mMax) {
@@ -157,7 +156,11 @@ public:
     }
 
     Slider(std::string name, std::string text, double min, double max, double step, double defaultVal)
-    : CustomFormElement(std::move(name)), mText(std::move(text)), mMin(min), mMax(max), mStep(step),
+    : CustomFormElement(std::move(name)),
+      mText(std::move(text)),
+      mMin(min),
+      mMax(max),
+      mStep(step),
       mDefault(defaultVal) {
         validate();
     }
@@ -198,13 +201,14 @@ public:
     [[nodiscard]] bool isValid() const { return !mSteps.empty() && mDefault < mSteps.size(); }
 
     void validate() {
-        if (mDefault >= mSteps.size()) {
-            mDefault = mSteps.size() - 1;
-        }
+        if (mDefault >= mSteps.size()) { mDefault = mSteps.size() - 1; }
     }
 
     StepSlider(std::string name, std::string text, std::vector<std::string> steps, size_t defaultVal = 0)
-    : CustomFormElement(std::move(name)), mText(std::move(text)), mSteps(std::move(steps)), mDefault(defaultVal) {
+    : CustomFormElement(std::move(name)),
+      mText(std::move(text)),
+      mSteps(std::move(steps)),
+      mDefault(defaultVal) {
         validate();
     }
     ~StepSlider() override = default;
@@ -301,9 +305,7 @@ public:
         }
         int  id = handler::addFormHandler(std::make_unique<handler::CustomFormHandler>(std::move(callback), mElements));
         auto json = serialize();
-        if (json.is_null()) {
-            return false;
-        }
+        if (json.is_null()) { return false; }
         ModalFormRequestPacket(id, json.dump()).sendTo(player);
         return true;
     }
@@ -320,9 +322,7 @@ protected:
             };
             for (auto& e : mElements) {
                 fifo_json element = e->serialize();
-                if (!element.empty()) {
-                    form["content"].push_back(element);
-                }
+                if (!element.empty()) { form["content"].push_back(element); }
             }
             return form;
         } catch (...) {

@@ -25,16 +25,11 @@ inline size_t getDecodeLength(const std::string& in) {
 }
 
 constexpr uchar decodeLookup(uchar c) {
-    if (c >= 'A' && c <= 'Z')
-        return c - 'A';
-    if (c >= 'a' && c <= 'z')
-        return c - 71;
-    if (c >= '0' && c <= '9')
-        return c + 4;
-    if (c == '+')
-        return 62;
-    if (c == '/')
-        return 63;
+    if (c >= 'A' && c <= 'Z') return c - 'A';
+    if (c >= 'a' && c <= 'z') return c - 71;
+    if (c >= '0' && c <= '9') return c + 4;
+    if (c == '+') return 62;
+    if (c == '/') return 63;
     return 64;
 }
 
@@ -54,14 +49,10 @@ inline std::string Encode(const std::string& text_input) {
         }
     }
 
-    if (j > -6) {
-        result += base64Table[((i << 8) >> (j + 8)) & 0x3F];
-    }
+    if (j > -6) { result += base64Table[((i << 8) >> (j + 8)) & 0x3F]; }
 
     // padding
-    while (result.size() % 4) {
-        result.push_back('=');
-    }
+    while (result.size() % 4) { result.push_back('='); }
 
     return result;
 }
@@ -79,12 +70,9 @@ inline std::string Decode(const std::string& base64_input) {
 
         uint32_t data = (c1 << 3 * 6) + (c2 << 2 * 6) + (c3 << 1 * 6) + (c4 << 0 * 6);
 
-        if (j < output_size)
-            out[j++] = static_cast<char>((data >> 2 * 8) & 0xFF);
-        if (j < output_size)
-            out[j++] = static_cast<char>((data >> 1 * 8) & 0xFF);
-        if (j < output_size)
-            out[j++] = static_cast<char>((data >> 0 * 8) & 0xFF);
+        if (j < output_size) out[j++] = static_cast<char>((data >> 2 * 8) & 0xFF);
+        if (j < output_size) out[j++] = static_cast<char>((data >> 1 * 8) & 0xFF);
+        if (j < output_size) out[j++] = static_cast<char>((data >> 0 * 8) & 0xFF);
     }
     return out;
 }

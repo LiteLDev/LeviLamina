@@ -6,10 +6,6 @@
 #include "liteloader/api/base/Macro.h"
 #include "mc/_HeaderOutputPredefine.h"
 
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif // NOMINMAX
-
 // windows types
 #include "minwindef.h"
 
@@ -20,6 +16,5 @@
 #include "FMT/printf.h"
 #include "gsl/gsl"
 
-#include "liteloader/api/utils/SehTranslator.h"
-
 #include "liteloader/api/memory/MemoryUtils.h"
+#include "liteloader/api/utils/SehTranslator.h"

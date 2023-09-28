@@ -21,7 +21,10 @@ public:
     }
 
     consteval SourceLocation(int line, int column, const char* file, const char* function) noexcept
-    : line_(line), column_(column), file_(file), function_(function) {}
+    : line_(line),
+      column_(column),
+      file_(file),
+      function_(function) {}
 
     [[nodiscard]] int         line() const noexcept { return line_; }
     [[nodiscard]] int         column() const noexcept { return column_; }

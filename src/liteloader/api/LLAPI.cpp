@@ -52,25 +52,27 @@ namespace ll {
 
 // region ### Version ###
 Version::Version(int major, int minor, int patch, PreRelease preRelease)
-: mMajor(major), mMinor(minor), mPatch(patch), mPreRelease(preRelease) {}
+: mMajor(major),
+  mMinor(minor),
+  mPatch(patch),
+  mPreRelease(preRelease) {}
 
 bool Version::operator<(const Version& other) const {
-    return mMajor < other.mMajor || (mMajor == other.mMajor && mMinor < other.mMinor) ||
-           (mMajor == other.mMajor && mMinor == other.mMinor && mPatch < other.mPatch) ||
-           (mMajor == other.mMajor && mMinor == other.mMinor && mPatch == other.mPatch &&
-            mPreRelease < other.mPreRelease);
+    return mMajor < other.mMajor || (mMajor == other.mMajor && mMinor < other.mMinor)
+        || (mMajor == other.mMajor && mMinor == other.mMinor && mPatch < other.mPatch)
+        || (mMajor == other.mMajor && mMinor == other.mMinor && mPatch == other.mPatch
+            && mPreRelease < other.mPreRelease);
 }
 
 bool Version::operator==(const Version& other) const {
-    return mMajor == other.mMajor && mMinor == other.mMinor && mPatch == other.mPatch &&
-           mPreRelease == other.mPreRelease;
+    return mMajor == other.mMajor && mMinor == other.mMinor && mPatch == other.mPatch
+        && mPreRelease == other.mPreRelease;
 }
 
 std::string Version::toString() const { return fmt::format("{}.{}.{}", mMajor, mMinor, mPatch); }
 
 std::string Version::toFullString() const {
-    if (mPreRelease == PreRelease::None)
-        return toString();
+    if (mPreRelease == PreRelease::None) return toString();
     return fmt::format("{}-{}", toString(), PRE_RELEASE_STRINGS[(uchar)mPreRelease]);
 }
 
@@ -94,12 +96,9 @@ Version Version::parse(const std::string& str) {
 
     auto res = ll::StringUtils::splitByPattern(&basic, ".");
 
-    if (!res.empty())
-        result.mMajor = stoi(res[0]);
-    if (res.size() >= 2)
-        result.mMinor = stoi(res[1]);
-    if (res.size() >= 3)
-        result.mPatch = stoi(res[2]);
+    if (!res.empty()) result.mMajor = stoi(res[0]);
+    if (res.size() >= 2) result.mMinor = stoi(res[1]);
+    if (res.size() >= 3) result.mPatch = stoi(res[2]);
 
     return result;
 }
@@ -110,8 +109,7 @@ Version getLoaderVersion() {
         LITELOADER_VERSION_MAJOR,
         LITELOADER_VERSION_MINOR,
         LITELOADER_VERSION_PATCH,
-        (Version::PreRelease)LITELOADER_VERSION_PRE_RELEASE
-    };
+        (Version::PreRelease)LITELOADER_VERSION_PRE_RELEASE};
 }
 
 } // namespace ll

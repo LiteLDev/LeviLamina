@@ -38,13 +38,10 @@ std::optional<std::string> ReadAllFile(const std::string& filePath, bool isBinar
     std::ifstream fRead;
 
     std::ios_base::openmode mode = std::ios_base::in;
-    if (isBinary)
-        mode |= std::ios_base::binary;
+    if (isBinary) mode |= std::ios_base::binary;
 
     fRead.open(str2wstr(filePath), mode);
-    if (!fRead.is_open()) {
-        return std::nullopt;
-    }
+    if (!fRead.is_open()) { return std::nullopt; }
     std::string data((std::istreambuf_iterator<char>(fRead)), std::istreambuf_iterator<char>());
     fRead.close();
     return data;
@@ -55,13 +52,10 @@ bool WriteAllFile(const std::string& filePath, const std::string& content, bool 
     std::ofstream fWrite;
 
     std::ios_base::openmode mode = std::ios_base::out;
-    if (isBinary)
-        mode |= std::ios_base::binary;
+    if (isBinary) mode |= std::ios_base::binary;
 
     fWrite.open(str2wstr(filePath), mode);
-    if (!fWrite.is_open()) {
-        return false;
-    }
+    if (!fWrite.is_open()) { return false; }
     fWrite << content;
     fWrite.close();
     return true;
@@ -69,14 +63,11 @@ bool WriteAllFile(const std::string& filePath, const std::string& content, bool 
 
 std::vector<std::string> GetFileNameList(const std::string& dir) {
     fs::directory_entry d(dir);
-    if (!d.is_directory())
-        return {};
+    if (!d.is_directory()) return {};
 
     std::vector<std::string> list;
     fs::directory_iterator   deps(d);
-    for (auto& i : deps) {
-        list.push_back(u8str2str(i.path().filename().u8string()));
-    }
+    for (auto& i : deps) { list.push_back(u8str2str(i.path().filename().u8string())); }
     return list;
 }
 
@@ -99,9 +90,7 @@ std::pair<int, std::string> UncompressFile(const std::string& filePath, std::str
         logger.error(ec.message());
         return {ec.value(), ec.message()};
     }
-    if (!toDir.ends_with("/")) {
-        toDir += "/";
-    }
+    if (!toDir.ends_with("/")) { toDir += "/"; }
     auto&& [exitCode, output] =
         NewProcessSync(fmt::format(R"({} x "{}" -o"{}" -aoa)", ZIP_PROGRAM_PATH, filePath, toDir), processTimeout);
     return {exitCode, std::move(output)};

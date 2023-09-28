@@ -17,9 +17,9 @@
 // #include "liteloader/api/event/server/ServerStartedEvent.h"
 // #include "liteloader/api/event/server/ServerStoppedEvent.h"
 #include "liteloader/core/Config.h"
+#include "liteloader/core/CrashLogger.h"
 #include "liteloader/core/Loader.h"
 #include "liteloader/core/Version.h"
-// #include "liteloader/core/CrashLogger.h"
 // #include "liteloader/core/AddonsHelper.h"
 // #include "liteloader/core/SimpleServerLogger.h"
 // #include "liteloader/core/PlayerDeathPositions.h"
@@ -45,8 +45,7 @@ void fixPluginsLibDir() {
     constexpr const DWORD MAX_PATH_LEN = 32767;
 
     auto* buffer = new (nothrow) wchar_t[MAX_PATH_LEN];
-    if (!buffer)
-        return;
+    if (!buffer) return;
 
     GetEnvironmentVariableW(L"PATH", buffer, MAX_PATH_LEN);
     wstring path(buffer);
@@ -62,8 +61,7 @@ void fixUpCWD() {
     constexpr const DWORD MAX_PATH_LEN = 32767;
 
     auto* buffer = new (nothrow) wchar_t[MAX_PATH_LEN];
-    if (!buffer)
-        return;
+    if (!buffer) return;
 
     GetModuleFileNameW(nullptr, buffer, MAX_PATH_LEN);
     wstring path(buffer);
@@ -116,8 +114,7 @@ void checkRunningBDS() {
     constexpr const DWORD MAX_PATH_LEN = 32767;
     auto*                 buffer       = new wchar_t[MAX_PATH_LEN];
 
-    if (!ll::globalConfig.enableCheckRunningBDS)
-        return;
+    if (!ll::globalConfig.enableCheckRunningBDS) return;
 
     // get all processes id with name "bedrock_server.exe" or "bedrock_server_mod.exe"
     // and pid is not current process
@@ -125,14 +122,12 @@ void checkRunningBDS() {
     PROCESSENTRY32     pe32;
     pe32.dwSize         = sizeof(PROCESSENTRY32);
     HANDLE hProcessSnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
-    if (hProcessSnap == INVALID_HANDLE_VALUE) {
-        return;
-    }
+    if (hProcessSnap == INVALID_HANDLE_VALUE) { return; }
     if (Process32First(hProcessSnap, &pe32)) {
         do {
-            if (pe32.th32ProcessID != GetCurrentProcessId() &&
-                (wcscmp(pe32.szExeFile, L"bedrock_server.exe") == 0 ||
-                 wcscmp(pe32.szExeFile, L"bedrock_server_mod.exe") == 0)) {
+            if (pe32.th32ProcessID != GetCurrentProcessId()
+                && (wcscmp(pe32.szExeFile, L"bedrock_server.exe") == 0
+                    || wcscmp(pe32.szExeFile, L"bedrock_server_mod.exe") == 0)) {
                 pids.push_back(pe32.th32ProcessID);
             }
         } while (Process32Next(hProcessSnap, &pe32));
@@ -164,9 +159,7 @@ void checkRunningBDS() {
                     rewind(stdin);
                     input = static_cast<char>(getchar());
                     rewind(stdin);
-                    if (input == 'n' || input == 'N') {
-                        break;
-                    }
+                    if (input == 'n' || input == 'N') { break; }
                     if (input == 'y' || input == 'Y') {
                         TerminateProcess(handle, 1);
                         break;
@@ -204,8 +197,7 @@ void fixAllowList() {
 }
 
 void printLogo() {
-    if (!ll::globalConfig.enableWelcomeText)
-        return;
+    if (!ll::globalConfig.enableWelcomeText) return;
 
     cout << R"(
                                                                        
@@ -221,8 +213,7 @@ void printLogo() {
 }
 
 void checkDevMode() {
-    if (ll::globalConfig.debugMode)
-        logger.warn(tr("ll.main.warning.inDevMode"));
+    if (ll::globalConfig.debugMode) logger.warn(tr("ll.main.warning.inDevMode"));
 }
 
 void checkBetaVersion() {
@@ -313,13 +304,10 @@ void liteloaderMain() {
     decompressResourcePacks();
 
     // If SEH Protection is not enabled (Debug mode), restore old SE translator
-    if (!ll::isDebugMode())
-        _set_se_translator(oldSeTranslator);
+    if (!ll::isDebugMode()) _set_se_translator(oldSeTranslator);
 
     // Update default language
-    if (i18n && ll::globalConfig.language != "system") {
-        i18n->defaultLocaleName = ll::globalConfig.language;
-    }
+    if (i18n && ll::globalConfig.language != "system") { i18n->defaultLocaleName = ll::globalConfig.language; }
 
     // Check Protocol Version
     checkProtocolVersion();
@@ -338,7 +326,7 @@ void liteloaderMain() {
     checkRunningBDS();
 
     // Builtin CrashLogger
-    // ll::CrashLogger::initCrashLogger(ll::globalConfig.enableCrashLogger);
+    ll::CrashLogger::initCrashLogger(ll::globalConfig.enableCrashLogger);
 
     // Rename Window
     // HWND         hwnd = GetConsoleWindow();

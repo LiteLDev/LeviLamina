@@ -23,7 +23,10 @@ bool Logger::setDefaultFileImpl(HMODULE hPlugin, const std::string& logFile, boo
         std::filesystem::create_directories(std::filesystem::path(sv2u8sv(logFile)).remove_filename(), ec);
 
         auto& res = PluginOwnData::setImpl<std::ofstream>(
-            hPlugin, LOGGER_CURRENT_FILE, logFile, appendMode ? std::ios::app : std::ios::out
+            hPlugin,
+            LOGGER_CURRENT_FILE,
+            logFile,
+            appendMode ? std::ios::app : std::ios::out
         );
         return res.is_open();
     }
@@ -35,8 +38,7 @@ bool Logger::setDefaultFileImpl(HMODULE hPlugin, nullptr_t) {
 }
 
 bool Logger::setFile(const std::string& logFile, bool appendMode) {
-    if (ofs.is_open())
-        ofs.close();
+    if (ofs.is_open()) ofs.close();
 
     if (logFile.empty()) {
         return true;
@@ -49,8 +51,7 @@ bool Logger::setFile(const std::string& logFile, bool appendMode) {
 }
 
 bool Logger::setFile(nullptr_t) {
-    if (ofs.is_open())
-        ofs.close();
+    if (ofs.is_open()) ofs.close();
     return true;
 }
 
@@ -77,16 +78,13 @@ Logger::OutputStream::OutputStream(
 }
 
 bool checkLogLevel(int level, int outLevel) {
-    if (level >= outLevel)
-        return true;
-    if (level == -1 && ll::globalConfig.logLevel >= outLevel)
-        return true;
+    if (level >= outLevel) return true;
+    if (level == -1 && ll::globalConfig.logLevel >= outLevel) return true;
     return false;
 }
 
 fmt::text_style getModeColor(const std::string& a1) {
-    if (!ll::globalConfig.colorLog)
-        return {};
+    if (!ll::globalConfig.colorLog) return {};
     switch (do_hash(a1.c_str())) {
     case do_hash("INFO"):
         return fmt::fg(fmt::color::light_sea_green);
@@ -123,8 +121,7 @@ std::string applyTextStyle(const fmt::v9::text_style& ts, const S& format_str) {
         buf.append(background.begin(), background.end());
     }
     buf.append(fmt.begin(), fmt.end());
-    if (has_style)
-        fmt::v9::detail::reset_color<Char>(buf);
+    if (has_style) fmt::v9::detail::reset_color<Char>(buf);
     return fmt::to_string(buf);
 }
 
@@ -133,8 +130,7 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o) {
         std::unique_lock lock(loggerLock);
 
         std::string title = o.logger->title;
-        if (!title.empty())
-            title = "[" + title + "]";
+        if (!title.empty()) title = "[" + title + "]";
 
         auto text         = o.os.str();
         bool filterBanned = false;
@@ -147,8 +143,7 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o) {
                         filterBanned = true;
                         break;
                     }
-                } catch (...) {
-                }
+                } catch (...) {}
             }
 
         if (checkLogLevel(o.logger->consoleLevel, o.level) && !filterBanned) {
@@ -164,16 +159,18 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o) {
             );
         }
 
-        if (checkLogLevel(o.logger->fileLevel, o.level) &&
-            (ll::globalConfig.onlyFilterConsoleOutput || !filterBanned)) {
+        if (checkLogLevel(o.logger->fileLevel, o.level)
+            && (ll::globalConfig.onlyFilterConsoleOutput || !filterBanned)) {
             if (o.logger->ofs.is_open() || PluginOwnData::hasImpl(hPlugin, LOGGER_CURRENT_FILE)) {
                 auto fileContent = fmt::format(
-                    fmt::runtime(o.fileFormat), fmt::localtime(_time64(nullptr)), o.levelPrefix, title, text
+                    fmt::runtime(o.fileFormat),
+                    fmt::localtime(_time64(nullptr)),
+                    o.levelPrefix,
+                    title,
+                    text
                 );
-                if (o.logger->ofs.is_open())
-                    o.logger->ofs << fileContent << std::flush;
-                else
-                    PluginOwnData::getImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE) << fileContent << std::flush;
+                if (o.logger->ofs.is_open()) o.logger->ofs << fileContent << std::flush;
+                else PluginOwnData::getImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE) << fileContent << std::flush;
             }
         }
 

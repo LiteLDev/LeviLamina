@@ -11,20 +11,14 @@ namespace ll::form::handler {
 void SimpleFormHandler::handle(Player& player, const std::string& data) const {
     int selected = data != "null" ? stoi(data) : -1;
     if (selected >= 0 && selected < mButtonCallbacks.size()) {
-        if (mButtonCallbacks[selected]) {
-            mButtonCallbacks[selected](player);
-        }
+        if (mButtonCallbacks[selected]) { mButtonCallbacks[selected](player); }
     }
-    if (mCallback) {
-        mCallback(player, selected);
-    }
+    if (mCallback) { mCallback(player, selected); }
 }
 
 void CustomFormHandler::handle(Player& player, const std::string& data) const {
     if (data == "null") {
-        if (mCallback) {
-            mCallback(player, {});
-        }
+        if (mCallback) { mCallback(player, {}); }
         return;
     }
 
@@ -45,16 +39,12 @@ void CustomFormHandler::handle(Player& player, const std::string& data) const {
         for (size_t i = 0; i < mFormElements.size(); ++i) {
             auto& element = mFormElements[i];
             auto& value   = dataJson[i];
-            if (element->getType() == CustomFormElement::Type::Label) {
-                continue;
-            }
+            if (element->getType() == CustomFormElement::Type::Label) { continue; }
 
             result.emplace(element->mName, element->parseResult(value));
         }
 
-        if (mCallback) {
-            mCallback(player, result);
-        }
+        if (mCallback) { mCallback(player, result); }
     } catch (...) {
         ll::logger.error("Failed to parse CustomForm result");
         return;
@@ -63,9 +53,7 @@ void CustomFormHandler::handle(Player& player, const std::string& data) const {
 
 void ModalFormHandler::handle(Player& player, const std::string& data) const {
     bool selected = data == "true";
-    if (mCallback) {
-        mCallback(player, selected);
-    }
+    if (mCallback) { mCallback(player, selected); }
 }
 
 std::map<uint, std::unique_ptr<FormHandler>> formHandlers = {};
@@ -109,9 +97,7 @@ LL_AUTO_INSTANCE_HOOK(
         data      = json.toStyledString();
     }
 
-    if (data.back() == '\n') {
-        data.pop_back();
-    }
+    if (data.back() == '\n') { data.pop_back(); }
 
     handleFormPacket(player, formId, data);
 }

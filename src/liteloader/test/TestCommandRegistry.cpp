@@ -28,8 +28,7 @@ public:
         case Operation::List:
             if (target_isSet || index_isSet) {
                 ll::logger.info("Command Operation::List is set");
-            } else
-                ll::logger.info("Command Operation::List isn't set");
+            } else ll::logger.info("Command Operation::List isn't set");
             break;
         case Operation::Install:
             ll::logger.info("Command Operation::Install");
@@ -76,7 +75,10 @@ public:
             makeMandatory<CommandParameterDataType::Enum>(&TestCommand::operation, "operation", "Operation_List")
                 .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
             makeOptional<CommandParameterDataType::SoftEnum>(
-                &TestCommand::target, "softEnumName", "SoftEnumName", &TestCommand::target_isSet
+                &TestCommand::target,
+                "softEnumName",
+                "SoftEnumName",
+                &TestCommand::target_isSet
             )
         );
         registry->registerOverload<TestCommand>(
@@ -84,7 +86,10 @@ public:
             makeMandatory<CommandParameterDataType::Enum>(&TestCommand::operation, "operation", "Operation_List")
                 .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
             makeOptional<CommandParameterDataType::Basic>(
-                &TestCommand::index, "enumIndex", nullptr, &TestCommand::index_isSet
+                &TestCommand::index,
+                "enumIndex",
+                nullptr,
+                &TestCommand::index_isSet
             )
         );
 
@@ -98,7 +103,9 @@ public:
         registry->registerOverload<TestCommand>(
             "testcommand",
             makeMandatory<CommandParameterDataType::Enum>(
-                &TestCommand::operation, "operation", "Operation_Addons_Install"
+                &TestCommand::operation,
+                "operation",
+                "Operation_Addons_Install"
             )
                 .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
             makeMandatory<CommandParameterDataType::Basic>(&TestCommand::target, "enumName")
@@ -120,7 +127,10 @@ public:
             makeMandatory<CommandParameterDataType::Enum>(&TestCommand::operation, "operation", "Operation_Others")
                 .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
             makeMandatory<CommandParameterDataType::SoftEnum>(
-                &TestCommand::target, "enumName", "EnumName", &TestCommand::target_isSet
+                &TestCommand::target,
+                "enumName",
+                "EnumName",
+                &TestCommand::target_isSet
             )
         );
         registry->registerOverload<TestCommand>(
@@ -128,7 +138,10 @@ public:
             makeMandatory<CommandParameterDataType::Enum>(&TestCommand::operation, "operation", "Operation_Others")
                 .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
             makeMandatory<CommandParameterDataType::Basic>(
-                &TestCommand::index, "enumIndex", nullptr, &TestCommand::index_isSet
+                &TestCommand::index,
+                "enumIndex",
+                nullptr,
+                &TestCommand::index_isSet
             )
         );
     }

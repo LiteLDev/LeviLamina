@@ -16,8 +16,7 @@
 using namespace ll::StringUtils;
 
 std::string GetLastErrorMessage(DWORD error_message_id) {
-    if (error_message_id == 0)
-        return "";
+    if (error_message_id == 0) return "";
 
     LPWSTR message_buffer = nullptr;
     FormatMessage(
@@ -36,8 +35,7 @@ std::string GetLastErrorMessage(DWORD error_message_id) {
 
 std::string GetLastErrorMessage() {
     DWORD error_message_id = ::GetLastError();
-    if (error_message_id == 0)
-        return "";
+    if (error_message_id == 0) return "";
 
     LPWSTR message_buffer = nullptr;
     FormatMessage(
@@ -72,8 +70,7 @@ bool NewProcess(const std::string& process, std::function<void(int, std::string)
     sa.lpSecurityDescriptor = nullptr;
     sa.bInheritHandle       = TRUE;
 
-    if (!CreatePipe(&hRead, &hWrite, &sa, 0))
-        return false;
+    if (!CreatePipe(&hRead, &hWrite, &sa, 0)) return false;
     STARTUPINFOW        si = {};
     PROCESS_INFORMATION pi;
 
@@ -92,10 +89,8 @@ bool NewProcess(const std::string& process, std::function<void(int, std::string)
 
     std::thread([hRead{hRead}, hProcess{pi.hProcess}, callback{std::move(callback)}, timeLimit{timeLimit}, wCmd{wCmd}](
                 ) {
-        if (!ll::isDebugMode())
-            _set_se_translator(seh_exception::TranslateSEHtoCE);
-        if (timeLimit == -1)
-            WaitForSingleObject(hProcess, INFINITE);
+        if (!ll::isDebugMode()) _set_se_translator(seh_exception::TranslateSEHtoCE);
+        if (timeLimit == -1) WaitForSingleObject(hProcess, INFINITE);
         else {
             WaitForSingleObject(hProcess, timeLimit);
             TerminateProcess(hProcess, -1);
@@ -108,16 +103,14 @@ bool NewProcess(const std::string& process, std::function<void(int, std::string)
         GetExitCodeProcess(hProcess, &exitCode);
         while (true) {
             ZeroMemory(buffer, READ_BUFFER_SIZE);
-            if (!ReadFile(hRead, buffer, READ_BUFFER_SIZE, &bytesRead, nullptr))
-                break;
+            if (!ReadFile(hRead, buffer, READ_BUFFER_SIZE, &bytesRead, nullptr)) break;
             strOutput.append(buffer, bytesRead);
         }
         CloseHandle(hRead);
         CloseHandle(hProcess);
 
         try {
-            if (callback)
-                callback((int)exitCode, strOutput);
+            if (callback) callback((int)exitCode, strOutput);
         } catch (const seh_exception& e) {
             ll::logger.error("SEH Uncaught Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
             ll::logger.error("In NewProcess callback");
@@ -139,8 +132,7 @@ std::pair<int, std::string> NewProcessSync(const std::string& process, int timeL
     sa.lpSecurityDescriptor = nullptr;
     sa.bInheritHandle       = TRUE;
 
-    if (!CreatePipe(&hRead, &hWrite, &sa, 0))
-        return {-1, ""};
+    if (!CreatePipe(&hRead, &hWrite, &sa, 0)) return {-1, ""};
     STARTUPINFOW        si = {};
     PROCESS_INFORMATION pi;
 
@@ -157,8 +149,7 @@ std::pair<int, std::string> NewProcessSync(const std::string& process, int timeL
     CloseHandle(hWrite);
     CloseHandle(pi.hThread);
 
-    if (timeLimit == -1)
-        WaitForSingleObject(pi.hProcess, INFINITE);
+    if (timeLimit == -1) WaitForSingleObject(pi.hProcess, INFINITE);
     else {
         WaitForSingleObject(pi.hProcess, timeLimit);
         TerminateProcess(pi.hProcess, -1);
@@ -172,8 +163,7 @@ std::pair<int, std::string> NewProcessSync(const std::string& process, int timeL
     if (!noReadOutput) {
         while (true) {
             ZeroMemory(buffer, READ_BUFFER_SIZE);
-            if (!ReadFile(hRead, buffer, READ_BUFFER_SIZE, &bytesRead, nullptr))
-                break;
+            if (!ReadFile(hRead, buffer, READ_BUFFER_SIZE, &bytesRead, nullptr)) break;
             strOutput.append(buffer, bytesRead);
         }
     }
@@ -205,13 +195,10 @@ std::string GetSystemLocaleName() {
 
 inline bool isWine() {
     HMODULE ntdll = GetModuleHandle(L"ntdll.dll");
-    if (!ntdll)
-        return false;
+    if (!ntdll) return false;
     auto pwine_get_version = GetProcAddress(ntdll, "wine_get_version");
-    if (pwine_get_version)
-        return true;
-    else
-        return false;
+    if (pwine_get_version) return true;
+    else return false;
 }
 
 bool IsWineEnvironment() {
@@ -231,16 +218,12 @@ inline DWORD_PTR GetProcessBaseAddress(DWORD processId) {
     LPBYTE    moduleArrayBytes;
     DWORD     bytesRequired = 0;
 
-    if (!processHandle)
-        return baseAddress;
+    if (!processHandle) return baseAddress;
 
-    if (!EnumProcessModules(processHandle, nullptr, 0, &bytesRequired) || !bytesRequired)
-        goto Ret;
+    if (!EnumProcessModules(processHandle, nullptr, 0, &bytesRequired) || !bytesRequired) goto Ret;
 
     moduleArrayBytes = (LPBYTE)LocalAlloc(LPTR, bytesRequired);
-    if (!moduleArrayBytes) {
-        goto Ret;
-    }
+    if (!moduleArrayBytes) { goto Ret; }
 
     moduleArray = (HMODULE*)moduleArrayBytes;
     if (EnumProcessModules(processHandle, moduleArray, bytesRequired, &bytesRequired)) {
@@ -287,26 +270,20 @@ uintptr_t FindSig(const char* szSignature) {
     const char*            oldPat   = pattern;
 
     for (uintptr_t pCur = rangeStart; pCur < rangeEnd; pCur++) {
-        if (!*pattern)
-            return firstMatch;
+        if (!*pattern) return firstMatch;
 
-        while (*(PBYTE)pattern == ' ')
-            pattern++;
+        while (*(PBYTE)pattern == ' ') pattern++;
 
-        if (!*pattern)
-            return firstMatch;
+        if (!*pattern) return firstMatch;
 
         if (oldPat != pattern) {
             oldPat = pattern;
-            if (*(PBYTE)pattern != '\?')
-                patByte = GET_BYTE(pattern);
+            if (*(PBYTE)pattern != '\?') patByte = GET_BYTE(pattern);
         }
         if (*(PBYTE)pattern == '\?' || *(BYTE*)pCur == patByte) {
-            if (!firstMatch)
-                firstMatch = pCur;
+            if (!firstMatch) firstMatch = pCur;
 
-            if (!pattern[2] || !pattern[1])
-                return firstMatch;
+            if (!pattern[2] || !pattern[1]) return firstMatch;
             pattern += 2;
         } else {
             pattern    = szSignature;

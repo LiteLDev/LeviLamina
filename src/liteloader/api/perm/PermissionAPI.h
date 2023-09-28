@@ -57,9 +57,7 @@ public:
     void init(HMODULE hModule = nullptr) {
         if (!hModule) {
             auto pPtr = ll::getPlugin("LLPermission");
-            if (!pPtr) {
-                throw std::runtime_error("Cannot get the plugin object");
-            }
+            if (!pPtr) { throw std::runtime_error("Cannot get the plugin object"); }
             handle = pPtr->handle;
         } else {
             handle = hModule;
@@ -99,9 +97,7 @@ public:
      * @endcode
      */
     std::weak_ptr<ll::perm::Role> createRole(const std::string& name, const std::string& displayName) {
-        if (funcCreateRole == nullptr) {
-            throw std::runtime_error("Function not found");
-        }
+        if (funcCreateRole == nullptr) { throw std::runtime_error("Function not found"); }
         std::weak_ptr<ll::perm::Role> ptr{};
         funcCreateRole(name, displayName, ptr);
         return ptr;
@@ -114,9 +110,7 @@ public:
      * @return bool  True If the role exists, false otherwise.
      */
     bool roleExists(const std::string& name) {
-        if (funcRoleExists == nullptr) {
-            throw std::runtime_error("Function not found");
-        }
+        if (funcRoleExists == nullptr) { throw std::runtime_error("Function not found"); }
         return funcRoleExists(name);
     }
 
@@ -128,9 +122,7 @@ public:
      * @throws std::invalid_argument      If the role does not exist.
      */
     std::weak_ptr<ll::perm::Role> getRole(const std::string& name) {
-        if (funcGetRole == nullptr) {
-            throw std::runtime_error("Function not found");
-        }
+        if (funcGetRole == nullptr) { throw std::runtime_error("Function not found"); }
         std::weak_ptr<ll::perm::Role> ptr{};
         funcGetRole(name, ptr);
         return ptr;
@@ -143,9 +135,7 @@ public:
      * @return std::weak_ptr<PERM::Role>  The role(weak ref).
      */
     std::weak_ptr<ll::perm::Role> getOrCreateRole(const std::string& name) {
-        if (funcGetOrCreateRole == nullptr) {
-            throw std::runtime_error("Function not found");
-        }
+        if (funcGetOrCreateRole == nullptr) { throw std::runtime_error("Function not found"); }
         std::weak_ptr<ll::perm::Role> ptr{};
         funcGetOrCreateRole(name, ptr);
         return ptr;
@@ -157,9 +147,7 @@ public:
      * @param  name  The name of the role.
      */
     void deleteRole(const std::string& name) {
-        if (funcDeleteRole == nullptr) {
-            throw std::runtime_error("Function not found");
-        }
+        if (funcDeleteRole == nullptr) { throw std::runtime_error("Function not found"); }
         funcDeleteRole(name);
     }
 
@@ -170,9 +158,7 @@ public:
      * @param desc  The description name of the permission.
      */
     void registerPermission(const std::string& name, const std::string& desc) {
-        if (funcRegisterPermission == nullptr) {
-            throw std::runtime_error("Function not found");
-        }
+        if (funcRegisterPermission == nullptr) { throw std::runtime_error("Function not found"); }
         funcRegisterPermission(name, desc);
     }
 
@@ -183,9 +169,7 @@ public:
      * @warning  This function will also delete the permission instances in roles.
      */
     void deletePermission(const std::string& name) {
-        if (funcDeletePermission == nullptr) {
-            throw std::runtime_error("Function not found");
-        }
+        if (funcDeletePermission == nullptr) { throw std::runtime_error("Function not found"); }
         funcDeletePermission(name);
     }
 
@@ -196,9 +180,7 @@ public:
      * @return bool  True If the permission exists, false otherwise.
      */
     bool permissionExists(const std::string& name) {
-        if (funcPermissionExists == nullptr) {
-            throw std::runtime_error("Function not found");
-        }
+        if (funcPermissionExists == nullptr) { throw std::runtime_error("Function not found"); }
         return funcPermissionExists(name);
     }
 
@@ -210,9 +192,7 @@ public:
      * @return bool  True If the player has the Permission, false otherwise.
      */
     bool checkPermission(const std::string& xuid, const std::string& name) {
-        if (funcCheckPermission == nullptr) {
-            throw std::runtime_error("Function not found");
-        }
+        if (funcCheckPermission == nullptr) { throw std::runtime_error("Function not found"); }
         return funcCheckPermission(xuid, name);
     }
 
@@ -224,9 +204,7 @@ public:
      * @return bool  True If the player is a member of the role, false otherwise.
      */
     bool isMemberOf(const std::string& xuid, const std::string& name) {
-        if (funcIsMemberOf == nullptr) {
-            throw std::runtime_error("Function not found");
-        }
+        if (funcIsMemberOf == nullptr) { throw std::runtime_error("Function not found"); }
         return funcIsMemberOf(xuid, name);
     }
 
@@ -237,9 +215,7 @@ public:
      * @return PERM::Roles  The roles of the player.
      */
     ll::perm::Roles getPlayerRoles(const std::string& xuid) {
-        if (funcGetPlayerRoles == nullptr) {
-            throw std::runtime_error("Function not found");
-        }
+        if (funcGetPlayerRoles == nullptr) { throw std::runtime_error("Function not found"); }
         ll::perm::Roles roles;
         funcGetPlayerRoles(xuid, roles);
         return roles;
@@ -252,9 +228,7 @@ public:
      * @return PERM::Permissions  The permissions of the player.
      */
     ll::perm::Permissions getPlayerPermissions(const std::string& xuid) {
-        if (funcGetPlayerPermissions == nullptr) {
-            throw std::runtime_error("Function not found");
-        }
+        if (funcGetPlayerPermissions == nullptr) { throw std::runtime_error("Function not found"); }
         ll::perm::Permissions permissions;
         funcGetPlayerPermissions(xuid, permissions);
         return permissions;
@@ -264,9 +238,7 @@ public:
      * @brief Save the data.
      */
     void saveData() {
-        if (funcSaveData == nullptr) {
-            throw std::runtime_error("Function not found");
-        }
+        if (funcSaveData == nullptr) { throw std::runtime_error("Function not found"); }
         funcSaveData();
     }
 };
