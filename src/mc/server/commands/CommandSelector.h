@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandSelectorBase.h"
 #include "mc/server/commands/CommandSelectorResults.h"
 

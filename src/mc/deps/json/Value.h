@@ -113,7 +113,7 @@ public:
 
 public:
     // prevent constructor by default
-    Value();
+    Value() = default;
 
 public:
     // NOLINTBEGIN
