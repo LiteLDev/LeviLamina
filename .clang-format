@@ -17,18 +17,29 @@ AlignConsecutiveMacros:
   AcrossEmptyLines: false
   AcrossComments: false
 AllowAllParametersOfDeclarationOnNextLine: false
+AllowAllArgumentsOnNextLine: false
+AlignOperands: AlignAfterOperator
+AlignConsecutiveBitFields:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
 AllowShortLambdasOnASingleLine: All
+AllowShortBlocksOnASingleLine: Always
+AllowShortIfStatementsOnASingleLine: AllIfsAndElse
+AllowShortLoopsOnASingleLine: true
 AlwaysBreakAfterDefinitionReturnType: None
 AlwaysBreakTemplateDeclarations: 'Yes'
 BinPackArguments: false
 BinPackParameters: false
 BreakBeforeBraces: Custom
+BreakBeforeBinaryOperators: NonAssignment
 ColumnLimit: 120
 CommentPragmas: '^ IWYU pragma:'
 ConstructorInitializerIndentWidth: 0
 IndentWidth: 4
 Language: Cpp
 MaxEmptyLinesToKeep: 2
+PackConstructorInitializers: CurrentLine
 PointerAlignment: Left
 TabWidth: 4
 UseTab: Never
