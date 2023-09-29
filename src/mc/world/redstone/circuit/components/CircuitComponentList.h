@@ -23,7 +23,7 @@ public:
 
         constexpr Item() = delete;
 
-        constexpr Item(BaseCircuitComponent* component, int dampening, const BlockPos& pos)
+        constexpr Item(BaseCircuitComponent* component, int dampening, BlockPos const& pos)
         : mComponent(component), mDampening(dampening), mPos(pos) {}
     };
 

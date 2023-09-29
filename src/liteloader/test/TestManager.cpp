@@ -25,7 +25,7 @@ void TestManager::initAllTests() {
     );
 }
 
-void TestManager::submitResult(Test* test, const Result& result) {
+void TestManager::submitResult(Test* test, Result const& result) {
     auto it = testStatus.find(test);
     if (it == testStatus.end()) {
         fmt::print("Test {0} is not registered, cannot submit result.\n", test->getName());

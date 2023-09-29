@@ -8,7 +8,7 @@
 #include "mc/world/item/Item.h"
 #include "mc/world/item/registry/ItemStack.h"
 #include "mc/world/level/ChunkPos.h"
-#include "mc/world/level/Level.h"
+#include "mc/server/ServerLevel.h"
 #include "mc/world/level/block/Block.h"
 #include "mc/world/level/block/actor/DropperBlockActor.h"
 #include "mc/world/level/chunk/LevelChunk.h"

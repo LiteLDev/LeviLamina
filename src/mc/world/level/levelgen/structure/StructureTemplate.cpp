@@ -1,7 +1,7 @@
 #include "mc/world/level/levelgen/structure/StructureTemplate.h"
 
+#include "mc/server/ServerLevel.h"
 #include "mc/world/level/BlockPalette.h"
-#include "mc/world/level/Level.h"
 #include "mc/world/level/levelgen/structure/StructureManager.h"
 #include "mc/world/level/levelgen/structure/StructureSettings.h"
 
@@ -28,9 +28,7 @@ std::unique_ptr<StructureTemplate> StructureTemplate::create(std::string name, C
     auto& unknownBlockRegistry = Global<StructureManager>->mUnknownBlockRegistry;
     auto  res                  = std::make_unique<StructureTemplate>(name, unknownBlockRegistry);
     bool  success{res->load(tag)};
-    if (!success) {
-        return nullptr;
-    }
+    if (!success) { return nullptr; }
     return res;
 }
 

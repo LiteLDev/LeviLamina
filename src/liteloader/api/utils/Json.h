@@ -65,7 +65,7 @@ public:
         }
         MCAPI CZString(CZString const& other);
         MCAPI ~CZString();
-        CZString& operator=(const CZString& other) {
+        CZString& operator=(CZString const& other) {
             cstr_  = other.cstr_;
             index_ = other.index_;
             return *this;
@@ -137,7 +137,7 @@ public:
         bits_.value_type_ = booleanValue;
         value_.bool_      = value;
     }
-    MCAPI Value(const Value& other);
+    MCAPI Value(Value const& other);
     MCAPI ~Value();
 
     MCAPI static Value const null;
@@ -145,10 +145,10 @@ public:
     MCAPI void swap(Value& other);
     ValueType  type() const { return bits_.value_type_; }
 
-    MCAPI Value& operator=(const Value& other);
+    MCAPI Value& operator=(Value const& other);
 
-    MCAPI bool operator<(const Value& other) const;
-    MCAPI bool operator==(const Value& other) const;
+    MCAPI bool operator<(Value const& other) const;
+    MCAPI bool operator==(Value const& other) const;
 
     MCAPI std::string asString(std::string const&) const;
     MCAPI Int         asInt(Int) const;
@@ -177,18 +177,18 @@ public:
     MCAPI void         resize(ArrayIndex newSize);
     MCAPI Value&       operator[](ArrayIndex index);
     MCAPI Value&       operator[](int index);
-    MCAPI const Value& operator[](ArrayIndex index) const;
-    MCAPI const Value& operator[](int index) const;
-    MCAPI Value&       append(const Value& value);
+    MCAPI Value const& operator[](ArrayIndex index) const;
+    MCAPI Value const& operator[](int index) const;
+    MCAPI Value&       append(Value const& value);
 
     MCAPI Value&       operator[](const char* key);
-    MCAPI const Value& operator[](const char* key) const;
-    MCAPI Value&       operator[](const std::string& key);
-    MCAPI const Value& operator[](const std::string& key) const;
+    MCAPI Value const& operator[](const char* key) const;
+    MCAPI Value&       operator[](std::string const& key);
+    MCAPI Value const& operator[](std::string const& key) const;
     MCAPI Value        removeMember(const char* key);
-    void               removeMember(const std::string& key) { removeMember(key.c_str()); }
+    void               removeMember(std::string const& key) { removeMember(key.c_str()); }
     MCAPI bool         isMember(const char* key) const;
-    bool               isMember(const std::string& key) const { return isMember(key.c_str()); }
+    bool               isMember(std::string const& key) const { return isMember(key.c_str()); }
 
     MCAPI const_iterator begin() const;
     MCAPI const_iterator end() const;
@@ -223,8 +223,8 @@ public:
     typedef int                             difference_type;
     typedef ValueIteratorBase               SelfType;
 
-    bool operator==(const SelfType& other) const { return isEqual(other); }
-    bool operator!=(const SelfType& other) const { return !isEqual(other); }
+    bool operator==(SelfType const& other) const { return isEqual(other); }
+    bool operator!=(SelfType const& other) const { return !isEqual(other); }
 
     MCAPI Value key() const;
 
@@ -232,7 +232,7 @@ protected:
     MCAPI void               increment(void);
     MCAPI class Json::Value& deref(void) const;
 
-    bool isEqual(const SelfType& other) const {
+    bool isEqual(SelfType const& other) const {
         if (isNull_) return other.isNull_;
         return current_ == other.current_;
     }
@@ -243,7 +243,7 @@ private:
 
 public:
     ValueIteratorBase();
-    explicit ValueIteratorBase(const Value::ObjectValues::iterator& current);
+    explicit ValueIteratorBase(Value::ObjectValues::iterator const& current);
 };
 class ValueConstIterator : public ValueIteratorBase {
     friend class Value;
@@ -252,7 +252,7 @@ public:
     typedef const Value value_type;
     // typedef uint size_t;
     // typedef int difference_type;
-    typedef const Value&       reference;
+    typedef Value const&       reference;
     typedef const Value*       pointer;
     typedef ValueConstIterator SelfType;
 
@@ -260,7 +260,7 @@ public:
     ValueConstIterator(ValueIterator const& other);
 
 private:
-    explicit ValueConstIterator(const Value::ObjectValues::iterator& current);
+    explicit ValueConstIterator(Value::ObjectValues::iterator const& current);
 
 public:
     MCAPI SelfType& operator++();
@@ -279,11 +279,11 @@ public:
     typedef ValueIterator SelfType;
 
     ValueIterator();
-    explicit ValueIterator(const ValueConstIterator& other);
-    ValueIterator(const ValueIterator& other);
+    explicit ValueIterator(ValueConstIterator const& other);
+    ValueIterator(ValueIterator const& other);
 
 private:
-    explicit ValueIterator(const Value::ObjectValues::iterator& current);
+    explicit ValueIterator(Value::ObjectValues::iterator const& current);
 
 public:
     SelfType& operator++() {
@@ -315,7 +315,7 @@ public:
     };
     MCAPI Reader();
 
-    MCAPI bool parse(const std::string& document, Value& root, bool collectComments = true);
+    MCAPI bool parse(std::string const& document, Value& root, bool collectComments = true);
     MCAPI bool parse(const char* beginDoc, const char* endDoc, Value& root, bool collectComments = true);
     MCAPI bool parse(const char* beginDoc, uint64 length, Value& root, bool collectComments = true);
     MCAPI bool parse(std::istream& is, Value& root, bool collectComments = true);
@@ -372,7 +372,7 @@ private:
 class Writer {
 public:
     virtual ~Writer() {}
-    virtual std::string write(const Value& root) = 0;
+    virtual std::string write(Value const& root) = 0;
 };
 
 class FastWriter : public Writer {
@@ -381,7 +381,7 @@ public:
     ~FastWriter() override {}
 
 public:
-    MCAPI std::string write(const Value& root) override;
+    MCAPI std::string write(Value const& root) override;
 
 private:
     std::string document_;
@@ -396,7 +396,7 @@ public:
     ~StyledWriter() override {}
 
 public:
-    MCAPI std::string write(const Value& root) override;
+    MCAPI std::string write(Value const& root) override;
 
 private:
     typedef std::vector<std::string> ChildValues;

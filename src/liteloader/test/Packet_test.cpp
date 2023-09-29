@@ -575,7 +575,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     PacketTestInit,
     ServerInstance,
     ll::memory::HookPriority::Normal,
-    "?startServerThread@ServerInstance@@QEAAXXZ",
+    &ServerInstance::startServerThread,
     void
 ) {
     origin();

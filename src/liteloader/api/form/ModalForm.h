@@ -23,13 +23,13 @@ public:
     );
     ~ModalForm() override = default;
 
-    LLAPI ModalForm& setTitle(const std::string& title);
+    LLAPI ModalForm& setTitle(std::string const& title);
 
-    LLAPI ModalForm& setContent(const std::string& content);
+    LLAPI ModalForm& setContent(std::string const& content);
 
-    LLAPI ModalForm& setButtonLeft(const std::string& buttonLeft);
+    LLAPI ModalForm& setButtonLeft(std::string const& buttonLeft);
 
-    LLAPI ModalForm& setButtonRight(const std::string& buttonRight);
+    LLAPI ModalForm& setButtonRight(std::string const& buttonRight);
 
     LLAPI ModalForm& setCallback(Callback callback);
 

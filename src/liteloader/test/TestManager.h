@@ -24,7 +24,7 @@ public:
 
     void initAllTests();
 
-    void submitResult(Test* test, const Result& result);
+    void submitResult(Test* test, Result const& result);
 
     void printTestStatus();
 

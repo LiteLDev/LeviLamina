@@ -30,10 +30,8 @@ struct LLConfig {
 
     bool                               enableCrashLogger         = true;
     std::string                        crashLoggerPath           = R"(.\plugins\LiteLoader\CrashLogger_Daemon.exe)";
-    std::string                        antiGiveCommand           = "kick {player}";
     bool                               enableSimpleServerLogger  = true;
     bool                               enableFixListenPort       = false;
-    bool                               enableAntiGive            = true;
     bool                               enableUnlockCmd           = true;
     bool                               enableErrorStackTraceback = true;
     bool                               cacheErrorStackTracebackSymbol = false;
@@ -64,9 +62,9 @@ LLAPI extern LLConfig          globalConfig;
 LLAPI extern LLRuntimeConfig   globalRuntimeConfig;
 LLAPI extern CommandLineOption commandLineOption;
 
-void inline to_json(nlohmann::json& j, const LLConfig& conf);
+void inline to_json(nlohmann::json& j, LLConfig const& conf);
 
-void inline from_json(const nlohmann::json& j, LLConfig& conf);
+void inline from_json(nlohmann::json const& j, LLConfig& conf);
 
 bool LoadLLConfig();
 

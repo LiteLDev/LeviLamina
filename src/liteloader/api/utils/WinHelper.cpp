@@ -53,7 +53,7 @@ std::string GetLastErrorMessage() {
 }
 
 // Tool
-wchar_t* str2cwstr(const std::string& str) {
+wchar_t* str2cwstr(std::string const& str) {
     auto  len    = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, nullptr, 0);
     auto* buffer = new wchar_t[len + 1];
     MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, buffer, len + 1);
@@ -63,7 +63,7 @@ wchar_t* str2cwstr(const std::string& str) {
 
 #define READ_BUFFER_SIZE 4096
 
-bool NewProcess(const std::string& process, std::function<void(int, std::string)> callback, int timeLimit) {
+bool NewProcess(std::string const& process, std::function<void(int, std::string)> callback, int timeLimit) {
     SECURITY_ATTRIBUTES sa;
     HANDLE              hRead, hWrite;
     sa.nLength              = sizeof(SECURITY_ATTRIBUTES);
@@ -111,7 +111,7 @@ bool NewProcess(const std::string& process, std::function<void(int, std::string)
 
         try {
             if (callback) callback((int)exitCode, strOutput);
-        } catch (const seh_exception& e) {
+        } catch (seh_exception const& e) {
             ll::logger.error("SEH Uncaught Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
             ll::logger.error("In NewProcess callback");
             PrintCurrentStackTraceback();
@@ -125,7 +125,7 @@ bool NewProcess(const std::string& process, std::function<void(int, std::string)
     return true;
 }
 
-std::pair<int, std::string> NewProcessSync(const std::string& process, int timeLimit, bool noReadOutput) {
+std::pair<int, std::string> NewProcessSync(std::string const& process, int timeLimit, bool noReadOutput) {
     SECURITY_ATTRIBUTES sa;
     HANDLE              hRead, hWrite;
     sa.nLength              = sizeof(SECURITY_ATTRIBUTES);
@@ -236,7 +236,7 @@ Ret:
     return baseAddress;
 }
 
-inline std::vector<std::string> split(std::string str, const std::string& pattern) {
+inline std::vector<std::string> split(std::string str, std::string const& pattern) {
     std::string::size_type   pos;
     std::vector<std::string> result;
     str         += pattern;

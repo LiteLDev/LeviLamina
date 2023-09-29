@@ -12,7 +12,7 @@ namespace ll::form::handler {
 class FormHandler {
 
 public:
-    virtual void                   handle(Player& player, const std::string& data) const = 0;
+    virtual void                   handle(Player& player, std::string const& data) const = 0;
     [[nodiscard]] virtual FormType getType() const                                       = 0;
 };
 
@@ -25,7 +25,7 @@ public:
     : mCallback(std::move(callback)),
       mButtonCallbacks(std::move(buttonCallbacks)) {}
 
-    void                   handle(Player& player, const std::string& data) const override;
+    void                   handle(Player& player, std::string const& data) const override;
     [[nodiscard]] FormType getType() const override { return FormType::SimpleForm; }
 };
 
@@ -38,7 +38,7 @@ public:
     : mCallback(std::move(callback)),
       mFormElements(std::move(formElements)) {}
 
-    void                   handle(Player& player, const std::string& data) const override;
+    void                   handle(Player& player, std::string const& data) const override;
     [[nodiscard]] FormType getType() const override { return FormType::CustomForm; }
 };
 
@@ -48,12 +48,12 @@ public:
 
     explicit ModalFormHandler(ModalForm::Callback callback) : mCallback(std::move(callback)) {}
 
-    void                   handle(Player& player, const std::string& data) const override;
+    void                   handle(Player& player, std::string const& data) const override;
     [[nodiscard]] FormType getType() const override { return FormType::ModalForm; }
 };
 
 uint addFormHandler(std::unique_ptr<FormHandler>&& data);
 
-void handleFormPacket(Player& player, uint formId, const std::string& data);
+void handleFormPacket(Player& player, uint formId, std::string const& data);
 
 } // namespace ll::form::handler

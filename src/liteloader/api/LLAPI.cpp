@@ -25,7 +25,7 @@ inline int stoi(std::string_view str) {
 }
 } // namespace
 
-std::string ll::getDataPath(const std::string& pluginName) {
+std::string ll::getDataPath(std::string const& pluginName) {
     std::string dataPath = "plugins\\LiteLoader\\" + pluginName;
     if (!filesystem::exists(str2wstr(dataPath))) {
         std::error_code ec;
@@ -57,14 +57,14 @@ Version::Version(int major, int minor, int patch, PreRelease preRelease)
   mPatch(patch),
   mPreRelease(preRelease) {}
 
-bool Version::operator<(const Version& other) const {
+bool Version::operator<(Version const& other) const {
     return mMajor < other.mMajor || (mMajor == other.mMajor && mMinor < other.mMinor)
         || (mMajor == other.mMajor && mMinor == other.mMinor && mPatch < other.mPatch)
         || (mMajor == other.mMajor && mMinor == other.mMinor && mPatch == other.mPatch
             && mPreRelease < other.mPreRelease);
 }
 
-bool Version::operator==(const Version& other) const {
+bool Version::operator==(Version const& other) const {
     return mMajor == other.mMajor && mMinor == other.mMinor && mPatch == other.mPatch
         && mPreRelease == other.mPreRelease;
 }
@@ -76,7 +76,7 @@ std::string Version::toFullString() const {
     return fmt::format("{}-{}", toString(), PRE_RELEASE_STRINGS[(uchar)mPreRelease]);
 }
 
-Version Version::parse(const std::string& str) {
+Version Version::parse(std::string const& str) {
     Version     result;
     std::string basic = str;
     std::string suffix;

@@ -51,7 +51,7 @@ public:
      * @param  pname  The permission name to check.
      * @return bool  True if the role has the permission, false otherwise.
      */
-    virtual bool hasPermission(const std::string& pname) const {
+    virtual bool hasPermission(std::string const& pname) const {
         return this->permissions.contains(pname) && this->permissions.at(pname).enabled;
     }
     /**
@@ -62,14 +62,14 @@ public:
      * @param extra    Extra data for the permission.
      */
     virtual void
-    setPermission(const std::string& pname, bool enabled = true, const nlohmann::json& extra = nlohmann::json());
+    setPermission(std::string const& pname, bool enabled = true, nlohmann::json const& extra = nlohmann::json());
 
     /**
      * @brief Remove the permission of the role.
      *
      * @param pname  The name of the permission to remove.
      */
-    virtual void removePermission(const std::string& pname) { this->permissions.remove(pname); }
+    virtual void removePermission(std::string const& pname) { this->permissions.remove(pname); }
 
     /**
      * @brief Check whether the permission exists in the role.
@@ -77,7 +77,7 @@ public:
      * @param  pname  The name of the permission to check.
      * @return bool  True if the permission exists in the role, false otherwise.
      */
-    virtual bool permissionExists(const std::string& pname) { return this->permissions.contains(pname); }
+    virtual bool permissionExists(std::string const& pname) { return this->permissions.contains(pname); }
 
     /**
      * @brief Check whether the role has the member.
@@ -85,21 +85,21 @@ public:
      * @param  xuid  The xuid of the member(player) to check.
      * @return bool  True if the role has the member, false otherwise.
      */
-    virtual bool hasMember(const std::string& xuid) const = 0;
+    virtual bool hasMember(std::string const& xuid) const = 0;
 
     /**
      * @brief Add the member to the role.
      *
      * @param xuid  The xuid of the member(player) to add.
      */
-    virtual void addMember(const std::string& xuid) = 0;
+    virtual void addMember(std::string const& xuid) = 0;
 
     /**
      * @brief Remove the member from the role.
      *
      * @param xuid  The xuid of the member(player) to remove.
      */
-    virtual void removeMember(const std::string& xuid) = 0;
+    virtual void removeMember(std::string const& xuid) = 0;
 
     /**
      * @brief Get the permissions of the role(non-const).
@@ -110,9 +110,9 @@ public:
     /**
      * @brief Get the permissions of the role(const).
      *
-     * @return const Permissions&  The permissions of the role.
+     * @return Permissions const&  The permissions of the role.
      */
-    virtual const Permissions& getPermissions() const { return this->permissions; }
+    virtual Permissions const& getPermissions() const { return this->permissions; }
 
     /**
      * @brief Get the members of the role(non-const).
@@ -123,9 +123,9 @@ public:
     /**
      * @brief Get the members of the role(const).
      *
-     * @return const Members&  The members of the role.
+     * @return Members const&  The members of the role.
      */
-    virtual const Members& getMembers() const { return this->members; }
+    virtual Members const& getMembers() const { return this->members; }
 
     /**
      * @brief Get the type of the role.
@@ -155,7 +155,7 @@ public:
      * @param  pname  The name to check.
      * @return bool  True if the role name is valid, false otherwise.
      */
-    static bool isValidRoleName(const std::string& pname) {
+    static bool isValidRoleName(std::string const& pname) {
         return pname.find_first_of(Role::roleNameInvalidChars.data()) == std::string::npos;
     }
 };
@@ -167,16 +167,16 @@ class GeneralRole : public Role {
 
 public:
     GeneralRole()                         = default;
-    GeneralRole(const GeneralRole& other) = default;
+    GeneralRole(GeneralRole const& other) = default;
     GeneralRole(GeneralRole&& other)      = default;
     ~GeneralRole()                        = default;
 
-    GeneralRole& operator=(const GeneralRole& other) = default;
+    GeneralRole& operator=(GeneralRole const& other) = default;
     GeneralRole& operator=(GeneralRole&& other)      = default;
 
-    virtual bool hasMember(const std::string& xuid) const { return this->members.contains(xuid); }
-    virtual void addMember(const std::string& xuid) { this->members.push_back(xuid); }
-    virtual void removeMember(const std::string& xuid) {
+    virtual bool hasMember(std::string const& xuid) const { return this->members.contains(xuid); }
+    virtual void addMember(std::string const& xuid) { this->members.push_back(xuid); }
+    virtual void removeMember(std::string const& xuid) {
         this->members.erase(std::remove(this->members.begin(), this->members.end(), xuid), this->members.end());
     }
 
@@ -190,18 +190,18 @@ class EveryoneRole : public Role {
 
 public:
     EveryoneRole()                          = default;
-    EveryoneRole(const EveryoneRole& other) = default;
+    EveryoneRole(EveryoneRole const& other) = default;
     EveryoneRole(EveryoneRole&& other)      = default;
     ~EveryoneRole()                         = default;
 
-    EveryoneRole& operator=(const EveryoneRole& other) = default;
+    EveryoneRole& operator=(EveryoneRole const& other) = default;
     EveryoneRole& operator=(EveryoneRole&& other)      = default;
 
-    virtual bool hasMember(const std::string&) const { return true; }
-    virtual void addMember(const std::string&) {
+    virtual bool hasMember(std::string const&) const { return true; }
+    virtual void addMember(std::string const&) {
         throw std::runtime_error("You cannot add a member to a everyone permission role");
     }
-    virtual void removeMember(const std::string&) {
+    virtual void removeMember(std::string const&) {
         throw std::runtime_error("You cannot remove a member from a everyone permission role");
     }
 
@@ -215,14 +215,14 @@ class AdminRole : public Role {
 
 public:
     AdminRole()                       = default;
-    AdminRole(const AdminRole& other) = default;
+    AdminRole(AdminRole const& other) = default;
     AdminRole(AdminRole&& other)      = default;
     ~AdminRole()                      = default;
 
-    AdminRole& operator=(const AdminRole& other) = default;
+    AdminRole& operator=(AdminRole const& other) = default;
     AdminRole& operator=(AdminRole&& other)      = default;
 
-    virtual bool hasPermission(const std::string& pname) const {
+    virtual bool hasPermission(std::string const& pname) const {
         if (!this->permissions.contains(pname)) {
             return true;
         } else {
@@ -230,9 +230,9 @@ public:
         }
     }
 
-    virtual bool hasMember(const std::string& xuid) const { return this->members.contains(xuid); }
-    virtual void addMember(const std::string& xuid) { this->members.push_back(xuid); }
-    virtual void removeMember(const std::string& xuid) {
+    virtual bool hasMember(std::string const& xuid) const { return this->members.contains(xuid); }
+    virtual void addMember(std::string const& xuid) { this->members.push_back(xuid); }
+    virtual void removeMember(std::string const& xuid) {
         this->members.erase(std::remove(this->members.begin(), this->members.end(), xuid), this->members.end());
     }
 
@@ -246,9 +246,9 @@ class Roles : public PermPtrContainer<Role> {
 
 public:
     Roles() : Base() {}
-    Roles(const Base& base) : Base(base) {}
+    Roles(Base const& base) : Base(base) {}
     Roles(Base&& base) : Base(base) {}
-    Roles(const Roles& other) = default;
+    Roles(Roles const& other) = default;
     Roles(Roles&& other)      = default;
 
     /**
@@ -270,7 +270,7 @@ public:
         return result;
     }
 
-    std::shared_ptr<Role>& operator[](const std::string& pname) {
+    std::shared_ptr<Role>& operator[](std::string const& pname) {
         Role* ptr = nullptr;
         if (pname == "everyone") ptr = new EveryoneRole;
         else if (pname == "admin") ptr = new AdminRole;
@@ -280,9 +280,9 @@ public:
         return this->getOrCreate(pname, def);
     }
 
-    Roles& operator=(const Roles& other) = default;
+    Roles& operator=(Roles const& other) = default;
     Roles& operator=(Roles&& other)      = default;
-    Roles& operator=(const Base& other) { return *this = Roles{other}; }
+    Roles& operator=(Base const& other) { return *this = Roles{other}; }
 };
 
 } // namespace ll::perm

@@ -32,27 +32,30 @@ public:
             break;
         case Operation::Install:
             ll::logger.info("Command Operation::Install");
-        case Operation::Uninstall: {
+            break;
+        case Operation::Uninstall:
             ll::logger.info("Command Operation::Uninstall");
-        }
-        case Operation::Enable: {
+            break;
+
+        case Operation::Enable:
             ll::logger.info("Command Operation::Enable");
-        }
-        case Operation::Disable: {
+            break;
+
+        case Operation::Disable:
             ll::logger.info("Command Operation::Disable");
-            ;
-        }
+            break;
+
         default:
             ll::logger.info("Command default");
             break;
         }
     }
 
-    static void setup(CommandRegistry* registry) {
-        Bedrock::typeid_t<CommandRegistry>();
+    static void setup(CommandRegistry& registry) {
 
         using namespace ll::registerCommandHelper;
-        registry->registerCommand(
+
+        registry.registerCommand(
             "testcommand",
             "LiteLoader CommandRegistry Test",
             CommandPermissionLevel::GameDirectors,
@@ -60,17 +63,16 @@ public:
             CommandFlagValue::NotCheat
         );
 
-
-        registry->addSoftEnum("SoftEnumName", {"one_softenum", "two_softenum", "three_softenum", "four_softenum"});
+        registry.addSoftEnum("SoftEnumName", {"one_softenum", "two_softenum", "three_softenum", "four_softenum"});
 
         // addons list
-        registry->addEnum<Operation>(
+        registry.addEnum<Operation>(
             "Operation_List",
             {
                 {"enum_list", Operation::List}
         }
         );
-        registry->registerOverload<TestCommand>(
+        registry.registerOverload<TestCommand>(
             "testcommand",
             makeMandatory<CommandParameterDataType::Enum>(&TestCommand::operation, "operation", "Operation_List")
                 .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
@@ -81,7 +83,7 @@ public:
                 &TestCommand::target_isSet
             )
         );
-        registry->registerOverload<TestCommand>(
+        registry.registerOverload<TestCommand>(
             "testcommand",
             makeMandatory<CommandParameterDataType::Enum>(&TestCommand::operation, "operation", "Operation_List")
                 .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
@@ -94,26 +96,40 @@ public:
         );
 
         // addons install
-        registry->addEnum<Operation>(
+        registry.addEnum<Operation>(
             "Operation_Install",
             {
                 {"install", Operation::Install}
         }
         );
-        registry->registerOverload<TestCommand>(
-            "testcommand",
-            makeMandatory<CommandParameterDataType::Enum>(
-                &TestCommand::operation,
-                "operation",
-                "Operation_Addons_Install"
-            )
-                .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
-            makeMandatory<CommandParameterDataType::Basic>(&TestCommand::target, "enumName")
-        );
+
+        // try {
+
+        //     registry.registerOverload<TestCommand>(
+        //         "testcommand",
+        //         makeMandatory<CommandParameterDataType::Enum>(
+        //             &TestCommand::operation,
+        //             "operation",
+        //             "Operation_Addons_Install"
+        //         )
+        //             .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
+        //         makeMandatory<CommandParameterDataType::Basic>(&TestCommand::target, "enumName")
+        //     );
+        // } catch (std::exception const& e) {
+        //     ll::logger.error(
+        //         "Exception occurred in registerOverload Operation_Addons_Install"
+        //     );
+        //     ll::logger.error("Error message: {} , type: {}", TextEncoding::toUTF8(e.what()), typeid(e).name());
+        // } catch (...) {
+        //     ll::logger.error(
+        //         "Unknown Exception occurred in registerOverload Operation_Addons_Install"
+        //     );
+        // }
+
 
         // addons uninstall
 
-        registry->addEnum<Operation>(
+        registry.addEnum<Operation>(
             "Operation_Others",
             {
                 {"uninstall", Operation::Uninstall},
@@ -122,7 +138,7 @@ public:
                 {"disable",   Operation::Disable  },
         }
         );
-        registry->registerOverload<TestCommand>(
+        registry.registerOverload<TestCommand>(
             "testcommand",
             makeMandatory<CommandParameterDataType::Enum>(&TestCommand::operation, "operation", "Operation_Others")
                 .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
@@ -133,7 +149,7 @@ public:
                 &TestCommand::target_isSet
             )
         );
-        registry->registerOverload<TestCommand>(
+        registry.registerOverload<TestCommand>(
             "testcommand",
             makeMandatory<CommandParameterDataType::Enum>(&TestCommand::operation, "operation", "Operation_Others")
                 .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
@@ -159,5 +175,10 @@ LL_AUTO_STATIC_HOOK(
 ) {
     origin(server, networkCommands, networkTestCommands, permissionsFile);
     // Test CommandRegistry
-    TestCommand::setup(&server.getCommands().getRegistry());
+    try {
+        TestCommand::setup(server.getCommands().getRegistry());
+    } catch (std::exception const& e) {
+        ll::logger.error("Exception occurred in TestCommand::setup");
+        ll::logger.error("Error message: {} , type: {}", TextEncoding::toUTF8(e.what()), typeid(e).name());
+    } catch (...) { ll::logger.error("Unknown Exception occurred in TestCommand::setup!"); }
 }

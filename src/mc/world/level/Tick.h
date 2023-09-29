@@ -12,7 +12,7 @@ public:
 
     constexpr explicit Tick(uint64 v) : t(v){};
 
-    constexpr Tick(const Tick& v) = default;
+    constexpr Tick(Tick const& v) = default;
 
     constexpr Tick() : t(0){};
 

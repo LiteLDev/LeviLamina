@@ -6,8 +6,8 @@ template <size_t N>
 class longlongN {
 public:
     longlongN()                           = delete;
-    longlongN(const longlongN&)           = delete;
-    longlongN operator=(const longlongN&) = delete;
+    longlongN(longlongN const&)           = delete;
+    longlongN operator=(longlongN const&) = delete;
 };
 template <>
 VEC2_IMPL_(longlongN<2>, longlongN<2>, intmax_t, IntN);

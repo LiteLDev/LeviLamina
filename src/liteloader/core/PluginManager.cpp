@@ -21,7 +21,7 @@ std::unordered_map<std::string, ll::Plugin> plugins;
 
 bool ll::PluginManager::registerPlugin(
     HMODULE                            handle,
-    const std::string&                 name,
+    std::string const&                 name,
     std::string                        desc,
     ll::Version                        version,
     std::map<std::string, std::string> others
@@ -70,7 +70,7 @@ bool ll::PluginManager::unRegisterPlugin(std::string name) {
 }
 
 // Helper
-ll::Plugin* GetPlugin_Raw(const std::string& name, bool includeScriptPlugin) {
+ll::Plugin* GetPlugin_Raw(std::string const& name, bool includeScriptPlugin) {
     for (auto& it : plugins) {
         if (it.second.name == name
             || u8str2str(filesystem::path(str2wstr(it.second.filePath)).filename().u8string()) == name) {

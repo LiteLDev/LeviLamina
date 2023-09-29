@@ -57,15 +57,9 @@ public:
     LLNDAPI Tag const& operator[](std::string_view index) const;
 
 public:
-    // prevent constructor by default
-    Tag& operator=(Tag const&);
-    Tag(Tag const&);
-    Tag();
-
-public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1Tag@@UEAA@XZ
+    virtual ~Tag();
 
     // vIndex: 1, symbol: ?deleteChildren@Tag@@UEAAXXZ
     virtual void deleteChildren();
@@ -97,9 +91,6 @@ public:
 
     // vIndex: 10, symbol: ?hash@Int64Tag@@UEBA_KXZ
     virtual uint64 hash() const = 0;
-
-    // symbol: ??1Tag@@UEAA@XZ
-    MCVAPI ~Tag();
 
     // symbol: ?getTagName@Tag@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Type@1@@Z
     MCAPI static std::string getTagName(::Tag::Type);

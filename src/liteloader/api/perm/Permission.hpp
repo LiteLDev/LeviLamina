@@ -33,7 +33,7 @@ struct PermInstance {
      * @param  name  The permission name to check.
      * @return bool  True if the permission name is valid, false otherwise.
      */
-    static bool isValidPermissionName(const std::string& name) {
+    static bool isValidPermissionName(std::string const& name) {
         return name.find_first_of(PermInstance::permNameInvalidChars.data()) == std::string::npos
             &&                                                 // Not contain invalid chars
                name.find_first_of(':') != std::string::npos && // Has at least one :

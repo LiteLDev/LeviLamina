@@ -36,6 +36,7 @@
 #include <fstream>
 #include <iostream>
 #include <mutex>
+#include <source_location>
 #include <sstream>
 #include <string>
 #include <utility>
@@ -87,7 +88,7 @@ public:
             return *this;
         }
 
-        OutputStream& operator<<(const std::wstring& wstr) {
+        OutputStream& operator<<(std::wstring const& wstr) {
             using ll::StringUtils::wstr2str;
             std::unique_lock lock(getLocker());
             os << wstr2str(wstr);
@@ -107,7 +108,7 @@ public:
         }
 
         template <typename S, typename... Args, enable_if_type<(fmt::v9::detail::is_string<S>::value), int> = 0>
-        void operator()(const S& formatStr, const Args&... args) {
+        void operator()(S const& formatStr, Args const&... args) {
             if constexpr (0 == sizeof...(args)) {
                 // Avoid fmt if only one argument
                 *this << formatStr << endl;
@@ -118,7 +119,7 @@ public:
         }
 
         template <typename... Args>
-        void operator()(const char* formatStr, const Args&... args) {
+        void operator()(const char* formatStr, Args const&... args) {
             if constexpr (0 == sizeof...(args)) {
                 // Avoid fmt if only one argument
                 *this << formatStr << endl;
@@ -130,7 +131,7 @@ public:
     };
 
 private:
-    LLAPI static bool setDefaultFileImpl(HMODULE hPlugin, const std::string& logFile, bool appendMode);
+    LLAPI static bool setDefaultFileImpl(HMODULE hPlugin, std::string const& logFile, bool appendMode);
     LLAPI static bool setDefaultFileImpl(HMODULE hPlugin, nullptr_t);
 
     LLAPI static void endlImpl(HMODULE hPlugin, OutputStream& o);
@@ -144,7 +145,7 @@ public:
 
     ~Logger() { setFile(nullptr); }
 
-    inline static bool setDefaultFile(const std::string& logFile, bool appendMode) {
+    inline static bool setDefaultFile(std::string const& logFile, bool appendMode) {
         return setDefaultFileImpl(GetCurrentModule(), logFile, appendMode);
     };
 
@@ -152,7 +153,7 @@ public:
 
     inline static void endl(OutputStream& o) { return endlImpl(GetCurrentModule(), o); };
 
-    LLAPI bool setFile(const std::string& logFile, bool appendMode = true);
+    LLAPI bool setFile(std::string const& logFile, bool appendMode = true);
     LLAPI bool setFile(nullptr_t);
 
     OutputStream debug;
@@ -162,7 +163,7 @@ public:
     OutputStream fatal;
 
     inline Logger() : Logger("") {}
-    LLAPI explicit Logger(const std::string& title);
+    LLAPI explicit Logger(std::string const& title);
 
 private:
     LLAPI static std::mutex& getLocker();

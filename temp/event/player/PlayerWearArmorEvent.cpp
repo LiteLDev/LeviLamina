@@ -17,7 +17,9 @@
 namespace ll::event::player {
 
 PlayerWearArmorEvent::PlayerWearArmorEvent(Player* player, int slot, ItemStack* armorItem)
-: player(player), slot(slot), armorItem(armorItem) {}
+: player(player),
+  slot(slot),
+  armorItem(armorItem) {}
 
 LL_GETTER_IMPL(PlayerWearArmorEvent, Player*, player, getPlayer)
 LL_GETTER_IMPL(PlayerWearArmorEvent, int, slot, getSlot)
@@ -38,15 +40,12 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     using ll::memory::dAccess;
 
     origin(slot, it);
-    if (!this->isPlayer()) {
-        return;
-    }
+    if (!this->isPlayer()) { return; }
 
     PlayerWearArmorEvent event(this, slot, it);
     EventManager::fireEvent(event);
 
-    if (!event.isCancelled())
-        return;
+    if (!event.isCancelled()) return;
 
     auto& uid   = this->getUniqueID();
     auto& plInv = this->getSupplies();
@@ -55,9 +54,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     Schedule::delay(
         [uid] {
             auto sp = Global<Level>->getPlayer(uid);
-            if (sp) {
-                sp->refreshInventory();
-            }
+            if (sp) { sp->refreshInventory(); }
         },
         1
     );

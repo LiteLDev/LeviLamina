@@ -12,9 +12,9 @@ inline const char base64Table[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 inline size_t getEncodeLength(size_t len) { return (len + 2 - ((len + 2) % 3)) / 3 * 4; }
 
-inline size_t getEncodeLength(const std::string& str) { return getEncodeLength(str.length()); }
+inline size_t getEncodeLength(std::string const& str) { return getEncodeLength(str.length()); }
 
-inline size_t getDecodeLength(const std::string& in) {
+inline size_t getDecodeLength(std::string const& in) {
     uint8_t count      = 0;
     size_t  input_size = in.rfind('='); // remove padding size
     while (input_size % 4) {            // redo padding
@@ -33,7 +33,7 @@ constexpr uchar decodeLookup(uchar c) {
     return 64;
 }
 
-inline std::string Encode(const std::string& text_input) {
+inline std::string Encode(std::string const& text_input) {
     std::string result;
     result.reserve(getEncodeLength(text_input));
 
@@ -57,7 +57,7 @@ inline std::string Encode(const std::string& text_input) {
     return result;
 }
 
-inline std::string Decode(const std::string& base64_input) {
+inline std::string Decode(std::string const& base64_input) {
     size_t      input_size  = base64_input.size();
     size_t      output_size = getDecodeLength(base64_input);
     std::string out;

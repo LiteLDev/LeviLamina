@@ -59,15 +59,15 @@ public:
 
     LLNDAPI optional_ref<Player> getPlayerByNameOrXUID(std::string const& info) const;
 
-    // LLAPI void broadcastText(const std::string& text, TextType type) const;
-    // LLAPI void broadcastTitle(const std::string& text, TitleType Type, int FadeInDuration, int
+    // LLAPI void broadcastText(std::string const& text, TextType type) const;
+    // LLAPI void broadcastTitle(std::string const& text, TitleType Type, int FadeInDuration, int
     // RemainDuration, int FadeOutDuration) const;
 
     // LLAPI void sendPacketForAllPlayers(Packet& pkt) const;
 
-    // LLAPI bool executeCommandAs(Player* player, const std::string& cmd) const;
-    // LLAPI std::pair<bool, std::string> executeCommandEx(const std::string& cmd) const;
-    // LLAPI bool executeCommand(const std::string& cmd) const;
+    // LLAPI bool executeCommandAs(Player* player, std::string const& cmd) const;
+    // LLAPI std::pair<bool, std::string> executeCommandEx(std::string const& cmd) const;
+    // LLAPI bool executeCommand(std::string const& cmd) const;
 
     // prevent constructor by default
     Level& operator=(Level const&);

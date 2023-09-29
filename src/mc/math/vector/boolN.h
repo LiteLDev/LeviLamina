@@ -6,8 +6,8 @@ template <size_t N>
 class boolN {
 public:
     boolN()                       = delete;
-    boolN(const boolN&)           = delete;
-    boolN operator=(const boolN&) = delete;
+    boolN(boolN const&)           = delete;
+    boolN operator=(boolN const&) = delete;
 };
 template <>
 VEC2_IMPL_(boolN<2>, boolN<2>, bool, BoolN);

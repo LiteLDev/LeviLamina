@@ -15,7 +15,7 @@ public:
         ::FacingID                  mDirection;
         ::CircuitComponentType      mTypeID;
 
-        constexpr Entry(class BaseCircuitComponent* component, const BlockPos& pos) {
+        constexpr Entry(class BaseCircuitComponent* component, BlockPos const& pos) {
             mComponent = component;
             mDirection = (FacingID)component->getDirection();
             mPos       = pos;

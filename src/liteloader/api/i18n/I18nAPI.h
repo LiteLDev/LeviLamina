@@ -72,7 +72,7 @@ public:
      * @return std::string  The translation
      * @see    I18nBase::defaultLocaleName
      */
-    LLAPI virtual std::string get(const std::string& key, const std::string& localeName = "");
+    LLAPI virtual std::string get(std::string const& key, std::string const& localeName = "");
 
     /**
      * @brief Get the type of the i18n object.
@@ -104,7 +104,7 @@ class SingleFileI18N : public I18nBase {
 public:
     std::string filePath;
 
-    LLAPI void load(const std::string& fileName);
+    LLAPI void load(std::string const& fileName);
     LLAPI void save();
 
     SingleFileI18N() { this->type = Type::SingleFile; }
@@ -116,9 +116,9 @@ public:
      * @param defaultLangData  The default translation data
      */
     SingleFileI18N(
-        const std::string& filePath,
-        const std::string& defaultLocaleName = "",
-        const LangData&    defaultLangData   = {}
+        std::string const& filePath,
+        std::string const& defaultLocaleName = "",
+        LangData const&    defaultLangData   = {}
     )
     : filePath(filePath) {
         this->type            = Type::SingleFile;
@@ -131,7 +131,7 @@ public:
         load(filePath);
     }
     /// Copy constructor
-    SingleFileI18N(const SingleFileI18N& other) { *this = other; }
+    SingleFileI18N(SingleFileI18N const& other) { *this = other; }
     ~SingleFileI18N() = default;
 
     LLAPI Type getType();
@@ -142,7 +142,7 @@ class MultiFileI18N : public I18nBase {
 public:
     std::string dirPath;
 
-    LLAPI void load(const std::string& dirName);
+    LLAPI void load(std::string const& dirName);
     LLAPI void save(bool nested = false);
 
     MultiFileI18N() { this->type = Type::MultiFile; }
@@ -154,9 +154,9 @@ public:
      * @param defaultLangData  The default translation data
      */
     MultiFileI18N(
-        const std::string& dirPath,
-        const std::string& defaultLocaleName = "",
-        const LangData&    defaultLangData   = {}
+        std::string const& dirPath,
+        std::string const& defaultLocaleName = "",
+        LangData const&    defaultLangData   = {}
     )
     : dirPath(dirPath) {
         this->type            = Type::MultiFile;
@@ -169,7 +169,7 @@ public:
         load(dirPath);
     }
     /// Copy constructor
-    MultiFileI18N(const MultiFileI18N& other) { *this = other; }
+    MultiFileI18N(MultiFileI18N const& other) { *this = other; }
     ~MultiFileI18N() = default;
 
     LLAPI Type getType();
@@ -188,7 +188,7 @@ using enable_if_t = typename std::enable_if<B, T>::type;
 
 ///////////////// tr Impl /////////////////
 template <typename S, typename... Args, Translation::enable_if_t<(fmt::v9::detail::is_string<S>::value), int> = 0>
-inline std::string trlImpl(HMODULE hPlugin, const std::string& localeName, const S& formatStr, Args&&... args) {
+inline std::string trlImpl(HMODULE hPlugin, std::string const& localeName, S const& formatStr, Args&&... args) {
     std::string realFormatStr = formatStr;
     if (PluginOwnData::hasImpl(hPlugin, I18nBase::POD_KEY)) {
         auto& i18n    = PluginOwnData::getImpl<I18nBase>(hPlugin, I18nBase::POD_KEY);
@@ -223,15 +223,15 @@ inline std::string trlImpl(HMODULE hPlugin, const std::string& localeName, const
     }
 }
 template <typename S, typename... Args, Translation::enable_if_t<(fmt::v9::detail::is_string<S>::value), int> = 0>
-inline std::string trImpl(HMODULE hPlugin, const S& formatStr, Args&&... args) {
+inline std::string trImpl(HMODULE hPlugin, S const& formatStr, Args&&... args) {
     return trlImpl(hPlugin, "", formatStr, std::forward<Args>(args)...);
 }
 
 LLAPI I18nBase* loadI18nImpl(
     HMODULE                   hPlugin,
-    const std::string&        path,
-    const std::string&        defaultLocaleName,
-    const I18nBase::LangData& defaultLangData
+    std::string const&        path,
+    std::string const&        defaultLocaleName,
+    I18nBase::LangData const& defaultLangData
 );
 
 LLAPI I18nBase* loadFromImpl(HMODULE hPlugin, HMODULE hTarget);
@@ -287,9 +287,9 @@ LLAPI I18nBase* loadFromImpl(HMODULE hPlugin, HMODULE hTarget);
  * @endcode
  */
 inline I18nBase* load(
-    const std::string&        path,
-    const std::string&        defaultLocaleName = "",
-    const I18nBase::LangData& defaultLangData   = {}
+    std::string const&        path,
+    std::string const&        defaultLocaleName = "",
+    I18nBase::LangData const& defaultLangData   = {}
 ) {
     return loadI18nImpl(GetCurrentModule(), path, defaultLocaleName, defaultLangData);
 }
@@ -315,7 +315,7 @@ inline I18nBase* load(Args&&... args) {
  * @param  plugin  The plugin name.
  * @return I18nBase*   The pointer to the I18nBase object in PluginOwnData, null if failed
  */
-inline I18nBase* loadFrom(const std::string& plugin) {
+inline I18nBase* loadFrom(std::string const& plugin) {
     if (ll::hasPlugin(plugin)) {
         auto p = ll::getPlugin(plugin);
         if (p) { return loadFromImpl(GetCurrentModule(), p->handle); }
@@ -355,7 +355,7 @@ inline I18nBase* getI18N(HMODULE hPlugin = nullptr) {
  * @endcode
  */
 template <typename S, typename... Args, Translation::enable_if_t<(fmt::v9::detail::is_string<S>::value), int> = 0>
-inline std::string tr(const S& formatStr, Args&&... args) {
+inline std::string tr(S const& formatStr, Args&&... args) {
     return Translation::trImpl(GetCurrentModule(), formatStr, std::forward<Args>(args)...);
 }
 
@@ -395,7 +395,7 @@ inline std::string tr(const char* formatStr, Args&&... args) {
  * @endcode
  */
 template <typename S, typename... Args>
-inline std::string trl(const std::string& localeName, const S& formatStr, Args&&... args) {
+inline std::string trl(std::string const& localeName, S const& formatStr, Args&&... args) {
     return Translation::trlImpl(GetCurrentModule(), localeName, formatStr, std::forward<Args>(args)...);
 }
 
@@ -415,7 +415,7 @@ inline std::string trl(const std::string& localeName, const S& formatStr, Args&&
  * @endcode
  */
 template <typename... Args>
-inline std::string trl(const std::string& localeName, const char* formatStr, Args&&... args) {
+inline std::string trl(std::string const& localeName, const char* formatStr, Args&&... args) {
     return trl(localeName, std::string(formatStr), std::forward<Args>(args)...);
 }
 
@@ -430,12 +430,12 @@ inline std::string operator""_tr(const char* str, size_t) { return tr(str); }
 // For text encoding
 namespace TextEncoding {
 LLAPI Encoding getLocalEncoding();
-LLAPI Encoding detectEncoding(const std::string& text, bool* isReliable = nullptr);
+LLAPI Encoding detectEncoding(std::string const& text, bool* isReliable = nullptr);
 
-LLAPI std::string fromUnicode(const std::wstring& text, Encoding to = Encoding::UTF8);
-LLAPI std::wstring toUnicode(const std::string& text, Encoding from = Encoding::UTF8);
-LLAPI std::string toUTF8(const std::string& text);
-LLAPI std::string toUTF8(const std::string& text, Encoding from);
+LLAPI std::string fromUnicode(std::wstring const& text, Encoding to = Encoding::UTF8);
+LLAPI std::wstring toUnicode(std::string const& text, Encoding from = Encoding::UTF8);
+LLAPI std::string toUTF8(std::string const& text);
+LLAPI std::string toUTF8(std::string const& text, Encoding from);
 
-LLAPI std::string convert(const std::string& text, Encoding from, Encoding to);
+LLAPI std::string convert(std::string const& text, Encoding from, Encoding to);
 } // namespace TextEncoding

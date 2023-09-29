@@ -99,8 +99,10 @@ public:
         std::vector<Symbol>               paramsSymbol;  // this+0x30
 
         Overload(CommandVersion version, FactoryFn factory, std::vector<CommandParameterData>&& args)
-        : version(version), alloc(factory), params(std::forward<std::vector<CommandParameterData>>(args)),
-          versionOffset(255){};
+        : version(version),
+          alloc(factory),
+          params(std::forward<std::vector<CommandParameterData>>(args)),
+          versionOffset(0xff){};
 
     public:
         // NOLINTBEGIN
@@ -139,7 +141,7 @@ public:
         Symbol      mType;           // this+0xC
         Symbol      mIdentifierInfo; // this+0x10
     private:
-        const CommandRegistry& mRegistry; // this+0x18
+        CommandRegistry const& mRegistry; // this+0x18
 
     public:
         // NOLINTBEGIN
@@ -251,7 +253,11 @@ public:
             Symbol                 symbol,
             CommandFlag            flag
         )
-        : name(name), desc(desc), perm(perm), main_symbol(symbol), flag(flag) {}
+        : name(name),
+          desc(desc),
+          perm(perm),
+          main_symbol(symbol),
+          flag(flag) {}
 
     public:
         // NOLINTBEGIN
@@ -266,7 +272,7 @@ public:
 
     class Parser {
     public:
-        const CommandRegistry&                     mRegistry;                 // this+0x0
+        CommandRegistry const&                     mRegistry;                 // this+0x0
         const ParseTable*                          mParseTable;               // this+0x8
         std::deque<std::pair<Symbol, ParseToken*>> mStack;                    // this+0x10
         LexicalToken                               mNext;                     // this+0x38
@@ -490,8 +496,7 @@ public:
     ) {
         std::vector<std::pair<std::string, uint64_t>> converted;
         IDConverter                                   converter;
-        for (auto& value : values)
-            converted.emplace_back(value.first, converter(value.second));
+        for (auto& value : values) converted.emplace_back(value.first, converter(value.second));
         return _addEnumValuesInternal(name, converted, tid, &CommandRegistry::parseEnum<Type, IDConverter>).mValue;
     };
 
@@ -502,8 +507,7 @@ public:
     ) {
         std::vector<std::pair<std::string, uint64_t>> converted;
         uint64_t                                      idx = 0;
-        for (auto& value : values)
-            converted.emplace_back(value, ++idx);
+        for (auto& value : values) converted.emplace_back(value, ++idx);
         return _addEnumValuesInternal(name, converted, tid, &CommandRegistry::parseEnumInt).mValue;
     };
 
@@ -777,17 +781,13 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_addChainedSubcommandValuesInternal@CommandRegistry@@AEAA?AVSymbol@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@U?$pair@_KI@std@@V?$allocator@U?$pair@_KI@std@@@2@@4@V?$typeid_t@VCommandRegistry@@@Bedrock@@P81@EBA_NPEAXAEBUParseToken@1@AEBVCommandOrigin@@HAEAV34@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@ZPEAUSignature@1@@Z
-    MCAPI class
-        CommandRegistry::
-            Symbol
-            _addChainedSubcommandValuesInternal(std::string const&, std::vector<std::pair<uint64, uint>> const&, class Bedrock::typeid_t<class CommandRegistry>, bool (CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&) const, struct CommandRegistry::Signature*);
+    MCAPI class CommandRegistry::Symbol
+    _addChainedSubcommandValuesInternal(std::string const&, std::vector<std::pair<uint64, uint>> const&, class Bedrock::typeid_t<class CommandRegistry>, ParseFn, struct CommandRegistry::Signature*);
 
     // symbol:
     // ?_addChainedSubcommandValuesInternal@CommandRegistry@@AEAA?AVSymbol@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@std@@@2@@4@V?$typeid_t@VCommandRegistry@@@Bedrock@@P81@EBA_NPEAXAEBUParseToken@1@AEBVCommandOrigin@@HAEAV34@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@ZPEAUSignature@1@@Z
-    MCAPI class
-        CommandRegistry::
-            Symbol
-            _addChainedSubcommandValuesInternal(std::string const&, std::vector<std::pair<std::string, uint>> const&, class Bedrock::typeid_t<class CommandRegistry>, bool (CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&) const, struct CommandRegistry::Signature*);
+    MCAPI class CommandRegistry::Symbol
+    _addChainedSubcommandValuesInternal(std::string const&, std::vector<std::pair<std::string, uint>> const&, class Bedrock::typeid_t<class CommandRegistry>, ParseFn, struct CommandRegistry::Signature*);
 
     // symbol:
     // ?_addEnumValuesInternal@CommandRegistry@@AEAA?AVSymbol@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@U?$pair@_K_K@std@@V?$allocator@U?$pair@_K_K@std@@@2@@4@V?$typeid_t@VCommandRegistry@@@Bedrock@@P81@EBA_NPEAXAEBUParseToken@1@AEBVCommandOrigin@@HAEAV34@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z@Z
@@ -795,8 +795,7 @@ public:
         std::string const&,
         std::vector<std::pair<uint64, uint64>> const&,
         class Bedrock::typeid_t<class CommandRegistry>,
-        bool (CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-            const
+        ParseFn
     );
 
     // symbol:
@@ -805,8 +804,7 @@ public:
         std::string const&,
         std::vector<std::pair<std::string, uint64>> const&,
         class Bedrock::typeid_t<class CommandRegistry>,
-        bool (CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-            const
+        ParseFn
     );
 
     // symbol: ?_addFunctionSoftEnum@CommandRegistry@@AEAA?AVSymbol@1@XZ
@@ -1044,10 +1042,7 @@ private:
     // NOLINTBEGIN
     // symbol:
     // ?ParseRuleSymbols@CommandRegistry@@0QBU?$pair@P8CommandRegistry@@EBA_NPEAXAEBUParseToken@1@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@ZVSymbol@1@@std@@B
-    MCAPI static std::pair<
-        bool (CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-            const,
-        class CommandRegistry::Symbol> const ParseRuleSymbols[];
+    MCAPI static std::pair<ParseFn, class CommandRegistry::Symbol> const ParseRuleSymbols[];
 
     // NOLINTEND
 

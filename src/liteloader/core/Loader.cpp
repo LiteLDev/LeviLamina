@@ -59,7 +59,7 @@ void ll::LoadMain() {
     for (auto& file : ent) {
 
         if (!file.is_regular_file()) { continue; }
-        const filesystem::path& path = file.path();
+        filesystem::path const& path = file.path();
 
         auto ext = path.extension().u8string();
 

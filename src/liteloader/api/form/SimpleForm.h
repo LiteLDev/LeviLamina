@@ -15,12 +15,12 @@ public:
     using Callback       = std::function<void(Player&, int)>;
     using ButtonCallback = std::function<void(Player&)>;
 
-    LLAPI explicit SimpleForm(const std::string& title, const std::string& content = "");
+    LLAPI explicit SimpleForm(std::string const& title, std::string const& content = "");
     ~SimpleForm() override = default;
 
-    LLAPI SimpleForm& setTitle(const std::string& title);
+    LLAPI SimpleForm& setTitle(std::string const& title);
 
-    LLAPI SimpleForm& setContent(const std::string& content);
+    LLAPI SimpleForm& setContent(std::string const& content);
 
     /**
      * @brief  Append a button to the form
@@ -31,7 +31,7 @@ public:
      * @note   If the `callback` parameter of sendTo() is set, the callback of the button will be ignored
      */
     LLAPI SimpleForm&
-    appendButton(const std::string& text, const std::string& image = "", ButtonCallback callback = {});
+    appendButton(std::string const& text, std::string const& image = "", ButtonCallback callback = {});
 
     /**
      * @brief  Send the form to the player

@@ -364,7 +364,7 @@ void liteloaderMain() {
 
     // Register Started
     // using namespace ll::event::server;
-    // ServerStartedEvent::subscribe([](const ServerStartedEvent&) {
+    // ServerStartedEvent::subscribe([](ServerStartedEvent const&) {
     //     logger.info(tr("ll.notice.license", "LGPLv3"));
     //     logger.info(tr("ll.notice.newForum", "https://forum.litebds.com"));
     //     logger.info(tr("ll.notice.translateText", "https://crowdin.com/project/liteloaderbds"));
@@ -373,7 +373,7 @@ void liteloaderMain() {
     // });
 
     // Register Cleanup
-    // ServerStoppedEvent::subscribe([](const ServerStoppedEvent&) {
+    // ServerStoppedEvent::subscribe([](ServerStoppedEvent const&) {
     //     EndScheduleSystem();
     //     return true;
     // });
@@ -384,7 +384,7 @@ void liteloaderMain() {
 
 using namespace ll::memory;
 
-LL_AUTO_STATIC_HOOK(LiteLoaderMain, HookPriority::Normal, "main", int, int argc, char** argv) {
+LL_AUTO_STATIC_HOOK(LiteLoaderMainHook, HookPriority::Normal, "main", int, int argc, char** argv) {
     startTime = clock();
     for (int i = 0; i < argc; ++i) {
         if (strcmp(argv[i], "--noColor") == 0) {

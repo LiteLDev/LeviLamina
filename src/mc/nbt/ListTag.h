@@ -12,12 +12,15 @@ public:
     List      mList;
     Tag::Type mType;
 
-    Tag& operator[](size_t index) const { return *mList[index]; }
+public:
+    // prevent constructor by default
+    ListTag& operator=(ListTag const&);
+    ListTag(ListTag const&);
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ListTag@@UEAA@XZ
+    virtual ~ListTag();
 
     // vIndex: 1, symbol: ?deleteChildren@ListTag@@UEAAXXZ
     virtual void deleteChildren();
@@ -46,9 +49,6 @@ public:
 
     // vIndex: 10, symbol: ?hash@ListTag@@UEBA_KXZ
     virtual uint64 hash() const;
-
-    // symbol: ??1ListTag@@UEAA@XZ
-    MCVAPI ~ListTag();
 
     // symbol: ??0ListTag@@QEAA@XZ
     MCAPI ListTag();

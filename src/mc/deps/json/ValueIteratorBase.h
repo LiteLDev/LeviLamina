@@ -21,8 +21,8 @@ public:
     Value::ObjectValues::iterator current_;
     bool                          isNull_;
 
-    bool operator==(const ValueIteratorBase& other) const { return isEqual(other); }
-    bool operator!=(const ValueIteratorBase& other) const { return !isEqual(other); }
+    bool operator==(ValueIteratorBase const& other) const { return isEqual(other); }
+    bool operator!=(ValueIteratorBase const& other) const { return !isEqual(other); }
 
 
     ValueIteratorBase& operator++() {

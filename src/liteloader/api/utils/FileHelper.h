@@ -8,9 +8,9 @@
 LLAPI FILE*  GetFILEfromFstream(std::fstream& fs);
 LLAPI HANDLE GetHANDLEfromFstream(std::fstream& fs);
 
-LLAPI std::vector<std::string> GetFileNameList(const std::string& dir);
-LLAPI bool                     CreateDirs(const std::string& path);
-LLAPI std::optional<std::string> ReadAllFile(const std::string& filePath, bool isBinary = false);
-LLAPI bool WriteAllFile(const std::string& filePath, const std::string& content, bool isBinary = false);
+LLAPI std::vector<std::string> GetFileNameList(std::string const& dir);
+LLAPI bool                     CreateDirs(std::string const& path);
+LLAPI std::optional<std::string> ReadAllFile(std::string const& filePath, bool isBinary = false);
+LLAPI bool WriteAllFile(std::string const& filePath, std::string const& content, bool isBinary = false);
 LLAPI      std::pair<int, std::string>
-           UncompressFile(const std::string& filePath, const std::string& toDir, int processTimeout);
+           UncompressFile(std::string const& filePath, std::string const& toDir, int processTimeout);

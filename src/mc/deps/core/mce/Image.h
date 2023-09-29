@@ -31,7 +31,7 @@ public:
 
     inline void setRawImage(Blob&& buffer) { mImageBytes = std::move(buffer); }
 
-    Image(const Image& a1) {
+    Image(Image const& a1) {
         imageFormat = a1.imageFormat;
         mWidth      = a1.mWidth;
         mHeight     = a1.mHeight;

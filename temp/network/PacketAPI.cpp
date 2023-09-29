@@ -417,8 +417,7 @@ inline size_t PACKET_SIZE;
 
 inline void __initPacketVftable() {
     static bool inited = false;
-    if (inited)
-        return;
+    if (inited) return;
     inited = true;
 #define INIT_ADDR(type) VFTABLE_ADDR<type> = ll::memory::resolveSymbol("??_7" #type "@@6B@");
 
@@ -435,8 +434,7 @@ inline void* getVftableAddr() {
 
 void __initPacketSize() {
     static bool inited = false;
-    if (inited)
-        return;
+    if (inited) return;
     inited = true;
 #define SET_PACKET_SIZE(type)                                                                                          \
     if (getVftableAddr<type>() == *(void**)packet.get()) {                                                             \
@@ -458,8 +456,7 @@ void __initPacketSize() {
 
 std::string getClassName(Packet* packet) {
 #define RETURN_IF_FIND(type)                                                                                           \
-    if (getVftableAddr<class type>() == *(void**)packet)                                                               \
-        return #type;
+    if (getVftableAddr<class type>() == *(void**)packet) return #type;
     ForEachPacket(RETURN_IF_FIND);
     __debugbreak();
     return fmt::format("Unknown({})", packet->getId());
@@ -508,23 +505,18 @@ inline bool replaceString(
     bool               exclude = true
 ) {
     auto startOffset = content.find(start, offset);
-    if (startOffset == content.npos)
-        return false;
-    if (exclude)
-        startOffset += start.size();
+    if (startOffset == content.npos) return false;
+    if (exclude) startOffset += start.size();
     auto endOffset = end.empty() ? content.npos : content.find(end, startOffset);
 
-    if (endOffset != content.npos && !exclude) {
-        endOffset += sizeof(end);
-    }
+    if (endOffset != content.npos && !exclude) { endOffset += sizeof(end); }
     content.replace(startOffset, endOffset - startOffset, str);
     return true;
 }
 
 void autoGenerate() {
     auto file = ReadAllFile(__FILE__, false);
-    if (!file)
-        __debugbreak();
+    if (!file) __debugbreak();
     auto& content = file.value();
 
     std::ostringstream oss;
@@ -533,7 +525,11 @@ void autoGenerate() {
     oss << std::endl;
     forEachPacket([&](Packet const& packet, std::string className, size_t size) {
         oss << fmt::format(
-            "static_assert(sizeof({}) == 0x{:X}, \"size of {} should be {}\");\n", className, size, className, size
+            "static_assert(sizeof({}) == 0x{:X}, \"size of {} should be {}\");\n",
+            className,
+            size,
+            className,
+            size
         );
     });
     oss << std::endl;
@@ -571,8 +567,7 @@ void autoGenerate() {
 }
 template <typename T>
 void __autoFill(std::string const& className) {
-    if (sizeof(T) == getPacketSize<T>())
-        return;
+    if (sizeof(T) == getPacketSize<T>()) return;
 
     std::filesystem::path McDir =
         std::filesystem::path(__FILEW__).parent_path().parent_path().parent_path().append("Header").append("MC");

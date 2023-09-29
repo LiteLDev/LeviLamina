@@ -4,11 +4,13 @@
 #include "liteloader/api/memory/Hook.h"
 #include "liteloader/core/LiteLoader.h"
 #include "mc/deps/json/Value.h"
+#include "mc/network/PacketHandlerDispatcherInstance.h"
 #include "mc/network/ServerNetworkHandler.h"
+#include "mc/network/packet/ModalFormResponsePacket.h"
 
 namespace ll::form::handler {
 
-void SimpleFormHandler::handle(Player& player, const std::string& data) const {
+void SimpleFormHandler::handle(Player& player, std::string const& data) const {
     int selected = data != "null" ? stoi(data) : -1;
     if (selected >= 0 && selected < mButtonCallbacks.size()) {
         if (mButtonCallbacks[selected]) { mButtonCallbacks[selected](player); }
@@ -16,7 +18,7 @@ void SimpleFormHandler::handle(Player& player, const std::string& data) const {
     if (mCallback) { mCallback(player, selected); }
 }
 
-void CustomFormHandler::handle(Player& player, const std::string& data) const {
+void CustomFormHandler::handle(Player& player, std::string const& data) const {
     if (data == "null") {
         if (mCallback) { mCallback(player, {}); }
         return;
@@ -51,20 +53,20 @@ void CustomFormHandler::handle(Player& player, const std::string& data) const {
     }
 }
 
-void ModalFormHandler::handle(Player& player, const std::string& data) const {
+void ModalFormHandler::handle(Player& player, std::string const& data) const {
     bool selected = data == "true";
     if (mCallback) { mCallback(player, selected); }
 }
 
-std::map<uint, std::unique_ptr<FormHandler>> formHandlers = {};
-uint                                         currentId    = 114514;
+std::unordered_map<uint, std::unique_ptr<FormHandler>> formHandlers = {};
+uint                                                   currentId    = 0;
 
 uint addFormHandler(std::unique_ptr<FormHandler>&& data) {
     formHandlers.emplace(++currentId, std::move(data));
     return currentId;
 }
 
-void handleFormPacket(Player& player, uint formId, const std::string& data) {
+void handleFormPacket(Player& player, uint formId, std::string const& data) {
     auto it = formHandlers.find(formId);
     if (it == formHandlers.end()) {
         ll::logger.error("Failed to find form handler for form id {}", formId);
@@ -73,33 +75,32 @@ void handleFormPacket(Player& player, uint formId, const std::string& data) {
     it->second->handle(player, data);
     formHandlers.erase(it);
 }
+} // namespace ll::form::handler
 
-LL_AUTO_INSTANCE_HOOK(
+LL_AUTO_TYPED_INSTANCE_HOOK(
     FormResponseHandler,
-    ll::memory::HookPriority::Lowest,
-    "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@"
-    "AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
+    PacketHandlerDispatcherInstance<ModalFormResponsePacket>,
+    HookPriority::Lowest,
+    &PacketHandlerDispatcherInstance<ModalFormResponsePacket>::handle,
     void,
-    NetworkIdentifier&       id,
-    ServerNetworkHandler&    handler,
+    NetworkIdentifier const& source,
+    NetEventCallback&        callback,
     std::shared_ptr<Packet>& packet
 ) {
-    auto optionalPlayer = handler.getServerPlayer(id, SubClientId::PrimaryClient);
-    if (!optionalPlayer.has_value()) {
+    auto player = ((ServerNetworkHandler&)callback).getServerPlayer(source, SubClientId::PrimaryClient);
+    if (!player.has_value()) {
         ll::logger.error("Failed to get player by NetworkIdentifier for FormResponseHandler");
-    }
-    auto& player = optionalPlayer.value();
-
-    std::string data   = "null";
-    auto        formId = ll::memory::dAccess<uint>(packet.get(), 48);
-    if (!ll::memory::dAccess<bool>(packet.get(), 81) && ll::memory::dAccess<bool>(packet.get(), 72)) {
-        auto json = ll::memory::dAccess<Json::Value>(packet.get(), 56);
-        data      = json.toStyledString();
+        return;
     }
 
-    if (data.back() == '\n') { data.pop_back(); }
+    auto& modalPacket = (ModalFormResponsePacket&)*packet;
 
-    handleFormPacket(player, formId, data);
+    auto data = std::string{"null"};
+
+    if (!modalPacket.mFormCancelReason && modalPacket.mJSONResponse) {
+        data = modalPacket.mJSONResponse.value().toStyledString();
+        if (data.back() == '\n') { data.pop_back(); }
+    }
+
+    ll::form::handler::handleFormPacket(player, modalPacket.mFormId, data);
 }
-
-} // namespace ll::form::handler

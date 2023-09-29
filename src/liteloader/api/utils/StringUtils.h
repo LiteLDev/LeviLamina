@@ -12,7 +12,7 @@ namespace ll::StringUtils {
 
 // "2021-03-24"  ->  ["2021", "03", "24"]  (use '-' as split pattern)
 // for lifetime reason, use pointer instead of reference
-inline std::vector<std::string_view> splitByPattern(const std::string* str, const std::string& pattern) {
+inline std::vector<std::string_view> splitByPattern(const std::string* str, std::string const& pattern) {
     std::string_view s = *str;
     if (s.empty()) return {};
     size_t pos  = s.find(pattern);
@@ -35,7 +35,7 @@ inline std::vector<std::string_view> splitByPattern(const std::string* str, cons
  * @param newValue  The string to replace with
  * @return std::string  The modified input std::string
  */
-inline std::string replaceAll(std::string str, const std::string& oldValue, const std::string& newValue) {
+inline std::string replaceAll(std::string str, std::string const& oldValue, std::string const& newValue) {
     for (std::string::size_type pos(0); pos != std::string::npos; pos += newValue.length()) {
         if ((pos = str.find(oldValue, pos)) != std::string::npos) str.replace(pos, oldValue.length(), newValue);
         else break;
@@ -107,11 +107,11 @@ inline std::u8string str2u8str(std::string str) {
     return {std::move(tmp)};
 }
 
-inline const std::string& u8str2strConst(const std::u8string& str) {
+inline std::string const& u8str2strConst(std::u8string const& str) {
     return *reinterpret_cast<const std::string*>(&str);
 }
 
-inline const std::u8string& str2u8strConst(const std::string& str) {
+inline std::u8string const& str2u8strConst(std::string const& str) {
     return *reinterpret_cast<const std::u8string*>(&str);
 }
 

@@ -6,8 +6,8 @@
 // class intN {
 // public:
 //     intN()                      = delete;
-//     intN(const intN&)           = delete;
-//     intN operator=(const intN&) = delete;
+//     intN(intN const&)           = delete;
+//     intN operator=(intN const&) = delete;
 // };
 template <typename BaseType>
 VEC2_IMPL_(intN2, BaseType, int, IntN);

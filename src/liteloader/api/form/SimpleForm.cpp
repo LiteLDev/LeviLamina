@@ -64,15 +64,15 @@ public:
     : mTitle(std::move(title)),
       mContent(std::move(content)) {}
 
-    void setTitle(const std::string& title) { mTitle = title; }
+    void setTitle(std::string const& title) { mTitle = title; }
 
-    void setContent(const std::string& content) { mContent = content; }
+    void setContent(std::string const& content) { mContent = content; }
 
     void append(const std::shared_ptr<SimpleFormElement>& element) { mElements.push_back(element); }
 
     void appendButton(
-        const std::string&     text,
-        const std::string&     image    = "",
+        std::string const&     text,
+        std::string const&     image    = "",
         Button::ButtonCallback callback = Button::ButtonCallback()
     ) {
         append(std::make_shared<Button>(text, image, std::move(callback)));
@@ -113,27 +113,27 @@ protected:
                 if (!element.empty()) { form["buttons"].push_back(element); }
             }
             return form.dump();
-        } catch (const fifo_json::exception&) {
+        } catch (fifo_json::exception const&) {
             ll::logger.error("Failed to serialize SimpleForm");
             return fifo_json{};
         }
     }
 };
 
-SimpleForm::SimpleForm(const std::string& title, const std::string& content)
+SimpleForm::SimpleForm(std::string const& title, std::string const& content)
 : impl(std::make_unique<SimpleFormImpl>(title, content)) {}
 
-SimpleForm& SimpleForm::setTitle(const std::string& title) {
+SimpleForm& SimpleForm::setTitle(std::string const& title) {
     impl->setTitle(title);
     return *this;
 }
 
-SimpleForm& SimpleForm::setContent(const std::string& content) {
+SimpleForm& SimpleForm::setContent(std::string const& content) {
     impl->setContent(content);
     return *this;
 }
 
-SimpleForm& SimpleForm::appendButton(const std::string& text, const std::string& image, ButtonCallback callback) {
+SimpleForm& SimpleForm::appendButton(std::string const& text, std::string const& image, ButtonCallback callback) {
     impl->appendButton(text, image, std::move(callback));
     return *this;
 }

@@ -30,7 +30,7 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(const fifo_json&) const override { return {}; }
+    [[nodiscard]] FormElementResult parseResult(fifo_json const&) const override { return {}; }
 };
 
 class Input : public CustomFormElement {
@@ -64,7 +64,7 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(const fifo_json& data) const override {
+    [[nodiscard]] FormElementResult parseResult(fifo_json const& data) const override {
         return data.get<std::string>();
     }
 };
@@ -96,7 +96,7 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(const fifo_json& data) const override { return data.get<bool>(); }
+    [[nodiscard]] FormElementResult parseResult(fifo_json const& data) const override { return data.get<bool>(); }
 };
 
 class Dropdown : public CustomFormElement {
@@ -129,7 +129,7 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(const fifo_json& data) const override {
+    [[nodiscard]] FormElementResult parseResult(fifo_json const& data) const override {
         return mOptions[data.get<int>()];
     }
 };
@@ -188,7 +188,7 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(const fifo_json& data) const override { return data.get<double>(); }
+    [[nodiscard]] FormElementResult parseResult(fifo_json const& data) const override { return data.get<double>(); }
 };
 
 class StepSlider : public CustomFormElement {
@@ -233,7 +233,7 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(const fifo_json& data) const override {
+    [[nodiscard]] FormElementResult parseResult(fifo_json const& data) const override {
         return mSteps[data.get<int>()];
     }
 };
@@ -241,7 +241,7 @@ public:
 class CustomForm::CustomFormImpl : public FormImpl {
 
 public:
-    using Callback = std::function<void(Player&, const CustomFormResult&)>;
+    using Callback = std::function<void(Player&, CustomFormResult const&)>;
 
     std::string                                     mTitle;
     std::vector<std::shared_ptr<CustomFormElement>> mElements{};
@@ -249,28 +249,28 @@ public:
 
     explicit CustomFormImpl(std::string title) : mTitle(std::move(title)) {}
 
-    void setTitle(const std::string& title) { mTitle = title; }
+    void setTitle(std::string const& title) { mTitle = title; }
 
     void append(const std::shared_ptr<CustomFormElement>& element) { mElements.push_back(element); }
 
-    void appendLabel(const std::string& text) { append(std::make_shared<Label>(text)); }
+    void appendLabel(std::string const& text) { append(std::make_shared<Label>(text)); }
 
     void appendInput(
-        const std::string& name,
-        const std::string& text,
-        const std::string& placeholder,
-        const std::string& defaultVal
+        std::string const& name,
+        std::string const& text,
+        std::string const& placeholder,
+        std::string const& defaultVal
     ) {
         append(std::make_shared<Input>(name, text, placeholder, defaultVal));
     }
 
-    void appendToggle(const std::string& name, const std::string& text, bool defaultVal) {
+    void appendToggle(std::string const& name, std::string const& text, bool defaultVal) {
         append(std::make_shared<Toggle>(name, text, defaultVal));
     }
 
     void appendDropdown(
-        const std::string&              name,
-        const std::string&              text,
+        std::string const&              name,
+        std::string const&              text,
         const std::vector<std::string>& options,
         size_t                          defaultVal
     ) {
@@ -278,8 +278,8 @@ public:
     }
 
     void appendSlider(
-        const std::string& name,
-        const std::string& text,
+        std::string const& name,
+        std::string const& text,
         double             min,
         double             max,
         double             step,
@@ -289,8 +289,8 @@ public:
     }
 
     void appendStepSlider(
-        const std::string&              name,
-        const std::string&              text,
+        std::string const&              name,
+        std::string const&              text,
         const std::vector<std::string>& steps,
         size_t                          defaultVal
     ) {
@@ -332,36 +332,36 @@ protected:
     }
 };
 
-CustomForm::CustomForm(const std::string& title) : impl(std::make_unique<CustomFormImpl>(title)) {}
+CustomForm::CustomForm(std::string const& title) : impl(std::make_unique<CustomFormImpl>(title)) {}
 
-CustomForm& CustomForm::setTitle(const std::string& title) {
+CustomForm& CustomForm::setTitle(std::string const& title) {
     impl->setTitle(title);
     return *this;
 }
 
-CustomForm& CustomForm::appendLabel(const std::string& text) {
+CustomForm& CustomForm::appendLabel(std::string const& text) {
     impl->appendLabel(text);
     return *this;
 }
 
 CustomForm& CustomForm::appendInput(
-    const std::string& name,
-    const std::string& text,
-    const std::string& placeholder,
-    const std::string& defaultVal
+    std::string const& name,
+    std::string const& text,
+    std::string const& placeholder,
+    std::string const& defaultVal
 ) {
     impl->appendInput(name, text, placeholder, defaultVal);
     return *this;
 }
 
-CustomForm& CustomForm::appendToggle(const std::string& name, const std::string& text, bool defaultVal) {
+CustomForm& CustomForm::appendToggle(std::string const& name, std::string const& text, bool defaultVal) {
     impl->appendToggle(name, text, defaultVal);
     return *this;
 }
 
 CustomForm& CustomForm::appendDropdown(
-    const std::string&              name,
-    const std::string&              text,
+    std::string const&              name,
+    std::string const&              text,
     const std::vector<std::string>& options,
     size_t                          defaultVal
 ) {
@@ -370,8 +370,8 @@ CustomForm& CustomForm::appendDropdown(
 }
 
 CustomForm& CustomForm::appendSlider(
-    const std::string& name,
-    const std::string& text,
+    std::string const& name,
+    std::string const& text,
     double             min,
     double             max,
     double             step,
@@ -382,8 +382,8 @@ CustomForm& CustomForm::appendSlider(
 }
 
 CustomForm& CustomForm::appendStepSlider(
-    const std::string&              name,
-    const std::string&              text,
+    std::string const&              name,
+    std::string const&              text,
     const std::vector<std::string>& steps,
     size_t                          defaultVal
 ) {

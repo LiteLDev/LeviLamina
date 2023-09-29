@@ -5,7 +5,7 @@
 #include "mc/resources/PackSourceFactory.h"
 #include "mc/resources/interface/DirectoryPackSource.h"
 
-void ResourcePackRepository::setCustomResourcePackPath(const std::string& path, PackType type) {
+void ResourcePackRepository::setCustomResourcePackPath(std::string const& path, PackType type) {
 
     auto& DirectoryPackSource =
         getPackSourceFactory().createDirectoryPackSource(Core::Path(path), type, PackOrigin::Dev);

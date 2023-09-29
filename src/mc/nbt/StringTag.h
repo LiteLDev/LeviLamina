@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1StringTag@@UEAA@XZ
+    virtual ~StringTag();
 
     // vIndex: 2, symbol: ?write@StringTag@@UEBAXAEAVIDataOutput@@@Z
     virtual void write(class IDataOutput&) const;
@@ -41,9 +41,6 @@ public:
 
     // vIndex: 10, symbol: ?hash@StringTag@@UEBA_KXZ
     virtual uint64 hash() const;
-
-    // symbol: ??1StringTag@@UEAA@XZ
-    MCVAPI ~StringTag();
 
     // symbol: ??0StringTag@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI explicit StringTag(std::string);

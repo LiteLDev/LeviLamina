@@ -15,7 +15,7 @@ using ll::StringUtils::wstr2str;
 
 std::vector<std::string> GeneralLanguages{"en", "zh"};
 
-std::string I18nBase::get(const std::string& key, const std::string& langCode) {
+std::string I18nBase::get(std::string const& key, std::string const& langCode) {
     auto& langc    = (langCode.empty() ? defaultLocaleName : langCode);
     auto  langType = langc.substr(0, 2);
     if (langData.count(langc)) { // If there is lang data for the language
@@ -73,7 +73,7 @@ I18nBase* I18nBase::clone() {
 
 ////////////////////////////////////////// SingleFileI18N //////////////////////////////////////////
 
-void SingleFileI18N::load(const std::string& fileName) {
+void SingleFileI18N::load(std::string const& fileName) {
     this->filePath = fileName;
     if (!fs::exists(fileName)) {
         fs::create_directories(fs::path(fileName).parent_path());
@@ -114,7 +114,7 @@ I18nBase::Type SingleFileI18N::getType() { return Type::SingleFile; }
 
 ////////////////////////////////////////// MultiFileI18N //////////////////////////////////////////
 
-I18nBase::SubLangData NestedHelper(const nlohmann::json& j, const std::string& prefix = "") {
+I18nBase::SubLangData NestedHelper(nlohmann::json const& j, std::string const& prefix = "") {
     I18nBase::SubLangData data;
     if (!j.is_object()) {
         // throw std::exception("Error when parsing I18nBase data: The value must be object!");
@@ -133,7 +133,7 @@ I18nBase::SubLangData NestedHelper(const nlohmann::json& j, const std::string& p
     return data;
 }
 
-void MultiFileI18N::load(const std::string& dirName) {
+void MultiFileI18N::load(std::string const& dirName) {
     this->dirPath = dirName;
     if (!fs::exists(dirName) || fs::is_empty(dirName)) {
         if (this->defaultLangData.empty()) {
@@ -194,9 +194,9 @@ namespace Translation {
 
 I18nBase* loadI18nImpl(
     HMODULE                   hPlugin,
-    const std::string&        path,
-    const std::string&        defaultLocaleName,
-    const I18nBase::LangData& defaultLangData
+    std::string const&        path,
+    std::string const&        defaultLocaleName,
+    I18nBase::LangData const& defaultLangData
 ) {
     try {
         I18nBase* res = nullptr;
@@ -206,7 +206,7 @@ I18nBase* loadI18nImpl(
             res = new SingleFileI18N(path, defaultLocaleName, defaultLangData);
         }
         return &PluginOwnData::setWithoutNewImpl<I18nBase>(hPlugin, I18nBase::POD_KEY, res);
-    } catch (const std::exception& e) {
+    } catch (std::exception const& e) {
         ll::logger.error("Fail to load translation file <{}> !", path);
         ll::logger.error("- {}", TextEncoding::toUTF8(e.what()));
     } catch (...) { ll::logger.error("Fail to load translation file <{}> !", path); }
@@ -217,7 +217,7 @@ I18nBase* loadFromImpl(HMODULE hPlugin, HMODULE hTarget) {
     try {
         auto& i18n = PluginOwnData::getImpl<I18nBase>(hTarget, I18nBase::POD_KEY);
         return &PluginOwnData::setWithoutNewImpl<I18nBase>(hPlugin, I18nBase::POD_KEY, i18n.clone());
-    } catch (const std::exception& e) {
+    } catch (std::exception const& e) {
         ll::logger.error("Fail to load translation from another plugin!", e.what());
         ll::logger.error("- {}", e.what());
     } catch (...) { ll::logger.error("Fail to load translation from another plugin!"); }
@@ -324,7 +324,7 @@ Encoding getLocalEncoding() {
     return default_encoding();
 }
 
-Encoding detectEncoding(const std::string& text, bool* isReliable) {
+Encoding detectEncoding(std::string const& text, bool* isReliable) {
     bool temp;
     int  bytes_consumed;
 
@@ -343,23 +343,23 @@ Encoding detectEncoding(const std::string& text, bool* isReliable) {
     );
 }
 
-std::string fromUnicode(const std::wstring& text, Encoding encoding) {
+std::string fromUnicode(std::wstring const& text, Encoding encoding) {
     try {
         return wstr2str(text, Encoding_CodePage_Map.at(encoding));
     } catch (...) { return ""; }
 }
 
-std::wstring toUnicode(const std::string& text, Encoding encoding) {
+std::wstring toUnicode(std::string const& text, Encoding encoding) {
     try {
         return str2wstr(text, Encoding_CodePage_Map.at(encoding));
     } catch (...) { return L""; }
 }
 
-std::string toUTF8(const std::string& text) { return convert(text, detectEncoding(text), Encoding::UTF8); }
+std::string toUTF8(std::string const& text) { return convert(text, detectEncoding(text), Encoding::UTF8); }
 
-std::string toUTF8(const std::string& text, Encoding from) { return convert(text, from, Encoding::UTF8); }
+std::string toUTF8(std::string const& text, Encoding from) { return convert(text, from, Encoding::UTF8); }
 
-std::string convert(const std::string& text, Encoding from, Encoding to) {
+std::string convert(std::string const& text, Encoding from, Encoding to) {
     if (text.empty() || from == to) return text;
 
     wstring uni = toUnicode(text, from);

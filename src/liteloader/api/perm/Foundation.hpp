@@ -19,19 +19,19 @@ class PermVector : public std::vector<T> {
 
 public:
     PermVector() : Base() {}
-    PermVector(const Base& base) : Base(base) {}
+    PermVector(Base const& base) : Base(base) {}
     PermVector(Base&& base) : Base(base) {}
     PermVector(const PermVector<T>& other) = default;
     PermVector(PermVector<T>&& other)      = default;
 
-    bool contains(const T& xuid) const {
+    bool contains(T const& xuid) const {
         for (auto& member : *this) {
             if (member == xuid) { return true; }
         }
         return false;
     }
 
-    size_t count(const T& xuid) const {
+    size_t count(T const& xuid) const {
         size_t result = 0;
         for (auto& member : *this) {
             if (member == xuid) { result++; }
@@ -39,7 +39,7 @@ public:
         return result;
     }
 
-    T& push_back(const T& xuid) {
+    T& push_back(T const& xuid) {
         if (contains(xuid)) { throw std::out_of_range("Failed to add the element: the element already exists"); }
         Base::push_back(xuid);
         return this->back();
@@ -50,7 +50,7 @@ public:
         return this->push_back(T(std::forward<Args>(args)...));
     }
 
-    PermVector<T>& operator=(const Base& other) { return (PermVector<T>&)(((Base&)*this) = other); }
+    PermVector<T>& operator=(Base const& other) { return (PermVector<T>&)(((Base&)*this) = other); }
     PermVector<T>& operator=(const PermVector<T>& other) = default;
     PermVector<T>& operator=(PermVector<T>&& other)      = default;
 };
@@ -63,33 +63,33 @@ class PermContainer : public std::vector<T> {
 
 public:
     PermContainer() : Base() {}
-    PermContainer(const Base& base) : Base(base) {}
+    PermContainer(Base const& base) : Base(base) {}
     PermContainer(Base&& base) : Base(base) {}
     PermContainer(const PermContainer<T>& other) = default;
     PermContainer(PermContainer<T>&& other)      = default;
 
-    bool contains(const std::string& name) const {
+    bool contains(std::string const& name) const {
         for (auto& el : *this) {
             if (el.name == name) { return true; }
         }
         return false;
     }
 
-    typename Base::iterator find(const std::string& name) {
+    typename Base::iterator find(std::string const& name) {
         for (auto it = this->begin(); it != this->end(); it++) {
             if (it->name == name) { return it; }
         }
         return this->end();
     }
 
-    typename Base::const_iterator find(const std::string& name) const {
+    typename Base::const_iterator find(std::string const& name) const {
         for (auto it = this->begin(); it != this->end(); it++) {
             if (it->name == name) { return it; }
         }
         return this->end();
     }
 
-    size_t count(const std::string& name) const {
+    size_t count(std::string const& name) const {
         size_t result = 0;
         for (auto& el : *this) {
             if (el.name == name) { result++; }
@@ -98,7 +98,7 @@ public:
     }
 
     template <typename... Args>
-    T& getOrCreate(const std::string& name, Args&&... args) {
+    T& getOrCreate(std::string const& name, Args&&... args) {
         for (auto& el : *this) {
             if (el.name == name) { return el; }
         }
@@ -106,20 +106,20 @@ public:
         return el;
     }
 
-    T& at(const std::string& name) {
+    T& at(std::string const& name) {
         for (auto& el : *this) {
             if (el.name == name) { return el; }
         }
         throw std::out_of_range("Failed to get the element: the element does not exist");
     }
-    const T& at(const std::string& name) const {
+    T const& at(std::string const& name) const {
         for (auto& el : *this) {
             if (el.name == name) { return el; }
         }
         throw std::out_of_range("Failed to get the element: the element does not exist");
     }
 
-    T& push_back(const T& el) {
+    T& push_back(T const& el) {
         if (contains(el.name)) {
             throw std::out_of_range("Failed to add the element: the element with the same name already exists");
         }
@@ -137,7 +137,7 @@ public:
         return this->back();
     }
 
-    void remove(const std::string& name) {
+    void remove(std::string const& name) {
         for (auto it = this->begin(); it != this->end(); it++) {
             if (it->name == name) {
                 this->erase(it);
@@ -147,7 +147,7 @@ public:
         throw std::out_of_range("Failed to remove the element: the target element does not exist");
     }
 
-    T& operator[](const std::string& name) {
+    T& operator[](std::string const& name) {
         T def{};
         def.name = name;
         return this->getOrCreate(name, def);
@@ -155,7 +155,7 @@ public:
 
     PermContainer<T>& operator=(const PermContainer<T>& other) = default;
     PermContainer<T>& operator=(PermContainer<T>&& other)      = default;
-    PermContainer<T>& operator=(const Base& other) { return (PermContainer<T>&)(((Base&)*this) = other); }
+    PermContainer<T>& operator=(Base const& other) { return (PermContainer<T>&)(((Base&)*this) = other); }
 };
 
 
@@ -166,33 +166,33 @@ class PermPtrContainer : public std::vector<std::shared_ptr<T>> {
 
 public:
     PermPtrContainer() : Base() {}
-    PermPtrContainer(const Base& base) : Base(base) {}
+    PermPtrContainer(Base const& base) : Base(base) {}
     PermPtrContainer(Base&& base) : Base(base) {}
     PermPtrContainer(const PermPtrContainer<T>& other) = default;
     PermPtrContainer(PermPtrContainer<T>&& other)      = default;
 
-    bool contains(const std::string& name) const {
+    bool contains(std::string const& name) const {
         for (auto& el : *this) {
             if (el->name == name) { return true; }
         }
         return false;
     }
 
-    typename Base::iterator find(const std::string& name) {
+    typename Base::iterator find(std::string const& name) {
         for (auto it = this->begin(); it != this->end(); it++) {
             if (it->name == name) { return it; }
         }
         return this->end();
     }
 
-    typename Base::const_iterator find(const std::string& name) const {
+    typename Base::const_iterator find(std::string const& name) const {
         for (auto it = this->begin(); it != this->end(); it++) {
             if (it->name == name) { return it; }
         }
         return this->end();
     }
 
-    size_t count(const std::string& name) const {
+    size_t count(std::string const& name) const {
         size_t result = 0;
         for (auto& el : *this) {
             if (el->name == name) { result++; }
@@ -201,7 +201,7 @@ public:
     }
 
     template <typename... Args>
-    std::shared_ptr<T>& getOrCreate(const std::string& name, Args&&... args) {
+    std::shared_ptr<T>& getOrCreate(std::string const& name, Args&&... args) {
         for (auto& el : *this) {
             if (el->name == name) { return el; }
         }
@@ -209,20 +209,20 @@ public:
         return el;
     }
 
-    std::shared_ptr<T>& at(const std::string& name) {
+    std::shared_ptr<T>& at(std::string const& name) {
         for (auto& el : *this) {
             if (el->name == name) { return el; }
         }
         throw std::out_of_range("Failed to get the element: the element does not exist");
     }
-    const std::shared_ptr<T>& at(const std::string& name) const {
+    const std::shared_ptr<T>& at(std::string const& name) const {
         for (auto& el : *this) {
             if (el->name == name) { return el; }
         }
         throw std::out_of_range("Failed to get the element: the element does not exist");
     }
 
-    T& push_back(const T& el) {
+    T& push_back(T const& el) {
         if (contains(el->name)) {
             throw std::out_of_range("Failed to add the element: the element with the same name already exists");
         }
@@ -247,7 +247,7 @@ public:
         return this->back();
     }
 
-    void remove(const std::string& name) {
+    void remove(std::string const& name) {
         for (auto it = this->begin(); it != this->end(); it++) {
             if ((*it)->name == name) {
                 this->erase(it);
@@ -257,7 +257,7 @@ public:
         throw std::out_of_range("Failed to remove the element: the target element does not exist");
     }
 
-    std::shared_ptr<T>& operator[](const std::string& name) {
+    std::shared_ptr<T>& operator[](std::string const& name) {
         auto def  = std::make_shared<T>(new T);
         def->name = name;
         return this->getOrCreate(name, def);
@@ -265,7 +265,7 @@ public:
 
     PermPtrContainer<T>& operator=(const PermPtrContainer<T>& other) = default;
     PermPtrContainer<T>& operator=(PermPtrContainer<T>&& other)      = default;
-    PermPtrContainer<T>& operator=(const Base& other) { return (PermPtrContainer<T>&)(((Base&)*this) = other); }
+    PermPtrContainer<T>& operator=(Base const& other) { return (PermPtrContainer<T>&)(((Base&)*this) = other); }
 };
 
 } // namespace ll::perm

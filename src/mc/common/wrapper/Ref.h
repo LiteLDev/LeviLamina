@@ -15,12 +15,12 @@ public:
 
     WeakStorageSharePtr() = default;
     WeakStorageSharePtr(const std::shared_ptr<T>& ptr) : mHandle(ptr) {}
-    WeakStorageSharePtr(const WeakStorageSharePtr& other) : mHandle(other.mHandle) {}
+    WeakStorageSharePtr(WeakStorageSharePtr const& other) : mHandle(other.mHandle) {}
     WeakStorageSharePtr(WeakStorageSharePtr&& other) noexcept : mHandle(std::move(other.mHandle)) {}
 
     ~WeakStorageSharePtr() = default;
 
-    WeakStorageSharePtr& operator=(const WeakStorageSharePtr& other) {
+    WeakStorageSharePtr& operator=(WeakStorageSharePtr const& other) {
         if (this != &other) {
             mHandle = other.mHandle;
         }
@@ -62,12 +62,12 @@ public:
 
     OwnerStorageSharePtr() = default;
     OwnerStorageSharePtr(const std::shared_ptr<T>& ptr) : mHandle(ptr) {}
-    OwnerStorageSharePtr(const OwnerStorageSharePtr& other) : mHandle(other.mHandle) {}
+    OwnerStorageSharePtr(OwnerStorageSharePtr const& other) : mHandle(other.mHandle) {}
     OwnerStorageSharePtr(OwnerStorageSharePtr&& other) noexcept : mHandle(std::move(other.mHandle)) {}
 
     ~OwnerStorageSharePtr() = default;
 
-    OwnerStorageSharePtr& operator=(const OwnerStorageSharePtr& other) {
+    OwnerStorageSharePtr& operator=(OwnerStorageSharePtr const& other) {
         if (this != &other) {
             mHandle = other.mHandle;
         }
@@ -97,12 +97,12 @@ public:
 
     StackResultStorageSharePtr() = default;
     StackResultStorageSharePtr(const std::shared_ptr<T>& ptr) : mHandle(ptr) {}
-    StackResultStorageSharePtr(const StackResultStorageSharePtr& other) : mHandle(other.mHandle) {}
+    StackResultStorageSharePtr(StackResultStorageSharePtr const& other) : mHandle(other.mHandle) {}
     StackResultStorageSharePtr(StackResultStorageSharePtr&& other) noexcept : mHandle(std::move(other.mHandle)) {}
 
     ~StackResultStorageSharePtr() = default;
 
-    StackResultStorageSharePtr& operator=(const StackResultStorageSharePtr& other) {
+    StackResultStorageSharePtr& operator=(StackResultStorageSharePtr const& other) {
         if (this != &other) {
             mHandle = other.mHandle;
         }

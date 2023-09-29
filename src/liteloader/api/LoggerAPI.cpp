@@ -14,7 +14,7 @@ using namespace ll::StringUtils;
 
 std::mutex loggerLock;
 
-bool Logger::setDefaultFileImpl(HMODULE hPlugin, const std::string& logFile, bool appendMode = true) {
+bool Logger::setDefaultFileImpl(HMODULE hPlugin, std::string const& logFile, bool appendMode = true) {
     if (logFile.empty()) {
         PluginOwnData::removeImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE);
         return true;
@@ -37,7 +37,7 @@ bool Logger::setDefaultFileImpl(HMODULE hPlugin, nullptr_t) {
     return true;
 }
 
-bool Logger::setFile(const std::string& logFile, bool appendMode) {
+bool Logger::setFile(std::string const& logFile, bool appendMode) {
     if (ofs.is_open()) ofs.close();
 
     if (logFile.empty()) {
@@ -83,7 +83,7 @@ bool checkLogLevel(int level, int outLevel) {
     return false;
 }
 
-fmt::text_style getModeColor(const std::string& a1) {
+fmt::text_style getModeColor(std::string const& a1) {
     if (!ll::globalConfig.colorLog) return {};
     switch (do_hash(a1.c_str())) {
     case do_hash("INFO"):
@@ -101,7 +101,7 @@ fmt::text_style getModeColor(const std::string& a1) {
 }
 
 template <typename S, typename Char = fmt::v9::char_t<S>>
-std::string applyTextStyle(const fmt::v9::text_style& ts, const S& format_str) {
+std::string applyTextStyle(fmt::v9::text_style const& ts, S const& format_str) {
     fmt::v9::basic_memory_buffer<Char> buf;
     auto                               fmt       = fmt::detail::to_string_view(format_str);
     bool                               has_style = false;
@@ -191,7 +191,7 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o) {
     }
 }
 
-Logger::Logger(const std::string& title) {
+Logger::Logger(std::string const& title) {
     this->title = title;
     debug       = OutputStream{
         this,

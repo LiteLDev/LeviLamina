@@ -37,6 +37,10 @@ public:
 
     Variant mTagStorage;
 
+    CompoundTagVariant() = default;
+
+    CompoundTagVariant(Variant storage) : mTagStorage(std::move(storage)) {}
+
 public:
     // NOLINTBEGIN
     // symbol: ?emplace@CompoundTagVariant@@QEAAAEAVTag@@$$QEAV2@@Z

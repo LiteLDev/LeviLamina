@@ -18,7 +18,7 @@ LLAPI LLConfig        globalConfig;
 LLAPI LLRuntimeConfig globalRuntimeConfig;
 LLAPI ll::CommandLineOption commandLineOption;
 
-void inline to_json(nlohmann::json& j, const LLConfig& conf) {
+void inline to_json(nlohmann::json& j, LLConfig const& conf) {
     j = nlohmann::json{
         {"DebugMode",              conf.debugMode                                                                         },
         {"ColorLog",               conf.colorLog                                                                          },
@@ -33,7 +33,6 @@ void inline to_json(nlohmann::json& j, const LLConfig& conf) {
              {"UnlockCmd", {{"enabled", conf.enableUnlockCmd}}},
              {"AddonsHelper", {{"enabled", conf.enableAddonsHelper}, {"autoInstallPath", conf.addonsInstallPath}}},
              {"FixListenPort", {{"enabled", conf.enableFixListenPort}}},
-             {"AntiGive", {{"enabled", conf.enableAntiGive}, {"command", conf.antiGiveCommand}}},
              {"ErrorStackTraceback",
               {{"enabled", conf.enableErrorStackTraceback}, {"cacheSymbol", conf.cacheErrorStackTracebackSymbol}}},
              {"UnoccupyPort19132", {{"enabled", conf.enableUnoccupyPort19132}}},
@@ -57,7 +56,7 @@ void inline to_json(nlohmann::json& j, const LLConfig& conf) {
     };
 }
 
-void inline from_json(const nlohmann::json& j, LLConfig& conf) {
+void inline from_json(nlohmann::json const& j, LLConfig& conf) {
     conf.debugMode = j.value("DebugMode", false);
     if (ll::commandLineOption.noColorOption) conf.colorLog = false;
     else conf.colorLog = j.value("ColorLog", true);
@@ -72,7 +71,7 @@ void inline from_json(const nlohmann::json& j, LLConfig& conf) {
     );
 
     auto& tempMap = conf.resourcePackEncryptionMap;
-    for (const auto& x : tempMap) {
+    for (auto const& x : tempMap) {
         std::string tempUuid = x.first;
         transform(tempUuid.begin(), tempUuid.end(), tempUuid.begin(), ::toupper);
         tempMap.erase(x.first);
@@ -80,7 +79,7 @@ void inline from_json(const nlohmann::json& j, LLConfig& conf) {
     }
 
     if (j.find("ScriptEngine") != j.end()) {
-        const nlohmann::json& scriptEngine = j.at("ScriptEngine");
+        nlohmann::json const& scriptEngine = j.at("ScriptEngine");
         conf.enableScriptEngine            = scriptEngine.value("enabled", true);
 
         if (scriptEngine.find("alwaysLaunch") != scriptEngine.end())
@@ -88,92 +87,87 @@ void inline from_json(const nlohmann::json& j, LLConfig& conf) {
     }
 
     if (j.find("Modules") != j.end()) {
-        const nlohmann::json& modules = j.at("Modules");
+        nlohmann::json const& modules = j.at("Modules");
 
         if (modules.find("CrashLogger") != modules.end()) {
-            const nlohmann::json& setting = modules.at("CrashLogger");
+            nlohmann::json const& setting = modules.at("CrashLogger");
             conf.enableCrashLogger        = setting.value("enabled", true);
             conf.crashLoggerPath          = setting.value("path", "plugins\\LiteLoader\\CrashLogger_Daemon.exe");
         }
         if (modules.find("SimpleServerLogger") != modules.end()) {
-            const nlohmann::json& setting = modules.at("SimpleServerLogger");
+            nlohmann::json const& setting = modules.at("SimpleServerLogger");
             conf.enableSimpleServerLogger = setting.value("enabled", true);
         }
         if (modules.find("FixListenPort") != modules.end()) {
-            const nlohmann::json& setting = modules.at("FixListenPort");
+            nlohmann::json const& setting = modules.at("FixListenPort");
             conf.enableFixListenPort      = setting.value("enabled", false);
         }
         if (modules.find("UnlockCmd") != modules.end()) {
-            const nlohmann::json& setting = modules.at("UnlockCmd");
+            nlohmann::json const& setting = modules.at("UnlockCmd");
             conf.enableUnlockCmd          = setting.value("enabled", true);
         }
         if (modules.find("AddonsHelper") != modules.end()) {
-            const nlohmann::json& setting = modules.at("AddonsHelper");
+            nlohmann::json const& setting = modules.at("AddonsHelper");
             conf.enableAddonsHelper       = setting.value("enabled", true);
             conf.addonsInstallPath        = setting.value("autoInstallPath", "plugins/AddonsHelper");
         }
-        if (modules.find("AntiGive") != modules.end()) {
-            const nlohmann::json& setting = modules.at("AntiGive");
-            conf.enableAntiGive           = setting.value("enabled", true);
-            conf.antiGiveCommand          = setting.value("command", "kick {player}");
-        }
         if (modules.find("UnoccupyPort19132") != modules.end()) {
-            const nlohmann::json& setting = modules.at("UnoccupyPort19132");
+            nlohmann::json const& setting = modules.at("UnoccupyPort19132");
             conf.enableUnoccupyPort19132  = setting.value("enabled", true);
         }
         if (modules.find("CheckRunningBDS") != modules.end()) {
-            const nlohmann::json& setting = modules.at("CheckRunningBDS");
+            nlohmann::json const& setting = modules.at("CheckRunningBDS");
             conf.enableCheckRunningBDS    = setting.value("enabled", true);
         }
         if (modules.find("WelcomeText") != modules.end()) {
-            const nlohmann::json& setting = modules.at("WelcomeText");
+            nlohmann::json const& setting = modules.at("WelcomeText");
             conf.enableWelcomeText        = setting.value("enabled", true);
         }
         if (modules.find("FixMcBug") != modules.end()) {
-            const nlohmann::json& setting = modules.at("FixMcBug");
+            nlohmann::json const& setting = modules.at("FixMcBug");
             conf.enableFixMcBug           = setting.value("enabled", true);
         }
         if (modules.find("FixBroadcastBug") != modules.end()) {
-            const nlohmann::json& setting = modules.at("FixBroadcastBug");
+            nlohmann::json const& setting = modules.at("FixBroadcastBug");
             conf.enableFixBroadcastBug    = setting.value("enabled", true);
         }
         if (modules.find("DisableAutoCompactionLog") != modules.end()) {
-            const nlohmann::json& setting = modules.at("DisableAutoCompactionLog");
+            nlohmann::json const& setting = modules.at("DisableAutoCompactionLog");
             conf.disableAutoCompactionLog = setting.value("enabled", true);
         }
         if (modules.find("ErrorStackTraceback") != modules.end()) {
-            const nlohmann::json& setting       = modules.at("ErrorStackTraceback");
+            nlohmann::json const& setting       = modules.at("ErrorStackTraceback");
             conf.enableErrorStackTraceback      = setting.value("enabled", true);
             conf.cacheErrorStackTracebackSymbol = setting.value("cacheSymbol", false);
         }
         if (modules.find("OutputFilter") != modules.end()) {
-            const nlohmann::json& setting = modules.at("OutputFilter");
+            nlohmann::json const& setting = modules.at("OutputFilter");
             conf.enableOutputFilter       = setting.value("enabled", false);
             conf.onlyFilterConsoleOutput  = setting.value("onlyFilterConsoleOutput", true);
             conf.outputFilterRegex        = setting.value("filterRegex", std::vector<std::string>());
         }
         if (modules.find("EconomyCore") != modules.end()) {
-            const nlohmann::json& setting = modules.at("EconomyCore");
+            nlohmann::json const& setting = modules.at("EconomyCore");
             conf.enableEconomyCore        = setting.value("enabled", true);
         }
         if (modules.find("TpdimCommand") != modules.end()) {
-            const nlohmann::json& setting = modules.at("TpdimCommand");
+            nlohmann::json const& setting = modules.at("TpdimCommand");
             conf.enableTpdimCommand       = setting.value("enabled", true);
         }
         if (modules.find("ForceUtf8Input") != modules.end()) {
-            const nlohmann::json& setting = modules.at("ForceUtf8Input");
+            nlohmann::json const& setting = modules.at("ForceUtf8Input");
             conf.enableForceUtf8Input     = setting.value("enabled", true);
         }
         if (modules.find("FixBDSCrash") != modules.end()) {
-            const nlohmann::json& setting = modules.at("FixBDSCrash");
+            nlohmann::json const& setting = modules.at("FixBDSCrash");
             conf.enableFixBDSCrash        = setting.value("enabled", false);
         }
         if (modules.find("ParticleAPI") != modules.end()) {
-            const nlohmann::json& setting = modules.at("ParticleAPI");
+            nlohmann::json const& setting = modules.at("ParticleAPI");
             conf.enableParticleAPI        = setting.value("enabled", false);
         }
         if (modules.find("FixAbility") != modules.end()) {
-            const nlohmann::json& setting = modules.at("FixAbility");
+            nlohmann::json const& setting = modules.at("FixAbility");
             conf.enableFixAbility         = setting.value("enabled", true);
         }
     }
@@ -215,14 +209,14 @@ bool ll::LoadLLConfig() {
                     return SaveConfig(config);
                 }
                 return true;
-            } catch (const nlohmann::json::exception& e) {
+            } catch (nlohmann::json::exception const& e) {
                 ll::logger.error("Fail to parse config file <{}> !", LITELOADER_CONFIG_FILE);
                 ll::logger.error("{}", e.what());
                 ll::logger.error("Using default config file...");
                 return ll::SaveLLConfig();
             }
         }
-    } catch (const nlohmann::json::exception& e) {
+    } catch (nlohmann::json::exception const& e) {
         ll::logger.error("Fail to parse config file <{}> !", LITELOADER_CONFIG_FILE);
         ll::logger.error("{}", e.what());
         return false;

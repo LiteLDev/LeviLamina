@@ -33,8 +33,8 @@ struct Version {
     explicit Version() = default;
     LLAPI Version(int major, int minor, int patch, PreRelease preRelease = PreRelease::None);
 
-    LLAPI bool operator<(const Version& other) const;
-    LLAPI bool operator==(const Version& other) const;
+    LLAPI bool operator<(Version const& other) const;
+    LLAPI bool operator==(Version const& other) const;
 
     /**
      * @brief Convert the version to a string
@@ -52,7 +52,7 @@ struct Version {
      * @param str The string to parse
      * @return Version The version instance
      */
-    LLAPI static Version parse(const std::string& str);
+    LLAPI static Version parse(std::string const& str);
 
 private:
     static constexpr std::array<std::string_view, 2> PRE_RELEASE_STRINGS = {"alpha", "beta"};
@@ -122,7 +122,7 @@ LLAPI bool isDebugMode();
  * @param  pluginName   The name of the plugin
  * @return std::string  The data path of the plugin
  */
-LLAPI std::string getDataPath(const std::string& pluginName);
+LLAPI std::string getDataPath(std::string const& pluginName);
 
 /**
  * @brief Register a plugin

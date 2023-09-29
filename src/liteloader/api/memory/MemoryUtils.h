@@ -81,7 +81,7 @@ constexpr T& dAccess(void* ptr, uintptr_t off) {
 }
 
 template <typename T>
-constexpr const T& dAccess(void const* ptr, uintptr_t off) {
+constexpr T const& dAccess(void const* ptr, uintptr_t off) {
     return *(T*)(((uintptr_t)ptr) + off);
 }
 

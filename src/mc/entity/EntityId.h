@@ -8,9 +8,9 @@ public:
 
     constexpr EntityId(EntityId&&) = default;
 
-    constexpr EntityId(const EntityId&) = default;
+    constexpr EntityId(EntityId const&) = default;
 
-    constexpr EntityId& operator=(const EntityId&) = default;
+    constexpr EntityId& operator=(EntityId const&) = default;
 
     template <
         class T,

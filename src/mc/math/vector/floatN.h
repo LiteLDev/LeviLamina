@@ -6,8 +6,8 @@
 // class floatN {
 // public:
 //     floatN()                        = delete;
-//     floatN(const floatN&)           = delete;
-//     floatN operator=(const floatN&) = delete;
+//     floatN(floatN const&)           = delete;
+//     floatN operator=(floatN const&) = delete;
 // };
 template <typename BaseType>
 VEC2_IMPL_(floatN2, BaseType, float, FloatN);

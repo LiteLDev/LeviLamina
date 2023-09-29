@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/raknet/RakNetGUID.h"
 #include "mc/deps/raknet/SystemAddress.h"
+#include "mc/deps/raknet/RakPeerInterface.h"
 
 // auto generated inclusion list
 #include "mc/deps/raknet/ConnectionAttemptResult.h"
@@ -31,7 +32,7 @@ namespace RakNet { struct SystemAddress; }
 
 namespace RakNet {
 
-class RakPeer {
+class RakPeer : public RakPeerInterface {
 public:
     // RakPeer inner types declare
     // clang-format off

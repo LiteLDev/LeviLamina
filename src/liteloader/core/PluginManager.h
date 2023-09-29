@@ -13,7 +13,7 @@ class PluginManager {
 public:
     LLAPI static bool registerPlugin(
         HMODULE                            handle,
-        const std::string&                 name,
+        std::string const&                 name,
         std::string                        desc,
         ll::Version                        version,
         std::map<std::string, std::string> others

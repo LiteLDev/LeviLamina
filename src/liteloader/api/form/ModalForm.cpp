@@ -29,13 +29,13 @@ public:
       mCallback(std::move(callback)) {}
     ~ModalFormImpl() override = default;
 
-    void setTitle(const std::string& title) { mTitle = title; }
+    void setTitle(std::string const& title) { mTitle = title; }
 
-    void setContent(const std::string& content) { mContent = content; }
+    void setContent(std::string const& content) { mContent = content; }
 
-    void setButtonLeft(const std::string& buttonLeft) { mButtonLeft = buttonLeft; }
+    void setButtonLeft(std::string const& buttonLeft) { mButtonLeft = buttonLeft; }
 
-    void setButtonRight(const std::string& buttonRight) { mButtonRight = buttonRight; }
+    void setButtonRight(std::string const& buttonRight) { mButtonRight = buttonRight; }
 
     void setCallback(Callback callback) { mCallback = std::move(callback); }
 
@@ -86,22 +86,22 @@ ModalForm::ModalForm(
     std::move(callback)
 )) {}
 
-ModalForm& ModalForm::setTitle(const std::string& title) {
+ModalForm& ModalForm::setTitle(std::string const& title) {
     impl->setTitle(title);
     return *this;
 }
 
-ModalForm& ModalForm::setContent(const std::string& content) {
+ModalForm& ModalForm::setContent(std::string const& content) {
     impl->setContent(content);
     return *this;
 }
 
-ModalForm& ModalForm::setButtonLeft(const std::string& buttonLeft) {
+ModalForm& ModalForm::setButtonLeft(std::string const& buttonLeft) {
     impl->setButtonLeft(buttonLeft);
     return *this;
 }
 
-ModalForm& ModalForm::setButtonRight(const std::string& buttonRight) {
+ModalForm& ModalForm::setButtonRight(std::string const& buttonRight) {
     impl->setButtonRight(buttonRight);
     return *this;
 }

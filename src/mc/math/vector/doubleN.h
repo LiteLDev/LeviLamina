@@ -6,8 +6,8 @@ template <size_t N>
 class doubleN {
 public:
     doubleN()                         = delete;
-    doubleN(const doubleN&)           = delete;
-    doubleN operator=(const doubleN&) = delete;
+    doubleN(doubleN const&)           = delete;
+    doubleN operator=(doubleN const&) = delete;
 };
 template <>
 VEC2_IMPL_(doubleN<2>, doubleN<2>, double, FloatN);

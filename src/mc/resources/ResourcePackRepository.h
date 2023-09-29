@@ -72,7 +72,7 @@ public:
     };
 
 public:
-    LLAPI void setCustomResourcePackPath(const std::string& path, PackType type);
+    LLAPI void setCustomResourcePackPath(std::string const& path, PackType type);
 
     // prevent constructor by default
     ResourcePackRepository& operator=(ResourcePackRepository const&);

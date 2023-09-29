@@ -5,7 +5,7 @@
 #include "mc/server/LoopbackPacketSender.h"
 #include "mc/server/ServerPlayer.h"
 #include "mc/world/Minecraft.h"
-#include "mc/world/level/Level.h"
+#include "mc/server/ServerLevel.h"
 #include "mc/world/level/dimension/Dimension.h"
 
 

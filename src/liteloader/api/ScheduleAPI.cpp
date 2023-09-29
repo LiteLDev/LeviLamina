@@ -13,6 +13,8 @@
 #include "liteloader/core/Config.h"
 #include "liteloader/core/LiteLoader.h"
 
+#include "mc/server/ServerLevel.h"
+
 using namespace std;
 
 std::mutex  locker;
@@ -46,7 +48,7 @@ public:
 
     [[nodiscard]] inline uint getTaskId() const { return taskId; }
 
-    inline bool operator>(const ScheduleTaskData& t) const { return leftTime > t.leftTime; }
+    inline bool operator>(ScheduleTaskData const& t) const { return leftTime > t.leftTime; }
 };
 
 std::vector<ScheduleTaskData> pendingTaskList{};
@@ -104,7 +106,7 @@ public:
 
             while (true) {
                 if (empty()) break;
-                const ScheduleTaskData& t = top();
+                ScheduleTaskData const& t = top();
                 if (t.leftTime > 0) break;
 
                 // timeout
@@ -131,13 +133,13 @@ public:
                     default:
                         break;
                     }
-                } catch (const seh_exception& e) {
+                } catch (seh_exception const& e) {
                     ll::logger.error("SEH exception occurred in ScheduleTask!");
                     ll::logger.error("{}", TextEncoding::toUTF8(e.what()));
                     ll::logger.error("TaskId: {}", t.taskId);
                     if (auto plugin = ll::getPlugin(t.handle))
                         ll::logger.error("In Plugin: <{} {}>", plugin->name, plugin->version.toString());
-                } catch (const std::exception& e) {
+                } catch (std::exception const& e) {
                     ll::logger.error("Exception occurred in ScheduleTask!");
                     ll::logger.error("{}", TextEncoding::toUTF8(e.what()));
                     ll::logger.error("TaskId: {}", t.taskId);
@@ -207,10 +209,10 @@ ScheduleTask nextTick(std::function<void(void)> task, HMODULE handle) {
 }
 } // namespace Schedule
 
-// LL_AUTO_STATIC_HOOK(SAHook1, HookPriority::Normal, "?tick@ServerLevel@@UEAAXXZ", void, void* _this) {
-//     origin(_this);
-//     taskQueue.tick();
-// }
+LL_AUTO_TYPED_INSTANCE_HOOK(ScheduleTaskTickHook, ServerLevel, HookPriority::Normal, &ServerLevel::_subTick, void) {
+    origin();
+    taskQueue.tick();
+}
 
 void EndScheduleSystem() {
     locker.lock();

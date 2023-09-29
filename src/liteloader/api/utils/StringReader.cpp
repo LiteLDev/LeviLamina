@@ -4,7 +4,7 @@
 
 //////////////////////////////// CONSTRUCTOR ////////////////////////////////
 
-StringReader::StringReader(const std::string& str)
+StringReader::StringReader(std::string const& str)
 : str(str),
   length(str.length()),
   begin(str.begin()),
@@ -23,9 +23,9 @@ StringReader::StringReader(const char* cstr, size_t len)
   end(str.end()),
   it(begin) {}
 
-StringReader::StringReader(const StringReader& other)                = default;
+StringReader::StringReader(StringReader const& other)                = default;
 StringReader::StringReader(StringReader&& other) noexcept            = default;
-StringReader& StringReader::operator=(const StringReader& other)     = default;
+StringReader& StringReader::operator=(StringReader const& other)     = default;
 StringReader& StringReader::operator=(StringReader&& other) noexcept = default;
 
 //////////////////////////////// GET ////////////////////////////////
@@ -66,7 +66,7 @@ std::string StringReader::readUntil(char c) {
     return result;
 }
 
-std::string StringReader::readUntil(const std::string& chars) {
+std::string StringReader::readUntil(std::string const& chars) {
     std::string result;
     while (!isEnd() && chars.find(peek()) == std::string::npos) { result += read(); }
     return result;
@@ -78,7 +78,7 @@ std::string StringReader::readUntilNot(char c) {
     return result;
 }
 
-std::string StringReader::readUntilNot(const std::string& chars) {
+std::string StringReader::readUntilNot(std::string const& chars) {
     std::string result;
     while (!isEnd() && chars.find(peek()) != std::string::npos) { result += read(); }
     return result;
@@ -86,31 +86,31 @@ std::string StringReader::readUntilNot(const std::string& chars) {
 
 std::string StringReader::readLine() { return readUntil('\n'); }
 
-std::string StringReader::readLetters(const std::string& chars) {
+std::string StringReader::readLetters(std::string const& chars) {
     std::string result;
     while (!isEnd() && (isalpha(peek()) || chars.find(peek()) != std::string::npos)) { result += read(); }
     return result;
 }
 
-std::string StringReader::readLower(const std::string& chars) {
+std::string StringReader::readLower(std::string const& chars) {
     std::string result;
     while (!isEnd() && (islower(peek()) || chars.find(peek()) != std::string::npos)) { result += read(); }
     return result;
 }
 
-std::string StringReader::readUpper(const std::string& chars) {
+std::string StringReader::readUpper(std::string const& chars) {
     std::string result;
     while (!isEnd() && (isupper(peek()) || chars.find(peek()) != std::string::npos)) { result += read(); }
     return result;
 }
 
-std::string StringReader::readDigits(const std::string& chars) {
+std::string StringReader::readDigits(std::string const& chars) {
     std::string result;
     while (!isEnd() && (isdigit(peek()) || chars.find(peek()) != std::string::npos)) { result += read(); }
     return result;
 }
 
-std::string StringReader::readLettersAndDigits(const std::string& chars) {
+std::string StringReader::readLettersAndDigits(std::string const& chars) {
     std::string result;
     while (!isEnd() && (isalnum(peek()) || chars.find(peek()) != std::string::npos)) { result += read(); }
     return result;
@@ -175,7 +175,7 @@ void StringReader::skipUntil(char c) {
     while (isValid() && peek() != c) { skip(); }
 }
 
-void StringReader::skipUntil(const std::string& chars) {
+void StringReader::skipUntil(std::string const& chars) {
     while (isValid() && chars.find(peek()) == std::string::npos) { skip(); }
 }
 
@@ -183,27 +183,27 @@ void StringReader::skipUntilNot(char c) {
     while (isValid() && peek() == c) { skip(); }
 }
 
-void StringReader::skipUntilNot(const std::string& chars) {
+void StringReader::skipUntilNot(std::string const& chars) {
     while (isValid() && chars.find(peek()) != std::string::npos) { skip(); }
 }
 
-void StringReader::skipLetters(const std::string& chars) {
+void StringReader::skipLetters(std::string const& chars) {
     while (isValid() && (isalpha(peek()) || chars.find(peek()) != std::string::npos)) { skip(); }
 }
 
-void StringReader::skipLower(const std::string& chars) {
+void StringReader::skipLower(std::string const& chars) {
     while (isValid() && (islower(peek()) || chars.find(peek()) != std::string::npos)) { skip(); }
 }
 
-void StringReader::skipUpper(const std::string& chars) {
+void StringReader::skipUpper(std::string const& chars) {
     while (isValid() && (isupper(peek()) || chars.find(peek()) != std::string::npos)) { skip(); }
 }
 
-void StringReader::skipDigits(const std::string& chars) {
+void StringReader::skipDigits(std::string const& chars) {
     while (isValid() && (isdigit(peek()) || chars.find(peek()) != std::string::npos)) { skip(); }
 }
 
-void StringReader::skipLettersAndDigits(const std::string& chars) {
+void StringReader::skipLettersAndDigits(std::string const& chars) {
     while (isValid() && (isalnum(peek()) || chars.find(peek()) != std::string::npos)) { skip(); }
 }
 

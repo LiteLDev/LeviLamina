@@ -97,7 +97,7 @@ private:
     KeyValueDBImpl() = default;
 };
 
-std::unique_ptr<KeyValueDB> KeyValueDB::create(const std::string& path, bool readCache, int cacheSize, int filterBit) {
+std::unique_ptr<KeyValueDB> KeyValueDB::create(std::string const& path, bool readCache, int cacheSize, int filterBit) {
     CreateDirs(path);
     auto db  = std::unique_ptr<KeyValueDB>(new KeyValueDB());
     db->impl = std::make_unique<KeyValueDBImpl>(path.c_str(), true, readCache, cacheSize, filterBit);
@@ -105,7 +105,7 @@ std::unique_ptr<KeyValueDB> KeyValueDB::create(const std::string& path, bool rea
 }
 
 std::unique_ptr<KeyValueDB>
-KeyValueDB::open(const std::string& path, bool create, bool readCache, int cacheSize, int filterBit) {
+KeyValueDB::open(std::string const& path, bool create, bool readCache, int cacheSize, int filterBit) {
     CreateDirs(path);
     auto db  = std::unique_ptr<KeyValueDB>(new KeyValueDB());
     db->impl = std::make_unique<KeyValueDBImpl>(path.c_str(), create, readCache, cacheSize, filterBit);

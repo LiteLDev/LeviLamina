@@ -15,7 +15,7 @@ public:
     std::string mName{};
 
     [[nodiscard]] virtual Type              getType() const                          = 0;
-    [[nodiscard]] virtual FormElementResult parseResult(const fifo_json& data) const = 0;
+    [[nodiscard]] virtual FormElementResult parseResult(fifo_json const& data) const = 0;
 
 protected:
     explicit CustomFormElement(std::string name) : mName(std::move(name)) {}
@@ -32,35 +32,35 @@ class CustomForm : public Form {
     std::unique_ptr<CustomFormImpl> impl{};
 
 public:
-    using Callback = std::function<void(Player&, const CustomFormResult&)>;
+    using Callback = std::function<void(Player&, CustomFormResult const&)>;
 
-    LLAPI explicit CustomForm(const std::string& title);
+    LLAPI explicit CustomForm(std::string const& title);
 
     ~CustomForm() override = default;
 
-    LLAPI CustomForm& setTitle(const std::string& title);
+    LLAPI CustomForm& setTitle(std::string const& title);
 
-    LLAPI CustomForm& appendLabel(const std::string& text);
+    LLAPI CustomForm& appendLabel(std::string const& text);
 
     LLAPI CustomForm& appendInput(
-        const std::string& name,
-        const std::string& text,
-        const std::string& placeholder = "",
-        const std::string& defaultVal  = ""
+        std::string const& name,
+        std::string const& text,
+        std::string const& placeholder = "",
+        std::string const& defaultVal  = ""
     );
 
-    LLAPI CustomForm& appendToggle(const std::string& name, const std::string& text, bool defaultVal = false);
+    LLAPI CustomForm& appendToggle(std::string const& name, std::string const& text, bool defaultVal = false);
 
     LLAPI CustomForm& appendDropdown(
-        const std::string&              name,
-        const std::string&              text,
+        std::string const&              name,
+        std::string const&              text,
         const std::vector<std::string>& options,
         size_t                          defaultVal = 0
     );
 
     LLAPI CustomForm& appendSlider(
-        const std::string& name,
-        const std::string& text,
+        std::string const& name,
+        std::string const& text,
         double             min,
         double             max,
         double             step       = 0.0,
@@ -68,8 +68,8 @@ public:
     );
 
     LLAPI CustomForm& appendStepSlider(
-        const std::string&              name,
-        const std::string&              text,
+        std::string const&              name,
+        std::string const&              text,
         const std::vector<std::string>& steps,
         size_t                          defaultVal = 0
     );

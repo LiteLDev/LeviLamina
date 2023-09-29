@@ -21,12 +21,11 @@ LL_AUTO_INSTANCE_HOOK(
     void,
     class ServerInstance& ins
 ) {
-    if (!ll::isDebugMode())
-        _set_se_translator(seh_exception::TranslateSEHtoCE);
+    if (!ll::isDebugMode()) _set_se_translator(seh_exception::TranslateSEHtoCE);
 
     ll::globalRuntimeConfig.tickThreadId = std::this_thread::get_id();
     Global<Level>                        = Global<Minecraft>->getLevel();
-    Global<ServerLevel>                  = (ServerLevel*)Global<Minecraft>->getLevel();
+    Global<Level>                        = (ServerLevel*)Global<Minecraft>->getLevel();
     ll::globalRuntimeConfig.serverStatus = ll::LLServerStatus::Running;
 
     ServerStartedEvent ev;

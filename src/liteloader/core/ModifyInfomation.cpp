@@ -18,9 +18,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     AppendLogEntryMetadataHook,
     ::BedrockLog::LogDetails,
     ll::memory::HookPriority::Normal,
-    // &::BedrockLog::LogDetails::_appendLogEntryMetadata,
-    "?_appendLogEntryMetadata@LogDetails@BedrockLog@@AEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@"
-    "@std@@V34@W4LogAreaID@@I1HH@Z",
+    &::BedrockLog::LogDetails::_appendLogEntryMetadata,
     void,
     std::string&,
     std::string, // NOLINT
@@ -31,13 +29,15 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     int
 ) {}
 
+MCAPI void BedrockLogOut(unsigned int priority, const char* pszFormat, ...);
+
 LL_AUTO_STATIC_HOOK(
     BedrockLogOutHook,
     ll::memory::HookPriority::Normal,
-    "?BedrockLogOut@@YAXIPEBDZZ",
+    BedrockLogOut,
     void,
-    const unsigned int priority,
-    const char*        pszFormat,
+    unsigned int priority,
+    const char*  pszFormat,
     ...
 ) {
     constexpr const int BUFFER_SIZE = 4096;

@@ -4,7 +4,7 @@
 #include "mc/common/wrapper/OwnerPtrT.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/network/ServerNetworkHandler.h"
-#include "mc/world/level/Level.h"
+#include "mc/server/ServerLevel.h"
 
 optional_ref<SimulatedPlayer> SimulatedPlayer::create(
     std::string const& name,

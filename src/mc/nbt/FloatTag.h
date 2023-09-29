@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1FloatTag@@UEAA@XZ
+    virtual ~FloatTag();
 
     // vIndex: 2, symbol: ?write@FloatTag@@UEBAXAEAVIDataOutput@@@Z
     virtual void write(class IDataOutput&) const;
@@ -41,9 +41,6 @@ public:
 
     // vIndex: 10, symbol: ?hash@FloatTag@@UEBA_KXZ
     virtual uint64 hash() const;
-
-    // symbol: ??1FloatTag@@UEAA@XZ
-    MCVAPI ~FloatTag();
 
     // symbol: ??0FloatTag@@QEAA@XZ
     MCAPI FloatTag();

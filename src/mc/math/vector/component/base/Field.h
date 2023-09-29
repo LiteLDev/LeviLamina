@@ -127,13 +127,13 @@ public:
         return (*(static_cast<T const*>(this)) - b).lengthSqr();
     }
 
-    [[nodiscard]] constexpr bool operator<(const T& b) const noexcept { return lengthSqr() < b.lengthSqr(); }
+    [[nodiscard]] constexpr bool operator<(T const& b) const noexcept { return lengthSqr() < b.lengthSqr(); }
 
-    [[nodiscard]] constexpr bool operator>(const T& b) const noexcept { return lengthSqr() > b.lengthSqr(); }
+    [[nodiscard]] constexpr bool operator>(T const& b) const noexcept { return lengthSqr() > b.lengthSqr(); }
 
-    [[nodiscard]] constexpr bool operator<=(const T& b) const noexcept { return lengthSqr() <= b.lengthSqr(); }
+    [[nodiscard]] constexpr bool operator<=(T const& b) const noexcept { return lengthSqr() <= b.lengthSqr(); }
 
-    [[nodiscard]] constexpr bool operator>=(const T& b) const noexcept { return lengthSqr() >= b.lengthSqr(); }
+    [[nodiscard]] constexpr bool operator>=(T const& b) const noexcept { return lengthSqr() >= b.lengthSqr(); }
 
     [[nodiscard]] constexpr class boolN<sizeof...(Components)> lt(T const& b) const noexcept
         requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4) {

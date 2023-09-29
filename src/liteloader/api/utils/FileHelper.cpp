@@ -34,7 +34,7 @@ HANDLE GetHANDLEfromFstream(std::fstream& fs) {
     return (HANDLE)::_get_osfhandle(cfile);
 }
 
-std::optional<std::string> ReadAllFile(const std::string& filePath, bool isBinary) {
+std::optional<std::string> ReadAllFile(std::string const& filePath, bool isBinary) {
     std::ifstream fRead;
 
     std::ios_base::openmode mode = std::ios_base::in;
@@ -48,7 +48,7 @@ std::optional<std::string> ReadAllFile(const std::string& filePath, bool isBinar
 }
 
 
-bool WriteAllFile(const std::string& filePath, const std::string& content, bool isBinary) {
+bool WriteAllFile(std::string const& filePath, std::string const& content, bool isBinary) {
     std::ofstream fWrite;
 
     std::ios_base::openmode mode = std::ios_base::out;
@@ -61,7 +61,7 @@ bool WriteAllFile(const std::string& filePath, const std::string& content, bool 
     return true;
 }
 
-std::vector<std::string> GetFileNameList(const std::string& dir) {
+std::vector<std::string> GetFileNameList(std::string const& dir) {
     fs::directory_entry d(dir);
     if (!d.is_directory()) return {};
 
@@ -71,7 +71,7 @@ std::vector<std::string> GetFileNameList(const std::string& dir) {
     return list;
 }
 
-bool CreateDirs(const std::string& path) {
+bool CreateDirs(std::string const& path) {
     std::error_code ec;
     auto            ret = fs::create_directories(fs::path(str2wstr(path)), ec);
     if (ec.value() != 0) {
@@ -81,7 +81,7 @@ bool CreateDirs(const std::string& path) {
     return ret;
 }
 
-std::pair<int, std::string> UncompressFile(const std::string& filePath, std::string toDir, int processTimeout) {
+std::pair<int, std::string> UncompressFile(std::string const& filePath, std::string toDir, int processTimeout) {
     error_code ec;
     fs::create_directories(toDir, ec);
     toDir = u8str2str(fs::canonical(toDir, ec).u8string());

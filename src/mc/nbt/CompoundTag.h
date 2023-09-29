@@ -9,11 +9,12 @@
 class CompoundTagVariant;
 
 enum class SnbtFormat : uchar {
-    Minimize       = 0,
-    PartialNewLine = 1 << 0,
-    AlwayNewLine   = 1 << 1,
-    Colored        = 1 << 2,
-    Console        = 1 << 3,
+    Minimize        = 0,
+    CompoundNewLine = 1 << 0,
+    ListNewLine     = 1 << 1,
+    Colored         = 1 << 2,
+    Console         = 1 << 3,
+    AlwaysNewLine   = CompoundNewLine | ListNewLine,
 };
 
 class CompoundTag : public ::Tag {
@@ -32,6 +33,8 @@ public:
         return dynamic_cast<T*>(get(key));
     };
 
+    CompoundTag(TagMap tags) : mTags(std::move(tags)) {} // NOLINT
+
     // LLNDAPI std::string toSNBT(uchar indent = 4, SnbtFormat snbtFormat = SnbtFormat::PartialNewLine) const;
     // LLNDAPI static std::unique_ptr<CompoundTag> fromSNBT(std::string_view snbt);
 
@@ -43,8 +46,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1CompoundTag@@UEAA@XZ
+    virtual ~CompoundTag();
 
     // vIndex: 2, symbol: ?write@CompoundTag@@UEBAXAEAVIDataOutput@@@Z
     virtual void write(class IDataOutput&) const;
@@ -70,9 +73,6 @@ public:
 
     // vIndex: 10, symbol: ?hash@CompoundTag@@UEBA_KXZ
     virtual uint64 hash() const;
-
-    // symbol: ??1CompoundTag@@UEAA@XZ
-    MCVAPI ~CompoundTag();
 
     // symbol: ??0CompoundTag@@QEAA@$$QEAV0@@Z
     MCAPI CompoundTag(class CompoundTag&&);

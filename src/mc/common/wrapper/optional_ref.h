@@ -36,7 +36,7 @@ public:
 
     // template <typename U>
     //     requires(IsCompatibleV<U>)
-    // constexpr optional_ref(const U& r) : ptr_(std::addressof(r)) {}
+    // constexpr optional_ref(U const& r) : ptr_(std::addressof(r)) {}
 
     template <typename U>
         requires(IsCompatibleV<U>)
@@ -46,9 +46,9 @@ public:
         requires(std::is_const_v<U>)
     constexpr optional_ref(optional_ref<std::remove_const_t<U>> rhs) : ptr_(rhs.as_ptr()) {}
 
-    constexpr optional_ref(const optional_ref&) = default;
+    constexpr optional_ref(optional_ref const&) = default;
 
-    optional_ref& operator=(const optional_ref&) = delete;
+    optional_ref& operator=(optional_ref const&) = delete;
 
     [[nodiscard]] constexpr explicit operator bool() const noexcept { return ptr_ != nullptr; }
 
@@ -75,10 +75,10 @@ public:
 
     template <class T2>
     [[nodiscard]] constexpr std::remove_cv_t<T> value_or(T2&& right) const&
-        requires(std::is_convertible_v<const T&, std::remove_cv_t<T>> && std::is_convertible_v<T2, T>)
+        requires(std::is_convertible_v<T const&, std::remove_cv_t<T>> && std::is_convertible_v<T2, T>)
     {
         if (has_value()) {
-            return static_cast<const T&>(*ptr_);
+            return static_cast<T const&>(*ptr_);
         }
         return static_cast<std::remove_cv_t<T>>(std::forward<T2>(right));
     }
@@ -105,7 +105,7 @@ public:
 };
 // NOLINTEND
 template <typename T>
-optional_ref(const T&) -> optional_ref<const T>;
+optional_ref(T const&) -> optional_ref<const T>;
 
 template <typename T>
 optional_ref(T&) -> optional_ref<T>;

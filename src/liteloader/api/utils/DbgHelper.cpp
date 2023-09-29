@@ -32,7 +32,7 @@ using ll::logger;
 std::set<std::wstring> loadedSymbolDir;
 bool                   symbolsLoaded = false;
 
-void FindSymbols(wstring& collection, const std::string& nowPath, bool recursion = false) {
+void FindSymbols(wstring& collection, std::string const& nowPath, bool recursion = false) {
     fs::directory_iterator list(nowPath);
     for (auto& it : list) {
         if (it.is_directory() && recursion) {

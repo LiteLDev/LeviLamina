@@ -22,26 +22,22 @@ public:
     constexpr BoundingBox& operator=(class BoundingBox const& k) noexcept = default;
     constexpr BoundingBox(BlockPos const& min, BlockPos const& max) noexcept : min(min), max(max){};
 
-    constexpr void forEachBlockInBox(std::function<void(const BlockPos&)>&& todo) const {
+    constexpr void forEachBlockInBox(std::function<void(BlockPos const&)>&& todo) const {
         for (int dy = min.y; dy <= max.y; ++dy)
             for (int dx = min.x; dx <= max.x; ++dx)
-                for (int dz = min.z; dz <= max.z; ++dz) {
-                    todo(BlockPos{dx, dy, dz});
-                }
+                for (int dz = min.z; dz <= max.z; ++dz) { todo(BlockPos{dx, dy, dz}); }
     }
 
-    constexpr bool forEachBlockInBox(std::function<bool(const BlockPos&)>&& todo) const {
+    constexpr bool forEachBlockInBox(std::function<bool(BlockPos const&)>&& todo) const {
         for (int dy = min.y; dy <= max.y; ++dy)
             for (int dx = min.x; dx <= max.x; ++dx)
                 for (int dz = min.z; dz <= max.z; ++dz) {
-                    if (!todo(BlockPos{dx, dy, dz})) {
-                        return false;
-                    }
+                    if (!todo(BlockPos{dx, dy, dz})) { return false; }
                 }
         return true;
     }
 
-    constexpr void forEachBlockInBox(std::function<void(const BlockPos&, size_t)>&& todo) const {
+    constexpr void forEachBlockInBox(std::function<void(BlockPos const&, size_t)>&& todo) const {
         size_t i = 0;
         for (int dy = min.y; dy <= max.y; ++dy)
             for (int dx = min.x; dx <= max.x; ++dx)
@@ -51,14 +47,12 @@ public:
                 }
     }
 
-    constexpr bool forEachBlockInBox(std::function<bool(const BlockPos&, size_t)>&& todo) const {
+    constexpr bool forEachBlockInBox(std::function<bool(BlockPos const&, size_t)>&& todo) const {
         size_t i = 0;
         for (int dy = min.y; dy <= max.y; ++dy)
             for (int dx = min.x; dx <= max.x; ++dx)
                 for (int dz = min.z; dz <= max.z; ++dz) {
-                    if (!todo(BlockPos{dx, dy, dz}, i)) {
-                        return false;
-                    }
+                    if (!todo(BlockPos{dx, dy, dz}, i)) { return false; }
                     i++;
                 }
         return true;
@@ -76,17 +70,13 @@ public:
 
     template <typename T>
     [[nodiscard]] constexpr T& get(size_t index) noexcept {
-        if (index == 1) {
-            return (T&)z;
-        }
+        if (index == 1) { return (T&)z; }
         return (T&)x;
     }
 
     template <typename T>
     [[nodiscard]] constexpr T const& get(size_t index) const noexcept {
-        if (index == 1) {
-            return (T)z;
-        }
+        if (index == 1) { return (T)z; }
         return (T)x;
     }
 

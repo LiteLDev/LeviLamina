@@ -21,10 +21,10 @@ private:
 
 public:
     LLAPI static std::unique_ptr<KeyValueDB>
-    create(const std::string& path, bool readCache = true, int cacheSize = 0, int filterBit = 0);
+    create(std::string const& path, bool readCache = true, int cacheSize = 0, int filterBit = 0);
 
     LLAPI static std::unique_ptr<KeyValueDB>
-    open(const std::string& path, bool create = true, bool readCache = true, int cacheSize = 0, int filterBit = 0);
+    open(std::string const& path, bool create = true, bool readCache = true, int cacheSize = 0, int filterBit = 0);
 
     LLAPI ~KeyValueDB();
 

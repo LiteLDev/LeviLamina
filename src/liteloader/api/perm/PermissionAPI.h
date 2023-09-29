@@ -13,18 +13,18 @@
 
 class DynPermissionAPI {
 
-    using FuncCreateRole           = void (*)(const std::string&, const std::string&, std::weak_ptr<ll::perm::Role>&);
-    using FuncRoleExists           = bool (*)(const std::string&);
-    using FuncGetRole              = void (*)(const std::string&, std::weak_ptr<ll::perm::Role>&);
-    using FuncGetOrCreateRole      = void (*)(const std::string&, std::weak_ptr<ll::perm::Role>&);
-    using FuncDeleteRole           = void (*)(const std::string&);
-    using FuncRegisterPermission   = void (*)(const std::string&, const std::string&);
-    using FuncDeletePermission     = void (*)(const std::string&);
-    using FuncPermissionExists     = bool (*)(const std::string&);
-    using FuncCheckPermission      = bool (*)(const std::string&, const std::string&);
-    using FuncIsMemberOf           = bool (*)(const std::string&, const std::string&);
-    using FuncGetPlayerRoles       = void (*)(const std::string&, ll::perm::Roles&);
-    using FuncGetPlayerPermissions = void (*)(const std::string&, ll::perm::Permissions&);
+    using FuncCreateRole           = void (*)(std::string const&, std::string const&, std::weak_ptr<ll::perm::Role>&);
+    using FuncRoleExists           = bool (*)(std::string const&);
+    using FuncGetRole              = void (*)(std::string const&, std::weak_ptr<ll::perm::Role>&);
+    using FuncGetOrCreateRole      = void (*)(std::string const&, std::weak_ptr<ll::perm::Role>&);
+    using FuncDeleteRole           = void (*)(std::string const&);
+    using FuncRegisterPermission   = void (*)(std::string const&, std::string const&);
+    using FuncDeletePermission     = void (*)(std::string const&);
+    using FuncPermissionExists     = bool (*)(std::string const&);
+    using FuncCheckPermission      = bool (*)(std::string const&, std::string const&);
+    using FuncIsMemberOf           = bool (*)(std::string const&, std::string const&);
+    using FuncGetPlayerRoles       = void (*)(std::string const&, ll::perm::Roles&);
+    using FuncGetPlayerPermissions = void (*)(std::string const&, ll::perm::Permissions&);
     using FuncSaveData             = void (*)();
 
     HMODULE                  handle                   = nullptr;
@@ -43,7 +43,7 @@ class DynPermissionAPI {
     FuncSaveData             funcSaveData             = nullptr;
 
     template <typename T>
-    T getFunc(const std::string& name) {
+    T getFunc(std::string const& name) {
         return reinterpret_cast<T>(GetProcAddress(handle, name.c_str()));
     }
 
@@ -96,7 +96,7 @@ public:
      * }
      * @endcode
      */
-    std::weak_ptr<ll::perm::Role> createRole(const std::string& name, const std::string& displayName) {
+    std::weak_ptr<ll::perm::Role> createRole(std::string const& name, std::string const& displayName) {
         if (funcCreateRole == nullptr) { throw std::runtime_error("Function not found"); }
         std::weak_ptr<ll::perm::Role> ptr{};
         funcCreateRole(name, displayName, ptr);
@@ -109,7 +109,7 @@ public:
      * @param  name  The name of the role.
      * @return bool  True If the role exists, false otherwise.
      */
-    bool roleExists(const std::string& name) {
+    bool roleExists(std::string const& name) {
         if (funcRoleExists == nullptr) { throw std::runtime_error("Function not found"); }
         return funcRoleExists(name);
     }
@@ -121,7 +121,7 @@ public:
      * @return std::weak_ptr<PERM::Role>  The role(weak ref).
      * @throws std::invalid_argument      If the role does not exist.
      */
-    std::weak_ptr<ll::perm::Role> getRole(const std::string& name) {
+    std::weak_ptr<ll::perm::Role> getRole(std::string const& name) {
         if (funcGetRole == nullptr) { throw std::runtime_error("Function not found"); }
         std::weak_ptr<ll::perm::Role> ptr{};
         funcGetRole(name, ptr);
@@ -134,7 +134,7 @@ public:
      * @param  name                       The name of the role.
      * @return std::weak_ptr<PERM::Role>  The role(weak ref).
      */
-    std::weak_ptr<ll::perm::Role> getOrCreateRole(const std::string& name) {
+    std::weak_ptr<ll::perm::Role> getOrCreateRole(std::string const& name) {
         if (funcGetOrCreateRole == nullptr) { throw std::runtime_error("Function not found"); }
         std::weak_ptr<ll::perm::Role> ptr{};
         funcGetOrCreateRole(name, ptr);
@@ -146,7 +146,7 @@ public:
      *
      * @param  name  The name of the role.
      */
-    void deleteRole(const std::string& name) {
+    void deleteRole(std::string const& name) {
         if (funcDeleteRole == nullptr) { throw std::runtime_error("Function not found"); }
         funcDeleteRole(name);
     }
@@ -157,7 +157,7 @@ public:
      * @param name  The name of the permission.
      * @param desc  The description name of the permission.
      */
-    void registerPermission(const std::string& name, const std::string& desc) {
+    void registerPermission(std::string const& name, std::string const& desc) {
         if (funcRegisterPermission == nullptr) { throw std::runtime_error("Function not found"); }
         funcRegisterPermission(name, desc);
     }
@@ -168,7 +168,7 @@ public:
      * @param    name  The name of the permission.
      * @warning  This function will also delete the permission instances in roles.
      */
-    void deletePermission(const std::string& name) {
+    void deletePermission(std::string const& name) {
         if (funcDeletePermission == nullptr) { throw std::runtime_error("Function not found"); }
         funcDeletePermission(name);
     }
@@ -179,7 +179,7 @@ public:
      * @param  name  The name of the permission.
      * @return bool  True If the permission exists, false otherwise.
      */
-    bool permissionExists(const std::string& name) {
+    bool permissionExists(std::string const& name) {
         if (funcPermissionExists == nullptr) { throw std::runtime_error("Function not found"); }
         return funcPermissionExists(name);
     }
@@ -191,7 +191,7 @@ public:
      * @param  name  The name of the Permission.
      * @return bool  True If the player has the Permission, false otherwise.
      */
-    bool checkPermission(const std::string& xuid, const std::string& name) {
+    bool checkPermission(std::string const& xuid, std::string const& name) {
         if (funcCheckPermission == nullptr) { throw std::runtime_error("Function not found"); }
         return funcCheckPermission(xuid, name);
     }
@@ -203,7 +203,7 @@ public:
      * @param  name  The name of the role.
      * @return bool  True If the player is a member of the role, false otherwise.
      */
-    bool isMemberOf(const std::string& xuid, const std::string& name) {
+    bool isMemberOf(std::string const& xuid, std::string const& name) {
         if (funcIsMemberOf == nullptr) { throw std::runtime_error("Function not found"); }
         return funcIsMemberOf(xuid, name);
     }
@@ -214,7 +214,7 @@ public:
      * @param  xuid         The xuid of the player.
      * @return PERM::Roles  The roles of the player.
      */
-    ll::perm::Roles getPlayerRoles(const std::string& xuid) {
+    ll::perm::Roles getPlayerRoles(std::string const& xuid) {
         if (funcGetPlayerRoles == nullptr) { throw std::runtime_error("Function not found"); }
         ll::perm::Roles roles;
         funcGetPlayerRoles(xuid, roles);
@@ -227,7 +227,7 @@ public:
      * @param  xuid               The xuid of the player.
      * @return PERM::Permissions  The permissions of the player.
      */
-    ll::perm::Permissions getPlayerPermissions(const std::string& xuid) {
+    ll::perm::Permissions getPlayerPermissions(std::string const& xuid) {
         if (funcGetPlayerPermissions == nullptr) { throw std::runtime_error("Function not found"); }
         ll::perm::Permissions permissions;
         funcGetPlayerPermissions(xuid, permissions);
@@ -269,7 +269,7 @@ public:
      * }
      * @endcode
      */
-    static std::weak_ptr<ll::perm::Role> createRole(const std::string& name, const std::string& displayName) {
+    static std::weak_ptr<ll::perm::Role> createRole(std::string const& name, std::string const& displayName) {
         return api.createRole(name, displayName);
     }
 
@@ -290,7 +290,7 @@ public:
      * }
      * @endcode
      */
-    static std::weak_ptr<ll::perm::Role> getRole(const std::string& name) { return api.getRole(name); }
+    static std::weak_ptr<ll::perm::Role> getRole(std::string const& name) { return api.getRole(name); }
 
     /**
      * @brief Get or create a role object.
@@ -298,7 +298,7 @@ public:
      * @param  name  The name of the role.
      * @return std::weak_ptr<PERM::Role>  The role(weak ref).
      */
-    static std::weak_ptr<ll::perm::Role> getOrCreateRole(const std::string& name) { return api.getOrCreateRole(name); }
+    static std::weak_ptr<ll::perm::Role> getOrCreateRole(std::string const& name) { return api.getOrCreateRole(name); }
 
     /**
      * @brief Delete a role.
@@ -310,7 +310,7 @@ public:
      * Permission::deleteRole("role1");
      * @endcode
      */
-    static void deleteRole(const std::string& name) { api.deleteRole(name); }
+    static void deleteRole(std::string const& name) { api.deleteRole(name); }
 
     /**
      * @brief Check whether a role exists.
@@ -318,7 +318,7 @@ public:
      * @param  name  The name of the role.
      * @return bool  True If the role exists, false otherwise.
      */
-    static bool roleExists(const std::string& name) { return api.roleExists(name); }
+    static bool roleExists(std::string const& name) { return api.roleExists(name); }
 
     /**
      * @brief Register an permission.
@@ -331,7 +331,7 @@ public:
      * Permission::registerPermission("MyPlugin:destroy", "Destroy permission for MyPlugin");
      * @endcode
      */
-    static void registerPermission(const std::string& name, const std::string& desc) {
+    static void registerPermission(std::string const& name, std::string const& desc) {
         api.registerPermission(name, desc);
     }
 
@@ -346,7 +346,7 @@ public:
      * Permission::deletePermission("MyPlugin:destroy");
      * @endcode
      */
-    static void deletePermission(const std::string& name) { api.deletePermission(name); }
+    static void deletePermission(std::string const& name) { api.deletePermission(name); }
 
     /**
      * @brief Check whether a permission exists.
@@ -354,7 +354,7 @@ public:
      * @param  name  The name of the permission.
      * @return bool  True If the permission exists, false otherwise.
      */
-    static bool permissionExists(const std::string& name) { return api.permissionExists(name); }
+    static bool permissionExists(std::string const& name) { return api.permissionExists(name); }
 
     /**
      * @brief Check whether a player has a permission.
@@ -370,7 +370,7 @@ public:
      * }
      * @endcode
      */
-    static bool checkPermission(const std::string& xuid, const std::string& name) {
+    static bool checkPermission(std::string const& xuid, std::string const& name) {
         return api.checkPermission(xuid, name);
     }
 
@@ -382,7 +382,7 @@ public:
      * @return bool  True If the player is member of the role, false otherwise.
      * @throws std::invalid_argument  If the role does not exist.
      */
-    static bool isMemberOf(const std::string& xuid, const std::string& name) { return api.isMemberOf(xuid, name); }
+    static bool isMemberOf(std::string const& xuid, std::string const& name) { return api.isMemberOf(xuid, name); }
 
     /**
      * @brief Get the roles of a player.
@@ -390,7 +390,7 @@ public:
      * @param  xuid         The xuid of the player.
      * @return PERM::Roles  The roles of the player.
      */
-    static ll::perm::Roles getPlayerRoles(const std::string& xuid) { return api.getPlayerRoles(xuid); }
+    static ll::perm::Roles getPlayerRoles(std::string const& xuid) { return api.getPlayerRoles(xuid); }
 
     /**
      * @brief Get the permissions of a player.
@@ -398,7 +398,7 @@ public:
      * @param  xuid               The xuid of the player.
      * @return PERM::Permissions  The permissions of the player.
      */
-    static ll::perm::Permissions getPlayerPermissions(const std::string& xuid) {
+    static ll::perm::Permissions getPlayerPermissions(std::string const& xuid) {
         return api.getPlayerPermissions(xuid);
     }
 

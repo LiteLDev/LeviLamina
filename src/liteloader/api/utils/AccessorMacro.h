@@ -18,8 +18,8 @@ public:                                                                         
     void clazz::setter(type _val) { this->name = std::move(_val); }
 
 #define LL_DELETE_COPY(clazz)                                                                                          \
-    clazz(const clazz&)            = delete;                                                                           \
-    clazz& operator=(const clazz&) = delete;
+    clazz(clazz const&)            = delete;                                                                           \
+    clazz& operator=(clazz const&) = delete;
 
 #define LL_DELETE_MOVE(clazz)                                                                                          \
     clazz(clazz&&)            = delete;                                                                                \
