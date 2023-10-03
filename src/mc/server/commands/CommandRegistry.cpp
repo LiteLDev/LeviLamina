@@ -1,11 +1,32 @@
-#include "mc/server/commands/CommandRegistry.h"
+#include <utility>
+
 #include "liteloader/api/service/GlobalService.h"
 #include "liteloader/core/Config.h"
 #include "liteloader/core/LiteLoader.h"
 #include "mc/network/packet/AvailableCommandsPacket.h"
 #include "mc/server/commands/CommandParameterData.h"
+#include "mc/server/commands/CommandRegistry.h"
 #include "mc/server/commands/CommandVersion.h"
 
+
+CommandRegistry::Overload::Overload(CommandVersion version, FactoryFn factory, std::vector<CommandParameterData> args)
+: version(version),
+  alloc(factory),
+  params(std::move(args)),
+  versionOffset(0xff) {}
+
+CommandRegistry::Signature::Signature(
+    std::string_view       name,
+    std::string_view       desc,
+    CommandPermissionLevel perm,
+    Symbol                 symbol,
+    CommandFlag            flag
+)
+: name(name),
+  desc(desc),
+  perm(perm),
+  main_symbol(symbol),
+  flag(flag) {}
 
 void CommandRegistry::registerOverload(
     std::string const&                  name,
@@ -19,6 +40,7 @@ void CommandRegistry::registerOverload(
 
 std::vector<std::string> CommandRegistry::getEnumNames() {
     std::vector<std::string> results;
+    results.reserve(this->mEnums.size());
     for (auto& e : this->mEnums) results.push_back(e.name);
     return results;
 
@@ -28,6 +50,7 @@ std::vector<std::string> CommandRegistry::getEnumNames() {
 
 std::vector<std::string> CommandRegistry::getSoftEnumNames() {
     std::vector<std::string> results;
+    results.reserve(this->mSoftEnums.size());
     for (auto& e : this->mSoftEnums) results.push_back(e.mName);
     return results;
 
