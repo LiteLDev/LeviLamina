@@ -16,7 +16,7 @@ public:
     leveldb::Status              status;
     std::string                  dbPath;
 
-    KeyValueDBImpl(const char* path, bool create, bool readCache, int cacheSize, bool filterBit) {
+    KeyValueDBImpl(std::string const& path, bool create, bool readCache, int cacheSize, bool filterBit) {
         readOptions  = leveldb::ReadOptions();
         writeOptions = leveldb::WriteOptions();
         options      = leveldb::Options();
@@ -100,7 +100,7 @@ private:
 std::unique_ptr<KeyValueDB> KeyValueDB::create(std::string const& path, bool readCache, int cacheSize, int filterBit) {
     CreateDirs(path);
     auto db  = std::unique_ptr<KeyValueDB>(new KeyValueDB());
-    db->impl = std::make_unique<KeyValueDBImpl>(path.c_str(), true, readCache, cacheSize, filterBit);
+    db->impl = std::make_unique<KeyValueDBImpl>(path, true, readCache, cacheSize, filterBit);
     return db;
 }
 
@@ -108,7 +108,7 @@ std::unique_ptr<KeyValueDB>
 KeyValueDB::open(std::string const& path, bool create, bool readCache, int cacheSize, int filterBit) {
     CreateDirs(path);
     auto db  = std::unique_ptr<KeyValueDB>(new KeyValueDB());
-    db->impl = std::make_unique<KeyValueDBImpl>(path.c_str(), create, readCache, cacheSize, filterBit);
+    db->impl = std::make_unique<KeyValueDBImpl>(path, create, readCache, cacheSize, filterBit);
     return db;
 }
 

@@ -10,7 +10,6 @@
 #include "liteloader/api/utils/FileHelper.h"
 #include "liteloader/api/utils/SehTranslator.h"
 #include "liteloader/api/utils/StringUtils.h"
-#include "mc/server/commands/MinecraftCommands.h"
 
 // #include "liteloader/api/ServerAPI.h"
 // #include "liteloader/api/event/LegacyEvents.h"
@@ -24,6 +23,7 @@
 // #include "liteloader/core/SimpleServerLogger.h"
 // #include "liteloader/core/PlayerDeathPositions.h"
 
+#include "mc/common/Common.h"
 #include "mc/world/Minecraft.h"
 
 #include "Psapi.h"
@@ -189,6 +189,10 @@ void printLogo() {
        --------   Light-Weight BDS Plugin Loader   ----------          
                                                                        
 )" << std::endl;
+    logger.info(tr("ll.notice.license", "LGPLv3"));
+    logger.info(tr("ll.notice.newForum", "https://forum.litebds.com"));
+    logger.info(tr("ll.notice.translateText", "https://crowdin.com/project/liteloaderbds"));
+    logger.info("Thanks to RhyMC(rhymc.com) for the support");
 }
 
 void checkDevMode() {
@@ -305,9 +309,9 @@ void liteloaderMain() {
     ll::CrashLogger::initCrashLogger(ll::globalConfig.enableCrashLogger);
 
     // Rename Window
-    // HWND         hwnd = GetConsoleWindow();
-    // std::wstring s    = L"Bedrock Dedicated Server " + str2wstr(ll::getBdsVersion().substr(1));
-    // SetWindowText(hwnd, s.c_str());
+    HWND         hwnd = GetConsoleWindow();
+    std::wstring s = L"Bedrock Dedicated Server " + ll::StringUtils::str2wstr(Common::getGameVersionString().substr(1));
+    SetWindowText(hwnd, s.c_str());
 
     // Register Exit Event Handler.
     SetConsoleCtrlHandler(ConsoleExitHandler, TRUE);
@@ -338,24 +342,11 @@ void liteloaderMain() {
     // Register BStats
     // bstats::registerBStats();
 
-    // Register Started
-    // using namespace ll::event::server;
-    // ServerStartedEvent::subscribe([](ServerStartedEvent const&) {
-    //     logger.info(tr("ll.notice.license", "LGPLv3"));
-    //     logger.info(tr("ll.notice.newForum", "https://forum.litebds.com"));
-    //     logger.info(tr("ll.notice.translateText", "https://crowdin.com/project/liteloaderbds"));
-    //     logger.info("Thanks to RhyMC(rhymc.com) for the support");
-    //     return true;
-    // });
-
     // Register Cleanup
     // ServerStoppedEvent::subscribe([](ServerStoppedEvent const&) {
     //     EndScheduleSystem();
     //     return true;
     // });
-
-    // Initialize PlayerDeathPosition counter
-    // PlayerDeathPositions::deathEventListener();
 }
 
 using namespace ll::memory;

@@ -39,7 +39,7 @@ bool HttpGet(
     std::string host, path;
     SplitHttpUrl(url, host, path);
 
-    auto* cli = new httplib::Client(host.c_str());
+    auto* cli = new httplib::Client(host);
     if (!cli->is_valid()) {
         delete cli;
         return false;
@@ -49,7 +49,7 @@ bool HttpGet(
     std::thread([cli, headers, callback, path{std::move(path)}]() {
         if (!ll::isDebugMode()) _set_se_translator(seh_exception::TranslateSEHtoCE);
         try {
-            auto response = cli->Get(path.c_str(), headers);
+            auto response = cli->Get(path, headers);
             delete cli;
 
             if (!response) callback(-1, "");
@@ -92,7 +92,7 @@ bool HttpPost(
 ) {
     std::string host, path;
     SplitHttpUrl(url, host, path);
-    auto* cli = new httplib::Client(host.c_str());
+    auto* cli = new httplib::Client(host);
     if (!cli->is_valid()) {
         delete cli;
         return false;
@@ -102,7 +102,7 @@ bool HttpPost(
     std::thread([cli, headers, data, type, callback, path{std::move(path)}]() {
         if (!ll::isDebugMode()) _set_se_translator(seh_exception::TranslateSEHtoCE);
         try {
-            auto response = cli->Post(path.c_str(), headers, data, type.c_str());
+            auto response = cli->Post(path, headers, data, type);
             delete cli;
             if (!response) callback(-1, "");
             else callback(response->status, response->body);
@@ -127,11 +127,11 @@ bool HttpGetSync(std::string const& url, int* statusRtn, std::string* dataRtn, i
     std::string host, path;
     SplitHttpUrl(url, host, path);
 
-    httplib::Client cli(host.c_str());
+    httplib::Client cli(host);
     if (!cli.is_valid()) { return false; }
     if (timeout > 0) cli.set_connection_timeout(timeout, 0);
 
-    auto response = cli.Get(path.c_str());
+    auto response = cli.Get(path);
 
     if (!response) return false;
     else {

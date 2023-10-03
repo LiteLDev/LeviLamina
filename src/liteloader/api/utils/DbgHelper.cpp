@@ -74,7 +74,7 @@ bool CleanupSymbols() {
 std::map<DWORD, std::wstring> moduleMap;
 
 PSYMBOL_INFOW GetSymbolInfo(HANDLE hProcess, void* address) {
-    PSYMBOL_INFOW pSymbol = (SYMBOL_INFOW*)new char[sizeof(SYMBOL_INFOW) + MAX_SYM_NAME * sizeof(TCHAR)];
+    auto* pSymbol          = (SYMBOL_INFOW*)new char[sizeof(SYMBOL_INFOW) + MAX_SYM_NAME * sizeof(TCHAR)];
     pSymbol->SizeOfStruct = sizeof(SYMBOL_INFOW);
     pSymbol->MaxNameLen   = MAX_SYM_NAME;
 
@@ -86,9 +86,9 @@ PSYMBOL_INFOW GetSymbolInfo(HANDLE hProcess, void* address) {
 void CleanSymbolInfo(PSYMBOL_INFOW pSymbol) { delete[] ((char*)pSymbol); }
 
 BOOL CALLBACK EnumerateModuleCallBack(PCTSTR ModuleName, DWORD64 ModuleBase, ULONG /*ModuleSize*/, PVOID UserContext) {
-    std::map<DWORD, std::wstring>* pModuleMap = (std::map<DWORD, std::wstring>*)UserContext;
-    LPCWSTR                        name       = wcsrchr(ModuleName, TEXT('\\')) + 1;
-    (*pModuleMap)[(DWORD)ModuleBase]          = name;
+    auto*   pModuleMap               = (std::map<DWORD, std::wstring>*)UserContext;
+    LPCWSTR name                     = wcsrchr(ModuleName, TEXT('\\')) + 1;
+    (*pModuleMap)[(DWORD)ModuleBase] = name;
     return TRUE;
 }
 
@@ -170,7 +170,7 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
 
             // Function
             PSYMBOL_INFOW info;
-            auto          moduleName = wstr2str(MapModuleFromAddr(hProcess, (void*)address).c_str());
+            auto          moduleName = wstr2str(MapModuleFromAddr(hProcess, (void*)address));
             info                     = GetSymbolInfo(hProcess, (void*)address);
             if (info) {
                 if (skipingPrintFunctionsStack) {

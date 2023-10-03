@@ -4,11 +4,18 @@
 
 #include "liteloader/api/base/StdInt.h"
 
-typedef uint64 CHash;
-
-constexpr uint64 do_hash(const char* x);
-constexpr uint64 do_hash(const char* x, size_t len);
-constexpr uint64 do_hash2(std::string_view x);
+constexpr uint64 do_hash(std::string_view x) {
+    // ap hash
+    uint64 rval = 0;
+    for (size_t i = 0; i < x.size(); i++) {
+        if (i & 1) {
+            rval ^= (~((rval << 11) ^ x[i] ^ (rval >> 5)));
+        } else {
+            rval ^= (~((rval << 7) ^ x[i] ^ (rval >> 3)));
+        }
+    }
+    return rval;
+}
 
 constexpr uint64 do_hash(const char* x) {
     // ap hash

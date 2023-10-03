@@ -23,7 +23,7 @@ static int getOffset(Type Command::*src) {
 }
 
 template <typename Command, typename Type>
-static CommandParameterData makeMandatory(Type Command::*field, std::string name, bool Command::*isSet = nullptr) {
+static CommandParameterData makeMandatory(Type Command::*field, std::string const& name, bool Command::*isSet = nullptr) {
 
     return CommandParameterData(
         Bedrock::type_id<CommandRegistry, Type>(),
@@ -38,7 +38,7 @@ static CommandParameterData makeMandatory(Type Command::*field, std::string name
 }
 template <CommandParameterDataType DataType, typename Command, typename Type>
 static CommandParameterData
-makeMandatory(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
+makeMandatory(Type Command::*field, std::string const& name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
 
     return {
         Bedrock::type_id<CommandRegistry, Type>(),
@@ -51,7 +51,7 @@ makeMandatory(Type Command::*field, std::string name, char const* desc = nullptr
         isSet ? getOffset(isSet) : -1};
 }
 template <typename Command, typename Type>
-static CommandParameterData makeOptional(Type Command::*field, std::string name, bool Command::*isSet = nullptr) {
+static CommandParameterData makeOptional(Type Command::*field, std::string const& name, bool Command::*isSet = nullptr) {
 
     return {
         Bedrock::type_id<CommandRegistry, Type>(),
@@ -66,7 +66,7 @@ static CommandParameterData makeOptional(Type Command::*field, std::string name,
 }
 template <CommandParameterDataType DataType, typename Command, typename Type>
 static CommandParameterData
-makeOptional(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
+makeOptional(Type Command::*field, std::string const& name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
 
     return {
         Bedrock::type_id<CommandRegistry, Type>(),
