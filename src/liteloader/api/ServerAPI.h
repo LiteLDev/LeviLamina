@@ -1,9 +1,8 @@
 #pragma once
 #include "liteloader/api/base/Global.h"
-#include <string>
 
 namespace ll {
 LLAPI std::string getBdsVersion();
 LLAPI int         getServerProtocolVersion();
-LLAPI bool        setServerMotd(const std::string& motd);
+LLAPI bool        setServerMotd(std::string const& motd);
 } // namespace ll

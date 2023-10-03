@@ -55,13 +55,8 @@ public:
 
         using namespace ll::RegisterCommandHelper;
 
-        registry.registerCommand(
-            "testcommand",
-            "LiteLoader CommandRegistry Test",
-            CommandPermissionLevel::GameDirectors,
-            CommandFlagValue::None,
-            CommandFlagValue::NotCheat
-        );
+        registry
+            .registerCommand("testcommand", "LiteLoader CommandRegistry Test", CommandPermissionLevel::GameDirectors);
 
         registry.addSoftEnum("SoftEnumName", {"one_softenum", "two_softenum", "three_softenum", "four_softenum"});
 

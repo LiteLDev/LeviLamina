@@ -524,7 +524,7 @@ private:
     }
 
     LLAPI static char builderCallbackHanler(DCCallback* cb, DCArgs* args, DCValue* result, void* userdata);
-    LLAPI static std::unique_ptr<Command>* commandBuilder(std::unique_ptr<Command>* rtn, const std::string& name);
+    LLAPI static std::unique_ptr<Command>* commandBuilder(std::unique_ptr<Command>* rtn, std::string const& name);
     LLAPI static DynamicCommandInstance*   _setup(std::unique_ptr<class DynamicCommandInstance> commandInstance);
 
 public:
@@ -540,8 +540,8 @@ public:
         std::string const&     name,
         std::string const&     description,
         CommandPermissionLevel permission = CommandPermissionLevel::GameMasters,
-        CommandFlag            flag1      = {(CommandFlagValue)0x80},
-        CommandFlag            flag2      = {(CommandFlagValue)0},
+        CommandFlag            flag1      = CommandFlagValue::NotCheat,
+        CommandFlag            flag2      = CommandFlagValue::None,
         HMODULE                handle     = GetCurrentModule()
     );
     LLAPI static std::unique_ptr<class DynamicCommandInstance> createCommand(
@@ -552,8 +552,8 @@ public:
         std::vector<std::vector<std::string>>&&                     overloads,
         CallBackFn                                                  callback,
         CommandPermissionLevel                                      permission = CommandPermissionLevel::GameMasters,
-        CommandFlag                                                 flag1      = {(CommandFlagValue)0x80},
-        CommandFlag                                                 flag2      = {(CommandFlagValue)0},
+        CommandFlag                                                 flag1      = CommandFlagValue::NotCheat,
+        CommandFlag                                                 flag2      = CommandFlagValue::None,
         HMODULE                                                     handle     = GetCurrentModule()
     );
 
@@ -581,8 +581,8 @@ public:
         std::vector<std::vector<std::string>>&&                     overloads,
         CallBackFn                                                  callback,
         CommandPermissionLevel                                      permission = CommandPermissionLevel::GameMasters,
-        CommandFlag                                                 flag1      = {(CommandFlagValue)0x80},
-        CommandFlag                                                 flag2      = {(CommandFlagValue)0},
+        CommandFlag                                                 flag1      = CommandFlagValue::NotCheat,
+        CommandFlag                                                 flag2      = CommandFlagValue::None,
         HMODULE                                                     handle     = GetCurrentModule()
     ) {
         return setup(createCommand(
@@ -666,7 +666,7 @@ private:
         std::string const&     name,
         std::string const&     description,
         CommandPermissionLevel permission = CommandPermissionLevel::GameMasters,
-        CommandFlag            flag       = {(CommandFlagValue)0x80},
+        CommandFlag            flag       = CommandFlagValue::NotCheat,
         HMODULE                handle     = GetCurrentModule()
     );
 

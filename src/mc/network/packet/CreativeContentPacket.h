@@ -19,7 +19,7 @@ public:
     };
 
 public:
-    const std::vector<CreativeItemEntry>&     mWriteEntries;          // this+0x30
+    std::vector<CreativeItemEntry> const&     mWriteEntries;          // this+0x30
     std::vector<CreativeItemEntryDescription> mReadEntryDescriptions; // this+0x38
 
     // prevent constructor by default

@@ -68,7 +68,8 @@ public:
     );
 
     // symbol: ?addOptions@CommandParameterData@@QEAAAEAV1@W4CommandParameterOption@@@Z
-    MCAPI class CommandParameterData& addOptions(::CommandParameterOption);
+    MCAPI class CommandParameterData&
+        addOptions(::CommandParameterOption = CommandParameterOption::EnumAutocompleteExpansion);
 
     // symbol: ??1CommandParameterData@@QEAA@XZ
     MCAPI ~CommandParameterData();

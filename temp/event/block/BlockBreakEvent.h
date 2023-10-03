@@ -15,7 +15,7 @@ class BlockBreakEvent : public Event<BlockBreakEvent>, public Cancellable {
     LL_RO_MEMBER(Player*, player, getPlayer);
     LL_RO_MEMBER(BlockInstance, blockInstance, getBlockInstance);
 
-    explicit BlockBreakEvent(Player* player, const BlockInstance& blockInstance);
+    explicit BlockBreakEvent(Player* player, BlockInstance const& blockInstance);
 
     LL_DELETE_COPY(BlockBreakEvent);
     LL_DELETE_MOVE(BlockBreakEvent);

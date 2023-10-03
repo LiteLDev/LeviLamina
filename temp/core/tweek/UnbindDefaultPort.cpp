@@ -16,7 +16,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     HookPriority::Normal,
     "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
     size_t,
-    const std::string& file
+    std::string const& file
 ) {
     auto out = origin(file);
     if (ll::globalConfig.enableUnoccupyPort19132) {

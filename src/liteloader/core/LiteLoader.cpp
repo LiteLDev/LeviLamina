@@ -10,8 +10,8 @@
 #include "liteloader/api/utils/FileHelper.h"
 #include "liteloader/api/utils/SehTranslator.h"
 #include "liteloader/api/utils/StringUtils.h"
+#include "liteloader/api/ServerAPI.h"
 
-// #include "liteloader/api/ServerAPI.h"
 // #include "liteloader/api/event/LegacyEvents.h"
 // #include "liteloader/api/event/server/ServerStartedEvent.h"
 // #include "liteloader/api/event/server/ServerStoppedEvent.h"
@@ -23,7 +23,6 @@
 // #include "liteloader/core/SimpleServerLogger.h"
 // #include "liteloader/core/PlayerDeathPositions.h"
 
-#include "mc/common/Common.h"
 #include "mc/world/Minecraft.h"
 
 #include "Psapi.h"
@@ -178,8 +177,7 @@ void checkRunningBDS() {
 void printLogo() {
     if (!ll::globalConfig.enableWelcomeText) return;
 
-    std::cout << R"(
-                                                                       
+    std::cout << (R"(
           _     _ _       _                    _                       
          | |   (_) |_ ___| |    ___   __ _  __| | ___ _ __             
          | |   | | __/ _ \ |   / _ \ / _` |/ _` |/ _ \ '__|            
@@ -188,11 +186,12 @@ void printLogo() {
                                                                        
        --------   Light-Weight BDS Plugin Loader   ----------          
                                                                        
-)" << std::endl;
+)") << std::endl;
     logger.info(tr("ll.notice.license", "LGPLv3"));
     logger.info(tr("ll.notice.newForum", "https://forum.litebds.com"));
     logger.info(tr("ll.notice.translateText", "https://crowdin.com/project/liteloaderbds"));
     logger.info("Thanks to RhyMC(rhymc.com) for the support");
+    logger.info("");
 }
 
 void checkDevMode() {
@@ -207,13 +206,12 @@ void checkBetaVersion() {
 }
 
 void checkProtocolVersion() {
-    // auto currentProtocol = ll::getServerProtocolVersion();
-    // if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
-    //     std::string tmp = tr("ll.main.warning.protocolVersionNotMatch.1");
-    //     logger.warn(tmp, TARGET_BDS_PROTOCOL_VERSION, currentProtocol);
-    //     logger.warn(tr("ll.main.warning.protocolVersionNotMatch.2"));
-    //     std::this_thread::sleep_for(std::chrono::seconds(1));
-    // }
+    auto currentProtocol = ll::getServerProtocolVersion();
+    if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
+        logger.warn(tr("ll.main.warning.protocolVersionNotMatch.1"), TARGET_BDS_PROTOCOL_VERSION, currentProtocol);
+        logger.warn(tr("ll.main.warning.protocolVersionNotMatch.2"));
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+    }
 }
 
 BOOL WINAPI ConsoleExitHandler(DWORD CEvent) {
@@ -310,7 +308,7 @@ void liteloaderMain() {
 
     // Rename Window
     HWND         hwnd = GetConsoleWindow();
-    std::wstring s = L"Bedrock Dedicated Server " + ll::StringUtils::str2wstr(Common::getGameVersionString().substr(1));
+    std::wstring s    = L"Bedrock Dedicated Server " + ll::StringUtils::str2wstr(ll::getBdsVersion());
     SetWindowText(hwnd, s.c_str());
 
     // Register Exit Event Handler.
@@ -333,8 +331,7 @@ void liteloaderMain() {
     ll::LoadMain();
 
     // Register built-in commands
-    // RegisterCommands();
-
+    RegisterCommands();
 
     // Register simple server logger
     // ll::SimpleServerLogger::registerSimpleServerLogger();
@@ -351,7 +348,9 @@ void liteloaderMain() {
 
 using namespace ll::memory;
 
-LL_AUTO_STATIC_HOOK(LiteLoaderMainHook, HookPriority::Normal, "main", int, int argc, char** argv) {
+// int main(int argc, char* argv[]);
+
+LL_AUTO_STATIC_HOOK(LiteLoaderMainHook, HookPriority::Normal, "main", int, int argc, char* argv[]) {
     startTime = clock();
     for (int i = 0; i < argc; ++i) {
         if (strcmp(argv[i], "--noColor") == 0) {

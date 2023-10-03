@@ -47,9 +47,9 @@ public:
      */
     LLAPI void unsubscribe();
 
-    LLAPI bool operator==(const Listener& other) const;
+    LLAPI bool operator==(Listener const& other) const;
 
-    LLAPI bool operator<(const Listener& other) const;
+    LLAPI bool operator<(Listener const& other) const;
 };
 
 

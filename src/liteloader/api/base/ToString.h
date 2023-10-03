@@ -11,7 +11,7 @@
 namespace std {
 
 template <ll::concepts::Stringable T>
-string to_string(T const& t) {
+string to_string(T const& t) { // NOLINT
     return t.toString();
 }
 
@@ -34,7 +34,7 @@ struct fmt::formatter<T> : formatter<std::string> {
 
 // std::format support
 template <ll::concepts::Stringable T>
-struct std::formatter<T> : std::formatter<std::string> {
+struct std::formatter<T> : std::formatter<std::string> { // NOLINT
     template <typename FormatContext>
     auto format(T const& t, FormatContext& ctx) {
         return std::formatter<std::string>::format(t.toString(), ctx);

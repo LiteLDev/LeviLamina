@@ -18,6 +18,118 @@ struct magic_enum::customize::enum_range<MinecraftPacketIds> {
 
 // #define GENERATE_PACKET
 
+#ifdef GENERATE_PACKET
+
+std::string getVTableName(void** vtable) {
+    auto res = ll::memory::lookupSymbol(*vtable);
+
+    if (res.size() == 1) {
+        return res[0].substr(4, res[0].size() - 9);
+    } else {
+        throw std::runtime_error("cannot get symbol");
+    }
+}
+
+inline void forEachPacket(std::function<void(Packet const& packet, std::string className, size_t size)>&& callback) {
+    int packetId = 0;
+    while (packetId < 500) {
+        auto packet = MinecraftPackets::createPacket((MinecraftPacketIds)packetId);
+        if (packet) {
+            auto size = _msize((void**)packet.get() - 2);
+
+            auto className = getVTableName((void**)packet.get());
+
+            ll::logger.warn(
+                "Packet: enum: {}, getName: {}, vtable: {}, id: {},size: {}",
+                magic_enum::enum_name((MinecraftPacketIds)packetId),
+                packet->getName(),
+                className,
+                packetId,
+                size
+            );
+
+            if (packet->getName() != className) {
+                ll::logger.error("intresting, different name, get: {}, typeid: {}", packet->getName(), className);
+            }
+
+            callback(*packet, className, size - 16);
+        }
+        packetId++;
+    }
+}
+
+inline bool replaceString(
+    std::string&       content,
+    std::string const& start,
+    std::string const& end,
+    std::string const& str,
+    size_t             offset  = 0,
+    bool               exclude = true
+) {
+    auto startOffset = content.find(start, offset);
+    if (startOffset == std::string::npos) return false;
+    if (exclude) startOffset += start.size();
+    auto endOffset = end.empty() ? std::string::npos : content.find(end, startOffset);
+
+    if (endOffset != std::string::npos && !exclude) { endOffset += end.size(); }
+    content.replace(startOffset, endOffset - startOffset, str);
+    return true;
+}
+
+void autoGenerate() {
+
+    std::string path = __FILE__;
+
+    path = R"(D:\code\c++\LiteLoader\)" + path; // for OEOTYAN
+
+    auto file = ReadAllFile(path, false);
+    if (!file) {
+        ll::logger.error("Couldn't open file {}", path);
+        return;
+    }
+    auto& content = file.value();
+
+    std::ostringstream oss;
+
+    // add static assert
+    oss << std::endl;
+    forEachPacket([&](Packet const&, std::string className, size_t size) {
+        oss << fmt::format("PACKET_SIZE_ASSERT({}, 0x{:X});\n", className, size);
+    });
+    oss << std::endl;
+    replaceString(content, "#pragma region PacketSizeAssert\n", "#pragma endregion", oss.str());
+
+    oss.clear();
+    oss.str("");
+
+    // add include
+    oss << std::endl;
+    forEachPacket([&](Packet const&, std::string className, size_t) {
+        oss << fmt::format("#include \"mc/network/packet/{}.h\"\n", className);
+    });
+    oss << std::endl;
+    replaceString(content, "#pragma region PacketInclude\n", "#pragma endregion", oss.str());
+    oss.clear();
+    oss.str("");
+
+    WriteAllFile(path, content, false);
+}
+
+LL_AUTO_TYPED_INSTANCE_HOOK(
+    PacketTestInit,
+    ServerInstance,
+    ll::memory::HookPriority::Normal,
+    &ServerInstance::startServerThread,
+    void
+) {
+    origin();
+    autoGenerate();
+
+    // forEachPacket([&](Packet const&, std::string, size_t) {});
+}
+
+#endif // GENERATE_PACKET
+
 #pragma region PacketInclude
 
 #include "mc/network/packet/ActorEventPacket.h"
@@ -218,124 +330,6 @@ struct magic_enum::customize::enum_range<MinecraftPacketIds> {
 #include "mc/network/packet/UpdateTradePacket.h"
 
 #pragma endregion
-
-#ifdef GENERATE_PACKET
-
-std::string getVTableName(void** vtable) {
-    auto res = ll::memory::lookupSymbol(*vtable);
-
-    if (res.size() == 1) {
-        return res[0];
-    } else {
-        throw std::runtime_error("cannot get symbol");
-    }
-}
-
-inline void forEachPacket(std::function<void(Packet const& packet, std::string className, size_t size)>&& callback) {
-    int packetId = 0;
-    while (packetId < 500) {
-        auto packet = MinecraftPackets::createPacket((MinecraftPacketIds)packetId);
-        if (packet) {
-            auto size = _msize((void**)packet.get() - 2);
-
-            auto className = getVTableName((void**)packet.get());
-
-            className = className.substr(4, className.size() - 9);
-
-            ll::logger.warn(
-                "Packet: enum: {}, getName: {}, vtable: {}, id: {},size: {}",
-                magic_enum::enum_name((MinecraftPacketIds)packetId),
-                packet->getName(),
-                className,
-                packetId,
-                size
-            );
-
-            if (packet->getName() != className) {
-                ll::logger.error("intresting, different name, get: {}, typeid: {}", packet->getName(), className);
-            }
-
-            callback(*packet, className, size - 16);
-        }
-        packetId++;
-    }
-}
-
-#pragma region Packet Command
-
-inline bool replaceString(
-    std::string&       content,
-    std::string const& start,
-    std::string const& end,
-    std::string const& str,
-    size_t             offset  = 0,
-    bool               exclude = true
-) {
-    auto startOffset = content.find(start, offset);
-    if (startOffset == std::string::npos) return false;
-    if (exclude) startOffset += start.size();
-    auto endOffset = end.empty() ? std::string::npos : content.find(end, startOffset);
-
-    if (endOffset != std::string::npos && !exclude) { endOffset += end.size(); }
-    content.replace(startOffset, endOffset - startOffset, str);
-    return true;
-}
-
-void autoGenerate() {
-
-    std::string path = __FILE__;
-
-    path = R"(D:\code\c++\LiteLoader\)" + path; // for OEOTYAN
-
-    auto file = ReadAllFile(path, false);
-    if (!file) {
-        ll::logger.error("Couldn't open file {}", path);
-        return;
-    }
-    auto& content = file.value();
-
-    std::ostringstream oss;
-
-    // add static assert
-    oss << std::endl;
-    forEachPacket([&](Packet const&, std::string className, size_t size) {
-        oss << fmt::format("PACKET_SIZE_ASSERT({}, 0x{:X});\n", className, size);
-    });
-    oss << std::endl;
-    replaceString(content, "#pragma region PacketSizeAssert\n", "#pragma endregion", oss.str());
-
-    oss.clear();
-    oss.str("");
-
-    // add include
-    oss << std::endl;
-    forEachPacket([&](Packet const&, std::string className, size_t) {
-        oss << fmt::format("#include \"mc/network/packet/{}.h\"\n", className);
-    });
-    oss << std::endl;
-    replaceString(content, "#pragma region PacketInclude\n", "#pragma endregion", oss.str());
-    oss.clear();
-    oss.str("");
-
-    WriteAllFile(path, content, false);
-}
-
-LL_AUTO_TYPED_INSTANCE_HOOK(
-    PacketTestInit,
-    ServerInstance,
-    ll::memory::HookPriority::Normal,
-    &ServerInstance::startServerThread,
-    void
-) {
-    origin();
-    autoGenerate();
-
-    // forEachPacket([&](Packet const&, std::string, size_t) {});
-}
-
-#pragma endregion
-
-#endif // GENERATE_PACKET
 
 #define PACKET_SIZE_ASSERT(packet, size) static_assert(sizeof(packet) == (size), "size of " #packet " should be " #size)
 

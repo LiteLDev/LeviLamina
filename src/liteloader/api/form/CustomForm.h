@@ -54,7 +54,7 @@ public:
     LLAPI CustomForm& appendDropdown(
         std::string const&              name,
         std::string const&              text,
-        const std::vector<std::string>& options,
+        std::vector<std::string> const& options,
         size_t                          defaultVal = 0
     );
 
@@ -70,7 +70,7 @@ public:
     LLAPI CustomForm& appendStepSlider(
         std::string const&              name,
         std::string const&              text,
-        const std::vector<std::string>& steps,
+        std::vector<std::string> const& steps,
         size_t                          defaultVal = 0
     );
 

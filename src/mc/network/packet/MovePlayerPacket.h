@@ -7,6 +7,7 @@
 #include "mc/math/Vec3.h"
 #include "mc/world/ActorRuntimeID.h"
 #include "mc/world/level/Tick.h"
+#include "mc/entity/utilities/ActorType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -24,7 +25,7 @@ public:
     bool                                      mOnGround;         // this+0x51
     ActorRuntimeID                            mRidingID;         // this+0x58
     MinecraftEventing::TeleportationCause     mCause;            // this+0x60
-    int                                       mSourceEntityType; // this+0x64 // maybe enum class ActorType ?
+    ActorType                                 mSourceEntityType; // this+0x64
     Tick                                      mTick;             // this+0x68
 
     // prevent constructor by default

@@ -59,7 +59,7 @@ struct ScoreboardId;
  * @par Example
  * @code
  * // In most cases, use the callback with constant parameters.
- * Event::PlayerJoinEvent::subscribe([](const Event::PlayerJoinEvent& ev) {
+ * Event::PlayerJoinEvent::subscribe([](Event::PlayerJoinEvent const& ev) {
  *     ev.mPlayer->sendText("hello world~");
  *     return true;
  * });
@@ -70,7 +70,7 @@ struct ScoreboardId;
  *     return true;
  * });
  *
- * auto listener = Event::PlayerPickupItemEvent::subscribe([](const Event::PlayerPickupItemEvent& ev) {
+ * auto listener = Event::PlayerPickupItemEvent::subscribe([](Event::PlayerPickupItemEvent const& ev) {
  *     if (ev.mPlayer->getName() == "Jack")
  *         // Return false to suppress the event.
  *         return false;
@@ -152,7 +152,7 @@ public:
         return EventListener<EVENT>(EventManager<EVENT>::addEventListenerRef(plugin ? plugin->name : "", callback));
     }
 
-    static void unsubscribe(const EventListener<EVENT>& listener) { listener.remove(); }
+    static void unsubscribe(EventListener<EVENT> const& listener) { listener.remove(); }
 
     /**
      * @brief Check if this event is being listened to
@@ -169,7 +169,7 @@ public:
     ////////////////////// For compatibility DO NOT UPDATE //////////////////////
 protected:
     friend class EventManager<EVENT>;
-    LLAPI static std::list<std::pair<string, std::function<bool(const EVENT&)>>> listeners;
+    LLAPI static std::list<std::pair<string, std::function<bool(EVENT const&)>>> listeners;
     LLAPI static std::list<std::pair<string, std::function<bool(EVENT&)>>>       listenersNoConst;
     ////////////////////// For compatibility DO NOT UPDATE //////////////////////
 };

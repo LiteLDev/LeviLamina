@@ -382,24 +382,6 @@ void send(Player* sp, T& packet) {
 }
 } // namespace SimulatedPlayerClient
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
-    TickWorldHook,
-    Player,
-    HookPriority::Normal,
-    "?tickWorld@Player@@UEAAXAEBUTick@@@Z",
-    void,
-    struct Tick const& tick
-) {
-    origin(tick);
-
-    //  _updateChunkPublisherView will be called after Player::tick in ServerPlayer::tick
-    if (isSimulatedPlayer()) {
-        // Force to call the implementation of ServerPlayer
-        ((ServerPlayer*)this)
-            ->_updateChunkPublisherView(getPos(), 16.0f * Global<PropertiesSettings>->getServerTickRange());
-    }
-}
-
 // fix chunk load and tick - ChunkSource load mode
 static_assert(sizeof(ChunkSource) == 0x50);      // 88
 static_assert(sizeof(ChunkViewSource) == 0x1d8); // 472
@@ -420,7 +402,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 // fix armor display
 #include "mc/WeakEntityRef.hpp"
 #include "mc/WeakStorageEntity.hpp"
-// void sendEvent(class EventRef<struct ActorGameplayEvent<void>> const &);
+// void sendEvent(class EventRef<struct ActorGameplayEvent<void>> const&);
 LL_AUTO_INSTANCE_HOOK(
     ActorEventCoordinatorSendEventHook,
     HookPriority::Normal,

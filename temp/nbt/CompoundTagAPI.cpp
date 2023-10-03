@@ -131,7 +131,7 @@ std::unique_ptr<CompoundTag> CompoundTag::fromItemStack(ItemStack* item) { retur
 
 void CompoundTag::setItemStack(ItemStack* item) {
     using SetItemStackFn                  = ItemStack* (*)(ItemStack*, CompoundTag*);
-    ItemStack (*func)(const CompoundTag&) = &ItemStack::fromTag;
+    ItemStack (*func)(CompoundTag const&) = &ItemStack::fromTag;
     (*(SetItemStackFn)func)(item, this);
 }
 
@@ -197,7 +197,7 @@ OutputNBTError(std::string const& errorMsg, int errorCode, std::string errorWhat
     catch (const seh_exception& e) {                                                                                   \
         OutputNBTError("Uncaught SEH Exception Detected!", e.code(), TextEncoding::toUTF8(e.what()), func);            \
     }                                                                                                                  \
-    catch (const std::exception& e) {                                                                                  \
+    catch (std::exception const& e) {                                                                                  \
         OutputNBTError("Uncaught C++ Exception Detected!", errno, TextEncoding::toUTF8(e.what()), func);               \
     }                                                                                                                  \
     catch (...) {                                                                                                      \
@@ -780,7 +780,7 @@ void SNBTToTag_Compound_Helper(unique_ptr<CompoundTag>& nbt, tags::compound_tag&
     }
 }
 
-std::unique_ptr<CompoundTag> CompoundTag::fromSNBT(const string& snbt) {
+std::unique_ptr<CompoundTag> CompoundTag::fromSNBT(string const& snbt) {
     try {
         istringstream      sin(snbt);
         tags::compound_tag root(true);

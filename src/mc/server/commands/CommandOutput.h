@@ -1,6 +1,8 @@
 #pragma once
 
+#include "liteloader/api/i18n/I18nAPI.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/CommandOutputParameter.h"
 
 // auto generated inclusion list
 #include "mc/server/commands/CommandOutputMessageType.h"
@@ -17,6 +19,16 @@ public:
     // prevent constructor by default
     CommandOutput& operator=(CommandOutput const&);
     CommandOutput();
+
+    template <typename... Args>
+    inline void trSuccess(std::string const& format, Args&&... args) {
+        success(tr(format, std::forward<Args>(args)...));
+    }
+
+    template <typename... Args>
+    inline void trError(std::string const& format, Args&&... args) {
+        error(tr(format, std::forward<Args>(args)...));
+    }
 
 public:
     // NOLINTBEGIN
@@ -35,7 +47,7 @@ public:
 
     // symbol:
     // ?error@CommandOutput@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VCommandOutputParameter@@V?$allocator@VCommandOutputParameter@@@std@@@3@@Z
-    MCAPI void error(std::string const&, std::vector<class CommandOutputParameter> const&);
+    MCAPI void error(std::string const&, std::vector<class CommandOutputParameter> const& = {});
 
     // symbol:
     // ?forceOutput@CommandOutput@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VCommandOutputParameter@@V?$allocator@VCommandOutputParameter@@@std@@@3@@Z
@@ -70,7 +82,7 @@ public:
 
     // symbol:
     // ?success@CommandOutput@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VCommandOutputParameter@@V?$allocator@VCommandOutputParameter@@@std@@@3@@Z
-    MCAPI void success(std::string const&, std::vector<class CommandOutputParameter> const&);
+    MCAPI void success(std::string const&, std::vector<class CommandOutputParameter> const& = {});
 
     // symbol: ?wantsData@CommandOutput@@QEBA_NXZ
     MCAPI bool wantsData() const;

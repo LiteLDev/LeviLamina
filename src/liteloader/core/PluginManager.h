@@ -20,11 +20,11 @@ public:
     );
 
     LLAPI static ll::Plugin* getPlugin(HMODULE handle);
-    LLAPI static ll::Plugin* getPlugin(std::string name, bool includeScriptPlugin = true);
-    LLAPI static bool        hasPlugin(std::string name, bool includeScriptPlugin = true);
+    LLAPI static ll::Plugin* getPlugin(std::string const& name, bool includeScriptPlugin = true);
+    LLAPI static bool        hasPlugin(std::string const& name, bool includeScriptPlugin = true);
     LLAPI static std::unordered_map<std::string, ll::Plugin*> getAllPlugins(bool includeScriptPlugin = true);
 
-    LLAPI static bool unRegisterPlugin(std::string name);
+    LLAPI static bool unRegisterPlugin(std::string const& name);
 };
 
 } // namespace ll

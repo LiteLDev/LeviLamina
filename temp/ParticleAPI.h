@@ -18,12 +18,12 @@ class ParticleAPI {
     using FuncSpawnParticle = void (*)(int, Vec3 const&, std::string const&, int);
     using FuncDrawPoint     = void (*)(int, Vec3 const&, int, char, enum class mce::ColorPalette);
     using FuncDrawNumber    = void (*)(int, Vec3 const&, int, char, enum class mce::ColorPalette);
-    using FuncDrawAxialLine = void (*)(int, bool, bool, const Vec3&, char, double, int, enum class mce::ColorPalette);
+    using FuncDrawAxialLine = void (*)(int, bool, bool, Vec3 const&, char, double, int, enum class mce::ColorPalette);
     using FuncDrawOrientedLine =
-        void (*)(int, const Vec3&, const Vec3&, int, char, double, int, enum class mce::ColorPalette);
-    using FuncDrawCuboid = void (*)(int, bool, bool, const AABB&, int, enum class mce::ColorPalette);
+        void (*)(int, Vec3 const&, Vec3 const&, int, char, double, int, enum class mce::ColorPalette);
+    using FuncDrawCuboid = void (*)(int, bool, bool, AABB const&, int, enum class mce::ColorPalette);
     using FuncDrawCircle =
-        void (*)(int, const Vec3&, char, double, int, char, double, int, enum class mce::ColorPalette);
+        void (*)(int, Vec3 const&, char, double, int, char, double, int, enum class mce::ColorPalette);
 
 public:
     bool                 initialized          = false;
@@ -37,7 +37,7 @@ public:
     FuncDrawCircle       funcDrawCircle       = nullptr;
 
     template <typename T>
-    T inline getFunc(const std::string& name) {
+    T inline getFunc(std::string const& name) {
         return (T)GetProcAddress(handle, name.c_str());
     }
 
@@ -95,7 +95,7 @@ public:
         int                          displayRadius,
         bool                         highDetial,
         bool                         doubleSide,
-        const Vec3&                  originPoint,
+        Vec3 const&                  originPoint,
         char                         direction,
         double                       length,
         int                          dimID,
@@ -108,8 +108,8 @@ public:
     }
     void inline drawOrientedLine(
         int                          displayRadius,
-        const Vec3&                  start,
-        const Vec3&                  end,
+        Vec3 const&                  start,
+        Vec3 const&                  end,
         int                          dimID,
         char                         lineWidth,
         double                       minSpacing,
@@ -125,7 +125,7 @@ public:
         int                          displayRadius,
         bool                         highDetial,
         bool                         doubleSide,
-        const AABB&                  aabb,
+        AABB const&                  aabb,
         int                          dimID,
         enum class mce::ColorPalette color
     ) {
@@ -136,7 +136,7 @@ public:
     }
     void inline drawCircle(
         int                          displayRadius,
-        const Vec3&                  originPoint,
+        Vec3 const&                  originPoint,
         char                         facing,
         double                       radius,
         int                          dimID,
@@ -234,7 +234,7 @@ public:
         api.drawNumber(displayRadius, pos, dimID, num, color);
     }
     void inline drawAxialLine(
-        const Vec3&                  originPoint,
+        Vec3 const&                  originPoint,
         enum Direction               direction,
         double                       length,
         int                          dimID,
@@ -243,8 +243,8 @@ public:
         api.drawAxialLine(displayRadius, highDetial, doubleSide, originPoint, direction, length, dimID, color);
     }
     void inline drawOrientedLine(
-        const Vec3&                  start,
-        const Vec3&                  end,
+        Vec3 const&                  start,
+        Vec3 const&                  end,
         int                          dimID,
         enum PointSize               lineWidth       = PointSize::PX4,
         double                       minSpacing      = 1,
@@ -253,11 +253,11 @@ public:
     ) {
         api.drawOrientedLine(displayRadius, start, end, dimID, lineWidth, minSpacing, maxParticlesNum, color);
     }
-    void inline drawCuboid(const AABB& aabb, int dimID, enum class mce::ColorPalette color = mce::ColorPalette::WHITE) {
+    void inline drawCuboid(AABB const& aabb, int dimID, enum class mce::ColorPalette color = mce::ColorPalette::WHITE) {
         api.drawCuboid(displayRadius, highDetial, doubleSide, aabb, dimID, color);
     }
     void inline drawCircle(
-        const Vec3&                  originPoint,
+        Vec3 const&                  originPoint,
         enum Direction               facing,
         double                       radius,
         int                          dimID,
@@ -280,8 +280,8 @@ public:
         drawNumber(pos.toVec3() + 0.5f, dimID, num, color);
     }
     void inline drawOrientedLine(
-        const BlockPos&              start,
-        const BlockPos&              end,
+        BlockPos const&              start,
+        BlockPos const&              end,
         int                          dimID,
         PointSize                    lineWidth,
         double                       minSpacing,
@@ -292,14 +292,14 @@ public:
             start.toVec3() + 0.5f, end.toVec3() + 0.5f, dimID, lineWidth, minSpacing, maxParticlesNum, color
         );
     }
-    void inline drawCuboid(const BoundingBox& box, int dimID, enum class mce::ColorPalette color) {
+    void inline drawCuboid(BoundingBox const& box, int dimID, enum class mce::ColorPalette color) {
         drawCuboid(box.toAABB(), dimID, color);
     }
-    void inline drawCuboid(const BlockPos& pos, int dimID, enum class mce::ColorPalette color) {
+    void inline drawCuboid(BlockPos const& pos, int dimID, enum class mce::ColorPalette color) {
         drawCuboid(pos.toAABB(), dimID, color);
     }
     void inline drawCircle(
-        const BlockPos&              originPoint,
+        BlockPos const&              originPoint,
         Direction                    facing,
         double                       radius,
         int                          dimID,

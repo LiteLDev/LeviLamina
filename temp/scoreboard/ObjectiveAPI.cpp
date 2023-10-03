@@ -6,7 +6,7 @@
 
 // helper
 #define H do_hash
-LLAPI bool checkSlotName(const std::string& slot) {
+LLAPI bool checkSlotName(std::string const& slot) {
     switch (H(slot.c_str())) {
     case H("list"):
         break;
@@ -20,7 +20,7 @@ LLAPI bool checkSlotName(const std::string& slot) {
     return true;
 }
 
-bool Objective::setDisplay(const std::string& slotName, ObjectiveSortOrder sort) {
+bool Objective::setDisplay(std::string const& slotName, ObjectiveSortOrder sort) {
     if (checkSlotName(slotName)) {
         ((ServerScoreboard*)Global<Scoreboard>)->setDisplayObjective(slotName, *this, sort);
         return true;

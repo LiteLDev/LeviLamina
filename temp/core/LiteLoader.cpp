@@ -44,8 +44,7 @@ void fixPluginsLibDir() {
     constexpr const DWORD MAX_PATH_LEN = 32767;
 
     auto* buffer = new (nothrow) wchar_t[MAX_PATH_LEN];
-    if (!buffer)
-        return;
+    if (!buffer) return;
 
     GetEnvironmentVariableW(L"PATH", buffer, MAX_PATH_LEN);
     wstring path(buffer);
@@ -61,8 +60,7 @@ void fixUpCWD() {
     constexpr const DWORD MAX_PATH_LEN = 32767;
 
     auto* buffer = new (nothrow) wchar_t[MAX_PATH_LEN];
-    if (!buffer)
-        return;
+    if (!buffer) return;
 
     GetModuleFileNameW(nullptr, buffer, MAX_PATH_LEN);
     wstring path(buffer);
@@ -115,8 +113,7 @@ void checkRunningBDS() {
     constexpr const DWORD MAX_PATH_LEN = 32767;
     auto*                 buffer       = new wchar_t[MAX_PATH_LEN];
 
-    if (!ll::globalConfig.enableCheckRunningBDS)
-        return;
+    if (!ll::globalConfig.enableCheckRunningBDS) return;
 
     // get all processes id with name "bedrock_server.exe" or "bedrock_server_mod.exe"
     // and pid is not current process
@@ -124,14 +121,12 @@ void checkRunningBDS() {
     PROCESSENTRY32     pe32;
     pe32.dwSize         = sizeof(PROCESSENTRY32);
     HANDLE hProcessSnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
-    if (hProcessSnap == INVALID_HANDLE_VALUE) {
-        return;
-    }
+    if (hProcessSnap == INVALID_HANDLE_VALUE) { return; }
     if (Process32First(hProcessSnap, &pe32)) {
         do {
-            if (pe32.th32ProcessID != GetCurrentProcessId() &&
-                (wcscmp(pe32.szExeFile, L"bedrock_server.exe") == 0 ||
-                 wcscmp(pe32.szExeFile, L"bedrock_server_mod.exe") == 0)) {
+            if (pe32.th32ProcessID != GetCurrentProcessId()
+                && (wcscmp(pe32.szExeFile, L"bedrock_server.exe") == 0
+                    || wcscmp(pe32.szExeFile, L"bedrock_server_mod.exe") == 0)) {
                 pids.push_back(pe32.th32ProcessID);
             }
         } while (Process32Next(hProcessSnap, &pe32));
@@ -163,9 +158,7 @@ void checkRunningBDS() {
                     rewind(stdin);
                     input = getchar();
                     rewind(stdin);
-                    if (input == 'n' || input == 'N') {
-                        break;
-                    }
+                    if (input == 'n' || input == 'N') { break; }
                     if (input == 'y' || input == 'Y') {
                         TerminateProcess(handle, 1);
                         break;
@@ -203,8 +196,7 @@ void fixAllowList() {
 }
 
 void printLogo() {
-    if (!ll::globalConfig.enableWelcomeText)
-        return;
+    if (!ll::globalConfig.enableWelcomeText) return;
 
     cout << R"(
                                                                        
@@ -220,8 +212,7 @@ void printLogo() {
 }
 
 void checkDevMode() {
-    if (ll::globalConfig.debugMode)
-        logger.warn(tr("ll.main.warning.inDevMode"));
+    if (ll::globalConfig.debugMode) logger.warn(tr("ll.main.warning.inDevMode"));
 }
 
 void checkBetaVersion() {
@@ -277,8 +268,6 @@ void unixSignalHandler(int signum) {
 
 // extern
 
-extern void RegisterCommands();
-
 extern void EndScheduleSystem();
 
 namespace bstats {
@@ -312,13 +301,10 @@ void liteloaderMain() {
     decompressResourcePacks();
 
     // If SEH Protection is not enabled (Debug mode), restore old SE translator
-    if (!ll::isDebugMode())
-        _set_se_translator(oldSeTranslator);
+    if (!ll::isDebugMode()) _set_se_translator(oldSeTranslator);
 
     // Update default language
-    if (i18n && ll::globalConfig.language != "system") {
-        i18n->defaultLocaleName = ll::globalConfig.language;
-    }
+    if (i18n && ll::globalConfig.language != "system") { i18n->defaultLocaleName = ll::globalConfig.language; }
 
     // Check Protocol Version
     checkProtocolVersion();
@@ -356,15 +342,10 @@ void liteloaderMain() {
     checkDevMode();
 
     // Addon Helper
-    if (ll::globalConfig.enableAddonsHelper) {
-        InitAddonsHelper();
-    }
+    if (ll::globalConfig.enableAddonsHelper) { InitAddonsHelper(); }
 
     // Load plugins
     ll::LoadMain();
-
-    // Register built-in commands
-    RegisterCommands();
 
     // Register simple server logger
     ll::SimpleServerLogger::registerSimpleServerLogger();
@@ -374,7 +355,7 @@ void liteloaderMain() {
 
     // Register Started
     using namespace ll::event::server;
-    ServerStartedEvent::subscribe([](const ServerStartedEvent&) {
+    ServerStartedEvent::subscribe([](ServerStartedEvent const&) {
         logger.info(tr("ll.notice.license", "LGPLv3"));
         logger.info(tr("ll.notice.newForum", "https://forum.litebds.com"));
         logger.info(tr("ll.notice.translateText", "https://crowdin.com/project/liteloaderbds"));
@@ -383,7 +364,7 @@ void liteloaderMain() {
     });
 
     // Register Cleanup
-    ServerStoppedEvent::subscribe([](const ServerStoppedEvent&) {
+    ServerStoppedEvent::subscribe([](ServerStoppedEvent const&) {
         EndScheduleSystem();
         return true;
     });

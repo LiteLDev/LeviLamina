@@ -14,7 +14,7 @@
 
 namespace ll::event::player {
 
-PlayerUseRespawnAnchorEvent::PlayerUseRespawnAnchorEvent(Player* player, const BlockInstance& blockInstance)
+PlayerUseRespawnAnchorEvent::PlayerUseRespawnAnchorEvent(Player* player, BlockInstance const& blockInstance)
 : player(player), blockInstance(blockInstance) {}
 
 LL_GETTER_IMPL(PlayerUseRespawnAnchorEvent, Player*, player, getPlayer)

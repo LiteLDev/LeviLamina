@@ -67,7 +67,7 @@ void SetCustomFormBuilderData(uint formId, std::shared_ptr<Form::CustomForm> dat
     customFormBuilders[formId] = data;
 }
 
-void HandleFormPacket(Player* player, uint formId, const string& data) {
+void HandleFormPacket(Player* player, uint formId, string const& data) {
     if (formTypes.find(formId) == formTypes.end())
         return;
 

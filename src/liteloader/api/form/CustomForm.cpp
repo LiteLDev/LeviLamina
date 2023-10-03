@@ -271,7 +271,7 @@ public:
     void appendDropdown(
         std::string const&              name,
         std::string const&              text,
-        const std::vector<std::string>& options,
+        std::vector<std::string> const& options,
         size_t                          defaultVal
     ) {
         append(std::make_shared<Dropdown>(name, text, options, defaultVal));
@@ -291,7 +291,7 @@ public:
     void appendStepSlider(
         std::string const&              name,
         std::string const&              text,
-        const std::vector<std::string>& steps,
+        std::vector<std::string> const& steps,
         size_t                          defaultVal
     ) {
         append(std::make_shared<StepSlider>(name, text, steps, defaultVal));
@@ -303,7 +303,7 @@ public:
             ll::logger.error("CustomForm callback is null");
             return false;
         }
-        int  id = handler::addFormHandler(std::make_unique<handler::CustomFormHandler>(std::move(callback), mElements));
+        uint id = handler::addFormHandler(std::make_unique<handler::CustomFormHandler>(std::move(callback), mElements));
         auto json = serialize();
         if (json.is_null()) { return false; }
         ModalFormRequestPacket(id, json.dump()).sendTo(player);
@@ -362,7 +362,7 @@ CustomForm& CustomForm::appendToggle(std::string const& name, std::string const&
 CustomForm& CustomForm::appendDropdown(
     std::string const&              name,
     std::string const&              text,
-    const std::vector<std::string>& options,
+    std::vector<std::string> const& options,
     size_t                          defaultVal
 ) {
     impl->appendDropdown(name, text, options, defaultVal);
@@ -384,7 +384,7 @@ CustomForm& CustomForm::appendSlider(
 CustomForm& CustomForm::appendStepSlider(
     std::string const&              name,
     std::string const&              text,
-    const std::vector<std::string>& steps,
+    std::vector<std::string> const& steps,
     size_t                          defaultVal
 ) {
     impl->appendStepSlider(name, text, steps, defaultVal);

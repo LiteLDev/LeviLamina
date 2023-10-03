@@ -60,7 +60,7 @@ void ListTag::addFloat(float v) { add(FloatTag::create(v)); }
 
 void ListTag::addDouble(double v) { add(DoubleTag::create(v)); }
 
-void ListTag::addString(const string& v) { add(StringTag::create(v)); }
+void ListTag::addString(string const& v) { add(StringTag::create(v)); }
 
 void ListTag::addByteArray(char data[], size_t size) { add(ByteArrayTag::create(data, size)); }
 

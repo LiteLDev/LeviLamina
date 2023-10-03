@@ -53,7 +53,7 @@ using ll::memory::dAccess;
     catch (const seh_exception& e) {                                                                                   \
         OutputError("Uncaught SEH Exception Detected!", e.code(), TextEncoding::toUTF8(e.what()), func, handle);       \
     }                                                                                                                  \
-    catch (const std::exception& e) {                                                                                  \
+    catch (std::exception const& e) {                                                                                  \
         OutputError("Uncaught C++ Exception Detected!", errno, TextEncoding::toUTF8(e.what()), func, handle);          \
     }                                                                                                                  \
     catch (...) {                                                                                                      \
@@ -499,7 +499,7 @@ inline char DynamicCommand::builderCallbackHanler(DCCallback* cb, DCArgs* args, 
     return 'p';
 }
 
-std::unique_ptr<Command>* DynamicCommand::commandBuilder(std::unique_ptr<Command>* rtn, const std::string& name) {
+std::unique_ptr<Command>* DynamicCommand::commandBuilder(std::unique_ptr<Command>* rtn, std::string const& name) {
 #define CaseInitBreak(type)                                                                                            \
     case ParameterType::type:                                                                                          \
         initValue<ParameterDataType::type>(command, offset);                                                           \

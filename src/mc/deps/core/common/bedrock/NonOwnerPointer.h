@@ -19,20 +19,20 @@ public:
 };
 
 template <class T>
-[[nodiscard]] bool operator==(const NonOwnerPointer<T>& self, nullptr_t) noexcept {
+[[nodiscard]] bool operator==(NonOwnerPointer<T> const& self, nullptr_t) noexcept {
     return self.get() == nullptr;
 }
 template <class T>
-[[nodiscard]] std::strong_ordering operator<=>(const NonOwnerPointer<T>& self, nullptr_t) noexcept {
+[[nodiscard]] std::strong_ordering operator<=>(NonOwnerPointer<T> const& self, nullptr_t) noexcept {
     return self.get() <=> static_cast<T*>(nullptr);
 }
 
 template <class T1, class T2>
-[[nodiscard]] bool operator==(const NonOwnerPointer<T1>& l, const NonOwnerPointer<T2>& r) noexcept {
+[[nodiscard]] bool operator==(NonOwnerPointer<T1> const& l, NonOwnerPointer<T2> const& r) noexcept {
     return l.get() == r.get();
 }
 template <class T1, class T2>
-[[nodiscard]] std::strong_ordering operator<=>(const NonOwnerPointer<T1>& l, const NonOwnerPointer<T2>& r) noexcept {
+[[nodiscard]] std::strong_ordering operator<=>(NonOwnerPointer<T1> const& l, NonOwnerPointer<T2> const& r) noexcept {
     return l.get() <=> r.get();
 }
 

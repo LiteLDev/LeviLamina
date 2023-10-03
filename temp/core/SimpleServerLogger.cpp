@@ -24,14 +24,14 @@ bool ll::SimpleServerLogger::registerSimpleServerLogger() {
         return false;
     if (ll::globalConfig.enableSimpleServerLogger) {
         chatListener = PlayerChatEvent::subscribe(
-            [](const PlayerChatEvent& event) {
+            [](PlayerChatEvent const& event) {
                 static Logger logger("Chat");
                 logger.info("<{}> {}", event.getPlayer()->getRealName(), event.getMessage());
             },
             event::EventPriority::Monitor
         );
 
-        cmdListener = ll::event::legacy::PlayerCmdEvent::subscribe([](const ll::event::legacy::PlayerCmdEvent& ev) {
+        cmdListener = ll::event::legacy::PlayerCmdEvent::subscribe([](ll::event::legacy::PlayerCmdEvent const& ev) {
             static Logger logger("Command");
             logger.info("<{}> /{}", ev.mPlayer->getRealName(), ev.mCommand);
             return true;

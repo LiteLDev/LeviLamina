@@ -15,7 +15,7 @@ class PlayerUseRespawnAnchorEvent : public Event<PlayerUseRespawnAnchorEvent>, p
     LL_RO_MEMBER(Player*, player, getPlayer);
     LL_RO_MEMBER(BlockInstance, blockInstance, getBlockInstance);
 
-    explicit PlayerUseRespawnAnchorEvent(Player* player, const BlockInstance& blockInstance);
+    explicit PlayerUseRespawnAnchorEvent(Player* player, BlockInstance const& blockInstance);
 
     LL_DELETE_COPY(PlayerUseRespawnAnchorEvent);
     LL_DELETE_MOVE(PlayerUseRespawnAnchorEvent);

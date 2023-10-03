@@ -101,12 +101,11 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     PropertiesSettingsService,
     PropertiesSettings,
     HookPriority::Normal,
-    "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
-    size_t,
-    const std::string& file
+    &PropertiesSettings::isPropertiesFileLoaded,
+    bool const
 ) {
     ll::Global<PropertiesSettings>.init(this);
-    return origin(file);
+    return origin();
 }
 
 // ResourcePackRepository

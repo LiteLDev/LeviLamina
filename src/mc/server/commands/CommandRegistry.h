@@ -693,8 +693,13 @@ public:
 
     // symbol:
     // ?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z
-    MCAPI void
-    registerCommand(std::string const&, char const*, ::CommandPermissionLevel, struct CommandFlag, struct CommandFlag);
+    MCAPI void registerCommand(
+        std::string const& name,
+        char const* description,
+        ::CommandPermissionLevel,
+        struct CommandFlag = {CommandFlagValue::NotCheat},
+        struct CommandFlag = {CommandFlagValue::None}
+    );
 
     // symbol:
     // ?removeSoftEnumValues@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z

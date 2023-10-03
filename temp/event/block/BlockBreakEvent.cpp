@@ -14,7 +14,7 @@
 
 namespace ll::event::block {
 
-BlockBreakEvent::BlockBreakEvent(Player* player, const BlockInstance& blockInstance)
+BlockBreakEvent::BlockBreakEvent(Player* player, BlockInstance const& blockInstance)
 : player(player), blockInstance(blockInstance) {}
 
 LL_GETTER_IMPL(BlockBreakEvent, Player*, player, getPlayer)

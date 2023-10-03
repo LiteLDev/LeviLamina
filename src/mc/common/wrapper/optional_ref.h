@@ -22,7 +22,7 @@ public:
 
     // template <typename U>
     //     requires(IsCompatibleV<U>)
-    // constexpr optional_ref(const std::optional<U>& o)
+    // constexpr optional_ref(std::optional<U> const& o)
     //     requires(std::is_const_v<T>)
     // : ptr_(o ? &*o : nullptr) {}
 
@@ -111,7 +111,7 @@ template <typename T>
 optional_ref(T&) -> optional_ref<T>;
 
 template <typename T>
-optional_ref(const std::optional<T>&) -> optional_ref<const T>;
+optional_ref(std::optional<T> const&) -> optional_ref<const T>;
 
 template <typename T>
 optional_ref(std::optional<T>&) -> optional_ref<T>;

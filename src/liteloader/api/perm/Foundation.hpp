@@ -21,7 +21,7 @@ public:
     PermVector() : Base() {}
     PermVector(Base const& base) : Base(base) {}
     PermVector(Base&& base) : Base(base) {}
-    PermVector(const PermVector<T>& other) = default;
+    PermVector(PermVector<T> const& other) = default;
     PermVector(PermVector<T>&& other)      = default;
 
     bool contains(T const& xuid) const {
@@ -51,7 +51,7 @@ public:
     }
 
     PermVector<T>& operator=(Base const& other) { return (PermVector<T>&)(((Base&)*this) = other); }
-    PermVector<T>& operator=(const PermVector<T>& other) = default;
+    PermVector<T>& operator=(PermVector<T> const& other) = default;
     PermVector<T>& operator=(PermVector<T>&& other)      = default;
 };
 
@@ -65,7 +65,7 @@ public:
     PermContainer() : Base() {}
     PermContainer(Base const& base) : Base(base) {}
     PermContainer(Base&& base) : Base(base) {}
-    PermContainer(const PermContainer<T>& other) = default;
+    PermContainer(PermContainer<T> const& other) = default;
     PermContainer(PermContainer<T>&& other)      = default;
 
     bool contains(std::string const& name) const {
@@ -153,7 +153,7 @@ public:
         return this->getOrCreate(name, def);
     }
 
-    PermContainer<T>& operator=(const PermContainer<T>& other) = default;
+    PermContainer<T>& operator=(PermContainer<T> const& other) = default;
     PermContainer<T>& operator=(PermContainer<T>&& other)      = default;
     PermContainer<T>& operator=(Base const& other) { return (PermContainer<T>&)(((Base&)*this) = other); }
 };
@@ -168,7 +168,7 @@ public:
     PermPtrContainer() : Base() {}
     PermPtrContainer(Base const& base) : Base(base) {}
     PermPtrContainer(Base&& base) : Base(base) {}
-    PermPtrContainer(const PermPtrContainer<T>& other) = default;
+    PermPtrContainer(PermPtrContainer<T> const& other) = default;
     PermPtrContainer(PermPtrContainer<T>&& other)      = default;
 
     bool contains(std::string const& name) const {
@@ -263,7 +263,7 @@ public:
         return this->getOrCreate(name, def);
     }
 
-    PermPtrContainer<T>& operator=(const PermPtrContainer<T>& other) = default;
+    PermPtrContainer<T>& operator=(PermPtrContainer<T> const& other) = default;
     PermPtrContainer<T>& operator=(PermPtrContainer<T>&& other)      = default;
     PermPtrContainer<T>& operator=(Base const& other) { return (PermPtrContainer<T>&)(((Base&)*this) = other); }
 };

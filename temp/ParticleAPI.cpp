@@ -9,7 +9,7 @@
 #include "mc/ResourcePackStack.hpp"
 
 void InitParticle() {
-    ll::event::legacy::ResourcePackInitEvent::subscribe([](const ll::event::legacy::ResourcePackInitEvent& ev) {
+    ll::event::legacy::ResourcePackInitEvent::subscribe([](ll::event::legacy::ResourcePackInitEvent const& ev) {
         ev.mRepo->setCustomResourcePackPath(PackType::PackType_Resources, R"(plugins/LiteLoader/ResourcePacks)");
         return true;
     });

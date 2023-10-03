@@ -27,5 +27,5 @@ public:
     static bool disable(std::string nameOrUuid);
 
     static std::vector<Addon*> getAllAddons();
-    static Addon*              findAddon(const std::string& nameOrUuid, bool fuzzy = false);
+    static Addon*              findAddon(std::string const& nameOrUuid, bool fuzzy = false);
 };

@@ -58,8 +58,8 @@ bool ll::PluginManager::registerPlugin(
     return true;
 }
 
-bool ll::PluginManager::unRegisterPlugin(std::string name) {
-    auto plugin = getPlugin(std::move(name));
+bool ll::PluginManager::unRegisterPlugin(std::string const& name) {
+    auto plugin = getPlugin(name);
     if (plugin == nullptr) {
         return false;
     } else {
@@ -80,13 +80,13 @@ ll::Plugin* GetPlugin_Raw(std::string const& name, bool includeScriptPlugin) {
     return nullptr;
 }
 
-ll::Plugin* ll::PluginManager::getPlugin(std::string name, bool includeScriptPlugin) {
-    auto res = GetPlugin_Raw(std::move(name), includeScriptPlugin);
+ll::Plugin* ll::PluginManager::getPlugin(std::string const& name, bool includeScriptPlugin) {
+    auto res = GetPlugin_Raw(name, includeScriptPlugin);
     if (res) return res;
     /* issue #510
     try
     {
-        name = UTF82String(filesystem::path(str2wstr(name)).stem().u8string());
+        name = u8str2str(filesystem::path(str2wstr(name)).stem().u8string());
         return GetPlugin_Raw(name, includeScriptPlugin);
     }
     catch(...)
@@ -104,8 +104,8 @@ ll::Plugin* ll::PluginManager::getPlugin(HMODULE handle) {
     return nullptr;
 }
 
-bool ll::PluginManager::hasPlugin(std::string name, bool includeScriptPlugin) {
-    return getPlugin(std::move(name), includeScriptPlugin) != nullptr;
+bool ll::PluginManager::hasPlugin(std::string const& name, bool includeScriptPlugin) {
+    return getPlugin(name, includeScriptPlugin) != nullptr;
 }
 
 std::unordered_map<std::string, ll::Plugin*> ll::PluginManager::getAllPlugins(bool includeScriptPlugin) {
