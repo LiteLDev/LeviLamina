@@ -16,7 +16,7 @@ struct magic_enum::customize::enum_range<MinecraftPacketIds> {
     // (max - min) must be less than UINT16_MAX.
 };
 
-#define GENERATE_PACKET
+// #define GENERATE_PACKET
 
 #pragma region PacketInclude
 
