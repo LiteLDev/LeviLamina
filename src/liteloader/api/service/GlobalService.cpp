@@ -42,7 +42,6 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     &Minecraft::initAsDedicatedServer,
     void
 ) {
-    ll::logger.info("MinecraftService: {}", (uintptr_t)this);
     ll::Global<Minecraft>.init(this);
     origin();
     ll::Global<CommandRegistry>.init(&getCommands().getRegistry());
@@ -60,10 +59,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     void,
     ::ServerInstance& ins
 ) {
-    ll::logger.info("ServerStartedEventHook: {}", (uintptr_t)ll::Global<Minecraft>.get());
     ll::Global<Level>.init(ll::Global<Minecraft>->getLevel());
-    ll::Global<ServerLevel>.init((ServerLevel*)ll::Global<Level>.get());
-
+    ll::Global<ServerLevel>.init((ServerLevel*)ll::Global<Level>);
     origin(ins);
 }
 

@@ -46,6 +46,10 @@ public:
     T* operator->() { return value; }
     T& operator*() { return *value; }
     operator T*() { return value; } // NOLINT(google-explicit-constructor)
+    template <typename U>
+    explicit operator U*() {
+        return static_cast<U*>(value);
+    }
 };
 
 template <IsGlobalService T>
