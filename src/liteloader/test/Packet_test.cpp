@@ -1,13 +1,24 @@
-﻿#include "liteloader/core/LiteLoader.h"
-#include "magic_enum.hpp"
+﻿#include "liteloader/api/memory/Hook.h"
+#include "liteloader/api/utils/FileHelper.h"
+#include "liteloader/core/LiteLoader.h"
 #include "mc/network/MinecraftPackets.h"
+#include "mc/network/packet/Packet.h"
+#include "mc/server/ServerInstance.h"
+#include "mc/world/Minecraft.h"
+#include <filesystem>
 
-#define INCLUDE_ALL_PACKET
-#define SIZE_STATIC_ASSERT_IF_DEFINE
-// #define SIZE_STATIC_ASSERT
-// #define GENERATE_PACKET
+#include "magic_enum.hpp"
 
-#ifdef INCLUDE_ALL_PACKET
+template <>
+struct magic_enum::customize::enum_range<MinecraftPacketIds> {
+    static constexpr int min = 0;
+    static constexpr int max = (int)MinecraftPacketIds::EndId;
+    // (max - min) must be less than UINT16_MAX.
+};
+
+#define GENERATE_PACKET
+
+#pragma region PacketInclude
 
 #include "mc/network/packet/ActorEventPacket.h"
 #include "mc/network/packet/ActorPickRequestPacket.h"
@@ -206,308 +217,51 @@
 #include "mc/network/packet/UpdateSubChunkBlocksPacket.h"
 #include "mc/network/packet/UpdateTradePacket.h"
 
-#endif INCLUDE_ALL_PACKET
-
-#pragma region ForEachPacketMacro
-
-
-#define ForEachPacket(Func)                                                                                            \
-    Func(ShowProfilePacket);                                                                                           \
-    Func(SetDefaultGameTypePacket);                                                                                    \
-    Func(RemoveObjectivePacket);                                                                                       \
-    Func(RemoveVolumeEntityPacket);                                                                                    \
-    Func(SyncActorPropertyPacket);                                                                                     \
-    Func(FilterTextPacket);                                                                                            \
-    Func(CodeBuilderPacket);                                                                                           \
-    Func(NetworkSettingsPacket);                                                                                       \
-    Func(MultiplayerSettingsPacket);                                                                                   \
-    Func(SettingsCommandPacket);                                                                                       \
-    Func(MapCreateLockedCopyPacket);                                                                                   \
-    Func(AddEntityPacket);                                                                                             \
-    Func(RemoveEntityPacket);                                                                                          \
-    Func(LevelSoundEventPacketV2);                                                                                     \
-    Func(ModalFormRequestPacket);                                                                                      \
-    Func(ModalFormResponsePacket);                                                                                     \
-    Func(ServerSettingsRequestPacket);                                                                                 \
-    Func(ClientToServerHandshakePacket);                                                                               \
-    Func(ServerToClientHandshakePacket);                                                                               \
-    Func(SetTimePacket);                                                                                               \
-    Func(RemoveActorPacket);                                                                                           \
-    Func(PassengerJumpPacket);                                                                                         \
-    Func(LevelSoundEventPacketV1);                                                                                     \
-    Func(SetCommandsEnabledPacket);                                                                                    \
-    Func(SetPlayerGameTypePacket);                                                                                     \
-    Func(RequestChunkRadiusPacket);                                                                                    \
-    Func(ChunkRadiusUpdatedPacket);                                                                                    \
-    Func(SetLastHurtByPacket);                                                                                         \
-    Func(AutomationClientConnectPacket);                                                                               \
-    Func(StopSoundPacket);                                                                                             \
-    Func(PlayerArmorDamagePacket);                                                                                     \
-    Func(ActorPickRequestPacket);                                                                                      \
-    Func(AddPaintingPacket);                                                                                           \
-    Func(StructureTemplateDataResponsePacket);                                                                         \
-    Func(TransferPacket);                                                                                              \
-    Func(UpdateEquipPacket);                                                                                           \
-    Func(UpdateSoftEnumPacket);                                                                                        \
-    Func(UpdateTradePacket);                                                                                           \
-    Func(CameraPacket);                                                                                                \
-    Func(MobArmorEquipmentPacket);                                                                                     \
-    Func(MobEffectPacket);                                                                                             \
-    Func(MoveActorAbsolutePacket);                                                                                     \
-    Func(NetworkStackLatencyPacket);                                                                                   \
-    Func(NpcRequestPacket);                                                                                            \
-    Func(OnScreenTextureAnimationPacket);                                                                              \
-    Func(PacketViolationWarningPacket);                                                                                \
-    Func(PhotoTransferPacket);                                                                                         \
-    Func(PlaySoundPacket);                                                                                             \
-    Func(AnvilDamagePacket);                                                                                           \
-    Func(BlockEventPacket);                                                                                            \
-    Func(BookEditPacket);                                                                                              \
-    Func(BossEventPacket);                                                                                             \
-    Func(ClientboundMapItemDataPacket);                                                                                \
-    Func(CommandBlockUpdatePacket);                                                                                    \
-    Func(CompletedUsingItemPacket);                                                                                    \
-    Func(ContainerSetDataPacket);                                                                                      \
-    Func(CraftingEventPacket);                                                                                         \
-    Func(DebugInfoPacket);                                                                                             \
-    Func(EducationSettingsPacket);                                                                                     \
-    Func(EmoteListPacket);                                                                                             \
-    Func(EmotePacket);                                                                                                 \
-    Func(HurtArmorPacket);                                                                                             \
-    Func(ItemFrameDropItemPacket);                                                                                     \
-    Func(LabTablePacket);                                                                                              \
-    Func(LecternUpdatePacket);                                                                                         \
-    Func(LevelEventGenericPacket);                                                                                     \
-    Func(PlayerEnchantOptionsPacket);                                                                                  \
-    Func(PlayerInputPacket);                                                                                           \
-    Func(PlayerSkinPacket);                                                                                            \
-    Func(PositionTrackingDBClientRequestPacket);                                                                       \
-    Func(PositionTrackingDBServerBroadcastPacket);                                                                     \
-    Func(PurchaseReceiptPacket);                                                                                       \
-    Func(ResourcePackChunkDataPacket);                                                                                 \
-    Func(ResourcePackChunkRequestPacket);                                                                              \
-    Func(ResourcePackDataInfoPacket);                                                                                  \
-    Func(CreatePhotoPacket);                                                                                           \
-    Func(EduUriResourcePacket);                                                                                        \
-    Func(NpcDialoguePacket);                                                                                           \
-    Func(SimulationTypePacket);                                                                                        \
-    Func(AddVolumeEntityPacket);                                                                                       \
-    Func(AnimateEntityPacket);                                                                                         \
-    Func(CameraShakePacket);                                                                                           \
-    Func(CodeBuilderSourcePacket);                                                                                     \
-    Func(ClientboundDebugRendererPacket);                                                                              \
-    Func(CorrectPlayerMovePredictionPacket);                                                                           \
-    Func(PlayerStartItemCooldownPacket);                                                                               \
-    Func(ScriptMessagePacket);                                                                                         \
-    Func(SetDisplayObjectivePacket);                                                                                   \
-    Func(SetScorePacket);                                                                                              \
-    Func(SetScoreboardIdentityPacket);                                                                                 \
-    Func(SetTitlePacket);                                                                                              \
-    Func(ShowCreditsPacket);                                                                                           \
-    Func(ShowStoreOfferPacket);                                                                                        \
-    Func(SpawnExperienceOrbPacket);                                                                                    \
-    Func(SpawnParticleEffectPacket);                                                                                   \
-    Func(StructureBlockUpdatePacket);                                                                                  \
-    Func(StructureTemplateDataRequestPacket);                                                                          \
-    Func(SubClientLoginPacket);                                                                                        \
-    Func(SimpleEventPacket);                                                                                           \
-    Func(AddBehaviorTreePacket);                                                                                       \
-    Func(AvailableActorIdentifiersPacket);                                                                             \
-    Func(LegacyTelemetryEventPacket);                                                                                  \
-    Func(AvailableCommandsPacket);                                                                                     \
-    Func(BiomeDefinitionListPacket);                                                                                   \
-    Func(CraftingDataPacket);                                                                                          \
-    Func(CreativeContentPacket);                                                                                       \
-    Func(GameRulesChangedPacket);                                                                                      \
-    Func(ResourcePackStackPacket);                                                                                     \
-    Func(ResourcePacksInfoPacket);                                                                                     \
-    Func(ItemComponentPacket);                                                                                         \
-    Func(SetSpawnPositionPacket);                                                                                      \
-    Func(StartGamePacket);                                                                                             \
-    Func(PlayerFogPacket);                                                                                             \
-    Func(AddPlayerPacket);                                                                                             \
-    Func(LoginPacket);                                                                                                 \
-    Func(BlockPickRequestPacket);                                                                                      \
-    Func(DisconnectPacket);                                                                                            \
-    Func(GuiDataPickItemPacket);                                                                                       \
-    Func(SetLocalPlayerAsInitializedPacket);                                                                           \
-    Func(TextPacket);                                                                                                  \
-    Func(PlayerListPacket);                                                                                            \
-    Func(PlayStatusPacket);                                                                                            \
-    Func(ClientCacheStatusPacket);                                                                                     \
-    Func(SetDifficultyPacket);                                                                                         \
-    Func(ChangeDimensionPacket);                                                                                       \
-    Func(ResourcePackClientResponsePacket);                                                                            \
-    Func(SetActorLinkPacket);                                                                                          \
-    Func(UpdatePlayerGameTypePacket);                                                                                  \
-    Func(RespawnPacket);                                                                                               \
-    Func(TakeItemActorPacket);                                                                                         \
-    Func(PlayerHotbarPacket);                                                                                          \
-    Func(CommandOutputPacket);                                                                                         \
-    Func(TickSyncPacket);                                                                                              \
-    Func(CommandRequestPacket);                                                                                        \
-    Func(ContainerOpenPacket);                                                                                         \
-    Func(ContainerClosePacket);                                                                                        \
-    Func(InventoryContentPacket);                                                                                      \
-    Func(ServerSettingsResponsePacket);                                                                                \
-    Func(InventorySlotPacket);                                                                                         \
-    Func(UpdateBlockSyncedPacket);                                                                                     \
-    Func(PlayerActionPacket);                                                                                          \
-    Func(ItemStackRequestPacket);                                                                                      \
-    Func(ItemStackResponsePacket);                                                                                     \
-    Func(BlockActorDataPacket);                                                                                        \
-    Func(SetHealthPacket);                                                                                             \
-    Func(MobEquipmentPacket);                                                                                          \
-    Func(MotionPredictionHintsPacket);                                                                                 \
-    Func(AddItemActorPacket);                                                                                          \
-    Func(UpdateAttributesPacket);                                                                                      \
-    Func(InteractPacket);                                                                                              \
-    Func(ActorEventPacket);                                                                                            \
-    Func(LevelEventPacket);                                                                                            \
-    Func(NetworkChunkPublisherUpdatePacket);                                                                           \
-    Func(AnimatePacket);                                                                                               \
-    Func(InventoryTransactionPacket);                                                                                  \
-    Func(AddActorPacket);                                                                                              \
-    Func(MapInfoRequestPacket);                                                                                        \
-    Func(UpdateSubChunkBlocksPacket);                                                                                  \
-    Func(SetActorMotionPacket);                                                                                        \
-    Func(LevelSoundEventPacket);                                                                                       \
-    Func(SubChunkPacket);                                                                                              \
-    Func(SubChunkRequestPacket);                                                                                       \
-    Func(ClientCacheMissResponsePacket);                                                                               \
-    Func(ClientCacheBlobStatusPacket);                                                                                 \
-    Func(LevelChunkPacket);                                                                                            \
-    Func(SetActorDataPacket);                                                                                          \
-    Func(UpdateBlockPacket);                                                                                           \
-    Func(MoveActorDeltaPacket);                                                                                        \
-    Func(MovePlayerPacket);                                                                                            \
-    Func(PlayerAuthInputPacket);                                                                                       \
-    Func(TickingAreasLoadStatusPacket);                                                                                \
-    Func(DimensionDataPacket);                                                                                         \
-    Func(AgentActionEventPacket);                                                                                      \
-    Func(ChangeMobPropertyPacket);                                                                                     \
-    Func(ChangeMobPropertyPacket);                                                                                     \
-    Func(LessonProgressPacket);                                                                                        \
-    Func(RequestAbilityPacket);                                                                                        \
-    Func(RequestPermissionsPacket);                                                                                    \
-    Func(ToastRequestPacket);                                                                                          \
-    Func(UpdateAbilitiesPacket);                                                                                       \
-    Func(UpdateAdventureSettingsPacket);                                                                               \
-    Func(EditorNetworkPacket);                                                                                         \
-    Func(DeathInfoPacket);                                                                                             \
-    Func(FeatureRegistryPacket);                                                                                       \
-    Func(ServerStatsPacket);                                                                                           \
-    Func(RequestNetworkSettingsPacket);                                                                                \
-    Func(GameTestRequestPacket);                                                                                       \
-    Func(GameTestResultsPacket);                                                                                       \
-    Func(UpdateClientInputLocksPacket);                                                                                \
-    Func(CameraPresetsPacket);                                                                                         \
-    Func(UnlockedRecipesPacket);                                                                                       \
-    Func(CameraInstructionPacket);                                                                                     \
-    Func(CompressedBiomeDefinitionListPacket);                                                                         \
-    Func(TrimDataPacket);                                                                                              \
-    Func(OpenSignPacket);                                                                                              \
-    Func(AgentAnimationPacket);                                                                                        \
-    Func(RefreshEntitlementsPacket);
-
-
-#define DeclearClass(packet) class packet; // NOLINT
-
-ForEachPacket(DeclearClass);
-
 #pragma endregion
 
 #ifdef GENERATE_PACKET
 
-template <typename T>
-inline void* VFTABLE_ADDR;
-template <typename T>
-inline size_t PACKET_SIZE;
+std::string getVTableName(void** vtable) {
+    auto res = ll::memory::lookupSymbol(*vtable);
 
-inline void __initPacketVftable() {
-    static bool inited = false;
-    if (inited) return;
-    inited = true;
-#define INIT_ADDR(type) VFTABLE_ADDR<type> = LL_RESOLVE_SYMBOL("??_7" #type "@@6B@");
-
-    ForEachPacket(INIT_ADDR);
-
-#undef INIT_ADDR
-}
-
-template <typename T>
-inline void* getVftableAddr() {
-    __initPacketVftable();
-    return VFTABLE_ADDR<T>;
-}
-
-void __initPacketSize() {
-    static bool inited = false;
-    if (inited) return;
-    inited = true;
-#define SET_PACKET_SIZE(type)                                                                                          \
-    if (getVftableAddr<type>() == *(void**)packet.get()) {                                                             \
-        PACKET_SIZE<type> = size - 16;                                                                                 \
-        continue;                                                                                                      \
+    if (res.size() == 1) {
+        return res[0];
+    } else {
+        throw std::runtime_error("cannot get symbol");
     }
-    int packetId = -1;
-    while (packetId < 500) {
-        auto packet = MinecraftPackets::createPacket((MinecraftPacketIds)++packetId);
-        if (packet) {
-            auto size = _msize((void**)packet.get() - 2);
-
-            ForEachPacket(SET_PACKET_SIZE);
-            __debugbreak();
-        }
-    }
-#undef SET_PACKET_SIZE
 }
 
-std::string getClassName(Packet* packet) {
-#define RETURN_IF_FIND(type)                                                                                           \
-    if (getVftableAddr<class type>() == *(void**)packet) return #type;
-    ForEachPacket(RETURN_IF_FIND);
-    __debugbreak();
-    return fmt::format("Unknown({})", (int)packet->getId());
-#undef RETURN_IF_FIND
-}
-
-inline void forEachPacket(std::function<void(Packet const& packet, std::string className, size_t size)> callback) {
+inline void forEachPacket(std::function<void(Packet const& packet, std::string className, size_t size)>&& callback) {
     int packetId = 0;
     while (packetId < 500) {
         auto packet = MinecraftPackets::createPacket((MinecraftPacketIds)packetId);
         if (packet) {
             auto size = _msize((void**)packet.get() - 2);
+
+            auto className = getVTableName((void**)packet.get());
+
+            className = className.substr(4, className.size() - 9);
+
             ll::logger.warn(
-                "Packet: {},{},{},{},{}",
+                "Packet: enum: {}, getName: {}, vtable: {}, id: {},size: {}",
                 magic_enum::enum_name((MinecraftPacketIds)packetId),
                 packet->getName(),
-                getClassName(packet.get()),
+                className,
                 packetId,
                 size
             );
 
-            auto className = getClassName(packet.get());
+            if (packet->getName() != className) {
+                ll::logger.error("intresting, different name, get: {}, typeid: {}", packet->getName(), className);
+            }
+
             callback(*packet, className, size - 16);
         }
         packetId++;
     }
 }
 
-template <typename T>
-inline size_t getPacketSize() {
-    __initPacketSize();
-    return PACKET_SIZE<T>;
-}
-
 #pragma region Packet Command
-
-#include "liteloader/api/memory/Hook.h"
-#include "liteloader/api/utils/FileHelper.h"
-#include "mc/server/ServerInstance.h"
-#include "mc/world/Minecraft.h"
-#include <filesystem>
-
 
 inline bool replaceString(
     std::string&       content,
@@ -518,18 +272,26 @@ inline bool replaceString(
     bool               exclude = true
 ) {
     auto startOffset = content.find(start, offset);
-    if (startOffset == content.npos) return false;
+    if (startOffset == std::string::npos) return false;
     if (exclude) startOffset += start.size();
-    auto endOffset = end.empty() ? content.npos : content.find(end, startOffset);
+    auto endOffset = end.empty() ? std::string::npos : content.find(end, startOffset);
 
-    if (endOffset != content.npos && !exclude) { endOffset += sizeof(end); }
+    if (endOffset != std::string::npos && !exclude) { endOffset += end.size(); }
     content.replace(startOffset, endOffset - startOffset, str);
     return true;
 }
 
 void autoGenerate() {
-    auto file = ReadAllFile(__FILE__, false);
-    if (!file) __debugbreak();
+
+    std::string path = __FILE__;
+
+    path = R"(D:\code\c++\LiteLoader\)" + path; // for OEOTYAN
+
+    auto file = ReadAllFile(path, false);
+    if (!file) {
+        ll::logger.error("Couldn't open file {}", path);
+        return;
+    }
     auto& content = file.value();
 
     std::ostringstream oss;
@@ -537,7 +299,7 @@ void autoGenerate() {
     // add static assert
     oss << std::endl;
     forEachPacket([&](Packet const&, std::string className, size_t size) {
-        oss << fmt::format("PACKET_SIZE_ASSERT({},0x{:X});\n", className, size);
+        oss << fmt::format("PACKET_SIZE_ASSERT({}, 0x{:X});\n", className, size);
     });
     oss << std::endl;
     replaceString(content, "#pragma region PacketSizeAssert\n", "#pragma endregion", oss.str());
@@ -551,11 +313,11 @@ void autoGenerate() {
         oss << fmt::format("#include \"mc/network/packet/{}.h\"\n", className);
     });
     oss << std::endl;
-    replaceString(content, "#ifdef INCLUDE_ALL_PACKET\n", "#endif", oss.str());
+    replaceString(content, "#pragma region PacketInclude\n", "#pragma endregion", oss.str());
     oss.clear();
     oss.str("");
 
-    WriteAllFile(__FILE__, content, false);
+    WriteAllFile(path, content, false);
 }
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
@@ -567,24 +329,15 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 ) {
     origin();
     autoGenerate();
+
+    // forEachPacket([&](Packet const&, std::string, size_t) {});
 }
 
 #pragma endregion
 
 #endif // GENERATE_PACKET
 
-
-#ifdef SIZE_STATIC_ASSERT_IF_DEFINE
-
-#define PACKET_SIZE_ASSERT(packet, size)                                                                               \
-    static_assert(                                                                                                     \
-        sizeof(packet) == (size) || sizeof(packet) == 0x30,                                                            \
-        "size of " #packet " should be " #size " or 0x30(default)"                                                     \
-    )
-
-#else
 #define PACKET_SIZE_ASSERT(packet, size) static_assert(sizeof(packet) == (size), "size of " #packet " should be " #size)
-#endif
 
 #pragma region PacketSizeAssert
 
@@ -776,5 +529,13 @@ PACKET_SIZE_ASSERT(RequestNetworkSettingsPacket, 0x38);
 PACKET_SIZE_ASSERT(GameTestRequestPacket, 0x90);
 PACKET_SIZE_ASSERT(GameTestResultsPacket, 0x78);
 PACKET_SIZE_ASSERT(UpdateClientInputLocksPacket, 0x40);
+PACKET_SIZE_ASSERT(CameraPresetsPacket, 0x60);
+PACKET_SIZE_ASSERT(UnlockedRecipesPacket, 0x50);
+PACKET_SIZE_ASSERT(CameraInstructionPacket, 0xA0);
+PACKET_SIZE_ASSERT(CompressedBiomeDefinitionListPacket, 0x48);
+PACKET_SIZE_ASSERT(TrimDataPacket, 0x60);
+PACKET_SIZE_ASSERT(OpenSignPacket, 0x40);
+PACKET_SIZE_ASSERT(AgentAnimationPacket, 0x40);
+PACKET_SIZE_ASSERT(RefreshEntitlementsPacket, 0x30);
 
 #pragma endregion

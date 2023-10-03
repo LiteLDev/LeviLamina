@@ -72,7 +72,7 @@ public:
      * @return std::string  The translation
      * @see    I18nBase::defaultLocaleName
      */
-    LLAPI virtual std::string get(std::string const& key, std::string const& localeName = "");
+    LLAPI std::string get(std::string const& key, std::string const& localeName = "");
 
     /**
      * @brief Get the type of the i18n object.

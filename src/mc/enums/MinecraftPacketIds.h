@@ -209,5 +209,5 @@ enum class MinecraftPacketIds : int {
     OpenSign                            = 0x12F,
     AgentAnimation                      = 0x130,
     RefreshEntitlements                 = 0x131,
-    EndId                               = 0x130,
+    EndId,
 };

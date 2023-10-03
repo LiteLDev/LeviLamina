@@ -3,9 +3,6 @@
 #include "pl/SymbolProvider.h"
 
 #include "liteloader/api/utils/WinHelper.h"
-#include <string>
-#include <vcruntime.h>
-#include <vector>
 
 namespace ll::memory {
 

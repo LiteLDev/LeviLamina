@@ -53,7 +53,7 @@ public:
 
     static void setup(CommandRegistry& registry) {
 
-        using namespace ll::registerCommandHelper;
+        using namespace ll::RegisterCommandHelper;
 
         registry.registerCommand(
             "testcommand",

@@ -11,7 +11,7 @@
 #include "mc/server/commands/CommandRegistry.h"
 #include "mc/server/commands/CommandSelector.h"
 
-namespace ll::registerCommandHelper {
+namespace ll::RegisterCommandHelper {
 template <typename Command, typename Type>
 static int getOffset(Type Command::*src) {
     union {
@@ -23,7 +23,8 @@ static int getOffset(Type Command::*src) {
 }
 
 template <typename Command, typename Type>
-static CommandParameterData makeMandatory(Type Command::*field, std::string const& name, bool Command::*isSet = nullptr) {
+static CommandParameterData
+makeMandatory(Type Command::*field, std::string const& name, bool Command::*isSet = nullptr) {
 
     return CommandParameterData(
         Bedrock::type_id<CommandRegistry, Type>(),
@@ -37,8 +38,12 @@ static CommandParameterData makeMandatory(Type Command::*field, std::string cons
     );
 }
 template <CommandParameterDataType DataType, typename Command, typename Type>
-static CommandParameterData
-makeMandatory(Type Command::*field, std::string const& name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
+static CommandParameterData makeMandatory(
+    Type Command::*    field,
+    std::string const& name,
+    char const*        desc = nullptr,
+    bool Command::*isSet    = nullptr
+) {
 
     return {
         Bedrock::type_id<CommandRegistry, Type>(),
@@ -51,7 +56,8 @@ makeMandatory(Type Command::*field, std::string const& name, char const* desc = 
         isSet ? getOffset(isSet) : -1};
 }
 template <typename Command, typename Type>
-static CommandParameterData makeOptional(Type Command::*field, std::string const& name, bool Command::*isSet = nullptr) {
+static CommandParameterData
+makeOptional(Type Command::*field, std::string const& name, bool Command::*isSet = nullptr) {
 
     return {
         Bedrock::type_id<CommandRegistry, Type>(),
@@ -65,8 +71,12 @@ static CommandParameterData makeOptional(Type Command::*field, std::string const
     };
 }
 template <CommandParameterDataType DataType, typename Command, typename Type>
-static CommandParameterData
-makeOptional(Type Command::*field, std::string const& name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
+static CommandParameterData makeOptional(
+    Type Command::*    field,
+    std::string const& name,
+    char const*        desc = nullptr,
+    bool Command::*isSet    = nullptr
+) {
 
     return {
         Bedrock::type_id<CommandRegistry, Type>(),
@@ -79,4 +89,4 @@ makeOptional(Type Command::*field, std::string const& name, char const* desc = n
         isSet ? getOffset(isSet) : -1,
     };
 }
-} // namespace ll::registerCommandHelper
+} // namespace ll::RegisterCommandHelper

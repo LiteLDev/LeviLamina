@@ -187,7 +187,7 @@ std::string GetModuleName(HMODULE handle) {
 std::string GetSystemLocaleName() {
     wchar_t buf[256] = {0};
     auto    lcid     = GetSystemDefaultLCID();
-    GetSystemDefaultLocaleName(buf, lcid);
+    GetSystemDefaultLocaleName(buf, (int)lcid);
     auto str = wstr2str(buf);
     std::replace(str.begin(), str.end(), '-', '_');
     return str;

@@ -2,6 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/packet/Packet.h"
 
 // auto generated inclusion list
 #include "mc/enums/MinecraftPacketIds.h"
