@@ -57,6 +57,7 @@ public:
     using ParseFn =
         bool (CommandRegistry::*)(void*, ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
             const;
+    using FactoryFn       = std::unique_ptr<class Command> (*)();
     using ProcessFunction = std::function<ParseToken*(ParseToken&, Symbol)>;
 
     struct ChainedSubcommand {
@@ -85,30 +86,6 @@ public:
         // NOLINTBEGIN
         // symbol: ??1Enum@CommandRegistry@@QEAA@XZ
         MCAPI ~Enum();
-
-        // NOLINTEND
-    };
-
-    struct Overload {
-        using FactoryFn = std::unique_ptr<class Command> (*)();
-
-        CommandVersion                    version;       // this+0x0
-        FactoryFn                         alloc;         // this+0x8
-        std::vector<CommandParameterData> params;        // this+0x10
-        int                               versionOffset; // this+0x28
-        std::vector<Symbol>               paramsSymbol;  // this+0x30
-
-        Overload(CommandVersion version, FactoryFn factory, std::vector<CommandParameterData>&& args)
-        : version(version),
-          alloc(factory),
-          params(std::forward<std::vector<CommandParameterData>>(args)),
-          versionOffset(0xff){};
-
-    public:
-        // NOLINTBEGIN
-        // symbol:
-        // ??0Overload@CommandRegistry@@QEAA@VCommandVersion@@P6A?AV?$unique_ptr@VCommand@@U?$default_delete@VCommand@@@std@@@std@@XZ@Z
-        MCAPI Overload(class CommandVersion, std::unique_ptr<class Command> (*)(void));
 
         // NOLINTEND
     };
@@ -226,46 +203,6 @@ public:
         // symbol:
         // ?toString@ParseToken@CommandRegistry@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
         MCAPI std::string toString() const;
-
-        // NOLINTEND
-    };
-
-    struct Signature {
-        // size 160
-        std::string            name;               // this+0x0
-        std::string            desc;               // this+0x20
-        std::vector<Overload>  overloads;          // this+0x40
-        std::vector<void*>     unk88;              // this+0x58
-        CommandPermissionLevel perm;               // this+0x70
-        Symbol                 main_symbol;        // this+0x74
-        Symbol                 alt_symbol;         // this+0x78
-        CommandFlag            flag;               // this+0x7C
-        int                    firstRule;          // this+0x80
-        int                    firstFactorization; // this+0x84
-        int                    firstOptional;      // this+0x88
-        bool                   runnable;           // this+0x8C
-        size_t                 ruleCounter;        // this+0x90
-
-        Signature(
-            std::string_view       name,
-            std::string_view       desc,
-            CommandPermissionLevel perm,
-            Symbol                 symbol,
-            CommandFlag            flag
-        )
-        : name(name),
-          desc(desc),
-          perm(perm),
-          main_symbol(symbol),
-          flag(flag) {}
-
-    public:
-        // NOLINTBEGIN
-        // symbol: ??0Signature@CommandRegistry@@QEAA@$$QEAU01@@Z
-        MCAPI Signature(struct CommandRegistry::Signature&&);
-
-        // symbol: ??1Signature@CommandRegistry@@QEAA@XZ
-        MCAPI ~Signature();
 
         // NOLINTEND
     };
@@ -434,8 +371,7 @@ public:
         return std::make_unique<T>();
     };
 
-    LLAPI void
-    registerOverload(std::string const& name, Overload::FactoryFn factory, std::vector<CommandParameterData>&& args);
+    LLAPI void registerOverload(std::string const& name, FactoryFn factory, std::vector<CommandParameterData>&& args);
 
     template <typename T, typename... Params>
     inline void registerOverload(std::string const& name, Params... params) {
@@ -502,7 +438,7 @@ public:
 
     uint addEnumValues(
         std::string const&                        name,
-        Bedrock::typeid_t<CommandRegistry>        tid,
+        const Bedrock::typeid_t<CommandRegistry>& tid,
         std::initializer_list<std::string> const& values
     ) {
         std::vector<std::pair<std::string, uint64_t>> converted;
@@ -1055,3 +991,65 @@ public:
 };
 
 #include "mc/server/commands/CommandParameterData.h"
+
+struct CommandRegistry::Overload {
+    CommandVersion                    version;       // this+0x0
+    FactoryFn                         alloc;         // this+0x8
+    std::vector<CommandParameterData> params;        // this+0x10
+    int                               versionOffset; // this+0x28
+    std::vector<Symbol>               paramsSymbol;  // this+0x30
+
+    Overload(CommandVersion version, FactoryFn factory, std::vector<CommandParameterData>&& args)
+    : version(version),
+      alloc(factory),
+      params(std::forward<std::vector<CommandParameterData>>(args)),
+      versionOffset(0xff){};
+
+public:
+    // NOLINTBEGIN
+    // symbol:
+    // ??0Overload@CommandRegistry@@QEAA@VCommandVersion@@P6A?AV?$unique_ptr@VCommand@@U?$default_delete@VCommand@@@std@@@std@@XZ@Z
+    MCAPI Overload(class CommandVersion, std::unique_ptr<class Command> (*)(void));
+
+    // NOLINTEND
+};
+
+struct CommandRegistry::Signature {
+    // size 160
+    std::string            name;               // this+0x0
+    std::string            desc;               // this+0x20
+    std::vector<Overload>  overloads;          // this+0x40
+    std::vector<void*>     unk88;              // this+0x58
+    CommandPermissionLevel perm;               // this+0x70
+    Symbol                 main_symbol;        // this+0x74
+    Symbol                 alt_symbol;         // this+0x78
+    CommandFlag            flag;               // this+0x7C
+    int                    firstRule;          // this+0x80
+    int                    firstFactorization; // this+0x84
+    int                    firstOptional;      // this+0x88
+    bool                   runnable;           // this+0x8C
+    size_t                 ruleCounter;        // this+0x90
+
+    Signature(
+        std::string_view       name,
+        std::string_view       desc,
+        CommandPermissionLevel perm,
+        Symbol                 symbol,
+        CommandFlag            flag
+    )
+    : name(name),
+      desc(desc),
+      perm(perm),
+      main_symbol(symbol),
+      flag(flag) {}
+
+public:
+    // NOLINTBEGIN
+    // symbol: ??0Signature@CommandRegistry@@QEAA@$$QEAU01@@Z
+    MCAPI Signature(struct CommandRegistry::Signature&&);
+
+    // symbol: ??1Signature@CommandRegistry@@QEAA@XZ
+    MCAPI ~Signature();
+
+    // NOLINTEND
+};

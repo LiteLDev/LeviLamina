@@ -26,7 +26,7 @@ public:
     CommandParameterOption             mOptions;       // this+0x59
 
     CommandParameterData(
-        Bedrock::typeid_t<CommandRegistry> typeIndex,
+        const Bedrock::typeid_t<CommandRegistry>& typeIndex,
         ParseFn                            parser,
         std::string_view                   name,
         ::CommandParameterDataType         type,
@@ -35,8 +35,17 @@ public:
         bool                               optional,
         int                                flag_offset
     )
-    : mTypeIndex(typeIndex), mParse(parser), mName(name), mEnumName(enumName), mEnumSymbol(-1), mPostfix(nullptr),
-      mPostfixSymbol(-1), mParamType(type), mOffset(offset), mSetOffset(flag_offset), mIsOptional(optional),
+    : mTypeIndex(typeIndex),
+      mParse(parser),
+      mName(name),
+      mEnumName(enumName),
+      mEnumSymbol(-1),
+      mPostfix(nullptr),
+      mPostfixSymbol(-1),
+      mParamType(type),
+      mOffset(offset),
+      mSetOffset(flag_offset),
+      mIsOptional(optional),
       mOptions(CommandParameterOption::None){};
 
 public:
