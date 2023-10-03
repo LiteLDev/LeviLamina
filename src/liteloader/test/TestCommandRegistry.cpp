@@ -103,28 +103,22 @@ public:
         }
         );
 
-        // try {
+        try {
 
-        //     registry.registerOverload<TestCommand>(
-        //         "testcommand",
-        //         makeMandatory<CommandParameterDataType::Enum>(
-        //             &TestCommand::operation,
-        //             "operation",
-        //             "Operation_Addons_Install"
-        //         )
-        //             .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
-        //         makeMandatory<CommandParameterDataType::Basic>(&TestCommand::target, "enumName")
-        //     );
-        // } catch (std::exception const& e) {
-        //     ll::logger.error(
-        //         "Exception occurred in registerOverload Operation_Addons_Install"
-        //     );
-        //     ll::logger.error("Error message: {} , type: {}", TextEncoding::toUTF8(e.what()), typeid(e).name());
-        // } catch (...) {
-        //     ll::logger.error(
-        //         "Unknown Exception occurred in registerOverload Operation_Addons_Install"
-        //     );
-        // }
+            registry.registerOverload<TestCommand>(
+                "testcommand",
+                makeMandatory<CommandParameterDataType::Enum>(
+                    &TestCommand::operation,
+                    "operation",
+                    "Operation_Addons_Install"
+                )
+                    .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
+                makeMandatory<CommandParameterDataType::Basic>(&TestCommand::target, "enumName")
+            );
+        } catch (std::exception const& e) {
+            ll::logger.error("Exception occurred in registerOverload Operation_Addons_Install");
+            ll::logger.error("Error message: {} , type: {}", TextEncoding::toUTF8(e.what()), typeid(e).name());
+        } catch (...) { ll::logger.error("Unknown Exception occurred in registerOverload Operation_Addons_Install"); }
 
 
         // addons uninstall
@@ -176,7 +170,7 @@ LL_AUTO_STATIC_HOOK(
     origin(server, networkCommands, networkTestCommands, permissionsFile);
     // Test CommandRegistry
     try {
-        TestCommand::setup(server.getCommands().getRegistry());
+        // TestCommand::setup(server.getCommands().getRegistry());
     } catch (std::exception const& e) {
         ll::logger.error("Exception occurred in TestCommand::setup");
         ll::logger.error("Error message: {} , type: {}", TextEncoding::toUTF8(e.what()), typeid(e).name());
