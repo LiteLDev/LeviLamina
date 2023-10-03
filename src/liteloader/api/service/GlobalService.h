@@ -34,12 +34,21 @@ concept IsGlobalService = concepts::IsOneOf<
     ResourcePackRepository,
     CommandRegistry>;
 
-#ifdef LITELOADER_EXPORTS
 template <IsGlobalService T>
-LLAPI inline T* const Global = nullptr;
-#else
+class GlobalService {
+    T* value = nullptr;
+
+public:
+    GlobalService();
+    void init(T* ptr);
+
+    T* get() { return value; }
+    T* operator->() { return value; }
+    T& operator*() { return *value; }
+    operator T*() { return value; } // NOLINT(google-explicit-constructor)
+};
+
 template <IsGlobalService T>
-LLAPI inline T* const Global;
-#endif
+LLAPI GlobalService<T> Global;
 
 } // namespace ll

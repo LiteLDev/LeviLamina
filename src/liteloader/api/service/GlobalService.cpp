@@ -18,18 +18,19 @@
 #include "mc/world/scores/Scoreboard.h"
 #include "mc/world/systems/NetworkSystem.h"
 
-
 #include "liteloader/api/memory/Hook.h"
 #include "liteloader/api/utils/Hash.h"
-
 #include "liteloader/core/LiteLoader.h"
 
-namespace {
+template <ll::IsGlobalService T>
+ll::GlobalService<T>::GlobalService() = default;
 
 template <ll::IsGlobalService T>
-inline void initGlobalService(T* ptr) {
-    *const_cast<T**>(&ll::Global<T>) = ptr;
+void ll::GlobalService<T>::init(T* ptr) {
+    value = ptr;
 }
+
+namespace {
 
 using namespace ll::memory;
 
@@ -41,11 +42,12 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     &Minecraft::initAsDedicatedServer,
     void
 ) {
+    ll::logger.info("MinecraftService: {}", (uintptr_t)this);
+    ll::Global<Minecraft>.init(this);
     origin();
-    initGlobalService<Minecraft>(this);
-    initGlobalService<CommandRegistry>(&getCommands().getRegistry());
-    initGlobalService<RakNet::RakPeer>(
-        (RakNet::RakPeer*)(((RakNetConnector&)(*getNetworkSystem().getRemoteConnector())).getPeer())
+    ll::Global<CommandRegistry>.init(&getCommands().getRegistry());
+    ll::Global<RakNet::RakPeer>.init(
+        (RakNet::RakPeer*)((RakNetConnector&)(*getNetworkSystem().getRemoteConnector())).getPeer()
     );
 }
 
@@ -58,8 +60,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     void,
     ::ServerInstance& ins
 ) {
-    initGlobalService<Level>(ll::Global<Minecraft>->getLevel());
-    initGlobalService<ServerLevel>((ServerLevel*)ll::Global<Level>);
+    ll::logger.info("ServerStartedEventHook: {}", (uintptr_t)ll::Global<Minecraft>.get());
+    ll::Global<Level>.init(ll::Global<Minecraft>->getLevel());
+    ll::Global<ServerLevel>.init((ServerLevel*)ll::Global<Level>.get());
 
     origin(ins);
 }
@@ -77,7 +80,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     static bool initd = false;
     if (!initd) {
         initd = true;
-        initGlobalService<ServerNetworkHandler>(this);
+        ll::Global<ServerNetworkHandler>.init(this);
     }
     origin(a1, a2);
 }
@@ -92,7 +95,7 @@ LL_AUTO_TYPED_STATIC_HOOK(
     class CommandRegistry& reg,
     class AllowListFile&   file
 ) {
-    initGlobalService<AllowListFile>(&file);
+    ll::Global<AllowListFile>.init(&file);
     origin(reg, file);
 }
 
@@ -105,7 +108,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     size_t,
     const std::string& file
 ) {
-    initGlobalService<PropertiesSettings>(this);
+    ll::Global<PropertiesSettings>.init(this);
     return origin(file);
 }
 
@@ -117,8 +120,11 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     &ResourcePackRepository::_initialize,
     void
 ) {
-    initGlobalService<ResourcePackRepository>(this);
+    ll::Global<ResourcePackRepository>.init(this);
     origin();
 }
 
 } // namespace
+
+// fixme: remove or implement
+template class ll::GlobalService<StructureManager>;
