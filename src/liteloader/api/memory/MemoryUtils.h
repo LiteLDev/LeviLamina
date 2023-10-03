@@ -2,6 +2,7 @@
 
 #include <string>
 #include <type_traits>
+#include <vector>
 
 #include "liteloader/api/base/Macro.h"
 #include "liteloader/api/utils/FixedString.h"
@@ -59,6 +60,13 @@ LLAPI FuncPtr resolveSymbol(const char* symbol);
  * @return function pointer
  */
 LLAPI FuncPtr resolveSignature(const char* signature);
+
+/**
+ * @brief lookup symbol name of a function address
+ * @param func Function address
+ * @return symbols
+ */
+LLAPI std::vector<std::string> lookupSymbol(FuncPtr func);
 
 template <uintptr_t off, typename RTN = void, typename... Args>
 auto constexpr virtualCall(void const* _this, Args&&... args) -> RTN {

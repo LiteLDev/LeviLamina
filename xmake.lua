@@ -31,7 +31,7 @@ add_requires("rapidjson v1.1.0")
 add_requires("compact_enc_det v1.0.1")
 add_requires("fifo_map v1.0.0")
 add_requires("pcg_cpp v1.0.0")
-add_requires("preloader v1.1.0")
+add_requires("preloader v1.2.0")
 add_requires("symbolprovider v1.1.0")
 
 if has_config("localbdslibrary") then
